@@ -131,6 +131,28 @@ async onInit() {
       }
     } catch (err) { if (this.developerDebugMode) { this.error(`Action curtain_motor_shutter_curtain_motor_close: ${err.message}`); }; }
 
+    // P2799: open/close/stop/favorite cards above were log-only; wire them to the
+    // device capability listeners (lazy require, never blocks init).
+    try {
+      const { wireCoverActions } = require('../../lib/covers/CoverFlowActions');
+      wireCoverActions(this, {
+        open: [
+          'curtain_motor_shutter_curtain_motor_windowcoverings_open',
+          'curtain_motor_shutter_curtain_motor_open'
+        ],
+        close: [
+          'curtain_motor_shutter_curtain_motor_windowcoverings_close',
+          'curtain_motor_shutter_curtain_motor_close'
+        ],
+        stop: [
+          'curtain_motor_shutter_curtain_motor_stop'
+        ],
+        favorite: [
+          'curtain_motor_shutter_curtain_motor_set_favorite'
+        ]
+      });
+    } catch (err) { this.error('[FLOW] cover action wiring failed:', err.message); }
+
     this.log('[FLOW] All flow cards registered');
   }
 }
