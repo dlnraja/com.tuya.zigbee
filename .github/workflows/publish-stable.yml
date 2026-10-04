@@ -199,7 +199,7 @@ jobs:
     timeout-minutes: 15
     # WHY(P2355): Homey build may bump patch in-job; promote must wait that version.
     outputs:
-      uploaded_version: ${{ steps.uploaded_version.outputs.version }}
+      uploaded_version: ${{ steps.publish.outputs.version || steps.uploaded_version.outputs.version }}
       app_id: ${{ steps.uploaded_version.outputs.app_id }}
     steps:
       - uses: actions/checkout@v5
@@ -215,6 +215,12 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      # WHY(2026-10-04): stable runs 37166982598 / 37168670987 re-uploaded 5.12.359 and Homey
+      # rejected it as "already published", so fixes never reached Test. Every stable publish now
+      # gets a fresh patch version (app ID untouched); the version is committed back after upload.
+      - name: Bump stable patch version
+        id: bump
+        run: node .github/scripts/stable-version-bump.js bump
       - name: Build App
         run: npx homey app build
       - name: Sanitize Built Manifest
@@ -299,6 +305,7 @@ jobs:
             fi
           }
           set +e
+          for attempt in 1 2 3 4; do
           if [ "${HOMEY_FORCE_PUBLISH:-0}" = "1" ]; then
             echo "::notice::HOMEY_FORCE_PUBLISH=1 — one-shot direct-api-publish --force (P139 override)"
             publish_output=$(HOMEY_PAT="$HOMEY_PAT" HOMEY_API_TIMEOUT_MS="${HOMEY_API_TIMEOUT_MS:-120000}" HOMEY_BUILD_POLL_TIMEOUT_MS="${HOMEY_BUILD_POLL_TIMEOUT_MS:-360000}" node "$GITHUB_WORKSPACE/scripts/direct-api-publish.js" --path "$PUBLISH_DIR" --channel test --force 2>&1)
@@ -314,16 +321,42 @@ jobs:
               publish_status=$fallback_status
             fi
           fi
+          if [ "$publish_status" -ne 0 ] && printf '%s\n' "$publish_output" | grep -Eiq 'already been published|currently in review' && [ "$attempt" -lt 4 ]; then
+            echo "::warning::Version already published (attempt $attempt); bumping patch and retrying."
+            (cd "$GITHUB_WORKSPACE" && node .github/scripts/stable-version-bump.js bump --publish-dir "$PUBLISH_DIR")
+            continue
+          fi
+          break
+          done
           set -e
           printf '%s\n' "$publish_output"
+          V=$(node -p "require('$PUBLISH_DIR/app.json').version")
+          echo "version=$V" >> "$GITHUB_OUTPUT"
           if [ "$publish_status" -ne 0 ]; then
             if printf '%s\n' "$publish_output" | grep -Eiq 'already been published|currently in review'; then
               echo "::warning::Homey reports this version is already published or in review; continuing so test promotion can proceed."
+              echo "uploaded=false" >> "$GITHUB_OUTPUT"
             else
               exit "$publish_status"
             fi
+          else
+            echo "uploaded=true" >> "$GITHUB_OUTPUT"
           fi
-          echo "Draft publish completed"
+          echo "Draft publish completed (v$V)"
+      - name: Commit stable version back
+        if: steps.publish.outputs.uploaded == 'true'
+        run: |
+          cd "$GITHUB_WORKSPACE"
+          V="${{ steps.publish.outputs.version }}"
+          node .github/scripts/stable-version-bump.js set "$V"
+          git add .homeycompose/app.json app.json package.json package-lock.json .homeychangelog.json 2>/dev/null || true
+          git diff --cached --quiet && { echo "version already committed"; exit 0; }
+          git commit -m "chore(stable): v$V [skip ci]"
+          for i in 1 2 3; do
+            git fetch --depth=20 origin stable-v5 && git rebase origin/stable-v5 && git push origin HEAD:stable-v5 && exit 0
+            sleep $((i * 10))
+          done
+          echo "::warning::Could not push stable version v$V back; next run bumps from the store-rejected retry path."
 
   soak-summary:
     name: "Soak decision"
