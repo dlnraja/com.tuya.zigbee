@@ -132,8 +132,8 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           // Generic action handler
-          this.log('[FLOW] Action remote_button_wireless_fingerbot_button_wire_ecf53 triggered for', args.device.getName());
-          return true;
+          // #113: real effect through the device's own capability listener when one matches.
+          return require('../../lib/flow/PlaceholderActionWiring').run(this, 'remote_button_wireless_fingerbot_button_wire_ecf53', args);
         });
       }
     } catch (err) { if (this.developerDebugMode) { this.error(`Action remote_button_wireless_fingerbot_button_wire_ecf53: ${err.message}`); } }
