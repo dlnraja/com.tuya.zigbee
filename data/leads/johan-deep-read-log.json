@@ -49,6 +49,35 @@
     "DP102 illuminance interval setting for ZG-102ZL",
     "HOBEIAN ZG-102Z/ZG-102ZA dual contact_sensor + sensor_contact_zigbee"
    ]
+  },
+  {
+   "thread": 1113,
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "readAt": "2026-10-04",
+   "comments": 3,
+   "related": [
+    1475,
+    1008,
+    925,
+    1481,
+    1510,
+    1013,
+    1321
+   ],
+   "rulesDoc": "docs/rules/JOHAN_1113_AMBIGUOUS_IAS_IDENTITY.md",
+   "filesChanged": [
+    "drivers/sensor_ias_zonetype_ewelink/*",
+    "lib/sensors/IasZoneTypeRouter.js",
+    "lib/DeviceFingerprintDB.js",
+    "app.json",
+    "test/critical/johan-1113-ias-zonetype.test.js",
+    "test/critical/forum-routing-regressions.test.js"
+   ],
+   "leads": [
+    "iHorn|LH02121 deferred (scope + zoneType proof)",
+    "SNZB-03 pid on radiator_valve/device_radiator_valve_smart/device_air_purifier_plug/generic_diy cross-products",
+    "forum-routing-regressions expects _TZE200_pay2byax on contact_sensor (pre-existing failure; Z2M says pay2byax = ZG-102ZL)"
+   ]
   }
  ]
 }

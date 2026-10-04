@@ -6162,7 +6162,9 @@
    "identities": [],
    "objectives": [],
    "batches": [],
-   "implemented": [],
+   "implemented": [
+    "eWeLink|SNZB-03 → sensor_ias_zonetype_ewelink (zoneType decides); docs/rules/JOHAN_1113_AMBIGUOUS_IAS_IDENTITY.md"
+   ],
    "title": "Device Request - [Motion Sensor] - [eWeLink] / [SNZB-03]",
    "state": "closed",
    "state_reason": "completed",
@@ -7687,7 +7689,9 @@
    "identities": [],
    "objectives": [],
    "batches": [],
-   "implemented": [],
+   "implemented": [
+    "eWeLink|SNZB-03 → sensor_ias_zonetype_ewelink (zoneType decides); docs/rules/JOHAN_1113_AMBIGUOUS_IAS_IDENTITY.md"
+   ],
    "title": "Device Request - [Smart Motion Sensor] - [eWeLink] / [SNZB-03]",
    "state": "open",
    "state_reason": null,
@@ -7697,7 +7701,8 @@
     "at": "2026-09-30T20:52:48Z",
     "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1113#issuecomment-5919531092"
    },
-   "needsDeepRead": true
+   "needsDeepRead": false,
+   "deepReadAt": "2026-10-04T00:30:00Z"
   },
   "1114": {
    "n": 1114,
@@ -15757,7 +15762,9 @@
    "identities": [],
    "objectives": [],
    "batches": [],
-   "implemented": [],
+   "implemented": [
+    "eWeLink|SNZB-03 → sensor_ias_zonetype_ewelink (zoneType decides); docs/rules/JOHAN_1113_AMBIGUOUS_IAS_IDENTITY.md"
+   ],
    "title": "eWeLink SQ510A / SNZB-03 water sensor: resolve ambiguous fingerprint safely",
    "state": "open",
    "state_reason": null,
