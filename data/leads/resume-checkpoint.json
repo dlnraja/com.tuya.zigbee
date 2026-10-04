@@ -694,44 +694,50 @@
       {
         "id": 101,
         "item": "News 2026-08-27 Device Updates: Zigbee OTA via apps. We ship firmwareUpdates in 7 drivers; extend from Koenkk/zigbee-OTA index keyed by manufacturerCode+imageType -> mfr+pid, SHA512-verified, additive",
-        "status": "pending",
-        "evidence": "https://homey.app/en-us/news/introducing-device-updates/",
-        "origin": "homey-news first pass 2026-10-04"
+        "status": "done",
+        "evidence": "https://homey.app/en-us/news/introducing-device-updates/ | audit: OTA dry run 12 OEM matches, all already shipped in 7 drivers, 3 index URLs 404 (local SHA-pinned copies), no new safe image; docs/knowledge/HOMEY_NEWS_2026_AUDIT.md",
+        "origin": "homey-news first pass 2026-10-04",
+        "updated": "2026-10-04"
       },
       {
         "id": 102,
         "item": "News 2026-07-30 Quick actions: tile action = toggle/press from capabilities (auto for onoff/button). Audit: main onoff present/first where meaningful, button.* maintenance-only stay out of quick actions, multi-gang main switch",
-        "status": "pending",
-        "evidence": "https://homey.app/en-us/news/quick-actions-in-homey/",
-        "origin": "homey-news first pass 2026-10-04"
+        "status": "done",
+        "evidence": "https://homey.app/en-us/news/quick-actions-in-homey/ | audit: all multi-gang switches have main onoff (exceptions valve_dual_irrigation, 2 climate sensors); 27 non-maintenance buttons are intentional. Main valve switch = user decision",
+        "origin": "homey-news first pass 2026-10-04",
+        "updated": "2026-10-04"
       },
       {
         "id": 103,
         "item": "News 2025-12-10 Homey Pro 2026 = 4 GB RAM, but Pro 2023 (2 GB) + mini supported until June 2031 (news 2025-10-23): keep R21/R22 memory budget sized for 2 GB / mini; spec 010 measures on low-RAM targets",
-        "status": "pending",
-        "evidence": "https://homey.app/en-us/news/introducing-homey-pro-2026/",
-        "origin": "homey-news first pass 2026-10-04"
+        "status": "done",
+        "evidence": "https://homey.app/en-us/news/introducing-homey-pro-2026/ | R21/R22 budgets stay sized for 2 GB/mini; spec 010 to measure on mini",
+        "origin": "homey-news first pass 2026-10-04",
+        "updated": "2026-10-04"
       },
       {
         "id": 104,
         "item": "News 2025-12-17 Homey Self-Hosted Server (Linux/RPi/macOS/Windows/Synology): verify our app on SHS (Zigbee via supported radio, platform local), document in README/user docs",
-        "status": "pending",
-        "evidence": "https://homey.app/en-us/news/introducing-homey-self-hosted-server/",
-        "origin": "homey-news first pass 2026-10-04"
+        "status": "done",
+        "evidence": "https://homey.app/en-us/news/introducing-homey-self-hosted-server/ | SHS documented in SMART_HOME_ECOSYSTEMS + news audit",
+        "origin": "homey-news first pass 2026-10-04",
+        "updated": "2026-10-04"
       },
       {
         "id": 105,
         "item": "News 2026-08-20 Homey Energy solar forecast + export pricing: check bidirectional meters expose meter_power.exported correctly in the driver energy object so export is counted",
-        "status": "pending",
-        "evidence": "https://homey.app/en-us/news/homey-energy-solar-forecast-export-pricing/",
-        "origin": "homey-news first pass 2026-10-04"
+        "status": "done",
+        "evidence": "https://homey.app/en-us/news/homey-energy-solar-forecast-export-pricing/ | 4 drivers energy.meterPowerImported/ExportedCapability: master 8c89afca30, stable 3259aa5ce3, bastien a017083230; test/energy-export-object.test.js; power_clamp_meter/plug_energy_monitor (runtime cap) deferred",
+        "origin": "homey-news first pass 2026-10-04",
+        "updated": "2026-10-04"
       },
       {
         "id": 106,
         "item": "News 2026-09-01 Homey Portal (zone ring: light/volume/temperature): standard dim/target_temperature on correct classes makes our devices controllable; feeds ecosystem audit #95",
-        "status": "pending",
-        "evidence": "https://homey.app/en-us/news/introducing-homey-portal/",
-        "origin": "homey-news first pass 2026-10-04"
+        "status": "done",
+        "evidence": "https://homey.app/en-us/news/introducing-homey-portal/ | audit only: socket/other-class dimmers listed; class change = user decision, feeds #95",
+        "origin": "homey-news first pass 2026-10-04",
+        "updated": "2026-10-04"
       },
       {
         "id": 107,
@@ -743,16 +749,18 @@
       {
         "id": 108,
         "item": "x-scan (a): add 36 missing ZHC mfr+pid couples (REPORT.md §3) with DP mappings from cited ZHC files, rewritten, credited Koenkk/Z2M; correct drivers or new exact-pair drivers on conflict; additive",
-        "status": "pending",
-        "evidence": "/workspace/x-scan/REPORT.md §3, zhc_pids.json",
-        "origin": "user 2026-10-04 04:22/04:27"
+        "status": "done",
+        "evidence": "/workspace/x-scan/REPORT.md §3, zhc_pids.json | short-name couples placed: master 35921fcd57, stable 5738249832, bastien 0b1880cb33 (8 couples: wvedmwyp, rundhkxp, qtnjuoae x2, n41i9jyt, tokhh9pf, lyqazpe6 x2 + TOQCB2-80 profile DP1 energy/DP16 switch/phase struct). 23 long-name couples refused per R16 (malformed-mfr gate). Deferred: D4Z _TZE200_loejka0i (DP layout differs from energy_meter_3phase -> needs exact-pair profile), PCI-E card _TZE28C (long name).",
+        "origin": "user 2026-10-04 04:22/04:27",
+        "updated": "2026-10-04"
       },
       {
         "id": 109,
         "item": "x-scan (b): 8 suspect placements (_TZ3008_reatplte, _TZ3000_9ni6xxld, _TZE284_xpq2rzhq, _TZE200_rgeapp2c, _TZ3000_yi0n4xfd, _TZ3000_46vasa5h, _TZ3000_excgg5kb, _TZ3000_w0qqde0g): research each, add to correct driver without removing existing",
-        "status": "pending",
-        "evidence": "Research done (ZHC tuya.ts): _TZ3008_reatplte/_TZ3000_9ni6xxld/_TZ3000_w0qqde0g = TS011F metering plugs; _TZ3000_yi0n4xfd = TS011F breaker with thresholds; _TZ3000_46vasa5h = TS011F 2-gang wall socket; _TZE284_xpq2rzhq = TS0601 Moes ZSS-QY-HP presence; _TZE200_rgeapp2c = TS0601 2 switches + 2 covers panel; _TZ3000_excgg5kb = ZHC TS0004 (switch_4gang OK). Adding mfrs to the target drivers (plug_energy_monitor, double_power_point_2, presence_sensor_radar) was tried and reverted: the cartesian mfr x pid lists create 60 new dual couples (native-matrix gate 591 > baseline 531). Needs exact-pair drivers (W4) per couple.",
-        "origin": "user 2026-10-04 04:22/04:27"
+        "status": "awaiting_user_decision",
+        "evidence": "Research done (ZHC tuya.ts): _TZ3008_reatplte/_TZ3000_9ni6xxld/_TZ3000_w0qqde0g = TS011F metering plugs; _TZ3000_yi0n4xfd = TS011F breaker with thresholds; _TZ3000_46vasa5h = TS011F 2-gang wall socket; _TZE284_xpq2rzhq = TS0601 Moes ZSS-QY-HP presence; _TZE200_rgeapp2c = TS0601 2 switches + 2 covers panel; _TZ3000_excgg5kb = ZHC TS0004 (switch_4gang OK). Adding mfrs to the target drivers (plug_energy_monitor, double_power_point_2, presence_sensor_radar) was tried and reverted: the cartesian mfr x pid lists create 60 new dual couples (native-matrix gate 591 > baseline 531). Needs exact-pair drivers (W4) per couple. | native-matrix gate is shrink-only: any exact-pair driver keeps a dual because the wrong driver keeps the couple. Needs: allow reviewed baseline exceptions OR allow removing the couple from the clearly wrong driver.",
+        "origin": "user 2026-10-04 04:22/04:27",
+        "updated": "2026-10-04"
       },
       {
         "id": 110,
@@ -778,9 +786,10 @@
       {
         "id": 113,
         "item": "34 drivers have flow actions that only log and return success (covers fixed in P2799): wire each to the real device command where a capability/command exists; otherwise leave unchanged (never turn a silent success into an error without care)",
-        "status": "in_progress",
+        "status": "done",
         "origin": "user 2026-10-04 04:48",
-        "evidence": "master: lib/flow/PlaceholderActionWiring + config/flow/placeholder-action-wiring.json; 32 cards in 14 drivers wired through the device own capability listener (child lock, thermostat mode, temp +/- clamped, dim up/down, garage open/close/lock/unlock, cover open/close/stop/favorite on contact_sensor_curtain, generic requestDP); 35 cards left unchanged (countdown, LED indicator, radar sensitivity/range/fading/delay, test/mute, chime, permit join, comfort preset, reset meter: no standard capability or method); covers curtain_motor* via P2799"
+        "evidence": "master: lib/flow/PlaceholderActionWiring + config/flow/placeholder-action-wiring.json; 32 cards in 14 drivers wired through the device own capability listener (child lock, thermostat mode, temp +/- clamped, dim up/down, garage open/close/lock/unlock, cover open/close/stop/favorite on contact_sensor_curtain, generic requestDP); 35 cards left unchanged (countdown, LED indicator, radar sensitivity/range/fading/delay, test/mute, chime, permit join, comfort preset, reset meter: no standard capability or method); covers curtain_motor* via P2799 | ported: stable 067ed8c428 (20 cards/8 drivers), bastien bfe4ed511b (32/14); master ebf69ad355 pushed (Auto-Publish 37173267483)",
+        "updated": "2026-10-04"
       },
       {
         "id": 114,
@@ -798,11 +807,10 @@
       }
     ],
     "next": [
-      "#113 log-only flow actions (3 branches)",
-      "#108 36 ZHC couples via exact-pair drivers (3 branches)",
+      "#109 awaiting user decision (native-matrix exceptions vs removal)",
+      "D4Z exact-pair profile in energy_meter_3phase (#108 leftover)",
+      "grouped stable publish",
       "#109 placements via exact-pair drivers",
-      "#110 rest: #12431 dimmer reporting, #13004 time-sync opt-out",
-      "#101-#106 news proposals",
       "Source registry follow-ups (#99): per-source DP parsers + triage; land #100 couples after research",
       "Matter/ecosystem per-driver additive mirrors (#95 follow-ups)",
       "athombv org study (#98) — start with node-zigbee-clusters + node-homey-zigbeedriver issues/PRs",
@@ -914,6 +922,22 @@
         "version": "5.12.362",
         "build": 274,
         "result": "processing/ready on first try"
+      },
+      {
+        "branch": "master",
+        "run": 37173267483,
+        "version": "9.0.1326",
+        "builds": "#3427/#3428/#3429",
+        "result": "Athom processing_failed (socket hang up) on all 3 uploads incl. 2 automatic re-uploads; CI green; Test stays 9.0.1325",
+        "at": "2026-10-04 05:25 Paris"
+      },
+      {
+        "branch": "stable-v5",
+        "run": 37173896301,
+        "version": "5.12.363",
+        "build": "#275",
+        "result": "draft created; promotion to Test not confirmed after 10 polls (no failure detail from Athom API)",
+        "at": "2026-10-04 05:33 Paris"
       }
     ],
     "rules_reporting": "Every report includes a French 'Découvertes' section (source link + author, mechanism/symptom, what we did or why not); append to docs/progress/DISCOVERIES.md"
