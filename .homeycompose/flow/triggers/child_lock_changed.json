@@ -34,6 +34,12 @@
             "fr": "allumé",
             "nl": "aan",
             "de": "an"
+          },
+          "title": {
+            "en": "on",
+            "fr": "allumé",
+            "nl": "aan",
+            "de": "an"
           }
         },
         {
@@ -43,11 +49,23 @@
             "fr": "éteint",
             "nl": "uit",
             "de": "aus"
+          },
+          "title": {
+            "en": "off",
+            "fr": "éteint",
+            "nl": "uit",
+            "de": "aus"
           }
         },
         {
           "id": "any",
           "label": {
+            "en": "on or off",
+            "fr": "allumé ou éteint",
+            "nl": "aan of uit",
+            "de": "an oder aus"
+          },
+          "title": {
             "en": "on or off",
             "fr": "allumé ou éteint",
             "nl": "aan of uit",

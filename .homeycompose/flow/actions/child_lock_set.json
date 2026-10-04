@@ -40,11 +40,23 @@
             "fr": "activé",
             "nl": "aan",
             "de": "an"
+          },
+          "title": {
+            "en": "on",
+            "fr": "activé",
+            "nl": "aan",
+            "de": "an"
           }
         },
         {
           "id": "off",
           "label": {
+            "en": "off",
+            "fr": "désactivé",
+            "nl": "uit",
+            "de": "aus"
+          },
+          "title": {
             "en": "off",
             "fr": "désactivé",
             "nl": "uit",
