@@ -89,7 +89,7 @@
  },
  "master_queue": {
   "note": "Single master checklist of ALL user requests since the start. Daily resumption reads this FIRST. Tick (verified) only after verification.",
-  "updated": "2026-10-04T01:15:48.898Z",
+  "updated": "2026-10-04T01:20:15.653Z",
   "items": [
    {
     "id": 1,
@@ -268,8 +268,8 @@
    {
     "id": 30,
     "item": "Queue6 PC harvest r1: pid-only drivers, fp typos, EF00 setTimeout, agent-rules gen, auto-post guard",
-    "status": "in-progress",
-    "evidence": "done locally, commit pending"
+    "status": "verified",
+    "evidence": "master 7f385e04c3 (gates: validate, matrix, fp 0 new, p248x, publish, agent-rules, no-auto-post; critical tests 30 = baseline)"
    },
    {
     "id": 31,
@@ -328,8 +328,8 @@
    {
     "id": 40,
     "item": "PCr2-3 5 couples in two drivers (gjnozsaz, j1v25l17, ntcy3xu1, n9ctkb6j, dcnsggvz)",
-    "status": "in-progress",
-    "evidence": "master: removed duplicates (rules doc DUAL_COUPLES_PCR2_2026-10-04); stable port pending"
+    "status": "verified",
+    "evidence": "master 514c4df7ad, stable 78bf4a93af, bastien 9918e8c2dd; fp 0 new; stable publish in next grouped batch"
    },
    {
     "id": 41,
@@ -341,7 +341,7 @@
     "id": 42,
     "item": "PCr2-5 energy counter unsigned 32-bit",
     "status": "in-progress",
-    "evidence": "convertBufferToNumber + counterSafeRaw on meter_* (local, tests pass)"
+    "evidence": "master 7f385e04c3 (16 tests pass); stable/bastien port pending in next grouped batch"
    },
    {
     "id": 43,
@@ -402,7 +402,21 @@
     "item": "Specs 003/004/005/007/009 remaining tasks",
     "status": "pending",
     "evidence": "see specs/*/tasks.md"
+   },
+   {
+    "id": 53,
+    "item": "Next grouped stable publish: 78bf4a93af + port of signed/unsigned DP decoding (7f385e04c3)",
+    "status": "pending",
+    "evidence": ""
    }
+  ],
+  "next": [
+   "PCr2-1 10 missing devices (verify each couple online)",
+   "PCr2-2 52 drivers required/optional clusters",
+   "PCr2-4 Green Power + proprietary clusters -> native matrix",
+   "port DP decoding to stable/bastien + grouped stable publish",
+   "flow cards completion",
+   "ledger wiring into workflows"
   ]
  }
 }
