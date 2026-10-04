@@ -678,10 +678,18 @@
         "item": "r4-16 EXTENDED: study whole athombv org (node-homey-zigbeedriver, node-zigbee-clusters, apps-sdk docs, matter-bridge, brand apps IKEA/Aqara-Xiaomi/Hue/Sonoff/Tuya...) incl. branches, PRs, issues open+closed; extract cluster handling, reporting config, bound clusters, battery, OTA, pairing robustness, flows, energy, memory/perf, regressions; reimplement in our own way, additive, keyed mfr+pid; credit Athom; track each repo/issue/PR in ledger with last-seen cursor (re-process only changes); frugal, multi-day, checkpoints. Report every discovery in French ('Découvertes') + docs/progress/DISCOVERIES.md",
         "status": "in_progress",
         "evidence": "started: com.athom.matter-bridge @045787d read (see DISCOVERIES.md)"
+      },
+      {
+        "id": 99,
+        "item": "W10 ingestion: Koenkk/zigbee2mqtt + zigbee-herdsman-converters — commit-diff of converters (Tuya + others) keyed by ledger cursor (only changes), open/closed device-bug/quirk issues since cursor -> mfr+pid couple proposals, DP mappings, quirks in our own words; credit Koen Kanters + contributors",
+        "status": "pending",
+        "evidence": "Existing (extend, don't duplicate): .github/workflows/monthly-scan.yml (curl full tuya.ts + grep _T* ids, monthly, no diff/cursor), monthly-community-sync.yml (scripts/community-sync/extract-z2m.js, sync-all.js), monthly-device-enrichment.yml + .github/scripts/external-sources-scanner.js, scripts/sync/crawl-z2m.js, scripts/digest/quirks-scan.js. Plan: add ledger cursor (lastSha per repo + issues updated-since) to external-sources-scanner, use GitHub compare API on src/devices/*.ts, emit proposals to data/leads; schedule weekly in the existing monthly-device-enrichment workflow (no new workflow)."
       }
     ],
     "next": [
       "Matter/ecosystem per-driver additive mirrors (#95 follow-ups)",
+      "W10 Z2M/herdsman diff ingestion (extend external-sources-scanner)",
+      "athombv org study (#98) — start with node-zigbee-clusters + node-homey-zigbeedriver issues/PRs",
       "spec 010 T0 research design sources",
       "spec 010 T1 baseline perf + golden couple resolution",
       "PCr2-1 remaining exact drivers (RC-EF-3.0, LH02121, MINI-ZBRBS, RDM001); Zbeacon drivers to stable",
@@ -724,6 +732,28 @@
         "run": 37169372245,
         "version": "5.12.360",
         "result": "success (first real upload since 5.12.359; includes 1d06791f0d, 78bf4a93af, af8596d57b)"
+      },
+      {
+        "when": "2026-10-04T04:11+02:00",
+        "channel": "stable Test",
+        "version": "5.12.361",
+        "run": "37170003588",
+        "build": "#273",
+        "note": "5.12.360 build #272 failed at Athom (socket hang up); fixed workflow re-upload path"
+      },
+      {
+        "when": "2026-10-04T04:16+02:00",
+        "channel": "master",
+        "commits": [
+          "2660ef6f2e",
+          "4836cb43f9",
+          "8454f37d16"
+        ],
+        "runs": [
+          "37170346820",
+          "37170501036"
+        ],
+        "status": "Auto-Publish in progress at checkpoint"
       }
     ],
     "rules_reporting": "Every report includes a French 'Découvertes' section (source link + author, mechanism/symptom, what we did or why not); append to docs/progress/DISCOVERIES.md"
