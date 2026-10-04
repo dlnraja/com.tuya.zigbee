@@ -19,7 +19,10 @@
     "meter_power.exported",
     "button.1"
   ],
-  "energy": {},
+  "energy": {
+    "meterPowerImportedCapability": "meter_power",
+    "meterPowerExportedCapability": "meter_power.exported"
+  },
   "zigbee": {
     "productId": [
       "TS0001",
