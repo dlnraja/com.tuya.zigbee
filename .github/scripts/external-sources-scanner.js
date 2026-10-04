@@ -339,6 +339,8 @@ async function main(){
   const state=loadState();
   const sinceQuery = state.lastRun ? ` updated:>${state.lastRun.split('T')[0]}` : '';
   const allDevices=[];
+  // W10: change-driven registry pass first (cursors in data/sources/state.json); never fatal.
+  try{const reg=await require('./source-registry').run({maxCalls:200});console.log('[sources] registry: calls='+reg.calls+' new proposals='+reg.proposals.length);}catch(e){console.log('[sources] registry skipped:',e.message);}
 
   // Collect from all sources
   const z2mConv=await scanZ2MConverters();allDevices.push(...z2mConv);await sleep(1000);

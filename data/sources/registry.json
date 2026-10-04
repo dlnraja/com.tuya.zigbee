@@ -1,0 +1,298 @@
+{
+  "$comment": "Single source registry for free ingestion (W10). Read by .github/scripts/source-registry.js (called from external-sources-scanner). State/cursors live in data/sources/state.json; only changes since the last cursor are processed. Proposals are written in our own words to data/leads/source-proposals.json with credits. AI is optional, capped, never required.",
+  "version": 1,
+  "sources": [
+    {
+      "id": "z2m-converters",
+      "type": "github",
+      "repo": "Koenkk/zigbee-herdsman-converters",
+      "branch": "master",
+      "paths": [
+        "src/devices/tuya.ts",
+        "src/devices",
+        "src/lib/tuya.ts"
+      ],
+      "issues": false,
+      "cadence": "daily",
+      "kind": "converters",
+      "credit": "Koen Kanters and zigbee-herdsman-converters contributors (MIT)"
+    },
+    {
+      "id": "z2m-issues",
+      "type": "github",
+      "repo": "Koenkk/zigbee2mqtt",
+      "branch": "master",
+      "paths": [],
+      "issues": true,
+      "cadence": "daily",
+      "kind": "issues",
+      "credit": "Koen Kanters and zigbee2mqtt contributors"
+    },
+    {
+      "id": "z2m-device-pages",
+      "type": "github",
+      "repo": "Koenkk/zigbee2mqtt.io",
+      "branch": "master",
+      "paths": [
+        "docs/devices"
+      ],
+      "issues": false,
+      "cadence": "weekly",
+      "kind": "docs",
+      "credit": "zigbee2mqtt.io documentation contributors"
+    },
+    {
+      "id": "zha-quirks",
+      "type": "github",
+      "repo": "zigpy/zha-device-handlers",
+      "branch": "dev",
+      "paths": [
+        "zhaquirks/tuya"
+      ],
+      "issues": true,
+      "cadence": "daily",
+      "kind": "converters",
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)"
+    },
+    {
+      "id": "zha",
+      "type": "github",
+      "repo": "zigpy/zha",
+      "branch": "dev",
+      "paths": [
+        "zha/application/platforms"
+      ],
+      "issues": false,
+      "cadence": "weekly",
+      "kind": "converters",
+      "credit": "zigpy / ZHA contributors"
+    },
+    {
+      "id": "deconz",
+      "type": "github",
+      "repo": "dresden-elektronik/deconz-rest-plugin",
+      "branch": "master",
+      "paths": [
+        "devices"
+      ],
+      "issues": true,
+      "cadence": "weekly",
+      "kind": "converters",
+      "credit": "dresden elektronik and deCONZ contributors"
+    },
+    {
+      "id": "localtuya",
+      "type": "github",
+      "repo": "rospogrigio/localtuya",
+      "branch": "master",
+      "paths": [
+        "custom_components/localtuya"
+      ],
+      "issues": false,
+      "cadence": "monthly",
+      "kind": "converters",
+      "credit": "rospogrigio and localtuya contributors"
+    },
+    {
+      "id": "hass-localtuya",
+      "type": "github",
+      "repo": "xZetsubou/hass-localtuya",
+      "branch": "master",
+      "paths": [
+        "custom_components/localtuya"
+      ],
+      "issues": false,
+      "cadence": "weekly",
+      "kind": "converters",
+      "credit": "xZetsubou and contributors"
+    },
+    {
+      "id": "tuya-local",
+      "type": "github",
+      "repo": "make-all/tuya-local",
+      "branch": "main",
+      "paths": [
+        "custom_components/tuya_local/devices"
+      ],
+      "issues": true,
+      "cadence": "weekly",
+      "kind": "converters",
+      "credit": "Jason Rumney (make-all) and tuya-local contributors"
+    },
+    {
+      "id": "blakadder",
+      "type": "github",
+      "repo": "blakadder/zigbee",
+      "branch": "master",
+      "paths": [
+        "_zigbee"
+      ],
+      "issues": false,
+      "cadence": "monthly",
+      "kind": "converters",
+      "credit": "blakadder and Zigbee Device Compatibility Repository contributors"
+    },
+    {
+      "id": "st-edge-mariano",
+      "type": "github",
+      "repo": "Mariano-Github/Edge-Drivers-Beta",
+      "branch": "main",
+      "paths": [],
+      "issues": false,
+      "cadence": "weekly",
+      "kind": "converters",
+      "credit": "Mariano (Mariano-Github) SmartThings Edge drivers"
+    },
+    {
+      "id": "hubitat-kkossev",
+      "type": "github",
+      "repo": "kkossev/Hubitat",
+      "branch": "development",
+      "paths": [
+        "Drivers"
+      ],
+      "issues": false,
+      "cadence": "weekly",
+      "kind": "converters",
+      "credit": "Krassimir Kossev (kkossev) Hubitat drivers"
+    },
+    {
+      "id": "jeedom-abeille",
+      "type": "github",
+      "repo": "KiwiHC16/Abeille",
+      "branch": "master",
+      "paths": [
+        "core/config/devices"
+      ],
+      "issues": false,
+      "cadence": "weekly",
+      "kind": "converters",
+      "credit": "KiwiHC16 and Jeedom Abeille contributors"
+    },
+    {
+      "id": "homed",
+      "type": "github",
+      "repo": "u236/homed-service-zigbee",
+      "branch": "master",
+      "paths": [
+        "deploy/data/usr/share/homed-zigbee"
+      ],
+      "issues": false,
+      "cadence": "weekly",
+      "kind": "converters",
+      "credit": "u236 (HOMEd)"
+    },
+    {
+      "id": "athombv-zigbee-clusters",
+      "type": "github",
+      "repo": "athombv/node-zigbee-clusters",
+      "branch": "master",
+      "paths": [
+        "lib"
+      ],
+      "issues": true,
+      "cadence": "weekly",
+      "kind": "sdk",
+      "credit": "Athom B.V. (node-zigbee-clusters)"
+    },
+    {
+      "id": "athombv-zigbeedriver",
+      "type": "github",
+      "repo": "athombv/node-homey-zigbeedriver",
+      "branch": "master",
+      "paths": [
+        "lib"
+      ],
+      "issues": true,
+      "cadence": "weekly",
+      "kind": "sdk",
+      "credit": "Athom B.V. (node-homey-zigbeedriver)"
+    },
+    {
+      "id": "athombv-matter-bridge",
+      "type": "github",
+      "repo": "athombv/com.athom.matter-bridge",
+      "branch": "master",
+      "paths": [
+        "lib"
+      ],
+      "issues": true,
+      "cadence": "weekly",
+      "kind": "sdk",
+      "credit": "Athom B.V. (Matter Bridge, GPL-3.0)"
+    },
+    {
+      "id": "johan",
+      "type": "github",
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "branch": "SDK3",
+      "paths": [
+        "drivers"
+      ],
+      "issues": true,
+      "cadence": "daily",
+      "kind": "converters",
+      "credit": "Johan Bendz and com.tuya.zigbee contributors"
+    },
+    {
+      "id": "johan-forks",
+      "type": "github-forks",
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "cadence": "weekly",
+      "kind": "forks",
+      "credit": "Authors of com.tuya.zigbee forks"
+    },
+    {
+      "id": "homey-forum",
+      "type": "discourse",
+      "url": "https://community.homey.app",
+      "topics": [
+        140352,
+        26439
+      ],
+      "cadence": "daily",
+      "kind": "forum",
+      "credit": "Homey Community Forum members"
+    },
+    {
+      "id": "homey-sdk-changelog",
+      "type": "page",
+      "url": "https://apps.developer.homey.app/upgrade-guides/device-capabilities.md",
+      "cadence": "weekly",
+      "kind": "docs",
+      "credit": "Athom B.V. developer docs"
+    },
+    {
+      "id": "homey-sdk-sitemap",
+      "type": "page",
+      "url": "https://apps.developer.homey.app/sitemap.md",
+      "cadence": "weekly",
+      "kind": "docs",
+      "credit": "Athom B.V. developer docs"
+    },
+    {
+      "id": "homey-news",
+      "type": "page",
+      "url": "https://homey.app/en-us/news/",
+      "cadence": "weekly",
+      "kind": "news",
+      "credit": "Athom B.V."
+    },
+    {
+      "id": "tuya-zigbee-docs",
+      "type": "page",
+      "url": "https://developer.tuya.com/en/docs/connect-subdevices-to-gateways/tuya-zigbee-universal-docking-access-standard?id=K9ik6zvofpzql",
+      "cadence": "monthly",
+      "kind": "docs",
+      "credit": "Tuya Inc. developer documentation"
+    },
+    {
+      "id": "homey-app-store-tuya",
+      "type": "page",
+      "url": "https://homey.app/en-us/apps/",
+      "cadence": "weekly",
+      "kind": "community-apps",
+      "credit": "Athom B.V. App Store (community apps)"
+    }
+  ]
+}

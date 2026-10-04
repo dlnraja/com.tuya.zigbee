@@ -96,6 +96,22 @@ jobs:
             --focus="${{ github.event.inputs.focus || '2137' }}" \
             --queries="${{ github.event.inputs.queries || 'Tuya SOS Homey,UNSUPPORTED_CLUSTER dimmer,water leak IAS,invert alarm polarity' }}"
 
+      - name: Source registry ingestion (changes only, free)
+        # W10: data/sources/registry.json -> proposals in data/leads/source-proposals.json; cursors in
+        # data/sources/state.json so each run processes only what changed. No AI, bounded API calls.
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node .github/scripts/source-registry.js --max-calls 300 | tee -a "$GITHUB_STEP_SUMMARY"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/sources/state.json data/leads/source-proposals.json
+          git diff --cached --quiet && exit 0
+          git commit -m "chore(sources): registry ingestion cursors + proposals [skip ci]"
+          for i in 1 2 3; do git pull --rebase -X theirs origin "${GITHUB_REF_NAME}" && git push origin HEAD:"${GITHUB_REF_NAME}" && exit 0; sleep $((i*10)); done
+          echo "::warning::could not push source registry state"
+
       - name: Optional Homey/Gmail fetch for harvested diag UUIDs
         if: ${{ github.event.inputs.fetch_diags == true || github.event.inputs.fetch_diags == 'true' }}
         continue-on-error: true
