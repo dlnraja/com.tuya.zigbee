@@ -1,0 +1,192 @@
+{
+  "updated": "2026-10-04T07:01:12.389Z",
+  "threads": {
+    "21313": {
+      "lastPost": 2819,
+      "status": "pending"
+    },
+    "26439": {
+      "lastPost": 5526,
+      "status": "in-progress"
+    },
+    "89271": {
+      "lastPost": 673,
+      "status": "pending"
+    },
+    "140352": {
+      "lastPost": 2258,
+      "status": "in-progress"
+    },
+    "146735": {
+      "lastPost": 503,
+      "status": "pending"
+    },
+    "154077": {
+      "lastPost": 470,
+      "status": "pending"
+    }
+  },
+  "items": [
+    {
+      "id": "140352:#2253",
+      "status": "already-fixed",
+      "note": "Michaelp #2253 me167 DP4/5 divisor + live profile TX (P2598)",
+      "sources": [
+        "1657b6d07e"
+      ]
+    },
+    {
+      "id": "140352:#2258",
+      "status": "already-fixed",
+      "note": "EdP #2258 soil sensor + GH#550/#551 (P2760)",
+      "sources": [
+        "a5ea22d29d"
+      ]
+    },
+    {
+      "id": "140352:#2252",
+      "status": "already-fixed",
+      "note": "VicHY #2252 OCR distance units + phantom tile strip (P2599)",
+      "sources": [
+        "f6749f9e8d"
+      ]
+    },
+    {
+      "id": "140352:#2254",
+      "status": "already-fixed",
+      "note": "VicHY #2254 af98752d skip DP4 battery / DP103 lux (P2713)",
+      "sources": [
+        "72b697dc45"
+      ]
+    },
+    {
+      "id": "140352:#2247",
+      "status": "already-fixed",
+      "note": "VicHY #2247 sticky presence + relay (P2576)",
+      "sources": [
+        "695e66f1f5"
+      ]
+    },
+    {
+      "id": "git:ogx8u5z6",
+      "status": "already-fixed",
+      "note": "ZG253 TRV ogx8u5z6 setpoint TX (P2593)",
+      "sources": [
+        "5737cf528a"
+      ]
+    },
+    {
+      "id": "git:dtzziy1e",
+      "status": "already-fixed",
+      "note": "dtzziy1e lock + Curtain-heal tip (P2587b)",
+      "sources": [
+        "3df3bb0bf9"
+      ]
+    },
+    {
+      "id": "git:Smartbutton",
+      "status": "already-fixed",
+      "note": "Smartbutton battery / hybrid RX series (P2509-P2513 among others)",
+      "sources": [
+        "6a84f01bf3"
+      ]
+    },
+    {
+      "id": "git:P2760",
+      "status": "already-fixed",
+      "note": "P2760 IAS leak vs tuya twin + soil #2258",
+      "sources": [
+        "a5ea22d29d"
+      ]
+    },
+    {
+      "id": "git:ZG-106Z",
+      "status": "already-fixed",
+      "note": "ZG-106Z added in generator/multi-gang flow commit",
+      "sources": [
+        "f1c7b78c3d"
+      ]
+    },
+    {
+      "id": "johan-issue:1",
+      "status": "already-fixed",
+      "note": "historical merged/closed PR (Added LCD Temperature and Humidity Sensor); no open reliability work",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/pull/1"
+      ]
+    },
+    {
+      "id": "johan-issue:2",
+      "status": "already-fixed",
+      "note": "historical merged/closed PR (v0.0.6); no open reliability work",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/pull/2"
+      ]
+    },
+    {
+      "id": "johan-issue:3",
+      "status": "already-fixed",
+      "note": "pid-only historical request (TS0601); covered by class drivers when mfr unknown",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/3"
+      ]
+    },
+    {
+      "id": "johan-issue:4",
+      "status": "needs-info",
+      "note": "no usable mfr+pid in thread body; defer until interview/diag",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/4"
+      ]
+    },
+    {
+      "id": "johan-issue:5",
+      "status": "already-fixed",
+      "note": "couple(s) already present in drivers (_TZ3000_3ooaz3ng,_TYZB01_iuepbmpv/TS0121)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/5"
+      ]
+    }
+  ],
+  "github": {
+    "johan": {
+      "next": 6
+    },
+    "dlnraja": {
+      "next": 1
+    }
+  },
+  "note": "Full-history sweep. Forum lastPost seeded from Daily digest #557 state (2026-10-02). Items rewritten in our words; SHAs only as evidence.",
+  "lastChunk": {
+    "at": "2026-10-04T07:01:12.389Z",
+    "advanced": 5,
+    "rateLimited": false,
+    "items": [
+      {
+        "n": 1,
+        "status": "already-fixed",
+        "note": "historical merged/closed PR (Added LCD Temperature and Humidity Sensor); no open reliability work"
+      },
+      {
+        "n": 2,
+        "status": "already-fixed",
+        "note": "historical merged/closed PR (v0.0.6); no open reliability work"
+      },
+      {
+        "n": 3,
+        "status": "already-fixed",
+        "note": "pid-only historical request (TS0601); covered by class drivers when mfr unknown"
+      },
+      {
+        "n": 4,
+        "status": "needs-info",
+        "note": "no usable mfr+pid in thread body; defer until interview/diag"
+      },
+      {
+        "n": 5,
+        "status": "already-fixed",
+        "note": "couple(s) already present in drivers (_TZ3000_3ooaz3ng,_TYZB01_iuepbmpv/TS0121)"
+      }
+    ]
+  }
+}
