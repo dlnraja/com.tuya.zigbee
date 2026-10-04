@@ -1,0 +1,100 @@
+{
+  "id": "panel_switch_cover_tuya",
+  "name": {
+    "en": "Touch Panel 2 Switches + 2 Shutters (Tuya)",
+    "fr": "Panneau tactile 2 interrupteurs + 2 volets (Tuya)",
+    "nl": "Touchpaneel 2 schakelaars + 2 rolluiken (Tuya)"
+  },
+  "class": "windowcoverings",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "windowcoverings_state.c1",
+    "windowcoverings_set.c1",
+    "windowcoverings_state.c2",
+    "windowcoverings_set.c2",
+    "onoff",
+    "onoff.s2"
+  ],
+  "capabilitiesOptions": {
+    "windowcoverings_state.c1": {
+      "title": {
+        "en": "Shutter 1",
+        "fr": "Volet 1",
+        "nl": "Rolluik 1"
+      }
+    },
+    "windowcoverings_set.c1": {
+      "title": {
+        "en": "Shutter 1 position",
+        "fr": "Position volet 1",
+        "nl": "Positie rolluik 1"
+      }
+    },
+    "windowcoverings_state.c2": {
+      "title": {
+        "en": "Shutter 2",
+        "fr": "Volet 2",
+        "nl": "Rolluik 2"
+      }
+    },
+    "windowcoverings_set.c2": {
+      "title": {
+        "en": "Shutter 2 position",
+        "fr": "Position volet 2",
+        "nl": "Positie rolluik 2"
+      }
+    },
+    "onoff": {
+      "title": {
+        "en": "Switch 1",
+        "fr": "Interrupteur 1",
+        "nl": "Schakelaar 1"
+      }
+    },
+    "onoff.s2": {
+      "title": {
+        "en": "Switch 2",
+        "fr": "Interrupteur 2",
+        "nl": "Schakelaar 2"
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/panel_switch_cover_tuya/assets/images/small.png",
+    "large": "/drivers/panel_switch_cover_tuya/assets/images/large.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_rgeapp2c"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5
+        ],
+        "bindings": []
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Press and hold the first touch key (or the reset key) for about 5 seconds until the indicator blinks.",
+        "fr": "Maintenez la première touche (ou la touche reset) environ 5 secondes jusqu’à ce que le voyant clignote.",
+        "nl": "Houd de eerste toets (of de resetknop) ongeveer 5 seconden ingedrukt tot het lampje knippert."
+      }
+    }
+  },
+  "metadata": {
+    "source": "zigbee-herdsman-converters tuya.ts (Koen Kanters and contributors): _TZE200_rgeapp2c Semicom touch panel, 2 switches + 2 shutters. DP101/102 switches, DP1/4 cover action (open 0, stop 1, close 2), DP2/5 position."
+  }
+}

@@ -15,7 +15,8 @@ const TS_PID_RX = /^TS\d{3,4}[A-Z0-9]?$/i;
 /** Exotic but real Zigbee modelIds seen in interviews / Blakadder / Z2M */
 const EXOTIC_PID_RX = /^(ZG-[\w-]+|SNZB-[\w-]+|RH\d{3,4}[A-Z]?|CS-[\w-]+|SM\w{2,}|FUT\d{3}Z?|HG\d+|SMA\d+\w*|3315-S)$/i;
 
-const TUYA_MFR_RX = /^(_TZ[A-Z0-9]{1,5}_[a-zA-Z0-9]+|_TYST1[12]_[a-zA-Z0-9]+|_TYZB[0-9]+_[a-zA-Z0-9]+|TUYATEC[a-zA-Z0-9_-]*)$/i;
+// Verified long Tuya format allowed by user decision 2026-10-04 (see tools/ci/malformed-mfr-gate.js).
+const TUYA_MFR_RX = /^(_TZE28C1000000_[a-z0-9]{8}|_TZE2841000000_[a-z0-9]{8}|_TZ[A-Z0-9]{1,5}_[a-zA-Z0-9]+|_TYST1[12]_[a-zA-Z0-9]+|_TYZB[0-9]+_[a-zA-Z0-9]+|TUYATEC[a-zA-Z0-9_-]*)$/i;
 /** Brand-as-mfr exotics (HOBEIAN soil/radar, etc.) */
 const EXOTIC_MFR_RX = /^(HOBEIAN|eWeLink|LUMI|Xiaomi|IKEA|Philips|Third\s*Reality)$/i;
 
