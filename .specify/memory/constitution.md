@@ -95,3 +95,27 @@ Specs live in `specs/NNN-*/{spec,plan,tasks}.md`. This file overrides any spec/p
   .github/scripts/*) are inventoried; unused or broken ones are fixed or retired, and their
   outputs feed the ledger and SSOT (docs, workflows, automations). Done frugally with
   checkpoints.
+- W9. Alternative paths for partial native support. When a DP, cluster or attribute is not
+  fully supported natively, provide alternative paths — lower level (raw ZCL frames,
+  manufacturer-specific commands) and/or higher level (Tuya DP layer, app-side logic, polling,
+  virtual capabilities) — orchestrated with circuit breakers so a failing path self-disables.
+  Anything not native per the interviews, the Homey SDK, zigbee-clusters or the Homey docs stays
+  optional and is never mandatory for pairing.
+- W10. Self-improving, free. Scheduled GitHub Actions regularly ingest technical changes from
+  sources (Z2M/ZHA/deCONZ converters, Homey SDK/docs, forum, Johan, other apps) and turn only
+  CHANGED items (ledger W3) into SSOT/rule proposals. Everything runs free: no paid APIs, local
+  or free tiers only (AI_ALLOW_PAID=false). Extend existing workflows before adding new ones.
+- W11. Proprietary layers, local-first. Manufacturer layers on top of Zigbee (Tuya 0xEF00/0xE000/
+  0xE001, MOES, Smartlife, Legrand 0xFC01/0xFC40, Lexman/Enki, Sonoff 0xFC11/0xFC57, Xiaomi/Aqara
+  0xFCC0, IKEA, Philips 0xFC03, Schneider, …) are supported fully and locally, with no cloud
+  dependency, as optional additive layers with circuit breakers that never block pairing, and are
+  registered in the native/non-native matrix. Sources (Z2M, ZHA, deCONZ) are credited by name.
+
+## Preferences (PC harvest round 2, 2026-10-04)
+- P1. Case-insensitive everywhere (mfr/pid/lookups).
+- P2. Wi-Fi: tuya-local first, inspired by the Tuya cloud Homey apps.
+- P3. Heuristic multipliers/divisors (auto scale detection) rather than fixed values.
+- P4. Regular automatic reorganisation of files/folders.
+- P5. Always read diagnostic log IDs posted on forum/GitHub/chat.
+- P6. Branches: keep master, stable-v5 and gh-pages; merge or clean the rest only with approval.
+- P7. Communication: French, tables, action over explanation, no needless questions, continuous flow.

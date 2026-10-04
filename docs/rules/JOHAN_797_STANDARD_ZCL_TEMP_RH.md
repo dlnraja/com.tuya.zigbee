@@ -31,5 +31,5 @@ Ideas only; wording, decisions and code are ours (C1). Credits: Johan Bendz and 
 | `NTCHT02` / `Excellux` (external probe) | 1,1026,1029 (EF00 output only) | lcdtemphumidsensor_3 | covered |
 | `_TZE204_s139roas` / TS0601 (E-ink, EF00-only) | EF00 | climate_sensor | covered (DP map to confirm) |
 | `_TZ3000_1o6x1bl0` / TS0201 (0xE002 buzzer variant) | — | climate_sensor | covered; E002 path unverified |
-| `zbeacon` + `Zbeacon` / TH01 | 0,1,3,32,1026,1029 | **doorwindowsensor_4** (contact driver) | LEAD: misroute. dw4 carries climate pids (TH01, TS0201, …) for 9 mfrs; moving needs a split of dw4 without new dual couples — deferred, act on first user report (M3) |
+| `zbeacon` + `Zbeacon` / TH01 | 0,1,3,32,1026,1029 | **doorwindowsensor_4** (contact driver) | RESOLVED 2026-10-04: exact driver `temphumidsensor_zcl_th01` (zbeacon/Zbeacon + TH01); TH01 removed from dw4 pids (other dw4 climate pids remain a lead) |
 | `_TZE200_rxq4iti9` / TS0601 (EF00-only temp/RH) | 4,5,EF00,0 | **device_radiator_valve** | LEAD: upstream notes the TRV/thermostat classification came from unrelated forks; DP map unknown → keep until an interview/DP log gives the real map |

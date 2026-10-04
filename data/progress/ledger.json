@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-04T00:57:29.966Z",
+ "updated": "2026-10-04T01:03:09.261Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -5777,20 +5777,29 @@
    "kind": "brand"
   },
   "conflict:hobeian|zg-102z": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "contact_sensor",
     "sensor_contact_zigbee"
    ],
-   "kind": "brand"
+   "kind": "brand",
+   "date": "2026-10-04",
+   "note": "contact_sensor only"
   },
   "conflict:hobeian|zg-102za": {
-   "status": "pending",
+   "status": "done",
    "drivers": [
     "contact_sensor",
     "sensor_contact_zigbee"
    ],
-   "kind": "brand"
+   "kind": "brand",
+   "date": "2026-10-04",
+   "note": "contact_sensor only"
+  },
+  "conflict:hobeian|zg-102zl": {
+   "status": "done",
+   "date": "2026-10-04",
+   "note": "contact_sensor only"
   },
   "conflict:zbeacon|ts0601": {
    "status": "pending",
@@ -9474,6 +9483,38 @@
    "state": "closed",
    "comments": 1,
    "upstreamUpdatedAt": "2026-03-22T07:21:24Z"
+  },
+  "forum-post:140352/2075": {
+   "status": "pending",
+   "source": "pc-harvest-r2"
+  },
+  "forum-post:140352/2079": {
+   "status": "pending",
+   "source": "pc-harvest-r2"
+  },
+  "forum-post:140352/2082": {
+   "status": "pending",
+   "source": "pc-harvest-r2"
+  },
+  "forum-post:140352/2092": {
+   "status": "pending",
+   "source": "pc-harvest-r2"
+  },
+  "forum-post:140352/2093": {
+   "status": "pending",
+   "source": "pc-harvest-r2"
+  },
+  "forum-post:140352/2099": {
+   "status": "pending",
+   "source": "pc-harvest-r2"
+  },
+  "forum-post:140352/2120": {
+   "status": "pending",
+   "source": "pc-harvest-r2"
+  },
+  "forum-post:140352/2134": {
+   "status": "pending",
+   "source": "pc-harvest-r2"
   },
   "johan-issue:1": {
    "status": "pending",
@@ -22752,6 +22793,11 @@
     "close"
    ]
   },
+  "task:alt-paths-circuit-breakers": {
+   "status": "pending",
+   "date": "2026-10-04",
+   "note": "W9: audit non-native paths are optional + breaker-guarded"
+  },
   "task:audit-copied-text-ledger-journal": {
    "status": "done",
    "date": "2026-10-04",
@@ -22761,6 +22807,31 @@
    "status": "done",
    "date": "2026-10-04",
    "commit": "84d81e5e88"
+  },
+  "task:bleed-button_wireless_2": {
+   "status": "pending",
+   "date": "2026-10-04",
+   "note": "only where real collision"
+  },
+  "task:bleed-switch_1gang-cartesian": {
+   "status": "pending",
+   "date": "2026-10-04",
+   "note": "only where real collision"
+  },
+  "task:fix-convertBufferToNumber-u32": {
+   "status": "pending",
+   "date": "2026-10-04",
+   "note": "TuyaDataPointsZ2M int32 -> unsigned"
+  },
+  "task:forum-85-unrouted-pairs": {
+   "status": "pending",
+   "date": "2026-10-04",
+   "note": "tmp/47pairs-unrouted.txt on PC"
+  },
+  "task:interview-facts-nonnative": {
+   "status": "pending",
+   "date": "2026-10-04",
+   "note": "normalized facts 0x0021/0xFC57/0xFC00/01/03/0x1888 -> regen native matrix"
   },
   "task:johan-gap-iystcadi": {
    "status": "done",
@@ -22781,6 +22852,86 @@
    "status": "done",
    "date": "2026-10-04",
    "note": "580/580 present"
+  },
+  "task:johan-pr-port-1017": {
+   "status": "pending",
+   "date": "2026-10-04",
+   "note": "port evaluation"
+  },
+  "task:johan-pr-port-1065": {
+   "status": "pending",
+   "date": "2026-10-04",
+   "note": "port evaluation"
+  },
+  "task:johan-pr-port-1106": {
+   "status": "pending",
+   "date": "2026-10-04",
+   "note": "port evaluation"
+  },
+  "task:johan-pr-port-1121": {
+   "status": "pending",
+   "date": "2026-10-04",
+   "note": "port evaluation"
+  },
+  "task:johan-pr-port-1171": {
+   "status": "pending",
+   "date": "2026-10-04",
+   "note": "port evaluation"
+  },
+  "task:johan-pr-port-1210": {
+   "status": "pending",
+   "date": "2026-10-04",
+   "note": "port evaluation"
+  },
+  "task:johan-pr-port-1230": {
+   "status": "pending",
+   "date": "2026-10-04",
+   "note": "port evaluation"
+  },
+  "task:johan-pr-port-1237": {
+   "status": "pending",
+   "date": "2026-10-04",
+   "note": "port evaluation"
+  },
+  "task:johan-pr-port-1346": {
+   "status": "pending",
+   "date": "2026-10-04",
+   "note": "port evaluation"
+  },
+  "task:johan-pr-port-1350": {
+   "status": "pending",
+   "date": "2026-10-04",
+   "note": "port evaluation"
+  },
+  "task:johan-pr-port-1406": {
+   "status": "pending",
+   "date": "2026-10-04",
+   "note": "port evaluation"
+  },
+  "task:johan-pr-port-1428": {
+   "status": "pending",
+   "date": "2026-10-04",
+   "note": "port evaluation"
+  },
+  "task:johan-pr-port-1431": {
+   "status": "pending",
+   "date": "2026-10-04",
+   "note": "port evaluation"
+  },
+  "task:johan-pr-port-145": {
+   "status": "pending",
+   "date": "2026-10-04",
+   "note": "port evaluation"
+  },
+  "task:johan-pr-port-774": {
+   "status": "pending",
+   "date": "2026-10-04",
+   "note": "port evaluation"
+  },
+  "task:kimi-backlog": {
+   "status": "pending",
+   "date": "2026-10-04",
+   "note": "reports/kimi-2026-07-28/master-backlog-fixes.md"
   },
   "task:ledger-wire-auto-enrich-closed-loop": {
    "status": "pending",
@@ -22822,6 +22973,24 @@
    "date": "2026-10-03",
    "note": "wire shouldProcess/record into tuya-deep-diag.yml scripts"
   },
+  "task:new-heiman-rc-ef-3.0": {
+   "status": "pending",
+   "date": "2026-10-04"
+  },
+  "task:new-ihorn-lh02121": {
+   "status": "pending",
+   "date": "2026-10-04",
+   "note": "IAS; scope check (#925)"
+  },
+  "task:new-signify-rdm001": {
+   "status": "pending",
+   "date": "2026-10-04"
+  },
+  "task:new-sonoff-mini-zbrbs": {
+   "status": "pending",
+   "date": "2026-10-04",
+   "note": "curtain"
+  },
   "task:next-01": {
    "status": "pending",
    "note": "Johan branch gaps (docs/rules/JOHAN_BRANCHES_2026-10-03.md): _TZ3000_o9f2zqln TS0207 rain, _TZ3210_iystcadi TS0505A, _TZ3000_p26flek3 TS0001 relay (on climate_sensor) — read source interviews, then exact drivers; port to stable/bastien"
@@ -22853,6 +23022,31 @@
   "task:next-08": {
    "status": "pending",
    "note": "open: _TZE200_locansqn epoch 2000 vs 1970 — needs >=2 sources"
+  },
+  "task:pair-2uollq9d-ts011f": {
+   "status": "pending",
+   "date": "2026-10-04",
+   "note": "verify then plug driver"
+  },
+  "task:pair-ewelight-ts0502b": {
+   "status": "pending",
+   "date": "2026-10-04",
+   "note": "verify then light"
+  },
+  "task:pair-nuenzetq-ts0002": {
+   "status": "pending",
+   "date": "2026-10-04",
+   "note": "verify then switch_2gang"
+  },
+  "task:pair-zbeacon-ts0001": {
+   "status": "pending",
+   "date": "2026-10-04",
+   "note": "only if confirmed"
+  },
+  "task:pair-zbeacon-ts0505b": {
+   "status": "pending",
+   "date": "2026-10-04",
+   "note": "verify then light"
   },
   "task:polysemic-dp-engine": {
    "status": "pending",
@@ -22996,6 +23190,11 @@
    "date": "2026-10-04",
    "note": "research: Z2M ME167/TRV06 family (EARU TRV06 whitelabel) + ZHA tuya_trv quirk => TRV; current placement device_radiator_valve is correct, lead closed"
   },
+  "task:self-improving-ingest": {
+   "status": "pending",
+   "date": "2026-10-04",
+   "note": "W10: audit existing ingest workflows (z2m/zha/deconz/sdk/forum/johan) and wire to ledger changed-only proposals; extend, do not duplicate"
+  },
   "task:stable-port-1298-1113": {
    "status": "pending",
    "date": "2026-10-04",
@@ -23006,6 +23205,56 @@
    "status": "pending",
    "date": "2026-10-04",
    "note": "W8: inventory scripts/tools/.github/scripts, find unused/broken, feed outputs into ledger/SSOT"
+  },
+  "task:w11-proprietary-layers-inventory": {
+   "status": "pending",
+   "date": "2026-10-04",
+   "note": "inventory mfr-specific clusters, research missing, optional layers + matrix"
+  },
+  "task:w4-multi-_tz3000_gjnozsaz": {
+   "status": "pending",
+   "date": "2026-10-04",
+   "note": "research with conflict sweep"
+  },
+  "task:w4-multi-_tz3000_j1v25l17": {
+   "status": "pending",
+   "date": "2026-10-04",
+   "note": "research with conflict sweep"
+  },
+  "task:w4-multi-_tze200_ntcy3xu1": {
+   "status": "pending",
+   "date": "2026-10-04",
+   "note": "research with conflict sweep"
+  },
+  "task:w4-multi-_tze204_dcnsggvz": {
+   "status": "pending",
+   "date": "2026-10-04",
+   "note": "research with conflict sweep"
+  },
+  "task:w4-multi-_tze204_n9ctkb6j": {
+   "status": "pending",
+   "date": "2026-10-04",
+   "note": "research with conflict sweep"
+  },
+  "task:w5-required-clusters-52": {
+   "status": "pending",
+   "date": "2026-10-04",
+   "note": "PC r2: 52 drivers whose required clusters exceed interviews -> keep interview clusters required, rest optional (w5_requires_missing.md)"
+  },
+  "task:zbeacon-th01": {
+   "status": "done",
+   "date": "2026-10-04",
+   "note": "exact driver temphumidsensor_zcl_th01; TH01 dropped from doorwindowsensor_4"
+  },
+  "task:zg102z-za-dual": {
+   "status": "done",
+   "date": "2026-10-04",
+   "note": "HOBEIAN ZG-102Z/ZA only on contact_sensor"
+  },
+  "task:zg102zl-3-mfrs": {
+   "status": "done",
+   "date": "2026-10-04",
+   "note": "ijey4q29/ykglasuj/kf2hbko4 climate_sensor -> contact_sensor_zigbee"
   }
  }
 }
