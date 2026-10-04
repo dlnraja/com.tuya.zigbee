@@ -89,7 +89,7 @@
  },
  "master_queue": {
   "note": "Single master checklist of ALL user requests since the start. Daily resumption reads this FIRST. Tick (verified) only after verification.",
-  "updated": "2026-10-04T01:24:23.344Z",
+  "updated": "2026-10-04T01:51:12.062Z",
   "items": [
    {
     "id": 1,
@@ -329,7 +329,7 @@
     "id": 40,
     "item": "PCr2-3 5 couples in two drivers (gjnozsaz, j1v25l17, ntcy3xu1, n9ctkb6j, dcnsggvz)",
     "status": "verified",
-    "evidence": "master 514c4df7ad, stable 78bf4a93af, bastien 9918e8c2dd; fp 0 new; stable publish in next grouped batch"
+    "evidence": "master 514c4df7ad, stable 78bf4a93af published via run 37168670987, bastien 9918e8c2dd"
    },
    {
     "id": 41,
@@ -340,8 +340,8 @@
    {
     "id": 42,
     "item": "PCr2-5 energy counter unsigned 32-bit",
-    "status": "in-progress",
-    "evidence": "master 7f385e04c3 (16 tests pass); stable/bastien port pending in next grouped batch"
+    "status": "verified",
+    "evidence": "master fcc5b6f044 published 9.0.1323 (run 37168606588 success); stable af8596d57b run 37168670987 success; bastien c31b02a49c"
    },
    {
     "id": 43,
@@ -406,8 +406,8 @@
    {
     "id": 53,
     "item": "Next grouped stable publish: 78bf4a93af + port of signed/unsigned DP decoding (7f385e04c3)",
-    "status": "pending",
-    "evidence": ""
+    "status": "verified",
+    "evidence": "stable af8596d57b (DP fix + 2uollq9d + nuenzetq + dual couples 78bf4a93af) run 37168670987 success"
    },
    {
     "id": 54,
@@ -604,8 +604,8 @@
    {
     "id": 86,
     "item": "Decision A: AI quota guard in ai-helper (paid flag ignored, 429/402/quota -> provider off for the UTC day, persisted) + R2/R13",
-    "status": "in-progress",
-    "evidence": "code done locally, commit pending"
+    "status": "verified",
+    "evidence": "fcc5b6f044 ai-helper quota guard + test/ai-quota-guard.test.js; published 9.0.1323"
    },
    {
     "id": 87,
@@ -627,7 +627,7 @@
    },
    {
     "id": 90,
-    "item": "R20 identifier normalization: research Homey SDK/zigbee-clusters/homey-zigbeedriver, Z2M, ZHA, deCONZ, SmartThings matching; single normalizer at read/match; keep originals; gate for colliding normalized couples/malformed; never break current matches",
+    "item": "R20 identifier normalization: research Homey SDK/zigbee-clusters/homey-zigbeedriver, Z2M, ZHA, deCONZ, SmartThings matching; single normalizer at read/match; keep originals; gate for colliding normalized couples/malformed; never break current matches | clarified: respect each field format (no blanket transform); audit hidden case/char collisions across drivers and mfr reported with different case/padding; tolerant comparison only at match time",
     "status": "pending",
     "evidence": ""
    },
@@ -639,12 +639,12 @@
    }
   ],
   "next": [
-   "PCr2-1 10 missing devices (verify each couple online)",
+   "R20 audit: hidden case/char collisions + tolerant matcher (research Homey/Z2M/ZHA/deCONZ/ST first)",
+   "PCr2-1 remaining exact drivers (RC-EF-3.0, LH02121, MINI-ZBRBS, RDM001); port Zbeacon drivers to stable",
    "PCr2-2 52 drivers required/optional clusters",
    "PCr2-4 Green Power + proprietary clusters -> native matrix",
-   "port DP decoding to stable/bastien + grouped stable publish",
-   "flow cards completion",
-   "ledger wiring into workflows"
+   "r4-2/r4-4 button mode + TS0041 scene toggle",
+   "flow cards completion; ledger wiring into workflows"
   ],
   "user_actions": [
    "Rotate/revoke the Gmail app password and old GitHub PAT seen in clear text in July opencode/MiniMax prompts (not for agents)"
@@ -654,6 +654,24 @@
    "B": "GitOps only as draft PRs on own repo, no auto-merge, no issue/comment posting; gates decide; batched publishing",
    "C": "Deleting comments on Johan repo: not done, manual user action",
    "D": "Blind HOBEIAN cross-product rejected; verified couples only"
-  }
+  },
+  "publishes": [
+   {
+    "date": "2026-10-04T04:55+02:00",
+    "branch": "master",
+    "commit": "fcc5b6f044",
+    "run": 37168606588,
+    "version": "9.0.1323",
+    "result": "success"
+   },
+   {
+    "date": "2026-10-04T04:50+02:00",
+    "branch": "stable-v5",
+    "commit": "af8596d57b",
+    "run": 37168670987,
+    "version": "stable app.json 5.12.359 (Test promotion succeeded)",
+    "result": "success"
+   }
+  ]
  }
 }
