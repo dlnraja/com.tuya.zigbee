@@ -104,8 +104,8 @@ async onInit() {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           // Generic action handler
-          this.log('[FLOW] Action thermostat_tuya_dp_set_mode triggered for', args.device.getName());
-          return true;
+          // #113: real effect through the device's own capability listener when one matches.
+          return require('../../lib/flow/PlaceholderActionWiring').run(this, 'thermostat_tuya_dp_set_mode', args);
         });
       }
     } catch (err) { if (this.developerDebugMode) { this.error(`Action thermostat_tuya_dp_set_mode: ${err.message}`); } }
@@ -116,8 +116,8 @@ async onInit() {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           // Generic action handler
-          this.log('[FLOW] Action thermostat_tuya_dp_increase_temperature triggered for', args.device.getName());
-          return true;
+          // #113: real effect through the device's own capability listener when one matches.
+          return require('../../lib/flow/PlaceholderActionWiring').run(this, 'thermostat_tuya_dp_increase_temperature', args);
         });
       }
     } catch (err) { if (this.developerDebugMode) { this.error(`Action thermostat_tuya_dp_increase_temperature: ${err.message}`); } }
@@ -128,8 +128,8 @@ async onInit() {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           // Generic action handler
-          this.log('[FLOW] Action thermostat_tuya_dp_decrease_temperature triggered for', args.device.getName());
-          return true;
+          // #113: real effect through the device's own capability listener when one matches.
+          return require('../../lib/flow/PlaceholderActionWiring').run(this, 'thermostat_tuya_dp_decrease_temperature', args);
         });
       }
     } catch (err) { if (this.developerDebugMode) { this.error(`Action thermostat_tuya_dp_decrease_temperature: ${err.message}`); } }
@@ -140,8 +140,8 @@ async onInit() {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           // Generic action handler
-          this.log('[FLOW] Action thermostat_tuya_dp_set_child_lock triggered for', args.device.getName());
-          return true;
+          // #113: real effect through the device's own capability listener when one matches.
+          return require('../../lib/flow/PlaceholderActionWiring').run(this, 'thermostat_tuya_dp_set_child_lock', args);
         });
       }
     } catch (err) { if (this.developerDebugMode) { this.error(`Action thermostat_tuya_dp_set_child_lock: ${err.message}`); } }
