@@ -86,5 +86,323 @@
    "31d83786f9 (o9f2zqln, p26flek3)",
    "c5ccf1c00e (TH01 driver, ZG-102Z/ZA, 3 mfrs)"
   ]
+ },
+ "master_queue": {
+  "note": "Single master checklist of ALL user requests since the start. Daily resumption reads this FIRST. Tick (verified) only after verification.",
+  "updated": "2026-10-04T01:13:32.497Z",
+  "items": [
+   {
+    "id": 1,
+    "item": "W1 dedicated worktrees, rebase before push",
+    "status": "verified",
+    "evidence": "exec-wt/exec-stable/exec-bastien in use"
+   },
+   {
+    "id": 2,
+    "item": "W2 resumable checkpoints, never skip",
+    "status": "verified",
+    "evidence": "resume-checkpoint + ledger"
+   },
+   {
+    "id": 3,
+    "item": "W3 progress ledger + journal, read before / record after",
+    "status": "in-progress",
+    "evidence": "ledger+journal+CLI exist; wired into johan scanner only; other workflows pending (item 7)"
+   },
+   {
+    "id": 4,
+    "item": "W4 conflict research per couple (702 couples)",
+    "status": "in-progress",
+    "evidence": "done: 4uuaja4a, HOBEIAN ZG-102Z/ZA/ZL; rest pending in ledger conflict:*"
+   },
+   {
+    "id": 5,
+    "item": "W5 interview = minimum; only interview clusters required",
+    "status": "pending",
+    "evidence": "52 drivers audit (PC r2 action 1)"
+   },
+   {
+    "id": 6,
+    "item": "W6 never degrade; dynamic additive enrichment",
+    "status": "in-progress",
+    "evidence": "applied to all moves; audit pending"
+   },
+   {
+    "id": 7,
+    "item": "W7 polysemic DPs per couple/firmware",
+    "status": "pending",
+    "evidence": "task:polysemic-dp-engine"
+   },
+   {
+    "id": 8,
+    "item": "W8 reuse own scripts/tools; inventory unused/broken",
+    "status": "pending",
+    "evidence": "task:tooling-inventory"
+   },
+   {
+    "id": 9,
+    "item": "W9 alternative low/high-level paths with circuit breakers",
+    "status": "pending",
+    "evidence": "task:alt-paths-circuit-breakers"
+   },
+   {
+    "id": 10,
+    "item": "W10 self-improving free ingestion workflows",
+    "status": "pending",
+    "evidence": "task:self-improving-ingest"
+   },
+   {
+    "id": 11,
+    "item": "W11 proprietary layers local-first + matrix",
+    "status": "pending",
+    "evidence": "task:w11-proprietary-layers-inventory"
+   },
+   {
+    "id": 12,
+    "item": "Couples everywhere (mfr+pid+fw) in research and decisions",
+    "status": "in-progress",
+    "evidence": "standing practice"
+   },
+   {
+    "id": 13,
+    "item": "P1 case-insensitive everywhere",
+    "status": "in-progress",
+    "evidence": "standing"
+   },
+   {
+    "id": 14,
+    "item": "P2 Wi-Fi tuya-local first",
+    "status": "pending",
+    "evidence": ""
+   },
+   {
+    "id": 15,
+    "item": "P3 heuristic divisors (SmartDivisorManager)",
+    "status": "in-progress",
+    "evidence": "exists; audit pending"
+   },
+   {
+    "id": 16,
+    "item": "P4 regular automatic file reorganisation",
+    "status": "pending",
+    "evidence": ""
+   },
+   {
+    "id": 17,
+    "item": "P5 read diag log IDs from forum/GitHub/chat",
+    "status": "in-progress",
+    "evidence": "diag workflows exist"
+   },
+   {
+    "id": 18,
+    "item": "P6 branches: keep master/stable-v5/gh-pages, clean rest with approval",
+    "status": "pending",
+    "evidence": "needs approval"
+   },
+   {
+    "id": 19,
+    "item": "P7 communication FR, tables, action",
+    "status": "in-progress",
+    "evidence": "reporting style"
+   },
+   {
+    "id": 20,
+    "item": "Publish fixes 2026-10-04 (stable fp collision, master P2518)",
+    "status": "verified",
+    "evidence": "1142e94d59 / 72ed541dd6; runs 37165678667 + 37165886836 success"
+   },
+   {
+    "id": 21,
+    "item": "JohanBendz #1298 contact+lux",
+    "status": "verified",
+    "evidence": "bca6ae7052; published 9.0.1322"
+   },
+   {
+    "id": 22,
+    "item": "JohanBendz #1113 ambiguous SNZB-03 zoneType driver",
+    "status": "verified",
+    "evidence": "88b3584cf6 + 72ed541dd6; published 9.0.1322"
+   },
+   {
+    "id": 23,
+    "item": "Ledger/journal creation",
+    "status": "verified",
+    "evidence": "97a954cfa7"
+   },
+   {
+    "id": 24,
+    "item": "Queue1 audit copied text (ledger/journal/index titles)",
+    "status": "verified",
+    "evidence": "8b2395231c"
+   },
+   {
+    "id": 25,
+    "item": "Queue2 johan-mail-index cross-check 580",
+    "status": "verified",
+    "evidence": "all present"
+   },
+   {
+    "id": 26,
+    "item": "Queue3 Johan gaps o9f2zqln/p26flek3/iystcadi",
+    "status": "verified",
+    "evidence": "31d83786f9 (iystcadi TS0505A deferred)"
+   },
+   {
+    "id": 27,
+    "item": "Queue4 zbeacon TH01 + rxq4iti9",
+    "status": "verified",
+    "evidence": "c5ccf1c00e; rxq4iti9=TRV correct"
+   },
+   {
+    "id": 28,
+    "item": "Queue5 ZG-102Z/ZA dual + 3 ZG-102ZL mfrs",
+    "status": "verified",
+    "evidence": "c5ccf1c00e"
+   },
+   {
+    "id": 29,
+    "item": "Grouped stable port of 31d83786f9+c5ccf1c00e",
+    "status": "verified",
+    "evidence": "stable 1d06791f0d run 37166982598 success (5.12.360, promoted Test); bastien 4dad4c4bf3"
+   },
+   {
+    "id": 30,
+    "item": "Queue6 PC harvest r1: pid-only drivers, fp typos, EF00 setTimeout, agent-rules gen, auto-post guard",
+    "status": "in-progress",
+    "evidence": "done locally, commit pending"
+   },
+   {
+    "id": 31,
+    "item": "Queue7 ledger wiring forum-poll/fleet-enrich/auto-enrich/fetch-diags/gmail-diagnostics",
+    "status": "pending",
+    "evidence": ""
+   },
+   {
+    "id": 32,
+    "item": "Queue8 spec 003 T1 + spec 004 callers",
+    "status": "pending",
+    "evidence": ""
+   },
+   {
+    "id": 33,
+    "item": "Queue9 lazy-load app.json data (size 3.70/4.00 MB)",
+    "status": "pending",
+    "evidence": ""
+   },
+   {
+    "id": 34,
+    "item": "Queue10 forum leads (AY-303Z DP109, ZG-106Z, ZG253 valve, MTG075, Peter History tab), Wi-Fi leftovers, 31 stable tests, workflow consolidation",
+    "status": "pending",
+    "evidence": ""
+   },
+   {
+    "id": 35,
+    "item": "Queue11 deep-read sweep Johan #1.. then dlnraja",
+    "status": "pending",
+    "evidence": "done: 797,1298,1113,1475,1008; 925 deferred"
+   },
+   {
+    "id": 36,
+    "item": "_TZE200_locansqn epoch 2000 vs 1970 (needs 2 sources)",
+    "status": "pending",
+    "evidence": ""
+   },
+   {
+    "id": 37,
+    "item": "Stable grouped publish approvals",
+    "status": "in-progress",
+    "evidence": "user authorized 2026-10-04"
+   },
+   {
+    "id": 38,
+    "item": "PCr2-1 the 10 missing devices (2uollq9d TS011F, nuenzetq TS0002, Zbeacon TS0505B, eWeLight TS0502B, Zbeacon TS0001, MINI-ZBRBS, RDM001, RC-EF-3.0, LH02121, +)",
+    "status": "pending",
+    "evidence": "user priority 1"
+   },
+   {
+    "id": 39,
+    "item": "PCr2-2 52 drivers: required clusters -> optional beyond interview",
+    "status": "pending",
+    "evidence": "user priority 2"
+   },
+   {
+    "id": 40,
+    "item": "PCr2-3 5 couples in two drivers (gjnozsaz, j1v25l17, ntcy3xu1, n9ctkb6j, dcnsggvz)",
+    "status": "pending",
+    "evidence": "user priority 3"
+   },
+   {
+    "id": 41,
+    "item": "PCr2-4 Green Power 0x0021 + 0xFC57/0xFC00/01/03/0x1888 facts -> native matrix",
+    "status": "pending",
+    "evidence": "user priority 4"
+   },
+   {
+    "id": 42,
+    "item": "PCr2-5 energy counter unsigned 32-bit",
+    "status": "in-progress",
+    "evidence": "convertBufferToNumber + counterSafeRaw on meter_* (local, tests pass)"
+   },
+   {
+    "id": 43,
+    "item": "PCr2 Johan PRs to port (#1406,#1346,#1121,#1017,#1065,#1106,#1237,#1210,#774,#1431,#1428,#1350,#1230,#1171,#145)",
+    "status": "pending",
+    "evidence": "ledger task:johan-pr-port-*"
+   },
+   {
+    "id": 44,
+    "item": "PCr2 forum T140352 items (#2134,#2079,#2082,#2099,#2075,#2120,#2092/#2093) + 85 unrouted pairs",
+    "status": "pending",
+    "evidence": "ledger forum-post:*"
+   },
+   {
+    "id": 45,
+    "item": "PCr2 Kimi backlog",
+    "status": "pending",
+    "evidence": ""
+   },
+   {
+    "id": 46,
+    "item": "PCr2 bleed button_wireless_2 / switch_1gang cartesian (only real collisions)",
+    "status": "pending",
+    "evidence": ""
+   },
+   {
+    "id": 47,
+    "item": "PC harvest round 3",
+    "status": "pending",
+    "evidence": "not yet received/read"
+   },
+   {
+    "id": 48,
+    "item": "Flow cards completion inspired by other apps (credits)",
+    "status": "pending",
+    "evidence": "task:flow-cards-complete"
+   },
+   {
+    "id": 49,
+    "item": "Proprietary layers inventory/implementation",
+    "status": "pending",
+    "evidence": "= W11"
+   },
+   {
+    "id": 50,
+    "item": "Workflows: self-improving + consolidation",
+    "status": "pending",
+    "evidence": "= W10 + queue10"
+   },
+   {
+    "id": 51,
+    "item": "Size: app.json lazy-load",
+    "status": "pending",
+    "evidence": "= queue9"
+   },
+   {
+    "id": 52,
+    "item": "Specs 003/004/005/007/009 remaining tasks",
+    "status": "pending",
+    "evidence": "see specs/*/tasks.md"
+   }
+  ]
  }
 }

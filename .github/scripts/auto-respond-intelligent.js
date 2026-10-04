@@ -27,6 +27,7 @@ async function processIssue(context) {
     console.log(`🎯 Detected pattern: ${analysis.pattern} (confidence: ${analysis.confidence}%)`);
     
     // Post intelligent response
+    require('../../scripts/lib/post-guard').assertPostAllowed('github-comment');
     await context.octokit.issues.createComment({
       owner: context.repo.owner,
       repo: context.repo.repo,
@@ -64,6 +65,7 @@ async function processPullRequest(context) {
     console.log(`🎯 PR relates to known bug pattern: ${analysis.pattern}`);
     
     // Comment with context about the bug
+    require('../../scripts/lib/post-guard').assertPostAllowed('github-comment');
     await context.octokit.issues.createComment({
       owner: context.repo.owner,
       repo: context.repo.repo,

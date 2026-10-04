@@ -54,6 +54,9 @@ Specs live in `specs/NNN-*/{spec,plan,tasks}.md`. This file overrides any spec/p
   never run `git checkout -- .`/`git clean` in a shared checkout.
 - W2. Long queues keep a resumable checkpoint in `data/leads/resume-checkpoint.json`;
   items are deferred, never skipped.
+  Its `master_queue` is the single checklist of every user request since the start
+  (rules, queues, harvests, forum, Johan, flows, conflicts, layers, workflows, size, specs);
+  every daily resumption reads it FIRST, and an item is ticked `verified` only with evidence.
 - W3. Progress ledger (nothing is done twice). `data/progress/ledger.json` is the machine SSOT:
   key `<namespace>:<id>` (johan-issue:N, dlnraja-issue:N, forum-post:T/P, diag:<hash>,
   task:<id>, …) → status (pending | in-progress | deferred | done | skipped-not-applicable),
