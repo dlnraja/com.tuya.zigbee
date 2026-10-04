@@ -1087,6 +1087,17 @@
         "run": 37179413932,
         "sha": "8ad4efa5fe",
         "note": "grouped stable publish (spec010 baseline + 5 runtime holes fixed); 5.12.365 still draft at 07:16"
+      },
+      {
+        "at": "2026-10-04T07:26+02:00",
+        "branch": "stable-v5",
+        "version": "5.12.365",
+        "note": "verified on public Test page (build #277 promoted)"
+      },
+      {
+        "at": "2026-10-04T07:26+02:00",
+        "branch": "master",
+        "note": "Auto-Publish 37178684262 (3c6cb2a480) still in progress; 37178968222 cancelled (superseded); 37179604880 (27520a280c) pending; Test page 9.0.1330"
       }
     ],
     "rules_reporting": "Every report includes a French 'Découvertes' section (source link + author, mechanism/symptom, what we did or why not); append to docs/progress/DISCOVERIES.md"
