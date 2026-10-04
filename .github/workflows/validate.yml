@@ -76,6 +76,9 @@ jobs:
       - name: ⏱️ Homey Timer Context Guard
         run: npm run check:timer-context
 
+      - name: 🕵️ Agent-config hidden-text gate (P2800, no AI)
+        run: npm run check:p2800
+
       - name: 📦 Get App Info
         id: info
         run: |
