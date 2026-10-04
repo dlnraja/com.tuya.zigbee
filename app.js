@@ -5,6 +5,10 @@ require('./lib/suppress-punycode');
 
 const Homey = require('homey');
 
+// Time cluster attributes, finite transition durations and the dim read-back fix from newer
+// Athom libraries, applied before any driver creates a ZCL node (see lib/zigbee/ZigbeeLibBackports).
+try { require('./lib/zigbee/ZigbeeLibBackports').apply(); } catch (_) { /* best-effort */ }
+
 // WHY(P2306/P2351/P2373): Homey flow serializer can embed foreign driver URIs
 // (Hue ZG9101SAC_HP, virtualdriverzigbee) OR Homey class names (`light`).
 // ManagerDrivers.getDriver throws "Invalid Driver ID" and crashes the whole
