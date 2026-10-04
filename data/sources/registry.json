@@ -120,6 +120,19 @@
       "credit": "Jason Rumney (make-all) and tuya-local contributors"
     },
     {
+      "id": "ha-tuya-device-handlers",
+      "type": "github",
+      "repo": "home-assistant-libs/tuya-device-handlers",
+      "branch": "main",
+      "paths": [
+        "src/tuya_device_handlers/devices"
+      ],
+      "issues": false,
+      "cadence": "weekly",
+      "kind": "converters",
+      "credit": "Home Assistant libs / tuya-device-handlers contributors (MIT): cloud product_id quirks used by the HA Tuya integration (Wi-Fi side)"
+    },
+    {
       "id": "blakadder",
       "type": "github",
       "repo": "blakadder/zigbee",
