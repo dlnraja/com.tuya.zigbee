@@ -757,22 +757,22 @@
       {
         "id": 110,
         "item": "x-scan (c): DP quirks — signed int32 #12646, TRV calibration >5.5C #12472, Moes calibration time ENUM8->UINT16 #12619, TS011F_plug_1 current scale #12817, _TZ3008_reatplte scale #12545, polling _TZ3000_9ni6xxld #12460, stale states #12431, optional per-device time sync #13004",
-        "status": "pending",
-        "evidence": "Z2M 2.14.0-2.14.2 release notes",
+        "status": "in_progress",
+        "evidence": "done: signed int32 VALUE in TuyaManufacturerCluster + dp-parser-enhanced (#12646); per-attribute scaling read fallback (#12545); TS011F 1:1 current ratio not trusted (#12817). verified already OK: localTempCalibration1-5 use 0x7FFFFFFF threshold (#12472), Moes calibrationTime is uint16 (#12619). pending: #12431 dimmer reporting max 0 (_TZE28C1000000_68utemio), #13004 per-device time-sync opt-out setting, #12460 is only an appVersion fingerprint (handled with #109 placement of _TZ3000_9ni6xxld)",
         "origin": "user 2026-10-04 04:22/04:27"
       },
       {
         "id": 111,
         "item": "x-scan (d): verify no code truncates or prefix-matches long _TZE28C1000000_/_TZE2841000000_ names (DeviceFingerprintDB, fp shards, normalizers)",
-        "status": "pending",
-        "evidence": "REPORT.md §2.1",
+        "status": "done",
+        "evidence": "verified: DeviceFingerprintDB exact+case-insensitive lookups resolve long names, no truncation (test/long-tuya-names.test.js); MVM curtain/valve EF00 detection extended to long names (13978becda)",
         "origin": "user 2026-10-04 04:22/04:27"
       },
       {
         "id": 112,
         "item": "x-scan (e): firmware compose compatibility >=13.2 where OTA used + FAQ: unavailable after Homey 13.5 (EmberZNet 9.1) -> wake or re-pair",
-        "status": "pending",
-        "evidence": "apps.developer.homey.app zigbee-firmware-updates; forum 13.5.0",
+        "status": "done",
+        "evidence": "docs/user/FAQ_ZIGBEE_UPDATES.md en+fr + README link; TRV firmware changelog already states Homey>=13.2; app compatibility kept >=12.2.0 on purpose (raising it would drop 12.x users; Homey ignores firmware files below 13.2)",
         "origin": "user 2026-10-04 04:22/04:27"
       }
     ],
