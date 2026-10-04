@@ -876,7 +876,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
                 this.safeSetCapabilityValue('measure_battery', battery).catch(() => {});
               }
             } else if (attrs?.batteryVoltage && !this.getCapabilityValue('measure_battery')) {
-              const battery = Math.min(100, Math.max(0, Math.round(attrs.batteryVoltage - safeMultiply(20, 10))));
+              const battery = Math.min(100, Math.max(0, Math.round((attrs.batteryVoltage - 20) * 10)));
               this.log(`[RADAR] ðŸ”‹ Battery voltage: ${attrs.batteryVoltage/10}V -> ${battery}%`);
               this.safeSetCapabilityValue('measure_battery', battery).catch(() => {});
             }

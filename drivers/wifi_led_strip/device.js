@@ -49,7 +49,7 @@ class WiFiLedStripDevice extends TuyaLocalDevice {
   }
 
   async _sendColor() {
-    const h = Math.round((this.getCapabilityValue('light_hue') || safeMultiply(0), 360));
+    const h = Math.round((this.getCapabilityValue('light_hue') || 0) * 360);
     const s = Math.round((this.getCapabilityValue('light_saturation') || 1) * 1000);
     const v = Math.round((this.getCapabilityValue('dim') || 1) * 1000);
     const hsv = h.toString(16).padStart(4, '0') + s.toString(16).padStart(4, '0') + v.toString(16).padStart(4, '0');
@@ -62,12 +62,12 @@ class WiFiLedStripDevice extends TuyaLocalDevice {
     if (dps['24'] && typeof dps['24'] === 'string' && dps['24'].length >= 12) {
       try {
         const hex = dps['24'];
-        const h = parseInt(hex.substring(0, safeMultiply(4), 16));
-        const s = parseInt(hex.substring(4, safeMultiply(8), 16));
-        const v = parseInt(hex.substring(8, safeMultiply(12), 16));
+        const h = parseInt(hex.substring(0, 4), 16);
+        const s = parseInt(hex.substring(4, 8), 16);
+        const v = parseInt(hex.substring(8, 12), 16);
         if (h >= 0 && h <= 360 && s >= 0 && s <= 1000 && v >= 0 && v <= 1000) {
-          this.safeSetCapabilityValue('light_hue', safeMultiply(h, 360)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
-          this.safeSetCapabilityValue('light_saturation', s * 1000).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+          this.safeSetCapabilityValue('light_hue', h / 360).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+          this.safeSetCapabilityValue('light_saturation', s / 1000).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
           this.log(`[WIFI-LED] DP24 color H=${  h  } S=${  s  } V=${  v}`);
         }
       } catch (e) { /* ignore */ }
