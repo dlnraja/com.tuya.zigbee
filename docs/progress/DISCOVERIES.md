@@ -26,3 +26,14 @@ Each entry: source (link + author), mechanism / symptom, what we did (or why not
 - Sources: https://homey.app/en-us/news/homey-is-now-available-in-chatgpt/ (Athom, June 2026); support.homey.app article 27950286160540; community.homey.app t/155885 (Astrap, 2026-06-07: `droptoken` string instead of array breaks list_flow_action_cards) and t/145181 post 105 (B4ZZY, 2026-09-05: dropdown value `title: null` breaks list_flow_trigger_cards); apps.developer.homey.app/the-basics/flow/arguments (dropdown values are `{ id, title }`).
 - Mechanism: the MCP server validates the whole flow-card catalogue of the Homey against a strict schema; one bad card from any installed app makes the whole list call fail, so the assistant can no longer build flows for that user. Our app had 38 dropdown values (12 app-level cards: capability_anomaly, capability_trend, capability_crossed_threshold, child_lock_*, gang_*, backlight_set, soft_* ...) written as `{ id, label }` without `title` -> they surface as `title: null`, the exact failure B4ZZY reported.
 - What we did: added `title` (same text as `label`, kept `label`) to those 38 values; new gate `tools/ci/flow-mcp-shape-gate.js` (dropdown titles, droptoken arrays, title.en) wired into `check:flows-publish`, with test. Stable branch scanned: clean.
+
+## 2026-10-04 — First change-driven pass over all registered sources (25 sources)
+- Sources: data/sources/registry.json (Z2M converters/issues/device pages, ZHA quirks + ZHA, deCONZ, localtuya x2, tuya-local, Blakadder, SmartThings Edge (Mariano), Hubitat (kkossev), Jeedom Abeille, HOMEd, athombv x3, Johan + forks, Homey forum, Homey SDK docs/news/app store, Tuya docs).
+- Mechanism: per source a cursor (commit sha per path, issues updated-since, forum highest post, page hash) in data/sources/state.json; the next run only reads the diff (GitHub compare API: added lines only), new/updated issues, new posts, or a changed hash. Baseline run: 38 API calls, 116 proposals.
+- Couples not yet in our app, all TS0601/TS0002/TS1201 (to research before landing, W4):
+  - `_TZE204_r6kfl9ta` / TS0601 — Tuya ZY-N1 noise sensor, DPs 1,2,8,16,18,20,22,101 (zigpy/zha-device-handlers PR #5386 by kgws, open).
+  - `_TZE284_rzdkn5rx` / TS0601 — Zemismart ZN2S-US01U-ZK, DPs 19,29,209,210 (zha-device-handlers PR #5387 by zemismart-dev, open).
+  - `_TZ3290_qazgdsae` / TS1201 — Zemismart ZBCIR01 IR blaster, Zosung protocol (zha-device-handlers PR #5282 by raspberry-tips, open).
+  - `_TZE284_oa1odmga` / TS0601 — reported without exposes (Koenkk/zigbee2mqtt #32498 by nach9696 closed, #33117 by the-satorugojo open).
+  - `_TZ3210_jqg2a5yn` / TS0002 — 2-gang relay report (Koenkk/zigbee2mqtt #32627 by lucasbissaro, closed).
+- What we did: proposals stored in data/leads/source-proposals.json; daily run wired into free-scrape-crossref.yml (existing workflow, no new one) and into external-sources-scanner.js. Landing each couple needs the usual research + exact-pair decision.

@@ -1,0 +1,140 @@
+{
+  "sources": {
+    "z2m-converters": {
+      "lastSha": "4dc441196c31d08849bd3d114b3cf2a52c056dec",
+      "checkedAt": "2026-10-04T02:18:49.176Z",
+      "lastError": null
+    },
+    "z2m-issues": {
+      "lastSha": "344b6e03b43644c97154a72ca9eae17193c553a2",
+      "issuesSince": "2026-09-29T00:05:50Z",
+      "checkedAt": "2026-10-04T02:18:50.172Z",
+      "lastError": null
+    },
+    "z2m-device-pages": {
+      "lastSha": "e44bcd8c7058f957c221c9169e38443cb1901093",
+      "checkedAt": "2026-10-04T02:18:51.167Z",
+      "lastError": null
+    },
+    "zha-quirks": {
+      "lastSha": "55319bd14be7b5e782c585c31f528d9f90ce431e",
+      "issuesSince": "2026-10-01T04:34:16Z",
+      "checkedAt": "2026-10-04T02:18:52.176Z",
+      "lastError": null
+    },
+    "zha": {
+      "lastSha": "f3eb54c0fa425177977d4424f83f464d6953f1e3",
+      "checkedAt": "2026-10-04T02:18:52.596Z",
+      "lastError": null
+    },
+    "deconz": {
+      "lastSha": "a4c17adfa04abc63637ad17de7f85256a825a2cb",
+      "issuesSince": "2026-10-03T16:54:42Z",
+      "checkedAt": "2026-10-04T02:18:53.356Z",
+      "lastError": null
+    },
+    "localtuya": {
+      "lastSha": "59c95cd06c2696afc98f6bc52d5fa060f3c517da",
+      "checkedAt": "2026-10-04T02:18:53.733Z",
+      "lastError": null
+    },
+    "hass-localtuya": {
+      "lastSha": "9593e804c3e2e111011f85677691e7f3cc9ab30c",
+      "checkedAt": "2026-10-04T02:18:54.061Z",
+      "lastError": null
+    },
+    "tuya-local": {
+      "lastSha": "39dc6e619e5a7881c07ba55878704e08f67e6003",
+      "issuesSince": "2026-10-01T11:58:17Z",
+      "checkedAt": "2026-10-04T02:18:55.572Z",
+      "lastError": null
+    },
+    "blakadder": {
+      "lastSha": "d96e8aaf72ecdad807d3930900d9c8433051d2b4",
+      "checkedAt": "2026-10-04T02:18:56.591Z",
+      "lastError": null
+    },
+    "st-edge-mariano": {
+      "lastSha": "bdf24246fd24563e6e35ea2cb8b2f14f9c8584ed",
+      "checkedAt": "2026-10-04T02:18:56.897Z",
+      "lastError": null
+    },
+    "hubitat-kkossev": {
+      "lastSha": "b4f4ddf5d2ea2695dea9514c226b2048eb57e4d5",
+      "checkedAt": "2026-10-04T02:18:57.357Z",
+      "lastError": null
+    },
+    "jeedom-abeille": {
+      "lastSha": "6e8801370c9d3d15c1cc63f0c7b1c06474ac72d4",
+      "checkedAt": "2026-10-04T02:18:57.848Z",
+      "lastError": null
+    },
+    "homed": {
+      "lastSha": "d641ee5d0a4f9eb528ca4210e5670a5e37bb77bc",
+      "checkedAt": "2026-10-04T02:18:58.192Z",
+      "lastError": null
+    },
+    "athombv-zigbee-clusters": {
+      "lastSha": "c4b589b002f5e72770e654cb8e83a10b25428437",
+      "issuesSince": "2026-10-01T21:02:28Z",
+      "checkedAt": "2026-10-04T02:18:58.956Z",
+      "lastError": null
+    },
+    "athombv-zigbeedriver": {
+      "lastSha": "9746ce847d883d80b8e354a198f5c2a3f01a27bf",
+      "checkedAt": "2026-10-04T02:18:59.631Z",
+      "lastError": null
+    },
+    "athombv-matter-bridge": {
+      "lastSha": "46284d064117f62d2d1ec1ac33e9b1e16053c381",
+      "issuesSince": "2026-09-28T19:33:15Z",
+      "checkedAt": "2026-10-04T02:19:00.472Z",
+      "lastError": null
+    },
+    "johan": {
+      "lastSha": "328d24ed315131528f2358b66bb0b8259615a49e",
+      "issuesSince": "2026-09-28T10:09:34Z",
+      "checkedAt": "2026-10-04T02:19:01.521Z",
+      "lastError": null
+    },
+    "johan-forks": {
+      "pushedSince": "2026-10-04T02:16:54.000Z",
+      "checkedAt": "2026-10-04T02:19:03.704Z",
+      "lastError": null
+    },
+    "homey-forum": {
+      "lastPost": {
+        "26439": 5526,
+        "140352": 2258
+      },
+      "checkedAt": "2026-10-04T02:19:04.906Z",
+      "lastError": null
+    },
+    "homey-sdk-changelog": {
+      "hash": "40622c280f3b0be73ffc7e96228facb012a9fc411004bff427e6383d3cce9144",
+      "checkedAt": "2026-10-04T02:19:05.149Z",
+      "lastError": null
+    },
+    "homey-sdk-sitemap": {
+      "hash": "94500c4c48ca5da398b4190c90725c112b7f4dfcf8ea60d52ceaceb3a7f94a2d",
+      "checkedAt": "2026-10-04T02:19:05.210Z",
+      "lastError": null
+    },
+    "tuya-zigbee-docs": {
+      "hash": "0b9b833cef75689f844c76ab3c77b50918501fca11949b33a647e4ecbf6143ae",
+      "checkedAt": "2026-10-04T02:19:08.637Z",
+      "lastError": null
+    },
+    "homey-app-store-tuya": {
+      "lastError": null,
+      "erroredAt": "2026-10-04T02:19:08.776Z",
+      "hash": "18091f308295bef00e5361a211bfe5ea56c81976c6b16747173ae18478044289",
+      "checkedAt": "2026-10-04T02:19:29.148Z"
+    },
+    "homey-news": {
+      "hash": "8470d6784114f2cdbf929b3a7fded3e3f9ce3b607accdd4bf652a5af47ba0eba",
+      "checkedAt": "2026-10-04T02:19:28.935Z",
+      "lastError": null
+    }
+  }
+}

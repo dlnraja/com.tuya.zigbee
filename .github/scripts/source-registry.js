@@ -1,0 +1,218 @@
+#!/usr/bin/env node
+'use strict';
+/**
+ * Source registry runner (W10 free ingestion). Reads data/sources/registry.json, checks each due
+ * source for changes since its cursor in data/sources/state.json, and turns ONLY the changes into
+ * proposals (mfr+pid couples, DP ids, quirk/bug signals) in data/leads/source-proposals.json.
+ * Free: GitHub REST (token optional), Discourse JSON, page hashes. No AI here (optional layers may
+ * read the proposals later, capped). Proposals hold extracted identifiers + a short summary in our
+ * own words + link + credit; never copied code.
+ *
+ * Usage: node .github/scripts/source-registry.js [--dry] [--force] [--only id1,id2] [--max-calls N]
+ */
+const fs = require('fs');
+const path = require('path');
+const crypto = require('crypto');
+
+const ROOT = path.resolve(__dirname, '..', '..');
+const REG_F = path.join(ROOT, 'data', 'sources', 'registry.json');
+const STATE_F = path.join(ROOT, 'data', 'sources', 'state.json');
+const OUT_F = path.join(ROOT, 'data', 'leads', 'source-proposals.json');
+const GH = 'https://api.github.com';
+const CADENCE_MS = Object.freeze({ daily: 20 * 3600e3, weekly: 6.5 * 86400e3, monthly: 28 * 86400e3 });
+const MAX_PROPOSALS = 5000; // R21: bounded output file
+const MAX_PATCH_CHARS = 400000;
+
+const MFR_RE = /\b_T[ZY][A-Z0-9]{1,4}_[a-z0-9]{8}\b/gi;
+const PID_RE = /\bTS[0-9]{3,4}[A-Z]?\b/g;
+const DP_RE = /\b(?:dp|dpId|datapoint)\s*[:=(]?\s*(\d{1,3})\b/gi;
+const BUG_RE = /\b(bug|broken|wrong|invert(?:ed)?|reverse[d]?|not working|regression|fix(?:es|ed)?)\b/i;
+const QUIRK_RE = /\b(quirk|workaround|magic packet|binding|configure reporting|tuya_magic|no response|leave)\b/i;
+
+function readJson(f, dflt) { try { return JSON.parse(fs.readFileSync(f, 'utf8')); } catch { return dflt; } }
+function writeJson(f, v) { fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, `${JSON.stringify(v, null, 2)}\n`); }
+const uniq = (a) => [...new Set(a)];
+
+function extract(text) {
+  const t = String(text || '');
+  const dps = [];
+  for (const m of t.matchAll(DP_RE)) { const n = Number(m[1]); if (n > 0 && n < 256) {dps.push(n);} }
+  return {
+    mfrs: uniq((t.match(MFR_RE) || []).map((s) => s)).slice(0, 200),
+    pids: uniq(t.match(PID_RE) || []).slice(0, 50),
+    dps: uniq(dps).slice(0, 60),
+    bug: BUG_RE.test(t),
+    quirk: QUIRK_RE.test(t),
+  };
+}
+
+function isDue(src, st, now, force) {
+  if (force) {return true;}
+  const last = st && st.checkedAt ? Date.parse(st.checkedAt) : 0;
+  return now - last >= (CADENCE_MS[src.cadence] || CADENCE_MS.weekly);
+}
+
+function makeClient({ token, maxCalls, fetchImpl }) {
+  let calls = 0;
+  const f = fetchImpl || globalThis.fetch;
+  return {
+    get calls() { return calls; },
+    async json(url, headers = {}) {
+      if (calls >= maxCalls) {throw new Error('call budget exhausted');}
+      calls++;
+      const h = { 'User-Agent': 'tuya-source-registry', Accept: 'application/vnd.github+json', ...headers };
+      if (token && url.startsWith(GH)) {h.Authorization = `Bearer ${token}`;}
+      const r = await f(url, { headers: h });
+      if (!r.ok) {throw new Error(`HTTP ${r.status} ${url}`);}
+      return r.json();
+    },
+    async text(url) {
+      if (calls >= maxCalls) {throw new Error('call budget exhausted');}
+      calls++;
+      const r = await f(url, { headers: { 'User-Agent': 'tuya-source-registry' } });
+      if (!r.ok) {throw new Error(`HTTP ${r.status} ${url}`);}
+      return r.text();
+    },
+  };
+}
+
+function proposal(src, ref, summary, text) {
+  const x = extract(text);
+  if (!x.mfrs.length && !x.dps.length && !x.bug && !x.quirk) {return null;}
+  return { source: src.id, kind: src.kind, ref, summary, ...x, credit: src.credit, seenAt: new Date().toISOString() };
+}
+
+async function scanGithub(src, st, c) {
+  const out = [];
+  const paths = src.paths && src.paths.length ? src.paths : [''];
+  const shas = {};
+  for (const p of paths) {
+    const q = `${GH}/repos/${src.repo}/commits?sha=${encodeURIComponent(src.branch)}&per_page=1${p ? `&path=${encodeURIComponent(p)}` : ''}`;
+    const list = await c.json(q);
+    if (Array.isArray(list) && list[0]) {shas[p] = list[0].sha;}
+  }
+  const head = Object.values(shas)[0];
+  const prev = st.lastSha;
+  if (head && prev && head !== prev) {
+    const cmp = await c.json(`${GH}/repos/${src.repo}/compare/${prev}...${head}`);
+    let budget = MAX_PATCH_CHARS;
+    for (const f of (cmp.files || [])) {
+      if (src.paths.length && !src.paths.some((p) => f.filename.startsWith(p))) {continue;}
+      const added = String(f.patch || '').split('\n').filter((l) => l.startsWith('+')).join('\n');
+      budget -= added.length;
+      if (budget < 0) {break;}
+      const pr = proposal(src, `https://github.com/${src.repo}/blob/${head}/${f.filename}`,
+        `${f.status} ${f.filename} (+${f.additions}/-${f.deletions}) between ${prev.slice(0, 7)}..${head.slice(0, 7)}`, added);
+      if (pr) {out.push(pr);}
+    }
+  }
+  let issuesSince = st.issuesSince;
+  if (src.issues) {
+    const since = issuesSince || new Date(Date.now() - 7 * 86400e3).toISOString();
+    const items = await c.json(`${GH}/repos/${src.repo}/issues?state=all&sort=updated&direction=asc&per_page=50&since=${encodeURIComponent(since)}`);
+    for (const it of Array.isArray(items) ? items : []) {
+      const txt = `${it.title}\n${it.body || ''}`;
+      if (!/tuya|_TZ|TS0|TS1|_TYZB|_TYST/i.test(txt)) {continue;}
+      const pr = proposal(src, it.html_url, `${it.pull_request ? 'PR' : 'issue'} #${it.number} (${it.state}) by ${it.user && it.user.login}: ${String(it.title).slice(0, 140)}`, txt);
+      if (pr) {out.push(pr);}
+    }
+    if (Array.isArray(items) && items.length) {issuesSince = items[items.length - 1].updated_at;}
+  }
+  return { out, next: { lastSha: head || prev || null, issuesSince } };
+}
+
+async function scanForks(src, st, c) {
+  const forks = await c.json(`${GH}/repos/${src.repo}/forks?sort=newest&per_page=100`);
+  const since = st.pushedSince ? Date.parse(st.pushedSince) : 0;
+  const baseline = !st.pushedSince; // first run only sets the cursor
+  const out = [];
+  let max = since;
+  for (const f of Array.isArray(forks) ? forks : []) {
+    const t = Date.parse(f.pushed_at || 0);
+    if (t > since && !baseline) { out.push({ source: src.id, kind: 'forks', ref: f.html_url, summary: `fork ${f.full_name} pushed ${f.pushed_at}`, mfrs: [], pids: [], dps: [], bug: false, quirk: false, credit: f.owner && f.owner.login, seenAt: new Date().toISOString() }); }
+    if (t > max) {max = t;}
+  }
+  return { out, next: { pushedSince: max ? new Date(max).toISOString() : null } };
+}
+
+async function scanDiscourse(src, st, c) {
+  const out = [];
+  const lastPost = { ...(st.lastPost || {}) };
+  for (const id of src.topics || []) {
+    const t = await c.json(`${src.url}/t/${id}.json`);
+    const hi = t.highest_post_number || 0;
+    const from = lastPost[id] || Math.max(1, hi - 20);
+    if (hi > from) {
+      const nums = [];
+      for (let n = from + 1; n <= hi && nums.length < 20; n++) {nums.push(n);}
+      const posts = await c.json(`${src.url}/t/${id}/posts.json?${nums.map((n) => `post_ids[]=${n}`).join('&')}`).catch(() => null);
+      const stream = (posts && posts.post_stream && posts.post_stream.posts) || (t.post_stream && t.post_stream.posts) || [];
+      for (const p of stream) {
+        if (p.post_number <= from) {continue;}
+        const pr = proposal(src, `${src.url}/t/${id}/${p.post_number}`, `post #${p.post_number} by ${p.username}`, String(p.cooked || '').replace(/<[^>]+>/g, ' '));
+        if (pr) {out.push(pr);}
+      }
+    }
+    lastPost[id] = hi;
+  }
+  return { out, next: { lastPost } };
+}
+
+async function scanPage(src, st, c) {
+  const body = await c.text(src.url);
+  const hash = crypto.createHash('sha256').update(body.replace(/\s+/g, ' ')).digest('hex');
+  const out = [];
+  if (st.hash && st.hash !== hash) {
+    out.push({ source: src.id, kind: src.kind, ref: src.url, summary: 'page changed since last check (review manually)', mfrs: [], pids: [], dps: [], bug: false, quirk: false, credit: src.credit, seenAt: new Date().toISOString() });
+  }
+  return { out, next: { hash } };
+}
+
+const SCANNERS = { github: scanGithub, 'github-forks': scanForks, discourse: scanDiscourse, page: scanPage };
+
+async function run({ dry = false, force = false, only = null, maxCalls = 400, token = process.env.GH_PAT || process.env.GITHUB_TOKEN, fetchImpl } = {}) {
+  const reg = readJson(REG_F, { sources: [] });
+  const state = readJson(STATE_F, { sources: {} });
+  state.sources = state.sources || {};
+  const c = makeClient({ token, maxCalls, fetchImpl });
+  const now = Date.now();
+  const proposals = [];
+  const summary = [];
+  for (const src of reg.sources) {
+    if (only && !only.includes(src.id)) {continue;}
+    const st = state.sources[src.id] || {};
+    if (!isDue(src, st, now, force)) { summary.push(`${src.id}: not due`); continue; }
+    const fn = SCANNERS[src.type];
+    if (!fn) { summary.push(`${src.id}: unknown type ${src.type}`); continue; }
+    try {
+      const { out, next } = await fn(src, st, c);
+      proposals.push(...out);
+      state.sources[src.id] = { ...st, ...next, checkedAt: new Date().toISOString(), lastError: null };
+      summary.push(`${src.id}: ${out.length} proposal(s)${st.checkedAt ? '' : ' (baseline cursor set)'}`);
+    } catch (e) {
+      state.sources[src.id] = { ...st, lastError: String(e.message || e).slice(0, 200), erroredAt: new Date().toISOString() };
+      summary.push(`${src.id}: error ${e.message}`);
+      if (/budget/.test(e.message)) {break;}
+    }
+  }
+  if (!dry) {
+    const prev = readJson(OUT_F, { proposals: [] });
+    const all = (prev.proposals || []).concat(proposals);
+    const seen = new Set();
+    const dedup = all.filter((p) => { const k = `${p.source}|${p.ref}`; if (seen.has(k)) {return false;} seen.add(k); return true; });
+    writeJson(OUT_F, { $comment: 'Change-driven proposals from data/sources/registry.json. Identifiers + our own one-line summaries; review before landing (W4 couples, research first).', updated: new Date().toISOString(), proposals: dedup.slice(-MAX_PROPOSALS) });
+    writeJson(STATE_F, state);
+  }
+  return { calls: c.calls, proposals, summary };
+}
+
+module.exports = { extract, isDue, run, CADENCE_MS };
+
+if (require.main === module) {
+  const a = process.argv.slice(2);
+  const oi = a.indexOf('--only');
+  const mi = a.indexOf('--max-calls');
+  run({ dry: a.includes('--dry'), force: a.includes('--force'), only: oi >= 0 ? a[oi + 1].split(',') : null, maxCalls: mi >= 0 ? Number(a[mi + 1]) : 400 })
+    .then((r) => { for (const s of r.summary) {console.log(`[sources] ${s}`);} console.log(`[sources] calls=${r.calls} new proposals=${r.proposals.length}`); })
+    .catch((e) => { console.error(e); process.exit(1); });
+}

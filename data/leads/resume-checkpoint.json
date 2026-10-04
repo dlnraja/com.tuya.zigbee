@@ -89,7 +89,7 @@
   },
   "master_queue": {
     "note": "Single master checklist of ALL user requests since the start. Daily resumption reads this FIRST. Tick (verified) only after verification.",
-    "updated": "2026-10-04T04:20+02:00",
+    "updated": "2026-10-04T04:35+02:00",
     "items": [
       {
         "id": 1,
@@ -681,14 +681,20 @@
       },
       {
         "id": 99,
-        "item": "W10 ingestion: Koenkk/zigbee2mqtt + zigbee-herdsman-converters — commit-diff of converters (Tuya + others) keyed by ledger cursor (only changes), open/closed device-bug/quirk issues since cursor -> mfr+pid couple proposals, DP mappings, quirks in our own words; credit Koen Kanters + contributors",
+        "item": "W10 ingestion: Koenkk/zigbee2mqtt + zigbee-herdsman-converters — commit-diff of converters (Tuya + others) keyed by ledger cursor (only changes), open/closed device-bug/quirk issues since cursor -> mfr+pid couple proposals, DP mappings, quirks in our own words; credit Koen Kanters + contributors | EXTENDED to ALL sources (user 04:17): ZHA+quirks, deCONZ, localtuya/tuya-local, Blakadder, ST Edge (Mariano+), Hubitat, Jeedom Abeille, z2m pages, athombv, Johan+forks, Homey forum + community apps, SDK/docs changelogs, Tuya docs; single registry data/sources/registry.json",
+        "status": "in_progress",
+        "evidence": "registry (25 sources, verified repos/paths) + .github/scripts/source-registry.js (cursors data/sources/state.json, compare-diff only, bounded calls, no AI) + test; wired into external-sources-scanner.js and daily free-scrape-crossref.yml (commits cursors [skip ci]); baseline 116 proposals -> data/leads/source-proposals.json; 5 new couples listed in DISCOVERIES.md. Pending: per-source parsers (tuya-local YAML DP maps, ZHA quirk DP tables, z2m converter DP tuples), proposal->couple triage tool, optional capped AI summariser."
+      },
+      {
+        "id": 100,
+        "item": "Research + land new couples from source registry: _TZE204_r6kfl9ta (noise sensor), _TZE284_rzdkn5rx (Zemismart), _TZ3290_qazgdsae (IR blaster TS1201), _TZE284_oa1odmga, _TZ3210_jqg2a5yn (TS0002)",
         "status": "pending",
-        "evidence": "Existing (extend, don't duplicate): .github/workflows/monthly-scan.yml (curl full tuya.ts + grep _T* ids, monthly, no diff/cursor), monthly-community-sync.yml (scripts/community-sync/extract-z2m.js, sync-all.js), monthly-device-enrichment.yml + .github/scripts/external-sources-scanner.js, scripts/sync/crawl-z2m.js, scripts/digest/quirks-scan.js. Plan: add ledger cursor (lastSha per repo + issues updated-since) to external-sources-scanner, use GitHub compare API on src/devices/*.ts, emit proposals to data/leads; schedule weekly in the existing monthly-device-enrichment workflow (no new workflow)."
+        "evidence": "data/leads/source-proposals.json; DISCOVERIES.md 2026-10-04"
       }
     ],
     "next": [
+      "Source registry follow-ups (#99): per-source DP parsers + triage; land #100 couples after research",
       "Matter/ecosystem per-driver additive mirrors (#95 follow-ups)",
-      "W10 Z2M/herdsman diff ingestion (extend external-sources-scanner)",
       "athombv org study (#98) — start with node-zigbee-clusters + node-homey-zigbeedriver issues/PRs",
       "spec 010 T0 research design sources",
       "spec 010 T1 baseline perf + golden couple resolution",
