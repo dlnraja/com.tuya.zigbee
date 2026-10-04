@@ -1,0 +1,86 @@
+{
+  "id": "switch_presence_tuya",
+  "name": {
+    "en": "Presence Wall Switch (1-3 gang, Tuya)",
+    "fr": "Interrupteur mural à présence (1-3 voies, Tuya)",
+    "nl": "Aanwezigheidswandschakelaar (1-3 voudig, Tuya)"
+  },
+  "class": "socket",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "onoff",
+    "onoff.gang2",
+    "onoff.gang3",
+    "alarm_motion"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Gang 1",
+        "fr": "Voie 1",
+        "nl": "Kanaal 1"
+      }
+    },
+    "onoff.gang2": {
+      "title": {
+        "en": "Gang 2",
+        "fr": "Voie 2",
+        "nl": "Kanaal 2"
+      }
+    },
+    "onoff.gang3": {
+      "title": {
+        "en": "Gang 3",
+        "fr": "Voie 3",
+        "nl": "Kanaal 3"
+      }
+    },
+    "alarm_motion": {
+      "title": {
+        "en": "Presence",
+        "fr": "Présence",
+        "nl": "Aanwezigheid"
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/switch_presence_tuya/assets/images/small.png",
+    "large": "/drivers/switch_presence_tuya/assets/images/large.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE28C1000000_jlbsptkl",
+      "_TZE28C1000000_jaunkx9g",
+      "_TZE28C1000000_usmqzgdm"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5
+        ],
+        "bindings": []
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Press and hold the first touch key (or the reset key) for about 5 seconds until the indicator blinks.",
+        "fr": "Maintenez la première touche (ou la touche reset) environ 5 secondes jusqu’à ce que le voyant clignote.",
+        "nl": "Houd de eerste toets (of de resetknop) ongeveer 5 seconden ingedrukt tot het lampje knippert."
+      }
+    }
+  },
+  "metadata": {
+    "source": "zigbee-herdsman-converters tuya.ts (Koen Kanters and contributors): _TZE28C1000000_jlbsptkl 1-gang, _jaunkx9g 2-gang, _usmqzgdm 3-gang human presence switches. DP1-3 relays, DP101 presence (1 = present)."
+  }
+}
