@@ -1,5 +1,6 @@
 'use strict';
 
+const { migrateDeviceClass } = require('../../lib/utils/DeviceClassMigration');
 const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
@@ -36,6 +37,8 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
   get gangCount() { return 1; }
 
   async onNodeInit({ zclNode }) {
+    // WHY: class socket -> light (user decision 2026-10-04); one-shot for paired devices
+    migrateDeviceClass(this, 'light', ['socket', 'other']).catch(() => {});
     await super.onNodeInit({ zclNode });
 
     // v5.11.16: Add missing dim capability

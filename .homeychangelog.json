@@ -2145,5 +2145,8 @@
   },
   "5.12.367": {
     "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.368": {
+    "en": "Dimmers (2-gang dimmer module, dimmer wall switch, wall dimmer 1-gang) now use the Light device type, so the light ring and voice assistants treat them as lights. Paired devices switch once automatically; the device icon may change. Capabilities, IDs and flows are unchanged."
   }
 }
