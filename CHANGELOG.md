@@ -47,6 +47,11 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [Unreleased]
+
+- Dimmers (2-gang dimmer module, dimmer wall switch, wall dimmer 1-gang) now use the Light device type, so the light ring and voice assistants treat them as lights. Paired devices switch once automatically; the device icon may change. Capabilities, IDs and flows are unchanged.
+---
+
 ## [5.12.47] - 2026-07-31
 
 Stability line (branch `stable-v5`, production). Backports from master 9.0.388.
