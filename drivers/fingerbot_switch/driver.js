@@ -132,8 +132,8 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           // Generic action handler
-          this.log('[FLOW] Action fingerbot_switch_1gang_set_child_lock triggered for', args.device.getName());
-          return true;
+          // #113: real effect through the device's own capability listener when one matches.
+          return require('../../lib/flow/PlaceholderActionWiring').run(this, 'fingerbot_switch_1gang_set_child_lock', args);
         });
       }
     } catch (err) { if (this.developerDebugMode) { this.error(`Action fingerbot_switch_1gang_set_child_lock: ${err.message}`); } }
