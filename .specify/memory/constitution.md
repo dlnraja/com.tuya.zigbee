@@ -54,3 +54,14 @@ Specs live in `specs/NNN-*/{spec,plan,tasks}.md`. This file overrides any spec/p
   never run `git checkout -- .`/`git clean` in a shared checkout.
 - W2. Long queues keep a resumable checkpoint in `data/leads/resume-checkpoint.json`;
   items are deferred, never skipped.
+- W3. Progress ledger (nothing is done twice). `data/progress/ledger.json` is the machine SSOT:
+  key `<namespace>:<id>` (johan-issue:N, dlnraja-issue:N, forum-post:T/P, diag:<hash>,
+  task:<id>, …) → status (pending | in-progress | deferred | done | skipped-not-applicable),
+  commit, date, content hash and/or upstream updatedAt. Every workflow and agent (forum poll,
+  Johan scanner, enrich, diags, fleet-enrich, deep reads, maintenance queues) reads it before
+  working (`shouldProcess` in `scripts/lib/ledger.js`, or `node scripts/progress/ledger-cli.js
+  check <key> [updatedAt]`) and records after (`record`). Items already done and unchanged are
+  skipped; changed items (new hash / newer updatedAt) are re-processed. Humans read
+  `docs/progress/JOURNAL.md` (dated entries, newest first). Older checkpoints
+  (resume-checkpoint, deep-read-checkpoint, deep-read-log) stay as cursors linked from the
+  ledger's `checkpoints` map.

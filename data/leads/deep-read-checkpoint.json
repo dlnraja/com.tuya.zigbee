@@ -1,0 +1,9 @@
+{
+ "note": "Deep-read sweep of ALL issues+PRs (open/closed, all comments) of JohanBendz/com.tuya.zigbee and dlnraja/com.tuya.zigbee. Per-item status lives in data/progress/ledger.json (keys johan-issue:N / dlnraja-issue:N); this file only holds the cursor. Order: Johan ascending, then dlnraja ascending. Never skip, only defer.",
+ "ledger": "data/progress/ledger.json",
+ "updated": "2026-10-03",
+ "done": { "JohanBendz": [797, 1298], "dlnraja": [] },
+ "next": { "JohanBendz": 1, "dlnraja": 1 },
+ "batchSize": 25,
+ "howTo": "node scripts/progress/ledger-cli.js next johan-issue 25 ; read thread + all comments ; implement per constitution ; node scripts/progress/ledger-cli.js record johan-issue:N done <commit> <note> ; bump next here"
+}
