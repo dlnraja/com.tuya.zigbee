@@ -433,11 +433,7 @@
           "name": "device",
           "filter": "driver_id=presence_sensor_radar"
         }
-      ],
-      "titleFormatted": {
-        "en": "Clear presence (maintenance) ([[device]])",
-        "fr": "Effacer la présence (maintenance) ([[device]])"
-      }
+      ]
     }
   ]
 }
