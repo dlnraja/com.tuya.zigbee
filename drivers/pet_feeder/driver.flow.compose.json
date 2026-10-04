@@ -3,21 +3,25 @@
     {
       "id": "pet_feeder_fed",
       "title": {
-        "en": "Pet was fed"
+        "en": "Pet was fed",
+        "fr": "L'animal a été nourri"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Pet was fed"
+        "en": "Pet was fed",
+        "fr": "L'animal a été nourri"
       }
     },
     {
       "id": "pet_feeder_food_low",
       "title": {
-        "en": "Food level is low"
+        "en": "Food level is low",
+        "fr": "Le niveau de nourriture est bas"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Food level is low"
+        "en": "Food level is low",
+        "fr": "Le niveau de nourriture est bas"
       }
     }
   ],
@@ -25,11 +29,13 @@
     {
       "id": "pet_feeder_food_ok",
       "title": {
-        "en": "Food level is OK"
+        "en": "Food level is OK",
+        "fr": "Le niveau de nourriture est correct"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Food level is OK"
+        "en": "Food level is OK",
+        "fr": "Le niveau de nourriture est correct"
       }
     }
   ],
@@ -37,11 +43,13 @@
     {
       "id": "pet_feeder_feed_now",
       "title": {
-        "en": "Feed now"
+        "en": "Feed now",
+        "fr": "Nourrir maintenant"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Feed now"
+        "en": "Feed now",
+        "fr": "Nourrir maintenant"
       }
     }
   ]

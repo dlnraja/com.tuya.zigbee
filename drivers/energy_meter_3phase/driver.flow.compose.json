@@ -52,7 +52,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Voltage changed ({voltage})"
+        "en": "Voltage changed ({voltage})",
+        "fr": "Tension modifiée ({voltage})"
       }
     },
     {
@@ -75,7 +76,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Current changed ({current})"
+        "en": "Current changed ({current})",
+        "fr": "Courant modifié ({current})"
       }
     },
     {
@@ -98,7 +100,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Energy changed ({energy})"
+        "en": "Energy changed ({energy})",
+        "fr": "Énergie modifiée ({energy})"
       }
     }
   ],
@@ -117,7 +120,15 @@
           "type": "number",
           "min": 0,
           "max": 30000,
-          "step": 50
+          "step": 50,
+          "title": {
+            "en": "Power",
+            "fr": "Puissance"
+          },
+          "placeholder": {
+            "en": "0–30000",
+            "fr": "0–30000"
+          }
         }
       ],
       "titleFormatted": {
@@ -139,7 +150,8 @@
       },
       "args": [],
       "titleFormatted": {
-        "en": "Reset energy meter"
+        "en": "Reset energy meter",
+        "fr": "Réinitialiser le compteur d'énergie"
       }
     }
   ]

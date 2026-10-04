@@ -7,44 +7,66 @@
     "de": "Aktuell Spitzenzeit"
   },
   "hint": {
-    "en": "Checks if the current time falls within a peak tariff period"
+    "en": "Checks if the current time falls within a peak tariff period",
+    "fr": "Vérifie si l'heure actuelle est en période de tarif plein"
   },
   "args": [
     {
       "name": "period_type",
       "type": "dropdown",
       "title": {
-        "en": "Period type to check"
+        "en": "Period type to check",
+        "fr": "Type de période à vérifier"
       },
       "values": [
         {
           "id": "peak",
           "title": {
             "en": "Peak"
+          },
+          "label": {
+            "en": "Peak",
+            "fr": "Pointe"
           }
         },
         {
           "id": "shoulder",
           "title": {
             "en": "Shoulder"
+          },
+          "label": {
+            "en": "Shoulder",
+            "fr": "Intermédiaire"
           }
         },
         {
           "id": "off_peak",
           "title": {
             "en": "Off-Peak"
+          },
+          "label": {
+            "en": "Off-Peak",
+            "fr": "Heures creuses"
           }
         },
         {
           "id": "day",
           "title": {
             "en": "Day"
+          },
+          "label": {
+            "en": "Day",
+            "fr": "Jour"
           }
         },
         {
           "id": "night",
           "title": {
             "en": "Night"
+          },
+          "label": {
+            "en": "Night",
+            "fr": "Nuit"
           }
         }
       ]
@@ -55,7 +77,8 @@
       "name": "current_period",
       "type": "string",
       "title": {
-        "en": "Current period"
+        "en": "Current period",
+        "fr": "Période actuelle"
       },
       "example": "peak"
     },
@@ -63,7 +86,8 @@
       "name": "current_rate",
       "type": "number",
       "title": {
-        "en": "Current rate per kWh"
+        "en": "Current rate per kWh",
+        "fr": "Tarif actuel par kWh"
       }
     }
   ],

@@ -7,7 +7,8 @@
     "de": "Übergang läuft"
   },
   "hint": {
-    "en": "Checks if any smooth transition is currently running on the device"
+    "en": "Checks if any smooth transition is currently running on the device",
+    "fr": "Vérifie si une transition douce est en cours sur l'appareil"
   },
   "args": [
     {
@@ -21,7 +22,8 @@
       "name": "active_count",
       "type": "number",
       "title": {
-        "en": "Active transition count"
+        "en": "Active transition count",
+        "fr": "Nombre de transitions actives"
       }
     }
   ],

@@ -7,19 +7,25 @@
     "de": "Es ist Tag"
   },
   "hint": {
-    "en": "Checks if the sun elevation is above the horizon (sun is up)"
+    "en": "Checks if the sun elevation is above the horizon (sun is up)",
+    "fr": "Vérifie si le soleil est au-dessus de l'horizon (soleil levé)"
   },
   "args": [
     {
       "name": "elevation_threshold",
       "type": "number",
       "title": {
-        "en": "Elevation threshold (degrees)"
+        "en": "Elevation threshold (degrees)",
+        "fr": "Seuil d'élévation (degrés)"
       },
       "min": -6,
       "max": 10,
       "step": 1,
-      "value": 0
+      "value": 0,
+      "placeholder": {
+        "en": "-6–10",
+        "fr": "-6–10"
+      }
     }
   ],
   "tokens": [
@@ -27,14 +33,16 @@
       "name": "elevation",
       "type": "number",
       "title": {
-        "en": "Current elevation (degrees)"
+        "en": "Current elevation (degrees)",
+        "fr": "Élévation actuelle (degrés)"
       }
     },
     {
       "name": "category",
       "type": "string",
       "title": {
-        "en": "Elevation category"
+        "en": "Elevation category",
+        "fr": "Catégorie d'élévation"
       }
     }
   ],

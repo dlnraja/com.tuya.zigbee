@@ -7,7 +7,8 @@
     "de": "Anwesenheit in Zone erkannt"
   },
   "hint": {
-    "en": "Triggers when the Virtual Presence Detector determines a zone is occupied"
+    "en": "Triggers when the Virtual Presence Detector determines a zone is occupied",
+    "fr": "Se déclenche quand le détecteur de présence virtuel juge qu'une zone est occupée"
   },
   "args": [
     {
@@ -21,7 +22,8 @@
       "name": "zone_name",
       "type": "string",
       "title": {
-        "en": "Zone name"
+        "en": "Zone name",
+        "fr": "Nom de la zone"
       },
       "example": "Living Room"
     },
@@ -29,22 +31,29 @@
       "name": "confidence",
       "type": "number",
       "title": {
-        "en": "Confidence (0-100)"
+        "en": "Confidence (0-100)",
+        "fr": "Confiance (0-100)"
       }
     },
     {
       "name": "monitored_devices",
       "type": "number",
       "title": {
-        "en": "Number of signal sources"
+        "en": "Number of signal sources",
+        "fr": "Nombre de sources de signal"
       }
     },
     {
       "name": "duration_minutes",
       "type": "number",
       "title": {
-        "en": "Duration (minutes)"
+        "en": "Duration (minutes)",
+        "fr": "Durée (minutes)"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Presence detected in zone ([[device]])",
+    "fr": "Présence détectée dans la zone ([[device]])"
+  }
 }

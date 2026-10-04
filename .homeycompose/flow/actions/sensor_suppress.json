@@ -26,7 +26,11 @@
       "min": 1,
       "max": 1440,
       "step": 1,
-      "value": 60
+      "value": 60,
+      "placeholder": {
+        "en": "1–1440",
+        "fr": "1–1440"
+      }
     }
   ],
   "titleFormatted": {

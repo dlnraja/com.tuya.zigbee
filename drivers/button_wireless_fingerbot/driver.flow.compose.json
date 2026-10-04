@@ -133,7 +133,8 @@
           "name": "duration",
           "type": "number",
           "title": {
-            "en": "Duration (ms)"
+            "en": "Duration (ms)",
+            "fr": "Durée (ms)"
           },
           "example": 1200
         }
@@ -165,7 +166,8 @@
           "name": "clicks",
           "type": "number",
           "title": {
-            "en": "Click count"
+            "en": "Click count",
+            "fr": "Nombre de clics"
           },
           "example": 3
         }
@@ -232,7 +234,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "Gang 1 scene triggered ({action})"
+        "en": "Gang 1 scene triggered ({action})",
+        "fr": "Scène voie 1 déclenchée ({action})"
       }
     },
     {

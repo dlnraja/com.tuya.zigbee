@@ -35,11 +35,23 @@
             "fr": "Puissance (W)",
             "nl": "Vermogen (W)",
             "de": "Leistung (W)"
+          },
+          "label": {
+            "en": "Power (W)",
+            "fr": "Puissance (W)",
+            "nl": "Vermogen (W)",
+            "de": "Leistung (W)"
           }
         },
         {
           "id": "measure_voltage",
           "title": {
+            "en": "Voltage (V)",
+            "fr": "Tension (V)",
+            "nl": "Spanning (V)",
+            "de": "Spannung (V)"
+          },
+          "label": {
             "en": "Voltage (V)",
             "fr": "Tension (V)",
             "nl": "Spanning (V)",
@@ -53,11 +65,23 @@
             "fr": "Courant (A)",
             "nl": "Stroom (A)",
             "de": "Strom (A)"
+          },
+          "label": {
+            "en": "Current (A)",
+            "fr": "Courant (A)",
+            "nl": "Stroom (A)",
+            "de": "Strom (A)"
           }
         },
         {
           "id": "meter_power",
           "title": {
+            "en": "Energy (kWh)",
+            "fr": "Énergie (kWh)",
+            "nl": "Energie (kWh)",
+            "de": "Energie (kWh)"
+          },
+          "label": {
             "en": "Energy (kWh)",
             "fr": "Énergie (kWh)",
             "nl": "Energie (kWh)",
@@ -71,6 +95,12 @@
             "fr": "Batterie (%)",
             "nl": "Batterij (%)",
             "de": "Batterie (%)"
+          },
+          "label": {
+            "en": "Battery (%)",
+            "fr": "Batterie (%)",
+            "nl": "Batterij (%)",
+            "de": "Batterie (%)"
           }
         },
         {
@@ -80,11 +110,23 @@
             "fr": "Température",
             "nl": "Temperatuur",
             "de": "Temperatur"
+          },
+          "label": {
+            "en": "Temperature",
+            "fr": "Température",
+            "nl": "Temperatuur",
+            "de": "Temperatur"
           }
         },
         {
           "id": "measure_humidity",
           "title": {
+            "en": "Humidity",
+            "fr": "Humidité",
+            "nl": "Vochtigheid",
+            "de": "Feuchtigkeit"
+          },
+          "label": {
             "en": "Humidity",
             "fr": "Humidité",
             "nl": "Vochtigheid",

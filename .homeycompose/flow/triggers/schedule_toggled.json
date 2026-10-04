@@ -7,7 +7,8 @@
     "de": "Zeitplan aktiviert/deaktiviert"
   },
   "hint": {
-    "en": "Triggers when a schedule is enabled or disabled"
+    "en": "Triggers when a schedule is enabled or disabled",
+    "fr": "Se déclenche quand une planification est activée ou désactivée"
   },
   "args": [],
   "tokens": [
@@ -15,25 +16,29 @@
       "name": "schedule_id",
       "type": "string",
       "title": {
-        "en": "Schedule ID"
+        "en": "Schedule ID",
+        "fr": "ID de planification"
       }
     },
     {
       "name": "schedule_name",
       "type": "string",
       "title": {
-        "en": "Schedule name"
+        "en": "Schedule name",
+        "fr": "Nom de la planification"
       }
     },
     {
       "name": "enabled",
       "type": "boolean",
       "title": {
-        "en": "Is enabled"
+        "en": "Is enabled",
+        "fr": "Est activé"
       }
     }
   ],
   "titleFormatted": {
-    "en": "Schedule activated/deactivated"
+    "en": "Schedule activated/deactivated",
+    "fr": "Planification activée/désactivée"
   }
 }

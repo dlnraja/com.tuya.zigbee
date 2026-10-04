@@ -98,7 +98,15 @@
           "type": "number",
           "min": 0,
           "max": 10000,
-          "step": 10
+          "step": 10,
+          "title": {
+            "en": "Power",
+            "fr": "Puissance"
+          },
+          "placeholder": {
+            "en": "0–10000",
+            "fr": "0–10000"
+          }
         }
       ],
       "titleFormatted": {
@@ -120,7 +128,8 @@
       },
       "args": [],
       "titleFormatted": {
-        "en": "Reset energy meter"
+        "en": "Reset energy meter",
+        "fr": "Réinitialiser le compteur d'énergie"
       }
     }
   ]

@@ -24,12 +24,20 @@
         "fr": "Numéro DP"
       },
       "min": 1,
-      "max": 255
+      "max": 255,
+      "placeholder": {
+        "en": "1–255",
+        "fr": "1–255"
+      }
     },
     {
       "name": "value",
       "type": "text",
       "title": {
+        "en": "Value",
+        "fr": "Valeur"
+      },
+      "placeholder": {
         "en": "Value",
         "fr": "Valeur"
       }

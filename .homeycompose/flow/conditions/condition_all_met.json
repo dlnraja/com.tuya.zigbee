@@ -7,7 +7,8 @@
     "de": "Alle Bedingungen erfüllt"
   },
   "hint": {
-    "en": "Checks if multiple conditions are all satisfied (AND logic)"
+    "en": "Checks if multiple conditions are all satisfied (AND logic)",
+    "fr": "Vérifie si plusieurs conditions sont toutes remplies (logique ET)"
   },
   "args": [
     {
@@ -19,7 +20,8 @@
       "name": "condition_1_cap",
       "type": "text",
       "title": {
-        "en": "Condition 1 - Capability"
+        "en": "Condition 1 - Capability",
+        "fr": "Condition 1 - capacité"
       },
       "placeholder": {
         "en": "measure_temperature"
@@ -29,43 +31,68 @@
       "name": "condition_1_op",
       "type": "dropdown",
       "title": {
-        "en": "Condition 1 - Operator"
+        "en": "Condition 1 - Operator",
+        "fr": "Condition 1 - opérateur"
       },
       "values": [
         {
           "id": "==",
           "title": {
             "en": "equals"
+          },
+          "label": {
+            "en": "equals",
+            "fr": "égal à"
           }
         },
         {
           "id": "!=",
           "title": {
             "en": "not equals"
+          },
+          "label": {
+            "en": "not equals",
+            "fr": "différent de"
           }
         },
         {
           "id": ">",
           "title": {
             "en": "greater than"
+          },
+          "label": {
+            "en": "greater than",
+            "fr": "supérieur à"
           }
         },
         {
           "id": "<",
           "title": {
             "en": "less than"
+          },
+          "label": {
+            "en": "less than",
+            "fr": "inférieur à"
           }
         },
         {
           "id": ">=",
           "title": {
             "en": "greater or equal"
+          },
+          "label": {
+            "en": "greater or equal",
+            "fr": "supérieur ou égal"
           }
         },
         {
           "id": "<=",
           "title": {
             "en": "less or equal"
+          },
+          "label": {
+            "en": "less or equal",
+            "fr": "inférieur ou égal"
           }
         }
       ]
@@ -74,14 +101,20 @@
       "name": "condition_1_val",
       "type": "text",
       "title": {
-        "en": "Condition 1 - Value"
+        "en": "Condition 1 - Value",
+        "fr": "Condition 1 - valeur"
+      },
+      "placeholder": {
+        "en": "Condition 1 - Value",
+        "fr": "Condition 1 - valeur"
       }
     },
     {
       "name": "condition_2_cap",
       "type": "text",
       "title": {
-        "en": "Condition 2 - Capability"
+        "en": "Condition 2 - Capability",
+        "fr": "Condition 2 - capacité"
       },
       "placeholder": {
         "en": "measure_humidity"
@@ -91,43 +124,68 @@
       "name": "condition_2_op",
       "type": "dropdown",
       "title": {
-        "en": "Condition 2 - Operator"
+        "en": "Condition 2 - Operator",
+        "fr": "Condition 2 - opérateur"
       },
       "values": [
         {
           "id": "==",
           "title": {
             "en": "equals"
+          },
+          "label": {
+            "en": "equals",
+            "fr": "égal à"
           }
         },
         {
           "id": "!=",
           "title": {
             "en": "not equals"
+          },
+          "label": {
+            "en": "not equals",
+            "fr": "différent de"
           }
         },
         {
           "id": ">",
           "title": {
             "en": "greater than"
+          },
+          "label": {
+            "en": "greater than",
+            "fr": "supérieur à"
           }
         },
         {
           "id": "<",
           "title": {
             "en": "less than"
+          },
+          "label": {
+            "en": "less than",
+            "fr": "inférieur à"
           }
         },
         {
           "id": ">=",
           "title": {
             "en": "greater or equal"
+          },
+          "label": {
+            "en": "greater or equal",
+            "fr": "supérieur ou égal"
           }
         },
         {
           "id": "<=",
           "title": {
             "en": "less or equal"
+          },
+          "label": {
+            "en": "less or equal",
+            "fr": "inférieur ou égal"
           }
         }
       ]
@@ -136,7 +194,12 @@
       "name": "condition_2_val",
       "type": "text",
       "title": {
-        "en": "Condition 2 - Value"
+        "en": "Condition 2 - Value",
+        "fr": "Condition 2 - valeur"
+      },
+      "placeholder": {
+        "en": "Condition 2 - Value",
+        "fr": "Condition 2 - valeur"
       }
     }
   ],
@@ -145,7 +208,8 @@
       "name": "all_met",
       "type": "boolean",
       "title": {
-        "en": "All conditions met"
+        "en": "All conditions met",
+        "fr": "Toutes les conditions remplies"
       }
     }
   ],

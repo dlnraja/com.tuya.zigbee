@@ -10,7 +10,8 @@
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned on"
+        "en": "Turned on",
+        "fr": "Allumé"
       }
     },
     {
@@ -23,7 +24,8 @@
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned off"
+        "en": "Turned off",
+        "fr": "Éteint"
       }
     },
     {
@@ -39,14 +41,16 @@
           "name": "power",
           "type": "number",
           "title": {
-            "en": "Power (W)"
+            "en": "Power (W)",
+            "fr": "Puissance (W)"
           },
           "example": 100
         }
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Power changed ({power})"
+        "en": "Power changed ({power})",
+        "fr": "Puissance modifiée ({power})"
       }
     }
   ],
@@ -61,7 +65,8 @@
       },
       "args": [],
       "titleFormatted": {
-        "en": "Is on"
+        "en": "Is on",
+        "fr": "Est allumé"
       }
     }
   ],

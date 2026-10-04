@@ -46,7 +46,11 @@
       },
       "min": 0,
       "max": 1440,
-      "step": 1
+      "step": 1,
+      "placeholder": {
+        "en": "0–1440",
+        "fr": "0–1440"
+      }
     }
   ],
   "tokens": [

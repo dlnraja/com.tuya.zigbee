@@ -15,7 +15,8 @@
       "name": "dp_number",
       "type": "number",
       "title": {
-        "en": "DP Number"
+        "en": "DP Number",
+        "fr": "Numéro DP"
       },
       "example": 1
     },
@@ -23,7 +24,8 @@
       "name": "dp_value",
       "type": "string",
       "title": {
-        "en": "Value (string)"
+        "en": "Value (string)",
+        "fr": "Valeur (texte)"
       },
       "example": "true"
     },
@@ -31,7 +33,8 @@
       "name": "dp_type",
       "type": "string",
       "title": {
-        "en": "DP Type"
+        "en": "DP Type",
+        "fr": "Type DP"
       },
       "example": "bool"
     },
@@ -39,7 +42,8 @@
       "name": "dp_numeric",
       "type": "number",
       "title": {
-        "en": "Numeric value"
+        "en": "Numeric value",
+        "fr": "Valeur numérique"
       },
       "example": 1
     }
@@ -50,5 +54,9 @@
       "name": "device",
       "filter": "capabilities=tuya_dp_value"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Any Tuya DP changed ([[device]])",
+    "fr": "Tout DP Tuya changé ([[device]])"
+  }
 }

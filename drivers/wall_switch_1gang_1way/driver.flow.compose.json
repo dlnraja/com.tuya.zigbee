@@ -10,12 +10,14 @@
       },
       "hint": {
         "en": "Triggered when the switch is turned on using the physical button",
-        "nl": "Geactiveerd wanneer de schakelaar wordt aangezet met de fysieke knop"
+        "nl": "Geactiveerd wanneer de schakelaar wordt aangezet met de fysieke knop",
+        "fr": "Déclenché quand l'interrupteur est allumé avec le bouton physique"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned on - physical button",
-        "nl": "Aangezet - fysieke knop"
+        "nl": "Aangezet - fysieke knop",
+        "fr": "Allumé - bouton physique"
       }
     },
     {
@@ -28,19 +30,22 @@
       },
       "hint": {
         "en": "Triggered when the switch is turned off using the physical button",
-        "nl": "Geactiveerd wanneer de schakelaar wordt uitgezet met de fysieke knop"
+        "nl": "Geactiveerd wanneer de schakelaar wordt uitgezet met de fysieke knop",
+        "fr": "Déclenché quand l'interrupteur est éteint avec le bouton physique"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned off - physical button",
-        "nl": "Uitgezet - fysieke knop"
+        "nl": "Uitgezet - fysieke knop",
+        "fr": "Éteint - bouton physique"
       }
     },
     {
       "id": "wall_switch_1gang_1way_gang1_scene",
       "title": {
         "en": "Scene triggered",
-        "nl": "Scène geactiveerd"
+        "nl": "Scène geactiveerd",
+        "fr": "Scène déclenchée"
       },
       "args": [],
       "tokens": [
@@ -57,7 +62,8 @@
       ],
       "titleFormatted": {
         "en": "Scene triggered ({action})",
-        "nl": "Scène geactiveerd ({action})"
+        "nl": "Scène geactiveerd ({action})",
+        "fr": "Scène déclenchée ({action})"
       }
     },
     {
@@ -65,11 +71,13 @@
       "args": [],
       "title": {
         "nl": "Fysiek AAN",
-        "en": "Physical ON"
+        "en": "Physical ON",
+        "fr": "Allumé (physique)"
       },
       "titleFormatted": {
         "nl": "Fysiek AAN",
-        "en": "Physical ON"
+        "en": "Physical ON",
+        "fr": "Allumé (physique)"
       }
     },
     {
@@ -77,11 +85,13 @@
       "args": [],
       "title": {
         "nl": "Fysiek UIT",
-        "en": "Physical OFF"
+        "en": "Physical OFF",
+        "fr": "Éteint (physique)"
       },
       "titleFormatted": {
         "nl": "Fysiek UIT",
-        "en": "Physical OFF"
+        "en": "Physical OFF",
+        "fr": "Éteint (physique)"
       }
     },
     {
@@ -89,11 +99,13 @@
       "args": [],
       "title": {
         "nl": "Enkele druk",
-        "en": "Single press"
+        "en": "Single press",
+        "fr": "Appui simple"
       },
       "titleFormatted": {
         "nl": "Enkele druk",
-        "en": "Single press"
+        "en": "Single press",
+        "fr": "Appui simple"
       }
     },
     {
@@ -101,11 +113,13 @@
       "args": [],
       "title": {
         "nl": "Dubbele druk",
-        "en": "Double press"
+        "en": "Double press",
+        "fr": "Double appui"
       },
       "titleFormatted": {
         "nl": "Dubbele druk",
-        "en": "Double press"
+        "en": "Double press",
+        "fr": "Double appui"
       }
     },
     {
@@ -113,20 +127,23 @@
       "args": [],
       "title": {
         "nl": "Lange druk",
-        "en": "Long press"
+        "en": "Long press",
+        "fr": "Appui long"
       },
       "tokens": [
         {
           "name": "duration",
           "title": {
-            "en": "Duration (ms)"
+            "en": "Duration (ms)",
+            "fr": "Durée (ms)"
           },
           "type": "number"
         }
       ],
       "titleFormatted": {
         "nl": "Lange druk ({duration})",
-        "en": "Long press ({duration})"
+        "en": "Long press ({duration})",
+        "fr": "Appui long ({duration})"
       }
     },
     {
@@ -134,20 +151,23 @@
       "args": [],
       "title": {
         "nl": "Drievoudige druk",
-        "en": "Triple press"
+        "en": "Triple press",
+        "fr": "Triple appui"
       },
       "tokens": [
         {
           "name": "clicks",
           "title": {
-            "en": "Click count"
+            "en": "Click count",
+            "fr": "Nombre de clics"
           },
           "type": "number"
         }
       ],
       "titleFormatted": {
         "nl": "Drievoudige druk ({clicks})",
-        "en": "Triple press ({clicks})"
+        "en": "Triple press ({clicks})",
+        "fr": "Triple appui ({clicks})"
       }
     },
     {
@@ -160,7 +180,8 @@
         "de": "Physisch eingeschaltet - Kanal 1"
       },
       "titleFormatted": {
-        "en": "Turned on physically - gang 1"
+        "en": "Turned on physically - gang 1",
+        "fr": "Allumé physiquement - voie 1"
       }
     },
     {
@@ -173,7 +194,8 @@
         "de": "Physisch ausgeschaltet - Kanal 1"
       },
       "titleFormatted": {
-        "en": "Turned off physically - gang 1"
+        "en": "Turned off physically - gang 1",
+        "fr": "Éteint physiquement - voie 1"
       }
     }
   ],
@@ -188,7 +210,8 @@
       },
       "hint": {
         "en": "Control when the LED indicator on the switch is lit",
-        "nl": "Bepaal wanneer de LED-indicator op de schakelaar brandt"
+        "nl": "Bepaal wanneer de LED-indicator op de schakelaar brandt",
+        "fr": "Choisir quand le voyant LED de l'interrupteur est allumé"
       },
       "args": [
         {
@@ -200,6 +223,11 @@
               "title": {
                 "en": "Always Off",
                 "nl": "Altijd Uit"
+              },
+              "label": {
+                "en": "Always Off",
+                "nl": "Altijd Uit",
+                "fr": "Toujours éteint"
               }
             },
             {
@@ -207,6 +235,11 @@
               "title": {
                 "en": "On when Switch ON (Normal)",
                 "nl": "Aan wanneer Schakelaar AAN (Normaal)"
+              },
+              "label": {
+                "en": "On when Switch ON (Normal)",
+                "nl": "Aan wanneer Schakelaar AAN (Normaal)",
+                "fr": "Allumé quand l'interrupteur est allumé (normal)"
               }
             },
             {
@@ -214,9 +247,18 @@
               "title": {
                 "en": "On when Switch OFF (Inverted)",
                 "nl": "Aan wanneer Schakelaar UIT (Omgekeerd)"
+              },
+              "label": {
+                "en": "On when Switch OFF (Inverted)",
+                "nl": "Aan wanneer Schakelaar UIT (Omgekeerd)",
+                "fr": "Allumé quand l'interrupteur est éteint (inversé)"
               }
             }
-          ]
+          ],
+          "title": {
+            "en": "Mode",
+            "fr": "Mode"
+          }
         }
       ],
       "titleFormatted": {
@@ -292,6 +334,11 @@
               "title": {
                 "en": "Always Off",
                 "nl": "Altijd Uit"
+              },
+              "label": {
+                "en": "Always Off",
+                "nl": "Altijd Uit",
+                "fr": "Toujours éteint"
               }
             },
             {
@@ -299,6 +346,11 @@
               "title": {
                 "en": "Always On",
                 "nl": "Altijd Aan"
+              },
+              "label": {
+                "en": "Always On",
+                "nl": "Altijd Aan",
+                "fr": "Toujours allumé"
               }
             },
             {
@@ -306,9 +358,18 @@
               "title": {
                 "en": "Last State",
                 "nl": "Laatste status"
+              },
+              "label": {
+                "en": "Last State",
+                "nl": "Laatste status",
+                "fr": "Dernier état"
               }
             }
-          ]
+          ],
+          "title": {
+            "en": "Mode",
+            "fr": "Mode"
+          }
         }
       ],
       "titleFormatted": {
@@ -336,6 +397,11 @@
               "title": {
                 "en": "Toggle",
                 "nl": "Tuimelschakelaar"
+              },
+              "label": {
+                "en": "Toggle",
+                "nl": "Tuimelschakelaar",
+                "fr": "Basculer"
               }
             },
             {
@@ -343,6 +409,11 @@
               "title": {
                 "en": "State (Rocker)",
                 "nl": "Status (Wipschakelaar)"
+              },
+              "label": {
+                "en": "State (Rocker)",
+                "nl": "Status (Wipschakelaar)",
+                "fr": "État (bascule)"
               }
             },
             {
@@ -350,9 +421,18 @@
               "title": {
                 "en": "Momentary (Push Button)",
                 "nl": "Pulsdrukknop"
+              },
+              "label": {
+                "en": "Momentary (Push Button)",
+                "nl": "Pulsdrukknop",
+                "fr": "Momentané (bouton poussoir)"
               }
             }
-          ]
+          ],
+          "title": {
+            "en": "Mode",
+            "fr": "Mode"
+          }
         }
       ],
       "titleFormatted": {
@@ -379,21 +459,37 @@
               "id": "auto",
               "title": {
                 "en": "Auto (Normal + flows)"
+              },
+              "label": {
+                "en": "Auto (Normal + flows)",
+                "fr": "Auto (normal + flows)"
               }
             },
             {
               "id": "magic",
               "title": {
                 "en": "Magic (Scene only)"
+              },
+              "label": {
+                "en": "Magic (Scene only)",
+                "fr": "Magique (scène uniquement)"
               }
             },
             {
               "id": "both",
               "title": {
                 "en": "Both (Load + scene)"
+              },
+              "label": {
+                "en": "Both (Load + scene)",
+                "fr": "Les deux (charge + scène)"
               }
             }
-          ]
+          ],
+          "title": {
+            "en": "Mode",
+            "fr": "Mode"
+          }
         }
       ],
       "titleFormatted": {

@@ -7,7 +7,8 @@
     "de": "Tarifzeitraum geändert"
   },
   "hint": {
-    "en": "Triggers when the active tariff period changes (e.g., from off-peak to peak)"
+    "en": "Triggers when the active tariff period changes (e.g., from off-peak to peak)",
+    "fr": "Se déclenche quand la période tarifaire change (ex. heures creuses vers heures pleines)"
   },
   "args": [],
   "tokens": [
@@ -15,7 +16,8 @@
       "name": "new_period",
       "type": "string",
       "title": {
-        "en": "New period"
+        "en": "New period",
+        "fr": "Nouvelle période"
       },
       "example": "peak"
     },
@@ -23,7 +25,8 @@
       "name": "old_period",
       "type": "string",
       "title": {
-        "en": "Previous period"
+        "en": "Previous period",
+        "fr": "Période précédente"
       },
       "example": "off_peak"
     },
@@ -31,19 +34,22 @@
       "name": "rate_per_kwh",
       "type": "number",
       "title": {
-        "en": "Rate per kWh"
+        "en": "Rate per kWh",
+        "fr": "Tarif par kWh"
       }
     },
     {
       "name": "currency",
       "type": "string",
       "title": {
-        "en": "Currency"
+        "en": "Currency",
+        "fr": "Devise"
       },
       "example": "EUR"
     }
   ],
   "titleFormatted": {
-    "en": "Tariff period changed"
+    "en": "Tariff period changed",
+    "fr": "Période tarifaire modifiée"
   }
 }

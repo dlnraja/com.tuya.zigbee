@@ -312,21 +312,36 @@
               "id": "all",
               "title": {
                 "en": "All"
+              },
+              "label": {
+                "en": "All",
+                "fr": "Tous"
               }
             },
             {
               "id": "gas",
               "title": {
                 "en": "Gas"
+              },
+              "label": {
+                "en": "Gas",
+                "fr": "Gaz"
               }
             },
             {
               "id": "co",
               "title": {
                 "en": "CO"
+              },
+              "label": {
+                "en": "CO"
               }
             }
-          ]
+          ],
+          "title": {
+            "en": "Test Type",
+            "fr": "Test Type"
+          }
         }
       ],
       "titleFormatted": {

@@ -7,7 +7,8 @@
     "de": "Zeitplan ist aktiv"
   },
   "hint": {
-    "en": "Checks if the schedule manager is running and has active schedules"
+    "en": "Checks if the schedule manager is running and has active schedules",
+    "fr": "Vérifie si le gestionnaire de planifications tourne et a des planifications actives"
   },
   "args": [],
   "tokens": [
@@ -15,25 +16,29 @@
       "name": "total_schedules",
       "type": "number",
       "title": {
-        "en": "Total schedules"
+        "en": "Total schedules",
+        "fr": "Nombre de planifications"
       }
     },
     {
       "name": "active_schedules",
       "type": "number",
       "title": {
-        "en": "Active schedules"
+        "en": "Active schedules",
+        "fr": "Planifications actives"
       }
     },
     {
       "name": "total_executions",
       "type": "number",
       "title": {
-        "en": "Total executions"
+        "en": "Total executions",
+        "fr": "Nombre d'exécutions"
       }
     }
   ],
   "titleFormatted": {
-    "en": "Schedule is active"
+    "en": "Schedule is active",
+    "fr": "La planification est active"
   }
 }

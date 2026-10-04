@@ -24,11 +24,19 @@
           "title": {
             "en": "Enabled",
             "fr": "Activées"
+          },
+          "label": {
+            "en": "Enabled",
+            "fr": "Activées"
           }
         },
         {
           "id": "false",
           "title": {
+            "en": "Disabled",
+            "fr": "Désactivées"
+          },
+          "label": {
             "en": "Disabled",
             "fr": "Désactivées"
           }

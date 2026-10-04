@@ -13,13 +13,15 @@
           "name": "temperature",
           "type": "number",
           "title": {
-            "en": "Temperature"
+            "en": "Temperature",
+            "fr": "Température"
           }
         }
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Temperature changed ({temperature})"
+        "en": "Temperature changed ({temperature})",
+        "fr": "Température modifiée ({temperature})"
       }
     },
     {
@@ -35,13 +37,15 @@
           "name": "humidity",
           "type": "number",
           "title": {
-            "en": "Humidity"
+            "en": "Humidity",
+            "fr": "Humidité"
           }
         }
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Humidity changed ({humidity})"
+        "en": "Humidity changed ({humidity})",
+        "fr": "Humidité modifiée ({humidity})"
       }
     },
     {

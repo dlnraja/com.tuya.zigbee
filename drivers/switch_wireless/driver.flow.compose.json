@@ -17,7 +17,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Turned on ({timestamp})"
+        "en": "Turned on ({timestamp})",
+        "fr": "Allumé ({timestamp})"
       }
     },
     {
@@ -49,7 +50,8 @@
           "name": "press_type",
           "type": "string",
           "title": {
-            "en": "Press type"
+            "en": "Press type",
+            "fr": "Type d'appui"
           },
           "example": "single"
         }
@@ -144,7 +146,8 @@
       },
       "args": [],
       "titleFormatted": {
-        "en": "Is !{{on|off}}"
+        "en": "Is !{{on|off}}",
+        "fr": "Est !{{allumé|éteint}}"
       }
     }
   ],
@@ -159,7 +162,8 @@
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn on"
+        "en": "Turn on",
+        "fr": "Allumer"
       }
     },
     {
@@ -172,7 +176,8 @@
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn off"
+        "en": "Turn off",
+        "fr": "Éteindre"
       }
     },
     {
@@ -185,7 +190,8 @@
       },
       "args": [],
       "titleFormatted": {
-        "en": "Toggle"
+        "en": "Toggle",
+        "fr": "Basculer"
       }
     }
   ]

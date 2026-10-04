@@ -24,11 +24,19 @@
           "title": {
             "en": "Day",
             "fr": "Jour"
+          },
+          "label": {
+            "en": "Day",
+            "fr": "Jour"
           }
         },
         {
           "id": "evening",
           "title": {
+            "en": "Evening",
+            "fr": "Soir"
+          },
+          "label": {
             "en": "Evening",
             "fr": "Soir"
           }
@@ -38,11 +46,19 @@
           "title": {
             "en": "Night",
             "fr": "Nuit"
+          },
+          "label": {
+            "en": "Night",
+            "fr": "Nuit"
           }
         },
         {
           "id": "away",
           "title": {
+            "en": "Away",
+            "fr": "Absent"
+          },
+          "label": {
             "en": "Away",
             "fr": "Absent"
           }
