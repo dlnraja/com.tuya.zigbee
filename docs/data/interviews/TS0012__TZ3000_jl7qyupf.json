@@ -1,0 +1,47 @@
+{
+  "manufacturerName": "_TZ3000_jl7qyupf",
+  "productId": "TS0012",
+  "source": "pc-harvest-r2 (normalized interview facts; origins: Homey forum, GitHub issues, user diagnostics)",
+  "interviewsMerged": 1,
+  "powerSource": null,
+  "firmware": null,
+  "endpoints": {
+    "1": {
+      "inputClusters": [
+        0,
+        3,
+        4,
+        5,
+        6,
+        57344,
+        57345
+      ],
+      "outputClusters": [
+        10,
+        25
+      ]
+    },
+    "2": {
+      "inputClusters": [
+        4,
+        5,
+        6,
+        57345
+      ],
+      "outputClusters": []
+    }
+  },
+  "inputClusters": [
+    0,
+    3,
+    4,
+    5,
+    6,
+    57344,
+    57345
+  ],
+  "outputClusters": [
+    10,
+    25
+  ]
+}
