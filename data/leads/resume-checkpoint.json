@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-04T09:05:19+02:00",
+  "updated": "2026-10-04T09:10+02:00",
   "queue": "dlnraja maintenance queue 2026-10-03 (items 1-7)",
   "rules": ".specify/memory/constitution.md",
   "worktree_note": "Use a dedicated git worktree per agent (e.g. /workspace/exec-wt); a shared checkout was reset by another worker on 2026-10-03.",
@@ -64,7 +64,9 @@
     }
   },
   "notes": {
-    "appjson": "root app.json minified (one line, ~2.3 MB) on master and stable since bot commit 6b2f2d3c9a; edit with JSON.stringify(a) no newline. Compact build 3.69/4.00 MB."
+    "appjson": "root app.json minified (one line, ~2.3 MB) on master and stable since bot commit 6b2f2d3c9a; edit with JSON.stringify(a) no newline. Compact build 3.69/4.00 MB.",
+    "daily_resume_2026_10_04_0a": "Enrichment-mode rules merged: DAILY_RESUME_ENRICHMENT.md, constitution W12, DEVICE_TRUTH conventions; gates verified/wired (native-matrix in validate.yml).",
+    "daily_resume_2026_10_04_0b": "Forum 140352 #2238-2258: all five items already-fixed on tip with prior SHAs; additive DynFlow debounce + forum signal leads + Discoveries FR entry."
   },
   "conflict_sweep": {
     "rule": "constitution W4",
@@ -88,7 +90,7 @@
     "7_ledger_wiring": "partial: advance-sweep + johan-thread-intel record ledger; broader wiring still pending",
     "8_spec003_004": "pending",
     "9_lazy_appjson": "pending",
-    "10_forum_wifi_tests_workflows": "partial: workflow audit + history sweep + self-check filled; wifi/tests still pending",
+    "10_forum_wifi_tests_workflows": "partial: 0a+0b forum leads done (DAILY_RESUME + T140352 #2238-2258); wifi/tests still pending; prior workflow audit kept",
     "11_deep_read_sweep": "in-progress: sweep-checkpoint created; Johan next=6 (chunk 1-5 done 2026-10-04)",
     "W7_polysemic_dp": "pending",
     "W8_tooling_inventory": "pending",
@@ -100,7 +102,7 @@
   },
   "master_queue": {
     "note": "Single master checklist of ALL user requests since the start. Daily resumption reads this FIRST. Tick (verified) only after verification.",
-    "updated": "2026-10-04T09:05+02:00",
+    "updated": "2026-10-04T09:10+02:00",
     "items": [
       {
         "id": 1,
@@ -303,8 +305,9 @@
       {
         "id": 34,
         "item": "Queue10 forum leads (AY-303Z DP109, ZG-106Z, ZG253 valve, MTG075, Peter History tab), Wi-Fi leftovers, 31 stable tests, workflow consolidation",
-        "status": "pending",
-        "evidence": ""
+        "status": "partial",
+        "evidence": "0a done: docs/rules/DAILY_RESUME_ENRICHMENT.md + constitution W12 + DEVICE_TRUTH conventions; native-matrix-gate wired in validate.yml (already in pr-gate + auto-fix). 0b: #2258 soil already-fixed a5ea22d29d; #2257 illuminance already-fixed; #2253 TRV already-fixed P2593/P2598/P2711; #2246-2255 VicHY already-fixed P2712 + DynFlow debounce additive; #2238/#2239 Insights options OK (repair-once note). Forum-poll → new-leads.json (signals, no AI). Remaining queue10: Wi-Fi leftovers, 31 stable tests, broader workflow consolidation.",
+        "updated": "2026-10-04"
       },
       {
         "id": 35,

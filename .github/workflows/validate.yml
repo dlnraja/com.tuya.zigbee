@@ -118,6 +118,9 @@ jobs:
       - name: 🛡️ Anti-bot regression gate
         run: node tools/ci/anti-bot-regression-gate.js
 
+      - name: 🛡️ Spec 002 native-matrix gate (mandatory non-native + dual couples)
+        run: node scripts/gates/native-matrix-gate.js
+
       - name: 🛡️ P2138 sacred-couple matrix gate
         run: node tools/ci/p2138-sacred-couple-matrix-gate.js
 
