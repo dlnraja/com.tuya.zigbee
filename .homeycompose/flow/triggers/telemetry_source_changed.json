@@ -64,9 +64,5 @@
       "name": "device",
       "filter": "driver_id!=none"
     }
-  ],
-  "titleFormatted": {
-    "en": "Smart · value quality changed (live / ≈ / ƒ / →) ([[device]])",
-    "fr": "Smart · qualité de la valeur changée (live / ≈ / ƒ / →) ([[device]])"
-  }
+  ]
 }
