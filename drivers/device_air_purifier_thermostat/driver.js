@@ -103,8 +103,8 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           // Generic action handler
-          this.log('[FLOW] Action device_air_purifier_thermostat_thermostat_tu_33b12 triggered for', args.device.getName());
-          return true;
+          // #113: real effect through the device's own capability listener when one matches.
+          return require('../../lib/flow/PlaceholderActionWiring').run(this, 'device_air_purifier_thermostat_thermostat_tu_33b12', args);
         });
       }
     } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_thermostat_thermostat_tu_33b12: ${err.message}`); } }
@@ -115,8 +115,8 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           // Generic action handler
-          this.log('[FLOW] Action device_air_purifier_thermostat_thermostat_tu_deca2 triggered for', args.device.getName());
-          return true;
+          // #113: real effect through the device's own capability listener when one matches.
+          return require('../../lib/flow/PlaceholderActionWiring').run(this, 'device_air_purifier_thermostat_thermostat_tu_deca2', args);
         });
       }
     } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_thermostat_thermostat_tu_deca2: ${err.message}`); } }
@@ -127,8 +127,8 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           // Generic action handler
-          this.log('[FLOW] Action device_air_purifier_thermostat_thermostat_tu_5131d triggered for', args.device.getName());
-          return true;
+          // #113: real effect through the device's own capability listener when one matches.
+          return require('../../lib/flow/PlaceholderActionWiring').run(this, 'device_air_purifier_thermostat_thermostat_tu_5131d', args);
         });
       }
     } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_thermostat_thermostat_tu_5131d: ${err.message}`); } }
@@ -139,8 +139,8 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           // Generic action handler
-          this.log('[FLOW] Action device_air_purifier_thermostat_thermostat_tu_4b8c2 triggered for', args.device.getName());
-          return true;
+          // #113: real effect through the device's own capability listener when one matches.
+          return require('../../lib/flow/PlaceholderActionWiring').run(this, 'device_air_purifier_thermostat_thermostat_tu_4b8c2', args);
         });
       }
     } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_thermostat_thermostat_tu_4b8c2: ${err.message}`); } }

@@ -778,8 +778,9 @@
       {
         "id": 113,
         "item": "34 drivers have flow actions that only log and return success (covers fixed in P2799): wire each to the real device command where a capability/command exists; otherwise leave unchanged (never turn a silent success into an error without care)",
-        "status": "pending",
-        "origin": "user 2026-10-04 04:48"
+        "status": "in_progress",
+        "origin": "user 2026-10-04 04:48",
+        "evidence": "master: lib/flow/PlaceholderActionWiring + config/flow/placeholder-action-wiring.json; 32 cards in 14 drivers wired through the device own capability listener (child lock, thermostat mode, temp +/- clamped, dim up/down, garage open/close/lock/unlock, cover open/close/stop/favorite on contact_sensor_curtain, generic requestDP); 35 cards left unchanged (countdown, LED indicator, radar sensitivity/range/fading/delay, test/mute, chime, permit join, comfort preset, reset meter: no standard capability or method); covers curtain_motor* via P2799"
       },
       {
         "id": 114,
