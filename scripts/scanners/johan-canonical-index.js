@@ -245,6 +245,29 @@ async function main() {
   fs.mkdirSync(path.dirname(OUT), { recursive: true });
   fs.writeFileSync(OUT, `${JSON.stringify(idx, null, 1)}\n`);
   console.log('[johan-index]', JSON.stringify(idx.summary));
+  syncLedger(idx);
+}
+
+// Constitution W3: keep data/progress/ledger.json in step — a done thread with a newer
+// comment goes back to pending; unknown threads are added as pending.
+function syncLedger(idx) {
+  try {
+    const L = require('../lib/ledger');
+    const l = L.load();
+    let changed = 0;
+    for (const e of Object.values(idx.issues)) {
+      const key = `johan-issue:${e.n}`;
+      const at = e.lastComment && e.lastComment.at;
+      const cur = l.items[key];
+      if (!cur) { l.items[key] = { status: 'pending', kind: e.pr ? 'pr' : e.kind || 'issue', upstreamUpdatedAt: at || null }; changed++; continue; }
+      if (at && (!cur.upstreamUpdatedAt || String(at) > String(cur.upstreamUpdatedAt))) {
+        cur.upstreamUpdatedAt = at;
+        if (cur.status === 'done' && cur.updatedAt && String(at) > String(cur.updatedAt)) { cur.status = 'pending'; cur.reopenedBy = 'new-comment'; }
+        changed++;
+      }
+    }
+    if (changed) { L.save(l); console.log(`[johan-index] ledger synced (${changed})`); }
+  } catch (err) { console.warn('[johan-index] ledger sync skipped:', err.message); }
 }
 
 if (require.main === module) {main();}
