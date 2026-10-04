@@ -1207,6 +1207,24 @@
       "pid": "TS0601",
       "driverId": "smart_breaker",
       "note": "#108/#109 2026-10-04 ZHC-verified (tuya.ts TOQCB2-80, Koen Kanters and contributors) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE284_oa1odmga",
+      "pid": "TS0601",
+      "driverId": "light_bulb_rgb_rgbw",
+      "note": "#100 2026-10-04 Z2M #32498 (external converter + Tuya portal DP list: DP1 switch, DP2 mode, DP3 bright 10-1000, DP4 temp, DP5 colour hsv) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZ3210_jqg2a5yn",
+      "pid": "TS0002",
+      "driverId": "switch_2gang",
+      "note": "#100 2026-10-04 Z2M #32627 (2-gang ZCL relay, power-on via genOnOff startUpOnOff 0x4003) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZ3290_qazgdsae",
+      "pid": "TS1201",
+      "driverId": "ir_blaster",
+      "note": "#100 2026-10-04 ZHA PR #5282 (Zosung TS1201 IR blaster family) — keep through publish compaction"
     }
   ]
 }
