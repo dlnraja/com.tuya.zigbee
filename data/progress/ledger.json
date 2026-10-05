@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-04T09:04:45+02:00",
+ "updated": "2026-10-05T10:51:22.918Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -9813,7 +9813,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 5,
-   "upstreamUpdatedAt": "2026-10-03T07:57:21Z",
+   "upstreamUpdatedAt": "2026-10-03T23:20:18Z",
    "mailDate": "2026-10-03",
    "mailEvents": [
     "comment",
@@ -10933,11 +10933,11 @@
    ]
   },
   "johan-issue:1113": {
-   "status": "done",
+   "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-03T08:05:05Z",
+   "upstreamUpdatedAt": "2026-10-03T23:25:59Z",
    "date": "2026-10-04",
    "note": "eWeLink|SNZB-03 -> sensor_ias_zonetype_ewelink (zoneType)",
    "commit": "88b3584cf6",
@@ -10945,7 +10945,8 @@
    "mailDate": "2026-10-03",
    "mailEvents": [
     "comment"
-   ]
+   ],
+   "reopenedBy": "new-comment"
   },
   "johan-issue:1114": {
    "status": "pending",
@@ -15074,7 +15075,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 31,
-   "upstreamUpdatedAt": "2026-10-03T14:47:44Z"
+   "upstreamUpdatedAt": "2026-10-04T21:14:31Z"
   },
   "johan-issue:147": {
    "status": "pending",
@@ -15088,7 +15089,7 @@
    "kind": "pr",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-02T19:16:11Z"
+   "upstreamUpdatedAt": "2026-10-04T11:59:46Z"
   },
   "johan-issue:1471": {
    "status": "pending",
@@ -15176,7 +15177,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-03T07:57:11Z"
+   "upstreamUpdatedAt": "2026-10-03T23:25:55Z"
   },
   "johan-issue:1482": {
    "status": "pending",
@@ -15393,12 +15394,52 @@
    "comments": 0,
    "upstreamUpdatedAt": "2026-10-03T14:47:15Z"
   },
+  "johan-issue:1509": {
+   "status": "pending",
+   "kind": "pr",
+   "upstreamUpdatedAt": null
+  },
   "johan-issue:151": {
    "status": "pending",
    "kind": "issue",
    "state": "closed",
    "comments": 0,
    "upstreamUpdatedAt": "2024-09-02T20:10:54Z"
+  },
+  "johan-issue:1510": {
+   "status": "pending",
+   "kind": "pr",
+   "upstreamUpdatedAt": null
+  },
+  "johan-issue:1511": {
+   "status": "pending",
+   "kind": "pr",
+   "upstreamUpdatedAt": null
+  },
+  "johan-issue:1512": {
+   "status": "pending",
+   "kind": "issue",
+   "upstreamUpdatedAt": null
+  },
+  "johan-issue:1513": {
+   "status": "pending",
+   "kind": "pr",
+   "upstreamUpdatedAt": null
+  },
+  "johan-issue:1514": {
+   "status": "pending",
+   "kind": "pr",
+   "upstreamUpdatedAt": "2026-10-04T21:14:36Z"
+  },
+  "johan-issue:1515": {
+   "status": "pending",
+   "kind": "pr",
+   "upstreamUpdatedAt": null
+  },
+  "johan-issue:1516": {
+   "status": "pending",
+   "kind": "pr",
+   "upstreamUpdatedAt": null
   },
   "johan-issue:152": {
    "status": "pending",
