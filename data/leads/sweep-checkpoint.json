@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-04T07:01:12.389Z",
+  "updated": "2026-10-05T10:51:30.325Z",
   "threads": {
     "21313": {
       "lastPost": 2819,
@@ -146,11 +146,51 @@
       "sources": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/5"
       ]
+    },
+    {
+      "id": "johan-issue:6",
+      "status": "already-fixed",
+      "note": "couple(s) already present in drivers (_TYZB01_6sadkhcy/TS0002)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/6"
+      ]
+    },
+    {
+      "id": "johan-issue:7",
+      "status": "already-fixed",
+      "note": "couple(s) already present in drivers (_TYZB01_xfpdrwvc/TS0011)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/7"
+      ]
+    },
+    {
+      "id": "johan-issue:8",
+      "status": "already-fixed",
+      "note": "couple(s) already present in drivers (_TYZB01_mtlhqn48/TS0012)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/8"
+      ]
+    },
+    {
+      "id": "johan-issue:9",
+      "status": "already-fixed",
+      "note": "couple(s) already present in drivers (_TZ3000_8kzqqzu4/TS130F)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/9"
+      ]
+    },
+    {
+      "id": "johan-issue:10",
+      "status": "needs-info",
+      "note": "no usable mfr+pid in thread body; defer until interview/diag",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/10"
+      ]
     }
   ],
   "github": {
     "johan": {
-      "next": 6
+      "next": 11
     },
     "dlnraja": {
       "next": 1
@@ -158,34 +198,34 @@
   },
   "note": "Full-history sweep. Forum lastPost seeded from Daily digest #557 state (2026-10-02). Items rewritten in our words; SHAs only as evidence.",
   "lastChunk": {
-    "at": "2026-10-04T07:01:12.389Z",
+    "at": "2026-10-05T10:51:30.325Z",
     "advanced": 5,
     "rateLimited": false,
     "items": [
       {
-        "n": 1,
+        "n": 6,
         "status": "already-fixed",
-        "note": "historical merged/closed PR (Added LCD Temperature and Humidity Sensor); no open reliability work"
+        "note": "couple(s) already present in drivers (_TYZB01_6sadkhcy/TS0002)"
       },
       {
-        "n": 2,
+        "n": 7,
         "status": "already-fixed",
-        "note": "historical merged/closed PR (v0.0.6); no open reliability work"
+        "note": "couple(s) already present in drivers (_TYZB01_xfpdrwvc/TS0011)"
       },
       {
-        "n": 3,
+        "n": 8,
         "status": "already-fixed",
-        "note": "pid-only historical request (TS0601); covered by class drivers when mfr unknown"
+        "note": "couple(s) already present in drivers (_TYZB01_mtlhqn48/TS0012)"
       },
       {
-        "n": 4,
+        "n": 9,
+        "status": "already-fixed",
+        "note": "couple(s) already present in drivers (_TZ3000_8kzqqzu4/TS130F)"
+      },
+      {
+        "n": 10,
         "status": "needs-info",
         "note": "no usable mfr+pid in thread body; defer until interview/diag"
-      },
-      {
-        "n": 5,
-        "status": "already-fixed",
-        "note": "couple(s) already present in drivers (_TZ3000_3ooaz3ng,_TYZB01_iuepbmpv/TS0121)"
       }
     ]
   }

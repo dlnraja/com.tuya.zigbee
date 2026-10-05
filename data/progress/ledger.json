@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-05T10:51:22.918Z",
+ "updated": "2026-10-05T10:51:30.325Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -9668,11 +9668,14 @@
    "by": "advance-sweep"
   },
   "johan-issue:10": {
-   "status": "pending",
+   "status": "deferred",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2024-09-15T20:47:50Z"
+   "upstreamUpdatedAt": "2024-09-15T20:47:50Z",
+   "date": "2026-10-05",
+   "note": "no usable mfr+pid in thread body; defer until interview/diag",
+   "by": "advance-sweep"
   },
   "johan-issue:100": {
    "status": "pending",
@@ -19312,11 +19315,14 @@
    "upstreamUpdatedAt": "2026-09-27T23:07:23Z"
   },
   "johan-issue:6": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2021-04-24T10:30:12Z"
+   "upstreamUpdatedAt": "2021-04-24T10:30:12Z",
+   "date": "2026-10-05",
+   "note": "couple(s) already present in drivers (_TYZB01_6sadkhcy/TS0002)",
+   "by": "advance-sweep"
   },
   "johan-issue:60": {
    "status": "pending",
@@ -20178,11 +20184,14 @@
    "upstreamUpdatedAt": "2024-01-27T12:47:24Z"
   },
   "johan-issue:7": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2021-04-24T10:30:23Z"
+   "upstreamUpdatedAt": "2021-04-24T10:30:23Z",
+   "date": "2026-10-05",
+   "note": "couple(s) already present in drivers (_TYZB01_xfpdrwvc/TS0011)",
+   "by": "advance-sweep"
   },
   "johan-issue:70": {
    "status": "pending",
@@ -21051,11 +21060,14 @@
    "upstreamUpdatedAt": "2024-09-11T21:01:04Z"
   },
   "johan-issue:8": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2021-04-24T10:30:34Z"
+   "upstreamUpdatedAt": "2021-04-24T10:30:34Z",
+   "date": "2026-10-05",
+   "note": "couple(s) already present in drivers (_TYZB01_mtlhqn48/TS0012)",
+   "by": "advance-sweep"
   },
   "johan-issue:80": {
    "status": "pending",
@@ -21961,11 +21973,14 @@
    "upstreamUpdatedAt": "2024-08-31T14:27:47Z"
   },
   "johan-issue:9": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 7,
-   "upstreamUpdatedAt": "2022-01-03T17:38:07Z"
+   "upstreamUpdatedAt": "2022-01-03T17:38:07Z",
+   "date": "2026-10-05",
+   "note": "couple(s) already present in drivers (_TZ3000_8kzqqzu4/TS130F)",
+   "by": "advance-sweep"
   },
   "johan-issue:90": {
    "status": "pending",
