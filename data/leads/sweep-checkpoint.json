@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-05T10:51:30.325Z",
+  "updated": "2026-10-06T10:46:56.927Z",
   "threads": {
     "21313": {
       "lastPost": 2819,
@@ -186,11 +186,51 @@
       "sources": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/10"
       ]
+    },
+    {
+      "id": "johan-issue:11",
+      "status": "already-fixed",
+      "note": "couple(s) already present in drivers (_TYZB01_ncutbjdi/TS0003)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/11"
+      ]
+    },
+    {
+      "id": "johan-issue:12",
+      "status": "already-fixed",
+      "note": "couple(s) already present in drivers (_TZE200_ckud7u2l/TS0601)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/12"
+      ]
+    },
+    {
+      "id": "johan-issue:13",
+      "status": "needs-info",
+      "note": "no usable mfr+pid in thread body; defer until interview/diag",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/13"
+      ]
+    },
+    {
+      "id": "johan-issue:14",
+      "status": "needs-info",
+      "note": "no usable mfr+pid in thread body; defer until interview/diag",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/14"
+      ]
+    },
+    {
+      "id": "johan-issue:15",
+      "status": "pending",
+      "note": "identities seen (_TYZB01_v8gtiaed|TS110F); needs code check",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/15"
+      ]
     }
   ],
   "github": {
     "johan": {
-      "next": 11
+      "next": 16
     },
     "dlnraja": {
       "next": 1
@@ -198,34 +238,34 @@
   },
   "note": "Full-history sweep. Forum lastPost seeded from Daily digest #557 state (2026-10-02). Items rewritten in our words; SHAs only as evidence.",
   "lastChunk": {
-    "at": "2026-10-05T10:51:30.325Z",
+    "at": "2026-10-06T10:46:56.927Z",
     "advanced": 5,
     "rateLimited": false,
     "items": [
       {
-        "n": 6,
+        "n": 11,
         "status": "already-fixed",
-        "note": "couple(s) already present in drivers (_TYZB01_6sadkhcy/TS0002)"
+        "note": "couple(s) already present in drivers (_TYZB01_ncutbjdi/TS0003)"
       },
       {
-        "n": 7,
+        "n": 12,
         "status": "already-fixed",
-        "note": "couple(s) already present in drivers (_TYZB01_xfpdrwvc/TS0011)"
+        "note": "couple(s) already present in drivers (_TZE200_ckud7u2l/TS0601)"
       },
       {
-        "n": 8,
-        "status": "already-fixed",
-        "note": "couple(s) already present in drivers (_TYZB01_mtlhqn48/TS0012)"
-      },
-      {
-        "n": 9,
-        "status": "already-fixed",
-        "note": "couple(s) already present in drivers (_TZ3000_8kzqqzu4/TS130F)"
-      },
-      {
-        "n": 10,
+        "n": 13,
         "status": "needs-info",
         "note": "no usable mfr+pid in thread body; defer until interview/diag"
+      },
+      {
+        "n": 14,
+        "status": "needs-info",
+        "note": "no usable mfr+pid in thread body; defer until interview/diag"
+      },
+      {
+        "n": 15,
+        "status": "pending",
+        "note": "identities seen (_TYZB01_v8gtiaed|TS110F); needs code check"
       }
     ]
   }

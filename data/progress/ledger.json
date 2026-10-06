@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-06T10:46:47.921Z",
+ "updated": "2026-10-06T10:46:56.927Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -10776,11 +10776,14 @@
    ]
   },
   "johan-issue:11": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2021-04-24T10:30:47Z"
+   "upstreamUpdatedAt": "2021-04-24T10:30:47Z",
+   "date": "2026-10-06",
+   "note": "couple(s) already present in drivers (_TYZB01_ncutbjdi/TS0003)",
+   "by": "advance-sweep"
   },
   "johan-issue:110": {
    "status": "pending",
@@ -11976,11 +11979,14 @@
    ]
   },
   "johan-issue:12": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "open",
    "comments": 11,
-   "upstreamUpdatedAt": "2026-10-02T06:46:58Z"
+   "upstreamUpdatedAt": "2026-10-02T06:46:58Z",
+   "date": "2026-10-06",
+   "note": "couple(s) already present in drivers (_TZE200_ckud7u2l/TS0601)",
+   "by": "advance-sweep"
   },
   "johan-issue:120": {
    "status": "pending",
@@ -13173,11 +13179,14 @@
    ]
   },
   "johan-issue:13": {
-   "status": "pending",
+   "status": "deferred",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2021-04-24T10:30:57Z"
+   "upstreamUpdatedAt": "2021-04-24T10:30:57Z",
+   "date": "2026-10-06",
+   "note": "no usable mfr+pid in thread body; defer until interview/diag",
+   "by": "advance-sweep"
   },
   "johan-issue:130": {
    "status": "pending",
@@ -14393,11 +14402,14 @@
    ]
   },
   "johan-issue:14": {
-   "status": "pending",
+   "status": "deferred",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2021-12-31T00:29:34Z"
+   "upstreamUpdatedAt": "2021-12-31T00:29:34Z",
+   "date": "2026-10-06",
+   "note": "no usable mfr+pid in thread body; defer until interview/diag",
+   "by": "advance-sweep"
   },
   "johan-issue:140": {
    "status": "pending",
