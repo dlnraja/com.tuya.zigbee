@@ -1,6 +1,6 @@
 # Rules Enforcement Matrix
 
-Generated: 2026-09-29T09:09:39.037Z
+Generated: 2026-10-06T09:30:21.680Z
 
 Machine-checkable rules tracked: **50** — enforced **40**, unenforced **10**, broken references **0** (coverage **80%**).
 
