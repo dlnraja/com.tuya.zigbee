@@ -2,13 +2,13 @@
   "sources": {
     "z2m-converters": {
       "lastSha": "4dc441196c31d08849bd3d114b3cf2a52c056dec",
-      "checkedAt": "2026-10-05T09:36:06.876Z",
+      "checkedAt": "2026-10-06T09:24:21.956Z",
       "lastError": null
     },
     "z2m-issues": {
       "lastSha": "344b6e03b43644c97154a72ca9eae17193c553a2",
-      "issuesSince": "2026-10-01T00:05:55Z",
-      "checkedAt": "2026-10-05T09:36:07.773Z",
+      "issuesSince": "2026-10-02T20:22:19Z",
+      "checkedAt": "2026-10-06T09:24:22.886Z",
       "lastError": null
     },
     "z2m-device-pages": {
@@ -18,8 +18,8 @@
     },
     "zha-quirks": {
       "lastSha": "55319bd14be7b5e782c585c31f528d9f90ce431e",
-      "issuesSince": "2026-10-05T09:16:34Z",
-      "checkedAt": "2026-10-05T09:36:08.500Z",
+      "issuesSince": "2026-10-06T07:03:01Z",
+      "checkedAt": "2026-10-06T09:24:23.559Z",
       "lastError": null
     },
     "zha": {
@@ -93,8 +93,8 @@
     },
     "johan": {
       "lastSha": "328d24ed315131528f2358b66bb0b8259615a49e",
-      "issuesSince": "2026-09-28T11:07:29Z",
-      "checkedAt": "2026-10-05T09:36:09.531Z",
+      "issuesSince": "2026-09-28T15:58:35Z",
+      "checkedAt": "2026-10-06T09:24:24.484Z",
       "lastError": null
     },
     "johan-forks": {
@@ -104,10 +104,10 @@
     },
     "homey-forum": {
       "lastPost": {
-        "26439": 5526,
+        "26439": 5531,
         "140352": 2258
       },
-      "checkedAt": "2026-10-05T09:36:09.862Z",
+      "checkedAt": "2026-10-06T09:24:24.988Z",
       "lastError": null
     },
     "homey-sdk-changelog": {
