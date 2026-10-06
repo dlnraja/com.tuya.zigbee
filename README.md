@@ -4,18 +4,18 @@
 
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-447-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-4,757%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,758%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-green)](LICENSE)
 
-Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **447 drivers**, **4,757 unique fingerprints**. No cloud required.
+Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **447 drivers**, **4,758 unique fingerprints**. No cloud required.
 
 **What it does:**
 - Talks to devices on your Homey Zigbee mesh (Tuya DP `0xEF00` and standard ZCL)
 - Case-insensitive fingerprint matching so pairing is reliable across OEM variants
 - Battery curves by chemistry (no linear `%` guesses)
 - Flow cards for physical buttons, sensors, and actuators (EN, FR, NL, DE)
-- Optional native Zigbee OTA for 8 drivers (Homey v13.2.0+)
+- Optional native Zigbee OTA for 9 drivers (Homey v13.2.0+)
 
 ---
 
@@ -35,45 +35,39 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 |--------|-------|
 | **App Version** | v9.0.1331 |
 | **Drivers** | 447 (394 Zigbee + 53 WiFi) |
-| **Unique Fingerprints** | 4,757 |
-| **Pairing Variants** | 19,024 (4 case combos per fingerprint) |
-| **Unique Product IDs** | 933 |
-| **Flow Cards** | 6,051 |
-| **Unique Capabilities** | 176 |
-| **Native OTA Drivers** | 8 |
-| **Test Suites** | 598 files |
-| **Pairing Variants** | 19,033 (4 case combos per fingerprint) |
+| **Unique Fingerprints** | 4,758 |
+| **Pairing Variants** | 19,205 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 935 |
-| **Flow Cards** | 6,051 |
+| **Flow Cards** | 6,060 |
 | **Unique Capabilities** | 176 |
-| **Native OTA Drivers** | 8 |
-| **Test Suites** | 605 files |
+| **Native OTA Drivers** | 9 |
+| **Test Suites** | 607 files |
 | **SVG Icons** | 750 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
-| **Last Updated** | 2026-10-04 |
+| **Last Updated** | 2026-10-06 |
 
 ### Top 20 Drivers by Fingerprint Count
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
 | 1 | `climate_sensor` | 2,127 |
-| 2 | `switch_1gang` | 1,437 |
-| 3 | `curtain_motor` | 1,134 |
-| 4 | `presence_sensor_radar` | 993 |
-| 5 | `radiator_valve` | 611 |
+| 2 | `switch_1gang` | 1,439 |
+| 3 | `curtain_motor` | 1,146 |
+| 4 | `presence_sensor_radar` | 999 |
+| 5 | `radiator_valve` | 613 |
 | 6 | `generic_tuya` | 581 |
 | 7 | `button_wireless_2` | 562 |
-| 8 | `wall_dimmer_tuya` | 532 |
-| 9 | `device_radiator_valve` | 372 |
-| 10 | `switch_2gang` | 363 |
-| 11 | `switch_4gang` | 312 |
+| 8 | `wall_dimmer_tuya` | 536 |
+| 9 | `switch_2gang` | 373 |
+| 10 | `device_radiator_valve` | 372 |
+| 11 | `switch_4gang` | 318 |
 | 12 | `diy_custom_zigbee` | 306 |
 | 13 | `motion_sensor` | 291 |
 | 14 | `soil_sensor` | 282 |
-| 15 | `switch_3gang` | 277 |
+| 15 | `switch_3gang` | 281 |
 | 16 | `contact_sensor` | 241 |
-| 17 | `plug_energy_monitor` | 224 |
+| 17 | `plug_energy_monitor` | 232 |
 | 18 | `thermostat_tuya_dp` | 200 |
 | 19 | `sensor_contact_zigbee` | 187 |
 | 20 | `wall_thermostat` | 180 |
@@ -82,9 +76,9 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Class | Count |
 |-------|-------|
-| socket | 119 |
+| socket | 116 |
 | sensor | 112 |
-| light | 66 |
+| light | 69 |
 | other | 31 |
 | button | 26 |
 | thermostat | 26 |
@@ -109,7 +103,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.1331** | v9.0.1330: |
+| **v9.0.1332** | Dimmers (2-gang dimmer module, dimmer wall switch, wall dimmer 1-gang) now use the Light device type, so the light ring and voice assista… |
+| **v9.0.1331** | Dimmers (2-gang dimmer module, dimmer wall switch, wall dimmer 1-gang) now use the Light device type, so the light ring and voice assista… |
 | **v9.0.1330** | v9.0.1330: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1329** | v9.0.1329: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1328** | v9.0.1328: automated publish, manifest sync, and Homey test promotion. |
@@ -120,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1323** | v9.0.1323: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1322** | v9.0.1322: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1321** | v9.0.1321: automated publish, manifest sync, and Homey test promotion. |
-| **v9.0.1320** | v9.0.1320: automated publish, manifest sync, and Homey test promotion. |
 
 <!-- CHANGELOG_END -->
 
