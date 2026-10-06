@@ -17751,8 +17751,8 @@
    "canonical": 1013,
    "regression": true,
    "lastComment": {
-    "at": "2026-10-04T21:14:31Z",
-    "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1469#issuecomment-5984450198"
+    "at": "2026-10-05T18:58:10Z",
+    "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1469#issuecomment-6001076114"
    },
    "duplicateTrackingOnly": true,
    "needsDeepRead": true,
@@ -17935,8 +17935,8 @@
    "topic": "pull-request",
    "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1470",
    "lastComment": {
-    "at": "2026-10-04T11:59:46Z",
-    "url": "https://github.com/JohanBendz/com.tuya.zigbee/pull/1470#issuecomment-5979694404"
+    "at": "2026-10-05T18:43:13Z",
+    "url": "https://github.com/JohanBendz/com.tuya.zigbee/pull/1470#issuecomment-6000835574"
    },
    "regression": true
   },
@@ -19092,8 +19092,8 @@
    "closed_at": null,
    "pr": true,
    "lastComment": {
-    "at": "2026-10-04T21:14:36Z",
-    "url": "https://github.com/JohanBendz/com.tuya.zigbee/pull/1514#issuecomment-5984450905"
+    "at": "2026-10-05T13:56:27Z",
+    "url": "https://github.com/JohanBendz/com.tuya.zigbee/pull/1514#issuecomment-5995938935"
    },
    "needsDeepRead": true
   },
@@ -19124,22 +19124,133 @@
    "state_reason": null,
    "closed_at": "2026-10-04T21:13:47Z",
    "pr": true
+  },
+  "1517": {
+   "n": 1517,
+   "sources": [],
+   "identities": [],
+   "objectives": [],
+   "batches": [],
+   "implemented": [],
+   "topic": "bug",
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1517",
+   "state": "open",
+   "state_reason": null,
+   "closed_at": null,
+   "pr": false,
+   "regression": true,
+   "lastComment": {
+    "at": "2026-10-05T18:45:03Z",
+    "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1517#issuecomment-6000864737"
+   },
+   "needsDeepRead": true
+  },
+  "1518": {
+   "n": 1518,
+   "sources": [],
+   "identities": [],
+   "objectives": [],
+   "batches": [],
+   "implemented": [],
+   "topic": "pull-request",
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1518",
+   "state": "open",
+   "state_reason": null,
+   "closed_at": null,
+   "pr": true,
+   "lastComment": {
+    "at": "2026-10-05T18:45:08Z",
+    "url": "https://github.com/JohanBendz/com.tuya.zigbee/pull/1518#issuecomment-6000866189"
+   },
+   "needsDeepRead": true
+  },
+  "1519": {
+   "n": 1519,
+   "sources": [],
+   "identities": [],
+   "objectives": [],
+   "batches": [],
+   "implemented": [],
+   "topic": "pull-request",
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1519",
+   "state": "closed",
+   "state_reason": null,
+   "closed_at": "2026-10-05T18:58:17Z",
+   "pr": true,
+   "lastComment": {
+    "at": "2026-10-05T18:58:13Z",
+    "url": "https://github.com/JohanBendz/com.tuya.zigbee/pull/1519#issuecomment-6001076982"
+   },
+   "needsDeepRead": true
+  },
+  "1520": {
+   "n": 1520,
+   "sources": [],
+   "identities": [],
+   "objectives": [],
+   "batches": [],
+   "implemented": [],
+   "topic": "other",
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1520",
+   "state": "open",
+   "state_reason": null,
+   "closed_at": null,
+   "pr": false,
+   "regression": true,
+   "lastComment": {
+    "at": "2026-10-05T18:58:07Z",
+    "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1520#issuecomment-6001075537"
+   },
+   "needsDeepRead": true
+  },
+  "1521": {
+   "n": 1521,
+   "sources": [],
+   "identities": [],
+   "objectives": [],
+   "batches": [],
+   "implemented": [],
+   "topic": "pull-request",
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1521",
+   "state": "closed",
+   "state_reason": null,
+   "closed_at": "2026-10-05T18:58:19Z",
+   "pr": true,
+   "lastComment": {
+    "at": "2026-10-05T18:58:15Z",
+    "url": "https://github.com/JohanBendz/com.tuya.zigbee/pull/1521#issuecomment-6001077465"
+   },
+   "needsDeepRead": true
+  },
+  "1522": {
+   "n": 1522,
+   "sources": [],
+   "identities": [],
+   "objectives": [],
+   "batches": [],
+   "implemented": [],
+   "topic": "device-request",
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1522",
+   "state": "open",
+   "state_reason": null,
+   "closed_at": null,
+   "pr": false
   }
  },
- "generated": "2026-10-05T10:50:57.965Z",
+ "generated": "2026-10-06T10:46:45.567Z",
  "repo": "JohanBendz/com.tuya.zigbee",
  "author": "JohanBendz",
  "cursor": {
-  "since": "2026-10-05T10:50:57.965Z"
+  "since": "2026-10-06T10:46:45.567Z"
  },
  "summary": {
-  "issues": 710,
+  "issues": 716,
   "canonical": 117,
-  "closed": 504,
+  "closed": 506,
   "duplicate": 168,
   "withObjectives": 49,
   "identities": 426,
-  "regressions": 87
+  "regressions": 89
  },
  "note": "Maintainer triage index. canonical = target of a consolidation; duplicateTrackingOnly = closed as duplicate tracking, NOT implemented. Leads only; fingerprints still need the strict rule."
 }
