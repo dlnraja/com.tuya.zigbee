@@ -1,0 +1,45 @@
+{
+  "harvestedAt": "2026-10-06T01:02:37.548Z",
+  "repo": "dlnraja/com.tuya.zigbee",
+  "auth": "token",
+  "error": null,
+  "issues": [
+    {
+      "number": 557,
+      "title": "🤖 Daily digest",
+      "labels": [
+        "bot-digest"
+      ],
+      "updatedAt": "2026-10-05T21:29:41Z",
+      "user": "dlnraja",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/557"
+    },
+    {
+      "number": 550,
+      "title": "Bug report - [Short description]",
+      "labels": [
+        "bug",
+        "reopened-by-user"
+      ],
+      "updatedAt": "2026-10-04T08:18:31Z",
+      "user": "HiepSVG",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/550"
+    },
+    {
+      "number": 559,
+      "title": "Smartplug",
+      "labels": [
+        "enhancement",
+        "device-request",
+        "auto-triage",
+        "fingerprint-supported"
+      ],
+      "updatedAt": "2026-10-03T21:01:31Z",
+      "user": "Lalla80111",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/559"
+    }
+  ],
+  "prs": [],
+  "openIssueCount": 3,
+  "openPrCount": 0
+}
