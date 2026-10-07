@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-06T10:46:56.927Z",
+ "updated": "2026-10-07T10:34:47.702Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -15543,11 +15543,14 @@
    "upstreamUpdatedAt": "2022-03-26T04:57:54Z"
   },
   "johan-issue:16": {
-   "status": "pending",
+   "status": "deferred",
    "kind": "issue",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2021-04-24T10:31:23Z"
+   "upstreamUpdatedAt": "2021-04-24T10:31:23Z",
+   "date": "2026-10-07",
+   "note": "no usable mfr+pid in thread body; defer until interview/diag",
+   "by": "advance-sweep"
   },
   "johan-issue:160": {
    "status": "pending",
@@ -15620,11 +15623,14 @@
    "upstreamUpdatedAt": "2022-04-16T16:19:49Z"
   },
   "johan-issue:17": {
-   "status": "pending",
+   "status": "done",
    "kind": "pr",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2020-11-07T12:14:09Z"
+   "upstreamUpdatedAt": "2020-11-07T12:14:09Z",
+   "date": "2026-10-07",
+   "note": "historical merged/closed PR (v0.1.9); no open reliability work",
+   "by": "advance-sweep"
   },
   "johan-issue:170": {
    "status": "pending",
@@ -15697,11 +15703,14 @@
    "upstreamUpdatedAt": "2026-10-01T11:29:37Z"
   },
   "johan-issue:18": {
-   "status": "pending",
+   "status": "done",
    "kind": "pr",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2020-11-09T00:28:49Z"
+   "upstreamUpdatedAt": "2020-11-09T00:28:49Z",
+   "date": "2026-10-07",
+   "note": "historical merged/closed PR (Added Wall Switch); no open reliability work",
+   "by": "advance-sweep"
   },
   "johan-issue:180": {
    "status": "pending",
@@ -15774,11 +15783,14 @@
    "upstreamUpdatedAt": "2026-10-01T11:28:39Z"
   },
   "johan-issue:19": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2021-04-24T10:32:25Z"
+   "upstreamUpdatedAt": "2021-04-24T10:32:25Z",
+   "date": "2026-10-07",
+   "note": "couple(s) already present in drivers (_TZ3000_obacbukl/TS0503A)",
+   "by": "advance-sweep"
   },
   "johan-issue:190": {
    "status": "pending",
@@ -15861,11 +15873,14 @@
    "by": "advance-sweep"
   },
   "johan-issue:20": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2020-11-29T09:13:55Z"
+   "upstreamUpdatedAt": "2020-11-29T09:13:55Z",
+   "date": "2026-10-07",
+   "note": "couple(s) already present in drivers (_TZ3000_1obwwnmq/TS011F)",
+   "by": "advance-sweep"
   },
   "johan-issue:200": {
    "status": "pending",
