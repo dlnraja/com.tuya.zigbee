@@ -1,6 +1,6 @@
 {
   "$comment": "Change-driven proposals from data/sources/registry.json. Identifiers + our own one-line summaries; review before landing (W4 couples, research first).",
-  "updated": "2026-10-06T09:24:24.988Z",
+  "updated": "2026-10-07T09:14:03.747Z",
   "proposals": [
     {
       "source": "z2m-issues",
@@ -4359,6 +4359,1231 @@
       "quirk": false,
       "credit": "Johan Bendz and com.tuya.zigbee contributors",
       "seenAt": "2026-10-06T09:24:24.484Z"
+    },
+    {
+      "source": "z2m-converters",
+      "kind": "converters",
+      "ref": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/789ab4dcf068587b7cad46efab87d408a62e09f7/src/devices/gledopto.ts",
+      "summary": "modified src/devices/gledopto.ts (+1/-1) between 4dc4411..789ab4d",
+      "mfrs": [
+        "_TZE204_8fffc3kb",
+        "_TZE284_gt5al3bl"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee-herdsman-converters contributors (MIT)",
+      "seenAt": "2026-10-07T09:14:00.474Z"
+    },
+    {
+      "source": "z2m-converters",
+      "kind": "converters",
+      "ref": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/789ab4dcf068587b7cad46efab87d408a62e09f7/src/devices/lumi.ts",
+      "summary": "modified src/devices/lumi.ts (+11/-5) between 4dc4411..789ab4d",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": true,
+      "credit": "Koen Kanters and zigbee-herdsman-converters contributors (MIT)",
+      "seenAt": "2026-10-07T09:14:00.474Z"
+    },
+    {
+      "source": "z2m-converters",
+      "kind": "converters",
+      "ref": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/789ab4dcf068587b7cad46efab87d408a62e09f7/src/devices/makegood.ts",
+      "summary": "modified src/devices/makegood.ts (+51/-0) between 4dc4411..789ab4d",
+      "mfrs": [
+        "_TZE200_xnwxmj8z"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [
+        1,
+        7,
+        24,
+        29,
+        165
+      ],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee-herdsman-converters contributors (MIT)",
+      "seenAt": "2026-10-07T09:14:00.474Z"
+    },
+    {
+      "source": "z2m-converters",
+      "kind": "converters",
+      "ref": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/789ab4dcf068587b7cad46efab87d408a62e09f7/src/devices/saswell.ts",
+      "summary": "modified src/devices/saswell.ts (+11/-1) between 4dc4411..789ab4d",
+      "mfrs": [
+        "_TZE200_3ymoslep",
+        "_TZE204_3ymoslep",
+        "_TZE284_3ymoslep"
+      ],
+      "pids": [],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee-herdsman-converters contributors (MIT)",
+      "seenAt": "2026-10-07T09:14:00.475Z"
+    },
+    {
+      "source": "z2m-converters",
+      "kind": "converters",
+      "ref": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/789ab4dcf068587b7cad46efab87d408a62e09f7/src/devices/tuya.ts",
+      "summary": "modified src/devices/tuya.ts (+19/-12) between 4dc4411..789ab4d",
+      "mfrs": [
+        "_TZ3000_yruungrl",
+        "_TZE204_zpvusbtv",
+        "_TZE284_zpvusbtv",
+        "_TZ3000_aaifmpuq",
+        "_TZ3000_irrmjcgi",
+        "_TZ3000_huvxrx4i",
+        "_TZ3000_pxfjrzyj",
+        "_TZ3000_hopb2kjm",
+        "_TZ3000_pf7swkqp",
+        "_TZ3000_ly9apzky"
+      ],
+      "pids": [
+        "TS0601",
+        "TS0002",
+        "TS0003"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee-herdsman-converters contributors (MIT)",
+      "seenAt": "2026-10-07T09:14:00.475Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/32638",
+      "summary": "issue #32638 (open) by frederikmueller-cloud: [External Converter]: TS0601 from _TZE284_u15pabbc",
+      "mfrs": [
+        "_TZE284_u15pabbc",
+        "_TZE284_rip8l748"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-07T09:14:01.440Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/31609",
+      "summary": "issue #31609 (open) by brinzlee: [TS0505A (HG06104A) / _TZ3000_riwp3k79] ???",
+      "mfrs": [
+        "_TZ3000_riwp3k79"
+      ],
+      "pids": [
+        "TS0505A"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-07T09:14:01.440Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/29608",
+      "summary": "issue #29608 (closed) by peteh: [Wrong device]: Moes TRV 801 deteced as Tuya 602z",
+      "mfrs": [
+        "_TZE204_ltwbm23f",
+        "_TZE204_qyr2m29i"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-07T09:14:01.440Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/27212",
+      "summary": "issue #27212 (closed) by Softas2024: ZY-M100-S_2 (_TZE284_iadro9bf) no \"Presence\" and no \"Target distance\"",
+      "mfrs": [
+        "_TZE284_iadro9bf"
+      ],
+      "pids": [],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-07T09:14:01.440Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/33264",
+      "summary": "issue #33264 (open) by miky-boy: [TS0001 / _TZ3000_ysdv91bk] Options are missing on this 1GANG device",
+      "mfrs": [
+        "_TZ3000_ysdv91bk"
+      ],
+      "pids": [
+        "TS0001"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-07T09:14:01.440Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/31445",
+      "summary": "issue #31445 (closed) by wiwill61: [New device support]: TS0601  from TZE284_sinxpbrl",
+      "mfrs": [
+        "_TZE284_sinxpbrl"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-07T09:14:01.440Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/32491",
+      "summary": "issue #32491 (open) by MI-3D: [External Converter]: TS0601 from _TZE284_6uyu20xu",
+      "mfrs": [
+        "_TZE284_6uyu20xu"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-07T09:14:01.440Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/33266",
+      "summary": "issue #33266 (open) by nesty1990: [TS0042 (Push_LO) / _TZ3000_dfgbtub0] Regression - same event for both buttons",
+      "mfrs": [
+        "_TZ3000_dfgbtub0"
+      ],
+      "pids": [
+        "TS0042"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-07T09:14:01.440Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/32729",
+      "summary": "issue #32729 (open) by janfuhlrott: Tuya TS0505B_2_2 ww/cw not working",
+      "mfrs": [
+        "_TZ3210_it1u8ahz"
+      ],
+      "pids": [
+        "TS0505B"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-07T09:14:01.440Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/33277",
+      "summary": "issue #33277 (closed) by christophe04270: Tuya DIN breaker with display JGQW01-63 (_TZE28C1000000_geabeatp / TS0601) – reports via EF00 command 0x0A, keeps re-sending until a (unknow",
+      "mfrs": [],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [
+        17,
+        18,
+        33,
+        1,
+        47,
+        16
+      ],
+      "bug": true,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-07T09:14:01.440Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/32902",
+      "summary": "issue #32902 (open) by WildeRNS: [External Converter]: TS0601 from _TZE28C1000000_geabeatp",
+      "mfrs": [],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [
+        6
+      ],
+      "bug": true,
+      "quirk": true,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-07T09:14:01.440Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/4478",
+      "summary": "issue #4478 (closed) by MUzair030: Can't integrate TY0A01 - Door Lock",
+      "mfrs": [
+        "_TZE200_9i9dt8is",
+        "_TYST12_eyfzd1gi"
+      ],
+      "pids": [],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-07T09:14:01.440Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/31550",
+      "summary": "issue #31550 (open) by bcre3306: [TS0601 / _TZE200_zuz7f94z] Doesn't Expose Battery Percentage",
+      "mfrs": [
+        "_TZE200_zuz7f94z"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-07T09:14:01.440Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/32940",
+      "summary": "issue #32940 (closed) by zainemiller: [New device support]: Add manufacturerName _TZE28C1000000_gt5al3bl to GL-SPI-206P definition",
+      "mfrs": [
+        "_TZE284_gt5al3bl"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-07T09:14:01.440Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/31209",
+      "summary": "issue #31209 (closed) by kopaszsop: [External Converter]: TS0601 from _TZE284_qf5mzewi",
+      "mfrs": [
+        "_TZE284_qf5mzewi"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": true,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-07T09:14:01.440Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/33257",
+      "summary": "issue #33257 (open) by seiferrtalle: Telink/Tuya router devices join, interview successfully, then leave in a loop — other devices unaffected",
+      "mfrs": [
+        "_TZ3000_2putqrmw"
+      ],
+      "pids": [
+        "TS011F"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": true,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-07T09:14:01.440Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/33285",
+      "summary": "issue #33285 (open) by Woytus-Git: [External Converter]: TS0601 from _TZE204_jpyrsdp3 (Smoke and CO- detector)",
+      "mfrs": [
+        "_TZE204_jpyrsdp3"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [
+        1,
+        9,
+        18,
+        16,
+        17,
+        5
+      ],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-07T09:14:01.440Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/pull/5374",
+      "summary": "PR #5374 (open) by sdbldn: Add Moes ZTRV-S01 thermostat support",
+      "mfrs": [
+        "_TZE200_ivdc0kwl"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [
+        2,
+        3,
+        6,
+        7,
+        9,
+        10,
+        14,
+        15,
+        21,
+        36,
+        47,
+        102,
+        103,
+        105,
+        106,
+        108,
+        109
+      ],
+      "bug": false,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-10-07T09:14:02.104Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/pull/5293",
+      "summary": "PR #5293 (open) by 3jam3: Add MOES SVL01-Z Tuya MCU cluster implementation",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": false,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-10-07T09:14:02.104Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/pull/4466",
+      "summary": "PR #4466 (open) by JulienDeveaux: Add Tuya Moes ZM-102-M garage door opener",
+      "mfrs": [
+        "_TZE204_jktmrpoj"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-10-07T09:14:02.105Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1344",
+      "summary": "issue #1344 (closed) by fjvs1467: Bug report - [Short description] _TZ3000_bgsigers - TS0201 sensors stopped working",
+      "mfrs": [
+        "_TZ3000_bgsigers"
+      ],
+      "pids": [
+        "TS0201"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.241Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1131",
+      "summary": "issue #1131 (closed) by Maage-The-Magnificent: Device Request - Light sensor - Tuya / TS0222_TZ3000_do6txrcw",
+      "mfrs": [
+        "_TZ3000_do6txrcw"
+      ],
+      "pids": [
+        "TS0222"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.241Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1320",
+      "summary": "issue #1320 (closed) by fjvs1467: Device Request - [SMart Light sensor] - [_TZ3000_hy6ncvmw] / [TS0222]",
+      "mfrs": [
+        "_TZ3000_hy6ncvmw"
+      ],
+      "pids": [
+        "TS0222"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.241Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1042",
+      "summary": "issue #1042 (closed) by Sygaro: Device Request - [Smart Water Sensor Leak Detector] - [Tuya] / [TS0207]",
+      "mfrs": [
+        "_TZ3000_bfopm9ga"
+      ],
+      "pids": [
+        "TS0207"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.241Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1032",
+      "summary": "issue #1032 (closed) by Kees-Dekker: Device Request - Zigbee Water Detector - TZ3000_4qaowtdo / TS0207",
+      "mfrs": [
+        "_TZ3000_4qaowtdo"
+      ],
+      "pids": [
+        "TS0207"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.241Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/952",
+      "summary": "issue #952 (closed) by MarceloSilvaLeite: Device Request - [Smart Water Sensor] - [_TZ3000_qhozxs2b] / [TS0207]",
+      "mfrs": [
+        "_TZ3000_qhozxs2b"
+      ],
+      "pids": [
+        "TS0207"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.241Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/pull/1372",
+      "summary": "PR #1372 (closed) by oskarirauta: add another motion sensor",
+      "mfrs": [
+        "_TZE200_mgxy2d9f"
+      ],
+      "pids": [],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.241Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1012",
+      "summary": "issue #1012 (closed) by RASK18: Device Request - [Smart Button] - [_TZ3000_mrpevh8p] / [TS0041]",
+      "mfrs": [
+        "_TZ3000_mrpevh8p"
+      ],
+      "pids": [
+        "TS0041"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.241Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1380",
+      "summary": "issue #1380 (closed) by pixelwiese: Device Request - Water Leakage Sensor - Shenzen Xriver Technology / _TZ3000_baeiitad / TS0207",
+      "mfrs": [
+        "_TZ3000_baeiitad"
+      ],
+      "pids": [
+        "TS0207"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.241Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1392",
+      "summary": "issue #1392 (closed) by 4576ggv4536: Device Request - PIR Motion Detector Zigbee - _TZ3040_o4mkahkc / TS0202",
+      "mfrs": [
+        "_TZ3040_o4mkahkc"
+      ],
+      "pids": [
+        "TS0202"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.241Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/613",
+      "summary": "issue #613 (closed) by razorback16: Device Request - Zigbee PIR Motion Sensor - [_TZ3000_hgu1dlak] / [TS0202]",
+      "mfrs": [
+        "_TZ3000_hgu1dlak"
+      ],
+      "pids": [
+        "TS0202"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.241Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/577",
+      "summary": "issue #577 (closed) by heula: Device Request - Heiman Smoke detector HS1SA TYZB01_tob46aoq",
+      "mfrs": [
+        "_TYZB01_tob46aoq"
+      ],
+      "pids": [
+        "TS0205"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.241Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/965",
+      "summary": "issue #965 (open) by websate: Heiman HS1CG _TYZB01_0w3d5uw3 / TS0204: IAS gas alarm without app-wide compatibility bump",
+      "mfrs": [
+        "_TYZB01_0w3d5uw3"
+      ],
+      "pids": [
+        "TS0204"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.241Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1491",
+      "summary": "issue #1491 (open) by JohanBendz: Homey capability compatibility strategy: keep app >=5 while adding post-12.2 alarm types",
+      "mfrs": [],
+      "pids": [
+        "TS0204",
+        "TS0210"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.241Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/610",
+      "summary": "issue #610 (closed) by edwinff: Device Request - Vibration Sensor - _TZ3000_jqge2fjx/TS0210",
+      "mfrs": [
+        "_TZ3000_jqge2fjx"
+      ],
+      "pids": [
+        "TS0210"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.241Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/433",
+      "summary": "issue #433 (closed) by SamCan92: Device Request - Vibration Sensor - _TZ3000_bmfw9ykl / TS0210",
+      "mfrs": [
+        "_TZ3000_bmfw9ykl"
+      ],
+      "pids": [
+        "TS0210"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.241Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/161",
+      "summary": "issue #161 (open) by JohanBendz: Doorbell - _TZ1800_ladpngdx / TS0211 (Silvercrest / Lidl)",
+      "mfrs": [
+        "_TZ1800_ladpngdx"
+      ],
+      "pids": [
+        "TS0211"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.242Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/619",
+      "summary": "issue #619 (open) by GD91a: LKMSZ001 / _TZ3210_cwamkvua TS0202: motion + scene switch profile",
+      "mfrs": [
+        "_TZ3210_cwamkvua"
+      ],
+      "pids": [
+        "TS0202"
+      ],
+      "dps": [
+        101,
+        102
+      ],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.242Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1477",
+      "summary": "issue #1477 (open) by JohanBendz: EPTTECH TLC2206-ZB tank monitor: validate DP scaling, settings writes and traffic",
+      "mfrs": [
+        "_TZE200_lvkk0hdg"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [
+        1,
+        2,
+        7,
+        8,
+        19,
+        21,
+        22
+      ],
+      "bug": true,
+      "quirk": true,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.242Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1304",
+      "summary": "issue #1304 (closed) by toththommy-hash: Zigbee Door & window sensor",
+      "mfrs": [
+        "_TZ3000_zutizvyk"
+      ],
+      "pids": [
+        "TS0203"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.242Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1155",
+      "summary": "issue #1155 (closed) by rpm1986: Device Request - Temp & Humidity Sensor - 2x AAA battery - TZ3000_fllyghyj / SNZB-02",
+      "mfrs": [
+        "_TZ3000_fllyghyj",
+        "_TZ3000_0hkmcrza"
+      ],
+      "pids": [
+        "TS0203"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.242Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/207",
+      "summary": "issue #207 (open) by JohanBendz: _TZ3210_zmy9hjay / TS0202 ZB003-X multisensor: IAS + temp/humidity/lux profile",
+      "mfrs": [
+        "_TZ3210_zmy9hjay"
+      ],
+      "pids": [
+        "TS0202"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.242Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/913",
+      "summary": "issue #913 (open) by degenmi: TS0222 single-endpoint illuminance sensors: dedicated lux + battery driver",
+      "mfrs": [
+        "_TZ3000_8uxxzz4b",
+        "_TZ3000_do6txrcw",
+        "_TZ3000_hy6ncvmw"
+      ],
+      "pids": [
+        "TS0222"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": true,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.242Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1206",
+      "summary": "issue #1206 (closed) by l-i-n-k: Device Request - [Human Presence Detector] - [Tuya - _TZ3000_5k5vh43t] / [TS0207]",
+      "mfrs": [
+        "_TZ3000_5k5vh43t"
+      ],
+      "pids": [
+        "TS0207"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.242Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1318",
+      "summary": "issue #1318 (closed) by fjvs1467: Verify _TZ3000_bgsigers / TS0201 standard temperature/humidity profile",
+      "mfrs": [
+        "_TZ3000_bgsigers"
+      ],
+      "pids": [
+        "TS0201"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.242Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1198",
+      "summary": "issue #1198 (closed) by darkytoothpaste: Device Request - [Zigbee Smart Plug] - [Tuya] / [XH-TZ3PJ]",
+      "mfrs": [
+        "_TZ3000_wzmuk9ai"
+      ],
+      "pids": [
+        "TS011F"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.242Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1151",
+      "summary": "issue #1151 (closed) by freezze: Device Request - Zigbee Smart Plug 16A EU w/meter - TNZE / TS011F",
+      "mfrs": [
+        "_TZ3000_ww6drja5"
+      ],
+      "pids": [
+        "TS011F"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.242Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1228",
+      "summary": "issue #1228 (closed) by sigve888: Device Request - Zigbee Smart Plug 20A EU w/meter - TS011F",
+      "mfrs": [
+        "_TZ3000_ww6drja5"
+      ],
+      "pids": [
+        "TS011F"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.242Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1115",
+      "summary": "issue #1115 (closed) by Hellosmarthome: Device Request - [Device name] - [manufacturerName] / [modelId]",
+      "mfrs": [
+        "_TZ3000_u5u4cakc"
+      ],
+      "pids": [
+        "TS011F"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.242Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/695",
+      "summary": "issue #695 (closed) by cqfv: Device Request - Smart Circuit Breaker Switch - _TZ3000_qystbcjg / TS011F",
+      "mfrs": [
+        "_TZ3000_qystbcjg"
+      ],
+      "pids": [
+        "TS011F"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.242Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/877",
+      "summary": "issue #877 (closed) by Majkl-M: Device Request - [Tuya ZigBee Socket Smart Plug] - [_TZ3000_fukaa7nc] / [TS011F]",
+      "mfrs": [
+        "_TZ3000_fukaa7nc"
+      ],
+      "pids": [
+        "TS011F"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.242Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/845",
+      "summary": "issue #845 (closed) by pascalgeusen: Device Request - Tuya Eu Plug Zigbee Of Wifi 16/20a with Power Monitor - [_TZ3000_fukaa7nc] / [TS011F]",
+      "mfrs": [
+        "_TZ3000_fukaa7nc"
+      ],
+      "pids": [
+        "TS011F"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.242Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/542",
+      "summary": "issue #542 (closed) by Butli: Device Request - [Tuya Zigbee Smart Plug with Energy Reading] - [_TZ3000_fukaa7nc] / [TS011F]",
+      "mfrs": [
+        "_TZ3000_fukaa7nc"
+      ],
+      "pids": [
+        "TS011F"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.243Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1290",
+      "summary": "issue #1290 (open) by cvroom: _TZ3210_alxkwn0h / TS0201 identity conflict: fresh Homey interview required",
+      "mfrs": [
+        "_TZ3210_alxkwn0h",
+        "_TZ3000_u5u4cakc"
+      ],
+      "pids": [
+        "TS0201",
+        "TS011F"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.243Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1168",
+      "summary": "issue #1168 (closed) by gfi63: Device Request - Smart Socket IP-3010S - EMOS / IP-3010S",
+      "mfrs": [
+        "_TZ3000_npg02xft"
+      ],
+      "pids": [
+        "TS011F"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.243Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1138",
+      "summary": "issue #1138 (closed) by CvkHomey: Device Request - [Nedis ZBP131FWT Smart plug] - [_TZ3000_zgtbi4oy] / [TS011F]",
+      "mfrs": [
+        "_TZ3000_zgtbi4oy"
+      ],
+      "pids": [
+        "TS011F"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.243Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/409",
+      "summary": "issue #409 (closed) by JohanBendz: Device Request - FDTEK Smart Plug with metering - _TZ3000_rdfh8cfs / TS011F",
+      "mfrs": [
+        "_TZ3000_rdfh8cfs"
+      ],
+      "pids": [
+        "TS011F"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.243Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1388",
+      "summary": "issue #1388 (closed) by migueleap: Device Request – Tuya Smart Socket with Energy Monitoring – _TZ3210_5ct6e7ye / TS011F",
+      "mfrs": [
+        "_TZ3210_5ct6e7ye"
+      ],
+      "pids": [
+        "TS011F"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.243Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1296",
+      "summary": "issue #1296 (closed) by shikilee: Device Request - Tuya Zigbee Smart Socket - _TZ3000_uwaort14/TS011F",
+      "mfrs": [
+        "_TZ3000_uwaort14"
+      ],
+      "pids": [
+        "TS011F"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.243Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1277",
+      "summary": "issue #1277 (closed) by tobyapd: Device Request - [Nedis Smart Plug with Energy Meter] - [TS011F]",
+      "mfrs": [
+        "_TZ3000_iiacqpdz"
+      ],
+      "pids": [
+        "TS011F"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.243Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1252",
+      "summary": "issue #1252 (closed) by richardsimko: Device Request - Smart Plug - _TZ3000_iiacqpdz / TS011F",
+      "mfrs": [
+        "_TZ3000_iiacqpdz"
+      ],
+      "pids": [
+        "TS011F"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.243Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1326",
+      "summary": "issue #1326 (closed) by Makepeace77: Device Request - [Bseed Wall socket] - [_TZ3210_4ux0ondb] / [TS011F]",
+      "mfrs": [
+        "_TZ3210_4ux0ondb"
+      ],
+      "pids": [
+        "TS011F"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.243Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/428",
+      "summary": "issue #428 (closed) by mresh1: Device Request - Switch module (with power measurement) - _TZ3000_cjrngdr3 / TS011F",
+      "mfrs": [
+        "_TZ3000_cjrngdr3"
+      ],
+      "pids": [
+        "TS011F"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.243Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/261",
+      "summary": "issue #261 (closed) by Tonlaar: Zigbee switch metered is not recognized as such",
+      "mfrs": [
+        "_TZ3000_cjrngdr3"
+      ],
+      "pids": [
+        "TS011F"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-07T09:14:03.243Z"
     }
   ]
 }
