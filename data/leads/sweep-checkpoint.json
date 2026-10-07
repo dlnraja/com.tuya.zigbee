@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-06T10:46:56.927Z",
+  "updated": "2026-10-07T10:34:47.702Z",
   "threads": {
     "21313": {
       "lastPost": 2819,
@@ -226,11 +226,51 @@
       "sources": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/15"
       ]
+    },
+    {
+      "id": "johan-issue:16",
+      "status": "needs-info",
+      "note": "no usable mfr+pid in thread body; defer until interview/diag",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/16"
+      ]
+    },
+    {
+      "id": "johan-issue:17",
+      "status": "already-fixed",
+      "note": "historical merged/closed PR (v0.1.9); no open reliability work",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/pull/17"
+      ]
+    },
+    {
+      "id": "johan-issue:18",
+      "status": "already-fixed",
+      "note": "historical merged/closed PR (Added Wall Switch); no open reliability work",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/pull/18"
+      ]
+    },
+    {
+      "id": "johan-issue:19",
+      "status": "already-fixed",
+      "note": "couple(s) already present in drivers (_TZ3000_obacbukl/TS0503A)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/19"
+      ]
+    },
+    {
+      "id": "johan-issue:20",
+      "status": "already-fixed",
+      "note": "couple(s) already present in drivers (_TZ3000_1obwwnmq/TS011F)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/20"
+      ]
     }
   ],
   "github": {
     "johan": {
-      "next": 16
+      "next": 21
     },
     "dlnraja": {
       "next": 1
@@ -238,34 +278,34 @@
   },
   "note": "Full-history sweep. Forum lastPost seeded from Daily digest #557 state (2026-10-02). Items rewritten in our words; SHAs only as evidence.",
   "lastChunk": {
-    "at": "2026-10-06T10:46:56.927Z",
+    "at": "2026-10-07T10:34:47.702Z",
     "advanced": 5,
     "rateLimited": false,
     "items": [
       {
-        "n": 11,
-        "status": "already-fixed",
-        "note": "couple(s) already present in drivers (_TYZB01_ncutbjdi/TS0003)"
-      },
-      {
-        "n": 12,
-        "status": "already-fixed",
-        "note": "couple(s) already present in drivers (_TZE200_ckud7u2l/TS0601)"
-      },
-      {
-        "n": 13,
+        "n": 16,
         "status": "needs-info",
         "note": "no usable mfr+pid in thread body; defer until interview/diag"
       },
       {
-        "n": 14,
-        "status": "needs-info",
-        "note": "no usable mfr+pid in thread body; defer until interview/diag"
+        "n": 17,
+        "status": "already-fixed",
+        "note": "historical merged/closed PR (v0.1.9); no open reliability work"
       },
       {
-        "n": 15,
-        "status": "pending",
-        "note": "identities seen (_TYZB01_v8gtiaed|TS110F); needs code check"
+        "n": 18,
+        "status": "already-fixed",
+        "note": "historical merged/closed PR (Added Wall Switch); no open reliability work"
+      },
+      {
+        "n": 19,
+        "status": "already-fixed",
+        "note": "couple(s) already present in drivers (_TZ3000_obacbukl/TS0503A)"
+      },
+      {
+        "n": 20,
+        "status": "already-fixed",
+        "note": "couple(s) already present in drivers (_TZ3000_1obwwnmq/TS011F)"
       }
     ]
   }
