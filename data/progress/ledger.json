@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-07T10:34:47.702Z",
+ "updated": "2026-10-08T10:56:00.008Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -15953,11 +15953,14 @@
    "upstreamUpdatedAt": "2026-10-01T16:18:05Z"
   },
   "johan-issue:21": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2021-04-24T10:31:58Z"
+   "upstreamUpdatedAt": "2021-04-24T10:31:58Z",
+   "date": "2026-10-08",
+   "note": "couple(s) already present in drivers (_TZE200_s8gkrkxk/TS0601)",
+   "by": "advance-sweep"
   },
   "johan-issue:210": {
    "status": "pending",
@@ -16040,11 +16043,14 @@
    "upstreamUpdatedAt": "2024-09-11T20:22:58Z"
   },
   "johan-issue:22": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2020-11-29T09:14:08Z"
+   "upstreamUpdatedAt": "2020-11-29T09:14:08Z",
+   "date": "2026-10-08",
+   "note": "couple(s) already present in drivers (_TZ3000_dbou1ap4/TS0505A)",
+   "by": "advance-sweep"
   },
   "johan-issue:220": {
    "status": "pending",
@@ -16132,11 +16138,14 @@
    ]
   },
   "johan-issue:23": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2020-11-29T09:14:18Z"
+   "upstreamUpdatedAt": "2020-11-29T09:14:18Z",
+   "date": "2026-10-08",
+   "note": "couple(s) already present in drivers (_TZ3000_49qchf10/TS0502A)",
+   "by": "advance-sweep"
   },
   "johan-issue:230": {
    "status": "pending",
@@ -16202,11 +16211,14 @@
    "upstreamUpdatedAt": "2026-07-12T21:29:58Z"
   },
   "johan-issue:24": {
-   "status": "pending",
+   "status": "deferred",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2021-04-24T10:32:41Z"
+   "upstreamUpdatedAt": "2021-04-24T10:32:41Z",
+   "date": "2026-10-08",
+   "note": "no usable mfr+pid in thread body; defer until interview/diag",
+   "by": "advance-sweep"
   },
   "johan-issue:240": {
    "status": "pending",
@@ -16279,11 +16291,14 @@
    "upstreamUpdatedAt": "2024-09-11T20:34:24Z"
   },
   "johan-issue:25": {
-   "status": "pending",
+   "status": "deferred",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2020-11-29T09:13:36Z"
+   "upstreamUpdatedAt": "2020-11-29T09:13:36Z",
+   "date": "2026-10-08",
+   "note": "no usable mfr+pid in thread body; defer until interview/diag",
+   "by": "advance-sweep"
   },
   "johan-issue:250": {
    "status": "pending",
