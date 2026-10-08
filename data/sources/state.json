@@ -1,14 +1,14 @@
 {
   "sources": {
     "z2m-converters": {
-      "lastSha": "789ab4dcf068587b7cad46efab87d408a62e09f7",
-      "checkedAt": "2026-10-07T09:14:00.475Z",
+      "lastSha": "21c2a6586bc8c45e597df6a1a4f8b355ae8c57c0",
+      "checkedAt": "2026-10-08T09:27:06.157Z",
       "lastError": null
     },
     "z2m-issues": {
       "lastSha": "344b6e03b43644c97154a72ca9eae17193c553a2",
-      "issuesSince": "2026-10-04T20:35:46Z",
-      "checkedAt": "2026-10-07T09:14:01.441Z",
+      "issuesSince": "2026-10-06T21:03:45Z",
+      "checkedAt": "2026-10-08T09:27:07.138Z",
       "lastError": null
     },
     "z2m-device-pages": {
@@ -18,8 +18,8 @@
     },
     "zha-quirks": {
       "lastSha": "55319bd14be7b5e782c585c31f528d9f90ce431e",
-      "issuesSince": "2026-10-07T08:07:14Z",
-      "checkedAt": "2026-10-07T09:14:02.105Z",
+      "issuesSince": "2026-10-08T05:59:47Z",
+      "checkedAt": "2026-10-08T09:27:07.989Z",
       "lastError": null
     },
     "zha": {
@@ -93,8 +93,8 @@
     },
     "johan": {
       "lastSha": "328d24ed315131528f2358b66bb0b8259615a49e",
-      "issuesSince": "2026-09-29T08:22:16Z",
-      "checkedAt": "2026-10-07T09:14:03.243Z",
+      "issuesSince": "2026-09-29T22:54:44Z",
+      "checkedAt": "2026-10-08T09:27:09.435Z",
       "lastError": null
     },
     "johan-forks": {
@@ -107,7 +107,7 @@
         "26439": 5531,
         "140352": 2259
       },
-      "checkedAt": "2026-10-07T09:14:03.746Z",
+      "checkedAt": "2026-10-08T09:27:10.053Z",
       "lastError": null
     },
     "homey-sdk-changelog": {
