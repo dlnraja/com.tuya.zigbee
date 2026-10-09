@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-09T10:54:44.515Z",
+ "updated": "2026-10-09T10:54:52.521Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -16386,11 +16386,14 @@
    "upstreamUpdatedAt": "2023-12-22T15:35:29Z"
   },
   "johan-issue:26": {
-   "status": "pending",
+   "status": "deferred",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2020-11-29T09:13:29Z"
+   "upstreamUpdatedAt": "2020-11-29T09:13:29Z",
+   "date": "2026-10-09",
+   "note": "no usable mfr+pid in thread body; defer until interview/diag",
+   "by": "advance-sweep"
   },
   "johan-issue:260": {
    "status": "pending",
@@ -16459,6 +16462,12 @@
    "state": "closed",
    "comments": 1,
    "upstreamUpdatedAt": "2023-02-26T19:39:09Z"
+  },
+  "johan-issue:27": {
+   "status": "deferred",
+   "date": "2026-10-09",
+   "note": "api unavailable or rate-limited",
+   "by": "advance-sweep"
   },
   "johan-issue:270": {
    "status": "pending",
@@ -16558,11 +16567,14 @@
    "upstreamUpdatedAt": "2026-07-12T21:30:08Z"
   },
   "johan-issue:28": {
-   "status": "pending",
+   "status": "deferred",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2020-11-29T09:13:43Z"
+   "upstreamUpdatedAt": "2020-11-29T09:13:43Z",
+   "date": "2026-10-09",
+   "note": "no usable mfr+pid in thread body; defer until interview/diag",
+   "by": "advance-sweep"
   },
   "johan-issue:280": {
    "status": "pending",
@@ -16644,11 +16656,14 @@
    "upstreamUpdatedAt": "2026-07-12T21:30:12Z"
   },
   "johan-issue:29": {
-   "status": "pending",
+   "status": "deferred",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2020-11-29T09:13:22Z"
+   "upstreamUpdatedAt": "2020-11-29T09:13:22Z",
+   "date": "2026-10-09",
+   "note": "no usable mfr+pid in thread body; defer until interview/diag",
+   "by": "advance-sweep"
   },
   "johan-issue:290": {
    "status": "pending",
@@ -16739,11 +16754,14 @@
    "by": "advance-sweep"
   },
   "johan-issue:30": {
-   "status": "pending",
+   "status": "deferred",
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2024-09-23T19:16:49Z"
+   "upstreamUpdatedAt": "2024-09-23T19:16:49Z",
+   "date": "2026-10-09",
+   "note": "no usable mfr+pid in thread body; defer until interview/diag",
+   "by": "advance-sweep"
   },
   "johan-issue:300": {
    "status": "pending",
