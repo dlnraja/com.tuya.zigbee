@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08T10:56:00.008Z",
+  "updated": "2026-10-09T10:54:52.521Z",
   "threads": {
     "21313": {
       "lastPost": 2819,
@@ -306,11 +306,51 @@
       "sources": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/25"
       ]
+    },
+    {
+      "id": "johan-issue:26",
+      "status": "needs-info",
+      "note": "no usable mfr+pid in thread body; defer until interview/diag",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/26"
+      ]
+    },
+    {
+      "id": "johan-issue:27",
+      "status": "needs-info",
+      "note": "api unavailable or rate-limited",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/27"
+      ]
+    },
+    {
+      "id": "johan-issue:28",
+      "status": "needs-info",
+      "note": "no usable mfr+pid in thread body; defer until interview/diag",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/28"
+      ]
+    },
+    {
+      "id": "johan-issue:29",
+      "status": "needs-info",
+      "note": "no usable mfr+pid in thread body; defer until interview/diag",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/29"
+      ]
+    },
+    {
+      "id": "johan-issue:30",
+      "status": "needs-info",
+      "note": "no usable mfr+pid in thread body; defer until interview/diag",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/30"
+      ]
     }
   ],
   "github": {
     "johan": {
-      "next": 26
+      "next": 31
     },
     "dlnraja": {
       "next": 1
@@ -318,32 +358,32 @@
   },
   "note": "Full-history sweep. Forum lastPost seeded from Daily digest #557 state (2026-10-02). Items rewritten in our words; SHAs only as evidence.",
   "lastChunk": {
-    "at": "2026-10-08T10:56:00.008Z",
+    "at": "2026-10-09T10:54:52.521Z",
     "advanced": 5,
     "rateLimited": false,
     "items": [
       {
-        "n": 21,
-        "status": "already-fixed",
-        "note": "couple(s) already present in drivers (_TZE200_s8gkrkxk/TS0601)"
-      },
-      {
-        "n": 22,
-        "status": "already-fixed",
-        "note": "couple(s) already present in drivers (_TZ3000_dbou1ap4/TS0505A)"
-      },
-      {
-        "n": 23,
-        "status": "already-fixed",
-        "note": "couple(s) already present in drivers (_TZ3000_49qchf10/TS0502A)"
-      },
-      {
-        "n": 24,
+        "n": 26,
         "status": "needs-info",
         "note": "no usable mfr+pid in thread body; defer until interview/diag"
       },
       {
-        "n": 25,
+        "n": 27,
+        "status": "needs-info",
+        "note": "api unavailable or rate-limited"
+      },
+      {
+        "n": 28,
+        "status": "needs-info",
+        "note": "no usable mfr+pid in thread body; defer until interview/diag"
+      },
+      {
+        "n": 29,
+        "status": "needs-info",
+        "note": "no usable mfr+pid in thread body; defer until interview/diag"
+      },
+      {
+        "n": 30,
         "status": "needs-info",
         "note": "no usable mfr+pid in thread body; defer until interview/diag"
       }
