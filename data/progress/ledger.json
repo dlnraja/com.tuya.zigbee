@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-08T10:56:00.008Z",
+ "updated": "2026-10-09T10:54:44.515Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -14269,7 +14269,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 12,
-   "upstreamUpdatedAt": "2026-10-03T08:04:13Z",
+   "upstreamUpdatedAt": "2026-10-08T17:36:29Z",
    "mailDate": "2026-10-03",
    "mailEvents": [
     "comment"
@@ -15090,7 +15090,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 31,
-   "upstreamUpdatedAt": "2026-10-05T18:58:10Z"
+   "upstreamUpdatedAt": "2026-10-08T17:41:33Z"
   },
   "johan-issue:147": {
    "status": "pending",
@@ -15459,12 +15459,12 @@
   "johan-issue:1517": {
    "status": "pending",
    "kind": "issue",
-   "upstreamUpdatedAt": "2026-10-05T18:45:03Z"
+   "upstreamUpdatedAt": "2026-10-08T17:26:54Z"
   },
   "johan-issue:1518": {
    "status": "pending",
    "kind": "pr",
-   "upstreamUpdatedAt": "2026-10-05T18:45:08Z"
+   "upstreamUpdatedAt": "2026-10-08T17:36:24Z"
   },
   "johan-issue:1519": {
    "status": "pending",
@@ -15492,6 +15492,21 @@
    "status": "pending",
    "kind": "issue",
    "upstreamUpdatedAt": null
+  },
+  "johan-issue:1523": {
+   "status": "pending",
+   "kind": "pr",
+   "upstreamUpdatedAt": "2026-10-08T17:33:31Z"
+  },
+  "johan-issue:1524": {
+   "status": "pending",
+   "kind": "pr",
+   "upstreamUpdatedAt": "2026-10-08T17:33:36Z"
+  },
+  "johan-issue:1525": {
+   "status": "pending",
+   "kind": "pr",
+   "upstreamUpdatedAt": "2026-10-08T17:41:30Z"
   },
   "johan-issue:153": {
    "status": "pending",
