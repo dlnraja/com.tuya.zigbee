@@ -1,5 +1,5 @@
 {
-  "harvestedAt": "2026-10-09T00:00:26.960Z",
+  "harvestedAt": "2026-10-09T17:36:53.834Z",
   "repo": "dlnraja/com.tuya.zigbee",
   "auth": "token",
   "error": null,
@@ -10,9 +10,19 @@
       "labels": [
         "bot-digest"
       ],
-      "updatedAt": "2026-10-08T19:57:18Z",
+      "updatedAt": "2026-10-09T16:53:36Z",
       "user": "dlnraja",
       "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/557"
+    },
+    {
+      "number": 560,
+      "title": "Bug report - TRV06 Smart Zigbee Radiator Valve - isn't working",
+      "labels": [
+        "bug"
+      ],
+      "updatedAt": "2026-10-09T14:10:07Z",
+      "user": "artisare",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/560"
     },
     {
       "number": 550,
@@ -40,6 +50,6 @@
     }
   ],
   "prs": [],
-  "openIssueCount": 3,
+  "openIssueCount": 4,
   "openPrCount": 0
 }
