@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-09T00:00:26.471Z",
+  "generatedAt": "2026-10-09T17:36:53.463Z",
   "date": "2026-10-09",
   "mode": "full",
   "phases": [
@@ -12,18 +12,18 @@
     {
       "name": "github",
       "ok": true,
-      "durationMs": 490
+      "durationMs": 370
     },
     {
       "name": "gmail",
       "ok": true,
-      "durationMs": 185,
+      "durationMs": 223,
       "details": {
         "crash": {
           "ok": true,
           "skipped": false,
           "status": 0,
-          "durationMs": 39,
+          "durationMs": 42,
           "stderr": "",
           "stdoutTail": "[gmail-crash-pattern-gate] sources=32 hits=3 unknown=0\n  heap_oom_live_data: 3 source-hit(s)\n  wrote .github/state/gmail-crash-patterns.json\n  verdict: ok\n"
         },
@@ -31,16 +31,16 @@
           "ok": true,
           "skipped": false,
           "status": 0,
-          "durationMs": 146,
+          "durationMs": 179,
           "stderr": "",
-          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-10-09\n{\n  \"generatedAt\": \"2026-10-09T00:00:27.136Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 37,\n  \"derivedFromInterview\": 0,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 4,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 2,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 2,\n    \"processing_failed\": 2,\n    \"scene_0x8004\": 3,\n    \"aggregate_error\": 1,\n    \"heap_oom\": 2,\n    \"invalid_flow_card\": 1,\n    \"missing_capability_listener\": 1\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 37 gmailBodies= 30\n"
+          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-10-09\n{\n  \"generatedAt\": \"2026-10-09T17:36:54.044Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 35,\n  \"derivedFromInterview\": 0,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 4,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 2,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 2,\n    \"processing_failed\": 2,\n    \"scene_0x8004\": 3,\n    \"heap_oom\": 2,\n    \"invalid_flow_card\": 1,\n    \"missing_capability_listener\": 1\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 35 gmailBodies= 30\n"
         }
       }
     },
     {
       "name": "forum",
       "ok": true,
-      "durationMs": 26681,
+      "durationMs": 27435,
       "skipScan": false,
       "steps": [
         {
@@ -64,7 +64,7 @@
     {
       "name": "drivers",
       "ok": true,
-      "durationMs": 1496,
+      "durationMs": 1823,
       "mfs": {
         "high": 0,
         "changes": 0,
@@ -75,29 +75,29 @@
     {
       "name": "functionalDeep",
       "ok": true,
-      "durationMs": 1985,
+      "durationMs": 2077,
       "note": "P2529 complementary deep functional (soft)"
     },
     {
       "name": "prioritize",
       "ok": true,
-      "durationMs": 0,
-      "count": 4
+      "durationMs": 2,
+      "count": 5
     },
     {
       "name": "docs",
       "ok": true,
-      "durationMs": 1,
+      "durationMs": 0,
       "doc": "/home/runner/work/com.tuya.zigbee/com.tuya.zigbee/docs/architecture/L99_INBOX_INTELLIGENCE.md"
     },
     {
       "name": "gates",
       "ok": true,
-      "durationMs": 2450
+      "durationMs": 2896
     }
   ],
   "github": {
-    "harvestedAt": "2026-10-09T00:00:26.960Z",
+    "harvestedAt": "2026-10-09T17:36:53.834Z",
     "repo": "dlnraja/com.tuya.zigbee",
     "auth": "token",
     "error": null,
@@ -108,9 +108,19 @@
         "labels": [
           "bot-digest"
         ],
-        "updatedAt": "2026-10-08T19:57:18Z",
+        "updatedAt": "2026-10-09T16:53:36Z",
         "user": "dlnraja",
         "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/557"
+      },
+      {
+        "number": 560,
+        "title": "Bug report - TRV06 Smart Zigbee Radiator Valve - isn't working",
+        "labels": [
+          "bug"
+        ],
+        "updatedAt": "2026-10-09T14:10:07Z",
+        "user": "artisare",
+        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/560"
       },
       {
         "number": 550,
@@ -138,22 +148,22 @@
       }
     ],
     "prs": [],
-    "openIssueCount": 3,
+    "openIssueCount": 4,
     "openPrCount": 0
   },
   "forum": {
     "path": "/home/runner/work/com.tuya.zigbee/com.tuya.zigbee/.github/state/forum/actionable-processor-report.json",
     "totals": {
-      "posts": 219,
+      "posts": 218,
       "withCouples": 74,
-      "needAction": 58,
-      "both": 134,
+      "needAction": 59,
+      "both": 133,
       "masterOnly": 17
     },
-    "posts": 219
+    "posts": 218
   },
   "gmail": {
-    "generatedAt": "2026-10-09T00:00:26.993Z",
+    "generatedAt": "2026-10-09T17:36:53.870Z",
     "sourcesScanned": 32,
     "patternCounts": {
       "flow_getDeviceActionCard": 0,
@@ -189,32 +199,32 @@
         "sacred": {
           "mfrs": [
             "_TZE200_pay2byax",
-            "_TZ3210_w0qqde0g",
-            "_TZE200_xlppj4f5",
-            "_TZ321C_fkzihaxe8",
-            "_TZ321C_fkzihax8",
-            "_TZE284_rjxqso4a",
             "_TZ3218_t9ynfz4x",
             "_TZ3000_1o6x1bl0",
             "_TZ3290_7v1k4vufotpowp9z",
             "_TZ3000_b4awzgct",
             "_TZE200_kb5noeto",
             "_TZ3000_ynmowqk2",
-            "_TZ3000_rco1yzb1"
+            "_TZ3000_rco1yzb1",
+            "_TZ3210_n0wbkysi",
+            "_TZ3210_ncw88jfq"
           ],
           "pids": [
             "TS0203",
-            "TS011F",
-            "TS0601",
-            "TS0225",
-            "TS0201",
             "TS0002",
+            "TS0201",
             "TS0044",
+            "TS0225",
+            "TS0601",
             "TS0202",
             "TS1201",
             "TS0041",
+            "TS011F",
             "TS0505A",
-            "TS004F"
+            "TS004F",
+            "TS0003",
+            "TS0011",
+            "TS0001"
           ]
         }
       },
@@ -226,11 +236,6 @@
         "source": ".github/state/diagnostics-crossref.yml",
         "sacred": {
           "mfrs": [
-            "_TZ3210_w0qqde0g",
-            "_TZE200_xlppj4f5",
-            "_TZ321C_fkzihaxe8",
-            "_TZ321C_fkzihax8",
-            "_TZE284_rjxqso4a",
             "_TZE200_pay2byax",
             "_TZ3218_t9ynfz4x",
             "_TZ3000_1o6x1bl0",
@@ -238,21 +243,26 @@
             "_TZ3000_b4awzgct",
             "_TZE200_kb5noeto",
             "_TZ3000_ynmowqk2",
-            "_TZ3000_rco1yzb1"
+            "_TZ3000_rco1yzb1",
+            "_TZ3210_n0wbkysi",
+            "_TZ3210_ncw88jfq"
           ],
           "pids": [
-            "TS011F",
-            "TS0601",
-            "TS0225",
-            "TS0201",
             "TS0002",
+            "TS0201",
             "TS0203",
+            "TS0225",
+            "TS0601",
             "TS0202",
             "TS1201",
             "TS0041",
             "TS0044",
+            "TS011F",
             "TS0505A",
-            "TS004F"
+            "TS004F",
+            "TS0003",
+            "TS0011",
+            "TS0001"
           ]
         }
       },
@@ -309,6 +319,16 @@
       "score": 90,
       "dualApp": "BOTH",
       "source": "github-issue",
+      "id": "#560",
+      "title": "Bug report - TRV06 Smart Zigbee Radiator Valve - isn't working",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/560",
+      "action": "investigate-code-silent",
+      "forumReply": "NEVER"
+    },
+    {
+      "score": 90,
+      "dualApp": "BOTH",
+      "source": "github-issue",
       "id": "#550",
       "title": "Bug report - [Short description]",
       "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/550",
@@ -320,7 +340,7 @@
       "dualApp": "BOTH",
       "source": "forum",
       "id": "forum-need-action",
-      "title": "58 forum posts needAction (shadow processor)",
+      "title": "59 forum posts needAction (shadow processor)",
       "action": "enrich:investigate + deep-functional (DP/cluster/flow/RX-TX, not mfr+pid only)",
       "forumReply": "NEVER"
     },
@@ -347,6 +367,6 @@
   ],
   "functionalDeep": {
     "ok": true,
-    "durationMs": 1985
+    "durationMs": 2077
   }
 }
