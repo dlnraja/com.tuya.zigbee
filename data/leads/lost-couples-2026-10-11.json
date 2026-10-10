@@ -4,36 +4,6 @@
  "method": "full-history exact couple pass; Z2M/Johan attested but not placed",
  "blocked_needs_move": [
   [
-   "_TYZB01_4mdqxxnn",
-   "TS0222",
-   "illuminance_sensor",
-   "collision switch_1gang"
-  ],
-  [
-   "_TYZB01_m6ec2pgj",
-   "TS0222",
-   "illuminance_sensor",
-   "collision switch_1gang"
-  ],
-  [
-   "_TZ3000_j6adk9id",
-   "TS0222",
-   "illuminance_sensor",
-   "collision dimmer_wall_1gang"
-  ],
-  [
-   "_TZ3290_s6ezpa3j",
-   "TS1201",
-   "ir_blaster",
-   "collision climate_sensor"
-  ],
-  [
-   "_TZ3210_m3mxv66l",
-   "TS0202",
-   "motion_sensor",
-   "collision climate_sensor"
-  ],
-  [
    "_TZE200_01fvxamo",
    "TS0201",
    "temphumidsensor",
@@ -65,18 +35,6 @@
     "miboxer.ts"
    ]
   },
-  "_tz3000_00mk2xzy|ts011f": {
-   "ever_driver": "usb_dongle_triple",
-   "z2m_files": [
-    "lidl.ts"
-   ]
-  },
-  "_tz3210_nhqka112|ts011f": {
-   "ever_driver": "usb_dongle_triple",
-   "z2m_files": [
-    "tuya.ts"
-   ]
-  },
   "_tz3000_j0ktmul1|ts011f": {
    "ever_driver": "usb_dongle_triple",
    "z2m_files": [
@@ -95,52 +53,10 @@
     "makegood.ts"
    ]
   },
-  "_tz3210_yvxjawlt|ts011f": {
-   "ever_driver": "usb_dongle_triple",
-   "z2m_files": [
-    "mercator.ts"
-   ]
-  },
   "_tz3000_gazjngjl|ts011f": {
    "ever_driver": "usb_dongle_triple",
    "z2m_files": [
     "zemismart.ts"
-   ]
-  },
-  "_tz3000_v1pdxuqq|ts011f": {
-   "ever_driver": "usb_dongle_triple",
-   "z2m_files": [
-    "tuya.ts"
-   ]
-  },
-  "_tz3000_8a833yls|ts011f": {
-   "ever_driver": "usb_dongle_triple",
-   "z2m_files": [
-    "tuya.ts"
-   ]
-  },
-  "_tz3000_nzkqcvvs|ts011f": {
-   "ever_driver": "usb_dongle_triple",
-   "z2m_files": [
-    "tuya.ts"
-   ]
-  },
-  "_tz3000_rtcrrvia|ts011f": {
-   "ever_driver": "usb_dongle_triple",
-   "z2m_files": [
-    "tuya.ts"
-   ]
-  },
-  "_tz3000_ysiog9xi|ts011f": {
-   "ever_driver": "usb_dongle_triple",
-   "z2m_files": [
-    "tuya.ts"
-   ]
-  },
-  "_tz3000_o1jzcxou|ts011f": {
-   "ever_driver": "usb_dongle_triple",
-   "z2m_files": [
-    "tuya.ts"
    ]
   },
   "_tz3000_rqbjepe8|ts011f": {
@@ -151,18 +67,6 @@
   },
   "_tz3000_rgpqqmbj|ts011f": {
    "ever_driver": "usb_dongle_triple",
-   "z2m_files": [
-    "tuya.ts"
-   ]
-  },
-  "_tz3000_lbtpiody|ts0201": {
-   "ever_driver": "water_leak_sensor",
-   "z2m_files": [
-    "nous.ts"
-   ]
-  },
-  "_tze200_nkjintbl|ts0601": {
-   "ever_driver": "switch_1gang",
    "z2m_files": [
     "tuya.ts"
    ]
@@ -179,28 +83,10 @@
     "tuya.ts"
    ]
   },
-  "_tz3000_1obwwnmq|ts011f": {
-   "ever_driver": "socket_power_strip",
-   "z2m_files": [
-    "lidl.ts"
-   ]
-  },
   "_tz3000_dd8wwzcy|ts011f": {
    "ever_driver": "plug_energy_monitor",
    "z2m_files": [
     "makegood.ts"
-   ]
-  },
-  "_tyzb01_ftdkanlj|ts0222": {
-   "ever_driver": "climate_sensor",
-   "z2m_files": [
-    "moes.ts"
-   ]
-  },
-  "_tyzb01_kvwjujy9|ts0222": {
-   "ever_driver": "climate_sensor",
-   "z2m_files": [
-    "moes.ts"
    ]
   },
   "_tze200_p6fuhvez|ts0225": {
@@ -213,18 +99,6 @@
    "ever_driver": "sensor_motion_presence",
    "z2m_files": [
     "hobeian.ts"
-   ]
-  },
-  "_tyzb01_ymcdbl3u|ts0111": {
-   "ever_driver": "button_wireless_2",
-   "z2m_files": [
-    "tuya.ts"
-   ]
-  },
-  "_tz3290_ixd9mvv4|ts0049": {
-   "ever_driver": "button_wireless_4",
-   "z2m_files": [
-    "tuya.ts"
    ]
   },
   "_tze600_ogyg1y6b|ts0105": {
@@ -292,5 +166,149 @@
   "_tz3000_18ejxno0|ts0042": "scene_switch_wall",
   "_tz3000_e98krvvk|ts0042": "air_purifier_motion",
   "_tz3210_cehuw1lw|ts0121": "plug_energy_monitor"
- }
+ },
+ "pass2_leads": [
+  [
+   "_tz3000_xwh1e22x|ts1002",
+   "FUT089Z RGB+CCT remote; only bulb_rgbw has TS1002 \u2014 wrong class"
+  ],
+  [
+   "_tz3000_j0ktmul1|ts011f",
+   "5-zone valve controller; no matching driver profile"
+  ],
+  [
+   "_tz3000_z6fgd73r|ts011f",
+   "touch switch with metering on TS011F: no sibling-confirmed driver"
+  ],
+  [
+   "_tz3210_bep7ccew|ts011f",
+   "no existing driver with pid matching class double_power_point$"
+  ],
+  [
+   "_tz3000_gazjngjl|ts011f",
+   "UK outlet+USB: no sibling-confirmed driver"
+  ],
+  [
+   "_tz3000_rqbjepe8|ts011f",
+   "no existing driver with pid matching class smartplug_2_socket|double_power_point$"
+  ],
+  [
+   "_tz3000_rgpqqmbj|ts011f",
+   "no existing driver with pid matching class double_power_point$|smartplug_2_socket"
+  ],
+  [
+   "_tz3000_8nyaanzb|ts011f",
+   "no existing driver with pid matching class double_power_point$|smartplug_2_socket"
+  ],
+  [
+   "_tz3000_iy2c3n6p|ts011f",
+   "no existing driver with pid matching class double_power_point$|smartplug_2_socket"
+  ],
+  [
+   "_tz3210_a2erlvb8|ts0002",
+   "switch_1gang legitimately holds ['ts000f'] shared with switch_2gang"
+  ],
+  [
+   "_tz3000_dd8wwzcy|ts011f",
+   "no existing driver with pid matching class double_power_point$"
+  ],
+  [
+   "_tze200_p6fuhvez|ts0225",
+   "same as aj0oxo1i"
+  ],
+  [
+   "_tze200_aj0oxo1i|ts0225",
+   "Z2M model block ambiguous (ZG-225Z gas vs presence); needs interview"
+  ],
+  [
+   "_tze600_ogyg1y6b|ts0105",
+   "no driver has TS0105; adding pid would cross-product a whole curtain driver"
+  ]
+ ],
+ "pass2_placed": [
+  [
+   "_tz3000_00mk2xzy|ts011f",
+   "plug_smart"
+  ],
+  [
+   "_tz3210_nhqka112|ts011f",
+   "plug_smart"
+  ],
+  [
+   "_tz3210_yvxjawlt|ts011f",
+   "socket_power_strip_four"
+  ],
+  [
+   "_tz3000_v1pdxuqq|ts011f",
+   "plug_smart"
+  ],
+  [
+   "_tz3000_8a833yls|ts011f",
+   "plug_smart"
+  ],
+  [
+   "_tz3000_nzkqcvvs|ts011f",
+   "plug_smart"
+  ],
+  [
+   "_tz3000_rtcrrvia|ts011f",
+   "plug_smart"
+  ],
+  [
+   "_tz3000_ysiog9xi|ts011f",
+   "plug_smart"
+  ],
+  [
+   "_tz3000_o1jzcxou|ts011f",
+   "plug_smart"
+  ],
+  [
+   "_tz3000_lbtpiody|ts0201",
+   "temphumidsensor"
+  ],
+  [
+   "_tz3210_m3mxv66l|ts0202",
+   "motion_sensor"
+  ],
+  [
+   "_tz3290_s6ezpa3j|ts1201",
+   "ir_blaster"
+  ],
+  [
+   "_tze200_nkjintbl|ts0601",
+   "switch_2gang"
+  ],
+  [
+   "_tz3000_1obwwnmq|ts011f",
+   "socket_power_strip"
+  ],
+  [
+   "_tyzb01_ftdkanlj|ts0222",
+   "lcdtemphumidluxsensor"
+  ],
+  [
+   "_tyzb01_kvwjujy9|ts0222",
+   "lcdtemphumidluxsensor"
+  ],
+  [
+   "_tyzb01_ymcdbl3u|ts0111",
+   "valvecontroller"
+  ],
+  [
+   "_tz3290_ixd9mvv4|ts0049",
+   "smart_irrigation_valve"
+  ],
+  [
+   "_tyzb01_4mdqxxnn|ts0222",
+   "illuminance_sensor"
+  ],
+  [
+   "_tyzb01_m6ec2pgj|ts0222",
+   "illuminance_sensor"
+  ],
+  [
+   "_tz3000_j6adk9id|ts0222",
+   "illuminance_sensor"
+  ]
+ ]
 }

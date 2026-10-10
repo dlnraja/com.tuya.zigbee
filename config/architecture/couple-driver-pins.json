@@ -32,6 +32,195 @@
       "driver": "plug_energy_monitor",
       "source": "Z2M tuya.ts TS011F_plug_1 (metering smart plug); interview W5 shows OnOff/0x0702/0x0B04, not a battery button",
       "regression": "auto-fix-all b224ffbea8 placed them in button_wireless_2"
+    },
+    {
+      "mfr": [
+        "_TZ3000_00mk2xzy"
+      ],
+      "driver": "plug_smart",
+      "pid": "TS011F",
+      "source": "Z2M + Blakadder",
+      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
+    },
+    {
+      "mfr": [
+        "_TZ3210_nhqka112"
+      ],
+      "driver": "plug_smart",
+      "pid": "TS011F",
+      "source": "Z2M",
+      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
+    },
+    {
+      "mfr": [
+        "_TZ3210_yvxjawlt"
+      ],
+      "driver": "socket_power_strip_four",
+      "pid": "TS011F",
+      "source": "Z2M",
+      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_v1pdxuqq"
+      ],
+      "driver": "plug_smart",
+      "pid": "TS011F",
+      "source": "Z2M + Hubitat(kkossev)",
+      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_8a833yls"
+      ],
+      "driver": "plug_smart",
+      "pid": "TS011F",
+      "source": "Z2M",
+      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_nzkqcvvs"
+      ],
+      "driver": "plug_smart",
+      "pid": "TS011F",
+      "source": "Z2M",
+      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_rtcrrvia"
+      ],
+      "driver": "plug_smart",
+      "pid": "TS011F",
+      "source": "Z2M",
+      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_ysiog9xi"
+      ],
+      "driver": "plug_smart",
+      "pid": "TS011F",
+      "source": "Z2M",
+      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_o1jzcxou"
+      ],
+      "driver": "plug_smart",
+      "pid": "TS011F",
+      "source": "Z2M + ZHA + Blakadder",
+      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_lbtpiody"
+      ],
+      "driver": "temphumidsensor",
+      "pid": "TS0201",
+      "source": "Z2M + deCONZ + Blakadder + Hubitat(kkossev)",
+      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
+    },
+    {
+      "mfr": [
+        "_TZ3210_m3mxv66l"
+      ],
+      "driver": "motion_sensor",
+      "pid": "TS0202",
+      "source": "Z2M",
+      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
+    },
+    {
+      "mfr": [
+        "_TZ3290_s6ezpa3j"
+      ],
+      "driver": "ir_blaster",
+      "pid": "TS1201",
+      "source": "Z2M",
+      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
+    },
+    {
+      "mfr": [
+        "_TZE200_nkjintbl"
+      ],
+      "driver": "switch_2gang",
+      "pid": "TS0601",
+      "source": "Z2M + ZHA + Blakadder",
+      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_1obwwnmq"
+      ],
+      "driver": "socket_power_strip",
+      "pid": "TS011F",
+      "source": "Z2M + deCONZ + Blakadder",
+      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
+    },
+    {
+      "mfr": [
+        "_TYZB01_ftdkanlj"
+      ],
+      "driver": "lcdtemphumidluxsensor",
+      "pid": "TS0222",
+      "source": "Z2M + Blakadder + Hubitat(kkossev)",
+      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
+    },
+    {
+      "mfr": [
+        "_TYZB01_kvwjujy9"
+      ],
+      "driver": "lcdtemphumidluxsensor",
+      "pid": "TS0222",
+      "source": "Z2M + Blakadder + Hubitat(kkossev)",
+      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
+    },
+    {
+      "mfr": [
+        "_TYZB01_ymcdbl3u"
+      ],
+      "driver": "valvecontroller",
+      "pid": "TS0111",
+      "source": "Z2M + Blakadder",
+      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
+    },
+    {
+      "mfr": [
+        "_TZ3290_ixd9mvv4"
+      ],
+      "driver": "smart_irrigation_valve",
+      "pid": "TS0049",
+      "source": "Z2M",
+      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
+    },
+    {
+      "mfr": [
+        "_TYZB01_4mdqxxnn"
+      ],
+      "driver": "illuminance_sensor",
+      "pid": "TS0222",
+      "source": "Z2M + deCONZ + Blakadder + Hubitat(kkossev)",
+      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
+    },
+    {
+      "mfr": [
+        "_TYZB01_m6ec2pgj"
+      ],
+      "driver": "illuminance_sensor",
+      "pid": "TS0222",
+      "source": "Z2M + deCONZ",
+      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_j6adk9id"
+      ],
+      "driver": "illuminance_sensor",
+      "pid": "TS0222",
+      "source": "Z2M + deCONZ",
+      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
     }
   ]
 }
