@@ -1,0 +1,296 @@
+{
+ "generated": "2026-10-11",
+ "branch": "stable-v5",
+ "method": "full-history exact couple pass; Z2M/Johan attested but not placed",
+ "blocked_needs_move": [
+  [
+   "_TYZB01_4mdqxxnn",
+   "TS0222",
+   "illuminance_sensor",
+   "collision switch_1gang"
+  ],
+  [
+   "_TYZB01_m6ec2pgj",
+   "TS0222",
+   "illuminance_sensor",
+   "collision switch_1gang"
+  ],
+  [
+   "_TZ3000_j6adk9id",
+   "TS0222",
+   "illuminance_sensor",
+   "collision dimmer_wall_1gang"
+  ],
+  [
+   "_TZ3290_s6ezpa3j",
+   "TS1201",
+   "ir_blaster",
+   "collision climate_sensor"
+  ],
+  [
+   "_TZ3210_m3mxv66l",
+   "TS0202",
+   "motion_sensor",
+   "collision climate_sensor"
+  ],
+  [
+   "_TZE200_01fvxamo",
+   "TS0201",
+   "temphumidsensor",
+   "collision motion_sensor"
+  ],
+  [
+   "_TZE200_iq4ygaai",
+   "TS0201",
+   "temphumidsensor",
+   "collision motion_sensor"
+  ],
+  [
+   "_TZ3210_a2erlvb8",
+   "TS0002",
+   "switch_2gang",
+   "collision switch_1gang"
+  ],
+  [
+   "_TZ3000_fa9mlvja",
+   "TS0041",
+   "button_wireless_1",
+   "collision remote_button_wireless,wall_remote_1_gang"
+  ]
+ ],
+ "z2m_attested_unplaced": {
+  "_tz3000_xwh1e22x|ts1002": {
+   "ever_driver": "bulb_rgbw",
+   "z2m_files": [
+    "miboxer.ts"
+   ]
+  },
+  "_tz3000_00mk2xzy|ts011f": {
+   "ever_driver": "usb_dongle_triple",
+   "z2m_files": [
+    "lidl.ts"
+   ]
+  },
+  "_tz3210_nhqka112|ts011f": {
+   "ever_driver": "usb_dongle_triple",
+   "z2m_files": [
+    "tuya.ts"
+   ]
+  },
+  "_tz3000_j0ktmul1|ts011f": {
+   "ever_driver": "usb_dongle_triple",
+   "z2m_files": [
+    "automaton.ts"
+   ]
+  },
+  "_tz3000_z6fgd73r|ts011f": {
+   "ever_driver": "usb_dongle_triple",
+   "z2m_files": [
+    "lellki.ts"
+   ]
+  },
+  "_tz3210_bep7ccew|ts011f": {
+   "ever_driver": "usb_dongle_triple",
+   "z2m_files": [
+    "makegood.ts"
+   ]
+  },
+  "_tz3210_yvxjawlt|ts011f": {
+   "ever_driver": "usb_dongle_triple",
+   "z2m_files": [
+    "mercator.ts"
+   ]
+  },
+  "_tz3000_gazjngjl|ts011f": {
+   "ever_driver": "usb_dongle_triple",
+   "z2m_files": [
+    "zemismart.ts"
+   ]
+  },
+  "_tz3000_v1pdxuqq|ts011f": {
+   "ever_driver": "usb_dongle_triple",
+   "z2m_files": [
+    "tuya.ts"
+   ]
+  },
+  "_tz3000_8a833yls|ts011f": {
+   "ever_driver": "usb_dongle_triple",
+   "z2m_files": [
+    "tuya.ts"
+   ]
+  },
+  "_tz3000_nzkqcvvs|ts011f": {
+   "ever_driver": "usb_dongle_triple",
+   "z2m_files": [
+    "tuya.ts"
+   ]
+  },
+  "_tz3000_rtcrrvia|ts011f": {
+   "ever_driver": "usb_dongle_triple",
+   "z2m_files": [
+    "tuya.ts"
+   ]
+  },
+  "_tz3000_ysiog9xi|ts011f": {
+   "ever_driver": "usb_dongle_triple",
+   "z2m_files": [
+    "tuya.ts"
+   ]
+  },
+  "_tz3000_o1jzcxou|ts011f": {
+   "ever_driver": "usb_dongle_triple",
+   "z2m_files": [
+    "tuya.ts"
+   ]
+  },
+  "_tz3000_rqbjepe8|ts011f": {
+   "ever_driver": "usb_dongle_triple",
+   "z2m_files": [
+    "tuya.ts"
+   ]
+  },
+  "_tz3000_rgpqqmbj|ts011f": {
+   "ever_driver": "usb_dongle_triple",
+   "z2m_files": [
+    "tuya.ts"
+   ]
+  },
+  "_tz3000_lbtpiody|ts0201": {
+   "ever_driver": "water_leak_sensor",
+   "z2m_files": [
+    "nous.ts"
+   ]
+  },
+  "_tze200_nkjintbl|ts0601": {
+   "ever_driver": "switch_1gang",
+   "z2m_files": [
+    "tuya.ts"
+   ]
+  },
+  "_tz3000_8nyaanzb|ts011f": {
+   "ever_driver": "usb_dongle_triple",
+   "z2m_files": [
+    "tuya.ts"
+   ]
+  },
+  "_tz3000_iy2c3n6p|ts011f": {
+   "ever_driver": "usb_dongle_triple",
+   "z2m_files": [
+    "tuya.ts"
+   ]
+  },
+  "_tz3000_1obwwnmq|ts011f": {
+   "ever_driver": "socket_power_strip",
+   "z2m_files": [
+    "lidl.ts"
+   ]
+  },
+  "_tz3000_dd8wwzcy|ts011f": {
+   "ever_driver": "plug_energy_monitor",
+   "z2m_files": [
+    "makegood.ts"
+   ]
+  },
+  "_tyzb01_ftdkanlj|ts0222": {
+   "ever_driver": "climate_sensor",
+   "z2m_files": [
+    "moes.ts"
+   ]
+  },
+  "_tyzb01_kvwjujy9|ts0222": {
+   "ever_driver": "climate_sensor",
+   "z2m_files": [
+    "moes.ts"
+   ]
+  },
+  "_tze200_p6fuhvez|ts0225": {
+   "ever_driver": "sensor_motion_presence",
+   "z2m_files": [
+    "hobeian.ts"
+   ]
+  },
+  "_tze200_aj0oxo1i|ts0225": {
+   "ever_driver": "sensor_motion_presence",
+   "z2m_files": [
+    "hobeian.ts"
+   ]
+  },
+  "_tyzb01_ymcdbl3u|ts0111": {
+   "ever_driver": "button_wireless_2",
+   "z2m_files": [
+    "tuya.ts"
+   ]
+  },
+  "_tz3290_ixd9mvv4|ts0049": {
+   "ever_driver": "button_wireless_4",
+   "z2m_files": [
+    "tuya.ts"
+   ]
+  },
+  "_tze600_ogyg1y6b|ts0105": {
+   "ever_driver": "curtain_motor",
+   "z2m_files": [
+    "tuya.ts"
+   ]
+  }
+ },
+ "johan_only_unverified": {
+  "_tz3000_cjrngdr3|ts011f": "usb_dongle_triple",
+  "_tz3000_riwp3k79|ts0505a": "rgb_led_strip",
+  "_tz3000_kdpxju99|ts0505a": "rgb_spot_GU10",
+  "_tz3000_utagpnzs|ts0505a": "rgb_wall_led_light",
+  "_tz3000_5bsf8vaj|ts0505a": "rgb_wall_led_light",
+  "_tz3000_pzui3skt|ts0041": "button_wireless_1",
+  "_tz3000_hgu1dlak|ts0202": "climate_sensor",
+  "_tyzb02_key8kk7r|ts0043": "button_wireless_3",
+  "_tz3210_eejm8dcr|ts0504b": "bulb_rgbw",
+  "_tz3210_eejm8dcr|ts0505b": "bulb_rgbw",
+  "_tz3000_saiqcn0y|ts0601": "climate_sensor",
+  "_tz3000_xr3htd96|ts0601": "climate_sensor",
+  "_tyzb01_qezuin6k|ts0052": "dimmer_wall_1gang",
+  "_tyzb01_qezuin6k|ts110e": "dimmer_wall_1gang",
+  "_tz3000_oborybow|ts0502a": "tunable_bulb_E14",
+  "_tz3000_85czd6fy|ts0207": "contact_sensor",
+  "_tyzb01_bagt1e4o|ts0044": "switch_4gang",
+  "_tz3000_e98krvvk|ts0002": "switch_1gang",
+  "_tz3000_dku2cfsc|ts0044": "wall_switch_4_gang",
+  "_tz3000_6oabgtzv|ts0207": "water_detector",
+  "_tyzb01_ftdkanlj|ts0201": "climate_sensor",
+  "_tyzb01_kvwjujy9|ts0201": "climate_sensor",
+  "_tyzb01_6g8b7at8|ts0042": "button_wireless_2",
+  "_tyzb01_b8cr31hp|ts0043": "button_wireless_2",
+  "_tyzb01_vzrytttn|ts0042": "button_wireless_2",
+  "_tyzb01_xiuox57i|ts0043": "button_wireless_2",
+  "_tyzb01_ymcdbl3u|ts0001": "button_wireless_2",
+  "_tyzb01_ymcdbl3u|ts011f": "button_wireless_2",
+  "_tz3000_2dlwlvex|ts0043": "button_wireless_2",
+  "_tz3000_5e5ptb24|ts0043": "button_wireless_2",
+  "_tz3000_aezbqpcu|ts0043": "button_wireless_2",
+  "_tz3000_cdamjqm9|ts0043": "button_wireless_2",
+  "_tz3000_hlwm8e96|ts0043": "button_wireless_2",
+  "_tz3000_lrgccsxm|ts0043": "button_wireless_2",
+  "_tz3000_qcdqw8nf|ts0043": "button_wireless_2",
+  "_tz3000_qeuvnohg|ts0121": "button_wireless_2",
+  "_tz3000_qewo8dlz|ts0043": "button_wireless_2",
+  "_tz3000_r0pmi2p3|ts0044": "button_wireless_2",
+  "_tz3000_thhxrept|ts0043": "button_wireless_2",
+  "_tz3000_vvlivusi|ts0043": "button_wireless_2",
+  "_tz3000_w05exif3|ts0043": "button_wireless_2",
+  "_tz3000_wyhuocal|ts0043": "button_wireless_2",
+  "_tz3000_s8r1qoyq|ts0042": "air_purifier_motion",
+  "_tyzb01_iuepbmpv|ts0201": "lcdtemphumidsensor",
+  "_tz3210_eejm8dcr|ts0503a": "led_strip_rgbw",
+  "_tz3210_eejm8dcr|ts0503b": "led_strip_rgbw",
+  "_tz3000_uaa99arv|ts0044": "remote_button_wireless_wall",
+  "_tz3000_fjt5218m|ts0044": "wall_switch_4_gang",
+  "_tz3000_awvmkayh|ts0207": "water_leak_sensor",
+  "_tz3000_mugyhz0q|ts0207": "water_leak_sensor",
+  "_tz3000_ocjlo4ea|ts0207": "water_leak_sensor",
+  "_tz3210_huzkzqyk|ts0222": "air_quality_co2",
+  "_tz3210_huzkzqyk|ts0201": "air_quality_co2",
+  "_tz3000_zl1kmjqx|ts0201": "climate_sensor",
+  "_tz3000_18ejxno0|ts0042": "scene_switch_wall",
+  "_tz3000_e98krvvk|ts0042": "air_purifier_motion",
+  "_tz3210_cehuw1lw|ts0121": "plug_energy_monitor"
+ }
+}
