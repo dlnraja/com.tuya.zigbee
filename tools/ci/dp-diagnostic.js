@@ -25,7 +25,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const STATE_DIR = 'C:/Users/Dell/Documents/homey/master/.github/state';
+const STATE_DIR = require('path').join(__dirname, '..', '..', '.github', 'state'); // was a hardcoded Windows path
 const KNOWN_DPS_FILE = path.join(STATE_DIR, 'known-tuya-dps.json');
 
 // Known Tuya DPs from Z2M/ZHA/Johan (extracted from P24.1/P24.2)
@@ -77,6 +77,7 @@ const KNOWN_DPS = {
 };
 
 // Save known DPs
+fs.mkdirSync(STATE_DIR, { recursive: true });
 fs.writeFileSync(KNOWN_DPS_FILE, JSON.stringify(KNOWN_DPS, null, 2));
 
 function analyzeDevice(deviceData) {
