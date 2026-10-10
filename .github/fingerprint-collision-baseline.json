@@ -3600,6 +3600,54 @@
         "curtain_motor",
         "switch_1gang"
       ]
+    },
+    {
+      "key": "_tz3000_j1xl73iw|TS0601",
+      "drivers": [
+        "curtain_module_2_gang",
+        "curtain_motor"
+      ],
+      "reviewed": "2026-10-10 exact-pair 2-gang driver (as master); kept on curtain_motor for already-paired devices, no removal"
+    },
+    {
+      "key": "_tz3000_j1xl73iw|TS0726",
+      "drivers": [
+        "curtain_module_2_gang",
+        "curtain_motor"
+      ],
+      "reviewed": "2026-10-10 exact-pair 2-gang driver (as master); kept on curtain_motor for already-paired devices, no removal"
+    },
+    {
+      "key": "_tz3000_j1xl73iw|TS130F",
+      "drivers": [
+        "curtain_module_2_gang",
+        "curtain_motor"
+      ],
+      "reviewed": "2026-10-10 exact-pair 2-gang driver (as master); kept on curtain_motor for already-paired devices, no removal"
+    },
+    {
+      "key": "_tz3000_l6iqph4f|TS0601",
+      "drivers": [
+        "curtain_module_2_gang",
+        "curtain_motor"
+      ],
+      "reviewed": "2026-10-10 exact-pair 2-gang driver (as master); kept on curtain_motor for already-paired devices, no removal"
+    },
+    {
+      "key": "_tz3000_l6iqph4f|TS0726",
+      "drivers": [
+        "curtain_module_2_gang",
+        "curtain_motor"
+      ],
+      "reviewed": "2026-10-10 exact-pair 2-gang driver (as master); kept on curtain_motor for already-paired devices, no removal"
+    },
+    {
+      "key": "_tz3000_l6iqph4f|TS130F",
+      "drivers": [
+        "curtain_module_2_gang",
+        "curtain_motor"
+      ],
+      "reviewed": "2026-10-10 exact-pair 2-gang driver (as master); kept on curtain_motor for already-paired devices, no removal"
     }
   ]
 }
