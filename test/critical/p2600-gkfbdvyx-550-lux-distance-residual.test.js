@@ -38,10 +38,14 @@ describe('P2600 gkfbdvyx #550 lux/distance residual', () => {
 
   it('ceiling V3 lux DP103 + distance ÷10 (P2604 supersedes DP104 presence)', () => {
     const cfg = fs.readFileSync(CONFIGS, 'utf8');
-    const idx = cfg.indexOf('ZY_M100_CEILING_24G');
-    const block = cfg.slice(idx, idx + 4000);
+    const idx = cfg.indexOf("'ZY_M100_CEILING_24G'");
+    assert.ok(idx > 0);
+    // WHY(Node22 audit 2026-10-11): ceiling block grew past 4 KB (P2715/P2725 notes) — widen window
+    const block = cfg.slice(idx, idx + 12000);
     assert.ok(block.includes("103: { cap: 'measure_luminance', type: 'lux_direct' }"));
-    assert.ok(block.includes("9: { cap: 'measure_luminance.distance', divisor: 10 }"));
+    // WHY(P2715): DP9 evolved to dual-scale object (preferDivisor 10) — ÷10 intent kept
+    assert.ok(block.includes("9: { cap: 'measure_luminance.distance', divisor: 10 }")
+      || /9:\s*\{\s*cap:\s*'measure_luminance\.distance',[\s\S]{0,80}preferDivisor:\s*10/.test(block));
     assert.ok(block.includes("104: { cap: null, internal: 'motion_state_v2_compat' }"));
     // P2618: DP10 must not paint lux
     assert.ok(/10:\s*\{\s*cap:\s*null/.test(block));
