@@ -37,7 +37,8 @@ async function advanceTopic(tid, st, chunk, { delayMs = 900 } = {}) {
   const topic = await getJson(`/t/${tid}.json`);
   if (topic.rateLimited) return { rateLimited: true, items: [], scanned: 0 };
   if (topic.error || !topic.post_stream) return { error: topic.status || 'no-stream', items: [], scanned: 0 };
-  const stream = topic.post_stream.stream || [];
+  // Ids ascending: merged/moved posts can break stream order; ids give a stable, resumable cursor.
+  const stream = [...(topic.post_stream.stream || [])].sort((a, b) => a - b);
   st.lastPost = Math.max(st.lastPost || 0, topic.highest_post_number || 0);
   const sweptId = Number(st.sweptId || 0);
   const todo = stream.filter((id) => id > sweptId).slice(0, chunk);
@@ -75,6 +76,8 @@ async function advanceTopic(tid, st, chunk, { delayMs = 900 } = {}) {
     }
   }
   st.sweptTo = maxNum;
+  st.sweptCount = (st.sweptCount || 0) + scanned;
+  st.visiblePosts = stream.length;
   st.status = (stream.length && Number(st.sweptId) >= stream[stream.length - 1]) ? 'caught-up' : 'in-progress';
   st.sweptAt = new Date().toISOString();
   return { items, scanned, noAction };
