@@ -177,6 +177,7 @@ async function scanDiscourseCategory(src, st, c) {
   const kw = new RegExp(src.match || IDEA_RE.source, 'i');
   let max = since;
   const seen = new Set();
+  const listed = new Map();
   for (let p = 0; p < pages; p++) {
     const listPath = src.tag ? `tag/${src.tag}` : `c/${src.category}`;
     const j = await c.json(`${src.url}/${listPath}.json?page=${p}`);
@@ -184,6 +185,7 @@ async function scanDiscourseCategory(src, st, c) {
     for (const t of topics) {
       if (seen.has(t.id)) {continue;}
       seen.add(t.id);
+      listed.set(t.id, t);
       if (t.id > max) {max = t.id;}
       if (baseline || t.id <= since || t.pinned) {continue;}
       const txt = `${t.title || ''} ${t.excerpt || ''}`;
@@ -191,7 +193,22 @@ async function scanDiscourseCategory(src, st, c) {
       out.push({ source: src.id, kind: 'forum-app', ref: `${src.url}/t/${t.id}`, summary: `new app topic #${t.id}: ${String(t.title).slice(0, 140)} (review for ideas; credit author)`, ...extract(txt), credit: src.credit, seenAt: new Date().toISOString() });
     }
   }
-  return { out, next: { maxTopicId: max || null } };
+  // Follow new posts in recently active list topics (bounded, per-topic cursor = last post_number).
+  const tracked = { ...(st.tracked || {}) };
+  const maxTrack = Math.max(0, Math.min(40, Number(src.trackTopics) || 0));
+  if (maxTrack) {
+    const recent = [...listed.values()].filter((t) => !t.pinned).sort((a, b) => Date.parse(b.last_posted_at || 0) - Date.parse(a.last_posted_at || 0)).slice(0, maxTrack);
+    const due = recent.filter((t) => tracked[t.id] !== undefined && (t.highest_post_number || 0) > tracked[t.id]);
+    for (const t of recent) { if (tracked[t.id] === undefined) { tracked[t.id] = t.highest_post_number || 0; } }
+    if (due.length && !baseline) {
+      const r = await scanDiscourse({ ...src, topics: due.map((t) => t.id), batch: src.batch || 10 }, { lastPost: tracked }, c);
+      out.push(...r.out);
+      Object.assign(tracked, r.next.lastPost);
+    }
+    const keep = new Set(recent.map((t) => String(t.id)));
+    for (const k of Object.keys(tracked)) { if (!keep.has(String(k))) { delete tracked[k]; } }
+  }
+  return { out, next: { maxTopicId: max || null, tracked } };
 }
 
 async function scanPage(src, st, c) {
