@@ -375,7 +375,7 @@ jobs:
           run_diag 60 node scripts/ci/diagnostic-history-gate.js --json
 
       # WHY(2026-10-10): socket hang up / "specified key does not exist" are Athom transport failures.
-      # One bumped retry (new version, never the same), never for AggregateError, never from a retry run.
+      # One bumped retry (new version, never the same), incl. AggregateError (flaky 2026-10-11), never from a retry run.
       - name: Transient Athom failure - single retry with a new version
         if: always() && steps.pub.outcome == 'success'
         continue-on-error: true
