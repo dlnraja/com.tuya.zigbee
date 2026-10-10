@@ -275,6 +275,28 @@
    "source": "zigbee-herdsman-converters src/devices/lonsonho.ts TS130F_dual; JohanBendz/com.tuya.zigbee#1030 -> #1145 (Batch 96 by JohanBendz)",
    "date": "2026-10-10",
    "reviewed_by": "P2810 history sweep 2026-10-10 (standing rule: exact driver for a reported couple, old phantom kept)"
+  },
+  {
+   "couple": "_TZ3000_t6jriawg|TS0207",
+   "drivers": [
+    "water_leak_sensor",
+    "water_leak_sensor_tuya"
+   ],
+   "reason": "IAS water leak sensor (EP1 IAS Zone 1280, applicationDeviceId 1026) with an interview on the forum; exact couple placed on the TS0207 water leak driver; old manufacturer entry kept (artifacts only).",
+   "source": "community.homey.app/t/89271/330 (Kashif_Lacrum, interview); zigbee-herdsman-converters tuya.ts (Moes ZSS-QY-WL-C-MS whitelabel)",
+   "date": "2026-10-10",
+   "reviewed_by": "P2810 history sweep 2026-10-10 (standing rule: exact driver for a reported couple, old phantom kept)"
+  },
+  {
+   "couple": "_TZ3000_0s9gukzt|TS0207",
+   "drivers": [
+    "water_leak_sensor",
+    "water_leak_sensor_tuya"
+   ],
+   "reason": "IAS water leak sensor with a full interview on the forum; exact couple placed on the TS0207 water leak driver; old manufacturer entry kept (artifacts only).",
+   "source": "community.homey.app/t/89271/560 (Patrik_Mihalik, interview); zigbee-herdsman-converters tuya.ts TS0207 water leak fingerprint list",
+   "date": "2026-10-10",
+   "reviewed_by": "P2810 history sweep 2026-10-10 (standing rule: exact driver for a reported couple, old phantom kept)"
   }
  ]
 }
