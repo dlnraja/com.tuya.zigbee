@@ -20,4 +20,19 @@ describe('runtime does not require app.json', () => {
     assert.strictEqual(pkg.version, m && m[1]);
     assert.strictEqual(require('../lib/utils/AppVersion').getAppVersion(), pkg.version);
   });
+  it('no runtime file loads app.json (whole-repo scan)', () => {
+    const root = path.join(__dirname, '..');
+    const bad = [];
+    const walk = (d) => {
+      for (const e of fs.readdirSync(d, { withFileTypes: true })) {
+        const p = path.join(d, e.name);
+        if (e.isDirectory()) { if (!/node_modules|scraper|enrichment/.test(e.name)) walk(p); continue; }
+        if (!p.endsWith('.js') || p.endsWith('.test.js')) continue;
+        const src = fs.readFileSync(p, 'utf8').replace(/\/\/.*$/gm, '');
+        if (/require\(\s*['"][./]*app\.json['"]\s*\)|readFileSync\([^)]*['"]app\.json['"]/.test(src)) bad.push(path.relative(root, p));
+      }
+    };
+    for (const d of ['lib', 'drivers']) if (fs.existsSync(path.join(root, d))) walk(path.join(root, d));
+    assert.deepStrictEqual(bad.filter((f) => !/ConfigSchemaValidator/.test(f)), []);
+  });
 });
