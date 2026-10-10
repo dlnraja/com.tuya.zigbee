@@ -108,3 +108,7 @@ Pipeline: `.github/scripts/transient-publish-retry.js` + step "Transient Athom f
 publish.yml re-dispatches publish.yml once (`transient_retry=true`, which disables a second retry).
 Both transient strings are in TRANSIENT_RE (processing-failure-republish-check) and build-error-diag-v2.
 The Auto-Fix doctrine (P139: no bump loops while an older Test is healthy) is unchanged.
+## Fold + R5 (2026-10-10 ~23:38 Paris)
+- **Fold** `fold-held-couples` v9.0.1378 #3497 = `socket hang up` → **retry** (do not conclude). Couples folded into existing drivers; SPI/WHD02 drivers stay held.
+- **R5** #3496 = `The specified key does not exist` (whd02 unhold+pair). R5 retry cancelled to prioritize fold retry.
+- Live Test still **9.0.1376 #3495** (P1) until a later build promotes.
