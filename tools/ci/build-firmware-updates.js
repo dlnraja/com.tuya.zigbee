@@ -111,8 +111,26 @@ function get(url, asBuffer = false, redirects = 0) {
 function sha512(buf) {return crypto.createHash('sha512').update(buf).digest('hex');}
 function sha256(buf) {return crypto.createHash('sha256').update(buf).digest('hex');}
 
+// WHY(OTA bounds audit 2026-10-11): offsets 24/26 sit inside the 32-byte header string
+// (20..51), so "Telink OTA…" / "EBL sdk_route" bytes became min>max hardware bounds.
+// ZCL OTA spec: optional fields follow the 56-byte fixed header, gated by fieldControl
+// bit0 security credential (1 B), bit1 upgrade destination (8 B), bit2 min/max HW version (2+2 B).
+function readHardwareBounds(buf) {
+  const fc = buf.readUInt16LE(8);
+  if (!(fc & 0x04)) {return { min: null, max: null };}
+  let off = 56;
+  if (fc & 0x01) {off += 1;}
+  if (fc & 0x02) {off += 8;}
+  if (buf.length < off + 4) {return { min: null, max: null };}
+  const min = buf.readUInt16LE(off);
+  const max = buf.readUInt16LE(off + 2);
+  if (min > max) {return { min: null, max: null };}
+  return { min, max };
+}
+
 function parseOtaHeader(buf) {
   if (buf.length < 56 || buf.readUInt32LE(0) !== 0x0BEEF11E) {return null;}
+  const hw = readHardwareBounds(buf);
   return {
     headerVersion: buf.readUInt16LE(4),
     headerLength: buf.readUInt16LE(6),
@@ -122,8 +140,8 @@ function parseOtaHeader(buf) {
     fileVersion: buf.readUInt32LE(14),
     stackVersion: buf.readUInt16LE(18),
     totalImageSize: buf.readUInt32LE(52),
-    minimumHardwareVersion: buf.readUInt16LE(24) || null,
-    maximumHardwareVersion: buf.readUInt16LE(26) || null
+    minimumHardwareVersion: hw.min,
+    maximumHardwareVersion: hw.max
   };
 }
 
@@ -365,8 +383,8 @@ async function main() {
           manufacturerCode: header.manufacturerCode,
           ...(img.minFileVersion ? { minFileVersion: img.minFileVersion } : {}),
           ...(img.maxFileVersion ? { maxFileVersion: img.maxFileVersion } : {}),
-          ...(header.minimumHardwareVersion ? { minHardwareVersion: header.minimumHardwareVersion } : {}),
-          ...(header.maximumHardwareVersion ? { maxHardwareVersion: header.maximumHardwareVersion } : {}),
+          ...(header.minimumHardwareVersion !== null ? { minHardwareVersion: header.minimumHardwareVersion } : {}),
+          ...(header.maximumHardwareVersion !== null ? { maxHardwareVersion: header.maximumHardwareVersion } : {}),
           size: buf.length,
           name: fileName,
           integrity: `sha256:${sha256(buf)}`
