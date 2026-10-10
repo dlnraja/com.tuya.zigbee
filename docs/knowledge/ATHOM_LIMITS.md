@@ -112,3 +112,9 @@ The Auto-Fix doctrine (P139: no bump loops while an older Test is healthy) is un
 - **Fold** `fold-held-couples` v9.0.1378 #3497 = `socket hang up` → **retry** (do not conclude). Couples folded into existing drivers; SPI/WHD02 drivers stay held.
 - **R5** #3496 = `The specified key does not exist` (whd02 unhold+pair). R5 retry cancelled to prioritize fold retry.
 - Live Test still **9.0.1376 #3495** (P1) until a later build promotes.
+
+## Fold SUCCESS (2026-10-10 ~24:00 Paris)
+- `fold-held-couples` → **Test v9.0.1380 #3499** (after socket-hang retries on #3497/#3498).
+- Held drivers stay out of payload; couples shipped via existing drivers (WHD02→`switch_1gang`, SPI→`led_controller_rgb` + onMapDeviceClass).
+- R5 whd02 unhold still fails (#3496 key-missing) — do not unhold until a clean release probe passes.
+- P1 proved new driver ids can pass; fold is the shipping path for held couples.
