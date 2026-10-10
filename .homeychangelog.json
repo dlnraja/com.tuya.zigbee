@@ -1,7 +1,4 @@
 {
-  "9.0.1339": {
-    "en": "Diagnostic build (content of 9.0.1330)."
-  },
   "changelog": [
     {
       "version": "9.0.497",
@@ -910,6 +907,12 @@
       ]
     }
   ],
+  "9.0.1339": {
+    "en": "Diagnostic build (content of 9.0.1330)."
+  },
+  "9.0.1330": {
+    "en": "v9.0.1330: automated publish, manifest sync, and Homey test promotion."
+  },
   "9.0.1329": {
     "en": "v9.0.1329: automated publish, manifest sync, and Homey test promotion."
   },
@@ -961,13 +964,7 @@
   "9.0.1313": {
     "en": "fix(P2795): #554 TS0046/_TZ3000_iszegwpd 6-gang wall remote pairs with 4-endpoint firmware (EP1–4 only; soft magic; no onOff report storm)."
   },
-  "9.0.1312": {
-    "en": "v9.0.1312: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.1311": {
-    "en": "v9.0.1311: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.1330": {
-    "en": "v9.0.1330: automated publish, manifest sync, and Homey test promotion."
+  "9.0.1340": {
+    "en": "Diagnostic build (content of 9.0.1330)."
   }
 }
