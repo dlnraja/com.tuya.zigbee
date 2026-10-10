@@ -1,13 +1,13 @@
 {
-  "updated": "2026-10-10T07:28:45.641Z",
+  "updated": "2026-10-10T07:29:07.804Z",
   "threads": {
     "21313": {
       "lastPost": 2819,
-      "status": "in-progress",
-      "sweptId": 576167,
-      "sweptTo": 2476,
-      "sweptAt": "2026-10-10T07:28:45.499Z",
-      "sweptCount": 2400,
+      "status": "caught-up",
+      "sweptId": 779470,
+      "sweptTo": 2819,
+      "sweptAt": "2026-10-10T07:29:07.667Z",
+      "sweptCount": 2735,
       "visiblePosts": 2735
     },
     "26439": {
@@ -15,7 +15,7 @@
       "status": "caught-up",
       "sweptId": 786497,
       "sweptTo": 5534,
-      "sweptAt": "2026-10-10T07:28:24.958Z",
+      "sweptAt": "2026-10-10T07:28:49.733Z",
       "sweptCount": 1223,
       "visiblePosts": 1223
     },
@@ -24,7 +24,7 @@
       "status": "caught-up",
       "sweptId": 425235,
       "sweptTo": 673,
-      "sweptAt": "2026-10-10T07:28:45.640Z",
+      "sweptAt": "2026-10-10T07:29:07.803Z",
       "sweptCount": 671,
       "visiblePosts": 671
     },
@@ -33,7 +33,7 @@
       "status": "caught-up",
       "sweptId": 785472,
       "sweptTo": 2259,
-      "sweptAt": "2026-10-10T07:28:24.937Z",
+      "sweptAt": "2026-10-10T07:28:49.707Z",
       "sweptCount": 2169,
       "visiblePosts": 2169
     },
@@ -42,7 +42,7 @@
       "status": "caught-up",
       "sweptId": 781609,
       "sweptTo": 503,
-      "sweptAt": "2026-10-10T07:28:25.090Z",
+      "sweptAt": "2026-10-10T07:28:49.874Z",
       "sweptCount": 487,
       "visiblePosts": 487
     },
@@ -51,7 +51,7 @@
       "status": "caught-up",
       "sweptId": 786880,
       "sweptTo": 493,
-      "sweptAt": "2026-10-10T07:28:25.256Z",
+      "sweptAt": "2026-10-10T07:28:50.014Z",
       "sweptCount": 485,
       "visiblePosts": 485
     }
@@ -37519,6 +37519,734 @@
       "pids": [],
       "images": 2,
       "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2477",
+      "status": "no-action",
+      "author": "Peter_Kawa",
+      "link": "https://community.homey.app/t/21313/2477",
+      "mfrs": [],
+      "pids": [],
+      "images": 2,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2486",
+      "status": "no-action",
+      "author": "Peter_Kawa",
+      "link": "https://community.homey.app/t/21313/2486",
+      "mfrs": [],
+      "pids": [],
+      "images": 2,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2487",
+      "status": "no-action",
+      "author": "ManorUK",
+      "link": "https://community.homey.app/t/21313/2487",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2488",
+      "status": "no-action",
+      "author": "Peter_Kawa",
+      "link": "https://community.homey.app/t/21313/2488",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2498",
+      "status": "no-action",
+      "author": "Peter_Kawa",
+      "link": "https://community.homey.app/t/21313/2498",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2504",
+      "status": "needs-info",
+      "author": "Peter_Kawa",
+      "link": "https://community.homey.app/t/21313/2504",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "request-no-identity"
+    },
+    {
+      "id": "forum:21313#2505",
+      "status": "no-action",
+      "author": "bayrambass",
+      "link": "https://community.homey.app/t/21313/2505",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2508",
+      "status": "no-action",
+      "author": "Peter_Kawa",
+      "link": "https://community.homey.app/t/21313/2508",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2513",
+      "status": "no-action",
+      "author": "Peter_Kawa",
+      "link": "https://community.homey.app/t/21313/2513",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2514",
+      "status": "needs-info",
+      "author": "Jedrzej_Nowak",
+      "link": "https://community.homey.app/t/21313/2514",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "request-no-identity"
+    },
+    {
+      "id": "forum:21313#2516",
+      "status": "no-action",
+      "author": "Jedrzej_Nowak",
+      "link": "https://community.homey.app/t/21313/2516",
+      "mfrs": [],
+      "pids": [],
+      "images": 2,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2520",
+      "status": "needs-info",
+      "author": "Flipmoo",
+      "link": "https://community.homey.app/t/21313/2520",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "request-no-identity"
+    },
+    {
+      "id": "forum:21313#2528",
+      "status": "no-action",
+      "author": "Baddelomeus",
+      "link": "https://community.homey.app/t/21313/2528",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2529",
+      "status": "no-action",
+      "author": "Peter_Kawa",
+      "link": "https://community.homey.app/t/21313/2529",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2531",
+      "status": "no-action",
+      "author": "Peter_Kawa",
+      "link": "https://community.homey.app/t/21313/2531",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2536",
+      "status": "no-action",
+      "author": "Zafar_Iqbal",
+      "link": "https://community.homey.app/t/21313/2536",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2543",
+      "status": "no-action",
+      "author": "Peter_Kawa",
+      "link": "https://community.homey.app/t/21313/2543",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2545",
+      "status": "no-action",
+      "author": "David_De_Vliegher",
+      "link": "https://community.homey.app/t/21313/2545",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2551",
+      "status": "no-action",
+      "author": "JaapJan",
+      "link": "https://community.homey.app/t/21313/2551",
+      "mfrs": [],
+      "pids": [],
+      "images": 4,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2552",
+      "status": "no-action",
+      "author": "Peter_Kawa",
+      "link": "https://community.homey.app/t/21313/2552",
+      "mfrs": [],
+      "pids": [],
+      "images": 3,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2554",
+      "status": "no-action",
+      "author": "Vincent_Verbiesen",
+      "link": "https://community.homey.app/t/21313/2554",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2556",
+      "status": "no-action",
+      "author": "Peter_Kawa",
+      "link": "https://community.homey.app/t/21313/2556",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2557",
+      "status": "no-action",
+      "author": "JaapJan",
+      "link": "https://community.homey.app/t/21313/2557",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2569",
+      "status": "no-action",
+      "author": "Sharkys",
+      "link": "https://community.homey.app/t/21313/2569",
+      "mfrs": [],
+      "pids": [],
+      "images": 3,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2570",
+      "status": "needs-info",
+      "author": "Rudi_Hendrix",
+      "link": "https://community.homey.app/t/21313/2570",
+      "mfrs": [],
+      "pids": [],
+      "why": "request-no-identity"
+    },
+    {
+      "id": "forum:21313#2575",
+      "status": "no-action",
+      "author": "Gerald_Delhaisse",
+      "link": "https://community.homey.app/t/21313/2575",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2583",
+      "status": "needs-info",
+      "author": "Sharkys",
+      "link": "https://community.homey.app/t/21313/2583",
+      "mfrs": [],
+      "pids": [],
+      "why": "request-no-identity"
+    },
+    {
+      "id": "forum:21313#2591",
+      "status": "no-action",
+      "author": "HomeyAlliance",
+      "link": "https://community.homey.app/t/21313/2591",
+      "mfrs": [],
+      "pids": [],
+      "images": 2,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2593",
+      "status": "no-action",
+      "author": "qawsedrf57",
+      "link": "https://community.homey.app/t/21313/2593",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2597",
+      "status": "no-action",
+      "author": "Peter_Kawa",
+      "link": "https://community.homey.app/t/21313/2597",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2601",
+      "status": "no-action",
+      "author": "Autodidakt",
+      "link": "https://community.homey.app/t/21313/2601",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2604",
+      "status": "no-action",
+      "author": "Jasper_Phang",
+      "link": "https://community.homey.app/t/21313/2604",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2605",
+      "status": "no-action",
+      "author": "Peter_Kawa",
+      "link": "https://community.homey.app/t/21313/2605",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2606",
+      "status": "no-action",
+      "author": "Remco_Jager",
+      "link": "https://community.homey.app/t/21313/2606",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2610",
+      "status": "no-action",
+      "author": "SebastiaanB",
+      "link": "https://community.homey.app/t/21313/2610",
+      "mfrs": [],
+      "pids": [],
+      "images": 3,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2614",
+      "status": "no-action",
+      "author": "Peter_Kawa",
+      "link": "https://community.homey.app/t/21313/2614",
+      "mfrs": [],
+      "pids": [],
+      "images": 3,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2616",
+      "status": "no-action",
+      "author": "SebastiaanB",
+      "link": "https://community.homey.app/t/21313/2616",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2624",
+      "status": "no-action",
+      "author": "SebastiaanB",
+      "link": "https://community.homey.app/t/21313/2624",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2625",
+      "status": "no-action",
+      "author": "Peter_Kawa",
+      "link": "https://community.homey.app/t/21313/2625",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2628",
+      "status": "needs-info",
+      "author": "Marcus_Bitterling",
+      "link": "https://community.homey.app/t/21313/2628",
+      "mfrs": [],
+      "pids": [],
+      "why": "request-no-identity"
+    },
+    {
+      "id": "forum:21313#2655",
+      "status": "needs-info",
+      "author": "Goldstrike",
+      "link": "https://community.homey.app/t/21313/2655",
+      "mfrs": [],
+      "pids": [],
+      "why": "request-no-identity"
+    },
+    {
+      "id": "forum:21313#2661",
+      "status": "no-action",
+      "author": "Miguel_Estevez",
+      "link": "https://community.homey.app/t/21313/2661",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2666",
+      "status": "needs-info",
+      "author": "SunBeech",
+      "link": "https://community.homey.app/t/21313/2666",
+      "mfrs": [],
+      "pids": [],
+      "images": 4,
+      "why": "request-no-identity"
+    },
+    {
+      "id": "forum:21313#2668",
+      "status": "no-action",
+      "author": "SunBeech",
+      "link": "https://community.homey.app/t/21313/2668",
+      "mfrs": [],
+      "pids": [],
+      "images": 6,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2671",
+      "status": "no-action",
+      "author": "WillemG",
+      "link": "https://community.homey.app/t/21313/2671",
+      "mfrs": [],
+      "pids": [],
+      "images": 2,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2676",
+      "status": "no-action",
+      "author": "SunBeech",
+      "link": "https://community.homey.app/t/21313/2676",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2683",
+      "status": "no-action",
+      "author": "Peter_Kawa",
+      "link": "https://community.homey.app/t/21313/2683",
+      "mfrs": [],
+      "pids": [],
+      "images": 3,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2686",
+      "status": "no-action",
+      "author": "Xander_Hoose",
+      "link": "https://community.homey.app/t/21313/2686",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2694",
+      "status": "needs-info",
+      "author": "Hugo",
+      "link": "https://community.homey.app/t/21313/2694",
+      "mfrs": [],
+      "pids": [],
+      "why": "request-no-identity"
+    },
+    {
+      "id": "forum:21313#2697",
+      "status": "no-action",
+      "author": "Nilesh_Patel",
+      "link": "https://community.homey.app/t/21313/2697",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2708",
+      "status": "no-action",
+      "author": "Peter_Kawa",
+      "link": "https://community.homey.app/t/21313/2708",
+      "mfrs": [],
+      "pids": [],
+      "images": 3,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2709",
+      "status": "no-action",
+      "author": "Hugo",
+      "link": "https://community.homey.app/t/21313/2709",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2715",
+      "status": "needs-info",
+      "author": "Ganescha",
+      "link": "https://community.homey.app/t/21313/2715",
+      "mfrs": [],
+      "pids": [],
+      "why": "request-no-identity"
+    },
+    {
+      "id": "forum:21313#2717",
+      "status": "no-action",
+      "author": "Ganescha",
+      "link": "https://community.homey.app/t/21313/2717",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2718",
+      "status": "needs-info",
+      "author": "Peter_Kawa",
+      "link": "https://community.homey.app/t/21313/2718",
+      "mfrs": [],
+      "pids": [],
+      "why": "request-no-identity"
+    },
+    {
+      "id": "forum:21313#2728",
+      "status": "needs-info",
+      "author": "Rudi_Hendrix",
+      "link": "https://community.homey.app/t/21313/2728",
+      "mfrs": [],
+      "pids": [],
+      "why": "request-no-identity"
+    },
+    {
+      "id": "forum:21313#2729",
+      "status": "needs-info",
+      "author": "Ganescha",
+      "link": "https://community.homey.app/t/21313/2729",
+      "mfrs": [],
+      "pids": [],
+      "why": "request-no-identity"
+    },
+    {
+      "id": "forum:21313#2730",
+      "status": "no-action",
+      "author": "luca_reina",
+      "link": "https://community.homey.app/t/21313/2730",
+      "mfrs": [],
+      "pids": [],
+      "images": 2,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2731",
+      "status": "no-action",
+      "author": "Einar_Vaagland",
+      "link": "https://community.homey.app/t/21313/2731",
+      "mfrs": [],
+      "pids": [],
+      "images": 2,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2738",
+      "status": "no-action",
+      "author": "Einar_Vaagland",
+      "link": "https://community.homey.app/t/21313/2738",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2746",
+      "status": "no-action",
+      "author": "Peter_Kawa",
+      "link": "https://community.homey.app/t/21313/2746",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2751",
+      "status": "needs-info",
+      "author": "einarso",
+      "link": "https://community.homey.app/t/21313/2751",
+      "mfrs": [],
+      "pids": [],
+      "why": "request-no-identity"
+    },
+    {
+      "id": "forum:21313#2760",
+      "status": "needs-info",
+      "author": "Erikvl87",
+      "link": "https://community.homey.app/t/21313/2760",
+      "mfrs": [],
+      "pids": [],
+      "why": "request-no-identity"
+    },
+    {
+      "id": "forum:21313#2769",
+      "status": "needs-info",
+      "author": "Peter_Kawa",
+      "link": "https://community.homey.app/t/21313/2769",
+      "mfrs": [],
+      "pids": [],
+      "why": "request-no-identity"
+    },
+    {
+      "id": "forum:21313#2764",
+      "status": "no-action",
+      "author": "smarthomesven",
+      "link": "https://community.homey.app/t/21313/2764",
+      "mfrs": [],
+      "pids": [],
+      "images": 2,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2776",
+      "status": "no-action",
+      "author": "Peter_Kawa",
+      "link": "https://community.homey.app/t/21313/2776",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2780",
+      "status": "no-action",
+      "author": "Peter_Kawa",
+      "link": "https://community.homey.app/t/21313/2780",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2782",
+      "status": "no-action",
+      "author": "Calvin",
+      "link": "https://community.homey.app/t/21313/2782",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2785",
+      "status": "no-action",
+      "author": "Peter_Kawa",
+      "link": "https://community.homey.app/t/21313/2785",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2792",
+      "status": "no-action",
+      "author": "Philippe_Rosier",
+      "link": "https://community.homey.app/t/21313/2792",
+      "mfrs": [],
+      "pids": [],
+      "images": 2,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2802",
+      "status": "no-action",
+      "author": "SunBeech",
+      "link": "https://community.homey.app/t/21313/2802",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2806",
+      "status": "no-action",
+      "author": "smarthomesven",
+      "link": "https://community.homey.app/t/21313/2806",
+      "mfrs": [],
+      "pids": [],
+      "images": 2,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2808",
+      "status": "no-action",
+      "author": "Peter_Kawa",
+      "link": "https://community.homey.app/t/21313/2808",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#2817",
+      "status": "no-action",
+      "author": "Daniel_Hubeny",
+      "link": "https://community.homey.app/t/21313/2817",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
     }
   ],
   "github": {
@@ -37531,17 +38259,17 @@
   },
   "note": "Full-history sweep. Forum lastPost seeded from Daily digest #557 state (2026-10-02). Items rewritten in our words; SHAs only as evidence.",
   "lastChunk": {
-    "at": "2026-10-10T07:28:45.641Z",
+    "at": "2026-10-10T07:29:07.804Z",
     "advanced": 0,
     "rateLimited": false,
     "items": [],
     "forum": [
       {
         "tid": "140352",
-        "from": 2079,
+        "from": 2260,
         "to": 2259,
-        "scanned": 169,
-        "recorded": 91,
+        "scanned": 0,
+        "recorded": 0,
         "rateLimited": false
       },
       {
@@ -37570,10 +38298,10 @@
       },
       {
         "tid": "21313",
-        "from": 2058,
-        "to": 2476,
-        "scanned": 400,
-        "recorded": 102,
+        "from": 2477,
+        "to": 2819,
+        "scanned": 335,
+        "recorded": 74,
         "rateLimited": false
       },
       {
@@ -37595,9 +38323,9 @@
   },
   "stats": {
     "already-fixed": 1373,
-    "needs-info": 853,
+    "needs-info": 869,
     "pending": 24,
-    "no-action": 954
+    "no-action": 1012
   },
   "forumCursorReset": {
     "at": "2026-10-10",
