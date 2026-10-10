@@ -33,3 +33,36 @@ The mfr sits in a wrong driver that shares pids with the right one, so adding it
 ## Counts (this branch)
 - Z2M-attested lost: 16; Johan-only lost: 52
 - Restored: 4; blocked (needs move): 9; rest → `data/leads/lost-couples-2026-10-11.json` (unverified)
+
+
+## Pass 2 — W4 moves + placement of Z2M-confirmed couples (master)
+
+Doctrine W4: one exact couple, one driver matching the real hardware. A mfr was removed from an old driver only if none of that driver's pids is a pid Z2M lists for this mfr (so the old placement could never match the hardware; only cross-product pairs are dropped). Each placed couple is pinned in `config/architecture/couple-driver-pins.json`.
+
+Sources searched for every couple: Z2M, ZHA quirks, deCONZ, Blakadder, tuya-local, localtuya, Hubitat (kkossev), our forum dumps / diags / docs. SmartThings was not searched.
+
+| Couple | Driver | Removed from (W4) | Sources |
+|---|---|---|---|
+| `_tz3210_m3mxv66l` + `ts0202` | `motion_sensor` | climate_sensor (pids there: ck-tlsr8656-ss5-01(7014), ck-tlsr8656-ss5-02(7014), lumi.sensor_ht, lumi.sensor_ht.agl02, lumi.weather, rh3052…) | [Z2M](https://github.com/Koenkk/zigbee-herdsman-converters) (Koenkk et al.); ours: mdiag/scripts/data/current-fps.json, mdiag/scripts/data/all_mfrs.json — not found in: ZHA, deCONZ, Blakadder, tuya-local, localtuya, Hubitat(kkossev) |
+| `_tz3290_s6ezpa3j` + `ts1201` | `ir_blaster` | climate_sensor (pids there: ck-tlsr8656-ss5-01(7014), ck-tlsr8656-ss5-02(7014), lumi.sensor_ht, lumi.sensor_ht.agl02, lumi.weather, rh3052…) | [Z2M](https://github.com/Koenkk/zigbee-herdsman-converters) (Koenkk et al.); ours: forum-scan/cron-2026-09-02-09/app-master.json, forum-scan/cron-2026-08-31-16/github/master-app.json — not found in: ZHA, deCONZ, Blakadder, tuya-local, localtuya, Hubitat(kkossev) |
+| `_tz3000_lbtpiody` + `ts0201` | `temphumidsensor` | — | [Z2M](https://github.com/Koenkk/zigbee-herdsman-converters) (Koenkk et al.); [deCONZ](https://github.com/dresden-elektronik/deconz-rest-plugin) exact (deconz-rest-plugin/devices/tuya/_TZ3000_TS0201_temp_hum_sensor.json); [Blakadder](https://zigbee.blakadder.com) exact (zigbee/_zigbee/Nous_E5.md); [Hubitat(kkossev)](https://github.com/kkossev/Hubitat) exact (hubitat/Drivers/Tuya Temperature Humidity Illuminance LCD Display with a Clock/Tuya_Temperature_Humidity_Illuminance_LCD_Display_with_a_Clock.groovy); ours: forum-scan/cron-2026-09-07-09/github/stable-v5-water_leak_sensor.json, forum-scan/cron-2026-09-07-09/github/master-water_leak_sensor.json — not found in: ZHA, tuya-local, localtuya |
+| `_tze200_qcasmfan` + `ts0601` | `smoke_sensor` | smoke_sensor3 (pids there: ts0205…) | [Z2M](https://github.com/Koenkk/zigbee-herdsman-converters) (Koenkk et al.); ours: lc-master/docs/knowledge/device-truth.json, forum-scan/cron-2026-08-31-16/github/master-app.json — not found in: ZHA, deCONZ, Blakadder, tuya-local, localtuya, Hubitat(kkossev) |
+| `_tz3000_j6adk9id` + `ts0222` | `illuminance_sensor` | dimmer_wall_1gang (pids there: ts0001, ts0002, ts0003, ts0011, ts0012, ts0013…) | [Z2M](https://github.com/Koenkk/zigbee-herdsman-converters) (Koenkk et al.); [deCONZ](https://github.com/dresden-elektronik/deconz-rest-plugin) exact (deconz-rest-plugin/devices/tuya/_TZ3000_8uxxzz4b_light_sensor.json); ours: forum-scan/cron-2026-09-01-09/github/app.json.stable-v5, forum-scan/cron-2026-09-01-09/github/stable-v5-app.json.head — not found in: ZHA, Blakadder, tuya-local, localtuya, Hubitat(kkossev) |
+| `_tyzb01_4mdqxxnn` + `ts0222` | `illuminance_sensor` | switch_1gang (pids there: 01minizb, basiczbr3, s26r2zb, s31zb, ts0001, ts0001_power…) | [Z2M](https://github.com/Koenkk/zigbee-herdsman-converters) (Koenkk et al.); [deCONZ](https://github.com/dresden-elektronik/deconz-rest-plugin) exact (deconz-rest-plugin/devices/tuya/_TZ3000_8uxxzz4b_light_sensor.json); [Blakadder](https://zigbee.blakadder.com) exact (zigbee/_zigbee/Tuya_ZXZLD-01.md); [Hubitat(kkossev)](https://github.com/kkossev/Hubitat) exact (hubitat/Drivers/Tuya Zigbee Fingerbot/Archives/Tuya_Zigbee_Fingerbot_lib_included.groovy); ours: lc-master/docs/reports/CONFLICTS_RESOLUTIONS.json, lc-master/docs/reports/FULL_RESTORATION_CONFLICTS_ANALYSIS.json — not found in: ZHA, tuya-local, localtuya |
+| `_tyzb01_m6ec2pgj` + `ts0222` | `illuminance_sensor` | switch_1gang (pids there: 01minizb, basiczbr3, s26r2zb, s31zb, ts0001, ts0001_power…) | [Z2M](https://github.com/Koenkk/zigbee-herdsman-converters) (Koenkk et al.); [deCONZ](https://github.com/dresden-elektronik/deconz-rest-plugin) exact (deconz-rest-plugin/devices/tuya/_TZ3000_8uxxzz4b_light_sensor.json); ours: forum-scan/raw/stable-v5/app.json, mdiag/scripts/data/z2m-data.json — not found in: ZHA, Blakadder, tuya-local, localtuya, Hubitat(kkossev) |
+
+### Left as leads
+| Couple | Why |
+|---|---|
+| `_tze200_p6fuhvez|ts0225` | same as aj0oxo1i |
+| `_tze200_aj0oxo1i|ts0225` | Z2M model block ambiguous (ZG-225Z gas vs presence); needs interview |
+| `_tz3210_a2erlvb8|ts0002` | switch_1gang legitimately holds ['ts000f'] shared with switch_2gang |
+| `_tze600_ogyg1y6b|ts0105` | no driver has TS0105; adding pid would cross-product a whole curtain driver |
+| `_tz3000_fdxihpp7|ts000f` | wall_switch_1gang_1way legitimately holds ['ts0001'] shared with switch_1gang |
+
+### W4 cleanup (same mfr left in a driver none of whose pids Z2M lists for it)
+- `_tze200_iq4ygaai|ts0201`: removed from `motion_sensor` (kept in `temphumidsensor`)
+- `_tz3000_egvb1p2g|ts004f`: removed from `climate_sensor` (kept in `smart_knob`)
+- `_tz3000_lrfvzq1e|ts004f`: removed from `climate_sensor` (kept in `smart_knob`)
+- `_tze200_01fvxamo|ts0201`: removed from `motion_sensor` (kept in `temphumidsensor`)
+- `_tz3000_lbtpiody|ts0201`: removed from `water_leak_sensor` (kept in `temphumidsensor`)
