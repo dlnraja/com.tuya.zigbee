@@ -68,24 +68,32 @@ async function scan(){
   const allIssues=[];
   let topicsScanned=0;
 
+  // WHY(forum skip/mix fix 2026-10-10): Discourse post ids are global across topics, so the
+  // cursor must be a fixed per-run baseline. Advancing it inside the loop made later topics
+  // drop their new posts. We track the max seen separately and cap it below any post we failed
+  // to fetch (chunk error / >100 backlog) so nothing is silently skipped; posts are deduped by
+  // (topic_id, post_id) and processed sorted by post id, never by response order.
+  const baselineId=lastId;let maxSeen=lastId;let cursorCap=Infinity;const seenKeys=new Set();
   for(const TOPIC_ID of allTopics){
-    if(timeLeft()<60000){console.log('Time guard: '+topicsScanned+'/'+allTopics.length+' topics scanned, saving partial results');break;}
+    if(timeLeft()<60000){console.log('Time guard: '+topicsScanned+'/'+allTopics.length+' topics scanned, saving partial results (cursor held)');cursorCap=baselineId;break;}
     try{
       const data=await get(BASE+'/t/'+TOPIC_ID+'/posts.json?post_number=999999');
       const stream=data.post_stream||{};
       const allPostIds=(stream.stream||[]);
       
-      const newPostIds = allPostIds.filter(id => id > lastId);
+      const newPostIds = allPostIds.filter(id => id > baselineId);
       const posts=[];
       
       // Use the posts already provided in the initial fetch to avoid extra requests
       const initialPosts = stream.posts || [];
       for (const p of initialPosts) {
-        if (p.id > lastId) posts.push(p);
+        if (p.id > baselineId) posts.push(p);
       }
       
       const initialPostIds = new Set(initialPosts.map(p => p.id));
-      const postIdsToFetch = newPostIds.filter(id => !initialPostIds.has(id)).slice(-100);
+      const pendingIds = newPostIds.filter(id => !initialPostIds.has(id)).sort((a,b)=>a-b);
+      const postIdsToFetch = pendingIds.slice(0,100);
+      if (pendingIds.length > 100) cursorCap = Math.min(cursorCap, pendingIds[100]-1);
 
       // Only chunk requests if we have actually new unseen post IDs
       if (postIdsToFetch.length > 0) {
@@ -93,11 +101,12 @@ async function scan(){
           const chunk=postIdsToFetch.slice(i,i+20);
           const url=BASE+'/t/'+TOPIC_ID+'/posts.json?'+chunk.map(id=>'post_ids[]='+id).join('&');
           try{const r=await get(url);posts.push(...(r.post_stream?.posts||[]));}
-          catch(e){/* skip chunk error */}
+          catch(e){cursorCap=Math.min(cursorCap,Math.min(...chunk)-1);console.warn('Topic '+TOPIC_ID+' chunk error (cursor held):',e.message);}
         }
       }
 
-      const newPosts=posts.filter(p=>p.id>lastId);
+      const newPosts=posts.filter(p=>p.id>baselineId&&!seenKeys.has(TOPIC_ID+':'+p.id)).sort((a,b)=>a.id-b.id);
+      for(const p of newPosts)seenKeys.add(TOPIC_ID+':'+p.id);
       if(newPosts.length>0)console.log('Topic '+TOPIC_ID+': '+newPosts.length+' new posts');
       topicsScanned++;
 
@@ -121,10 +130,11 @@ async function scan(){
             missing,found,issues,text:text.slice(0,300)});
         }
       }
-      if(posts.length){const mx=Math.max(...posts.map(p=>p.id));if(mx>lastId)lastId=mx;}
+      if(posts.length){const mx=Math.max(...posts.map(p=>p.id));if(mx>maxSeen)maxSeen=mx;}
       if(topicsScanned%10===0)await sleep(300); // rate limit
     }catch(e){console.warn('Topic '+TOPIC_ID+' error:',e.message);}
   }
+  lastId=Math.max(baselineId,Math.min(maxSeen,cursorCap));
 
   // Aggregate issue categories
   const cats={};
