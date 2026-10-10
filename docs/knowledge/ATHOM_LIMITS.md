@@ -78,3 +78,22 @@ driver; and a payload that adds a new driver id cloned 1:1 from a passing driver
   light_cct_ts0502b, light_rgbcct_ts0505b, light_dimmable_ts0501a, mc101z_pwm_dimmer, bulb_zbeacon_ts0505b,
   switch_zbeacon_ts0001, temphumidsensor_zcl_th01/ts0601, sensor_ias_zonetype_ewelink,
   panel_switch_cover_tuya, switch_presence_tuya). Adding drivers worked up to 1330.
+
+## Probe P1 / R4 (2026-10-10 ~23:00 Paris)
+- **P1** `bisect-p1-copy`: 1:1 rename of accepted `sound_sensor_tuya` → `sound_sensor_tuya_probe` (no manufacturerName, deprecated). Adds a driver id without pairable couple change.
+  - #3494 v9.0.1375 = `processing_failed | stateMeta=socket hang up` → **retry** (run 38086030042), do not conclude.
+- **R4** `bisect-r4-rename-clone` / `switch_probe_r4_clone` (invented `_TZ3000_r4clonex`+`TS00R4`): Validate failed (compose not in app.json). **Branch deleted** — invented couple must never land on master/stable. Superseded by P1 design.
+
+## Update 23:25 Paris — rename probe passes; fold ready
+- R4 run 38085219666 (other worker) = CI failure (probe compose had no app.json entry), never reached Athom.
+- P1 #3494 v9.0.1375 = socket hang up (transient); retried → **P1 #3495 v9.0.1376 Test**: a renamed 1:1
+  copy of accepted sound_sensor_tuya, deprecated, empty manufacturerName. **Adding a driver id is NOT the trigger.**
+- Remaining suspects: what the failing drivers carry (pairable couples / specific couples / content),
+  not the driver count. R5 (whd02 + accepted pair views) running: run 38086648519.
+- Payload proof: while held, the SPI and WHD02 couples were NOT in the payload at all (switch_1gang /
+  wall_switch_1gang_1way lost them in compaction; wall_switch had no TS000F anyway). "Routed via
+  switch_1gang" was false in practice.
+- Workaround branch `fold-held-couples` (01373da2): SPI couples → led_controller_rgb (same caps) with the
+  SPI device class via Driver#onMapDeviceClass; WHD02 couple → switch_1gang (has TS000F). Sacred-keep pins
+  retargeted; local prepare-publish shows the couples survive compaction. FP collision gate 0 new,
+  fingerprints integrity OK.
