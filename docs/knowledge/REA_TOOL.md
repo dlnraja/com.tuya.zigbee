@@ -7,4 +7,3 @@ Author: morluto (MIT). Evaluated 2026-10-10. Docs only; the tool is not installe
 - Its own disclaimer says it is for lawful research and that the user must get any required authorization.
 - Fit for this project: low to medium. Fine for our own artefacts, e.g. inspecting the .tar.gz of our own build when Athom rejects it, or reading a HAR of the Homey web app's public developer API calls. Do NOT point it at Homey OS, the Zigbee NCP image or Athom binaries: that is proprietary code covered by Athom's terms. Tuya device OTA images (Zigbee OTA files) are third-party firmware too, so treat them the same way.
 - Repo is new (0 stars, last commit 2026-10-10), so it is unproven. Run it only in the box, never on the user's PC with credentials.
-
