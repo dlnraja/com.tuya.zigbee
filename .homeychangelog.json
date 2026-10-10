@@ -966,5 +966,9 @@
   },
   "9.0.1360": {
     "en": "v9.0.1359: Minor fixes and internal cleanup"
+  },
+  "9.0.1362": {
+    "en": "Bisect build: switch module WHD02 support.",
+    "fr": "Build de bisect : module WHD02."
   }
 }
