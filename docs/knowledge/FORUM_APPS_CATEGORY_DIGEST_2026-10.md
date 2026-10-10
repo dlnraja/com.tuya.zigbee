@@ -52,3 +52,12 @@ Lessons (backlog, credited):
 - Mode Switch / Loops / EMS / PELS / Energy Dashboard: app-level automation and energy-planning products. The only point that applies to us is to keep meter capabilities Homey-Energy-native (already the case). No change.
 
 Coverage after this pass: 156 7074/7060+, 43287 2265, 140352 2439 (to #2259), 89931 1113, 29734 1179, 154077 501, 68198 861, 78650 245, 147496 193, 155475 272, 154885 122, 85754 131, 159739 92, 160116 23. Tag app pages 0–1 (60 topics) and tag zigbee pages 0–5 (180 topics) are still downloading. `dump.py` is incremental and resumable.
+
+## Update 2026-10-11 ~02:10 (Paris)
+
+- Button+ idea (Adrian_Rockall, t/89931): opt-in per-device setting `suppress_release_after_click` (default off) on ButtonDevice drivers. A 'release' that follows a short click (within 2 s) is dropped; a release after a long press still fires. Master prep 891afe6bd5, bastien-home 765e345f47, stable-v5 0fa5ae12c9 (push pending). Drivers with a pre-existing empty manufacturerName list were left untouched on stable/bastien.
+- Downloads: tag zigbee pages 0–5, all 180 topics present. Tag app pages 0–1: 50/60 present, rest in progress. Across all downloaded threads: 239 distinct mfr ids, 0 missing from our drivers.
+- Lixee (Mathieu_Chamois, t/74924): Enedis switching the ZLinky TIC mode from "historique" to "standard" exposes contract names the code does not know (e.g. HC SEM WE MERCR). Not our device; lesson: unknown enum values must fall back to raw text, never be dropped.
+- frient (t/76161 #484–485, t/160288): devices kept dropping off the network after the vendor's OTA until they were re-added. Lesson: after an OTA, re-run bind/configure-reporting on rejoin. Our Re-bind covers this; no change.
+- SDK/news pass: homey-sdk changelog, sitemap, news, v3 docs, dev blog, npm homey/homey-zigbeedriver/zigbee-clusters, firmware changelog: no changes (0 proposals).
+- Ignored-DP tool: `tools/ci/dp-diagnostic.js` had a hardcoded Windows path, so it crashed in CI. Now repo-relative.
