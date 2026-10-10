@@ -7,7 +7,6 @@
     "es": "Bombilla eWeLink (SONOFF B02/B05)"
   },
   "class": "light",
-  "energy": { "approximation": { "usageOn": 7, "usageOff": 0.4 } },
   "capabilities": [
     "onoff",
     "dim",

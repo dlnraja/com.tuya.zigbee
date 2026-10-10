@@ -14,7 +14,7 @@
     "onoff",
     "button.1"
   ],
-  "energy": { "approximation": { "usageOn": 7, "usageOff": 0.4 },
+  "energy": {
     "mains": true
   },
   "zigbee": {
@@ -36,17 +36,7 @@
       "_tz3000_9evm3otq",
       "_tz3000_ajkq2isy",
       "_tz3210_uos3hl9x",
-      "_tz3210_y5ztga9r",
-      "_TZ3000_0AUSFOS0",
-      "_tz3000_0AUSFOS0",
-      "_TZ3000_9EVM3OTQ",
-      "_tz3000_9EVM3OTQ",
-      "_TZ3000_AJKQ2ISY",
-      "_tz3000_AJKQ2ISY",
-      "_TZ3210_UOS3HL9X",
-      "_tz3210_UOS3HL9X",
-      "_TZ3210_Y5ZTGA9R",
-      "_tz3210_Y5ZTGA9R"
+      "_tz3210_y5ztga9r"
     ],
     "productId": [
       "TS0502A",

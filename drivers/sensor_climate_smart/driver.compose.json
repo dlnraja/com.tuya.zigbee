@@ -8,7 +8,7 @@
   },
   "class": "socket",
   "capabilities": [
-    "onoff", "onoff.gang1",
+    "onoff.gang1",
     "onoff.gang2",
     "onoff.gang3",
     "onoff.gang4",
@@ -16,7 +16,7 @@
     "measure_humidity",
     "button.1"
   ],
-  "capabilitiesOptions": { "onoff": { "title": { "en": "All switches", "fr": "Tous les interrupteurs", "nl": "Alle schakelaars", "de": "Alle Schalter" } },
+  "capabilitiesOptions": {
     "onoff.gang1": {
       "title": {
         "en": "Switch 1",

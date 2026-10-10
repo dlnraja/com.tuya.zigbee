@@ -4,46 +4,92 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.1340] - 2026-10-10
+## v9.0.1349 (2026-10-10)
 
-v9.0.1340: automated publish, manifest sync, and Homey test promotion.
+Diagnostic build.
+
 ---
 
- [9.0.1339] - 2026-10-10
+## [9.0.1348] - 2026-10-10
 
-v9.0.1339: automated publish, manifest sync, and Homey test promotion.
+Diagnostic build.
 ---
 
- [9.0.1338] - 2026-10-10
+ v9.0.1348 (2026-10-10)
 
-v9.0.1338: automated publish, manifest sync, and Homey test promotion.
+Diagnostic build.
+
 ---
 
- [9.0.1337] - 2026-10-10
+## [9.0.1347] - 2026-10-10
 
-Dimmers (2-gang dimmer module, dimmer wall switch, wall dimmer 1-gang) now use the Light device type, so the light ring and voice assistants treat them as lights. Paired devices switch once automatically; the device icon may change. Capabilities, IDs and flows are unchanged.
+Diagnostic build.
 ---
 
- [9.0.1331] - 2026-10-10
-## [9.0.1333] - 2026-10-10
-## [9.0.1335] - 2026-10-10
+ v9.0.1347 (2026-10-10)
 
-Dimmers (2-gang dimmer module, dimmer wall switch, wall dimmer 1-gang) now use the Light device type, so the light ring and voice assistants treat them as lights. Paired devices switch once automatically; the device icon may change. Capabilities, IDs and flows are unchanged.
+Diagnostic build.
+
 ---
 
- [9.0.1331] - 2026-10-10
+## [9.0.1346] - 2026-10-10
 
-Dimmers (2-gang dimmer module, dimmer wall switch, wall dimmer 1-gang) now use the Light device type, so the light ring and voice assistants treat them as lights. Paired devices switch once automatically; the device icon may change. Capabilities, IDs and flows are unchanged.
+Diagnostic build.
 ---
 
- [Unreleased]
+ v9.0.1346 (2026-10-10)
 
-- Dimmers (2-gang dimmer module, dimmer wall switch, wall dimmer 1-gang) now use the Light device type, so the light ring and voice assistants treat them as lights. Paired devices switch once automatically; the device icon may change. Capabilities, IDs and flows are unchanged.
+Diagnostic build.
+
 ---
 
-## [9.0.1330] - 2026-10-04
+## [9.0.1345] - 2026-10-10
 
-v9.0.1330: automated publish, manifest sync, and Homey test promotion.
+Diagnostic build.
+---
+
+ v9.0.1345 (2026-10-10)
+
+Diagnostic build.
+
+---
+
+## [9.0.1344] - 2026-10-10
+
+Diagnostic build.
+---
+
+ v9.0.1344 (2026-10-10)
+
+Diagnostic build.
+
+---
+
+## [9.0.1343] - 2026-10-10
+
+Diagnostic build.
+---
+
+ v9.0.1342 (2026-10-10)
+
+Diagnostic build (current master content, 9.0.1330 .
+
+---
+
+## [9.0.1341] - 2026-10-10
+
+Diagnostic build (current master content, 9.0.1330 pipeline).
+---
+
+ v9.0.1340 (2026-10-10)
+
+Diagnostic build (content of 9.0.1330).
+
+---
+
+## [9.0.1339] - 2026-10-10
+
+Diagnostic build (content of 9.0.1330).
 ---
 
  [9.0.1329] - 2026-10-04
