@@ -148,6 +148,15 @@
         "nl": "Supportrapport genereren (GitHub issue)",
         "de": "Supportbericht erstellen (GitHub Issue)"
       }
+    },
+    {
+      "id": "zigbee_rebind",
+      "title": {
+        "en": "Re-bind & reconfigure reporting",
+        "fr": "Re-lier et reconfigurer les rapports",
+        "nl": "Opnieuw binden en rapportage instellen",
+        "de": "Neu binden und Reporting konfigurieren"
+      }
     }
   ],
   "id": "wifi_humidifier",
