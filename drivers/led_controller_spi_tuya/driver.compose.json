@@ -6,7 +6,12 @@
     "nl": "SPI pixel-LED-controller (Gledopto GL-SPI-206P)"
   },
   "class": "light",
-  "energy": { "approximation": { "usageOn": 15, "usageOff": 0.5 } },
+  "energy": {
+    "approximation": {
+      "usageOn": 15,
+      "usageOff": 0.5
+    }
+  },
   "platforms": [
     "local"
   ],
@@ -26,19 +31,7 @@
     "large": "/drivers/led_controller_spi_tuya/assets/images/large.png"
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZE204_8fffc3kb",
-      "_TZE284_gt5al3bl",
-      "_tze204_8fffc3kb",
-      "_tze284_gt5al3bl",
-      "_TZE204_8FFFC3KB",
-      "_tze204_8FFFC3KB",
-      "_TZE284_GT5AL3BL",
-      "_tze284_GT5AL3BL",
-      "_TZE28C1000000_gt5al3bl",
-      "_tze28c1000000_gt5al3bl",
-      "_TZE28C1000000_GT5AL3BL"
-    ],
+    "manufacturerName": [],
     "productId": [
       "TS0601"
     ],
