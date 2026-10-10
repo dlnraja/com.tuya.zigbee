@@ -1,0 +1,27 @@
+{
+  "_why": "Verified mfr+productId COUPLES (Z2M/ZHA) with a fixed driver. The gate fails if the exact couple (mfr in manufacturerName AND pid in productId, case-insensitive) is claimed by any other driver, or missing from its pinned driver. Other pids of the same mfr are not covered. Gate: tools/ci/couple-pin-gate.js",
+  "pins": [
+    {
+      "mfr": [
+        "_TZE200_bcusnqt8",
+        "_TZE204_bcusnqt8",
+        "_TZE284_bcusnqt8"
+      ],
+      "driver": "din_rail_meter",
+      "source": "Z2M tuya.ts SPM01 (1P+N energy monitor)",
+      "regression": "P2463 a27b3db9a5 stripped from curtain_motor; re-added by variant/align jobs",
+      "pid": "TS0601",
+      "curtain_motor_note": "Z2M/ZHA know only TS0601 for these mfrs. Compose is a mfr x pid cross-product and TS0601 is a real curtain pid, so the mfr string was removed from curtain_motor to clear the TS0601 conflict; the other mfr x curtain-pid combinations had no documented hardware."
+    },
+    {
+      "mfr": [
+        "_TZE200_ves1ycwx",
+        "_TZE204_ves1ycwx",
+        "_TZE284_ves1ycwx"
+      ],
+      "driver": "energy_meter_3phase",
+      "source": "Z2M tuya.ts SPM02 (3P+N energy monitor)",
+      "pid": "TS0601"
+    }
+  ]
+}
