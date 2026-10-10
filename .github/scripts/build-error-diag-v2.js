@@ -147,7 +147,7 @@ function classifyRootCauseFromText(text) {
   const s = String(text || '').toLowerCase();
   if (/manufacturername|required property/.test(s)) return 'MANIFEST/ZIGBEE IDENTIFIERS';
   if (/invalid sdk version|sdk version:\s*undefined|sdkversion/.test(s)) return 'MANIFEST/SDK ISSUE';
-  if (/socket hang up|econnreset|etimedout|network/.test(s)) return 'ATHOM TRANSIENT NETWORK';
+  if (/socket hang up|econnreset|etimedout|network|specified key does not exist|nosuchkey/.test(s)) return 'ATHOM TRANSIENT NETWORK';
   if (/url_has_undefined|did not fully parse|manifest\/assets|sdk_missing|platforms_missing/.test(s)) return 'ATHOM PROCESSOR DID NOT PARSE MANIFEST';
   if (/aggregateerror|aggregate error/.test(s)) return 'ATHOM AGGREGATEERROR (MANIFEST/DRIVER MATRIX)';
   if (/quota|rate limit|limit exceeded|exceed|too many/.test(s)) return 'QUOTA/RATE LIMIT';
