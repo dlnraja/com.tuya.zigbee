@@ -26,6 +26,7 @@ class LedControllerSpiTuyaDevice extends TuyaDpProfileDevice {
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
     this._dpq = new DpCoalescer({
+      homey: this.homey,
       debounceMs: 150,
       verifyMs: 0,
       send: async (frame) => { for (const { dp, value } of frame) { await this._send(dp, value, TYPES[dp] || 'value'); } },
