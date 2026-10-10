@@ -38,8 +38,12 @@ class LedControllerSpiTuyaDevice extends TuyaDpProfileDevice {
     }
     if (this.hasCapability('light_hue') && this.hasCapability('light_saturation')) {
       this.registerMultipleCapabilityListener(['light_hue', 'light_saturation'], async (values) => {
-        const hue = values.light_hue ?? this.getCapabilityValue('light_hue') ?? 0;
-        const sat = values.light_saturation ?? this.getCapabilityValue('light_saturation') ?? 1;
+        // DP61 is write-only (never reported): keep hue/saturation in memory + store, never read them back.
+        const mem = this._hs || this.getStoreValue('spi_hs') || {};
+        const hue = values.light_hue ?? mem.h ?? this.getCapabilityValue('light_hue') ?? 0;
+        const sat = values.light_saturation ?? mem.s ?? this.getCapabilityValue('light_saturation') ?? 1;
+        this._hs = { h: hue, s: sat };
+        this.setStoreValue('spi_hs', this._hs).catch(() => {});
         const bri = dimToDp(this.getCapabilityValue('dim') ?? 1); // keep current brightness
         if (this.getCapabilityValue('onoff') !== true) { this._dpq.set(1, true); }
         this._dpq.set(2, 1);
