@@ -44,7 +44,7 @@ class LedControllerSpiTuyaDevice extends TuyaDpProfileDevice {
         if (this.getCapabilityValue('onoff') !== true) { this._dpq.set(1, true); }
         this._dpq.set(2, 1);
         await this._dpq.set(61, colourPayload(hue, sat, bri));
-        if (this.hasCapability('light_mode')) { this.setCapabilityValue('light_mode', 'color').catch(() => {}); }
+        if (this.hasCapability('light_mode')) { this.safeSetCapabilityValue('light_mode', 'color').catch(() => {}); }
       }, 300);
     }
     if (this.hasCapability('light_temperature')) {
@@ -52,7 +52,7 @@ class LedControllerSpiTuyaDevice extends TuyaDpProfileDevice {
         if (this.getCapabilityValue('onoff') !== true) { this._dpq.set(1, true); }
         this._dpq.set(2, 0);
         await this._dpq.set(4, tempToDp(t));
-        if (this.hasCapability('light_mode')) { this.setCapabilityValue('light_mode', 'temperature').catch(() => {}); }
+        if (this.hasCapability('light_mode')) { this.safeSetCapabilityValue('light_mode', 'temperature').catch(() => {}); }
       });
     }
     if (this.hasCapability('light_mode')) {
