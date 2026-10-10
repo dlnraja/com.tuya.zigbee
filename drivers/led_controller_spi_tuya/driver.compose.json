@@ -6,6 +6,7 @@
     "nl": "SPI pixel-LED-controller (Gledopto GL-SPI-206P)"
   },
   "class": "light",
+  "energy": { "approximation": { "usageOn": 15, "usageOff": 0.5 } },
   "platforms": [
     "local"
   ],
