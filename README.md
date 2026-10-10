@@ -4,11 +4,11 @@
 
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-448-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-4,758%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,759%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-green)](LICENSE)
 
-Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **448 drivers**, **4,758 unique fingerprints**. No cloud required.
+Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **448 drivers**, **4,759 unique fingerprints**. No cloud required.
 
 **What it does:**
 - Talks to devices on your Homey Zigbee mesh (Tuya DP `0xEF00` and standard ZCL)
@@ -33,22 +33,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1332 |
-| **App Version** | v9.0.1334 |
-| **App Version** | v9.0.1336 |
-| **Drivers** | 448 (395 Zigbee + 53 WiFi) |
-| **Unique Fingerprints** | 4,758 |
-| **Pairing Variants** | 19,212 (4 case combos per fingerprint) |
-| **Unique Product IDs** | 935 |
 | **App Version** | v9.0.1338 |
 | **Drivers** | 448 (395 Zigbee + 53 WiFi) |
-| **Unique Fingerprints** | 4,758 |
-| **Pairing Variants** | 19,196 (4 case combos per fingerprint) |
+| **Unique Fingerprints** | 4,759 |
+| **Pairing Variants** | 19,199 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 933 |
-| **Flow Cards** | 6,062 |
+| **Flow Cards** | 6,061 |
 | **Unique Capabilities** | 176 |
 | **Native OTA Drivers** | 9 |
-| **Test Suites** | 609 files |
+| **Test Suites** | 610 files |
 | **SVG Icons** | 751 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -110,12 +103,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.1334** | v9.0.1333: |
-| **v9.0.1333** | Dimmers (2-gang dimmer module, dimmer wall switch, wall dimmer 1-gang) now use the Light device type, so the light ring and voice assista… |
-| **v9.0.1336** | v9.0.1335: |
+| **v9.0.1338** | v9.0.1338: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1335** | Dimmers (2-gang dimmer module, dimmer wall switch, wall dimmer 1-gang) now use the Light device type, so the light ring and voice assista… |
-| **v9.0.1338** | v9.0.1337: |
-| **v9.0.1337** | Dimmers (2-gang dimmer module, dimmer wall switch, wall dimmer 1-gang) now use the Light device type, so the light ring and voice assista… |
 | **v9.0.1332** | Dimmers (2-gang dimmer module, dimmer wall switch, wall dimmer 1-gang) now use the Light device type, so the light ring and voice assista… |
 | **v9.0.1331** | Dimmers (2-gang dimmer module, dimmer wall switch, wall dimmer 1-gang) now use the Light device type, so the light ring and voice assista… |
 | **v9.0.1330** | v9.0.1330: automated publish, manifest sync, and Homey test promotion. |
