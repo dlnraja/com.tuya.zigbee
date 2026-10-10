@@ -22,6 +22,69 @@
       "driver": "energy_meter_3phase",
       "source": "Z2M tuya.ts SPM02 (3P+N energy monitor)",
       "pid": "TS0601"
+    },
+    {
+      "mfr": [
+        "_TZ3210_m3mxv66l"
+      ],
+      "driver": "motion_sensor",
+      "pid": "TS0202",
+      "source": "Z2M",
+      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
+    },
+    {
+      "mfr": [
+        "_TZ3290_s6ezpa3j"
+      ],
+      "driver": "ir_blaster",
+      "pid": "TS1201",
+      "source": "Z2M",
+      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_lbtpiody"
+      ],
+      "driver": "temphumidsensor",
+      "pid": "TS0201",
+      "source": "Z2M + deCONZ + Blakadder + Hubitat(kkossev)",
+      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
+    },
+    {
+      "mfr": [
+        "_TZE200_qcasmfan"
+      ],
+      "driver": "smoke_sensor",
+      "pid": "TS0601",
+      "source": "Z2M",
+      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_j6adk9id"
+      ],
+      "driver": "illuminance_sensor",
+      "pid": "TS0222",
+      "source": "Z2M + deCONZ",
+      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
+    },
+    {
+      "mfr": [
+        "_TYZB01_4mdqxxnn"
+      ],
+      "driver": "illuminance_sensor",
+      "pid": "TS0222",
+      "source": "Z2M + deCONZ + Blakadder + Hubitat(kkossev)",
+      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
+    },
+    {
+      "mfr": [
+        "_TYZB01_m6ec2pgj"
+      ],
+      "driver": "illuminance_sensor",
+      "pid": "TS0222",
+      "source": "Z2M + deCONZ",
+      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
     }
   ]
 }
