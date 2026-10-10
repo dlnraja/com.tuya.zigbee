@@ -1,0 +1,176 @@
+{
+  "id": "sound_sensor_tuya_probe",
+  "name": {
+    "en": "Sound Level Sensor (Tuya ZY-N1) (probe)",
+    "fr": "Capteur de niveau sonore (Tuya ZY-N1)",
+    "nl": "Geluidsniveausensor (Tuya ZY-N1)"
+  },
+  "class": "sensor",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "measure_noise",
+    "alarm_generic"
+  ],
+  "capabilitiesOptions": {
+    "alarm_generic": {
+      "title": {
+        "en": "Noise detected",
+        "fr": "Bruit détecté",
+        "nl": "Geluid gedetecteerd"
+      }
+    }
+  },
+  "energy": {
+    "approximation": {
+      "usageConstant": 0.5
+    }
+  },
+  "images": {
+    "small": "/drivers/sound_sensor_tuya_probe/assets/images/small.png",
+    "large": "/drivers/sound_sensor_tuya_probe/assets/images/large.png"
+  },
+  "settings": [
+    {
+      "id": "report_threshold",
+      "type": "dropdown",
+      "label": {
+        "en": "Report sound level when it changes by",
+        "fr": "Signaler le niveau sonore quand il varie de",
+        "nl": "Geluidsniveau melden bij een verandering van"
+      },
+      "value": "3_db",
+      "values": [
+        {
+          "id": "1_db",
+          "label": {
+            "en": "1 dB"
+          }
+        },
+        {
+          "id": "3_db",
+          "label": {
+            "en": "3 dB"
+          }
+        },
+        {
+          "id": "5_db",
+          "label": {
+            "en": "5 dB"
+          }
+        },
+        {
+          "id": "10_db",
+          "label": {
+            "en": "10 dB"
+          }
+        },
+        {
+          "id": "20_db",
+          "label": {
+            "en": "20 dB"
+          }
+        },
+        {
+          "id": "no_report",
+          "label": {
+            "en": "Never (only on request)",
+            "fr": "Jamais (sur demande uniquement)",
+            "nl": "Nooit (alleen op verzoek)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "noise_upper_limit",
+      "type": "number",
+      "label": {
+        "en": "Noise threshold",
+        "fr": "Seuil de bruit",
+        "nl": "Geluidsdrempel"
+      },
+      "hint": {
+        "en": "Above this level the sensor reports noise.",
+        "fr": "Au-dessus de ce niveau, le capteur signale du bruit.",
+        "nl": "Boven dit niveau meldt de sensor geluid."
+      },
+      "value": 60,
+      "min": 10,
+      "max": 100,
+      "units": "dB"
+    },
+    {
+      "id": "noise_delay",
+      "type": "number",
+      "label": {
+        "en": "Noise confirmation delay",
+        "fr": "Délai de confirmation du bruit",
+        "nl": "Bevestigingsvertraging geluid"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 300,
+      "units": "s"
+    },
+    {
+      "id": "noise_hold_time",
+      "type": "number",
+      "label": {
+        "en": "Noise hold time",
+        "fr": "Durée de maintien du bruit",
+        "nl": "Aanhoudtijd geluid"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 300,
+      "units": "s"
+    },
+    {
+      "id": "indicator",
+      "type": "checkbox",
+      "label": {
+        "en": "LED indicator",
+        "fr": "Voyant LED",
+        "nl": "LED-indicator"
+      },
+      "value": true
+    }
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE204_r6kfl9ta",
+      "_tze204_r6kfl9ta",
+      "_TZE204_R6KFL9TA",
+      "_tze204_R6KFL9TA"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5
+        ],
+        "bindings": []
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Press and hold the button on the sensor for about 5 seconds until the indicator blinks.",
+        "fr": "Maintenez le bouton du capteur environ 5 secondes jusqu’à ce que le voyant clignote.",
+        "nl": "Houd de knop van de sensor ongeveer 5 seconden ingedrukt tot het lampje knippert."
+      }
+    }
+  },
+  "metadata": {
+    "source": "zigbee-herdsman-converters tuya.ts ZY-N1 Sound level sensor (_TZE204_r6kfl9ta); also zha-device-handlers PR #5386. DP1 level dB, DP101 debounced noise state, DP102 report threshold, DP20/22/103 limits, DP23 indicator."
+  },
+  "deprecated": true
+}
