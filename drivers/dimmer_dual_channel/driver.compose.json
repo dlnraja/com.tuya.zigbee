@@ -22,7 +22,7 @@
   ],
   "metadata": {
     "driver": {
-      "catchall": true
+      "_comment": "WHY: skip pid strip 2026-08-21 — empty manufacturerName; stripping productIds would leave zero fingerprints. Do not invent mfrs."
     }
   },
   "zigbee": {
@@ -118,16 +118,20 @@
         "nl": "Supportrapport genereren (GitHub issue)",
         "de": "Supportbericht erstellen (GitHub Issue)"
       }
+    },
+    {
+      "id": "zigbee_rebind",
+      "title": {
+        "en": "Re-bind & reconfigure reporting",
+        "fr": "Re-lier et reconfigurer les rapports",
+        "nl": "Opnieuw binden en rapportage instellen",
+        "de": "Neu binden und Reporting konfigurieren"
+      }
     }
   ],
   "id": "dimmer_dual_channel",
   "version": "1.0.0",
   "ui": {
     "quickAction": "onoff"
-  },
-  "metadata": {
-    "driver": {
-      "_comment": "WHY: skip pid strip 2026-08-21 — empty manufacturerName; stripping productIds would leave zero fingerprints. Do not invent mfrs."
-    }
   }
 }
