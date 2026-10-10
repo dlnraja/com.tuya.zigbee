@@ -486,7 +486,7 @@ jobs:
 
       # WHY(2026-10-11): Auto-Publish on Push had no transient retry (only publish.yml did). socket hang up /
       # "specified key does not exist" -> ONE re-dispatch, which bumps to a new version (never the same).
-      # AggregateError is a content failure: never retried. A retry run never retries again (P139).
+      # AggregateError gets the same single retry (alternating flake 2026-10-11). A retry run never retries again (P139).
       - name: Transient Athom failure - single retry with a new version
         if: always() && steps.pub.outcome == 'success'
         continue-on-error: true
