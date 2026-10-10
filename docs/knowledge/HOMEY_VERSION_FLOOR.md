@@ -1,14 +1,22 @@
-# Homey version floor (Athom AggregateError, 2026-10-10)
+# Homey versions strictly incremental — all apps (rule from dlnraja, 2026-10-10)
 
-Symptom: master builds #3469-#3471 (v9.0.1339/1340) => `processing_failed` / `AggregateError`,
-while diagnostic bisect builds #3467/#3468 (same app id) had already uploaded 9.0.1348/1349.
-Athom rejects an upload whose version is <= a version already uploaded (also rejects re-upload
-of the same version after processing_failed).
+Versions MUST always increase strictly on master (com.dlnraja.tuya.zigbee), stable
+(com.dlnraja.tuya.zigbee.stable) and bastien, including diagnostic / bisect uploads.
+Athom rejects a version <= one already uploaded (and re-upload of a processing_failed version).
 
-Rule:
-- `.github/scripts/bump-homey-version.js` bumps from max(app.json, `.github/homey-version-floor`,
-  env `HOMEY_VERSION_FLOOR`). Used by auto-publish-on-push.yml and publish.yml.
-- Any manual / bisect / diagnostic upload to the master app id MUST raise
-  `.github/homey-version-floor` on master to the highest uploaded version (or upload with a
-  version below nothing: prefer bumping from master's current version + floor).
-- Bisect branches must never consume versions ahead of master without updating the floor.
+## Mechanism
+- `.github/scripts/athom-version-floor.js`
+  - computes uploadedMax = max(Athom build history via HOMEY_PAT, git tags v<major>.*,
+    `.github/homey-version-floor`)
+  - `--apply` (before bump): raises app.json/.homeycompose/package.json to uploadedMax if higher
+  - `--gate` (after bump): FAILS the job if the new version <= uploadedMax (never go backwards)
+- `.github/scripts/bump-homey-version.js` also honours `.github/homey-version-floor` and
+  `HOMEY_VERSION_FLOOR` env (exported by the floor script).
+- Wired as `floor --apply && bump && floor --gate` in auto-publish-on-push.yml, publish.yml,
+  auto-fix-and-publish.yml (master); same script ported to stable-v5 and bastien-home.
+- Manual/diag uploads: raise `.github/homey-version-floor` on the app's branch to the version used.
+
+## History
+- 2026-10-10: master #3469-#3471 (9.0.1339/1340) AggregateError after bisect builds 9.0.1348/1349.
+  NB: #3472/#3473 at 9.0.1350 (> all) STILL AggregateError -> version was not the root cause of
+  that incident, but the rule stays (prevention).
