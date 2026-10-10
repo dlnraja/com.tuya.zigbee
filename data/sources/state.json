@@ -253,6 +253,26 @@
       "lastSha": "c5d40c2e901cd8c20b70f2eb7f3051a53c159f4b",
       "checkedAt": "2026-10-04T08:46:06.789Z",
       "lastError": null
+    },
+    "homey-forum-apps-category": {
+      "maxTopicId": 160644,
+      "checkedAt": "2026-10-10T23:26:02.420Z",
+      "lastError": null
+    },
+    "homey-forum-apps-tracked": {
+      "lastPost": {
+        "29734": 1230,
+        "155646": 6,
+        "160590": 7,
+        "160624": 1
+      },
+      "checkedAt": "2026-10-10T23:26:04.073Z",
+      "lastError": null
+    },
+    "homey-forum-tag-zigbee": {
+      "maxTopicId": 160590,
+      "checkedAt": "2026-10-10T23:26:52.355Z",
+      "lastError": null
     }
   }
 }
