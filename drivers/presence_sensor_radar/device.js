@@ -1908,7 +1908,11 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       // WHY(P2640 / GH#550): never zero-clear until a meaningful distance was seen —
       // find_switch OFF paints DP9=0 forever and would wipe lux/DP1 presence.
       if (config.clearPresenceOnZeroDistance && Number(gatedDistance) <= 0.05) {
-        this._commitPresenceAndFlows(false);
+        // WHY(P2640 restore, lost in ec5de218b6): find_switch OFF paints DP9=0 forever —
+        // only zero-clear once tracking has ranged (>0.3m), same as master.
+        if (this._distanceSeenMeaningful === true) {
+          this._commitPresenceAndFlows(false);
+        }
       } else if (config.syncPresenceFromDistanceInference && typeof inferred === 'boolean') {
         const painted = this.getCapabilityValue('alarm_motion') === true
           || this.getCapabilityValue('alarm_human') === true;

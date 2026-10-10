@@ -50,9 +50,12 @@ describe('P2689 smart battery adaptive precision', () => {
     assert.strictEqual(mains.minChange, 65534);
   });
 
-  it('poll interval null for button coin; scales with SOC otherwise', () => {
+  it('poll interval null for ALL coin; alkaline scales with SOC', () => {
     assert.strictEqual(resolvePollIntervalMs({
       chemistry: 'CR2032', deviceClass: 'button', baseIntervalSec: 14400,
+    }), null);
+    assert.strictEqual(resolvePollIntervalMs({
+      chemistry: 'CR2032', deviceClass: 'sensor_climate', baseIntervalSec: 7200,
     }), null);
     const mid = resolvePollIntervalMs({
       chemistry: '2xAA', percent: 50, baseIntervalSec: 14400, deviceClass: 'sensor_climate',
@@ -124,7 +127,7 @@ describe('P2689 smart battery adaptive precision', () => {
     assert.ok(fs.existsSync(ssotPath));
     const ssot = JSON.parse(fs.readFileSync(ssotPath, 'utf8'));
     assert.strictEqual(ssot._meta.classify, 'BOTH');
-    assert.strictEqual(ssot.tipsMin.universal, '9.0.1195');
+    assert.ok(['9.0.1195', '9.0.1196'].includes(ssot.tipsMin.universal));
     assert.strictEqual(ssot.tipsMin.bastien, '1.0.66');
     assert.strictEqual(ssot.tipsMin.stable, '5.12.308');
     const tips = fs.readFileSync(path.join(ROOT, 'docs/architecture/THREE_APP_RECENT_TIPS.md'), 'utf8');

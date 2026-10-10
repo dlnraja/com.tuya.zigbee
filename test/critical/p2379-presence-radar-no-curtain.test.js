@@ -30,7 +30,16 @@ describe('P2379 presence radar no curtain DynCap', () => {
     const src = fs.readFileSync(path.join(ROOT, 'drivers/presence_sensor_radar/device.js'), 'utf8');
     assert.ok(src.includes('_healRadarPhantomCaps'));
     assert.ok(src.includes('_armRadarDynCapGuards'));
+    assert.ok(src.includes('_scheduleRadarPhantomReheal'));
+    assert.ok(src.includes('P2386'));
     assert.ok(src.includes('windowcoverings_set'));
+  });
+
+  it('P2386 DynCap initialize clears store when driver DynCap-disabled', () => {
+    const src = fs.readFileSync(path.join(ROOT, 'lib/dynamic/DynamicCapabilityManager.js'), 'utf8');
+    assert.ok(src.includes('P2386'));
+    assert.ok(/_isDynCapDisabledForDevice[\s\S]*unsetStoreValue\('dynamic_capabilities'\)/.test(src)
+      || /DynCap disabled for driver/.test(src));
   });
 
   it('clrdrnya stays on presence_sensor_radar compose (class sensor)', () => {
@@ -39,7 +48,9 @@ describe('P2379 presence radar no curtain DynCap', () => {
     assert.equal(compose.class, 'sensor');
     const m = compose.zigbee?.manufacturerName || [];
     assert.ok(m.some((x) => /clrdrnya/i.test(x)));
-    assert.ok((compose.capabilities || []).includes('onoff'));
+    // WHY(P2603): onoff not in default compose; MTG still restored via device profile
+    assert.ok(!(compose.capabilities || []).includes('onoff'));
+    assert.ok(compose.capabilitiesOptions?.onoff);
     assert.ok(!(compose.capabilities || []).includes('windowcoverings_set'));
   });
 });
