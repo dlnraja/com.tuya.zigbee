@@ -4,7 +4,7 @@
     {
       "id": "led_controller_spi_tuya",
       "since": "2026-10-10",
-      "reason": "Athom processing_failed AggregateError since 9.0.1331 (first build with this driver). Bisect J3 #3478 (I + spi + whd02 + sub_dim_set) and J4 #3479 (I + spi only) failed; I #3468 without it reached Test. Couples stay covered by switch_1gang (reviewed exception).",
+      "reason": "Athom processing_failed AggregateError since 9.0.1331 (first build with this driver). Bisect J3 #3478 (I + spi + whd02 + sub_dim_set) and J4 #3479 (I + spi only) failed; I #3468 without it reached Test. Couples folded into led_controller_rgb (reviewed exception); exact driver FPs kept in source.",
       "sacredCouplesOwnedElsewhere": true
     },
     {

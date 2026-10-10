@@ -20,14 +20,15 @@ describe('Gledopto GL-SPI-206P', () => {
     assert.strictEqual(dimToDp(0.5), 500);
     assert.strictEqual(dimToDp(1), 1000);
   });
-  it('exact driver carries the couples, switch_1gang keeps them (reviewed exception)', () => {
+  it('exact driver carries the couples; led_controller_rgb is the published fold host', () => {
     const j = compose('led_controller_spi_tuya');
     assert.deepStrictEqual([...new Set(j.zigbee.manufacturerName.filter((m) => /^_tze/i.test(m)).map((m) => m.toLowerCase()))].sort(), ['_tze204_8fffc3kb', '_tze284_gt5al3bl', '_tze28c1000000_gt5al3bl']);
     assert.strictEqual(j.class, 'light');
-    assert.ok(compose('switch_1gang').zigbee.manufacturerName.includes('_TZE204_8fffc3kb'));
+    // WHY(fold #3499): spi id held from Athom publish — couples live on led_controller_rgb
+    assert.ok(compose('led_controller_rgb').zigbee.manufacturerName.includes('_TZE204_8fffc3kb'));
     const rev = JSON.parse(fs.readFileSync(path.join(root, 'data/native-matrix-reviewed-duals.json'), 'utf8')).entries;
-    for (const c of ['_TZE204_8fffc3kb|TS0601', '_TZE284_gt5al3bl|TS0601']) {
-      assert.ok(rev.some((e) => e.couple === c && e.drivers.includes('led_controller_spi_tuya')), c);
+    for (const c of ['_TZE204_8fffc3kb|TS0601', '_TZE284_gt5al3bl|TS0601', '_TZE28C1000000_gt5al3bl|TS0601']) {
+      assert.ok(rev.some((e) => e.couple === c && e.drivers.includes('led_controller_spi_tuya') && e.drivers.includes('led_controller_rgb')), c);
     }
   });
 });
@@ -51,8 +52,8 @@ describe('Tuya multi-DP single frame (GL-SPI-206P burst guard)', () => {
     assert.strictEqual(await sendMultiDp({ zclNode: { endpoints: {} } }, [{ dp: 1, value: true, type: 'bool' }]), false);
   });
   it('profile lists every manifest capability (no remove/re-add at boot) and flow compose is explicit empty', () => {
-    // device.js needs the Homey runtime; read the CAPS list from source instead.
-    const src = fs.readFileSync(path.join(root, 'drivers/led_controller_spi_tuya/device.js'), 'utf8');
+    // Class lives in lib/ (fold host led_controller_rgb reuses it); CAPS is the boot profile.
+    const src = fs.readFileSync(path.join(root, 'lib/devices/LedControllerSpiTuyaDevice.js'), 'utf8');
     const caps = JSON.parse(src.match(/const CAPS = (\[[^\]]+\])/)[1].replace(/'/g, '"'));
     assert.ok(/capabilities: CAPS/.test(src));
     for (const c of compose('led_controller_spi_tuya').capabilities) {assert.ok(caps.includes(c), c);}

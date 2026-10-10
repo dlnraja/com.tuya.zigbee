@@ -37,13 +37,15 @@ describe('PCr2 W5 interview facts', function () {
     assert.strictEqual(r.status, 0, r.stderr);
     const out = JSON.parse(r.stdout);
     assert.ok(out.summary.interviews >= 100);
+    // WHY(bisect A2): eWeLight temporarily dropped from light_cct_ts0502b — audit may report null driver
     const ew = out.rows.find((x) => x.mfr === 'eWeLight' && x.pid === 'TS0502B');
-    assert.strictEqual(ew && ew.driver, 'light_cct_ts0502b');
+    assert.ok(ew, 'interview fact retained');
+    assert.ok(ew.driver === 'light_cct_ts0502b' || ew.driver == null, `unexpected driver ${ew.driver}`);
   });
-  it('eWeLight / TS0502B is in light_cct_ts0502b (exact CCT driver, rule M4)', () => {
+  it('light_cct_ts0502b keeps TS0502B + existing Tuya couple (eWeLight restore pending A2)', () => {
     const z = readJson('drivers/light_cct_ts0502b/driver.compose.json').zigbee;
-    assert.ok(z.manufacturerName.includes('eWeLight'));
     assert.ok(z.productId.includes('TS0502B'));
     assert.ok(z.manufacturerName.includes('_TZ3210_jtifm80b'), 'existing couple kept');
+    assert.equal(z.manufacturerName.includes('eWeLight'), false, 'eWeLight still held out after A2 bisect');
   });
 });
