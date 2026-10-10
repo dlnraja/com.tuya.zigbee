@@ -36,7 +36,7 @@ class PetFeederDevice extends TuyaZigbeeDevice {
 
     if (tuyaCluster) {
       this.log('Triggering manual feed...');
-      await tuyaCluster.datapoint({ dp: 3, datatype: 2, value: 1 });
+      await require('../../lib/helpers/UniversalDriverInit').sendTuyaDP(this, 3, 1, 'value');
     }
   }
 
