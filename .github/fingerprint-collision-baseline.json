@@ -5795,6 +5795,38 @@
         "doorwindowsensor_4",
         "plug_smart"
       ]
+    },
+    {
+      "key": "_tz3000_skueekg3|TS000F",
+      "drivers": [
+        "switch_1gang",
+        "switch_module_whd02"
+      ],
+      "reviewed": "2026-10-10 fold: held (never-published) driver vs its fold target; disappears when the held driver is released and the fold reverted"
+    },
+    {
+      "key": "_tze204_8fffc3kb|TS0601",
+      "drivers": [
+        "led_controller_rgb",
+        "led_controller_spi_tuya"
+      ],
+      "reviewed": "2026-10-10 fold: held (never-published) driver vs its fold target; disappears when the held driver is released and the fold reverted"
+    },
+    {
+      "key": "_tze284_gt5al3bl|TS0601",
+      "drivers": [
+        "led_controller_rgb",
+        "led_controller_spi_tuya"
+      ],
+      "reviewed": "2026-10-10 fold: held (never-published) driver vs its fold target; disappears when the held driver is released and the fold reverted"
+    },
+    {
+      "key": "_tze28c1000000_gt5al3bl|TS0601",
+      "drivers": [
+        "led_controller_rgb",
+        "led_controller_spi_tuya"
+      ],
+      "reviewed": "2026-10-10 fold: held (never-published) driver vs its fold target; disappears when the held driver is released and the fold reverted"
     }
   ]
 }
