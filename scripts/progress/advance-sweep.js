@@ -22,7 +22,13 @@ const arg = (k, d) => {
   return a ? a.slice(k.length + 3) : d;
 };
 const DRY = process.argv.includes('--dry');
-const CHUNK = Math.max(1, Math.min(25, Number(arg('chunk', '5')) || 5));
+const CHUNK = Math.max(0, Math.min(60, Number(arg('chunk', '5')) || 0));
+// P2810: forum topics are swept from post 1 as well (public Discourse JSON, no AI).
+const FORUM_CHUNK = Math.max(0, Math.min(400, Number(arg('forum-chunk', '40')) || 0));
+const ONLY = arg('only', 'all'); // all | johan | forum
+const TOPICS = String(arg('topics', '140352,26439,146735,154077,21313,89271')).split(',').filter(Boolean);
+const sweepId = require('./lib/sweep-identity');
+const sweepForum = require('./lib/sweep-forum');
 
 function loadJson(p, fallback) {
   try { return JSON.parse(fs.readFileSync(p, 'utf8')); } catch { return fallback; }
@@ -134,6 +140,43 @@ function buildDriverIndex() {
   return set;
 }
 
+/**
+ * P2810 classifier: title + body + every comment (open and closed threads), shared
+ * case-insensitive identity helper, per-couple coverage. Falls back to the legacy
+ * body-only classifier when comments are unavailable.
+ */
+function classifyIssueFull(n, issue, comments) {
+  const id = `johan-issue:${n}`;
+  const isPr = !!(issue && issue.pull_request);
+  const link = `https://github.com/JohanBendz/com.tuya.zigbee/${isPr ? 'pull' : 'issues'}/${n}`;
+  if (!issue || issue.error || issue.rateLimited) {
+    return { id, status: issue && issue.rateLimited ? 'api-rate-limited' : 'needs-info', note: 'api unavailable; retry next run', sources: [link] };
+  }
+  if (issue.status === 404 || (issue.error && issue.status === 404)) {
+    return { id, status: 'no-action', note: 'number not found upstream', sources: [link] };
+  }
+  const texts = [issue.title, issue.body, ...(Array.isArray(comments) ? comments.map((c) => c.body) : [])].join('\n');
+  const ids = sweepId.extract(texts);
+  const merged = isPr && issue.pull_request && issue.pull_request.merged_at;
+  const c = sweepId.classify(ids, { closedPr: isPr && issue.state === 'closed' });
+  const kind = isPr ? (merged ? 'merged PR' : `${issue.state} PR`) : `${issue.state} issue`;
+  const missing = c.cov.missing.map((x) => `${x.mfr}|${x.pid || '?'}`);
+  const note = c.status === 'already-fixed'
+    ? `${kind}; identities covered (${ids.mfrs.slice(0, 3).join(',') || ids.pids.slice(0, 3).join(',') || 'historical'})`
+    : c.status === 'pending' ? `${kind}; missing couple(s) ${missing.slice(0, 4).join(',')}; needs code check`
+      : c.status === 'needs-info' ? `${kind}; ${c.why}; research or diag needed` : `${kind}; ${c.why}`;
+  const out = {
+    id, status: c.status, note, sources: [link],
+    author: issue.user && issue.user.login,
+    closedAt: issue.closed_at || undefined,
+    comments: Array.isArray(comments) ? comments.length : undefined,
+    mfrs: ids.mfrs.length ? ids.mfrs : undefined,
+    pids: ids.pids.length ? ids.pids : undefined,
+    missing: missing.length ? missing : undefined,
+  };
+  return out;
+}
+
 /** Heuristic classify: no invented couples. */
 function classifyIssue(n, issue) {
   const id = `johan-issue:${n}`;
@@ -223,7 +266,8 @@ async function main() {
   const advanced = [];
   let rateLimited = false;
 
-  for (let i = 0; i < CHUNK; i++) {
+  const johanChunk = ONLY === 'forum' ? 0 : CHUNK;
+  for (let i = 0; i < johanChunk; i++) {
     const n = next + i;
     const key = `johan-issue:${n}`;
     const existing = L.items && L.items[key];
@@ -233,7 +277,20 @@ async function main() {
       if (issue && issue.rateLimited) { rateLimited = true; break; }
       await sleep(350);
     }
-    const classified = classifyIssue(n, issue);
+    let comments = null;
+    if (issue && !issue.error && !issue.rateLimited && Number(issue.comments) > 0) {
+      comments = await ghGet(`https://api.github.com/repos/JohanBendz/com.tuya.zigbee/issues/${n}/comments?per_page=100`);
+      if (comments && comments.rateLimited) { rateLimited = true; break; }
+      if (!Array.isArray(comments)) comments = null;
+      await sleep(250);
+    }
+    if (issue && issue.error && issue.status === 404) issue = { status: 404 };
+    const classified = issue && issue.status === 404
+      ? { id: key, status: 'no-action', note: 'number not found upstream', sources: [`https://github.com/JohanBendz/com.tuya.zigbee/issues/${n}`] }
+      : (issue && !issue.error ? classifyIssueFull(n, issue, comments) : classifyIssue(n, issue));
+    // Never downgrade an item a human already resolved in the checkpoint.
+    const prev = cp.items.find((it) => it.id === key);
+    if (prev && prev.manual) { advanced.push({ n, status: prev.status, note: 'manual (kept)' }); continue; }
     // Prefer ledger done over reclassification.
     if (existing && existing.status === 'done') {
       classified.status = 'already-fixed';
@@ -251,7 +308,7 @@ async function main() {
     if (!DRY && classified.status === 'already-fixed') {
       const c = (classified.sources || []).find((s) => /^[0-9a-f]{7,40}$/.test(s));
       ledger.record(L, key, { status: 'done', commit: c || undefined, note: classified.note || 'sweep', by: 'advance-sweep' });
-    } else if (!DRY && classified.status === 'needs-info') {
+    } else if (!DRY && (classified.status === 'needs-info' || classified.status === 'pending')) {
       ledger.record(L, key, { status: 'deferred', note: classified.note || 'needs-info', by: 'advance-sweep' });
     }
 
@@ -265,9 +322,35 @@ async function main() {
     deep.next = deep.next || {};
     deep.next.JohanBendz = cp.github.johan.next;
   }
+  // Forum topics from post 1 (P2810).
+  const forum = [];
+  let forumRateLimited = false;
+  if (ONLY !== 'johan' && FORUM_CHUNK > 0) {
+    for (const tid of TOPICS) {
+      const st = cp.threads[tid] || (cp.threads[tid] = { lastPost: 0, status: 'pending' });
+      if (st.status === 'caught-up' && st.sweptTo >= (st.lastPost || 0)) { /* re-check tail below */ }
+      const before = st.sweptTo || 0;
+      const r = await sweepForum.advanceTopic(tid, st, FORUM_CHUNK);
+      if (r.rateLimited) { forumRateLimited = true; st.retry = 'rate-limited'; }
+      const byId = new Map(cp.items.map((it) => [it.id, it]));
+      for (const it of r.items) {
+        const prev = byId.get(it.id);
+        if (prev && prev.manual) continue;
+        if (prev) Object.assign(prev, it); else cp.items.push(it);
+        if (!DRY) {
+          if (it.status === 'already-fixed') ledger.record(L, it.id, { status: 'done', note: it.why, by: 'advance-sweep' });
+          else if (it.status !== 'no-action') ledger.record(L, it.id, { status: 'deferred', note: it.why, by: 'advance-sweep' });
+        }
+      }
+      forum.push({ tid, from: before + 1, to: st.sweptTo || 0, scanned: r.scanned, recorded: r.items.length, error: r.error, rateLimited: !!r.rateLimited });
+      if (forumRateLimited) break;
+    }
+  }
+  const progressed = advanced.length > 0 || forum.some((f) => f.scanned > 0);
   deep.updated = new Date().toISOString().slice(0, 10);
   cp.updated = new Date().toISOString();
-  cp.lastChunk = { at: cp.updated, advanced: advanced.length, rateLimited, items: advanced };
+  cp.lastChunk = { at: cp.updated, advanced: advanced.length, rateLimited, items: advanced, forum, forumRateLimited, progressed };
+  cp.stats = cp.items.reduce((a, it) => { a[it.status] = (a[it.status] || 0) + 1; return a; }, {});
 
   if (!DRY) {
     ledger.save(L);
@@ -280,6 +363,10 @@ async function main() {
     advanced: advanced.length,
     next: cp.github.johan.next,
     rateLimited,
+    forum,
+    forumRateLimited,
+    progressed,
+    stats: cp.stats,
     items: advanced,
   };
   console.log(JSON.stringify(summary, null, 2));
@@ -288,4 +375,13 @@ async function main() {
   }
 }
 
-main().catch((e) => { console.error(e); process.exit(1); });
+main().then(() => {
+  // Progress guard: a run that only touches 'updated' is a silent stall (exit 2, soft in CI).
+  try {
+    const cp = loadJson(CP, {});
+    if (!DRY && cp.lastChunk && !cp.lastChunk.progressed && !cp.lastChunk.rateLimited && !cp.lastChunk.forumRateLimited) {
+      console.error('[advance-sweep] no progress this run');
+      process.exitCode = 2;
+    }
+  } catch { /* ignore */ }
+}).catch((e) => { console.error(e); process.exit(1); });
