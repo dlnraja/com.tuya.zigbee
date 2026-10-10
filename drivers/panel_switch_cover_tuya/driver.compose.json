@@ -18,9 +18,7 @@
     "windowcoverings_state.c2",
     "windowcoverings_set.c2",
     "onoff",
-    "onoff.s2",
-    "windowcoverings_state",
-    "windowcoverings_set"
+    "onoff.s2"
   ],
   "capabilitiesOptions": {
     "windowcoverings_state.c1": {
@@ -64,20 +62,6 @@
         "fr": "Interrupteur 2",
         "nl": "Schakelaar 2"
       }
-    },
-    "windowcoverings_state": {
-      "title": {
-        "en": "Shutter 1 (main)",
-        "fr": "Volet 1 (principal)",
-        "nl": "Rolluik 1 (hoofd)"
-      }
-    },
-    "windowcoverings_set": {
-      "title": {
-        "en": "Shutter 1 position (main)",
-        "fr": "Position volet 1 (principal)",
-        "nl": "Positie rolluik 1 (hoofd)"
-      }
     }
   },
   "images": {
@@ -87,9 +71,7 @@
   "zigbee": {
     "manufacturerName": [
       "_TZE200_rgeapp2c",
-      "_tze200_rgeapp2c",
-      "_TZE200_RGEAPP2C",
-      "_tze200_RGEAPP2C"
+      "_tze200_rgeapp2c"
     ],
     "productId": [
       "TS0601"
