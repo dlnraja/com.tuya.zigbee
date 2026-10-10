@@ -346,10 +346,12 @@ jobs:
             echo "uploaded=true" >> "$GITHUB_OUTPUT"
           fi
           echo "Draft publish completed (v$V)"
-      - name: Re-upload when Athom processing fails (same version)
+      - name: Re-upload when Athom processing fails (fresh higher version)
         # WHY: build #272 (v5.12.360) and #267-#270 were Athom-side processing_failed
-        # "socket hang up" while the job stayed green; #271 proved that re-uploading the
-        # SAME version after a failed build is accepted and processes fine. Bounded: 2 retries.
+        # "socket hang up". Owner rule (2026-10-10): versions are strictly increasing and a
+        # version already sent to Athom is NEVER re-uploaded -> each retry bumps patch first.
+        # Bounded (2 retries), exponential backoff + jitter so we do not flood Athom.
+        id: reupload
         if: steps.publish.outputs.uploaded == 'true'
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
@@ -360,6 +362,7 @@ jobs:
         run: |
           PUBLISH_DIR="${HOMEY_PUBLISH_DIR:-$(node -p "require('path').join(require('os').tmpdir(), 'homey-publish-temp')")}"
           export APP_ID=$(node -p "require('$PUBLISH_DIR/app.json').id")
+          echo "version=$HOMEY_EXPECTED_VERSION" >> "$GITHUB_OUTPUT"
           for retry in 0 1 2; do
             OUT=$(mktemp)
             GITHUB_OUTPUT="$OUT" node .github/scripts/wait-athom-draft-ready.js || true
@@ -367,17 +370,25 @@ jobs:
               echo "Athom build for v$HOMEY_EXPECTED_VERSION is processing/ready (retry=$retry)"; exit 0
             fi
             [ "$retry" -ge 2 ] && break
-            echo "::warning::Athom processing_failed for v$HOMEY_EXPECTED_VERSION; re-uploading same version (retry $((retry+1))/2)"
-            sleep 30
+            DELAY=$(( 30 * (1 << retry) + RANDOM % 30 ))
+            echo "::warning::Athom processing_failed for v$HOMEY_EXPECTED_VERSION; backoff ${DELAY}s then re-upload as a NEW patch version (retry $((retry+1))/2)"
+            sleep "$DELAY"
+            (cd "$GITHUB_WORKSPACE" && node .github/scripts/stable-version-bump.js bump --publish-dir "$PUBLISH_DIR") || { echo "::error::version bump failed; not re-uploading"; break; }
+            NEWV=$(node -p "require('$PUBLISH_DIR/app.json').version")
+            if [ "$(printf '%s\n%s\n' "$HOMEY_EXPECTED_VERSION" "$NEWV" | sort -V | tail -1)" != "$NEWV" ] || [ "$NEWV" = "$HOMEY_EXPECTED_VERSION" ]; then
+              echo "::error::refusing non-increasing version $NEWV (was $HOMEY_EXPECTED_VERSION)"; break
+            fi
+            export HOMEY_EXPECTED_VERSION="$NEWV"
+            echo "version=$NEWV" >> "$GITHUB_OUTPUT"
             (cd "$PUBLISH_DIR" && HOMEY_HEADLESS=1 HOMEY_PAT="$HOMEY_PAT" "$GITHUB_WORKSPACE/node_modules/.bin/homey" app publish --path "$PUBLISH_DIR") || echo "::warning::re-upload attempt failed"
           done
-          echo "::error::Athom kept failing to process v$HOMEY_EXPECTED_VERSION after 2 re-uploads; Test stays on the previous build"
-          echo "### Stable Test NOT updated: Athom processing_failed for v$HOMEY_EXPECTED_VERSION" >> "$GITHUB_STEP_SUMMARY"
+          echo "::error::Athom kept failing to process stable builds up to v$HOMEY_EXPECTED_VERSION after 2 fresh-version re-uploads; Test stays on the previous build"
+          echo "### Stable Test NOT updated: Athom processing_failed up to v$HOMEY_EXPECTED_VERSION" >> "$GITHUB_STEP_SUMMARY"
       - name: Commit stable version back
         if: steps.publish.outputs.uploaded == 'true'
         run: |
           cd "$GITHUB_WORKSPACE"
-          V="${{ steps.publish.outputs.version }}"
+          V="${{ steps.reupload.outputs.version || steps.publish.outputs.version }}"
           for i in 1 2 3; do
             # Re-apply on top of the latest tip instead of rebasing (bot commits touch the same manifests).
             git fetch --depth=20 origin stable-v5
