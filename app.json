@@ -3893,58 +3893,6 @@
             "filter": "capabilities=button.1,capabilities=button,capabilities=onoff,capabilities=button.toggle"
           }
         ]
-      },
-      {
-        "id": "switch_module_whd02_turned_on",
-        "title": {
-          "en": "Turned on - physical button",
-          "nl": "Aangezet - fysieke knop",
-          "fr": "Allumé - bouton physique",
-          "de": "Eingeschaltet - physische Taste"
-        },
-        "hint": {
-          "en": "Triggered when the switch is turned on using the physical button",
-          "nl": "Geactiveerd wanneer de schakelaar wordt aangezet met de fysieke knop",
-          "fr": "Déclenché quand l'interrupteur est allumé avec le bouton physique"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_module_whd02"
-          }
-        ],
-        "titleFormatted": {
-          "en": "Turned on - physical button",
-          "nl": "Aangezet - fysieke knop",
-          "fr": "Allumé - bouton physique"
-        }
-      },
-      {
-        "id": "switch_module_whd02_turned_off",
-        "title": {
-          "en": "Turned off - physical button",
-          "nl": "Uitgezet - fysieke knop",
-          "fr": "Éteint - bouton physique",
-          "de": "Ausgeschaltet - physische Taste"
-        },
-        "hint": {
-          "en": "Triggered when the switch is turned off using the physical button",
-          "nl": "Geactiveerd wanneer de schakelaar wordt uitgezet met de fysieke knop",
-          "fr": "Déclenché quand l'interrupteur est éteint avec le bouton physique"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_module_whd02"
-          }
-        ],
-        "titleFormatted": {
-          "en": "Turned off - physical button",
-          "nl": "Uitgezet - fysieke knop",
-          "fr": "Éteint - bouton physique"
-        }
       }
     ],
     "conditions": [
@@ -41175,7 +41123,8 @@
           "_tze200_YKGLASUJ",
           "_TZE200_KF2HBKO4",
           "_tze200_KF2HBKO4",
-          "_TZE200_n8dljorx"
+          "_TZE200_n8dljorx",
+          "_tze200_n8dljorx"
         ],
         "learnmode": {
           "image": "{{driverAssetsPath}}/icon.svg",
@@ -41511,7 +41460,8 @@
           "_tz3000_wvedmwyp",
           "_TZ3000_WVEDMWYP",
           "_tz3000_WVEDMWYP",
-          "_TZ3000_kmsbwdol"
+          "_TZ3000_kmsbwdol",
+          "_tz3000_kmsbwdol"
         ]
       },
       "version": "1.0.0",
@@ -55418,7 +55368,8 @@
           "_tz3210_4UBYLGHK",
           "_TZ3000_7YSDNEBC",
           "_tz3000_7YSDNEBC",
-          "_TYZB01_v8gtiaed"
+          "_TYZB01_v8gtiaed",
+          "_tyzb01_v8gtiaed"
         ]
       },
       "version": "1.0.0",
@@ -94694,7 +94645,8 @@
           "_TZ3000_UTAGPNZS",
           "_TZ3000_utagpnzs",
           "_tz3000_UTAGPNZS",
-          "_TZ3000_v7fkcekx"
+          "_TZ3000_v7fkcekx",
+          "_tz3000_v7fkcekx"
         ],
         "productId": [
           "TS0505A",
@@ -117658,7 +117610,8 @@
           "Heobian",
           "_TZ3000_P26FLEK3",
           "_tz3000_P26FLEK3",
-          "_TZ3000_bzzgvet0"
+          "_TZ3000_bzzgvet0",
+          "_tz3000_bzzgvet0"
         ],
         "endpoints": {
           "1": {
@@ -120680,7 +120633,8 @@
           "_tze28c1000000_E4PF6L87",
           "_TZE28C1000000_XVYWZHMI",
           "_tze28c1000000_XVYWZHMI",
-          "_TYZB01_4lwqwyqn"
+          "_TYZB01_4lwqwyqn",
+          "_tyzb01_4lwqwyqn"
         ]
       },
       "images": {
@@ -122084,7 +122038,8 @@
           "_tze28c1000000_XIBAABMU",
           "_TZE28C1000000_Y4JQPRY8",
           "_tze28c1000000_Y4JQPRY8",
-          "_TZ3000_nsa76jai"
+          "_TZ3000_nsa76jai",
+          "_tz3000_nsa76jai"
         ]
       },
       "images": {
@@ -133742,7 +133697,8 @@
           "_tze284_IBA1CKEK",
           "heobian",
           "Heobian",
-          "_TZ3000_jqge2fjx"
+          "_TZ3000_jqge2fjx",
+          "_tz3000_jqge2fjx"
         ],
         "productId": [
           "AY02SZ",
@@ -140182,7 +140138,10 @@
           "Heobian",
           "_TZ3000_kstbkt6a",
           "_TZ3000_fxvjhdyl",
-          "_TZ3000_kyb656no"
+          "_TZ3000_kyb656no",
+          "_tz3000_kstbkt6a",
+          "_tz3000_fxvjhdyl",
+          "_tz3000_kyb656no"
         ]
       },
       "settings": [
@@ -152527,7 +152486,8 @@
           "_tz3000_gdsvhfao",
           "_TZ3000_GDSVHFAO",
           "_tz3000_GDSVHFAO",
-          "_TZ3000_cygcaxvv"
+          "_TZ3000_cygcaxvv",
+          "_tz3000_cygcaxvv"
         ],
         "productId": [
           "TS0207",
