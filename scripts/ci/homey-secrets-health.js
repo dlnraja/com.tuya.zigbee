@@ -10,7 +10,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const APPS = 'https://apps-api.athom.com/api/v1/app';
+// NOTE: apps-api /app listing is public (200 without auth) - never use it as a token probe.
 const ACCOUNT = 'https://api.athom.com/user/me';
 
 async function probe(url, token) {
@@ -24,18 +24,19 @@ async function probe(url, token) {
 
 (async () => {
   const checks = [
-    ['HOMEY_PAT', APPS, 'apps PAT (publish) - regenerate by hand at tools.developer.homey.app'],
-    ['HOMEY_PAT_API', ACCOUNT, 'user/dashboard PAT - regenerate by hand'],
-    ['HOMEY_TOKEN', APPS, 'legacy token - regenerate by hand or remove usage'],
+        ['HOMEY_PAT_API', ACCOUNT, 'user/dashboard PAT - regenerate by hand'],
+    ['HOMEY_TOKEN', ACCOUNT, 'legacy token - regenerate by hand or remove usage'],
   ];
   const out = { checked_at: new Date().toISOString(), secrets: {} };
   for (const [name, url, how] of checks) {
     const v = process.env[name];
     let status = v ? await probe(url, v) : 'missing';
-    // a user PAT may be rejected by one API but accepted by the other: try the other before calling it invalid
-    if (status === 'invalid' && v) status = (await probe(url === APPS ? ACCOUNT : APPS, v)) === 'valid' ? 'valid_other_api' : 'invalid';
+    // single authenticated probe per token (no public-endpoint fallback)
     out.secrets[name] = { status, renew: how };
   }
+  // HOMEY_PAT: the apps API listing is public, so a plain GET proves nothing; the real probe is
+  // scripts/ci/homey-build-status.js (delegation token, same path as publishing).
+  out.secrets.HOMEY_PAT = { status: process.env.HOMEY_PAT ? 'see_build_status_step' : 'missing', renew: 'apps PAT - regenerate by hand at tools.developer.homey.app' };
   out.secrets.HOMEY_REFRESH_TOKEN = {
     status: !process.env.HOMEY_REFRESH_TOKEN ? 'missing' : (process.env.HOMEY_ACCOUNT_TOKEN ? 'refreshed' : 'invalid'),
     renew: 'auto-rotated by scripts/ci/homey-token-refresh.js when GH_PAT has secrets:write; else `npx homey login`',
