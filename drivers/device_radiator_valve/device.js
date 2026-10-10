@@ -35,7 +35,10 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       || '',
     ).toLowerCase();
     const me167Tails = [
-      'o3x45p96', 'p3dbf6qs', 'rv6iuyxb', 'c6wv4xyo', 'hvaxb2tc', 'ogx8u5z6',
+      'o3x45p96', 'p3dbf6qs',
+      // WHY(#560 TRV06 _TZE200_rxq4iti9): Z2M tuya.ts lists these in the same ME167/TRV06 definition (DP4 setpoint, DP5 temp)
+      'rxq4iti9', 'yqgbrdyo', '6rdj8dzm', 'jkfbph7l', 'rxntag7i', '4utwozi2',
+      'rv6iuyxb', 'c6wv4xyo', 'hvaxb2tc', 'ogx8u5z6',
     ];
     return me167Tails.some((t) => mfr.includes(t)) ? 'me167' : 'standard';
   }
