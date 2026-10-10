@@ -84,7 +84,9 @@ const lan = resolveWiFiTransport({
 });
 assert.strictEqual(lan.transport, 'lan');
 assert.strictEqual(lan.ip, '192.168.1.50', 'T15811 prefer settings static IP');
-assert.ok(/settings-static/.test(lan.ipSource));
+assert.strictEqual(lan.ipSource, 'settings');
+assert.strictEqual(lan.ipPinned, true, 'T15811 settings IP pinned');
+assert.ok(/settings-static/.test(lan.reason));
 
 const keep = JSON.parse(fs.readFileSync(
   path.join(ROOT, 'config/architecture/publish-sacred-keep-couples.json'),
