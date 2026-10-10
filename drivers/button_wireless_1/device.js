@@ -154,6 +154,7 @@ class Button1GangDevice extends ButtonDevice {
       softArmComplementaryIo(this, { zclNode, io: this.io });
     } catch (_e) { /* optional */ }
 
+    // WHY(P2550/P2555): ButtonDevice recycles measure_battery once so Insights/History gets a log
     try {
       if (typeof this._ensureBatteryCapabilityUi === 'function') {
         await this._ensureBatteryCapabilityUi().catch(() => {});

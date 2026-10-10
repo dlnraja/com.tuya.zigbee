@@ -40,6 +40,7 @@ describe('P2708 Bastien full TS004x feedback matrix', () => {
     assert.doesNotMatch(wall, /await device\.triggerButtonPress/);
     const mixin = fs.readFileSync(path.join(ROOT, 'lib/mixins/PhysicalButtonMixin.js'), 'utf8');
     assert.match(mixin, /isolates TS0041/);
-    assert.match(mixin, /skipCharter/);
+    // WHY(P2734 supersedes P2707 skipCharter with softOnly pulse; aligned 2026-10-11)
+    assert.match(mixin, /skipCharter|softOnly/);
   });
 });
