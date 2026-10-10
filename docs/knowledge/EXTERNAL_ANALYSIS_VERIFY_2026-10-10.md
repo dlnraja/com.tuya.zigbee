@@ -1,0 +1,16 @@
+# External analysis verification (2026-10-10)
+
+An external write-up about dlnraja/com.tuya.zigbee was checked claim by claim against the real branches
+(master 613b6fe48c, stable-v5 02a29f04c5, bastien-home 895e68dd70). Nothing in it was taken on trust.
+
+| # | Claim | Verdict | Evidence / action |
+|---|-------|---------|-------------------|
+| 1 | master zip has no .json (app.json, driver.compose.json) | FALSE | No export-ignore in .gitattributes; `git archive HEAD` on master has 2908 .json files incl. app.json, package.json; 450 driver.compose.json tracked. |
+| 2 | package.json depends on nonexistent npm `homey-tuya` | FALSE | deps on all 3 branches: color-space, homey-zigbeedriver, qrcode, tuyapi, zigbee-clusters. No `homey-tuya` in package.json or lockfile. |
+| 3 | #560 TRV06 `_TZE200_rxq4iti9` DP4 not routed to target_temperature | TRUE, ALREADY FIXED | Issue reported on 9.0.1331: DP4 went through SmartDivisor as measure_temperature and battery. Fixed on every branch: the couple now uses the ME167/TRV06 profile, with DP4 → target_temperature ÷10 and DP5 → measure_temperature ÷10, as in Z2M tuya.ts TS0601_thermostat_3 (master 2a242b4474, stable 7c29ea53e8, bastien 74d85c8902). |
+| 4 | stable publish processing_failed socket hang up, needs backoff+jitter | PARTIAL | Concurrency mutex and CLI→direct-API fallback were already in place. Bug found: the "Re-upload when Athom processing fails" step re-uploaded the same version, with a fixed 30 s sleep. Fixed: each retry now bumps the patch and refuses any version that does not increase. Backoff is 30·2^n s plus 0–29 s of jitter, with at most 2 retries. Commit-back uses the final version. Stable only. |
+| 5 | forum crawler skips / mixes posts | TRUE | `.github/scripts/scan-forum.js` (identical on all 3 branches) raised the global `lastId` inside the topic loop. Discourse post ids are global, so later topics lost their new posts. It also dropped anything past the newest 100 (`slice(-100)`) and moved the cursor past chunks that failed to fetch. Fix: fixed per-run baseline, posts deduped by topic_id:post_id and sorted by id, and the cursor is held below any unfetched post, backlog over 100 or time-guard break. |
+| 6 | listener/timer cleanup; case-insensitive couples; non-linear battery | MOSTLY ALREADY OK | No driver device.js uses setInterval without cleanup. No strict `manufacturerName === '_T…'` comparisons in lib/ or drivers/. Chemistry curves exist (BatteryManagerV4, BatteryRouter). No change. |
+| 7 | MASTER_ONLY.md, soak dashboard, l99 gate in CI, identity CI | PARTIAL | The classification already exists in docs/rules/DUAL_APP_VISION.md (BOTH / MASTER_ONLY / STABLE_ONLY tables). l99 runs `--hard` in unified-ci.yml (pull_request + push) and in other workflows. The stable identity guard exists (publish-stable.yml asserts `.stable` id, and stable-version-bump.js refuses non-stable ids). The Bastien publish checks identity too. Missing: a soak-duration dashboard and a standalone MASTER_ONLY.md. Not created, because DUAL_APP_VISION.md is the single source of truth and a second file would drift. |
+
+Sources: issue #560 (GitHub), Z2M zigbee-herdsman-converters tuya.ts (ME167/TRV06 definition). Content was rewritten here, not copied.
