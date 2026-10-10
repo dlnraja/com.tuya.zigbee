@@ -50,3 +50,12 @@ jobs:
           print(f"- flow cards: {len(fids)} (dup ids: {sum(1 for v in collections.Counter(fids).values() if v > 1)})")
           print(f"- app.json: {os.path.getsize('app.json')/1e6:.2f} MB, payload (no node_modules): {size/1e6:.1f} MB")
           PY
+      - name: Manifest processor audit (non-blocking)
+        if: always()
+        continue-on-error: true
+        run: |
+          [ -f scripts/validate/manifest-processor-audit.js ] || { echo "audit script missing"; exit 0; }
+          for p in .homeybuild/app.json /tmp/homey-publish-temp/app.json; do
+            [ -f "$p" ] && { echo "### Processor audit: $p" | tee -a "$GITHUB_STEP_SUMMARY"; node scripts/validate/manifest-processor-audit.js "$p" 2>&1 | tail -60 | tee -a "$GITHUB_STEP_SUMMARY"; }
+          done
+          exit 0
