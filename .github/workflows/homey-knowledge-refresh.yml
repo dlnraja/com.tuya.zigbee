@@ -1,10 +1,10 @@
 # Weekly Homey knowledge + tooling refresh
-# Triggers: cron Mon 05:17 UTC + workflow_dispatch | Secrets: GITHUB_TOKEN only | Free, no AI
+# Triggers: cron Mon 05:47 UTC + workflow_dispatch | Secrets: GITHUB_TOKEN only | Free, no AI
 name: Homey knowledge refresh (weekly)
 
 on:
   schedule:
-    - cron: '17 5 * * 1'
+    - cron: '47 5 * * 1'
   workflow_dispatch:
 
 permissions:
@@ -14,6 +14,10 @@ permissions:
 concurrency:
   group: homey-knowledge-refresh
   cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
 
 env:
   AI_ALLOW_REMOTE: 'false'
