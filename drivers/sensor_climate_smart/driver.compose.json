@@ -8,7 +8,8 @@
   },
   "class": "socket",
   "capabilities": [
-    "onoff", "onoff.gang1",
+    "onoff",
+    "onoff.gang1",
     "onoff.gang2",
     "onoff.gang3",
     "onoff.gang4",
@@ -16,7 +17,15 @@
     "measure_humidity",
     "button.1"
   ],
-  "capabilitiesOptions": { "onoff": { "title": { "en": "All switches", "fr": "Tous les interrupteurs", "nl": "Alle schakelaars", "de": "Alle Schalter" } },
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "All switches",
+        "fr": "Tous les interrupteurs",
+        "nl": "Alle schakelaars",
+        "de": "Alle Schalter"
+      }
+    },
     "onoff.gang1": {
       "title": {
         "en": "Switch 1",
@@ -139,6 +148,15 @@
         "fr": "Générer rapport de support (issue GitHub)",
         "nl": "Supportrapport genereren (GitHub issue)",
         "de": "Supportbericht erstellen (GitHub Issue)"
+      }
+    },
+    {
+      "id": "zigbee_rebind",
+      "title": {
+        "en": "Re-bind & reconfigure reporting",
+        "fr": "Re-lier et reconfigurer les rapports",
+        "nl": "Opnieuw binden en rapportage instellen",
+        "de": "Neu binden und Reporting konfigurieren"
       }
     }
   ],
