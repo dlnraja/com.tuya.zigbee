@@ -40,6 +40,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
 
       - name: npm ci (prefer) / npm install
         run: |
@@ -213,6 +214,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
       - name: Apply + commit (gated, [skip ci])
         continue-on-error: true
         env:

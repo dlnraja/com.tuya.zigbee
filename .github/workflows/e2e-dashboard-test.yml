@@ -20,9 +20,8 @@ defaults:
 name: e2e-dashboard-test
 
 on:
-  schedule:
-    # 4h after continuous-flow (07:00 UTC) — gives time for enrich to finish
-    - cron: '0 7 * * *'
+  # schedule removed 2026-10-10 (Actions optimization): continuous-flow runs daily and already
+  # triggers this workflow through workflow_run, so the 07:00 cron was a duplicate daily run.
   workflow_dispatch:
   workflow_run:
     workflows: ['continuous-flow']
