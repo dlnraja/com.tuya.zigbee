@@ -186,9 +186,10 @@ jobs:
         if: steps.pat.outputs.ok == 'true'
         id: bump
         env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
           BUMP_LEVEL: ${{ inputs.version || 'patch' }}
           HOMEY_CHANGELOG: ${{ steps.cl.outputs.text }}
-        run: node .github/scripts/bump-homey-version.js
+        run: node .github/scripts/athom-version-floor.js --apply && node .github/scripts/bump-homey-version.js && node .github/scripts/athom-version-floor.js --gate
 
       - name: Sync package manifests and .homeycompose version
         if: steps.pat.outputs.ok == 'true'
