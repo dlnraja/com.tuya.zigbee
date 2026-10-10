@@ -97,3 +97,8 @@ driver; and a payload that adds a new driver id cloned 1:1 from a passing driver
   SPI device class via Driver#onMapDeviceClass; WHD02 couple → switch_1gang (has TS000F). Sacred-keep pins
   retargeted; local prepare-publish shows the couples survive compaction. FP collision gate 0 new,
   fingerprints integrity OK.
+
+## Fold + R5 (2026-10-10 ~23:38 Paris)
+- **Fold** `fold-held-couples` v9.0.1378 #3497 = `socket hang up` → **retry** (do not conclude). Couples folded into existing drivers; SPI/WHD02 drivers stay held.
+- **R5** #3496 = `The specified key does not exist` (whd02 unhold+pair). R5 retry cancelled to prioritize fold retry.
+- Live Test still **9.0.1376 #3495** (P1) until a later build promotes.
