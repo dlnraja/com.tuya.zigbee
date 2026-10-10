@@ -1,22 +1,23 @@
-# 📥 Community Inbox — 2026-10-09 11:53 UTC
+# 📥 Community Inbox — 2026-10-10 11:10 UTC
 
 Généré par `.github/scripts/community-inbox-digest.js` (workflow `community-inbox.yml`).
 
 ## Résumé
 
-- Issues ouvertes : **3** — 🔴 à traiter : **1**, 🟡 attente utilisateur : 2, 🟢 maintainer actif : 0
+- Issues ouvertes : **4** — 🔴 à traiter : **2**, 🟡 attente utilisateur : 2, 🟢 maintainer actif : 0
 - PRs ouvertes : **0**
 - Forum : **3** post(s) sans réponse du maintainer
 - Messages privés (lecture seule, jamais de réponse) : **20** thread(s), 7 mfr, 5 pid, 7 UUID diag
 
 ## 🔴 Issues à traiter
 
+- [#560](https://github.com/dlnraja/com.tuya.zigbee/issues/560) — Bug report - TRV06 Smart Zigbee Radiator Valve - isn't working _(🔴 attente maintainer, maj 2026-10-09)_
 - [#550](https://github.com/dlnraja/com.tuya.zigbee/issues/550) — Bug report - [Short description] _(🔴 escaladé, maj 2026-10-04)_
 
 ## 🟡 Auto-résolues, en attente de retour
 
 - [#559](https://github.com/dlnraja/com.tuya.zigbee/issues/559) — Smartplug _(maj 2026-10-03)_
-- [#557](https://github.com/dlnraja/com.tuya.zigbee/issues/557) — 🤖 Daily digest _(maj 2026-10-08)_
+- [#557](https://github.com/dlnraja/com.tuya.zigbee/issues/557) — 🤖 Daily digest _(maj 2026-10-10)_
 
 ## 🌍 Forum — posts sans réponse
 
