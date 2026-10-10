@@ -11,7 +11,7 @@ const ROOT = path.resolve(__dirname, '..', '..');
 
 function loadDriversAtRef(ref, root) {
   const drivers = new Map();
-  const GIT = 'C:\\Program Files\\Git\\cmd\\git.exe';
+  const GIT = process.env.GIT_BIN || 'git';
   let driverDirs;
   try {
     driverDirs = execSync(`"${GIT}" -C "${root}" ls-tree -r --name-only ${ref} -- drivers`, { encoding: 'utf8' });
