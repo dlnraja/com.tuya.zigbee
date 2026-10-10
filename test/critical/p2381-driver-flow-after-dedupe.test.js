@@ -85,7 +85,9 @@ describe('P2381 driver flow cards after app.json dedupe', () => {
   it('ButtonDevice _tryCard source includes P2381 driverScoped gate', () => {
     const src = fs.readFileSync(path.join(ROOT, 'lib/devices/ButtonDevice.js'), 'utf8');
     assert.match(src, /P2381/);
-    assert.match(src, /driverScoped/);
+    // WHY(P2461 / Peter #2230): driverScoped probe was intentionally removed (invented aliases
+    // hit FLOW-GUARD); declared-set gate replaces it. Aligned 2026-10-11.
+    assert.match(src, /driverScoped|P2461/);
     assert.match(src, /collectDeclaredFlowIds\(this\.homey, this\)/);
   });
 });

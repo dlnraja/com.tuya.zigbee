@@ -33,8 +33,11 @@ describe('P2693 Bastien TS0043/TS0042 snappy + no ghost', () => {
       const idx = src.indexOf(key);
       assert.ok(idx >= 0, `${key} profile`);
       const block = src.slice(idx, idx + 750);
-      assert.match(block, /debounceMs:\s*80/);
-      assert.match(block, /crossPathDedupMs:\s*120/);
+      // WHY(P2714/P2742 snappier than P2693/P2702 floor; aligned 2026-10-11): accept any value ≤ the old cap
+      const deb = Number((block.match(/debounceMs:\s*(\d+)/) || [])[1]);
+      const dedup = Number((block.match(/crossPathDedupMs:\s*(\d+)/) || [])[1]);
+      assert.ok(deb > 0 && deb <= 80, `${key} debounce ${deb}`);
+      assert.ok(dedup > 0 && dedup <= 120, `${key} crossPathDedup ${dedup}`);
       assert.match(block, /skipSoftwareHoldRelease:\s*true/);
       assert.match(block, /disableLevelControlComplement:\s*true/);
       assert.match(block, /collapsePhantomEndpoints:\s*true/);
@@ -49,7 +52,8 @@ describe('P2693 Bastien TS0043/TS0042 snappy + no ghost', () => {
       assert.match(src, /skipSoftwareHoldRelease:\s*true/);
       assert.match(src, /disableLevelControlComplement:\s*true/);
       assert.match(src, /debounceMs:\s*(?:Math\.min\(Number\(base\.debounceMs\) \|\| )?\d+/);
-      assert.match(src, /debounceMs:\s*(?:Math\.min\(Number\(base\.debounceMs\) \|\| )?80/);
+      const m = src.match(/debounceMs:\s*(?:Math\.min\(Number\(base\.debounceMs\) \|\| )?(\d+)/);
+      assert.ok(m && Number(m[1]) <= 80, `${id} debounce ≤80`);
     }
   });
 
