@@ -16,7 +16,7 @@ class DimmerWall1GangDevice extends VirtualButtonMixin(UnifiedLightBase) {
   get dpMappings() {
     return {
       1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
-      2: { capability: 'dim', transform: (v) => Math.max(0.01, Math.min(1, v / 1000)) },
+      2: { capability: 'dim', transform: (v) => Math.max(0.01, Math.min(1, v * 1000 / 1000)) },
       101: { capability: 'dim', divisor: 100 }
     };
   }

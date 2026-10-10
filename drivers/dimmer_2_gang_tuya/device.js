@@ -1,6 +1,5 @@
 'use strict';
 
-const { migrateDeviceClass } = require('../../lib/utils/DeviceClassMigration');
 const { Cluster } = require('zigbee-clusters');
 const TuyaSpecificCluster = require('../../lib/TuyaSpecificCluster');
 const TuyaSpecificClusterDevice = require('../../lib/TuyaSpecificClusterDevice');
@@ -15,8 +14,6 @@ class dimmer_2_gang_tuya extends TuyaSpecificClusterDevice {
   get mainsPowered() { return true; }
 
   async onNodeInit({ zclNode }) {
-    // WHY: class socket -> light (user decision 2026-10-04); one-shot for paired devices
-    migrateDeviceClass(this, 'light', ['socket', 'other']).catch(() => {});
     this.printNode();
 
     if (this.mainsPowered) {

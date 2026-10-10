@@ -11,7 +11,7 @@ class EweLinkBulbDevice extends EweLinkLocalDevice {
   get stateMappings() {
     return {
       switch: { capability: 'onoff', transform: v => v === 'on' },
-      brightness: { capability: 'dim', transform: v => v / 100 },
+      brightness: { capability: 'dim', transform: v => v * 100 },
       colorR: { capability: 'unknown' },
       colorG: { capability: 'unknown' },
       colorB: { capability: 'unknown' },

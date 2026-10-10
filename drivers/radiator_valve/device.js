@@ -254,8 +254,8 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
   async _setupThermostatCluster(zclNode) {
     const thermo = zclNode?.endpoints?.[1]?.clusters?.hvacThermostat;
     if (thermo?.on) {
-      thermo.on('attr.localTemperature', (v) => this.safeSetCapabilityValue('measure_temperature', parseFloat(v) / 100).catch(() => { }));
-      thermo.on('attr.occupiedHeatingSetpoint', (v) => this.safeSetCapabilityValue('target_temperature', v / 100).catch(() => { }));
+      thermo.on('attr.localTemperature', (v) => this.safeSetCapabilityValue('measure_temperature', parseFloat(v )).catch(() => { }));
+      thermo.on('attr.occupiedHeatingSetpoint', (v) => this.safeSetCapabilityValue('target_temperature', v * 100).catch(() => { }));
     }
   }
 
