@@ -135,6 +135,11 @@ jobs:
           else
             VER=$(node -p "require('./app.json').version" 2>/dev/null || echo '?')
             git commit -m "blakadder(P53): refresh cross-ref data v${VER} [skip ci]"
-            git push origin HEAD:master
+            # Race-safe push: other bots push to master concurrently (non-fast-forward rejects)
+            for i in 1 2 3; do
+              git pull --rebase -q origin master && git push origin HEAD:master && break
+              echo "push attempt $i rejected, retrying"; sleep $((i*10))
+              [ "$i" = 3 ] && exit 1
+            done
             echo "### ✅ Blakadder data committed to master" >> $GITHUB_STEP_SUMMARY
           fi
