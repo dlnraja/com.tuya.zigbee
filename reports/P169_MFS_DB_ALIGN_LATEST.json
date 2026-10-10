@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-10-10T10:58:22.346Z",
+  "timestamp": "2026-10-10T23:34:31.784Z",
   "gate": "align-mfs-db-intelligent",
   "apply": false,
   "check": true,
   "changeCount": 0,
-  "skippedCount": 64,
+  "skippedCount": 65,
   "highSeverityCount": 0,
   "byAction": {},
   "changes": [],
@@ -503,6 +503,11 @@
         "sensor_climate_motion",
         "slim_motion_sensor"
       ]
+    },
+    {
+      "reason": "unclaimed_no_compose",
+      "mfr": "Heiman",
+      "curated": "button_emergency_sos"
     },
     {
       "reason": "brand_multi_intentional",
