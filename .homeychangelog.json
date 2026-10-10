@@ -964,19 +964,7 @@
   "9.0.1315": {
     "en": "v9.0.1315: automated publish, manifest sync, and Homey test promotion."
   },
-  "9.0.1314": {
-    "en": "v9.0.1314: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.1313": {
-    "en": "fix(P2795): #554 TS0046/_TZ3000_iszegwpd 6-gang wall remote pairs with 4-endpoint firmware (EP1–4 only; soft magic; no onOff report storm)."
-  },
-  "9.0.1312": {
-    "en": "v9.0.1312: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.1331": {
-    "en": "Dimmers (2-gang dimmer module, dimmer wall switch, wall dimmer 1-gang) now use the Light device type, so the light ring and voice assistants treat them as lights. Paired devices switch once automatically; the device icon may change. Capabilities, IDs and flows are unchanged."
-  },
-  "9.0.1337": {
-    "en": "Dimmers (2-gang dimmer module, dimmer wall switch, wall dimmer 1-gang) now use the Light device type, so the light ring and voice assistants treat them as lights. Paired devices switch once automatically; the device icon may change. Capabilities, IDs and flows are unchanged."
+  "9.0.1338": {
+    "en": "v9.0.1338: automated publish, manifest sync, and Homey test promotion."
   }
 }
