@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-10T23:28:55.913Z",
+ "generated": "2026-10-10T23:35:12.670Z",
  "drivers": 388,
  "snapshot": {
   "air_purifier": {
@@ -177,9 +177,9 @@
    "pidSha": "907c50f03c1b4f74"
   },
   "button_wireless_1": {
-   "mfr": 33,
+   "mfr": 34,
    "pid": 32,
-   "mfrSha": "5a8a5782b8b91829",
+   "mfrSha": "dcd33ae5c898c4a7",
    "pidSha": "97471aa91d3d60d5"
   },
   "button_wireless_2": {
@@ -279,9 +279,9 @@
    "pidSha": "3427697d0c296c9d"
   },
   "climate_sensor": {
-   "mfr": 535,
+   "mfr": 530,
    "pid": 32,
-   "mfrSha": "bfda1a2495063ec9",
+   "mfrSha": "d85bee3b444bc8bd",
    "pidSha": "4809a771f46a5606"
   },
   "climate_sensor_device": {
@@ -345,9 +345,9 @@
    "pidSha": "777a8703abf8065f"
   },
   "contact_sensor": {
-   "mfr": 59,
+   "mfr": 58,
    "pid": 26,
-   "mfrSha": "273913e8503d5b64",
+   "mfrSha": "a50b625902d2e0f5",
    "pidSha": "413aba4e609c4fb1"
   },
   "contact_sensor_curtain": {
@@ -375,9 +375,9 @@
    "pidSha": "eb0037885ed202bb"
   },
   "contact_sensor_zigbee": {
-   "mfr": 6,
+   "mfr": 7,
    "pid": 1,
-   "mfrSha": "d46fd6dee331937f",
+   "mfrSha": "1279295d19cb7a3c",
    "pidSha": "455c46e8c8549693"
   },
   "curtain_module": {
@@ -633,9 +633,9 @@
    "pidSha": "4ec845a853bc6530"
   },
   "dimmer_2_gang": {
-   "mfr": 5,
+   "mfr": 6,
    "pid": 34,
-   "mfrSha": "ebec7ef6f0751d89",
+   "mfrSha": "c8b0b710eb0e1ca4",
    "pidSha": "2daaf0364f1df565"
   },
   "dimmer_2_gang_tuya": {
@@ -681,9 +681,9 @@
    "pidSha": "c24425335e22bfa5"
   },
   "dimmer_wall_1gang": {
-   "mfr": 37,
+   "mfr": 36,
    "pid": 20,
-   "mfrSha": "6a79ff31b8964d70",
+   "mfrSha": "6884befef9dd1244",
    "pidSha": "fafa2cc8c54068d7"
   },
   "dimmer_wall_plug": {
@@ -957,15 +957,15 @@
    "pidSha": "9ca0226f619cd8fb"
   },
   "illuminance_sensor": {
-   "mfr": 5,
+   "mfr": 8,
    "pid": 4,
-   "mfrSha": "57ca576f40de65a1",
+   "mfrSha": "fee0d6f777c69308",
    "pidSha": "09fff199fe173c21"
   },
   "ir_blaster": {
-   "mfr": 39,
+   "mfr": 40,
    "pid": 5,
-   "mfrSha": "3fd444fb4f92a77e",
+   "mfrSha": "941fcd15cc2997b4",
    "pidSha": "22e4403748643810"
   },
   "lcdtemphumidluxsensor": {
@@ -1109,7 +1109,7 @@
   "motion_sensor": {
    "mfr": 73,
    "pid": 34,
-   "mfrSha": "a6c4b5cd5ad03a9c",
+   "mfrSha": "fd6bc1b6b8a7cdc3",
    "pidSha": "a45bd40fa2655c51"
   },
   "motion_sensor_2": {
@@ -1299,9 +1299,9 @@
    "pidSha": "f194a1267ae18499"
   },
   "remote_button_wireless": {
-   "mfr": 1,
+   "mfr": 0,
    "pid": 7,
-   "mfrSha": "7ab6d2096bd151bd",
+   "mfrSha": "e3b0c44298fc1c14",
    "pidSha": "df61901cf512e0e0"
   },
   "remote_button_wireless_fingerbot": {
@@ -1767,9 +1767,9 @@
    "pidSha": "9d4e5eaba1deb655"
   },
   "smoke_sensor": {
-   "mfr": 8,
+   "mfr": 9,
    "pid": 3,
-   "mfrSha": "95504a65139e1e31",
+   "mfrSha": "87b66b5e7d62ae56",
    "pidSha": "14fd4884570649ac"
   },
   "smoke_sensor2": {
@@ -1779,9 +1779,9 @@
    "pidSha": "91d04f847d60da6b"
   },
   "smoke_sensor3": {
-   "mfr": 11,
+   "mfr": 10,
    "pid": 1,
-   "mfrSha": "fb3a43945720e94c",
+   "mfrSha": "c92bf7ca991f0880",
    "pidSha": "ffba1e7b2343f15f"
   },
   "socket_power_strip": {
@@ -1863,9 +1863,9 @@
    "pidSha": "b46b96d17990cf37"
   },
   "switch_1gang": {
-   "mfr": 380,
+   "mfr": 377,
    "pid": 38,
-   "mfrSha": "84b6a21ba33ed785",
+   "mfrSha": "23b4a4970dcfb551",
    "pidSha": "fd65b1d55ed8db6a"
   },
   "switch_2_gang": {
@@ -1881,9 +1881,9 @@
    "pidSha": "5181eca4102958ba"
   },
   "switch_2gang": {
-   "mfr": 90,
+   "mfr": 91,
    "pid": 14,
-   "mfrSha": "7c05ead64e9be8bb",
+   "mfrSha": "21af362322ec79fd",
    "pidSha": "830a6ff3ab71bd70"
   },
   "switch_3_gang": {
@@ -1905,9 +1905,9 @@
    "pidSha": "79608defafa31586"
   },
   "switch_4gang": {
-   "mfr": 79,
+   "mfr": 80,
    "pid": 40,
-   "mfrSha": "10d66d84956aa8a4",
+   "mfrSha": "15ce2dc6576a1097",
    "pidSha": "13ec4d7cc3589c0a"
   },
   "switch_dimmer_1gang": {
@@ -1983,9 +1983,9 @@
    "pidSha": "81c373714c228628"
   },
   "temphumidsensor": {
-   "mfr": 19,
+   "mfr": 20,
    "pid": 4,
-   "mfrSha": "a65df6defaa7b710",
+   "mfrSha": "f484ab44621a7b4e",
    "pidSha": "d6b9ec7c03b11cd7"
   },
   "temphumidsensor2": {
@@ -2289,9 +2289,9 @@
    "pidSha": "8218a22aa12bceb7"
   },
   "water_leak_sensor": {
-   "mfr": 26,
+   "mfr": 25,
    "pid": 21,
-   "mfrSha": "7a9efe7b53776a0f",
+   "mfrSha": "d4d4e55e4fca53b8",
    "pidSha": "ddd617471a56ff24"
   },
   "water_leak_sensor_tuya": {
