@@ -1,1 +1,187 @@
-{"note":"Shallow-history pass; full-history pass pending","unverified":[]}
+{
+ "generated": "2026-10-11",
+ "branch": "bastien-home",
+ "method": "full-history exact couple pass; Z2M/Johan attested but not placed",
+ "blocked_needs_move": [
+  [
+   "_TYZB01_4mdqxxnn",
+   "TS0222",
+   "illuminance_sensor",
+   "collision switch_1gang"
+  ],
+  [
+   "_TYZB01_m6ec2pgj",
+   "TS0222",
+   "illuminance_sensor",
+   "collision switch_1gang"
+  ],
+  [
+   "_TZ3000_j6adk9id",
+   "TS0222",
+   "illuminance_sensor",
+   "collision dimmer_wall_1gang"
+  ],
+  [
+   "_TZ3290_s6ezpa3j",
+   "TS1201",
+   "ir_blaster",
+   "collision climate_sensor"
+  ],
+  [
+   "_TZ3210_m3mxv66l",
+   "TS0202",
+   "motion_sensor",
+   "collision climate_sensor"
+  ],
+  [
+   "_TZ3210_a2erlvb8",
+   "TS0002",
+   "switch_2gang",
+   "collision switch_1gang"
+  ],
+  [
+   "_TZ3000_kjfzuycl",
+   "TS004F",
+   "smart_knob",
+   "collision smart_remote_1_button"
+  ],
+  [
+   "_TZ3000_nsa76jai",
+   "TS0004",
+   "switch_4gang",
+   "collision climate_sensor"
+  ],
+  [
+   "_TZ3000_fa9mlvja",
+   "TS0041",
+   "button_wireless_1",
+   "collision remote_button_wireless"
+  ],
+  [
+   "_TYZB01_v8gtiaed",
+   "TS110F",
+   "dimmer_2_gang",
+   "collision switch_1gang"
+  ],
+  [
+   "_TYZB01_qezuin6k",
+   "TS110F",
+   "dimmer_wall_1gang",
+   "collision dimmer_1_gang"
+  ]
+ ],
+ "z2m_attested_unplaced": {
+  "_tz3000_lbtpiody|ts0201": {
+   "ever_driver": "water_leak_sensor",
+   "z2m_files": [
+    "nous.ts"
+   ]
+  },
+  "_tze200_nkjintbl|ts0601": {
+   "ever_driver": "switch_2gang",
+   "z2m_files": [
+    "tuya.ts"
+   ]
+  },
+  "_tze200_n8dljorx|ts0601": {
+   "ever_driver": "contact_sensor",
+   "z2m_files": [
+    "hobeian.ts"
+   ]
+  },
+  "_tze200_p6fuhvez|ts0225": {
+   "ever_driver": "sensor_motion_presence",
+   "z2m_files": [
+    "hobeian.ts"
+   ]
+  },
+  "_tze200_aj0oxo1i|ts0225": {
+   "ever_driver": "sensor_motion_presence",
+   "z2m_files": [
+    "hobeian.ts"
+   ]
+  },
+  "_tze200_qcasmfan|ts0601": {
+   "ever_driver": "smoke_sensor3",
+   "z2m_files": [
+    "tuya.ts"
+   ]
+  },
+  "_tze600_ogyg1y6b|ts0105": {
+   "ever_driver": "curtain_motor",
+   "z2m_files": [
+    "tuya.ts"
+   ]
+  },
+  "_tz3000_fdxihpp7|ts000f": {
+   "ever_driver": "switch_1gang",
+   "z2m_files": [
+    "tuya.ts"
+   ]
+  }
+ },
+ "johan_only_unverified": {
+  "_tz3000_nuenzetq|ts0002": "button_wireless_2",
+  "_tz3000_peszejy7|ts0041": "smart_button_switch",
+  "_tz3000_jcspr0tp|ts0044": "button_wireless_4",
+  "_tz3000_pzui3skt|ts0041": "button_wireless_1",
+  "_tyzb02_key8kk7r|ts0043": "button_wireless_3",
+  "_tz3040_o4mkahkc|ts0202": "climate_sensor",
+  "_tz3000_85czd6fy|ts0207": "water_leak_sensor",
+  "_tz3000_kyb656no|ts0207": "water_leak_sensor",
+  "_tz3000_ww9i3e0y|ts0207": "water_leak_sensor",
+  "_tz3000_rrjr1q0u|ts0043": "button_wireless_3",
+  "_tz3000_yw5tvzsk|ts0043": "button_wireless_3",
+  "_tyzb01_bagt1e4o|ts0044": "switch_4gang",
+  "_tz3000_e98krvvk|ts0002": "switch_1gang",
+  "_tyzb01_b8cr31hp|ts0043": "button_wireless_2",
+  "_tyzb01_xiuox57i|ts0043": "button_wireless_2",
+  "_tz3000_2dlwlvex|ts0043": "button_wireless_2",
+  "_tz3000_5e5ptb24|ts0043": "button_wireless_2",
+  "_tz3000_aezbqpcu|ts0043": "button_wireless_2",
+  "_tz3000_cdamjqm9|ts0043": "button_wireless_2",
+  "_tz3000_hlwm8e96|ts0043": "button_wireless_2",
+  "_tz3000_lrgccsxm|ts0043": "button_wireless_2",
+  "_tz3000_qcdqw8nf|ts0043": "button_wireless_2",
+  "_tz3000_qewo8dlz|ts0043": "button_wireless_2",
+  "_tz3000_r0pmi2p3|ts0044": "button_wireless_2",
+  "_tz3000_thhxrept|ts0043": "button_wireless_2",
+  "_tz3000_vvlivusi|ts0043": "button_wireless_2",
+  "_tz3000_w05exif3|ts0043": "button_wireless_2",
+  "_tz3000_wyhuocal|ts0043": "button_wireless_2",
+  "_tz3000_wuep9zng|ts0207": "water_leak_sensor",
+  "_tz3000_qeuvnohg|ts0121": "smartPlug_DinRail",
+  "_tyzb01_v8gtiaed|ts1101": "dimmer_2_gang",
+  "_tyzb01_iuepbmpv|ts0201": "lcdtemphumidsensor",
+  "_tyzb01_ncutbjdi|ts0001": "switch_1gang",
+  "_tyzb01_ncutbjdi|ts000f": "switch_1gang",
+  "_tyzb01_ncutbjdi|ts0011": "switch_1gang",
+  "_tyzb01_aneiicmq|ts0001": "switch_1gang",
+  "_tyzb01_aneiicmq|ts000f": "switch_1gang",
+  "_tyzb01_aneiicmq|ts0011": "switch_1gang",
+  "_tz3210_iystcadi|ts0505a": "rgb_led_light_bar",
+  "_tz3210_zxbtub8r|ts110f": "dimmer_1_gang",
+  "_tz3210_zxbtub8r|ts0052": "dimmer_1_gang",
+  "_tz3000_saiqcn0y|ts0601": "climate_sensor",
+  "_tz3000_xr3htd96|ts0601": "climate_sensor",
+  "_tz3000_c8zfad4a|ts0203": "climate_sensor",
+  "_tyzb01_6g8b7at8|ts0042": "button_wireless_2",
+  "_tyzb01_vzrytttn|ts0042": "button_wireless_2",
+  "_tz3000_dku2cfsc|ts0044": "wall_switch_4_gang",
+  "_tz3000_fjt5218m|ts0044": "wall_switch_4_gang",
+  "_tz3000_iszegwpd|ts0046": "button_wireless_6",
+  "_tz3000_kstbkt6a|ts0207": "water_leak_sensor",
+  "_tz3000_mugyhz0q|ts0207": "water_leak_sensor",
+  "_tz3000_ocjlo4ea|ts0207": "water_leak_sensor",
+  "_tz3000_6oabgtzv|ts0207": "water_detector",
+  "_tz3000_uaa99arv|ts0044": "remote_button_wireless_wall",
+  "_tz3000_s8r1qoyq|ts0042": "air_purifier_motion",
+  "_tz3000_18ejxno0|ts0042": "scene_switch_wall",
+  "_tz3000_zl1kmjqx|ts0201": "climate_sensor",
+  "_tz3000_0s9gukzt|ts0207": "water_leak_sensor",
+  "_tz3000_awvmkayh|ts0207": "water_leak_sensor",
+  "_tz3000_t6jriawg|ts0207": "water_leak_sensor",
+  "_tz3000_e98krvvk|ts0042": "air_purifier_motion",
+  "_tz3210_cehuw1lw|ts0121": "plug_energy_monitor"
+ }
+}
