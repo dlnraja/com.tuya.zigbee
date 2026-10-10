@@ -271,11 +271,12 @@ jobs:
         # workflow_dispatch (that caused patch spam on socket hang up).
         if: env.publish_recovery_requires_bump == 'true'
         env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
           BUMP_LEVEL: patch
           HOMEY_CHANGELOG: ${{ env.publish_recovery_changelog || 'Stability improvements and Homey test publication retry.' }}
         run: |
           echo "Recovery publish reason: ${publish_recovery_reason:-manual workflow dispatch}"
-          node .github/scripts/bump-homey-version.js
+          node .github/scripts/athom-version-floor.js --apply && node .github/scripts/bump-homey-version.js && node .github/scripts/athom-version-floor.js --gate
 
       - name: 🔐 Redact dashboard diagnostics before committing
         if: always()
