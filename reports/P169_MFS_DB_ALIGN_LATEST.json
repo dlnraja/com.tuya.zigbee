@@ -1,13 +1,30 @@
 {
-  "timestamp": "2026-10-10T12:32:14.121Z",
+  "timestamp": "2026-10-10T22:20:00.986Z",
   "gate": "align-mfs-db-intelligent",
   "apply": false,
-  "check": false,
-  "changeCount": 0,
+  "check": true,
+  "changeCount": 2,
   "skippedCount": 62,
   "highSeverityCount": 0,
-  "byAction": {},
-  "changes": [],
+  "byAction": {
+    "compose_exclusive": 2
+  },
+  "changes": [
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_7Y90PANY",
+      "from": "climate_sensor",
+      "to": "illuminance_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_SKUEEKG3",
+      "from": "wall_switch_1gang_1way",
+      "to": "switch_1gang"
+    }
+  ],
   "skipped": [
     {
       "reason": "registry_driver_missing",
