@@ -66,3 +66,15 @@ dir are NOT comparable):
 Open: the trigger is server-side and specific to driver-set changes; our pipeline and payload are clean.
 Next safe probes (bisect branch only): release whd02 with `pair` views copied from a passing socket
 driver; and a payload that adds a new driver id cloned 1:1 from a passing driver (rename only).
+
+## Correction 22:45 Paris — always read stateMeta
+- #3490 v9.0.1371 and #3492 v9.0.1373 = `processing_failed | stateMeta=socket hang up` (transient
+  Athom transport), NOT AggregateError. Retry, never bisect on them.
+- R1 #3491 v9.0.1372 (exact #3488 content) → Test. R3 #3493 v9.0.1374 (#3488 + VicHY radar write-once
+  only) → Test. The radar change is safe.
+- Real AggregateError builds so far: 1331..1361 tips with spi, J3/J4/J5, #3481, #3483 (deprecated
+  wall_remote_4_gang), K3 #3489 (whd02 only).
+- History (git SSOT): 1330 was accepted and contained ~12 drivers added Oct 2–4 (sound_sensor_tuya,
+  light_cct_ts0502b, light_rgbcct_ts0505b, light_dimmable_ts0501a, mc101z_pwm_dimmer, bulb_zbeacon_ts0505b,
+  switch_zbeacon_ts0001, temphumidsensor_zcl_th01/ts0601, sensor_ias_zonetype_ewelink,
+  panel_switch_cover_tuya, switch_presence_tuya). Adding drivers worked up to 1330.
