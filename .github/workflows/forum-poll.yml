@@ -255,6 +255,30 @@ jobs:
           fi
 
       # P2326: harvest Homey diag UUIDs from media/actionable reports; optional Athom fetch
+      # P2810: free image ingestion — new posts first, then backfill from post 1. Tesseract only,
+      # Discourse CDN images only, structured leads (no post/OCR text) in data/leads/forum-image-ocr.json.
+      - name: 🖼️ Forum screenshot OCR → leads (free, no AI)
+        id: forum_ocr
+        if: vars.FORUM_OCR_DISABLED != 'true'
+        continue-on-error: true
+        timeout-minutes: 12
+        run: |
+          sudo apt-get install -y -qq --no-install-recommends tesseract-ocr >/dev/null 2>&1 || \
+            { sudo apt-get update -qq >/dev/null && sudo apt-get install -y -qq --no-install-recommends tesseract-ocr >/dev/null; } || true
+          node scripts/scanners/forum-image-ocr.js --max-images=${{ vars.FORUM_OCR_MAX_IMAGES || '30' }} --max-posts=120
+
+      - name: Commit forum OCR leads (gated)
+        if: steps.forum_ocr.outcome == 'success'
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node scripts/ci/safe-auto-commit.js --id=forum-image-ocr \
+            --message="chore(leads): forum screenshot OCR leads" \
+            --paths="data/leads/forum-image-ocr.json"
+
       - name: 🩺 Inbox diag UUID harvest (P2326 SHADOW)
         if: always()
         continue-on-error: true
