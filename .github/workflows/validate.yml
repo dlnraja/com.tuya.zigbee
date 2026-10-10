@@ -116,18 +116,24 @@ jobs:
           node .github/scripts/fp-collision-check.js --baseline .github/fingerprint-collision-baseline.json
 
       - name: 🛡️ Anti-bot regression gate
+        # WHY(gate-dedupe 2026-10-10): pr-gate owns this gate on pull requests.
+        if: github.event_name != 'pull_request'
         run: node tools/ci/anti-bot-regression-gate.js
 
       - name: 🛡️ Spec 002 native-matrix gate (mandatory non-native + dual couples)
         run: node scripts/gates/native-matrix-gate.js
 
       - name: 🛡️ P2138 sacred-couple matrix gate
+        # WHY(gate-dedupe 2026-10-10): pr-gate owns this gate on pull requests.
+        if: github.event_name != 'pull_request'
         run: node tools/ci/p2138-sacred-couple-matrix-gate.js
 
       - name: 🛡️ P2448/P2449 knob + declared flow wiring
         run: npm run check:p244x
 
       - name: 🛡️ Flow titleFormatted [[args]] gate (P2749f)
+        # WHY(gate-dedupe 2026-10-10): pr-gate owns this gate on pull requests.
+        if: github.event_name != 'pull_request'
         run: npm run check:flow-titleformatted
 
       - name: 🛡️ P246x anti-regression family (Moes EF00 / IAS / battery)

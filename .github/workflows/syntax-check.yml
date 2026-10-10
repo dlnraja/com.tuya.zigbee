@@ -223,15 +223,21 @@ jobs:
         run: node tools/ci/l14-capability-writers-gate.js
 
       - name: Anti-bot regression gate (P127/P2138)
+        # WHY(gate-dedupe 2026-10-10): unified-ci owns this gate on master push/PR; run here for stable-v5 only.
+        if: github.ref != 'refs/heads/master' && github.base_ref != 'master'
         run: node tools/ci/anti-bot-regression-gate.js
 
       - name: P2138 sacred-couple matrix gate
+        # WHY(gate-dedupe 2026-10-10): unified-ci owns this gate on master push/PR; run here for stable-v5 only.
+        if: github.ref != 'refs/heads/master' && github.base_ref != 'master'
         run: node tools/ci/p2138-sacred-couple-matrix-gate.js
 
       - name: P217 fork harvest sacred-couple gate
         run: node tools/ci/p217-fork-harvest-gate.js
 
       - name: P214 intelligent ZCL/EF00 adaptation gate
+        # WHY(gate-dedupe 2026-10-10): unified-ci owns this gate on master push/PR; run here for stable-v5 only.
+        if: github.ref != 'refs/heads/master' && github.base_ref != 'master'
         run: node tools/ci/p214-intelligent-protocol-gate.js
 
       - name: P216 ZCL battery half-percent gate
