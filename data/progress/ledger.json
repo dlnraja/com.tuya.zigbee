@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-10T07:28:11.451Z",
+ "updated": "2026-10-10T07:28:45.642Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -11673,7 +11673,499 @@
    "note": "diag-only",
    "by": "advance-sweep"
   },
+  "forum:140352#2079": {
+   "status": "done",
+   "date": "2026-10-10",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2080": {
+   "status": "done",
+   "date": "2026-10-10",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2081": {
+   "status": "done",
+   "date": "2026-10-10",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2082": {
+   "status": "done",
+   "date": "2026-10-10",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2088": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2089": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2091": {
+   "status": "done",
+   "date": "2026-10-10",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2092": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2093": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2095": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2097": {
+   "status": "done",
+   "date": "2026-10-10",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2098": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2099": {
+   "status": "done",
+   "date": "2026-10-10",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2100": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2101": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2102": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2103": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2104": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2105": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2106": {
+   "status": "done",
+   "date": "2026-10-10",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2107": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2108": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2110": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2111": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2112": {
+   "status": "done",
+   "date": "2026-10-10",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2113": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2114": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2115": {
+   "status": "done",
+   "date": "2026-10-10",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2118": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2120": {
+   "status": "done",
+   "date": "2026-10-10",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2121": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2129": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2130": {
+   "status": "done",
+   "date": "2026-10-10",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2131": {
+   "status": "done",
+   "date": "2026-10-10",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2132": {
+   "status": "done",
+   "date": "2026-10-10",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2133": {
+   "status": "done",
+   "date": "2026-10-10",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2134": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2137": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2138": {
+   "status": "done",
+   "date": "2026-10-10",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2164": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2167": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2173": {
+   "status": "done",
+   "date": "2026-10-10",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2175": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
   "forum:140352#218": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2183": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2184": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2186": {
+   "status": "done",
+   "date": "2026-10-10",
+   "note": "mfr-known",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2188": {
+   "status": "done",
+   "date": "2026-10-10",
+   "note": "mfr-known",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2189": {
+   "status": "done",
+   "date": "2026-10-10",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2190": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2191": {
+   "status": "done",
+   "date": "2026-10-10",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2193": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2199": {
+   "status": "done",
+   "date": "2026-10-10",
+   "note": "mfr-known",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2202": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2203": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2204": {
+   "status": "done",
+   "date": "2026-10-10",
+   "note": "mfr-known",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2206": {
+   "status": "done",
+   "date": "2026-10-10",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2207": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2208": {
+   "status": "done",
+   "date": "2026-10-10",
+   "note": "mfr-known",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2209": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2213": {
+   "status": "done",
+   "date": "2026-10-10",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2218": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2220": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2221": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2224": {
+   "status": "done",
+   "date": "2026-10-10",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2227": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2228": {
+   "status": "done",
+   "date": "2026-10-10",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2229": {
+   "status": "done",
+   "date": "2026-10-10",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2230": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2233": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2234": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2235": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2237": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2238": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2239": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2240": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2244": {
+   "status": "done",
+   "date": "2026-10-10",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2245": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2247": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2253": {
+   "status": "done",
+   "date": "2026-10-10",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2254": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2258": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2259": {
    "status": "deferred",
    "date": "2026-10-10",
    "note": "diag-only",
@@ -13917,7 +14409,79 @@
    "note": "request-no-identity",
    "by": "advance-sweep"
   },
+  "forum:21313#2102": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:21313#2121": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:21313#2157": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:21313#2229": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:21313#2253": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:21313#2274": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:21313#2281": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:21313#2285": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:21313#2290": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:21313#2365": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:21313#2394": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
   "forum:21313#244": {
+   "status": "deferred",
+   "date": "2026-10-10",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:21313#2452": {
    "status": "deferred",
    "date": "2026-10-10",
    "note": "request-no-identity",
