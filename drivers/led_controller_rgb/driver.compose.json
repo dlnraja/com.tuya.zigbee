@@ -6,6 +6,7 @@
     "de": "RGB LED Steuerung"
   },
   "class": "light",
+  "energy": { "approximation": { "usageOn": 15, "usageOff": 0.5 } },
   "capabilities": [
     "onoff",
     "dim",

@@ -37,7 +37,31 @@ class SmartScenePanelDevice extends TuyaZigbeeDevice {
       }
     }
 
+    // Main "All switches" onoff (Google/Alexa/Matter need a real onoff; sub-capabilities get no system cards).
+    if (!this.hasCapability('onoff')) { await this.addCapability('onoff').catch(() => {}); }
+    if (this.hasCapability('onoff')) {
+      this.registerCapabilityListener('onoff', async (value) => {
+        for (let g = 1; g <= 4; g++) {
+          const cap = `onoff.gang${g}`;
+          if (!this.hasCapability(cap)) {continue;}
+          await this.sendDP(23 + g, 1, value ? 1 : 0);
+          await this.safeSetCapabilityValue(cap, !!value).catch(() => {});
+        }
+      });
+    }
+
     this._setupDPReporting();
+  }
+
+  _syncMainOnoff(changedGang, changedValue) {
+    if (!this.hasCapability('onoff')) {return;}
+    let any = false;
+    for (let g = 1; g <= 4; g++) {
+      const cap = `onoff.gang${g}`;
+      if (!this.hasCapability(cap)) {continue;}
+      if (g === changedGang ? changedValue : this.getCapabilityValue(cap) === true) {any = true;}
+    }
+    this.safeSetCapabilityValue('onoff', any).catch(() => {});
   }
 
   _setupDPReporting() {
@@ -53,6 +77,7 @@ class SmartScenePanelDevice extends TuyaZigbeeDevice {
       if (this.hasCapability(cap)) {
         this.safeSetCapabilityValue(cap, !!value).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       }
+      this._syncMainOnoff(g, !!value);
       // IDs hachés (sha1) définis dans driver.flow.compose.json
       const switchCardIds = {
         1: 'sensor_climate_sensor_smart_smart_scene_pane_61d9d',
