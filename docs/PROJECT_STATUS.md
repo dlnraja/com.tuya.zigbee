@@ -1,24 +1,23 @@
 # Project Status
 
-> Auto-generated on 2026-10-04
+> Auto-generated on 2026-10-10
 
 ## Overview
 
 | Metric | Value |
 |--------|-------|
 | Version | v9.0.1331 |
-| Drivers | 447 |
-| Fingerprints | 19,024 |
-| Fingerprints | 19,033 |
-| Last Updated | 2026-10-04 |
+| Drivers | 448 |
+| Fingerprints | 19,219 |
+| Last Updated | 2026-10-10 |
 
 ## Drivers by Category
 
 | Category | Count |
 |----------|-------|
-| socket | 119 |
+| socket | 117 |
 | sensor | 112 |
-| light | 66 |
+| light | 69 |
 | other | 31 |
 | button | 26 |
 | thermostat | 26 |
