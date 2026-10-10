@@ -1,6 +1,6 @@
 # Homey tokens and secrets upkeep
 
-Workflow: `.github/workflows/homey-secrets-health.yml` (weekly Monday 05:17 UTC + manual). It runs no AI, prints no values, and opens no issue: an invalid token fails the run and is recorded in the `homey-secrets-health` artifact (`data/status/homey-secrets-health.json`).
+Workflow: `.github/workflows/homey-secrets-health.yml` (weekly Monday 04:41 UTC + manual). It runs no AI, prints no values, and opens no issue: an invalid token fails the run and is recorded in the `homey-secrets-health` artifact (`data/status/homey-secrets-health.json`).
 
 | Secret | Kind | Used by | Renewal |
 |---|---|---|---|
