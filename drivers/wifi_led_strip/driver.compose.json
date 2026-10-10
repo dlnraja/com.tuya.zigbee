@@ -7,7 +7,12 @@
     "es": "Tira LED WiFi RGBCW (Tuya Local)"
   },
   "class": "light",
-  "energy": { "approximation": { "usageOn": 15, "usageOff": 0.5 } },
+  "energy": {
+    "approximation": {
+      "usageOn": 15,
+      "usageOff": 0.5
+    }
+  },
   "capabilities": [
     "onoff",
     "dim",
@@ -190,6 +195,15 @@
         "fr": "Générer rapport de support (issue GitHub)",
         "nl": "Supportrapport genereren (GitHub issue)",
         "de": "Supportbericht erstellen (GitHub Issue)"
+      }
+    },
+    {
+      "id": "zigbee_rebind",
+      "title": {
+        "en": "Re-bind & reconfigure reporting",
+        "fr": "Re-lier et reconfigurer les rapports",
+        "nl": "Opnieuw binden en rapportage instellen",
+        "de": "Neu binden und Reporting konfigurieren"
       }
     }
   ],
