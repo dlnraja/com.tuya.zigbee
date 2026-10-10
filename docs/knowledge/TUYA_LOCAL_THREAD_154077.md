@@ -66,3 +66,13 @@ DP/device-id extraction (needs per-device cross-check against tuya-local yaml), 
   no new product id or DP mapping beyond the text posts. Category codes seen: cwwsq (feeder),
   cl (curtain), qccdz (EV), wsdcg-like TH sensors.
 - #435 (echo ≠ device reports DP): N/A for us — no such fallback exists.
+
+## P2705 — DP17 energy auto-detection (decision 2026-10-11, master only during soak)
+- `lib/energy/WifiDp17Energy.js` (pure) + `lib/tuya-local/Dp17EnergyHandler.js`; used by `wifi_plug`, `wifi_power_strip`.
+- Auto: meter left untouched while ≥4 reports are observed; votes from raw drops (→ incremental),
+  DP19 power×time ≈ raw (→ incremental) or ≈ Δraw (→ cumulative); fallback on monotonicity after 12.
+- Incremental: kWh = raw/1000 added to a total starting from the EXISTING meter_power (reports seen
+  during detection counted once). Cumulative: legacy smartParse value, never allowed to go down
+  (device resets absorbed as offset). Every write is monotonic.
+- Persisted per device in store `dp17_energy`; setting `dp17_energy_mode` auto/incremental/cumulative
+  (change → restart from current meter); detection logged `[DP17] … detected as …`.
