@@ -39,10 +39,30 @@ Other peers (Xiaomi, Sonoff, Hue) raw app.json not fetchable at HEAD (built file
 - Held drivers have correct images, ids < 41 chars (max id length 41), class/capabilities valid.
 
 ## Proposed solutions (not applied — need decision)
-1. Ask Athom support (email, Athom-only) for the server log of #3483/#3481 with the bisect table above.
+1. (No Athom contact — user rule.) Keep bisecting from our side only.
 2. Change the driver set in one isolated build only (one new driver per build), never mixed with content.
 3. Shrink manifest: move the bulk of manufacturerName lists out of app.json is NOT possible for
    pairing (Homey matches on manifest), but case-variant duplicates (~3× per FP) could be removed
    if Homey matching is case-insensitive — must be verified first, else it breaks pairing.
 4. Split into satellite apps by family (lights / sensors / switches) — large migration, re-pair cost.
 5. Keep runtime data (fingerprints DB, dp registry) in lazy-loaded data files, never in app.json.
+
+## Update 21:50 Paris — K3 and payload forensics
+| K3 #3489 v9.0.1370 | master #3488 content + switch_module_whd02 released only | AggregateError |
+Confirms: one new driver alone, on current master, fails. Same for J4/J5.
+
+Local reproduction of the publish payload (scripts/prepare-publish.js, auto-publish env
+14000/1500/2, fresh .homeybuild each run — the script mutates .homeybuild, so reruns on the same
+dir are NOT comparable):
+- base (both held): 347 payload drivers (99 synthetic pruned), 13 987 combos.
+- whd02+spi released: only those 2 drivers added, 13 995 combos; no other driver changes.
+- wall_remote deprecated: only that driver's `deprecated` flag changes; combos identical.
+- So no budget redistribution, no duplicate couple (new couples are unique), no image/format issue
+  (all 902 PNG 8-bit RGBA non-interlaced, sizes 75/500), and latest athombv/node-homey-lib validates
+  every variant at level `publish` (only `verified` complains: ir_remote has no platforms — not our level).
+- CI totals: 13 995 combos / 3.84 MB both on passing and failing builds → not a size or combo cap.
+- History: source driver count rose 434 → 446 between v9.0.1317 and v9.0.1330 (Oct 2–4). CI logs of
+  that period have expired, so whether each of those builds reached Test is not provable from CI.
+Open: the trigger is server-side and specific to driver-set changes; our pipeline and payload are clean.
+Next safe probes (bisect branch only): release whd02 with `pair` views copied from a passing socket
+driver; and a payload that adds a new driver id cloned 1:1 from a passing driver (rename only).
