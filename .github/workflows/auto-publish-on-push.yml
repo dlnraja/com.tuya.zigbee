@@ -23,9 +23,14 @@ on:
         description: 'Force Athom createBuild even if soft-expect would skip (P139 one-shot)'
         type: boolean
         default: false
+      transient_retry:
+        description: 'Internal: set by the transient Athom retry (disables a second retry)'
+        type: string
+        default: 'false'
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   # P139/P2696: serialize ALL Athom uploads across master+stable+bastien.
@@ -478,6 +483,25 @@ jobs:
           echo "::error::Athom processing_failed for v$HOMEY_EXPECTED_VERSION (build #${BID:-see list above}); not re-uploading the same version"
           echo "### Test NOT updated: Athom processing_failed for v$HOMEY_EXPECTED_VERSION (build #${BID:-?})" >> "$GITHUB_STEP_SUMMARY"
           exit 1
+
+      # WHY(2026-10-11): Auto-Publish on Push had no transient retry (only publish.yml did). socket hang up /
+      # "specified key does not exist" -> ONE re-dispatch, which bumps to a new version (never the same).
+      # AggregateError is a content failure: never retried. A retry run never retries again (P139).
+      - name: Transient Athom failure - single retry with a new version
+        if: always() && steps.pub.outcome == 'success'
+        continue-on-error: true
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          TRANSIENT_RETRY: ${{ github.event.inputs.transient_retry || 'false' }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          sleep 90
+          node scripts/ci/homey-build-status.js com.dlnraja.tuya.zigbee >/dev/null 2>&1 || true
+          out=$(node .github/scripts/transient-publish-retry.js) || true
+          echo "$out"; echo "$out" >> "$GITHUB_STEP_SUMMARY"
+          if printf '%s' "$out" | grep -q '^\[transient-retry\] RETRY'; then
+            gh workflow run auto-publish-on-push.yml --ref "${GITHUB_REF_NAME}" -f transient_retry=true
+          fi
 
       - name: Install Puppeteer (draft → test promotion)
         if: steps.check_pat.outputs.has_pat == 'true'

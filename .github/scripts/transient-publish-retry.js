@@ -13,7 +13,9 @@ function decide({ version, builds, alreadyRetried }) {
   const b = (builds || []).find((x) => String(x && x.version) === String(version));
   if (!b) return { retry: false, reason: `no Athom build for v${version}` };
   const state = String(b.state || '');
-  const meta = typeof b.stateMeta === 'string' ? b.stateMeta : JSON.stringify(b.stateMeta || b.failureDetail || '');
+  // homey-build-status.js rows carry Athom error fields under err/reason/message/log/fail keys.
+  const extra = Object.entries(b).filter(([k, v]) => v && /err|reason|message|log|fail|meta/i.test(k)).map(([, v]) => (typeof v === 'string' ? v : JSON.stringify(v))).join(' ');
+  const meta = typeof b.stateMeta === 'string' ? b.stateMeta : JSON.stringify(b.stateMeta || b.failureDetail || '') + ' ' + extra;
   if (state !== 'processing_failed') return { retry: false, reason: `v${version} state ${state}` };
   if (/AggregateError/i.test(meta)) return { retry: false, reason: 'AggregateError = content failure, no retry' };
   if (!TRANSIENT_RE.test(meta)) return { retry: false, reason: `unknown failure: ${meta.slice(0, 120)}` };
@@ -24,7 +26,13 @@ if (require.main === module) {
   const root = process.cwd();
   const version = JSON.parse(fs.readFileSync(path.join(root, 'app.json'), 'utf8')).version;
   let builds = [];
+  // Prefer the fresh read-only Athom snapshot written by scripts/ci/homey-build-status.js in this run.
   try {
+    const appId = JSON.parse(fs.readFileSync(path.join(root, 'app.json'), 'utf8')).id;
+    const fresh = JSON.parse(fs.readFileSync(path.join(root, 'data', 'status', `homey-build-status-${appId}.json`), 'utf8'));
+    if (Array.isArray(fresh.builds) && fresh.builds.length) builds = fresh.builds;
+  } catch (_e) { /* fall back to dashboard report */ }
+  if (!builds.length) try {
     const r = JSON.parse(fs.readFileSync(path.join(root, '.github/state/dashboard-monitor-report.json'), 'utf8'));
     builds = r.latestBuilds || (r.latestBuild ? [r.latestBuild] : []);
   } catch (_e) { /* no report */ }
