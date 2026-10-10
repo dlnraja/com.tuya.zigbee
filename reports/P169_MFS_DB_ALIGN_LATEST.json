@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-10-10T22:20:00.986Z",
+  "timestamp": "2026-10-10T23:18:23.177Z",
   "gate": "align-mfs-db-intelligent",
   "apply": false,
   "check": true,
-  "changeCount": 2,
+  "changeCount": 5,
   "skippedCount": 62,
   "highSeverityCount": 0,
   "byAction": {
-    "compose_exclusive": 2
+    "compose_exclusive": 5
   },
   "changes": [
     {
@@ -16,6 +16,27 @@
       "mfr": "_TZ3000_7Y90PANY",
       "from": "climate_sensor",
       "to": "illuminance_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE284_VES1YCWX",
+      "from": "curtain_motor",
+      "to": "energy_meter_3phase"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tze204_ves1ycwx",
+      "from": "curtain_motor",
+      "to": "energy_meter_3phase"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tze200_ves1ycwx",
+      "from": "curtain_motor",
+      "to": "energy_meter_3phase"
     },
     {
       "severity": "medium",

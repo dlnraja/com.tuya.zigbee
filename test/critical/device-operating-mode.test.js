@@ -69,11 +69,12 @@ describe('DeviceOperatingMode', () => {
     assert.equal(classifyOperatingFamily(d).writeSceneAttr, false);
   });
 
-  it('smart knob stays in command/dimmer', () => {
+  // WHY(P2448): known rotary mfr (qja6nq5z) -> command/dimmer; writeSceneAttr true restores 0x8004=0 (aligned with master 1d2d2caf0f).
+  it('known rotary mfr on smart_knob stays command/dimmer', () => {
     const d = mockDevice({ productId: 'TS004F', driverId: 'smart_knob', mfr: '_TZ3000_qja6nq5z' });
     const f = classifyOperatingFamily(d);
     assert.equal(f.family, 'knob');
-    assert.equal(f.writeSceneAttr, false);
+    assert.equal(f.writeSceneAttr, true);
     assert.equal(f.defaultMode, 'dimmer');
   });
 
