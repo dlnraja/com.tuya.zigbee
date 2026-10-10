@@ -17,8 +17,14 @@ on:
         type: string
         required: false
         description: "Custom changelog (leave empty to auto-extract from .homeychangelog.json)"
+      transient_retry:
+        type: string
+        required: false
+        default: 'false'
+        description: "Internal: set by the one-shot transient retry (socket hang up / S3 key missing)"
 permissions:
   contents: write
+  actions: write
 concurrency:
   # P139: queue publishes; do not cancel mid Athom processing
   group: publish
@@ -367,6 +373,21 @@ jobs:
           run_diag 90 node scripts/automation/dashboard-monitor.js --latest --json
           run_diag 60 node .github/scripts/privacy-redactor.js diagnostics .github/state/diagnostics-report.json .github/state/diagnostics-crossref.yml .github/state/homey-device-report.json .github/state/dashboard-monitor-report.json screenshots/full-diag-report.json
           run_diag 60 node scripts/ci/diagnostic-history-gate.js --json
+
+      # WHY(2026-10-10): socket hang up / "specified key does not exist" are Athom transport failures.
+      # One bumped retry (new version, never the same), never for AggregateError, never from a retry run.
+      - name: Transient Athom failure - single retry with a new version
+        if: always() && steps.pub.outcome == 'success'
+        continue-on-error: true
+        env:
+          TRANSIENT_RETRY: ${{ github.event.inputs.transient_retry || 'false' }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          out=$(node .github/scripts/transient-publish-retry.js) || true
+          echo "$out"
+          if printf '%s' "$out" | grep -q '^\[transient-retry\] RETRY'; then
+            gh workflow run publish.yml --ref "${GITHUB_REF_NAME}" -f transient_retry=true
+          fi
 
       - name: Upload promote screenshots
         if: always()
