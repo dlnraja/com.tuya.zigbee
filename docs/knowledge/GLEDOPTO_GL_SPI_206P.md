@@ -30,3 +30,16 @@ a) carte flow morte / titleFormatted ; b) doublon de couples avec switch_1gang ;
 
 ## Propositions additives
 Trame unique, v = luminosité courante, hue %360 ; light_temperature + light_mode ; onoff.setOnDim ; empreinte _TZE28C ; réglages chip_type/ordre/pixels ; actions scène/musique.
+
+## Autres sources (lues le 10/10/2026)
+- **ZHA** : pas de quirk officiel dans zigpy/zha-device-handlers. Quirk communautaire WOOWTECH/Woow_ha_zha_quirk_component (`ts0601_light_TZE284_gt5al3bl.py`, WOOWTECH) : expose une seule lumière HS + température + effets ; **44 scènes** natives (DP51, relevées depuis l'app Smart Life, les 16 de Z2M en sont un sous-ensemble) ; l'allumage (DP1) doit partir AVANT DP2=scène + DP51 ; les rapports entrants des DP 1/2/3/4/51/61 doivent être routés à la main.
+- **SmartThings** : wonjj6768/smartthings-zigbee-edge-drivers (`wave15_gledopto.lua`) : **DP61 est en écriture seule** (une demande d'état le renvoie sans valeur) → mémoriser teinte/saturation localement et publier l'état de façon optimiste ; **DP4 n'est appliqué qu'en mode blanc** → envoyer DP2=0 avant DP4.
+- **Autres hubs** : homed-service-zigbee (u236, `ts0601.json`), Z2S_Library (lsroka76, ESP32 Zigbee) et zhac-docs listent les deux couples avec la même grille de DP.
+- **deCONZ, Hubitat** : rien trouvé pour ce modèle (recherche de code GitHub).
+- **App Gledopto Homey** (motor4all/com.gledopto, dernier commit 2018) : 3 drivers ZLL classiques (rgb, ww, wwcw), aucun SPI/TS0601.
+- **App de Johan** (JohanBendz/com.tuya.zigbee) : drivers rgb_led_strip/_controller génériques, aucun des deux couples.
+
+## Ajouts aux propositions
+- Mémoriser hue/sat et mettre à jour les capabilities sans attendre de retour (DP61 muet).
+- DP2=0 avant DP4 pour la température ; DP1 avant les scènes.
+- Scènes via DP51 (16 de Z2M, 44 possibles) en action de flow.
