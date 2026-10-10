@@ -184,6 +184,12 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
 
   async onInit() {
     this.homey.__tuyaApp = this;
+    // Homey memwarn: run registered cache cleaners before Homey kills the app (additive).
+    try {
+      const MemwarnGuard = require('./lib/utils/MemwarnGuard');
+      this.memwarnGuard = new MemwarnGuard({ log: (...a) => this.log(...a), error: (...a) => this.error(...a) });
+      this.memwarnGuard.attach(this.homey);
+    } catch (_) { /* best-effort */ }
     try {
       this.initializeSettings();
     } catch (err) {
