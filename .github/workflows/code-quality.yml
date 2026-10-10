@@ -131,10 +131,14 @@ jobs:
       - name: Anti-bot + P2138 sacred-couple matrix + P244x flow/knob
         id: sacred
         run: |
-          node tools/ci/anti-bot-regression-gate.js
-          node tools/ci/p2138-sacred-couple-matrix-gate.js
+          # WHY(gate-dedupe 2026-10-10): on push/PR these three gates are owned by unified-ci
+          # (master), syntax-check (stable-v5) and pr-gate (PRs); keep them here for the weekly run.
+          if [ "${{ github.event_name }}" = "schedule" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            node tools/ci/anti-bot-regression-gate.js
+            node tools/ci/p2138-sacred-couple-matrix-gate.js
+            npm run check:flow-titleformatted
+          fi
           npm run check:p244x
-          npm run check:flow-titleformatted
           npm run check:p246x
           npm run check:p248x
           npm run check:p249x
