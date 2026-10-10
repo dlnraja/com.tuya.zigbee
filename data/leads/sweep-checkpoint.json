@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-10T07:11:06.598Z",
+  "updated": "2026-10-10T07:11:48.187Z",
   "threads": {
     "21313": {
       "lastPost": 2819,
@@ -3807,11 +3807,874 @@
       "pids": [
         "TS0201"
       ]
+    },
+    {
+      "id": "johan-issue:241",
+      "status": "already-fixed",
+      "note": "merged PR; identities covered (_TZE200_bjawzodf)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/pull/241"
+      ],
+      "author": "cor73x",
+      "closedAt": "2022-12-01T07:42:21Z",
+      "comments": 1,
+      "mfrs": [
+        "_TZE200_bjawzodf"
+      ],
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "id": "johan-issue:242",
+      "status": "needs-info",
+      "note": "open issue; diag-only; research or diag needed",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/242"
+      ],
+      "author": "Marjet46"
+    },
+    {
+      "id": "johan-issue:243",
+      "status": "no-action",
+      "note": "closed issue; no-identity",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/243"
+      ],
+      "author": "Peterm63",
+      "closedAt": "2022-12-06T23:39:40Z",
+      "comments": 1
+    },
+    {
+      "id": "johan-issue:244",
+      "status": "already-fixed",
+      "note": "merged PR; identities covered (_TZ3000_amdymr7l)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/pull/244"
+      ],
+      "author": "cor73x",
+      "closedAt": "2022-12-01T07:34:59Z",
+      "comments": 8,
+      "mfrs": [
+        "_TZ3000_amdymr7l"
+      ],
+      "pids": [
+        "TS011F"
+      ]
+    },
+    {
+      "id": "johan-issue:245",
+      "status": "no-action",
+      "note": "closed issue; pid-only",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/245"
+      ],
+      "author": "Sjalabert",
+      "closedAt": "2022-12-13T14:39:43Z",
+      "comments": 2,
+      "pids": [
+        "TS0201"
+      ]
+    },
+    {
+      "id": "johan-issue:246",
+      "status": "needs-info",
+      "note": "closed issue; diag-only; research or diag needed",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/246"
+      ],
+      "author": "Tonlaar",
+      "closedAt": "2022-12-01T15:58:00Z",
+      "comments": 3
+    },
+    {
+      "id": "johan-issue:247",
+      "status": "no-action",
+      "note": "closed issue; no-identity",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/247"
+      ],
+      "author": "AlRei263",
+      "closedAt": "2022-12-06T23:38:17Z",
+      "comments": 2
+    },
+    {
+      "id": "johan-issue:248",
+      "status": "no-action",
+      "note": "closed issue; no-identity",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/248"
+      ],
+      "author": "CGEUREVIA",
+      "closedAt": "2024-09-11T17:24:29Z",
+      "comments": 2
+    },
+    {
+      "id": "johan-issue:249",
+      "status": "already-fixed",
+      "note": "closed issue; identities covered (_TZ3210_3mpwqzuu)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/249"
+      ],
+      "author": "JohanBendz",
+      "closedAt": "2024-09-11T20:34:24Z",
+      "mfrs": [
+        "_TZ3210_3mpwqzuu"
+      ],
+      "pids": [
+        "TS110E"
+      ]
+    },
+    {
+      "id": "johan-issue:250",
+      "status": "already-fixed",
+      "note": "closed issue; identities covered (_TZE200_3p5ydos3)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/250"
+      ],
+      "author": "JohanBendz",
+      "closedAt": "2024-09-11T20:42:44Z",
+      "comments": 5,
+      "mfrs": [
+        "_TZE200_3p5ydos3"
+      ],
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "id": "johan-issue:251",
+      "status": "needs-info",
+      "note": "closed issue; request-no-identity; research or diag needed",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/251"
+      ],
+      "author": "Harmbe",
+      "closedAt": "2023-02-26T18:32:53Z",
+      "comments": 1
+    },
+    {
+      "id": "johan-issue:252",
+      "status": "needs-info",
+      "note": "closed issue; request-no-identity; research or diag needed",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/252"
+      ],
+      "author": "marko0703",
+      "closedAt": "2023-02-26T18:33:02Z",
+      "comments": 1
+    },
+    {
+      "id": "johan-issue:253",
+      "status": "no-action",
+      "note": "closed issue; no-identity",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/253"
+      ],
+      "author": "Majebo",
+      "closedAt": "2023-03-03T23:30:11Z",
+      "comments": 2
+    },
+    {
+      "id": "johan-issue:254",
+      "status": "already-fixed",
+      "note": "closed issue; identities covered (_TZ3000_2dlwlvex)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/254"
+      ],
+      "author": "JohanBendz",
+      "closedAt": "2023-02-26T18:24:36Z",
+      "comments": 1,
+      "mfrs": [
+        "_TZ3000_2dlwlvex"
+      ],
+      "pids": [
+        "TS0003"
+      ]
+    },
+    {
+      "id": "johan-issue:255",
+      "status": "already-fixed",
+      "note": "closed issue; identities covered (_TZ3000_2putqrmw)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/255"
+      ],
+      "author": "lmunck",
+      "closedAt": "2024-09-11T20:24:38Z",
+      "comments": 6,
+      "mfrs": [
+        "_TZ3000_2putqrmw"
+      ]
+    },
+    {
+      "id": "johan-issue:256",
+      "status": "already-fixed",
+      "note": "closed issue; identities covered (_TZ3000_gnjozsaz)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/256"
+      ],
+      "author": "ionizah",
+      "closedAt": "2023-02-26T18:29:27Z",
+      "comments": 6,
+      "mfrs": [
+        "_TZ3000_gnjozsaz"
+      ],
+      "pids": [
+        "TS011F"
+      ]
+    },
+    {
+      "id": "johan-issue:257",
+      "status": "already-fixed",
+      "note": "closed issue; identities covered (_TZ3000_1dd0d5yi)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/257"
+      ],
+      "author": "Capetrip",
+      "closedAt": "2024-09-07T23:21:35Z",
+      "comments": 9,
+      "mfrs": [
+        "_TZ3000_1dd0d5yi"
+      ],
+      "pids": [
+        "TS130F"
+      ]
+    },
+    {
+      "id": "johan-issue:258",
+      "status": "already-fixed",
+      "note": "closed issue; identities covered (_TZ3000_gjnozsaz)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/258"
+      ],
+      "author": "AndersE-75",
+      "closedAt": "2023-01-10T18:58:41Z",
+      "comments": 2,
+      "mfrs": [
+        "_TZ3000_gjnozsaz"
+      ]
+    },
+    {
+      "id": "johan-issue:259",
+      "status": "already-fixed",
+      "note": "closed PR; identities covered (_TZ3000_dbpmpco1)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/pull/259"
+      ],
+      "author": "WJGvdVelden",
+      "closedAt": "2023-03-03T23:29:18Z",
+      "comments": 3,
+      "mfrs": [
+        "_TZ3000_dbpmpco1"
+      ]
+    },
+    {
+      "id": "johan-issue:260",
+      "status": "already-fixed",
+      "note": "closed PR; identities covered (_TZ3000_b28wrpvx)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/pull/260"
+      ],
+      "author": "WJGvdVelden",
+      "closedAt": "2023-03-13T17:32:43Z",
+      "comments": 3,
+      "mfrs": [
+        "_TZ3000_b28wrpvx"
+      ]
+    },
+    {
+      "id": "johan-issue:261",
+      "status": "already-fixed",
+      "note": "closed issue; identities covered (_TZ3000_cjrngdr3)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/261"
+      ],
+      "author": "Tonlaar",
+      "closedAt": "2026-09-29T08:22:16Z",
+      "comments": 3,
+      "mfrs": [
+        "_TZ3000_cjrngdr3"
+      ],
+      "pids": [
+        "TS011F"
+      ]
+    },
+    {
+      "id": "johan-issue:262",
+      "status": "no-action",
+      "note": "closed issue; no-identity",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/262"
+      ],
+      "author": "austrier",
+      "closedAt": "2024-09-02T20:40:46Z",
+      "comments": 2
+    },
+    {
+      "id": "johan-issue:263",
+      "status": "already-fixed",
+      "note": "closed issue; identities covered (_TZ3000_qcdqw8nf)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/263"
+      ],
+      "author": "kb-net",
+      "closedAt": "2023-02-26T17:57:12Z",
+      "comments": 1,
+      "mfrs": [
+        "_TZ3000_qcdqw8nf"
+      ],
+      "pids": [
+        "TS0003"
+      ]
+    },
+    {
+      "id": "johan-issue:264",
+      "status": "needs-info",
+      "note": "closed issue; diag-only; research or diag needed",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/264"
+      ],
+      "author": "FreBrake",
+      "closedAt": "2023-03-03T23:30:35Z",
+      "comments": 3
+    },
+    {
+      "id": "johan-issue:265",
+      "status": "already-fixed",
+      "note": "closed issue; identities covered (_TZE200_a8sdabtg)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/265"
+      ],
+      "author": "5tal3m8",
+      "closedAt": "2024-09-10T20:00:23Z",
+      "comments": 8,
+      "mfrs": [
+        "_TZE200_a8sdabtg"
+      ],
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "id": "johan-issue:266",
+      "status": "already-fixed",
+      "note": "closed issue; identities covered (_TZ3000_hdopuwv6)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/266"
+      ],
+      "author": "frode1814",
+      "closedAt": "2023-02-26T17:49:17Z",
+      "comments": 2,
+      "mfrs": [
+        "_TZ3000_hdopuwv6"
+      ],
+      "pids": [
+        "TS011F"
+      ]
+    },
+    {
+      "id": "johan-issue:267",
+      "status": "needs-info",
+      "note": "closed issue; diag-only; research or diag needed",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/267"
+      ],
+      "author": "DennisMeeki",
+      "closedAt": "2023-02-26T17:44:29Z",
+      "comments": 1
+    },
+    {
+      "id": "johan-issue:268",
+      "status": "already-fixed",
+      "note": "closed PR; identities covered (_TZ3000_gvn91tmx)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/pull/268"
+      ],
+      "author": "regnerus",
+      "closedAt": "2023-02-26T19:39:08Z",
+      "comments": 1,
+      "mfrs": [
+        "_TZ3000_gvn91tmx"
+      ],
+      "pids": [
+        "TS011F"
+      ]
+    },
+    {
+      "id": "johan-issue:269",
+      "status": "needs-info",
+      "note": "api unavailable or rate-limited",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/269"
+      ]
+    },
+    {
+      "id": "johan-issue:270",
+      "status": "already-fixed",
+      "note": "open issue; identities covered (_TZ3000_xabckq1v)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/270"
+      ],
+      "author": "JohanBendz",
+      "comments": 4,
+      "mfrs": [
+        "_TZ3000_xabckq1v"
+      ],
+      "pids": [
+        "TS004F",
+        "TS004"
+      ]
+    },
+    {
+      "id": "johan-issue:271",
+      "status": "already-fixed",
+      "note": "open issue; identities covered (_TZ3000_nosnx7im,_TZ3000_j2w1dw29,_TZ3000_nbnmw9nc)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/271"
+      ],
+      "author": "JohanBendz",
+      "comments": 1,
+      "mfrs": [
+        "_TZ3000_nosnx7im",
+        "_TZ3000_j2w1dw29",
+        "_TZ3000_nbnmw9nc",
+        "_TZ3000_7dcddnye"
+      ],
+      "pids": [
+        "TS0501A"
+      ]
+    },
+    {
+      "id": "johan-issue:272",
+      "status": "already-fixed",
+      "note": "closed issue; identities covered (_TZ3000_j2w1dw29)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/272"
+      ],
+      "author": "JohanBendz",
+      "closedAt": "2026-10-01T11:23:26Z",
+      "comments": 1,
+      "mfrs": [
+        "_TZ3000_j2w1dw29"
+      ],
+      "pids": [
+        "TS0501A"
+      ]
+    },
+    {
+      "id": "johan-issue:273",
+      "status": "already-fixed",
+      "note": "closed issue; identities covered (_TZ3000_nbnmw9nc,_TZ3000_7dcddnye)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/273"
+      ],
+      "author": "JohanBendz",
+      "closedAt": "2026-10-01T11:23:32Z",
+      "comments": 3,
+      "mfrs": [
+        "_TZ3000_nbnmw9nc",
+        "_TZ3000_7dcddnye"
+      ],
+      "pids": [
+        "TS0501A"
+      ]
+    },
+    {
+      "id": "johan-issue:274",
+      "status": "already-fixed",
+      "note": "open issue; identities covered (_TZ3000_abci1hiu,_TZ3000_dziaict4)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/274"
+      ],
+      "author": "JohanBendz",
+      "comments": 2,
+      "mfrs": [
+        "_TZ3000_abci1hiu",
+        "_TZ3000_dziaict4"
+      ],
+      "pids": [
+        "TS0044"
+      ]
+    },
+    {
+      "id": "johan-issue:275",
+      "status": "already-fixed",
+      "note": "closed issue; identities covered (_TZ3000_46t1rvdu)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/275"
+      ],
+      "author": "JohanBendz",
+      "closedAt": "2024-09-02T20:44:51Z",
+      "mfrs": [
+        "_TZ3000_46t1rvdu"
+      ],
+      "pids": [
+        "TS0001"
+      ]
+    },
+    {
+      "id": "johan-issue:276",
+      "status": "already-fixed",
+      "note": "closed issue; identities covered (_TYZB01_ftdkanlj)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/276"
+      ],
+      "author": "JohanBendz",
+      "closedAt": "2024-02-04T14:15:42Z",
+      "comments": 1,
+      "mfrs": [
+        "_TYZB01_ftdkanlj"
+      ],
+      "pids": [
+        "TS0222"
+      ]
+    },
+    {
+      "id": "johan-issue:277",
+      "status": "already-fixed",
+      "note": "closed issue; identities covered (_TZ3210_umi6vbsz,_TZ3210_sroezl0s)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/277"
+      ],
+      "author": "JohanBendz",
+      "closedAt": "2026-09-30T20:22:35Z",
+      "comments": 2,
+      "mfrs": [
+        "_TZ3210_umi6vbsz",
+        "_TZ3210_sroezl0s"
+      ],
+      "pids": [
+        "TS0505B",
+        "TS0504B"
+      ]
+    },
+    {
+      "id": "johan-issue:278",
+      "status": "already-fixed",
+      "note": "closed issue; identities covered (_TZ3000_46t1rvdu)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/278"
+      ],
+      "author": "JohanBendz",
+      "closedAt": "2024-09-02T20:38:45Z",
+      "comments": 1,
+      "mfrs": [
+        "_TZ3000_46t1rvdu"
+      ],
+      "pids": [
+        "TS0001"
+      ]
+    },
+    {
+      "id": "johan-issue:279",
+      "status": "already-fixed",
+      "note": "open issue; identities covered (_TZ3002_ymcctknk)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/279"
+      ],
+      "author": "JohanBendz",
+      "mfrs": [
+        "_TZ3002_ymcctknk"
+      ],
+      "pids": [
+        "TS0726"
+      ]
+    },
+    {
+      "id": "johan-issue:280",
+      "status": "already-fixed",
+      "note": "closed PR; identities covered (_TZ3000_6ygjfyll)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/pull/280"
+      ],
+      "author": "ThaYoung1",
+      "closedAt": "2023-03-03T23:20:35Z",
+      "comments": 1,
+      "mfrs": [
+        "_TZ3000_6ygjfyll"
+      ]
+    },
+    {
+      "id": "johan-issue:281",
+      "status": "already-fixed",
+      "note": "closed PR; identities covered (_TZ3000_4uvovz4r)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/pull/281"
+      ],
+      "author": "Radiosprey",
+      "closedAt": "2023-03-03T23:18:16Z",
+      "comments": 1,
+      "mfrs": [
+        "_TZ3000_4uvovz4r"
+      ],
+      "pids": [
+        "TS0207"
+      ]
+    },
+    {
+      "id": "johan-issue:282",
+      "status": "already-fixed",
+      "note": "closed issue; identities covered (_TZ3000_abci1hiu,_TZ3000_dziaict4)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/282"
+      ],
+      "author": "JohanBendz",
+      "closedAt": "2026-09-30T20:23:05Z",
+      "comments": 4,
+      "mfrs": [
+        "_TZ3000_abci1hiu",
+        "_TZ3000_dziaict4"
+      ],
+      "pids": [
+        "TS0044"
+      ]
+    },
+    {
+      "id": "johan-issue:283",
+      "status": "already-fixed",
+      "note": "closed issue; identities covered (_TZ3000_utagpnzs)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/283"
+      ],
+      "author": "JohanBendz",
+      "closedAt": "2024-07-27T00:21:08Z",
+      "comments": 1,
+      "mfrs": [
+        "_TZ3000_utagpnzs"
+      ],
+      "pids": [
+        "TS0505A"
+      ]
+    },
+    {
+      "id": "johan-issue:284",
+      "status": "needs-info",
+      "note": "open issue; diag-only; research or diag needed",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/284"
+      ],
+      "author": "HenryMD18",
+      "comments": 1
+    },
+    {
+      "id": "johan-issue:285",
+      "status": "already-fixed",
+      "note": "closed PR; identities covered (historical)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/pull/285"
+      ],
+      "author": "WJGvdVelden",
+      "closedAt": "2023-10-29T14:03:30Z",
+      "comments": 1
+    },
+    {
+      "id": "johan-issue:286",
+      "status": "no-action",
+      "note": "closed issue; no-identity",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/286"
+      ],
+      "author": "Grimleiv",
+      "closedAt": "2024-09-15T20:43:19Z",
+      "comments": 1
+    },
+    {
+      "id": "johan-issue:287",
+      "status": "already-fixed",
+      "note": "closed issue; identities covered (_TZ3000_cfnprab5)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/287"
+      ],
+      "author": "Grobaa",
+      "closedAt": "2024-09-02T20:42:29Z",
+      "comments": 4,
+      "mfrs": [
+        "_TZ3000_cfnprab5"
+      ],
+      "pids": [
+        "TS011F"
+      ]
+    },
+    {
+      "id": "johan-issue:288",
+      "status": "no-action",
+      "note": "closed issue; no-identity",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/288"
+      ],
+      "author": "Majebo",
+      "closedAt": "2024-09-15T20:42:39Z",
+      "comments": 2
+    },
+    {
+      "id": "johan-issue:289",
+      "status": "no-action",
+      "note": "open issue; no-identity",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/289"
+      ],
+      "author": "gjb1969"
+    },
+    {
+      "id": "johan-issue:290",
+      "status": "already-fixed",
+      "note": "open issue; identities covered (_TZ2000_a476raq2)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/290"
+      ],
+      "author": "gore-",
+      "comments": 3,
+      "mfrs": [
+        "_TZ2000_a476raq2"
+      ],
+      "pids": [
+        "TS0201"
+      ]
+    },
+    {
+      "id": "johan-issue:291",
+      "status": "no-action",
+      "note": "open issue; no-identity",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/291"
+      ],
+      "author": "PatrikMihalik"
+    },
+    {
+      "id": "johan-issue:292",
+      "status": "already-fixed",
+      "note": "open issue; identities covered (_TZE200_nnrfa68v)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/292"
+      ],
+      "author": "JohanBendz",
+      "comments": 1,
+      "mfrs": [
+        "_TZE200_nnrfa68v"
+      ],
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "id": "johan-issue:293",
+      "status": "already-fixed",
+      "note": "closed issue; identities covered (_TZ3000_ajkq2isy)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/293"
+      ],
+      "author": "JohanBendz",
+      "closedAt": "2024-09-12T05:57:08Z",
+      "comments": 1,
+      "mfrs": [
+        "_TZ3000_ajkq2isy"
+      ],
+      "pids": [
+        "TS0502A"
+      ]
+    },
+    {
+      "id": "johan-issue:294",
+      "status": "already-fixed",
+      "note": "closed issue; identities covered (_TZ3210_x13bu7za)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/294"
+      ],
+      "author": "JohanBendz",
+      "closedAt": "2024-07-27T00:18:01Z",
+      "comments": 1,
+      "mfrs": [
+        "_TZ3210_x13bu7za"
+      ],
+      "pids": [
+        "TS0505B"
+      ]
+    },
+    {
+      "id": "johan-issue:295",
+      "status": "already-fixed",
+      "note": "closed issue; identities covered (_TZ3000_4o16jdca)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/295"
+      ],
+      "author": "JohanBendz",
+      "closedAt": "2024-09-22T20:43:10Z",
+      "mfrs": [
+        "_TZ3000_4o16jdca"
+      ],
+      "pids": [
+        "TS0003"
+      ]
+    },
+    {
+      "id": "johan-issue:296",
+      "status": "already-fixed",
+      "note": "closed issue; identities covered (_TZE200_ryfmq5rl)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/296"
+      ],
+      "author": "JohanBendz",
+      "closedAt": "2024-09-15T20:14:49Z",
+      "mfrs": [
+        "_TZE200_ryfmq5rl"
+      ],
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "id": "johan-issue:297",
+      "status": "already-fixed",
+      "note": "closed PR; identities covered (TS0044)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/pull/297"
+      ],
+      "author": "ameesme",
+      "closedAt": "2023-06-18T08:07:33Z",
+      "comments": 1,
+      "pids": [
+        "TS0044"
+      ]
+    },
+    {
+      "id": "johan-issue:298",
+      "status": "already-fixed",
+      "note": "closed issue; identities covered (_TYZB01_yr95mpib)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/298"
+      ],
+      "author": "JohanBendz",
+      "closedAt": "2024-09-11T17:30:39Z",
+      "mfrs": [
+        "_TYZB01_yr95mpib"
+      ]
+    },
+    {
+      "id": "johan-issue:299",
+      "status": "needs-info",
+      "note": "closed issue; diag-only; research or diag needed",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/299"
+      ],
+      "author": "STD078",
+      "closedAt": "2023-06-18T09:39:30Z",
+      "comments": 2
+    },
+    {
+      "id": "johan-issue:300",
+      "status": "needs-info",
+      "note": "closed issue; request-no-identity; research or diag needed",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/300"
+      ],
+      "author": "m8marcus",
+      "closedAt": "2023-06-18T09:39:05Z",
+      "comments": 2
     }
   ],
   "github": {
     "johan": {
-      "next": 241
+      "next": 301
     },
     "dlnraja": {
       "next": 1
@@ -3819,309 +4682,309 @@
   },
   "note": "Full-history sweep. Forum lastPost seeded from Daily digest #557 state (2026-10-02). Items rewritten in our words; SHAs only as evidence.",
   "lastChunk": {
-    "at": "2026-10-10T07:11:06.598Z",
+    "at": "2026-10-10T07:11:48.187Z",
     "advanced": 60,
     "rateLimited": false,
     "items": [
       {
-        "n": 181,
+        "n": 241,
         "status": "already-fixed",
-        "note": "open issue; identities covered (_TZE200_iossyxra)"
+        "note": "merged PR; identities covered (_TZE200_bjawzodf)"
       },
       {
-        "n": 182,
-        "status": "already-fixed",
-        "note": "open issue; identities covered (_TZE200_nklqjk62,_TZE204_nklqjk62,_TZE200_wfxuhoea)"
-      },
-      {
-        "n": 183,
-        "status": "already-fixed",
-        "note": "closed issue; identities covered (_TZ3000_qqdbccb3)"
-      },
-      {
-        "n": 184,
-        "status": "no-action",
-        "note": "closed issue; no-identity"
-      },
-      {
-        "n": 185,
-        "status": "no-action",
-        "note": "open issue; no-identity"
-      },
-      {
-        "n": 186,
-        "status": "already-fixed",
-        "note": "closed issue; identities covered (_TZE200_zqtiam4u)"
-      },
-      {
-        "n": 187,
-        "status": "already-fixed",
-        "note": "closed issue; identities covered (_TZ3210_wdexaypg)"
-      },
-      {
-        "n": 188,
-        "status": "already-fixed",
-        "note": "closed issue; identities covered (_TZE200_hue3yfsn)"
-      },
-      {
-        "n": 189,
-        "status": "already-fixed",
-        "note": "closed issue; identities covered (_TZ3000_0ausfos0)"
-      },
-      {
-        "n": 190,
-        "status": "needs-info",
-        "note": "open issue; request-no-identity; research or diag needed"
-      },
-      {
-        "n": 191,
-        "status": "already-fixed",
-        "note": "open issue; identities covered (_TZE200_wfxuhoea)"
-      },
-      {
-        "n": 192,
-        "status": "already-fixed",
-        "note": "closed issue; identities covered (_TZ3000_cea5xugq)"
-      },
-      {
-        "n": 193,
-        "status": "already-fixed",
-        "note": "closed PR; identities covered (historical)"
-      },
-      {
-        "n": 194,
-        "status": "already-fixed",
-        "note": "closed issue; identities covered (_TZ3000_hlijwsai)"
-      },
-      {
-        "n": 195,
-        "status": "needs-info",
-        "note": "open issue; pid-only; research or diag needed"
-      },
-      {
-        "n": 196,
-        "status": "already-fixed",
-        "note": "closed issue; identities covered (_TZ3000_amdymr71)"
-      },
-      {
-        "n": 197,
-        "status": "already-fixed",
-        "note": "closed PR; identities covered (_TZ3000_gjnozsaz)"
-      },
-      {
-        "n": 198,
-        "status": "no-action",
-        "note": "open issue; no-identity"
-      },
-      {
-        "n": 199,
-        "status": "already-fixed",
-        "note": "closed issue; identities covered (_TZE200_tz32mtza)"
-      },
-      {
-        "n": 200,
-        "status": "needs-info",
-        "note": "closed issue; request-no-identity; research or diag needed"
-      },
-      {
-        "n": 201,
-        "status": "already-fixed",
-        "note": "closed issue; identities covered (_TZ1800_ejwkn2h2,_TZ1800_fcdjzz3s,_TZE200_ntcy3xu1)"
-      },
-      {
-        "n": 202,
-        "status": "already-fixed",
-        "note": "closed issue; identities covered (_TZ3000_fie1dpkm)"
-      },
-      {
-        "n": 203,
-        "status": "already-fixed",
-        "note": "closed PR; identities covered (historical)"
-      },
-      {
-        "n": 204,
-        "status": "already-fixed",
-        "note": "closed issue; identities covered (_TZ2000_a476raq2)"
-      },
-      {
-        "n": 205,
-        "status": "already-fixed",
-        "note": "closed PR; identities covered (_TZ3000_oxslv1c9,_TZ3000_gjnozsaz)"
-      },
-      {
-        "n": 206,
-        "status": "already-fixed",
-        "note": "closed issue; identities covered (_TZ3210_7jnk7l3k)"
-      },
-      {
-        "n": 207,
-        "status": "already-fixed",
-        "note": "open issue; identities covered (_TZ3210_zmy9hjay)"
-      },
-      {
-        "n": 208,
-        "status": "already-fixed",
-        "note": "closed issue; identities covered (_TZE200_3towulqd)"
-      },
-      {
-        "n": 209,
-        "status": "already-fixed",
-        "note": "open issue; identities covered (_TZ3210_umi6vbsz,_TZ3210_3lbtuxgp,_TZ3210_cieijuw1)"
-      },
-      {
-        "n": 210,
-        "status": "already-fixed",
-        "note": "closed issue; identities covered (_TZ3000_2xlvlnez)"
-      },
-      {
-        "n": 211,
-        "status": "pending",
-        "note": "closed issue; missing couple(s) _TZ3000_kyb656no|TS0207; needs code check"
-      },
-      {
-        "n": 212,
+        "n": 242,
         "status": "needs-info",
         "note": "open issue; diag-only; research or diag needed"
       },
       {
-        "n": 213,
-        "status": "already-fixed",
-        "note": "closed issue; identities covered (_TYZB01_kvwjujy9)"
-      },
-      {
-        "n": 214,
-        "status": "already-fixed",
-        "note": "closed PR; identities covered (_TZ3000_hhiodade,_TZ3000_18ejxno0)"
-      },
-      {
-        "n": 215,
-        "status": "already-fixed",
-        "note": "closed issue; identities covered (_TZ3000_dowj6gyi,_TZ3000_yd2e749y)"
-      },
-      {
-        "n": 216,
+        "n": 243,
         "status": "no-action",
         "note": "closed issue; no-identity"
       },
       {
-        "n": 217,
+        "n": 244,
         "status": "already-fixed",
-        "note": "open issue; identities covered (_TZE200_nhyj64w2)"
+        "note": "merged PR; identities covered (_TZ3000_amdymr7l)"
       },
       {
-        "n": 218,
-        "status": "already-fixed",
-        "note": "closed issue; identities covered (_TZ2000_a476raq2)"
-      },
-      {
-        "n": 219,
-        "status": "already-fixed",
-        "note": "closed issue; identities covered (_TZ3000_gjnozsaz)"
-      },
-      {
-        "n": 220,
-        "status": "already-fixed",
-        "note": "closed issue; identities covered (_TZE200_zah67ekd)"
-      },
-      {
-        "n": 221,
-        "status": "needs-info",
-        "note": "closed issue; pid-only; research or diag needed"
-      },
-      {
-        "n": 222,
-        "status": "already-fixed",
-        "note": "closed issue; identities covered (_TZ3000_bvrlqyj7)"
-      },
-      {
-        "n": 223,
-        "status": "already-fixed",
-        "note": "open issue; identities covered (_TZ3000_xfs39dbf)"
-      },
-      {
-        "n": 224,
-        "status": "no-action",
-        "note": "closed issue; no-identity"
-      },
-      {
-        "n": 225,
-        "status": "already-fixed",
-        "note": "merged PR; identities covered (_TZ3000_kjfzuycl)"
-      },
-      {
-        "n": 226,
-        "status": "already-fixed",
-        "note": "closed issue; identities covered (_TZ3000_kx0pris5)"
-      },
-      {
-        "n": 227,
-        "status": "no-action",
-        "note": "closed issue; no-identity"
-      },
-      {
-        "n": 228,
-        "status": "needs-info",
-        "note": "open issue; diag-only; research or diag needed"
-      },
-      {
-        "n": 229,
-        "status": "already-fixed",
-        "note": "closed issue; identities covered (_TZE200_hhrtiq0x)"
-      },
-      {
-        "n": 230,
-        "status": "no-action",
-        "note": "closed issue; no-identity"
-      },
-      {
-        "n": 231,
-        "status": "already-fixed",
-        "note": "closed issue; identities covered (_TZE200_d0yu2xgi,_TZE200_qq9mpfhw)"
-      },
-      {
-        "n": 232,
-        "status": "already-fixed",
-        "note": "closed issue; identities covered (TUYATEC-bd5faf9p)"
-      },
-      {
-        "n": 233,
+        "n": 245,
         "status": "no-action",
         "note": "closed issue; pid-only"
       },
       {
-        "n": 234,
-        "status": "already-fixed",
-        "note": "closed issue; identities covered (_TZE200_zah67ekd)"
-      },
-      {
-        "n": 235,
-        "status": "already-fixed",
-        "note": "closed issue; identities covered (_TZ3000_mcxw5ehu)"
-      },
-      {
-        "n": 236,
-        "status": "needs-info",
-        "note": "api unavailable or rate-limited"
-      },
-      {
-        "n": 237,
+        "n": 246,
         "status": "needs-info",
         "note": "closed issue; diag-only; research or diag needed"
       },
       {
-        "n": 238,
-        "status": "already-fixed",
-        "note": "closed issue; identities covered (_TZ3000_zirycpws)"
+        "n": 247,
+        "status": "no-action",
+        "note": "closed issue; no-identity"
       },
       {
-        "n": 239,
+        "n": 248,
+        "status": "no-action",
+        "note": "closed issue; no-identity"
+      },
+      {
+        "n": 249,
+        "status": "already-fixed",
+        "note": "closed issue; identities covered (_TZ3210_3mpwqzuu)"
+      },
+      {
+        "n": 250,
+        "status": "already-fixed",
+        "note": "closed issue; identities covered (_TZE200_3p5ydos3)"
+      },
+      {
+        "n": 251,
+        "status": "needs-info",
+        "note": "closed issue; request-no-identity; research or diag needed"
+      },
+      {
+        "n": 252,
+        "status": "needs-info",
+        "note": "closed issue; request-no-identity; research or diag needed"
+      },
+      {
+        "n": 253,
+        "status": "no-action",
+        "note": "closed issue; no-identity"
+      },
+      {
+        "n": 254,
+        "status": "already-fixed",
+        "note": "closed issue; identities covered (_TZ3000_2dlwlvex)"
+      },
+      {
+        "n": 255,
+        "status": "already-fixed",
+        "note": "closed issue; identities covered (_TZ3000_2putqrmw)"
+      },
+      {
+        "n": 256,
+        "status": "already-fixed",
+        "note": "closed issue; identities covered (_TZ3000_gnjozsaz)"
+      },
+      {
+        "n": 257,
+        "status": "already-fixed",
+        "note": "closed issue; identities covered (_TZ3000_1dd0d5yi)"
+      },
+      {
+        "n": 258,
+        "status": "already-fixed",
+        "note": "closed issue; identities covered (_TZ3000_gjnozsaz)"
+      },
+      {
+        "n": 259,
+        "status": "already-fixed",
+        "note": "closed PR; identities covered (_TZ3000_dbpmpco1)"
+      },
+      {
+        "n": 260,
+        "status": "already-fixed",
+        "note": "closed PR; identities covered (_TZ3000_b28wrpvx)"
+      },
+      {
+        "n": 261,
+        "status": "already-fixed",
+        "note": "closed issue; identities covered (_TZ3000_cjrngdr3)"
+      },
+      {
+        "n": 262,
+        "status": "no-action",
+        "note": "closed issue; no-identity"
+      },
+      {
+        "n": 263,
+        "status": "already-fixed",
+        "note": "closed issue; identities covered (_TZ3000_qcdqw8nf)"
+      },
+      {
+        "n": 264,
+        "status": "needs-info",
+        "note": "closed issue; diag-only; research or diag needed"
+      },
+      {
+        "n": 265,
+        "status": "already-fixed",
+        "note": "closed issue; identities covered (_TZE200_a8sdabtg)"
+      },
+      {
+        "n": 266,
+        "status": "already-fixed",
+        "note": "closed issue; identities covered (_TZ3000_hdopuwv6)"
+      },
+      {
+        "n": 267,
+        "status": "needs-info",
+        "note": "closed issue; diag-only; research or diag needed"
+      },
+      {
+        "n": 268,
+        "status": "already-fixed",
+        "note": "closed PR; identities covered (_TZ3000_gvn91tmx)"
+      },
+      {
+        "n": 269,
+        "status": "needs-info",
+        "note": "api unavailable or rate-limited"
+      },
+      {
+        "n": 270,
+        "status": "already-fixed",
+        "note": "open issue; identities covered (_TZ3000_xabckq1v)"
+      },
+      {
+        "n": 271,
+        "status": "already-fixed",
+        "note": "open issue; identities covered (_TZ3000_nosnx7im,_TZ3000_j2w1dw29,_TZ3000_nbnmw9nc)"
+      },
+      {
+        "n": 272,
+        "status": "already-fixed",
+        "note": "closed issue; identities covered (_TZ3000_j2w1dw29)"
+      },
+      {
+        "n": 273,
+        "status": "already-fixed",
+        "note": "closed issue; identities covered (_TZ3000_nbnmw9nc,_TZ3000_7dcddnye)"
+      },
+      {
+        "n": 274,
+        "status": "already-fixed",
+        "note": "open issue; identities covered (_TZ3000_abci1hiu,_TZ3000_dziaict4)"
+      },
+      {
+        "n": 275,
+        "status": "already-fixed",
+        "note": "closed issue; identities covered (_TZ3000_46t1rvdu)"
+      },
+      {
+        "n": 276,
+        "status": "already-fixed",
+        "note": "closed issue; identities covered (_TYZB01_ftdkanlj)"
+      },
+      {
+        "n": 277,
+        "status": "already-fixed",
+        "note": "closed issue; identities covered (_TZ3210_umi6vbsz,_TZ3210_sroezl0s)"
+      },
+      {
+        "n": 278,
+        "status": "already-fixed",
+        "note": "closed issue; identities covered (_TZ3000_46t1rvdu)"
+      },
+      {
+        "n": 279,
+        "status": "already-fixed",
+        "note": "open issue; identities covered (_TZ3002_ymcctknk)"
+      },
+      {
+        "n": 280,
+        "status": "already-fixed",
+        "note": "closed PR; identities covered (_TZ3000_6ygjfyll)"
+      },
+      {
+        "n": 281,
+        "status": "already-fixed",
+        "note": "closed PR; identities covered (_TZ3000_4uvovz4r)"
+      },
+      {
+        "n": 282,
+        "status": "already-fixed",
+        "note": "closed issue; identities covered (_TZ3000_abci1hiu,_TZ3000_dziaict4)"
+      },
+      {
+        "n": 283,
+        "status": "already-fixed",
+        "note": "closed issue; identities covered (_TZ3000_utagpnzs)"
+      },
+      {
+        "n": 284,
+        "status": "needs-info",
+        "note": "open issue; diag-only; research or diag needed"
+      },
+      {
+        "n": 285,
+        "status": "already-fixed",
+        "note": "closed PR; identities covered (historical)"
+      },
+      {
+        "n": 286,
+        "status": "no-action",
+        "note": "closed issue; no-identity"
+      },
+      {
+        "n": 287,
+        "status": "already-fixed",
+        "note": "closed issue; identities covered (_TZ3000_cfnprab5)"
+      },
+      {
+        "n": 288,
+        "status": "no-action",
+        "note": "closed issue; no-identity"
+      },
+      {
+        "n": 289,
         "status": "no-action",
         "note": "open issue; no-identity"
       },
       {
-        "n": 240,
+        "n": 290,
         "status": "already-fixed",
-        "note": "closed issue; identities covered (_TZ3000_qaaysllp)"
+        "note": "open issue; identities covered (_TZ2000_a476raq2)"
+      },
+      {
+        "n": 291,
+        "status": "no-action",
+        "note": "open issue; no-identity"
+      },
+      {
+        "n": 292,
+        "status": "already-fixed",
+        "note": "open issue; identities covered (_TZE200_nnrfa68v)"
+      },
+      {
+        "n": 293,
+        "status": "already-fixed",
+        "note": "closed issue; identities covered (_TZ3000_ajkq2isy)"
+      },
+      {
+        "n": 294,
+        "status": "already-fixed",
+        "note": "closed issue; identities covered (_TZ3210_x13bu7za)"
+      },
+      {
+        "n": 295,
+        "status": "already-fixed",
+        "note": "closed issue; identities covered (_TZ3000_4o16jdca)"
+      },
+      {
+        "n": 296,
+        "status": "already-fixed",
+        "note": "closed issue; identities covered (_TZE200_ryfmq5rl)"
+      },
+      {
+        "n": 297,
+        "status": "already-fixed",
+        "note": "closed PR; identities covered (TS0044)"
+      },
+      {
+        "n": 298,
+        "status": "already-fixed",
+        "note": "closed issue; identities covered (_TYZB01_yr95mpib)"
+      },
+      {
+        "n": 299,
+        "status": "needs-info",
+        "note": "closed issue; diag-only; research or diag needed"
+      },
+      {
+        "n": 300,
+        "status": "needs-info",
+        "note": "closed issue; request-no-identity; research or diag needed"
       }
     ],
     "forum": [],
@@ -4134,9 +4997,9 @@
     "previousNext": 31
   },
   "stats": {
-    "already-fixed": 189,
-    "needs-info": 29,
+    "already-fixed": 229,
+    "needs-info": 39,
     "pending": 5,
-    "no-action": 27
+    "no-action": 37
   }
 }
