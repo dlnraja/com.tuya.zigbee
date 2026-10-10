@@ -136,24 +136,32 @@ async function scanForks(src, st, c) {
 }
 
 async function scanDiscourse(src, st, c) {
+  // Incremental per-topic cursor (last post_number seen). Discourse posts.json takes post IDS (not numbers),
+  // so map the topic stream (ids, in post order) and take at most `batch` new posts per run; the cursor only
+  // advances to the last post actually read, so nothing is skipped when a thread is busy.
   const out = [];
   const lastPost = { ...(st.lastPost || {}) };
+  const batch = Math.max(1, Math.min(100, Number(src.batch) || 20));
   for (const id of src.topics || []) {
     const t = await c.json(`${src.url}/t/${id}.json`);
     const hi = t.highest_post_number || 0;
-    const from = lastPost[id] || Math.max(1, hi - 20);
-    if (hi > from) {
-      const nums = [];
-      for (let n = from + 1; n <= hi && nums.length < 20; n++) {nums.push(n);}
-      const posts = await c.json(`${src.url}/t/${id}/posts.json?${nums.map((n) => `post_ids[]=${n}`).join('&')}`).catch(() => null);
-      const stream = (posts && posts.post_stream && posts.post_stream.posts) || (t.post_stream && t.post_stream.posts) || [];
-      for (const p of stream) {
-        if (p.post_number <= from) {continue;}
-        const pr = proposal(src, `${src.url}/t/${id}/${p.post_number}`, `post #${p.post_number} by ${p.username}`, String(p.cooked || '').replace(/<[^>]+>/g, ' '));
-        if (pr) {out.push(pr);}
-      }
+    const from = lastPost[id] || Math.max(0, hi - batch);
+    if (hi <= from) {continue;}
+    const ids = (t.post_stream && t.post_stream.stream) || [];
+    // stream index ~ post_number - 1 (deleted posts shift it a little): start a bit early and filter by number.
+    const start = Math.max(0, Math.min(ids.length, from) - 5);
+    const want = ids.slice(start, start + batch + 5);
+    if (!want.length) {lastPost[id] = hi; continue;}
+    const posts = await c.json(`${src.url}/t/${id}/posts.json?${want.map((n) => `post_ids[]=${n}`).join('&')}`).catch(() => null);
+    const stream = ((posts && posts.post_stream && posts.post_stream.posts) || []).filter((p) => p.post_number > from)
+      .sort((x, y) => x.post_number - y.post_number).slice(0, batch);
+    let last = from;
+    for (const p of stream) {
+      last = Math.max(last, p.post_number);
+      const pr = proposal(src, `${src.url}/t/${id}/${p.post_number}`, `post #${p.post_number} by ${p.username}`, String(p.cooked || '').replace(/<[^>]+>/g, ' '));
+      if (pr) {out.push(pr);}
     }
-    lastPost[id] = hi;
+    lastPost[id] = stream.length ? last : hi;
   }
   return { out, next: { lastPost } };
 }
