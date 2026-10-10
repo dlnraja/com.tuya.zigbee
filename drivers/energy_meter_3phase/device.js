@@ -1,5 +1,6 @@
 'use strict';
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
+const { spmVariant, decodePhase } = require('../../lib/tuya/SpmPhaseDecoder');
 
 class EnergyMeter3PhaseDevice extends UnifiedPlugBase {
   // WHY(P2518): mains DIN meter — never phantom battery / plug onoff
@@ -40,6 +41,17 @@ class EnergyMeter3PhaseDevice extends UnifiedPlugBase {
     // ATMS/dikb3dp6 family below (phase A voltage on 102, not 103). Layout from
     // zigbee-herdsman-converters nous.ts (Koen Kanters and contributors); own mapping.
     const mfr = String(this.getSetting?.('zb_manufacturer_name') || '').toLowerCase();
+    if (spmVariant(mfr) === 'spm02') {
+      // SPM02 (Z2M tuya.ts, Koen Kanters & contributors): DP1/DP2 energy, DP6/7/8 packed V/I/P per phase
+      return {
+        ...rest,
+        1: { capability: 'meter_power', divisor: 100 },
+        2: { capability: 'meter_power.exported', divisor: 100 },
+        6: { capability: null, internal: 'spm_phase_a' },
+        7: { capability: null, internal: 'spm_phase_b' },
+        8: { capability: null, internal: 'spm_phase_c' },
+      };
+    }
     if (mfr.endsWith('_loejka0i')) {
       return {
         ...rest,
@@ -156,6 +168,24 @@ class EnergyMeter3PhaseDevice extends UnifiedPlugBase {
 
   // WHY(P2518): DP29 total W → measure_power + mirror phase_total for 3ph UI
   _handleDP(dpId, rawValue) {
+    const mfr = this.getSetting?.('zb_manufacturer_name') || this._protocolInfo?.mfr;
+    const dpn = Number(dpId);
+    if ((dpn === 6 || dpn === 7 || dpn === 8) && spmVariant(mfr) === 'spm02') {
+      const r = decodePhase(rawValue);
+      if (!r.ok) { this.log(`[SPM02] DP${dpn} ignored (${r.reason})`); return undefined; }
+      const n = dpn - 5;
+      this._spmPhasePower = this._spmPhasePower || {};
+      this._spmPhasePower[n] = r.power;
+      this.safeSetCapabilityValue(`measure_power.phase${n}`, r.power).catch(() => { });
+      if (n === 1) {
+        this.safeSetCapabilityValue('measure_voltage', r.voltage).catch(() => { });
+        this.safeSetCapabilityValue('measure_current', r.current).catch(() => { });
+      }
+      const total = Object.values(this._spmPhasePower).reduce((a, b) => a + b, 0);
+      this.safeSetCapabilityValue('measure_power', total).catch(() => { });
+      this.safeSetCapabilityValue('measure_power.phase_total', total).catch(() => { });
+      return undefined;
+    }
     super._handleDP(dpId, rawValue);
     if (Number(dpId) === 29 && this.hasCapability('measure_power.phase_total')) {
       const watts = this.getCapabilityValue('measure_power');
