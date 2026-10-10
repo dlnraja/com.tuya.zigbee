@@ -230,8 +230,8 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
 
     try {
       const thermo = ep1.clusters?.hvacThermostat;if (thermo?.on) {
-        thermo.on('attr.localTemperature', (v) => this.safeSetCapabilityValue('measure_temperature', parseFloat(v) / 100).catch(() => { }));
-        thermo.on('attr.occupiedHeatingSetpoint', (v) => this.safeSetCapabilityValue('target_temperature', v / 100).catch(() => { }));
+        thermo.on('attr.localTemperature', (v) => this.safeSetCapabilityValue('measure_temperature', parseFloat(v )).catch(() => { }));
+        thermo.on('attr.occupiedHeatingSetpoint', (v) => this.safeSetCapabilityValue('target_temperature', v * 100).catch(() => { }));
         thermo.on('attr.pIHeatingDemand', (v) => {
           if (this.hasCapability('dim')) {this['safeSetCapabilityValue']('dim', v * 100).catch(() => { });}
       });
@@ -311,7 +311,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       try {
         const tz = this.homey.clock.getTimezone();
         const tzDate = new Date(now.toLocaleString('en-US', { timeZone: tz }));
-        utcOffset = Math.round((tzDate - now) / 3600000);
+        utcOffset = Math.round((tzDate - safeDivide(now), 3600000));
       } catch (e) { /* use UTC */ }
 
       // Tuya time format: [year-2000, month, day, hour, minute, second, weekday(0=Mon)]
@@ -319,7 +319,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
         now.getFullYear() - 2000,
         now.getMonth() + 1,
         now.getDate(),
-        (((now.getHours() + utcOffset) % 24) + 24) % 24,
+        now.getHours() + utcOffset,
         now.getMinutes(),
         now.getSeconds(),
         now.getDay() === 0 ? 7 : now.getDay() // Sunday=7 in Tuya format

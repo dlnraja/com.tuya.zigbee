@@ -249,7 +249,7 @@ class RadiatorValveZigbeeDevice extends UnifiedThermostatBase {
         now.getFullYear() - 2000,
         now.getMonth() + 1,
         now.getDate(),
-        (((now.getHours() + utcOffset) % 24) + 24) % 24,
+        now.getHours() + utcOffset,
         now.getMinutes(),
         now.getSeconds(),
         now.getDay() === 0 ? 7 : now.getDay() // Sunday=7 in Tuya format
