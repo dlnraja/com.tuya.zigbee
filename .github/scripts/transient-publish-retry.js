@@ -17,9 +17,12 @@ function decide({ version, builds, alreadyRetried }) {
   const extra = Object.entries(b).filter(([k, v]) => v && /err|reason|message|log|fail|meta/i.test(k)).map(([, v]) => (typeof v === 'string' ? v : JSON.stringify(v))).join(' ');
   const meta = typeof b.stateMeta === 'string' ? b.stateMeta : JSON.stringify(b.stateMeta || b.failureDetail || '') + ' ' + extra;
   if (state !== 'processing_failed') return { retry: false, reason: `v${version} state ${state}` };
-  if (/AggregateError/i.test(meta)) return { retry: false, reason: 'AggregateError = content failure, no retry' };
-  if (!TRANSIENT_RE.test(meta)) return { retry: false, reason: `unknown failure: ${meta.slice(0, 120)}` };
-  return { retry: true, reason: `transient (${meta.slice(0, 80)}) on v${version}` };
+  // WHY(2026-10-11 user): AggregateError alternates on near-identical content (1381F 1382F 1383T 1384F 1385T 1386F),
+  // so it gets ONE retry with a strictly-higher version too; the retry run never retries again (alreadyRetried).
+  if (/AggregateError/i.test(meta)) return { retry: true, kind: 'AggregateError', reason: `AggregateError (flake check, single retry) on v${version}` };
+  if (!TRANSIENT_RE.test(meta)) return { retry: false, kind: 'unknown', reason: `unknown failure: ${meta.slice(0, 120)}` };
+  const kind = /socket hang up/i.test(meta) ? 'socket hang up' : /specified key|nosuchkey/i.test(meta) ? 'specified key' : /enospc|no space/i.test(meta) ? 'ENOSPC' : 'transient';
+  return { retry: true, kind, reason: `transient (${meta.slice(0, 80)}) on v${version}` };
 }
 
 if (require.main === module) {
@@ -38,6 +41,14 @@ if (require.main === module) {
   } catch (_e) { /* no report */ }
   const d = decide({ version, builds, alreadyRetried: process.env.TRANSIENT_RETRY === 'true' });
   console.log(`[transient-retry] ${d.retry ? 'RETRY' : 'skip'}: ${d.reason}`);
+  // Flake-rate log: one JSON line per published version outcome (committed by the bot commit step).
+  try {
+    const b = builds.find((x) => String(x && x.version) === String(version)) || {};
+    const line = { at: new Date().toISOString(), version, buildId: b.id || null, state: b.state || null, kind: d.kind || null, retryRun: process.env.TRANSIENT_RETRY === 'true', retry: d.retry, run: process.env.GITHUB_RUN_ID || null };
+    const logf = path.join(root, 'docs', 'status', 'athom-publish-outcomes.jsonl');
+    fs.mkdirSync(path.dirname(logf), { recursive: true });
+    fs.appendFileSync(logf, JSON.stringify(line) + '\n');
+  } catch (_e) { /* logging never blocks */ }
   if (process.env.GITHUB_OUTPUT) fs.appendFileSync(process.env.GITHUB_OUTPUT, `retry=${d.retry}\n`);
 }
 
