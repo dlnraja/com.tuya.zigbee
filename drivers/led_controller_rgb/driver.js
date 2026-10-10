@@ -2,6 +2,12 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
+// WHY(2026-10-10 publish hold): led_controller_spi_tuya is held out of the Athom payload (any new driver id
+// fails Athom processing, see docs/knowledge/ATHOM_LIMITS.md). Its Gledopto GL-SPI-206P couples are folded
+// here as a variant profile: same capabilities, but the device uses the SPI class (DP61 single coalesced frame).
+// Contre quoi: SPI controllers paired here would otherwise get the generic RGB DP layout and not respond.
+const SPI_MFRS = new Set(['_tze204_8fffc3kb', '_tze284_gt5al3bl', '_tze28c1000000_gt5al3bl']);
+
 class LedControllerRgbDriver extends ZigBeeDriver {
   /**
    * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
@@ -14,6 +20,15 @@ class LedControllerRgbDriver extends ZigBeeDriver {
       this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
       return null;
     }
+  }
+
+  onMapDeviceClass(device) {
+    try {
+      const mfr = String((device.getSetting && device.getSetting('zb_manufacturer_name'))
+        || (device.getStore && device.getStore() && device.getStore().manufacturerName) || '').toLowerCase();
+      if (SPI_MFRS.has(mfr)) return require('../../lib/devices/LedControllerSpiTuyaDevice');
+    } catch (_e) { /* fall back to the default device class */ }
+    return require('./device');
   }
 
 async onInit() {
