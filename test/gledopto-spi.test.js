@@ -31,3 +31,32 @@ describe('Gledopto GL-SPI-206P', () => {
     }
   });
 });
+
+describe('Tuya multi-DP single frame (GL-SPI-206P burst guard)', () => {
+  const { toRecords, fullFrame, sendMultiDp } = require('../lib/tuya/TuyaMultiDpFrame');
+  it('packs DP1 + DP3 in one TY_DATA_REQUEST', () => {
+    const r = toRecords([{ dp: 1, value: true, type: 'bool' }, { dp: 3, value: 500, type: 'value' }]);
+    assert.strictEqual(fullFrame(r, 0x0102).toString('hex'), '0102' + '01010001' + '01' + '03020004' + '000001f4');
+  });
+  it('uses the datapoint command once with the tail records appended', async () => {
+    const calls = [];
+    const dev = { zclNode: { endpoints: { 1: { clusters: { tuya: { datapoint: async (a) => calls.push(a) } } } } } };
+    const ok = await sendMultiDp(dev, [{ dp: 2, value: 1, type: 'enum' }, { dp: 61, value: Buffer.from([0xaa]), type: 'raw' }]);
+    assert.strictEqual(ok, true);
+    assert.strictEqual(calls.length, 1);
+    assert.strictEqual(calls[0].dp, 2);
+    assert.strictEqual(calls[0].data.toString('hex'), '01' + '3d000001' + 'aa');
+  });
+  it('returns false without any EF00 path (caller falls back per DP)', async () => {
+    assert.strictEqual(await sendMultiDp({ zclNode: { endpoints: {} } }, [{ dp: 1, value: true, type: 'bool' }]), false);
+  });
+  it('profile lists every manifest capability (no remove/re-add at boot) and flow compose is explicit empty', () => {
+    // device.js needs the Homey runtime; read the CAPS list from source instead.
+    const src = fs.readFileSync(path.join(root, 'drivers/led_controller_spi_tuya/device.js'), 'utf8');
+    const caps = JSON.parse(src.match(/const CAPS = (\[[^\]]+\])/)[1].replace(/'/g, '"'));
+    assert.ok(/capabilities: CAPS/.test(src));
+    for (const c of compose('led_controller_spi_tuya').capabilities) {assert.ok(caps.includes(c), c);}
+    const flow = JSON.parse(fs.readFileSync(path.join(root, 'drivers/led_controller_spi_tuya/driver.flow.compose.json'), 'utf8'));
+    assert.deepStrictEqual(flow, { triggers: [], conditions: [], actions: [] });
+  });
+});
