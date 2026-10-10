@@ -6,7 +6,7 @@ Athom rejects a version <= one already uploaded (and re-upload of a processing_f
 
 ## Mechanism
 - `.github/scripts/athom-version-floor.js`
-  - computes uploadedMax = max(Athom build history via HOMEY_PAT, git tags v<major>.*,
+  - computes uploadedMax = max(Athom build history via HOMEY_PAT (git tags ignored: repo-wide),
     `.github/homey-version-floor`)
   - `--apply` (before bump): raises app.json/.homeycompose/package.json to uploadedMax if higher
   - `--gate` (after bump): FAILS the job if the new version <= uploadedMax (never go backwards)
