@@ -76,3 +76,54 @@ Sources searched for every couple: Z2M, ZHA quirks, deCONZ, Blakadder, tuya-loca
 - `_tze200_n8dljorx|ts0601`: removed from `contact_sensor` (kept in `contact_sensor_zigbee`)
 - `_tz3000_lrfvzq1e|ts004f`: removed from `climate_sensor` (kept in `smart_knob`)
 - `_tz3000_lbtpiody|ts0201`: removed from `water_leak_sensor` (kept in `temphumidsensor`)
+
+
+## Pass 3 — variant placements, second sources, interview requests (bastien-home)
+
+### Placed
+- `_TZ3000_fdxihpp7` + `TS000F`: -wall_switch_1gang_1way +switch_1gang — Z2M WHD02 TS0001+TS000F (1 gang); held WHD02 couples live in switch_1gang
+- `_TZ3210_a2erlvb8|TS0002` stays a lead here: this branch has no runtime GangCountAdapter, and moving the mfr to `switch_2gang` would give 1ch TS000F units a dead gang 2. Port after master soak.
+
+### Second-source search (GitHub issues + SmartThings Edge code) for couples whose only exact source was Z2M
+Matches below are by manufacturerName; issue titles naming the exact couple are the meaningful ones. `wonjj6768/smartthings-zigbee-edge-drivers` = SmartThings Edge family tables.
+
+| Couple | GitHub issues | SmartThings |
+|---|---|---|
+| `_tz3000_8a833yls|ts011f` | [Koenkk/zigbee2mqtt#27496](https://github.com/Koenkk/zigbee2mqtt/issues/27496); [zigpy/zha-device-handlers#2368](https://github.com/zigpy/zha-device-handlers/issues/2368); [zigpy/zha-device-handlers#2151](https://github.com/zigpy/zha-device-handlers/issues/2151) | wonjj6768/smartthings-zigbee-edge-drivers, wonjj6768/smartthings-zigbee-edge-drivers |
+| `_tz3000_8nyaanzb|ts011f` | [Koenkk/zigbee-herdsman-converters#12155](https://github.com/Koenkk/zigbee-herdsman-converters/issues/12155); [Koenkk/zigbee-herdsman-converters#8836](https://github.com/Koenkk/zigbee-herdsman-converters/issues/8836) | wonjj6768/smartthings-zigbee-edge-drivers, wonjj6768/smartthings-zigbee-edge-drivers |
+| `_tz3000_egvb1p2g|ts004f` | [Koenkk/zigbee2mqtt#32351](https://github.com/Koenkk/zigbee2mqtt/issues/32351); [sprut/Hub#3703](https://github.com/sprut/Hub/issues/3703); [u236/homed-service-zigbee#227](https://github.com/u236/homed-service-zigbee/issues/227) | wonjj6768/smartthings-zigbee-edge-drivers |
+| `_tz3000_fdxihpp7|ts000f` | [romasku/tuya-zigbee-switch#517](https://github.com/romasku/tuya-zigbee-switch/issues/517); [zigpy/zha-device-handlers#3427](https://github.com/zigpy/zha-device-handlers/issues/3427); [zigpy/zha-device-handlers#4544](https://github.com/zigpy/zha-device-handlers/issues/4544) | Mariano-Github/Edge-Drivers-Beta, Mariano-Github/Edge-Drivers-Beta |
+| `_tz3000_gazjngjl|ts011f` | [sprut/Hub#4960](https://github.com/sprut/Hub/issues/4960); [Koenkk/zigbee2mqtt#30168](https://github.com/Koenkk/zigbee2mqtt/issues/30168); [Koenkk/zigbee2mqtt#28278](https://github.com/Koenkk/zigbee2mqtt/issues/28278) | wonjj6768/smartthings-zigbee-edge-drivers, wonjj6768/smartthings-zigbee-edge-drivers |
+| `_tz3000_iy2c3n6p|ts011f` | [Koenkk/zigbee-herdsman-converters#12155](https://github.com/Koenkk/zigbee-herdsman-converters/issues/12155); [Koenkk/zigbee-herdsman-converters#8836](https://github.com/Koenkk/zigbee-herdsman-converters/issues/8836) | wonjj6768/smartthings-zigbee-edge-drivers, wonjj6768/smartthings-zigbee-edge-drivers |
+| `_tz3000_j0ktmul1|ts011f` | [Koenkk/zigbee2mqtt#16992](https://github.com/Koenkk/zigbee2mqtt/issues/16992) | wonjj6768/smartthings-zigbee-edge-drivers, wonjj6768/smartthings-zigbee-edge-drivers |
+| `_tz3000_nsa76jai|ts0004` | [JohanBendz/com.tuya.zigbee#1035](https://github.com/JohanBendz/com.tuya.zigbee/issues/1035); [JohanBendz/com.tuya.zigbee#1098](https://github.com/JohanBendz/com.tuya.zigbee/issues/1098); [Koenkk/zigbee2mqtt#30842](https://github.com/Koenkk/zigbee2mqtt/issues/30842) | wonjj6768/smartthings-zigbee-edge-drivers, wonjj6768/smartthings-zigbee-edge-drivers |
+| `_tz3000_nzkqcvvs|ts011f` | [Koenkk/zigbee2mqtt#27496](https://github.com/Koenkk/zigbee2mqtt/issues/27496); [home-assistant/core#107200](https://github.com/home-assistant/core/issues/107200); [zigpy/zha-device-handlers#2151](https://github.com/zigpy/zha-device-handlers/issues/2151) | wonjj6768/smartthings-zigbee-edge-drivers, wonjj6768/smartthings-zigbee-edge-drivers |
+| `_tz3000_rgpqqmbj|ts011f` | [Koenkk/zigbee-herdsman-converters#12155](https://github.com/Koenkk/zigbee-herdsman-converters/issues/12155); [Koenkk/zigbee-herdsman-converters#8836](https://github.com/Koenkk/zigbee-herdsman-converters/issues/8836) | wonjj6768/smartthings-zigbee-edge-drivers, wonjj6768/smartthings-zigbee-edge-drivers |
+| `_tz3000_rqbjepe8|ts011f` | — | wonjj6768/smartthings-zigbee-edge-drivers, wonjj6768/smartthings-zigbee-edge-drivers |
+| `_tz3000_rtcrrvia|ts011f` | [zigpy/zha-device-handlers#4611](https://github.com/zigpy/zha-device-handlers/issues/4611); [sprut/Hub#4405](https://github.com/sprut/Hub/issues/4405); [Koenkk/zigbee2mqtt#27496](https://github.com/Koenkk/zigbee2mqtt/issues/27496) | wonjj6768/smartthings-zigbee-edge-drivers, wonjj6768/smartthings-zigbee-edge-drivers |
+| `_tz3000_xwh1e22x|ts1002` | [JohanBendz/com.tuya.zigbee#1361](https://github.com/JohanBendz/com.tuya.zigbee/issues/1361); [zigpy/zha-device-handlers#1829](https://github.com/zigpy/zha-device-handlers/issues/1829); [Koenkk/zigbee2mqtt#32301](https://github.com/Koenkk/zigbee2mqtt/issues/32301) | wonjj6768/smartthings-zigbee-edge-drivers |
+| `_tz3000_ysiog9xi|ts011f` | [zigpy/zha-device-handlers#4406](https://github.com/zigpy/zha-device-handlers/issues/4406); [Koenkk/zigbee2mqtt#27496](https://github.com/Koenkk/zigbee2mqtt/issues/27496); [Koenkk/zigbee-herdsman-converters#10108](https://github.com/Koenkk/zigbee-herdsman-converters/issues/10108) | wonjj6768/smartthings-zigbee-edge-drivers, wonjj6768/smartthings-zigbee-edge-drivers |
+| `_tz3210_a2erlvb8|ts0002` | — | wonjj6768/smartthings-zigbee-edge-drivers, wonjj6768/smartthings-zigbee-edge-drivers |
+| `_tz3210_bep7ccew|ts011f` | [romasku/tuya-zigbee-switch#476](https://github.com/romasku/tuya-zigbee-switch/issues/476); [Koenkk/zigbee-herdsman-converters#9490](https://github.com/Koenkk/zigbee-herdsman-converters/issues/9490) | — |
+| `_tz3210_m3mxv66l|ts0202` | [Koenkk/zigbee-herdsman-converters#6407](https://github.com/Koenkk/zigbee-herdsman-converters/issues/6407) | wonjj6768/smartthings-zigbee-edge-drivers, wonjj6768/smartthings-zigbee-edge-drivers |
+| `_tz3210_nhqka112|ts011f` | [Koenkk/zigbee2mqtt#30889](https://github.com/Koenkk/zigbee2mqtt/issues/30889) | wonjj6768/smartthings-zigbee-edge-drivers, wonjj6768/smartthings-zigbee-edge-drivers |
+| `_tz3210_yvxjawlt|ts011f` | [zigpy/zha-device-handlers#2983](https://github.com/zigpy/zha-device-handlers/issues/2983); [Koenkk/zigbee2mqtt#13221](https://github.com/Koenkk/zigbee2mqtt/issues/13221); [Koenkk/zigbee2mqtt#11648](https://github.com/Koenkk/zigbee2mqtt/issues/11648) | wonjj6768/smartthings-zigbee-edge-drivers, wonjj6768/smartthings-zigbee-edge-drivers |
+| `_tz3218_ewrxirng|ts0225` | [Koenkk/zigbee2mqtt#29676](https://github.com/Koenkk/zigbee2mqtt/issues/29676) | wonjj6768/smartthings-zigbee-edge-drivers, wonjj6768/smartthings-zigbee-edge-drivers |
+| `_tz3290_ixd9mvv4|ts0049` | — | wonjj6768/smartthings-zigbee-edge-drivers, wonjj6768/smartthings-zigbee-edge-drivers |
+| `_tz3290_s6ezpa3j|ts1201` | — | wonjj6768/smartthings-zigbee-edge-drivers, wonjj6768/smartthings-zigbee-edge-drivers |
+| `_tze200_aj0oxo1i|ts0225` | — | wonjj6768/smartthings-zigbee-edge-drivers, wonjj6768/smartthings-zigbee-edge-drivers |
+| `_tze200_p6fuhvez|ts0225` | [sprut/Hub#4328](https://github.com/sprut/Hub/issues/4328) | wonjj6768/smartthings-zigbee-edge-drivers, wonjj6768/smartthings-zigbee-edge-drivers |
+| `_tze200_qcasmfan|ts0601` | — | wonjj6768/smartthings-zigbee-edge-drivers, wonjj6768/smartthings-zigbee-edge-drivers |
+| `_tze284_cjbofhxw|ts0601` | [Koenkk/zigbee2mqtt#31690](https://github.com/Koenkk/zigbee2mqtt/issues/31690); [Koenkk/zigbee2mqtt#31465](https://github.com/Koenkk/zigbee2mqtt/issues/31465); [Koenkk/zigbee2mqtt#22784](https://github.com/Koenkk/zigbee2mqtt/issues/22784) | wonjj6768/smartthings-zigbee-edge-drivers, wonjj6768/smartthings-zigbee-edge-drivers |
+| `_tze600_ogyg1y6b|ts0105` | — | wonjj6768/smartthings-zigbee-edge-drivers, wonjj6768/smartthings-zigbee-edge-drivers |
+
+### Request for interview (kept as leads — do not place without it)
+| Couple | Why | What we need |
+|---|---|---|
+| `_TZE200_aj0oxo1i` + TS0225 | Z2M model block ambiguous (gas vs presence); SmartThings lists it in the safety (gas/smoke) family | Zigbee interview (clusters/endpoints) + 1 DP log |
+| `_TZE200_p6fuhvez` + TS0225 | same; sprut/Hub#4328 confirms the couple exists, not its class | interview + DP log |
+| `_TZE600_ogyg1y6b` + TS0105 | no driver has TS0105; adding it would pair every mfr of a curtain driver with TS0105 | interview to decide a variant/new profile |
+| `_TZ3000_xwh1e22x` + TS1002 | MiBoxer FUT089Z remote (Johan#1361, ZHA#1829); only TS1002 driver is a bulb | interview + button event capture |
+| `_TZ3000_j0ktmul1` + TS011F | 5-zone valve controller (Z2M AUT000069); no profile | interview |
+| `_TZ3000_gazjngjl` + TS011F | Z2M#30168 says 1-gang socket + USB; endpoint layout unknown | interview (endpoints) |
+| `_TZ3000_z6fgd73r` + TS011F | touch switch with metering on TS011F | interview |
