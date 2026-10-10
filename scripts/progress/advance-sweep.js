@@ -284,10 +284,11 @@ async function main() {
       if (!Array.isArray(comments)) comments = null;
       await sleep(250);
     }
-    if (issue && issue.error && issue.status === 404) issue = { status: 404 };
+    if (issue && issue.error && (issue.status === 404 || issue.status === 410)) issue = { status: 404 }; // missing or deleted upstream
     const classified = issue && issue.status === 404
-      ? { id: key, status: 'no-action', note: 'number not found upstream', sources: [`https://github.com/JohanBendz/com.tuya.zigbee/issues/${n}`] }
-      : (issue && !issue.error ? classifyIssueFull(n, issue, comments) : classifyIssue(n, issue));
+      ? { id: key, status: 'no-action', note: 'number missing or deleted upstream', sources: [`https://github.com/JohanBendz/com.tuya.zigbee/issues/${n}`] }
+      : (issue && !issue.error ? classifyIssueFull(n, issue, comments)
+        : { id: key, status: 'api-rate-limited', note: `api error ${issue && issue.status}; retry next run`, sources: [`https://github.com/JohanBendz/com.tuya.zigbee/issues/${n}`] });
     // Never downgrade an item a human already resolved in the checkpoint.
     const prev = cp.items.find((it) => it.id === key);
     if (prev && prev.manual) { advanced.push({ n, status: prev.status, note: 'manual (kept)' }); continue; }
