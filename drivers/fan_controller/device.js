@@ -177,7 +177,7 @@ class FanControllerDevice extends TuyaZigbeeDevice {
       this.registerCapabilityListener('onoff', async (value) => {
         this.log(`Setting fan on/off: ${value}`);
         try {
-          await tuyaCluster.datapoint({ dp: 1, datatype: 1, value: value });
+          await require('../../lib/helpers/UniversalDriverInit').sendTuyaDP(this, 1, value, 'bool');
         } catch (e) {
           this.error('Failed to set on/off:', e.message);
         }
@@ -228,12 +228,12 @@ class FanControllerDevice extends TuyaZigbeeDevice {
       try {
         if (key === 'countdown') {
           const sec = Math.max(0, Math.min(43200, Number(newSettings.countdown) || 0));
-          await tuyaCluster.datapoint({ dp: 2, datatype: 2, value: sec });
+          await require('../../lib/helpers/UniversalDriverInit').sendTuyaDP(this, 2, sec, 'value');
           this.log(`[SETTINGS] DP2 countdown=${sec}`);
         }
         if (key === 'power_on_behavior') {
           const v = String(newSettings.power_on_behavior || 'off').toLowerCase() === 'on' ? 1 : 0;
-          await tuyaCluster.datapoint({ dp: 11, datatype: 4, value: v });
+          await require('../../lib/helpers/UniversalDriverInit').sendTuyaDP(this, 11, v, 'enum');
           this.log(`[SETTINGS] DP11 power_on_behavior=${v}`);
         }
       } catch (e) {
