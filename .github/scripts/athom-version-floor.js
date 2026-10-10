@@ -4,7 +4,7 @@
 // (master, stable, bastien), including diagnostic/bisect uploads. Athom rejects (AggregateError /
 // processing_failed) a version <= one already uploaded.
 //
-//   node athom-version-floor.js            -> print highest known version (Athom builds, git tags,
+//   node athom-version-floor.js            -> print highest known version (Athom builds,
 //                                             .github/homey-version-floor, local manifests)
 //   node athom-version-floor.js --apply    -> set manifests to that highest so a +1 bump goes above it
 //   node athom-version-floor.js --gate     -> exit 1 if app.json version <= highest Athom/floor/tag
@@ -66,9 +66,11 @@ function tagVersions() {
   const athom = maxOf(await athomVersions(appId));
   // tags: only same major line as local (stray tags like v34.0.1 exist in history)
   const major = (parse(local) || [0])[0];
+  // Tags are repo-wide (master/stable/bastien share the repo), so they are informational only and
+  // NOT used for the floor (bastien 1.0.x would otherwise be raised to a stray v1.8.2 tag).
   const tag = maxOf(tagVersions().filter((v) => parse(v) && parse(v)[0] === major));
   const file = fs.existsSync(FLOOR_FILE) ? fs.readFileSync(FLOOR_FILE, 'utf8').trim() : null;
-  const uploaded = maxOf([athom, tag, file]);
+  const uploaded = maxOf([athom, file]);
   console.log(`version-floor app=${appId} local=${local} athom=${athom} tag=${tag} file=${file} -> uploadedMax=${uploaded}`);
   if (process.env.GITHUB_ENV && uploaded) fs.appendFileSync(process.env.GITHUB_ENV, `HOMEY_VERSION_FLOOR=${uploaded}\n`);
 
