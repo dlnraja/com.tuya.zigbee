@@ -132,10 +132,7 @@
     }
   ],
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_skueekg3",
-      "_tz3000_skueekg3"
-    ],
+    "manufacturerName": [],
     "productId": [
       "TS000F"
     ],
@@ -163,5 +160,6 @@
   "ui": {
     "quickAction": "onoff"
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "deprecated": true
 }
