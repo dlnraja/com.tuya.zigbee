@@ -412,6 +412,42 @@
       "cadence": "weekly",
       "kind": "firmware",
       "credit": "Athom B.V."
+    },
+    {
+      "id": "homey-forum-apps-category",
+      "type": "discourse-category",
+      "url": "https://community.homey.app",
+      "category": "apps/7",
+      "pages": 1,
+      "cadence": "daily",
+      "kind": "forum-app",
+      "credit": "Homey Community Forum app authors (Apps category)"
+    },
+    {
+      "id": "homey-forum-apps-tracked",
+      "type": "discourse",
+      "url": "https://community.homey.app",
+      "topics": [
+        160624,
+        155646,
+        160590,
+        29734
+      ],
+      "batch": 30,
+      "cadence": "weekly",
+      "kind": "forum",
+      "credit": "Homey Community app topics: Switcher (iBush), HomeSuite (Gabriel_Pedrosa_Mach), Aqara Community (makleso6), Philips Hue Zigbee (Johan Bendz)"
+    },
+    {
+      "id": "homey-forum-tag-zigbee",
+      "type": "discourse-category",
+      "url": "https://community.homey.app",
+      "tag": "zigbee",
+      "pages": 1,
+      "cadence": "daily",
+      "kind": "forum-zigbee",
+      "match": "zigbee|_TZ|TS0|ember|firmware|pair|rejoin|quirk|lumi|aqara|sonoff|ikea|hue",
+      "credit": "Homey Community Forum members (tag: zigbee)"
     }
   ]
 }
