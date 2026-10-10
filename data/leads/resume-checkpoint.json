@@ -1189,12 +1189,15 @@
       "#550 recent-RX guard d28749b787/f8983f20dd/b23634687d",
       "gmail filters forum+github f1206c64e5",
       "build-status reader 8b526b4f4f",
-      "stable 5.12.375 on Test"
+      "stable 5.12.375 on Test",
+      "homey-app-validate workflow 3 branches (master a8d3a64447)",
+      "version skip test: 9.0.1333/1334 also processing_failed -> not a poisoned version"
     ],
     "pending": [
-      "master: every 9.0.1332 build processing_failed since 2026-10-04 (#3442-#3455), Athom returns no error field; last good 9.0.1330 #3441 — bisect package diff",
-      "HOMEY_PAT_API + HOMEY_TOKEN invalid: user must regenerate user/dashboard PAT",
-      "master_queue, x-scan proposals, PCr2, spec 010, 34 log-only actions, localtuya, Bastien flow audit"
+      "master AggregateError: local build/validate identical 1330 vs 1331 (only diffs: led_controller_spi_tuya [also on stable, OK], light_cct_ts0502b +eWeLight mfr, temphumidsensor +_TZE200_iq4ygaai, button_emergency_sos/curtain_module mfr lists, panel_switch_cover base caps [also on stable]); next = bisect by publishing tip with those 4 compose changes reverted one at a time (each publish ~15 min)",
+      "stable #283 5.12.376 failure = second upload of same version (#282 same version processed OK)",
+      "Auto-Publish waits forever on processing_failed (Wait for Athom draft processing) and holds the athom-publish-master lock",
+      "master_queue etc."
     ]
   }
 }
