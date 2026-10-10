@@ -109,6 +109,41 @@
     "_tze284_g1enhdsi|TS0601"
    ],
    "note": "P2797: single placements proven multi-gang by two sources (productId/DP registry + Z2M); moved to the matching gang driver"
+  },
+  "button_wireless_2": {
+   "manufacturerName": [
+    "_TZ3000_JAK16DLL",
+    "_TZ3000_cayepv1a",
+    "_TZ3000_lepzuhto",
+    "_TZ3000_jak16dll",
+    "_tz3000_jak16dll",
+    "_tz3000_cayepv1a",
+    "_tz3000_lepzuhto",
+    "_tz3000_JAK16DLL",
+    "_TZ3000_CAYEPV1A",
+    "_tz3000_CAYEPV1A",
+    "_TZ3000_LEPZUHTO",
+    "_tz3000_LEPZUHTO"
+   ],
+   "productId": [],
+   "couples": [
+    "_tz3000_jak16dll|TS011F",
+    "_tz3000_cayepv1a|TS011F",
+    "_tz3000_lepzuhto|TS011F"
+   ],
+   "resolvedTo": {
+    "_tz3000_jak16dll": "smartplug_2_socket",
+    "_tz3000_cayepv1a": "smartPlug_DinRail",
+    "_tz3000_lepzuhto": "smartPlug_DinRail"
+   },
+   "date": "2026-10-10",
+   "sources": [
+    "https://github.com/Koenkk/zigbee2mqtt/issues/18326",
+    "https://github.com/zigpy/zha-device-handlers/issues/2345",
+    "https://zigbee.blakadder.com/Immax_07752L.html",
+    "https://github.com/Koenkk/zigbee-herdsman-converters/issues/7761",
+    "https://github.com/Koenkk/zigbee-herdsman-converters/issues/10204"
+   ]
   }
  }
 }
