@@ -7,6 +7,9 @@
     "es": "Control Remoto Blaster"
   },
   "class": "other",
+  "platforms": [
+    "local"
+  ],
   "capabilities": [
     "button.learn_ir",
     "ir_learned_code",
