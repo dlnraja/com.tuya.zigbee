@@ -3648,6 +3648,30 @@
         "curtain_motor"
       ],
       "reviewed": "2026-10-10 exact-pair 2-gang driver (as master); kept on curtain_motor for already-paired devices, no removal"
+    },
+    {
+      "key": "aoyan|ts0601",
+      "drivers": [
+        "soil_sensor",
+        "water_leak_sensor"
+      ],
+      "reviewed": "2026-10-10 same as master; AOYAN brand ships both soil and leak sensors (no removal)"
+    },
+    {
+      "key": "aoyan|Ts0601",
+      "drivers": [
+        "soil_sensor",
+        "water_leak_sensor"
+      ],
+      "reviewed": "2026-10-10 same as master; AOYAN brand ships both soil and leak sensors (no removal)"
+    },
+    {
+      "key": "aoyan|TS0601",
+      "drivers": [
+        "soil_sensor",
+        "water_leak_sensor"
+      ],
+      "reviewed": "2026-10-10 same as master; AOYAN brand ships both soil and leak sensors (no removal)"
     }
   ]
 }
