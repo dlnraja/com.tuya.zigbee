@@ -622,6 +622,52 @@ try {
     process.env.HOMEY_PUBLISH_APPJSON = destAppJson;
   }
 
+  // 5a2) Publish hold (config/publish-hold-drivers.json).
+  // WHY(Athom AggregateError since 9.0.1331, bisect J3 #3478 / J4 #3479): a driver that
+  // breaks Athom processing is kept in source but left out of the upload payload.
+  // Only never-published drivers may be listed, so no paired device loses its driver.
+  // Runs after compaction + sacred-keep checks so those gates still see the full manifest.
+  try {
+    const holdFile = path.join(__dirname, '..', 'config', 'publish-hold-drivers.json');
+    if (fs.existsSync(holdFile)) {
+      const hold = JSON.parse(fs.readFileSync(holdFile, 'utf8'));
+      const ids = new Set((hold.drivers || []).map((d) => d && d.id).filter(Boolean));
+      if (ids.size > 0) {
+        const manifest = JSON.parse(fs.readFileSync(destAppJson, 'utf8'));
+        const before = (manifest.drivers || []).length;
+        manifest.drivers = (manifest.drivers || []).filter((d) => !ids.has(d.id));
+        // A card is dropped only when every driver its device filter names is held.
+        const cardUsesHeld = (card) => {
+          const args = Array.isArray(card && card.args) ? card.args : [];
+          return args.some((a) => {
+            if (!a || a.type !== 'device' || typeof a.filter !== 'string') return false;
+            const m = a.filter.match(/(?:^|&)driver_id=([^&]+)/);
+            if (!m) return false;
+            const named = m[1].split('|').filter(Boolean);
+            return named.length > 0 && named.every((x) => ids.has(x));
+          });
+        };
+        let cards = 0;
+        if (manifest.flow) {
+          for (const type of Object.keys(manifest.flow)) {
+            if (!Array.isArray(manifest.flow[type])) continue;
+            const n = manifest.flow[type].length;
+            manifest.flow[type] = manifest.flow[type].filter((c) => !cardUsesHeld(c));
+            cards += n - manifest.flow[type].length;
+          }
+        }
+        fs.writeFileSync(destAppJson, JSON.stringify(manifest));
+        for (const id of ids) fs.rmSync(path.join(destDir, 'drivers', id), { recursive: true, force: true });
+        const buildAppJson = path.join(__dirname, '..', '.homeybuild', 'app.json');
+        if (fs.existsSync(path.dirname(buildAppJson))) fs.copyFileSync(destAppJson, buildAppJson);
+        console.log(`[publish-hold] held back ${before - manifest.drivers.length} driver(s) [${[...ids].join(', ')}], ${cards} flow card(s)`);
+      }
+    }
+  } catch (e) {
+    console.error('FATAL: publish hold failed:', e.message);
+    process.exit(1);
+  }
+
   // 5b) Remove publish-only caches that are not required for runtime startup.
   // Static app pairing support is already in app.json/driver.compose.json and
   // DeviceFingerprintDB. Keeping the full MFS cache pushes Athom processing over

@@ -1,0 +1,11 @@
+{
+  "_why": "Drivers kept in source but left out of the Athom publish payload while they break Athom processing. Never-published drivers only (no paired device can depend on them). Re-enable by removing the entry once a dedicated bisect build passes.",
+  "drivers": [
+    {
+      "id": "led_controller_spi_tuya",
+      "since": "2026-10-10",
+      "reason": "Athom processing_failed AggregateError since 9.0.1331 (first build with this driver). Bisect J3 #3478 (I + spi + whd02 + sub_dim_set) and J4 #3479 (I + spi only) failed; I #3468 without it reached Test. Couples stay covered by switch_1gang (reviewed exception).",
+      "sacredCouplesOwnedElsewhere": true
+    }
+  ]
+}
