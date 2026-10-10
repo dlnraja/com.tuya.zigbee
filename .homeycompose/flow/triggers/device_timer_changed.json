@@ -1,0 +1,55 @@
+{
+  "id": "device_timer_changed",
+  "title": {
+    "en": "Timer started or ended",
+    "fr": "Minuteur démarré ou terminé",
+    "nl": "Timer gestart of beëindigd",
+    "de": "Timer gestartet oder beendet"
+  },
+  "titleFormatted": {
+    "en": "Timer of [[device]] started or ended",
+    "fr": "Minuteur de [[device]] démarré ou terminé",
+    "nl": "Timer van [[device]] gestart of beëindigd",
+    "de": "Timer von [[device]] gestartet oder beendet"
+  },
+  "hint": {
+    "en": "Fires when a countdown set by this app starts or ends. Idea credited to iBush's Switcher app (community.homey.app/t/160624).",
+    "fr": "Se déclenche quand un compte à rebours lancé par l'app démarre ou se termine. Idée créditée à l'app Switcher d'iBush."
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "capabilities=onoff"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "running",
+      "type": "boolean",
+      "title": {
+        "en": "Running",
+        "fr": "En cours"
+      },
+      "example": true
+    },
+    {
+      "name": "minutes_left",
+      "type": "number",
+      "title": {
+        "en": "Minutes left",
+        "fr": "Minutes restantes"
+      },
+      "example": 15
+    },
+    {
+      "name": "gang",
+      "type": "number",
+      "title": {
+        "en": "Gang",
+        "fr": "Canal"
+      },
+      "example": 1
+    }
+  ]
+}

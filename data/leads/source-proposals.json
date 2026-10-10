@@ -1,6 +1,6 @@
 {
   "$comment": "Change-driven proposals from data/sources/registry.json. Identifiers + our own one-line summaries; review before landing (W4 couples, research first).",
-  "updated": "2026-10-10T08:59:23.491Z",
+  "updated": "2026-10-10T23:30:14.577Z",
   "proposals": [
     {
       "source": "z2m-issues",
@@ -8936,6 +8936,32 @@
       "quirk": false,
       "credit": "Johan Bendz and com.tuya.zigbee contributors",
       "seenAt": "2026-10-10T08:59:23.172Z"
+    },
+    {
+      "source": "homey-forum-apps-tracked",
+      "kind": "forum",
+      "ref": "https://community.homey.app/t/160624/1",
+      "summary": "post #1 by iBush",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community app topics: Switcher (iBush), HomeSuite (Gabriel_Pedrosa_Mach), Aqara Community (makleso6), Philips Hue Zigbee (Johan Bendz)",
+      "seenAt": "2026-10-10T23:26:02.605Z"
+    },
+    {
+      "source": "homey-forum-apps-tracked",
+      "kind": "forum",
+      "ref": "https://community.homey.app/t/160590/4",
+      "summary": "post #4 by makleso6",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community app topics: Switcher (iBush), HomeSuite (Gabriel_Pedrosa_Mach), Aqara Community (makleso6), Philips Hue Zigbee (Johan Bendz)",
+      "seenAt": "2026-10-10T23:26:03.564Z"
     }
   ]
 }
