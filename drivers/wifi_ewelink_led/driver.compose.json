@@ -7,6 +7,7 @@
     "es": "Tira LED eWeLink (SONOFF L1/L2)"
   },
   "class": "light",
+  "energy": { "approximation": { "usageOn": 15, "usageOff": 0.5 } },
   "capabilities": [
     "onoff",
     "dim",
