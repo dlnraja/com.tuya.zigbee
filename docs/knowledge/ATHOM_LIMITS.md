@@ -78,3 +78,8 @@ driver; and a payload that adds a new driver id cloned 1:1 from a passing driver
   light_cct_ts0502b, light_rgbcct_ts0505b, light_dimmable_ts0501a, mc101z_pwm_dimmer, bulb_zbeacon_ts0505b,
   switch_zbeacon_ts0001, temphumidsensor_zcl_th01/ts0601, sensor_ias_zonetype_ewelink,
   panel_switch_cover_tuya, switch_presence_tuya). Adding drivers worked up to 1330.
+
+## Probe P1 / R4 (2026-10-10 ~23:00 Paris)
+- **P1** `bisect-p1-copy`: 1:1 rename of accepted `sound_sensor_tuya` → `sound_sensor_tuya_probe` (no manufacturerName, deprecated). Adds a driver id without pairable couple change.
+  - #3494 v9.0.1375 = `processing_failed | stateMeta=socket hang up` → **retry** (run 38086030042), do not conclude.
+- **R4** `bisect-r4-rename-clone` / `switch_probe_r4_clone` (invented `_TZ3000_r4clonex`+`TS00R4`): Validate failed (compose not in app.json). **Branch deleted** — invented couple must never land on master/stable. Superseded by P1 design.
