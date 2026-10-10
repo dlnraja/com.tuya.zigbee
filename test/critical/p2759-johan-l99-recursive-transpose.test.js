@@ -52,7 +52,13 @@ describe('P2759 Johan L99 recursive transpose locks', () => {
     const src = fs.readFileSync(path.join(ROOT, 'drivers/lcdtemphumidsensor_3/device.js'), 'utf8');
     assert.match(src, /on\(\s*['"]reporting['"]/);
     assert.match(src, /on\(\s*['"]response['"]/);
-    const c = compose('lcdtemphumidsensor_3');
-    assert.ok(c.zigbee.manufacturerName.some((m) => /locansqn/i.test(m)));
+    // WHY(Node22 audit 2026-10-11): _TZE200_locansqn+TS0601 is owned by lcdtemphumidsensor on stable;
+    // listing it in _3 too would duplicate the exact couple (pairing ambiguity). Accept either owner.
+    const owners = ['lcdtemphumidsensor_3', 'lcdtemphumidsensor'].filter((id) => {
+      const c = compose(id);
+      return c.zigbee.manufacturerName.some((m) => /^_tze200_locansqn$/i.test(m))
+        && c.zigbee.productId.includes('TS0601');
+    });
+    assert.ok(owners.length >= 1, 'locansqn+TS0601 has an LCD owner');
   });
 });
