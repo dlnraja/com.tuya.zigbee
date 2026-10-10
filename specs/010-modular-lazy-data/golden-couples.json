@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-10T23:35:14.647Z",
+ "generated": "2026-10-10T23:41:37.341Z",
  "drivers": 392,
  "snapshot": {
   "air_purifier": {
@@ -1877,7 +1877,7 @@
   "switch_1gang": {
    "mfr": 361,
    "pid": 38,
-   "mfrSha": "a7b831453723341a",
+   "mfrSha": "ca0f1e8c08f90266",
    "pidSha": "fd65b1d55ed8db6a"
   },
   "switch_2_gang": {
@@ -1893,9 +1893,9 @@
    "pidSha": "5181eca4102958ba"
   },
   "switch_2gang": {
-   "mfr": 94,
+   "mfr": 95,
    "pid": 14,
-   "mfrSha": "a0c2edffb0fee8dc",
+   "mfrSha": "5acda372500b6ed8",
    "pidSha": "830a6ff3ab71bd70"
   },
   "switch_3_gang": {
@@ -2241,9 +2241,9 @@
    "pidSha": "a919bfb9daea8608"
   },
   "wall_switch_1gang_1way": {
-   "mfr": 10,
+   "mfr": 9,
    "pid": 7,
-   "mfrSha": "72d464eadf47c273",
+   "mfrSha": "00c3e6c4e3b41ec9",
    "pidSha": "77d1f07899dbce60"
   },
   "wall_switch_2_gang": {
