@@ -64,6 +64,7 @@ jobs:
         uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444
         with:
           node-version: '22'
+          cache: 'npm'
 
       - name: Install
         run: npm ci || npm install
@@ -127,6 +128,7 @@ jobs:
         uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           node-version: '22'
+          cache: 'npm'
       - name: 🕗 Paris-time guard
         id: tz
         run: node scripts/digest/tz-guard.js --schedule="${{ github.event.schedule }}" --paris-hour=${{ startsWith(github.event.schedule, '30 ') && '8' || '16' }}

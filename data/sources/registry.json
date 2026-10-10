@@ -353,6 +353,25 @@
       "kind": "docs",
       "credit": "Athom B.V. developer docs index",
       "note": "No separate public Athom developer blog feed found; the docs index (llms.txt) changes when new guides/changelogs are added."
+    },
+    {
+      "id": "homey-forum-ecosystem",
+      "type": "discourse",
+      "url": "https://community.homey.app",
+      "topics": [
+        43287,
+        156,
+        36418,
+        154077,
+        146735,
+        158748,
+        146971,
+        144805
+      ],
+      "batch": 40,
+      "cadence": "weekly",
+      "kind": "forum",
+      "credit": "Homey Community Forum members (Device Capabilities by Arie J. Godschalk; Aqara/Xiaomi; SONOFF Zigbee; Tuya Local; Tuya official; Homey Portal; Self-Hosted Server; AI Flow Builder threads)"
     }
   ]
 }
