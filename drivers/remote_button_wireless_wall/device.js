@@ -7,6 +7,8 @@ const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
 
 
 const ButtonDevice = require('../../lib/devices/ButtonDevice');
+// WHY(P2624/e8d98608, Gmail diag 2026-09): CI was never imported -> ReferenceError killed onNodeInit
+const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 let UnifiedBatteryHandler = null;
 try { UnifiedBatteryHandler = require('../../lib/battery/UnifiedBatteryHandler'); } catch (e) { /* optional */ }
@@ -860,8 +862,8 @@ class Button1GangDevice extends ButtonDevice {
     const manufacturerName = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
     
     // Only setup for TS004F Smart Knob devices
-    const isSmartKnob = CI.containsCI(modelId, 'TS004F') || 
-                        CI.containsCI(manufacturerName, 'gwkzibhs' );
+    const isSmartKnob = containsCI(modelId, 'TS004F') || 
+                        containsCI(manufacturerName, 'gwkzibhs' );
     
     if (!isSmartKnob) {
       this.log('[BUTTON1-LEVEL] Not a Smart Knob device, skipping levelControl setup');
