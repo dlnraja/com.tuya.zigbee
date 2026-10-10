@@ -152,6 +152,9 @@ jobs:
       - name: 🛡️ P2138 sacred-couple matrix gate
         run: node tools/ci/p2138-sacred-couple-matrix-gate.js
 
+      - name: 🛡️ Couple pin gate (SPM01/SPM02 never curtain_motor)
+        run: node tools/ci/couple-pin-gate.js
+
       - name: 🛡️ P2281 discovery lineage (past+recent+present)
         run: node tools/ci/discovery-lineage-enrich-gate.js
 
