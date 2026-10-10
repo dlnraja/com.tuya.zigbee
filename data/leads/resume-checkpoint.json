@@ -1184,12 +1184,17 @@
       "OOM fix app.json->package.json master d4355fbe6f stable cb1bb30aa8 bastien d7612ee4e2",
       "stable collision exceptions f122bcddb6",
       "stable TITAN raw setCapabilityValue 2d8576c7ae",
-      "#559 already supported (plug_energy_monitor)"
+      "#559 already supported (plug_energy_monitor)",
+      "gate doublons pre-push 3 branches 9b496c9a6e/77ec98b059",
+      "#550 recent-RX guard d28749b787/f8983f20dd/b23634687d",
+      "gmail filters forum+github f1206c64e5",
+      "build-status reader 8b526b4f4f",
+      "stable 5.12.375 on Test"
     ],
     "pending": [
-      "confirm master 9.0.1331 on Test (Auto-Publish pending)",
-      "#550 radar _TZE204_gkfbdvyx",
-      "master_queue, x-scan proposals (36 Z2M, 8 placements, quirks #12431, news #101-106), PCr2, spec 010, 34 log-only actions, localtuya study, Bastien flow audit leftovers"
+      "master: every 9.0.1332 build processing_failed since 2026-10-04 (#3442-#3455), Athom returns no error field; last good 9.0.1330 #3441 — bisect package diff",
+      "HOMEY_PAT_API + HOMEY_TOKEN invalid: user must regenerate user/dashboard PAT",
+      "master_queue, x-scan proposals, PCr2, spec 010, 34 log-only actions, localtuya, Bastien flow audit"
     ]
   }
 }
