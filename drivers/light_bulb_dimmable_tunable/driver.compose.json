@@ -15,7 +15,7 @@
     "power_on_behavior",
     "button.1"
   ],
-  "energy": { "approximation": { "usageOn": 7, "usageOff": 0.4 },
+  "energy": {
     "mains": true
   },
   "zigbee": {

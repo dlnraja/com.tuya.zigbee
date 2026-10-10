@@ -32,7 +32,7 @@
       "skipped": false,
       "rel": "tools/ci/local-workflow-learn.js",
       "status": 0,
-      "outTail": "      \"failStreak\": 0,\n      \"lastOk\": true,\n      \"lastAt\": 1791278853529,\n      \"lastConclusion\": \"success\"\n    }\n  }\n}\n"
+      "outTail": "      \"failStreak\": 0,\n      \"lastOk\": true,\n      \"lastAt\": 1790672809477,\n      \"lastConclusion\": \"success\"\n    }\n  }\n}\n"
     },
     {
       "ok": true,
@@ -60,14 +60,14 @@
       "skipped": false,
       "rel": "tools/ci/l99-dual-app-enrich-gates.js",
       "status": 0,
-      "outTail": "[BOTH] OK scripts/validation/check-energy-divisor.js —    Drivers without divisor: 0 |  | ✅ All energy drivers have proper divisor settings\n[BOTH] OK tools/ci/smart-features-brand-scrub-gate.js — smart-features-brand-scrub-gate: OK (no commercial UI tokens in .homeycompose/flow)\n[BOTH] OK test/critical/l99-energy-jump-divisor.test.js — # skipped 0 | # todo 0 | # duration_ms 40.725994\n[MASTER_ONLY] OK test/critical/l99-daylight-atmosphere.test.js — # skipped 0 | # todo 0 | # duration_ms 39.831499\n[MASTER_ONLY] OK test/hue-smart-features.test.js — # skipped 0 | # todo 0 | # duration_ms 100.586215\n[MASTER_ONLY] OK tools/ci/flow-l99-orchestrator.js —   ], |   \"failCount\": 0 | }\nl99-dual-app-enrich-gates: all green\n"
+      "outTail": "[BOTH] OK scripts/validation/check-energy-divisor.js —    Drivers without divisor: 0 |  | ✅ All energy drivers have proper divisor settings\n[BOTH] OK tools/ci/smart-features-brand-scrub-gate.js — smart-features-brand-scrub-gate: OK (no commercial UI tokens in .homeycompose/flow)\n[BOTH] OK test/critical/l99-energy-jump-divisor.test.js — # skipped 0 | # todo 0 | # duration_ms 43.732847\n[MASTER_ONLY] OK test/critical/l99-daylight-atmosphere.test.js — # skipped 0 | # todo 0 | # duration_ms 44.491353\n[MASTER_ONLY] OK test/hue-smart-features.test.js — # skipped 0 | # todo 0 | # duration_ms 103.706154\n[MASTER_ONLY] OK tools/ci/flow-l99-orchestrator.js —   ], |   \"failCount\": 0 | }\nl99-dual-app-enrich-gates: all green\n"
     },
     {
       "ok": true,
       "skipped": false,
       "rel": "tools/ci/case-variant-fixer.js",
       "status": 0,
-      "outTail": "[case-variant-fixer] mode=DRY-RUN | drivers concernés: 41 | variantes à ajouter: 166 | placeholders ignorés: 5\n"
+      "outTail": "[case-variant-fixer] mode=DRY-RUN | drivers concernés: 17 | variantes à ajouter: 80 | placeholders ignorés: 5\n"
     },
     {
       "ok": true,
@@ -81,8 +81,8 @@
       "skipped": false,
       "rel": "tools/ci/battery-button-intelligence-gate.js",
       "status": 0,
-      "outTail": "[battery-button-gate] errors=0 warnings=44\n  B5: 14\n  F1: 23\n  C2: 7\n[battery-button-gate] report: reports/BATTERY_BUTTON_INTELLIGENCE.md\n"
+      "outTail": "[battery-button-gate] errors=0 warnings=44\n  B5: 14\n  F1: 24\n  C2: 6\n[battery-button-gate] report: reports/BATTERY_BUTTON_INTELLIGENCE.md\n"
     }
   ],
-  "ts": "2026-10-06T09:27:39.326Z"
+  "ts": "2026-09-29T09:06:55.395Z"
 }

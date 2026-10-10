@@ -204,26 +204,12 @@ function phaseAntiBotGate() {
 
 function phaseValidate() {
   if (skipCommit) { log('  skipped (--skip-commit)'); return { skipped: true }; }
-  // WHY(2026-10-10): `homey app validate` regenerates the root app.json from .homeycompose
-  // (full, unpruned: ~4.7 MB compact). The pre-commit publish-size gate then measured that
-  // working-tree file and blocked every phase-6 commit, so this loop stayed green but never
-  // wrote anything. Validate is a check here, not a generator: restore the committed app.json
-  // and drop the build directory.
-  const appJsonPath = path.join(ROOT, 'app.json');
-  let appJsonBefore = null;
-  try { appJsonBefore = fs.readFileSync(appJsonPath); } catch (e) { /* absent */ }
   try {
     const cmd = `node "${path.join(ROOT, 'node_modules', 'homey', 'bin', 'homey.js')}" app validate --level publish`;
     const out = execSync(cmd, { cwd: ROOT, encoding: 'utf8', timeout: 120000 });
     return { ok: true, output: String(out).slice(-300) };
   } catch (e) {
     return { ok: false, error: e.message.slice(0, 500) };
-  } finally {
-    if (appJsonBefore) {
-      try { fs.writeFileSync(appJsonPath, appJsonBefore); } catch (e) { log(`  app.json restore failed: ${e.message}`); }
-    }
-    // The size gate also measures .homeybuild/app.json (same unpruned build) — drop the build dir.
-    try { fs.rmSync(path.join(ROOT, '.homeybuild'), { recursive: true, force: true }); } catch (e) { /* best effort */ }
   }
 }
 

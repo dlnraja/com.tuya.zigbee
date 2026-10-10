@@ -38,26 +38,3 @@ describe('P2790 strict apply', () => {
     assert.ok(two.every((p) => p.ambiguous || !p.pid));
   });
 });
-
-describe('stable backport of coverage-audit couples (decideAuditBackport)', () => {
-  const { decideAuditBackport } = require('../../scripts/leads/strict-apply');
-  const sidx = {
-    byMfr: new Map([['_tz3210_f8dqbuze', new Set(['bulb_dimmable'])]]),
-    byPid: new Map(),
-    byDriver: new Map([
-      ['bulb_dimmable', { mfrs: new Set(['_tz3210_f8dqbuze']), pids: new Set(['TS0501A']) }],
-      ['led_controller_dimmable', { mfrs: new Set(['_tz3210_other001']), pids: new Set(['TS0501B']) }],
-      ['plug', { mfrs: new Set(), pids: new Set(['TS0501A', 'TS011F']) }],
-    ]),
-  };
-  it('applies when the mfr is on stable, the target lists the pid and no new dual couple appears', () => {
-    assert.deepEqual(decideAuditBackport(sidx, '_TZ3210_f8dqbuze', 'TS0501B', 'led_controller_dimmable'), { status: 'apply', driver: 'led_controller_dimmable' });
-  });
-  it('refuses new mfrs, generic pids, missing targets and clashes', () => {
-    assert.equal(decideAuditBackport(sidx, '_TZ3210_newnewnw', 'TS0501B', 'led_controller_dimmable').status, 'lead');
-    assert.equal(decideAuditBackport(sidx, '_TZ3210_f8dqbuze', 'TS0601', 'led_controller_dimmable').status, 'lead');
-    assert.equal(decideAuditBackport(sidx, '_TZ3210_f8dqbuze', 'TS0501B', 'missing_driver').status, 'lead');
-    assert.equal(decideAuditBackport(sidx, '_TZ3210_f8dqbuze', 'TS011F', 'plug').status, 'lead');
-    assert.equal(decideAuditBackport(sidx, '_TZ3210_f8dqbuze', 'TS0501A', 'plug').status, 'already');
-  });
-});

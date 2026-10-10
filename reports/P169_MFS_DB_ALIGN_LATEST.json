@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-10T10:58:22.346Z",
+  "timestamp": "2026-10-03T10:13:29.852Z",
   "gate": "align-mfs-db-intelligent",
   "apply": false,
   "check": true,
@@ -514,6 +514,7 @@
         "contact_sensor",
         "curtain_motor",
         "gas_sensor",
+        "illuminance_sensor",
         "ir_blaster",
         "presence_sensor_radar",
         "rain_sensor",
@@ -524,6 +525,7 @@
         "switch_1gang",
         "switch_2gang",
         "switch_3gang",
+        "vibration_sensor",
         "water_leak_sensor"
       ]
     }

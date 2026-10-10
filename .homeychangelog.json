@@ -75,14 +75,14 @@
       "date": "2026-08-11",
       "channel": "test",
       "en": "Workflow hardening: unique flow card gate, safer timers, forum inbox bridge, CI npm install gaps filled.",
-      "fr": "Durcissement workflows: gate flow cards uniques, timers plus surs, pont forum→inbox, npm install CI complete."
+      "fr": "Durcissement workflows: gate flow cards uniques, timers plus surs, pont forum\u2192inbox, npm install CI complete."
     },
     {
       "version": "9.0.469",
       "date": "2026-08-11",
       "channel": "test",
       "en": "Workflow hardening: unique flow card gate, safer timers, forum inbox bridge, CI npm install gaps filled.",
-      "fr": "Durcissement workflows: gate flow cards uniques, timers plus surs, pont forum→inbox, npm install CI complete."
+      "fr": "Durcissement workflows: gate flow cards uniques, timers plus surs, pont forum\u2192inbox, npm install CI complete."
     },
     {
       "version": "9.0.468",
@@ -159,14 +159,14 @@
       "date": "2026-08-11",
       "channel": "test",
       "en": "Universal flow-card heuristics, driver-mapping repair, DeviceIO on legacy Tuya/light bases, WiFi I/O channel, missing flow compose for 4 drivers.",
-      "fr": "Heuristiques Flow universelles, mapping drivers réparé, DeviceIO sur bases Tuya/light legacy, canal WiFi I/O, compose Flow manquant pour 4 drivers."
+      "fr": "Heuristiques Flow universelles, mapping drivers r\u00e9par\u00e9, DeviceIO sur bases Tuya/light legacy, canal WiFi I/O, compose Flow manquant pour 4 drivers."
     },
     {
       "version": "9.0.455",
       "date": "2026-08-11",
       "channel": "test",
       "en": "Improved device wake/handshake and interview recovery; added contact sensor fingerprints from incomplete-source cross-check.",
-      "fr": "Amélioration handshake/wake device et récupération interview; empreintes contact depuis cross-check sources incomplètes."
+      "fr": "Am\u00e9lioration handshake/wake device et r\u00e9cup\u00e9ration interview; empreintes contact depuis cross-check sources incompl\u00e8tes."
     },
     {
       "version": "9.0.453",
@@ -180,56 +180,56 @@
       "date": "2026-07-31",
       "channel": "test",
       "en": "Central destroyed guards on capability ops, linear battery formulas eliminated.",
-      "fr": "Gardes destroyed centrales sur les opérations capabilities, formules batterie linéaires éliminées."
+      "fr": "Gardes destroyed centrales sur les op\u00e9rations capabilities, formules batterie lin\u00e9aires \u00e9limin\u00e9es."
     },
     {
       "version": "9.0.387",
       "date": "2026-07-31",
       "channel": "test",
       "en": "Flow DP send hardening + typed handler with per-type validation.",
-      "fr": "Blindage des envois DP par flow + handler typé avec validation par type."
+      "fr": "Blindage des envois DP par flow + handler typ\u00e9 avec validation par type."
     },
     {
       "version": "9.0.386",
       "date": "2026-07-31",
       "channel": "test",
       "en": "Full forum topic scan (2039 posts with images/links) + digest, sqcn0y re-added (purge), version alignment.",
-      "fr": "Scan complet du topic forum (2039 posts avec images/liens) + digest, sqcn0y ré-ajouté (purge), alignement version."
+      "fr": "Scan complet du topic forum (2039 posts avec images/liens) + digest, sqcn0y r\u00e9-ajout\u00e9 (purge), alignement version."
     },
     {
       "version": "9.0.385",
       "date": "2026-07-31",
       "channel": "test",
       "en": "OTA hardening: SHA512 verified before flashing, header validation, download timeout + size cap, index schema validation.",
-      "fr": "Blindage OTA : SHA512 vérifié avant flash, validation du header, timeout + limite de taille, validation du schéma de l'index."
+      "fr": "Blindage OTA : SHA512 v\u00e9rifi\u00e9 avant flash, validation du header, timeout + limite de taille, validation du sch\u00e9ma de l'index."
     },
     {
       "version": "9.0.384",
       "date": "2026-07-31",
       "channel": "test",
       "en": "Dashboards: navigation fixed (hub/finder/inbox links), precise fingerprint metric, version alignment.",
-      "fr": "Dashboards : navigation corrigée (liens hub/finder/inbox), métrique empreintes précise, alignement version."
+      "fr": "Dashboards : navigation corrig\u00e9e (liens hub/finder/inbox), m\u00e9trique empreintes pr\u00e9cise, alignement version."
     },
     {
       "version": "9.0.383",
       "date": "2026-07-31",
       "channel": "test",
       "en": "51 critical ESLint errors fixed (phantom modules, this-less calls, missing super(), duplicate keys, dead switch cases).",
-      "fr": "51 erreurs ESLint critiques corrigées (modules fantômes, appels sans this, super() manquant, clés dupliquées, cases morts)."
+      "fr": "51 erreurs ESLint critiques corrig\u00e9es (modules fant\u00f4mes, appels sans this, super() manquant, cl\u00e9s dupliqu\u00e9es, cases morts)."
     },
     {
       "version": "9.0.382",
       "date": "2026-07-30",
       "channel": "test",
       "en": "Key-version changelog format (required by headless homey publish), OTA guidance, Hue batch 4.",
-      "fr": "Format clé-version du changelog (requis par homey publish headless), guidance OTA, batch Hue 4."
+      "fr": "Format cl\u00e9-version du changelog (requis par homey publish headless), guidance OTA, batch Hue 4."
     },
     {
       "version": "9.0.381",
       "date": "2026-07-30",
       "channel": "test",
       "en": "Changelog backticks stripped (publish extractor fix), publish-size bundle excludes product-reference, version alignment.",
-      "fr": "Backticks du changelog retirés (fix extracteur publish), exclusion product-reference du bundle, alignement version."
+      "fr": "Backticks du changelog retir\u00e9s (fix extracteur publish), exclusion product-reference du bundle, alignement version."
     },
     {
       "version": "9.0.380",
@@ -243,56 +243,56 @@
       "date": "2026-07-30",
       "channel": "test",
       "en": "OTA real firmware version via swBuildId, Hue batch 3 (dim_to_level, scene_cycle), publish -X theirs.",
-      "fr": "OTA version réelle via swBuildId, batch Hue 3 (dim_to_level, scene_cycle), publish -X theirs."
+      "fr": "OTA version r\u00e9elle via swBuildId, batch Hue 3 (dim_to_level, scene_cycle), publish -X theirs."
     },
     {
       "version": "9.0.378",
       "date": "2026-07-30",
       "channel": "test",
       "en": "OTA overhaul (Tuya MCU fallback, manufacturerName matching, notifications + 3 flow cards), Hue batch 2 (sleep, scenes, DND window), publish race fix.",
-      "fr": "Refonte OTA (fallback MCU Tuya, matching par fabricant, notifications + 3 cards), batch Hue 2 (coucher, scènes, fenêtre DND), fix course publish."
+      "fr": "Refonte OTA (fallback MCU Tuya, matching par fabricant, notifications + 3 cards), batch Hue 2 (coucher, sc\u00e8nes, fen\u00eatre DND), fix course publish."
     },
     {
       "version": "9.0.377",
       "date": "2026-07-30",
       "channel": "test",
       "en": "Temperature compensation inversion fixed (cold inflated battery estimates) + 10 battery profile tests + 9 button press-type tests.",
-      "fr": "Inversion de la compensation température corrigée (le froid gonflait les estimations batterie) + 10 tests profils batterie + 9 tests boutons."
+      "fr": "Inversion de la compensation temp\u00e9rature corrig\u00e9e (le froid gonflait les estimations batterie) + 10 tests profils batterie + 9 tests boutons."
     },
     {
       "version": "9.0.376",
       "date": "2026-07-30",
       "channel": "test",
-      "en": "Hue-style smart features: motion-activated lighting (lux guard, auto-off), circadian curve application, wake-up sunrise ramp — as flow action cards.",
-      "fr": "Smart features style Hue : éclairage sur mouvement (garde lux, auto-off), courbe circadienne, rampe réveil — en cartes de flow."
+      "en": "Hue-style smart features: motion-activated lighting (lux guard, auto-off), circadian curve application, wake-up sunrise ramp \u2014 as flow action cards.",
+      "fr": "Smart features style Hue : \u00e9clairage sur mouvement (garde lux, auto-off), courbe circadienne, rampe r\u00e9veil \u2014 en cartes de flow."
     },
     {
       "version": "9.0.375",
       "date": "2026-07-30",
       "channel": "test",
       "en": "Product reference DB (9027 fingerprints: vendor/model/battery/energy/variants), energy consumption reference for the telemetry estimator, telemetry_is_estimated flow condition, mfs_db gap fix.",
-      "fr": "Base de référence produits (9027 empreintes : vendor/modèle/batterie/énergie/variants), référence de consommation pour l'estimateur, condition de flow telemetry_is_estimated, fix gap mfs_db."
+      "fr": "Base de r\u00e9f\u00e9rence produits (9027 empreintes : vendor/mod\u00e8le/batterie/\u00e9nergie/variants), r\u00e9f\u00e9rence de consommation pour l'estimateur, condition de flow telemetry_is_estimated, fix gap mfs_db."
     },
     {
       "version": "9.0.373",
       "date": "2026-07-30",
       "channel": "test",
       "en": "Case-variant completeness (4950 fingerprints, unknown device prevention) + publish compactor counts case groups (0 observed purged).",
-      "fr": "Complétude des casses (4950 empreintes, anti unknown device) + compacteur par groupes de casse (0 purge observée)."
+      "fr": "Compl\u00e9tude des casses (4950 empreintes, anti unknown device) + compacteur par groupes de casse (0 purge observ\u00e9e)."
     },
     {
       "version": "9.0.371",
       "date": "2026-07-30",
       "channel": "test",
       "en": "10 drivers fixed at load time (bot-corrupted imports), ZCL measuredValue parsed spec-exactly, new smoke/syntax/dead-module audits.",
-      "fr": "10 drivers corrigés au chargement (imports corrompus par un bot), measuredValue ZCL parsé selon la spec, nouveaux audits smoke/syntaxe/modules morts."
+      "fr": "10 drivers corrig\u00e9s au chargement (imports corrompus par un bot), measuredValue ZCL pars\u00e9 selon la spec, nouveaux audits smoke/syntaxe/modules morts."
     },
     {
       "version": "9.0.369",
       "date": "2026-07-30",
       "channel": "test",
       "en": "Humidity scaling heuristic (magnitude-based: raw 65/650/6500 all read 65%), temperature rejects impossible values, 33 new parser tests, DeviceFingerprintDB test suite.",
-      "fr": "Heuristique humidité par magnitude (65/650/6500 lus 65%), rejet des températures impossibles, 33 nouveaux tests parsers, suite DeviceFingerprintDB."
+      "fr": "Heuristique humidit\u00e9 par magnitude (65/650/6500 lus 65%), rejet des temp\u00e9ratures impossibles, 33 nouveaux tests parsers, suite DeviceFingerprintDB."
     },
     {
       "version": "9.0.359",
@@ -610,7 +610,7 @@
         },
         {
           "type": "chore",
-          "description": "28 redundant GitHub Actions workflows archived to .archive/workflows-disabled/ (66 → 36 active)"
+          "description": "28 redundant GitHub Actions workflows archived to .archive/workflows-disabled/ (66 \u2192 36 active)"
         },
         {
           "type": "fix",
@@ -630,7 +630,7 @@
         },
         {
           "type": "chore",
-          "description": "20 dead scripts deleted (571 → 551 scripts)"
+          "description": "20 dead scripts deleted (571 \u2192 551 scripts)"
         },
         {
           "type": "chore",
@@ -907,11 +907,29 @@
       ]
     }
   ],
-  "9.0.1340": {
-    "en": "v9.0.1340: automated publish, manifest sync, and Homey test promotion."
+  "9.0.1348": {
+    "en": "Diagnostic build."
   },
-  "9.0.1339": {
-    "en": "v9.0.1339: automated publish, manifest sync, and Homey test promotion."
+  "9.0.1347": {
+    "en": "Diagnostic build."
+  },
+  "9.0.1346": {
+    "en": "Diagnostic build."
+  },
+  "9.0.1345": {
+    "en": "Diagnostic build."
+  },
+  "9.0.1344": {
+    "en": "Diagnostic build."
+  },
+  "9.0.1343": {
+    "en": "Diagnostic build."
+  },
+  "9.0.1342": {
+    "en": "Diagnostic build (current master content, 9.0.1330 ."
+  },
+  "9.0.1341": {
+    "en": "Diagnostic build (current master content, 9.0.1330 ."
   },
   "9.0.1338": {
     "en": "v9.0.1338: automated publish, manifest sync, and Homey test promotion."
@@ -946,28 +964,10 @@
   "9.0.1324": {
     "en": "v9.0.1324: automated publish, manifest sync, and Homey test promotion."
   },
-  "9.0.1323": {
-    "en": "v9.0.1323: automated publish, manifest sync, and Homey test promotion."
+  "9.0.1349": {
+    "en": "Diagnostic build."
   },
-  "9.0.1322": {
-    "en": "v9.0.1322: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.1321": {
-    "en": "v9.0.1321: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.1320": {
-    "en": "v9.0.1320: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.1319": {
-    "en": "v9.0.1319: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.1318": {
-    "en": "v9.0.1318: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.1350": {
-    "en": "v9.0.1350: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.1351": {
+  "9.0.1352": {
     "en": "Bisect build."
   }
 }

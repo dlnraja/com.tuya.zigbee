@@ -209,12 +209,6 @@
       "_tz3000_4QAOWTDO",
       "_tz3000_QHOZXS2B",
       "_tz3000_BAEIITAD",
-      "_TZ3000_kstbkt6a",
-      "_TZ3000_fxvjhdyl",
-      "_TZ3000_kyb656no",
-      "_tz3000_kstbkt6a",
-      "_tz3000_fxvjhdyl",
-      "_tz3000_kyb656no",
       "heobian",
       "Heobian"
     ]
@@ -544,35 +538,5 @@
     }
   ],
   "id": "water_leak_sensor",
-  "version": "1.0.0",
-  "firmwareUpdates": {
-    "updates": [
-      {
-        "changelog": {
-          "en": "OEM Zigbee firmware v77 (Koenkk zigbee-OTA, SHA512-verified). Install via Homey Device Updates (Settings → Device Updates) on Homey ≥13.2 / Mobile ≥9.10.",
-          "fr": "Firmware Zigbee OEM v77 (Koenkk zigbee-OTA, SHA512 vérifié). Installez via Homey Device Updates (Réglages → Device Updates) — Homey ≥13.2 / Mobile ≥9.10."
-        },
-        "device": {
-          "manufacturerName": [
-            "_TZE284_2se8efxh"
-          ],
-          "productId": [
-            "TS0601"
-          ]
-        },
-        "files": [
-          {
-            "fileVersion": 77,
-            "imageType": 54179,
-            "manufacturerCode": 4417,
-            "minHardwareVersion": 27502,
-            "maxHardwareVersion": 20256,
-            "size": 232066,
-            "name": "1715138033-tk_common_link_lp_OTA_1.0.13.bin",
-            "integrity": "sha256:3c8fcfd10cb97a7be528c362ed2acec43610d31f3a9a45cff8a62e0ecbde39ca"
-          }
-        ]
-      }
-    ]
-  }
+  "version": "1.0.0"
 }
