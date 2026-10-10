@@ -3,6 +3,7 @@
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 const EnergyJumpGuard = require('../../lib/tuya/EnergyJumpGuard');
 const { parseTongouToqSysJztDp6 } = require('../../lib/tuya/DpByteArrayProfiles');
+const { spmVariant, decodePhase } = require('../../lib/tuya/SpmPhaseDecoder');
 const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 /**
@@ -30,7 +31,19 @@ class DinRailMeterDevice extends UnifiedPlugBase {
     }
   }
 
+  _isSpm01() {
+    return spmVariant(this.getSetting('zb_manufacturer_name') || this._protocolInfo?.mfr) === 'spm01';
+  }
+
   get dpMappings() {
+    if (this._isSpm01()) {
+      // SPM01 (Z2M tuya.ts, Koen Kanters & contributors): DP1/DP2 energy, DP6 packed V/I/P
+      return {
+        1: { capability: 'meter_power', divisor: 100 },
+        2: { capability: 'meter_power.exported', divisor: 100 },
+        6: { capability: null, internal: 'spm_phase_a' },
+      };
+    }
     if (this._isTongouToqSysJzt()) {
       return this._tongouDpMappings();
     }
@@ -72,6 +85,14 @@ class DinRailMeterDevice extends UnifiedPlugBase {
   }
 
   _handleDP(dpId, rawValue) {
+    if (Number(dpId) === 6 && this._isSpm01()) {
+      const r = decodePhase(rawValue);
+      if (!r.ok) { this.log(`[SPM01] DP6 ignored (${r.reason})`); return; }
+      this.safeSetCapabilityValue('measure_voltage', r.voltage).catch(() => { });
+      this.safeSetCapabilityValue('measure_current', r.current).catch(() => { });
+      this.safeSetCapabilityValue('measure_power', r.power).catch(() => { });
+      return;
+    }
     if (this._isTongouToqSysJzt() && dpId === 6) {
       this._handleTongouDp6(rawValue);
       return;
