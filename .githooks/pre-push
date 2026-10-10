@@ -49,6 +49,16 @@ if ! "$NODE_BIN" "$ROOT/scripts/ci/publish-size-gate.cjs"; then
   exit 1
 fi
 
+# Duplicate-couple gate (every port: master/stable/bastien) — new collisions need an exact-pair driver or a reviewed baseline entry
+if [ -f "$ROOT/.github/scripts/fp-collision-check.js" ]; then
+  echo -e "${CYAN}[+] Duplicate mfr+pid couple gate...${RESET}"
+  if ! node "$ROOT/.github/scripts/fp-collision-check.js" --baseline "$ROOT/.github/fingerprint-collision-baseline.json" >/tmp/fp-collision.log 2>&1; then
+    grep "NEW COLLISION" /tmp/fp-collision.log | head -20
+    echo -e "${RED}❌ PUSH BLOCKED — new duplicate couple(s): add an exact-pair driver or a reviewed baseline entry (no removal)${RESET}"
+    exit 1
+  fi
+fi
+
 echo ""
 echo -e "${GREEN}╔══════════════════════════════════════════════════════════════╗${RESET}"
 echo -e "${GREEN}║  ✅ PRE-PUSH GATE PASSED — Push allowed                     ║${RESET}"
