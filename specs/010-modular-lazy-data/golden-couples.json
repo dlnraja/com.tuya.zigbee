@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-04T05:12:37.858Z",
+ "generated": "2026-10-10T23:28:56.101Z",
  "drivers": 388,
  "snapshot": {
   "air_purifier": {
@@ -15,9 +15,9 @@
    "pidSha": "455c46e8c8549693"
   },
   "air_purifier_contact": {
-   "mfr": 1,
+   "mfr": 2,
    "pid": 5,
-   "mfrSha": "518af1fd8bf24faa",
+   "mfrSha": "49b36bb636831043",
    "pidSha": "f8dd5a0e7873b5da"
   },
   "air_purifier_curtain": {
@@ -51,9 +51,9 @@
    "pidSha": "64834086bf89edc6"
   },
   "air_purifier_presence": {
-   "mfr": 1,
+   "mfr": 2,
    "pid": 1,
-   "mfrSha": "956f73194ed3e82b",
+   "mfrSha": "bd6ebc209ae44dcf",
    "pidSha": "455c46e8c8549693"
   },
   "air_purifier_quality": {
@@ -63,9 +63,9 @@
    "pidSha": "455c46e8c8549693"
   },
   "air_purifier_siren": {
-   "mfr": 1,
+   "mfr": 2,
    "pid": 1,
-   "mfrSha": "e33640854cc7c485",
+   "mfrSha": "10b9b05c78bbada6",
    "pidSha": "455c46e8c8549693"
   },
   "air_purifier_soil": {
@@ -189,9 +189,9 @@
    "pidSha": "25b2f5f37b8e4dd1"
   },
   "button_wireless_3": {
-   "mfr": 20,
+   "mfr": 22,
    "pid": 1,
-   "mfrSha": "c02ca1aec48f3d01",
+   "mfrSha": "98715411cf195334",
    "pidSha": "06cd0099c514e4ab"
   },
   "button_wireless_4": {
@@ -375,9 +375,9 @@
    "pidSha": "eb0037885ed202bb"
   },
   "contact_sensor_zigbee": {
-   "mfr": 6,
+   "mfr": 7,
    "pid": 1,
-   "mfrSha": "d46fd6dee331937f",
+   "mfrSha": "1279295d19cb7a3c",
    "pidSha": "455c46e8c8549693"
   },
   "curtain_module": {
@@ -387,9 +387,9 @@
    "pidSha": "9100a07e492286f1"
   },
   "curtain_module_2_gang": {
-   "mfr": 10,
+   "mfr": 11,
    "pid": 3,
-   "mfrSha": "41c28d7df89f09eb",
+   "mfrSha": "de232ea1cb9f8696",
    "pidSha": "c4343290bac9e455"
   },
   "curtain_motor": {
@@ -633,9 +633,9 @@
    "pidSha": "4ec845a853bc6530"
   },
   "dimmer_2_gang": {
-   "mfr": 4,
+   "mfr": 5,
    "pid": 34,
-   "mfrSha": "d94b034af52ee2fd",
+   "mfrSha": "a3b2a0be45b62d9f",
    "pidSha": "2daaf0364f1df565"
   },
   "dimmer_2_gang_tuya": {
@@ -681,9 +681,9 @@
    "pidSha": "6c95942761fd08e3"
   },
   "dimmer_wall_1gang": {
-   "mfr": 38,
+   "mfr": 39,
    "pid": 20,
-   "mfrSha": "5e8c0b433ff7722f",
+   "mfrSha": "976890e84a991355",
    "pidSha": "fafa2cc8c54068d7"
   },
   "dimmer_wall_plug": {
@@ -957,9 +957,9 @@
    "pidSha": "9ca0226f619cd8fb"
   },
   "illuminance_sensor": {
-   "mfr": 2,
+   "mfr": 3,
    "pid": 4,
-   "mfrSha": "c8f4395843f5821b",
+   "mfrSha": "701014724b81681c",
    "pidSha": "09fff199fe173c21"
   },
   "ir_blaster": {
@@ -1077,9 +1077,9 @@
    "pidSha": "595404f159640085"
   },
   "light_cct_ts0502b": {
-   "mfr": 1,
+   "mfr": 2,
    "pid": 1,
-   "mfrSha": "06064301214ed4e7",
+   "mfrSha": "ac7317e93069320b",
    "pidSha": "9e84a7b9a8e8cb87"
   },
   "light_dimmable_ts0501a": {
@@ -1089,9 +1089,9 @@
    "pidSha": "9ba9d3f04de6a2ef"
   },
   "light_rgbcct_ts0505b": {
-   "mfr": 1,
+   "mfr": 2,
    "pid": 1,
-   "mfrSha": "db958966b7e3ca84",
+   "mfrSha": "f0afac9c4147341d",
    "pidSha": "38bdc69f98e98fe7"
   },
   "light_sensor_outdoor": {
@@ -1125,9 +1125,9 @@
    "pidSha": "3ba96bb1ed045b60"
   },
   "motion_sensor_radar_mmwave": {
-   "mfr": 8,
+   "mfr": 9,
    "pid": 7,
-   "mfrSha": "fe3c060d56bef78a",
+   "mfrSha": "509f1990996a4cce",
    "pidSha": "bf550bfce5b1a93d"
   },
   "motion_sensor_switch": {
@@ -1215,9 +1215,9 @@
    "pidSha": "4e00cbb3c4a786ba"
   },
   "power_clamp_meter": {
-   "mfr": 7,
+   "mfr": 8,
    "pid": 11,
-   "mfrSha": "36302f78e3b3678c",
+   "mfrSha": "8f5ba330e72b7c7f",
    "pidSha": "74df414b6b5ef7ae"
   },
   "power_meter": {
@@ -1425,9 +1425,9 @@
    "pidSha": "915e3d43eafc41f7"
   },
   "rgb_wall_led_light": {
-   "mfr": 1,
+   "mfr": 2,
    "pid": 1,
-   "mfrSha": "110f12ebe8e411b5",
+   "mfrSha": "74367f5e39557166",
    "pidSha": "915e3d43eafc41f7"
   },
   "scene_switch_1": {
@@ -1677,9 +1677,9 @@
    "pidSha": "f10b428ccaa7b390"
   },
   "smart_knob": {
-   "mfr": 10,
+   "mfr": 13,
    "pid": 4,
-   "mfrSha": "29784a949cad0474",
+   "mfrSha": "dcf6045cc2bf2b7a",
    "pidSha": "cc648cfeee696240"
   },
   "smart_knob_rotary": {
@@ -1749,9 +1749,9 @@
    "pidSha": "a52af499d7d01202"
   },
   "smartplug": {
-   "mfr": 36,
+   "mfr": 37,
    "pid": 3,
-   "mfrSha": "dc73bfea5b44d590",
+   "mfrSha": "943a10db1e608b36",
    "pidSha": "d035b5d1165c0c3d"
   },
   "smartplug_2_socket": {
@@ -1809,10 +1809,10 @@
    "pidSha": "01d687d685c35f20"
   },
   "soil_sensor": {
-   "mfr": 69,
-   "pid": 45,
-   "mfrSha": "33fce655321cd06f",
-   "pidSha": "c2fdbc27b7f8bf15"
+   "mfr": 71,
+   "pid": 47,
+   "mfrSha": "3ff0ffccb6ce28a8",
+   "pidSha": "6d7beb07cb7d44bb"
   },
   "soil_sensor_ec": {
    "mfr": 1,
@@ -1863,9 +1863,9 @@
    "pidSha": "b46b96d17990cf37"
   },
   "switch_1gang": {
-   "mfr": 363,
+   "mfr": 365,
    "pid": 38,
-   "mfrSha": "986a979b34d2e82d",
+   "mfrSha": "f073bcb3fc94ae58",
    "pidSha": "fd65b1d55ed8db6a"
   },
   "switch_2_gang": {
@@ -1893,9 +1893,9 @@
    "pidSha": "1c2e035cec82b333"
   },
   "switch_3gang": {
-   "mfr": 69,
+   "mfr": 70,
    "pid": 46,
-   "mfrSha": "6a1b2bca1885f476",
+   "mfrSha": "6a906fb094bf606c",
    "pidSha": "870729bf5269aac9"
   },
   "switch_4_gang_metering": {
@@ -1905,9 +1905,9 @@
    "pidSha": "79608defafa31586"
   },
   "switch_4gang": {
-   "mfr": 81,
+   "mfr": 82,
    "pid": 39,
-   "mfrSha": "cd1a397aefad16a1",
+   "mfrSha": "162b6901afa1446b",
    "pidSha": "16abbc1949261667"
   },
   "switch_dimmer_1gang": {
@@ -2133,9 +2133,9 @@
    "pidSha": "159f93fb8bd65bf7"
   },
   "vibration_sensor": {
-   "mfr": 32,
+   "mfr": 33,
    "pid": 10,
-   "mfrSha": "f44364985664e9a4",
+   "mfrSha": "3db8feafac0ca84d",
    "pidSha": "15d9e8ddb0c0fa4b"
   },
   "wall_curtain_switch": {
@@ -2289,9 +2289,9 @@
    "pidSha": "8218a22aa12bceb7"
   },
   "water_leak_sensor": {
-   "mfr": 26,
+   "mfr": 31,
    "pid": 21,
-   "mfrSha": "7a9efe7b53776a0f",
+   "mfrSha": "701c83b941afbd5c",
    "pidSha": "ddd617471a56ff24"
   },
   "water_leak_sensor_tuya": {
@@ -2325,9 +2325,9 @@
    "pidSha": "df6a569a8074f7e1"
   },
   "zigbee_repeater": {
-   "mfr": 14,
+   "mfr": 15,
    "pid": 2,
-   "mfrSha": "387f6811647e0e59",
+   "mfrSha": "bdf18324e78533f8",
    "pidSha": "5b0d1a938de39098"
   }
  }
