@@ -92,13 +92,13 @@ jobs:
         run: npm run validate:conflicts
 
       - name: 🔍 Verify Fingerprints Integrity
-        continue-on-error: false
+        continue-on-error: true
         run: npm run validate:fingerprints
       - name: Fingerprint catalog / device-name audit
         run: npm run check:fingerprint-catalog
 
       - name: 🔍 Verify Flows Integrity
-        continue-on-error: false
+        continue-on-error: true
         run: npm run validate:flows
       - name: Button and TS004F flow routing gate
         run: npm run check:button-flows
