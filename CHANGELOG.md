@@ -4,7 +4,18 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## v9.0.1360 (2026-10-10)
+## v9.0.1363 (2026-10-10)
+
+Bisect build: switch module WHD02 support.
+
+---
+
+## [9.0.1362] - 2026-10-10
+
+Bisect build: switch module WHD02 support.
+---
+
+ v9.0.1360 (2026-10-10)
 
 v9.0.1359: Minor fixes and internal cleanup
 
