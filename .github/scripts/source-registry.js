@@ -27,6 +27,7 @@ const MFR_RE = /\b_T[ZY][A-Z0-9]{1,4}_[a-z0-9]{8}\b/gi;
 const PID_RE = /\bTS[0-9]{3,4}[A-Z]?\b/g;
 const DP_RE = /\b(?:dp|dpId|datapoint)\s*[:=(]?\s*(\d{1,3})\b/gi;
 const BUG_RE = /\b(bug|broken|wrong|invert(?:ed)?|reverse[d]?|not working|regression|fix(?:es|ed)?)\b/i;
+const IDEA_RE = /\b(zigbee|tuya|aqara|xiaomi|sonoff|hue|philips|ikea|moes|lexman|legrand|matter|thread|local|energy|ir\b|infrared|flow|timer|child lock|sub-?device|per channel|availability|power cut|reliab)/i;
 const QUIRK_RE = /\b(quirk|workaround|magic packet|binding|configure reporting|tuya_magic|no response|leave)\b/i;
 
 function readJson(f, dflt) { try { return JSON.parse(fs.readFileSync(f, 'utf8')); } catch { return dflt; } }
@@ -166,6 +167,50 @@ async function scanDiscourse(src, st, c) {
   return { out, next: { lastPost } };
 }
 
+async function scanDiscourseCategory(src, st, c) {
+  // New topics in a Discourse category (e.g. Homey "Apps" c/apps/7). Cursor = highest topic id seen;
+  // first run only sets the cursor. Read-only: never posts. Emits idea leads for relevant titles/excerpts.
+  const out = [];
+  const pages = Math.max(1, Math.min(3, Number(src.pages) || 1));
+  const since = Number(st.maxTopicId) || 0;
+  const baseline = !since;
+  const kw = new RegExp(src.match || IDEA_RE.source, 'i');
+  let max = since;
+  const seen = new Set();
+  const listed = new Map();
+  for (let p = 0; p < pages; p++) {
+    const listPath = src.tag ? `tag/${src.tag}` : `c/${src.category}`;
+    const j = await c.json(`${src.url}/${listPath}.json?page=${p}`);
+    const topics = ((j && j.topic_list && j.topic_list.topics) || []).slice().sort((a, b) => a.id - b.id);
+    for (const t of topics) {
+      if (seen.has(t.id)) {continue;}
+      seen.add(t.id);
+      listed.set(t.id, t);
+      if (t.id > max) {max = t.id;}
+      if (baseline || t.id <= since || t.pinned) {continue;}
+      const txt = `${t.title || ''} ${t.excerpt || ''}`;
+      if (!kw.test(txt)) {continue;}
+      out.push({ source: src.id, kind: 'forum-app', ref: `${src.url}/t/${t.id}`, summary: `new app topic #${t.id}: ${String(t.title).slice(0, 140)} (review for ideas; credit author)`, ...extract(txt), credit: src.credit, seenAt: new Date().toISOString() });
+    }
+  }
+  // Follow new posts in recently active list topics (bounded, per-topic cursor = last post_number).
+  const tracked = { ...(st.tracked || {}) };
+  const maxTrack = Math.max(0, Math.min(40, Number(src.trackTopics) || 0));
+  if (maxTrack) {
+    const recent = [...listed.values()].filter((t) => !t.pinned).sort((a, b) => Date.parse(b.last_posted_at || 0) - Date.parse(a.last_posted_at || 0)).slice(0, maxTrack);
+    const due = recent.filter((t) => tracked[t.id] !== undefined && (t.highest_post_number || 0) > tracked[t.id]);
+    for (const t of recent) { if (tracked[t.id] === undefined) { tracked[t.id] = t.highest_post_number || 0; } }
+    if (due.length && !baseline) {
+      const r = await scanDiscourse({ ...src, topics: due.map((t) => t.id), batch: src.batch || 10 }, { lastPost: tracked }, c);
+      out.push(...r.out);
+      Object.assign(tracked, r.next.lastPost);
+    }
+    const keep = new Set(recent.map((t) => String(t.id)));
+    for (const k of Object.keys(tracked)) { if (!keep.has(String(k))) { delete tracked[k]; } }
+  }
+  return { out, next: { maxTopicId: max || null, tracked } };
+}
+
 async function scanPage(src, st, c) {
   const body = await c.text(src.url);
   const hash = crypto.createHash('sha256').update(body.replace(/\s+/g, ' ')).digest('hex');
@@ -200,7 +245,7 @@ async function scanNewsIndex(src, st, c) {
   return { out, next: { seen: [...seen].slice(-2000) } };
 }
 
-const SCANNERS = { 'news-index': scanNewsIndex, github: scanGithub, 'github-forks': scanForks, discourse: scanDiscourse, page: scanPage };
+const SCANNERS = { 'news-index': scanNewsIndex, github: scanGithub, 'github-forks': scanForks, discourse: scanDiscourse, 'discourse-category': scanDiscourseCategory, page: scanPage };
 
 async function run({ dry = false, force = false, only = null, maxCalls = 400, token = process.env.GH_PAT || process.env.GITHUB_TOKEN, fetchImpl } = {}) {
   const reg = readJson(REG_F, { sources: [] });
