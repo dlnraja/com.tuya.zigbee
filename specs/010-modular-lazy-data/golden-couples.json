@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-10T22:30:17.314Z",
+ "generated": "2026-10-10T23:28:56.293Z",
  "drivers": 392,
  "snapshot": {
   "air_purifier": {
@@ -1689,9 +1689,9 @@
    "pidSha": "f10b428ccaa7b390"
   },
   "smart_knob": {
-   "mfr": 10,
+   "mfr": 12,
    "pid": 5,
-   "mfrSha": "29784a949cad0474",
+   "mfrSha": "69f64b7c4120b00a",
    "pidSha": "3846deb0c0aed152"
   },
   "smart_knob_rotary": {
@@ -2007,9 +2007,9 @@
    "pidSha": "bd28b9c90314cbd2"
   },
   "temphumidsensor": {
-   "mfr": 17,
+   "mfr": 19,
    "pid": 4,
-   "mfrSha": "a743b8f88bad5d93",
+   "mfrSha": "a65df6defaa7b710",
    "pidSha": "d6b9ec7c03b11cd7"
   },
   "temphumidsensor2": {
