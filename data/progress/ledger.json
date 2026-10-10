@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-10T07:21:11.672Z",
+ "updated": "2026-10-10T07:24:04.014Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -13138,6 +13138,12 @@
    "by": "advance-sweep"
   },
   "forum:89271#401": {
+   "status": "done",
+   "date": "2026-10-10",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#402": {
    "status": "done",
    "date": "2026-10-10",
    "note": "couples-present",
