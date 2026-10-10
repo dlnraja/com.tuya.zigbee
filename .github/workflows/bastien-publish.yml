@@ -124,6 +124,17 @@ jobs:
           npm run check:p2626
           npm run check:p2625 || true
           npm run check:p2627 || true
+      # WHY(2026-10-11): runs #38093168267/#38094461142 failed the gate at 1.0.122 <= 1.0.122 because this
+      # workflow never bumped. Raise to the highest Athom/floor version, then +1 patch (runner-local; the
+      # Athom API keeps the next run strictly above). Gate below stays mandatory.
+      - name: Bump Bastien patch above highest uploaded
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          HOMEY_CHANGELOG: 'Reliability fixes'
+        run: |
+          node .github/scripts/athom-version-floor.js --apply
+          node .github/scripts/bump-homey-version.js patch
+          grep -m1 '"version"' app.json
       # WHY(2026-10-10 user rule): never upload a version <= highest Athom build (strictly incremental).
       - name: Strictly-incremental version gate
         env:
