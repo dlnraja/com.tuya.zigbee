@@ -386,6 +386,12 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
         || clusters['61184'];
 
       if (tuyaCluster && typeof tuyaCluster.on === 'function') {
+        // WHY(curtain ~6x per report audit): onNodeInit re-runs (re-arm, salvage) re-registered these
+        // three listeners on the same cluster object each time. Register once per cluster object.
+        if (this._curtainDpListenerCluster === tuyaCluster) {
+          return;
+        }
+        this._curtainDpListenerCluster = tuyaCluster;
         tuyaCluster.on('response', (status, transId, data) => {
           this._handleTuyaDP(data);
         });
@@ -424,6 +430,20 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
 
     const dp = Number(data.dp || data.datapoint);
     if (!Number.isFinite(dp)) {return;}
+
+    // WHY(curtain duplicate audit): the same EF00 frame can arrive via 'response', 'dataReport'
+    // and 'reporting' (and repeated registrations). Drop exact repeats (same seq+dp+payload) within 1.5 s.
+    const seq = data.seq ?? data.transId ?? '';
+    const payloadKey = Buffer.isBuffer(data.data) ? data.data.toString('hex') : String(data.value ?? data.data);
+    const dupKey = `${seq}|${dp}|${payloadKey}`;
+    const now = Date.now();
+    if (!this._curtainRxSeen) {this._curtainRxSeen = new Map();}
+    const last = this._curtainRxSeen.get(dupKey);
+    if (last && now - last < 1500) {return;}
+    this._curtainRxSeen.set(dupKey, now);
+    if (this._curtainRxSeen.size > 64) {
+      for (const [k, t] of this._curtainRxSeen) { if (now - t >= 1500) {this._curtainRxSeen.delete(k);} }
+    }
 
     const rawBuf = Buffer.isBuffer(data.data) ? data.data : null;
     const value = rawBuf
