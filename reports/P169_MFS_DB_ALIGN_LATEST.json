@@ -1,143 +1,413 @@
 {
-  "timestamp": "2026-09-19T16:48:08.270Z",
+  "timestamp": "2026-10-04T03:04:58.413Z",
   "gate": "align-mfs-db-intelligent",
-  "apply": true,
-  "check": false,
-  "changeCount": 4,
-  "skippedCount": 55,
+  "apply": false,
+  "check": true,
+  "changeCount": 51,
+  "skippedCount": 70,
   "highSeverityCount": 4,
   "byAction": {
-    "registry_force": 4
+    "registry_force": 2,
+    "compose_exclusive": 37,
+    "case_dedupe": 12
   },
   "changes": [
     {
       "severity": "high",
       "action": "registry_force",
-      "mfr": "_TZE204_r0jdjrvi",
+      "mfr": "eWeLink",
       "from": {
-        "driverId": "curtain_motor_tilt",
+        "driverId": "climate_sensor",
         "modelIds": [
-          "TS0601"
+          "CK-TLSR8656-SS5-01(7014)",
+          "CK-TLSR8656-SS5-02(7014)",
+          "RHK08"
         ]
       },
       "to": {
-        "driverId": "curtain_motor_tilt",
+        "driverId": "climate_sensor",
         "modelIds": [
-          "TS0601",
-          "TS0601_curtain_tilt"
+          "CK-TLSR8656-SS5-01(7014)",
+          "CK-TLSR8656-SS5-02(7014)"
         ]
       },
-      "caseId": "curtain-r0jdjrvi-tilt"
+      "caseId": "p2622-ewelink-ck-tlsr-th-not-virtual-socket"
     },
     {
       "severity": "high",
       "action": "registry_force",
-      "mfr": "_TZE200_pay2byax",
+      "mfr": "_TZ3000_fllyghyj",
       "from": {
-        "driverId": "contact_sensor_zigbee",
+        "driverId": "climate_sensor",
         "modelIds": [
-          "TS0601"
+          "RHK08",
+          "SNTZ003",
+          "SNZB-02",
+          "SNZB-02B",
+          "SNZB-02D",
+          "SNZB-02DR2",
+          "SNZB-02LD",
+          "SNZB-02M",
+          "SNZB-02P",
+          "SNZB-02WD",
+          "TS0201"
         ]
       },
       "to": {
-        "driverId": "contact_sensor_zigbee",
+        "driverId": "climate_sensor",
         "modelIds": [
-          "TS0601",
-          "ZG-102Z",
-          "ZG-102ZL"
+          "SNTZ003",
+          "SNZB-02",
+          "SNZB-02B",
+          "SNZB-02D",
+          "SNZB-02DR2",
+          "SNZB-02LD",
+          "SNZB-02M",
+          "SNZB-02P",
+          "SNZB-02WD",
+          "TS0201"
         ]
       },
-      "caseId": "p2201-pay2byax-zg102zl-contact"
+      "caseId": "p2666-tz3000-fllyghyj-snzb02-climate-sensor"
     },
     {
-      "severity": "high",
-      "action": "registry_force",
-      "mfr": "_TZE204_pay2byax",
-      "from": {
-        "driverId": "contact_sensor_zigbee",
-        "modelIds": [
-          "TS0601"
-        ]
-      },
-      "to": {
-        "driverId": "contact_sensor_zigbee",
-        "modelIds": [
-          "TS0601",
-          "ZG-102Z",
-          "ZG-102ZL"
-        ]
-      },
-      "caseId": "p2201-pay2byax-zg102zl-contact"
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_itnrsufe",
+      "from": "button_wireless_2",
+      "to": "lcdtemphumidsensor"
     },
     {
-      "severity": "high",
-      "action": "registry_force",
-      "mfr": "_TZE200_wzk0x7fq",
-      "from": {
-        "driverId": "curtain_motor",
-        "modelIds": [
-          "01MINIZB",
-          "AM02",
-          "AM43-0.45/40-ES-EB",
-          "AM43-0.45/40-ES-EZ",
-          "BASICZBR3",
-          "DS421",
-          "DS82",
-          "E1757",
-          "FYRTUR",
-          "KADRILJ",
-          "LUMI.CURTAIN",
-          "LUMI.CURTAIN.ACN002",
-          "LUMI.CURTAIN.HAGL04",
-          "S26R2ZB",
-          "S31ZB",
-          "TS0001",
-          "TS0001_POWER",
-          "TS0001_SWITCH",
-          "TS0001_SWITCH_MODULE",
-          "TS000F",
-          "TS0011",
-          "TS0012",
-          "TS0014",
-          "TS0101",
-          "TS0111",
-          "TS011F",
-          "TS0301",
-          "TS0302",
-          "TS030F",
-          "TS0601",
-          "TS0601_GENERIC",
-          "TS0603",
-          "TS0726",
-          "TS110E",
-          "TS130F",
-          "TS4100",
-          "ZBCURTAIN",
-          "ZBM5-1C-120",
-          "ZBM5-2C-120",
-          "ZBM5-3C-120",
-          "ZBMINI",
-          "ZBMINIL2",
-          "ZBMINIL2-R2",
-          "ZBMINIR",
-          "ZBMINIR2",
-          "ZBMINIR2-R2",
-          "ZG-301Z",
-          "ZG-302Z1"
-        ]
-      },
-      "to": {
-        "driverId": "vibration_sensor",
-        "modelIds": [
-          "AY02SZ",
-          "TS0601",
-          "ZG-102ZM"
-        ]
-      },
-      "caseId": "hobeian-zg102zm-vibration-contact"
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ1800_LADPNGDX",
+      "from": "climate_sensor",
+      "to": "doorbell"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_0HKMCRZA",
+      "from": "climate_sensor",
+      "to": "contact_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_7KSCDESH",
+      "from": "climate_sensor",
+      "to": "illuminance_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_7Y90PANY",
+      "from": "climate_sensor",
+      "to": "illuminance_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_HGU1DLAK",
+      "from": "climate_sensor",
+      "to": "pir_sensor_2"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_HY6NCVMW",
+      "from": "climate_sensor",
+      "to": "illuminance_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_P26FLEK3",
+      "from": "climate_sensor",
+      "to": "switch_1gang"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_IJEY4Q29",
+      "from": "climate_sensor",
+      "to": "contact_sensor_zigbee"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_KF2HBKO4",
+      "from": "climate_sensor",
+      "to": "contact_sensor_zigbee"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_YKGLASUJ",
+      "from": "climate_sensor",
+      "to": "contact_sensor_zigbee"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE204_UO8QCAGC",
+      "from": "climate_sensor",
+      "to": "gas_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tze284_uo8qcagc",
+      "from": "climate_sensor",
+      "to": "gas_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "lonsonho",
+      "from": "device_generic_tuya_universal",
+      "to": "button_wireless_3"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_7dcddnye",
+      "from": "bulb_dimmable",
+      "to": "light_dimmable_ts0501a"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3000_j1v25l17",
+      "from": "plug_energy_monitor",
+      "to": "smartplug"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE204_kb5noeto",
+      "from": "presence_sensor_radar",
+      "to": "pir_sensor_2"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_2uollq9d",
+      "from": "sensor_gas_presence",
+      "to": "plug_energy_monitor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3210_2uollq9d",
+      "from": "sensor_gas_presence",
+      "to": "plug_energy_monitor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_BAEIITAD",
+      "from": "switch_1gang",
+      "to": "water_leak_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tze204_n9ctkb6j",
+      "from": "switch_1gang",
+      "to": "dimmer_1_gang_tuya"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3210_NUENZETQ",
+      "from": "switch_1gang",
+      "to": "switch_2gang"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3000_air9m6af",
+      "from": "usb_dongle_triple",
+      "to": "socket_power_strip_four_two"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3210_zmy9hjay",
+      "from": "wall_dimmer_tuya",
+      "to": "motion_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3210_0aqbrnts",
+      "from": "wall_dimmer_tuya",
+      "to": "motion_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3210_rxqls8v0",
+      "from": "wall_dimmer_tuya",
+      "to": "motion_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3210_wuhzzfqg",
+      "from": "wall_dimmer_tuya",
+      "to": "motion_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3210_ohvnwamm",
+      "from": "wall_dimmer_tuya",
+      "to": "motion_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3210_oekbi7o4",
+      "from": "wall_dimmer_tuya",
+      "to": "motion_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3002_vaq2bfcu",
+      "from": "switch_1gang",
+      "to": "switch_3gang"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3000_4qaowtdo",
+      "from": "water_leak_sensor_tuya",
+      "to": "water_leak_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3000_bfopm9ga",
+      "from": "water_leak_sensor_tuya",
+      "to": "water_leak_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3000_bzt33cyu",
+      "from": "water_leak_sensor_tuya",
+      "to": "water_leak_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3000_o9f2zqln",
+      "from": "water_leak_sensor_tuya",
+      "to": "rain_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3000_qhozxs2b",
+      "from": "water_leak_sensor_tuya",
+      "to": "water_leak_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tze200_uo8qcagc",
+      "from": "climate_sensor",
+      "to": "gas_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tze284_kb5noeto",
+      "from": "presence_sensor_radar",
+      "to": "pir_sensor_2"
+    },
+    {
+      "severity": "medium",
+      "action": "case_dedupe",
+      "drop": "_tz3000_axpdxqgu",
+      "keep": "_TZ3000_axpdxqgu"
+    },
+    {
+      "severity": "medium",
+      "action": "case_dedupe",
+      "drop": "_TZ3000_LIYGXTCQ",
+      "keep": "_TZ3000_liygxtcq"
+    },
+    {
+      "severity": "medium",
+      "action": "case_dedupe",
+      "drop": "_TZ3000_LTT60ASA",
+      "keep": "_TZ3000_ltt60asa"
+    },
+    {
+      "severity": "medium",
+      "action": "case_dedupe",
+      "drop": "_tz3000_ltt60asa",
+      "keep": "_TZ3000_ltt60asa"
+    },
+    {
+      "severity": "medium",
+      "action": "case_dedupe",
+      "drop": "ewelink",
+      "keep": "eWeLink"
+    },
+    {
+      "severity": "medium",
+      "action": "case_dedupe",
+      "drop": "EWELINK",
+      "keep": "eWeLink"
+    },
+    {
+      "severity": "medium",
+      "action": "case_dedupe",
+      "drop": "HOBEIAN",
+      "keep": "Hobeian"
+    },
+    {
+      "severity": "medium",
+      "action": "case_dedupe",
+      "drop": "hobeian",
+      "keep": "Hobeian"
+    },
+    {
+      "severity": "medium",
+      "action": "case_dedupe",
+      "drop": "_tz3000_vsxvaj9i",
+      "keep": "_TZ3000_vsxvaj9i"
+    },
+    {
+      "severity": "medium",
+      "action": "case_dedupe",
+      "drop": "_tz3000_dzwgk7e2",
+      "keep": "_TZ3000_dzwgk7e2"
+    },
+    {
+      "severity": "medium",
+      "action": "case_dedupe",
+      "drop": "_tz3000_fllyghyj",
+      "keep": "_TZ3000_fllyghyj"
+    },
+    {
+      "severity": "medium",
+      "action": "case_dedupe",
+      "drop": "heobian",
+      "keep": "Heobian"
     }
   ],
   "skipped": [
+    {
+      "reason": "registry_driver_missing",
+      "caseId": "p2605-nkjintbl-tze200-not-switch2gang-not-btn-plug",
+      "canon": null
+    },
     {
       "reason": "registry_driver_missing",
       "caseId": "p2509-invent-junk-do-not-lock",
@@ -192,6 +462,40 @@
       "reason": "registry_empty_mfr",
       "caseId": "z2m-ksz749x8-tze204-ts0601-climate",
       "canon": "climate_sensor"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "p2630-axpdxqgu-ts0041-interview-clusters",
+      "canon": "button_wireless_1"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "p2631-ewelink-7014-climate-only-mesh",
+      "canon": "climate_sensor"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "p2633-adndolvx-ts0041-phantom-ep-firmware",
+      "canon": "button_wireless_1"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "p2632-hobeian-zg301z-countdown-auto-off",
+      "canon": "switch_1gang"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "p2638-axpdxqgu-z2m25720-zha-crossref",
+      "canon": "button_wireless_1"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "p2639-ts0041-phantom-ep-siblings",
+      "canon": "button_wireless_1"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "p2644-4d4e1684-ts0043-not-wall-remote"
     },
     {
       "reason": "registry_oem_multi_canon",
@@ -410,6 +714,11 @@
     },
     {
       "reason": "unclaimed_no_compose",
+      "mfr": "_TZ3000_nuenzetq",
+      "curated": "button_wireless_2"
+    },
+    {
+      "reason": "unclaimed_no_compose",
       "mfr": "_TZE200_J1XL73IW",
       "curated": "curtain_motor"
     },
@@ -570,6 +879,16 @@
       ]
     },
     {
+      "reason": "unclaimed_no_compose",
+      "mfr": "_tze200_rxqls8v0",
+      "curated": "sensor_contact_motion"
+    },
+    {
+      "reason": "unclaimed_no_compose",
+      "mfr": "_tze204_rxqls8v0",
+      "curated": "sensor_contact_motion"
+    },
+    {
       "reason": "pair_conflict_ambiguous",
       "mfr": "_TZ3000_lf56vpxj",
       "curated": "sensor_motion_presence",
@@ -593,12 +912,70 @@
         "sensor_climate_motion",
         "slim_motion_sensor"
       ]
+    },
+    {
+      "reason": "unclaimed_no_compose",
+      "mfr": "_TZ3000_8RPPVWDA",
+      "curated": "switch_1gang"
+    },
+    {
+      "reason": "unclaimed_no_compose",
+      "mfr": "_TZ3000_QGWCXXWS",
+      "curated": "switch_1gang"
+    },
+    {
+      "reason": "orphan_ambiguous",
+      "mfr": "heobian",
+      "curated": "multi",
+      "claimers": [
+        "button_wireless_1",
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "gas_sensor",
+        "ir_blaster",
+        "presence_sensor_radar",
+        "rain_sensor",
+        "scene_switch_4",
+        "sensor_contact_zigbee",
+        "siren",
+        "soil_sensor",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "vibration_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "reason": "orphan_ambiguous",
+      "mfr": "Heobian",
+      "curated": "multi",
+      "claimers": [
+        "button_wireless_1",
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "gas_sensor",
+        "ir_blaster",
+        "presence_sensor_radar",
+        "rain_sensor",
+        "scene_switch_4",
+        "sensor_contact_zigbee",
+        "siren",
+        "soil_sensor",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "vibration_sensor",
+        "water_leak_sensor"
+      ]
     }
   ],
   "highSeverity": [
-    "registry drift _TZE204_r0jdjrvi → curtain_motor_tilt",
-    "registry drift _TZE200_pay2byax → contact_sensor_zigbee",
-    "registry drift _TZE204_pay2byax → contact_sensor_zigbee",
-    "registry drift _TZE200_wzk0x7fq → vibration_sensor"
+    "registry drift eWeLink → climate_sensor",
+    "registry drift _TZ3000_fllyghyj → climate_sensor",
+    "orphan ambiguous heobian",
+    "orphan ambiguous Heobian"
   ]
 }
