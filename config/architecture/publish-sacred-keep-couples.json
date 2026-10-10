@@ -1265,14 +1265,20 @@
     {
       "mfr": "_TZE204_8fffc3kb",
       "pid": "TS0601",
-      "driverId": "led_controller_spi_tuya",
-      "note": "#124 2026-10-04 Gledopto GL-SPI-206P (ZHC gledopto/tuya) DP61 frame — keep through publish compaction"
+      "driverId": "led_controller_rgb",
+      "note": "#124 2026-10-04 Gledopto GL-SPI-206P (ZHC gledopto/tuya) DP61 frame — keep through publish compaction | folded into led_controller_rgb (SPI class via onMapDeviceClass) while held"
     },
     {
       "mfr": "_TZE284_gt5al3bl",
       "pid": "TS0601",
-      "driverId": "led_controller_spi_tuya",
-      "note": "#124 2026-10-04 Gledopto GL-SPI-206P (ZHC gledopto/tuya) DP61 frame — keep through publish compaction"
+      "driverId": "led_controller_rgb",
+      "note": "#124 2026-10-04 Gledopto GL-SPI-206P (ZHC gledopto/tuya) DP61 frame — keep through publish compaction | folded into led_controller_rgb (SPI class via onMapDeviceClass) while held"
+    },
+    {
+      "mfr": "_TZ3000_skueekg3",
+      "pid": "TS000F",
+      "driverId": "switch_1gang",
+      "note": "WHD02 (#2257-era, switch_module_whd02 held) folded into switch_1gang; keep through publish compaction"
     }
   ]
 }
