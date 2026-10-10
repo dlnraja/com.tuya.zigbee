@@ -181,6 +181,7 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
       const MemwarnGuard = require('./lib/utils/MemwarnGuard');
       this.memwarnGuard = new MemwarnGuard({ log: (...a) => this.log(...a), error: (...a) => this.error(...a) });
       this.memwarnGuard.attach(this.homey);
+      try { require('./lib/utils/memwarn-cleaners').registerAppCleaners(this.memwarnGuard, this.homey); } catch (_) { /* soft */ }
     } catch (_) { /* best-effort */ }
     this.initializeSettings();
 
