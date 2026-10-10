@@ -1,0 +1,61 @@
+{
+  "_doc": "docs/knowledge/HOMEY_FIRMWARE.md",
+  "updated": "2026-10-10",
+  "node_runtime": [
+    {
+      "platform": "Homey Pro (2016-2019)",
+      "range": "<7.4.0",
+      "node": 12
+    },
+    {
+      "platform": "Homey Pro (2016-2019)",
+      "range": ">=7.4.0 <12.9.0",
+      "node": 16
+    },
+    {
+      "platform": "Homey Pro (Early 2023)/mini",
+      "range": "<12.9.0",
+      "node": 18
+    },
+    {
+      "platform": "all incl. Cloud",
+      "range": ">=12.9.0",
+      "node": 22,
+      "src": "https://apps.developer.homey.app/the-basics/app#node.js"
+    }
+  ],
+  "zigbee_ncp": [
+    {
+      "homey_os": "<13.5.0",
+      "emberznet": "7.4.2-0"
+    },
+    {
+      "homey_os": "13.5.0",
+      "emberznet": "9.1.0-0",
+      "models": [
+        "Pro 2023",
+        "Pro 2026"
+      ],
+      "src": "https://community.homey.app/t/159290",
+      "note": "community-reported; possible binding loss"
+    }
+  ],
+  "features": {
+    "zigbee_ota": ">=13.2.0",
+    "ZigBeeNode.ieeeAddress": ">=12.3.0"
+  },
+  "memory": {
+    "per_app_limit_mb": null,
+    "mechanism": "memwarn events then kill"
+  },
+  "libs_npm": {
+    "zigbee-clusters": "3.8.0",
+    "homey-zigbeedriver": "2.2.18",
+    "homey": "4.6.0",
+    "homey-apps-sdk-v3-types": "0.3.12",
+    "node-homey-lib_validator": "2.52.3"
+  },
+  "cli": {
+    "homey>=4.5.0": "Node 24 required for CLI only"
+  }
+}
