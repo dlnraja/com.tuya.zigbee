@@ -148,34 +148,45 @@
       "couple": "_TZE204_8fffc3kb|TS0601",
       "drivers": [
         "led_controller_spi_tuya",
-        "switch_1gang"
+        "led_controller_rgb"
       ],
-      "reason": "SPI pixel LED controller misfiled in a 1-gang switch driver; exact driver added (DP61 colour frame), old couple kept (never remove).",
-      "source": "zigbee-herdsman-converters src/devices/gledopto.ts GL-SPI-206P",
-      "date": "2026-10-04",
-      "reviewed_by": "user decision 2026-10-04 06:49 (executor-flowport research)"
+      "reason": "SPI pixel LED (GL-SPI-206P) held out of Athom publish; fold couples into led_controller_rgb so Test builds keep pairing. Exact SPI driver stays in source with FPs.",
+      "source": "zigbee-herdsman-converters src/devices/gledopto.ts GL-SPI-206P; fold #3499",
+      "date": "2026-10-10",
+      "reviewed_by": "fold held couples → published rgb host (Athom AggregateError on dedicated spi id)"
     },
     {
       "couple": "_TZE284_gt5al3bl|TS0601",
       "drivers": [
         "led_controller_spi_tuya",
-        "switch_1gang"
+        "led_controller_rgb"
       ],
-      "reason": "SPI pixel LED controller misfiled in a 1-gang switch driver; exact driver added (DP61 colour frame), old couple kept (never remove).",
-      "source": "zigbee-herdsman-converters src/devices/gledopto.ts GL-SPI-206P",
-      "date": "2026-10-04",
-      "reviewed_by": "user decision 2026-10-04 06:49 (executor-flowport research)"
+      "reason": "SPI pixel LED (GL-SPI-206P) held out of Athom publish; fold couples into led_controller_rgb so Test builds keep pairing. Exact SPI driver stays in source with FPs.",
+      "source": "zigbee-herdsman-converters src/devices/gledopto.ts GL-SPI-206P; fold #3499",
+      "date": "2026-10-10",
+      "reviewed_by": "fold held couples → published rgb host (Athom AggregateError on dedicated spi id)"
     },
     {
-      "couple": "HEIMAN|RC-EF-3.0",
+      "couple": "_TZE28C1000000_gt5al3bl|TS0601",
       "drivers": [
-        "button_emergency_sos",
-        "universal_zigbee"
+        "led_controller_spi_tuya",
+        "led_controller_rgb"
       ],
-      "reason": "HEIMAN remote (IAS ACE emergency) added to the SOS driver; the brand name also sits in the generic universal_zigbee fallback, so mfr x pid artifacts (TS0215A/TS0218/TS0601) overlap. Nothing removed from the fallback.",
-      "source": "zigbee-herdsman-converters src/devices/heiman.ts HM1RC-2-E (modelID RC-EF-3.0)",
-      "date": "2026-10-04",
-      "reviewed_by": "user order 2026-10-04 06:49 (PCr2-1, executor-flowport research)"
+      "reason": "Same GL-SPI-206P family (TZE28C firmware prefix variant); fold host led_controller_rgb + held exact spi driver.",
+      "source": "fold #3499 / gledopto GL-SPI-206P",
+      "date": "2026-10-10",
+      "reviewed_by": "fold held couples → published rgb host"
+    },
+    {
+      "couple": "_TZ3000_skueekg3|TS000F",
+      "drivers": [
+        "switch_module_whd02",
+        "switch_1gang"
+      ],
+      "reason": "WHD02 dedicated driver held (Athom AggregateError); unique couple folded into switch_1gang for published Test builds. Exact whd02 driver keeps FPs in source.",
+      "source": "fold #3499 / switch_module_whd02 bisect",
+      "date": "2026-10-10",
+      "reviewed_by": "fold held couples → published switch_1gang host"
     },
     {
       "couple": "_TYZB01_v8gtiaed|TS110F",
