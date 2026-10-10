@@ -515,8 +515,8 @@
     {
       "mfr": "_TZE200_bcusnqt8",
       "pid": "TS0601",
-      "driverId": "power_clamp_meter",
-      "note": "P2463 Johan#468 Z2M SPM01 energy monitor — strip from curtain_motor"
+      "driverId": "din_rail_meter",
+      "note": "P2463 Johan#468 Z2M SPM01 energy monitor (DP1/2/6 packed, lib/tuya/SpmPhaseDecoder) — never curtain_motor; power_clamp_meter is PJ-1203A DP101+ and cannot decode it"
     },
     {
       "mfr": "_TZ3000_ptjcjise",
