@@ -1,47 +1,59 @@
 {
-  "updated": "2026-10-10T07:21:11.671Z",
+  "updated": "2026-10-10T07:24:04.013Z",
   "threads": {
     "21313": {
       "lastPost": 2819,
       "status": "in-progress",
       "sweptId": 267750,
       "sweptTo": 403,
-      "sweptAt": "2026-10-10T07:20:50.857Z"
+      "sweptAt": "2026-10-10T07:23:43.636Z",
+      "sweptCount": 400,
+      "visiblePosts": 2735
     },
     "26439": {
       "lastPost": 5534,
       "status": "in-progress",
       "sweptId": 503568,
       "sweptTo": 4688,
-      "sweptAt": "2026-10-10T07:19:49.764Z"
+      "sweptAt": "2026-10-10T07:22:42.941Z",
+      "sweptCount": 400,
+      "visiblePosts": 1223
     },
     "89271": {
       "lastPost": 673,
       "status": "in-progress",
-      "sweptId": 424986,
-      "sweptTo": 401,
-      "sweptAt": "2026-10-10T07:21:11.670Z"
+      "sweptId": 315961,
+      "sweptTo": 402,
+      "sweptAt": "2026-10-10T07:24:04.011Z",
+      "sweptCount": 400,
+      "visiblePosts": 671
     },
     "140352": {
       "lastPost": 2259,
       "status": "in-progress",
       "sweptId": 663805,
       "sweptTo": 401,
-      "sweptAt": "2026-10-10T07:19:29.579Z"
+      "sweptAt": "2026-10-10T07:22:22.742Z",
+      "sweptCount": 400,
+      "visiblePosts": 2169
     },
     "146735": {
       "lastPost": 503,
       "status": "in-progress",
       "sweptId": 766112,
       "sweptTo": 416,
-      "sweptAt": "2026-10-10T07:20:10.376Z"
+      "sweptAt": "2026-10-10T07:23:03.191Z",
+      "sweptCount": 400,
+      "visiblePosts": 487
     },
     "154077": {
       "lastPost": 493,
       "status": "in-progress",
       "sweptId": 780738,
       "sweptTo": 406,
-      "sweptAt": "2026-10-10T07:20:30.557Z"
+      "sweptAt": "2026-10-10T07:23:23.441Z",
+      "sweptCount": 400,
+      "visiblePosts": 485
     }
   },
   "items": [
@@ -18005,6 +18017,19 @@
         "TS011F"
       ],
       "why": "couples-present"
+    },
+    {
+      "id": "forum:89271#402",
+      "status": "already-fixed",
+      "author": "Ivan_Ryzhik",
+      "link": "https://community.homey.app/t/89271/402",
+      "mfrs": [
+        "_TZ3000_46t1rvdu"
+      ],
+      "pids": [
+        "TS0001"
+      ],
+      "why": "couples-present"
     }
   ],
   "github": {
@@ -18017,7 +18042,7 @@
   },
   "note": "Full-history sweep. Forum lastPost seeded from Daily digest #557 state (2026-10-02). Items rewritten in our words; SHAs only as evidence.",
   "lastChunk": {
-    "at": "2026-10-10T07:21:11.671Z",
+    "at": "2026-10-10T07:24:04.013Z",
     "advanced": 0,
     "rateLimited": false,
     "items": [],
@@ -18065,9 +18090,9 @@
       {
         "tid": "89271",
         "from": 1,
-        "to": 401,
+        "to": 402,
         "scanned": 400,
-        "recorded": 385,
+        "recorded": 386,
         "rateLimited": false
       }
     ],
@@ -18080,9 +18105,13 @@
     "previousNext": 31
   },
   "stats": {
-    "already-fixed": 800,
+    "already-fixed": 801,
     "needs-info": 271,
     "pending": 13,
     "no-action": 330
+  },
+  "forumCursorReset": {
+    "at": "2026-10-10",
+    "reason": "cursor now follows ascending post ids (stream order had inversions); idempotent re-pass"
   }
 }
