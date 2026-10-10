@@ -307,7 +307,7 @@ async function readViaIMAP(opts = {}) {
     const out = [];
     try {
       const kws = ['_TZE', '_TZ3', 'TS0', 'TS1', 'TS02', 'TS06', 'TS05', 'TS11', '_TZ', 'diagnostic', 'fingerprint', 'device report', 'crash', 'error log', 'oom', 'heap limit', 'allocation failed', 'processing failed', 'AggregateError', 'Missing Capability Listener', 'capability listener', 'battery', 'button', 'flow card', 'homey', 'tuya', 'zigbee', 'athombv', 'com.tuya.zigbee', 'com.dlnraja.tuya.zigbee', 'private message', 'personal message', 'sent you a message'];
-      const senders = ['noreply@community.homey.app', 'noreply@athom.com', 'noreply@homey.app', 'support@athom.com', 'support@homey.app', 'dev@athom.com', 'developer@athom.com', 'discoursemail.com'];
+      const senders = ['noreply@community.homey.app', 'noreply@athom.com', 'noreply@homey.app', 'support@athom.com', 'support@homey.app', 'dev@athom.com', 'developer@athom.com', 'discoursemail.com', 'notifications@athom.discoursemail.com', 'notifications@github.com'];
       const seqSet = new Set();
       const dateCriteria = { since: new Date(since) };
       if (before) dateCriteria.before = new Date(before);
