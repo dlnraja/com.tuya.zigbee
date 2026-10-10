@@ -1,0 +1,46 @@
+{
+  "manufacturerName": "Signify Netherlands B.V.",
+  "productId": "RWL022",
+  "source": "pc-harvest-r2 (normalized interview facts; origins: Homey forum, GitHub issues, user diagnostics)",
+  "interviewsMerged": 1,
+  "powerSource": null,
+  "firmware": null,
+  "endpoints": {
+    "1": {
+      "inputClusters": [
+        0,
+        1,
+        3,
+        4096,
+        64512
+      ],
+      "outputClusters": [
+        0,
+        3,
+        4,
+        5,
+        6,
+        8,
+        25,
+        4096
+      ]
+    }
+  },
+  "inputClusters": [
+    0,
+    1,
+    3,
+    4096,
+    64512
+  ],
+  "outputClusters": [
+    0,
+    3,
+    4,
+    5,
+    6,
+    8,
+    25,
+    4096
+  ]
+}

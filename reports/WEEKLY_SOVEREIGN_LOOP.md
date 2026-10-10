@@ -1,7 +1,7 @@
 # Weekly Sovereign Loop
 
-Generated: 2026-09-27T12:10:59.838Z
-Version: **9.0.1272** · Branch: `master`
+Generated: 2026-10-04T12:31:27.713Z
+Version: **9.0.1331** · Branch: `master`
 
 ## Quota policy
 - Cursor Automation = thin weekly brain (read report → bounded reliability fixes)
@@ -40,24 +40,25 @@ Version: **9.0.1272** · Branch: `master`
 - ❌ `self-improve.yml` — workflow not found
 
 ## Recent workflow runs
-- [in_progress] Bastien Promote Upstream (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/36318259573
-- [in_progress] Fetch Homey Diagnostics (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/36318247365
-- [in_progress] Weekly Sovereign Loop (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/36318024950
-- [success] Autonomous Verification (P37) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/36317947853
-- [success] 🤖 Auto-Fix + Publish Pipeline (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/36317236254
-- [success] 🔄 Auto-Enrich Closed Loop (P69) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/36316362393
-- [success] Gmail Diagnostics Auto-Analysis (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/36314027490
-- [skipped] Auto-Reopen on Comment (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/36313838733
-- [success] Batch Analyze & Respond (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/36313526456
-- [success] Homey Store Peer Probe (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/36313446163
+- [in_progress] Bastien Promote Upstream (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/37202517423
+- [in_progress] Fetch Homey Diagnostics (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/37202500600
+- [in_progress] Weekly Sovereign Loop (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/37202183348
+- [success] Autonomous Verification (P37) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/37202107662
+- [success] 🤖 Auto-Fix + Publish Pipeline (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/37201404315
+- [success] 🔄 Auto-Enrich Closed Loop (P69) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/37200382600
+- [success] Gmail Diagnostics Auto-Analysis (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/37198598130
+- [success] Batch Analyze & Respond (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/37198216315
+- [success] Homey Store Peer Probe (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/37198154030
+- [success] 🛡️ Project Resilience Inventory (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/37197689019
 
 ## Publish / validate related
-- [in_progress] Fetch Homey Diagnostics — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/36318247365
-- [success] 🤖 Auto-Fix + Publish Pipeline — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/36317236254
-- [success] Homey Store Peer Probe — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/36313446163
+- [in_progress] Fetch Homey Diagnostics — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/37202500600
+- [success] 🤖 Auto-Fix + Publish Pipeline — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/37201404315
+- [success] Homey Store Peer Probe — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/37198154030
 
 ## Open issues
-- #551 Bug report - TS0043 (_TZ3000_famkxci2) detected as Generic Zigbee Device instead of button_wireless_3
+- #559 Smartplug
+- #557 🤖 Daily digest
 - #550 Bug report - [Short description]
 
 ## Open PRs
@@ -65,7 +66,7 @@ Version: **9.0.1272** · Branch: `master`
 
 ## Cursor brain — do this week (max)
 - **P1**: Human issues remain open — verify FP/runtime fixes silently; do not mass-close needs-maintainer.
-  - #551 Bug report - TS0043 (_TZ3000_famkxci2) detected as Generic Zigbee Device instead of button_wireless_3 · #550 Bug report - [Short description]
+  - #550 Bug report - [Short description]
 - **P0**: Local gates failing: dualClaim — fix before any publish.
 - **P1**: Some workflow dispatches failed (check GH_PAT / workflow names): mega-crawl.yml, gmail-diagnostics.yml, forum-poll.yml, auto-bot-issue-triage.yml, publish-diagnose.yml, safe-sync-stable.yml, self-improve.yml
 

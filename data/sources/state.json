@@ -1,14 +1,14 @@
 {
   "sources": {
     "z2m-converters": {
-      "lastSha": "4dc441196c31d08849bd3d114b3cf2a52c056dec",
-      "checkedAt": "2026-10-04T02:18:49.176Z",
+      "lastSha": "cbfc97899381a94297abafeeebffc15ac57dec18",
+      "checkedAt": "2026-10-10T08:59:20.949Z",
       "lastError": null
     },
     "z2m-issues": {
       "lastSha": "344b6e03b43644c97154a72ca9eae17193c553a2",
-      "issuesSince": "2026-09-29T00:05:50Z",
-      "checkedAt": "2026-10-04T02:18:50.172Z",
+      "issuesSince": "2026-10-09T19:58:26Z",
+      "checkedAt": "2026-10-10T08:59:21.711Z",
       "lastError": null
     },
     "z2m-device-pages": {
@@ -18,8 +18,8 @@
     },
     "zha-quirks": {
       "lastSha": "55319bd14be7b5e782c585c31f528d9f90ce431e",
-      "issuesSince": "2026-10-01T04:34:16Z",
-      "checkedAt": "2026-10-04T02:18:52.176Z",
+      "issuesSince": "2026-10-10T07:41:05Z",
+      "checkedAt": "2026-10-10T08:59:22.295Z",
       "lastError": null
     },
     "zha": {
@@ -93,8 +93,8 @@
     },
     "johan": {
       "lastSha": "328d24ed315131528f2358b66bb0b8259615a49e",
-      "issuesSince": "2026-09-28T10:09:34Z",
-      "checkedAt": "2026-10-04T02:19:01.521Z",
+      "issuesSince": "2026-09-30T21:55:12Z",
+      "checkedAt": "2026-10-10T08:59:23.172Z",
       "lastError": null
     },
     "johan-forks": {
@@ -104,10 +104,10 @@
     },
     "homey-forum": {
       "lastPost": {
-        "26439": 5526,
-        "140352": 2258
+        "26439": 5534,
+        "140352": 2259
       },
-      "checkedAt": "2026-10-04T02:19:04.906Z",
+      "checkedAt": "2026-10-10T08:59:23.490Z",
       "lastError": null
     },
     "homey-sdk-changelog": {
@@ -247,6 +247,11 @@
         "/news/welcome-to-the-official-athom-blog/"
       ],
       "checkedAt": "2026-10-04T02:21:27.095Z",
+      "lastError": null
+    },
+    "ha-tuya-device-handlers": {
+      "lastSha": "c5d40c2e901cd8c20b70f2eb7f3051a53c159f4b",
+      "checkedAt": "2026-10-04T08:46:06.789Z",
       "lastError": null
     }
   }

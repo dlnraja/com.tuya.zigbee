@@ -1,0 +1,259 @@
+{
+  "generatedAt": "2026-10-05T19:57:03.563Z",
+  "date": "2026-10-05",
+  "mode": "full",
+  "phases": [
+    {
+      "name": "guard",
+      "ok": true,
+      "durationMs": 0,
+      "note": "SHADOW env forced"
+    },
+    {
+      "name": "github",
+      "ok": true,
+      "durationMs": 384
+    },
+    {
+      "name": "gmail",
+      "ok": true,
+      "durationMs": 129,
+      "details": {
+        "crash": {
+          "ok": true,
+          "skipped": false,
+          "status": 0,
+          "durationMs": 26,
+          "stderr": "",
+          "stdoutTail": "[gmail-crash-pattern-gate] sources=32 hits=0 unknown=0\n  wrote .github/state/gmail-crash-patterns.json\n  verdict: ok\n"
+        },
+        "treat": {
+          "ok": true,
+          "skipped": false,
+          "status": 0,
+          "durationMs": 102,
+          "stderr": "",
+          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-10-05\n{\n  \"generatedAt\": \"2026-10-05T19:57:04.065Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 42,\n  \"derivedFromInterview\": 0,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 3,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 2,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 2,\n    \"processing_failed\": 2,\n    \"scene_0x8004\": 2,\n    \"aggregate_error\": 10,\n    \"invalid_flow_card\": 1,\n    \"missing_capability_listener\": 1\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 42 gmailBodies= 30\n"
+        }
+      }
+    },
+    {
+      "name": "forum",
+      "ok": true,
+      "durationMs": 27162,
+      "skipScan": false,
+      "steps": [
+        {
+          "ok": true,
+          "skipped": false
+        },
+        {
+          "ok": true,
+          "skipped": false
+        },
+        {
+          "ok": true,
+          "skipped": false
+        },
+        {
+          "ok": true,
+          "skipped": false
+        }
+      ]
+    },
+    {
+      "name": "drivers",
+      "ok": true,
+      "durationMs": 1041,
+      "mfs": {
+        "high": 0,
+        "changes": 0,
+        "fail": false
+      },
+      "sacredOk": true
+    },
+    {
+      "name": "functionalDeep",
+      "ok": true,
+      "durationMs": 1269,
+      "note": "P2529 complementary deep functional (soft)"
+    },
+    {
+      "name": "prioritize",
+      "ok": true,
+      "durationMs": 1,
+      "count": 4
+    },
+    {
+      "name": "docs",
+      "ok": true,
+      "durationMs": 0,
+      "doc": "/home/runner/work/com.tuya.zigbee/com.tuya.zigbee/docs/architecture/L99_INBOX_INTELLIGENCE.md"
+    },
+    {
+      "name": "gates",
+      "ok": true,
+      "durationMs": 1704
+    }
+  ],
+  "github": {
+    "harvestedAt": "2026-10-05T19:57:03.947Z",
+    "repo": "dlnraja/com.tuya.zigbee",
+    "auth": "token",
+    "error": null,
+    "issues": [
+      {
+        "number": 557,
+        "title": "🤖 Daily digest",
+        "labels": [
+          "bot-digest"
+        ],
+        "updatedAt": "2026-10-05T19:09:14Z",
+        "user": "dlnraja",
+        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/557"
+      },
+      {
+        "number": 550,
+        "title": "Bug report - [Short description]",
+        "labels": [
+          "bug",
+          "reopened-by-user"
+        ],
+        "updatedAt": "2026-10-04T08:18:31Z",
+        "user": "HiepSVG",
+        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/550"
+      },
+      {
+        "number": 559,
+        "title": "Smartplug",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "auto-triage",
+          "fingerprint-supported"
+        ],
+        "updatedAt": "2026-10-03T21:01:31Z",
+        "user": "Lalla80111",
+        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/559"
+      }
+    ],
+    "prs": [],
+    "openIssueCount": 3,
+    "openPrCount": 0
+  },
+  "forum": {
+    "path": "/home/runner/work/com.tuya.zigbee/com.tuya.zigbee/.github/state/forum/actionable-processor-report.json",
+    "totals": {
+      "posts": 218,
+      "withCouples": 74,
+      "needAction": 58,
+      "both": 134,
+      "masterOnly": 17
+    },
+    "posts": 218
+  },
+  "gmail": {
+    "generatedAt": "2026-10-05T19:57:03.968Z",
+    "sourcesScanned": 32,
+    "patternCounts": {
+      "flow_getDeviceActionCard": 0,
+      "readonly_error_assign": 0,
+      "unbound_destroyed": 0,
+      "getDiscoveries_not_fn": 0,
+      "getDeviceById": 0,
+      "catch_on_undefined": 0,
+      "registerRunListenerasync_typo": 0,
+      "settimeout_destroyed": 0,
+      "onDeleted_null": 0,
+      "dcm_auditCapabilities_missing": 0,
+      "capability_ref_undefined": 0,
+      "clusterutils_destroyed_unbound": 0,
+      "heap_oom_live_data": 0,
+      "setName_not_fn": 0,
+      "sub_capability_value_not_string": 0,
+      "ERR_IAS_SLEEPY_TIMEOUT": 0,
+      "ERR_DESTROYED_DEVICE_TIMER": 0,
+      "ERR_UNBOUND_DESTROYED": 0,
+      "ERR_CATCH_ON_UNDEFINED": 0,
+      "ERR_CAPABILITY_NOT_FOUND": 0,
+      "ERR_AUDIT_CAPABILITIES": 0,
+      "ERR_ZIGBEE_ROUTE_FULL": 0
+    },
+    "hits": [],
+    "unknownFatals": [],
+    "knownFixed": [
+      "flow_getDeviceActionCard",
+      "readonly_error_assign",
+      "unbound_destroyed",
+      "getDiscoveries_not_fn",
+      "getDeviceById",
+      "catch_on_undefined",
+      "registerRunListenerasync_typo",
+      "settimeout_destroyed",
+      "onDeleted_null",
+      "dcm_auditCapabilities_missing",
+      "capability_ref_undefined",
+      "clusterutils_destroyed_unbound",
+      "heap_oom_live_data",
+      "setName_not_fn",
+      "sub_capability_value_not_string",
+      "ERR_IAS_SLEEPY_TIMEOUT",
+      "ERR_DESTROYED_DEVICE_TIMER",
+      "ERR_UNBOUND_DESTROYED",
+      "ERR_CATCH_ON_UNDEFINED",
+      "ERR_AUDIT_CAPABILITIES"
+    ],
+    "watch": [],
+    "verdict": "ok"
+  },
+  "mfs": {
+    "high": 0,
+    "changes": 0,
+    "fail": false
+  },
+  "priority": [
+    {
+      "score": 90,
+      "dualApp": "BOTH",
+      "source": "github-issue",
+      "id": "#550",
+      "title": "Bug report - [Short description]",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/550",
+      "action": "investigate-code-silent",
+      "forumReply": "NEVER"
+    },
+    {
+      "score": 75,
+      "dualApp": "BOTH",
+      "source": "forum",
+      "id": "forum-need-action",
+      "title": "58 forum posts needAction (shadow processor)",
+      "action": "enrich:investigate + deep-functional (DP/cluster/flow/RX-TX, not mfr+pid only)",
+      "forumReply": "NEVER"
+    },
+    {
+      "score": 70,
+      "dualApp": "BOTH",
+      "source": "github-issue",
+      "id": "#557",
+      "title": "🤖 Daily digest",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/557",
+      "action": "investigate-code-silent",
+      "forumReply": "NEVER"
+    },
+    {
+      "score": 70,
+      "dualApp": "BOTH",
+      "source": "github-issue",
+      "id": "#559",
+      "title": "Smartplug",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/559",
+      "action": "investigate-code-silent",
+      "forumReply": "NEVER"
+    }
+  ],
+  "functionalDeep": {
+    "ok": true,
+    "durationMs": 1269
+  }
+}

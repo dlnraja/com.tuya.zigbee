@@ -1,0 +1,44 @@
+{
+  "manufacturerName": "Zbeacon",
+  "productId": "TS0001",
+  "source": "pc-harvest-r2 (normalized interview facts; origins: Homey forum, GitHub issues, user diagnostics)",
+  "interviewsMerged": 1,
+  "powerSource": null,
+  "firmware": {
+    "swBuildId": "0122052017",
+    "appVersion": null,
+    "hwVersion": null,
+    "dateCode": null,
+    "stackVersion": null
+  },
+  "endpoints": {
+    "1": {
+      "inputClusters": [
+        0,
+        3,
+        4,
+        5,
+        6,
+        10,
+        4096,
+        6280,
+        57344,
+        57345
+      ],
+      "outputClusters": []
+    }
+  },
+  "inputClusters": [
+    0,
+    3,
+    4,
+    5,
+    6,
+    10,
+    4096,
+    6280,
+    57344,
+    57345
+  ],
+  "outputClusters": []
+}

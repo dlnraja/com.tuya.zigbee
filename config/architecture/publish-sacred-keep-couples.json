@@ -1225,6 +1225,54 @@
       "pid": "TS1201",
       "driverId": "ir_blaster",
       "note": "#100 2026-10-04 ZHA PR #5282 (Zosung TS1201 IR blaster family) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE28C1000000_jlbsptkl",
+      "pid": "TS0601",
+      "driverId": "switch_presence_tuya",
+      "note": "#108 2026-10-04 ZHC tuya.ts presence wall switch — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE28C1000000_jaunkx9g",
+      "pid": "TS0601",
+      "driverId": "switch_presence_tuya",
+      "note": "#108 2026-10-04 ZHC tuya.ts presence wall switch — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE28C1000000_usmqzgdm",
+      "pid": "TS0601",
+      "driverId": "switch_presence_tuya",
+      "note": "#108 2026-10-04 ZHC tuya.ts presence wall switch — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE200_rgeapp2c",
+      "pid": "TS0601",
+      "driverId": "panel_switch_cover_tuya",
+      "note": "#109 2026-10-04 ZHC tuya.ts Semicom panel (relays + covers) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE204_r6kfl9ta",
+      "pid": "TS0601",
+      "driverId": "sound_sensor_tuya",
+      "note": "#100 2026-10-04 ZHC tuya.ts ZY-N1 sound sensor — keep through publish compaction"
+    },
+    {
+      "mfr": "HEIMAN",
+      "pid": "RC-EF-3.0",
+      "driverId": "button_emergency_sos",
+      "note": "PCr2-1 2026-10-04 ZHC heiman.ts HM1RC-2-E — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE204_8fffc3kb",
+      "pid": "TS0601",
+      "driverId": "led_controller_spi_tuya",
+      "note": "#124 2026-10-04 Gledopto GL-SPI-206P (ZHC gledopto/tuya) DP61 frame — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE284_gt5al3bl",
+      "pid": "TS0601",
+      "driverId": "led_controller_spi_tuya",
+      "note": "#124 2026-10-04 Gledopto GL-SPI-206P (ZHC gledopto/tuya) DP61 frame — keep through publish compaction"
     }
   ]
 }

@@ -8,7 +8,7 @@ name: Johan thread intelligence (daily)
 
 on:
   schedule:
-    - cron: '40 3 * * *'
+    - cron: '40 3 * * *'  # daily UTC (P2810: was weekdays); history sweep + index
   workflow_dispatch:
 
 permissions:
@@ -65,3 +65,33 @@ jobs:
           node scripts/ci/safe-auto-commit.js --id=johan-thread-intel \
             --message="chore(leads): incremental upstream thread index" \
             --paths="data/leads/johan-canonical-index.json data/progress/ledger.json"
+
+      - name: History sweep chunk (free, no AI)
+        # WHY(P2802): advance data/leads/sweep-checkpoint.json a little each weekday so the
+        # full-history deep-read never stalls. Resume-friendly; ledger records done/deferred.
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # P2810: Johan issues (title+body+comments) AND the six forum topics from post 1.
+          # Exit 2 = no progress at all (stall) -> visible warning, never a hard failure.
+          node scripts/progress/advance-sweep.js --chunk=${{ vars.SWEEP_CHUNK || '15' }} \
+            --forum-chunk=${{ vars.SWEEP_FORUM_CHUNK || '80' }} || \
+            { rc=$?; [ "$rc" = 2 ] && echo "::warning::history sweep made no progress this run"; true; }
+          node scripts/progress/sweep-crosscheck.js || true
+
+      - name: Acceptance view (canonical threads vs our drivers, free)
+        continue-on-error: true
+        run: node scripts/scanners/johan-acceptance.js
+
+      - name: Commit sweep checkpoint (gated)
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node scripts/ci/safe-auto-commit.js --id=history-sweep \
+            --message="chore(leads): advance history sweep checkpoint" \
+            --paths="data/leads/sweep-checkpoint.json data/leads/deep-read-checkpoint.json data/progress/ledger.json data/leads/johan-acceptance.json"
+

@@ -1,11 +1,11 @@
 {
- "generated": "2026-10-02",
+ "generated": "2026-10-09",
  "applied": 0,
  "counts": {
-  "covered": 1516,
-  "lead": 46
+  "covered": 1540,
+  "lead": 25
  },
- "internalOnlyUncovered": 463,
+ "internalOnlyUncovered": 466,
  "results": [
   {
    "mfr": "_TYZB01_7yidyqxd",
@@ -20,13 +20,6 @@
    "source": "z2m:Tuya/IH-K009",
    "status": "lead",
    "why": "no button driver lists TS0201"
-  },
-  {
-   "mfr": "_TZ3000_2uollq9d",
-   "pid": "TS011F",
-   "source": "z2m:Tuya/TS011F_plug_3",
-   "status": "lead",
-   "why": "adding to air_purifier_motion, doorwindowsensor_3, pir_sensor_2, sensor_illuminance_presence, smart_door_window_sensor, vibration_sensor would put an existing couple on two drivers"
   },
   {
    "mfr": "_TZ3000_j6adk9id",
@@ -64,20 +57,6 @@
    "why": "TS0601: DP layout differs per id, needs a capture"
   },
   {
-   "mfr": "_TZ3000_fa9mlvja",
-   "pid": "TS0041",
-   "source": "z2m:Tuya/IH-K663",
-   "status": "lead",
-   "why": "3 same-class drivers list TS0041 (ambiguous: button_wireless_4_ts0041, button_wireless_wall, remote_button_wireless_wall)"
-  },
-  {
-   "mfr": "_TZE200_iq4ygaai",
-   "pid": "TS0201",
-   "source": "z2m:Tuya/THS317-ET-TY",
-   "status": "lead",
-   "why": "3 same-class drivers list TS0201 (ambiguous: temphumidsensor, temphumidsensor3, temphumidsensor5)"
-  },
-  {
    "mfr": "_TZE200_01fvxamo",
    "pid": "TS0201",
    "source": "z2m:Tuya/THS317-ET-TY",
@@ -99,27 +78,6 @@
    "why": "adding to air_purifier_motion, air_purifier_soil, device_air_purifier_soil, doorwindowsensor_3, motion_sensor, motion_sensor_2, pir_sensor_2, sensor_climate_motion, sensor_lcdtemphumidsensor_soil, sensor_motion_presence, smart_door_window_sensor, soil_sensor, soilsensor_2 would put an existing couple on two drivers"
   },
   {
-   "mfr": "_TZ3000_vsj5o7dm",
-   "pid": "TS130F",
-   "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1149#issuecomment-5935456731",
-   "status": "lead",
-   "why": "adding to doorwindowsensor_3, pir_sensor_2, sensor_contact_zigbee, smart_door_window_sensor would put an existing couple on two drivers"
-  },
-  {
-   "mfr": "_TZ3210_nuenzetq",
-   "pid": "TS0002",
-   "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1440",
-   "status": "lead",
-   "why": "2 same-class drivers list TS0002 (ambiguous: sr_zs_switch, usb_dongle_dual_repeater)"
-  },
-  {
-   "mfr": "_TZ3000_iiacqpdz",
-   "pid": "TS011F",
-   "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1277",
-   "status": "lead",
-   "why": "adding to air_purifier_motion, doorwindowsensor_3, pir_sensor_2, sensor_illuminance_presence, smart_door_window_sensor, vibration_sensor would put an existing couple on two drivers"
-  },
-  {
    "mfr": "_TZ3000_bzzgvet0",
    "pid": "TS0001",
    "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1265",
@@ -127,39 +85,11 @@
    "why": "adding to air_purifier_motion, air_purifier_soil, device_air_purifier_soil, doorwindowsensor_3, motion_sensor, motion_sensor_2, pir_sensor_2, sensor_climate_motion, sensor_lcdtemphumidsensor_soil, sensor_motion_presence, smart_door_window_sensor, soil_sensor, soilsensor_2 would put an existing couple on two drivers"
   },
   {
-   "mfr": "_TZ3000_vn88ezar",
-   "pid": "TS0041",
-   "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1205",
-   "status": "lead",
-   "why": "adding to pir_sensor_2, smoke_detector_advanced would put an existing couple on two drivers"
-  },
-  {
    "mfr": "_TZ3000_5ftkaulg",
    "pid": "TS0011",
    "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1178",
    "status": "lead",
    "why": "adding to air_purifier_motion, doorwindowsensor_3, pir_sensor_2, smart_door_window_sensor would put an existing couple on two drivers"
-  },
-  {
-   "mfr": "_TZ3000_p26flek3",
-   "pid": "TS0001",
-   "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1172",
-   "status": "lead",
-   "why": "adding to air_purifier_motion, air_purifier_soil, device_air_purifier_soil, doorwindowsensor_3, motion_sensor, motion_sensor_2, pir_sensor_2, sensor_climate_motion, sensor_lcdtemphumidsensor_soil, sensor_motion_presence, smart_door_window_sensor, soil_sensor, soilsensor_2 would put an existing couple on two drivers"
-  },
-  {
-   "mfr": "_TZ3000_zgtbi4oy",
-   "pid": "TS011F",
-   "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1138",
-   "status": "lead",
-   "why": "adding to air_purifier_motion, doorwindowsensor_3, pir_sensor_2, sensor_illuminance_presence, smart_door_window_sensor, vibration_sensor would put an existing couple on two drivers"
-  },
-  {
-   "mfr": "_TZ3000_dvqt7qrw",
-   "pid": "TS011F",
-   "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1111",
-   "status": "lead",
-   "why": "adding to air_purifier_motion, doorwindowsensor_3, pir_sensor_2, sensor_illuminance_presence, smart_door_window_sensor, vibration_sensor would put an existing couple on two drivers"
   },
   {
    "mfr": "_TZ3000_skueekg3",
@@ -176,13 +106,6 @@
    "why": "adding to motion_sensor, motion_sensor_radar_mmwave, pir_mmwave_sensor, power_clamp_meter, presence_sensor_ceiling, presence_sensor_radar, sensor_illuminance_presence, sensor_presence_radar would put an existing couple on two drivers"
   },
   {
-   "mfr": "_TZ3000_26gjlugm",
-   "pid": "TS130F",
-   "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1083",
-   "status": "lead",
-   "why": "adding to doorwindowsensor_3, pir_sensor_2, sensor_contact_zigbee, smart_door_window_sensor would put an existing couple on two drivers"
-  },
-  {
    "mfr": "_TZ3000_kmsbwdol",
    "pid": "TS130F",
    "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1030",
@@ -190,39 +113,11 @@
    "why": "adding to doorwindowsensor_3, pir_sensor_2, sensor_contact_zigbee, smart_door_window_sensor would put an existing couple on two drivers"
   },
   {
-   "mfr": "_TZ3000_os0wy3vh",
-   "pid": "TS130F",
-   "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1028",
-   "status": "lead",
-   "why": "adding to doorwindowsensor_3, pir_sensor_2, sensor_contact_zigbee, smart_door_window_sensor would put an existing couple on two drivers"
-  },
-  {
-   "mfr": "_TZ3210_p9ao60da",
-   "pid": "TS0505B",
-   "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/935",
-   "status": "lead",
-   "why": "7 same-class drivers list TS0505B (ambiguous: bulb_rgb_led, led_strip, led_strip_rgbw, light_bulb_rgb_led, rgb_ceiling_led_light, rgb_led_light_bar, rgb_wall_led_light)"
-  },
-  {
    "mfr": "_TZ3000_wuep9zng",
    "pid": "TS0207",
    "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/897",
    "status": "lead",
    "why": "adding to rain_sensor, sensor_contact_rain, water_leak_sensor would put an existing couple on two drivers"
-  },
-  {
-   "mfr": "_TZE200_qoy0ekbd",
-   "pid": "TS0601",
-   "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/797",
-   "status": "lead",
-   "why": "TS0601: DP layout differs per id, needs a capture"
-  },
-  {
-   "mfr": "_TZ3000_7dcddnye",
-   "pid": "TS0501A",
-   "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/750",
-   "status": "lead",
-   "why": "adding to bulb_dimmable, light_bulb_rgb_rgbw, rgb_mood_light would put an existing couple on two drivers"
   },
   {
    "mfr": "_TZ3000_ww9i3e0y",
@@ -246,53 +141,11 @@
    "why": "adding to sensor_illuminance_presence, vibration_sensor would put an existing couple on two drivers"
   },
   {
-   "mfr": "_TZ3000_ajkq2isy",
-   "pid": "TS0502A",
-   "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/532",
-   "status": "lead",
-   "why": "no socket driver lists TS0502A"
-  },
-  {
-   "mfr": "_TZ3000_o9f2zqln",
-   "pid": "TS0207",
-   "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/473",
-   "status": "lead",
-   "why": "adding to rain_sensor, sensor_contact_rain, water_leak_sensor would put an existing couple on two drivers"
-  },
-  {
    "mfr": "_TZ3000_cipibmnp",
    "pid": "TS0224",
    "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/465",
    "status": "lead",
    "why": "adding to device_air_purifier_plug would put an existing couple on two drivers"
-  },
-  {
-   "mfr": "_TZ3210_y5ztga9r",
-   "pid": "TS0502B",
-   "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/461",
-   "status": "lead",
-   "why": "no sensor driver lists TS0502B"
-  },
-  {
-   "mfr": "_TZ3210_uos3hl9x",
-   "pid": "TS0502B",
-   "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/460",
-   "status": "lead",
-   "why": "3 same-class drivers list TS0502B (ambiguous: dimmable_recessed_led, led_strip_rgbw, light_bulb_tunable_white)"
-  },
-  {
-   "mfr": "_TZ3000_9evm3otq",
-   "pid": "TS0502A",
-   "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/416",
-   "status": "lead",
-   "why": "no socket driver lists TS0502A"
-  },
-  {
-   "mfr": "_TZ3210_jtifm80b",
-   "pid": "TS0502B",
-   "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/403",
-   "status": "lead",
-   "why": "held: CCT controller (issue 403); the only light driver listing TS0502B is dim-only (dimmable_recessed_led), so it stays a lead until a CCT driver carries TS0502B"
   },
   {
    "mfr": "_TZ3000_wkai4ga5",
@@ -309,13 +162,6 @@
    "why": "adding to rain_sensor, sensor_contact_rain, water_leak_sensor would put an existing couple on two drivers"
   },
   {
-   "mfr": "_TZ3000_0ausfos0",
-   "pid": "TS0502A",
-   "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/189",
-   "status": "lead",
-   "why": "no socket driver lists TS0502A"
-  },
-  {
    "mfr": "_TZ3000_v7fkcekx",
    "pid": "TS0505A",
    "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/163",
@@ -328,6 +174,13 @@
    "source": "https://github.com/JohanBendz/com.tuya.zigbee/pull/66",
    "status": "lead",
    "why": "adding to rain_sensor, sensor_contact_rain, water_leak_sensor would put an existing couple on two drivers"
+  },
+  {
+   "mfr": "_TZ3000_mvvw8wnx",
+   "pid": "TS0001",
+   "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1366#issuecomment-5966886342",
+   "status": "lead",
+   "why": "json round-trip not byte-identical, skipped"
   }
  ]
 }

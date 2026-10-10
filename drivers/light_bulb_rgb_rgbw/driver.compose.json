@@ -7,6 +7,7 @@
     "es": "Bombilla RGB RGBW"
   },
   "class": "light",
+  "energy": { "approximation": { "usageOn": 7, "usageOff": 0.4 } },
   "capabilities": [
     "dim",
     "light_hue",
@@ -167,7 +168,9 @@
       "_TZ3000_DBOU1AP4",
       "_tz3000_DBOU1AP4",
       "_TZE284_oa1odmga",
-      "_tze284_oa1odmga"
+      "_tze284_oa1odmga",
+      "_TZE284_OA1ODMGA",
+      "_tze284_OA1ODMGA"
     ],
     "endpoints": {
       "1": {

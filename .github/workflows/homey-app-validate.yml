@@ -1,0 +1,61 @@
+name: Homey App Validate (all levels)
+on:
+  pull_request:
+  push:
+    branches: [master, stable-v5, bastien-home]
+  workflow_dispatch:
+defaults:
+  run:
+    shell: bash
+permissions:
+  contents: read
+concurrency:
+  group: homey-app-validate-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: homey app validate --level debug (blocking)
+        run: npx homey app validate --level debug
+      - name: homey app validate --level publish (blocking)
+        run: npx homey app validate --level publish
+      - name: homey app validate --level verified (report only)
+        continue-on-error: true
+        run: npx homey app validate --level verified 2>&1 | tee /tmp/verified.log; exit ${PIPESTATUS[0]}
+      - name: Publish payload build + size/structure report
+        if: always()
+        run: |
+          rm -rf /tmp/homey-publish-temp
+          npx homey app build >/dev/null 2>&1 || true
+          node scripts/prepare-publish.js >/tmp/prepare.log 2>&1 || { tail -20 /tmp/prepare.log; exit 1; }
+          cd /tmp/homey-publish-temp
+          python3 - <<'PY' | tee -a "$GITHUB_STEP_SUMMARY"
+          import json, os, collections
+          a = json.load(open('app.json'))
+          ids = [d['id'] for d in a['drivers']]
+          combos = sum(len((d.get('zigbee') or {}).get('manufacturerName') or []) * len((d.get('zigbee') or {}).get('productId') or []) for d in a['drivers'])
+          fids = [c['id'] for k in a.get('flow', {}) for c in a['flow'][k]]
+          size = sum(os.path.getsize(os.path.join(p, f)) for p, _, fs in os.walk('.') if 'node_modules' not in p for f in fs)
+          print(f"### Publish payload v{a['version']}")
+          print(f"- drivers: {len(ids)} (dup ids: {[k for k, v in collections.Counter(ids).items() if v > 1]})")
+          print(f"- zigbee mfr×pid combos: {combos}")
+          print(f"- flow cards: {len(fids)} (dup ids: {sum(1 for v in collections.Counter(fids).values() if v > 1)})")
+          print(f"- app.json: {os.path.getsize('app.json')/1e6:.2f} MB, payload (no node_modules): {size/1e6:.1f} MB")
+          PY
+      - name: Manifest processor audit (non-blocking)
+        if: always()
+        continue-on-error: true
+        run: |
+          [ -f scripts/validate/manifest-processor-audit.js ] || { echo "audit script missing"; exit 0; }
+          for p in .homeybuild/app.json /tmp/homey-publish-temp/app.json; do
+            [ -f "$p" ] && { echo "### Processor audit: $p" | tee -a "$GITHUB_STEP_SUMMARY"; node scripts/validate/manifest-processor-audit.js "$p" 2>&1 | tail -60 | tee -a "$GITHUB_STEP_SUMMARY"; }
+          done
+          exit 0

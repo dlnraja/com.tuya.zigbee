@@ -6,6 +6,7 @@
     "de": "RGBW LED Streifen"
   },
   "class": "light",
+  "energy": { "approximation": { "usageOn": 15, "usageOff": 0.5 } },
   "capabilities": [
     "light_hue",
     "light_saturation",
