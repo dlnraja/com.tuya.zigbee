@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-09T08:00:29.089Z",
+  "generatedAt": "2026-10-10T07:44:20.232Z",
   "mode": "APPLY",
   "policy": "P2319 enrichment-first colocate — never strip other drivers",
   "applied": [],
@@ -47,13 +47,6 @@
       "driver": "contact_sensor_zigbee"
     },
     {
-      "mfr": "_TZE200_n8dljorx",
-      "pid": "TS0601",
-      "reason": "needs-deep-review",
-      "tier": null,
-      "soft": null
-    },
-    {
       "mfr": "_TZ3000_85czd6fy",
       "pid": "TS0207",
       "reason": "p2520-would-degrade",
@@ -65,12 +58,6 @@
       "reason": "needs-deep-review",
       "tier": null,
       "soft": null
-    },
-    {
-      "mfr": "_TZ3000_kyb656no",
-      "pid": "TS0207",
-      "reason": "p2520-would-degrade",
-      "driver": "water_leak_sensor"
     },
     {
       "mfr": "_TZ3000_lbtpiody",
