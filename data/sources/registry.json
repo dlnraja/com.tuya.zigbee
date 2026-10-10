@@ -307,6 +307,52 @@
       "cadence": "weekly",
       "kind": "community-apps",
       "credit": "Athom B.V. App Store (community apps)"
+    },
+    {
+      "id": "npm-homey-cli",
+      "type": "page",
+      "url": "https://registry.npmjs.org/homey/latest",
+      "cadence": "weekly",
+      "kind": "tooling",
+      "credit": "Athom B.V. (homey CLI, npm)"
+    },
+    {
+      "id": "npm-homey-lib",
+      "type": "page",
+      "url": "https://registry.npmjs.org/homey-lib/latest",
+      "cadence": "weekly",
+      "kind": "tooling",
+      "credit": "Athom B.V. (homey-lib validator, npm)"
+    },
+    {
+      "id": "athombv-node-homey",
+      "type": "github",
+      "repo": "athombv/node-homey",
+      "branch": "master",
+      "paths": [
+        "lib"
+      ],
+      "issues": false,
+      "cadence": "weekly",
+      "kind": "tooling",
+      "credit": "Athom B.V. (node-homey CLI)"
+    },
+    {
+      "id": "homey-sdk-v3-docs",
+      "type": "page",
+      "url": "https://apps.developer.homey.app/the-basics/devices/capabilities.md",
+      "cadence": "weekly",
+      "kind": "docs",
+      "credit": "Athom B.V. developer docs"
+    },
+    {
+      "id": "athom-dev-blog",
+      "type": "page",
+      "url": "https://apps.developer.homey.app/llms.txt",
+      "cadence": "weekly",
+      "kind": "docs",
+      "credit": "Athom B.V. developer docs index",
+      "note": "No separate public Athom developer blog feed found; the docs index (llms.txt) changes when new guides/changelogs are added."
     }
   ]
 }
