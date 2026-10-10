@@ -98,18 +98,8 @@ jobs:
       id-token: write
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url || steps.deployment_retry.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      # WHY: run 36955102264 failed on a transient OIDC "Failed to get ID Token / Request timeout";
-      # one delayed retry instead of a red run.
       - name: Deploy to GitHub Pages
         id: deployment
-        continue-on-error: true
-        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
-      - name: Wait before Pages OIDC retry
-        if: steps.deployment.outcome == 'failure'
-        run: sleep 20
-      - name: Deploy to GitHub Pages (retry)
-        id: deployment_retry
-        if: steps.deployment.outcome == 'failure'
         uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4

@@ -18,8 +18,7 @@
  *   4. compose + app.json are edited through a byte-identical JSON round-trip only.
  * Anything else stays a lead (data/leads/strict-apply-report.json), never guessed.
  * Applied couples are logged in data/leads/auto-applied.json (source URL kept) so the stable
- * backport and the next runs are idempotent. Entries logged by coverage-audit.js (via=coverage-audit)
- * are backported with decideAuditBackport() (mfr already on stable, no new dual couple). Commits go through scripts/ci/safe-auto-commit.js.
+ * backport and the next runs are idempotent. Commits go through scripts/ci/safe-auto-commit.js.
  *
  * quirks: leads with a strong firmware keyword (inverted, drops off, wrong scale, ×10, …) for a
  * manufacturerName we already support, exactly one productId, and no quirk record for that
@@ -67,7 +66,6 @@ function loadRoundTrip(file, compact) {
 function buildIndex(root) {
   const byMfr = new Map();
   const byPid = new Map();
-  const byDriver = new Map(); // driver -> { mfrs:Set(lc), pids:Set(UC) } (audit backport)
   const dir = path.join(root, 'drivers');
   for (const d of fs.readdirSync(dir)) {
     const f = path.join(dir, d, 'driver.compose.json');
@@ -79,7 +77,6 @@ function buildIndex(root) {
       if (!byMfr.has(lc(m))) {byMfr.set(lc(m), new Set());}
       byMfr.get(lc(m)).add(d);
     }
-    byDriver.set(d, { mfrs: new Set((z.manufacturerName || []).map(lc)), pids: new Set((z.productId || []).map((p) => String(p).toUpperCase())) });
     if ((z.manufacturerName || []).length) {
       for (const p of z.productId || []) {
         const k = String(p).toUpperCase();
@@ -88,35 +85,7 @@ function buildIndex(root) {
       }
     }
   }
-  return { byMfr, byPid, byDriver };
-}
-
-/**
- * Stable backport of a coverage-audit couple (pure, unit-tested). The coverage audit only writes
- * couples whose manufacturerName is already supported, so decide() would always answer "already"
- * on stable. Rule here: mfr already on stable, couple not matched yet, target driver (same as master)
- * exists on stable and lists the productId, and adding the mfr creates no couple that another stable
- * driver already matches (one couple = one driver). Anything else stays on master only.
- */
-function decideAuditBackport(idx, mfr, pid, driver) {
-  if (!VALID_MFR.test(mfr || '')) {return { status: 'lead', why: 'not a valid manufacturerName' };}
-  const P = String(pid || '').toUpperCase();
-  if (!/^TS[0-9]{3,4}[A-Z]?$/.test(P) || GENERIC_PIDS.has(P)) {return { status: 'lead', why: `${P || 'no pid'}: not backported automatically` };}
-  const m = lc(mfr);
-  const where = idx.byMfr.get(m);
-  if (!where || !where.size) {return { status: 'lead', why: 'manufacturerName not on this branch yet (strict path only)' };}
-  const byDriver = idx.byDriver || new Map();
-  for (const [d, z] of byDriver) {if (z.mfrs.has(m) && z.pids.has(P)) {return { status: 'already', why: `couple already on ${d}` };}}
-  const target = byDriver.get(driver);
-  if (!target) {return { status: 'lead', why: `${driver} does not exist on this branch` };}
-  if (!target.pids.has(P)) {return { status: 'lead', why: `${driver} has no ${P} here` };}
-  for (const d of where) {
-    const z = byDriver.get(d);
-    if (!z || d === driver) {continue;}
-    const clash = [...target.pids].find((x) => z.pids.has(x));
-    if (clash) {return { status: 'lead', why: `would put ${m}|${clash} on ${driver} and ${d}` };}
-  }
-  return { status: 'apply', driver };
+  return { byMfr, byPid };
 }
 
 /** Pure decision (unit-tested). */
@@ -259,18 +228,13 @@ async function main() {
     const key = `${lc(c.mfr)}|${c.pid || ''}`;
     if (seen.has(key)) {continue;}
     seen.add(key);
-    const d = SOURCE === 'backport' && c.via === 'coverage-audit'
-      ? decideAuditBackport(idx, c.mfr, c.pid, c.forced)
-      : decide(idx, c.mfr, c.pid, c.forced);
+    const d = decide(idx, c.mfr, c.pid, c.forced);
     if (d.status === 'apply') {
       if (applied >= MAX) { results.push({ ...c, status: 'lead', why: `run cap ${MAX} reached` }); continue; }
       const err = applyCouple(ROOT, d.driver, c.mfr);
       if (err) { results.push({ ...c, status: 'lead', why: err }); continue; }
       applied++;
-      if (!idx.byMfr.has(lc(c.mfr))) {idx.byMfr.set(lc(c.mfr), new Set());}
-      idx.byMfr.get(lc(c.mfr)).add(d.driver);
-      const bd = idx.byDriver && idx.byDriver.get(d.driver);
-      if (bd) {bd.mfrs.add(lc(c.mfr));}
+      idx.byMfr.set(lc(c.mfr), new Set([d.driver]));
       results.push({ ...c, status: 'applied', driver: d.driver });
       if (SOURCE !== 'backport') {log.applied.push({ mfr: c.mfr, pid: c.pid, driver: d.driver, source: c.source, date: new Date().toISOString().slice(0, 10) });}
     } else {
@@ -294,5 +258,5 @@ async function main() {
   }
 }
 
-module.exports = { decide, decideAuditBackport, pairsFromText, buildIndex, GENERIC_PIDS };
+module.exports = { decide, pairsFromText, buildIndex, GENERIC_PIDS };
 if (require.main === module) {main().catch((e) => { console.error(`strict-apply: ${e.message}`); process.exit(0); });}

@@ -113,12 +113,6 @@ Specs live in `specs/NNN-*/{spec,plan,tasks}.md`. This file overrides any spec/p
   0xFCC0, IKEA, Philips 0xFC03, Schneider, …) are supported fully and locally, with no cloud
   dependency, as optional additive layers with circuit breakers that never block pairing, and are
   registered in the native/non-native matrix. Sources (Z2M, ZHA, deCONZ) are credited by name.
-- W12. Daily resume enrichment mode. Standing runbook: `docs/rules/DAILY_RESUME_ENRICHMENT.md`
-  (max coverage per exact couple, one couple one driver, case-insensitive shared helper, lazy load
-  + app.json < 4 MB, other-app threads/comments as sources, credits kept current, firmware quirks
-  with ≥2 sources, stable=compat / master=smart, defer never skip, additive interviews, non-native
-  clusters never mandatory for pairing, heuristic as opt-in failover, native Homey first then DP).
-
 
 ## Preferences (PC harvest round 2, 2026-10-04)
 - P1. Case-insensitive everywhere (mfr/pid/lookups).

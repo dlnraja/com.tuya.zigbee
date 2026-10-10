@@ -23,14 +23,12 @@ on:
     - cron: '41 10 * * 1-5'  # Inspiration JohanBendz 11:41 Paris (CET)
     - cron: '7 7 * * 1'      # Weekly summary Monday 09:07 Paris (CEST)
     - cron: '7 8 * * 1'      # Weekly summary Monday 09:07 Paris (CET)
-    - cron: '5 10 * * 1-5'  # Self-check 12:05 Paris (CEST)
-    - cron: '5 11 * * 1-5'  # Self-check 12:05 Paris (CET)
   workflow_dispatch:
     inputs:
       which:
         description: 'Digest to run'
         type: choice
-        options: [all, homey, labs, forum, inspiration, weekly, selfcheck]
+        options: [all, homey, labs, forum, inspiration, weekly]
         default: all
       force:
         description: 'Post a comment even if nothing changed'
@@ -366,42 +364,3 @@ jobs:
           WEEKLY_DIAG_DIR: diag-report
           QUIRKS_DB: .quirks-db/quirks.json
         run: node scripts/digest/weekly.js
-
-  # P2802 — free weekday self-check: summarize sweep/CI/gate duplication into Daily digest #557
-  # when the script reports a change. Never commits; never publishes. Uses GITHUB_TOKEN only.
-  selfcheck:
-    name: 🩺 Free self-check → Daily digest #557
-    if: >-
-      github.repository == 'dlnraja/com.tuya.zigbee' &&
-      ((github.event_name == 'schedule' && startsWith(github.event.schedule, '5 1')) ||
-       (github.event_name == 'workflow_dispatch' && (inputs.which == 'selfcheck' || inputs.which == 'all')))
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    permissions:
-      contents: read
-      issues: write
-      actions: read
-    steps:
-      - name: Checkout
-        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
-        with:
-          fetch-depth: 1
-          sparse-checkout: |
-            scripts/digest
-            data/leads
-            data/progress
-          persist-credentials: false
-      - name: Setup Node
-        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
-        with:
-          node-version: '22'
-      - name: Paris-time guard
-        id: tz
-        run: node scripts/digest/tz-guard.js --schedule="${{ github.event.schedule }}" --paris-hour=12
-      - name: Self-check report (best-effort)
-        if: steps.tz.outputs.run == 'true' || github.event_name == 'workflow_dispatch'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          FORCE: ${{ inputs.force || false }}
-        run: node scripts/digest/self-check.js || echo "SELF_CHECK_SKIP"
-

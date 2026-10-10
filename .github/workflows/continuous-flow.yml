@@ -20,8 +20,6 @@
 #   - Path filter: only on code changes (not docs/ images)
 #   - Manual dispatch for apply mode
 #   - DRY_RUN by default
-# DECISION(P2797c/P2802): schedule is ALWAYS dry-run. Push trigger removed (wasted ~30
-#   dry-run runs / 48 h). Apply only via workflow_dispatch mode=apply. Do not re-add push.
 #
 # Outputs:
 #   - .github/state/*.json reports (committed back via git)
@@ -50,9 +48,16 @@ on:
         required: false
         default: '3'
         type: string
-  # WHY(P2797c): push trigger removed. On push the job always ran in dry-run mode (DRY_RUN unless
-  # mode=apply) and its commit step is apply-only, so ~30 runs / 48 h (~6 min each) produced nothing;
-  # the same gates already run in syntax-check / code-quality / unified-ci on every push.
+  push:
+    branches: [master]
+    paths:
+      # WHY(ci-consolidation 2026-10): tools/** and .github/state/** removed — state is gitignored and
+      # CI-script pushes are covered by unified-ci (saved ~1/3 of 1700 runner-min / 14 d).
+      - 'drivers/**'
+      - 'lib/**'
+      - 'data/mfs_db.json'
+      - 'lib/tuya/fingerprints.json'
+      - 'package.json'
 
 permissions:
   contents: write
@@ -270,3 +275,34 @@ jobs:
           echo "::error::Continuous flow failed. Check the workflow run for details."
           echo "Run ID: ${{ github.run_id }}"
           echo "Trigger: ${{ github.event_name }}"
+
+  post-comment:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: enrich
+    if: github.event_name == 'push' && needs.enrich.result == 'success'
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Find PR
+        id: find-pr
+        run: |
+          PR=$(gh pr list --head "${{ github.ref_name }}" --state open --json number --jq '.[0].number' 2>/dev/null || echo "")
+          echo "pr=$PR" >> $GITHUB_OUTPUT
+
+      - name: Post summary comment
+        if: steps.find-pr.outputs.pr != ''
+        uses: marocchino/sticky-pull-request-comment@773744901bac0e8cbb5a0dc842800d45e9b2b405 # v2.9.4
+        with:
+          header: continuous-flow
+          message: |
+            🌒 Continuous flow ran successfully.
+            - Mode: ${{ github.event.inputs.mode || 'schedule' }}
+            - DRY_RUN: ${{ env.DRY_RUN }}
+            - Run: ${{ github.run_id }}

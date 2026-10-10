@@ -150,17 +150,6 @@ function parseState(body) {
   try { return JSON.parse(m[1]); } catch (_) { return {}; }
 }
 
-/**
- * Visible section owned by scripts/digest/self-check.js (state key `selfcheck`).
- * Rendered from state so every digest that rewrites the body keeps it intact,
- * and self-check only ever changes its own key (no comment, no e-mail).
- */
-function renderSelfCheckSection(state) {
-  const sc = state && state.selfcheck;
-  if (!sc || typeof sc.markdown !== 'string' || !sc.markdown.trim()) return [];
-  return ['<!-- self-check:BEGIN -->', sc.markdown.slice(0, 6000), `<!-- self-check:END fp=${sc.fp || '?'} -->`, ''];
-}
-
 function renderBody(state) {
   return [
     '# 🤖 Daily digest',
@@ -176,7 +165,6 @@ function renderBody(state) {
     "| `autonomous-verification.yml` › job *ci-health* | Rouge/vert des workflows master & stable-v5 (08:30 + 16:15 Paris jours ouvrés, transitions seulement) |",
     "| `notifications.yml` › job *digest-event* | PR ouverte/mergée + CI rouge/vert sur master (temps réel, ≤1 commentaire CI / 30 min) |",
     '',
-    ...renderSelfCheckSection(state),
     `_Dernière mise à jour de l'état : ${new Date().toISOString()}_ — ne pas éditer le bloc ci-dessous (état machine).`,
     '',
     '<!-- digest-state:BEGIN',
@@ -235,4 +223,4 @@ function paris(iso) {
 const short = (sha) => (sha || '').slice(0, 7);
 const esc = (s) => String(s || '').replace(/[|<>@]/g, (c) => ({ '|': '\\|', '<': '&lt;', '>': '&gt;', '@': '@\u200b' }[c])).slice(0, 120);
 
-module.exports = { renderBody, renderSelfCheckSection, parseState, run, StopDigest, jitter, UA, gh, fetchJson, fileAt, findTrackingIssue, loadState, saveState, postComment, summary, paris, short, esc, log, sleep, REPO, DRY, FORCE };
+module.exports = { renderBody, run, StopDigest, jitter, UA, gh, fetchJson, fileAt, findTrackingIssue, loadState, saveState, postComment, summary, paris, short, esc, log, sleep, REPO, DRY, FORCE };

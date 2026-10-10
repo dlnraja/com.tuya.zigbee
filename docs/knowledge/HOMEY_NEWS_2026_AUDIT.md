@@ -1,7 +1,6 @@
 # Homey news 2025-2026: what it means for this app (queue #101-#106)
 
 Audit date: 2026-10-04 (Europe/Paris). Our own summary of the public Homey news pages and the
-(Counts were taken on master; this branch carries the same energy fix.)
 Apps SDK energy and capability pages. Nothing was copied.
 
 | # | News | What we checked | Result | Follow-up |
