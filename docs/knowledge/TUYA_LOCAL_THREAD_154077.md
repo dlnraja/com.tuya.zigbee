@@ -40,3 +40,29 @@ These stay **pistes** until cross-checked with make-all/tuya-local device yaml +
 
 ## Not done in this pass
 DP/device-id extraction (needs per-device cross-check against tuya-local yaml), items marked Pending.
+
+## Pass 2 (2026-10-11 ~02:00 Paris)
+- **P2701**: `LocalFirstResolver` returned `ipSource:'settings-static'` (P2485) while its contract and
+  `wifi-local-first-resolver.test.js` expect `'settings'`. Root fix: `ipSource` keeps `'settings'`,
+  pinning is a separate `ipPinned` flag (and in the reason text); P2485 test updated to match.
+- **P2704 (root bug found while checking energy hints)**: every `WiFiDPRegistry` hint (category,
+  community, curated product) was inert: drivers declare `dpMappings` as a getter returning a fresh
+  object, so enrichment wrote into a throwaway copy, and the capability map was warmed before.
+  Fixed: instance copy pinned before quirks/enrichment, cache invalidated after. Guard added so
+  generic hints never bind a second DP to an already-bound capability (silent write-target hijack).
+- **Product verified by two sources**: `gxrtu5vljdthtd3g` (EV Charger "gd version", qccdz):
+  start/stop DP140, DP18 absent — make-all/tuya-local `dewall_evcharger.yaml` + forum #411/#426.
+- Product ids seen in support bundles (#352 ceBCvy4V2acJ6UsV, #369 5dgguakbmhwzwiko [tuya-local
+  ideal_clima_fancoil], #385/#419 ohaebnvyrmgx2sh6, 0oaikegxcfwwfcsr, eljrqdagltsgoycp,
+  facdcmf5xlsejeku, #431 nn2ooaacswz6uyi0 [tuya-local: several AC yaml], #465 hpjrxo4jplpgfjpq,
+  #474 16sthwpnxt6u7ewz): only one source for most → kept as leads, not added.
+- **Energy multipliers (verified)**: tuya-local plug yaml: DP18 mA, DP19 W×10, DP20 V×10 — matches
+  our `WIFI_DP_DEFAULTS`. **DP17 differs**: tuya-local declares it `unit: Wh` / `kWh scale 1000`
+  (6 yaml, 0 with /100) and as a *measurement* (energy added since last report, `add_ele`), Andi's
+  bundles use `kwh_scale 0.001` (#385/#419). Ours: `/100` into cumulative `meter_power`.
+  NOT changed: switching it would make every existing plug's kWh counter jump ×10 down and needs
+  an accumulation design. Decision needed.
+- **OCR** of 246 thread images (tesseract): screenshots are Tuya IoT/app settings and DP tables;
+  no new product id or DP mapping beyond the text posts. Category codes seen: cwwsq (feeder),
+  cl (curtain), qccdz (EV), wsdcg-like TH sensors.
+- #435 (echo ≠ device reports DP): N/A for us — no such fallback exists.
