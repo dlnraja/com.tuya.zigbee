@@ -1,5 +1,4 @@
 'use strict';
-const { migrateDeviceClass } = require('../../lib/utils/DeviceClassMigration');
 const { safeParse, safeMultiply } = require('../../lib/utils/tuyaUtils.js');
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
@@ -18,8 +17,6 @@ class DimmerWallSwitchDevice extends PhysicalButtonMixin(TuyaZigbeeDevice) {
   // factor = multiplier / divisor: default 1 when unread.
 
   async onNodeInit({ zclNode }) {
-    // WHY: class socket -> light (user decision 2026-10-04); one-shot for paired devices
-    migrateDeviceClass(this, 'light', ['socket', 'other']).catch(() => {});
     await super.onNodeInit({ zclNode });
     this.log('Dimmer Wall Switch v5.9.12 Ready');
 

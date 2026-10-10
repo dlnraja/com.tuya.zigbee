@@ -22,8 +22,7 @@ class Dimmer1gangDriver extends ZigBeeDriver {
 
   _registerFlowCards() {
     // TRIGGERS
-    // WHY: ids must match driver.flow.compose.json (old list had a double "dimmer_" prefix, so every lookup failed)
-    const _triggerIds = ["air_purifier_dimmer_wall_1gang_physical_on","air_purifier_dimmer_wall_1gang_physical_off","air_purifier_dimmer_wall_1gang_physical_brig_40f57","air_purifier_dimmer_wall_1gang_physical_brig_a6dcb","air_purifier_dimmer_wall_1gang_dimmer_1gang__66522","air_purifier_dimmer_wall_1gang_dimmer_1gang__05bb4","air_purifier_dimmer_wall_1gang_dimmer_1gang__09f81","air_purifier_dimmer_wall_1gang_turned_on","air_purifier_dimmer_wall_1gang_turned_off","air_purifier_dimmer_wall_1gang_power_changed"];
+    const _triggerIds = ["air_purifier_dimmer_dimmer_wall_1gang_physical_on","air_purifier_dimmer_dimmer_wall_1gang_physical_off","air_purifier_dimmer_dimmer_wall_1gang_physical_brightness_up","air_purifier_dimmer_dimmer_wall_1gang_physical_brightness_down","air_purifier_dimmer_dimmer_wall_1gang_dimmer_1gang_turned_on","air_purifier_dimmer_dimmer_wall_1gang_dimmer_1gang_turned_off","air_purifier_dimmer_dimmer_wall_1gang_dimmer_1gang_dim_changed","air_purifier_dimmer_dimmer_wall_1gang_turned_on","air_purifier_dimmer_dimmer_wall_1gang_turned_off","air_purifier_dimmer_dimmer_wall_1gang_power_changed"];
     for (const _tid of _triggerIds) {
       try {
         const _card = this._getFlowCard(_tid, "trigger");
@@ -45,7 +44,7 @@ class Dimmer1gangDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Condition air_purifier_dimmer_wall_1gang_dimmer_1gang_is_on: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition air_purifier_dimmer_dimmer_wall_1gang_dimmer_1gang_is_on: ${err.message}`); } }
 
     try {
       const card = this.homey.flow.getConditionCard('air_purifier_dimmer_wall_1gang_is_on');
@@ -55,7 +54,7 @@ class Dimmer1gangDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Condition air_purifier_dimmer_wall_1gang_is_on: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition air_purifier_dimmer_dimmer_wall_1gang_is_on: ${err.message}`); } }
 
     // ACTIONS
     try {
@@ -67,7 +66,7 @@ class Dimmer1gangDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action air_purifier_dimmer_wall_1gang_dimmer_1gang_turn_on: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action air_purifier_dimmer_dimmer_wall_1gang_dimmer_1gang_turn_on: ${err.message}`); } }
 
     try {
       const card = this.homey.flow.getActionCard('air_purifier_dimmer_wall_1gang_dimmer_1gang__4a6fa');
@@ -78,7 +77,7 @@ class Dimmer1gangDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action air_purifier_dimmer_wall_1gang_dimmer_1gang_turn_off: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action air_purifier_dimmer_dimmer_wall_1gang_dimmer_1gang_turn_off: ${err.message}`); } }
 
     try {
       const card = this.homey.flow.getActionCard('air_purifier_dimmer_wall_1gang_dimmer_1gang_toggle');
@@ -90,7 +89,7 @@ class Dimmer1gangDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action air_purifier_dimmer_wall_1gang_dimmer_1gang_toggle: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action air_purifier_dimmer_dimmer_wall_1gang_dimmer_1gang_toggle: ${err.message}`); } }
 
     try {
       const card = this.homey.flow.getActionCard('air_purifier_dimmer_wall_1gang_dimmer_1gang__71ab0');
@@ -101,7 +100,7 @@ class Dimmer1gangDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action air_purifier_dimmer_wall_1gang_dimmer_1gang_set_dim: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action air_purifier_dimmer_dimmer_wall_1gang_dimmer_1gang_set_dim: ${err.message}`); } }
 
     try {
       const card = this.homey.flow.getActionCard('air_purifier_dimmer_wall_1gang_turn_on');
@@ -112,7 +111,7 @@ class Dimmer1gangDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action air_purifier_dimmer_wall_1gang_turn_on: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action air_purifier_dimmer_dimmer_wall_1gang_turn_on: ${err.message}`); } }
 
     try {
       const card = this.homey.flow.getActionCard('air_purifier_dimmer_wall_1gang_turn_off');
@@ -123,7 +122,7 @@ class Dimmer1gangDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action air_purifier_dimmer_wall_1gang_turn_off: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action air_purifier_dimmer_dimmer_wall_1gang_turn_off: ${err.message}`); } }
 
     try {
       const card = this.homey.flow.getActionCard('air_purifier_dimmer_wall_1gang_toggle');
@@ -135,7 +134,7 @@ class Dimmer1gangDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action air_purifier_dimmer_wall_1gang_toggle: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action air_purifier_dimmer_dimmer_wall_1gang_toggle: ${err.message}`); } }
 
     try {
       const card = this.homey.flow.getActionCard('air_purifier_dimmer_wall_1gang_set_brightness');
@@ -146,7 +145,7 @@ class Dimmer1gangDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action air_purifier_dimmer_wall_1gang_set_brightness: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action air_purifier_dimmer_dimmer_wall_1gang_set_brightness: ${err.message}`); } }
 
     this.log('[FLOW] All flow cards registered');
   }

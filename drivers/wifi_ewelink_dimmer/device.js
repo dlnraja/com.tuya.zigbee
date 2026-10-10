@@ -9,7 +9,7 @@ class D extends EweLinkLocalDevice{
 
   get stateMappings(){return{
     switch:{capability:'onoff',transform:v=>v==='on'},
-    brightness:{capability:'dim',transform:v=>v / 100}
+    brightness:{capability:'dim',transform:v=>v * 100}
   };}
   _registerCapListeners(){
     this.registerCapabilityListener('onoff',async v=>{await this._client.setDimmer(this._lastBrightness||100,v);
