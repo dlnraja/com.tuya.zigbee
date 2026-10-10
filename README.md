@@ -103,7 +103,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.1364** | v9.0.1361: |
+| **v9.0.1364** | v9.0.1364: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1361** | v9.0.1361: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1354** | v9.0.1354: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1350** | v9.0.1350: automated publish, manifest sync, and Homey test promotion. |
