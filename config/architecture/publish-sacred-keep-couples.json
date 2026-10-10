@@ -1231,6 +1231,12 @@
       "pid": "RC-EF-3.0",
       "driverId": "button_emergency_sos",
       "note": "PCr2-1 2026-10-04 ZHC heiman.ts HM1RC-2-E — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZ3000_skueekg3",
+      "pid": "TS000F",
+      "driverId": "switch_1gang",
+      "note": "WHD02 relay module (Z2M TS000F) — fold from master 2026-10-10; was on wall_switch_1gang_1way without TS000F (never matched)"
     }
   ]
 }
