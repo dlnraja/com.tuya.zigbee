@@ -120,6 +120,11 @@ jobs:
           npm run check:p2626
           npm run check:p2625 || true
           npm run check:p2627 || true
+      # WHY(2026-10-10 user rule): never upload a version <= highest Athom build (strictly incremental).
+      - name: Strictly-incremental version gate
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: node .github/scripts/athom-version-floor.js --gate
       - name: Homey app build
         run: |
           set -euo pipefail

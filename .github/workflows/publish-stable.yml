@@ -220,7 +220,10 @@ jobs:
       # gets a fresh patch version (app ID untouched); the version is committed back after upload.
       - name: Bump stable patch version
         id: bump
-        run: node .github/scripts/stable-version-bump.js bump
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        # WHY(2026-10-10 user rule): strictly incremental vs highest Athom build ever uploaded.
+        run: node .github/scripts/athom-version-floor.js --apply && node .github/scripts/stable-version-bump.js bump && node .github/scripts/athom-version-floor.js --gate
       - name: Build App
         run: npx homey app build
       - name: Sanitize Built Manifest
