@@ -16,7 +16,7 @@
     ]
   },
   "_TZE200_8ygsuhe1": {
-    "driverId": "air_quality_comprehensive",
+    "driverId": "air_quality_co2",
     "type": "air_quality",
     "powerSource": "mains",
     "modelIds": [
@@ -72,7 +72,7 @@
     ]
   },
   "_TZE200_pay2byax": {
-    "driverId": "contact_sensor",
+    "driverId": "contact_sensor_zigbee",
     "type": "contact_sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -136,7 +136,7 @@
     ]
   },
   "_TZ3000_b4awzgct": {
-    "driverId": "button_wireless_4_ts0041",
+    "driverId": "button_wireless_1",
     "type": "button",
     "powerSource": "battery",
     "modelIds": [
@@ -256,7 +256,7 @@
     ]
   },
   "_TZ3000_7ysdnebc": {
-    "driverId": "dimmer_dual_channel",
+    "driverId": "dimmer_2_gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -1338,7 +1338,7 @@
     ]
   },
   "_TZE284_hodyryli": {
-    "driverId": "climate_sensor",
+    "driverId": "climate_sensor_zt08",
     "type": "climate_sensor",
     "powerSource": null,
     "modelIds": [
@@ -1346,7 +1346,7 @@
     ]
   },
   "_tze284_hodyryli": {
-    "driverId": "climate_sensor",
+    "driverId": "climate_sensor_zt08",
     "type": "climate_sensor",
     "powerSource": null,
     "modelIds": [
@@ -1354,7 +1354,7 @@
     ]
   },
   "_TZE284_HODYRYLI": {
-    "driverId": "climate_sensor",
+    "driverId": "climate_sensor_zt08",
     "type": "climate_sensor",
     "powerSource": null,
     "modelIds": [
@@ -2806,7 +2806,7 @@
     ]
   },
   "_TZE200_bcusnqt8": {
-    "driverId": "power_clamp_meter",
+    "driverId": "curtain_motor",
     "type": "power_clamp_meter",
     "powerSource": null,
     "modelIds": [
@@ -2814,7 +2814,7 @@
     ]
   },
   "_tze200_bcusnqt8": {
-    "driverId": "power_clamp_meter",
+    "driverId": "curtain_motor",
     "type": "power_clamp_meter",
     "powerSource": null,
     "modelIds": [
@@ -2822,7 +2822,7 @@
     ]
   },
   "_TZE200_BCUSNQT8": {
-    "driverId": "power_clamp_meter",
+    "driverId": "curtain_motor",
     "type": "power_clamp_meter",
     "powerSource": null,
     "modelIds": [
@@ -3566,7 +3566,7 @@
     ]
   },
   "_TZE200_mja3fuja": {
-    "driverId": "air_quality_comprehensive",
+    "driverId": "air_quality_co2",
     "type": "air_quality_comprehensive",
     "powerSource": null,
     "modelIds": [
@@ -3574,7 +3574,7 @@
     ]
   },
   "_tze200_mja3fuja": {
-    "driverId": "air_quality_comprehensive",
+    "driverId": "air_quality_co2",
     "type": "air_quality_comprehensive",
     "powerSource": null,
     "modelIds": [
@@ -3582,7 +3582,7 @@
     ]
   },
   "_TZE200_MJA3FUJA": {
-    "driverId": "air_quality_comprehensive",
+    "driverId": "air_quality_co2",
     "type": "air_quality_comprehensive",
     "powerSource": null,
     "modelIds": [
