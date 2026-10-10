@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-04T05:12:39.535Z",
+ "generated": "2026-10-10T23:28:55.913Z",
  "drivers": 388,
  "snapshot": {
   "air_purifier": {
@@ -177,9 +177,9 @@
    "pidSha": "907c50f03c1b4f74"
   },
   "button_wireless_1": {
-   "mfr": 31,
+   "mfr": 33,
    "pid": 32,
-   "mfrSha": "30ed2f0300f2b3d0",
+   "mfrSha": "5a8a5782b8b91829",
    "pidSha": "97471aa91d3d60d5"
   },
   "button_wireless_2": {
@@ -1071,9 +1071,9 @@
    "pidSha": "b37ed01a69900c1e"
   },
   "light_cct_ts0502b": {
-   "mfr": 1,
+   "mfr": 2,
    "pid": 1,
-   "mfrSha": "06064301214ed4e7",
+   "mfrSha": "ac7317e93069320b",
    "pidSha": "9e84a7b9a8e8cb87"
   },
   "light_dimmable_ts0501a": {
@@ -1677,9 +1677,9 @@
    "pidSha": "f10b428ccaa7b390"
   },
   "smart_knob": {
-   "mfr": 10,
+   "mfr": 12,
    "pid": 5,
-   "mfrSha": "29784a949cad0474",
+   "mfrSha": "69f64b7c4120b00a",
    "pidSha": "3846deb0c0aed152"
   },
   "smart_knob_rotary": {
@@ -1863,9 +1863,9 @@
    "pidSha": "b46b96d17990cf37"
   },
   "switch_1gang": {
-   "mfr": 379,
+   "mfr": 380,
    "pid": 38,
-   "mfrSha": "08c8eaa82445ee90",
+   "mfrSha": "84b6a21ba33ed785",
    "pidSha": "fd65b1d55ed8db6a"
   },
   "switch_2_gang": {
@@ -1983,9 +1983,9 @@
    "pidSha": "81c373714c228628"
   },
   "temphumidsensor": {
-   "mfr": 17,
+   "mfr": 19,
    "pid": 4,
-   "mfrSha": "a743b8f88bad5d93",
+   "mfrSha": "a65df6defaa7b710",
    "pidSha": "d6b9ec7c03b11cd7"
   },
   "temphumidsensor2": {
