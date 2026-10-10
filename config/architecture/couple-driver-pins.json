@@ -32,6 +32,114 @@
       "driver": "plug_energy_monitor",
       "source": "Z2M tuya.ts TS011F_plug_1 (metering smart plug); interview W5 shows OnOff/0x0702/0x0B04, not a battery button",
       "regression": "auto-fix-all b224ffbea8 placed them in button_wireless_2"
+    },
+    {
+      "mfr": [
+        "_TZ3000_fa9mlvja"
+      ],
+      "driver": "button_wireless_1",
+      "pid": "TS0041",
+      "source": "Z2M + deCONZ + Blakadder + Hubitat(kkossev)",
+      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_nsa76jai"
+      ],
+      "driver": "switch_4gang",
+      "pid": "TS0004",
+      "source": "Z2M",
+      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
+    },
+    {
+      "mfr": [
+        "_TZ3210_m3mxv66l"
+      ],
+      "driver": "motion_sensor",
+      "pid": "TS0202",
+      "source": "Z2M",
+      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
+    },
+    {
+      "mfr": [
+        "_TZ3290_s6ezpa3j"
+      ],
+      "driver": "ir_blaster",
+      "pid": "TS1201",
+      "source": "Z2M",
+      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_lbtpiody"
+      ],
+      "driver": "temphumidsensor",
+      "pid": "TS0201",
+      "source": "Z2M + deCONZ + Blakadder + Hubitat(kkossev)",
+      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
+    },
+    {
+      "mfr": [
+        "_TZE200_nkjintbl"
+      ],
+      "driver": "switch_2gang",
+      "pid": "TS0601",
+      "source": "Z2M + ZHA + Blakadder",
+      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
+    },
+    {
+      "mfr": [
+        "_TZE200_n8dljorx"
+      ],
+      "driver": "contact_sensor_zigbee",
+      "pid": "TS0601",
+      "source": "Z2M + ZHA + deCONZ + Blakadder + Hubitat(kkossev)",
+      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
+    },
+    {
+      "mfr": [
+        "_TZE200_qcasmfan"
+      ],
+      "driver": "smoke_sensor",
+      "pid": "TS0601",
+      "source": "Z2M",
+      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
+    },
+    {
+      "mfr": [
+        "_TYZB01_v8gtiaed"
+      ],
+      "driver": "dimmer_2_gang",
+      "pid": "TS110F",
+      "source": "Z2M + Blakadder + Hubitat(kkossev)",
+      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_j6adk9id"
+      ],
+      "driver": "illuminance_sensor",
+      "pid": "TS0222",
+      "source": "Z2M + deCONZ",
+      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
+    },
+    {
+      "mfr": [
+        "_TYZB01_4mdqxxnn"
+      ],
+      "driver": "illuminance_sensor",
+      "pid": "TS0222",
+      "source": "Z2M + deCONZ + Blakadder + Hubitat(kkossev)",
+      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
+    },
+    {
+      "mfr": [
+        "_TYZB01_m6ec2pgj"
+      ],
+      "driver": "illuminance_sensor",
+      "pid": "TS0222",
+      "source": "Z2M + deCONZ",
+      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
     }
   ]
 }
