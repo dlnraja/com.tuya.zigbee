@@ -571,6 +571,19 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
    * Silence motion insights; keep human-presence titles. Capability WHEN still works.
    * Also ensure alarm_human exists so Presence WHEN / is_present stay coherent.
    */
+  /**
+   * WHY(VicHY #2255 Advanced Flow lag): every setCapabilityOptions makes Homey rebuild the
+   * device's flow cards. If Homey does not echo a key back in getCapabilityOptions, the
+   * boot heal bursts re-wrote the same options up to 7 times per boot. Write once per session.
+   * Contre quoi: a missing alarm_human title / object distance units still get fixed (first write).
+   */
+  _radarOptsOnce(cap) {
+    if (!this._radarOptsWritten) this._radarOptsWritten = new Set();
+    if (this._radarOptsWritten.has(cap)) return true;
+    this._radarOptsWritten.add(cap);
+    return false;
+  }
+
   async _healPresenceHistoryUx() {
     try {
       if (typeof this.hasCapability === 'function' && !this.hasCapability('alarm_human')
@@ -581,7 +594,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       if (this.hasCapability?.('alarm_motion')) {
         const curM = (typeof this.getCapabilityOptions === 'function'
           && this.getCapabilityOptions('alarm_motion')) || {};
-        if (curM.preventInsights !== true) {
+        if (curM.preventInsights !== true && !this._radarOptsOnce('alarm_motion')) {
           await this.setCapabilityOptions('alarm_motion', {
             ...curM,
             preventInsights: true,
@@ -603,7 +616,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       if (this.hasCapability?.('alarm_human')) {
         const curH = (typeof this.getCapabilityOptions === 'function'
           && this.getCapabilityOptions('alarm_human')) || {};
-        if (!curH.insightsTitleTrue || curH.preventInsights === true) {
+        if ((!curH.insightsTitleTrue || curH.preventInsights === true) && !this._radarOptsOnce('alarm_human')) {
           await this.setCapabilityOptions('alarm_human', {
             ...curH,
             preventInsights: false,
@@ -806,7 +819,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       if (curD.units === 'm' && typeof curD.units === 'string') {
         // still re-assert if Homey keeps object in store — only skip when exact
       }
-      if (curD.units !== 'm') {
+      if (curD.units !== 'm' && !this._radarOptsOnce('measure_luminance.distance')) {
         await this.setCapabilityOptions('measure_luminance.distance', {
           ...curD,
           units: 'm',
