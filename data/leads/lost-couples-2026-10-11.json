@@ -159,5 +159,144 @@
    "_tyzb01_m6ec2pgj|ts0222",
    "illuminance_sensor"
   ]
- ]
+ ],
+ "pass3_placed": [
+  [
+   "_TZ3000_fdxihpp7",
+   "TS000F",
+   [
+    "-wall_switch_1gang_1way",
+    "+switch_1gang"
+   ],
+   "Z2M WHD02 TS0001+TS000F (1 gang); held WHD02 couples live in switch_1gang"
+  ],
+  [
+   "_TZ3210_a2erlvb8",
+   "TS0002",
+   [
+    "-switch_1gang",
+    "+switch_2gang"
+   ],
+   "Z2M qa.ts QARZ2LR (TS0002, 2ch) + QARZ1DC (TS000F, 1ch); gang-patterns variant"
+  ]
+ ],
+ "interview_requests": [
+  "_tze200_aj0oxo1i|ts0225",
+  "_tze200_p6fuhvez|ts0225",
+  "_tze600_ogyg1y6b|ts0105",
+  "_tz3000_xwh1e22x|ts1002",
+  "_tz3000_j0ktmul1|ts011f",
+  "_tz3000_gazjngjl|ts011f",
+  "_tz3000_z6fgd73r|ts011f"
+ ],
+ "second_source_search": {
+  "_tz3000_8a833yls|ts011f": {
+   "issues": "Koenkk/zigbee2mqtt#27496 Unsupported Attributes for Clicksmart + CMA30651|https://github.com/Koenkk/zigbee2mqtt/issues/27496;zigpy/zha-device-handlers#2368 [BUG] TuYa TS011F Smart Plug by _TZ3000_8a833yls is not capable of measuring power |https://github.com/zigpy/zha-device-handlers/issues/2368;zigpy/zha-device-handlers#2151 [Device Support Request] TS011F _TZ3000_gjnozsaz|https://github.com/zigpy/zha-device-handlers/issues/2151;",
+   "smartthings": "wonjj6768/smartthings-zigbee-edge-drivers:source/src/contracts/families/zcl/plugs.lua;wonjj6768/smartthings-zigbee-edge-drivers:deploy/zcl-plugs-wonjj6768/src/contracts/families/zcl/plugs.lua;"
+  },
+  "_tz3000_8nyaanzb|ts011f": {
+   "issues": "Koenkk/zigbee-herdsman-converters#12155 tuya gang 2 plug \"_TZ3000_46vasa5h\"  detect as TS011F_plug_1 Tuya|https://github.com/Koenkk/zigbee-herdsman-converters/issues/12155;Koenkk/zigbee-herdsman-converters#8836 TS011F socket with Power metering|https://github.com/Koenkk/zigbee-herdsman-converters/issues/8836;",
+   "smartthings": "wonjj6768/smartthings-zigbee-edge-drivers:source/src/contracts/families/zcl/switches/switches.lua;wonjj6768/smartthings-zigbee-edge-drivers:deploy/zcl-switch-wonjj6768/src/contracts/families/zcl/switches/switches.lua;"
+  },
+  "_tz3000_egvb1p2g|ts004f": {
+   "issues": "Koenkk/zigbee2mqtt#32351 Immax 07767L / NEO Smart outdoor button hold not working|https://github.com/Koenkk/zigbee2mqtt/issues/32351;sprut/Hub#3703 ZigBee - _TZ3000_egvb1p2g - TS004F|https://github.com/sprut/Hub/issues/3703;u236/homed-service-zigbee#227 \u041f\u0440\u043e\u0441\u044c\u0431\u0430 \u0434\u043e\u0431\u0430\u0432\u0438\u0442\u044c _TZ3000_egvb1p2g/TS004F|https://github.com/u236/homed-service-zigbee/issues/227;",
+   "smartthings": "wonjj6768/smartthings-zigbee-edge-drivers:source/src/contracts/families/zcl/controls/advanced.lua;"
+  },
+  "_tz3000_fdxihpp7|ts000f": {
+   "issues": "romasku/tuya-zigbee-switch#517 `_TZ3000_fdxihpp7` hardware variant with `PHY6222` instead of `Telink`|https://github.com/romasku/tuya-zigbee-switch/issues/517;zigpy/zha-device-handlers#3427 [BUG] Power measurement return always 0 in HA for TS0001 and TS0002 devices|https://github.com/zigpy/zha-device-handlers/issues/3427;zigpy/zha-device-handlers#4544 [BUG] TS0001 - Doesn't use existing Quirk|https://github.com/zigpy/zha-device-handlers/issues/4544;",
+   "smartthings": "Mariano-Github/Edge-Drivers-Beta:zigbee-switch-power-v5/fingerprints.yml;Mariano-Github/Edge-Drivers-Beta:zigbee-switch-v6.5/fingerprints.yml;"
+  },
+  "_tz3000_gazjngjl|ts011f": {
+   "issues": "sprut/Hub#4960 ZigBee - _TZ3000_gazjngjl - TS011F|https://github.com/sprut/Hub/issues/4960;Koenkk/zigbee2mqtt#30168 [TS011F / _TZ3000_gazjngjl] 1 gang universal wall socket with USB|https://github.com/Koenkk/zigbee2mqtt/issues/30168;Koenkk/zigbee2mqtt#28278 [New device support]: 1 Gang EU UK US Universal Plug Tuya ZigBee Socket with Power Monitoring and USB A and C ports|https://github.com/Koenkk/zigbee2mqtt/issues/28278;",
+   "smartthings": "wonjj6768/smartthings-zigbee-edge-drivers:source/src/contracts/families/zcl/switches/switches.lua;wonjj6768/smartthings-zigbee-edge-drivers:deploy/zcl-switch-wonjj6768/src/contracts/families/zcl/switches/switches.lua;"
+  },
+  "_tz3000_iy2c3n6p|ts011f": {
+   "issues": "Koenkk/zigbee-herdsman-converters#12155 tuya gang 2 plug \"_TZ3000_46vasa5h\"  detect as TS011F_plug_1 Tuya|https://github.com/Koenkk/zigbee-herdsman-converters/issues/12155;Koenkk/zigbee-herdsman-converters#8836 TS011F socket with Power metering|https://github.com/Koenkk/zigbee-herdsman-converters/issues/8836;",
+   "smartthings": "wonjj6768/smartthings-zigbee-edge-drivers:source/src/contracts/families/zcl/switches/switches.lua;wonjj6768/smartthings-zigbee-edge-drivers:deploy/zcl-switch-wonjj6768/src/contracts/families/zcl/switches/switches.lua;"
+  },
+  "_tz3000_j0ktmul1|ts011f": {
+   "issues": "Koenkk/zigbee2mqtt#16992 [New device support]: TS011F smart controller|https://github.com/Koenkk/zigbee2mqtt/issues/16992;",
+   "smartthings": "wonjj6768/smartthings-zigbee-edge-drivers:source/src/contracts/families/zcl/switches/valves.lua;wonjj6768/smartthings-zigbee-edge-drivers:deploy/zcl-switch-wonjj6768/src/contracts/families/zcl/switches/valves.lua;"
+  },
+  "_tz3000_nsa76jai|ts0004": {
+   "issues": "JohanBendz/com.tuya.zigbee#1035 TS0004 four-output OnOff \u2014 two implemented 0.4 identities + two interview-pending requests|https://github.com/JohanBendz/com.tuya.zigbee/issues/1035;JohanBendz/com.tuya.zigbee#1098 Device Request - [Zemismsmart 4 gang switch] - [_TZ3000_nsa76jai] / [TS0004]|https://github.com/JohanBendz/com.tuya.zigbee/issues/1098;Koenkk/zigbee2mqtt#30842 [Wrong device]: KES-606US-L4 picked up as TS0004|https://github.com/Koenkk/zigbee2mqtt/issues/30842;",
+   "smartthings": "wonjj6768/smartthings-zigbee-edge-drivers:source/src/contracts/families/zcl/switches/switches.lua;wonjj6768/smartthings-zigbee-edge-drivers:deploy/zcl-switch-wonjj6768/src/contracts/families/zcl/switches/switches.lua;"
+  },
+  "_tz3000_nzkqcvvs|ts011f": {
+   "issues": "Koenkk/zigbee2mqtt#27496 Unsupported Attributes for Clicksmart + CMA30651|https://github.com/Koenkk/zigbee2mqtt/issues/27496;home-assistant/core#107200 ZHA delays with Tuya mmWave sensors|https://github.com/home-assistant/core/issues/107200;zigpy/zha-device-handlers#2151 [Device Support Request] TS011F _TZ3000_gjnozsaz|https://github.com/zigpy/zha-device-handlers/issues/2151;",
+   "smartthings": "wonjj6768/smartthings-zigbee-edge-drivers:source/src/contracts/families/zcl/plugs.lua;wonjj6768/smartthings-zigbee-edge-drivers:deploy/zcl-plugs-wonjj6768/src/contracts/families/zcl/plugs.lua;"
+  },
+  "_tz3000_rgpqqmbj|ts011f": {
+   "issues": "Koenkk/zigbee-herdsman-converters#12155 tuya gang 2 plug \"_TZ3000_46vasa5h\"  detect as TS011F_plug_1 Tuya|https://github.com/Koenkk/zigbee-herdsman-converters/issues/12155;Koenkk/zigbee-herdsman-converters#8836 TS011F socket with Power metering|https://github.com/Koenkk/zigbee-herdsman-converters/issues/8836;",
+   "smartthings": "wonjj6768/smartthings-zigbee-edge-drivers:source/src/contracts/families/zcl/switches/switches.lua;wonjj6768/smartthings-zigbee-edge-drivers:deploy/zcl-switch-wonjj6768/src/contracts/families/zcl/switches/switches.lua;"
+  },
+  "_tz3000_rqbjepe8|ts011f": {
+   "issues": "",
+   "smartthings": "wonjj6768/smartthings-zigbee-edge-drivers:source/src/contracts/families/zcl/switches/switches.lua;wonjj6768/smartthings-zigbee-edge-drivers:deploy/zcl-switch-wonjj6768/src/contracts/families/zcl/switches/switches.lua;"
+  },
+  "_tz3000_rtcrrvia|ts011f": {
+   "issues": "zigpy/zha-device-handlers#4611 [Device Support Request] TS011F plug variant _TZ3000_rtcrrvia|https://github.com/zigpy/zha-device-handlers/issues/4611;sprut/Hub#4405 ZigBee - _TZ3000_rtcrrvia - TS011F|https://github.com/sprut/Hub/issues/4405;Koenkk/zigbee2mqtt#27496 Unsupported Attributes for Clicksmart + CMA30651|https://github.com/Koenkk/zigbee2mqtt/issues/27496;",
+   "smartthings": "wonjj6768/smartthings-zigbee-edge-drivers:source/src/contracts/families/zcl/plugs.lua;wonjj6768/smartthings-zigbee-edge-drivers:deploy/zcl-plugs-wonjj6768/src/contracts/families/zcl/plugs.lua;"
+  },
+  "_tz3000_xwh1e22x|ts1002": {
+   "issues": "JohanBendz/com.tuya.zigbee#1361 Device Request - MiBoxer FUT089Z remote - _TZ3000_xwh1e22x / TS1002|https://github.com/JohanBendz/com.tuya.zigbee/issues/1361;zigpy/zha-device-handlers#1829 miboxer fut089z integration|https://github.com/zigpy/zha-device-handlers/issues/1829;Koenkk/zigbee2mqtt#32301 [External Converter]: Ledron YK-16 (TS1002) Scene Buttons|https://github.com/Koenkk/zigbee2mqtt/issues/32301;",
+   "smartthings": "wonjj6768/smartthings-zigbee-edge-drivers:source/src/contracts/families/zcl/controls/scene.lua;"
+  },
+  "_tz3000_ysiog9xi|ts011f": {
+   "issues": "zigpy/zha-device-handlers#4406 Device support request Zbeacon TS0001 switch with power monitoring|https://github.com/zigpy/zha-device-handlers/issues/4406;Koenkk/zigbee2mqtt#27496 Unsupported Attributes for Clicksmart + CMA30651|https://github.com/Koenkk/zigbee2mqtt/issues/27496;Koenkk/zigbee-herdsman-converters#10108 [External Converter] TS0001 from _TZ3000_ysiog9xi|https://github.com/Koenkk/zigbee-herdsman-converters/issues/10108;",
+   "smartthings": "wonjj6768/smartthings-zigbee-edge-drivers:source/src/contracts/families/zcl/plugs.lua;wonjj6768/smartthings-zigbee-edge-drivers:deploy/zcl-plugs-wonjj6768/src/contracts/families/zcl/plugs.lua;"
+  },
+  "_tz3210_a2erlvb8|ts0002": {
+   "issues": "",
+   "smartthings": "wonjj6768/smartthings-zigbee-edge-drivers:source/src/contracts/families/zcl/switches/switches.lua;wonjj6768/smartthings-zigbee-edge-drivers:deploy/zcl-switch-wonjj6768/src/contracts/families/zcl/switches/switches.lua;"
+  },
+  "_tz3210_bep7ccew|ts011f": {
+   "issues": "romasku/tuya-zigbee-switch#476 Port request: Melery TS011F dual AU socket (_TZ3210_mup3wbfp)|https://github.com/romasku/tuya-zigbee-switch/issues/476;Koenkk/zigbee-herdsman-converters#9490 Add support for MG-GPO01 Double Zigbee power point|https://github.com/Koenkk/zigbee-herdsman-converters/issues/9490;",
+   "smartthings": ""
+  },
+  "_tz3210_m3mxv66l|ts0202": {
+   "issues": "Koenkk/zigbee-herdsman-converters#6407 update Immax 07502L fingerprint|https://github.com/Koenkk/zigbee-herdsman-converters/issues/6407;",
+   "smartthings": "wonjj6768/smartthings-zigbee-edge-drivers:source/src/contracts/families/zcl/sensors/safety.lua;wonjj6768/smartthings-zigbee-edge-drivers:deploy/zcl-sensors-wonjj6768/src/contracts/families/zcl/sensors/safety.lua;"
+  },
+  "_tz3210_nhqka112|ts011f": {
+   "issues": "Koenkk/zigbee2mqtt#30889 [TS011F / _TZ3210_nhqka112] ???|https://github.com/Koenkk/zigbee2mqtt/issues/30889;",
+   "smartthings": "wonjj6768/smartthings-zigbee-edge-drivers:source/src/contracts/families/zcl/plugs.lua;wonjj6768/smartthings-zigbee-edge-drivers:deploy/zcl-plugs-wonjj6768/src/contracts/families/zcl/plugs.lua;"
+  },
+  "_tz3210_yvxjawlt|ts011f": {
+   "issues": "zigpy/zha-device-handlers#2983 [Device Support Request] TS011F by _TZ3210_yvxjawlt|https://github.com/zigpy/zha-device-handlers/issues/2983;Koenkk/zigbee2mqtt#13221 [New device support]: Mercator SPP02G /4G|https://github.com/Koenkk/zigbee2mqtt/issues/13221;Koenkk/zigbee2mqtt#11648 Tuya TS011F  (TZ3000_typdpbpg) powers off|https://github.com/Koenkk/zigbee2mqtt/issues/11648;",
+   "smartthings": "wonjj6768/smartthings-zigbee-edge-drivers:source/src/contracts/families/zcl/switches/switches.lua;wonjj6768/smartthings-zigbee-edge-drivers:deploy/zcl-switch-wonjj6768/src/contracts/families/zcl/switches/switches.lua;"
+  },
+  "_tz3218_ewrxirng|ts0225": {
+   "issues": "Koenkk/zigbee2mqtt#29676 [External Converter]: TS0225 from _TZ3218_ewrxirng|https://github.com/Koenkk/zigbee2mqtt/issues/29676;",
+   "smartthings": "wonjj6768/smartthings-zigbee-edge-drivers:source/src/contracts/families/ef00/presence/wave11_advanced.lua;wonjj6768/smartthings-zigbee-edge-drivers:deploy/ef00-presence-3-wonjj6768/src/contracts/families/ef00/presence/wave11_advanced.lua;"
+  },
+  "_tz3290_ixd9mvv4|ts0049": {
+   "issues": "",
+   "smartthings": "wonjj6768/smartthings-zigbee-edge-drivers:source/src/contracts/families/zcl/switches/valves.lua;wonjj6768/smartthings-zigbee-edge-drivers:deploy/zcl-switch-wonjj6768/src/contracts/families/zcl/switches/valves.lua;"
+  },
+  "_tz3290_s6ezpa3j|ts1201": {
+   "issues": "",
+   "smartthings": "wonjj6768/smartthings-zigbee-edge-drivers:source/src/contracts/families/zcl/controls/ir.lua;wonjj6768/smartthings-zigbee-edge-drivers:deploy/zcl-controls-wonjj6768/src/contracts/families/zcl/controls/ir.lua;"
+  },
+  "_tze200_aj0oxo1i|ts0225": {
+   "issues": "",
+   "smartthings": "wonjj6768/smartthings-zigbee-edge-drivers:source/src/contracts/families/ef00/safety.lua;wonjj6768/smartthings-zigbee-edge-drivers:deploy/ef00-safety-wonjj6768/src/contracts/families/ef00/safety.lua;"
+  },
+  "_tze200_p6fuhvez|ts0225": {
+   "issues": "sprut/Hub#4328 ZigBee - _TZE200_p6fuhvez - TS0225|https://github.com/sprut/Hub/issues/4328;",
+   "smartthings": "wonjj6768/smartthings-zigbee-edge-drivers:source/src/contracts/families/ef00/safety.lua;wonjj6768/smartthings-zigbee-edge-drivers:deploy/ef00-safety-wonjj6768/src/contracts/families/ef00/safety.lua;"
+  },
+  "_tze200_qcasmfan|ts0601": {
+   "issues": "",
+   "smartthings": "wonjj6768/smartthings-zigbee-edge-drivers:source/src/contracts/families/ef00/safety.lua;wonjj6768/smartthings-zigbee-edge-drivers:deploy/ef00-safety-wonjj6768/src/contracts/families/ef00/safety.lua;"
+  },
+  "_tze284_cjbofhxw|ts0601": {
+   "issues": "Koenkk/zigbee2mqtt#31690 [TS0601 (PJ-1203-W) / _TZE284_cjbofhxw] ???|https://github.com/Koenkk/zigbee2mqtt/issues/31690;Koenkk/zigbee2mqtt#31465 [TS0601 / _TZE284_cjbofhxw] ???|https://github.com/Koenkk/zigbee2mqtt/issues/31465;Koenkk/zigbee2mqtt#22784 [New device support]: unsupported device manufacturer with Zigbee model 'TS0601' and manufacturer name '_TZE284_cjbofhxw'|https://github.com/Koenkk/zigbee2mqtt/issues/22784;",
+   "smartthings": "wonjj6768/smartthings-zigbee-edge-drivers:source/src/contracts/families/ef00/din_rail/meters.lua;wonjj6768/smartthings-zigbee-edge-drivers:deploy/ef00-meters-wonjj6768/src/contracts/families/ef00/din_rail/meters.lua;"
+  },
+  "_tze600_ogyg1y6b|ts0105": {
+   "issues": "",
+   "smartthings": "wonjj6768/smartthings-zigbee-edge-drivers:source/src/contracts/families/ef00/covers.lua;wonjj6768/smartthings-zigbee-edge-drivers:deploy/ef00-covers-wonjj6768/src/contracts/families/ef00/covers.lua;"
+  }
+ }
 }
