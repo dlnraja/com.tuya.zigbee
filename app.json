@@ -16634,6 +16634,9 @@
         "es": "Control Remoto Blaster"
       },
       "class": "other",
+      "platforms": [
+        "local"
+      ],
       "capabilities": [
         "button.learn_ir",
         "ir_learned_code",
@@ -76483,9 +76486,6 @@
         "manufacturerName": [
           "_TZ3210_jtifm80b",
           "_tz3210_jtifm80b",
-          "eWeLight",
-          "ewelight",
-          "EWELIGHT",
           "_TZ3210_JTIFM80B",
           "_tz3210_JTIFM80B"
         ],
