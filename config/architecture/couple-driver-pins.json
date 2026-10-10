@@ -22,6 +22,16 @@
       "driver": "energy_meter_3phase",
       "source": "Z2M tuya.ts SPM02 (3P+N energy monitor)",
       "pid": "TS0601"
+    },
+    {
+      "mfr": [
+        "_TZ3000_4ux0ondb",
+        "_TZ3000_b28wrpvx"
+      ],
+      "pid": "TS011F",
+      "driver": "plug_energy_monitor",
+      "source": "Z2M tuya.ts TS011F_plug_1 (metering smart plug); interview W5 shows OnOff/0x0702/0x0B04, not a battery button",
+      "regression": "auto-fix-all b224ffbea8 placed them in button_wireless_2"
     }
   ]
 }
