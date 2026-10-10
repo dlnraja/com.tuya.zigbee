@@ -97,3 +97,14 @@ driver; and a payload that adds a new driver id cloned 1:1 from a passing driver
   SPI device class via Driver#onMapDeviceClass; WHD02 couple → switch_1gang (has TS000F). Sacred-keep pins
   retargeted; local prepare-publish shows the couples survive compaction. FP collision gate 0 new,
   fingerprints integrity OK.
+
+## Athom failure kinds (read `stateMeta`, never just "processing_failed" or GHA green)
+| stateMeta | Meaning | Action |
+|---|---|---|
+| `AggregateError` | Athom processing rejected the content | real failure → bisect content; never auto-retry |
+| `socket hang up` | Athom transport dropped (#3490, #3492, #3494) | transient → one retry with a NEW version |
+| `The specified key does not exist.` | upload/S3 side lost the archive (#3496 R5) | transient → one retry with a NEW version |
+Pipeline: `.github/scripts/transient-publish-retry.js` + step "Transient Athom failure - single retry" in
+publish.yml re-dispatches publish.yml once (`transient_retry=true`, which disables a second retry).
+Both transient strings are in TRANSIENT_RE (processing-failure-republish-check) and build-error-diag-v2.
+The Auto-Fix doctrine (P139: no bump loops while an older Test is healthy) is unchanged.
