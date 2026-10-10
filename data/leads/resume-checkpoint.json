@@ -1180,13 +1180,16 @@
     "done": [
       "HOMEY_PAT set (apps PAT) 10:03 UTC",
       "homey-secrets-health workflow aa1a40aab6",
-      "TRV06 #560 fix master 2a242b4474 stable 7c29ea53e8 bastien 74d85c8902"
+      "TRV06 #560 fix master 2a242b4474 stable 7c29ea53e8 bastien 74d85c8902",
+      "OOM fix app.json->package.json master d4355fbe6f stable cb1bb30aa8 bastien d7612ee4e2",
+      "stable collision exceptions f122bcddb6",
+      "stable TITAN raw setCapabilityValue 2d8576c7ae",
+      "#559 already supported (plug_energy_monitor)"
     ],
     "pending": [
-      "confirm master 9.0.1331+ and stable reach Test",
-      "Peter OOM crash 9.0.1330 diag c05db40d (2026-10-06)",
-      "#550 HiepSVG radar glitches",
-      "source-proposals.json / master_queue / x-scan proposals (not processed: quota)"
+      "confirm master 9.0.1331 on Test (Auto-Publish pending)",
+      "#550 radar _TZE204_gkfbdvyx",
+      "master_queue, x-scan proposals (36 Z2M, 8 placements, quirks #12431, news #101-106), PCr2, spec 010, 34 log-only actions, localtuya study, Bastien flow audit leftovers"
     ]
   }
 }
