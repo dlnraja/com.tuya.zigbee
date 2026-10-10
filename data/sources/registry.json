@@ -458,20 +458,20 @@
       "type": "discourse-category",
       "url": "https://community.homey.app",
       "tag": "zigbee",
-      "pages": 1,
+      "pages": 6,
       "cadence": "daily",
       "kind": "forum-zigbee",
       "match": "zigbee|_TZ|TS0|ember|firmware|pair|rejoin|quirk|lumi|aqara|sonoff|ikea|hue",
       "credit": "Homey Community Forum members (tag: zigbee)",
-      "trackTopics": 20
+      "trackTopics": 40
     },
     {
       "id": "homey-forum-tag-app",
       "type": "discourse-category",
       "url": "https://community.homey.app",
       "tag": "app",
-      "pages": 1,
-      "trackTopics": 20,
+      "pages": 2,
+      "trackTopics": 40,
       "cadence": "daily",
       "kind": "forum-app",
       "credit": "Homey Community Forum app authors (tag: app)"

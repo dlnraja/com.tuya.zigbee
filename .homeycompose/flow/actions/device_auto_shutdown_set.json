@@ -1,0 +1,38 @@
+{
+  "id": "device_auto_shutdown_set",
+  "title": {
+    "en": "Set auto shutdown",
+    "fr": "Régler l'arrêt automatique",
+    "nl": "Automatisch uitschakelen instellen",
+    "de": "Automatische Abschaltung einstellen"
+  },
+  "titleFormatted": {
+    "en": "Turn [[device]] off automatically [[minutes]] minutes after it turns on (0 = off)",
+    "fr": "Éteindre [[device]] automatiquement [[minutes]] minutes après l'allumage (0 = désactivé)",
+    "nl": "Zet [[device]] automatisch uit [[minutes]] minuten na aanzetten (0 = uit)",
+    "de": "[[device]] [[minutes]] Minuten nach dem Einschalten automatisch ausschalten (0 = aus)"
+  },
+  "hint": {
+    "en": "Every time the device turns on, a countdown is armed (native Tuya countdown when supported, software timer otherwise). Idea credited to iBush's Switcher app (community.homey.app/t/160624).",
+    "fr": "À chaque allumage, un compte à rebours est armé (countdown Tuya natif si supporté, sinon minuteur logiciel). Idée créditée à l'app Switcher d'iBush."
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "capabilities=onoff"
+    },
+    {
+      "name": "minutes",
+      "type": "number",
+      "title": {
+        "en": "Minutes",
+        "fr": "Minutes"
+      },
+      "min": 0,
+      "max": 1440,
+      "step": 1,
+      "value": 60
+    }
+  ]
+}
