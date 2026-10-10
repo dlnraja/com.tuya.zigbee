@@ -11,6 +11,10 @@ const SEED_TOPICS=[
   146735,  // [APP] Tuya - Smart Life. Smart Living
   89271,   // Zigbee device compatibility
   54018,   // Generic Zigbee devices
+  154077,  // Andi: [APP][Pro] Tuya Local (WiFi LAN)
+  101901,  // [Tip] Unknown Zigbee device (interview requests)
+  156,     // Aqara & Xiaomi Smart Home app thread (lumi quirks)
+  160624,  // iBush: [APP][Pro] Switcher local control (UX ideas)
 ];
 
 // High-value search terms (consolidated from 42 to 12 to avoid Discourse rate limits)
