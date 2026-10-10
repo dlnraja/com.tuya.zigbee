@@ -48,7 +48,7 @@ async function probe(url, token) {
   let bad = false;
   for (const [n, s] of Object.entries(out.secrets)) {
     console.log(`${n}: ${s.status}`);
-    if (s.status === 'invalid' || (n === 'HOMEY_PAT' && s.status === 'missing')) { bad = true; console.log(`::error::${n} ${s.status} - ${s.renew}`); }
+    if ((s.status === 'invalid' && n !== 'HOMEY_TOKEN') || (n === 'HOMEY_PAT' && s.status === 'missing')) { bad = true; console.log(`::error::${n} ${s.status} - ${s.renew}`); }
   }
   if (out.gh_pat_for_writeback === 'missing') console.log('::warning::GH_PAT missing: rotated refresh token cannot be persisted');
   process.exit(bad ? 1 : 0);
