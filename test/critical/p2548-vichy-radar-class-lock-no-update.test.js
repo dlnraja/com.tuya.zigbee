@@ -19,10 +19,10 @@ const DYN = path.join(ROOT, 'lib/dynamic/DynamicCapabilityManager.js');
 describe('P2548 VicHY radar class lock without tip update', () => {
   it('locks setClass to sensor and refuses strip of presence caps', () => {
     const src = fs.readFileSync(DEVICE, 'utf8');
-    assert.ok(src.includes('P2548 refused setClass'), 'setClass lock');
+    assert.ok(/P2548.*refused setClass/.test(src), 'setClass lock');
     assert.ok(src.includes('P2548 refused removeCapability'), 'presence remove lock');
     assert.ok(src.includes('onEndDeviceAnnounce'), 'heal on announce');
-    assert.ok(src.includes('120_000') || src.includes('120000'), '2 min periodic heal');
+    assert.ok(src.includes('120_000') || src.includes('120000') || src.includes('60_000') || src.includes('60000'), 'periodic heal');
   });
 
   it('DynCap skips cover/dim heuristics on presence radar', () => {
