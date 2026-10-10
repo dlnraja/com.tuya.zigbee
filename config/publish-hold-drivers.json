@@ -6,12 +6,6 @@
       "since": "2026-10-10",
       "reason": "Athom processing_failed AggregateError since 9.0.1331 (first build with this driver). Bisect J3 #3478 (I + spi + whd02 + sub_dim_set) and J4 #3479 (I + spi only) failed; I #3468 without it reached Test. Couples stay covered by switch_1gang (reviewed exception).",
       "sacredCouplesOwnedElsewhere": true
-    },
-    {
-      "id": "switch_module_whd02",
-      "since": "2026-10-10",
-      "reason": "Athom processing_failed AggregateError: master #3480 v9.0.1361 failed with spi held; bisect J5 #3481 v9.0.1363 (I + switch_module_whd02 + its 2 triggers only, via publish.yml) failed. Never published (absent from last Test build I #3468 v9.0.1349). Unique couple _TZ3000_skueekg3/TS000F stays in source, unpublished until a dedicated bisect build passes.",
-      "sacredCouplesOwnedElsewhere": false
     }
   ]
 }
