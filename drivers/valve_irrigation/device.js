@@ -174,9 +174,9 @@ class ValveIrrigationDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
     const tuya = this.zclNode?.endpoints?.[1]?.clusters?.tuya;
     if (tuya?.datapoint) {
       if (!this.isSimpleValve) {
-        await tuya.datapoint({ dp: 5, value: minutes, type: 'value' });
+        await require('../../lib/helpers/UniversalDriverInit').sendTuyaDP(this, 5, minutes, 'value'); // WHY: datapoint() rejects `value`
       }
-      await tuya.datapoint({ dp: 1, value: true, type: 'bool' });
+      await require('../../lib/helpers/UniversalDriverInit').sendTuyaDP(this, 1, true, 'bool');
     }
   }
 
