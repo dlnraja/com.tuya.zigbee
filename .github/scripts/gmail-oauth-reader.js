@@ -98,7 +98,7 @@ function buildQueries(opts) {
   return [
     `${date} (homey OR tuya OR zigbee OR diagnostic OR diagnostics OR crash OR "error log" OR "processing failed" OR AggregateError OR "Missing Capability Listener" OR battery OR button OR "flow card")`,
     `${date} (_TZE OR _TZE200 OR _TZE204 OR _TZE284 OR _TZ3000 OR TS0601 OR TS0014 OR TS0041 OR TS0042 OR TS0043 OR TS0044 OR TS011F OR TS0201 OR TS0203)`,
-    `${date} (from:noreply@community.homey.app OR from:noreply@athom.com OR from:noreply@homey.app OR from:support@athom.com OR from:support@homey.app OR from:notifications@github.com)`
+    `${date} (from:noreply@community.homey.app OR from:noreply@athom.com OR from:noreply@homey.app OR from:support@athom.com OR from:support@homey.app OR from:notifications@github.com OR from:notifications@athom.discoursemail.com OR from:athom.discoursemail.com)`
   ];
 }
 

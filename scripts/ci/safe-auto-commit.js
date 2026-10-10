@@ -73,7 +73,7 @@ function gate(files) {
   if (errs.length) return errs;
   const touchesApp = files.some((f) => /^(drivers|lib|app\.json|\.homeycompose|data)\//.test(f) || f === 'app.json');
   if (touchesApp) {
-    for (const g of ['tools/ci/p2138-sacred-couple-matrix-gate.js', 'tools/ci/regression-lessons-gate.js', 'tools/ci/anti-bot-regression-gate.js', 'tools/ci/p214-intelligent-protocol-gate.js']) {
+    for (const g of ['tools/ci/p2138-sacred-couple-matrix-gate.js', 'tools/ci/regression-lessons-gate.js', 'tools/ci/anti-bot-regression-gate.js', 'tools/ci/p214-intelligent-protocol-gate.js', 'tools/ci/compose-appjson-fingerprint-sync-gate.js', 'tools/ci/flow-titleformatted-args-gate.js']) {
       if (!fs.existsSync(g)) continue;
       const r = sh(process.execPath, [g], { timeout: 600000 });
       if (r.status === 0) continue;
@@ -102,6 +102,12 @@ function gate(files) {
     await report('tempête de commits automatiques détectée (3 derniers commits = bots < 1 h)', recent.join('\n')); return;
   }
   // 2. stage + daily cap
+  // WHY(P2797c): keep dual-couple removals and resync app.json fingerprint lists with compose before
+  // staging, so no auto-commit lands compose/app.json drift (ff1de8d2e, 26 drivers).
+  if (PATHS.some((p) => /^(drivers|app\.json)/.test(p)) && fs.existsSync('tools/ci/enforce-dual-couple-legacy.js')) {
+    const s = sh(process.execPath, ['tools/ci/enforce-dual-couple-legacy.js', '--sync'], { timeout: 120000 });
+    summary(`safe-auto-commit [${ID}]: ${(s.stdout || '').trim().split('\n').join(' · ')}`);
+  }
   for (const p of PATHS) git('add', '-A', '--', p);
   const files = git('diff', '--cached', '--name-only').stdout.trim().split('\n').filter(Boolean);
   if (!files.length) { summary(`safe-auto-commit [${ID}]: nothing to commit.`); return; }

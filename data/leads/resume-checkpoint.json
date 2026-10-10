@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-04T03:10:00+02:00",
+  "updated": "2026-10-04T09:10+02:00",
   "queue": "dlnraja maintenance queue 2026-10-03 (items 1-7)",
   "rules": ".specify/memory/constitution.md",
   "worktree_note": "Use a dedicated git worktree per agent (e.g. /workspace/exec-wt); a shared checkout was reset by another worker on 2026-10-03.",
@@ -50,10 +50,23 @@
   "pushed": {
     "master": "aa23fab9c5 published OK (Auto-Publish run 37119440540 success). 653870a870 published OK earlier.",
     "stable-v5": "5.12.358 published to Test (run 37118019558 success); 5.12.359 17ab48012f published to Test (run 37119645069 success)",
-    "2026-10-04": "master bca6ae7052 (#1298), 97a954cfa7+081ae687c8 (ledger/journal W3), 88b3584cf6+9c157a834a (#1113 zoneType driver), all [skip ci] = not yet published; bastien-home 84d81e5e88"
+    "2026-10-04": "master bca6ae7052 (#1298), 97a954cfa7+081ae687c8 (ledger/journal W3), 88b3584cf6+9c157a834a (#1113 zoneType driver), all [skip ci] = not yet published; bastien-home 84d81e5e88",
+    "exec_2026_10_04_am": {
+      "branch": "exec-work→origin/master",
+      "topics": [
+        "P2797c CI port",
+        "sweep-checkpoint",
+        "advance-sweep chunk Johan 1-5",
+        "workflow audit",
+        "digest self-check"
+      ],
+      "blocker": "Athom processing_failed on 9.0.1331 still tracked from prior queue tip analysis"
+    }
   },
   "notes": {
-    "appjson": "root app.json minified (one line, ~2.3 MB) on master and stable since bot commit 6b2f2d3c9a; edit with JSON.stringify(a) no newline. Compact build 3.69/4.00 MB."
+    "appjson": "root app.json minified (one line, ~2.3 MB) on master and stable since bot commit 6b2f2d3c9a; edit with JSON.stringify(a) no newline. Compact build 3.69/4.00 MB.",
+    "daily_resume_2026_10_04_0a": "Enrichment-mode rules merged: DAILY_RESUME_ENRICHMENT.md, constitution W12, DEVICE_TRUTH conventions; gates verified/wired (native-matrix in validate.yml).",
+    "daily_resume_2026_10_04_0b": "Forum 140352 #2238-2258: all five items already-fixed on tip with prior SHAs; additive DynFlow debounce + forum signal leads + Discoveries FR entry."
   },
   "conflict_sweep": {
     "rule": "constitution W4",
@@ -74,14 +87,14 @@
     "4_misroutes": "done: rxq4iti9 = TRV (correct); zbeacon/Zbeacon TH01 -> temphumidsensor_zcl_th01 (c5ccf1c00e)",
     "5_zg102": "done (c5ccf1c00e)",
     "6_pc_harvest_actions": "pending",
-    "7_ledger_wiring": "pending",
+    "7_ledger_wiring": "partial: advance-sweep + johan-thread-intel record ledger; broader wiring still pending",
     "8_spec003_004": "pending",
     "9_lazy_appjson": "pending",
-    "10_forum_wifi_tests_workflows": "pending",
-    "11_deep_read_sweep": "pending",
+    "10_forum_wifi_tests_workflows": "partial: 0a+0b forum leads done (DAILY_RESUME + T140352 #2238-2258); wifi/tests still pending; prior workflow audit kept",
+    "11_deep_read_sweep": "in-progress: sweep-checkpoint created; Johan next=6 (chunk 1-5 done 2026-10-04)",
     "W7_polysemic_dp": "pending",
     "W8_tooling_inventory": "pending",
-    "NEXT": "port master fp fixes 31d83786f9 + c5ccf1c00e to stable (grouped publish) + bastien; then 6 PC-harvest r1 (21 pid-only drivers, DeviceFingerprintDB 153-162 typos, 18 raw setTimeout in TuyaEF00Manager, agent-rules generation, auto-post guard), PC-harvest r2 tasks (ledger task:*), 7 ledger wiring, 8 spec003/004, 9 lazy app.json, 10 forum/wifi/tests/workflows, 11 deep-read sweep, W4 conflict sweep, W7-W11 audits",
+    "NEXT": "continue history sweep (Johan from 6 or forum 140352 >2258); ledger wiring into more workflows; PC-harvest remaining; stable port of pending fp fixes",
     "stable_port_pending": [
       "31d83786f9 (o9f2zqln, p26flek3)",
       "c5ccf1c00e (TH01 driver, ZG-102Z/ZA, 3 mfrs)"
@@ -89,7 +102,7 @@
   },
   "master_queue": {
     "note": "Single master checklist of ALL user requests since the start. Daily resumption reads this FIRST. Tick (verified) only after verification.",
-    "updated": "2026-10-04 06:40 Paris",
+    "updated": "2026-10-04T11:00+02:00",
     "items": [
       {
         "id": 1,
@@ -107,7 +120,7 @@
         "id": 3,
         "item": "W3 progress ledger + journal, read before / record after",
         "status": "in-progress",
-        "evidence": "ledger+journal+CLI exist; wired into johan scanner only; other workflows pending (item 7)"
+        "evidence": "ledger+journal+CLI; advance-sweep records; other workflows still pending"
       },
       {
         "id": 4,
@@ -148,8 +161,8 @@
       {
         "id": 10,
         "item": "W10 self-improving free ingestion workflows",
-        "status": "pending",
-        "evidence": "task:self-improving-ingest"
+        "status": "in-progress",
+        "evidence": "history sweep + oss-lan coverage; self-check on #557; continuous-flow dry-run decision"
       },
       {
         "id": 11,
@@ -292,8 +305,9 @@
       {
         "id": 34,
         "item": "Queue10 forum leads (AY-303Z DP109, ZG-106Z, ZG253 valve, MTG075, Peter History tab), Wi-Fi leftovers, 31 stable tests, workflow consolidation",
-        "status": "pending",
-        "evidence": ""
+        "status": "partial",
+        "evidence": "0a done: docs/rules/DAILY_RESUME_ENRICHMENT.md + constitution W12 + DEVICE_TRUTH conventions; native-matrix-gate wired in validate.yml (already in pr-gate + auto-fix). 0b: #2258 soil already-fixed a5ea22d29d; #2257 illuminance already-fixed; #2253 TRV already-fixed P2593/P2598/P2711; #2246-2255 VicHY already-fixed P2712 + DynFlow debounce additive; #2238/#2239 Insights options OK (repair-once note). Forum-poll → new-leads.json (signals, no AI). Remaining queue10: Wi-Fi leftovers, 31 stable tests, broader workflow consolidation.",
+        "updated": "2026-10-04"
       },
       {
         "id": 35,
@@ -322,8 +336,9 @@
       {
         "id": 39,
         "item": "PCr2-2 52 drivers: required clusters -> optional beyond interview",
-        "status": "pending",
-        "evidence": "user priority 2"
+        "status": "done",
+        "evidence": "tools/audit/w5-interview-clusters.js + docs/rules/W5_INTERVIEW_CLUSTER_AUDIT_2026-10-04.md: Homey matches on mfr+pid only and ZCLNode exposes manifest ∩ device clusters, so compose extras are already optional at runtime; nothing removed; interview-only clusters listed as review candidates (master eaf055a000, stable 7e549c0640, bastien b7b5274cdc)",
+        "updated": "2026-10-04"
       },
       {
         "id": 40,
@@ -334,8 +349,9 @@
       {
         "id": 41,
         "item": "PCr2-4 Green Power 0x0021 + 0xFC57/0xFC00/01/03/0x1888 facts -> native matrix",
-        "status": "pending",
-        "evidence": "user priority 4"
+        "status": "done",
+        "evidence": "109 normalized interviews in docs/data/interviews; native-matrix OBSERVED_NAMES 0x0021/0xFC00/0xFC57/0xFC01/0xFC03/0x1888; data/native-matrix.json + docs/NATIVE_MATRIX.md regenerated (61 clusters/122 interviews, gate OK, master only: stable/bastien have no matrix); Green Power 0x0021 seen in 32 interviews",
+        "updated": "2026-10-04"
       },
       {
         "id": 42,
@@ -346,26 +362,30 @@
       {
         "id": 43,
         "item": "PCr2 Johan PRs to port (#1406,#1346,#1121,#1017,#1065,#1106,#1237,#1210,#774,#1431,#1428,#1350,#1230,#1171,#145)",
-        "status": "pending",
-        "evidence": "ledger task:johan-pr-port-*"
+        "status": "done",
+        "evidence": "all 15 PRs closed/unmerged upstream; every Tuya mfr already present; ported OWON THS317-ET-TY _TZE200_iq4ygaai+TS0201 -> temphumidsensor (master 0b5ea16442, bastien c4470bdbd3; stable skipped: its motion_sensor already holds iq4ygaai+TS0201 -> would be a new collision); eWeLink SNZB-03 (#1171) already present; behaviour PRs #1406 (curtain inversion, risky for existing users) #1346 #1121 #1065 #1210 deferred",
+        "updated": "2026-10-04"
       },
       {
         "id": 44,
         "item": "PCr2 forum T140352 items (#2134,#2079,#2082,#2099,#2075,#2120,#2092/#2093) + 85 unrouted pairs",
-        "status": "pending",
-        "evidence": "ledger forum-post:*"
+        "status": "partial",
+        "evidence": "#2075 #2079 #2082 #2099 #2120 already routed to exactly one correct driver; #2092/#2093/#2134 are diagnostic-report complaints (reports not readable from box); 85 unrouted pairs file is on user PC only",
+        "updated": "2026-10-04"
       },
       {
         "id": 45,
         "item": "PCr2 Kimi backlog",
-        "status": "pending",
-        "evidence": ""
+        "status": "partial",
+        "evidence": "audited: ULTIMATE_CHECK.js exists; 21 pid-only catch-all drivers have empty manufacturerName (not filled without per-couple sources); air_purifier_dimmer driver.js registers trigger ids with double prefix (air_purifier_dimmer_dimmer_wall_1gang_*) vs compose ids -> harmless log noise, candidate fix; flow-coherence-audit 13 orphan-token lines remain | air_purifier_dimmer trigger ids fixed on all 3 (master c3fa126e7b, stable fc17dd34ed, bastien e10188f133) + test",
+        "updated": "2026-10-04"
       },
       {
         "id": 46,
         "item": "PCr2 bleed button_wireless_2 / switch_1gang cartesian (only real collisions)",
         "status": "pending",
-        "evidence": ""
+        "evidence": "frozen per M3 unless a real collision is found; none found this round",
+        "updated": "2026-10-04"
       },
       {
         "id": 47,
@@ -634,8 +654,9 @@
       {
         "id": 91,
         "item": "PCr2-1 remaining: HEIMAN RC-EF-3.0, iHorn LH02121, SONOFF MINI-ZBRBS, Signify RDM001 exact drivers; eWeLight TS0502B needs real interview",
-        "status": "pending",
-        "evidence": ""
+        "status": "in_progress",
+        "evidence": "",
+        "progress_2026_10_04": "SONOFF MINI-ZBRBS -> curtain_module and HEIMAN RC-EF-3.0 -> button_emergency_sos landed on 3 branches (emergency only; arm/disarm actions not mapped yet). Signify RDM001 needs the Philips manufacturer cluster (left for the Hue app); iHorn LH02121 has no source in ZHC -> deferred."
       },
       {
         "id": 92,
@@ -652,14 +673,15 @@
       {
         "id": 94,
         "item": "R22 modular architecture / sharded data / lazy loading: spec 010 (T1-T8), measure boot+heap | design from Homey SDK v3 docs/guides, homey-zigbeedriver, zigbee-clusters, Athom brand apps, Johan, Aqara, IKEA, Sonoff, Hue, community apps (T0), own implementation + credits (also for flows and memory work)",
-        "status": "pending",
-        "evidence": "specs/010-modular-lazy-data"
+        "status": "in_progress",
+        "evidence": "specs/010-modular-lazy-data | T0 docs/rules/R22_ARCHITECTURE_SOURCES.md + T1 scripts/perf/boot-heap.js (master 895 modules, ~0.5 s, ~33 MB) + golden specs/010-modular-lazy-data/golden-couples.json (391 drivers), test/spec010-perf-tools.test.js; 3 branches (master 02d4ac1620, stable 26355afdc2, bastien e9fce3f05f). Next T2 ShardLoader.",
+        "updated": "2026-10-04"
       },
       {
         "id": 95,
         "item": "Matter Bridge readiness (HomeKit retired from Homey v13.5.1, removed March 2027): verify Matter Bridge docs for supported classes/capabilities; audit drivers for standard class + standard capabilities; mirror a standard capability additively where only custom exists; never degrade | no standard capability: mirror to the closest standard one in addition (custom mode -> onoff/alarm_generic, scene -> button) or expose via flows; never remove anything | EXTENDED (parent 2026-10-04 04:04): cover Google Home/Assistant, Alexa, SmartThings (via Matter Bridge), Home Assistant; user note renamed/extended",
         "status": "in_progress",
-        "evidence": "audit tool tools/ci/smart-home-ecosystem-audit.js + test (5 passing), npm run check:ecosystems; bridge source athombv/com.athom.matter-bridge@045787d; docs/user/SMART_HOME_ECOSYSTEMS.md (HOMEKIT_TO_MATTER_BRIDGE.md kept as pointer); findings docs/rules/ECOSYSTEM_AUDIT_2026-10-04.md: 443 drivers, 366 bridged, 286 Alexa, 411 Google. Per-driver additive mirrors still pending (sub-cap-only multi-channel, class other sensors, device_din_rail* class doorbell). | data/matter-bridge-mapping.json (source-extracted, credited Athom); smart_scene_panel additive onoff mirror landed; valves deliberately not mirrored (voice safety). | ChatGPT/MCP added: 38 label-only dropdown values given a title (they broke list_flow_trigger_cards), gate check:flow-mcp-shape; pending: 120 driver flow cards without title.fr, hints"
+        "evidence": "audit tool tools/ci/smart-home-ecosystem-audit.js + test (5 passing), npm run check:ecosystems; bridge source athombv/com.athom.matter-bridge@045787d; docs/user/SMART_HOME_ECOSYSTEMS.md (HOMEKIT_TO_MATTER_BRIDGE.md kept as pointer); findings docs/rules/ECOSYSTEM_AUDIT_2026-10-04.md: 443 drivers, 366 bridged, 286 Alexa, 411 Google. Per-driver additive mirrors still pending (sub-cap-only multi-channel, class other sensors, device_din_rail* class doorbell). | data/matter-bridge-mapping.json (source-extracted, credited Athom); smart_scene_panel additive onoff mirror landed; valves deliberately not mirrored (voice safety). | ChatGPT/MCP added: 38 label-only dropdown values given a title (they broke list_flow_trigger_cards), gate check:flow-mcp-shape; pending: 120 driver flow cards without title.fr, hints | 2026-10-04 07:40: TuyaDpProfileDevice mirrors + panel_switch_cover_tuya windowcoverings_set/state mirror of shutter 1 (now bridged), test/dp-profile-mirrors.test.js; 3 branches (master 27520a280c, stable 3159dcd4ee, bastien edd7e6d6eb). climate_sensor_smart/sensor_climate_smart skipped (placeholder mfrs only, no real couple)."
       },
       {
         "id": 96,
@@ -827,8 +849,8 @@
       {
         "id": 118,
         "item": "Dimmer class change (socket/other -> light) for Homey Portal",
-        "status": "awaiting_user_decision",
-        "evidence": "user 2026-10-04: do NOT change yet",
+        "status": "done",
+        "evidence": "user approved 2026-10-04 10:27: dimmer_2_gang_tuya (+secondGang sub-device), dimmer_wall_switch, wall_dimmer_1gang_1way socket -> light; one-shot setClass migration via lib/utils/DeviceClassMigration.js (store flag); caps/ids/flows unchanged; changelog notes icon may change; dimmer_wall_plug left socket (plug, load unknown); generic/universal drivers untouched. master 1aa5fcf361, stable 7645e3feea, bastien 424f7ef3d0 (all [skip ci]); test/dimmer-class-light.test.js",
         "origin": "user 2026-10-04 05:44",
         "updated": "2026-10-04"
       },
@@ -863,20 +885,67 @@
       {
         "id": 123,
         "item": "Pre-existing fp-collision-check NEW COLLISION x20 (curtain_motor vs curtain_motor_shutter, pir_sensor_2 vs sensor_motion_presence) on origin/master — needs review/reviewed-duals or placement",
-        "status": "pending",
+        "status": "done",
+        "updated": "2026-10-04",
+        "evidence": "false alarm: the 20 NEW lines came from running fp-collision-check without --baseline; with .github/fingerprint-collision-baseline.json (as CI runs it) there are 0 new collisions. The couples are ZHC TS130F curtain switches (LoraTap SC500ZB-v4, Zemismart ZN-LC1E, Danor SK-Z802C-US, BSEED EC-GL86ZPCRS31) and Tuya HW500A PIR; both drivers keep them (no removal)."
+      },
+      {
+        "id": 124,
+        "item": "Gledopto GL-SPI-206P (_TZE204_8fffc3kb, _TZE284_gt5al3bl) exact driver led_controller_spi_tuya (DP61 colour frame); switch_1gang keeps couples (reviewed exception)",
+        "status": "done",
+        "evidence": "test/gledopto-spi.test.js; master 3c6cb2a480, stable 1c1cf1a16a, bastien e27abb3eec | sacred-keep pins added on master ed57bbae37 (root app.json 9.0.1331 now carries the driver); stable/bastien root app.json still lacks it",
+        "updated": "2026-10-04"
+      },
+      {
+        "id": 125,
+        "item": "Safe-math rewrite damage scan + repair (33 files: 22 time-sync offsets, 5 ZCL TRV setpoint/temperature, RGB/dim decodes, eWeLink brightness, radar battery, ColorConverter; bastien wifi_led_strip)",
+        "status": "done",
+        "evidence": "test/safe-math-damage.test.js (repo-wide regression check)",
+        "updated": "2026-10-04",
+        "open": "suspicious, not changed (needs device evidence): plug_smart-family rmsCurrent*1000 feeding meter_power and voltage_scale*0.1 double scaling; generic_tuya DP247 voltage *1000"
+      },
+      {
+        "id": 126,
+        "item": "Stable runtime holes: device_air_purifier_water driver extends Homey module (crash at load), switch_4gang missing Ts0004SwitchModuleHeal, missing FlowCardDeviceResolve/TuyaE002AlarmManager/safe-capability",
+        "status": "done",
+        "evidence": "found by spec010 boot-heap harness + static require scan; fixed stable 26355afdc2 + 8ad4efa5fe; guard test/runtime-relative-requires.test.js on 3 branches (master 6692b5839f, bastien f964d5ef47)",
+        "origin": "executor-flowport 2026-10-04",
+        "updated": "2026-10-04"
+      },
+      {
+        "id": 127,
+        "item": "Dependency bump zigbee-clusters 3.8 / homey-zigbeedriver 2.2.18",
+        "status": "blocked",
+        "evidence": "zigbee-clusters >=3.2.0 and homey-zigbeedriver 2.2.18 declare engines node >=22; Homey runs Node 22 only from v12.9.0 (Pro 2016-19 Node 16, Pro 2023/mini Node 18 below v12.9; apps.developer.homey.app/the-basics/app). App compatibility >=12.2.0 -> not committed. Options for the user: raise compatibility to >=12.9.0, or keep 2.6.0/2.2.17 (startUpOnOff already declared locally). | user 2026-10-04 07:27: keep 2.6.0/2.2.17 and >=12.2.0; useful fixes backported locally instead (#128)",
+        "origin": "executor-flowport 2026-10-04",
+        "updated": "2026-10-04"
+      },
+      {
+        "id": 128,
+        "item": "Local backports from zigbee-clusters 3.8 / homey-zigbeedriver 2.2.18: Time cluster 0x000A attributes (UTC 0xE2, validUntilTime id 9), finite transition-duration guard, dim read-back grace after changeDimLevel",
+        "status": "done",
+        "evidence": "lib/zigbee/ZigbeeLibBackports.js + test/zigbee-lib-backports.test.js; master 45c9927419, stable 6af311d998, bastien 8ca973dc3b",
+        "origin": "user 2026-10-04 07:27",
+        "updated": "2026-10-04"
+      },
+      {
+        "id": 129,
+        "item": "bastien anti-bot gate stale expectation p98-pay2byax-contact",
+        "status": "done",
+        "evidence": "now expects contact_sensor_zigbee like master + forbidden rule p2758; bastien 11fb98902d",
+        "origin": "user 2026-10-04 07:27",
         "updated": "2026-10-04"
       }
     ],
     "next": [
-      "stable grouped publish after #100 port (Test is 5.12.363; 5.12.364 #276 stuck)",
-      "verify master Auto-Publish for the #100 push",
-      "#123 fp-collision baseline review",
-      "#99 source registry parsers (tools/sources/dp-parsers.js + test)",
-      "#98 athombv org study",
+      "master: if 37180863734 ends without Test, dispatch draft-to-test branch=master; check HOMEY_PAT validity (wait-draft list 401)",
+      "verify master 37180863734 reaches Test (draft-to-test branch=master if draft stuck)",
+      "#44 85 unrouted pairs (file on user PC) + diagnostic reports #2092/#2093/#2134",
+      "#46 bleed only if real collision",
+      "#99 triage CLI over source-proposals",
       "spec 010",
-      "PCr2",
       "#95 mirrors",
-      "sacred pins for switch_presence_tuya / panel_switch_cover_tuya / sound_sensor_tuya once root app.json has them"
+      "_TZE284_rzdkn5rx when ZHA PR #5387 merges"
     ],
     "user_actions": [
       "Rotate/revoke the Gmail app password and old GitHub PAT seen in clear text in July opencode/MiniMax prompts (not for agents)"
@@ -1025,8 +1094,110 @@
         "build": "#276",
         "result": "draft; Athom processing_failed reported, Test still 5.12.363 (#275, confirmed on public page)",
         "at": "2026-10-04 06:10 Paris"
+      },
+      {
+        "branch": "master",
+        "run": 37177061970,
+        "version": "9.0.1330",
+        "result": "on Test (public page 9.0.1330) — includes #100 and restored reviewed duals",
+        "at": "2026-10-04 06:40 Paris"
+      },
+      {
+        "branch": "stable-v5",
+        "run": 37177312019,
+        "version": "5.12.365",
+        "result": "run success (draft + promote job done); public Test page still shows 5.12.364 at 06:50 — recheck",
+        "at": "2026-10-04 06:44 Paris"
+      },
+      {
+        "branch": "stable-v5",
+        "version": "5.12.365",
+        "build": "#277",
+        "result": "draft only; public Test page still 5.12.364 at 07:00 — next grouped publish",
+        "at": "2026-10-04 07:00 Paris"
+      },
+      {
+        "at": "2026-10-04T07:18+02:00",
+        "branch": "stable-v5",
+        "run": 37179413932,
+        "sha": "8ad4efa5fe",
+        "note": "grouped stable publish (spec010 baseline + 5 runtime holes fixed); 5.12.365 still draft at 07:16"
+      },
+      {
+        "at": "2026-10-04T07:26+02:00",
+        "branch": "stable-v5",
+        "version": "5.12.365",
+        "note": "verified on public Test page (build #277 promoted)"
+      },
+      {
+        "at": "2026-10-04T07:26+02:00",
+        "branch": "master",
+        "note": "Auto-Publish 37178684262 (3c6cb2a480) still in progress; 37178968222 cancelled (superseded); 37179604880 (27520a280c) pending; Test page 9.0.1330"
+      },
+      {
+        "at": "2026-10-04T07:34+02:00",
+        "branch": "stable-v5",
+        "version": "5.12.366",
+        "note": "publish-stable 37179413932 left draft #278; draft-to-test 37179985579 promoted it; verified on public Test page"
+      },
+      {
+        "at": "2026-10-04T07:55+02:00",
+        "branch": "master",
+        "note": "37178684262/37179604880/37180219571/37180572285 cancelled (superseded, Athom draft processing slow); 37180863734 (0b5ea16442, contains all changes) in progress; Test page 9.0.1330"
+      },
+      {
+        "at": "2026-10-04T08:20+02:00",
+        "branch": "master",
+        "note": "37180863734 (v9.0.1331, 0b5ea16442): Athom processing_failed build #3442, workflow re-uploading (retry 1/2); wait-draft builds list fails \"The provided token is invalid\" (HOMEY_PAT for builds API); Test page 9.0.1330"
+      },
+      {
+        "at": "2026-10-04T08:22+02:00",
+        "branch": "stable-v5",
+        "note": "publish-stable 37182407962 dispatched on 7e549c0640 (ships backports 6af311d998 + #95 + PCr2; 5.12.366 did not include them)"
+      },
+      {
+        "at": "2026-10-04T08:33+02:00",
+        "branch": "stable-v5",
+        "version": "5.12.367",
+        "note": "publish-stable 37182407962 success (draft) + draft-to-test 37182962152 -> verified on public Test page; includes backports, #95, PCr2 (dimmer flow-id fix fc17dd34ed comes next publish)"
+      },
+      {
+        "at": "2026-10-04T08:55+02:00",
+        "branch": "master",
+        "note": "v9.0.1331: Athom processing_failed (AggregateError) on builds #3442-#3447 (each fails ~30 s after upload); 37180863734 hit 45 min job timeout; draft-to-test 37183254971 found no processable draft; Test stays 9.0.1330 #3441. Manifest diff 1330->1331 = new led_controller_spi_tuya + lowercase mfrs on energy_meter_3phase/panel_switch_cover_tuya; same driver processed fine on stable 5.12.367 -> cause not identified. Fresh dispatch 37183735134 on 263ef49eea."
+      },
+      {
+        "at": "2026-10-04T11:00+02:00",
+        "branch": "master",
+        "note": "fresh dispatch 37183735134 -> v9.0.1332 also processing_failed (#3448-#3450), cancelled; master publishing on hold (other worker investigating AggregateError); Test still 9.0.1330"
       }
     ],
     "rules_reporting": "Every report includes a French 'Découvertes' section (source link + author, mechanism/symptom, what we did or why not); append to docs/progress/DISCOVERIES.md"
+  },
+  "exec_2026_10_10": {
+    "updated": "2026-10-10T12:20+02:00",
+    "by": "exec 2026-10-10",
+    "done": [
+      "HOMEY_PAT set (apps PAT) 10:03 UTC",
+      "homey-secrets-health workflow aa1a40aab6",
+      "TRV06 #560 fix master 2a242b4474 stable 7c29ea53e8 bastien 74d85c8902",
+      "OOM fix app.json->package.json master d4355fbe6f stable cb1bb30aa8 bastien d7612ee4e2",
+      "stable collision exceptions f122bcddb6",
+      "stable TITAN raw setCapabilityValue 2d8576c7ae",
+      "#559 already supported (plug_energy_monitor)",
+      "gate doublons pre-push 3 branches 9b496c9a6e/77ec98b059",
+      "#550 recent-RX guard d28749b787/f8983f20dd/b23634687d",
+      "gmail filters forum+github f1206c64e5",
+      "build-status reader 8b526b4f4f",
+      "stable 5.12.375 on Test",
+      "homey-app-validate workflow 3 branches (master a8d3a64447)",
+      "version skip test: 9.0.1333/1334 also processing_failed -> not a poisoned version"
+    ],
+    "pending": [
+      "master AggregateError: local build/validate identical 1330 vs 1331 (only diffs: led_controller_spi_tuya [also on stable, OK], light_cct_ts0502b +eWeLight mfr, temphumidsensor +_TZE200_iq4ygaai, button_emergency_sos/curtain_module mfr lists, panel_switch_cover base caps [also on stable]); next = bisect by publishing tip with those 4 compose changes reverted one at a time (each publish ~15 min)",
+      "stable #283 5.12.376 failure = second upload of same version (#282 same version processed OK)",
+      "Auto-Publish waits forever on processing_failed (Wait for Athom draft processing) and holds the athom-publish-master lock",
+      "master_queue etc."
+    ]
   }
 }
