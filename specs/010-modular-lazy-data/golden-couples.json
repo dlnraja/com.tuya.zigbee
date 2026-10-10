@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-10T23:35:13.621Z",
+ "generated": "2026-10-10T23:41:36.302Z",
  "drivers": 388,
  "snapshot": {
   "air_purifier": {
@@ -279,9 +279,9 @@
    "pidSha": "3427697d0c296c9d"
   },
   "climate_sensor": {
-   "mfr": 538,
+   "mfr": 537,
    "pid": 32,
-   "mfrSha": "f33060ddd21c4544",
+   "mfrSha": "ebf0a7e1f91b1563",
    "pidSha": "4809a771f46a5606"
   },
   "climate_sensor_device": {
@@ -777,9 +777,9 @@
    "pidSha": "720ce7b7ec09a25f"
   },
   "double_power_point_2": {
-   "mfr": 3,
+   "mfr": 9,
    "pid": 2,
-   "mfrSha": "3fbbeaa61492d98f",
+   "mfrSha": "9518e27f035e6536",
    "pidSha": "720ce7b7ec09a25f"
   },
   "energy_meter_3phase": {
@@ -1863,9 +1863,9 @@
    "pidSha": "b46b96d17990cf37"
   },
   "switch_1gang": {
-   "mfr": 363,
+   "mfr": 364,
    "pid": 38,
-   "mfrSha": "699552e8301e91be",
+   "mfrSha": "4d2f6570b5eeb4ac",
    "pidSha": "fd65b1d55ed8db6a"
   },
   "switch_2_gang": {
@@ -2097,9 +2097,9 @@
    "pidSha": "b5f78b2a386201c5"
   },
   "usb_dongle_triple": {
-   "mfr": 22,
+   "mfr": 17,
    "pid": 9,
-   "mfrSha": "61ef179874930703",
+   "mfrSha": "351dcf4347969f0f",
    "pidSha": "d0d47359d9f8c8f2"
   },
   "usb_outlet_advanced": {
@@ -2217,9 +2217,9 @@
    "pidSha": "a919bfb9daea8608"
   },
   "wall_switch_1gang_1way": {
-   "mfr": 10,
+   "mfr": 9,
    "pid": 7,
-   "mfrSha": "72d464eadf47c273",
+   "mfrSha": "00c3e6c4e3b41ec9",
    "pidSha": "77d1f07899dbce60"
   },
   "wall_switch_2_gang": {

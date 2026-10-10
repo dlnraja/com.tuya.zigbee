@@ -221,6 +221,78 @@
       "pid": "TS0222",
       "source": "Z2M + deCONZ",
       "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_8nyaanzb"
+      ],
+      "driver": "double_power_point_2",
+      "pid": "TS011F",
+      "source": "Z2M TS011F_2_gang_wall",
+      "regression": "lost-couples 2026-10-11 pass 3 (variant/W4)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_iy2c3n6p"
+      ],
+      "driver": "double_power_point_2",
+      "pid": "TS011F",
+      "source": "Z2M TS011F_2_gang_wall",
+      "regression": "lost-couples 2026-10-11 pass 3 (variant/W4)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_rgpqqmbj"
+      ],
+      "driver": "double_power_point_2",
+      "pid": "TS011F",
+      "source": "Z2M TS011F_2_gang_wall",
+      "regression": "lost-couples 2026-10-11 pass 3 (variant/W4)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_rqbjepe8"
+      ],
+      "driver": "double_power_point_2",
+      "pid": "TS011F",
+      "source": "Z2M TS011F_4 (2 gang plug)",
+      "regression": "lost-couples 2026-10-11 pass 3 (variant/W4)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_dd8wwzcy"
+      ],
+      "driver": "double_power_point_2",
+      "pid": "TS011F",
+      "source": "Z2M MG-AUZG01",
+      "regression": "lost-couples 2026-10-11 pass 3 (variant/W4)"
+    },
+    {
+      "mfr": [
+        "_TZ3210_bep7ccew"
+      ],
+      "driver": "double_power_point_2",
+      "pid": "TS011F",
+      "source": "Z2M MG-GPO01",
+      "regression": "lost-couples 2026-10-11 pass 3 (variant/W4)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_fdxihpp7"
+      ],
+      "driver": "switch_1gang",
+      "pid": "TS000F",
+      "source": "Z2M WHD02",
+      "regression": "lost-couples 2026-10-11 pass 3 (variant/W4)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_fdxihpp7"
+      ],
+      "driver": "switch_1gang",
+      "pid": "TS0001",
+      "source": "Z2M WHD02",
+      "regression": "lost-couples 2026-10-11 pass 3 (variant/W4)"
     }
   ]
 }
