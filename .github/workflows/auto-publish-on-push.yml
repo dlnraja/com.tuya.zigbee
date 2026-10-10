@@ -458,29 +458,24 @@ jobs:
           HOMEY_DRAFT_SOFT_EXPECT: '1'
           HOMEY_HEALTHY_TEST_PATCH_LAG: '32'
           # WHY(P2474): large uploads + Athom socket hang up need longer soak before soft-continue
-          HOMEY_DRAFT_WAIT_MS: '900000'
+          HOMEY_DRAFT_WAIT_MS: '600000'
           # WHY(P2738): Gmail tip PF lands fast — early soft-continue (was 180s)
           HOMEY_DRAFT_EARLY_FAIL_MS: '60000'
           HOMEY_EXPECTED_VERSION: ${{ steps.info.outputs.version }}
-        # WHY(2026-10-04): run 37170346820 uploaded v9.0.1324 (build #3424), Athom failed it
-        # with "socket hang up" and the job stayed green. Re-uploading the SAME version after a
-        # failed build is accepted (proven on stable #271/#273). Bounded: 2 re-uploads.
+        # WHY(2026-10-10): re-uploading the SAME version after processing_failed is itself rejected
+        # (stable #282 draft OK -> #283 same version processing_failed; master 9.0.1332 x14).
+        # Fail fast with the build id instead of re-uploading and holding the publish lock ~45 min.
+        timeout-minutes: 20
         run: |
-          PUBLISH_DIR="${HOMEY_PUBLISH_DIR:-$(node -p "require('path').join(require('os').tmpdir(), 'homey-publish-temp')")}"
-          for retry in 0 1 2; do
-            OUT=$(mktemp)
-            GITHUB_OUTPUT="$OUT" node .github/scripts/wait-athom-draft-ready.js || true
-            if ! grep -q 'processing_failed_degraded=true' "$OUT"; then
-              echo "Athom build for v$HOMEY_EXPECTED_VERSION is processing/ready (retry=$retry)"; exit 0
-            fi
-            [ "$retry" -ge 2 ] && break
-            [ -d "$PUBLISH_DIR" ] || { echo "::warning::publish dir missing, cannot re-upload"; break; }
-            echo "::warning::Athom processing_failed for v$HOMEY_EXPECTED_VERSION; re-uploading same version (retry $((retry+1))/2)"
-            sleep 30
-            (cd "$PUBLISH_DIR" && HOMEY_HEADLESS=1 HOMEY_PAT="$HOMEY_PAT" "$GITHUB_WORKSPACE/node_modules/.bin/homey" app publish --path "$PUBLISH_DIR") || echo "::warning::re-upload attempt failed"
-          done
-          echo "::error::Athom kept failing to process v$HOMEY_EXPECTED_VERSION; Test stays on the previous build"
-          echo "### Test NOT updated: Athom processing_failed for v$HOMEY_EXPECTED_VERSION" >> "$GITHUB_STEP_SUMMARY"
+          OUT=$(mktemp)
+          GITHUB_OUTPUT="$OUT" node .github/scripts/wait-athom-draft-ready.js || true
+          if ! grep -q 'processing_failed_degraded=true' "$OUT"; then
+            echo "Athom build for v$HOMEY_EXPECTED_VERSION is processing/ready"; exit 0
+          fi
+          BID=$(grep -oE '(build_id|buildId|failed_build_id)=[0-9]+' "$OUT" | head -1 | cut -d= -f2)
+          node scripts/ci/homey-build-status.js com.dlnraja.tuya.zigbee 2>/dev/null | head -3 || true
+          echo "::error::Athom processing_failed for v$HOMEY_EXPECTED_VERSION (build #${BID:-see list above}); not re-uploading the same version"
+          echo "### Test NOT updated: Athom processing_failed for v$HOMEY_EXPECTED_VERSION (build #${BID:-?})" >> "$GITHUB_STEP_SUMMARY"
           exit 1
 
       - name: Install Puppeteer (draft → test promotion)

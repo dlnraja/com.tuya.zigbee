@@ -48,7 +48,25 @@ const changelogText = String(
 
 const app = readJson("app.json");
 const previousVersion = app.version;
-const nextVersion = bumpVersion(previousVersion, level);
+// WHY(2026-10-10, AggregateError #3469-#3471): Athom rejects an upload whose version is
+// <= a build already uploaded (diag/bisect builds #3467/#3468 used 9.0.1348/1349 while
+// master bumped to 9.0.1339/1340). Base = max(app.json, .github/homey-version-floor,
+// HOMEY_VERSION_FLOOR env) so the next version is always above the highest Athom build.
+function cmpVer(a, b) {
+  const x = parseVersion(a), y = parseVersion(b);
+  for (let i = 0; i < 3; i++) if (x[i] !== y[i]) return x[i] - y[i];
+  return 0;
+}
+let baseVersion = previousVersion;
+const floors = [process.env.HOMEY_VERSION_FLOOR];
+if (fs.existsSync(".github/homey-version-floor")) floors.push(fs.readFileSync(".github/homey-version-floor", "utf8").trim());
+for (const f of floors) {
+  if (f && /^\d+\.\d+\.\d+$/.test(f) && cmpVer(f, baseVersion) > 0) {
+    console.log(`Version floor ${f} > ${baseVersion}: bumping from floor`);
+    baseVersion = f;
+  }
+}
+const nextVersion = bumpVersion(baseVersion, level);
 app.version = nextVersion;
 writeJson("app.json", app);
 

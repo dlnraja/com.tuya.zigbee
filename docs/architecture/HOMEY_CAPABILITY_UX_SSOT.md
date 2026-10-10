@@ -42,6 +42,7 @@ Human detail: [`INTERACTION_FLOW_CARDS_SSOT.md`](./INTERACTION_FLOW_CARDS_SSOT.m
 - **Enable** History on priority sensor readables (`measure_battery`, climate, energy, alarms…) via compose + boot heal.
 - **Silence** Insights only when intelligent: `alarm_motion` if `alarm_human` exists (VicHY dual spam); `measure_luminance.distance*` (mmWave flood).
 - Tool: `npm run history:fleet` / `history:fleet:apply` · gate `npm run check:p2553`.
+- **Already-paired devices (Peter #2238/#2239):** if compose already has `getable: true` and `preventInsights: false` on `measure_battery` but the History tab is still missing, Homey may need **one** remove + re-add so Insights enrollment refreshes. Boot heal restores options; it cannot re-create the Insights series after the fact.
 
 ## Dual-app
 

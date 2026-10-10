@@ -1,0 +1,40 @@
+{
+  "manufacturerName": "_TZ3000_996rpfy6",
+  "productId": "TS0203",
+  "source": "pc-harvest-r2 (normalized interview facts; origins: Homey forum, GitHub issues, user diagnostics)",
+  "interviewsMerged": 3,
+  "powerSource": null,
+  "firmware": {
+    "swBuildId": "0129122025",
+    "appVersion": null,
+    "hwVersion": null,
+    "dateCode": null,
+    "stackVersion": null
+  },
+  "endpoints": {
+    "1": {
+      "inputClusters": [
+        0,
+        1,
+        3,
+        1280
+      ],
+      "outputClusters": [
+        3,
+        10,
+        25
+      ]
+    }
+  },
+  "inputClusters": [
+    0,
+    1,
+    3,
+    1280
+  ],
+  "outputClusters": [
+    3,
+    10,
+    25
+  ]
+}

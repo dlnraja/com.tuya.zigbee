@@ -311,6 +311,15 @@ function applyOne(rel, bastienBody, rootDir = ROOT) {
 
 function commitIfNeeded(rootDir, message, files) {
   if (!files.length) return false;
+  // WHY(2026-10-10 workflow audit): a merged driver.compose.json from Bastien can carry fingerprint
+  // entries that the dual-couple resolution removed on purpose (lib/data/dual-couple-legacy.json).
+  // Strip them again before staging, like safe-auto-commit does for the enrichment workflows.
+  const legacyTool = path.join(rootDir, 'tools', 'ci', 'enforce-dual-couple-legacy.js');
+  if (files.some((f) => /^drivers\/[^/]+\/driver\.compose\.json$/.test(f) || f === 'app.json') && fs.existsSync(legacyTool)) {
+    try {
+      execSync(`"${process.execPath}" "${legacyTool}" --root="${rootDir}"`, { cwd: rootDir, stdio: 'inherit' });
+    } catch (e) { console.warn('[bastien-promote] legacy enforcement skipped:', e.message); }
+  }
   sh('git config user.name "github-actions[bot]"', { cwd: rootDir });
   sh('git config user.email "41898282+github-actions[bot]@users.noreply.github.com"', { cwd: rootDir });
   for (const f of files) {

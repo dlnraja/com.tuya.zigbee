@@ -3,5 +3,9 @@
  "hold": {
   "_tz3000_skueekg3|TS000F": "built-in switch module (issue 1109, no temperature cluster in the request); the only same-class driver listing TS000F is switch_temp_sensor (measure_temperature), so it stays a lead",
   "_tz3210_jtifm80b|TS0502B": "CCT controller (issue 403); the only light driver listing TS0502B is dim-only (dimmable_recessed_led), so it stays a lead until a CCT driver carries TS0502B"
+ },
+ "resolved": {
+  "_tz3210_jtifm80b|TS0502B": "resolved 2026-10-10: exact couple lives on the dedicated CCT driver light_cct_ts0502b (spec 007 T4, 51836c1520); hold kept so the audit never copies it elsewhere",
+  "_tz3000_skueekg3|TS000F": "resolved 2026-10-10: Tuya WHD02 wall switch module (Z2M herdsman #6160 by alray31, #6552 by pannal; ZHA quirks #3252) → exact-pair driver switch_module_whd02 (relay only, no temperature); hold kept so the audit never routes it to switch_temp_sensor"
  }
 }
