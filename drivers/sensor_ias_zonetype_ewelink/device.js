@@ -21,8 +21,8 @@ class IasZoneTypeEwelinkDevice extends UnifiedSensorBase {
     const d = decodeZoneStatus(status);
     const v = alarmFor(cap, d);
     if (v == null) {return;}
-    await this.setCapabilityValue(cap, v).catch(() => { });
-    if (this.hasCapability('alarm_tamper')) {await this.setCapabilityValue('alarm_tamper', d.tamper).catch(() => { });}
+    await this.safeSetCapabilityValue(cap, v).catch(() => { });
+    if (this.hasCapability('alarm_tamper')) {await this.safeSetCapabilityValue('alarm_tamper', d.tamper).catch(() => { });}
   }
 
   /** Never let the base default an unknown zone to motion: wait for the real zoneType. */
