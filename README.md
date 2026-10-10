@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1339 |
+| **App Version** | v9.0.1340 |
 | **Drivers** | 448 (395 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,759 |
 | **Pairing Variants** | 19,199 (4 case combos per fingerprint) |
@@ -103,7 +103,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.1339** | v9.0.1338: |
+| **v9.0.1340** | v9.0.1339: |
+| **v9.0.1339** | v9.0.1339: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1338** | v9.0.1338: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1335** | Dimmers (2-gang dimmer module, dimmer wall switch, wall dimmer 1-gang) now use the Light device type, so the light ring and voice assista… |
 | **v9.0.1332** | Dimmers (2-gang dimmer module, dimmer wall switch, wall dimmer 1-gang) now use the Light device type, so the light ring and voice assista… |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1327** | v9.0.1327: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1326** | v9.0.1326: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1325** | v9.0.1325: automated publish, manifest sync, and Homey test promotion. |
-| **v9.0.1324** | v9.0.1324: automated publish, manifest sync, and Homey test promotion. |
 
 <!-- CHANGELOG_END -->
 
