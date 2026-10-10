@@ -16,7 +16,9 @@
     "onoff",
     "dim",
     "light_hue",
-    "light_saturation"
+    "light_saturation",
+    "light_temperature",
+    "light_mode"
   ],
   "images": {
     "small": "/drivers/led_controller_spi_tuya/assets/images/small.png",
@@ -31,7 +33,10 @@
       "_TZE204_8FFFC3KB",
       "_tze204_8FFFC3KB",
       "_TZE284_GT5AL3BL",
-      "_tze284_GT5AL3BL"
+      "_tze284_GT5AL3BL",
+      "_TZE28C1000000_gt5al3bl",
+      "_tze28c1000000_gt5al3bl",
+      "_TZE28C1000000_GT5AL3BL"
     ],
     "productId": [
       "TS0601"
