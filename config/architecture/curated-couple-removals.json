@@ -134,6 +134,107 @@
       "modelIdPattern": "^(3450-L|E1\\d{3}|LUMI\\.|ROM001|01MINIZB|A11Z|BASICZBR3)",
       "why": "P2613: IKEA/LUMI/Sonoff/Philips model IDs bled onto Tuya remote mfs entries (949 pruned from 133 entries 2026-10-11); never re-add",
       "source": "P2613 / 4b4b118912"
+    },
+    {
+      "driver": "climate_sensor",
+      "mfr": [
+        "_tz3000_egvb1p2g",
+        "_tz3000_lrfvzq1e",
+        "_tz3210_m3mxv66l",
+        "_tz3290_s6ezpa3j",
+        "_TZ3000_egvb1p2g",
+        "_TZ3000_lrfvzq1e",
+        "_TZ3210_m3mxv66l",
+        "_TZ3290_s6ezpa3j",
+        "_TZ3000_EGVB1P2G",
+        "_tz3000_EGVB1P2G",
+        "_TZ3000_LRFVZQ1E",
+        "_tz3000_LRFVZQ1E",
+        "_TZ3210_M3MXV66L",
+        "_tz3210_M3MXV66L",
+        "_TZ3290_S6EZPA3J",
+        "_tz3290_S6EZPA3J"
+      ],
+      "why": "lost-couples W4/pass 3 (977b54e97f, d7243a8120): moved to the exact driver per Z2M/multi-source evidence (couple-driver-pins); not a loss",
+      "source": "prep/master-lost-couples"
+    },
+    {
+      "driver": "dimmer_wall_1gang",
+      "mfr": [
+        "_tz3000_j6adk9id",
+        "_TZ3000_J6ADK9ID",
+        "_TZ3000_j6adk9id",
+        "_tz3000_J6ADK9ID"
+      ],
+      "why": "lost-couples W4/pass 3 (977b54e97f, d7243a8120): moved to the exact driver per Z2M/multi-source evidence (couple-driver-pins); not a loss",
+      "source": "prep/master-lost-couples"
+    },
+    {
+      "driver": "motion_sensor",
+      "mfr": [
+        "_TZE200_01fvxamo",
+        "_TZE200_iq4ygaai",
+        "_tze200_01fvxamo",
+        "_tze200_iq4ygaai",
+        "_TZE200_01FVXAMO",
+        "_tze200_01FVXAMO",
+        "_TZE200_IQ4YGAAI",
+        "_tze200_IQ4YGAAI"
+      ],
+      "why": "lost-couples W4/pass 3 (977b54e97f, d7243a8120): moved to the exact driver per Z2M/multi-source evidence (couple-driver-pins); not a loss",
+      "source": "prep/master-lost-couples"
+    },
+    {
+      "driver": "smoke_sensor3",
+      "mfr": [
+        "_TZE200_qcasmfan",
+        "_TZE200_QCASMFAN",
+        "_tze200_qcasmfan",
+        "_tze200_QCASMFAN"
+      ],
+      "why": "lost-couples W4/pass 3 (977b54e97f, d7243a8120): moved to the exact driver per Z2M/multi-source evidence (couple-driver-pins); not a loss",
+      "source": "prep/master-lost-couples"
+    },
+    {
+      "driver": "switch_1gang",
+      "mfr": [
+        "_tyzb01_4mdqxxnn",
+        "_tyzb01_m6ec2pgj",
+        "_tz3210_a2erlvb8",
+        "_TYZB01_4MDQXXNN",
+        "_TYZB01_4mdqxxnn",
+        "_tyzb01_4MDQXXNN",
+        "_TYZB01_M6EC2PGJ",
+        "_TYZB01_m6ec2pgj",
+        "_tyzb01_M6EC2PGJ",
+        "_TZ3210_A2ERLVB8",
+        "_TZ3210_a2erlvb8",
+        "_tz3210_A2ERLVB8"
+      ],
+      "why": "lost-couples W4/pass 3 (977b54e97f, d7243a8120): moved to the exact driver per Z2M/multi-source evidence (couple-driver-pins); not a loss",
+      "source": "prep/master-lost-couples"
+    },
+    {
+      "driver": "wall_switch_1gang_1way",
+      "mfr": [
+        "_TZ3000_FDXIHPP7",
+        "_TZ3000_fdxihpp7",
+        "_tz3000_fdxihpp7",
+        "_tz3000_FDXIHPP7"
+      ],
+      "why": "lost-couples W4/pass 3 (977b54e97f, d7243a8120): moved to the exact driver per Z2M/multi-source evidence (couple-driver-pins); not a loss",
+      "source": "prep/master-lost-couples"
+    },
+    {
+      "driver": "water_leak_sensor",
+      "mfr": [
+        "_tz3000_lbtpiody",
+        "_TZ3000_lbtpiody",
+        "_TZ3000_LBTPIODY",
+        "_tz3000_LBTPIODY"
+      ],
+      "why": "lost-couples W4/pass 3 (977b54e97f, d7243a8120): moved to the exact driver per Z2M/multi-source evidence (couple-driver-pins); not a loss",
+      "source": "prep/master-lost-couples"
     }
   ]
 }
