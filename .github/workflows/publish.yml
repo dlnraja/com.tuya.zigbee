@@ -264,7 +264,7 @@ jobs:
       - name: Wait for Athom idle (previous build final)
         if: always()
         continue-on-error: true
-        timeout-minutes: 17
+        timeout-minutes: 25
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: node .github/scripts/wait-athom-idle.js com.dlnraja.tuya.zigbee

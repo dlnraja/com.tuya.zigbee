@@ -11,8 +11,18 @@ const { execFileSync } = require('child_process');
 
 const ROOT = process.cwd();
 const appId = process.argv[2] || JSON.parse(fs.readFileSync(path.join(ROOT, 'app.json'), 'utf8')).id;
-const maxMs = Number(process.env.ATHOM_IDLE_MAX_MS || 15 * 60 * 1000);
+const maxMs = Number(process.env.ATHOM_IDLE_MAX_MS || 12 * 60 * 1000); // step timeout 25 min: polls themselves can take ~2 min (G1 run 38101398363 was cancelled at 17)
 const stepMs = Number(process.env.ATHOM_IDLE_STEP_MS || 30 * 1000);
+
+// WHY(2026-10-11): #3512 sat in waiting_for_files forever after a hung CLI upload. Older than
+// STUCK_MS (default 5 min) it will never progress: treat it as final/failed.
+const STUCK_MS = Number(process.env.ATHOM_STUCK_MS || 5 * 60 * 1000);
+function isStuck(b, now = Date.now()) {
+  if (String(b && b.state) !== 'waiting_for_files') {return false;}
+  const t = Date.parse(b.stateChangedAt || b.createdAt || '');
+  return Number.isFinite(t) && now - t > STUCK_MS;
+}
+
 const FINAL = /^(test|live|draft|processing_failed|revoked|failed|rejected|approved)$/i;
 
 function busyBuilds() {
@@ -20,7 +30,7 @@ function busyBuilds() {
     execFileSync('node', [path.join(ROOT, 'scripts/ci/homey-build-status.js'), appId], { stdio: 'ignore', timeout: 120000 });
     const s = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'status', `homey-build-status-${appId}.json`), 'utf8'));
     if (s.pat && s.pat !== 'valid') return null;
-    return (s.builds || []).slice(0, 5).filter((b) => b && b.state && !FINAL.test(String(b.state)));
+    return (s.builds || []).slice(0, 5).filter((b) => b && b.state && !FINAL.test(String(b.state)) && !isStuck(b));
   } catch (_e) { return null; }
 }
 
@@ -42,4 +52,4 @@ if (require.main === module) {
     if (process.env.GITHUB_ENV) fs.appendFileSync(process.env.GITHUB_ENV, `ATHOM_IDLE_WAITED=${idle}\n`);
   })();
 }
-module.exports = { decide, FINAL };
+module.exports = { decide, FINAL, isStuck };
