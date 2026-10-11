@@ -907,6 +907,9 @@
       ]
     }
   ],
+  "9.0.1386": {
+    "en": "v9.0.1386: automated publish, manifest sync, and Homey test promotion."
+  },
   "9.0.1384": {
     "en": "v9.0.1384: automated publish, manifest sync, and Homey test promotion."
   },
@@ -961,10 +964,7 @@
   "9.0.1338": {
     "en": "v9.0.1338: automated publish, manifest sync, and Homey test promotion."
   },
-  "9.0.1335": {
-    "en": "Dimmers (2-gang dimmer module, dimmer wall switch, wall dimmer 1-gang) now use the Light device type, so the light ring and voice assistants treat them as lights. Paired devices switch once automatically; the device icon may change. Capabilities, IDs and flows are unchanged."
-  },
-  "9.0.1386": {
+  "9.0.1390": {
     "en": "v9.0.1386: automated publish, manifest sync, and Homey test promotion."
   }
 }
