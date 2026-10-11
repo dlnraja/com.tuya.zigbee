@@ -53,8 +53,10 @@ describe('P2696 Homey socket-hang + Fleetwood CI harden', () => {
     for (const f of files) {
       const yml = read(f);
       assert.ok(
-        /group:\s*athom-developer-api-publish/.test(yml),
-        `${f} must use concurrency group athom-developer-api-publish`,
+        // WHY(2026-10-03/10-11): per-app groups (athom-publish-<app>) — a single shared group made
+        // GitHub drop queued sibling-app publishes; each app serializes its own uploads.
+        /group:\s*(athom-developer-api-publish|athom-publish-[a-z0-9-]+)/.test(yml),
+        `${f} must use an Athom publish concurrency group`,
       );
       assert.ok(
         /cancel-in-progress:\s*false/.test(yml),

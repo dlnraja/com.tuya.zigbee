@@ -109,6 +109,7 @@ describe('P2458 — tip email socket hang up (#3140 / #3142)', () => {
     assert.ok(Array.isArray(ssot.p139.tipEmailExamples));
     assert.ok(ssot.p139.tipEmailExamples.includes('#3140'));
     assert.ok(ssot.p139.tipEmailExamples.includes('#3142'));
-    assert.strictEqual(ssot.p139.patch, 'P2458');
+    // p139.patch tracks the latest patch touching the block (P2696 superseded P2458).
+    assert.match(String(ssot.p139.patch), /^P(2458|2[4-9]\d\d)$/);
   });
 });
