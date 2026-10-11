@@ -1,21 +1,77 @@
 {
-  "timestamp": "2026-10-10T23:18:23.177Z",
+  "timestamp": "2026-10-11T00:04:32.131Z",
   "gate": "align-mfs-db-intelligent",
   "apply": false,
   "check": true,
-  "changeCount": 5,
-  "skippedCount": 62,
+  "changeCount": 34,
+  "skippedCount": 56,
   "highSeverityCount": 0,
   "byAction": {
-    "compose_exclusive": 5
+    "registry_compose_strip_couple_mfr": 2,
+    "compose_exclusive": 32
   },
   "changes": [
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_couple_mfr",
+      "mfr": "_tze200_nkjintbl",
+      "pid": "TS0601",
+      "from": "switch_2gang",
+      "to": null,
+      "removed": 1,
+      "caseId": "p2605-nkjintbl-tze200-not-switch2gang-not-btn-plug"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_couple_mfr",
+      "mfr": "_TZE200_nkjintbl",
+      "pid": "TS0601",
+      "from": "switch_2gang",
+      "to": null,
+      "removed": 1,
+      "caseId": "p2605-nkjintbl-tze200-not-switch2gang-not-btn-plug"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3290_IXD9MVV4",
+      "from": "water_valve_smart",
+      "to": "smart_irrigation_valve"
+    },
     {
       "severity": "medium",
       "action": "compose_exclusive",
       "mfr": "_TZ3000_7Y90PANY",
       "from": "climate_sensor",
       "to": "illuminance_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_EGVB1P2G",
+      "from": "climate_sensor",
+      "to": "smart_knob"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_LRFVZQ1E",
+      "from": "climate_sensor",
+      "to": "smart_knob"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3210_M3MXV66L",
+      "from": "climate_sensor",
+      "to": "motion_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3290_S6EZPA3J",
+      "from": "climate_sensor",
+      "to": "ir_blaster"
     },
     {
       "severity": "medium",
@@ -41,9 +97,163 @@
     {
       "severity": "medium",
       "action": "compose_exclusive",
+      "mfr": "_TZ3000_j6adk9id",
+      "from": "dimmer_wall_1gang",
+      "to": "illuminance_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tyzb01_qezuin6k",
+      "from": "dimmer_1_gang",
+      "to": "dimmer_wall_1gang"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3000_o1jzcxou",
+      "from": "gateway_zigbee_bridge",
+      "to": "plug_smart"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3000_dd8wwzcy",
+      "from": "climate_sensor",
+      "to": "double_power_point_2"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3000_kjfzuycl",
+      "from": "remote_button_wireless_smart",
+      "to": "smart_knob"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_LBTPIODY",
+      "from": "water_leak_sensor",
+      "to": "temphumidsensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TYZB01_4MDQXXNN",
+      "from": "switch_1gang",
+      "to": "illuminance_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TYZB01_M6EC2PGJ",
+      "from": "switch_1gang",
+      "to": "illuminance_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_FDXIHPP7",
+      "from": "wall_switch_1gang_1way",
+      "to": "switch_1gang"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
       "mfr": "_TZ3000_SKUEEKG3",
       "from": "wall_switch_1gang_1way",
       "to": "switch_1gang"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3000_00mk2xzy",
+      "from": "usb_dongle_triple",
+      "to": "plug_smart"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3210_nhqka112",
+      "from": "usb_dongle_triple",
+      "to": "plug_smart"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3210_bep7ccew",
+      "from": "usb_dongle_triple",
+      "to": "double_power_point_2"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3210_yvxjawlt",
+      "from": "usb_dongle_triple",
+      "to": "socket_power_strip_four"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3000_8nyaanzb",
+      "from": "plug_energy_monitor",
+      "to": "double_power_point_2"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3000_iy2c3n6p",
+      "from": "plug_energy_monitor",
+      "to": "double_power_point_2"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3000_rgpqqmbj",
+      "from": "usb_dongle_triple",
+      "to": "double_power_point_2"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3000_v1pdxuqq",
+      "from": "usb_dongle_triple",
+      "to": "plug_smart"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3000_8a833yls",
+      "from": "usb_dongle_triple",
+      "to": "plug_smart"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3000_nzkqcvvs",
+      "from": "usb_dongle_triple",
+      "to": "plug_smart"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3000_rtcrrvia",
+      "from": "usb_dongle_triple",
+      "to": "plug_smart"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3000_ysiog9xi",
+      "from": "usb_dongle_triple",
+      "to": "plug_smart"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3000_rqbjepe8",
+      "from": "usb_dongle_triple",
+      "to": "double_power_point_2"
     }
   ],
   "skipped": [
@@ -315,28 +525,8 @@
     },
     {
       "reason": "unclaimed_no_compose",
-      "mfr": "_tyzb01_ymcdbl3u",
-      "curated": "valvecontroller"
-    },
-    {
-      "reason": "unclaimed_no_compose",
       "mfr": "_TYZB01_CBIEZPDS",
       "curated": "lcdtemphumidsensor_2"
-    },
-    {
-      "reason": "unclaimed_no_compose",
-      "mfr": "_TYZB01_FTDKANLJ",
-      "curated": "lcdtemphumidluxsensor"
-    },
-    {
-      "reason": "unclaimed_no_compose",
-      "mfr": "_TYZB01_KVWJUJY9",
-      "curated": "lcdtemphumidluxsensor"
-    },
-    {
-      "reason": "unclaimed_no_compose",
-      "mfr": "_tyzb01_qezuin6k",
-      "curated": "dimmer_1_gang"
     },
     {
       "reason": "unclaimed_multi",
@@ -346,11 +536,6 @@
         "contact_sensor",
         "temphumidsensor"
       ]
-    },
-    {
-      "reason": "unclaimed_no_compose",
-      "mfr": "_tz3000_o1jzcxou",
-      "curated": "gateway_zigbee_bridge"
     },
     {
       "reason": "unclaimed_no_compose",
@@ -400,16 +585,6 @@
     },
     {
       "reason": "unclaimed_no_compose",
-      "mfr": "_tz3000_8nyaanzb",
-      "curated": "plug_energy_monitor"
-    },
-    {
-      "reason": "unclaimed_no_compose",
-      "mfr": "_tz3000_iy2c3n6p",
-      "curated": "plug_energy_monitor"
-    },
-    {
-      "reason": "unclaimed_no_compose",
       "mfr": "_tz3000_589kq4ul",
       "curated": "light_bulb_rgb_led"
     },
@@ -443,6 +618,30 @@
         "contact_sensor",
         "curtain_motor",
         "gas_sensor",
+        "ir_blaster",
+        "presence_sensor_radar",
+        "rain_sensor",
+        "scene_switch_4",
+        "sensor_contact_zigbee",
+        "siren",
+        "soil_sensor",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "reason": "brand_multi_intentional",
+      "mfr": "heobian",
+      "curated": "multi",
+      "claimers": [
+        "button_wireless_1",
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "gas_sensor",
+        "ir_blaster",
         "presence_sensor_radar",
         "rain_sensor",
         "scene_switch_4",

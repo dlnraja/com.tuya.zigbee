@@ -95,11 +95,18 @@ describe('P2533 complementary merge helpers', () => {
     assert.ok(models.includes('TS0044'));
   });
 
-  it('nkjintbl OEM stays button_wireless_plug — not switch_2gang bleed', () => {
+  it('nkjintbl OEM: TZE204 on button_wireless_plug only — not switch_2gang / not TZE200 on plug', () => {
     const plug = readJson('drivers/button_wireless_plug/driver.compose.json');
     const sw2 = readJson('drivers/switch_2gang/driver.compose.json');
-    assert.ok((plug.zigbee?.manufacturerName || []).some((m) => /nkjintbl/i.test(String(m))));
-    assert.ok(!(sw2.zigbee?.manufacturerName || []).some((m) => /nkjintbl/i.test(String(m))),
-      'complementary TZE200/284 sibling expand must not bleed nkjintbl onto switch_2gang');
+    const plugMfr = (plug.zigbee?.manufacturerName || []).map((m) => String(m).toLowerCase());
+    assert.ok(plugMfr.includes('_tze204_nkjintbl'), 'TZE204 stays on plug (P2537c)');
+    assert.ok(!plugMfr.some((m) => m === '_tze200_nkjintbl' || m === '_tze284_nkjintbl'),
+      'anti-bot p102-din-not-btn-plug: TZE200/284 must not sit on button_wireless_plug');
+    // P2605: _TZE200_nkjintbl + TS0601 is an evidence-backed 2-gang EF00 switch (DP1/DP2) and
+    // lives on switch_2gang on purpose. TZE204 (plug OEM) / TZE284 (ambiguous) must not bleed there.
+    const sw2Mfr = (sw2.zigbee?.manufacturerName || []).map((m) => String(m).toLowerCase());
+    assert.ok(sw2Mfr.includes('_tze200_nkjintbl'), 'P2605: TZE200 nkjintbl on switch_2gang');
+    assert.ok(!sw2Mfr.some((m) => m === '_tze204_nkjintbl' || m === '_tze284_nkjintbl'),
+      'complementary sibling expand must not bleed TZE204/TZE284 nkjintbl onto switch_2gang');
   });
 });
