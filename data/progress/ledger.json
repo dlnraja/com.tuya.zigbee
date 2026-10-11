@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-11T07:14:34.363Z",
+ "updated": "2026-10-11T10:18:01.532Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -15670,6 +15670,16 @@
    "status": "pending",
    "kind": "pr",
    "upstreamUpdatedAt": "2026-10-08T17:41:30Z"
+  },
+  "johan-issue:1526": {
+   "status": "pending",
+   "kind": "issue",
+   "upstreamUpdatedAt": null
+  },
+  "johan-issue:1527": {
+   "status": "pending",
+   "kind": "issue",
+   "upstreamUpdatedAt": null
   },
   "johan-issue:153": {
    "status": "done",
