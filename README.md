@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1433 |
+| **App Version** | v9.0.1434 |
 | **Drivers** | 449 (396 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,759 |
 | **Pairing Variants** | 19,068 (4 case combos per fingerprint) |
@@ -53,7 +53,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 |---|--------|-------------|
 | 1 | `climate_sensor` | 2,109 |
 | 2 | `switch_1gang` | 1,411 |
-| 3 | `curtain_motor` | 1,106 |
+| 3 | `curtain_motor` | 1,102 |
 | 4 | `presence_sensor_radar` | 995 |
 | 5 | `radiator_valve` | 613 |
 | 6 | `generic_tuya` | 581 |
@@ -63,9 +63,9 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 10 | `device_radiator_valve` | 368 |
 | 11 | `switch_4gang` | 324 |
 | 12 | `diy_custom_zigbee` | 306 |
-| 13 | `motion_sensor` | 285 |
-| 14 | `switch_3gang` | 283 |
-| 15 | `soil_sensor` | 282 |
+| 13 | `soil_sensor` | 286 |
+| 14 | `motion_sensor` | 285 |
+| 15 | `switch_3gang` | 283 |
 | 16 | `plug_energy_monitor` | 242 |
 | 17 | `contact_sensor` | 233 |
 | 18 | `thermostat_tuya_dp` | 200 |
@@ -103,7 +103,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.1433** | v9.0.1432: |
+| **v9.0.1434** | v9.0.1433: |
+| **v9.0.1433** | v9.0.1433: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1432** | v9.0.1432: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1431** | v9.0.1431: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1430** | v9.0.1430: automated publish, manifest sync, and Homey test promotion. |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1425** | v9.0.1425: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1424** | v9.0.1424: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1422** | v9.0.1393: automated publish, manifest sync, and Homey test promotion. |
-| **v9.0.1421** | v9.0.1393: automated publish, manifest sync, and Homey test promotion. |
 
 <!-- CHANGELOG_END -->
 
