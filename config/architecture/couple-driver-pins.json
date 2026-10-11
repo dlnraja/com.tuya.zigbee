@@ -158,6 +158,96 @@
       "pid": "TS0001",
       "source": "Z2M WHD02",
       "regression": "lost-couples 2026-10-11 pass 3 (variant/W4)"
+    },
+    {
+      "mfr": [
+        "_TYZB01_ncutbjdi"
+      ],
+      "driver": "switch_1gang",
+      "pid": "TS0003",
+      "source": "johan + z2m",
+      "regression": "W4 Z2M-pid couple 2026-10-11 (Johan mfr + Z2M)"
+    },
+    {
+      "mfr": [
+        "_TYZB01_aneiicmq"
+      ],
+      "driver": "switch_1gang",
+      "pid": "TS0003",
+      "source": "johan + z2m",
+      "regression": "W4 Z2M-pid couple 2026-10-11 (Johan mfr + Z2M)"
+    },
+    {
+      "mfr": [
+        "_TZ3210_zxbtub8r"
+      ],
+      "driver": "dimmer_1_gang",
+      "pid": "TS110E",
+      "source": "johan + z2m",
+      "regression": "W4 Z2M-pid couple 2026-10-11 (Johan mfr + Z2M)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_18ejxno0"
+      ],
+      "driver": "switch_2gang",
+      "pid": "TS0012",
+      "source": "johan + z2m",
+      "regression": "W4 Z2M-pid couple 2026-10-11 (Johan mfr + Z2M)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_qewo8dlz"
+      ],
+      "driver": "switch_3_gang",
+      "pid": "TS0013",
+      "source": "johan + z2m",
+      "regression": "W4 Z2M-pid couple 2026-10-11 (Johan mfr + Z2M)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_qeuvnohg"
+      ],
+      "driver": "din_rail_switch",
+      "pid": "TS011F",
+      "source": "johan + z2m",
+      "regression": "W4 Z2M-pid couple 2026-10-11 (Johan mfr + Z2M)"
+    },
+    {
+      "mfr": [
+        "_TYZB01_iuepbmpv"
+      ],
+      "driver": "smartplug",
+      "pid": "TS0121",
+      "source": "johan + z2m",
+      "regression": "W4 Z2M-pid couple 2026-10-11 (Johan mfr + Z2M)"
+    },
+    {
+      "mfr": [
+        "_TZ3210_iystcadi"
+      ],
+      "driver": "light_bulb_rgb_led",
+      "pid": "TS0505B",
+      "source": "johan + z2m",
+      "regression": "W4 Z2M-pid couple 2026-10-11 (Johan mfr + Z2M)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_saiqcn0y"
+      ],
+      "driver": "temphumidsensor3",
+      "pid": "TS0201",
+      "source": "johan + z2m",
+      "regression": "W4 Z2M-pid couple 2026-10-11 (Johan mfr + Z2M)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_xr3htd96"
+      ],
+      "driver": "temphumidsensor3",
+      "pid": "TS0201",
+      "source": "johan + z2m",
+      "regression": "W4 Z2M-pid couple 2026-10-11 (Johan mfr + Z2M)"
     }
   ]
 }
