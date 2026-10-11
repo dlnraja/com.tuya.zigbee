@@ -73,7 +73,9 @@ describe('P2681 bootstrap ghost flows + dzwgk7e2 profile', () => {
 
   it('TS004x remote fallback debounce is snappy (≤80)', () => {
     const src = fs.readFileSync(path.join(ROOT, 'lib/mixins/PhysicalButtonMixin.js'), 'utf8');
-    assert.ok(/debounceMs = \/\^TS004\[12346F\]\/i\.test\(productId\) \? 80/.test(src)
-      || /TS004\[12346F\].*\? 80/.test(src.replace(/\s+/g, ' ')));
+    // P2714 (20fe12c583) replaced the 80ms class fallback by a 25ms snappy floor; snappyRelayFlow
+    // caps any profile debounce at 80.
+    assert.ok(/debounceMs:\s*25\b/.test(src));
+    assert.ok(/Math\.min\(Number\(profile\.debounceMs\) \|\| 25, 80\)/.test(src));
   });
 });
