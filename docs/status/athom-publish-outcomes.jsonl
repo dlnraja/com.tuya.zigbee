@@ -6,3 +6,4 @@
 {"at":"2026-10-10/11 (backfill)","version":"9.0.1385","buildId":3504,"state":"test","kind":null,"retryRun":false,"retry":null,"run":null}
 {"at":"2026-10-10/11 (backfill)","version":"9.0.1386","buildId":3505,"state":"processing_failed","kind":"AggregateError","retryRun":false,"retry":null,"run":null}
 {"at":"2026-10-10/11 (backfill)","version":"9.0.1387","buildId":3506,"state":"processing_failed","kind":"AggregateError","retryRun":false,"retry":null,"run":null,"note":"R6 probe whd02 no couples"}
+{"at":"2026-10-11T00:39:13.097Z","version":"9.0.1392","buildId":3511,"state":"processing_failed","kind":"unknown","retryRun":false,"retry":false,"run":"38098339040"}
