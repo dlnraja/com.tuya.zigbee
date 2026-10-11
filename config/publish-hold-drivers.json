@@ -12,6 +12,12 @@
       "since": "2026-10-10",
       "reason": "Athom processing_failed AggregateError: master #3480 v9.0.1361 failed with spi held; bisect J5 #3481 v9.0.1363 (I + switch_module_whd02 + its 2 triggers only, via publish.yml) failed. Never published (absent from last Test build I #3468 v9.0.1349). Unique couple _TZ3000_skueekg3/TS000F stays in source, unpublished until a dedicated bisect build passes. 2026-10-11 release retry after pipeline fixes: #3527 v9.0.1408 + #3528 v9.0.1409 both AggregateError → content failure confirmed, stays held.",
       "sacredCouplesOwnedElsewhere": false
+    },
+    {
+      "id": "valve_controller_5zone",
+      "since": "2026-10-11",
+      "reason": "Athom processing_failed AggregateError on first builds with this new driver: #3536 v9.0.1417 + transient retry #3537 v9.0.1418 (v9.0.1416 without it reached Test). Held pending dedicated bisect; same pattern as spi/whd02. Note: its only couple _TZ3000_j0ktmul1/TS011F was moved off usb_dongle_triple, so it is unpaired-for-new-installs while held (existing usb_dongle_triple devices unaffected).",
+      "sacredCouplesOwnedElsewhere": false
     }
   ]
 }
