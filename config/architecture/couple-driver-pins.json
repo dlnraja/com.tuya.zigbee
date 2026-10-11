@@ -275,6 +275,15 @@
       "pid": "TS0201",
       "source": "johan + z2m",
       "regression": "W4 Z2M-pid couple 2026-10-11 (Johan mfr + Z2M)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_j0ktmul1"
+      ],
+      "driver": "valve_controller_5zone",
+      "pid": "TS011F",
+      "source": "z2m + Z2S_Library",
+      "regression": "new driver 2026-10-11 (lost-couples lead)"
     }
   ]
 }
