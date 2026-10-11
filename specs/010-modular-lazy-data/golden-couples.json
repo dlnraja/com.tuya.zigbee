@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-11T09:22:12.739Z",
+ "generated": "2026-10-11T13:23:48.026Z",
  "drivers": 388,
  "snapshot": {
   "air_purifier": {
@@ -855,9 +855,9 @@
    "pidSha": "480a275813c8653e"
   },
   "gas_sensor": {
-   "mfr": 13,
+   "mfr": 14,
    "pid": 5,
-   "mfrSha": "299a57221a60e05c",
+   "mfrSha": "845167401c34f263",
    "pidSha": "606b2995829e9479"
   },
   "gas_sensor_switch": {
@@ -1329,9 +1329,9 @@
    "pidSha": "f3e89c56b663e4d7"
   },
   "remote_button_wireless_smart": {
-   "mfr": 1,
+   "mfr": 0,
    "pid": 2,
-   "mfrSha": "546300ad73b57d41",
+   "mfrSha": "e3b0c44298fc1c14",
    "pidSha": "f3e89c56b663e4d7"
   },
   "remote_button_wireless_usb": {
@@ -1575,9 +1575,9 @@
    "pidSha": "16eca7095d19bea2"
   },
   "sensor_motion_presence": {
-   "mfr": 26,
+   "mfr": 25,
    "pid": 19,
-   "mfrSha": "a0b97820380ec61a",
+   "mfrSha": "1f3e22c034943d3a",
    "pidSha": "e7c5f08cc4f7e52a"
   },
   "sensor_motion_radar": {
@@ -1863,9 +1863,9 @@
    "pidSha": "b46b96d17990cf37"
   },
   "switch_1gang": {
-   "mfr": 375,
+   "mfr": 374,
    "pid": 38,
-   "mfrSha": "742aba778374fc68",
+   "mfrSha": "534bd4e5880656cb",
    "pidSha": "fd65b1d55ed8db6a"
   },
   "switch_2_gang": {
@@ -2289,9 +2289,9 @@
    "pidSha": "8218a22aa12bceb7"
   },
   "water_leak_sensor": {
-   "mfr": 32,
+   "mfr": 33,
    "pid": 21,
-   "mfrSha": "adcd8d9276b5a912",
+   "mfrSha": "5bae4c2970a01829",
    "pidSha": "ddd617471a56ff24"
   },
   "water_leak_sensor_tuya": {

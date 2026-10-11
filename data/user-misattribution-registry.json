@@ -8550,6 +8550,102 @@
         "tr-nc/plantctl Z2M report"
       ],
       "notes": "2026-10-11: metering smart plug TS011F_plug_1"
+    },
+    {
+      "id": "w4n-_tze200_aj0oxo1i-TS0225",
+      "mfr": [
+        "_TZE200_aj0oxo1i",
+        "_tze200_aj0oxo1i"
+      ],
+      "productId": [
+        "TS0225"
+      ],
+      "canonicalDriver": "gas_sensor",
+      "forbidMode": "couple",
+      "sources": [
+        "z2m hobeian.ts (ZG-225Z, Gas sensor)"
+      ],
+      "notes": "2026-10-11: ZG-225Z gas sensor"
+    },
+    {
+      "id": "w4n-_tz3000_6oabgtzv-TS0207",
+      "mfr": [
+        "_TZ3000_6oabgtzv",
+        "_tz3000_6oabgtzv"
+      ],
+      "productId": [
+        "TS0207"
+      ],
+      "canonicalDriver": "water_leak_sensor",
+      "forbidMode": "couple",
+      "sources": [
+        "johan water_detector (TS0207; only other pid is junk 'q9mpfhw')"
+      ],
+      "notes": "2026-10-11: water leak detector"
+    },
+    {
+      "id": "w4n-_tz3000_fdxihpp7-TS0001",
+      "mfr": [
+        "_TZ3000_fdxihpp7",
+        "_tz3000_fdxihpp7"
+      ],
+      "productId": [
+        "TS0001"
+      ],
+      "canonicalDriver": "switch_1gang",
+      "forbidMode": "couple",
+      "sources": [
+        "z2m tuya.ts (TS0001 block)"
+      ],
+      "notes": "2026-10-11: AY301Z 1-gang switch module"
+    },
+    {
+      "id": "w4n-_tz3000_kjfzuycl-TS004F",
+      "mfr": [
+        "_TZ3000_kjfzuycl",
+        "_tz3000_kjfzuycl"
+      ],
+      "productId": [
+        "TS004F"
+      ],
+      "canonicalDriver": "smart_remote_1_button",
+      "forbidMode": "couple",
+      "sources": [
+        "z2m tuya.ts (ERS-10TZBVB-AA)"
+      ],
+      "notes": "2026-10-11: Moes ERS-10TZBVB-AA smart button"
+    },
+    {
+      "id": "w4n-_tz3000_fa9mlvja-TS0041",
+      "mfr": [
+        "_TZ3000_fa9mlvja",
+        "_tz3000_fa9mlvja"
+      ],
+      "productId": [
+        "TS0041"
+      ],
+      "canonicalDriver": "button_wireless_1",
+      "forbidMode": "couple",
+      "sources": [
+        "z2m tuya.ts (IH-K663)"
+      ],
+      "notes": "2026-10-11: IH-K663 smart button"
+    },
+    {
+      "id": "w4n-_tyzb01_qezuin6k-TS110F",
+      "mfr": [
+        "_TYZB01_qezuin6k",
+        "_tyzb01_qezuin6k"
+      ],
+      "productId": [
+        "TS110F"
+      ],
+      "canonicalDriver": "dimmer_1_gang",
+      "forbidMode": "couple",
+      "sources": [
+        "z2m lonsonho.ts"
+      ],
+      "notes": "2026-10-11: QS-Zigbee-D02-TRIAC-LN 1-gang dimmer module"
     }
   ],
   "entries": {
