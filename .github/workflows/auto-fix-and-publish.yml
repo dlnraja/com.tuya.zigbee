@@ -52,6 +52,9 @@ env:
 
 concurrency:
   # Per-branch so master and stable-v5 do not serialize/race on one lock.
+  # WHY(2026-10-11): stays per-ref on purpose. It runs on EVERY master/stable push; in the shared
+  # athom-publish-master group its pending run would replace (cancel) a pending Auto-Publish on Push
+  # (GitHub keeps one pending run per group). Its rare recovery uploads use the Athom idle wait instead.
   group: auto-fix-and-publish-${{ github.ref_name }}
   cancel-in-progress: false
 
@@ -366,6 +369,16 @@ jobs:
           else
             echo "No auto-fix changes to commit"
           fi
+
+      # WHY(2026-10-11): invalid_state when another build of this app was still processing. Bounded wait
+      # for Athom to finish the previous build before uploading (read-only, never fails the job).
+      - name: Wait for Athom idle (previous build final)
+        if: env.trigger_publish == 'true' && github.ref_name != 'stable-v5'
+        continue-on-error: true
+        timeout-minutes: 17
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: node .github/scripts/wait-athom-idle.js com.dlnraja.tuya.zigbee
 
       - name: 🚀 Publish if needed
         # P193/P217/P2385: never Homey-publish 5.12 from this workflow while master 9.0 soaks.
