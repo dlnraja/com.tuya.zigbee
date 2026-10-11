@@ -27,7 +27,9 @@ describe('P2668 Bastien complementary couple research patches', () => {
     const en = j.zigbee?.learnmode?.instruction?.en || '';
     assert.ok(/Zigbee Bastien/i.test(en));
     assert.ok(/HOBEIAN|ZG-301Z/i.test(en));
-    assert.ok(/1\.0\.4[34]/.test(en));
+    // version floor in the hint moves with Bastien releases (was 1.0.43/44, now ≥1.0.49)
+    const m = en.match(/1\.0\.(\d+)/);
+    assert.ok(m && Number(m[1]) >= 43);
   });
 
   it('lcdtemphumidsensor has anti-Virtual learnmode', () => {
