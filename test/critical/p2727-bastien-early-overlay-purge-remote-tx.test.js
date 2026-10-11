@@ -64,7 +64,9 @@ describe('P2727 Bastien early overlay purge + remote TX gate', () => {
   it('ButtonDevice + PhysicalButtonMixin pass homey into skip helper', () => {
     const btn = fs.readFileSync(path.join(ROOT, 'lib', 'devices', 'ButtonDevice.js'), 'utf8');
     const phys = fs.readFileSync(path.join(ROOT, 'lib', 'mixins', 'PhysicalButtonMixin.js'), 'utf8');
-    assert.ok(/shouldSkipSleepyRemoteBatteryTx\(profile,\s*\{\s*homey:\s*this\.homey\s*\}\)/.test(btn), 'ButtonDevice P2727 homey arg');
-    assert.ok(/shouldSkipSleepyRemoteBatteryTx\(profile,\s*\{\s*homey:\s*this\.homey\s*\}\)/.test(phys), 'PhysicalButtonMixin P2727 homey arg');
+    // WHY(P2755 d7bd17d0f0): callers may also pass `device: this` — homey must still be passed.
+    const rx = /shouldSkipSleepyRemoteBatteryTx\(profile,\s*\{\s*(device:\s*this,\s*)?homey:\s*this\.homey\s*\}\)/;
+    assert.ok(rx.test(btn), 'ButtonDevice P2727 homey arg');
+    assert.ok(rx.test(phys), 'PhysicalButtonMixin P2727 homey arg');
   });
 });
