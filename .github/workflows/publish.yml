@@ -386,21 +386,6 @@ jobs:
           run_diag 60 node .github/scripts/privacy-redactor.js diagnostics .github/state/diagnostics-report.json .github/state/diagnostics-crossref.yml .github/state/homey-device-report.json .github/state/dashboard-monitor-report.json screenshots/full-diag-report.json
           run_diag 60 node scripts/ci/diagnostic-history-gate.js --json
 
-      # WHY(2026-10-10): socket hang up / "specified key does not exist" are Athom transport failures.
-      # One bumped retry (new version, never the same), incl. AggregateError (flaky 2026-10-11), never from a retry run.
-      - name: Transient Athom failure - single retry with a new version
-        if: always() && steps.pub.outcome == 'success'
-        continue-on-error: true
-        env:
-          TRANSIENT_RETRY: ${{ github.event.inputs.transient_retry || 'false' }}
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          out=$(node .github/scripts/transient-publish-retry.js) || true
-          echo "$out"
-          if printf '%s' "$out" | grep -q '^\[transient-retry\] RETRY'; then
-            gh workflow run publish.yml --ref "${GITHUB_REF_NAME}" -f transient_retry=true
-          fi
-
       - name: Upload promote screenshots
         if: always()
         uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
@@ -439,9 +424,22 @@ jobs:
           fi
 
       # WHY(2026-10-11): no false green — fail the run when Athom did not put this version in Test.
+      # WHY(2026-10-11): the retry decision runs only once Athom's final state is known (it used to run
+      # before the gate, without HOMEY_PAT, and saw "no Athom build" — #3529 socket hang up never retried).
+      # One bumped retry (new version, never the same) for socket hang up / missing key / AggregateError /
+      # invalid_state-after-idle; a retry run never retries.
       - name: Athom final state gate (red unless Test)
         if: always() && steps.pub.outcome == 'success'
         timeout-minutes: 15
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
-        run: node .github/scripts/assert-athom-final.js
+          TRANSIENT_RETRY: ${{ github.event.inputs.transient_retry || 'false' }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if node .github/scripts/assert-athom-final.js; then exit 0; fi
+          out=$(node .github/scripts/transient-publish-retry.js) || true
+          echo "$out"; echo "$out" >> "$GITHUB_STEP_SUMMARY"
+          if printf '%s' "$out" | grep -q '^\[transient-retry\] RETRY'; then
+            gh workflow run publish.yml --ref "${GITHUB_REF_NAME}" -f transient_retry=true || true
+          fi
+          exit 1
