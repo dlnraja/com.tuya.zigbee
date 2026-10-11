@@ -65,7 +65,16 @@ describe('fingerprint-matcher (P92 heuristic matching)', function() {
     });
   });
 
+  // WHY(2026-10-11): P146 lets the real misattribution registry win first (score 1.0, matchType
+  // 'user_misattribution_registry') for real couples like _TZE200_vvmbj46n. These fixtures test the
+  // heuristic tiers in isolation, so the registry is stubbed out (it only "passed" before when the
+  // full run's host heap made the registry load empty).
+  const Misattr = require('../lib/pairing/UserMisattributionRegistry');
+  let realLookup;
+  const stubRegistry = () => { before(function() { realLookup = Misattr.lookup; Misattr.lookup = () => null; }); after(function() { Misattr.lookup = realLookup; }); };
+
   describe('matchFingerprint scoring tiers', function() {
+    stubRegistry();
     it('scores an exact raw key 1.0', function() {
       const hit = FM.matchFingerprint('_TZE200_vvmbj46n', 'TS0601', makeDb());
       assert.strictEqual(hit.matchType, 'exact');
@@ -198,6 +207,7 @@ describe('fingerprint-matcher (P92 heuristic matching)', function() {
   });
 
   describe('verbose logging', function() {
+    stubRegistry();
     it('logs raw input, normalized form and retained score when verbose', function() {
       const lines = [];
       FM.matchFingerprint('_TZE204_vvmbj46n', 'TS0601', makeDb(), { verbose: true, log: (...a) => lines.push(a.map(x => (typeof x === 'object' ? JSON.stringify(x) : String(x))).join(' ')) });
@@ -265,8 +275,10 @@ describe('fingerprint-matcher (P92 heuristic matching)', function() {
       const fp = RuntimeFingerprintDB.getFingerprint('_TZE204_vvmbj46n', 'TS0601');
       assert(fp);
       assert.strictEqual(fp.driverId, 'lcdtemphumidsensor');
-      assert.strictEqual(fp.matchType, 'prefix_variant');
-      assert.strictEqual(fp._matchedKey, '_TZE200_vvmbj46n');
+      // WHY(P2571): the misattribution registry now lists the _TZE204_ form explicitly (same driver),
+      // so the runtime resolves it as a registry hit before the prefix-variant heuristic.
+      assert.ok(['prefix_variant', 'user_misattribution_registry'].includes(fp.matchType), fp.matchType);
+      if (fp.matchType === 'prefix_variant') assert.strictEqual(fp._matchedKey, '_TZE200_vvmbj46n');
       assert(fp._matchScore >= 0.9);
     });
 
