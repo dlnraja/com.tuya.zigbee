@@ -22,7 +22,7 @@ describe('P2636 dzwgk7e2+TS0042 2-btn (phantom 4EP)', () => {
     assert.ok((c.zigbee.productId || []).includes('TS0042'));
     // 552a5736a4/d638073cb7 moved verified TS011F plug/breaker mfrs (jak16dll, cayepv1a, lepzuhto,
     // 4ux0ondb, b28wrpvx) to plug drivers; floor tracks that, still guards mass purges.
-    assert.ok((c.zigbee.manufacturerName || []).length >= 535); // 2026-10-11: _TZ3000_yw5tvzsk (TS0043, Johan+deCONZ) moved to button_wireless_3 (curated removal)
+    assert.ok((c.zigbee.manufacturerName || []).length >= 520); // 2026-10-11 johan-only round: key8kk7r+rrjr1q0u (3-btn) and zl1kmjqx (temp sensor) moved out (curated removals); qewo8dlz TS0013 3-gang moved to switch_3_gang (W4). 2026-10-11: _TZ3000_yw5tvzsk (TS0043, Johan+deCONZ) moved to button_wireless_3 (curated removal)
   });
 
   it('device.js forces 2 buttons + P2636 dzwgk7e2 / skipEf00', () => {
