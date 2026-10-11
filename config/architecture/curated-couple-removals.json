@@ -243,6 +243,14 @@
       ],
       "why": "TS0003 Zemismart 3-gang wall switch (JohanBendz#795 interview + Johan verification); climate_sensor has no Z2M pid for it; owner switch_3_gang",
       "source": "c4fb32f3de (2026-10-11 W4)"
+    },
+    {
+      "driver": "sensor_motion_presence",
+      "mfr": [
+        "_TZE200_p6fuhvez"
+      ],
+      "why": "2026-10-11: TS0225 = HOBEIAN ZG-225Z gas sensor (Z2M hobeian.ts + sprut/Hub#4328 interview IAS zoneType 43 gas) → owner gas_sensor",
+      "source": "lost-couples 2026-10-11"
     }
   ]
 }
