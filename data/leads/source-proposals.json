@@ -1,6 +1,6 @@
 {
   "$comment": "Change-driven proposals from data/sources/registry.json. Identifiers + our own one-line summaries; review before landing (W4 couples, research first).",
-  "updated": "2026-10-10T23:30:14.577Z",
+  "updated": "2026-10-11T09:18:49.095Z",
   "proposals": [
     {
       "source": "z2m-issues",
@@ -8962,6 +8962,2082 @@
       "quirk": false,
       "credit": "Homey Community app topics: Switcher (iBush), HomeSuite (Gabriel_Pedrosa_Mach), Aqara Community (makleso6), Philips Hue Zigbee (Johan Bendz)",
       "seenAt": "2026-10-10T23:26:03.564Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/32810",
+      "summary": "issue #32810 (open) by slovac197: [External Converter]: TS0003 from _TZ3000_ly9apzky",
+      "mfrs": [
+        "_TZ3000_ly9apzky"
+      ],
+      "pids": [
+        "TS0003"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-11T09:18:29.068Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/32805",
+      "summary": "issue #32805 (open) by bananavdk: [TS0201 (ZTH05_1) / _TZ3000_bgsigers] ???",
+      "mfrs": [
+        "_TZ3000_bgsigers"
+      ],
+      "pids": [
+        "TS0201"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-11T09:18:29.068Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/33341",
+      "summary": "issue #33341 (closed) by gamajunior: [External Converter]: TS0601 from _TZE284_ar63nwsk",
+      "mfrs": [
+        "_TZE284_ar63nwsk",
+        "_TZ3000_fa9mlvja"
+      ],
+      "pids": [
+        "TS0601",
+        "TS0041"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-11T09:18:29.069Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/pull/33339",
+      "summary": "PR #33339 (open) by alexanderscrimgeour: fix: Don't publish a color_mode the light's discovery doesn't support",
+      "mfrs": [],
+      "pids": [
+        "TS0502B"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-11T09:18:29.069Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/33343",
+      "summary": "issue #33343 (closed) by pawelenea-design: [New device support]: TS0601 from _TZE284_ly9tkwcy led controler CCT",
+      "mfrs": [
+        "_TZE284_ly9tkwcy"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-11T09:18:29.069Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/33344",
+      "summary": "issue #33344 (open) by eitanam: [New device support]: Zemismart ZN2S-USC1U (New) - TS0601 _TZE28C1000000_19jwhi8c",
+      "mfrs": [
+        "_TZE204_mpg22jc1"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [
+        1,
+        2,
+        8,
+        10
+      ],
+      "bug": true,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-11T09:18:29.069Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/33345",
+      "summary": "issue #33345 (open) by MegaChel174: Bug: TypeError in ClusterSinglePicker on Reporting tab (v5)",
+      "mfrs": [],
+      "pids": [
+        "TS011F"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": true,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-11T09:18:29.069Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/33347",
+      "summary": "issue #33347 (closed) by hw26651: [External Converter]: _TZE200_7upwjcca TS0601 electric door opener / glass door controller",
+      "mfrs": [
+        "_TZE200_7upwjcca"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [
+        1,
+        2,
+        6,
+        101,
+        103,
+        105,
+        107,
+        108,
+        109,
+        5,
+        3,
+        104,
+        102,
+        110
+      ],
+      "bug": true,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-11T09:18:29.069Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/32818",
+      "summary": "issue #32818 (open) by gianluca144-dev: [TS011F (TO-Q-SY2-163JZT) / _TZ3000_cayepv1a] ???",
+      "mfrs": [
+        "_TZ3000_cayepv1a"
+      ],
+      "pids": [
+        "TS011F"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-11T09:18:29.069Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/33349",
+      "summary": "issue #33349 (open) by DadasupR: zhc:tuya: Failed respond to version response",
+      "mfrs": [
+        "_TZE284_cjbofhxw"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-11T09:18:29.069Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/pull/5432",
+      "summary": "PR #5432 (open) by garc33: Add Tuya TS0601 _TZE204_znvwzxkq triple-channel dimmer",
+      "mfrs": [
+        "_TZE204_znvwzxkq"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [
+        1,
+        7,
+        15,
+        4,
+        18
+      ],
+      "bug": false,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-10-11T09:18:31.565Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/pull/5433",
+      "summary": "PR #5433 (open) by 756c69: Fix duplicate cache arguments in TuyaCluster.read_attributes",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-10-11T09:18:31.565Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/issues/4149",
+      "summary": "issue #4149 (open) by Kirill172: [Device Support Request] Добавить поддержку мотора для жалюзи TS0601 _TZE284_2gi1hy8s",
+      "mfrs": [
+        "_TZE284_2gi1hy8s"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-10-11T09:18:31.566Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/pull/3481",
+      "summary": "PR #3481 (open) by hangy: Add UseeLink 302EU-Zigbee power strip (_TZ3000_cfnprab5)",
+      "mfrs": [
+        "_TZ3000_cfnprab5"
+      ],
+      "pids": [],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-10-11T09:18:31.566Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/pull/5077",
+      "summary": "PR #5077 (open) by WBNet-Wout: Add Tuya TS110E 2 gang dimmer (_TZ3210_pagajpog)",
+      "mfrs": [
+        "_TZ3210_pagajpog"
+      ],
+      "pids": [
+        "TS110E"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-10-11T09:18:31.566Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/pull/5078",
+      "summary": "PR #5078 (open) by gordoasan: Add MOES ZS-D1 dimmer",
+      "mfrs": [
+        "_TZE200_a1ovdobn",
+        "_TZE284_a1ovdobn"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [
+        1,
+        2
+      ],
+      "bug": false,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-10-11T09:18:31.566Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/pull/5043",
+      "summary": "PR #5043 (closed) by dark-light-cz: Fix illuminance device class for TS0207 diagnostic light sensors",
+      "mfrs": [
+        "_TZ3210_tgvtvdoc"
+      ],
+      "pids": [
+        "TS0207"
+      ],
+      "dps": [
+        102,
+        103,
+        101
+      ],
+      "bug": true,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-10-11T09:18:31.566Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/pull/5436",
+      "summary": "PR #5436 (open) by fredoche: Add LiXee ZLinky tariff period sensor and reporting",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-10-11T09:18:31.566Z"
+    },
+    {
+      "source": "deconz",
+      "kind": "converters",
+      "ref": "https://github.com/dresden-elektronik/deconz-rest-plugin/pull/8664",
+      "summary": "PR #8664 (closed) by craggyh: DDF for Tuya soil moisture sensor (_TZE284_33bwcga2)",
+      "mfrs": [
+        "_TZE284_33bwcga2"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [
+        3,
+        5,
+        15
+      ],
+      "bug": false,
+      "quirk": false,
+      "credit": "dresden elektronik and deCONZ contributors",
+      "seenAt": "2026-10-11T09:18:32.854Z"
+    },
+    {
+      "source": "deconz",
+      "kind": "converters",
+      "ref": "https://github.com/dresden-elektronik/deconz-rest-plugin/pull/8665",
+      "summary": "PR #8665 (open) by mattreim: Add Tuya soil sensors",
+      "mfrs": [
+        "_TZE284_33bwcga2"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "dresden elektronik and deCONZ contributors",
+      "seenAt": "2026-10-11T09:18:32.854Z"
+    },
+    {
+      "source": "tuya-local",
+      "kind": "converters",
+      "ref": "https://github.com/make-all/tuya-local/blob/95300d05ac54426f63bb2fb74894b46e642b7797/custom_components/tuya_local/devices/ezaiot_lite_socket_thermostat.yaml",
+      "summary": "added custom_components/tuya_local/devices/ezaiot_lite_socket_thermostat.yaml (+478/-0) between 39dc6e6..95300d0",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        45,
+        110,
+        101,
+        108,
+        1,
+        109
+      ],
+      "bug": false,
+      "quirk": false,
+      "credit": "Jason Rumney (make-all) and tuya-local contributors",
+      "seenAt": "2026-10-11T09:18:34.151Z"
+    },
+    {
+      "source": "tuya-local",
+      "kind": "converters",
+      "ref": "https://github.com/make-all/tuya-local/issues/6325",
+      "summary": "issue #6325 (closed) by csp33: Request support for Arespark PF50 Pet Feeder",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        18
+      ],
+      "bug": false,
+      "quirk": false,
+      "credit": "Jason Rumney (make-all) and tuya-local contributors",
+      "seenAt": "2026-10-11T09:18:34.702Z"
+    },
+    {
+      "source": "tuya-local",
+      "kind": "converters",
+      "ref": "https://github.com/make-all/tuya-local/issues/6293",
+      "summary": "issue #6293 (closed) by adammcc5: Daybetter keytfesxxsqewnqy: colour temperature is backwards on rgbwc_lightbulb, belongs in rgbcw_lightbulb",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        23,
+        24
+      ],
+      "bug": true,
+      "quirk": false,
+      "credit": "Jason Rumney (make-all) and tuya-local contributors",
+      "seenAt": "2026-10-11T09:18:34.702Z"
+    },
+    {
+      "source": "tuya-local",
+      "kind": "converters",
+      "ref": "https://github.com/make-all/tuya-local/issues/6327",
+      "summary": "issue #6327 (closed) by ikonst: Supporting fan+light with DP 20 and DP 51",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        20,
+        51
+      ],
+      "bug": true,
+      "quirk": false,
+      "credit": "Jason Rumney (make-all) and tuya-local contributors",
+      "seenAt": "2026-10-11T09:18:34.702Z"
+    },
+    {
+      "source": "tuya-local",
+      "kind": "converters",
+      "ref": "https://github.com/make-all/tuya-local/pull/3929",
+      "summary": "PR #3929 (closed) by darchons: Synchronize accesses to sub-devices",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Jason Rumney (make-all) and tuya-local contributors",
+      "seenAt": "2026-10-11T09:18:34.702Z"
+    },
+    {
+      "source": "tuya-local",
+      "kind": "converters",
+      "ref": "https://github.com/make-all/tuya-local/issues/6328",
+      "summary": "issue #6328 (closed) by Maks-vint: Request support for Litter box basic version",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        6
+      ],
+      "bug": false,
+      "quirk": false,
+      "credit": "Jason Rumney (make-all) and tuya-local contributors",
+      "seenAt": "2026-10-11T09:18:34.702Z"
+    },
+    {
+      "source": "tuya-local",
+      "kind": "converters",
+      "ref": "https://github.com/make-all/tuya-local/issues/6330",
+      "summary": "issue #6330 (open) by daubman: Request support for LiveFine P30 WiFi Automatic Pill Dispenser (lofswf15t4vfbtde)",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        120,
+        118,
+        131,
+        132
+      ],
+      "bug": false,
+      "quirk": false,
+      "credit": "Jason Rumney (make-all) and tuya-local contributors",
+      "seenAt": "2026-10-11T09:18:34.702Z"
+    },
+    {
+      "source": "tuya-local",
+      "kind": "converters",
+      "ref": "https://github.com/make-all/tuya-local/issues/6322",
+      "summary": "issue #6322 (closed) by lageorgem: Malformed RGB data freezes light state and breaks turn_on",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        111,
+        102
+      ],
+      "bug": true,
+      "quirk": true,
+      "credit": "Jason Rumney (make-all) and tuya-local contributors",
+      "seenAt": "2026-10-11T09:18:34.702Z"
+    },
+    {
+      "source": "tuya-local",
+      "kind": "converters",
+      "ref": "https://github.com/make-all/tuya-local/issues/6337",
+      "summary": "issue #6337 (open) by Furiousfipa: Request support for Engo E20iWIFI thermostat",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        112,
+        109,
+        37,
+        2,
+        39
+      ],
+      "bug": false,
+      "quirk": false,
+      "credit": "Jason Rumney (make-all) and tuya-local contributors",
+      "seenAt": "2026-10-11T09:18:34.702Z"
+    },
+    {
+      "source": "tuya-local",
+      "kind": "converters",
+      "ref": "https://github.com/make-all/tuya-local/issues/6332",
+      "summary": "issue #6332 (closed) by MaierDo: New device: Tuya RGBIC+CCT LED strip 2x5m (product_id keyj3w8cmutjmwk5) - close but not exact match to rgbww_lightbulb",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        21,
+        22,
+        23,
+        24
+      ],
+      "bug": false,
+      "quirk": false,
+      "credit": "Jason Rumney (make-all) and tuya-local contributors",
+      "seenAt": "2026-10-11T09:18:34.702Z"
+    },
+    {
+      "source": "tuya-local",
+      "kind": "converters",
+      "ref": "https://github.com/make-all/tuya-local/issues/6335",
+      "summary": "issue #6335 (closed) by lageorgem: Loginovo TV sync backlights: correct writable settings and missing feedback",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        115
+      ],
+      "bug": true,
+      "quirk": false,
+      "credit": "Jason Rumney (make-all) and tuya-local contributors",
+      "seenAt": "2026-10-11T09:18:34.702Z"
+    },
+    {
+      "source": "tuya-local",
+      "kind": "converters",
+      "ref": "https://github.com/make-all/tuya-local/issues/6339",
+      "summary": "issue #6339 (closed) by matata86: HA shutdown delayed ~10 s: async_stop cannot interrupt receive() blocked in tinytuya recv()",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Jason Rumney (make-all) and tuya-local contributors",
+      "seenAt": "2026-10-11T09:18:34.702Z"
+    },
+    {
+      "source": "tuya-local",
+      "kind": "converters",
+      "ref": "https://github.com/make-all/tuya-local/pull/6303",
+      "summary": "PR #6303 (open) by andrewreid: Add Brilliant 22629/06 RGBW garden light controller",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        51,
+        36,
+        23,
+        25,
+        34
+      ],
+      "bug": true,
+      "quirk": false,
+      "credit": "Jason Rumney (make-all) and tuya-local contributors",
+      "seenAt": "2026-10-11T09:18:34.702Z"
+    },
+    {
+      "source": "tuya-local",
+      "kind": "converters",
+      "ref": "https://github.com/make-all/tuya-local/issues/6340",
+      "summary": "issue #6340 (closed) by minimicro34: lsc_ptz_camera: Add white spotlight control (DP 138)",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        138
+      ],
+      "bug": true,
+      "quirk": false,
+      "credit": "Jason Rumney (make-all) and tuya-local contributors",
+      "seenAt": "2026-10-11T09:18:34.702Z"
+    },
+    {
+      "source": "tuya-local",
+      "kind": "converters",
+      "ref": "https://github.com/make-all/tuya-local/issues/6344",
+      "summary": "issue #6344 (closed) by rgrae81: DC1545V device unavailable in HA after power reset of DC1545V",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Jason Rumney (make-all) and tuya-local contributors",
+      "seenAt": "2026-10-11T09:18:34.702Z"
+    },
+    {
+      "source": "tuya-local",
+      "kind": "converters",
+      "ref": "https://github.com/make-all/tuya-local/issues/6318",
+      "summary": "issue #6318 (closed) by abadlot: Request support for Rohnson R-2834 SmartChef XL air fryer",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        110,
+        3,
+        6,
+        9,
+        109,
+        2,
+        1,
+        108
+      ],
+      "bug": false,
+      "quirk": false,
+      "credit": "Jason Rumney (make-all) and tuya-local contributors",
+      "seenAt": "2026-10-11T09:18:34.703Z"
+    },
+    {
+      "source": "tuya-local",
+      "kind": "converters",
+      "ref": "https://github.com/make-all/tuya-local/pull/6275",
+      "summary": "PR #6275 (closed) by ftsachev: earu_dpn_circuitbreaker: expose internal temperature (DP 47) and fault bitfield (DP 26)",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        47,
+        26
+      ],
+      "bug": false,
+      "quirk": false,
+      "credit": "Jason Rumney (make-all) and tuya-local contributors",
+      "seenAt": "2026-10-11T09:18:34.703Z"
+    },
+    {
+      "source": "tuya-local",
+      "kind": "converters",
+      "ref": "https://github.com/make-all/tuya-local/pull/6307",
+      "summary": "PR #6307 (closed) by rmschots: feat(yuhome_laundry_rack): add Yu Prime",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        3,
+        18
+      ],
+      "bug": false,
+      "quirk": false,
+      "credit": "Jason Rumney (make-all) and tuya-local contributors",
+      "seenAt": "2026-10-11T09:18:34.703Z"
+    },
+    {
+      "source": "tuya-local",
+      "kind": "converters",
+      "ref": "https://github.com/make-all/tuya-local/issues/6347",
+      "summary": "issue #6347 (open) by fcassata: Request support for Brød & Taylor Sourdough Home Plus SH-500",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        1,
+        8,
+        25,
+        26,
+        101,
+        103
+      ],
+      "bug": false,
+      "quirk": false,
+      "credit": "Jason Rumney (make-all) and tuya-local contributors",
+      "seenAt": "2026-10-11T09:18:34.703Z"
+    },
+    {
+      "source": "tuya-local",
+      "kind": "converters",
+      "ref": "https://github.com/make-all/tuya-local/issues/6346",
+      "summary": "issue #6346 (closed) by jirihelmich: Unanswered UPDATEDPS blocks commands for up to ~10 s since 2026.9.2",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        1,
+        2
+      ],
+      "bug": true,
+      "quirk": false,
+      "credit": "Jason Rumney (make-all) and tuya-local contributors",
+      "seenAt": "2026-10-11T09:18:34.703Z"
+    },
+    {
+      "source": "tuya-local",
+      "kind": "converters",
+      "ref": "https://github.com/make-all/tuya-local/issues/6350",
+      "summary": "issue #6350 (closed) by lbr88-ai: Request support for eeese Luna dehumidifier",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        5,
+        17
+      ],
+      "bug": false,
+      "quirk": false,
+      "credit": "Jason Rumney (make-all) and tuya-local contributors",
+      "seenAt": "2026-10-11T09:18:34.703Z"
+    },
+    {
+      "source": "tuya-local",
+      "kind": "converters",
+      "ref": "https://github.com/make-all/tuya-local/issues/6351",
+      "summary": "issue #6351 (closed) by danindub: Heat/Idle reversed",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Jason Rumney (make-all) and tuya-local contributors",
+      "seenAt": "2026-10-11T09:18:34.703Z"
+    },
+    {
+      "source": "tuya-local",
+      "kind": "converters",
+      "ref": "https://github.com/make-all/tuya-local/issues/6016",
+      "summary": "issue #6016 (closed) by Chaoscontrol: Catit Pixi Smart Feeder product variant has different DPS mappings",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        3,
+        14,
+        15,
+        101,
+        103
+      ],
+      "bug": true,
+      "quirk": false,
+      "credit": "Jason Rumney (make-all) and tuya-local contributors",
+      "seenAt": "2026-10-11T09:18:34.703Z"
+    },
+    {
+      "source": "tuya-local",
+      "kind": "converters",
+      "ref": "https://github.com/make-all/tuya-local/issues/6356",
+      "summary": "issue #6356 (closed) by lukegackle: Timers nolonger work on bauhn_ap5w0624_powerstrip.yaml",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Jason Rumney (make-all) and tuya-local contributors",
+      "seenAt": "2026-10-11T09:18:34.703Z"
+    },
+    {
+      "source": "tuya-local",
+      "kind": "converters",
+      "ref": "https://github.com/make-all/tuya-local/issues/6358",
+      "summary": "issue #6358 (closed) by amontero0611: Add support for FRÄNKISCHE Zigbee thermostat (mzik0ov2)",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        16,
+        50,
+        49,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130
+      ],
+      "bug": false,
+      "quirk": false,
+      "credit": "Jason Rumney (make-all) and tuya-local contributors",
+      "seenAt": "2026-10-11T09:18:34.703Z"
+    },
+    {
+      "source": "tuya-local",
+      "kind": "converters",
+      "ref": "https://github.com/make-all/tuya-local/issues/6331",
+      "summary": "issue #6331 (closed) by Haemschter: Request support for Eightree ET21-4 / ET21H – polled power and configurable polling interval",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        18,
+        19,
+        20
+      ],
+      "bug": true,
+      "quirk": false,
+      "credit": "Jason Rumney (make-all) and tuya-local contributors",
+      "seenAt": "2026-10-11T09:18:34.703Z"
+    },
+    {
+      "source": "tuya-local",
+      "kind": "converters",
+      "ref": "https://github.com/make-all/tuya-local/issues/6372",
+      "summary": "issue #6372 (open) by davinbaker-agent: Request support for Briidea BR-157 salt chlorinator",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        1,
+        6,
+        7,
+        19,
+        21,
+        24,
+        27,
+        28,
+        101,
+        103,
+        102,
+        105,
+        106,
+        107
+      ],
+      "bug": false,
+      "quirk": false,
+      "credit": "Jason Rumney (make-all) and tuya-local contributors",
+      "seenAt": "2026-10-11T09:18:34.703Z"
+    },
+    {
+      "source": "hubitat-kkossev",
+      "kind": "converters",
+      "ref": "https://github.com/kkossev/Hubitat/blob/ef8318e788ef6418b9d06f513d6d725db3fba744/Drivers/Tuya Temperature Humidity Illuminance LCD Display with a Clock/CHANGELOG.md",
+      "summary": "modified Drivers/Tuya Temperature Humidity Illuminance LCD Display with a Clock/CHANGELOG.md (+25/-3) between b4f4ddf..ef8318e",
+      "mfrs": [
+        "_TZE284_qf5mzewi"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [
+        9,
+        19,
+        20,
+        17
+      ],
+      "bug": false,
+      "quirk": false,
+      "credit": "Krassimir Kossev (kkossev) Hubitat drivers",
+      "seenAt": "2026-10-11T09:18:36.383Z"
+    },
+    {
+      "source": "hubitat-kkossev",
+      "kind": "converters",
+      "ref": "https://github.com/kkossev/Hubitat/blob/ef8318e788ef6418b9d06f513d6d725db3fba744/Drivers/Tuya Temperature Humidity Illuminance LCD Display with a Clock/TODO.md",
+      "summary": "modified Drivers/Tuya Temperature Humidity Illuminance LCD Display with a Clock/TODO.md (+207/-36) between b4f4ddf..ef8318e",
+      "mfrs": [
+        "_TZE284_qf5mzewi",
+        "_TZE284_aao3yzhs"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [
+        18,
+        3,
+        4,
+        9,
+        19,
+        20,
+        17,
+        1,
+        2
+      ],
+      "bug": true,
+      "quirk": true,
+      "credit": "Krassimir Kossev (kkossev) Hubitat drivers",
+      "seenAt": "2026-10-11T09:18:36.383Z"
+    },
+    {
+      "source": "hubitat-kkossev",
+      "kind": "converters",
+      "ref": "https://github.com/kkossev/Hubitat/blob/ef8318e788ef6418b9d06f513d6d725db3fba744/Drivers/Tuya Temperature Humidity Illuminance LCD Display with a Clock/Tuya_Temperature_Humidity_Illuminance_LCD_Display_with_a_Clock.groovy",
+      "summary": "modified Drivers/Tuya Temperature Humidity Illuminance LCD Display with a Clock/Tuya_Temperature_Humidity_Illuminance_LCD_Display_with_a_Clock.groovy (+76/-14) between b4f4ddf..ef8318e",
+      "mfrs": [
+        "_TZE284_qf5mzewi"
+      ],
+      "pids": [
+        "TS0601",
+        "TS0201",
+        "TS0222"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Krassimir Kossev (kkossev) Hubitat drivers",
+      "seenAt": "2026-10-11T09:18:36.383Z"
+    },
+    {
+      "source": "homed",
+      "kind": "converters",
+      "ref": "https://github.com/u236/homed-service-zigbee/blob/23d297532db91b8e54f3615a8d5c043c81395fe5/deploy/data/usr/share/homed-zigbee/lumi.json",
+      "summary": "modified deploy/data/usr/share/homed-zigbee/lumi.json (+125/-94) between d641ee5..23d2975",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "u236 (HOMEd)",
+      "seenAt": "2026-10-11T09:18:37.553Z"
+    },
+    {
+      "source": "homed",
+      "kind": "converters",
+      "ref": "https://github.com/u236/homed-service-zigbee/blob/23d297532db91b8e54f3615a8d5c043c81395fe5/deploy/data/usr/share/homed-zigbee/other.json",
+      "summary": "modified deploy/data/usr/share/homed-zigbee/other.json (+16/-17) between d641ee5..23d2975",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": false,
+      "quirk": true,
+      "credit": "u236 (HOMEd)",
+      "seenAt": "2026-10-11T09:18:37.553Z"
+    },
+    {
+      "source": "homed",
+      "kind": "converters",
+      "ref": "https://github.com/u236/homed-service-zigbee/blob/23d297532db91b8e54f3615a8d5c043c81395fe5/deploy/data/usr/share/homed-zigbee/sonoff.json",
+      "summary": "modified deploy/data/usr/share/homed-zigbee/sonoff.json (+39/-0) between d641ee5..23d2975",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "u236 (HOMEd)",
+      "seenAt": "2026-10-11T09:18:37.554Z"
+    },
+    {
+      "source": "homed",
+      "kind": "converters",
+      "ref": "https://github.com/u236/homed-service-zigbee/blob/23d297532db91b8e54f3615a8d5c043c81395fe5/deploy/data/usr/share/homed-zigbee/ts0601.json",
+      "summary": "modified deploy/data/usr/share/homed-zigbee/ts0601.json (+48/-0) between d641ee5..23d2975",
+      "mfrs": [
+        "_TZE200_04yfvweb",
+        "_TZE200_2cs6g9i7",
+        "_TZE200_hhrtiq0x",
+        "_TZE200_jeaxp72v",
+        "_TZE200_kfvq6avy",
+        "_TZE200_lrznf59v",
+        "_TZE200_owwdxjbx",
+        "_TZE200_ps5v5jor",
+        "_TZE200_zivfvd7h",
+        "_TZE204_woww89ip",
+        "_TZE204_r6kfl9ta"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "u236 (HOMEd)",
+      "seenAt": "2026-10-11T09:18:37.554Z"
+    },
+    {
+      "source": "homed",
+      "kind": "converters",
+      "ref": "https://github.com/u236/homed-service-zigbee/blob/23d297532db91b8e54f3615a8d5c043c81395fe5/deploy/data/usr/share/homed-zigbee/tuya.json",
+      "summary": "modified deploy/data/usr/share/homed-zigbee/tuya.json (+21/-15) between d641ee5..23d2975",
+      "mfrs": [
+        "_TZ3000_2xlvlnez",
+        "_TZ3000_cymsnfvf",
+        "_TZ3000_9djocypn",
+        "_TZ3000_air9m6af",
+        "_TZ3000_bppxj3sf",
+        "_TZ3000_cfnprab5",
+        "_TZ3000_gdyjfvgm",
+        "_TZ3000_o005nuxx",
+        "_TZ3000_pl5v1yyy"
+      ],
+      "pids": [],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "u236 (HOMEd)",
+      "seenAt": "2026-10-11T09:18:37.554Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1426",
+      "summary": "issue #1426 (closed) by ehagoort: Device Request - SGW08MZ - Tuya / _TZE284_fhvpaltk",
+      "mfrs": [
+        "_TZE284_fhvpaltk"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-11T09:18:40.387Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1416",
+      "summary": "issue #1416 (closed) by blutch32: Device Request - [Amperemetric energy meter] - [zigbee-tuya] / [_TZE284_81yrt3lo]",
+      "mfrs": [
+        "_TZE284_81yrt3lo"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-11T09:18:40.387Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1445",
+      "summary": "issue #1445 (closed) by tobiasgottnl-cyber: Device support request: _TZE284_9ern5sfh / TS0601 – RSH-HS03 temperature & humidity sensor",
+      "mfrs": [
+        "_TZE284_9ern5sfh"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-11T09:18:40.387Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1450",
+      "summary": "issue #1450 (closed) by Hawke81: Device Request - [Device name] - [manufacturerName] / [modelId]",
+      "mfrs": [
+        "_TZE284_9ern5sfh"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-11T09:18:40.387Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1420",
+      "summary": "issue #1420 (closed) by squizzeak: Device Request - Moes Smart Knob - _TZ3000_qja6nq5z / TS004F",
+      "mfrs": [
+        "_TZ3000_qja6nq5z"
+      ],
+      "pids": [
+        "TS004F"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-11T09:18:40.387Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1417",
+      "summary": "issue #1417 (closed) by StinoHoogland: Device Request - 2 channel zigbee relay - Scimagic-RC /  Zigbee switch module",
+      "mfrs": [
+        "_TZ3210_nuenzetq"
+      ],
+      "pids": [
+        "TS0002"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-11T09:18:40.387Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1440",
+      "summary": "issue #1440 (closed) by avangen: Device Request - [Device name] - [manufacturerName] / [modelId]",
+      "mfrs": [
+        "_TZ3210_nuenzetq"
+      ],
+      "pids": [
+        "TS0002"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-11T09:18:40.387Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/602",
+      "summary": "issue #602 (open) by V-Hunter: Device Request - Moes 4 Gang Wall Switch - _TZ3000_mrduubod / TS0014",
+      "mfrs": [
+        "_TZ3000_mrduubod"
+      ],
+      "pids": [
+        "TS0014"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-11T09:18:40.387Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1412",
+      "summary": "issue #1412 (closed) by vicbehrens: MOES 4-Gang Smart Switch not recognised, added as generic zigbee device",
+      "mfrs": [
+        "_TZ3000_mrduubod",
+        "_TZ3000_r0pmi2p3",
+        "_TYZB01_bagt1e4o"
+      ],
+      "pids": [
+        "TS0014"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-11T09:18:40.388Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1413",
+      "summary": "issue #1413 (closed) by vicbehrens: Device Request - Zigbee 4-Gang Smart Light Switch - Moes / TS0014",
+      "mfrs": [
+        "_TZ3000_mrduubod",
+        "_TZ3000_r0pmi2p3",
+        "_TYZB01_bagt1e4o"
+      ],
+      "pids": [
+        "TS0014"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-11T09:18:40.388Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/942",
+      "summary": "issue #942 (closed) by Jaybeam: Device Request - PIR 24Ghz human presence sensor battery operated - _TZE200_kb5noeto / TS0601",
+      "mfrs": [
+        "_TZE200_kb5noeto"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-11T09:18:40.388Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1064",
+      "summary": "issue #1064 (closed) by flipmoo: Device Request - [Device name] - [Tuya] / [ZG-204ZS / ZG-204ZM]",
+      "mfrs": [
+        "_TZE200_kb5noeto"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-11T09:18:40.388Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1315",
+      "summary": "issue #1315 (closed) by dd3uk: Device Request - [Device name] - [manufacturerName] / [modelId]",
+      "mfrs": [
+        "_TZE200_pay2byax"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-11T09:18:40.388Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/705",
+      "summary": "issue #705 (open) by danielloczi: Device Request - Fan Coil Thermostat - _TZE204_mpbki2zm / TS0601",
+      "mfrs": [
+        "_TZE204_mpbki2zm"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-11T09:18:40.388Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1443",
+      "summary": "issue #1443 (closed) by xDMcGee: Device Request -TS0601 - _TZE204_mpbki2zm",
+      "mfrs": [
+        "_TZE204_mpbki2zm"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-11T09:18:40.388Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1103",
+      "summary": "issue #1103 (closed) by Plantje1978: Device Request - 2 Gang Switch Module - Tuya / TS0001",
+      "mfrs": [
+        "_TZ3000_kqvb5akv"
+      ],
+      "pids": [
+        "TS0001"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-11T09:18:40.388Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/175",
+      "summary": "issue #175 (open) by Gebucht: Bug report - _TZ3000_kdpxju99 / TS0505A GU10 pairs but dim/color commands fail",
+      "mfrs": [
+        "_TZ3000_kdpxju99",
+        "_TZE200_amp6tsvy",
+        "_TZE200_g1ib5ldv"
+      ],
+      "pids": [
+        "TS0505A",
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-11T09:18:40.388Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1446",
+      "summary": "issue #1446 (open) by AlejandroPalladino: Device Request - mmWave presence sensor - _TZE284_debczeci / TS0601",
+      "mfrs": [
+        "_TZE284_debczeci"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-11T09:18:40.388Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1310",
+      "summary": "issue #1310 (open) by tashunka73: Device Request - Tuya thermostat - _TZE200_9xfjixap / TS0601",
+      "mfrs": [
+        "_TZE200_9xfjixap"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-11T09:18:40.388Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/525",
+      "summary": "issue #525 (closed) by Johan-schiedam: Bug report - [Short description] Tuya devices not in Homey ",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-11T09:18:40.388Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/597",
+      "summary": "issue #597 (closed) by Th3Cub3: 2 gang wall switch is not recognized in Homey PRO 2023",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-11T09:18:40.388Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/828",
+      "summary": "issue #828 (closed) by corkorten: Human Presence detector ZG-205Z  not register as should",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-11T09:18:40.388Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/999",
+      "summary": "issue #999 (closed) by Stemasat: Bug report - Can´t install NEO Smart plug Zigbee",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-11T09:18:40.388Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/886",
+      "summary": "issue #886 (open) by flipmoo: Bug report - _TZE204_ijxvkhd0 / TS0601 radar reports motion inverted",
+      "mfrs": [
+        "_TZE204_ijxvkhd0"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-11T09:18:40.388Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1123",
+      "summary": "issue #1123 (open) by semolex: Bug report - Slim motion sensor repeatedly reports false motion",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-11T09:18:40.388Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1067",
+      "summary": "issue #1067 (closed) by slicke: Bug report - eWeLight ZB-CL01 driver broken",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-11T09:18:40.388Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1249",
+      "summary": "issue #1249 (closed) by dlnraja: fix(workflow): Résolution finale des conflits de rebase persistants",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-11T09:18:40.388Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1364",
+      "summary": "issue #1364 (closed) by Knudsen94: Device Request - Smart switch - _TZ3000_gwkzibhs /TS004F",
+      "mfrs": [
+        "_TZ3000_gwkzibhs"
+      ],
+      "pids": [
+        "TS004F"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-11T09:18:40.388Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1343",
+      "summary": "issue #1343 (closed) by cvh1111: Device Request - 10G 4 in 1 human motionsensor  - _TZE200_rhgsbacq / TS0601",
+      "mfrs": [
+        "_TZE200_rhgsbacq"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-11T09:18:40.388Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1398",
+      "summary": "issue #1398 (closed) by RobertHerter: Device Request - [10G Radarsensor 4in1] - [_TZE200_rhgsbacq] / [TS0601]",
+      "mfrs": [
+        "_TZE200_rhgsbacq"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-11T09:18:40.389Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1375",
+      "summary": "issue #1375 (closed) by migueleap: [Device Support Request] Tuya TS0003 – _TZ3000_qkixdnon (Triple Relay Switch)",
+      "mfrs": [
+        "_TZ3000_qkixdnon"
+      ],
+      "pids": [
+        "TS0003"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-11T09:18:40.389Z"
+    },
+    {
+      "source": "johan-forks",
+      "kind": "forks",
+      "ref": "https://github.com/dlnraja/com.tuya.zigbee",
+      "summary": "fork dlnraja/com.tuya.zigbee pushed 2026-10-11T09:15:19Z",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "dlnraja",
+      "seenAt": "2026-10-11T09:18:42.135Z"
+    },
+    {
+      "source": "homey-app-store-tuya",
+      "kind": "community-apps",
+      "ref": "https://homey.app/en-us/apps/",
+      "summary": "page changed since last check (review manually)",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Athom B.V. App Store (community apps)",
+      "seenAt": "2026-10-11T09:18:43.511Z"
+    },
+    {
+      "source": "homey-forum-ecosystem",
+      "kind": "forum",
+      "ref": "https://community.homey.app/t/36418/525",
+      "summary": "post #525 by smarthomesven",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum members (Device Capabilities by Arie J. Godschalk; Aqara/Xiaomi; SONOFF Zigbee; Tuya Local; Tuya official; Homey Portal; Self-Hosted Server; AI Flow Builder threads)",
+      "seenAt": "2026-10-11T09:18:45.475Z"
+    },
+    {
+      "source": "homey-forum-ecosystem",
+      "kind": "forum",
+      "ref": "https://community.homey.app/t/154077/474",
+      "summary": "post #474 by MrMagu",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        1,
+        2,
+        5,
+        6,
+        15,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        140
+      ],
+      "bug": false,
+      "quirk": false,
+      "credit": "Homey Community Forum members (Device Capabilities by Arie J. Godschalk; Aqara/Xiaomi; SONOFF Zigbee; Tuya Local; Tuya official; Homey Portal; Self-Hosted Server; AI Flow Builder threads)",
+      "seenAt": "2026-10-11T09:18:45.943Z"
+    },
+    {
+      "source": "homey-forum-ecosystem",
+      "kind": "forum",
+      "ref": "https://community.homey.app/t/154077/475",
+      "summary": "post #475 by Andi",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        106,
+        104
+      ],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum members (Device Capabilities by Arie J. Godschalk; Aqara/Xiaomi; SONOFF Zigbee; Tuya Local; Tuya official; Homey Portal; Self-Hosted Server; AI Flow Builder threads)",
+      "seenAt": "2026-10-11T09:18:45.943Z"
+    },
+    {
+      "source": "homey-forum-ecosystem",
+      "kind": "forum",
+      "ref": "https://community.homey.app/t/154077/477",
+      "summary": "post #477 by Andi",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum members (Device Capabilities by Arie J. Godschalk; Aqara/Xiaomi; SONOFF Zigbee; Tuya Local; Tuya official; Homey Portal; Self-Hosted Server; AI Flow Builder threads)",
+      "seenAt": "2026-10-11T09:18:45.943Z"
+    },
+    {
+      "source": "homey-forum-ecosystem",
+      "kind": "forum",
+      "ref": "https://community.homey.app/t/154077/480",
+      "summary": "post #480 by MrMagu",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        118
+      ],
+      "bug": false,
+      "quirk": false,
+      "credit": "Homey Community Forum members (Device Capabilities by Arie J. Godschalk; Aqara/Xiaomi; SONOFF Zigbee; Tuya Local; Tuya official; Homey Portal; Self-Hosted Server; AI Flow Builder threads)",
+      "seenAt": "2026-10-11T09:18:45.943Z"
+    },
+    {
+      "source": "homey-forum-ecosystem",
+      "kind": "forum",
+      "ref": "https://community.homey.app/t/154077/481",
+      "summary": "post #481 by Andi",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        118
+      ],
+      "bug": false,
+      "quirk": false,
+      "credit": "Homey Community Forum members (Device Capabilities by Arie J. Godschalk; Aqara/Xiaomi; SONOFF Zigbee; Tuya Local; Tuya official; Homey Portal; Self-Hosted Server; AI Flow Builder threads)",
+      "seenAt": "2026-10-11T09:18:45.943Z"
+    },
+    {
+      "source": "homey-forum-ecosystem",
+      "kind": "forum",
+      "ref": "https://community.homey.app/t/154077/482",
+      "summary": "post #482 by Mikko_Vayrynen",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        1
+      ],
+      "bug": false,
+      "quirk": false,
+      "credit": "Homey Community Forum members (Device Capabilities by Arie J. Godschalk; Aqara/Xiaomi; SONOFF Zigbee; Tuya Local; Tuya official; Homey Portal; Self-Hosted Server; AI Flow Builder threads)",
+      "seenAt": "2026-10-11T09:18:45.943Z"
+    },
+    {
+      "source": "homey-forum-ecosystem",
+      "kind": "forum",
+      "ref": "https://community.homey.app/t/154077/484",
+      "summary": "post #484 by Mikko_Vayrynen",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        1
+      ],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum members (Device Capabilities by Arie J. Godschalk; Aqara/Xiaomi; SONOFF Zigbee; Tuya Local; Tuya official; Homey Portal; Self-Hosted Server; AI Flow Builder threads)",
+      "seenAt": "2026-10-11T09:18:45.943Z"
+    },
+    {
+      "source": "homey-forum-ecosystem",
+      "kind": "forum",
+      "ref": "https://community.homey.app/t/154077/485",
+      "summary": "post #485 by Mariomark1541",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        2,
+        1,
+        7
+      ],
+      "bug": false,
+      "quirk": false,
+      "credit": "Homey Community Forum members (Device Capabilities by Arie J. Godschalk; Aqara/Xiaomi; SONOFF Zigbee; Tuya Local; Tuya official; Homey Portal; Self-Hosted Server; AI Flow Builder threads)",
+      "seenAt": "2026-10-11T09:18:45.943Z"
+    },
+    {
+      "source": "homey-forum-ecosystem",
+      "kind": "forum",
+      "ref": "https://community.homey.app/t/154077/486",
+      "summary": "post #486 by Andi",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": false,
+      "quirk": true,
+      "credit": "Homey Community Forum members (Device Capabilities by Arie J. Godschalk; Aqara/Xiaomi; SONOFF Zigbee; Tuya Local; Tuya official; Homey Portal; Self-Hosted Server; AI Flow Builder threads)",
+      "seenAt": "2026-10-11T09:18:45.943Z"
+    },
+    {
+      "source": "homey-forum-ecosystem",
+      "kind": "forum",
+      "ref": "https://community.homey.app/t/154077/487",
+      "summary": "post #487 by Andi",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        2,
+        3
+      ],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum members (Device Capabilities by Arie J. Godschalk; Aqara/Xiaomi; SONOFF Zigbee; Tuya Local; Tuya official; Homey Portal; Self-Hosted Server; AI Flow Builder threads)",
+      "seenAt": "2026-10-11T09:18:45.943Z"
+    },
+    {
+      "source": "homey-forum-ecosystem",
+      "kind": "forum",
+      "ref": "https://community.homey.app/t/154077/488",
+      "summary": "post #488 by Mariomark1541",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        2,
+        3
+      ],
+      "bug": false,
+      "quirk": false,
+      "credit": "Homey Community Forum members (Device Capabilities by Arie J. Godschalk; Aqara/Xiaomi; SONOFF Zigbee; Tuya Local; Tuya official; Homey Portal; Self-Hosted Server; AI Flow Builder threads)",
+      "seenAt": "2026-10-11T09:18:45.943Z"
+    },
+    {
+      "source": "homey-forum-ecosystem",
+      "kind": "forum",
+      "ref": "https://community.homey.app/t/154077/489",
+      "summary": "post #489 by Andi",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        3
+      ],
+      "bug": false,
+      "quirk": true,
+      "credit": "Homey Community Forum members (Device Capabilities by Arie J. Godschalk; Aqara/Xiaomi; SONOFF Zigbee; Tuya Local; Tuya official; Homey Portal; Self-Hosted Server; AI Flow Builder threads)",
+      "seenAt": "2026-10-11T09:18:45.943Z"
+    },
+    {
+      "source": "homey-forum-ecosystem",
+      "kind": "forum",
+      "ref": "https://community.homey.app/t/154077/490",
+      "summary": "post #490 by Mariomark1541",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        3,
+        1
+      ],
+      "bug": false,
+      "quirk": true,
+      "credit": "Homey Community Forum members (Device Capabilities by Arie J. Godschalk; Aqara/Xiaomi; SONOFF Zigbee; Tuya Local; Tuya official; Homey Portal; Self-Hosted Server; AI Flow Builder threads)",
+      "seenAt": "2026-10-11T09:18:45.943Z"
+    },
+    {
+      "source": "homey-forum-ecosystem",
+      "kind": "forum",
+      "ref": "https://community.homey.app/t/154077/491",
+      "summary": "post #491 by Andi",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        1
+      ],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum members (Device Capabilities by Arie J. Godschalk; Aqara/Xiaomi; SONOFF Zigbee; Tuya Local; Tuya official; Homey Portal; Self-Hosted Server; AI Flow Builder threads)",
+      "seenAt": "2026-10-11T09:18:45.943Z"
+    },
+    {
+      "source": "homey-forum-ecosystem",
+      "kind": "forum",
+      "ref": "https://community.homey.app/t/154077/493",
+      "summary": "post #493 by Andi",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        2,
+        16
+      ],
+      "bug": false,
+      "quirk": false,
+      "credit": "Homey Community Forum members (Device Capabilities by Arie J. Godschalk; Aqara/Xiaomi; SONOFF Zigbee; Tuya Local; Tuya official; Homey Portal; Self-Hosted Server; AI Flow Builder threads)",
+      "seenAt": "2026-10-11T09:18:45.943Z"
+    },
+    {
+      "source": "homey-forum-ecosystem",
+      "kind": "forum",
+      "ref": "https://community.homey.app/t/154077/494",
+      "summary": "post #494 by Mariomark1541",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        1,
+        2,
+        3,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "bug": false,
+      "quirk": false,
+      "credit": "Homey Community Forum members (Device Capabilities by Arie J. Godschalk; Aqara/Xiaomi; SONOFF Zigbee; Tuya Local; Tuya official; Homey Portal; Self-Hosted Server; AI Flow Builder threads)",
+      "seenAt": "2026-10-11T09:18:45.943Z"
+    },
+    {
+      "source": "homey-forum-ecosystem",
+      "kind": "forum",
+      "ref": "https://community.homey.app/t/154077/495",
+      "summary": "post #495 by Mikko_Vayrynen",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        1
+      ],
+      "bug": false,
+      "quirk": false,
+      "credit": "Homey Community Forum members (Device Capabilities by Arie J. Godschalk; Aqara/Xiaomi; SONOFF Zigbee; Tuya Local; Tuya official; Homey Portal; Self-Hosted Server; AI Flow Builder threads)",
+      "seenAt": "2026-10-11T09:18:45.943Z"
+    },
+    {
+      "source": "homey-forum-ecosystem",
+      "kind": "forum",
+      "ref": "https://community.homey.app/t/154077/496",
+      "summary": "post #496 by Andi",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        2,
+        3,
+        1
+      ],
+      "bug": false,
+      "quirk": false,
+      "credit": "Homey Community Forum members (Device Capabilities by Arie J. Godschalk; Aqara/Xiaomi; SONOFF Zigbee; Tuya Local; Tuya official; Homey Portal; Self-Hosted Server; AI Flow Builder threads)",
+      "seenAt": "2026-10-11T09:18:45.943Z"
+    },
+    {
+      "source": "homey-forum-ecosystem",
+      "kind": "forum",
+      "ref": "https://community.homey.app/t/154077/497",
+      "summary": "post #497 by Andi",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum members (Device Capabilities by Arie J. Godschalk; Aqara/Xiaomi; SONOFF Zigbee; Tuya Local; Tuya official; Homey Portal; Self-Hosted Server; AI Flow Builder threads)",
+      "seenAt": "2026-10-11T09:18:45.943Z"
+    },
+    {
+      "source": "homey-forum-ecosystem",
+      "kind": "forum",
+      "ref": "https://community.homey.app/t/154077/499",
+      "summary": "post #499 by Andi",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        1
+      ],
+      "bug": false,
+      "quirk": true,
+      "credit": "Homey Community Forum members (Device Capabilities by Arie J. Godschalk; Aqara/Xiaomi; SONOFF Zigbee; Tuya Local; Tuya official; Homey Portal; Self-Hosted Server; AI Flow Builder threads)",
+      "seenAt": "2026-10-11T09:18:45.943Z"
+    },
+    {
+      "source": "homey-forum-ecosystem",
+      "kind": "forum",
+      "ref": "https://community.homey.app/t/154077/501",
+      "summary": "post #501 by Andi",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        1
+      ],
+      "bug": false,
+      "quirk": false,
+      "credit": "Homey Community Forum members (Device Capabilities by Arie J. Godschalk; Aqara/Xiaomi; SONOFF Zigbee; Tuya Local; Tuya official; Homey Portal; Self-Hosted Server; AI Flow Builder threads)",
+      "seenAt": "2026-10-11T09:18:45.943Z"
+    },
+    {
+      "source": "homey-forum-ecosystem",
+      "kind": "forum",
+      "ref": "https://community.homey.app/t/154077/502",
+      "summary": "post #502 by Mariomark1541",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        3
+      ],
+      "bug": false,
+      "quirk": false,
+      "credit": "Homey Community Forum members (Device Capabilities by Arie J. Godschalk; Aqara/Xiaomi; SONOFF Zigbee; Tuya Local; Tuya official; Homey Portal; Self-Hosted Server; AI Flow Builder threads)",
+      "seenAt": "2026-10-11T09:18:45.943Z"
+    },
+    {
+      "source": "homey-forum-ecosystem",
+      "kind": "forum",
+      "ref": "https://community.homey.app/t/154077/506",
+      "summary": "post #506 by Andi",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        17,
+        19
+      ],
+      "bug": false,
+      "quirk": false,
+      "credit": "Homey Community Forum members (Device Capabilities by Arie J. Godschalk; Aqara/Xiaomi; SONOFF Zigbee; Tuya Local; Tuya official; Homey Portal; Self-Hosted Server; AI Flow Builder threads)",
+      "seenAt": "2026-10-11T09:18:45.943Z"
+    },
+    {
+      "source": "homey-forum-ecosystem",
+      "kind": "forum",
+      "ref": "https://community.homey.app/t/154077/509",
+      "summary": "post #509 by Andi",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum members (Device Capabilities by Arie J. Godschalk; Aqara/Xiaomi; SONOFF Zigbee; Tuya Local; Tuya official; Homey Portal; Self-Hosted Server; AI Flow Builder threads)",
+      "seenAt": "2026-10-11T09:18:45.943Z"
+    },
+    {
+      "source": "homey-forum-ecosystem",
+      "kind": "forum",
+      "ref": "https://community.homey.app/t/146735/476",
+      "summary": "post #476 by Autodidakt",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum members (Device Capabilities by Arie J. Godschalk; Aqara/Xiaomi; SONOFF Zigbee; Tuya Local; Tuya official; Homey Portal; Self-Hosted Server; AI Flow Builder threads)",
+      "seenAt": "2026-10-11T09:18:46.375Z"
+    },
+    {
+      "source": "homey-forum-ecosystem",
+      "kind": "forum",
+      "ref": "https://community.homey.app/t/146735/477",
+      "summary": "post #477 by smarthomesven",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum members (Device Capabilities by Arie J. Godschalk; Aqara/Xiaomi; SONOFF Zigbee; Tuya Local; Tuya official; Homey Portal; Self-Hosted Server; AI Flow Builder threads)",
+      "seenAt": "2026-10-11T09:18:46.375Z"
+    },
+    {
+      "source": "homey-forum-ecosystem",
+      "kind": "forum",
+      "ref": "https://community.homey.app/t/146735/503",
+      "summary": "post #503 by CAWV",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": true,
+      "credit": "Homey Community Forum members (Device Capabilities by Arie J. Godschalk; Aqara/Xiaomi; SONOFF Zigbee; Tuya Local; Tuya official; Homey Portal; Self-Hosted Server; AI Flow Builder threads)",
+      "seenAt": "2026-10-11T09:18:46.376Z"
+    },
+    {
+      "source": "homey-forum-ecosystem",
+      "kind": "forum",
+      "ref": "https://community.homey.app/t/158748/208",
+      "summary": "post #208 by MediaSmurf",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": false,
+      "quirk": true,
+      "credit": "Homey Community Forum members (Device Capabilities by Arie J. Godschalk; Aqara/Xiaomi; SONOFF Zigbee; Tuya Local; Tuya official; Homey Portal; Self-Hosted Server; AI Flow Builder threads)",
+      "seenAt": "2026-10-11T09:18:46.889Z"
+    },
+    {
+      "source": "homey-forum-ecosystem",
+      "kind": "forum",
+      "ref": "https://community.homey.app/t/158748/209",
+      "summary": "post #209 by Dennis_H74",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": false,
+      "quirk": true,
+      "credit": "Homey Community Forum members (Device Capabilities by Arie J. Godschalk; Aqara/Xiaomi; SONOFF Zigbee; Tuya Local; Tuya official; Homey Portal; Self-Hosted Server; AI Flow Builder threads)",
+      "seenAt": "2026-10-11T09:18:46.889Z"
+    },
+    {
+      "source": "homey-forum-ecosystem",
+      "kind": "forum",
+      "ref": "https://community.homey.app/t/158748/215",
+      "summary": "post #215 by Dennis_H74",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum members (Device Capabilities by Arie J. Godschalk; Aqara/Xiaomi; SONOFF Zigbee; Tuya Local; Tuya official; Homey Portal; Self-Hosted Server; AI Flow Builder threads)",
+      "seenAt": "2026-10-11T09:18:46.889Z"
+    },
+    {
+      "source": "homey-forum-ecosystem",
+      "kind": "forum",
+      "ref": "https://community.homey.app/t/158748/219",
+      "summary": "post #219 by Dennis_H74",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum members (Device Capabilities by Arie J. Godschalk; Aqara/Xiaomi; SONOFF Zigbee; Tuya Local; Tuya official; Homey Portal; Self-Hosted Server; AI Flow Builder threads)",
+      "seenAt": "2026-10-11T09:18:46.889Z"
+    },
+    {
+      "source": "homey-forum-ecosystem",
+      "kind": "forum",
+      "ref": "https://community.homey.app/t/158748/228",
+      "summary": "post #228 by Jeff_B",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum members (Device Capabilities by Arie J. Godschalk; Aqara/Xiaomi; SONOFF Zigbee; Tuya Local; Tuya official; Homey Portal; Self-Hosted Server; AI Flow Builder threads)",
+      "seenAt": "2026-10-11T09:18:46.890Z"
+    },
+    {
+      "source": "homey-forum-ecosystem",
+      "kind": "forum",
+      "ref": "https://community.homey.app/t/146971/128",
+      "summary": "post #128 by Peter_Kawa",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum members (Device Capabilities by Arie J. Godschalk; Aqara/Xiaomi; SONOFF Zigbee; Tuya Local; Tuya official; Homey Portal; Self-Hosted Server; AI Flow Builder threads)",
+      "seenAt": "2026-10-11T09:18:47.384Z"
+    },
+    {
+      "source": "homey-forum-ecosystem",
+      "kind": "forum",
+      "ref": "https://community.homey.app/t/146971/130",
+      "summary": "post #130 by robertklep",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": false,
+      "quirk": true,
+      "credit": "Homey Community Forum members (Device Capabilities by Arie J. Godschalk; Aqara/Xiaomi; SONOFF Zigbee; Tuya Local; Tuya official; Homey Portal; Self-Hosted Server; AI Flow Builder threads)",
+      "seenAt": "2026-10-11T09:18:47.384Z"
+    },
+    {
+      "source": "homey-forum-ecosystem",
+      "kind": "forum",
+      "ref": "https://community.homey.app/t/146971/133",
+      "summary": "post #133 by Jonathan_Draper",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum members (Device Capabilities by Arie J. Godschalk; Aqara/Xiaomi; SONOFF Zigbee; Tuya Local; Tuya official; Homey Portal; Self-Hosted Server; AI Flow Builder threads)",
+      "seenAt": "2026-10-11T09:18:47.384Z"
+    },
+    {
+      "source": "homey-forum-ecosystem",
+      "kind": "forum",
+      "ref": "https://community.homey.app/t/146971/143",
+      "summary": "post #143 by danieldk",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum members (Device Capabilities by Arie J. Godschalk; Aqara/Xiaomi; SONOFF Zigbee; Tuya Local; Tuya official; Homey Portal; Self-Hosted Server; AI Flow Builder threads)",
+      "seenAt": "2026-10-11T09:18:47.384Z"
     }
   ]
 }
