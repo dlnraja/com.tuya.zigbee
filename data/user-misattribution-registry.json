@@ -8284,6 +8284,272 @@
         "z2m"
       ],
       "notes": "2026-10-11: WSD500A temp-humidity (Z2M tuya.ts + deCONZ)"
+    },
+    {
+      "id": "w4n-_tyzb01_bagt1e4o-TS0014",
+      "mfr": [
+        "_TYZB01_bagt1e4o",
+        "_tyzb01_bagt1e4o"
+      ],
+      "productId": [
+        "TS0014"
+      ],
+      "canonicalDriver": "switch_4gang",
+      "forbidMode": "couple",
+      "sources": [
+        "johan",
+        "blakadder"
+      ],
+      "notes": "2026-10-11: MakeGood MG-ZG04W 4-gang wall switch"
+    },
+    {
+      "id": "w4n-_tz3000_e98krvvk-TS0012",
+      "mfr": [
+        "_TZ3000_e98krvvk",
+        "_tz3000_e98krvvk"
+      ],
+      "productId": [
+        "TS0012"
+      ],
+      "canonicalDriver": "switch_2gang",
+      "forbidMode": "couple",
+      "sources": [
+        "johan",
+        "smartthings-mariano",
+        "HobboRobin",
+        "Z2S"
+      ],
+      "notes": "2026-10-11: 2-gang wall switch"
+    },
+    {
+      "id": "w4n-_tyzb01_b8cr31hp-TS0003",
+      "mfr": [
+        "_TYZB01_b8cr31hp",
+        "_tyzb01_b8cr31hp"
+      ],
+      "productId": [
+        "TS0003"
+      ],
+      "canonicalDriver": "switch_3_gang",
+      "forbidMode": "couple",
+      "sources": [
+        "johan",
+        "smartthings-mariano"
+      ],
+      "notes": "2026-10-11: 3-gang switch module"
+    },
+    {
+      "id": "w4n-_tyzb01_xiuox57i-TS0013",
+      "mfr": [
+        "_TYZB01_xiuox57i",
+        "_tyzb01_xiuox57i"
+      ],
+      "productId": [
+        "TS0013"
+      ],
+      "canonicalDriver": "switch_3_gang",
+      "forbidMode": "couple",
+      "sources": [
+        "johan",
+        "blakadder",
+        "smartthings-mariano"
+      ],
+      "notes": "2026-10-11: Lerlink/Lonsonho X713A 3-gang no-neutral switch"
+    },
+    {
+      "id": "w4n-_tz3000_5e5ptb24-TS0013",
+      "mfr": [
+        "_TZ3000_5e5ptb24",
+        "_tz3000_5e5ptb24"
+      ],
+      "productId": [
+        "TS0013"
+      ],
+      "canonicalDriver": "switch_3_gang",
+      "forbidMode": "couple",
+      "sources": [
+        "johan",
+        "smartthings-mariano",
+        "HobboRobin"
+      ],
+      "notes": "2026-10-11: 3-gang wall switch"
+    },
+    {
+      "id": "w4n-_tz3000_aezbqpcu-TS0013",
+      "mfr": [
+        "_TZ3000_aezbqpcu",
+        "_tz3000_aezbqpcu"
+      ],
+      "productId": [
+        "TS0013"
+      ],
+      "canonicalDriver": "switch_3_gang",
+      "forbidMode": "couple",
+      "sources": [
+        "johan",
+        "Z2S"
+      ],
+      "notes": "2026-10-11: 3-gang wall switch"
+    },
+    {
+      "id": "w4n-_tz3000_hlwm8e96-TS0013",
+      "mfr": [
+        "_TZ3000_hlwm8e96",
+        "_tz3000_hlwm8e96"
+      ],
+      "productId": [
+        "TS0013"
+      ],
+      "canonicalDriver": "switch_3_gang",
+      "forbidMode": "couple",
+      "sources": [
+        "johan",
+        "smartthings-mariano"
+      ],
+      "notes": "2026-10-11: Yagusmart 3-gang switch"
+    },
+    {
+      "id": "w4n-_tz3000_lrgccsxm-TS0013",
+      "mfr": [
+        "_TZ3000_lrgccsxm",
+        "_tz3000_lrgccsxm"
+      ],
+      "productId": [
+        "TS0013"
+      ],
+      "canonicalDriver": "switch_3_gang",
+      "forbidMode": "couple",
+      "sources": [
+        "johan",
+        "smartthings-mariano",
+        "obmaz",
+        "zigpy/zha test data"
+      ],
+      "notes": "2026-10-11: 3-gang wall switch"
+    },
+    {
+      "id": "w4n-_tz3000_thhxrept-TS0003",
+      "mfr": [
+        "_TZ3000_thhxrept",
+        "_tz3000_thhxrept"
+      ],
+      "productId": [
+        "TS0003"
+      ],
+      "canonicalDriver": "switch_3_gang",
+      "forbidMode": "couple",
+      "sources": [
+        "johan",
+        "smartthings-mariano"
+      ],
+      "notes": "2026-10-11: 3-gang switch module"
+    },
+    {
+      "id": "w4n-_tz3000_wyhuocal-TS0013",
+      "mfr": [
+        "_TZ3000_wyhuocal",
+        "_tz3000_wyhuocal"
+      ],
+      "productId": [
+        "TS0013"
+      ],
+      "canonicalDriver": "switch_3_gang",
+      "forbidMode": "couple",
+      "sources": [
+        "johan",
+        "smartthings-mariano",
+        "obmaz"
+      ],
+      "notes": "2026-10-11: 3-gang wall switch"
+    },
+    {
+      "id": "w4n-_tz3000_r0pmi2p3-TS0014",
+      "mfr": [
+        "_TZ3000_r0pmi2p3",
+        "_tz3000_r0pmi2p3"
+      ],
+      "productId": [
+        "TS0014"
+      ],
+      "canonicalDriver": "switch_4gang",
+      "forbidMode": "couple",
+      "sources": [
+        "johan",
+        "blakadder",
+        "smartthings-mariano"
+      ],
+      "notes": "2026-10-11: 4-gang no-neutral wall switch"
+    },
+    {
+      "id": "w4n-_tyzb01_vzrytttn-TS0012",
+      "mfr": [
+        "_TYZB01_vzrytttn",
+        "_tyzb01_vzrytttn"
+      ],
+      "productId": [
+        "TS0012"
+      ],
+      "canonicalDriver": "switch_2gang",
+      "forbidMode": "couple",
+      "sources": [
+        "johan",
+        "smartthings-mariano"
+      ],
+      "notes": "2026-10-11: 2-gang wall switch"
+    },
+    {
+      "id": "w4n-_tz3000_s8r1qoyq-TS0012",
+      "mfr": [
+        "_TZ3000_s8r1qoyq",
+        "_tz3000_s8r1qoyq"
+      ],
+      "productId": [
+        "TS0012"
+      ],
+      "canonicalDriver": "switch_2gang",
+      "forbidMode": "couple",
+      "sources": [
+        "johan",
+        "smartthings-mariano"
+      ],
+      "notes": "2026-10-11: 2-gang wall switch"
+    },
+    {
+      "id": "w4n-_tz3000_dku2cfsc-TS0044",
+      "mfr": [
+        "_TZ3000_dku2cfsc",
+        "_tz3000_dku2cfsc"
+      ],
+      "productId": [
+        "TS0044"
+      ],
+      "canonicalDriver": "button_wireless_4",
+      "forbidMode": "couple",
+      "sources": [
+        "johan",
+        "erickvneri button-battery",
+        "kkossev TS004F",
+        "SangBoy zemismart-button"
+      ],
+      "notes": "2026-10-11: 4-button wireless scene remote"
+    },
+    {
+      "id": "w4n-_tz3210_cehuw1lw-TS011F",
+      "mfr": [
+        "_TZ3210_cehuw1lw",
+        "_tz3210_cehuw1lw"
+      ],
+      "productId": [
+        "TS011F"
+      ],
+      "canonicalDriver": "plug_energy_monitor",
+      "forbidMode": "couple",
+      "sources": [
+        "johan",
+        "Z2S",
+        "tr-nc/plantctl Z2M report"
+      ],
+      "notes": "2026-10-11: metering smart plug TS011F_plug_1"
     }
   ],
   "entries": {

@@ -1297,6 +1297,96 @@
       "pid": "TS0201",
       "driverId": "temphumidsensor3",
       "note": "WSD500A temp-humidity (Z2M tuya.ts + deCONZ)"
+    },
+    {
+      "mfr": "_TYZB01_bagt1e4o",
+      "pid": "TS0014",
+      "driverId": "switch_4gang",
+      "note": "MakeGood MG-ZG04W 4-gang wall switch"
+    },
+    {
+      "mfr": "_TZ3000_e98krvvk",
+      "pid": "TS0012",
+      "driverId": "switch_2gang",
+      "note": "2-gang wall switch"
+    },
+    {
+      "mfr": "_TYZB01_b8cr31hp",
+      "pid": "TS0003",
+      "driverId": "switch_3_gang",
+      "note": "3-gang switch module"
+    },
+    {
+      "mfr": "_TYZB01_xiuox57i",
+      "pid": "TS0013",
+      "driverId": "switch_3_gang",
+      "note": "Lerlink/Lonsonho X713A 3-gang no-neutral switch"
+    },
+    {
+      "mfr": "_TZ3000_5e5ptb24",
+      "pid": "TS0013",
+      "driverId": "switch_3_gang",
+      "note": "3-gang wall switch"
+    },
+    {
+      "mfr": "_TZ3000_aezbqpcu",
+      "pid": "TS0013",
+      "driverId": "switch_3_gang",
+      "note": "3-gang wall switch"
+    },
+    {
+      "mfr": "_TZ3000_hlwm8e96",
+      "pid": "TS0013",
+      "driverId": "switch_3_gang",
+      "note": "Yagusmart 3-gang switch"
+    },
+    {
+      "mfr": "_TZ3000_lrgccsxm",
+      "pid": "TS0013",
+      "driverId": "switch_3_gang",
+      "note": "3-gang wall switch"
+    },
+    {
+      "mfr": "_TZ3000_thhxrept",
+      "pid": "TS0003",
+      "driverId": "switch_3_gang",
+      "note": "3-gang switch module"
+    },
+    {
+      "mfr": "_TZ3000_wyhuocal",
+      "pid": "TS0013",
+      "driverId": "switch_3_gang",
+      "note": "3-gang wall switch"
+    },
+    {
+      "mfr": "_TZ3000_r0pmi2p3",
+      "pid": "TS0014",
+      "driverId": "switch_4gang",
+      "note": "4-gang no-neutral wall switch"
+    },
+    {
+      "mfr": "_TYZB01_vzrytttn",
+      "pid": "TS0012",
+      "driverId": "switch_2gang",
+      "note": "2-gang wall switch"
+    },
+    {
+      "mfr": "_TZ3000_s8r1qoyq",
+      "pid": "TS0012",
+      "driverId": "switch_2gang",
+      "note": "2-gang wall switch"
+    },
+    {
+      "mfr": "_TZ3000_dku2cfsc",
+      "pid": "TS0044",
+      "driverId": "button_wireless_4",
+      "note": "4-button wireless scene remote"
+    },
+    {
+      "mfr": "_TZ3210_cehuw1lw",
+      "pid": "TS011F",
+      "driverId": "plug_energy_monitor",
+      "note": "metering smart plug TS011F_plug_1"
     }
   ]
 }

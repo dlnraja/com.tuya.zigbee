@@ -248,6 +248,141 @@
       "pid": "TS0201",
       "source": "johan + z2m",
       "regression": "W4 Z2M-pid couple 2026-10-11 (Johan mfr + Z2M)"
+    },
+    {
+      "mfr": [
+        "_TYZB01_bagt1e4o"
+      ],
+      "driver": "switch_4gang",
+      "pid": "TS0014",
+      "source": "johan + blakadder",
+      "regression": "W4 second-source couple 2026-10-11 (Johan mfr + independent source)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_e98krvvk"
+      ],
+      "driver": "switch_2gang",
+      "pid": "TS0012",
+      "source": "johan + smartthings-mariano + HobboRobin + Z2S",
+      "regression": "W4 second-source couple 2026-10-11 (Johan mfr + independent source)"
+    },
+    {
+      "mfr": [
+        "_TYZB01_b8cr31hp"
+      ],
+      "driver": "switch_3_gang",
+      "pid": "TS0003",
+      "source": "johan + smartthings-mariano",
+      "regression": "W4 second-source couple 2026-10-11 (Johan mfr + independent source)"
+    },
+    {
+      "mfr": [
+        "_TYZB01_xiuox57i"
+      ],
+      "driver": "switch_3_gang",
+      "pid": "TS0013",
+      "source": "johan + blakadder + smartthings-mariano",
+      "regression": "W4 second-source couple 2026-10-11 (Johan mfr + independent source)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_5e5ptb24"
+      ],
+      "driver": "switch_3_gang",
+      "pid": "TS0013",
+      "source": "johan + smartthings-mariano + HobboRobin",
+      "regression": "W4 second-source couple 2026-10-11 (Johan mfr + independent source)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_aezbqpcu"
+      ],
+      "driver": "switch_3_gang",
+      "pid": "TS0013",
+      "source": "johan + Z2S",
+      "regression": "W4 second-source couple 2026-10-11 (Johan mfr + independent source)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_hlwm8e96"
+      ],
+      "driver": "switch_3_gang",
+      "pid": "TS0013",
+      "source": "johan + smartthings-mariano",
+      "regression": "W4 second-source couple 2026-10-11 (Johan mfr + independent source)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_lrgccsxm"
+      ],
+      "driver": "switch_3_gang",
+      "pid": "TS0013",
+      "source": "johan + smartthings-mariano + obmaz + zigpy/zha test data",
+      "regression": "W4 second-source couple 2026-10-11 (Johan mfr + independent source)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_thhxrept"
+      ],
+      "driver": "switch_3_gang",
+      "pid": "TS0003",
+      "source": "johan + smartthings-mariano",
+      "regression": "W4 second-source couple 2026-10-11 (Johan mfr + independent source)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_wyhuocal"
+      ],
+      "driver": "switch_3_gang",
+      "pid": "TS0013",
+      "source": "johan + smartthings-mariano + obmaz",
+      "regression": "W4 second-source couple 2026-10-11 (Johan mfr + independent source)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_r0pmi2p3"
+      ],
+      "driver": "switch_4gang",
+      "pid": "TS0014",
+      "source": "johan + blakadder + smartthings-mariano",
+      "regression": "W4 second-source couple 2026-10-11 (Johan mfr + independent source)"
+    },
+    {
+      "mfr": [
+        "_TYZB01_vzrytttn"
+      ],
+      "driver": "switch_2gang",
+      "pid": "TS0012",
+      "source": "johan + smartthings-mariano",
+      "regression": "W4 second-source couple 2026-10-11 (Johan mfr + independent source)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_s8r1qoyq"
+      ],
+      "driver": "switch_2gang",
+      "pid": "TS0012",
+      "source": "johan + smartthings-mariano",
+      "regression": "W4 second-source couple 2026-10-11 (Johan mfr + independent source)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_dku2cfsc"
+      ],
+      "driver": "button_wireless_4",
+      "pid": "TS0044",
+      "source": "johan + erickvneri button-battery + kkossev TS004F + SangBoy zemismart-button",
+      "regression": "W4 second-source couple 2026-10-11 (Johan mfr + independent source)"
+    },
+    {
+      "mfr": [
+        "_TZ3210_cehuw1lw"
+      ],
+      "driver": "plug_energy_monitor",
+      "pid": "TS011F",
+      "source": "johan + Z2S + tr-nc/plantctl Z2M report",
+      "regression": "W4 second-source couple 2026-10-11 (Johan mfr + independent source)"
     }
   ]
 }

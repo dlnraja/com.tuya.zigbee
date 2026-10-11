@@ -222,6 +222,102 @@
       ],
       "why": "2026-10-11: moved to dedicated driver switch_3_gang (wired 3-gang switch (deCONZ TS0013 device file))",
       "source": "new driver"
+    },
+    {
+      "driver": "switch_1gang",
+      "mfr": [
+        "_TZ3000_e98krvvk"
+      ],
+      "why": "2026-10-11 W4: _TZ3000_e98krvvk is 2-gang wall switch (TS0012) -> switch_2gang",
+      "source": "second-source round"
+    },
+    {
+      "driver": "button_wireless_2",
+      "mfr": [
+        "_TYZB01_b8cr31hp"
+      ],
+      "why": "2026-10-11 W4: _TYZB01_b8cr31hp is 3-gang switch module (TS0003) -> switch_3_gang",
+      "source": "second-source round"
+    },
+    {
+      "driver": "button_wireless_2",
+      "mfr": [
+        "_TYZB01_xiuox57i"
+      ],
+      "why": "2026-10-11 W4: _TYZB01_xiuox57i is Lerlink/Lonsonho X713A 3-gang no-neutral switch (TS0013) -> switch_3_gang",
+      "source": "second-source round"
+    },
+    {
+      "driver": "button_wireless_2",
+      "mfr": [
+        "_TZ3000_5e5ptb24"
+      ],
+      "why": "2026-10-11 W4: _TZ3000_5e5ptb24 is 3-gang wall switch (TS0013) -> switch_3_gang",
+      "source": "second-source round"
+    },
+    {
+      "driver": "button_wireless_2",
+      "mfr": [
+        "_TZ3000_aezbqpcu"
+      ],
+      "why": "2026-10-11 W4: _TZ3000_aezbqpcu is 3-gang wall switch (TS0013) -> switch_3_gang",
+      "source": "second-source round"
+    },
+    {
+      "driver": "button_wireless_2",
+      "mfr": [
+        "_TZ3000_hlwm8e96"
+      ],
+      "why": "2026-10-11 W4: _TZ3000_hlwm8e96 is Yagusmart 3-gang switch (TS0013) -> switch_3_gang",
+      "source": "second-source round"
+    },
+    {
+      "driver": "button_wireless_2",
+      "mfr": [
+        "_TZ3000_lrgccsxm"
+      ],
+      "why": "2026-10-11 W4: _TZ3000_lrgccsxm is 3-gang wall switch (TS0013) -> switch_3_gang",
+      "source": "second-source round"
+    },
+    {
+      "driver": "button_wireless_2",
+      "mfr": [
+        "_TZ3000_thhxrept"
+      ],
+      "why": "2026-10-11 W4: _TZ3000_thhxrept is 3-gang switch module (TS0003) -> switch_3_gang",
+      "source": "second-source round"
+    },
+    {
+      "driver": "button_wireless_2",
+      "mfr": [
+        "_TZ3000_wyhuocal"
+      ],
+      "why": "2026-10-11 W4: _TZ3000_wyhuocal is 3-gang wall switch (TS0013) -> switch_3_gang",
+      "source": "second-source round"
+    },
+    {
+      "driver": "button_wireless_2",
+      "mfr": [
+        "_TZ3000_r0pmi2p3"
+      ],
+      "why": "2026-10-11 W4: _TZ3000_r0pmi2p3 is 4-gang no-neutral wall switch (TS0014) -> switch_4gang",
+      "source": "second-source round"
+    },
+    {
+      "driver": "switch_1gang",
+      "mfr": [
+        "_TZ3000_dku2cfsc"
+      ],
+      "why": "2026-10-11 W4: _TZ3000_dku2cfsc is 4-button wireless scene remote (TS0044) -> button_wireless_4",
+      "source": "second-source round"
+    },
+    {
+      "driver": "switch_1gang",
+      "mfr": [
+        "_TZ3210_cehuw1lw"
+      ],
+      "why": "2026-10-11 W4: _TZ3210_cehuw1lw is metering smart plug TS011F_plug_1 (TS011F) -> plug_energy_monitor",
+      "source": "second-source round"
     }
   ]
 }
