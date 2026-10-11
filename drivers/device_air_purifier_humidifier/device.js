@@ -36,7 +36,7 @@ class HumidifierDevice extends TuyaZigbeeDevice {
     this.log('[TUYA] DP cluster found');
 
     this.registerCapabilityListener('onoff', async (value) => {
-      await tuyaCluster.datapoint({ dp: 1, datatype: 1, value });
+      await require('../../lib/helpers/UniversalDriverInit').sendStructuredDatapoint(tuyaCluster, 1, value, 1);
     });
 
     this.registerCapabilityListener('dim', async (value) => {

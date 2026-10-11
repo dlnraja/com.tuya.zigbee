@@ -200,7 +200,7 @@ class LEDControllerDimmableDevice extends TuyaZigbeeDevice {
     if (!this._tuyaCluster) { throw new Error('No Tuya cluster'); }
     try {
       if (typeof this._tuyaCluster.datapoint === 'function') {
-        await this._tuyaCluster.datapoint({ dp, value, dataType });
+        await require('../../lib/helpers/UniversalDriverInit').sendStructuredDatapoint(this._tuyaCluster, dp, value, dataType);
         return;
       }
       if (typeof this._tuyaCluster.setDatapoint === 'function') {
