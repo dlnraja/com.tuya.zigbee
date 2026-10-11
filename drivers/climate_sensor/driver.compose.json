@@ -51,6 +51,9 @@
   "zigbee": {
     "manufacturerName": [
       "_TZ3000_fllyghyj",
+      "_TZ3000_FLLYGHYJ",
+      "_tz3000_FLLYGHYJ",
+      "_tz3000_fllyghyj",
       "eWeLink",
       "Wing",
       "_tyst11",
@@ -1142,7 +1145,6 @@
       "_tze2841000000_qf5mzewi",
       "ewelink",
       "EWELINK",
-      "_tz3000_fllyghyj",
       "Hobeian",
       "_TYST11_8DAQWRSJ",
       "_tyst11_8DAQWRSJ",
@@ -2147,8 +2149,6 @@
       "_tze204_KSZ749X8",
       "_TZE2841000000_QF5MZEWI",
       "_tze2841000000_QF5MZEWI",
-      "_TZ3000_FLLYGHYJ",
-      "_tz3000_FLLYGHYJ",
       "Owon",
       "Tuyatec-1uxx9cci",
       "Tuyatec-avtsqqbd",
@@ -2159,11 +2159,11 @@
       "Heobian"
     ],
     "productId": [
+      "SNZB-02",
       "CK-TLSR8656-SS5-02(7014)",
       "CK-TLSR8656-SS5-01(7014)",
       "ZTH13-3.0",
       "ZTH11-3.0",
-      "SNZB-02",
       "lumi.sensor_ht",
       "lumi.sensor_ht.agl02",
       "lumi.weather",
