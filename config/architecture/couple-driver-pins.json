@@ -280,10 +280,10 @@
       "mfr": [
         "_TZ3000_j0ktmul1"
       ],
-      "driver": "valve_controller_5zone",
+      "driver": "switch_4gang",
       "pid": "TS011F",
       "source": "z2m + Z2S_Library",
-      "regression": "new driver 2026-10-11 (lost-couples lead)"
+      "regression": "fold 2026-10-11: valve_controller_5zone held (AggregateError); 5 gangs via GangCountAdapter pattern"
     },
     {
       "mfr": [
