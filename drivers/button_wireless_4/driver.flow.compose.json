@@ -757,6 +757,804 @@
         "fr": "Physical button off"
       },
       "args": []
+    },
+    {
+      "id": "button_wireless_4_fut089z_on",
+      "title": {
+        "en": "FUT089Z remote: ON pressed",
+        "fr": "Télécommande FUT089Z : ON appuyé",
+        "nl": "FUT089Z-afstandsbediening: AAN gedrukt",
+        "de": "FUT089Z-Fernbedienung: EIN gedrückt"
+      },
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=button_wireless_4"
+        },
+        {
+          "name": "zone_filter",
+          "type": "dropdown",
+          "title": {
+            "en": "Zone",
+            "fr": "Zone",
+            "nl": "Zone",
+            "de": "Zone"
+          },
+          "values": [
+            {
+              "id": "any",
+              "title": {
+                "en": "Any zone",
+                "fr": "Toute zone",
+                "nl": "Elke zone",
+                "de": "Jede Zone"
+              }
+            },
+            {
+              "id": "1",
+              "title": {
+                "en": "Zone 1",
+                "fr": "Zone 1",
+                "nl": "Zone 1",
+                "de": "Zone 1"
+              }
+            },
+            {
+              "id": "2",
+              "title": {
+                "en": "Zone 2",
+                "fr": "Zone 2",
+                "nl": "Zone 2",
+                "de": "Zone 2"
+              }
+            },
+            {
+              "id": "3",
+              "title": {
+                "en": "Zone 3",
+                "fr": "Zone 3",
+                "nl": "Zone 3",
+                "de": "Zone 3"
+              }
+            },
+            {
+              "id": "4",
+              "title": {
+                "en": "Zone 4",
+                "fr": "Zone 4",
+                "nl": "Zone 4",
+                "de": "Zone 4"
+              }
+            },
+            {
+              "id": "5",
+              "title": {
+                "en": "Zone 5",
+                "fr": "Zone 5",
+                "nl": "Zone 5",
+                "de": "Zone 5"
+              }
+            },
+            {
+              "id": "6",
+              "title": {
+                "en": "Zone 6",
+                "fr": "Zone 6",
+                "nl": "Zone 6",
+                "de": "Zone 6"
+              }
+            },
+            {
+              "id": "7",
+              "title": {
+                "en": "Zone 7",
+                "fr": "Zone 7",
+                "nl": "Zone 7",
+                "de": "Zone 7"
+              }
+            },
+            {
+              "id": "8",
+              "title": {
+                "en": "Zone 8",
+                "fr": "Zone 8",
+                "nl": "Zone 8",
+                "de": "Zone 8"
+              }
+            }
+          ]
+        }
+      ],
+      "tokens": [
+        {
+          "name": "zone",
+          "type": "number",
+          "title": {
+            "en": "Zone (0 = all/unknown)",
+            "fr": "Zone (0 = toutes/inconnue)",
+            "nl": "Zone (0 = alle/onbekend)",
+            "de": "Zone (0 = alle/unbekannt)"
+          },
+          "example": 1
+        }
+      ]
+    },
+    {
+      "id": "button_wireless_4_fut089z_off",
+      "title": {
+        "en": "FUT089Z remote: OFF pressed",
+        "fr": "Télécommande FUT089Z : OFF appuyé",
+        "nl": "FUT089Z-afstandsbediening: UIT gedrukt",
+        "de": "FUT089Z-Fernbedienung: AUS gedrückt"
+      },
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=button_wireless_4"
+        },
+        {
+          "name": "zone_filter",
+          "type": "dropdown",
+          "title": {
+            "en": "Zone",
+            "fr": "Zone",
+            "nl": "Zone",
+            "de": "Zone"
+          },
+          "values": [
+            {
+              "id": "any",
+              "title": {
+                "en": "Any zone",
+                "fr": "Toute zone",
+                "nl": "Elke zone",
+                "de": "Jede Zone"
+              }
+            },
+            {
+              "id": "1",
+              "title": {
+                "en": "Zone 1",
+                "fr": "Zone 1",
+                "nl": "Zone 1",
+                "de": "Zone 1"
+              }
+            },
+            {
+              "id": "2",
+              "title": {
+                "en": "Zone 2",
+                "fr": "Zone 2",
+                "nl": "Zone 2",
+                "de": "Zone 2"
+              }
+            },
+            {
+              "id": "3",
+              "title": {
+                "en": "Zone 3",
+                "fr": "Zone 3",
+                "nl": "Zone 3",
+                "de": "Zone 3"
+              }
+            },
+            {
+              "id": "4",
+              "title": {
+                "en": "Zone 4",
+                "fr": "Zone 4",
+                "nl": "Zone 4",
+                "de": "Zone 4"
+              }
+            },
+            {
+              "id": "5",
+              "title": {
+                "en": "Zone 5",
+                "fr": "Zone 5",
+                "nl": "Zone 5",
+                "de": "Zone 5"
+              }
+            },
+            {
+              "id": "6",
+              "title": {
+                "en": "Zone 6",
+                "fr": "Zone 6",
+                "nl": "Zone 6",
+                "de": "Zone 6"
+              }
+            },
+            {
+              "id": "7",
+              "title": {
+                "en": "Zone 7",
+                "fr": "Zone 7",
+                "nl": "Zone 7",
+                "de": "Zone 7"
+              }
+            },
+            {
+              "id": "8",
+              "title": {
+                "en": "Zone 8",
+                "fr": "Zone 8",
+                "nl": "Zone 8",
+                "de": "Zone 8"
+              }
+            }
+          ]
+        }
+      ],
+      "tokens": [
+        {
+          "name": "zone",
+          "type": "number",
+          "title": {
+            "en": "Zone (0 = all/unknown)",
+            "fr": "Zone (0 = toutes/inconnue)",
+            "nl": "Zone (0 = alle/onbekend)",
+            "de": "Zone (0 = alle/unbekannt)"
+          },
+          "example": 1
+        }
+      ]
+    },
+    {
+      "id": "button_wireless_4_fut089z_brightness",
+      "title": {
+        "en": "FUT089Z remote: Brightness set",
+        "fr": "Télécommande FUT089Z : Luminosité réglée",
+        "nl": "FUT089Z-afstandsbediening: Helderheid ingesteld",
+        "de": "FUT089Z-Fernbedienung: Helligkeit eingestellt"
+      },
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=button_wireless_4"
+        },
+        {
+          "name": "zone_filter",
+          "type": "dropdown",
+          "title": {
+            "en": "Zone",
+            "fr": "Zone",
+            "nl": "Zone",
+            "de": "Zone"
+          },
+          "values": [
+            {
+              "id": "any",
+              "title": {
+                "en": "Any zone",
+                "fr": "Toute zone",
+                "nl": "Elke zone",
+                "de": "Jede Zone"
+              }
+            },
+            {
+              "id": "1",
+              "title": {
+                "en": "Zone 1",
+                "fr": "Zone 1",
+                "nl": "Zone 1",
+                "de": "Zone 1"
+              }
+            },
+            {
+              "id": "2",
+              "title": {
+                "en": "Zone 2",
+                "fr": "Zone 2",
+                "nl": "Zone 2",
+                "de": "Zone 2"
+              }
+            },
+            {
+              "id": "3",
+              "title": {
+                "en": "Zone 3",
+                "fr": "Zone 3",
+                "nl": "Zone 3",
+                "de": "Zone 3"
+              }
+            },
+            {
+              "id": "4",
+              "title": {
+                "en": "Zone 4",
+                "fr": "Zone 4",
+                "nl": "Zone 4",
+                "de": "Zone 4"
+              }
+            },
+            {
+              "id": "5",
+              "title": {
+                "en": "Zone 5",
+                "fr": "Zone 5",
+                "nl": "Zone 5",
+                "de": "Zone 5"
+              }
+            },
+            {
+              "id": "6",
+              "title": {
+                "en": "Zone 6",
+                "fr": "Zone 6",
+                "nl": "Zone 6",
+                "de": "Zone 6"
+              }
+            },
+            {
+              "id": "7",
+              "title": {
+                "en": "Zone 7",
+                "fr": "Zone 7",
+                "nl": "Zone 7",
+                "de": "Zone 7"
+              }
+            },
+            {
+              "id": "8",
+              "title": {
+                "en": "Zone 8",
+                "fr": "Zone 8",
+                "nl": "Zone 8",
+                "de": "Zone 8"
+              }
+            }
+          ]
+        }
+      ],
+      "tokens": [
+        {
+          "name": "zone",
+          "type": "number",
+          "title": {
+            "en": "Zone (0 = all/unknown)",
+            "fr": "Zone (0 = toutes/inconnue)",
+            "nl": "Zone (0 = alle/onbekend)",
+            "de": "Zone (0 = alle/unbekannt)"
+          },
+          "example": 1
+        },
+        {
+          "name": "brightness",
+          "type": "number",
+          "title": {
+            "en": "Brightness (%)",
+            "fr": "Luminosité (%)",
+            "nl": "Helderheid (%)",
+            "de": "Helligkeit (%)"
+          },
+          "example": 50
+        }
+      ]
+    },
+    {
+      "id": "button_wireless_4_fut089z_color_temperature",
+      "title": {
+        "en": "FUT089Z remote: Colour temperature set",
+        "fr": "Télécommande FUT089Z : Température de couleur réglée",
+        "nl": "FUT089Z-afstandsbediening: Kleurtemperatuur ingesteld",
+        "de": "FUT089Z-Fernbedienung: Farbtemperatur eingestellt"
+      },
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=button_wireless_4"
+        },
+        {
+          "name": "zone_filter",
+          "type": "dropdown",
+          "title": {
+            "en": "Zone",
+            "fr": "Zone",
+            "nl": "Zone",
+            "de": "Zone"
+          },
+          "values": [
+            {
+              "id": "any",
+              "title": {
+                "en": "Any zone",
+                "fr": "Toute zone",
+                "nl": "Elke zone",
+                "de": "Jede Zone"
+              }
+            },
+            {
+              "id": "1",
+              "title": {
+                "en": "Zone 1",
+                "fr": "Zone 1",
+                "nl": "Zone 1",
+                "de": "Zone 1"
+              }
+            },
+            {
+              "id": "2",
+              "title": {
+                "en": "Zone 2",
+                "fr": "Zone 2",
+                "nl": "Zone 2",
+                "de": "Zone 2"
+              }
+            },
+            {
+              "id": "3",
+              "title": {
+                "en": "Zone 3",
+                "fr": "Zone 3",
+                "nl": "Zone 3",
+                "de": "Zone 3"
+              }
+            },
+            {
+              "id": "4",
+              "title": {
+                "en": "Zone 4",
+                "fr": "Zone 4",
+                "nl": "Zone 4",
+                "de": "Zone 4"
+              }
+            },
+            {
+              "id": "5",
+              "title": {
+                "en": "Zone 5",
+                "fr": "Zone 5",
+                "nl": "Zone 5",
+                "de": "Zone 5"
+              }
+            },
+            {
+              "id": "6",
+              "title": {
+                "en": "Zone 6",
+                "fr": "Zone 6",
+                "nl": "Zone 6",
+                "de": "Zone 6"
+              }
+            },
+            {
+              "id": "7",
+              "title": {
+                "en": "Zone 7",
+                "fr": "Zone 7",
+                "nl": "Zone 7",
+                "de": "Zone 7"
+              }
+            },
+            {
+              "id": "8",
+              "title": {
+                "en": "Zone 8",
+                "fr": "Zone 8",
+                "nl": "Zone 8",
+                "de": "Zone 8"
+              }
+            }
+          ]
+        }
+      ],
+      "tokens": [
+        {
+          "name": "zone",
+          "type": "number",
+          "title": {
+            "en": "Zone (0 = all/unknown)",
+            "fr": "Zone (0 = toutes/inconnue)",
+            "nl": "Zone (0 = alle/onbekend)",
+            "de": "Zone (0 = alle/unbekannt)"
+          },
+          "example": 1
+        },
+        {
+          "name": "mireds",
+          "type": "number",
+          "title": {
+            "en": "Colour temperature (mired)",
+            "fr": "Température (mired)",
+            "nl": "Kleurtemperatuur (mired)",
+            "de": "Farbtemperatur (Mired)"
+          },
+          "example": 370
+        },
+        {
+          "name": "warmth",
+          "type": "number",
+          "title": {
+            "en": "Warmth (%)",
+            "fr": "Chaleur (%)",
+            "nl": "Warmte (%)",
+            "de": "Wärme (%)"
+          },
+          "example": 50
+        }
+      ]
+    },
+    {
+      "id": "button_wireless_4_fut089z_color",
+      "title": {
+        "en": "FUT089Z remote: Colour set",
+        "fr": "Télécommande FUT089Z : Couleur réglée",
+        "nl": "FUT089Z-afstandsbediening: Kleur ingesteld",
+        "de": "FUT089Z-Fernbedienung: Farbe eingestellt"
+      },
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=button_wireless_4"
+        },
+        {
+          "name": "zone_filter",
+          "type": "dropdown",
+          "title": {
+            "en": "Zone",
+            "fr": "Zone",
+            "nl": "Zone",
+            "de": "Zone"
+          },
+          "values": [
+            {
+              "id": "any",
+              "title": {
+                "en": "Any zone",
+                "fr": "Toute zone",
+                "nl": "Elke zone",
+                "de": "Jede Zone"
+              }
+            },
+            {
+              "id": "1",
+              "title": {
+                "en": "Zone 1",
+                "fr": "Zone 1",
+                "nl": "Zone 1",
+                "de": "Zone 1"
+              }
+            },
+            {
+              "id": "2",
+              "title": {
+                "en": "Zone 2",
+                "fr": "Zone 2",
+                "nl": "Zone 2",
+                "de": "Zone 2"
+              }
+            },
+            {
+              "id": "3",
+              "title": {
+                "en": "Zone 3",
+                "fr": "Zone 3",
+                "nl": "Zone 3",
+                "de": "Zone 3"
+              }
+            },
+            {
+              "id": "4",
+              "title": {
+                "en": "Zone 4",
+                "fr": "Zone 4",
+                "nl": "Zone 4",
+                "de": "Zone 4"
+              }
+            },
+            {
+              "id": "5",
+              "title": {
+                "en": "Zone 5",
+                "fr": "Zone 5",
+                "nl": "Zone 5",
+                "de": "Zone 5"
+              }
+            },
+            {
+              "id": "6",
+              "title": {
+                "en": "Zone 6",
+                "fr": "Zone 6",
+                "nl": "Zone 6",
+                "de": "Zone 6"
+              }
+            },
+            {
+              "id": "7",
+              "title": {
+                "en": "Zone 7",
+                "fr": "Zone 7",
+                "nl": "Zone 7",
+                "de": "Zone 7"
+              }
+            },
+            {
+              "id": "8",
+              "title": {
+                "en": "Zone 8",
+                "fr": "Zone 8",
+                "nl": "Zone 8",
+                "de": "Zone 8"
+              }
+            }
+          ]
+        }
+      ],
+      "tokens": [
+        {
+          "name": "zone",
+          "type": "number",
+          "title": {
+            "en": "Zone (0 = all/unknown)",
+            "fr": "Zone (0 = toutes/inconnue)",
+            "nl": "Zone (0 = alle/onbekend)",
+            "de": "Zone (0 = alle/unbekannt)"
+          },
+          "example": 1
+        },
+        {
+          "name": "hue",
+          "type": "number",
+          "title": {
+            "en": "Hue (°)",
+            "fr": "Teinte (°)",
+            "nl": "Tint (°)",
+            "de": "Farbton (°)"
+          },
+          "example": 120
+        },
+        {
+          "name": "saturation",
+          "type": "number",
+          "title": {
+            "en": "Saturation (%)",
+            "fr": "Saturation (%)",
+            "nl": "Verzadiging (%)",
+            "de": "Sättigung (%)"
+          },
+          "example": 100
+        }
+      ]
+    },
+    {
+      "id": "button_wireless_4_fut089z_scene",
+      "title": {
+        "en": "FUT089Z remote: Scene button pressed",
+        "fr": "Télécommande FUT089Z : Bouton de scène appuyé",
+        "nl": "FUT089Z-afstandsbediening: Scèneknop gedrukt",
+        "de": "FUT089Z-Fernbedienung: Szenentaste gedrückt"
+      },
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=button_wireless_4"
+        },
+        {
+          "name": "zone_filter",
+          "type": "dropdown",
+          "title": {
+            "en": "Zone",
+            "fr": "Zone",
+            "nl": "Zone",
+            "de": "Zone"
+          },
+          "values": [
+            {
+              "id": "any",
+              "title": {
+                "en": "Any zone",
+                "fr": "Toute zone",
+                "nl": "Elke zone",
+                "de": "Jede Zone"
+              }
+            },
+            {
+              "id": "1",
+              "title": {
+                "en": "Zone 1",
+                "fr": "Zone 1",
+                "nl": "Zone 1",
+                "de": "Zone 1"
+              }
+            },
+            {
+              "id": "2",
+              "title": {
+                "en": "Zone 2",
+                "fr": "Zone 2",
+                "nl": "Zone 2",
+                "de": "Zone 2"
+              }
+            },
+            {
+              "id": "3",
+              "title": {
+                "en": "Zone 3",
+                "fr": "Zone 3",
+                "nl": "Zone 3",
+                "de": "Zone 3"
+              }
+            },
+            {
+              "id": "4",
+              "title": {
+                "en": "Zone 4",
+                "fr": "Zone 4",
+                "nl": "Zone 4",
+                "de": "Zone 4"
+              }
+            },
+            {
+              "id": "5",
+              "title": {
+                "en": "Zone 5",
+                "fr": "Zone 5",
+                "nl": "Zone 5",
+                "de": "Zone 5"
+              }
+            },
+            {
+              "id": "6",
+              "title": {
+                "en": "Zone 6",
+                "fr": "Zone 6",
+                "nl": "Zone 6",
+                "de": "Zone 6"
+              }
+            },
+            {
+              "id": "7",
+              "title": {
+                "en": "Zone 7",
+                "fr": "Zone 7",
+                "nl": "Zone 7",
+                "de": "Zone 7"
+              }
+            },
+            {
+              "id": "8",
+              "title": {
+                "en": "Zone 8",
+                "fr": "Zone 8",
+                "nl": "Zone 8",
+                "de": "Zone 8"
+              }
+            }
+          ]
+        }
+      ],
+      "tokens": [
+        {
+          "name": "zone",
+          "type": "number",
+          "title": {
+            "en": "Zone (0 = all/unknown)",
+            "fr": "Zone (0 = toutes/inconnue)",
+            "nl": "Zone (0 = alle/onbekend)",
+            "de": "Zone (0 = alle/unbekannt)"
+          },
+          "example": 1
+        },
+        {
+          "name": "scene",
+          "type": "number",
+          "title": {
+            "en": "Scene",
+            "fr": "Scène",
+            "nl": "Scène",
+            "de": "Szene"
+          },
+          "example": 1
+        }
+      ]
     }
   ],
   "conditions": [],
