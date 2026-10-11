@@ -89,7 +89,8 @@ describe('B2/B3 — Scene recall listener', () => {
 describe('B4 — onEndDeviceAnnounce super calls', () => {
   it('ButtonDevice calls the parent handler', () => {
     const start = buttonDeviceSrc.indexOf('async onEndDeviceAnnounce()');
-    const body = buttonDeviceSrc.slice(start, start + 600);
+    // WHY: the handler grew (soft try/catch + coordinator wiring); the super call sits ~1.2 KB in.
+    const body = buttonDeviceSrc.slice(start, start + 2500);
     assert.match(body, /await super\.onEndDeviceAnnounce\?\.\(\)/);
   });
 
