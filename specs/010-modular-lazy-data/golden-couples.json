@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-11T02:16:44.129Z",
+ "generated": "2026-10-11T03:09:08.109Z",
  "drivers": 392,
  "snapshot": {
   "air_purifier": {
@@ -177,9 +177,9 @@
    "pidSha": "ced4695a6c47df18"
   },
   "button_wireless": {
-   "mfr": 6,
+   "mfr": 7,
    "pid": 10,
-   "mfrSha": "12047ab896613a29",
+   "mfrSha": "81037a6a3553273c",
    "pidSha": "907c50f03c1b4f74"
   },
   "button_wireless_1": {
@@ -399,9 +399,9 @@
    "pidSha": "c4343290bac9e455"
   },
   "curtain_motor": {
-   "mfr": 281,
+   "mfr": 277,
    "pid": 47,
-   "mfrSha": "bb7f379c1d723da3",
+   "mfrSha": "cbe211c7c76551be",
    "pidSha": "735b9403d1d2fceb"
   },
   "curtain_motor_shutter": {
@@ -1564,9 +1564,9 @@
   },
   "sensor_ias_zonetype_ewelink": {
    "mfr": 1,
-   "pid": 1,
+   "pid": 2,
    "mfrSha": "1c7aa01100a550fe",
-   "pidSha": "d58bfac07ee13fc2"
+   "pidSha": "f4b40b018ecb0c18"
   },
   "sensor_illuminance_presence": {
    "mfr": 14,
@@ -2313,9 +2313,9 @@
    "pidSha": "8218a22aa12bceb7"
   },
   "water_leak_sensor": {
-   "mfr": 29,
+   "mfr": 30,
    "pid": 21,
-   "mfrSha": "f41cfeb22db92d0f",
+   "mfrSha": "85239a03ba615c4d",
    "pidSha": "ddd617471a56ff24"
   },
   "water_leak_sensor_tuya": {
