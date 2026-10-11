@@ -27,7 +27,9 @@ permissions:
   actions: write
 concurrency:
   # P139: queue publishes; do not cancel mid Athom processing
-  group: publish
+  # WHY(2026-10-11): ONE group for every upload of com.dlnraja.tuya.zigbee (publish.yml incl. probe
+  # branches, Auto-Publish on Push, Auto-Fix) — overlapping builds caused Athom invalid_state (#3507/#3508).
+  group: athom-publish-master
   cancel-in-progress: false
 
 env:
@@ -256,6 +258,16 @@ jobs:
           git push origin -f "v${{ steps.bump.outputs.version }}"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # WHY(2026-10-11): invalid_state when another build of this app was still processing. Bounded wait
+      # for Athom to finish the previous build before uploading (read-only, never fails the job).
+      - name: Wait for Athom idle (previous build final)
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 17
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: node .github/scripts/wait-athom-idle.js com.dlnraja.tuya.zigbee
 
       - name: Publish
         if: steps.pat.outputs.ok == 'true'
