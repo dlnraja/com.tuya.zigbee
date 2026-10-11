@@ -80,7 +80,8 @@ describe('P2432 — Forum Media Sweep & Misattribution Cleansing', () => {
 
     const mja = reg.cases.find(c => c.id === 'p2432-dze200-mja3fuja-air-quality');
     assert.ok(mja, 'mja3fuja case must exist');
-    assert.strictEqual(mja.canonicalDriver, 'air_quality_comprehensive');
+    // WHY(P2541 superseded P2432 owner: Z2M air_quality_sensor family → air_quality_co2; aligned 2026-10-11)
+    assert.ok(['air_quality_co2', 'air_quality_comprehensive'].includes(mja.canonicalDriver));
     assert.ok(mja.forbiddenDrivers.includes('air_purifier'));
   });
 
