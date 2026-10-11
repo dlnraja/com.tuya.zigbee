@@ -563,6 +563,17 @@
       ],
       "why": "2026-10-11: TS0105 is Nova Digital ZBCMR roller (ogyg1y6b/5cu64znk), not soil; strip junk pid from soil_sensor",
       "source": "z2m ZBCMR-01/02"
+    },
+    {
+      "driver": "curtain_motor_shutter",
+      "mfr": [
+        "_TZE600_5cu64znk",
+        "_tze600_5cu64znk",
+        "_TZE600_5CU64ZNK",
+        "_tze600_5CU64ZNK"
+      ],
+      "why": "2026-10-11: ZBCMR-02 sole owner curtain_motor (same family as ogyg1y6b)",
+      "source": "z2m ZBCMR-02"
     }
   ]
 }
