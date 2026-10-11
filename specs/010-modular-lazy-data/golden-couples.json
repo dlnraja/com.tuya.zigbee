@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-11T07:37:44.313Z",
+ "generated": "2026-10-11T07:55:46.762Z",
  "drivers": 392,
  "snapshot": {
   "air_purifier": {
@@ -189,15 +189,15 @@
    "pidSha": "97471aa91d3d60d5"
   },
   "button_wireless_2": {
-   "mfr": 135,
+   "mfr": 132,
    "pid": 100,
-   "mfrSha": "bab7aec940be1c2e",
+   "mfrSha": "1868a670f0853e25",
    "pidSha": "25b2f5f37b8e4dd1"
   },
   "button_wireless_3": {
-   "mfr": 21,
+   "mfr": 23,
    "pid": 1,
-   "mfrSha": "a8ecc278fc85d6cf",
+   "mfrSha": "d8162248c0439b8b",
    "pidSha": "06cd0099c514e4ab"
   },
   "button_wireless_4": {
@@ -285,9 +285,9 @@
    "pidSha": "3427697d0c296c9d"
   },
   "climate_sensor": {
-   "mfr": 530,
+   "mfr": 531,
    "pid": 32,
-   "mfrSha": "6960e9dc14e9981b",
+   "mfrSha": "69ef0a80c21cd184",
    "pidSha": "4809a771f46a5606"
   },
   "climate_sensor_device": {
@@ -2313,15 +2313,15 @@
    "pidSha": "8218a22aa12bceb7"
   },
   "water_leak_sensor": {
-   "mfr": 35,
+   "mfr": 37,
    "pid": 21,
-   "mfrSha": "47501ff9f4c7d7fc",
+   "mfrSha": "ccfb1d8dbe9cde3b",
    "pidSha": "ddd617471a56ff24"
   },
   "water_leak_sensor_tuya": {
-   "mfr": 37,
+   "mfr": 35,
    "pid": 17,
-   "mfrSha": "fba2827e23e2453d",
+   "mfrSha": "c0055298b92c51cb",
    "pidSha": "64256b5c3fce47c6"
   },
   "water_tank_monitor": {
