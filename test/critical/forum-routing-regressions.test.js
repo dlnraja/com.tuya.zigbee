@@ -335,7 +335,9 @@ describe('forum routing regressions', () => {
     assert(includesCI(composeDriver('rain_sensor').zigbee?.manufacturerName, '_TZE200_u6x1zyv2'));
     assert(!includesCI(composeDriver('contact_sensor').zigbee?.manufacturerName, '_TZE200_u6x1zyv2'));
     assert(!includesCI(composeDriver('sensor_contact_rain').zigbee?.manufacturerName, '_TZE200_u6x1zyv2'));
-    assert(includesCI(composeDriver('contact_sensor').zigbee?.manufacturerName, '_TZE200_pay2byax'));
+    // WHY(P2758/P2201): the EF00 pay2byax couple lives on contact_sensor_zigbee (TS0601), not IAS contact_sensor.
+    assert(includesCI(composeDriver('contact_sensor_zigbee').zigbee?.manufacturerName, '_TZE200_pay2byax'));
+    assert(!includesCI(composeDriver('contact_sensor').zigbee?.manufacturerName, '_TZE200_pay2byax'));
     assert(!includesCI(composeDriver('soil_sensor').zigbee?.manufacturerName, '_TZE200_pay2byax'));
   });
 
