@@ -82,73 +82,23 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
       }
     } catch (err) { if (this.developerDebugMode) { this.error(`Action button_wireless_fingerbot_switch_1gang_toggle: ${err.message}`); } }
 
-    try {
-      const card = this.homey.flow.getActionCard('button_wireless_fingerbot_switch_1gang_set_b_8fda1');
-      if (card) {
-        card.registerRunListener(async (args) => {
-          if (!args.device) {return false;}
-          if (typeof args.device.setBacklightMode === 'function') {await args.device.setBacklightMode(args.mode || args.value);}
-          return true;
-        });
-      }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action button_wireless_fingerbot_switch_1gang_set_backlight: ${err.message}`); } }
+    // WHY(P2654 follow-up 2026-10-11): truncated Flow ID button_wireless_fingerbot_switch_1gang_set_b_8fda1 was dropped from the manifest; dead listener removed.
 
-    try {
-      const card = this.homey.flow.getActionCard('button_wireless_fingerbot_switch_1gang_set_b_8e016');
-      if (card) {
-        card.registerRunListener(async (args) => {
-          if (!args.device) {return false;}
-          if (typeof args.device.setBacklightMode === 'function') {await args.device.setBacklightMode(args.mode || args.value);}
-          return true;
-        });
-      }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action button_wireless_fingerbot_switch_1gang_set_backlight_color: ${err.message}`); } }
 
-    try {
-      const card = this.homey.flow.getActionCard('button_wireless_fingerbot_switch_1gang_set_b_9325d');
-      if (card) {
-        card.registerRunListener(async (args) => {
-          if (!args.device) {return false;}
-          if (typeof args.device.setBacklightMode === 'function') {await args.device.setBacklightMode(args.mode || args.value);}
-          return true;
-        });
-      }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action button_wireless_fingerbot_switch_1gang_set_backlight_brightness: ${err.message}`); } }
+    // WHY(P2654 follow-up 2026-10-11): truncated Flow ID button_wireless_fingerbot_switch_1gang_set_b_8e016 was dropped from the manifest; dead listener removed.
 
-    try {
-      const card = this.homey.flow.getActionCard('button_wireless_fingerbot_switch_1gang_set_c_fc895');
-      if (card) {
-        card.registerRunListener(async (args) => {
-          if (!args.device) {return false;}
-          // Generic action handler
-          this.log('[FLOW] Action button_wireless_fingerbot_switch_1gang_set_countdown triggered for', args.device.getName());
-          return true;
-        });
-      }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action button_wireless_fingerbot_switch_1gang_set_countdown: ${err.message}`); } }
 
-    try {
-      const card = this.homey.flow.getActionCard('button_wireless_fingerbot_switch_1gang_set_c_4bbc8');
-      if (card) {
-        card.registerRunListener(async (args) => {
-          if (!args.device) {return false;}
-          // Generic action handler
-          this.log('[FLOW] Action button_wireless_fingerbot_switch_1gang_set_child_lock triggered for', args.device.getName());
-          return true;
-        });
-      }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action button_wireless_fingerbot_switch_1gang_set_child_lock: ${err.message}`); } }
+    // WHY(P2654 follow-up 2026-10-11): truncated Flow ID button_wireless_fingerbot_switch_1gang_set_b_9325d was dropped from the manifest; dead listener removed.
 
-    try {
-      const card = this.homey.flow.getActionCard('button_wireless_fingerbot_switch_1gang_set_s_296a3');
-      if (card) {
-        card.registerRunListener(async (args) => {
-          if (!args.device) {return false;}
-          if (typeof args.device.setSceneMode === 'function') {await args.device.setSceneMode(args.mode || args.value);}
-          return true;
-        });
-      }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action button_wireless_fingerbot_switch_1gang_set_scene_mode: ${err.message}`); } }
+
+    // WHY(P2654 follow-up 2026-10-11): truncated Flow ID button_wireless_fingerbot_switch_1gang_set_c_fc895 was dropped from the manifest; dead listener removed.
+
+
+    // WHY(P2654 follow-up 2026-10-11): truncated Flow ID button_wireless_fingerbot_switch_1gang_set_c_4bbc8 was dropped from the manifest; dead listener removed.
+
+
+    // WHY(P2654 follow-up 2026-10-11): truncated Flow ID button_wireless_fingerbot_switch_1gang_set_s_296a3 was dropped from the manifest; dead listener removed.
+
 
     this.log('[FLOW] All flow cards registered');
   }
