@@ -29,8 +29,9 @@ describe('P2550 Peter #2239 Smartbutton battery Insights recycle', () => {
 
   it('ButtonDevice recycles measure_battery once for Insights (P2550)', () => {
     const src = fs.readFileSync(path.join(ROOT, 'lib/devices/ButtonDevice.js'), 'utf8');
-    assert.ok(src.includes('p2550_batt_insights_recycle'));
-    assert.ok(src.includes('P2550 recycled measure_battery'));
+    // WHY(P2555): recycle key bumped p2550→p2555 so tips after P2550 re-run once; same recycle.
+    assert.ok(/p255[05]_batt_insights_recycle/.test(src));
+    assert.ok(/P255[05] recycled measure_battery/.test(src));
     assert.ok(src.includes('removeCapability(\'measure_battery\')'));
     assert.ok(src.includes('addCapability(\'measure_battery\')'));
   });
