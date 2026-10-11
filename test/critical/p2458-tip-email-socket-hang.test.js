@@ -109,6 +109,7 @@ describe('P2458 — tip email socket hang up (#3140 / #3142)', () => {
     assert.ok(Array.isArray(ssot.p139.tipEmailExamples));
     assert.ok(ssot.p139.tipEmailExamples.includes('#3140'));
     assert.ok(ssot.p139.tipEmailExamples.includes('#3142'));
-    assert.strictEqual(ssot.p139.patch, 'P2458');
+    // WHY(aligned 2026-10-11): p139 block is cumulative — later patches (e.g. P2696) re-stamp it.
+    assert.ok(/^P\d+$/.test(ssot.p139.patch) && Number(ssot.p139.patch.slice(1)) >= 2458);
   });
 });

@@ -41,6 +41,8 @@ env:
   AI_ALLOW_PAID: "false"
   FORUM_AUTO_POST: "0"
   SHADOW_FORUM: "1"
+  # P2542 forfait gate: no paid/remote AI on Gmail diag path from cron
+  GMAIL_DIAG_AI_MAX: '0'
 
 jobs:
   matrix-prep:

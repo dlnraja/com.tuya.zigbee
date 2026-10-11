@@ -55,10 +55,16 @@ describe('P2606 Bastien house track', () => {
     const md = fs.readFileSync(path.join(ROOT, 'docs/rules/BASTIEN_HOUSE_APP.md'), 'utf8');
     assert.ok(/bastien_to_public_only|one-way|jamais/i.test(md));
     assert.ok(/Create a Homey App|homey app publish/i.test(md));
-    const yml = fs.readFileSync(
-      path.join(ROOT, '.github/workflows/bastien-promote-upstream.yml'),
-      'utf8',
-    );
+    const wf = path.join(ROOT, '.github/workflows/bastien-promote-upstream.yml');
+    // WHY(aligned 2026-10-11): schedules only run from the default branch (master), so the
+    // promote workflow ships there; on stable the doctrine must point to it instead.
+    if (!fs.existsSync(wf)) {
+      const app = JSON.parse(fs.readFileSync(path.join(ROOT, '.homeycompose/app.json'), 'utf8'));
+      assert.ok(String(app.id).includes('stable'), 'workflow only optional on stable track');
+      assert.ok(md.includes('bastien-promote-upstream'), 'doctrine names master workflow');
+      return;
+    }
+    const yml = fs.readFileSync(wf, 'utf8');
     assert.ok(yml.includes('defaults:'));
     assert.ok(yml.includes('shell: bash'));
     assert.ok(yml.includes('bastien-promote-upstream'));

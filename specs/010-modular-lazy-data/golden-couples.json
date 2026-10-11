@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-10T23:41:36.302Z",
+ "generated": "2026-10-11T00:05:24.800Z",
  "drivers": 388,
  "snapshot": {
   "air_purifier": {
@@ -345,9 +345,9 @@
    "pidSha": "777a8703abf8065f"
   },
   "contact_sensor": {
-   "mfr": 62,
+   "mfr": 61,
    "pid": 26,
-   "mfrSha": "ad3871f9e877ff45",
+   "mfrSha": "9a829193896d3b8e",
    "pidSha": "413aba4e609c4fb1"
   },
   "contact_sensor_curtain": {
@@ -963,9 +963,9 @@
    "pidSha": "09fff199fe173c21"
   },
   "ir_blaster": {
-   "mfr": 39,
+   "mfr": 40,
    "pid": 5,
-   "mfrSha": "55bad9943aadc7fc",
+   "mfrSha": "941fcd15cc2997b4",
    "pidSha": "22e4403748643810"
   },
   "ir_remote": {
