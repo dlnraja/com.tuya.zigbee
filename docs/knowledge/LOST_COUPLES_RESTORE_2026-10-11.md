@@ -118,3 +118,10 @@ Matches below are by manufacturerName; issue titles naming the exact couple are 
 | `_TZ3000_j0ktmul1` + TS011F | 5-zone valve controller (Z2M AUT000069); no profile | interview |
 | `_TZ3000_gazjngjl` + TS011F | Z2M#30168 says 1-gang socket + USB; endpoint layout unknown | interview (endpoints) |
 | `_TZ3000_z6fgd73r` + TS011F | touch switch with metering on TS011F | interview |
+
+## Second-source pass (stable/bastien worker, 2026-10-11 ~10:00 Paris)
+- `_TZE200_p6fuhvez` + TS0225 → **gas_sensor**. Z2M `hobeian.ts` ZG-225Z is described as a gas sensor (DP1 gas, DP2 gas_value), and the sprut/Hub#4328 interview shows IAS zoneType 43 (0x002B, gas sensor). It is no longer on sensor_motion_presence (curated removal). Same move on stable and bastien.
+- `_TZE200_aj0oxo1i` + TS0225: same Z2M block. The only other source is a SmartThings edge driver, and that driver says it copied from Z2M, so it is not independent. Lead stays open (needs an interview).
+- `_TZ3000_gazjngjl` + TS011F: the sprut/Hub#4960 interview shows endpoints 1 and 2 as ON_OFF_PLUG_IN_UNIT (socket + USB). On stable it is placed on switch_usb_dongle (2 EP); bastien/master keep usb_dongle_triple, which already matches.
+- `_TZ3000_j1xl73iw` + TS130F: stable is now aligned to curtain_module_2_gang (Z2M TS130F_dual + romasku/tuya-zigbee-switch#270 + Johan).
+- No change for xwh1e22x (identity verified as MiBoxer FUT089Z, but no suitable remote driver), j0ktmul1 (no 5-zone profile), z6fgd73r and ogyg1y6b (Z2M only).
