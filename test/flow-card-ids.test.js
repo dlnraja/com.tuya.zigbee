@@ -23,6 +23,21 @@ const { describe, it } = testApi;
 
 const ROOT = path.join(__dirname, '..');
 
+
+// WHY(2026-10-11): without a local .homeybuild, root app.json only carries the ~200 app-level cards
+// (driver cards were deduped into drivers/*/driver.flow.compose.json, P2381) — merge them like `homey app build`.
+function driverComposeFlow() {
+  const out = { triggers: [], conditions: [], actions: [] };
+  const dir = path.join(ROOT, 'drivers');
+  for (const d of fs.readdirSync(dir)) {
+    const f = path.join(dir, d, 'driver.flow.compose.json');
+    if (!fs.existsSync(f)) {continue;}
+    let j; try { j = JSON.parse(fs.readFileSync(f, 'utf8')); } catch { continue; }
+    for (const t of Object.keys(out)) {for (const c of j[t] || []) {out[t].push(c);}}
+  }
+  return out;
+}
+
 function collectManifestIds() {
   const appFile = fs.existsSync(path.join(ROOT, '.homeybuild', 'app.json'))
     ? path.join(ROOT, '.homeybuild', 'app.json')
@@ -33,6 +48,10 @@ function collectManifestIds() {
     for (const card of (app.flow && app.flow[section]) || []) {
       if (card && card.id) { ids.add(card.id); }
     }
+  }
+  if (!fs.existsSync(path.join(ROOT, '.homeybuild', 'app.json'))) {
+    const dc = driverComposeFlow();
+    for (const t of Object.keys(dc)) {for (const c of dc[t]) {if (c && c.id) {ids.add(c.id);}}}
   }
   return ids;
 }
