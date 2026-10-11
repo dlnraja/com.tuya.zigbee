@@ -8664,6 +8664,60 @@
       "forbidMode": "couple",
       "source": "z2m ZG-101ZS + romasku#237",
       "notes": "2026-10-11 user decision: same hardware as HOBEIAN ZG-101ZS (TLSR8253 battery 4-button, single/double/hold); both couples in scene_switch_4."
+    },
+    {
+      "id": "p-wrmhp6b3-cs201z-soil-not-curtain",
+      "mfr": [
+        "_TZE200_wrmhp6b3",
+        "_tze200_wrmhp6b3",
+        "_TZE200_WRMHP6B3",
+        "_tze200_WRMHP6B3"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "soil_sensor",
+      "forbiddenDrivers": [
+        "curtain_motor",
+        "curtain_module",
+        "climate_sensor"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "sources": [
+        "z2m:CS-201Z",
+        "hubitat:kkossev-TS0601_Soil_Coolo"
+      ],
+      "notes": "COOLO CS-201Z / AY-302Z soil. Same Z2M fingerprint family as _TZE200_npj9bug3. Moved off curtain_motor under one-source policy 2026-10-11."
+    },
+    {
+      "id": "p-ogyg1y6b-zbcmr01-curtain-not-shutter",
+      "mfr": [
+        "_TZE600_ogyg1y6b",
+        "_tze600_ogyg1y6b",
+        "_TZE600_OGYG1Y6B",
+        "_tze600_OGYG1Y6B"
+      ],
+      "productId": [
+        "TS0105",
+        "ts0105"
+      ],
+      "canonicalDriver": "curtain_motor",
+      "forbiddenDrivers": [
+        "curtain_motor_shutter",
+        "switch_3gang",
+        "switch_3_gang",
+        "wall_switch_3gang_1way",
+        "soil_sensor",
+        "radiator_valve"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "sources": [
+        "z2m:ZBCMR-01",
+        "hubitat:zemismart-zigbee-blind"
+      ],
+      "notes": "Nova Digital ZBCMR-01 roller blind. Z2M fingerprint TS0105|_TZE600_ogyg1y6b (also listed under TS0601_cover_2 whiteLabel). Not a 3-gang switch despite TS0105 used by other TZE600 switches."
     }
   ],
   "entries": {

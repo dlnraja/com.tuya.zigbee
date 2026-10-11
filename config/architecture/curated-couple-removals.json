@@ -362,6 +362,28 @@
       ],
       "pid": "TS011F",
       "why": "2026-10-11 fold: AutomatOn 5-zone lives on switch_4gang only"
+    },
+    {
+      "driver": "curtain_motor",
+      "mfr": [
+        "_TZE200_wrmhp6b3",
+        "_tze200_wrmhp6b3",
+        "_TZE200_WRMHP6B3",
+        "_tze200_WRMHP6B3"
+      ],
+      "why": "2026-10-11 one-source: Z2M CS-201Z soil (fingerprint with npj9bug3) + Hubitat kkossev Soil_Coolo — not a curtain motor",
+      "source": "z2m CS-201Z + hubitat kkossev"
+    },
+    {
+      "driver": "curtain_motor_shutter",
+      "mfr": [
+        "_TZE600_ogyg1y6b",
+        "_tze600_ogyg1y6b",
+        "_TZE600_OGYG1Y6B",
+        "_tze600_OGYG1Y6B"
+      ],
+      "why": "2026-10-11 one-source: Nova Digital ZBCMR-01 roller (_TZE600_ogyg1y6b|TS0105) sole owner curtain_motor (Z2M + Hubitat)",
+      "source": "z2m ZBCMR-01 + hubitat zemismart-zigbee-blind"
     }
   ]
 }
