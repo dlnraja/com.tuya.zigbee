@@ -87,6 +87,7 @@
       ],
       "why": "W4 2026-10-11: Z2M TS0501A whitelabel Lidl HG06462A filament bulb; owner light_dimmable_ts0501a (dimmer_wall_1gang has no TS0501A)",
       "source": "zigbee-herdsman-converters tuya.ts TS0501A"
-    }
+    },
+    { "driver": "scene_switch_4", "mfr": ["HOBEIAN"], "why": "P2328: brand HOBEIAN must not land on scene_switch_4 (re-added by fleet-enrich 877fd3b0de). Z2M: HOBEIAN ZG-101ZS = tuya.whitelabel of _TZ3000_bgtzm4ny+TS0044 (owner button_wireless_4), ZG-101ZS is not a modelId", "source": "2aa00a7f6e" }
   ]
 }
