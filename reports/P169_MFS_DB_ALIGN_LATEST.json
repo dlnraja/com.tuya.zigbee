@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-10-11T00:31:38.766Z",
+  "timestamp": "2026-10-11T11:09:54.134Z",
   "gate": "align-mfs-db-intelligent",
   "apply": false,
   "check": true,
   "changeCount": 0,
-  "skippedCount": 65,
+  "skippedCount": 67,
   "highSeverityCount": 0,
   "byAction": {},
   "changes": [],
@@ -266,9 +266,44 @@
       ]
     },
     {
-      "reason": "unclaimed_no_compose",
-      "mfr": "_tze20x_xxxxxxxx",
-      "curated": "air_purifier"
+      "reason": "registry_bare_brand_multi_canon",
+      "mfr": "ewelink",
+      "canon": "climate_sensor",
+      "caseIds": [
+        "p2622-ewelink-ck-tlsr-th-not-virtual-socket"
+      ]
+    },
+    {
+      "reason": "registry_bare_brand_multi_canon",
+      "mfr": "ewelink",
+      "canon": "button_wireless",
+      "caseIds": [
+        "p2622b-ewelink-ck-tlsr-button_wireless"
+      ]
+    },
+    {
+      "reason": "registry_bare_brand_multi_canon",
+      "mfr": "ewelink",
+      "canon": "sensor_ias_zonetype_ewelink",
+      "caseIds": [
+        "p2622b-ewelink-ck-tlsr-sensor_ias_zonetype_ewelink"
+      ]
+    },
+    {
+      "reason": "registry_bare_brand_multi_canon",
+      "mfr": "ewelink",
+      "canon": "contact_sensor",
+      "caseIds": [
+        "p2622b-ewelink-ck-tlsr-contact_sensor"
+      ]
+    },
+    {
+      "reason": "registry_bare_brand_multi_canon",
+      "mfr": "ewelink",
+      "canon": "water_leak_sensor",
+      "caseIds": [
+        "p2622b-ewelink-ck-tlsr-water_leak_sensor"
+      ]
     },
     {
       "reason": "unclaimed_no_compose",
@@ -317,11 +352,6 @@
         "plug",
         "smartplug"
       ]
-    },
-    {
-      "reason": "unclaimed_no_compose",
-      "mfr": "_TZE200_J1XL73IW",
-      "curated": "curtain_motor"
     },
     {
       "reason": "pair_conflict_ambiguous",
@@ -508,29 +538,6 @@
       "reason": "unclaimed_no_compose",
       "mfr": "Heiman",
       "curated": "button_emergency_sos"
-    },
-    {
-      "reason": "brand_multi_intentional",
-      "mfr": "Heobian",
-      "curated": "multi",
-      "claimers": [
-        "button_wireless_1",
-        "climate_sensor",
-        "contact_sensor",
-        "curtain_motor",
-        "gas_sensor",
-        "ir_blaster",
-        "presence_sensor_radar",
-        "rain_sensor",
-        "scene_switch_4",
-        "sensor_contact_zigbee",
-        "siren",
-        "soil_sensor",
-        "switch_1gang",
-        "switch_2gang",
-        "switch_3gang",
-        "water_leak_sensor"
-      ]
     }
   ],
   "highSeverity": []
