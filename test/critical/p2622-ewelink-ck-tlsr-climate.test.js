@@ -36,7 +36,9 @@ describe('P2622 eWeLink CK-TLSR climate (master)', () => {
 
   it('family siblings present', () => {
     assert.ok(hasCouple(loadCompose('button_wireless'), 'CK-TLSR8656-SS5-01(7000)'));
-    assert.ok(hasCouple(loadCompose('motion_sensor'), 'CK-TLSR8656-SS5-01(7002)'));
+    // WHY(P2622 W4): 7002 = IAS-zone SNZB-03 white-label (Z2M sonoff.ts, cluster 1280) → owner
+    // sensor_ias_zonetype_ewelink; eWeLink on motion_sensor would collide eWeLink|SNZB-03 (JohanBendz #1113).
+    assert.ok(hasCouple(loadCompose('sensor_ias_zonetype_ewelink'), 'CK-TLSR8656-SS5-01(7002)'));
     assert.ok(hasCouple(loadCompose('contact_sensor'), 'CK-TLSR8656-SS5-01(7003)'));
     assert.ok(hasCouple(loadCompose('water_leak_sensor'), 'CK-TLSR8656-SS5-01(7019)'));
   });
