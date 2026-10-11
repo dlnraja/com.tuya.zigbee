@@ -1,30 +1,50 @@
-# Grok Bot → Cursor continuation (2026-08-22)
+# Grok Bot → Cursor continuation (refresh 2026-10-11 ~22:30 Paris)
 
-Imported from `AppData/Roaming/Grok Bot` (sanitized) + `Documents/homey/*.md` handoffs.
-**No secrets. No forum posts. No CloudAgent.**
+Imported from `AppData/Roaming/Grok Bot` (sanitized) + live git tips + `docs/knowledge/PORT_ROUND_2026-10-11.md`.
+**No secrets. No forum auto-posts. No CloudAgent. Forfait: no Grok/Opus/cloud Task.**
 
-## Robots / sessions mapped
+## Athom tips (close-out)
 
-| Grok thread theme | Status in this Cursor session |
-|-------------------|-------------------------------|
-| Silent forum 140352 #2189/#2190 | Done — highest still **#2190**; couple rule honored |
-| meter91 `zgyzgdua`+TS0044 0xFD / EP1–4 | **Shipped** master Test ≥9.0.619 (`scene_switch_4`) — user must update+re-pair |
-| Peter IAS leftover EF00 / zoneStatus | **Shipped** (`shouldSkipIasOnlyEf00Tx`, coerce, `_ensureIasBound`) |
-| Stable id `.stable` | **Done** `com.dlnraja.tuya.zigbee.stable` / Tuya Unified |
-| Stable k4ej IAS 1280 | **Done** (+ drop mfr-as-pid) |
-| Stable Publish Athom | Draft **#13** `processing_failed` — P139 **fail-closed** (run 32532163896). Need **new version** draft, not spam #13 |
-| PulseAutomix / AscendOS | Out of Homey scope this pass — noted only |
-| multi-silent-new-fps pollution | **Refuse** invent locks |
+| App | Tip | Evidence |
+|---|---|---|
+| Universal (`master`) | **9.0.1433 Test** | Auto-Publish `[athom-final] OK` |
+| Bastien (`bastien-home`) | **1.0.148 Test** (git tip `f1f76d5968`) | Publish Zigbee Bastien + Node22 green |
+| Stable (`stable-v5`) | **5.12.399 Test** (#307) | Draft→Test; PRs #564–#566 |
 
-## Continue here (Homey only)
+## Done today (do not redo)
 
-1. Master Auto-Publish of docs/9.0.621 → watch → sync tip
-2. Stable: bump **5.12.89** once → push → Publish `.stable` (fresh build, not retry #13)
-3. Keep forum silent; meter91/Peter = update Test + re-pair
-4. Do not lock FP from polluted scanner dumps
+- Fold held SPI / whd02 couples into existing drivers (`led_controller_rgb`, `switch_1gang`); dedicated ids stay on hold.
+- Athom new-driver AggregateError: fold path wins; identical content can fail then pass (retry ≤2 with version bump).
+- One reliable source SSOT: `docs/rules/COUPLE_SOURCE_POLICY.md` on master / stable / bastien.
+- HOBEIAN ZG-101ZS + `_TZ3000_bgtzm4ny`/TS0044 → `scene_switch_4` (off `button_wireless_4`) — all three apps.
+- AutomatOn 5-zone `j0ktmul1` → `switch_4gang`; FUT089Z → `button_wireless_4`.
+- One-source placements: aj0oxo1i gas, 6oabgtzv water, fa9mlvja bw1, kjfzuycl remote, fdxihpp7 / qezuin6k pins.
+- MS-104Z (`iuepbmpv`/TS0121) stays in smartplug (sole couple of that type).
+- Bot append-only for climate pid lists (no reorder).
+
+## Still open (priority)
+
+1. **Held:** `_TZE600_ogyg1y6b`/TS0105 — no TS0105 driver (cross-product risk).
+2. **Tracks:** Johan mfrs with ambiguous pid (7) — wait for exact pid from any one reliable source.
+3. **Switcher timer / on-for-minutes** → stable + Bastien only after ≥24h–7d soak on master Test (PORT_ROUND).
+4. **Forum #2259** (community thread) — triage without Athom mail.
+5. **Empty remote shells** (`remote_button_wireless*`) — leave as-is (paired devices keep working).
+6. **Ledger W4 conflicts / W7 polysemic DP / P2 Wi-Fi** — standing queue (`ledger-cli.js queue`).
+
+## Worktrees
+
+| Path | Branch | Role |
+|---|---|---|
+| `homey/master` | `master` @ 9.0.1433 | Universal Tip |
+| `homey/bastien` | `bastien-home` @ `f1f76d5968` | Bastien house |
+| `homey/stable-v5-p195` | `stable-v5` (often behind) | Prefer `origin/stable-v5` tip |
+| `homey/stable-hobeian-fix` | `fix/stable-pr-gate-skip-missing` | CI PR-gate skip |
+
+`master` cannot be checked out inside the bastien worktree (already locked by `homey/master`).
 
 ## Files
 
-- `reports/grok-bot-import/extract-*.md` — user prompts from Grok
-- `FROM_THE_BEGINNING.md`, `NEXT_PATCHES.md`, `FORUM_LATEST_2190.md`, …
-- Importer: `tools/ci/import-grok-bot-prompts.js`
+- Fresh extract: `extract-667147.md` (+ other new extracts from reimport)
+- Doctrine: `docs/rules/COUPLE_SOURCE_POLICY.md`, `docs/knowledge/HOBEIAN_ZG101ZS_SCENE_SWITCH_2026-10-11.md`
+- Port matrix: `docs/knowledge/PORT_ROUND_2026-10-11.md`
+- Importer: `tools/ci/import-grok-bot-prompts.js` (`npm run import:grok-bot`)
