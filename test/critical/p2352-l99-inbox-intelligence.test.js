@@ -30,7 +30,8 @@ describe('P2352 L99 inbox intelligence automation', () => {
   it('workflow is SHADOW + staggered cron', () => {
     const yml = fs.readFileSync(path.join(ROOT, '.github/workflows/l99-inbox-intelligence.yml'), 'utf8');
     assert.match(yml, /FORUM_AUTO_POST:\s*'0'/);
-    assert.match(yml, /45 2,6,10,14,18,22/);
+    // WHY(P2542 dc0174c3ab forfait crons): staggered :45 cadence thinned to 3×/day (still after forum-poll).
+    assert.match(yml, /cron: '45 [0-9,]+ \* \* \*'/);
     assert.match(yml, /defaults:\s*\n\s*run:\s*\n\s*shell:\s*bash/);
     assert.match(yml, /l99-inbox-intelligence-orchestrator/);
   });

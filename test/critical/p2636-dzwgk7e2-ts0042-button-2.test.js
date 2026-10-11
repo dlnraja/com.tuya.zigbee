@@ -20,7 +20,9 @@ describe('P2636 dzwgk7e2+TS0042 2-btn (phantom 4EP)', () => {
     ));
     assert.ok((c.zigbee.manufacturerName || []).some((x) => /dzwgk7e2/i.test(String(x))));
     assert.ok((c.zigbee.productId || []).includes('TS0042'));
-    assert.ok((c.zigbee.manufacturerName || []).length >= 566);
+    // WHY(1e301a5fcc + W4 9c32d98180, 2026-10-11): TS011F plugs 4ux0ondb/b28wrpvx and other misplaced
+    // couples moved out on purpose — anti-purge floor lowered accordingly (still catches mass loss).
+    assert.ok((c.zigbee.manufacturerName || []).length >= 550);
   });
 
   it('device.js forces 2 buttons + P2636 dzwgk7e2 / skipEf00', () => {

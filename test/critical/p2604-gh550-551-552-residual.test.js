@@ -22,16 +22,22 @@ describe('P2604 GH#550/#551/#552 residual', () => {
   it('gkfbdvyx V3: DP104 not presence; lux nudge re-arms when stuck at 0m', () => {
     const cfg = fs.readFileSync(path.join(ROOT, 'drivers/presence_sensor_radar/configs.js'), 'utf8');
     const idx = cfg.indexOf('ZY_M100_CEILING_24G');
-    const block = cfg.slice(idx, idx + 4000);
+    // WHY(P2722 6e45a07734): block grew (radarDistanceScale, DP10 compat) — wider window.
+    const block = cfg.slice(idx, idx + 8000);
     assert.ok(block.includes("104: { cap: null, internal: 'motion_state_v2_compat' }"));
     assert.ok(!/104:\s*\{[\s\S]*?ignorePresenceClear:\s*true/.test(block));
-    assert.ok(block.includes("9: { cap: 'measure_luminance.distance', divisor: 10 }"));
+    // P2722: DP9 distance uses radarDistanceScale + preferDivisor 10 (≈0.9 m fix) instead of a fixed divisor.
+    assert.ok(/9: \{\s*cap: 'measure_luminance\.distance',\s*radarDistanceScale: true,\s*preferDivisor: 10/.test(block));
     assert.ok(block.includes("103: { cap: 'measure_luminance', type: 'lux_direct' }"));
 
     const src = fs.readFileSync(path.join(ROOT, 'drivers/presence_sensor_radar/device.js'), 'utf8');
     assert.ok(src.includes('lux-stuck-zero'));
     assert.ok(src.includes('stuckZero'));
-    assert.ok(src.includes("const dps = [1, 9, 101, 103]"));
+    // P2722 also nudges DP10 (V2 lux compat) — superset of [1, 9, 101, 103].
+    const m = src.match(/const dps = \[([0-9, ]+)\]/);
+    assert.ok(m, 'nudge dps list');
+    const dps = m[1].split(',').map((x) => Number(x.trim()));
+    for (const dp of [1, 9, 101, 103]) {assert.ok(dps.includes(dp), `nudge DP${dp}`);}
   });
 
   it('TS0043 famkxci2: button_wireless_3 EP1 has no IAS/EF00 clusters', () => {

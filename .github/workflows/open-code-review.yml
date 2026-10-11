@@ -68,6 +68,14 @@ concurrency:
 defaults:
   run:
     shell: bash
+# P2562 forfait + local-smart-learn (all workflows)
+env:
+  AI_ENSEMBLE: 'false'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
+  LOCAL_SMART_LEARN: 'true'
+  LOCAL_ENERGY_LEARN: 'true'
 
 jobs:
   ocr-delegate:

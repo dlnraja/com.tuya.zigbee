@@ -41,6 +41,12 @@ env:
   AI_ALLOW_PAID: "false"
   FORUM_AUTO_POST: "0"
   SHADOW_FORUM: "1"
+  AI_ENSEMBLE: 'false'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
+  LOCAL_SMART_LEARN: 'true'
+  LOCAL_ENERGY_LEARN: 'true'
 
 jobs:
   matrix-prep:
