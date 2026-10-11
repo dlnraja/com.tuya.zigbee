@@ -46,7 +46,10 @@ describe('P2622 eWeLink CK-TLSR climate sacred couple', () => {
 
   it('family siblings lock eWeLink on correct drivers only (Z2M #8855)', () => {
     assert.ok(hasCouple(loadCompose('button_wireless'), 'CK-TLSR8656-SS5-01(7000)'));
-    assert.ok(hasCouple(loadCompose('motion_sensor'), 'CK-TLSR8656-SS5-01(7002)'));
+    // WHY(P2622 W4 2026-10-11): 7002 is an IAS-zone motion white-label (Z2M sonoff.ts SNZB-03, cluster 1280).
+    // Its owner is sensor_ias_zonetype_ewelink (zoneType-resolved) — eWeLink on motion_sensor would collide
+    // eWeLink|SNZB-03 with the JohanBendz #1113/#1475 single-owner decision.
+    assert.ok(hasCouple(loadCompose('sensor_ias_zonetype_ewelink'), 'CK-TLSR8656-SS5-01(7002)'));
     assert.ok(hasCouple(loadCompose('contact_sensor'), 'CK-TLSR8656-SS5-01(7003)'));
     assert.ok(hasCouple(loadCompose('water_leak_sensor'), 'CK-TLSR8656-SS5-01(7019)'));
   });
