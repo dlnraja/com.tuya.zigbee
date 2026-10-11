@@ -68,8 +68,11 @@ describe('P218 2-gang sub-device routing', () => {
       assert.ok(wallSet.has(m.toLowerCase()), `wall missing ${m}`);
       assert.equal(sw2Set.has(m.toLowerCase()), false, `switch_2gang still has ${m}`);
     }
-    assert.ok(wall.devices && wall.devices.secondSwitch);
-    assert.deepEqual(wall.devices.secondSwitch.capabilities, ['onoff']);
+    // WHY(P2455): dual-relay UI is onoff + onoff.gang2 (no devices.secondSwitch spawn)
+    assert.ok(Array.isArray(wall.capabilities));
+    assert.ok(wall.capabilities.includes('onoff'));
+    assert.ok(wall.capabilities.includes('onoff.gang2'));
+    assert.equal(wall.devices, undefined);
     assert.ok(wall.zigbee.productId.includes('TS0002'));
   });
 });

@@ -29,23 +29,46 @@
       "mfr": [
         "_TZE200_nkjintbl",
         "_tze200_nkjintbl",
-        "_TZE284_nkjintbl",
-        "_tze284_nkjintbl"
+        "_TZE200_NKJINTBL",
+        "_tze200_NKJINTBL"
       ],
       "productId": [
         "TS0601"
       ],
-      "canonicalDriver": null,
+      "canonicalDriver": "switch_2gang",
       "forbiddenDrivers": [
         "button_wireless_plug",
-        "switch_2gang",
         "switch_1gang",
         "switch_3gang",
         "switch_4gang"
       ],
       "forbidMode": "couple",
       "protocol": "tuya_ef00",
-      "notes": "P2605: TZE200/284 nkjintbl ambiguous (Z2M multi-gang vs DIN anti-bot). Forbid plug+switch bleed until interview locks couple — do not invent pid/driver."
+      "clusters": [
+        0,
+        4,
+        5,
+        61184
+      ],
+      "sources": [
+        "Homey interview JohanBendz/com.tuya.zigbee#46: TS0601 + _TZE200_nkjintbl, ep1 deviceId 81, in [0,4,5,0xEF00], out [10,25]",
+        "external cross-reference A (converter): TS0601_switch_2_gang, legacy tuya_switch DP1=l1, DP2=l2",
+        "external cross-reference B (quirk): TuyaDoubleSwitchTO, same ep1 signature, 2 virtual endpoints; device-support issue #3497 confirms 2 gang",
+        "external cross-reference C/D (two SmartThings Edge drivers): _TZE200_nkjintbl/TS0601 = DP {1,2}",
+        "external cross-reference E (HOMEd ts0601.json): TS0601 2-Channel Switch, DP1 status_1 bool, DP2 status_2 bool",
+        "external cross-reference F (converter issue #1542, 2020): physical 2-gang unit; early generic 1/2/3/4-gang listing (MKS-CM-W5) narrowed to 2 gang"
+      ],
+      "notes": "P2605 resolved 2026-10-01: TZE200_nkjintbl + TS0601 is a mains 2-gang EF00 wall switch (DP1/DP2 bool). NON-BLOCKING enrichment (additive couple only; no interview from our own users yet — revisit on first diag/interview). One Homey interview (upstream issue) + 6 consistent independent references. Older device-database page lists it under a generic 1/2/3/4-gang touch switch (also carries a 3-gang id) — not gang-specific, superseded. Known: early firmware did not report physical presses in one stack (2020). TZE284 split to p2605b (no source).",
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
     },
     {
       "id": "novadigital-dqy15zxy-curtain",

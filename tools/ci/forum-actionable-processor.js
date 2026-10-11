@@ -200,7 +200,11 @@ function analyzeCouple(mfr, pid, index, truth) {
   let verdict = 'INVESTIGATE';
   // WHY(P2522): invent/OCR-padded mfrs are never lock targets — alias already
   // resolved via canonicalizeForumMfr before analyzeCouple is called.
-  if (reg?.doNotLock) verdict = 'DO_NOT_LOCK';
+  // WHY(P2749e): also detect digit-pad inline when registry lookup was deferred
+  // under BootBudget heap pressure (empty cache → false NOT_IN_CATALOG).
+  const ocrPadInvent = stripTuyaOcrZeroPad(mfr) !== String(mfr || '')
+    && /^_TZE(?:200|204|210|284)\d{5,8}_/i.test(String(mfr || ''));
+  if (reg?.doNotLock || ocrPadInvent) verdict = 'DO_NOT_LOCK';
   else if (!np) verdict = 'MISSING_PID';
   else if (reg && catalogDrivers.length === 1 && catalogDrivers[0] === canonical) verdict = 'LOCKED_OK';
   else if (reg && canonical && !catalogDrivers.includes(canonical)) verdict = 'MISSING_IN_COMPOSE';
@@ -220,7 +224,7 @@ function analyzeCouple(mfr, pid, index, truth) {
     registryId: reg?.id || null,
     knownRouteId: route?.id || null,
     deviceTruthDriver: truthDriver,
-    doNotLock: !!reg?.doNotLock,
+    doNotLock: !!(reg?.doNotLock || ocrPadInvent),
   };
 }
 
