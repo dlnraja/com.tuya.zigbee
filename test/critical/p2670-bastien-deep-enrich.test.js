@@ -28,6 +28,16 @@ describe('P2670 Bastien deep enrich coverage', () => {
     assert.ok(settings.includes('hobeian_mesh_calm'));
   });
 
+  it('firmwareUpdates OTA mfr exact-match zigbee.manufacturerName (Homey validate)', () => {
+    const c = compose('switch_1gang');
+    const mfr = c.zigbee.manufacturerName || [];
+    for (const u of (c.firmwareUpdates && c.firmwareUpdates.updates) || []) {
+      for (const n of (u.device && u.device.manufacturerName) || []) {
+        assert.ok(mfr.includes(n), `missing exact OTA mfr ${n}`);
+      }
+    }
+  });
+
   it('Hobeian countdown is ZCL not EF00', () => {
     const src = fs.readFileSync(path.join(ROOT, 'lib/tuya/HobeianZg301zHeal.js'), 'utf8');
     assert.ok(src.includes('setHobeianCountdown'));
@@ -49,16 +59,18 @@ describe('P2670 Bastien deep enrich coverage', () => {
     assert.ok(mfr.some((m) => /mmkbptmx/i.test(m)));
   });
 
-  it('climate + buttons gain alarm_battery and Bastien pids', () => {
+  it('climate + buttons keep measure_battery (not dual alarm) + Bastien pids', () => {
+    // WHY(P2671d): Homey BATTERY_CAPABILITY_CONFLICT — never measure + alarm together.
     const climate = compose('climate_sensor');
-    assert.ok((climate.capabilities || []).includes('alarm_battery'));
+    assert.ok((climate.capabilities || []).includes('measure_battery'));
+    assert.ok(!(climate.capabilities || []).includes('alarm_battery'));
     assert.ok((climate.zigbee.productId || []).includes('SNZB-02'));
     assert.ok((climate.zigbee.productId || []).some((p) => /7014/.test(p)));
 
     for (const id of ['button_wireless_1', 'button_wireless_2', 'button_wireless_3']) {
       const c = compose(id);
-      assert.ok((c.capabilities || []).includes('alarm_battery'), id);
       assert.ok((c.capabilities || []).includes('measure_battery'), id);
+      assert.ok(!(c.capabilities || []).includes('alarm_battery'), id);
     }
   });
 

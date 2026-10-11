@@ -29,7 +29,8 @@ describe('P2597 gkfbdvyx find_switch + lux warm + phantom onoff soft', () => {
     assert.ok(src.includes('enableFindSwitchOnBoot: true'));
     assert.ok(src.includes('autoEnableFindSwitch: true'));
     const idx = src.indexOf('ZY_M100_CEILING_24G');
-    const block = src.slice(idx, idx + 3200);
+    // Config block grew past 3.2 KB (P2675 sibling ids, P2705 settings) — read the whole entry.
+    const block = src.slice(idx, idx + 12000);
     assert.match(block, /101:\s*\{[\s\S]*?autoEnableFindSwitch:\s*true/);
     assert.ok(block.includes('luxPresenceRateThreshold: 3'));
   });

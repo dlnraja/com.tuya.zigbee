@@ -13,7 +13,8 @@ describe('P2333 diag-driven dimmer + FCU dyn-cap', () => {
     const src = fs.readFileSync(path.join(ROOT, 'lib/tuya/TuyaEF00Manager.js'), 'utf8');
     assert.match(src, /isDimmerDriver/);
     assert.match(src, /P2333[\s\S]{0,200}DP2/);
-    assert.match(src, /internal \|\| ownedMap\.skip/);
+    // WHY(P2528): ownedMap.internal / ownedMap.skip are separate arms (cap-aware)
+    assert.match(src, /ownedMap\.internal[\s\S]{0,40}ownedMap\.skip/);
     // P2350: detect dimmer via dpMappings DP2→dim when driver.id empty
     assert.match(src, /map2\?\.capability === 'dim'/);
   });

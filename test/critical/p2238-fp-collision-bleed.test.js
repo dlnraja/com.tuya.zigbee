@@ -5,14 +5,25 @@ const testApi = global.describe && global.it ? global : require('node:test');
 const { describe, it } = testApi;
 
 describe('P2238 FP collision bleed prune', () => {
-  it('7dcddnye on dimmer_wall_1gang only (not bulb_dimmable)', () => {
+  it('7dcddnye+TS0501A has exactly one light owner (Z2M Lidl HG06462A)', () => {
     const fs = require('fs');
     const path = require('path');
     const has = (j, mfr) => (j.zigbee?.manufacturerName || []).some((m) => String(m).toLowerCase() === mfr.toLowerCase());
     const dim = JSON.parse(fs.readFileSync(path.join(__dirname, '..', '..', 'drivers', 'dimmer_wall_1gang', 'driver.compose.json'), 'utf8'));
     const bulb = JSON.parse(fs.readFileSync(path.join(__dirname, '..', '..', 'drivers', 'bulb_dimmable', 'driver.compose.json'), 'utf8'));
-    assert.strictEqual(has(dim, '_TZ3000_7dcddnye'), true);
-    assert.strictEqual(has(bulb, '_TZ3000_7dcddnye'), false);
+    // WHY(2026-10-11 W4): Z2M tuya.ts lists _TZ3000_7dcddnye under TS0501A as the Lidl HG06462A
+    // filament bulb (same block as nbnmw9nc/j2w1dw29/nosnx7im). dimmer_wall_1gang has no TS0501A
+    // pid, so the couple only pairs on bulb_dimmable. Exactly one owner.
+    // Bastien owner: light_dimmable_ts0501a (dedicated TS0501A light driver).
+    const owners = fs.readdirSync(path.join(__dirname, '..', '..', 'drivers')).filter((d) => {
+      const p = path.join(__dirname, '..', '..', 'drivers', d, 'driver.compose.json');
+      if (!fs.existsSync(p)) return false;
+      const j = JSON.parse(fs.readFileSync(p, 'utf8'));
+      return has(j, '_TZ3000_7dcddnye') && (j.zigbee?.productId || []).includes('TS0501A');
+    });
+    assert.equal(owners.length, 1, `one TS0501A owner, got ${owners.join(',')}`);
+    assert.ok(/bulb|light/.test(owners[0]));
+    assert.strictEqual(has(bulb, '_TZ3000_7dcddnye') && has(dim, '_TZ3000_7dcddnye'), false);
   });
 
   it('prune gate: zero NEW collisions vs baseline', () => {

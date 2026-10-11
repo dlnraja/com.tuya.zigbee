@@ -461,6 +461,12 @@ function align(db, compose, registry) {
 
     // Curated driver missing from disk → try exclusive repair
     if (curated && !compose.driverExists.has(curated)) {
+      // WHY(P2671): HOBEIAN / heobian mfs rows use driverId "multi" (brand→many couples).
+      // That is intentional Sacred Couple doctrine — not an orphan to prune.
+      if (curated === 'multi' || /^h.?obeian$/i.test(String(key)) || /^wing$/i.test(String(key))) {
+        skipped.push({ reason: 'brand_multi_intentional', mfr: key, curated, claimers });
+        continue;
+      }
       if (claimers.length === 1) {
         entry.driverId = claimers[0];
         entry.source = 'compose-exclusive-orphan-repair';
@@ -528,14 +534,22 @@ function align(db, compose, registry) {
   }
 
   // --- Case duplicate merge (keep preferred key, drop others) ---
+  // WHY(P2671): HOBEIAN / heobian typo forms must stay as separate mfs keys —
+  // Athom compose match is case-sensitive; collapsing breaks recognition.
+  const PRESERVE_MULTI_CASE_BRANDS = new Set(['hobeian', 'heobian', 'wing']);
   const byNorm = new Map();
   for (const key of entryKeys(db)) {
     const nm = norm(key);
     if (!byNorm.has(nm)) byNorm.set(nm, []);
     byNorm.get(nm).push(key);
   }
-  for (const [, keys] of byNorm) {
+  for (const [nm, keys] of byNorm) {
     if (keys.length < 2) continue;
+    if (PRESERVE_MULTI_CASE_BRANDS.has(nm) || PRESERVE_MULTI_CASE_BRANDS.has(String(nm).toLowerCase())) {
+      continue;
+    }
+    // heobian is a typo sibling of hobeian — never merge across those norms into one
+    if (/^h.?obeian$/i.test(nm)) continue;
     const keep = preferredMfrKey(keys);
     const keepEntry = ensureEntry(db, keep);
     for (const k of keys) {

@@ -28,8 +28,9 @@ describe('P2396 Lerlink fan DP2/DP11', () => {
     assert.ok(src.includes('case 2:'));
     assert.ok(src.includes('case 11:'));
     assert.ok(src.includes('onSettings'));
-    assert.ok(src.includes('dp: 2'));
-    assert.ok(src.includes('dp: 11'));
+    // Bastien sends via the shared UniversalDriverInit.sendTuyaDP helper (same DP/datatype).
+    assert.ok(src.includes('dp: 2') || /sendTuyaDP\(this, 2, sec, 'value'\)/.test(src));
+    assert.ok(src.includes('dp: 11') || /sendTuyaDP\(this, 11, v, 'enum'\)/.test(src));
   });
 
   it('BatteryMasterEngine no longer maps r32ctezx to AA', () => {
