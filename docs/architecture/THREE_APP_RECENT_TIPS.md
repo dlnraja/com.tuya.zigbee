@@ -23,6 +23,8 @@ Pointers for agents after P2683â€“P2692. Machine tracks: [`dual-app-tracks.
 
 **Athom tips (2026-09-25):** Universal **9.0.1260** · Bastien **1.0.108** (owner Install) · Stable **5.12.342** (P2743 BOTH).
 
+**Athom tips (2026-10-11 evening):** Universal **9.0.1433** Test · Bastien **1.0.148** Test (compose line 1.0.122) · Stable **5.12.399** Test (#307); P2761 port → **5.12.400** (PR #567).
+
 Gates: `npm run check:p273x` · `npm run check:p274x` · `npm run check:publish`.
 
 Silent enrich only — never forum POST (T157628).
