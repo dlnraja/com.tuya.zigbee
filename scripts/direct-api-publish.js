@@ -459,6 +459,17 @@ async function main() {
   const builds = await listBuilds(api, token);
   if (listOnly) return;
 
+  // WHY(2026-10-11, ported from master 5087da3ce1): the CLI upload can leave a build waiting_for_files,
+  // then the direct-API fallback re-sent the SAME version. NEVER upload a version Athom already has,
+  // in any state, even with --force: the next attempt must come with a strictly higher version.
+  {
+    const dup = (builds || []).find((b) => String(b.version) === String(APP_VERSION));
+    if (dup) {
+      log(`SAME-VERSION GUARD: v${APP_VERSION} already uploaded as #${dup.id} (${dup.state}) — skip createBuild; a new attempt needs a strictly higher version.`);
+      return;
+    }
+  }
+
   // Soft-expect / P139: do not createBuild if this version is already on test
   // or still processing (avoids Stable #23 / master #2997→#2998 race).
   {
