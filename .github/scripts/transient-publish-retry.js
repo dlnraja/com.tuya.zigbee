@@ -42,9 +42,19 @@ if (require.main === module) {
     const fresh = JSON.parse(fs.readFileSync(path.join(root, 'data', 'status', `homey-build-status-${appId}.json`), 'utf8'));
     if (Array.isArray(fresh.builds) && fresh.builds.length) builds = fresh.builds;
   } catch (_e) { /* fall back to dashboard report */ }
-  if (!builds.length) try {
+  // WHY(#3530): the fresh snapshot rows carry no stateMeta ("unknown failure") — merge the error
+  // text from the dashboard report (same build id) so socket hang up etc. are still recognised.
+  try {
     const r = JSON.parse(fs.readFileSync(path.join(root, '.github/state/dashboard-monitor-report.json'), 'utf8'));
-    builds = r.latestBuilds || (r.latestBuild ? [r.latestBuild] : []);
+    const dash = [...(r.latestBuilds || []), r.latestBuild, r.latestFailedBuild].filter(Boolean);
+    if (!builds.length) builds = dash;
+    else {
+      const byId = new Map(dash.filter((x) => x && x.id != null).map((x) => [String(x.id), x]));
+      builds = builds.map((b) => {
+        const d2 = b && byId.get(String(b.id));
+        return d2 && !b.stateMeta ? { ...d2, ...b, stateMeta: d2.stateMeta || d2.failureDetail || null } : b;
+      });
+    }
   } catch (_e) { /* no report */ }
   const d = decide({ version, builds, alreadyRetried: process.env.TRANSIENT_RETRY === 'true', idleWaited: process.env.ATHOM_IDLE_WAITED === 'true' });
   console.log(`[transient-retry] ${d.retry ? 'RETRY' : 'skip'}: ${d.reason}`);
