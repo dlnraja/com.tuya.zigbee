@@ -24,3 +24,12 @@ test('athom idle gate treats processing as busy', () => {
   assert.strictEqual(idle([]), true);
   assert.strictEqual(idle(null), false);
 });
+// WHY(2026-10-11): no false green — the final gate fails unless this version reached test/live.
+test('athom final gate verdicts', () => {
+  const { verdict } = require('../../.github/scripts/assert-athom-final.js');
+  assert.strictEqual(verdict([{ id: 1, version: '9.0.1', state: 'processing_failed' }], '9.0.1').ok, false);
+  assert.strictEqual(verdict([{ id: 1, version: '9.0.1', state: 'processing_failed' }], '9.0.1').done, true);
+  assert.strictEqual(verdict([{ id: 2, version: '9.0.1', state: 'test' }], '9.0.1').ok, true);
+  assert.strictEqual(verdict([{ id: 2, version: '9.0.1', state: 'processing' }], '9.0.1').done, false);
+  assert.strictEqual(verdict([], '9.0.1').done, false);
+});
