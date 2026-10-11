@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-11T08:46:55.779Z",
+ "generated": "2026-10-11T09:15:04.097Z",
  "drivers": 393,
  "snapshot": {
   "air_purifier": {
@@ -189,9 +189,9 @@
    "pidSha": "97471aa91d3d60d5"
   },
   "button_wireless_2": {
-   "mfr": 131,
+   "mfr": 122,
    "pid": 100,
-   "mfrSha": "cc700f086d026e51",
+   "mfrSha": "d9c97a15d087568c",
    "pidSha": "25b2f5f37b8e4dd1"
   },
   "button_wireless_3": {
@@ -201,9 +201,9 @@
    "pidSha": "06cd0099c514e4ab"
   },
   "button_wireless_4": {
-   "mfr": 36,
+   "mfr": 37,
    "pid": 45,
-   "mfrSha": "748a2b60bf316012",
+   "mfrSha": "a43ad852ca2a4ef1",
    "pidSha": "fdbcbd0e265ae852"
   },
   "button_wireless_4_ts0041": {
@@ -1197,9 +1197,9 @@
    "pidSha": "cd8cc01224270f0e"
   },
   "plug_energy_monitor": {
-   "mfr": 61,
+   "mfr": 62,
    "pid": 77,
-   "mfrSha": "8475c8d2bec51f9c",
+   "mfrSha": "62a2e1f7c8006c5f",
    "pidSha": "996946b3efddf5b8"
   },
   "plug_smart": {
@@ -1875,9 +1875,9 @@
    "pidSha": "b46b96d17990cf37"
   },
   "switch_1gang": {
-   "mfr": 363,
+   "mfr": 360,
    "pid": 38,
-   "mfrSha": "9b9c238addb785d6",
+   "mfrSha": "ac0f399e2c434223",
    "pidSha": "fd65b1d55ed8db6a"
   },
   "switch_2_gang": {
@@ -1893,15 +1893,15 @@
    "pidSha": "5181eca4102958ba"
   },
   "switch_2gang": {
-   "mfr": 95,
+   "mfr": 96,
    "pid": 14,
-   "mfrSha": "5acda372500b6ed8",
+   "mfrSha": "518dc753dc10bf1e",
    "pidSha": "830a6ff3ab71bd70"
   },
   "switch_3_gang": {
-   "mfr": 3,
+   "mfr": 11,
    "pid": 2,
-   "mfrSha": "7d133c052c7b14ee",
+   "mfrSha": "732f43075b898232",
    "pidSha": "1c2e035cec82b333"
   },
   "switch_3gang": {
@@ -1917,9 +1917,9 @@
    "pidSha": "79608defafa31586"
   },
   "switch_4gang": {
-   "mfr": 81,
+   "mfr": 82,
    "pid": 40,
-   "mfrSha": "87bf280fb02805c1",
+   "mfrSha": "bd4c04bef17b229e",
    "pidSha": "13ec4d7cc3589c0a"
   },
   "switch_dimmer_1gang": {
