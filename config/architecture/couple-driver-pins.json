@@ -35,24 +35,6 @@
     },
     {
       "mfr": [
-        "_TZ3000_fa9mlvja"
-      ],
-      "driver": "button_wireless_1",
-      "pid": "TS0041",
-      "source": "Z2M + deCONZ + Blakadder + Hubitat(kkossev)",
-      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
-    },
-    {
-      "mfr": [
-        "_TZ3000_nsa76jai"
-      ],
-      "driver": "switch_4gang",
-      "pid": "TS0004",
-      "source": "Z2M",
-      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
-    },
-    {
-      "mfr": [
         "_TZ3210_m3mxv66l"
       ],
       "driver": "motion_sensor",
@@ -80,38 +62,11 @@
     },
     {
       "mfr": [
-        "_TZE200_nkjintbl"
-      ],
-      "driver": "switch_2gang",
-      "pid": "TS0601",
-      "source": "Z2M + ZHA + Blakadder",
-      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
-    },
-    {
-      "mfr": [
-        "_TZE200_n8dljorx"
-      ],
-      "driver": "contact_sensor_zigbee",
-      "pid": "TS0601",
-      "source": "Z2M + ZHA + deCONZ + Blakadder + Hubitat(kkossev)",
-      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
-    },
-    {
-      "mfr": [
         "_TZE200_qcasmfan"
       ],
       "driver": "smoke_sensor",
       "pid": "TS0601",
       "source": "Z2M",
-      "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
-    },
-    {
-      "mfr": [
-        "_TYZB01_v8gtiaed"
-      ],
-      "driver": "dimmer_2_gang",
-      "pid": "TS110F",
-      "source": "Z2M + Blakadder + Hubitat(kkossev)",
       "regression": "lost-couples 2026-10-11 full-history pass (W4 move)"
     },
     {
@@ -158,6 +113,78 @@
       "pid": "TS0001",
       "source": "Z2M WHD02",
       "regression": "lost-couples 2026-10-11 pass 3 (variant/W4)"
+    },
+    {
+      "mfr": [
+        "_TZ3210_a2erlvb8"
+      ],
+      "driver": "switch_2gang",
+      "pid": "TS0002",
+      "source": "Z2M qa.ts QARZ2LR",
+      "regression": "lost-couples 2026-10-11 pass 3 (variant/W4)"
+    },
+    {
+      "mfr": [
+        "_TZ3210_a2erlvb8"
+      ],
+      "driver": "switch_2gang",
+      "pid": "TS000F",
+      "source": "Z2M qa.ts QARZ1DC; gang-patterns=1",
+      "regression": "lost-couples 2026-10-11 pass 3 (variant/W4)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_z6fgd73r"
+      ],
+      "driver": "switch_1gang",
+      "pid": "TS011F",
+      "source": "z2m + blakadder + wonjj6768 SmartThings",
+      "regression": "lost-couples lead 2026-10-11 (W4 placement)"
+    },
+    {
+      "mfr": [
+        "_TYZB02_key8kk7r"
+      ],
+      "driver": "button_wireless_3",
+      "pid": "TS0043",
+      "source": "Johan 3 Gang Wall Remote; ZHA #663 interview TS0043",
+      "regression": "johan-only lead 2026-10-11 (second source, W4)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_rrjr1q0u"
+      ],
+      "driver": "button_wireless_3",
+      "pid": "TS0043",
+      "source": "Johan 3 Gang Wall Remote exact couple",
+      "regression": "johan-only lead 2026-10-11 (second source, W4)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_mugyhz0q"
+      ],
+      "driver": "water_leak_sensor",
+      "pid": "TS0207",
+      "source": "johan + z2m",
+      "regression": "johan-only lead 2026-10-11 (second source, W4)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_0s9gukzt"
+      ],
+      "driver": "water_leak_sensor",
+      "pid": "TS0207",
+      "source": "johan + z2m",
+      "regression": "johan-only lead 2026-10-11 (second source, W4)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_zl1kmjqx"
+      ],
+      "driver": "climate_sensor",
+      "pid": "TS0201",
+      "source": "johan + z2m + zha",
+      "regression": "johan-only lead 2026-10-11 (second source, W4)"
     },
     {
       "mfr": [
@@ -251,11 +278,20 @@
     },
     {
       "mfr": [
+        "_TZ3000_j0ktmul1"
+      ],
+      "driver": "switch_4gang",
+      "pid": "TS011F",
+      "source": "z2m + Z2S_Library",
+      "regression": "fold 2026-10-11: valve_controller_5zone held (AggregateError); 5 gangs via GangCountAdapter pattern"
+    },
+    {
+      "mfr": [
         "_TYZB01_bagt1e4o"
       ],
       "driver": "switch_4gang",
       "pid": "TS0014",
-      "source": "johan + blakadder",
+      "source": "Johan 4 Gang Wall Switch; Z2M PR #2597 TS0014 (ledger wrongly had TS0044)",
       "regression": "W4 second-source couple 2026-10-11 (Johan mfr + independent source)"
     },
     {
@@ -264,7 +300,7 @@
       ],
       "driver": "switch_2gang",
       "pid": "TS0012",
-      "source": "johan + smartthings-mariano + HobboRobin + Z2S",
+      "source": "Johan 2 Gang Wall Switch; romasku BSEED TS0012 (ledger wrongly had TS0002/1gang)",
       "regression": "W4 second-source couple 2026-10-11 (Johan mfr + independent source)"
     },
     {
@@ -386,6 +422,26 @@
     },
     {
       "mfr": [
+        "HOBEIAN",
+        "hobeian",
+        "Hobeian"
+      ],
+      "driver": "scene_switch_4",
+      "pid": "ZG-101ZS",
+      "source": "z2m (Star Ring 4 Gang Scene Switch) + sacred-couple rule",
+      "regression": "2026-10-11 user decision: sole owner scene_switch_4"
+    },
+    {
+      "mfr": [
+        "_TZ3000_bgtzm4ny"
+      ],
+      "driver": "scene_switch_4",
+      "pid": "TS0044",
+      "source": "z2m (ZG-101ZS whitelabel) + romasku#237",
+      "regression": "2026-10-11 user decision: same hardware as HOBEIAN ZG-101ZS, same driver"
+    },
+    {
+      "mfr": [
         "_TZE200_aj0oxo1i"
       ],
       "driver": "gas_sensor",
@@ -440,35 +496,6 @@
     },
     {
       "mfr": [
-        "HOBEIAN",
-        "hobeian",
-        "Hobeian"
-      ],
-      "driver": "scene_switch_4",
-      "pid": "ZG-101ZS",
-      "source": "z2m (Star Ring 4 Gang Scene Switch) + sacred-couple rule",
-      "regression": "2026-10-11 user decision: sole owner scene_switch_4"
-    },
-    {
-      "mfr": [
-        "_TZ3000_bgtzm4ny"
-      ],
-      "driver": "scene_switch_4",
-      "pid": "TS0044",
-      "source": "z2m (ZG-101ZS whitelabel) + romasku#237",
-      "regression": "2026-10-11 user decision: same hardware as HOBEIAN ZG-101ZS, same driver"
-    },
-    {
-      "mfr": [
-        "_TZ3000_j0ktmul1"
-      ],
-      "driver": "switch_4gang",
-      "pid": "TS011F",
-      "source": "z2m + Z2S_Library",
-      "regression": "fold 2026-10-11: 5 gangs via GangCountAdapter on switch_4gang"
-    },
-    {
-      "mfr": [
         "_TZE200_wrmhp6b3",
         "_tze200_wrmhp6b3",
         "_TZE200_WRMHP6B3",
@@ -490,6 +517,54 @@
       "pid": "TS0105",
       "source": "Z2M NovaDigital ZBCMR-01 (fingerprint TS0105|_TZE600_ogyg1y6b); Hubitat zemismart-zigbee-blind",
       "regression": "Lost-couple hold: TS0105 was blocked for cross-product; exact couple on curtain_motor (one-source 2026-10-11)."
+    },
+    {
+      "mfr": [
+        "_TZE600_5cu64znk",
+        "_tze600_5cu64znk",
+        "_TZE600_5CU64ZNK",
+        "_tze600_5CU64ZNK"
+      ],
+      "driver": "curtain_motor",
+      "pid": "TS0105",
+      "source": "Z2M Nova Digital ZBCMR-02 TS0105 (zhc#12177); same host as ZBCMR-01 ogyg1y6b",
+      "regression": "Was held fearing TS0105 cartesian; pid is Nova-Digital-only in Z2M."
+    },
+    {
+      "mfr": [
+        "_TZ3000_85czd6fy",
+        "_tz3000_85czd6fy",
+        "_TZ3000_85CZD6FY",
+        "_tz3000_85CZD6FY"
+      ],
+      "driver": "water_leak_sensor",
+      "pid": "TS0207",
+      "source": "Johan README Water Detector + Z2M TS0207 family",
+      "regression": "Was johan_only_unverified / wrong pid in lost ledger"
+    },
+    {
+      "mfr": [
+        "_TZ3000_ww9i3e0y",
+        "_tz3000_ww9i3e0y",
+        "_TZ3000_WW9I3E0Y",
+        "_tz3000_WW9I3E0Y"
+      ],
+      "driver": "water_leak_sensor",
+      "pid": "TS0207",
+      "source": "Johan README Flood Sensor; Z2M TS0207 water_leak",
+      "regression": "Was johan_only_unverified / wrong pid in lost ledger"
+    },
+    {
+      "mfr": [
+        "_TZ3000_yw5tvzsk",
+        "_tz3000_yw5tvzsk",
+        "_TZ3000_YW5TVZSK",
+        "_tz3000_YW5TVZSK"
+      ],
+      "driver": "button_wireless_3",
+      "pid": "TS0043",
+      "source": "Johan 3 Gang Wall Remote exact couple",
+      "regression": "Was johan_only_unverified / wrong pid in lost ledger"
     }
   ]
 }
