@@ -32,7 +32,7 @@ describe('P2750 Lazy Load, Bi-dir UI/UX & Non-Mandatory Exotic Wrappers', () => 
     Lazy.lazyGetter(obj, 'testProp', () => {
       calls++;
       return { val: 42 };
-    });
+    }, { heapBytes: 1024 * 1024 }); // WHY: hermetic — a long mocha run's host heap (>40 MB) must not flip the pressure gate
     assert.equal(calls, 0, 'Factory not called before read');
     assert.equal(obj.testProp.val, 42, 'Factory called on first read');
     assert.equal(calls, 1, 'Factory called exactly once');

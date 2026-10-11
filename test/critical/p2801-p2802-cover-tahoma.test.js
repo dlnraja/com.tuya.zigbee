@@ -37,7 +37,8 @@ test('P2801 hung job frees its slot after timeout', async () => {
   q.run(() => new Promise(() => {}));
   const t0 = Date.now();
   assert.strictEqual(await q.run(() => 'next'), 'next');
-  assert.ok(Date.now() - t0 < 1000);
+  // WHY: 100 ms job timeout; bound is generous so a loaded full-suite event loop doesn't flake (a hung slot never returns at all).
+  assert.ok(Date.now() - t0 < 5000, `slot freed after ${Date.now() - t0} ms`);
   assert.strictEqual(q.stats.timedOut, 1);
 });
 
