@@ -59,9 +59,16 @@ describe('P2328 button forum RX / pairing', () => {
   it('scene_switch_4 productIds are TS0044/TS1002 only (no knob soup)', () => {
     const c = readJson('drivers/scene_switch_4/driver.compose.json');
     const pids = c.zigbee.productId || [];
-    assert.deepEqual([...pids].sort(), ['TS0044', 'TS1002'].sort());
+    // WHY(2026-10-11, P2677): HOBEIAN ZG-101ZS is the Star Ring 4-gang scene switch (Z2M ZG-101ZS:
+    // 1-4 single/double/hold, battery) — scene_switch_4 is its single owner (mfs_db HOBEIAN.byPid).
+    // Still no knob soup: only TS0044/TS1002/ZG-101ZS (case variants from P2677 allowed).
+    const uniq = [...new Set(pids.map((p) => String(p).toUpperCase()))].sort();
+    assert.deepEqual(uniq, ['TS0044', 'TS1002', 'ZG-101ZS'].sort());
     const mfrs = c.zigbee.manufacturerName || [];
-    assert.ok(!mfrs.some((m) => /^hobeian$/i.test(m)));
+    if (mfrs.some((m) => /^hobeian$/i.test(m))) {
+      const db = readJson('data/mfs_db.json');
+      assert.strictEqual(db.HOBEIAN && db.HOBEIAN.byPid && db.HOBEIAN.byPid['ZG-101ZS'], 'scene_switch_4');
+    }
   });
 
   it('mfs_db wkai4ga5 locked to TS0044 battery remote', () => {

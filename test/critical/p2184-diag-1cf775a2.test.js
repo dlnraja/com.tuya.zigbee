@@ -54,8 +54,10 @@ describe('P2184 Peter 1cf775a2 water + smartbutton', () => {
     assert.match(source, /safeSetCapabilityValue/);
   });
 
-  it('button_wireless_1 measure_battery is not getable (no boot poll)', () => {
+  // WHY(P2508 c9d0095a3e, later + deliberate): Peter's UI needs the battery tile, so getable is true;
+  // Homey's getable flag only exposes the stored value, it does not poll the sleepy remote.
+  it('button_wireless_1 measure_battery options are explicit (P2508 getable for UI)', () => {
     const compose = JSON.parse(read('drivers/button_wireless_1/driver.compose.json'));
-    assert.strictEqual(compose.capabilitiesOptions.measure_battery.getable, false);
+    assert.strictEqual(compose.capabilitiesOptions.measure_battery.getable, true);
   });
 });
