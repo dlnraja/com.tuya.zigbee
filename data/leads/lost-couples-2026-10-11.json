@@ -299,11 +299,12 @@
       "smartthings": "wonjj6768/smartthings-zigbee-edge-drivers:source/src/contracts/families/ef00/covers.lua;wonjj6768/smartthings-zigbee-edge-drivers:deploy/ef00-covers-wonjj6768/src/contracts/families/ef00/covers.lua;"
     }
   },
-  "note_2026_10_11_resume": "One-source round + HOBEIAN/FUT089Z done on master; ports to bastien+stable in flight. Still held: ogyg1y6b/TS0105 (no pid driver), Johan ambiguous pids.",
+  "note_2026_10_11_resume": "Close-out: Universal 9.0.1433 Test, Bastien 1.0.148 Test, Stable 5.12.399 Test. One-source + HOBEIAN/FUT089Z/j0ktmul1 ported. Still held: ogyg1y6b/TS0105 (no pid driver), Johan ambiguous pids. 2026-10-11 night: wrmhp6b3|TS0601 → soil_sensor (Z2M CS-201Z + Hubitat).",
   "z2m_attested_unplaced_status": {
     "_tze200_aj0oxo1i|ts0225": "placed gas_sensor (one-source Z2M)",
     "_tze200_p6fuhvez|ts0225": "placed gas_sensor",
     "_tz3000_fdxihpp7|ts000f": "pinned switch_1gang",
-    "_tze600_ogyg1y6b|ts0105": "still held — no TS0105 driver"
+    "_tze600_ogyg1y6b|ts0105": "still held — no TS0105 driver",
+    "_tze200_wrmhp6b3|ts0601": "placed soil_sensor (one-source Z2M CS-201Z + Hubitat kkossev)"
   }
 }
