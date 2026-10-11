@@ -297,6 +297,26 @@
       "reason": "Known false collision: eWeLink exact CK-TLSR8656 couples live on button_wireless (7000) and water_leak_sensor (7019); the eWeLink x TS0601 cross-product is theoretical (eWeLink ships no TS0601). Without this the CI conflict resolver (hard owner climate_sensor) stripped eWeLink from both and the sacred-couple audit failed (#Auto-Publish 38134538754).",
       "source": "Z2M sonoff.ts exact models; P2631",
       "date": "2026-10-11"
+    },
+    {
+      "couple": "_TZ3000_xwh1e22x|TS1002",
+      "drivers": [
+        "bulb_rgbw",
+        "button_wireless_4"
+      ],
+      "reason": "MiBoxer FUT089Z 8-zone remote folded into button_wireless_4 (exact-couple zone profile) because new driver remote_rgbcct_8zone failed Athom processing twice; legacy bulb_rgbw entry kept until real-device soak (user decision).",
+      "source": "Z2M miboxer.ts; JohanBendz#1361; u236/homed",
+      "date": "2026-10-11"
+    },
+    {
+      "couple": "_TZ3000_xwh1e22x|TS0601",
+      "drivers": [
+        "bulb_rgbw",
+        "button_wireless_4"
+      ],
+      "reason": "Manifest cross-product of the FUT089Z fold (both drivers list TS0601); runtime profile only activates on TS1002.",
+      "source": "Z2M miboxer.ts; JohanBendz#1361; u236/homed",
+      "date": "2026-10-11"
     }
   ]
 }
