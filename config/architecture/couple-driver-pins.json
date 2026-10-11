@@ -383,6 +383,60 @@
       "pid": "TS011F",
       "source": "johan + Z2S + tr-nc/plantctl Z2M report",
       "regression": "W4 second-source couple 2026-10-11 (Johan mfr + independent source)"
+    },
+    {
+      "mfr": [
+        "_TZE200_aj0oxo1i"
+      ],
+      "driver": "gas_sensor",
+      "pid": "TS0225",
+      "source": "z2m hobeian.ts (ZG-225Z, Gas sensor)",
+      "regression": "W4 one-source couple 2026-10-11 (Johan mfr + independent source)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_6oabgtzv"
+      ],
+      "driver": "water_leak_sensor",
+      "pid": "TS0207",
+      "source": "johan water_detector (TS0207; only other pid is junk 'q9mpfhw')",
+      "regression": "W4 one-source couple 2026-10-11 (Johan mfr + independent source)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_fdxihpp7"
+      ],
+      "driver": "switch_1gang",
+      "pid": "TS0001",
+      "source": "z2m tuya.ts (TS0001 block)",
+      "regression": "W4 one-source couple 2026-10-11 (Johan mfr + independent source)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_kjfzuycl"
+      ],
+      "driver": "smart_remote_1_button",
+      "pid": "TS004F",
+      "source": "z2m tuya.ts (ERS-10TZBVB-AA)",
+      "regression": "W4 one-source couple 2026-10-11 (Johan mfr + independent source)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_fa9mlvja"
+      ],
+      "driver": "button_wireless_1",
+      "pid": "TS0041",
+      "source": "z2m tuya.ts (IH-K663)",
+      "regression": "W4 one-source couple 2026-10-11 (Johan mfr + independent source)"
+    },
+    {
+      "mfr": [
+        "_TYZB01_qezuin6k"
+      ],
+      "driver": "dimmer_1_gang",
+      "pid": "TS110F",
+      "source": "z2m lonsonho.ts",
+      "regression": "W4 one-source couple 2026-10-11 (Johan mfr + independent source)"
     }
   ]
 }

@@ -1387,6 +1387,42 @@
       "pid": "TS011F",
       "driverId": "plug_energy_monitor",
       "note": "metering smart plug TS011F_plug_1"
+    },
+    {
+      "mfr": "_TZE200_aj0oxo1i",
+      "pid": "TS0225",
+      "driverId": "gas_sensor",
+      "note": "ZG-225Z gas sensor"
+    },
+    {
+      "mfr": "_TZ3000_6oabgtzv",
+      "pid": "TS0207",
+      "driverId": "water_leak_sensor",
+      "note": "water leak detector"
+    },
+    {
+      "mfr": "_TZ3000_fdxihpp7",
+      "pid": "TS0001",
+      "driverId": "switch_1gang",
+      "note": "AY301Z 1-gang switch module"
+    },
+    {
+      "mfr": "_TZ3000_kjfzuycl",
+      "pid": "TS004F",
+      "driverId": "smart_remote_1_button",
+      "note": "Moes ERS-10TZBVB-AA smart button"
+    },
+    {
+      "mfr": "_TZ3000_fa9mlvja",
+      "pid": "TS0041",
+      "driverId": "button_wireless_1",
+      "note": "IH-K663 smart button"
+    },
+    {
+      "mfr": "_TYZB01_qezuin6k",
+      "pid": "TS110F",
+      "driverId": "dimmer_1_gang",
+      "note": "QS-Zigbee-D02-TRIAC-LN 1-gang dimmer module"
     }
   ]
 }

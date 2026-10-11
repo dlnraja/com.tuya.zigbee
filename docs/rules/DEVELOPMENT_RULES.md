@@ -86,3 +86,5 @@ Modern Tuya devices (TZE284 series) require precise timing responses:
 - `drivers/` - All device drivers (organized by FUNCTION, not brand)
 - `lib/devices/` - Base classes (UnifiedSensorBase, UnifiedPlugBase, etc.)
 - `docs/rules/` - This rules documentation
+
+- **Couple sources (2026-10-11):** One reliable source is enough for an exact productId and an exact mfr+pid couple (user rule 2026-10-11): Z2M, ZHA, deCONZ, Johan, blakadder, SmartThings/Hubitat lists, Z2S, a user diagnostic. Record the source per couple (registry/pins/mfs_db). Never invent; skip only when the pid is ambiguous (the source lists several pids for the mfr). Place in the driver matching the device type, W4 move with curated removals and pins. Quirks/behaviour workarounds keep their own ≥2-source rule. See docs/rules/COUPLE_SOURCE_POLICY.md.

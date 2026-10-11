@@ -318,6 +318,38 @@
       ],
       "why": "2026-10-11 W4: _TZ3210_cehuw1lw is metering smart plug TS011F_plug_1 (TS011F) -> plug_energy_monitor",
       "source": "second-source round"
+    },
+    {
+      "driver": "sensor_motion_presence",
+      "mfr": [
+        "_TZE200_aj0oxo1i"
+      ],
+      "why": "2026-10-11 W4: _TZE200_aj0oxo1i is ZG-225Z gas sensor (TS0225) -> gas_sensor",
+      "source": "second-source round"
+    },
+    {
+      "driver": "switch_1gang",
+      "mfr": [
+        "_TZ3000_6oabgtzv"
+      ],
+      "why": "2026-10-11 W4: _TZ3000_6oabgtzv is water leak detector (TS0207) -> water_leak_sensor",
+      "source": "second-source round"
+    },
+    {
+      "driver": "remote_button_wireless_smart",
+      "mfr": [
+        "_TZ3000_kjfzuycl"
+      ],
+      "why": "2026-10-11 W4: _TZ3000_kjfzuycl is Moes ERS-10TZBVB-AA smart button (TS004F) -> smart_remote_1_button",
+      "source": "second-source round"
+    },
+    {
+      "driver": "wall_remote_1_gang",
+      "mfr": [
+        "_TZ3000_fa9mlvja"
+      ],
+      "why": "2026-10-11 W4: IH-K663 smart button TS0041 (Z2M tuya.ts) single owner button_wireless_1 (existing pin)",
+      "source": "one-source round"
     }
   ]
 }
