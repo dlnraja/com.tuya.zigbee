@@ -112,6 +112,7 @@ describe('automation couple guard', () => {
     assert.ok(r.pins.length > 0 && r.deny.length > 0);
     const curated = JSON.parse(fs.readFileSync(path.join(ROOT, 'config/architecture/curated-couple-removals.json'), 'utf8'));
     for (const rem of curated.removals) {
+      if (!rem.driver) continue; // scope:'mfs_db' modelId rules have no single driver
       const c = path.join(ROOT, 'drivers', rem.driver, 'driver.compose.json');
       if (!fs.existsSync(c)) continue;
       const m = JSON.parse(fs.readFileSync(c, 'utf8')).zigbee.manufacturerName.map((x) => x.toLowerCase());
