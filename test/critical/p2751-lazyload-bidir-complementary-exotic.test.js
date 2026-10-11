@@ -49,7 +49,7 @@ describe('P2750 Lazy Load, Bi-dir UI/UX & Non-Mandatory Exotic Wrappers', () => 
       ['shard2', 200],
       ['shard3', 300],
     ]);
-    const evicted = Lazy.evictLruShards(set, accessMap, 2);
+    const evicted = Lazy.evictLruShards(set, accessMap, 2, { heapBytes: 1024 * 1024 }); // hermetic heap probe
     assert.equal(evicted.length, 1);
     assert.equal(evicted[0], 'shard1');
     assert.ok(!set.has('shard1'));
