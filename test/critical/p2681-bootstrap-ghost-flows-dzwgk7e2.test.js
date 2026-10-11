@@ -43,7 +43,9 @@ describe('P2681 bootstrap ghost flows + dzwgk7e2 profile', () => {
     assert.ok(idx >= 0, 'dzwgk7e2 profile must exist');
     const block = src.slice(idx, idx + 550);
     assert.ok(/protocol:\s*'hybrid'/.test(block));
-    assert.ok(/debounceMs:\s*80/.test(block));
+    // WHY(P2714/P2742 snappier than P2693/P2702 floor; aligned 2026-10-11): accept any value ≤ the old cap
+    const deb = Number((block.match(/debounceMs:\s*(\d+)/) || [])[1]);
+    assert.ok(deb > 0 && deb <= 80, `dzwgk7e2 debounce ${deb} must be ≤80`);
     assert.ok(/skip8004:\s*true/.test(block));
     assert.ok(/productId:\s*'TS0042'/.test(block));
     assert.ok(/collapsePhantomEndpoints:\s*true/.test(block));
@@ -62,7 +64,9 @@ describe('P2681 bootstrap ghost flows + dzwgk7e2 profile', () => {
   it('button_wireless_2 forces TS0042 sticky profile', () => {
     const src = fs.readFileSync(path.join(ROOT, 'drivers/button_wireless_2/device.js'), 'utf8');
     assert.ok(/getDeviceProfile\(/.test(src));
-    assert.ok(/debounceMs:\s*80/.test(src));
+    // WHY(P2714/P2742 snappier than P2693/P2702 floor; aligned 2026-10-11): accept any value ≤ the old cap
+    const deb = Number((src.match(/debounceMs:\s*(\d+)/) || [])[1]);
+    assert.ok(deb > 0 && deb <= 80, `button_wireless_2 debounce ${deb} must be ≤80`);
     assert.ok(/_isDzwgk7e2Phantom4Ep/.test(src));
     const c = JSON.parse(
       fs.readFileSync(path.join(ROOT, 'drivers/button_wireless_2/driver.compose.json'), 'utf8')
@@ -73,7 +77,11 @@ describe('P2681 bootstrap ghost flows + dzwgk7e2 profile', () => {
 
   it('TS004x remote fallback debounce is snappy (≤80)', () => {
     const src = fs.readFileSync(path.join(ROOT, 'lib/mixins/PhysicalButtonMixin.js'), 'utf8');
-    assert.ok(/debounceMs = \/\^TS004\[12346F\]\/i\.test\(productId\) \? 80/.test(src)
-      || /TS004\[12346F\].*\? 80/.test(src.replace(/\s+/g, ' ')));
+    // WHY(P2714/P2742 snappier than P2693/P2702 floor; aligned 2026-10-11): accept any value ≤ the old cap
+    const i = src.indexOf('const ts004RemoteFallback');
+    assert.ok(i > 0, 'ts004RemoteFallback exists');
+    const fb = src.slice(i, i + 1500);
+    const deb = Number((fb.match(/debounceMs:\s*(\d+)/) || [])[1]);
+    assert.ok(deb > 0 && deb <= 80, `TS004x fallback debounce ${deb} must be ≤80`);
   });
 });

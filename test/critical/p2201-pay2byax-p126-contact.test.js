@@ -24,7 +24,9 @@ describe('P2201 pay2byax contact + P126 no TS0601 on contact_sensor', () => {
     assert.ok(mfrs.some((m) => String(m).toLowerCase() === '_tze200_pay2byax'));
     assert.ok(mfrs.some((m) => String(m).toLowerCase() === '_tze204_pay2byax'));
     assert.ok((compose.zigbee.productId || []).includes('TS0601'));
-    assert.ok(mfrs.every((m) => /pay2byax/i.test(m)), 'TS0601 path must stay pay2byax-only');
+    // WHY(9c32d98180 W4 2026-10-11): Z2M-confirmed EF00 door sensors (ijey4q29, ykglasuj, kf2hbko4,
+    // n8dljorx) joined this TS0601 driver. The path stays EF00-only (_TZE*), never _TZ3000/IAS mfrs.
+    assert.ok(mfrs.every((m) => /^_tze\d{3}_/i.test(m)), 'TS0601 path must stay EF00 (_TZE*) only');
   });
 
   it('DeviceFingerprintDB routes pay2byax|TS0601 to contact_sensor_zigbee', () => {
