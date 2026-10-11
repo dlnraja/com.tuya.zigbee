@@ -43,12 +43,12 @@ Still held on purpose: `_TZE600_ogyg1y6b`/TS0105 (no TS0105 driver — would cro
 | Golden refresh after j0ktmul1 / xwh1e22x shrink | PR #564 (`fix/stable-golden-j0kt-xwh`) | `f1f76d5968` (also P2640 famkxci2 front-pin + Flow id dedupe) |
 | Node22 unblock (golden LOST) | Same PR #564 | Same commit; workflow_dispatch Node22 |
 
-## Close-out (Athom tips, Paris 2026-10-11 ~17:30)
+## Close-out (Athom tips, Paris 2026-10-11 ~22:00)
 
-| App | Tip | Channel |
+| App | Tip / channel | Evidence |
 |---|---|---|
-| Universal (master) | **9.0.1433** | Test (`[athom-final] OK`) |
-| Bastien | Publish in flight on `f1f76d5968` (prior tip publish OK at 1.0.122 line) | Draft→Test via Publish Zigbee Bastien |
-| Stable | **5.12.396** tip; Node22 golden fix via #564 | Test after merge + publish |
+| Universal (master) | **9.0.1433 Test** | Auto-Publish `[athom-final] OK` |
+| Bastien | **1.0.148 Test** (git tip still 1.0.122 line + P2640 `f1f76d5968`) | Publish Zigbee Bastien + Node22 green |
+| Stable | **5.12.398 Test** (#306); tip git **5.12.399** (#307 draft→promote in flight) | Draft→Test: `#306 already-test`; Node22 green; PRs #564–#566 merged |
 
 Held on purpose: `_TZE600_ogyg1y6b`/TS0105; ambiguous Johan mfrs. No invented couples.
