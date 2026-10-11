@@ -4,6 +4,7 @@
   "description": "Private Zigbee house app for Bastien — local Homey Pro only. Learnings promote upstream to Universal Tuya / Stable (never the reverse wholesale).",
   "main": "app.js",
   "scripts": {
+    "check:p2617": "node --test test/critical/p2617-gkfbdvyx-550-tip-regress.test.js",
     "build": "homey app build",
     "prebuild": "node scripts/maintenance/kill-stray-nulls.cjs --force",
     "postbuild": "node scripts/maintenance/fix-large-images.js && node scripts/maintenance/optimize-build-images.cjs && node scripts/maintenance/sanitize-manifest.cjs",

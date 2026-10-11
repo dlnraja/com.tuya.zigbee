@@ -44,11 +44,25 @@ describe('P2686 L99 diag hold-release + TRV sacred-keep', () => {
     assert.ok((c.zigbee.productId || []).includes('TS0601'));
   });
 
+  // WHY(P2697): enrich reorder buried p3 at idx~99 — compact could drop before sacred-keep
+  it('radiator_valve front-pins p3dbf6qs case forms', () => {
+    const c = JSON.parse(fs.readFileSync(
+      path.join(ROOT, 'drivers/radiator_valve/driver.compose.json'), 'utf8'));
+    const head = (c.zigbee.manufacturerName || []).slice(0, 4).map((s) => String(s).toLowerCase());
+    assert.ok(head.every((m) => m.includes('p3dbf6qs')), 'p3dbf6qs case forms front-pinned');
+    assert.equal(c.zigbee.productId[0], 'TS0601');
+  });
+
   it('device_radiator_valve unions TZE200_p3dbf6qs (complementary)', () => {
     const c = JSON.parse(fs.readFileSync(
       path.join(ROOT, 'drivers/device_radiator_valve/driver.compose.json'), 'utf8'));
     const m = c.zigbee.manufacturerName || [];
-    assert.ok(m.includes('_TZE200_p3dbf6qs'));
     assert.ok(m.includes('_TZE284_p3dbf6qs'));
+    // WHY(Node22 audit 2026-10-11): stable dedupe (8dc99f261b) keeps _TZE200_p3dbf6qs+TS0601 in ONE
+    // driver — radiator_valve, as publish-sacred-keep-couples.json pins it. A second copy here would
+    // duplicate the exact couple; assert the sacred owner instead of the union.
+    const rv = JSON.parse(fs.readFileSync(
+      path.join(ROOT, 'drivers/radiator_valve/driver.compose.json'), 'utf8'));
+    assert.ok(m.includes('_TZE200_p3dbf6qs') || (rv.zigbee.manufacturerName || []).includes('_TZE200_p3dbf6qs'));
   });
 });
