@@ -100,7 +100,8 @@ describe('P2450 — kaflzta4 stuck dimmer + identity re-apply', () => {
     );
     assert.ok(/P2450/.test(src));
     assert.ok(/isOneBtnSceneKnob/.test(src));
-    assert.ok(/kaflzta4\|ja5osu5g\|an5rjiwd/.test(src));
+    // WHY(P2453 707c2f8fa1): an5rjiwd dropped from the 1-button scene-knob re-arm set (couple lock).
+    assert.ok(/kaflzta4\|ja5osu5g/.test(src));
     assert.ok(/applyDesiredMode/.test(src));
   });
 });

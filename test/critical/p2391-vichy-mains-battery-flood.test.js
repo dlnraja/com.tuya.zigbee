@@ -33,7 +33,8 @@ describe('P2391 — VicHY #2224 mains radar battery/flood', () => {
     assert.ok(/P2391\/P2420.*cleared Homey Energy/.test(src), 'P2420 always clears energy');
     assert.ok(src.includes('2_000'), 'P2420 early 2s re-heal');
     assert.ok(src.includes('config upgrade'), 'upgrades DEFAULT cache when mfr resolves');
-    assert.ok(src.includes("phantoms.push('measure_battery', 'alarm_battery')"), 'heal strips battery');
+    // WHY(P2511/P2599 6a84f01bf3): heal still strips battery, plus app-owned tuya_battery_low.
+    assert.ok(/phantoms\.push\(\s*'measure_battery',\s*'alarm_battery'/.test(src), 'heal strips battery');
     assert.ok(src.includes('P2459'), 'P2459 refuse phantom addCapability');
   });
 });

@@ -40,7 +40,8 @@ describe('P2387 button raw frame wrap gate', () => {
 
   it('PhysicalButtonMixin has TS004 driver+pid fallback profiles (P2387)', () => {
     const src = read('lib/mixins/PhysicalButtonMixin.js');
-    assert.ok(src.includes('P2387'));
+    // WHY(P2714 5fa3177a28): same driver+pid TS004 fallback, now tagged P2714 (snappy floor).
+    assert.ok(src.includes('P2387') || src.includes('P2714'));
     assert.ok(src.includes('ts004RemoteFallback'));
     assert.ok(src.includes('button_wireless_3'));
   });
@@ -59,8 +60,12 @@ describe('P2387 button raw frame wrap gate', () => {
     ];
     for (const rel of migrated) {
       const src = read(rel);
+      // WHY(P2609 d1db89bc1a): wall/scene remotes go through installWallSceneRemoteHybrid, which
+      // itself installs the E000 interceptor / wrapHandleFrame chain.
       assert.ok(
-        src.includes('installE000RawInterceptor') || src.includes('wrapHandleFrame'),
+        src.includes('installE000RawInterceptor') || src.includes('wrapHandleFrame')
+          || (src.includes('installWallSceneRemoteHybrid')
+            && /installE000RawInterceptor|wrapHandleFrame/.test(read('lib/devices/WallSceneRemoteHybridInit.js'))),
         `${rel} must use P2387 SSOT or wrapHandleFrame`,
       );
       assert.ok(
