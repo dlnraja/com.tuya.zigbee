@@ -1279,6 +1279,36 @@
       "pid": "TS000F",
       "driverId": "switch_1gang",
       "note": "WHD02 (#2257-era, switch_module_whd02 held) folded into switch_1gang; keep through publish compaction"
+    },
+    {
+      "mfr": "_TYZB02_key8kk7r",
+      "pid": "TS0043",
+      "driverId": "button_wireless_3",
+      "note": "3-button remote: ZHA ts0043 TuyaSmartRemote0043NO + deCONZ Tuya3gangMap"
+    },
+    {
+      "mfr": "_TZ3000_rrjr1q0u",
+      "pid": "TS0043",
+      "driverId": "button_wireless_3",
+      "note": "3-button remote: deCONZ Tuya3gangMap + de_web_plugin switch list"
+    },
+    {
+      "mfr": "_TZ3000_mugyhz0q",
+      "pid": "TS0207",
+      "driverId": "water_leak_sensor",
+      "note": "Tuya 899WZ water leak detector (Z2M TS0207_water_leak_detector)"
+    },
+    {
+      "mfr": "_TZ3000_0s9gukzt",
+      "pid": "TS0207",
+      "driverId": "water_leak_sensor",
+      "note": "Nous E4 water leakage sensor (Z2M TS0207_water_leak_detector)"
+    },
+    {
+      "mfr": "_TZ3000_zl1kmjqx",
+      "pid": "TS0201",
+      "driverId": "climate_sensor",
+      "note": "temperature/humidity sensor RSH-HS06_1 / IH-K009 (Z2M tuya.ts, ZHA ty0201)"
     }
   ]
 }

@@ -8103,6 +8103,93 @@
         "climate_sensor"
       ],
       "notes": "W4 curated removal 2026-10-11: Zemismart 3-gang TS0003 wall switch (interview in JohanBendz#795, Johan 2026 verification). climate_sensor has no Z2M pid for this mfr."
+    },
+    {
+      "id": "johan-only-_tyzb02_key8kk7r",
+      "mfr": [
+        "_TYZB02_key8kk7r",
+        "_tyzb02_key8kk7r"
+      ],
+      "productId": [
+        "TS0043"
+      ],
+      "canonicalDriver": "button_wireless_3",
+      "forbidMode": "couple",
+      "sources": [
+        "johan",
+        "zha",
+        "deconz"
+      ],
+      "notes": "2026-10-11: 3-button remote: ZHA ts0043 TuyaSmartRemote0043NO + deCONZ Tuya3gangMap"
+    },
+    {
+      "id": "johan-only-_tz3000_rrjr1q0u",
+      "mfr": [
+        "_TZ3000_rrjr1q0u",
+        "_tz3000_rrjr1q0u"
+      ],
+      "productId": [
+        "TS0043"
+      ],
+      "canonicalDriver": "button_wireless_3",
+      "forbidMode": "couple",
+      "sources": [
+        "johan",
+        "deconz"
+      ],
+      "notes": "2026-10-11: 3-button remote: deCONZ Tuya3gangMap + de_web_plugin switch list"
+    },
+    {
+      "id": "johan-only-_tz3000_mugyhz0q",
+      "mfr": [
+        "_TZ3000_mugyhz0q",
+        "_tz3000_mugyhz0q"
+      ],
+      "productId": [
+        "TS0207"
+      ],
+      "canonicalDriver": "water_leak_sensor",
+      "forbidMode": "couple",
+      "sources": [
+        "johan",
+        "z2m"
+      ],
+      "notes": "2026-10-11: Tuya 899WZ water leak detector (Z2M TS0207_water_leak_detector)"
+    },
+    {
+      "id": "johan-only-_tz3000_0s9gukzt",
+      "mfr": [
+        "_TZ3000_0s9gukzt",
+        "_tz3000_0s9gukzt"
+      ],
+      "productId": [
+        "TS0207"
+      ],
+      "canonicalDriver": "water_leak_sensor",
+      "forbidMode": "couple",
+      "sources": [
+        "johan",
+        "z2m"
+      ],
+      "notes": "2026-10-11: Nous E4 water leakage sensor (Z2M TS0207_water_leak_detector)"
+    },
+    {
+      "id": "johan-only-_tz3000_zl1kmjqx",
+      "mfr": [
+        "_TZ3000_zl1kmjqx",
+        "_tz3000_zl1kmjqx"
+      ],
+      "productId": [
+        "TS0201"
+      ],
+      "canonicalDriver": "climate_sensor",
+      "forbidMode": "couple",
+      "sources": [
+        "johan",
+        "z2m",
+        "zha"
+      ],
+      "notes": "2026-10-11: temperature/humidity sensor RSH-HS06_1 / IH-K009 (Z2M tuya.ts, ZHA ty0201)"
     }
   ],
   "entries": {
