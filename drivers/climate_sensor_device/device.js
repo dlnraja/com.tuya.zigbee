@@ -277,7 +277,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     const tuya = this.zclNode?.endpoints?.[1]?.clusters?.tuya;
     if (tuya?.datapoint) {
       this.log(`[TRV] Sending DP${dp} = ${value} (${type})`);
-      await tuya.datapoint({ dp, value, type } );
+      await require('../../lib/helpers/UniversalDriverInit').sendStructuredDatapoint(tuya, dp, value, type);
     }
   }
 
