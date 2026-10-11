@@ -146,6 +146,42 @@
       ],
       "why": "2026-10-11: single owner switch_2gang as on master (977b54e97f/d7243a8120); TS000F 1-ch handled by GangCountAdapter gang-patterns",
       "source": "lost-couples W4"
+    },
+    {
+      "driver": "contact_sensor",
+      "mfr": [
+        "_TZ3000_85czd6fy"
+      ],
+      "why": "2026-10-11: TS0207 water leak (Johan + deCONZ _TZ3000_TS0207_water_leak_sensor.json) → water_leak_sensor",
+      "source": "lost-couples 2026-10-11 Johan + deCONZ (dresden-elektronik devices/tuya)"
+    },
+    {
+      "driver": "water_leak_sensor_tuya",
+      "mfr": [
+        "_TZ3000_ww9i3e0y",
+        "_TZ3000_wuep9zng",
+        "_TZ3000_ocjlo4ea",
+        "_TZ3000_awvmkayh",
+        "_TZ3000_t6jriawg"
+      ],
+      "why": "2026-10-11: TS0207 water leak (Johan + deCONZ) → water_leak_sensor (has TS0207; _tuya has none)",
+      "source": "lost-couples 2026-10-11 Johan + deCONZ (dresden-elektronik devices/tuya)"
+    },
+    {
+      "driver": "button_wireless_2",
+      "mfr": [
+        "_TZ3000_yw5tvzsk"
+      ],
+      "why": "2026-10-11: TS0043 3-gang remote (Johan + deCONZ) → button_wireless_3",
+      "source": "lost-couples 2026-10-11 Johan + deCONZ (dresden-elektronik devices/tuya)"
+    },
+    {
+      "driver": "switch_1gang",
+      "mfr": [
+        "_TZ3000_uaa99arv"
+      ],
+      "why": "2026-10-11: TS0044 4-gang remote (Johan + deCONZ) → button_wireless_4",
+      "source": "lost-couples 2026-10-11 Johan + deCONZ (dresden-elektronik devices/tuya)"
     }
   ]
 }
