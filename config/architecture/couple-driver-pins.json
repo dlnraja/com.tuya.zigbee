@@ -131,6 +131,15 @@
       "pid": "TS000F",
       "source": "Z2M qa.ts QARZ1DC; gang-patterns=1",
       "regression": "lost-couples 2026-10-11 pass 3 (variant/W4)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_z6fgd73r"
+      ],
+      "driver": "switch_1gang",
+      "pid": "TS011F",
+      "source": "z2m + blakadder + wonjj6768 SmartThings",
+      "regression": "lost-couples lead 2026-10-11 (W4 placement)"
     }
   ]
 }

@@ -287,6 +287,14 @@
       ],
       "why": "2026-10-11: TS0044 4-gang remote (Johan + deCONZ) → button_wireless_4",
       "source": "lost-couples 2026-10-11 Johan + deCONZ (dresden-elektronik devices/tuya)"
+    },
+    {
+      "driver": "usb_dongle_triple",
+      "mfr": [
+        "_TZ3000_z6fgd73r"
+      ],
+      "why": "2026-10-11: moved to dedicated driver switch_1gang (LELLKI XF-EU-S100-1-M 1-gang touch switch with power monitoring (Z2M lellki.ts, blakadder LELLKI_XF-EU-S100-1, wonjj6768 SmartThings zcl switches) — not a USB dongle)",
+      "source": "new driver"
     }
   ]
 }
