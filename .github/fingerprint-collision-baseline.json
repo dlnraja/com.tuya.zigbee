@@ -5827,6 +5827,57 @@
         "led_controller_spi_tuya"
       ],
       "reviewed": "2026-10-10 fold: held (never-published) driver vs its fold target; disappears when the held driver is released and the fold reverted"
+    },
+    {
+      "key": "ewelink|ts0601",
+      "drivers": [
+        "button_wireless",
+        "climate_sensor",
+        "water_leak_sensor"
+      ],
+      "why": "P2622 W4 2026-10-11 phantom cross-product: no Z2M eWeLink TS0601 device exists; eWeLink white-labels route by exact CK-TLSR pid. Cannot split without dropping TS0601 (Tuya) or eWeLink (7000/7014/7019) from a driver."
+    },
+    {
+      "key": "ewelink|TS0601",
+      "drivers": [
+        "button_wireless",
+        "climate_sensor",
+        "water_leak_sensor"
+      ],
+      "why": "P2622 W4 2026-10-11 phantom cross-product: no Z2M eWeLink TS0601 device exists; eWeLink white-labels route by exact CK-TLSR pid. Cannot split without dropping TS0601 (Tuya) or eWeLink (7000/7014/7019) from a driver."
+    },
+    {
+      "key": "ewelink|Ts0601",
+      "drivers": [
+        "button_wireless",
+        "climate_sensor",
+        "water_leak_sensor"
+      ],
+      "why": "P2622 W4 2026-10-11 phantom cross-product: no Z2M eWeLink TS0601 device exists; eWeLink white-labels route by exact CK-TLSR pid. Cannot split without dropping TS0601 (Tuya) or eWeLink (7000/7014/7019) from a driver."
+    },
+    {
+      "key": "eWeLink|button_wireless,climate_sensor,contact_sensor,module_mini_switch,sensor_ias_zonetype_ewelink,water_leak_sensor",
+      "drivers": [
+        "button_wireless",
+        "climate_sensor",
+        "contact_sensor",
+        "module_mini_switch",
+        "sensor_ias_zonetype_ewelink",
+        "water_leak_sensor"
+      ],
+      "why": "P2622 W4 2026-10-11: eWeLink white-label brand routed by exact pid (Z2M sonoff.ts/ewelink.ts CK-TLSR8656 7000/7002/7003/7014/7019)"
+    },
+    {
+      "key": "ewelink|button_wireless,climate_sensor,contact_sensor,module_mini_switch,sensor_ias_zonetype_ewelink,water_leak_sensor",
+      "drivers": [
+        "button_wireless",
+        "climate_sensor",
+        "contact_sensor",
+        "module_mini_switch",
+        "sensor_ias_zonetype_ewelink",
+        "water_leak_sensor"
+      ],
+      "why": "P2622 W4 2026-10-11: eWeLink white-label brand routed by exact pid (Z2M sonoff.ts/ewelink.ts CK-TLSR8656 7000/7002/7003/7014/7019)"
     }
   ]
 }
