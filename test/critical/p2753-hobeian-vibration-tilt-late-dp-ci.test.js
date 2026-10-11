@@ -13,6 +13,9 @@ const assert = require('node:assert/strict');
 const EventEmitter = require('node:events');
 const Module = require('module');
 
+// WHY(2026-10-11 Node 22 full run): the mock was never restored, so later suites loaded
+// zigbee-clusters without BoundCluster ("Class extends value undefined", P2223). Scope it to our requires.
+const cacheBefore = new Set(Object.keys(require.cache));
 const originalLoad = Module._load;
 Module._load = function loadWithHomeyMocks(request, parent, isMain) {
   if (request === 'homey') {
@@ -45,6 +48,8 @@ Module._load = function loadWithHomeyMocks(request, parent, isMain) {
 const VibrationSensorDevice = require('../../drivers/vibration_sensor/device');
 const EnrichedDPMappings = require('../../lib/tuya/EnrichedDPMappings');
 const { bootstrapUniversalLayers } = require('../../lib/layers/UniversalLayerBootstrap');
+Module._load = originalLoad;
+for (const k of Object.keys(require.cache)) { if (!cacheBefore.has(k)) delete require.cache[k]; }
 
 describe('P2753 HOBEIAN Vibration/Tilt + Case-Insensitive DP Profiles + Late EF00', () => {
 
