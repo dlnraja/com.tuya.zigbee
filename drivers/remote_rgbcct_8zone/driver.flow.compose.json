@@ -26,7 +26,7 @@
           "values": [
             {
               "id": "any",
-              "title": {
+              "label": {
                 "en": "Any zone",
                 "fr": "Toute zone",
                 "nl": "Elke zone",
@@ -35,7 +35,7 @@
             },
             {
               "id": "1",
-              "title": {
+              "label": {
                 "en": "Zone 1",
                 "fr": "Zone 1",
                 "nl": "Zone 1",
@@ -44,7 +44,7 @@
             },
             {
               "id": "2",
-              "title": {
+              "label": {
                 "en": "Zone 2",
                 "fr": "Zone 2",
                 "nl": "Zone 2",
@@ -53,7 +53,7 @@
             },
             {
               "id": "3",
-              "title": {
+              "label": {
                 "en": "Zone 3",
                 "fr": "Zone 3",
                 "nl": "Zone 3",
@@ -62,7 +62,7 @@
             },
             {
               "id": "4",
-              "title": {
+              "label": {
                 "en": "Zone 4",
                 "fr": "Zone 4",
                 "nl": "Zone 4",
@@ -71,7 +71,7 @@
             },
             {
               "id": "5",
-              "title": {
+              "label": {
                 "en": "Zone 5",
                 "fr": "Zone 5",
                 "nl": "Zone 5",
@@ -80,7 +80,7 @@
             },
             {
               "id": "6",
-              "title": {
+              "label": {
                 "en": "Zone 6",
                 "fr": "Zone 6",
                 "nl": "Zone 6",
@@ -89,7 +89,7 @@
             },
             {
               "id": "7",
-              "title": {
+              "label": {
                 "en": "Zone 7",
                 "fr": "Zone 7",
                 "nl": "Zone 7",
@@ -98,7 +98,7 @@
             },
             {
               "id": "8",
-              "title": {
+              "label": {
                 "en": "Zone 8",
                 "fr": "Zone 8",
                 "nl": "Zone 8",
@@ -148,7 +148,7 @@
           "values": [
             {
               "id": "any",
-              "title": {
+              "label": {
                 "en": "Any zone",
                 "fr": "Toute zone",
                 "nl": "Elke zone",
@@ -157,7 +157,7 @@
             },
             {
               "id": "1",
-              "title": {
+              "label": {
                 "en": "Zone 1",
                 "fr": "Zone 1",
                 "nl": "Zone 1",
@@ -166,7 +166,7 @@
             },
             {
               "id": "2",
-              "title": {
+              "label": {
                 "en": "Zone 2",
                 "fr": "Zone 2",
                 "nl": "Zone 2",
@@ -175,7 +175,7 @@
             },
             {
               "id": "3",
-              "title": {
+              "label": {
                 "en": "Zone 3",
                 "fr": "Zone 3",
                 "nl": "Zone 3",
@@ -184,7 +184,7 @@
             },
             {
               "id": "4",
-              "title": {
+              "label": {
                 "en": "Zone 4",
                 "fr": "Zone 4",
                 "nl": "Zone 4",
@@ -193,7 +193,7 @@
             },
             {
               "id": "5",
-              "title": {
+              "label": {
                 "en": "Zone 5",
                 "fr": "Zone 5",
                 "nl": "Zone 5",
@@ -202,7 +202,7 @@
             },
             {
               "id": "6",
-              "title": {
+              "label": {
                 "en": "Zone 6",
                 "fr": "Zone 6",
                 "nl": "Zone 6",
@@ -211,7 +211,7 @@
             },
             {
               "id": "7",
-              "title": {
+              "label": {
                 "en": "Zone 7",
                 "fr": "Zone 7",
                 "nl": "Zone 7",
@@ -220,7 +220,7 @@
             },
             {
               "id": "8",
-              "title": {
+              "label": {
                 "en": "Zone 8",
                 "fr": "Zone 8",
                 "nl": "Zone 8",
@@ -270,7 +270,7 @@
           "values": [
             {
               "id": "any",
-              "title": {
+              "label": {
                 "en": "Any zone",
                 "fr": "Toute zone",
                 "nl": "Elke zone",
@@ -279,7 +279,7 @@
             },
             {
               "id": "1",
-              "title": {
+              "label": {
                 "en": "Zone 1",
                 "fr": "Zone 1",
                 "nl": "Zone 1",
@@ -288,7 +288,7 @@
             },
             {
               "id": "2",
-              "title": {
+              "label": {
                 "en": "Zone 2",
                 "fr": "Zone 2",
                 "nl": "Zone 2",
@@ -297,7 +297,7 @@
             },
             {
               "id": "3",
-              "title": {
+              "label": {
                 "en": "Zone 3",
                 "fr": "Zone 3",
                 "nl": "Zone 3",
@@ -306,7 +306,7 @@
             },
             {
               "id": "4",
-              "title": {
+              "label": {
                 "en": "Zone 4",
                 "fr": "Zone 4",
                 "nl": "Zone 4",
@@ -315,7 +315,7 @@
             },
             {
               "id": "5",
-              "title": {
+              "label": {
                 "en": "Zone 5",
                 "fr": "Zone 5",
                 "nl": "Zone 5",
@@ -324,7 +324,7 @@
             },
             {
               "id": "6",
-              "title": {
+              "label": {
                 "en": "Zone 6",
                 "fr": "Zone 6",
                 "nl": "Zone 6",
@@ -333,7 +333,7 @@
             },
             {
               "id": "7",
-              "title": {
+              "label": {
                 "en": "Zone 7",
                 "fr": "Zone 7",
                 "nl": "Zone 7",
@@ -342,7 +342,7 @@
             },
             {
               "id": "8",
-              "title": {
+              "label": {
                 "en": "Zone 8",
                 "fr": "Zone 8",
                 "nl": "Zone 8",
@@ -403,7 +403,7 @@
           "values": [
             {
               "id": "any",
-              "title": {
+              "label": {
                 "en": "Any zone",
                 "fr": "Toute zone",
                 "nl": "Elke zone",
@@ -412,7 +412,7 @@
             },
             {
               "id": "1",
-              "title": {
+              "label": {
                 "en": "Zone 1",
                 "fr": "Zone 1",
                 "nl": "Zone 1",
@@ -421,7 +421,7 @@
             },
             {
               "id": "2",
-              "title": {
+              "label": {
                 "en": "Zone 2",
                 "fr": "Zone 2",
                 "nl": "Zone 2",
@@ -430,7 +430,7 @@
             },
             {
               "id": "3",
-              "title": {
+              "label": {
                 "en": "Zone 3",
                 "fr": "Zone 3",
                 "nl": "Zone 3",
@@ -439,7 +439,7 @@
             },
             {
               "id": "4",
-              "title": {
+              "label": {
                 "en": "Zone 4",
                 "fr": "Zone 4",
                 "nl": "Zone 4",
@@ -448,7 +448,7 @@
             },
             {
               "id": "5",
-              "title": {
+              "label": {
                 "en": "Zone 5",
                 "fr": "Zone 5",
                 "nl": "Zone 5",
@@ -457,7 +457,7 @@
             },
             {
               "id": "6",
-              "title": {
+              "label": {
                 "en": "Zone 6",
                 "fr": "Zone 6",
                 "nl": "Zone 6",
@@ -466,7 +466,7 @@
             },
             {
               "id": "7",
-              "title": {
+              "label": {
                 "en": "Zone 7",
                 "fr": "Zone 7",
                 "nl": "Zone 7",
@@ -475,7 +475,7 @@
             },
             {
               "id": "8",
-              "title": {
+              "label": {
                 "en": "Zone 8",
                 "fr": "Zone 8",
                 "nl": "Zone 8",
@@ -547,7 +547,7 @@
           "values": [
             {
               "id": "any",
-              "title": {
+              "label": {
                 "en": "Any zone",
                 "fr": "Toute zone",
                 "nl": "Elke zone",
@@ -556,7 +556,7 @@
             },
             {
               "id": "1",
-              "title": {
+              "label": {
                 "en": "Zone 1",
                 "fr": "Zone 1",
                 "nl": "Zone 1",
@@ -565,7 +565,7 @@
             },
             {
               "id": "2",
-              "title": {
+              "label": {
                 "en": "Zone 2",
                 "fr": "Zone 2",
                 "nl": "Zone 2",
@@ -574,7 +574,7 @@
             },
             {
               "id": "3",
-              "title": {
+              "label": {
                 "en": "Zone 3",
                 "fr": "Zone 3",
                 "nl": "Zone 3",
@@ -583,7 +583,7 @@
             },
             {
               "id": "4",
-              "title": {
+              "label": {
                 "en": "Zone 4",
                 "fr": "Zone 4",
                 "nl": "Zone 4",
@@ -592,7 +592,7 @@
             },
             {
               "id": "5",
-              "title": {
+              "label": {
                 "en": "Zone 5",
                 "fr": "Zone 5",
                 "nl": "Zone 5",
@@ -601,7 +601,7 @@
             },
             {
               "id": "6",
-              "title": {
+              "label": {
                 "en": "Zone 6",
                 "fr": "Zone 6",
                 "nl": "Zone 6",
@@ -610,7 +610,7 @@
             },
             {
               "id": "7",
-              "title": {
+              "label": {
                 "en": "Zone 7",
                 "fr": "Zone 7",
                 "nl": "Zone 7",
@@ -619,7 +619,7 @@
             },
             {
               "id": "8",
-              "title": {
+              "label": {
                 "en": "Zone 8",
                 "fr": "Zone 8",
                 "nl": "Zone 8",
@@ -691,7 +691,7 @@
           "values": [
             {
               "id": "any",
-              "title": {
+              "label": {
                 "en": "Any zone",
                 "fr": "Toute zone",
                 "nl": "Elke zone",
@@ -700,7 +700,7 @@
             },
             {
               "id": "1",
-              "title": {
+              "label": {
                 "en": "Zone 1",
                 "fr": "Zone 1",
                 "nl": "Zone 1",
@@ -709,7 +709,7 @@
             },
             {
               "id": "2",
-              "title": {
+              "label": {
                 "en": "Zone 2",
                 "fr": "Zone 2",
                 "nl": "Zone 2",
@@ -718,7 +718,7 @@
             },
             {
               "id": "3",
-              "title": {
+              "label": {
                 "en": "Zone 3",
                 "fr": "Zone 3",
                 "nl": "Zone 3",
@@ -727,7 +727,7 @@
             },
             {
               "id": "4",
-              "title": {
+              "label": {
                 "en": "Zone 4",
                 "fr": "Zone 4",
                 "nl": "Zone 4",
@@ -736,7 +736,7 @@
             },
             {
               "id": "5",
-              "title": {
+              "label": {
                 "en": "Zone 5",
                 "fr": "Zone 5",
                 "nl": "Zone 5",
@@ -745,7 +745,7 @@
             },
             {
               "id": "6",
-              "title": {
+              "label": {
                 "en": "Zone 6",
                 "fr": "Zone 6",
                 "nl": "Zone 6",
@@ -754,7 +754,7 @@
             },
             {
               "id": "7",
-              "title": {
+              "label": {
                 "en": "Zone 7",
                 "fr": "Zone 7",
                 "nl": "Zone 7",
@@ -763,7 +763,7 @@
             },
             {
               "id": "8",
-              "title": {
+              "label": {
                 "en": "Zone 8",
                 "fr": "Zone 8",
                 "nl": "Zone 8",
