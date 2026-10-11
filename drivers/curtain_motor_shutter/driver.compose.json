@@ -109,7 +109,10 @@
       "ZBT-ColorLight",
       "lumi.sensor_ht",
       "lumi.sensor_ht.agl02",
-      "lumi.weather"
+      "lumi.weather",
+      "TS0105",
+      "ts0105",
+      "Ts0105"
     ],
     "endpoints": {
       "1": {
@@ -137,7 +140,6 @@
       "_TZ3210_xbpt8ewc",
       "_TZ3000_cet6ch1r",
       "_TZE200_9caxna4s",
-      "_TZE600_ogyg1y6b",
       "_TZE200_9vpe3fl1",
       "_TZE200_p6vz3wzt",
       "_TZE284_uqfph8ah",
@@ -167,8 +169,6 @@
       "_tz3000_cet6ch1r",
       "_TZE200_9CAXNA4S",
       "_tze200_9caxna4s",
-      "_TZE600_OGYG1Y6B",
-      "_tze600_ogyg1y6b",
       "_TZE200_9VPE3FL1",
       "_tze200_9vpe3fl1",
       "_TZE200_P6VZ3WZT",
@@ -200,7 +200,6 @@
       "_tz3210_XBPT8EWC",
       "_tz3000_CET6CH1R",
       "_tze200_9CAXNA4S",
-      "_tze600_OGYG1Y6B",
       "_tze200_9VPE3FL1",
       "_tze200_P6VZ3WZT",
       "_tze284_UQFPH8AH",
@@ -223,7 +222,15 @@
       "_TZE284_pxwixtky",
       "_tze284_pxwixtky",
       "_TZE284_PXWIXTKY",
-      "_tze284_PXWIXTKY"
+      "_tze284_PXWIXTKY",
+      "_TZE600_ogyg1y6b",
+      "_tze600_ogyg1y6b",
+      "_TZE600_OGYG1Y6B",
+      "_tze600_OGYG1Y6B",
+      "_TZE600_5cu64znk",
+      "_tze600_5cu64znk",
+      "_TZE600_5CU64ZNK",
+      "_tze600_5CU64ZNK"
     ]
   },
   "settings": [
