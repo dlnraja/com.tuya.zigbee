@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-11T14:26:05.544Z",
+ "generated": "2026-10-11T15:21:49.677Z",
  "drivers": 388,
  "snapshot": {
   "air_purifier": {
@@ -195,9 +195,9 @@
    "pidSha": "06cd0099c514e4ab"
   },
   "button_wireless_4": {
-   "mfr": 35,
+   "mfr": 36,
    "pid": 45,
-   "mfrSha": "996228b76be5eb6d",
+   "mfrSha": "df8ef2d29eb57b15",
    "pidSha": "fdbcbd0e265ae852"
   },
   "button_wireless_4_ts0041": {
@@ -1905,9 +1905,9 @@
    "pidSha": "79608defafa31586"
   },
   "switch_4gang": {
-   "mfr": 81,
+   "mfr": 82,
    "pid": 40,
-   "mfrSha": "6165241e8ded0a76",
+   "mfrSha": "d4ee8af5f9235fac",
    "pidSha": "13ec4d7cc3589c0a"
   },
   "switch_dimmer_1gang": {
@@ -2097,9 +2097,9 @@
    "pidSha": "b5f78b2a386201c5"
   },
   "usb_dongle_triple": {
-   "mfr": 29,
+   "mfr": 28,
    "pid": 10,
-   "mfrSha": "5ec9cb73729e6e8e",
+   "mfrSha": "25b4d0aea93e318a",
    "pidSha": "d2d418f57022c1e1"
   },
   "usb_outlet_advanced": {
