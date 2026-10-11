@@ -1,0 +1,38 @@
+name: 'Rules gates'
+description: >-
+  Run the shared rules gates (scripts/ci/rules-gates.js) after checkout.
+  Single source for the sacred-couple / anti-bot / regression-lessons / P214 / flow-title /
+  compose-sync gate list that used to be copy-pasted across workflows.
+inputs:
+  profile:
+    description: 'core (mid-pipeline) or full (core + compose/app.json fingerprint sync, before commit)'
+    required: false
+    default: 'core'
+  only:
+    description: 'Comma-separated gate ids to run instead of a profile (anti-bot,p2138,regression-lessons,p214,flow-title,compose-sync)'
+    required: false
+    default: ''
+  strip:
+    description: 'Run the anti-bot gate with --strip'
+    required: false
+    default: 'false'
+  soft:
+    description: 'Report failures as warnings and do not fail the step'
+    required: false
+    default: 'false'
+runs:
+  using: composite
+  steps:
+    - name: 🛡️ Rules gates
+      shell: bash
+      env:
+        RG_PROFILE: ${{ inputs.profile }}
+        RG_ONLY: ${{ inputs.only }}
+        RG_STRIP: ${{ inputs.strip }}
+        RG_SOFT: ${{ inputs.soft }}
+      run: |
+        ARGS=(--profile="$RG_PROFILE")
+        [ -n "$RG_ONLY" ] && ARGS+=(--only="$RG_ONLY")
+        [ "$RG_STRIP" = "true" ] && ARGS+=(--strip)
+        [ "$RG_SOFT" = "true" ] && ARGS+=(--soft)
+        node scripts/ci/rules-gates.js "${ARGS[@]}"

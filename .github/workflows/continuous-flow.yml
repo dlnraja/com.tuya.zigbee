@@ -14,26 +14,28 @@
 #   - shadow-policy-check.yml (only on push)
 #
 # Resource guard:
-#   - Daily 03:00 UTC (off-peak, low GH load)
+#   - Manual dispatch only (schedule removed 2026-10-11, see DECISION below)
 #   - Concurrency: cancel-in-progress on new run
 #   - Timeout: 30 min
-#   - Path filter: only on code changes (not docs/ images)
 #   - Manual dispatch for apply mode
 #   - DRY_RUN by default
-# DECISION(P2797c/P2802): schedule is ALWAYS dry-run. Push trigger removed (wasted ~30
-#   dry-run runs / 48 h). Apply only via workflow_dispatch mode=apply. Do not re-add push.
+# DECISION(P2797c/P2802): push trigger removed (wasted ~30 dry-run runs / 48 h). Do not re-add push.
+# DECISION(2026-10-11): daily schedule removed too — manual workflow_dispatch only.
+#   The scheduled run was always DRY_RUN and its commit step is apply-only, so nothing was ever kept.
+#   Run 38041096392 (2026-10-10) showed the enrichers are hollow on a fresh CI checkout: their
+#   inputs (.github/state z2m/ZHA/johan dumps, multi-device plan) are gitignored local state, so
+#   variant finder analysed 0 mfrs, bidirectional enricher applied 0, multi-device exited 1 on a
+#   missing plan, enrich-sacred-couples crashed on a hard-coded local path, and shadow-mode re-read
+#   stale local docs. The only real signal (homey app validate --level publish + family/publish
+#   gates) already runs on every master push in unified-ci. Apply mode stays available by hand.
 #
 # Outputs:
-#   - .github/state/*.json reports (committed back via git)
-#   - Single PR comment (not issue spam)
+#   - .github/state/*.json reports (artifact; committed only in mode=apply via safe-auto-commit)
 #   - Workflow run summary
 
 name: continuous-flow
 
 on:
-  schedule:
-    # Daily at 03:00 UTC (off-peak, low GH load)
-    - cron: '0 3 * * *'
   workflow_dispatch:
     inputs:
       mode:
@@ -232,13 +234,11 @@ jobs:
           if-no-files-found: ignore
           retention-days: 14
 
-      - name: "🛡️ Anti-bot strip after enrich"
+      - name: "🛡️ Rules gates (shared, core; anti-bot strip after enrich)"
         if: always()
-        run: node tools/ci/anti-bot-regression-gate.js --strip
-
-      - name: "🛡️ P2138 sacred-couple matrix gate"
-        if: always()
-        run: node tools/ci/p2138-sacred-couple-matrix-gate.js
+        uses: ./.github/actions/rules-gates
+        with:
+          strip: 'true'
 
       - name: "🛡️ Family + publish path gates (soft)"
         if: always()

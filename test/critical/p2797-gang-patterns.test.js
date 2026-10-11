@@ -105,8 +105,14 @@ test('enrichment pipeline: legacy couples stay removed, app.json resynced last, 
   const fleet = fs.readFileSync(path.join(ROOT, 'tools/ci/fleet-intelligent-enrich.js'), 'utf8');
   assert.ok(/enforce-dual-couple-legacy\.js', \['--sync'\]/.test(fleet));
   const wf = fs.readFileSync(path.join(ROOT, '.github/workflows/fleet-intelligent-enrich.yml'), 'utf8');
-  for (const g of ['enforce-dual-couple-legacy.js --sync', 'compose-appjson-fingerprint-sync-gate.js', 'flow-titleformatted-args-gate.js', 'p2794-dual-couples.test.js']) {
+  for (const g of ['enforce-dual-couple-legacy.js --sync', 'p2794-dual-couples.test.js']) {
     assert.ok(wf.includes(g), g);
+  }
+  // Sync + flow-title gates run through the shared rules-gates runner (profile full) or inline.
+  const shared = wf.includes('rules-gates.js --profile=full');
+  const fullGates = require('../../scripts/ci/rules-gates.js').select({ profile: 'full' }).map((x) => x.file);
+  for (const g of ['compose-appjson-fingerprint-sync-gate.js', 'flow-titleformatted-args-gate.js']) {
+    assert.ok(wf.includes(g) || (shared && fullGates.some((p) => p.endsWith(g))), g);
   }
   const flow = fs.readFileSync(path.join(ROOT, 'tools/ci/flow-fleet-enrich.js'), 'utf8');
   assert.ok(/titleFormatted !== undefined && JSON\.stringify\(card\.titleFormatted\)\.includes\('\[\[device\]\]'\)/.test(flow), 'strip only [[device]] titles');

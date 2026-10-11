@@ -222,13 +222,13 @@ jobs:
         if: always() && inputs.dry_run != true
         run: node tools/ci/re-inject-manual-fixes.js
 
-      - name: "🛡️ Anti-bot regression gate"
+      # Shared gate list (scripts/ci/rules-gates.js): anti-bot strip + sacred-couple matrix + P214 + flow-title.
+      - name: "🛡️ Rules gates (shared, core)"
         if: always()
-        run: node tools/ci/anti-bot-regression-gate.js --strip
-
-      - name: "🛡️ P2138 sacred-couple matrix gate"
-        if: always()
-        run: node tools/ci/p2138-sacred-couple-matrix-gate.js
+        uses: ./.github/actions/rules-gates
+        with:
+          only: anti-bot,p2138,p214,flow-title
+          strip: 'true'
 
       - name: "🧹 Prune FP collision bleed (P2238 — mfs driverHint)"
         if: always() && inputs.dry_run != true
@@ -247,9 +247,11 @@ jobs:
             exit 0
           }
 
-      - name: "🛡️ Regression lessons gate (MUST-KEEP fatals)"
+      - name: "🛡️ Regression lessons gate (MUST-KEEP fatals, shared runner)"
         if: always()
-        run: node tools/ci/regression-lessons-gate.js
+        uses: ./.github/actions/rules-gates
+        with:
+          only: regression-lessons
 
       # READ-ONLY scan of cloud Smart Life thread (never posts/replies)
       - name: "Forum 146735 READ-ONLY silent scan"

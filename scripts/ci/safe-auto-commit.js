@@ -24,6 +24,9 @@
 const fs = require('fs');
 const path = require('path');
 const { spawnSync } = require('child_process');
+const { select: selectRulesGates } = require('./rules-gates');
+
+const RULES_GATE_FILES = selectRulesGates({ profile: 'full' }).map((g) => g.file);
 
 const arg = (k, d) => { const a = process.argv.find((x) => x.startsWith(`--${k}=`)); return a ? a.slice(k.length + 3) : d; };
 const ID = arg('id');
@@ -73,7 +76,8 @@ function gate(files) {
   if (errs.length) return errs;
   const touchesApp = files.some((f) => /^(drivers|lib|app\.json|\.homeycompose|data)\//.test(f) || f === 'app.json');
   if (touchesApp) {
-    for (const g of ['tools/ci/p2138-sacred-couple-matrix-gate.js', 'tools/ci/regression-lessons-gate.js', 'tools/ci/anti-bot-regression-gate.js', 'tools/ci/p214-intelligent-protocol-gate.js', 'tools/ci/compose-appjson-fingerprint-sync-gate.js', 'tools/ci/flow-titleformatted-args-gate.js']) {
+    // Gate list shared with the rules-gates composite action (scripts/ci/rules-gates.js, profile full).
+    for (const g of RULES_GATE_FILES) {
       if (!fs.existsSync(g)) continue;
       const r = sh(process.execPath, [g], { timeout: 600000 });
       if (r.status === 0) continue;
