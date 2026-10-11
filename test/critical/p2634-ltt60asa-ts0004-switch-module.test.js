@@ -35,19 +35,21 @@ describe('P2634 TS0004 switch-module (ltt60asa / mmkbptmx / liygxtcq)', () => {
     assert.ok((c.zigbee.productId || []).includes('TS0004'));
   });
 
-  it('EP1 has E000/E001 + metering clusters (ZHA Switch_4G_Metering)', () => {
+  it('EP1–4 ZCL-safe OnOff endpoints (P2652)', () => {
     const c = JSON.parse(fs.readFileSync(
       path.join(ROOT, 'drivers/switch_4gang/driver.compose.json'),
       'utf8',
     ));
     const ep1 = (c.zigbee.endpoints && c.zigbee.endpoints['1'] && c.zigbee.endpoints['1'].clusters) || [];
-    for (const need of [6, 57344, 57345, 1794, 2820]) {
+    // WHY(P2652 6451928621 supersedes P2634 cluster list): ZCL-safe endpoints — declare only
+    // standard clusters (Basic/Groups/Scenes/OnOff); Tuya E000/E001/metering are reached at runtime.
+    for (const need of [0, 6]) {
       assert.ok(ep1.includes(need), `EP1 missing cluster ${need}`);
     }
     for (const ep of ['2', '3', '4']) {
       const clusters = c.zigbee.endpoints[ep].clusters || [];
       assert.ok(clusters.includes(6), `EP${ep} OnOff required`);
-      assert.ok(clusters.includes(57345), `EP${ep} E001 required`);
+      assert.ok((c.zigbee.endpoints[ep].bindings || []).includes(6), `EP${ep} OnOff bound`);
     }
   });
 
