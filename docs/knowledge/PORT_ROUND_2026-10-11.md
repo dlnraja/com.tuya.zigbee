@@ -49,6 +49,6 @@ Still held on purpose: `_TZE600_ogyg1y6b`/TS0105 (no TS0105 driver — would cro
 |---|---|---|
 | Universal (master) | **9.0.1433 Test** | Auto-Publish `[athom-final] OK` |
 | Bastien | **1.0.148 Test** (git tip still 1.0.122 line + P2640 `f1f76d5968`) | Publish Zigbee Bastien + Node22 green |
-| Stable | **5.12.398 Test** (#306); tip git **5.12.399** (#307 draft→promote in flight) | Draft→Test: `#306 already-test`; Node22 green; PRs #564–#566 merged |
+| Stable | **5.12.399 Test** (#307) | Draft→Test promoted; Node22 green; PRs #564–#566 merged |
 
 Held on purpose: `_TZE600_ogyg1y6b`/TS0105; ambiguous Johan mfrs. No invented couples.
