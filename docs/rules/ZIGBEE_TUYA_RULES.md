@@ -45,7 +45,7 @@ Beyond `0xEF00`, Tuya uses other custom clusters:
 
 To prevent devices from pairing as "Zigbee Generic Device", follow these rules:
 
-1. **Permissive Matching**: Drivers should match by `manufacturerName` OR `productId` whenever safe.
+1. **Exact couple matching** (supersedes the older "mfr OR pid" wording): a driver claims a device only through an exact `manufacturerName` + `productId` couple, one couple on one driver. Never key on the manufacturer alone and never invent identifiers. See §9.
 2. **Fallback Chain**: 
    - Specific Driver (e.g., `switch_1gang`)
    - Family Driver (e.g., `TS0601_sensor`)
@@ -126,3 +126,18 @@ To prevent devices from pairing as "Zigbee Generic Device", follow these rules:
 - NO automatic forum posting
 - Project continues silently
 - All enrichment done without notifying forum
+
+---
+
+## 9. Native first, non-native optional, one couple one driver (2026-10-11)
+
+These rules are checked by CI, not just written down.
+
+1. **Pairing and base operation use native clusters only.** Homey's interview, the SDK and `zigbee-clusters` give the mandatory path. Tuya `0xEF00` (61184), `0xE000` (57344), `0xE001` (57345) and manufacturer-specific attributes are a bonus layer.
+2. **Order of fallbacks:** ZCL cluster first, then Tuya DP; inside DP maps, variant A then variant B. Each extra layer is opt-in, guarded, and switches itself off for that device after a failure.
+3. **Never abort init over a missing non-native cluster.** No `throw` and no bare `return` in `onNodeInit`/`onInit` because the Tuya cluster is absent; log once and continue with native capabilities. Gate: `scripts/gates/init-non-native-guard.js`.
+4. **No new non-native cluster in endpoint `clusters`.** Gate: `scripts/gates/native-matrix-gate.js` (older entries frozen in a shrink-only baseline).
+5. **One exact couple on exactly one driver.** Dual couples fail the same gate; reviewed exceptions live in `data/native-matrix-reviewed-duals.json`, pairs removed from an old driver live in `lib/data/dual-couple-legacy.json` (`tools/ci/enforce-dual-couple-legacy.js --check`).
+6. **Firmware quirks** are opt-in per exact couple, need 2+ sources, and the code comment cites them.
+7. **Case-insensitive matching** happens at run time through the shared helper; fingerprints are not copied in several cases to compensate.
+8. **Maximum coverage per couple:** once a couple is verified, give it every capability its hardware supports on its home driver, additively.
