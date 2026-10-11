@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-11T09:15:04.097Z",
+ "generated": "2026-10-11T10:57:43.753Z",
  "drivers": 393,
  "snapshot": {
   "air_purifier": {
@@ -1917,9 +1917,9 @@
    "pidSha": "79608defafa31586"
   },
   "switch_4gang": {
-   "mfr": 82,
+   "mfr": 83,
    "pid": 40,
-   "mfrSha": "bd4c04bef17b229e",
+   "mfrSha": "a4f6ea795b878d65",
    "pidSha": "13ec4d7cc3589c0a"
   },
   "switch_dimmer_1gang": {
@@ -2133,9 +2133,9 @@
    "pidSha": "b6aedd0f233585f0"
   },
   "valve_controller_5zone": {
-   "mfr": 1,
+   "mfr": 0,
    "pid": 1,
-   "mfrSha": "9ec56178b19de6b5",
+   "mfrSha": "e3b0c44298fc1c14",
    "pidSha": "ee3881b630706571"
   },
   "valve_dual_irrigation": {
