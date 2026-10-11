@@ -34,6 +34,8 @@ function makeUpdater() {
 describe('P92.77 — LiveDataUpdater', () => {
 
   it('validates the real exported feed (after overlay cap)', () => {
+    // .github/pages-build/ is gitignored (generated) — always re-export so this never reads a stale feed.
+    require('child_process').execSync('node .github/scripts/export-live-data-feed.js', { cwd: ROOT, stdio: 'pipe' });
     const feed = JSON.parse(fs.readFileSync(path.join(ROOT, '.github/pages-build/data/mfs_db_latest.json'), 'utf8'));
     const u = makeUpdater();
     const capped = u._capPayload(feed);
@@ -58,14 +60,15 @@ describe('P92.77 — LiveDataUpdater', () => {
     assert.strictEqual(u._validatePayload({ devices: {} }), false, 'missing version');
   });
 
+  // WHY(3d9553ae0d): overlay rows must be couples (mfr + modelIds) — fixtures carry a modelId.
   it('accepts real-world mfr names (unicode, punctuation, symbols)', () => {
     const u = makeUpdater();
     const p = { version: '1', devices: {
-      'MÜLLER LICHT': { driverId: 'bulb_white' },
-      'THIRD REALITY, INC': { driverId: 'contact_sensor' },
-      'zzh!': { driverId: 'motion_sensor' },
-      'prototype': { driverId: 'generic_tuya' },
-      'rgb_bulb_E27': { driverId: 'bulb_rgb' }
+      'MÜLLER LICHT': { driverId: 'bulb_white', modelIds: ['X1'] },
+      'THIRD REALITY, INC': { driverId: 'contact_sensor', modelIds: ['X1'] },
+      'zzh!': { driverId: 'motion_sensor', modelIds: ['X1'] },
+      'prototype': { driverId: 'generic_tuya', modelIds: ['X1'] },
+      'rgb_bulb_E27': { driverId: 'bulb_rgb', modelIds: ['X1'] }
     } };
     assert.strictEqual(u._validatePayload(p), true);
   });
@@ -110,6 +113,8 @@ describe('P92.77 — LiveDataUpdater', () => {
   });
 
   it('export script excludes synthetic placeholders and caps fields', () => {
+    // .github/pages-build/ is gitignored (generated) — always re-export so this never reads a stale feed.
+    require('child_process').execSync('node .github/scripts/export-live-data-feed.js', { cwd: ROOT, stdio: 'pipe' });
     const feed = JSON.parse(fs.readFileSync(path.join(ROOT, '.github/pages-build/data/mfs_db_latest.json'), 'utf8'));
     for (const k of Object.keys(feed.devices)) {
       assert.ok(!/_disabled|_dummy|_generic_|_hybrid|placeholder|needs_/i.test(k), `no synthetic ${k}`);
