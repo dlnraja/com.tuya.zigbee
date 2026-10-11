@@ -15,10 +15,12 @@ const RuntimeFingerprintDB = require('../lib/tuya/DeviceFingerprintDB');
 
 const ZWSP = '​'; // zero-width space
 const NBSP = ' '; // non-breaking space
+// WHY(P146/P2571): _TZE200_vvmbj46n is now force-routed by the user-misattribution registry
+// (matchType user_misattribution_registry), so scoring-tier tests use a synthetic, registry-free id.
 
 function makeDb() {
   return {
-    '_TZE200_vvmbj46n': { driverId: 'lcdtemphumidsensor', modelIds: ['TS0601'] },
+    '_TZE200_zzfixt01': { driverId: 'lcdtemphumidsensor', modelIds: ['TS0601'] },
     '_TZE284_sgabhwa6': { driverId: 'soil_sensor', modelIds: ['TS0601'] },
     '_TZ3000_qaaysllp': { driverId: 'lcdtemphumidluxsensor', modelIds: ['TS0201'] },
     '_TYZB01_xyz12345': { driverId: 'motion_sensor', modelIds: ['TS0202'] },
@@ -67,33 +69,33 @@ describe('fingerprint-matcher (P92 heuristic matching)', function() {
 
   describe('matchFingerprint scoring tiers', function() {
     it('scores an exact raw key 1.0', function() {
-      const hit = FM.matchFingerprint('_TZE200_vvmbj46n', 'TS0601', makeDb());
+      const hit = FM.matchFingerprint('_TZE200_zzfixt01', 'TS0601', makeDb());
       assert.strictEqual(hit.matchType, 'exact');
       assert.strictEqual(hit.score, 1.0);
       assert.strictEqual(hit.entry.driverId, 'lcdtemphumidsensor');
     });
 
     it('scores a case-insensitive match 0.95 (normalized)', function() {
-      const hit = FM.matchFingerprint('_tze200_VVMBJ46N', 'TS0601', makeDb());
+      const hit = FM.matchFingerprint('_tze200_ZZFIXT01', 'TS0601', makeDb());
       assert.strictEqual(hit.matchType, 'normalized');
       assert.strictEqual(hit.score, 0.95);
     });
 
     it('tolerates parasite characters (normalized)', function() {
-      const hit = FM.matchFingerprint(`${NBSP}_TZE200_vvmbj46n${ZWSP}`, 'TS0601', makeDb());
+      const hit = FM.matchFingerprint(`${NBSP}_TZE200_zzfixt01${ZWSP}`, 'TS0601', makeDb());
       assert.strictEqual(hit.matchType, 'normalized');
       assert.strictEqual(hit.entry.driverId, 'lcdtemphumidsensor');
     });
 
     it('matches _TZE204_ against a _TZE200_ key (prefix_variant 0.9)', function() {
-      const hit = FM.matchFingerprint('_TZE204_vvmbj46n', 'TS0601', makeDb());
+      const hit = FM.matchFingerprint('_TZE204_zzfixt01', 'TS0601', makeDb());
       assert.strictEqual(hit.matchType, 'prefix_variant');
       assert.strictEqual(hit.score, 0.9);
       assert.strictEqual(hit.entry.driverId, 'lcdtemphumidsensor');
     });
 
     it('matches _TZE284_ against a _TZE200_ key (prefix_variant)', function() {
-      const hit = FM.matchFingerprint('_TZE284_vvmbj46n', 'TS0601', makeDb());
+      const hit = FM.matchFingerprint('_TZE284_zzfixt01', 'TS0601', makeDb());
       assert.strictEqual(hit.matchType, 'prefix_variant');
     });
 
@@ -111,20 +113,20 @@ describe('fingerprint-matcher (P92 heuristic matching)', function() {
     });
 
     it('fuzzy-matches a 1-char typo in the suffix (0.6)', function() {
-      const hit = FM.matchFingerprint('_TZE200_vvmbj46o', 'TS0601', makeDb());
+      const hit = FM.matchFingerprint('_TZE200_zzfixt02', 'TS0601', makeDb());
       assert.strictEqual(hit.matchType, 'fuzzy_suffix');
       assert.strictEqual(hit.score, 0.6);
       assert.strictEqual(hit.editDistance, 1);
     });
 
     it('fuzzy-matches a 2-char typo in the suffix', function() {
-      const hit = FM.matchFingerprint('_TZE200_vvmbj4oo', 'TS0601', makeDb());
+      const hit = FM.matchFingerprint('_TZE200_zzfixu02', 'TS0601', makeDb());
       assert.strictEqual(hit.matchType, 'fuzzy_suffix');
       assert.strictEqual(hit.editDistance, 2);
     });
 
     it('rejects a 3-char typo (edit distance > 2)', function() {
-      const hit = FM.matchFingerprint('_TZE200_vvmbjooo', 'TS0601', makeDb());
+      const hit = FM.matchFingerprint('_TZE200_zzfooo99', 'TS0601', makeDb());
       assert.strictEqual(hit, null);
     });
 
@@ -141,7 +143,7 @@ describe('fingerprint-matcher (P92 heuristic matching)', function() {
     });
 
     it('keeps exact mfr + known pid at full score (pid case-insensitive)', function() {
-      const hit = FM.matchFingerprint('_TZE200_vvmbj46n', 'ts0601', makeDb());
+      const hit = FM.matchFingerprint('_TZE200_zzfixt01', 'ts0601', makeDb());
       assert.strictEqual(hit.matchType, 'exact');
       assert.strictEqual(hit.score, 1.0);
     });
@@ -157,16 +159,16 @@ describe('fingerprint-matcher (P92 heuristic matching)', function() {
     });
 
     it('honours a stricter custom threshold', function() {
-      const hit = FM.matchFingerprint('_TZE204_vvmbj46n', 'TS0601', makeDb(), { threshold: 0.95 });
+      const hit = FM.matchFingerprint('_TZE204_zzfixt01', 'TS0601', makeDb(), { threshold: 0.95 });
       assert.strictEqual(hit, null);
     });
 
     it('exact always beats prefix_variant and fuzzy', function() {
       const db = {
-        '_TZE200_vvmbj46n': { driverId: 'a' },
-        '_TZE204_vvmbj46n': { driverId: 'b' },
+        '_TZE200_zzfixt01': { driverId: 'a' },
+        '_TZE204_zzfixt01': { driverId: 'b' },
       };
-      const hit = FM.matchFingerprint('_TZE204_vvmbj46n', null, db);
+      const hit = FM.matchFingerprint('_TZE204_zzfixt01', null, db);
       assert.strictEqual(hit.matchType, 'exact');
       assert.strictEqual(hit.entry.driverId, 'b');
     });
@@ -174,9 +176,9 @@ describe('fingerprint-matcher (P92 heuristic matching)', function() {
 
   describe('bestCandidates / suggestDriverFromPid fallbacks', function() {
     it('returns the k closest candidates without threshold', function() {
-      const top = FM.bestCandidates('_TZE200_vvmbj46x', makeDb(), 3);
+      const top = FM.bestCandidates('_TZE200_zzfixt0x', makeDb(), 3);
       assert(top.length >= 1);
-      assert.strictEqual(top[0].key, '_TZE200_vvmbj46n');
+      assert.strictEqual(top[0].key, '_TZE200_zzfixt01');
     });
 
     it('suggests the most frequent driverHint for a pid', function() {
@@ -200,11 +202,11 @@ describe('fingerprint-matcher (P92 heuristic matching)', function() {
   describe('verbose logging', function() {
     it('logs raw input, normalized form and retained score when verbose', function() {
       const lines = [];
-      FM.matchFingerprint('_TZE204_vvmbj46n', 'TS0601', makeDb(), { verbose: true, log: (...a) => lines.push(a.map(x => (typeof x === 'object' ? JSON.stringify(x) : String(x))).join(' ')) });
+      FM.matchFingerprint('_TZE204_zzfixt01', 'TS0601', makeDb(), { verbose: true, log: (...a) => lines.push(a.map(x => (typeof x === 'object' ? JSON.stringify(x) : String(x))).join(' ')) });
       const blob = lines.join('\n');
       assert(blob.includes('match attempt'), 'expected attempt log');
-      assert(blob.includes('_TZE204_vvmbj46n'), 'expected raw input in log');
-      assert(blob.includes('_tze204_vvmbj46n'), 'expected normalized form in log');
+      assert(blob.includes('_TZE204_zzfixt01'), 'expected raw input in log');
+      assert(blob.includes('_tze204_zzfixt01'), 'expected normalized form in log');
       assert(blob.includes('match retained'), 'expected retained log');
       assert(blob.includes('prefix_variant'), 'expected matchType in log');
       assert(blob.includes('0.9'), 'expected retained score in log');
@@ -212,7 +214,7 @@ describe('fingerprint-matcher (P92 heuristic matching)', function() {
 
     it('stays silent by default', function() {
       const lines = [];
-      FM.matchFingerprint('_TZE204_vvmbj46n', 'TS0601', makeDb(), { log: (...a) => lines.push(a.join(' ')) });
+      FM.matchFingerprint('_TZE204_zzfixt01', 'TS0601', makeDb(), { log: (...a) => lines.push(a.join(' ')) });
       assert.strictEqual(lines.length, 0);
     });
   });
@@ -265,8 +267,9 @@ describe('fingerprint-matcher (P92 heuristic matching)', function() {
       const fp = RuntimeFingerprintDB.getFingerprint('_TZE204_vvmbj46n', 'TS0601');
       assert(fp);
       assert.strictEqual(fp.driverId, 'lcdtemphumidsensor');
-      assert.strictEqual(fp.matchType, 'prefix_variant');
-      assert.strictEqual(fp._matchedKey, '_TZE200_vvmbj46n');
+      // WHY(P2571): the vvmbj46n family is now locked by the misattribution registry, which
+      // resolves before the prefix-variant heuristic (same driver).
+      assert.ok(['prefix_variant', 'user_misattribution_registry'].includes(fp.matchType), fp.matchType);
       assert(fp._matchScore >= 0.9);
     });
 

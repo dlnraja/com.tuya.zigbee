@@ -90,6 +90,15 @@ describe('mfs_db bidirectionality', () => {
     for (const [fp, entry] of Object.entries(mfs)) {
       const driverId = entry && entry.driverId;
       if (!driverId) {continue;}
+      // WHY(P2251/P2295): brand rows (Hobeian/Heobian…) are multiCouple — driverId 'multi' is a
+      // sentinel; every per-pid target in byPid must exist instead.
+      if (driverId === 'multi') {
+        for (const [pid, t] of Object.entries(entry.byPid || {})) {
+          const tid = t && (t.driverId || t.driver || (typeof t === 'string' ? t : null));
+          if (tid && !claimsByDriver.has(tid)) {ghosts.push(`${fp}|${pid} → ${tid} (driver inexistant)`);}
+        }
+        continue;
+      }
       const routed = claimsByDriver.get(driverId);
       if (!routed) {ghosts.push(`${fp} → ${driverId} (driver inexistant)`); continue;}
       if (!routed.mfrs.has(fp.toLowerCase())) {unroutedClaims.push(`${fp} → ${driverId}`);}
