@@ -1,7 +1,7 @@
 {
   "note": "Deep-read sweep of ALL issues+PRs (open/closed, all comments) of JohanBendz/com.tuya.zigbee and dlnraja/com.tuya.zigbee. Per-item status lives in data/progress/ledger.json (keys johan-issue:N / dlnraja-issue:N); this file only holds the cursor. Order: Johan ascending, then dlnraja ascending. Never skip, only defer.",
   "ledger": "data/progress/ledger.json",
-  "updated": "2026-10-10",
+  "updated": "2026-10-11",
   "done": {
     "JohanBendz": [
       797,
@@ -488,12 +488,27 @@
       477,
       478,
       479,
-      480
+      480,
+      481,
+      482,
+      483,
+      484,
+      485,
+      486,
+      487,
+      488,
+      489,
+      490,
+      491,
+      492,
+      493,
+      494,
+      495
     ],
     "dlnraja": []
   },
   "next": {
-    "JohanBendz": 481,
+    "JohanBendz": 496,
     "dlnraja": 1
   },
   "batchSize": 25,

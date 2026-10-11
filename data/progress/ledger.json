@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-11T10:18:01.532Z",
+ "updated": "2026-10-11T10:18:46.539Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -9681,6 +9681,738 @@
    "status": "verified",
    "date": "2026-10-11",
    "note": "soil_sensor 0x0405/DP109 (EdP)"
+  },
+  "forum:146735#11": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:146735#24": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:146735#36": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:146735#42": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:146735#44": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:146735#54": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:146735#8": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:146735#81": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:154077#15": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:154077#20": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:154077#22": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:154077#4": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:154077#62": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:154077#67": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:154077#73": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:154077#75": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:21313#16": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:21313#21": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:21313#3": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:21313#31": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:21313#32": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:21313#33": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:21313#39": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:21313#4": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:21313#49": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:21313#52": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:21313#55": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:21313#66": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:21313#75": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:26439#1": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:26439#1281": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:26439#1325": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:26439#1636": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:26439#1702": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:26439#4117": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:26439#4212": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:26439#4234": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:26439#4244": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:26439#4253": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "mfr-known",
+   "by": "advance-sweep"
+  },
+  "forum:26439#4264": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:26439#4266": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:26439#4273": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:26439#4279": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:26439#4287": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:26439#4289": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:26439#4291": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:89271#10": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#11": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "mfr-known",
+   "by": "advance-sweep"
+  },
+  "forum:89271#12": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#13": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#14": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#15": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#16": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#17": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#18": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#19": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#2": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#20": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "mfr-known",
+   "by": "advance-sweep"
+  },
+  "forum:89271#21": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#22": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#23": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "mfr-known",
+   "by": "advance-sweep"
+  },
+  "forum:89271#24": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "mfr-known",
+   "by": "advance-sweep"
+  },
+  "forum:89271#25": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#26": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#27": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#28": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#29": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#3": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#30": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "mfr-known",
+   "by": "advance-sweep"
+  },
+  "forum:89271#31": {
+   "status": "deferred",
+   "date": "2026-10-11",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:89271#32": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#33": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#34": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "mfr-known",
+   "by": "advance-sweep"
+  },
+  "forum:89271#35": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#36": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#37": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#38": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#39": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#4": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#40": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#41": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#42": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#43": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#44": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#45": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#46": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#47": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#48": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#49": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#5": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "mfr-known",
+   "by": "advance-sweep"
+  },
+  "forum:89271#50": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#51": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#52": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#53": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#54": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#55": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#56": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#57": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#58": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#59": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#6": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "mfr-known",
+   "by": "advance-sweep"
+  },
+  "forum:89271#60": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#61": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#62": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#63": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#64": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#66": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#68": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#69": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#7": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "mfr-known",
+   "by": "advance-sweep"
+  },
+  "forum:89271#70": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#71": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#72": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#73": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#74": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#75": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#76": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "mfr-known",
+   "by": "advance-sweep"
+  },
+  "forum:89271#77": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#78": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#79": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#8": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:89271#9": {
+   "status": "done",
+   "date": "2026-10-11",
+   "note": "couples-present",
+   "by": "advance-sweep"
   },
   "johan-issue:1": {
    "status": "done",
@@ -19482,28 +20214,37 @@
    "by": "advance-sweep"
   },
   "johan-issue:481": {
-   "status": "pending",
+   "status": "done",
    "kind": "pr",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2023-10-29T12:54:04Z"
+   "upstreamUpdatedAt": "2023-10-29T12:54:04Z",
+   "date": "2026-10-11",
+   "note": "merged PR; identities covered (_TZE200_ntcy3xu1,_TZ3000_b28wrpvx)",
+   "by": "advance-sweep"
   },
   "johan-issue:482": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2024-09-15T21:40:22Z"
+   "upstreamUpdatedAt": "2024-09-15T21:40:22Z",
+   "date": "2026-10-11",
+   "note": "closed issue; identities covered (_TZ3000_4upl1fcj)",
+   "by": "advance-sweep"
   },
   "johan-issue:483": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2024-09-12T10:15:25Z"
+   "upstreamUpdatedAt": "2024-09-12T10:15:25Z",
+   "date": "2026-10-11",
+   "note": "closed issue; identities covered (_TZ3210_up3pngle)",
+   "by": "advance-sweep"
   },
   "johan-issue:484": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
@@ -19512,42 +20253,60 @@
    "mailEvents": [
     "comment",
     "close"
-   ]
+   ],
+   "date": "2026-10-11",
+   "note": "closed issue; identities covered (_TZ3000_mg4dy6z6)",
+   "by": "advance-sweep"
   },
   "johan-issue:485": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2024-09-02T21:34:26Z"
+   "upstreamUpdatedAt": "2024-09-02T21:34:26Z",
+   "date": "2026-10-11",
+   "note": "closed issue; identities covered (_TZ3000_oxslv1c9)",
+   "by": "advance-sweep"
   },
   "johan-issue:486": {
-   "status": "pending",
+   "status": "deferred",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2024-09-15T20:32:22Z"
+   "upstreamUpdatedAt": "2024-09-15T20:32:22Z",
+   "date": "2026-10-11",
+   "note": "closed issue; diag-only; research or diag needed",
+   "by": "advance-sweep"
   },
   "johan-issue:487": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2024-09-15T20:41:21Z"
+   "upstreamUpdatedAt": "2024-09-15T20:41:21Z",
+   "date": "2026-10-11",
+   "note": "closed issue; identities covered (_TZ3000_v7chgqso)",
+   "by": "advance-sweep"
   },
   "johan-issue:488": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2024-09-11T20:27:15Z"
+   "upstreamUpdatedAt": "2024-09-11T20:27:15Z",
+   "date": "2026-10-11",
+   "note": "closed issue; identities covered (_TZ3000_c7nc9w3c)",
+   "by": "advance-sweep"
   },
   "johan-issue:489": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-28T08:23:57Z"
+   "upstreamUpdatedAt": "2026-09-28T08:23:57Z",
+   "date": "2026-10-11",
+   "note": "closed issue; identities covered (_TZE204_aoclfnxz)",
+   "by": "advance-sweep"
   },
   "johan-issue:49": {
    "status": "deferred",
@@ -19560,7 +20319,7 @@
    "by": "advance-sweep"
   },
   "johan-issue:490": {
-   "status": "pending",
+   "status": "deferred",
    "kind": "issue",
    "state": "open",
    "comments": 1,
@@ -19568,17 +20327,23 @@
    "mailDate": "2026-10-01",
    "mailEvents": [
     "comment"
-   ]
+   ],
+   "date": "2026-10-11",
+   "note": "open issue; diag-only; research or diag needed",
+   "by": "advance-sweep"
   },
   "johan-issue:491": {
-   "status": "pending",
+   "status": "deferred",
    "kind": "issue",
    "state": "open",
    "comments": 0,
-   "upstreamUpdatedAt": "2026-07-12T21:31:09Z"
+   "upstreamUpdatedAt": "2026-07-12T21:31:09Z",
+   "date": "2026-10-11",
+   "note": "open issue; diag-only; research or diag needed",
+   "by": "advance-sweep"
   },
   "johan-issue:492": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
@@ -19587,17 +20352,23 @@
    "mailEvents": [
     "comment",
     "close"
-   ]
+   ],
+   "date": "2026-10-11",
+   "note": "closed issue; identities covered (_TZ3210_s9lumfhn)",
+   "by": "advance-sweep"
   },
   "johan-issue:493": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2024-09-11T19:48:04Z"
+   "upstreamUpdatedAt": "2024-09-11T19:48:04Z",
+   "date": "2026-10-11",
+   "note": "closed issue; identities covered (_TZE204_upagmta9)",
+   "by": "advance-sweep"
   },
   "johan-issue:494": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
@@ -19606,10 +20377,13 @@
    "mailEvents": [
     "comment",
     "close"
-   ]
+   ],
+   "date": "2026-10-11",
+   "note": "closed issue; identities covered (_TZ3000_x3ewpzyr)",
+   "by": "advance-sweep"
   },
   "johan-issue:495": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
@@ -19618,7 +20392,10 @@
    "mailEvents": [
     "comment",
     "close"
-   ]
+   ],
+   "date": "2026-10-11",
+   "note": "closed issue; identities covered (_TZ3000_zw7yf6yk)",
+   "by": "advance-sweep"
   },
   "johan-issue:496": {
    "status": "pending",
