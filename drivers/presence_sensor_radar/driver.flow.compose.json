@@ -50,22 +50,6 @@
       "args": []
     },
     {
-      "id": "presence_sensor_radar_motion_cleared",
-      "title": {
-        "en": "Motion cleared",
-        "nl": "Beweging opgeheven",
-        "fr": "Mouvement terminé",
-        "de": "Bewegung beendet"
-      },
-      "hint": {
-        "en": "Triggers when motion stops while motion and presence are reported separately",
-        "nl": "Triggert wanneer beweging stopt terwijl beweging en aanwezigheid apart worden gemeld",
-        "fr": "Se déclenche quand le mouvement cesse lorsque mouvement et présence sont remontés séparément",
-        "de": "Wird ausgelöst, wenn die Bewegung endet, während Bewegung und Anwesenheit getrennt gemeldet werden"
-      },
-      "args": []
-    },
-    {
       "id": "presence_sensor_radar_illuminance_changed",
       "title": {
         "en": "Illuminance changed",

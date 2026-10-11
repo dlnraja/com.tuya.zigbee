@@ -36,8 +36,15 @@ class Dimmer1gangDriver extends ZigBeeDriver {
     }
     // END TRIGGERS
     // CONDITIONS
-    // WHY(P2654 follow-up 2026-10-11): truncated Flow ID dimmer_wall_water_dimmer_wall_1gang_dimmer_1_f53e3 was dropped from the manifest; dead listener removed.
-
+    try {
+      const card = this.homey.flow.getConditionCard('dimmer_wall_water_dimmer_wall_1gang_dimmer_1_f53e3');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) {return false;}
+          return args.device.getCapabilityValue('onoff') === true;
+        });
+      }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition dimmer_wall_water_dimmer_wall_1gang_dimmer_1_f53e3: ${err.message}`); } }
 
     try {
       const card = this.homey.flow.getConditionCard('dimmer_wall_water_dimmer_wall_1gang_is_on');
@@ -50,17 +57,50 @@ class Dimmer1gangDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Condition dimmer_wall_water_dimmer_wall_1gang_is_on: ${err.message}`); } }
 
     // ACTIONS
-    // WHY(P2654 follow-up 2026-10-11): truncated Flow ID dimmer_wall_water_dimmer_wall_1gang_dimmer_1_37795 was dropped from the manifest; dead listener removed.
+    try {
+      const card = this.homey.flow.getActionCard('dimmer_wall_water_dimmer_wall_1gang_dimmer_1_37795');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) {return false;}
+          await args.device['setCapabilityValue']('onoff', true).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_wall_water_dimmer_wall_1gang_dimmer_1_37795: ${err.message}`); } }
 
+    try {
+      const card = this.homey.flow.getActionCard('dimmer_wall_water_dimmer_wall_1gang_dimmer_1_cd269');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) {return false;}
+          await args.device['setCapabilityValue']('onoff', false).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_wall_water_dimmer_wall_1gang_dimmer_1_cd269: ${err.message}`); } }
 
-    // WHY(P2654 follow-up 2026-10-11): truncated Flow ID dimmer_wall_water_dimmer_wall_1gang_dimmer_1_cd269 was dropped from the manifest; dead listener removed.
+    try {
+      const card = this.homey.flow.getActionCard('dimmer_wall_water_dimmer_wall_1gang_dimmer_1_cf81f');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) {return false;}
+          const current = args.device.getCapabilityValue('onoff');
+          await args.device['setCapabilityValue']('onoff', !current).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_wall_water_dimmer_wall_1gang_dimmer_1_cf81f: ${err.message}`); } }
 
-
-    // WHY(P2654 follow-up 2026-10-11): truncated Flow ID dimmer_wall_water_dimmer_wall_1gang_dimmer_1_cf81f was dropped from the manifest; dead listener removed.
-
-
-    // WHY(P2654 follow-up 2026-10-11): truncated Flow ID dimmer_wall_water_dimmer_wall_1gang_dimmer_1_deef8 was dropped from the manifest; dead listener removed.
-
+    try {
+      const card = this.homey.flow.getActionCard('dimmer_wall_water_dimmer_wall_1gang_dimmer_1_deef8');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) {return false;}
+          await args.device['setCapabilityValue']('dim', args.brightness || args.value || 1).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_wall_water_dimmer_wall_1gang_dimmer_1_deef8: ${err.message}`); } }
 
     try {
       const card = this.homey.flow.getActionCard('dimmer_wall_water_dimmer_wall_1gang_turn_on');

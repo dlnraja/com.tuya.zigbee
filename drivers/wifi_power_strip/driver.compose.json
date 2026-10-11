@@ -228,42 +228,6 @@
         "en": "Use if W/kWh readings are 10× too high or low.",
         "fr": "Si W/kWh sont ×10 trop hauts ou bas."
       }
-    },
-    {
-      "id": "dp17_energy_mode",
-      "type": "dropdown",
-      "label": {
-        "en": "Energy counter (DP17) mode",
-        "fr": "Mode du compteur d'énergie (DP17)"
-      },
-      "value": "auto",
-      "values": [
-        {
-          "id": "auto",
-          "label": {
-            "en": "Auto-detect (default)",
-            "fr": "Détection auto (défaut)"
-          }
-        },
-        {
-          "id": "incremental",
-          "label": {
-            "en": "Energy since last report (Wh)",
-            "fr": "Énergie depuis le dernier rapport (Wh)"
-          }
-        },
-        {
-          "id": "cumulative",
-          "label": {
-            "en": "Cumulative counter",
-            "fr": "Compteur cumulé"
-          }
-        }
-      ],
-      "hint": {
-        "en": "How the plug reports energy on DP17. Auto watches the readings and the power to decide. Your kWh total continues from its current value in every mode.",
-        "fr": "Façon dont la prise envoie l'énergie sur DP17. Auto observe les relevés et la puissance pour décider. Ton total de kWh continue depuis sa valeur actuelle dans tous les modes."
-      }
     }
   ],
   "platforms": [
