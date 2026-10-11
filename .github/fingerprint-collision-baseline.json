@@ -5795,6 +5795,32 @@
         "doorwindowsensor_4",
         "plug_smart"
       ]
+    },
+    {
+      "key": "eWeLink|button_wireless,climate_sensor,contact_sensor,module_mini_switch,motion_sensor,sensor_ias_zonetype_ewelink,water_leak_sensor",
+      "drivers": [
+        "button_wireless",
+        "climate_sensor",
+        "contact_sensor",
+        "module_mini_switch",
+        "motion_sensor",
+        "sensor_ias_zonetype_ewelink",
+        "water_leak_sensor"
+      ],
+      "why": "P2622 W4 2026-10-11: eWeLink white-label brand routed by exact pid (Z2M sonoff.ts/ewelink.ts CK-TLSR8656 7000/7002/7003/7014/7019)"
+    },
+    {
+      "key": "ewelink|button_wireless,climate_sensor,contact_sensor,module_mini_switch,motion_sensor,sensor_ias_zonetype_ewelink,water_leak_sensor",
+      "drivers": [
+        "button_wireless",
+        "climate_sensor",
+        "contact_sensor",
+        "module_mini_switch",
+        "motion_sensor",
+        "sensor_ias_zonetype_ewelink",
+        "water_leak_sensor"
+      ],
+      "why": "P2622 W4 2026-10-11: eWeLink white-label brand routed by exact pid (Z2M sonoff.ts/ewelink.ts CK-TLSR8656 7000/7002/7003/7014/7019)"
     }
   ]
 }
