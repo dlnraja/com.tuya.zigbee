@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-11T09:21:53.923Z",
+ "generated": "2026-10-11T13:23:42.660Z",
  "drivers": 388,
  "snapshot": {
   "air_purifier": {
@@ -177,9 +177,9 @@
    "pidSha": "d1852e519f020485"
   },
   "button_wireless_1": {
-   "mfr": 37,
+   "mfr": 38,
    "pid": 32,
-   "mfrSha": "49deb66179f0b9ce",
+   "mfrSha": "60b210979c9f95dc",
    "pidSha": "97471aa91d3d60d5"
   },
   "button_wireless_2": {
@@ -615,9 +615,9 @@
    "pidSha": "455c46e8c8549693"
   },
   "dimmer_1_gang": {
-   "mfr": 7,
+   "mfr": 8,
    "pid": 3,
-   "mfrSha": "3600829e550f532c",
+   "mfrSha": "94b8bf77138288c8",
    "pidSha": "626db59b8035d2cd"
   },
   "dimmer_1_gang_2": {
@@ -681,9 +681,9 @@
    "pidSha": "6c95942761fd08e3"
   },
   "dimmer_wall_1gang": {
-   "mfr": 37,
+   "mfr": 36,
    "pid": 20,
-   "mfrSha": "71fd97714a1370ee",
+   "mfrSha": "6884befef9dd1244",
    "pidSha": "fafa2cc8c54068d7"
   },
   "dimmer_wall_plug": {
@@ -855,9 +855,9 @@
    "pidSha": "480a275813c8653e"
   },
   "gas_sensor": {
-   "mfr": 11,
+   "mfr": 12,
    "pid": 5,
-   "mfrSha": "d940fe75644e5683",
+   "mfrSha": "a4007f03c1cd1714",
    "pidSha": "606b2995829e9479"
   },
   "gas_sensor_switch": {
@@ -1305,9 +1305,9 @@
    "pidSha": "f194a1267ae18499"
   },
   "remote_button_wireless": {
-   "mfr": 1,
+   "mfr": 0,
    "pid": 7,
-   "mfrSha": "7ab6d2096bd151bd",
+   "mfrSha": "e3b0c44298fc1c14",
    "pidSha": "df61901cf512e0e0"
   },
   "remote_button_wireless_fingerbot": {
@@ -1575,9 +1575,9 @@
    "pidSha": "16eca7095d19bea2"
   },
   "sensor_motion_presence": {
-   "mfr": 26,
+   "mfr": 25,
    "pid": 20,
-   "mfrSha": "a0b97820380ec61a",
+   "mfrSha": "1f3e22c034943d3a",
    "pidSha": "3306d9879248aa7e"
   },
   "sensor_motion_radar": {
@@ -1677,9 +1677,9 @@
    "pidSha": "f10b428ccaa7b390"
   },
   "smart_knob": {
-   "mfr": 13,
+   "mfr": 12,
    "pid": 4,
-   "mfrSha": "dcf6045cc2bf2b7a",
+   "mfrSha": "69f64b7c4120b00a",
    "pidSha": "cc648cfeee696240"
   },
   "smart_knob_rotary": {
@@ -1713,9 +1713,9 @@
    "pidSha": "3ad5bcda078cf3dd"
   },
   "smart_remote_1_button": {
-   "mfr": 1,
+   "mfr": 2,
    "pid": 1,
-   "mfrSha": "0c60093a3ed40a30",
+   "mfrSha": "c2f585986fc10043",
    "pidSha": "74df0f4d2b001cb5"
   },
   "smart_remote_1_button_2": {
@@ -1863,9 +1863,9 @@
    "pidSha": "b46b96d17990cf37"
   },
   "switch_1gang": {
-   "mfr": 359,
+   "mfr": 358,
    "pid": 38,
-   "mfrSha": "ec475d859ccadadc",
+   "mfrSha": "8611b6bd1eb6f6b3",
    "pidSha": "fd65b1d55ed8db6a"
   },
   "switch_2_gang": {
@@ -2157,9 +2157,9 @@
    "pidSha": "2523e8285401a387"
   },
   "wall_remote_1_gang": {
-   "mfr": 3,
+   "mfr": 2,
    "pid": 1,
-   "mfrSha": "d1e4dd07b73f47f2",
+   "mfrSha": "5cc3b4b0314e0eb6",
    "pidSha": "fb8ef2c1ffae69fb"
   },
   "wall_remote_2_gang": {
@@ -2289,9 +2289,9 @@
    "pidSha": "8218a22aa12bceb7"
   },
   "water_leak_sensor": {
-   "mfr": 36,
+   "mfr": 37,
    "pid": 21,
-   "mfrSha": "d58480d630f53369",
+   "mfrSha": "13f8154214888e83",
    "pidSha": "ddd617471a56ff24"
   },
   "water_leak_sensor_tuya": {
