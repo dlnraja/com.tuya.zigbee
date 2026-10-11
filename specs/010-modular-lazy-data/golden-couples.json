@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-10T23:41:35.653Z",
+ "generated": "2026-10-11T00:17:08.287Z",
  "drivers": 388,
  "snapshot": {
   "air_purifier": {
@@ -579,9 +579,9 @@
    "pidSha": "455c46e8c8549693"
   },
   "device_radiator_valve": {
-   "mfr": 91,
+   "mfr": 92,
    "pid": 1,
-   "mfrSha": "9a4a7433c0fe8cda",
+   "mfrSha": "d4ae0ef45afa35cf",
    "pidSha": "455c46e8c8549693"
   },
   "device_radiator_valve_smart": {
@@ -1695,9 +1695,9 @@
    "pidSha": "bea76b1883d9ef71"
   },
   "smart_lcd_thermostat": {
-   "mfr": 8,
+   "mfr": 7,
    "pid": 1,
-   "mfrSha": "f4d738f3b75352f4",
+   "mfrSha": "d780ca210171abe3",
    "pidSha": "455c46e8c8549693"
   },
   "smart_motion_sensor": {
