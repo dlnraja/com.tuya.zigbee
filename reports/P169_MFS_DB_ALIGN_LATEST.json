@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-10-11T01:24:33.220Z",
+  "timestamp": "2026-10-11T01:42:00.263Z",
   "gate": "align-mfs-db-intelligent",
   "apply": false,
   "check": true,
   "changeCount": 59,
-  "skippedCount": 61,
+  "skippedCount": 66,
   "highSeverityCount": 0,
   "byAction": {
     "compose_exclusive": 59
@@ -674,6 +674,46 @@
       "canon": "wall_switch_3gang_1way",
       "caseIds": [
         "p2517-l9brjwau-ts0003-wall-3gang"
+      ]
+    },
+    {
+      "reason": "registry_bare_brand_multi_canon",
+      "mfr": "ewelink",
+      "canon": "climate_sensor",
+      "caseIds": [
+        "p2622-ewelink-ck-tlsr-th-not-virtual-socket"
+      ]
+    },
+    {
+      "reason": "registry_bare_brand_multi_canon",
+      "mfr": "ewelink",
+      "canon": "button_wireless",
+      "caseIds": [
+        "p2622b-ewelink-ck-tlsr-button_wireless"
+      ]
+    },
+    {
+      "reason": "registry_bare_brand_multi_canon",
+      "mfr": "ewelink",
+      "canon": "sensor_ias_zonetype_ewelink",
+      "caseIds": [
+        "p2622b-ewelink-ck-tlsr-sensor_ias_zonetype_ewelink"
+      ]
+    },
+    {
+      "reason": "registry_bare_brand_multi_canon",
+      "mfr": "ewelink",
+      "canon": "contact_sensor",
+      "caseIds": [
+        "p2622b-ewelink-ck-tlsr-contact_sensor"
+      ]
+    },
+    {
+      "reason": "registry_bare_brand_multi_canon",
+      "mfr": "ewelink",
+      "canon": "water_leak_sensor",
+      "caseIds": [
+        "p2622b-ewelink-ck-tlsr-water_leak_sensor"
       ]
     },
     {

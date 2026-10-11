@@ -8016,7 +8016,7 @@
       "notes": "P2622 W4 2026-10-11: exact eWeLink couple, Z2M sonoff.ts SNZB-01 white-label (fingerprint manufacturerName eWeLink, Koen Kanters and contributors). eWeLink is a multi-driver brand: route by pid, never strip by brand."
     },
     {
-      "id": "p2622b-ewelink-ck-tlsr-motion_sensor",
+      "id": "p2622b-ewelink-ck-tlsr-sensor_ias_zonetype_ewelink",
       "mfr": [
         "eWeLink",
         "ewelink"
@@ -8024,13 +8024,13 @@
       "productId": [
         "CK-TLSR8656-SS5-01(7002)"
       ],
-      "canonicalDriver": "motion_sensor",
+      "canonicalDriver": "sensor_ias_zonetype_ewelink",
       "forbidMode": "couple",
       "protocol": "zcl_sleepy",
       "sources": [
         "z2m"
       ],
-      "notes": "P2622 W4 2026-10-11: exact eWeLink couple, Z2M sonoff.ts SNZB-03 white-label (fingerprint manufacturerName eWeLink, Koen Kanters and contributors). eWeLink is a multi-driver brand: route by pid, never strip by brand."
+      "notes": "P2622 W4 2026-10-11: exact eWeLink+CK-TLSR8656-SS5-01(7002) couple, Z2M sonoff.ts SNZB-03 white-label (IAS 1280, Koen Kanters and contributors). Owner sensor_ias_zonetype_ewelink (zoneType-resolved), NOT motion_sensor: eWeLink on motion_sensor would collide eWeLink|SNZB-03 with the JohanBendz #1113/#1475 IAS owner."
     },
     {
       "id": "p2622b-ewelink-ck-tlsr-contact_sensor",
