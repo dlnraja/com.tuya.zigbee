@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-11T16:50:55.637Z",
+  "generatedAt": "2026-10-11T23:14:18.278Z",
   "date": "2026-10-11",
   "mode": "full",
   "phases": [
@@ -12,18 +12,18 @@
     {
       "name": "github",
       "ok": true,
-      "durationMs": 485
+      "durationMs": 476
     },
     {
       "name": "gmail",
       "ok": true,
-      "durationMs": 210,
+      "durationMs": 229,
       "details": {
         "crash": {
           "ok": true,
           "skipped": false,
           "status": 0,
-          "durationMs": 33,
+          "durationMs": 40,
           "stderr": "",
           "stdoutTail": "[gmail-crash-pattern-gate] sources=32 hits=0 unknown=0\n  wrote .github/state/gmail-crash-patterns.json\n  verdict: ok\n"
         },
@@ -31,16 +31,16 @@
           "ok": true,
           "skipped": false,
           "status": 0,
-          "durationMs": 176,
+          "durationMs": 188,
           "stderr": "",
-          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-10-11\n{\n  \"generatedAt\": \"2026-10-11T16:50:56.324Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 34,\n  \"derivedFromInterview\": 0,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 3,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 3,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 2,\n    \"processing_failed\": 3,\n    \"scene_0x8004\": 2,\n    \"aggregate_error\": 1,\n    \"invalid_flow_card\": 1,\n    \"missing_capability_listener\": 1\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 34 gmailBodies= 30\n"
+          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-10-11\n{\n  \"generatedAt\": \"2026-10-11T23:14:18.971Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 39,\n  \"derivedFromInterview\": 0,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 3,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 8,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 2,\n    \"processing_failed\": 8,\n    \"scene_0x8004\": 2,\n    \"aggregate_error\": 1,\n    \"invalid_flow_card\": 1,\n    \"missing_capability_listener\": 1\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 39 gmailBodies= 30\n"
         }
       }
     },
     {
       "name": "forum",
       "ok": true,
-      "durationMs": 27256,
+      "durationMs": 26783,
       "skipScan": false,
       "steps": [
         {
@@ -64,7 +64,7 @@
     {
       "name": "drivers",
       "ok": true,
-      "durationMs": 1878,
+      "durationMs": 1960,
       "mfs": {
         "high": 0,
         "changes": 0,
@@ -75,29 +75,29 @@
     {
       "name": "functionalDeep",
       "ok": true,
-      "durationMs": 1687,
+      "durationMs": 1771,
       "note": "P2529 complementary deep functional (soft)"
     },
     {
       "name": "prioritize",
       "ok": true,
       "durationMs": 1,
-      "count": 6
+      "count": 5
     },
     {
       "name": "docs",
       "ok": true,
-      "durationMs": 0,
+      "durationMs": 1,
       "doc": "/home/runner/work/com.tuya.zigbee/com.tuya.zigbee/docs/architecture/L99_INBOX_INTELLIGENCE.md"
     },
     {
       "name": "gates",
       "ok": true,
-      "durationMs": 2654
+      "durationMs": 2840
     }
   ],
   "github": {
-    "harvestedAt": "2026-10-11T16:50:56.122Z",
+    "harvestedAt": "2026-10-11T23:14:18.755Z",
     "repo": "dlnraja/com.tuya.zigbee",
     "auth": "token",
     "error": null,
@@ -108,7 +108,7 @@
         "labels": [
           "bot-digest"
         ],
-        "updatedAt": "2026-10-11T14:25:00Z",
+        "updatedAt": "2026-10-11T20:51:37Z",
         "user": "dlnraja",
         "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/557"
       },
@@ -147,32 +147,23 @@
         "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/559"
       }
     ],
-    "prs": [
-      {
-        "number": 566,
-        "title": "fix(ci): pr-gate skips missing master-only critical tests",
-        "updatedAt": "2026-10-11T15:43:24Z",
-        "user": "dlnraja",
-        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/pull/566",
-        "draft": false
-      }
-    ],
+    "prs": [],
     "openIssueCount": 4,
-    "openPrCount": 1
+    "openPrCount": 0
   },
   "forum": {
     "path": "/home/runner/work/com.tuya.zigbee/com.tuya.zigbee/.github/state/forum/actionable-processor-report.json",
     "totals": {
-      "posts": 218,
+      "posts": 217,
       "withCouples": 74,
       "needAction": 57,
-      "both": 132,
+      "both": 131,
       "masterOnly": 17
     },
-    "posts": 218
+    "posts": 217
   },
   "gmail": {
-    "generatedAt": "2026-10-11T16:50:56.149Z",
+    "generatedAt": "2026-10-11T23:14:18.788Z",
     "sourcesScanned": 32,
     "patternCounts": {
       "flow_getDeviceActionCard": 0,
@@ -279,20 +270,10 @@
       "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/559",
       "action": "investigate-code-silent",
       "forumReply": "NEVER"
-    },
-    {
-      "score": 50,
-      "dualApp": "MASTER_ONLY",
-      "source": "github-pr",
-      "id": "PR#566",
-      "title": "fix(ci): pr-gate skips missing master-only critical tests",
-      "url": "https://github.com/dlnraja/com.tuya.zigbee/pull/566",
-      "action": "review",
-      "forumReply": "NEVER"
     }
   ],
   "functionalDeep": {
     "ok": true,
-    "durationMs": 1687
+    "durationMs": 1770
   }
 }
