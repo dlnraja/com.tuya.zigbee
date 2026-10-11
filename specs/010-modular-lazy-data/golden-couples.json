@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-11T00:17:08.287Z",
+ "generated": "2026-10-11T01:18:39.429Z",
  "drivers": 388,
  "snapshot": {
   "air_purifier": {
@@ -957,9 +957,9 @@
    "pidSha": "9ca0226f619cd8fb"
   },
   "illuminance_sensor": {
-   "mfr": 8,
+   "mfr": 9,
    "pid": 4,
-   "mfrSha": "fee0d6f777c69308",
+   "mfrSha": "b2b8278da2e64fe9",
    "pidSha": "09fff199fe173c21"
   },
   "ir_blaster": {
@@ -1443,10 +1443,10 @@
    "pidSha": "278e503d4862c11f"
   },
   "scene_switch_4": {
-   "mfr": 14,
-   "pid": 3,
-   "mfrSha": "b5d27e753aad3be4",
-   "pidSha": "852c1ed113914f3e"
+   "mfr": 13,
+   "pid": 2,
+   "mfrSha": "4ba57314ba4fce72",
+   "pidSha": "dbf61bfedc162a8d"
   },
   "scene_switch_6": {
    "mfr": 1,
