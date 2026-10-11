@@ -23,11 +23,11 @@ test('UnifiedSwitchBase wires the adapter (init, DP observe, destroy)', () => {
   assert.match(s, /_gangAdapter\?\.destroy\(\)/);
 });
 
-test('a2erlvb8: 1-ch TS000F on switch_1gang, 2-ch TS0002 on switch_2gang, gang counts known', () => {
+test('a2erlvb8: single owner switch_2gang (TS0002 + TS000F) like master; gang counts known', () => {
   const one = compose('switch_1gang');
   const two = compose('switch_2gang');
-  assert.ok(one.manufacturerName.includes('_TZ3210_a2erlvb8') && one.productId.includes('TS000F'));
-  assert.ok(two.manufacturerName.includes('_TZ3210_a2erlvb8') && two.productId.includes('TS0002'));
+  assert.ok(!one.manufacturerName.some((m) => m.toLowerCase() === '_tz3210_a2erlvb8'));
+  assert.ok(two.manufacturerName.includes('_TZ3210_a2erlvb8') && two.productId.includes('TS0002') && two.productId.includes('TS000F'));
   assert.equal(patterns.couples['_tz3210_a2erlvb8|TS000F'], 1);
   assert.equal(patterns.couples['_tz3210_a2erlvb8|TS0002'], 2);
 });
