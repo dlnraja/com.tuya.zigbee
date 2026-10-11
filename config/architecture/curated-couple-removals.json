@@ -235,6 +235,14 @@
       ],
       "why": "lost-couples W4/pass 3 (977b54e97f, d7243a8120): moved to the exact driver per Z2M/multi-source evidence (couple-driver-pins); not a loss",
       "source": "prep/master-lost-couples"
+    },
+    {
+      "driver": "climate_sensor",
+      "mfr": [
+        "_TZ3000_lmcp6b0a"
+      ],
+      "why": "TS0003 Zemismart 3-gang wall switch (JohanBendz#795 interview + Johan verification); climate_sensor has no Z2M pid for it; owner switch_3_gang",
+      "source": "c4fb32f3de (2026-10-11 W4)"
     }
   ]
 }
