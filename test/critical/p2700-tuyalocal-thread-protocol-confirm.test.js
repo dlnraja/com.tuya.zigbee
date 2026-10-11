@@ -21,10 +21,18 @@ class FakeTuyAPI extends EventEmitter {
 }
 FakeTuyAPI.connectImpl = (d) => { setImmediate(() => d.emit('connected')); return Promise.resolve(); };
 
+// WHY(N22 full-suite): in one mocha process another test may have loaded TuyaLocalClient with
+// the REAL tuyapi first; the cached module then dials 10.0.0.2 and its late "connection timed
+// out" crashes the run as an uncaught exception. Load a fresh copy bound to the fake, then put
+// the previous cache entry back so other tests are untouched.
+const clientPath = require.resolve('../../lib/tuya-local/TuyaLocalClient');
+const prevCached = require.cache[clientPath];
+delete require.cache[clientPath];
 const origLoad = Module._load;
 Module._load = function (req, ...rest) { return req === 'tuyapi' ? FakeTuyAPI : origLoad.call(this, req, ...rest); };
 const TuyaLocalClient = require('../../lib/tuya-local/TuyaLocalClient');
 Module._load = origLoad;
+if (prevCached) require.cache[clientPath] = prevCached; else delete require.cache[clientPath];
 
 const tick = () => new Promise((r) => setImmediate(r));
 
