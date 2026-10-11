@@ -82,7 +82,10 @@ describe('B2/B3 — Scene recall listener', () => {
   });
 
   it('_triggerPhysicalFlow awaits the ButtonDevice router', () => {
-    assert.match(mixinSrc, /return this\.triggerButtonPress\(gang, normType, clicks, \{ source: 'physical' \}\)/);
+    // WHY(P2235 771bb01668, intended): the router call now passes `extra` (source + rotate type token);
+    // double-fire is guarded by tokens._internalTrigger.
+    assert.match(mixinSrc, /return this\.triggerButtonPress\(gang, normType, clicks, extra\)/);
+    assert.match(mixinSrc, /typeof this\.triggerButtonPress === 'function' && !tokens\._internalTrigger/);
   });
 });
 
