@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-11T14:23:07.700Z",
+ "generated": "2026-10-11T15:22:28.669Z",
  "drivers": 388,
  "snapshot": {
   "air_purifier": {
@@ -195,9 +195,9 @@
    "pidSha": "06cd0099c514e4ab"
   },
   "button_wireless_4": {
-   "mfr": 36,
+   "mfr": 37,
    "pid": 45,
-   "mfrSha": "dbc072c0cbf883ab",
+   "mfrSha": "c92a47401bba710d",
    "pidSha": "fdbcbd0e265ae852"
   },
   "button_wireless_4_ts0041": {
@@ -1671,9 +1671,9 @@
    "pidSha": "a799fdf7956e93cd"
   },
   "smart_irrigation_valve": {
-   "mfr": 4,
+   "mfr": 3,
    "pid": 3,
-   "mfrSha": "87e3b5dba5478e9c",
+   "mfrSha": "b2467773e4bfc1f2",
    "pidSha": "f10b428ccaa7b390"
   },
   "smart_knob": {
@@ -1905,9 +1905,9 @@
    "pidSha": "79608defafa31586"
   },
   "switch_4gang": {
-   "mfr": 83,
+   "mfr": 84,
    "pid": 39,
-   "mfrSha": "3ced2ac029eddfab",
+   "mfrSha": "386c11f340db3213",
    "pidSha": "16abbc1949261667"
   },
   "switch_dimmer_1gang": {
@@ -2097,9 +2097,9 @@
    "pidSha": "b5f78b2a386201c5"
   },
   "usb_dongle_triple": {
-   "mfr": 16,
+   "mfr": 15,
    "pid": 9,
-   "mfrSha": "f73478d343049362",
+   "mfrSha": "baa03311f66b6118",
    "pidSha": "d0d47359d9f8c8f2"
   },
   "usb_outlet_advanced": {
