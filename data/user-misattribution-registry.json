@@ -6589,11 +6589,12 @@
         "switch_1gang",
         "button_wireless_1",
         "presence_sensor_radar",
-        "generic_tuya"
+        "generic_tuya",
+        "button_wireless_4"
       ],
       "forbidMode": "couple",
       "source": "p2430-hobeian-fleet",
-      "notes": "P2430: HOBEIAN Star Ring 4-gang scene switch couple lock.",
+      "notes": "P2430: HOBEIAN Star Ring 4-gang scene switch couple lock. 2026-10-11 user decision: scene_switch_4 sole owner (Z2M 'Star Ring 4 Gang Scene Switch'); button_wireless_4 must not claim it.",
       "doNotTouch": true
     },
     {
@@ -8694,6 +8695,23 @@
         "z2m"
       ],
       "notes": "2026-10-11: Z2M qa.ts QARZ1DC 1-channel (_TZ3210_a2erlvb8+TS000F). Single owner switch_2gang like master (977b54e97f/d7243a8120); GangCountAdapter (gang-patterns TS000F=1) hides gang2 once the device confirms 1 gang (Koen Kanters and contributors)."
+    },
+    {
+      "id": "bgtzm4ny-ts0044-star-ring-scene",
+      "mfr": [
+        "_TZ3000_bgtzm4ny",
+        "_tz3000_bgtzm4ny"
+      ],
+      "productId": [
+        "TS0044"
+      ],
+      "canonicalDriver": "scene_switch_4",
+      "forbiddenDrivers": [
+        "button_wireless_4"
+      ],
+      "forbidMode": "couple",
+      "source": "z2m ZG-101ZS + romasku#237",
+      "notes": "2026-10-11 user decision: same hardware as HOBEIAN ZG-101ZS (TLSR8253 battery 4-button, single/double/hold); both couples in scene_switch_4."
     }
   ],
   "entries": {

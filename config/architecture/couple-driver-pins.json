@@ -419,6 +419,26 @@
       "pid": "TS011F",
       "source": "johan + Z2S + tr-nc/plantctl Z2M report",
       "regression": "W4 second-source couple 2026-10-11 (Johan mfr + independent source)"
+    },
+    {
+      "mfr": [
+        "HOBEIAN",
+        "hobeian",
+        "Hobeian"
+      ],
+      "driver": "scene_switch_4",
+      "pid": "ZG-101ZS",
+      "source": "z2m (Star Ring 4 Gang Scene Switch) + sacred-couple rule",
+      "regression": "2026-10-11 user decision: sole owner scene_switch_4"
+    },
+    {
+      "mfr": [
+        "_TZ3000_bgtzm4ny"
+      ],
+      "driver": "scene_switch_4",
+      "pid": "TS0044",
+      "source": "z2m (ZG-101ZS whitelabel) + romasku#237",
+      "regression": "2026-10-11 user decision: same hardware as HOBEIAN ZG-101ZS, same driver"
     }
   ]
 }
