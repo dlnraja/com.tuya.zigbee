@@ -58,3 +58,5 @@ Open without fingerprint: two-way irrigation valve pairing as unknown (#2218) �
 
 Forum poll (no AI): fingerprint + `extractForumSignals` → `.github/state/forum/new-leads.json` (links + structured fields only).
 Symptom families, white-label models (ZG-106Z, AY-303Z, MTG075) and brands are extracted by `scripts/progress/lib/forum-symptoms.js` (labels only) in both the poll and the screenshot OCR scanner; symptom-only posts land in `data/leads/forum-image-ocr.json` → `symptomQueue` for the daily resume.
+
+- **Couple sources (2026-10-11):** One reliable source is enough for an exact productId and an exact mfr+pid couple (user rule 2026-10-11): Z2M, ZHA, deCONZ, Johan, blakadder, SmartThings/Hubitat lists, Z2S, a user diagnostic. Record the source per couple (registry/pins/mfs_db). Never invent; skip only when the pid is ambiguous (the source lists several pids for the mfr). Place in the driver matching the device type, W4 move with curated removals and pins. Quirks/behaviour workarounds keep their own ≥2-source rule. See docs/rules/COUPLE_SOURCE_POLICY.md.
