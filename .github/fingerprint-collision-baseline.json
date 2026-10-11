@@ -5845,6 +5845,118 @@
         "water_leak_sensor"
       ],
       "why": "P2622 W4 2026-10-11: eWeLink white-label brand routed by exact pid (Z2M sonoff.ts/ewelink.ts CK-TLSR8656 7000/7002/7003/7014/7019)"
+    },
+    {
+      "key": "_tz3210_a2erlvb8|ts0003",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "why": "2026-10-11 _TZ3210_a2erlvb8 on switch_1gang (Z2M QARZ1DC TS000F) + switch_2gang (Z2M QARZ2LR TS0002): shared pids resolved at runtime by GangCountAdapter (lib/data/gang-patterns.json)"
+    },
+    {
+      "key": "_tz3210_a2erlvb8|TS0003",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "why": "2026-10-11 _TZ3210_a2erlvb8 on switch_1gang (Z2M QARZ1DC TS000F) + switch_2gang (Z2M QARZ2LR TS0002): shared pids resolved at runtime by GangCountAdapter (lib/data/gang-patterns.json)"
+    },
+    {
+      "key": "_tz3210_a2erlvb8|ts000f",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "why": "2026-10-11 _TZ3210_a2erlvb8 on switch_1gang (Z2M QARZ1DC TS000F) + switch_2gang (Z2M QARZ2LR TS0002): shared pids resolved at runtime by GangCountAdapter (lib/data/gang-patterns.json)"
+    },
+    {
+      "key": "_tz3210_a2erlvb8|TS000F",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "why": "2026-10-11 _TZ3210_a2erlvb8 on switch_1gang (Z2M QARZ1DC TS000F) + switch_2gang (Z2M QARZ2LR TS0002): shared pids resolved at runtime by GangCountAdapter (lib/data/gang-patterns.json)"
+    },
+    {
+      "key": "_tz3210_a2erlvb8|ts0012",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "why": "2026-10-11 _TZ3210_a2erlvb8 on switch_1gang (Z2M QARZ1DC TS000F) + switch_2gang (Z2M QARZ2LR TS0002): shared pids resolved at runtime by GangCountAdapter (lib/data/gang-patterns.json)"
+    },
+    {
+      "key": "_tz3210_a2erlvb8|TS0012",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "why": "2026-10-11 _TZ3210_a2erlvb8 on switch_1gang (Z2M QARZ1DC TS000F) + switch_2gang (Z2M QARZ2LR TS0002): shared pids resolved at runtime by GangCountAdapter (lib/data/gang-patterns.json)"
+    },
+    {
+      "key": "_tz3210_a2erlvb8|ts011f",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "why": "2026-10-11 _TZ3210_a2erlvb8 on switch_1gang (Z2M QARZ1DC TS000F) + switch_2gang (Z2M QARZ2LR TS0002): shared pids resolved at runtime by GangCountAdapter (lib/data/gang-patterns.json)"
+    },
+    {
+      "key": "_tz3210_a2erlvb8|TS011F",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "why": "2026-10-11 _TZ3210_a2erlvb8 on switch_1gang (Z2M QARZ1DC TS000F) + switch_2gang (Z2M QARZ2LR TS0002): shared pids resolved at runtime by GangCountAdapter (lib/data/gang-patterns.json)"
+    },
+    {
+      "key": "_tz3210_a2erlvb8|ts0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "why": "2026-10-11 _TZ3210_a2erlvb8 on switch_1gang (Z2M QARZ1DC TS000F) + switch_2gang (Z2M QARZ2LR TS0002): shared pids resolved at runtime by GangCountAdapter (lib/data/gang-patterns.json)"
+    },
+    {
+      "key": "_tz3210_a2erlvb8|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "why": "2026-10-11 _TZ3210_a2erlvb8 on switch_1gang (Z2M QARZ1DC TS000F) + switch_2gang (Z2M QARZ2LR TS0002): shared pids resolved at runtime by GangCountAdapter (lib/data/gang-patterns.json)"
+    },
+    {
+      "key": "_tz3210_a2erlvb8|ts0726",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "why": "2026-10-11 _TZ3210_a2erlvb8 on switch_1gang (Z2M QARZ1DC TS000F) + switch_2gang (Z2M QARZ2LR TS0002): shared pids resolved at runtime by GangCountAdapter (lib/data/gang-patterns.json)"
+    },
+    {
+      "key": "_tz3210_a2erlvb8|TS0726",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "why": "2026-10-11 _TZ3210_a2erlvb8 on switch_1gang (Z2M QARZ1DC TS000F) + switch_2gang (Z2M QARZ2LR TS0002): shared pids resolved at runtime by GangCountAdapter (lib/data/gang-patterns.json)"
+    },
+    {
+      "key": "_tz3210_a2erlvb8|switch_1gang,switch_2gang",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "why": "2026-10-11 _TZ3210_a2erlvb8 on switch_1gang (Z2M QARZ1DC TS000F) + switch_2gang (Z2M QARZ2LR TS0002): shared pids resolved at runtime by GangCountAdapter (lib/data/gang-patterns.json)"
+    },
+    {
+      "key": "_TZ3210_a2erlvb8|switch_1gang,switch_2gang",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "why": "2026-10-11 _TZ3210_a2erlvb8 on switch_1gang (Z2M QARZ1DC TS000F) + switch_2gang (Z2M QARZ2LR TS0002): shared pids resolved at runtime by GangCountAdapter (lib/data/gang-patterns.json)"
     }
   ]
 }
