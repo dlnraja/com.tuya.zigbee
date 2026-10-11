@@ -29,8 +29,8 @@ describe('P2396 Lerlink fan DP2/DP11', () => {
     assert.ok(src.includes('case 11:'));
     assert.ok(src.includes('onSettings'));
     // WHY(51e0f09589, forum #2253): DP writes now go through sendTuyaDP(this, dp, ...) instead of datapoint({ dp }).
-    assert.ok(/dp: 2\b|sendTuyaDP\(this, 2,/.test(src));
-    assert.ok(/dp: 11\b|sendTuyaDP\(this, 11,/.test(src));
+    assert.ok(/dp: 2\b|sendTuyaDP\(this, 2,|sendStructuredDatapoint\(tuyaCluster, 2,/.test(src));
+    assert.ok(/dp: 11\b|sendTuyaDP\(this, 11,|sendStructuredDatapoint\(tuyaCluster, 11,/.test(src));
   });
 
   it('BatteryMasterEngine no longer maps r32ctezx to AA', () => {
