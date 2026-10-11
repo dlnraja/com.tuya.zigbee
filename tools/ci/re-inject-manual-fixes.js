@@ -47,26 +47,9 @@ const ROOT = path.resolve(__dirname, '..', '..');
 const { claimedElsewhere } = require('../../scripts/lib/fp-collision-guard');
 
 const MANUAL_FIXES = [
-  {
-    // WHY(P2373): empty manufacturerName on remote_button_wireless blocked Auto-Publish
-    id: 'p189-fa9mlvja-remote-button-wireless',
-    file: 'drivers/remote_button_wireless/driver.compose.json',
-    description: 'P189: IH-K663 smart button _TZ3000_fa9mlvja+TS0043 → remote_button_wireless',
-    match: (mfrs) => includesCI(mfrs, '_TZ3000_fa9mlvja'),
-    addIfMissing: ['_TZ3000_fa9mlvja', '_tz3000_fa9mlvja'],
-    addAtTop: true,
-    source: 'p189-smart-button',
-  },
-  {
-    id: 'p189-fa9mlvja-strip-button-wireless-1',
-    file: 'drivers/button_wireless_1/driver.compose.json',
-    description: 'P189: do not park fa9mlvja on 1-button catch-all (couple is TS0043 remote)',
-    match: () => true,
-    addIfMissing: [],
-    removeIfPresent: ['_TZ3000_fa9mlvja', '_tz3000_fa9mlvja', '_TZ3000_FA9MLVJA'],
-    addAtTop: false,
-    source: 'p189-smart-button',
-  },
+  // 2026-10-11: P189 fa9mlvja rules retired. Z2M IH-K663 = _TZ3000_fa9mlvja + TS0041 (1 button)
+  // → button_wireless_1. remote_button_wireless keeps no fa9mlvja claim.
+
 
   {
     id: 'p61-hobeian-sensor-contact-zigbee',
@@ -726,7 +709,7 @@ const MANUAL_FIXES = [
     addIfMissing: ['Wing', 'wing', 'WING'],
     addProductIds: ['ZTH11-3.0', 'ZTH13-3.0'],
     removeProductIds: ['TS0203', 'Excellux'],
-    addAtTop: true,
+    addAtTop: false,
     source: 'p217-johan-1429',
   },
   {

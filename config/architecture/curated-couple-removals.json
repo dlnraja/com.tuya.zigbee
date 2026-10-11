@@ -81,14 +81,6 @@
       "source": "P2432"
     },
     {
-      "driver": "scene_switch_4",
-      "mfr": [
-        "HOBEIAN"
-      ],
-      "why": "P2328: brand HOBEIAN × TS0044 must not land on scene_switch_4; re-added by fleet-enrich 877fd3b0de (P2372). Z2M HOBEIAN ZG-101ZS is a whitelabel of _TZ3000_bgtzm4ny+TS0044",
-      "source": "2aa00a7f6e"
-    },
-    {
       "driver": "dimmer_wall_1gang",
       "mfr": [
         "_TZ3000_7dcddnye"
@@ -350,6 +342,17 @@
       ],
       "why": "2026-10-11 W4: IH-K663 smart button TS0041 (Z2M tuya.ts) single owner button_wireless_1 (existing pin)",
       "source": "one-source round"
+    },
+    {
+      "driver": "button_wireless_4",
+      "mfr": [
+        "_TZ3000_bgtzm4ny",
+        "_tz3000_bgtzm4ny",
+        "_TZ3000_BGTZM4NY",
+        "_tz3000_BGTZM4NY"
+      ],
+      "why": "2026-10-11 user decision: HOBEIAN ZG-101ZS and _TZ3000_bgtzm4ny+TS0044 are the same Star Ring 4-gang battery scene remote (Z2M ZG-101ZS page; romasku #237); both live in scene_switch_4 (battery + 4 buttons single/double/hold)",
+      "source": "z2m + romasku#237"
     }
   ]
 }
