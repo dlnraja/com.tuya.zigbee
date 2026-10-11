@@ -103,6 +103,33 @@
       ],
       "why": "TS0003 Zemismart 3-gang wall switch (JohanBendz#795 interview + Johan verification); climate_sensor has no Z2M pid for it; owner switch_3_gang",
       "source": "b30d72bbc4 (2026-10-11 W4)"
+    },
+    {
+      "driver": "curtain_motor",
+      "mfr": [
+        "_TZE200_hyhl5y36",
+        "_TZE204_ycke4deo",
+        "_TZE284_ozf4e02o",
+        "_TZE284_rlytpmij"
+      ],
+      "why": "P2698: mmWave radar presence mfrs (presence_sensor_radar owns them); fleet-enrich 42fff9dcaf re-bled them onto curtain_motor on master (ported pre-emptively; guard is case-insensitive)",
+      "source": "P2698 / master bcddaba9c7"
+    },
+    {
+      "scope": "mfs_db",
+      "drivers": [
+        "button_wireless_1",
+        "button_wireless_2",
+        "button_wireless_3",
+        "button_wireless_4",
+        "wall_remote_1_gang",
+        "wall_remote_2_gang",
+        "wall_remote_3_gang",
+        "scene_switch_4"
+      ],
+      "modelIdPattern": "^(3450-L|E1\\d{3}|LUMI\\.|ROM001|01MINIZB|A11Z|BASICZBR3)",
+      "why": "P2613: IKEA/LUMI/Sonoff/Philips model IDs bled onto Tuya remote mfs entries (949 pruned from 133 entries 2026-10-11); never re-add",
+      "source": "P2613 / 4b4b118912"
     }
   ]
 }

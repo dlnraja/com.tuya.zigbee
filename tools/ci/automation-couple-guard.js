@@ -63,11 +63,18 @@ function loadRules() {
     if (c && c.mfr && c.driverId) pins.push({ mfr: lc(c.mfr), pid: c.pid ? lc(c.pid) : null, driver: c.driverId, src: 'publish-sacred-keep' });
   }
   const deny = [];
+  const denyPid = [];
+  const mfsJunk = [];
   const dn = readJsonSafe('config/architecture/curated-couple-removals.json');
   for (const r of (dn && dn.removals) || []) {
     for (const m of r.mfr || []) deny.push({ mfr: lc(m), driver: r.driver, why: r.why || '' });
+    for (const p of r.pid || []) denyPid.push({ pid: lc(p), driver: r.driver });
+    // mfs_db modelId prunes: { scope: 'mfs_db', drivers: [...], modelIdPattern: '<regex>' }
+    if (r.scope === 'mfs_db' && r.modelIdPattern) {
+      try { mfsJunk.push({ drivers: new Set(r.drivers || []), re: new RegExp(r.modelIdPattern, 'i') }); } catch (_e) { /* bad regex: ignore */ }
+    }
   }
-  return { pins, deny };
+  return { pins, deny, denyPid, mfsJunk };
 }
 
 function changedComposeFiles() {
@@ -81,7 +88,7 @@ function changedComposeFiles() {
 }
 
 function evaluate() {
-  const { pins, deny } = loadRules();
+  const { pins, deny, denyPid, mfsJunk } = loadRules();
   const files = changedComposeFiles();
   const v = [];
   const pinByDriver = new Map();
@@ -112,8 +119,11 @@ function evaluate() {
     }
     // 4. golden: bots may only grow
     if (!ALLOW_SHRINK && (was.mfr.size || was.pid.size)) {
-      const lostM = [...was.mfr].filter((m) => !now.mfr.has(m));
-      const lostP = [...was.pid].filter((p) => !now.pid.has(p));
+      // WHY: curated removals are intended shrinks — only unexplained losses count.
+      const intendedM = new Set(deny.filter((d) => d.driver === driver).map((d) => d.mfr));
+      const intendedP = new Set(denyPid.filter((d) => d.driver === driver).map((d) => d.pid));
+      const lostM = [...was.mfr].filter((m) => !now.mfr.has(m) && !intendedM.has(m));
+      const lostP = [...was.pid].filter((p) => !now.pid.has(p) && !intendedP.has(p));
       if (lostM.length || lostP.length) {
         v.push({ rule: 'GOLDEN_LOST', file: rel, detail: `lost mfr=${lostM.length} pid=${lostP.length} (e.g. ${[...lostM, ...lostP].slice(0, 3).join(', ')})` });
       }
@@ -128,9 +138,13 @@ function evaluate() {
     const was = baseJson(MFS) || {};
     const lostKeys = Object.keys(was).filter((k) => !(k in now));
     if (lostKeys.length) v.push({ rule: 'MFS_KEY_LOST', file: MFS, detail: `${lostKeys.length} key(s) gone, e.g. ${lostKeys.slice(0, 5).join(', ')}` });
-    const FLEET = new Set(['button_wireless_1', 'button_wireless_2', 'button_wireless_3', 'button_wireless_4',
-      'wall_remote_1_gang', 'wall_remote_2_gang', 'wall_remote_3_gang', 'scene_switch_4']);
-    const JUNK = /^(3450-L|E1\d{3}|LUMI\.|ROM001|01MINIZB|A11Z|BASICZBR3)/i;
+    const rules = mfsJunk.length ? mfsJunk : [{
+      drivers: new Set(['button_wireless_1', 'button_wireless_2', 'button_wireless_3', 'button_wireless_4',
+        'wall_remote_1_gang', 'wall_remote_2_gang', 'wall_remote_3_gang', 'scene_switch_4']),
+      re: /^(3450-L|E1\d{3}|LUMI\.|ROM001|01MINIZB|A11Z|BASICZBR3)/i,
+    }];
+    const FLEET = { has: (d) => rules.some((r) => r.drivers.has(d)) };
+    const JUNK = { test: (m) => rules.some((r) => r.re.test(m)) };
     let junk = 0; const ex = [];
     for (const [k, e] of Object.entries(now)) {
       if (!k.startsWith('_') || !e || !FLEET.has(e.driverId)) continue;
