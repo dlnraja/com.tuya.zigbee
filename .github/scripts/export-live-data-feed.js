@@ -25,10 +25,13 @@ const devices = {};
 for (const [mfr, entry] of Object.entries(db)) {
   if (!entry || typeof entry !== 'object' || !entry.driverId) {continue;}
   if (SYNTHETIC_RX.test(mfr)) {continue;}
+  // WHY(3d9553ae0d couple doctrine): LiveDataUpdater rejects the WHOLE payload when one row is
+  // mfr-only (no modelIds) — export couples only. 'multi' brand rows route per pid, never as a driver.
+  if (entry.driverId === 'multi') {continue;}
+  if (!Array.isArray(entry.modelIds) || !entry.modelIds.length) {continue;}
   const out = { driverId: entry.driverId };
-  if (Array.isArray(entry.modelIds) && entry.modelIds.length) {
-    out.modelIds = entry.modelIds.slice(0, 60);
-  }
+  out.modelIds = entry.modelIds.filter((m) => typeof m === 'string' && m.length <= 60).slice(0, 60);
+  if (!out.modelIds.length) {continue;}
   if (entry.source) {out.source = String(entry.source).slice(0, 120);}
   devices[mfr] = out;
 }
