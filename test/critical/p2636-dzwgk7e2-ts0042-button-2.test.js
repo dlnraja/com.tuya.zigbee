@@ -20,7 +20,9 @@ describe('P2636 dzwgk7e2+TS0042 2-btn (phantom 4EP)', () => {
     ));
     assert.ok((c.zigbee.manufacturerName || []).some((x) => /dzwgk7e2/i.test(String(x))));
     assert.ok((c.zigbee.productId || []).includes('TS0042'));
-    assert.ok((c.zigbee.manufacturerName || []).length >= 566);
+    // 552a5736a4/d638073cb7 moved verified TS011F plug/breaker mfrs (jak16dll, cayepv1a, lepzuhto,
+    // 4ux0ondb, b28wrpvx) to plug drivers; floor tracks that, still guards mass purges.
+    assert.ok((c.zigbee.manufacturerName || []).length >= 540);
   });
 
   it('device.js forces 2 buttons + P2636 dzwgk7e2 / skipEf00', () => {

@@ -32,8 +32,10 @@ describe('P2629 vsxvaj9i+TS0043 interview clusters / RX-TX', () => {
       assert.ok(c.zigbee.endpoints[ep].clusters.includes(6));
       assert.ok(c.zigbee.endpoints[ep].bindings.includes(6));
     }
-    assert.ok(c.zigbee.endpoints['4'].clusters.includes(6));
-    assert.ok(!c.zigbee.endpoints['4'].bindings || c.zigbee.endpoints['4'].bindings.length === 0);
+    // P2758 dropped the EP4 declaration (a required 4th EP broke Homey match on real 3-EP TS0043);
+    // if it ever comes back it must not bind (no bind storm).
+    const ep4 = c.zigbee.endpoints['4'];
+    assert.ok(!ep4 || !ep4.bindings || ep4.bindings.length === 0);
   });
 
   it('device.js locks batteryEpOnly + noEf00 + skip 0x8004 profile', () => {
