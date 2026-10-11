@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-11T13:30:38.826Z",
+ "generated": "2026-10-11T13:38:41.120Z",
  "drivers": 393,
  "snapshot": {
   "air_purifier": {
@@ -183,9 +183,9 @@
    "pidSha": "907c50f03c1b4f74"
   },
   "button_wireless_1": {
-   "mfr": 38,
+   "mfr": 39,
    "pid": 32,
-   "mfrSha": "51af2ca0aad11f3f",
+   "mfrSha": "fbd62112e59a8240",
    "pidSha": "97471aa91d3d60d5"
   },
   "button_wireless_2": {
@@ -861,9 +861,9 @@
    "pidSha": "480a275813c8653e"
   },
   "gas_sensor": {
-   "mfr": 13,
+   "mfr": 14,
    "pid": 5,
-   "mfrSha": "299a57221a60e05c",
+   "mfrSha": "845167401c34f263",
    "pidSha": "606b2995829e9479"
   },
   "gas_sensor_switch": {
@@ -1311,9 +1311,9 @@
    "pidSha": "f194a1267ae18499"
   },
   "remote_button_wireless": {
-   "mfr": 1,
+   "mfr": 0,
    "pid": 7,
-   "mfrSha": "7ab6d2096bd151bd",
+   "mfrSha": "e3b0c44298fc1c14",
    "pidSha": "df61901cf512e0e0"
   },
   "remote_button_wireless_fingerbot": {
@@ -1341,9 +1341,9 @@
    "pidSha": "f3e89c56b663e4d7"
   },
   "remote_button_wireless_smart": {
-   "mfr": 1,
+   "mfr": 0,
    "pid": 2,
-   "mfrSha": "546300ad73b57d41",
+   "mfrSha": "e3b0c44298fc1c14",
    "pidSha": "f3e89c56b663e4d7"
   },
   "remote_button_wireless_usb": {
@@ -1587,9 +1587,9 @@
    "pidSha": "16eca7095d19bea2"
   },
   "sensor_motion_presence": {
-   "mfr": 26,
+   "mfr": 25,
    "pid": 19,
-   "mfrSha": "a0b97820380ec61a",
+   "mfrSha": "1f3e22c034943d3a",
    "pidSha": "e7c5f08cc4f7e52a"
   },
   "sensor_motion_radar": {
@@ -1875,9 +1875,9 @@
    "pidSha": "b46b96d17990cf37"
   },
   "switch_1gang": {
-   "mfr": 360,
+   "mfr": 359,
    "pid": 38,
-   "mfrSha": "ac0f399e2c434223",
+   "mfrSha": "79764bc3d382ebdf",
    "pidSha": "fd65b1d55ed8db6a"
   },
   "switch_2_gang": {
@@ -2187,9 +2187,9 @@
    "pidSha": "86e609055c5d6281"
   },
   "wall_remote_1_gang": {
-   "mfr": 3,
+   "mfr": 2,
    "pid": 1,
-   "mfrSha": "d1e4dd07b73f47f2",
+   "mfrSha": "5cc3b4b0314e0eb6",
    "pidSha": "fb8ef2c1ffae69fb"
   },
   "wall_remote_2_gang": {
@@ -2319,9 +2319,9 @@
    "pidSha": "8218a22aa12bceb7"
   },
   "water_leak_sensor": {
-   "mfr": 37,
+   "mfr": 38,
    "pid": 21,
-   "mfrSha": "ccfb1d8dbe9cde3b",
+   "mfrSha": "7ee2f421891c2d36",
    "pidSha": "ddd617471a56ff24"
   },
   "water_leak_sensor_tuya": {

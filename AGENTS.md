@@ -388,6 +388,7 @@ Merged without changing W1–W11 / P1–P7; where they overlap, they make an exi
   and stay polite with servers (extends W10).
 - R10. Enrichments are variants/alternatives, never degradations, on every app (explicit form of W6).
 - R11. A couple missing from a log is never invented: ask for the next diagnostic with mfr+pid.
+- R11b (2026-10-11, user rule). ONE reliable source giving the exact mfr+pid couple and the device type is enough to place it (Z2M, ZHA, deCONZ, Johan, blakadder, SmartThings/Hubitat lists, Z2S, a diag). Record the source per couple (registry/pins). Skip only when the pid is ambiguous (e.g. a source driver listing several pids for the mfr). Place in the driver matching the device type; W4 move with curated removals and pins. No new driver ids for this (Athom); use existing drivers. SSOT: docs/rules/COUPLE_SOURCE_POLICY.md.
   A guess is allowed only as a labelled hypothesis, then verified.
 - R12. Product rules for batteries: SOS/alarm buttons get an inverted-signal setting with automatic
   detection; sleepy devices follow the battery-saving policy (lib/battery/*, PowerClusterPolicy).
@@ -789,6 +790,7 @@ Merged without changing W1–W11 / P1–P7; where they overlap, they make an exi
   and stay polite with servers (extends W10).
 - R10. Enrichments are variants/alternatives, never degradations, on every app (explicit form of W6).
 - R11. A couple missing from a log is never invented: ask for the next diagnostic with mfr+pid.
+- R11b (2026-10-11, user rule). ONE reliable source giving the exact mfr+pid couple and the device type is enough to place it (Z2M, ZHA, deCONZ, Johan, blakadder, SmartThings/Hubitat lists, Z2S, a diag). Record the source per couple (registry/pins). Skip only when the pid is ambiguous (e.g. a source driver listing several pids for the mfr). Place in the driver matching the device type; W4 move with curated removals and pins. No new driver ids for this (Athom); use existing drivers. SSOT: docs/rules/COUPLE_SOURCE_POLICY.md.
   A guess is allowed only as a labelled hypothesis, then verified.
 - R12. Product rules for batteries: SOS/alarm buttons get an inverted-signal setting with automatic
   detection; sleepy devices follow the battery-saving policy (lib/battery/*, PowerClusterPolicy).
