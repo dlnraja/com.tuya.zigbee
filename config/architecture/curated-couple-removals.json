@@ -377,6 +377,15 @@
       "source": "new driver"
     },
     {
+      "driver": "valve_controller_5zone",
+      "mfr": [
+        "_TZ3000_j0ktmul1",
+        "_tz3000_j0ktmul1"
+      ],
+      "pid": "TS011F",
+      "why": "2026-10-11: folded into switch_4gang (5 gangs via GangCountAdapter pattern); valve_controller_5zone held after AggregateError #3536/#3537/#3540-pattern"
+    },
+    {
       "driver": "usb_dongle_triple",
       "mfr": [
         "_TZ3000_j0ktmul1"

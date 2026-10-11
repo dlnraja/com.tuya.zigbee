@@ -1379,8 +1379,8 @@
     {
       "mfr": "_TZ3000_j0ktmul1",
       "pid": "TS011F",
-      "driverId": "valve_controller_5zone",
-      "note": "AutomatOn AUT000069 5-zone valves/UFH controller, 5 ZCL onOff endpoints (Z2M automaton.ts, PR #5579, z2m #16992; Z2S_Library)"
+      "driverId": "switch_4gang",
+      "note": "Folded 2026-10-11 (valve_controller_5zone held, gang 5 via GangCountAdapter). AutomatOn AUT000069 5-zone valves/UFH controller, 5 ZCL onOff endpoints (Z2M automaton.ts, PR #5579, z2m #16992; Z2S_Library)"
     },
     {
       "mfr": "_TYZB01_bagt1e4o",

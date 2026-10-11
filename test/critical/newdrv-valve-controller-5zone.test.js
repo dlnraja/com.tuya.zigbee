@@ -12,20 +12,24 @@ const compose = JSON.parse(fs.readFileSync(path.join(dir, 'driver.compose.json')
 const flow = JSON.parse(fs.readFileSync(path.join(dir, 'driver.flow.compose.json'), 'utf8'));
 const app = JSON.parse(fs.readFileSync(path.join(ROOT, 'app.json'), 'utf8'));
 
-test('exact couple only, native onOff on endpoints 1..5', () => {
+// 2026-10-11 fold: the driver is held from the Athom payload (AggregateError); its couple ships via
+// switch_4gang (5 gangs through GangCountAdapter). The held driver keeps TS011F + 5 native endpoints
+// but owns no manufacturerName, so exactly one driver claims _TZ3000_j0ktmul1.
+test('held driver: TS011F, native onOff on endpoints 1..5, no couple owned', () => {
   assert.deepEqual(compose.zigbee.productId, ['TS011F']);
-  assert.deepEqual(compose.zigbee.manufacturerName.map((m) => m.toLowerCase()).filter((v, i, a) => a.indexOf(v) === i), ['_tz3000_j0ktmul1']);
+  assert.deepEqual(compose.zigbee.manufacturerName, []);
   for (let e = 1; e <= 5; e++) {assert.ok(compose.zigbee.endpoints[e].clusters.includes(6), `EP${e} onOff`);}
 });
 
-test('only this driver claims _TZ3000_j0ktmul1', () => {
+test('only switch_4gang claims _TZ3000_j0ktmul1', () => {
+  const owners = [];
   for (const d of fs.readdirSync(path.join(ROOT, 'drivers'))) {
-    if (d === D) {continue;}
     const f = path.join(ROOT, 'drivers', d, 'driver.compose.json');
     if (!fs.existsSync(f)) {continue;}
     const z = JSON.parse(fs.readFileSync(f, 'utf8')).zigbee || {};
-    assert.ok(!(z.manufacturerName || []).some((m) => m.toLowerCase() === '_tz3000_j0ktmul1'), d);
+    if ((z.manufacturerName || []).some((m) => m.toLowerCase() === '_tz3000_j0ktmul1')) {owners.push(d);}
   }
+  assert.deepEqual(owners, ['switch_4gang']);
 });
 
 test('device is a 5-gang UnifiedSwitchBase; flow ids match the runtime trigger naming', () => {
