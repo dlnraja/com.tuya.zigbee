@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-11T05:52:24.416Z",
+ "generated": "2026-10-11T06:24:33.343Z",
  "drivers": 392,
  "snapshot": {
   "air_purifier": {
@@ -861,9 +861,9 @@
    "pidSha": "480a275813c8653e"
   },
   "gas_sensor": {
-   "mfr": 12,
+   "mfr": 13,
    "pid": 5,
-   "mfrSha": "d7f9fbfd2bf08d76",
+   "mfrSha": "299a57221a60e05c",
    "pidSha": "606b2995829e9479"
   },
   "gas_sensor_switch": {
@@ -1587,9 +1587,9 @@
    "pidSha": "16eca7095d19bea2"
   },
   "sensor_motion_presence": {
-   "mfr": 27,
+   "mfr": 26,
    "pid": 19,
-   "mfrSha": "5135f0c779c216fc",
+   "mfrSha": "a0b97820380ec61a",
    "pidSha": "e7c5f08cc4f7e52a"
   },
   "sensor_motion_radar": {
