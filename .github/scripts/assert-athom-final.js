@@ -8,13 +8,23 @@ const path = require('path');
 const { execFileSync } = require('child_process');
 
 const OK = /^(test|live|approved)$/i;
+
+// WHY(2026-10-11): #3512 sat in waiting_for_files forever after a hung CLI upload. Older than
+// STUCK_MS (default 5 min) it will never progress: treat it as final/failed.
+const STUCK_MS = Number(process.env.ATHOM_STUCK_MS || 5 * 60 * 1000);
+function isStuck(b, now = Date.now()) {
+  if (String(b && b.state) !== 'waiting_for_files') {return false;}
+  const t = Date.parse(b.stateChangedAt || b.createdAt || '');
+  return Number.isFinite(t) && now - t > STUCK_MS;
+}
+
 const BAD = /^(processing_failed|failed|rejected|revoked)$/i;
 
 function verdict(builds, version) {
   const mine = (builds || []).filter((b) => String(b.version) === String(version));
   if (!mine.length) {return { done: false, ok: false, reason: `no Athom build for v${version} yet` };}
   if (mine.some((b) => OK.test(String(b.state)))) {return { done: true, ok: true, reason: `v${version} in ${mine.find((b) => OK.test(String(b.state))).state}` };}
-  if (mine.every((b) => BAD.test(String(b.state)))) {return { done: true, ok: false, reason: `v${version} ${mine.map((b) => `#${b.id} ${b.state}`).join(', ')}` };}
+  if (mine.every((b) => BAD.test(String(b.state)) || isStuck(b))) {return { done: true, ok: false, reason: `v${version} ${mine.map((b) => `#${b.id} ${b.state}`).join(', ')}` };}
   return { done: false, ok: false, reason: `v${version} ${mine.map((b) => `#${b.id} ${b.state}`).join(', ')}` };
 }
 
@@ -41,4 +51,4 @@ if (require.main === module) {
     if (!v.ok) {console.log(`::error::${line}`); process.exit(1);}
   })();
 }
-module.exports = { verdict };
+module.exports = { verdict, isStuck };
