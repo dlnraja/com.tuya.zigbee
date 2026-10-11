@@ -45893,6 +45893,28 @@
         ]
       },
       {
+        "id": "presence_sensor_radar_motion_cleared",
+        "title": {
+          "en": "Motion cleared",
+          "fr": "Mouvement terminé",
+          "nl": "Beweging gestopt",
+          "de": "Bewegung beendet"
+        },
+        "hint": {
+          "en": "Triggers when active motion stops (presence may still be detected)",
+          "fr": "Se déclenche quand le mouvement actif s'arrête (la présence peut rester détectée)",
+          "nl": "Triggert wanneer actieve beweging stopt (aanwezigheid kan blijven)",
+          "de": "Wird ausgelöst, wenn aktive Bewegung endet (Anwesenheit kann bleiben)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=presence_sensor_radar"
+          }
+        ]
+      },
+      {
         "id": "presence_sensor_radar_illuminance_changed",
         "title": {
           "en": "Illuminance changed",
