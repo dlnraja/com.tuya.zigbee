@@ -41,6 +41,7 @@ test('stuck waiting_for_files counts as final', () => {
   const { isStuck } = require('../../.github/scripts/wait-athom-idle.js');
   assert.strictEqual(isStuck({ state: 'waiting_for_files', stateChangedAt: old }), true);
   assert.strictEqual(isStuck({ state: 'waiting_for_files', stateChangedAt: fresh }), false);
+  assert.strictEqual(isStuck({ state: 'waiting_for_files', at: old }), true); // homey-build-status.js field
   const { verdict } = require('../../.github/scripts/assert-athom-final.js');
   const v = verdict([{ id: 1, version: '9.0.1', state: 'waiting_for_files', stateChangedAt: old }], '9.0.1');
   assert.strictEqual(v.done && !v.ok, true);
