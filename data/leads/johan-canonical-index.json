@@ -8062,6 +8062,20 @@
    "topic": "device-request",
    "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1043"
   },
+  "1046": {
+   "n": 1046,
+   "sources": [],
+   "identities": [],
+   "objectives": [],
+   "batches": [],
+   "implemented": [],
+   "topic": "device-request",
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1046",
+   "state": "open",
+   "state_reason": "reopened",
+   "closed_at": null,
+   "pr": false
+  },
   "1047": {
    "n": 1047,
    "sources": [],
@@ -8310,6 +8324,20 @@
    "needsDeepRead": true,
    "topic": "pull-request",
    "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1065"
+  },
+  "1066": {
+   "n": 1066,
+   "sources": [],
+   "identities": [],
+   "objectives": [],
+   "batches": [],
+   "implemented": [],
+   "topic": "device-request",
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1066",
+   "state": "open",
+   "state_reason": "reopened",
+   "closed_at": null,
+   "pr": false
   },
   "1067": {
    "n": 1067,
@@ -19298,16 +19326,44 @@
     "url": "https://github.com/JohanBendz/com.tuya.zigbee/pull/1525#issuecomment-6065646124"
    },
    "needsDeepRead": true
+  },
+  "1526": {
+   "n": 1526,
+   "sources": [],
+   "identities": [],
+   "objectives": [],
+   "batches": [],
+   "implemented": [],
+   "topic": "device-request",
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1526",
+   "state": "open",
+   "state_reason": null,
+   "closed_at": null,
+   "pr": false
+  },
+  "1527": {
+   "n": 1527,
+   "sources": [],
+   "identities": [],
+   "objectives": [],
+   "batches": [],
+   "implemented": [],
+   "topic": "device-request",
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1527",
+   "state": "open",
+   "state_reason": null,
+   "closed_at": null,
+   "pr": false
   }
  },
- "generated": "2026-10-09T10:54:42.017Z",
+ "generated": "2026-10-11T10:17:59.164Z",
  "repo": "JohanBendz/com.tuya.zigbee",
  "author": "JohanBendz",
  "cursor": {
-  "since": "2026-10-09T10:54:42.017Z"
+  "since": "2026-10-11T10:17:59.164Z"
  },
  "summary": {
-  "issues": 719,
+  "issues": 723,
   "canonical": 117,
   "closed": 510,
   "duplicate": 168,
