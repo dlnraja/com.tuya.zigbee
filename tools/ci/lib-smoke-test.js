@@ -15,6 +15,8 @@ const STUBS = path.join(ROOT, 'tools', 'ci', 'stubs');
 const files = [];
 (function walk(d) {
   for (const e of fs.readdirSync(d, { withFileTypes: true })) {
+    // WHY: _quarantine holds intentionally broken/legacy modules; do not require them.
+    if (e.isDirectory() && (e.name === '_quarantine' || e.name === 'quarantine')) continue;
     const p = path.join(d, e.name);
     if (e.isDirectory()) {walk(p);}
     else if (e.name.endsWith('.js')) {files.push(p);}
