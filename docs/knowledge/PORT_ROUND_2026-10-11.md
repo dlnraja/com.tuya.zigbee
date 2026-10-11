@@ -52,3 +52,14 @@ Still held on purpose: `_TZE600_ogyg1y6b`/TS0105 (no TS0105 driver — would cro
 | Stable | **5.12.399 Test** (#307) | Draft→Test promoted; Node22 green; PRs #564–#566 merged |
 
 Held on purpose: `_TZE600_ogyg1y6b`/TS0105; ambiguous Johan mfrs. No invented couples.
+
+## Resume Grok/IDE (Paris ~22:30)
+
+| Item | Result |
+|---|---|
+| HOBEIAN + one-source + FUT089Z/j0kt parity | OK on all 3 tips (récit tip numbers were stale) |
+| `_TZE200_wrmhp6b3` → `soil_sensor` (one-source Z2M COOLO CS-201Z; was curtain) | Master commits `cfe44898ba`+`efbbf34659` |
+| P2761 Fantem/contact/PIR off climate+dimmer | Was missing on `origin/stable-v5` → PR **#567** merged → tip **5.12.400** |
+| Publish Stable failure on #566 | Race: 5.12.399 still draft; fixed by Draft→Test (#307) |
+| Fleet Enrich cron | Soft failure (enrich step); not blocking tips |
+| Still held | TS0105 `ogyg1y6b`; 7 Johan mfrs with ambiguous pid |
