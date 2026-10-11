@@ -86,12 +86,21 @@ jobs:
 
       - name: 🧪 P2138 + Poll Control (node:test)
         run: |
-          node --test test/critical/p2138-bseed-wall-dimmer.test.js
-          node --test test/critical/poll-control-policy.test.js
-          node --test test/critical/p2436-homey-match-moes-bot-mocks.test.js
-          node --test test/critical/p2437-ai-forfait-cursor-hooks.test.js
-          node --test test/critical/p2438-multi-source-harvest-ai-limit.test.js
-          node --test test/critical/p2439-kaflzta4-smart-knob-button.test.js
+          # Skip tests not present on this app line (master-only ports).
+          for f in \
+            test/critical/p2138-bseed-wall-dimmer.test.js \
+            test/critical/poll-control-policy.test.js \
+            test/critical/p2436-homey-match-moes-bot-mocks.test.js \
+            test/critical/p2437-ai-forfait-cursor-hooks.test.js \
+            test/critical/p2438-multi-source-harvest-ai-limit.test.js \
+            test/critical/p2439-kaflzta4-smart-knob-button.test.js
+          do
+            if [ -f "$f" ]; then
+              node --test "$f"
+            else
+              echo "skip missing $f"
+            fi
+          done
           npm run check:p244x
           npm run check:p246x
           npm run check:p248x
