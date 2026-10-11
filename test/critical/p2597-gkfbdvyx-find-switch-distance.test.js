@@ -29,7 +29,7 @@ describe('P2597 gkfbdvyx find_switch + lux warm + phantom onoff soft', () => {
     assert.ok(src.includes('enableFindSwitchOnBoot: true'));
     assert.ok(src.includes('autoEnableFindSwitch: true'));
     const idx = src.indexOf('ZY_M100_CEILING_24G');
-    const block = src.slice(idx, idx + 3200);
+    const block = src.slice(idx, idx + 9000) // WHY comments grew the block (P2705..P2744);
     assert.match(block, /101:\s*\{[\s\S]*?autoEnableFindSwitch:\s*true/);
     assert.ok(block.includes('luxPresenceRateThreshold: 3'));
   });

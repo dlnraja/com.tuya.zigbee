@@ -39,9 +39,10 @@ describe('P2600 gkfbdvyx #550 lux/distance residual', () => {
   it('ceiling V3 lux DP103 + distance ÷10 (P2604 supersedes DP104 presence)', () => {
     const cfg = fs.readFileSync(CONFIGS, 'utf8');
     const idx = cfg.indexOf('ZY_M100_CEILING_24G');
-    const block = cfg.slice(idx, idx + 4000);
+    const block = cfg.slice(idx, idx + 9000) // block grew (P2705..P2744 WHY notes);
     assert.ok(block.includes("103: { cap: 'measure_luminance', type: 'lux_direct' }"));
-    assert.ok(block.includes("9: { cap: 'measure_luminance.distance', divisor: 10 }"));
+    // P2715 (GH#550): DP9 is dual-scale — ÷10 preferred, cm accepted (radarDistanceScale).
+    assert.match(block, /9:\s*\{\s*cap:\s*'measure_luminance\.distance',[\s\S]{0,80}?(divisor|preferDivisor):\s*10/);
     assert.ok(block.includes("104: { cap: null, internal: 'motion_state_v2_compat' }"));
   });
 
