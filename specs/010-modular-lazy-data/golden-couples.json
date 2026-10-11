@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-11T06:25:15.978Z",
+ "generated": "2026-10-11T06:42:12.217Z",
  "drivers": 388,
  "snapshot": {
   "air_purifier": {
@@ -183,9 +183,9 @@
    "pidSha": "97471aa91d3d60d5"
   },
   "button_wireless_2": {
-   "mfr": 139,
+   "mfr": 138,
    "pid": 100,
-   "mfrSha": "590abc67231286c2",
+   "mfrSha": "3004d0b90cc68b60",
    "pidSha": "25b2f5f37b8e4dd1"
   },
   "button_wireless_3": {
@@ -195,9 +195,9 @@
    "pidSha": "06cd0099c514e4ab"
   },
   "button_wireless_4": {
-   "mfr": 35,
+   "mfr": 36,
    "pid": 45,
-   "mfrSha": "ef7d1332a644ad4a",
+   "mfrSha": "748a2b60bf316012",
    "pidSha": "fdbcbd0e265ae852"
   },
   "button_wireless_4_ts0041": {
@@ -345,9 +345,9 @@
    "pidSha": "777a8703abf8065f"
   },
   "contact_sensor": {
-   "mfr": 61,
+   "mfr": 60,
    "pid": 26,
-   "mfrSha": "9a829193896d3b8e",
+   "mfrSha": "d7c8c1e9597bf268",
    "pidSha": "413aba4e609c4fb1"
   },
   "contact_sensor_curtain": {
@@ -1863,9 +1863,9 @@
    "pidSha": "b46b96d17990cf37"
   },
   "switch_1gang": {
-   "mfr": 363,
+   "mfr": 362,
    "pid": 38,
-   "mfrSha": "8e1c9c0e95479d54",
+   "mfrSha": "7645f371cc091257",
    "pidSha": "fd65b1d55ed8db6a"
   },
   "switch_2_gang": {
@@ -2289,15 +2289,15 @@
    "pidSha": "8218a22aa12bceb7"
   },
   "water_leak_sensor": {
-   "mfr": 31,
+   "mfr": 36,
    "pid": 21,
-   "mfrSha": "00707b5754a06ba0",
+   "mfrSha": "d58480d630f53369",
    "pidSha": "ddd617471a56ff24"
   },
   "water_leak_sensor_tuya": {
-   "mfr": 42,
+   "mfr": 37,
    "pid": 18,
-   "mfrSha": "468fcbb0e04ee7c0",
+   "mfrSha": "fba2827e23e2453d",
    "pidSha": "adf8ba17b46c1c29"
   },
   "water_tank_monitor": {
