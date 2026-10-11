@@ -1,4 +1,4 @@
-# 📥 Community Inbox — 2026-10-10 11:10 UTC
+# 📥 Community Inbox — 2026-10-11 11:24 UTC
 
 Généré par `.github/scripts/community-inbox-digest.js` (workflow `community-inbox.yml`).
 
@@ -17,7 +17,7 @@ Généré par `.github/scripts/community-inbox-digest.js` (workflow `community-i
 ## 🟡 Auto-résolues, en attente de retour
 
 - [#559](https://github.com/dlnraja/com.tuya.zigbee/issues/559) — Smartplug _(maj 2026-10-03)_
-- [#557](https://github.com/dlnraja/com.tuya.zigbee/issues/557) — 🤖 Daily digest _(maj 2026-10-10)_
+- [#557](https://github.com/dlnraja/com.tuya.zigbee/issues/557) — 🤖 Daily digest _(maj 2026-10-11)_
 
 ## 🌍 Forum — posts sans réponse
 
