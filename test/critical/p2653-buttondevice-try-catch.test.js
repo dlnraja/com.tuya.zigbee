@@ -22,12 +22,13 @@ describe('P2653 — ButtonDevice.js syntax (try/catch balance)', () => {
 
   it('scene_recall block closes try with catch (no orphan brace before catch)', () => {
     const src = fs.readFileSync(FILE, 'utf8');
-    const marker = 'WHY(P2624): never raw getDeviceTriggerCard';
-    const idx = src.indexOf(marker);
+    // WHY: marker reworded to 'WHY(P2624/e8d98608): never raw-get ...' (2-line comment); same guarantee.
+    const m = /WHY\(P2624[^)]*\): never raw/.exec(src);
+    const idx = m ? m.index : -1;
     assert.ok(idx > 0, 'P2624 marker present');
     const window = src.slice(idx, idx + 120);
     assert.ok(!/getDeviceTriggerCard[\s\S]*\}\s*\}\s*catch/.test(window), 'no double-close before catch');
-    assert.ok(/WHY\(P2624\)[^\n]*\n\s*\} catch/.test(src.slice(idx, idx + 80))
+    assert.ok(/WHY\(P2624[^)]*\)[^\n]*\n(\s*\/\/[^\n]*\n)?\s*\} catch/.test(src.slice(idx, idx + 260))
       || /WHY\(P2624\)[^\n]*\n\s*\} catch \(_eScene\)/.test(src.slice(idx, idx + 100)),
       'try closes with catch after P2624 comment');
   });
