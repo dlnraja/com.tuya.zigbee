@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-11T05:55:01.830Z",
+ "generated": "2026-10-11T06:05:41.490Z",
  "drivers": 388,
  "snapshot": {
   "air_purifier": {
@@ -279,9 +279,9 @@
    "pidSha": "3427697d0c296c9d"
   },
   "climate_sensor": {
-   "mfr": 530,
+   "mfr": 529,
    "pid": 32,
-   "mfrSha": "d85bee3b444bc8bd",
+   "mfrSha": "83b918404131366f",
    "pidSha": "4809a771f46a5606"
   },
   "climate_sensor_device": {
