@@ -32,6 +32,8 @@ describe('anti-purge regression guard', () => {
     for (const fp of Object.keys(mfs)) {
       // ignorer les pseudo-entrées non-zigbee (marques, placeholders)
       if (!/^[A-Z]?_?(tz|ty|tze)[a-z0-9]{2,5}_/i.test(fp) && !fp.startsWith('_T')) {continue;}
+      // WHY(P2605): forbid-only rows record a couple that must stay OFF every driver (no owner yet).
+      if (/forbid-only/.test(String(mfs[fp]?.source || ''))) {continue;}
       if (!allClaims.has(fp.toLowerCase())) {unclaimed.push(fp);}
     }
     assert.deepStrictEqual(unclaimed, [],

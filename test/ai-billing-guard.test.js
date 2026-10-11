@@ -37,8 +37,12 @@ describe('AI billing guard', () => {
     assert.strictEqual(budgetAllows('openai'), false);
   });
 
-  it('allows paid providers only with explicit opt-in', () => {
+  // WHY(8ce5ab18eb forfait): included daily cap for paid providers is 0 — opt-in alone is not
+  // enough, an explicit per-provider cap is also required.
+  it('allows paid providers only with explicit opt-in (+ explicit cap under forfait)', () => {
     process.env.AI_ALLOW_PAID = 'true';
+    assert.strictEqual(budgetAllows('deepseek'), false);
+    process.env.AI_DAILY_CAP_DEEPSEEK = '100';
     assert.strictEqual(budgetAllows('deepseek'), true);
   });
 
@@ -61,7 +65,8 @@ describe('AI billing guard', () => {
   });
 
   it('allows free providers under all caps', () => {
-    seed({ gemini: 10 });
+    // forfait included cap (gemini 15) + 70 % soft-stop (8ce5ab18eb) → stay well below
+    seed({ gemini: 1 });
     assert.strictEqual(budgetAllows('gemini'), true);
   });
 });
