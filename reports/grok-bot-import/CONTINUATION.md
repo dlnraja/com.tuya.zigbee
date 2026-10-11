@@ -22,6 +22,16 @@ Imported from `AppData/Roaming/Grok Bot` (sanitized) + live git tips + `docs/kno
 - MS-104Z (`iuepbmpv`/TS0121) stays in smartplug (sole couple of that type).
 - Bot append-only for climate pid lists (no reorder).
 
+
+## Night update 2026-10-11T21:29
+
+- Peter c05db40d: OOM closed (AppVersion head-read >=9.0.1330).
+- wrmhp6b3|TS0601 → soil_sensor (Z2M CS-201Z).
+- ogyg1y6b + 5cu64znk |TS0105 → curtain_motor (ZBCMR-01/02; shutter forbidden).
+- Johan exact placed: 85czd6fy/ww9i3e0y water; key8kk7r/rrjr1q0u/yw5tvzsk button_wireless_3; bagt1e4o|TS0014 switch_4gang; e98krvvk|TS0012 switch_2gang.
+- Tips pushed: master rebased over 1435; bastien soil TS0105 strip for push gate; stable branch port/soil-curtain-one-source.
+- Still open: Switcher soak port; remaining johan_only_unverified; ledger W4/W7.
+
 ## Still open (priority)
 
 1. **Tracks:** Johan mfrs with ambiguous pid (7) — wait for exact pid from any one reliable source (`LOST_COUPLES_RESTORE_2026-10-11.md`). Partial: `_TYZB01_6g8b7at8`+TS0012 already on `switch_2gang`.
