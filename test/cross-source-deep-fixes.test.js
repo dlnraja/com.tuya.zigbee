@@ -231,7 +231,11 @@ describe('P92.78 — master doctrine enrichments', () => {
   it('backport-candidates tool exists and runs (7-day soak)', () => {
     const src = read('tools/ci/backport-candidates.js');
     assert.ok(src.includes('SOAK_DAYS'), 'soak period');
-    assert.ok(fs.existsSync('.github/state/backport-candidates.json'), 'report generated');
+    // WHY: .github/state/** is gitignored (generated) — run the tool instead of trusting a stale
+    // local artifact. Without a stable clone it must exit 0 with an explicit message.
+    const r = require('child_process').spawnSync(process.execPath, ['tools/ci/backport-candidates.js'], { encoding: 'utf8', timeout: 60000 });
+    assert.strictEqual(r.status, 0, r.stderr);
+    assert.ok(fs.existsSync('.github/state/backport-candidates.json') || /clone stable introuvable/.test(r.stdout), 'report generated');
   });
   it('master doctrine is documented', () => {
     const doc = read('docs/CONTRIBUTING_DEV.md');
@@ -261,6 +265,9 @@ describe('P92.80 — deleted tooling reimplemented + Z2M gap imports', () => {
   it('z2m-gap-audit tool exists and produces a state report', () => {
     const src = read('tools/ci/z2m-gap-audit.js');
     assert.ok(src.includes('exposeHints'), 'expose hints');
+    // .github/state/** is gitignored — generate the report, then check it.
+    const r = require('child_process').spawnSync(process.execPath, ['tools/ci/z2m-gap-audit.js'], { encoding: 'utf8', timeout: 60000 });
+    assert.strictEqual(r.status, 0, r.stderr);
     assert.ok(fs.existsSync('.github/state/z2m-gap-audit.json'), 'state report');
   });
   it('Z2M-known TRV brand mfrs are claimed by radiator_valve', () => {
@@ -408,6 +415,8 @@ describe('P92.88 — quota-resume (deferral + autonomous resume)', () => {
   });
   it('self-improve resumes deferred tasks first', () => {
     const wf = read('.github/workflows/self-improve.yml');
-    assert.ok(wf.includes('Resume quota-deferred tasks'), 'resume step at start');
+    // WHY(P2542 dc0174c3ab): self-improve now runs the local auto-improve orchestrator first
+    // (forfait); the old quota-resume step was folded into it.
+    assert.ok(wf.includes('Resume quota-deferred tasks') || /Local auto-improve orchestrator \(P2542\)/.test(wf), 'resume step at start');
   });
 });
