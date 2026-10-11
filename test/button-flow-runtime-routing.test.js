@@ -42,10 +42,11 @@ describe('button flow runtime routing guards', function() {
   it('routes virtual, multi, triple, and release cards through safe fallbacks', function() {
     const source = read('lib/devices/ButtonDevice.js');
 
-    assert.match(source, /_tryCard\('virtual_button_pressed'/);
+    assert.match(source, /(_tryCard|tryOnce)\('virtual_button_pressed'/);
     assert.match(source, /_button_\$\{gangCount\}gang_button_multi_press/);
-    assert.match(source, /_tryCard\('button_triple_clicked'/);
-    assert.match(source, /_tryCard\('button_release'/);
+    // WHY(P2461 f961963bbe): app-level cards go through the tryOnce de-dupe wrapper.
+    assert.match(source, /(_tryCard|tryOnce)\('button_triple_clicked'/);
+    assert.match(source, /(_tryCard|tryOnce)\('button_release'/);
   });
 
   it('keeps SmartGestureEngine on the Homey timer and ButtonDevice router', function() {
@@ -99,14 +100,28 @@ describe('button flow runtime routing guards', function() {
       assert.doesNotMatch(source, /super\.triggerButtonPress/);
       assert.match(source, new RegExp(`get gangCount\\(\\) \\{ return ${gangCount}; \\}`));
       assert.match(source, /if \(subDeviceId\) \{ return \['onoff'\]; \}/);
-      assert.match(source, /\.\.\.super\.switchCapabilities/);
-      assert.match(source, /Array\.from\(\{ length: this\.gangCount \}/);
-      assert.match(source, /button\.\$\{index \+ 1\}/);
-      assert.match(source, /this\._registerButtonCapabilityListeners\(\)/);
+      // WHY(P2455 68de05268b): wired 2/3-gang relays dropped button.N tiles — the getter may return
+      // super.switchCapabilities as-is or an explicit onoff.gangN list; 4-gang still spreads super.
+      assert.match(source, /\.\.\.super\.switchCapabilities|return super\.switchCapabilities;|return \['onoff', 'onoff\.gang2'\];/);
+      const hasButtonTiles = /Array\.from\(\{ length: this\.gangCount \}/.test(source);
+      if (hasButtonTiles) {
+        assert.match(source, /button\.\$\{index \+ 1\}/);
+        assert.match(source, /this\._registerButtonCapabilityListeners\(\)/);
+      } else {
+        // P2455: no button.N tiles on wired relays — and no button tiles leak into the getter
+        assert.doesNotMatch(source, /button\.\$\{index \+ 1\}/);
+      }
 
       const driverSource = read('drivers/' + driverId + '/driver.js');
       assert.match(driverSource, /BaseZigBeeDriver/);
       assert.match(driverSource, /extends BaseZigBeeDriver/);
+      if (/Primary onoff \+ onoff\.gang2 \(P2455\)/.test(source)) {
+        // P2455 (68de05268b): primary is a wired 2-relay (onoff.gang2); only legacy sub-devices route presses.
+        assert.match(source, /if \(!this\._isSubDevice\) \{\s*return; \/\/ primary: ignore button-tile path/);
+        assert.match(source, /if \(this\._gangNumber !== undefined && button !== this\._gangNumber\)/);
+        assert.match(source, /_triggerPhysicalFlow\(button, type, \{ \.\.\.tokens, _internalTrigger: true \}\)/);
+        continue;
+      }
       assert.match(source, /this\._isSubDevice = Boolean\(subDeviceId\)/);
       // v10.3.0 (B10): gang filter now also applies to the primary device
       // when sibling sub-devices are paired (was: sub-devices only).

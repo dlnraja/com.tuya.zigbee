@@ -32,7 +32,13 @@ describe('SOS button management (v9.0.365)', () => {
   });
 
   it('handles ZCL 100mV battery voltage units', () => {
-    assert.match(source, /voltage >= 10\) \{voltage = voltage \/ 10/);
+    // WHY(231e82f7d1): unit detection (V / 100mV / mV) moved to the shared zcl-percent helper.
+    assert.match(source, /normalizeZclBatteryVoltagePercent\(value/);
+    const { normalizeZclBatteryVoltagePercent: n } = require('../lib/battery/zcl-percent');
+    const v100mV = n(29); const vVolt = n(2.9); const vmV = n(2900);
+    assert.ok(Number.isFinite(v100mV), '100mV units parsed');
+    assert.strictEqual(v100mV, vVolt);
+    assert.strictEqual(vmV, vVolt);
   });
 });
 

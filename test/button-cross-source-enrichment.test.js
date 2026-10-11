@@ -58,7 +58,9 @@ describe('P92.64 — button cross-source enrichment', () => {
       assert.ok(block.includes('debounceMs: 1200'), `${mfr} has debounceMs 1200`);
     }
     // _isDebounced must be profile-aware
-    assert.ok(src.includes('getDeviceProfile?.()?.debounceMs'), 'profile-aware debounce');
+    // WHY(P2721 04e3cc5f6a): still profile-aware, but snappyRelayFlow caps the window at 80 ms.
+    assert.ok(src.includes('const profile = this.getDeviceProfile?.() || {};'), 'profile-aware debounce');
+    assert.ok(/Number\(profile\.debounceMs\) > 0\) \{\s*debounceMs = Number\(profile\.debounceMs\)/.test(src), 'profile debounceMs used');
   });
 
   it('dlnraja#121/P2453: _TZ3000_an5rjiwd is in button_wireless_1, not switch_1gang/4', () => {
@@ -94,7 +96,9 @@ describe('P92.64 — button cross-source enrichment', () => {
     const src = read('lib/mixins/PhysicalButtonMixin.js');
     assert.ok(src.includes('_sendTuyaMagicPacket'), 'magic packet method present');
     assert.ok(src.includes('0xfffe'), 'attrReportingStatus 0xfffe included');
-    assert.ok(src.includes('_magicPacketSent'), 'one-shot guard');
+    // WHY(14725cf4ad / P2685): one-shot guard moved to lib/zigbee/TuyaMagicPacket (_tuyaMagicPacketSent + 6h force cooldown).
+    const mp = read('lib/zigbee/TuyaMagicPacket.js');
+    assert.ok(mp.includes('device._tuyaMagicPacketSent'), 'one-shot guard');
   });
 
   it('ZHA ts004f: knob rotate triggers carry a speed token', () => {
@@ -142,6 +146,8 @@ describe('P92.64 — button cross-source enrichment', () => {
     assert.ok(src.includes("'button_matrix'"), 'matrix fired from triggerButtonPress');
     assert.ok(src.includes("action: 'release'"), 'matrix fired for hold-release');
     // _tryCard must tolerate both device-card and app-card (device arg) semantics
-    assert.ok(src.includes('getTriggerCard(cardId)'), 'dual-semantics fallback in _tryCard');
+    // WHY(b2b65d7675 / P2381): _tryCard goes through safeGetFlowCard, which tries device then app trigger cards.
+    assert.ok(src.includes('safeGetFlowCard(this.homey, id, \'trigger\''), 'dual-semantics fallback in _tryCard');
+    assert.ok(/\['getDeviceTriggerCard', 'getTriggerCard'\]/.test(read('lib/io/HomeyCompensationLayer.js')));
   });
 });
