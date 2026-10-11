@@ -8097,7 +8097,7 @@
       "sources": [
         "z2m"
       ],
-      "notes": "2026-10-11: Z2M qa.ts — _TZ3210_a2erlvb8+TS0002 = QA QARZ2LR 2-channel; +TS000F = QARZ1DC 1-channel (stays on switch_1gang). Mfr on both switch drivers; GangCountAdapter (lib/data/gang-patterns.json) resolves the gang count at runtime (Koen Kanters and contributors)."
+      "notes": "2026-10-11: Z2M qa.ts — _TZ3210_a2erlvb8+TS0002 = QA QARZ2LR 2-channel; +TS000F = QARZ1DC 1-channel. Single owner switch_2gang (as master); GangCountAdapter resolves the gang count (Koen Kanters and contributors)."
     },
     {
       "id": "a2erlvb8-qa-1ch-ts000f",
@@ -8108,12 +8108,12 @@
       "productId": [
         "TS000F"
       ],
-      "canonicalDriver": "switch_1gang",
+      "canonicalDriver": "switch_2gang",
       "forbidMode": "couple",
       "sources": [
         "z2m"
       ],
-      "notes": "2026-10-11: Z2M qa.ts QARZ1DC 1-channel (_TZ3210_a2erlvb8+TS000F). Sibling of the TS0002 2-channel on switch_2gang; GangCountAdapter hides gang2 if it lands on switch_2gang (Koen Kanters and contributors)."
+      "notes": "2026-10-11: Z2M qa.ts QARZ1DC 1-channel (_TZ3210_a2erlvb8+TS000F). Single owner switch_2gang like master (977b54e97f/d7243a8120); GangCountAdapter (gang-patterns TS000F=1) hides gang2 once the device confirms 1 gang (Koen Kanters and contributors)."
     }
   ],
   "entries": {

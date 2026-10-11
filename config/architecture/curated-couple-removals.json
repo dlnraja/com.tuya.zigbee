@@ -138,6 +138,14 @@
       ],
       "why": "2026-10-11: TS0225 = HOBEIAN ZG-225Z gas sensor (Z2M hobeian.ts + sprut/Hub#4328 interview IAS zoneType 43 gas) → owner gas_sensor",
       "source": "lost-couples 2026-10-11"
+    },
+    {
+      "driver": "switch_1gang",
+      "mfr": [
+        "_TZ3210_a2erlvb8"
+      ],
+      "why": "2026-10-11: single owner switch_2gang as on master (977b54e97f/d7243a8120); TS000F 1-ch handled by GangCountAdapter gang-patterns",
+      "source": "lost-couples W4"
     }
   ]
 }
