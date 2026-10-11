@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-11T08:02:47.442Z",
- "drivers": 392,
+ "generated": "2026-10-11T08:46:55.779Z",
+ "drivers": 393,
  "snapshot": {
   "air_purifier": {
    "mfr": 3,
@@ -2121,9 +2121,9 @@
    "pidSha": "b5f78b2a386201c5"
   },
   "usb_dongle_triple": {
-   "mfr": 28,
+   "mfr": 27,
    "pid": 10,
-   "mfrSha": "f7bb35b5a53e2776",
+   "mfrSha": "00564d00a5ef029c",
    "pidSha": "d2d418f57022c1e1"
   },
   "usb_outlet_advanced": {
@@ -2131,6 +2131,12 @@
    "pid": 5,
    "mfrSha": "349213ab48ee95df",
    "pidSha": "b6aedd0f233585f0"
+  },
+  "valve_controller_5zone": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "9ec56178b19de6b5",
+   "pidSha": "ee3881b630706571"
   },
   "valve_dual_irrigation": {
    "mfr": 5,
