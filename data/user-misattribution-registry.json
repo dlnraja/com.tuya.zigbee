@@ -8388,13 +8388,14 @@
       "productId": [
         "TS011F"
       ],
-      "canonicalDriver": "valve_controller_5zone",
+      "canonicalDriver": "switch_4gang",
       "forbidMode": "couple",
       "sources": [
         "z2m",
         "Z2S_Library"
       ],
-      "notes": "2026-10-11: AutomatOn AUT000069 5-zone valves/UFH controller, 5 ZCL onOff endpoints (Z2M automaton.ts, PR #5579, z2m #16992; Z2S_Library)"
+      "notes": "2026-10-11: AutomatOn AUT000069 5-zone valves/UFH controller, 5 ZCL onOff endpoints (Z2M automaton.ts, PR #5579, z2m #16992; Z2S_Library)",
+      "note": "2026-10-11 fold: valve_controller_5zone held (Athom AggregateError); couple ships via switch_4gang, 5 gangs via GangCountAdapter."
     },
     {
       "id": "w4n-_tyzb01_bagt1e4o-TS0014",
