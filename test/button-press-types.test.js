@@ -53,8 +53,10 @@ describe('button_wireless_4 (TS0044) source contract', () => {
     assert.match(src, /_logUnrecognizedFrame/);
   });
 
-  it('wraps handleFrame with orig(...args)', () => {
-    assert.match(src, /orig\(\.\.\.args\)/);
+  // WHY(P2328 2aa00a7f6e): shared wrapHandleFrame chain — the frame is passed on with next(...args).
+  it('wraps handleFrame and always passes the frame on (next(...args))', () => {
+    assert.match(src, /orig\(\.\.\.args\)|return next\(\.\.\.args\)/);
+    assert.match(src, /wrapHandleFrame/);
   });
 });
 

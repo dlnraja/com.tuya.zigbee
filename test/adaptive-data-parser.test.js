@@ -14,13 +14,15 @@ const { describe, it } = testApi;
 const AdaptiveDataParser = require('../lib/utils/AdaptiveDataParser');
 
 describe('AdaptiveDataParser.toTemperature', () => {
-  it('divides by 100 by default (centi-degrees)', () => {
-    assert.strictEqual(AdaptiveDataParser.toTemperature(2150), 21.5);
+  // WHY(P110 a535479353): Tuya temp DPs are ×10, so the default divisor became 10 (÷100 was a double-scale trap).
+  it('divides by 10 by default (deci-degrees, P110)', () => {
+    assert.strictEqual(AdaptiveDataParser.toTemperature(215), 21.5);
+    assert.strictEqual(AdaptiveDataParser.toTemperature(2150, { divisor: 100 }), 21.5);
   });
 
   it('handles signed 16-bit negative temperatures', () => {
-    // -10.0°C sent as 65536-1000 = 64536 (signed int16)
-    assert.strictEqual(AdaptiveDataParser.toTemperature(64536), -10);
+    // -10.0°C sent as 65536-100 = 65436 (signed int16, ×10 — P110)
+    assert.strictEqual(AdaptiveDataParser.toTemperature(65436), -10);
   });
 
   it('returns null when no divisor yields a plausible temperature', () => {
