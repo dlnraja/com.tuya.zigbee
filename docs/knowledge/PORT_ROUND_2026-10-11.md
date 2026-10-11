@@ -20,3 +20,15 @@ What we checked, what was ported, and what we left out. All times are Paris time
 
 Lost couples placed with two sources: `_TZE200_p6fuhvez` TS0225 → gas_sensor (Z2M ZG-225Z + sprut/Hub#4328 IAS zoneType 0x2B); on stable also `_TZ3000_j1xl73iw` → curtain_module_2_gang and `_TZ3000_gazjngjl` → switch_usb_dongle (sprut/Hub#4960 shows 2 plug endpoints).
 Credit: Zigbee2MQTT/zigbee-herdsman-converters (Koen Kanters and contributors), sprut/Hub device reports, romasku/tuya-zigbee-switch.
+
+## Later same day (one-source + HOBEIAN)
+
+| Master fix | stable-v5 | bastien-home |
+|---|---|---|
+| `COUPLE_SOURCE_POLICY.md` (one reliable source) | Ported | Ported |
+| One-source couples (aj0oxo1i gas, 6oabgtzv water, fa9mlvja bw1, kjfzuycl remote, fdxihpp7/qezuin6k pins) | Ported | Ported |
+| HOBEIAN ZG-101ZS + `_TZ3000_bgtzm4ny`/TS0044 → `scene_switch_4` (off `button_wireless_4`) | Ported (38552dc854); publish CI unblocked by P2605 align (`TZE200_nkjintbl` → `switch_2gang`) | Ported (43c6105b2d); Publish Zigbee Bastien success |
+| AutomatOn 5-zone valve fold → `switch_4gang` (j0ktmul1) | Via earlier W4 ports | Via earlier W4 ports |
+| FUT089Z fold → `button_wireless_4` | Check soak / port separately if missing | Check soak / port separately if missing |
+
+Still held on purpose: `_TZE600_ogyg1y6b`/TS0105 (no TS0105 driver — would cross-product); Johan mfrs with ambiguous pid.
