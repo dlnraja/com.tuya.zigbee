@@ -5878,6 +5878,30 @@
         "water_leak_sensor"
       ],
       "why": "P2622 W4 2026-10-11: eWeLink white-label brand routed by exact pid (Z2M sonoff.ts/ewelink.ts CK-TLSR8656 7000/7002/7003/7014/7019)"
+    },
+    {
+      "key": "_tz3000_xwh1e22x|TS1002",
+      "drivers": [
+        "bulb_rgbw",
+        "remote_rgbcct_8zone"
+      ],
+      "why": "2026-10-11 FUT089Z: new remote_rgbcct_8zone + legacy bulb_rgbw kept until the new driver is published and soaked (user decision), then W4 move to the remote only"
+    },
+    {
+      "key": "_tz3000_xwh1e22x|bulb_rgbw,remote_rgbcct_8zone",
+      "drivers": [
+        "bulb_rgbw",
+        "remote_rgbcct_8zone"
+      ],
+      "why": "2026-10-11 FUT089Z: new remote_rgbcct_8zone + legacy bulb_rgbw kept until the new driver is published and soaked (user decision), then W4 move to the remote only"
+    },
+    {
+      "key": "_TZ3000_xwh1e22x|bulb_rgbw,remote_rgbcct_8zone",
+      "drivers": [
+        "bulb_rgbw",
+        "remote_rgbcct_8zone"
+      ],
+      "why": "2026-10-11 FUT089Z: new remote_rgbcct_8zone + legacy bulb_rgbw kept until the new driver is published and soaked (user decision), then W4 move to the remote only"
     }
   ]
 }
