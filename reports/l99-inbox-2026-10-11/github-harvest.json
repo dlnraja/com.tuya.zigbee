@@ -1,5 +1,5 @@
 {
-  "harvestedAt": "2026-10-11T16:50:56.122Z",
+  "harvestedAt": "2026-10-11T23:14:18.755Z",
   "repo": "dlnraja/com.tuya.zigbee",
   "auth": "token",
   "error": null,
@@ -10,7 +10,7 @@
       "labels": [
         "bot-digest"
       ],
-      "updatedAt": "2026-10-11T14:25:00Z",
+      "updatedAt": "2026-10-11T20:51:37Z",
       "user": "dlnraja",
       "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/557"
     },
@@ -49,16 +49,7 @@
       "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/559"
     }
   ],
-  "prs": [
-    {
-      "number": 566,
-      "title": "fix(ci): pr-gate skips missing master-only critical tests",
-      "updatedAt": "2026-10-11T15:43:24Z",
-      "user": "dlnraja",
-      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/pull/566",
-      "draft": false
-    }
-  ],
+  "prs": [],
   "openIssueCount": 4,
-  "openPrCount": 1
+  "openPrCount": 0
 }
