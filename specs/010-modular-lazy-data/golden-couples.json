@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-11T00:15:49.039Z",
+ "generated": "2026-10-11T00:48:16.664Z",
  "drivers": 392,
  "snapshot": {
   "air_purifier": {
@@ -687,9 +687,9 @@
    "pidSha": "c24425335e22bfa5"
   },
   "dimmer_wall_1gang": {
-   "mfr": 38,
+   "mfr": 37,
    "pid": 20,
-   "mfrSha": "5e8c0b433ff7722f",
+   "mfrSha": "6a79ff31b8964d70",
    "pidSha": "fafa2cc8c54068d7"
   },
   "dimmer_wall_plug": {
