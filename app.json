@@ -156440,6 +156440,7 @@
       },
       "class": "remote",
       "capabilities": [
+        "button.1",
         "measure_battery"
       ],
       "platforms": [
@@ -156512,7 +156513,18 @@
           }
         }
       ],
-      "id": "remote_rgbcct_8zone"
+      "id": "remote_rgbcct_8zone",
+      "capabilitiesOptions": {
+        "button.1": {
+          "title": {
+            "en": "Button 1",
+            "fr": "Bouton 1"
+          },
+          "maintenanceAction": true,
+          "getable": false,
+          "setable": false
+        }
+      }
     }
   ],
   "capabilities": {
