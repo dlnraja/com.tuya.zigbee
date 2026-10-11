@@ -196,10 +196,11 @@ jobs:
     needs: [pre-validation, soak]
     if: needs.soak.outputs.skip != 'true'
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 65  # + idle wait (≤25), like master 516c83444c
     # WHY(P2355): Homey build may bump patch in-job; promote must wait that version.
     outputs:
-      uploaded_version: ${{ steps.publish.outputs.version || steps.uploaded_version.outputs.version }}
+      # reupload may have bumped to a fresh version (processing_failed retry) — promote/gate that one.
+      uploaded_version: ${{ steps.reupload.outputs.version || steps.publish.outputs.version || steps.uploaded_version.outputs.version }}
       app_id: ${{ steps.uploaded_version.outputs.app_id }}
     steps:
       - uses: actions/checkout@v5
@@ -281,6 +282,14 @@ jobs:
         run: node scripts/ci/publish-size-gate.cjs || echo "::warning::Publish payload size above the soft limit (see report above)"
       - name: Prepare Publish Directory
         run: npm run prepare-publish
+      # WHY(ported from master c25f077831/45a2d8f1a9): never upload while a stable build is still processing
+      # (Athom invalid_state). Bounded 12 min inside a 25 min step; never fails the job.
+      - name: Wait for Athom idle (previous stable build final)
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: node .github/scripts/wait-athom-idle.js
       - name: Publish to Draft
         id: publish
         env:
@@ -384,6 +393,8 @@ jobs:
           done
           echo "::error::Athom kept failing to process stable builds up to v$HOMEY_EXPECTED_VERSION after 2 fresh-version re-uploads; Test stays on the previous build"
           echo "### Stable Test NOT updated: Athom processing_failed up to v$HOMEY_EXPECTED_VERSION" >> "$GITHUB_STEP_SUMMARY"
+          # WHY(ported from master 9cfe3f5d08): no false green after exhausting re-uploads (the run used to end 0).
+          exit 1
       - name: Commit stable version back
         if: steps.publish.outputs.uploaded == 'true'
         run: |
@@ -423,7 +434,7 @@ jobs:
     # Skip entirely while master 9.0.x occupies the shared Test slot.
     if: needs.soak.outputs.skip != 'true' && needs.publish.result == 'success'
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 50  # + final gate (≤15)
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
@@ -505,6 +516,16 @@ jobs:
           node .github/scripts/verify-test-version.js
           echo "### P2325 verify soft-continue" >> "$GITHUB_STEP_SUMMARY"
           echo "Healthy Test + transient hang → exit 0 (no Stable republish spam / P139)." >> "$GITHUB_STEP_SUMMARY"
+      # WHY(ported from master 9cfe3f5d08): no false green — red unless the uploaded version reached Test.
+      # P2325 soft-continue above still avoids republish spam; this only reports the true final state and keeps
+      # the P2400 dispatch-dedupe from treating a processing_failed SHA as published.
+      - name: Athom final state gate (red unless Test)
+        if: always() && steps.soak.outputs.skip != 'true' && needs.publish.outputs.uploaded_version != ''
+        timeout-minutes: 15
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          HOMEY_EXPECTED_VERSION: ${{ needs.publish.outputs.uploaded_version }}
+        run: node .github/scripts/assert-athom-final.js
       - name: Summary
         if: always()
         run: |
