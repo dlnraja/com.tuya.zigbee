@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-11T13:38:41.120Z",
+ "generated": "2026-10-11T20:42:22.753Z",
  "drivers": 393,
  "snapshot": {
   "air_purifier": {
@@ -183,9 +183,9 @@
    "pidSha": "907c50f03c1b4f74"
   },
   "button_wireless_1": {
-   "mfr": 39,
+   "mfr": 38,
    "pid": 32,
-   "mfrSha": "fbd62112e59a8240",
+   "mfrSha": "af6801936fc854c3",
    "pidSha": "97471aa91d3d60d5"
   },
   "button_wireless_2": {
@@ -399,9 +399,9 @@
    "pidSha": "c4343290bac9e455"
   },
   "curtain_motor": {
-   "mfr": 277,
+   "mfr": 276,
    "pid": 47,
-   "mfrSha": "cbe211c7c76551be",
+   "mfrSha": "cf761180dfa01729",
    "pidSha": "735b9403d1d2fceb"
   },
   "curtain_motor_shutter": {
@@ -1821,9 +1821,9 @@
    "pidSha": "01d687d685c35f20"
   },
   "soil_sensor": {
-   "mfr": 72,
+   "mfr": 73,
    "pid": 46,
-   "mfrSha": "dd0f17fdbe37922b",
+   "mfrSha": "3b8203abbc056dcf",
    "pidSha": "39f6154403baf056"
   },
   "soil_sensor_ec": {
