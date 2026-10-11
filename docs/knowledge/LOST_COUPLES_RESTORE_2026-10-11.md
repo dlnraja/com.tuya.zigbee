@@ -117,16 +117,15 @@ Matches below are by manufacturerName; issue titles naming the exact couple are 
 | `_tze284_cjbofhxw|ts0601` | [Koenkk/zigbee2mqtt#31690](https://github.com/Koenkk/zigbee2mqtt/issues/31690); [Koenkk/zigbee2mqtt#31465](https://github.com/Koenkk/zigbee2mqtt/issues/31465); [Koenkk/zigbee2mqtt#22784](https://github.com/Koenkk/zigbee2mqtt/issues/22784) | wonjj6768/smartthings-zigbee-edge-drivers, wonjj6768/smartthings-zigbee-edge-drivers |
 | `_tze600_ogyg1y6b|ts0105` | — | wonjj6768/smartthings-zigbee-edge-drivers, wonjj6768/smartthings-zigbee-edge-drivers |
 
-### Request for interview (kept as leads — do not place without it)
-| Couple | Why | What we need |
+### Request for interview / still held (do not invent)
+| Couple | Why | Status 2026-10-11 evening |
 |---|---|---|
-| `_TZE200_aj0oxo1i` + TS0225 | Z2M model block ambiguous (gas vs presence); SmartThings lists it in the safety (gas/smoke) family | Zigbee interview (clusters/endpoints) + 1 DP log |
-| `_TZE200_p6fuhvez` + TS0225 | same; sprut/Hub#4328 confirms the couple exists, not its class | interview + DP log |
-| `_TZE600_ogyg1y6b` + TS0105 | no driver has TS0105; adding it would pair every mfr of a curtain driver with TS0105 | interview to decide a variant/new profile |
-| `_TZ3000_xwh1e22x` + TS1002 | MiBoxer FUT089Z remote (Johan#1361, ZHA#1829); only TS1002 driver is a bulb | interview + button event capture |
-| `_TZ3000_j0ktmul1` + TS011F | 5-zone valve controller (Z2M AUT000069); no profile | interview |
-| `_TZ3000_gazjngjl` + TS011F | Z2M#30168 says 1-gang socket + USB; endpoint layout unknown | interview (endpoints) |
-| `_TZ3000_z6fgd73r` + TS011F | touch switch with metering on TS011F | interview |
+| `_TZE600_ogyg1y6b` + TS0105 | no driver has TS0105; adding pid would cross-product | **HOLD** |
+| `_TZ3000_gazjngjl` + TS011F | Z2M#30168 1-gang+USB; endpoint layout unknown | NEED endpoints |
+| `_TZ3000_z6fgd73r` + TS011F | touch switch with metering on TS011F | NEED interview |
+
+Placed later same day (one-source / folds — table above kept for history):
+`aj0oxo1i`→gas_sensor; `p6fuhvez`→gas_sensor; `xwh1e22x`→button_wireless_4; `j0ktmul1`→switch_4gang; `wrmhp6b3`→soil_sensor.
 
 ## Rule change (2026-10-11 15:20): one source suffices
 
