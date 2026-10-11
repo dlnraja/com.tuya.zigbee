@@ -10,3 +10,17 @@ test('retries AggregateError once', () => assert.strictEqual(decide({ version: '
 test('never retries AggregateError from a retry run', () => assert.strictEqual(decide({ version: '9.0.1', builds: B('processing_failed', 'AggregateError'), alreadyRetried: true }).retry, false));
 test('never retries a retry run', () => assert.strictEqual(decide({ version: '9.0.1', builds: B('processing_failed', 'socket hang up'), alreadyRetried: true }).retry, false));
 test('no retry when in Test', () => assert.strictEqual(decide({ version: '9.0.1', builds: B('test', {}) }).retry, false));
+
+// WHY(2026-10-11): invalid_state retried once only after the pre-upload Athom idle wait.
+test('retries invalid_state only after idle wait', () => {
+  assert.strictEqual(decide({ version: '9.0.1', builds: B('processing_failed', 'invalid_state'), idleWaited: true }).retry, true);
+  assert.strictEqual(decide({ version: '9.0.1', builds: B('processing_failed', 'invalid_state') }).retry, false);
+  assert.strictEqual(decide({ version: '9.0.1', builds: B('processing_failed', 'invalid_state'), idleWaited: true, alreadyRetried: true }).retry, false);
+});
+test('athom idle gate treats processing as busy', () => {
+  const { decide: idle, FINAL } = require('../../.github/scripts/wait-athom-idle.js');
+  assert.strictEqual(FINAL.test('processing'), false);
+  assert.strictEqual(FINAL.test('test'), true);
+  assert.strictEqual(idle([]), true);
+  assert.strictEqual(idle(null), false);
+});

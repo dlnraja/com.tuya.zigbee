@@ -431,6 +431,16 @@ jobs:
       # ─────────────────────────────────────────────────────────────
       # 6. PUBLISH
       # ─────────────────────────────────────────────────────────────
+      # WHY(2026-10-11): invalid_state when another build of this app was still processing. Bounded wait
+      # for Athom to finish the previous build before uploading (read-only, never fails the job).
+      - name: Wait for Athom idle (previous build final)
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 17
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: node .github/scripts/wait-athom-idle.js com.dlnraja.tuya.zigbee
+
       - name: Publish to Homey App Store
         id: pub
         if: steps.check_pat.outputs.has_pat == 'true'

@@ -8,7 +8,7 @@ const fs = require('fs');
 const path = require('path');
 const { TRANSIENT_RE } = require('./processing-failure-republish-check');
 
-function decide({ version, builds, alreadyRetried }) {
+function decide({ version, builds, alreadyRetried, idleWaited = false }) {
   if (alreadyRetried) return { retry: false, reason: 'already a retry run' };
   const b = (builds || []).find((x) => String(x && x.version) === String(version));
   if (!b) return { retry: false, reason: `no Athom build for v${version}` };
@@ -19,6 +19,13 @@ function decide({ version, builds, alreadyRetried }) {
   if (state !== 'processing_failed') return { retry: false, reason: `v${version} state ${state}` };
   // WHY(2026-10-11 user): AggregateError alternates on near-identical content (1381F 1382F 1383T 1384F 1385T 1386F),
   // so it gets ONE retry with a strictly-higher version too; the retry run never retries again (alreadyRetried).
+  // WHY(2026-10-11): invalid_state = another build of this app was still processing at upload time.
+  // Retry once, but only when this run's pre-upload Athom idle wait actually completed (else it would repeat).
+  if (/invalid_state/i.test(meta)) {
+    return idleWaited
+      ? { retry: true, kind: 'invalid_state', reason: `invalid_state after idle wait on v${version}` }
+      : { retry: false, kind: 'invalid_state', reason: 'invalid_state without completed idle wait, no retry' };
+  }
   if (/AggregateError/i.test(meta)) return { retry: true, kind: 'AggregateError', reason: `AggregateError (flake check, single retry) on v${version}` };
   if (!TRANSIENT_RE.test(meta)) return { retry: false, kind: 'unknown', reason: `unknown failure: ${meta.slice(0, 120)}` };
   const kind = /socket hang up/i.test(meta) ? 'socket hang up' : /specified key|nosuchkey/i.test(meta) ? 'specified key' : /enospc|no space/i.test(meta) ? 'ENOSPC' : 'transient';
@@ -39,7 +46,7 @@ if (require.main === module) {
     const r = JSON.parse(fs.readFileSync(path.join(root, '.github/state/dashboard-monitor-report.json'), 'utf8'));
     builds = r.latestBuilds || (r.latestBuild ? [r.latestBuild] : []);
   } catch (_e) { /* no report */ }
-  const d = decide({ version, builds, alreadyRetried: process.env.TRANSIENT_RETRY === 'true' });
+  const d = decide({ version, builds, alreadyRetried: process.env.TRANSIENT_RETRY === 'true', idleWaited: process.env.ATHOM_IDLE_WAITED === 'true' });
   console.log(`[transient-retry] ${d.retry ? 'RETRY' : 'skip'}: ${d.reason}`);
   // Flake-rate log: one JSON line per published version outcome (committed by the bot commit step).
   try {
