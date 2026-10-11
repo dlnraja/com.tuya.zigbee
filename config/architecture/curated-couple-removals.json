@@ -130,6 +130,14 @@
       "modelIdPattern": "^(3450-L|E1\\d{3}|LUMI\\.|ROM001|01MINIZB|A11Z|BASICZBR3)",
       "why": "P2613: IKEA/LUMI/Sonoff/Philips model IDs bled onto Tuya remote mfs entries (949 pruned from 133 entries 2026-10-11); never re-add",
       "source": "P2613 / 4b4b118912"
+    },
+    {
+      "driver": "sensor_motion_presence",
+      "mfr": [
+        "_TZE200_p6fuhvez"
+      ],
+      "why": "2026-10-11: TS0225 = HOBEIAN ZG-225Z gas sensor (Z2M hobeian.ts + sprut/Hub#4328 interview IAS zoneType 43 gas) → owner gas_sensor",
+      "source": "lost-couples 2026-10-11"
     }
   ]
 }

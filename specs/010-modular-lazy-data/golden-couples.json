@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-11T01:18:39.429Z",
+ "generated": "2026-10-11T05:55:01.830Z",
  "drivers": 388,
  "snapshot": {
   "air_purifier": {
@@ -171,9 +171,9 @@
    "pidSha": "635866b899c3aee7"
   },
   "button_wireless": {
-   "mfr": 6,
+   "mfr": 7,
    "pid": 10,
-   "mfrSha": "12047ab896613a29",
+   "mfrSha": "81037a6a3553273c",
    "pidSha": "907c50f03c1b4f74"
   },
   "button_wireless_1": {
@@ -855,9 +855,9 @@
    "pidSha": "480a275813c8653e"
   },
   "gas_sensor": {
-   "mfr": 12,
+   "mfr": 13,
    "pid": 5,
-   "mfrSha": "d7f9fbfd2bf08d76",
+   "mfrSha": "299a57221a60e05c",
    "pidSha": "606b2995829e9479"
   },
   "gas_sensor_switch": {
@@ -1552,9 +1552,9 @@
   },
   "sensor_ias_zonetype_ewelink": {
    "mfr": 1,
-   "pid": 1,
+   "pid": 2,
    "mfrSha": "1c7aa01100a550fe",
-   "pidSha": "d58bfac07ee13fc2"
+   "pidSha": "f4b40b018ecb0c18"
   },
   "sensor_illuminance_presence": {
    "mfr": 14,
@@ -1575,9 +1575,9 @@
    "pidSha": "16eca7095d19bea2"
   },
   "sensor_motion_presence": {
-   "mfr": 27,
+   "mfr": 26,
    "pid": 19,
-   "mfrSha": "5135f0c779c216fc",
+   "mfrSha": "a0b97820380ec61a",
    "pidSha": "e7c5f08cc4f7e52a"
   },
   "sensor_motion_radar": {
@@ -1881,15 +1881,15 @@
    "pidSha": "5181eca4102958ba"
   },
   "switch_2gang": {
-   "mfr": 91,
+   "mfr": 92,
    "pid": 14,
-   "mfrSha": "21af362322ec79fd",
+   "mfrSha": "1d1176d6b155b11b",
    "pidSha": "830a6ff3ab71bd70"
   },
   "switch_3_gang": {
-   "mfr": 1,
+   "mfr": 2,
    "pid": 2,
-   "mfrSha": "a79e39d73d10e4eb",
+   "mfrSha": "a4b5c35236ac39fa",
    "pidSha": "1c2e035cec82b333"
   },
   "switch_3gang": {
@@ -2289,9 +2289,9 @@
    "pidSha": "8218a22aa12bceb7"
   },
   "water_leak_sensor": {
-   "mfr": 25,
+   "mfr": 26,
    "pid": 21,
-   "mfrSha": "d4d4e55e4fca53b8",
+   "mfrSha": "cf70fcabe081d903",
    "pidSha": "ddd617471a56ff24"
   },
   "water_leak_sensor_tuya": {
