@@ -457,6 +457,15 @@
       "pid": "TS0044",
       "source": "z2m (ZG-101ZS whitelabel) + romasku#237",
       "regression": "2026-10-11 user decision: same hardware as HOBEIAN ZG-101ZS, same driver"
+    },
+    {
+      "mfr": [
+        "_TZ3000_j0ktmul1"
+      ],
+      "driver": "switch_4gang",
+      "pid": "TS011F",
+      "source": "z2m + Z2S_Library",
+      "regression": "fold 2026-10-11: 5 gangs via GangCountAdapter on switch_4gang"
     }
   ]
 }

@@ -353,6 +353,15 @@
       ],
       "why": "2026-10-11 user decision: HOBEIAN ZG-101ZS and _TZ3000_bgtzm4ny+TS0044 are the same Star Ring 4-gang battery scene remote (Z2M ZG-101ZS page; romasku #237); both live in scene_switch_4 (battery + 4 buttons single/double/hold)",
       "source": "z2m + romasku#237"
+    },
+    {
+      "driver": "usb_dongle_triple",
+      "mfr": [
+        "_TZ3000_j0ktmul1",
+        "_tz3000_j0ktmul1"
+      ],
+      "pid": "TS011F",
+      "why": "2026-10-11 fold: AutomatOn 5-zone lives on switch_4gang only"
     }
   ]
 }
