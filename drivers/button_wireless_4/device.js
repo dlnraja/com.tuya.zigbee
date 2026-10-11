@@ -14,6 +14,16 @@ const { installWallSceneRemoteHybrid } = require('../../lib/devices/WallSceneRem
 class Button4GangDevice extends ButtonDevice {
 
   async onNodeInit({ zclNode }) {
+    // WHY(2026-10-11 fold): MiBoxer FUT089Z 8-zone remote (exact couple _TZ3000_xwh1e22x + TS1002) uses
+    // its own zone profile; the generic 4-button stack is skipped for that couple only.
+    try {
+      const fut = require('../../lib/devices/MiBoxerFut089zZones');
+      if (fut.isFut089z(this)) {
+        this.zclNode = zclNode;
+        fut.installFut089z(this, zclNode);
+        return;
+      }
+    } catch (e) { this.log('[FUT089Z] profile check skipped:', e && e.message); }
     this.buttonCount = 4;
     this.gangCount = 4;
 

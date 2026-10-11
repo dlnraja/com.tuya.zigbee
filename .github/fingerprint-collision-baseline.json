@@ -5878,6 +5878,20 @@
         "water_leak_sensor"
       ],
       "why": "P2622 W4 2026-10-11: eWeLink white-label brand routed by exact pid (Z2M sonoff.ts/ewelink.ts CK-TLSR8656 7000/7002/7003/7014/7019)"
+    },
+    {
+      "key": "_tz3000_xwh1e22x|TS0601",
+      "drivers": [
+        "bulb_rgbw",
+        "button_wireless_4"
+      ]
+    },
+    {
+      "key": "_tz3000_xwh1e22x|TS1002",
+      "drivers": [
+        "bulb_rgbw",
+        "button_wireless_4"
+      ]
     }
   ]
 }
