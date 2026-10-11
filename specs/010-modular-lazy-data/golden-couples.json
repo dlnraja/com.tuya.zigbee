@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-11T13:23:42.660Z",
+ "generated": "2026-10-11T14:23:07.700Z",
  "drivers": 388,
  "snapshot": {
   "air_purifier": {
@@ -195,9 +195,9 @@
    "pidSha": "06cd0099c514e4ab"
   },
   "button_wireless_4": {
-   "mfr": 37,
+   "mfr": 36,
    "pid": 45,
-   "mfrSha": "a43ad852ca2a4ef1",
+   "mfrSha": "dbc072c0cbf883ab",
    "pidSha": "fdbcbd0e265ae852"
   },
   "button_wireless_4_ts0041": {
@@ -1449,9 +1449,9 @@
    "pidSha": "278e503d4862c11f"
   },
   "scene_switch_4": {
-   "mfr": 14,
+   "mfr": 15,
    "pid": 3,
-   "mfrSha": "b5d27e753aad3be4",
+   "mfrSha": "6df33b933cf40232",
    "pidSha": "852c1ed113914f3e"
   },
   "scene_switch_6": {
