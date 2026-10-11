@@ -82,4 +82,13 @@ if (newM.length || newD.length) {
   for (const x of newD) console.error(`NEW dual couple: ${x}`);
   process.exit(1);
 }
+// Companion checks (rules doc ZIGBEE_TUYA_RULES.md): init must not abort without a non-native cluster,
+// and couples removed by the dual-couple resolution (lib/data/dual-couple-legacy.json) stay removed.
+const { spawnSync } = require('child_process');
+for (const [script, args] of [['scripts/gates/init-non-native-guard.js', []], ['tools/ci/enforce-dual-couple-legacy.js', ['--check']]]) {
+  const f = path.join(ROOT, script);
+  if (!fs.existsSync(f)) { continue; }
+  const r = spawnSync(process.execPath, [f, ...args], { stdio: 'inherit', cwd: ROOT });
+  if (r.status !== 0) { console.error(`[native-matrix-gate] companion check failed: ${script}`); process.exit(1); }
+}
 console.log('[native-matrix-gate] OK');

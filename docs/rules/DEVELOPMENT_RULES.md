@@ -43,6 +43,10 @@ Only remove a fingerprint if it causes WRONG driver matching:
 - Same manufacturerName + same productId in two incompatible drivers
 - Example: `_TZ3000_xyz` + `TS0002` in both `switch_2gang` AND `dimmer_2gang`
 
+#### Enforcement (2026-10-11)
+- A same-couple duplicate fails `scripts/gates/native-matrix-gate.js`. Resolve it by researching the real hardware, then moving the couple to the right driver (or creating a new driver/category) — never by deleting blindly. Reviewed exceptions go in `data/native-matrix-reviewed-duals.json`; already-paired leftovers in `lib/data/dual-couple-legacy.json`.
+- Init code that aborts without a non-native cluster fails `scripts/gates/init-non-native-guard.js`. Full list: `docs/rules/ZIGBEE_TUYA_RULES.md` §9 and `docs/rules/DAILY_RESUME_ENRICHMENT.md`.
+
 ### 3. SDK3 Compliance
 - **Getter Mandate**: ALWAYS use `this.homey.flow.getTriggerCard('id')`, `this.homey.flow.getActionCard('id')`, or `this.homey.flow.getConditionCard('id')` for driver-specific flow cards.
 - **Card IDs**: Every getter call MUST pass the explicit ID defined in `driver.flow.compose.json`.
