@@ -46,7 +46,11 @@ describe('P2182 TB25 wall-switch settings', () => {
     assert.ok(ids.includes('inching'));
     assert.ok(ids.includes('backlight_mode'));
     assert.ok(!ids.includes('countdown'));
-    assert.ok(compose.devices && compose.devices.secondSwitch);
+    // WHY(P2455 68de05268b): new pairs are one device with onoff + onoff.gang2 (no secondSwitch
+    // sub-device); already-paired legacy secondSwitch instances are still handled in device.js.
+    assert.ok(!(compose.devices && compose.devices.secondSwitch));
+    assert.ok((compose.capabilities || []).includes('onoff.gang2'));
+    assert.match(fs.readFileSync(path.join(ROOT, 'drivers/wall_switch_2gang_1way/device.js'), 'utf8'), /subDeviceId === 'secondSwitch'/);
   });
 
   it('3-gang subdevice driver is TS0003/TS0013 only and has sibling + inching, no countdown', () => {
@@ -58,8 +62,14 @@ describe('P2182 TB25 wall-switch settings', () => {
     for (const g of compose.settings || []) {
       for (const c of g.children || []) {ids.push(c.id);}
     }
-    assert.deepStrictEqual([...(compose.zigbee.productId || [])].sort(), ['TS0003', 'TS0013'].sort());
-    assert.ok(!compose.zigbee.productId.includes('TS0601'));
+    // WHY(P2464/P2465 ff11815887): Moes Star Feather 3-gang (Z2M _TZE200_zo0cfekv/tzyy0rtq/rd8cdssd + TS0601)
+    // lives here; TS0601 is allowed only for EF00 _TZE* manufacturers.
+    const pids = [...(compose.zigbee.productId || [])].sort();
+    assert.ok(pids.includes('TS0003') && pids.includes('TS0013'));
+    assert.ok(pids.every((p) => ['TS0003', 'TS0013', 'TS0601'].includes(p)), pids.join(','));
+    if (pids.includes('TS0601')) {
+      assert.ok(compose.zigbee.manufacturerName.some((m) => /^_tze200_zo0cfekv$/i.test(m)));
+    }
     assert.ok(ids.includes('connected_siblings'));
     assert.ok(ids.includes('traffic_stats'));
     assert.ok(ids.includes('inching'));

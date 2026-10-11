@@ -57,7 +57,8 @@ describe('P2253 TS004x hybrid scene remotes', () => {
 
   it('HomeyCompensationLayer: TS0041-44 magic without ts004f_scene_mode', () => {
     const src = read('lib/io/HomeyCompensationLayer.js');
-    assert.match(src, /TS004\[1-4\]/);
+    // WHY(P2554): range widened to TS0041–46 (+TS0215A) — still magic-only, never scene_mode.
+    assert.match(src, /TS004\[1-[4-9]\]/);
     assert.match(src, /Never queue ts004f_scene_mode/);
   });
 

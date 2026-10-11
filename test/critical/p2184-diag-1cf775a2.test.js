@@ -54,8 +54,11 @@ describe('P2184 Peter 1cf775a2 water + smartbutton', () => {
     assert.match(source, /safeSetCapabilityValue/);
   });
 
-  it('button_wireless_1 measure_battery is not getable (no boot poll)', () => {
+  // WHY(P2499 fbd06d9059 / P2507 c9d0095a3e): getable:false hid Battery + History in the Homey UI
+  // (Peter 77394256). Superseded: getable stays true; Insights kept on.
+  it('button_wireless_1 measure_battery is getable (P2499 supersedes P2184)', () => {
     const compose = JSON.parse(read('drivers/button_wireless_1/driver.compose.json'));
-    assert.strictEqual(compose.capabilitiesOptions.measure_battery.getable, false);
+    assert.strictEqual(compose.capabilitiesOptions.measure_battery.getable, true);
+    assert.strictEqual(compose.capabilitiesOptions.measure_battery.preventInsights, false);
   });
 });
