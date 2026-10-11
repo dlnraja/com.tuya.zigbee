@@ -118,6 +118,7 @@ async function poll() {
       postNumber: p.post_number,
       username: p.username,
       createdAt: p.created_at,
+      // Transient state only (.github/state is untracked); never copied into tracked files (C1/C5).
       excerpt: (p.cooked || '').replace(/<[^>]+>/g, ' ').slice(0, 200),
       fps: fpList,
       signals: {
@@ -125,6 +126,9 @@ async function poll() {
         pids: signals.pids || [],
         issues: signals.issues || [],
         clusters: signals.clusters || [],
+        families: signals.families || [],
+        models: signals.models || [],
+        brands: signals.brands || [],
       },
     };
     result.posts.push(entry);
@@ -142,7 +146,7 @@ async function poll() {
   fs.writeFileSync(path.join(STATE_DIR, 'new-fps.json'), JSON.stringify({ newFPs: result.newFPs, count: result.newFPs.length, timestamp: result.timestamp }, null, 2));
   // Symptom → lead stubs (no post body stored). Consumed by digest / daily resume.
   const leadStubs = (result.newPosts || [])
-    .filter((p) => (p.fps && p.fps.length) || (p.signals && ((p.signals.issues || []).length || (p.signals.mfrs || []).length)))
+    .filter((p) => (p.fps && p.fps.length) || (p.signals && ((p.signals.issues || []).length || (p.signals.mfrs || []).length || (p.signals.families || []).length || (p.signals.models || []).length)))
     .map((p) => ({
       topicId: result.topicId || topicId,
       postNumber: p.postNumber,

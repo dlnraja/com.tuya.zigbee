@@ -28,8 +28,9 @@ describe('P2396 Lerlink fan DP2/DP11', () => {
     assert.ok(src.includes('case 2:'));
     assert.ok(src.includes('case 11:'));
     assert.ok(src.includes('onSettings'));
-    assert.ok(src.includes('dp: 2'));
-    assert.ok(src.includes('dp: 11'));
+    // DP writes go through sendStructuredDatapoint(cluster, dp, …) since 2026-10-11 (full datapoint args).
+    assert.ok(src.includes('dp: 2') || src.includes('sendStructuredDatapoint(tuyaCluster, 2,'));
+    assert.ok(src.includes('dp: 11') || src.includes('sendStructuredDatapoint(tuyaCluster, 11,'));
   });
 
   it('BatteryMasterEngine no longer maps r32ctezx to AA', () => {
