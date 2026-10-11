@@ -66,14 +66,26 @@ describe('PowerClusterPolicy 0x0001', () => {
     assert.equal(shouldProactivePowerCfgRead(remote), false);
   });
 
-  it('still allows 0x0001 reads on climate sensors', () => {
+  // P2757 (7734ff23d1): coin climate sensors are sleepy — no proactive PowerCfg poll (Bastien
+  // battery drain); they still report on their own. Non-sleepy devices keep proactive reads.
+  it('no proactive 0x0001 read on sleepy coin climate sensors (P2757)', () => {
     const sensor = {
       driver: { id: 'climate_sensor', manifest: { class: 'sensor' } },
       getSettings: () => ({ zb_model_id: 'TS0201' }),
       getData: () => ({}),
       getStore: () => ({}),
     };
-    assert.equal(shouldProactivePowerCfgRead(sensor), true);
+    assert.equal(shouldProactivePowerCfgRead(sensor), false);
+  });
+
+  it('still allows 0x0001 reads on non-sleepy (mains) devices', () => {
+    const plug = {
+      driver: { id: 'plug_energy_monitor', manifest: { class: 'socket' } },
+      getSettings: () => ({ zb_model_id: 'TS011F' }),
+      getData: () => ({}),
+      getStore: () => ({}),
+    };
+    assert.equal(shouldProactivePowerCfgRead(plug), true);
   });
 });
 
