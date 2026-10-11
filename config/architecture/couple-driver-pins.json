@@ -147,7 +147,7 @@
       ],
       "driver": "button_wireless_3",
       "pid": "TS0043",
-      "source": "johan + zha + deconz",
+      "source": "Johan 3 Gang Wall Remote; ZHA #663 interview TS0043",
       "regression": "johan-only lead 2026-10-11 (second source, W4)"
     },
     {
@@ -156,7 +156,7 @@
       ],
       "driver": "button_wireless_3",
       "pid": "TS0043",
-      "source": "johan + deconz",
+      "source": "Johan 3 Gang Wall Remote exact couple",
       "regression": "johan-only lead 2026-10-11 (second source, W4)"
     },
     {
@@ -291,7 +291,7 @@
       ],
       "driver": "switch_4gang",
       "pid": "TS0014",
-      "source": "johan + blakadder",
+      "source": "Johan 4 Gang Wall Switch; Z2M PR #2597 TS0014 (ledger wrongly had TS0044)",
       "regression": "W4 second-source couple 2026-10-11 (Johan mfr + independent source)"
     },
     {
@@ -300,7 +300,7 @@
       ],
       "driver": "switch_2gang",
       "pid": "TS0012",
-      "source": "johan + smartthings-mariano + HobboRobin + Z2S",
+      "source": "Johan 2 Gang Wall Switch; romasku BSEED TS0012 (ledger wrongly had TS0002/1gang)",
       "regression": "W4 second-source couple 2026-10-11 (Johan mfr + independent source)"
     },
     {
@@ -529,6 +529,42 @@
       "pid": "TS0105",
       "source": "Z2M Nova Digital ZBCMR-02 TS0105 (zhc#12177); same host as ZBCMR-01 ogyg1y6b",
       "regression": "Was held fearing TS0105 cartesian; pid is Nova-Digital-only in Z2M."
+    },
+    {
+      "mfr": [
+        "_TZ3000_85czd6fy",
+        "_tz3000_85czd6fy",
+        "_TZ3000_85CZD6FY",
+        "_tz3000_85CZD6FY"
+      ],
+      "driver": "water_leak_sensor",
+      "pid": "TS0207",
+      "source": "Johan README Water Detector + Z2M TS0207 family",
+      "regression": "Was johan_only_unverified / wrong pid in lost ledger"
+    },
+    {
+      "mfr": [
+        "_TZ3000_ww9i3e0y",
+        "_tz3000_ww9i3e0y",
+        "_TZ3000_WW9I3E0Y",
+        "_tz3000_WW9I3E0Y"
+      ],
+      "driver": "water_leak_sensor",
+      "pid": "TS0207",
+      "source": "Johan README Flood Sensor; Z2M TS0207 water_leak",
+      "regression": "Was johan_only_unverified / wrong pid in lost ledger"
+    },
+    {
+      "mfr": [
+        "_TZ3000_yw5tvzsk",
+        "_tz3000_yw5tvzsk",
+        "_TZ3000_YW5TVZSK",
+        "_tz3000_YW5TVZSK"
+      ],
+      "driver": "button_wireless_3",
+      "pid": "TS0043",
+      "source": "Johan 3 Gang Wall Remote exact couple",
+      "regression": "Was johan_only_unverified / wrong pid in lost ledger"
     }
   ]
 }
