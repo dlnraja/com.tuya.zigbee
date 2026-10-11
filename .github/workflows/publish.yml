@@ -134,7 +134,7 @@ jobs:
   version-and-publish:
     needs: validate
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 60 # WHY(2026-10-11): idle wait + draft wait + final gate; 15 cancelled G1 run 38102492164
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
         with:

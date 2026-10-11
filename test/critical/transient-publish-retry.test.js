@@ -33,3 +33,21 @@ test('athom final gate verdicts', () => {
   assert.strictEqual(verdict([{ id: 2, version: '9.0.1', state: 'processing' }], '9.0.1').done, false);
   assert.strictEqual(verdict([], '9.0.1').done, false);
 });
+
+// WHY(2026-10-11): waiting_for_files older than 5 min is stuck (final) for idle wait and final gate.
+test('stuck waiting_for_files counts as final', () => {
+  const old = new Date(Date.now() - 10 * 60 * 1000).toISOString();
+  const fresh = new Date().toISOString();
+  const { isStuck } = require('../../.github/scripts/wait-athom-idle.js');
+  assert.strictEqual(isStuck({ state: 'waiting_for_files', stateChangedAt: old }), true);
+  assert.strictEqual(isStuck({ state: 'waiting_for_files', stateChangedAt: fresh }), false);
+  assert.strictEqual(isStuck({ state: 'waiting_for_files', at: old }), true); // homey-build-status.js field
+  const { verdict } = require('../../.github/scripts/assert-athom-final.js');
+  const v = verdict([{ id: 1, version: '9.0.1', state: 'waiting_for_files', stateChangedAt: old }], '9.0.1');
+  assert.strictEqual(v.done && !v.ok, true);
+});
+test('direct publish never re-sends an uploaded version', () => {
+  const src = require('fs').readFileSync(require('path').join(__dirname, '../../scripts/direct-api-publish.js'), 'utf8');
+  const guard = src.indexOf('SAME-VERSION GUARD');
+  assert.ok(guard > 0 && guard < src.indexOf('api.createBuild('));
+});

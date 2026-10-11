@@ -14,7 +14,7 @@ const OK = /^(test|live|approved)$/i;
 const STUCK_MS = Number(process.env.ATHOM_STUCK_MS || 5 * 60 * 1000);
 function isStuck(b, now = Date.now()) {
   if (String(b && b.state) !== 'waiting_for_files') {return false;}
-  const t = Date.parse(b.stateChangedAt || b.createdAt || '');
+  const t = Date.parse(b.stateChangedAt || b.createdAt || b.at || '');
   return Number.isFinite(t) && now - t > STUCK_MS;
 }
 
