@@ -21,7 +21,10 @@ describe('P2359 Homey Device Updates fusion', () => {
     assert.ok(ssot.requirements?.homeyFirmwareMin);
     assert.ok(Array.isArray(ssot.coveredDriversExpected) && ssot.coveredDriversExpected.length >= 8);
     assert.ok(ssot.sources?.primary?.url);
-    assert.ok(ssot.safety?.wakeInstructionRequiredFor?.includes('contact_sensor'));
+    // WHY(P2435c 7d47f7b412): contact_sensor (and soil) OTA refs were dropped (firmware missing);
+    // the wake list now only covers drivers that really ship OTA — TRVs.
+    const wakeFor = ssot.safety?.wakeInstructionRequiredFor || [];
+    assert.ok(wakeFor.includes('radiator_valve') || wakeFor.includes('thermostatic_radiator_valve'));
   });
 
   it('semver gate matches Homey ≥13.2', () => {
@@ -37,7 +40,9 @@ describe('P2359 Homey Device Updates fusion', () => {
   });
 
   it('sleepy OTA drivers ship wakeInstruction', () => {
-    for (const id of ['contact_sensor', 'soil_sensor', 'radiator_valve', 'thermostatic_radiator_valve']) {
+    const wakeFor = HDU.loadSsot().safety?.wakeInstructionRequiredFor || [];
+    assert.ok(wakeFor.length >= 1);
+    for (const id of wakeFor) {
       const compose = JSON.parse(fs.readFileSync(path.join(ROOT, 'drivers', id, 'driver.compose.json'), 'utf8'));
       const fwPath = path.join(ROOT, 'drivers', id, 'driver.firmware.compose.json');
       const fw = fs.existsSync(fwPath) ? JSON.parse(fs.readFileSync(fwPath, 'utf8')) : {};

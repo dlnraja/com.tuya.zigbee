@@ -33,6 +33,8 @@ describe('device peculiarity compound locks', () => {
     const registry = loadRegistry();
     const missing = [];
     for (const c of registry.cases || []) {
+      // WHY(P2509/P2517/P2605): canonicalDriver null = forbid-only / doNotLock row — no owner to look up.
+      if (c.canonicalDriver == null || c.doNotLock === true) continue;
       if (c.enrichOnly === true || (!c.mfr?.length && !c.couple?.length) || (!c.productId?.length && !c.couple?.length)) continue;
       let hit = null;
       let mfrList = [].concat(c.mfr || []).filter(isLookupMfr);

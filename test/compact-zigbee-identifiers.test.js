@@ -69,7 +69,7 @@ describe('Publish Zigbee identifier compaction', function() {
     assert.strictEqual(result.overTotalLimit, false);
   });
 
-  it('reports when total publish combinations remain over budget', function() {
+  it('pass 2 trims total publish combinations into budget', function() {
     const manifest = {
       drivers: [
         {
@@ -94,8 +94,10 @@ describe('Publish Zigbee identifier compaction', function() {
       maxTotalCombos: 30,
     });
 
-    assert.strictEqual(result.afterTotal, 40);
+    // WHY(103a3575d9 pass2 combo fix / P2252): a second pass now trims to the TOTAL budget too
+    // (RAW afterTotal ≤ maxTotal), so this manifest is no longer reported over budget.
+    assert.ok(result.afterTotal <= 30, `afterTotal ${result.afterTotal}`);
     assert.strictEqual(result.changed, 2);
-    assert.strictEqual(result.overTotalLimit, true);
+    assert.strictEqual(result.overTotalLimit, false);
   });
 });

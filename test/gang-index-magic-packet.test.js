@@ -109,11 +109,15 @@ describe('TuyaMagicPacket', () => {
     assert.strictEqual(behavior.calls.length, 2);
   });
 
-  it('force re-sends after announce even in the same session', async () => {
+  // WHY(P2685): plain `force` now respects a 6 h cooldown (wake/re-arm TX storms on coin cells);
+  // only `forceAlways` re-sends inside the same session.
+  it('force respects the P2685 cooldown; forceAlways re-sends in the same session', async () => {
     const device = makeDevice();
     const behavior = { calls: [] };
     await sendTuyaMagicPacket(device, makeZcl(behavior), 1);
     await sendTuyaMagicPacket(device, makeZcl(behavior), 1, { force: true });
+    assert.strictEqual(behavior.calls.length, 1);
+    await sendTuyaMagicPacket(device, makeZcl(behavior), 1, { forceAlways: true });
     assert.strictEqual(behavior.calls.length, 2);
   });
 
