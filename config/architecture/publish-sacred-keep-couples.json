@@ -1237,6 +1237,66 @@
       "pid": "TS000F",
       "driverId": "switch_1gang",
       "note": "WHD02 relay module (Z2M TS000F) — fold from master 2026-10-10; was on wall_switch_1gang_1way without TS000F (never matched)"
+    },
+    {
+      "mfr": "_TYZB01_ncutbjdi",
+      "pid": "TS0003",
+      "driverId": "switch_1gang",
+      "note": "Lonsonho QS-Zigbee-S05-LN 1-gang module (Z2M lonsonho.ts: single onOff)"
+    },
+    {
+      "mfr": "_TYZB01_aneiicmq",
+      "pid": "TS0003",
+      "driverId": "switch_1gang",
+      "note": "BlitzWolf BW-SS7_1gang (Z2M blitzwolf.ts: single onOff)"
+    },
+    {
+      "mfr": "_TZ3210_zxbtub8r",
+      "pid": "TS110E",
+      "driverId": "dimmer_1_gang",
+      "note": "1-channel dimmer TS110E_1gang_1 (Z2M tuya.ts)"
+    },
+    {
+      "mfr": "_TZ3000_18ejxno0",
+      "pid": "TS0012",
+      "driverId": "switch_2gang",
+      "note": "Moes ZS-EUB 2-gang wall switch (Z2M TS0012 + deCONZ)"
+    },
+    {
+      "mfr": "_TZ3000_qewo8dlz",
+      "pid": "TS0013",
+      "driverId": "switch_3_gang",
+      "note": "wired 3-gang switch (deCONZ TS0013 device file)"
+    },
+    {
+      "mfr": "_TZ3000_qeuvnohg",
+      "pid": "TS011F",
+      "driverId": "din_rail_switch",
+      "note": "Tongou TO-Q-SY1-JZT DIN relay with metering (Z2M tuya.ts + ZHA ts011f_plug)"
+    },
+    {
+      "mfr": "_TYZB01_iuepbmpv",
+      "pid": "TS0121",
+      "driverId": "smartplug",
+      "note": "Moes MS-104Z 1-gang module (Z2M moes.ts)"
+    },
+    {
+      "mfr": "_TZ3210_iystcadi",
+      "pid": "TS0505B",
+      "driverId": "light_bulb_rgb_led",
+      "note": "Lidl Livarno light bar RGB+CCT (Z2M lidl.ts)"
+    },
+    {
+      "mfr": "_TZ3000_saiqcn0y",
+      "pid": "TS0201",
+      "driverId": "temphumidsensor3",
+      "note": "TH02Z/WSD500A temp-humidity (Z2M tuya.ts + deCONZ)"
+    },
+    {
+      "mfr": "_TZ3000_xr3htd96",
+      "pid": "TS0201",
+      "driverId": "temphumidsensor3",
+      "note": "WSD500A temp-humidity (Z2M tuya.ts + deCONZ)"
     }
   ]
 }

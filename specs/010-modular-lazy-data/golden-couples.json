@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-11T06:42:19.694Z",
+ "generated": "2026-10-11T07:54:51.099Z",
  "drivers": 388,
  "snapshot": {
   "air_purifier": {
@@ -117,9 +117,9 @@
    "pidSha": "cbc5247d1f17c54e"
   },
   "bulb_dimmable_dimmer": {
-   "mfr": 12,
+   "mfr": 11,
    "pid": 4,
-   "mfrSha": "847b4e1877304d80",
+   "mfrSha": "dff5ecce491b03ff",
    "pidSha": "b4f68c3714451ee2"
   },
   "bulb_rgb": {
@@ -183,9 +183,9 @@
    "pidSha": "97471aa91d3d60d5"
   },
   "button_wireless_2": {
-   "mfr": 138,
+   "mfr": 137,
    "pid": 100,
-   "mfrSha": "3004d0b90cc68b60",
+   "mfrSha": "b138120f0522bd20",
    "pidSha": "25b2f5f37b8e4dd1"
   },
   "button_wireless_3": {
@@ -615,9 +615,9 @@
    "pidSha": "455c46e8c8549693"
   },
   "dimmer_1_gang": {
-   "mfr": 7,
+   "mfr": 8,
    "pid": 3,
-   "mfrSha": "d80467cf0eb0a704",
+   "mfrSha": "94b8bf77138288c8",
    "pidSha": "626db59b8035d2cd"
   },
   "dimmer_1_gang_2": {
@@ -1227,9 +1227,9 @@
    "pidSha": "3041fd34f640ddcb"
   },
   "presence_sensor_radar": {
-   "mfr": 251,
+   "mfr": 250,
    "pid": 56,
-   "mfrSha": "d72dfd726c79c772",
+   "mfrSha": "259d0a8c10ba1959",
    "pidSha": "ac803567e8fc211a"
   },
   "radar_sensor": {
@@ -1863,15 +1863,15 @@
    "pidSha": "b46b96d17990cf37"
   },
   "switch_1gang": {
-   "mfr": 376,
+   "mfr": 378,
    "pid": 38,
-   "mfrSha": "decf176189fc547b",
+   "mfrSha": "de3f9dcab8afa747",
    "pidSha": "fd65b1d55ed8db6a"
   },
   "switch_2_gang": {
-   "mfr": 3,
+   "mfr": 1,
    "pid": 5,
-   "mfrSha": "ad00c2c72b6df1de",
+   "mfrSha": "d767c763f58d2e78",
    "pidSha": "f975dde8b1215fbe"
   },
   "switch_2_gang_metering": {
@@ -1887,9 +1887,9 @@
    "pidSha": "830a6ff3ab71bd70"
   },
   "switch_3_gang": {
-   "mfr": 2,
+   "mfr": 3,
    "pid": 2,
-   "mfrSha": "a4b5c35236ac39fa",
+   "mfrSha": "7d133c052c7b14ee",
    "pidSha": "1c2e035cec82b333"
   },
   "switch_3gang": {
