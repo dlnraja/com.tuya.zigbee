@@ -1,33 +1,23 @@
 {
-  "generated": "2026-10-10T07:04:58.152Z",
+  "generated": "2026-10-11T10:18:47.274Z",
   "source": "data/leads/johan-canonical-index.json",
   "repo": "JohanBendz/com.tuya.zigbee",
   "note": "Acceptance view, structured fields only. missing-couple = identity cited upstream with no home driver here (verify real hardware before adding, W4). behaviour = needs physical test, not a pairing gap.",
   "summary": {
     "threads": 562,
-    "covered": 434,
-    "behaviour": 89,
-    "missing-couple": 24,
-    "dual-couple": 15,
-    "missingCouples": 16
+    "covered": 441,
+    "behaviour": 94,
+    "missing-couple": 8,
+    "dual-couple": 19,
+    "missingCouples": 6
   },
   "missingCouples": [
     "_TYZB01_0aps0h1r|TS0212",
-    "_TYZB01_4lwqwyqn|TS0013",
     "_TYZB01_o7m83470|TS0212",
     "_TZ3000_5ftkaulg|TS0011",
     "_TZ3000_amal63is|TS0002",
-    "_TZ3000_bzzgvet0|TS0001",
-    "_TZ3000_cygcaxvv|TS0001",
-    "_TZ3000_fxvjhdyl|TS0207",
-    "_TZ3000_jqge2fjx|TS0210",
-    "_TZ3000_kmsbwdol|TS130F",
-    "_TZ3000_kstbkt6a|TS0207",
     "_TZ3000_mvvw8wnx|TS0001",
-    "_TZ3000_nsa76jai|TS0004",
-    "_TZ3000_skueekg3|TS000F",
-    "_TZB210_rkgngb5o|EP1",
-    "_TZE200_n8dljorx|TS0601"
+    "_TZB210_rkgngb5o|EP1"
   ],
   "rows": [
     {
@@ -1261,10 +1251,13 @@
         {
           "mfr": "_TZ3000_skueekg3",
           "pid": "TS000F",
-          "drivers": []
+          "drivers": [
+            "switch_1gang",
+            "switch_module_whd02"
+          ]
         }
       ],
-      "acceptance": "missing-couple"
+      "acceptance": "dual-couple"
     },
     {
       "n": 390,
@@ -2527,14 +2520,14 @@
           "mfr": "_TZ3000_fdxihpp7",
           "pid": "TS0001",
           "drivers": [
-            "wall_switch_1gang_1way"
+            "switch_1gang"
           ]
         },
         {
           "mfr": "_TZ3000_skueekg3",
           "pid": "TS0001",
           "drivers": [
-            "wall_switch_1gang_1way"
+            "switch_1gang"
           ]
         }
       ],
@@ -2629,10 +2622,12 @@
         {
           "mfr": "_TZ3000_jqge2fjx",
           "pid": "TS0210",
-          "drivers": []
+          "drivers": [
+            "vibration_sensor"
+          ]
         }
       ],
-      "acceptance": "missing-couple"
+      "acceptance": "covered"
     },
     {
       "n": 612,
@@ -2682,10 +2677,12 @@
         {
           "mfr": "_TZ3000_kstbkt6a",
           "pid": "TS0207",
-          "drivers": []
+          "drivers": [
+            "water_leak_sensor"
+          ]
         }
       ],
-      "acceptance": "missing-couple"
+      "acceptance": "covered"
     },
     {
       "n": 619,
@@ -3872,7 +3869,9 @@
         {
           "mfr": "_TZ3000_jqge2fjx",
           "pid": "TS0210",
-          "drivers": []
+          "drivers": [
+            "vibration_sensor"
+          ]
         },
         {
           "mfr": "_TZ3000_bmfw9ykl",
@@ -3889,7 +3888,7 @@
           ]
         }
       ],
-      "acceptance": "missing-couple"
+      "acceptance": "covered"
     },
     {
       "n": 836,
@@ -4093,10 +4092,12 @@
         {
           "mfr": "_TZE200_n8dljorx",
           "pid": "TS0601",
-          "drivers": []
+          "drivers": [
+            "contact_sensor_zigbee"
+          ]
         }
       ],
-      "acceptance": "missing-couple"
+      "acceptance": "behaviour"
     },
     {
       "n": 869,
@@ -4790,14 +4791,14 @@
           "mfr": "_TZ3000_fdxihpp7",
           "pid": "TS0001",
           "drivers": [
-            "wall_switch_1gang_1way"
+            "switch_1gang"
           ]
         },
         {
           "mfr": "_TZ3000_skueekg3",
           "pid": "TS0001",
           "drivers": [
-            "wall_switch_1gang_1way"
+            "switch_1gang"
           ]
         }
       ],
@@ -5177,10 +5178,12 @@
         {
           "mfr": "_TZE200_n8dljorx",
           "pid": "TS0601",
-          "drivers": []
+          "drivers": [
+            "contact_sensor_zigbee"
+          ]
         }
       ],
-      "acceptance": "missing-couple"
+      "acceptance": "behaviour"
     },
     {
       "n": 1014,
@@ -5341,10 +5344,12 @@
         {
           "mfr": "_TZ3000_kmsbwdol",
           "pid": "TS130F",
-          "drivers": []
+          "drivers": [
+            "curtain_module_2_gang"
+          ]
         }
       ],
-      "acceptance": "missing-couple"
+      "acceptance": "covered"
     },
     {
       "n": 1031,
@@ -5428,10 +5433,12 @@
         {
           "mfr": "_TZ3000_nsa76jai",
           "pid": "TS0004",
-          "drivers": []
+          "drivers": [
+            "switch_4gang"
+          ]
         }
       ],
-      "acceptance": "missing-couple"
+      "acceptance": "behaviour"
     },
     {
       "n": 1037,
@@ -6118,10 +6125,12 @@
         {
           "mfr": "_TZ3000_nsa76jai",
           "pid": "TS0004",
-          "drivers": []
+          "drivers": [
+            "switch_4gang"
+          ]
         }
       ],
-      "acceptance": "missing-couple"
+      "acceptance": "covered"
     },
     {
       "n": 1103,
@@ -6233,7 +6242,10 @@
         {
           "mfr": "_TZ3000_skueekg3",
           "pid": "TS000F",
-          "drivers": []
+          "drivers": [
+            "switch_1gang",
+            "switch_module_whd02"
+          ]
         },
         {
           "mfr": "_TZ3000_hdc8bbha",
@@ -6246,11 +6258,11 @@
           "mfr": "_TZ3000_skueekg3",
           "pid": "TS0001",
           "drivers": [
-            "wall_switch_1gang_1way"
+            "switch_1gang"
           ]
         }
       ],
-      "acceptance": "missing-couple"
+      "acceptance": "dual-couple"
     },
     {
       "n": 1110,
@@ -6772,10 +6784,12 @@
         {
           "mfr": "_TZ3000_kmsbwdol",
           "pid": "TS130F",
-          "drivers": []
+          "drivers": [
+            "curtain_module_2_gang"
+          ]
         }
       ],
-      "acceptance": "missing-couple"
+      "acceptance": "behaviour"
     },
     {
       "n": 1146,
@@ -7117,10 +7131,12 @@
         {
           "mfr": "_TZ3000_cygcaxvv",
           "pid": "TS0001",
-          "drivers": []
+          "drivers": [
+            "zigbee_repeater"
+          ]
         }
       ],
-      "acceptance": "missing-couple"
+      "acceptance": "covered"
     },
     {
       "n": 1166,
@@ -8435,10 +8451,12 @@
         {
           "mfr": "_TZ3000_bzzgvet0",
           "pid": "TS0001",
-          "drivers": []
+          "drivers": [
+            "switch_1gang"
+          ]
         }
       ],
-      "acceptance": "missing-couple"
+      "acceptance": "covered"
     },
     {
       "n": 1268,
@@ -9118,8 +9136,8 @@
           "mfr": "_TZE204_8fffc3kb",
           "pid": "TS0601",
           "drivers": [
-            "led_controller_spi_tuya",
-            "switch_1gang"
+            "led_controller_rgb",
+            "led_controller_spi_tuya"
           ]
         }
       ],
@@ -9290,7 +9308,7 @@
           "mfr": "_TZ3210_cehuw1lw",
           "pid": "TS011F",
           "drivers": [
-            "switch_1gang"
+            "plug_energy_monitor"
           ]
         }
       ],
@@ -9611,7 +9629,9 @@
         {
           "mfr": "_TYZB01_4lwqwyqn",
           "pid": "TS0013",
-          "drivers": []
+          "drivers": [
+            "switch_3gang"
+          ]
         },
         {
           "mfr": "_TZ3000_keayt8ol",
@@ -9621,7 +9641,7 @@
           ]
         }
       ],
-      "acceptance": "missing-couple"
+      "acceptance": "behaviour"
     },
     {
       "n": 1333,
@@ -10163,11 +10183,12 @@
           "mfr": "_TZ3000_xwh1e22x",
           "pid": "TS1002",
           "drivers": [
-            "bulb_rgbw"
+            "bulb_rgbw",
+            "remote_rgbcct_8zone"
           ]
         }
       ],
-      "acceptance": "covered"
+      "acceptance": "dual-couple"
     },
     {
       "n": 1362,
@@ -10328,25 +10349,30 @@
           "mfr": "_TZ3000_skueekg3",
           "pid": "TS0001",
           "drivers": [
-            "wall_switch_1gang_1way"
+            "switch_1gang"
           ]
         },
         {
           "mfr": "_TZ3000_fdxihpp7",
           "pid": "TS0001",
           "drivers": [
-            "wall_switch_1gang_1way"
+            "switch_1gang"
           ]
         },
         {
           "mfr": "_TZ3000_bzzgvet0",
           "pid": "TS0001",
-          "drivers": []
+          "drivers": [
+            "switch_1gang"
+          ]
         },
         {
           "mfr": "_TZ3000_skueekg3",
           "pid": "TS000F",
-          "drivers": []
+          "drivers": [
+            "switch_1gang",
+            "switch_module_whd02"
+          ]
         },
         {
           "mfr": "_TZ3000_mvvw8wnx",
@@ -10417,7 +10443,7 @@
           "mfr": "_TZ3000_e98krvvk",
           "pid": "TS0012",
           "drivers": [
-            "switch_1gang"
+            "switch_2gang"
           ]
         }
       ],
@@ -13036,7 +13062,9 @@
         {
           "mfr": "_TZ3000_kstbkt6a",
           "pid": "TS0207",
-          "drivers": []
+          "drivers": [
+            "water_leak_sensor"
+          ]
         },
         {
           "mfr": "_TZ3000_9eeavbk5",
@@ -13146,7 +13174,9 @@
         {
           "mfr": "_TZ3000_fxvjhdyl",
           "pid": "TS0207",
-          "drivers": []
+          "drivers": [
+            "water_leak_sensor"
+          ]
         },
         {
           "mfr": "_TZ3000_ltiqubue",
@@ -13186,7 +13216,7 @@
           ]
         }
       ],
-      "acceptance": "missing-couple"
+      "acceptance": "dual-couple"
     },
     {
       "n": 1485,
@@ -13516,10 +13546,12 @@
         {
           "mfr": "_TZE200_n8dljorx",
           "pid": "TS0601",
-          "drivers": []
+          "drivers": [
+            "contact_sensor_zigbee"
+          ]
         }
       ],
-      "acceptance": "missing-couple"
+      "acceptance": "covered"
     },
     {
       "n": 1510,
