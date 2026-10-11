@@ -261,6 +261,15 @@ jobs:
         if: always()
         run: node .github/scripts/privacy-redactor.js .github/state/dashboard-monitor-report.json || true
 
+      - name: 🛡️ Couple guard (pins, sacred-keep, curated removals, golden)
+        # WHY(2026-10-11): auto-fix-all / sync re-added curated removals (vrcfo4i0, heobian) and
+        # stripped pinned couples. Skip (restore) any offending file, then fail if still dirty.
+        run: |
+          if [ -f tools/ci/automation-couple-guard.js ]; then
+            node tools/ci/automation-couple-guard.js --revert
+            node tools/ci/automation-couple-guard.js --check
+          fi
+
       - name: 💾 Commit fixes
         run: |
           git config user.name "github-actions[bot]"

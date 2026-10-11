@@ -311,6 +311,19 @@ function applyOne(rel, bastienBody, rootDir = ROOT) {
 
 function commitIfNeeded(rootDir, message, files) {
   if (!files.length) return false;
+  // WHY(2026-10-11): never let the promote undo pins / sacred-keep / curated removals /
+  // golden couples on the target branch — restore offending files, skip commit if still dirty.
+  const guardTool = path.join(__dirname, 'automation-couple-guard.js');
+  if (fs.existsSync(guardTool)) {
+    try {
+      execSync(`"${process.execPath}" "${guardTool}" --revert`, {
+        cwd: rootDir, stdio: 'inherit', env: { ...process.env, GUARD_ROOT: rootDir },
+      });
+    } catch (e) {
+      console.warn('[bastien-promote] couple guard still dirty — commit skipped:', e.message);
+      return false;
+    }
+  }
   sh('git config user.name "github-actions[bot]"', { cwd: rootDir });
   sh('git config user.email "41898282+github-actions[bot]@users.noreply.github.com"', { cwd: rootDir });
   for (const f of files) {
