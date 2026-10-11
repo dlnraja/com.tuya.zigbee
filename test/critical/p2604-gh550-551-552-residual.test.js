@@ -22,10 +22,11 @@ describe('P2604 GH#550/#551/#552 residual', () => {
   it('gkfbdvyx V3: DP104 not presence; lux nudge re-arms when stuck at 0m', () => {
     const cfg = fs.readFileSync(path.join(ROOT, 'drivers/presence_sensor_radar/configs.js'), 'utf8');
     const idx = cfg.indexOf('ZY_M100_CEILING_24G');
-    const block = cfg.slice(idx, idx + 4000);
+    const block = cfg.slice(idx, idx + 9000) // block grew (P2705..P2744 WHY notes);
     assert.ok(block.includes("104: { cap: null, internal: 'motion_state_v2_compat' }"));
     assert.ok(!/104:\s*\{[\s\S]*?ignorePresenceClear:\s*true/.test(block));
-    assert.ok(block.includes("9: { cap: 'measure_luminance.distance', divisor: 10 }"));
+    // P2715 (GH#550): DP9 is dual-scale — ÷10 preferred, cm accepted (radarDistanceScale).
+    assert.match(block, /9:\s*\{\s*cap:\s*'measure_luminance\.distance',[\s\S]{0,80}?(divisor|preferDivisor):\s*10/);
     assert.ok(block.includes("103: { cap: 'measure_luminance', type: 'lux_direct' }"));
 
     const src = fs.readFileSync(path.join(ROOT, 'drivers/presence_sensor_radar/device.js'), 'utf8');
