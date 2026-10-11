@@ -171,7 +171,7 @@ async function scanDiscourseCategory(src, st, c) {
   // New topics in a Discourse category (e.g. Homey "Apps" c/apps/7). Cursor = highest topic id seen;
   // first run only sets the cursor. Read-only: never posts. Emits idea leads for relevant titles/excerpts.
   const out = [];
-  const pages = Math.max(1, Math.min(3, Number(src.pages) || 1));
+  const pages = Math.max(1, Math.min(6, Number(src.pages) || 1));
   const since = Number(st.maxTopicId) || 0;
   const baseline = !since;
   const kw = new RegExp(src.match || IDEA_RE.source, 'i');
