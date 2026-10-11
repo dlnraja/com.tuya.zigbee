@@ -440,6 +440,6 @@ jobs:
           out=$(node .github/scripts/transient-publish-retry.js) || true
           echo "$out"; echo "$out" >> "$GITHUB_STEP_SUMMARY"
           if printf '%s' "$out" | grep -q '^\[transient-retry\] RETRY'; then
-            gh workflow run publish.yml --ref "${GITHUB_REF_NAME}" -f transient_retry=true || true
+            next=$(printf '%s\n' "$out" | sed -n 's/^\[transient-retry\] NEXT=//p' | head -1); gh workflow run publish.yml --ref "${GITHUB_REF_NAME}" -f transient_retry="${next:-1}" || true
           fi
           exit 1
