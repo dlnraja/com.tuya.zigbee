@@ -48,7 +48,8 @@ describe('P2432 — Forum Media Sweep & Misattribution Cleansing', () => {
       ['_TZ3210_0zabbfax', 'TS0503B', 'light_bulb_rgb'],
       ['_TZE204_ex3rcdha', 'TS0601', 'presence_sensor_radar'],
       ['_TZE200_yjjdcqsq', 'TS0601', 'climate_sensor'],
-      ['_TZE200_mja3fuja', 'TS0601', 'air_quality_comprehensive']
+      // WHY(P2541): Z2M air_quality_sensor family owner is air_quality_co2
+      ['_TZE200_mja3fuja', 'TS0601', 'air_quality_co2']
     ];
 
     for (const [mfr, pid, expectedDriver] of testCases) {
@@ -101,7 +102,7 @@ describe('P2432 — Forum Media Sweep & Misattribution Cleansing', () => {
       { mfr: '_TZ3000_ruxexjfz', pid: 'TS0002', driverId: 'switch_2gang' },
       { mfr: '_TZ3000_3dfewsk1', pid: 'TS0207', driverId: 'water_leak_sensor' },
       { mfr: '_TZ3000_wkai4ga5', pid: 'TS0042', driverId: 'button_wireless_2' },
-      { mfr: '_TZE200_mja3fuja', pid: 'TS0601', driverId: 'air_quality_comprehensive' }
+      { mfr: '_TZE200_mja3fuja', pid: 'TS0601', driverId: 'air_quality_co2' } // P2541
     ];
 
     for (const ep of expectedPins) {
@@ -120,7 +121,7 @@ describe('P2432 — Forum Media Sweep & Misattribution Cleansing', () => {
     const dmd = JSON.parse(fs.readFileSync(p, 'utf8'));
 
     const checks = [
-      ['_TZE200_mja3fuja', 'air_quality_comprehensive'],
+      ['_TZE200_mja3fuja', 'air_quality_co2'], // P2541
       ['_TZE200_2ekuz3dz', 'wall_thermostat'],
       ['_TZE204_qasjif9e', 'presence_sensor_radar'],
       ['_TZE204_sxm7l9xa', 'presence_sensor_radar'],

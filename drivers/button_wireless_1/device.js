@@ -155,6 +155,7 @@ class Button1GangDevice extends ButtonDevice {
     } catch (_e) { /* optional */ }
 
     try {
+      // WHY(P2550/P2555): one-shot measure_battery recycle so History/Insights get a real log.
       if (typeof this._ensureBatteryCapabilityUi === 'function') {
         await this._ensureBatteryCapabilityUi().catch(() => {});
       } else if (typeof this.setCapabilityOptions === 'function' && this.hasCapability('measure_battery')) {
