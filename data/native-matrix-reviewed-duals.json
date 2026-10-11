@@ -286,6 +286,17 @@
       "source": "zigbee-herdsman-converters src/devices/lonsonho.ts TS130F_dual; JohanBendz/com.tuya.zigbee#1030 -> #1145 (Batch 96 by JohanBendz)",
       "date": "2026-10-10",
       "reviewed_by": "P2810 history sweep 2026-10-10 (standing rule: exact driver for a reported couple, old phantom kept)"
+    },
+    {
+      "couple": "_TZ3000_xwh1e22x|TS1002",
+      "drivers": [
+        "bulb_rgbw",
+        "remote_rgbcct_8zone"
+      ],
+      "reason": "MiBoxer FUT089Z 8-zone RGB+CCT remote: new dedicated remote driver; legacy bulb_rgbw entry kept until the new driver is published and soaked (user decision), then W4 move to the remote only.",
+      "source": "zigbee-herdsman-converters src/devices/miboxer.ts FUT089Z; u236/homed-service-zigbee tuya.json; JohanBendz/com.tuya.zigbee#1361; zigpy/zha-device-handlers#1829",
+      "date": "2026-10-11",
+      "reviewed_by": "lost-couples new-driver round 2026-10-11"
     }
   ]
 }
