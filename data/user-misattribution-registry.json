@@ -7340,23 +7340,22 @@
       "mfr": [
         "_TZE200_nkjintbl",
         "_tze200_nkjintbl",
-        "_TZE284_nkjintbl",
-        "_tze284_nkjintbl"
+        "_TZE200_NKJINTBL",
+        "_tze200_NKJINTBL"
       ],
       "productId": [
         "TS0601"
       ],
-      "canonicalDriver": null,
+      "canonicalDriver": "switch_2gang",
       "forbiddenDrivers": [
         "button_wireless_plug",
-        "switch_2gang",
         "switch_1gang",
         "switch_3gang",
         "switch_4gang"
       ],
       "forbidMode": "couple",
       "protocol": "tuya_ef00",
-      "notes": "P2605: TZE200/284 nkjintbl ambiguous (Z2M multi-gang vs DIN anti-bot). Forbid plug+switch bleed until interview locks couple — do not invent pid/driver."
+      "notes": "P2605: TZE200_nkjintbl|TS0601 sole owner switch_2gang (aligned master). TZE284 stays p2605b ambiguous — forbid plug+switch bleed."
     },
     {
       "id": "novadigital-dqy15zxy-curtain",
@@ -8634,6 +8633,27 @@
       "forbidMode": "couple",
       "source": "z2m ZG-101ZS + romasku#237",
       "notes": "2026-10-11 user decision: same hardware as HOBEIAN ZG-101ZS (TLSR8253 battery 4-button, single/double/hold); both couples in scene_switch_4."
+    },
+    {
+      "id": "p2605b-nkjintbl-tze284-ambiguous",
+      "mfr": [
+        "_TZE284_nkjintbl",
+        "_tze284_nkjintbl"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": null,
+      "forbiddenDrivers": [
+        "button_wireless_plug",
+        "switch_2gang",
+        "switch_1gang",
+        "switch_3gang",
+        "switch_4gang"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "P2605b: TZE284 nkjintbl ambiguous until interview."
     }
   ],
   "entries": {
