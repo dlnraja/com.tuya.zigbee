@@ -55,7 +55,8 @@ describe('P2295 mfs multi-identity enrichment', () => {
   });
 
   it('HOBEIAN remains multiCouple with many pids/names', () => {
-    const h = mfs.HOBEIAN;
+    // WHY(P2368/P2692): one mfs key per spelling (Hobeian) — read caseless.
+    const h = mfs.HOBEIAN || mfs[Object.keys(mfs).find((k) => k.toLowerCase() === 'hobeian')];
     assert.equal(h.multiCouple, true);
     assert.ok(Object.keys(h.byPid).length >= 20);
     assert.ok(h.modelIds.includes('3315-S'));

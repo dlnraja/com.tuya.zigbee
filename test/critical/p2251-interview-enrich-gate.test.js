@@ -60,7 +60,8 @@ describe('P2251 interview + soft-couple enrich', () => {
 
   it('mfs HOBEIAN is multiCouple byPid (no bare TS0601)', () => {
     const mfs = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/mfs_db.json')));
-    const h = mfs.HOBEIAN;
+    // WHY(P2368/P2692): one mfs key per spelling (Hobeian) — read caseless.
+    const h = mfs.HOBEIAN || mfs[Object.keys(mfs).find((k) => k.toLowerCase() === 'hobeian')];
     assert.ok(h.multiCouple);
     assert.strictEqual(h.byPid['ZG-227Z'], 'climate_sensor');
     assert.strictEqual(h.byPid['ZG-303Z'], 'soil_sensor');
