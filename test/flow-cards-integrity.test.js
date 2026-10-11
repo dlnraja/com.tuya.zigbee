@@ -21,10 +21,29 @@ const rootApp = require(path.join(ROOT, 'app.json'));
 const buildAppFile = path.join(ROOT, '.homeybuild', 'app.json');
 const buildApp = fs.existsSync(buildAppFile) ? require(buildAppFile) : rootApp;
 
+
+// WHY(2026-10-11): without a local .homeybuild, root app.json only carries the ~200 app-level cards
+// (driver cards were deduped into drivers/*/driver.flow.compose.json, P2381) — merge them like `homey app build`.
+function driverComposeFlow() {
+  const out = { triggers: [], conditions: [], actions: [] };
+  const dir = path.join(ROOT, 'drivers');
+  for (const d of fs.readdirSync(dir)) {
+    const f = path.join(dir, d, 'driver.flow.compose.json');
+    if (!fs.existsSync(f)) {continue;}
+    let j; try { j = JSON.parse(fs.readFileSync(f, 'utf8')); } catch { continue; }
+    for (const t of Object.keys(out)) {for (const c of j[t] || []) {out[t].push(c);}}
+  }
+  return out;
+}
+
 function flowCards() {
-  const f = (buildApp.flow && (buildApp.flow.triggers || []).length > 100)
+  let f = (buildApp.flow && (buildApp.flow.triggers || []).length > 100)
     ? buildApp.flow
     : (rootApp.flow || {});
+  if (f === (rootApp.flow || {}) && buildApp === rootApp) {
+    const dc = driverComposeFlow();
+    f = { triggers: [...(f.triggers || []), ...dc.triggers], conditions: [...(f.conditions || []), ...dc.conditions], actions: [...(f.actions || []), ...dc.actions] };
+  }
   return [
     ...(f.triggers || []).map(c => ({ ...c, _kind: 'trigger' })),
     ...(f.conditions || []).map(c => ({ ...c, _kind: 'condition' })),
