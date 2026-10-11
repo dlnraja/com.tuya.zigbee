@@ -24,7 +24,10 @@ describe('P2201 pay2byax contact + P126 no TS0601 on contact_sensor', () => {
     assert.ok(mfrs.some((m) => String(m).toLowerCase() === '_tze200_pay2byax'));
     assert.ok(mfrs.some((m) => String(m).toLowerCase() === '_tze204_pay2byax'));
     assert.ok((compose.zigbee.productId || []).includes('TS0601'));
-    assert.ok(mfrs.every((m) => /pay2byax/i.test(m)), 'TS0601 path must stay pay2byax-only');
+    // WHY: c5ccf1c00e/P2810 added Z2M HOBEIAN door sensors on TS0601 (hobeian.ts ZG-102Z
+    // _TZE200_n8dljorx; ZG-102ZL ijey4q29/ykglasuj/kf2hbko4). Anything else is still forbidden.
+    const verifiedDoor = /pay2byax|n8dljorx|ijey4q29|ykglasuj|kf2hbko4/i;
+    assert.ok(mfrs.every((m) => verifiedDoor.test(m)), 'TS0601 path must stay pay2byax + verified door sensors only');
   });
 
   it('DeviceFingerprintDB routes pay2byax|TS0601 to contact_sensor_zigbee', () => {
