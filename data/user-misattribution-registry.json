@@ -8082,6 +8082,38 @@
         "climate_sensor"
       ],
       "notes": "W4 curated removal 2026-10-11: Zemismart 3-gang TS0003 wall switch (interview in JohanBendz#795, Johan 2026 verification). climate_sensor has no Z2M pid for this mfr."
+    },
+    {
+      "id": "a2erlvb8-qa-1ch-2ch",
+      "mfr": [
+        "_TZ3210_a2erlvb8",
+        "_tz3210_a2erlvb8"
+      ],
+      "productId": [
+        "TS0002"
+      ],
+      "canonicalDriver": "switch_2gang",
+      "forbidMode": "couple",
+      "sources": [
+        "z2m"
+      ],
+      "notes": "2026-10-11: Z2M qa.ts — _TZ3210_a2erlvb8+TS0002 = QA QARZ2LR 2-channel; +TS000F = QARZ1DC 1-channel (stays on switch_1gang). Mfr on both switch drivers; GangCountAdapter (lib/data/gang-patterns.json) resolves the gang count at runtime (Koen Kanters and contributors)."
+    },
+    {
+      "id": "a2erlvb8-qa-1ch-ts000f",
+      "mfr": [
+        "_TZ3210_a2erlvb8",
+        "_tz3210_a2erlvb8"
+      ],
+      "productId": [
+        "TS000F"
+      ],
+      "canonicalDriver": "switch_1gang",
+      "forbidMode": "couple",
+      "sources": [
+        "z2m"
+      ],
+      "notes": "2026-10-11: Z2M qa.ts QARZ1DC 1-channel (_TZ3210_a2erlvb8+TS000F). Sibling of the TS0002 2-channel on switch_2gang; GangCountAdapter hides gang2 if it lands on switch_2gang (Koen Kanters and contributors)."
     }
   ],
   "entries": {
