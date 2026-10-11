@@ -2,6 +2,17 @@
   "_why": "Couples removed ON PURPOSE from a driver. Bots (auto-fix-all, master->stable/bastien sync, enrich/promote) must never add them back. Checked by tools/ci/automation-couple-guard.js (DENY_READDED). Case-insensitive. Add an entry whenever a human-reviewed fix removes a couple.",
   "removals": [
     {
+      "driver": "button_wireless_4",
+      "mfr": [
+        "_TZ3000_bgtzm4ny",
+        "_tz3000_bgtzm4ny",
+        "_TZ3000_BGTZM4NY",
+        "_tz3000_BGTZM4NY"
+      ],
+      "why": "2026-10-11 user decision: HOBEIAN ZG-101ZS and _TZ3000_bgtzm4ny+TS0044 are the same Star Ring 4-gang battery scene remote (Z2M ZG-101ZS page; romasku #237); both live in scene_switch_4 (battery + 4 buttons single/double/hold)",
+      "source": "z2m + romasku#237"
+    },
+    {
       "driver": "contact_sensor",
       "mfr": [
         "_TZE200_vrcfo4i0"
@@ -85,16 +96,8 @@
       "mfr": [
         "_TZ3000_7dcddnye"
       ],
-      "why": "W4 2026-10-11: Z2M TS0501A whitelabel Lidl HG06462A filament bulb; owner light_dimmable_ts0501a",
+      "why": "W4 2026-10-11: Z2M TS0501A whitelabel Lidl HG06462A filament bulb; owner light_dimmable_ts0501a (dimmer_wall_1gang has no TS0501A)",
       "source": "zigbee-herdsman-converters tuya.ts TS0501A"
-    },
-    {
-      "driver": "climate_sensor",
-      "mfr": [
-        "_TZ3000_lmcp6b0a"
-      ],
-      "why": "TS0003 Zemismart 3-gang wall switch (JohanBendz#795 interview + Johan verification); climate_sensor has no Z2M pid for it; owner switch_3_gang",
-      "source": "b30d72bbc4 (2026-10-11 W4)"
     },
     {
       "driver": "curtain_motor",
@@ -102,10 +105,22 @@
         "_TZE200_hyhl5y36",
         "_TZE204_ycke4deo",
         "_TZE284_ozf4e02o",
-        "_TZE284_rlytpmij"
+        "_TZE284_rlytpmij",
+        "_tze200_hyhl5y36",
+        "_tze204_ycke4deo",
+        "_tze284_ozf4e02o",
+        "_tze284_rlytpmij",
+        "_TZE200_HYHL5Y36",
+        "_tze200_HYHL5Y36",
+        "_TZE204_YCKE4DEO",
+        "_tze204_YCKE4DEO",
+        "_TZE284_OZF4E02O",
+        "_tze284_OZF4E02O",
+        "_TZE284_RLYTPMIJ",
+        "_tze284_RLYTPMIJ"
       ],
-      "why": "P2698: mmWave radar presence mfrs (presence_sensor_radar owns them); fleet-enrich 42fff9dcaf re-bled them onto curtain_motor on master (ported pre-emptively; guard is case-insensitive)",
-      "source": "P2698 / master bcddaba9c7"
+      "why": "P2698: mmWave radar presence mfrs (presence_sensor_radar owns them); fleet-enrich 42fff9dcaf re-bled them onto curtain_motor",
+      "source": "P2698"
     },
     {
       "scope": "mfs_db",
@@ -124,20 +139,121 @@
       "source": "P2613 / 4b4b118912"
     },
     {
+      "driver": "climate_sensor",
+      "mfr": [
+        "_tz3000_egvb1p2g",
+        "_tz3000_lrfvzq1e",
+        "_tz3210_m3mxv66l",
+        "_tz3290_s6ezpa3j",
+        "_TZ3000_egvb1p2g",
+        "_TZ3000_lrfvzq1e",
+        "_TZ3210_m3mxv66l",
+        "_TZ3290_s6ezpa3j",
+        "_TZ3000_EGVB1P2G",
+        "_tz3000_EGVB1P2G",
+        "_TZ3000_LRFVZQ1E",
+        "_tz3000_LRFVZQ1E",
+        "_TZ3210_M3MXV66L",
+        "_tz3210_M3MXV66L",
+        "_TZ3290_S6EZPA3J",
+        "_tz3290_S6EZPA3J"
+      ],
+      "why": "lost-couples W4/pass 3 (977b54e97f, d7243a8120): moved to the exact driver per Z2M/multi-source evidence (couple-driver-pins); not a loss",
+      "source": "prep/master-lost-couples"
+    },
+    {
+      "driver": "dimmer_wall_1gang",
+      "mfr": [
+        "_tz3000_j6adk9id",
+        "_TZ3000_J6ADK9ID",
+        "_TZ3000_j6adk9id",
+        "_tz3000_J6ADK9ID"
+      ],
+      "why": "lost-couples W4/pass 3 (977b54e97f, d7243a8120): moved to the exact driver per Z2M/multi-source evidence (couple-driver-pins); not a loss",
+      "source": "prep/master-lost-couples"
+    },
+    {
+      "driver": "motion_sensor",
+      "mfr": [
+        "_TZE200_01fvxamo",
+        "_TZE200_iq4ygaai",
+        "_tze200_01fvxamo",
+        "_tze200_iq4ygaai",
+        "_TZE200_01FVXAMO",
+        "_tze200_01FVXAMO",
+        "_TZE200_IQ4YGAAI",
+        "_tze200_IQ4YGAAI"
+      ],
+      "why": "lost-couples W4/pass 3 (977b54e97f, d7243a8120): moved to the exact driver per Z2M/multi-source evidence (couple-driver-pins); not a loss",
+      "source": "prep/master-lost-couples"
+    },
+    {
+      "driver": "smoke_sensor3",
+      "mfr": [
+        "_TZE200_qcasmfan",
+        "_TZE200_QCASMFAN",
+        "_tze200_qcasmfan",
+        "_tze200_QCASMFAN"
+      ],
+      "why": "lost-couples W4/pass 3 (977b54e97f, d7243a8120): moved to the exact driver per Z2M/multi-source evidence (couple-driver-pins); not a loss",
+      "source": "prep/master-lost-couples"
+    },
+    {
+      "driver": "switch_1gang",
+      "mfr": [
+        "_tyzb01_4mdqxxnn",
+        "_tyzb01_m6ec2pgj",
+        "_tz3210_a2erlvb8",
+        "_TYZB01_4MDQXXNN",
+        "_TYZB01_4mdqxxnn",
+        "_tyzb01_4MDQXXNN",
+        "_TYZB01_M6EC2PGJ",
+        "_TYZB01_m6ec2pgj",
+        "_tyzb01_M6EC2PGJ",
+        "_TZ3210_A2ERLVB8",
+        "_TZ3210_a2erlvb8",
+        "_tz3210_A2ERLVB8"
+      ],
+      "why": "lost-couples W4/pass 3 (977b54e97f, d7243a8120): moved to the exact driver per Z2M/multi-source evidence (couple-driver-pins); not a loss",
+      "source": "prep/master-lost-couples"
+    },
+    {
+      "driver": "wall_switch_1gang_1way",
+      "mfr": [
+        "_TZ3000_FDXIHPP7",
+        "_TZ3000_fdxihpp7",
+        "_tz3000_fdxihpp7",
+        "_tz3000_FDXIHPP7"
+      ],
+      "why": "lost-couples W4/pass 3 (977b54e97f, d7243a8120): moved to the exact driver per Z2M/multi-source evidence (couple-driver-pins); not a loss",
+      "source": "prep/master-lost-couples"
+    },
+    {
+      "driver": "water_leak_sensor",
+      "mfr": [
+        "_tz3000_lbtpiody",
+        "_TZ3000_lbtpiody",
+        "_TZ3000_LBTPIODY",
+        "_tz3000_LBTPIODY"
+      ],
+      "why": "lost-couples W4/pass 3 (977b54e97f, d7243a8120): moved to the exact driver per Z2M/multi-source evidence (couple-driver-pins); not a loss",
+      "source": "prep/master-lost-couples"
+    },
+    {
+      "driver": "climate_sensor",
+      "mfr": [
+        "_TZ3000_lmcp6b0a"
+      ],
+      "why": "TS0003 Zemismart 3-gang wall switch (JohanBendz#795 interview + Johan verification); climate_sensor has no Z2M pid for it; owner switch_3_gang",
+      "source": "c4fb32f3de (2026-10-11 W4)"
+    },
+    {
       "driver": "sensor_motion_presence",
       "mfr": [
         "_TZE200_p6fuhvez"
       ],
       "why": "2026-10-11: TS0225 = HOBEIAN ZG-225Z gas sensor (Z2M hobeian.ts + sprut/Hub#4328 interview IAS zoneType 43 gas) → owner gas_sensor",
       "source": "lost-couples 2026-10-11"
-    },
-    {
-      "driver": "switch_1gang",
-      "mfr": [
-        "_TZ3210_a2erlvb8"
-      ],
-      "why": "2026-10-11: single owner switch_2gang as on master (977b54e97f/d7243a8120); TS000F 1-ch handled by GangCountAdapter gang-patterns",
-      "source": "lost-couples W4"
     },
     {
       "driver": "contact_sensor",
@@ -174,6 +290,54 @@
       ],
       "why": "2026-10-11: TS0044 4-gang remote (Johan + deCONZ) → button_wireless_4",
       "source": "lost-couples 2026-10-11 Johan + deCONZ (dresden-elektronik devices/tuya)"
+    },
+    {
+      "driver": "usb_dongle_triple",
+      "mfr": [
+        "_TZ3000_z6fgd73r"
+      ],
+      "why": "2026-10-11: moved to dedicated driver switch_1gang (LELLKI XF-EU-S100-1-M 1-gang touch switch with power monitoring (Z2M lellki.ts, blakadder LELLKI_XF-EU-S100-1, wonjj6768 SmartThings zcl switches) — not a USB dongle)",
+      "source": "new driver"
+    },
+    {
+      "driver": "button_wireless_2",
+      "mfr": [
+        "_TYZB02_key8kk7r"
+      ],
+      "why": "2026-10-11: moved to dedicated driver button_wireless_3 (3-button remote: ZHA ts0043 TuyaSmartRemote0043NO + deCONZ Tuya3gangMap)",
+      "source": "new driver"
+    },
+    {
+      "driver": "button_wireless_2",
+      "mfr": [
+        "_TZ3000_rrjr1q0u"
+      ],
+      "why": "2026-10-11: moved to dedicated driver button_wireless_3 (3-button remote: deCONZ Tuya3gangMap + de_web_plugin switch list)",
+      "source": "new driver"
+    },
+    {
+      "driver": "water_leak_sensor_tuya",
+      "mfr": [
+        "_TZ3000_mugyhz0q"
+      ],
+      "why": "2026-10-11: moved to dedicated driver water_leak_sensor (Tuya 899WZ water leak detector (Z2M TS0207_water_leak_detector))",
+      "source": "new driver"
+    },
+    {
+      "driver": "water_leak_sensor_tuya",
+      "mfr": [
+        "_TZ3000_0s9gukzt"
+      ],
+      "why": "2026-10-11: moved to dedicated driver water_leak_sensor (Nous E4 water leakage sensor (Z2M TS0207_water_leak_detector))",
+      "source": "new driver"
+    },
+    {
+      "driver": "button_wireless_2",
+      "mfr": [
+        "_TZ3000_zl1kmjqx"
+      ],
+      "why": "2026-10-11: moved to dedicated driver climate_sensor (temperature/humidity sensor RSH-HS06_1 / IH-K009 (Z2M tuya.ts, ZHA ty0201))",
+      "source": "new driver"
     },
     {
       "driver": "switch_2_gang",
@@ -213,6 +377,23 @@
         "_TZ3000_qewo8dlz"
       ],
       "why": "2026-10-11: moved to dedicated driver switch_3_gang (wired 3-gang switch (deCONZ TS0013 device file))",
+      "source": "new driver"
+    },
+    {
+      "driver": "valve_controller_5zone",
+      "mfr": [
+        "_TZ3000_j0ktmul1",
+        "_tz3000_j0ktmul1"
+      ],
+      "pid": "TS011F",
+      "why": "2026-10-11: folded into switch_4gang (5 gangs via GangCountAdapter pattern); valve_controller_5zone held after AggregateError #3536/#3537/#3540-pattern"
+    },
+    {
+      "driver": "usb_dongle_triple",
+      "mfr": [
+        "_TZ3000_j0ktmul1"
+      ],
+      "why": "2026-10-11: moved to dedicated driver valve_controller_5zone (AutomatOn AUT000069 5-zone valves/UFH controller, 5 ZCL onOff endpoints (Z2M automaton.ts, PR #5579, z2m #16992; Z2S_Library))",
       "source": "new driver"
     },
     {
@@ -336,32 +517,20 @@
       "source": "second-source round"
     },
     {
+      "driver": "remote_button_wireless",
+      "mfr": [
+        "_TZ3000_fa9mlvja"
+      ],
+      "why": "2026-10-11 W4: _TZ3000_fa9mlvja is IH-K663 smart button (TS0041) -> wall_remote_1_gang",
+      "source": "second-source round"
+    },
+    {
       "driver": "wall_remote_1_gang",
       "mfr": [
         "_TZ3000_fa9mlvja"
       ],
       "why": "2026-10-11 W4: IH-K663 smart button TS0041 (Z2M tuya.ts) single owner button_wireless_1 (existing pin)",
       "source": "one-source round"
-    },
-    {
-      "driver": "button_wireless_4",
-      "mfr": [
-        "_TZ3000_bgtzm4ny",
-        "_tz3000_bgtzm4ny",
-        "_TZ3000_BGTZM4NY",
-        "_tz3000_BGTZM4NY"
-      ],
-      "why": "2026-10-11 user decision: HOBEIAN ZG-101ZS and _TZ3000_bgtzm4ny+TS0044 are the same Star Ring 4-gang battery scene remote (Z2M ZG-101ZS page; romasku #237); both live in scene_switch_4 (battery + 4 buttons single/double/hold)",
-      "source": "z2m + romasku#237"
-    },
-    {
-      "driver": "usb_dongle_triple",
-      "mfr": [
-        "_TZ3000_j0ktmul1",
-        "_tz3000_j0ktmul1"
-      ],
-      "pid": "TS011F",
-      "why": "2026-10-11 fold: AutomatOn 5-zone lives on switch_4gang only"
     },
     {
       "driver": "curtain_motor",
@@ -384,6 +553,27 @@
       ],
       "why": "2026-10-11 one-source: Nova Digital ZBCMR-01 roller (_TZE600_ogyg1y6b|TS0105) sole owner curtain_motor (Z2M + Hubitat)",
       "source": "z2m ZBCMR-01 + hubitat zemismart-zigbee-blind"
+    },
+    {
+      "driver": "soil_sensor",
+      "productId": [
+        "TS0105",
+        "ts0105",
+        "Ts0105"
+      ],
+      "why": "2026-10-11: TS0105 is Nova Digital ZBCMR roller (ogyg1y6b/5cu64znk), not soil; strip junk pid from soil_sensor",
+      "source": "z2m ZBCMR-01/02"
+    },
+    {
+      "driver": "curtain_motor_shutter",
+      "mfr": [
+        "_TZE600_5cu64znk",
+        "_tze600_5cu64znk",
+        "_TZE600_5CU64ZNK",
+        "_tze600_5CU64ZNK"
+      ],
+      "why": "2026-10-11: ZBCMR-02 sole owner curtain_motor (same family as ogyg1y6b)",
+      "source": "z2m ZBCMR-02"
     }
   ]
 }

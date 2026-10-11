@@ -71,6 +71,27 @@
       }
     },
     {
+      "id": "p2605b-nkjintbl-tze284-ambiguous",
+      "mfr": [
+        "_TZE284_nkjintbl",
+        "_tze284_nkjintbl"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": null,
+      "forbiddenDrivers": [
+        "button_wireless_plug",
+        "switch_2gang",
+        "switch_1gang",
+        "switch_3gang",
+        "switch_4gang"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "P2605b: no external or Homey evidence for a _TZE284_nkjintbl device (2026-10-01 search across converters, quirks, edge drivers, issues). Keep forbidden until an interview exists — do not invent."
+    },
+    {
       "id": "novadigital-dqy15zxy-curtain",
       "mfr": [
         "_TZE204_dqy15zxy",
@@ -1526,7 +1547,7 @@
         "wall_switch_4_gang"
       ],
       "protocol": "zcl",
-      "notes": "z2m IH-K663 smart button. A battery remote, not a mains 4-gang wall switch. 2026-10-11: Z2M IH-K663 is TS0041 (1 button) → canonical button_wireless_1 (P189 retired).",
+      "notes": "z2m IH-K663 smart button. A battery remote, not a mains 4-gang wall switch. 2026-10-11: Z2M IH-K663 is TS0041 (1 button); remote_button_wireless emptied by one-source round → canonical button_wireless_1.",
       "sources": [
         "z2m-herdsman",
         "P189"
@@ -6554,6 +6575,29 @@
       "doNotTouch": true
     },
     {
+      "id": "hobeian-zg101zs-scene",
+      "mfr": [
+        "HOBEIAN",
+        "hobeian",
+        "Hobeian"
+      ],
+      "productId": [
+        "ZG-101ZS"
+      ],
+      "canonicalDriver": "scene_switch_4",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "button_wireless_1",
+        "presence_sensor_radar",
+        "generic_tuya",
+        "button_wireless_4"
+      ],
+      "forbidMode": "couple",
+      "source": "p2430-hobeian-fleet",
+      "notes": "P2430: HOBEIAN Star Ring 4-gang scene switch couple lock. 2026-10-11 user decision: scene_switch_4 sole owner (Z2M 'Star Ring 4 Gang Scene Switch'); button_wireless_4 must not claim it.",
+      "doNotTouch": true
+    },
+    {
       "id": "hobeian-zg229z-siren",
       "mfr": [
         "HOBEIAN",
@@ -8062,36 +8106,109 @@
       "notes": "W4 curated removal 2026-10-11: Zemismart 3-gang TS0003 wall switch (interview in JohanBendz#795, Johan 2026 verification). climate_sensor has no Z2M pid for this mfr."
     },
     {
-      "id": "a2erlvb8-qa-1ch-2ch",
+      "id": "lead-z6fgd73r-switch_1gang",
       "mfr": [
-        "_TZ3210_a2erlvb8",
-        "_tz3210_a2erlvb8"
+        "_TZ3000_z6fgd73r",
+        "_tz3000_z6fgd73r"
       ],
       "productId": [
-        "TS0002"
+        "TS011F"
       ],
-      "canonicalDriver": "switch_2gang",
+      "canonicalDriver": "switch_1gang",
       "forbidMode": "couple",
       "sources": [
-        "z2m"
+        "z2m",
+        "blakadder",
+        "wonjj6768 SmartThings"
       ],
-      "notes": "2026-10-11: Z2M qa.ts — _TZ3210_a2erlvb8+TS0002 = QA QARZ2LR 2-channel; +TS000F = QARZ1DC 1-channel. Single owner switch_2gang (as master); GangCountAdapter resolves the gang count (Koen Kanters and contributors)."
+      "notes": "2026-10-11: LELLKI XF-EU-S100-1-M 1-gang touch switch with power monitoring (Z2M lellki.ts, blakadder LELLKI_XF-EU-S100-1, wonjj6768 SmartThings zcl switches) — not a USB dongle"
     },
     {
-      "id": "a2erlvb8-qa-1ch-ts000f",
+      "id": "johan-only-_tyzb02_key8kk7r",
       "mfr": [
-        "_TZ3210_a2erlvb8",
-        "_tz3210_a2erlvb8"
+        "_TYZB02_key8kk7r",
+        "_tyzb02_key8kk7r"
       ],
       "productId": [
-        "TS000F"
+        "TS0043"
       ],
-      "canonicalDriver": "switch_2gang",
+      "canonicalDriver": "button_wireless_3",
       "forbidMode": "couple",
       "sources": [
+        "johan",
+        "zha",
+        "deconz"
+      ],
+      "notes": "2026-10-11: 3-button remote: ZHA ts0043 TuyaSmartRemote0043NO + deCONZ Tuya3gangMap"
+    },
+    {
+      "id": "johan-only-_tz3000_rrjr1q0u",
+      "mfr": [
+        "_TZ3000_rrjr1q0u",
+        "_tz3000_rrjr1q0u"
+      ],
+      "productId": [
+        "TS0043"
+      ],
+      "canonicalDriver": "button_wireless_3",
+      "forbidMode": "couple",
+      "sources": [
+        "johan",
+        "deconz"
+      ],
+      "notes": "2026-10-11: 3-button remote: deCONZ Tuya3gangMap + de_web_plugin switch list"
+    },
+    {
+      "id": "johan-only-_tz3000_mugyhz0q",
+      "mfr": [
+        "_TZ3000_mugyhz0q",
+        "_tz3000_mugyhz0q"
+      ],
+      "productId": [
+        "TS0207"
+      ],
+      "canonicalDriver": "water_leak_sensor",
+      "forbidMode": "couple",
+      "sources": [
+        "johan",
         "z2m"
       ],
-      "notes": "2026-10-11: Z2M qa.ts QARZ1DC 1-channel (_TZ3210_a2erlvb8+TS000F). Single owner switch_2gang like master (977b54e97f/d7243a8120); GangCountAdapter (gang-patterns TS000F=1) hides gang2 once the device confirms 1 gang (Koen Kanters and contributors)."
+      "notes": "2026-10-11: Tuya 899WZ water leak detector (Z2M TS0207_water_leak_detector)"
+    },
+    {
+      "id": "johan-only-_tz3000_0s9gukzt",
+      "mfr": [
+        "_TZ3000_0s9gukzt",
+        "_tz3000_0s9gukzt"
+      ],
+      "productId": [
+        "TS0207"
+      ],
+      "canonicalDriver": "water_leak_sensor",
+      "forbidMode": "couple",
+      "sources": [
+        "johan",
+        "z2m"
+      ],
+      "notes": "2026-10-11: Nous E4 water leakage sensor (Z2M TS0207_water_leak_detector)"
+    },
+    {
+      "id": "johan-only-_tz3000_zl1kmjqx",
+      "mfr": [
+        "_TZ3000_zl1kmjqx",
+        "_tz3000_zl1kmjqx"
+      ],
+      "productId": [
+        "TS0201"
+      ],
+      "canonicalDriver": "climate_sensor",
+      "forbidMode": "couple",
+      "sources": [
+        "johan",
+        "z2m",
+        "zha"
+      ],
+      "notes": "2026-10-11: temperature/humidity sensor RSH-HS06_1 / IH-K009 (Z2M tuya.ts, ZHA ty0201)"
     },
     {
       "id": "w4z-_tyzb01_ncutbjdi-TS0003",
@@ -8262,6 +8379,24 @@
         "z2m"
       ],
       "notes": "2026-10-11: WSD500A temp-humidity (Z2M tuya.ts + deCONZ)"
+    },
+    {
+      "id": "newdrv-valve_controller_5zone",
+      "mfr": [
+        "_TZ3000_j0ktmul1",
+        "_tz3000_j0ktmul1"
+      ],
+      "productId": [
+        "TS011F"
+      ],
+      "canonicalDriver": "switch_4gang",
+      "forbidMode": "couple",
+      "sources": [
+        "z2m",
+        "Z2S_Library"
+      ],
+      "notes": "2026-10-11: AutomatOn AUT000069 5-zone valves/UFH controller, 5 ZCL onOff endpoints (Z2M automaton.ts, PR #5579, z2m #16992; Z2S_Library)",
+      "note": "2026-10-11 fold: valve_controller_5zone held (Athom AggregateError); couple ships via switch_4gang, 5 gangs via GangCountAdapter."
     },
     {
       "id": "w4n-_tyzb01_bagt1e4o-TS0014",
@@ -8530,6 +8665,55 @@
       "notes": "2026-10-11: metering smart plug TS011F_plug_1"
     },
     {
+      "id": "a2erlvb8-qa-1ch-2ch",
+      "mfr": [
+        "_TZ3210_a2erlvb8",
+        "_tz3210_a2erlvb8"
+      ],
+      "productId": [
+        "TS0002"
+      ],
+      "canonicalDriver": "switch_2gang",
+      "forbidMode": "couple",
+      "sources": [
+        "z2m"
+      ],
+      "notes": "2026-10-11: Z2M qa.ts — _TZ3210_a2erlvb8+TS0002 = QA QARZ2LR 2-channel; +TS000F = QARZ1DC 1-channel. Single owner switch_2gang (as master); GangCountAdapter resolves the gang count (Koen Kanters and contributors)."
+    },
+    {
+      "id": "a2erlvb8-qa-1ch-ts000f",
+      "mfr": [
+        "_TZ3210_a2erlvb8",
+        "_tz3210_a2erlvb8"
+      ],
+      "productId": [
+        "TS000F"
+      ],
+      "canonicalDriver": "switch_2gang",
+      "forbidMode": "couple",
+      "sources": [
+        "z2m"
+      ],
+      "notes": "2026-10-11: Z2M qa.ts QARZ1DC 1-channel (_TZ3210_a2erlvb8+TS000F). Single owner switch_2gang like master (977b54e97f/d7243a8120); GangCountAdapter (gang-patterns TS000F=1) hides gang2 once the device confirms 1 gang (Koen Kanters and contributors)."
+    },
+    {
+      "id": "bgtzm4ny-ts0044-star-ring-scene",
+      "mfr": [
+        "_TZ3000_bgtzm4ny",
+        "_tz3000_bgtzm4ny"
+      ],
+      "productId": [
+        "TS0044"
+      ],
+      "canonicalDriver": "scene_switch_4",
+      "forbiddenDrivers": [
+        "button_wireless_4"
+      ],
+      "forbidMode": "couple",
+      "source": "z2m ZG-101ZS + romasku#237",
+      "notes": "2026-10-11 user decision: same hardware as HOBEIAN ZG-101ZS (TLSR8253 battery 4-button, single/double/hold); both couples in scene_switch_4."
+    },
+    {
       "id": "w4n-_tze200_aj0oxo1i-TS0225",
       "mfr": [
         "_TZE200_aj0oxo1i",
@@ -8626,46 +8810,6 @@
       "notes": "2026-10-11: QS-Zigbee-D02-TRIAC-LN 1-gang dimmer module"
     },
     {
-      "id": "hobeian-zg101zs-scene",
-      "mfr": [
-        "HOBEIAN",
-        "hobeian",
-        "Hobeian"
-      ],
-      "productId": [
-        "ZG-101ZS"
-      ],
-      "canonicalDriver": "scene_switch_4",
-      "forbiddenDrivers": [
-        "switch_1gang",
-        "button_wireless_1",
-        "presence_sensor_radar",
-        "generic_tuya",
-        "button_wireless_4"
-      ],
-      "forbidMode": "couple",
-      "source": "p2430-hobeian-fleet",
-      "notes": "P2430: HOBEIAN Star Ring 4-gang scene switch couple lock. 2026-10-11 user decision: scene_switch_4 sole owner (Z2M 'Star Ring 4 Gang Scene Switch'); button_wireless_4 must not claim it.",
-      "doNotTouch": true
-    },
-    {
-      "id": "bgtzm4ny-ts0044-star-ring-scene",
-      "mfr": [
-        "_TZ3000_bgtzm4ny",
-        "_tz3000_bgtzm4ny"
-      ],
-      "productId": [
-        "TS0044"
-      ],
-      "canonicalDriver": "scene_switch_4",
-      "forbiddenDrivers": [
-        "button_wireless_4"
-      ],
-      "forbidMode": "couple",
-      "source": "z2m ZG-101ZS + romasku#237",
-      "notes": "2026-10-11 user decision: same hardware as HOBEIAN ZG-101ZS (TLSR8253 battery 4-button, single/double/hold); both couples in scene_switch_4."
-    },
-    {
       "id": "p-wrmhp6b3-cs201z-soil-not-curtain",
       "mfr": [
         "_TZE200_wrmhp6b3",
@@ -8718,6 +8862,157 @@
         "hubitat:zemismart-zigbee-blind"
       ],
       "notes": "Nova Digital ZBCMR-01 roller blind. Z2M fingerprint TS0105|_TZE600_ogyg1y6b (also listed under TS0601_cover_2 whiteLabel). Not a 3-gang switch despite TS0105 used by other TZE600 switches."
+    },
+    {
+      "id": "p-5cu64znk-zbcmr02-shutter-ts0105",
+      "mfr": [
+        "_TZE600_5cu64znk",
+        "_tze600_5cu64znk",
+        "_TZE600_5CU64ZNK",
+        "_tze600_5CU64ZNK"
+      ],
+      "productId": [
+        "TS0105"
+      ],
+      "canonicalDriver": "curtain_motor",
+      "forbiddenDrivers": [
+        "curtain_motor_shutter",
+        "soil_sensor",
+        "curtain_module",
+        "switch_3gang"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "sources": [
+        "z2m:ZBCMR-02 zhc#12177"
+      ],
+      "notes": "Nova Digital ZBCMR-02 roller TS0105."
+    },
+    {
+      "id": "johan-_tz3000_85czd6fy-ts0207",
+      "manufacturerName": [
+        "_TZ3000_85czd6fy",
+        "_tz3000_85czd6fy",
+        "_TZ3000_85CZD6FY",
+        "_tz3000_85CZD6FY"
+      ],
+      "productId": [
+        "TS0207"
+      ],
+      "canonicalDriver": "water_leak_sensor",
+      "forbiddenDrivers": [],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "source": "Johan README Water Detector + Z2M TS0207 family",
+      "notes": "2026-10-11 one-source Johan (+Z2M/ZHA where noted)"
+    },
+    {
+      "id": "johan-_tz3000_ww9i3e0y-ts0207",
+      "manufacturerName": [
+        "_TZ3000_ww9i3e0y",
+        "_tz3000_ww9i3e0y",
+        "_TZ3000_WW9I3E0Y",
+        "_tz3000_WW9I3E0Y"
+      ],
+      "productId": [
+        "TS0207"
+      ],
+      "canonicalDriver": "water_leak_sensor",
+      "forbiddenDrivers": [],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "source": "Johan README Flood Sensor; Z2M TS0207 water_leak",
+      "notes": "2026-10-11 one-source Johan (+Z2M/ZHA where noted)"
+    },
+    {
+      "id": "johan-_tyzb02_key8kk7r-ts0043",
+      "manufacturerName": [
+        "_TYZB02_key8kk7r",
+        "_tyzb02_key8kk7r",
+        "_TYZB02_KEY8KK7R",
+        "_tyzb02_KEY8KK7R"
+      ],
+      "productId": [
+        "TS0043"
+      ],
+      "canonicalDriver": "button_wireless_3",
+      "forbiddenDrivers": [],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "source": "Johan 3 Gang Wall Remote; ZHA #663 interview TS0043",
+      "notes": "2026-10-11 one-source Johan (+Z2M/ZHA where noted)"
+    },
+    {
+      "id": "johan-_tz3000_rrjr1q0u-ts0043",
+      "manufacturerName": [
+        "_TZ3000_rrjr1q0u",
+        "_tz3000_rrjr1q0u",
+        "_TZ3000_RRJR1Q0U",
+        "_tz3000_RRJR1Q0U"
+      ],
+      "productId": [
+        "TS0043"
+      ],
+      "canonicalDriver": "button_wireless_3",
+      "forbiddenDrivers": [],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "source": "Johan 3 Gang Wall Remote exact couple",
+      "notes": "2026-10-11 one-source Johan (+Z2M/ZHA where noted)"
+    },
+    {
+      "id": "johan-_tz3000_yw5tvzsk-ts0043",
+      "manufacturerName": [
+        "_TZ3000_yw5tvzsk",
+        "_tz3000_yw5tvzsk",
+        "_TZ3000_YW5TVZSK",
+        "_tz3000_YW5TVZSK"
+      ],
+      "productId": [
+        "TS0043"
+      ],
+      "canonicalDriver": "button_wireless_3",
+      "forbiddenDrivers": [],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "source": "Johan 3 Gang Wall Remote exact couple",
+      "notes": "2026-10-11 one-source Johan (+Z2M/ZHA where noted)"
+    },
+    {
+      "id": "johan-_tyzb01_bagt1e4o-ts0014",
+      "manufacturerName": [
+        "_TYZB01_bagt1e4o",
+        "_tyzb01_bagt1e4o",
+        "_TYZB01_BAGT1E4O",
+        "_tyzb01_BAGT1E4O"
+      ],
+      "productId": [
+        "TS0014"
+      ],
+      "canonicalDriver": "switch_4gang",
+      "forbiddenDrivers": [],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "source": "Johan 4 Gang Wall Switch; Z2M PR #2597 TS0014 (ledger wrongly had TS0044)",
+      "notes": "2026-10-11 one-source Johan (+Z2M/ZHA where noted)"
+    },
+    {
+      "id": "johan-_tz3000_e98krvvk-ts0012",
+      "manufacturerName": [
+        "_TZ3000_e98krvvk",
+        "_tz3000_e98krvvk",
+        "_TZ3000_E98KRVVK",
+        "_tz3000_E98KRVVK"
+      ],
+      "productId": [
+        "TS0012"
+      ],
+      "canonicalDriver": "switch_2gang",
+      "forbiddenDrivers": [],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "source": "Johan 2 Gang Wall Switch; romasku BSEED TS0012 (ledger wrongly had TS0002/1gang)",
+      "notes": "2026-10-11 one-source Johan (+Z2M/ZHA where noted)"
     }
   ],
   "entries": {
