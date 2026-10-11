@@ -112,6 +112,7 @@ describe('automation couple guard', () => {
     assert.ok(r.pins.length > 0 && r.deny.length > 0);
     const curated = JSON.parse(fs.readFileSync(path.join(ROOT, 'config/architecture/curated-couple-removals.json'), 'utf8'));
     for (const rem of curated.removals) {
+      if (!rem.driver) continue; // scope:'mfs_db' modelId rules have no single driver
       const c = path.join(ROOT, 'drivers', rem.driver, 'driver.compose.json');
       if (!fs.existsSync(c)) continue;
       const m = JSON.parse(fs.readFileSync(c, 'utf8')).zigbee.manufacturerName.map((x) => x.toLowerCase());
@@ -127,3 +128,16 @@ describe('automation couple guard', () => {
     }
   });
 });
+
+// WHY(2026-10-11): curated removals are intended shrinks, not GOLDEN_LOST.
+{
+  const { test } = require('node:test');
+  const assert2 = require('node:assert/strict');
+  test('curated removals load mfr deny + mfs_db modelId prune rules', () => {
+    const { loadRules } = require('../../tools/ci/automation-couple-guard.js');
+    const r = loadRules();
+    assert2.ok(r.deny.some((d) => d.driver === 'curtain_motor' && d.mfr === '_tze200_hyhl5y36'));
+    assert2.ok(r.mfsJunk.some((j) => j.drivers.has('button_wireless_2') && j.re.test('01MINIZB')));
+    assert2.ok(!r.mfsJunk.some((j) => j.re.test('TS0042')));
+  });
+}
