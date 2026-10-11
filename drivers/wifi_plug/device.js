@@ -1,6 +1,5 @@
 'use strict';
 const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
-const { handleDp17 } = require('../../lib/tuya-local/Dp17EnergyHandler');
 
 class WiFiPlugDevice extends TuyaLocalDevice {
   get mainsPowered() { return true; }
@@ -13,8 +12,7 @@ class WiFiPlugDevice extends TuyaLocalDevice {
       '14': { capability: 'unknown' },
       '15': { capability: 'unknown' },
       '16': { capability: 'unknown' },
-      // P2705: DP17 handled by Dp17EnergyHandler (auto-detect incremental Wh vs cumulative)
-      '17': { capability: null },
+      '17': { capability: 'meter_power', smartDivisor: true },
       '18': { capability: 'measure_current', smartDivisor: true },
       '19': { capability: 'measure_power', smartDivisor: true },
       '20': { capability: 'measure_voltage', smartDivisor: true },
@@ -39,12 +37,6 @@ class WiFiPlugDevice extends TuyaLocalDevice {
     this._destroyed = true;
     this.log('Device deleted, cleaning up');
     await super.onDeleted();
-  }
-
-  /** P2705: DP17 energy — per-device auto-detection, meter never drops */
-  async _processDPUpdate(dps) {
-    await super._processDPUpdate(dps);
-    try { await handleDp17(this, dps); } catch (e) { this.error('[DP17] energy handling failed:', e.message); }
   }
 }
 

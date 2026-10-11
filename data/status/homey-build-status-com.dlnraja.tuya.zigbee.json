@@ -1,0 +1,63 @@
+{
+  "checked_at": "2026-10-11T01:00:01.677Z",
+  "appId": "com.dlnraja.tuya.zigbee",
+  "pat": "valid",
+  "builds": [
+    {
+      "id": 3513,
+      "version": "9.0.1393",
+      "state": "processing_failed",
+      "channel": null,
+      "at": "2026-10-11T00:50:31.876Z"
+    },
+    {
+      "id": 3512,
+      "version": "9.0.1393",
+      "state": "waiting_for_files",
+      "channel": null,
+      "at": "2026-10-11T00:50:14.987Z"
+    },
+    {
+      "id": 3511,
+      "version": "9.0.1392",
+      "state": "processing_failed",
+      "channel": null,
+      "at": "2026-10-11T00:27:21.539Z"
+    },
+    {
+      "id": 3510,
+      "version": "9.0.1391",
+      "state": "processing_failed",
+      "channel": null,
+      "at": "2026-10-11T00:25:18.768Z"
+    },
+    {
+      "id": 3509,
+      "version": "9.0.1390",
+      "state": "processing_failed",
+      "channel": null,
+      "at": "2026-10-11T00:12:27.770Z"
+    },
+    {
+      "id": 3508,
+      "version": "9.0.1389",
+      "state": "processing_failed",
+      "channel": null,
+      "at": "2026-10-11T00:00:13.338Z"
+    },
+    {
+      "id": 3507,
+      "version": "9.0.1388",
+      "state": "processing_failed",
+      "channel": null,
+      "at": "2026-10-10T23:57:19.693Z"
+    },
+    {
+      "id": 3506,
+      "version": "9.0.1387",
+      "state": "processing_failed",
+      "channel": null,
+      "at": "2026-10-10T23:33:25.322Z"
+    }
+  ]
+}
