@@ -1387,6 +1387,18 @@
       "pid": "TS011F",
       "driverId": "plug_energy_monitor",
       "note": "metering smart plug TS011F_plug_1"
+    },
+    {
+      "mfr": "_TYZB01_ncutbjdi",
+      "pid": "TS0003",
+      "driverId": "switch_1gang",
+      "note": "Lonsonho QS-Zigbee-S05-LN 1-gang module (Z2M lonsonho.ts: single onOff)"
+    },
+    {
+      "mfr": "_TYZB01_aneiicmq",
+      "pid": "TS0003",
+      "driverId": "switch_1gang",
+      "note": "BlitzWolf BW-SS7_1gang (Z2M blitzwolf.ts: single onOff)"
     }
   ]
 }
