@@ -11,7 +11,7 @@ const { execFileSync } = require('child_process');
 
 const ROOT = process.cwd();
 const appId = process.argv[2] || JSON.parse(fs.readFileSync(path.join(ROOT, 'app.json'), 'utf8')).id;
-const maxMs = Number(process.env.ATHOM_IDLE_MAX_MS || 15 * 60 * 1000);
+const maxMs = Number(process.env.ATHOM_IDLE_MAX_MS || 12 * 60 * 1000); // step timeout 25 min: polls themselves can take ~2 min (G1 run 38101398363 was cancelled at 17)
 const stepMs = Number(process.env.ATHOM_IDLE_STEP_MS || 30 * 1000);
 
 // WHY(2026-10-11): #3512 sat in waiting_for_files forever after a hung CLI upload. Older than
