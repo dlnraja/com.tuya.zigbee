@@ -35,19 +35,22 @@ describe('P2634 TS0004 switch-module (ltt60asa / mmkbptmx / liygxtcq)', () => {
     assert.ok((c.zigbee.productId || []).includes('TS0004'));
   });
 
-  it('EP1 has E000/E001 + metering clusters (ZHA Switch_4G_Metering)', () => {
+  it('EP1-4 ZCL-safe: OnOff only, no required E000/E001/metering (P2652)', () => {
     const c = JSON.parse(fs.readFileSync(
       path.join(ROOT, 'drivers/switch_4gang/driver.compose.json'),
       'utf8',
     ));
     const ep1 = (c.zigbee.endpoints && c.zigbee.endpoints['1'] && c.zigbee.endpoints['1'].clusters) || [];
-    for (const need of [6, 57344, 57345, 1794, 2820]) {
-      assert.ok(ep1.includes(need), `EP1 missing cluster ${need}`);
+    // P2652 (222cd31a52): E000/E001/metering must NOT be required on EP1 — Homey match failed on
+    // plain TS0004; metering is read at runtime when present.
+    assert.ok(ep1.includes(6), 'EP1 missing OnOff');
+    for (const notRequired of [57344, 57345, 1794, 2820]) {
+      assert.ok(!ep1.includes(notRequired), `EP1 must not require cluster ${notRequired} (P2652)`);
     }
     for (const ep of ['2', '3', '4']) {
       const clusters = c.zigbee.endpoints[ep].clusters || [];
       assert.ok(clusters.includes(6), `EP${ep} OnOff required`);
-      assert.ok(clusters.includes(57345), `EP${ep} E001 required`);
+      assert.ok(!clusters.includes(57345), `EP${ep} must not require E001 (P2652)`);
     }
   });
 

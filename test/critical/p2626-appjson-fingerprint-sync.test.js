@@ -49,7 +49,10 @@ describe('P2626 app.json sacred-couple sync (no virtualdriver steal)', () => {
     assert.ok(hasPid(d.zigbee, 'TS0043'));
     for (const cap of ['button.1', 'button.2', 'button.3']) {
       assert.ok((d.capabilities || []).includes(cap), `missing ${cap}`);
-      assert.equal(d.capabilitiesOptions?.[cap]?.maintenanceAction, false, `${cap} must be device-view`);
+      // committed app.json is slimmed (options re-composed at build, same as accepted 9.0.1385):
+      // the device-view lock lives in driver.compose.json.
+      const compose = JSON.parse(fs.readFileSync(path.join(ROOT, 'drivers/button_wireless_3/driver.compose.json'), 'utf8'));
+      assert.equal(compose.capabilitiesOptions?.[cap]?.maintenanceAction, false, `${cap} must be device-view`);
     }
   });
 
