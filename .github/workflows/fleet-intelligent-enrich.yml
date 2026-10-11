@@ -150,12 +150,10 @@ jobs:
           # P2797: keep dual-couple removals, resync app.json fingerprints with compose, then block the
           # commit on drift, flow-title loss or a reverted couple resolution (ff1de8d2e).
           node tools/ci/enforce-dual-couple-legacy.js --sync
-          node tools/ci/compose-appjson-fingerprint-sync-gate.js
-          node tools/ci/flow-titleformatted-args-gate.js
+          # Shared list (scripts/ci/rules-gates.js, profile full = core + compose/app.json sync).
+          node scripts/ci/rules-gates.js --profile=full
           node --test test/critical/p2794-dual-couples.test.js test/critical/p2692-publish-heal-energy.test.js test/critical/p2433-hobeian-fodv6bkr-enrich.test.js
-          node tools/ci/p2138-sacred-couple-matrix-gate.js
           node tools/ci/p2519-anti-regression-enrich-gate.js
-          node tools/ci/anti-bot-regression-gate.js
           node tools/ci/free-scrape-budget.js --report >> "$GITHUB_STEP_SUMMARY" || true
 
       - name: Commit enrichment (skip ci)

@@ -66,8 +66,8 @@ jobs:
       - name: Install deps (for matrix gate)
         run: npm ci --prefer-offline --no-audit || npm install --no-audit
 
-      - name: P2138 sacred-couple matrix gate
-        run: node tools/ci/p2138-sacred-couple-matrix-gate.js
+      - name: Rules gates (shared, core)
+        uses: ./.github/actions/rules-gates
 
       - name: Run weekly sovereign loop
         env:

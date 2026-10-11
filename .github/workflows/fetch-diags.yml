@@ -125,6 +125,17 @@ jobs:
           echo '```' >> "$GITHUB_STEP_SUMMARY"
           echo "Note: Cursor Gmail plugin is IDE-only. CI uses GitHub secrets IMAP→OAuth→local." >> "$GITHUB_STEP_SUMMARY"
 
+      # WHY(2026-10-11): .github/state/** is gitignored, so the "commit state" step below never stages
+      # anything and the processed-message list was lost after every run (each run re-read the same
+      # 100 mails: "0 new FPs", "No ... state changes to push"). Persist it in the free Actions cache.
+      - name: Restore Gmail diagnostics state (cache)
+        uses: actions/cache/restore@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+        with:
+          path: |
+            .github/state/diagnostics-state.json
+            .github/state/diagnostics-report.json
+          key: gmail-diag-state-${{ github.run_id }}
+          restore-keys: gmail-diag-state-
       - name: Fetch Diagnostics from Gmail
         id: gmail_fetch
         env:
@@ -372,6 +383,15 @@ jobs:
           else
             echo "No sanitized diagnostic state changes to push"
           fi
+
+      - name: Save Gmail diagnostics state (cache)
+        if: always() && hashFiles('.github/state/diagnostics-state.json') != ''
+        uses: actions/cache/save@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+        with:
+          path: |
+            .github/state/diagnostics-state.json
+            .github/state/diagnostics-report.json
+          key: gmail-diag-state-${{ github.run_id }}
 
       # WHY(P2750): Fetch Homey Diagnostics had zero downloadable artifacts — IDE/agents
       # could only pull from Gmail Diagnostics Auto-Analysis. Mirror that upload set.

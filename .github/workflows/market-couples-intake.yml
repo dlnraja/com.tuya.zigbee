@@ -141,8 +141,8 @@ jobs:
             " >> $GITHUB_STEP_SUMMARY
           fi
 
-      - name: 🛡️ P2138 sacred-couple matrix
-        run: node tools/ci/p2138-sacred-couple-matrix-gate.js
+      - name: 🛡️ Rules gates (shared, core)
+        uses: ./.github/actions/rules-gates
 
       - name: 🧪 P2231/P2232 market couples tests
         run: node --test test/critical/p2231-market-couples-intake.test.js
