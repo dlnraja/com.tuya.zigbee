@@ -437,3 +437,11 @@ jobs:
             echo "## Validated only (HOMEY_PAT not set)" >> $GITHUB_STEP_SUMMARY
             echo "Add secret from https://tools.developer.homey.app/me" >> $GITHUB_STEP_SUMMARY
           fi
+
+      # WHY(2026-10-11): no false green — fail the run when Athom did not put this version in Test.
+      - name: Athom final state gate (red unless Test)
+        if: always() && steps.pub.outcome == 'success'
+        timeout-minutes: 15
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: node .github/scripts/assert-athom-final.js
