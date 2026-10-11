@@ -287,6 +287,14 @@
       ],
       "why": "2026-10-11: TS0044 4-gang remote (Johan + deCONZ) → button_wireless_4",
       "source": "lost-couples 2026-10-11 Johan + deCONZ (dresden-elektronik devices/tuya)"
+    },
+    {
+      "driver": "usb_dongle_triple",
+      "mfr": [
+        "_TZ3000_j0ktmul1"
+      ],
+      "why": "2026-10-11: moved to dedicated driver valve_controller_5zone (AutomatOn AUT000069 5-zone valves/UFH controller, 5 ZCL onOff endpoints (Z2M automaton.ts, PR #5579, z2m #16992; Z2S_Library))",
+      "source": "new driver"
     }
   ]
 }
