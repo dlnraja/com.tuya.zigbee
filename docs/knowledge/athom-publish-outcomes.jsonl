@@ -1,0 +1,41 @@
+{"build": 3482, "version": "9.0.1364", "state": "test", "stateMeta": null, "note": "baseline spi+whd02 held", "source": "progress-live/ATHOM_LIMITS (reconstructed 2026-10-11)"}
+{"build": 3483, "version": "9.0.1365", "state": "processing_failed", "stateMeta": "AggregateError", "note": "+deprecated wall_remote_4_gang", "source": "progress-live/ATHOM_LIMITS (reconstructed 2026-10-11)"}
+{"build": 3485, "version": "9.0.1366", "state": "test", "stateMeta": null, "note": "deprecated reverted", "source": "progress-live/ATHOM_LIMITS (reconstructed 2026-10-11)"}
+{"build": 3486, "version": "9.0.1367", "state": "test", "stateMeta": null, "note": "K1 +38B", "source": "progress-live/ATHOM_LIMITS (reconstructed 2026-10-11)"}
+{"build": 3487, "version": "9.0.1368", "state": "test", "stateMeta": null, "note": "K2 rebind on 319 drivers", "source": "progress-live/ATHOM_LIMITS (reconstructed 2026-10-11)"}
+{"build": 3489, "version": "9.0.1370", "state": "processing_failed", "stateMeta": "AggregateError", "note": "K3 whd02 only", "source": "progress-live/ATHOM_LIMITS (reconstructed 2026-10-11)"}
+{"build": 3490, "version": "9.0.1371", "state": "processing_failed", "stateMeta": "socket hang up", "note": "", "source": "progress-live/ATHOM_LIMITS (reconstructed 2026-10-11)"}
+{"build": 3491, "version": "9.0.1372", "state": "test", "stateMeta": null, "note": "R1 exact 3488 content", "source": "progress-live/ATHOM_LIMITS (reconstructed 2026-10-11)"}
+{"build": 3492, "version": "9.0.1373", "state": "processing_failed", "stateMeta": "socket hang up", "note": "", "source": "progress-live/ATHOM_LIMITS (reconstructed 2026-10-11)"}
+{"build": 3493, "version": "9.0.1374", "state": "test", "stateMeta": null, "note": "R3 radar", "source": "progress-live/ATHOM_LIMITS (reconstructed 2026-10-11)"}
+{"build": 3494, "version": "9.0.1375", "state": "processing_failed", "stateMeta": "socket hang up", "note": "P1", "source": "progress-live/ATHOM_LIMITS (reconstructed 2026-10-11)"}
+{"build": 3495, "version": "9.0.1376", "state": "test", "stateMeta": null, "note": "P1 retry, new deprecated driver id", "source": "progress-live/ATHOM_LIMITS (reconstructed 2026-10-11)"}
+{"build": 3496, "version": "9.0.1377", "state": "processing_failed", "stateMeta": "The specified key does not exist.", "note": "R5", "source": "progress-live/ATHOM_LIMITS (reconstructed 2026-10-11)"}
+{"build": 3497, "version": "9.0.1378", "state": "processing_failed", "stateMeta": "socket hang up", "note": "fold", "source": "progress-live/ATHOM_LIMITS (reconstructed 2026-10-11)"}
+{"build": 3499, "version": "9.0.1380", "state": "test", "stateMeta": null, "note": "fold-held-couples", "source": "progress-live/ATHOM_LIMITS (reconstructed 2026-10-11)"}
+{"build": 3504, "version": "9.0.1385", "state": "test", "stateMeta": null, "note": "", "source": "progress-live/ATHOM_LIMITS (reconstructed 2026-10-11)"}
+{"build": 3505, "version": "9.0.1386", "state": "processing_failed", "stateMeta": "AggregateError", "note": "near-identical to 1385", "source": "progress-live/ATHOM_LIMITS (reconstructed 2026-10-11)"}
+{"build": 3506, "version": "9.0.1387", "state": "processing_failed", "stateMeta": "AggregateError", "note": "", "source": "progress-live/ATHOM_LIMITS (reconstructed 2026-10-11)"}
+{"build": 3507, "version": "9.0.1388", "state": "processing_failed", "stateMeta": "invalid_state", "note": "", "source": "progress-live/ATHOM_LIMITS (reconstructed 2026-10-11)"}
+{"build": 3508, "version": "9.0.1389", "state": "processing_failed", "stateMeta": "invalid_state", "note": "", "source": "progress-live/ATHOM_LIMITS (reconstructed 2026-10-11)"}
+{"build": 3509, "version": "9.0.1390", "state": "processing_failed", "stateMeta": "socket hang up", "note": "", "source": "progress-live/ATHOM_LIMITS (reconstructed 2026-10-11)"}
+{"build": 3520, "version": "9.0.1401", "state": "processing_failed", "stateMeta": "socket hang up", "note": "", "source": "progress-live/ATHOM_LIMITS (reconstructed 2026-10-11)"}
+{"build": 3524, "version": "9.0.1405", "state": "processing_failed", "stateMeta": "AggregateError", "note": "SPI release", "source": "progress-live/ATHOM_LIMITS (reconstructed 2026-10-11)"}
+{"build": 3526, "version": "9.0.1407", "state": "processing_failed", "stateMeta": "AggregateError", "note": "SPI release retry", "source": "progress-live/ATHOM_LIMITS (reconstructed 2026-10-11)"}
+{"build": 3527, "version": "9.0.1408", "state": "processing_failed", "stateMeta": "AggregateError", "note": "whd02 release", "source": "progress-live/ATHOM_LIMITS (reconstructed 2026-10-11)"}
+{"build": 3528, "version": "9.0.1409", "state": "processing_failed", "stateMeta": "AggregateError", "note": "whd02 release retry", "source": "progress-live/ATHOM_LIMITS (reconstructed 2026-10-11)"}
+{"build": 3529, "version": "9.0.1410", "state": "processing_failed", "stateMeta": "socket hang up", "note": "", "source": "progress-live/ATHOM_LIMITS (reconstructed 2026-10-11)"}
+{"build": 3530, "version": "9.0.1411", "state": "processing_failed", "stateMeta": "socket hang up", "note": "", "source": "progress-live/ATHOM_LIMITS (reconstructed 2026-10-11)"}
+{"build": null, "version": "9.0.1412", "state": "test", "stateMeta": null, "note": "lead z6fgd73r", "source": "progress-live/ATHOM_LIMITS (reconstructed 2026-10-11)"}
+{"build": null, "version": "9.0.1413", "state": "test", "stateMeta": null, "note": "johan-only", "source": "progress-live/ATHOM_LIMITS (reconstructed 2026-10-11)"}
+{"build": null, "version": "9.0.1414", "state": "processing_failed", "stateMeta": null, "note": "content same as 1413+", "source": "progress-live/ATHOM_LIMITS (reconstructed 2026-10-11)"}
+{"build": null, "version": "9.0.1415", "state": "processing_failed", "stateMeta": null, "note": "", "source": "progress-live/ATHOM_LIMITS (reconstructed 2026-10-11)"}
+{"build": null, "version": "9.0.1416", "state": "test", "stateMeta": null, "note": "w4-z2m-pid", "source": "progress-live/ATHOM_LIMITS (reconstructed 2026-10-11)"}
+{"build": 3536, "version": "9.0.1417", "state": "processing_failed", "stateMeta": "AggregateError", "note": "+valve_controller_5zone", "source": "progress-live/ATHOM_LIMITS (reconstructed 2026-10-11)"}
+{"build": 3537, "version": "9.0.1418", "state": "processing_failed", "stateMeta": "AggregateError", "note": "valve retry", "source": "progress-live/ATHOM_LIMITS (reconstructed 2026-10-11)"}
+{"build": null, "version": "9.0.1419", "state": "test", "stateMeta": null, "note": "valve held", "source": "progress-live/ATHOM_LIMITS (reconstructed 2026-10-11)"}
+{"build": 3539, "version": "9.0.1420", "state": "test", "stateMeta": null, "note": "w4-second-source", "source": "progress-live/ATHOM_LIMITS (reconstructed 2026-10-11)"}
+{"build": 3540, "version": "9.0.1421", "state": "processing_failed", "stateMeta": "AggregateError", "note": "+remote_rgbcct_8zone", "source": "progress-live/ATHOM_LIMITS (reconstructed 2026-10-11)"}
+{"build": 3541, "version": "9.0.1422", "state": "processing_failed", "stateMeta": "AggregateError", "note": "rgbcct retry", "source": "progress-live/ATHOM_LIMITS (reconstructed 2026-10-11)"}
+{"build": 3543, "version": "9.0.1424", "state": "processing_failed", "stateMeta": "AggregateError", "note": "valve fold into switch_4gang, NO new driver id", "source": "progress-live/ATHOM_LIMITS (reconstructed 2026-10-11)"}
+{"build":null,"version":"9.0.1425","state":"test","stateMeta":null,"note":"valve fold retry, SAME content as 1424 (AggregateError) -> AggregateError is at least partly flaky","source":"run 38139104561"}

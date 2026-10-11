@@ -47,3 +47,12 @@ The new driver folders stay in source, held from the payload.
 ## Bug found while analysing
 remote_rgbcct_8zone triggers used the same name `zone` for an argument and a token (P2746 rule:
 token ≠ arg). Fixed in the fold (`zone_filter` argument).
+
+## Update 14:32 Paris — the theory is weakened: AggregateError is (at least partly) flaky
+- Valve fold (no new driver id; payload diff vs 1420 = switch_4gang +j0ktmul1/+TS011F and 3 compaction
+  pid swaps) → **9.0.1424 #3543 AggregateError**, then the same content re-dispatched → **9.0.1425 Test**.
+- Earlier: 1385 Test / 1386 (near-identical) AggregateError. Same-content flips exist.
+- Outcomes are now logged in `docs/knowledge/athom-publish-outcomes.jsonl` (40 builds reconstructed:
+  14 Test, 13 AggregateError, 11 transient). New-driver builds failed 2/2 each (SPI, whd02, valve,
+  rgbcct = 8/8), which still makes new driver ids look riskier than the base rate, but one failure alone
+  proves nothing. Rule: treat a single AggregateError as possibly transient; conclude only after 2 failures.
