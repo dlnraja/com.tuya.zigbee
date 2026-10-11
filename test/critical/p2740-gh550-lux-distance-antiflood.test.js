@@ -54,13 +54,14 @@ describe('P2740 GH#550 lux/distance antiflood + sacred rollback', () => {
     assert.ok(/motionDebounceMs:\s*200/.test(src));
   });
 
-  it('7dcddnye stays on dimmer_wall_1gang only (not bulb_dimmable)', () => {
+  it('7dcddnye on neither dimmer_wall_1gang nor bulb_dimmable (TS0501A light owner)', () => {
     const dim = JSON.parse(fs.readFileSync(
       path.join(ROOT, 'drivers/dimmer_wall_1gang/driver.compose.json'), 'utf8'));
     const bulb = JSON.parse(fs.readFileSync(
       path.join(ROOT, 'drivers/bulb_dimmable/driver.compose.json'), 'utf8'));
     const has = (c, m) => (c.zigbee.manufacturerName || []).some((x) => /7dcddnye/i.test(x));
-    assert.ok(has(dim, '_TZ3000_7dcddnye'));
+    // WHY(W4 user decision 2026-10-11): Z2M TS0501A = Lidl HG06462A bulb → owner light_dimmable_ts0501a; off dimmer_wall_1gang.
+    assert.ok(!has(dim, '_TZ3000_7dcddnye'));
     assert.ok(!has(bulb, '_TZ3000_7dcddnye'));
   });
 });

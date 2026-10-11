@@ -66,11 +66,17 @@ describe('P2671 HOBEIAN fleet recognition', () => {
 
   it('mfs_db has heobian + HOBEIAN with ZG-301Z-3CH / MOTO / IR01', () => {
     const mfs = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'mfs_db.json')));
+    // WHY(P2692 heobian≡hobeian key prune + P2368 no case-duplicate keys): mfs_db keeps ONE key
+    // per brand spelling; lookups are case-insensitive (P2677). Check caseless presence.
+    const keyFor = (form) => Object.keys(mfs).find((k) => k.toLowerCase() === form.toLowerCase());
     for (const form of FORMS) {
-      assert.ok(mfs[form], `mfs missing key ${form}`);
-      assert.ok(Array.isArray(mfs[form].modelIds), `${form}.modelIds`);
+      const k = keyFor(form);
+      assert.ok(k, `mfs missing key ${form} (any case)`);
+      assert.ok(Array.isArray(mfs[k].modelIds), `${k}.modelIds`);
     }
-    const models = mfs.HOBEIAN.modelIds.map((x) => String(x).toUpperCase());
+    const lower = Object.keys(mfs).map((k) => k.toLowerCase());
+    assert.equal(new Set(lower).size, lower.length, 'mfs_db must not carry case-duplicate keys');
+    const models = mfs[keyFor('HOBEIAN')].modelIds.map((x) => String(x).toUpperCase());
     for (const need of ['ZG-301Z-3CH', 'ZG-301Z-MOTO', 'ZG-IR01', 'ZG-210Z', 'ZG-227ZH']) {
       assert.ok(models.includes(need.toUpperCase()), `mfs missing ${need}`);
     }

@@ -46,7 +46,8 @@ describe('P2698 publish CI + diag dashboard soft shell', () => {
     const dim = JSON.parse(
       fs.readFileSync(path.join(ROOT, 'drivers/dimmer_wall_1gang/driver.compose.json'), 'utf8'),
     );
-    assert.ok((dim.zigbee.manufacturerName || []).some((m) => /7dcddnye/i.test(m)));
+    // WHY(W4 user decision 2026-10-11): Z2M TS0501A = Lidl HG06462A bulb → owner light_dimmable_ts0501a; off dimmer_wall_1gang.
+    assert.ok(!(dim.zigbee.manufacturerName || []).some((m) => /7dcddnye/i.test(m)));
   });
 
   it('radar presence mfrs stay off curtain_motor and on presence_sensor_radar', () => {

@@ -26,7 +26,6 @@
     "P2429 — Issue #540 BSEED 1-Gang Switch Module (_TZ3000_blhvsaqf / TS0001) drivers/switch_1gang/driver.compose.json contains _TZ3000_blhvsaqf and TS0001": { "why": "master routing of the BSEED module", "kind": "routing", "gap": true },
     "P2430 HOBEIAN Full Fleet Couple Routing & Anti-Misattribution Diagnostic consistency check passes with zero errors and zero warnings": { "why": "consistency checker expects the master driver set", "kind": "data" },
     "P2450 — kaflzta4 stuck dimmer + identity re-apply PhysicalButtonMixin identity hook covers kaflzta4 / P2450": { "why": "master PhysicalButtonMixin identity hook", "kind": "source" },
-    "P2517 market-apply sacred-couple rollback 7dcddnye not on dimmer_wall; pfbzs1an not on climate": { "why": "master market rollback applied on master drivers", "kind": "routing", "gap": true },
     "P2518 cap/flow/DP/RX enrich locks all drivers have flow.compose; coverage critical gaps 0": { "why": "flow.compose scaffolding is a master enrichment", "kind": "data", "gap": true },
     "MTG075/MTG035 relay presence radar routing pairs the relay family with presence_sensor_radar and keeps onoff available for flows": { "why": "master radar relay routing", "kind": "routing" },
     "flow cards integrity has flow cards": { "why": "threshold sized for master (1000+ cards)", "kind": "data" },
