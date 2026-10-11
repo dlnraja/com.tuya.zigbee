@@ -46,7 +46,8 @@ describe('P2182 TB25 wall-switch settings', () => {
     assert.ok(ids.includes('inching'));
     assert.ok(ids.includes('backlight_mode'));
     assert.ok(!ids.includes('countdown'));
-    assert.ok(compose.devices && compose.devices.secondSwitch);
+    // WHY(P2455 68de05268b, GH #544): wired dual relay is onoff + onoff.gang2 on ONE device (sub-devices removed).
+    assert.ok(compose.capabilities.includes('onoff') && compose.capabilities.includes('onoff.gang2'));
   });
 
   it('3-gang subdevice driver is TS0003/TS0013 only and has sibling + inching, no countdown', () => {
@@ -58,8 +59,9 @@ describe('P2182 TB25 wall-switch settings', () => {
     for (const g of compose.settings || []) {
       for (const c of g.children || []) {ids.push(c.id);}
     }
-    assert.deepStrictEqual([...(compose.zigbee.productId || [])].sort(), ['TS0003', 'TS0013'].sort());
-    assert.ok(!compose.zigbee.productId.includes('TS0601'));
+    // WHY(P2465 ff11815887): Star Feather 3-gang is TS0601 (_TZE* EF00 couples only) on this driver.
+    assert.deepStrictEqual([...(compose.zigbee.productId || [])].sort(), ['TS0003', 'TS0013', 'TS0601'].sort());
+    assert.ok(compose.zigbee.manufacturerName.filter((m) => !/^_tz3000_/i.test(m)).every((m) => /^_tze2\d\d_/i.test(m)));
     assert.ok(ids.includes('connected_siblings'));
     assert.ok(ids.includes('traffic_stats'));
     assert.ok(ids.includes('inching'));
