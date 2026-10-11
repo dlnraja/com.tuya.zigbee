@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-11T20:42:22.753Z",
+ "generated": "2026-10-11T20:59:52.696Z",
  "drivers": 393,
  "snapshot": {
   "air_purifier": {
@@ -399,15 +399,15 @@
    "pidSha": "c4343290bac9e455"
   },
   "curtain_motor": {
-   "mfr": 276,
-   "pid": 47,
-   "mfrSha": "cf761180dfa01729",
-   "pidSha": "735b9403d1d2fceb"
+   "mfr": 277,
+   "pid": 48,
+   "mfrSha": "539c28d7a99b743b",
+   "pidSha": "00ba96ff94eb4bb5"
   },
   "curtain_motor_shutter": {
-   "mfr": 24,
+   "mfr": 23,
    "pid": 44,
-   "mfrSha": "1a6a323e10524d5c",
+   "mfrSha": "dfa8050fee5126dd",
    "pidSha": "167ad4e6d48fc2fa"
   },
   "curtain_motor_tilt": {

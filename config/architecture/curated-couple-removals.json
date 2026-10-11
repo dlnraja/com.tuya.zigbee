@@ -542,6 +542,27 @@
       ],
       "why": "2026-10-11 one-source: Z2M CS-201Z soil (fingerprint with npj9bug3) + Hubitat kkossev Soil_Coolo — not a curtain motor",
       "source": "z2m CS-201Z + hubitat kkossev"
+    },
+    {
+      "driver": "curtain_motor_shutter",
+      "mfr": [
+        "_TZE600_ogyg1y6b",
+        "_tze600_ogyg1y6b",
+        "_TZE600_OGYG1Y6B",
+        "_tze600_OGYG1Y6B"
+      ],
+      "why": "2026-10-11 one-source: Nova Digital ZBCMR-01 roller (_TZE600_ogyg1y6b|TS0105) sole owner curtain_motor (Z2M + Hubitat)",
+      "source": "z2m ZBCMR-01 + hubitat zemismart-zigbee-blind"
+    },
+    {
+      "driver": "soil_sensor",
+      "productId": [
+        "TS0105",
+        "ts0105",
+        "Ts0105"
+      ],
+      "why": "2026-10-11: TS0105 is Nova Digital ZBCMR roller (ogyg1y6b/5cu64znk), not soil; strip junk pid from soil_sensor",
+      "source": "z2m ZBCMR-01/02"
     }
   ]
 }
