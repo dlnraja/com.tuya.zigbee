@@ -43,6 +43,11 @@ env:
   SHADOW_FORUM: "1"
   # P2542 forfait gate: no paid/remote AI on Gmail diag path from cron
   GMAIL_DIAG_AI_MAX: '0'
+  AI_ENSEMBLE: 'false'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
+  LOCAL_SMART_LEARN: 'true'
+  LOCAL_ENERGY_LEARN: 'true'
 
 jobs:
   matrix-prep:
