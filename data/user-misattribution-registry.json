@@ -8114,6 +8114,176 @@
         "z2m"
       ],
       "notes": "2026-10-11: Z2M qa.ts QARZ1DC 1-channel (_TZ3210_a2erlvb8+TS000F). Single owner switch_2gang like master (977b54e97f/d7243a8120); GangCountAdapter (gang-patterns TS000F=1) hides gang2 once the device confirms 1 gang (Koen Kanters and contributors)."
+    },
+    {
+      "id": "w4z-_tyzb01_ncutbjdi-TS0003",
+      "mfr": [
+        "_TYZB01_ncutbjdi",
+        "_tyzb01_ncutbjdi"
+      ],
+      "productId": [
+        "TS0003"
+      ],
+      "canonicalDriver": "switch_1gang",
+      "forbidMode": "couple",
+      "sources": [
+        "johan",
+        "z2m"
+      ],
+      "notes": "2026-10-11: Lonsonho QS-Zigbee-S05-LN 1-gang module (Z2M lonsonho.ts: single onOff)"
+    },
+    {
+      "id": "w4z-_tyzb01_aneiicmq-TS0003",
+      "mfr": [
+        "_TYZB01_aneiicmq",
+        "_tyzb01_aneiicmq"
+      ],
+      "productId": [
+        "TS0003"
+      ],
+      "canonicalDriver": "switch_1gang",
+      "forbidMode": "couple",
+      "sources": [
+        "johan",
+        "z2m"
+      ],
+      "notes": "2026-10-11: BlitzWolf BW-SS7_1gang (Z2M blitzwolf.ts: single onOff)"
+    },
+    {
+      "id": "w4z-_tz3210_zxbtub8r-TS110E",
+      "mfr": [
+        "_TZ3210_zxbtub8r",
+        "_tz3210_zxbtub8r"
+      ],
+      "productId": [
+        "TS110E"
+      ],
+      "canonicalDriver": "dimmer_1_gang",
+      "forbidMode": "couple",
+      "sources": [
+        "johan",
+        "z2m"
+      ],
+      "notes": "2026-10-11: 1-channel dimmer TS110E_1gang_1 (Z2M tuya.ts)"
+    },
+    {
+      "id": "w4z-_tz3000_18ejxno0-TS0012",
+      "mfr": [
+        "_TZ3000_18ejxno0",
+        "_tz3000_18ejxno0"
+      ],
+      "productId": [
+        "TS0012"
+      ],
+      "canonicalDriver": "switch_2gang",
+      "forbidMode": "couple",
+      "sources": [
+        "johan",
+        "z2m"
+      ],
+      "notes": "2026-10-11: Moes ZS-EUB 2-gang wall switch (Z2M TS0012 + deCONZ)"
+    },
+    {
+      "id": "w4z-_tz3000_qewo8dlz-TS0013",
+      "mfr": [
+        "_TZ3000_qewo8dlz",
+        "_tz3000_qewo8dlz"
+      ],
+      "productId": [
+        "TS0013"
+      ],
+      "canonicalDriver": "switch_3_gang",
+      "forbidMode": "couple",
+      "sources": [
+        "johan",
+        "z2m"
+      ],
+      "notes": "2026-10-11: wired 3-gang switch (deCONZ TS0013 device file)"
+    },
+    {
+      "id": "w4z-_tz3000_qeuvnohg-TS011F",
+      "mfr": [
+        "_TZ3000_qeuvnohg",
+        "_tz3000_qeuvnohg"
+      ],
+      "productId": [
+        "TS011F"
+      ],
+      "canonicalDriver": "din_rail_switch",
+      "forbidMode": "couple",
+      "sources": [
+        "johan",
+        "z2m"
+      ],
+      "notes": "2026-10-11: Tongou TO-Q-SY1-JZT DIN relay with metering (Z2M tuya.ts + ZHA ts011f_plug)"
+    },
+    {
+      "id": "w4z-_tyzb01_iuepbmpv-TS0121",
+      "mfr": [
+        "_TYZB01_iuepbmpv",
+        "_tyzb01_iuepbmpv"
+      ],
+      "productId": [
+        "TS0121"
+      ],
+      "canonicalDriver": "smartplug",
+      "forbidMode": "couple",
+      "sources": [
+        "johan",
+        "z2m"
+      ],
+      "notes": "2026-10-11: Moes MS-104Z 1-gang module (Z2M moes.ts)"
+    },
+    {
+      "id": "w4z-_tz3210_iystcadi-TS0505B",
+      "mfr": [
+        "_TZ3210_iystcadi",
+        "_tz3210_iystcadi"
+      ],
+      "productId": [
+        "TS0505B"
+      ],
+      "canonicalDriver": "light_bulb_rgb_led",
+      "forbidMode": "couple",
+      "sources": [
+        "johan",
+        "z2m"
+      ],
+      "notes": "2026-10-11: Lidl Livarno light bar RGB+CCT (Z2M lidl.ts)"
+    },
+    {
+      "id": "w4z-_tz3000_saiqcn0y-TS0201",
+      "mfr": [
+        "_TZ3000_saiqcn0y",
+        "_tz3000_saiqcn0y"
+      ],
+      "productId": [
+        "TS0201"
+      ],
+      "canonicalDriver": "temphumidsensor3",
+      "forbidMode": "couple",
+      "sources": [
+        "johan",
+        "z2m"
+      ],
+      "notes": "2026-10-11: TH02Z/WSD500A temp-humidity (Z2M tuya.ts + deCONZ)"
+    },
+    {
+      "id": "w4z-_tz3000_xr3htd96-TS0201",
+      "mfr": [
+        "_TZ3000_xr3htd96",
+        "_tz3000_xr3htd96"
+      ],
+      "productId": [
+        "TS0201"
+      ],
+      "canonicalDriver": "temphumidsensor3",
+      "forbidMode": "couple",
+      "sources": [
+        "johan",
+        "z2m"
+      ],
+      "notes": "2026-10-11: WSD500A temp-humidity (Z2M tuya.ts + deCONZ)"
     }
   ],
   "entries": {

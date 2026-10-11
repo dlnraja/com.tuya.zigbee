@@ -182,6 +182,46 @@
       ],
       "why": "2026-10-11: TS0044 4-gang remote (Johan + deCONZ) → button_wireless_4",
       "source": "lost-couples 2026-10-11 Johan + deCONZ (dresden-elektronik devices/tuya)"
+    },
+    {
+      "driver": "switch_2_gang",
+      "mfr": [
+        "_TYZB01_ncutbjdi"
+      ],
+      "why": "2026-10-11: moved to dedicated driver switch_1gang (Lonsonho QS-Zigbee-S05-LN 1-gang module (Z2M lonsonho.ts: single onOff))",
+      "source": "new driver"
+    },
+    {
+      "driver": "switch_2_gang",
+      "mfr": [
+        "_TYZB01_aneiicmq"
+      ],
+      "why": "2026-10-11: moved to dedicated driver switch_1gang (BlitzWolf BW-SS7_1gang (Z2M blitzwolf.ts: single onOff))",
+      "source": "new driver"
+    },
+    {
+      "driver": "presence_sensor_radar",
+      "mfr": [
+        "_TZ3210_zxbtub8r"
+      ],
+      "why": "2026-10-11: moved to dedicated driver dimmer_1_gang (1-channel dimmer TS110E_1gang_1 (Z2M tuya.ts))",
+      "source": "new driver"
+    },
+    {
+      "driver": "bulb_dimmable_dimmer",
+      "mfr": [
+        "_TZ3000_18ejxno0"
+      ],
+      "why": "2026-10-11: moved to dedicated driver switch_2gang (Moes ZS-EUB 2-gang wall switch (Z2M TS0012 + deCONZ))",
+      "source": "new driver"
+    },
+    {
+      "driver": "button_wireless_2",
+      "mfr": [
+        "_TZ3000_qewo8dlz"
+      ],
+      "why": "2026-10-11: moved to dedicated driver switch_3_gang (wired 3-gang switch (deCONZ TS0013 device file))",
+      "source": "new driver"
     }
   ]
 }
