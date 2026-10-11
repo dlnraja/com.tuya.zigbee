@@ -531,6 +531,17 @@
       ],
       "why": "2026-10-11 W4: IH-K663 smart button TS0041 (Z2M tuya.ts) single owner button_wireless_1 (existing pin)",
       "source": "one-source round"
+    },
+    {
+      "driver": "curtain_motor",
+      "mfr": [
+        "_TZE200_wrmhp6b3",
+        "_tze200_wrmhp6b3",
+        "_TZE200_WRMHP6B3",
+        "_tze200_WRMHP6B3"
+      ],
+      "why": "2026-10-11 one-source: Z2M CS-201Z soil (fingerprint with npj9bug3) + Hubitat kkossev Soil_Coolo — not a curtain motor",
+      "source": "z2m CS-201Z + hubitat kkossev"
     }
   ]
 }

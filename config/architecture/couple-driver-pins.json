@@ -493,6 +493,18 @@
       "pid": "TS110F",
       "source": "z2m lonsonho.ts",
       "regression": "W4 one-source couple 2026-10-11 (Johan mfr + independent source)"
+    },
+    {
+      "mfr": [
+        "_TZE200_wrmhp6b3",
+        "_tze200_wrmhp6b3",
+        "_TZE200_WRMHP6B3",
+        "_tze200_WRMHP6B3"
+      ],
+      "driver": "soil_sensor",
+      "pid": "TS0601",
+      "source": "Z2M COOLO CS-201Z (fingerprint _TZE200_wrmhp6b3|_TZE200_npj9bug3); Hubitat kkossev TS0601_Soil_Coolo 2026-04-22",
+      "regression": "Bulk curtain sync parked mfr on curtain_motor; Z2M/Hubitat say soil. One-source policy 2026-10-11."
     }
   ]
 }
