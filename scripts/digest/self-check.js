@@ -7,13 +7,13 @@
  *   <!-- self-check:BEGIN --> and <!-- self-check:END --> so other digests keep it.
  * - Never posts a comment (no e-mail), never commits, never publishes.
  * - Writes only when the report fingerprint changes (or DIGEST_FORCE=1 / FORCE=true).
- * - Budget: ≤ ~20 GitHub API calls (one commits page + one runs page per watched workflow).
+ * - Budget: ≲ 20 GitHub API calls (≤6 commits pages + one runs page per watched workflow).
  *
  * Sections:
  *   1. history sweep checkpoint progress (local files)
  *   2. scheduled producers: last scheduled run conclusion vs. commits carrying their tag in the
  *      last 72 h → flags "green but produced nothing"
- *   3. continuous-flow scheduled dry-run: last conclusion (kept on purpose, see WORKFLOW_AUDIT)
+ *   3. continuous-flow (manual only since 2026-10-11): last run of any event
  *
  * Local test: DIGEST_DRY_RUN=1 DIGEST_USE_GH_CLI=1 node scripts/digest/self-check.js
  */
@@ -25,6 +25,7 @@ const L = require('./lib');
 const ROOT = path.join(__dirname, '../..');
 const FORCE = L.FORCE || String(process.env.FORCE || '') === 'true';
 const WINDOW_H = 72;
+const COMMIT_PAGES = 6; // ≤600 commits scanned per run (API budget stays ≲ 20 calls)
 
 // workflow file → regex matching the commit subject it produces when it has something to write.
 // A third element marks workflows that are report-only by design (artifacts, no push step).
@@ -64,7 +65,14 @@ async function lastScheduledRun(file) {
 
 async function producerLines() {
   const since = new Date(Date.now() - WINDOW_H * 3600e3).toISOString();
-  const commits = (await L.gh(`/repos/${L.REPO}/commits?sha=master&since=${since}&per_page=100`)) || [];
+  // WHY: master often gets >100 commits in 72 h (version bumps, manual fixes), so one page hid every
+  // producer commit and flagged all of them "nothing written" (2026-10-11: 267 commits / 72 h).
+  const commits = [];
+  for (let page = 1; page <= COMMIT_PAGES; page++) {
+    const batch = (await L.gh(`/repos/${L.REPO}/commits?sha=master&since=${since}&per_page=100&page=${page}`)) || [];
+    commits.push(...batch);
+    if (batch.length < 100) break;
+  }
   const subjects = commits.map((c) => String((c.commit && c.commit.message) || '').split('\n')[0]);
   const rows = ['', `| Scheduled producer | Last scheduled run | Commits ${WINDOW_H} h | Flag |`, '|---|---|---|---|'];
   const idle = [];
@@ -79,16 +87,19 @@ async function producerLines() {
     rows.push(`| \`${file}\` | ${run ? `[${run.conclusion}](${run.url}) ${run.at.slice(0, 16).replace('T', ' ')}Z` : '—'} | ${n} | ${flag} |`);
   }
   rows.push('', idle.length
-    ? `_Idle producers are not always a bug (no new upstream data); see docs/progress/WORKFLOW_AUDIT_2026-10-10.md for the known causes._`
+    ? `_Idle producers are not always a bug (no new upstream data); see docs/workflows/AUTOMATION_COVERAGE.md for the known causes._`
     : '_Every scheduled producer wrote at least once in the window._');
   return rows;
 }
 
 async function continuousFlowLines() {
-  const run = await lastScheduledRun('continuous-flow.yml');
+  // Manual-only since 2026-10-11 (schedule removed, see continuous-flow.yml DECISION): report the
+  // last run of any event so a forgotten or failing manual apply still shows up here.
+  const j = await L.gh(`/repos/${L.REPO}/actions/workflows/continuous-flow.yml/runs?per_page=1`, { allow404: true });
+  const r = j && j.workflow_runs && j.workflow_runs[0];
   return [
     '',
-    `- continuous-flow (daily dry-run, kept: only place running the upstream-reference audit, shadow-mode v2, variant finder and multi-device detection): last **${run ? run.conclusion : 'n/a'}**${run ? ` ${run.at.slice(0, 10)}` : ''}. Apply only via workflow_dispatch \`mode=apply\`.`,
+    `- continuous-flow: manual \`workflow_dispatch\` only (daily dry-run removed 2026-10-11: hollow on CI, validate already runs on every push). Last run: **${r ? `${r.conclusion || r.status}** (${r.event}) ${r.created_at.slice(0, 10)}` : 'n/a**'}.`,
   ];
 }
 

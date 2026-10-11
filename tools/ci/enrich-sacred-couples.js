@@ -19,8 +19,11 @@
 const fs = require('fs');
 const path = require('path');
 
-const STATE_DIR = 'C:/Users/Dell/Documents/homey/master/.github/state';
-const MFS_DB = 'C:/Users/Dell/Documents/homey/master/data/mfs_db.json';
+// WHY: was a hard-coded local Windows path, so every CI run crashed with ENOENT (continuous-flow 2026-10).
+const ROOT = path.resolve(__dirname, '..', '..');
+const STATE_DIR = path.join(ROOT, '.github', 'state');
+const MFS_DB = path.join(ROOT, 'data', 'mfs_db.json');
+const DRY_RUN = String(process.env.DRY_RUN || '') === 'true';
 const OUTPUT_REPORT = path.join(STATE_DIR, 'sacred-couple-enrichment-report.json');
 
 function loadJson(p, fallback = null) {
@@ -143,7 +146,9 @@ function main() {
 
   // 5. Save back to mfs_db
   mfsDb.sacredCouples = sacredCouples;
-  fs.writeFileSync(MFS_DB, JSON.stringify(mfsDb, null, 2));
+  // Write only when something changed and not in DRY_RUN (never rewrite mfs_db for nothing).
+  if (!DRY_RUN && (added || enriched)) fs.writeFileSync(MFS_DB, JSON.stringify(mfsDb, null, 2));
+  fs.mkdirSync(STATE_DIR, { recursive: true });
   report.meta.finalSacredCouples = Object.keys(sacredCouples).length;
   report.meta.added = added;
   report.meta.enriched = enriched;
