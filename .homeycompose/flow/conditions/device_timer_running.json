@@ -1,0 +1,22 @@
+{
+  "id": "device_timer_running",
+  "title": {
+    "en": "Timer !{{is|is not}} running",
+    "fr": "Le minuteur !{{est|n'est pas}} en cours",
+    "nl": "Timer !{{loopt|loopt niet}}",
+    "de": "Timer !{{läuft|läuft nicht}}"
+  },
+  "titleFormatted": {
+    "en": "Timer of [[device]] !{{is|is not}} running",
+    "fr": "Le minuteur de [[device]] !{{est|n'est pas}} en cours",
+    "nl": "Timer van [[device]] !{{loopt|loopt niet}}",
+    "de": "Timer von [[device]] !{{läuft|läuft nicht}}"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "capabilities=onoff"
+    }
+  ]
+}
