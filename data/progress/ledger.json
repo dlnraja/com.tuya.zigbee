@@ -24911,6 +24911,62 @@
     "smart_knob"
    ],
    "note": "Z2M moes.ts ERS-10TZBVB-AA"
+  },
+  "lost-restore:_tz3210_m3mxv66l|ts0202": {
+   "status": "done",
+   "date": "2026-10-11",
+   "drivers": [
+    "motion_sensor"
+   ],
+   "note": "W4 climate_sensor (pids there: ck-tlsr8656-ss5-01(7014), ck-tlsr8656-ss5-02(7014), lumi.sensor_ht, lumi.sensor_ht.agl02, lumi.weather, rh3052\u2026)"
+  },
+  "lost-restore:_tz3290_s6ezpa3j|ts1201": {
+   "status": "done",
+   "date": "2026-10-11",
+   "drivers": [
+    "ir_blaster"
+   ],
+   "note": "W4 climate_sensor (pids there: ck-tlsr8656-ss5-01(7014), ck-tlsr8656-ss5-02(7014), lumi.sensor_ht, lumi.sensor_ht.agl02, lumi.weather, rh3052\u2026)"
+  },
+  "lost-restore:_tz3000_lbtpiody|ts0201": {
+   "status": "done",
+   "date": "2026-10-11",
+   "drivers": [
+    "temphumidsensor"
+   ],
+   "note": "W4 add"
+  },
+  "lost-restore:_tze200_qcasmfan|ts0601": {
+   "status": "done",
+   "date": "2026-10-11",
+   "drivers": [
+    "smoke_sensor"
+   ],
+   "note": "W4 smoke_sensor3 (pids there: ts0205\u2026)"
+  },
+  "lost-restore:_tz3000_j6adk9id|ts0222": {
+   "status": "done",
+   "date": "2026-10-11",
+   "drivers": [
+    "illuminance_sensor"
+   ],
+   "note": "W4 dimmer_wall_1gang (pids there: ts0001, ts0002, ts0003, ts0011, ts0012, ts0013\u2026)"
+  },
+  "lost-restore:_tyzb01_4mdqxxnn|ts0222": {
+   "status": "done",
+   "date": "2026-10-11",
+   "drivers": [
+    "illuminance_sensor"
+   ],
+   "note": "W4 switch_1gang (pids there: 01minizb, basiczbr3, s26r2zb, s31zb, ts0001, ts0001_power\u2026)"
+  },
+  "lost-restore:_tyzb01_m6ec2pgj|ts0222": {
+   "status": "done",
+   "date": "2026-10-11",
+   "drivers": [
+    "illuminance_sensor"
+   ],
+   "note": "W4 switch_1gang (pids there: 01minizb, basiczbr3, s26r2zb, s31zb, ts0001, ts0001_power\u2026)"
   }
  }
 }
