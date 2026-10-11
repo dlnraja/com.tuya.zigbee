@@ -34,12 +34,19 @@ function loadDriver(rel) {
     if (request === 'homey') {return { Device: FakeDevice, Driver: class {}, App: class {} };}
     return original.call(this, request, parent, isMain);
   };
+  // WHY(2026-10-11): in the full mocha run lib/tuya-local/TuyaLocalDevice is already cached on the REAL
+  // homey Device, so the driver bypassed FakeDevice ("this.log is not a function"). Load the base classes
+  // fresh under the fake too, then put the previous cache entries back.
+  const base = ['../../lib/tuya-local/TuyaLocalDevice', '../../lib/tuya-local/TuyaLocalDriver'].map((m) => require.resolve(m));
+  const saved = base.map((b) => require.cache[b]);
   try {
+    for (const b of base) {delete require.cache[b];}
     const p = require.resolve(rel);
     delete require.cache[p];
     return require(p);
   } finally {
     Module._load = original;
+    base.forEach((b, i) => { if (saved[i]) {require.cache[b] = saved[i];} else {delete require.cache[b];} });
   }
 }
 
