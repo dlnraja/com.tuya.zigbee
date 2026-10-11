@@ -32,3 +32,11 @@ Credit: Zigbee2MQTT/zigbee-herdsman-converters (Koen Kanters and contributors), 
 | FUT089Z fold → `button_wireless_4` | Check soak / port separately if missing | Check soak / port separately if missing |
 
 Still held on purpose: `_TZE600_ogyg1y6b`/TS0105 (no TS0105 driver — would cross-product); Johan mfrs with ambiguous pid.
+
+## Improve pass (same day, Grok hand-off)
+
+| Item | stable-v5 | bastien-home |
+|---|---|---|
+| AutomatOn `_TZ3000_j0ktmul1`/TS011F → `switch_4gang` + gang-pattern 5 | Ported (off `usb_dongle_triple`) | Ported (off `usb_dongle_triple`) |
+| HOBEIAN ZG-101ZS decision doc | Copied | Already present |
+| FUT089Z / HOBEIAN / one-source couple matrix | Parity Y | Parity Y |
