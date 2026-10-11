@@ -42,9 +42,14 @@ Module._load = function loadWithHomeyMocks(request, parent, isMain) {
   return originalLoad.call(this, request, parent, isMain);
 };
 
+// WHY: hermetic stub must not leak — snapshot the cache, restore the loader and evict modules
+// built against the fake zigbee-clusters (else TuyaE000BoundCluster etc. break later in the same mocha run).
+const __cacheBefore = new Set(Object.keys(require.cache));
 const VibrationSensorDevice = require('../../drivers/vibration_sensor/device');
 const EnrichedDPMappings = require('../../lib/tuya/EnrichedDPMappings');
 const { bootstrapUniversalLayers } = require('../../lib/layers/UniversalLayerBootstrap');
+Module._load = originalLoad;
+for (const k of Object.keys(require.cache)) { if (!__cacheBefore.has(k)) delete require.cache[k]; }
 
 describe('P2753 HOBEIAN Vibration/Tilt + Case-Insensitive DP Profiles + Late EF00', () => {
 
