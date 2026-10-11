@@ -8,8 +8,21 @@ const fs = require('fs');
 const path = require('path');
 const { TRANSIENT_RE } = require('./processing-failure-republish-check');
 
-function decide({ version, builds, alreadyRetried, idleWaited = false }) {
-  if (alreadyRetried) return { retry: false, reason: 'already a retry run' };
+// WHY(2026-10-11 user): AggregateError flakes (1424 F / 1425 T and 1426 F / 1427 T on identical content), so it
+// gets up to 2 bumped retries; transport failures keep 1. retryCount = retries already done in this chain.
+const MAX_AGG_RETRIES = 2;
+const MAX_TRANSIENT_RETRIES = 1;
+
+function parseRetryCount(v) {
+  const s = String(v == null ? '' : v).trim().toLowerCase();
+  if (s === 'true') return 1;
+  const n = parseInt(s, 10);
+  return Number.isFinite(n) && n > 0 ? n : 0;
+}
+
+function decide({ version, builds, alreadyRetried, retryCount, idleWaited = false }) {
+  const done = retryCount != null ? Number(retryCount) || 0 : (alreadyRetried ? 1 : 0);
+  if (done >= MAX_AGG_RETRIES) return { retry: false, reason: `retry budget exhausted (${done})` };
   const b = (builds || []).find((x) => String(x && x.version) === String(version));
   if (!b) return { retry: false, reason: `no Athom build for v${version}` };
   const state = String(b.state || '');
@@ -23,13 +36,14 @@ function decide({ version, builds, alreadyRetried, idleWaited = false }) {
   // Retry once, but only when this run's pre-upload Athom idle wait actually completed (else it would repeat).
   if (/invalid_state/i.test(meta)) {
     return idleWaited
-      ? { retry: true, kind: 'invalid_state', reason: `invalid_state after idle wait on v${version}` }
+      ? (done >= MAX_TRANSIENT_RETRIES ? { retry: false, kind: 'invalid_state', reason: 'already a retry run' } : { retry: true, kind: 'invalid_state', reason: `invalid_state after idle wait on v${version}` })
       : { retry: false, kind: 'invalid_state', reason: 'invalid_state without completed idle wait, no retry' };
   }
-  if (/AggregateError/i.test(meta)) return { retry: true, kind: 'AggregateError', reason: `AggregateError (flake check, single retry) on v${version}` };
+  if (/AggregateError/i.test(meta)) return { retry: true, kind: 'AggregateError', next: done + 1, reason: `AggregateError (flake check, retry ${done + 1}/${MAX_AGG_RETRIES}) on v${version}` };
   if (!TRANSIENT_RE.test(meta)) return { retry: false, kind: 'unknown', reason: `unknown failure: ${meta.slice(0, 120)}` };
+  if (done >= MAX_TRANSIENT_RETRIES) return { retry: false, reason: 'already a retry run' };
   const kind = /socket hang up/i.test(meta) ? 'socket hang up' : /specified key|nosuchkey/i.test(meta) ? 'specified key' : /enospc|no space/i.test(meta) ? 'ENOSPC' : 'transient';
-  return { retry: true, kind, reason: `transient (${meta.slice(0, 80)}) on v${version}` };
+  return { retry: true, kind, next: done + 1, reason: `transient (${meta.slice(0, 80)}) on v${version}` };
 }
 
 if (require.main === module) {
@@ -56,8 +70,9 @@ if (require.main === module) {
       });
     }
   } catch (_e) { /* no report */ }
-  const d = decide({ version, builds, alreadyRetried: process.env.TRANSIENT_RETRY === 'true', idleWaited: process.env.ATHOM_IDLE_WAITED === 'true' });
+  const d = decide({ version, builds, retryCount: parseRetryCount(process.env.TRANSIENT_RETRY), idleWaited: process.env.ATHOM_IDLE_WAITED === 'true' });
   console.log(`[transient-retry] ${d.retry ? 'RETRY' : 'skip'}: ${d.reason}`);
+  if (d.retry) console.log(`[transient-retry] NEXT=${d.next || 1}`);
   // Flake-rate log: one JSON line per published version outcome (committed by the bot commit step).
   try {
     const b = builds.find((x) => String(x && x.version) === String(version)) || {};
@@ -69,4 +84,4 @@ if (require.main === module) {
   if (process.env.GITHUB_OUTPUT) fs.appendFileSync(process.env.GITHUB_OUTPUT, `retry=${d.retry}\n`);
 }
 
-module.exports = { decide };
+module.exports = { decide, parseRetryCount, MAX_AGG_RETRIES };

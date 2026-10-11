@@ -1,13 +1,21 @@
 'use strict';
 const { test } = require('node:test');
 const assert = require('node:assert');
-const { decide } = require('../../.github/scripts/transient-publish-retry');
+const { decide, parseRetryCount } = require('../../.github/scripts/transient-publish-retry');
 const B = (state, stateMeta) => [{ version: '9.0.1', state, stateMeta }];
 test('retries once on socket hang up', () => assert.strictEqual(decide({ version: '9.0.1', builds: B('processing_failed', 'socket hang up') }).retry, true));
 test('retries once on S3 key does not exist', () => assert.strictEqual(decide({ version: '9.0.1', builds: B('processing_failed', 'The specified key does not exist.') }).retry, true));
-// WHY(2026-10-11 user): AggregateError alternates on near-identical content -> exactly ONE retry, never from a retry run.
+// WHY(2026-10-11 user): AggregateError flakes on identical content (1424F/1425T, 1426F/1427T) -> up to TWO bumped retries.
 test('retries AggregateError once', () => assert.strictEqual(decide({ version: '9.0.1', builds: B('processing_failed', 'AggregateError') }).retry, true));
-test('never retries AggregateError from a retry run', () => assert.strictEqual(decide({ version: '9.0.1', builds: B('processing_failed', 'AggregateError'), alreadyRetried: true }).retry, false));
+test('retries AggregateError a second time from the first retry run', () => {
+  const d = decide({ version: '9.0.1', builds: B('processing_failed', 'AggregateError'), alreadyRetried: true });
+  assert.strictEqual(d.retry, true); assert.strictEqual(d.next, 2);
+});
+test('never retries AggregateError after two retries', () => assert.strictEqual(decide({ version: '9.0.1', builds: B('processing_failed', 'AggregateError'), retryCount: 2 }).retry, false));
+test('retry count parsing (legacy true = 1)', () => {
+  assert.strictEqual(parseRetryCount('true'), 1); assert.strictEqual(parseRetryCount('false'), 0);
+  assert.strictEqual(parseRetryCount('2'), 2); assert.strictEqual(parseRetryCount(undefined), 0);
+});
 test('never retries a retry run', () => assert.strictEqual(decide({ version: '9.0.1', builds: B('processing_failed', 'socket hang up'), alreadyRetried: true }).retry, false));
 test('no retry when in Test', () => assert.strictEqual(decide({ version: '9.0.1', builds: B('test', {}) }).retry, false));
 
