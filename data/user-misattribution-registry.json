@@ -1519,14 +1519,14 @@
         "_TZ3000_fa9mlvja"
       ],
       "productId": [
-        "TS0043"
+        "TS0041"
       ],
-      "canonicalDriver": "remote_button_wireless",
+      "canonicalDriver": "button_wireless_1",
       "forbiddenDrivers": [
         "wall_switch_4_gang"
       ],
       "protocol": "zcl",
-      "notes": "z2m IH-K663 smart button. A battery remote, not a mains 4-gang wall switch.",
+      "notes": "z2m IH-K663 smart button. A battery remote, not a mains 4-gang wall switch. 2026-10-11: Z2M IH-K663 is TS0041 (1 button) → canonical button_wireless_1 (P189 retired).",
       "sources": [
         "z2m-herdsman",
         "P189"
@@ -6554,28 +6554,6 @@
       "doNotTouch": true
     },
     {
-      "id": "hobeian-zg101zs-scene",
-      "mfr": [
-        "HOBEIAN",
-        "hobeian",
-        "Hobeian"
-      ],
-      "productId": [
-        "ZG-101ZS"
-      ],
-      "canonicalDriver": "scene_switch_4",
-      "forbiddenDrivers": [
-        "switch_1gang",
-        "button_wireless_1",
-        "presence_sensor_radar",
-        "generic_tuya"
-      ],
-      "forbidMode": "couple",
-      "source": "p2430-hobeian-fleet",
-      "notes": "P2430: HOBEIAN Star Ring 4-gang scene switch couple lock.",
-      "doNotTouch": true
-    },
-    {
       "id": "hobeian-zg229z-siren",
       "mfr": [
         "HOBEIAN",
@@ -8646,6 +8624,46 @@
         "z2m lonsonho.ts"
       ],
       "notes": "2026-10-11: QS-Zigbee-D02-TRIAC-LN 1-gang dimmer module"
+    },
+    {
+      "id": "hobeian-zg101zs-scene",
+      "mfr": [
+        "HOBEIAN",
+        "hobeian",
+        "Hobeian"
+      ],
+      "productId": [
+        "ZG-101ZS"
+      ],
+      "canonicalDriver": "scene_switch_4",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "button_wireless_1",
+        "presence_sensor_radar",
+        "generic_tuya",
+        "button_wireless_4"
+      ],
+      "forbidMode": "couple",
+      "source": "p2430-hobeian-fleet",
+      "notes": "P2430: HOBEIAN Star Ring 4-gang scene switch couple lock. 2026-10-11 user decision: scene_switch_4 sole owner (Z2M 'Star Ring 4 Gang Scene Switch'); button_wireless_4 must not claim it.",
+      "doNotTouch": true
+    },
+    {
+      "id": "bgtzm4ny-ts0044-star-ring-scene",
+      "mfr": [
+        "_TZ3000_bgtzm4ny",
+        "_tz3000_bgtzm4ny"
+      ],
+      "productId": [
+        "TS0044"
+      ],
+      "canonicalDriver": "scene_switch_4",
+      "forbiddenDrivers": [
+        "button_wireless_4"
+      ],
+      "forbidMode": "couple",
+      "source": "z2m ZG-101ZS + romasku#237",
+      "notes": "2026-10-11 user decision: same hardware as HOBEIAN ZG-101ZS (TLSR8253 battery 4-button, single/double/hold); both couples in scene_switch_4."
     }
   ],
   "entries": {

@@ -1423,6 +1423,42 @@
       "pid": "TS110F",
       "driverId": "dimmer_1_gang",
       "note": "QS-Zigbee-D02-TRIAC-LN 1-gang dimmer module"
+    },
+    {
+      "mfr": "HOBEIAN",
+      "pid": "ZG-101ZS",
+      "driverId": "scene_switch_4",
+      "note": "2026-10-11 user decision: HOBEIAN Star Ring 4-gang scene switch, sole owner scene_switch_4 (Z2M)"
+    },
+    {
+      "mfr": "Wing",
+      "pid": "ZTH11-3.0",
+      "driverId": "climate_sensor",
+      "note": "P217 Wing ZTH11 — kept in payload by sacred-keep since re-inject no longer front-pins (2026-10-11)"
+    },
+    {
+      "mfr": "Wing",
+      "pid": "ZTH13-3.0",
+      "driverId": "climate_sensor",
+      "note": "P217 Wing ZTH13 — kept in payload by sacred-keep since re-inject no longer front-pins (2026-10-11)"
+    },
+    {
+      "mfr": "eWeLink",
+      "pid": "CK-TLSR8656-SS5-01(7014)",
+      "driverId": "climate_sensor",
+      "note": "P2631 eWeLink TH 7014 — kept in payload by sacred-keep since re-inject no longer front-pins (2026-10-11)"
+    },
+    {
+      "mfr": "eWeLink",
+      "pid": "CK-TLSR8656-SS5-02(7014)",
+      "driverId": "climate_sensor",
+      "note": "P2631 eWeLink TH 7014 — kept in payload by sacred-keep since re-inject no longer front-pins (2026-10-11)"
+    },
+    {
+      "mfr": "_TZ3000_bgtzm4ny",
+      "pid": "TS0044",
+      "driverId": "scene_switch_4",
+      "note": "2026-10-11: same Star Ring 4-gang remote as HOBEIAN ZG-101ZS (Z2M, romasku#237)"
     }
   ]
 }

@@ -56,13 +56,20 @@ describe('P2328 button forum RX / pairing', () => {
     }
   });
 
-  it('scene_switch_4 productIds are TS0044/TS1002 only (no knob soup)', () => {
+  it('scene_switch_4 productIds are TS0044/TS1002 + HOBEIAN ZG-101ZS only (no knob soup)', () => {
     const c = readJson('drivers/scene_switch_4/driver.compose.json');
     const pids = c.zigbee.productId || [];
-    // WHY(P99 692d86e669): lowercase pid case-forms are allowed; compare caseless.
-    assert.deepEqual([...new Set(pids.map((p) => p.toUpperCase()))].sort(), ['TS0044', 'TS1002'].sort());
+    // WHY(2026-10-11 user decision): HOBEIAN ZG-101ZS = Z2M 'Star Ring 4 Gang Scene Switch'; the sacred-couple
+    // rule picked scene_switch_4 as sole owner. Exactly that couple is allowed; knob pids (TS004F, ...) never.
+    // Lowercase pid case-forms allowed (P99): compare caseless.
+    assert.deepEqual([...new Set(pids.map((p) => String(p).toUpperCase()))].sort(), ['TS0044', 'TS1002', 'ZG-101ZS'].sort());
     const mfrs = c.zigbee.manufacturerName || [];
-    assert.ok(!mfrs.some((m) => /^hobeian$/i.test(m)));
+    assert.ok(mfrs.some((m) => /^hobeian$/i.test(m)), 'HOBEIAN owner of ZG-101ZS');
+    const bw4 = readJson('drivers/button_wireless_4/driver.compose.json').zigbee;
+    assert.ok(!(bw4.productId || []).some((p) => /^ZG-101ZS$/i.test(p)), 'button_wireless_4 must not claim ZG-101ZS');
+    // Same hardware (Z2M ZG-101ZS page; romasku #237): _TZ3000_bgtzm4ny + TS0044 lives in the same driver.
+    assert.ok(mfrs.some((m) => /bgtzm4ny/i.test(m)), 'bgtzm4ny on scene_switch_4');
+    assert.ok(!(bw4.manufacturerName || []).some((m) => /bgtzm4ny/i.test(m)), 'bgtzm4ny off button_wireless_4');
   });
 
   it('mfs_db wkai4ga5 locked to TS0044 battery remote', () => {
