@@ -20,14 +20,11 @@ describe('P2457 — switch_4gang no button clutter', () => {
     const app = JSON.parse(fs.readFileSync(path.join(ROOT, 'app.json'), 'utf8'));
     const d = app.drivers.find((x) => x.id === 'switch_4gang');
     assert.ok(d);
-    assert.deepStrictEqual(compose.capabilities, [
-      'onoff',
-      'onoff.gang2',
-      'onoff.gang3',
-      'onoff.gang4',
-      'measure_power',
-      'power_on_behavior',
-    ]);
+    // WHY(P2670 42b4c1afb7, deliberate): metering caps (meter_power/voltage/current) were added for
+    // energy variants; P2457's intent is relays + no phantom button caps.
+    for (const c of ['onoff', 'onoff.gang2', 'onoff.gang3', 'onoff.gang4', 'measure_power', 'power_on_behavior']) {
+      assert.ok(compose.capabilities.includes(c), c);
+    }
     assert.deepStrictEqual(d.capabilities, compose.capabilities);
     assert.ok(!compose.capabilities.some((c) => /^button/.test(c)));
     assert.ok(!d.capabilities.some((c) => /^button/.test(c)));
