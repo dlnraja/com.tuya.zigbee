@@ -1279,6 +1279,12 @@
       "pid": "TS000F",
       "driverId": "switch_1gang",
       "note": "WHD02 (#2257-era, switch_module_whd02 held) folded into switch_1gang; keep through publish compaction"
+    },
+    {
+      "mfr": "_TZ3000_j0ktmul1",
+      "pid": "TS011F",
+      "driverId": "valve_controller_5zone",
+      "note": "AutomatOn AUT000069 5-zone valves/UFH controller, 5 ZCL onOff endpoints (Z2M automaton.ts, PR #5579, z2m #16992; Z2S_Library)"
     }
   ]
 }

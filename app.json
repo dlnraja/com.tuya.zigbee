@@ -134844,7 +134844,6 @@
           "_tz3210_1ac",
           "_tz3210_2ac",
           "_tz3210_nhqka112",
-          "_tz3000_j0ktmul1",
           "_tz3000_z6fgd73r",
           "_tz3210_bep7ccew",
           "_tz3210_yvxjawlt",
@@ -134872,7 +134871,6 @@
           "_TZ3210_1AC",
           "_TZ3210_2AC",
           "_TZ3210_NHQKA112",
-          "_TZ3000_J0KTMUL1",
           "_TZ3000_Z6FGD73R",
           "_TZ3210_BEP7CCEW",
           "_TZ3210_YVXJAWLT",
@@ -134900,7 +134898,6 @@
           "_TZ3210_1ac",
           "_TZ3210_2ac",
           "_TZ3210_nhqka112",
-          "_TZ3000_j0ktmul1",
           "_TZ3000_z6fgd73r",
           "_TZ3210_bep7ccew",
           "_TZ3210_yvxjawlt",
@@ -134928,7 +134925,6 @@
           "_tz3210_1AC",
           "_tz3210_2AC",
           "_tz3210_NHQKA112",
-          "_tz3000_J0KTMUL1",
           "_tz3000_Z6FGD73R",
           "_tz3210_BEP7CCEW",
           "_tz3210_YVXJAWLT",
@@ -156348,6 +156344,156 @@
         }
       },
       "settings": []
+    },
+    {
+      "name": {
+        "en": "Valve / underfloor heating controller (5 zones)",
+        "fr": "Contrôleur vannes / plancher chauffant (5 zones)",
+        "nl": "Klep- / vloerverwarmingsregelaar (5 zones)",
+        "de": "Ventil- / Fußbodenheizungsregler (5 Zonen)"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.gang2",
+        "onoff.gang3",
+        "onoff.gang4",
+        "onoff.gang5"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "title": {
+            "en": "Zone 1",
+            "fr": "Zone 1",
+            "nl": "Zone 1",
+            "de": "Zone 1"
+          }
+        },
+        "onoff.gang2": {
+          "title": {
+            "en": "Zone 2",
+            "fr": "Zone 2",
+            "nl": "Zone 2",
+            "de": "Zone 2"
+          }
+        },
+        "onoff.gang3": {
+          "title": {
+            "en": "Zone 3",
+            "fr": "Zone 3",
+            "nl": "Zone 3",
+            "de": "Zone 3"
+          }
+        },
+        "onoff.gang4": {
+          "title": {
+            "en": "Zone 4",
+            "fr": "Zone 4",
+            "nl": "Zone 4",
+            "de": "Zone 4"
+          }
+        },
+        "onoff.gang5": {
+          "title": {
+            "en": "Zone 5",
+            "fr": "Zone 5",
+            "nl": "Zone 5",
+            "de": "Zone 5"
+          }
+        }
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "images": {
+        "small": "/drivers/valve_controller_5zone/assets/images/small.png",
+        "large": "/drivers/valve_controller_5zone/assets/images/large.png"
+      },
+      "energy": {
+        "approximation": {
+          "usageOn": 1,
+          "usageOff": 0.5
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_j0ktmul1",
+          "_tz3000_j0ktmul1"
+        ],
+        "productId": [
+          "TS011F"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
+          "2": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
+          "3": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
+          "4": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
+          "5": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/valve_controller_5zone/assets/icon.svg",
+          "instruction": {
+            "en": "Hold the pairing button for about 5 seconds until the LED blinks fast.",
+            "fr": "Maintenez le bouton d'appairage environ 5 secondes jusqu'à ce que la LED clignote rapidement.",
+            "nl": "Houd de koppelknop ongeveer 5 seconden ingedrukt tot de LED snel knippert.",
+            "de": "Halten Sie die Kopplungstaste etwa 5 Sekunden gedrückt, bis die LED schnell blinkt."
+          }
+        }
+      },
+      "id": "valve_controller_5zone"
     }
   ],
   "capabilities": {
