@@ -1,14 +1,14 @@
 {
  "cursor": {
   "21313": {
-   "tailId": 681336
+   "tailId": 779470
   },
   "26439": {
-   "tailId": 785106,
+   "tailId": 786497,
    "backfillId": 225894
   },
   "89271": {
-   "tailId": 408586,
+   "tailId": 412907,
    "backfillId": 171341
   },
   "140352": {
@@ -16,10 +16,10 @@
    "backfillId": 645389
   },
   "146735": {
-   "tailId": 768655
+   "tailId": 781609
   },
   "154077": {
-   "tailId": 782650
+   "tailId": 787303
   }
  },
  "entries": [
@@ -171,9 +171,12 @@
    "author": "Dietrich_Kassner",
    "at": "2026-09-27T10:01:23.590Z",
    "images": 2,
-   "ocr": "image-cap",
+   "ocr": "done",
    "mfrs": [],
-   "pids": []
+   "pids": [],
+   "dps": [
+    8
+   ]
   },
   {
    "id": "forum:21313#2780",
@@ -261,7 +264,7 @@
    "author": "Leon_Ligtenberg",
    "at": "2023-08-05T07:44:41.603Z",
    "images": 1,
-   "ocr": "image-cap",
+   "ocr": "done",
    "mfrs": [
     "_TZE200_mja3fuja"
    ],
@@ -319,7 +322,11 @@
    "images": 2,
    "ocr": "image-cap",
    "mfrs": [],
-   "pids": []
+   "pids": [],
+   "brands": [
+    "ZEMISMART",
+    "IMMAX"
+   ]
   },
   {
    "id": "forum:21313#1",
@@ -614,61 +621,252 @@
    "pids": [
     "TS0601"
    ]
+  },
+  {
+   "id": "forum:26439#5532",
+   "link": "https://community.homey.app/t/26439/5532",
+   "author": "Mates1134",
+   "at": "2026-10-08T14:48:53.968Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [
+    "_TZ3000_qja6nq5z"
+   ],
+   "pids": [
+    "TS004F"
+   ]
+  },
+  {
+   "id": "forum:26439#5534",
+   "link": "https://community.homey.app/t/26439/5534",
+   "author": "Dragan_Todorovic",
+   "at": "2026-10-09T06:54:18.803Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [
+    "_TZE200_crq3r3la"
+   ],
+   "pids": [],
+   "symptoms": [
+    "pairing"
+   ],
+   "quirkCandidates": [
+    "_TZE200_crq3r3la|?:pairing"
+   ],
+   "triage": "daily-resume"
+  },
+  {
+   "id": "forum:146735#475",
+   "link": "https://community.homey.app/t/146735/475",
+   "author": "smarthomesven",
+   "at": "2026-08-18T16:26:05.361Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [],
+   "pids": [],
+   "symptoms": [
+    "crash"
+   ],
+   "quirkCandidates": [],
+   "triage": "daily-resume"
+  },
+  {
+   "id": "forum:146735#479",
+   "link": "https://community.homey.app/t/146735/479",
+   "author": "smarthomesven",
+   "at": "2026-08-18T17:00:06.985Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [],
+   "pids": [],
+   "symptoms": [
+    "crash"
+   ],
+   "quirkCandidates": [],
+   "triage": "daily-resume"
+  },
+  {
+   "id": "forum:154077#465",
+   "link": "https://community.homey.app/t/154077/465",
+   "author": "Dietrich_Kassner",
+   "at": "2026-09-28T13:55:22.826Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [],
+   "pids": [],
+   "symptoms": [
+    "null-values"
+   ],
+   "quirkCandidates": [],
+   "triage": "daily-resume"
+  },
+  {
+   "id": "forum:154077#474",
+   "link": "https://community.homey.app/t/154077/474",
+   "author": "MrMagu",
+   "at": "2026-10-07T23:27:32.267Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [],
+   "pids": [],
+   "symptoms": [
+    "null-values"
+   ],
+   "quirkCandidates": [],
+   "triage": "daily-resume"
+  },
+  {
+   "id": "forum:154077#477",
+   "link": "https://community.homey.app/t/154077/477",
+   "author": "Andi",
+   "at": "2026-10-08T08:14:56.218Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [],
+   "pids": [],
+   "symptoms": [
+    "crash"
+   ],
+   "quirkCandidates": [],
+   "triage": "daily-resume"
+  },
+  {
+   "id": "forum:89271#641",
+   "link": "https://community.homey.app/t/89271/641",
+   "author": "Zdenek_Sadek",
+   "at": "2023-08-06T11:06:35.807Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [
+    "_TZ3000_qeuvnohg"
+   ],
+   "pids": [
+    "TS011F"
+   ]
+  },
+  {
+   "id": "forum:89271#642",
+   "link": "https://community.homey.app/t/89271/642",
+   "author": "Yannick_Eeckelaert",
+   "at": "2023-08-06T15:20:59.420Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [
+    "_TZE200_8ygsuhe1"
+   ],
+   "pids": [
+    "TS0601"
+   ]
+  },
+  {
+   "id": "forum:89271#643",
+   "link": "https://community.homey.app/t/89271/643",
+   "author": "Roald_Oien",
+   "at": "2023-08-06T23:49:19.310Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [
+    "_TZ3000_eyzb8yg3"
+   ],
+   "pids": [
+    "TS0121"
+   ]
+  },
+  {
+   "id": "forum:89271#644",
+   "link": "https://community.homey.app/t/89271/644",
+   "author": "Bo_Kjaergaard",
+   "at": "2023-08-09T11:33:32.081Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [
+    "_TZ3000_nkcobies"
+   ],
+   "pids": [
+    "TS011F"
+   ],
+   "brands": [
+    "LIDL"
+   ],
+   "symptoms": [
+    "pairing"
+   ],
+   "quirkCandidates": [
+    "_TZ3000_nkcobies|TS011F:pairing"
+   ],
+   "triage": "daily-resume"
+  },
+  {
+   "id": "forum:89271#645",
+   "link": "https://community.homey.app/t/89271/645",
+   "author": "melectro",
+   "at": "2023-08-09T13:56:26.836Z",
+   "images": 1,
+   "ocr": "image-cap",
+   "mfrs": [
+    "_TZ3000_lvhy15ix"
+   ],
+   "pids": [
+    "TS0003"
+   ],
+   "symptoms": [
+    "pairing"
+   ],
+   "quirkCandidates": [
+    "_TZ3000_lvhy15ix|TS0003:pairing"
+   ],
+   "triage": "daily-resume"
   }
  ],
  "candidates": [],
- "generated": "2026-10-10T08:34:06.973Z",
+ "generated": "2026-10-11T08:49:36.055Z",
  "note": "Structured leads from forum posts + screenshots (OCR). No post or OCR text stored. candidates = cited couples with no home driver here; verify real hardware (W4) before adding.",
  "lastRun": {
-  "at": "2026-10-10T08:34:06.973Z",
+  "at": "2026-10-11T08:49:36.055Z",
   "tesseract": true,
   "images": 30,
   "report": [
    {
     "tid": "140352",
     "mode": "tail",
-    "n": 40
+    "n": 0
    },
    {
     "tid": "26439",
     "mode": "tail",
-    "n": 34,
-    "capped": true
+    "n": 6
    },
    {
     "tid": "146735",
     "mode": "tail",
-    "n": 1,
-    "capped": true
+    "n": 39
    },
    {
     "tid": "154077",
     "mode": "tail",
-    "n": 0,
-    "capped": true
+    "n": 55
    },
    {
     "tid": "21313",
     "mode": "tail",
-    "n": 0,
-    "capped": true
+    "n": 40
    },
    {
     "tid": "89271",
     "mode": "tail",
-    "n": 5,
+    "n": 6,
     "capped": true
    },
    {
     "tid": "140352",
     "mode": "backfill",
-    "n": 8,
+    "n": 0,
     "capped": true
    },
    {
     "tid": "26439",
     "mode": "backfill",
-    "n": 6,
+    "n": 0,
     "capped": true
    },
    {
@@ -692,9 +890,89 @@
    {
     "tid": "89271",
     "mode": "backfill",
-    "n": 19,
+    "n": 0,
     "capped": true
    }
   ]
- }
+ },
+ "symptomQueue": [
+  {
+   "id": "forum:26439#5534",
+   "link": "https://community.homey.app/t/26439/5534",
+   "author": "Dragan_Todorovic",
+   "symptoms": [
+    "pairing"
+   ],
+   "mfrs": [
+    "_TZE200_crq3r3la"
+   ]
+  },
+  {
+   "id": "forum:146735#475",
+   "link": "https://community.homey.app/t/146735/475",
+   "author": "smarthomesven",
+   "symptoms": [
+    "crash"
+   ],
+   "mfrs": []
+  },
+  {
+   "id": "forum:146735#479",
+   "link": "https://community.homey.app/t/146735/479",
+   "author": "smarthomesven",
+   "symptoms": [
+    "crash"
+   ],
+   "mfrs": []
+  },
+  {
+   "id": "forum:154077#465",
+   "link": "https://community.homey.app/t/154077/465",
+   "author": "Dietrich_Kassner",
+   "symptoms": [
+    "null-values"
+   ],
+   "mfrs": []
+  },
+  {
+   "id": "forum:154077#474",
+   "link": "https://community.homey.app/t/154077/474",
+   "author": "MrMagu",
+   "symptoms": [
+    "null-values"
+   ],
+   "mfrs": []
+  },
+  {
+   "id": "forum:154077#477",
+   "link": "https://community.homey.app/t/154077/477",
+   "author": "Andi",
+   "symptoms": [
+    "crash"
+   ],
+   "mfrs": []
+  },
+  {
+   "id": "forum:89271#644",
+   "link": "https://community.homey.app/t/89271/644",
+   "author": "Bo_Kjaergaard",
+   "symptoms": [
+    "pairing"
+   ],
+   "mfrs": [
+    "_TZ3000_nkcobies"
+   ]
+  },
+  {
+   "id": "forum:89271#645",
+   "link": "https://community.homey.app/t/89271/645",
+   "author": "melectro",
+   "symptoms": [
+    "pairing"
+   ],
+   "mfrs": [
+    "_TZ3000_lvhy15ix"
+   ]
+  }
+ ]
 }
