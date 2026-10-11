@@ -3672,6 +3672,30 @@
         "water_leak_sensor"
       ],
       "reviewed": "2026-10-10 same as master; AOYAN brand ships both soil and leak sensors (no removal)"
+    },
+    {
+      "key": "eWeLink|button_wireless,climate_sensor,contact_sensor,motion_sensor,sensor_ias_zonetype_ewelink,water_leak_sensor",
+      "drivers": [
+        "button_wireless",
+        "climate_sensor",
+        "contact_sensor",
+        "motion_sensor",
+        "sensor_ias_zonetype_ewelink",
+        "water_leak_sensor"
+      ],
+      "why": "P2622 W4 2026-10-11: eWeLink white-label brand routed by exact pid (Z2M sonoff.ts/ewelink.ts CK-TLSR8656 7000/7002/7003/7014/7019)"
+    },
+    {
+      "key": "ewelink|button_wireless,climate_sensor,contact_sensor,motion_sensor,sensor_ias_zonetype_ewelink,water_leak_sensor",
+      "drivers": [
+        "button_wireless",
+        "climate_sensor",
+        "contact_sensor",
+        "motion_sensor",
+        "sensor_ias_zonetype_ewelink",
+        "water_leak_sensor"
+      ],
+      "why": "P2622 W4 2026-10-11: eWeLink white-label brand routed by exact pid (Z2M sonoff.ts/ewelink.ts CK-TLSR8656 7000/7002/7003/7014/7019)"
     }
   ]
 }
