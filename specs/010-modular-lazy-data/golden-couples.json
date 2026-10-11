@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-10T23:28:56.293Z",
+ "generated": "2026-10-11T00:15:49.039Z",
  "drivers": 392,
  "snapshot": {
   "air_purifier": {
@@ -351,9 +351,9 @@
    "pidSha": "777a8703abf8065f"
   },
   "contact_sensor": {
-   "mfr": 62,
+   "mfr": 61,
    "pid": 26,
-   "mfrSha": "ad3871f9e877ff45",
+   "mfrSha": "9a829193896d3b8e",
    "pidSha": "413aba4e609c4fb1"
   },
   "contact_sensor_curtain": {
@@ -585,9 +585,9 @@
    "pidSha": "455c46e8c8549693"
   },
   "device_radiator_valve": {
-   "mfr": 93,
+   "mfr": 92,
    "pid": 1,
-   "mfrSha": "fc6532da9ef07536",
+   "mfrSha": "d4ae0ef45afa35cf",
    "pidSha": "455c46e8c8549693"
   },
   "device_radiator_valve_smart": {

@@ -108,6 +108,13 @@ function gate(files) {
     const s = sh(process.execPath, ['tools/ci/enforce-dual-couple-legacy.js', '--sync'], { timeout: 120000 });
     summary(`safe-auto-commit [${ID}]: ${(s.stdout || '').trim().split('\n').join(' · ')}`);
   }
+  // WHY(2026-10-11): couple guard — restore files that undo pins / sacred-keep / curated
+  // removals / golden couples; abort when still dirty.
+  if (fs.existsSync('tools/ci/automation-couple-guard.js')) {
+    const g = sh(process.execPath, ['tools/ci/automation-couple-guard.js', '--revert'], { timeout: 120000 });
+    summary(`safe-auto-commit [${ID}]: ${(g.stdout || '').trim().split('\n').slice(-3).join(' · ')}`);
+    if (g.status !== 0) { await report('couple guard en échec', g.stdout || g.stderr); return; }
+  }
   for (const p of PATHS) git('add', '-A', '--', p);
   const files = git('diff', '--cached', '--name-only').stdout.trim().split('\n').filter(Boolean);
   if (!files.length) { summary(`safe-auto-commit [${ID}]: nothing to commit.`); return; }
