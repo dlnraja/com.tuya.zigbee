@@ -251,6 +251,14 @@
       ],
       "why": "2026-10-11: TS0225 = HOBEIAN ZG-225Z gas sensor (Z2M hobeian.ts + sprut/Hub#4328 interview IAS zoneType 43 gas) → owner gas_sensor",
       "source": "lost-couples 2026-10-11"
+    },
+    {
+      "driver": "usb_dongle_triple",
+      "mfr": [
+        "_TZ3000_j0ktmul1"
+      ],
+      "why": "2026-10-11: moved to dedicated driver valve_controller_5zone (AutomatOn AUT000069 5-zone valves/UFH controller, 5 ZCL onOff endpoints (Z2M automaton.ts, PR #5579, z2m #16992; Z2S_Library))",
+      "source": "new driver"
     }
   ]
 }

@@ -8103,6 +8103,23 @@
         "climate_sensor"
       ],
       "notes": "W4 curated removal 2026-10-11: Zemismart 3-gang TS0003 wall switch (interview in JohanBendz#795, Johan 2026 verification). climate_sensor has no Z2M pid for this mfr."
+    },
+    {
+      "id": "newdrv-valve_controller_5zone",
+      "mfr": [
+        "_TZ3000_j0ktmul1",
+        "_tz3000_j0ktmul1"
+      ],
+      "productId": [
+        "TS011F"
+      ],
+      "canonicalDriver": "valve_controller_5zone",
+      "forbidMode": "couple",
+      "sources": [
+        "z2m",
+        "Z2S_Library"
+      ],
+      "notes": "2026-10-11: AutomatOn AUT000069 5-zone valves/UFH controller, 5 ZCL onOff endpoints (Z2M automaton.ts, PR #5579, z2m #16992; Z2S_Library)"
     }
   ],
   "entries": {
