@@ -56,6 +56,14 @@ env:
   DIGEST_FORCE: ${{ inputs.force && '1' || '0' }}
   AI_ALLOW_PAID: 'false'
   AI_ALLOW_REMOTE: 'false'
+  AI_PLAN_MODE: 'forfait'
+  AI_FORCE_LOCAL: 'true'
+  AI_ENSEMBLE: 'false'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
+  LOCAL_SMART_LEARN: 'true'
+  LOCAL_ENERGY_LEARN: 'true'
 
 jobs:
   homey:

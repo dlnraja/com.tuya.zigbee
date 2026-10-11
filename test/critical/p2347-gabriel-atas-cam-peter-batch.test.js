@@ -73,7 +73,9 @@ describe('P2347 Gabriel/A_Tas/Cam/Peter batch', () => {
   it('Peter #2190 stays couple-absent with forbidden invent', () => {
     const p = loadJson('data/user-impact-catalog.json').users.Peter_van_Werkhoven;
     assert.ok(p.needDiag);
-    assert.ok(p.devices.every((d) => d.couple == null));
+    // P2461: Smartbutton couple came from Peter's diag 048cff91 (_TZ3000_mrpevh8p+TS0041) —
+    // a couple is allowed only when backed by a real diag; never invented.
+    assert.ok(p.devices.every((d) => d.couple == null || (d.diag && /^_TZ/.test(d.couple))));
     assert.ok(p.forbiddenInvent.some((x) => /k4ej3ww2/i.test(x)));
   });
 
