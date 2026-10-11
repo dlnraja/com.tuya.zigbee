@@ -60,6 +60,14 @@ describe('driver ↔ mfs_db coherence', () => {
     for (const [fp, entry] of Object.entries(mfs)) {
       const driverId = entry && entry.driverId;
       if (!driverId) {continue;}
+      // WHY(P2251/P2295): multiCouple brand rows use the 'multi' sentinel — check byPid targets.
+      if (driverId === 'multi') {
+        for (const [pid, t] of Object.entries(entry.byPid || {})) {
+          const tid = typeof t === 'string' ? t : (t && (t.driverId || t.driver));
+          if (tid && !fs.existsSync(path.join(ROOT, 'drivers', tid, 'driver.compose.json'))) {missing.add(`${fp}|${pid} → ${tid}`);}
+        }
+        continue;
+      }
       if (!fs.existsSync(path.join(ROOT, 'drivers', driverId, 'driver.compose.json'))) {
         missing.add(`${fp} → ${driverId}`);
       }
@@ -70,8 +78,11 @@ describe('driver ↔ mfs_db coherence', () => {
 
 describe('version invariants', () => {
   it('master version is plain semver 9.x (no pre-release suffix)', () => {
-    const v = require(path.join(ROOT, 'app.json')).version;
-    assert.match(v, /^9\.\d+\.\d+$/, `invalid master version: ${v}`);
+    const app = require(path.join(ROOT, 'app.json'));
+    const v = app.version;
+    // WHY(dual-app tracks): the Bastien house app (id *.bastien) has its own 1.x line.
+    const rx = /\.bastien$/.test(String(app.id)) ? /^1\.\d+\.\d+$/ : /^9\.\d+\.\d+$/;
+    assert.match(v, rx, `invalid ${app.id} version: ${v}`);
   });
 
   it('package.json, .homeycompose and app.json versions agree', () => {
