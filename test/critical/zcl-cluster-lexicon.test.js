@@ -66,14 +66,16 @@ describe('PowerClusterPolicy 0x0001', () => {
     assert.equal(shouldProactivePowerCfgRead(remote), false);
   });
 
-  it('still allows 0x0001 reads on climate sensors', () => {
+  // WHY(P2757): coin-cell climate/contact/leak sensors no longer get proactive PowerCfg polls
+  // (battery drain); they report on their own. Mains/router devices still may be read.
+  it('no proactive 0x0001 poll on coin climate sensors (P2757)', () => {
     const sensor = {
       driver: { id: 'climate_sensor', manifest: { class: 'sensor' } },
       getSettings: () => ({ zb_model_id: 'TS0201' }),
       getData: () => ({}),
       getStore: () => ({}),
     };
-    assert.equal(shouldProactivePowerCfgRead(sensor), true);
+    assert.equal(shouldProactivePowerCfgRead(sensor), false);
   });
 });
 
