@@ -140,6 +140,51 @@
       "pid": "TS011F",
       "source": "z2m + blakadder + wonjj6768 SmartThings",
       "regression": "lost-couples lead 2026-10-11 (W4 placement)"
+    },
+    {
+      "mfr": [
+        "_TYZB02_key8kk7r"
+      ],
+      "driver": "button_wireless_3",
+      "pid": "TS0043",
+      "source": "johan + zha + deconz",
+      "regression": "johan-only lead 2026-10-11 (second source, W4)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_rrjr1q0u"
+      ],
+      "driver": "button_wireless_3",
+      "pid": "TS0043",
+      "source": "johan + deconz",
+      "regression": "johan-only lead 2026-10-11 (second source, W4)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_mugyhz0q"
+      ],
+      "driver": "water_leak_sensor",
+      "pid": "TS0207",
+      "source": "johan + z2m",
+      "regression": "johan-only lead 2026-10-11 (second source, W4)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_0s9gukzt"
+      ],
+      "driver": "water_leak_sensor",
+      "pid": "TS0207",
+      "source": "johan + z2m",
+      "regression": "johan-only lead 2026-10-11 (second source, W4)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_zl1kmjqx"
+      ],
+      "driver": "climate_sensor",
+      "pid": "TS0201",
+      "source": "johan + z2m + zha",
+      "regression": "johan-only lead 2026-10-11 (second source, W4)"
     }
   ]
 }
