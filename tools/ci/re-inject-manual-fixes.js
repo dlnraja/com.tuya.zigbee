@@ -726,7 +726,7 @@ const MANUAL_FIXES = [
     addIfMissing: ['Wing', 'wing', 'WING'],
     addProductIds: ['ZTH11-3.0', 'ZTH13-3.0'],
     removeProductIds: ['TS0203', 'Excellux'],
-    addAtTop: true,
+    addAtTop: false, // WHY(2026-10-11 user): append only — never reorder climate_sensor (P2704 front-pin SNZB-02); payload kept via publish-sacred-keep
     source: 'p217-johan-1429',
   },
   {
@@ -873,7 +873,7 @@ const MANUAL_FIXES = [
     match: () => true,
     addIfMissing: ['eWeLink', 'ewelink', 'EWELINK'],
     addProductIds: ['CK-TLSR8656-SS5-01(7014)', 'CK-TLSR8656-SS5-02(7014)'],
-    addAtTop: true,
+    addAtTop: false, // WHY(2026-10-11 user): append only — never reorder climate_sensor (P2704 front-pin SNZB-02); payload kept via publish-sacred-keep
     source: 'p2631-ewelink-climate',
   },
   {
