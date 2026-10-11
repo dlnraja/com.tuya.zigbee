@@ -95,6 +95,14 @@
       ],
       "why": "W4 2026-10-11: Z2M TS0501A whitelabel Lidl HG06462A filament bulb; owner light_dimmable_ts0501a",
       "source": "zigbee-herdsman-converters tuya.ts TS0501A"
+    },
+    {
+      "driver": "climate_sensor",
+      "mfr": [
+        "_TZ3000_lmcp6b0a"
+      ],
+      "why": "TS0003 Zemismart 3-gang wall switch (JohanBendz#795 interview + Johan verification); climate_sensor has no Z2M pid for it; owner switch_3_gang",
+      "source": "b30d72bbc4 (2026-10-11 W4)"
     }
   ]
 }
