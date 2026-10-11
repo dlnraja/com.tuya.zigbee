@@ -1,0 +1,14 @@
+{
+  "_why": "Couples removed ON PURPOSE from a driver. Bots (auto-fix-all, master->stable/bastien sync, enrich/promote) must never add them back. Checked by tools/ci/automation-couple-guard.js (DENY_READDED). Case-insensitive. Add an entry whenever a human-reviewed fix removes a couple.",
+  "removals": [
+    { "driver": "contact_sensor", "mfr": ["_TZE200_vrcfo4i0"], "why": "P2759: TS0601 gas sensor (Z2M), no contact pid fits; re-added by auto-fix-all 0da3820a36", "source": "ba771ee90c" },
+    { "driver": "device_radiator_valve", "mfr": ["_TZE200_p3dbf6qs"], "why": "one owner per exact couple: radiator_valve (Z2M ME167_1 / TS0601_thermostat_5)", "source": "8dc99f261b" },
+    { "driver": "smart_lcd_thermostat", "mfr": ["_TZE204_p3dbf6qs"], "why": "p3dbf6qs family is a TRV, not an LCD wall thermostat; owner device_radiator_valve", "source": "2026-10-11 W4" },
+    { "driver": "radiator_valve", "mfr": ["_TZE204_p3dbf6qs"], "why": "owner device_radiator_valve (sacred-keep aligned 2026-10-11)", "source": "2026-10-11 W4" },
+    { "driver": "switch_2gang", "mfr": ["_TZE204_nkjintbl", "_TZE284_nkjintbl"], "why": "P2537b/P2605: TZE204 is the plug OEM; only _TZE200_nkjintbl is the 2-gang switch", "source": "f46ebc69d1" },
+    { "driver": "button_wireless_plug", "mfr": ["_TZE200_nkjintbl", "_TZE284_nkjintbl"], "why": "anti-bot p102-din-not-btn-plug", "source": "P2537c" },
+    { "driver": "air_quality_comprehensive", "mfr": ["_TZE200_mja3fuja", "_TZE204_mja3fuja", "_TZE284_mja3fuja"], "why": "P2541: Z2M air_quality_sensor family lives on air_quality_co2", "source": "P2541" },
+    { "driver": "air_purifier", "mfr": ["_TZE200_dfxkcots", "_TZE200_p0gzbqct", "_TZE200_mja3fuja"], "why": "P2432 misattribution: rotary dimmers / air-quality sensor, not purifiers", "source": "P2432" },
+    { "driver": "wall_switch_5_gang_tuya", "mfr": ["_TZE200_dfxkcots", "_TZE200_p0gzbqct"], "why": "P2432 misattribution: rotary dimmers", "source": "P2432" }
+  ]
+}
