@@ -17,11 +17,14 @@ describe('P2623 Bastien settings ready harden', () => {
   it('index.html calls Homey.ready in head stub before zigbee-map.js', () => {
     const html = fs.readFileSync(path.join(ROOT, 'settings/index.html'), 'utf8');
     const readyIdx = html.indexOf('homey.ready()');
-    const mapIdx = html.indexOf('src="zigbee-map.js"');
     assert.ok(readyIdx > 0, 'homey.ready() required');
-    assert.ok(mapIdx > readyIdx, 'zigbee-map.js must load AFTER ready stub');
+    // WHY(P2717 d34cb767b0): zigbee-map.js is no longer a static <script>; it is lazy-loaded on
+    // mesh click, so it can never load before Homey.ready().
+    assert.equal(html.indexOf('src="zigbee-map.js"'), -1, 'no static zigbee-map.js script tag');
+    assert.ok(html.includes("s.src = 'zigbee-map.js'"), 'lazy loader present');
     assert.ok(html.includes('function onHomeyReady'));
-    assert.ok(html.includes('__tuyaSettingsBoot'));
+    // WHY(P2717 d34cb767b0): __tuyaSettingsBoot stub replaced by Homey.ready()-first + onHomeyReady.
+    assert.ok(html.includes('__tuyaSettingsBoot') || html.includes('function onHomeyReady'));
     assert.ok(html.includes('diag-card') || /diagnostic report/i.test(html));
     assert.ok(!/setTimeout\(function \(\) \{ refreshWifiLanMap\(\); \}, 400\)/.test(html),
       'must not auto-scan WiFi LAN on settings open');

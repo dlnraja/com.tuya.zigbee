@@ -73,7 +73,9 @@ describe('P2347 Gabriel/A_Tas/Cam/Peter batch', () => {
   it('Peter #2190 stays couple-absent with forbidden invent', () => {
     const p = loadJson('data/user-impact-catalog.json').users.Peter_van_Werkhoven;
     assert.ok(p.needDiag);
-    assert.ok(p.devices.every((d) => d.couple == null));
+    // WHY(P2461 f961963bbe): the Smartbutton tile is now diag-locked (048cff91 / cfbf687f) to
+    // mrpevh8p+TS0041; every other #2190 tile must stay couple-absent.
+    assert.ok(p.devices.every((d) => d.couple == null || (d.tile === 'Smartbutton' && /^_TZ3000_mrpevh8p\+TS0041$/.test(d.couple))));
     assert.ok(p.forbiddenInvent.some((x) => /k4ej3ww2/i.test(x)));
   });
 
