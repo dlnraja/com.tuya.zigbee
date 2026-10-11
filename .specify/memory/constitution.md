@@ -113,6 +113,7 @@ Specs live in `specs/NNN-*/{spec,plan,tasks}.md`. This file overrides any spec/p
   0xFCC0, IKEA, Philips 0xFC03, Schneider, …) are supported fully and locally, with no cloud
   dependency, as optional additive layers with circuit breakers that never block pairing, and are
   registered in the native/non-native matrix. Sources (Z2M, ZHA, deCONZ) are credited by name.
+- W13. One reliable source suffices for an exact pid / mfr+pid couple: One reliable source is enough for an exact productId and an exact mfr+pid couple (user rule 2026-10-11): Z2M, ZHA, deCONZ, Johan, blakadder, SmartThings/Hubitat lists, Z2S, a user diagnostic. Record the source per couple (registry/pins/mfs_db). Never invent; skip only when the pid is ambiguous (the source lists several pids for the mfr). Place in the driver matching the device type, W4 move with curated removals and pins. Quirks/behaviour workarounds keep their own ≥2-source rule. SSOT: `docs/rules/COUPLE_SOURCE_POLICY.md`.
 - W12. Daily resume enrichment mode. Standing runbook: `docs/rules/DAILY_RESUME_ENRICHMENT.md`
   (max coverage per exact couple, one couple one driver, case-insensitive shared helper, lazy load
   + app.json < 4 MB, other-app threads/comments as sources, credits kept current, firmware quirks
