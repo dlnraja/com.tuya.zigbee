@@ -40,3 +40,15 @@ Still held on purpose: `_TZE600_ogyg1y6b`/TS0105 (no TS0105 driver — would cro
 | AutomatOn `_TZ3000_j0ktmul1`/TS011F → `switch_4gang` + gang-pattern 5 | Ported (off `usb_dongle_triple`) | Ported (off `usb_dongle_triple`) |
 | HOBEIAN ZG-101ZS decision doc | Copied | Already present |
 | FUT089Z / HOBEIAN / one-source couple matrix | Parity Y | Parity Y |
+| Golden refresh after j0ktmul1 / xwh1e22x shrink | PR #564 (`fix/stable-golden-j0kt-xwh`) | `f1f76d5968` (also P2640 famkxci2 front-pin + Flow id dedupe) |
+| Node22 unblock (golden LOST) | Same PR #564 | Same commit; workflow_dispatch Node22 |
+
+## Close-out (Athom tips, Paris 2026-10-11 ~17:30)
+
+| App | Tip | Channel |
+|---|---|---|
+| Universal (master) | **9.0.1433** | Test (`[athom-final] OK`) |
+| Bastien | Publish in flight on `f1f76d5968` (prior tip publish OK at 1.0.122 line) | Draft→Test via Publish Zigbee Bastien |
+| Stable | **5.12.396** tip; Node22 golden fix via #564 | Test after merge + publish |
+
+Held on purpose: `_TZE600_ogyg1y6b`/TS0105; ambiguous Johan mfrs. No invented couples.
