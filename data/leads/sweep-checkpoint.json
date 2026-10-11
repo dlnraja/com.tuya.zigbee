@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-10T07:17:06.338Z",
+  "updated": "2026-10-11T07:14:27.761Z",
   "threads": {
     "21313": {
       "lastPost": 2819,
@@ -38,10 +38,11 @@
     {
       "id": "140352:#2258",
       "status": "already-fixed",
-      "note": "EdP #2258 soil sensor + GH#550/#551 (P2760)",
+      "note": "EdP #2258 soil: re-checked in code 2026-10-11 — soil_sensor reads 0x0405 as soil moisture and DP109 as air humidity for HOBEIAN/AOYAN/COOLO; AY-303Z/AY-302Z/CS-201Z on soil_sensor only (Z2M hobeian.ts CS-201Z whitelabels)",
       "sources": [
         "a5ea22d29d"
-      ]
+      ],
+      "verified": "2026-10-11"
     },
     {
       "id": "140352:#2252",
@@ -70,10 +71,11 @@
     {
       "id": "git:ogx8u5z6",
       "status": "already-fixed",
-      "note": "ZG253 TRV ogx8u5z6 setpoint TX (P2593)",
+      "note": "ZG253 TRV ogx8u5z6: device_radiator_valve TX uses full datapoint args (P2593/P2711), me167 DP4/DP5 /10 per Z2M thermostat_3; re-checked 2026-10-11. Same error class still existed in 20 other drivers incl. radiator_valve (_TZE284_ne4pikwm) — fixed 2026-10-11",
       "sources": [
         "5737cf528a"
-      ]
+      ],
+      "verified": "2026-10-11"
     },
     {
       "id": "git:dtzziy1e",
@@ -86,10 +88,11 @@
     {
       "id": "git:Smartbutton",
       "status": "already-fixed",
-      "note": "Smartbutton battery / hybrid RX series (P2509-P2513 among others)",
+      "note": "Peter #2238/#2239 Smartbutton (button_wireless_1): compose getable:true / preventInsights:false + one-shot recycle (P2550/P2555) re-checked 2026-10-11; provenance no longer rewrites battery options on each sample. If History still missing on an old pair: remove + re-add once",
       "sources": [
         "6a84f01bf3"
-      ]
+      ],
+      "verified": "2026-10-11"
     },
     {
       "id": "git:P2760",
@@ -7430,6 +7433,27 @@
       "pids": [
         "TS0601"
       ]
+    },
+    {
+      "id": "140352:#2257",
+      "sources": [],
+      "status": "already-fixed",
+      "note": "ZG-106Z: hobeian|ZG-106Z and _TZ3000_7y90pany|TS0222 (Z2M tuya.ts TS0222 light sensor) both only on illuminance_sensor, re-checked 2026-10-11",
+      "verified": "2026-10-11"
+    },
+    {
+      "id": "140352:#2255",
+      "sources": [],
+      "status": "fixed",
+      "note": "VicHY MTG075 Advanced Flow lag: DataProvenance rewrote capability options after every value and flipped alarm_motion preventInsights back to false; now writes only on real change (2026-10-11)",
+      "verified": "2026-10-11"
+    },
+    {
+      "id": "lead:_TZE200_wrmhp6b3",
+      "sources": [],
+      "status": "deferred",
+      "note": "_TZE200_wrmhp6b3|TS0601 sits on curtain_motor (bulk sync P54) but Z2M hobeian.ts lists it as COOLO CS-201Z soil sensor; only one external source so far — needs a 2nd source or a user report before moving (W4)",
+      "verified": "2026-10-11"
     }
   ],
   "github": {

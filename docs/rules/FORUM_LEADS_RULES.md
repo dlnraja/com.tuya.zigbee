@@ -54,4 +54,7 @@ Open without fingerprint: two-way irrigation valve pairing as unknown (#2218) �
 | #2246–#2255 VicHY MTG075 / `_TZE204_dtzziy1e` family | `presence_sensor_radar` | curtain class flip, frozen lux/distance, Advanced Flow lag | already-fixed (P2548–P2712 dirty heal); 2026-10-04 DynFlow discovery debounce additive |
 | #2238/#2239 Peter Smartbutton | `button_wireless_1` | battery OK; History/Insights tab missing | compose+boot heal `getable:true` / `preventInsights:false` (P2499/P2512/P2553); existing pair may need one remove+re-add for Homey Insights enrollment |
 
+**Re-check 2026-10-11 (in code):** #2258, #2257, #2253 confirmed. #2255 Flow lag had a remaining cause — provenance options rewritten on every value (`lib/telemetry/DataProvenance.js`, now idempotent). #2253's error class ("unexpected property") was still present in 20 other drivers, including `radiator_valve` (`_TZE284_ne4pikwm`); fixed through `sendStructuredDatapoint`. Lead deferred: `_TZE200_wrmhp6b3` (curtain_motor vs Z2M CS-201Z soil).
+
 Forum poll (no AI): fingerprint + `extractForumSignals` → `.github/state/forum/new-leads.json` (links + structured fields only).
+Symptom families, white-label models (ZG-106Z, AY-303Z, MTG075) and brands are extracted by `scripts/progress/lib/forum-symptoms.js` (labels only) in both the poll and the screenshot OCR scanner; symptom-only posts land in `data/leads/forum-image-ocr.json` → `symptomQueue` for the daily resume.

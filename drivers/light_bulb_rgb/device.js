@@ -163,7 +163,7 @@ class RGBBulbDevice extends UnifiedLightBase {
 
   async _sendTuyaDP(dp, value, type) {
     const tuya = this.zclNode?.endpoints?.[1]?.clusters?.tuya;
-    if (tuya?.datapoint) {await tuya.datapoint({ dp, value, type });}
+    if (tuya?.datapoint) {await require('../../lib/helpers/UniversalDriverInit').sendStructuredDatapoint(tuya, dp, value, type);}
   }
 
   // 
