@@ -69,7 +69,7 @@ jobs:
   publish-bastien:
     name: Publish Bastien house app
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 75  # idle wait (≤25) + publish + draft + final gate (≤15), like master 516c83444c
     steps:
       - name: Checkout bastien-home
         uses: actions/checkout@v5
@@ -167,7 +167,17 @@ jobs:
       - name: Prepare Publish Directory
         run: npm run prepare-publish
 
+      # WHY(ported from master c25f077831/45a2d8f1a9): never upload while a build of this app is still processing
+      # (Athom invalid_state). Bounded 12 min inside a 25 min step; never fails the job.
+      - name: Wait for Athom idle (previous Bastien build final)
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: node .github/scripts/wait-athom-idle.js ${{ env.EXPECTED_APP_ID }}
+
       - name: Publish Bastien draft → Test
+        id: publish_bastien
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
           HOMEY_FORCE_PUBLISH: ${{ github.event.inputs.force_publish == true && '1' || '0' }}
@@ -317,3 +327,13 @@ jobs:
           fi
           echo "bastien_test_ok=true" >> "$GITHUB_OUTPUT"
           echo "### Bastien Test OK" >> "$GITHUB_STEP_SUMMARY"
+
+      # WHY(ported from master 9cfe3f5d08): no false green — the run goes red unless this version reached
+      # Test (P2723/P2738 soft-continue kept for promote/verify; this only reports the true final state,
+      # and keeps the P2400 dispatch-dedupe from treating a processing_failed tip as published).
+      - name: Athom final state gate (red unless Test)
+        if: always() && steps.publish_bastien.outcome == 'success'
+        timeout-minutes: 15
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: node .github/scripts/assert-athom-final.js
