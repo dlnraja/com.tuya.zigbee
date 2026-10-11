@@ -21,8 +21,18 @@ const CHECK_FINAL = ARGS.has('--final') || process.env.HOMEY_CHECK_FINAL_PUBLISH
 
 // WHY: defaults must match prepare-publish.js (50) + auto-fix-and-publish.yml.
 // Stale 26/34 defaults blocked local commits while Athom still accepted ~9 MB gz.
+// WHY(bastien-home 2026-10-11): this track commits the BUILT app.json (driver flow cards merged
+// at app level, ~4.4 MB compact) and Athom accepted it (v1.0.123). The 4 MB budget is for the
+// compact master/stable payload; once hooks ran here again it blocked every commit.
+function defaultAppJsonMB() {
+  try {
+    const id = JSON.parse(fs.readFileSync(path.join(ROOT, '.homeycompose', 'app.json'), 'utf8')).id || '';
+    if (/\.bastien$/.test(id)) return 6;
+  } catch (_e) { /* soft */ }
+  return 4;
+}
 const LIMITS = {
-  appJsonMB: numberEnv('HOMEY_APP_JSON_MAX_MB', 4),
+  appJsonMB: numberEnv('HOMEY_APP_JSON_MAX_MB', defaultAppJsonMB()),
   publishUncompressedMB: numberEnv('HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB', 50),
   publishSourceMB: numberEnv('HOMEY_PUBLISH_SOURCE_MAX_MB', 50),
   publishFinalMB: numberEnv('HOMEY_PUBLISH_FINAL_MAX_MB', 40),
