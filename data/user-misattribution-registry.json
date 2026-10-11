@@ -8103,6 +8103,24 @@
         "climate_sensor"
       ],
       "notes": "W4 curated removal 2026-10-11: Zemismart 3-gang TS0003 wall switch (interview in JohanBendz#795, Johan 2026 verification). climate_sensor has no Z2M pid for this mfr."
+    },
+    {
+      "id": "lead-z6fgd73r-switch_1gang",
+      "mfr": [
+        "_TZ3000_z6fgd73r",
+        "_tz3000_z6fgd73r"
+      ],
+      "productId": [
+        "TS011F"
+      ],
+      "canonicalDriver": "switch_1gang",
+      "forbidMode": "couple",
+      "sources": [
+        "z2m",
+        "blakadder",
+        "wonjj6768 SmartThings"
+      ],
+      "notes": "2026-10-11: LELLKI XF-EU-S100-1-M 1-gang touch switch with power monitoring (Z2M lellki.ts, blakadder LELLKI_XF-EU-S100-1, wonjj6768 SmartThings zcl switches) — not a USB dongle"
     }
   ],
   "entries": {
