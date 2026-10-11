@@ -11,8 +11,8 @@
     {
       "mfr": "_TZE204_p3dbf6qs",
       "pid": "TS0601",
-      "driverId": "radiator_valve",
-      "note": "P2686 p3dbf6qs TZE204 sibling sacred-keep"
+      "driverId": "device_radiator_valve",
+      "note": "P2686 p3dbf6qs TZE204 sibling sacred-keep. 2026-10-11 W4: no Z2M/ZHA/web evidence for the TZE204 prefix (Z2M knows _TZE200 = AVATTO ME167_1 and _TZE284 = TS0601_thermostat_3). Kept as a lead on device_radiator_valve beside its _TZE284 sibling, where all three apps' history had it; never on radiator_valve (one owner)."
     },
     {
       "mfr": "_TZE284_p3dbf6qs",
