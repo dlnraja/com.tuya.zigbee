@@ -61,3 +61,10 @@ Coverage after this pass: 156 7074/7060+, 43287 2265, 140352 2439 (to #2259), 89
 - frient (t/76161 #484–485, t/160288): devices kept dropping off the network after the vendor's OTA until they were re-added. Lesson: after an OTA, re-run bind/configure-reporting on rejoin. Our Re-bind covers this; no change.
 - SDK/news pass: homey-sdk changelog, sitemap, news, v3 docs, dev blog, npm homey/homey-zigbeedriver/zigbee-clusters, firmware changelog: no changes (0 proposals).
 - Ignored-DP tool: `tools/ci/dp-diagnostic.js` had a hardcoded Windows path, so it crashed in CI. Now repo-relative.
+
+## Update 2026-10-11 ~02:30 (Paris)
+
+- All tag-app (60) and tag-zigbee (180) topics downloaded; 239 mfr ids across all dumps, 0 missing from our drivers.
+- Lixee lesson applied: `SmartValueProcessor.mapEnum` used `||`, so a legit falsy mapping (0/false/'') became `unknown_X`. It now does an own-property lookup; unknown values keep their raw value (`unknown_<raw>`). Other enum sites (DPMappingEngine `?? value`, radar `hasOwnProperty` + raw fallback, EF00 unmapped DPs → `tuya_dp_received` raw) already kept raw values.
+- Ignored-DP pass: checked the Oct 6 Homey diagnostics mail (only `_TZE200_pay2byax`, no unknown-DP lines), forum logs since July (only a Tuya Local WiFi log, not ours), and diag dumps. No DP had 2 independent sources, so no per-couple variant profile was added.
+- Empty `manufacturerName` button drivers on stable/bastien: `wall_remote_4_gang` is deprecated (hidden on purpose). `remote_button_wireless_smart` (stable) and `remote_button_wireless` (bastien) have an empty compose list, but app.json (SSOT-generated since v9.0.190/192) carries 2–4 mfrs, so they are pairable. The Button+ setting was added to their app.json entries only, which the hook accepts. `smart_remote_1_button_2` is empty in both compose and app.json (not pairable), so it was skipped.
