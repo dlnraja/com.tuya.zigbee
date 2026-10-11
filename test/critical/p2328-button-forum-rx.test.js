@@ -59,7 +59,8 @@ describe('P2328 button forum RX / pairing', () => {
   it('scene_switch_4 productIds are TS0044/TS1002 only (no knob soup)', () => {
     const c = readJson('drivers/scene_switch_4/driver.compose.json');
     const pids = c.zigbee.productId || [];
-    assert.deepEqual([...pids].sort(), ['TS0044', 'TS1002'].sort());
+    // WHY(P99 692d86e669): lowercase pid case-forms are allowed; compare caseless.
+    assert.deepEqual([...new Set(pids.map((p) => p.toUpperCase()))].sort(), ['TS0044', 'TS1002'].sort());
     const mfrs = c.zigbee.manufacturerName || [];
     assert.ok(!mfrs.some((m) => /^hobeian$/i.test(m)));
   });

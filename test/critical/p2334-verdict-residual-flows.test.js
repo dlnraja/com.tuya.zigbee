@@ -26,9 +26,15 @@ describe('P2334 verdict residual flow IDs', () => {
   });
 
   it('CoreCapabilityMixin covers _1gang_turned_ and _Ngang_gangN_turned_', () => {
+    // WHY(P2644): candidate ids are built once in FlowCardHeuristics.buildOnOffTurnedFlowCandidates
+    // (declared-only); CoreCapabilityMixin just consumes them.
     const src = fs.readFileSync(path.join(ROOT, 'lib/mixins/CoreCapabilityMixin.js'), 'utf8');
-    assert.match(src, /_1gang_turned_\$\{stateStr\}/);
-    assert.match(src, /\$\{gangNum\}gang_gang\$\{gangNum\}_turned_/);
+    assert.match(src, /buildOnOffTurnedFlowCandidates\(driverId, gangNum, value\)/);
+    const { buildOnOffTurnedFlowCandidates } = require(path.join(ROOT, 'lib/flow/FlowCardHeuristics'));
+    const one = buildOnOffTurnedFlowCandidates('wall_switch_x', 1, true);
+    assert.ok(one.includes('wall_switch_x_1gang_turned_on'), one.join(','));
+    const two = buildOnOffTurnedFlowCandidates('wall_switch_x', 2, false);
+    assert.ok(two.includes('wall_switch_x_2gang_gang2_turned_off'), two.join(','));
   });
 
   it('FlowCardHeuristics includes switch_1gang_physical for 1-gang', () => {
