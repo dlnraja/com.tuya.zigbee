@@ -287,6 +287,46 @@
       ],
       "why": "2026-10-11: TS0044 4-gang remote (Johan + deCONZ) → button_wireless_4",
       "source": "lost-couples 2026-10-11 Johan + deCONZ (dresden-elektronik devices/tuya)"
+    },
+    {
+      "driver": "button_wireless_2",
+      "mfr": [
+        "_TYZB02_key8kk7r"
+      ],
+      "why": "2026-10-11: moved to dedicated driver button_wireless_3 (3-button remote: ZHA ts0043 TuyaSmartRemote0043NO + deCONZ Tuya3gangMap)",
+      "source": "new driver"
+    },
+    {
+      "driver": "button_wireless_2",
+      "mfr": [
+        "_TZ3000_rrjr1q0u"
+      ],
+      "why": "2026-10-11: moved to dedicated driver button_wireless_3 (3-button remote: deCONZ Tuya3gangMap + de_web_plugin switch list)",
+      "source": "new driver"
+    },
+    {
+      "driver": "water_leak_sensor_tuya",
+      "mfr": [
+        "_TZ3000_mugyhz0q"
+      ],
+      "why": "2026-10-11: moved to dedicated driver water_leak_sensor (Tuya 899WZ water leak detector (Z2M TS0207_water_leak_detector))",
+      "source": "new driver"
+    },
+    {
+      "driver": "water_leak_sensor_tuya",
+      "mfr": [
+        "_TZ3000_0s9gukzt"
+      ],
+      "why": "2026-10-11: moved to dedicated driver water_leak_sensor (Nous E4 water leakage sensor (Z2M TS0207_water_leak_detector))",
+      "source": "new driver"
+    },
+    {
+      "driver": "button_wireless_2",
+      "mfr": [
+        "_TZ3000_zl1kmjqx"
+      ],
+      "why": "2026-10-11: moved to dedicated driver climate_sensor (temperature/humidity sensor RSH-HS06_1 / IH-K009 (Z2M tuya.ts, ZHA ty0201))",
+      "source": "new driver"
     }
   ]
 }
