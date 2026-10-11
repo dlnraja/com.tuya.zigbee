@@ -286,6 +286,17 @@
       "source": "zigbee-herdsman-converters src/devices/lonsonho.ts TS130F_dual; JohanBendz/com.tuya.zigbee#1030 -> #1145 (Batch 96 by JohanBendz)",
       "date": "2026-10-10",
       "reviewed_by": "P2810 history sweep 2026-10-10 (standing rule: exact driver for a reported couple, old phantom kept)"
+    },
+    {
+      "couple": "EWELINK|TS0601",
+      "drivers": [
+        "button_wireless",
+        "climate_sensor",
+        "water_leak_sensor"
+      ],
+      "reason": "Known false collision: eWeLink exact CK-TLSR8656 couples live on button_wireless (7000) and water_leak_sensor (7019); the eWeLink x TS0601 cross-product is theoretical (eWeLink ships no TS0601). Without this the CI conflict resolver (hard owner climate_sensor) stripped eWeLink from both and the sacred-couple audit failed (#Auto-Publish 38134538754).",
+      "source": "Z2M sonoff.ts exact models; P2631",
+      "date": "2026-10-11"
     }
   ]
 }
