@@ -466,6 +466,30 @@
       "pid": "TS011F",
       "source": "z2m + Z2S_Library",
       "regression": "fold 2026-10-11: 5 gangs via GangCountAdapter on switch_4gang"
+    },
+    {
+      "mfr": [
+        "_TZE200_wrmhp6b3",
+        "_tze200_wrmhp6b3",
+        "_TZE200_WRMHP6B3",
+        "_tze200_WRMHP6B3"
+      ],
+      "driver": "soil_sensor",
+      "pid": "TS0601",
+      "source": "Z2M COOLO CS-201Z (fingerprint _TZE200_wrmhp6b3|_TZE200_npj9bug3); Hubitat kkossev TS0601_Soil_Coolo 2026-04-22",
+      "regression": "Bulk curtain sync parked mfr on curtain_motor; Z2M/Hubitat say soil. One-source policy 2026-10-11."
+    },
+    {
+      "mfr": [
+        "_TZE600_ogyg1y6b",
+        "_tze600_ogyg1y6b",
+        "_TZE600_OGYG1Y6B",
+        "_tze600_OGYG1Y6B"
+      ],
+      "driver": "curtain_motor",
+      "pid": "TS0105",
+      "source": "Z2M NovaDigital ZBCMR-01 (fingerprint TS0105|_TZE600_ogyg1y6b); Hubitat zemismart-zigbee-blind",
+      "regression": "Lost-couple hold: TS0105 was blocked for cross-product; exact couple on curtain_motor (one-source 2026-10-11)."
     }
   ]
 }
