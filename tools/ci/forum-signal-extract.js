@@ -6,6 +6,7 @@
  */
 
 const { parseClusterMentions } = require('../../lib/zigbee/ZclClusterLexicon');
+const { extractSymptoms, extractModels } = require('../../scripts/progress/lib/forum-symptoms');
 
 const MFR_RE = /_T[YZ](?:E200|E204|E284|E28[0-9A-Z]*|ZB\d{2}|3000|3002|3210|3218|ST11)[_-][A-Za-z0-9]{6,}/gi;
 const PID_RE = /\bTS\d{4}[A-Z]?\b/g;
@@ -17,7 +18,10 @@ function extractForumSignals(text) {
   const pids = [...new Set(src.match(PID_RE) || [])];
   const issues = [...new Set((src.match(ISSUE_RE) || []).map((s) => s.toLowerCase()))];
   const clusters = parseClusterMentions(src);
-  return { mfrs, pids, issues, clusters };
+  // Symptom families + white-label models (labels only) — see scripts/progress/lib/forum-symptoms.js
+  const families = extractSymptoms(src);
+  const { models, brands } = extractModels(src);
+  return { mfrs, pids, issues, clusters, families, models, brands };
 }
 
 module.exports = {

@@ -211,7 +211,8 @@ class SirenDevice extends UnifiedPlugBase {
     // Fallback: direct cluster write
     const tuya = this.zclNode?.endpoints?.[1]?.clusters?.tuya;
     if (tuya?.datapoint) {
-      await tuya.datapoint({ dp, value, type });
+      // WHY(P2711 follow-up): full datapoint args; legacy value/type keys are refused by zigbee-clusters.
+      await require('../../lib/helpers/UniversalDriverInit').sendStructuredDatapoint(tuya, dp, value, type || 'value');
     } else {
       this.log(`[SIREN]  No Tuya DP transport for DP${dp}` );
     }

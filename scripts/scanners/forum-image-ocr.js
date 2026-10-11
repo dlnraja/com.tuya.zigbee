@@ -18,6 +18,7 @@ const { spawnSync } = require('child_process');
 const { getJson } = require('../progress/lib/sweep-forum');
 const { stripHtml, extract: extractIds, coverage } = require('../progress/lib/sweep-identity');
 const { extract: extractOcr } = require('./issue-image-ocr');
+const { extractSymptoms, extractModels, quirkCandidates } = require('../progress/lib/forum-symptoms');
 
 const ROOT = path.join(__dirname, '../..');
 const OUT = path.join(ROOT, 'data/leads/forum-image-ocr.json');
@@ -77,11 +78,18 @@ async function handlePost(tid, p, out) {
     const t = await ocr(u);
     if (t == null) continue;
     const e = extractOcr(t);
-    for (const k of Object.keys(ocrIds)) ocrIds[k] = [...new Set([...ocrIds[k], ...(e[k] || [])])];
+    for (const k of ['mfrs', 'pids', 'dps', 'caps']) ocrIds[k] = [...new Set([...ocrIds[k], ...(e[k] || [])])];
+    ocrIds.text = `${ocrIds.text || ''}\n${t}`.slice(-20000); // in memory only, for symptom labels
   }
   const mfrs = [...new Set([...base.mfrs, ...ocrIds.mfrs])].slice(0, 12);
   const pids = [...new Set([...base.pids, ...ocrIds.pids])].slice(0, 8);
-  if (!mfrs.length && !pids.length && !ocrIds.dps.length && !ocrIds.caps.length && ocrState !== 'image-cap' && ocrState !== 'no-tesseract') return ocrState;
+  // WHY(2026-10-11, forum 140352 #2238–#2258): symptom-only posts (Flow lag, missing History,
+  // datapoint write errors) and white-label model codes (ZG-106Z, AY-303Z, MTG075) were dropped
+  // because only Tuya mfr/pid made an entry. Labels only, never the text (C1/C5).
+  const sig = `${text}\n${ocrIds.text || ''}`;
+  const symptoms = extractSymptoms(sig);
+  const { models, brands } = extractModels(sig);
+  if (!mfrs.length && !pids.length && !models.length && !symptoms.length && !ocrIds.dps.length && !ocrIds.caps.length && ocrState !== 'image-cap' && ocrState !== 'no-tesseract') return ocrState;
   const cov = coverage({ mfrs, pids });
   const id = `forum:${tid}#${p.post_number}`;
   const entry = {
@@ -90,6 +98,11 @@ async function handlePost(tid, p, out) {
     fromImage: ocrIds.mfrs.length || ocrIds.pids.length ? { mfrs: ocrIds.mfrs, pids: ocrIds.pids } : undefined,
     dps: ocrIds.dps.length ? ocrIds.dps : undefined, caps: ocrIds.caps.length ? ocrIds.caps : undefined,
     missing: cov.missing.length ? cov.missing.map((x) => `${x.mfr}|${x.pid || '?'}`) : undefined,
+    models: models.length ? models : undefined,
+    brands: brands.length ? brands : undefined,
+    symptoms: symptoms.length ? symptoms : undefined,
+    quirkCandidates: symptoms.length ? quirkCandidates({ mfrs, pids, models }, symptoms) : undefined,
+    triage: symptoms.length ? 'daily-resume' : undefined,
   };
   const i = out.entries.findIndex((e) => e.id === id);
   if (i >= 0) out.entries[i] = entry; else out.entries.push(entry);
@@ -133,6 +146,9 @@ async function main() {
   }
   if (out.entries.length > MAX_ENTRIES) out.entries = out.entries.slice(-MAX_ENTRIES);
   out.candidates = [...new Set(out.entries.flatMap((e) => e.missing || []))].filter((c) => !c.endsWith('|?')).sort();
+  // Symptom triage queue for the daily resume (structured labels + link only).
+  out.symptomQueue = out.entries.filter((e) => e.symptoms && e.symptoms.length).slice(-200)
+    .map((e) => ({ id: e.id, link: e.link, author: e.author, symptoms: e.symptoms, models: e.models, mfrs: e.mfrs }));
   out.generated = new Date().toISOString();
   out.note = 'Structured leads from forum posts + screenshots (OCR). No post or OCR text stored. candidates = cited couples with no home driver here; verify real hardware (W4) before adding.';
   out.lastRun = { at: out.generated, tesseract: TESS, images: imagesDone, report };

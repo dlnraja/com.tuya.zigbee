@@ -40,20 +40,20 @@ class HumidifierDevice extends TuyaZigbeeDevice {
     if (this.hasCapability('onoff')) {
       this.registerCapabilityListener('onoff', async (value) => {
         if (typeof this.markAppCommand === 'function') {this.markAppCommand(1, value);}
-        await tuyaCluster.datapoint({ dp: 1, datatype: 1, value: value });
+        await require('../../lib/helpers/UniversalDriverInit').sendStructuredDatapoint(tuyaCluster, 1, value, 1); // WHY(P2711 follow-up): full datapoint args
       });
     }
 
     if (this.hasCapability('dim')) {
       this.registerCapabilityListener('dim', async (value) => {
         const level = Math.round(value * 3); // 0=off, 1=low, 2=medium, 3=high
-        await tuyaCluster.datapoint({ dp: 5, datatype: 4, value: level });
+        await require('../../lib/helpers/UniversalDriverInit').sendStructuredDatapoint(tuyaCluster, 5, level, 4);
       });
     }
 
     if (this.hasCapability('dim.humidity')) {
       this.registerCapabilityListener('dim.humidity', async (value) => {
-        await tuyaCluster.datapoint({ dp: 2, datatype: 2, value: Math.round(value) });
+        await require('../../lib/helpers/UniversalDriverInit').sendStructuredDatapoint(tuyaCluster, 2, Math.round(value), 2);
       });
     }
 

@@ -96,7 +96,8 @@ class GasSensorDevice extends UnifiedSensorBase {
   async silenceAlarm() {
     try {
       const tuya = this.zclNode?.endpoints?.[1]?.clusters?.tuya;
-      if (tuya?.datapoint) {await tuya.datapoint({ dp: 13, value: true, type: 'bool' });}
+      // WHY(P2711 follow-up): full datapoint args; legacy value/type keys are refused by zigbee-clusters.
+      if (tuya?.datapoint) {await require('../../lib/helpers/UniversalDriverInit').sendStructuredDatapoint(tuya, 13, true, 'bool');}
       this.log('[GAS]  Alarm silenced');
     } catch (e) { this.log('[GAS] Silence failed:', e.message); }
   }
