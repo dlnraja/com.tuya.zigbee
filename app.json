@@ -3893,6 +3893,55 @@
             "filter": "capabilities=button.1,capabilities=button,capabilities=onoff,capabilities=button.toggle"
           }
         ]
+      },
+      {
+        "id": "device_timer_changed",
+        "title": {
+          "en": "Timer started or ended",
+          "fr": "Minuteur démarré ou terminé",
+          "nl": "Timer gestart of beëindigd",
+          "de": "Timer gestartet oder beendet"
+        },
+        "hint": {
+          "en": "Fires when a countdown set by this app starts or ends. Idea credited to iBush's Switcher app (community.homey.app/t/160624).",
+          "fr": "Se déclenche quand un compte à rebours lancé par l'app démarre ou se termine. Idée créditée à l'app Switcher d'iBush."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "capabilities=onoff"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "running",
+            "type": "boolean",
+            "title": {
+              "en": "Running",
+              "fr": "En cours"
+            },
+            "example": true
+          },
+          {
+            "name": "minutes_left",
+            "type": "number",
+            "title": {
+              "en": "Minutes left",
+              "fr": "Minutes restantes"
+            },
+            "example": 15
+          },
+          {
+            "name": "gang",
+            "type": "number",
+            "title": {
+              "en": "Gang",
+              "fr": "Canal"
+            },
+            "example": 1
+          }
+        ]
       }
     ],
     "conditions": [
@@ -6640,6 +6689,22 @@
           "fr": "Une pièce !{{est|n'est pas}} occupée",
           "de": "Ein Raum !{{ist|ist nicht}} besetzt"
         }
+      },
+      {
+        "id": "device_timer_running",
+        "title": {
+          "en": "Timer !{{is|is not}} running",
+          "fr": "Le minuteur !{{est|n'est pas}} en cours",
+          "nl": "Timer !{{loopt|loopt niet}}",
+          "de": "Timer !{{läuft|läuft nicht}}"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "capabilities=onoff"
+          }
+        ]
       }
     ],
     "actions": [
@@ -11830,6 +11895,44 @@
           "de": "Fähigkeit für alle Geräte in Zone setzen [[zone]] [[capability]] [[value]] [[include_subzones]]",
           "fr": "Définir la capacité pour tous les appareils de la zone [[zone]] [[capability]] [[value]] [[include_subzones]]"
         }
+      },
+      {
+        "id": "device_on_for_minutes",
+        "title": {
+          "en": "Turn on for a set time",
+          "fr": "Allumer pendant une durée",
+          "nl": "Aanzetten voor een bepaalde tijd",
+          "de": "Für eine bestimmte Zeit einschalten"
+        },
+        "hint": {
+          "en": "Turns the device on now and off again after the given minutes (native Tuya countdown DP when supported, software timer otherwise). Idea credited to iBush's Switcher app: https://community.homey.app/t/160624",
+          "fr": "Allume l'appareil maintenant puis l'éteint après les minutes choisies (DP countdown Tuya natif si supporté, sinon minuteur logiciel). Idée créditée à l'app Switcher d'iBush : https://community.homey.app/t/160624"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "capabilities=onoff"
+          },
+          {
+            "name": "minutes",
+            "type": "number",
+            "title": {
+              "en": "Minutes",
+              "fr": "Minutes",
+              "nl": "Minuten",
+              "de": "Minuten"
+            },
+            "min": 1,
+            "max": 1440,
+            "step": 1,
+            "value": 15,
+            "placeholder": {
+              "en": "1–1440",
+              "fr": "1–1440"
+            }
+          }
+        ]
       }
     ]
   },
