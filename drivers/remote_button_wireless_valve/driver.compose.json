@@ -307,6 +307,21 @@
           }
         }
       ]
+    },
+    {
+      "id": "suppress_release_after_click",
+      "type": "checkbox",
+      "value": false,
+      "label": {
+        "en": "Ignore 'released' right after a short click",
+        "fr": "Ignorer « relâché » juste après un clic court",
+        "nl": "'Losgelaten' direct na een korte klik negeren",
+        "de": "'Losgelassen' direkt nach kurzem Klick ignorieren"
+      },
+      "hint": {
+        "en": "Some remotes send 'released' after every click, which can stop an action the click just started (e.g. curtains). When enabled, 'released' is only fired after a long press. Idea credited to Adrian_Rockall's Button+ app (community.homey.app/t/89931).",
+        "fr": "Certaines télécommandes envoient « relâché » après chaque clic, ce qui peut arrêter l'action lancée par le clic (ex. volets). Activé : « relâché » n'est émis qu'après un appui long. Idée créditée à l'app Button+ d'Adrian_Rockall."
+      }
     }
   ],
   "pair": [
