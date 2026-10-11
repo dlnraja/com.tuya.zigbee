@@ -59,16 +59,11 @@ describe('P2328 button forum RX / pairing', () => {
   it('scene_switch_4 productIds are TS0044/TS1002 only (no knob soup)', () => {
     const c = readJson('drivers/scene_switch_4/driver.compose.json');
     const pids = c.zigbee.productId || [];
-    // WHY(2026-10-11, P2677): HOBEIAN ZG-101ZS is the Star Ring 4-gang scene switch (Z2M ZG-101ZS:
-    // 1-4 single/double/hold, battery) — scene_switch_4 is its single owner (mfs_db HOBEIAN.byPid).
-    // Still no knob soup: only TS0044/TS1002/ZG-101ZS (case variants from P2677 allowed).
-    const uniq = [...new Set(pids.map((p) => String(p).toUpperCase()))].sort();
-    assert.deepEqual(uniq, ['TS0044', 'TS1002', 'ZG-101ZS'].sort());
+    // WHY(2026-10-11): Z2M HOBEIAN ZG-101ZS is a whitelabel of _TZ3000_bgtzm4ny+TS0044 (tuya.ts), not a modelId;
+    // bot-added ZG-101ZS/HOBEIAN removed (curated removal). Lowercase pid case-forms allowed (P99): compare caseless.
+    assert.deepEqual([...new Set(pids.map((p) => String(p).toUpperCase()))].sort(), ['TS0044', 'TS1002'].sort());
     const mfrs = c.zigbee.manufacturerName || [];
-    if (mfrs.some((m) => /^hobeian$/i.test(m))) {
-      const db = readJson('data/mfs_db.json');
-      assert.strictEqual(db.HOBEIAN && db.HOBEIAN.byPid && db.HOBEIAN.byPid['ZG-101ZS'], 'scene_switch_4');
-    }
+    assert.ok(!mfrs.some((m) => /^hobeian$/i.test(m)));
   });
 
   it('mfs_db wkai4ga5 locked to TS0044 battery remote', () => {
