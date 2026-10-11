@@ -127,3 +127,27 @@ Matches below are by manufacturerName; issue titles naming the exact couple are 
 | `_TZ3000_j0ktmul1` + TS011F | 5-zone valve controller (Z2M AUT000069); no profile | interview |
 | `_TZ3000_gazjngjl` + TS011F | Z2M#30168 says 1-gang socket + USB; endpoint layout unknown | interview (endpoints) |
 | `_TZ3000_z6fgd73r` + TS011F | touch switch with metering on TS011F | interview |
+
+## Rule change (2026-10-11 15:20): one source suffices
+
+From now on, one reliable source that gives the exact mfr+pid couple and the device type is enough to
+place a couple (AGENTS.md R11b). The source is recorded per couple. We skip only when the pid is
+ambiguous. Placed under this rule:
+
+| Couple | Device | Source | Driver (removed from) |
+|---|---|---|---|
+| `_TZE200_aj0oxo1i` TS0225 | ZG-225Z gas sensor | Z2M hobeian.ts | gas_sensor (sensor_motion_presence) |
+| `_TZ3000_6oabgtzv` TS0207 | water leak detector | Johan water_detector (other pid is junk) | water_leak_sensor (switch_1gang) |
+| `_TZ3000_fdxihpp7` TS0001 | AY301Z switch module | Z2M tuya.ts | switch_1gang (already present; pinned) |
+| `_TZ3000_kjfzuycl` TS004F | Moes ERS-10TZBVB-AA button | Z2M tuya.ts | smart_remote_1_button (remote_button_wireless_smart) |
+| `_TZ3000_fa9mlvja` TS0041 | IH-K663 button | Z2M tuya.ts | button_wireless_1 (existing pin; off remote_button_wireless, wall_remote_1_gang) |
+| `_TYZB01_qezuin6k` TS110F | 1-gang TRIAC dimmer module | Z2M lonsonho.ts | dimmer_1_gang (already present; pinned) |
+
+Skipped:
+- `_TZE600_ogyg1y6b` TS0105: no driver lists TS0105, and adding the pid to an existing curtain driver
+  would pair it with every other manufacturer on that driver, inventing couples. A new driver id is
+  ruled out (Athom), so the couple stays on curtain_motor_shutter (TS0601/TS110F) until a TS0105-only
+  variant is allowed.
+- `_TZ3000_2dlwlvex`, `qcdqw8nf`, `vvlivusi`, `w05exif3`, `cdamjqm9` (Johan wall_switch_3_gang with
+  TS0003/TS0013/TS0043), `_TYZB01_6g8b7at8` (TS0002/TS0012/TS0042) and `_TZ3000_fjt5218m`
+  (TS0014/TS0044): the device type is clear but the pid is ambiguous.
