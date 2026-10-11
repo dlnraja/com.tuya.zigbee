@@ -15,6 +15,7 @@ const path = require('path');
 const testApi = global.describe && global.it ? global : require('node:test');
 const { describe, it } = testApi;
 
+const { pairingCaseVariants } = require('../lib/utils/TuyaNormalizer');
 const ROOT = path.join(__dirname, '..');
 const TUYA_RX = /^_t[zy][a-z0-9]{4,}_/i;
 const SYNTHETIC_RX = /_disabled|_dummy|_generic|_hybrid|_master|placeholder|needs_/i;
@@ -24,17 +25,6 @@ function tuyaCanonical(m) {
   return match ? `${match[1].toUpperCase()}_${match[2].toLowerCase()}` : null;
 }
 
-function allCaseCombos(m) {
-  const match = String(m).match(/^(_t[zy][a-z0-9]+)_(.+)$/i);
-  if (!match) {return [String(m).toLowerCase(), String(m).toUpperCase()];}
-  const [, prefix, suffix] = match;
-  return [...new Set([
-    `${prefix.toLowerCase()}_${suffix.toLowerCase()}`,
-    `${prefix.toUpperCase()}_${suffix.toUpperCase()}`,
-    `${prefix.toUpperCase()}_${suffix.toLowerCase()}`,
-    `${prefix.toLowerCase()}_${suffix.toUpperCase()}`
-  ])];
-}
 
 describe('case-variant completeness (pairing, unknown device prevention)', () => {
   it('every Tuya fingerprint exists in both cases in every driver', function () {
@@ -50,9 +40,12 @@ describe('case-variant completeness (pairing, unknown device prevention)', () =>
         if (seen.has(lc)) {continue;}
         seen.add(lc);
         if (!TUYA_RX.test(lc) || SYNTHETIC_RX.test(lc)) {continue;}
-        const up = lc.toUpperCase();
-        if (!exact.has(up) && up !== lc) {missing.push(`${d.id}: ${m} (manque ${up})`);}
-        if (!exact.has(lc)) {missing.push(`${d.id}: ${m} (manque ${lc})`);}
+        // WHY(P99/P2677, 2026-10-11): runtime matching is case-insensitive (TuyaNormalizer, read-time
+        // normalization); the manifest only needs the Homey-critical forms that same SSOT produces
+        // (canonical + lowercase). ALL-UPPER copies are not required and blow the P2252 combo budget.
+        for (const v of pairingCaseVariants(lc)) {
+          if (!exact.has(v)) {missing.push(`${d.id}: ${m} (manque ${v})`);}
+        }
       }
     }
     assert.deepStrictEqual(missing, [],
@@ -82,7 +75,7 @@ describe('case-variant completeness (pairing, unknown device prevention)', () =>
       `${missing.length} variante(s) canonique(s) manquante(s):\n${missing.slice(0, 10).join('\n')}`);
   });
 
-  it('every Tuya fingerprint has ALL 4 prefix/suffix case combos (any firmware case pairs)', function () {
+  it('every Tuya fingerprint has the SSOT pairing case forms (TuyaNormalizer)', function () {
     if (typeof this.timeout === 'function') {this.timeout(60000);}
     const app = require(path.join(ROOT, 'app.json'));
     const missing = [];
@@ -95,7 +88,8 @@ describe('case-variant completeness (pairing, unknown device prevention)', () =>
         if (seen.has(lc)) {continue;}
         seen.add(lc);
         if (!TUYA_RX.test(lc) || SYNTHETIC_RX.test(lc)) {continue;}
-        for (const v of allCaseCombos(lc)) {
+        // WHY(P99/P2677): only the SSOT pairing forms; other casings are matched at read time (TuyaNormalizer).
+        for (const v of pairingCaseVariants(lc)) {
           if (!exact.has(v)) {missing.push(`${d.id}: ${m} (manque combo ${v})`);}
         }
       }
