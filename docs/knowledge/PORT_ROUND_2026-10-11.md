@@ -31,7 +31,7 @@ Credit: Zigbee2MQTT/zigbee-herdsman-converters (Koen Kanters and contributors), 
 | AutomatOn 5-zone valve fold → `switch_4gang` (j0ktmul1) | Via earlier W4 ports | Via earlier W4 ports |
 | FUT089Z fold → `button_wireless_4` | Check soak / port separately if missing | Check soak / port separately if missing |
 
-Still held on purpose: `_TZE600_ogyg1y6b`/TS0105 (no TS0105 driver — would cross-product); Johan mfrs with ambiguous pid.
+Still held on purpose: Johan mfrs with ambiguous pid. **Placed evening:** `_TZE600_ogyg1y6b`/`_TZE600_5cu64znk`|TS0105 → `curtain_motor` (ZBCMR-01/02); `_TZE200_wrmhp6b3` → `soil_sensor`.
 
 ## Improve pass (same day, Grok hand-off)
 
@@ -51,7 +51,7 @@ Still held on purpose: `_TZE600_ogyg1y6b`/TS0105 (no TS0105 driver — would cro
 | Bastien | **1.0.148 Test** (git tip still 1.0.122 line + P2640 `f1f76d5968`) | Publish Zigbee Bastien + Node22 green |
 | Stable | **5.12.399 Test** (#307) | Draft→Test promoted; Node22 green; PRs #564–#566 merged |
 
-Held on purpose: `_TZE600_ogyg1y6b`/TS0105; ambiguous Johan mfrs. No invented couples.
+Held on purpose: ambiguous Johan mfrs. No invented couples. ZBCMR TS0105 + wrmhp6b3 soil closed on master tip (port bastien/stable next).
 
 ## Resume Grok/IDE (Paris ~22:30)
 
@@ -62,4 +62,6 @@ Held on purpose: `_TZE600_ogyg1y6b`/TS0105; ambiguous Johan mfrs. No invented co
 | P2761 Fantem/contact/PIR off climate+dimmer | Was missing on `origin/stable-v5` → PR **#567** merged → tip **5.12.400** |
 | Publish Stable failure on #566 | Race: 5.12.399 still draft; fixed by Draft→Test (#307) |
 | Fleet Enrich cron | Soft failure (enrich step); not blocking tips |
-| Still held | TS0105 `ogyg1y6b`; 7 Johan mfrs with ambiguous pid |
+| Still held | 7 Johan mfrs with ambiguous pid |
+| ZBCMR `ogyg1y6b`/`5cu64znk`|TS0105 → `curtain_motor` | Port pending |
+| `wrmhp6b3` → `soil_sensor` | Port pending (bastien may already have local compose) |
