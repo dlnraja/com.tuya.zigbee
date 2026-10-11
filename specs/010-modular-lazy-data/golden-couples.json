@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-11T00:43:19.548Z",
+ "generated": "2026-10-11T05:55:01.634Z",
  "drivers": 388,
  "snapshot": {
   "air_purifier": {
@@ -171,9 +171,9 @@
    "pidSha": "635866b899c3aee7"
   },
   "button_wireless": {
-   "mfr": 6,
+   "mfr": 7,
    "pid": 12,
-   "mfrSha": "12047ab896613a29",
+   "mfrSha": "81037a6a3553273c",
    "pidSha": "d1852e519f020485"
   },
   "button_wireless_1": {
@@ -387,15 +387,15 @@
    "pidSha": "9100a07e492286f1"
   },
   "curtain_module_2_gang": {
-   "mfr": 11,
+   "mfr": 12,
    "pid": 3,
-   "mfrSha": "de232ea1cb9f8696",
+   "mfrSha": "0bf1fdaa9c2f94a6",
    "pidSha": "c4343290bac9e455"
   },
   "curtain_motor": {
-   "mfr": 281,
+   "mfr": 280,
    "pid": 47,
-   "mfrSha": "76b6dd982f69cb81",
+   "mfrSha": "257c72be5b58bd37",
    "pidSha": "735b9403d1d2fceb"
   },
   "curtain_motor_shutter": {
@@ -855,9 +855,9 @@
    "pidSha": "480a275813c8653e"
   },
   "gas_sensor": {
-   "mfr": 10,
+   "mfr": 11,
    "pid": 5,
-   "mfrSha": "4beb86c98200fee4",
+   "mfrSha": "d940fe75644e5683",
    "pidSha": "606b2995829e9479"
   },
   "gas_sensor_switch": {
@@ -1552,9 +1552,9 @@
   },
   "sensor_ias_zonetype_ewelink": {
    "mfr": 1,
-   "pid": 1,
+   "pid": 2,
    "mfrSha": "1c7aa01100a550fe",
-   "pidSha": "d58bfac07ee13fc2"
+   "pidSha": "f4b40b018ecb0c18"
   },
   "sensor_illuminance_presence": {
    "mfr": 14,
@@ -1575,9 +1575,9 @@
    "pidSha": "16eca7095d19bea2"
   },
   "sensor_motion_presence": {
-   "mfr": 27,
+   "mfr": 26,
    "pid": 20,
-   "mfrSha": "5135f0c779c216fc",
+   "mfrSha": "a0b97820380ec61a",
    "pidSha": "3306d9879248aa7e"
   },
   "sensor_motion_radar": {
@@ -1881,9 +1881,9 @@
    "pidSha": "5181eca4102958ba"
   },
   "switch_2gang": {
-   "mfr": 92,
+   "mfr": 93,
    "pid": 14,
-   "mfrSha": "1a14b3916a3033f5",
+   "mfrSha": "306b120c3718ab91",
    "pidSha": "830a6ff3ab71bd70"
   },
   "switch_3_gang": {
@@ -1941,9 +1941,9 @@
    "pidSha": "da584d26852dabd1"
   },
   "switch_usb_dongle": {
-   "mfr": 7,
+   "mfr": 8,
    "pid": 2,
-   "mfrSha": "71e6d0fc4009f836",
+   "mfrSha": "e6b13ffedb22673d",
    "pidSha": "d5939d250b4744ae"
   },
   "switch_wall": {
@@ -2097,9 +2097,9 @@
    "pidSha": "b5f78b2a386201c5"
   },
   "usb_dongle_triple": {
-   "mfr": 17,
+   "mfr": 16,
    "pid": 9,
-   "mfrSha": "351dcf4347969f0f",
+   "mfrSha": "f73478d343049362",
    "pidSha": "d0d47359d9f8c8f2"
   },
   "usb_outlet_advanced": {
@@ -2289,9 +2289,9 @@
    "pidSha": "8218a22aa12bceb7"
   },
   "water_leak_sensor": {
-   "mfr": 30,
+   "mfr": 31,
    "pid": 21,
-   "mfrSha": "d38eddcffe8d8b1e",
+   "mfrSha": "00707b5754a06ba0",
    "pidSha": "ddd617471a56ff24"
   },
   "water_leak_sensor_tuya": {

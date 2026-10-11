@@ -122,6 +122,30 @@
       "modelIdPattern": "^(3450-L|E1\\d{3}|LUMI\\.|ROM001|01MINIZB|A11Z|BASICZBR3)",
       "why": "P2613: IKEA/LUMI/Sonoff/Philips model IDs bled onto Tuya remote mfs entries (949 pruned from 133 entries 2026-10-11); never re-add",
       "source": "P2613 / 4b4b118912"
+    },
+    {
+      "driver": "sensor_motion_presence",
+      "mfr": [
+        "_TZE200_p6fuhvez"
+      ],
+      "why": "2026-10-11: TS0225 = HOBEIAN ZG-225Z gas sensor (Z2M hobeian.ts + sprut/Hub#4328 interview IAS zoneType 43 gas) → owner gas_sensor",
+      "source": "lost-couples 2026-10-11"
+    },
+    {
+      "driver": "curtain_motor",
+      "mfr": [
+        "_TZ3000_j1xl73iw"
+      ],
+      "why": "2026-10-11: TS130F Girier dual curtain module (Z2M lonsonho.ts TS130F_dual + romasku/tuya-zigbee-switch#270 + Johan) → owner curtain_module_2_gang (as master/bastien)",
+      "source": "lost-couples 2026-10-11"
+    },
+    {
+      "driver": "usb_dongle_triple",
+      "mfr": [
+        "_TZ3000_gazjngjl"
+      ],
+      "why": "2026-10-11: TS011F Zemismart ZIGBEE-B09-UK socket+USB, 2 on/off endpoints (Z2M zemismart.ts + sprut/Hub#4960 interview) → owner switch_usb_dongle on stable (usb_dongle_triple has no TS011F here)",
+      "source": "lost-couples 2026-10-11"
     }
   ]
 }
