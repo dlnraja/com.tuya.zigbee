@@ -24,7 +24,7 @@ on:
         type: boolean
         default: false
       transient_retry:
-        description: 'Internal: set by the transient Athom retry (disables a second retry)'
+        description: 'Internal: retries already done in this chain (true=1); AggregateError max 2, transport max 1'
         type: string
         default: 'false'
 
@@ -756,6 +756,6 @@ jobs:
           out=$(node .github/scripts/transient-publish-retry.js) || true
           echo "$out"; echo "$out" >> "$GITHUB_STEP_SUMMARY"
           if printf '%s' "$out" | grep -q '^\[transient-retry\] RETRY'; then
-            gh workflow run auto-publish-on-push.yml --ref "${GITHUB_REF_NAME}" -f transient_retry=true || true
+            next=$(printf '%s\n' "$out" | sed -n 's/^\[transient-retry\] NEXT=//p' | head -1); gh workflow run auto-publish-on-push.yml --ref "${GITHUB_REF_NAME}" -f transient_retry="${next:-1}" || true
           fi
           exit 1
