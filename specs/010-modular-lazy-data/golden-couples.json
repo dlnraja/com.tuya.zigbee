@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-11T06:42:26.023Z",
+ "generated": "2026-10-11T07:31:10.907Z",
  "drivers": 392,
  "snapshot": {
   "air_purifier": {
@@ -1875,9 +1875,9 @@
    "pidSha": "b46b96d17990cf37"
   },
   "switch_1gang": {
-   "mfr": 360,
+   "mfr": 361,
    "pid": 38,
-   "mfrSha": "2d7fbe99856518a9",
+   "mfrSha": "1b6e6c5a70517b99",
    "pidSha": "fd65b1d55ed8db6a"
   },
   "switch_2_gang": {
@@ -2121,9 +2121,9 @@
    "pidSha": "b5f78b2a386201c5"
   },
   "usb_dongle_triple": {
-   "mfr": 29,
+   "mfr": 28,
    "pid": 10,
-   "mfrSha": "5ec9cb73729e6e8e",
+   "mfrSha": "f7bb35b5a53e2776",
    "pidSha": "d2d418f57022c1e1"
   },
   "usb_outlet_advanced": {

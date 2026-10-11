@@ -1279,6 +1279,12 @@
       "pid": "TS000F",
       "driverId": "switch_1gang",
       "note": "WHD02 (#2257-era, switch_module_whd02 held) folded into switch_1gang; keep through publish compaction"
+    },
+    {
+      "mfr": "_TZ3000_z6fgd73r",
+      "pid": "TS011F",
+      "driverId": "switch_1gang",
+      "note": "LELLKI XF-EU-S100-1-M 1-gang touch switch with power monitoring (Z2M lellki.ts, blakadder LELLKI_XF-EU-S100-1, wonjj6768 SmartThings zcl switches) — not a USB dongle"
     }
   ]
 }
