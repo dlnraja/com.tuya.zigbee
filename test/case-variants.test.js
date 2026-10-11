@@ -37,7 +37,7 @@ function allCaseCombos(m) {
 }
 
 describe('case-variant completeness (pairing, unknown device prevention)', () => {
-  it('every Tuya fingerprint exists in both cases in every driver', function () {
+  it('every Tuya fingerprint has its lowercase form in every driver (P99)', function () {
     if (typeof this.timeout === 'function') {this.timeout(60000);}
     const app = require(path.join(ROOT, 'app.json'));
     const missing = [];
@@ -51,7 +51,9 @@ describe('case-variant completeness (pairing, unknown device prevention)', () =>
         seen.add(lc);
         if (!TUYA_RX.test(lc) || SYNTHETIC_RX.test(lc)) {continue;}
         const up = lc.toUpperCase();
-        if (!exact.has(up) && up !== lc) {missing.push(`${d.id}: ${m} (manque ${up})`);}
+        // WHY(P99 692d86e669 + P2252 combo budget): Homey-critical Tuya forms are canonical + lowercase
+        // (ensure-case-variants.js). Full UPPER is optional — runtime matching is caseless (TuyaNormalizer).
+        void up;
         if (!exact.has(lc)) {missing.push(`${d.id}: ${m} (manque ${lc})`);}
       }
     }
@@ -82,7 +84,7 @@ describe('case-variant completeness (pairing, unknown device prevention)', () =>
       `${missing.length} variante(s) canonique(s) manquante(s):\n${missing.slice(0, 10).join('\n')}`);
   });
 
-  it('every Tuya fingerprint has ALL 4 prefix/suffix case combos (any firmware case pairs)', function () {
+  it('every Tuya fingerprint has the Homey-critical canonical + lowercase pair (P99)', function () {
     if (typeof this.timeout === 'function') {this.timeout(60000);}
     const app = require(path.join(ROOT, 'app.json'));
     const missing = [];
@@ -95,9 +97,13 @@ describe('case-variant completeness (pairing, unknown device prevention)', () =>
         if (seen.has(lc)) {continue;}
         seen.add(lc);
         if (!TUYA_RX.test(lc) || SYNTHETIC_RX.test(lc)) {continue;}
-        for (const v of allCaseCombos(lc)) {
+        // WHY(P99 692d86e669 supersedes P92.62 4-combos): only the Homey-critical pair is required;
+        // extra combos are allowed (never required) to stay inside the Athom combo budget (P2252).
+        const canon = tuyaCanonical(lc) || lc;
+        for (const v of [canon, lc]) {
           if (!exact.has(v)) {missing.push(`${d.id}: ${m} (manque combo ${v})`);}
         }
+        assert.ok(allCaseCombos(lc).includes(canon));
       }
     }
     assert.deepStrictEqual(missing, [],
