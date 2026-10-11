@@ -87,8 +87,12 @@ describe('P92.68 — backlog cross-source', () => {
   });
 
   it('circadian curve delegates to SolarElevation when available', () => {
-    const src = read('app.js');
-    assert.ok(src.includes('solar.getElevation'), 'real sun position used');
+    // WHY(c44466b3fe): the curve moved from app.js into CircadianEngine → DaylightAtmosphere,
+    // which still asks SolarElevation (opts.solar.getElevation) for the real sun position.
+    const app = read('app.js');
+    assert.match(app, /new CircadianEngine\(this\.homey, \{\s*solarElevation: this\.solarElevation/);
+    assert.ok(read('lib/managers/CircadianEngine.js').includes('solar: this._solar'));
+    assert.ok(read('lib/features/DaylightAtmosphere.js').includes('opts.solar.getElevation'), 'real sun position used');
   });
 
   it('button-class drivers use class "button", humidifiers use target_humidity', () => {

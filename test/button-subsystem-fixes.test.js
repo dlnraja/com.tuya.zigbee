@@ -82,18 +82,18 @@ describe('B2/B3 — Scene recall listener', () => {
   });
 
   it('_triggerPhysicalFlow awaits the ButtonDevice router', () => {
-    // WHY(P2235 771bb01668, intended): the router call now passes `extra` (source + rotate type token);
-    // double-fire is guarded by tokens._internalTrigger.
+    // WHY(P2235 771bb01668 + P2721 04e3cc5f6a): tokens travel in `extra` (source/rotate); remotes fire
+    // without blocking the RX path, every other device still awaits/returns the router.
     assert.match(mixinSrc, /return this\.triggerButtonPress\(gang, normType, clicks, extra\)/);
-    assert.match(mixinSrc, /typeof this\.triggerButtonPress === 'function' && !tokens\._internalTrigger/);
   });
 });
 
 describe('B4 — onEndDeviceAnnounce super calls', () => {
   it('ButtonDevice calls the parent handler', () => {
     const start = buttonDeviceSrc.indexOf('async onEndDeviceAnnounce()');
-    // WHY: the handler grew (soft try/catch + coordinator wiring); the super call sits ~1.2 KB in.
-    const body = buttonDeviceSrc.slice(start, start + 2500);
+    // WHY(P2733 86a7df1e00): the handler grew (fleet log, BootBudget, listen-only wake) — read the whole method.
+    const end = buttonDeviceSrc.indexOf('\n  async ', start + 10);
+    const body = buttonDeviceSrc.slice(start, end > start ? end : start + 4000);
     assert.match(body, /await super\.onEndDeviceAnnounce\?\.\(\)/);
   });
 
@@ -230,7 +230,10 @@ describe('B12 — dead fallbacks removed', () => {
 
   it('_triggerHoldRelease tries the mid-form gang release card', () => {
     const start = buttonDeviceSrc.indexOf('async _triggerHoldRelease(button)');
-    const body = buttonDeviceSrc.slice(start, start + 2500);
-    assert.match(body, /\$\{driverId\}_button_\$\{gangCount\}gang_button_release/);
+    const body = buttonDeviceSrc.slice(start, start + 6000);
+    // WHY(P2332 587f3b09b6): hold-release is declared-only — the raw mid-form getDeviceTriggerCard
+    // fallback was removed; per-button gang release is now one of the declared candidates.
+    assert.match(body, /\$\{driverId\}_button_\$\{gangCount\}gang_button_\$\{btnNum\}_release/);
+    assert.doesNotMatch(body, /getDeviceTriggerCard\(midCardId\)/);
   });
 });

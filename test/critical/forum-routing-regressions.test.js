@@ -253,7 +253,7 @@ describe('forum routing regressions', () => {
     assert.match(read('drivers/boiler_switch_energy/device.js'), /this\._initializing = true[\s\S]+this\._initialized = true[\s\S]+finally/);
 
     assertDriverHasProductId('motion_sensor', 'SNZB-03');
-    assert.strictEqual(CompoundFingerprintDB.lookup('eWeLink', 'SNZB-03')?.driver, 'sensor_ias_zonetype_ewelink'); // #1113/#1475 ambiguous: zoneType decides
+    assert.strictEqual(CompoundFingerprintDB.lookup('eWeLink', 'SNZB-03')?.driver, 'sensor_ias_zonetype_ewelink');
     assert.strictEqual(RuntimeFingerprintDB.getDriverId('eWeLink', 'SNZB-03'), 'sensor_ias_zonetype_ewelink');
   });
 
@@ -335,7 +335,9 @@ describe('forum routing regressions', () => {
     assert(includesCI(composeDriver('rain_sensor').zigbee?.manufacturerName, '_TZE200_u6x1zyv2'));
     assert(!includesCI(composeDriver('contact_sensor').zigbee?.manufacturerName, '_TZE200_u6x1zyv2'));
     assert(!includesCI(composeDriver('sensor_contact_rain').zigbee?.manufacturerName, '_TZE200_u6x1zyv2'));
-    assert(includesCI(composeDriver('contact_sensor').zigbee?.manufacturerName, '_TZE200_pay2byax'));
+    // WHY(P2758/P2201): the EF00 pay2byax couple lives on contact_sensor_zigbee (TS0601), not IAS contact_sensor.
+    assert(includesCI(composeDriver('contact_sensor_zigbee').zigbee?.manufacturerName, '_TZE200_pay2byax'));
+    assert(!includesCI(composeDriver('contact_sensor').zigbee?.manufacturerName, '_TZE200_pay2byax'));
     assert(!includesCI(composeDriver('soil_sensor').zigbee?.manufacturerName, '_TZE200_pay2byax'));
   });
 

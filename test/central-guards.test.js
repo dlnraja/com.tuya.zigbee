@@ -31,7 +31,13 @@ describe('central _destroyed guards (TuyaZigbeeDevice)', () => {
   });
 
   it('raw setCapabilityValue routes through the guarded safe wrapper', () => {
-    assert.match(src, /async setCapabilityValue\(capability, value\) \{\s*return this\.safeSetCapabilityValue\(capability, value\)/);
+    // WHY(P2308 109f7f80ba + P2403): ghost-cap refusal and a recursion depth cap now wrap the call,
+    // but the raw setter still routes through the guarded safe wrapper.
+    const i = src.indexOf('async setCapabilityValue(capability, value) {');
+    assert.ok(i > 0);
+    const body = src.slice(i, src.indexOf('\n  }\n', i));
+    assert.match(body, /return (await )?this\.safeSetCapabilityValue\(capability, value\)/);
+    assert.match(body, /__capSetDepth/);
   });
 });
 
