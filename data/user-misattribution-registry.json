@@ -8066,6 +8066,22 @@
         "z2m"
       ],
       "notes": "P2622 W4 2026-10-11: exact eWeLink couple, Z2M ewelink.ts SNZB-05 white-label (fingerprint manufacturerName eWeLink, Koen Kanters and contributors). eWeLink is a multi-driver brand: route by pid, never strip by brand."
+    },
+    {
+      "id": "w4-tz3000-lmcp6b0a-ts0003-not-climate",
+      "mfr": [
+        "_TZ3000_lmcp6b0a",
+        "_tz3000_lmcp6b0a",
+        "_TZ3000_LMCP6B0A"
+      ],
+      "productId": [
+        "TS0003"
+      ],
+      "canonicalDriver": "switch_3_gang",
+      "forbiddenDrivers": [
+        "climate_sensor"
+      ],
+      "notes": "W4 curated removal 2026-10-11: Zemismart 3-gang TS0003 wall switch (interview in JohanBendz#795, Johan 2026 verification). climate_sensor has no Z2M pid for this mfr."
     }
   ],
   "entries": {
