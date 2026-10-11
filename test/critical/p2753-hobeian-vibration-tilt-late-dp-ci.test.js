@@ -45,6 +45,8 @@ Module._load = function loadWithHomeyMocks(request, parent, isMain) {
   return originalLoad.call(this, request, parent, isMain);
 };
 
+// WHY: hermetic stub must not leak — snapshot the cache, restore the loader and evict modules
+// built against the fake zigbee-clusters (else TuyaE000BoundCluster etc. break later in the same mocha run).
 const VibrationSensorDevice = require('../../drivers/vibration_sensor/device');
 const EnrichedDPMappings = require('../../lib/tuya/EnrichedDPMappings');
 const { bootstrapUniversalLayers } = require('../../lib/layers/UniversalLayerBootstrap');
