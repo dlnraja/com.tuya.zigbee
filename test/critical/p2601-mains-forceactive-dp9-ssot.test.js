@@ -28,8 +28,9 @@ describe('P2601 mains forceActive query + gkfbdvyx DP9 ÷10', () => {
     const src = fs.readFileSync(path.join(ROOT, 'lib/data/SensorConfigs.js'), 'utf8');
     const idx = src.indexOf("'_TZE204_gkfbdvyx'");
     assert.ok(idx > 0);
-    const block = src.slice(idx, idx + 1800);
-    assert.match(block, /9:\s*\{\s*cap:\s*'measure_luminance\.distance',\s*divisor:\s*10/);
+    const block = src.slice(idx, idx + 3000);
+    // P2715: dual-scale DP9, ÷10 preferred
+    assert.match(block, /9:\s*\{\s*cap:\s*'measure_luminance\.distance',[\s\S]{0,80}?(divisor|preferDivisor):\s*10/);
     assert.ok(block.includes('enableFindSwitchOnBoot: true'));
     assert.ok(block.includes('syncPresenceFromLuxInference: true'));
   });

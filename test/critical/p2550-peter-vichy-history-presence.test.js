@@ -30,7 +30,8 @@ describe('P2550 Peter #2239 Smartbutton battery Insights recycle', () => {
   it('ButtonDevice recycles measure_battery once for Insights (P2550)', () => {
     const src = fs.readFileSync(path.join(ROOT, 'lib/devices/ButtonDevice.js'), 'utf8');
     assert.ok(src.includes('p2550_batt_insights_recycle'));
-    assert.ok(src.includes('P2550 recycled measure_battery'));
+    // P2555 re-keyed the recycle (log line now says P2555); legacy p2550 flag still written.
+    assert.ok(/P255[05] recycled measure_battery/.test(src));
     assert.ok(src.includes('removeCapability(\'measure_battery\')'));
     assert.ok(src.includes('addCapability(\'measure_battery\')'));
   });
@@ -39,7 +40,8 @@ describe('P2550 Peter #2239 Smartbutton battery Insights recycle', () => {
     const src = fs.readFileSync(
       path.join(ROOT, 'drivers/button_wireless_1/device.js'), 'utf8');
     assert.ok(src.includes('_ensureBatteryCapabilityUi'));
-    assert.ok(src.includes('P2550'));
+    // P2734 rewrote the boot block; the P2550 marker comment went, the call stayed.
+    assert.match(src, /await this\._ensureBatteryCapabilityUi\(\)/);
   });
 });
 
