@@ -23,7 +23,14 @@ FakeTuyAPI.connectImpl = (d) => { setImmediate(() => d.emit('connected')); retur
 
 const origLoad = Module._load;
 Module._load = function (req, ...rest) { return req === 'tuyapi' ? FakeTuyAPI : origLoad.call(this, req, ...rest); };
-const TuyaLocalClient = require('../../lib/tuya-local/TuyaLocalClient');
+// WHY(2026-10-11): in the full mocha run TuyaLocalClient is often already cached with the REAL tuyapi,
+// so the fake was bypassed and a real socket to 10.0.0.2 threw an uncaught "connection timed out" that
+// aborted ~800 later tests. Load a fresh copy under the fake, then restore the cache entry.
+const clientPath = require.resolve('../../lib/tuya-local/TuyaLocalClient');
+const cachedClient = require.cache[clientPath];
+delete require.cache[clientPath];
+const TuyaLocalClient = require(clientPath);
+if (cachedClient) require.cache[clientPath] = cachedClient; else delete require.cache[clientPath];
 Module._load = origLoad;
 
 const tick = () => new Promise((r) => setImmediate(r));
