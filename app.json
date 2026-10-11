@@ -156430,6 +156430,89 @@
         }
       },
       "id": "valve_controller_5zone"
+    },
+    {
+      "name": {
+        "en": "RGB+CCT remote (8 zones)",
+        "fr": "Télécommande RGB+CCT (8 zones)",
+        "nl": "RGB+CCT-afstandsbediening (8 zones)",
+        "de": "RGB+CCT-Fernbedienung (8 Zonen)"
+      },
+      "class": "remote",
+      "capabilities": [
+        "measure_battery"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "energy": {
+        "batteries": [
+          "AAA",
+          "AAA"
+        ]
+      },
+      "images": {
+        "small": "/drivers/remote_rgbcct_8zone/assets/images/small.png",
+        "large": "/drivers/remote_rgbcct_8zone/assets/images/large.png"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_xwh1e22x",
+          "_tz3000_xwh1e22x"
+        ],
+        "productId": [
+          "TS1002"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1
+            ],
+            "bindings": [
+              4,
+              5,
+              6,
+              8,
+              768
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/remote_rgbcct_8zone/assets/icon.svg",
+          "instruction": {
+            "en": "Press and hold the zone's ON button and the 'S' (set) button together until the indicator blinks.",
+            "fr": "Maintenez ensemble le bouton ON de la zone et le bouton « S » jusqu'à ce que le voyant clignote.",
+            "nl": "Houd de AAN-knop van de zone en de 'S'-knop samen ingedrukt tot het lampje knippert.",
+            "de": "Halten Sie die EIN-Taste der Zone und die Taste „S“ gleichzeitig gedrückt, bis die Anzeige blinkt."
+          }
+        }
+      },
+      "settings": [
+        {
+          "id": "zone_group_base",
+          "type": "number",
+          "value": 100,
+          "min": 0,
+          "max": 65000,
+          "label": {
+            "en": "Zone group base",
+            "fr": "Base des groupes de zones",
+            "nl": "Basis zonegroep",
+            "de": "Basis der Zonengruppen"
+          },
+          "hint": {
+            "en": "Zone N is sent to Zigbee group base+N (factory default 100 → groups 101..108).",
+            "fr": "La zone N est envoyée au groupe Zigbee base+N (défaut usine 100 → groupes 101..108).",
+            "nl": "Zone N gaat naar Zigbee-groep basis+N (fabriekswaarde 100 → groepen 101..108).",
+            "de": "Zone N wird an die Zigbee-Gruppe Basis+N gesendet (Werkseinstellung 100 → Gruppen 101..108)."
+          }
+        }
+      ],
+      "id": "remote_rgbcct_8zone"
     }
   ],
   "capabilities": {
