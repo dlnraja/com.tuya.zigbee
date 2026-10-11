@@ -299,12 +299,13 @@
       "smartthings": "wonjj6768/smartthings-zigbee-edge-drivers:source/src/contracts/families/ef00/covers.lua;wonjj6768/smartthings-zigbee-edge-drivers:deploy/ef00-covers-wonjj6768/src/contracts/families/ef00/covers.lua;"
     }
   },
-  "note_2026_10_11_resume": "Close-out: Universal 9.0.1433 Test, Bastien 1.0.148 Test, Stable 5.12.399 Test. One-source + HOBEIAN/FUT089Z/j0ktmul1 ported. Still held: ogyg1y6b/TS0105 (no pid driver), Johan ambiguous pids. 2026-10-11 night: wrmhp6b3|TS0601 → soil_sensor (Z2M CS-201Z + Hubitat). | ogyg1y6b|TS0105 → curtain_motor | night: ogyg1y6b+5cu64znk TS0105 → curtain_motor_shutter; soil TS0105 junk stripped.",
+  "note_2026_10_11_resume": "Close-out tips 1433/148/399. Placed: wrmhp6b3 soil; ogyg1y6b+5cu64znk|TS0105 curtain_motor (ZBCMR-01/02 Z2M; shutter forbidden). Peter c05db40d OOM closed (>=9.0.1330). Johan exact couples still being placed under one-source policy.",
   "z2m_attested_unplaced_status": {
     "_tze200_aj0oxo1i|ts0225": "placed gas_sensor (one-source Z2M)",
     "_tze200_p6fuhvez|ts0225": "placed gas_sensor",
     "_tz3000_fdxihpp7|ts000f": "pinned switch_1gang",
-    "_tze600_ogyg1y6b|ts0105": "placed curtain_motor_shutter (Z2M ZBCMR-01 + Hubitat; TS0105 on shutter host)",
-    "_tze200_wrmhp6b3|ts0601": "placed soil_sensor (one-source Z2M CS-201Z + Hubitat kkossev)"
+    "_tze600_ogyg1y6b|ts0105": "placed curtain_motor (Z2M ZBCMR-01; TS0105+mfr; shutter forbidden)",
+    "_tze200_wrmhp6b3|ts0601": "placed soil_sensor (one-source Z2M CS-201Z + Hubitat kkossev)",
+    "_tze600_5cu64znk|ts0105": "placed curtain_motor (Z2M ZBCMR-02)"
   }
 }

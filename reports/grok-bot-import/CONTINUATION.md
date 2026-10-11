@@ -24,12 +24,16 @@ Imported from `AppData/Roaming/Grok Bot` (sanitized) + live git tips + `docs/kno
 
 ## Still open (priority)
 
-1. **Held:** `_TZE600_ogyg1y6b`/TS0105 — no TS0105 driver (cross-product risk).
-2. **Tracks:** Johan mfrs with ambiguous pid (7) — wait for exact pid from any one reliable source.
-3. **Switcher timer / on-for-minutes** → stable + Bastien only after ≥24h–7d soak on master Test (PORT_ROUND).
-4. **Forum #2259** (community thread) — triage without Athom mail.
-5. **Empty remote shells** (`remote_button_wireless*`) — leave as-is (paired devices keep working).
-6. **Ledger W4 conflicts / W7 polysemic DP / P2 Wi-Fi** — standing queue (`ledger-cli.js queue`).
+1. **Tracks:** Johan mfrs with ambiguous pid (7) — wait for exact pid from any one reliable source (`LOST_COUPLES_RESTORE_2026-10-11.md`). Partial: `_TYZB01_6g8b7at8`+TS0012 already on `switch_2gang`.
+2. **Switcher timer / on-for-minutes** → stable + Bastien only after **7-day** soak on master Test (cards on 9.0.1433 ~17:17 Paris; port ~2026-10-18).
+3. **Empty remote shells** (`remote_button_wireless*`) — leave as-is (paired devices keep working).
+4. **Ledger W4 conflicts / W7 polysemic DP / P2 Wi-Fi** — standing queue (`ledger-cli.js queue`).
+
+## Closed this evening (do not reopen)
+
+- `_TZE600_ogyg1y6b`|TS0105 + `_TZE600_5cu64znk`|TS0105 → `curtain_motor` (Z2M ZBCMR-01/02; shutter forbidden; soil TS0105 junk stripped).
+- `_TZE200_wrmhp6b3` → `soil_sensor` (Z2M COOLO CS-201Z; off curtain).
+- Forum T140352 **#2259** = Peter `c05db40d` OOM — already fixed ≥9.0.1330 (tip 9.0.1433); no new couples.
 
 ## Worktrees
 

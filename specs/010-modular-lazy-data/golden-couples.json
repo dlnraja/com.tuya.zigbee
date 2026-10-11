@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-11T20:59:52.696Z",
+ "generated": "2026-10-11T21:02:15.277Z",
  "drivers": 393,
  "snapshot": {
   "air_purifier": {
@@ -399,9 +399,9 @@
    "pidSha": "c4343290bac9e455"
   },
   "curtain_motor": {
-   "mfr": 277,
+   "mfr": 278,
    "pid": 48,
-   "mfrSha": "539c28d7a99b743b",
+   "mfrSha": "86e0bfad6ce0c747",
    "pidSha": "00ba96ff94eb4bb5"
   },
   "curtain_motor_shutter": {
@@ -1822,9 +1822,9 @@
   },
   "soil_sensor": {
    "mfr": 73,
-   "pid": 46,
+   "pid": 45,
    "mfrSha": "3b8203abbc056dcf",
-   "pidSha": "39f6154403baf056"
+   "pidSha": "7fdb23605ececb68"
   },
   "soil_sensor_ec": {
    "mfr": 1,

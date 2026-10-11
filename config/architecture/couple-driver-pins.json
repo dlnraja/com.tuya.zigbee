@@ -525,9 +525,9 @@
         "_TZE600_5CU64ZNK",
         "_tze600_5CU64ZNK"
       ],
-      "driver": "curtain_motor_shutter",
+      "driver": "curtain_motor",
       "pid": "TS0105",
-      "source": "Z2M Nova Digital ZBCMR-02 TS0105 (zhc PR #12177). Same shutter host as ZBCMR-01.",
+      "source": "Z2M Nova Digital ZBCMR-02 TS0105 (zhc#12177); same host as ZBCMR-01 ogyg1y6b",
       "regression": "Was held fearing TS0105 cartesian; pid is Nova-Digital-only in Z2M."
     }
   ]

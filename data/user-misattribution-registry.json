@@ -8874,11 +8874,12 @@
       "productId": [
         "TS0105"
       ],
-      "canonicalDriver": "curtain_motor_shutter",
+      "canonicalDriver": "curtain_motor",
       "forbiddenDrivers": [
+        "curtain_motor_shutter",
         "soil_sensor",
-        "curtain_motor",
-        "curtain_module"
+        "curtain_module",
+        "switch_3gang"
       ],
       "forbidMode": "couple",
       "protocol": "tuya_ef00",
