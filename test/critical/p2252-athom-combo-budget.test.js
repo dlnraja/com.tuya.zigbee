@@ -49,8 +49,11 @@ describe('P2252 Athom zigbee combo budget', () => {
 
   it('auto-publish env uses Athom-safe combo caps', () => {
     const yml = fs.readFileSync(path.join(ROOT, '.github/workflows/auto-publish-on-push.yml'), 'utf8');
-    assert.ok(/HOMEY_ZIGBEE_MAX_TOTAL_COMBOS:\s*"20000"/.test(yml));
-    assert.ok(/HOMEY_ZIGBEE_MAX_DRIVER_COMBOS:\s*"2000"/.test(yml));
+    // WHY(8e9914e2ee): budgets were tightened (14000 / 1500) — accept any Athom-safe cap ≤ the old ceiling.
+    const tot = Number((yml.match(/HOMEY_ZIGBEE_MAX_TOTAL_COMBOS:\s*"(\d+)"/) || [])[1]);
+    const drv = Number((yml.match(/HOMEY_ZIGBEE_MAX_DRIVER_COMBOS:\s*"(\d+)"/) || [])[1]);
+    assert.ok(tot > 0 && tot <= 20000, `total combos ${tot}`);
+    assert.ok(drv > 0 && drv <= 2000, `driver combos ${drv}`);
     assert.ok(/HOMEY_DRAFT_WAIT_MS:\s*"(?:360000|600000)"/.test(yml));
   });
 });

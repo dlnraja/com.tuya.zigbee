@@ -82,14 +82,18 @@ describe('B2/B3 — Scene recall listener', () => {
   });
 
   it('_triggerPhysicalFlow awaits the ButtonDevice router', () => {
-    assert.match(mixinSrc, /return this\.triggerButtonPress\(gang, normType, clicks, \{ source: 'physical' \}\)/);
+    // WHY(P2235 771bb01668 + P2721 04e3cc5f6a): tokens travel in `extra` (source/rotate); remotes fire
+    // without blocking the RX path, every other device still awaits/returns the router.
+    assert.match(mixinSrc, /return this\.triggerButtonPress\(gang, normType, clicks, extra\)/);
   });
 });
 
 describe('B4 — onEndDeviceAnnounce super calls', () => {
   it('ButtonDevice calls the parent handler', () => {
     const start = buttonDeviceSrc.indexOf('async onEndDeviceAnnounce()');
-    const body = buttonDeviceSrc.slice(start, start + 600);
+    // WHY(P2733 86a7df1e00): the handler grew (fleet log, BootBudget, listen-only wake) — read the whole method.
+    const end = buttonDeviceSrc.indexOf('\n  async ', start + 10);
+    const body = buttonDeviceSrc.slice(start, end > start ? end : start + 4000);
     assert.match(body, /await super\.onEndDeviceAnnounce\?\.\(\)/);
   });
 
@@ -226,7 +230,10 @@ describe('B12 — dead fallbacks removed', () => {
 
   it('_triggerHoldRelease tries the mid-form gang release card', () => {
     const start = buttonDeviceSrc.indexOf('async _triggerHoldRelease(button)');
-    const body = buttonDeviceSrc.slice(start, start + 2500);
-    assert.match(body, /\$\{driverId\}_button_\$\{gangCount\}gang_button_release/);
+    const body = buttonDeviceSrc.slice(start, start + 6000);
+    // WHY(P2332 587f3b09b6): hold-release is declared-only — the raw mid-form getDeviceTriggerCard
+    // fallback was removed; per-button gang release is now one of the declared candidates.
+    assert.match(body, /\$\{driverId\}_button_\$\{gangCount\}gang_button_\$\{btnNum\}_release/);
+    assert.doesNotMatch(body, /getDeviceTriggerCard\(midCardId\)/);
   });
 });
