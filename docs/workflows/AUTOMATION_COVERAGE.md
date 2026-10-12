@@ -30,7 +30,7 @@ It edits only its own section of the issue body (no comment, no commit, no publi
 | Johan batch comments (incl. closed) | `johan-thread-intel.yml` → `scripts/scanners/johan-canonical-index.js` (`state=all`, closed + duplicates) | daily | ✅ | |
 | Forum ingestion | `forum-poll.yml`, `daily-digest` forum watch (6 topics) | 6×/day + weekdays | ✅ | polite budget, back-off on 429 |
 | Diag emails | `gmail-diagnostics.yml`, `fetch-diags.yml` | 6 h | ✅ (fixed today) | processed-message state now persisted in Actions cache |
-| History sweep (`data/leads/sweep-checkpoint.json`) | `johan-thread-intel.yml` → `scripts/progress/advance-sweep.js` | daily | ✅ | last auto advance 2026-10-09 |
+| History sweep (`data/leads/sweep-checkpoint.json`) | `johan-thread-intel.yml` → `scripts/progress/advance-sweep.js` | daily | ✅ | last auto advance 2026-10-11; local forum chunk 2026-10-12 |
 | Rules gates | shared `scripts/ci/rules-gates.js` (+ `.github/actions/rules-gates`), `pr-gate`, `unified-ci`, `safe-auto-commit` | every push / auto-commit | ✅ (deduplicated today) | |
 
 ## Changes made on 2026-10-11
@@ -83,3 +83,12 @@ It edits only its own section of the issue body (no comment, no commit, no publi
    `auto-publish-on-push`, `publish-stable`, `pr-gate`, `unified-ci`, `syntax-check`, `validate`,
    `code-quality`. These can move to `.github/actions/rules-gates` later. They were left alone today
    to avoid clashing with parallel work on the publish and forum paths.
+
+## Resume sweep notes (2026-10-12)
+
+- **Pending 3 cleared:** `johan-issue:122` already-fixed (OCR false `xu4a5rhj|TS0002`; real couples already on `switch_2gang` / `curtain_motor`); `johan-issue:451` needs-info (OCR mfr `_TZ3000_pmz6miyu` unverified); `johan-issue:465` fixed — `_TZ3000_cipibmnp|TS0224` moved `switch_1gang` → `siren`.
+- **History sweep:** local `advance-sweep.js --only=forum` progressed (`progressed:true`, checkpoint `updated` 2026-10-12). Free path remains `johan-thread-intel.yml` daily cron `40 3 * * *` → `advance-sweep.js`.
+- **Johan scanner:** `scripts/scanners/johan-canonical-index.js` already parses `Batch NN` and indexes closed/duplicate issues (`state=all`). No code bug found; keep deep-read for objectives text (links only in index).
+- **#424 / #423 click window:** `button_wireless_4` already has opt-in `click_window_ms` + triple aggregation on master — no new quirk this run.
+- **Monday `homey-knowledge-refresh.yml`:** cron `47 5 * * 1` present; Actions API listed **0 runs** for that workflow file on 2026-10-12 morning — treat as missed/not-started and re-check later or `workflow_dispatch`. Next-step: confirm workflow enabled and last success date.
+- **Remaining automation gaps (unchanged):** bot-triage/monthly-scan still lack a consumer; Z2M/ZHA sync timeout inside gmail-diagnostics; ledger writers coverage; forum `lastSeen` post-by-post; finish migrating any leftover single gate copies into shared `rules-gates`.
