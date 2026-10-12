@@ -45,6 +45,7 @@ Public `app.json` flow card lists were read to decide which generic cards to off
 - **Reddit communities** - r/homey, r/zigbee, r/homeautomation for cross-platform device knowledge
 
 ## Forum-Based Device Reporters
+- **OMGatito** — Meian TS0224 siren `_TZ3000_cipibmnp` (JohanBendz#465); placed on `siren` 2026-10-12
 - **Peter** - HOBEIAN ZG-222Z water leak sensor (Issue #2090)
 - **Community** - MMWave radar motion sensor (Issue #420)
 - **Community** - Bed sensor verification (Issue #383)
