@@ -117,6 +117,20 @@ function classifyDriver(d) {
   return 'wifi'; // fallback pour drivers sans connectivity mais préfixe wifi
 }
 
+// WHY(P2810): drivers listed in config/publish-hold-drivers.json are kept in source but stripped
+// from the Athom payload. A held driver may own no couple on purpose (valve_controller_5zone: its
+// couple ships via switch_4gang), so an empty manufacturerName there is expected, not an error.
+const HOLD_JSON = path.join(ROOT, 'config', 'publish-hold-drivers.json');
+function loadHeldIds() {
+  try {
+    const h = JSON.parse(fs.readFileSync(HOLD_JSON));
+    return new Set((h.drivers || []).map(e => (e && e.id) || e).filter(Boolean));
+  } catch (e) {
+    return new Set();
+  }
+}
+const HELD_IDS = loadHeldIds();
+
 function hasMF(d) {
   return d.zigbee && Array.isArray(d.zigbee.manufacturerName) && d.zigbee.manufacturerName.length > 0;
 }
@@ -146,6 +160,9 @@ function phase1a_validateAppJson(app) {
     if (type === 'zigbee' || type === 'hybrid') {
       if (hasMF(d)) {
         stats.ok++;
+      } else if (HELD_IDS.has(d.id)) {
+        warnings.push('HELD (publish-hold) driver sans MF: ' + d.id);
+        info('HELD sans MF (exclu du publish): ' + d.id);
       } else {
         stats.emptyMF.push({ id: d.id, type });
         errors.push('AGGREGATE_ERROR: ' + type + ' driver sans MF: ' + d.id);
@@ -301,6 +318,7 @@ function phase2_autoFix(app) {
     const type = classifyDriver(d);
     if (type !== 'zigbee' && type !== 'hybrid') return;
     if (hasMF(d)) return; // déjà OK
+    if (HELD_IDS.has(d.id)) return; // held: excluded from publish, may own no couple
 
     const mfs = tryFixMFs(d.id, stableMap);
     if (mfs && mfs.length > 0) {
