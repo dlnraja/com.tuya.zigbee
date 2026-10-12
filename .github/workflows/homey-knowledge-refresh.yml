@@ -1,5 +1,5 @@
 # Weekly Homey knowledge + tooling refresh
-# Triggers: cron Mon 05:47 UTC + workflow_dispatch | Secrets: GITHUB_TOKEN only | Free, no AI
+# Triggers: cron Mon 05:47 UTC + workflow_dispatch | Secrets: GH_PAT (optional, needed to push workflow edits), GITHUB_TOKEN fallback | Free, no AI
 name: Homey knowledge refresh (weekly)
 
 on:
@@ -38,6 +38,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          # GITHUB_TOKEN cannot push .github/workflows changes (no `workflows` permission).
+          # GH_PAT can; without it the job falls back to a data/docs-only branch below.
+          token: ${{ secrets.GH_PAT || github.token }}
           sparse-checkout: |
             .github
             data/sources
@@ -67,7 +70,19 @@ jobs:
           git checkout -b "$b"
           git add -A data/sources data/leads docs/knowledge .github/workflows
           git commit -m "docs(knowledge): weekly Homey SDK/news/tooling refresh [skip ci]"
-          git push -u origin "$b"
+          note=""
+          if ! git push -u origin "$b"; then
+            # Token without `workflows` permission: keep the workflow edits as a proposal
+            # (listed in HOMEY_TOOLING_WATCH.md) and push data/docs only.
+            echo "::warning::push with workflow edits refused, retrying without .github/workflows"
+            git reset --soft HEAD~1
+            git restore --staged .github/workflows
+            git checkout -- .github/workflows
+            git diff --cached --quiet && { echo "only workflow edits changed, nothing else to push"; exit 0; }
+            git commit -m "docs(knowledge): weekly Homey SDK/news/tooling refresh [skip ci]"
+            git push -u origin "$b"
+            note=" Workflow node-version edits were NOT pushed (token lacks workflows permission); apply them by hand from HOMEY_TOOLING_WATCH.md."
+          fi
           gh pr create --draft --base "${GITHUB_REF_NAME}" --head "$b" \
             --title "Weekly Homey knowledge/tooling refresh $(date -u +%F)" \
-            --body "Automatic, free, no AI. Review data/leads/source-proposals.json and docs/knowledge/HOMEY_TOOLING_WATCH.md. Runtime libs are proposals only."
+            --body "Automatic, free, no AI. Review data/leads/source-proposals.json and docs/knowledge/HOMEY_TOOLING_WATCH.md. Runtime libs are proposals only.${note}"
