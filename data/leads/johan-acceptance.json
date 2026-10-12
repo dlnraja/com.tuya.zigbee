@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-11T10:18:47.274Z",
+  "generated": "2026-10-12T11:18:57.357Z",
   "source": "data/leads/johan-canonical-index.json",
   "repo": "JohanBendz/com.tuya.zigbee",
   "note": "Acceptance view, structured fields only. missing-couple = identity cited upstream with no home driver here (verify real hardware before adding, W4). behaviour = needs physical test, not a pairing gap.",
@@ -7068,7 +7068,7 @@
           "mfr": "_TZ3000_fa9mlvja",
           "pid": "TS0041",
           "drivers": [
-            "wall_remote_1_gang"
+            "button_wireless_1"
           ]
         },
         {
@@ -10184,7 +10184,7 @@
           "pid": "TS1002",
           "drivers": [
             "bulb_rgbw",
-            "remote_rgbcct_8zone"
+            "button_wireless_4"
           ]
         }
       ],

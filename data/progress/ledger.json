@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-12T07:07:32.036Z",
+ "updated": "2026-10-12T11:18:56.486Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -9687,6 +9687,66 @@
    "note": "couples-present",
    "by": "advance-sweep"
   },
+  "forum:140352#124": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#128": {
+   "status": "done",
+   "date": "2026-10-12",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:140352#138": {
+   "status": "done",
+   "date": "2026-10-12",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:140352#141": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:140352#150": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:140352#154": {
+   "status": "done",
+   "date": "2026-10-12",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:140352#165": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:140352#179": {
+   "status": "done",
+   "date": "2026-10-12",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:140352#181": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:140352#192": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "pid-only",
+   "by": "advance-sweep"
+  },
   "forum:140352#2238-smartbutton": {
    "status": "verified",
    "date": "2026-10-11",
@@ -9748,6 +9808,72 @@
    "note": "request-no-identity",
    "by": "advance-sweep"
   },
+  "forum:146735#126": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:146735#129": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:146735#136": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:146735#142": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:146735#156": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:146735#174": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:146735#175": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:146735#180": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:146735#193": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:146735#206": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:146735#210": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
   "forum:146735#24": {
    "status": "deferred",
    "date": "2026-10-11",
@@ -9796,9 +9922,33 @@
    "note": "request-no-identity",
    "by": "advance-sweep"
   },
+  "forum:154077#144": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:154077#146": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
   "forum:154077#15": {
    "status": "deferred",
    "date": "2026-10-11",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:154077#170": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:154077#177": {
+   "status": "deferred",
+   "date": "2026-10-12",
    "note": "request-no-identity",
    "by": "advance-sweep"
   },
@@ -9844,9 +9994,111 @@
    "note": "diag-only",
    "by": "advance-sweep"
   },
+  "forum:21313#143": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:21313#144": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:21313#148": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:21313#150": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:21313#153": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:21313#156": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:21313#157": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:21313#159": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
   "forum:21313#16": {
    "status": "deferred",
    "date": "2026-10-11",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:21313#164": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:21313#165": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:21313#166": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:21313#170": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:21313#176": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:21313#185": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:21313#187": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:21313#194": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:21313#200": {
+   "status": "deferred",
+   "date": "2026-10-12",
    "note": "request-no-identity",
    "by": "advance-sweep"
   },
@@ -10094,6 +10346,108 @@
    "status": "deferred",
    "date": "2026-10-12",
    "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:26439#4465": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:26439#4466": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:26439#4468": {
+   "status": "done",
+   "date": "2026-10-12",
+   "note": "mfr-known",
+   "by": "advance-sweep"
+  },
+  "forum:26439#4471": {
+   "status": "done",
+   "date": "2026-10-12",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:26439#4474": {
+   "status": "done",
+   "date": "2026-10-12",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:26439#4475": {
+   "status": "done",
+   "date": "2026-10-12",
+   "note": "mfr-known",
+   "by": "advance-sweep"
+  },
+  "forum:26439#4478": {
+   "status": "done",
+   "date": "2026-10-12",
+   "note": "mfr-known",
+   "by": "advance-sweep"
+  },
+  "forum:26439#4483": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:26439#4491": {
+   "status": "done",
+   "date": "2026-10-12",
+   "note": "mfr-known",
+   "by": "advance-sweep"
+  },
+  "forum:26439#4493": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:26439#4498": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:26439#4499": {
+   "status": "done",
+   "date": "2026-10-12",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:26439#4504": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:26439#4513": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:26439#4519": {
+   "status": "done",
+   "date": "2026-10-12",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:26439#4526": {
+   "status": "done",
+   "date": "2026-10-12",
+   "note": "mfr-known",
+   "by": "advance-sweep"
+  },
+  "forum:26439#4535": {
+   "status": "done",
+   "date": "2026-10-12",
+   "note": "mfr-known",
    "by": "advance-sweep"
   },
   "forum:89271#10": {
@@ -20536,32 +20890,44 @@
    "by": "advance-sweep"
   },
   "johan-issue:496": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2024-10-05T13:37:55Z"
+   "upstreamUpdatedAt": "2024-10-05T13:37:55Z",
+   "date": "2026-10-12",
+   "note": "closed issue; identities covered (_TZE200_ckud7u2l)",
+   "by": "advance-sweep"
   },
   "johan-issue:497": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2023-10-29T09:52:42Z"
+   "upstreamUpdatedAt": "2023-10-29T09:52:42Z",
+   "date": "2026-10-12",
+   "note": "closed issue; identities covered (_TZ3000_xr3htd96)",
+   "by": "advance-sweep"
   },
   "johan-issue:498": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2024-09-11T19:43:43Z"
+   "upstreamUpdatedAt": "2024-09-11T19:43:43Z",
+   "date": "2026-10-12",
+   "note": "closed issue; identities covered (_TZ3000_xr3htd96)",
+   "by": "advance-sweep"
   },
   "johan-issue:499": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2024-09-11T19:58:02Z"
+   "upstreamUpdatedAt": "2024-09-11T19:58:02Z",
+   "date": "2026-10-12",
+   "note": "closed issue; identities covered (_TZE200_bjawzodf)",
+   "by": "advance-sweep"
   },
   "johan-issue:5": {
    "status": "done",
@@ -20584,74 +20950,104 @@
    "by": "advance-sweep"
   },
   "johan-issue:500": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-07-12T21:37:19Z"
+   "upstreamUpdatedAt": "2026-07-12T21:37:19Z",
+   "date": "2026-10-12",
+   "note": "closed issue; identities covered (_TZ3000_okaz9tjs,_TZ3000_gvn91tmx)",
+   "by": "advance-sweep"
   },
   "johan-issue:501": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2023-11-16T19:25:29Z"
+   "upstreamUpdatedAt": "2023-11-16T19:25:29Z",
+   "date": "2026-10-12",
+   "note": "closed issue; identities covered (_TZ3000_gvn91tmx)",
+   "by": "advance-sweep"
   },
   "johan-issue:502": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "open",
    "comments": 0,
-   "upstreamUpdatedAt": "2026-07-12T21:31:14Z"
+   "upstreamUpdatedAt": "2026-07-12T21:31:14Z",
+   "date": "2026-10-12",
+   "note": "open issue; identities covered (_TZ3210_ttkgurpb)",
+   "by": "advance-sweep"
   },
   "johan-issue:503": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2023-10-26T06:45:42Z"
+   "upstreamUpdatedAt": "2023-10-26T06:45:42Z",
+   "date": "2026-10-12",
+   "note": "closed issue; identities covered (_TZE200_a8sdabtg)",
+   "by": "advance-sweep"
   },
   "johan-issue:504": {
-   "status": "pending",
+   "status": "done",
    "kind": "pr",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2023-10-29T12:55:53Z"
+   "upstreamUpdatedAt": "2023-10-29T12:55:53Z",
+   "date": "2026-10-12",
+   "note": "merged PR; identities covered (historical)",
+   "by": "advance-sweep"
   },
   "johan-issue:505": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "open",
    "comments": 9,
-   "upstreamUpdatedAt": "2026-07-12T21:31:15Z"
+   "upstreamUpdatedAt": "2026-07-12T21:31:15Z",
+   "date": "2026-10-12",
+   "note": "open issue; identities covered (_TZE204_dtzziy1e)",
+   "by": "advance-sweep"
   },
   "johan-issue:506": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 11,
-   "upstreamUpdatedAt": "2024-09-02T21:13:22Z"
+   "upstreamUpdatedAt": "2024-09-02T21:13:22Z",
+   "date": "2026-10-12",
+   "note": "closed issue; identities covered (_TZE200_2aaelwxk)",
+   "by": "advance-sweep"
   },
   "johan-issue:507": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2024-02-04T14:28:36Z"
+   "upstreamUpdatedAt": "2024-02-04T14:28:36Z",
+   "date": "2026-10-12",
+   "note": "closed issue; identities covered (_TZ3000_lf56vpxj)",
+   "by": "advance-sweep"
   },
   "johan-issue:508": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2024-01-09T22:38:34Z"
+   "upstreamUpdatedAt": "2024-01-09T22:38:34Z",
+   "date": "2026-10-12",
+   "note": "closed issue; identities covered (_TZE200_68nvbio9)",
+   "by": "advance-sweep"
   },
   "johan-issue:509": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 4,
-   "upstreamUpdatedAt": "2024-09-02T21:32:20Z"
+   "upstreamUpdatedAt": "2024-09-02T21:32:20Z",
+   "date": "2026-10-12",
+   "note": "closed issue; identities covered (_TZ3000_6zvw8ham)",
+   "by": "advance-sweep"
   },
   "johan-issue:51": {
    "status": "done",
@@ -20664,11 +21060,14 @@
    "by": "advance-sweep"
   },
   "johan-issue:510": {
-   "status": "pending",
+   "status": "done",
    "kind": "pr",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2023-12-31T12:01:50Z"
+   "upstreamUpdatedAt": "2023-12-31T12:01:50Z",
+   "date": "2026-10-12",
+   "note": "closed PR; identities covered (historical)",
+   "by": "advance-sweep"
   },
   "johan-issue:511": {
    "status": "pending",
