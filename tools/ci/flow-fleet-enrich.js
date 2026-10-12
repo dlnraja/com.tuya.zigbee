@@ -336,6 +336,7 @@ function cardUsesToken(card, tokenName) {
 function fixOrphanTokensOnCard(card) {
   if (!card?.tokens?.length) return false;
   let changed = false;
+  const hadTitleFormatted = !!card.titleFormatted;
   if (!card.titleFormatted) {
     card.titleFormatted = { ...(card.title || { en: card.id }) };
   }
@@ -359,7 +360,12 @@ function fixOrphanTokensOnCard(card) {
   // dropping the field; only strip a stray [[device]] when the card has no
   // device arg.
   const argNames = (card.args || []).map((a) => a && a.name).filter(Boolean);
-  if (!argNames.includes('device') && JSON.stringify(card.titleFormatted).includes('[[device]]')) {
+  // A card with a device arg cannot carry a synthesized titleFormatted:
+  // flow-title needs [[device]] in it, while regression-lessons forbids
+  // [[device]] in trigger titleFormatted. Keep the plain title instead.
+  if (!hadTitleFormatted && argNames.includes('device')) {
+    delete card.titleFormatted;
+  } else if (!argNames.includes('device') && JSON.stringify(card.titleFormatted).includes('[[device]]')) {
     delete card.titleFormatted;
     changed = true;
   } else if (argNames.length && card.titleFormatted) {
