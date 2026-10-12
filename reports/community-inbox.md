@@ -1,4 +1,4 @@
-# 📥 Community Inbox — 2026-10-11 11:24 UTC
+# 📥 Community Inbox — 2026-10-12 13:09 UTC
 
 Généré par `.github/scripts/community-inbox-digest.js` (workflow `community-inbox.yml`).
 
@@ -6,7 +6,7 @@ Généré par `.github/scripts/community-inbox-digest.js` (workflow `community-i
 
 - Issues ouvertes : **4** — 🔴 à traiter : **2**, 🟡 attente utilisateur : 2, 🟢 maintainer actif : 0
 - PRs ouvertes : **0**
-- Forum : **3** post(s) sans réponse du maintainer
+- Forum : **4** post(s) sans réponse du maintainer
 - Messages privés (lecture seule, jamais de réponse) : **20** thread(s), 7 mfr, 5 pid, 7 UUID diag
 
 ## 🔴 Issues à traiter
@@ -17,11 +17,12 @@ Généré par `.github/scripts/community-inbox-digest.js` (workflow `community-i
 ## 🟡 Auto-résolues, en attente de retour
 
 - [#559](https://github.com/dlnraja/com.tuya.zigbee/issues/559) — Smartplug _(maj 2026-10-03)_
-- [#557](https://github.com/dlnraja/com.tuya.zigbee/issues/557) — 🤖 Daily digest _(maj 2026-10-11)_
+- [#557](https://github.com/dlnraja/com.tuya.zigbee/issues/557) — 🤖 Daily digest _(maj 2026-10-12)_
 
 ## 🌍 Forum — posts sans réponse
 
 - **meter91** (2026-09-26) :  @dlnraja is is possible to make support for a ZG-106Z / TZ3000_7y90pany luminance sensor? 
 - **EdP** (2026-09-27) :  Hi, Could you add support for the AOYAN AY-303Z Zigbee soil moisture sensor? It’s a white-label version of the HOBEIAN ZG-303Z, so hopefull
 - **Peter_van_Werkhoven** (2026-10-06) :  Hi Dylan Good afternoon, the app crashes again. Diagnostic code c05db40d-b7f1-4f31-9ec1-4c75b714e10d 1000047678 1220×2712 216 KB Good luck 
+- **Peter_van_Werkhoven** (2026-10-11) :  Hi Dylan Good evening, the app is working fine again, no more crashes 1000047938 1220×2712 175 KB Thanks for fixing and have a nice night. 
 
