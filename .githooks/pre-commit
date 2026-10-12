@@ -53,7 +53,9 @@ if [ -n "$STAGED_JSON" ]; then
         JSON_ERRORS=$((JSON_ERRORS + 1))
       fi
     fi
-  done <<< "$STAGED_JSON"
+  done <<EOF_STAGED_JSON
+$STAGED_JSON
+EOF_STAGED_JSON
 fi
 if [ $JSON_ERRORS -gt 0 ]; then
   echo -e "${RED}  COMMIT BLOCKED — $JSON_ERRORS staged JSON file(s) have invalid syntax${RESET}"
@@ -138,7 +140,9 @@ if [ -n "$STAGED_DRIVERS" ]; then
         echo -e "${YELLOW}           They must be pruned by prepare-publish to reduce Athom upload size.${RESET}"
       fi
     fi
-  done <<< "$STAGED_DRIVERS"
+  done <<EOF_STAGED_DRIVERS
+$STAGED_DRIVERS
+EOF_STAGED_DRIVERS
 fi
 if [ $MFR_ERRORS -gt 0 ]; then
   echo -e "${YELLOW}  WARNING — $MFR_ERRORS driver(s) with empty manufacturerName (warning only)${RESET}"
@@ -166,7 +170,9 @@ if [ -n "$STAGED_DRIVER_DIRS" ]; then
         ASSET_ERRORS=$((ASSET_ERRORS + 1))
       fi
     fi
-  done <<< "$STAGED_DRIVER_DIRS"
+  done <<EOF_STAGED_DRIVER_DIRS
+$STAGED_DRIVER_DIRS
+EOF_STAGED_DRIVER_DIRS
 fi
 if [ $ASSET_ERRORS -gt 0 ]; then
   echo -e "${YELLOW}  WARNING: $ASSET_ERRORS driver directory(ies) have missing assets (non-blocking)${RESET}"
@@ -191,7 +197,9 @@ if [ -n "$STAGED_JS_DRIVERS" ]; then
         CONSOLE_ERRORS=$((CONSOLE_ERRORS + 1))
       fi
     fi
-  done <<< "$STAGED_JS_DRIVERS"
+  done <<EOF_STAGED_JS_DRIVERS
+$STAGED_JS_DRIVERS
+EOF_STAGED_JS_DRIVERS
 fi
 if [ $CONSOLE_ERRORS -gt 0 ]; then
   echo -e "${YELLOW}  WARNING: $CONSOLE_ERRORS driver file(s) use console.log (non-blocking, prefer Homey logger)${RESET}"
