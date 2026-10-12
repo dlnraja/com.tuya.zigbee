@@ -161,8 +161,8 @@ function phase1a_validateAppJson(app) {
       if (hasMF(d)) {
         stats.ok++;
       } else if (HELD_IDS.has(d.id)) {
-        warnings.push('HELD (publish-hold) driver sans MF: ' + d.id);
-        info('HELD sans MF (exclu du publish): ' + d.id);
+        warnings.push(`HELD (publish-hold) driver sans MF: ${d.id}`);
+        info(`HELD sans MF (exclu du publish): ${d.id}`);
       } else {
         stats.emptyMF.push({ id: d.id, type });
         errors.push('AGGREGATE_ERROR: ' + type + ' driver sans MF: ' + d.id);
@@ -318,7 +318,7 @@ function phase2_autoFix(app) {
     const type = classifyDriver(d);
     if (type !== 'zigbee' && type !== 'hybrid') return;
     if (hasMF(d)) return; // déjà OK
-    if (HELD_IDS.has(d.id)) return; // held: excluded from publish, may own no couple
+    if (HELD_IDS.has(d.id)) { return; } // held: excluded from publish, may own no couple
 
     const mfs = tryFixMFs(d.id, stableMap);
     if (mfs && mfs.length > 0) {
