@@ -1,5 +1,5 @@
 {
-  "harvestedAt": "2026-10-12T11:23:59.009Z",
+  "harvestedAt": "2026-10-12T20:29:42.602Z",
   "repo": "dlnraja/com.tuya.zigbee",
   "auth": "token",
   "error": null,
@@ -10,9 +10,25 @@
       "labels": [
         "bot-digest"
       ],
-      "updatedAt": "2026-10-12T07:48:38Z",
+      "updatedAt": "2026-10-12T19:42:35Z",
       "user": "dlnraja",
       "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/557"
+    },
+    {
+      "number": 571,
+      "title": "[Bug] QT-07S (_TZE284_myd45weu / TS0601) remains unknown and Configure keeps loading — v9.0.1445 Test",
+      "labels": [],
+      "updatedAt": "2026-10-12T18:58:40Z",
+      "user": "denis-papin",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/571"
+    },
+    {
+      "number": 570,
+      "title": "[soil_sensor] Bug: AOYAN AY-303Z soil sensor not recognized despite fingerprint in soil_sensor driver",
+      "labels": [],
+      "updatedAt": "2026-10-12T14:44:45Z",
+      "user": "edwinvdp",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/570"
     },
     {
       "number": 560,
@@ -50,6 +66,6 @@
     }
   ],
   "prs": [],
-  "openIssueCount": 4,
+  "openIssueCount": 6,
   "openPrCount": 0
 }
