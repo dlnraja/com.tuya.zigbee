@@ -217,9 +217,6 @@ Catalog: **431** drivers, **220** locked community cases.
 | hobeian-zg302z3-switch | `switch_3gang` | `HOBEIAN` + ZG-302Z3 | switch_1gang, switch_2gang, presence_sensor_radar, climate_sensor |  |
 | hobeian-zg101zs-scene | `scene_switch_4` | `HOBEIAN` + ZG-101ZS | switch_1gang, button_wireless_1, presence_sensor_radar, generic_tuya |  |
 | hobeian-zg229z-siren | `siren` | `HOBEIAN` + ZG-229Z | switch_1gang, presence_sensor_radar, water_leak_sensor, generic_tuya |  |
-| meian-cipibmnp-ts0224-siren | `siren` | `_TZ3000_cipibmnp` + TS0224 | switch_1gang | zcl |
-
-| soil-ts0224-bleed-removed | `soil_sensor` | removed bare `TS0224` pid (phantom cartesian with HOBEIAN/heobian) | — | research 2026-10-12: HOBEIAN soil is ZG-303Z not TS0224; TS0224 is Meian/Tuya siren |
 | hobeian-zg225z-gas | `gas_sensor` | `HOBEIAN` + ZG-225Z | switch_1gang, presence_sensor_radar, water_leak_sensor, generic_tuya |  |
 | p2432-dze200-dfxkcots-rotary-dimmer | `wall_dimmer_tuya` | `_TZE200_dfxkcots` + TS0601 | wall_switch_5_gang_tuya, switch_wall_5gang, air_purifier, switch_1gang | tuya_dp |
 | p2432-dze200-p0gzbqct-rotary-knob-dimmer | `wall_dimmer_tuya` | `_TZE200_p0gzbqct` + TS0601 | wall_switch_5_gang_tuya, switch_wall_5gang, air_purifier, climate_sensor | tuya_dp |
@@ -517,7 +514,7 @@ Catalog: **431** drivers, **220** locked community cases.
 | `sensor_motion_radar` | sensor | tuya_ef00 | TS0601 | CR2032/CR2450/AAA/AA/CR123A | 0 | 0 |  |
 | `sensor_presence_radar` | sensor | tuya_ef00 | TS0203, TS0601, ZG-204ZL, ZG-204ZM, ZG-204ZV, TS0225 | unknown | 4 | 0 |  |
 | `shutter_roller_controller` | windowcoverings | tuya_ef00 | TS0601_shutter, TS0601 | CR2032/CR2450/AAA/AA/CR123A | 0 | 0 |  |
-| `siren` | other | zcl | hobeian, Hobeian, HOBEIAN, TS0216, TS0219, TS0224, TS0601 | OTHER/OTHER | 107 | 2 | P2466 Johan#1455 Cleverio SA100 / Z2M SA100 — IAS Zone+WD mains siren; flow via startWarni ; Meian `_TZ3000_cipibmnp`+TS0224 from Johan#465 (OMGatito) + Z2M TS0224 |
+| `siren` | other | zcl | hobeian, Hobeian, HOBEIAN, TS0216, TS0219, TS0601 | OTHER/OTHER | 107 | 2 | P2466 Johan#1455 Cleverio SA100 / Z2M SA100 — IAS Zone+WD mains siren; flow via startWarni |
 | `siren_sirentemphumidsensor` | other | tuya_ef00 | TS0601 | CR123A/CR123A | 16 | 0 |  |
 | `sirentemphumidsensor` | other | tuya_ef00 | TS0601 | CR123A/CR123A | 0 | 0 |  |
 | `slim_motion_sensor` | sensor | zcl_sleepy | TS0202 | AAA/AAA | 4 | 0 |  |
