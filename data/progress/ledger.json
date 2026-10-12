@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-11T10:18:46.539Z",
+ "updated": "2026-10-12T07:07:32.036Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -9657,6 +9657,36 @@
    "source": "pc-harvest-r2",
    "result": "diagnostic-report complaint; report content not accessible from box"
   },
+  "forum:140352#101": {
+   "status": "done",
+   "date": "2026-10-12",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:140352#102": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:140352#116": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:140352#117": {
+   "status": "done",
+   "date": "2026-10-12",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:140352#121": {
+   "status": "done",
+   "date": "2026-10-12",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
   "forum:140352#2238-smartbutton": {
    "status": "verified",
    "date": "2026-10-11",
@@ -9682,10 +9712,40 @@
    "date": "2026-10-11",
    "note": "soil_sensor 0x0405/DP109 (EdP)"
   },
+  "forum:140352#92": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:140352#99": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:146735#109": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
   "forum:146735#11": {
    "status": "deferred",
    "date": "2026-10-11",
    "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:146735#111": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:146735#125": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "request-no-identity",
    "by": "advance-sweep"
   },
   "forum:146735#24": {
@@ -9727,6 +9787,12 @@
   "forum:146735#81": {
    "status": "deferred",
    "date": "2026-10-11",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:154077#117": {
+   "status": "deferred",
+   "date": "2026-10-12",
    "note": "request-no-identity",
    "by": "advance-sweep"
   },
@@ -9856,6 +9922,24 @@
    "note": "request-no-identity",
    "by": "advance-sweep"
   },
+  "forum:21313#87": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:21313#88": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:21313#89": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
   "forum:26439#1": {
    "status": "deferred",
    "date": "2026-10-11",
@@ -9955,6 +10039,60 @@
   "forum:26439#4291": {
    "status": "deferred",
    "date": "2026-10-11",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:26439#4412": {
+   "status": "done",
+   "date": "2026-10-12",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:26439#4423": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:26439#4428": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:26439#4429": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:26439#4432": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "pid-only",
+   "by": "advance-sweep"
+  },
+  "forum:26439#4437": {
+   "status": "deferred",
+   "date": "2026-10-12",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:26439#4438": {
+   "status": "done",
+   "date": "2026-10-12",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:26439#4442": {
+   "status": "done",
+   "date": "2026-10-12",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:26439#4443": {
+   "status": "deferred",
+   "date": "2026-10-12",
    "note": "request-no-identity",
    "by": "advance-sweep"
   },
