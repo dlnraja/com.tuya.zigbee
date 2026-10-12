@@ -3,6 +3,14 @@
 Imported from `AppData/Roaming/Grok Bot` (sanitized) + live git tips + `docs/knowledge/PORT_ROUND_2026-10-11.md`.
 **No secrets. No forum auto-posts. No CloudAgent. Forfait: no Grok/Opus/cloud Task.**
 
+## Athom tips (2026-10-12 ~09:20 Paris)
+
+| App | Test tip | Evidence |
+|---|---|---|
+| Universal (`master`) | **9.0.1435** (#3554) | 1436/1438 socket hang up, 1437 AggregateError (processing_failed); retry rides the next master push |
+| Bastien (`bastien-home`) | **1.0.149** (#157) | Draft→Test Fleet 38182409345 |
+| Stable (`stable-v5`) | **5.12.406** (#313) | Draft→Test Fleet 38182409345; mfs_db drift fixed 401dede6bb [skip ci] |
+
 ## Athom tips (close-out)
 
 | App | Tip | Evidence |
