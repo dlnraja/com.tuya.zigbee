@@ -25,6 +25,8 @@ Pointers for agents after P2683â€“P2692. Machine tracks: [`dual-app-tracks.
 
 **Athom tips (2026-10-11 evening):** Universal **9.0.1433** Test · Bastien **1.0.148** Test (compose line 1.0.122) · Stable **5.12.399** Test (#307); P2761 port → **5.12.400** (PR #567).
 
+**Athom tips (2026-10-12 morning, read from Athom build lists in runs 38182409345 / 38209353859):** Universal **9.0.1435** Test (#3554); 9.0.1436 (#3555) and 9.0.1438 (#3557) stopped at Athom processing with a socket hang up, 9.0.1437 (#3556) with AggregateError. Self-heal deliberately skips a republish while Test is healthy, so the next real master push (new patch) is the retry. Bastien **1.0.149** Test (#157). Stable **5.12.406** Test (#313, promoted by Draft→Test Fleet).
+
 Gates: `npm run check:p273x` · `npm run check:p274x` · `npm run check:publish`.
 
 Silent enrich only — never forum POST (T157628).

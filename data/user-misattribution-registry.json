@@ -68,7 +68,9 @@
           "static": true,
           "dynamic": false
         }
-      }
+      },
+      "idNote": "Legacy id kept for test/history references; the case resolves TO switch_2gang (canonicalDriver). Read the id as: not 1/3/4-gang, not button_wireless_plug.",
+      "recheck20261012": "Re-verified online: Z2M tuya.ts TS0601_switch_2_gang (Koenkk/zigbee-herdsman-converters) and ZHA ts0601_switch.py TuyaDoubleSwitchTO (zigpy/zha-device-handlers) both list _TZE200_nkjintbl/TS0601 as a 2-gang switch. Anti-bot gate green on master and stable-v5; placement unchanged."
     },
     {
       "id": "p2605b-nkjintbl-tze284-ambiguous",
