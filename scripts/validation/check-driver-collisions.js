@@ -85,7 +85,8 @@ fs.readdirSync(driversDir).filter(d =>
     // reveals the REAL collision set instead of inflating it ×4.
     mfrs.forEach(mfr => {
       pids.forEach(pid => {
-        const key = `${String(mfr).toLowerCase()}|${String(pid).toLowerCase()}`;
+        // WHY: trim too — some OEMs pad Basic manufacturerName (e.g. "AOYAN  "), same identity at read time.
+        const key = `${String(mfr).trim().toLowerCase()}|${String(pid).trim().toLowerCase()}`;
         if (!combinations.has(key)) combinations.set(key, []);
         if (!combinations.get(key).includes(driverName)) {
           combinations.get(key).push(driverName);
