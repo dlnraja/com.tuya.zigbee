@@ -218,6 +218,8 @@ Catalog: **431** drivers, **220** locked community cases.
 | hobeian-zg101zs-scene | `scene_switch_4` | `HOBEIAN` + ZG-101ZS | switch_1gang, button_wireless_1, presence_sensor_radar, generic_tuya |  |
 | hobeian-zg229z-siren | `siren` | `HOBEIAN` + ZG-229Z | switch_1gang, presence_sensor_radar, water_leak_sensor, generic_tuya |  |
 | meian-cipibmnp-ts0224-siren | `siren` | `_TZ3000_cipibmnp` + TS0224 | switch_1gang | zcl |
+
+| soil-ts0224-bleed-removed | `soil_sensor` | removed bare `TS0224` pid (phantom cartesian with HOBEIAN/heobian) | — | research 2026-10-12: HOBEIAN soil is ZG-303Z not TS0224; TS0224 is Meian/Tuya siren |
 | hobeian-zg225z-gas | `gas_sensor` | `HOBEIAN` + ZG-225Z | switch_1gang, presence_sensor_radar, water_leak_sensor, generic_tuya |  |
 | p2432-dze200-dfxkcots-rotary-dimmer | `wall_dimmer_tuya` | `_TZE200_dfxkcots` + TS0601 | wall_switch_5_gang_tuya, switch_wall_5gang, air_purifier, switch_1gang | tuya_dp |
 | p2432-dze200-p0gzbqct-rotary-knob-dimmer | `wall_dimmer_tuya` | `_TZE200_p0gzbqct` + TS0601 | wall_switch_5_gang_tuya, switch_wall_5gang, air_purifier, climate_sensor | tuya_dp |
