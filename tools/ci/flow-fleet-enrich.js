@@ -354,9 +354,25 @@ function fixOrphanTokensOnCard(card) {
       }
     }
   }
-  if (JSON.stringify(card.titleFormatted).includes('[[device]]')) {
+  // P2749f: every declared arg must stay in titleFormatted for every locale
+  // (flow-titleformatted-args-gate). Append any missing [[arg]] instead of
+  // dropping the field; only strip a stray [[device]] when the card has no
+  // device arg.
+  const argNames = (card.args || []).map((a) => a && a.name).filter(Boolean);
+  if (!argNames.includes('device') && JSON.stringify(card.titleFormatted).includes('[[device]]')) {
     delete card.titleFormatted;
     changed = true;
+  } else if (argNames.length && card.titleFormatted) {
+    for (const loc of Object.keys(card.titleFormatted)) {
+      let tf = String(card.titleFormatted[loc] || '');
+      for (const a of argNames) {
+        if (!tf.includes(`[[${a}]]`)) tf = `${tf} [[${a}]]`.trim();
+      }
+      if (tf !== card.titleFormatted[loc]) {
+        card.titleFormatted[loc] = tf;
+        changed = true;
+      }
+    }
   }
   return changed;
 }
