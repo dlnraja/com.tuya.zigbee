@@ -437,6 +437,42 @@
       ],
       "why": "2026-10-11: ZBCMR-02 sole owner curtain_motor (same family as ogyg1y6b)",
       "source": "z2m ZBCMR-02"
+    },
+    {
+      "driver": "usb_dongle_triple",
+      "mfr": [
+        "_TZ3000_z6fgd73r",
+        "_tz3000_z6fgd73r"
+      ],
+      "why": "2026-10-13 P151: LELLKI XF-EU-S100-1-M 1-gang metering switch -> switch_1gang (registry lead-z6fgd73r)",
+      "source": "registry+z2m"
+    },
+    {
+      "driver": "button_wireless_2",
+      "mfr": [
+        "_TYZB02_key8kk7r",
+        "_tyzb02_key8kk7r"
+      ],
+      "why": "2026-10-13 P151: 3-button remote TS0043 -> button_wireless_3",
+      "source": "registry+zha"
+    },
+    {
+      "driver": "water_leak_sensor_tuya",
+      "mfr": [
+        "_TZ3000_mugyhz0q",
+        "_tz3000_mugyhz0q"
+      ],
+      "why": "2026-10-13 P151: Tuya 899WZ leak -> water_leak_sensor",
+      "source": "registry+z2m"
+    },
+    {
+      "driver": "button_wireless_2",
+      "mfr": [
+        "_TZ3000_zl1kmjqx",
+        "_tz3000_zl1kmjqx"
+      ],
+      "why": "2026-10-13 P151: TH sensor TS0201 -> climate_sensor",
+      "source": "registry+z2m"
     }
   ]
 }
