@@ -1543,6 +1543,12 @@
       "pid": "TS110F",
       "driverId": "dimmer_1_gang",
       "note": "QS-Zigbee-D02-TRIAC-LN 1-gang dimmer module"
+    },
+    {
+      "mfr": "heobian",
+      "pid": "ZG-101ZL",
+      "driverId": "button_wireless_1",
+      "note": "P2677 HOBEIAN typo form (Athom compose); stripped by v9.0.1430 bot, pinned 2026-10-13"
     }
   ]
 }

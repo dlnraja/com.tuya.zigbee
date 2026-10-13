@@ -574,6 +574,15 @@
       ],
       "why": "2026-10-11: ZBCMR-02 sole owner curtain_motor (same family as ogyg1y6b)",
       "source": "z2m ZBCMR-02"
+    },
+    {
+      "driver": "button_wireless_3",
+      "productId": [
+        "ts0043",
+        "Ts0043"
+      ],
+      "why": "2026-10-13: P2743 locks button_wireless_3 to exact TS0043; lowercase/Title pid variants were noise from 2b8865cd44",
+      "source": "P2743 GH#550/#551"
     }
   ]
 }
