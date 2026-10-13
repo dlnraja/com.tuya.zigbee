@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-10-06T09:27:54.025Z",
+  "timestamp": "2026-10-13T09:46:44.427Z",
   "gate": "audit-sacred-couple-by-class",
   "apply": false,
-  "scanned": 447,
+  "scanned": 449,
   "classes": {
-    "socket": 116,
+    "socket": 118,
     "sensor": 112,
     "light": 69,
     "other": 31,
@@ -25,92 +25,38 @@
   },
   "crossClassAbsurd": [
     {
-      "couple": "_tz3000_jak16dll|ts011f",
-      "mfr": "_tz3000_jak16dll",
-      "pid": "ts011f",
-      "drivers": [
-        "button_wireless_2",
-        "smartplug_2_socket"
-      ],
-      "classes": [
-        "button",
-        "socket"
-      ],
-      "families": [
-        "button",
-        "socket"
-      ],
-      "absurd": true
-    },
-    {
-      "couple": "_tz3000_jak16dll|ts0601",
-      "mfr": "_tz3000_jak16dll",
+      "couple": "_tz3000_xwh1e22x|ts0601",
+      "mfr": "_tz3000_xwh1e22x",
       "pid": "ts0601",
       "drivers": [
-        "button_wireless_2",
-        "smartplug_2_socket"
+        "bulb_rgbw",
+        "button_wireless_4"
       ],
       "classes": [
-        "button",
-        "socket"
+        "light",
+        "button"
       ],
       "families": [
-        "button",
-        "socket"
+        "light",
+        "button"
       ],
       "absurd": true
     },
     {
-      "couple": "_tz3000_cayepv1a|ts011f",
-      "mfr": "_tz3000_cayepv1a",
-      "pid": "ts011f",
+      "couple": "_tz3000_xwh1e22x|ts1002",
+      "mfr": "_tz3000_xwh1e22x",
+      "pid": "ts1002",
       "drivers": [
-        "button_wireless_2",
-        "smartPlug_DinRail"
+        "bulb_rgbw",
+        "button_wireless_4"
       ],
       "classes": [
-        "button",
-        "socket"
+        "light",
+        "button"
       ],
       "families": [
-        "button",
-        "socket"
-      ],
-      "absurd": true
-    },
-    {
-      "couple": "_tz3000_cayepv1a|ts0121",
-      "mfr": "_tz3000_cayepv1a",
-      "pid": "ts0121",
-      "drivers": [
-        "button_wireless_2",
-        "smartPlug_DinRail"
-      ],
-      "classes": [
-        "button",
-        "socket"
-      ],
-      "families": [
-        "button",
-        "socket"
-      ],
-      "absurd": true
-    },
-    {
-      "couple": "_tz3000_cayepv1a|tso121",
-      "mfr": "_tz3000_cayepv1a",
-      "pid": "tso121",
-      "drivers": [
-        "button_wireless_2",
-        "smartPlug_DinRail"
-      ],
-      "classes": [
-        "button",
-        "socket"
-      ],
-      "families": [
-        "button",
-        "socket"
+        "light",
+        "button"
       ],
       "absurd": true
     },
@@ -535,60 +481,6 @@
       "drivers": [
         "button_wireless_2",
         "plug"
-      ],
-      "classes": [
-        "button",
-        "socket"
-      ],
-      "families": [
-        "button",
-        "socket"
-      ],
-      "absurd": true
-    },
-    {
-      "couple": "_tz3000_lepzuhto|ts011f",
-      "mfr": "_tz3000_lepzuhto",
-      "pid": "ts011f",
-      "drivers": [
-        "button_wireless_2",
-        "smartPlug_DinRail"
-      ],
-      "classes": [
-        "button",
-        "socket"
-      ],
-      "families": [
-        "button",
-        "socket"
-      ],
-      "absurd": true
-    },
-    {
-      "couple": "_tz3000_lepzuhto|ts0121",
-      "mfr": "_tz3000_lepzuhto",
-      "pid": "ts0121",
-      "drivers": [
-        "button_wireless_2",
-        "smartPlug_DinRail"
-      ],
-      "classes": [
-        "button",
-        "socket"
-      ],
-      "families": [
-        "button",
-        "socket"
-      ],
-      "absurd": true
-    },
-    {
-      "couple": "_tz3000_lepzuhto|tso121",
-      "mfr": "_tz3000_lepzuhto",
-      "pid": "tso121",
-      "drivers": [
-        "button_wireless_2",
-        "smartPlug_DinRail"
       ],
       "classes": [
         "button",
@@ -1497,6 +1389,42 @@
       "absurd": true
     },
     {
+      "couple": "_tz3000_bzzgvet0|ts0601",
+      "mfr": "_tz3000_bzzgvet0",
+      "pid": "ts0601",
+      "drivers": [
+        "climate_sensor",
+        "switch_1gang"
+      ],
+      "classes": [
+        "sensor",
+        "socket"
+      ],
+      "families": [
+        "sensor",
+        "socket"
+      ],
+      "absurd": true
+    },
+    {
+      "couple": "_tz3000_nsa76jai|ts0601",
+      "mfr": "_tz3000_nsa76jai",
+      "pid": "ts0601",
+      "drivers": [
+        "climate_sensor",
+        "switch_4gang"
+      ],
+      "classes": [
+        "sensor",
+        "socket"
+      ],
+      "families": [
+        "sensor",
+        "socket"
+      ],
+      "absurd": true
+    },
+    {
       "couple": "_tze204_6fk3gewc|ts0601",
       "mfr": "_tze204_6fk3gewc",
       "pid": "ts0601",
@@ -1934,6 +1862,546 @@
       "pid": "ts0726",
       "drivers": [
         "dimmer_1_gang_tuya",
+        "switch_1gang"
+      ],
+      "classes": [
+        "light",
+        "socket"
+      ],
+      "families": [
+        "light",
+        "socket"
+      ],
+      "absurd": true
+    },
+    {
+      "couple": "_tyzb01_v8gtiaed|01minizb",
+      "mfr": "_tyzb01_v8gtiaed",
+      "pid": "01minizb",
+      "drivers": [
+        "dimmer_2_gang",
+        "switch_1gang"
+      ],
+      "classes": [
+        "light",
+        "socket"
+      ],
+      "families": [
+        "light",
+        "socket"
+      ],
+      "absurd": true
+    },
+    {
+      "couple": "_tyzb01_v8gtiaed|basiczbr3",
+      "mfr": "_tyzb01_v8gtiaed",
+      "pid": "basiczbr3",
+      "drivers": [
+        "dimmer_2_gang",
+        "switch_1gang"
+      ],
+      "classes": [
+        "light",
+        "socket"
+      ],
+      "families": [
+        "light",
+        "socket"
+      ],
+      "absurd": true
+    },
+    {
+      "couple": "_tyzb01_v8gtiaed|s26r2zb",
+      "mfr": "_tyzb01_v8gtiaed",
+      "pid": "s26r2zb",
+      "drivers": [
+        "dimmer_2_gang",
+        "switch_1gang"
+      ],
+      "classes": [
+        "light",
+        "socket"
+      ],
+      "families": [
+        "light",
+        "socket"
+      ],
+      "absurd": true
+    },
+    {
+      "couple": "_tyzb01_v8gtiaed|s31zb",
+      "mfr": "_tyzb01_v8gtiaed",
+      "pid": "s31zb",
+      "drivers": [
+        "dimmer_2_gang",
+        "switch_1gang"
+      ],
+      "classes": [
+        "light",
+        "socket"
+      ],
+      "families": [
+        "light",
+        "socket"
+      ],
+      "absurd": true
+    },
+    {
+      "couple": "_tyzb01_v8gtiaed|ts0001",
+      "mfr": "_tyzb01_v8gtiaed",
+      "pid": "ts0001",
+      "drivers": [
+        "dimmer_2_gang",
+        "switch_1gang"
+      ],
+      "classes": [
+        "light",
+        "socket"
+      ],
+      "families": [
+        "light",
+        "socket"
+      ],
+      "absurd": true
+    },
+    {
+      "couple": "_tyzb01_v8gtiaed|ts0001_power",
+      "mfr": "_tyzb01_v8gtiaed",
+      "pid": "ts0001_power",
+      "drivers": [
+        "dimmer_2_gang",
+        "switch_1gang"
+      ],
+      "classes": [
+        "light",
+        "socket"
+      ],
+      "families": [
+        "light",
+        "socket"
+      ],
+      "absurd": true
+    },
+    {
+      "couple": "_tyzb01_v8gtiaed|ts0001_switch",
+      "mfr": "_tyzb01_v8gtiaed",
+      "pid": "ts0001_switch",
+      "drivers": [
+        "dimmer_2_gang",
+        "switch_1gang"
+      ],
+      "classes": [
+        "light",
+        "socket"
+      ],
+      "families": [
+        "light",
+        "socket"
+      ],
+      "absurd": true
+    },
+    {
+      "couple": "_tyzb01_v8gtiaed|ts0001_switch_module",
+      "mfr": "_tyzb01_v8gtiaed",
+      "pid": "ts0001_switch_module",
+      "drivers": [
+        "dimmer_2_gang",
+        "switch_1gang"
+      ],
+      "classes": [
+        "light",
+        "socket"
+      ],
+      "families": [
+        "light",
+        "socket"
+      ],
+      "absurd": true
+    },
+    {
+      "couple": "_tyzb01_v8gtiaed|ts0003",
+      "mfr": "_tyzb01_v8gtiaed",
+      "pid": "ts0003",
+      "drivers": [
+        "dimmer_2_gang",
+        "switch_1gang"
+      ],
+      "classes": [
+        "light",
+        "socket"
+      ],
+      "families": [
+        "light",
+        "socket"
+      ],
+      "absurd": true
+    },
+    {
+      "couple": "_tyzb01_v8gtiaed|ts000f",
+      "mfr": "_tyzb01_v8gtiaed",
+      "pid": "ts000f",
+      "drivers": [
+        "dimmer_2_gang",
+        "switch_1gang"
+      ],
+      "classes": [
+        "light",
+        "socket"
+      ],
+      "families": [
+        "light",
+        "socket"
+      ],
+      "absurd": true
+    },
+    {
+      "couple": "_tyzb01_v8gtiaed|ts0011",
+      "mfr": "_tyzb01_v8gtiaed",
+      "pid": "ts0011",
+      "drivers": [
+        "dimmer_2_gang",
+        "switch_1gang"
+      ],
+      "classes": [
+        "light",
+        "socket"
+      ],
+      "families": [
+        "light",
+        "socket"
+      ],
+      "absurd": true
+    },
+    {
+      "couple": "_tyzb01_v8gtiaed|ts0012",
+      "mfr": "_tyzb01_v8gtiaed",
+      "pid": "ts0012",
+      "drivers": [
+        "dimmer_2_gang",
+        "switch_1gang"
+      ],
+      "classes": [
+        "light",
+        "socket"
+      ],
+      "families": [
+        "light",
+        "socket"
+      ],
+      "absurd": true
+    },
+    {
+      "couple": "_tyzb01_v8gtiaed|ts0014",
+      "mfr": "_tyzb01_v8gtiaed",
+      "pid": "ts0014",
+      "drivers": [
+        "dimmer_2_gang",
+        "switch_1gang"
+      ],
+      "classes": [
+        "light",
+        "socket"
+      ],
+      "families": [
+        "light",
+        "socket"
+      ],
+      "absurd": true
+    },
+    {
+      "couple": "_tyzb01_v8gtiaed|ts0101",
+      "mfr": "_tyzb01_v8gtiaed",
+      "pid": "ts0101",
+      "drivers": [
+        "dimmer_2_gang",
+        "switch_1gang"
+      ],
+      "classes": [
+        "light",
+        "socket"
+      ],
+      "families": [
+        "light",
+        "socket"
+      ],
+      "absurd": true
+    },
+    {
+      "couple": "_tyzb01_v8gtiaed|ts0111",
+      "mfr": "_tyzb01_v8gtiaed",
+      "pid": "ts0111",
+      "drivers": [
+        "dimmer_2_gang",
+        "switch_1gang"
+      ],
+      "classes": [
+        "light",
+        "socket"
+      ],
+      "families": [
+        "light",
+        "socket"
+      ],
+      "absurd": true
+    },
+    {
+      "couple": "_tyzb01_v8gtiaed|ts011f",
+      "mfr": "_tyzb01_v8gtiaed",
+      "pid": "ts011f",
+      "drivers": [
+        "dimmer_2_gang",
+        "switch_1gang"
+      ],
+      "classes": [
+        "light",
+        "socket"
+      ],
+      "families": [
+        "light",
+        "socket"
+      ],
+      "absurd": true
+    },
+    {
+      "couple": "_tyzb01_v8gtiaed|ts0601",
+      "mfr": "_tyzb01_v8gtiaed",
+      "pid": "ts0601",
+      "drivers": [
+        "dimmer_2_gang",
+        "switch_1gang"
+      ],
+      "classes": [
+        "light",
+        "socket"
+      ],
+      "families": [
+        "light",
+        "socket"
+      ],
+      "absurd": true
+    },
+    {
+      "couple": "_tyzb01_v8gtiaed|ts0726",
+      "mfr": "_tyzb01_v8gtiaed",
+      "pid": "ts0726",
+      "drivers": [
+        "dimmer_2_gang",
+        "switch_1gang"
+      ],
+      "classes": [
+        "light",
+        "socket"
+      ],
+      "families": [
+        "light",
+        "socket"
+      ],
+      "absurd": true
+    },
+    {
+      "couple": "_tyzb01_v8gtiaed|ts110e",
+      "mfr": "_tyzb01_v8gtiaed",
+      "pid": "ts110e",
+      "drivers": [
+        "dimmer_2_gang",
+        "switch_1gang"
+      ],
+      "classes": [
+        "light",
+        "socket"
+      ],
+      "families": [
+        "light",
+        "socket"
+      ],
+      "absurd": true
+    },
+    {
+      "couple": "_tyzb01_v8gtiaed|ts130f",
+      "mfr": "_tyzb01_v8gtiaed",
+      "pid": "ts130f",
+      "drivers": [
+        "dimmer_2_gang",
+        "switch_1gang"
+      ],
+      "classes": [
+        "light",
+        "socket"
+      ],
+      "families": [
+        "light",
+        "socket"
+      ],
+      "absurd": true
+    },
+    {
+      "couple": "_tyzb01_v8gtiaed|ts4100",
+      "mfr": "_tyzb01_v8gtiaed",
+      "pid": "ts4100",
+      "drivers": [
+        "dimmer_2_gang",
+        "switch_1gang"
+      ],
+      "classes": [
+        "light",
+        "socket"
+      ],
+      "families": [
+        "light",
+        "socket"
+      ],
+      "absurd": true
+    },
+    {
+      "couple": "_tyzb01_v8gtiaed|zbm5-1c-120",
+      "mfr": "_tyzb01_v8gtiaed",
+      "pid": "zbm5-1c-120",
+      "drivers": [
+        "dimmer_2_gang",
+        "switch_1gang"
+      ],
+      "classes": [
+        "light",
+        "socket"
+      ],
+      "families": [
+        "light",
+        "socket"
+      ],
+      "absurd": true
+    },
+    {
+      "couple": "_tyzb01_v8gtiaed|zbm5-2c-120",
+      "mfr": "_tyzb01_v8gtiaed",
+      "pid": "zbm5-2c-120",
+      "drivers": [
+        "dimmer_2_gang",
+        "switch_1gang"
+      ],
+      "classes": [
+        "light",
+        "socket"
+      ],
+      "families": [
+        "light",
+        "socket"
+      ],
+      "absurd": true
+    },
+    {
+      "couple": "_tyzb01_v8gtiaed|zbm5-3c-120",
+      "mfr": "_tyzb01_v8gtiaed",
+      "pid": "zbm5-3c-120",
+      "drivers": [
+        "dimmer_2_gang",
+        "switch_1gang"
+      ],
+      "classes": [
+        "light",
+        "socket"
+      ],
+      "families": [
+        "light",
+        "socket"
+      ],
+      "absurd": true
+    },
+    {
+      "couple": "_tyzb01_v8gtiaed|zbmini",
+      "mfr": "_tyzb01_v8gtiaed",
+      "pid": "zbmini",
+      "drivers": [
+        "dimmer_2_gang",
+        "switch_1gang"
+      ],
+      "classes": [
+        "light",
+        "socket"
+      ],
+      "families": [
+        "light",
+        "socket"
+      ],
+      "absurd": true
+    },
+    {
+      "couple": "_tyzb01_v8gtiaed|zbminil2",
+      "mfr": "_tyzb01_v8gtiaed",
+      "pid": "zbminil2",
+      "drivers": [
+        "dimmer_2_gang",
+        "switch_1gang"
+      ],
+      "classes": [
+        "light",
+        "socket"
+      ],
+      "families": [
+        "light",
+        "socket"
+      ],
+      "absurd": true
+    },
+    {
+      "couple": "_tyzb01_v8gtiaed|zbminil2-r2",
+      "mfr": "_tyzb01_v8gtiaed",
+      "pid": "zbminil2-r2",
+      "drivers": [
+        "dimmer_2_gang",
+        "switch_1gang"
+      ],
+      "classes": [
+        "light",
+        "socket"
+      ],
+      "families": [
+        "light",
+        "socket"
+      ],
+      "absurd": true
+    },
+    {
+      "couple": "_tyzb01_v8gtiaed|zbminir",
+      "mfr": "_tyzb01_v8gtiaed",
+      "pid": "zbminir",
+      "drivers": [
+        "dimmer_2_gang",
+        "switch_1gang"
+      ],
+      "classes": [
+        "light",
+        "socket"
+      ],
+      "families": [
+        "light",
+        "socket"
+      ],
+      "absurd": true
+    },
+    {
+      "couple": "_tyzb01_v8gtiaed|zbminir2",
+      "mfr": "_tyzb01_v8gtiaed",
+      "pid": "zbminir2",
+      "drivers": [
+        "dimmer_2_gang",
+        "switch_1gang"
+      ],
+      "classes": [
+        "light",
+        "socket"
+      ],
+      "families": [
+        "light",
+        "socket"
+      ],
+      "absurd": true
+    },
+    {
+      "couple": "_tyzb01_v8gtiaed|zbminir2-r2",
+      "mfr": "_tyzb01_v8gtiaed",
+      "pid": "zbminir2-r2",
+      "drivers": [
+        "dimmer_2_gang",
         "switch_1gang"
       ],
       "classes": [
@@ -2545,42 +3013,6 @@
       "absurd": true
     },
     {
-      "couple": "_tze204_8fffc3kb|ts0601",
-      "mfr": "_tze204_8fffc3kb",
-      "pid": "ts0601",
-      "drivers": [
-        "led_controller_spi_tuya",
-        "switch_1gang"
-      ],
-      "classes": [
-        "light",
-        "socket"
-      ],
-      "families": [
-        "light",
-        "socket"
-      ],
-      "absurd": true
-    },
-    {
-      "couple": "_tze284_gt5al3bl|ts0601",
-      "mfr": "_tze284_gt5al3bl",
-      "pid": "ts0601",
-      "drivers": [
-        "led_controller_spi_tuya",
-        "switch_1gang"
-      ],
-      "classes": [
-        "light",
-        "socket"
-      ],
-      "families": [
-        "light",
-        "socket"
-      ],
-      "absurd": true
-    },
-    {
       "couple": "_tz3290_ixd9mvv4|ts0601",
       "mfr": "_tz3290_ixd9mvv4",
       "pid": "ts0601",
@@ -2600,6 +3032,24 @@
     }
   ],
   "crossClassOther": [
+    {
+      "couple": "_tz3000_kmsbwdol|ts0601",
+      "mfr": "_tz3000_kmsbwdol",
+      "pid": "ts0601",
+      "drivers": [
+        "climate_sensor",
+        "curtain_module_2_gang"
+      ],
+      "classes": [
+        "sensor",
+        "windowcoverings"
+      ],
+      "families": [
+        "sensor",
+        "cover"
+      ],
+      "absurd": false
+    },
     {
       "couple": "_tze200_eqpaxqdv|ts0301",
       "mfr": "_tze200_eqpaxqdv",
@@ -2625,150 +3075,6 @@
       "drivers": [
         "curtain_motor",
         "sensor_gas_presence"
-      ],
-      "classes": [
-        "windowcoverings",
-        "sensor"
-      ],
-      "families": [
-        "cover",
-        "sensor"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tze200_hyhl5y36|ts0601",
-      "mfr": "_tze200_hyhl5y36",
-      "pid": "ts0601",
-      "drivers": [
-        "curtain_motor",
-        "presence_sensor_radar"
-      ],
-      "classes": [
-        "windowcoverings",
-        "sensor"
-      ],
-      "families": [
-        "cover",
-        "sensor"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tze200_hyhl5y36|ts110e",
-      "mfr": "_tze200_hyhl5y36",
-      "pid": "ts110e",
-      "drivers": [
-        "curtain_motor",
-        "presence_sensor_radar"
-      ],
-      "classes": [
-        "windowcoverings",
-        "sensor"
-      ],
-      "families": [
-        "cover",
-        "sensor"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tze204_ycke4deo|ts0601",
-      "mfr": "_tze204_ycke4deo",
-      "pid": "ts0601",
-      "drivers": [
-        "curtain_motor",
-        "presence_sensor_radar"
-      ],
-      "classes": [
-        "windowcoverings",
-        "sensor"
-      ],
-      "families": [
-        "cover",
-        "sensor"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tze204_ycke4deo|ts110e",
-      "mfr": "_tze204_ycke4deo",
-      "pid": "ts110e",
-      "drivers": [
-        "curtain_motor",
-        "presence_sensor_radar"
-      ],
-      "classes": [
-        "windowcoverings",
-        "sensor"
-      ],
-      "families": [
-        "cover",
-        "sensor"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tze284_ozf4e02o|ts0601",
-      "mfr": "_tze284_ozf4e02o",
-      "pid": "ts0601",
-      "drivers": [
-        "curtain_motor",
-        "presence_sensor_radar"
-      ],
-      "classes": [
-        "windowcoverings",
-        "sensor"
-      ],
-      "families": [
-        "cover",
-        "sensor"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tze284_ozf4e02o|ts110e",
-      "mfr": "_tze284_ozf4e02o",
-      "pid": "ts110e",
-      "drivers": [
-        "curtain_motor",
-        "presence_sensor_radar"
-      ],
-      "classes": [
-        "windowcoverings",
-        "sensor"
-      ],
-      "families": [
-        "cover",
-        "sensor"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tze284_rlytpmij|ts0601",
-      "mfr": "_tze284_rlytpmij",
-      "pid": "ts0601",
-      "drivers": [
-        "curtain_motor",
-        "presence_sensor_radar"
-      ],
-      "classes": [
-        "windowcoverings",
-        "sensor"
-      ],
-      "families": [
-        "cover",
-        "sensor"
-      ],
-      "absurd": false
-    },
-    {
-      "couple": "_tze284_rlytpmij|ts110e",
-      "mfr": "_tze284_rlytpmij",
-      "pid": "ts110e",
-      "drivers": [
-        "curtain_motor",
-        "presence_sensor_radar"
       ],
       "classes": [
         "windowcoverings",
@@ -7119,22 +7425,6 @@
       "absurd": false
     },
     {
-      "couple": "_tze200_p3dbf6qs|ts0601",
-      "mfr": "_tze200_p3dbf6qs",
-      "pid": "ts0601",
-      "drivers": [
-        "device_radiator_valve",
-        "radiator_valve"
-      ],
-      "classes": [
-        "thermostat"
-      ],
-      "families": [
-        "climate_ctrl"
-      ],
-      "absurd": false
-    },
-    {
       "couple": "_tz3000_iystcadi|ts0601",
       "mfr": "_tz3000_iystcadi",
       "pid": "ts0601",
@@ -8303,6 +8593,54 @@
       "absurd": false
     },
     {
+      "couple": "_tze204_8fffc3kb|ts0601",
+      "mfr": "_tze204_8fffc3kb",
+      "pid": "ts0601",
+      "drivers": [
+        "led_controller_rgb",
+        "led_controller_spi_tuya"
+      ],
+      "classes": [
+        "light"
+      ],
+      "families": [
+        "light"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tze284_gt5al3bl|ts0601",
+      "mfr": "_tze284_gt5al3bl",
+      "pid": "ts0601",
+      "drivers": [
+        "led_controller_rgb",
+        "led_controller_spi_tuya"
+      ],
+      "classes": [
+        "light"
+      ],
+      "families": [
+        "light"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tze28c1000000_gt5al3bl|ts0601",
+      "mfr": "_tze28c1000000_gt5al3bl",
+      "pid": "ts0601",
+      "drivers": [
+        "led_controller_rgb",
+        "led_controller_spi_tuya"
+      ],
+      "classes": [
+        "light"
+      ],
+      "families": [
+        "light"
+      ],
+      "absurd": false
+    },
+    {
       "couple": "_tz3000_c8ozah8n|ts0001",
       "mfr": "_tz3000_c8ozah8n",
       "pid": "ts0001",
@@ -9071,6 +9409,22 @@
       "absurd": false
     },
     {
+      "couple": "_tz3000_jqge2fjx|ts0601",
+      "mfr": "_tz3000_jqge2fjx",
+      "pid": "ts0601",
+      "drivers": [
+        "sensor_contact_zigbee",
+        "vibration_sensor"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
       "couple": "_tz3000_yi0n4xfd|ts011f",
       "mfr": "_tz3000_yi0n4xfd",
       "pid": "ts011f",
@@ -9272,6 +9626,486 @@
       "absurd": false
     },
     {
+      "couple": "_tyzb01_4lwqwyqn|01minizb",
+      "mfr": "_tyzb01_4lwqwyqn",
+      "pid": "01minizb",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "families": [
+        "socket"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tyzb01_4lwqwyqn|basiczbr3",
+      "mfr": "_tyzb01_4lwqwyqn",
+      "pid": "basiczbr3",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "families": [
+        "socket"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tyzb01_4lwqwyqn|s26r2zb",
+      "mfr": "_tyzb01_4lwqwyqn",
+      "pid": "s26r2zb",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "families": [
+        "socket"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tyzb01_4lwqwyqn|s31zb",
+      "mfr": "_tyzb01_4lwqwyqn",
+      "pid": "s31zb",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "families": [
+        "socket"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tyzb01_4lwqwyqn|ts0001",
+      "mfr": "_tyzb01_4lwqwyqn",
+      "pid": "ts0001",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "families": [
+        "socket"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tyzb01_4lwqwyqn|ts0001_power",
+      "mfr": "_tyzb01_4lwqwyqn",
+      "pid": "ts0001_power",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "families": [
+        "socket"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tyzb01_4lwqwyqn|ts0001_switch",
+      "mfr": "_tyzb01_4lwqwyqn",
+      "pid": "ts0001_switch",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "families": [
+        "socket"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tyzb01_4lwqwyqn|ts0001_switch_module",
+      "mfr": "_tyzb01_4lwqwyqn",
+      "pid": "ts0001_switch_module",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "families": [
+        "socket"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tyzb01_4lwqwyqn|ts0003",
+      "mfr": "_tyzb01_4lwqwyqn",
+      "pid": "ts0003",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "families": [
+        "socket"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tyzb01_4lwqwyqn|ts0004",
+      "mfr": "_tyzb01_4lwqwyqn",
+      "pid": "ts0004",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "families": [
+        "socket"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tyzb01_4lwqwyqn|ts0011",
+      "mfr": "_tyzb01_4lwqwyqn",
+      "pid": "ts0011",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "families": [
+        "socket"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tyzb01_4lwqwyqn|ts0012",
+      "mfr": "_tyzb01_4lwqwyqn",
+      "pid": "ts0012",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "families": [
+        "socket"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tyzb01_4lwqwyqn|ts0014",
+      "mfr": "_tyzb01_4lwqwyqn",
+      "pid": "ts0014",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "families": [
+        "socket"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tyzb01_4lwqwyqn|ts0101",
+      "mfr": "_tyzb01_4lwqwyqn",
+      "pid": "ts0101",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "families": [
+        "socket"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tyzb01_4lwqwyqn|ts0111",
+      "mfr": "_tyzb01_4lwqwyqn",
+      "pid": "ts0111",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "families": [
+        "socket"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tyzb01_4lwqwyqn|ts011f",
+      "mfr": "_tyzb01_4lwqwyqn",
+      "pid": "ts011f",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "families": [
+        "socket"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tyzb01_4lwqwyqn|ts0601",
+      "mfr": "_tyzb01_4lwqwyqn",
+      "pid": "ts0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "families": [
+        "socket"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tyzb01_4lwqwyqn|ts0726",
+      "mfr": "_tyzb01_4lwqwyqn",
+      "pid": "ts0726",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "families": [
+        "socket"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tyzb01_4lwqwyqn|ts110e",
+      "mfr": "_tyzb01_4lwqwyqn",
+      "pid": "ts110e",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "families": [
+        "socket"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tyzb01_4lwqwyqn|ts130f",
+      "mfr": "_tyzb01_4lwqwyqn",
+      "pid": "ts130f",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "families": [
+        "socket"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tyzb01_4lwqwyqn|ts4100",
+      "mfr": "_tyzb01_4lwqwyqn",
+      "pid": "ts4100",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "families": [
+        "socket"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tyzb01_4lwqwyqn|zbm5-1c-120",
+      "mfr": "_tyzb01_4lwqwyqn",
+      "pid": "zbm5-1c-120",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "families": [
+        "socket"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tyzb01_4lwqwyqn|zbm5-2c-120",
+      "mfr": "_tyzb01_4lwqwyqn",
+      "pid": "zbm5-2c-120",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "families": [
+        "socket"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tyzb01_4lwqwyqn|zbm5-3c-120",
+      "mfr": "_tyzb01_4lwqwyqn",
+      "pid": "zbm5-3c-120",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "families": [
+        "socket"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tyzb01_4lwqwyqn|zbmini",
+      "mfr": "_tyzb01_4lwqwyqn",
+      "pid": "zbmini",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "families": [
+        "socket"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tyzb01_4lwqwyqn|zbminil2",
+      "mfr": "_tyzb01_4lwqwyqn",
+      "pid": "zbminil2",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "families": [
+        "socket"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tyzb01_4lwqwyqn|zbminil2-r2",
+      "mfr": "_tyzb01_4lwqwyqn",
+      "pid": "zbminil2-r2",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "families": [
+        "socket"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tyzb01_4lwqwyqn|zbminir",
+      "mfr": "_tyzb01_4lwqwyqn",
+      "pid": "zbminir",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "families": [
+        "socket"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tyzb01_4lwqwyqn|zbminir2",
+      "mfr": "_tyzb01_4lwqwyqn",
+      "pid": "zbminir2",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "families": [
+        "socket"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tyzb01_4lwqwyqn|zbminir2-r2",
+      "mfr": "_tyzb01_4lwqwyqn",
+      "pid": "zbminir2-r2",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "families": [
+        "socket"
+      ],
+      "absurd": false
+    },
+    {
       "couple": "_tze204_amp6tsvy|ts0003",
       "mfr": "_tze204_amp6tsvy",
       "pid": "ts0003",
@@ -9462,6 +10296,790 @@
         "socket"
       ],
       "absurd": false
+    },
+    {
+      "couple": "_tz3000_skueekg3|ts000f",
+      "mfr": "_tz3000_skueekg3",
+      "pid": "ts000f",
+      "drivers": [
+        "switch_1gang",
+        "switch_module_whd02"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "families": [
+        "socket"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_kstbkt6a|_tz3000_eit6l5",
+      "mfr": "_tz3000_kstbkt6a",
+      "pid": "_tz3000_eit6l5",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_kstbkt6a|_tz3000_kyb656no",
+      "mfr": "_tz3000_kstbkt6a",
+      "pid": "_tz3000_kyb656no",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_kstbkt6a|3315-s",
+      "mfr": "_tz3000_kstbkt6a",
+      "pid": "3315-s",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_kstbkt6a|3315-seu",
+      "mfr": "_tz3000_kstbkt6a",
+      "pid": "3315-seu",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_kstbkt6a|ck-tlsr8656-ss5-01(7019)",
+      "mfr": "_tz3000_kstbkt6a",
+      "pid": "ck-tlsr8656-ss5-01(7019)",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_kstbkt6a|hs1wl",
+      "mfr": "_tz3000_kstbkt6a",
+      "pid": "hs1wl",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_kstbkt6a|ls21001",
+      "mfr": "_tz3000_kstbkt6a",
+      "pid": "ls21001",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_kstbkt6a|lumi.sensor_wleak.aq1",
+      "mfr": "_tz3000_kstbkt6a",
+      "pid": "lumi.sensor_wleak.aq1",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_kstbkt6a|sjcgq11lm",
+      "mfr": "_tz3000_kstbkt6a",
+      "pid": "sjcgq11lm",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_kstbkt6a|sjcgq12lm",
+      "mfr": "_tz3000_kstbkt6a",
+      "pid": "sjcgq12lm",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_kstbkt6a|sjcgq13lm",
+      "mfr": "_tz3000_kstbkt6a",
+      "pid": "sjcgq13lm",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_kstbkt6a|snzb-05",
+      "mfr": "_tz3000_kstbkt6a",
+      "pid": "snzb-05",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_kstbkt6a|snzb-05p",
+      "mfr": "_tz3000_kstbkt6a",
+      "pid": "snzb-05p",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_kstbkt6a|sq510a",
+      "mfr": "_tz3000_kstbkt6a",
+      "pid": "sq510a",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_kstbkt6a|ts0601",
+      "mfr": "_tz3000_kstbkt6a",
+      "pid": "ts0601",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_kstbkt6a|zg-222z",
+      "mfr": "_tz3000_kstbkt6a",
+      "pid": "zg-222z",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_fxvjhdyl|_tz3000_eit6l5",
+      "mfr": "_tz3000_fxvjhdyl",
+      "pid": "_tz3000_eit6l5",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_fxvjhdyl|_tz3000_kyb656no",
+      "mfr": "_tz3000_fxvjhdyl",
+      "pid": "_tz3000_kyb656no",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_fxvjhdyl|3315-s",
+      "mfr": "_tz3000_fxvjhdyl",
+      "pid": "3315-s",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_fxvjhdyl|3315-seu",
+      "mfr": "_tz3000_fxvjhdyl",
+      "pid": "3315-seu",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_fxvjhdyl|ck-tlsr8656-ss5-01(7019)",
+      "mfr": "_tz3000_fxvjhdyl",
+      "pid": "ck-tlsr8656-ss5-01(7019)",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_fxvjhdyl|hs1wl",
+      "mfr": "_tz3000_fxvjhdyl",
+      "pid": "hs1wl",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_fxvjhdyl|ls21001",
+      "mfr": "_tz3000_fxvjhdyl",
+      "pid": "ls21001",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_fxvjhdyl|lumi.sensor_wleak.aq1",
+      "mfr": "_tz3000_fxvjhdyl",
+      "pid": "lumi.sensor_wleak.aq1",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_fxvjhdyl|sjcgq11lm",
+      "mfr": "_tz3000_fxvjhdyl",
+      "pid": "sjcgq11lm",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_fxvjhdyl|sjcgq12lm",
+      "mfr": "_tz3000_fxvjhdyl",
+      "pid": "sjcgq12lm",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_fxvjhdyl|sjcgq13lm",
+      "mfr": "_tz3000_fxvjhdyl",
+      "pid": "sjcgq13lm",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_fxvjhdyl|snzb-05",
+      "mfr": "_tz3000_fxvjhdyl",
+      "pid": "snzb-05",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_fxvjhdyl|snzb-05p",
+      "mfr": "_tz3000_fxvjhdyl",
+      "pid": "snzb-05p",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_fxvjhdyl|sq510a",
+      "mfr": "_tz3000_fxvjhdyl",
+      "pid": "sq510a",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_fxvjhdyl|ts0601",
+      "mfr": "_tz3000_fxvjhdyl",
+      "pid": "ts0601",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_fxvjhdyl|zg-222z",
+      "mfr": "_tz3000_fxvjhdyl",
+      "pid": "zg-222z",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_kyb656no|_tz3000_eit6l5",
+      "mfr": "_tz3000_kyb656no",
+      "pid": "_tz3000_eit6l5",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_kyb656no|_tz3000_kyb656no",
+      "mfr": "_tz3000_kyb656no",
+      "pid": "_tz3000_kyb656no",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_kyb656no|3315-s",
+      "mfr": "_tz3000_kyb656no",
+      "pid": "3315-s",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_kyb656no|3315-seu",
+      "mfr": "_tz3000_kyb656no",
+      "pid": "3315-seu",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_kyb656no|ck-tlsr8656-ss5-01(7019)",
+      "mfr": "_tz3000_kyb656no",
+      "pid": "ck-tlsr8656-ss5-01(7019)",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_kyb656no|hs1wl",
+      "mfr": "_tz3000_kyb656no",
+      "pid": "hs1wl",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_kyb656no|ls21001",
+      "mfr": "_tz3000_kyb656no",
+      "pid": "ls21001",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_kyb656no|lumi.sensor_wleak.aq1",
+      "mfr": "_tz3000_kyb656no",
+      "pid": "lumi.sensor_wleak.aq1",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_kyb656no|sjcgq11lm",
+      "mfr": "_tz3000_kyb656no",
+      "pid": "sjcgq11lm",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_kyb656no|sjcgq12lm",
+      "mfr": "_tz3000_kyb656no",
+      "pid": "sjcgq12lm",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_kyb656no|sjcgq13lm",
+      "mfr": "_tz3000_kyb656no",
+      "pid": "sjcgq13lm",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_kyb656no|snzb-05",
+      "mfr": "_tz3000_kyb656no",
+      "pid": "snzb-05",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_kyb656no|snzb-05p",
+      "mfr": "_tz3000_kyb656no",
+      "pid": "snzb-05p",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_kyb656no|sq510a",
+      "mfr": "_tz3000_kyb656no",
+      "pid": "sq510a",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_kyb656no|ts0601",
+      "mfr": "_tz3000_kyb656no",
+      "pid": "ts0601",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
+    },
+    {
+      "couple": "_tz3000_kyb656no|zg-222z",
+      "mfr": "_tz3000_kyb656no",
+      "pid": "zg-222z",
+      "drivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "families": [
+        "sensor"
+      ],
+      "absurd": false
     }
   ],
   "energy": [
@@ -9478,9 +11096,9 @@
     }
   ],
   "counts": {
-    "crossClassAbsurd": 145,
-    "crossClassOther": 10,
-    "sameClassDual": 417,
+    "crossClassAbsurd": 169,
+    "crossClassOther": 3,
+    "sameClassDual": 499,
     "energyIssues": 1
   }
 }
