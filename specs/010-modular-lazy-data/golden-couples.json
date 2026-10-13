@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-11T20:56:47.589Z",
+ "generated": "2026-10-13T12:58:07.690Z",
  "drivers": 388,
  "snapshot": {
   "air_purifier": {
@@ -183,15 +183,15 @@
    "pidSha": "97471aa91d3d60d5"
   },
   "button_wireless_2": {
-   "mfr": 128,
+   "mfr": 126,
    "pid": 100,
-   "mfrSha": "ff0a1ce09e8dce6a",
+   "mfrSha": "4726ee49c618153a",
    "pidSha": "25b2f5f37b8e4dd1"
   },
   "button_wireless_3": {
-   "mfr": 22,
+   "mfr": 23,
    "pid": 1,
-   "mfrSha": "98715411cf195334",
+   "mfrSha": "d8162248c0439b8b",
    "pidSha": "06cd0099c514e4ab"
   },
   "button_wireless_4": {
@@ -279,9 +279,9 @@
    "pidSha": "3427697d0c296c9d"
   },
   "climate_sensor": {
-   "mfr": 534,
+   "mfr": 535,
    "pid": 32,
-   "mfrSha": "9eed846e01c292db",
+   "mfrSha": "c443f368be767406",
    "pidSha": "4809a771f46a5606"
   },
   "climate_sensor_device": {
@@ -393,15 +393,15 @@
    "pidSha": "c4343290bac9e455"
   },
   "curtain_motor": {
-   "mfr": 280,
-   "pid": 47,
-   "mfrSha": "257c72be5b58bd37",
-   "pidSha": "735b9403d1d2fceb"
+   "mfr": 281,
+   "pid": 48,
+   "mfrSha": "f9fc2abc2b4d96fe",
+   "pidSha": "00ba96ff94eb4bb5"
   },
   "curtain_motor_shutter": {
-   "mfr": 24,
+   "mfr": 23,
    "pid": 45,
-   "mfrSha": "1a6a323e10524d5c",
+   "mfrSha": "dfa8050fee5126dd",
    "pidSha": "d106b3fca74974d1"
   },
   "curtain_motor_tilt": {
@@ -1809,10 +1809,10 @@
    "pidSha": "01d687d685c35f20"
   },
   "soil_sensor": {
-   "mfr": 71,
-   "pid": 47,
-   "mfrSha": "3ff0ffccb6ce28a8",
-   "pidSha": "6d7beb07cb7d44bb"
+   "mfr": 72,
+   "pid": 46,
+   "mfrSha": "15893e6e534bc126",
+   "pidSha": "5269675b3c9a0d5d"
   },
   "soil_sensor_ec": {
    "mfr": 1,
@@ -1863,9 +1863,9 @@
    "pidSha": "b46b96d17990cf37"
   },
   "switch_1gang": {
-   "mfr": 358,
+   "mfr": 359,
    "pid": 38,
-   "mfrSha": "8611b6bd1eb6f6b3",
+   "mfrSha": "b5064966f4278307",
    "pidSha": "fd65b1d55ed8db6a"
   },
   "switch_2_gang": {
@@ -2097,9 +2097,9 @@
    "pidSha": "b5f78b2a386201c5"
   },
   "usb_dongle_triple": {
-   "mfr": 15,
+   "mfr": 14,
    "pid": 9,
-   "mfrSha": "baa03311f66b6118",
+   "mfrSha": "3dc9e80b78328956",
    "pidSha": "d0d47359d9f8c8f2"
   },
   "usb_outlet_advanced": {
@@ -2289,15 +2289,15 @@
    "pidSha": "8218a22aa12bceb7"
   },
   "water_leak_sensor": {
-   "mfr": 37,
+   "mfr": 38,
    "pid": 21,
-   "mfrSha": "13f8154214888e83",
+   "mfrSha": "7ee2f421891c2d36",
    "pidSha": "ddd617471a56ff24"
   },
   "water_leak_sensor_tuya": {
-   "mfr": 37,
+   "mfr": 36,
    "pid": 18,
-   "mfrSha": "fba2827e23e2453d",
+   "mfrSha": "b5158ee6748b5a09",
    "pidSha": "adf8ba17b46c1c29"
   },
   "water_tank_monitor": {
