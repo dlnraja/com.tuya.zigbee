@@ -105,20 +105,6 @@ const ENERGY_DEVICE_CONFIGS = {
     }
   },
 
-  // Type E: BlitzWolf / Nous style (different DP order)
-  'TUYA_BLITZWOLF': {
-    sensors: [
-      '_TZE200_nkjintbl', '_TZE204_nkjintbl',
-    ],
-    protocol: 'tuya',
-    dpMap: {
-      1: { cap: 'onoff', type: 'bool' },
-      9: { cap: 'meter_power', smartDivisor: true },
-      17: { cap: 'measure_voltage', smartDivisor: true },       // Voltage first
-      18: { cap: 'measure_current', smartDivisor: true },     // Then current
-      19: { cap: 'measure_power', smartDivisor: true },         // Then power
-    }
-  },
 
   // Type F: 3-Phase Energy Meter
   'TUYA_3PHASE': {
