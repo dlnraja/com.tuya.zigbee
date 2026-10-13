@@ -2,6 +2,9 @@
 
 Human-readable log. Machine state: `data/progress/ledger.json` (read it before working, record after; helper `scripts/lib/ledger.js`, CLI `scripts/progress/ledger-cli.js`). Linked checkpoints: `data/leads/resume-checkpoint.json`, `data/leads/deep-read-checkpoint.json`, `data/leads/johan-deep-read-log.json`. Newest entries first. Times Europe/Paris.
 
+## 2026-10-13
+- 09:00 — `_TZE200_nkjintbl`|TS0601 rechecked (Z2M `TS0601_switch_2_gang`, ZHA double-switch quirk, deCONZ Tuya list, Johan #46 interview). Stays sole owner on `switch_2gang` on master / stable-v5 / bastien-home. Removed wrong BlitzWolf energy-map bleed of this mfr from five `*_plug` device.js files; `_TZE204_nkjintbl` remains on `button_wireless_plug` only. Doc: `docs/knowledge/NKJINTBL_TZE200_SWITCH_2GANG_2026-10-13.md`. Athom: Test tip still #3564 (~9.0.1445); #3565/#3566 both socket hang up on 9.0.1446/1447 — one re-dispatch of auto-publish after this push.
+
 ## 2026-10-12
 - 09:20 — Daily resume. Athom Test tips, read from the build lists the fleet/auto-fix runs printed: Universal **9.0.1435** (#3554). 9.0.1436/1438 hit a socket hang up during Athom processing and 9.0.1437 an AggregateError; the content after 1435 is only couple manifest edits. Self-heal refuses to loop while Test is healthy, so the next real master push carries the retry. Bastien **1.0.149** (#157), Stable **5.12.406** (#313). The queued check of 9.0.1410 is obsolete.
 - 09:20 — `_TZE200_nkjintbl`|TS0601: checked online again. Z2M lists it in TS0601_switch_2_gang and ZHA in TuyaDoubleSwitchTO, both as a 2-gang EF00 switch. It stays on `switch_2gang` in all three apps. Anti-bot is green on master, stable-v5 and bastien-home, so the queue item was stale (fixed earlier by stable PR #561). The registry id keeps its old name and now carries a note saying what it really means. The stable red was the P169 mfs_db drift check (syntax-check run 38177003763), not anti-bot: aligned on stable in 401dede6bb [skip ci].
