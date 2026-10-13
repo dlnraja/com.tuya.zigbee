@@ -48,6 +48,14 @@
    "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/467",
    "via": "coverage-audit",
    "date": "2026-10-02"
+  },
+  {
+   "mfr": "_TZ3000_mvvw8wnx",
+   "pid": "TS0001",
+   "driver": "switch_zbeacon_ts0001",
+   "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1366#issuecomment-5966886342",
+   "via": "coverage-audit",
+   "date": "2026-10-13"
   }
  ]
 }
