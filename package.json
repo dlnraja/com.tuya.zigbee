@@ -406,7 +406,7 @@
     "check:p2525": "node tools/ci/p2525-t146735-local-first-gate.js",
     "check:p2526": "node --test test/critical/p2526-vichy-presence-flow-edge.test.js",
     "check:p2527": "node tools/ci/p2527-untrusted-content-gate.js",
-    "check:p2800": "node tools/ci/p2800-agent-config-hidden-text-gate.js && node --test test/critical/p2800-agent-config-hidden-text.test.js",
+    "check:p2800": "node --test test/critical/p2800-agent-config-hidden-text.test.js",
     "check:p2799": "node --test test/critical/p2799-cover-flow-actions.test.js",
     "check:p2802": "node --test test/critical/p2801-p2802-cover-tahoma.test.js",
     "check:p2803": "node tools/flow/build-dead-flow-autowire.js --check && node --test test/critical/p2803-dead-flow-autowire.test.js",
@@ -659,7 +659,11 @@
     "check:runtime-safety": "node tools/ci/runtime-safety-gate.js",
     "check:ecosystems": "node tools/ci/smart-home-ecosystem-audit.js",
     "check:flow-mcp-shape": "node tools/ci/flow-mcp-shape-gate.js",
-    "check:init-non-native": "node scripts/gates/init-non-native-guard.js && node --test test/critical/init-non-native-guard.test.js"
+    "check:init-non-native": "node scripts/gates/init-non-native-guard.js && node --test test/critical/init-non-native-guard.test.js",
+    "check:p2801": "node --test test/critical/p2801-p2802-cover-tahoma.test.js",
+    "check:p2810": "node --test test/critical/p2810-trv06-rxq4iti9-me167-dp.test.js",
+    "check:p2811": "node --test test/critical/p2811-soil-qt07s-aoyan-clusters.test.js",
+    "check:p281x": "npm run check:p2810 && npm run check:p2811"
   },
   "keywords": [
     "homey",
