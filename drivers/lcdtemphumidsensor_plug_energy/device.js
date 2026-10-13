@@ -26,7 +26,7 @@ const ENERGY_DEVICE_CONFIGS = {
   'TUYA_DP_STANDARD': {
     sensors: [
       '_TZE200_byzdayie', '_TZE200_fsb6zw01', '_TZE200_ewxhg6o9',
-      '_TZE204_byzdayie', '_TZE204_fsb6zw01',
+      '_TZE204_byzdayie', '_TZE204_fsb6zw01'
     ],
     protocol: 'tuya',
     dpMap: {
@@ -42,7 +42,7 @@ const ENERGY_DEVICE_CONFIGS = {
   'TUYA_DP_ALT': {
     sensors: [
       '_TZE200_bkkmqmyo', '_TZE200_eaac7dkw', '_TZE204_bkkmqmyo',
-      '_TZE200_lsanae15', '_TZE204_lsanae15', '_TZE200_tz32mtza',
+      '_TZE200_lsanae15', '_TZE204_lsanae15', '_TZE200_tz32mtza'
     ],
     protocol: 'tuya',
     dpMap: {
@@ -105,7 +105,7 @@ const ENERGY_DEVICE_CONFIGS = {
   'ZCL_SILVERCREST': {
     sensors: [
       '_TZ3000_1obwwnmq', '_TZ3000_vtscrpmw', '_TZ3000_ksw8qtmt',
-      '_TZ3000_u5u4cakc',
+      '_TZ3000_u5u4cakc'
     ],
     protocol: 'zcl',
     clusters: {
@@ -121,8 +121,7 @@ const ENERGY_DEVICE_CONFIGS = {
   // Type E: BlitzWolf / Nous style (different DP order)
   'TUYA_BLITZWOLF': {
     sensors: [
-      '_TZE200_nkjintbl', '_TZE200_wfxuhoea', '_TZE204_nkjintbl',
-    ],
+'_TZE200_wfxuhoea'],
     protocol: 'tuya',
     dpMap: {
       1: { cap: 'onoff', type: 'bool' },
@@ -136,7 +135,7 @@ const ENERGY_DEVICE_CONFIGS = {
   // Type F: 3-Phase Energy Meter
   'TUYA_3PHASE': {
     sensors: [
-      '_TZE200_nphsqjnz', '_TZE204_nphsqjnz', '_TZE200_v9hkz2up',
+      '_TZE200_nphsqjnz', '_TZE204_nphsqjnz', '_TZE200_v9hkz2up'
     ],
     protocol: 'tuya',
     dpMap: {
