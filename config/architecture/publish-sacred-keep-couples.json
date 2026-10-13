@@ -1459,6 +1459,36 @@
       "pid": "TS0044",
       "driverId": "scene_switch_4",
       "note": "2026-10-11: same Star Ring 4-gang remote as HOBEIAN ZG-101ZS (Z2M, romasku#237)"
+    },
+    {
+      "mfr": "_TZE284_myd45weu",
+      "pid": "TS0601",
+      "driverId": "soil_sensor",
+      "note": "#571 QT-07S Z2M TS0601_soil — keep through Athom compact"
+    },
+    {
+      "mfr": "_TZE200_myd45weu",
+      "pid": "TS0601",
+      "driverId": "soil_sensor",
+      "note": "#571 myd45weu TZE200 sibling soil"
+    },
+    {
+      "mfr": "_TZE204_myd45weu",
+      "pid": "TS0601",
+      "driverId": "soil_sensor",
+      "note": "#571 myd45weu TZE204 sibling soil"
+    },
+    {
+      "mfr": "AOYAN",
+      "pid": "AY-303Z",
+      "driverId": "soil_sensor",
+      "note": "#570 AOYAN AY-303Z Z2M white-label CS-201Z"
+    },
+    {
+      "mfr": "_TZE200_rxq4iti9",
+      "pid": "TS0601",
+      "driverId": "device_radiator_valve",
+      "note": "#560 EARU TRV06 ME167 DP profile"
     }
   ]
 }

@@ -57,6 +57,8 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
         3: { internal: true, type: 'running_state', transform: (v) => v === 0 ? 'heat' : 'idle' },
         4: { capability: 'target_temperature', divisor: 10 },
         5: { capability: 'measure_temperature', divisor: 10 },
+        // WHY(#560 / Z2M TRV06): DP6 = battery % — never treat DP4 as battery (Profile A bug / tip-lag)
+        6: { capability: 'measure_battery', divisor: 1 },
         7: { capability: 'child_lock', transform: (v) => v === true || v === 1 },
         // Complementary battery DPs (Z2M thermostat_3 variants) â€” keep alarm on 35
         13: { capability: 'measure_battery', divisor: 1 },
