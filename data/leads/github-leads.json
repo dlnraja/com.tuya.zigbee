@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-09",
+ "generated": "2026-10-13",
  "note": "read-only scan output; knownDrivers=[] means the mfr is not in any driver yet (review before applying)",
  "leads": [
   {
@@ -368,22 +368,6 @@
    "seen": "2026-10-01"
   },
   {
-   "mfr": "_TZ3000_cygcaxvv",
-   "pids": [
-    "TS0001"
-   ],
-   "dps": [],
-   "firmware": [
-    "bug"
-   ],
-   "knownDrivers": [
-    "climate_sensor"
-   ],
-   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1469",
-   "snippet": "equirements under Homey SDK when development resumes. - [ ] #1165 Engocontrols `_TZ3000_cygcaxvv / TS0001` 'Repeater' — complete physical interview actually shows a mains router with endpoint 1 **OnOff 6** + manufacturer",
-   "seen": "2026-10-01"
-  },
-  {
    "mfr": "_TZ3000_hafsqare",
    "pids": [
     "TS0011"
@@ -704,7 +688,7 @@
     "bug"
    ],
    "knownDrivers": [
-    "button_wireless_2"
+    "climate_sensor"
    ],
    "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/953",
    "snippet": "Bug report - _TZ3000_zl1kmjqx still doesn't work",
@@ -1146,6 +1130,54 @@
    "seen": "2026-10-01"
   },
   {
+   "mfr": "_TZE200_iq4ygaai",
+   "pids": [
+    "TS0201"
+   ],
+   "dps": [],
+   "firmware": [
+    "firmware"
+   ],
+   "knownDrivers": [
+    "temphumidsensor"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1007#issuecomment-5860717740",
+   "snippet": "pass: keeping this as the canonical physical case for the Tuya-firmware probe `_TZE200_iq4ygaai / TS0201`. Historical PR #1230 contains relevant code but conflated this device with native OWON THS317-ET. The split imple",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE200_iq4ygaai",
+   "pids": [
+    "TS0201"
+   ],
+   "dps": [],
+   "firmware": [
+    "firmware"
+   ],
+   "knownDrivers": [
+    "temphumidsensor"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1007#issuecomment-5930064946",
+   "snippet": "Consolidated this Tuya-firmware THS317-ET-TY `_TZE200_iq4ygaai / TS0201` physical request into #1476, which explicitly separates it from the different native `OWON / THS317-ET` profile (",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE200_iq4ygaai",
+   "pids": [
+    "TS0201"
+   ],
+   "dps": [],
+   "firmware": [
+    "firmware"
+   ],
+   "knownDrivers": [
+    "temphumidsensor"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1476",
+   "snippet": "### B. Tuya-firmware THS317-ET-TY - `manufacturerName: _TZE200_iq4ygaai` - `modelId: TS0201` - exposes standard temperature/humidity clusters *and* Tuya cluster `0xEF00` in the Homey interview -",
+   "seen": "2026-10-01"
+  },
+  {
    "mfr": "_TZE200_ka8l86iu",
    "pids": [],
    "dps": [],
@@ -1564,6 +1596,22 @@
    "seen": "2026-10-01"
   },
   {
+   "mfr": "_TZE284_myd45weu",
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "soil_sensor"
+   ],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/571",
+   "snippet": "[Bug] QT-07S (_TZE284_myd45weu / TS0601) remains unknown and Configure keeps loading — v9.0.1445 Test",
+   "seen": "2026-10-13"
+  },
+  {
    "mfr": "_TZE284_oitavov2",
    "pids": [],
    "dps": [],
@@ -1641,6 +1689,23 @@
    ],
    "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1345#issuecomment-3839777286",
    "snippet": "The _TZE284_xnbkhhdr is indeed a bit tricky. Based on recent implementation logs (notably from Zigbee2MQTT), here are a few things that should s",
+   "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3000_cygcaxvv",
+   "pids": [
+    "TS0001"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "climate_sensor",
+    "zigbee_repeater"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1469",
+   "snippet": "equirements under Homey SDK when development resumes. - [ ] #1165 Engocontrols `_TZ3000_cygcaxvv / TS0001` 'Repeater' — complete physical interview actually shows a mains router with endpoint 1 **OnOff 6** + manufacturer",
    "seen": "2026-10-01"
   },
   {
@@ -1741,57 +1806,6 @@
    ],
    "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/457",
    "snippet": "4-button wall switch _TZ3000_wkai4ga5 bug ON/OFF",
-   "seen": "2026-10-01"
-  },
-  {
-   "mfr": "_TZE200_iq4ygaai",
-   "pids": [
-    "TS0201"
-   ],
-   "dps": [],
-   "firmware": [
-    "firmware"
-   ],
-   "knownDrivers": [
-    "motion_sensor",
-    "temphumidsensor"
-   ],
-   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1007#issuecomment-5860717740",
-   "snippet": "pass: keeping this as the canonical physical case for the Tuya-firmware probe `_TZE200_iq4ygaai / TS0201`. Historical PR #1230 contains relevant code but conflated this device with native OWON THS317-ET. The split imple",
-   "seen": "2026-10-01"
-  },
-  {
-   "mfr": "_TZE200_iq4ygaai",
-   "pids": [
-    "TS0201"
-   ],
-   "dps": [],
-   "firmware": [
-    "firmware"
-   ],
-   "knownDrivers": [
-    "motion_sensor",
-    "temphumidsensor"
-   ],
-   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1007#issuecomment-5930064946",
-   "snippet": "Consolidated this Tuya-firmware THS317-ET-TY `_TZE200_iq4ygaai / TS0201` physical request into #1476, which explicitly separates it from the different native `OWON / THS317-ET` profile (",
-   "seen": "2026-10-01"
-  },
-  {
-   "mfr": "_TZE200_iq4ygaai",
-   "pids": [
-    "TS0201"
-   ],
-   "dps": [],
-   "firmware": [
-    "firmware"
-   ],
-   "knownDrivers": [
-    "motion_sensor",
-    "temphumidsensor"
-   ],
-   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1476",
-   "snippet": "### B. Tuya-firmware THS317-ET-TY - `manufacturerName: _TZE200_iq4ygaai` - `modelId: TS0201` - exposes standard temperature/humidity clusters *and* Tuya cluster `0xEF00` in the Homey interview -",
    "seen": "2026-10-01"
   },
   {
