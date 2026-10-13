@@ -1,0 +1,5364 @@
+{
+  "generatedAt": "2026-10-13T12:20:15.900Z",
+  "investigated": 58,
+  "webFetches": 0,
+  "catalogPatches": 9,
+  "dryRun": false,
+  "items": [
+    {
+      "topicId": 158757,
+      "postNumber": 10,
+      "username": "Gabriel_Pedrosa_Mach",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "dimmer",
+        "gang",
+        "button",
+        "flow",
+        "rejoin",
+        "timeout",
+        "battery"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [],
+      "catalogDevices": 19,
+      "coupleInvestigations": [],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Universal Tuya Test to latest soak; re-pair if driver changed",
+      "waitForUser": false,
+      "fixRefs": [
+        "endpoint jitter hardening",
+        "markAppCommand per-gang",
+        "ButtonDevice wake + deferred DataRecovery P2184",
+        "PhysicalButtonMixin 0xFD",
+        "VirtualButtonMixin markAppCommand",
+        "TuyaZigbeeDevice._registerButtonCapabilityListeners P2220",
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler"
+      ],
+      "resilienceDomains": [
+        "dimmer_brightness",
+        "buttons_bidirectional",
+        "flows",
+        "battery"
+      ],
+      "symptomOnly": true,
+      "likelyDrivers": [
+        "switch_2gang",
+        "switch_3gang",
+        "wall_switch_4gang_1way",
+        "button_wireless_1",
+        "button_wireless_2",
+        "scene_switch_4",
+        "switch_1gang",
+        "button_emergency_sos"
+      ],
+      "catalogTiles": [
+        "4-gang ZCL touch (NovaDigital)",
+        "Zemismart/NovaDigital wall_switch_1gang_1way",
+        "Zemismart/NovaDigital wall_switch_1gang_1way",
+        "Zemismart/NovaDigital wall_switch_2gang_1way",
+        "Zemismart/NovaDigital wall_switch_2gang_1way",
+        "Zemismart/NovaDigital wall_switch_2gang_1way",
+        "Zemismart/NovaDigital wall_switch_3gang_1way",
+        "Zemismart/NovaDigital wall_switch_3gang_1way",
+        "Zemismart/NovaDigital wall_switch_3gang_1way",
+        "Zemismart/NovaDigital wall_switch_3gang_1way",
+        "Zemismart/NovaDigital wall_switch_3gang_1way",
+        "Zemismart/NovaDigital wall_switch_3gang_1way",
+        "Zemismart/NovaDigital wall_switch_3gang_1way",
+        "Zemismart/NovaDigital wall_switch_4_gang_tuya",
+        "Zemismart/NovaDigital wall_switch_4_gang_tuya",
+        "Zemismart/NovaDigital wall_switch_4_gang_tuya",
+        "Zemismart/NovaDigital wall_switch_6_gang_tuya",
+        "Zemismart/NovaDigital wall_switch_6_gang_tuya",
+        "Forum T158757 #2"
+      ]
+    },
+    {
+      "topicId": 158757,
+      "postNumber": 1,
+      "username": "A_Tas",
+      "action": "request-diag-couple",
+      "issues": [
+        "presence"
+      ],
+      "dualApp": "MASTER_ONLY",
+      "inboxSnippets": [],
+      "catalogDevices": 2,
+      "coupleInvestigations": [
+        {
+          "mfr": "_TZ3218_T9YNFZ4X",
+          "pid": null,
+          "verdict": "MISSING_PID",
+          "canonicalDriver": "motion_sensor_radar_mmwave",
+          "candidates": [
+            {
+              "mfr": "_TZ3218_T9YNFZ4X",
+              "pid": "TS0225",
+              "source": "mfs_db",
+              "driver": "motion_sensor_radar_mmwave",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZ3218_T9YNFZ4X",
+              "pid": "TS0601",
+              "source": "driver-compose",
+              "driver": "motion_sensor_radar_mmwave",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3218_T9YNFZ4X",
+              "pid": "CK-BL702-MWS-01(7016)",
+              "source": "driver-compose",
+              "driver": "motion_sensor_radar_mmwave",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3218_T9YNFZ4X",
+              "pid": "TS110E",
+              "source": "driver-compose",
+              "driver": "motion_sensor_radar_mmwave",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3218_T9YNFZ4X",
+              "pid": "TS0004",
+              "source": "driver-compose",
+              "driver": "motion_sensor_radar_mmwave",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3218_T9YNFZ4X",
+              "pid": "TS000F",
+              "source": "mfr-prefix-heuristic",
+              "driver": null,
+              "confidence": 48,
+              "softOnly": true
+            },
+            {
+              "mfr": "_TZ3218_T9YNFZ4X",
+              "pid": "TS0601_mmwave",
+              "source": "driver-compose",
+              "driver": "motion_sensor_radar_mmwave",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3218_T9YNFZ4X",
+              "pid": "ZP-301Z",
+              "source": "driver-compose",
+              "driver": "motion_sensor_radar_mmwave",
+              "confidence": 40
+            }
+          ],
+          "resolved": {
+            "mfr": "_TZ3218_T9YNFZ4X",
+            "pid": "TS0225",
+            "driver": "motion_sensor_radar_mmwave",
+            "confidence": 99,
+            "source": "mfs_db",
+            "tier": "hardLock",
+            "catalogWrite": true
+          },
+          "tier": "hardLock",
+          "protocolHint": {
+            "protocol": "hybrid",
+            "prefix": "_TZ3218_"
+          }
+        }
+      ],
+      "autoResolution": "alreadyInCatalog",
+      "userAction": "Already in motion_sensor_radar_mmwave — update Universal Tuya Test + re-pair",
+      "waitForUser": false,
+      "fixRefs": []
+    },
+    {
+      "topicId": 157859,
+      "postNumber": 22,
+      "username": "Pascal_Nohl",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "offline",
+        "unavailable",
+        "battery"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [],
+      "catalogDevices": 0,
+      "coupleInvestigations": [],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Universal Tuya Test to latest soak; re-pair if driver changed",
+      "waitForUser": false,
+      "fixRefs": [
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler"
+      ],
+      "resilienceDomains": [
+        "battery"
+      ],
+      "symptomOnly": true,
+      "likelyDrivers": [
+        "button_emergency_sos",
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "catalogTiles": []
+    },
+    {
+      "topicId": 157859,
+      "postNumber": 16,
+      "username": "Pascal_Nohl",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "battery"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [],
+      "catalogDevices": 0,
+      "coupleInvestigations": [],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Universal Tuya Test to latest soak; re-pair if driver changed",
+      "waitForUser": false,
+      "fixRefs": [
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler"
+      ],
+      "resilienceDomains": [
+        "battery"
+      ],
+      "symptomOnly": true,
+      "likelyDrivers": [
+        "button_emergency_sos",
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "catalogTiles": []
+    },
+    {
+      "topicId": 157859,
+      "postNumber": 11,
+      "username": "Pascal_Nohl",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "unavailable",
+        "battery"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [],
+      "catalogDevices": 0,
+      "coupleInvestigations": [],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Universal Tuya Test to latest soak; re-pair if driver changed",
+      "waitForUser": false,
+      "fixRefs": [
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler"
+      ],
+      "resilienceDomains": [
+        "battery"
+      ],
+      "symptomOnly": true,
+      "likelyDrivers": [
+        "button_emergency_sos",
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "catalogTiles": []
+    },
+    {
+      "topicId": 156967,
+      "postNumber": 123,
+      "username": "Drako74",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "button",
+        "battery"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [],
+      "catalogDevices": 0,
+      "coupleInvestigations": [],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Universal Tuya Test to latest soak; re-pair if driver changed",
+      "waitForUser": false,
+      "fixRefs": [
+        "ButtonDevice wake + deferred DataRecovery P2184",
+        "PhysicalButtonMixin 0xFD",
+        "VirtualButtonMixin markAppCommand",
+        "TuyaZigbeeDevice._registerButtonCapabilityListeners P2220",
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler"
+      ],
+      "resilienceDomains": [
+        "buttons_bidirectional",
+        "battery"
+      ],
+      "symptomOnly": true,
+      "likelyDrivers": [
+        "button_wireless_1",
+        "button_wireless_2",
+        "scene_switch_4",
+        "switch_1gang",
+        "switch_2gang",
+        "wall_switch_4gang_1way",
+        "button_emergency_sos",
+        "contact_sensor"
+      ],
+      "catalogTiles": []
+    },
+    {
+      "topicId": 156967,
+      "postNumber": 115,
+      "username": "Drako74",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "button",
+        "battery"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [],
+      "catalogDevices": 0,
+      "coupleInvestigations": [],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Universal Tuya Test to latest soak; re-pair if driver changed",
+      "waitForUser": false,
+      "fixRefs": [
+        "ButtonDevice wake + deferred DataRecovery P2184",
+        "PhysicalButtonMixin 0xFD",
+        "VirtualButtonMixin markAppCommand",
+        "TuyaZigbeeDevice._registerButtonCapabilityListeners P2220",
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler"
+      ],
+      "resilienceDomains": [
+        "buttons_bidirectional",
+        "battery"
+      ],
+      "symptomOnly": true,
+      "likelyDrivers": [
+        "button_wireless_1",
+        "button_wireless_2",
+        "scene_switch_4",
+        "switch_1gang",
+        "switch_2gang",
+        "wall_switch_4gang_1way",
+        "button_emergency_sos",
+        "contact_sensor"
+      ],
+      "catalogTiles": []
+    },
+    {
+      "topicId": 156967,
+      "postNumber": 18,
+      "username": "SunBeech",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "battery",
+        "button",
+        "gang"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [],
+      "catalogDevices": 5,
+      "coupleInvestigations": [],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Universal Tuya Test to latest soak; re-pair if driver changed",
+      "waitForUser": false,
+      "fixRefs": [
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler",
+        "ButtonDevice wake + deferred DataRecovery P2184",
+        "PhysicalButtonMixin 0xFD",
+        "VirtualButtonMixin markAppCommand",
+        "TuyaZigbeeDevice._registerButtonCapabilityListeners P2220",
+        "endpoint jitter hardening",
+        "markAppCommand per-gang"
+      ],
+      "resilienceDomains": [
+        "battery",
+        "buttons_bidirectional"
+      ],
+      "symptomOnly": true,
+      "likelyDrivers": [
+        "button_emergency_sos",
+        "contact_sensor",
+        "water_leak_sensor",
+        "button_wireless_1",
+        "button_wireless_2",
+        "scene_switch_4",
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "catalogTiles": [
+        "Auto T156967 #26",
+        "Forum T156967 #12",
+        "Forum T156967 #12",
+        "Forum T156967 #12",
+        "Forum T156967 #12"
+      ]
+    },
+    {
+      "topicId": 156967,
+      "postNumber": 8,
+      "username": "SunBeech",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "button",
+        "battery"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [],
+      "catalogDevices": 5,
+      "coupleInvestigations": [],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Universal Tuya Test to latest soak; re-pair if driver changed",
+      "waitForUser": false,
+      "fixRefs": [
+        "ButtonDevice wake + deferred DataRecovery P2184",
+        "PhysicalButtonMixin 0xFD",
+        "VirtualButtonMixin markAppCommand",
+        "TuyaZigbeeDevice._registerButtonCapabilityListeners P2220",
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler"
+      ],
+      "resilienceDomains": [
+        "buttons_bidirectional",
+        "battery"
+      ],
+      "symptomOnly": true,
+      "likelyDrivers": [
+        "button_wireless_1",
+        "button_wireless_2",
+        "scene_switch_4",
+        "switch_1gang",
+        "switch_2gang",
+        "wall_switch_4gang_1way",
+        "button_emergency_sos",
+        "contact_sensor"
+      ],
+      "catalogTiles": [
+        "Auto T156967 #26",
+        "Forum T156967 #12",
+        "Forum T156967 #12",
+        "Forum T156967 #12",
+        "Forum T156967 #12"
+      ]
+    },
+    {
+      "topicId": 154092,
+      "postNumber": 19,
+      "username": "Zemismart_Official",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "battery"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [],
+      "catalogDevices": 2,
+      "coupleInvestigations": [],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Universal Tuya Test to latest soak; re-pair if driver changed",
+      "waitForUser": false,
+      "fixRefs": [
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler"
+      ],
+      "resilienceDomains": [
+        "battery"
+      ],
+      "symptomOnly": true,
+      "likelyDrivers": [
+        "button_emergency_sos",
+        "contact_sensor",
+        "water_leak_sensor",
+        "wall_dimmer_tuya"
+      ],
+      "catalogTiles": [
+        "Forum T154092 #26",
+        "Forum T154092 #11"
+      ]
+    },
+    {
+      "topicId": 154092,
+      "postNumber": 18,
+      "username": "Michael_Hadjicosta",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "battery"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [],
+      "catalogDevices": 1,
+      "coupleInvestigations": [],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Universal Tuya Test to latest soak; re-pair if driver changed",
+      "waitForUser": false,
+      "fixRefs": [
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler"
+      ],
+      "resilienceDomains": [
+        "battery"
+      ],
+      "symptomOnly": true,
+      "likelyDrivers": [
+        "button_emergency_sos",
+        "contact_sensor",
+        "water_leak_sensor",
+        "wall_dimmer_tuya"
+      ],
+      "catalogTiles": [
+        "Forum T154092 #10"
+      ]
+    },
+    {
+      "topicId": 150690,
+      "postNumber": 34,
+      "username": "Primordial",
+      "action": "request-diag-couple",
+      "issues": [],
+      "dualApp": "REVIEW",
+      "inboxSnippets": [],
+      "catalogDevices": 1,
+      "coupleInvestigations": [
+        {
+          "mfr": "_TZ3000_KFU8ZAPD",
+          "pid": null,
+          "verdict": "MISSING_PID",
+          "canonicalDriver": "button_wireless_4",
+          "candidates": [
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "TS0044",
+              "source": "misattribution-registry",
+              "driver": "button_wireless_4",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "TS004F",
+              "source": "misattribution-registry",
+              "driver": "button_wireless_4",
+              "confidence": 98
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "TS0001",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "TS0002",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "TS0003",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "TS000F",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "TS0011",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "TS0012",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "TS0014",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "TS0049",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "TS0101",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "TS0111",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "TS011F",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "TS0225",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "TS0601",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "TS0726",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "TS110E",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "TS130F",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "TS4100",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "TS1002",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "01MINIZB",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "BASICZBR3",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "Excellux",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "S26R2ZB",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "S31ZB",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "SNZB-01M",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "SWV-ZF2",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "SWV-ZFE",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "SWV-ZFU",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "SWV-ZN",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "SWV-ZNE",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "SWV-ZNU",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "TS0001_power",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "TS0001_switch",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "TS0001_switch_module",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "TS0601_watervalve",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "ZBM5-1C-120",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "ZBM5-2C-120",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "ZBM5-3C-120",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "ZBMINI",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "ZBMINIL2",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "ZBMINIL2-R2",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "ZBMINIR",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "ZBMINIR2",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_KFU8ZAPD",
+              "pid": "ZBMINIR2-R2",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            }
+          ],
+          "resolved": {
+            "mfr": "_TZ3000_KFU8ZAPD",
+            "pid": "TS0044",
+            "driver": "button_wireless_4",
+            "confidence": 99,
+            "source": "misattribution-registry",
+            "tier": "hardLock",
+            "catalogWrite": true
+          },
+          "tier": "hardLock",
+          "protocolHint": {
+            "protocol": "zcl_or_hybrid",
+            "prefix": "_TZ3000_"
+          }
+        }
+      ],
+      "autoResolution": "alreadyInCatalog",
+      "userAction": "Already in button_wireless_4 — update Universal Tuya Test + re-pair",
+      "waitForUser": false,
+      "fixRefs": []
+    },
+    {
+      "topicId": 150690,
+      "postNumber": 33,
+      "username": "Graeme_Hindmarsh",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "button",
+        "battery",
+        "flow",
+        "endpoint",
+        "gang"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [],
+      "catalogDevices": 3,
+      "coupleInvestigations": [
+        {
+          "mfr": "_TZ3000_KFU8ZAPD",
+          "pid": "TS0044",
+          "verdict": "ROUTED_OK",
+          "canonicalDriver": "button_wireless_4",
+          "candidates": [],
+          "resolved": {
+            "mfr": "_TZ3000_KFU8ZAPD",
+            "pid": "TS0044",
+            "driver": "button_wireless_4",
+            "source": "processor",
+            "confidence": 100
+          }
+        },
+        {
+          "mfr": "_TZ3000_ZGYZGDUA",
+          "pid": "TS0044",
+          "verdict": "ROUTED_OK",
+          "canonicalDriver": "scene_switch_4",
+          "candidates": [],
+          "resolved": {
+            "mfr": "_TZ3000_ZGYZGDUA",
+            "pid": "TS0044",
+            "driver": "scene_switch_4",
+            "source": "processor",
+            "confidence": 100
+          }
+        },
+        {
+          "mfr": "_TZ3000_WKAI4GA5",
+          "pid": "TS0044",
+          "verdict": "ROUTED_OK",
+          "canonicalDriver": "scene_switch_4",
+          "candidates": [],
+          "resolved": {
+            "mfr": "_TZ3000_WKAI4GA5",
+            "pid": "TS0044",
+            "driver": "scene_switch_4",
+            "source": "processor",
+            "confidence": 100
+          }
+        }
+      ],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Test + re-pair if still wrong driver",
+      "waitForUser": false,
+      "fixRefs": [
+        "ButtonDevice wake + deferred DataRecovery P2184",
+        "PhysicalButtonMixin 0xFD",
+        "VirtualButtonMixin markAppCommand",
+        "TuyaZigbeeDevice._registerButtonCapabilityListeners P2220",
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler",
+        "endpoint jitter hardening",
+        "markAppCommand per-gang"
+      ],
+      "resilienceDomains": [
+        "buttons_bidirectional",
+        "battery",
+        "flows"
+      ]
+    },
+    {
+      "topicId": 150690,
+      "postNumber": 30,
+      "username": "SteampunkLolcat",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "battery"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [],
+      "catalogDevices": 1,
+      "coupleInvestigations": [
+        {
+          "mfr": "_TZ3000_XABCKQ1V",
+          "pid": null,
+          "verdict": "MISSING_PID",
+          "canonicalDriver": "button_wireless_4",
+          "candidates": [
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS004F",
+              "source": "misattribution-registry",
+              "driver": "button_wireless_4",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS0001",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS0002",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS0003",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS000F",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS0011",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS0012",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS0014",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS0044",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS0049",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS0101",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS0111",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS011F",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS0225",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS0601",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS0726",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS110E",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS130F",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS4100",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS1002",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "01MINIZB",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "BASICZBR3",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "Excellux",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "S26R2ZB",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "S31ZB",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "SNZB-01M",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "SWV-ZF2",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "SWV-ZFE",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "SWV-ZFU",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "SWV-ZN",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "SWV-ZNE",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "SWV-ZNU",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS0001_power",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS0001_switch",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS0001_switch_module",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS0601_watervalve",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "ZBM5-1C-120",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "ZBM5-2C-120",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "ZBM5-3C-120",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "ZBMINI",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "ZBMINIL2",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "ZBMINIL2-R2",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "ZBMINIR",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "ZBMINIR2",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "ZBMINIR2-R2",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            }
+          ],
+          "resolved": {
+            "mfr": "_TZ3000_XABCKQ1V",
+            "pid": "TS004F",
+            "driver": "button_wireless_4",
+            "confidence": 99,
+            "source": "misattribution-registry",
+            "tier": "hardLock",
+            "catalogWrite": true
+          },
+          "tier": "hardLock",
+          "protocolHint": {
+            "protocol": "zcl_or_hybrid",
+            "prefix": "_TZ3000_"
+          }
+        }
+      ],
+      "autoResolution": "alreadyInCatalog",
+      "userAction": "Already in button_wireless_4 — update Universal Tuya Test + re-pair",
+      "waitForUser": false,
+      "fixRefs": [
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler"
+      ],
+      "resilienceDomains": [
+        "battery"
+      ]
+    },
+    {
+      "topicId": 150690,
+      "postNumber": 28,
+      "username": "SteampunkLolcat",
+      "action": "request-diag-couple",
+      "issues": [
+        "gang"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [],
+      "catalogDevices": 1,
+      "coupleInvestigations": [
+        {
+          "mfr": "_TZ3000_XABCKQ1V",
+          "pid": null,
+          "verdict": "MISSING_PID",
+          "canonicalDriver": "button_wireless_4",
+          "candidates": [
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS004F",
+              "source": "misattribution-registry",
+              "driver": "button_wireless_4",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS0001",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS0002",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS0003",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS000F",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS0011",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS0012",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS0014",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS0044",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS0049",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS0101",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS0111",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS011F",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS0225",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS0601",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS0726",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS110E",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS130F",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS4100",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS1002",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "01MINIZB",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "BASICZBR3",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "Excellux",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "S26R2ZB",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "S31ZB",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "SNZB-01M",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "SWV-ZF2",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "SWV-ZFE",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "SWV-ZFU",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "SWV-ZN",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "SWV-ZNE",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "SWV-ZNU",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS0001_power",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS0001_switch",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS0001_switch_module",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "TS0601_watervalve",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "ZBM5-1C-120",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "ZBM5-2C-120",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "ZBM5-3C-120",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "ZBMINI",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "ZBMINIL2",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "ZBMINIL2-R2",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "ZBMINIR",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "ZBMINIR2",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_XABCKQ1V",
+              "pid": "ZBMINIR2-R2",
+              "source": "driver-compose",
+              "driver": "button_wireless_4",
+              "confidence": 40
+            }
+          ],
+          "resolved": {
+            "mfr": "_TZ3000_XABCKQ1V",
+            "pid": "TS004F",
+            "driver": "button_wireless_4",
+            "confidence": 99,
+            "source": "misattribution-registry",
+            "tier": "hardLock",
+            "catalogWrite": true
+          },
+          "tier": "hardLock",
+          "protocolHint": {
+            "protocol": "zcl_or_hybrid",
+            "prefix": "_TZ3000_"
+          }
+        }
+      ],
+      "autoResolution": "alreadyInCatalog",
+      "userAction": "Already in button_wireless_4 — update Universal Tuya Test + re-pair",
+      "waitForUser": false,
+      "fixRefs": [
+        "endpoint jitter hardening",
+        "markAppCommand per-gang"
+      ],
+      "resilienceDomains": [
+        "buttons_bidirectional"
+      ]
+    },
+    {
+      "topicId": 150690,
+      "postNumber": 12,
+      "username": "Chris_M",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "gang",
+        "button",
+        "battery",
+        "unknown"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [],
+      "catalogDevices": 1,
+      "coupleInvestigations": [],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Universal Tuya Test to latest soak; re-pair if driver changed",
+      "waitForUser": false,
+      "fixRefs": [
+        "endpoint jitter hardening",
+        "markAppCommand per-gang",
+        "ButtonDevice wake + deferred DataRecovery P2184",
+        "PhysicalButtonMixin 0xFD",
+        "VirtualButtonMixin markAppCommand",
+        "TuyaZigbeeDevice._registerButtonCapabilityListeners P2220",
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler"
+      ],
+      "resilienceDomains": [
+        "buttons_bidirectional",
+        "battery"
+      ],
+      "symptomOnly": true,
+      "likelyDrivers": [
+        "switch_2gang",
+        "switch_3gang",
+        "wall_switch_4gang_1way",
+        "button_wireless_1",
+        "button_wireless_2",
+        "scene_switch_4",
+        "switch_1gang",
+        "button_emergency_sos"
+      ],
+      "catalogTiles": [
+        "Forum T150690 #15"
+      ]
+    },
+    {
+      "topicId": 150690,
+      "postNumber": 11,
+      "username": "MLong",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "button",
+        "battery"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [],
+      "catalogDevices": 0,
+      "coupleInvestigations": [],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Universal Tuya Test to latest soak; re-pair if driver changed",
+      "waitForUser": false,
+      "fixRefs": [
+        "ButtonDevice wake + deferred DataRecovery P2184",
+        "PhysicalButtonMixin 0xFD",
+        "VirtualButtonMixin markAppCommand",
+        "TuyaZigbeeDevice._registerButtonCapabilityListeners P2220",
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler"
+      ],
+      "resilienceDomains": [
+        "buttons_bidirectional",
+        "battery"
+      ],
+      "symptomOnly": true,
+      "likelyDrivers": [
+        "button_wireless_1",
+        "button_wireless_2",
+        "scene_switch_4",
+        "switch_1gang",
+        "switch_2gang",
+        "wall_switch_4gang_1way",
+        "button_emergency_sos",
+        "contact_sensor"
+      ],
+      "catalogTiles": []
+    },
+    {
+      "topicId": 150690,
+      "postNumber": 10,
+      "username": "Relax_swe",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "button",
+        "battery"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [],
+      "catalogDevices": 8,
+      "coupleInvestigations": [
+        {
+          "mfr": "_TZ3000_W8JWKCZZ",
+          "pid": "TS0043",
+          "verdict": "ROUTED_OK",
+          "canonicalDriver": "wall_remote_3_gang",
+          "candidates": [],
+          "resolved": {
+            "mfr": "_TZ3000_W8JWKCZZ",
+            "pid": "TS0043",
+            "driver": "wall_remote_3_gang",
+            "source": "processor",
+            "confidence": 100
+          }
+        }
+      ],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Test + re-pair if still wrong driver",
+      "waitForUser": false,
+      "fixRefs": [
+        "ButtonDevice wake + deferred DataRecovery P2184",
+        "PhysicalButtonMixin 0xFD",
+        "VirtualButtonMixin markAppCommand",
+        "TuyaZigbeeDevice._registerButtonCapabilityListeners P2220",
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler"
+      ],
+      "resilienceDomains": [
+        "buttons_bidirectional",
+        "battery"
+      ]
+    },
+    {
+      "topicId": 150690,
+      "postNumber": 5,
+      "username": "MLong",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "button",
+        "battery"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [],
+      "catalogDevices": 0,
+      "coupleInvestigations": [],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Universal Tuya Test to latest soak; re-pair if driver changed",
+      "waitForUser": false,
+      "fixRefs": [
+        "ButtonDevice wake + deferred DataRecovery P2184",
+        "PhysicalButtonMixin 0xFD",
+        "VirtualButtonMixin markAppCommand",
+        "TuyaZigbeeDevice._registerButtonCapabilityListeners P2220",
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler"
+      ],
+      "resilienceDomains": [
+        "buttons_bidirectional",
+        "battery"
+      ],
+      "symptomOnly": true,
+      "likelyDrivers": [
+        "button_wireless_1",
+        "button_wireless_2",
+        "scene_switch_4",
+        "switch_1gang",
+        "switch_2gang",
+        "wall_switch_4gang_1way",
+        "button_emergency_sos",
+        "contact_sensor"
+      ],
+      "catalogTiles": []
+    },
+    {
+      "topicId": 150690,
+      "postNumber": 1,
+      "username": "Relax_swe",
+      "action": "lock-sacred-couple",
+      "issues": [
+        "gang"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [],
+      "catalogDevices": 8,
+      "coupleInvestigations": [
+        {
+          "mfr": "_TZ3000_ZGYZGDUA",
+          "pid": "TS0044",
+          "verdict": "ROUTED_OK",
+          "canonicalDriver": "scene_switch_4",
+          "candidates": [],
+          "resolved": {
+            "mfr": "_TZ3000_ZGYZGDUA",
+            "pid": "TS0044",
+            "driver": "scene_switch_4",
+            "source": "processor",
+            "confidence": 100
+          }
+        },
+        {
+          "mfr": "_TZ3000_ZGYZGDUA",
+          "pid": "TS0043",
+          "verdict": "NOT_IN_CATALOG",
+          "canonicalDriver": null,
+          "candidates": [],
+          "resolved": null
+        },
+        {
+          "mfr": "_TZ3000_WKAI4GA5",
+          "pid": "TS0044",
+          "verdict": "ROUTED_OK",
+          "canonicalDriver": "scene_switch_4",
+          "candidates": [],
+          "resolved": {
+            "mfr": "_TZ3000_WKAI4GA5",
+            "pid": "TS0044",
+            "driver": "scene_switch_4",
+            "source": "processor",
+            "confidence": 100
+          }
+        },
+        {
+          "mfr": "_TZ3000_WKAI4GA5",
+          "pid": "TS0043",
+          "verdict": "NOT_IN_CATALOG",
+          "canonicalDriver": null,
+          "candidates": [],
+          "resolved": null
+        },
+        {
+          "mfr": "_TZ3000_GBM10JNJ",
+          "pid": "TS0044",
+          "verdict": "ROUTED_OK",
+          "canonicalDriver": "button_wireless_4",
+          "candidates": [],
+          "resolved": {
+            "mfr": "_TZ3000_GBM10JNJ",
+            "pid": "TS0044",
+            "driver": "button_wireless_4",
+            "source": "processor",
+            "confidence": 100
+          }
+        },
+        {
+          "mfr": "_TZ3000_GBM10JNJ",
+          "pid": "TS0043",
+          "verdict": "ROUTED_OK",
+          "canonicalDriver": "button_wireless_3",
+          "candidates": [],
+          "resolved": {
+            "mfr": "_TZ3000_GBM10JNJ",
+            "pid": "TS0043",
+            "driver": "button_wireless_3",
+            "source": "processor",
+            "confidence": 100
+          }
+        }
+      ],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Test + re-pair if still wrong driver",
+      "waitForUser": false,
+      "fixRefs": [
+        "endpoint jitter hardening",
+        "markAppCommand per-gang"
+      ],
+      "resilienceDomains": [
+        "buttons_bidirectional"
+      ]
+    },
+    {
+      "topicId": 146667,
+      "postNumber": 15,
+      "username": "dlnraja",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "unknown",
+        "soil",
+        "battery",
+        "flow"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [],
+      "catalogDevices": 1,
+      "coupleInvestigations": [],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Universal Tuya Test to latest soak; re-pair if driver changed",
+      "waitForUser": false,
+      "fixRefs": [
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler"
+      ],
+      "resilienceDomains": [
+        "battery",
+        "flows"
+      ],
+      "symptomOnly": true,
+      "likelyDrivers": [
+        "button_emergency_sos",
+        "contact_sensor",
+        "water_leak_sensor",
+        "wall_dimmer_tuya"
+      ],
+      "catalogTiles": [
+        "Auto T140352 #2165"
+      ]
+    },
+    {
+      "topicId": 146667,
+      "postNumber": 14,
+      "username": "dlnraja",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "unknown",
+        "soil",
+        "battery",
+        "flow"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [],
+      "catalogDevices": 1,
+      "coupleInvestigations": [],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Universal Tuya Test to latest soak; re-pair if driver changed",
+      "waitForUser": false,
+      "fixRefs": [
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler"
+      ],
+      "resilienceDomains": [
+        "battery",
+        "flows"
+      ],
+      "symptomOnly": true,
+      "likelyDrivers": [
+        "button_emergency_sos",
+        "contact_sensor",
+        "water_leak_sensor",
+        "wall_dimmer_tuya"
+      ],
+      "catalogTiles": [
+        "Auto T140352 #2165"
+      ]
+    },
+    {
+      "topicId": 146667,
+      "postNumber": 10,
+      "username": "Michael_Edholm",
+      "action": "request-diag-couple",
+      "issues": [
+        "soil"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [],
+      "catalogDevices": 1,
+      "coupleInvestigations": [
+        {
+          "mfr": "_TZE200_NPJ9BUG3",
+          "pid": null,
+          "verdict": "MISSING_PID",
+          "canonicalDriver": "soil_sensor",
+          "candidates": [
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "TS0601",
+              "source": "misattribution-registry",
+              "driver": "soil_sensor",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "TS0001",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "TS0026",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "TS0052",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "TS0202",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "TS0222",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "TS0224",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "TS0901",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "TS1201",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "ZG-303Z",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "0x8040",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 50
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "Arteco",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 50
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "BASICZBR3",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 50
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "Battery switch, 1 button",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 50
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "Battery switch, 2 buttons",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 50
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "BSP-EZ2",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 50
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "BSP-FZ2",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 50
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "CS-201Z",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 50
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "AY-303Z",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 50
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "AY-302Z",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 50
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "eT093WRG",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 50
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "eT093WRO",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 50
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "eTRV0100",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 50
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "eTRV0101",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 50
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "eTRV0103",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 50
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "lumi.sensor_ht",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 50
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "lumi.sensor_ht.agl02",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 50
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "lumi.weather",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 50
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "RH3052",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 50
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "S26R2ZB",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 50
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "S31ZB",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 50
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "S40ZBTPB",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 50
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "SG502Z",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 50
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "SGS02Z",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 50
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "SM0201",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 50
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "TH01",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 50
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "THS317-ET",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 50
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "TRV001",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 50
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "TRV003",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 50
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "WSDCGQ01LM",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 50
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "WSDCGQ11LM",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 50
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "WSDCGQ12LM",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 50
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "ZBMINI",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 50
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "ZBMINIL2",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 50
+            },
+            {
+              "mfr": "_TZE200_NPJ9BUG3",
+              "pid": "ZIGSTAR",
+              "source": "driver-compose",
+              "driver": "soil_sensor",
+              "confidence": 50
+            }
+          ],
+          "resolved": {
+            "mfr": "_TZE200_NPJ9BUG3",
+            "pid": "TS0601",
+            "driver": "soil_sensor",
+            "confidence": 99,
+            "source": "misattribution-registry",
+            "tier": "hardLock",
+            "catalogWrite": true
+          },
+          "tier": "hardLock",
+          "protocolHint": {
+            "protocol": "ef00",
+            "prefix": "_TZE200_"
+          }
+        }
+      ],
+      "autoResolution": "alreadyInCatalog",
+      "userAction": "Already in soil_sensor — update Universal Tuya Test + re-pair",
+      "waitForUser": false,
+      "fixRefs": []
+    },
+    {
+      "topicId": 140352,
+      "postNumber": 2261,
+      "username": "marosk",
+      "action": "lock-sacred-couple",
+      "issues": [
+        "thermostat",
+        "trv"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [],
+      "catalogDevices": 0,
+      "coupleInvestigations": [
+        {
+          "mfr": "_TZE200_FL8CUAFL",
+          "pid": "TS0601",
+          "verdict": "NOT_IN_CATALOG",
+          "canonicalDriver": null,
+          "candidates": [],
+          "resolved": null
+        }
+      ],
+      "autoResolution": null,
+      "userAction": null,
+      "waitForUser": false,
+      "fixRefs": []
+    },
+    {
+      "topicId": 140352,
+      "postNumber": 2258,
+      "username": "EdP",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "soil",
+        "endpoint",
+        "battery",
+        "button"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [
+        "**EdP** (2026-09-27) :  Hi, Could you add support for the AOYAN AY-303Z Zigbee soil moisture sensor? It’s a white-label version of the HOBEIAN ZG-303Z, so hopefull"
+      ],
+      "catalogDevices": 0,
+      "coupleInvestigations": [],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Universal Tuya Test to latest soak; re-pair if driver changed",
+      "waitForUser": false,
+      "fixRefs": [
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler",
+        "ButtonDevice wake + deferred DataRecovery P2184",
+        "PhysicalButtonMixin 0xFD",
+        "VirtualButtonMixin markAppCommand",
+        "TuyaZigbeeDevice._registerButtonCapabilityListeners P2220"
+      ],
+      "resilienceDomains": [
+        "battery",
+        "buttons_bidirectional"
+      ],
+      "symptomOnly": true,
+      "likelyDrivers": [
+        "button_emergency_sos",
+        "contact_sensor",
+        "water_leak_sensor",
+        "button_wireless_1",
+        "button_wireless_2",
+        "scene_switch_4",
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "catalogTiles": []
+    },
+    {
+      "topicId": 140352,
+      "postNumber": 2253,
+      "username": "Michaelp",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "trv",
+        "battery",
+        "thermostat"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [],
+      "catalogDevices": 0,
+      "coupleInvestigations": [
+        {
+          "mfr": "_TZE284_OGX8U5Z6",
+          "pid": "TS0601",
+          "verdict": "ROUTED_OK",
+          "canonicalDriver": "device_radiator_valve",
+          "candidates": [],
+          "resolved": {
+            "mfr": "_TZE284_OGX8U5Z6",
+            "pid": "TS0601",
+            "driver": "device_radiator_valve",
+            "source": "processor",
+            "confidence": 100
+          }
+        }
+      ],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Test + re-pair if still wrong driver",
+      "waitForUser": false,
+      "fixRefs": [
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler"
+      ],
+      "resilienceDomains": [
+        "battery"
+      ]
+    },
+    {
+      "topicId": 140352,
+      "postNumber": 2249,
+      "username": "dlnraja",
+      "action": "request-diag-couple",
+      "issues": [
+        "curtain",
+        "presence",
+        "lux",
+        "cover",
+        "flow"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [],
+      "catalogDevices": 1,
+      "coupleInvestigations": [
+        {
+          "mfr": "_TZE204_DTZZIY1E",
+          "pid": null,
+          "verdict": "MISSING_PID",
+          "canonicalDriver": "presence_sensor_radar",
+          "candidates": [
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "TS0601",
+              "source": "mfs_db",
+              "driver": "presence_sensor_radar",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "CK-BL702-MWS-01",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "CK-BL702-MWS-01(7016)",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "TS0004",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "TS0045",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "TS004F",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "TS0201",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "TS0202",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "TS0203",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "TS0215A",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "TS0222",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "TS0225",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "TS0501B",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "TS110E",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "TS1201",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "TY0201",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "ZG-204Z",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "ZG-204ZE",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "ZG-204ZH",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "ZG-204ZK",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "ZG-204ZL",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "ZG-204ZM",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "ZG-204ZP",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "ZG-204ZQ",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "ZG-204ZV",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "ZG-204ZX",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "ZG-205Z",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "ZG-205ZL",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "ZG-302ZL",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "ZG-302ZM",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "ZG-205W",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "ZG-210Z",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "AY-204ZX",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "AY204T",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "AY205Z",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "AY208Z",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "EDM-1ZBA-EU",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "Excellux",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "lumi.sensor_ht",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "lumi.sensor_ht.agl02",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "lumi.weather",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "MG1_5RZ",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "RH3052",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "SM0201",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "SNZB-06P",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "SNZB-06P24",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "SZLMR10",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "TH01",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "THS317-ET",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "TRI-C1ZR",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "TRI-K1ZR",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "TS0601_wirelesssw",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "WSDCGQ01LM",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "WSDCGQ11LM",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "WSDCGQ12LM",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZE204_DTZZIY1E",
+              "pid": "ZP-301Z",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            }
+          ],
+          "resolved": {
+            "mfr": "_TZE204_DTZZIY1E",
+            "pid": "TS0601",
+            "driver": "presence_sensor_radar",
+            "confidence": 99,
+            "source": "mfs_db",
+            "tier": "hardLock",
+            "catalogWrite": true
+          },
+          "tier": "hardLock",
+          "protocolHint": {
+            "protocol": "ef00",
+            "prefix": "_TZE204_"
+          }
+        }
+      ],
+      "autoResolution": "alreadyInCatalog",
+      "userAction": "Already in presence_sensor_radar — update Universal Tuya Test + re-pair",
+      "waitForUser": false,
+      "fixRefs": [],
+      "resilienceDomains": [
+        "flows"
+      ]
+    },
+    {
+      "topicId": 140352,
+      "postNumber": 2244,
+      "username": "Michaelp",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "unknown",
+        "trv",
+        "battery"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [],
+      "catalogDevices": 0,
+      "coupleInvestigations": [
+        {
+          "mfr": "_TZE284_OGX8U5Z6",
+          "pid": "TS0601",
+          "verdict": "ROUTED_OK",
+          "canonicalDriver": "device_radiator_valve",
+          "candidates": [],
+          "resolved": {
+            "mfr": "_TZE284_OGX8U5Z6",
+            "pid": "TS0601",
+            "driver": "device_radiator_valve",
+            "source": "processor",
+            "confidence": 100
+          }
+        },
+        {
+          "mfr": "_TZE284_NE4PIKWM",
+          "pid": "TS0601",
+          "verdict": "ROUTED_OK",
+          "canonicalDriver": "radiator_valve",
+          "candidates": [],
+          "resolved": {
+            "mfr": "_TZE284_NE4PIKWM",
+            "pid": "TS0601",
+            "driver": "radiator_valve",
+            "source": "processor",
+            "confidence": 100
+          }
+        }
+      ],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Test + re-pair if still wrong driver",
+      "waitForUser": false,
+      "fixRefs": [
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler"
+      ],
+      "resilienceDomains": [
+        "battery"
+      ]
+    },
+    {
+      "topicId": 140352,
+      "postNumber": 2239,
+      "username": "Peter_van_Werkhoven",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "battery"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [
+        "**Peter_van_Werkhoven** (2026-10-06) :  Hi Dylan Good afternoon, the app crashes again. Diagnostic code c05db40d-b7f1-4f31-9ec1-4c75b714e10d 1000047678 1220×2712 216 KB Good luck"
+      ],
+      "catalogDevices": 5,
+      "coupleInvestigations": [],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Universal Tuya Test to latest soak; re-pair if driver changed",
+      "waitForUser": false,
+      "fixRefs": [
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler"
+      ],
+      "resilienceDomains": [
+        "battery"
+      ],
+      "symptomOnly": true,
+      "likelyDrivers": [
+        "button_emergency_sos",
+        "contact_sensor",
+        "water_leak_sensor",
+        "button_wireless_1"
+      ],
+      "catalogTiles": [
+        "SOS Peter",
+        "SOS Fariba",
+        "Raam onze slpkamer / Raam Computerkamer / Raam Slpkamer voor",
+        "Waterdetector",
+        "Smartbutton"
+      ]
+    },
+    {
+      "topicId": 140352,
+      "postNumber": 2238,
+      "username": "Peter_van_Werkhoven",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "battery"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [
+        "**Peter_van_Werkhoven** (2026-10-06) :  Hi Dylan Good afternoon, the app crashes again. Diagnostic code c05db40d-b7f1-4f31-9ec1-4c75b714e10d 1000047678 1220×2712 216 KB Good luck"
+      ],
+      "catalogDevices": 5,
+      "coupleInvestigations": [],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Universal Tuya Test to latest soak; re-pair if driver changed",
+      "waitForUser": false,
+      "fixRefs": [
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler"
+      ],
+      "resilienceDomains": [
+        "battery"
+      ],
+      "symptomOnly": true,
+      "likelyDrivers": [
+        "button_emergency_sos",
+        "contact_sensor",
+        "water_leak_sensor",
+        "button_wireless_1"
+      ],
+      "catalogTiles": [
+        "SOS Peter",
+        "SOS Fariba",
+        "Raam onze slpkamer / Raam Computerkamer / Raam Slpkamer voor",
+        "Waterdetector",
+        "Smartbutton"
+      ]
+    },
+    {
+      "topicId": 140352,
+      "postNumber": 2237,
+      "username": "Peter_van_Werkhoven",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "battery"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [
+        "**Peter_van_Werkhoven** (2026-10-06) :  Hi Dylan Good afternoon, the app crashes again. Diagnostic code c05db40d-b7f1-4f31-9ec1-4c75b714e10d 1000047678 1220×2712 216 KB Good luck"
+      ],
+      "catalogDevices": 5,
+      "coupleInvestigations": [],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Universal Tuya Test to latest soak; re-pair if driver changed",
+      "waitForUser": false,
+      "fixRefs": [
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler"
+      ],
+      "resilienceDomains": [
+        "battery"
+      ],
+      "symptomOnly": true,
+      "likelyDrivers": [
+        "button_emergency_sos",
+        "contact_sensor",
+        "water_leak_sensor",
+        "button_wireless_1"
+      ],
+      "catalogTiles": [
+        "SOS Peter",
+        "SOS Fariba",
+        "Raam onze slpkamer / Raam Computerkamer / Raam Slpkamer voor",
+        "Waterdetector",
+        "Smartbutton"
+      ]
+    },
+    {
+      "topicId": 140352,
+      "postNumber": 2234,
+      "username": "Peter_van_Werkhoven",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "battery"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [
+        "**Peter_van_Werkhoven** (2026-10-06) :  Hi Dylan Good afternoon, the app crashes again. Diagnostic code c05db40d-b7f1-4f31-9ec1-4c75b714e10d 1000047678 1220×2712 216 KB Good luck"
+      ],
+      "catalogDevices": 5,
+      "coupleInvestigations": [],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Universal Tuya Test to latest soak; re-pair if driver changed",
+      "waitForUser": false,
+      "fixRefs": [
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler"
+      ],
+      "resilienceDomains": [
+        "battery"
+      ],
+      "symptomOnly": true,
+      "likelyDrivers": [
+        "button_emergency_sos",
+        "contact_sensor",
+        "water_leak_sensor",
+        "button_wireless_1"
+      ],
+      "catalogTiles": [
+        "SOS Peter",
+        "SOS Fariba",
+        "Raam onze slpkamer / Raam Computerkamer / Raam Slpkamer voor",
+        "Waterdetector",
+        "Smartbutton"
+      ]
+    },
+    {
+      "topicId": 140352,
+      "postNumber": 2233,
+      "username": "Peter_van_Werkhoven",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "battery"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [
+        "**Peter_van_Werkhoven** (2026-10-06) :  Hi Dylan Good afternoon, the app crashes again. Diagnostic code c05db40d-b7f1-4f31-9ec1-4c75b714e10d 1000047678 1220×2712 216 KB Good luck"
+      ],
+      "catalogDevices": 5,
+      "coupleInvestigations": [],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Universal Tuya Test to latest soak; re-pair if driver changed",
+      "waitForUser": false,
+      "fixRefs": [
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler"
+      ],
+      "resilienceDomains": [
+        "battery"
+      ],
+      "symptomOnly": true,
+      "likelyDrivers": [
+        "button_emergency_sos",
+        "contact_sensor",
+        "water_leak_sensor",
+        "button_wireless_1"
+      ],
+      "catalogTiles": [
+        "SOS Peter",
+        "SOS Fariba",
+        "Raam onze slpkamer / Raam Computerkamer / Raam Slpkamer voor",
+        "Waterdetector",
+        "Smartbutton"
+      ]
+    },
+    {
+      "topicId": 140352,
+      "postNumber": 2230,
+      "username": "Peter_van_Werkhoven",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "button",
+        "battery"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [
+        "**Peter_van_Werkhoven** (2026-10-06) :  Hi Dylan Good afternoon, the app crashes again. Diagnostic code c05db40d-b7f1-4f31-9ec1-4c75b714e10d 1000047678 1220×2712 216 KB Good luck"
+      ],
+      "catalogDevices": 5,
+      "coupleInvestigations": [],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Universal Tuya Test to latest soak; re-pair if driver changed",
+      "waitForUser": false,
+      "fixRefs": [
+        "ButtonDevice wake + deferred DataRecovery P2184",
+        "PhysicalButtonMixin 0xFD",
+        "VirtualButtonMixin markAppCommand",
+        "TuyaZigbeeDevice._registerButtonCapabilityListeners P2220",
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler"
+      ],
+      "resilienceDomains": [
+        "buttons_bidirectional",
+        "battery"
+      ],
+      "symptomOnly": true,
+      "likelyDrivers": [
+        "button_wireless_1",
+        "button_wireless_2",
+        "scene_switch_4",
+        "switch_1gang",
+        "switch_2gang",
+        "wall_switch_4gang_1way",
+        "button_emergency_sos",
+        "contact_sensor"
+      ],
+      "catalogTiles": [
+        "SOS Peter",
+        "SOS Fariba",
+        "Raam onze slpkamer / Raam Computerkamer / Raam Slpkamer voor",
+        "Waterdetector",
+        "Smartbutton"
+      ]
+    },
+    {
+      "topicId": 140352,
+      "postNumber": 2228,
+      "username": "Eduard_Martirosyan",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "blind",
+        "unknown",
+        "curtain",
+        "cover",
+        "gang",
+        "battery",
+        "endpoint"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [],
+      "catalogDevices": 2,
+      "coupleInvestigations": [
+        {
+          "mfr": "_TZE284_FODV6BKR",
+          "pid": "TS0601",
+          "verdict": "ROUTED_OK",
+          "canonicalDriver": "curtain_motor",
+          "candidates": [],
+          "resolved": {
+            "mfr": "_TZE284_FODV6BKR",
+            "pid": "TS0601",
+            "driver": "curtain_motor",
+            "source": "processor",
+            "confidence": 100
+          }
+        },
+        {
+          "mfr": "_TZE284_LIBHT6UA",
+          "pid": "TS0601",
+          "verdict": "ROUTED_OK",
+          "canonicalDriver": "curtain_motor",
+          "candidates": [],
+          "resolved": {
+            "mfr": "_TZE284_LIBHT6UA",
+            "pid": "TS0601",
+            "driver": "curtain_motor",
+            "source": "processor",
+            "confidence": 100
+          }
+        }
+      ],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Test + re-pair if still wrong driver",
+      "waitForUser": false,
+      "fixRefs": [
+        "endpoint jitter hardening",
+        "markAppCommand per-gang",
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler"
+      ],
+      "resilienceDomains": [
+        "buttons_bidirectional",
+        "battery"
+      ]
+    },
+    {
+      "topicId": 140352,
+      "postNumber": 2227,
+      "username": "VicHY",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "curtain",
+        "battery"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [],
+      "catalogDevices": 2,
+      "coupleInvestigations": [],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Universal Tuya Test to latest soak; re-pair if driver changed",
+      "waitForUser": false,
+      "fixRefs": [
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler"
+      ],
+      "resilienceDomains": [
+        "battery"
+      ],
+      "symptomOnly": true,
+      "likelyDrivers": [
+        "button_emergency_sos",
+        "contact_sensor",
+        "water_leak_sensor",
+        "presence_sensor_radar"
+      ],
+      "catalogTiles": [
+        "Presencia baño principal",
+        "Forum T140352 #2224"
+      ]
+    },
+    {
+      "topicId": 140352,
+      "postNumber": 1,
+      "username": "dlnraja",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "thermostat",
+        "button",
+        "flow",
+        "crash",
+        "battery"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [],
+      "catalogDevices": 1,
+      "coupleInvestigations": [],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Universal Tuya Test to latest soak; re-pair if driver changed",
+      "waitForUser": false,
+      "fixRefs": [
+        "ButtonDevice wake + deferred DataRecovery P2184",
+        "PhysicalButtonMixin 0xFD",
+        "VirtualButtonMixin markAppCommand",
+        "TuyaZigbeeDevice._registerButtonCapabilityListeners P2220",
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler"
+      ],
+      "resilienceDomains": [
+        "buttons_bidirectional",
+        "flows",
+        "heap_json",
+        "battery"
+      ],
+      "symptomOnly": true,
+      "likelyDrivers": [
+        "button_wireless_1",
+        "button_wireless_2",
+        "scene_switch_4",
+        "switch_1gang",
+        "switch_2gang",
+        "wall_switch_4gang_1way",
+        "button_emergency_sos",
+        "contact_sensor"
+      ],
+      "catalogTiles": [
+        "Auto T140352 #2165"
+      ]
+    },
+    {
+      "topicId": 120477,
+      "postNumber": 1,
+      "username": "FKey",
+      "action": "request-diag-couple",
+      "issues": [],
+      "dualApp": "REVIEW",
+      "inboxSnippets": [],
+      "catalogDevices": 1,
+      "coupleInvestigations": [
+        {
+          "mfr": "_TZ3210_TGVTVDOC",
+          "pid": null,
+          "verdict": "MISSING_PID",
+          "canonicalDriver": "rain_sensor",
+          "candidates": [
+            {
+              "mfr": "_TZ3210_TGVTVDOC",
+              "pid": "TS0207",
+              "source": "misattribution-registry",
+              "driver": "rain_sensor",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZ3210_TGVTVDOC",
+              "pid": "TS0601",
+              "source": "driver-compose",
+              "driver": "rain_sensor",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3210_TGVTVDOC",
+              "pid": "ZG-223Z",
+              "source": "driver-compose",
+              "driver": "rain_sensor",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3210_TGVTVDOC",
+              "pid": "TS011F",
+              "source": "mfr-prefix-heuristic",
+              "driver": null,
+              "confidence": 45,
+              "softOnly": true
+            },
+            {
+              "mfr": "_TZ3210_TGVTVDOC",
+              "pid": "TS0207_rain",
+              "source": "driver-compose",
+              "driver": "rain_sensor",
+              "confidence": 40
+            }
+          ],
+          "resolved": {
+            "mfr": "_TZ3210_TGVTVDOC",
+            "pid": "TS0207",
+            "driver": "rain_sensor",
+            "confidence": 99,
+            "source": "misattribution-registry",
+            "tier": "hardLock",
+            "catalogWrite": true
+          },
+          "tier": "hardLock",
+          "protocolHint": {
+            "protocol": "zcl",
+            "prefix": "_TZ3210_"
+          }
+        }
+      ],
+      "autoResolution": "alreadyInCatalog",
+      "userAction": "Already in rain_sensor — update Universal Tuya Test + re-pair",
+      "waitForUser": false,
+      "fixRefs": []
+    },
+    {
+      "topicId": 89271,
+      "postNumber": 669,
+      "username": "Erwin3",
+      "action": "request-diag-couple",
+      "issues": [],
+      "dualApp": "REVIEW",
+      "inboxSnippets": [],
+      "catalogDevices": 1,
+      "coupleInvestigations": [
+        {
+          "mfr": "_TZ3000_QEUVNOHG",
+          "pid": null,
+          "verdict": "MISSING_PID",
+          "canonicalDriver": "din_rail_switch",
+          "candidates": [
+            {
+              "mfr": "_TZ3000_QEUVNOHG",
+              "pid": "TS011F",
+              "source": "misattribution-registry",
+              "driver": "din_rail_switch",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZ3000_QEUVNOHG",
+              "pid": "TS0601",
+              "source": "driver-compose",
+              "driver": "din_rail_switch",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_QEUVNOHG",
+              "pid": "TS0001_din",
+              "source": "driver-compose",
+              "driver": "din_rail_switch",
+              "confidence": 40
+            }
+          ],
+          "resolved": {
+            "mfr": "_TZ3000_QEUVNOHG",
+            "pid": "TS011F",
+            "driver": "din_rail_switch",
+            "confidence": 99,
+            "source": "misattribution-registry",
+            "tier": "hardLock",
+            "catalogWrite": true
+          },
+          "tier": "hardLock",
+          "protocolHint": {
+            "protocol": "zcl_or_hybrid",
+            "prefix": "_TZ3000_"
+          }
+        }
+      ],
+      "autoResolution": "alreadyInCatalog",
+      "userAction": "Already in din_rail_switch — update Universal Tuya Test + re-pair",
+      "waitForUser": false,
+      "fixRefs": []
+    },
+    {
+      "topicId": 89271,
+      "postNumber": 668,
+      "username": "Peter_N",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "soil",
+        "battery"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [],
+      "catalogDevices": 2,
+      "coupleInvestigations": [
+        {
+          "mfr": "_TZE200_MYD45WEU",
+          "pid": "TS0601",
+          "verdict": "ROUTED_OK",
+          "canonicalDriver": "soil_sensor",
+          "candidates": [],
+          "resolved": {
+            "mfr": "_TZE200_MYD45WEU",
+            "pid": "TS0601",
+            "driver": "soil_sensor",
+            "source": "processor",
+            "confidence": 100
+          }
+        }
+      ],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Test + re-pair if still wrong driver",
+      "waitForUser": false,
+      "fixRefs": [
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler"
+      ],
+      "resilienceDomains": [
+        "battery"
+      ]
+    },
+    {
+      "topicId": 89271,
+      "postNumber": 665,
+      "username": "Johan_Rossouw",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "gang",
+        "battery"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [],
+      "catalogDevices": 1,
+      "coupleInvestigations": [
+        {
+          "mfr": "_TYZB01_6G8B7AT8",
+          "pid": "TS0012",
+          "verdict": "ROUTED_OK",
+          "canonicalDriver": "switch_2gang",
+          "candidates": [],
+          "resolved": {
+            "mfr": "_TYZB01_6G8B7AT8",
+            "pid": "TS0012",
+            "driver": "switch_2gang",
+            "source": "processor",
+            "confidence": 100
+          }
+        }
+      ],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Test + re-pair if still wrong driver",
+      "waitForUser": false,
+      "fixRefs": [
+        "endpoint jitter hardening",
+        "markAppCommand per-gang",
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler"
+      ],
+      "resilienceDomains": [
+        "buttons_bidirectional",
+        "battery"
+      ]
+    },
+    {
+      "topicId": 89271,
+      "postNumber": 658,
+      "username": "Bram_B",
+      "action": "request-diag-couple",
+      "issues": [],
+      "dualApp": "BOTH",
+      "inboxSnippets": [],
+      "catalogDevices": 1,
+      "coupleInvestigations": [
+        {
+          "mfr": "_TZ3000_AMDYMR7L",
+          "pid": null,
+          "verdict": "MISSING_PID",
+          "canonicalDriver": "plug_energy_monitor",
+          "candidates": [
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "TS011F",
+              "source": "misattribution-registry",
+              "driver": "plug_energy_monitor",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "TS0601",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "CK-BL702-SWP-01(7020)",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "TS0001",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "TS0002",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "TS0003",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "TS000F",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "TS0011",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "TS0012",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "TS0013",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "TS0014",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "TS0041",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "TS0042",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "TS0043",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "TS0044",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "TS0052",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "TS0101",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "TS0111",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "TS0121",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "TS0215A",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "TS0505B",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "TS0726",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "TS1101",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "TS110E",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "TS110F",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "TS130F",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "TS4100",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "TSO121",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "01MINIZB",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "A11Z",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "A7Z",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "BASICZBR3",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "E1603/E1702/E1708",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "HY0104",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "HY0105",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "JZ-ZB-005",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "LSPA9",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "S26R2ZB",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "S31 Lite zb",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "S31ZB",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "S40LITE",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "S40ZBTPB",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "S40ZBTPF",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "S40ZBTPG",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "S60ZBTPE",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "S60ZBTPF",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "S60ZBTPF-R2",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "S60ZBTPG",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "SA-028-1",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "SA-029-1",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "SP 120",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "SP 220",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "SP 222",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "SP-EUC01",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "SP-EUC02",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "SPM01",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "SPMZBR2",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "TRADFRI control outlet",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "TS0001_power",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "TS0001_switch",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "TS0001_switch_module",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "TS0601_dim1",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "Z111PL0H-1JX",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "ZBM5-1C-120",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "ZBM5-2C-120",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "ZBM5-3C-120",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "ZBMINI",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "ZBMINI-DIM",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "ZBMINID",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "ZBMINIL2",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "ZBMINIL2-R2",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "ZBMINIR",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "ZBMINIR2",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "ZBMINIR2-R2",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "lumi.plug.macn01",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "lumi.plug.maeu01",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZ3000_AMDYMR7L",
+              "pid": "lumi.plug.mmeu01",
+              "source": "driver-compose",
+              "driver": "plug_energy_monitor",
+              "confidence": 40
+            }
+          ],
+          "resolved": {
+            "mfr": "_TZ3000_AMDYMR7L",
+            "pid": "TS011F",
+            "driver": "plug_energy_monitor",
+            "confidence": 99,
+            "source": "misattribution-registry",
+            "tier": "hardLock",
+            "catalogWrite": true
+          },
+          "tier": "hardLock",
+          "protocolHint": {
+            "protocol": "zcl_or_hybrid",
+            "prefix": "_TZ3000_"
+          }
+        }
+      ],
+      "autoResolution": "alreadyInCatalog",
+      "userAction": "Already in plug_energy_monitor — update Universal Tuya Test + re-pair",
+      "waitForUser": false,
+      "fixRefs": []
+    },
+    {
+      "topicId": 89271,
+      "postNumber": 657,
+      "username": "Vincent_Lim",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "unknown",
+        "battery"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [],
+      "catalogDevices": 1,
+      "coupleInvestigations": [
+        {
+          "mfr": "_TZ3000_DECXRTWA",
+          "pid": "TS0203",
+          "verdict": "ROUTED_OK",
+          "canonicalDriver": "contact_sensor",
+          "candidates": [],
+          "resolved": {
+            "mfr": "_TZ3000_DECXRTWA",
+            "pid": "TS0203",
+            "driver": "contact_sensor",
+            "source": "processor",
+            "confidence": 100
+          }
+        }
+      ],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Test + re-pair if still wrong driver",
+      "waitForUser": false,
+      "fixRefs": [
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler"
+      ],
+      "resilienceDomains": [
+        "battery"
+      ]
+    },
+    {
+      "topicId": 89271,
+      "postNumber": 656,
+      "username": "Mr_D_Forrest",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "battery"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [],
+      "catalogDevices": 1,
+      "coupleInvestigations": [
+        {
+          "mfr": "_TZ3000_XR3HTD96",
+          "pid": "TS0201",
+          "verdict": "ROUTED_OK",
+          "canonicalDriver": "temphumidsensor3",
+          "candidates": [],
+          "resolved": {
+            "mfr": "_TZ3000_XR3HTD96",
+            "pid": "TS0201",
+            "driver": "temphumidsensor3",
+            "source": "processor",
+            "confidence": 100
+          }
+        }
+      ],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Test + re-pair if still wrong driver",
+      "waitForUser": false,
+      "fixRefs": [
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler"
+      ],
+      "resilienceDomains": [
+        "battery"
+      ]
+    },
+    {
+      "topicId": 89271,
+      "postNumber": 655,
+      "username": "Julius_H",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "battery"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [],
+      "catalogDevices": 0,
+      "coupleInvestigations": [],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Universal Tuya Test to latest soak; re-pair if driver changed",
+      "waitForUser": false,
+      "fixRefs": [
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler"
+      ],
+      "resilienceDomains": [
+        "battery"
+      ],
+      "symptomOnly": true,
+      "likelyDrivers": [
+        "button_emergency_sos",
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "catalogTiles": []
+    },
+    {
+      "topicId": 89271,
+      "postNumber": 653,
+      "username": "Rob_G",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "button",
+        "battery"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [],
+      "catalogDevices": 1,
+      "coupleInvestigations": [
+        {
+          "mfr": "_TZ3000_WKAI4GA5",
+          "pid": "TS0044",
+          "verdict": "ROUTED_OK",
+          "canonicalDriver": "scene_switch_4",
+          "candidates": [],
+          "resolved": {
+            "mfr": "_TZ3000_WKAI4GA5",
+            "pid": "TS0044",
+            "driver": "scene_switch_4",
+            "source": "processor",
+            "confidence": 100
+          }
+        }
+      ],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Test + re-pair if still wrong driver",
+      "waitForUser": false,
+      "fixRefs": [
+        "ButtonDevice wake + deferred DataRecovery P2184",
+        "PhysicalButtonMixin 0xFD",
+        "VirtualButtonMixin markAppCommand",
+        "TuyaZigbeeDevice._registerButtonCapabilityListeners P2220",
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler"
+      ],
+      "resilienceDomains": [
+        "buttons_bidirectional",
+        "battery"
+      ]
+    },
+    {
+      "topicId": 89271,
+      "postNumber": 652,
+      "username": "Bo_Kjaergaard",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "battery",
+        "button",
+        "unavailable"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [],
+      "catalogDevices": 3,
+      "coupleInvestigations": [
+        {
+          "mfr": "_TZ3000_4UPL1FCJ",
+          "pid": "TS0041",
+          "verdict": "ROUTED_OK",
+          "canonicalDriver": "button_wireless_1",
+          "candidates": [],
+          "resolved": {
+            "mfr": "_TZ3000_4UPL1FCJ",
+            "pid": "TS0041",
+            "driver": "button_wireless_1",
+            "source": "processor",
+            "confidence": 100
+          }
+        },
+        {
+          "mfr": "_TZ3000_4UPL1FCJ",
+          "pid": "TS0505B",
+          "verdict": "NOT_IN_CATALOG",
+          "canonicalDriver": null,
+          "candidates": [],
+          "resolved": null
+        },
+        {
+          "mfr": "_TZ3000_QD7HEJ8U",
+          "pid": "TS0041",
+          "verdict": "NOT_IN_CATALOG",
+          "canonicalDriver": null,
+          "candidates": [],
+          "resolved": null
+        },
+        {
+          "mfr": "_TZ3000_QD7HEJ8U",
+          "pid": "TS0505B",
+          "verdict": "ROUTED_OK",
+          "canonicalDriver": "bulb_rgb",
+          "candidates": [],
+          "resolved": {
+            "mfr": "_TZ3000_QD7HEJ8U",
+            "pid": "TS0505B",
+            "driver": "bulb_rgb",
+            "source": "processor",
+            "confidence": 100
+          }
+        }
+      ],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Test + re-pair if still wrong driver",
+      "waitForUser": false,
+      "fixRefs": [
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler",
+        "ButtonDevice wake + deferred DataRecovery P2184",
+        "PhysicalButtonMixin 0xFD",
+        "VirtualButtonMixin markAppCommand",
+        "TuyaZigbeeDevice._registerButtonCapabilityListeners P2220"
+      ],
+      "resilienceDomains": [
+        "battery",
+        "buttons_bidirectional"
+      ]
+    },
+    {
+      "topicId": 89271,
+      "postNumber": 649,
+      "username": "Roy1",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "battery"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [],
+      "catalogDevices": 2,
+      "coupleInvestigations": [
+        {
+          "mfr": "_TZ3000_3DFEWSK1",
+          "pid": "TS0207",
+          "verdict": "ROUTED_OK",
+          "canonicalDriver": "water_leak_sensor",
+          "candidates": [],
+          "resolved": {
+            "mfr": "_TZ3000_3DFEWSK1",
+            "pid": "TS0207",
+            "driver": "water_leak_sensor",
+            "source": "processor",
+            "confidence": 100
+          }
+        }
+      ],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Test + re-pair if still wrong driver",
+      "waitForUser": false,
+      "fixRefs": [
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler"
+      ],
+      "resilienceDomains": [
+        "battery"
+      ]
+    },
+    {
+      "topicId": 89271,
+      "postNumber": 644,
+      "username": "Bo_Kjaergaard",
+      "action": "request-diag-couple",
+      "issues": [
+        "unknown"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [],
+      "catalogDevices": 3,
+      "coupleInvestigations": [
+        {
+          "mfr": "_TZ3000_NKCOBIES",
+          "pid": null,
+          "verdict": "MISSING_PID",
+          "canonicalDriver": "smartplug",
+          "candidates": [
+            {
+              "mfr": "_TZ3000_NKCOBIES",
+              "pid": "TS011F",
+              "source": "misattribution-registry",
+              "driver": "smartplug",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZ3000_NKCOBIES",
+              "pid": "TS0121",
+              "source": "misattribution-registry",
+              "driver": "smartplug",
+              "confidence": 98
+            },
+            {
+              "mfr": "_TZ3000_NKCOBIES",
+              "pid": "TSO121",
+              "source": "driver-compose",
+              "driver": "smartplug",
+              "confidence": 96
+            }
+          ],
+          "resolved": {
+            "mfr": "_TZ3000_NKCOBIES",
+            "pid": "TS011F",
+            "driver": "smartplug",
+            "confidence": 99,
+            "source": "misattribution-registry",
+            "tier": "hardLock",
+            "catalogWrite": true
+          },
+          "tier": "hardLock",
+          "protocolHint": {
+            "protocol": "zcl_or_hybrid",
+            "prefix": "_TZ3000_"
+          }
+        }
+      ],
+      "autoResolution": "alreadyInCatalog",
+      "userAction": "Already in smartplug — update Universal Tuya Test + re-pair",
+      "waitForUser": false,
+      "fixRefs": []
+    },
+    {
+      "topicId": 89271,
+      "postNumber": 641,
+      "username": "Zdenek_Sadek",
+      "action": "request-diag-couple",
+      "issues": [],
+      "dualApp": "REVIEW",
+      "inboxSnippets": [],
+      "catalogDevices": 1,
+      "coupleInvestigations": [
+        {
+          "mfr": "_TZ3000_QEUVNOHG",
+          "pid": null,
+          "verdict": "MISSING_PID",
+          "canonicalDriver": "din_rail_switch",
+          "candidates": [
+            {
+              "mfr": "_TZ3000_QEUVNOHG",
+              "pid": "TS011F",
+              "source": "misattribution-registry",
+              "driver": "din_rail_switch",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZ3000_QEUVNOHG",
+              "pid": "TS0601",
+              "source": "driver-compose",
+              "driver": "din_rail_switch",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_QEUVNOHG",
+              "pid": "TS0001_din",
+              "source": "driver-compose",
+              "driver": "din_rail_switch",
+              "confidence": 40
+            }
+          ],
+          "resolved": {
+            "mfr": "_TZ3000_QEUVNOHG",
+            "pid": "TS011F",
+            "driver": "din_rail_switch",
+            "confidence": 99,
+            "source": "misattribution-registry",
+            "tier": "hardLock",
+            "catalogWrite": true
+          },
+          "tier": "hardLock",
+          "protocolHint": {
+            "protocol": "zcl_or_hybrid",
+            "prefix": "_TZ3000_"
+          }
+        }
+      ],
+      "autoResolution": "alreadyInCatalog",
+      "userAction": "Already in din_rail_switch — update Universal Tuya Test + re-pair",
+      "waitForUser": false,
+      "fixRefs": []
+    },
+    {
+      "topicId": 26439,
+      "postNumber": 5534,
+      "username": "Dragan_Todorovic",
+      "action": "request-diag-couple",
+      "issues": [
+        "presence"
+      ],
+      "dualApp": "MASTER_ONLY",
+      "inboxSnippets": [],
+      "catalogDevices": 0,
+      "coupleInvestigations": [
+        {
+          "mfr": "_TZE200_CRQ3R3LA",
+          "pid": null,
+          "verdict": "MISSING_PID",
+          "canonicalDriver": "presence_sensor_radar",
+          "candidates": [
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "CK-BL702-MWS-01",
+              "source": "mfs_db",
+              "driver": "presence_sensor_radar",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "CK-BL702-MWS-01(7016)",
+              "source": "mfs_db",
+              "driver": "presence_sensor_radar",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "MG1_5RZ",
+              "source": "mfs_db",
+              "driver": "presence_sensor_radar",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "SNZB-06P",
+              "source": "mfs_db",
+              "driver": "presence_sensor_radar",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "SNZB-06P24",
+              "source": "mfs_db",
+              "driver": "presence_sensor_radar",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "SZLMR10",
+              "source": "mfs_db",
+              "driver": "presence_sensor_radar",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "TS0004",
+              "source": "mfs_db",
+              "driver": "presence_sensor_radar",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "TS0203",
+              "source": "mfs_db",
+              "driver": "presence_sensor_radar",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "TS0225",
+              "source": "mfs_db",
+              "driver": "presence_sensor_radar",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "TS0601",
+              "source": "mfs_db",
+              "driver": "presence_sensor_radar",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "TS110E",
+              "source": "mfs_db",
+              "driver": "presence_sensor_radar",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "ZG-204ZE",
+              "source": "mfs_db",
+              "driver": "presence_sensor_radar",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "ZG-204ZH",
+              "source": "mfs_db",
+              "driver": "presence_sensor_radar",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "ZG-204ZK",
+              "source": "mfs_db",
+              "driver": "presence_sensor_radar",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "ZG-204ZL",
+              "source": "mfs_db",
+              "driver": "presence_sensor_radar",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "ZG-204ZM",
+              "source": "mfs_db",
+              "driver": "presence_sensor_radar",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "ZG-204ZQ",
+              "source": "mfs_db",
+              "driver": "presence_sensor_radar",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "ZG-204ZV",
+              "source": "mfs_db",
+              "driver": "presence_sensor_radar",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "ZG-205Z",
+              "source": "mfs_db",
+              "driver": "presence_sensor_radar",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "ZG-205ZL",
+              "source": "mfs_db",
+              "driver": "presence_sensor_radar",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "ZG-302ZL",
+              "source": "mfs_db",
+              "driver": "presence_sensor_radar",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "ZG-302ZM",
+              "source": "mfs_db",
+              "driver": "presence_sensor_radar",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "ZP-301Z",
+              "source": "mfs_db",
+              "driver": "presence_sensor_radar",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "TS0045",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "TS004F",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "TS0201",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "TS0202",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "TS0215A",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "TS0222",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "TS0501B",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "TS1201",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "TY0201",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "ZG-204Z",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "ZG-204ZP",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "ZG-204ZX",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "ZG-205W",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "ZG-210Z",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "AY-204ZX",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "AY204T",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "AY205Z",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "AY208Z",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "EDM-1ZBA-EU",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "Excellux",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "lumi.sensor_ht",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "lumi.sensor_ht.agl02",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "lumi.weather",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "RH3052",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "SM0201",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "TH01",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "THS317-ET",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "TRI-C1ZR",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "TRI-K1ZR",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "TS0601_wirelesssw",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "WSDCGQ01LM",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "WSDCGQ11LM",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            },
+            {
+              "mfr": "_TZE200_CRQ3R3LA",
+              "pid": "WSDCGQ12LM",
+              "source": "driver-compose",
+              "driver": "presence_sensor_radar",
+              "confidence": 40
+            }
+          ],
+          "resolved": {
+            "mfr": "_TZE200_CRQ3R3LA",
+            "pid": "CK-BL702-MWS-01",
+            "driver": "presence_sensor_radar",
+            "confidence": 99,
+            "source": "mfs_db",
+            "tier": "hardLock",
+            "catalogWrite": true
+          },
+          "tier": "hardLock",
+          "protocolHint": {
+            "protocol": "ef00",
+            "prefix": "_TZE200_"
+          }
+        }
+      ],
+      "autoResolution": "alreadyInCatalog",
+      "userAction": "Already in presence_sensor_radar — update Universal Tuya Test + re-pair",
+      "waitForUser": false,
+      "fixRefs": []
+    },
+    {
+      "topicId": 26439,
+      "postNumber": 5532,
+      "username": "Mates1134",
+      "action": "request-diag-couple",
+      "issues": [],
+      "dualApp": "REVIEW",
+      "inboxSnippets": [],
+      "catalogDevices": 0,
+      "coupleInvestigations": [
+        {
+          "mfr": "_TZ3000_QJA6NQ5Z",
+          "pid": null,
+          "verdict": "MISSING_PID",
+          "canonicalDriver": "smart_knob_rotary",
+          "candidates": [
+            {
+              "mfr": "_TZ3000_QJA6NQ5Z",
+              "pid": "ERS-10TZBVK-AA",
+              "source": "mfs_db",
+              "driver": "smart_knob_rotary",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZ3000_QJA6NQ5Z",
+              "pid": "TS0044",
+              "source": "mfs_db",
+              "driver": "smart_knob_rotary",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZ3000_QJA6NQ5Z",
+              "pid": "TS004F",
+              "source": "mfs_db",
+              "driver": "smart_knob_rotary",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZ3000_QJA6NQ5Z",
+              "pid": "TS0601",
+              "source": "mfs_db",
+              "driver": "smart_knob_rotary",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZ3000_QJA6NQ5Z",
+              "pid": "ZG-101ZD",
+              "source": "driver-compose",
+              "driver": "smart_knob_rotary",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZ3000_QJA6NQ5Z",
+              "pid": "ZG-101Z",
+              "source": "driver-compose",
+              "driver": "smart_knob_rotary",
+              "confidence": 96
+            }
+          ],
+          "resolved": {
+            "mfr": "_TZ3000_QJA6NQ5Z",
+            "pid": "ERS-10TZBVK-AA",
+            "driver": "smart_knob_rotary",
+            "confidence": 99,
+            "source": "mfs_db",
+            "tier": "hardLock",
+            "catalogWrite": true
+          },
+          "tier": "hardLock",
+          "protocolHint": {
+            "protocol": "zcl_or_hybrid",
+            "prefix": "_TZ3000_"
+          }
+        }
+      ],
+      "autoResolution": "alreadyInCatalog",
+      "userAction": "Already in smart_knob_rotary — update Universal Tuya Test + re-pair",
+      "waitForUser": false,
+      "fixRefs": []
+    },
+    {
+      "topicId": 26439,
+      "postNumber": 5526,
+      "username": "Peter_van_Werkhoven",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "battery"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [
+        "**Peter_van_Werkhoven** (2026-10-06) :  Hi Dylan Good afternoon, the app crashes again. Diagnostic code c05db40d-b7f1-4f31-9ec1-4c75b714e10d 1000047678 1220×2712 216 KB Good luck"
+      ],
+      "catalogDevices": 5,
+      "coupleInvestigations": [],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Universal Tuya Test to latest soak; re-pair if driver changed",
+      "waitForUser": false,
+      "fixRefs": [
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler"
+      ],
+      "resilienceDomains": [
+        "battery"
+      ],
+      "symptomOnly": true,
+      "likelyDrivers": [
+        "button_emergency_sos",
+        "contact_sensor",
+        "water_leak_sensor",
+        "button_wireless_1"
+      ],
+      "catalogTiles": [
+        "SOS Peter",
+        "SOS Fariba",
+        "Raam onze slpkamer / Raam Computerkamer / Raam Slpkamer voor",
+        "Waterdetector",
+        "Smartbutton"
+      ]
+    },
+    {
+      "topicId": 26439,
+      "postNumber": 5525,
+      "username": "johan_bendz",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "battery"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [],
+      "catalogDevices": 12,
+      "coupleInvestigations": [],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Universal Tuya Test to latest soak; re-pair if driver changed",
+      "waitForUser": false,
+      "fixRefs": [
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler"
+      ],
+      "resilienceDomains": [
+        "battery"
+      ],
+      "symptomOnly": true,
+      "likelyDrivers": [
+        "button_emergency_sos",
+        "contact_sensor",
+        "water_leak_sensor",
+        "wall_dimmer_tuya"
+      ],
+      "catalogTiles": [
+        "Auto T26439 #1",
+        "Auto T26439 #1",
+        "Auto T26439 #1",
+        "Auto T26439 #1",
+        "Auto T26439 #1",
+        "Auto T26439 #1",
+        "Auto T26439 #1",
+        "Auto T26439 #1",
+        "Auto T26439 #1",
+        "Auto T26439 #1",
+        "Auto T26439 #1",
+        "Auto T26439 #1"
+      ]
+    },
+    {
+      "topicId": 26439,
+      "postNumber": 5524,
+      "username": "Peter_van_Werkhoven",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "battery"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [
+        "**Peter_van_Werkhoven** (2026-10-06) :  Hi Dylan Good afternoon, the app crashes again. Diagnostic code c05db40d-b7f1-4f31-9ec1-4c75b714e10d 1000047678 1220×2712 216 KB Good luck"
+      ],
+      "catalogDevices": 5,
+      "coupleInvestigations": [],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Universal Tuya Test to latest soak; re-pair if driver changed",
+      "waitForUser": false,
+      "fixRefs": [
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler"
+      ],
+      "resilienceDomains": [
+        "battery"
+      ],
+      "symptomOnly": true,
+      "likelyDrivers": [
+        "button_emergency_sos",
+        "contact_sensor",
+        "water_leak_sensor",
+        "button_wireless_1"
+      ],
+      "catalogTiles": [
+        "SOS Peter",
+        "SOS Fariba",
+        "Raam onze slpkamer / Raam Computerkamer / Raam Slpkamer voor",
+        "Waterdetector",
+        "Smartbutton"
+      ]
+    },
+    {
+      "topicId": 26439,
+      "postNumber": 5519,
+      "username": "Peter_Kawa",
+      "action": "request-diag-couple",
+      "issues": [],
+      "dualApp": "REVIEW",
+      "inboxSnippets": [],
+      "catalogDevices": 0,
+      "coupleInvestigations": [
+        {
+          "mfr": "_TZE284_NQQYLYKC",
+          "pid": null,
+          "verdict": "MISSING_PID",
+          "canonicalDriver": "wall_dimmer_tuya",
+          "candidates": [
+            {
+              "mfr": "_TZE284_NQQYLYKC",
+              "pid": "TS0011",
+              "source": "mfs_db",
+              "driver": "wall_dimmer_tuya",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE284_NQQYLYKC",
+              "pid": "TS0052",
+              "source": "mfs_db",
+              "driver": "wall_dimmer_tuya",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE284_NQQYLYKC",
+              "pid": "TS0601",
+              "source": "mfs_db",
+              "driver": "wall_dimmer_tuya",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE284_NQQYLYKC",
+              "pid": "TS0601_dim1",
+              "source": "mfs_db",
+              "driver": "wall_dimmer_tuya",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE284_NQQYLYKC",
+              "pid": "TS1101",
+              "source": "mfs_db",
+              "driver": "wall_dimmer_tuya",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE284_NQQYLYKC",
+              "pid": "TS110E",
+              "source": "mfs_db",
+              "driver": "wall_dimmer_tuya",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE284_NQQYLYKC",
+              "pid": "TS110F",
+              "source": "mfs_db",
+              "driver": "wall_dimmer_tuya",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE284_NQQYLYKC",
+              "pid": "ZBMINI-DIM",
+              "source": "mfs_db",
+              "driver": "wall_dimmer_tuya",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE284_NQQYLYKC",
+              "pid": "ZBMINID",
+              "source": "mfs_db",
+              "driver": "wall_dimmer_tuya",
+              "confidence": 99
+            },
+            {
+              "mfr": "_TZE284_NQQYLYKC",
+              "pid": "TS0004",
+              "source": "driver-compose",
+              "driver": "wall_dimmer_tuya",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE284_NQQYLYKC",
+              "pid": "TS0003",
+              "source": "driver-compose",
+              "driver": "wall_dimmer_tuya",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE284_NQQYLYKC",
+              "pid": "TS0002",
+              "source": "driver-compose",
+              "driver": "wall_dimmer_tuya",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE284_NQQYLYKC",
+              "pid": "TS0001",
+              "source": "driver-compose",
+              "driver": "wall_dimmer_tuya",
+              "confidence": 96
+            },
+            {
+              "mfr": "_TZE284_NQQYLYKC",
+              "pid": "TS0013",
+              "source": "driver-compose",
+              "driver": "wall_dimmer_tuya",
+              "confidence": 96
+            }
+          ],
+          "resolved": {
+            "mfr": "_TZE284_NQQYLYKC",
+            "pid": "TS0011",
+            "driver": "wall_dimmer_tuya",
+            "confidence": 99,
+            "source": "mfs_db",
+            "tier": "hardLock",
+            "catalogWrite": true
+          },
+          "tier": "hardLock",
+          "protocolHint": {
+            "protocol": "ef00",
+            "prefix": "_TZE284_"
+          }
+        }
+      ],
+      "autoResolution": "alreadyInCatalog",
+      "userAction": "Already in wall_dimmer_tuya — update Universal Tuya Test + re-pair",
+      "waitForUser": false,
+      "fixRefs": []
+    },
+    {
+      "topicId": 15811,
+      "postNumber": 325,
+      "username": "Rens_Brandwijk",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "battery"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [],
+      "catalogDevices": 0,
+      "coupleInvestigations": [],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Universal Tuya Test to latest soak; re-pair if driver changed",
+      "waitForUser": false,
+      "fixRefs": [
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler"
+      ],
+      "resilienceDomains": [
+        "battery"
+      ],
+      "symptomOnly": true,
+      "likelyDrivers": [
+        "button_emergency_sos",
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "catalogTiles": []
+    },
+    {
+      "topicId": 15811,
+      "postNumber": 6,
+      "username": "Rens_Brandwijk",
+      "action": "code-fix-stable-candidate",
+      "issues": [
+        "battery"
+      ],
+      "dualApp": "BOTH",
+      "inboxSnippets": [],
+      "catalogDevices": 0,
+      "coupleInvestigations": [],
+      "autoResolution": "fixShipped",
+      "userAction": "Update Universal Tuya Test to latest soak; re-pair if driver changed",
+      "waitForUser": false,
+      "fixRefs": [
+        "SOS battery spike guard",
+        "UnifiedBatteryHandler"
+      ],
+      "resilienceDomains": [
+        "battery"
+      ],
+      "symptomOnly": true,
+      "likelyDrivers": [
+        "button_emergency_sos",
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "catalogTiles": []
+    }
+  ]
+}

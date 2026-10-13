@@ -5,6 +5,7 @@ Lock **manufacturerName + productId** only. Never invent pid. Dual-app: BOTH | M
 **P2529:** also audit DP / clusters / flow wire / RX-TX (not couple-lock only).
 
 Generated: **2026-10-13T11:10:23.572Z** · Mode: `full`
+Generated: **2026-10-13T12:16:43.696Z** · Mode: `quick`
 
 ## Snapshot
 
@@ -14,6 +15,8 @@ Generated: **2026-10-13T11:10:23.572Z** · Mode: `full`
 | GitHub open PRs | 0 |
 | Forum needAction | 58 |
 | Gmail crash state | present |
+| Forum needAction | 48 |
+| Gmail crash state | absent |
 | mfs high drift | 0 |
 | Deep functional | ran (P2529) |
 
@@ -37,6 +40,9 @@ Generated: **2026-10-13T11:10:23.572Z** · Mode: `full`
 - **forum**: ok (26559ms)
 - **drivers**: ok (1499ms)
 - **functionalDeep**: ok (2991ms)
+- **github**: ok (847ms)
+- **forum**: ok (17400ms)
+- **functionalDeep**: ok (18932ms)
 
 ## Doctrine
 
