@@ -1,0 +1,31 @@
+{
+  "generatedAt": "2026-10-13T09:46:25.004Z",
+  "mode": "dry-run",
+  "driversTouched": 2,
+  "orphanTokensFixed": 6,
+  "triggersAdded": 1,
+  "actionsAdded": 0,
+  "appJsonDedupe": {
+    "mode": "dry-run"
+  },
+  "z2mCrossRef": {
+    "count": 27
+  },
+  "subtools": [],
+  "topChanges": [
+    {
+      "driver": "button_wireless_4",
+      "orphans": 6,
+      "triggers": [],
+      "actions": []
+    },
+    {
+      "driver": "led_controller_spi_tuya",
+      "orphans": 0,
+      "triggers": [
+        "led_controller_spi_tuya_brightness_changed"
+      ],
+      "actions": []
+    }
+  ]
+}

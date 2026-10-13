@@ -27,7 +27,11 @@
       }
     }
   },
-  "energy": { "approximation": { "usageOn": 7, "usageOff": 0.4 },
+  "energy": {
+    "approximation": {
+      "usageOn": 7,
+      "usageOff": 0.4
+    },
     "mains": true
   },
   "images": {
@@ -37,7 +41,9 @@
   "zigbee": {
     "manufacturerName": [
       "_TZ3210_jtifm80b",
-      "_tz3210_jtifm80b"
+      "_tz3210_jtifm80b",
+      "_TZ3210_JTIFM80B",
+      "_tz3210_JTIFM80B"
     ],
     "productId": [
       "TS0502B"
