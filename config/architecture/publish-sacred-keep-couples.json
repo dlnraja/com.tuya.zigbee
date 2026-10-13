@@ -1549,6 +1549,36 @@
       "pid": "ZG-101ZL",
       "driverId": "button_wireless_1",
       "note": "P2677 HOBEIAN typo form (Athom compose); stripped by v9.0.1430 bot, pinned 2026-10-13"
+    },
+    {
+      "mfr": "_TZE284_myd45weu",
+      "pid": "TS0601",
+      "driverId": "soil_sensor",
+      "note": "#571 QT-07S Z2M TS0601_soil — keep through Athom compact"
+    },
+    {
+      "mfr": "_TZE200_myd45weu",
+      "pid": "TS0601",
+      "driverId": "soil_sensor",
+      "note": "#571 myd45weu TZE200 sibling soil"
+    },
+    {
+      "mfr": "_TZE204_myd45weu",
+      "pid": "TS0601",
+      "driverId": "soil_sensor",
+      "note": "#571 myd45weu TZE204 sibling soil"
+    },
+    {
+      "mfr": "AOYAN",
+      "pid": "AY-303Z",
+      "driverId": "soil_sensor",
+      "note": "#570 AOYAN AY-303Z Z2M white-label CS-201Z"
+    },
+    {
+      "mfr": "_TZE200_rxq4iti9",
+      "pid": "TS0601",
+      "driverId": "device_radiator_valve",
+      "note": "#560 EARU TRV06 ME167 DP profile"
     }
   ]
 }
