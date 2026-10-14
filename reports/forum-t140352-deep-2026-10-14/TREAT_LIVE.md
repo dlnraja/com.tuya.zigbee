@@ -17,12 +17,23 @@ Silent code/CI only. No forum POST.
 
 1. **#2262 pairing**: `motion_sensor_radar_mmwave` required `[0,3,4,5,1024,1280,16384,57346,61184]` — EF00 MCU interview lacks ZCL lux/IAS/0xE002 → Homey no-match → virtual socket. Softened to Basic `[0]` + soft EF00 bind.
 2. **#2258 cartesian**: `water_leak_sensor` listed AOYAN + TS0601 → false couple vs soil `AOYAN`+`AY-303Z`. AOYAN removed from water_leak.
+3. **#2262 DP deep (P2818)**: ZHA#5286 vs old Z2M — DP9=PIR sensitivity, DP12=pir_delay, DP102=temp_compensate. Stopped writing DP102 as fading_time (corrupts calibration).
+4. **#2261 ANTIK**: retail TV02-class (manual InS/AdA); `fl8cuafl` soft ME167 on `device_radiator_valve` until live DP sniff.
+
+## Alt sources (concrete for this app)
+
+| Source | Couple | Takeaway applied |
+|--------|--------|------------------|
+| ZHA#5286 | gnpflcoq+TS0601 | Correct DP9/12/102 |
+| Z2M device page | gnpflcoq | Still shows old fading_time@102 — we prefer ZHA corrected |
+| ANTIK manual ATK-TRV02 | fl8cuafl | TV02-class UI → TRV driver |
+| Z2M TV02-Zigbee whitelist | (no fl8 yet) | Placement only; soft ME167 ÷10 |
 
 ## Gates
 
-- `npm run check:p2812` / `check:p2817` / `check:p2815`
-- Dual-app: **BOTH** (pairing reliability)
+- `npm run check:p2812` / `check:p2817` / `check:p2818` / `check:p2815`
+- Dual-app: **BOTH** (pairing + DP reliability)
 
 ## User ask (silent)
 
-- Update Universal Test ≥**9.0.1462**, remove+re-pair gnpflcoq / AOYAN / fl8cuafl if still virtual.
+- Update Universal Test ≥**9.0.1464**, remove+re-pair gnpflcoq / AOYAN / fl8cuafl if still virtual.
