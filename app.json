@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1464",
+  "version": "9.0.1465",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -143205,7 +143205,6 @@
           "_tze284_2se8efxh",
           "_tze284_7trh4ihp",
           "_tze284_xuv7ptg0",
-          "aoyan",
           "hobeian",
           "lumi.sensor_wleak",
           "lumi.sensor_wleak.aq1",
@@ -143222,8 +143221,6 @@
           "_TZE284_2se8efxh",
           "_TZE284_7trh4ihp",
           "_TZE284_xuv7ptg0",
-          "AOYAN",
-          "AOYAN  ",
           "HOBEIAN",
           "LUMI.SENSOR_WLEAK",
           "LUMI.SENSOR_WLEAK.AQ1",
@@ -143262,7 +143259,6 @@
           "_tze284_XUV7PTG0",
           "_tze204_JTHF7VB6",
           "_tze284_JTHF7VB6",
-          "Aoyan",
           "Lumi.sensor_wleak",
           "Lumi.sensor_wleak.aq1",
           "_TZ3000_bzt33cyu",
