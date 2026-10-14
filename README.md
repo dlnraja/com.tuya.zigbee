@@ -15,7 +15,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 - Case-insensitive fingerprint matching so pairing is reliable across OEM variants
 - Battery curves by chemistry (no linear `%` guesses)
 - Flow cards for physical buttons, sensors, and actuators (EN, FR, NL, DE)
-- Optional native Zigbee OTA for 10 drivers (Homey v13.2.0+)
+- Optional native Zigbee OTA for 9 drivers (Homey v13.2.0+)
 
 ---
 
@@ -33,14 +33,14 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1469 |
+| **App Version** | v9.0.1470 |
 | **Drivers** | 449 (396 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,776 |
 | **Pairing Variants** | 19,179 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 906 |
 | **Flow Cards** | 6,105 |
 | **Unique Capabilities** | 176 |
-| **Native OTA Drivers** | 10 |
+| **Native OTA Drivers** | 9 |
 | **Test Suites** | 644 files |
 | **SVG Icons** | 752 |
 | **Languages** | EN, FR, NL, DE |
@@ -103,6 +103,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1470** | TRV me167 DP4 fix + drop misattributed plug_smart OTA (P2822). |
 | **v9.0.1469** | TRV me167 DP4 no longer steals battery; settings spinner dual fallback (P2822). |
 | **v9.0.1468** | Forum fleet silent treat: sacred-keep pins + forbid cartesian invent couples (P2821). |
 | **v9.0.1467** | Z2M/ZHA/quirks couple recheck: wrong-class moves + missing FP (P2820). |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1461** | Fixed multi-button release Flow cards and TRV DP received trigger. |
 | **v9.0.1460** | Soil sensors matched by manufacturer+model couple (QT-07S, AOYAN, HOBEIAN). |
 | **v9.0.1459** | v9.0.1459: automated publish, manifest sync, and Homey test promotion. |
-| **v9.0.1458** | Soil sensor: remove misrouted smoke fingerprint from soil driver. |
 
 <!-- CHANGELOG_END -->
 
