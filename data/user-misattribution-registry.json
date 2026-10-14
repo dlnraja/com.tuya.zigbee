@@ -68,7 +68,10 @@
           "static": true,
           "dynamic": false
         }
-      }
+      },
+      "idNote": "Legacy id kept for test/history references; the case resolves TO switch_2gang (canonicalDriver). Read the id as: not 1/3/4-gang, not button_wireless_plug.",
+      "recheck20261012": "Re-verified online: Z2M tuya.ts TS0601_switch_2_gang (Koenkk/zigbee-herdsman-converters) and ZHA ts0601_switch.py TuyaDoubleSwitchTO (zigpy/zha-device-handlers) both list _TZE200_nkjintbl/TS0601 as a 2-gang switch. Anti-bot gate green on master and stable-v5; placement unchanged.",
+      "recheck20261013": "Re-verified: Z2M tuya.ts TS0601_switch_2_gang + ZHA ts0601_switch.py still list _TZE200_nkjintbl/TS0601 as 2-gang. Compose sole owner switch_2gang on all three apps. Cleared leftover BlitzWolf sensor-map bleed in plug device.js files. Anti-bot green."
     },
     {
       "id": "p2605b-nkjintbl-tze284-ambiguous",
@@ -4157,7 +4160,12 @@
     {
       "id": "p2270-gnpflcoq-4in1-mmwave",
       "mfr": [
-        "_TZE284_gnpflcoq"
+        "_TZE284_gnpflcoq",
+        "_TZE200_gnpflcoq",
+        "_TZE204_gnpflcoq",
+        "_tze284_gnpflcoq",
+        "_tze200_gnpflcoq",
+        "_tze204_gnpflcoq"
       ],
       "productId": [
         "TS0601"
@@ -4170,10 +4178,12 @@
       ],
       "forbidMode": "couple",
       "protocol": "tuya_dp",
-      "notes": "ZHA#5252 4in1 — DP1 presence inverted (0=occupied). Prefer mmwave driver.",
+      "notes": "ZHA#5252/#5286 + forum#2262 Istvan Mag 4in1 — DP1 presence inverted (0=occupied). Canonical motion_sensor_radar_mmwave only.",
       "sources": [
         "zha-device-handlers#5252",
-        "P2270"
+        "P2270",
+        "forum-t140352-2262",
+        "P2812"
       ],
       "tracks": {
         "master": {
@@ -9013,6 +9023,47 @@
       "protocol": "zcl",
       "source": "Johan 2 Gang Wall Switch; romasku BSEED TS0012 (ledger wrongly had TS0002/1gang)",
       "notes": "2026-10-11 one-source Johan (+Z2M/ZHA where noted)"
+    },
+    {
+      "id": "p2813-fl8cuafl-antik-trv02",
+      "mfr": [
+        "_TZE200_fl8cuafl",
+        "_TZE204_fl8cuafl",
+        "_TZE284_fl8cuafl",
+        "_tze200_fl8cuafl",
+        "_tze204_fl8cuafl",
+        "_tze284_fl8cuafl"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "device_radiator_valve",
+      "forbiddenDrivers": [
+        "socket",
+        "plug",
+        "smart_plug",
+        "climate_sensor",
+        "zigbee_universal",
+        "generic_tuya"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "Forum#2261 marosk ANTIK ATK-TRV02 — paired as virtual socket; fingerprint → device_radiator_valve Profile A until Z2M DP map proven.",
+      "sources": [
+        "forum-t140352-2261",
+        "user-dev-tools",
+        "P2813"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": true
+        }
+      }
     }
   ],
   "entries": {
