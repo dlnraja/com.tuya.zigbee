@@ -1579,6 +1579,42 @@
       "pid": "TS0601",
       "driverId": "device_radiator_valve",
       "note": "#560 EARU TRV06 ME167 DP profile"
+    },
+    {
+      "mfr": "_TZE284_gnpflcoq",
+      "pid": "TS0601",
+      "driverId": "motion_sensor_radar_mmwave",
+      "note": "P2812 forum#2262 4in1 mmWave"
+    },
+    {
+      "mfr": "_TZE200_gnpflcoq",
+      "pid": "TS0601",
+      "driverId": "motion_sensor_radar_mmwave",
+      "note": "P2812 gnpflcoq TZE200 sibling"
+    },
+    {
+      "mfr": "_TZE204_gnpflcoq",
+      "pid": "TS0601",
+      "driverId": "motion_sensor_radar_mmwave",
+      "note": "P2812 gnpflcoq TZE204 sibling"
+    },
+    {
+      "mfr": "_TZE200_fl8cuafl",
+      "pid": "TS0601",
+      "driverId": "device_radiator_valve",
+      "note": "P2813 forum#2261 ANTIK ATK-TRV02"
+    },
+    {
+      "mfr": "_TZE204_fl8cuafl",
+      "pid": "TS0601",
+      "driverId": "device_radiator_valve",
+      "note": "P2813 fl8cuafl TZE204 sibling"
+    },
+    {
+      "mfr": "_TZE284_fl8cuafl",
+      "pid": "TS0601",
+      "driverId": "device_radiator_valve",
+      "note": "P2813 fl8cuafl TZE284 sibling"
     }
   ]
 }

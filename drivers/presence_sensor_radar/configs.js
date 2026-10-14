@@ -742,6 +742,9 @@ const SENSOR_CONFIGS = {
     }
   },
 
+  // WHY(P2812 / #2262): _TZE*_gnpflcoq+TS0601 lives on motion_sensor_radar_mmwave (P2270/P2271),
+  // not presence_sensor_radar — registry forbidMode couple. DP map stays in mmwave device.js.
+
   // DEFAULT fallback — safe generic radar config (multi-zone only on dedicated profiles)
   'DEFAULT': {
     sensors: [],
