@@ -1024,21 +1024,21 @@
       } catch (eSched) {}
     }
     try { window.onHomeyReady = onHomeyReady; } catch (eWin) {}
-    // WHY(P2814 / #571 Configure spinner): if Homey never invokes onHomeyReady
-    // (app bridge lag / Pro mini), dismiss spinner after 2.5s when Homey exists.
-    try {
-      setTimeout(function () {
-        if (__settingsReadyDone) return;
-        try {
-          var h = window.Homey;
-          if (h && typeof h.ready === 'function') {
-            h.ready();
-            __settingsReadyDone = true;
-            try { bootSettingsUi(h); } catch (eBoot2) { console.error('settings boot fallback', eBoot2); }
-          }
-        } catch (eFb) { console.error('settings ready fallback', eFb); }
-      }, 2500);
-    } catch (eSchedFb) {}
+    // WHY(P2814 / P2822 / #571 Configure spinner): if Homey never invokes onHomeyReady
+    // (app bridge lag / Pro mini), dismiss spinner ASAP when Homey exists — dual retry.
+    function __trySettingsReadyFallback() {
+      if (__settingsReadyDone) return;
+      try {
+        var h = window.Homey;
+        if (h && typeof h.ready === 'function') {
+          h.ready();
+          __settingsReadyDone = true;
+          try { bootSettingsUi(h); } catch (eBoot2) { console.error('settings boot fallback', eBoot2); }
+        }
+      } catch (eFb) { console.error('settings ready fallback', eFb); }
+    }
+    try { setTimeout(__trySettingsReadyFallback, 800); } catch (eSchedFb1) {}
+    try { setTimeout(__trySettingsReadyFallback, 2500); } catch (eSchedFb2) {}
   </script>
 </body>
 </html>
