@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-13T11:04:07.364Z",
+  "generated": "2026-10-14T09:01:29.295Z",
   "source": "data/leads/johan-canonical-index.json",
   "repo": "JohanBendz/com.tuya.zigbee",
   "note": "Acceptance view, structured fields only. missing-couple = identity cited upstream with no home driver here (verify real hardware before adding, W4). behaviour = needs physical test, not a pairing gap.",
@@ -7,16 +7,15 @@
     "threads": 562,
     "covered": 441,
     "behaviour": 94,
-    "missing-couple": 8,
-    "dual-couple": 19,
-    "missingCouples": 6
+    "missing-couple": 7,
+    "dual-couple": 20,
+    "missingCouples": 5
   },
   "missingCouples": [
     "_TYZB01_0aps0h1r|TS0212",
     "_TYZB01_o7m83470|TS0212",
     "_TZ3000_5ftkaulg|TS0011",
     "_TZ3000_amal63is|TS0002",
-    "_TZ3000_mvvw8wnx|TS0001",
     "_TZB210_rkgngb5o|EP1"
   ],
   "rows": [
@@ -287,7 +286,9 @@
         {
           "mfr": "_TZ3000_mvvw8wnx",
           "pid": "TS0001",
-          "drivers": []
+          "drivers": [
+            "switch_zbeacon_ts0001"
+          ]
         },
         {
           "mfr": "_TZ3000_keayt8ol",
@@ -10377,10 +10378,12 @@
         {
           "mfr": "_TZ3000_mvvw8wnx",
           "pid": "TS0001",
-          "drivers": []
+          "drivers": [
+            "switch_zbeacon_ts0001"
+          ]
         }
       ],
-      "acceptance": "missing-couple"
+      "acceptance": "dual-couple"
     },
     {
       "n": 1367,
