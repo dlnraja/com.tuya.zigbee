@@ -52,26 +52,16 @@
       "_tze284_GNPFLCOQ",
       "_TZ3218_t9ynfz4x",
       "_TZE200_gnpflcoq",
-      "_TZE204_gnpflcoq"
+      "_TZE204_gnpflcoq",
+      "_tze200_gnpflcoq",
+      "_tze204_gnpflcoq"
     ],
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          3,
-          4,
-          5,
-          1024,
-          1280,
-          16384,
-          57346,
-          61184
+          0
         ],
         "bindings": [
-          3,
-          1024,
-          1280,
-          57346,
           61184
         ]
       }
