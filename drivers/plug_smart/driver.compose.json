@@ -776,33 +776,5 @@
   },
   "ui": {
     "quickAction": "onoff"
-  },
-  "firmwareUpdates": {
-    "updates": [
-      {
-        "changelog": {
-          "en": "OEM Zigbee firmware v77 (Koenkk zigbee-OTA, SHA512-verified). Install via Homey Device Updates (Settings → Device Updates) on Homey ≥13.2 / Mobile ≥9.10.",
-          "fr": "Firmware Zigbee OEM v77 (Koenkk zigbee-OTA, SHA512 vérifié). Installez via Homey Device Updates (Réglages → Device Updates) — Homey ≥13.2 / Mobile ≥9.10."
-        },
-        "device": {
-          "manufacturerName": [
-            "_TZE200_2se8efxh"
-          ],
-          "productId": [
-            "TS0601"
-          ]
-        },
-        "files": [
-          {
-            "fileVersion": 77,
-            "imageType": 54179,
-            "manufacturerCode": 4417,
-            "size": 232066,
-            "name": "1715138033-tk_common_link_lp_OTA_1.0.13.bin",
-            "integrity": "sha256:3c8fcfd10cb97a7be528c362ed2acec43610d31f3a9a45cff8a62e0ecbde39ca"
-          }
-        ]
-      }
-    ]
   }
 }
