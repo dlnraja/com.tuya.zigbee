@@ -3834,6 +3834,22 @@
         "usb_outlet_advanced"
       ],
       "note": "P2820 dual"
+    },
+    {
+      "key": "_tyzb01_mtunwanm|TS011F",
+      "drivers": [
+        "plug_smart",
+        "socket_power_strip_four_three"
+      ],
+      "note": "P2820 stable"
+    },
+    {
+      "key": "_tyzb01_mtunwanm|TS0601",
+      "drivers": [
+        "plug_smart",
+        "socket_power_strip_four_three"
+      ],
+      "note": "P2820 stable"
     }
   ]
 }
