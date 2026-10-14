@@ -1,0 +1,1137 @@
+{
+  "applied": true,
+  "generatedAt": "2026-10-14T11:07:20.550Z",
+  "moveCount": 53,
+  "driversTouched": [
+    "switch_1gang",
+    "button_wireless_2",
+    "socket_power_strip",
+    "water_valve_smart",
+    "button_wireless_4",
+    "plug_smart",
+    "garage_door_opener",
+    "sensor_contact_zigbee",
+    "curtain_motor",
+    "presence_sensor_radar",
+    "soil_sensor",
+    "switch_wireless",
+    "air_quality_comprehensive",
+    "button_emergency_sos",
+    "light_rgbcct_ts0505b",
+    "light_bulb_rgb",
+    "device_radiator_valve",
+    "switch_wall_8gang",
+    "relay_board_4_channel",
+    "usb_outlet_advanced",
+    "switch_2gang"
+  ],
+  "plan": [
+    {
+      "mfr": "_TZ3000_npzfdcof",
+      "pid": "TS0001",
+      "add": "switch_1gang",
+      "remove": [
+        "button_wireless_2"
+      ],
+      "actions": [
+        {
+          "driver": "switch_1gang",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 1480,
+          "mfrCountAfter": 1482
+        },
+        {
+          "driver": "button_wireless_2",
+          "op": "remove",
+          "removed": 4
+        }
+      ]
+    },
+    {
+      "mfr": "_TZ3000_rmjr4ufz",
+      "pid": "TS0001",
+      "add": "switch_1gang",
+      "remove": [
+        "button_wireless_2"
+      ],
+      "actions": [
+        {
+          "driver": "switch_1gang",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 1482,
+          "mfrCountAfter": 1484
+        },
+        {
+          "driver": "button_wireless_2",
+          "op": "remove",
+          "removed": 4
+        }
+      ]
+    },
+    {
+      "mfr": "_TZ3000_mx3vgyea",
+      "pid": "TS0001",
+      "add": "switch_1gang",
+      "remove": [
+        "button_wireless_2"
+      ],
+      "actions": [
+        {
+          "driver": "switch_1gang",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 1484,
+          "mfrCountAfter": 1486
+        },
+        {
+          "driver": "button_wireless_2",
+          "op": "remove",
+          "removed": 4
+        }
+      ]
+    },
+    {
+      "mfr": "_TZ3000_npzfdcof",
+      "pid": "TS000F",
+      "add": "switch_1gang",
+      "remove": [
+        "button_wireless_2"
+      ],
+      "actions": [
+        {
+          "driver": "switch_1gang",
+          "op": "add",
+          "addedM": 0,
+          "addedP": 0,
+          "mfrCountBefore": 1486,
+          "mfrCountAfter": 1486
+        },
+        {
+          "driver": "button_wireless_2",
+          "op": "remove",
+          "removed": 0
+        }
+      ]
+    },
+    {
+      "mfr": "_TZ3000_rmjr4ufz",
+      "pid": "TS000F",
+      "add": "switch_1gang",
+      "remove": [
+        "button_wireless_2"
+      ],
+      "actions": [
+        {
+          "driver": "switch_1gang",
+          "op": "add",
+          "addedM": 0,
+          "addedP": 0,
+          "mfrCountBefore": 1486,
+          "mfrCountAfter": 1486
+        },
+        {
+          "driver": "button_wireless_2",
+          "op": "remove",
+          "removed": 0
+        }
+      ]
+    },
+    {
+      "mfr": "_TZ3000_mx3vgyea",
+      "pid": "TS000F",
+      "add": "switch_1gang",
+      "remove": [
+        "button_wireless_2"
+      ],
+      "actions": [
+        {
+          "driver": "switch_1gang",
+          "op": "add",
+          "addedM": 0,
+          "addedP": 0,
+          "mfrCountBefore": 1486,
+          "mfrCountAfter": 1486
+        },
+        {
+          "driver": "button_wireless_2",
+          "op": "remove",
+          "removed": 0
+        }
+      ]
+    },
+    {
+      "mfr": "_TZ3000_o005nuxx",
+      "pid": "TS011F",
+      "add": "socket_power_strip",
+      "remove": [
+        "button_wireless_2"
+      ],
+      "actions": [
+        {
+          "driver": "socket_power_strip",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 20,
+          "mfrCountAfter": 22
+        },
+        {
+          "driver": "button_wireless_2",
+          "op": "remove",
+          "removed": 4
+        }
+      ]
+    },
+    {
+      "mfr": "_TZE200_hbnfokum",
+      "pid": "TS0601",
+      "add": "water_valve_smart",
+      "remove": [
+        "button_wireless_4"
+      ],
+      "actions": [
+        {
+          "driver": "water_valve_smart",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 96,
+          "mfrCountAfter": 98
+        },
+        {
+          "driver": "button_wireless_4",
+          "op": "remove",
+          "removed": 4
+        }
+      ]
+    },
+    {
+      "mfr": "_TZ3000_mvn6jl7x",
+      "pid": "TS011F",
+      "add": "plug_smart",
+      "remove": [
+        "switch_1gang"
+      ],
+      "actions": [
+        {
+          "driver": "plug_smart",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 35,
+          "mfrCountAfter": 37
+        },
+        {
+          "driver": "switch_1gang",
+          "op": "remove",
+          "removed": 4
+        }
+      ]
+    },
+    {
+      "mfr": "_TZ3000_raviyuvk",
+      "pid": "TS011F",
+      "add": "plug_smart",
+      "remove": [
+        "switch_1gang"
+      ],
+      "actions": [
+        {
+          "driver": "plug_smart",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 37,
+          "mfrCountAfter": 39
+        },
+        {
+          "driver": "switch_1gang",
+          "op": "remove",
+          "removed": 4
+        }
+      ]
+    },
+    {
+      "mfr": "_TZ3000_92qd4sqa",
+      "pid": "TS011F",
+      "add": "plug_smart",
+      "remove": [
+        "switch_1gang"
+      ],
+      "actions": [
+        {
+          "driver": "plug_smart",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 39,
+          "mfrCountAfter": 41
+        },
+        {
+          "driver": "switch_1gang",
+          "op": "remove",
+          "removed": 4
+        }
+      ]
+    },
+    {
+      "mfr": "_TZ3000_zwaadvus",
+      "pid": "TS011F",
+      "add": "plug_smart",
+      "remove": [
+        "switch_1gang"
+      ],
+      "actions": [
+        {
+          "driver": "plug_smart",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 41,
+          "mfrCountAfter": 43
+        },
+        {
+          "driver": "switch_1gang",
+          "op": "remove",
+          "removed": 4
+        }
+      ]
+    },
+    {
+      "mfr": "_TZ3000_6s5dc9lx",
+      "pid": "TS011F",
+      "add": "plug_smart",
+      "remove": [
+        "switch_1gang"
+      ],
+      "actions": [
+        {
+          "driver": "plug_smart",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 43,
+          "mfrCountAfter": 45
+        },
+        {
+          "driver": "switch_1gang",
+          "op": "remove",
+          "removed": 4
+        }
+      ]
+    },
+    {
+      "mfr": "_TZ3000_helyqdvs",
+      "pid": "TS011F",
+      "add": "plug_smart",
+      "remove": [
+        "switch_1gang"
+      ],
+      "actions": [
+        {
+          "driver": "plug_smart",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 45,
+          "mfrCountAfter": 47
+        },
+        {
+          "driver": "switch_1gang",
+          "op": "remove",
+          "removed": 4
+        }
+      ]
+    },
+    {
+      "mfr": "_TZ3000_qlmnxmac",
+      "pid": "TS011F",
+      "add": "plug_smart",
+      "remove": [
+        "switch_1gang"
+      ],
+      "actions": [
+        {
+          "driver": "plug_smart",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 47,
+          "mfrCountAfter": 49
+        },
+        {
+          "driver": "switch_1gang",
+          "op": "remove",
+          "removed": 4
+        }
+      ]
+    },
+    {
+      "mfr": "_TZ3000_sgb0xhwn",
+      "pid": "TS011F",
+      "add": "plug_smart",
+      "remove": [
+        "switch_1gang"
+      ],
+      "actions": [
+        {
+          "driver": "plug_smart",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 49,
+          "mfrCountAfter": 51
+        },
+        {
+          "driver": "switch_1gang",
+          "op": "remove",
+          "removed": 4
+        }
+      ]
+    },
+    {
+      "mfr": "_TZ3210_sgb0xhwn",
+      "pid": "TS011F",
+      "add": "plug_smart",
+      "remove": [
+        "switch_1gang"
+      ],
+      "actions": [
+        {
+          "driver": "plug_smart",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 51,
+          "mfrCountAfter": 53
+        },
+        {
+          "driver": "switch_1gang",
+          "op": "remove",
+          "removed": 4
+        }
+      ]
+    },
+    {
+      "mfr": "_TZ3210_2dfy6tol",
+      "pid": "TS0101",
+      "add": "plug_smart",
+      "remove": [
+        "switch_1gang"
+      ],
+      "actions": [
+        {
+          "driver": "plug_smart",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 53,
+          "mfrCountAfter": 55
+        },
+        {
+          "driver": "switch_1gang",
+          "op": "remove",
+          "removed": 4
+        }
+      ]
+    },
+    {
+      "mfr": "_TZ3000_uyrhiafs",
+      "pid": "TS011F",
+      "add": "plug_smart",
+      "remove": [
+        "switch_1gang"
+      ],
+      "actions": [
+        {
+          "driver": "plug_smart",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 55,
+          "mfrCountAfter": 57
+        },
+        {
+          "driver": "switch_1gang",
+          "op": "remove",
+          "removed": 4
+        }
+      ]
+    },
+    {
+      "mfr": "_TYZB01_ijihzffk",
+      "pid": "TS0101",
+      "add": "plug_smart",
+      "remove": [
+        "switch_1gang"
+      ],
+      "actions": [
+        {
+          "driver": "plug_smart",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 57,
+          "mfrCountAfter": 59
+        },
+        {
+          "driver": "switch_1gang",
+          "op": "remove",
+          "removed": 4
+        }
+      ]
+    },
+    {
+      "mfr": "_TZE204_jktmrpoj",
+      "pid": "TS0601",
+      "add": "garage_door_opener",
+      "remove": [
+        "sensor_contact_zigbee"
+      ],
+      "actions": [
+        {
+          "driver": "garage_door_opener",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 44,
+          "mfrCountAfter": 46
+        },
+        {
+          "driver": "sensor_contact_zigbee",
+          "op": "remove",
+          "removed": 4
+        }
+      ]
+    },
+    {
+      "mfr": "_TZE284_nklqjk62",
+      "pid": "TS0601",
+      "add": "garage_door_opener",
+      "remove": [
+        "sensor_contact_zigbee"
+      ],
+      "actions": [
+        {
+          "driver": "garage_door_opener",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 46,
+          "mfrCountAfter": 48
+        },
+        {
+          "driver": "sensor_contact_zigbee",
+          "op": "remove",
+          "removed": 4
+        }
+      ]
+    },
+    {
+      "mfr": "_TZE204_ycke4deo",
+      "pid": "TS0601",
+      "add": "curtain_motor",
+      "remove": [
+        "presence_sensor_radar"
+      ],
+      "actions": [
+        {
+          "driver": "curtain_motor",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 1088,
+          "mfrCountAfter": 1090
+        },
+        {
+          "driver": "presence_sensor_radar",
+          "op": "remove",
+          "removed": 4
+        }
+      ]
+    },
+    {
+      "mfr": "_TZE200_ga1maeof",
+      "pid": "TS0601",
+      "add": "soil_sensor",
+      "remove": [
+        "switch_wireless"
+      ],
+      "actions": [
+        {
+          "driver": "soil_sensor",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 283,
+          "mfrCountAfter": 285
+        },
+        {
+          "driver": "switch_wireless",
+          "op": "remove",
+          "removed": 4
+        }
+      ]
+    },
+    {
+      "mfr": "_TZE200_2se8efxh",
+      "pid": "TS0601",
+      "add": "soil_sensor",
+      "remove": [
+        "plug_smart"
+      ],
+      "actions": [
+        {
+          "driver": "soil_sensor",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 285,
+          "mfrCountAfter": 287
+        },
+        {
+          "driver": "plug_smart",
+          "op": "remove",
+          "removed": 4
+        }
+      ]
+    },
+    {
+      "mfr": "_TZE284_5qfrnbqs",
+      "pid": "TS0601",
+      "add": "presence_sensor_radar",
+      "remove": [],
+      "actions": [
+        {
+          "driver": "presence_sensor_radar",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 991,
+          "mfrCountAfter": 993
+        }
+      ]
+    },
+    {
+      "mfr": "_TZE204_dak2k10o",
+      "pid": "TS0601",
+      "add": "air_quality_comprehensive",
+      "remove": [],
+      "actions": [
+        {
+          "driver": "air_quality_comprehensive",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 28,
+          "mfrCountAfter": 30
+        }
+      ]
+    },
+    {
+      "mfr": "_TZE284_xc7dve2g",
+      "pid": "TS0601",
+      "add": "button_emergency_sos",
+      "remove": [],
+      "actions": [
+        {
+          "driver": "button_emergency_sos",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 122,
+          "mfrCountAfter": 124
+        }
+      ]
+    },
+    {
+      "mfr": "_TZ3210_ffuna0nr",
+      "pid": "TS0505B",
+      "add": "light_rgbcct_ts0505b",
+      "remove": [],
+      "actions": [
+        {
+          "driver": "light_rgbcct_ts0505b",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 20,
+          "mfrCountAfter": 22
+        }
+      ]
+    },
+    {
+      "mfr": "_TZ3210_rbixajyp",
+      "pid": "TS0503B",
+      "add": "light_bulb_rgb",
+      "remove": [],
+      "actions": [
+        {
+          "driver": "light_bulb_rgb",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 56,
+          "mfrCountAfter": 58
+        }
+      ]
+    },
+    {
+      "mfr": "_TZ3210_w7ge4ldo",
+      "pid": "TS0503B",
+      "add": "light_bulb_rgb",
+      "remove": [],
+      "actions": [
+        {
+          "driver": "light_bulb_rgb",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 58,
+          "mfrCountAfter": 60
+        }
+      ]
+    },
+    {
+      "mfr": "_TZE204_wsek35um",
+      "pid": "TS0601",
+      "add": "device_radiator_valve",
+      "remove": [],
+      "actions": [
+        {
+          "driver": "device_radiator_valve",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 371,
+          "mfrCountAfter": 373
+        }
+      ]
+    },
+    {
+      "mfr": "_TZE284_adlblwab",
+      "pid": "TS0601",
+      "add": "switch_wall_8gang",
+      "remove": [],
+      "actions": [
+        {
+          "driver": "switch_wall_8gang",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 18,
+          "mfrCountAfter": 20
+        }
+      ]
+    },
+    {
+      "mfr": "_TZE204_m9dzckna",
+      "pid": "TS0601",
+      "add": "relay_board_4_channel",
+      "remove": [],
+      "actions": [
+        {
+          "driver": "relay_board_4_channel",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 1,
+          "mfrCountBefore": 12,
+          "mfrCountAfter": 14
+        }
+      ]
+    },
+    {
+      "mfr": "_TZ3000_5ucujjts",
+      "pid": "TS0001",
+      "add": "switch_1gang",
+      "remove": [
+        "button_wireless_2"
+      ],
+      "actions": [
+        {
+          "driver": "switch_1gang",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 1438,
+          "mfrCountAfter": 1440
+        },
+        {
+          "driver": "button_wireless_2",
+          "op": "remove",
+          "removed": 4
+        }
+      ]
+    },
+    {
+      "mfr": "_TZ3000_5ucujjts",
+      "pid": "TS0011",
+      "add": "switch_1gang",
+      "remove": [
+        "button_wireless_2"
+      ],
+      "actions": [
+        {
+          "driver": "switch_1gang",
+          "op": "add",
+          "addedM": 0,
+          "addedP": 0,
+          "mfrCountBefore": 1440,
+          "mfrCountAfter": 1440
+        },
+        {
+          "driver": "button_wireless_2",
+          "op": "remove",
+          "removed": 0
+        }
+      ]
+    },
+    {
+      "mfr": "_TZ3000_5ucujjts",
+      "pid": "TS011F",
+      "add": "plug_smart",
+      "remove": [
+        "button_wireless_2"
+      ],
+      "actions": [
+        {
+          "driver": "plug_smart",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 55,
+          "mfrCountAfter": 57
+        },
+        {
+          "driver": "button_wireless_2",
+          "op": "remove",
+          "removed": 0
+        }
+      ]
+    },
+    {
+      "mfr": "_TZ3000_w0ypwa1f",
+      "pid": "TS0001",
+      "add": "switch_1gang",
+      "remove": [
+        "button_wireless_2"
+      ],
+      "actions": [
+        {
+          "driver": "switch_1gang",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 1440,
+          "mfrCountAfter": 1442
+        },
+        {
+          "driver": "button_wireless_2",
+          "op": "remove",
+          "removed": 4
+        }
+      ]
+    },
+    {
+      "mfr": "_TZ3000_w0ypwa1f",
+      "pid": "TS0011",
+      "add": "switch_1gang",
+      "remove": [
+        "button_wireless_2"
+      ],
+      "actions": [
+        {
+          "driver": "switch_1gang",
+          "op": "add",
+          "addedM": 0,
+          "addedP": 0,
+          "mfrCountBefore": 1442,
+          "mfrCountAfter": 1442
+        },
+        {
+          "driver": "button_wireless_2",
+          "op": "remove",
+          "removed": 0
+        }
+      ]
+    },
+    {
+      "mfr": "_TZ3000_w0ypwa1f",
+      "pid": "TS011F",
+      "add": "plug_smart",
+      "remove": [
+        "button_wireless_2"
+      ],
+      "actions": [
+        {
+          "driver": "plug_smart",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 57,
+          "mfrCountAfter": 59
+        },
+        {
+          "driver": "button_wireless_2",
+          "op": "remove",
+          "removed": 0
+        }
+      ]
+    },
+    {
+      "mfr": "_TZE204_m5r5nlxc",
+      "pid": "TS0601",
+      "add": "device_radiator_valve",
+      "remove": [
+        "button_wireless_2"
+      ],
+      "actions": [
+        {
+          "driver": "device_radiator_valve",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 373,
+          "mfrCountAfter": 375
+        },
+        {
+          "driver": "button_wireless_2",
+          "op": "remove",
+          "removed": 4
+        }
+      ]
+    },
+    {
+      "mfr": "_TZE284_bw4ayyeh",
+      "pid": "TS0601",
+      "add": "presence_sensor_radar",
+      "remove": [
+        "button_wireless_4"
+      ],
+      "actions": [
+        {
+          "driver": "presence_sensor_radar",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 993,
+          "mfrCountAfter": 995
+        },
+        {
+          "driver": "button_wireless_4",
+          "op": "remove",
+          "removed": 4
+        }
+      ]
+    },
+    {
+      "mfr": "_TZ3000_3zofvcaa",
+      "pid": "TS011F",
+      "add": "usb_outlet_advanced",
+      "remove": [],
+      "actions": [
+        {
+          "driver": "usb_outlet_advanced",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 76,
+          "mfrCountAfter": 78
+        }
+      ]
+    },
+    {
+      "mfr": "_TZ3000_pvlvoxvt",
+      "pid": "TS011F",
+      "add": "usb_outlet_advanced",
+      "remove": [],
+      "actions": [
+        {
+          "driver": "usb_outlet_advanced",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 78,
+          "mfrCountAfter": 80
+        }
+      ]
+    },
+    {
+      "mfr": "_TZ3000_lqb7lcq9",
+      "pid": "TS011F",
+      "add": "usb_outlet_advanced",
+      "remove": [],
+      "actions": [
+        {
+          "driver": "usb_outlet_advanced",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 80,
+          "mfrCountAfter": 82
+        }
+      ]
+    },
+    {
+      "mfr": "_TZ3210_lqb7lcq9",
+      "pid": "TS011F",
+      "add": "usb_outlet_advanced",
+      "remove": [],
+      "actions": [
+        {
+          "driver": "usb_outlet_advanced",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 82,
+          "mfrCountAfter": 84
+        }
+      ]
+    },
+    {
+      "mfr": "_TZ3210_urjf5u18",
+      "pid": "TS011F",
+      "add": "usb_outlet_advanced",
+      "remove": [],
+      "actions": [
+        {
+          "driver": "usb_outlet_advanced",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 84,
+          "mfrCountAfter": 86
+        }
+      ]
+    },
+    {
+      "mfr": "_TZ3210_8n4dn1ne",
+      "pid": "TS011F",
+      "add": "usb_outlet_advanced",
+      "remove": [],
+      "actions": [
+        {
+          "driver": "usb_outlet_advanced",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 86,
+          "mfrCountAfter": 88
+        }
+      ]
+    },
+    {
+      "mfr": "_TZ3000_bep7ccew",
+      "pid": "TS011F",
+      "add": "plug_smart",
+      "remove": [
+        "switch_2gang"
+      ],
+      "actions": [
+        {
+          "driver": "plug_smart",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 59,
+          "mfrCountAfter": 61
+        },
+        {
+          "driver": "switch_2gang",
+          "op": "remove",
+          "removed": 4
+        }
+      ]
+    },
+    {
+      "mfr": "_TZ3000_dlug3kbc",
+      "pid": "TS011F",
+      "add": "plug_smart",
+      "remove": [
+        "switch_2gang"
+      ],
+      "actions": [
+        {
+          "driver": "plug_smart",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 61,
+          "mfrCountAfter": 63
+        },
+        {
+          "driver": "switch_2gang",
+          "op": "remove",
+          "removed": 4
+        }
+      ]
+    },
+    {
+      "mfr": "_TZ3000_gdyjfvgm",
+      "pid": "TS011F",
+      "add": "socket_power_strip",
+      "remove": [
+        "switch_2gang"
+      ],
+      "actions": [
+        {
+          "driver": "socket_power_strip",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 22,
+          "mfrCountAfter": 24
+        },
+        {
+          "driver": "switch_2gang",
+          "op": "remove",
+          "removed": 4
+        }
+      ]
+    },
+    {
+      "mfr": "_TYZB01_mtunwanm",
+      "pid": "TS011F",
+      "add": "plug_smart",
+      "remove": [],
+      "actions": [
+        {
+          "driver": "plug_smart",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 63,
+          "mfrCountAfter": 65
+        }
+      ]
+    },
+    {
+      "mfr": "_TZE284_4vbj3fxh",
+      "pid": "TS0601",
+      "add": "device_radiator_valve",
+      "remove": [
+        "button_wireless_4"
+      ],
+      "actions": [
+        {
+          "driver": "device_radiator_valve",
+          "op": "add",
+          "addedM": 2,
+          "addedP": 0,
+          "mfrCountBefore": 375,
+          "mfrCountAfter": 377
+        },
+        {
+          "driver": "button_wireless_4",
+          "op": "remove",
+          "removed": 4
+        }
+      ]
+    }
+  ]
+}

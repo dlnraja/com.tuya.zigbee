@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-14T08:17:26.908Z",
+  "generatedAt": "2026-10-14T11:07:45.449Z",
   "description": "Known historical fingerprint collisions. CI fails only for collisions not listed here.",
   "collisions": [
     {
@@ -6241,6 +6241,118 @@
         "doorwindowsensor_4",
         "plug_smart"
       ]
+    },
+    {
+      "key": "_tyzb01_mtunwanm|TS0002",
+      "drivers": [
+        "plug_smart",
+        "switch_2_gang"
+      ],
+      "note": "P2820 dual: in-wall outlet additive to plug_smart"
+    },
+    {
+      "key": "_tyzb01_mtunwanm|TS011F",
+      "drivers": [
+        "plug_smart",
+        "switch_2_gang"
+      ],
+      "note": "P2820 dual"
+    },
+    {
+      "key": "_tz3000_3zofvcaa|TS0002",
+      "drivers": [
+        "switch_usb_dongle",
+        "usb_outlet_advanced"
+      ],
+      "note": "P2820 dual USB outlet"
+    },
+    {
+      "key": "_tz3000_3zofvcaa|TS011F",
+      "drivers": [
+        "switch_usb_dongle",
+        "usb_outlet_advanced"
+      ],
+      "note": "P2820 dual"
+    },
+    {
+      "key": "_tz3000_lqb7lcq9|TS0002",
+      "drivers": [
+        "switch_usb_dongle",
+        "usb_outlet_advanced"
+      ],
+      "note": "P2820 dual"
+    },
+    {
+      "key": "_tz3000_lqb7lcq9|TS011F",
+      "drivers": [
+        "switch_usb_dongle",
+        "usb_outlet_advanced"
+      ],
+      "note": "P2820 dual"
+    },
+    {
+      "key": "_tz3000_pvlvoxvt|TS0002",
+      "drivers": [
+        "switch_usb_dongle",
+        "usb_outlet_advanced"
+      ],
+      "note": "P2820 dual"
+    },
+    {
+      "key": "_tz3000_pvlvoxvt|TS011F",
+      "drivers": [
+        "switch_usb_dongle",
+        "usb_outlet_advanced"
+      ],
+      "note": "P2820 dual"
+    },
+    {
+      "key": "_tz3210_8n4dn1ne|TS0002",
+      "drivers": [
+        "switch_usb_dongle",
+        "usb_outlet_advanced"
+      ],
+      "note": "P2820 dual"
+    },
+    {
+      "key": "_tz3210_8n4dn1ne|TS011F",
+      "drivers": [
+        "switch_usb_dongle",
+        "usb_outlet_advanced"
+      ],
+      "note": "P2820 dual"
+    },
+    {
+      "key": "_tz3210_lqb7lcq9|TS0002",
+      "drivers": [
+        "switch_usb_dongle",
+        "usb_outlet_advanced"
+      ],
+      "note": "P2820 dual"
+    },
+    {
+      "key": "_tz3210_lqb7lcq9|TS011F",
+      "drivers": [
+        "switch_usb_dongle",
+        "usb_outlet_advanced"
+      ],
+      "note": "P2820 dual"
+    },
+    {
+      "key": "_tz3210_urjf5u18|TS0002",
+      "drivers": [
+        "switch_usb_dongle",
+        "usb_outlet_advanced"
+      ],
+      "note": "P2820 dual"
+    },
+    {
+      "key": "_tz3210_urjf5u18|TS011F",
+      "drivers": [
+        "switch_usb_dongle",
+        "usb_outlet_advanced"
+      ],
+      "note": "P2820 dual"
     }
   ]
 }
