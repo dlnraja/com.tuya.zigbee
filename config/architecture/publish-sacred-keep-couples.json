@@ -1227,27 +1227,105 @@
       "note": "#100 2026-10-04 ZHA PR #5282 (Zosung TS1201 IR blaster family) — keep through publish compaction"
     },
     {
+      "mfr": "_TZE28C1000000_jlbsptkl",
+      "pid": "TS0601",
+      "driverId": "switch_presence_tuya",
+      "note": "#108 2026-10-04 ZHC tuya.ts presence wall switch — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE28C1000000_jaunkx9g",
+      "pid": "TS0601",
+      "driverId": "switch_presence_tuya",
+      "note": "#108 2026-10-04 ZHC tuya.ts presence wall switch — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE28C1000000_usmqzgdm",
+      "pid": "TS0601",
+      "driverId": "switch_presence_tuya",
+      "note": "#108 2026-10-04 ZHC tuya.ts presence wall switch — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE200_rgeapp2c",
+      "pid": "TS0601",
+      "driverId": "panel_switch_cover_tuya",
+      "note": "#109 2026-10-04 ZHC tuya.ts Semicom panel (relays + covers) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE204_r6kfl9ta",
+      "pid": "TS0601",
+      "driverId": "sound_sensor_tuya",
+      "note": "#100 2026-10-04 ZHC tuya.ts ZY-N1 sound sensor — keep through publish compaction"
+    },
+    {
       "mfr": "HEIMAN",
       "pid": "RC-EF-3.0",
       "driverId": "button_emergency_sos",
       "note": "PCr2-1 2026-10-04 ZHC heiman.ts HM1RC-2-E — keep through publish compaction"
     },
     {
+      "mfr": "_TZE204_8fffc3kb",
+      "pid": "TS0601",
+      "driverId": "led_controller_rgb",
+      "note": "#124 2026-10-04 Gledopto GL-SPI-206P (ZHC gledopto/tuya) DP61 frame — keep through publish compaction | folded into led_controller_rgb (SPI class via onMapDeviceClass) while held"
+    },
+    {
+      "mfr": "_TZE284_gt5al3bl",
+      "pid": "TS0601",
+      "driverId": "led_controller_rgb",
+      "note": "#124 2026-10-04 Gledopto GL-SPI-206P (ZHC gledopto/tuya) DP61 frame — keep through publish compaction | folded into led_controller_rgb (SPI class via onMapDeviceClass) while held"
+    },
+    {
       "mfr": "_TZ3000_skueekg3",
       "pid": "TS000F",
       "driverId": "switch_1gang",
-      "note": "WHD02 relay module (Z2M TS000F) — fold from master 2026-10-10; was on wall_switch_1gang_1way without TS000F (never matched)"
+      "note": "WHD02 (#2257-era, switch_module_whd02 held) folded into switch_1gang; keep through publish compaction"
+    },
+    {
+      "mfr": "_TZ3000_z6fgd73r",
+      "pid": "TS011F",
+      "driverId": "switch_1gang",
+      "note": "LELLKI XF-EU-S100-1-M 1-gang touch switch with power monitoring (Z2M lellki.ts, blakadder LELLKI_XF-EU-S100-1, wonjj6768 SmartThings zcl switches) — not a USB dongle"
+    },
+    {
+      "mfr": "_TYZB02_key8kk7r",
+      "pid": "TS0043",
+      "driverId": "button_wireless_3",
+      "note": "3-button remote: ZHA ts0043 TuyaSmartRemote0043NO + deCONZ Tuya3gangMap"
+    },
+    {
+      "mfr": "_TZ3000_rrjr1q0u",
+      "pid": "TS0043",
+      "driverId": "button_wireless_3",
+      "note": "3-button remote: deCONZ Tuya3gangMap + de_web_plugin switch list"
+    },
+    {
+      "mfr": "_TZ3000_mugyhz0q",
+      "pid": "TS0207",
+      "driverId": "water_leak_sensor",
+      "note": "Tuya 899WZ water leak detector (Z2M TS0207_water_leak_detector)"
+    },
+    {
+      "mfr": "_TZ3000_0s9gukzt",
+      "pid": "TS0207",
+      "driverId": "water_leak_sensor",
+      "note": "Nous E4 water leakage sensor (Z2M TS0207_water_leak_detector)"
+    },
+    {
+      "mfr": "_TZ3000_zl1kmjqx",
+      "pid": "TS0201",
+      "driverId": "climate_sensor",
+      "note": "temperature/humidity sensor RSH-HS06_1 / IH-K009 (Z2M tuya.ts, ZHA ty0201)"
     },
     {
       "mfr": "_TYZB01_ncutbjdi",
       "pid": "TS0003",
-      "driverId": "switch_1_gang",
+      "driverId": "switch_1gang",
       "note": "Lonsonho QS-Zigbee-S05-LN 1-gang module (Z2M lonsonho.ts: single onOff)"
     },
     {
       "mfr": "_TYZB01_aneiicmq",
       "pid": "TS0003",
-      "driverId": "switch_1_gang",
+      "driverId": "switch_1gang",
       "note": "BlitzWolf BW-SS7_1gang (Z2M blitzwolf.ts: single onOff)"
     },
     {
@@ -1297,6 +1375,12 @@
       "pid": "TS0201",
       "driverId": "temphumidsensor3",
       "note": "WSD500A temp-humidity (Z2M tuya.ts + deCONZ)"
+    },
+    {
+      "mfr": "_TZ3000_j0ktmul1",
+      "pid": "TS011F",
+      "driverId": "switch_4gang",
+      "note": "Folded 2026-10-11 (valve_controller_5zone held, gang 5 via GangCountAdapter). AutomatOn AUT000069 5-zone valves/UFH controller, 5 ZCL onOff endpoints (Z2M automaton.ts, PR #5579, z2m #16992; Z2S_Library)"
     },
     {
       "mfr": "_TYZB01_bagt1e4o",
@@ -1389,16 +1473,40 @@
       "note": "metering smart plug TS011F_plug_1"
     },
     {
-      "mfr": "_TYZB01_ncutbjdi",
-      "pid": "TS0003",
-      "driverId": "switch_1gang",
-      "note": "Lonsonho QS-Zigbee-S05-LN 1-gang module (Z2M lonsonho.ts: single onOff)"
+      "mfr": "HOBEIAN",
+      "pid": "ZG-101ZS",
+      "driverId": "scene_switch_4",
+      "note": "2026-10-11 user decision: HOBEIAN Star Ring 4-gang scene switch, sole owner scene_switch_4 (Z2M)"
     },
     {
-      "mfr": "_TYZB01_aneiicmq",
-      "pid": "TS0003",
-      "driverId": "switch_1gang",
-      "note": "BlitzWolf BW-SS7_1gang (Z2M blitzwolf.ts: single onOff)"
+      "mfr": "Wing",
+      "pid": "ZTH11-3.0",
+      "driverId": "climate_sensor",
+      "note": "P217 Wing ZTH11 — kept in payload by sacred-keep since re-inject no longer front-pins (2026-10-11)"
+    },
+    {
+      "mfr": "Wing",
+      "pid": "ZTH13-3.0",
+      "driverId": "climate_sensor",
+      "note": "P217 Wing ZTH13 — kept in payload by sacred-keep since re-inject no longer front-pins (2026-10-11)"
+    },
+    {
+      "mfr": "eWeLink",
+      "pid": "CK-TLSR8656-SS5-01(7014)",
+      "driverId": "climate_sensor",
+      "note": "P2631 eWeLink TH 7014 — kept in payload by sacred-keep since re-inject no longer front-pins (2026-10-11)"
+    },
+    {
+      "mfr": "eWeLink",
+      "pid": "CK-TLSR8656-SS5-02(7014)",
+      "driverId": "climate_sensor",
+      "note": "P2631 eWeLink TH 7014 — kept in payload by sacred-keep since re-inject no longer front-pins (2026-10-11)"
+    },
+    {
+      "mfr": "_TZ3000_bgtzm4ny",
+      "pid": "TS0044",
+      "driverId": "scene_switch_4",
+      "note": "2026-10-11: same Star Ring 4-gang remote as HOBEIAN ZG-101ZS (Z2M, romasku#237)"
     },
     {
       "mfr": "_TZE200_aj0oxo1i",
@@ -1437,40 +1545,10 @@
       "note": "QS-Zigbee-D02-TRIAC-LN 1-gang dimmer module"
     },
     {
-      "mfr": "HOBEIAN",
-      "pid": "ZG-101ZS",
-      "driverId": "scene_switch_4",
-      "note": "2026-10-11 user decision: HOBEIAN Star Ring 4-gang scene switch, sole owner scene_switch_4 (Z2M)"
-    },
-    {
-      "mfr": "Wing",
-      "pid": "ZTH11-3.0",
-      "driverId": "climate_sensor",
-      "note": "P217 Wing ZTH11 — kept in payload by sacred-keep since re-inject no longer front-pins (2026-10-11)"
-    },
-    {
-      "mfr": "Wing",
-      "pid": "ZTH13-3.0",
-      "driverId": "climate_sensor",
-      "note": "P217 Wing ZTH13 — kept in payload by sacred-keep since re-inject no longer front-pins (2026-10-11)"
-    },
-    {
-      "mfr": "eWeLink",
-      "pid": "CK-TLSR8656-SS5-01(7014)",
-      "driverId": "climate_sensor",
-      "note": "P2631 eWeLink TH 7014 — kept in payload by sacred-keep since re-inject no longer front-pins (2026-10-11)"
-    },
-    {
-      "mfr": "eWeLink",
-      "pid": "CK-TLSR8656-SS5-02(7014)",
-      "driverId": "climate_sensor",
-      "note": "P2631 eWeLink TH 7014 — kept in payload by sacred-keep since re-inject no longer front-pins (2026-10-11)"
-    },
-    {
-      "mfr": "_TZ3000_bgtzm4ny",
-      "pid": "TS0044",
-      "driverId": "scene_switch_4",
-      "note": "2026-10-11: same Star Ring 4-gang remote as HOBEIAN ZG-101ZS (Z2M, romasku#237)"
+      "mfr": "heobian",
+      "pid": "ZG-101ZL",
+      "driverId": "button_wireless_1",
+      "note": "P2677 HOBEIAN typo form (Athom compose); stripped by v9.0.1430 bot, pinned 2026-10-13"
     },
     {
       "mfr": "_TZE284_myd45weu",
@@ -1501,6 +1579,42 @@
       "pid": "TS0601",
       "driverId": "device_radiator_valve",
       "note": "#560 EARU TRV06 ME167 DP profile"
+    },
+    {
+      "mfr": "_TZE284_gnpflcoq",
+      "pid": "TS0601",
+      "driverId": "motion_sensor_radar_mmwave",
+      "note": "P2812 forum#2262 4in1 mmWave"
+    },
+    {
+      "mfr": "_TZE200_gnpflcoq",
+      "pid": "TS0601",
+      "driverId": "motion_sensor_radar_mmwave",
+      "note": "P2812 gnpflcoq TZE200 sibling"
+    },
+    {
+      "mfr": "_TZE204_gnpflcoq",
+      "pid": "TS0601",
+      "driverId": "motion_sensor_radar_mmwave",
+      "note": "P2812 gnpflcoq TZE204 sibling"
+    },
+    {
+      "mfr": "_TZE200_fl8cuafl",
+      "pid": "TS0601",
+      "driverId": "device_radiator_valve",
+      "note": "P2813 forum#2261 ANTIK ATK-TRV02"
+    },
+    {
+      "mfr": "_TZE204_fl8cuafl",
+      "pid": "TS0601",
+      "driverId": "device_radiator_valve",
+      "note": "P2813 fl8cuafl TZE204 sibling"
+    },
+    {
+      "mfr": "_TZE284_fl8cuafl",
+      "pid": "TS0601",
+      "driverId": "device_radiator_valve",
+      "note": "P2813 fl8cuafl TZE284 sibling"
     }
   ]
 }
