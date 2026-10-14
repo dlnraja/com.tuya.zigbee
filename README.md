@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1468 |
+| **App Version** | v9.0.1469 |
 | **Drivers** | 449 (396 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,776 |
 | **Pairing Variants** | 19,179 (4 case combos per fingerprint) |
@@ -41,7 +41,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 6,105 |
 | **Unique Capabilities** | 176 |
 | **Native OTA Drivers** | 10 |
-| **Test Suites** | 643 files |
+| **Test Suites** | 644 files |
 | **SVG Icons** | 752 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -103,6 +103,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1469** | TRV me167 DP4 no longer steals battery; settings spinner dual fallback (P2822). |
 | **v9.0.1468** | Forum fleet silent treat: sacred-keep pins + forbid cartesian invent couples (P2821). |
 | **v9.0.1467** | Z2M/ZHA/quirks couple recheck: wrong-class moves + missing FP (P2820). |
 | **v9.0.1466** | v9.0.1466: automated publish, manifest sync, and Homey test promotion. |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1460** | Soil sensors matched by manufacturer+model couple (QT-07S, AOYAN, HOBEIAN). |
 | **v9.0.1459** | v9.0.1459: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1458** | Soil sensor: remove misrouted smoke fingerprint from soil driver. |
-| **v9.0.1457** | Improved soil sensor pairing (QT-07S / AOYAN) and app Configure page readiness. |
 
 <!-- CHANGELOG_END -->
 
