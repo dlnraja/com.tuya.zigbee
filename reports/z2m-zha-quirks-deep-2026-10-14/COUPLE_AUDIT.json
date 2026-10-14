@@ -1,0 +1,3639 @@
+{
+  "summary": {
+    "generatedAt": "2026-10-14T11:01:44.303Z",
+    "sources": {
+      "z2mCacheDevices": 1225,
+      "z2mTuyaTsBytes": 1460992,
+      "zhaQuirkFiles": 52,
+      "protocolQuirkMfrs": 120,
+      "uniqueSacredCouples": 1636
+    },
+    "coverage": {
+      "exactCouple": 1549,
+      "mfrOnlyPartial": 70,
+      "missingEntirely": 17,
+      "classMismatchHeuristic": 256,
+      "severeMismatches": 11
+    },
+    "targets": {
+      "gnpflcoq": [
+        {
+          "mfr": "_TZE284_gnpflcoq",
+          "mfrNorm": "_tze284_gnpflcoq",
+          "pid": "TS0601",
+          "sources": [
+            "z2m_cache",
+            "z2m_tuya_ts"
+          ],
+          "category": "sensor",
+          "description": "4-in-1 mmWave presence sensor",
+          "model": "TS0601_TZE284_gnpflcoq",
+          "vendor": "Tuya",
+          "exposes": [
+            "presence",
+            "illuminance",
+            "temperature",
+            "humidity",
+            "battery",
+            "numeric",
+            "sensitivity",
+            "fading_time"
+          ]
+        }
+      ],
+      "fl8cuafl": []
+    }
+  },
+  "severe": [
+    {
+      "mfr": "_TZE204_unsxl4ir",
+      "mfrNorm": "_tze204_unsxl4ir",
+      "pid": "TS0601",
+      "category": "light",
+      "drivers": [
+        "dimmer_wall_1gang"
+      ],
+      "reason": "rgb_bulb_on_wall_dimmer",
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ],
+      "description": "4 gang smart switch with backlight and neutral wire"
+    },
+    {
+      "mfr": "_TZE284_nvodulvi",
+      "mfrNorm": "_tze284_nvodulvi",
+      "pid": "TS0601",
+      "category": "sensor",
+      "drivers": [
+        "dimmer_wall_1gang"
+      ],
+      "reason": "sensor_on_actuator",
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ],
+      "description": "Smart Switch (4 gang + 4 scene) with neutral wire and motion sensing"
+    },
+    {
+      "mfr": "_TZE284_nj7sfid2",
+      "mfrNorm": "_tze284_nj7sfid2",
+      "pid": "TS0601",
+      "category": "cover",
+      "drivers": [
+        "sensor_gas_presence"
+      ],
+      "reason": "cover_wrong_driver",
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ],
+      "description": "Smart scene knob controller with 4 buttons"
+    },
+    {
+      "mfr": "_TZE284_7zazvlyn",
+      "mfrNorm": "_tze284_7zazvlyn",
+      "pid": "TS0601",
+      "category": "cover",
+      "drivers": [
+        "water_valve_smart"
+      ],
+      "reason": "cover_wrong_driver",
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ],
+      "description": "Smart panel, 4-gang switch with scene, dimmer, and curtain control"
+    },
+    {
+      "mfr": "_TZE284_idn2htgu",
+      "mfrNorm": "_tze284_idn2htgu",
+      "pid": "TS0601",
+      "category": "cover",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "reason": "cover_wrong_driver",
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ],
+      "description": "Smart panel, 4-gang switch with scene, dimmer, and curtain control"
+    },
+    {
+      "mfr": "_TZE284_3xnyj4ga",
+      "mfrNorm": "_tze284_3xnyj4ga",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "reason": "plug_on_switch_only",
+      "sources": [
+        "z2m_tuya_ts"
+      ],
+      "description": "Topazio 1 gang switch with socket"
+    },
+    {
+      "mfr": "_TZE284_exfilann",
+      "mfrNorm": "_tze284_exfilann",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "switch_3gang"
+      ],
+      "reason": "plug_on_switch_only",
+      "sources": [
+        "z2m_tuya_ts"
+      ],
+      "description": "Topazio 2 gang switch with socket"
+    },
+    {
+      "mfr": "_TZE204_gbagoilo",
+      "mfrNorm": "_tze204_gbagoilo",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "reason": "plug_on_switch_only",
+      "sources": [
+        "z2m_tuya_ts",
+        "zha:ts0601_switch.py"
+      ],
+      "description": ""
+    },
+    {
+      "mfr": "_TZE200_7tdtqgwv",
+      "mfrNorm": "_tze200_7tdtqgwv",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "reason": "plug_on_switch_only",
+      "sources": [
+        "zha:ts0601_switch.py"
+      ],
+      "description": ""
+    },
+    {
+      "mfr": "_TZE200_amp6tsvy",
+      "mfrNorm": "_tze200_amp6tsvy",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "reason": "plug_on_switch_only",
+      "sources": [
+        "zha:ts0601_switch.py"
+      ],
+      "description": ""
+    },
+    {
+      "mfr": "_TZE200_g1ib5ldv",
+      "mfrNorm": "_tze200_g1ib5ldv",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "switch_2gang"
+      ],
+      "reason": "plug_on_switch_only",
+      "sources": [
+        "zha:ts0601_switch.py"
+      ],
+      "description": ""
+    }
+  ],
+  "classMismatch": [
+    {
+      "mfr": "_TZE204_lb0fsvba",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "lcdtemphumidsensor_3"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE284_vuwtqx0t",
+      "pid": "TS0601",
+      "category": "valve",
+      "drivers": [
+        "water_valve_smart"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts",
+        "protocol_quirk_table"
+      ]
+    },
+    {
+      "mfr": "_TZE200_vuwtqx0t",
+      "pid": "TS0601",
+      "category": "valve",
+      "drivers": [
+        "water_valve_smart"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts",
+        "protocol_quirk_table"
+      ]
+    },
+    {
+      "mfr": "_TZE284_ajlu4cud",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts",
+        "protocol_quirk_table"
+      ]
+    },
+    {
+      "mfr": "_TZE284_zpvusbtv",
+      "pid": "TS0601",
+      "category": "switch",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts",
+        "protocol_quirk_table"
+      ]
+    },
+    {
+      "mfr": "_TZE204_rkbxtclc",
+      "pid": "TS0601",
+      "category": "light",
+      "drivers": [
+        "switch_3gang"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts",
+        "protocol_quirk_table"
+      ]
+    },
+    {
+      "mfr": "_TZE204_7ytnacie",
+      "pid": "TS0601",
+      "category": "light",
+      "drivers": [
+        "wall_switch_4_gang_tuya"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts",
+        "protocol_quirk_table"
+      ]
+    },
+    {
+      "mfr": "_TZE204_hewlydpz",
+      "pid": "TS0601",
+      "category": "light",
+      "drivers": [
+        "wall_switch_4_gang_tuya"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE204_hiith90n",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_k6fvknrr",
+      "pid": "TS011F",
+      "category": "plug",
+      "drivers": [
+        "double_power_point_2"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_rgpqqmbj",
+      "pid": "TS011F",
+      "category": "plug",
+      "drivers": [
+        "usb_dongle_triple"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_rk2yzt0u",
+      "pid": "TS011F",
+      "category": "valve",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "z2m_cache"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_rk2yzt0u",
+      "pid": "TS0001",
+      "category": "valve",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "z2m_cache"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_rk2yzt0u",
+      "pid": "TS0011",
+      "category": "valve",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "z2m_cache"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_o4cjetlm",
+      "pid": "TS011F",
+      "category": "valve",
+      "drivers": [
+        "valvecontroller"
+      ],
+      "sources": [
+        "z2m_cache"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_o4cjetlm",
+      "pid": "TS0001",
+      "category": "valve",
+      "drivers": [
+        "valvecontroller"
+      ],
+      "sources": [
+        "z2m_cache"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_iedbgyxt",
+      "pid": "TS011F",
+      "category": "valve",
+      "drivers": [
+        "valvecontroller"
+      ],
+      "sources": [
+        "z2m_cache"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_iedbgyxt",
+      "pid": "TS0001",
+      "category": "valve",
+      "drivers": [
+        "valvecontroller"
+      ],
+      "sources": [
+        "z2m_cache"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_h3noz0a5",
+      "pid": "TS011F",
+      "category": "valve",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "z2m_cache"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_h3noz0a5",
+      "pid": "TS0001",
+      "category": "valve",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "z2m_cache"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_h3noz0a5",
+      "pid": "TS0011",
+      "category": "valve",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "z2m_cache"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_5ucujjts",
+      "pid": "TS011F",
+      "category": "valve",
+      "drivers": [
+        "plug_smart",
+        "switch_1gang"
+      ],
+      "sources": [
+        "z2m_cache"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_5ucujjts",
+      "pid": "TS0001",
+      "category": "valve",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "z2m_cache"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_5ucujjts",
+      "pid": "TS0011",
+      "category": "valve",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "z2m_cache"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_h8ngtlxy",
+      "pid": "TS011F",
+      "category": "valve",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "z2m_cache"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_h8ngtlxy",
+      "pid": "TS0001",
+      "category": "valve",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "z2m_cache"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_h8ngtlxy",
+      "pid": "TS0011",
+      "category": "valve",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "z2m_cache"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_w0ypwa1f",
+      "pid": "TS011F",
+      "category": "valve",
+      "drivers": [
+        "plug_smart",
+        "switch_1gang"
+      ],
+      "sources": [
+        "z2m_cache"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_w0ypwa1f",
+      "pid": "TS0001",
+      "category": "valve",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "z2m_cache"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_w0ypwa1f",
+      "pid": "TS0011",
+      "category": "valve",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "z2m_cache"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_wpueorev",
+      "pid": "TS011F",
+      "category": "valve",
+      "drivers": [
+        "valvecontroller"
+      ],
+      "sources": [
+        "z2m_cache"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_wpueorev",
+      "pid": "TS0001",
+      "category": "valve",
+      "drivers": [
+        "valvecontroller"
+      ],
+      "sources": [
+        "z2m_cache"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_cmcjbqup",
+      "pid": "TS011F",
+      "category": "valve",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "z2m_cache"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_cmcjbqup",
+      "pid": "TS0001",
+      "category": "valve",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "z2m_cache"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_cmcjbqup",
+      "pid": "TS0011",
+      "category": "valve",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "z2m_cache"
+      ]
+    },
+    {
+      "mfr": "_TZE200_vm1gyrso",
+      "pid": "TS0601",
+      "category": "light",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts",
+        "zha:ts0601_dimmer.py"
+      ]
+    },
+    {
+      "mfr": "_TZE200_vizxbhco",
+      "pid": "TS0601",
+      "category": "light",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_ktuoyvt5",
+      "pid": "TS110F",
+      "category": "switch",
+      "drivers": [
+        "wall_dimmer_tuya"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_hexqj6ls",
+      "pid": "TS110F",
+      "category": "switch",
+      "drivers": [
+        "wall_dimmer_tuya"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE200_oisqyl4o",
+      "pid": "TS0601",
+      "category": "switch",
+      "drivers": [
+        "curtain_motor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts",
+        "zha:ts0601_switch.py"
+      ]
+    },
+    {
+      "mfr": "_TZE200_js3mgbjb",
+      "pid": "TS0601",
+      "category": "switch",
+      "drivers": [
+        "curtain_motor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE200_7deq70b8",
+      "pid": "TS0601",
+      "category": "switch",
+      "drivers": [
+        "curtain_motor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts",
+        "zha:ts0601_switch.py"
+      ]
+    },
+    {
+      "mfr": "_TZE204_ptaqh9tk",
+      "pid": "TS0601",
+      "category": "switch",
+      "drivers": [
+        "curtain_motor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts",
+        "zha:ts0601_switch.py"
+      ]
+    },
+    {
+      "mfr": "_TZE200_di3tfv5b",
+      "pid": "TS0601",
+      "category": "switch",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE204_mexisfik",
+      "pid": "TS0601",
+      "category": "switch",
+      "drivers": [
+        "curtain_motor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE204_6wi2mope",
+      "pid": "TS0601",
+      "category": "switch",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE200_6wi2mope",
+      "pid": "TS0601",
+      "category": "switch",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE204_iik0pquw",
+      "pid": "TS0601",
+      "category": "switch",
+      "drivers": [
+        "curtain_motor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE204_f5efvtbv",
+      "pid": "TS0601",
+      "category": "switch",
+      "drivers": [
+        "curtain_motor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE284_f5efvtbv",
+      "pid": "TS0601",
+      "category": "switch",
+      "drivers": [
+        "curtain_motor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE204_lbhh5o6z",
+      "pid": "TS0601",
+      "category": "switch",
+      "drivers": [
+        "curtain_motor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE284_lbhh5o6z",
+      "pid": "TS0601",
+      "category": "switch",
+      "drivers": [
+        "curtain_motor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE200_jwsjbxjs",
+      "pid": "TS0601",
+      "category": "switch",
+      "drivers": [
+        "curtain_motor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts",
+        "zha:ts0601_switch.py"
+      ]
+    },
+    {
+      "mfr": "_TZE200_leaqthqq",
+      "pid": "TS0601",
+      "category": "switch",
+      "drivers": [
+        "curtain_motor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts",
+        "zha:ts0601_switch.py"
+      ]
+    },
+    {
+      "mfr": "_TZE200_mwvfvw8g",
+      "pid": "TS0601",
+      "category": "switch",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE200_emxxanvi",
+      "pid": "TS0601",
+      "category": "switch",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts",
+        "zha:ts0601_switch.py"
+      ]
+    },
+    {
+      "mfr": "_TZE204_g4au0afs",
+      "pid": "TS0601",
+      "category": "switch",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE204_w1wwxoja",
+      "pid": "TS0601",
+      "category": "switch",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE284_tdhnhhiy",
+      "pid": "TS0601",
+      "category": "switch",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE200_nh9m9emk",
+      "pid": "TS0601",
+      "category": "switch",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts",
+        "zha:ts0601_switch.py"
+      ]
+    },
+    {
+      "mfr": "_TZE200_oyti2ums",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts",
+        "protocol_quirk_table"
+      ]
+    },
+    {
+      "mfr": "_TZE204_dzuqwsyg",
+      "pid": "TS0601",
+      "category": "hvac",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE200_do5qy8zo",
+      "pid": "TS0601",
+      "category": "hvac",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE200_7fqkphoq",
+      "pid": "TS0601",
+      "category": "hvac",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE200_qjp4ynvi",
+      "pid": "TS0601",
+      "category": "hvac",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE204_ltwbm23f",
+      "pid": "TS0601",
+      "category": "hvac",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts",
+        "protocol_quirk_table"
+      ]
+    },
+    {
+      "mfr": "_TZE284_ltwbm23f",
+      "pid": "TS0601",
+      "category": "hvac",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts",
+        "protocol_quirk_table"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_v1pdxuqq",
+      "pid": "TS011F",
+      "category": "plug",
+      "drivers": [
+        "usb_dongle_triple"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_8a833yls",
+      "pid": "TS011F",
+      "category": "plug",
+      "drivers": [
+        "usb_dongle_triple"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_nzkqcvvs",
+      "pid": "TS011F",
+      "category": "plug",
+      "drivers": [
+        "usb_dongle_triple"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_rtcrrvia",
+      "pid": "TS011F",
+      "category": "plug",
+      "drivers": [
+        "usb_dongle_triple"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_ysiog9xi",
+      "pid": "TS011F",
+      "category": "plug",
+      "drivers": [
+        "usb_dongle_triple"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_o1jzcxou",
+      "pid": "TS011F",
+      "category": "plug",
+      "drivers": [
+        "usb_dongle_triple"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZ3210_nhqka112",
+      "pid": "TS011F",
+      "category": "plug",
+      "drivers": [
+        "usb_dongle_triple"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE204_cjbofhxw",
+      "pid": "TS0601",
+      "category": "light",
+      "drivers": [
+        "power_clamp_meter"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE284_cjbofhxw",
+      "pid": "TS0601",
+      "category": "light",
+      "drivers": [
+        "power_clamp_meter"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE204_m64smti7",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE204_wbhaespm",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE200_wbhaespm",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE284_wbhaespm",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_l8fsgo6p",
+      "pid": "TS0011",
+      "category": "light",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE204_oh8y8pv8",
+      "pid": "TS0601",
+      "category": "hvac",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE284_zjhoqbrd",
+      "pid": "TS0601",
+      "category": "hvac",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE204_zjhoqbrd",
+      "pid": "TS0601",
+      "category": "hvac",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_8uxxzz4b",
+      "pid": "TS0222",
+      "category": "light",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_9kbbfeho",
+      "pid": "TS0222",
+      "category": "light",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_l6rsaipj",
+      "pid": "TS0222",
+      "category": "light",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_t9qqxn70",
+      "pid": "TS0222",
+      "category": "light",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_do6txrcw",
+      "pid": "TS0222",
+      "category": "light",
+      "drivers": [
+        "sensor_illuminance_presence"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_do6txrcw",
+      "pid": "ZG-106Z",
+      "category": "light",
+      "drivers": [
+        "sensor_illuminance_presence"
+      ],
+      "sources": [
+        "z2m_cache"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_7kscdesh",
+      "pid": "TS0222",
+      "category": "light",
+      "drivers": [
+        "illuminance_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_7kscdesh",
+      "pid": "ZG-106Z",
+      "category": "light",
+      "drivers": [
+        "illuminance_sensor"
+      ],
+      "sources": [
+        "z2m_cache"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_hy6ncvmw",
+      "pid": "TS0222",
+      "category": "light",
+      "drivers": [
+        "illuminance_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_hy6ncvmw",
+      "pid": "ZG-106Z",
+      "category": "light",
+      "drivers": [
+        "illuminance_sensor"
+      ],
+      "sources": [
+        "z2m_cache"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_7y90pany",
+      "pid": "TS0222",
+      "category": "light",
+      "drivers": [
+        "illuminance_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_7y90pany",
+      "pid": "ZG-106Z",
+      "category": "light",
+      "drivers": [
+        "illuminance_sensor"
+      ],
+      "sources": [
+        "z2m_cache"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_j6adk9id",
+      "pid": "TS0222",
+      "category": "light",
+      "drivers": [
+        "illuminance_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_6l1pjfqe",
+      "pid": "TS011F",
+      "category": "switch",
+      "drivers": [
+        "plug_energy_monitor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_2iiimqs9",
+      "pid": "TS011F",
+      "category": "switch",
+      "drivers": [
+        "plug_energy_monitor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_7issjl2q",
+      "pid": "TS011F",
+      "category": "switch",
+      "drivers": [
+        "plug_energy_monitor"
+      ],
+      "sources": [
+        "z2m_cache"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_7issjl2q",
+      "pid": "TS0011",
+      "category": "switch",
+      "drivers": [
+        "plug_energy_monitor"
+      ],
+      "sources": [
+        "z2m_cache"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_gzvniqjb",
+      "pid": "TS011F",
+      "category": "switch",
+      "drivers": [
+        "device_din_rail"
+      ],
+      "sources": [
+        "z2m_cache"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_4fjiwweb",
+      "pid": "TS004F",
+      "category": "bulb",
+      "drivers": [
+        "button_wireless_4"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts",
+        "zha:ts004f.py"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_uri7ongn",
+      "pid": "TS004F",
+      "category": "bulb",
+      "drivers": [
+        "smart_knob"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts",
+        "zha:ts004f.py"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_ixla93vd",
+      "pid": "TS004F",
+      "category": "bulb",
+      "drivers": [
+        "smart_knob"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts",
+        "zha:ts004f.py"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_qja6nq5z",
+      "pid": "TS004F",
+      "category": "bulb",
+      "drivers": [
+        "smart_knob_rotary"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts",
+        "zha:ts004f.py"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_402vrq2i",
+      "pid": "TS004F",
+      "category": "bulb",
+      "drivers": [
+        "smart_knob"
+      ],
+      "sources": [
+        "z2m_cache"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_abrsvsou",
+      "pid": "TS004F",
+      "category": "bulb",
+      "drivers": [
+        "button_wireless_4"
+      ],
+      "sources": [
+        "z2m_cache",
+        "zha:ts004f.py"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_gwkzibhs",
+      "pid": "TS004F",
+      "category": "bulb",
+      "drivers": [
+        "smart_knob_rotary"
+      ],
+      "sources": [
+        "z2m_cache",
+        "zha:ts004f.py"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_ugi8ky6u",
+      "pid": "TS004F",
+      "category": "bulb",
+      "drivers": [
+        "smart_knob_rotary"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_1fqpj6qz",
+      "pid": "TS004F",
+      "category": "bulb",
+      "drivers": [
+        "switch_4_gang_metering"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE284_atuj3i0w",
+      "pid": "TS0601",
+      "category": "switch",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE200_nslr42tt",
+      "pid": "TS0601",
+      "category": "light",
+      "drivers": [
+        "switch_wireless"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE200_x8fp01wi",
+      "pid": "TS0601",
+      "category": "light",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE204_x8fp01wi",
+      "pid": "TS0601",
+      "category": "light",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZ3290_ixd9mvv4",
+      "pid": "TS0049",
+      "category": "valve",
+      "drivers": [
+        "smart_irrigation_valve"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE284_eaet5qt5",
+      "pid": "TS0601",
+      "category": "valve",
+      "drivers": [
+        "valve_dual_irrigation"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE284_fhvpaltk",
+      "pid": "TS0601",
+      "category": "valve",
+      "drivers": [
+        "valve_dual_irrigation"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE200_hmqzfqml",
+      "pid": "TS0601",
+      "category": "light",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE200_qanl25yu",
+      "pid": "TS0601",
+      "category": "light",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE204_bql5khqx",
+      "pid": "TS0601",
+      "category": "light",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE204_2jnoy8dj",
+      "pid": "TS0601",
+      "category": "light",
+      "drivers": [
+        "fan_controller"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE200_lawxy9e2",
+      "pid": "TS0601",
+      "category": "light",
+      "drivers": [
+        "ceiling_fan"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE204_lawxy9e2",
+      "pid": "TS0601",
+      "category": "light",
+      "drivers": [
+        "ceiling_fan"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE284_ikul00sx",
+      "pid": "TS0601",
+      "category": "light",
+      "drivers": [
+        "humidifier"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_cayepv1a",
+      "pid": "TS011F",
+      "category": "switch",
+      "drivers": [
+        "smartPlug_DinRail"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_lepzuhto",
+      "pid": "TS011F",
+      "category": "switch",
+      "drivers": [
+        "smartPlug_DinRail"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_qystbcjg",
+      "pid": "TS011F",
+      "category": "switch",
+      "drivers": [
+        "smartPlug_DinRail"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_303avxxt",
+      "pid": "TS011F",
+      "category": "switch",
+      "drivers": [
+        "smartPlug_DinRail"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE200_qhlxve78",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "curtain_motor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE284_qhlxve78",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "curtain_motor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE204_qhlxve78",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "curtain_motor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE204_v9hkz2yn",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "curtain_motor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE284_v9hkz2yn",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "curtain_motor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE200_v9hkz2yn",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "curtain_motor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE204_dhotiauw",
+      "pid": "TS0601",
+      "category": "light",
+      "drivers": [
+        "din_rail_meter"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE200_iwn0gpzz",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE204_iwn0gpzz",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE284_iwn0gpzz",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE204_ny94onlb",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE200_ny94onlb",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE284_ny94onlb",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE204_ugekduaj",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "valve_irrigation"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE200_ugekduaj",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "valve_irrigation"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE204_gomuk3dc",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "valve_irrigation"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE284_gomuk3dc",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "valve_irrigation"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE200_gomuk3dc",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "valve_irrigation"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE204_78ioiaml",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE284_78ioiaml",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE200_78ioiaml",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE204_ac0fhfiq",
+      "pid": "TS0601",
+      "category": "light",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE284_ac0fhfiq",
+      "pid": "TS0601",
+      "category": "light",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE200_vmcgja59",
+      "pid": "TS0601",
+      "category": "switch",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE204_dvosyycn",
+      "pid": "TS0601",
+      "category": "switch",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE284_dvosyycn",
+      "pid": "TS0601",
+      "category": "switch",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE200_wktrysab",
+      "pid": "TS0601",
+      "category": "switch",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts",
+        "zha:ts0601_switch.py"
+      ]
+    },
+    {
+      "mfr": "_TZE204_wktrysab",
+      "pid": "TS0601",
+      "category": "switch",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts",
+        "zha:ts0601_switch.py"
+      ]
+    },
+    {
+      "mfr": "_TZE204_tdhnhhiy",
+      "pid": "TS0601",
+      "category": "switch",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE204_adlblwab",
+      "pid": "TS0601",
+      "category": "switch",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE204_dqolcpcp",
+      "pid": "TS0601",
+      "category": "switch",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts",
+        "zha:ts0601_switch.py"
+      ]
+    },
+    {
+      "mfr": "_TZE284_dqolcpcp",
+      "pid": "TS0601",
+      "category": "switch",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_rqbjepe8",
+      "pid": "TS011F",
+      "category": "plug",
+      "drivers": [
+        "usb_dongle_triple"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE200_0j5jma9b",
+      "pid": "TS0601",
+      "category": "light",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE200_h2rctifa",
+      "pid": "TS0601",
+      "category": "light",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE200_wunufsil",
+      "pid": "TS0601",
+      "category": "light",
+      "drivers": [
+        "switch_2gang"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts",
+        "zha:ts0601_switch.py"
+      ]
+    },
+    {
+      "mfr": "_TZE200_vhy3iakz",
+      "pid": "TS0601",
+      "category": "light",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts",
+        "zha:ts0601_switch.py"
+      ]
+    },
+    {
+      "mfr": "_TZE200_k6jhsr0q",
+      "pid": "TS0601",
+      "category": "light",
+      "drivers": [
+        "pool_pump"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts",
+        "zha:ts0601_switch.py"
+      ]
+    },
+    {
+      "mfr": "_TZE200_86nbew0j",
+      "pid": "TS0601",
+      "category": "light",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE200_io0zdqh1",
+      "pid": "TS0601",
+      "category": "light",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE200_drs6j6m5",
+      "pid": "TS0601",
+      "category": "light",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE200_ywe90lt0",
+      "pid": "TS0601",
+      "category": "light",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE200_qyss8gjy",
+      "pid": "TS0601",
+      "category": "light",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE204_vmcgja59",
+      "pid": "TS0601",
+      "category": "switch",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts",
+        "zha:ts0601_switch.py"
+      ]
+    },
+    {
+      "mfr": "_TZE284_vmcgja59",
+      "pid": "TS0601",
+      "category": "switch",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE204_81yrt3lo",
+      "pid": "TS0601",
+      "category": "light",
+      "drivers": [
+        "power_clamp_meter"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE284_81yrt3lo",
+      "pid": "TS0601",
+      "category": "light",
+      "drivers": [
+        "power_clamp_meter"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE28C1000000_81yrt3lo",
+      "pid": "TS0601",
+      "category": "light",
+      "drivers": [
+        "power_clamp_meter"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE200_rks0sgb7",
+      "pid": "TS0601",
+      "category": "light",
+      "drivers": [
+        "switch_4_gang_metering"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE200_v1jqz5cy",
+      "pid": "TS0601",
+      "category": "light",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE200_d9mzkhoq",
+      "pid": "TS0601",
+      "category": "light",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_5ajpkyq6",
+      "pid": "TS0004",
+      "category": "switch",
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_knoj8lpk",
+      "pid": "TS0004",
+      "category": "switch",
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_3n2minvf",
+      "pid": "TS0004",
+      "category": "switch",
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZ3210_iymfxdis",
+      "pid": "TS0004",
+      "category": "light",
+      "drivers": [
+        "switch_4gang"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE204_kobbcyum",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE284_kobbcyum",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE284_hecsejsb",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE284_432zhuwe",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE204_432zhuwe",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE284_s5vuaadg",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE284_tuhfx7tf",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE204_tuhfx7tf",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE204_l6llgoxq",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE200_pl31aqf5",
+      "pid": "TS0601",
+      "category": "light",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE200_xpvamyfz",
+      "pid": "TS0601",
+      "category": "light",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE284_xpvamyfz",
+      "pid": "TS0601",
+      "category": "light",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE200_edl8pz1k",
+      "pid": "TS0601",
+      "category": "hvac",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE204_edl8pz1k",
+      "pid": "TS0601",
+      "category": "hvac",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE204_6a4vxfnv",
+      "pid": "TS0601",
+      "category": "hvac",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    },
+    {
+      "mfr": "_TZE284_q22avxbv",
+      "pid": "TS0601",
+      "category": "plug",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ]
+    }
+  ],
+  "missingList": [
+    {
+      "mfr": "_TZE2841000000_nt4pquef",
+      "pid": "TS0601",
+      "sources": [
+        "z2m_tuya_ts"
+      ],
+      "category": "sensor",
+      "description": "Soil sensor",
+      "model": "SGS02Z"
+    },
+    {
+      "mfr": "_TZE28C1000000_f5efvtbv",
+      "pid": "TS0601",
+      "sources": [
+        "z2m_tuya_ts"
+      ],
+      "category": "switch",
+      "description": "4 channel relay module",
+      "model": "OXT-4CH-RELAY-AC"
+    },
+    {
+      "mfr": "_TZE204_eaasry7v",
+      "pid": "TS0601",
+      "sources": [
+        "z2m_tuya_ts"
+      ],
+      "category": "hvac",
+      "description": "Sauna thermostat",
+      "model": "AE-5503-S-H-ZIGBEE"
+    },
+    {
+      "mfr": "_TZ3000_hopb2kjm",
+      "pid": "TS0002",
+      "sources": [
+        "z2m_tuya_ts"
+      ],
+      "category": "",
+      "description": "",
+      "model": "TS0002_power"
+    },
+    {
+      "mfr": "_TZE28C1000000_vosmoqsg",
+      "pid": "TS0601",
+      "sources": [
+        "z2m_tuya_ts"
+      ],
+      "category": "",
+      "description": "",
+      "model": "ZF24Pro"
+    },
+    {
+      "mfr": "_TZE28C1000000_ewn672ef",
+      "pid": "TS0601",
+      "sources": [
+        "z2m_tuya_ts"
+      ],
+      "category": "",
+      "description": "",
+      "model": "ZF24Pro"
+    },
+    {
+      "mfr": "_TZE2841000000_2gi1hy8s",
+      "pid": "TS0601",
+      "sources": [
+        "z2m_tuya_ts"
+      ],
+      "category": "cover",
+      "description": "Smart blinds motor",
+      "model": "MB60L-ZG-ZT-TY"
+    },
+    {
+      "mfr": "_TZE284_rfpyqax9",
+      "pid": "TS0601",
+      "sources": [
+        "z2m_tuya_ts"
+      ],
+      "category": "",
+      "description": "",
+      "model": "Pro Line X10"
+    },
+    {
+      "mfr": "_TZE204_rfpyqax9",
+      "pid": "TS0601",
+      "sources": [
+        "z2m_tuya_ts"
+      ],
+      "category": "",
+      "description": "",
+      "model": "Pro Line X10"
+    },
+    {
+      "mfr": "_TZE204_pxbjch8m",
+      "pid": "TS0601",
+      "sources": [
+        "z2m_tuya_ts"
+      ],
+      "category": "",
+      "description": "",
+      "model": "TS0601_cover_with_1_switch_limited"
+    },
+    {
+      "mfr": "_TZE20C1000000_p3g8xiug",
+      "pid": "TS0601",
+      "sources": [
+        "z2m_tuya_ts"
+      ],
+      "category": "plug",
+      "description": "",
+      "model": "TS0601_3ch_bidirectional_meter"
+    },
+    {
+      "mfr": "_TZE20C_tjz9ad5g",
+      "pid": "TS0601",
+      "sources": [
+        "z2m_tuya_ts"
+      ],
+      "category": "bulb",
+      "description": "Plug-in smart siren alarm with RGB night light",
+      "model": "MG-BJQ002"
+    },
+    {
+      "mfr": "_TZD200_sjjp9bti",
+      "pid": "TS0202",
+      "sources": [
+        "z2m_tuya_ts"
+      ],
+      "category": "",
+      "description": "",
+      "model": "HS208Z"
+    },
+    {
+      "mfr": "_TZE20C_ycab9txf",
+      "pid": "TS0601",
+      "sources": [
+        "z2m_tuya_ts"
+      ],
+      "category": "",
+      "description": "External switch type (shared between channels)",
+      "model": "ZAS-01P"
+    },
+    {
+      "mfr": "_TZE204_zajeikkt",
+      "pid": "TS0601",
+      "sources": [
+        "z2m_tuya_ts"
+      ],
+      "category": "",
+      "description": "LED music controller",
+      "model": "SP107E-Zigbee"
+    },
+    {
+      "mfr": "_TZE284_hbxadcl0",
+      "pid": "TS0601",
+      "sources": [
+        "z2m_tuya_ts_obj"
+      ],
+      "category": "",
+      "description": "",
+      "model": ""
+    },
+    {
+      "mfr": "DTS1XM9",
+      "pid": "EXCELLUX",
+      "sources": [
+        "z2m_tuya_ts_obj"
+      ],
+      "category": "",
+      "description": "",
+      "model": ""
+    }
+  ],
+  "mfrOnlyWithPid": [
+    {
+      "mfr": "_TZ3000_dlhhrhs8",
+      "pid": "TS0001",
+      "drivers": [
+        "sensor_contact_zigbee"
+      ],
+      "sources": [
+        "z2m_cache"
+      ],
+      "category": "switch",
+      "description": "Wall switch module"
+    },
+    {
+      "mfr": "_TZ3000_dlhhrhs8",
+      "pid": "TS000F",
+      "drivers": [
+        "sensor_contact_zigbee"
+      ],
+      "sources": [
+        "z2m_cache"
+      ],
+      "category": "switch",
+      "description": "Wall switch module"
+    },
+    {
+      "mfr": "_TZ3000_dlhhrhs8",
+      "pid": "ZG-301Z",
+      "drivers": [
+        "sensor_contact_zigbee"
+      ],
+      "sources": [
+        "z2m_cache"
+      ],
+      "category": "switch",
+      "description": "Wall switch module"
+    },
+    {
+      "mfr": "_TZ3000_o4cjetlm",
+      "pid": "TS0011",
+      "drivers": [
+        "valvecontroller"
+      ],
+      "sources": [
+        "z2m_cache"
+      ],
+      "category": "valve",
+      "description": "Smart water/gas valve"
+    },
+    {
+      "mfr": "_TZ3000_iedbgyxt",
+      "pid": "TS0011",
+      "drivers": [
+        "valvecontroller"
+      ],
+      "sources": [
+        "z2m_cache"
+      ],
+      "category": "valve",
+      "description": "Smart water/gas valve"
+    },
+    {
+      "mfr": "_TZ3000_wpueorev",
+      "pid": "TS0011",
+      "drivers": [
+        "valvecontroller"
+      ],
+      "sources": [
+        "z2m_cache"
+      ],
+      "category": "valve",
+      "description": "Smart water/gas valve"
+    },
+    {
+      "mfr": "_TZ3000_mcxw5ehu",
+      "pid": "ZG-204Z",
+      "drivers": [
+        "pir_sensor_2",
+        "sensor_motion_presence"
+      ],
+      "sources": [
+        "z2m_cache"
+      ],
+      "category": "sensor",
+      "description": "Motion sensor"
+    },
+    {
+      "mfr": "_TZ3000_6ygjfyll",
+      "pid": "ZG-204Z",
+      "drivers": [
+        "sensor_motion_presence"
+      ],
+      "sources": [
+        "z2m_cache"
+      ],
+      "category": "sensor",
+      "description": "Motion sensor"
+    },
+    {
+      "mfr": "_TZ3040_6ygjfyll",
+      "pid": "ZG-204Z",
+      "drivers": [
+        "pir_sensor_2",
+        "sensor_motion_presence"
+      ],
+      "sources": [
+        "z2m_cache"
+      ],
+      "category": "sensor",
+      "description": "Motion sensor"
+    },
+    {
+      "mfr": "_TZ3000_msl6wxk9",
+      "pid": "ZG-204Z",
+      "drivers": [
+        "pir_sensor_2",
+        "sensor_motion_presence"
+      ],
+      "sources": [
+        "z2m_cache"
+      ],
+      "category": "sensor",
+      "description": "Motion sensor"
+    },
+    {
+      "mfr": "_TZ3000_kxlmv9ag",
+      "pid": "TS0207",
+      "drivers": [
+        "water_leak_sensor_tuya"
+      ],
+      "sources": [
+        "z2m_cache"
+      ],
+      "category": "",
+      "description": "Repeater"
+    },
+    {
+      "mfr": "_TZ3000_kxlmv9ag",
+      "pid": "TS0001",
+      "drivers": [
+        "water_leak_sensor_tuya"
+      ],
+      "sources": [
+        "z2m_cache"
+      ],
+      "category": "",
+      "description": "Repeater"
+    },
+    {
+      "mfr": "_TZ3000_wmlc9p9z",
+      "pid": "TS0207",
+      "drivers": [
+        "water_leak_sensor_tuya"
+      ],
+      "sources": [
+        "z2m_cache"
+      ],
+      "category": "",
+      "description": "Repeater"
+    },
+    {
+      "mfr": "_TZ3000_wmlc9p9z",
+      "pid": "TS0001",
+      "drivers": [
+        "water_leak_sensor_tuya"
+      ],
+      "sources": [
+        "z2m_cache"
+      ],
+      "category": "",
+      "description": "Repeater"
+    },
+    {
+      "mfr": "_TZ3000_shopg9ss",
+      "pid": "TS0207",
+      "drivers": [
+        "water_leak_sensor_tuya"
+      ],
+      "sources": [
+        "z2m_cache"
+      ],
+      "category": "",
+      "description": "Repeater"
+    },
+    {
+      "mfr": "_TZ3000_shopg9ss",
+      "pid": "TS0001",
+      "drivers": [
+        "water_leak_sensor_tuya"
+      ],
+      "sources": [
+        "z2m_cache"
+      ],
+      "category": "",
+      "description": "Repeater"
+    },
+    {
+      "mfr": "_TZ3000_n0lphcok",
+      "pid": "TS0207",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "z2m_cache"
+      ],
+      "category": "",
+      "description": "Repeater"
+    },
+    {
+      "mfr": "_TZ3000_r80pzsb9",
+      "pid": "TS0207",
+      "drivers": [
+        "water_leak_sensor_tuya"
+      ],
+      "sources": [
+        "z2m_cache"
+      ],
+      "category": "",
+      "description": "Repeater"
+    },
+    {
+      "mfr": "_TZ3000_r80pzsb9",
+      "pid": "TS0001",
+      "drivers": [
+        "water_leak_sensor_tuya"
+      ],
+      "sources": [
+        "z2m_cache"
+      ],
+      "category": "",
+      "description": "Repeater"
+    },
+    {
+      "mfr": "_TZ3000_sgpbz53b",
+      "pid": "TS0207",
+      "drivers": [
+        "water_leak_sensor_tuya"
+      ],
+      "sources": [
+        "z2m_cache"
+      ],
+      "category": "",
+      "description": "Repeater"
+    },
+    {
+      "mfr": "_TZ3000_sgpbz53b",
+      "pid": "TS0001",
+      "drivers": [
+        "water_leak_sensor_tuya"
+      ],
+      "sources": [
+        "z2m_cache"
+      ],
+      "category": "",
+      "description": "Repeater"
+    },
+    {
+      "mfr": "_TZ3000_wn65ixz9",
+      "pid": "TS0207",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "z2m_cache"
+      ],
+      "category": "",
+      "description": "Repeater"
+    },
+    {
+      "mfr": "_TZ3000_trdx8uxs",
+      "pid": "TS0207",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "z2m_cache"
+      ],
+      "category": "",
+      "description": "Repeater"
+    },
+    {
+      "mfr": "_TZ3210_fhx7lk3d",
+      "pid": "TS0001",
+      "drivers": [
+        "plug_smart"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ],
+      "category": "plug",
+      "description": "13A Smart Switched Fused Connection Unit"
+    },
+    {
+      "mfr": "_TZ3000_pf7swkqp",
+      "pid": "ZG-301Z-3CH",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "z2m_cache"
+      ],
+      "category": "switch",
+      "description": "3 gang switch module"
+    },
+    {
+      "mfr": "_TZE204_myd45weu",
+      "pid": "TS0222",
+      "drivers": [
+        "soil_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ],
+      "category": "",
+      "description": "Temperature & humidity sensor"
+    },
+    {
+      "mfr": "_TZ3000_gzvniqjb",
+      "pid": "TS0011",
+      "drivers": [
+        "device_din_rail"
+      ],
+      "sources": [
+        "z2m_cache"
+      ],
+      "category": "switch",
+      "description": "Din smart relay (without power monitoring)"
+    },
+    {
+      "mfr": "_TZ3290_rlkmy85q4pzoxobl",
+      "pid": "TS1201",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts",
+        "zha:ts1201.py"
+      ],
+      "category": "remote",
+      "description": "Universal smart IR remote control"
+    },
+    {
+      "mfr": "_TZ3290_jxvzqatwgsaqzx1u",
+      "pid": "TS1201",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ],
+      "category": "remote",
+      "description": "Universal smart IR remote control"
+    },
+    {
+      "mfr": "_TZ3290_lypnqvlem5eq1ree",
+      "pid": "TS1201",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ],
+      "category": "remote",
+      "description": "Universal smart IR remote control"
+    },
+    {
+      "mfr": "_TZ3290_yac64inudpovoaba",
+      "pid": "TS1201",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ],
+      "category": "remote",
+      "description": "Universal smart IR remote control"
+    },
+    {
+      "mfr": "_TZ3290_uc8lwbi2",
+      "pid": "TS1201",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ],
+      "category": "remote",
+      "description": "Universal smart IR remote control"
+    },
+    {
+      "mfr": "_TZ3290_8xzb2ghn",
+      "pid": "TS1201",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ],
+      "category": "remote",
+      "description": "Universal smart IR remote control"
+    },
+    {
+      "mfr": "_TZE200_qoy0ekbd",
+      "pid": "ZG-227Z",
+      "drivers": [
+        "temphumidsensor3",
+        "temphumidsensor_zcl_ts0601"
+      ],
+      "sources": [
+        "z2m_cache"
+      ],
+      "category": "",
+      "description": "Temperature & humidity LCD sensor"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "ZG-227Z",
+      "drivers": [
+        "temphumidsensor2"
+      ],
+      "sources": [
+        "z2m_cache"
+      ],
+      "category": "",
+      "description": "Temperature & humidity LCD sensor"
+    },
+    {
+      "mfr": "_TZE200_vs0skpuc",
+      "pid": "ZG-227Z",
+      "drivers": [
+        "lcdtemphumidsensor_3"
+      ],
+      "sources": [
+        "z2m_cache"
+      ],
+      "category": "",
+      "description": "Temperature & humidity LCD sensor"
+    },
+    {
+      "mfr": "_TZE200_y8wkaq6w",
+      "pid": "ZG-227Z",
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "sources": [
+        "z2m_cache"
+      ],
+      "category": "",
+      "description": "Temperature & humidity LCD sensor"
+    },
+    {
+      "mfr": "_TZE200_8isdky6j",
+      "pid": "TS0225",
+      "drivers": [
+        "sensor_motion_presence"
+      ],
+      "sources": [
+        "z2m_cache"
+      ],
+      "category": "gas",
+      "description": "Gas sensor"
+    },
+    {
+      "mfr": "_TZE21C_dohbhb5k",
+      "pid": "TS0001",
+      "drivers": [
+        "soil_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ],
+      "category": "hvac",
+      "description": "Smart temperature and humidity switch (thermostat/hygrostat)"
+    },
+    {
+      "mfr": "_TZE21C_i2ij4rb3",
+      "pid": "TS0001",
+      "drivers": [
+        "soil_sensor"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ],
+      "category": "hvac",
+      "description": "Smart temperature and humidity switch (thermostat/hygrostat)"
+    },
+    {
+      "mfr": "_TZE204_qaxkdgyt",
+      "pid": "TS0601",
+      "drivers": [
+        "smoke_sensor3"
+      ],
+      "sources": [
+        "z2m_cache",
+        "z2m_tuya_ts"
+      ],
+      "category": "gas",
+      "description": "Carbon monoxide & gas sensor"
+    },
+    {
+      "mfr": "_TYZB01_7yidyqxd",
+      "pid": "TS0108",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "z2m_tuya_ts"
+      ],
+      "category": "plug",
+      "description": "Socket with 2 USB"
+    },
+    {
+      "mfr": "_TZE284_d4h8j2n6",
+      "pid": "ZP-301Z",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "sources": [
+        "z2m_tuya_ts"
+      ],
+      "category": "sensor",
+      "description": "PIR motion sensor light with night light function"
+    },
+    {
+      "mfr": "AOYAN  ",
+      "pid": "AY-101Z",
+      "drivers": [
+        "soil_sensor"
+      ],
+      "sources": [
+        "z2m_tuya_ts_obj"
+      ],
+      "category": "",
+      "description": ""
+    },
+    {
+      "mfr": "AOYAN",
+      "pid": "AY301Z-2CH",
+      "drivers": [
+        "soil_sensor"
+      ],
+      "sources": [
+        "z2m_tuya_ts_obj"
+      ],
+      "category": "",
+      "description": ""
+    },
+    {
+      "mfr": "AOYAN",
+      "pid": "AY222Z",
+      "drivers": [
+        "soil_sensor"
+      ],
+      "sources": [
+        "z2m_tuya_ts_obj"
+      ],
+      "category": "",
+      "description": ""
+    },
+    {
+      "mfr": "AOYAN",
+      "pid": "AY-204Z",
+      "drivers": [
+        "soil_sensor"
+      ],
+      "sources": [
+        "z2m_tuya_ts_obj"
+      ],
+      "category": "",
+      "description": ""
+    },
+    {
+      "mfr": "A89G12C",
+      "pid": "ARTECO",
+      "drivers": [
+        "soil_sensor"
+      ],
+      "sources": [
+        "z2m_tuya_ts_obj"
+      ],
+      "category": "",
+      "description": ""
+    },
+    {
+      "mfr": "_TZ3000_lfa05ajd",
+      "pid": "TS0201",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "zha:ts0201.py"
+      ],
+      "category": "",
+      "description": ""
+    },
+    {
+      "mfr": "_TZ3210_9q49basr",
+      "pid": "TS0501B",
+      "drivers": [
+        "wall_dimmer_tuya"
+      ],
+      "sources": [
+        "zha:ts0501bs.py"
+      ],
+      "category": "",
+      "description": ""
+    },
+    {
+      "mfr": "_TZ3210_4zinq6io",
+      "pid": "TS0501B",
+      "drivers": [
+        "wall_dimmer_tuya"
+      ],
+      "sources": [
+        "zha:ts0501bs.py"
+      ],
+      "category": "",
+      "description": ""
+    },
+    {
+      "mfr": "_TZ3210_e5t9bfdv",
+      "pid": "TS0501B",
+      "drivers": [
+        "wall_dimmer_tuya"
+      ],
+      "sources": [
+        "zha:ts0501bs.py"
+      ],
+      "category": "",
+      "description": ""
+    },
+    {
+      "mfr": "_TZ3210_i680rtja",
+      "pid": "TS0501B",
+      "drivers": [
+        "wall_dimmer_tuya"
+      ],
+      "sources": [
+        "zha:ts0501bs.py"
+      ],
+      "category": "",
+      "description": ""
+    },
+    {
+      "mfr": "_TZ3210_agjx0pxt",
+      "pid": "TS0501B",
+      "drivers": [
+        "wall_dimmer_tuya"
+      ],
+      "sources": [
+        "zha:ts0501bs.py"
+      ],
+      "category": "",
+      "description": ""
+    },
+    {
+      "mfr": "_TZ3210_d062rv7j",
+      "pid": "TS0501B",
+      "drivers": [
+        "wall_dimmer_tuya"
+      ],
+      "sources": [
+        "zha:ts0501bs.py"
+      ],
+      "category": "",
+      "description": ""
+    },
+    {
+      "mfr": "_TZ3210_syh4kuef",
+      "pid": "TS0501B",
+      "drivers": [
+        "wall_dimmer_tuya"
+      ],
+      "sources": [
+        "zha:ts0501bs.py"
+      ],
+      "category": "",
+      "description": ""
+    },
+    {
+      "mfr": "_TZ3210_lzqq3u4r",
+      "pid": "TS0501",
+      "drivers": [
+        "fan_controller"
+      ],
+      "sources": [
+        "zha:ts0501_fan_switch.py"
+      ],
+      "category": "",
+      "description": ""
+    },
+    {
+      "mfr": "_TYST11_wmcdj3aq",
+      "pid": "MCDJ3AQ",
+      "drivers": [
+        "curtain_motor"
+      ],
+      "sources": [
+        "zha:ts0601_cover.py"
+      ],
+      "category": "cover",
+      "description": ""
+    },
+    {
+      "mfr": "_TYST11_jeaxp72v",
+      "pid": "EAXP72V",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "zha:ts0601_trv.py"
+      ],
+      "category": "hvac",
+      "description": ""
+    },
+    {
+      "mfr": "_TYST11_kfvq6avy",
+      "pid": "FVQ6AVY",
+      "drivers": [
+        "thermostatic_radiator_valve"
+      ],
+      "sources": [
+        "zha:ts0601_trv.py"
+      ],
+      "category": "hvac",
+      "description": ""
+    },
+    {
+      "mfr": "_TYST11_zivfvd7h",
+      "pid": "IVFVD7H",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "zha:ts0601_trv.py"
+      ],
+      "category": "hvac",
+      "description": ""
+    },
+    {
+      "mfr": "_TYST11_hhrtiq0x",
+      "pid": "HRTIQ0X",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "zha:ts0601_trv.py"
+      ],
+      "category": "hvac",
+      "description": ""
+    },
+    {
+      "mfr": "_TYST11_ps5v5jor",
+      "pid": "S5V5JOR",
+      "drivers": [
+        "device_radiator_valve"
+      ],
+      "sources": [
+        "zha:ts0601_trv.py"
+      ],
+      "category": "hvac",
+      "description": ""
+    },
+    {
+      "mfr": "_TYST11_owwdxjbx",
+      "pid": "WWDXJBX",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "zha:ts0601_trv.py"
+      ],
+      "category": "hvac",
+      "description": ""
+    },
+    {
+      "mfr": "_TYST11_8daqwrsj",
+      "pid": "DAQWRSJ",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "zha:ts0601_trv.py"
+      ],
+      "category": "hvac",
+      "description": ""
+    },
+    {
+      "mfr": "_TYST11_czk78ptr",
+      "pid": "ZK78PTR",
+      "drivers": [
+        "device_radiator_valve"
+      ],
+      "sources": [
+        "zha:ts0601_trv.py"
+      ],
+      "category": "hvac",
+      "description": ""
+    },
+    {
+      "mfr": "_TYST11_ckud7u2l",
+      "pid": "KUD7U2L",
+      "drivers": [
+        "thermostatic_radiator_valve"
+      ],
+      "sources": [
+        "zha:ts0601_trv.py"
+      ],
+      "category": "hvac",
+      "description": ""
+    },
+    {
+      "mfr": "_TYST11_ywdxldoj",
+      "pid": "WDXLDOJ",
+      "drivers": [
+        "thermostatic_radiator_valve"
+      ],
+      "sources": [
+        "zha:ts0601_trv.py"
+      ],
+      "category": "hvac",
+      "description": ""
+    },
+    {
+      "mfr": "_TYST11_cwnjrr72",
+      "pid": "WNJRR72",
+      "drivers": [
+        "thermostatic_radiator_valve"
+      ],
+      "sources": [
+        "zha:ts0601_trv.py"
+      ],
+      "category": "hvac",
+      "description": ""
+    },
+    {
+      "mfr": "_TYST11_2atgpdho",
+      "pid": "ATGPDHO",
+      "drivers": [
+        "thermostatic_radiator_valve"
+      ],
+      "sources": [
+        "zha:ts0601_trv.py"
+      ],
+      "category": "hvac",
+      "description": ""
+    }
+  ]
+}
