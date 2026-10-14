@@ -1615,6 +1615,18 @@
       "pid": "TS0601",
       "driverId": "device_radiator_valve",
       "note": "P2813 fl8cuafl TZE284 sibling"
+    },
+    {
+      "mfr": "_TZ3210_w0qqde0g",
+      "pid": "TS011F",
+      "driverId": "plug_energy_monitor",
+      "note": "#559 Z2M TS011F_plug_3 metering — keep through Athom compact"
+    },
+    {
+      "mfr": "_TZ3000_w0qqde0g",
+      "pid": "TS011F",
+      "driverId": "plug_energy_monitor",
+      "note": "#559 TZ3000 sibling plug metering"
     }
   ]
 }
