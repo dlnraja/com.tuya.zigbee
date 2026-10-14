@@ -12826,7 +12826,7 @@
         },
         "manufacturerName": [],
         "learnmode": {
-          "image": "/drivers/air_purifier_curtain/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the motor pairing button (or P2 twice) until the motor jogs / LED flashes, then start pairing in Homey.",
             "fr": "Bouton moteur (ou P2×2) jusqu'à jog/LED, puis lancez l'appairage Homey.",
@@ -13778,7 +13778,7 @@
           "TS0601"
         ],
         "learnmode": {
-          "image": "/drivers/air_purifier_presence/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
@@ -14810,7 +14810,7 @@
           "_deprecated_air_purifier_hybrid_do_not_pair"
         ],
         "learnmode": {
-          "image": "/drivers/air_purifier_siren/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Put the device in Zigbee pairing mode (usually hold reset/pairing 5 seconds until LED flashes).",
             "fr": "Mode appairage Zigbee (souvent reset/pair 5 s jusqu'à LED clignotante).",
@@ -15155,7 +15155,7 @@
           "TS0601"
         ],
         "learnmode": {
-          "image": "/drivers/air_purifier_switch/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly"
           }
@@ -16402,7 +16402,7 @@
           "TS0601"
         ],
         "learnmode": {
-          "image": "/drivers/air_quality_comprehensive/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -17492,7 +17492,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/bulb_dimmable/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -17887,7 +17887,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/bulb_dimmable_dimmer/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -18233,7 +18233,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/bulb_rgb/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -18849,7 +18849,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/bulb_rgb_led/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -19936,7 +19936,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/bulb_rgbw/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -20387,7 +20387,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/bulb_rgbw_universal/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the pairing button on your Zigbee device until it enters pairing mode.",
             "fr": "Appuyez sur le bouton d'appairage de votre appareil Zigbee jusqu'àce qu'il passe en mode appairage."
@@ -20571,7 +20571,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/bulb_tunable_white/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -20944,7 +20944,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/bulb_white/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -21306,7 +21306,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/bulb_zbeacon_ts0505b/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Switch the bulb off and on 5 times until it blinks.",
             "fr": "Éteignez et rallumez l’ampoule 5 fois jusqu’à ce qu’elle clignote.",
@@ -21511,7 +21511,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/button_emergency_sos/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the SOS button for 5 seconds. KEEP PRESSING the button every 2 seconds during pairing to prevent device sleep and enrollment timeout.",
             "fr": "Appuyez et maintenez le bouton SOS pendant 5 secondes. CONTINUEZ à appuyer toutes les 2 secondes pendant l appairage pour éviter la mise en veille."
@@ -22560,7 +22560,9 @@
           "_TZ3000_fa9mlvja",
           "_tz3000_fa9mlvja",
           "_TZ3000_FA9MLVJA",
-          "_tz3000_FA9MLVJA"
+          "_tz3000_FA9MLVJA",
+          "heobian",
+          "Heobian"
         ],
         "productId": [
           "3450-l",
@@ -22641,7 +22643,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/button_wireless_1/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "IMPORTANT: Zigbee Bastien / Universal → Wireless Button 1 (TS0041) — NOT Homey Zigbee. Remove any Unknown Node first. Hold 5–10s until LED blinks; tap every 2s while pairing. After pair: Homey Flow → When this device → « Button 1 pressed » / « Bouton 1 appuyé » (or « Button pressed »). Zigbee Developer Tools channels do nothing on scene remotes.",
             "fr": "IMPORTANT: Zigbee Bastien / Universal → Bouton sans fil 1 (TS0041) — PAS Homey Zigbee. Supprimez tout nœud Inconnu d'abord. Maintenez 5–10 s puis appuyez toutes les 2 s. Après: Flow Homey → Quand cet appareil → « Bouton 1 appuyé » (ou « Bouton appuyé »). Les canaux Zigbee des outils développeur ne marchent PAS (télécommande scène).",
@@ -23658,7 +23660,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/button_wireless_2/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Zigbee Bastien → Wireless Button 2 (TS0042). NOT Homey Zigbee. Wake-tap every 2s while pairing. Homey Flow: Button pressed → lamp — NOT Developer Tools Zigbee channels. Update tip then re-pair if presses were dead/slow.",
             "fr": "Zigbee Bastien → Bouton sans fil 2 (TS0042). PAS Homey Zigbee. Tap toutes les 2 s a l'appairage. Flow: Bouton appuye → lampe — PAS les canaux Zigbee des outils developpeur. Maj tip puis re-appairer si lent/mort.",
@@ -24180,7 +24182,7 @@
           "TS0043"
         ],
         "learnmode": {
-          "image": "/drivers/button_wireless_3/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "IMPORTANT: pick Universal Tuya → Wireless Button 3 (TS0043) — NOT plain Homey Zigbee. Hold any button 5–10s until LED blinks; tap every 2–3s while pairing. Use Homey Flow trigger « Button pressed » (Button 1/2/3) → light — NOT Developer Tools Zigbee channels/commands (scene remotes have no bindable OnOff). Never write 0x8004.",
             "fr": "IMPORTANT: Universal Tuya → Bouton sans fil 3 (TS0043) — PAS Homey Zigbee. Maintenez 5–10 s puis appuyez toutes les 2–3 s. Flow Homey: declencheur « Bouton appuye » (Bouton 1/2/3) → lampe — PAS les canaux/commandes Zigbee des outils developpeur (telecommande scene = pas de OnOff bindable). Ne jamais ecrire 0x8004.",
@@ -24725,7 +24727,7 @@
           "TS1002"
         ],
         "learnmode": {
-          "image": "/drivers/button_wireless_4/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
             "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
@@ -25416,7 +25418,7 @@
           "TS0041"
         ],
         "learnmode": {
-          "image": "/drivers/button_wireless_4_ts0041/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
             "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
@@ -25987,7 +25989,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/button_wireless_6/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
             "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
@@ -26534,7 +26536,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/button_wireless_8/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
             "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
@@ -27692,7 +27694,7 @@
           "_HYBRID_BUTTON_WIRELESS_FINGERBOT_NEEDS_DEVICE_ASSIGNMENT"
         ],
         "learnmode": {
-          "image": "/drivers/button_wireless_fingerbot/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Hold all buttons together (or the reset pinhole) for 5–10 seconds until the LED flashes.",
             "fr": "Maintenez tous les boutons (ou le trou reset) 5–10 s jusqu'à clignotement.",
@@ -27846,7 +27848,7 @@
           "lumi.weather"
         ],
         "learnmode": {
-          "image": "/drivers/button_wireless_plug/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -28401,7 +28403,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/button_wireless_scene/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
             "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'àce que la LED clignote rapidement",
@@ -28870,7 +28872,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/button_wireless_smart/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
             "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
@@ -29953,7 +29955,7 @@
           "ZBMINIR2-R2"
         ],
         "learnmode": {
-          "image": "/drivers/button_wireless_switch/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly"
           }
@@ -30331,7 +30333,7 @@
           "_generic_button_wireless_usb"
         ],
         "learnmode": {
-          "image": "/drivers/button_wireless_usb/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Hold all buttons together (or the reset pinhole) for 5–10 seconds until the LED flashes.",
             "fr": "Maintenez tous les boutons (ou le trou reset) 5–10 s jusqu'à clignotement.",
@@ -30749,7 +30751,7 @@
           "_HYBRID_BUTTON_WIRELESS_VALVE_NEEDS_DEVICE_ASSIGNMENT"
         ],
         "learnmode": {
-          "image": "/drivers/button_wireless_valve/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Hold all buttons together (or the reset pinhole) for 5–10 seconds until the LED flashes.",
             "fr": "Maintenez tous les boutons (ou le trou reset) 5–10 s jusqu'à clignotement.",
@@ -30839,7 +30841,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/button_wireless_wall/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
             "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'àce que la LED clignote rapidement",
@@ -31241,7 +31243,7 @@
           "TS0601"
         ],
         "learnmode": {
-          "image": "/drivers/ceiling_fan/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -31607,7 +31609,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/christmas_lights/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Push the F button on the Christmas Lights controller for aprox 5-10 seconds and release, lights should start to flash slowly."
           }
@@ -33866,7 +33868,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/climate_sensor/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Climate / TH sensor (SNZB-02, eWeLink CK-TLSR…): Zigbee Bastien → Climate Sensor — NOT Homey Zigbee. Hold pair 5s; battery: tap every 2s while pairing.",
             "fr": "Capteur climat (SNZB-02, eWeLink CK-TLSR…): Zigbee Bastien → Capteur climat — PAS Homey Zigbee. Maintenez 5 s; pile: appuyez toutes les 2 s.",
@@ -34657,7 +34659,7 @@
           "TS0601"
         ],
         "learnmode": {
-          "image": "/drivers/climate_sensor_device/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -35103,7 +35105,7 @@
           "_HYBRID_CLIMATE_SENSOR_DIMMER_NEEDS_DEVICE_ASSIGNMENT"
         ],
         "learnmode": {
-          "image": "/drivers/climate_sensor_dimmer/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes. Keep pressing every 2 seconds during pairing if the device is battery-powered.",
             "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'à ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
@@ -35187,7 +35189,7 @@
           "_HYBRID_CLIMATE_SENSOR_ENERGY_NEEDS_DEVICE_ASSIGNMENT"
         ],
         "learnmode": {
-          "image": "/drivers/climate_sensor_energy/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes. Keep pressing every 2 seconds during pairing if the device is battery-powered.",
             "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'à ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
@@ -35636,7 +35638,7 @@
           "_generic_climate_sensor_gas"
         ],
         "learnmode": {
-          "image": "/drivers/climate_sensor_gas/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes. Keep pressing every 2 seconds during pairing if the device is battery-powered.",
             "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'à ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
@@ -36306,7 +36308,7 @@
           "_HYBRID_CLIMATE_SENSOR_PLUG_NEEDS_DEVICE_ASSIGNMENT"
         ],
         "learnmode": {
-          "image": "/drivers/climate_sensor_plug/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes. Keep pressing every 2 seconds during pairing if the device is battery-powered.",
             "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'à ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
@@ -36486,7 +36488,7 @@
           "TS0601"
         ],
         "learnmode": {
-          "image": "/drivers/climate_sensor_presence/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
@@ -37325,7 +37327,7 @@
           "_HYBRID_CLIMATE_SENSOR_SMART_NEEDS_DEVICE_ASSIGNMENT"
         ],
         "learnmode": {
-          "image": "/drivers/climate_sensor_smart/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes. Keep pressing every 2 seconds during pairing if the device is battery-powered.",
             "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'à ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
@@ -38131,7 +38133,7 @@
           "_HYBRID_CLIMATE_SENSOR_SWITCH_NEEDS_DEVICE_ASSIGNMENT"
         ],
         "learnmode": {
-          "image": "/drivers/climate_sensor_switch/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes. Keep pressing every 2 seconds during pairing if the device is battery-powered.",
             "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'à ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
@@ -38227,7 +38229,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/climate_sensor_zt08/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes. Keep pressing every 2 seconds during pairing if the device is battery-powered.",
             "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'à ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
@@ -38461,7 +38463,7 @@
           "zg-102za"
         ],
         "learnmode": {
-          "image": "/drivers/contact_sensor/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -38714,7 +38716,9 @@
           "_TZ3000_C8ZFAD4A",
           "_tz3000_C8ZFAD4A",
           "heobian",
-          "Heobian"
+          "Heobian",
+          "_TZE200_vrcfo4i0",
+          "_tze200_vrcfo4i0"
         ]
       },
       "settings": [
@@ -39584,7 +39588,7 @@
           "_HYBRID_CONTACT_SENSOR_CURTAIN_NEEDS_DEVICE_ASSIGNMENT"
         ],
         "learnmode": {
-          "image": "/drivers/contact_sensor_curtain/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes. Keep pressing every 2 seconds during pairing if the device is battery-powered.",
             "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'à ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
@@ -39996,7 +40000,7 @@
           "_HYBRID_CONTACT_SENSOR_DIMMER_NEEDS_DEVICE_ASSIGNMENT"
         ],
         "learnmode": {
-          "image": "/drivers/contact_sensor_dimmer/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes. Keep pressing every 2 seconds during pairing if the device is battery-powered.",
             "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'à ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
@@ -40694,7 +40698,7 @@
           "_HYBRID_CONTACT_SENSOR_PLUG_NEEDS_DEVICE_ASSIGNMENT"
         ],
         "learnmode": {
-          "image": "/drivers/contact_sensor_plug/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes. Keep pressing every 2 seconds during pairing if the device is battery-powered.",
             "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'à ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
@@ -41546,7 +41550,7 @@
           "_HYBRID_CONTACT_SENSOR_SWITCH_NEEDS_DEVICE_ASSIGNMENT"
         ],
         "learnmode": {
-          "image": "/drivers/contact_sensor_switch/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes. Keep pressing every 2 seconds during pairing if the device is battery-powered.",
             "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'à ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
@@ -41974,7 +41978,7 @@
           "_tze200_N8DLJORX"
         ],
         "learnmode": {
-          "image": "/drivers/contact_sensor_zigbee/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes. Keep pressing every 2 seconds during pairing if the device is battery-powered.",
             "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'à ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
@@ -42072,7 +42076,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/curtain_module/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping)."
           }
@@ -42250,7 +42254,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/curtain_module_2_gang/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping)."
           }
@@ -43574,14 +43578,12 @@
           "_tze28c1000000_VVVTCEHJ",
           "_TZE2841000000_3MZB0SDZ",
           "_tze2841000000_3MZB0SDZ",
-          "_TZE600_ogyg1y6b",
-          "_tze600_ogyg1y6b",
-          "_TZE600_OGYG1Y6B",
-          "_tze600_OGYG1Y6B",
           "_TZE600_5cu64znk",
           "_tze600_5cu64znk",
           "_TZE600_5CU64ZNK",
-          "_tze600_5CU64ZNK"
+          "_tze600_5CU64ZNK",
+          "_TZE204_ycke4deo",
+          "_tze204_ycke4deo"
         ],
         "productId": [
           "01minizb",
@@ -43639,6 +43641,9 @@
           "ts0101",
           "Ts0101",
           "TS0101",
+          "ts0105",
+          "Ts0105",
+          "TS0105",
           "ts0111",
           "Ts0111",
           "TS0111",
@@ -43698,10 +43703,7 @@
           "zbminir2-r2",
           "ZBMINIR2-R2",
           "zg-301z-moto",
-          "ZG-301Z-MOTO",
-          "TS0105",
-          "ts0105",
-          "Ts0105"
+          "ZG-301Z-MOTO"
         ],
         "endpoints": {
           "1": {
@@ -43717,7 +43719,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/curtain_motor/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Follow the pairing instructions for your Smart Curtain Motor."
           }
@@ -43969,7 +43971,8 @@
           "ZBT-ColorLight",
           "lumi.sensor_ht",
           "lumi.sensor_ht.agl02",
-          "lumi.weather"
+          "lumi.weather",
+          "TS0601_cover_2"
         ],
         "endpoints": {
           "1": {
@@ -43982,7 +43985,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/curtain_motor_shutter/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Follow the pairing instructions for your Smart Curtain Motor."
           }
@@ -44079,7 +44082,9 @@
           "_TZE284_pxwixtky",
           "_tze284_pxwixtky",
           "_TZE284_PXWIXTKY",
-          "_tze284_PXWIXTKY"
+          "_tze284_PXWIXTKY",
+          "_TZE600_ogyg1y6b",
+          "_tze600_ogyg1y6b"
         ]
       },
       "settings": [
@@ -44547,7 +44552,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/curtain_motor_tilt/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the motor pairing button (or P2 twice) until the motor jogs / LED flashes, then start pairing in Homey.",
             "fr": "Bouton moteur (ou P2×2) jusqu'à jog/LED, puis lancez l'appairage Homey.",
@@ -44824,7 +44829,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/curtain_motor_wall/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Follow the pairing instructions for your Smart Curtain Motor."
           }
@@ -45911,7 +45916,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/device_air_purifier_led/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
@@ -46460,7 +46465,7 @@
           "TS0601_curtain_tilt"
         ],
         "learnmode": {
-          "image": "/drivers/device_air_purifier_plug/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
@@ -46817,7 +46822,7 @@
           "TS0601"
         ],
         "learnmode": {
-          "image": "/drivers/device_air_purifier_presence/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
@@ -47497,7 +47502,7 @@
           "TS0601"
         ],
         "learnmode": {
-          "image": "/drivers/device_air_purifier_quality/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
@@ -47876,7 +47881,7 @@
           "lumi.airrtc.vrfegl01"
         ],
         "learnmode": {
-          "image": "/drivers/device_air_purifier_radiator/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
@@ -48240,7 +48245,7 @@
           "TS0601"
         ],
         "learnmode": {
-          "image": "/drivers/device_air_purifier_siren/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
@@ -49029,7 +49034,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/device_air_purifier_smoke/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
@@ -49418,7 +49423,7 @@
           "_HYBRID_DEVICE_AIR_PURIFIER_THERMOSTAT_NEEDS_DEVICE_ASSIGNMENT"
         ],
         "learnmode": {
-          "image": "/drivers/device_air_purifier_thermostat/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "On the thermostat, open settings → Zigbee/Network → Pair, or hold the reset pin until the display shows pairing mode.",
             "fr": "Réglages → Zigbee/Réseau → Appairer, ou maintenez reset jusqu'au mode appairage.",
@@ -49860,7 +49865,7 @@
           "ZBT-ColorLight"
         ],
         "learnmode": {
-          "image": "/drivers/device_din_rail/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -50274,7 +50279,7 @@
           "TS004F"
         ],
         "learnmode": {
-          "image": "/drivers/device_din_rail_meter/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -50782,7 +50787,7 @@
           "_HYBRID_DEVICE_FLOOR_HEATING_THERMOSTAT_NEEDS_DEVICE_ASSIGNMENT"
         ],
         "learnmode": {
-          "image": "/drivers/device_floor_heating_thermostat/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "On the thermostat, open settings → Zigbee/Network → Pair, or hold the reset pin until the display shows pairing mode.",
             "fr": "Réglages → Zigbee/Réseau → Appairer, ou maintenez reset jusqu'au mode appairage.",
@@ -51145,7 +51150,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/device_generic_tuya/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the pairing button on your Zigbee device until it enters pairing mode.",
             "fr": "Appuyez sur le bouton d'appairage de votre appareil Zigbee jusqu'àce qu'il passe en mode appairage."
@@ -51315,7 +51320,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/device_generic_tuya_universal/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Generic Tuya TS0601 device.\n\n1. Press and hold the reset button for 5+ seconds\n2. The LED should start blinking\n3. The device will be detected automatically\n\nNote: This is a fallback driver for unknown TS0601 devices. Data points will be auto-discovered.",
             "fr": "Appareil Tuya TS0601 générique.\n\n1. Appuyez et maintenez le bouton reset pendant 5+ secondes\n2. La LED devrait clignoter\n3. L'appareil sera détecté automatiquement\n\nNote: Driver de secours pour TS0601 inconnus. Les points de données seront auto-découverts."
@@ -51453,7 +51458,7 @@
           "TS011F"
         ],
         "learnmode": {
-          "image": "/drivers/device_plug_energy/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
@@ -52777,7 +52782,7 @@
         },
         "manufacturerName": [],
         "learnmode": {
-          "image": "/drivers/device_plug_energy_monitor/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Turn the device on/off 3 times quickly, or hold the reset button until the LED flashes rapidly.",
             "fr": "Allumez/éteignez 3 fois rapidement, ou maintenez reset jusqu'à clignotement rapide.",
@@ -52868,7 +52873,7 @@
           "lumi.weather"
         ],
         "learnmode": {
-          "image": "/drivers/device_plug_smart/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
@@ -53568,7 +53573,7 @@
           "TS0601"
         ],
         "learnmode": {
-          "image": "/drivers/device_plug_smart_water/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
@@ -54260,7 +54265,7 @@
           "TS0601"
         ],
         "learnmode": {
-          "image": "/drivers/device_radiator_valve/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -54647,7 +54652,10 @@
           "_tze204_P3DBF6QS",
           "_TZE200_fl8cuafl",
           "_TZE204_fl8cuafl",
-          "_TZE284_fl8cuafl"
+          "_TZE284_fl8cuafl",
+          "_tze200_fl8cuafl",
+          "_tze204_fl8cuafl",
+          "_tze284_fl8cuafl"
         ]
       },
       "settings": [
@@ -55068,7 +55076,7 @@
           "SNZB-09P"
         ],
         "learnmode": {
-          "image": "/drivers/device_radiator_valve_smart/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -55501,7 +55509,7 @@
           "_HYBRID_DEVICE_RADIATOR_VALVE_THERMOSTAT_NEEDS_DEVICE_ASSIGNMENT"
         ],
         "learnmode": {
-          "image": "/drivers/device_radiator_valve_thermostat/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "On the thermostat, open settings → Zigbee/Network → Pair, or hold the reset pin until the display shows pairing mode.",
             "fr": "Réglages → Zigbee/Réseau → Appairer, ou maintenez reset jusqu'au mode appairage.",
@@ -55686,7 +55694,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/dimmable_led_strip/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Power on to enter pairing mode."
           }
@@ -55762,7 +55770,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/dimmable_recessed_led/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Power on to enter pairing mode."
           }
@@ -56037,7 +56045,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/dimmer_1_gang/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
@@ -56129,7 +56137,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/dimmer_1_gang_2/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
@@ -56231,7 +56239,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/dimmer_1_gang_tuya/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the reset switch rapidly 10 times until the unit make a continously beep sound to enter pairing mode."
           }
@@ -56442,7 +56450,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/dimmer_2_gang/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Two tiles will be created, one for each channel of the device. Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
@@ -56681,7 +56689,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/dimmer_2_gang_tuya/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Two tiles will be created, one for each channel of the device. Press the reset switch rapidly 10 times until the unit make a continously beep sound to enter pairing mode."
           }
@@ -56994,7 +57002,7 @@
           "TS0601"
         ],
         "learnmode": {
-          "image": "/drivers/dimmer_air_purifier/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
@@ -57440,7 +57448,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/dimmer_bulb_dimmable/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
@@ -58111,7 +58119,7 @@
           "TS011F"
         ],
         "learnmode": {
-          "image": "/drivers/dimmer_wall_1gang/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -58957,7 +58965,7 @@
           "_tz3000_GA5SHATP"
         ],
         "learnmode": {
-          "image": "/drivers/dimmer_wall_plug/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Power-cycle the light 3–5 times until it flashes, or hold the reset button on the controller.",
             "fr": "Coupez/rétablissez l'alim. 3–5 fois jusqu'à clignotement, ou maintenez reset.",
@@ -59670,7 +59678,7 @@
           "_HYBRID_DIMMER_WALL_SWITCH_NEEDS_DEVICE_ASSIGNMENT"
         ],
         "learnmode": {
-          "image": "/drivers/dimmer_wall_switch/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Power-cycle the light 3–5 times until it flashes, or hold the reset button on the controller.",
             "fr": "Coupez/rétablissez l'alim. 3–5 fois jusqu'à clignotement, ou maintenez reset.",
@@ -61116,7 +61124,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/diy_custom_zigbee/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "DIY Custom Zigbee Device (PTVO, ESP32-H2, CC2530, etc.)\n\n1. Put your DIY device in pairing mode\n2. For PTVO: Short press the button or power cycle\n3. For ESP32: Follow your firmware instructions\n4. For CC2530/CC2531: Power cycle or use button\n5. Device will be auto-detected\n\nSupported Firmware:\n- PTVO Configurable Firmware\n- ESP Zigbee SDK (ESP32-H2/C6)\n- DIYRuZ projects\n- Tasmota Zigbee\n- Custom ZCL implementations",
             "fr": "Appareil Zigbee DIY (PTVO, ESP32-H2, CC2530, etc.)\n\n1. Mettez votre appareil DIY en mode appairage\n2. PTVO: Appui court sur le bouton ou redémarrage\n3. ESP32: Suivez les instructions de votre firmware\n4. CC2530/CC2531: Redémarrage ou bouton\n5. L'appareil sera auto-détecté\n\nFirmwares Supportés:\n- PTVO Configurable Firmware\n- ESP Zigbee SDK (ESP32-H2/C6)\n- Projets DIYRuZ\n- Tasmota Zigbee\n- Implémentations ZCL personnalisées"
@@ -61414,7 +61422,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/door_controller/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -61758,7 +61766,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/door_controller_garage/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
@@ -62152,7 +62160,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/door_sensor/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the reset button for 5 seconds until the LED flashes.",
             "fr": "Maintenez le bouton de réinitialisation pendant 5 secondes jusqu'à ce que la LED clignote.",
@@ -62311,7 +62319,7 @@
           "TS0601"
         ],
         "learnmode": {
-          "image": "/drivers/doorbell/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -62682,7 +62690,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/doorwindowsensor/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Insert a pin into the single hole on the side of the device and press it gently for aprox 10 seconds until the LED blinks rapidly."
           }
@@ -62762,7 +62770,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/doorwindowsensor_2/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Open the device and press the reset button gently for aprox 10 seconds until the LED blinks rapidly."
           }
@@ -62885,7 +62893,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/doorwindowsensor_3/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Insert a pin into the single hole on the side of the device and press it gently for aprox 10 seconds until the LED blinks rapidly."
           }
@@ -62988,7 +62996,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/doorwindowsensor_4/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Insert a pin into the single hole on the side of the device and press it gently for aprox 7 seconds until the LED blinks slowly."
           }
@@ -64108,7 +64116,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/fingerbot/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the setup button inside the Finger Bot for approx 10 seconds to enter pairing mode."
           }
@@ -64252,7 +64260,7 @@
           "TS0601"
         ],
         "learnmode": {
-          "image": "/drivers/fingerbot_switch/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly"
           }
@@ -65232,7 +65240,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/flood_sensor/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Push the button for aprox 10 seconds until the LED blinks rapidly. If nothing happens; put two fingers against the detectors and repeat."
           }
@@ -65341,7 +65349,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/floor_heating_thermostat/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "On the thermostat, open settings → Zigbee/Network → Pair, or hold the reset pin until the display shows pairing mode.",
             "fr": "Réglages → Zigbee/Réseau → Appairer, ou maintenez reset jusqu'au mode appairage.",
@@ -65980,7 +65988,7 @@
           "_tze284_CHBYV06"
         ],
         "learnmode": {
-          "image": "/drivers/gas_detector/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -66340,7 +66348,7 @@
           "zg-225z"
         ],
         "learnmode": {
-          "image": "/drivers/gas_sensor/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -66821,7 +66829,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/gas_sensor_switch/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly"
           }
@@ -67583,7 +67591,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/gateway_zigbee_bridge/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -68785,7 +68793,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/generic_tuya/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Generic Tuya TS0601 device.\n\n1. Press and hold the reset button for 5+ seconds\n2. The LED should start blinking\n3. The device will be detected automatically\n\nNote: This is a fallback driver for unknown TS0601 devices. Data points will be auto-discovered.",
             "fr": "Appareil Tuya TS0601 générique.\n\n1. Appuyez et maintenez le bouton reset pendant 5+ secondes\n2. La LED devrait clignoter\n3. L'appareil sera détecté automatiquement\n\nNote: Driver de secours pour TS0601 inconnus. Les points de données seront auto-découverts."
@@ -68987,7 +68995,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/handheld_remote_4_buttons/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the top button for aprox 10 seconds (Zigbee logo will start blinking)."
           }
@@ -69379,7 +69387,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/hvac_air_conditioner/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the WiFi button for 5 seconds until LED blinks rapidly",
             "fr": "Appuyez et maintenez le bouton WiFi pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
@@ -69965,7 +69973,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/hvac_dehumidifier/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the power button for 5 seconds until LED blinks rapidly",
             "fr": "Appuyez et maintenez le bouton d'alimentation pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
@@ -70758,7 +70766,7 @@
           "_tze284_LNBFY"
         ],
         "learnmode": {
-          "image": "/drivers/hybrid_heater_thermostat/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "On the thermostat, open settings → Zigbee/Network → Pair, or hold the reset pin until the display shows pairing mode.",
             "fr": "Réglages → Zigbee/Réseau → Appairer, ou maintenez reset jusqu'au mode appairage.",
@@ -71309,7 +71317,7 @@
           "_tze204_X1OVYVY1"
         ],
         "learnmode": {
-          "image": "/drivers/hybrid_sensor_thermostat/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "On the thermostat, open settings → Zigbee/Network → Pair, or hold the reset pin until the display shows pairing mode.",
             "fr": "Réglages → Zigbee/Réseau → Appairer, ou maintenez reset jusqu'au mode appairage.",
@@ -71664,7 +71672,9 @@
           "_TYZB01_4MDQXXNN",
           "_tyzb01_4MDQXXNN",
           "_TYZB01_M6EC2PGJ",
-          "_tyzb01_M6EC2PGJ"
+          "_tyzb01_M6EC2PGJ",
+          "heobian",
+          "Heobian"
         ]
       },
       "icon": "/drivers/illuminance_sensor/assets/icon.svg",
@@ -72047,7 +72057,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/ir_blaster/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Put the device in Zigbee pairing mode (usually hold reset/pairing 5 seconds until LED flashes).",
             "fr": "Mode appairage Zigbee (souvent reset/pair 5 s jusqu'à LED clignotante).",
@@ -72794,7 +72804,7 @@
           "_tze284_A8SDABTG"
         ],
         "learnmode": {
-          "image": "/drivers/lcdtemphumidsensor/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Zigbee Bastien → LCD Temp/Humidity (_TZE284_vvmbj46n+TS0601…). NOT Homey Zigbee. Hold pair 5s; battery: tap every 2s while pairing.",
             "fr": "Zigbee Bastien → Capteur LCD TH (_TZE284_vvmbj46n+TS0601…). PAS Homey Zigbee. Maintenez 5 s; pile: tap toutes les 2 s.",
@@ -73445,7 +73455,7 @@
           "TS0601"
         ],
         "learnmode": {
-          "image": "/drivers/lcdtemphumidsensor_plug_energy/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -74364,7 +74374,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/led_controller_spi_tuya/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Put the controller in pairing mode as described in its manual (usually a long press on its button until the strip blinks).",
             "fr": "Mettez le contrôleur en mode appairage comme indiqué dans sa notice (généralement un appui long sur son bouton jusqu’à ce que le ruban clignote).",
@@ -74427,7 +74437,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/led_strip/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -74773,7 +74783,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/led_strip_advanced/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -75183,7 +75193,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/led_strip_rgbw/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -75619,7 +75629,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/light_bulb_dimmable_tunable/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
@@ -76073,7 +76083,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/light_bulb_rgb/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
@@ -76701,7 +76711,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/light_bulb_rgb_led/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
@@ -77347,7 +77357,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/light_bulb_rgb_rgbw/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -77858,7 +77868,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/light_bulb_tunable_white/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
@@ -78254,7 +78264,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/light_cct_ts0502b/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Switch the light off and on 3–5 times until it blinks to enter pairing mode.",
             "fr": "Éteignez et rallumez la lampe 3 à 5 fois jusqu'à ce qu'elle clignote pour passer en mode appairage.",
@@ -78335,7 +78345,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/light_dimmable_ts0501a/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Switch the light off and on 3–5 times until it blinks to enter pairing mode.",
             "fr": "Éteignez et rallumez la lampe 3 à 5 fois jusqu'à ce qu'elle clignote pour passer en mode appairage.",
@@ -78418,7 +78428,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/light_rgbcct_ts0505b/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Switch the light off and on 3–5 times until it blinks to enter pairing mode.",
             "fr": "Éteignez et rallumez la lampe 3 à 5 fois jusqu'à ce qu'elle clignote pour passer en mode appairage.",
@@ -78630,7 +78640,7 @@
           "TS0601"
         ],
         "learnmode": {
-          "image": "/drivers/lock_smart/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -78985,7 +78995,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/mc101z_pwm_dimmer/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Put the MC101Z into Zigbee pairing mode using the SET button."
           }
@@ -79064,7 +79074,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/module_mini_switch/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -79859,7 +79869,11 @@
           "_TZ3210_m3mxv66l",
           "_tz3210_m3mxv66l",
           "_TZ3210_M3MXV66L",
-          "_tz3210_M3MXV66L"
+          "_tz3210_M3MXV66L",
+          "_TZE204_iq4ygaai",
+          "_tze204_iq4ygaai",
+          "_TZE284_iq4ygaai",
+          "_tze284_iq4ygaai"
         ],
         "productId": [
           "3305-S",
@@ -79898,7 +79912,7 @@
           "lumi.sensor_motion.aq2"
         ],
         "learnmode": {
-          "image": "/drivers/motion_sensor/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -80412,7 +80426,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/motion_sensor_2/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the reset button for aprox 5 seconds until the LED blinks."
           }
@@ -80496,7 +80510,9 @@
           "_tze284_GNPFLCOQ",
           "_TZ3218_t9ynfz4x",
           "_TZE200_gnpflcoq",
-          "_TZE204_gnpflcoq"
+          "_TZE204_gnpflcoq",
+          "_tze200_gnpflcoq",
+          "_tze204_gnpflcoq"
         ],
         "endpoints": {
           "1": {
@@ -80521,7 +80537,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/motion_sensor_radar_mmwave/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -81055,7 +81071,7 @@
           "TS0601"
         ],
         "learnmode": {
-          "image": "/drivers/motion_sensor_switch/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly"
           }
@@ -82238,7 +82254,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/panel_switch_cover_tuya/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the first touch key (or the reset key) for about 5 seconds until the indicator blinks.",
             "fr": "Maintenez la première touche (ou la touche reset) environ 5 secondes jusqu’à ce que le voyant clignote.",
@@ -82562,7 +82578,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/pir_mmwave_sensor/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the reset button for aprox 5 seconds until the LED blinks."
           }
@@ -82846,7 +82862,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/pir_sensor_2/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the reset button for aprox 5 seconds until the LED blinks."
           }
@@ -82920,7 +82936,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/pirsensor/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Insert a pin into the single hole on the side of the device and press it gently for aprox 10 seconds until the LED blinks rapidly."
           }
@@ -83412,7 +83428,7 @@
           "lumi.plug.mmeu01"
         ],
         "learnmode": {
-          "image": "/drivers/plug_energy_monitor/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -83941,7 +83957,7 @@
           "TS0121"
         ],
         "learnmode": {
-          "image": "/drivers/plug_smart/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -85453,7 +85469,7 @@
           "_HYBRID_PLUG_SMART_SWITCH_NEEDS_DEVICE_ASSIGNMENT"
         ],
         "learnmode": {
-          "image": "/drivers/plug_smart_switch/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Turn the device on/off 3 times quickly, or hold the reset button until the LED flashes rapidly.",
             "fr": "Allumez/éteignez 3 fois rapidement, ou maintenez reset jusqu'à clignotement rapide.",
@@ -86624,7 +86640,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/presence_sensor_ceiling/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes rapidly.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote rapidement."
@@ -88168,7 +88184,7 @@
           "zg-210z"
         ],
         "learnmode": {
-          "image": "/drivers/presence_sensor_radar/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -88577,7 +88593,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/radar_sensor/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the reset button for 6 seconds. When the indicator light flashes it is in pairing mode.",
             "nl": "Druk 6 seconden op de reset knop. Wacht tot de led gaat knipperen."
@@ -88744,7 +88760,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/radar_sensor_2/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the reset button for 6 seconds. When the indicator light flashes it is in pairing mode.",
             "nl": "Druk 6 seconden op de reset knop. Wacht tot de led gaat knipperen."
@@ -88953,7 +88969,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/radar_sensor_ceiling/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the reset button for 5 seconds. When the indicator light flashes it is in pairing mode."
           }
@@ -89052,7 +89068,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/radiator_controller/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly",
             "fr": "Allumer/éteindre l'interrupteur 3 fois rapidement"
@@ -90113,7 +90129,7 @@
           "eTRV0103"
         ],
         "learnmode": {
-          "image": "/drivers/radiator_valve/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -90570,7 +90586,7 @@
           "_tze200_QC4FPMCN"
         ],
         "learnmode": {
-          "image": "/drivers/radiator_valve_zigbee/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "On the thermostat, open settings → Zigbee/Network → Pair, or hold the reset pin until the display shows pairing mode.",
             "fr": "Réglages → Zigbee/Réseau → Appairer, ou maintenez reset jusqu'au mode appairage.",
@@ -91058,7 +91074,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/relay_board_1_channel/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the setup button combined with 1 channel button for 10 seconds (the LED should blink green)."
           }
@@ -91166,7 +91182,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/relay_board_2_channel/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Two tiles will be created, one for each channel of the device. Press the setup button combined with 1 channel button for 10 seconds (the LED should blink green)."
           }
@@ -91316,7 +91332,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/relay_board_4_channel/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "One device with 4 channels (gang 1–4). Press the setup button with channel 1 for ~10 seconds until the LED blinks blue. Re-pair after app update if you previously had four separate tiles."
           }
@@ -91408,7 +91424,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/remote_button_emergency_sos/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Push a pin gently into the reset hole on the backside of the unit for aprox 10 seconds until the led on the front blinks rapidly.",
             "fr": "Appuyez doucement avec un stylet dans le trou de réinitialisation sur l'arrière de l'unité pendant environ 10 secondes jusqu'à ce que la LED clignote rapidement."
@@ -91618,7 +91634,10 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_hybrid_remote_button_wireless_needs_device_assignment",
+          "_HYBRID_REMOTE_BUTTON_WIRELESS_NEEDS_DEVICE_ASSIGNMENT"
+        ],
         "productId": [
           "TS0043",
           "TS011F",
@@ -91629,7 +91648,7 @@
           "TS004F"
         ],
         "learnmode": {
-          "image": "/drivers/remote_button_wireless/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
             "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
@@ -92855,7 +92874,7 @@
           "_HYBRID_REMOTE_BUTTON_WIRELESS_FINGERBOT_NEEDS_DEVICE_ASSIGNMENT"
         ],
         "learnmode": {
-          "image": "/drivers/remote_button_wireless_fingerbot/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Hold all buttons together (or the reset pinhole) for 5–10 seconds until the LED flashes.",
             "fr": "Maintenez tous les boutons (ou le trou reset) 5–10 s jusqu'à clignotement.",
@@ -92937,7 +92956,7 @@
           "DISABLED_REMOTE_BUTTON_WIRELESS_HANDHELD"
         ],
         "learnmode": {
-          "image": "/drivers/remote_button_wireless_handheld/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
             "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
@@ -93828,7 +93847,7 @@
           "TS0121"
         ],
         "learnmode": {
-          "image": "/drivers/remote_button_wireless_plug/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -94247,7 +94266,7 @@
           "_HYBRID_REMOTE_BUTTON_WIRELESS_SCENE_NEEDS_DEVICE_ASSIGNMENT"
         ],
         "learnmode": {
-          "image": "/drivers/remote_button_wireless_scene/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Hold all buttons together (or the reset pinhole) for 5–10 seconds until the LED flashes.",
             "fr": "Maintenez tous les boutons (ou le trou reset) 5–10 s jusqu'à clignotement.",
@@ -94319,7 +94338,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/remote_button_wireless_smart/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
             "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'àce que la LED clignote rapidement",
@@ -94958,7 +94977,7 @@
           "_HYBRID_REMOTE_BUTTON_WIRELESS_USB_NEEDS_DEVICE_ASSIGNMENT"
         ],
         "learnmode": {
-          "image": "/drivers/remote_button_wireless_usb/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Hold all buttons together (or the reset pinhole) for 5–10 seconds until the LED flashes.",
             "fr": "Maintenez tous les boutons (ou le trou reset) 5–10 s jusqu'à clignotement.",
@@ -95373,7 +95392,7 @@
           "_HYBRID_REMOTE_BUTTON_WIRELESS_VALVE_NEEDS_DEVICE_ASSIGNMENT"
         ],
         "learnmode": {
-          "image": "/drivers/remote_button_wireless_valve/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Hold all buttons together (or the reset pinhole) for 5–10 seconds until the LED flashes.",
             "fr": "Maintenez tous les boutons (ou le trou reset) 5–10 s jusqu'à clignotement.",
@@ -95451,7 +95470,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/remote_button_wireless_wall/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "1-button wall remote only (TS0041). For 3-button TS0043 stickies (_TZ3000_vsxvaj9i…): remove device and pair as Wireless Button 3 — never Homey Zigbee generic. Hold any button 5–10s until LED blinks.",
             "fr": "Telecommande murale 1 bouton (TS0041) uniquement. Pour stick 3 boutons TS0043 (_TZ3000_vsxvaj9i…): retirez et ajoutez en Bouton sans fil 3 — jamais Homey Zigbee generique. Maintenez 5–10 s jusqu'au clignotement LED.",
@@ -95840,7 +95859,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/remote_dimmer/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes rapidly.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'au clignotement rapide de la LED.",
@@ -95974,7 +95993,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/rgb_bulb_E14/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Power on to enter pairing mode."
           }
@@ -96052,7 +96071,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/rgb_bulb_E27/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Power on to enter pairing mode."
           }
@@ -96138,7 +96157,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/rgb_ceiling_led_light/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Power on to enter pairing mode."
           }
@@ -96219,7 +96238,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/rgb_floor_led_light/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Power on to enter pairing mode."
           }
@@ -96301,7 +96320,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/rgb_led_light_bar/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Power on to enter pairing mode."
           }
@@ -96396,7 +96415,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/rgb_led_strip/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Power on to enter pairing mode."
           }
@@ -96501,7 +96520,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/rgb_led_strip_controller/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the setup button for 10 seconds to enter pairing mode (the LED should blink green)."
           }
@@ -96589,7 +96608,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/rgb_mood_light/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Power on to enter pairing mode."
           }
@@ -96676,7 +96695,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/rgb_spot_GU10/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Power on to enter pairing mode."
           }
@@ -96757,7 +96776,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/rgb_spot_GardenLight/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Power on to enter pairing mode."
           }
@@ -96847,7 +96866,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/rgb_wall_led_light/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Power on to enter pairing mode."
           }
@@ -96918,7 +96937,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/scene_switch_1/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Hold all buttons together (or the reset pinhole) for 5–10 seconds until the LED flashes.",
             "fr": "Maintenez tous les boutons (ou le trou reset) 5–10 s jusqu'à clignotement.",
@@ -97095,7 +97114,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/scene_switch_2/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Hold all buttons together (or the reset pinhole) for 5–10 seconds until the LED flashes.",
             "fr": "Maintenez tous les boutons (ou le trou reset) 5–10 s jusqu'à clignotement.",
@@ -97286,7 +97305,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/scene_switch_3/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Hold all buttons together (or the reset pinhole) for 5–10 seconds until the LED flashes.",
             "fr": "Maintenez tous les boutons (ou le trou reset) 5–10 s jusqu'à clignotement.",
@@ -97571,7 +97590,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/scene_switch_4/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Hold all buttons together (or the reset pinhole) for 5–10 seconds until the LED flashes.",
             "fr": "Maintenez tous les boutons (ou le trou reset) 5–10 s jusqu'à clignotement.",
@@ -97786,7 +97805,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/scene_switch_6/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Hold all buttons together (or the reset pinhole) for 5–10 seconds until the LED flashes.",
             "fr": "Maintenez tous les boutons (ou le trou reset) 5–10 s jusqu'à clignotement.",
@@ -97991,7 +98010,7 @@
           "_HYBRID_SCENE_SWITCH_6CH_NEEDS_DEVICE_ASSIGNMENT"
         ],
         "learnmode": {
-          "image": "/drivers/scene_switch_6ch/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Hold all buttons together (or the reset pinhole) for 5–10 seconds until the LED flashes.",
             "fr": "Maintenez tous les boutons (ou le trou reset) 5–10 s jusqu'à clignotement.",
@@ -98160,7 +98179,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/scene_switch_wall/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Hold all buttons together (or the reset pinhole) for 5–10 seconds until the LED flashes.",
             "fr": "Maintenez tous les boutons (ou le trou reset) 5–10 s jusqu'à clignotement.",
@@ -100548,7 +100567,7 @@
           "_HYBRID_SENSOR_CLIMATE_PRESENCE_NEEDS_DEVICE_ASSIGNMENT"
         ],
         "learnmode": {
-          "image": "/drivers/sensor_climate_presence/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes. Keep pressing every 2 seconds during pairing if the device is battery-powered.",
             "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'à ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
@@ -102419,7 +102438,7 @@
           "Excellux"
         ],
         "learnmode": {
-          "image": "/drivers/sensor_contact_plug/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
@@ -103183,7 +103202,7 @@
           "DISABLED_SENSOR_CONTACT_PRESENCE"
         ],
         "learnmode": {
-          "image": "/drivers/sensor_contact_presence/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -104570,7 +104589,7 @@
           "Excellux"
         ],
         "learnmode": {
-          "image": "/drivers/sensor_contact_water/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -104870,7 +104889,7 @@
           "Ts130f"
         ],
         "learnmode": {
-          "image": "/drivers/sensor_contact_zigbee/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
@@ -105404,7 +105423,7 @@
           "TS0301"
         ],
         "learnmode": {
-          "image": "/drivers/sensor_gas_presence/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
@@ -106102,7 +106121,7 @@
           "CK-TLSR8656-SS5-01(7002)"
         ],
         "learnmode": {
-          "image": "/drivers/sensor_ias_zonetype_ewelink/assets/learnmode.svg",
+          "image": "{{driverAssetsPath}}/learnmode.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -106299,7 +106318,7 @@
           "zp-301z"
         ],
         "learnmode": {
-          "image": "/drivers/sensor_illuminance_presence/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -107560,7 +107579,7 @@
           "lumi.weather"
         ],
         "learnmode": {
-          "image": "/drivers/sensor_motion_presence/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -108190,7 +108209,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/sensor_motion_radar/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -108745,7 +108764,7 @@
           "Ts0004"
         ],
         "learnmode": {
-          "image": "/drivers/sensor_presence_radar/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -109419,7 +109438,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/shutter_roller_controller/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -109906,7 +109925,7 @@
           "ts0224"
         ],
         "learnmode": {
-          "image": "/drivers/siren/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -110863,7 +110882,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/slim_motion_sensor/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the reset button for aprox 5 seconds until the LED blinks."
           }
@@ -111221,7 +111240,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_air_detection_box/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the RESET pinhole on the side of the unit for 5 seconds until LED blinks."
           }
@@ -111532,7 +111551,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_button_switch/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the button for aprox 10 seconds (the LED should start blinking)."
           }
@@ -111686,7 +111705,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_door_window_sensor/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Insert a pin into the single hole on the side of the device and press it gently for aprox 5 seconds until the LED blinks rapidly. If the pairing does not start, press the setup button again for 10-15 seconds until the led stops blinking and then try again."
           }
@@ -111829,7 +111848,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_garden_irrigation_control/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Ensure the indicator light is flashing. If the indicator light isn't flashing: press and hold on/off buttons for 5 seconds until the indicator light starts to flashing.",
             "it": "Accertarsi che la spia lampeggi. Se la spia non lampeggia: tenere premuti i pulsanti di accensione/spegnimento per 5 secondi finché la spia non inizia a lampeggiare"
@@ -112405,7 +112424,7 @@
           "_tz3290_IXD9MVV4"
         ],
         "learnmode": {
-          "image": "/drivers/smart_irrigation_valve/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Put the device in Zigbee pairing mode (usually hold reset/pairing 5 seconds until LED flashes).",
             "fr": "Mode appairage Zigbee (souvent reset/pair 5 s jusqu'à LED clignotante).",
@@ -112583,7 +112602,7 @@
           "_tz3000_LRFVZQ1E"
         ],
         "learnmode": {
-          "image": "/drivers/smart_knob/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Hold all buttons together (or the reset pinhole) for 5–10 seconds until the LED flashes.",
             "fr": "Maintenez tous les boutons (ou le trou reset) 5–10 s jusqu'à clignotement.",
@@ -113056,7 +113075,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_knob_switch/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the side button for aprox 10 seconds (LED should start blinking).",
             "sv": "Håll ned sidoknappen ca 10 sekunder (LED-lampan ska börja blinka)."
@@ -113205,7 +113224,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_lcd_thermostat/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "On the thermostat, open settings → Zigbee/Network → Pair, or hold the reset pin until the display shows pairing mode.",
             "fr": "Réglages → Zigbee/Réseau → Appairer, ou maintenez reset jusqu'au mode appairage.",
@@ -113336,7 +113355,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_motion_sensor/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Insert a pin into the single hole on the side of the device and press it gently for aprox 5 seconds until the LED blinks rapidly. If the pairing does not start, press the setup button again for 10-15 seconds until the led stops blinking and then try again."
           }
@@ -113584,7 +113603,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_remote_1_button/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the reset button for aprox 10 seconds (the LED should start blinking)."
           }
@@ -113690,7 +113709,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_remote_1_button_2/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the reset button for aprox 10 seconds (the LED should start blinking)."
           }
@@ -113810,7 +113829,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_remote_4_buttons/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Push a pin gently into the reset hole on the backside of the unit for aprox 10 seconds until the led on the front blinks rapidly."
           }
@@ -114222,7 +114241,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_switch/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the setup button for approx 10 seconds to enter pairing mode (the LED should blink)."
           }
@@ -114982,7 +115001,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smoke_detector_advanced/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -115629,7 +115648,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smoke_sensor2/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the RESET pinhole on the side of the unit for 5 seconds until LED blinks."
           }
@@ -115750,7 +115769,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smoke_sensor3/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the RESET pinhole on the side of the unit for 5 seconds until LED blinks."
           }
@@ -116933,7 +116952,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/soil_sensor/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes. Keep pressing every 2 seconds during pairing if the device is battery-powered.",
             "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'à ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
@@ -117207,7 +117226,7 @@
           "_HYBRID_SOIL_SENSOR_EC_NEEDS_DEVICE_ASSIGNMENT"
         ],
         "learnmode": {
-          "image": "/drivers/soil_sensor_ec/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes. Keep pressing every 2 seconds during pairing if the device is battery-powered.",
             "fr": "Maintenez le bouton d'appairage 5 secondes jusqu'à ce que la LED clignote. Sur pile, rappuyez toutes les 2 s pendant l'appairage.",
@@ -117280,7 +117299,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/soilsensor/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Hold the button for 5 seconds, the button will blink.",
             "nl": "Houd de knop 5 seconden ingedrukt, het knop zal knipperen."
@@ -117366,7 +117385,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/soilsensor_2/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Hold the button for 5 seconds, the button will blink.",
             "nl": "Houd de knop 5 seconden ingedrukt, het knop zal knipperen."
@@ -117569,7 +117588,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/sound_sensor_tuya/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the button on the sensor for about 5 seconds until the indicator blinks.",
             "fr": "Maintenez le bouton du capteur environ 5 secondes jusqu’à ce que le voyant clignote.",
@@ -118438,7 +118457,7 @@
           "TS0726"
         ],
         "learnmode": {
-          "image": "/drivers/switch/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly"
           }
@@ -118517,7 +118536,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/switch_1_gang/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
@@ -118636,7 +118655,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/switch_1_gang_metering/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
@@ -118888,7 +118907,7 @@
           "zg-302z1"
         ],
         "learnmode": {
-          "image": "/drivers/switch_1gang/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Zigbee Bastien → 1-gang Switch. HOBEIAN ZG-301Z / WHD02: toggle 3×. Update ≥1.0.49 then Repair (countdown+switch_type+light class+mesh calm). NOT Homey Zigbee.",
             "fr": "Zigbee Bastien → Interrupteur 1 voie. HOBEIAN ZG-301Z / WHD02: 3× on/off. Update ≥1.0.49 puis Réparer (countdown+switch_type+class light+mesh). PAS Homey Zigbee.",
@@ -121315,7 +121334,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/switch_2_gang/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Two tiles will be created, one for each channel of the device. Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
@@ -121463,7 +121482,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/switch_2_gang_metering/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Two tiles will be created, one for each channel of the device. Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
@@ -121626,7 +121645,7 @@
           "Ts0505a"
         ],
         "learnmode": {
-          "image": "/drivers/switch_2gang/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly"
           }
@@ -122892,7 +122911,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/switch_3_gang/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Three tiles will be created, one for each channel of the device. Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
@@ -123102,7 +123121,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/switch_3gang/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly"
           }
@@ -124284,7 +124303,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/switch_4_gang_metering/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Four tiles will be created, one for each channel of the device. Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
@@ -124482,7 +124501,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/switch_4gang/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "4-gang switch (_TZ3000_ltt60asa+TS0004…): pick Zigbee Bastien → 4-gang Switch — NOT Homey Zigbee. Toggle any gang 3× quickly.",
             "fr": "Interrupteur 4 voies (_TZ3000_ltt60asa+TS0004…): Zigbee Bastien → Interrupteur 4 voies — PAS Homey Zigbee. Basculez 3× rapidement."
@@ -126081,7 +126100,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/switch_plug_1/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Turn the device on/off 3 times quickly, or hold the reset button until the LED flashes rapidly.",
             "fr": "Allumez/éteignez 3 fois rapidement, ou maintenez reset jusqu'à clignotement rapide.",
@@ -126443,7 +126462,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/switch_plug_2/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Turn the device on/off 3 times quickly, or hold the reset button until the LED flashes rapidly.",
             "fr": "Allumez/éteignez 3 fois rapidement, ou maintenez reset jusqu'à clignotement rapide.",
@@ -126862,7 +126881,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/switch_presence_tuya/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the first touch key (or the reset key) for about 5 seconds until the indicator blinks.",
             "fr": "Maintenez la première touche (ou la touche reset) environ 5 secondes jusqu’à ce que le voyant clignote.",
@@ -127052,7 +127071,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/switch_usb_dongle/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Plug the USB dongle into a USB power source. Press the button on the dongle 3 times quickly.",
             "fr": "Branchez le dongle USB sur une source d'alimentation USB. Appuyez 3 fois rapidement sur le bouton du dongle."
@@ -128659,7 +128678,7 @@
           "TS0601"
         ],
         "learnmode": {
-          "image": "/drivers/switch_wall_5gang/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -128897,7 +128916,7 @@
           "TS0006"
         ],
         "learnmode": {
-          "image": "/drivers/switch_wall_6gang/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the power button for 5 seconds until the LED blinks",
             "fr": "Appuyez et maintenez le bouton d'alimentation pendant 5 secondes jusqu'à ce que la LED clignote"
@@ -130603,7 +130622,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/switch_wireless/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -131163,7 +131182,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/switch_zbeacon_ts0001/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the button on the device 5 times quickly (or hold it about 5 seconds) until the LED blinks.",
             "fr": "Appuyez 5 fois rapidement sur le bouton (ou maintenez-le environ 5 secondes) jusqu’à ce que la LED clignote.",
@@ -131529,7 +131548,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/temphumidsensor2/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Insert a pin into the single hole on the side of the device and press it gently for aprox 10 seconds until the LED blinks rapidly."
           }
@@ -132157,7 +132176,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/temphumidsensor_zcl_th01/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the reset button for about 5 seconds until the LED blinks rapidly.",
             "fr": "Maintenez le bouton reset environ 5 secondes jusqu’à ce que la LED clignote rapidement.",
@@ -132234,7 +132253,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/temphumidsensor_zcl_ts0601/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the reset button for about 5 seconds until the LED blinks rapidly.",
             "fr": "Maintenez le bouton reset environ 5 secondes jusqu’à ce que la LED clignote rapidement.",
@@ -132293,7 +132312,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/thermostat_4ch/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "On the thermostat, open settings → Zigbee/Network → Pair, or hold the reset pin until the display shows pairing mode.",
             "fr": "Réglages → Zigbee/Réseau → Appairer, ou maintenez reset jusqu'au mode appairage.",
@@ -132655,7 +132674,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/thermostat_tuya_dp/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "On the thermostat, open settings → Zigbee/Network → Pair, or hold the reset pin until the display shows pairing mode.",
             "fr": "Réglages → Zigbee/Réseau → Appairer, ou maintenez reset jusqu'au mode appairage.",
@@ -133037,7 +133056,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/thermostatic_radiator_valve/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press 'Pair' button for 5 seconds until antenna symbol starts to blink."
           }
@@ -133410,7 +133429,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/tunable_bulb_E14/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Power on to enter pairing mode."
           }
@@ -133493,7 +133512,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/tunable_bulb_E27/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Power on to enter pairing mode."
           }
@@ -133573,7 +133592,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/tunable_spot_GU10/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Power on to enter pairing mode."
           }
@@ -134412,7 +134431,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/universal_zigbee/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the pairing button on your Zigbee device until it enters pairing mode.",
             "fr": "Appuyez sur le bouton d'appairage de votre appareil Zigbee jusqu'àce qu'il passe en mode appairage."
@@ -135403,7 +135422,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/usb_outlet_advanced/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -135995,7 +136014,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/valve_controller_5zone/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Hold the pairing button for about 5 seconds until the LED blinks fast.",
             "fr": "Maintenez le bouton d'appairage environ 5 secondes jusqu'à ce que la LED clignote rapidement.",
@@ -136058,7 +136077,7 @@
           "_tze284_N41I9JYT"
         ],
         "learnmode": {
-          "image": "/drivers/valve_dual_irrigation/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Put the device in Zigbee pairing mode (usually hold reset/pairing 5 seconds until LED flashes).",
             "fr": "Mode appairage Zigbee (souvent reset/pair 5 s jusqu'à LED clignotante).",
@@ -136316,7 +136335,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/valve_irrigation/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Put the device in Zigbee pairing mode (usually hold reset/pairing 5 seconds until LED flashes).",
             "fr": "Mode appairage Zigbee (souvent reset/pair 5 s jusqu'à LED clignotante).",
@@ -136456,7 +136475,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/valve_single/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Put the device in Zigbee pairing mode (usually hold reset/pairing 5 seconds until LED flashes).",
             "fr": "Mode appairage Zigbee (souvent reset/pair 5 s jusqu'à LED clignotante).",
@@ -136584,7 +136603,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/valvecontroller/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
@@ -136817,7 +136836,9 @@
           "_TZ3000_jqge2fjx",
           "_tz3000_jqge2fjx",
           "_TZ3000_JQGE2FJX",
-          "_tz3000_JQGE2FJX"
+          "_tz3000_JQGE2FJX",
+          "heobian",
+          "Heobian"
         ],
         "productId": [
           "AY02SZ",
@@ -137045,7 +137066,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_curtain_switch/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping) or press the Pause-button 5sec until Open-button blinks."
           }
@@ -138126,7 +138147,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_dimmer_tuya/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
@@ -138335,7 +138356,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_remote_1_gang/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the button for aprox 10 seconds (the LED should start blinking)."
           }
@@ -138463,7 +138484,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_remote_2_gang/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press any button for approx 10 seconds (the LED should start blinking)."
           }
@@ -138591,7 +138612,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_remote_3_gang/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the left button for aprox 10 seconds (the LED should start blinking)."
           }
@@ -138741,7 +138762,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_remote_4_gang/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the lower left button for aprox 10 seconds (all LED should start blinking)."
           }
@@ -138921,7 +138942,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_remote_4_gang_2/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the lower left button for aprox 10 seconds (all LED should start blinking)."
           }
@@ -139083,7 +139104,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_remote_4_gang_3/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the lower left button for aprox 10 seconds (all LED should start blinking)."
           }
@@ -139241,7 +139262,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_remote_6_gang/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press pair button for aprox 10 seconds."
           }
@@ -139662,7 +139683,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_switch_1_gang/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the button for 7 seconds (until LED starts blinking)."
           }
@@ -139791,7 +139812,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_switch_1_gang_tuya/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Switch the unit on and off five times and then hold for 5 seconds to enter pairing mode (the LED should flash red and blue)."
           }
@@ -140090,7 +140111,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_switch_2_gang/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "A tile for each button will be created. Remove the front and press the setup button for 10 seconds (the LED should start blinking)."
           }
@@ -140666,7 +140687,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_switch_3_gang/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "A tile for each button will be created. Remove the front and press the setup button for 10 seconds (the LED should start blinking)."
           }
@@ -141355,7 +141376,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_switch_4_gang/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "A tile for each button will be created. Press the first button (or the setup button if one exists) for 10 seconds (the LED should start blinking)."
           }
@@ -141555,7 +141576,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_switch_4_gang_tuya/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Four tiles will be created, one for each channel of the device. Switch the unit on and off five times and hold for 5 seconds to enter pairing mode (the LED should flash red and blue)."
           }
@@ -142465,7 +142486,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_switch_5_gang_tuya/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Five tiles will be created, one for each channel of the device. Switch the unit on and off five times and hold for 5 seconds to enter pairing mode (the LED should flash red and blue)."
           }
@@ -142700,7 +142721,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_switch_6_gang_tuya/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Six tiles will be created, one for each channel of the device. Switch the unit on and off five times and hold for 5 seconds to enter pairing mode (the LED should flash red and blue)."
           }
@@ -142987,7 +143008,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_thermostat/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the arrow down button for 8s when the thermostat is off."
           }
@@ -143126,7 +143147,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/water_detector/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Push the button for aprox 10 seconds until the LED blinks rapidly. If nothing happens; put two fingers against the detectors and repeat."
           }
@@ -143247,7 +143268,7 @@
           "ay222z"
         ],
         "learnmode": {
-          "image": "/drivers/water_leak_sensor/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -143996,7 +144017,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/water_leak_sensor_tuya/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Push the button for aprox 10 seconds until the LED blinks rapidly. If nothing happens; put two fingers against the detectors and repeat."
           }
@@ -144429,7 +144450,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/water_valve_garden/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Put the device in Zigbee pairing mode (usually hold reset/pairing 5 seconds until LED flashes).",
             "fr": "Mode appairage Zigbee (souvent reset/pair 5 s jusqu'à LED clignotante).",
@@ -144669,7 +144690,7 @@
           "_tze284_A7SGHMMS"
         ],
         "learnmode": {
-          "image": "/drivers/water_valve_smart/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
