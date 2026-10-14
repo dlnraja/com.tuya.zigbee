@@ -62,4 +62,11 @@ describe('P2623 settings Homey.ready early boot (compat → P2717)', () => {
       'window.onHomeyReady assignment required'
     );
   });
+
+  it('P2814: ready() fallback if onHomeyReady never fires (Configure spinner)', () => {
+    const html = fs.readFileSync(SETTINGS, 'utf8');
+    assert.ok(html.includes('P2814') || html.includes('ready fallback'), 'P2814 fallback documented');
+    assert.ok(/__settingsReadyDone/.test(html), 'ready done guard required');
+    assert.ok(/setTimeout\s*\([\s\S]*?2500/.test(html), '2.5s ready fallback timeout');
+  });
 });

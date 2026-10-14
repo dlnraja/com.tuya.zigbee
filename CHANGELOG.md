@@ -1,3 +1,8 @@
+## [Unreleased]
+
+### Fixed
+- **P2814 soil Unknown (#571/#570):** pruned junk productIds on `soil_sensor` (TRV/ZBMINI/Battery switch…) so Athom pairing keeps QT-07S/AOYAN/HOBEIAN couples; Configure ready fallback.
+- **#559:** sacred-keep `_TZ3210_w0qqde0g`+TS011F on `plug_energy_monitor`.
 # Changelog
 
 All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
