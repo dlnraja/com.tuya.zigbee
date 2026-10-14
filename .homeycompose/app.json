@@ -1,6 +1,6 @@
 {
   "id": "com.dlnraja.tuya.zigbee.stable",
-  "version": "5.12.433",
+  "version": "5.12.434",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -12,7 +12,7 @@
     "fr": "Tuya Unified (Stable)"
   },
   "description": {
-    "en": "Local Zigbee control for Tuya devices on Homey Pro — switches, sensors, lights, thermostats and covers.",
+    "en": "Local Zigbee control for Tuya devices on Homey Pro â€” switches, sensors, lights, thermostats and covers.",
     "nl": "Lokale Zigbee-bediening voor Tuya-apparaten op Homey Pro.",
     "de": "Lokale Zigbee-Steuerung fuer Tuya-Geraete auf Homey Pro.",
     "fr": "Controle Zigbee local pour appareils Tuya sur Homey Pro."
@@ -107,5 +107,5 @@
   "channel": "stable",
   "stableSince": "2026-07-14",
   "stableNotes": "P52-auto: synced safe changes from master",
-  "_comment": "Generated from .homeycompose/app.json. STABLE channel — only bug fixes applied."
+  "_comment": "Generated from .homeycompose/app.json. STABLE channel â€” only bug fixes applied."
 }
