@@ -67,8 +67,12 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
       {
         id: 'motion_sensor_radar_mmwave_set_radar_sensitivity',
         fn: async (args) => {
-          if (args.device.sendTuyaCommand) {
-            await args.device.sendTuyaCommand(2, args.sensitivity || 5, 'value');
+          const d = args.device;
+          // WHY(P2818/ZHA#5286): gnpflcoq uses DP9 enum — generic mmWave still DP2
+          if (typeof d.sendGnpflcoqSetting === 'function' && d._isGnpflcoq4in1?.()) {
+            await d.sendGnpflcoqSetting('radar_sensitivity', args.sensitivity || 5);
+          } else if (d.sendTuyaCommand) {
+            await d.sendTuyaCommand(2, args.sensitivity || 5, 'value');
           }
           return true;
         }
@@ -76,6 +80,8 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
       {
         id: 'motion_sensor_radar_mmwave_set_detection_range',
         fn: async (args) => {
+          // gnpflcoq has no range DPs 3/4 (ZHA#5286) — soft no-op
+          if (args.device._isGnpflcoq4in1?.()) return true;
           if (args.device.sendTuyaCommand) {
             await args.device.sendTuyaCommand(3, Math.round((args.min || 0) * 100), 'value');
             await args.device.sendTuyaCommand(4, Math.round((args.max || 6) * 100), 'value');
@@ -86,8 +92,12 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
       {
         id: 'motion_sensor_radar_mmwave_set_fading_time',
         fn: async (args) => {
-          if (args.device.sendTuyaCommand) {
-            await args.device.sendTuyaCommand(102, args.seconds || 30, 'value');
+          const d = args.device;
+          // WHY(P2818): never DP102 on gnpflcoq (temp_compensate) — use DP12 pir_delay
+          if (typeof d.sendGnpflcoqSetting === 'function' && d._isGnpflcoq4in1?.()) {
+            await d.sendGnpflcoqSetting('fading_time', args.seconds || 60);
+          } else if (d.sendTuyaCommand) {
+            await d.sendTuyaCommand(102, args.seconds || 30, 'value');
           }
           return true;
         }
@@ -95,8 +105,11 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
       {
         id: 'motion_sensor_radar_mmwave_set_detection_delay',
         fn: async (args) => {
-          if (args.device.sendTuyaCommand) {
-            await args.device.sendTuyaCommand(101, args.seconds || 0, 'value');
+          const d = args.device;
+          if (typeof d.sendGnpflcoqSetting === 'function' && d._isGnpflcoq4in1?.()) {
+            await d.sendGnpflcoqSetting('detection_delay', args.seconds || 10);
+          } else if (d.sendTuyaCommand) {
+            await d.sendTuyaCommand(101, args.seconds || 0, 'value');
           }
           return true;
         }
