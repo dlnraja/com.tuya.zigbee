@@ -33,15 +33,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1466 |
+| **App Version** | v9.0.1467 |
 | **Drivers** | 449 (396 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,767 |
-| **Pairing Variants** | 19,214 (4 case combos per fingerprint) |
+| **Pairing Variants** | 19,189 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 906 |
 | **Flow Cards** | 6,105 |
 | **Unique Capabilities** | 176 |
 | **Native OTA Drivers** | 10 |
-| **Test Suites** | 640 files |
+| **Test Suites** | 641 files |
 | **SVG Icons** | 752 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -52,14 +52,14 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
 | 1 | `climate_sensor` | 2,111 |
-| 2 | `switch_1gang` | 1,419 |
+| 2 | `switch_1gang` | 1,435 |
 | 3 | `curtain_motor` | 1,110 |
 | 4 | `presence_sensor_radar` | 995 |
 | 5 | `radiator_valve` | 613 |
 | 6 | `generic_tuya` | 581 |
 | 7 | `wall_dimmer_tuya` | 536 |
-| 8 | `button_wireless_2` | 486 |
-| 9 | `switch_2gang` | 381 |
+| 8 | `button_wireless_2` | 442 |
+| 9 | `switch_2gang` | 390 |
 | 10 | `device_radiator_valve` | 374 |
 | 11 | `switch_4gang` | 330 |
 | 12 | `diy_custom_zigbee` | 306 |
@@ -69,8 +69,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 16 | `plug_energy_monitor` | 244 |
 | 17 | `contact_sensor` | 233 |
 | 18 | `thermostat_tuya_dp` | 200 |
-| 19 | `sensor_contact_zigbee` | 187 |
-| 20 | `wall_thermostat` | 180 |
+| 19 | `wall_thermostat` | 180 |
+| 20 | `sensor_contact_zigbee` | 179 |
 
 ### Drivers by Device Class
 
@@ -103,7 +103,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.1466** | v9.0.1465: |
+| **v9.0.1467** | v9.0.1466: |
+| **v9.0.1466** | v9.0.1466: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1465** | v9.0.1465: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1464** | v9.0.1464: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1463** | mfs soil exclusive align so 4in1 mmWave and ANTIK TRV publish. |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1458** | Soil sensor: remove misrouted smoke fingerprint from soil driver. |
 | **v9.0.1457** | Improved soil sensor pairing (QT-07S / AOYAN) and app Configure page readiness. |
 | **v9.0.1456** | Aligned fingerprint database for ANTIK TRV and 4in1 mmWave couples. |
-| **v9.0.1455** | Improved radiator valve and mmWave radar pairing for recent forum devices. |
 
 <!-- CHANGELOG_END -->
 
