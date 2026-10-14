@@ -4,11 +4,11 @@
 
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-449-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-4,767%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,776%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-green)](LICENSE)
 
-Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **449 drivers**, **4,767 unique fingerprints**. No cloud required.
+Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **449 drivers**, **4,776 unique fingerprints**. No cloud required.
 
 **What it does:**
 - Talks to devices on your Homey Zigbee mesh (Tuya DP `0xEF00` and standard ZCL)
@@ -37,11 +37,14 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Drivers** | 449 (396 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,767 |
 | **Pairing Variants** | 19,189 (4 case combos per fingerprint) |
+| **Unique Fingerprints** | 4,776 |
+| **Pairing Variants** | 19,179 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 906 |
 | **Flow Cards** | 6,105 |
 | **Unique Capabilities** | 176 |
 | **Native OTA Drivers** | 10 |
 | **Test Suites** | 641 files |
+| **Test Suites** | 642 files |
 | **SVG Icons** | 752 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -61,16 +64,26 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 8 | `button_wireless_2` | 442 |
 | 9 | `switch_2gang` | 390 |
 | 10 | `device_radiator_valve` | 374 |
+| 2 | `switch_1gang` | 1,402 |
+| 3 | `curtain_motor` | 1,113 |
+| 4 | `presence_sensor_radar` | 997 |
+| 5 | `radiator_valve` | 613 |
+| 6 | `generic_tuya` | 581 |
+| 7 | `wall_dimmer_tuya` | 536 |
+| 8 | `button_wireless_2` | 414 |
+| 9 | `device_radiator_valve` | 383 |
+| 10 | `switch_2gang` | 378 |
 | 11 | `switch_4gang` | 330 |
 | 12 | `diy_custom_zigbee` | 306 |
-| 13 | `switch_3gang` | 285 |
-| 14 | `motion_sensor` | 283 |
-| 15 | `soil_sensor` | 283 |
+| 13 | `soil_sensor` | 289 |
+| 14 | `switch_3gang` | 285 |
+| 15 | `motion_sensor` | 283 |
 | 16 | `plug_energy_monitor` | 244 |
 | 17 | `contact_sensor` | 233 |
 | 18 | `thermostat_tuya_dp` | 200 |
 | 19 | `wall_thermostat` | 180 |
 | 20 | `sensor_contact_zigbee` | 179 |
+| 20 | `bulb_dimmable` | 172 |
 
 ### Drivers by Device Class
 
@@ -104,6 +117,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | Version | Changes |
 |---------|---------|
 | **v9.0.1467** | v9.0.1466: |
+| **v9.0.1467** | Z2M/ZHA/quirks couple recheck: wrong-class moves + missing FP (P2820). |
 | **v9.0.1466** | v9.0.1466: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1465** | v9.0.1465: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1464** | v9.0.1464: automated publish, manifest sync, and Homey test promotion. |
