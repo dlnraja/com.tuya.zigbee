@@ -1,41 +1,7 @@
 {
-<<<<<<< HEAD
-=======
   "9.0.1466": {
-    "en": "Blakadder recheck: move misclassed bulbs/switches/plugs/garage couples (P2819)."
+    "en": "v9.0.1466: automated publish, manifest sync, and Homey test promotion."
   },
-  "9.0.1465": {
-    "en": "Sync app.json water_leak after AOYAN strip (compose drift)."
-  },
-  "9.0.1464": {
-    "en": "v9.0.1464: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.1463": {
-    "en": "mfs soil exclusive align so 4in1 mmWave and ANTIK TRV publish."
-  },
-  "9.0.1462": {
-    "en": "4in1 mmWave pairs again (lean clusters); AOYAN soil no longer collides with water leak.",
-    "fr": "4in1 mmWave s'apparie a nouveau (clusters alleges); AOYAN sol ne collisionne plus avec fuite d'eau."
-  },
-  "9.0.1461": {
-    "en": "Fixed multi-button release Flow cards and TRV DP received trigger.",
-    "fr": "Correction des cartes Flow release multi-boutons et du trigger DP TRV."
-  },
-  "9.0.1460": {
-    "en": "Soil sensors matched by manufacturer+model couple (QT-07S, AOYAN, HOBEIAN).",
-    "fr": "Capteurs sol appaires par couple fabricant+modele (QT-07S, AOYAN, HOBEIAN)."
-  },
-  "9.0.1459": {
-    "en": "v9.0.1459: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.1458": {
-    "en": "Soil sensor: remove misrouted smoke fingerprint from soil driver."
-  },
-  "9.0.1457": {
-    "en": "Improved soil sensor pairing (QT-07S / AOYAN) and app Configure page readiness.",
-    "fr": "Amelioration appairage capteurs sol (QT-07S / AOYAN) et page Configure."
-  },
->>>>>>> e4b0be356d (fix(P2819): Blakadder full recheck — move 25 severe wrong-class couples)
   "changelog": [
     {
       "version": "9.0.497",
@@ -944,7 +910,6 @@
       ]
     }
   ],
-<<<<<<< HEAD
   "9.0.1465": {
     "en": "v9.0.1465: automated publish, manifest sync, and Homey test promotion."
   },
@@ -976,8 +941,6 @@
     "en": "Improved soil sensor pairing (QT-07S / AOYAN) and app Configure page readiness.",
     "fr": "Amelioration appairage capteurs sol (QT-07S / AOYAN) et page Configure."
   },
-=======
->>>>>>> e4b0be356d (fix(P2819): Blakadder full recheck — move 25 severe wrong-class couples)
   "9.0.1456": {
     "en": "Aligned fingerprint database for ANTIK TRV and 4in1 mmWave couples."
   },
@@ -1007,16 +970,5 @@
   },
   "9.0.1447": {
     "en": "v9.0.1447: automated publish, manifest sync, and Homey test promotion."
-  },
-<<<<<<< HEAD
-  "9.0.1466": {
-    "en": "v9.0.1466: automated publish, manifest sync, and Homey test promotion."
-=======
-  "9.0.1446": {
-    "en": "v9.0.1446: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.1445": {
-    "en": "v9.0.1445: automated publish, manifest sync, and Homey test promotion."
->>>>>>> e4b0be356d (fix(P2819): Blakadder full recheck — move 25 severe wrong-class couples)
   }
 }
