@@ -9107,9 +9107,10 @@
       "forbidden": [
         "climate_sensor",
         "water_leak_sensor",
-        "zigbee_universal"
+        "zigbee_universal",
+        "water_leak_sensor_tuya"
       ],
-      "notes": "WHY(P2815/#570): AOYAN+AY-303Z soil — never invent AOYAN+TS0601"
+      "notes": "WHY(P2815/#570+#2258/P2817): AOYAN+AY-303Z/AY-302Z soil only. Strip AOYAN from water_leak — never Homey-cartesian AOYAN×TS0601 as water."
     }
   ],
   "entries": {
