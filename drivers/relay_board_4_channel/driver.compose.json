@@ -25,7 +25,8 @@
   },
   "zigbee": {
     "productId": [
-      "TS0004"
+      "TS0004",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -131,7 +132,9 @@
       "_TZ3000_U3OUPGDY",
       "_TZ3210_imaccztn",
       "_TZ3000_u3oupgdy",
-      "_tz3210_imaccztn"
+      "_tz3210_imaccztn",
+      "_tze204_m9dzckna",
+      "_TZE204_M9DZCKNA"
     ]
   },
   "version": "1.0.0",
