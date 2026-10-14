@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1468",
+  "version": "9.0.1469",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -670,6 +670,7 @@
     "check:p2819": "node tools/ci/blakadder-couple-audit.js && node --test test/critical/p2819-blakadder-severe-class.test.js",
     "check:p2820": "node tools/ci/p2820-z2m-zha-quirks-couple-audit.js && node --test test/critical/p2820-z2m-zha-quirks-severe.test.js",
     "check:p2821": "node --test test/critical/p2821-forum-fleet-silent-treat.test.js",
+    "check:p2822": "node --test test/critical/p2822-gh560-me167-dp4-not-battery.test.js",
     "check:p281x": "npm run check:p2810 && npm run check:p2811 && npm run check:p2812 && npm run check:p2813 && npm run check:p2815 && npm run check:p2816 && npm run check:p2817 && npm run check:p2818 && npm run check:p2819",
     "check:p2814": "node --test test/critical/p2811-soil-qt07s-aoyan-clusters.test.js",
     "check:p2815": "node tools/ci/p2815-soil-couple-ssot-gate.js && node --test test/critical/p2815-soil-couple-ssot.test.js",

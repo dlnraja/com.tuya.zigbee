@@ -28,8 +28,11 @@ describe('P2715 HiepSVG #550 gkfbdvyx lux/distance/battery', () => {
     const src = fs.readFileSync(MGR, 'utf8');
     assert.ok(src.includes('_isPresenceRadarBatteryForbiddenDp'));
     assert.ok(src.includes('P2715'));
-    assert.match(src, /batteryDPs\.includes\(dp\) && !this\._isPresenceRadarBatteryForbiddenDp\(dp\)/);
+    // WHY(P2822): battery forward also gates TRV/ownership — keep radar forbid wired
+    assert.ok(src.includes('!this._isPresenceRadarBatteryForbiddenDp(dp)'));
+    assert.ok(src.includes('_forwardToBatteryManager'));
     assert.ok(src.includes('gkfbdvyx'));
+
   });
 
   it('ceiling config: DP9 dual-scale + DP103 lux + settings wire', () => {
