@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-10T07:46:57.395Z",
+  "generatedAt": "2026-10-14T06:42:13.142Z",
   "mode": "APPLY",
   "phases": [
     {
@@ -30,7 +30,7 @@
       "name": "compose-mfsdb-class-guard",
       "ok": true,
       "exit": 0,
-      "tail": "   _TZ3000_iystcadi (TS0504): curé=led_controller_cct mais la PAIRE est claimée par led_controller_rgb\n    _TZ3000_iystcadi (TS0601_led): curé=led_controller_cct mais la PAIRE est claimée par led_controller_dimmable\n    _tz3000_dd8wwzcy (?): curé=plug_energy_monitor mais la PAIRE est claimée par climate_sensor, device_plug_energy\n    _TZ3000_lf56vpxj (Excellux): curé=sensor_motion_presence mais la PAIRE est claimée par sensor_climate_motion\n  UNCLAIMED (driver curé ne claim pas le mfr): 2\n    _tze20x_xxxxxxxx: curé=air_purifier\n    _TZE200_J1XL73IW: curé=curtain_motor\n[compose-mfsdb-guard] OK\n"
+      "tail": "IRE est claimée par led_controller_rgb\n    _TZ3000_iystcadi (TS0504): curé=led_controller_cct mais la PAIRE est claimée par led_controller_rgb\n    _TZ3000_iystcadi (TS0601_led): curé=led_controller_cct mais la PAIRE est claimée par led_controller_dimmable\n    _tz3000_dd8wwzcy (?): curé=plug_energy_monitor mais la PAIRE est claimée par climate_sensor, device_plug_energy\n    _TZ3000_lf56vpxj (Excellux): curé=sensor_motion_presence mais la PAIRE est claimée par sensor_climate_motion\n  UNCLAIMED (driver curé ne claim pas le mfr): 1\n    _TZE600_ogyg1y6b: curé=curtain_motor\n[compose-mfsdb-guard] OK\n"
     },
     {
       "name": "p2138-sacred-couple-gate",
@@ -42,7 +42,7 @@
       "name": "p2368-mfs-test",
       "ok": true,
       "exit": 0,
-      "tail": "    duration_ms: 49.074388\n      type: 'test'\n      ...\n    # Subtest: no case-duplicate mfr keys\n    ok 5 - no case-duplicate mfr keys\n      ---\n      duration_ms: 51.270438\n      type: 'test'\n      ...\n    # Subtest: UdpDiscoveryKeys SSOT exists (wifi unrelated sanity)\n    ok 6 - UdpDiscoveryKeys SSOT exists (wifi unrelated sanity)\n      ---\n      duration_ms: 0.215343\n      type: 'test'\n      ...\n    1..6\nok 1 - P2368 mfs_db hardening\n  ---\n  duration_ms: 498.898564\n  type: 'suite'\n  ...\n1..1\n# tests 6\n# suites 1\n# pass 6\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 551.712028\n"
+      "tail": "    duration_ms: 49.805793\n      type: 'test'\n      ...\n    # Subtest: no case-duplicate mfr keys\n    ok 5 - no case-duplicate mfr keys\n      ---\n      duration_ms: 53.996408\n      type: 'test'\n      ...\n    # Subtest: UdpDiscoveryKeys SSOT exists (wifi unrelated sanity)\n    ok 6 - UdpDiscoveryKeys SSOT exists (wifi unrelated sanity)\n      ---\n      duration_ms: 0.232295\n      type: 'test'\n      ...\n    1..6\nok 1 - P2368 mfs_db hardening\n  ---\n  duration_ms: 527.061128\n  type: 'suite'\n  ...\n1..1\n# tests 6\n# suites 1\n# pass 6\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 594.263242\n"
     }
   ],
   "pass": true

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-10T07:44:20.232Z",
+  "generatedAt": "2026-10-14T06:41:43.589Z",
   "mode": "APPLY",
   "policy": "P2319 enrichment-first colocate — never strip other drivers",
   "applied": [],
@@ -47,24 +47,11 @@
       "driver": "contact_sensor_zigbee"
     },
     {
-      "mfr": "_TZ3000_85czd6fy",
-      "pid": "TS0207",
-      "reason": "p2520-would-degrade",
-      "driver": "water_leak_sensor"
-    },
-    {
       "mfr": "_TZ3000_jyupj3fw",
       "pid": "TS0006",
       "reason": "needs-deep-review",
       "tier": null,
       "soft": null
-    },
-    {
-      "mfr": "_TZ3000_lbtpiody",
-      "pid": "TS0201",
-      "reason": "not-confident",
-      "tier": "heuristic_pid",
-      "soft": "climate_sensor"
     },
     {
       "mfr": "_TZ3000_lfa05ajd",
@@ -78,12 +65,6 @@
       "pid": "TS0115",
       "reason": "p2520-would-degrade",
       "driver": "usb_outlet_advanced"
-    },
-    {
-      "mfr": "_TZ3000_ww9i3e0y",
-      "pid": "TS0207",
-      "reason": "p2520-would-degrade",
-      "driver": "water_leak_sensor"
     },
     {
       "mfr": "_TZ3210_4whigl8i",
@@ -181,18 +162,6 @@
       "soft": "bulb_rgbw"
     },
     {
-      "mfr": "_TZ3000_rrjr1q0u",
-      "pid": "TS0043",
-      "reason": "p2520-would-degrade",
-      "driver": "button_wireless_3"
-    },
-    {
-      "mfr": "_TZ3000_yw5tvzsk",
-      "pid": "TS0043",
-      "reason": "p2520-would-degrade",
-      "driver": "button_wireless_3"
-    },
-    {
       "mfr": "_TZ3210_19qb27da",
       "pid": "TS0501B",
       "reason": "not-confident",
@@ -255,5 +224,11 @@
       "soft": null
     }
   ],
-  "already": []
+  "already": [
+    {
+      "mfr": "_TZ3000_fa9mlvja",
+      "pid": "TS0043",
+      "driver": "remote_button_wireless"
+    }
+  ]
 }
