@@ -4,7 +4,7 @@
     "updated": "2026-10-14",
     "policy": "Never invent mfr+pid from tile names. Diag UUID + driver + forum text only.",
     "lastSync": "2026-10-14T06:43:19.468Z",
-    "lastInvestigation": "2026-09-15T09:29:12.402Z",
+    "lastInvestigation": "2026-10-14T15:08:11.634Z",
     "p2347": "Gabriel verified-only + A_Tas/Cam/Peter batch",
     "p2388": "Compensate-without-waiting + interview batch curtain/Peter/Cam/A_Tas"
   },
@@ -26,7 +26,9 @@
         2238,
         2237,
         2234,
-        2233
+        2233,
+        5526,
+        5524
       ],
       "diags": [
         {
@@ -587,7 +589,8 @@
       "forumTopic": 140352,
       "posts": [
         11,
-        16
+        16,
+        22
       ],
       "diags": [],
       "devices": [],
@@ -1376,10 +1379,23 @@
         25,
         2162,
         2769,
-        2776
+        2776,
+        5519
       ],
       "diags": [],
-      "devices": [],
+      "devices": [
+        {
+          "tile": "Auto T26439 #5519",
+          "driver": "wall_dimmer_tuya",
+          "couple": "_TZE284_NQQYLYKC+TS0601",
+          "symptoms": [],
+          "fixes": [],
+          "userAction": "Already in wall_dimmer_tuya — update Universal Tuya Test + re-pair",
+          "_autoStub": true,
+          "_source": "forum-T26439-5516-axel",
+          "_tier": "hardLock"
+        }
+      ],
       "_autoStub": true,
       "dualApp": "BOTH",
       "investigationNote": "P2347: soil/button threads — couples ABSENT; NEED_DIAG before lock",
@@ -1471,7 +1487,8 @@
         2176,
         2210,
         2223,
-        2225
+        2225,
+        2249
       ],
       "diags": [],
       "devices": [
@@ -1493,6 +1510,23 @@
           "userAction": "Verify compose fingerprint; update Test",
           "_autoStub": true,
           "_source": "processor"
+        },
+        {
+          "tile": "Auto T140352 #2249",
+          "driver": "presence_sensor_radar",
+          "couple": "_TZE204_DTZZIY1E+TS0601",
+          "symptoms": [
+            "curtain",
+            "presence",
+            "lux",
+            "cover",
+            "flow"
+          ],
+          "fixes": [],
+          "userAction": "Already in presence_sensor_radar — update Universal Tuya Test + re-pair",
+          "_autoStub": true,
+          "_source": "mfs_db",
+          "_tier": "hardLock"
         }
       ],
       "_autoStub": true,
@@ -2576,7 +2610,8 @@
       "posts": [
         1,
         661,
-        1636
+        1636,
+        5525
       ],
       "diags": [],
       "devices": [
@@ -2894,7 +2929,8 @@
         }
       ],
       "_autoStub": true,
-      "dualApp": "BOTH"
+      "dualApp": "BOTH",
+      "investigationNote": "Update Universal Tuya Test to latest soak; re-pair if driver changed"
     },
     "Dietrich_Kassner": {
       "forumTopic": 140352,
@@ -3230,6 +3266,118 @@
       "devices": [],
       "_autoStub": true,
       "investigationNote": "Update Universal Tuya Test to latest soak; re-pair if driver changed"
+    },
+    "Drako74": {
+      "forumTopic": 156967,
+      "posts": [
+        123,
+        115
+      ],
+      "diags": [],
+      "devices": [],
+      "_autoStub": true,
+      "investigationNote": "Update Universal Tuya Test to latest soak; re-pair if driver changed"
+    },
+    "EdP": {
+      "forumTopic": 140352,
+      "posts": [
+        2258
+      ],
+      "diags": [],
+      "devices": [],
+      "_autoStub": true,
+      "investigationNote": "Update Universal Tuya Test to latest soak; re-pair if driver changed"
+    },
+    "Michaelp": {
+      "forumTopic": 140352,
+      "posts": [
+        2253,
+        2244
+      ],
+      "diags": [],
+      "devices": [
+        {
+          "tile": "Auto T140352 #2253",
+          "driver": "device_radiator_valve",
+          "couple": "_TZE284_OGX8U5Z6+TS0601",
+          "symptoms": [
+            "trv",
+            "battery",
+            "thermostat"
+          ],
+          "fixes": [
+            "SOS battery spike guard",
+            "UnifiedBatteryHandler"
+          ],
+          "userAction": "Update Test + re-pair if still wrong driver",
+          "_autoStub": true,
+          "_source": "processor",
+          "_tier": "hardLock"
+        },
+        {
+          "tile": "Auto T140352 #2244",
+          "driver": "radiator_valve",
+          "couple": "_TZE284_NE4PIKWM+TS0601",
+          "symptoms": [
+            "unknown",
+            "trv",
+            "battery"
+          ],
+          "fixes": [
+            "SOS battery spike guard",
+            "UnifiedBatteryHandler"
+          ],
+          "userAction": "Update Test + re-pair if still wrong driver",
+          "_autoStub": true,
+          "_source": "processor",
+          "_tier": "hardLock"
+        }
+      ],
+      "_autoStub": true
+    },
+    "Dragan_Todorovic": {
+      "forumTopic": 26439,
+      "posts": [
+        5534
+      ],
+      "diags": [],
+      "devices": [
+        {
+          "tile": "Auto T26439 #5534",
+          "driver": "presence_sensor_radar",
+          "couple": "_TZE200_CRQ3R3LA+CK-BL702-MWS-01",
+          "symptoms": [
+            "presence"
+          ],
+          "fixes": [],
+          "userAction": "Already in presence_sensor_radar — update Universal Tuya Test + re-pair",
+          "_autoStub": true,
+          "_source": "mfs_db",
+          "_tier": "hardLock"
+        }
+      ],
+      "_autoStub": true
+    },
+    "Mates1134": {
+      "forumTopic": 26439,
+      "posts": [
+        5532
+      ],
+      "diags": [],
+      "devices": [
+        {
+          "tile": "Auto T26439 #5532",
+          "driver": "smart_knob_rotary",
+          "couple": "_TZ3000_QJA6NQ5Z+ERS-10TZBVK-AA",
+          "symptoms": [],
+          "fixes": [],
+          "userAction": "Already in smart_knob_rotary — update Universal Tuya Test + re-pair",
+          "_autoStub": true,
+          "_source": "mfs_db",
+          "_tier": "hardLock"
+        }
+      ],
+      "_autoStub": true
     }
   },
   "fixCatalog": {
