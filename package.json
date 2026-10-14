@@ -1,10 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-<<<<<<< HEAD
-  "version": "5.12.425",
-=======
-  "version": "5.12.423",
->>>>>>> 9e885fb962 (fix(P2819): Blakadder severe wrong-class couple moves (5.12.423))
+  "version": "5.12.426",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
