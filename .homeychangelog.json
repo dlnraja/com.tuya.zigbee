@@ -1,8 +1,4 @@
 {
-  "9.0.1457": {
-    "en": "Improved soil sensor pairing (QT-07S / AOYAN) and app Configure page readiness.",
-    "fr": "Amelioration appairage capteurs sol (QT-07S / AOYAN) et page Configure."
-  },
   "changelog": [
     {
       "version": "9.0.497",
@@ -911,6 +907,18 @@
       ]
     }
   ],
+  "9.0.1457": {
+    "en": "Improved soil sensor pairing (QT-07S / AOYAN) and app Configure page readiness."
+  },
+  "9.0.1456": {
+    "en": "Aligned fingerprint database for ANTIK TRV and 4in1 mmWave couples."
+  },
+  "9.0.1455": {
+    "en": "Improved radiator valve and mmWave radar pairing for recent forum devices."
+  },
+  "9.0.1454": {
+    "en": "v9.0.1454: automated publish, manifest sync, and Homey test promotion."
+  },
   "9.0.1453": {
     "en": "v9.0.1453: automated publish, manifest sync, and Homey test promotion."
   },
@@ -956,25 +964,7 @@
   "9.0.1438": {
     "en": "v9.0.1438: automated publish, manifest sync, and Homey test promotion."
   },
-  "9.0.1437": {
-    "en": "v9.0.1437: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.1436": {
-    "en": "v9.0.1436: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.1435": {
-    "en": "v9.0.1435: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.1434": {
-    "en": "v9.0.1434: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.1454": {
-    "en": "v9.0.1454: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.1455": {
-    "en": "Improved radiator valve and mmWave radar pairing for recent forum devices."
-  },
-  "9.0.1456": {
-    "en": "Aligned fingerprint database for ANTIK TRV and 4in1 mmWave couples."
+  "9.0.1458": {
+    "en": "v9.0.1458: automated publish, manifest sync, and Homey test promotion."
   }
 }
