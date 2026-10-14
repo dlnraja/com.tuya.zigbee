@@ -30,7 +30,11 @@
       }
     }
   },
-  "energy": { "approximation": { "usageOn": 7, "usageOff": 0.4 },
+  "energy": {
+    "approximation": {
+      "usageOn": 7,
+      "usageOff": 0.4
+    },
     "mains": true
   },
   "images": {
@@ -40,7 +44,25 @@
   "zigbee": {
     "manufacturerName": [
       "_TZ3210_p9ao60da",
-      "_tz3210_p9ao60da"
+      "_tz3210_p9ao60da",
+      "_tz3000_v1srfw9x",
+      "_TZ3000_V1SRFW9X",
+      "_tz3000_gb5gaeca",
+      "_TZ3000_GB5GAECA",
+      "_tz3000_iivsrikg",
+      "_TZ3000_IIVSRIKG",
+      "_tz3000_j0gtlepx",
+      "_TZ3000_J0GTLEPX",
+      "_tz3000_quqaeew6",
+      "_TZ3000_QUQAEEW6",
+      "_tz3000_th6zqqy6",
+      "_TZ3000_TH6ZQQY6",
+      "_tz3210_zbabx9wh",
+      "_TZ3210_ZBABX9WH",
+      "_tz3210_umi6vbsz",
+      "_TZ3210_UMI6VBSZ",
+      "_tz3000_7hcgjxpc",
+      "_TZ3000_7HCGJXPC"
     ],
     "productId": [
       "TS0505B"
