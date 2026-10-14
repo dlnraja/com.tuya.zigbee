@@ -70,6 +70,55 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
     return isLinptechES1(mfr, pid);
   }
 
+  /**
+   * WHY(P2818 / ZHA#5286 / forum #2262): `_TZE284_gnpflcoq`+TS0601 4in1 — corrected DPs
+   * (DP9 PIR sensitivity, DP12 pir_delay, DP102 temp_compensate). Older Z2M mapped
+   * DP2/DP102 as sensitivity/fading_time and silently corrupted calibration.
+   */
+  _isGnpflcoq4in1() {
+    const mfr = String(
+      this.getSetting('zb_manufacturer_name')
+      || this.getData?.()?.manufacturerName
+      || this._manufacturerName
+      || '',
+    );
+    return /gnpflcoq/i.test(mfr);
+  }
+
+  /** Couple-aware TX for settings / Flow cards (gnpflcoq ≠ generic mmWave DP2/102). */
+  async sendGnpflcoqSetting(key, rawValue) {
+    if (typeof this.sendTuyaCommand !== 'function') return false;
+    if (key === 'radar_sensitivity' || key === 'motion_detection_sensitivity') {
+      // DP9 enum: 0=low, 1=middle, 2=high (ZHA#5286). Map 0–9 slider → enum.
+      const n = Number(rawValue);
+      const enumVal = !Number.isFinite(n) ? 1 : n <= 3 ? 0 : n <= 6 ? 1 : 2;
+      await this.sendTuyaCommand(9, enumVal, 'enum');
+      return true;
+    }
+    if (key === 'fading_time' || key === 'detection_delay') {
+      // DP12 pir_delay 10–180s (NOT DP102 — that is temp_compensate)
+      let sec = Math.round(Number(rawValue));
+      if (!Number.isFinite(sec)) sec = 60;
+      sec = Math.max(10, Math.min(180, sec));
+      await this.sendTuyaCommand(12, sec, 'value');
+      return true;
+    }
+    if (key === 'temperature_calibration') {
+      // DP102 temp_compensate — tenths °C on many firmwares
+      const v = Number(rawValue);
+      if (!Number.isFinite(v)) return false;
+      await this.sendTuyaCommand(102, Math.round(v * 10), 'value');
+      return true;
+    }
+    if (key === 'humidity_calibration') {
+      const v = Number(rawValue);
+      if (!Number.isFinite(v)) return false;
+      await this.sendTuyaCommand(103, Math.round(v), 'value');
+      return true;
+    }
+    return false;
+  }
+
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => {
       this.log('[MMWAVE] 🚀 v8.0.0 Modernizing...');
@@ -272,7 +321,7 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
         return this.safeSetCapabilityValue('alarm_motion', presence).catch(() => { });
       }
 
-      // WHY P2271: ZHA#5252 4in1 — DP7 temp×0.1, DP8 humidity %, DP11 lux (gnpflcoq)
+      // WHY P2271/P2818: ZHA#5252/#5286 4in1 — DP7 temp×0.1, DP8 humidity %, DP11 lux
       case 7: {
         const temp = smartParse(value, dpId, { capability: 'measure_temperature', defaultDivisor: 10 });
         return this._safeDynCap('measure_temperature', temp);
@@ -287,18 +336,55 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
         return this.safeSetCapabilityValue('measure_luminance', lux).catch(() => {});
       }
 
-      case 9:
-      case 102: {
-        if (this._isLinptechES1()) {
-          this.log(`[MMWAVE][LINPTECH] skip DP${dpId} distance — use cluster attrs`);
+      case 9: {
+        // WHY(P2818): gnpflcoq DP9 = pir_sensitivity enum — never distance
+        if (this._isGnpflcoq4in1()) {
+          this.log(`[MMWAVE][GNPFLCOQ] pir_sensitivity DP9=${value}`);
           return;
         }
-        const distance = smartParse(value, dpId, { capability: 'measure_luminance.distance' });
-        this._inference.updateDistance(distance);
-        return this.safeSetCapabilityValue('measure_luminance.distance', distance).catch(() => {});
+        if (this._isLinptechES1()) {
+          this.log(`[MMWAVE][LINPTECH] skip DP9 distance — use cluster attrs`);
+          return;
+        }
+        const distance9 = smartParse(value, dpId, { capability: 'measure_luminance.distance' });
+        this._inference.updateDistance(distance9);
+        return this.safeSetCapabilityValue('measure_luminance.distance', distance9).catch(() => {});
       }
 
-      case 12:
+      case 102: {
+        // WHY(P2818 / ZHA#5286): gnpflcoq DP102 = temp_compensate — writing as fading_time corrupts offset
+        if (this._isGnpflcoq4in1()) {
+          this.log(`[MMWAVE][GNPFLCOQ] temp_compensate DP102=${value}`);
+          return;
+        }
+        if (this._isLinptechES1()) {
+          this.log(`[MMWAVE][LINPTECH] skip DP102 distance — use cluster attrs`);
+          return;
+        }
+        const distance102 = smartParse(value, dpId, { capability: 'measure_luminance.distance' });
+        this._inference.updateDistance(distance102);
+        return this.safeSetCapabilityValue('measure_luminance.distance', distance102).catch(() => {});
+      }
+
+      case 12: {
+        // WHY(P2818): gnpflcoq DP12 = pir_delay (10–180s) — NOT lux
+        if (this._isGnpflcoq4in1()) {
+          this.log(`[MMWAVE][GNPFLCOQ] pir_delay DP12=${value}s`);
+          return;
+        }
+        const lux12 = typeof value === 'number' && value > 200 ? Math.round(value / 10) : value;
+        this._inference.updateLux(lux12);
+        return this.safeSetCapabilityValue('measure_luminance', lux12).catch(() => {});
+      }
+
+      case 103: {
+        if (this._isGnpflcoq4in1()) {
+          this.log(`[MMWAVE][GNPFLCOQ] humidity_compensate DP103=${value}`);
+          return;
+        }
+        break;
+      }
+
       case 104:
       case 106: {
         const lux = typeof value === 'number' && value > 200 ? Math.round(value / 10) : value;
@@ -421,6 +507,26 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
   async onSettings({ oldSettings, newSettings, changedKeys }) {
     if (this._isLinptechES1()) {
       return this._linptechOnSettings({ oldSettings, newSettings, changedKeys });
+    }
+
+    // WHY(P2818): gnpflcoq must not hit UnifiedSensorBase SETTING_DP_MAP (DP2/DP102 wrong)
+    if (this._isGnpflcoq4in1()) {
+      const handled = new Set();
+      for (const key of changedKeys) {
+        try {
+          if (await this.sendGnpflcoqSetting(key, newSettings[key])) {
+            handled.add(key);
+          }
+        } catch (err) {
+          this.error(`[MMWAVE][GNPFLCOQ] settings soft-fail ${key}: ${err.message}`);
+          handled.add(key);
+        }
+      }
+      const rest = changedKeys.filter((k) => !handled.has(k));
+      if (rest.length) {
+        await super.onSettings({ oldSettings, newSettings, changedKeys: rest });
+      }
+      return;
     }
 
     const remappedSettings = { ...newSettings };
