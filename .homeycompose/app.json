@@ -1,6 +1,10 @@
 {
   "id": "com.dlnraja.tuya.zigbee.stable",
+<<<<<<< HEAD
   "version": "5.12.425",
+=======
+  "version": "5.12.423",
+>>>>>>> 9e885fb962 (fix(P2819): Blakadder severe wrong-class couple moves (5.12.423))
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
