@@ -59,4 +59,9 @@ describe('P2811 soil QT-07S / AOYAN clusters + couples', () => {
     assert.ok(!pid.some((p) => /^trv/i.test(p)), 'TRV pid on soil');
     assert.ok(!pid.some((p) => /zbmini/i.test(p)), 'ZBMINI pid on soil');
   });
+
+  it('does not claim smoke/gas qaxkdgyt (Z2M JKD-816COM — smoke_sensor3)', () => {
+    const mfr = (compose.zigbee.manufacturerName || []).map(String);
+    assert.ok(!mfr.some((m) => /qaxkdgyt/i.test(m)), 'qaxkdgyt must not live on soil_sensor');
+  });
 });
