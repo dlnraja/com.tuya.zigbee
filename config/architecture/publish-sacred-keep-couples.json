@@ -1627,6 +1627,18 @@
       "pid": "TS011F",
       "driverId": "plug_energy_monitor",
       "note": "#559 TZ3000 sibling plug metering"
+    },
+    {
+      "mfr": "_TZ3000_7y90pany",
+      "pid": "ZG-106Z",
+      "driverId": "illuminance_sensor",
+      "note": "P2817 forum#2257 meter91 ZG-106Z lux"
+    },
+    {
+      "mfr": "AOYAN",
+      "pid": "AY-302Z",
+      "driverId": "soil_sensor",
+      "note": "P2817 AOYAN AY-302Z sibling soil (forbid water_leak cartesian)"
     }
   ]
 }

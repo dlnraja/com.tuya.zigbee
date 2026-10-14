@@ -1,0 +1,15 @@
+{
+  "n": 2258,
+  "user": "EdP",
+  "mfrs": [
+    "AOYAN",
+    "AY-303Z",
+    "HOBEIAN",
+    "ZG-303Z",
+    "AY-302Z"
+  ],
+  "imgs": 0,
+  "excerpt": "Hi, Could you add support for the AOYAN AY-303Z Zigbee soil moisture sensor? It’s a white-label version of the HOBEIAN ZG-303Z, so hopefully it only needs its fingerprint added to the existing soil sensor driver. Device info: Manufacturer name: “AOYAN” Model ID: AY-303Z Endpoint 1: profile 260, device type 770 Input clusters: 0x0000, 0x0001, 0x0003, 0x0402, 0x0405, 0xEF00 Output clusters: 0x0003 Zigbee2MQTT handles it in the same definition as the ZG-303Z (zigbeeModel: ZG-303Z / AY-303Z / AY-302Z, COOLO CS-201Z). A ZHA quirk for the AY-303Z is also in progress (zigpy/zha-device-handlers PR #53",
+  "cooked": "<p>Hi,</p>\n<p>Could you add support for the AOYAN AY-303Z Zigbee soil moisture sensor? It’s a white-label version of the HOBEIAN ZG-303Z, so hopefully it only needs its fingerprint added to the existing soil sensor driver.</p>\n<p>Device info:</p>\n<ul>\n<li>Manufacturer name: “AOYAN”</li>\n<li>Model ID: AY-303Z</li>\n<li>Endpoint 1: profile 260, device type 770</li>\n<li>Input clusters: 0x0000, 0x0001, 0x0003, 0x0402, 0x0405, 0xEF00</li>\n<li>Output clusters: 0x0003</li>\n</ul>\n<p>Zigbee2MQTT handles it in the same definition as the ZG-303Z (zigbeeModel: ZG-303Z / AY-303Z / AY-302Z, COOLO CS-201Z). A ZHA quirk for the AY-303Z is also in progress (zigpy/zha-device-handlers PR <span class=\"hashtag-raw\">#5352</span>).</p>\n<p>One thing to be aware of: the native humidity cluster (0x0405) reports the soil moisture value, while the real ambient humidity comes from DP 109.</p>\n<p>Currently it pairs as a generic Zigbee device on my Homey SHS.</p>\n<p>I couldn’t get a full Zigbee interview: it keeps timing out because it’s a sleepy battery device, even when I wake it with the button. The manufacturer name and model ID above are taken from the Developer Tools Zigbee overview. Happy to send diagnostic logs from the app or provide anything else you need.</p>\n<p>Happy to test a build on the test channel. Thanks for all the work on this app!</p>",
+  "created_at": "2026-09-27T19:35:19.539Z"
+}

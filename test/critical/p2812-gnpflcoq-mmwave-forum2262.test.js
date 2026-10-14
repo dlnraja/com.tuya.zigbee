@@ -61,4 +61,12 @@ describe('P2812 gnpflcoq 4in1 → motion_sensor_radar_mmwave', () => {
       'presence must stay forbidden',
     );
   });
+
+  it('P2817 compose does not require ZCL clusters EF00 MCU lacks', () => {
+    const compose = readCompose('motion_sensor_radar_mmwave');
+    const clusters = (compose.zigbee.endpoints['1'].clusters || []).map(Number);
+    assert.deepEqual(clusters.filter((c) => c !== 0 && c !== 61184).sort(), []);
+    assert.ok(clusters.includes(0));
+  });
 });
+
