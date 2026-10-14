@@ -9064,6 +9064,52 @@
           "dynamic": true
         }
       }
+    },
+    {
+      "id": "p2815-myd45weu-ts0601-soil",
+      "manufacturerName": [
+        "_TZE284_myd45weu",
+        "_tze284_myd45weu",
+        "_TZE200_myd45weu",
+        "_tze200_myd45weu",
+        "_TZE204_myd45weu",
+        "_tze204_myd45weu"
+      ],
+      "productId": [
+        "TS0601",
+        "ts0601"
+      ],
+      "canonicalDriver": "soil_sensor",
+      "forbidMode": "couple",
+      "forbidden": [
+        "climate_sensor",
+        "smoke_sensor3",
+        "gas_sensor",
+        "zigbee_universal"
+      ],
+      "notes": "WHY(P2815/#571): QT-07S couple only — never invent ZG-303Z/AY-303Z onto myd45weu"
+    },
+    {
+      "id": "p2815-aoyan-ay303z-soil",
+      "manufacturerName": [
+        "AOYAN",
+        "aoyan",
+        "AOYAN  "
+      ],
+      "productId": [
+        "AY-303Z",
+        "ay-303z",
+        "AY-302Z",
+        "ay-302z"
+      ],
+      "canonicalDriver": "soil_sensor",
+      "forbidMode": "couple",
+      "forbidden": [
+        "climate_sensor",
+        "water_leak_sensor",
+        "zigbee_universal"
+      ],
+      "notes": "WHY(P2815/#570): AOYAN+AY-303Z soil — never invent AOYAN+TS0601"
     }
   ],
   "entries": {

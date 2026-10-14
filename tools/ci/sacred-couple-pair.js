@@ -13,12 +13,14 @@
 /** Tuya modelIds: TS0601, TS0041, TS004F, TS011F, TS0505B, TS130F, … */
 const TS_PID_RX = /^TS\d{3,4}[A-Z0-9]?$/i;
 /** Exotic but real Zigbee modelIds seen in interviews / Blakadder / Z2M */
-const EXOTIC_PID_RX = /^(ZG-[\w-]+|SNZB-[\w-]+|RH\d{3,4}[A-Z]?|CS-[\w-]+|SM\w{2,}|FUT\d{3}Z?|HG\d+|SMA\d+\w*|3315-S)$/i;
+/** WHY(P2815): AY-303Z / AY-302Z are real Homey productIds (AOYAN soil), not catalog aliases */
+const EXOTIC_PID_RX = /^(ZG-[\w-]+|AY-[\w-]+|SNZB-[\w-]+|RH\d{3,4}[A-Z]?|CS-[\w-]+|SG\d{3,4}Z|SM\w{2,}|FUT\d{3}Z?|HG\d+|SMA\d+\w*|3315-S)$/i;
 
 // Verified long Tuya format allowed by user decision 2026-10-04 (see tools/ci/malformed-mfr-gate.js).
 const TUYA_MFR_RX = /^(_TZE28C1000000_[a-z0-9]{8}|_TZE2841000000_[a-z0-9]{8}|_TZ[A-Z0-9]{1,5}_[a-zA-Z0-9]+|_TYST1[12]_[a-zA-Z0-9]+|_TYZB[0-9]+_[a-zA-Z0-9]+|TUYATEC[a-zA-Z0-9_-]*)$/i;
 /** Brand-as-mfr exotics (HOBEIAN soil/radar, etc.) */
-const EXOTIC_MFR_RX = /^(HOBEIAN|eWeLink|LUMI|Xiaomi|IKEA|Philips|Third\s*Reality)$/i;
+/** WHY(P2815): AOYAN / COOLO / HEOBIAN are brand-as-mfr soil couples (not invent pid from retail) */
+const EXOTIC_MFR_RX = /^(HOBEIAN|HEOBIAN|AOYAN|COOLO|eWeLink|LUMI|Xiaomi|IKEA|Philips|Third\s*Reality)$/i;
 
 /** Keys that must NEVER be treated as Zigbee productId / pid */
 const CATALOG_ALIAS_KEYS = new Set([
@@ -133,6 +135,9 @@ function toClassicOem(mfr) {
   if (!mfr) return null;
   const s = String(mfr).trim();
   if (/^HOBEIAN$/i.test(s)) return 'HOBEIAN';
+  if (/^HEOBIAN$/i.test(s)) return 'HEOBIAN';
+  if (/^AOYAN$/i.test(s)) return 'AOYAN';
+  if (/^COOLO$/i.test(s)) return 'COOLO';
   if (EXOTIC_MFR_RX.test(s)) return s;
   const m = s.match(/^(_TZ[A-Z0-9]{1,5}|_TYST1[12]|_TYZB[0-9]+)_(.+)$/i);
   if (!m) return null;
