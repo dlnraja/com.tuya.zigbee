@@ -16,7 +16,11 @@
     "onoff",
     "button.1"
   ],
-  "energy": { "approximation": { "usageOn": 7, "usageOff": 0.4 },
+  "energy": {
+    "approximation": {
+      "usageOn": 7,
+      "usageOff": 0.4
+    },
     "mains": true
   },
   "zigbee": {
@@ -76,7 +80,11 @@
       "_tz3000_MN9K8NHM",
       "_tz3000_RNNZVSEU",
       "_tz3210_QUINZF3W",
-      "_tz3210_KEABPIGV"
+      "_tz3210_KEABPIGV",
+      "_tz3210_rbixajyp",
+      "_TZ3210_RBIXAJYP",
+      "_tz3210_w7ge4ldo",
+      "_TZ3210_W7GE4LDO"
     ],
     "endpoints": {
       "1": {
