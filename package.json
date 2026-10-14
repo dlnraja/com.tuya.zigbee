@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "5.12.419",
+  "version": "5.12.418",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -329,11 +329,12 @@
     "check:p2761": "node --test test/critical/p2761-johan-latest-comments.test.js",
     "check:p2810": "node --test test/critical/p2810-trv06-rxq4iti9-me167-dp.test.js",
     "check:p2811": "node --test test/critical/p2811-soil-qt07s-aoyan-clusters.test.js",
-    "check:p281x": "npm run check:p2810 && npm run check:p2811 && npm run check:p2815 && npm run check:p2816",
+    "check:p281x": "npm run check:p2810 && npm run check:p2811 && npm run check:p2815 && npm run check:p2816 && npm run check:p2817",
     "check:p2812": "node --test test/critical/p2812-gnpflcoq-mmwave-forum2262.test.js",
     "check:p2813": "node --test test/critical/p2813-fl8cuafl-antik-trv-forum2261.test.js",
     "check:p2815": "node tools/ci/p2815-soil-couple-ssot-gate.js && node --test test/critical/p2815-soil-couple-ssot.test.js",
-    "check:p2816": "node --test test/critical/p2816-button-release-flow-heuristics.test.js"
+    "check:p2816": "node --test test/critical/p2816-button-release-flow-heuristics.test.js",
+    "check:p2817": "node --test test/critical/p2817-forum-t140352-images-treat.test.js"
   },
   "keywords": [
     "homey",

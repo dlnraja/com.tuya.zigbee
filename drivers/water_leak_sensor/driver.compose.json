@@ -126,7 +126,6 @@
       "_tze284_2se8efxh",
       "_tze284_7trh4ihp",
       "_tze284_xuv7ptg0",
-      "aoyan",
       "hobeian",
       "lumi.sensor_wleak",
       "lumi.sensor_wleak.aq1",
@@ -143,7 +142,6 @@
       "_TZE284_2se8efxh",
       "_TZE284_7trh4ihp",
       "_TZE284_xuv7ptg0",
-      "AOYAN",
       "HOBEIAN",
       "LUMI.SENSOR_WLEAK",
       "LUMI.SENSOR_WLEAK.AQ1",
@@ -182,41 +180,34 @@
       "_tze284_XUV7PTG0",
       "_tze204_JTHF7VB6",
       "_tze284_JTHF7VB6",
-      "Aoyan",
       "Lumi.sensor_wleak",
       "Lumi.sensor_wleak.aq1",
       "_TZ3000_bzt33cyu",
-      "_TZ3000_bfopm9ga",
-      "_TZ3000_4qaowtdo",
-      "_TZ3000_qhozxs2b",
-      "_TZ3000_baeiitad",
       "_tz3000_bzt33cyu",
       "_TZ3000_BZT33CYU",
-      "_tz3000_BZT33CYU",
+      "_TZ3000_bfopm9ga",
       "_tz3000_bfopm9ga",
       "_TZ3000_BFOPM9GA",
-      "_tz3000_BFOPM9GA",
+      "_TZ3000_4qaowtdo",
       "_tz3000_4qaowtdo",
       "_TZ3000_4QAOWTDO",
-      "_tz3000_4QAOWTDO",
+      "_TZ3000_qhozxs2b",
       "_tz3000_qhozxs2b",
       "_TZ3000_QHOZXS2B",
-      "_tz3000_QHOZXS2B",
+      "_TZ3000_baeiitad",
       "_tz3000_baeiitad",
       "_TZ3000_BAEIITAD",
+      "_tz3000_BZT33CYU",
+      "_tz3000_BFOPM9GA",
+      "_tz3000_4QAOWTDO",
+      "_tz3000_QHOZXS2B",
       "_tz3000_BAEIITAD",
       "_TZ3000_kstbkt6a",
       "_TZ3000_fxvjhdyl",
       "_TZ3000_kyb656no",
-      "_TZ3000_t6jriawg",
-      "_TZ3000_0s9gukzt",
       "_tz3000_kstbkt6a",
       "_tz3000_fxvjhdyl",
       "_tz3000_kyb656no",
-      "_tz3000_t6jriawg",
-      "_tz3000_0s9gukzt",
-      "eWeLink",
-      "ewelink",
       "_TZ3000_85czd6fy",
       "_tz3000_85czd6fy",
       "_TZ3000_ww9i3e0y",
@@ -227,12 +218,42 @@
       "_tz3000_ocjlo4ea",
       "_TZ3000_awvmkayh",
       "_tz3000_awvmkayh",
-      "_TZ3000_6oabgtzv",
-      "_tz3000_6oabgtzv",
-      "EWELINK",
-      "EWeLink",
+      "_TZ3000_t6jriawg",
+      "_tz3000_t6jriawg",
       "_TZ3000_mugyhz0q",
       "_tz3000_mugyhz0q",
+      "_TZ3000_0s9gukzt",
+      "_tz3000_0s9gukzt",
+      "eWeLink",
+      "ewelink",
+      "EWELINK",
+      "EWeLink",
+      "_TZ3000_6oabgtzv",
+      "_tz3000_6oabgtzv",
+      "_TZ3000_85CZD6FY",
+      "_tz3000_85CZD6FY",
+      "_TZ3000_WW9I3E0Y",
+      "_tz3000_WW9I3E0Y",
+      "_TZ3000_KSTBKT6A",
+      "_tz3000_KSTBKT6A",
+      "_TZ3000_FXVJHDYL",
+      "_tz3000_FXVJHDYL",
+      "_TZ3000_KYB656NO",
+      "_tz3000_KYB656NO",
+      "_TZ3000_WUEP9ZNG",
+      "_tz3000_WUEP9ZNG",
+      "_TZ3000_OCJLO4EA",
+      "_tz3000_OCJLO4EA",
+      "_TZ3000_AWVMKAYH",
+      "_tz3000_AWVMKAYH",
+      "_TZ3000_T6JRIAWG",
+      "_tz3000_T6JRIAWG",
+      "_TZ3000_MUGYHZ0Q",
+      "_tz3000_MUGYHZ0Q",
+      "_TZ3000_0S9GUKZT",
+      "_tz3000_0S9GUKZT",
+      "_TZ3000_6OABGTZV",
+      "_tz3000_6OABGTZV",
       "heobian",
       "Heobian"
     ]
@@ -571,5 +592,33 @@
     }
   ],
   "id": "water_leak_sensor",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "firmwareUpdates": {
+    "updates": [
+      {
+        "changelog": {
+          "en": "OEM Zigbee firmware v77 (Koenkk zigbee-OTA, SHA512-verified). Install via Homey Device Updates (Settings → Device Updates) on Homey ≥13.2 / Mobile ≥9.10.",
+          "fr": "Firmware Zigbee OEM v77 (Koenkk zigbee-OTA, SHA512 vérifié). Installez via Homey Device Updates (Réglages → Device Updates) — Homey ≥13.2 / Mobile ≥9.10."
+        },
+        "device": {
+          "manufacturerName": [
+            "_TZE284_2se8efxh"
+          ],
+          "productId": [
+            "TS0601"
+          ]
+        },
+        "files": [
+          {
+            "fileVersion": 77,
+            "imageType": 54179,
+            "manufacturerCode": 4417,
+            "size": 232066,
+            "name": "1715138033-tk_common_link_lp_OTA_1.0.13.bin",
+            "integrity": "sha256:3c8fcfd10cb97a7be528c362ed2acec43610d31f3a9a45cff8a62e0ecbde39ca"
+          }
+        ]
+      }
+    ]
+  }
 }
