@@ -3722,6 +3722,118 @@
         "water_leak_sensor"
       ],
       "why": "P2622 W4 2026-10-11: eWeLink white-label brand routed by exact pid (Z2M CK-TLSR8656 7000/7002/7003/7014/7019)"
+    },
+    {
+      "key": "_tyzb01_mtunwanm|TS0002",
+      "drivers": [
+        "plug_smart",
+        "switch_2_gang"
+      ],
+      "note": "P2820 dual: in-wall outlet additive to plug_smart"
+    },
+    {
+      "key": "_tyzb01_mtunwanm|TS011F",
+      "drivers": [
+        "plug_smart",
+        "switch_2_gang"
+      ],
+      "note": "P2820 dual"
+    },
+    {
+      "key": "_tz3000_3zofvcaa|TS0002",
+      "drivers": [
+        "switch_usb_dongle",
+        "usb_outlet_advanced"
+      ],
+      "note": "P2820 dual USB outlet"
+    },
+    {
+      "key": "_tz3000_3zofvcaa|TS011F",
+      "drivers": [
+        "switch_usb_dongle",
+        "usb_outlet_advanced"
+      ],
+      "note": "P2820 dual"
+    },
+    {
+      "key": "_tz3000_lqb7lcq9|TS0002",
+      "drivers": [
+        "switch_usb_dongle",
+        "usb_outlet_advanced"
+      ],
+      "note": "P2820 dual"
+    },
+    {
+      "key": "_tz3000_lqb7lcq9|TS011F",
+      "drivers": [
+        "switch_usb_dongle",
+        "usb_outlet_advanced"
+      ],
+      "note": "P2820 dual"
+    },
+    {
+      "key": "_tz3000_pvlvoxvt|TS0002",
+      "drivers": [
+        "switch_usb_dongle",
+        "usb_outlet_advanced"
+      ],
+      "note": "P2820 dual"
+    },
+    {
+      "key": "_tz3000_pvlvoxvt|TS011F",
+      "drivers": [
+        "switch_usb_dongle",
+        "usb_outlet_advanced"
+      ],
+      "note": "P2820 dual"
+    },
+    {
+      "key": "_tz3210_8n4dn1ne|TS0002",
+      "drivers": [
+        "switch_usb_dongle",
+        "usb_outlet_advanced"
+      ],
+      "note": "P2820 dual"
+    },
+    {
+      "key": "_tz3210_8n4dn1ne|TS011F",
+      "drivers": [
+        "switch_usb_dongle",
+        "usb_outlet_advanced"
+      ],
+      "note": "P2820 dual"
+    },
+    {
+      "key": "_tz3210_lqb7lcq9|TS0002",
+      "drivers": [
+        "switch_usb_dongle",
+        "usb_outlet_advanced"
+      ],
+      "note": "P2820 dual"
+    },
+    {
+      "key": "_tz3210_lqb7lcq9|TS011F",
+      "drivers": [
+        "switch_usb_dongle",
+        "usb_outlet_advanced"
+      ],
+      "note": "P2820 dual"
+    },
+    {
+      "key": "_tz3210_urjf5u18|TS0002",
+      "drivers": [
+        "switch_usb_dongle",
+        "usb_outlet_advanced"
+      ],
+      "note": "P2820 dual"
+    },
+    {
+      "key": "_tz3210_urjf5u18|TS011F",
+      "drivers": [
+        "switch_usb_dongle",
+        "usb_outlet_advanced"
+      ],
+      "note": "P2820 dual"
     }
   ]
 }
