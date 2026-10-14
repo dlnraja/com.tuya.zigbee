@@ -3,6 +3,124 @@
   "description": "Community-reported wrong-driver / pairing conflict cases. Sacred couple = mfr + productId. Master: static compose + dynamic lookup. Stable: static compose only (copy canonicalDriver into driver.compose.json). P2318 ENRICHMENT-FIRST: lock by adding to canonicalDriver; forbidMode=couple only strips manufacturerName when the forbidden productId is also present — never strip shared productIds (coverage reduction ban); never delete a mfr from a driver solely because it appears elsewhere with a different pid.",
   "cases": [
     {
+      "id": "p2604-nkjintbl-button-plug-not-switch2gang",
+      "mfr": [
+        "_TZE204_nkjintbl",
+        "_tze204_nkjintbl",
+        "_TZE204_NKJINTBL",
+        "_tze204_NKJINTBL"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "button_wireless_plug",
+      "forbiddenDrivers": [
+        "switch_2gang",
+        "switch_1gang",
+        "switch_3gang",
+        "switch_4gang"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "P2604/P2537c: only TZE204_nkjintbl on button_wireless_plug. TZE200 forbidden by anti-bot p102-din-not-btn-plug; never bleed nkjintbl onto switch_*."
+    },
+    {
+      "id": "p2605-nkjintbl-tze200-not-switch2gang-not-btn-plug",
+      "mfr": [
+        "_TZE200_nkjintbl",
+        "_tze200_nkjintbl",
+        "_TZE200_NKJINTBL",
+        "_tze200_NKJINTBL"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "switch_2gang",
+      "forbiddenDrivers": [
+        "button_wireless_plug",
+        "switch_1gang",
+        "switch_3gang",
+        "switch_4gang"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "clusters": [
+        0,
+        4,
+        5,
+        61184
+      ],
+      "sources": [
+        "Homey interview JohanBendz/com.tuya.zigbee#46: TS0601 + _TZE200_nkjintbl, ep1 deviceId 81, in [0,4,5,0xEF00], out [10,25]",
+        "external cross-reference A (converter): TS0601_switch_2_gang, legacy tuya_switch DP1=l1, DP2=l2",
+        "external cross-reference B (quirk): TuyaDoubleSwitchTO, same ep1 signature, 2 virtual endpoints; device-support issue #3497 confirms 2 gang",
+        "external cross-reference C/D (two SmartThings Edge drivers): _TZE200_nkjintbl/TS0601 = DP {1,2}",
+        "external cross-reference E (HOMEd ts0601.json): TS0601 2-Channel Switch, DP1 status_1 bool, DP2 status_2 bool",
+        "external cross-reference F (converter issue #1542, 2020): physical 2-gang unit; early generic 1/2/3/4-gang listing (MKS-CM-W5) narrowed to 2 gang"
+      ],
+      "notes": "P2605 resolved 2026-10-01: TZE200_nkjintbl + TS0601 is a mains 2-gang EF00 wall switch (DP1/DP2 bool). NON-BLOCKING enrichment (additive couple only; no interview from our own users yet — revisit on first diag/interview). One Homey interview (upstream issue) + 6 consistent independent references. Older device-database page lists it under a generic 1/2/3/4-gang touch switch (also carries a 3-gang id) — not gang-specific, superseded. Known: early firmware did not report physical presses in one stack (2020). TZE284 split to p2605b (no source).",
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      },
+      "idNote": "Legacy id kept for test/history references; the case resolves TO switch_2gang (canonicalDriver). Read the id as: not 1/3/4-gang, not button_wireless_plug.",
+      "recheck20261012": "Re-verified online: Z2M tuya.ts TS0601_switch_2_gang (Koenkk/zigbee-herdsman-converters) and ZHA ts0601_switch.py TuyaDoubleSwitchTO (zigpy/zha-device-handlers) both list _TZE200_nkjintbl/TS0601 as a 2-gang switch. Anti-bot gate green on master and stable-v5; placement unchanged.",
+      "recheck20261013": "Re-verified: Z2M tuya.ts TS0601_switch_2_gang + ZHA ts0601_switch.py still list _TZE200_nkjintbl/TS0601 as 2-gang. Compose sole owner switch_2gang on all three apps. Cleared leftover BlitzWolf sensor-map bleed in plug device.js files. Anti-bot green."
+    },
+    {
+      "id": "p2605b-nkjintbl-tze284-ambiguous",
+      "mfr": [
+        "_TZE284_nkjintbl",
+        "_tze284_nkjintbl"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": null,
+      "forbiddenDrivers": [
+        "button_wireless_plug",
+        "switch_2gang",
+        "switch_1gang",
+        "switch_3gang",
+        "switch_4gang"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "P2605b: no external or Homey evidence for a _TZE284_nkjintbl device (2026-10-01 search across converters, quirks, edge drivers, issues). Keep forbidden until an interview exists — do not invent."
+    },
+    {
+      "id": "novadigital-dqy15zxy-curtain",
+      "mfr": [
+        "_TZE204_dqy15zxy",
+        "_tze204_dqy15zxy",
+        "_TZE200_dqy15zxy",
+        "_tze200_dqy15zxy",
+        "_TZE284_dqy15zxy",
+        "_tze284_dqy15zxy"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "curtain_motor",
+      "forbiddenDrivers": [
+        "switch_2gang",
+        "switch_1gang",
+        "switch_3gang",
+        "zigbee_universal",
+        "generic_tuya",
+        "climate_sensor"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "P2580 Z2M#32851 NovaDigital ZBCMR-01/ZCMR-1 tubular blind. Was wrongly in switch_2gang."
+    },
+    {
       "id": "p2485-rkbxtclc-3gang",
       "mfr": [
         "_TZE204_rkbxtclc",
@@ -425,7 +543,35 @@
       ],
       "forbidMode": "couple",
       "protocol": "tuya_ef00",
-      "notes": "VicHY #2224/#2227 MTG075 220V AC ceiling mmWave presence radar. Forbid curtain_motor phantom flip."
+      "notes": "VicHY #2224/#2227/#2242/#2246 MTG075 220V AC ceiling mmWave. Dual Contre quoi: (1) Homey Rideau class/cap cache flip → heal + re-pair Presence Sensor Radar; (2) bathroom sticky presence (VMC/fan, departure delay, Occupied firmware) — not the same bug. Forbid curtain_motor phantom flip."
+    },
+    {
+      "id": "mtg075-dtzziy1e-presence",
+      "mfr": [
+        "_TZE204_dtzziy1e",
+        "_tze204_dtzziy1e",
+        "_TZE204_DTZZIY1E",
+        "_TZE200_dtzziy1e",
+        "_tze200_dtzziy1e",
+        "_TZE200_DTZZIY1E",
+        "_TZE284_dtzziy1e",
+        "_tze284_dtzziy1e",
+        "_TZE284_DTZZIY1E"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "presence_sensor_radar",
+      "forbiddenDrivers": [
+        "curtain_motor",
+        "curtain_motor_shutter",
+        "climate_sensor",
+        "zigbee_universal",
+        "generic_tuya"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "P2587 Z2M MTG075-ZB-RL often dtzziy1e+TS0601 — same relay radar family as VicHY clrdrnya. Never curtain."
     },
     {
       "id": "hobeian-aubess-k4ej3ww2-ias",
@@ -1404,7 +1550,7 @@
         "wall_switch_4_gang"
       ],
       "protocol": "zcl",
-      "notes": "z2m IH-K663 smart button. A battery remote, not a mains 4-gang wall switch. 2026-10-11: Z2M IH-K663 is TS0041 (1 button) → canonical button_wireless_1 (P189 retired).",
+      "notes": "z2m IH-K663 smart button. A battery remote, not a mains 4-gang wall switch. 2026-10-11: Z2M IH-K663 is TS0041 (1 button); remote_button_wireless emptied by one-source round → canonical button_wireless_1.",
       "sources": [
         "z2m-herdsman",
         "P189"
@@ -1562,10 +1708,13 @@
       "canonicalDriver": "wall_curtain_switch",
       "forbiddenDrivers": [
         "curtain_motor_shutter",
-        "curtain_module"
+        "curtain_module",
+        "smart_knob",
+        "smart_knob_rotary",
+        "smart_knob_switch"
       ],
       "protocol": "zcl",
-      "notes": "Johan enrichment gives TS130F for all four (Moes MS-108ZR family, plus LoraTap and Nous rebrands). curtain_motor_shutter does not even declare TS130F, so the placement can never match; its 50-entry productId list has accumulated Hue bulbs, Xiaomi weather sensors and temperature sensors and should not grow further.",
+      "notes": "Johan enrichment gives TS130F for all four (Moes MS-108ZR family, plus LoraTap and Nous rebrands). GH#552: never smart_knob; never curtain_module (P191). wall_curtain_switch clusters must include WindowCovering 258 + OnOff 6 for Homey match.",
       "sources": [
         "z2m-herdsman",
         "johan-enrichment",
@@ -4011,7 +4160,12 @@
     {
       "id": "p2270-gnpflcoq-4in1-mmwave",
       "mfr": [
-        "_TZE284_gnpflcoq"
+        "_TZE284_gnpflcoq",
+        "_TZE200_gnpflcoq",
+        "_TZE204_gnpflcoq",
+        "_tze284_gnpflcoq",
+        "_tze200_gnpflcoq",
+        "_tze204_gnpflcoq"
       ],
       "productId": [
         "TS0601"
@@ -4024,10 +4178,12 @@
       ],
       "forbidMode": "couple",
       "protocol": "tuya_dp",
-      "notes": "ZHA#5252 4in1 — DP1 presence inverted (0=occupied). Prefer mmwave driver.",
+      "notes": "ZHA#5252/#5286 + forum#2262 Istvan Mag 4in1 — DP1 presence inverted (0=occupied). Canonical motion_sensor_radar_mmwave only.",
       "sources": [
         "zha-device-handlers#5252",
-        "P2270"
+        "P2270",
+        "forum-t140352-2262",
+        "P2812"
       ],
       "tracks": {
         "master": {
@@ -4519,11 +4675,12 @@
       ],
       "forbidMode": "couple",
       "protocol": "tuya_dp",
-      "notes": "P2278 me167 profile + DP47 cal ÷10 (ZHA#4124 / Z2M#25199 user firmware); other ME167 stay whole °C",
+      "notes": "P2278 me167 + DP47 cal ÷10; P2569 Michaelp #2244 ZG253 TZE284 — compose EF00-only [0,4,5,61184] (Homey Unknown when OnOff 6 required)",
       "sources": [
         "zha-device-handlers#4124",
         "zigbee2mqtt#25199",
-        "P2278"
+        "P2278",
+        "forum-140352#2244"
       ],
       "tracks": {
         "master": {
@@ -5257,6 +5414,33 @@
       "forbidMode": "couple",
       "source": "github-533-salvagr + Z2M Moes ZTS-EUR-C",
       "notes": "P2503: Moes ZTS-EUR-C curtain. Forbid TRV + climate_sensor (current-fps bleed). Do NOT forbid wall_thermostat — strip_pid would gut TS0601 there."
+    },
+    {
+      "id": "p2583-gkfbdvyx-radar-not-socket",
+      "mfr": [
+        "_TZE204_gkfbdvyx",
+        "_TZE200_gkfbdvyx",
+        "_TZE284_gkfbdvyx",
+        "_tze204_gkfbdvyx",
+        "_tze200_gkfbdvyx",
+        "_tze284_gkfbdvyx"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "presence_sensor_radar",
+      "forbiddenDrivers": [
+        "curtain_motor",
+        "device_radiator_valve",
+        "radiator_valve",
+        "smartplug",
+        "generic_tuya",
+        "zigbee_universal",
+        "unknown_zigbee_unit"
+      ],
+      "forbidMode": "couple",
+      "source": "github-547-HiepSVG + Z2M ZY-M100-24G",
+      "notes": "P2583: paired as Homey virtualdriverzigbee with 0 caps — lock presence_sensor_radar only."
     },
     {
       "id": "p2509-invent-junk-do-not-lock",
@@ -6401,6 +6585,29 @@
       "doNotTouch": true
     },
     {
+      "id": "hobeian-zg101zs-scene",
+      "mfr": [
+        "HOBEIAN",
+        "hobeian",
+        "Hobeian"
+      ],
+      "productId": [
+        "ZG-101ZS"
+      ],
+      "canonicalDriver": "scene_switch_4",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "button_wireless_1",
+        "presence_sensor_radar",
+        "generic_tuya",
+        "button_wireless_4"
+      ],
+      "forbidMode": "couple",
+      "source": "p2430-hobeian-fleet",
+      "notes": "P2430: HOBEIAN Star Ring 4-gang scene switch couple lock. 2026-10-11 user decision: scene_switch_4 sole owner (Z2M 'Star Ring 4 Gang Scene Switch'); button_wireless_4 must not claim it.",
+      "doNotTouch": true
+    },
+    {
       "id": "hobeian-zg229z-siren",
       "mfr": [
         "HOBEIAN",
@@ -6686,7 +6893,10 @@
       "canonicalDriver": "switch_4gang",
       "forbiddenDrivers": [
         "switch_1gang",
-        "wall_switch_5_gang_tuya"
+        "wall_switch_5_gang_tuya",
+        "wall_switch_4gang_1way",
+        "zigbee_universal",
+        "generic_tuya"
       ],
       "protocol": "zcl",
       "notes": "Melectro #646 4-gang switch TS0004"
@@ -7314,131 +7524,6 @@
       }
     },
     {
-      "id": "p2604-nkjintbl-button-plug-not-switch2gang",
-      "mfr": [
-        "_TZE204_nkjintbl",
-        "_tze204_nkjintbl",
-        "_TZE204_NKJINTBL",
-        "_tze204_NKJINTBL"
-      ],
-      "productId": [
-        "TS0601"
-      ],
-      "canonicalDriver": "button_wireless_plug",
-      "forbiddenDrivers": [
-        "switch_2gang",
-        "switch_1gang",
-        "switch_3gang",
-        "switch_4gang"
-      ],
-      "forbidMode": "couple",
-      "protocol": "tuya_ef00",
-      "notes": "P2604/P2537c: only TZE204_nkjintbl on button_wireless_plug. TZE200 forbidden by anti-bot p102-din-not-btn-plug; never bleed nkjintbl onto switch_*."
-    },
-    {
-      "id": "p2605-nkjintbl-tze200-not-switch2gang-not-btn-plug",
-      "mfr": [
-        "_TZE200_nkjintbl",
-        "_tze200_nkjintbl",
-        "_TZE200_NKJINTBL",
-        "_tze200_NKJINTBL"
-      ],
-      "productId": [
-        "TS0601"
-      ],
-      "canonicalDriver": "switch_2gang",
-      "forbiddenDrivers": [
-        "button_wireless_plug",
-        "switch_1gang",
-        "switch_3gang",
-        "switch_4gang"
-      ],
-      "forbidMode": "couple",
-      "protocol": "tuya_ef00",
-      "notes": "P2605: TZE200_nkjintbl|TS0601 sole owner switch_2gang (aligned master). TZE284 stays p2605b ambiguous — forbid plug+switch bleed."
-    },
-    {
-      "id": "novadigital-dqy15zxy-curtain",
-      "mfr": [
-        "_TZE204_dqy15zxy",
-        "_tze204_dqy15zxy",
-        "_TZE200_dqy15zxy",
-        "_tze200_dqy15zxy",
-        "_TZE284_dqy15zxy",
-        "_tze284_dqy15zxy"
-      ],
-      "productId": [
-        "TS0601"
-      ],
-      "canonicalDriver": "curtain_motor",
-      "forbiddenDrivers": [
-        "switch_2gang",
-        "switch_1gang",
-        "switch_3gang",
-        "zigbee_universal",
-        "generic_tuya",
-        "climate_sensor"
-      ],
-      "forbidMode": "couple",
-      "protocol": "tuya_ef00",
-      "notes": "P2580 Z2M#32851 NovaDigital ZBCMR-01/ZCMR-1 tubular blind. Was wrongly in switch_2gang."
-    },
-    {
-      "id": "mtg075-dtzziy1e-presence",
-      "mfr": [
-        "_TZE204_dtzziy1e",
-        "_tze204_dtzziy1e",
-        "_TZE204_DTZZIY1E",
-        "_TZE200_dtzziy1e",
-        "_tze200_dtzziy1e",
-        "_TZE200_DTZZIY1E",
-        "_TZE284_dtzziy1e",
-        "_tze284_dtzziy1e",
-        "_TZE284_DTZZIY1E"
-      ],
-      "productId": [
-        "TS0601"
-      ],
-      "canonicalDriver": "presence_sensor_radar",
-      "forbiddenDrivers": [
-        "curtain_motor",
-        "curtain_motor_shutter",
-        "climate_sensor",
-        "zigbee_universal",
-        "generic_tuya"
-      ],
-      "forbidMode": "couple",
-      "protocol": "tuya_ef00",
-      "notes": "P2587 Z2M MTG075-ZB-RL often dtzziy1e+TS0601 — same relay radar family as VicHY clrdrnya. Never curtain."
-    },
-    {
-      "id": "p2583-gkfbdvyx-radar-not-socket",
-      "mfr": [
-        "_TZE204_gkfbdvyx",
-        "_TZE200_gkfbdvyx",
-        "_TZE284_gkfbdvyx",
-        "_tze204_gkfbdvyx",
-        "_tze200_gkfbdvyx",
-        "_tze284_gkfbdvyx"
-      ],
-      "productId": [
-        "TS0601"
-      ],
-      "canonicalDriver": "presence_sensor_radar",
-      "forbiddenDrivers": [
-        "curtain_motor",
-        "device_radiator_valve",
-        "radiator_valve",
-        "smartplug",
-        "generic_tuya",
-        "zigbee_universal",
-        "unknown_zigbee_unit"
-      ],
-      "forbidMode": "couple",
-      "source": "github-547-HiepSVG + Z2M ZY-M100-24G",
-      "notes": "P2583: paired as Homey virtualdriverzigbee with 0 caps — lock presence_sensor_radar only."
-    },
-    {
       "id": "p2571-hejhome-c8ipbljq-6gang",
       "mfr": [
         "_TZE284_c8ipbljq",
@@ -8031,36 +8116,109 @@
       "notes": "W4 curated removal 2026-10-11: Zemismart 3-gang TS0003 wall switch (interview in JohanBendz#795, Johan 2026 verification). climate_sensor has no Z2M pid for this mfr."
     },
     {
-      "id": "a2erlvb8-qa-1ch-2ch",
+      "id": "lead-z6fgd73r-switch_1gang",
       "mfr": [
-        "_TZ3210_a2erlvb8",
-        "_tz3210_a2erlvb8"
+        "_TZ3000_z6fgd73r",
+        "_tz3000_z6fgd73r"
       ],
       "productId": [
-        "TS0002"
+        "TS011F"
       ],
-      "canonicalDriver": "switch_2gang",
+      "canonicalDriver": "switch_1gang",
       "forbidMode": "couple",
       "sources": [
-        "z2m"
+        "z2m",
+        "blakadder",
+        "wonjj6768 SmartThings"
       ],
-      "notes": "2026-10-11: Z2M qa.ts — _TZ3210_a2erlvb8+TS0002 = QA QARZ2LR 2-channel; +TS000F = QARZ1DC 1-channel. Single owner switch_2gang (as master); GangCountAdapter resolves the gang count (Koen Kanters and contributors)."
+      "notes": "2026-10-11: LELLKI XF-EU-S100-1-M 1-gang touch switch with power monitoring (Z2M lellki.ts, blakadder LELLKI_XF-EU-S100-1, wonjj6768 SmartThings zcl switches) — not a USB dongle"
     },
     {
-      "id": "a2erlvb8-qa-1ch-ts000f",
+      "id": "johan-only-_tyzb02_key8kk7r",
       "mfr": [
-        "_TZ3210_a2erlvb8",
-        "_tz3210_a2erlvb8"
+        "_TYZB02_key8kk7r",
+        "_tyzb02_key8kk7r"
       ],
       "productId": [
-        "TS000F"
+        "TS0043"
       ],
-      "canonicalDriver": "switch_2gang",
+      "canonicalDriver": "button_wireless_3",
       "forbidMode": "couple",
       "sources": [
+        "johan",
+        "zha",
+        "deconz"
+      ],
+      "notes": "2026-10-11: 3-button remote: ZHA ts0043 TuyaSmartRemote0043NO + deCONZ Tuya3gangMap"
+    },
+    {
+      "id": "johan-only-_tz3000_rrjr1q0u",
+      "mfr": [
+        "_TZ3000_rrjr1q0u",
+        "_tz3000_rrjr1q0u"
+      ],
+      "productId": [
+        "TS0043"
+      ],
+      "canonicalDriver": "button_wireless_3",
+      "forbidMode": "couple",
+      "sources": [
+        "johan",
+        "deconz"
+      ],
+      "notes": "2026-10-11: 3-button remote: deCONZ Tuya3gangMap + de_web_plugin switch list"
+    },
+    {
+      "id": "johan-only-_tz3000_mugyhz0q",
+      "mfr": [
+        "_TZ3000_mugyhz0q",
+        "_tz3000_mugyhz0q"
+      ],
+      "productId": [
+        "TS0207"
+      ],
+      "canonicalDriver": "water_leak_sensor",
+      "forbidMode": "couple",
+      "sources": [
+        "johan",
         "z2m"
       ],
-      "notes": "2026-10-11: Z2M qa.ts QARZ1DC 1-channel (_TZ3210_a2erlvb8+TS000F). Single owner switch_2gang like master (977b54e97f/d7243a8120); GangCountAdapter (gang-patterns TS000F=1) hides gang2 once the device confirms 1 gang (Koen Kanters and contributors)."
+      "notes": "2026-10-11: Tuya 899WZ water leak detector (Z2M TS0207_water_leak_detector)"
+    },
+    {
+      "id": "johan-only-_tz3000_0s9gukzt",
+      "mfr": [
+        "_TZ3000_0s9gukzt",
+        "_tz3000_0s9gukzt"
+      ],
+      "productId": [
+        "TS0207"
+      ],
+      "canonicalDriver": "water_leak_sensor",
+      "forbidMode": "couple",
+      "sources": [
+        "johan",
+        "z2m"
+      ],
+      "notes": "2026-10-11: Nous E4 water leakage sensor (Z2M TS0207_water_leak_detector)"
+    },
+    {
+      "id": "johan-only-_tz3000_zl1kmjqx",
+      "mfr": [
+        "_TZ3000_zl1kmjqx",
+        "_tz3000_zl1kmjqx"
+      ],
+      "productId": [
+        "TS0201"
+      ],
+      "canonicalDriver": "climate_sensor",
+      "forbidMode": "couple",
+      "sources": [
+        "johan",
+        "z2m",
+        "zha"
+      ],
+      "notes": "2026-10-11: temperature/humidity sensor RSH-HS06_1 / IH-K009 (Z2M tuya.ts, ZHA ty0201)"
     },
     {
       "id": "w4z-_tyzb01_ncutbjdi-TS0003",
@@ -8071,7 +8229,7 @@
       "productId": [
         "TS0003"
       ],
-      "canonicalDriver": "switch_1_gang",
+      "canonicalDriver": "switch_1gang",
       "forbidMode": "couple",
       "sources": [
         "johan",
@@ -8088,7 +8246,7 @@
       "productId": [
         "TS0003"
       ],
-      "canonicalDriver": "switch_1_gang",
+      "canonicalDriver": "switch_1gang",
       "forbidMode": "couple",
       "sources": [
         "johan",
@@ -8231,6 +8389,24 @@
         "z2m"
       ],
       "notes": "2026-10-11: WSD500A temp-humidity (Z2M tuya.ts + deCONZ)"
+    },
+    {
+      "id": "newdrv-valve_controller_5zone",
+      "mfr": [
+        "_TZ3000_j0ktmul1",
+        "_tz3000_j0ktmul1"
+      ],
+      "productId": [
+        "TS011F"
+      ],
+      "canonicalDriver": "switch_4gang",
+      "forbidMode": "couple",
+      "sources": [
+        "z2m",
+        "Z2S_Library"
+      ],
+      "notes": "2026-10-11: AutomatOn AUT000069 5-zone valves/UFH controller, 5 ZCL onOff endpoints (Z2M automaton.ts, PR #5579, z2m #16992; Z2S_Library)",
+      "note": "2026-10-11 fold: valve_controller_5zone held (Athom AggregateError); couple ships via switch_4gang, 5 gangs via GangCountAdapter."
     },
     {
       "id": "w4n-_tyzb01_bagt1e4o-TS0014",
@@ -8499,6 +8675,55 @@
       "notes": "2026-10-11: metering smart plug TS011F_plug_1"
     },
     {
+      "id": "a2erlvb8-qa-1ch-2ch",
+      "mfr": [
+        "_TZ3210_a2erlvb8",
+        "_tz3210_a2erlvb8"
+      ],
+      "productId": [
+        "TS0002"
+      ],
+      "canonicalDriver": "switch_2gang",
+      "forbidMode": "couple",
+      "sources": [
+        "z2m"
+      ],
+      "notes": "2026-10-11: Z2M qa.ts — _TZ3210_a2erlvb8+TS0002 = QA QARZ2LR 2-channel; +TS000F = QARZ1DC 1-channel. Single owner switch_2gang (as master); GangCountAdapter resolves the gang count (Koen Kanters and contributors)."
+    },
+    {
+      "id": "a2erlvb8-qa-1ch-ts000f",
+      "mfr": [
+        "_TZ3210_a2erlvb8",
+        "_tz3210_a2erlvb8"
+      ],
+      "productId": [
+        "TS000F"
+      ],
+      "canonicalDriver": "switch_2gang",
+      "forbidMode": "couple",
+      "sources": [
+        "z2m"
+      ],
+      "notes": "2026-10-11: Z2M qa.ts QARZ1DC 1-channel (_TZ3210_a2erlvb8+TS000F). Single owner switch_2gang like master (977b54e97f/d7243a8120); GangCountAdapter (gang-patterns TS000F=1) hides gang2 once the device confirms 1 gang (Koen Kanters and contributors)."
+    },
+    {
+      "id": "bgtzm4ny-ts0044-star-ring-scene",
+      "mfr": [
+        "_TZ3000_bgtzm4ny",
+        "_tz3000_bgtzm4ny"
+      ],
+      "productId": [
+        "TS0044"
+      ],
+      "canonicalDriver": "scene_switch_4",
+      "forbiddenDrivers": [
+        "button_wireless_4"
+      ],
+      "forbidMode": "couple",
+      "source": "z2m ZG-101ZS + romasku#237",
+      "notes": "2026-10-11 user decision: same hardware as HOBEIAN ZG-101ZS (TLSR8253 battery 4-button, single/double/hold); both couples in scene_switch_4."
+    },
+    {
       "id": "w4n-_tze200_aj0oxo1i-TS0225",
       "mfr": [
         "_TZE200_aj0oxo1i",
@@ -8595,67 +8820,6 @@
       "notes": "2026-10-11: QS-Zigbee-D02-TRIAC-LN 1-gang dimmer module"
     },
     {
-      "id": "hobeian-zg101zs-scene",
-      "mfr": [
-        "HOBEIAN",
-        "hobeian",
-        "Hobeian"
-      ],
-      "productId": [
-        "ZG-101ZS"
-      ],
-      "canonicalDriver": "scene_switch_4",
-      "forbiddenDrivers": [
-        "switch_1gang",
-        "button_wireless_1",
-        "presence_sensor_radar",
-        "generic_tuya",
-        "button_wireless_4"
-      ],
-      "forbidMode": "couple",
-      "source": "p2430-hobeian-fleet",
-      "notes": "P2430: HOBEIAN Star Ring 4-gang scene switch couple lock. 2026-10-11 user decision: scene_switch_4 sole owner (Z2M 'Star Ring 4 Gang Scene Switch'); button_wireless_4 must not claim it.",
-      "doNotTouch": true
-    },
-    {
-      "id": "bgtzm4ny-ts0044-star-ring-scene",
-      "mfr": [
-        "_TZ3000_bgtzm4ny",
-        "_tz3000_bgtzm4ny"
-      ],
-      "productId": [
-        "TS0044"
-      ],
-      "canonicalDriver": "scene_switch_4",
-      "forbiddenDrivers": [
-        "button_wireless_4"
-      ],
-      "forbidMode": "couple",
-      "source": "z2m ZG-101ZS + romasku#237",
-      "notes": "2026-10-11 user decision: same hardware as HOBEIAN ZG-101ZS (TLSR8253 battery 4-button, single/double/hold); both couples in scene_switch_4."
-    },
-    {
-      "id": "p2605b-nkjintbl-tze284-ambiguous",
-      "mfr": [
-        "_TZE284_nkjintbl",
-        "_tze284_nkjintbl"
-      ],
-      "productId": [
-        "TS0601"
-      ],
-      "canonicalDriver": null,
-      "forbiddenDrivers": [
-        "button_wireless_plug",
-        "switch_2gang",
-        "switch_1gang",
-        "switch_3gang",
-        "switch_4gang"
-      ],
-      "forbidMode": "couple",
-      "protocol": "tuya_ef00",
-      "notes": "P2605b: TZE284 nkjintbl ambiguous until interview."
-    },
-    {
       "id": "p-wrmhp6b3-cs201z-soil-not-curtain",
       "mfr": [
         "_TZE200_wrmhp6b3",
@@ -8708,129 +8872,6 @@
         "hubitat:zemismart-zigbee-blind"
       ],
       "notes": "Nova Digital ZBCMR-01 roller blind. Z2M fingerprint TS0105|_TZE600_ogyg1y6b (also listed under TS0601_cover_2 whiteLabel). Not a 3-gang switch despite TS0105 used by other TZE600 switches."
-    },
-    {
-      "id": "lead-z6fgd73r-switch_1gang",
-      "mfr": [
-        "_TZ3000_z6fgd73r",
-        "_tz3000_z6fgd73r"
-      ],
-      "productId": [
-        "TS011F"
-      ],
-      "canonicalDriver": "switch_1gang",
-      "forbidMode": "couple",
-      "sources": [
-        "z2m",
-        "blakadder",
-        "wonjj6768 SmartThings"
-      ],
-      "notes": "2026-10-11: LELLKI XF-EU-S100-1-M 1-gang touch switch with power monitoring (Z2M lellki.ts, blakadder LELLKI_XF-EU-S100-1, wonjj6768 SmartThings zcl switches) — not a USB dongle"
-    },
-    {
-      "id": "johan-only-_tyzb02_key8kk7r",
-      "mfr": [
-        "_TYZB02_key8kk7r",
-        "_tyzb02_key8kk7r"
-      ],
-      "productId": [
-        "TS0043"
-      ],
-      "canonicalDriver": "button_wireless_3",
-      "forbidMode": "couple",
-      "sources": [
-        "johan",
-        "zha",
-        "deconz"
-      ],
-      "notes": "2026-10-11: 3-button remote: ZHA ts0043 TuyaSmartRemote0043NO + deCONZ Tuya3gangMap"
-    },
-    {
-      "id": "johan-only-_tz3000_rrjr1q0u",
-      "mfr": [
-        "_TZ3000_rrjr1q0u",
-        "_tz3000_rrjr1q0u"
-      ],
-      "productId": [
-        "TS0043"
-      ],
-      "canonicalDriver": "button_wireless_3",
-      "forbidMode": "couple",
-      "sources": [
-        "johan",
-        "deconz"
-      ],
-      "notes": "2026-10-11: 3-button remote: deCONZ Tuya3gangMap + de_web_plugin switch list"
-    },
-    {
-      "id": "johan-only-_tz3000_mugyhz0q",
-      "mfr": [
-        "_TZ3000_mugyhz0q",
-        "_tz3000_mugyhz0q"
-      ],
-      "productId": [
-        "TS0207"
-      ],
-      "canonicalDriver": "water_leak_sensor",
-      "forbidMode": "couple",
-      "sources": [
-        "johan",
-        "z2m"
-      ],
-      "notes": "2026-10-11: Tuya 899WZ water leak detector (Z2M TS0207_water_leak_detector)"
-    },
-    {
-      "id": "johan-only-_tz3000_0s9gukzt",
-      "mfr": [
-        "_TZ3000_0s9gukzt",
-        "_tz3000_0s9gukzt"
-      ],
-      "productId": [
-        "TS0207"
-      ],
-      "canonicalDriver": "water_leak_sensor",
-      "forbidMode": "couple",
-      "sources": [
-        "johan",
-        "z2m"
-      ],
-      "notes": "2026-10-11: Nous E4 water leakage sensor (Z2M TS0207_water_leak_detector)"
-    },
-    {
-      "id": "johan-only-_tz3000_zl1kmjqx",
-      "mfr": [
-        "_TZ3000_zl1kmjqx",
-        "_tz3000_zl1kmjqx"
-      ],
-      "productId": [
-        "TS0201"
-      ],
-      "canonicalDriver": "climate_sensor",
-      "forbidMode": "couple",
-      "sources": [
-        "johan",
-        "z2m",
-        "zha"
-      ],
-      "notes": "2026-10-11: temperature/humidity sensor RSH-HS06_1 / IH-K009 (Z2M tuya.ts, ZHA ty0201)"
-    },
-    {
-      "id": "newdrv-valve_controller_5zone",
-      "mfr": [
-        "_TZ3000_j0ktmul1",
-        "_tz3000_j0ktmul1"
-      ],
-      "productId": [
-        "TS011F"
-      ],
-      "canonicalDriver": "switch_4gang",
-      "forbidMode": "couple",
-      "sources": [
-        "z2m",
-        "Z2S_Library"
-      ],
-      "notes": "2026-10-11: AutomatOn AUT000069 5-zone valves/UFH controller, 5 ZCL onOff endpoints (Z2M automaton.ts, PR #5579, z2m #16992; Z2S_Library)",
-      "note": "2026-10-11 fold: valve_controller_5zone held (Athom AggregateError); couple ships via switch_4gang, 5 gangs via GangCountAdapter."
     },
     {
       "id": "p-5cu64znk-zbcmr02-shutter-ts0105",
@@ -8982,6 +9023,47 @@
       "protocol": "zcl",
       "source": "Johan 2 Gang Wall Switch; romasku BSEED TS0012 (ledger wrongly had TS0002/1gang)",
       "notes": "2026-10-11 one-source Johan (+Z2M/ZHA where noted)"
+    },
+    {
+      "id": "p2813-fl8cuafl-antik-trv02",
+      "mfr": [
+        "_TZE200_fl8cuafl",
+        "_TZE204_fl8cuafl",
+        "_TZE284_fl8cuafl",
+        "_tze200_fl8cuafl",
+        "_tze204_fl8cuafl",
+        "_tze284_fl8cuafl"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "device_radiator_valve",
+      "forbiddenDrivers": [
+        "socket",
+        "plug",
+        "smart_plug",
+        "climate_sensor",
+        "zigbee_universal",
+        "generic_tuya"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "Forum#2261 marosk ANTIK ATK-TRV02 — paired as virtual socket; fingerprint → device_radiator_valve Profile A until Z2M DP map proven.",
+      "sources": [
+        "forum-t140352-2261",
+        "user-dev-tools",
+        "P2813"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": true
+        }
+      }
     }
   ],
   "entries": {
@@ -9091,6 +9173,56 @@
       ],
       "note": "TZ3400 sibling — separate couple from TZ3000",
       "source": "p2612-sacred-couple-lock",
+      "updated": "2026-09-20"
+    },
+    "p2625-tz3000_vsxvaj9i-ts0043": {
+      "id": "p2625-tz3000_vsxvaj9i-ts0043",
+      "manufacturerName": "_TZ3000_vsxvaj9i",
+      "productId": "TS0043",
+      "canonicalDriver": "button_wireless_3",
+      "forbidMode": "couple",
+      "forbidDrivers": [
+        "remote_button_wireless_wall",
+        "button_wireless_1",
+        "button_wireless_2",
+        "button_wireless_4",
+        "handheld_remote_4_buttons",
+        "wall_remote_3_gang",
+        "scene_switch_3",
+        "smart_knob",
+        "climate_sensor",
+        "switch_3gang"
+      ],
+      "note": "Bastien flat 3-btn battery remote — UX button.1-3 + 0xFD",
+      "source": "p2625-user-report",
+      "updated": "2026-09-20"
+    },
+    "p2629-tz3000_vsxvaj9i-ts0043-interview": {
+      "id": "p2629-tz3000_vsxvaj9i-ts0043-interview",
+      "manufacturerName": "_TZ3000_vsxvaj9i",
+      "productId": "TS0043",
+      "canonicalDriver": "button_wireless_3",
+      "forbidMode": "couple",
+      "forbidDrivers": [
+        "virtualdriverzigbee",
+        "remote_button_wireless_wall",
+        "button_wireless_1",
+        "button_wireless_4",
+        "switch_3gang",
+        "scene_switch_3"
+      ],
+      "interview": {
+        "clustersEp1": [
+          0,
+          1,
+          6,
+          57344
+        ],
+        "noEf00": true,
+        "ieee": "a4:c1:38:f6:3d:2d:c9:79"
+      },
+      "note": "P2629 live interview — ZCL 0xFD/E000 sticky 3-btn, battery EP1",
+      "source": "bastien-homey-interview",
       "updated": "2026-09-20"
     }
   }
