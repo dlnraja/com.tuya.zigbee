@@ -3157,6 +3157,7 @@
         "curtain_motor",
         "gas_sensor",
         "presence_sensor_radar",
+        "soil_sensor",
         "switch_1gang",
         "switch_3gang",
         "water_leak_sensor"
@@ -3178,6 +3179,7 @@
       "key": "hobeian|ts0601_generic",
       "drivers": [
         "curtain_motor",
+        "soil_sensor",
         "switch_1gang"
       ]
     },
