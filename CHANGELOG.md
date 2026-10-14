@@ -9,7 +9,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.1463] - 2026-10-14
+## [9.0.1464] - 2026-10-14
+
+v9.0.1464: automated publish, manifest sync, and Homey test promotion.
+---
+
+ [9.0.1463] - 2026-10-14
 
 mfs soil exclusive align so 4in1 mmWave and ANTIK TRV publish.
 ---
