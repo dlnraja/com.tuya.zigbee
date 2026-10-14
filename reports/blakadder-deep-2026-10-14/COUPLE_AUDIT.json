@@ -1,0 +1,685 @@
+{
+  "generatedAt": "2026-10-14T10:36:11.578Z",
+  "blakadder": {
+    "devices": 2692,
+    "sacredCouples": 294,
+    "crawlFingerprints": 635,
+    "fetchedAt": "2026-10-14T10:29:50.987Z"
+  },
+  "coverage": {
+    "exactCouple": 474,
+    "mfrOnlyPartial": 161,
+    "missingEntirely": 0,
+    "classMismatchHeuristic": 55,
+    "severeMismatches": 0,
+    "tuyaMfrNotInApp": 0
+  },
+  "targets": {
+    "gnpflcoq_in_blakadder": [],
+    "fl8cuafl_in_blakadder": [],
+    "gnpflcoq_in_app": [
+      "motion_sensor_radar_mmwave"
+    ],
+    "fl8cuafl_in_app": [
+      "device_radiator_valve"
+    ]
+  },
+  "missingList": [],
+  "mfrOnlyWithPid": [
+    {
+      "mfr": "_tz3400_key8kk7r",
+      "pid": "TS0043",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "vendor": "AG-Security",
+      "category": "remote",
+      "model": "DP-ZSR003"
+    },
+    {
+      "mfr": "_tz3000_jyupj3fw",
+      "pid": "TS0006",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "vendor": "Avatto",
+      "category": "switch",
+      "model": "ZTS16"
+    },
+    {
+      "mfr": "_tz3210_grnwgegn",
+      "pid": "TS0501B",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "vendor": "Jisim",
+      "category": "light",
+      "model": "JD4101"
+    },
+    {
+      "mfr": "_tz3210_pudg9sge",
+      "pid": "TS0501B",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "vendor": "Jisim",
+      "category": "light",
+      "model": "JD4102"
+    },
+    {
+      "mfr": "_tze200_sbordckq",
+      "pid": "TS0003",
+      "drivers": [
+        "curtain_motor_tilt"
+      ],
+      "vendor": "Larkkey",
+      "category": "cover",
+      "model": "ZSTY-SM-1SRZG-EU"
+    },
+    {
+      "mfr": "_tz3210_q7oryllx",
+      "pid": "TS0501",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "vendor": "Mercator Ikuü",
+      "category": "switch",
+      "model": "SPP01G"
+    },
+    {
+      "mfr": "_tz3210_lzqq3u4r",
+      "pid": "TS0501",
+      "drivers": [
+        "fan_controller"
+      ],
+      "vendor": "Mercator Ikuü",
+      "category": "switch",
+      "model": "SSWF01G"
+    },
+    {
+      "mfr": "_tz3210_4whigl8i",
+      "pid": "TS0501",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "vendor": "Mercator Ikuü",
+      "category": "switch",
+      "model": "SSWF01G"
+    },
+    {
+      "mfr": "_tzb210_nfzrlz29",
+      "pid": "TS0501B",
+      "drivers": [
+        "bulb_rgbw"
+      ],
+      "vendor": "Tuya",
+      "category": "light",
+      "model": "WZ1"
+    },
+    {
+      "mfr": "tuyatec-l8u78xhn",
+      "pid": "TS0901",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "vendor": "Tuya",
+      "category": "router",
+      "model": "HS2RNL-TY"
+    },
+    {
+      "mfr": "_tz3210_9q49basr",
+      "pid": "TS0501B",
+      "drivers": [
+        "wall_dimmer_tuya"
+      ],
+      "vendor": "Tuya",
+      "category": "light",
+      "model": "TS0501B"
+    },
+    {
+      "mfr": "_tz3210_i680rtja",
+      "pid": "TS0501B",
+      "drivers": [
+        "wall_dimmer_tuya"
+      ],
+      "vendor": "Tuya",
+      "category": "light",
+      "model": "TS0501B"
+    },
+    {
+      "mfr": "_tz3210_nehayyhx",
+      "pid": "TS0501B",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "vendor": "Tuya",
+      "category": "light",
+      "model": "TS0501B"
+    },
+    {
+      "mfr": "_tz3210_wuheofsg",
+      "pid": "TS0501B",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "vendor": "Tuya",
+      "category": "light",
+      "model": "TS0501B"
+    },
+    {
+      "mfr": "_tz3210_e5t9bfdv",
+      "pid": "TS0501B",
+      "drivers": [
+        "wall_dimmer_tuya"
+      ],
+      "vendor": "Tuya",
+      "category": "light",
+      "model": "TS0501B"
+    },
+    {
+      "mfr": "_tz3210_19qb27da",
+      "pid": "TS0501B",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "vendor": "Tuya",
+      "category": "light",
+      "model": "TS0501B"
+    },
+    {
+      "mfr": "_tz3210_4zinq6io",
+      "pid": "TS0501B",
+      "drivers": [
+        "wall_dimmer_tuya"
+      ],
+      "vendor": "Tuya",
+      "category": "light",
+      "model": "TS0501B"
+    },
+    {
+      "mfr": "_tz3210_93gnbdgz",
+      "pid": "TS0501B",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "vendor": "Tuya",
+      "category": "light",
+      "model": "TS0501B"
+    },
+    {
+      "mfr": "_tz3000_nzbm4ad4",
+      "pid": "TS0504A",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "vendor": "Tuya",
+      "category": "light",
+      "model": "TS0504A"
+    },
+    {
+      "mfr": "_tz3210_bfvybixd",
+      "pid": "TS0504B",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "vendor": "Tuya",
+      "category": "light",
+      "model": "TS0504B"
+    },
+    {
+      "mfr": "_tz3210_1elppmba",
+      "pid": "TS0504B",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "vendor": "Tuya",
+      "category": "light",
+      "model": "TS0504B"
+    },
+    {
+      "mfr": "_tze200_hl0ss9oa",
+      "pid": "TS0025",
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "vendor": "Tuya",
+      "category": "sensor",
+      "model": "ZG-205ZL"
+    },
+    {
+      "mfr": "_tz3000_lfa05ajd",
+      "pid": "TS0201",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "vendor": "Tuya",
+      "category": "sensor",
+      "model": "ZXZTH"
+    },
+    {
+      "mfr": "_tz3000_o005nuxx",
+      "pid": "TS0115",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "vendor": "Xenon",
+      "category": "plug",
+      "model": "SM-SO306"
+    },
+    {
+      "mfr": "_tz3210_wp1k8xws",
+      "pid": "TS0503B",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "vendor": "Ysrsai",
+      "category": "light",
+      "model": "YSR-MINI-Z02"
+    }
+  ],
+  "severe": [],
+  "suggestions": [],
+  "notInApp": [],
+  "classMismatchTop": [
+    {
+      "mfr": "_tze200_eaac7dkw",
+      "pid": "TS0601",
+      "cat": "switch",
+      "drivers": [
+        "energy_meter_din"
+      ],
+      "vendor": "Tuya",
+      "title": "DAC2161C"
+    },
+    {
+      "mfr": "_tze200_lsanae15",
+      "pid": "TS0601",
+      "cat": "switch",
+      "drivers": [
+        "energy_meter_din"
+      ],
+      "vendor": "Tuya",
+      "title": "DAC2161C"
+    },
+    {
+      "mfr": "_tze200_byzdayie",
+      "pid": "TS0601",
+      "cat": "switch",
+      "drivers": [
+        "energy_meter_din"
+      ],
+      "vendor": "Hiking",
+      "title": "DDS238-2"
+    },
+    {
+      "mfr": "_tze200_ewxhg6o9",
+      "pid": "TS0601",
+      "cat": "switch",
+      "drivers": [
+        "energy_meter_din"
+      ],
+      "vendor": "Hiking",
+      "title": "DDS238-2"
+    },
+    {
+      "mfr": "_tze200_bkkmqmyo",
+      "pid": "TS0601",
+      "cat": "switch",
+      "drivers": [
+        "energy_meter_din"
+      ],
+      "vendor": "Hiking",
+      "title": "DDS238-2"
+    },
+    {
+      "mfr": "_tze200_hkdl5fmv",
+      "pid": "TS0601",
+      "cat": "switch",
+      "drivers": [
+        "energy_meter_din"
+      ],
+      "vendor": "Hoch",
+      "title": "ZJSBL7"
+    },
+    {
+      "mfr": "_tze200_n9clpsht",
+      "pid": "TS0601",
+      "cat": "remote",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "vendor": "Immax",
+      "title": "07505L"
+    },
+    {
+      "mfr": "_tze200_lgstepha",
+      "pid": "TS0601",
+      "cat": "sensor",
+      "drivers": [
+        "switch_wireless"
+      ],
+      "vendor": "Javis",
+      "title": "JS-ZB-SA1"
+    },
+    {
+      "mfr": "_tze200_kagkgk0i",
+      "pid": "TS0601",
+      "cat": "sensor",
+      "drivers": [
+        "switch_wireless"
+      ],
+      "vendor": "Javis",
+      "title": "JS-ZB-SA1"
+    },
+    {
+      "mfr": "_tze200_i0b1dbqu",
+      "pid": "TS0601",
+      "cat": "sensor",
+      "drivers": [
+        "switch_wireless"
+      ],
+      "vendor": "Javis",
+      "title": "JS-ZB-SA1"
+    },
+    {
+      "mfr": "_tze200_r32ctezx",
+      "pid": "TS0601",
+      "cat": "switch",
+      "drivers": [
+        "fan_controller"
+      ],
+      "vendor": "Lerlink",
+      "title": "T2-Z67"
+    },
+    {
+      "mfr": "_tze200_s8gkrkxk",
+      "pid": "TS0601",
+      "cat": "light",
+      "drivers": [
+        "thermostat_tuya_dp"
+      ],
+      "vendor": "Lidl",
+      "title": "HG06467"
+    },
+    {
+      "mfr": "_tz3000_el5kt5im",
+      "pid": "TS0502A",
+      "cat": "bulb",
+      "drivers": [
+        "tunable_spot_GU10"
+      ],
+      "vendor": "Lidl",
+      "title": "HG06492A"
+    },
+    {
+      "mfr": "_tze200_htnnfasr",
+      "pid": "TS0601",
+      "cat": "switch",
+      "drivers": [
+        "water_valve_garden"
+      ],
+      "vendor": "Lidl",
+      "title": "HG06875"
+    },
+    {
+      "mfr": "_tze200_nh9m9emk",
+      "pid": "TS0601",
+      "cat": "switch",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "vendor": "MakeGood",
+      "title": "MG-ZG02W"
+    },
+    {
+      "mfr": "_tze200_1agwnems",
+      "pid": "TS0601",
+      "cat": "switch",
+      "drivers": [
+        "wall_dimmer_tuya"
+      ],
+      "vendor": "MakeGood",
+      "title": "MG-ZG04W"
+    },
+    {
+      "mfr": "_tze200_ojzhk75b",
+      "pid": "TS0601",
+      "cat": "dimmer",
+      "drivers": [
+        "water_tank_monitor"
+      ],
+      "vendor": "Mercator Ikuü",
+      "title": "SISWD01"
+    },
+    {
+      "mfr": "_tze200_ip2akl4w",
+      "pid": "TS0601",
+      "cat": "switch",
+      "drivers": [
+        "wall_dimmer_tuya"
+      ],
+      "vendor": "Moes",
+      "title": "ZS-EU(US)D1"
+    },
+    {
+      "mfr": "_tze200_vm1gyrso",
+      "pid": "TS0601",
+      "cat": "switch",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "vendor": "Moes",
+      "title": "ZS-EU(US)D3"
+    },
+    {
+      "mfr": "_tze200_tviaymwx",
+      "pid": "TS0601",
+      "cat": "switch",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "vendor": "Moes",
+      "title": "ZS-US1"
+    },
+    {
+      "mfr": "_tze200_nhyj64w2",
+      "pid": "TS0601",
+      "cat": "switch",
+      "drivers": [
+        "curtain_motor"
+      ],
+      "vendor": "Moes",
+      "title": "ZTS-EUR-C"
+    },
+    {
+      "mfr": "_tze200_1ozguk6x",
+      "pid": "TS0601",
+      "cat": "switch",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "vendor": "Moes",
+      "title": "ZTS-US4-W"
+    },
+    {
+      "mfr": "_tze200_t1blo2bj",
+      "pid": "TS0601",
+      "cat": "sensor",
+      "drivers": [
+        "siren"
+      ],
+      "vendor": "Neo",
+      "title": "NAS-AB02B2"
+    },
+    {
+      "mfr": "_tze204_t1blo2bj",
+      "pid": "TS0601",
+      "cat": "sensor",
+      "drivers": [
+        "siren"
+      ],
+      "vendor": "Neo",
+      "title": "NAS-AB02B2"
+    },
+    {
+      "mfr": "_tze200_7hfcudw5",
+      "pid": "TS0601",
+      "cat": "sensor",
+      "drivers": [
+        "switch_wireless"
+      ],
+      "vendor": "Neo",
+      "title": "NAS-PD07"
+    },
+    {
+      "mfr": "_tze200_nslr42tt",
+      "pid": "TS0601",
+      "cat": "sensor",
+      "drivers": [
+        "switch_wireless"
+      ],
+      "vendor": "Owon",
+      "title": "PC321-TY"
+    },
+    {
+      "mfr": "_tze200_fsb6zw01",
+      "pid": "TS0601",
+      "cat": "switch",
+      "drivers": [
+        "energy_meter_din"
+      ],
+      "vendor": "RTX",
+      "title": "ZCB16-2P"
+    },
+    {
+      "mfr": "_tz3000_mwd3c2at",
+      "pid": "TS0202",
+      "cat": "sensor",
+      "drivers": [
+        "smart_irrigation_valve"
+      ],
+      "vendor": "RTX",
+      "title": "ZMS4"
+    },
+    {
+      "mfr": "_tze200_oisqyl4o",
+      "pid": "TS0601",
+      "cat": "switch",
+      "drivers": [
+        "curtain_motor"
+      ],
+      "vendor": "Shawader",
+      "title": "WSS401"
+    },
+    {
+      "mfr": "_tze200_t5p1vj8r",
+      "pid": "TS0601",
+      "cat": "sensor",
+      "drivers": [
+        "switch_wireless"
+      ],
+      "vendor": "Smart9",
+      "title": "S9ZB-SA02"
+    },
+    {
+      "mfr": "_tze200_uebojraa",
+      "pid": "TS0601",
+      "cat": "sensor",
+      "drivers": [
+        "switch_wireless"
+      ],
+      "vendor": "Smart9",
+      "title": "S9ZB-SA02"
+    },
+    {
+      "mfr": "_tze200_jwsjbxjs",
+      "pid": "TS0601",
+      "cat": "switch",
+      "drivers": [
+        "curtain_motor"
+      ],
+      "vendor": "Sparkelec",
+      "title": "SWS5TZ"
+    },
+    {
+      "mfr": "_tz3210_dse8ogfy",
+      "pid": "TS0001",
+      "cat": "remote",
+      "drivers": [
+        "fingerbot"
+      ],
+      "vendor": "Tuya",
+      "title": "ADFB"
+    },
+    {
+      "mfr": "_tz3210_j4pdtz9v",
+      "pid": "TS0001",
+      "cat": "remote",
+      "drivers": [
+        "fingerbot"
+      ],
+      "vendor": "Tuya",
+      "title": "ADFB"
+    },
+    {
+      "mfr": "_tze200_dq1mfjug",
+      "pid": "TS0601",
+      "cat": "sensor",
+      "drivers": [
+        "switch_wireless"
+      ],
+      "vendor": "Tuya",
+      "title": "ES63-D5Z"
+    },
+    {
+      "mfr": "_tze200_9qayzqa8",
+      "pid": "TS0601",
+      "cat": "sensor",
+      "drivers": [
+        "switch_wireless"
+      ],
+      "vendor": "Tuya",
+      "title": "LQ-CG01-RDR"
+    },
+    {
+      "mfr": "_tze200_vzekyi4c",
+      "pid": "TS0601",
+      "cat": "sensor",
+      "drivers": [
+        "switch_wireless"
+      ],
+      "vendor": "Tuya",
+      "title": "Qaynn"
+    },
+    {
+      "mfr": "_tz3000_xfs39dbf",
+      "pid": "TS1101",
+      "cat": "switch",
+      "drivers": [
+        "wall_dimmer_tuya"
+      ],
+      "vendor": "Tuya",
+      "title": "SMD-01Z"
+    },
+    {
+      "mfr": "_tz3210_3mpwqzuu",
+      "pid": "TS1101",
+      "cat": "switch",
+      "drivers": [
+        "wall_dimmer_tuya"
+      ],
+      "vendor": "Tuya",
+      "title": "SMD-02Z"
+    },
+    {
+      "mfr": "_tz3210_wdexaypg",
+      "pid": "TS1101",
+      "cat": "switch",
+      "drivers": [
+        "wall_dimmer_tuya"
+      ],
+      "vendor": "Tuya",
+      "title": "SMD-02Z"
+    }
+  ]
+}
