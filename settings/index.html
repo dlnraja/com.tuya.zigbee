@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Tuya Unified Settings</title>
+  <title>Universal Tuya Settings</title>
   <!--
     P2717 / P2623: Athom hides settings behind an infinite spinner until Homey.ready().
     Load /homey.js only in <head>. Define onHomeyReady at end of <body> (Athom docs).
+    Never put heavy scripts (zigbee-map) before ready() — Contre quoi blank page.
   -->
   <script type="text/javascript" src="/homey.js" data-origin="settings"></script>
-
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -270,16 +270,107 @@
       from { opacity: 0; transform: translateY(4px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+    .mesh-card h3 { margin: 0 0 4px 0; font-size: 15px; color: #1e293b; }
+    .mesh-toolbar { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+    .mesh-toolbar .btn { padding: 7px 10px; font-size: 11px; }
+    .mesh-stats { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 10px; }
+    .mesh-chip { background: #f1f5f9; border-radius: 999px; padding: 4px 10px; font-size: 11px; color: #334155; }
+    .mesh-chip b { color: #0f172a; }
+    .mesh-stage {
+      position: relative;
+      height: 420px;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at center, rgba(0,168,112,0.06), transparent 55%),
+        #0f172a;
+    }
+    #mesh-svg { width: 100%; height: 100%; cursor: grab; touch-action: none; }
+    .mesh-web { fill: none; stroke: rgba(148,163,184,0.18); stroke-width: 1; }
+    .mesh-edge { fill: none; }
+    .mesh-label { font-size: 9px; fill: #e2e8f0; text-anchor: middle; pointer-events: none; }
+    .mesh-badge { font-size: 8px; fill: #f8fafc; text-anchor: middle; pointer-events: none; font-weight: 700; }
+    .mesh-detail {
+      margin-top: 8px;
+      font-size: 11px;
+      color: #475569;
+      min-height: 48px;
+    }
+    .mesh-msg { font-size: 11px; color: #64748b; margin-top: 6px; }
+    .mesh-msg.err { color: #b91c1c; }
+    .mesh-legend { display: flex; flex-wrap: wrap; gap: 10px; font-size: 10px; color: #64748b; margin-top: 8px; }
+    .mesh-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; vertical-align: middle; }
+    .mesh-fs { position: fixed; inset: 8px; z-index: 40; margin: 0; max-height: none; overflow: auto; }
+    .mesh-fs .mesh-stage { height: calc(100vh - 220px); }
+    .mesh-table { width: 100%; border-collapse: collapse; font-size: 11px; margin-top: 8px; }
+    .mesh-table th, .mesh-table td { text-align: left; padding: 6px 4px; border-bottom: 1px solid #f1f5f9; }
+    .mesh-table th { color: #64748b; font-size: 10px; text-transform: uppercase; letter-spacing: 0.4px; }
+    .mesh-off { color: #b91c1c; font-weight: 600; }
   </style>
 </head>
 <body>
-  <h1>Tuya Unified Zigbee + WiFi</h1>
-  <p>100% Local Control | 138 drivers | 5,579 fingerprints</p>
+  <h1>Universal Tuya Zigbee + WiFi</h1>
+  <p>Local Zigbee + WiFi on Homey Pro. Settings open instantly (mesh / LAN scan on demand only — P2623).</p>
+
+  <div class="card" id="diag-card" style="border-color:#86efac;background:#f0fdf4;">
+    <b>Send diagnostic logs (Homey)</b>
+    <p style="font-size:12px;color:#166534;margin:8px 0 0 0;">
+      Settings must load first. Then: <b>Homey → Apps → Universal Tuya → ⋮ (three dots) → Send diagnostic report</b>.
+      Enable <i>Developer debug mode</i> below before sending if you can.
+    </p>
+  </div>
 
   <div class="card">
     <b>Links</b><br>
     <a href="https://github.com/dlnraja/com.tuya.zigbee/issues" target="_blank">Report Issue</a> |
     <a href="https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352" target="_blank">Forum</a>
+  </div>
+
+  <div class="card">
+    <button class="btn btn-c" type="button" id="btn-show-mesh">Show Zigbee mesh map</button>
+    <span style="font-size:11px;color:#64748b;margin-left:8px;">Optional — skipped on open to avoid blank loader.</span>
+  </div>
+
+  <div class="card mesh-card" id="mesh-card" style="display:none;">
+    <h3>Zigbee mesh — spider map</h3>
+    <p style="font-size:11px;color:#64748b;margin-bottom:8px;">
+      Retractable toile d’araignée of <b>this app’s</b> paired devices (Homey in the center).
+      Homey Pro 2023 does not expose the full neighbor table to apps, so links use last-hop LQI
+      plus zone-router grouping (dashed = inferred). Click a parent to fold its children.
+    </p>
+    <div class="mesh-toolbar">
+      <button class="btn" id="btn-mesh-refresh">Refresh</button>
+      <button class="btn btn-c" id="btn-mesh-expand">Expand</button>
+      <button class="btn btn-c" id="btn-mesh-fold">Fold sensors</button>
+      <button class="btn btn-c" id="btn-mesh-retract">Retract</button>
+      <button class="btn btn-c" id="btn-mesh-fs">Full</button>
+    </div>
+    <div class="mesh-stats" id="mesh-stats"></div>
+    <div class="mesh-stage">
+      <svg id="mesh-svg" viewBox="0 0 720 560" xmlns="http://www.w3.org/2000/svg"></svg>
+    </div>
+    <div class="mesh-legend">
+      <span><i class="mesh-dot" style="background:#e11d48"></i>Homey</span>
+      <span><i class="mesh-dot" style="background:#2563eb"></i>Router</span>
+      <span><i class="mesh-dot" style="background:#fde68a"></i>End device</span>
+      <span><i class="mesh-dot" style="background:#22c55e"></i>LQI ≥200</span>
+      <span><i class="mesh-dot" style="background:#f59e0b"></i>LQI 100–149</span>
+      <span><i class="mesh-dot" style="background:#ef4444"></i>LQI &lt;50</span>
+    </div>
+    <div class="mesh-detail" id="mesh-detail"></div>
+    <div class="mesh-msg" id="mesh-msg"></div>
+    <h3 style="margin-top:14px;font-size:14px;">Last seen / rejoins</h3>
+    <p style="font-size:11px;color:#64748b;margin-bottom:6px;">
+      Passive availability (no extra Zigbee pings). Rejoins count power-restore bursts on mains devices. RX counts messages seen in the last hour and 24 hours.
+    </p>
+    <div style="overflow:auto;max-height:240px;">
+      <table class="mesh-table" id="mesh-avail">
+        <thead><tr><th>Device</th><th>Seen</th><th>RX 1h</th><th>RX 24h</th><th>Rejoins</th><th>State</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
   </div>
 
   <!-- Flow Repair & Replacement Tool (Martijn Poppen Automation) -->
@@ -313,8 +404,74 @@
   </div>
 
   <div class="card">
-    <h3>WiFi Cloud Credentials</h3>
-    <p style="font-size:11px;color:#666">Save your Tuya IoT credentials here. They will be pre-filled when pairing WiFi devices.</p>
+    <h3>WiFi / SmartLife — Local-First</h3>
+    <p style="font-size:11px;color:#666">
+      Runtime control uses the LAN (TinyTuya / tuyapi / tuya-local style): UDP discovery + TCP on the device.
+      Cloud credentials below are for <strong>pairing / local_key recovery only</strong> — not day-to-day control.
+      Default policy is local-first with cloud fallback off (same idea as Home Assistant tuya-local / LocalTuya).
+    </p>
+    <label style="font-size:12px;display:flex;align-items:center;gap:8px;margin:8px 0;">
+      <input type="checkbox" id="wifi-cloud-fallback"/>
+      Allow diagnostic cloud status when LAN is unreachable (still no cloud control)
+    </label>
+    <button class="btn btn-c" type="button" onclick="saveWifiLocalFirst()">Save WiFi policy default</button>
+  </div>
+
+  <div class="card" id="wifi-lan-card">
+    <h3>WiFi LAN — advertising devices</h3>
+    <p style="font-size:11px;color:#666">
+      Autonomous UDP listen (6666/6667/6668/7000) + burst probe. Shows devices currently advertising on your LAN.
+      Unpaired rows still need a local_key from SmartLife / IoT during pairing.
+      <b>Tap Scan</b> — not run automatically (avoids blank settings loader).
+    </p>
+    <div class="mesh-toolbar">
+      <button class="btn" type="button" id="btn-wifi-lan-refresh">Scan / Refresh</button>
+    </div>
+    <div class="mesh-stats" id="wifi-lan-stats"></div>
+    <div class="mesh-msg" id="wifi-lan-msg"></div>
+    <table class="mesh-table" id="wifi-lan-table">
+      <thead>
+        <tr><th>Device ID</th><th>IP</th><th>Ver</th><th>Source</th><th>Paired</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <div class="card" id="wifi-fixit-card">
+    <h3>WiFi Fix It</h3>
+    <p style="font-size:11px;color:#666">
+      Check paired WiFi LAN devices for missing local keys, locked protocol versions, and
+      <strong>LAN ports 6668/6667</strong> (Open vs Both closed — Matter/cloud-only / deep-sleep).
+      Export a <strong>redacted</strong> support bundle (keys never in full). Preview only until you Repair.
+      Inspired by <a href="https://homey.app/fr-fr/app/com.tuyalocal/Tuya-Local/test/" target="_blank" rel="noopener">Tuya Local Test</a> (Andi Wirz).
+    </p>
+    <div class="mesh-toolbar">
+      <button class="btn" type="button" id="btn-wifi-fixit-run">Run checks</button>
+      <button class="btn btn-c" type="button" id="btn-wifi-fixit-bundle">Create support bundle</button>
+    </div>
+    <div class="mesh-msg" id="wifi-fixit-msg"></div>
+    <div class="mesh-stats" id="wifi-fixit-stats"></div>
+    <pre id="wifi-fixit-out" style="font-size:10px;max-height:220px;overflow:auto;background:#f7f7f7;padding:8px;border-radius:6px;display:none;"></pre>
+  </div>
+
+  <div class="card">
+    <h3>WiFi SmartLink (QR)</h3>
+    <p style="font-size:11px;color:#666">
+      Pairing uses <b>SmartLink QR</b> (scan in Smart Life / Tuya Smart) — not EZ SmartConfig.
+      Open any WiFi device → Add → tab <b>SmartLink QR</b> (leave Access ID empty for 1-click QR), or use Easy Login with email/phone after saving IoT credentials below.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>WiFi Cloud Lookup</h3>
+    <p style="font-size:11px;color:#666">
+      Save Tuya IoT / SmartLife credentials below (Cloud Lookup). They pre-fill pairing and improve DP names
+      (<code>envhumid</code>, <code>work_state</code>, …) vs guessing from raw values alone.
+      After pair, devices stay on <strong>LAN</strong>. Easy Login accepts email or phone.
+      If lookup used to work and now fails with <em>subscription expired</em>, extend the free IoT Core trial on
+      <a href="https://iot.tuya.com" target="_blank" rel="noopener">iot.tuya.com</a> (Cloud → Cloud Services → IoT Core → Extend Trial — pick 6 months).
+      Mode / fan tokens are <strong>case-sensitive</strong> — copy verbatim from the DP specification.
+    </p>
     
     <div class="row font-group">
       <div class="fg">
@@ -331,12 +488,19 @@
     <div class="fg">
       <label for="reg">Region</label>
       <select id="reg">
-        <option value="eu">Europe</option>
-        <option value="us">Americas</option>
-        <option value="cn">China</option>
+        <option value="eu">Europe (Central)</option>
+        <option value="we">Europe (West)</option>
+        <option value="us">Americas (West)</option>
+        <option value="ue">Americas (East)</option>
         <option value="in">India</option>
+        <option value="sg">Southeast Asia</option>
+        <option value="cn">China</option>
       </select>
     </div>
+    <label style="font-size:11px;display:flex;align-items:center;gap:6px;margin:6px 0 10px;">
+      <input type="checkbox" id="auto-reg" checked/>
+      Auto-try other Tuya regions on Easy Login / SmartLink failure (P2471)
+    </label>
 
     <button class="btn" id="btn-save" disabled onclick="saveCreds()">Save Credentials</button>
     <button class="btn btn-c" id="btn-clear" disabled onclick="clearCreds()">Clear</button>
@@ -397,16 +561,32 @@
       </div>
       <input type="text" id="ire" placeholder="https://….workers.dev" style="min-width:220px" onchange="setText('issue_report_endpoint',this.value)">
     </div>
+    <div class="tr">
+      <div>
+        <b>Unavailable trigger grace (seconds)</b><br>
+        <span style="font-size:11px;color:#666">Wait this long before the "Device became unavailable" Flow fires. A device back online within the grace fires nothing. Default 120, 0 = immediate.</span>
+      </div>
+      <input type="number" id="avg" min="0" max="3600" step="10" placeholder="120" style="width:90px" onchange="setText('availability_trigger_grace_s',this.value)">
+    </div>
   </div>
 
   <div class="card" style="font-size:11px;color:#64748b;border-style:dashed;">
     <b>Tip:</b> If a device doesn't work, remove it, factory reset (hold button 5-10s), then re-pair close to Homey.
   </div>
 
-  <script>
+  <script type="text/javascript">
     var Homey = null;
     var tuyaSecretConfigured = false;
     var smartThingsSecretConfigured = false;
+    var __settingsBooted = false;
+    var __settingsReadyDone = false;
+    var __zigbeeMapLoading = false;
+
+    function el(id) { return document.getElementById(id); }
+    function enableBtn(id) {
+      var n = el(id);
+      if (n) n.disabled = false;
+    }
 
     function show(id, t) {
       var e = document.getElementById(id);
@@ -448,13 +628,14 @@
 
     function updateSTSecretStatus(has) {
       smartThingsSecretConfigured = !!has;
-      var el = document.getElementById('st-sec-status');
+      var node = el('st-sec-status');
+      if (!node) return;
       if (has) {
-        el.textContent = 'Secret is configured';
-        el.className = 'ss on';
+        node.textContent = 'Secret is configured';
+        node.className = 'ss on';
       } else {
-        el.textContent = 'No secret saved';
-        el.className = 'ss';
+        node.textContent = 'No secret saved';
+        node.className = 'ss';
       }
     }
 
@@ -463,6 +644,7 @@
       var a = document.getElementById('aid').value.trim(),
           s = document.getElementById('as').value.trim(),
           r = document.getElementById('reg').value;
+      var autoReg = document.getElementById('auto-reg') ? document.getElementById('auto-reg').checked : true;
       if (!a || (!s && !tuyaSecretConfigured)) { show('err-msg', 'Access ID and Secret required'); return; }
 
       Homey.set('tuya_cloud_access_id', a, function(e) {
@@ -471,8 +653,11 @@
           if (e2) { show('err-msg', 'Save failed: ' + e2.message); return; }
           Homey.set('tuya_cloud_region', r, function(e3) {
             if (e3) { show('err-msg', 'Save failed: ' + e3.message); return; }
-            show('ok-msg', 'Credentials saved!');
-            updateSecretStatus(s ? true : tuyaSecretConfigured);
+            Homey.set('tuya_cloud_auto_region', autoReg ? '1' : '0', function(e4) {
+              if (e4) { show('err-msg', 'Save failed: ' + e4.message); return; }
+              show('ok-msg', 'Credentials saved!');
+              updateSecretStatus(s ? true : tuyaSecretConfigured);
+            });
           });
         }
         if (s) Homey.set('tuya_cloud_access_secret', s, saveRegion);
@@ -485,12 +670,107 @@
       Homey.unset('tuya_cloud_access_id');
       Homey.unset('tuya_cloud_access_secret');
       Homey.unset('tuya_cloud_region');
+      Homey.unset('tuya_cloud_auto_region');
       Homey.unset('tuya_sharing_session'); // Smart Life QR account link (tokens)
       document.getElementById('aid').value = '';
       document.getElementById('as').value = '';
       document.getElementById('reg').value = 'eu';
+      if (document.getElementById('auto-reg')) document.getElementById('auto-reg').checked = true;
       updateSecretStatus(false);
       show('ok-msg', 'Credentials cleared');
+    }
+
+    function saveWifiLocalFirst() {
+      if (!Homey) { show('err-msg', 'App not ready yet'); return; }
+      var allow = !!document.getElementById('wifi-cloud-fallback').checked;
+      Homey.set('wifi_default_cloud_fallback', allow, function(e) {
+        if (e) { show('err-msg', 'Save failed: ' + e.message); return; }
+        show('ok-msg', allow
+          ? 'Cloud diagnostic fallback allowed (control stays LAN)'
+          : 'Local-first only (recommended)');
+      });
+    }
+
+    function refreshWifiLanMap() {
+      if (!Homey || typeof Homey.api !== 'function') {
+        var m0 = document.getElementById('wifi-lan-msg');
+        if (m0) { m0.textContent = 'Homey API not ready'; m0.className = 'mesh-msg err'; }
+        return;
+      }
+      var msg = document.getElementById('wifi-lan-msg');
+      var stats = document.getElementById('wifi-lan-stats');
+      var tbody = document.querySelector('#wifi-lan-table tbody');
+      if (msg) { msg.textContent = 'Scanning LAN advertising…'; msg.className = 'mesh-msg'; }
+      Homey.api('GET', '/wifi-lan-map', {}, function (err, data) {
+        if (err) {
+          if (msg) { msg.textContent = (err.message || String(err)); msg.className = 'mesh-msg err'; }
+          return;
+        }
+        var s = (data && data.stats) || {};
+        if (stats) {
+          stats.innerHTML =
+            '<span class="mesh-chip"><b>' + (s.total || 0) + '</b> advertising</span>' +
+            '<span class="mesh-chip"><b>' + (s.paired || 0) + '</b> paired</span>' +
+            '<span class="mesh-chip"><b>' + (s.unpaired || 0) + '</b> unpaired</span>' +
+            '<span class="mesh-chip">UDP <b>' + (s.udp || 0) + '</b></span>' +
+            '<span class="mesh-chip">mDNS <b>' + (s.mdns || 0) + '</b></span>';
+        }
+        if (tbody) {
+          var rows = (data && data.devices) || [];
+          if (!rows.length) {
+            tbody.innerHTML = '<tr><td colspan="5">No Tuya WiFi advertising right now — try again near devices or after power-cycle.</td></tr>';
+          } else {
+            tbody.innerHTML = rows.map(function (d) {
+              var id = (d.deviceId || '').slice(0, 22);
+              return '<tr><td title="' + (d.deviceId || '') + '">' + id + '</td><td>' + (d.ip || '—') +
+                '</td><td>' + (d.version || '—') + '</td><td>' + (d.source || 'udp') +
+                '</td><td>' + (d.paired ? 'yes' : 'no') + '</td></tr>';
+            }).join('');
+          }
+        }
+        if (msg) {
+          msg.textContent = (data && data.note) ? data.note : 'OK';
+          msg.className = 'mesh-msg';
+        }
+      });
+    }
+
+    var _lastWifiFixIt = null;
+    function runWifiFixIt(showBundle) {
+      if (!Homey || typeof Homey.api !== 'function') {
+        var m0 = document.getElementById('wifi-fixit-msg');
+        if (m0) { m0.textContent = 'Homey API not ready'; m0.className = 'mesh-msg err'; }
+        return;
+      }
+      var msg = document.getElementById('wifi-fixit-msg');
+      var stats = document.getElementById('wifi-fixit-stats');
+      var out = document.getElementById('wifi-fixit-out');
+      if (msg) { msg.textContent = 'Running Fix It checks…'; msg.className = 'mesh-msg'; }
+      Homey.api('GET', '/wifi-fix-it', {}, function (err, data) {
+        if (err) {
+          if (msg) { msg.textContent = (err.message || String(err)); msg.className = 'mesh-msg err'; }
+          return;
+        }
+        _lastWifiFixIt = data;
+        var findings = (data && data.findings) || [];
+        var devices = (data && data.devices) || [];
+        if (stats) {
+          stats.innerHTML =
+            '<span class="mesh-chip"><b>' + devices.length + '</b> WiFi devices</span>' +
+            '<span class="mesh-chip"><b>' + findings.length + '</b> findings</span>';
+        }
+        if (msg) {
+          msg.textContent = findings.length
+            ? ('Found ' + findings.length + ' item(s) — preview only.')
+            : 'No issues detected on paired Tuya WiFi drivers.';
+          msg.className = 'mesh-msg';
+        }
+        if (out) {
+          var payload = showBundle ? (data && data.bundle) : { findings: findings, devices: devices };
+          out.style.display = 'block';
+          out.textContent = JSON.stringify(payload, null, 2);
+        }
+      });
     }
 
     function setToggle(key, val) {
@@ -510,13 +790,14 @@
 
     function updateSecretStatus(has) {
       tuyaSecretConfigured = !!has;
-      var el = document.getElementById('sec-status');
+      var s = el('sec-status');
+      if (!s) return;
       if (has) {
-        el.textContent = 'Secret is configured';
-        el.className = 'ss on';
+        s.textContent = 'Secret is configured';
+        s.className = 'ss on';
       } else {
-        el.textContent = 'No secret saved';
-        el.className = 'ss';
+        s.textContent = 'No secret saved';
+        s.className = 'ss';
       }
     }
 
@@ -525,23 +806,37 @@
 
     function populateDevices() {
       if (!Homey) return;
-      
+
+      var oldSel = el('device-old');
+      var newSel = el('device-new');
+      if (oldSel) oldSel.innerHTML = '<option value="">Loading devices…</option>';
+      if (newSel) newSel.innerHTML = '<option value="">Loading devices…</option>';
+
+      // P117/P2623: timeout so settings never spin forever
+      var settled = false;
+      var timer = setTimeout(function() {
+        if (settled) return;
+        settled = true;
+        if (oldSel) oldSel.innerHTML = '<option value="">Timeout loading devices</option>';
+        if (newSel) newSel.innerHTML = '<option value="">Timeout loading devices</option>';
+      }, 8000);
+
       Homey.api('GET', '/devices', {}, function(err, devices) {
-        var oldSel = document.getElementById('device-old');
-        var newSel = document.getElementById('device-new');
-        
+        if (settled) return;
+        settled = true;
+        clearTimeout(timer);
         if (err) {
           console.error('Failed to get devices:', err);
-          oldSel.innerHTML = '<option value="">Error loading devices</option>';
-          newSel.innerHTML = '<option value="">Error loading devices</option>';
+          if (oldSel) oldSel.innerHTML = '<option value="">Error loading devices</option>';
+          if (newSel) newSel.innerHTML = '<option value="">Error loading devices</option>';
           return;
         }
 
         activeDevicesList = devices || [];
         
         if (activeDevicesList.length === 0) {
-          oldSel.innerHTML = '<option value="">No devices found</option>';
-          newSel.innerHTML = '<option value="">No devices found</option>';
+          if (oldSel) oldSel.innerHTML = '<option value="">No devices found</option>';
+          if (newSel) newSel.innerHTML = '<option value="">No devices found</option>';
           return;
         }
 
@@ -554,17 +849,18 @@
           newHtml += '<option value="' + d.id + '">' + label + '</option>';
         });
 
-        oldSel.innerHTML = oldHtml;
-        newSel.innerHTML = newHtml;
+        if (oldSel) oldSel.innerHTML = oldHtml;
+        if (newSel) newSel.innerHTML = newHtml;
         
-        document.getElementById('btn-repair').disabled = false;
+        enableBtn('btn-repair');
       });
     }
 
     function executeFlowRepair() {
-      var oldId = document.getElementById('device-old').value;
-      var newId = document.getElementById('device-new').value;
-      var resultBox = document.getElementById('repair-result');
+      var oldId = el('device-old') && el('device-old').value;
+      var newId = el('device-new') && el('device-new').value;
+      var resultBox = el('repair-result');
+      if (!resultBox) return;
       
       if (!oldId || !newId) {
         resultBox.textContent = 'Please select both an old device and a new replacement device.';
@@ -580,17 +876,18 @@
         return;
       }
 
-      // UI Loading States
-      document.getElementById('btn-repair').disabled = true;
-      document.getElementById('repair-spinner').style.display = 'inline-block';
-      document.getElementById('btn-text').textContent = 'Repairing flows...';
+      var btnRepair = el('btn-repair');
+      var spinner = el('repair-spinner');
+      var btnText = el('btn-text');
+      if (btnRepair) btnRepair.disabled = true;
+      if (spinner) spinner.style.display = 'inline-block';
+      if (btnText) btnText.textContent = 'Repairing flows...';
       resultBox.style.display = 'none';
 
       Homey.api('POST', '/replace', { oldId: oldId, newId: newId }, function(err, res) {
-        // Restore UI States
-        document.getElementById('btn-repair').disabled = false;
-        document.getElementById('repair-spinner').style.display = 'none';
-        document.getElementById('btn-text').textContent = 'Replace Device in Flows';
+        if (btnRepair) btnRepair.disabled = false;
+        if (spinner) spinner.style.display = 'none';
+        if (btnText) btnText.textContent = 'Replace Device in Flows';
 
         if (err) {
           resultBox.textContent = 'Error: ' + (err.message || err);
@@ -605,8 +902,6 @@
                                 '• Advanced Flows updated: <strong>' + res.advancedFlowsUpdated + '</strong>';
           resultBox.className = 'repair-result-box success';
           resultBox.style.display = 'block';
-          
-          // Refresh selection list
           populateDevices();
         } else {
           resultBox.textContent = 'Unexpected response from server.';
@@ -616,35 +911,95 @@
       });
     }
 
-    var __settingsBooted = false;
+    /**
+     * P2717: lazy-load zigbee-map.js only when user opens mesh (never block ready).
+     */
+    function loadZigbeeMapScript(done) {
+      if (window.TuyaZigbeeMap) { done(); return; }
+      if (__zigbeeMapLoading) return;
+      __zigbeeMapLoading = true;
+      var s = document.createElement('script');
+      s.src = 'zigbee-map.js';
+      s.async = true;
+      s.onload = function () { __zigbeeMapLoading = false; done(); };
+      s.onerror = function () {
+        __zigbeeMapLoading = false;
+        console.error('zigbee-map.js failed to load');
+        done(new Error('map load failed'));
+      };
+      document.head.appendChild(s);
+    }
 
     /**
      * Heavy UI AFTER Homey.ready() — never block the Athom spinner dismiss.
-     * Contre quoi: blank infinite loader on settings open (P2717).
+     * Contre quoi: blank infinite loader (mesh/WiFi/API on open).
      */
     function bootSettingsUi(homey) {
       if (__settingsBooted) return;
       __settingsBooted = true;
       Homey = homey;
       try { window.__homeySettings = homey; } catch (x0) {}
-      if (!Homey) return;
+
+      enableBtn('btn-save');
+      enableBtn('btn-clear');
+      enableBtn('btn-save-st');
+      enableBtn('btn-clear-st');
+
       try {
-        var bs = document.getElementById('btn-save'); if (bs) bs.disabled = false;
-        var bc = document.getElementById('btn-clear'); if (bc) bc.disabled = false;
-        var bss = document.getElementById('btn-save-st'); if (bss) bss.disabled = false;
-        var bcs = document.getElementById('btn-clear-st'); if (bcs) bcs.disabled = false;
-      } catch (eBtn) {}
-      try {
-        Homey.get('tuya_cloud_access_id', function(e, v) { if (v) document.getElementById('aid').value = v; });
+        Homey.get('tuya_cloud_access_id', function(e, v) { if (v && el('aid')) el('aid').value = v; });
         Homey.get('tuya_cloud_access_secret', function(e, v) { updateSecretStatus(!!v); });
-        Homey.get('tuya_cloud_region', function(e, v) { if (v) document.getElementById('reg').value = v; });
-        Homey.get('smartthings_client_id', function(e, v) { if (v) document.getElementById('st-cid').value = v; });
+        Homey.get('tuya_cloud_region', function(e, v) { if (v && el('reg')) el('reg').value = v; });
+        Homey.get('tuya_cloud_auto_region', function(e, v) {
+          var auto = el('auto-reg');
+          if (auto) auto.checked = (v === undefined || v === null || v === '' || v === true || v === '1');
+        });
+        Homey.get('wifi_default_cloud_fallback', function(e, v) {
+          var w = el('wifi-cloud-fallback');
+          if (w) w.checked = !!v;
+        });
+        Homey.get('smartthings_client_id', function(e, v) { if (v && el('st-cid')) el('st-cid').value = v; });
         Homey.get('smartthings_client_secret', function(e, v) { updateSTSecretStatus(!!v); });
-        Homey.get('developer_debug_mode', function(e, v) { var d = document.getElementById('dbg'); if (d) d.checked = !!v; });
-        Homey.get('issue_report_endpoint', function(e, v) { if (v) document.getElementById('ire').value = v; });
-        Homey.get('experimental_smart_adapt', function(e, v) { var sa = document.getElementById('sa'); if (sa) sa.checked = !!v; });
-      } catch (eGet) { console.error(eGet); }
-      setTimeout(function () { try { populateDevices(); } catch (x) {} }, 200);
+        Homey.get('developer_debug_mode', function(e, v) { if (el('dbg')) el('dbg').checked = !!v; });
+        Homey.get('issue_report_endpoint', function(e, v) { if (v && el('ire')) el('ire').value = v; });
+        Homey.get('availability_trigger_grace_s', function(e, v) { if (v !== undefined && v !== null && v !== '' && el('avg')) el('avg').value = v; });
+        Homey.get('experimental_smart_adapt', function(e, v) { if (el('sa')) el('sa').checked = !!v; });
+      } catch (eGet) { console.error('settings get', eGet); }
+
+      var btnWifiLan = el('btn-wifi-lan-refresh');
+      if (btnWifiLan) {
+        btnWifiLan.addEventListener('click', function () { refreshWifiLanMap(); });
+      }
+
+      var btnFixIt = el('btn-wifi-fixit-run');
+      if (btnFixIt) {
+        btnFixIt.addEventListener('click', function () { runWifiFixIt(false); });
+      }
+      var btnBundle = el('btn-wifi-fixit-bundle');
+      if (btnBundle) {
+        btnBundle.addEventListener('click', function () { runWifiFixIt(true); });
+      }
+
+      var btnShowMesh = el('btn-show-mesh');
+      if (btnShowMesh) {
+        btnShowMesh.addEventListener('click', function () {
+          var card = el('mesh-card');
+          if (card) card.style.display = '';
+          btnShowMesh.style.display = 'none';
+          loadZigbeeMapScript(function (err) {
+            if (err) return;
+            try {
+              if (window.TuyaZigbeeMap && typeof window.TuyaZigbeeMap.init === 'function') {
+                window.TuyaZigbeeMap.init(Homey);
+              }
+            } catch (x) { console.error('mesh init', x); }
+          });
+        });
+      }
+
+      // Soft-load device list — never block paint; API may be slow on sleepy Homey
+      setTimeout(function () {
+        try { populateDevices(); } catch (x) { console.error('populateDevices', x); }
+      }, 200);
     }
 
     /**
@@ -652,13 +1007,16 @@
      * Docs: https://apps.developer.homey.app/advanced/custom-views/app-settings
      */
     function onHomeyReady(homey) {
+      // 1) Dismiss infinite spinner IMMEDIATELY (sync, no network)
       try {
         if (homey && typeof homey.ready === 'function') {
           homey.ready();
+          __settingsReadyDone = true;
         }
       } catch (eReady) {
         console.error('Homey.ready failed', eReady);
       }
+      // 2) Then hydrate UI on next tick
       try {
         setTimeout(function () {
           try { bootSettingsUi(homey); } catch (eBoot) { console.error('settings boot', eBoot); }
@@ -666,6 +1024,21 @@
       } catch (eSched) {}
     }
     try { window.onHomeyReady = onHomeyReady; } catch (eWin) {}
+    // WHY(P2814 / #571 Configure spinner): if Homey never invokes onHomeyReady
+    // (app bridge lag / Pro mini), dismiss spinner after 2.5s when Homey exists.
+    try {
+      setTimeout(function () {
+        if (__settingsReadyDone) return;
+        try {
+          var h = window.Homey;
+          if (h && typeof h.ready === 'function') {
+            h.ready();
+            __settingsReadyDone = true;
+            try { bootSettingsUi(h); } catch (eBoot2) { console.error('settings boot fallback', eBoot2); }
+          }
+        } catch (eFb) { console.error('settings ready fallback', eFb); }
+      }, 2500);
+    } catch (eSchedFb) {}
   </script>
 </body>
 </html>

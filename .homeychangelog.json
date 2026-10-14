@@ -1,4 +1,8 @@
 {
+  "5.12.415": {
+    "en": "Improved soil sensor pairing reliability.",
+    "fr": "Fiabilite appairage capteurs sol."
+  },
   "5.12.359": {
     "en": "LCD temperature/humidity sensors answer time sync requests; better identity detection for sleepy sensors.",
     "fr": "Capteurs LCD temperature/humidite: reponse aux demandes de synchronisation horaire; meilleure detection d identite des capteurs en veille."
