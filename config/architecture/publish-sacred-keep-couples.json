@@ -1639,6 +1639,72 @@
       "pid": "AY-302Z",
       "driverId": "soil_sensor",
       "note": "P2817 AOYAN AY-302Z sibling soil (forbid water_leak cartesian)"
+    },
+    {
+      "mfr": "_TZE204_dtzziy1e",
+      "pid": "TS0601",
+      "driverId": "presence_sensor_radar",
+      "note": "P2821 forum#2249 MTG275 Z2M"
+    },
+    {
+      "mfr": "_TZE200_dtzziy1e",
+      "pid": "TS0601",
+      "driverId": "presence_sensor_radar",
+      "note": "P2821 dtzziy1e TZE200 sibling"
+    },
+    {
+      "mfr": "_TZE200_npj9bug3",
+      "pid": "TS0601",
+      "driverId": "soil_sensor",
+      "note": "P2821 T146667 Michael_Edholm soil"
+    },
+    {
+      "mfr": "_TZE284_npj9bug3",
+      "pid": "TS0601",
+      "driverId": "soil_sensor",
+      "note": "P2821 npj9bug3 TZE284 sibling"
+    },
+    {
+      "mfr": "_TZE284_nqqylykc",
+      "pid": "TS0601",
+      "driverId": "wall_dimmer_tuya",
+      "note": "P2821 T26439#5516 Axel nqqylykc dimmer"
+    },
+    {
+      "mfr": "_TZE204_nqqylykc",
+      "pid": "TS0601",
+      "driverId": "wall_dimmer_tuya",
+      "note": "P2821 nqqylykc TZE204 sibling"
+    },
+    {
+      "mfr": "_TZE200_nqqylykc",
+      "pid": "TS0601",
+      "driverId": "wall_dimmer_tuya",
+      "note": "P2821 nqqylykc TZE200 sibling"
+    },
+    {
+      "mfr": "_TZ3000_qja6nq5z",
+      "pid": "TS004F",
+      "driverId": "smart_knob_rotary",
+      "note": "P2821 T26439#5532 Mates1134 ERS rotary"
+    },
+    {
+      "mfr": "_TZ3210_tgvtvdoc",
+      "pid": "TS0207",
+      "driverId": "rain_sensor",
+      "note": "P2821 T120477 FKey rain"
+    },
+    {
+      "mfr": "_TZE284_ne4pikwm",
+      "pid": "TS0601",
+      "driverId": "radiator_valve",
+      "note": "P2821 Michaelp#2244 sibling TRV"
+    },
+    {
+      "mfr": "_TZE200_ne4pikwm",
+      "pid": "TS0601",
+      "driverId": "radiator_valve",
+      "note": "P2821 ne4pikwm TZE200"
     }
   ]
 }
