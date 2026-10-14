@@ -1,0 +1,12 @@
+{
+  "n": 2261,
+  "user": "marosk",
+  "mfrs": [
+    "_TZE200_fl8cuafl",
+    "TS0601"
+  ],
+  "imgs": 0,
+  "excerpt": "Hi, Could you please add support for this Tuya Zigbee Radiator Thermostat (TRV)? It is sold by a local (Slovak) brand called ANTIK (model ATK-TRV02), but it pairs incorrectly as a Generic “socket” with a virtual driver on my Homey Pro 2026. Here is the data from Developer Tools: Property: Value ID: c6d8ee46-b7b4-42cf-93e0-0e9294d59ce7 Name: Zigbee Device Class: socket (paired incorrectly, it is a TRV thermostat) Driver: homey:virtualdriverzigbee:driver Ready: Yes Available: Yes Warning: No Settings: zb_product_id: “TS0601” zb_manufacturer_name: “_TZE200_fl8cuafl” zb_device_type: “enddevice” Th",
+  "cooked": "<p>Hi,<br>\nCould you please add support for this Tuya Zigbee Radiator Thermostat (TRV)?<br>\nIt is sold by a local (Slovak) brand called ANTIK (model ATK-TRV02), but it pairs incorrectly as a Generic “socket” with a virtual driver on my Homey Pro 2026.</p>\n<p>Here is the data from Developer Tools:</p>\n<p>Property: Value<br>\nID: c6d8ee46-b7b4-42cf-93e0-0e9294d59ce7<br>\nName: Zigbee Device<br>\nClass: socket (paired incorrectly, it is a TRV thermostat)<br>\nDriver: homey:virtualdriverzigbee:driver<br>\nReady: Yes<br>\nAvailable: Yes<br>\nWarning: No</p>\n<p>Settings:<br>\nzb_product_id: “TS0601”<br>\nzb_manufacturer_name: “_TZE200_fl8cuafl”<br>\nzb_device_type: “enddevice”</p>\n<p>Thank you very much for fixing the fingerprint mapping to a Thermostat!</p>",
+  "created_at": "2026-10-12T17:23:04.272Z"
+}
