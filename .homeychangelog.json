@@ -1,4 +1,8 @@
 {
+  "5.12.417": {
+    "en": "Fixed multi-button release Flow cards and DP received trigger.",
+    "fr": "Correction des cartes Flow release multi-boutons et trigger DP."
+  },
   "5.12.416": {
     "en": "Device compatibility and reliability improvements."
   },
@@ -2274,9 +2278,6 @@
     "en": "Improved radiator valve and mmWave radar pairing for recent forum devices."
   },
   "5.12.414": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.417": {
     "en": "Device compatibility and reliability improvements."
   }
 }
