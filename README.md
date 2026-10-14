@@ -4,11 +4,11 @@
 
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-449-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-4,759%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,764%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-green)](LICENSE)
 
-Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **449 drivers**, **4,759 unique fingerprints**. No cloud required.
+Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **449 drivers**, **4,764 unique fingerprints**. No cloud required.
 
 **What it does:**
 - Talks to devices on your Homey Zigbee mesh (Tuya DP `0xEF00` and standard ZCL)
@@ -33,19 +33,19 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1454 |
+| **App Version** | v9.0.1455 |
 | **Drivers** | 449 (396 Zigbee + 53 WiFi) |
-| **Unique Fingerprints** | 4,759 |
-| **Pairing Variants** | 19,206 (4 case combos per fingerprint) |
+| **Unique Fingerprints** | 4,764 |
+| **Pairing Variants** | 19,216 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 931 |
 | **Flow Cards** | 6,104 |
 | **Unique Capabilities** | 176 |
 | **Native OTA Drivers** | 10 |
-| **Test Suites** | 634 files |
+| **Test Suites** | 636 files |
 | **SVG Icons** | 752 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
-| **Last Updated** | 2026-10-13 |
+| **Last Updated** | 2026-10-14 |
 
 ### Top 20 Drivers by Fingerprint Count
 
@@ -60,7 +60,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 7 | `wall_dimmer_tuya` | 536 |
 | 8 | `button_wireless_2` | 486 |
 | 9 | `switch_2gang` | 381 |
-| 10 | `device_radiator_valve` | 368 |
+| 10 | `device_radiator_valve` | 374 |
 | 11 | `switch_4gang` | 330 |
 | 12 | `diy_custom_zigbee` | 306 |
 | 13 | `soil_sensor` | 287 |
@@ -103,7 +103,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.1454** | v9.0.1453: |
+| **v9.0.1455** | Improved radiator valve and mmWave radar pairing for recent forum devices. |
+| **v9.0.1454** | v9.0.1454: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1453** | v9.0.1453: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1452** | v9.0.1452: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1451** | v9.0.1451: automated publish, manifest sync, and Homey test promotion. |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1446** | v9.0.1446: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1445** | v9.0.1445: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1444** | v9.0.1444: automated publish, manifest sync, and Homey test promotion. |
-| **v9.0.1443** | v9.0.1443: automated publish, manifest sync, and Homey test promotion. |
 
 <!-- CHANGELOG_END -->
 
