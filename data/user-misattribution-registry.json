@@ -9111,6 +9111,88 @@
         "water_leak_sensor_tuya"
       ],
       "notes": "WHY(P2815/#570+#2258/P2817): AOYAN+AY-303Z/AY-302Z soil only. Strip AOYAN from water_leak — never Homey-cartesian AOYAN×TS0601 as water."
+    },
+    {
+      "id": "p2821-forbid-cartesian-zgyzgdua-ts0043",
+      "manufacturerName": [
+        "_TZ3000_zgyzgdua",
+        "_tz3000_zgyzgdua",
+        "_TZ3000_ZGYZGDUA"
+      ],
+      "productId": [
+        "TS0043",
+        "ts0043"
+      ],
+      "canonicalDriver": null,
+      "forbidMode": "couple",
+      "forbidden": [
+        "scene_switch_3",
+        "button_wireless_3",
+        "wall_remote_3_gang",
+        "wall_dimmer_tuya"
+      ],
+      "notes": "P2821 T150690 Relax_swe listed TS0043 with zgyzgdua — Z2M only TS0044_2. Do not invent 3-gang couple."
+    },
+    {
+      "id": "p2821-forbid-cartesian-wkai4ga5-ts0043",
+      "manufacturerName": [
+        "_TZ3000_wkai4ga5",
+        "_tz3000_wkai4ga5",
+        "_TZ3000_WKAI4GA5"
+      ],
+      "productId": [
+        "TS0043",
+        "ts0043"
+      ],
+      "canonicalDriver": null,
+      "forbidMode": "couple",
+      "forbidden": [
+        "scene_switch_3",
+        "button_wireless_3",
+        "wall_remote_3_gang",
+        "wall_dimmer_tuya"
+      ],
+      "notes": "P2821 T150690 — wkai4ga5 verified TS0044 scene + TS0042 button_2 only. No TS0043 lock."
+    },
+    {
+      "id": "p2821-forbid-cartesian-4upl1fcj-ts0505b",
+      "manufacturerName": [
+        "_TZ3000_4upl1fcj",
+        "_tz3000_4upl1fcj",
+        "_TZ3000_4UPL1FCJ"
+      ],
+      "productId": [
+        "TS0505B",
+        "ts0505b"
+      ],
+      "canonicalDriver": null,
+      "forbidMode": "couple",
+      "forbidden": [
+        "bulb_rgb",
+        "light_bulb_rgb",
+        "dimmable_led_strip"
+      ],
+      "notes": "P2821 T89271#652 Bo_Kjaergaard cartesian — Z2M Marmitek Push_LE is TS0041 button only."
+    },
+    {
+      "id": "p2821-forbid-cartesian-qd7hej8u-ts0041",
+      "manufacturerName": [
+        "_TZ3000_qd7hej8u",
+        "_tz3000_qd7hej8u",
+        "_TZ3000_QD7HEJ8U"
+      ],
+      "productId": [
+        "TS0041",
+        "ts0041"
+      ],
+      "canonicalDriver": null,
+      "forbidMode": "couple",
+      "forbidden": [
+        "button_wireless_1",
+        "button_wireless_2",
+        "scene_switch_4"
+      ],
+      "notes": "P2821 T89271#652 cartesian — Z2M Lidl RGB bulb TS0505B only, never remote."
     }
   ],
   "entries": {
