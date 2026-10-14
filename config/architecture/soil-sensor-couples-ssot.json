@@ -1,0 +1,96 @@
+{
+  "_meta": {
+    "id": "P2815-soil-sensor-couples-ssot",
+    "updated": "2026-10-14",
+    "why": "Homey compose arrays are cartesian (mfr[]×pid[]) but identity is ALWAYS (mfr,pid). Soil must lock verified couples only — never invent HOBEIAN+TS0601 or myd45weu+ZG-303Z from list cross-product.",
+    "doctrine": "docs/architecture/SACRED_COUPLE_SSOT.md",
+    "driverId": "soil_sensor",
+    "classify": "BOTH",
+    "gates": ["check:p2815", "check:p2811"]
+  },
+  "homeyLimit": "compose.zigbee.manufacturerName × productId is Athom cartesian; SSOT + mfs modelIds + registry forbidMode:couple are the couple truth.",
+  "verifiedCouples": [
+    {
+      "mfr": "_TZE284_myd45weu",
+      "pid": "TS0601",
+      "source": "GitHub #571 interview QT-07S + Z2M TS0601_soil",
+      "note": "QT-07S EF00 soil"
+    },
+    {
+      "mfr": "_TZE200_myd45weu",
+      "pid": "TS0601",
+      "source": "OEM sibling pin #571",
+      "note": "TZE200 sibling — same soil class"
+    },
+    {
+      "mfr": "_TZE204_myd45weu",
+      "pid": "TS0601",
+      "source": "OEM sibling pin #571",
+      "note": "TZE204 sibling — same soil class"
+    },
+    {
+      "mfr": "AOYAN",
+      "pid": "AY-303Z",
+      "source": "GitHub #570 interview + Z2M white-label CS-201Z/ZG-303Z family",
+      "note": "Never invent AOYAN+TS0601"
+    },
+    {
+      "mfr": "AOYAN",
+      "pid": "AY-302Z",
+      "source": "Z2M sibling SKU",
+      "note": "Complementary AY-302Z variant"
+    },
+    {
+      "mfr": "HOBEIAN",
+      "pid": "ZG-303Z",
+      "source": "Z2M / forum #2101 / P2250",
+      "note": "Brand soil only — HOBEIAN+ZG-227Z stays climate"
+    },
+    {
+      "mfr": "COOLO",
+      "pid": "CS-201Z",
+      "source": "Z2M white-label ZG-303Z family",
+      "note": "COOLO CS-201Z soil"
+    },
+    {
+      "mfr": "_TZE284_nt4pquef",
+      "pid": "TS0601",
+      "source": "Z2M SGS02Z retail / ZHA#4707",
+      "note": "DP2 light enum; pid stays TS0601"
+    },
+    {
+      "mfr": "_TZE200_wqashyqo",
+      "pid": "TS0601",
+      "source": "Z2M soil / device.js zg303Mfrs",
+      "note": "ZG-303Z DP map family"
+    },
+    {
+      "mfr": "_TZE200_wqashyqo",
+      "pid": "ZG-303Z",
+      "source": "Z2M dual pid forms",
+      "note": "Some firmwares report ZG-303Z as modelId"
+    }
+  ],
+  "forbiddenPhantoms": [
+    {
+      "mfr": "HOBEIAN",
+      "pid": "TS0601",
+      "why": "Cartesian bleed — HOBEIAN soil is ZG-303Z; climate is ZG-227Z"
+    },
+    {
+      "mfr": "AOYAN",
+      "pid": "TS0601",
+      "why": "Cartesian bleed — AOYAN soil is AY-303Z"
+    },
+    {
+      "mfr": "_TZE284_myd45weu",
+      "pid": "ZG-303Z",
+      "why": "Cartesian bleed — QT-07S pid is TS0601"
+    },
+    {
+      "mfr": "_TZE204_qaxkdgyt",
+      "pid": "TS0601",
+      "why": "Smoke/gas JKD-816COM — never soil"
+    }
+  ]
+}
