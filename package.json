@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee.bastien",
-  "version": "1.0.131",
+  "version": "1.0.132",
   "description": "Private Zigbee house app for Bastien — local Homey Pro only. Learnings promote upstream to Universal Tuya / Stable (never the reverse wholesale).",
   "main": "app.js",
   "scripts": {
@@ -585,7 +585,8 @@
     "check:p2815": "node tools/ci/p2815-soil-couple-ssot-gate.js && node --test test/critical/p2815-soil-couple-ssot.test.js",
     "check:p2816": "node --test test/critical/p2816-button-release-flow-heuristics.test.js",
     "check:p2817": "node --test test/critical/p2817-forum-t140352-images-treat.test.js",
-    "check:p2818": "node --test test/critical/p2818-gnpflcoq-zha5286-dp-map.test.js"
+    "check:p2818": "node --test test/critical/p2818-gnpflcoq-zha5286-dp-map.test.js",
+    "check:p2821": "node --test test/critical/p2821-forum-fleet-silent-treat.test.js"
   },
   "keywords": [
     "homey",
