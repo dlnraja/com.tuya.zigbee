@@ -28,12 +28,30 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
    * Profile B (ME167 / TS0601_thermostat_3): AVATTO ME167 + EARU + ogx8u5z6 family
    * WHY P2278: _TZE204_ogx8u5z6 uses DP4/5 /10 + DP47 cal (Z2M#25199 / ZHA#4124) — not Profile A
    */
+  /**
+   * WHY(P2822 / GH#560): zb_manufacturer_name can be empty early in boot / after
+   * Repair — fall back to store + zclNode so ME167 tails still win over Profile A.
+   */
+  _resolveMfr() {
+    try {
+      const fromZcl = this.zclNode?.manufacturerName
+        || this.zclNode?.attrs?.manufacturerName
+        || '';
+      return String(
+        this.getSetting('zb_manufacturer_name')
+        || this.getStoreValue('manufacturerName')
+        || this.getStoreValue('zb_manufacturer_name')
+        || this.getData?.()?.manufacturerName
+        || fromZcl
+        || '',
+      );
+    } catch (_e) {
+      return String(this.getSetting('zb_manufacturer_name') || this.getStoreValue('manufacturerName') || '');
+    }
+  }
+
   get dpProfile() {
-    const mfr = String(
-      this.getSetting('zb_manufacturer_name')
-      || this.getStoreValue('manufacturerName')
-      || '',
-    ).toLowerCase();
+    const mfr = this._resolveMfr().toLowerCase();
     const me167Tails = [
       'o3x45p96', 'p3dbf6qs',
       // WHY(#560 TRV06 _TZE200_rxq4iti9): Z2M tuya.ts lists these in the same ME167/TRV06 definition (DP4 setpoint, DP5 temp)
@@ -47,7 +65,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
   }
 
   get dpMappings() {
-    const mfr = String(this.getSetting('zb_manufacturer_name') || this.getStoreValue('manufacturerName') || '');
+    const mfr = this._resolveMfr();
     // WHY P2278: ogx8u5z6 firmware stores cal in tenths (user-confirmed Z2M divideBy10)
     const calDivisor = /ogx8u5z6/i.test(mfr) ? 10 : 1;
 
