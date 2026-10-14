@@ -1,0 +1,355 @@
+{
+  "apply": true,
+  "plan": [
+    {
+      "mfr": "_tz3000_v1srfw9x",
+      "pid": "TS0505B",
+      "reason": "rgb_bulb_on_wall_dimmer",
+      "from": [
+        "dimmer_wall_1gang"
+      ],
+      "to": "light_rgbcct_ts0505b",
+      "removed": 4,
+      "addedM": 2,
+      "addedP": 0,
+      "vendor": "Aldi",
+      "title": "C422AC11D41H140.0W"
+    },
+    {
+      "mfr": "_tz3000_gb5gaeca",
+      "pid": "TS0505B",
+      "reason": "rgb_bulb_on_wall_dimmer",
+      "from": [
+        "dimmer_wall_1gang"
+      ],
+      "to": "light_rgbcct_ts0505b",
+      "removed": 4,
+      "addedM": 2,
+      "addedP": 0,
+      "vendor": "Aldi",
+      "title": "C422AC14D41H140.0W"
+    },
+    {
+      "mfr": "_tz3000_iivsrikg",
+      "pid": "TS0505B",
+      "reason": "rgb_bulb_on_wall_dimmer",
+      "from": [
+        "dimmer_wall_1gang"
+      ],
+      "to": "light_rgbcct_ts0505b",
+      "removed": 4,
+      "addedM": 2,
+      "addedP": 0,
+      "vendor": "Aldi",
+      "title": "L122AA63H11A6.5W"
+    },
+    {
+      "mfr": "_tz3000_j0gtlepx",
+      "pid": "TS0505B",
+      "reason": "rgb_bulb_on_wall_dimmer",
+      "from": [
+        "dimmer_wall_1gang"
+      ],
+      "to": "light_rgbcct_ts0505b",
+      "removed": 4,
+      "addedM": 2,
+      "addedP": 0,
+      "vendor": "Aldi",
+      "title": "L122CB63H11A9.0W"
+    },
+    {
+      "mfr": "_tz3210_fhx7lk3d",
+      "pid": "TS0001",
+      "reason": "plug_on_switch_only",
+      "from": [
+        "switch_1gang"
+      ],
+      "to": "plug_smart",
+      "removed": 4,
+      "addedM": 2,
+      "addedP": 1,
+      "vendor": "Clicksmart",
+      "title": "CMA30651"
+    },
+    {
+      "mfr": "_tz3000_yl3zuyaw",
+      "pid": "TS0001",
+      "reason": "wall_switch_on_wireless_button",
+      "from": [
+        "button_wireless_2"
+      ],
+      "to": "switch_1gang",
+      "removed": 4,
+      "addedM": 2,
+      "addedP": 0,
+      "vendor": "Cloud Even",
+      "title": "ZBS05-LN"
+    },
+    {
+      "mfr": "_tz3000_majwnphg",
+      "pid": "TS0001",
+      "reason": "wall_switch_on_wireless_button",
+      "from": [
+        "button_wireless_2"
+      ],
+      "to": "switch_1gang",
+      "removed": 4,
+      "addedM": 2,
+      "addedP": 0,
+      "vendor": "Girier",
+      "title": "JR-ZDS01"
+    },
+    {
+      "mfr": "_tz3000_6axxqqi2",
+      "pid": "TS0001",
+      "reason": "wall_switch_on_wireless_button",
+      "from": [
+        "button_wireless_2"
+      ],
+      "to": "switch_1gang",
+      "removed": 4,
+      "addedM": 2,
+      "addedP": 0,
+      "vendor": "Girier",
+      "title": "JR-ZDS01"
+    },
+    {
+      "mfr": "_tz3000_quqaeew6",
+      "pid": "TS0505B",
+      "reason": "rgb_bulb_on_wall_dimmer",
+      "from": [
+        "dimmer_wall_1gang"
+      ],
+      "to": "light_rgbcct_ts0505b",
+      "removed": 4,
+      "addedM": 2,
+      "addedP": 0,
+      "vendor": "Lidl",
+      "title": "HG07834A"
+    },
+    {
+      "mfr": "_tz3000_th6zqqy6",
+      "pid": "TS0505B",
+      "reason": "rgb_bulb_on_wall_dimmer",
+      "from": [
+        "dimmer_wall_1gang"
+      ],
+      "to": "light_rgbcct_ts0505b",
+      "removed": 4,
+      "addedM": 2,
+      "addedP": 0,
+      "vendor": "Lidl",
+      "title": "HG07834B"
+    },
+    {
+      "mfr": "_tz3210_zbabx9wh",
+      "pid": "TS0505B",
+      "reason": "rgb_bulb_on_wall_dimmer",
+      "from": [
+        "dimmer_wall_1gang"
+      ],
+      "to": "light_rgbcct_ts0505b",
+      "removed": 4,
+      "addedM": 2,
+      "addedP": 0,
+      "vendor": "Lidl",
+      "title": "HG08007"
+    },
+    {
+      "mfr": "_tz3210_umi6vbsz",
+      "pid": "TS0505B",
+      "reason": "rgb_bulb_on_wall_dimmer",
+      "from": [
+        "dimmer_wall_1gang"
+      ],
+      "to": "light_rgbcct_ts0505b",
+      "removed": 4,
+      "addedM": 2,
+      "addedP": 0,
+      "vendor": "Lidl",
+      "title": "HG08010"
+    },
+    {
+      "mfr": "_tz3000_pmvbt5hh",
+      "pid": "TS0011",
+      "reason": "wall_switch_on_wireless_button",
+      "from": [
+        "button_wireless_2"
+      ],
+      "to": "switch_1gang",
+      "removed": 4,
+      "addedM": 2,
+      "addedP": 0,
+      "vendor": "Lonsonho",
+      "title": "QS-Zigbee-S05-L"
+    },
+    {
+      "mfr": "_tz3000_svoqrno4",
+      "pid": "TS0001",
+      "reason": "wall_switch_on_wireless_button",
+      "from": [
+        "button_wireless_2"
+      ],
+      "to": "switch_1gang",
+      "removed": 4,
+      "addedM": 2,
+      "addedP": 0,
+      "vendor": "Lonsonho",
+      "title": "X702A"
+    },
+    {
+      "mfr": "_tz3000_9hpxg80k",
+      "pid": "TS0011",
+      "reason": "wall_switch_on_wireless_button",
+      "from": [
+        "button_wireless_2"
+      ],
+      "to": "switch_1gang",
+      "removed": 4,
+      "addedM": 2,
+      "addedP": 0,
+      "vendor": "Lonsonho",
+      "title": "X711A"
+    },
+    {
+      "mfr": "_tz3000_7ed9cqgi",
+      "pid": "TS0002",
+      "reason": "wall_switch_on_wireless_button",
+      "from": [
+        "button_wireless_2"
+      ],
+      "to": "switch_2gang",
+      "removed": 4,
+      "addedM": 2,
+      "addedP": 0,
+      "vendor": "LoraTap",
+      "title": "RR620ZB"
+    },
+    {
+      "mfr": "_tz3210_tfxwxklq",
+      "pid": "TS0101",
+      "reason": "plug_on_switch_only",
+      "from": [
+        "switch_1gang"
+      ],
+      "to": "plug_smart",
+      "removed": 4,
+      "addedM": 2,
+      "addedP": 0,
+      "vendor": "Mercator Ikuü",
+      "title": "SPBS01G"
+    },
+    {
+      "mfr": "_tz3000_7hcgjxpc",
+      "pid": "TS0505B",
+      "reason": "rgb_bulb_on_wall_dimmer",
+      "from": [
+        "dimmer_wall_1gang"
+      ],
+      "to": "light_rgbcct_ts0505b",
+      "removed": 4,
+      "addedM": 2,
+      "addedP": 0,
+      "vendor": "Moes",
+      "title": "ZLD-RCW"
+    },
+    {
+      "mfr": "_tze200_tz32mtza",
+      "pid": "TS0601",
+      "reason": "wall_switch_on_wireless_button",
+      "from": [
+        "button_wireless_plug"
+      ],
+      "to": "wall_switch_3gang_1way",
+      "removed": 4,
+      "addedM": 2,
+      "addedP": 0,
+      "vendor": "Moes",
+      "title": "ZTS-EU3-W"
+    },
+    {
+      "mfr": "_tze200_nklqjk62",
+      "pid": "TS0601",
+      "reason": "cover_wrong_driver",
+      "from": [
+        "sensor_contact_zigbee"
+      ],
+      "to": "garage_door_opener",
+      "removed": 4,
+      "addedM": 2,
+      "addedP": 0,
+      "vendor": "Tuya",
+      "title": "PJ-ZGD01"
+    },
+    {
+      "mfr": "_tze204_nklqjk62",
+      "pid": "TS0601",
+      "reason": "cover_wrong_driver",
+      "from": [
+        "sensor_contact_zigbee"
+      ],
+      "to": "garage_door_opener",
+      "removed": 4,
+      "addedM": 2,
+      "addedP": 0,
+      "vendor": "Tuya",
+      "title": "PJ-ZGD01"
+    },
+    {
+      "mfr": "_tz3000_jcfje0kb",
+      "pid": "TS0002",
+      "reason": "wall_switch_on_wireless_button",
+      "from": [
+        "button_wireless_2"
+      ],
+      "to": "switch_2gang",
+      "removed": 4,
+      "addedM": 2,
+      "addedP": 0,
+      "vendor": "Tuya",
+      "title": "QS-Zigbee-CP02"
+    },
+    {
+      "mfr": "_tz3000_bvrlqyj7",
+      "pid": "TS0002",
+      "reason": "wall_switch_on_wireless_button",
+      "from": [
+        "button_wireless_2"
+      ],
+      "to": "switch_2gang",
+      "removed": 4,
+      "addedM": 2,
+      "addedP": 0,
+      "vendor": "Tuya",
+      "title": "SML-02Z"
+    },
+    {
+      "mfr": "_tz3000_hktqahrq",
+      "pid": "TS0001",
+      "reason": "wall_switch_on_wireless_button",
+      "from": [
+        "button_wireless_2"
+      ],
+      "to": "switch_1gang",
+      "removed": 4,
+      "addedM": 2,
+      "addedP": 0,
+      "vendor": "Tuya",
+      "title": "WHD02"
+    },
+    {
+      "mfr": "_tz3000_m9af2l6g",
+      "pid": "TS0001",
+      "reason": "wall_switch_on_wireless_button",
+      "from": [
+        "button_wireless_2"
+      ],
+      "to": "switch_1gang",
+      "removed": 4,
+      "addedM": 2,
+      "addedP": 0,
+      "vendor": "Tuya",
+      "title": "WHD02"
+    }
+  ]
+}
