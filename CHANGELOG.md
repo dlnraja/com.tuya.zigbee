@@ -9,7 +9,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.1457] - 2026-10-14
+## [9.0.1458] - 2026-10-14
+
+Soil sensor: remove misrouted smoke fingerprint from soil driver.
+---
+
+ [9.0.1457] - 2026-10-14
 
 Improved soil sensor pairing (QT-07S / AOYAN) and app Configure page readiness.
 ---
