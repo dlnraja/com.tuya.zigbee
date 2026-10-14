@@ -164,8 +164,8 @@
           "max": 9,
           "step": 1,
           "hint": {
-            "en": "Generic Tuya mmWave (DP2). Linptech ES1ZZ uses Motion/Static settings above.",
-            "fr": "mmWave Tuya générique (DP2). Linptech ES1ZZ utilise les réglages Mouvement/Statique."
+            "en": "Generic Tuya mmWave (DP2). gnpflcoq 4in1 uses PIR enum DP9. Linptech ES1ZZ uses Motion/Static above.",
+            "fr": "mmWave Tuya générique (DP2). gnpflcoq 4in1 = enum PIR DP9. Linptech ES1ZZ = Mouvement/Statique."
           }
         },
         {
@@ -228,8 +228,8 @@
           "max": 1500,
           "step": 5,
           "hint": {
-            "en": "Time before clearing presence after no movement detected. Like FP300 absence delay.",
-            "fr": "Temps avant de signaler l'absence après aucun mouvement. Similaire au délai FP300."
+            "en": "Absence delay. gnpflcoq 4in1 = DP12 (10–180s); do NOT write DP102 (that is temp offset). Other radars may use DP102.",
+            "fr": "Délai d'absence. gnpflcoq 4in1 = DP12 (10–180s) ; ne pas écrire DP102 (offset température)."
           }
         }
       ]
