@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1465 |
+| **App Version** | v9.0.1466 |
 | **Drivers** | 449 (396 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,767 |
 | **Pairing Variants** | 19,214 (4 case combos per fingerprint) |
@@ -103,7 +103,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.1465** | v9.0.1464: |
+| **v9.0.1466** | v9.0.1465: |
+| **v9.0.1465** | v9.0.1465: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1464** | v9.0.1464: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1463** | mfs soil exclusive align so 4in1 mmWave and ANTIK TRV publish. |
 | **v9.0.1462** | 4in1 mmWave pairs again (lean clusters); AOYAN soil no longer collides with water leak. |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1457** | Improved soil sensor pairing (QT-07S / AOYAN) and app Configure page readiness. |
 | **v9.0.1456** | Aligned fingerprint database for ANTIK TRV and 4in1 mmWave couples. |
 | **v9.0.1455** | Improved radiator valve and mmWave radar pairing for recent forum devices. |
-| **v9.0.1454** | v9.0.1454: automated publish, manifest sync, and Homey test promotion. |
 
 <!-- CHANGELOG_END -->
 
