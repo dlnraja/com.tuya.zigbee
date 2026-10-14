@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee.bastien",
-  "version": "1.0.124",
+  "version": "1.0.125",
   "description": "Private Zigbee house app for Bastien — local Homey Pro only. Learnings promote upstream to Universal Tuya / Stable (never the reverse wholesale).",
   "main": "app.js",
   "scripts": {
@@ -579,9 +579,10 @@
     "check:p2757": "node --test test/critical/p2757-coin-battery-no-proactive-poll.test.js",
     "check:p2810": "node --test test/critical/p2810-trv06-rxq4iti9-me167-dp.test.js",
     "check:p2811": "node --test test/critical/p2811-soil-qt07s-aoyan-clusters.test.js",
-    "check:p281x": "npm run check:p2810 && npm run check:p2811 && npm run check:p2812 && npm run check:p2813",
+    "check:p281x": "npm run check:p2810 && npm run check:p2811 && npm run check:p2812 && npm run check:p2813 && npm run check:p2815",
     "check:p2812": "node --test test/critical/p2812-gnpflcoq-mmwave-forum2262.test.js",
-    "check:p2813": "node --test test/critical/p2813-fl8cuafl-antik-trv-forum2261.test.js"
+    "check:p2813": "node --test test/critical/p2813-fl8cuafl-antik-trv-forum2261.test.js",
+    "check:p2815": "node tools/ci/p2815-soil-couple-ssot-gate.js && node --test test/critical/p2815-soil-couple-ssot.test.js"
   },
   "keywords": [
     "homey",
