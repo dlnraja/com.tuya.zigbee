@@ -39,6 +39,9 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       // WHY(#560 TRV06 _TZE200_rxq4iti9): Z2M tuya.ts lists these in the same ME167/TRV06 definition (DP4 setpoint, DP5 temp)
       'rxq4iti9', 'yqgbrdyo', '6rdj8dzm', 'jkfbph7l', 'rxntag7i', '4utwozi2',
       'rv6iuyxb', 'c6wv4xyo', 'hvaxb2tc', 'ogx8u5z6',
+      // WHY(P2818/#2261): ANTIK ATK-TRV02 `_TZE200_fl8cuafl` — retail TV02-class (manual InS/AdA);
+      // not yet in Z2M herdsman; soft ME167 map (DP4/5 ÷10) until user DP sniff proves otherwise.
+      'fl8cuafl',
     ];
     return me167Tails.some((t) => mfr.includes(t)) ? 'me167' : 'standard';
   }
@@ -57,7 +60,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
         3: { internal: true, type: 'running_state', transform: (v) => v === 0 ? 'heat' : 'idle' },
         4: { capability: 'target_temperature', divisor: 10 },
         5: { capability: 'measure_temperature', divisor: 10 },
-        // WHY(#560 / Z2M TRV06): DP6 = battery % � never treat DP4 as battery (Profile A bug / tip-lag)
+        // WHY(#560 / Z2M TRV06): DP6 = battery % — never treat DP4 as battery (Profile A bug / tip-lag)
         6: { capability: 'measure_battery', divisor: 1 },
         7: { capability: 'child_lock', transform: (v) => v === true || v === 1 },
         // Complementary battery DPs (Z2M thermostat_3 variants) — keep alarm on 35
