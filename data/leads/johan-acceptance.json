@@ -1,21 +1,22 @@
 {
-  "generated": "2026-10-14T09:01:29.295Z",
+  "generated": "2026-10-15T08:35:35.393Z",
   "source": "data/leads/johan-canonical-index.json",
   "repo": "JohanBendz/com.tuya.zigbee",
   "note": "Acceptance view, structured fields only. missing-couple = identity cited upstream with no home driver here (verify real hardware before adding, W4). behaviour = needs physical test, not a pairing gap.",
   "summary": {
     "threads": 562,
-    "covered": 441,
+    "covered": 440,
     "behaviour": 94,
-    "missing-couple": 7,
+    "missing-couple": 8,
     "dual-couple": 20,
-    "missingCouples": 5
+    "missingCouples": 6
   },
   "missingCouples": [
     "_TYZB01_0aps0h1r|TS0212",
     "_TYZB01_o7m83470|TS0212",
     "_TZ3000_5ftkaulg|TS0011",
     "_TZ3000_amal63is|TS0002",
+    "_TZ3210_fhx7lk3d|TS0001",
     "_TZB210_rkgngb5o|EP1"
   ],
   "rows": [
@@ -432,14 +433,14 @@
           "mfr": "_TZ3000_quqaeew6",
           "pid": "TS0505B",
           "drivers": [
-            "dimmer_wall_1gang"
+            "light_rgbcct_ts0505b"
           ]
         },
         {
           "mfr": "_TZ3000_th6zqqy6",
           "pid": "TS0505B",
           "drivers": [
-            "dimmer_wall_1gang"
+            "light_rgbcct_ts0505b"
           ]
         }
       ],
@@ -589,14 +590,14 @@
           "mfr": "_TZ3000_th6zqqy6",
           "pid": "TS0505B",
           "drivers": [
-            "dimmer_wall_1gang"
+            "light_rgbcct_ts0505b"
           ]
         },
         {
           "mfr": "_TZ3000_quqaeew6",
           "pid": "TS0505B",
           "drivers": [
-            "dimmer_wall_1gang"
+            "light_rgbcct_ts0505b"
           ]
         }
       ],
@@ -618,14 +619,14 @@
           "mfr": "_TZE200_nklqjk62",
           "pid": "TS0601",
           "drivers": [
-            "sensor_contact_zigbee"
+            "garage_door_opener"
           ]
         },
         {
           "mfr": "_TZE204_nklqjk62",
           "pid": "TS0601",
           "drivers": [
-            "sensor_contact_zigbee"
+            "garage_door_opener"
           ]
         },
         {
@@ -674,7 +675,7 @@
           "mfr": "_TZE200_tz32mtza",
           "pid": "TS0601",
           "drivers": [
-            "button_wireless_plug"
+            "wall_switch_3gang_1way"
           ]
         }
       ],
@@ -708,7 +709,7 @@
           "mfr": "_TZ3210_umi6vbsz",
           "pid": "TS0505B",
           "drivers": [
-            "dimmer_wall_1gang"
+            "light_rgbcct_ts0505b"
           ]
         },
         {
@@ -982,7 +983,7 @@
           "mfr": "_TZ3210_umi6vbsz",
           "pid": "TS0505B",
           "drivers": [
-            "dimmer_wall_1gang"
+            "light_rgbcct_ts0505b"
           ]
         }
       ],
@@ -3294,14 +3295,14 @@
           "mfr": "_TZE204_nklqjk62",
           "pid": "TS0601",
           "drivers": [
-            "sensor_contact_zigbee"
+            "garage_door_opener"
           ]
         },
         {
           "mfr": "_TZE200_nklqjk62",
           "pid": "TS0601",
           "drivers": [
-            "sensor_contact_zigbee"
+            "garage_door_opener"
           ]
         }
       ],
@@ -3787,7 +3788,7 @@
           "mfr": "_TZE204_nklqjk62",
           "pid": "TS0601",
           "drivers": [
-            "sensor_contact_zigbee"
+            "garage_door_opener"
           ]
         }
       ],
@@ -4838,7 +4839,7 @@
           "mfr": "_TZE200_nklqjk62",
           "pid": "TS0601",
           "drivers": [
-            "sensor_contact_zigbee"
+            "garage_door_opener"
           ]
         }
       ],
@@ -4940,7 +4941,7 @@
           "mfr": "_TZ3210_umi6vbsz",
           "pid": "TS0505B",
           "drivers": [
-            "dimmer_wall_1gang"
+            "light_rgbcct_ts0505b"
           ]
         }
       ],
@@ -6583,12 +6584,10 @@
         {
           "mfr": "_TZ3210_fhx7lk3d",
           "pid": "TS0001",
-          "drivers": [
-            "switch_1gang"
-          ]
+          "drivers": []
         }
       ],
-      "acceptance": "covered"
+      "acceptance": "missing-couple"
     },
     {
       "n": 1137,
@@ -8265,7 +8264,7 @@
           "mfr": "_TZ3000_lqb7lcq9",
           "pid": "TS011F",
           "drivers": [
-            "switch_usb_dongle"
+            "usb_outlet_advanced"
           ]
         }
       ],
@@ -9094,7 +9093,7 @@
           "mfr": "_TZ3000_lqb7lcq9",
           "pid": "TS011F",
           "drivers": [
-            "switch_usb_dongle"
+            "usb_outlet_advanced"
           ]
         }
       ],
@@ -13234,7 +13233,7 @@
           "mfr": "_TZ3000_o005nuxx",
           "pid": "TS011F",
           "drivers": [
-            "button_wireless_2"
+            "socket_power_strip"
           ]
         },
         {
