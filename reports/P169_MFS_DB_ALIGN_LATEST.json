@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-10-14T09:53:38.928Z",
+  "timestamp": "2026-10-15T09:33:57.457Z",
   "gate": "align-mfs-db-intelligent",
   "apply": false,
   "check": true,
   "changeCount": 0,
-  "skippedCount": 76,
+  "skippedCount": 80,
   "highSeverityCount": 0,
   "byAction": {},
   "changes": [],
@@ -147,6 +147,26 @@
       "reason": "registry_empty_mfr",
       "caseId": "p2815-aoyan-ay303z-soil",
       "canon": "soil_sensor"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "p2821-forbid-cartesian-zgyzgdua-ts0043",
+      "canon": null
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "p2821-forbid-cartesian-wkai4ga5-ts0043",
+      "canon": null
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "p2821-forbid-cartesian-4upl1fcj-ts0505b",
+      "canon": null
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "p2821-forbid-cartesian-qd7hej8u-ts0041",
+      "canon": null
     },
     {
       "reason": "registry_oem_multi_canon",
