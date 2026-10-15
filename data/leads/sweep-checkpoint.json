@@ -1,47 +1,47 @@
 {
-  "updated": "2026-10-14T09:01:28.752Z",
+  "updated": "2026-10-15T08:35:34.475Z",
   "threads": {
     "21313": {
       "lastPost": 2819,
       "status": "in-progress",
-      "sweptId": 231421,
-      "sweptTo": 363,
-      "sweptAt": "2026-10-14T09:01:28.529Z"
+      "sweptId": 271593,
+      "sweptTo": 444,
+      "sweptAt": "2026-10-15T08:35:34.312Z"
     },
     "26439": {
       "lastPost": 5534,
       "status": "in-progress",
-      "sweptId": 511245,
-      "sweptTo": 4711,
-      "sweptAt": "2026-10-14T09:01:15.521Z"
+      "sweptId": 535520,
+      "sweptTo": 4792,
+      "sweptAt": "2026-10-15T08:35:21.236Z"
     },
     "89271": {
       "lastPost": 673,
       "status": "caught-up",
       "sweptId": 425235,
       "sweptTo": 673,
-      "sweptAt": "2026-10-14T09:01:28.752Z"
+      "sweptAt": "2026-10-15T08:35:34.475Z"
     },
     "140352": {
       "lastPost": 2262,
       "status": "in-progress",
-      "sweptId": 663598,
-      "sweptTo": 361,
-      "sweptAt": "2026-10-14T09:01:11.083Z"
+      "sweptId": 664441,
+      "sweptTo": 441,
+      "sweptAt": "2026-10-15T08:35:16.987Z"
     },
     "146735": {
       "lastPost": 504,
       "status": "in-progress",
-      "sweptId": 764412,
-      "sweptTo": 376,
-      "sweptAt": "2026-10-14T09:01:19.875Z"
+      "sweptId": 767836,
+      "sweptTo": 456,
+      "sweptAt": "2026-10-15T08:35:25.836Z"
     },
     "154077": {
       "lastPost": 525,
       "status": "in-progress",
-      "sweptId": 774514,
-      "sweptTo": 365,
-      "sweptAt": "2026-10-14T09:01:24.196Z"
+      "sweptId": 782431,
+      "sweptTo": 447,
+      "sweptAt": "2026-10-15T08:35:30.100Z"
     }
   },
   "items": [
@@ -7154,7 +7154,7 @@
         "_TZ3000_pmz6miyu|TS011F"
       ],
       "crosscheck": {
-        "at": "2026-10-14",
+        "at": "2026-10-15",
         "via": [
           "image-ocr"
         ],
@@ -12065,7 +12065,7 @@
         "_TZ2300_gjnozsaz|TS011F"
       ],
       "crosscheck": {
-        "at": "2026-10-14",
+        "at": "2026-10-15",
         "via": [
           "image-ocr"
         ],
@@ -14693,11 +14693,1266 @@
       "mfrs": [],
       "pids": [],
       "why": "diag-only"
+    },
+    {
+      "id": "johan-issue:541",
+      "status": "already-fixed",
+      "note": "merged PR; identities covered (TS0601)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/pull/541"
+      ],
+      "author": "habbo656",
+      "closedAt": "2024-02-04T17:18:41Z",
+      "comments": 3,
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "id": "johan-issue:542",
+      "status": "already-fixed",
+      "note": "closed issue; identities covered (_TZ3000_fukaa7nc)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/542"
+      ],
+      "author": "Butli",
+      "closedAt": "2026-09-29T07:53:23Z",
+      "comments": 4,
+      "mfrs": [
+        "_TZ3000_fukaa7nc"
+      ],
+      "pids": [
+        "TS011F"
+      ]
+    },
+    {
+      "id": "johan-issue:543",
+      "status": "already-fixed",
+      "note": "closed issue; identities covered (_TZ3210_up3pngle)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/543"
+      ],
+      "author": "rpkbs",
+      "closedAt": "2024-09-06T15:33:09Z",
+      "mfrs": [
+        "_TZ3210_up3pngle"
+      ],
+      "pids": [
+        "TS0205"
+      ]
+    },
+    {
+      "id": "johan-issue:544",
+      "status": "already-fixed",
+      "note": "open issue; identities covered (_TZE200_r32ctezx)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/544"
+      ],
+      "author": "terjebja",
+      "comments": 1,
+      "mfrs": [
+        "_TZE200_r32ctezx"
+      ],
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "id": "johan-issue:545",
+      "status": "already-fixed",
+      "note": "open issue; identities covered (_TZE204_dqolcpcp)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/545"
+      ],
+      "author": "LarsBlochS",
+      "mfrs": [
+        "_TZE204_dqolcpcp"
+      ],
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "id": "johan-issue:546",
+      "status": "already-fixed",
+      "note": "open issue; identities covered (_TZB000_42ha4rsc)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/546"
+      ],
+      "author": "Arnar23",
+      "mfrs": [
+        "_TZB000_42ha4rsc"
+      ],
+      "pids": [
+        "TS030F"
+      ]
+    },
+    {
+      "id": "johan-issue:547",
+      "status": "already-fixed",
+      "note": "closed issue; identities covered (_TZ3000_uaa99arv)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/547"
+      ],
+      "author": "terjebja",
+      "closedAt": "2024-09-11T19:43:14Z",
+      "comments": 1,
+      "mfrs": [
+        "_TZ3000_uaa99arv"
+      ]
+    },
+    {
+      "id": "johan-issue:548",
+      "status": "already-fixed",
+      "note": "closed issue; identities covered (_TZ3000_zmy4lslw)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/548"
+      ],
+      "author": "MikroWroc",
+      "closedAt": "2026-09-29T20:39:01Z",
+      "comments": 2,
+      "mfrs": [
+        "_TZ3000_zmy4lslw"
+      ],
+      "pids": [
+        "TS0002"
+      ]
+    },
+    {
+      "id": "johan-issue:549",
+      "status": "already-fixed",
+      "note": "closed PR; identities covered (_TZ3000_nkcobies,_TZ3000_q50zhdsc)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/pull/549"
+      ],
+      "author": "steampunklolcat",
+      "closedAt": "2023-12-30T19:49:01Z",
+      "comments": 3,
+      "mfrs": [
+        "_TZ3000_nkcobies",
+        "_TZ3000_q50zhdsc"
+      ],
+      "pids": [
+        "TS011F",
+        "TS0505B"
+      ]
+    },
+    {
+      "id": "johan-issue:550",
+      "status": "already-fixed",
+      "note": "closed issue; identities covered (_TZE204_qasjif9e)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/550"
+      ],
+      "author": "Roobbbiiiinnnnn",
+      "closedAt": "2024-09-11T20:15:28Z",
+      "comments": 2,
+      "mfrs": [
+        "_TZE204_qasjif9e"
+      ],
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "id": "johan-issue:551",
+      "status": "already-fixed",
+      "note": "closed PR; identities covered (_TZE204_qasjif9e)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/pull/551"
+      ],
+      "author": "ricardo777",
+      "closedAt": "2024-01-01T14:13:24Z",
+      "comments": 16,
+      "mfrs": [
+        "_TZE204_qasjif9e"
+      ],
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "id": "johan-issue:552",
+      "status": "already-fixed",
+      "note": "closed PR; identities covered (_TZ3000_sj7jbgks)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/pull/552"
+      ],
+      "author": "slicke",
+      "closedAt": "2023-12-30T16:52:16Z",
+      "comments": 3,
+      "mfrs": [
+        "_TZ3000_sj7jbgks"
+      ],
+      "pids": [
+        "TS0043"
+      ]
+    },
+    {
+      "id": "johan-issue:553",
+      "status": "already-fixed",
+      "note": "closed issue; identities covered (_TZ3000_uwkja6z1)",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/553"
+      ],
+      "author": "mpunktnuSupport",
+      "closedAt": "2024-02-04T14:21:40Z",
+      "comments": 3,
+      "mfrs": [
+        "_TZ3000_uwkja6z1"
+      ],
+      "pids": [
+        "TS011F"
+      ]
+    },
+    {
+      "id": "johan-issue:554",
+      "status": "needs-info",
+      "note": "closed issue; request-no-identity; research or diag needed",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/554"
+      ],
+      "author": "Sanducatalinstefan",
+      "closedAt": "2026-09-30T22:15:04Z",
+      "comments": 1
+    },
+    {
+      "id": "johan-issue:555",
+      "status": "needs-info",
+      "note": "closed issue; diag-only; research or diag needed",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee/issues/555"
+      ],
+      "author": "Yakuza79be",
+      "closedAt": "2024-09-15T19:53:25Z",
+      "comments": 2
+    },
+    {
+      "id": "forum:140352#362",
+      "status": "needs-info",
+      "author": "Peter_van_Werkhoven",
+      "link": "https://community.homey.app/t/140352/362",
+      "mfrs": [],
+      "pids": [],
+      "why": "diag-only"
+    },
+    {
+      "id": "forum:140352#363",
+      "status": "needs-info",
+      "author": "DutchDuke",
+      "link": "https://community.homey.app/t/140352/363",
+      "mfrs": [],
+      "pids": [],
+      "why": "diag-only"
+    },
+    {
+      "id": "forum:140352#366",
+      "status": "needs-info",
+      "author": "Peter_van_Werkhoven",
+      "link": "https://community.homey.app/t/140352/366",
+      "mfrs": [],
+      "pids": [],
+      "images": 4,
+      "why": "diag-only"
+    },
+    {
+      "id": "forum:140352#368",
+      "status": "already-fixed",
+      "author": "DutchDuke",
+      "link": "https://community.homey.app/t/140352/368",
+      "mfrs": [
+        "_TZE284_oitavov2"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "why": "couples-present"
+    },
+    {
+      "id": "forum:140352#372",
+      "status": "needs-info",
+      "author": "Peter_van_Werkhoven",
+      "link": "https://community.homey.app/t/140352/372",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "diag-only"
+    },
+    {
+      "id": "forum:140352#379",
+      "status": "no-action",
+      "author": "James_Moorhouse",
+      "link": "https://community.homey.app/t/140352/379",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:140352#381",
+      "status": "needs-info",
+      "author": "Peter_van_Werkhoven",
+      "link": "https://community.homey.app/t/140352/381",
+      "mfrs": [],
+      "pids": [],
+      "why": "diag-only"
+    },
+    {
+      "id": "forum:140352#382",
+      "status": "already-fixed",
+      "author": "ugrbnk",
+      "link": "https://community.homey.app/t/140352/382",
+      "mfrs": [
+        "_TZE204_yojqa8xn"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "images": 1,
+      "why": "couples-present"
+    },
+    {
+      "id": "forum:140352#387",
+      "status": "no-action",
+      "author": "Karsten_Hille",
+      "link": "https://community.homey.app/t/140352/387",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:140352#388",
+      "status": "no-action",
+      "author": "dlnraja",
+      "link": "https://community.homey.app/t/140352/388",
+      "mfrs": [],
+      "pids": [],
+      "images": 2,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:140352#390",
+      "status": "needs-info",
+      "author": "ugrbnk",
+      "link": "https://community.homey.app/t/140352/390",
+      "mfrs": [],
+      "pids": [],
+      "why": "diag-only"
+    },
+    {
+      "id": "forum:140352#392",
+      "status": "already-fixed",
+      "author": "Karsten_Hille",
+      "link": "https://community.homey.app/t/140352/392",
+      "mfrs": [
+        "_TZE284_vvmbj46n"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "why": "couples-present"
+    },
+    {
+      "id": "forum:140352#393",
+      "status": "needs-info",
+      "author": "Karsten_Hille",
+      "link": "https://community.homey.app/t/140352/393",
+      "mfrs": [],
+      "pids": [],
+      "why": "diag-only"
+    },
+    {
+      "id": "forum:140352#394",
+      "status": "needs-info",
+      "author": "Peter_van_Werkhoven",
+      "link": "https://community.homey.app/t/140352/394",
+      "mfrs": [],
+      "pids": [],
+      "images": 2,
+      "why": "diag-only"
+    },
+    {
+      "id": "forum:140352#395",
+      "status": "needs-info",
+      "author": "ugrbnk",
+      "link": "https://community.homey.app/t/140352/395",
+      "mfrs": [],
+      "pids": [],
+      "why": "diag-only"
+    },
+    {
+      "id": "forum:140352#400",
+      "status": "needs-info",
+      "author": "Cam",
+      "link": "https://community.homey.app/t/140352/400",
+      "mfrs": [],
+      "pids": [],
+      "why": "diag-only"
+    },
+    {
+      "id": "forum:140352#405",
+      "status": "needs-info",
+      "author": "DutchDuke",
+      "link": "https://community.homey.app/t/140352/405",
+      "mfrs": [],
+      "pids": [],
+      "images": 2,
+      "why": "diag-only"
+    },
+    {
+      "id": "forum:140352#407",
+      "status": "needs-info",
+      "author": "Peter_van_Werkhoven",
+      "link": "https://community.homey.app/t/140352/407",
+      "mfrs": [],
+      "pids": [],
+      "images": 2,
+      "why": "diag-only"
+    },
+    {
+      "id": "forum:140352#408",
+      "status": "no-action",
+      "author": "dlnraja",
+      "link": "https://community.homey.app/t/140352/408",
+      "mfrs": [],
+      "pids": [],
+      "images": 3,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:140352#413",
+      "status": "needs-info",
+      "author": "Peter_van_Werkhoven",
+      "link": "https://community.homey.app/t/140352/413",
+      "mfrs": [],
+      "pids": [],
+      "why": "diag-only"
+    },
+    {
+      "id": "forum:140352#415",
+      "status": "needs-info",
+      "author": "Peter_van_Werkhoven",
+      "link": "https://community.homey.app/t/140352/415",
+      "mfrs": [],
+      "pids": [],
+      "why": "diag-only"
+    },
+    {
+      "id": "forum:140352#419",
+      "status": "no-action",
+      "author": "dlnraja",
+      "link": "https://community.homey.app/t/140352/419",
+      "mfrs": [],
+      "pids": [],
+      "images": 2,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:140352#423",
+      "status": "no-action",
+      "author": "dlnraja",
+      "link": "https://community.homey.app/t/140352/423",
+      "mfrs": [],
+      "pids": [],
+      "images": 3,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:140352#429",
+      "status": "needs-info",
+      "author": "Peter_van_Werkhoven",
+      "link": "https://community.homey.app/t/140352/429",
+      "mfrs": [],
+      "pids": [],
+      "why": "diag-only"
+    },
+    {
+      "id": "forum:140352#433",
+      "status": "needs-info",
+      "author": "Peter_van_Werkhoven",
+      "link": "https://community.homey.app/t/140352/433",
+      "mfrs": [],
+      "pids": [],
+      "why": "diag-only"
+    },
+    {
+      "id": "forum:140352#434",
+      "status": "needs-info",
+      "author": "Ian_Gibbo",
+      "link": "https://community.homey.app/t/140352/434",
+      "mfrs": [],
+      "pids": [],
+      "why": "diag-only"
+    },
+    {
+      "id": "forum:140352#437",
+      "status": "needs-info",
+      "author": "Peter_van_Werkhoven",
+      "link": "https://community.homey.app/t/140352/437",
+      "mfrs": [],
+      "pids": [],
+      "why": "diag-only"
+    },
+    {
+      "id": "forum:140352#441",
+      "status": "needs-info",
+      "author": "Peter_van_Werkhoven",
+      "link": "https://community.homey.app/t/140352/441",
+      "mfrs": [],
+      "pids": [],
+      "why": "diag-only"
+    },
+    {
+      "id": "forum:26439#4715",
+      "status": "needs-info",
+      "author": "johan_bendz",
+      "link": "https://community.homey.app/t/26439/4715",
+      "mfrs": [],
+      "pids": [],
+      "why": "request-no-identity"
+    },
+    {
+      "id": "forum:26439#4716",
+      "status": "no-action",
+      "author": "Peter_van_Werkhoven",
+      "link": "https://community.homey.app/t/26439/4716",
+      "mfrs": [],
+      "pids": [],
+      "images": 2,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:26439#4718",
+      "status": "no-action",
+      "author": "Peter_van_Werkhoven",
+      "link": "https://community.homey.app/t/26439/4718",
+      "mfrs": [],
+      "pids": [],
+      "images": 2,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:26439#4720",
+      "status": "no-action",
+      "author": "Peter_van_Werkhoven",
+      "link": "https://community.homey.app/t/26439/4720",
+      "mfrs": [],
+      "pids": [],
+      "images": 2,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:26439#4723",
+      "status": "needs-info",
+      "author": "Peter_van_Werkhoven",
+      "link": "https://community.homey.app/t/26439/4723",
+      "mfrs": [],
+      "pids": [],
+      "why": "diag-only"
+    },
+    {
+      "id": "forum:26439#4724",
+      "status": "needs-info",
+      "author": "Fadoz_nl",
+      "link": "https://community.homey.app/t/26439/4724",
+      "mfrs": [],
+      "pids": [],
+      "why": "request-no-identity"
+    },
+    {
+      "id": "forum:26439#4725",
+      "status": "needs-info",
+      "author": "robertklep",
+      "link": "https://community.homey.app/t/26439/4725",
+      "mfrs": [],
+      "pids": [],
+      "why": "request-no-identity"
+    },
+    {
+      "id": "forum:26439#4726",
+      "status": "needs-info",
+      "author": "Fadoz_nl",
+      "link": "https://community.homey.app/t/26439/4726",
+      "mfrs": [],
+      "pids": [],
+      "why": "request-no-identity"
+    },
+    {
+      "id": "forum:26439#4730",
+      "status": "no-action",
+      "author": "Adam_Elheim",
+      "link": "https://community.homey.app/t/26439/4730",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:26439#4732",
+      "status": "already-fixed",
+      "author": "Adam_Elheim",
+      "link": "https://community.homey.app/t/26439/4732",
+      "mfrs": [
+        "_TZ3000_okaz9tjs"
+      ],
+      "pids": [
+        "TS011F"
+      ],
+      "why": "couples-present"
+    },
+    {
+      "id": "forum:26439#4738",
+      "status": "already-fixed",
+      "author": "erlend_oyen",
+      "link": "https://community.homey.app/t/26439/4738",
+      "mfrs": [
+        "_TZ3000_nss8amz9"
+      ],
+      "pids": [
+        "TS0202"
+      ],
+      "images": 1,
+      "why": "couples-present"
+    },
+    {
+      "id": "forum:26439#4739",
+      "status": "already-fixed",
+      "author": "johan_bendz",
+      "link": "https://community.homey.app/t/26439/4739",
+      "mfrs": [
+        "_TZ3000_bsvqrxru"
+      ],
+      "pids": [],
+      "why": "mfr-known"
+    },
+    {
+      "id": "forum:26439#4741",
+      "status": "no-action",
+      "author": "Matthias_1",
+      "link": "https://community.homey.app/t/26439/4741",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:26439#4743",
+      "status": "already-fixed",
+      "author": "Anders_E",
+      "link": "https://community.homey.app/t/26439/4743",
+      "mfrs": [
+        "_TZ3000_gjnozsaz"
+      ],
+      "pids": [
+        "TS011F"
+      ],
+      "why": "couples-present"
+    },
+    {
+      "id": "forum:26439#4747",
+      "status": "already-fixed",
+      "author": "Jan-Thomas_Borresen",
+      "link": "https://community.homey.app/t/26439/4747",
+      "mfrs": [
+        "_TZE204_myd45weu"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "why": "couples-present"
+    },
+    {
+      "id": "forum:26439#4749",
+      "status": "already-fixed",
+      "author": "Mark_Broadhurst",
+      "link": "https://community.homey.app/t/26439/4749",
+      "mfrs": [
+        "_TZE200_7eue9vhc",
+        "_TZE200_rddyvrci"
+      ],
+      "pids": [],
+      "why": "mfr-known"
+    },
+    {
+      "id": "forum:26439#4751",
+      "status": "already-fixed",
+      "author": "Bono_van_der_Pasch",
+      "link": "https://community.homey.app/t/26439/4751",
+      "mfrs": [
+        "_TZ3000_wut53hfm"
+      ],
+      "pids": [
+        "TS0203"
+      ],
+      "why": "couples-present"
+    },
+    {
+      "id": "forum:26439#4755",
+      "status": "needs-info",
+      "author": "Sharkys",
+      "link": "https://community.homey.app/t/26439/4755",
+      "mfrs": [],
+      "pids": [],
+      "why": "request-no-identity"
+    },
+    {
+      "id": "forum:26439#4756",
+      "status": "already-fixed",
+      "author": "Mark_Broadhurst",
+      "link": "https://community.homey.app/t/26439/4756",
+      "mfrs": [
+        "_TZE200_7eue9vhc",
+        "_TZE200_rddyvrci"
+      ],
+      "pids": [],
+      "why": "mfr-known"
+    },
+    {
+      "id": "forum:26439#4759",
+      "status": "already-fixed",
+      "author": "Christian_Torvetjonn",
+      "link": "https://community.homey.app/t/26439/4759",
+      "mfrs": [
+        "_TZ3000_wkai4ga5"
+      ],
+      "pids": [],
+      "why": "mfr-known"
+    },
+    {
+      "id": "forum:26439#4763",
+      "status": "needs-info",
+      "author": "Sharkys",
+      "link": "https://community.homey.app/t/26439/4763",
+      "mfrs": [],
+      "pids": [],
+      "why": "request-no-identity"
+    },
+    {
+      "id": "forum:26439#4765",
+      "status": "already-fixed",
+      "author": "Sharkys",
+      "link": "https://community.homey.app/t/26439/4765",
+      "mfrs": [
+        "_TZE200_01fvxamo"
+      ],
+      "pids": [
+        "TS0201"
+      ],
+      "why": "couples-present"
+    },
+    {
+      "id": "forum:26439#4775",
+      "status": "needs-info",
+      "author": "Polleke",
+      "link": "https://community.homey.app/t/26439/4775",
+      "mfrs": [],
+      "pids": [],
+      "why": "request-no-identity"
+    },
+    {
+      "id": "forum:26439#4778",
+      "status": "no-action",
+      "author": "Phil_Bro",
+      "link": "https://community.homey.app/t/26439/4778",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:26439#4787",
+      "status": "already-fixed",
+      "author": "Marcel_Brand",
+      "link": "https://community.homey.app/t/26439/4787",
+      "mfrs": [
+        "_TZ2000_a476raq2"
+      ],
+      "pids": [
+        "TS0201"
+      ],
+      "why": "couples-present"
+    },
+    {
+      "id": "forum:26439#4791",
+      "status": "no-action",
+      "author": "Jim_McAtear",
+      "link": "https://community.homey.app/t/26439/4791",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:146735#385",
+      "status": "needs-info",
+      "author": "bayrambass",
+      "link": "https://community.homey.app/t/146735/385",
+      "mfrs": [],
+      "pids": [],
+      "why": "request-no-identity"
+    },
+    {
+      "id": "forum:146735#398",
+      "status": "no-action",
+      "author": "Gert_W",
+      "link": "https://community.homey.app/t/146735/398",
+      "mfrs": [],
+      "pids": [],
+      "images": 2,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:146735#405",
+      "status": "no-action",
+      "author": "smarthomesven",
+      "link": "https://community.homey.app/t/146735/405",
+      "mfrs": [],
+      "pids": [],
+      "images": 2,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:146735#407",
+      "status": "no-action",
+      "author": "Bubiai_2",
+      "link": "https://community.homey.app/t/146735/407",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:146735#414",
+      "status": "no-action",
+      "author": "Oene",
+      "link": "https://community.homey.app/t/146735/414",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:146735#415",
+      "status": "no-action",
+      "author": "smarthomesven",
+      "link": "https://community.homey.app/t/146735/415",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:146735#436",
+      "status": "no-action",
+      "author": "SunBeech",
+      "link": "https://community.homey.app/t/146735/436",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:146735#438",
+      "status": "no-action",
+      "author": "Johan_Kluijfhout",
+      "link": "https://community.homey.app/t/146735/438",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:146735#441",
+      "status": "no-action",
+      "author": "smarthomesven",
+      "link": "https://community.homey.app/t/146735/441",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:146735#444",
+      "status": "no-action",
+      "author": "smarthomesven",
+      "link": "https://community.homey.app/t/146735/444",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:146735#447",
+      "status": "no-action",
+      "author": "smarthomesven",
+      "link": "https://community.homey.app/t/146735/447",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:146735#448",
+      "status": "no-action",
+      "author": "Bubiai_2",
+      "link": "https://community.homey.app/t/146735/448",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:146735#450",
+      "status": "needs-info",
+      "author": "Reidar_Skuland",
+      "link": "https://community.homey.app/t/146735/450",
+      "mfrs": [],
+      "pids": [],
+      "why": "request-no-identity"
+    },
+    {
+      "id": "forum:146735#453",
+      "status": "no-action",
+      "author": "Reidar_Skuland",
+      "link": "https://community.homey.app/t/146735/453",
+      "mfrs": [],
+      "pids": [],
+      "images": 3,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:146735#455",
+      "status": "no-action",
+      "author": "kaylan",
+      "link": "https://community.homey.app/t/146735/455",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:154077#369",
+      "status": "no-action",
+      "author": "Kringloper",
+      "link": "https://community.homey.app/t/154077/369",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:154077#375",
+      "status": "no-action",
+      "author": "Andi",
+      "link": "https://community.homey.app/t/154077/375",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:154077#379",
+      "status": "needs-info",
+      "author": "Anthony_Cherpeau",
+      "link": "https://community.homey.app/t/154077/379",
+      "mfrs": [],
+      "pids": [],
+      "why": "request-no-identity"
+    },
+    {
+      "id": "forum:154077#383",
+      "status": "no-action",
+      "author": "Andi",
+      "link": "https://community.homey.app/t/154077/383",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:154077#386",
+      "status": "needs-info",
+      "author": "Andi",
+      "link": "https://community.homey.app/t/154077/386",
+      "mfrs": [],
+      "pids": [],
+      "why": "request-no-identity"
+    },
+    {
+      "id": "forum:154077#394",
+      "status": "no-action",
+      "author": "Andi",
+      "link": "https://community.homey.app/t/154077/394",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:154077#395",
+      "status": "no-action",
+      "author": "Kai_Dybvik",
+      "link": "https://community.homey.app/t/154077/395",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:154077#400",
+      "status": "no-action",
+      "author": "Andi",
+      "link": "https://community.homey.app/t/154077/400",
+      "mfrs": [],
+      "pids": [],
+      "images": 4,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:154077#401",
+      "status": "no-action",
+      "author": "Kai_Dybvik",
+      "link": "https://community.homey.app/t/154077/401",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:154077#405",
+      "status": "needs-info",
+      "author": "Sebastian_Klas",
+      "link": "https://community.homey.app/t/154077/405",
+      "mfrs": [],
+      "pids": [],
+      "why": "request-no-identity"
+    },
+    {
+      "id": "forum:154077#409",
+      "status": "no-action",
+      "author": "Sebastian_Klas",
+      "link": "https://community.homey.app/t/154077/409",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:154077#412",
+      "status": "no-action",
+      "author": "Sebastian_Klas",
+      "link": "https://community.homey.app/t/154077/412",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:154077#425",
+      "status": "no-action",
+      "author": "Dietrich_Kassner",
+      "link": "https://community.homey.app/t/154077/425",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:154077#430",
+      "status": "no-action",
+      "author": "Dietrich_Kassner",
+      "link": "https://community.homey.app/t/154077/430",
+      "mfrs": [],
+      "pids": [],
+      "images": 3,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:154077#441",
+      "status": "no-action",
+      "author": "Jeppe_Ladefoged",
+      "link": "https://community.homey.app/t/154077/441",
+      "mfrs": [],
+      "pids": [],
+      "images": 3,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:154077#442",
+      "status": "no-action",
+      "author": "Sebastian_Klas",
+      "link": "https://community.homey.app/t/154077/442",
+      "mfrs": [],
+      "pids": [],
+      "images": 2,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#366",
+      "status": "no-action",
+      "author": "Peter_Kawa",
+      "link": "https://community.homey.app/t/21313/366",
+      "mfrs": [],
+      "pids": [],
+      "images": 2,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#368",
+      "status": "needs-info",
+      "author": "Adrian_Rockall",
+      "link": "https://community.homey.app/t/21313/368",
+      "mfrs": [],
+      "pids": [],
+      "why": "request-no-identity"
+    },
+    {
+      "id": "forum:21313#376",
+      "status": "no-action",
+      "author": "Peter_Kawa",
+      "link": "https://community.homey.app/t/21313/376",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#383",
+      "status": "needs-info",
+      "author": "Jurgen_Heine",
+      "link": "https://community.homey.app/t/21313/383",
+      "mfrs": [],
+      "pids": [],
+      "why": "request-no-identity"
+    },
+    {
+      "id": "forum:21313#384",
+      "status": "needs-info",
+      "author": "Paul_W",
+      "link": "https://community.homey.app/t/21313/384",
+      "mfrs": [],
+      "pids": [],
+      "why": "request-no-identity"
+    },
+    {
+      "id": "forum:21313#393",
+      "status": "no-action",
+      "author": "Rudi_Hendrix",
+      "link": "https://community.homey.app/t/21313/393",
+      "mfrs": [],
+      "pids": [],
+      "images": 3,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#400",
+      "status": "needs-info",
+      "author": "Morad_Ahassad",
+      "link": "https://community.homey.app/t/21313/400",
+      "mfrs": [],
+      "pids": [],
+      "why": "diag-only"
+    },
+    {
+      "id": "forum:21313#402",
+      "status": "no-action",
+      "author": "Jurgen_Heine",
+      "link": "https://community.homey.app/t/21313/402",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#406",
+      "status": "no-action",
+      "author": "Peter_Kawa",
+      "link": "https://community.homey.app/t/21313/406",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#407",
+      "status": "no-action",
+      "author": "Martijn_Hoogenbosch",
+      "link": "https://community.homey.app/t/21313/407",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#408",
+      "status": "needs-info",
+      "author": "Jurgen_Heine",
+      "link": "https://community.homey.app/t/21313/408",
+      "mfrs": [],
+      "pids": [],
+      "why": "request-no-identity"
+    },
+    {
+      "id": "forum:21313#429",
+      "status": "needs-info",
+      "author": "kalpik",
+      "link": "https://community.homey.app/t/21313/429",
+      "mfrs": [],
+      "pids": [],
+      "why": "diag-only"
+    },
+    {
+      "id": "forum:21313#430",
+      "status": "needs-info",
+      "author": "Sjoerd1",
+      "link": "https://community.homey.app/t/21313/430",
+      "mfrs": [],
+      "pids": [],
+      "why": "diag-only"
+    },
+    {
+      "id": "forum:21313#432",
+      "status": "no-action",
+      "author": "Peter_Kawa",
+      "link": "https://community.homey.app/t/21313/432",
+      "mfrs": [],
+      "pids": [],
+      "images": 2,
+      "why": "no-identity"
+    },
+    {
+      "id": "forum:21313#439",
+      "status": "needs-info",
+      "author": "Sjoerd1",
+      "link": "https://community.homey.app/t/21313/439",
+      "mfrs": [],
+      "pids": [],
+      "images": 1,
+      "why": "diag-only"
+    },
+    {
+      "id": "forum:21313#441",
+      "status": "needs-info",
+      "author": "Sjoerd1",
+      "link": "https://community.homey.app/t/21313/441",
+      "mfrs": [],
+      "pids": [],
+      "why": "request-no-identity"
+    },
+    {
+      "id": "forum:21313#443",
+      "status": "needs-info",
+      "author": "Sjoerd1",
+      "link": "https://community.homey.app/t/21313/443",
+      "mfrs": [],
+      "pids": [],
+      "why": "diag-only"
     }
   ],
   "github": {
     "johan": {
-      "next": 541
+      "next": 556
     },
     "dlnraja": {
       "next": 1
@@ -14705,125 +15960,125 @@
   },
   "note": "Full-history sweep. Forum lastPost seeded from Daily digest #557 state (2026-10-02). Items rewritten in our words; SHAs only as evidence.",
   "lastChunk": {
-    "at": "2026-10-14T09:01:28.752Z",
+    "at": "2026-10-15T08:35:34.475Z",
     "advanced": 15,
     "rateLimited": false,
     "items": [
       {
-        "n": 526,
+        "n": 541,
         "status": "already-fixed",
-        "note": "closed issue; identities covered (TUYATEC-1uxx9cci)"
+        "note": "merged PR; identities covered (TS0601)"
       },
       {
-        "n": 527,
+        "n": 542,
         "status": "already-fixed",
-        "note": "closed issue; identities covered (_TZE200_3towulqd)"
+        "note": "closed issue; identities covered (_TZ3000_fukaa7nc)"
       },
       {
-        "n": 528,
+        "n": 543,
         "status": "already-fixed",
-        "note": "closed issue; identities covered (_TZ3000_imaccztn,_TZ3000_wkr3jqmr)"
+        "note": "closed issue; identities covered (_TZ3210_up3pngle)"
       },
       {
-        "n": 529,
+        "n": 544,
         "status": "already-fixed",
-        "note": "closed issue; identities covered (_TZ3000_q50zhdsc)"
+        "note": "open issue; identities covered (_TZE200_r32ctezx)"
       },
       {
-        "n": 530,
+        "n": 545,
         "status": "already-fixed",
-        "note": "closed issue; identities covered (_TZ3000_nosnx7im)"
+        "note": "open issue; identities covered (_TZE204_dqolcpcp)"
       },
       {
-        "n": 531,
+        "n": 546,
         "status": "already-fixed",
-        "note": "closed issue; identities covered (_TZ3000_xkap8wtb)"
+        "note": "open issue; identities covered (_TZB000_42ha4rsc)"
       },
       {
-        "n": 532,
+        "n": 547,
         "status": "already-fixed",
-        "note": "closed issue; identities covered (_TZ3000_ajkq2isy)"
+        "note": "closed issue; identities covered (_TZ3000_uaa99arv)"
       },
       {
-        "n": 533,
+        "n": 548,
         "status": "already-fixed",
-        "note": "closed issue; identities covered (_TZ3000_dowj6gyi)"
+        "note": "closed issue; identities covered (_TZ3000_zmy4lslw)"
       },
       {
-        "n": 534,
+        "n": 549,
         "status": "already-fixed",
-        "note": "merged PR; identities covered (historical)"
+        "note": "closed PR; identities covered (_TZ3000_nkcobies,_TZ3000_q50zhdsc)"
       },
       {
-        "n": 535,
+        "n": 550,
         "status": "already-fixed",
-        "note": "closed PR; identities covered (historical)"
+        "note": "closed issue; identities covered (_TZE204_qasjif9e)"
       },
       {
-        "n": 536,
+        "n": 551,
         "status": "already-fixed",
-        "note": "closed issue; identities covered (_TZ3210_hxtfthp5)"
+        "note": "closed PR; identities covered (_TZE204_qasjif9e)"
       },
       {
-        "n": 537,
+        "n": 552,
         "status": "already-fixed",
-        "note": "closed PR; identities covered (TS0601)"
+        "note": "closed PR; identities covered (_TZ3000_sj7jbgks)"
       },
       {
-        "n": 538,
+        "n": 553,
         "status": "already-fixed",
-        "note": "closed issue; identities covered (_TZE200_cirvgep4)"
+        "note": "closed issue; identities covered (_TZ3000_uwkja6z1)"
       },
       {
-        "n": 539,
-        "status": "no-action",
-        "note": "closed issue; no-identity"
+        "n": 554,
+        "status": "needs-info",
+        "note": "closed issue; request-no-identity; research or diag needed"
       },
       {
-        "n": 540,
-        "status": "already-fixed",
-        "note": "closed issue; identities covered (_TZ3000_hdopuwv6)"
+        "n": 555,
+        "status": "needs-info",
+        "note": "closed issue; diag-only; research or diag needed"
       }
     ],
     "forum": [
       {
         "tid": "140352",
-        "from": 282,
-        "to": 361,
+        "from": 362,
+        "to": 441,
         "scanned": 80,
-        "recorded": 23,
+        "recorded": 28,
         "rateLimited": false
       },
       {
         "tid": "26439",
-        "from": 4630,
-        "to": 4711,
+        "from": 4712,
+        "to": 4792,
         "scanned": 80,
-        "recorded": 36,
+        "recorded": 26,
         "rateLimited": false
       },
       {
         "tid": "146735",
-        "from": 295,
-        "to": 376,
+        "from": 377,
+        "to": 456,
         "scanned": 80,
-        "recorded": 11,
+        "recorded": 15,
         "rateLimited": false
       },
       {
         "tid": "154077",
-        "from": 286,
-        "to": 365,
+        "from": 366,
+        "to": 447,
         "scanned": 80,
-        "recorded": 25,
+        "recorded": 16,
         "rateLimited": false
       },
       {
         "tid": "21313",
-        "from": 283,
-        "to": 363,
+        "from": 364,
+        "to": 444,
         "scanned": 80,
-        "recorded": 18,
+        "recorded": 17,
         "rateLimited": false
       },
       {
@@ -14844,9 +16099,9 @@
     "previousNext": 31
   },
   "stats": {
-    "already-fixed": 572,
-    "needs-info": 240,
-    "no-action": 315,
+    "already-fixed": 599,
+    "needs-info": 284,
+    "no-action": 361,
     "pending": 2,
     "fixed": 2,
     "deferred": 1
