@@ -21,6 +21,9 @@ const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..', '..');
 const APPLY = process.argv.includes('--apply');
+/** Contre quoi: Johan dump cartesian must not blast 40+ pids onto one mfr (P2570 2026-10-16). */
+const FORCE_MEDIUM = process.argv.includes('--force-medium');
+const MAX_NEW_PIDS = 8;
 const DUMP_DIR = path.join(ROOT, '.github', 'state', 'johan-dump');
 const OUT_DIR = path.join(ROOT, 'reports', `johan-complementary-${new Date().toISOString().slice(0, 10)}`);
 
@@ -197,6 +200,15 @@ function applyToDriver(driverId, mfrs, pids, byMfr) {
   const addedMfr = (after.zigbee.manufacturerName?.length || 0) - (before.zigbee.manufacturerName?.length || 0);
   const addedPid = (after.zigbee.productId?.length || 0) - (before.zigbee.productId?.length || 0);
   if (addedMfr === 0 && addedPid === 0) return { ok: true, changed: false };
+  if (addedPid > MAX_NEW_PIDS && !FORCE_MEDIUM) {
+    return {
+      ok: false,
+      reason: 'pid_cartesian_blast',
+      addedMfr,
+      addedPid,
+      hint: `refuse +${addedPid} pids (max ${MAX_NEW_PIDS}); use --force-medium only after couple audit`,
+    };
+  }
   if (APPLY) {
     fs.writeFileSync(fp, `${JSON.stringify(after, null, 2)}\n`);
   }

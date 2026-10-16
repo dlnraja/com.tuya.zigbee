@@ -25,6 +25,9 @@ describe('P2570 Johan complementary enrich', () => {
     assert.ok(src.includes('neverInventPid') || src.includes('Never invent'));
     assert.ok(src.includes('forumPost: false') || src.includes('never forum POST'));
     assert.ok(src.includes('appendExactIdentityForms'));
+    assert.ok(src.includes('pid_cartesian_blast'));
+    assert.ok(src.includes('MAX_NEW_PIDS'));
+    assert.ok(src.includes('--force-medium'));
   });
 
   it('Johan DP + helpers libraries remain in runtime', () => {
