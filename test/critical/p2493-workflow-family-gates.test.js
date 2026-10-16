@@ -1,8 +1,8 @@
 'use strict';
 
 /**
- * P2493 — Contre quoi: family gates (p244x/p246x/p248x/p249x/p257x/p283x) drift out of
- * hard CI workflows while package.json scripts still exist.
+ * P2493 — Contre quoi: family gates (p244x/p246x/p248x/p249x/p257x/p283x incl. P2842)
+ * drift out of hard CI workflows while package.json scripts still exist.
  *
  * WHY(P215):
  * - Pourquoi: P2491/P2492 landed only on unified-ci; validate/pr-gate/publish skipped them
@@ -44,6 +44,9 @@ describe('P2493 workflow family gate wiring', () => {
       assert.ok(pkg.scripts[s], `missing npm script ${s}`);
     }
     assert.ok(pkg.scripts['check:p2493'], 'missing check:p2493');
+    // WHY(P2842): p283x must keep hollow/payload/couple heal in the free family chain
+    assert.ok(pkg.scripts['check:p283x'].includes('check:p2842'), 'p283x must include p2842');
+    assert.ok(pkg.scripts['check:p2842'], 'missing check:p2842');
   });
 
   it('hard workflows wire all family gates (incl. p283x)', () => {

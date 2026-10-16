@@ -181,6 +181,12 @@ jobs:
       - name: P2286–P2288 + P2495 publish path aggregator
         run: npm run check:publish
 
+      # WHY(P2842): free hang prevention — backups bloat + lean size before Athom upload
+      - name: P2840/P2842 publish payload size gate (hard)
+        run: |
+          npm run check:p2840
+          node tools/ci/p2842-flow-publish-self-heal.js
+
       - name: P217 fork harvest sacred-couple gate
         run: node tools/ci/p217-fork-harvest-gate.js
 

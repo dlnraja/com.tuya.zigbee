@@ -151,6 +151,7 @@ jobs:
           npm run check:p249x || echo "P249x soft warn"
           npm run check:p257x || echo "P257x soft warn"
           npm run check:p283x || echo "P283x soft warn"
+          npm run check:p2842 || echo "P2842 soft warn"
           npm run check:p2580 || echo "P2580 soft warn"
 
       - name: "Enrichment gates (SHADOW — soft)"

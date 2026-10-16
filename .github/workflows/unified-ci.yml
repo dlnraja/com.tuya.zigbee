@@ -152,6 +152,10 @@ jobs:
       - name: 🛡️ Sacred couple registry audit (P151)
         run: node tools/ci/audit-sacred-couple.js --from-registry
 
+      # WHY(P2842): free hang + hollow automation (no paid AI)
+      - name: 🛡️ P2842 flow/publish self-heal check
+        run: node tools/ci/p2842-flow-publish-self-heal.js
+
       - name: 🛡️ Dual-claim compose gate (P167/P168)
         run: node tools/ci/dual-claim-compose-gate.js
 

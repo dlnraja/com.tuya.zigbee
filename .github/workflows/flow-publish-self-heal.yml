@@ -1,0 +1,123 @@
+# P2842 — Free flow + publish payload self-heal (no paid AI)
+# Automates Contre quoi from P2839 hollow flows, P2840 backups bloat, P2841 zo0cfekv couple.
+# Never forum POST. Deterministic local Node only (forfait).
+name: Flow + Publish Self-Heal (P2842)
+
+on:
+  schedule:
+    # Tue/Fri 05:25 UTC — clear of peer-compose Mon/Thu 06:10, blakadder 04:15
+    - cron: '25 5 * * 2,5'
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: 'Apply safe auto-fixes (ignore backups, zo0cfekv TS0601, strip bulb SONOFF)'
+        required: false
+        type: boolean
+        default: true
+      skip_commit:
+        description: 'Skip git commit even if apply=true'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: flow-publish-self-heal
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  NODE_VERSION: '22'
+  AI_PLAN_MODE: 'forfait'
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  AI_ALLOW_PAID: 'false'
+  AI_ENSEMBLE: 'false'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
+  FORUM_AUTO_POST: '0'
+  SHADOW_FORUM: '1'
+  DISCOURSE_WRITE: '0'
+
+jobs:
+  heal:
+    name: P2842 flow/publish heal
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    if: ${{ vars.FLOW_PUBLISH_HEAL_DISABLED != 'true' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: npm ci
+        run: |
+          if [ -f package-lock.json ]; then npm ci --ignore-scripts; else npm install --ignore-scripts; fi
+
+      - name: P2842 self-heal (check or apply)
+        id: heal
+        env:
+          HEAL_APPLY: ${{ github.event_name == 'workflow_dispatch' && inputs.apply == false && '0' || '1' }}
+        run: |
+          set -euo pipefail
+          if [ "${HEAL_APPLY}" = "1" ]; then
+            node tools/ci/p2842-flow-publish-self-heal.js --apply || true
+            # Re-check hard after apply (hollow still fail-closed)
+            node tools/ci/p2842-flow-publish-self-heal.js
+          else
+            node tools/ci/p2842-flow-publish-self-heal.js
+          fi
+          DATE=$(date -u +%F)
+          echo "## P2842 Flow/Publish Self-Heal" >> "$GITHUB_STEP_SUMMARY"
+          head -n 60 "reports/flow-publish-heal-$DATE/REPORT.md" >> "$GITHUB_STEP_SUMMARY" 2>/dev/null || true
+
+      - name: Contre quoi gates (soft family)
+        continue-on-error: true
+        run: |
+          npm run check:p2839 || echo "P2839_SOFT"
+          npm run check:p2840 || echo "P2840_SOFT"
+          npm run check:p2841 || echo "P2841_SOFT"
+          npm run check:p2842 || echo "P2842_SOFT"
+
+      - name: Upload heal reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: flow-publish-heal
+          path: reports/flow-publish-heal-*/
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Commit safe fixes [skip ci]
+        if: always() && steps.heal.outcome == 'success' && inputs.skip_commit != true && (github.event_name == 'schedule' || inputs.apply != false)
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A .homeyignore drivers/wall_switch_3gang_1way/driver.compose.json drivers/bulb_rgbw/driver.compose.json reports/flow-publish-heal-*/ || true
+          # Drop backups if untracked/removed
+          git add -u backups 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No heal commit needed"
+            exit 0
+          fi
+          git pull --rebase origin master || true
+          git commit -m "chore(heal): P2842 flow/publish payload self-heal [skip ci]" || true
+          git push origin HEAD:master || true
