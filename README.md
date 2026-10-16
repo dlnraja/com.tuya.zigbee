@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1503 |
+| **App Version** | v9.0.1504 |
 | **Drivers** | 449 (396 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,840 |
 | **Pairing Variants** | 19,000 (4 case combos per fingerprint) |
@@ -41,7 +41,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 6,105 |
 | **Unique Capabilities** | 176 |
 | **Native OTA Drivers** | 9 |
-| **Test Suites** | 663 files |
+| **Test Suites** | 664 files |
 | **SVG Icons** | 752 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -103,6 +103,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1504** | Free CI automation: flow hollow + publish payload self-heal cron (P2842), no paid AI. |
 | **v9.0.1503** | Sacred couple: Moes Star Feather zo0cfekv+TS0601 on wall 3-gang; CI density + SONOFF bulb cleanup. |
 | **v9.0.1502** | Publish payload slim: exclude root backups/ (~12 MB) from Homey package to reduce Athom socket hang up risk. |
 | **v9.0.1501** | Unblock CI: remove duplicate boiler_switch_energy flow conditions (driver compose vs global .homeycompose). |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1495** | Moes and Zemismart actions merge ZCL, raw, Tuya DP and soft DP detect without degrading zcl-only couples. |
 | **v9.0.1494** | Complementary enrich from Johan multi-branch + Lidl (UNION only, no wipe). |
 | **v9.0.1493** | Clear TZE284 nkjintbl from app.json switch_2gang so publish gates pass (Athom processing path). |
-| **v9.0.1492** | Unblock Auto-Publish: strip ambiguous TZE284 nkjintbl from switch_2gang (anti-bot / Athom processing path). |
 
 <!-- CHANGELOG_END -->
 
