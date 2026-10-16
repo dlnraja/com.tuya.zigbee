@@ -1,0 +1,196 @@
+[
+  {
+    "n": 2238,
+    "user": "Peter_van_Werkhoven",
+    "mfr": [],
+    "pid": [],
+    "text": "Hi Dylan Good evening, after your last update still no battery reading and History tab on the Smartbutton. Also Deleted it, restarted Homey and re-add the Smartbutton but no changes 1000046400 1220×2712 205 KB 1000046401 1220×2712 76.1 KB Diagnostic code 77394256-0235-480f-b44b-0ee1db16ba6f Thanks and have a nice evening, regards Peter."
+  },
+  {
+    "n": 2239,
+    "user": "Peter_van_Werkhoven",
+    "mfr": [],
+    "pid": [],
+    "text": "Hi Dylan Good morning you fixed it again got Battery readings again from Smartbutton only still no History tab but that’s not so important. Diagnostic code b8b78521-047e-4e3d-a5f7-6489a564377b 1000046416 1220×2712 82.5 KB Thanks a lot for all the fixes and have a beautiful day, best regards Peter."
+  },
+  {
+    "n": 2240,
+    "user": "VicHY",
+    "mfr": [],
+    "pid": [],
+    "text": "Thanks @dlnraja for the updates. It seems the relay type doesn’t change on its own anymore as long as I don’t update the app, so I’ve disabled automatic updates. But, when I configure flows, if I try to trigger a flow upon detecting human presence, the trigger doesn’t fire, even though the sensor does indicate that it detects human presence. My impression is that it isn’t interpreting the presence correctly and passing that information to the “presence detected” card. 124820 1080×2352 183 KB 74e5cae7-dcf6-467d-a019-16e47fc49967"
+  },
+  {
+    "n": 2241,
+    "user": "VicHY",
+    "mfr": [],
+    "pid": [],
+    "text": "Hi @dlnraja , even though I have updates blocked, the sensor has changed type again and stopped working. It stopped working right around the time a new version was released, even though the app on my Homey hasn’t actually updated… Thanks a lot; let me know if you need me to provide any details. Regards."
+  },
+  {
+    "n": 2242,
+    "user": "dlnraja",
+    "mfr": [],
+    "pid": [],
+    "text": "Hi @VicHY , Homey can flip that radar to “curtain” even when the app doesn’t update (old caps come back from Homey’s store). Blocking updates left you without the heal. Please unlock updates once, install Test ≥ 9.0.995, then restart the app. Wait 2–3 minutes — if it’s still curtain, remove + re-pair as Presence Sensor Radar. If it comes back, send diagnostic + the app version shown on the device. Thanks."
+  },
+  {
+    "n": 2243,
+    "user": "VicHY",
+    "mfr": [],
+    "pid": [],
+    "text": "Hi @dlnraja I have created the diags logs using the latest available version (9.0.992). The code is b84526bg-ec5b-45a3-b9e8-23f197401089. I am not at home right now; I will try testing it this afternoon when I get back. Thanks for the quick response and the assistance."
+  },
+  {
+    "n": 2244,
+    "user": "Michaelp",
+    "mfr": [
+      "_TZE284_ogx8u5z6",
+      "_TZE284_ne4pikwm"
+    ],
+    "pid": [
+      "TS0601"
+    ],
+    "text": "Hi @dlnraja I’m trying to add a Tuya Zigbee thermostatic radiator valve to Universal Tuya Zigbee on Homey Pro. Device: ZG253 thermostatic radiator valve Model ID: TS0601 Manufacturer: _TZE284_ogx8u5z6 The device pairs successfully with Homey but Universal Tuya adds it as an unknown/generic Zigbee device. The Homey interview confirms the Tuya 0xEF00 cluster. Another _TZE284 TS0601 radiator valve ( _TZE284_ne4pikwm ) already appears to be supported by the TRV driver, so I’m hoping this variant can be mapped to the same or a similar driver. I can provide any additional diagnostic/logs needed. Thanks! Device interview: Summary \"ids\": { \"modelId\": \"TS0601\", \"manufacturerName\": \"_TZE284_ogx8u5z6\" }, \"endpoints\": { \"ieeeAddress\": \"a4:c1:38:1b:8c:68:e6:51\", \"networkAddress\": 40213, \"modelId\": \"TS0601\", \"manufacturerName\": \"_TZE284_ogx8u5z6\", \"endpointDescriptors\": [ { \"status\": \"SUCCESS\", \"nwkAd"
+  },
+  {
+    "n": 2245,
+    "user": "SunBeech",
+    "mfr": [],
+    "pid": [],
+    "text": "Please consider using the following to increase readability of your post: Preformatted text option to keep the output in the original format and presented in a scrollable window. This reduces the length of your post. Hide details option, to collapse/hide the entire interview output. Clicking the collapsed item will show the interview output again. IMG_2409 1227×730 70.1 KB"
+  },
+  {
+    "n": 2246,
+    "user": "VicHY",
+    "mfr": [],
+    "pid": [],
+    "text": "Hi @dlnraja , I tried deleting the app and installing a new version (9.0.1016). I re-added the devices and noticed that they are now recognized with some additional data. Initially, it seems to detect presence, motion, brightness, and detection distance. Shortly after, however, it stops detecting presence and motion; while brightness and distance readings might change slightly if you enter the bathroom or turn on a light, the variation is minimal and doesn’t seem to reflect reality. For the time being, at least, it appears the sensor isn’t updating, and the type is switching to “curtain.” The code is: 546914c2-3bb9-442e-87bd-bdc0a5777 Thank you so much"
+  },
+  {
+    "n": 2247,
+    "user": "VicHY",
+    "mfr": [],
+    "pid": [],
+    "text": "Hi again @dlnraja photo_2026-09-17 22.35.38 587×1280 62.4 KB photo_2026-09-17 22.35.51 587×1280 78.9 KB photo_2026-09-17 22.35.27 587×1280 65.7 KB , the sensor has updated and is now performing worse. I have them installed in two bathrooms, but only one has updated (the one that had been synchronized the longest). The button to turn the sensor on or off has disappeared, as you can see in the images showing both units. I am also attaching an image showing the data it captures. It constantly detects presence and motion, even when no one is there. The code is: 8d9d0199-4da0-47c8-9788-6af5a827dff4. Thanks again."
+  },
+  {
+    "n": 2249,
+    "user": "dlnraja",
+    "mfr": [
+      "_TZE204_dtzziy1e"
+    ],
+    "pid": [],
+    "text": "Hi @VicHY , The behavior you are describing actually points to two distinct issues overlapping—a Homey cache bug, and the physical calibration of the MTG075 radar itself. Here are a few investigation tracks to help us isolate the problem: The “Curtain” Type Bug: As mentioned earlier, Homey sometimes pulls old cached capabilities, forcing the device to switch to a curtain controller. If it stays as a curtain after updating to the latest test version and waiting a few minutes, you will need to remove and re-pair it specifically as a “Presence Sensor Radar” to force the correct driver to load. Stuck in “Occupied” Mode: When you mention it stops detecting presence/motion while lux and distance still fluctuate slightly, it highly suggests the sensor is actually stuck in the “Occupied” (Presence = true) state. Because it never returns to “Unoccupied”, it cannot trigger any new presence or moti"
+  },
+  {
+    "n": 2250,
+    "user": "VicHY",
+    "mfr": [],
+    "pid": [],
+    "text": "Good morning @dlnraja , First of all, thank you very much for your effort and patience. This morning I installed the latest version (9.0.1037), and I had to use the Repair option on both sensors before they updated correctly. I tested them afterwards, and only one of the bathrooms was detecting presence properly. On the other sensor, the Human Presence and Motion parameters were continuously showing “No” , even though both bathrooms have exactly the same configuration. I ran the Repair process again, and for now both sensors seem to be detecting motion and presence correctly. They have been working for a couple of hours without issues. I’m not at home right now, but at least I can see that neither of them has switched back to Curtain mode yet. I’ve also noticed that the illuminance and distance detection values now seem to be correct. Previously, even with the bathroom lights on, the sen"
+  },
+  {
+    "n": 2251,
+    "user": "dlnraja",
+    "mfr": [],
+    "pid": [],
+    "text": "Hi @VicHY , That is fantastic news! The “Repair” action successfully flushed the bad cache from Homey, which explains why your Lux and distance readings are finally accurate and why it stopped reverting to a Curtain device. Your current settings (Sensitivity at 5, Departure at 20s) are a very solid baseline for a bathroom environment. If you ever experience “ghost presence” again once you turn the exhaust fan back on, try slightly reducing the sensitivity to 4 or 3. I am currently finalizing the code for the “Ultimate Software Shield” update. Once it passes my local testing, I will push it to the Test channel and ping you here so you can try it out. Enjoy your stable sensors in the meantime, and thank you for the detailed feedback!"
+  },
+  {
+    "n": 2252,
+    "user": "VicHY",
+    "mfr": [],
+    "pid": [],
+    "text": "Good morning @dlnraja , I can see that the app has been updated to version 9.0.1053 , and the sensors have become misconfigured again, remaining stuck with presence and motion detection active. It also seems that the distance and lux readings are not correct, or they are reporting unusual values. When I get back home, I will try repairing them and check how they behave with the new version. Thank you very much. image 293×740 30.6 KB"
+  },
+  {
+    "n": 2253,
+    "user": "Michaelp",
+    "mfr": [
+      "_TZE284_ogx8u5z6"
+    ],
+    "pid": [
+      "TS0601"
+    ],
+    "text": "Hi @dlnraja after the latest Universal Tuya update my ZG253 TRV is now correctly detected as a radiator TRV (thanks!), but none of the capabilities work Universal Tuya version: 9.0.1055 Model ID: TS0601 Manufacturer: _TZE284_ogx8u5z6 Device: ZG253 Tuya Zigbee thermostatic radiator valve In Homey, target temperature, measured temperature, battery, thermostat mode etc. all remain empty/null. When trying to change the target temperature I get this error: tuya.datapoint: value is an unexpected property Diagnostic report ID: 6eabd9c4-cd9c-4090-ba8d-3937d35de7ca The Homey Zigbee interview confirms the Tuya manufacturer-specific cluster 0xEF00 . I can provide the full interview if needed."
+  },
+  {
+    "n": 2254,
+    "user": "VicHY",
+    "mfr": [],
+    "pid": [],
+    "text": "Good morning @dlnraja , I’ve been testing the sensor since Friday, and to be honest, I haven’t managed to get it to detect me all weekend, :S. I kept updating the app as you released new versions to see if that would fix it, but no luck… If I re-pair or reinstall the sensor, it detects it as “presence”, but no data changes (presence, motion, and lux stay frozen at 10 lux, and distance/meters stay fixed too). After a while, it switches to curtain mode and stays stuck detecting presence and motion, just like before. I tried the new advanced settings features, and I can restart it without having to press the physical button to get it detected as a presence sensor again. However, I was already able to do this manually by enabling the “Clear presence now” button and then disabling it again. Attached is the diagnostics code: af98752d-f02e-4e74-a06e-ab8c025534bf Thank you very much!"
+  },
+  {
+    "n": 2255,
+    "user": "VicHY",
+    "mfr": [],
+    "pid": [],
+    "text": "Hello again @dlnraja Additionally, I’ve noticed that the Homey app is running slower within Advanced Flows. When I move a card, there is a noticeable lag, and the presence sensor cards seem to continuously disappear and reload. I tried uninstalling the most recent apps I installed, but the issue persists. Because of this, I suspect it might be related to the latest updates for ‘Universal Tuya’ and that continuous refreshing required for the sensor to detect properly. I also tried disabling the app (without uninstalling it), but I haven’t been able to resolve the lagging issue. Best regards"
+  },
+  {
+    "n": 2256,
+    "user": "dlnraja",
+    "mfr": [],
+    "pid": [],
+    "text": "I will Check asap"
+  },
+  {
+    "n": 2257,
+    "user": "meter91",
+    "mfr": [],
+    "pid": [],
+    "text": "@dlnraja is is possible to make support for a ZG-106Z / TZ3000_7y90pany luminance sensor?"
+  },
+  {
+    "n": 2258,
+    "user": "EdP",
+    "mfr": [],
+    "pid": [],
+    "text": "Hi, Could you add support for the AOYAN AY-303Z Zigbee soil moisture sensor? It’s a white-label version of the HOBEIAN ZG-303Z, so hopefully it only needs its fingerprint added to the existing soil sensor driver. Device info: Manufacturer name: “AOYAN” Model ID: AY-303Z Endpoint 1: profile 260, device type 770 Input clusters: 0x0000, 0x0001, 0x0003, 0x0402, 0x0405, 0xEF00 Output clusters: 0x0003 Zigbee2MQTT handles it in the same definition as the ZG-303Z (zigbeeModel: ZG-303Z / AY-303Z / AY-302Z, COOLO CS-201Z). A ZHA quirk for the AY-303Z is also in progress (zigpy/zha-device-handlers PR #5352 ). One thing to be aware of: the native humidity cluster (0x0405) reports the soil moisture value, while the real ambient humidity comes from DP 109. Currently it pairs as a generic Zigbee device on my Homey SHS. I couldn’t get a full Zigbee interview: it keeps timing out because it’s a sleepy ba"
+  },
+  {
+    "n": 2259,
+    "user": "Peter_van_Werkhoven",
+    "mfr": [],
+    "pid": [],
+    "text": "Hi Dylan Good afternoon, the app crashes again. Diagnostic code c05db40d-b7f1-4f31-9ec1-4c75b714e10d 1000047678 1220×2712 216 KB Good luck Best regards Peter"
+  },
+  {
+    "n": 2260,
+    "user": "Peter_van_Werkhoven",
+    "mfr": [],
+    "pid": [],
+    "text": "Hi Dylan Good evening, the app is working fine again, no more crashes 1000047938 1220×2712 175 KB Thanks for fixing and have a nice night. Best regards Peter."
+  },
+  {
+    "n": 2261,
+    "user": "marosk",
+    "mfr": [
+      "_TZE200_fl8cuafl"
+    ],
+    "pid": [
+      "TS0601"
+    ],
+    "text": "Hi, Could you please add support for this Tuya Zigbee Radiator Thermostat (TRV)? It is sold by a local (Slovak) brand called ANTIK (model ATK-TRV02), but it pairs incorrectly as a Generic “socket” with a virtual driver on my Homey Pro 2026. Here is the data from Developer Tools: Property: Value ID: c6d8ee46-b7b4-42cf-93e0-0e9294d59ce7 Name: Zigbee Device Class: socket (paired incorrectly, it is a TRV thermostat) Driver: homey:virtualdriverzigbee:driver Ready: Yes Available: Yes Warning: No Settings: zb_product_id: “TS0601” zb_manufacturer_name: “_TZE200_fl8cuafl” zb_device_type: “enddevice” Thank you very much for fixing the fingerprint mapping to a Thermostat!"
+  },
+  {
+    "n": 2262,
+    "user": "Istvan_Mag",
+    "mfr": [],
+    "pid": [],
+    "text": "Hi I m new in this topic! Please help me to find which device i need use for this 4in1 sensor, not clearly to find the right one, or maybe need to add support this device?!?! Thank’s a lot Best regards Istvan image 640×698 49.8 KB image 639×820 26.7 KB"
+  },
+  {
+    "n": 2263,
+    "user": "Kizabgd",
+    "mfr": [
+      "_TZE284_9ern5sfh"
+    ],
+    "pid": [
+      "TS0601"
+    ],
+    "text": "Hi I can’t add Tuya Convenient Digital LCD Indoor Zigbee Temperature ( _TZE284_9ern5sfh / TS0601 ) Even though I select the dedicated “ Add LCD Temperature &amp; Humidity Sensor ” option, Homey completely rejects the driver and throws the error: “Unknown Zigbee Device added - The device has been added as an Unknown Zigbee device, because there currently is no compatible Homey app available.” image 487×390 13.1 KB I have the latest ver of Universal Tuya. However, in Homey Developer Tools , it does show up in the Zigbee table as a generic “ Zigbee Device ” with active TX/RX packets, but with no functional capabilities."
+  }
+]

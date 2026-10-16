@@ -677,7 +677,8 @@
     "check:p2816": "node --test test/critical/p2816-button-release-flow-heuristics.test.js",
     "check:p2823": "node --test test/critical/p2823-forum-lcd-trv-unknown.test.js",
     "check:p2824": "node --test test/critical/p2824-forum-flows-gnpflcoq-usb.test.js",
-    "check:p2825": "node --test test/critical/p2825-wilhelm-ncw88jfq-lcd-ef00-th.test.js"
+    "check:p2825": "node --test test/critical/p2825-wilhelm-ncw88jfq-lcd-ef00-th.test.js",
+    "check:p2826": "node --test test/critical/p2826-forum-t140352-fleet-flows.test.js"
   },
   "keywords": [
     "homey",

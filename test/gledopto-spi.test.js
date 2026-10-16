@@ -51,13 +51,17 @@ describe('Tuya multi-DP single frame (GL-SPI-206P burst guard)', () => {
   it('returns false without any EF00 path (caller falls back per DP)', async () => {
     assert.strictEqual(await sendMultiDp({ zclNode: { endpoints: {} } }, [{ dp: 1, value: true, type: 'bool' }]), false);
   });
-  it('profile lists every manifest capability (no remove/re-add at boot) and flow compose is explicit empty', () => {
+  it('profile lists every manifest capability (no remove/re-add at boot) and brightness_changed is declared', () => {
     // Class lives in lib/ (fold host led_controller_rgb reuses it); CAPS is the boot profile.
+    // WHY(P2826/P2449): brightness_changed must stay declared⇒wirable (not empty compose).
     const src = fs.readFileSync(path.join(root, 'lib/devices/LedControllerSpiTuyaDevice.js'), 'utf8');
     const caps = JSON.parse(src.match(/const CAPS = (\[[^\]]+\])/)[1].replace(/'/g, '"'));
     assert.ok(/capabilities: CAPS/.test(src));
     for (const c of compose('led_controller_spi_tuya').capabilities) {assert.ok(caps.includes(c), c);}
     const flow = JSON.parse(fs.readFileSync(path.join(root, 'drivers/led_controller_spi_tuya/driver.flow.compose.json'), 'utf8'));
-    assert.deepStrictEqual(flow, { triggers: [], conditions: [], actions: [] });
+    assert.ok(Array.isArray(flow.triggers));
+    assert.ok(flow.triggers.some((t) => t.id === 'led_controller_spi_tuya_brightness_changed'));
+    assert.deepStrictEqual(flow.conditions || [], []);
+    assert.deepStrictEqual(flow.actions || [], []);
   });
 });

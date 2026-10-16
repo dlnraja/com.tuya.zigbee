@@ -13,6 +13,25 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
   }
 
   _registerFlowCards() {
+    // WHY(P2826): warm all declared WHEN cards (Istvan 4in1 / VicHY AF lag)
+    for (const id of [
+      'motion_sensor_radar_mmwave_presence_detected',
+      'motion_sensor_radar_mmwave_presence_cleared',
+      'motion_sensor_radar_mmwave_motion_detected',
+      'motion_sensor_radar_mmwave_no_motion',
+      'motion_sensor_radar_mmwave_illuminance_changed',
+      'motion_sensor_radar_mmwave_temperature_changed',
+      'motion_sensor_radar_mmwave_humidity_changed',
+      'motion_sensor_radar_mmwave_target_distance_changed',
+      'motion_sensor_radar_mmwave_battery_low',
+      'motion_sensor_radar_mmwave_battery_changed',
+      'motion_sensor_radar_mmwave_distance_changed',
+      'motion_sensor_radar_mmwave_temp_changed',
+      'motion_sensor_radar_mmwave_lux_changed',
+    ]) {
+      try { this.homey.flow.getDeviceTriggerCard(id); } catch (_e) { /* soft */ }
+    }
+
     const conditionCards = [
       {
         id: 'motion_sensor_radar_mmwave_is_presence_detected',
