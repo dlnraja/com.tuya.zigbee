@@ -206,16 +206,18 @@ class ClimateSensorDevice extends UnifiedSensorBase {
       2: {
         capability: 'measure_humidity',
         transform: (v) => {
-          // v5.5.792: Auto-detect divisor based on value range
-          // If value > 100, it's likely Ã—10 scaled (e.g., 650  65.0%)
-          if (v > 100) {return Math.round(v);}
+          // v5.5.792 / P2825: Auto-detect divisor — values >100 are ×10 (650→65%)
+          // Never return raw 650 (fails HUMIDITY_MAX and leaves UI empty).
+          if (v > 1000) {return Math.round(v / 100);}
+          if (v > 100) {return Math.round(v / 10);}
           return v;
         }
       },
       7: {
         capability: 'measure_humidity',
         transform: (v) => {
-          if (v > 100) {return Math.round(v);}
+          if (v > 1000) {return Math.round(v / 100);}
+          if (v > 100) {return Math.round(v / 10);}
           return v;
         }
       },
@@ -277,6 +279,20 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
     if (CI.startsWithCI(mfr, '_tze284')) {return 'TUYA_DP_LCD';}      // LCD with Tuya epoch
     if (CI.startsWithCI(mfr, '_tze200')) {return 'TUYA_DP';}          // Standard Tuya DP
     if (CI.startsWithCI(mfr, '_tze204')) {return 'TUYA_DP_ENHANCED';} // Enhanced Tuya DP
+
+    // WHY(P2825 / Wilhelm): LCD TS0201 clones (_TZ3210_ncw88jfq, _TZ3000_ywagc4rj)
+    // may pack T/H into single-EP EF00 while battery stays on powerCfg. Prefer HYBRID
+    // so ZCL ×10 humidity quirk AND DP1/DP2 mapping both stay live.
+    if (
+      CI.containsCI(mfr, 'ncw88jfq')
+      || CI.containsCI(mfr, 'ywagc4rj')
+      || CI.containsCI(mfr, 'isw9u95y')
+      || CI.containsCI(mfr, 'yupc0pb7')
+      || CI.containsCI(mfr, 'wol32olt')
+    ) {
+      return 'HYBRID';
+    }
+
     if (CI.startsWithCI(mfr, '_tz3000')) {return 'ZCL_STANDARD';}     // Pure ZCL
     if (CI.startsWithCI(mfr, '_tz3210')) {return 'ZCL_STANDARD';}     // Pure ZCL
 
