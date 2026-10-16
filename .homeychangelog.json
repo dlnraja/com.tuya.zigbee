@@ -907,18 +907,6 @@
       ]
     }
   ],
-  "9.0.1484": {
-    "en": "Improved Zigbee peer fingerprint coverage (Johan/Lidl complementary rewrite)."
-  },
-  "9.0.1483": {
-    "en": "Improved Zigbee device coverage from complementary peer fingerprint rewrite (Johan/Lidl)."
-  },
-  "9.0.1481": {
-    "en": "Reduced GitHub Action email spam; Auto-Publish watcher only on failures."
-  },
-  "9.0.1480": {
-    "en": "v9.0.1480: automated publish, manifest sync, and Homey test promotion."
-  },
   "9.0.1479": {
     "en": "v9.0.1479: automated publish, manifest sync, and Homey test promotion."
   },
@@ -964,7 +952,36 @@
   "9.0.1465": {
     "en": "v9.0.1465: automated publish, manifest sync, and Homey test promotion."
   },
+  "9.0.1464": {
+    "en": "v9.0.1464: automated publish, manifest sync, and Homey test promotion."
+  },
+  "9.0.1463": {
+    "en": "mfs soil exclusive align so 4in1 mmWave and ANTIK TRV publish."
+  },
+  "9.0.1462": {
+    "en": "4in1 mmWave pairs again (lean clusters); AOYAN soil no longer collides with water leak.",
+    "fr": "4in1 mmWave s'apparie a nouveau (clusters alleges); AOYAN sol ne collisionne plus avec fuite d'eau."
+  },
+  "9.0.1461": {
+    "en": "Fixed multi-button release Flow cards and TRV DP received trigger.",
+    "fr": "Correction des cartes Flow release multi-boutons et du trigger DP TRV."
+  },
+  "9.0.1480": {
+    "en": "v9.0.1480: automated publish, manifest sync, and Homey test promotion."
+  },
+  "9.0.1481": {
+    "en": "Reduced GitHub Action email spam; Auto-Publish watcher only on failures."
+  },
+  "9.0.1483": {
+    "en": "Improved Zigbee device coverage from complementary peer fingerprint rewrite (Johan/Lidl)."
+  },
+  "9.0.1484": {
+    "en": "Improved Zigbee peer fingerprint coverage (Johan/Lidl complementary rewrite)."
+  },
   "9.0.1485": {
-    "en": "v9.0.1485: automated publish, manifest sync, and Homey test promotion."
+    "en": "Reduced Homey tip email spam on Athom socket hang up (soft-expect hang-storm)."
+  },
+  "9.0.1486": {
+    "en": "Reduced Homey tip email spam on Athom socket hang up (soft-expect hang-storm)."
   }
 }

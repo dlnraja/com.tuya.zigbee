@@ -39,6 +39,16 @@ function decide({ version, builds, alreadyRetried, retryCount, idleWaited = fals
       ? (done >= MAX_TRANSIENT_RETRIES ? { retry: false, kind: 'invalid_state', reason: 'already a retry run' } : { retry: true, kind: 'invalid_state', reason: `invalid_state after idle wait on v${version}` })
       : { retry: false, kind: 'invalid_state', reason: 'invalid_state without completed idle wait, no retry' };
   }
+  // WHY(P2831): Homey tip #3581–#3584 — never bump-republish hangs/AggregateError when
+  // any build is already on Test (Athom flake ≠ content bug; more uploads = more tip spam).
+  const healthyTest = (builds || []).find((x) => String(x && x.state) === 'test');
+  if (healthyTest && (/AggregateError/i.test(meta) || TRANSIENT_RE.test(meta))) {
+    return {
+      retry: false,
+      kind: /socket hang up/i.test(meta) ? 'socket hang up' : (/AggregateError/i.test(meta) ? 'AggregateError' : 'transient'),
+      reason: `P2831 healthy Test #${healthyTest.id} v${healthyTest.version} — refuse hang republish (tip mail)`,
+    };
+  }
   if (/AggregateError/i.test(meta)) return { retry: true, kind: 'AggregateError', next: done + 1, reason: `AggregateError (flake check, retry ${done + 1}/${MAX_AGG_RETRIES}) on v${version}` };
   if (!TRANSIENT_RE.test(meta)) return { retry: false, kind: 'unknown', reason: `unknown failure: ${meta.slice(0, 120)}` };
   if (done >= MAX_TRANSIENT_RETRIES) return { retry: false, reason: 'already a retry run' };
