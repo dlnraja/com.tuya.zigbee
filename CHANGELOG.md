@@ -9,7 +9,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.1486] - 2026-10-16
+## [9.0.1488] - 2026-10-16
+
+Completed P283x unit tests and hard CI family gates (peer rewrite + hang tip anti-spam).
+---
+
+ [9.0.1486] - 2026-10-16
 
 Reduced Homey tip email spam on Athom socket hang up (soft-expect hang-storm).
 ---

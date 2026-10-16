@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1487 |
+| **App Version** | v9.0.1489 |
 | **Drivers** | 449 (396 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,799 |
 | **Pairing Variants** | 19,196 (4 case combos per fingerprint) |
@@ -103,7 +103,9 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.1487** | v9.0.1486: |
+| **v9.0.1489** | v9.0.1488: |
+| **v9.0.1488** | Completed P283x unit tests and hard CI family gates (peer rewrite + hang tip anti-spam). |
+| **v9.0.1487** | v9.0.1487: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1486** | Reduced Homey tip email spam on Athom socket hang up (soft-expect hang-storm). |
 | **v9.0.1485** | Reduced Homey tip email spam on Athom socket hang up (soft-expect hang-storm). |
 | **v9.0.1484** | Improved Zigbee peer fingerprint coverage (Johan/Lidl complementary rewrite). |
@@ -113,8 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1479** | v9.0.1479: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1478** | Aligned fingerprint DB after satellite sacred-couple locks; force Test republish. |
 | **v9.0.1477** | Hardened 3-button wall remotes and locked Moes/rain fingerprints after full forum satellite scan. |
-| **v9.0.1476** | Improved 2-button wall remotes and locked dimmer/radar fingerprints from community reports. |
-| **v9.0.1475** | Hardened presence and radar flow cards; kept LCD climate fingerprints in sync for Test builds. |
 
 <!-- CHANGELOG_END -->
 
