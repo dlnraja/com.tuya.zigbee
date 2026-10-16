@@ -132,8 +132,14 @@ function resolveDriver(mfr, pid, text, byMfr, mfs) {
     return { driverId: reg.canonicalDriver, reason: `registry:${reg.id || 'case'}`, confidence: 'high' };
   }
   const hits = byMfr.get(String(mfr).toLowerCase()) || [];
-  if (hits.length === 1) {
-    return { driverId: hits[0].driverId, reason: 'compose-mfr', confidence: 'high' };
+  // WHY P2830: mfr-only must NOT absorb cartesian issue pids (sacred couple).
+  if (hits.length === 1 && pid) {
+    const pidOn = (hits[0].pids || []).some((p) => String(p).toUpperCase() === String(pid).toUpperCase());
+    if (pidOn) {
+      return { driverId: hits[0].driverId, reason: 'compose-couple', confidence: 'high' };
+    }
+    // Same mfr, new pid → soft only (peer compose / registry / --force-medium).
+    return { driverId: hits[0].driverId, reason: 'compose-mfr-new-pid', confidence: 'medium' };
   }
   if (hits.length > 1 && pid) {
     const withPid = hits.filter((h) => (h.pids || []).some((p) => String(p).toUpperCase() === String(pid).toUpperCase()));
@@ -178,8 +184,13 @@ function harvest() {
 
   const devices = loadJson(path.join(DUMP, 'devices.json'), []);
   for (const d of devices) {
-    for (const m of d.mfrs || []) {
-      for (const p of d.pids || []) add(m, p, `johan-device:${d.issue}`, d.title);
+    const mfrs = d.mfrs || [];
+    const pids = d.pids || [];
+    // Contre quoi: full mfr×pid cartesian from noisy issue extract → wrong driver pids.
+    if (mfrs.length === 1 && pids.length === 1) {
+      add(mfrs[0], pids[0], `johan-device:${d.issue}`, d.title);
+    } else if (mfrs.length && pids.length && mfrs.length * pids.length <= 2) {
+      for (const m of mfrs) for (const p of pids) add(m, p, `johan-device:${d.issue}`, d.title);
     }
   }
 
@@ -298,10 +309,13 @@ function main() {
       skipped.push({ ...c, reason: 'unresolved' });
       continue;
     }
-    if (res.confidence === 'low' && !APPLY) {
-      // dry: list as soft-candidate; apply only medium+ unless --force-low
+    // Default apply = high only. Medium needs --force-medium; low needs --force-low.
+    if (res.confidence === 'low') {
       skipped.push({ ...c, reason: `soft:${res.reason}`, driverId: res.driverId });
       if (!process.argv.includes('--force-low')) continue;
+    } else if (res.confidence === 'medium') {
+      skipped.push({ ...c, reason: `soft-medium:${res.reason}`, driverId: res.driverId });
+      if (!process.argv.includes('--force-medium') && !process.argv.includes('--force-low')) continue;
     }
     if (/generic_tuya|zigbee_universal|unknown/i.test(res.driverId) && /TS0601/i.test(c.pid)) {
       skipped.push({ ...c, reason: 'refuse_ts0601_generic', driverId: res.driverId });

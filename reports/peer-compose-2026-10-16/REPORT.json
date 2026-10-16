@@ -1,0 +1,1401 @@
+{
+  "id": "P2830",
+  "mode": "apply",
+  "generatedAt": "2026-10-16T07:44:36.336Z",
+  "peerStats": [
+    {
+      "id": "johan-tuya-zigbee",
+      "branch": "SDK3",
+      "composeCount": 113,
+      "appDriverCount": 113,
+      "mappedDrivers": 90,
+      "unmapped": 0
+    },
+    {
+      "id": "lidl-smart-home",
+      "branch": "SDK3",
+      "composeCount": 21,
+      "appDriverCount": 21,
+      "mappedDrivers": 15,
+      "unmapped": 0
+    }
+  ],
+  "driversChanged": 65,
+  "applied": [
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "christmas_lights",
+      "peerDrivers": [
+        "christmas_lights"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 3,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "curtain_motor",
+      "peerDrivers": [
+        "curtain_motor"
+      ],
+      "mfrIn": 30,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 3,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "dimmable_led_strip",
+      "peerDrivers": [
+        "dimmable_led_strip"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "dimmable_recessed_led",
+      "peerDrivers": [
+        "dimmable_recessed_led"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "dimmer_1_gang",
+      "peerDrivers": [
+        "dimmer_1_gang"
+      ],
+      "mfrIn": 7,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 15,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "dimmer_1_gang_tuya",
+      "peerDrivers": [
+        "dimmer_1_gang_tuya"
+      ],
+      "mfrIn": 11,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 18,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "dimmer_2_gang",
+      "peerDrivers": [
+        "dimmer_2_gang"
+      ],
+      "mfrIn": 7,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 9,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "dimmer_2_gang_tuya",
+      "peerDrivers": [
+        "dimmer_2_gang_tuya"
+      ],
+      "mfrIn": 5,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 3,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "doorwindowsensor",
+      "peerDrivers": [
+        "doorwindowsensor"
+      ],
+      "mfrIn": 28,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 84,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "doorwindowsensor_2",
+      "peerDrivers": [
+        "doorwindowsensor_2"
+      ],
+      "mfrIn": 5,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 15,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "doorwindowsensor_3",
+      "peerDrivers": [
+        "doorwindowsensor_3"
+      ],
+      "mfrIn": 3,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 3,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "fingerbot",
+      "peerDrivers": [
+        "fingerbot"
+      ],
+      "mfrIn": 4,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "flood_sensor",
+      "peerDrivers": [
+        "flood_sensor"
+      ],
+      "mfrIn": 4,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 12,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "handheld_remote_4_buttons",
+      "peerDrivers": [
+        "handheld_remote_4_buttons"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 3,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "lcdtemphumidluxsensor",
+      "peerDrivers": [
+        "lcdtemphumidluxsensor"
+      ],
+      "mfrIn": 4,
+      "pidIn": 2,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "lcdtemphumidsensor",
+      "peerDrivers": [
+        "lcdtemphumidsensor"
+      ],
+      "mfrIn": 13,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 9,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "lcdtemphumidsensor_3",
+      "peerDrivers": [
+        "lcdtemphumidsensor_3"
+      ],
+      "mfrIn": 7,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 9,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "motion_sensor_2",
+      "peerDrivers": [
+        "motion_sensor_2"
+      ],
+      "mfrIn": 4,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 12,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "outdoor_plug",
+      "peerDrivers": [
+        "outdoor_plug"
+      ],
+      "mfrIn": 2,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "pir_sensor_2",
+      "peerDrivers": [
+        "pir_sensor_2"
+      ],
+      "mfrIn": 19,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 12,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "radar_sensor",
+      "peerDrivers": [
+        "radar_sensor"
+      ],
+      "mfrIn": 16,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 48,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "radar_sensor_2",
+      "peerDrivers": [
+        "radar_sensor_2"
+      ],
+      "mfrIn": 2,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 6,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "radar_sensor_ceiling",
+      "peerDrivers": [
+        "radar_sensor_ceiling"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 3,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "rain_sensor",
+      "peerDrivers": [
+        "rain_sensor"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "relay_board_1_channel",
+      "peerDrivers": [
+        "relay_board_1_channel"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 3,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "relay_board_2_channel",
+      "peerDrivers": [
+        "relay_board_2_channel"
+      ],
+      "mfrIn": 2,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 6,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "relay_board_4_channel",
+      "peerDrivers": [
+        "relay_board_4_channel"
+      ],
+      "mfrIn": 5,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 9,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "rgb_bulb_E14",
+      "peerDrivers": [
+        "rgb_bulb_E14"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "rgb_bulb_E27",
+      "peerDrivers": [
+        "rgb_bulb_E27"
+      ],
+      "mfrIn": 7,
+      "pidIn": 2,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 21,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "rgb_ceiling_led_light",
+      "peerDrivers": [
+        "rgb_ceiling_led_light"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "rgb_floor_led_light",
+      "peerDrivers": [
+        "rgb_floor_led_light"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "rgb_led_light_bar",
+      "peerDrivers": [
+        "rgb_led_light_bar"
+      ],
+      "mfrIn": 2,
+      "pidIn": 2,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 3,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "rgb_led_strip",
+      "peerDrivers": [
+        "rgb_led_strip"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "rgb_led_strip_controller",
+      "peerDrivers": [
+        "rgb_led_strip_controller"
+      ],
+      "mfrIn": 6,
+      "pidIn": 4,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 3,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "rgb_mood_light",
+      "peerDrivers": [
+        "rgb_mood_light"
+      ],
+      "mfrIn": 2,
+      "pidIn": 2,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "rgb_spot_GU10",
+      "peerDrivers": [
+        "rgb_spot_GU10"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "rgb_spot_GardenLight",
+      "peerDrivers": [
+        "rgb_spot_GardenLight"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "rgb_wall_led_light",
+      "peerDrivers": [
+        "rgb_wall_led_light"
+      ],
+      "mfrIn": 2,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "siren",
+      "peerDrivers": [
+        "siren"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "sirentemphumidsensor",
+      "peerDrivers": [
+        "sirentemphumidsensor"
+      ],
+      "mfrIn": 2,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 6,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "slim_motion_sensor",
+      "peerDrivers": [
+        "slim_motion_sensor"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "smartPlug_DinRail",
+      "peerDrivers": [
+        "smartPlug_DinRail"
+      ],
+      "mfrIn": 5,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 6,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "smart_air_detection_box",
+      "peerDrivers": [
+        "smart_air_detection_box"
+      ],
+      "mfrIn": 5,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 15,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "smart_button_switch",
+      "peerDrivers": [
+        "smart_button_switch"
+      ],
+      "mfrIn": 3,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 9,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "smart_door_window_sensor",
+      "peerDrivers": [
+        "smart_door_window_sensor"
+      ],
+      "mfrIn": 2,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "smart_garden_irrigation_control",
+      "peerDrivers": [
+        "smart_garden_irrigation_control"
+      ],
+      "mfrIn": 4,
+      "pidIn": 2,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "smart_remote_4_buttons",
+      "peerDrivers": [
+        "smart_remote_4_buttons"
+      ],
+      "mfrIn": 4,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 9,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "smart_switch",
+      "peerDrivers": [
+        "smart_switch"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 3,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "smartplug",
+      "peerDrivers": [
+        "smartplug"
+      ],
+      "mfrIn": 48,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 39,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "smoke_sensor",
+      "peerDrivers": [
+        "smoke_sensor"
+      ],
+      "mfrIn": 2,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 6,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "smoke_sensor2",
+      "peerDrivers": [
+        "smoke_sensor2"
+      ],
+      "mfrIn": 8,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 18,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "smoke_sensor3",
+      "peerDrivers": [
+        "smoke_sensor3"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "socket_power_strip_four",
+      "peerDrivers": [
+        "socket_power_strip_four"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "soilsensor",
+      "peerDrivers": [
+        "soilsensor"
+      ],
+      "mfrIn": 7,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 21,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "soilsensor_2",
+      "peerDrivers": [
+        "soilsensor_2"
+      ],
+      "mfrIn": 2,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 6,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "switch_1_gang",
+      "peerDrivers": [
+        "switch_1_gang"
+      ],
+      "mfrIn": 15,
+      "pidIn": 3,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 45,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "switch_1_gang_metering",
+      "peerDrivers": [
+        "switch_1_gang_metering"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 3,
+      "addedPid": 1
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "switch_2_gang",
+      "peerDrivers": [
+        "switch_2_gang"
+      ],
+      "mfrIn": 14,
+      "pidIn": 4,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 42,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "switch_2_gang_metering",
+      "peerDrivers": [
+        "switch_2_gang_metering"
+      ],
+      "mfrIn": 2,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 6,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "switch_3_gang",
+      "peerDrivers": [
+        "switch_3_gang"
+      ],
+      "mfrIn": 3,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 9,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "switch_4_gang_metering",
+      "peerDrivers": [
+        "switch_4_gang_metering"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 3,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "temphumidsensor",
+      "peerDrivers": [
+        "temphumidsensor"
+      ],
+      "mfrIn": 5,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 3,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "temphumidsensor2",
+      "peerDrivers": [
+        "temphumidsensor2"
+      ],
+      "mfrIn": 3,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 3,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "temphumidsensor3",
+      "peerDrivers": [
+        "temphumidsensor3"
+      ],
+      "mfrIn": 7,
+      "pidIn": 2,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 15,
+      "addedPid": 1
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "temphumidsensor4",
+      "peerDrivers": [
+        "temphumidsensor4"
+      ],
+      "mfrIn": 9,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 27,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "temphumidsensor5",
+      "peerDrivers": [
+        "temphumidsensor5"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 3,
+      "addedPid": 1
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "thermostatic_radiator_valve",
+      "peerDrivers": [
+        "thermostatic_radiator_valve"
+      ],
+      "mfrIn": 11,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 30,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "tunable_bulb_E14",
+      "peerDrivers": [
+        "tunable_bulb_E14"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "tunable_bulb_E27",
+      "peerDrivers": [
+        "tunable_bulb_E27"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "tunable_spot_GU10",
+      "peerDrivers": [
+        "tunable_spot_GU10"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "valvecontroller",
+      "peerDrivers": [
+        "valvecontroller"
+      ],
+      "mfrIn": 8,
+      "pidIn": 2,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 6,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "wall_dimmer_tuya",
+      "peerDrivers": [
+        "wall_dimmer_tuya"
+      ],
+      "mfrIn": 14,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 3,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "wall_remote_1_gang",
+      "peerDrivers": [
+        "wall_remote_1_gang"
+      ],
+      "mfrIn": 12,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 36,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "wall_remote_2_gang",
+      "peerDrivers": [
+        "wall_remote_2_gang"
+      ],
+      "mfrIn": 8,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 24,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "wall_remote_3_gang",
+      "peerDrivers": [
+        "wall_remote_3_gang"
+      ],
+      "mfrIn": 8,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 21,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "wall_remote_4_gang",
+      "peerDrivers": [
+        "wall_remote_4_gang"
+      ],
+      "mfrIn": 4,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 12,
+      "addedPid": 1
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "wall_remote_4_gang_3",
+      "peerDrivers": [
+        "wall_remote_4_gang_3"
+      ],
+      "mfrIn": 3,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 9,
+      "addedPid": 1
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "wall_remote_6_gang",
+      "peerDrivers": [
+        "wall_remote_6_gang"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "wall_switch_1_gang",
+      "peerDrivers": [
+        "wall_switch_1_gang"
+      ],
+      "mfrIn": 17,
+      "pidIn": 2,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 51,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "wall_switch_1_gang_tuya",
+      "peerDrivers": [
+        "wall_switch_1_gang_tuya"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 3,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "wall_switch_2_gang",
+      "peerDrivers": [
+        "wall_switch_2_gang"
+      ],
+      "mfrIn": 20,
+      "pidIn": 3,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 60,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "wall_switch_3_gang",
+      "peerDrivers": [
+        "wall_switch_3_gang"
+      ],
+      "mfrIn": 15,
+      "pidIn": 3,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 45,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "wall_switch_4_gang",
+      "peerDrivers": [
+        "wall_switch_4_gang"
+      ],
+      "mfrIn": 4,
+      "pidIn": 2,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 12,
+      "addedPid": 1
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "wall_switch_4_gang_tuya",
+      "peerDrivers": [
+        "wall_switch_4_gang_tuya"
+      ],
+      "mfrIn": 7,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 15,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "wall_switch_5_gang_tuya",
+      "peerDrivers": [
+        "wall_switch_5_gang_tuya"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 3,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "wall_switch_6_gang_tuya",
+      "peerDrivers": [
+        "wall_switch_6_gang_tuya"
+      ],
+      "mfrIn": 2,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 3,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "wall_thermostat",
+      "peerDrivers": [
+        "wall_thermostat"
+      ],
+      "mfrIn": 3,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "water_detector",
+      "peerDrivers": [
+        "water_detector"
+      ],
+      "mfrIn": 15,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 45,
+      "addedPid": 1
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "water_leak_sensor_tuya",
+      "peerDrivers": [
+        "water_leak_sensor_tuya"
+      ],
+      "mfrIn": 2,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 3,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-tuya-zigbee",
+      "driverId": "zigbee_repeater",
+      "peerDrivers": [
+        "zigbee_repeater"
+      ],
+      "mfrIn": 8,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "lidl-smart-home",
+      "driverId": "christmas_lights",
+      "peerDrivers": [
+        "christmas_lights"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "lidl-smart-home",
+      "driverId": "outdoor_plug",
+      "peerDrivers": [
+        "outdoor_plug"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "lidl-smart-home",
+      "driverId": "rgb_bulb_E14",
+      "peerDrivers": [
+        "rgb_bulb_E14"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "lidl-smart-home",
+      "driverId": "rgb_bulb_E27",
+      "peerDrivers": [
+        "rgb_bulb_E27"
+      ],
+      "mfrIn": 2,
+      "pidIn": 2,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "lidl-smart-home",
+      "driverId": "rgb_ceiling_led_light",
+      "peerDrivers": [
+        "rgb_ceiling_led_light"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "lidl-smart-home",
+      "driverId": "rgb_floor_led_light",
+      "peerDrivers": [
+        "rgb_floor_led_light"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "lidl-smart-home",
+      "driverId": "rgb_led_light_bar",
+      "peerDrivers": [
+        "rgb_led_light_bar"
+      ],
+      "mfrIn": 2,
+      "pidIn": 2,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "lidl-smart-home",
+      "driverId": "rgb_led_strip",
+      "peerDrivers": [
+        "rgb_led_strip"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "lidl-smart-home",
+      "driverId": "rgb_mood_light",
+      "peerDrivers": [
+        "rgb_mood_light"
+      ],
+      "mfrIn": 2,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "lidl-smart-home",
+      "driverId": "rgb_spot_GU10",
+      "peerDrivers": [
+        "rgb_spot_GU10"
+      ],
+      "mfrIn": 2,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 3,
+      "addedPid": 0
+    },
+    {
+      "peer": "lidl-smart-home",
+      "driverId": "rgb_spot_GardenLight",
+      "peerDrivers": [
+        "rgb_spot_GardenLight"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "lidl-smart-home",
+      "driverId": "rgb_wall_led_light",
+      "peerDrivers": [
+        "rgb_wall_led_light"
+      ],
+      "mfrIn": 2,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "lidl-smart-home",
+      "driverId": "tunable_bulb_E14",
+      "peerDrivers": [
+        "tunable_bulb_E14"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "lidl-smart-home",
+      "driverId": "tunable_bulb_E27",
+      "peerDrivers": [
+        "tunable_bulb_E27"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "lidl-smart-home",
+      "driverId": "tunable_spot_GU10",
+      "peerDrivers": [
+        "tunable_spot_GU10"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    }
+  ],
+  "unmappedSample": [],
+  "unmappedTotal": 0,
+  "policy": {
+    "complementaryOnly": true,
+    "rewriteNotCopy": true,
+    "neverInventPid": true,
+    "sourcesComposeOnly": true,
+    "forumPost": false,
+    "dualApp": "BOTH"
+  }
+}

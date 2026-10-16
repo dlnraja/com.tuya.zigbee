@@ -57,7 +57,8 @@
   "zigbee": {
     "productId": [
       "TS0601",
-      "TS004F"
+      "TS004F",
+      "TS0001"
     ],
     "endpoints": {
       "1": {
@@ -94,7 +95,10 @@
     },
     "manufacturerName": [
       "_GENERIC_SWITCH_1_GANG_METERING",
-      "_generic_switch_1_gang_metering"
+      "_generic_switch_1_gang_metering",
+      "_TZ3000_prits6g4",
+      "_tz3000_prits6g4",
+      "_TZ3000_PRITS6G4"
     ]
   },
   "ui": {

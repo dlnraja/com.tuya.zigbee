@@ -1,0 +1,1012 @@
+{
+  "id": "P2572",
+  "mode": "apply",
+  "generatedAt": "2026-10-16T07:44:39.774Z",
+  "harvested": 287,
+  "alreadyCovered": 269,
+  "driversTouched": 6,
+  "applied": [
+    {
+      "driverId": "air_quality_co2",
+      "mfrCount": 6,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "climate_sensor",
+      "mfrCount": 29,
+      "pidCount": 2,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 8,
+      "addedPid": 0
+    },
+    {
+      "driverId": "curtain_motor",
+      "mfrCount": 29,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 4,
+      "addedPid": 0
+    },
+    {
+      "driverId": "fan_controller",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "contact_sensor",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "contact_sensor_zigbee",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "temphumidsensor3",
+      "mfrCount": 2,
+      "pidCount": 2,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "temphumidsensor_zcl_ts0601",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "device_radiator_valve",
+      "mfrCount": 8,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "vibration_sensor",
+      "mfrCount": 1,
+      "pidCount": 2,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "switch_3gang",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "valve_dual_irrigation",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "valve_irrigation",
+      "mfrCount": 4,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "climate_sensor_zt08",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "presence_sensor_radar",
+      "mfrCount": 34,
+      "pidCount": 8,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 4,
+      "addedPid": 0
+    },
+    {
+      "driverId": "radar_sensor_ceiling",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "temphumidsensor",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "lcdtemphumidsensor",
+      "mfrCount": 4,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "lcdtemphumidsensor_3",
+      "mfrCount": 3,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "wall_thermostat",
+      "mfrCount": 9,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "din_rail_meter",
+      "mfrCount": 3,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "bed_sensor",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "gas_sensor",
+      "mfrCount": 3,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "radiator_valve",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "soil_sensor",
+      "mfrCount": 12,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "soilsensor",
+      "mfrCount": 5,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "motion_sensor",
+      "mfrCount": 4,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 4,
+      "addedPid": 0
+    },
+    {
+      "driverId": "led_controller_rgb",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "led_controller_spi_tuya",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "switch_1gang",
+      "mfrCount": 5,
+      "pidCount": 3,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "curtain_motor_shutter",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "dimmer_1_gang_tuya",
+      "mfrCount": 5,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "dimmer_wall_1gang",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "smoke_sensor2",
+      "mfrCount": 8,
+      "pidCount": 2,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "motion_sensor_2",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "thermostatic_radiator_valve",
+      "mfrCount": 6,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 4,
+      "addedPid": 0
+    },
+    {
+      "driverId": "radar_sensor_2",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "wall_dimmer_tuya",
+      "mfrCount": 9,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "wall_switch_1gang_1way",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "smart_air_detection_box",
+      "mfrCount": 4,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "temphumidsensor2",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "siren",
+      "mfrCount": 4,
+      "pidCount": 2,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "radar_sensor",
+      "mfrCount": 4,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "water_tank_monitor",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "gas_detector",
+      "mfrCount": 2,
+      "pidCount": 2,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "smoke_sensor",
+      "mfrCount": 3,
+      "pidCount": 2,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "smart_lcd_thermostat",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "curtain_motor_tilt",
+      "mfrCount": 3,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "plug_energy_monitor",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "presence_sensor_ceiling",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "remote_dimmer",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "garage_door",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "switch_wireless",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "water_valve_garden",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "switch_2gang",
+      "mfrCount": 3,
+      "pidCount": 3,
+      "confidence": "high",
+      "ok": true,
+      "changed": true,
+      "addedMfr": 2,
+      "addedPid": 0
+    },
+    {
+      "driverId": "wall_switch_3gang_1way",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "water_valve_smart",
+      "mfrCount": 3,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "valve_single",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "light_sensor_outdoor",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "dimmer_2_gang_tuya",
+      "mfrCount": 6,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "co_sensor",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "power_clamp_meter",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "garage_door_opener",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "temphumidsensor4",
+      "mfrCount": 6,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "pir_sensor_2",
+      "mfrCount": 5,
+      "pidCount": 3,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "switch_4gang",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "wall_switch_4_gang",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "sensor_gas_presence",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "water_leak_sensor",
+      "mfrCount": 1,
+      "pidCount": 2,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "water_leak_sensor_tuya",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "soilsensor_2",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "wall_switch_5_gang_tuya",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "lcdtemphumidluxsensor",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "temphumidsensor5",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "wall_switch_6_gang_tuya",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "wall_switch_4_gang_tuya",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "wall_switch_2_gang",
+      "mfrCount": 3,
+      "pidCount": 2,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "socket_power_strip_four_three",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "smoke_sensor3",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "smartplug",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "sirentemphumidsensor",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "siren_sirentemphumidsensor",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "wall_switch_1_gang_tuya",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "thermostat_tuya_dp",
+      "mfrCount": 2,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "smoke_detector_advanced",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "socket_power_strip_four",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "sensor_motion_presence",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "christmas_lights",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "switch_1_gang",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "button_wireless_2",
+      "mfrCount": 3,
+      "pidCount": 3,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "wall_switch_1_gang",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "ceiling_fan",
+      "mfrCount": 1,
+      "pidCount": 1,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    },
+    {
+      "driverId": "rain_sensor",
+      "mfrCount": 1,
+      "pidCount": 3,
+      "confidence": "high",
+      "ok": true,
+      "changed": false
+    }
+  ],
+  "skipped": [
+    {
+      "mfr": "_TZE200_pay2byax",
+      "pid": "TS0203",
+      "sources": [
+        "johan-device:1486",
+        "johan-device:1191",
+        "johan-issue#1486",
+        "johan-issue#1191"
+      ],
+      "reason": "soft:keyword-heuristic",
+      "driverId": "light_sensor_outdoor"
+    },
+    {
+      "mfr": "_TYZB01_0aps0h1r",
+      "pid": "TS0212",
+      "sources": [
+        "johan-device:977",
+        "johan-issue#977"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_kb5noeto",
+      "pid": "ZG-204ZM",
+      "sources": [
+        "johan-device:942",
+        "johan-device:1002",
+        "johan-issue#1064",
+        "johan-issue#942",
+        "johan-issue#1002"
+      ],
+      "reason": "soft:keyword-heuristic",
+      "driverId": "presence_sensor_radar"
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "ZG-227Z",
+      "sources": [
+        "johan-device:858",
+        "johan-issue#858"
+      ],
+      "reason": "soft:keyword-heuristic",
+      "driverId": "lcdtemphumidsensor"
+    },
+    {
+      "mfr": "_TZE200_pay2byax",
+      "pid": "ZG-102ZL",
+      "sources": [
+        "johan-device:PR#1508",
+        "johan-pr#1508"
+      ],
+      "reason": "soft:keyword-heuristic",
+      "driverId": "light_sensor_outdoor"
+    },
+    {
+      "mfr": "_TZE200_pay2byax",
+      "pid": "TS0041",
+      "sources": [
+        "johan-device:PR#1253",
+        "johan-pr#1253"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_a7sghmms",
+      "pid": "TS0049",
+      "sources": [
+        "johan-issue#719"
+      ],
+      "reason": "soft:keyword-heuristic",
+      "driverId": "water_valve_smart"
+    },
+    {
+      "mfr": "_TZE200_myd45weu",
+      "pid": "TS0049",
+      "sources": [
+        "johan-issue#719"
+      ],
+      "reason": "soft:keyword-heuristic",
+      "driverId": "water_valve_smart"
+    },
+    {
+      "mfr": "_TYZB01_o7m83470",
+      "pid": "TS0212",
+      "sources": [
+        "johan-issue#513"
+      ],
+      "reason": "soft:keyword-heuristic",
+      "driverId": "air_quality_co2"
+    },
+    {
+      "mfr": "_TZE200_amp6tsvy",
+      "pid": "TS0505A",
+      "sources": [
+        "johan-issue#175"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_y8jijhba",
+      "pid": "ZG-204",
+      "sources": [
+        "johan-issue#1482"
+      ],
+      "reason": "soft:keyword-heuristic",
+      "driverId": "presence_sensor_radar"
+    },
+    {
+      "mfr": "_TZE200_kb5noeto",
+      "pid": "ZG-204ZS",
+      "sources": [
+        "johan-issue#1064"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE284_rccxox8p",
+      "pid": "TS0044",
+      "sources": [
+        "johan-issue#1335"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_myd45weu",
+      "pid": "TS0044",
+      "sources": [
+        "johan-issue#1335"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE284_aao3yzhs",
+      "pid": "TS0044",
+      "sources": [
+        "johan-issue#1335"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_dr6sduka",
+      "pid": "TS0203",
+      "sources": [
+        "johan-issue#887"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_kb5noeto",
+      "pid": "ZG-204ZL",
+      "sources": [
+        "johan-pr#1510"
+      ],
+      "reason": "soft:keyword-heuristic",
+      "driverId": "light_sensor_outdoor"
+    },
+    {
+      "mfr": "_TZE200_kb5noeto",
+      "pid": "ZG-204Z",
+      "sources": [
+        "johan-pr#1510"
+      ],
+      "reason": "soft:keyword-heuristic",
+      "driverId": "light_sensor_outdoor"
+    }
+  ],
+  "skippedTotal": 18,
+  "needInterview": [
+    {
+      "mfr": "_TYZB01_0aps0h1r",
+      "pid": "TS0212",
+      "sources": [
+        "johan-device:977",
+        "johan-issue#977"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_pay2byax",
+      "pid": "TS0041",
+      "sources": [
+        "johan-device:PR#1253",
+        "johan-pr#1253"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_amp6tsvy",
+      "pid": "TS0505A",
+      "sources": [
+        "johan-issue#175"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_kb5noeto",
+      "pid": "ZG-204ZS",
+      "sources": [
+        "johan-issue#1064"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE284_rccxox8p",
+      "pid": "TS0044",
+      "sources": [
+        "johan-issue#1335"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_myd45weu",
+      "pid": "TS0044",
+      "sources": [
+        "johan-issue#1335"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE284_aao3yzhs",
+      "pid": "TS0044",
+      "sources": [
+        "johan-issue#1335"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TYZB01_dr6sduka",
+      "pid": "TS0203",
+      "sources": [
+        "johan-issue#887"
+      ],
+      "reason": "unresolved"
+    }
+  ],
+  "needInterviewTotal": 8,
+  "policy": {
+    "targetApp": "com.dlnraja.tuya.zigbee",
+    "notJohanRepo": true,
+    "forumPost": false,
+    "complementaryOnly": true,
+    "neverInventPid": true,
+    "refuseTs0601Generic": true,
+    "dualApp": "BOTH"
+  }
+}
