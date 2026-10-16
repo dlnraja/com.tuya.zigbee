@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1502",
+  "version": "9.0.1503",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -685,7 +685,7 @@
     "check:p2830": "node --test test/critical/p2830-peer-apps-compose-complementary.test.js",
     "check:p2831": "node --test test/critical/p2831-socket-hang-tip-mail-storm.test.js",
     "check:p2832": "node --test test/critical/p2832-peer-complementary-cron.test.js",
-    "check:p283x": "npm run check:p2829 && npm run check:p2830 && npm run check:p2831 && npm run check:p2832 && npm run check:p2833 && npm run check:p2834 && npm run check:p2835 && npm run check:p2836 && npm run check:p2837 && npm run check:p2838 && npm run check:p2839 && npm run check:p2840",
+    "check:p283x": "npm run check:p2829 && npm run check:p2830 && npm run check:p2831 && npm run check:p2832 && npm run check:p2833 && npm run check:p2834 && npm run check:p2835 && npm run check:p2836 && npm run check:p2837 && npm run check:p2838 && npm run check:p2839 && npm run check:p2840 && npm run check:p2841",
     "enrich:peers:compose": "node tools/ci/p2830-peer-apps-compose-complementary.js",
     "enrich:peers:compose:apply": "node tools/ci/p2830-peer-apps-compose-complementary.js --apply",
     "enrich:peers:cron": "node tools/ci/p2832-peer-complementary-cron.js",
@@ -700,7 +700,8 @@
     "check:p2838": "node --test test/critical/p2838-rf-t157859-hidden-wifi-thread-lan.test.js && node tools/ci/rf-channel-coexistence-smoke.js",
     "harvest:forum:zigbee-tag": "node tools/ci/p2836-forum-zigbee-tag-harvest.js",
     "check:p2839": "node --test test/critical/p2839-hollow-flow-card-wire.test.js",
-    "check:p2840": "node --test test/critical/p2840-publish-payload-no-backups.test.js && node scripts/ci/publish-size-gate.cjs"
+    "check:p2840": "node --test test/critical/p2840-publish-payload-no-backups.test.js && node scripts/ci/publish-size-gate.cjs",
+    "check:p2841": "node --test test/critical/p2841-zo0cfekv-ts0601-wall-3gang.test.js"
   },
   "keywords": [
     "homey",

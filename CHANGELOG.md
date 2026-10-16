@@ -9,6 +9,11 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [9.0.1503] - 2026-10-16
+
+P2841 Sacred couple: `_TZE200_zo0cfekv`+`TS0601` exact on `wall_switch_3gang_1way`; P2531 density floor; strip phantom SONOFF from `bulb_rgbw`.
+---
+
 ## [9.0.1502] - 2026-10-16
 
 P2840 Publish payload: drop tracked `backups/` (~12 MB) from Homey package; size-gate fails if backups leak into `.homeybuild`.
