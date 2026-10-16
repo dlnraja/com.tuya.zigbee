@@ -1,0 +1,25 @@
+{
+  "id": "p2834-moes-zemismart-action-merge",
+  "version": 1,
+  "dualApp": "BOTH",
+  "doctrine": "Complementary UNION of ZCL + ZCL-raw + Tuya DP + raw EF00 + soft DP detect for Moes and Zemismart. Never upgrade sacred zcl_only. Never invent pid.",
+  "module": "lib/protocol/MoesZemismartActionMerge.js",
+  "wires": [
+    "lib/protocol/IntelligentProtocolDetect.js",
+    "lib/zigbee/CapabilityCommandRouter.js",
+    "lib/protocol/CommunicationPathFinder.js",
+    "lib/devices/UnifiedSwitchBase.js"
+  ],
+  "actionPathOrder": ["zcl", "zcl_raw", "tuya_dp", "raw_frame", "dp_detect"],
+  "guards": [
+    "sacred_zcl_only",
+    "bseed_list",
+    "ts000x_multi_gang_no_leftover_ef00_race"
+  ],
+  "gates": ["check:p2834", "check:p283x"],
+  "contreQuoi": [
+    "Moes ZTS / Zemismart cover TX stuck on single path",
+    "Zemismart TB25 degraded to leftover EF00",
+    "Invent manufacturerName or productId"
+  ]
+}
