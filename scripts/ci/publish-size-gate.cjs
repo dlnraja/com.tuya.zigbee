@@ -196,12 +196,41 @@ function main() {
   checkJsonUnderLimit('Runtime gang-patterns.json', path.join(ROOT, 'lib', 'data', 'gang-patterns.json'), 0.25);
   checkMfsDb();
 
+  // WHY(P2840): backups/ in .homeybuild (~12 MB app.json dumps) → Athom socket hang.
+  // Fail-closed if present; exclude from size math so the real payload is visible.
+  const buildDir = path.join(ROOT, '.homeybuild');
+  const buildBackups = path.join(buildDir, 'backups');
+  if (fs.existsSync(buildBackups)) {
+    const bakStats = walkStats(buildBackups);
+    errors.push(
+      `Build contains backups/ (${fmtMB(bakStats.bytes)} MB, ${bakStats.files} files) — `
+      + 'add `backups` to .homeyignore and purge .homeybuild/backups (P2840 Athom hang)',
+    );
+    addCheck('Build backups/ bloat', bakStats.bytes, 0, 'fail', `${bakStats.files} files — must be 0`);
+  }
   checkDirUnderLimit(
     'Build directory',
-    path.join(ROOT, '.homeybuild'),
+    buildDir,
     LIMITS.publishUncompressedMB,
-    { excludedExtensions: ['.gz'] },
+    { excludedExtensions: ['.gz'], excludedDirs: ['backups', 'node_modules', '.git'] },
   );
+  // Soft target: after backups exclusion, warn if still > 14 MB (Athom hang risk zone).
+  if (fs.existsSync(buildDir)) {
+    const lean = walkStats(buildDir, {
+      excludedExtensions: ['.gz'],
+      excludedDirs: ['backups', 'node_modules', '.git'],
+    });
+    const leanWarnMB = numberEnv('HOMEY_BUILD_LEAN_WARN_MB', 14);
+    if (toMB(lean.bytes) > leanWarnMB) {
+      const msg = `Lean build ${fmtMB(lean.bytes)} MB > ${leanWarnMB} MB soft target (excl. backups) — trim firmware/learnmode/assets`;
+      warnings.push(msg);
+      if (process.env.GITHUB_ACTIONS) console.log(`::warning title=publish lean size::${msg}`);
+      for (const file of lean.largest.slice(0, 5)) {
+        warnings.push(`Large lean build file: ${file.path} (${fmtMB(file.bytes)} MB)`);
+      }
+    }
+    addCheck('Lean build (no backups)', lean.bytes, leanWarnMB, toMB(lean.bytes) > leanWarnMB ? 'warn' : 'pass', `${lean.files} files`);
+  }
 
   checkDirUnderLimit(
     'Prepared publish directory (source)',
