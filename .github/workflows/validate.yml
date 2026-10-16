@@ -146,7 +146,9 @@ jobs:
         run: npm run check:p249x
 
       - name: 🛡️ P257x VicHY radar / EF00 / anti-FP family
-        run: npm run check:p257x
+        run: |
+          npm run check:p257x
+          npm run check:p283x
           npm run check:p2580
 
       - name: 🛡️ P2495 publish path aggregator
