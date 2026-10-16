@@ -966,5 +966,8 @@
   },
   "9.0.1487": {
     "en": "v9.0.1487: automated publish, manifest sync, and Homey test promotion."
+  },
+  "9.0.1488": {
+    "en": "Completed P283x unit tests and hard CI family gates (peer rewrite + hang tip anti-spam)."
   }
 }

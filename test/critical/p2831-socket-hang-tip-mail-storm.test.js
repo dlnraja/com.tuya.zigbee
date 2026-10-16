@@ -7,12 +7,17 @@
 
 const { describe, it } = require('node:test');
 const assert = require('node:assert/strict');
+const fs = require('fs');
+const path = require('path');
 const {
   softExpectDecision,
+  softAlertDecision,
   hangStormDecision,
   isTransientAthomFailure,
 } = require('../../scripts/lib/soft-expect-decision');
 const { decide } = require('../../.github/scripts/transient-publish-retry');
+
+const ROOT = path.join(__dirname, '..', '..');
 
 describe('P2831 socket hang tip-mail storm', () => {
   const stormBuilds = [
@@ -65,5 +70,27 @@ describe('P2831 socket hang tip-mail storm', () => {
     assert.ok(ssot.p2831);
     assert.equal(ssot.p2831.hangStormSkip, true);
     assert.ok(ssot.p139.tipEmailExamples.includes('#3584'));
+  });
+
+  it('soft-alert stays quiet during hang storm when Test healthy', () => {
+    const d = softAlertDecision(stormBuilds, { soft: true });
+    assert.equal(d.alert, false);
+    assert.equal(d.reason, 'transient-hang-healthy-test');
+  });
+
+  it('single hang (no storm) does not soft-expect-skip a new tip version', () => {
+    const builds = [
+      { id: 3584, version: '9.0.1480', state: 'processing_failed', stateMeta: 'socket hang up' },
+      { id: 3570, version: '9.0.1470', state: 'test' },
+    ];
+    assert.equal(hangStormDecision(builds).storm, false);
+    const d = softExpectDecision(builds, '9.0.1486');
+    assert.equal(d.skip, false);
+  });
+
+  it('npm check:p2831 and check:p283x wired', () => {
+    const pkg = JSON.parse(fs.readFileSync(path.join(ROOT, 'package.json'), 'utf8'));
+    assert.ok(pkg.scripts['check:p2831']?.includes('p2831-socket-hang'));
+    assert.ok(pkg.scripts['check:p283x']?.includes('check:p2831'));
   });
 });

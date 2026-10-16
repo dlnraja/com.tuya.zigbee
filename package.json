@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1487",
+  "version": "9.0.1488",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -684,6 +684,7 @@
     "check:p2829": "node --test test/critical/p2829-gh-actions-anti-spam.test.js",
     "check:p2830": "node --test test/critical/p2830-peer-apps-compose-complementary.test.js",
     "check:p2831": "node --test test/critical/p2831-socket-hang-tip-mail-storm.test.js",
+    "check:p283x": "npm run check:p2829 && npm run check:p2830 && npm run check:p2831",
     "enrich:peers:compose": "node tools/ci/p2830-peer-apps-compose-complementary.js",
     "enrich:peers:compose:apply": "node tools/ci/p2830-peer-apps-compose-complementary.js --apply"
   },

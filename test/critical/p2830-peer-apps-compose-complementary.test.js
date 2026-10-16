@@ -44,9 +44,22 @@ describe('P2830 peer apps compose complementary rewrite', () => {
     assert.ok(mega.includes('mfrs.length * pids.length <= 2'));
   });
 
-  it('npm check:p2830 wired', () => {
+  it('npm check:p2830 / p283x + enrich:peers scripts wired', () => {
     const pkg = JSON.parse(fs.readFileSync(path.join(ROOT, 'package.json'), 'utf8'));
     assert.equal(pkg.scripts['check:p2830'], 'node --test test/critical/p2830-peer-apps-compose-complementary.test.js');
+    assert.ok(pkg.scripts['check:p283x']?.includes('check:p2830'));
+    assert.ok(pkg.scripts['enrich:peers:compose']?.includes('p2830-peer-apps-compose-complementary'));
+    assert.ok(pkg.scripts['enrich:peers:compose:apply']?.includes('--apply'));
+  });
+
+  it('aliases map Johan siblings to canonical drivers (anti-collision)', () => {
+    const src = fs.readFileSync(
+      path.join(ROOT, 'tools/ci/p2830-peer-apps-compose-complementary.js'),
+      'utf8',
+    );
+    assert.ok(src.includes("doorwindowsensor: 'contact_sensor'"));
+    assert.ok(src.includes("water_detector: 'water_leak_sensor'"));
+    assert.ok(src.includes("wall_remote_1_gang: 'button_wireless_1'"));
   });
 
   it('sacred couples survive peer rewrite (dimmer + IAS leak)', () => {
