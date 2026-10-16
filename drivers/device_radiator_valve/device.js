@@ -473,7 +473,10 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
         now.getDay() === 0 ? 7 : now.getDay() // Sunday=7 in Tuya format
       ]);
 
-      await tuyaCluster.datapoint({ dp: 36, datatype: 4, data: payload }); // Raw type
+      // WHY(P2823b): full EF00 args — bare {dp,datatype,data} trips zigbee-clusters
+      // ("unexpected property") on some tips; structured path matches P2711/P2593.
+      const { sendStructuredDatapoint } = require('../../lib/helpers/UniversalDriverInit');
+      await sendStructuredDatapoint(tuyaCluster, 36, payload, 'raw');
       this.log('[TimeSync] Tuya DP36 time sync sent:', payload.toString('hex'));
     } catch (e) {
       this.log('[TimeSync] Tuya fallback failed:', e.message);

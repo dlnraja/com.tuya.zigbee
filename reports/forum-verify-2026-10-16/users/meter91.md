@@ -1,0 +1,30 @@
+# User impact — meter91
+
+Generated: 2026-10-16T00:53:40 · silent enrichment only
+
+## Forum posts (actionable)
+
+| Topic | Post | Date | Issues | Couples | Action |
+|-------|------|------|--------|---------|--------|
+| T140352 | #2257 | 2026-09-26 | luminance | — | user-update-repair |
+
+## Diagnostic lineage
+
+| Log ID | Date | App | Notes |
+|--------|------|-----|-------|
+| `undefined` | undefined | undefined | undefined |
+
+## Impacted devices (cross-source)
+
+| Tile / role | Driver | Device UUID | Couple | Symptoms | Fix shipped | User action |
+|-------------|--------|-------------|--------|----------|-------------|-------------|
+| Moes 4-way scene remote | scene_switch_4 | — | _TZ3000_zgyzgdua+TS0044 | unknown at pairing (diag 9.0.714 pre-P2336); physical 0xFD dead on stale tile | P2336 pairing clusters; P2337 sacred routing; P2338 migration nag skip; PhysicalButtonMixin 0xFD skip 0x8004 | Update Test ≥9.0.738 + remove + re-pair Scene Switch 4-Gang |
+| Forum T140352 #2213 | scene_switch_4 | — | _TZ3000_ZGYZGDUA+TS0044 | unknown |  | Update Universal Tuya Test to latest soak build; re-pair only if driver/EP changed |
+
+## Inbox snippets
+
+- **meter91** (2026-09-26) :  @dlnraja is is possible to make support for a ZG-106Z / TZ3000_7y90pany luminance sensor?
+
+---
+Regenerate: `npm run user:impact -- --user=meter91`
+
