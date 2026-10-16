@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1490 |
+| **App Version** | v9.0.1491 |
 | **Drivers** | 449 (396 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,831 |
 | **Pairing Variants** | 19,209 (4 case combos per fingerprint) |
@@ -41,7 +41,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 6,105 |
 | **Unique Capabilities** | 176 |
 | **Native OTA Drivers** | 9 |
-| **Test Suites** | 653 files |
+| **Test Suites** | 654 files |
 | **SVG Icons** | 752 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -103,6 +103,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1491** | Automated peer complementary enrich cron (Johan/Lidl FP union) — free GHA, no forum post. |
 | **v9.0.1490** | Complementary fingerprint enrich from peer Zigbee apps (Johan/Lidl) — union only, no device wipe. |
 | **v9.0.1489** | v9.0.1489: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1488** | Completed P283x unit tests and hard CI family gates (peer rewrite + hang tip anti-spam). |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1481** | Reduced GitHub Action email spam; Auto-Publish watcher only on failures. |
 | **v9.0.1480** | v9.0.1480: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1479** | v9.0.1479: automated publish, manifest sync, and Homey test promotion. |
-| **v9.0.1478** | Aligned fingerprint DB after satellite sacred-couple locks; force Test republish. |
 
 <!-- CHANGELOG_END -->
 
