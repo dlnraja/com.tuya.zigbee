@@ -981,5 +981,8 @@
   },
   "9.0.1499": {
     "en": "RF coexistence: silent enrich from Homey tip — hidden 2.4 GHz SSIDs and Thread/Matter LAN dependency (ChannelAccessFailure vs NoAck)."
+  },
+  "9.0.1500": {
+    "en": "Flow cards: fix hollow/creux actions and conditions — align driver listeners to compose IDs (DIN rail, RGB bulb, contact, radar, boiler, plug)."
   }
 }

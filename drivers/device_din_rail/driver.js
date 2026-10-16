@@ -2,74 +2,80 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class TuyaDoorbellDriver extends ZigBeeDriver {
-async onInit() {
+/**
+ * P2839 — DIN rail driver. Prior copy-paste registered hollow doorbell_* cards
+ * that were never in driver.flow.compose.json (creux). Wire only compose IDs.
+ */
+class DeviceDinRailDriver extends ZigBeeDriver {
+  async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) {return;}
+    if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
-    this.log('TuyaDoorbellDriver v5.5.571 initialized');
+    this.log('DeviceDinRailDriver initialized');
     this._registerFlowCards();
   }
 
   _registerFlowCards() {
-    // TRIGGERS
-    // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('doorbell_battery_above');
+      const card = this.homey.flow.getConditionCard('device_din_rail_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) {return false;}
-          const battery = args.device.getCapabilityValue('measure_battery') || 0;
-          return battery > (args.threshold || 20);
-      });
-      }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Condition doorbell_battery_above: ${err.message}`); } }
-
-    try {
-      const card = this.homey.flow.getConditionCard('doorbell_motion_active');
-      if (card) {
-        card.registerRunListener(async (args) => {
-          if (!args.device) {return false;}
+          if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Condition doorbell_motion_active: ${err.message}`); } }
+    } catch (err) {
+      this.log(`[FLOW] condition is_on: ${err.message}`);
+    }
+
+    const setOnOff = async (device, value) => {
+      if (typeof device.safeSetCapabilityValue === 'function') {
+        await device.safeSetCapabilityValue('onoff', value).catch(() => {});
+      } else {
+        await device.setCapabilityValue('onoff', value).catch(() => {});
+      }
+      return true;
+    };
 
     try {
-      const card = this.homey.flow.getConditionCard('doorbell_contact_open');
+      const card = this.homey.flow.getActionCard('device_din_rail_turn_on');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) {return false;}
-          return args.device.getCapabilityValue('onoff') === true;
+          if (!args.device) return false;
+          return setOnOff(args.device, true);
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Condition doorbell_contact_open: ${err.message}`); } }
+    } catch (err) {
+      this.log(`[FLOW] action turn_on: ${err.message}`);
+    }
 
     try {
-      const card = this.homey.flow.getConditionCard('doorbell_tamper_active');
+      const card = this.homey.flow.getActionCard('device_din_rail_turn_off');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) {return false;}
-          return args.device.getCapabilityValue('onoff') === true;
+          if (!args.device) return false;
+          return setOnOff(args.device, false);
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Condition doorbell_tamper_active: ${err.message}`); } }
+    } catch (err) {
+      this.log(`[FLOW] action turn_off: ${err.message}`);
+    }
 
-    // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('doorbell_ring_chime');
+      const card = this.homey.flow.getActionCard('device_din_rail_toggle');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) {return false;}
-          // Generic action handler
-          this.log('[FLOW] Action doorbell_ring_chime triggered for', args.device.getName());
-          return true;
+          if (!args.device) return false;
+          const current = args.device.getCapabilityValue('onoff');
+          return setOnOff(args.device, !current);
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action doorbell_ring_chime: ${err.message}`); } }
+    } catch (err) {
+      this.log(`[FLOW] action toggle: ${err.message}`);
+    }
 
-    this.log('[FLOW] All flow cards registered');
+    this.log('[FLOW] DIN rail flow cards registered (compose-aligned)');
   }
 }
 
-module.exports = TuyaDoorbellDriver;
+module.exports = DeviceDinRailDriver;

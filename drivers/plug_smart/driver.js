@@ -102,29 +102,26 @@ async onInit() {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action plug_smart_set_indicator: ${err.message}`); } }
 
     try {
+      // P2839: compose id plug_smart_set_power_on (was hollow set_power_on_behavior + wrong onoff TX)
       const card = this.homey.flow.getActionCard('plug_smart_set_power_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
-          await args.device['setCapabilityValue']('onoff', true).catch(() => {});
+          const raw = String(args.behavior || 'memory');
+          const map = { off: 'off', on: 'on', memory: 'previous', previous: 'previous' };
+          const behavior = map[raw] || 'previous';
+          if (args.device.hasCapability('power_on_behavior')) {
+            if (typeof args.device.safeSetCapabilityValue === 'function') {
+              await args.device.safeSetCapabilityValue('power_on_behavior', behavior).catch(() => {});
+            } else {
+              await args.device.setCapabilityValue('power_on_behavior', behavior).catch(() => {});
+            }
+          }
+          this.log('[FLOW] plug_smart_set_power_on:', behavior);
           return true;
         });
       }
     } catch (err) { if (this.developerDebugMode) { this.error(`Action plug_smart_set_power_on: ${err.message}`); } }
-
-    try {
-      const card = this.homey.flow.getActionCard('set_power_on_behavior');
-      if (card) {
-        card.registerRunListener(async (args) => {
-          if (!args.device) {return false;}
-          const validValues = ['off', 'on', 'previous'];
-          const behavior = validValues.includes(args.behavior) ? args.behavior : 'previous';
-          await args.device.setCapabilityValue('power_on_behavior', behavior).catch(() => {});
-          this.log('[FLOW] Action set_power_on_behavior triggered:', behavior);
-          return true;
-        });
-      }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action set_power_on_behavior: ${err.message}`); } }
 
     this.log('[FLOW] All flow cards registered');
   }

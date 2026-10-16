@@ -9,6 +9,11 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [9.0.1500] - 2026-10-16
+
+P2839 Flow cards: fix hollow/creux actions & conditions — align driver.js listeners to `driver.flow.compose.json` IDs (DIN rail, RGB bulb, contact, radar, boiler, plug).
+---
+
 ## [9.0.1499] - 2026-10-16
 
 P2838 RF coexistence silent enrich (Homey tip T157859#22): hidden 2.4 GHz SSIDs + Thread/Matter LAN dependency (`ChannelAccessFailure` vs `NoAck`).
