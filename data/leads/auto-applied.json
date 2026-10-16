@@ -56,6 +56,22 @@
    "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1366#issuecomment-5966886342",
    "via": "coverage-audit",
    "date": "2026-10-13"
+  },
+  {
+   "mfr": "_TZ3210_fhx7lk3d",
+   "pid": "TS0001",
+   "driver": "switch_zbeacon_ts0001",
+   "source": "z2m:ClickSmart+/CMA30651",
+   "via": "coverage-audit",
+   "date": "2026-10-16"
+  },
+  {
+   "mfr": "_TZ3000_ee8nrt2l",
+   "pid": "TS0044",
+   "driver": "scene_switch_4",
+   "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1159",
+   "via": "coverage-audit",
+   "date": "2026-10-16"
   }
  ]
 }
