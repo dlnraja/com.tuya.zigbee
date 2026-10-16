@@ -9,6 +9,11 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [9.0.1495] - 2026-10-16
+
+Moes and Zemismart actions merge ZCL, raw, Tuya DP and soft DP detect without degrading zcl-only couples.
+---
+
 ## [9.0.1493] - 2026-10-16
 
 Clear TZE284 nkjintbl from app.json switch_2gang so publish gates pass (Athom processing path).

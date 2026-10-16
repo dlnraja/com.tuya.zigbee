@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1494",
+  "version": "9.0.1495",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -685,12 +685,13 @@
     "check:p2830": "node --test test/critical/p2830-peer-apps-compose-complementary.test.js",
     "check:p2831": "node --test test/critical/p2831-socket-hang-tip-mail-storm.test.js",
     "check:p2832": "node --test test/critical/p2832-peer-complementary-cron.test.js",
-    "check:p283x": "npm run check:p2829 && npm run check:p2830 && npm run check:p2831 && npm run check:p2832 && npm run check:p2833",
+    "check:p283x": "npm run check:p2829 && npm run check:p2830 && npm run check:p2831 && npm run check:p2832 && npm run check:p2833 && npm run check:p2834",
     "enrich:peers:compose": "node tools/ci/p2830-peer-apps-compose-complementary.js",
     "enrich:peers:compose:apply": "node tools/ci/p2830-peer-apps-compose-complementary.js --apply",
     "enrich:peers:cron": "node tools/ci/p2832-peer-complementary-cron.js",
     "enrich:peers:cron:apply": "node tools/ci/p2832-peer-complementary-cron.js --apply",
-    "check:p2833": "node --test test/critical/p2833-nkjintbl-tze284-not-switch2gang.test.js"
+    "check:p2833": "node --test test/critical/p2833-nkjintbl-tze284-not-switch2gang.test.js",
+    "check:p2834": "node --test test/critical/p2834-moes-zemismart-action-merge.test.js"
   },
   "keywords": [
     "homey",
