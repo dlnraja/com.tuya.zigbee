@@ -9,7 +9,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.1504] - 2026-10-16
+## [9.0.1505] - 2026-10-16
+
+CI unblock: size gate soft-skip before build; switch_1gang density floor aligned after couple moves.
+---
+
+ [9.0.1504] - 2026-10-16
 
 P2842 Free GHA: automate hollow flow + publish payload heal (cron Tue/Fri) — forfait local Node, no paid AI.
 ---
