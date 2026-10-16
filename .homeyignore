@@ -3,6 +3,9 @@
 # `tmp/` (405 MB, 13k files) was not excluded by anything and would have been
 # pulled into .homeybuild by `homey app build`.
 tmp
+# WHY(P2840): root backups/ carried ~12 MB app.json dumps into .homeybuild →
+# Athom upload bloat / socket hang up / processing_failed. Never ship.
+backups
 # WHY(P2286): Homey CLI injects ignore rule `.*` (all dotfiles). Re-include the
 # Athom store changelog so prepare-publish / direct-api-publish see real notes.
 !.homeychangelog.json
