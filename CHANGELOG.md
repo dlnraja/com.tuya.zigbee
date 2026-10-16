@@ -9,7 +9,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.1474] - 2026-10-16
+## [9.0.1475] - 2026-10-16
+
+v9.0.1475: automated publish, manifest sync, and Homey test promotion.
+---
+
+ [9.0.1474] - 2026-10-16
 
 Improved LCD climate sensor temperature and humidity on single-endpoint Tuya MCU variants.
 ---
