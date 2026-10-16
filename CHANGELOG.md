@@ -9,6 +9,11 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [9.0.1498] - 2026-10-16
+
+P2837 tip Unknown Zigbee interview `_TZE284_vuwtqx0t`+`TS0601` (Zemismart 214C): fix FP misroute contact_sensor → `water_valve_smart`; sacred-keep; never compose 0xED00.
+---
+
 ## [9.0.1497] - 2026-10-16
 
 P2836 Homey `#zigbee` tag silent harvest: Sonoff SWV (`SONOFF`/`eWeLink` + `SWV-*`) → `water_valve_garden` (ZCL); strip SWV phantoms from `button_wireless_4` / `water_valve_smart`.

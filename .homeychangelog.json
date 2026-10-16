@@ -975,5 +975,8 @@
   },
   "9.0.1497": {
     "en": "Homey #zigbee tag silent enrich: Sonoff SWV (SONOFF/eWeLink + SWV-*) on garden water valve; removed SWV phantoms from button/smart valve drivers."
+  },
+  "9.0.1498": {
+    "en": "Zemismart 214C water valve (_TZE284_vuwtqx0t+TS0601): fixed contact_sensor FP misroute; sacred-keep for Unknown Zigbee tip interview."
   }
 }

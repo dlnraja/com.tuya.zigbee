@@ -1,0 +1,28 @@
+{
+  "source": "https://community.homey.app/t/tip-unknown-zigbee-device/101901/8",
+  "author": "Steve_Wilson",
+  "postedAt": "2026-10-10T12:32:04Z",
+  "couple": {
+    "manufacturerName": "_TZE284_vuwtqx0t",
+    "productId": "TS0601"
+  },
+  "device": "Zemismart 214C ultrasonic water meter/valve",
+  "interview": {
+    "inputClusters": [4, 5, 61184, 0, 60672],
+    "outputClusters": [25, 10],
+    "powerSource": "battery",
+    "deviceType": "enddevice",
+    "ieeeAddress_redacted": true
+  },
+  "placement": {
+    "canonicalDriver": "water_valve_smart",
+    "composeClusters": [0, 4, 5, 61184],
+    "neverCompose": [60672],
+    "patch": "P2837"
+  },
+  "crossRef": [
+    "z2m TS0601_water_valve",
+    "zha-device-handlers#4280",
+    "zemismart-zha-quirks 214c.py"
+  ]
+}
