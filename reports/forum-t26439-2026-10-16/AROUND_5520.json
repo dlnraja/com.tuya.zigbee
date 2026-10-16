@@ -1,0 +1,265 @@
+[
+  {
+    "n": 5515,
+    "user": "Mike_Nono",
+    "created": "2026-09-19T23:22:13.293Z",
+    "mfr": [],
+    "pid": [],
+    "links": [],
+    "imgs": [],
+    "text": "Yes thanks, I did use your source to “create” “my” app. Thanks. Now hope that they pick it up."
+  },
+  {
+    "n": 5516,
+    "user": "Axel_Ditmer",
+    "created": "2026-09-20T09:43:45.611Z",
+    "mfr": [
+      "_TZE284_nqqylykc"
+    ],
+    "pid": [],
+    "links": [],
+    "imgs": [],
+    "text": "can the following dimmer fingerprint be added? producer id: _TZE284_nqqylykc product id: TS0601"
+  },
+  {
+    "n": 5517,
+    "user": "Rudi_Hendrix",
+    "created": "2026-09-20T10:17:22.959Z",
+    "mfr": [],
+    "pid": [],
+    "links": [],
+    "imgs": [],
+    "text": "What do you think…? If you post the ids here it means that you did read at least SOME of the other messages"
+  },
+  {
+    "n": 5518,
+    "user": "PetervdK",
+    "created": "2026-09-21T11:33:02.045Z",
+    "mfr": [],
+    "pid": [],
+    "links": [],
+    "imgs": [],
+    "text": "I think he is reading bottom up like a lot of new members. Must be half way by now."
+  },
+  {
+    "n": 5519,
+    "user": "Peter_Kawa",
+    "created": "2026-09-21T12:37:16.933Z",
+    "mfr": [
+      "_TZE284_nqqylykc"
+    ],
+    "pid": [],
+    "links": [
+      "https://github.com/JohanBendz/com.tuya.zigbee/issues/1108"
+    ],
+    "imgs": [],
+    "text": "_TZE284_nqqylykc: Already requested 2y ago, request is still open: https://github.com/JohanBendz/com.tuya.zigbee/issues/1108"
+  },
+  {
+    "n": 5520,
+    "user": "FrankP",
+    "created": "2026-09-29T05:34:21.979Z",
+    "mfr": [],
+    "pid": [
+      "TS0042"
+    ],
+    "links": [
+      "/u/johan_bendz"
+    ],
+    "imgs": [],
+    "text": "Thnx @johan_bendz . The TS0042 2 gang wall remote works now"
+  },
+  {
+    "n": 5521,
+    "user": "johan_bendz",
+    "created": "2026-09-30T20:03:23.696Z",
+    "mfr": [],
+    "pid": [],
+    "links": [
+      "#p-783840-tuya-zigbee-030-is-now-available-for-test-1",
+      "#p-783840-what-is-030-2",
+      "#p-783840-what-about-all-the-device-requests-and-old-issues-3",
+      "#p-783840-please-help-test-4"
+    ],
+    "imgs": [],
+    "text": "Tuya Zigbee 0.3.0 is now available for Test A new Test version of the Tuya Zigbee app, v0.3.0 , has been submitted to the Homey App Store. This release is an important step in getting the app back into active development. Over the past weeks I have been going through the codebase, old pull requests, open and closed issues, device definitions and the overall app structure. The goal with 0.3.0 is primarily to establish a clean and stable modernized baseline before bringing in the larger backlog of device additions and fixes. What is 0.3.0? 0.3.0 includes the modernization work and maintenance needed to create a solid foundation for continued development. It has been validated against the current Homey publish requirements, tested locally on Homey and has passed the automated test suite. I have also tested the app with my own devices and so far it appears as stable as the current Live version. What about all the device requests and old issues? Those are coming next. A separate development branch already contains a large amount of additional work, including support for more Tuya devices, additional fingerprints and fixes for a number of long-standing issues. That work is currently plan"
+  },
+  {
+    "n": 5522,
+    "user": "SunBeech",
+    "created": "2026-09-30T21:07:29.467Z",
+    "mfr": [],
+    "pid": [],
+    "links": [],
+    "imgs": [],
+    "text": "Hi Johan, Does this mean that you continue to develop this app? Or has it been transferred to one of Athom’s development agencies?"
+  },
+  {
+    "n": 5523,
+    "user": "johan_bendz",
+    "created": "2026-09-30T22:16:49.764Z",
+    "mfr": [],
+    "pid": [],
+    "links": [
+      "/u/sunbeech"
+    ],
+    "imgs": [],
+    "text": "Hi @SunBeech , for now the app is under my control. Before I hand it over to anyone, I want to make sure it’s at its best."
+  },
+  {
+    "n": 5524,
+    "user": "Peter_van_Werkhoven",
+    "created": "2026-10-01T11:09:56.173Z",
+    "mfr": [],
+    "pid": [],
+    "links": [
+      "https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/a/a/aa4d3b7af02356cfda177493eeed94d7ad54fa3d.jpeg",
+      "/uploads/short-url/oiyDEhw23OPOEqdtlnKEljTWqm1.jpeg?dl=1",
+      "#far-image",
+      "#discourse-expand",
+      "https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/e/7/e7cb0621dbd5a78ebfd1413b3501a253e3f22b48.jpeg",
+      "/uploads/short-url/x4xgTrQNTVI7LBcDu8wlfE8nZX2.jpeg?dl=1",
+      "https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/4/1/41948246cbfbcc82057035cd89384fb2d36bde3d.jpeg",
+      "/uploads/short-url/9m9dicZ9mqoIqjUm2d6oQoJEqhD.jpeg?dl=1"
+    ],
+    "imgs": [
+      "https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/a/a/aa4d3b7af02356cfda177493eeed94d7ad54fa3d_2_224x500.jpeg",
+      "https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/e/7/e7cb0621dbd5a78ebfd1413b3501a253e3f22b48_2_224x500.jpeg",
+      "https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/4/1/41948246cbfbcc82057035cd89384fb2d36bde3d_2_224x500.jpeg"
+    ],
+    "text": "Hi Johan first of all thanks that you trying to fix all the issues in this app. First if all I tried to repair my LCD Temp &amp; Hum sensor but still no battery reading, then I deleted the device and re-add it again but still no battery reading. Diagnostic code: 5a0dfa38-e664-4b26-9884-102a3adccca8 1000047507 1220×2712 233 KB 1000047509 1220×2712 212 KB 1000047508 1220×2712 62.8 KB After the Update to test ver 0.3.0 all the device’s still working fine. Thanks and best regards Peter."
+  },
+  {
+    "n": 5525,
+    "user": "johan_bendz",
+    "created": "2026-10-01T18:09:49.301Z",
+    "mfr": [],
+    "pid": [],
+    "links": [
+      "#p-784052-tuya-zigbee-v031-is-now-available-in-test-1",
+      "#p-784052-whats-new-in-v031-2",
+      "#p-784052-a-note-about-live-3",
+      "#p-784052-your-feedback-matters-4",
+      "https://github.com/JohanBendz/com.tuya.zigbee/issues",
+      "https://homey.app/a/com.tuya.zigbee/test/"
+    ],
+    "imgs": [],
+    "text": "Tuya Zigbee v0.3.1 is now available in Test Hi everyone! Following the modernization work in v0.3.0, I’m happy to announce that Tuya Zigbee v0.3.1 is now available in Test . First, a big thank you to everyone who helped test v0.3.0. With over 2,600 Test installations during its first two days, we’ve had a useful opportunity to observe the updated app in real-world environments. Your feedback, including comments on older GitHub issues and diagnostic reports, has already helped us identify and address additional problems. What’s new in v0.3.1? This is a substantial update, incorporating fixes and improvements recovered from our ongoing review of historical issues, pull requests and device implementations. Highlights include: Support for numerous additional Tuya Zigbee devices and manufacturer IDs. Fixes and improvements for switches, dimmers, remotes and various sensors. Updated handling for several radar, rain, siren and FingerBot devices. Improved Tuya datapoint and Zigbee event handling. Battery-reporting fixes for several temperature and humidity sensors, including a TH05Z correction prompted by recent diagnostic feedback. Additional automated regression tests and validation. A n"
+  },
+  {
+    "n": 5526,
+    "user": "Peter_van_Werkhoven",
+    "created": "2026-10-01T18:55:14.731Z",
+    "mfr": [],
+    "pid": [],
+    "links": [
+      "https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/7/7/77c82ce31b2196ee3fba79b64fb1f02670258d9b.jpeg",
+      "/uploads/short-url/h5DGWDbrPPagYLhUdsucU2FefXR.jpeg?dl=1",
+      "#far-image",
+      "#discourse-expand"
+    ],
+    "imgs": [
+      "https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/7/7/77c82ce31b2196ee3fba79b64fb1f02670258d9b_2_224x500.jpeg"
+    ],
+    "text": "Hi Johan Good evening, the battery reading is working now. 1000047524 1220×2712 72.1 KB There is also a date and time displayed on the LCD screen on this device, is it also possible to set and alter that in this app. Thanks for fixing with best regards Peter."
+  },
+  {
+    "n": 5527,
+    "user": "johan_bendz",
+    "created": "2026-10-05T13:49:38.450Z",
+    "mfr": [],
+    "pid": [],
+    "links": [],
+    "imgs": [],
+    "text": "Version 0.3.2 is now Live! Loads of fixes, features and support for new devices/fingerprints. More to follow"
+  },
+  {
+    "n": 5528,
+    "user": "Maarten_Heer",
+    "created": "2026-10-05T17:36:42.969Z",
+    "mfr": [],
+    "pid": [],
+    "links": [
+      "https://us1.discourse-cdn.com/flex025/uploads/athom/original/3X/5/4/547fd8dfe95b94acb79c0d1b6407785958f90c4c.jpeg",
+      "/uploads/short-url/c3w1aiHaqOliS8wa79eNZruz1O4.jpeg?dl=1",
+      "#far-image",
+      "#discourse-expand"
+    ],
+    "imgs": [
+      "https://us1.discourse-cdn.com/flex025/uploads/athom/optimized/3X/5/4/547fd8dfe95b94acb79c0d1b6407785958f90c4c_2_224x500.jpeg"
+    ],
+    "text": "Hi, Since the update, the second channel of my 2-gang curtain switches are no longer working. They’re throwing the attached error. Diagnostic report: 0c645f88-e49e-4daa-bc17-c1c2d9445e13 1000095663 1344×2992 125 KB I’ve also reported an issue on GitHub. Have rolled back to 0.2.76 through CLI to at least be able to close the blinds in my kid’s bedrooms for now."
+  },
+  {
+    "n": 5529,
+    "user": "johan_bendz",
+    "created": "2026-10-05T18:38:50.442Z",
+    "mfr": [],
+    "pid": [],
+    "links": [
+      "/u/maarten_heer"
+    ],
+    "imgs": [],
+    "text": "Thanks for reporting @Maarten_Heer , a hotfix is now in Test."
+  },
+  {
+    "n": 5531,
+    "user": "Maarten_Heer",
+    "created": "2026-10-06T08:14:20.608Z",
+    "mfr": [],
+    "pid": [],
+    "links": [],
+    "imgs": [],
+    "text": "Have installed and validated 0.3.3. The 2-gang switches are working without issues again."
+  },
+  {
+    "n": 5532,
+    "user": "Mates1134",
+    "created": "2026-10-08T14:48:53.968Z",
+    "mfr": [
+      "_TZ3000_qja6nq5z"
+    ],
+    "pid": [
+      "TS004F"
+    ],
+    "links": [],
+    "imgs": [],
+    "text": "Hi, The _TZ3000_qja6nq5z TS004F Smart knob switch stopped working after one of the recent updates. It was working fine before."
+  },
+  {
+    "n": 5533,
+    "user": "johan_bendz",
+    "created": "2026-10-08T17:43:30.582Z",
+    "mfr": [],
+    "pid": [],
+    "links": [
+      "/u/mates1134"
+    ],
+    "imgs": [],
+    "text": "Hi @Mates1134 , my bad. Hotfix on it’s way to Test version of the app. Thanks for notifying me!"
+  },
+  {
+    "n": 5534,
+    "user": "Dragan_Todorovic",
+    "created": "2026-10-09T06:54:18.803Z",
+    "mfr": [
+      "_TZE200_crq3r3la"
+    ],
+    "pid": [],
+    "links": [],
+    "imgs": [],
+    "text": "Hi. I have a _TZE200_crq3r3la, CK-BL702-MWS-01(7016). its a Radar presence sensor. It connected to Homey as a generic device but have the presence triggers. What it does not have is possibility to change settings. Am i missing something or isn’t settings supported when it’s a generic device? Thank you."
+  },
+  {
+    "n": 5535,
+    "user": "Kizabgd",
+    "created": "2026-10-15T17:25:54.593Z",
+    "mfr": [
+      "_TZE284_9em5sfh"
+    ],
+    "pid": [],
+    "links": [],
+    "imgs": [],
+    "text": "Hi Could you please add support for this Tuya Temperature &amp; Humidity sensor with LCD display? Currently, it gets paired as an Unknown Zigbee Device. Here are the device details from my Homey Developer Tools: Manufacturer: _TZE284_9em5sfh Model ID: TS0601 Device Type: Temperature &amp; Humidity Sensor with LCD Screen Thank you in advance for your help and for maintaining this great app!"
+  }
+]
