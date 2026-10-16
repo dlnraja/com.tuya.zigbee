@@ -53,7 +53,8 @@ const UNION = [
   // ZMD-206 screen dimmers
   { driver: 'dimmer_1_gang_tuya', pid: ['TS0601'], mfr: ['_TZE284_5aico93l', '_TZE28C1000000_5aico93l'] },
   { driver: 'dimmer_2_gang_tuya', pid: ['TS0601'], mfr: ['_TZE284_pyh4zt7w'] },
-  { driver: 'dimmer_3gang', pid: ['TS0601'], mfr: ['_TZE284_k9e7ihec', '_TZE28C1000000_k9e7ihec', '_TZE204_znvwzxkq', '_TZE284_znvwzxkq'] },
+  { driver: 'dimmer_3gang', pid: ['TS0601'], mfr: ['_TZE284_k9e7ihec', '_TZE28C1000000_k9e7ihec'] },
+  // znvwzxkq stays wall_dimmer_tuya (already locked) — do not dual-claim dimmer_3gang
   // ZMS-206 / ZMS-208 screen switches (1–4 gang)
   { driver: 'wall_switch_1_gang_tuya', pid: ['TS0601'], mfr: ['_TZE284_lnyz4a6v', '_TZE284_1tnysxwl', '_TZE284_rzdkn5rx'] },
   { driver: 'switch_2gang', pid: ['TS0601'], mfr: [
@@ -79,7 +80,7 @@ const UNION = [
   // KES606 composite (TS0726)
   { driver: 'switch_1gang', pid: ['TS0726'], mfr: ['_TZ3000_ovbvmhiq'] },
   { driver: 'switch_2gang', pid: ['TS0726'], mfr: ['_TZ3000_icoxotza'] },
-  { driver: 'switch_3gang', pid: ['TS0726'], mfr: ['_TZ3000_hurauima'] },
+  // hurauima KES606: leave dimmer_wall_1gang until TS0726-only couple move (no cartesian dual-claim)
   { driver: 'button_wireless_4', pid: ['TS0044'], mfr: ['_TZ3000_xwuveizv'] },
   { driver: 'ir_blaster', pid: ['TS1201'], mfr: ['_TZ3290_qazgdsae'] },
 ];
