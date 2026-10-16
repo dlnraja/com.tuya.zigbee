@@ -63,6 +63,21 @@ describe('P2839 hollow flow card wire', () => {
     assert.ok(ids.includes('boiler_switch_energy_temperature_above'));
   });
 
+  // Contre quoi: driver + .homeycompose/flow/conditions/* same id → flow-card-dup-gate red
+  it('boiler conditions are not duplicated under .homeycompose/flow/conditions', () => {
+    const condDir = path.join(ROOT, '.homeycompose', 'flow', 'conditions');
+    for (const id of [
+      'boiler_switch_energy_power_above',
+      'boiler_switch_energy_temperature_above',
+    ]) {
+      assert.equal(
+        fs.existsSync(path.join(condDir, `${id}.json`)),
+        false,
+        `duplicate global condition ${id}.json`
+      );
+    }
+  });
+
   it('fleet scan: no hollow get*Card vs compose (drivers with both files)', () => {
     const bad = [];
     for (const d of fs.readdirSync(DRIVERS)) {
