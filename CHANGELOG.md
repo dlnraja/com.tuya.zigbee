@@ -9,6 +9,11 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [9.0.1501] - 2026-10-16
+
+P2839b Unblock CI: drop duplicate global boiler flow conditions (driver-scoped only).
+---
+
 ## [9.0.1500] - 2026-10-16
 
 P2839 Flow cards: fix hollow/creux actions & conditions — align driver.js listeners to `driver.flow.compose.json` IDs (DIN rail, RGB bulb, contact, radar, boiler, plug).

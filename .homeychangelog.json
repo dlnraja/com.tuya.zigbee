@@ -984,5 +984,8 @@
   },
   "9.0.1500": {
     "en": "Flow cards: fix hollow/creux actions and conditions — align driver listeners to compose IDs (DIN rail, RGB bulb, contact, radar, boiler, plug)."
+  },
+  "9.0.1501": {
+    "en": "Unblock CI: remove duplicate boiler_switch_energy flow conditions (driver compose vs global .homeycompose)."
   }
 }
