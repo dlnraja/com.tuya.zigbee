@@ -96,11 +96,13 @@ jobs:
           echo "## P2832 Peer complementary" >> "$GITHUB_STEP_SUMMARY"
           head -n 40 "reports/peer-complementary-cron-$DATE/REPORT.md" >> "$GITHUB_STEP_SUMMARY" 2>/dev/null || true
 
-      - name: Contre quoi gates (P283x)
+      - name: Contre quoi gates (P283x + P2842 soft)
         continue-on-error: true
         run: |
           npm run check:p2830 || echo "P2830_SOFT_WARN"
           npm run check:p2832 || echo "P2832_SOFT_WARN"
+          npm run check:p2840 || echo "P2840_SOFT_WARN"
+          npm run check:p2842 || echo "P2842_SOFT_WARN"
           node tools/ci/p2138-sacred-couple-matrix-gate.js || echo "P2138_SOFT_WARN"
 
       - name: Upload reports
