@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1498 |
+| **App Version** | v9.0.1499 |
 | **Drivers** | 449 (396 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,840 |
 | **Pairing Variants** | 19,185 (4 case combos per fingerprint) |
@@ -41,7 +41,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 6,105 |
 | **Unique Capabilities** | 176 |
 | **Native OTA Drivers** | 9 |
-| **Test Suites** | 659 files |
+| **Test Suites** | 660 files |
 | **SVG Icons** | 752 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -103,6 +103,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1499** | RF coexistence: silent enrich from Homey tip — hidden 2.4 GHz SSIDs and Thread/Matter LAN dependency (ChannelAccessFailure vs NoAck). |
 | **v9.0.1498** | Zemismart 214C water valve (_TZE284_vuwtqx0t+TS0601): fixed contact_sensor FP misroute; sacred-keep for Unknown Zigbee tip interview. |
 | **v9.0.1497** | Homey #zigbee tag silent enrich: Sonoff SWV (SONOFF/eWeLink + SWV-*) on garden water valve; removed SWV phantoms from button/smart valve … |
 | **v9.0.1496** | Complementary Zemismart official Homey app support: screen switches, ZMD dimmers, covers and sensors from verified couples — no climate m… |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1490** | Complementary fingerprint enrich from peer Zigbee apps (Johan/Lidl) — union only, no device wipe. |
 | **v9.0.1489** | v9.0.1489: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1488** | Completed P283x unit tests and hard CI family gates (peer rewrite + hang tip anti-spam). |
-| **v9.0.1487** | v9.0.1487: automated publish, manifest sync, and Homey test promotion. |
 
 <!-- CHANGELOG_END -->
 
