@@ -22,8 +22,12 @@
     "invent productId"
   ],
   "peers": [
-    "JohanBendz/com.tuya.zigbee",
-    "JohanBendz/com.lidl"
+    "JohanBendz/com.tuya.zigbee@SDK3",
+    "JohanBendz/com.tuya.zigbee@SDK3-test",
+    "JohanBendz/com.tuya.zigbee@develop-0.4",
+    "JohanBendz/com.tuya.zigbee@modernize-2026",
+    "JohanBendz/com.tuya.zigbee@sdk-3",
+    "JohanBendz/com.lidl@SDK3"
   ],
   "npm": {
     "dry": "enrich:peers:cron",
@@ -33,5 +37,6 @@
   },
   "dualApp": "BOTH",
   "forumPost": false,
-  "paidAi": false
+  "paidAi": false,
+  "multiBranch": true
 }

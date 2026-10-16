@@ -59,11 +59,44 @@ function mfrForbiddenOnDriver(forbidIdx, mfr, driverId) {
   return !!(set && set.has(driverId));
 }
 
-/** Peer repos that publish Zigbee Tuya-class fingerprints (rewritten into OUR drivers). */
+/** Hard allow-list exceptions: mfr suffix → only these drivers may receive UNION (peer bleed Contre quoi). */
+const MFR_SUFFIX_ALLOW_DRIVERS = {
+  zdrhqmo0: new Set(['wall_dimmer_tuya', 'dimmer_1_gang_tuya', 'dimmer_2_gang_tuya']),
+};
+
+/** BSEED zcl_only mfrs must never receive Tuya MCU pid TS0601 via peer cartesian. */
+const BSEED_ZCL_MFR = new Set([
+  '_tz3000_l9brjwau', '_tz3000_blhvsaqf', '_tz3000_ysdv91bk', '_tz3000_hafsqare',
+  '_tz3000_e98krvvk', '_tz3000_iedbgyxt', '_tz3000_cauq1okq', '_tz3000_w5xztuy7',
+]);
+
+function mfrBlockedByAllowList(mfr, driverId) {
+  const s = String(mfr).toLowerCase();
+  const suffix = s.split('_').pop();
+  const allow = MFR_SUFFIX_ALLOW_DRIVERS[suffix];
+  if (!allow) return false;
+  return !allow.has(driverId);
+}
+
+function filterPidsForBucket(mfrs, pids) {
+  const hasBseed = [...mfrs].some((m) => BSEED_ZCL_MFR.has(String(m).toLowerCase()));
+  if (!hasBseed) return [...pids];
+  return [...pids].filter((p) => String(p).toUpperCase() !== 'TS0601');
+}
+
+/**
+ * Peer repos / branches that publish Zigbee Tuya-class fingerprints (rewritten into OUR drivers).
+ * WHY: Johan master is a stale stub — harvest live SDK3 + active develop/modernize lanes.
+ * CONTRE QUOI: single-branch miss; invent pid; wipe compose; nkjintbl TZE284 bleed (registry forbid).
+ */
 const PEERS = [
-  // Johan default branch carries the live Homey app (master is a stale stub).
-  { id: 'johan-tuya-zigbee', repo: 'JohanBendz/com.tuya.zigbee', branch: 'default' },
-  { id: 'lidl-smart-home', repo: 'JohanBendz/com.lidl', branch: 'default' },
+  { id: 'johan-sdk3', repo: 'JohanBendz/com.tuya.zigbee', branch: 'SDK3' },
+  { id: 'johan-sdk3-test', repo: 'JohanBendz/com.tuya.zigbee', branch: 'SDK3-test' },
+  { id: 'johan-develop-0.4', repo: 'JohanBendz/com.tuya.zigbee', branch: 'develop-0.4' },
+  { id: 'johan-modernize-2026', repo: 'JohanBendz/com.tuya.zigbee', branch: 'modernize-2026' },
+  { id: 'johan-sdk-3', repo: 'JohanBendz/com.tuya.zigbee', branch: 'sdk-3' },
+  { id: 'lidl-sdk3', repo: 'JohanBendz/com.lidl', branch: 'SDK3' },
+  { id: 'lidl-default', repo: 'JohanBendz/com.lidl', branch: 'default' },
 ];
 
 async function resolveBranch(peer) {
@@ -314,15 +347,15 @@ function applyBucket(driverId, bucket, forbidIdx = new Map()) {
   const after = JSON.parse(JSON.stringify(before));
   after.zigbee = after.zigbee || {};
 
-  // WHY: peer remotes often list polluted mfr×pid cartesian — respect sacred forbid list.
-  const safeMfrs = [...bucket.mfrs].filter((m) => !mfrForbiddenOnDriver(forbidIdx, m, driverId));
+  // WHY: peer remotes often list polluted mfr×pid cartesian — respect sacred forbid + allow-lists.
+  const safeMfrs = [...bucket.mfrs].filter(
+    (m) => !mfrForbiddenOnDriver(forbidIdx, m, driverId) && !mfrBlockedByAllowList(m, driverId),
+  );
+  const safePids = filterPidsForBucket(safeMfrs, bucket.pids).map((p) => String(p).toUpperCase());
   const forms = [];
   for (const m of safeMfrs) forms.push(...dualCaseForms(m));
   after.zigbee.manufacturerName = appendExactIdentityForms(after.zigbee.manufacturerName, forms);
-  after.zigbee.productId = appendExactIdentityForms(
-    after.zigbee.productId,
-    [...bucket.pids].map((p) => String(p).toUpperCase()),
-  );
+  after.zigbee.productId = appendExactIdentityForms(after.zigbee.productId, safePids);
 
   if (wouldDegradeCompose(before, after)) {
     return { ok: false, reason: 'would_degrade' };

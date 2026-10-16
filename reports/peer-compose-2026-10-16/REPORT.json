@@ -1,10 +1,10 @@
 {
   "id": "P2830",
   "mode": "apply",
-  "generatedAt": "2026-10-16T09:10:28.893Z",
+  "generatedAt": "2026-10-16T13:48:39.337Z",
   "peerStats": [
     {
-      "id": "johan-tuya-zigbee",
+      "id": "johan-sdk3",
       "branch": "SDK3",
       "composeCount": 113,
       "appDriverCount": 113,
@@ -12,7 +12,47 @@
       "unmapped": 0
     },
     {
-      "id": "lidl-smart-home",
+      "id": "johan-sdk3-test",
+      "branch": "SDK3-test",
+      "composeCount": 13,
+      "appDriverCount": 10,
+      "mappedDrivers": 7,
+      "unmapped": 0
+    },
+    {
+      "id": "johan-develop-0.4",
+      "branch": "develop-0.4",
+      "composeCount": 154,
+      "appDriverCount": 154,
+      "mappedDrivers": 71,
+      "unmapped": 78
+    },
+    {
+      "id": "johan-modernize-2026",
+      "branch": "modernize-2026",
+      "composeCount": 113,
+      "appDriverCount": 113,
+      "mappedDrivers": 70,
+      "unmapped": 0
+    },
+    {
+      "id": "johan-sdk-3",
+      "branch": "sdk-3",
+      "composeCount": 6,
+      "appDriverCount": 5,
+      "mappedDrivers": 1,
+      "unmapped": 0
+    },
+    {
+      "id": "lidl-sdk3",
+      "branch": "SDK3",
+      "composeCount": 21,
+      "appDriverCount": 21,
+      "mappedDrivers": 14,
+      "unmapped": 0
+    },
+    {
+      "id": "lidl-default",
       "branch": "SDK3",
       "composeCount": 21,
       "appDriverCount": 21,
@@ -20,10 +60,10 @@
       "unmapped": 0
     }
   ],
-  "driversChanged": 44,
+  "driversChanged": 58,
   "applied": [
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "rgb_led_strip",
       "peerDrivers": [
         "christmas_lights",
@@ -38,7 +78,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "curtain_motor",
       "peerDrivers": [
         "curtain_motor"
@@ -51,7 +91,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "tunable_bulb_E27",
       "peerDrivers": [
         "dimmable_recessed_led",
@@ -65,7 +105,7 @@
       "addedPid": 1
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "dimmer_1_gang_tuya",
       "peerDrivers": [
         "dimmer_1_gang",
@@ -79,7 +119,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "dimmer_2_gang_tuya",
       "peerDrivers": [
         "dimmer_2_gang",
@@ -93,7 +133,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "contact_sensor",
       "peerDrivers": [
         "doorwindowsensor",
@@ -108,7 +148,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "switch_1gang",
       "peerDrivers": [
         "fingerbot",
@@ -124,7 +164,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "water_leak_sensor",
       "peerDrivers": [
         "flood_sensor",
@@ -139,7 +179,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "button_wireless_4",
       "peerDrivers": [
         "handheld_remote_4_buttons",
@@ -152,10 +192,10 @@
       "ok": true,
       "changed": true,
       "addedMfr": 21,
-      "addedPid": 1
+      "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "lcdtemphumidluxsensor",
       "peerDrivers": [
         "lcdtemphumidluxsensor"
@@ -168,7 +208,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "lcdtemphumidsensor",
       "peerDrivers": [
         "lcdtemphumidsensor"
@@ -177,11 +217,11 @@
       "pidIn": 1,
       "ok": true,
       "changed": true,
-      "addedMfr": 9,
+      "addedMfr": 6,
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "lcdtemphumidsensor_3",
       "peerDrivers": [
         "lcdtemphumidsensor_3"
@@ -194,7 +234,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "motion_sensor",
       "peerDrivers": [
         "motion_sensor_2",
@@ -208,7 +248,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "outdoor_plug",
       "peerDrivers": [
         "outdoor_plug"
@@ -221,7 +261,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "presence_sensor_radar",
       "peerDrivers": [
         "radar_sensor",
@@ -236,7 +276,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "rain_sensor",
       "peerDrivers": [
         "rain_sensor"
@@ -249,7 +289,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "relay_board_1_channel",
       "peerDrivers": [
         "relay_board_1_channel"
@@ -262,7 +302,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "relay_board_2_channel",
       "peerDrivers": [
         "relay_board_2_channel"
@@ -275,7 +315,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "relay_board_4_channel",
       "peerDrivers": [
         "relay_board_4_channel"
@@ -288,7 +328,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "rgb_bulb_E14",
       "peerDrivers": [
         "rgb_bulb_E14"
@@ -301,7 +341,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "rgb_bulb_E27",
       "peerDrivers": [
         "rgb_bulb_E27"
@@ -314,7 +354,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "rgb_ceiling_led_light",
       "peerDrivers": [
         "rgb_ceiling_led_light"
@@ -327,7 +367,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "rgb_floor_led_light",
       "peerDrivers": [
         "rgb_floor_led_light"
@@ -340,7 +380,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "rgb_led_light_bar",
       "peerDrivers": [
         "rgb_led_light_bar"
@@ -353,7 +393,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "rgb_led_strip_controller",
       "peerDrivers": [
         "rgb_led_strip_controller"
@@ -366,7 +406,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "rgb_mood_light",
       "peerDrivers": [
         "rgb_mood_light"
@@ -379,7 +419,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "rgb_spot_GU10",
       "peerDrivers": [
         "rgb_spot_GU10"
@@ -392,7 +432,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "rgb_spot_GardenLight",
       "peerDrivers": [
         "rgb_spot_GardenLight"
@@ -405,7 +445,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "rgb_wall_led_light",
       "peerDrivers": [
         "rgb_wall_led_light"
@@ -418,7 +458,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "siren",
       "peerDrivers": [
         "siren"
@@ -431,7 +471,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "sirentemphumidsensor",
       "peerDrivers": [
         "sirentemphumidsensor"
@@ -444,7 +484,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "slim_motion_sensor",
       "peerDrivers": [
         "slim_motion_sensor"
@@ -457,7 +497,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "smartPlug_DinRail",
       "peerDrivers": [
         "smartPlug_DinRail"
@@ -470,7 +510,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "smart_air_detection_box",
       "peerDrivers": [
         "smart_air_detection_box"
@@ -483,7 +523,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "button_wireless_1",
       "peerDrivers": [
         "smart_button_switch",
@@ -497,7 +537,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "smart_door_window_sensor",
       "peerDrivers": [
         "smart_door_window_sensor"
@@ -510,7 +550,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "smart_garden_irrigation_control",
       "peerDrivers": [
         "smart_garden_irrigation_control"
@@ -523,7 +563,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "smartplug",
       "peerDrivers": [
         "smartplug"
@@ -536,7 +576,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "smoke_sensor",
       "peerDrivers": [
         "smoke_sensor"
@@ -549,7 +589,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "smoke_sensor2",
       "peerDrivers": [
         "smoke_sensor2"
@@ -562,7 +602,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "smoke_sensor3",
       "peerDrivers": [
         "smoke_sensor3"
@@ -575,7 +615,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "socket_power_strip_four",
       "peerDrivers": [
         "socket_power_strip_four"
@@ -588,7 +628,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "soil_sensor",
       "peerDrivers": [
         "soilsensor",
@@ -602,7 +642,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "switch_1_gang_metering",
       "peerDrivers": [
         "switch_1_gang_metering"
@@ -615,7 +655,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "switch_2gang",
       "peerDrivers": [
         "switch_2_gang"
@@ -628,7 +668,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "switch_2_gang_metering",
       "peerDrivers": [
         "switch_2_gang_metering"
@@ -641,7 +681,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "switch_3gang",
       "peerDrivers": [
         "switch_3_gang"
@@ -654,7 +694,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "switch_4_gang_metering",
       "peerDrivers": [
         "switch_4_gang_metering"
@@ -667,7 +707,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "temphumidsensor",
       "peerDrivers": [
         "temphumidsensor"
@@ -680,7 +720,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "temphumidsensor2",
       "peerDrivers": [
         "temphumidsensor2"
@@ -693,7 +733,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "temphumidsensor3",
       "peerDrivers": [
         "temphumidsensor3"
@@ -706,7 +746,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "temphumidsensor4",
       "peerDrivers": [
         "temphumidsensor4"
@@ -719,7 +759,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "temphumidsensor5",
       "peerDrivers": [
         "temphumidsensor5"
@@ -732,7 +772,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "thermostatic_radiator_valve",
       "peerDrivers": [
         "thermostatic_radiator_valve"
@@ -745,7 +785,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "tunable_bulb_E14",
       "peerDrivers": [
         "tunable_bulb_E14"
@@ -758,7 +798,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "tunable_spot_GU10",
       "peerDrivers": [
         "tunable_spot_GU10"
@@ -771,7 +811,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "water_valve_smart",
       "peerDrivers": [
         "valvecontroller"
@@ -784,7 +824,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "wall_dimmer_tuya",
       "peerDrivers": [
         "wall_dimmer_tuya"
@@ -797,7 +837,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "button_wireless_2",
       "peerDrivers": [
         "wall_remote_2_gang"
@@ -810,7 +850,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "button_wireless_3",
       "peerDrivers": [
         "wall_remote_3_gang"
@@ -823,7 +863,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "wall_remote_6_gang",
       "peerDrivers": [
         "wall_remote_6_gang"
@@ -836,7 +876,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "wall_switch_1gang_1way",
       "peerDrivers": [
         "wall_switch_1_gang"
@@ -849,7 +889,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "wall_switch_2gang_1way",
       "peerDrivers": [
         "wall_switch_2_gang"
@@ -862,7 +902,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "wall_switch_3gang_1way",
       "peerDrivers": [
         "wall_switch_3_gang"
@@ -872,10 +912,10 @@
       "ok": true,
       "changed": true,
       "addedMfr": 45,
-      "addedPid": 1
+      "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "wall_switch_4gang_1way",
       "peerDrivers": [
         "wall_switch_4_gang"
@@ -888,7 +928,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "wall_switch_4_gang_tuya",
       "peerDrivers": [
         "wall_switch_4_gang_tuya"
@@ -901,7 +941,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "wall_switch_5_gang_tuya",
       "peerDrivers": [
         "wall_switch_5_gang_tuya"
@@ -914,7 +954,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "wall_switch_6_gang_tuya",
       "peerDrivers": [
         "wall_switch_6_gang_tuya"
@@ -927,7 +967,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "wall_thermostat",
       "peerDrivers": [
         "wall_thermostat"
@@ -940,7 +980,7 @@
       "addedPid": 0
     },
     {
-      "peer": "johan-tuya-zigbee",
+      "peer": "johan-sdk3",
       "driverId": "zigbee_repeater",
       "peerDrivers": [
         "zigbee_repeater"
@@ -953,7 +993,1985 @@
       "addedPid": 0
     },
     {
-      "peer": "lidl-smart-home",
+      "peer": "johan-sdk3-test",
+      "driverId": "lcdtemphumidsensor",
+      "peerDrivers": [
+        "lcdtemphumidsensor"
+      ],
+      "mfrIn": 7,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-sdk3-test",
+      "driverId": "switch_1gang",
+      "peerDrivers": [
+        "switch_1_gang"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-sdk3-test",
+      "driverId": "switch_2gang",
+      "peerDrivers": [
+        "switch_2_gang"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-sdk3-test",
+      "driverId": "water_valve_smart",
+      "peerDrivers": [
+        "valvecontroller"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-sdk3-test",
+      "driverId": "wall_switch_1gang_1way",
+      "peerDrivers": [
+        "wall_switch_1_gang"
+      ],
+      "mfrIn": 1,
+      "pidIn": 2,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-sdk3-test",
+      "driverId": "wall_switch_2gang_1way",
+      "peerDrivers": [
+        "wall_switch_2_gang"
+      ],
+      "mfrIn": 3,
+      "pidIn": 2,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 3,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-sdk3-test",
+      "driverId": "wall_switch_3gang_1way",
+      "peerDrivers": [
+        "wall_switch_3_gang"
+      ],
+      "mfrIn": 1,
+      "pidIn": 2,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "rgb_led_strip",
+      "peerDrivers": [
+        "christmas_lights",
+        "dimmable_led_strip",
+        "rgb_led_strip"
+      ],
+      "mfrIn": 3,
+      "pidIn": 3,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "curtain_motor",
+      "peerDrivers": [
+        "curtain_motor"
+      ],
+      "mfrIn": 30,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "tunable_bulb_E27",
+      "peerDrivers": [
+        "dimmable_recessed_led",
+        "tunable_bulb_E27"
+      ],
+      "mfrIn": 2,
+      "pidIn": 2,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "dimmer_1_gang_tuya",
+      "peerDrivers": [
+        "dimmer_1_gang",
+        "dimmer_1_gang_tuya"
+      ],
+      "mfrIn": 17,
+      "pidIn": 2,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "dimmer_2_gang_tuya",
+      "peerDrivers": [
+        "dimmer_2_gang",
+        "dimmer_2_gang_tuya"
+      ],
+      "mfrIn": 11,
+      "pidIn": 2,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "contact_sensor",
+      "peerDrivers": [
+        "doorwindowsensor",
+        "doorwindowsensor_2",
+        "doorwindowsensor_3"
+      ],
+      "mfrIn": 40,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 6,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "switch_1gang",
+      "peerDrivers": [
+        "fingerbot",
+        "smart_switch",
+        "switch_1_gang",
+        "wall_switch_1_gang_tuya"
+      ],
+      "mfrIn": 22,
+      "pidIn": 4,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "water_leak_sensor",
+      "peerDrivers": [
+        "flood_sensor",
+        "water_detector",
+        "water_leak_sensor_tuya"
+      ],
+      "mfrIn": 20,
+      "pidIn": 2,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "button_wireless_4",
+      "peerDrivers": [
+        "handheld_remote_4_buttons",
+        "smart_remote_4_buttons",
+        "wall_remote_4_gang",
+        "wall_remote_4_gang_3"
+      ],
+      "mfrIn": 15,
+      "pidIn": 2,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "illuminance_sensor",
+      "peerDrivers": [
+        "illuminance_sensor"
+      ],
+      "mfrIn": 3,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 6,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "lcdtemphumidluxsensor",
+      "peerDrivers": [
+        "lcdtemphumidluxsensor"
+      ],
+      "mfrIn": 4,
+      "pidIn": 2,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "lcdtemphumidsensor",
+      "peerDrivers": [
+        "lcdtemphumidsensor"
+      ],
+      "mfrIn": 13,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "lcdtemphumidsensor_3",
+      "peerDrivers": [
+        "lcdtemphumidsensor_3"
+      ],
+      "mfrIn": 7,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "motion_sensor",
+      "peerDrivers": [
+        "motion_sensor_2",
+        "pir_sensor_2"
+      ],
+      "mfrIn": 23,
+      "pidIn": 2,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "outdoor_plug",
+      "peerDrivers": [
+        "outdoor_plug"
+      ],
+      "mfrIn": 2,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "presence_sensor_radar",
+      "peerDrivers": [
+        "radar_sensor",
+        "radar_sensor_2",
+        "radar_sensor_ceiling"
+      ],
+      "mfrIn": 17,
+      "pidIn": 2,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "rain_sensor",
+      "peerDrivers": [
+        "rain_sensor"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "relay_board_1_channel",
+      "peerDrivers": [
+        "relay_board_1_channel"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "relay_board_2_channel",
+      "peerDrivers": [
+        "relay_board_2_channel"
+      ],
+      "mfrIn": 2,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "relay_board_4_channel",
+      "peerDrivers": [
+        "relay_board_4_channel"
+      ],
+      "mfrIn": 6,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 3,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "rgb_bulb_E14",
+      "peerDrivers": [
+        "rgb_bulb_E14"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "rgb_bulb_E27",
+      "peerDrivers": [
+        "rgb_bulb_E27"
+      ],
+      "mfrIn": 7,
+      "pidIn": 2,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "rgb_ceiling_led_light",
+      "peerDrivers": [
+        "rgb_ceiling_led_light"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "rgb_floor_led_light",
+      "peerDrivers": [
+        "rgb_floor_led_light"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "rgb_led_light_bar",
+      "peerDrivers": [
+        "rgb_led_light_bar"
+      ],
+      "mfrIn": 2,
+      "pidIn": 2,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "rgb_led_strip_controller",
+      "peerDrivers": [
+        "rgb_led_strip_controller"
+      ],
+      "mfrIn": 7,
+      "pidIn": 4,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 3,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "rgb_mood_light",
+      "peerDrivers": [
+        "rgb_mood_light"
+      ],
+      "mfrIn": 2,
+      "pidIn": 2,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "rgb_spot_GU10",
+      "peerDrivers": [
+        "rgb_spot_GU10"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "rgb_spot_GardenLight",
+      "peerDrivers": [
+        "rgb_spot_GardenLight"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "rgb_wall_led_light",
+      "peerDrivers": [
+        "rgb_wall_led_light"
+      ],
+      "mfrIn": 2,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "siren",
+      "peerDrivers": [
+        "siren"
+      ],
+      "mfrIn": 2,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "sirentemphumidsensor",
+      "peerDrivers": [
+        "sirentemphumidsensor"
+      ],
+      "mfrIn": 2,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "slim_motion_sensor",
+      "peerDrivers": [
+        "slim_motion_sensor"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "smartPlug_DinRail",
+      "peerDrivers": [
+        "smartPlug_DinRail"
+      ],
+      "mfrIn": 5,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "smart_air_detection_box",
+      "peerDrivers": [
+        "smart_air_detection_box"
+      ],
+      "mfrIn": 5,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "button_wireless_1",
+      "peerDrivers": [
+        "smart_button_switch",
+        "wall_remote_1_gang"
+      ],
+      "mfrIn": 14,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "smart_door_window_sensor",
+      "peerDrivers": [
+        "smart_door_window_sensor"
+      ],
+      "mfrIn": 2,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "smart_garden_irrigation_control",
+      "peerDrivers": [
+        "smart_garden_irrigation_control"
+      ],
+      "mfrIn": 4,
+      "pidIn": 2,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "smartplug",
+      "peerDrivers": [
+        "smartplug"
+      ],
+      "mfrIn": 59,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 24,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "smoke_sensor",
+      "peerDrivers": [
+        "smoke_sensor"
+      ],
+      "mfrIn": 3,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 3,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "smoke_sensor2",
+      "peerDrivers": [
+        "smoke_sensor2"
+      ],
+      "mfrIn": 5,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "smoke_sensor3",
+      "peerDrivers": [
+        "smoke_sensor3"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "socket_power_strip_four",
+      "peerDrivers": [
+        "socket_power_strip_four"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "soil_sensor",
+      "peerDrivers": [
+        "soilsensor",
+        "soilsensor_2"
+      ],
+      "mfrIn": 8,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "switch_1_gang_metering",
+      "peerDrivers": [
+        "switch_1_gang_metering"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "switch_2gang",
+      "peerDrivers": [
+        "switch_2_gang"
+      ],
+      "mfrIn": 15,
+      "pidIn": 5,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "switch_2_gang_metering",
+      "peerDrivers": [
+        "switch_2_gang_metering"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "switch_3gang",
+      "peerDrivers": [
+        "switch_3_gang"
+      ],
+      "mfrIn": 4,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "switch_4_gang_metering",
+      "peerDrivers": [
+        "switch_4_gang_metering"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "temphumidsensor",
+      "peerDrivers": [
+        "temphumidsensor"
+      ],
+      "mfrIn": 7,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 6,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "temphumidsensor2",
+      "peerDrivers": [
+        "temphumidsensor2"
+      ],
+      "mfrIn": 3,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "temphumidsensor3",
+      "peerDrivers": [
+        "temphumidsensor3"
+      ],
+      "mfrIn": 8,
+      "pidIn": 2,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 3,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "temphumidsensor4",
+      "peerDrivers": [
+        "temphumidsensor4"
+      ],
+      "mfrIn": 8,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "temphumidsensor5",
+      "peerDrivers": [
+        "temphumidsensor5"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "thermostatic_radiator_valve",
+      "peerDrivers": [
+        "thermostatic_radiator_valve"
+      ],
+      "mfrIn": 11,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "tunable_bulb_E14",
+      "peerDrivers": [
+        "tunable_bulb_E14"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "tunable_spot_GU10",
+      "peerDrivers": [
+        "tunable_spot_GU10"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "water_valve_smart",
+      "peerDrivers": [
+        "valvecontroller"
+      ],
+      "mfrIn": 9,
+      "pidIn": 2,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 3,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "wall_dimmer_tuya",
+      "peerDrivers": [
+        "wall_dimmer_tuya"
+      ],
+      "mfrIn": 14,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "button_wireless_2",
+      "peerDrivers": [
+        "wall_remote_2_gang"
+      ],
+      "mfrIn": 9,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "button_wireless_3",
+      "peerDrivers": [
+        "wall_remote_3_gang"
+      ],
+      "mfrIn": 12,
+      "pidIn": 1,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 3,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "wall_remote_6_gang",
+      "peerDrivers": [
+        "wall_remote_6_gang"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "wall_switch_1gang_1way",
+      "peerDrivers": [
+        "wall_switch_1_gang"
+      ],
+      "mfrIn": 18,
+      "pidIn": 2,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 3,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "wall_switch_2gang_1way",
+      "peerDrivers": [
+        "wall_switch_2_gang",
+        "wall_switch_2_gang_tuya"
+      ],
+      "mfrIn": 22,
+      "pidIn": 4,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 6,
+      "addedPid": 1
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "wall_switch_3gang_1way",
+      "peerDrivers": [
+        "wall_switch_3_gang"
+      ],
+      "mfrIn": 16,
+      "pidIn": 3,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 3,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "wall_switch_4gang_1way",
+      "peerDrivers": [
+        "wall_switch_4_gang"
+      ],
+      "mfrIn": 4,
+      "pidIn": 2,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "wall_switch_4_gang_tuya",
+      "peerDrivers": [
+        "wall_switch_4_gang_tuya"
+      ],
+      "mfrIn": 7,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "wall_switch_5_gang_tuya",
+      "peerDrivers": [
+        "wall_switch_5_gang_tuya"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "wall_switch_6_gang_tuya",
+      "peerDrivers": [
+        "wall_switch_6_gang_tuya"
+      ],
+      "mfrIn": 2,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "wall_thermostat",
+      "peerDrivers": [
+        "wall_thermostat"
+      ],
+      "mfrIn": 3,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "driverId": "zigbee_repeater",
+      "peerDrivers": [
+        "zigbee_repeater"
+      ],
+      "mfrIn": 8,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "rgb_led_strip",
+      "peerDrivers": [
+        "christmas_lights",
+        "dimmable_led_strip",
+        "rgb_led_strip"
+      ],
+      "mfrIn": 3,
+      "pidIn": 3,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "curtain_motor",
+      "peerDrivers": [
+        "curtain_motor"
+      ],
+      "mfrIn": 30,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "tunable_bulb_E27",
+      "peerDrivers": [
+        "dimmable_recessed_led",
+        "tunable_bulb_E27"
+      ],
+      "mfrIn": 2,
+      "pidIn": 2,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "dimmer_1_gang_tuya",
+      "peerDrivers": [
+        "dimmer_1_gang",
+        "dimmer_1_gang_tuya"
+      ],
+      "mfrIn": 18,
+      "pidIn": 2,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "dimmer_2_gang_tuya",
+      "peerDrivers": [
+        "dimmer_2_gang",
+        "dimmer_2_gang_tuya"
+      ],
+      "mfrIn": 12,
+      "pidIn": 2,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "contact_sensor",
+      "peerDrivers": [
+        "doorwindowsensor",
+        "doorwindowsensor_2",
+        "doorwindowsensor_3"
+      ],
+      "mfrIn": 35,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "switch_1gang",
+      "peerDrivers": [
+        "fingerbot",
+        "smart_switch",
+        "switch_1_gang",
+        "wall_switch_1_gang_tuya"
+      ],
+      "mfrIn": 21,
+      "pidIn": 4,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "water_leak_sensor",
+      "peerDrivers": [
+        "flood_sensor",
+        "water_detector",
+        "water_leak_sensor_tuya"
+      ],
+      "mfrIn": 21,
+      "pidIn": 2,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "button_wireless_4",
+      "peerDrivers": [
+        "handheld_remote_4_buttons",
+        "smart_remote_4_buttons",
+        "wall_remote_4_gang",
+        "wall_remote_4_gang_3"
+      ],
+      "mfrIn": 12,
+      "pidIn": 2,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "lcdtemphumidluxsensor",
+      "peerDrivers": [
+        "lcdtemphumidluxsensor"
+      ],
+      "mfrIn": 4,
+      "pidIn": 2,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "lcdtemphumidsensor",
+      "peerDrivers": [
+        "lcdtemphumidsensor"
+      ],
+      "mfrIn": 13,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "lcdtemphumidsensor_3",
+      "peerDrivers": [
+        "lcdtemphumidsensor_3"
+      ],
+      "mfrIn": 7,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "motion_sensor",
+      "peerDrivers": [
+        "motion_sensor_2",
+        "pir_sensor_2"
+      ],
+      "mfrIn": 23,
+      "pidIn": 2,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "outdoor_plug",
+      "peerDrivers": [
+        "outdoor_plug"
+      ],
+      "mfrIn": 2,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "presence_sensor_radar",
+      "peerDrivers": [
+        "radar_sensor",
+        "radar_sensor_2",
+        "radar_sensor_ceiling"
+      ],
+      "mfrIn": 19,
+      "pidIn": 2,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "rain_sensor",
+      "peerDrivers": [
+        "rain_sensor"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "relay_board_1_channel",
+      "peerDrivers": [
+        "relay_board_1_channel"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "relay_board_2_channel",
+      "peerDrivers": [
+        "relay_board_2_channel"
+      ],
+      "mfrIn": 2,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "relay_board_4_channel",
+      "peerDrivers": [
+        "relay_board_4_channel"
+      ],
+      "mfrIn": 5,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "rgb_bulb_E14",
+      "peerDrivers": [
+        "rgb_bulb_E14"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "rgb_bulb_E27",
+      "peerDrivers": [
+        "rgb_bulb_E27"
+      ],
+      "mfrIn": 7,
+      "pidIn": 2,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "rgb_ceiling_led_light",
+      "peerDrivers": [
+        "rgb_ceiling_led_light"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "rgb_floor_led_light",
+      "peerDrivers": [
+        "rgb_floor_led_light"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "rgb_led_light_bar",
+      "peerDrivers": [
+        "rgb_led_light_bar"
+      ],
+      "mfrIn": 2,
+      "pidIn": 2,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "rgb_led_strip_controller",
+      "peerDrivers": [
+        "rgb_led_strip_controller"
+      ],
+      "mfrIn": 6,
+      "pidIn": 4,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "rgb_mood_light",
+      "peerDrivers": [
+        "rgb_mood_light"
+      ],
+      "mfrIn": 2,
+      "pidIn": 2,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "rgb_spot_GU10",
+      "peerDrivers": [
+        "rgb_spot_GU10"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "rgb_spot_GardenLight",
+      "peerDrivers": [
+        "rgb_spot_GardenLight"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "rgb_wall_led_light",
+      "peerDrivers": [
+        "rgb_wall_led_light"
+      ],
+      "mfrIn": 2,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "siren",
+      "peerDrivers": [
+        "siren"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "sirentemphumidsensor",
+      "peerDrivers": [
+        "sirentemphumidsensor"
+      ],
+      "mfrIn": 2,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "slim_motion_sensor",
+      "peerDrivers": [
+        "slim_motion_sensor"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "smartPlug_DinRail",
+      "peerDrivers": [
+        "smartPlug_DinRail"
+      ],
+      "mfrIn": 5,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "smart_air_detection_box",
+      "peerDrivers": [
+        "smart_air_detection_box"
+      ],
+      "mfrIn": 5,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "button_wireless_1",
+      "peerDrivers": [
+        "smart_button_switch",
+        "wall_remote_1_gang"
+      ],
+      "mfrIn": 14,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "smart_door_window_sensor",
+      "peerDrivers": [
+        "smart_door_window_sensor"
+      ],
+      "mfrIn": 2,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "smart_garden_irrigation_control",
+      "peerDrivers": [
+        "smart_garden_irrigation_control"
+      ],
+      "mfrIn": 4,
+      "pidIn": 2,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "smartplug",
+      "peerDrivers": [
+        "smartplug"
+      ],
+      "mfrIn": 48,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "smoke_sensor",
+      "peerDrivers": [
+        "smoke_sensor"
+      ],
+      "mfrIn": 2,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "smoke_sensor2",
+      "peerDrivers": [
+        "smoke_sensor2"
+      ],
+      "mfrIn": 8,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "smoke_sensor3",
+      "peerDrivers": [
+        "smoke_sensor3"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "socket_power_strip_four",
+      "peerDrivers": [
+        "socket_power_strip_four"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "soil_sensor",
+      "peerDrivers": [
+        "soilsensor",
+        "soilsensor_2"
+      ],
+      "mfrIn": 8,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "switch_1_gang_metering",
+      "peerDrivers": [
+        "switch_1_gang_metering"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "switch_2gang",
+      "peerDrivers": [
+        "switch_2_gang"
+      ],
+      "mfrIn": 14,
+      "pidIn": 4,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "switch_2_gang_metering",
+      "peerDrivers": [
+        "switch_2_gang_metering"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "switch_3gang",
+      "peerDrivers": [
+        "switch_3_gang"
+      ],
+      "mfrIn": 3,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "switch_4_gang_metering",
+      "peerDrivers": [
+        "switch_4_gang_metering"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "temphumidsensor",
+      "peerDrivers": [
+        "temphumidsensor"
+      ],
+      "mfrIn": 5,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "temphumidsensor2",
+      "peerDrivers": [
+        "temphumidsensor2"
+      ],
+      "mfrIn": 3,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "temphumidsensor3",
+      "peerDrivers": [
+        "temphumidsensor3"
+      ],
+      "mfrIn": 7,
+      "pidIn": 2,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "temphumidsensor4",
+      "peerDrivers": [
+        "temphumidsensor4"
+      ],
+      "mfrIn": 9,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "temphumidsensor5",
+      "peerDrivers": [
+        "temphumidsensor5"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "thermostatic_radiator_valve",
+      "peerDrivers": [
+        "thermostatic_radiator_valve"
+      ],
+      "mfrIn": 11,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "tunable_bulb_E14",
+      "peerDrivers": [
+        "tunable_bulb_E14"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "tunable_spot_GU10",
+      "peerDrivers": [
+        "tunable_spot_GU10"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "water_valve_smart",
+      "peerDrivers": [
+        "valvecontroller"
+      ],
+      "mfrIn": 8,
+      "pidIn": 2,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "wall_dimmer_tuya",
+      "peerDrivers": [
+        "wall_dimmer_tuya"
+      ],
+      "mfrIn": 14,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "button_wireless_2",
+      "peerDrivers": [
+        "wall_remote_2_gang"
+      ],
+      "mfrIn": 8,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "button_wireless_3",
+      "peerDrivers": [
+        "wall_remote_3_gang"
+      ],
+      "mfrIn": 8,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "wall_remote_6_gang",
+      "peerDrivers": [
+        "wall_remote_6_gang"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "wall_switch_1gang_1way",
+      "peerDrivers": [
+        "wall_switch_1_gang"
+      ],
+      "mfrIn": 17,
+      "pidIn": 2,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "wall_switch_2gang_1way",
+      "peerDrivers": [
+        "wall_switch_2_gang"
+      ],
+      "mfrIn": 20,
+      "pidIn": 3,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "wall_switch_3gang_1way",
+      "peerDrivers": [
+        "wall_switch_3_gang"
+      ],
+      "mfrIn": 15,
+      "pidIn": 3,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "wall_switch_4gang_1way",
+      "peerDrivers": [
+        "wall_switch_4_gang"
+      ],
+      "mfrIn": 4,
+      "pidIn": 2,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "wall_switch_4_gang_tuya",
+      "peerDrivers": [
+        "wall_switch_4_gang_tuya"
+      ],
+      "mfrIn": 7,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "wall_switch_5_gang_tuya",
+      "peerDrivers": [
+        "wall_switch_5_gang_tuya"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "wall_switch_6_gang_tuya",
+      "peerDrivers": [
+        "wall_switch_6_gang_tuya"
+      ],
+      "mfrIn": 2,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "wall_thermostat",
+      "peerDrivers": [
+        "wall_thermostat"
+      ],
+      "mfrIn": 3,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-modernize-2026",
+      "driverId": "zigbee_repeater",
+      "peerDrivers": [
+        "zigbee_repeater"
+      ],
+      "mfrIn": 8,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "johan-sdk-3",
+      "driverId": "lcdtemphumidsensor",
+      "peerDrivers": [
+        "lcdtemphumidsensor"
+      ],
+      "mfrIn": 7,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "lidl-sdk3",
       "driverId": "rgb_led_strip",
       "peerDrivers": [
         "christmas_lights",
@@ -967,7 +2985,7 @@
       "addedPid": 0
     },
     {
-      "peer": "lidl-smart-home",
+      "peer": "lidl-sdk3",
       "driverId": "outdoor_plug",
       "peerDrivers": [
         "outdoor_plug"
@@ -980,7 +2998,7 @@
       "addedPid": 0
     },
     {
-      "peer": "lidl-smart-home",
+      "peer": "lidl-sdk3",
       "driverId": "rgb_bulb_E14",
       "peerDrivers": [
         "rgb_bulb_E14"
@@ -993,7 +3011,7 @@
       "addedPid": 0
     },
     {
-      "peer": "lidl-smart-home",
+      "peer": "lidl-sdk3",
       "driverId": "rgb_bulb_E27",
       "peerDrivers": [
         "rgb_bulb_E27"
@@ -1006,7 +3024,7 @@
       "addedPid": 0
     },
     {
-      "peer": "lidl-smart-home",
+      "peer": "lidl-sdk3",
       "driverId": "rgb_ceiling_led_light",
       "peerDrivers": [
         "rgb_ceiling_led_light"
@@ -1019,7 +3037,7 @@
       "addedPid": 0
     },
     {
-      "peer": "lidl-smart-home",
+      "peer": "lidl-sdk3",
       "driverId": "rgb_floor_led_light",
       "peerDrivers": [
         "rgb_floor_led_light"
@@ -1032,7 +3050,7 @@
       "addedPid": 0
     },
     {
-      "peer": "lidl-smart-home",
+      "peer": "lidl-sdk3",
       "driverId": "rgb_led_light_bar",
       "peerDrivers": [
         "rgb_led_light_bar"
@@ -1045,7 +3063,7 @@
       "addedPid": 0
     },
     {
-      "peer": "lidl-smart-home",
+      "peer": "lidl-sdk3",
       "driverId": "rgb_mood_light",
       "peerDrivers": [
         "rgb_mood_light"
@@ -1058,7 +3076,7 @@
       "addedPid": 0
     },
     {
-      "peer": "lidl-smart-home",
+      "peer": "lidl-sdk3",
       "driverId": "rgb_spot_GU10",
       "peerDrivers": [
         "rgb_spot_GU10"
@@ -1071,7 +3089,7 @@
       "addedPid": 0
     },
     {
-      "peer": "lidl-smart-home",
+      "peer": "lidl-sdk3",
       "driverId": "rgb_spot_GardenLight",
       "peerDrivers": [
         "rgb_spot_GardenLight"
@@ -1084,7 +3102,7 @@
       "addedPid": 0
     },
     {
-      "peer": "lidl-smart-home",
+      "peer": "lidl-sdk3",
       "driverId": "rgb_wall_led_light",
       "peerDrivers": [
         "rgb_wall_led_light"
@@ -1097,7 +3115,7 @@
       "addedPid": 0
     },
     {
-      "peer": "lidl-smart-home",
+      "peer": "lidl-sdk3",
       "driverId": "tunable_bulb_E14",
       "peerDrivers": [
         "tunable_bulb_E14"
@@ -1110,7 +3128,7 @@
       "addedPid": 0
     },
     {
-      "peer": "lidl-smart-home",
+      "peer": "lidl-sdk3",
       "driverId": "tunable_bulb_E27",
       "peerDrivers": [
         "tunable_bulb_E27"
@@ -1123,7 +3141,190 @@
       "addedPid": 0
     },
     {
-      "peer": "lidl-smart-home",
+      "peer": "lidl-sdk3",
+      "driverId": "tunable_spot_GU10",
+      "peerDrivers": [
+        "tunable_spot_GU10"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "lidl-default",
+      "driverId": "rgb_led_strip",
+      "peerDrivers": [
+        "christmas_lights",
+        "rgb_led_strip"
+      ],
+      "mfrIn": 2,
+      "pidIn": 2,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "lidl-default",
+      "driverId": "outdoor_plug",
+      "peerDrivers": [
+        "outdoor_plug"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "lidl-default",
+      "driverId": "rgb_bulb_E14",
+      "peerDrivers": [
+        "rgb_bulb_E14"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "lidl-default",
+      "driverId": "rgb_bulb_E27",
+      "peerDrivers": [
+        "rgb_bulb_E27"
+      ],
+      "mfrIn": 2,
+      "pidIn": 2,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "lidl-default",
+      "driverId": "rgb_ceiling_led_light",
+      "peerDrivers": [
+        "rgb_ceiling_led_light"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "lidl-default",
+      "driverId": "rgb_floor_led_light",
+      "peerDrivers": [
+        "rgb_floor_led_light"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "lidl-default",
+      "driverId": "rgb_led_light_bar",
+      "peerDrivers": [
+        "rgb_led_light_bar"
+      ],
+      "mfrIn": 2,
+      "pidIn": 2,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "lidl-default",
+      "driverId": "rgb_mood_light",
+      "peerDrivers": [
+        "rgb_mood_light"
+      ],
+      "mfrIn": 2,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "lidl-default",
+      "driverId": "rgb_spot_GU10",
+      "peerDrivers": [
+        "rgb_spot_GU10"
+      ],
+      "mfrIn": 2,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "lidl-default",
+      "driverId": "rgb_spot_GardenLight",
+      "peerDrivers": [
+        "rgb_spot_GardenLight"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "lidl-default",
+      "driverId": "rgb_wall_led_light",
+      "peerDrivers": [
+        "rgb_wall_led_light"
+      ],
+      "mfrIn": 2,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "lidl-default",
+      "driverId": "tunable_bulb_E14",
+      "peerDrivers": [
+        "tunable_bulb_E14"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "lidl-default",
+      "driverId": "tunable_bulb_E27",
+      "peerDrivers": [
+        "tunable_bulb_E27"
+      ],
+      "mfrIn": 1,
+      "pidIn": 1,
+      "ok": true,
+      "changed": false,
+      "addedMfr": 0,
+      "addedPid": 0
+    },
+    {
+      "peer": "lidl-default",
       "driverId": "tunable_spot_GU10",
       "peerDrivers": [
         "tunable_spot_GU10"
@@ -1136,8 +3337,321 @@
       "addedPid": 0
     }
   ],
-  "unmappedSample": [],
-  "unmappedTotal": 0,
+  "unmappedSample": [
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "contact_lux_hobeian"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "contact_lux_pay2byax"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "contact_sensor_elivco_x8q36xwf"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "contact_sensor_ewelink_snzb04"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "contact_sensor_n8dljorx"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "curtain_motor_dooya"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "dimmer_1_gang_tuya_avatto"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "dimmer_2_gang_tuya_fjjbhx9d"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "doorbell_button"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "fantem_zb003x"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "flood_sensor_2"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "flood_sensor_unverified_battery"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "hobeian_water_leak"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "motion_lux_hobeian_zg204zl"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "motion_lux_kb5noeto"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "motion_scene_switch"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "motion_sensor_3"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "mtg075_radar_sensor"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "pir_sensor_3"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "pir_sensor_4"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "radar_sensor_7gclukjs"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "radar_sensor_qasjif9e"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "rain_sensor_mowe"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "smoke_sensor_smoke_only"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "switch_1_gang_bseed_ts0001"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "switch_1_gang_metering_gjrubzje"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "switch_1_gang_ts0001"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "switch_2_gang_ts0002"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "switch_3_gang_ts0003"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "switch_4_gang_bseed_ts0726"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "switch_4_gang_ts0004"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "temphumidsensor_aubess_qoy0ekbd"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "temphumidsensor_ewelink"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "temphumidsensor_excellux"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "temphumidsensor_hobeian"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "temphumidsensor_tsgqxdb4"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "temphumidsensor_vvmbj46n"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "water_detector_2aaa"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "water_leak_sensor_jthf7vb6"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "contact_lux_hobeian"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "contact_lux_pay2byax"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "contact_sensor_elivco_x8q36xwf"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "contact_sensor_ewelink_snzb04"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "contact_sensor_n8dljorx"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "curtain_motor_dooya"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "dimmer_1_gang_tuya_avatto"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "dimmer_2_gang_tuya_fjjbhx9d"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "doorbell_button"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "fantem_zb003x"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "flood_sensor_2"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "flood_sensor_unverified_battery"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "hobeian_water_leak"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "motion_lux_hobeian_zg204zl"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "motion_lux_kb5noeto"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "motion_scene_switch"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "motion_sensor_3"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "mtg075_radar_sensor"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "pir_sensor_3"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "pir_sensor_4"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "radar_sensor_7gclukjs"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "radar_sensor_qasjif9e"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "rain_sensor_mowe"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "smoke_sensor_smoke_only"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "switch_1_gang_bseed_ts0001"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "switch_1_gang_metering_gjrubzje"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "switch_1_gang_ts0001"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "switch_2_gang_ts0002"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "switch_3_gang_ts0003"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "switch_4_gang_bseed_ts0726"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "switch_4_gang_ts0004"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "temphumidsensor_aubess_qoy0ekbd"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "temphumidsensor_ewelink"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "temphumidsensor_excellux"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "temphumidsensor_hobeian"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "temphumidsensor_tsgqxdb4"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "temphumidsensor_vvmbj46n"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "water_detector_2aaa"
+    },
+    {
+      "peer": "johan-develop-0.4",
+      "peerDriverId": "water_leak_sensor_jthf7vb6"
+    }
+  ],
+  "unmappedTotal": 78,
   "policy": {
     "complementaryOnly": true,
     "rewriteNotCopy": true,
