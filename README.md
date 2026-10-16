@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1492 |
+| **App Version** | v9.0.1494 |
 | **Drivers** | 449 (396 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,830 |
 | **Pairing Variants** | 19,214 (4 case combos per fingerprint) |
@@ -103,6 +103,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1494** | v9.0.1493: |
+| **v9.0.1493** | Clear TZE284 nkjintbl from app.json switch_2gang so publish gates pass (Athom processing path). |
 | **v9.0.1492** | Unblock Auto-Publish: strip ambiguous TZE284 nkjintbl from switch_2gang (anti-bot / Athom processing path). |
 | **v9.0.1491** | Automated peer complementary enrich cron (Johan/Lidl FP union) — free GHA, no forum post. |
 | **v9.0.1490** | Complementary fingerprint enrich from peer Zigbee apps (Johan/Lidl) — union only, no device wipe. |
@@ -113,8 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1485** | Reduced Homey tip email spam on Athom socket hang up (soft-expect hang-storm). |
 | **v9.0.1484** | Improved Zigbee peer fingerprint coverage (Johan/Lidl complementary rewrite). |
 | **v9.0.1483** | Improved Zigbee device coverage from complementary peer fingerprint rewrite (Johan/Lidl). |
-| **v9.0.1481** | Reduced GitHub Action email spam; Auto-Publish watcher only on failures. |
-| **v9.0.1480** | v9.0.1480: automated publish, manifest sync, and Homey test promotion. |
 
 <!-- CHANGELOG_END -->
 
