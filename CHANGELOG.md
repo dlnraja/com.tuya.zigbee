@@ -9,7 +9,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.1505] - 2026-10-16
+## [9.0.1507] - 2026-10-16
+
+Restore smoke_sensor3 vzekyi4c+TS0205 after compose→app mirror; free heal purges .homeybuild/backups.
+---
+
+ [9.0.1505] - 2026-10-16
 
 CI unblock: size gate soft-skip before build; switch_1gang density floor aligned after couple moves.
 ---
