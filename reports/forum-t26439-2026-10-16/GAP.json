@@ -1,0 +1,340 @@
+[
+  {
+    "mfr": "_TZE204_gkfbdvyx",
+    "pid": "?",
+    "posts": [
+      5310,
+      5313
+    ],
+    "status": "OK:presence_sensor_radar"
+  },
+  {
+    "mfr": "_TZE204_qasjif9e",
+    "pid": "?",
+    "posts": [
+      5310,
+      5313
+    ],
+    "status": "OK:presence_sensor_radar"
+  },
+  {
+    "mfr": "_TZ3000_zmy4lslw",
+    "pid": "TS0001",
+    "posts": [
+      5230
+    ],
+    "status": "PID_MISS:switch_2gang"
+  },
+  {
+    "mfr": "_TZ3000_cayepv1a",
+    "pid": "TS0001",
+    "posts": [
+      5230
+    ],
+    "status": "PID_MISS:smartPlug_DinRail"
+  },
+  {
+    "mfr": "_TZ3000_kqvb5akv",
+    "pid": "TS0001",
+    "posts": [
+      5230
+    ],
+    "status": "OK:switch_1gang"
+  },
+  {
+    "mfr": "_TZ3000_o4cjetlm",
+    "pid": "TS0111",
+    "posts": [
+      5256
+    ],
+    "status": "OK:valvecontroller"
+  },
+  {
+    "mfr": "_TZ3000_tvuarksa",
+    "pid": "TS0111",
+    "posts": [
+      5256
+    ],
+    "status": "OK:valvecontroller"
+  },
+  {
+    "mfr": "_TZ3000_j9568h44",
+    "pid": "TS0111",
+    "posts": [
+      5256
+    ],
+    "status": "OK:valvecontroller"
+  },
+  {
+    "mfr": "_TZ3000_iedbgyxt",
+    "pid": "TS0111",
+    "posts": [
+      5256
+    ],
+    "status": "OK:valvecontroller"
+  },
+  {
+    "mfr": "_TZ3000_w0ypwa1f",
+    "pid": "TS0111",
+    "posts": [
+      5256
+    ],
+    "status": "OK:switch_1gang"
+  },
+  {
+    "mfr": "_TZ3000_5ucujjts",
+    "pid": "TS0111",
+    "posts": [
+      5256
+    ],
+    "status": "OK:switch_1gang"
+  },
+  {
+    "mfr": "_TZ3000_au2o5e6q",
+    "pid": "TS0203",
+    "posts": [
+      5257
+    ],
+    "status": "OK:contact_sensor"
+  },
+  {
+    "mfr": "_TZE200_3towulqd",
+    "pid": "TS0601",
+    "posts": [
+      5299
+    ],
+    "status": "OK:presence_sensor_radar"
+  },
+  {
+    "mfr": "_TZ3210_pagajpog",
+    "pid": "TS110E",
+    "posts": [
+      5305
+    ],
+    "status": "OK:wall_dimmer_tuya"
+  },
+  {
+    "mfr": "_TZB210_ngnt8kni",
+    "pid": "TS0501B",
+    "posts": [
+      5373
+    ],
+    "status": "OK:led_controller_cct"
+  },
+  {
+    "mfr": "_TZE200_npj9bug3",
+    "pid": "TS0601",
+    "posts": [
+      5375
+    ],
+    "status": "OK:soil_sensor"
+  },
+  {
+    "mfr": "_TZ3000_n2egfsli",
+    "pid": "?",
+    "posts": [
+      5377
+    ],
+    "status": "OK:contact_sensor"
+  },
+  {
+    "mfr": "_TZ3000_xr3htd96",
+    "pid": "TS0201",
+    "posts": [
+      5383
+    ],
+    "status": "OK:temphumidsensor3"
+  },
+  {
+    "mfr": "_TZE284_c8ipbljq",
+    "pid": "TS0601",
+    "posts": [
+      5388
+    ],
+    "status": "OK:wall_switch_6_gang_tuya"
+  },
+  {
+    "mfr": "_TZ3000_pjb1ua0m",
+    "pid": "TS0203",
+    "posts": [
+      5389
+    ],
+    "status": "OK:contact_sensor"
+  },
+  {
+    "mfr": "_TZ3000_ww6drja5",
+    "pid": "TS011F",
+    "posts": [
+      5391
+    ],
+    "status": "OK:plug_energy_monitor"
+  },
+  {
+    "mfr": "_TZE284_oitavov2",
+    "pid": "TS0601",
+    "posts": [
+      5415
+    ],
+    "status": "OK:soil_sensor"
+  },
+  {
+    "mfr": "_TZE200_vvmbj46n",
+    "pid": "TS0601",
+    "posts": [
+      5420
+    ],
+    "status": "OK:lcdtemphumidsensor"
+  },
+  {
+    "mfr": "_TZ3000_gjnozsaz",
+    "pid": "?",
+    "posts": [
+      5424
+    ],
+    "status": "OK:button_wireless_plug"
+  },
+  {
+    "mfr": "_TZ3000_l9brjwau",
+    "pid": "?",
+    "posts": [
+      5430
+    ],
+    "status": "OK:wall_switch_2gang_1way,wall_switch_3gang_1way"
+  },
+  {
+    "mfr": "_TZ3000_qkixdnon",
+    "pid": "?",
+    "posts": [
+      5430
+    ],
+    "status": "OK:switch_3gang"
+  },
+  {
+    "mfr": "_TZE284_aaeasoll",
+    "pid": "TS0601",
+    "posts": [
+      5454
+    ],
+    "status": "OK:light_sensor_outdoor"
+  },
+  {
+    "mfr": "_TZ32101000000_jrqzgeuh",
+    "pid": "TS0210",
+    "posts": [
+      5457
+    ],
+    "status": "MISSING"
+  },
+  {
+    "mfr": "_TZE204_ex3rcdha",
+    "pid": "TS0601",
+    "posts": [
+      5460
+    ],
+    "status": "OK:presence_sensor_radar"
+  },
+  {
+    "mfr": "_TZE284_myd45weu",
+    "pid": "TS0601",
+    "posts": [
+      5470
+    ],
+    "status": "OK:soil_sensor"
+  },
+  {
+    "mfr": "_TZE284_nt4pquef",
+    "pid": "TS0601",
+    "posts": [
+      5491
+    ],
+    "status": "OK:soil_sensor"
+  },
+  {
+    "mfr": "_TZE284_aao3yzhs",
+    "pid": "TS0601",
+    "posts": [
+      5491
+    ],
+    "status": "OK:soil_sensor"
+  },
+  {
+    "mfr": "_TZE284_debczeci",
+    "pid": "TS0601",
+    "posts": [
+      5493
+    ],
+    "status": "OK:presence_sensor_radar"
+  },
+  {
+    "mfr": "_TZ3210_eymunffl",
+    "pid": "TS0101",
+    "posts": [
+      5497
+    ],
+    "status": "OK:smart_garden_irrigation_control"
+  },
+  {
+    "mfr": "_TZ3000_cjfmu5he",
+    "pid": "TS0101",
+    "posts": [
+      5497
+    ],
+    "status": "OK:smart_garden_irrigation_control,water_valve_garden"
+  },
+  {
+    "mfr": "_TZ3000_kz1anoi8",
+    "pid": "TS0101",
+    "posts": [
+      5497
+    ],
+    "status": "OK:smart_garden_irrigation_control,water_valve_garden"
+  },
+  {
+    "mfr": "_TZ3000_mq4wujmp",
+    "pid": "TS0101",
+    "posts": [
+      5497
+    ],
+    "status": "OK:smart_garden_irrigation_control,water_valve_garden"
+  },
+  {
+    "mfr": "_TZE284_nqqylykc",
+    "pid": "TS0601",
+    "posts": [
+      5516
+    ],
+    "status": "OK:wall_dimmer_tuya"
+  },
+  {
+    "mfr": "_TZE284_nqqylykc",
+    "pid": "?",
+    "posts": [
+      5519
+    ],
+    "status": "OK:wall_dimmer_tuya"
+  },
+  {
+    "mfr": "_TZ3000_qja6nq5z",
+    "pid": "TS004F",
+    "posts": [
+      5532
+    ],
+    "status": "OK:smart_knob_rotary"
+  },
+  {
+    "mfr": "_TZE200_crq3r3la",
+    "pid": "?",
+    "posts": [
+      5534
+    ],
+    "status": "OK:presence_sensor_radar"
+  },
+  {
+    "mfr": "_TZE284_9em5sfh",
+    "pid": "TS0601",
+    "posts": [
+      5535
+    ],
+    "status": "MISSING"
+  }
+]
