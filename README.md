@@ -33,15 +33,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1502 |
+| **App Version** | v9.0.1503 |
 | **Drivers** | 449 (396 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,840 |
-| **Pairing Variants** | 19,185 (4 case combos per fingerprint) |
+| **Pairing Variants** | 19,000 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 909 |
 | **Flow Cards** | 6,105 |
 | **Unique Capabilities** | 176 |
 | **Native OTA Drivers** | 9 |
-| **Test Suites** | 662 files |
+| **Test Suites** | 663 files |
 | **SVG Icons** | 752 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -60,15 +60,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 7 | `wall_dimmer_tuya` | 536 |
 | 8 | `button_wireless_2` | 410 |
 | 9 | `device_radiator_valve` | 403 |
-| 10 | `switch_2gang` | 392 |
-| 11 | `switch_4gang` | 334 |
-| 12 | `diy_custom_zigbee` | 306 |
-| 13 | `soil_sensor` | 293 |
-| 14 | `switch_3gang` | 293 |
-| 15 | `motion_sensor` | 287 |
-| 16 | `plug_energy_monitor` | 244 |
-| 17 | `contact_sensor` | 233 |
-| 18 | `thermostat_tuya_dp` | 212 |
+| 10 | `switch_4gang` | 334 |
+| 11 | `diy_custom_zigbee` | 306 |
+| 12 | `soil_sensor` | 293 |
+| 13 | `switch_3gang` | 293 |
+| 14 | `motion_sensor` | 287 |
+| 15 | `plug_energy_monitor` | 244 |
+| 16 | `contact_sensor` | 233 |
+| 17 | `thermostat_tuya_dp` | 212 |
+| 18 | `switch_2gang` | 210 |
 | 19 | `wall_thermostat` | 180 |
 | 20 | `bulb_dimmable` | 172 |
 
@@ -103,6 +103,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1503** | Sacred couple: Moes Star Feather zo0cfekv+TS0601 on wall 3-gang; CI density + SONOFF bulb cleanup. |
 | **v9.0.1502** | Publish payload slim: exclude root backups/ (~12 MB) from Homey package to reduce Athom socket hang up risk. |
 | **v9.0.1501** | Unblock CI: remove duplicate boiler_switch_energy flow conditions (driver compose vs global .homeycompose). |
 | **v9.0.1500** | Flow cards: fix hollow/creux actions and conditions — align driver listeners to compose IDs (DIN rail, RGB bulb, contact, radar, boiler, … |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1494** | Complementary enrich from Johan multi-branch + Lidl (UNION only, no wipe). |
 | **v9.0.1493** | Clear TZE284 nkjintbl from app.json switch_2gang so publish gates pass (Athom processing path). |
 | **v9.0.1492** | Unblock Auto-Publish: strip ambiguous TZE284 nkjintbl from switch_2gang (anti-bot / Athom processing path). |
-| **v9.0.1491** | Automated peer complementary enrich cron (Johan/Lidl FP union) — free GHA, no forum post. |
 
 <!-- CHANGELOG_END -->
 
