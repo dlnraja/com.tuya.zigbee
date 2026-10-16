@@ -907,6 +907,12 @@
       ]
     }
   ],
+  "9.0.1488": {
+    "en": "Completed P283x unit tests and hard CI family gates (peer rewrite + hang tip anti-spam)."
+  },
+  "9.0.1487": {
+    "en": "v9.0.1487: automated publish, manifest sync, and Homey test promotion."
+  },
   "9.0.1486": {
     "en": "Reduced Homey tip email spam on Athom socket hang up (soft-expect hang-storm)."
   },
@@ -958,16 +964,7 @@
   "9.0.1469": {
     "en": "TRV me167 DP4 no longer steals battery; settings spinner dual fallback (P2822)."
   },
-  "9.0.1468": {
-    "en": "Forum fleet silent treat: sacred-keep pins + forbid cartesian invent couples (P2821)."
-  },
-  "9.0.1467": {
-    "en": "Z2M/ZHA/quirks couple recheck: wrong-class moves + missing FP (P2820)."
-  },
-  "9.0.1487": {
-    "en": "v9.0.1487: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.1488": {
-    "en": "Completed P283x unit tests and hard CI family gates (peer rewrite + hang tip anti-spam)."
+  "9.0.1489": {
+    "en": "v9.0.1489: automated publish, manifest sync, and Homey test promotion."
   }
 }
