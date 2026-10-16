@@ -987,5 +987,8 @@
   },
   "9.0.1501": {
     "en": "Unblock CI: remove duplicate boiler_switch_energy flow conditions (driver compose vs global .homeycompose)."
+  },
+  "9.0.1502": {
+    "en": "Publish payload slim: exclude root backups/ (~12 MB) from Homey package to reduce Athom socket hang up risk."
   }
 }

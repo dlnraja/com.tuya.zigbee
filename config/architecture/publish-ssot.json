@@ -9,6 +9,16 @@
     "coupleSsot": "config/architecture/sacred-couple-ssot.json",
     "classify": "BOTH"
   },
+  "payloadSize": {
+    "id": "P2840",
+    "why": "Athom socket hang / processing_failed when upload bloats (root backups/ ~12MB dumps in .homeybuild).",
+    "homeyignoreMustExclude": ["backups", "tmp", "reports", "data/mfs_db.json"],
+    "sizeGate": "scripts/ci/publish-size-gate.cjs",
+    "leanWarnMB": 14,
+    "failIfBuildContains": ["backups/"],
+    "npm": "check:p2840",
+    "test": "test/critical/p2840-publish-payload-no-backups.test.js"
+  },
   "mandatoryPath": {
     "neverPublishFrom": "repo root",
     "alwaysUse": [

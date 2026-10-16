@@ -9,6 +9,11 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [9.0.1502] - 2026-10-16
+
+P2840 Publish payload: drop tracked `backups/` (~12 MB) from Homey package; size-gate fails if backups leak into `.homeybuild`.
+---
+
 ## [9.0.1501] - 2026-10-16
 
 P2839b Unblock CI: drop duplicate global boiler flow conditions (driver-scoped only).
