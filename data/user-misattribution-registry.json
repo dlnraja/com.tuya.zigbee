@@ -9414,8 +9414,19 @@
       "forbidMode": "couple",
       "protocol": "tuya_ef00",
       "interview": {
-        "clustersEp1": [0, 4, 5, 61184, 60672],
-        "composeClusters": [0, 4, 5, 61184],
+        "clustersEp1": [
+          0,
+          4,
+          5,
+          61184,
+          60672
+        ],
+        "composeClusters": [
+          0,
+          4,
+          5,
+          61184
+        ],
         "noOnOff6": true,
         "neverComposeEd00": true,
         "powerSource": "battery",
