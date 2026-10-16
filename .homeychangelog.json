@@ -968,5 +968,8 @@
   },
   "9.0.1480": {
     "en": "v9.0.1480: automated publish, manifest sync, and Homey test promotion."
+  },
+  "9.0.1481": {
+    "en": "Reduced GitHub Action email spam; Auto-Publish watcher only on failures."
   }
 }
