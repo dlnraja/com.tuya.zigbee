@@ -9,7 +9,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.1479] - 2026-10-16
+## [9.0.1484] - 2026-10-16
+
+Improved Zigbee peer fingerprint coverage (Johan/Lidl complementary rewrite).
+---
+
+ [9.0.1479] - 2026-10-16
 
 v9.0.1479: automated publish, manifest sync, and Homey test promotion.
 ---
