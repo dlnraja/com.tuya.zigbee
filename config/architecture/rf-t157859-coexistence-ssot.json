@@ -1,0 +1,21 @@
+{
+  "id": "P2838",
+  "title": "Homey RF tip T157859#22 — hidden Wi-Fi + Thread LAN dependency",
+  "source": "https://community.homey.app/t/understanding-thread-zigbee-and-wi-fi-channels-and-how-to-avoid-common-mistakes/157859/22",
+  "policy": "SHADOW read-only — never Discourse POST (T157628)",
+  "lessons": [
+    "Uncontrolled hidden 2.4 GHz SSIDs (doorbell chimes, camera homebases) can hop and drown Zigbee/Thread",
+    "ChannelAccessFailure = medium busy; NoAck = neighbor silent",
+    "Thread mesh OK ≠ Matter available — border routers need stable LAN/IPv6 (mDNS/RA/TREL)",
+    "Wave unavailability hits sleepy devices hardest; correlate with LAN flaps before retuning channels",
+    "Physical separation of radios from AP/Homey/Hue/camera-hub cluster matters"
+  ],
+  "runtime": {
+    "module": "lib/utils/rf-channel-coexistence.js",
+    "exports": ["hiddenWifiInterferenceBrief", "threadLanDependencyBrief", "formatCoexistenceTips"]
+  },
+  "gates": {
+    "check": "npm run check:p2838",
+    "smoke": "npm run rf:smoke"
+  }
+}

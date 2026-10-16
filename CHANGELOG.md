@@ -9,6 +9,11 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [9.0.1499] - 2026-10-16
+
+P2838 RF coexistence silent enrich (Homey tip T157859#22): hidden 2.4 GHz SSIDs + Thread/Matter LAN dependency (`ChannelAccessFailure` vs `NoAck`).
+---
+
 ## [9.0.1498] - 2026-10-16
 
 P2837 tip Unknown Zigbee interview `_TZE284_vuwtqx0t`+`TS0601` (Zemismart 214C): fix FP misroute contact_sensor → `water_valve_smart`; sacred-keep; never compose 0xED00.
