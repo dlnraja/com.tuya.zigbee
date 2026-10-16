@@ -178,6 +178,7 @@
     "TS0004",
     "TS0601",
     "TS011F",
+    "TS000X",
     "TS0203"
    ],
    "dps": [
@@ -39632,6 +39633,547 @@
    "pids": [
     "TS0601",
     "TS0212"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 385,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/385#issuecomment-5960495867",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_hdc8bbha",
+    "_TZ3000_skueekg3"
+   ],
+   "pids": [
+    "TS000F",
+    "TS0001"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 963,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/963#issuecomment-5960389648",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_fdxihpp7",
+    "_TZ3000_skueekg3"
+   ],
+   "pids": [
+    "TS0001"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 1014,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1014#issuecomment-5960389058",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_f09j9qjb"
+   ],
+   "pids": [
+    "TS0003"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 1402,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1402#issuecomment-5960388414",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3210_n0wbkysi"
+   ],
+   "pids": [
+    "TS0003"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 583,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/583#issuecomment-5960373243",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_fdxihpp7",
+    "_TZ3000_skueekg3"
+   ],
+   "pids": [
+    "TS0001"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 1492,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1492#issuecomment-5960162654",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_ovyaisip",
+    "_TZ3000_pk8tgtdb",
+    "_TZ3000_ywubfuvt",
+    "_TZ3000_kgxej1dv",
+    "_TZ3000_jjdkhueq",
+    "_TZ3000_f09j9qjb",
+    "_TZ3000_lwthnp7j",
+    "_TZ3210_fgwhjm9j",
+    "_TZE284_shkxsgis",
+    "_TZE284_r731zlxk"
+   ],
+   "pids": [
+    "TS0001",
+    "TS0002",
+    "TS0003",
+    "TS0004",
+    "TS011F",
+    "TS0601",
+    "TS0203"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 1208,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1208#issuecomment-5960082793",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE284_d0ypnbvn"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 1317,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1317#issuecomment-5960081692",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE284_81yrt3lo"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 456,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/456#issuecomment-5960072697",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE204_81yrt3lo",
+    "_TZE284_81yrt3lo"
+   ],
+   "pids": [
+    "TS0601",
+    "TS011F"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 1468,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1468#issuecomment-5960045962",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE608_lapuuoke",
+    "_TZE608_c75zqghm"
+   ],
+   "pids": [
+    "TS0603",
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 1385,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1385#issuecomment-5960040908",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE608_c75zqghm",
+    "_TZE608_lapuuoke"
+   ],
+   "pids": [
+    "TS0603",
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 674,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/674#issuecomment-5960018510",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_y4che4dc"
+   ],
+   "pids": [
+    "TS0001"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 1172,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1172#issuecomment-5960017283",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_p26flek3"
+   ],
+   "pids": [
+    "TS0001"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 1395,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1395#issuecomment-5960016267",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_hyarhbyx"
+   ],
+   "pids": [
+    "TS0001"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 1500,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1500#issuecomment-5960015246",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_iol4bl2y",
+    "_TZ3000_ly9apzky"
+   ],
+   "pids": [
+    "TS0003"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 424,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/424#issuecomment-5951900824",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_rco1yzb1"
+   ],
+   "pids": [
+    "TS004F"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 721,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/721#issuecomment-5951900281",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE204_nklqjk62",
+    "_TZE200_nklqjk62"
+   ],
+   "pids": [
+    "TS0601",
+    "TS0603"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 423,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/423#issuecomment-5951896220",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_rco1yzb1",
+    "_TZ3000_qja6nq5z"
+   ],
+   "pids": [
+    "TS004F"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 182,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/182#issuecomment-5951895591",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE200_nklqjk62",
+    "_TZE204_nklqjk62",
+    "_TZE200_wfxuhoea"
+   ],
+   "pids": [
+    "TS0601",
+    "TS0603"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 1112,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1112#issuecomment-5951857357",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_kvwrdf47",
+    "_TZ3000_zjtxnoft"
+   ],
+   "pids": [
+    "TS0052"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 358,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/358#issuecomment-5951853927",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_zjtxnoft",
+    "_TZ3000_kvwrdf47"
+   ],
+   "pids": [
+    "TS0052"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 1256,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1256#issuecomment-5951845186",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_gwkzibhs",
+    "_TZ3000_402vrq2i",
+    "_TZ3000_4fjiwweb",
+    "_TZ3000_qja6nq5z"
+   ],
+   "pids": [
+    "TS004F"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 1079,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1079#issuecomment-5951841491",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_402vrq2i",
+    "_TZ3000_gwkzibhs",
+    "_TZ3000_4fjiwweb",
+    "_TZ3000_qja6nq5z",
+    "_TZ3000_kaflzta4"
+   ],
+   "pids": [
+    "TS004F"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 1159,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1159#issuecomment-5951833822",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_ee8nrt2l"
+   ],
+   "pids": [
+    "TS0044"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 1376,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1376#issuecomment-5951808026",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_aetquff4"
+   ],
+   "pids": [
+    "TS0011"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 1178,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1178#issuecomment-5951807360",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_5ftkaulg"
+   ],
+   "pids": [
+    "TS0011"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 1383,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1383#issuecomment-5951806651",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3290_yyax9ajf"
+   ],
+   "pids": [
+    "TS1201"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 522,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/522#issuecomment-5951796422",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3290_yyax9ajf"
+   ],
+   "pids": [
+    "TS1201"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 571,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/571",
+   "user": "denis-papin",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE284_myd45weu"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 560,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/560",
+   "user": "artisare",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE200_rxq4iti9"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [
+    4
+   ],
+   "caps": [
+    "measure_temperature"
+   ]
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 559,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/559",
+   "user": "Lalla80111",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3210_w0qqde0g"
+   ],
+   "pids": [
+    "TS011F"
    ],
    "dps": [],
    "caps": []
