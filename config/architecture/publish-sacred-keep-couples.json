@@ -1723,6 +1723,24 @@
       "pid": "TS0601",
       "driverId": "lcdtemphumidsensor",
       "note": "P2823 Kizabgd #2263 LCD RSH-HS03 — was climate-only so LCD add-flow Unknown"
+    },
+    {
+      "mfr": "SONOFF",
+      "pid": "SWV-ZFU",
+      "driverId": "water_valve_garden",
+      "note": "P2836 #zigbee T157743 + Z2M — Sonoff Zigbee water valve ZCL"
+    },
+    {
+      "mfr": "eWeLink",
+      "pid": "SWV-ZFU",
+      "driverId": "water_valve_garden",
+      "note": "P2836 eWeLink sibling for Sonoff SWV-ZFU"
+    },
+    {
+      "mfr": "SONOFF",
+      "pid": "SWV",
+      "driverId": "water_valve_garden",
+      "note": "P2836 older Sonoff SWV modelId"
     }
   ]
 }

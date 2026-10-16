@@ -9348,6 +9348,45 @@
         "_TZ3000_wkai4ga5"
       ],
       "notes": "P2828 fleet gap false positives — forum posts mix mfr+wrong pid in same message. Verified couples: zmy4lslw+TS0002 switch_2gang; cayepv1a+TS011F/TS0121 smartPlug_DinRail; 4upl1fcj+TS0041 button_wireless_1; qd7hej8u+TS0505B bulb_rgb; zgyzgdua/wkai4ga5+TS0044 scene_switch_4. Never invent TS0001/TS0043/TS0505B cross-products."
+    },
+    {
+      "id": "p2836-sonoff-swv-water-valve-garden",
+      "mfr": [
+        "SONOFF",
+        "sonoff",
+        "Sonoff",
+        "eWeLink",
+        "ewelink",
+        "EWeLink"
+      ],
+      "productId": [
+        "SWV",
+        "SWV-ZN",
+        "SWV-ZNE",
+        "SWV-ZFE",
+        "SWV-ZNU",
+        "SWV-ZFU",
+        "SWV-ZF2",
+        "swv"
+      ],
+      "canonicalDriver": "water_valve_garden",
+      "forbiddenDrivers": [
+        "button_wireless_4",
+        "button_wireless",
+        "water_valve_smart",
+        "switch_1gang",
+        "socket",
+        "plug"
+      ],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "notes": "P2836 Homey #zigbee tag T157743 + Z2M sonoff.ts — SONOFF/eWeLink + SWV-* are ZCL OnOff valves → water_valve_garden (clusters 0/1/6). Never cartesian SWV onto button_wireless_4 or EF00 water_valve_smart. Mesh tip: battery-only mesh often blocks pair (forum).",
+      "sources": [
+        "forum-tag-zigbee",
+        "forum-t157743",
+        "z2m-sonoff-SWV-ZFU",
+        "P2836"
+      ]
     }
   ],
   "entries": {

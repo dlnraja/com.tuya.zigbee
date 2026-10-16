@@ -64,6 +64,12 @@ const DEFAULT_TOPICS = [
   { id: 158757, name: 'moes-presence-settings', replyAllowed: false },
   { id: 120477, name: 'rainsensor-solar-tuya', replyAllowed: false },
   { id: 146667, name: 'hobeian-zg303z-soil', replyAllowed: false },
+  // P2836 Homey #zigbee tag satellites — READ-ONLY (https://community.homey.app/tag/zigbee)
+  { id: 157743, name: 'sonoff-swv-woox-valve-mesh', replyAllowed: false },
+  { id: 160737, name: 'slow-first-reaction-sleepy', replyAllowed: false },
+  { id: 101901, name: 'unknown-zigbee-device-tip', replyAllowed: false },
+  { id: 36418, name: 'sonoff-zigbee-peer-app', replyAllowed: false },
+  { id: 159511, name: 'zemismart-spm02-review', replyAllowed: false },
 ];
 
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';

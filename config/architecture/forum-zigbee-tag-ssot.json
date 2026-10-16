@@ -1,0 +1,21 @@
+{
+  "id": "P2836",
+  "title": "Homey forum #zigbee tag silent harvest",
+  "source": "https://community.homey.app/tag/zigbee",
+  "policy": "SHADOW read-only — never Discourse POST (T157628)",
+  "actionableTopicIds": [140352, 157743, 160737, 101901, 36418, 159511],
+  "couples": [
+    {
+      "mfr": ["SONOFF", "eWeLink"],
+      "productId": ["SWV", "SWV-ZN", "SWV-ZNE", "SWV-ZFE", "SWV-ZNU", "SWV-ZFU", "SWV-ZF2"],
+      "driverId": "water_valve_garden",
+      "protocol": "zcl",
+      "forbid": ["button_wireless_4", "water_valve_smart"],
+      "sources": ["forum-t157743", "z2m-sonoff-SWV-ZFU"]
+    }
+  ],
+  "gates": {
+    "check": "npm run check:p2836",
+    "harvest": "npm run harvest:forum:zigbee-tag"
+  }
+}
