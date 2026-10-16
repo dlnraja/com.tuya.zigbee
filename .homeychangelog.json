@@ -981,5 +981,8 @@
   },
   "9.0.1492": {
     "en": "Unblock Auto-Publish: strip ambiguous TZE284 nkjintbl from switch_2gang (anti-bot / Athom processing path)."
+  },
+  "9.0.1493": {
+    "en": "Clear TZE284 nkjintbl from app.json switch_2gang so publish gates pass (Athom processing path)."
   }
 }

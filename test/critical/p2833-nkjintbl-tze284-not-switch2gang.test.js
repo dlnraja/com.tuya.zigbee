@@ -18,4 +18,10 @@ describe('P2833 nkjintbl TZE284 ambiguous not on switch_2gang', () => {
     assert.ok(e);
     assert.ok((e.forbiddenDrivers || []).includes('switch_2gang'));
   });
+
+  it('app.json also clean of TZE284 nkjintbl on switch_2gang', () => {
+    const app = JSON.parse(fs.readFileSync(path.join(ROOT, 'app.json'), 'utf8'));
+    const m = app.drivers.find((x) => x.id === 'switch_2gang')?.zigbee?.manufacturerName || [];
+    assert.ok(!m.some((x) => /_tze284_nkjintbl/i.test(x)));
+  });
 });
