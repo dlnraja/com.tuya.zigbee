@@ -2441,11 +2441,3 @@ Regenerate: `node tools/ci/investigate-device-peculiarities.js`
 
 - Couples/fixes: _TZE204_dqy15zxy+TS0601 → curtain_motor (Z2M#32851; was switch_2gang); motor_direction string RX (herdsman#13207); Tongou DP32 dual Hz (herdsman#12993); MTG detection_range unsigned TX/RX (Z2M#32561); jt50ea5d heat DP7/DP8 (herdsman#13184).
 - Silent enrich only — no forum POST.
-
-## P2825 — `_TZ3210_ncw88jfq` + `TS0201` (Wilhelm Homey suggestion)
-
-- Driver: `sensor_climate_temphumidsensor`
-- Interview: single EP1; battery via powerCfg; T/H may arrive on EF00 DP1/DP2 (or ZCL 1026/1029 with humidity ×10 quirk)
-- Fix: compose clusters `[0,1,1026,1029,61184]` + HYBRID prefer DP when EF00 without measurement ZCL; humidity DP ÷10 when >100
-- Gate: `npm run check:p2825` · BOTH · no invent pid · no forum POST
-
