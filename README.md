@@ -33,12 +33,12 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1500 |
+| **App Version** | v9.0.1501 |
 | **Drivers** | 449 (396 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,840 |
 | **Pairing Variants** | 19,185 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 909 |
-| **Flow Cards** | 6,107 |
+| **Flow Cards** | 6,105 |
 | **Unique Capabilities** | 176 |
 | **Native OTA Drivers** | 9 |
 | **Test Suites** | 661 files |
@@ -103,6 +103,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1501** | Unblock CI: remove duplicate boiler_switch_energy flow conditions (driver compose vs global .homeycompose). |
 | **v9.0.1500** | Flow cards: fix hollow/creux actions and conditions — align driver listeners to compose IDs (DIN rail, RGB bulb, contact, radar, boiler, … |
 | **v9.0.1499** | RF coexistence: silent enrich from Homey tip — hidden 2.4 GHz SSIDs and Thread/Matter LAN dependency (ChannelAccessFailure vs NoAck). |
 | **v9.0.1498** | Zemismart 214C water valve (_TZE284_vuwtqx0t+TS0601): fixed contact_sensor FP misroute; sacred-keep for Unknown Zigbee tip interview. |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1492** | Unblock Auto-Publish: strip ambiguous TZE284 nkjintbl from switch_2gang (anti-bot / Athom processing path). |
 | **v9.0.1491** | Automated peer complementary enrich cron (Johan/Lidl FP union) — free GHA, no forum post. |
 | **v9.0.1490** | Complementary fingerprint enrich from peer Zigbee apps (Johan/Lidl) — union only, no device wipe. |
-| **v9.0.1489** | v9.0.1489: automated publish, manifest sync, and Homey test promotion. |
 
 <!-- CHANGELOG_END -->
 
