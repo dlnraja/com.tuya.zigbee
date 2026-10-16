@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1481",
+  "version": "9.0.1484",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -681,7 +681,10 @@
     "check:p2826": "node --test test/critical/p2826-forum-t140352-fleet-flows.test.js",
     "check:p2827": "node --test test/critical/p2827-t26439-johan-inspire-ts0042.test.js",
     "check:p2828": "node --test test/critical/p2828-forum-satellites-full-thread.test.js",
-    "check:p2829": "node --test test/critical/p2829-gh-actions-anti-spam.test.js"
+    "check:p2829": "node --test test/critical/p2829-gh-actions-anti-spam.test.js",
+    "check:p2830": "node --test test/critical/p2830-peer-apps-compose-complementary.test.js",
+    "enrich:peers:compose": "node tools/ci/p2830-peer-apps-compose-complementary.js",
+    "enrich:peers:compose:apply": "node tools/ci/p2830-peer-apps-compose-complementary.js --apply"
   },
   "keywords": [
     "homey",
