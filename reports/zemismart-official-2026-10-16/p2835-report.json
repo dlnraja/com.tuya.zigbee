@@ -1,0 +1,300 @@
+{
+  "source": {
+    "homeyApp": "https://homey.app/fr-fr/app/com.zemismart.iot/Zemismart/",
+    "author": "https://homey.app/fr-fr/apps/author/673ecee0a57316856e9aea27/page/0/",
+    "zhaQuirks": "https://github.com/zemismart-dev/zemismart-zha-quirks",
+    "liveVersion": "2.0.33"
+  },
+  "apply": true,
+  "strips": [
+    {
+      "driver": "climate_sensor",
+      "removed": 24,
+      "why": "ZMS-206/208 screen switches ≠ climate (Zemismart ZHA + Homey com.zemismart.iot)"
+    },
+    {
+      "driver": "device_air_purifier_plug",
+      "removed": 4,
+      "why": "ZMS-206 1-gang screen switch ≠ air purifier plug"
+    },
+    {
+      "driver": "curtain_motor",
+      "removed": 4,
+      "why": "ZM609 metering screen switch ≠ curtain (zemismart-zha-quirks zmz609.py)"
+    },
+    {
+      "driver": "device_radiator_valve",
+      "removed": 4,
+      "why": "PF-PM07D water valve ≠ TRV (zemismart-zha-quirks pm07db_tyz.py)"
+    },
+    {
+      "driver": "switch_1gang",
+      "removed": 8,
+      "why": "ZMS-206/208 2-gang screen → switch_2gang (not 1-gang)"
+    },
+    {
+      "driver": "boiler_switch_energy",
+      "removed": 12,
+      "why": "ZN2S-US01U-ZK 1-gang screen switch → wall_switch_1_gang_tuya"
+    }
+  ],
+  "unions": [
+    {
+      "driver": "curtain_motor",
+      "pid": [
+        "TS0601"
+      ],
+      "mfr": [
+        "_TZE284_6hrnp30w",
+        "_TZE284_fzo2pocs",
+        "_TZE2841000000_3mzb0sdz",
+        "_TZE284_3mzb0sdz"
+      ],
+      "mfrAdded": 0,
+      "pidAdded": 0
+    },
+    {
+      "driver": "curtain_motor",
+      "pid": [
+        "TS0301"
+      ],
+      "mfr": [
+        "_TZE200_cirjrpxe"
+      ],
+      "mfrAdded": 2,
+      "pidAdded": 0
+    },
+    {
+      "driver": "presence_sensor_radar",
+      "pid": [
+        "TS0601"
+      ],
+      "mfr": [
+        "_TZE284_ft7qqpx3"
+      ],
+      "mfrAdded": 0,
+      "pidAdded": 0
+    },
+    {
+      "driver": "water_valve_smart",
+      "pid": [
+        "TS0601"
+      ],
+      "mfr": [
+        "_TZE284_vuwtqx0t",
+        "_TZE200_vuwtqx0t",
+        "_TZE2841000000_zm8zpwas"
+      ],
+      "mfrAdded": 2,
+      "pidAdded": 0
+    },
+    {
+      "driver": "ultrasonic_heat_meter",
+      "pid": [
+        "TS0601"
+      ],
+      "mfr": [
+        "_TZE200_jt50ea5d"
+      ],
+      "mfrAdded": 0,
+      "pidAdded": 0
+    },
+    {
+      "driver": "dimmer_1_gang_tuya",
+      "pid": [
+        "TS0601"
+      ],
+      "mfr": [
+        "_TZE284_5aico93l",
+        "_TZE28C1000000_5aico93l"
+      ],
+      "mfrAdded": 4,
+      "pidAdded": 0
+    },
+    {
+      "driver": "dimmer_2_gang_tuya",
+      "pid": [
+        "TS0601"
+      ],
+      "mfr": [
+        "_TZE284_pyh4zt7w"
+      ],
+      "mfrAdded": 2,
+      "pidAdded": 0
+    },
+    {
+      "driver": "dimmer_3gang",
+      "pid": [
+        "TS0601"
+      ],
+      "mfr": [
+        "_TZE284_k9e7ihec",
+        "_TZE28C1000000_k9e7ihec",
+        "_TZE204_znvwzxkq",
+        "_TZE284_znvwzxkq"
+      ],
+      "mfrAdded": 8,
+      "pidAdded": 0
+    },
+    {
+      "driver": "wall_switch_1_gang_tuya",
+      "pid": [
+        "TS0601"
+      ],
+      "mfr": [
+        "_TZE284_lnyz4a6v",
+        "_TZE284_1tnysxwl",
+        "_TZE284_rzdkn5rx"
+      ],
+      "mfrAdded": 6,
+      "pidAdded": 0
+    },
+    {
+      "driver": "switch_2gang",
+      "pid": [
+        "TS0601"
+      ],
+      "mfr": [
+        "_TZE284_dmckrsxg",
+        "_TZE284_a2teqi5u",
+        "_TZE204_3ctwoaip",
+        "_TZE284_3ctwoaip",
+        "_TZE28C1000000_a2teqi5u",
+        "_TZE28C1000000_dmckrsxg",
+        "_TZE284_o409r73p",
+        "_TZE28C1000000_o409r73p"
+      ],
+      "mfrAdded": 12,
+      "pidAdded": 0
+    },
+    {
+      "driver": "switch_3gang",
+      "pid": [
+        "TS0601"
+      ],
+      "mfr": [
+        "_TZE284_e4pf6l87",
+        "_TZE284_xvywzhmi",
+        "_TZE28C1000000_e4pf6l87",
+        "_TZE28C1000000_xvywzhmi",
+        "_TZE284_oy1nuaa5"
+      ],
+      "mfrAdded": 6,
+      "pidAdded": 0
+    },
+    {
+      "driver": "switch_4gang",
+      "pid": [
+        "TS0601"
+      ],
+      "mfr": [
+        "_TZE284_y4jqpry8",
+        "_TZE284_xibaabmu",
+        "_TZE28C1000000_y4jqpry8",
+        "_TZE28C1000000_xibaabmu",
+        "_TZE204_xibaabmu"
+      ],
+      "mfrAdded": 2,
+      "pidAdded": 0
+    },
+    {
+      "driver": "wall_switch_1_gang_tuya",
+      "pid": [
+        "TS0601"
+      ],
+      "mfr": [
+        "_TZE200_ephrk8to"
+      ],
+      "mfrAdded": 2,
+      "pidAdded": 0
+    },
+    {
+      "driver": "switch_2gang",
+      "pid": [
+        "TS0601"
+      ],
+      "mfr": [
+        "_TZE200_ahyyfhqk"
+      ],
+      "mfrAdded": 2,
+      "pidAdded": 0
+    },
+    {
+      "driver": "switch_3gang",
+      "pid": [
+        "TS0601"
+      ],
+      "mfr": [
+        "_TZE200_zuphzsmo"
+      ],
+      "mfrAdded": 2,
+      "pidAdded": 0
+    },
+    {
+      "driver": "switch_4gang",
+      "pid": [
+        "TS0601"
+      ],
+      "mfr": [
+        "_TZE200_6si1pnia"
+      ],
+      "mfrAdded": 2,
+      "pidAdded": 0
+    },
+    {
+      "driver": "switch_1gang",
+      "pid": [
+        "TS0726"
+      ],
+      "mfr": [
+        "_TZ3000_ovbvmhiq"
+      ],
+      "mfrAdded": 0,
+      "pidAdded": 0
+    },
+    {
+      "driver": "switch_2gang",
+      "pid": [
+        "TS0726"
+      ],
+      "mfr": [
+        "_TZ3000_icoxotza"
+      ],
+      "mfrAdded": 0,
+      "pidAdded": 0
+    },
+    {
+      "driver": "switch_3gang",
+      "pid": [
+        "TS0726"
+      ],
+      "mfr": [
+        "_TZ3000_hurauima"
+      ],
+      "mfrAdded": 2,
+      "pidAdded": 0
+    },
+    {
+      "driver": "button_wireless_4",
+      "pid": [
+        "TS0044"
+      ],
+      "mfr": [
+        "_TZ3000_xwuveizv"
+      ],
+      "mfrAdded": 0,
+      "pidAdded": 0
+    },
+    {
+      "driver": "ir_blaster",
+      "pid": [
+        "TS1201"
+      ],
+      "mfr": [
+        "_TZ3290_qazgdsae"
+      ],
+      "mfrAdded": 0,
+      "pidAdded": 0
+    }
+  ]
+}

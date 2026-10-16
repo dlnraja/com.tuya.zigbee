@@ -1,0 +1,1154 @@
+[
+  {
+    "id": "CurtainMotorZM87",
+    "class": "curtain",
+    "caps": [
+      "windowcoverings_state",
+      "windowcoverings_set",
+      "button_auto_calibration_start",
+      "curtain_status"
+    ],
+    "connectivity": [
+      "zigbee"
+    ],
+    "energy": {
+      "approximation": {
+        "usageOn": 0,
+        "usageOff": 0
+      }
+    }
+  },
+  {
+    "id": "Downlight",
+    "class": "light",
+    "caps": [
+      "onoff",
+      "dim",
+      "light_hue",
+      "light_saturation",
+      "light_mode",
+      "light_temperature"
+    ],
+    "connectivity": [
+      "zigbee"
+    ],
+    "energy": {
+      "approximation": {
+        "usageOn": 0,
+        "usageOff": 0
+      }
+    }
+  },
+  {
+    "id": "ElectricBlindZM24",
+    "class": "blinds",
+    "caps": [
+      "windowcoverings_set",
+      "button_upper_limit_set",
+      "button_upper_limit_reset",
+      "button_lower_limit_set",
+      "button_lower_limit_reset",
+      "button_reset_all_limits"
+    ],
+    "connectivity": [
+      "zigbee"
+    ],
+    "energy": {
+      "approximation": {
+        "usageOn": 0,
+        "usageOff": 0
+      }
+    }
+  },
+  {
+    "id": "F3Pro",
+    "class": "socket",
+    "caps": [
+      "onoff",
+      "f3_backlight",
+      "f3_led_switch.1",
+      "f3_led_brightness.1",
+      "f3_led_warmth.1",
+      "f3_led_switch.2",
+      "f3_led_brightness.2",
+      "f3_led_warmth.2",
+      "f3_led_switch.3",
+      "f3_led_brightness.3",
+      "f3_led_warmth.3",
+      "f3_led_switch.4",
+      "f3_led_brightness.4",
+      "f3_led_warmth.4",
+      "f3_cover_state.1",
+      "f3_cover_position.1",
+      "f3_cover_state.2",
+      "f3_cover_position.2",
+      "f3_cover_state.3",
+      "f3_cover_position.3",
+      "f3_cover_state.4",
+      "f3_cover_position.4"
+    ],
+    "connectivity": [
+      "zigbee"
+    ],
+    "energy": {
+      "approximation": {
+        "usageOn": 0,
+        "usageOff": 0
+      }
+    }
+  },
+  {
+    "id": "Kes606SceneSwitch1Gang",
+    "class": "socket",
+    "caps": [
+      "onoff"
+    ],
+    "connectivity": [
+      "zigbee"
+    ]
+  },
+  {
+    "id": "Kes606SceneSwitch2Gang",
+    "class": "socket",
+    "caps": [
+      "onoff"
+    ],
+    "connectivity": [
+      "zigbee"
+    ]
+  },
+  {
+    "id": "Kes606SceneSwitch3Gang",
+    "class": "socket",
+    "caps": [
+      "onoff"
+    ],
+    "connectivity": [
+      "zigbee"
+    ]
+  },
+  {
+    "id": "Kes606SceneSwitch4Gang",
+    "class": "socket",
+    "caps": [
+      "onoff"
+    ],
+    "connectivity": [
+      "zigbee"
+    ]
+  },
+  {
+    "id": "MatterScreenNameSync",
+    "class": "other",
+    "caps": [],
+    "connectivity": [
+      "lan"
+    ]
+  },
+  {
+    "id": "MatterScreenNameSync1Gang",
+    "class": "other",
+    "caps": [],
+    "connectivity": [
+      "lan"
+    ]
+  },
+  {
+    "id": "MatterScreenNameSync2Gang",
+    "class": "other",
+    "caps": [],
+    "connectivity": [
+      "lan"
+    ]
+  },
+  {
+    "id": "MatterScreenNameSync3Gang",
+    "class": "other",
+    "caps": [],
+    "connectivity": [
+      "lan"
+    ]
+  },
+  {
+    "id": "PirSensor",
+    "class": "sensor",
+    "caps": [
+      "alarm_motion",
+      "measure_battery"
+    ],
+    "connectivity": [
+      "zigbee"
+    ],
+    "energy": {
+      "batteries": [
+        "CR2450"
+      ]
+    }
+  },
+  {
+    "id": "PresenceSensorZPSZ1",
+    "class": "sensor",
+    "caps": [
+      "alarm_presence",
+      "measure_luminance"
+    ],
+    "connectivity": [
+      "zigbee"
+    ],
+    "energy": {
+      "batteries": [
+        "CR2450"
+      ]
+    }
+  },
+  {
+    "id": "RollerShadeZM25EL",
+    "class": "blinds",
+    "caps": [
+      "button_open",
+      "button_stop",
+      "button_close",
+      "windowcoverings_set",
+      "button_upper_limit_set",
+      "button_upper_limit_reset",
+      "button_lower_limit_set",
+      "button_lower_limit_reset",
+      "button_middle_limit_set",
+      "button_middle_limit_reset",
+      "button_reset_all_limits",
+      "measure_battery"
+    ],
+    "connectivity": [
+      "zigbee"
+    ],
+    "energy": {
+      "batteries": [
+        "INTERNAL"
+      ],
+      "approximation": {
+        "usageOn": 0,
+        "usageOff": 0
+      }
+    }
+  },
+  {
+    "id": "RollerShadeZM25R1",
+    "class": "blinds",
+    "caps": [
+      "windowcoverings_set",
+      "button_upper_limit_set",
+      "button_upper_limit_reset",
+      "button_lower_limit_set",
+      "button_lower_limit_reset",
+      "button_reset_all_limits"
+    ],
+    "connectivity": [
+      "zigbee"
+    ],
+    "energy": {
+      "approximation": {
+        "usageOn": 0,
+        "usageOff": 0
+      }
+    }
+  },
+  {
+    "id": "SDM01EnergyMeter",
+    "class": "other",
+    "caps": [
+      "meter_power",
+      "meter_energy_reverse",
+      "measure_power",
+      "measure_frequency",
+      "measure_powerfactor",
+      "measure_power_x",
+      "measure_current_x",
+      "measure_voltage_x",
+      "meter_energy_forward_x",
+      "meter_energy_reverse_x",
+      "measure_powerfactor_x",
+      "measure_power_y",
+      "measure_current_y",
+      "measure_voltage_y",
+      "meter_energy_forward_y",
+      "meter_energy_reverse_y",
+      "measure_powerfactor_y",
+      "measure_power_z",
+      "measure_current_z",
+      "measure_voltage_z",
+      "meter_energy_forward_z",
+      "meter_energy_reverse_z",
+      "measure_powerfactor_z"
+    ],
+    "connectivity": [
+      "zigbee"
+    ]
+  },
+  {
+    "id": "SDM01V1.5EnergyMeter",
+    "class": "other",
+    "caps": [
+      "meter_power",
+      "meter_energy_reverse",
+      "measure_power",
+      "measure_frequency",
+      "measure_powerfactor",
+      "measure_power_x",
+      "measure_current_x",
+      "measure_voltage_x",
+      "meter_energy_forward_x",
+      "meter_energy_reverse_x",
+      "measure_powerfactor_x",
+      "measure_power_y",
+      "measure_current_y",
+      "measure_voltage_y",
+      "meter_energy_forward_y",
+      "meter_energy_reverse_y",
+      "measure_powerfactor_y",
+      "measure_power_z",
+      "measure_current_z",
+      "measure_voltage_z",
+      "meter_energy_forward_z",
+      "meter_energy_reverse_z",
+      "measure_powerfactor_z"
+    ],
+    "connectivity": [
+      "zigbee"
+    ]
+  },
+  {
+    "id": "SDM01_3PN-U01",
+    "class": "sensor",
+    "caps": [
+      "meter_power.imported",
+      "meter_power.exported",
+      "measure_voltage_x",
+      "measure_current_x",
+      "measure_power_x",
+      "measure_reactive_power_x",
+      "measure_apparent_power_x",
+      "measure_powerfactor_x",
+      "meter_energy_forward_x",
+      "meter_energy_reverse_x",
+      "measure_voltage_y",
+      "measure_current_y",
+      "measure_power_y",
+      "measure_reactive_power_y",
+      "measure_apparent_power_y",
+      "measure_powerfactor_y",
+      "meter_energy_forward_y",
+      "meter_energy_reverse_y",
+      "measure_voltage_z",
+      "measure_current_z",
+      "measure_power_z",
+      "measure_reactive_power_z",
+      "measure_apparent_power_z",
+      "measure_powerfactor_z",
+      "meter_energy_forward_z",
+      "meter_energy_reverse_z",
+      "measure_frequency",
+      "measure_power",
+      "measure_reactive_power_total",
+      "measure_apparent_power_total"
+    ],
+    "connectivity": [
+      "zigbee"
+    ],
+    "energy": {
+      "cumulative": true,
+      "cumulativeImportedCapability": "meter_power.imported",
+      "cumulativeExportedCapability": "meter_power.exported"
+    }
+  },
+  {
+    "id": "SDM02-U01",
+    "class": "sensor",
+    "caps": [
+      "meter_power.imported",
+      "meter_power.exported",
+      "measure_voltage_x",
+      "measure_current_x",
+      "measure_power_x",
+      "measure_reactive_power_x",
+      "measure_apparent_power_x",
+      "measure_powerfactor_x",
+      "meter_energy_forward_x",
+      "meter_energy_reverse_x",
+      "measure_voltage_y",
+      "measure_current_y",
+      "measure_power_y",
+      "measure_reactive_power_y",
+      "measure_apparent_power_y",
+      "measure_powerfactor_y",
+      "meter_energy_forward_y",
+      "meter_energy_reverse_y",
+      "measure_frequency",
+      "measure_power",
+      "measure_reactive_power_total",
+      "measure_apparent_power_total"
+    ],
+    "connectivity": [
+      "zigbee"
+    ],
+    "energy": {
+      "cumulative": true,
+      "cumulativeImportedCapability": "meter_power.imported",
+      "cumulativeExportedCapability": "meter_power.exported"
+    }
+  },
+  {
+    "id": "SDM02EnergyMeter",
+    "class": "other",
+    "caps": [
+      "meter_power",
+      "meter_energy_reverse",
+      "measure_power",
+      "measure_frequency",
+      "measure_powerfactor",
+      "measure_power_x",
+      "measure_current_x",
+      "measure_voltage_x",
+      "meter_energy_forward_x",
+      "meter_energy_reverse_x",
+      "measure_powerfactor_x",
+      "measure_power_y",
+      "measure_current_y",
+      "measure_voltage_y",
+      "meter_energy_forward_y",
+      "meter_energy_reverse_y",
+      "measure_powerfactor_y"
+    ],
+    "connectivity": [
+      "zigbee"
+    ]
+  },
+  {
+    "id": "SEM3WLW2L",
+    "class": "sensor",
+    "caps": [
+      "meter_power",
+      "meter_energy_reverse",
+      "measure_power",
+      "measure_frequency",
+      "measure_voltage_x",
+      "measure_current_x",
+      "measure_power_x",
+      "measure_voltage_y",
+      "measure_current_y",
+      "measure_power_y",
+      "measure_voltage_z",
+      "measure_current_z",
+      "measure_power_z"
+    ],
+    "connectivity": [
+      "lan"
+    ]
+  },
+  {
+    "id": "SPM01-U01",
+    "class": "sensor",
+    "caps": [
+      "meter_power.imported",
+      "meter_power.exported",
+      "measure_voltage",
+      "measure_current",
+      "measure_power",
+      "measure_apparent_power",
+      "measure_powerfactor",
+      "measure_frequency"
+    ],
+    "connectivity": [
+      "zigbee"
+    ],
+    "energy": {
+      "cumulative": true,
+      "cumulativeImportedCapability": "meter_power.imported",
+      "cumulativeExportedCapability": "meter_power.exported"
+    }
+  },
+  {
+    "id": "SPM01V2.5EnergyMeter",
+    "class": "other",
+    "caps": [
+      "meter_power",
+      "meter_energy_reverse",
+      "measure_power",
+      "measure_current",
+      "measure_voltage",
+      "measure_frequency",
+      "measure_powerfactor"
+    ],
+    "connectivity": [
+      "zigbee"
+    ]
+  },
+  {
+    "id": "SPM01V2EnergyMeter",
+    "class": "other",
+    "caps": [
+      "meter_power",
+      "meter_energy_reverse",
+      "measure_power",
+      "measure_current",
+      "measure_voltage",
+      "measure_frequency",
+      "measure_powerfactor"
+    ],
+    "connectivity": [
+      "zigbee"
+    ]
+  },
+  {
+    "id": "SPM02-U01",
+    "class": "sensor",
+    "caps": [
+      "meter_power.imported",
+      "meter_power.exported",
+      "measure_voltage_x",
+      "measure_current_x",
+      "measure_power_x",
+      "measure_reactive_power_x",
+      "measure_apparent_power_x",
+      "measure_powerfactor_x",
+      "meter_energy_forward_x",
+      "meter_energy_reverse_x",
+      "measure_voltage_y",
+      "measure_current_y",
+      "measure_power_y",
+      "measure_reactive_power_y",
+      "measure_apparent_power_y",
+      "measure_powerfactor_y",
+      "meter_energy_forward_y",
+      "meter_energy_reverse_y",
+      "measure_voltage_z",
+      "measure_current_z",
+      "measure_power_z",
+      "measure_reactive_power_z",
+      "measure_apparent_power_z",
+      "measure_powerfactor_z",
+      "meter_energy_forward_z",
+      "meter_energy_reverse_z",
+      "measure_frequency",
+      "measure_power",
+      "measure_reactive_power_total",
+      "measure_apparent_power_total"
+    ],
+    "connectivity": [
+      "zigbee"
+    ],
+    "energy": {
+      "cumulative": true,
+      "cumulativeImportedCapability": "meter_power.imported",
+      "cumulativeExportedCapability": "meter_power.exported"
+    }
+  },
+  {
+    "id": "SPM02V2.5EnergyMeter",
+    "class": "other",
+    "caps": [
+      "meter_power",
+      "meter_energy_reverse",
+      "measure_power",
+      "measure_power_x",
+      "measure_current_x",
+      "measure_voltage_x",
+      "measure_power_y",
+      "measure_current_y",
+      "measure_voltage_y",
+      "measure_power_z",
+      "measure_current_z",
+      "measure_voltage_z",
+      "measure_frequency",
+      "measure_powerfactor"
+    ],
+    "connectivity": [
+      "zigbee"
+    ]
+  },
+  {
+    "id": "SPM02V2EnergyMeter",
+    "class": "other",
+    "caps": [
+      "meter_power",
+      "meter_energy_reverse",
+      "measure_power",
+      "measure_power_x",
+      "measure_current_x",
+      "measure_voltage_x",
+      "measure_power_y",
+      "measure_current_y",
+      "measure_voltage_y",
+      "measure_power_z",
+      "measure_current_z",
+      "measure_voltage_z",
+      "measure_frequency",
+      "measure_powerfactor"
+    ],
+    "connectivity": [
+      "zigbee"
+    ]
+  },
+  {
+    "id": "SPM02V3EnergyMeter",
+    "class": "other",
+    "caps": [
+      "meter_power",
+      "meter_energy_reverse",
+      "measure_power",
+      "measure_frequency",
+      "measure_powerfactor",
+      "measure_power_x",
+      "measure_current_x",
+      "measure_voltage_x",
+      "meter_energy_forward_x",
+      "meter_energy_reverse_x",
+      "measure_powerfactor_x",
+      "measure_power_y",
+      "measure_current_y",
+      "measure_voltage_y",
+      "meter_energy_forward_y",
+      "meter_energy_reverse_y",
+      "measure_powerfactor_y",
+      "measure_power_z",
+      "measure_current_z",
+      "measure_voltage_z",
+      "meter_energy_forward_z",
+      "meter_energy_reverse_z",
+      "measure_powerfactor_z"
+    ],
+    "connectivity": [
+      "zigbee"
+    ]
+  },
+  {
+    "id": "SceneSwitch1Gang",
+    "class": "socket",
+    "caps": [
+      "onoff"
+    ],
+    "connectivity": [
+      "zigbee"
+    ],
+    "energy": {
+      "approximation": {
+        "usageOn": 0,
+        "usageOff": 0
+      }
+    }
+  },
+  {
+    "id": "SceneSwitch2Gang",
+    "class": "socket",
+    "caps": [
+      "onoff"
+    ],
+    "connectivity": [
+      "zigbee"
+    ],
+    "energy": {
+      "approximation": {
+        "usageOn": 0,
+        "usageOff": 0
+      }
+    }
+  },
+  {
+    "id": "SceneSwitch3Gang",
+    "class": "socket",
+    "caps": [
+      "onoff"
+    ],
+    "connectivity": [
+      "zigbee"
+    ],
+    "energy": {
+      "approximation": {
+        "usageOn": 0,
+        "usageOff": 0
+      }
+    }
+  },
+  {
+    "id": "SceneSwitch4Gang",
+    "class": "socket",
+    "caps": [
+      "onoff"
+    ],
+    "connectivity": [
+      "zigbee"
+    ],
+    "energy": {
+      "approximation": {
+        "usageOn": 0,
+        "usageOff": 0
+      }
+    }
+  },
+  {
+    "id": "ScreenSwitch1Gang",
+    "class": "socket",
+    "caps": [
+      "onoff"
+    ],
+    "connectivity": [
+      "zigbee"
+    ],
+    "energy": {
+      "approximation": {
+        "usageOn": 0,
+        "usageOff": 0
+      }
+    }
+  },
+  {
+    "id": "ScreenSwitch2Gang",
+    "class": "socket",
+    "caps": [
+      "onoff"
+    ],
+    "connectivity": [
+      "zigbee"
+    ],
+    "energy": {
+      "approximation": {
+        "usageOn": 0,
+        "usageOff": 0
+      }
+    }
+  },
+  {
+    "id": "ScreenSwitch3Gang",
+    "class": "socket",
+    "caps": [
+      "onoff"
+    ],
+    "connectivity": [
+      "zigbee"
+    ],
+    "energy": {
+      "approximation": {
+        "usageOn": 0,
+        "usageOff": 0
+      }
+    }
+  },
+  {
+    "id": "ScreenSwitch4Gang",
+    "class": "socket",
+    "caps": [
+      "onoff"
+    ],
+    "connectivity": [
+      "zigbee"
+    ],
+    "energy": {
+      "approximation": {
+        "usageOn": 0,
+        "usageOff": 0
+      }
+    }
+  },
+  {
+    "id": "SmartPlug",
+    "class": "socket",
+    "caps": [
+      "onoff",
+      "meter_power",
+      "measure_power",
+      "measure_current",
+      "measure_voltage"
+    ],
+    "connectivity": [
+      "zigbee"
+    ]
+  },
+  {
+    "id": "Switch1Gang",
+    "class": "socket",
+    "caps": [
+      "onoff"
+    ],
+    "connectivity": [
+      "zigbee"
+    ],
+    "energy": {
+      "approximation": {
+        "usageOn": 0,
+        "usageOff": 0
+      }
+    }
+  },
+  {
+    "id": "Switch2Gang",
+    "class": "socket",
+    "caps": [
+      "onoff"
+    ],
+    "connectivity": [
+      "zigbee"
+    ],
+    "energy": {
+      "approximation": {
+        "usageOn": 0,
+        "usageOff": 0
+      }
+    }
+  },
+  {
+    "id": "Switch3Gang",
+    "class": "socket",
+    "caps": [
+      "onoff"
+    ],
+    "connectivity": [
+      "zigbee"
+    ],
+    "energy": {
+      "approximation": {
+        "usageOn": 0,
+        "usageOff": 0
+      }
+    }
+  },
+  {
+    "id": "Switch4Gang",
+    "class": "socket",
+    "caps": [
+      "onoff"
+    ],
+    "connectivity": [
+      "zigbee"
+    ],
+    "energy": {
+      "approximation": {
+        "usageOn": 0,
+        "usageOff": 0
+      }
+    }
+  },
+  {
+    "id": "TuyaDpSwitch4Gang",
+    "class": "socket",
+    "caps": [
+      "onoff"
+    ],
+    "connectivity": [
+      "zigbee"
+    ],
+    "energy": {
+      "approximation": {
+        "usageOn": 0,
+        "usageOff": 0
+      }
+    }
+  },
+  {
+    "id": "TuyaDpSwitch6Gang",
+    "class": "socket",
+    "caps": [
+      "onoff"
+    ],
+    "connectivity": [
+      "zigbee"
+    ],
+    "energy": {
+      "approximation": {
+        "usageOn": 0,
+        "usageOff": 0
+      }
+    }
+  },
+  {
+    "id": "WaterMeter214C",
+    "class": "sensor",
+    "caps": [
+      "meter_water",
+      "meter_water_month",
+      "meter_water_daily",
+      "meter_water_reverse",
+      "measure_water_flow",
+      "measure_temperature",
+      "measure_voltage",
+      "water_meter_id",
+      "water_meter_faults",
+      "alarm_generic",
+      "onoff",
+      "auto_clean",
+      "report_period"
+    ],
+    "connectivity": [
+      "zigbee"
+    ]
+  },
+  {
+    "id": "WiressSceneSwitch",
+    "class": "button",
+    "caps": [
+      "measure_battery"
+    ],
+    "connectivity": [
+      "zigbee"
+    ],
+    "energy": {
+      "batteries": [
+        "CR2450"
+      ]
+    }
+  },
+  {
+    "id": "ZM15B",
+    "class": "blinds",
+    "caps": [
+      "button_open",
+      "button_stop",
+      "button_close",
+      "windowcoverings_set",
+      "button_upper_limit_set",
+      "button_upper_limit_reset",
+      "button_lower_limit_set",
+      "button_lower_limit_reset",
+      "button_middle_limit_set",
+      "button_middle_limit_reset",
+      "button_reset_all_limits",
+      "measure_battery"
+    ],
+    "connectivity": [
+      "zigbee"
+    ],
+    "energy": {
+      "batteries": [
+        "INTERNAL"
+      ],
+      "approximation": {
+        "usageOn": 0,
+        "usageOff": 0
+      }
+    }
+  },
+  {
+    "id": "ZM16B",
+    "class": "blinds",
+    "caps": [
+      "button_open",
+      "button_stop",
+      "button_close",
+      "windowcoverings_set",
+      "button_upper_limit_set",
+      "button_upper_limit_reset",
+      "button_lower_limit_set",
+      "button_lower_limit_reset",
+      "button_reset_all_limits",
+      "measure_battery"
+    ],
+    "connectivity": [
+      "zigbee"
+    ],
+    "energy": {
+      "batteries": [
+        "INTERNAL"
+      ],
+      "approximation": {
+        "usageOn": 0,
+        "usageOff": 0
+      }
+    }
+  },
+  {
+    "id": "ZM85EL1Z",
+    "class": "blinds",
+    "caps": [
+      "windowcoverings_set",
+      "measure_battery",
+      "alarm_generic",
+      "button_open",
+      "button_stop",
+      "button_close",
+      "button_click_up",
+      "button_click_down",
+      "button_motor_forward",
+      "button_motor_back",
+      "button_upper_limit_set",
+      "button_upper_limit_reset",
+      "button_lower_limit_set",
+      "button_lower_limit_reset",
+      "button_reset_all_limits"
+    ],
+    "connectivity": [
+      "zigbee"
+    ],
+    "energy": {
+      "batteries": [
+        "INTERNAL"
+      ],
+      "approximation": {
+        "usageOn": 0,
+        "usageOff": 0
+      }
+    }
+  },
+  {
+    "id": "ZM862Z",
+    "class": "blinds",
+    "caps": [
+      "windowcoverings_set",
+      "measure_battery",
+      "alarm_generic",
+      "button_open",
+      "button_stop",
+      "button_close",
+      "button_motor_forward",
+      "button_motor_back",
+      "button_upper_limit_set",
+      "button_upper_limit_reset",
+      "button_lower_limit_set",
+      "button_lower_limit_reset",
+      "button_reset_all_limits"
+    ],
+    "connectivity": [
+      "zigbee"
+    ],
+    "energy": {
+      "batteries": [
+        "INTERNAL"
+      ],
+      "approximation": {
+        "usageOn": 0,
+        "usageOff": 0
+      }
+    }
+  },
+  {
+    "id": "ZMCIR01",
+    "class": "thermostat",
+    "caps": [
+      "target_temperature",
+      "thermostat_mode",
+      "measure_temperature",
+      "measure_humidity"
+    ],
+    "connectivity": [
+      "matter"
+    ]
+  },
+  {
+    "id": "ZMD206ScreenDimmer1Gang",
+    "class": "light",
+    "caps": [
+      "onoff",
+      "dim"
+    ],
+    "connectivity": [
+      "zigbee"
+    ]
+  },
+  {
+    "id": "ZMD206ScreenDimmer2Gang",
+    "class": "light",
+    "caps": [
+      "onoff",
+      "dim"
+    ],
+    "connectivity": [
+      "zigbee"
+    ]
+  },
+  {
+    "id": "ZMD206ScreenDimmer3Gang",
+    "class": "light",
+    "caps": [
+      "onoff",
+      "dim"
+    ],
+    "connectivity": [
+      "zigbee"
+    ]
+  },
+  {
+    "id": "ZMD208ScreenDimmer1Gang",
+    "class": "light",
+    "caps": [
+      "onoff",
+      "dim"
+    ],
+    "connectivity": [
+      "zigbee"
+    ]
+  },
+  {
+    "id": "ZMD208ScreenDimmer3Gang",
+    "class": "light",
+    "caps": [
+      "onoff",
+      "dim"
+    ],
+    "connectivity": [
+      "zigbee"
+    ]
+  },
+  {
+    "id": "ZN-LRL1E",
+    "class": "socket",
+    "caps": [
+      "onoff"
+    ],
+    "connectivity": [
+      "zigbee"
+    ],
+    "energy": {
+      "approximation": {
+        "usageOn": 0,
+        "usageOff": 0
+      }
+    }
+  },
+  {
+    "id": "ZemismartChainCurtainMotor",
+    "class": "blinds",
+    "caps": [
+      "windowcoverings_set",
+      "measure_battery",
+      "button_open",
+      "button_stop",
+      "button_close",
+      "button_motor_forward",
+      "button_motor_back",
+      "button_upper_limit_set",
+      "button_upper_limit_reset",
+      "button_lower_limit_set",
+      "button_lower_limit_reset",
+      "button_reset_all_limits"
+    ],
+    "connectivity": [
+      "zigbee"
+    ],
+    "energy": {
+      "batteries": [
+        "INTERNAL"
+      ],
+      "approximation": {
+        "usageOn": 0,
+        "usageOff": 0
+      }
+    }
+  },
+  {
+    "id": "Zm609ScreenSwitch2Gang",
+    "class": "socket",
+    "caps": [
+      "onoff",
+      "meter_power",
+      "measure_power",
+      "measure_current",
+      "measure_voltage"
+    ],
+    "connectivity": [
+      "zigbee"
+    ],
+    "energy": {
+      "approximation": {
+        "usageOn": 0,
+        "usageOff": 0
+      }
+    }
+  }
+]
