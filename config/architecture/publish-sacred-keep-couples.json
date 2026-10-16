@@ -1741,6 +1741,18 @@
       "pid": "SWV",
       "driverId": "water_valve_garden",
       "note": "P2836 older Sonoff SWV modelId"
+    },
+    {
+      "mfr": "_TZE284_vuwtqx0t",
+      "pid": "TS0601",
+      "driverId": "water_valve_smart",
+      "note": "P2837 tip 101901/8 Steve_Wilson interview — Zemismart 214C ultrasonic valve EF00+[0,4,5,61184] (+0xED00 observed, never compose)"
+    },
+    {
+      "mfr": "_TZE200_vuwtqx0t",
+      "pid": "TS0601",
+      "driverId": "water_valve_smart",
+      "note": "P2837 vuwtqx0t TZE200 sibling — Z2M TS0601_water_valve"
     }
   ]
 }
