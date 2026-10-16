@@ -363,7 +363,32 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       }
       this._triggerPresenceFlows(value);
     }
+    // WHY(P2826 / VicHY #2255): declare⇒wire lux/distance WHEN cards (compose had them
+    // but device never fired — Advanced Flows cards looked broken / kept reloading).
+    if (capability === 'measure_luminance' && Number.isFinite(Number(value))) {
+      this._emitRadarMeasureFlow('presence_sensor_radar_illuminance_changed', { lux: Number(value) }, 'lux');
+    } else if (capability === 'measure_luminance.distance' && Number.isFinite(Number(value))) {
+      this._emitRadarMeasureFlow('presence_sensor_radar_distance_changed', { distance: Number(value) }, 'distance');
+    }
     return result;
+  }
+
+  /**
+   * Debounced measure WHEN emit (min 2s or 5% delta) — Contre quoi: lux flood lags AF.
+   */
+  _emitRadarMeasureFlow(cardId, tokens, kind) {
+    try {
+      const now = Date.now();
+      const key = `_lastRadarFlow_${kind}`;
+      const last = this[key] || { t: 0, v: null };
+      const v = Number(tokens.lux ?? tokens.distance);
+      const elapsed = now - last.t;
+      const deltaOk = last.v == null || Math.abs(v - last.v) >= Math.max(1, Math.abs(last.v) * 0.05);
+      if (elapsed < 2000 && !deltaOk) return;
+      if (elapsed < 2000 && deltaOk && Math.abs(v - (last.v ?? v)) < 1) return;
+      this[key] = { t: now, v };
+      this.homey.flow.getDeviceTriggerCard(cardId)?.trigger?.(this, tokens).catch(() => {});
+    } catch (_e) { /* soft */ }
   }
 
   /**
