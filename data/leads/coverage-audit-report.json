@@ -1,12 +1,12 @@
 {
- "generated": "2026-10-13",
- "applied": 1,
+ "generated": "2026-10-16",
+ "applied": 2,
  "counts": {
-  "covered": 1559,
-  "lead": 5,
-  "applied": 1
+  "covered": 1550,
+  "lead": 13,
+  "applied": 2
  },
- "internalOnlyUncovered": 479,
+ "internalOnlyUncovered": 500,
  "results": [
   {
    "mfr": "_TYZB01_7yidyqxd",
@@ -14,6 +14,30 @@
    "source": "z2m:Tuya/TS0108",
    "status": "lead",
    "why": "no socket driver lists TS0108"
+  },
+  {
+   "mfr": "_TZ3210_fhx7lk3d",
+   "pid": "TS0001",
+   "source": "z2m:ClickSmart+/CMA30651",
+   "status": "applied",
+   "driver": "switch_zbeacon_ts0001",
+   "alsoIn": [
+    "plug_smart"
+   ]
+  },
+  {
+   "mfr": "_TZE200_yh7aoahi",
+   "pid": "TS0601",
+   "source": "z2m:Tuya/TS0601_smoke_4",
+   "status": "lead",
+   "why": "TS0601: DP layout differs per id, needs a capture"
+  },
+  {
+   "mfr": "_TZE204_myd45weu",
+   "pid": "TS0222",
+   "source": "z2m:Tuya/TS0222_temperature_humidity",
+   "status": "lead",
+   "why": "adding to climate_sensor, climate_sensor_energy, doorwindowsensor_4, illuminance_sensor, lcdtemphumidluxsensor, light_sensor_outdoor, presence_sensor_radar, sensor_climate_temphumidsensor, sensor_illuminance_presence, sensor_motion_presence would put an existing couple on two drivers"
   },
   {
    "mfr": "_TZ3290_uc8lwbi2",
@@ -30,6 +54,34 @@
    "why": "no button driver lists TS1201"
   },
   {
+   "mfr": "_TZ3210_4ubylghk",
+   "pid": "TS110E",
+   "source": "z2m:Tuya/TS110E_2gang_2",
+   "status": "lead",
+   "why": "2 same-class drivers list TS110E (ambiguous: bulb_dimmable_dimmer, dimmer_1_gang)"
+  },
+  {
+   "mfr": "_TZE21C_dohbhb5k",
+   "pid": "TS0001",
+   "source": "z2m:Scimagic/1-ZB-WSD",
+   "status": "lead",
+   "why": "adding to air_purifier_motion, air_purifier_soil, device_air_purifier_soil, doorwindowsensor_3, motion_sensor, motion_sensor_2, pir_sensor_2, sensor_climate_motion, sensor_lcdtemphumidsensor_soil, sensor_motion_presence, smart_door_window_sensor, soilsensor_2 would put an existing couple on two drivers"
+  },
+  {
+   "mfr": "_TZE21C_i2ij4rb3",
+   "pid": "TS0001",
+   "source": "z2m:Scimagic/1-ZB-WSD",
+   "status": "lead",
+   "why": "adding to air_purifier_motion, air_purifier_soil, device_air_purifier_soil, doorwindowsensor_3, motion_sensor, motion_sensor_2, pir_sensor_2, sensor_climate_motion, sensor_lcdtemphumidsensor_soil, sensor_motion_presence, smart_door_window_sensor, soilsensor_2 would put an existing couple on two drivers"
+  },
+  {
+   "mfr": "_TZE204_qaxkdgyt",
+   "pid": "TS0601",
+   "source": "z2m:Tuya/JKD-816COM-Z",
+   "status": "lead",
+   "why": "TS0601: DP layout differs per id, needs a capture"
+  },
+  {
    "mfr": "_TZ3000_5ftkaulg",
    "pid": "TS0011",
    "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1178",
@@ -37,21 +89,35 @@
    "why": "adding to air_purifier_motion, doorwindowsensor_3, pir_sensor_2, smart_door_window_sensor would put an existing couple on two drivers"
   },
   {
+   "mfr": "_TZ3000_ee8nrt2l",
+   "pid": "TS0044",
+   "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1159",
+   "status": "applied",
+   "driver": "scene_switch_4",
+   "alsoIn": [
+    "button_wireless_2"
+   ]
+  },
+  {
+   "mfr": "_TZ3000_dfgbtub0",
+   "pid": "TS0042",
+   "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/864#issuecomment-2408511628",
+   "status": "lead",
+   "why": "2 same-class drivers list TS0042 (ambiguous: button_wireless_wall, scene_switch_wall)"
+  },
+  {
+   "mfr": "_TZ3210_invesber",
+   "pid": "TS0502B",
+   "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/824",
+   "status": "lead",
+   "why": "4 same-class drivers list TS0502B (ambiguous: dimmable_recessed_led, led_strip_rgbw, light_bulb_tunable_white, light_cct_ts0502b)"
+  },
+  {
    "mfr": "_TZ3000_wkai4ga5",
    "pid": "TS004",
    "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/270#issuecomment-1447298611",
    "status": "lead",
    "why": "no button driver lists TS004"
-  },
-  {
-   "mfr": "_TZ3000_mvvw8wnx",
-   "pid": "TS0001",
-   "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1366#issuecomment-5966886342",
-   "status": "applied",
-   "driver": "switch_zbeacon_ts0001",
-   "alsoIn": [
-    "usb_dongle_triple"
-   ]
   }
  ]
 }
