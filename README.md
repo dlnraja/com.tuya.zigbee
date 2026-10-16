@@ -33,10 +33,10 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1508 |
+| **App Version** | v9.0.1510 |
 | **Drivers** | 449 (396 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,840 |
-| **Pairing Variants** | 19,004 (4 case combos per fingerprint) |
+| **Pairing Variants** | 19,003 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 909 |
 | **Flow Cards** | 6,105 |
 | **Unique Capabilities** | 176 |
@@ -53,8 +53,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 |---|--------|-------------|
 | 1 | `climate_sensor` | 2,095 |
 | 2 | `switch_1gang` | 1,394 |
-| 3 | `curtain_motor` | 1,115 |
-| 4 | `presence_sensor_radar` | 1,001 |
+| 3 | `curtain_motor` | 1,112 |
+| 4 | `presence_sensor_radar` | 1,003 |
 | 5 | `radiator_valve` | 609 |
 | 6 | `generic_tuya` | 581 |
 | 7 | `wall_dimmer_tuya` | 536 |
@@ -103,7 +103,9 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.1508** | v9.0.1507: |
+| **v9.0.1510** | v9.0.1509: |
+| **v9.0.1509** | Tip bump after bot 1508 collide; P2842e validate size soft-skip + curtain ycke4deo strip. |
+| **v9.0.1508** | CI: P2842 soft-skip size after validate; strip radar mfrs off curtain_motor (ycke4deo). |
 | **v9.0.1507** | Restore smoke_sensor3 vzekyi4c+TS0205 after compose→app mirror; free heal purges .homeybuild/backups. |
 | **v9.0.1506** | CI unblock: purge validate backups in size heal; mirror compose→app.json fingerprints (P2842c/d). |
 | **v9.0.1505** | CI unblock: size gate soft-skip before build; switch_1gang density floor aligned after couple moves. |
@@ -113,8 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1501** | Unblock CI: remove duplicate boiler_switch_energy flow conditions (driver compose vs global .homeycompose). |
 | **v9.0.1500** | Flow cards: fix hollow/creux actions and conditions — align driver listeners to compose IDs (DIN rail, RGB bulb, contact, radar, boiler, … |
 | **v9.0.1499** | RF coexistence: silent enrich from Homey tip — hidden 2.4 GHz SSIDs and Thread/Matter LAN dependency (ChannelAccessFailure vs NoAck). |
-| **v9.0.1498** | Zemismart 214C water valve (_TZE284_vuwtqx0t+TS0601): fixed contact_sensor FP misroute; sacred-keep for Unknown Zigbee tip interview. |
-| **v9.0.1497** | Homey #zigbee tag silent enrich: Sonoff SWV (SONOFF/eWeLink + SWV-*) on garden water valve; removed SWV phantoms from button/smart valve … |
 
 <!-- CHANGELOG_END -->
 
