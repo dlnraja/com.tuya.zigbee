@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1472 |
+| **App Version** | v9.0.1475 |
 | **Drivers** | 449 (396 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,776 |
 | **Pairing Variants** | 19,176 (4 case combos per fingerprint) |
@@ -41,7 +41,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 6,105 |
 | **Unique Capabilities** | 176 |
 | **Native OTA Drivers** | 9 |
-| **Test Suites** | 646 files |
+| **Test Suites** | 647 files |
 | **SVG Icons** | 752 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -103,6 +103,9 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1475** | v9.0.1474: |
+| **v9.0.1474** | Improved LCD climate sensor temperature and humidity on single-endpoint Tuya MCU variants. |
+| **v9.0.1473** | CI heal: align mfs_db USB outlet registry + LCD/gnpflcoq forum locks. |
 | **v9.0.1472** | Forum: gnpflcoq 4in1 climate caps, USB registry audit heal, flow Contre quoi locks. |
 | **v9.0.1471** | Forum: LCD 9ern5sfh pairing (Kizabgd), TRV time-sync TX harden, sacred-keep LCD couple. |
 | **v9.0.1470** | TRV me167 DP4 fix + drop misattributed plug_smart OTA (P2822). |
@@ -112,9 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1466** | v9.0.1466: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1465** | v9.0.1465: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1464** | v9.0.1464: automated publish, manifest sync, and Homey test promotion. |
-| **v9.0.1463** | mfs soil exclusive align so 4in1 mmWave and ANTIK TRV publish. |
-| **v9.0.1462** | 4in1 mmWave pairs again (lean clusters); AOYAN soil no longer collides with water leak. |
-| **v9.0.1461** | Fixed multi-button release Flow cards and TRV DP received trigger. |
 
 <!-- CHANGELOG_END -->
 
