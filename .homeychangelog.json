@@ -969,5 +969,8 @@
   },
   "9.0.1495": {
     "en": "Moes and Zemismart actions merge ZCL, raw, Tuya DP and soft DP detect without degrading zcl-only couples."
+  },
+  "9.0.1496": {
+    "en": "Complementary Zemismart official Homey app support: screen switches, ZMD dimmers, covers and sensors from verified couples — no climate misroute."
   }
 }
