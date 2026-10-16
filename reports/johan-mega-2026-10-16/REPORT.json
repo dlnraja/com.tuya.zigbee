@@ -1,7 +1,7 @@
 {
   "id": "P2572",
   "mode": "apply",
-  "generatedAt": "2026-10-16T09:01:25.528Z",
+  "generatedAt": "2026-10-16T13:48:40.289Z",
   "harvested": 287,
   "alreadyCovered": 269,
   "driversTouched": 1,
@@ -279,14 +279,6 @@
       "changed": false
     },
     {
-      "driverId": "smart_air_detection_box",
-      "mfrCount": 4,
-      "pidCount": 1,
-      "confidence": "high",
-      "ok": true,
-      "changed": false
-    },
-    {
       "driverId": "temphumidsensor2",
       "mfrCount": 1,
       "pidCount": 1,
@@ -320,7 +312,7 @@
     },
     {
       "driverId": "smoke_sensor",
-      "mfrCount": 3,
+      "mfrCount": 4,
       "pidCount": 2,
       "confidence": "high",
       "ok": true,
@@ -554,8 +546,8 @@
     },
     {
       "driverId": "wall_switch_2gang_1way",
-      "mfrCount": 3,
-      "pidCount": 2,
+      "mfrCount": 4,
+      "pidCount": 3,
       "confidence": "high",
       "ok": true,
       "changed": false
