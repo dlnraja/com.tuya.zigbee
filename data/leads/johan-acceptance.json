@@ -1,21 +1,24 @@
 {
-  "generated": "2026-10-15T08:35:35.393Z",
+  "generated": "2026-10-16T08:29:53.333Z",
   "source": "data/leads/johan-canonical-index.json",
   "repo": "JohanBendz/com.tuya.zigbee",
   "note": "Acceptance view, structured fields only. missing-couple = identity cited upstream with no home driver here (verify real hardware before adding, W4). behaviour = needs physical test, not a pairing gap.",
   "summary": {
     "threads": 562,
-    "covered": 440,
-    "behaviour": 94,
-    "missing-couple": 8,
+    "covered": 437,
+    "behaviour": 93,
+    "missing-couple": 12,
     "dual-couple": 20,
-    "missingCouples": 6
+    "missingCouples": 9
   },
   "missingCouples": [
     "_TYZB01_0aps0h1r|TS0212",
     "_TYZB01_o7m83470|TS0212",
     "_TZ3000_5ftkaulg|TS0011",
     "_TZ3000_amal63is|TS0002",
+    "_TZ3000_ee8nrt2l|TS0044",
+    "_TZ3000_fxvjhdyl|TS0207",
+    "_TZ3000_kstbkt6a|TS0207",
     "_TZ3210_fhx7lk3d|TS0001",
     "_TZB210_rkgngb5o|EP1"
   ],
@@ -2679,12 +2682,10 @@
         {
           "mfr": "_TZ3000_kstbkt6a",
           "pid": "TS0207",
-          "drivers": [
-            "water_leak_sensor"
-          ]
+          "drivers": []
         }
       ],
-      "acceptance": "covered"
+      "acceptance": "missing-couple"
     },
     {
       "n": 619,
@@ -3684,7 +3685,7 @@
           "mfr": "_TZE200_qoy0ekbd",
           "pid": "TS0601",
           "drivers": [
-            "temphumidsensor_zcl_ts0601"
+            "temphumidsensor3"
           ]
         },
         {
@@ -4451,9 +4452,7 @@
         {
           "mfr": "_TZ3000_ee8nrt2l",
           "pid": "TS0044",
-          "drivers": [
-            "button_wireless_4"
-          ]
+          "drivers": []
         },
         {
           "mfr": "_TZ3000_kfu8zapd",
@@ -4463,7 +4462,7 @@
           ]
         }
       ],
-      "acceptance": "behaviour"
+      "acceptance": "missing-couple"
     },
     {
       "n": 942,
@@ -6877,7 +6876,7 @@
           "mfr": "_TZE284_9ern5sfh",
           "pid": "TS0601",
           "drivers": [
-            "climate_sensor"
+            "lcdtemphumidsensor"
           ]
         },
         {
@@ -7029,12 +7028,10 @@
         {
           "mfr": "_TZ3000_ee8nrt2l",
           "pid": "TS0044",
-          "drivers": [
-            "button_wireless_4"
-          ]
+          "drivers": []
         }
       ],
-      "acceptance": "covered"
+      "acceptance": "missing-couple"
     },
     {
       "n": 1160,
@@ -8713,11 +8710,12 @@
           "mfr": "_TZE204_dcnsggvz",
           "pid": "TS0601",
           "drivers": [
+            "dimmer_1_gang_tuya",
             "dimmer_wall_1gang"
           ]
         }
       ],
-      "acceptance": "covered"
+      "acceptance": "dual-couple"
     },
     {
       "n": 1283,
@@ -9610,7 +9608,7 @@
           "mfr": "_TZE284_9ern5sfh",
           "pid": "TS0601",
           "drivers": [
-            "climate_sensor"
+            "lcdtemphumidsensor"
           ]
         }
       ],
@@ -11723,7 +11721,7 @@
           "mfr": "_TZE284_9ern5sfh",
           "pid": "TS0601",
           "drivers": [
-            "climate_sensor"
+            "lcdtemphumidsensor"
           ]
         }
       ],
@@ -11782,7 +11780,7 @@
           "mfr": "_TZE284_9ern5sfh",
           "pid": "TS0601",
           "drivers": [
-            "climate_sensor"
+            "lcdtemphumidsensor"
           ]
         }
       ],
@@ -13064,9 +13062,7 @@
         {
           "mfr": "_TZ3000_kstbkt6a",
           "pid": "TS0207",
-          "drivers": [
-            "water_leak_sensor"
-          ]
+          "drivers": []
         },
         {
           "mfr": "_TZ3000_9eeavbk5",
@@ -13142,7 +13138,8 @@
           "mfr": "_TZ3000_gjnozsaz",
           "pid": "TS011F",
           "drivers": [
-            "button_wireless_plug"
+            "button_wireless_plug",
+            "smartplug"
           ]
         },
         {
@@ -13176,9 +13173,7 @@
         {
           "mfr": "_TZ3000_fxvjhdyl",
           "pid": "TS0207",
-          "drivers": [
-            "water_leak_sensor"
-          ]
+          "drivers": []
         },
         {
           "mfr": "_TZ3000_ltiqubue",
@@ -13218,7 +13213,7 @@
           ]
         }
       ],
-      "acceptance": "dual-couple"
+      "acceptance": "missing-couple"
     },
     {
       "n": 1485,
@@ -13467,7 +13462,7 @@
           "mfr": "_TZE200_qoy0ekbd",
           "pid": "TS0601",
           "drivers": [
-            "temphumidsensor_zcl_ts0601"
+            "temphumidsensor3"
           ]
         },
         {
