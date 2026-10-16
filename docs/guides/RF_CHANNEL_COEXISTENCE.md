@@ -25,6 +25,9 @@ Choosing Wi-Fi “1” because the number looks farther from Zigbee “15” is 
 4. After a Zigbee channel change: try device **Maintenance → Repair** first (keeps flows). Full remove/re-pair is last resort; if you must, note Homey device IDs and use a flow converter.
 5. **RSSI alone ≠ quality.** Asymmetric links, noise, retries, and airtime matter more than a single dBm reading.
 6. Place Homey away from APs/routers; build a Zigbee mesh with mains routers.
+7. **P2838 (T157859#22):** also hunt **hidden 2.4 GHz SSIDs you cannot control** (doorbell chimes, camera homebases). They can hop channels and drown Zigbee/Thread even when your AP plan looks perfect. OTBR/802.15.4 `ChannelAccessFailure` = medium busy; `NoAck` = neighbor silent.
+8. **Thread/Matter ≠ RF-only.** Border routers, mDNS/RA, and TREL ride the LAN/Wi-Fi. LAN flaps show as wave unavailability (sleepy devices hardest) while the Thread mesh itself may still be fine. Correlate Matter offline timestamps with switch/router events before retuning channels.
+9. Keep Zigbee/Thread radios **physically separated** from AP / Homey / Hue / camera-hub clusters (~1.5 m was enough in field notes). Change **one** variable at a time.
 
 ## Code helper
 
@@ -34,12 +37,14 @@ rf.recommendZigbeeChannels([1, 6, 11], 20);
 rf.scoreWifiZigbeePair(1, 15, 20);
 rf.formatCoexistenceTips();
 rf.protocolSelectionBrief();
+rf.hiddenWifiInterferenceBrief(); // P2838
+rf.threadLanDependencyBrief();    // P2838
 
 const evo = require('../lib/utils/zigbee-tuya-evolution');
 evo.zigbeeTuyaEvolutionBrief();
 ```
 
-Smoke: `node tools/ci/rf-channel-coexistence-smoke.js` · gate `npm run check:p2537`
+Smoke: `node tools/ci/rf-channel-coexistence-smoke.js` · gates `npm run check:p2537` · `npm run check:p2838`
 
 ## Protocol roles (brief)
 
