@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-13",
+ "generated": "2026-10-16",
  "note": "read-only scan output; knownDrivers=[] means the mfr is not in any driver yet (review before applying)",
  "leads": [
   {
@@ -173,16 +173,6 @@
    "seen": "2026-10-01"
   },
   {
-   "mfr": "_TZE204_dak2k10o",
-   "pids": [],
-   "dps": [],
-   "firmware": [],
-   "knownDrivers": [],
-   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/556",
-   "snippet": "10_o4vasvef _TZ3210_tlwlmwm6 _TZ3210_tqwyiitv _TZD200_sjjp9bti _TZE200_nkjintbl _TZE204_dak2k10o _TZE204_eaasry7v _TZE204_lyqazpe6 _TZE204_pxbjch8m _TZE204_r6kfl9ta _TZE204_wsek35um _TZE20C_tjz9ad5g _TZE20C_ycab9txf _TZE",
-   "seen": "2026-10-01"
-  },
-  {
    "mfr": "_TZE204_eaasry7v",
    "pids": [],
    "dps": [],
@@ -203,16 +193,6 @@
    "seen": "2026-10-01"
   },
   {
-   "mfr": "_TZE204_wsek35um",
-   "pids": [],
-   "dps": [],
-   "firmware": [],
-   "knownDrivers": [],
-   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/556",
-   "snippet": "04_dak2k10o _TZE204_eaasry7v _TZE204_lyqazpe6 _TZE204_pxbjch8m _TZE204_r6kfl9ta _TZE204_wsek35um _TZE20C_tjz9ad5g _TZE20C_ycab9txf _TZE284_5qfrnbqs _TZE284_hbxadcl0 _TZE284_lyqazpe6 _TZE284_n41i9jyt _TZE284_pxwixtky _TZE",
-   "seen": "2026-10-01"
-  },
-  {
    "mfr": "_TZE20C_tjz9ad5g",
    "pids": [],
    "dps": [],
@@ -230,16 +210,6 @@
    "knownDrivers": [],
    "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/556",
    "snippet": "04_lyqazpe6 _TZE204_pxbjch8m _TZE204_r6kfl9ta _TZE204_wsek35um _TZE20C_tjz9ad5g _TZE20C_ycab9txf _TZE284_5qfrnbqs _TZE284_hbxadcl0 _TZE284_lyqazpe6 _TZE284_n41i9jyt _TZE284_pxwixtky _TZE284_rfpyqax9 _TZE284_tokhh9pf _TZE",
-   "seen": "2026-10-01"
-  },
-  {
-   "mfr": "_TZE284_5qfrnbqs",
-   "pids": [],
-   "dps": [],
-   "firmware": [],
-   "knownDrivers": [],
-   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/556",
-   "snippet": "04_pxbjch8m _TZE204_r6kfl9ta _TZE204_wsek35um _TZE20C_tjz9ad5g _TZE20C_ycab9txf _TZE284_5qfrnbqs _TZE284_hbxadcl0 _TZE284_lyqazpe6 _TZE284_n41i9jyt _TZE284_pxwixtky _TZE284_rfpyqax9 _TZE284_tokhh9pf _TZE284_znkkcauq _TZE",
    "seen": "2026-10-01"
   },
   {
@@ -633,6 +603,24 @@
    "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/170#issuecomment-4129430265",
    "snippet": "ve a precise bug report regarding the Flow cards for this specific fingerprint (_TZ3000_v4l4b0lp).",
    "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3000_v4l4b0lp",
+   "pids": [
+    "TS0003",
+    "TS0601",
+    "TS0011"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "switch_3gang"
+   ],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/557#issuecomment-6150978446",
+   "snippet": "://github.com/dlnraja/com.tuya.zigbee/issues/170) issue · closed · Bug: TS0003 (_TZ3000_v4l4b0lp) - Sub-capability Flow cards (Gang 1/2/3) are completely unlinked - 🆕 `flow:Turn on Gang 1/2/3` - mfr: `_tz3000_v4l4b0",
+   "seen": "2026-10-16"
   },
   {
    "mfr": "_TZ3000_wzmuk9ai",
@@ -1610,6 +1598,41 @@
    "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/571",
    "snippet": "[Bug] QT-07S (_TZE284_myd45weu / TS0601) remains unknown and Configure keeps loading — v9.0.1445 Test",
    "seen": "2026-10-13"
+  },
+  {
+   "mfr": "_TZE284_myd45weu",
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "soil_sensor"
+   ],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/557#issuecomment-6147638933",
+   "snippet": "*red** — Promote to Test - Issues ouvertes : 4 → **5** - ➕ #571 [Bug] QT-07S (_TZE284_myd45weu / TS0601) remains unknown and Configure keeps loa - 🧭 mfr: `_tze284_myd45weu` ✅ soil_sensor · pid: TS0601 ☑️ · intervi",
+   "seen": "2026-10-16"
+  },
+  {
+   "mfr": "_TZE284_myd45weu",
+   "pids": [
+    "TS0601",
+    "TS0042"
+   ],
+   "dps": [
+    4
+   ],
+   "firmware": [
+    "bug"
+   ],
+   "knownDrivers": [
+    "soil_sensor"
+   ],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/557",
+   "snippet": "{\"count\":0,\"items\":[]},\"issues\":{\"count\":5,\"items\":[{\"n\":571,\"t\":\"[Bug] QT-07S (_TZE284_myd45weu / TS0601) remains unknown and Configure keeps loa\",\"u\":\"denis-papin\"},{\"n\":570,\"t\":\"[soil_sensor] Bug: AOYAN AY-303Z soil s",
+   "seen": "2026-10-16"
   },
   {
    "mfr": "_TZE284_oitavov2",
