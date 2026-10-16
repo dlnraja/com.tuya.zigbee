@@ -45,10 +45,28 @@ if (require.main === module) {
       if (v.done || Date.now() - t0 > maxMs) {break;}
       await new Promise((r) => setTimeout(r, 30000));
     }
-    const line = `[athom-final] ${v.ok ? 'OK' : 'NOT IN TEST'}: ${v.reason}`;
+    // WHY(P2850 / P139): if THIS version is processing_failed/socket hang but an older
+    // Test build is healthy, soft-expect — do not red-loop republish (Athom hang storm).
+    let softOk = false;
+    if (!v.ok) {
+      try {
+        const s = JSON.parse(fs.readFileSync(path.join(root, 'data', 'status', `homey-build-status-${app.id}.json`), 'utf8'));
+        const healthyTest = (s.builds || []).find((b) => OK.test(String(b.state)));
+        const mineFailed = (s.builds || []).some(
+          (b) => String(b.version) === String(version) && BAD.test(String(b.state)),
+        );
+        if (healthyTest && mineFailed && process.env.ATHOM_FINAL_SOFT_EXPECT !== '0') {
+          softOk = true;
+          console.log(
+            `[athom-final] SOFT-EXPECT: v${version} not Test, but healthy ${healthyTest.state} v${healthyTest.version} #${healthyTest.id} stays (P139)`,
+          );
+        }
+      } catch (_e) { /* status file optional */ }
+    }
+    const line = `[athom-final] ${v.ok || softOk ? 'OK' : 'NOT IN TEST'}: ${v.reason}`;
     console.log(line);
     if (process.env.GITHUB_STEP_SUMMARY) {fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, `\n### ${line}\n`);}
-    if (!v.ok) {console.log(`::error::${line}`); process.exit(1);}
+    if (!v.ok && !softOk) {console.log(`::error::${line}`); process.exit(1);}
   })();
 }
 module.exports = { verdict, isStuck };

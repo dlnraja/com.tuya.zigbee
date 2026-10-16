@@ -127,7 +127,8 @@ describe('P213 switch pipeline wiring', () => {
     assert.match(s, /capabilityForOnOffEndpoint/);
     assert.match(s, /coalesceIfBurst/);
     assert.match(s, /paceZigbeeCommand/);
-    assert.match(s, /parallelDiscover: this\._isPureTuyaDP === true && gang === 1/);
+    // WHY(P2850): P2834 brand-merge may wrap the expression — still lock gang1 pure-DP discover
+    assert.match(s, /parallelDiscover:[\s\S]{0,80}_isPureTuyaDP === true && gang === 1/);
     assert.match(s, /skipDp: this\.gangCount > 1 && this\._isPureTuyaDP !== true/);
     const { spawnSync } = require('child_process');
     const chk = spawnSync(process.execPath, ['--check', path.join(ROOT, 'lib/devices/UnifiedSwitchBase.js')], { encoding: 'utf8' });
@@ -137,7 +138,8 @@ describe('P213 switch pipeline wiring', () => {
     assert.match(s, /_pushConfiguredSwitchSettings/);
     assert.match(s, /afterBurst/);
     assert.match(s, /skipDpRx/);
-    assert.doesNotMatch(s, /parallelDiscover: true/);
+    // Bare unconditional parallelDiscover: true is forbidden (must stay gated)
+    assert.doesNotMatch(s, /parallelDiscover:\s*true\s*[,}]/);
   });
 
   it('command listener no longer uses includes(on) for OnOff', () => {
