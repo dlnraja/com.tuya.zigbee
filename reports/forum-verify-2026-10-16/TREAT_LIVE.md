@@ -27,3 +27,17 @@ Use latest Gmail cascade on cron; no new local TREAT newer than 2026-09-23. Recu
 ## User action (no reply)
 
 Update Universal Tuya Test to **≥9.0.1471**, remove+re-pair LCD / TRV / soil if still Unknown or wrong class.
+
+## P2824 (same night)
+
+- Sacred audit fail: `_TZ3000_3zofvcaa`+TS011F registry `switch_usb_dongle` → `usb_outlet_advanced`
+- Istvan #2262: `_TZE284_gnpflcoq`+TS0601 already `motion_sensor_radar_mmwave`; static temp/humidity/battery caps (Z2M 4in1)
+- Flows: P244x / flow-l99 / P2449 all green; Contre quoi P2824
+
+
+## P2824 (same night)
+
+- Sacred audit fail: `_TZ3000_3zofvcaa`+TS011F registry `switch_usb_dongle` → `usb_outlet_advanced`
+- Istvan #2262: `_TZE284_gnpflcoq`+TS0601 already `motion_sensor_radar_mmwave`; static temp/humidity/battery caps (Z2M 4in1)
+- Flows: P244x / flow-l99 / P2449 all green; Contre quoi P2824
+
