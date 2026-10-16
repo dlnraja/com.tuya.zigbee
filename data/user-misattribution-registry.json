@@ -9269,6 +9269,85 @@
       "forbidMode": "couple",
       "protocol": "tuya_ef00",
       "notes": "P2827 T26439#5534 Dragan — CK-BL702-MWS-01(7016) radar; settings only when paired to presence_sensor_radar (not Homey generic)."
+    },
+    {
+      "id": "p2828-ocr-9em5sfh-not-invent",
+      "mfr": [
+        "_TZE284_9em5sfh",
+        "_tze284_9em5sfh",
+        "_TZE284_9EM5SFH"
+      ],
+      "productId": [
+        "TS0601",
+        "ts0601"
+      ],
+      "canonicalDriver": null,
+      "forbidMode": "couple",
+      "doNotLock": true,
+      "forbiddenDrivers": [
+        "lcdtemphumidsensor",
+        "climate_sensor",
+        "sensor_climate_temphumidsensor",
+        "zigbee_universal"
+      ],
+      "notes": "P2828 T26439#5535 OCR of _TZE284_9ern5sfh — NEVER invent. Canonical stays lcdtemphumidsensor+9ern5sfh."
+    },
+    {
+      "id": "p2828-w8jwkczz-ts0043-wall-remote-3",
+      "mfr": [
+        "_TZ3000_w8jwkczz",
+        "_tz3000_w8jwkczz",
+        "_TZ3000_W8JWKCZZ",
+        "_tz3000_W8JWKCZZ"
+      ],
+      "productId": [
+        "TS0043",
+        "ts0043"
+      ],
+      "canonicalDriver": "wall_remote_3_gang",
+      "forbiddenDrivers": [
+        "switch_3gang",
+        "wall_switch_3gang_1way",
+        "scene_switch_4",
+        "universal_zigbee"
+      ],
+      "forbidMode": "couple",
+      "protocol": "zcl_scene",
+      "notes": "P2828 T150690 Relax Moes — TS0043 3-btn scene (deCONZ/ZHA). Forum typo w8jwczz (missing k) must not invent."
+    },
+    {
+      "id": "p2828-tgvtvdoc-ts0207-rain",
+      "mfr": [
+        "_TZ3210_tgvtvdoc",
+        "_tz3210_tgvtvdoc",
+        "_TZ3210_p68kms0l",
+        "_tz3210_p68kms0l"
+      ],
+      "productId": [
+        "TS0207",
+        "ts0207",
+        "TS0207_rain"
+      ],
+      "canonicalDriver": "rain_sensor",
+      "forbiddenDrivers": [
+        "water_leak_sensor",
+        "zigbee_repeater",
+        "climate_sensor"
+      ],
+      "forbidMode": "couple",
+      "notes": "P2828 T120477 RB-SRAIN01 solar rain (Z2M/ZHA). Forum OCR tgvtvdox must not invent."
+    },
+    {
+      "id": "p2828-forum-pid-mix-reject",
+      "mfr": [
+        "_TZ3000_zmy4lslw",
+        "_TZ3000_cayepv1a",
+        "_TZ3000_4upl1fcj",
+        "_TZ3000_qd7hej8u",
+        "_TZ3000_zgyzgdua",
+        "_TZ3000_wkai4ga5"
+      ],
+      "notes": "P2828 fleet gap false positives — forum posts mix mfr+wrong pid in same message. Verified couples: zmy4lslw+TS0002 switch_2gang; cayepv1a+TS011F/TS0121 smartPlug_DinRail; 4upl1fcj+TS0041 button_wireless_1; qd7hej8u+TS0505B bulb_rgb; zgyzgdua/wkai4ga5+TS0044 scene_switch_4. Never invent TS0001/TS0043/TS0505B cross-products."
     }
   ],
   "entries": {

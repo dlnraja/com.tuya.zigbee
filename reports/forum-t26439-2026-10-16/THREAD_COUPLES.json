@@ -1,0 +1,436 @@
+[
+  {
+    "n": 5230,
+    "user": "Rudi_Hendrix",
+    "mfr": [
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_cayepv1a",
+      "_TZ3000_kqvb5akv"
+    ],
+    "pid": [
+      "TS0001",
+      "TS0002",
+      "TS011F"
+    ],
+    "imgs": 2,
+    "links": [
+      "https://github.com/JohanBendz/com.tuya.zigbee",
+      "https://github.com/JohanBendz/com.tuya.zigbee/issues/1103"
+    ],
+    "snip": "Also bit the bullet here and tried to install my own version. So, I did the following: Start Node.js command prompt homey login Run the following: git clone GitHub - JohanBendz/com.tuya.zigbee “C:\\Users\\RudiH\\com.tuya.zi"
+  },
+  {
+    "n": 5256,
+    "user": "patryk_sz",
+    "mfr": [
+      "_TZ3000_o4cjetlm",
+      "_TZ3000_tvuarksa",
+      "_TZ3000_j9568h44",
+      "_TZ3000_iedbgyxt",
+      "_TZ3000_w0ypwa1f",
+      "_TZ3000_5ucujjts"
+    ],
+    "pid": [
+      "TS0111",
+      "TS0001"
+    ],
+    "imgs": 0,
+    "links": [],
+    "snip": "Valve Controller _TYZB01_ymcdbl3u / TS0111 _TZ3000_o4cjetlm / TS0001 _TYZB01_4tlksk8a / TS0001 (Test version only) _TZ3000_tvuarksa / TS0001 (Test version only) _TZ3000_j9568h44 / TS0001 (Test version only) _TZ3000_iedbg"
+  },
+  {
+    "n": 5257,
+    "user": "Birger_Naert",
+    "mfr": [
+      "_TZ3000_au2o5e6q"
+    ],
+    "pid": [
+      "TS0203"
+    ],
+    "imgs": 0,
+    "links": [],
+    "snip": "Hi, I am quite new on the whole Homey Pro thing. I have bought a Tuya Zigbee door sensor and in both versions of the Tuya Zigbee app, it shows me a generic Zigbee device which is unusable. I also have a Tahoma and if I t"
+  },
+  {
+    "n": 5299,
+    "user": "Eftychis_Georgilas",
+    "mfr": [
+      "_TZE200_3towulqd"
+    ],
+    "pid": [
+      "TS0601"
+    ],
+    "imgs": 0,
+    "links": [],
+    "snip": "tuya zigbee motion sensor with the below interview even exists in the app does not operates as nor motion neither luminance is captured. “ids”: { “modelId”: “TS0601”, “manufacturerName”: “_TZE200_3towulqd” }, “endpoints”"
+  },
+  {
+    "n": 5305,
+    "user": "Ernest_T",
+    "mfr": [
+      "_TZ3210_pagajpog"
+    ],
+    "pid": [
+      "TS110E"
+    ],
+    "imgs": 0,
+    "links": [],
+    "snip": "a newbie in Homey and my first message in the forum ! many thanks for everyone in the forum, very helpful and very informative ! it saves my way setting up those very ‘ad hoc’ Tuya devices. Lonsonho QS-Zigbee-D02-TRIAC-2"
+  },
+  {
+    "n": 5310,
+    "user": "Erno_Almassy",
+    "mfr": [
+      "_TZE204_gkfbdvyx",
+      "_TZE204_qasjif9e"
+    ],
+    "pid": [],
+    "imgs": 0,
+    "links": [],
+    "snip": "Thank you for your great work! I am just trying the app now. I have a lot of 24G radar sensors: _TZE204_gkfbdvyx which is the same than the 5.8G version, but it has no support at all. I would ask that the development of "
+  },
+  {
+    "n": 5313,
+    "user": "dlnraja",
+    "mfr": [
+      "_TZE204_gkfbdvyx",
+      "_TZE204_qasjif9e"
+    ],
+    "pid": [],
+    "imgs": 0,
+    "links": [],
+    "snip": "Erno_Almassy: Thank you for your great work! I am just trying the app now. I have a lot of 24G radar sensors: _TZE204_gkfbdvyx which is the same than the 5.8G version, but it has no support at all. I would ask that the d"
+  },
+  {
+    "n": 5333,
+    "user": "VyseExhale",
+    "mfr": [],
+    "pid": [
+      "TS0201"
+    ],
+    "imgs": 0,
+    "links": [],
+    "snip": "Also .. I have a TZ3000_ywagc4rj TS0201 LCD temperarture sensor And I think i have found a bug On the LCD it says the humidity is 46% and in my homey it says 4,6%"
+  },
+  {
+    "n": 5373,
+    "user": "Sondre_Bakkevold",
+    "mfr": [
+      "_TZB210_ngnt8kni"
+    ],
+    "pid": [
+      "TS0501B"
+    ],
+    "imgs": 0,
+    "links": [],
+    "snip": "Hi! Can you please add support for the following Tuya Zigbee LED driver? Homey adds it as an unknown Zigbee device, and dimming is not available. Manufacturer: _TZB210_ngnt8kni Product ID: TS0501B Device type: Router Dev"
+  },
+  {
+    "n": 5375,
+    "user": "darckrie",
+    "mfr": [
+      "_TZE200_npj9bug3"
+    ],
+    "pid": [
+      "TS0601"
+    ],
+    "imgs": 1,
+    "links": [
+      "https://es.aliexpress.com/item/1005008987466283.html?gatewayAdapt=glo2esp"
+    ],
+    "snip": "Hi! Can you please add support for the following Tuya Zigbee SOIL driver? Homey adds it as an unknown Zigbee device, detect nothing. Here is the fingerprint from Homey: Manufacturer: _TZE200_npj9bug3 Product ID: TS0601 D"
+  },
+  {
+    "n": 5377,
+    "user": "ruijssantos",
+    "mfr": [
+      "_TZ3000_n2egfsli"
+    ],
+    "pid": [],
+    "imgs": 0,
+    "links": [],
+    "snip": "I wanted to add a Zigbee door sensor from manufacturer: _TZ3000_n2egfsli This ID is present in the first post as supported in the test version of the app. However, after installing the test version, I can’t add this devi"
+  },
+  {
+    "n": 5383,
+    "user": "Mirko_Schleef",
+    "mfr": [
+      "_TZ3000_xr3htd96"
+    ],
+    "pid": [
+      "TS0201"
+    ],
+    "imgs": 0,
+    "links": [],
+    "snip": "Hi, Could you please add this device? Device: Temperature Sensor Manufacturer Name: _TZ3000_xr3htd96 Product ID: TS0201 I have bought this and realize now, that this device entry is missing in your APP. Many thanks in ad"
+  },
+  {
+    "n": 5388,
+    "user": "Trey_Rogerson",
+    "mfr": [
+      "_TZE284_c8ipbljq"
+    ],
+    "pid": [
+      "TS0601"
+    ],
+    "imgs": 0,
+    "links": [
+      "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352"
+    ],
+    "snip": "Title: Please add multi-gang support for Hejhome Pika TS0601 (_TZE284_c8ipbljq) – 3‑gang and 6‑gang Details: Homey model: Homey Pro App: HejHome/Tuya Zigbee Device brand/models: Hejhome Pika 3‑gang (GKZSW391L2DB03) Hejho"
+  },
+  {
+    "n": 5389,
+    "user": "Willy",
+    "mfr": [
+      "_TZ3000_pjb1ua0m"
+    ],
+    "pid": [
+      "TS0203"
+    ],
+    "imgs": 0,
+    "links": [],
+    "snip": "Hi, Could you please add this device? Device: Pressure band Manufacturer Name: _TZ3000_pjb1ua0m Product ID: TS0203. Thanks."
+  },
+  {
+    "n": 5391,
+    "user": "Ons",
+    "mfr": [
+      "_TZ3000_ww6drja5"
+    ],
+    "pid": [
+      "TS011F"
+    ],
+    "imgs": 0,
+    "links": [],
+    "snip": "Hi there, I am new here and appricatie all the work that has been doen so I hope this is simple to answer, trying to add an energiemetered power plug which identifies as (_TZ3000_ww6drja5). According to the Universal Tuy"
+  },
+  {
+    "n": 5415,
+    "user": "Haadeess",
+    "mfr": [
+      "_TZE284_oitavov2"
+    ],
+    "pid": [
+      "TS0601"
+    ],
+    "imgs": 3,
+    "links": [],
+    "snip": "Hi there, great to have you back. I have several different soil moisture meters. Some work, some don’t at all. Could you find out why? What would you need to do that? Here’s an error message I’m getting where I can’t get"
+  },
+  {
+    "n": 5420,
+    "user": "Peter_van_Werkhoven",
+    "mfr": [
+      "_TZE200_vvmbj46n"
+    ],
+    "pid": [
+      "TS0601"
+    ],
+    "imgs": 1,
+    "links": [],
+    "snip": "Hi Johan, I added my LCD Temp &amp; Humidity sensor _TZE200_vvmbj46n TS0601 into Homey again but still no Battery readings there, see screenshot. Device has 3 x AAA batteries. 1000027132 1220×2712 64.3 KB \"ids\": {}, \"end"
+  },
+  {
+    "n": 5424,
+    "user": "Peter_Kawa",
+    "mfr": [
+      "_TZ3000_gjnozsaz"
+    ],
+    "pid": [],
+    "imgs": 0,
+    "links": [
+      "https://www.zigbee2mqtt.io/devices/PJ-1203A.html#tuya-pj-1203a"
+    ],
+    "snip": "Hi Rudi, Just fyi: I happen to use a dozen of _TZ3000_gjnozsaz measuring plugs as well, but used with zigbee2mqtt. I don’t see any network flooding. Sometimes they don’t report for a minute. I did not change any default "
+  },
+  {
+    "n": 5430,
+    "user": "Pieter_Pessers",
+    "mfr": [
+      "_TZ3000_l9brjwau",
+      "_TZ3000_qkixdnon"
+    ],
+    "pid": [],
+    "imgs": 0,
+    "links": [],
+    "snip": "Hello Johan. Is it possible to include: BSEED 2 buttons wall switch zigbee with nuetral _TZ3000_l9brjwau_TS002and the BSEED 3 buttons wall switch zigbee with neutral _TZ3000_qkixdnon_TS003?"
+  },
+  {
+    "n": 5454,
+    "user": "Tobias-B",
+    "mfr": [
+      "_TZE284_aaeasoll"
+    ],
+    "pid": [
+      "TS0601"
+    ],
+    "imgs": 1,
+    "links": [
+      "https://github.com/JohanBendz/com.tuya.zigbee/issues/1379",
+      "https://github.com/JohanBendz/com.tuya.zigbee/issues/1379",
+      "https://github.com/TobiasB295"
+    ],
+    "snip": "Hi @Johann_Bendz I’ve just submitted a device request on GitHub for a new SmarterCurry (JoyousMall) Solar Lux Sensor. It’s currently recognized as a generic Zigbee device. I’ve already performed the interview and include"
+  },
+  {
+    "n": 5457,
+    "user": "Christian_Jorgensen",
+    "mfr": [
+      "_TZ32101000000_jrqzgeuh"
+    ],
+    "pid": [
+      "TS0210"
+    ],
+    "imgs": 0,
+    "links": [],
+    "snip": "Device Request: Vibration Sensor Hi! Could you please add support for this vibration sensor? It currently adds as an Unknown/Generic Zigbee device with non-functioning generic and tamper alarms. Manufacturer ID: _TZ32101"
+  },
+  {
+    "n": 5460,
+    "user": "Riccardo_Baro",
+    "mfr": [
+      "_TZE204_ex3rcdha"
+    ],
+    "pid": [
+      "TS0601"
+    ],
+    "imgs": 0,
+    "links": [],
+    "snip": "Hi @Johann_Bendz , could you please add support for this 4-gang switch? It is currently recognized as an Unknown Zigbee Device. Manufacturer ID: _TZE204_ex3rcdha Product ID: TS0601 Thank you!"
+  },
+  {
+    "n": 5470,
+    "user": "Remco_Ter_haar",
+    "mfr": [
+      "_TZE284_myd45weu"
+    ],
+    "pid": [
+      "TS0601"
+    ],
+    "imgs": 0,
+    "links": [],
+    "snip": "hoi johan kun je deze bodemsensor toevoegen \"ids\": { \"modelId\": \"TS0601\", \"manufacturerName\": \"\\_TZE284_myd45weu\" }, \"endpoints\": { \"ieeeAddress\": \"a4:c1:38:c9:a1:3f:38:97\", \"networkAddress\": 36789, \"modelId\": \"TS0601\", "
+  },
+  {
+    "n": 5491,
+    "user": "Martin_Kliment",
+    "mfr": [
+      "_TZE284_nt4pquef",
+      "_TZE284_aao3yzhs"
+    ],
+    "pid": [
+      "TS0601"
+    ],
+    "imgs": 0,
+    "links": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/issues/10315",
+      "https://github.com/zigpy/zha-device-handlers/issues/4707"
+    ],
+    "snip": "Device Request - Soil Moisture Sensor SGS02Z - _TZE284_nt4pquef / TS0601 Hi, could you please add support for the Tuya Zigbee soil moisture &amp; temperature sensor SGS02Z (also sold as SG502Z)? It is the successor of th"
+  },
+  {
+    "n": 5493,
+    "user": "Alejandro_Palladino",
+    "mfr": [
+      "_TZE284_debczeci"
+    ],
+    "pid": [
+      "TS0601"
+    ],
+    "imgs": 0,
+    "links": [],
+    "snip": "Necesitaria conectar este dispositivo: Hi! Could you please add support for this Tuya mmWave presence sensor? Manufacturer ID: _TZE284_debczeci Product ID: TS0601 Device Type: Human Presence Sensor (mmWave) Thanks in adv"
+  },
+  {
+    "n": 5497,
+    "user": "Kai_Dybvik",
+    "mfr": [
+      "_TZ3210_eymunffl",
+      "_TZ3000_cjfmu5he",
+      "_TZ3000_kz1anoi8",
+      "_TZ3000_mq4wujmp"
+    ],
+    "pid": [
+      "TS0101",
+      "TS0049"
+    ],
+    "imgs": 0,
+    "links": [],
+    "snip": "johan_bendz: Smart Garden Irrigation Co ntroller _TZ3210_eymunffl / TS0101 (Woox) _TZ3000_cjfmu5he / TS0049 _TZ3000_kz1anoi8 / TS0049 _TZ3000_mq4wujmp / TS0049 Hello. How do I find these numbers on Aliexpress for example"
+  },
+  {
+    "n": 5516,
+    "user": "Axel_Ditmer",
+    "mfr": [
+      "_TZE284_nqqylykc"
+    ],
+    "pid": [
+      "TS0601"
+    ],
+    "imgs": 0,
+    "links": [],
+    "snip": "can the following dimmer fingerprint be added? producer id: _TZE284_nqqylykc product id: TS0601"
+  },
+  {
+    "n": 5519,
+    "user": "Peter_Kawa",
+    "mfr": [
+      "_TZE284_nqqylykc"
+    ],
+    "pid": [],
+    "imgs": 0,
+    "links": [
+      "https://github.com/JohanBendz/com.tuya.zigbee/issues/1108"
+    ],
+    "snip": "_TZE284_nqqylykc: Already requested 2y ago, request is still open: https://github.com/JohanBendz/com.tuya.zigbee/issues/1108"
+  },
+  {
+    "n": 5520,
+    "user": "FrankP",
+    "mfr": [],
+    "pid": [
+      "TS0042"
+    ],
+    "imgs": 0,
+    "links": [],
+    "snip": "Thnx @johan_bendz . The TS0042 2 gang wall remote works now"
+  },
+  {
+    "n": 5532,
+    "user": "Mates1134",
+    "mfr": [
+      "_TZ3000_qja6nq5z"
+    ],
+    "pid": [
+      "TS004F"
+    ],
+    "imgs": 0,
+    "links": [],
+    "snip": "Hi, The _TZ3000_qja6nq5z TS004F Smart knob switch stopped working after one of the recent updates. It was working fine before."
+  },
+  {
+    "n": 5534,
+    "user": "Dragan_Todorovic",
+    "mfr": [
+      "_TZE200_crq3r3la"
+    ],
+    "pid": [],
+    "imgs": 0,
+    "links": [],
+    "snip": "Hi. I have a _TZE200_crq3r3la, CK-BL702-MWS-01(7016). its a Radar presence sensor. It connected to Homey as a generic device but have the presence triggers. What it does not have is possibility to change settings. Am i m"
+  },
+  {
+    "n": 5535,
+    "user": "Kizabgd",
+    "mfr": [
+      "_TZE284_9em5sfh"
+    ],
+    "pid": [
+      "TS0601"
+    ],
+    "imgs": 0,
+    "links": [],
+    "snip": "Hi Could you please add support for this Tuya Temperature &amp; Humidity sensor with LCD display? Currently, it gets paired as an Unknown Zigbee Device. Here are the device details from my Homey Developer Tools: Manufact"
+  }
+]

@@ -1,0 +1,109 @@
+{
+  "ok": 105,
+  "gaps": [
+    {
+      "mfr": "_TZE284_9EM5SFH",
+      "pid": "TS0601",
+      "src": "digest-T2#5535",
+      "status": "REJECT_OCR_MALFORMED"
+    },
+    {
+      "mfr": "_TZ3000_4UPL1FCJ",
+      "pid": "TS0505B",
+      "src": "digest-T3#652",
+      "status": "PID_MISS",
+      "drivers": [
+        "button_wireless_1"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_QD7HEJ8U",
+      "pid": "TS0041",
+      "src": "digest-T3#652",
+      "status": "PID_MISS",
+      "drivers": [
+        "bulb_rgb",
+        "dimmable_led_strip"
+      ]
+    },
+    {
+      "mfr": "_TZE28C100000_RZDKN5RX",
+      "pid": "TS0601",
+      "src": "digest-T15#10",
+      "status": "REJECT_OCR_MALFORMED"
+    },
+    {
+      "mfr": "_TZE28C100000_RZDKN5RX",
+      "pid": "TS0601",
+      "src": "digest-T15#11",
+      "status": "REJECT_OCR_MALFORMED"
+    },
+    {
+      "mfr": "_TZE2841000000_3MZB0SDZ",
+      "pid": "TS0601",
+      "src": "digest-T15#37",
+      "status": "REJECT_OCR_MALFORMED"
+    },
+    {
+      "mfr": "_TZE2841000000_3MZB0SDZ",
+      "pid": "TS0601",
+      "src": "digest-T15#41",
+      "status": "REJECT_OCR_MALFORMED"
+    },
+    {
+      "mfr": "_TZE2841000000_3MZB0SDZ",
+      "pid": "TS0601",
+      "src": "digest-T15#43",
+      "status": "REJECT_OCR_MALFORMED"
+    },
+    {
+      "mfr": "_TZ3000_ZGYZGDUA",
+      "pid": "TS0043",
+      "src": "digest-T17#1",
+      "status": "PID_MISS",
+      "drivers": [
+        "scene_switch_4"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_WKAI4GA5",
+      "pid": "TS0043",
+      "src": "digest-T17#1",
+      "status": "PID_MISS",
+      "drivers": [
+        "button_wireless_2",
+        "scene_switch_4"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_zmy4lslw",
+      "pid": "TS0001",
+      "src": "t26439",
+      "status": "PID_MISS",
+      "drivers": [
+        "switch_2gang"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_cayepv1a",
+      "pid": "TS0001",
+      "src": "t26439",
+      "status": "PID_MISS",
+      "drivers": [
+        "smartPlug_DinRail"
+      ]
+    },
+    {
+      "mfr": "_TZ32101000000_jrqzgeuh",
+      "pid": "TS0210",
+      "src": "t26439",
+      "status": "REJECT_OCR_MALFORMED"
+    },
+    {
+      "mfr": "_TZE284_9em5sfh",
+      "pid": "TS0601",
+      "src": "t26439",
+      "status": "REJECT_OCR_MALFORMED"
+    }
+  ]
+}
