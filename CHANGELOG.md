@@ -9,6 +9,11 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [9.0.1497] - 2026-10-16
+
+P2836 Homey `#zigbee` tag silent harvest: Sonoff SWV (`SONOFF`/`eWeLink` + `SWV-*`) → `water_valve_garden` (ZCL); strip SWV phantoms from `button_wireless_4` / `water_valve_smart`.
+---
+
 ## [9.0.1496] - 2026-10-16
 
 Complementary Zemismart official Homey app support: screen switches, ZMD dimmers, covers and sensors from verified couples — no climate misroute.

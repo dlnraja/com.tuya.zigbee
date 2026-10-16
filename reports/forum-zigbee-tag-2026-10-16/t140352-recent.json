@@ -1,0 +1,42 @@
+[
+  {
+    "n": 2256,
+    "user": "dlnraja",
+    "cooked": " I will Check asap "
+  },
+  {
+    "n": 2257,
+    "user": "meter91",
+    "cooked": "  @dlnraja  is is possible to make support for a ZG-106Z / TZ3000_7y90pany luminance sensor? "
+  },
+  {
+    "n": 2258,
+    "user": "EdP",
+    "cooked": " Hi, \n Could you add support for the AOYAN AY-303Z Zigbee soil moisture sensor? It’s a white-label version of the HOBEIAN ZG-303Z, so hopefully it only needs its fingerprint added to the existing soil sensor driver. \n Device info: \n \n Manufacturer name: “AOYAN” \n Model ID: AY-303"
+  },
+  {
+    "n": 2259,
+    "user": "Peter_van_Werkhoven",
+    "cooked": " Hi Dylan Good afternoon, the app crashes again. \n Diagnostic code c05db40d-b7f1-4f31-9ec1-4c75b714e10d \n          1000047678  1220×2712 216 KB         \n Good luck \nBest regards Peter "
+  },
+  {
+    "n": 2260,
+    "user": "Peter_van_Werkhoven",
+    "cooked": " Hi Dylan Good evening, the app is working fine again, no more crashes   \n          1000047938  1220×2712 175 KB         \n Thanks for fixing and have a nice night. \n Best regards Peter. "
+  },
+  {
+    "n": 2261,
+    "user": "marosk",
+    "cooked": " Hi, \nCould you please add support for this Tuya Zigbee Radiator Thermostat (TRV)? \nIt is sold by a local (Slovak) brand called ANTIK (model ATK-TRV02), but it pairs incorrectly as a Generic “socket” with a virtual driver on my Homey Pro 2026. \n Here is the data from Developer To"
+  },
+  {
+    "n": 2262,
+    "user": "Istvan_Mag",
+    "cooked": " Hi \nI m new in this topic! \nPlease help me to find which device i need use for this 4in1 sensor, not clearly to find the right one, or maybe need to add support this device?!?! \nThank’s a lot \nBest regards Istvan \n          image  640×698 49.8 KB         \n          image  639×82"
+  },
+  {
+    "n": 2263,
+    "user": "Kizabgd",
+    "cooked": " Hi \n I can’t add  Tuya Convenient Digital LCD Indoor Zigbee Temperature  \n ( _TZE284_9ern5sfh  /  TS0601 ) \n Even though I select the dedicated “ Add LCD Temperature &amp; Humidity Sensor ” option, Homey completely rejects the driver and throws the error:  “Unknown Zigbee Device"
+  }
+]
