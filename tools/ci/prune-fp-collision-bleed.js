@@ -283,6 +283,7 @@ function main() {
   };
 
   if (JSON_MODE) {
+    summary.newSample = newCollisions.slice(0, 40).map((c) => ({ key: c.key, drivers: c.drivers }));
     console.log(JSON.stringify(summary, null, 2));
   } else {
     console.log(`prune-fp-collision-bleed: new=${newCollisions.length} actions=${actions.length} ${APPLY ? 'APPLIED' : 'dry-run'}`);
@@ -290,6 +291,11 @@ function main() {
       console.log(`  [${a.source}] ${a.mfr} keep=${a.canonical} strip=${a.strippedFrom} (${a.collisionCount} keys)`);
     }
     if (actions.length > 40) console.log(`  ... +${actions.length - 40} more`);
+    if (actions.length === 0 && newCollisions.length) {
+      for (const c of newCollisions.slice(0, 40)) {
+        console.log(`  [unresolved] ${c.key} -> ${c.drivers.join(',')}`);
+      }
+    }
   }
 
   if (UPDATE_BASELINE) {

@@ -45,6 +45,10 @@ async function resolveBranch(peer) {
  * Peer driver folder → our driver id when names differ.
  * Only verified class aliases — never invent device types.
  */
+/**
+ * Prefer OUR canonical driver ids (no underscore gang) so peer rewrite
+ * does not dual-claim the same (mfr,pid) on Johan-named sibling folders.
+ */
 const DRIVER_ALIAS = {
   door_sensor: 'contact_sensor',
   doorwindowsensor: 'contact_sensor',
@@ -55,6 +59,7 @@ const DRIVER_ALIAS = {
   smoke_detector_advanced: 'smoke_sensor',
   plug: 'smart_plug',
   plug_smart: 'smart_plug',
+  smartplug: 'smart_plug',
   radiator_valve: 'device_radiator_valve',
   smart_radiator_thermostat: 'device_radiator_valve',
   trv: 'device_radiator_valve',
@@ -67,9 +72,27 @@ const DRIVER_ALIAS = {
   dimmer_1_gang_2: 'dimmer_1_gang_tuya',
   dimmer_2_gang: 'dimmer_2_gang_tuya',
   wall_switch: 'switch_1gang',
+  switch_1_gang: 'switch_1gang',
+  switch_2_gang: 'switch_2gang',
+  switch_3_gang: 'switch_3gang',
+  switch_4_gang: 'switch_4gang',
+  wall_switch_1_gang: 'wall_switch_1gang_1way',
+  wall_switch_2_gang: 'wall_switch_2gang_1way',
+  wall_switch_3_gang: 'wall_switch_3gang_1way',
+  wall_switch_4_gang: 'wall_switch_4gang_1way',
+  wall_switch_1_gang_tuya: 'switch_1gang',
+  wall_remote_1_gang: 'button_wireless_1',
+  wall_remote_2_gang: 'button_wireless_2',
+  wall_remote_3_gang: 'button_wireless_3',
+  wall_remote_4_gang: 'button_wireless_4',
+  wall_remote_4_gang_3: 'button_wireless_4',
+  handheld_remote_4_buttons: 'button_wireless_4',
+  smart_remote_4_buttons: 'button_wireless_4',
   sos_button: 'sos_emergency_button',
   waterleak: 'water_leak_sensor',
   water_leak: 'water_leak_sensor',
+  water_detector: 'water_leak_sensor',
+  water_leak_sensor_tuya: 'water_leak_sensor',
   flood_sensor: 'water_leak_sensor',
   temperature_humidity: 'climate_sensor',
   temp_humidity: 'climate_sensor',
@@ -77,15 +100,22 @@ const DRIVER_ALIAS = {
   pirsensor: 'motion_sensor',
   pir_sensor_2: 'motion_sensor',
   motion_sensor_2: 'motion_sensor',
+  radar_sensor: 'presence_sensor_radar',
+  radar_sensor_2: 'presence_sensor_radar',
+  radar_sensor_ceiling: 'presence_sensor_radar',
+  soilsensor: 'soil_sensor',
+  soilsensor_2: 'soil_sensor',
   outdoor_plug: 'smart_plug',
   outdoor_2_socket: 'smart_plug',
   double_power_point: 'smart_plug',
   double_power_point_2: 'smart_plug',
-  handheld_remote_4_buttons: 'button_wireless_4',
   fingerbot: 'switch_1gang',
   christmas_lights: 'rgb_led_strip',
   dimmable_led_strip: 'rgb_led_strip',
   dimmable_recessed_led: 'tunable_bulb_E27',
+  smart_switch: 'switch_1gang',
+  smart_button_switch: 'button_wireless_1',
+  valvecontroller: 'water_valve_smart',
 };
 
 const SKIP_PEER_DRIVERS = new Set([
@@ -149,13 +179,17 @@ function ourDrivers() {
 
 function mapDriverId(peerId, ours) {
   if (!peerId || SKIP_PEER_DRIVERS.has(peerId)) return null;
-  if (ours.has(peerId)) return peerId;
+  // Alias FIRST — avoid writing into Johan-named siblings that collide with canonical.
   const alias = DRIVER_ALIAS[peerId];
   if (alias && ours.has(alias)) return alias;
+  if (ours.has(peerId)) return peerId;
   // soft: strip _tuya / _zigbee suffixes
   const soft = peerId.replace(/_tuya$/i, '').replace(/_zigbee$/i, '');
-  if (ours.has(soft)) return soft;
   if (DRIVER_ALIAS[soft] && ours.has(DRIVER_ALIAS[soft])) return DRIVER_ALIAS[soft];
+  if (ours.has(soft)) return soft;
+  // underscore gang → compact (switch_2_gang → switch_2gang)
+  const compact = peerId.replace(/_(\d)_gang/gi, '_$1gang').replace(/_gang_/gi, 'gang_');
+  if (ours.has(compact)) return compact;
   return null;
 }
 
