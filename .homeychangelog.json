@@ -908,7 +908,7 @@
     }
   ],
   "9.0.1475": {
-    "en": "v9.0.1475: automated publish, manifest sync, and Homey test promotion."
+    "en": "Hardened presence and radar flow cards; kept LCD climate fingerprints in sync for Test builds."
   },
   "9.0.1474": {
     "en": "Improved LCD climate sensor temperature and humidity on single-endpoint Tuya MCU variants."
@@ -971,13 +971,13 @@
   "9.0.1456": {
     "en": "Aligned fingerprint database for ANTIK TRV and 4in1 mmWave couples."
   },
-  "9.0.1475": {
-    "en": "Hardened presence and radar flow cards; kept LCD climate fingerprints in sync for Test builds."
-  },
   "9.0.1476": {
     "en": "Improved 2-button wall remotes and locked dimmer/radar fingerprints from community reports."
   },
   "9.0.1477": {
     "en": "Hardened 3-button wall remotes and locked Moes/rain fingerprints after full forum satellite scan."
+  },
+  "9.0.1478": {
+    "en": "Aligned fingerprint DB after satellite sacred-couple locks; force Test republish."
   }
 }
