@@ -36,7 +36,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **App Version** | v9.0.1494 |
 | **Drivers** | 449 (396 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,830 |
-| **Pairing Variants** | 19,214 (4 case combos per fingerprint) |
+| **Pairing Variants** | 19,206 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 906 |
 | **Flow Cards** | 6,105 |
 | **Unique Capabilities** | 176 |
@@ -103,7 +103,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.1494** | v9.0.1493: |
+| **v9.0.1494** | Complementary enrich from Johan multi-branch + Lidl (UNION only, no wipe). |
 | **v9.0.1493** | Clear TZE284 nkjintbl from app.json switch_2gang so publish gates pass (Athom processing path). |
 | **v9.0.1492** | Unblock Auto-Publish: strip ambiguous TZE284 nkjintbl from switch_2gang (anti-bot / Athom processing path). |
 | **v9.0.1491** | Automated peer complementary enrich cron (Johan/Lidl FP union) — free GHA, no forum post. |
