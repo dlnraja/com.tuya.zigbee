@@ -907,6 +907,9 @@
       ]
     }
   ],
+  "9.0.1479": {
+    "en": "v9.0.1479: automated publish, manifest sync, and Homey test promotion."
+  },
   "9.0.1478": {
     "en": "Aligned fingerprint DB after satellite sacred-couple locks; force Test republish."
   },
@@ -963,11 +966,7 @@
     "en": "Fixed multi-button release Flow cards and TRV DP received trigger.",
     "fr": "Correction des cartes Flow release multi-boutons et du trigger DP TRV."
   },
-  "9.0.1460": {
-    "en": "Soil sensors matched by manufacturer+model couple (QT-07S, AOYAN, HOBEIAN).",
-    "fr": "Capteurs sol appaires par couple fabricant+modele (QT-07S, AOYAN, HOBEIAN)."
-  },
-  "9.0.1479": {
-    "en": "v9.0.1479: automated publish, manifest sync, and Homey test promotion."
+  "9.0.1480": {
+    "en": "v9.0.1480: automated publish, manifest sync, and Homey test promotion."
   }
 }

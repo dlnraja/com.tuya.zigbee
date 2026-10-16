@@ -9,7 +9,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.1478] - 2026-10-16
+## [9.0.1479] - 2026-10-16
+
+v9.0.1479: automated publish, manifest sync, and Homey test promotion.
+---
+
+ [9.0.1478] - 2026-10-16
 
 Aligned fingerprint DB after satellite sacred-couple locks; force Test republish.
 ---

@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1479 |
+| **App Version** | v9.0.1480 |
 | **Drivers** | 449 (396 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,776 |
 | **Pairing Variants** | 19,176 (4 case combos per fingerprint) |
@@ -103,7 +103,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.1479** | v9.0.1478: |
+| **v9.0.1480** | v9.0.1479: |
+| **v9.0.1479** | v9.0.1479: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1478** | Aligned fingerprint DB after satellite sacred-couple locks; force Test republish. |
 | **v9.0.1477** | Hardened 3-button wall remotes and locked Moes/rain fingerprints after full forum satellite scan. |
 | **v9.0.1476** | Improved 2-button wall remotes and locked dimmer/radar fingerprints from community reports. |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1471** | Forum: LCD 9ern5sfh pairing (Kizabgd), TRV time-sync TX harden, sacred-keep LCD couple. |
 | **v9.0.1470** | TRV me167 DP4 fix + drop misattributed plug_smart OTA (P2822). |
 | **v9.0.1469** | TRV me167 DP4 no longer steals battery; settings spinner dual fallback (P2822). |
-| **v9.0.1468** | Forum fleet silent treat: sacred-keep pins + forbid cartesian invent couples (P2821). |
 
 <!-- CHANGELOG_END -->
 
