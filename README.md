@@ -33,25 +33,25 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1470 |
+| **App Version** | v9.0.1471 |
 | **Drivers** | 449 (396 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,776 |
-| **Pairing Variants** | 19,179 (4 case combos per fingerprint) |
+| **Pairing Variants** | 19,176 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 906 |
 | **Flow Cards** | 6,105 |
 | **Unique Capabilities** | 176 |
 | **Native OTA Drivers** | 9 |
-| **Test Suites** | 644 files |
+| **Test Suites** | 645 files |
 | **SVG Icons** | 752 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
-| **Last Updated** | 2026-10-14 |
+| **Last Updated** | 2026-10-16 |
 
 ### Top 20 Drivers by Fingerprint Count
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 2,111 |
+| 1 | `climate_sensor` | 2,099 |
 | 2 | `switch_1gang` | 1,402 |
 | 3 | `curtain_motor` | 1,113 |
 | 4 | `presence_sensor_radar` | 997 |
@@ -103,6 +103,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1471** | Forum: LCD 9ern5sfh pairing (Kizabgd), TRV time-sync TX harden, sacred-keep LCD couple. |
 | **v9.0.1470** | TRV me167 DP4 fix + drop misattributed plug_smart OTA (P2822). |
 | **v9.0.1469** | TRV me167 DP4 no longer steals battery; settings spinner dual fallback (P2822). |
 | **v9.0.1468** | Forum fleet silent treat: sacred-keep pins + forbid cartesian invent couples (P2821). |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1462** | 4in1 mmWave pairs again (lean clusters); AOYAN soil no longer collides with water leak. |
 | **v9.0.1461** | Fixed multi-button release Flow cards and TRV DP received trigger. |
 | **v9.0.1460** | Soil sensors matched by manufacturer+model couple (QT-07S, AOYAN, HOBEIAN). |
-| **v9.0.1459** | v9.0.1459: automated publish, manifest sync, and Homey test promotion. |
 
 <!-- CHANGELOG_END -->
 
