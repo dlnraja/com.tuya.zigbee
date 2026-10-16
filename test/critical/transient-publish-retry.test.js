@@ -4,6 +4,18 @@ const assert = require('node:assert');
 const { decide, parseRetryCount } = require('../../.github/scripts/transient-publish-retry');
 const B = (state, stateMeta) => [{ version: '9.0.1', state, stateMeta }];
 test('retries once on socket hang up', () => assert.strictEqual(decide({ version: '9.0.1', builds: B('processing_failed', 'socket hang up') }).retry, true));
+// WHY(P2831): tip #3581–#3584 — hang + healthy Test must NOT auto-republish.
+test('refuses hang retry when healthy Test exists', () => {
+  const d = decide({
+    version: '9.0.1',
+    builds: [
+      { version: '9.0.1', state: 'processing_failed', stateMeta: 'socket hang up' },
+      { version: '9.0.0', state: 'test', id: 99 },
+    ],
+  });
+  assert.strictEqual(d.retry, false);
+  assert.match(String(d.reason), /P2831|healthy Test/i);
+});
 test('retries once on S3 key does not exist', () => assert.strictEqual(decide({ version: '9.0.1', builds: B('processing_failed', 'The specified key does not exist.') }).retry, true));
 // WHY(2026-10-11 user): AggregateError flakes on identical content (1424F/1425T, 1426F/1427T) -> up to TWO bumped retries.
 test('retries AggregateError once', () => assert.strictEqual(decide({ version: '9.0.1', builds: B('processing_failed', 'AggregateError') }).retry, true));
