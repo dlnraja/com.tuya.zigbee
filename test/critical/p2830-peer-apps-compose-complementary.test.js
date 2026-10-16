@@ -30,6 +30,8 @@ describe('P2830 peer apps compose complementary rewrite', () => {
     assert.ok(src.includes('rewriteNotCopy'));
     assert.ok(src.includes('JohanBendz/com.tuya.zigbee'));
     assert.ok(src.includes('JohanBendz/com.lidl'));
+    assert.ok(src.includes("switch_1_gang: 'switch_1gang'"));
+    assert.ok(src.includes('Alias FIRST'));
   });
 
   it('P2572 refuses mfr-only cartesian new pids without force-medium', () => {
