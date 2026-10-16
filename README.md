@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1494 |
+| **App Version** | v9.0.1495 |
 | **Drivers** | 449 (396 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,830 |
 | **Pairing Variants** | 19,206 (4 case combos per fingerprint) |
@@ -41,7 +41,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 6,105 |
 | **Unique Capabilities** | 176 |
 | **Native OTA Drivers** | 9 |
-| **Test Suites** | 655 files |
+| **Test Suites** | 656 files |
 | **SVG Icons** | 752 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -103,9 +103,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.1494** | Complementary enrich from Johan multi-branch + Lidl (UNION only, no wipe). |
 | **v9.0.1495** | Moes and Zemismart actions merge ZCL, raw, Tuya DP and soft DP detect without degrading zcl-only couples. |
-| **v9.0.1494** | v9.0.1493: |
+| **v9.0.1494** | Complementary enrich from Johan multi-branch + Lidl (UNION only, no wipe). |
 | **v9.0.1493** | Clear TZE284 nkjintbl from app.json switch_2gang so publish gates pass (Athom processing path). |
 | **v9.0.1492** | Unblock Auto-Publish: strip ambiguous TZE284 nkjintbl from switch_2gang (anti-bot / Athom processing path). |
 | **v9.0.1491** | Automated peer complementary enrich cron (Johan/Lidl FP union) — free GHA, no forum post. |
@@ -116,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1486** | Reduced Homey tip email spam on Athom socket hang up (soft-expect hang-storm). |
 | **v9.0.1485** | Reduced Homey tip email spam on Athom socket hang up (soft-expect hang-storm). |
 | **v9.0.1484** | Improved Zigbee peer fingerprint coverage (Johan/Lidl complementary rewrite). |
-| **v9.0.1483** | Improved Zigbee device coverage from complementary peer fingerprint rewrite (Johan/Lidl). |
 
 <!-- CHANGELOG_END -->
 
