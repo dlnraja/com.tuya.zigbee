@@ -1,10 +1,10 @@
 {
   "id": "P2572",
   "mode": "apply",
-  "generatedAt": "2026-10-16T07:44:39.774Z",
+  "generatedAt": "2026-10-16T09:01:25.528Z",
   "harvested": 287,
   "alreadyCovered": 269,
-  "driversTouched": 6,
+  "driversTouched": 1,
   "applied": [
     {
       "driverId": "air_quality_co2",
@@ -20,9 +20,7 @@
       "pidCount": 2,
       "confidence": "high",
       "ok": true,
-      "changed": true,
-      "addedMfr": 8,
-      "addedPid": 0
+      "changed": false
     },
     {
       "driverId": "curtain_motor",
@@ -30,9 +28,7 @@
       "pidCount": 1,
       "confidence": "high",
       "ok": true,
-      "changed": true,
-      "addedMfr": 4,
-      "addedPid": 0
+      "changed": false
     },
     {
       "driverId": "fan_controller",
@@ -62,14 +58,6 @@
       "driverId": "temphumidsensor3",
       "mfrCount": 2,
       "pidCount": 2,
-      "confidence": "high",
-      "ok": true,
-      "changed": false
-    },
-    {
-      "driverId": "temphumidsensor_zcl_ts0601",
-      "mfrCount": 1,
-      "pidCount": 1,
       "confidence": "high",
       "ok": true,
       "changed": false
@@ -126,16 +114,6 @@
       "driverId": "presence_sensor_radar",
       "mfrCount": 34,
       "pidCount": 8,
-      "confidence": "high",
-      "ok": true,
-      "changed": true,
-      "addedMfr": 4,
-      "addedPid": 0
-    },
-    {
-      "driverId": "radar_sensor_ceiling",
-      "mfrCount": 1,
-      "pidCount": 1,
       "confidence": "high",
       "ok": true,
       "changed": false
@@ -213,22 +191,12 @@
       "changed": false
     },
     {
-      "driverId": "soilsensor",
-      "mfrCount": 5,
-      "pidCount": 1,
+      "driverId": "motion_sensor",
+      "mfrCount": 10,
+      "pidCount": 2,
       "confidence": "high",
       "ok": true,
       "changed": false
-    },
-    {
-      "driverId": "motion_sensor",
-      "mfrCount": 4,
-      "pidCount": 1,
-      "confidence": "high",
-      "ok": true,
-      "changed": true,
-      "addedMfr": 4,
-      "addedPid": 0
     },
     {
       "driverId": "led_controller_rgb",
@@ -287,26 +255,8 @@
       "changed": false
     },
     {
-      "driverId": "motion_sensor_2",
-      "mfrCount": 2,
-      "pidCount": 1,
-      "confidence": "high",
-      "ok": true,
-      "changed": false
-    },
-    {
       "driverId": "thermostatic_radiator_valve",
       "mfrCount": 6,
-      "pidCount": 1,
-      "confidence": "high",
-      "ok": true,
-      "changed": true,
-      "addedMfr": 4,
-      "addedPid": 0
-    },
-    {
-      "driverId": "radar_sensor_2",
-      "mfrCount": 2,
       "pidCount": 1,
       "confidence": "high",
       "ok": true,
@@ -322,8 +272,8 @@
     },
     {
       "driverId": "wall_switch_1gang_1way",
-      "mfrCount": 1,
-      "pidCount": 1,
+      "mfrCount": 2,
+      "pidCount": 2,
       "confidence": "high",
       "ok": true,
       "changed": false
@@ -348,14 +298,6 @@
       "driverId": "siren",
       "mfrCount": 4,
       "pidCount": 2,
-      "confidence": "high",
-      "ok": true,
-      "changed": false
-    },
-    {
-      "driverId": "radar_sensor",
-      "mfrCount": 4,
-      "pidCount": 1,
       "confidence": "high",
       "ok": true,
       "changed": false
@@ -532,7 +474,7 @@
     },
     {
       "driverId": "pir_sensor_2",
-      "mfrCount": 5,
+      "mfrCount": 4,
       "pidCount": 3,
       "confidence": "high",
       "ok": true,
@@ -547,7 +489,7 @@
       "changed": false
     },
     {
-      "driverId": "wall_switch_4_gang",
+      "driverId": "wall_switch_4gang_1way",
       "mfrCount": 1,
       "pidCount": 1,
       "confidence": "high",
@@ -564,24 +506,8 @@
     },
     {
       "driverId": "water_leak_sensor",
-      "mfrCount": 1,
-      "pidCount": 2,
-      "confidence": "high",
-      "ok": true,
-      "changed": false
-    },
-    {
-      "driverId": "water_leak_sensor_tuya",
       "mfrCount": 2,
-      "pidCount": 1,
-      "confidence": "high",
-      "ok": true,
-      "changed": false
-    },
-    {
-      "driverId": "soilsensor_2",
-      "mfrCount": 1,
-      "pidCount": 1,
+      "pidCount": 2,
       "confidence": "high",
       "ok": true,
       "changed": false
@@ -627,7 +553,7 @@
       "changed": false
     },
     {
-      "driverId": "wall_switch_2_gang",
+      "driverId": "wall_switch_2gang_1way",
       "mfrCount": 3,
       "pidCount": 2,
       "confidence": "high",
@@ -675,7 +601,7 @@
       "changed": false
     },
     {
-      "driverId": "wall_switch_1_gang_tuya",
+      "driverId": "water_leak_sensor_tuya",
       "mfrCount": 1,
       "pidCount": 1,
       "confidence": "high",
@@ -715,15 +641,7 @@
       "changed": false
     },
     {
-      "driverId": "christmas_lights",
-      "mfrCount": 1,
-      "pidCount": 1,
-      "confidence": "high",
-      "ok": true,
-      "changed": false
-    },
-    {
-      "driverId": "switch_1_gang",
+      "driverId": "rgb_led_strip",
       "mfrCount": 1,
       "pidCount": 1,
       "confidence": "high",
@@ -734,14 +652,6 @@
       "driverId": "button_wireless_2",
       "mfrCount": 3,
       "pidCount": 3,
-      "confidence": "high",
-      "ok": true,
-      "changed": false
-    },
-    {
-      "driverId": "wall_switch_1_gang",
-      "mfrCount": 1,
-      "pidCount": 1,
       "confidence": "high",
       "ok": true,
       "changed": false

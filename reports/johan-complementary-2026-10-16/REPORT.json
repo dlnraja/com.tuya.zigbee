@@ -1,0 +1,2081 @@
+{
+  "id": "P2570",
+  "mode": "apply",
+  "generatedAt": "2026-10-16T09:08:33.434Z",
+  "harvested": 23681,
+  "driversTouched": 10,
+  "applied": [
+    {
+      "driverId": "wall_thermostat",
+      "mfrCount": 1,
+      "pidCount": 55,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 0,
+      "addedPid": 53
+    },
+    {
+      "driverId": "curtain_motor",
+      "mfrCount": 4,
+      "pidCount": 55,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 0,
+      "addedPid": 48
+    },
+    {
+      "driverId": "air_quality_co2",
+      "mfrCount": 1,
+      "pidCount": 55,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 0,
+      "addedPid": 53
+    },
+    {
+      "driverId": "button_wireless_4",
+      "mfrCount": 2,
+      "pidCount": 53,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 0,
+      "addedPid": 41
+    },
+    {
+      "driverId": "scene_switch_4",
+      "mfrCount": 3,
+      "pidCount": 53,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 0,
+      "addedPid": 51
+    },
+    {
+      "driverId": "button_wireless_1",
+      "mfrCount": 3,
+      "pidCount": 53,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 0,
+      "addedPid": 48
+    },
+    {
+      "driverId": "smart_knob",
+      "mfrCount": 1,
+      "pidCount": 54,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 0,
+      "addedPid": 53
+    },
+    {
+      "driverId": "wall_switch_3gang_1way",
+      "mfrCount": 1,
+      "pidCount": 53,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 0,
+      "addedPid": 49
+    },
+    {
+      "driverId": "smartplug",
+      "mfrCount": 1,
+      "pidCount": 14,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 0,
+      "addedPid": 14
+    },
+    {
+      "driverId": "din_rail_switch",
+      "mfrCount": 1,
+      "pidCount": 14,
+      "ok": true,
+      "changed": true,
+      "addedMfr": 0,
+      "addedPid": 13
+    }
+  ],
+  "skipped": [
+    {
+      "mfr": "_TZE204_yvx5lh6k",
+      "pid": "TS0601",
+      "sources": [
+        "johan-device#1528",
+        "johan-issue#1528"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_q76rtoa9",
+      "pid": "TS0601",
+      "sources": [
+        "johan-device#1046",
+        "johan-issue#1046"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_t1blo2bj",
+      "pid": "TS0601",
+      "sources": [
+        "johan-device#1046",
+        "johan-device#1469",
+        "johan-device#366",
+        "johan-device#PR#1470",
+        "johan-device#PR#1333",
+        "johan-issue#1469",
+        "johan-issue#366"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_t1blo2bj",
+      "pid": "TS0601",
+      "sources": [
+        "johan-device#1046",
+        "johan-device#1469",
+        "johan-device#1455",
+        "johan-device#1018",
+        "johan-device#725",
+        "johan-device#429",
+        "johan-device#517",
+        "johan-device#PR#1470",
+        "johan-issue#1469",
+        "johan-issue#1018",
+        "johan-issue#725",
+        "johan-issue#429",
+        "johan-issue#517"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_srmahpwl",
+      "pid": "TS0601",
+      "sources": [
+        "johan-device#848",
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_5slehgeo",
+      "pid": "TS0601",
+      "sources": [
+        "johan-device#848",
+        "johan-device#1469",
+        "johan-device#1434",
+        "johan-issue#1469",
+        "johan-issue#1434"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS0203",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "ZG-305Z",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS0601",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#1169",
+        "johan-device#1192",
+        "johan-device#380",
+        "johan-device#1061",
+        "johan-device#1087",
+        "johan-device#1010",
+        "johan-device#780",
+        "johan-device#425",
+        "johan-device#208",
+        "johan-device#368",
+        "johan-device#519",
+        "johan-device#527",
+        "johan-device#605",
+        "johan-device#654",
+        "johan-device#640",
+        "johan-device#PR#1470",
+        "johan-device#PR#724",
+        "johan-issue#1469",
+        "johan-issue#1169",
+        "johan-issue#1192",
+        "johan-issue#380",
+        "johan-issue#1061",
+        "johan-issue#1087",
+        "johan-issue#1010",
+        "johan-issue#780",
+        "johan-issue#425",
+        "johan-issue#208",
+        "johan-issue#368",
+        "johan-issue#519",
+        "johan-issue#527",
+        "johan-issue#605",
+        "johan-issue#654",
+        "johan-issue#640"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS0505B",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS0201",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS0202",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS0225",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS0044",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "ZG-227Z",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS0001",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS0043",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS0042",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS0041",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS0219",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "ZG-222Z",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS0222",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS0207",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS0205",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS0204",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS0210",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS0211",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS0004",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS0002",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS0012",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS0003",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS0046",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS1101",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS0502A",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS1001",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS0011",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS0502B",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS0501A",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS0726",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS0052",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS0501B",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS0503B",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS1201",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS0014",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS0505A",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS0013",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "ZG-204Z",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#380",
+        "johan-device#368",
+        "johan-device#519",
+        "johan-device#654",
+        "johan-issue#1469",
+        "johan-issue#380",
+        "johan-issue#368",
+        "johan-issue#519",
+        "johan-issue#654"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "ZG-205Z",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS0212",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS0215A",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "ZG-303Z",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "ZG-204ZV",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "ZG-204ZL",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#425",
+        "johan-device#519",
+        "johan-device#654",
+        "johan-issue#1469",
+        "johan-issue#425",
+        "johan-issue#519",
+        "johan-issue#654"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "ZG-223Z",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "ZG-102ZL",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS1002",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "ZG-106Z",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "ZG-101ZL",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS0603",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS0504B",
+      "sources": [
+        "johan-device#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3towulqd",
+      "pid": "TS0049",
+      "sources": [
+        "johan-device#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0203",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "ZG-305Z",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0601",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#1355",
+        "johan-device#1322",
+        "johan-device#PR#1470",
+        "johan-issue#1469",
+        "johan-issue#1322"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0505B",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0201",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0202",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0225",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0044",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "ZG-227Z",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0001",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0043",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0042",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0041",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0219",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "ZG-222Z",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0222",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0207",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0205",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0204",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0210",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0211",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0004",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0002",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0012",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0003",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0046",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS1101",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0502A",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS1001",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0011",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0502B",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0501A",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0726",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0052",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0501B",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0503B",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS1201",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0014",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0505A",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0013",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "ZG-204Z",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "ZG-205Z",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0212",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0215A",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "ZG-303Z",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "ZG-204ZV",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "ZG-204ZL",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "ZG-223Z",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "ZG-102ZL",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS1002",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "ZG-106Z",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "ZG-101ZL",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0603",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0504B",
+      "sources": [
+        "johan-device#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0049",
+      "sources": [
+        "johan-device#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS0203",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "ZG-305Z",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS0601",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#664",
+        "johan-device#PR#1470",
+        "johan-device#PR#1462",
+        "johan-issue#1469",
+        "johan-issue#664"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS0505B",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS0201",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS0202",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS0225",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS0044",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "ZG-227Z",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS0001",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS0043",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS0042",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS0041",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS0219",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "ZG-222Z",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS0222",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS0207",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS0205",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS0204",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS0210",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS0211",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS0004",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS0002",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS0012",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS0003",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS0046",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS1101",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS0502A",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS1001",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS0011",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS0502B",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS0501A",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS0726",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS0052",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS0501B",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS0503B",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS1201",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS0014",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS0505A",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS0013",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "ZG-204Z",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "ZG-205Z",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS0212",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS0215A",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "ZG-303Z",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "ZG-204ZV",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "ZG-204ZL",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "ZG-223Z",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "ZG-102ZL",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS1002",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "ZG-106Z",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "ZG-101ZL",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS0603",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS0504B",
+      "sources": [
+        "johan-device#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE204_mtoaryre",
+      "pid": "TS0049",
+      "sources": [
+        "johan-device#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3ylew7b4",
+      "pid": "TS0203",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3ylew7b4",
+      "pid": "ZG-305Z",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3ylew7b4",
+      "pid": "TS0601",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-device#PR#1431",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3ylew7b4",
+      "pid": "TS0505B",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3ylew7b4",
+      "pid": "TS0201",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3ylew7b4",
+      "pid": "TS0202",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3ylew7b4",
+      "pid": "TS0225",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3ylew7b4",
+      "pid": "TS0044",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3ylew7b4",
+      "pid": "ZG-227Z",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3ylew7b4",
+      "pid": "TS0001",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3ylew7b4",
+      "pid": "TS0043",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3ylew7b4",
+      "pid": "TS0042",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3ylew7b4",
+      "pid": "TS0041",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3ylew7b4",
+      "pid": "TS0219",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3ylew7b4",
+      "pid": "ZG-222Z",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3ylew7b4",
+      "pid": "TS0222",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3ylew7b4",
+      "pid": "TS0207",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3ylew7b4",
+      "pid": "TS0205",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3ylew7b4",
+      "pid": "TS0204",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3ylew7b4",
+      "pid": "TS0210",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3ylew7b4",
+      "pid": "TS0211",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3ylew7b4",
+      "pid": "TS0004",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3ylew7b4",
+      "pid": "TS0002",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3ylew7b4",
+      "pid": "TS0012",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3ylew7b4",
+      "pid": "TS0003",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3ylew7b4",
+      "pid": "TS0046",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3ylew7b4",
+      "pid": "TS1101",
+      "sources": [
+        "johan-device#1469",
+        "johan-device#PR#1470",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3ylew7b4",
+      "pid": "TS0502A",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    },
+    {
+      "mfr": "_TZE200_3ylew7b4",
+      "pid": "TS1001",
+      "sources": [
+        "johan-device#1469",
+        "johan-issue#1469"
+      ],
+      "reason": "unresolved"
+    }
+  ],
+  "skippedTotal": 22980,
+  "caseBoost": 21,
+  "policy": {
+    "brandingFree": true,
+    "neverInventPid": true,
+    "refuseTs0601Generic": true,
+    "complementaryOnly": true,
+    "forumPost": false,
+    "source": "JohanBendz/com.tuya.zigbee read-only dump"
+  }
+}

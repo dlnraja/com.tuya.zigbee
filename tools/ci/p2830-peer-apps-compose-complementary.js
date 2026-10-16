@@ -28,6 +28,37 @@ const {
   wouldDegradeCompose,
 } = require('../../lib/enrichment/ComplementaryMerge');
 
+/** Misattribution registry: never UNION a mfr into a forbiddenDrivers target (P2328 wkai4ga5…). */
+function loadForbiddenMfrDrivers() {
+  const p = path.join(ROOT, 'data/user-misattribution-registry.json');
+  const out = new Map(); // mfrLower → Set(driverId)
+  try {
+    const reg = JSON.parse(fs.readFileSync(p, 'utf8'));
+    const entries = Array.isArray(reg.cases)
+      ? reg.cases
+      : Array.isArray(reg.entries)
+        ? reg.entries
+        : Array.isArray(reg)
+          ? reg
+          : [];
+    for (const e of entries) {
+      const forbidden = e.forbiddenDrivers || e.forbidDrivers || [];
+      if (!forbidden.length) continue;
+      for (const m of e.mfr || e.manufacturerName || []) {
+        const k = String(m).toLowerCase();
+        if (!out.has(k)) out.set(k, new Set());
+        for (const d of forbidden) out.get(k).add(String(d));
+      }
+    }
+  } catch (_e) { /* soft */ }
+  return out;
+}
+
+function mfrForbiddenOnDriver(forbidIdx, mfr, driverId) {
+  const set = forbidIdx.get(String(mfr).toLowerCase());
+  return !!(set && set.has(driverId));
+}
+
 /** Peer repos that publish Zigbee Tuya-class fingerprints (rewritten into OUR drivers). */
 const PEERS = [
   // Johan default branch carries the live Homey app (master is a stale stub).
@@ -277,14 +308,16 @@ async function harvestPeer(peer, ours) {
   return { buckets, unmapped, composeCount, appDriverCount, branch };
 }
 
-function applyBucket(driverId, bucket) {
+function applyBucket(driverId, bucket, forbidIdx = new Map()) {
   const fp = path.join(ROOT, 'drivers', driverId, 'driver.compose.json');
   const before = JSON.parse(fs.readFileSync(fp, 'utf8'));
   const after = JSON.parse(JSON.stringify(before));
   after.zigbee = after.zigbee || {};
 
+  // WHY: peer remotes often list polluted mfr×pid cartesian — respect sacred forbid list.
+  const safeMfrs = [...bucket.mfrs].filter((m) => !mfrForbiddenOnDriver(forbidIdx, m, driverId));
   const forms = [];
-  for (const m of bucket.mfrs) forms.push(...dualCaseForms(m));
+  for (const m of safeMfrs) forms.push(...dualCaseForms(m));
   after.zigbee.manufacturerName = appendExactIdentityForms(after.zigbee.manufacturerName, forms);
   after.zigbee.productId = appendExactIdentityForms(
     after.zigbee.productId,
@@ -306,6 +339,7 @@ async function main() {
   if (!TOKEN) console.warn('[P2830] WARN: no GH_TOKEN — unauth rate limit 60/h');
 
   const ours = ourDrivers();
+  const forbidIdx = loadForbiddenMfrDrivers();
   const applied = [];
   const allUnmapped = [];
   const peerStats = [];
@@ -332,7 +366,7 @@ async function main() {
     allUnmapped.push(...result.unmapped);
 
     for (const [driverId, bucket] of result.buckets) {
-      const r = applyBucket(driverId, bucket);
+      const r = applyBucket(driverId, bucket, forbidIdx);
       applied.push({
         peer: peer.id,
         driverId,
@@ -359,6 +393,7 @@ async function main() {
       rewriteNotCopy: true,
       neverInventPid: true,
       sourcesComposeOnly: true,
+      respectMisattributionForbid: true,
       forumPost: false,
       dualApp: 'BOTH',
     },
