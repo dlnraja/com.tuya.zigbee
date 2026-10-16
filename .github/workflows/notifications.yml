@@ -1,6 +1,10 @@
 # Secure Notifications (Enhanced)
 # Triggers: issues,pull_request,workflow_dispatch | Secrets: GITHUB_TOKEN only
 # Doc header added 2026-07-29 (workflows genealogy enrichment).
+#
+# P2829 anti-spam: do NOT fan-out on every Unified-CI / syntax / code-quality /
+# auto-fix completion — that floods GitHub Action emails (and cancels siblings).
+# workflow_run watches Auto-Publish ONLY, and digest-event runs only on failure.
 
 name: Secure Notifications (Enhanced)
 
@@ -14,14 +18,10 @@ on:
     types: [opened, closed]
   pull_request:
     types: [opened, closed]
-  # Real-time CI watcher on master (free replacement for the Grok event routine)
+  # WHY(P2829): one watcher only — Auto-Publish failures matter; CI green/red spam does not
   workflow_run:
     workflows:
-      - '🛡️ Unified CI/CD Orchestrator'
-      - '🔍 Syntax Check & SDK3 Validation'
-      - 'code-quality'
       - 'Auto-Publish on Push'
-      - '🤖 Auto-Fix + Publish Pipeline'
     types: [completed]
     branches: [master]
   workflow_dispatch:
@@ -35,7 +35,8 @@ concurrency:
   # Other events keep the ORIGINAL group (workflow + ref).
   # Issue events get a per-issue group so two issues opened together are both triaged.
   group: ${{ github.event_name == 'workflow_run' && format('{0}-ci-events', github.workflow) || (github.event_name == 'issues' && format('{0}-issue-{1}', github.workflow, github.event.issue.number)) || format('{0}-{1}', github.workflow, github.ref) }}
-  cancel-in-progress: true
+  # WHY(P2829): cancel storms themselves email watchers — do not cancel siblings
+  cancel-in-progress: false
 defaults:
   run:
     shell: bash
@@ -79,7 +80,8 @@ jobs:
           node .github/scripts/homey-device-diagnostics.js || true
           node .github/scripts/privacy-redactor.js .github/state/homey-device-report.json .github/state/diagnostics-report.json diagnostics || true
           
-      - name: Send Secure Email Notification
+      # WHY(P2829): log-only — never SMTP/Gmail; name must not imply outbound email
+      - name: Log event (no outbound mail)
         run: |
           echo "Event triggered in the repository: ${{ github.event_name }}"
           echo "Details: ${{ github.event.issue.html_url || github.event.pull_request.html_url }}"
@@ -130,7 +132,10 @@ jobs:
       actions: read   # failed job names of the CI run
     if: >-
       github.repository == 'dlnraja/com.tuya.zigbee' &&
-      (github.event_name == 'pull_request' || github.event_name == 'workflow_run')
+      (
+        github.event_name == 'pull_request' ||
+        (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'failure')
+      )
     steps:
       - name: 📥 Checkout (scripts only, base repo)
         uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
