@@ -9387,6 +9387,48 @@
         "z2m-sonoff-SWV-ZFU",
         "P2836"
       ]
+    },
+    {
+      "id": "p2837-vuwtqx0t-zemismart-214c-water-valve",
+      "mfr": [
+        "_TZE284_vuwtqx0t",
+        "_TZE200_vuwtqx0t",
+        "_tze284_vuwtqx0t",
+        "_tze200_vuwtqx0t",
+        "_TZE284_VUWTQX0T",
+        "_TZE200_VUWTQX0T"
+      ],
+      "productId": [
+        "TS0601",
+        "ts0601"
+      ],
+      "canonicalDriver": "water_valve_smart",
+      "forbiddenDrivers": [
+        "contact_sensor",
+        "contact_sensor_zigbee",
+        "climate_sensor",
+        "water_valve_garden",
+        "zigbee_universal",
+        "generic_tuya"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "interview": {
+        "clustersEp1": [0, 4, 5, 61184, 60672],
+        "composeClusters": [0, 4, 5, 61184],
+        "noOnOff6": true,
+        "neverComposeEd00": true,
+        "powerSource": "battery",
+        "source": "forum-t101901-post8-Steve_Wilson"
+      },
+      "notes": "P2837 tip Unknown Zigbee #101901/8 — Zemismart 214C ultrasonic meter/valve. Interview EF00-only + proprietary 0xED00(60672) — do not compose ED00. Runtime FP shards had wrongly routed to contact_sensor.",
+      "sources": [
+        "forum-t101901/8",
+        "z2m-TS0601_water_valve",
+        "zha-4280",
+        "zemismart-zha-quirks-214c",
+        "P2837"
+      ]
     }
   ],
   "entries": {
