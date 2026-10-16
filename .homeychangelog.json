@@ -971,5 +971,11 @@
   },
   "9.0.1481": {
     "en": "Reduced GitHub Action email spam; Auto-Publish watcher only on failures."
+  },
+  "9.0.1483": {
+    "en": "Improved Zigbee device coverage from complementary peer fingerprint rewrite (Johan/Lidl)."
+  },
+  "9.0.1484": {
+    "en": "Improved Zigbee peer fingerprint coverage (Johan/Lidl complementary rewrite)."
   }
 }
