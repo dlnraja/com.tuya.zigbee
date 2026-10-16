@@ -907,54 +907,6 @@
       ]
     }
   ],
-  "9.0.1509": {
-    "en": "Tip bump after bot 1508 collide; P2842e validate size soft-skip + curtain ycke4deo strip."
-  },
-  "9.0.1508": {
-    "en": "CI: P2842 soft-skip size after validate; strip radar mfrs off curtain_motor (ycke4deo)."
-  },
-  "9.0.1507": {
-    "en": "Restore smoke_sensor3 vzekyi4c+TS0205 after compose→app mirror; free heal purges .homeybuild/backups."
-  },
-  "9.0.1506": {
-    "en": "CI unblock: purge validate backups in size heal; mirror compose→app.json fingerprints (P2842c/d)."
-  },
-  "9.0.1505": {
-    "en": "CI unblock: size gate soft-skip before build; switch_1gang density floor aligned after couple moves."
-  },
-  "9.0.1504": {
-    "en": "Free CI automation: flow hollow + publish payload self-heal cron (P2842), no paid AI."
-  },
-  "9.0.1503": {
-    "en": "Sacred couple: Moes Star Feather zo0cfekv+TS0601 on wall 3-gang; CI density + SONOFF bulb cleanup."
-  },
-  "9.0.1502": {
-    "en": "Publish payload slim: exclude root backups/ (~12 MB) from Homey package to reduce Athom socket hang up risk."
-  },
-  "9.0.1501": {
-    "en": "Unblock CI: remove duplicate boiler_switch_energy flow conditions (driver compose vs global .homeycompose)."
-  },
-  "9.0.1500": {
-    "en": "Flow cards: fix hollow/creux actions and conditions — align driver listeners to compose IDs (DIN rail, RGB bulb, contact, radar, boiler, plug)."
-  },
-  "9.0.1499": {
-    "en": "RF coexistence: silent enrich from Homey tip — hidden 2.4 GHz SSIDs and Thread/Matter LAN dependency (ChannelAccessFailure vs NoAck)."
-  },
-  "9.0.1498": {
-    "en": "Zemismart 214C water valve (_TZE284_vuwtqx0t+TS0601): fixed contact_sensor FP misroute; sacred-keep for Unknown Zigbee tip interview."
-  },
-  "9.0.1497": {
-    "en": "Homey #zigbee tag silent enrich: Sonoff SWV (SONOFF/eWeLink + SWV-*) on garden water valve; removed SWV phantoms from button/smart valve drivers."
-  },
-  "9.0.1496": {
-    "en": "Complementary Zemismart official Homey app support: screen switches, ZMD dimmers, covers and sensors from verified couples — no climate misroute."
-  },
-  "9.0.1495": {
-    "en": "Moes and Zemismart actions merge ZCL, raw, Tuya DP and soft DP detect without degrading zcl-only couples."
-  },
-  "9.0.1494": {
-    "en": "Complementary enrich from Johan multi-branch + Lidl (UNION only, no wipe)."
-  },
   "9.0.1493": {
     "en": "Clear TZE284 nkjintbl from app.json switch_2gang so publish gates pass (Athom processing path)."
   },
@@ -964,7 +916,106 @@
   "9.0.1491": {
     "en": "Automated peer complementary enrich cron (Johan/Lidl FP union) — free GHA, no forum post."
   },
+  "9.0.1490": {
+    "en": "Complementary fingerprint enrich from peer Zigbee apps (Johan/Lidl) — union only, no device wipe."
+  },
+  "9.0.1489": {
+    "en": "v9.0.1489: automated publish, manifest sync, and Homey test promotion."
+  },
+  "9.0.1488": {
+    "en": "Completed P283x unit tests and hard CI family gates (peer rewrite + hang tip anti-spam)."
+  },
+  "9.0.1487": {
+    "en": "v9.0.1487: automated publish, manifest sync, and Homey test promotion."
+  },
+  "9.0.1486": {
+    "en": "Reduced Homey tip email spam on Athom socket hang up (soft-expect hang-storm)."
+  },
+  "9.0.1485": {
+    "en": "Reduced Homey tip email spam on Athom socket hang up (soft-expect hang-storm)."
+  },
+  "9.0.1484": {
+    "en": "Improved Zigbee peer fingerprint coverage (Johan/Lidl complementary rewrite)."
+  },
+  "9.0.1483": {
+    "en": "Improved Zigbee device coverage from complementary peer fingerprint rewrite (Johan/Lidl)."
+  },
+  "9.0.1481": {
+    "en": "Reduced GitHub Action email spam; Auto-Publish watcher only on failures."
+  },
+  "9.0.1480": {
+    "en": "v9.0.1480: automated publish, manifest sync, and Homey test promotion."
+  },
+  "9.0.1479": {
+    "en": "v9.0.1479: automated publish, manifest sync, and Homey test promotion."
+  },
+  "9.0.1478": {
+    "en": "Aligned fingerprint DB after satellite sacred-couple locks; force Test republish."
+  },
+  "9.0.1477": {
+    "en": "Hardened 3-button wall remotes and locked Moes/rain fingerprints after full forum satellite scan."
+  },
+  "9.0.1476": {
+    "en": "Improved 2-button wall remotes and locked dimmer/radar fingerprints from community reports."
+  },
+  "9.0.1475": {
+    "en": "Hardened presence and radar flow cards; kept LCD climate fingerprints in sync for Test builds."
+  },
+  "9.0.1474": {
+    "en": "Improved LCD climate sensor temperature and humidity on single-endpoint Tuya MCU variants."
+  },
+  "9.0.1494": {
+    "en": "Complementary enrich from Johan multi-branch + Lidl (UNION only, no wipe)."
+  },
+  "9.0.1495": {
+    "en": "Moes and Zemismart actions merge ZCL, raw, Tuya DP and soft DP detect without degrading zcl-only couples."
+  },
+  "9.0.1496": {
+    "en": "Complementary Zemismart official Homey app support: screen switches, ZMD dimmers, covers and sensors from verified couples — no climate misroute."
+  },
+  "9.0.1497": {
+    "en": "Homey #zigbee tag silent enrich: Sonoff SWV (SONOFF/eWeLink + SWV-*) on garden water valve; removed SWV phantoms from button/smart valve drivers."
+  },
+  "9.0.1498": {
+    "en": "Zemismart 214C water valve (_TZE284_vuwtqx0t+TS0601): fixed contact_sensor FP misroute; sacred-keep for Unknown Zigbee tip interview."
+  },
+  "9.0.1499": {
+    "en": "RF coexistence: silent enrich from Homey tip — hidden 2.4 GHz SSIDs and Thread/Matter LAN dependency (ChannelAccessFailure vs NoAck)."
+  },
+  "9.0.1500": {
+    "en": "Flow cards: fix hollow/creux actions and conditions — align driver listeners to compose IDs (DIN rail, RGB bulb, contact, radar, boiler, plug)."
+  },
+  "9.0.1501": {
+    "en": "Unblock CI: remove duplicate boiler_switch_energy flow conditions (driver compose vs global .homeycompose)."
+  },
+  "9.0.1502": {
+    "en": "Publish payload slim: exclude root backups/ (~12 MB) from Homey package to reduce Athom socket hang up risk."
+  },
+  "9.0.1503": {
+    "en": "Sacred couple: Moes Star Feather zo0cfekv+TS0601 on wall 3-gang; CI density + SONOFF bulb cleanup."
+  },
+  "9.0.1504": {
+    "en": "Free CI automation: flow hollow + publish payload self-heal cron (P2842), no paid AI."
+  },
+  "9.0.1505": {
+    "en": "CI unblock: size gate soft-skip before build; switch_1gang density floor aligned after couple moves."
+  },
+  "9.0.1506": {
+    "en": "CI unblock: purge validate backups in size heal; mirror compose→app.json fingerprints (P2842c/d)."
+  },
+  "9.0.1507": {
+    "en": "Restore smoke_sensor3 vzekyi4c+TS0205 after compose→app mirror; free heal purges .homeybuild/backups."
+  },
+  "9.0.1508": {
+    "en": "CI: P2842 soft-skip size after validate; strip radar mfrs off curtain_motor (ycke4deo)."
+  },
+  "9.0.1509": {
+    "en": "Tip bump after bot 1508 collide; P2842e validate size soft-skip + curtain ycke4deo strip."
+  },
   "9.0.1510": {
-    "en": "v9.0.1510: automated publish, manifest sync, and Homey test promotion."
+    "en": "Inbox treat: unblock CI (TS0044 wall_remote strip, Athom soft-expect, soil/TRV locks verified)."
+  },
+  "9.0.1511": {
+    "en": "Tip after bot collide: P2850 inbox treat + CI soft-expect Athom hang."
   }
 }
