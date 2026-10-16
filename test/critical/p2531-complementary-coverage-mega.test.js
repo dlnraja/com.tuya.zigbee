@@ -53,8 +53,13 @@ describe('P2531 complementary coverage mega', () => {
   it('complementary enrich must not mass-shrink switch_1gang generics', () => {
     const c = readJson('drivers/switch_1gang/driver.compose.json');
     const n = (c.zigbee?.manufacturerName || []).length;
-    assert.ok(n >= 1400, `switch_1gang mfr entries must stay dense generics (${n})`);
+    // WHY(P2841): curated W4 moves (a2teqi5u/dmckrsxg → switch_2gang) may drop ~8
+    // case forms; Contre quoi = mass wipe below 1390, not a brittle 1400 lock.
+    assert.ok(n >= 1390, `switch_1gang mfr entries must stay dense generics (${n})`);
     assert.ok(hasMfr(c, /7tdtqgwv/i), 'ZHA/Z2M somgoms 7tdtqgwv OEM overlay');
+    const s2 = readJson('drivers/switch_2gang/driver.compose.json');
+    assert.ok(hasMfr(s2, /a2teqi5u/i), 'a2teqi5u must live on switch_2gang after curated move');
+    assert.ok(hasMfr(s2, /dmckrsxg/i), 'dmckrsxg must live on switch_2gang after curated move');
   });
 
   it('knob scene + rotary seeds stay on smart_knob with battery', () => {
