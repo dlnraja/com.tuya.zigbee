@@ -1,19 +1,4 @@
 {
-  "9.0.1470": {
-    "en": "TRV me167 DP4 fix + drop misattributed plug_smart OTA (P2822)."
-  },
-  "9.0.1469": {
-    "en": "TRV me167 DP4 no longer steals battery; settings spinner dual fallback (P2822)."
-  },
-  "9.0.1468": {
-    "en": "Forum fleet silent treat: sacred-keep pins + forbid cartesian invent couples (P2821)."
-  },
-  "9.0.1467": {
-    "en": "Z2M/ZHA/quirks couple recheck: wrong-class moves + missing FP (P2820)."
-  },
-  "9.0.1466": {
-    "en": "v9.0.1466: automated publish, manifest sync, and Homey test promotion."
-  },
   "changelog": [
     {
       "version": "9.0.497",
@@ -922,6 +907,33 @@
       ]
     }
   ],
+  "9.0.1474": {
+    "en": "Improved LCD climate sensor temperature and humidity on single-endpoint Tuya MCU variants."
+  },
+  "9.0.1473": {
+    "en": "CI heal: align mfs_db USB outlet registry + LCD/gnpflcoq forum locks."
+  },
+  "9.0.1472": {
+    "en": "Forum: gnpflcoq 4in1 climate caps, USB registry audit heal, flow Contre quoi locks."
+  },
+  "9.0.1471": {
+    "en": "Forum: LCD 9ern5sfh pairing (Kizabgd), TRV time-sync TX harden, sacred-keep LCD couple."
+  },
+  "9.0.1470": {
+    "en": "TRV me167 DP4 fix + drop misattributed plug_smart OTA (P2822)."
+  },
+  "9.0.1469": {
+    "en": "TRV me167 DP4 no longer steals battery; settings spinner dual fallback (P2822)."
+  },
+  "9.0.1468": {
+    "en": "Forum fleet silent treat: sacred-keep pins + forbid cartesian invent couples (P2821)."
+  },
+  "9.0.1467": {
+    "en": "Z2M/ZHA/quirks couple recheck: wrong-class moves + missing FP (P2820)."
+  },
+  "9.0.1466": {
+    "en": "v9.0.1466: automated publish, manifest sync, and Homey test promotion."
+  },
   "9.0.1465": {
     "en": "v9.0.1465: automated publish, manifest sync, and Homey test promotion."
   },
@@ -956,40 +968,7 @@
   "9.0.1456": {
     "en": "Aligned fingerprint database for ANTIK TRV and 4in1 mmWave couples."
   },
-  "9.0.1455": {
-    "en": "Improved radiator valve and mmWave radar pairing for recent forum devices."
-  },
-  "9.0.1454": {
-    "en": "v9.0.1454: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.1453": {
-    "en": "v9.0.1453: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.1452": {
-    "en": "v9.0.1452: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.1451": {
-    "en": "v9.0.1451: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.1450": {
-    "en": "v9.0.1450: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.1449": {
-    "en": "v9.0.1449: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.1448": {
-    "en": "v9.0.1448: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.1471": {
-    "en": "Forum: LCD 9ern5sfh pairing (Kizabgd), TRV time-sync TX harden, sacred-keep LCD couple."
-  },
-  "9.0.1472": {
-    "en": "Forum: gnpflcoq 4in1 climate caps, USB registry audit heal, flow Contre quoi locks."
-  },
-  "9.0.1473": {
-    "en": "CI heal: align mfs_db USB outlet registry + LCD/gnpflcoq forum locks."
-  },
-  "9.0.1474": {
-    "en": "Improved LCD climate sensor temperature and humidity on single-endpoint Tuya MCU variants."
+  "9.0.1475": {
+    "en": "v9.0.1475: automated publish, manifest sync, and Homey test promotion."
   }
 }
