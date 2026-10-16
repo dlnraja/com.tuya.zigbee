@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.1471",
+  "version": "9.0.1472",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -675,7 +675,8 @@
     "check:p2814": "node --test test/critical/p2811-soil-qt07s-aoyan-clusters.test.js",
     "check:p2815": "node tools/ci/p2815-soil-couple-ssot-gate.js && node --test test/critical/p2815-soil-couple-ssot.test.js",
     "check:p2816": "node --test test/critical/p2816-button-release-flow-heuristics.test.js",
-    "check:p2823": "node --test test/critical/p2823-forum-lcd-trv-unknown.test.js"
+    "check:p2823": "node --test test/critical/p2823-forum-lcd-trv-unknown.test.js",
+    "check:p2824": "node --test test/critical/p2824-forum-flows-gnpflcoq-usb.test.js"
   },
   "keywords": [
     "homey",
