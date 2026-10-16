@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1485 |
+| **App Version** | v9.0.1487 |
 | **Drivers** | 449 (396 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,799 |
 | **Pairing Variants** | 19,196 (4 case combos per fingerprint) |
@@ -41,7 +41,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 6,105 |
 | **Unique Capabilities** | 176 |
 | **Native OTA Drivers** | 9 |
-| **Test Suites** | 652 files |
+| **Test Suites** | 653 files |
 | **SVG Icons** | 752 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -103,7 +103,9 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.1485** | v9.0.1484: |
+| **v9.0.1487** | v9.0.1486: |
+| **v9.0.1486** | Reduced Homey tip email spam on Athom socket hang up (soft-expect hang-storm). |
+| **v9.0.1485** | Reduced Homey tip email spam on Athom socket hang up (soft-expect hang-storm). |
 | **v9.0.1484** | Improved Zigbee peer fingerprint coverage (Johan/Lidl complementary rewrite). |
 | **v9.0.1483** | Improved Zigbee device coverage from complementary peer fingerprint rewrite (Johan/Lidl). |
 | **v9.0.1481** | Reduced GitHub Action email spam; Auto-Publish watcher only on failures. |
@@ -113,8 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1477** | Hardened 3-button wall remotes and locked Moes/rain fingerprints after full forum satellite scan. |
 | **v9.0.1476** | Improved 2-button wall remotes and locked dimmer/radar fingerprints from community reports. |
 | **v9.0.1475** | Hardened presence and radar flow cards; kept LCD climate fingerprints in sync for Test builds. |
-| **v9.0.1474** | Improved LCD climate sensor temperature and humidity on single-endpoint Tuya MCU variants. |
-| **v9.0.1473** | CI heal: align mfs_db USB outlet registry + LCD/gnpflcoq forum locks. |
 
 <!-- CHANGELOG_END -->
 
