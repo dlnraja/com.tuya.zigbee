@@ -33,15 +33,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1496 |
+| **App Version** | v9.0.1497 |
 | **Drivers** | 449 (396 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,840 |
-| **Pairing Variants** | 19,198 (4 case combos per fingerprint) |
-| **Unique Product IDs** | 906 |
+| **Pairing Variants** | 19,185 (4 case combos per fingerprint) |
+| **Unique Product IDs** | 909 |
 | **Flow Cards** | 6,105 |
 | **Unique Capabilities** | 176 |
 | **Native OTA Drivers** | 9 |
-| **Test Suites** | 657 files |
+| **Test Suites** | 658 files |
 | **SVG Icons** | 752 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -103,6 +103,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1497** | Homey #zigbee tag silent enrich: Sonoff SWV (SONOFF/eWeLink + SWV-*) on garden water valve; removed SWV phantoms from button/smart valve … |
 | **v9.0.1496** | Complementary Zemismart official Homey app support: screen switches, ZMD dimmers, covers and sensors from verified couples — no climate m… |
 | **v9.0.1495** | Moes and Zemismart actions merge ZCL, raw, Tuya DP and soft DP detect without degrading zcl-only couples. |
 | **v9.0.1494** | Complementary enrich from Johan multi-branch + Lidl (UNION only, no wipe). |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1488** | Completed P283x unit tests and hard CI family gates (peer rewrite + hang tip anti-spam). |
 | **v9.0.1487** | v9.0.1487: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1486** | Reduced Homey tip email spam on Athom socket hang up (soft-expect hang-storm). |
-| **v9.0.1485** | Reduced Homey tip email spam on Athom socket hang up (soft-expect hang-storm). |
 
 <!-- CHANGELOG_END -->
 
