@@ -24,11 +24,21 @@ assert(rec.preferred.includes(15) && rec.preferred.includes(20) && rec.preferred
 
 const tips = rf.formatCoexistenceTips();
 assert(tips.some((t) => /≠|different numbering/i.test(t)), 'numbering tip present');
+assert(tips.some((t) => /hidden/i.test(t)), 'P2838 hidden SSID tip');
 
 const brief = rf.protocolSelectionBrief();
 assert(brief.zigbee.bandEu === '2.4 GHz' && brief.zwave.bandEu === '868 MHz', 'EU band brief');
 assert(brief.zigbee.approxThroughputKbps === 250, 'Zigbee throughput brief');
 assert(brief.tips.some((t) => /Zigbee 4\.0|Suzi/i.test(t)), '4.0/Suzi tip');
+assert(brief.tips.some((t) => /ChannelAccessFailure|P2838/i.test(t)), 'P2838 ChannelAccessFailure tip');
+
+const hidden = rf.hiddenWifiInterferenceBrief();
+assert(hidden.sourceTopic === 157859 && hidden.sourcePost === 22, 'P2838 source tip 157859/22');
+assert(hidden.symptoms.some((s) => /ChannelAccessFailure/i.test(s)), 'CAF symptom');
+
+const lan = rf.threadLanDependencyBrief();
+assert(lan.radioOkButUnavailable === true, 'Thread LAN dependency flag');
+assert(lan.reasons.some((r) => /border router/i.test(r)), 'border router reason');
 
 const eBrief = evo.zigbeeTuyaEvolutionBrief();
 assert(eBrief.currentZigbeeId === 'zigbee-4.0', 'current gen 4.0');
