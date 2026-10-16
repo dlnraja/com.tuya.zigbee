@@ -103,6 +103,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1496** | Complementary Zemismart official Homey app support: screen switches, ZMD dimmers, covers and sensors from verified couples — no climate misroute. |
+| **v9.0.1494** | Complementary enrich from Johan multi-branch + Lidl (UNION only, no wipe). |
 | **v9.0.1495** | Moes and Zemismart actions merge ZCL, raw, Tuya DP and soft DP detect without degrading zcl-only couples. |
 | **v9.0.1494** | Complementary enrich from Johan multi-branch + Lidl (UNION only, no wipe). |
 | **v9.0.1493** | Clear TZE284 nkjintbl from app.json switch_2gang so publish gates pass (Athom processing path). |
