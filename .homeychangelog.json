@@ -972,5 +972,8 @@
   },
   "9.0.1496": {
     "en": "Complementary Zemismart official Homey app support: screen switches, ZMD dimmers, covers and sensors from verified couples — no climate misroute."
+  },
+  "9.0.1497": {
+    "en": "Homey #zigbee tag silent enrich: Sonoff SWV (SONOFF/eWeLink + SWV-*) on garden water valve; removed SWV phantoms from button/smart valve drivers."
   }
 }

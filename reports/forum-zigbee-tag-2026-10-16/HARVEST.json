@@ -1,0 +1,455 @@
+{
+  "generatedAt": "2026-10-16T14:19:56.417Z",
+  "source": "https://community.homey.app/tag/zigbee",
+  "policy": "SHADOW read-only — never forum POST (T157628)",
+  "pages": 1,
+  "topicCount": 30,
+  "actionableTopicIds": [
+    140352,
+    157743,
+    160737,
+    101901,
+    36418,
+    159511
+  ],
+  "lessons": [
+    "Most #zigbee traffic is peer apps (Hue/Aqara/Shelly) — inspire patterns only, do not invent Tuya FPs.",
+    "T157743 Sonoff SWV-ZFU: couple SONOFF/eWeLink + SWV-* → water_valve_garden (ZCL). Pair fail often = battery-only mesh.",
+    "T160737 slow first reaction: sleepy end-devices need wake/rebind — not forced EF00 TX storm.",
+    "T140352 remains the FP SSOT for Universal Tuya; tag is a discovery index."
+  ],
+  "byClass": {
+    "peer_non_tuya": [
+      {
+        "id": 74924,
+        "title": "[APP][Pro] Lixee",
+        "posts_count": 730,
+        "bumped_at": "2026-10-16T14:13:46.927Z",
+        "class": "peer_non_tuya"
+      },
+      {
+        "id": 156,
+        "title": "[APP] Aqara & Xiaomi Smart Home - Simplify your life with a smarter home",
+        "posts_count": 7077,
+        "bumped_at": "2026-10-16T13:26:07.532Z",
+        "class": "peer_non_tuya"
+      },
+      {
+        "id": 152695,
+        "title": "[APP] Shelly Control - Smart home automation is that easy!",
+        "posts_count": 177,
+        "bumped_at": "2026-10-16T07:23:29.907Z",
+        "class": "peer_non_tuya"
+      },
+      {
+        "id": 29734,
+        "title": "[APP][Pro] Philips Hue Zigbee (Without the bridge)",
+        "posts_count": 1181,
+        "bumped_at": "2026-10-15T22:04:31.914Z",
+        "class": "peer_non_tuya"
+      },
+      {
+        "id": 104664,
+        "title": "[APP] Homely",
+        "posts_count": 52,
+        "bumped_at": "2026-10-14T06:54:05.511Z",
+        "class": "peer_non_tuya"
+      },
+      {
+        "id": 160757,
+        "title": "[APP][Pro] Cadabi (formerly Enertek) – tested Zigbee devices that just work",
+        "posts_count": 3,
+        "bumped_at": "2026-10-13T18:06:58.049Z",
+        "class": "peer_non_tuya"
+      },
+      {
+        "id": 160790,
+        "title": "Need Help With Homey Pro vs Philips Hue Previous Settings",
+        "posts_count": 4,
+        "bumped_at": "2026-10-13T16:17:11.624Z",
+        "class": "peer_non_tuya"
+      },
+      {
+        "id": 125479,
+        "title": "Hive Home - Hive Active Heating - TRV",
+        "posts_count": 7,
+        "bumped_at": "2026-10-12T18:50:45.204Z",
+        "class": "peer_non_tuya"
+      },
+      {
+        "id": 160590,
+        "title": "[APP][Pro] Aqara Community app",
+        "posts_count": 8,
+        "bumped_at": "2026-10-12T16:32:36.797Z",
+        "class": "peer_non_tuya"
+      },
+      {
+        "id": 146682,
+        "title": "[App] DEVIreg™ ZigBee",
+        "posts_count": 8,
+        "bumped_at": "2026-10-12T05:54:57.451Z",
+        "class": "peer_non_tuya"
+      },
+      {
+        "id": 152944,
+        "title": "Issues with Aqara FP300",
+        "posts_count": 58,
+        "bumped_at": "2026-10-09T22:53:01.249Z",
+        "class": "peer_non_tuya"
+      },
+      {
+        "id": 143563,
+        "title": "[APP] Danalock - The Smart Home Enabler",
+        "posts_count": 3,
+        "bumped_at": "2026-10-09T12:43:59.824Z",
+        "class": "peer_non_tuya"
+      },
+      {
+        "id": 155815,
+        "title": "Aqara E1 Wireless Switch",
+        "posts_count": 7,
+        "bumped_at": "2026-10-05T17:02:10.703Z",
+        "class": "peer_non_tuya"
+      },
+      {
+        "id": 143578,
+        "title": "[APP] Nimly - Welcome (to a smarter) home",
+        "posts_count": 24,
+        "bumped_at": "2026-10-05T13:22:55.022Z",
+        "class": "peer_non_tuya"
+      },
+      {
+        "id": 76161,
+        "title": "[APP][Pro&Cloud] frient Zigbee App (v2.5.4)",
+        "posts_count": 473,
+        "bumped_at": "2026-10-05T07:25:31.799Z",
+        "class": "peer_non_tuya"
+      },
+      {
+        "id": 160288,
+        "title": "FRIENT zigbee update - problems error",
+        "posts_count": 2,
+        "bumped_at": "2026-10-04T07:04:08.944Z",
+        "class": "peer_non_tuya"
+      },
+      {
+        "id": 159912,
+        "title": "Looking for UK Homey users to test Repenic Zigbee products",
+        "posts_count": 6,
+        "bumped_at": "2026-09-29T22:42:01.258Z",
+        "class": "peer_non_tuya"
+      }
+    ],
+    "own_app": [
+      {
+        "id": 140352,
+        "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+        "posts_count": 2173,
+        "bumped_at": "2026-10-15T19:13:44.185Z",
+        "class": "own_app"
+      }
+    ],
+    "other": [
+      {
+        "id": 65588,
+        "title": "[APP][Pro] EasyLighting - Make smart home easy",
+        "posts_count": 244,
+        "bumped_at": "2026-10-15T18:45:13.320Z",
+        "class": "other"
+      },
+      {
+        "id": 160579,
+        "title": "Regulating 12 VDC fan speeds",
+        "posts_count": 1,
+        "bumped_at": "2026-10-09T16:16:30.286Z",
+        "class": "other"
+      },
+      {
+        "id": 155009,
+        "title": "SmartThings- Aeotec hub support - supported in 2026?",
+        "posts_count": 7,
+        "bumped_at": "2026-10-09T11:06:59.320Z",
+        "class": "other"
+      },
+      {
+        "id": 150904,
+        "title": "Zigbee device already added?! It’s not!",
+        "posts_count": 4,
+        "bumped_at": "2026-10-08T16:39:09.407Z",
+        "class": "other"
+      },
+      {
+        "id": 153736,
+        "title": "Copia de Seguridad Homey Local",
+        "posts_count": 6,
+        "bumped_at": "2026-10-02T10:07:10.699Z",
+        "class": "other"
+      },
+      {
+        "id": 160078,
+        "title": "Keeping a normal wall switch with Zigbee spots",
+        "posts_count": 10,
+        "bumped_at": "2026-09-30T13:21:25.205Z",
+        "class": "other"
+      },
+      {
+        "id": 160184,
+        "title": "Smart dimmer for my wood stove fans",
+        "posts_count": 1,
+        "bumped_at": "2026-09-29T18:56:50.123Z",
+        "class": "other"
+      },
+      {
+        "id": 156109,
+        "title": "[APP][Pro] ID Lock Next",
+        "posts_count": 89,
+        "bumped_at": "2026-09-28T07:15:20.073Z",
+        "class": "other"
+      }
+    ],
+    "actionable_silent": [
+      {
+        "id": 160737,
+        "title": "Slow First Reaction/Respons",
+        "posts_count": 7,
+        "bumped_at": "2026-10-14T11:48:09.148Z",
+        "class": "actionable_silent"
+      },
+      {
+        "id": 101901,
+        "title": "[Tip] Unknown Zigbee device",
+        "posts_count": 8,
+        "bumped_at": "2026-10-10T12:32:04.964Z",
+        "class": "actionable_silent"
+      },
+      {
+        "id": 157743,
+        "title": "Sonof SWV waterklep niet te koppelen. Zigbee probleem?",
+        "posts_count": 17,
+        "bumped_at": "2026-10-01T14:40:23.489Z",
+        "class": "actionable_silent"
+      }
+    ],
+    "pattern_watch": [
+      {
+        "id": 91497,
+        "title": "Sonoff TX Ultimate",
+        "posts_count": 4,
+        "bumped_at": "2026-10-05T21:03:28.830Z",
+        "class": "pattern_watch"
+      }
+    ]
+  },
+  "topics": [
+    {
+      "id": 74924,
+      "title": "[APP][Pro] Lixee",
+      "posts_count": 730,
+      "bumped_at": "2026-10-16T14:13:46.927Z",
+      "class": "peer_non_tuya"
+    },
+    {
+      "id": 156,
+      "title": "[APP] Aqara & Xiaomi Smart Home - Simplify your life with a smarter home",
+      "posts_count": 7077,
+      "bumped_at": "2026-10-16T13:26:07.532Z",
+      "class": "peer_non_tuya"
+    },
+    {
+      "id": 152695,
+      "title": "[APP] Shelly Control - Smart home automation is that easy!",
+      "posts_count": 177,
+      "bumped_at": "2026-10-16T07:23:29.907Z",
+      "class": "peer_non_tuya"
+    },
+    {
+      "id": 29734,
+      "title": "[APP][Pro] Philips Hue Zigbee (Without the bridge)",
+      "posts_count": 1181,
+      "bumped_at": "2026-10-15T22:04:31.914Z",
+      "class": "peer_non_tuya"
+    },
+    {
+      "id": 140352,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "posts_count": 2173,
+      "bumped_at": "2026-10-15T19:13:44.185Z",
+      "class": "own_app"
+    },
+    {
+      "id": 65588,
+      "title": "[APP][Pro] EasyLighting - Make smart home easy",
+      "posts_count": 244,
+      "bumped_at": "2026-10-15T18:45:13.320Z",
+      "class": "other"
+    },
+    {
+      "id": 160737,
+      "title": "Slow First Reaction/Respons",
+      "posts_count": 7,
+      "bumped_at": "2026-10-14T11:48:09.148Z",
+      "class": "actionable_silent"
+    },
+    {
+      "id": 104664,
+      "title": "[APP] Homely",
+      "posts_count": 52,
+      "bumped_at": "2026-10-14T06:54:05.511Z",
+      "class": "peer_non_tuya"
+    },
+    {
+      "id": 160757,
+      "title": "[APP][Pro] Cadabi (formerly Enertek) – tested Zigbee devices that just work",
+      "posts_count": 3,
+      "bumped_at": "2026-10-13T18:06:58.049Z",
+      "class": "peer_non_tuya"
+    },
+    {
+      "id": 160790,
+      "title": "Need Help With Homey Pro vs Philips Hue Previous Settings",
+      "posts_count": 4,
+      "bumped_at": "2026-10-13T16:17:11.624Z",
+      "class": "peer_non_tuya"
+    },
+    {
+      "id": 125479,
+      "title": "Hive Home - Hive Active Heating - TRV",
+      "posts_count": 7,
+      "bumped_at": "2026-10-12T18:50:45.204Z",
+      "class": "peer_non_tuya"
+    },
+    {
+      "id": 160590,
+      "title": "[APP][Pro] Aqara Community app",
+      "posts_count": 8,
+      "bumped_at": "2026-10-12T16:32:36.797Z",
+      "class": "peer_non_tuya"
+    },
+    {
+      "id": 146682,
+      "title": "[App] DEVIreg™ ZigBee",
+      "posts_count": 8,
+      "bumped_at": "2026-10-12T05:54:57.451Z",
+      "class": "peer_non_tuya"
+    },
+    {
+      "id": 101901,
+      "title": "[Tip] Unknown Zigbee device",
+      "posts_count": 8,
+      "bumped_at": "2026-10-10T12:32:04.964Z",
+      "class": "actionable_silent"
+    },
+    {
+      "id": 152944,
+      "title": "Issues with Aqara FP300",
+      "posts_count": 58,
+      "bumped_at": "2026-10-09T22:53:01.249Z",
+      "class": "peer_non_tuya"
+    },
+    {
+      "id": 160579,
+      "title": "Regulating 12 VDC fan speeds",
+      "posts_count": 1,
+      "bumped_at": "2026-10-09T16:16:30.286Z",
+      "class": "other"
+    },
+    {
+      "id": 143563,
+      "title": "[APP] Danalock - The Smart Home Enabler",
+      "posts_count": 3,
+      "bumped_at": "2026-10-09T12:43:59.824Z",
+      "class": "peer_non_tuya"
+    },
+    {
+      "id": 155009,
+      "title": "SmartThings- Aeotec hub support - supported in 2026?",
+      "posts_count": 7,
+      "bumped_at": "2026-10-09T11:06:59.320Z",
+      "class": "other"
+    },
+    {
+      "id": 150904,
+      "title": "Zigbee device already added?! It’s not!",
+      "posts_count": 4,
+      "bumped_at": "2026-10-08T16:39:09.407Z",
+      "class": "other"
+    },
+    {
+      "id": 91497,
+      "title": "Sonoff TX Ultimate",
+      "posts_count": 4,
+      "bumped_at": "2026-10-05T21:03:28.830Z",
+      "class": "pattern_watch"
+    },
+    {
+      "id": 155815,
+      "title": "Aqara E1 Wireless Switch",
+      "posts_count": 7,
+      "bumped_at": "2026-10-05T17:02:10.703Z",
+      "class": "peer_non_tuya"
+    },
+    {
+      "id": 143578,
+      "title": "[APP] Nimly - Welcome (to a smarter) home",
+      "posts_count": 24,
+      "bumped_at": "2026-10-05T13:22:55.022Z",
+      "class": "peer_non_tuya"
+    },
+    {
+      "id": 76161,
+      "title": "[APP][Pro&Cloud] frient Zigbee App (v2.5.4)",
+      "posts_count": 473,
+      "bumped_at": "2026-10-05T07:25:31.799Z",
+      "class": "peer_non_tuya"
+    },
+    {
+      "id": 160288,
+      "title": "FRIENT zigbee update - problems error",
+      "posts_count": 2,
+      "bumped_at": "2026-10-04T07:04:08.944Z",
+      "class": "peer_non_tuya"
+    },
+    {
+      "id": 153736,
+      "title": "Copia de Seguridad Homey Local",
+      "posts_count": 6,
+      "bumped_at": "2026-10-02T10:07:10.699Z",
+      "class": "other"
+    },
+    {
+      "id": 157743,
+      "title": "Sonof SWV waterklep niet te koppelen. Zigbee probleem?",
+      "posts_count": 17,
+      "bumped_at": "2026-10-01T14:40:23.489Z",
+      "class": "actionable_silent"
+    },
+    {
+      "id": 160078,
+      "title": "Keeping a normal wall switch with Zigbee spots",
+      "posts_count": 10,
+      "bumped_at": "2026-09-30T13:21:25.205Z",
+      "class": "other"
+    },
+    {
+      "id": 159912,
+      "title": "Looking for UK Homey users to test Repenic Zigbee products",
+      "posts_count": 6,
+      "bumped_at": "2026-09-29T22:42:01.258Z",
+      "class": "peer_non_tuya"
+    },
+    {
+      "id": 160184,
+      "title": "Smart dimmer for my wood stove fans",
+      "posts_count": 1,
+      "bumped_at": "2026-09-29T18:56:50.123Z",
+      "class": "other"
+    },
+    {
+      "id": 156109,
+      "title": "[APP][Pro] ID Lock Next",
+      "posts_count": 89,
+      "bumped_at": "2026-09-28T07:15:20.073Z",
+      "class": "other"
+    }
+  ]
+}
