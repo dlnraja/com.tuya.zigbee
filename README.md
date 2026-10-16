@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1476 |
+| **App Version** | v9.0.1477 |
 | **Drivers** | 449 (396 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,776 |
 | **Pairing Variants** | 19,176 (4 case combos per fingerprint) |
@@ -41,7 +41,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 6,105 |
 | **Unique Capabilities** | 176 |
 | **Native OTA Drivers** | 9 |
-| **Test Suites** | 649 files |
+| **Test Suites** | 650 files |
 | **SVG Icons** | 752 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -103,8 +103,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.1476** | v9.0.1475: |
-| **v9.0.1475** | v9.0.1475: automated publish, manifest sync, and Homey test promotion. |
+| **v9.0.1477** | Hardened 3-button wall remotes and locked Moes/rain fingerprints after full forum satellite scan. |
 | **v9.0.1476** | Improved 2-button wall remotes and locked dimmer/radar fingerprints from community reports. |
 | **v9.0.1475** | Hardened presence and radar flow cards; kept LCD climate fingerprints in sync for Test builds. |
 | **v9.0.1474** | Improved LCD climate sensor temperature and humidity on single-endpoint Tuya MCU variants. |
@@ -116,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1468** | Forum fleet silent treat: sacred-keep pins + forbid cartesian invent couples (P2821). |
 | **v9.0.1467** | Z2M/ZHA/quirks couple recheck: wrong-class moves + missing FP (P2820). |
 | **v9.0.1466** | v9.0.1466: automated publish, manifest sync, and Homey test promotion. |
-| **v9.0.1465** | v9.0.1465: automated publish, manifest sync, and Homey test promotion. |
 
 <!-- CHANGELOG_END -->
 
