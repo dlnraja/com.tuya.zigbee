@@ -177,10 +177,26 @@ function runPublishSizeGate() {
     note('fail', 'publish-size-gate.cjs missing');
     return;
   }
-  const r = spawnSync(process.execPath, [gate], { cwd: ROOT, encoding: 'utf8' });
+  // WHY(P2842b): unified-ci / syntax-check run before `homey app build` — no
+  // .homeybuild yet. Skip hard size there; Auto-Publish still runs full gate post-build.
+  const buildDir = path.join(ROOT, '.homeybuild');
+  if (!fs.existsSync(buildDir)) {
+    note('ok', 'publish-size-gate skipped (no .homeybuild yet — pre-build CI)');
+    return;
+  }
+  const r = spawnSync(process.execPath, [gate], {
+    cwd: ROOT,
+    encoding: 'utf8',
+    env: { ...process.env },
+  });
+  if (r.error) {
+    note('fail', `publish-size-gate spawn error: ${r.error.message}`);
+    return;
+  }
   if (r.status !== 0) {
     note('fail', 'publish-size-gate failed', {
-      out: (r.stdout || r.stderr || '').slice(-600),
+      out: `${r.stdout || ''}\n${r.stderr || ''}`.slice(-800),
+      status: r.status,
     });
   } else {
     note('ok', 'publish-size-gate PASS');
