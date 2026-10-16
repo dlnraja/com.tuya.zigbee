@@ -75,4 +75,30 @@ describe('P2830 peer apps compose complementary rewrite', () => {
     assert.ok((leak.manufacturerName || []).some((m) => /k4ej3ww2/i.test(m)));
     assert.ok((leak.productId || []).some((p) => String(p).toUpperCase() === 'TS0207'));
   });
+
+  it('Contre quoi: peer UNION skips registry forbiddenDrivers (wkai4ga5 ≠ button_wireless_4)', () => {
+    const src = fs.readFileSync(
+      path.join(ROOT, 'tools/ci/p2830-peer-apps-compose-complementary.js'),
+      'utf8',
+    );
+    assert.ok(src.includes('loadForbiddenMfrDrivers'));
+    assert.ok(src.includes('respectMisattributionForbid'));
+    assert.ok(src.includes('mfrForbiddenOnDriver'));
+
+    const bw4 = JSON.parse(
+      fs.readFileSync(path.join(ROOT, 'drivers/button_wireless_4/driver.compose.json'), 'utf8'),
+    ).zigbee;
+    assert.ok(
+      !(bw4.manufacturerName || []).some((m) => /wkai4ga5/i.test(m)),
+      'P2328: wkai4ga5 must not land on button_wireless_4 via peer cartesian',
+    );
+
+    const bulb = JSON.parse(
+      fs.readFileSync(path.join(ROOT, 'drivers/tunable_bulb_E27/driver.compose.json'), 'utf8'),
+    ).zigbee;
+    assert.ok(
+      !(bulb.manufacturerName || []).some((m) => /zdrhqmo0/i.test(m)),
+      'zdrhqmo0 must not bleed into tunable_bulb_E27 from peer dimmer dump',
+    );
+  });
 });
