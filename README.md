@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1480 |
+| **App Version** | v9.0.1481 |
 | **Drivers** | 449 (396 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,776 |
 | **Pairing Variants** | 19,176 (4 case combos per fingerprint) |
@@ -41,7 +41,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 6,105 |
 | **Unique Capabilities** | 176 |
 | **Native OTA Drivers** | 9 |
-| **Test Suites** | 650 files |
+| **Test Suites** | 651 files |
 | **SVG Icons** | 752 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -103,7 +103,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.1480** | v9.0.1479: |
+| **v9.0.1481** | Reduced GitHub Action email spam; Auto-Publish watcher only on failures. |
+| **v9.0.1480** | v9.0.1480: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1479** | v9.0.1479: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1478** | Aligned fingerprint DB after satellite sacred-couple locks; force Test republish. |
 | **v9.0.1477** | Hardened 3-button wall remotes and locked Moes/rain fingerprints after full forum satellite scan. |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1472** | Forum: gnpflcoq 4in1 climate caps, USB registry audit heal, flow Contre quoi locks. |
 | **v9.0.1471** | Forum: LCD 9ern5sfh pairing (Kizabgd), TRV time-sync TX harden, sacred-keep LCD couple. |
 | **v9.0.1470** | TRV me167 DP4 fix + drop misattributed plug_smart OTA (P2822). |
-| **v9.0.1469** | TRV me167 DP4 no longer steals battery; settings spinner dual fallback (P2822). |
 
 <!-- CHANGELOG_END -->
 
