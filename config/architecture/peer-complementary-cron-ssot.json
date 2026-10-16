@@ -1,0 +1,37 @@
+{
+  "id": "peer-complementary-cron-ssot",
+  "patch": "P2832",
+  "version": 1,
+  "why": "Automate complementary UNION enrich from peer Homey Zigbee apps (Johan/Lidl) + Johan mega + FP prune — free, silent, no invent pid",
+  "workflow": ".github/workflows/peer-complementary-enrich.yml",
+  "orchestrator": "tools/ci/p2832-peer-complementary-cron.js",
+  "cron": "10 6 * * 1,4",
+  "cronHuman": "Mon/Thu 06:10 UTC",
+  "softHook": ".github/workflows/auto-enrich-closed-loop.yml",
+  "killSwitchVar": "PEER_COMPOSE_ENRICH_DISABLED",
+  "steps": [
+    "P2830 peer compose complementary apply",
+    "P2572 Johan mega complementary apply",
+    "prune-fp-collision-bleed apply+check",
+    "check:p2830"
+  ],
+  "forbiddenInCron": [
+    "p2570-johan-complementary-enrich --apply without --force-medium",
+    "forum POST",
+    "paid AI",
+    "invent productId"
+  ],
+  "peers": [
+    "JohanBendz/com.tuya.zigbee",
+    "JohanBendz/com.lidl"
+  ],
+  "npm": {
+    "dry": "enrich:peers:cron",
+    "apply": "enrich:peers:cron:apply",
+    "gate": "check:p2832",
+    "family": "check:p283x"
+  },
+  "dualApp": "BOTH",
+  "forumPost": false,
+  "paidAi": false
+}
