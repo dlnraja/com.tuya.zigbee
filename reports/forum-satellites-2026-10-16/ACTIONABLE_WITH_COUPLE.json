@@ -1,0 +1,1131 @@
+[
+  {
+    "tid": "0",
+    "n": 1,
+    "user": "dlnraja",
+    "mfrs": [],
+    "pids": [
+      "TS0601"
+    ],
+    "issues": [
+      "thermostat",
+      "button",
+      "flow",
+      "crash",
+      "battery"
+    ],
+    "excerpt": "Universal Tuya Unified Engine v7.4.9 323 drivers Â· 3488+ fingerprints Â· Updated 2026-04-23 Local-first Zigbee control for Tuya devices on "
+  },
+  {
+    "tid": "0",
+    "n": 2224,
+    "user": "VicHY",
+    "mfrs": [
+      "_TZE204_CLRDRNYA"
+    ],
+    "pids": [
+      "TS0601"
+    ],
+    "issues": [],
+    "excerpt": "Manufacter ID: _TZE204_clrdrnya Model ID: TS0601 This is the timeline in spanish. Update->low baterry->Flood zigbee netwrk-> Low batery imag"
+  },
+  {
+    "tid": "0",
+    "n": 2228,
+    "user": "Eduard_Martirosyan",
+    "mfrs": [
+      "_TZE284_FODV6BKR",
+      "_TZE284_LIBHT6UA"
+    ],
+    "pids": [
+      "TS0601"
+    ],
+    "issues": [
+      "blind",
+      "unknown",
+      "curtain",
+      "cover",
+      "gang",
+      "battery",
+      "endpoint"
+    ],
+    "excerpt": "Hi @dlnraja , Thanks a lot for your work on this app. I have a tubular roller blind motor with a built-in Tuya Zigbee receiver that is not r"
+  },
+  {
+    "tid": "0",
+    "n": 2229,
+    "user": "MIAMO_NISU",
+    "mfrs": [
+      "_TZE200_ICKA1CLH"
+    ],
+    "pids": [
+      "TS0601"
+    ],
+    "issues": [
+      "blind"
+    ],
+    "excerpt": "Hi Dylan, I have a MOES ZC-LS / AM43 blind motor that is not working with Universal Tuya. Diagnostic code: 1fa26737-2acf-4255-b07d-2f7b65083"
+  },
+  {
+    "tid": "0",
+    "n": 2244,
+    "user": "Michaelp",
+    "mfrs": [
+      "_TZE284_OGX8U5Z6",
+      "_TZE284_NE4PIKWM"
+    ],
+    "pids": [
+      "TS0601"
+    ],
+    "issues": [
+      "unknown",
+      "trv",
+      "battery"
+    ],
+    "excerpt": "Hi @dlnraja I’m trying to add a Tuya Zigbee thermostatic radiator valve to Universal Tuya Zigbee on Homey Pro. Device: ZG253 thermostatic ra"
+  },
+  {
+    "tid": "0",
+    "n": 2249,
+    "user": "dlnraja",
+    "mfrs": [
+      "_TZE204_DTZZIY1E"
+    ],
+    "pids": [],
+    "issues": [
+      "curtain",
+      "presence",
+      "lux",
+      "cover",
+      "flow"
+    ],
+    "excerpt": "Hi @VicHY , The behavior you are describing actually points to two distinct issues overlapping—a Homey cache bug, and the physical calibrati"
+  },
+  {
+    "tid": "0",
+    "n": 2253,
+    "user": "Michaelp",
+    "mfrs": [
+      "_TZE284_OGX8U5Z6"
+    ],
+    "pids": [
+      "TS0601"
+    ],
+    "issues": [
+      "trv",
+      "battery",
+      "thermostat"
+    ],
+    "excerpt": "Hi @dlnraja after the latest Universal Tuya update my ZG253 TRV is now correctly detected as a radiator TRV (thanks!), but none of the capab"
+  },
+  {
+    "tid": "0",
+    "n": 2261,
+    "user": "marosk",
+    "mfrs": [
+      "_TZE200_FL8CUAFL"
+    ],
+    "pids": [
+      "TS0601"
+    ],
+    "issues": [
+      "thermostat",
+      "trv"
+    ],
+    "excerpt": "Hi, Could you please add support for this Tuya Zigbee Radiator Thermostat (TRV)? It is sold by a local (Slovak) brand called ANTIK (model AT"
+  },
+  {
+    "tid": "0",
+    "n": 2263,
+    "user": "Kizabgd",
+    "mfrs": [
+      "_TZE284_9ERN5SFH"
+    ],
+    "pids": [
+      "TS0601"
+    ],
+    "issues": [
+      "unknown"
+    ],
+    "excerpt": "Hi I can’t add Tuya Convenient Digital LCD Indoor Zigbee Temperature ( _TZE284_9ern5sfh / TS0601 ) Even though I select the dedicated “ Add "
+  },
+  {
+    "tid": "2",
+    "n": 1636,
+    "user": "johan_bendz",
+    "mfrs": [
+      "_TZE200_JTHF7VB6"
+    ],
+    "pids": [
+      "TS0601"
+    ],
+    "issues": [],
+    "excerpt": "[APP][Pro] Tuya Zigbee App - Device Request Archive A second request from me to add an unsupported device (“TS0601”, \"_TZE200_jthf7vb6), thi"
+  },
+  {
+    "tid": "2",
+    "n": 5497,
+    "user": "Kai_Dybvik",
+    "mfrs": [
+      "_TZ3210_EYMUNFFL",
+      "_TZ3000_CJFMU5HE",
+      "_TZ3000_KZ1ANOI8",
+      "_TZ3000_MQ4WUJMP"
+    ],
+    "pids": [
+      "TS0101",
+      "TS0049"
+    ],
+    "issues": [
+      "irrigation"
+    ],
+    "excerpt": "johan_bendz: Smart Garden Irrigation Co ntroller _TZ3210_eymunffl / TS0101 (Woox) _TZ3000_cjfmu5he / TS0049 _TZ3000_kz1anoi8 / TS0049 _TZ300"
+  },
+  {
+    "tid": "2",
+    "n": 5516,
+    "user": "Axel_Ditmer",
+    "mfrs": [
+      "_TZE284_NQQYLYKC"
+    ],
+    "pids": [
+      "TS0601"
+    ],
+    "issues": [
+      "dimmer"
+    ],
+    "excerpt": "can the following dimmer fingerprint be added? producer id: _TZE284_nqqylykc product id: TS0601"
+  },
+  {
+    "tid": "2",
+    "n": 5519,
+    "user": "Peter_Kawa",
+    "mfrs": [
+      "_TZE284_NQQYLYKC"
+    ],
+    "pids": [],
+    "issues": [],
+    "excerpt": "_TZE284_nqqylykc: Already requested 2y ago, request is still open: https://github.com/JohanBendz/com.tuya.zigbee/issues/1108"
+  },
+  {
+    "tid": "2",
+    "n": 5520,
+    "user": "FrankP",
+    "mfrs": [],
+    "pids": [
+      "TS0042"
+    ],
+    "issues": [
+      "gang"
+    ],
+    "excerpt": "Thnx @johan_bendz . The TS0042 2 gang wall remote works now"
+  },
+  {
+    "tid": "2",
+    "n": 5532,
+    "user": "Mates1134",
+    "mfrs": [
+      "_TZ3000_QJA6NQ5Z"
+    ],
+    "pids": [],
+    "issues": [],
+    "excerpt": "Hi, The _TZ3000_qja6nq5z TS004F Smart knob switch stopped working after one of the recent updates. It was working fine before."
+  },
+  {
+    "tid": "2",
+    "n": 5534,
+    "user": "Dragan_Todorovic",
+    "mfrs": [
+      "_TZE200_CRQ3R3LA"
+    ],
+    "pids": [],
+    "issues": [
+      "presence"
+    ],
+    "excerpt": "Hi. I have a _TZE200_crq3r3la, CK-BL702-MWS-01(7016). its a Radar presence sensor. It connected to Homey as a generic device but have the pr"
+  },
+  {
+    "tid": "2",
+    "n": 5535,
+    "user": "Kizabgd",
+    "mfrs": [
+      "_TZE284_9EM5SFH"
+    ],
+    "pids": [
+      "TS0601"
+    ],
+    "issues": [
+      "unknown"
+    ],
+    "excerpt": "Hi Could you please add support for this Tuya Temperature & Humidity sensor with LCD display? Currently, it gets paired as an Unknown Zigbee"
+  },
+  {
+    "tid": "3",
+    "n": 641,
+    "user": "Zdenek_Sadek",
+    "mfrs": [
+      "_TZ3000_QEUVNOHG"
+    ],
+    "pids": [],
+    "issues": [],
+    "excerpt": "Hi, could I ask you to add the following devices? \"ids\": { \"modelId\": \"TS011F\", \"manufacturerName\": \"_TZ3000_qeuvnohg\" }, \"endpoints\": { \"ie"
+  },
+  {
+    "tid": "3",
+    "n": 642,
+    "user": "Yannick_Eeckelaert",
+    "mfrs": [
+      "_TZE200_8YGSUHE1"
+    ],
+    "pids": [
+      "TS0601"
+    ],
+    "issues": [],
+    "excerpt": "@johan_bendz is this device still on your to do list Johan? Tuya Zigbee 3.0 Smart Air Box Formaldehyde Voc Kooldioxide Temperatuur Vochtighe"
+  },
+  {
+    "tid": "3",
+    "n": 643,
+    "user": "Roald_Oien",
+    "mfrs": [
+      "_TZ3000_EYZB8YG3"
+    ],
+    "pids": [
+      "TS0121"
+    ],
+    "issues": [],
+    "excerpt": "@johan_bendz do you think this is solveable easily? Heres is the interview: \"ids\": { \"modelId\": \"TS0121\", \"manufacturerName\": \"_TZ3000_eyzb8"
+  },
+  {
+    "tid": "3",
+    "n": 644,
+    "user": "Bo_Kjaergaard",
+    "mfrs": [
+      "_TZ3000_NKCOBIES"
+    ],
+    "pids": [],
+    "issues": [
+      "unknown"
+    ],
+    "excerpt": "The new LIDL Smart Plug I bought today seems to support Power Metering. It says so on the box. Found as Unknown Zigbee device. Here is the d"
+  },
+  {
+    "tid": "3",
+    "n": 645,
+    "user": "melectro",
+    "mfrs": [
+      "_TZ3000_LVHY15IX"
+    ],
+    "pids": [
+      "TS0003"
+    ],
+    "issues": [
+      "unknown",
+      "gang"
+    ],
+    "excerpt": "Hi Here I have some new zigbee devices. All of them are unknown devices, please add to this nice app! This is a 3 gang wall switch: \"ids\": {"
+  },
+  {
+    "tid": "3",
+    "n": 646,
+    "user": "melectro",
+    "mfrs": [
+      "_TZ3000_MMKBPTMX"
+    ],
+    "pids": [
+      "TS0004"
+    ],
+    "issues": [
+      "gang"
+    ],
+    "excerpt": "Here I present a 4 gang wall switch: \"ids\": { \"modelId\": \"TS0004\", \"manufacturerName\": \"_TZ3000_mmkbptmx\" }, \"endpoints\": { \"ieeeAddress\": \""
+  },
+  {
+    "tid": "3",
+    "n": 647,
+    "user": "melectro",
+    "mfrs": [
+      "_TZ3000_RUXEXJFZ"
+    ],
+    "pids": [
+      "TS0002"
+    ],
+    "issues": [
+      "gang"
+    ],
+    "excerpt": "Here is a 2 gang wall switch : \"ids\": { \"modelId\": \"TS0002\", \"manufacturerName\": \"_TZ3000_ruxexjfz\" }, \"endpoints\": { \"ieeeAddress\": \"a4:c1:"
+  },
+  {
+    "tid": "3",
+    "n": 648,
+    "user": "Roy1",
+    "mfrs": [
+      "_TZ3000_WKR3JQMR"
+    ],
+    "pids": [
+      "TS0004"
+    ],
+    "issues": [],
+    "excerpt": "Hey Johan, Here’s an interview of a 4 channel relay module; _TZ3000_wkr3jqmr TS0004 Schermafbeelding 2023-08-10 161730 1082×457 258 KB PXL_2"
+  },
+  {
+    "tid": "3",
+    "n": 649,
+    "user": "Roy1",
+    "mfrs": [
+      "_TZ3000_3DFEWSK1"
+    ],
+    "pids": [
+      "TS0207"
+    ],
+    "issues": [
+      "battery"
+    ],
+    "excerpt": "Hi Johan, I also just interviewed a flood sensor. Was a pita, becouse it kept going into sleep modus. Solution was keeping the sensor thinki"
+  },
+  {
+    "tid": "3",
+    "n": 650,
+    "user": "melectro",
+    "mfrs": [
+      "_TZE200_2EKUZ3DZ"
+    ],
+    "pids": [
+      "TS0601"
+    ],
+    "issues": [
+      "thermostat"
+    ],
+    "excerpt": "Hi Johan, here I have interviewed a thermostat : \"ids\": { \"modelId\": \"TS0601\", \"manufacturerName\": \"_TZE200_2ekuz3dz\" }, \"endpoints\": { \"iee"
+  },
+  {
+    "tid": "3",
+    "n": 651,
+    "user": "melectro",
+    "mfrs": [
+      "_TZ3000_UPGCBODY"
+    ],
+    "pids": [
+      "TS0207"
+    ],
+    "issues": [],
+    "excerpt": "Here is an interview on a water leak sensor: \"ids\": { \"modelId\": \"TS0207\", \"manufacturerName\": \"_TZ3000_upgcbody\" }, \"endpoints\": { \"ieeeAdd"
+  },
+  {
+    "tid": "3",
+    "n": 652,
+    "user": "Bo_Kjaergaard",
+    "mfrs": [
+      "_TZ3000_4UPL1FCJ",
+      "_TZ3000_QD7HEJ8U"
+    ],
+    "pids": [
+      "TS0041",
+      "TS0505B"
+    ],
+    "issues": [
+      "battery",
+      "button",
+      "unavailable"
+    ],
+    "excerpt": "I have battery scene switch single button remote wall switch that is not recognized. \"ids\": { \"modelId\": \"TS0041\", \"manufacturerName\": \"_TZ3"
+  },
+  {
+    "tid": "3",
+    "n": 653,
+    "user": "Rob_G",
+    "mfrs": [
+      "_TZ3000_WKAI4GA5"
+    ],
+    "pids": [
+      "TS0044"
+    ],
+    "issues": [
+      "button",
+      "battery"
+    ],
+    "excerpt": "Hi there, I would like to request adding the 4-button scen switch “_TZ3000_wkai4ga5”. I can install the device and it says it is working, bu"
+  },
+  {
+    "tid": "3",
+    "n": 654,
+    "user": "G4nd41f",
+    "mfrs": [
+      "_TZE204_QASJIF9E"
+    ],
+    "pids": [
+      "TS0601"
+    ],
+    "issues": [],
+    "excerpt": "I have the same and ordered it here: https://de.aliexpress.com/item/1005005200170242.html?gatewayAdapt=glo2deu , but my interview is a bit d"
+  },
+  {
+    "tid": "3",
+    "n": 656,
+    "user": "Mr_D_Forrest",
+    "mfrs": [
+      "_TZ3000_XR3HTD96"
+    ],
+    "pids": [
+      "TS0201"
+    ],
+    "issues": [
+      "battery"
+    ],
+    "excerpt": "Hi there, love your work have some temperature / humid sensors that are not supported, hopefully you can add support is there a manual how t"
+  },
+  {
+    "tid": "3",
+    "n": 657,
+    "user": "Vincent_Lim",
+    "mfrs": [
+      "_TZ3000_DECXRTWA"
+    ],
+    "pids": [
+      "TS0203"
+    ],
+    "issues": [
+      "unknown",
+      "battery"
+    ],
+    "excerpt": "Hi Johan I bought a Moes Tuya Zigbee Door/Window sensor recently. Even though the connection was smooth, it is only connected as an “Unknown"
+  },
+  {
+    "tid": "3",
+    "n": 658,
+    "user": "Bram_B",
+    "mfrs": [
+      "_TZ3000_AMDYMR7L"
+    ],
+    "pids": [],
+    "issues": [],
+    "excerpt": "Hi Johan, I’ve got a Blitzwolf smart plug with energy metering. My first two are working just fine. But the new one isn’t supported by the a"
+  },
+  {
+    "tid": "3",
+    "n": 659,
+    "user": "Marcel_Visser",
+    "mfrs": [
+      "_TZE204_SXM7L9XA"
+    ],
+    "pids": [
+      "TS0601"
+    ],
+    "issues": [
+      "presence"
+    ],
+    "excerpt": "My Tuya human Presence sensor arrived. But the manufacturerName is a bit different than the one that is requested before. The sensor is work"
+  },
+  {
+    "tid": "3",
+    "n": 660,
+    "user": "Ferenc_Szasz",
+    "mfrs": [
+      "_TZE200_3P5YDOS3"
+    ],
+    "pids": [
+      "TS0601"
+    ],
+    "issues": [
+      "dimmer"
+    ],
+    "excerpt": "Is someone else experiencing some issues with the _TZE200_3p5ydos3 dimmer? I added the device but whenever I try to change the dim level or "
+  },
+  {
+    "tid": "3",
+    "n": 661,
+    "user": "Anders_Lim",
+    "mfrs": [
+      "_TZE204_HLX9TNZB"
+    ],
+    "pids": [
+      "TS0601"
+    ],
+    "issues": [],
+    "excerpt": "This is the device info from the interview. Thank you! \"ids\": { \"modelId\": \"TS0601\", \"manufacturerName\": \"_TZE204_hlx9tnzb\" }, \"endpoints\": "
+  },
+  {
+    "tid": "3",
+    "n": 663,
+    "user": "Janderek",
+    "mfrs": [
+      "_TZE200_3TOWULQD"
+    ],
+    "pids": [
+      "TS0601"
+    ],
+    "issues": [
+      "unknown"
+    ],
+    "excerpt": "Hi have a Zigbee pir sensor that connects as unknown Zigbee unit \"ids\": { \"modelId\": \"TS0601\", \"manufacturerName\": \"_TZE200_3towulqd\" }, \"en"
+  },
+  {
+    "tid": "3",
+    "n": 664,
+    "user": "MBrandt",
+    "mfrs": [
+      "_TZ3210_IYSTCADI"
+    ],
+    "pids": [
+      "TS0505B"
+    ],
+    "issues": [],
+    "excerpt": "I have an unknow Lidl Smart Home, Livarno Smart LED Light Bar: \"ids\": { \"modelId\": \"TS0505B\", \"manufacturerName\": \"_TZ3210_iystcadi\" }, \"end"
+  },
+  {
+    "tid": "3",
+    "n": 665,
+    "user": "Johan_Rossouw",
+    "mfrs": [
+      "_TYZB01_6G8B7AT8"
+    ],
+    "pids": [
+      "TS0012"
+    ],
+    "issues": [
+      "gang",
+      "battery"
+    ],
+    "excerpt": "Hi Johan, I have yet another flavour of the 2 gang switch (_TYZB01_6g8b7at8). \"ids\": { \"modelId\": \"TS0012\", \"manufacturerName\": \"_TYZB01_6g8"
+  },
+  {
+    "tid": "3",
+    "n": 666,
+    "user": "RezaRose",
+    "mfrs": [
+      "_TZ3210_0ZABBFAX"
+    ],
+    "pids": [
+      "TS0503B"
+    ],
+    "issues": [],
+    "excerpt": "Hi I have another one! RGB Light controller, thanks in advance, i really like the work on this app! Smart Zigbee Usb Led Verlichting Tuya Wi"
+  },
+  {
+    "tid": "3",
+    "n": 667,
+    "user": "late4marshmellow",
+    "mfrs": [
+      "_TZ3210_3LBTUXGP"
+    ],
+    "pids": [
+      "TS0505B"
+    ],
+    "issues": [],
+    "excerpt": "forgive me for re-posting this, i am just afraid that it got left out in the latest update because the interview was inside a “details funct"
+  },
+  {
+    "tid": "3",
+    "n": 668,
+    "user": "Peter_N",
+    "mfrs": [
+      "_TZE200_MYD45WEU"
+    ],
+    "pids": [
+      "TS0601"
+    ],
+    "issues": [
+      "soil",
+      "battery"
+    ],
+    "excerpt": "Good day, Is it possible to check for this Soil Sensor GXM-01 Thanks in advance \"ids\": { \"modelId\": \"TS0601\", \"manufacturerName\": \"_TZE200_m"
+  },
+  {
+    "tid": "3",
+    "n": 669,
+    "user": "Erwin3",
+    "mfrs": [
+      "_TZ3000_QEUVNOHG"
+    ],
+    "pids": [],
+    "issues": [],
+    "excerpt": "Can I request a device to be added? IMG_1800 1920×2560 85.9 KB https://www.aliexpress.com/item/1005005972404315.html?spm=a2g0o.order_list.or"
+  },
+  {
+    "tid": "3",
+    "n": 670,
+    "user": "Trond_Sandland",
+    "mfrs": [
+      "_TZ3000_WKR3JQMR"
+    ],
+    "pids": [
+      "TS0004"
+    ],
+    "issues": [],
+    "excerpt": "Johan I bought a couple of the “4 channel Relay Boards” but they appear to be of another make than those You already have added support for."
+  },
+  {
+    "tid": "3",
+    "n": 671,
+    "user": "Henk_de_Boom",
+    "mfrs": [
+      "_TZE200_P0GZBQCT"
+    ],
+    "pids": [
+      "TS0601"
+    ],
+    "issues": [],
+    "excerpt": "Is it possible to add this device to the Tuuya Zigbee app? Thx in advance Henk de Boom \"ids\": { \"modelId\": \"TS0601\", \"manufacturerName\": \"_T"
+  },
+  {
+    "tid": "15",
+    "n": 10,
+    "user": "Michael_Hadjicosta",
+    "mfrs": [
+      "_TZE28C100000_RZDKN5RX"
+    ],
+    "pids": [
+      "TS0601"
+    ],
+    "issues": [
+      "button"
+    ],
+    "excerpt": "Hi @Zemismart_Official , I am reaching out for assistance with the Zemismart ZN-LRL1E Water Boiler Switch (30A). Currently, the device is no"
+  },
+  {
+    "tid": "15",
+    "n": 11,
+    "user": "Zemismart_Official",
+    "mfrs": [
+      "_TZE28C100000_RZDKN5RX"
+    ],
+    "pids": [
+      "TS0601"
+    ],
+    "issues": [
+      "button"
+    ],
+    "excerpt": "Michael_Hadjicosta: Hi @Zemismart_Official , I am reaching out for assistance with the Zemismart ZN-LRL1E Water Boiler Switch (30A). Current"
+  },
+  {
+    "tid": "15",
+    "n": 25,
+    "user": "JOSE_ANGEL_RUIZ_JIME",
+    "mfrs": [
+      "_TZE200_M6LWAZH9"
+    ],
+    "pids": [
+      "TS0601"
+    ],
+    "issues": [
+      "unknown",
+      "curtain",
+      "flow"
+    ],
+    "excerpt": "Buenos días: He comprado 5 Zemismart ZM25AZ01 Roller Shade Motor, con las siguientes características: Modelo: ZM25AZ01 Protocolo: Zigbee Mod"
+  },
+  {
+    "tid": "15",
+    "n": 26,
+    "user": "Zemismart_Official",
+    "mfrs": [
+      "_TZE200_M6LWAZH9"
+    ],
+    "pids": [
+      "TS0601"
+    ],
+    "issues": [],
+    "excerpt": "hi, We have received your request regarding the Zemismart ZM25AZ01 (TS0601 / _TZE200_m6lwazh9) compatibility with Homey Pro. We will communi"
+  },
+  {
+    "tid": "15",
+    "n": 29,
+    "user": "Marcelo_Leite",
+    "mfrs": [
+      "_TZE200_68NVBIO9"
+    ],
+    "pids": [
+      "TS0601"
+    ],
+    "issues": [
+      "curtain"
+    ],
+    "excerpt": "Hi @Zemismart_Official , I am reaching out to request the addition of the curtain motor device: modelId: TS0601 manufacturerName: _TZE200_68"
+  },
+  {
+    "tid": "15",
+    "n": 30,
+    "user": "Henk_Renting",
+    "mfrs": [
+      "_TZE200_CF1SL3TJ"
+    ],
+    "pids": [
+      "TS0601"
+    ],
+    "issues": [
+      "curtain"
+    ],
+    "excerpt": "Marcelo_Leite: TZE200_68nvbio9 Same here for my TS0601 / _TZE200_cf1sl3tj curtain motor. Luckily Zigbee2MQTT does recognize it, only as an o"
+  },
+  {
+    "tid": "15",
+    "n": 37,
+    "user": "Stefan_Persson2",
+    "mfrs": [
+      "_TZE2841000000_3MZB0SDZ"
+    ],
+    "pids": [
+      "TS0601"
+    ],
+    "issues": [
+      "unknown",
+      "blind"
+    ],
+    "excerpt": "Hi Zemismart, I recently purchased a Zemismart ZM16B Zigbee Tubular Motor , specifically because the official Zemismart Homey app lists the "
+  },
+  {
+    "tid": "15",
+    "n": 41,
+    "user": "Stefan_Persson2",
+    "mfrs": [
+      "_TZE2841000000_3MZB0SDZ"
+    ],
+    "pids": [
+      "TS0601"
+    ],
+    "issues": [],
+    "excerpt": "Hi, any update from your engineer regarding my ZM16B with Model ID TS0601 and Manufacturer Name _TZE2841000000_3mzb0sdz ? Thanks."
+  },
+  {
+    "tid": "15",
+    "n": 43,
+    "user": "Stefan_Persson2",
+    "mfrs": [
+      "_TZE2841000000_3MZB0SDZ"
+    ],
+    "pids": [
+      "TS0601"
+    ],
+    "issues": [
+      "not work",
+      "unknown"
+    ],
+    "excerpt": "Hi, I just tried again, but unfortunately it still does not work. Homey still adds the ZM16B as an “Unknown Zigbee device” . My device is st"
+  },
+  {
+    "tid": "16",
+    "n": 9,
+    "user": "SunBeech",
+    "mfrs": [
+      "_TZ3000_4UPL1FCJ"
+    ],
+    "pids": [
+      "TS0041"
+    ],
+    "issues": [
+      "gang"
+    ],
+    "excerpt": "Hi @SergeP , would it be possible to also add the single gang variant of this scene switch? SKU: ZT-SY-EU1S-**-MS Manufacturer ID: _TZ3000_4"
+  },
+  {
+    "tid": "16",
+    "n": 10,
+    "user": "SergeP",
+    "mfrs": [
+      "_TZ3000_4UPL1FCJ"
+    ],
+    "pids": [
+      "TS0041"
+    ],
+    "issues": [
+      "gang"
+    ],
+    "excerpt": "Hi SunBeech , Hi @SergeP , would it be possible to also add the single gang variant of this scene switch? SKU: ZT-SY-EU1S-**-MS Manufacturer"
+  },
+  {
+    "tid": "16",
+    "n": 12,
+    "user": "SunBeech",
+    "mfrs": [
+      "_TZ3000_WKAI4GA5",
+      "_TZ3000_DFGBTUB0"
+    ],
+    "pids": [
+      "TS0044",
+      "TS0042"
+    ],
+    "issues": [
+      "gang"
+    ],
+    "excerpt": "No worries . Those were the 2- and 4-gang variants of the following scene switch model you added earlier: 4-Gang Scene Remote 2-Gang Scene R"
+  },
+  {
+    "tid": "16",
+    "n": 94,
+    "user": "Marcelo_Leite",
+    "mfrs": [
+      "_TZE204_T1BLO2BJ"
+    ],
+    "pids": [
+      "TS0601"
+    ],
+    "issues": [],
+    "excerpt": "Hi @SergeP Please, could you add support for a MOES Smart Siren Thank you for your support. Device Information Device Name: MOES Smart Siren"
+  },
+  {
+    "tid": "16",
+    "n": 101,
+    "user": "ernesto_pons_montoro",
+    "mfrs": [
+      "_TZ3210_5RTA89NJ"
+    ],
+    "pids": [
+      "TS0601"
+    ],
+    "issues": [],
+    "excerpt": "Good morning. Could you create the drivers for the Smart Sliding Window Pusher? Thank you very much for your work. type: SMART SLIDING WINDO"
+  },
+  {
+    "tid": "17",
+    "n": 1,
+    "user": "Relax_swe",
+    "mfrs": [
+      "_TZ3000_ZGYZGDUA",
+      "_TZ3000_WKAI4GA5",
+      "_TZ3000_GBM10JNJ"
+    ],
+    "pids": [
+      "TS0044",
+      "TS0043"
+    ],
+    "issues": [
+      "gang"
+    ],
+    "excerpt": "I released an app to support the Moes devices I currently own. As i have been contacted by different people to extend support ill create thi"
+  },
+  {
+    "tid": "17",
+    "n": 10,
+    "user": "Relax_swe",
+    "mfrs": [
+      "_TZ3000_W8JWKCZZ"
+    ],
+    "pids": [
+      "TS0043"
+    ],
+    "issues": [
+      "button",
+      "battery"
+    ],
+    "excerpt": "Hi, I need the manufacturerName and the productId to be able to add support for the 2 and 1 button switches. as well as count and type of ba"
+  },
+  {
+    "tid": "17",
+    "n": 15,
+    "user": "Chris_M",
+    "mfrs": [
+      "_TZ3000_22UGZKME"
+    ],
+    "pids": [
+      "TS0041"
+    ],
+    "issues": [],
+    "excerpt": "Sorry, here you’re: Manufactor: Moes Manufactor-ID _TZ3000_22ugzkme Product-ID: TS0041"
+  },
+  {
+    "tid": "17",
+    "n": 16,
+    "user": "Relax_swe",
+    "mfrs": [
+      "_TZ3000_22UGZKME"
+    ],
+    "pids": [
+      "TS0041"
+    ],
+    "issues": [],
+    "excerpt": "Chris_M: Manufactor: Moes Manufactor-ID _TZ3000_22ugzkme Product-ID: TS0041 This is now in test. as i dont have a device you need to verify "
+  },
+  {
+    "tid": "17",
+    "n": 28,
+    "user": "SteampunkLolcat",
+    "mfrs": [
+      "_TZ3000_XABCKQ1V"
+    ],
+    "pids": [],
+    "issues": [
+      "gang"
+    ],
+    "excerpt": "Hi! Could you please add support for this 4 gang wall switch device id? _TZ3000_xabckq1v TS004F"
+  },
+  {
+    "tid": "17",
+    "n": 30,
+    "user": "SteampunkLolcat",
+    "mfrs": [
+      "_TZ3000_XABCKQ1V"
+    ],
+    "pids": [],
+    "issues": [
+      "battery"
+    ],
+    "excerpt": "Thank you, that was fast. The device still gets added as a generic zigbee device though. I’ve put a complete device interview in the hidden "
+  },
+  {
+    "tid": "17",
+    "n": 33,
+    "user": "Graeme_Hindmarsh",
+    "mfrs": [
+      "_TZ3000_KFU8ZAPD",
+      "_TZ3000_ZGYZGDUA",
+      "_TZ3000_WKAI4GA5"
+    ],
+    "pids": [
+      "TS0044"
+    ],
+    "issues": [
+      "button",
+      "battery",
+      "flow",
+      "endpoint",
+      "gang"
+    ],
+    "excerpt": "Is it possible to add this device to your list. I had help with an AI who recommended contacting you with this information. Many thanks! Dev"
+  },
+  {
+    "tid": "17",
+    "n": 34,
+    "user": "Primordial",
+    "mfrs": [
+      "_TZ3000_KFU8ZAPD"
+    ],
+    "pids": [],
+    "issues": [],
+    "excerpt": "+1 Can some legend please add this device _TZ3000_kfu8zapd?"
+  },
+  {
+    "tid": "17",
+    "n": 35,
+    "user": "Primordial",
+    "mfrs": [
+      "_TZ3000_KFU8ZAPD"
+    ],
+    "pids": [
+      "TS0044"
+    ],
+    "issues": [
+      "button",
+      "flow"
+    ],
+    "excerpt": "I got impatient so I decided to DIY I got the Moes 4-button Zigbee scene remote working on Homey and pushed the app source here: Primordial1"
+  },
+  {
+    "tid": "17",
+    "n": 39,
+    "user": "Jocke_Wallen",
+    "mfrs": [
+      "_TZ3000_KFU8ZAPD"
+    ],
+    "pids": [
+      "TS0044"
+    ],
+    "issues": [],
+    "excerpt": "Sounds great! If/whan You start extendin the app would You mind adding the “TS0044” / “_TZ3000_kfu8zapd” remote to the Moes app? I can add t"
+  },
+  {
+    "tid": "18",
+    "n": 11,
+    "user": "Attila_Danis",
+    "mfrs": [
+      "_TZ3000_V7CHGQSO"
+    ],
+    "pids": [
+      "TS0203"
+    ],
+    "issues": [],
+    "excerpt": "Manufacturer Id: _TZ3000_v7chgqso Product ID: TS0203 image1 1170×2532 169 KB"
+  },
+  {
+    "tid": "18",
+    "n": 285,
+    "user": "Antek_Tek",
+    "mfrs": [
+      "_TZ3000_V5498KDM"
+    ],
+    "pids": [
+      "TS0001"
+    ],
+    "issues": [
+      "unknown"
+    ],
+    "excerpt": "Hello SergeP, I have a new NOUS B1Z which is detected as an Unknown Zigbee Device when pairing through the NOUS B1Z driver. Manufacturer ID:"
+  },
+  {
+    "tid": "18",
+    "n": 286,
+    "user": "SergeP",
+    "mfrs": [
+      "_TZ3000_V5498KDM"
+    ],
+    "pids": [
+      "TS0001"
+    ],
+    "issues": [],
+    "excerpt": "Hi Antek_Tek , A new version has been published in test with your device IDs ( _TZ3000_v5498kdm / TS0001) for Nous Smart Switch Module (B1Z)"
+  },
+  {
+    "tid": "18",
+    "n": 321,
+    "user": "Mates1134",
+    "mfrs": [
+      "_TZE284_WTIKAXZS"
+    ],
+    "pids": [
+      "TS0601"
+    ],
+    "issues": [],
+    "excerpt": "Hi Serge, I tested the E6 clock issue again on a real TS0601 / _TZE284_wtikaxzs and got it working on Homey. The missing part is to actively"
+  },
+  {
+    "tid": "20",
+    "n": 1,
+    "user": "A_Tas",
+    "mfrs": [
+      "_TZ3218_T9YNFZ4X"
+    ],
+    "pids": [],
+    "issues": [
+      "presence"
+    ],
+    "excerpt": "Continuing the discussion from [APP][Pro] Universal TUYA Zigbee Device App - test : [APP][Pro] Universal TUYA Zigbee Device App - test First"
+  },
+  {
+    "tid": "20",
+    "n": 2,
+    "user": "Gabriel_Pedrosa_Mach",
+    "mfrs": [
+      "_TZ3218_T9YNFZ4X"
+    ],
+    "pids": [
+      "TS0225"
+    ],
+    "issues": [
+      "flow"
+    ],
+    "excerpt": "Hi Kadir, I have this exact device (_TZ3218_t9ynfz4x, Moes/Linptech ZSS-LP-HP02-MS / TS0225) working reliably in my own Homey app, including"
+  },
+  {
+    "tid": "21",
+    "n": 1,
+    "user": "FKey",
+    "mfrs": [
+      "_TZ3210_TGVTVDOC"
+    ],
+    "pids": [],
+    "issues": [],
+    "excerpt": "I ran into this nice review SmartHomeScene – 9 Aug 24 Tuya Zigbee Solar Rain Sensor RB-SRAIN01 Review AliExpress Reviews: Tuya Zigbee Solar "
+  },
+  {
+    "tid": "22",
+    "n": 10,
+    "user": "Michael_Edholm",
+    "mfrs": [
+      "_TZE200_NPJ9BUG3"
+    ],
+    "pids": [],
+    "issues": [
+      "soil"
+    ],
+    "excerpt": "I found a scan made for the implementation in Home Assistant if it help; \"data\": { \"version\": 1, \"ieee\": \"**REDACTED**\", \"nwk\": \"0xFDCA\", \"m"
+  }
+]
