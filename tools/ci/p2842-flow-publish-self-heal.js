@@ -184,6 +184,27 @@ function purgeHomeybuildBackups() {
   }
 }
 
+function rootAppJsonCompactOk() {
+  const f = path.join(ROOT, 'app.json');
+  if (!fs.existsSync(f)) {
+    note('fail', 'root app.json missing');
+    return false;
+  }
+  try {
+    const compact = Buffer.byteLength(JSON.stringify(JSON.parse(fs.readFileSync(f, 'utf8'))));
+    const mb = compact / (1024 * 1024);
+    if (mb > 4) {
+      note('fail', `root app.json compact ${mb.toFixed(2)} MB > 4.00 MB`);
+      return false;
+    }
+    note('ok', `root app.json compact ${mb.toFixed(2)} MB`);
+    return true;
+  } catch (e) {
+    note('fail', `root app.json parse: ${e.message}`);
+    return false;
+  }
+}
+
 function runPublishSizeGate() {
   const gate = path.join(ROOT, 'scripts/ci/publish-size-gate.cjs');
   if (!fs.existsSync(gate)) {
@@ -194,10 +215,19 @@ function runPublishSizeGate() {
   // .homeybuild yet. Skip hard size there; Auto-Publish still runs full gate post-build.
   const buildDir = path.join(ROOT, '.homeybuild');
   if (!fs.existsSync(buildDir)) {
+    rootAppJsonCompactOk();
     note('ok', 'publish-size-gate skipped (no .homeybuild yet — pre-build CI)');
     return;
   }
   purgeHomeybuildBackups();
+  // WHY(P2842e): `homey app validate` materializes a fat .homeybuild/app.json (~4.7 MB)
+  // before prepare-publish. Hard size belongs post-prepare / Auto-Publish — not mid-CI.
+  const prepared = path.join(require('os').tmpdir(), 'homey-publish-temp');
+  if (!fs.existsSync(prepared)) {
+    rootAppJsonCompactOk();
+    note('ok', 'publish-size-gate soft-skip (pre-prepare validate build — Auto-Publish hard-checks later)');
+    return;
+  }
   const r = spawnSync(process.execPath, [gate, '--json'], {
     cwd: ROOT,
     encoding: 'utf8',

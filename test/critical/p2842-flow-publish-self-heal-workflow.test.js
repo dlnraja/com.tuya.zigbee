@@ -23,9 +23,10 @@ describe('P2842 flow/publish self-heal automation (free)', () => {
     assert.match(src, /ensureHomeyignoreBackups|backups/);
     assert.match(src, /healZo0cfekvTs0601|zo0cfekv/);
     assert.match(src, /publish-size-gate/);
-    // P2842b/c: pre-build skip + purge validate-materialized .homeybuild/backups
+    // P2842b/c/e: pre-build skip + purge backups + soft-skip fat validate build
     assert.match(src, /no \.homeybuild yet/);
     assert.match(src, /purgeHomeybuildBackups|Purged \.homeybuild\/backups/);
+    assert.match(src, /pre-prepare|soft-skip/);
     assert.match(src, /AI_ALLOW_PAID|no paid|forfait/i);
     assert.ok(!/cursor-grok|openai\.com|anthropic/i.test(src), 'must stay local/free');
   });
