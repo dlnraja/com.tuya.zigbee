@@ -9,7 +9,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.1509] - 2026-10-16
+## [9.0.1511] - 2026-10-16
+
+Tip after bot collide: P2850 inbox treat + CI soft-expect Athom hang.
+---
+
+ [9.0.1509] - 2026-10-16
 
 Tip bump after bot 1508 collide; P2842e validate size soft-skip + curtain ycke4deo strip.
 ---

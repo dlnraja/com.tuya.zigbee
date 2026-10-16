@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1510 |
+| **App Version** | v9.0.1512 |
 | **Drivers** | 449 (396 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,840 |
 | **Pairing Variants** | 19,003 (4 case combos per fingerprint) |
@@ -41,7 +41,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 6,105 |
 | **Unique Capabilities** | 176 |
 | **Native OTA Drivers** | 9 |
-| **Test Suites** | 664 files |
+| **Test Suites** | 665 files |
 | **SVG Icons** | 752 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -103,7 +103,9 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.1510** | v9.0.1509: |
+| **v9.0.1512** | v9.0.1511: |
+| **v9.0.1511** | Tip after bot collide: P2850 inbox treat + CI soft-expect Athom hang. |
+| **v9.0.1510** | Inbox treat: unblock CI (TS0044 wall_remote strip, Athom soft-expect, soil/TRV locks verified). |
 | **v9.0.1509** | Tip bump after bot 1508 collide; P2842e validate size soft-skip + curtain ycke4deo strip. |
 | **v9.0.1508** | CI: P2842 soft-skip size after validate; strip radar mfrs off curtain_motor (ycke4deo). |
 | **v9.0.1507** | Restore smoke_sensor3 vzekyi4c+TS0205 after compose→app mirror; free heal purges .homeybuild/backups. |
@@ -113,8 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1503** | Sacred couple: Moes Star Feather zo0cfekv+TS0601 on wall 3-gang; CI density + SONOFF bulb cleanup. |
 | **v9.0.1502** | Publish payload slim: exclude root backups/ (~12 MB) from Homey package to reduce Athom socket hang up risk. |
 | **v9.0.1501** | Unblock CI: remove duplicate boiler_switch_energy flow conditions (driver compose vs global .homeycompose). |
-| **v9.0.1500** | Flow cards: fix hollow/creux actions and conditions — align driver listeners to compose IDs (DIN rail, RGB bulb, contact, radar, boiler, … |
-| **v9.0.1499** | RF coexistence: silent enrich from Homey tip — hidden 2.4 GHz SSIDs and Thread/Matter LAN dependency (ChannelAccessFailure vs NoAck). |
 
 <!-- CHANGELOG_END -->
 
