@@ -41,7 +41,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 6,105 |
 | **Unique Capabilities** | 176 |
 | **Native OTA Drivers** | 9 |
-| **Test Suites** | 647 files |
+| **Test Suites** | 649 files |
 | **SVG Icons** | 752 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -105,6 +105,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 |---------|---------|
 | **v9.0.1476** | v9.0.1475: |
 | **v9.0.1475** | v9.0.1475: automated publish, manifest sync, and Homey test promotion. |
+| **v9.0.1476** | Improved 2-button wall remotes and locked dimmer/radar fingerprints from community reports. |
+| **v9.0.1475** | Hardened presence and radar flow cards; kept LCD climate fingerprints in sync for Test builds. |
 | **v9.0.1474** | Improved LCD climate sensor temperature and humidity on single-endpoint Tuya MCU variants. |
 | **v9.0.1473** | CI heal: align mfs_db USB outlet registry + LCD/gnpflcoq forum locks. |
 | **v9.0.1472** | Forum: gnpflcoq 4in1 climate caps, USB registry audit heal, flow Contre quoi locks. |
