@@ -907,6 +907,15 @@
       ]
     }
   ],
+  "9.0.1478": {
+    "en": "Aligned fingerprint DB after satellite sacred-couple locks; force Test republish."
+  },
+  "9.0.1477": {
+    "en": "Hardened 3-button wall remotes and locked Moes/rain fingerprints after full forum satellite scan."
+  },
+  "9.0.1476": {
+    "en": "Improved 2-button wall remotes and locked dimmer/radar fingerprints from community reports."
+  },
   "9.0.1475": {
     "en": "Hardened presence and radar flow cards; kept LCD climate fingerprints in sync for Test builds."
   },
@@ -958,26 +967,7 @@
     "en": "Soil sensors matched by manufacturer+model couple (QT-07S, AOYAN, HOBEIAN).",
     "fr": "Capteurs sol appaires par couple fabricant+modele (QT-07S, AOYAN, HOBEIAN)."
   },
-  "9.0.1459": {
-    "en": "v9.0.1459: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.1458": {
-    "en": "Soil sensor: remove misrouted smoke fingerprint from soil driver."
-  },
-  "9.0.1457": {
-    "en": "Improved soil sensor pairing (QT-07S / AOYAN) and app Configure page readiness.",
-    "fr": "Amelioration appairage capteurs sol (QT-07S / AOYAN) et page Configure."
-  },
-  "9.0.1456": {
-    "en": "Aligned fingerprint database for ANTIK TRV and 4in1 mmWave couples."
-  },
-  "9.0.1476": {
-    "en": "Improved 2-button wall remotes and locked dimmer/radar fingerprints from community reports."
-  },
-  "9.0.1477": {
-    "en": "Hardened 3-button wall remotes and locked Moes/rain fingerprints after full forum satellite scan."
-  },
-  "9.0.1478": {
-    "en": "Aligned fingerprint DB after satellite sacred-couple locks; force Test republish."
+  "9.0.1479": {
+    "en": "v9.0.1479: automated publish, manifest sync, and Homey test promotion."
   }
 }
