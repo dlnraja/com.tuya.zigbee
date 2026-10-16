@@ -171,33 +171,56 @@ function healPhantomSonoffOnBulb() {
   note('fixed', `Stripped SONOFF from bulb_rgbw (${before}→${next.length})`);
 }
 
+function purgeHomeybuildBackups() {
+  // WHY(P2842c): `homey app validate` can materialize .homeybuild/backups from
+  // local dumps; that is build junk, never source. Always purge before size gate.
+  const bak = path.join(ROOT, '.homeybuild', 'backups');
+  if (!fs.existsSync(bak)) return;
+  try {
+    fs.rmSync(bak, { recursive: true, force: true });
+    note('fixed', 'Purged .homeybuild/backups (validate artifact)');
+  } catch (e) {
+    note('fail', `Could not purge .homeybuild/backups: ${e.message}`);
+  }
+}
+
 function runPublishSizeGate() {
   const gate = path.join(ROOT, 'scripts/ci/publish-size-gate.cjs');
   if (!fs.existsSync(gate)) {
     note('fail', 'publish-size-gate.cjs missing');
     return;
   }
-  // WHY(P2842b): unified-ci / syntax-check run before `homey app build` — no
+  // WHY(P2842b): unified-ci / syntax-check may run before `homey app build` — no
   // .homeybuild yet. Skip hard size there; Auto-Publish still runs full gate post-build.
   const buildDir = path.join(ROOT, '.homeybuild');
   if (!fs.existsSync(buildDir)) {
     note('ok', 'publish-size-gate skipped (no .homeybuild yet — pre-build CI)');
     return;
   }
-  const r = spawnSync(process.execPath, [gate], {
+  purgeHomeybuildBackups();
+  const r = spawnSync(process.execPath, [gate, '--json'], {
     cwd: ROOT,
     encoding: 'utf8',
     env: { ...process.env },
+    maxBuffer: 8 * 1024 * 1024,
   });
   if (r.error) {
     note('fail', `publish-size-gate spawn error: ${r.error.message}`);
     return;
   }
+  let parsed = null;
+  try {
+    parsed = JSON.parse((r.stdout || '').trim() || 'null');
+  } catch {
+    /* fall through to status */
+  }
   if (r.status !== 0) {
-    note('fail', 'publish-size-gate failed', {
-      out: `${r.stdout || ''}\n${r.stderr || ''}`.slice(-800),
-      status: r.status,
-    });
+    const errs = parsed && Array.isArray(parsed.errors) ? parsed.errors : [];
+    const detail = errs.length
+      ? errs.slice(0, 5).join(' | ')
+      : `${r.stdout || ''}\n${r.stderr || ''}`.slice(-800);
+    console.error(`[P2842] publish-size-gate stderr/out:\n${detail}`);
+    note('fail', 'publish-size-gate failed', { errors: errs, status: r.status });
   } else {
     note('ok', 'publish-size-gate PASS');
   }
