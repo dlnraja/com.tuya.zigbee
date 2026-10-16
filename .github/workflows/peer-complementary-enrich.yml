@@ -1,0 +1,129 @@
+# P2832 — Peer complementary enrich (Johan / Lidl / mega / prune)
+# Autonomous free cron: UNION fingerprints into OUR drivers. Never forum POST. Never invent pid.
+# Contre quoi: cartesian P2570 blast, wipe compose, paid AI, peer device.js copy.
+name: Peer Complementary Enrich (P2832)
+
+on:
+  schedule:
+    # Mon/Thu 06:10 UTC — clear of Sunday peer-probe 05:40, Tue/Fri OSS LAN 05:55, blakadder 04:15
+    - cron: '10 6 * * 1,4'
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: 'Apply complementary FP rewrite (false = dry-run report only)'
+        required: false
+        type: boolean
+        default: true
+      skip_mega:
+        description: 'Skip Johan mega complementary (P2572)'
+        required: false
+        type: boolean
+        default: false
+      skip_commit:
+        description: 'Skip git commit even if apply=true'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  issues: write # safe-auto-commit: single refusal comment on the tracking issue
+
+concurrency:
+  group: peer-complementary-enrich
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  NODE_VERSION: '22'
+  AI_PLAN_MODE: 'forfait'
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  AI_ALLOW_PAID: 'false'
+  AI_ENSEMBLE: 'false'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
+  FORUM_AUTO_POST: '0'
+  SHADOW_FORUM: '1'
+  DISCOURSE_WRITE: '0'
+  LOCAL_SMART_LEARN: 'true'
+  LOCAL_ENERGY_LEARN: 'true'
+
+jobs:
+  peer-enrich:
+    name: Peer compose + Johan mega + prune
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    # Kill switch: repo variable PEER_COMPOSE_ENRICH_DISABLED=true
+    if: ${{ vars.PEER_COMPOSE_ENRICH_DISABLED != 'true' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: npm ci
+        run: |
+          if [ -f package-lock.json ]; then npm ci --ignore-scripts; else npm install --ignore-scripts; fi
+
+      - name: Peer complementary cron (P2832)
+        id: peer_cron
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # schedule → always apply; dispatch → honor checkbox (default true)
+          PEER_COMPOSE_APPLY: ${{ github.event_name == 'workflow_dispatch' && inputs.apply == false && '0' || '1' }}
+          PEER_COMPOSE_SKIP_MEGA: ${{ github.event_name == 'workflow_dispatch' && inputs.skip_mega == true && '1' || '0' }}
+        run: |
+          set -euo pipefail
+          ARGS=()
+          if [ "${PEER_COMPOSE_APPLY}" = "1" ]; then ARGS+=(--apply); fi
+          if [ "${PEER_COMPOSE_SKIP_MEGA}" = "1" ]; then ARGS+=(--skip-mega); fi
+          node tools/ci/p2832-peer-complementary-cron.js "${ARGS[@]+"${ARGS[@]}"}"
+          DATE=$(date -u +%F)
+          echo "## P2832 Peer complementary" >> "$GITHUB_STEP_SUMMARY"
+          head -n 40 "reports/peer-complementary-cron-$DATE/REPORT.md" >> "$GITHUB_STEP_SUMMARY" 2>/dev/null || true
+
+      - name: Contre quoi gates (P283x)
+        continue-on-error: true
+        run: |
+          npm run check:p2830 || echo "P2830_SOFT_WARN"
+          npm run check:p2832 || echo "P2832_SOFT_WARN"
+          node tools/ci/p2138-sacred-couple-matrix-gate.js || echo "P2138_SOFT_WARN"
+
+      - name: Upload reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: peer-complementary-enrich
+          path: |
+            reports/peer-complementary-cron-*/
+            reports/peer-compose-*/
+            reports/johan-mega-*/
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Commit complementary FP changes (gated)
+        if: always() && steps.peer_cron.outcome == 'success' && inputs.skip_commit != true && (github.event_name == 'schedule' || inputs.apply != false)
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin master || true
+          node scripts/ci/safe-auto-commit.js --id=peer-complementary-enrich \
+            --message="enrich(peers): complementary Johan/Lidl FP rewrite (P2832 cron)" \
+            --paths="drivers reports" \
+            --max-per-day=1

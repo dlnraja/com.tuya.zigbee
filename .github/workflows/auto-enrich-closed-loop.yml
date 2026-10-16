@@ -442,6 +442,26 @@ jobs:
           npm run probe:homey-peers || echo "peer-probe soft-skip"
           npm run check:p2658 || echo "p2658 soft-warn"
 
+      # WHY(P2832): dry complementary peer rewrite report between dedicated Mon/Thu apply cron
+      - name: "🧩 Peer complementary dry (P2832 Johan/Lidl — soft, no apply)"
+        if: always() && vars.PEER_COMPOSE_ENRICH_DISABLED != 'true'
+        continue-on-error: true
+        timeout-minutes: 15
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FORUM_AUTO_POST: '0'
+          SHADOW_FORUM: '1'
+          AI_FORCE_LOCAL: 'true'
+          AI_ALLOW_PAID: 'false'
+        run: |
+          if [ ! -f tools/ci/p2832-peer-complementary-cron.js ]; then
+            echo "p2832 orchestrator missing — skip"
+            exit 0
+          fi
+          node tools/ci/p2832-peer-complementary-cron.js --skip-prune || echo "P2832_DRY_SOFT_WARN"
+          npm run check:p2832 || echo "P2832_GATE_WARN"
+
       - name: "🧠 L99 Inbox Intelligence (P2352 — SHADOW soft)"
         if: always()
         continue-on-error: true

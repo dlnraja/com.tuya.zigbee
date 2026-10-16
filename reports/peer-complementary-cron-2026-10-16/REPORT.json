@@ -1,0 +1,28 @@
+{
+  "id": "P2832",
+  "mode": "dry-run",
+  "generatedAt": "2026-10-16T09:34:07.301Z",
+  "dualApp": "BOTH",
+  "policy": {
+    "complementaryOnly": true,
+    "neverInventPid": true,
+    "forumPost": false,
+    "paidAi": false,
+    "skipP2570Cartesian": true,
+    "freeSourcesOnly": true
+  },
+  "steps": [
+    {
+      "label": "P2830 peer compose",
+      "status": 0,
+      "soft": true,
+      "tail": "[P2830] Peer compose complementary — DRY\n[P2830] harvest JohanBendz/com.tuya.zigbee…\n[P2830] johan-tuya-zigbee branch=SDK3 appDrivers=113 mapped=70\n[P2830] harvest JohanBendz/com.lidl…\n[P2830] lidl-smart-home branch=SDK3 appDrivers=21 mapped=14\n[P2830] changed=46 appliedRows=84 unmapped=0\n[P2830] re-run with --apply to write"
+    },
+    {
+      "label": "check:p2830",
+      "status": 0,
+      "soft": true,
+      "tail": "ℹ tests 6\nℹ suites 1\nℹ pass 6\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 384.1195"
+    }
+  ]
+}
