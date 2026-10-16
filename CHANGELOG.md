@@ -9,7 +9,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.1488] - 2026-10-16
+## [9.0.1493] - 2026-10-16
+
+Clear TZE284 nkjintbl from app.json switch_2gang so publish gates pass (Athom processing path).
+---
+
+ [9.0.1488] - 2026-10-16
 
 Completed P283x unit tests and hard CI family gates (peer rewrite + hang tip anti-spam).
 ---

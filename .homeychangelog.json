@@ -907,6 +907,21 @@
       ]
     }
   ],
+  "9.0.1493": {
+    "en": "Clear TZE284 nkjintbl from app.json switch_2gang so publish gates pass (Athom processing path)."
+  },
+  "9.0.1492": {
+    "en": "Unblock Auto-Publish: strip ambiguous TZE284 nkjintbl from switch_2gang (anti-bot / Athom processing path)."
+  },
+  "9.0.1491": {
+    "en": "Automated peer complementary enrich cron (Johan/Lidl FP union) — free GHA, no forum post."
+  },
+  "9.0.1490": {
+    "en": "Complementary fingerprint enrich from peer Zigbee apps (Johan/Lidl) — union only, no device wipe."
+  },
+  "9.0.1489": {
+    "en": "v9.0.1489: automated publish, manifest sync, and Homey test promotion."
+  },
   "9.0.1488": {
     "en": "Completed P283x unit tests and hard CI family gates (peer rewrite + hang tip anti-spam)."
   },
@@ -949,40 +964,7 @@
   "9.0.1474": {
     "en": "Improved LCD climate sensor temperature and humidity on single-endpoint Tuya MCU variants."
   },
-  "9.0.1473": {
-    "en": "CI heal: align mfs_db USB outlet registry + LCD/gnpflcoq forum locks."
-  },
-  "9.0.1472": {
-    "en": "Forum: gnpflcoq 4in1 climate caps, USB registry audit heal, flow Contre quoi locks."
-  },
-  "9.0.1471": {
-    "en": "Forum: LCD 9ern5sfh pairing (Kizabgd), TRV time-sync TX harden, sacred-keep LCD couple."
-  },
-  "9.0.1470": {
-    "en": "TRV me167 DP4 fix + drop misattributed plug_smart OTA (P2822)."
-  },
-  "9.0.1469": {
-    "en": "TRV me167 DP4 no longer steals battery; settings spinner dual fallback (P2822)."
-  },
-  "9.0.1489": {
-    "en": "v9.0.1489: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.1468": {
-    "en": "Forum fleet silent treat: sacred-keep pins + forbid cartesian invent couples (P2821)."
-  },
-  "9.0.1467": {
-    "en": "Z2M/ZHA/quirks couple recheck: wrong-class moves + missing FP (P2820)."
-  },
-  "9.0.1490": {
-    "en": "Complementary fingerprint enrich from peer Zigbee apps (Johan/Lidl) — union only, no device wipe."
-  },
-  "9.0.1491": {
-    "en": "Automated peer complementary enrich cron (Johan/Lidl FP union) — free GHA, no forum post."
-  },
-  "9.0.1492": {
-    "en": "Unblock Auto-Publish: strip ambiguous TZE284 nkjintbl from switch_2gang (anti-bot / Athom processing path)."
-  },
-  "9.0.1493": {
-    "en": "Clear TZE284 nkjintbl from app.json switch_2gang so publish gates pass (Athom processing path)."
+  "9.0.1494": {
+    "en": "v9.0.1494: automated publish, manifest sync, and Homey test promotion."
   }
 }
