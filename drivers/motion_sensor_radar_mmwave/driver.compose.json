@@ -10,7 +10,10 @@
     "alarm_motion",
     "measure_luminance.distance",
     "measure_luminance",
-    "button.1"
+    "button.1",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery"
   ],
   "subDevices": [],
   "zigbee": {
@@ -576,5 +579,11 @@
       "getable": true,
       "preventInsights": false
     }
+  },
+  "energy": {
+    "batteries": [
+      "CR2450",
+      "AAA"
+    ]
   }
 }
