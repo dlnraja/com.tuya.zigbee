@@ -9193,6 +9193,82 @@
         "scene_switch_4"
       ],
       "notes": "P2821 T89271#652 cartesian — Z2M Lidl RGB bulb TS0505B only, never remote."
+    },
+    {
+      "id": "p2827-t26439-tzvbimpq-ts0042-button2",
+      "mfr": [
+        "_TZ3000_tzvbimpq",
+        "_tz3000_tzvbimpq",
+        "_TZ3000_TZVBIMPQ",
+        "_tz3000_TZVBIMPQ"
+      ],
+      "productId": [
+        "TS0042",
+        "ts0042"
+      ],
+      "canonicalDriver": "button_wireless_2",
+      "forbiddenDrivers": [
+        "wall_switch_2gang_1way",
+        "switch_2gang",
+        "scene_switch_4",
+        "smart_knob",
+        "universal_zigbee"
+      ],
+      "forbidMode": "couple",
+      "protocol": "zcl_scene",
+      "notes": "P2827 T26439#5520 FrankP TS0042 wall remote works (Johan 0.3.0). Sacred couple Johan #986/#1456 — 2-btn wireless, phantom EP3/4 possible. Prefer button_wireless_2 hybrid 0xFD."
+    },
+    {
+      "id": "p2827-t26439-nqqylykc-wall-dimmer",
+      "mfr": [
+        "_TZE204_nqqylykc",
+        "_tze204_nqqylykc",
+        "_TZE284_nqqylykc",
+        "_tze284_nqqylykc",
+        "_TZE200_nqqylykc",
+        "_tze200_nqqylykc"
+      ],
+      "productId": [
+        "TS0601",
+        "ts0601"
+      ],
+      "canonicalDriver": "wall_dimmer_tuya",
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "soil_sensor",
+        "zigbee_universal",
+        "generic_tuya",
+        "ir_blaster"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "P2827 T26439#5516 Axel + JohanBendz#1108 Avatto 1-gang dimmer. Brightness MCU 0–1000 via TuyaBrightnessScale."
+    },
+    {
+      "id": "p2827-t26439-crq3r3la-presence-radar",
+      "mfr": [
+        "_TZE200_crq3r3la",
+        "_tze200_crq3r3la",
+        "_TZE204_crq3r3la",
+        "_tze204_crq3r3la",
+        "_TZE284_crq3r3la",
+        "_tze284_crq3r3la"
+      ],
+      "productId": [
+        "TS0601",
+        "ts0601",
+        "CK-BL702-MWS-01",
+        "CK-BL702-MWS-01(7016)"
+      ],
+      "canonicalDriver": "presence_sensor_radar",
+      "forbiddenDrivers": [
+        "curtain_motor",
+        "universal_zigbee",
+        "generic_tuya"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "P2827 T26439#5534 Dragan — CK-BL702-MWS-01(7016) radar; settings only when paired to presence_sensor_radar (not Homey generic)."
     }
   ],
   "entries": {
