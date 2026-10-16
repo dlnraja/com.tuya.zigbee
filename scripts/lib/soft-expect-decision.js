@@ -20,7 +20,7 @@ const IN_FLIGHT_STATES = new Set([
 const FAILED_STATES = new Set(['processing_failed', 'error', 'failed', 'revoked']);
 
 /** Athom processor / network flakes — not fixed by patch bumps. */
-const TRANSIENT_ATHOM_RE = /socket hang up|econnreset|econnaborted|etimedout|timeout after|fetch failed|network|too many requests|\b429\b|502|503|504|temporar/i;
+const TRANSIENT_ATHOM_RE = /socket hang up|econnreset|econnaborted|etimedout|timeout after|fetch failed|network|too many requests|\b429\b|502|503|504|temporar|aggregateerror|invalid_state/i;
 
 function normalizeDetail(value) {
   if (value === null || value === undefined || value === '') return '';
@@ -91,13 +91,50 @@ function tipLagDecision(builds, targetVersion) {
 }
 
 /**
+ * P2831 hang-storm: ≥N newest consecutive Athom-transient processing_failed
+ * while any Test is healthy → skip createBuild (Homey tip-mail spam).
+ *
+ * @param {Array<object>} builds newest-first preferred
+ * @param {{hangThreshold?:number}} [opts]
+ * @returns {{storm:boolean, hangCount:number, healthy?:object}}
+ */
+function hangStormDecision(builds, opts = {}) {
+  const list = builds || [];
+  const healthy = findHealthyTest(list);
+  if (!healthy) return { storm: false, hangCount: 0 };
+  const threshold = Number.isFinite(opts.hangThreshold) ? opts.hangThreshold : 2;
+  let hangCount = 0;
+  for (const b of list) {
+    const state = String(b?.state || '');
+    if (state === 'test' || b?.channel === 'test') break;
+    if (FAILED_STATES.has(state) && isTransientAthomFailure(b)) {
+      hangCount += 1;
+      continue;
+    }
+    if (IN_FLIGHT_STATES.has(state)) continue;
+    break;
+  }
+  return { storm: hangCount >= threshold, hangCount, healthy };
+}
+
+/**
  * @param {Array<{id?:string|number,version?:string,state?:string,channel?:string}>} builds
  * @param {string} version
- * @param {{force?:boolean, excludeBuildId?:string|number|null}} [opts]
+ * @param {{force?:boolean, excludeBuildId?:string|number|null, hangThreshold?:number}} [opts]
  * @returns {{skip:boolean, reason?:string, build?:object, failed?:object[], failedCount?:number}}
  */
 function softExpectDecision(builds, version, opts = {}) {
   if (opts.force) return { skip: false };
+  // WHY(P2831): #3581–#3584 tip flood — refuse new uploads during hang storm if Test healthy.
+  const storm = hangStormDecision(builds, opts);
+  if (storm.storm) {
+    return {
+      skip: true,
+      reason: 'hang-storm-healthy-test',
+      tip: storm.healthy,
+      hangCount: storm.hangCount,
+    };
+  }
   const lag = tipLagDecision(builds, version);
   if (lag.tipLag) {
     return { skip: true, reason: 'tip-lag-expected-pf', tip: lag.tip, failed: lag.failed };
@@ -158,6 +195,7 @@ module.exports = {
   softExpectDecision,
   tipLagDecision,
   softAlertDecision,
+  hangStormDecision,
   isTransientAthomFailure,
   buildFailureDetail,
   findHealthyTest,

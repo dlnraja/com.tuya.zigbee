@@ -134,7 +134,11 @@
       "#225",
       "#77",
       "#78",
-      "#80"
+      "#80",
+      "#3581",
+      "#3582",
+      "#3583",
+      "#3584"
     ],
     "tipEmailBody": "Your build has failed processing … socket hang up",
     "healthyTip2026_09_14": "#3186 v9.0.926 test",
@@ -294,6 +298,16 @@
     "why": "Lock publish CI/CD + prepare-publish to couple-native discoveries",
     "gate": "npm run check:p2495",
     "aggregator": "npm run check:publish",
+    "classify": "BOTH"
+  },
+  "p2831": {
+    "why": "Homey tip #3581–#3584 socket hang flood — hang-storm soft-expect + refuse transient retry when Test healthy",
+    "hangStormSkip": true,
+    "helper": "scripts/lib/soft-expect-decision.js → hangStormDecision",
+    "retryGate": ".github/scripts/transient-publish-retry.js → P2831 healthy Test refuse",
+    "gmail": "filter skip Inbox for noreply@homey.app + socket hang up / AggregateError",
+    "test": "test/critical/p2831-socket-hang-tip-mail-storm.test.js",
+    "npm": "check:p2831",
     "classify": "BOTH"
   }
 }
