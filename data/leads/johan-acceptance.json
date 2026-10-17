@@ -1,15 +1,15 @@
 {
-  "generated": "2026-10-16T08:29:53.333Z",
+  "generated": "2026-10-17T08:01:55.463Z",
   "source": "data/leads/johan-canonical-index.json",
   "repo": "JohanBendz/com.tuya.zigbee",
   "note": "Acceptance view, structured fields only. missing-couple = identity cited upstream with no home driver here (verify real hardware before adding, W4). behaviour = needs physical test, not a pairing gap.",
   "summary": {
     "threads": 562,
-    "covered": 437,
+    "covered": 441,
     "behaviour": 93,
-    "missing-couple": 12,
-    "dual-couple": 20,
-    "missingCouples": 9
+    "missing-couple": 9,
+    "dual-couple": 19,
+    "missingCouples": 6
   },
   "missingCouples": [
     "_TYZB01_0aps0h1r|TS0212",
@@ -17,9 +17,6 @@
     "_TZ3000_5ftkaulg|TS0011",
     "_TZ3000_amal63is|TS0002",
     "_TZ3000_ee8nrt2l|TS0044",
-    "_TZ3000_fxvjhdyl|TS0207",
-    "_TZ3000_kstbkt6a|TS0207",
-    "_TZ3210_fhx7lk3d|TS0001",
     "_TZB210_rkgngb5o|EP1"
   ],
   "rows": [
@@ -2682,10 +2679,12 @@
         {
           "mfr": "_TZ3000_kstbkt6a",
           "pid": "TS0207",
-          "drivers": []
+          "drivers": [
+            "water_leak_sensor"
+          ]
         }
       ],
-      "acceptance": "missing-couple"
+      "acceptance": "covered"
     },
     {
       "n": 619,
@@ -2870,12 +2869,11 @@
           "mfr": "_TZ3000_nss8amz9",
           "pid": "TS0202",
           "drivers": [
-            "pir_sensor_2",
             "sensor_motion_presence"
           ]
         }
       ],
-      "acceptance": "dual-couple"
+      "acceptance": "covered"
     },
     {
       "n": 647,
@@ -2907,12 +2905,11 @@
           "mfr": "_TZ3000_nss8amz9",
           "pid": "TS0202",
           "drivers": [
-            "pir_sensor_2",
             "sensor_motion_presence"
           ]
         }
       ],
-      "acceptance": "dual-couple"
+      "acceptance": "covered"
     },
     {
       "n": 649,
@@ -6583,10 +6580,12 @@
         {
           "mfr": "_TZ3210_fhx7lk3d",
           "pid": "TS0001",
-          "drivers": []
+          "drivers": [
+            "switch_zbeacon_ts0001"
+          ]
         }
       ],
-      "acceptance": "missing-couple"
+      "acceptance": "covered"
     },
     {
       "n": 1137,
@@ -13062,7 +13061,9 @@
         {
           "mfr": "_TZ3000_kstbkt6a",
           "pid": "TS0207",
-          "drivers": []
+          "drivers": [
+            "water_leak_sensor"
+          ]
         },
         {
           "mfr": "_TZ3000_9eeavbk5",
@@ -13173,7 +13174,9 @@
         {
           "mfr": "_TZ3000_fxvjhdyl",
           "pid": "TS0207",
-          "drivers": []
+          "drivers": [
+            "water_leak_sensor"
+          ]
         },
         {
           "mfr": "_TZ3000_ltiqubue",
@@ -13193,7 +13196,6 @@
           "mfr": "_TZ3000_nss8amz9",
           "pid": "TS0202",
           "drivers": [
-            "pir_sensor_2",
             "sensor_motion_presence"
           ]
         },
@@ -13213,7 +13215,7 @@
           ]
         }
       ],
-      "acceptance": "missing-couple"
+      "acceptance": "dual-couple"
     },
     {
       "n": 1485,
