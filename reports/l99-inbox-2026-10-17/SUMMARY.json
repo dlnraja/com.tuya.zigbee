@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T14:28:39.348Z",
+  "generatedAt": "2026-10-17T21:47:47.592Z",
   "date": "2026-10-17",
   "mode": "full",
   "phases": [
@@ -12,35 +12,35 @@
     {
       "name": "github",
       "ok": true,
-      "durationMs": 307
+      "durationMs": 704
     },
     {
       "name": "gmail",
       "ok": true,
-      "durationMs": 180,
+      "durationMs": 163,
       "details": {
         "crash": {
           "ok": true,
           "skipped": false,
           "status": 0,
-          "durationMs": 34,
+          "durationMs": 32,
           "stderr": "",
-          "stdoutTail": "[gmail-crash-pattern-gate] sources=32 hits=0 unknown=0\n  wrote .github/state/gmail-crash-patterns.json\n  verdict: ok\n"
+          "stdoutTail": "[gmail-crash-pattern-gate] sources=32 hits=3 unknown=0\n  heap_oom_live_data: 3 source-hit(s)\n  wrote .github/state/gmail-crash-patterns.json\n  verdict: ok\n"
         },
         "treat": {
           "ok": true,
           "skipped": false,
           "status": 0,
-          "durationMs": 145,
+          "durationMs": 131,
           "stderr": "",
-          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-10-17\n{\n  \"generatedAt\": \"2026-10-17T14:28:39.827Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 37,\n  \"derivedFromInterview\": 0,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 4,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 6,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 2,\n    \"processing_failed\": 6,\n    \"scene_0x8004\": 3,\n    \"invalid_flow_card\": 1,\n    \"missing_capability_listener\": 1\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 37 gmailBodies= 30\n"
+          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-10-17\n{\n  \"generatedAt\": \"2026-10-17T21:47:48.449Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 38,\n  \"derivedFromInterview\": 1,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 4,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 6,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 2,\n    \"processing_failed\": 6,\n    \"scene_0x8004\": 3,\n    \"heap_oom\": 2,\n    \"invalid_flow_card\": 1,\n    \"missing_capability_listener\": 1\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 38 gmailBodies= 30\n"
         }
       }
     },
     {
       "name": "forum",
       "ok": true,
-      "durationMs": 31995,
+      "durationMs": 30289,
       "skipScan": false,
       "steps": [
         {
@@ -64,7 +64,7 @@
     {
       "name": "drivers",
       "ok": true,
-      "durationMs": 1552,
+      "durationMs": 1268,
       "mfs": {
         "high": 0,
         "changes": 0,
@@ -75,7 +75,7 @@
     {
       "name": "functionalDeep",
       "ok": true,
-      "durationMs": 2011,
+      "durationMs": 2675,
       "note": "P2529 complementary deep functional (soft)"
     },
     {
@@ -93,11 +93,11 @@
     {
       "name": "gates",
       "ok": true,
-      "durationMs": 2105
+      "durationMs": 1795
     }
   ],
   "github": {
-    "harvestedAt": "2026-10-17T14:28:39.656Z",
+    "harvestedAt": "2026-10-17T21:47:48.296Z",
     "repo": "dlnraja/com.tuya.zigbee",
     "auth": "token",
     "error": null,
@@ -179,7 +179,7 @@
     "posts": 247
   },
   "gmail": {
-    "generatedAt": "2026-10-17T14:28:39.684Z",
+    "generatedAt": "2026-10-17T21:47:48.322Z",
     "sourcesScanned": 32,
     "patternCounts": {
       "flow_getDeviceActionCard": 0,
@@ -194,7 +194,7 @@
       "dcm_auditCapabilities_missing": 0,
       "capability_ref_undefined": 0,
       "clusterutils_destroyed_unbound": 0,
-      "heap_oom_live_data": 0,
+      "heap_oom_live_data": 3,
       "setName_not_fn": 0,
       "sub_capability_value_not_string": 0,
       "ERR_IAS_SLEEPY_TIMEOUT": 0,
@@ -205,7 +205,58 @@
       "ERR_AUDIT_CAPABILITIES": 0,
       "ERR_ZIGBEE_ROUTE_FULL": 0
     },
-    "hits": [],
+    "hits": [
+      {
+        "pattern": "heap_oom_live_data",
+        "severity": "fatal",
+        "status": "fixed_p148",
+        "fix": "LiveDataUpdater: cap overlay (1500), store ≤180KB, manifest version check before segments, heap skip (P148)",
+        "source": ".github/state/diagnostics-report.json",
+        "sacred": {
+          "mfrs": [
+            "_TZE200_htnnfasr",
+            "_TZE200_rxq4iti9",
+            "_TZ3000_bjawzodf"
+          ],
+          "pids": [
+            "TS0042",
+            "TS0601",
+            "TS0014",
+            "TS0044"
+          ]
+        }
+      },
+      {
+        "pattern": "heap_oom_live_data",
+        "severity": "fatal",
+        "status": "fixed_p148",
+        "fix": "LiveDataUpdater: cap overlay (1500), store ≤180KB, manifest version check before segments, heap skip (P148)",
+        "source": ".github/state/diagnostics-crossref.yml",
+        "sacred": {
+          "mfrs": [
+            "_TZE200_htnnfasr",
+            "_TZE200_rxq4iti9",
+            "_TZ3000_bjawzodf"
+          ],
+          "pids": [
+            "TS0042",
+            "TS0601",
+            "TS0014"
+          ]
+        }
+      },
+      {
+        "pattern": "heap_oom_live_data",
+        "severity": "fatal",
+        "status": "fixed_p148",
+        "fix": "LiveDataUpdater: cap overlay (1500), store ≤180KB, manifest version check before segments, heap skip (P148)",
+        "source": ".github/state/diagnostics-report.json#diag",
+        "sacred": {
+          "mfrs": [],
+          "pids": []
+        }
+      }
+    ],
     "unknownFatals": [],
     "knownFixed": [
       "flow_getDeviceActionCard",
@@ -310,6 +361,6 @@
   ],
   "functionalDeep": {
     "ok": true,
-    "durationMs": 2010
+    "durationMs": 2675
   }
 }
