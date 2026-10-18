@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-18T22:26:07.138Z",
+ "generated": "2026-10-18T22:49:44.597Z",
  "drivers": 393,
  "snapshot": {
   "air_purifier": {
@@ -105,9 +105,9 @@
    "pidSha": "83a30f54ee64db1d"
   },
   "boiler_switch_energy": {
-   "mfr": 0,
+   "mfr": 1,
    "pid": 1,
-   "mfrSha": "e3b0c44298fc1c14",
+   "mfrSha": "915ad15f8f3b5e3d",
    "pidSha": "455c46e8c8549693"
   },
   "bulb_dimmable": {
@@ -639,9 +639,9 @@
    "pidSha": "4ec845a853bc6530"
   },
   "dimmer_2_gang": {
-   "mfr": 4,
+   "mfr": 5,
    "pid": 34,
-   "mfrSha": "d94b034af52ee2fd",
+   "mfrSha": "a3b2a0be45b62d9f",
    "pidSha": "2daaf0364f1df565"
   },
   "dimmer_2_gang_tuya": {
@@ -2272,15 +2272,15 @@
   },
   "wall_switch_3gang_1way": {
    "mfr": 18,
-   "pid": 4,
+   "pid": 3,
    "mfrSha": "42d6e09c92612fc7",
-   "pidSha": "bf63038c25078816"
+   "pidSha": "e1a2162d2bdafe4b"
   },
   "wall_switch_4_gang": {
    "mfr": 1,
-   "pid": 3,
+   "pid": 2,
    "mfrSha": "25b329130f7e2032",
-   "pidSha": "634a9eddd8295ae8"
+   "pidSha": "584064452315f597"
   },
   "wall_switch_4_gang_tuya": {
    "mfr": 8,
@@ -2313,15 +2313,15 @@
    "pidSha": "a56800d53024720a"
   },
   "water_detector": {
-   "mfr": 2,
+   "mfr": 1,
    "pid": 24,
-   "mfrSha": "bff1ad0c006d8f8a",
+   "mfrSha": "46710a383736d8a7",
    "pidSha": "603f7f4ece933ab6"
   },
   "water_leak_sensor": {
-   "mfr": 36,
+   "mfr": 37,
    "pid": 21,
-   "mfrSha": "fab5d3979c593bc4",
+   "mfrSha": "f6cddb121e8bf80b",
    "pidSha": "ddd617471a56ff24"
   },
   "water_leak_sensor_tuya": {

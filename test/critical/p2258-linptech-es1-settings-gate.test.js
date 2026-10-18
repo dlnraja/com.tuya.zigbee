@@ -58,8 +58,18 @@ describe('P2258 Linptech ES1ZZ settings gate', function () {
     const src = read('drivers/motion_sensor_radar_mmwave/device.js');
     assert.ok(src.includes('LinptechES1Profile'), 'must use Linptech profile');
     assert.ok(src.includes('_linptechOnSettings'), 'must have Linptech settings path');
-    assert.ok(!/sendTuyaCommand\s*\(\s*9\s*,/.test(src), 'must not write sensitivity to DP9');
-    assert.ok(!/case\s+'radar_sensitivity'[\s\S]*sendTuyaCommand\s*\(\s*9/.test(src));
+    // WHY(P2818, ZHA#5286): DP9 is the PIR-sensitivity enum ONLY for `_TZE284_gnpflcoq` 4in1, written by
+    // sendGnpflcoqSetting() and reachable only behind _isGnpflcoq4in1(). Everything else (Linptech/Moes
+    // 0xE002 families) must still never write sensitivity to DP9.
+    const fnStart = src.indexOf('async sendGnpflcoqSetting(');
+    assert.ok(fnStart > 0, 'gnpflcoq-only DP9 writer must exist');
+    const fnEnd = src.indexOf('\n  }\n', fnStart);
+    const withoutGnpflcoq = src.slice(0, fnStart) + src.slice(fnEnd);
+    assert.ok(!/sendTuyaCommand\s*\(\s*9\s*,/.test(withoutGnpflcoq), 'must not write sensitivity to DP9');
+    assert.ok(!/case\s+'radar_sensitivity'[\s\S]*sendTuyaCommand\s*\(\s*9/.test(withoutGnpflcoq));
+    const callers = src.split('\n').filter((l) => l.includes('sendGnpflcoqSetting(') && !l.includes('async sendGnpflcoqSetting('));
+    assert.ok(callers.length >= 1, 'gnpflcoq writer is called');
+    assert.ok(/if \(this\._isGnpflcoq4in1\(\)\)/.test(src.slice(src.indexOf('_linptechOnSettings({') - 0)), 'DP9 path guarded by _isGnpflcoq4in1');
   });
 
   it('compose exposes Linptech 0–5 sensitivity settings + cluster 57346 (0xE002)', () => {
@@ -72,9 +82,15 @@ describe('P2258 Linptech ES1ZZ settings gate', function () {
     assert.ok(settingIds.includes('motion_detection_distance'));
     const clusters = compose.zigbee.endpoints['1'].clusters.map(Number);
     // P2262: Homesuite/Z2M interview — primary cluster 57346 only (no E001 required on compose)
-    assert.ok(clusters.includes(57346) || clusters.includes(0xE002), 'needs Linptech primary cluster 0xE002');
+    // WHY(P2817): compose clusters were made lean ([0], binding 61184) so gnpflcoq pairs as itself instead of
+    // « Appareil Zigbee ». Linptech 0xE002 is then NOT declared in compose and must be reached at runtime:
+    // the device writes through CLUSTER_WRITE_CHAIN (0xE002 then 0xE001 fallback) from the profile.
     const bindings = (compose.zigbee.endpoints['1'].bindings || []).map(Number);
-    assert.ok(bindings.includes(57346) || bindings.includes(0xE002), 'needs 0xE002 binding');
+    const declared = clusters.includes(57346) || clusters.includes(0xE002);
+    const devSrc = read('drivers/motion_sensor_radar_mmwave/device.js');
+    const runtimeChain = devSrc.includes('CLUSTER_WRITE_CHAIN') && devSrc.includes('fallbackClusters');
+    assert.ok(declared || runtimeChain, 'needs Linptech primary cluster 0xE002 (declared in compose or reached via CLUSTER_WRITE_CHAIN)');
+    assert.ok(bindings.includes(57346) || bindings.includes(0xE002) || runtimeChain, 'needs 0xE002 binding or runtime chain');
   });
 
   it('registry couple p2258-linptech-es1zz-ts0225 exists', () => {
