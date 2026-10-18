@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-18T08:19:40.126Z",
+ "updated": "2026-10-18T21:10:39.660Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -5939,6 +5939,12 @@
     "plug_smart"
    ],
    "kind": "brand"
+  },
+  "couple:_tz3000_bjawzodf|ty0201": {
+   "status": "done",
+   "date": "2026-10-18",
+   "note": "owner lcdtemphumidsensor; class heal from device_plug_smart/button_wireless_plug; wildcard pids on device_plug_smart left for owner (Wilhelm Dall)",
+   "by": "exec-A"
   },
   "dlnraja-issue:1": {
    "status": "pending",
@@ -12939,6 +12945,12 @@
    "date": "2026-10-11",
    "note": "couples-present",
    "by": "advance-sweep"
+  },
+  "issue:560": {
+   "status": "done",
+   "date": "2026-10-18",
+   "note": "TRV06 rxq4iti9: DP35 bit0->alarm_battery lazy, humidity strip exact mfr, dp loader fallback; battery % none; DP102 unconfirmed (artisare)",
+   "by": "exec-A"
   },
   "johan-issue:1": {
    "status": "done",
