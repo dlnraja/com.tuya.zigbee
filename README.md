@@ -35,14 +35,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 |--------|-------|
 | **App Version** | v9.0.1515 |
 | **App Version** | v9.0.1516 |
+| **App Version** | v9.0.1517 |
 | **Drivers** | 449 (396 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,840 |
-| **Pairing Variants** | 19,003 (4 case combos per fingerprint) |
+| **Pairing Variants** | 19,009 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 909 |
 | **Flow Cards** | 6,105 |
 | **Unique Capabilities** | 176 |
 | **Native OTA Drivers** | 9 |
-| **Test Suites** | 670 files |
+| **Test Suites** | 671 files |
 | **SVG Icons** | 752 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -106,6 +107,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 |---------|---------|
 | **v9.0.1515** | v9.0.1514: |
 | **v9.0.1516** | v9.0.1514: |
+| **v9.0.1517** | v9.0.1515: |
+| **v9.0.1515** | v9.0.1515: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1514** | v9.0.1514: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1513** | v9.0.1513: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1512** | v9.0.1512: automated publish, manifest sync, and Homey test promotion. |
@@ -116,7 +119,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1507** | Restore smoke_sensor3 vzekyi4c+TS0205 after compose→app mirror; free heal purges .homeybuild/backups. |
 | **v9.0.1506** | CI unblock: purge validate backups in size heal; mirror compose→app.json fingerprints (P2842c/d). |
 | **v9.0.1505** | CI unblock: size gate soft-skip before build; switch_1gang density floor aligned after couple moves. |
-| **v9.0.1504** | Free CI automation: flow hollow + publish payload self-heal cron (P2842), no paid AI. |
 
 <!-- CHANGELOG_END -->
 
