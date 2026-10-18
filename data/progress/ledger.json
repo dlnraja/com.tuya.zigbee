@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-18T21:10:39.660Z",
+ "updated": "2026-10-18T21:35:26.043Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -12945,6 +12945,18 @@
    "date": "2026-10-11",
    "note": "couples-present",
    "by": "advance-sweep"
+  },
+  "forum:sweep-2026-10-18": {
+   "status": "done",
+   "date": "2026-10-18",
+   "note": "docs/knowledge/FORUM_SWEEP_2026-10-18.md: 140352 tip 2263, 26439 tip 5537, 101901/154077/160624/89931/4539 read; no unhandled couples; open: abrsvsou knob decision",
+   "by": "workstream-C"
+  },
+  "forum:t101901-p8-vuwtqx0t-dpmap": {
+   "status": "done",
+   "date": "2026-10-18",
+   "note": "P2864 Zemismart 214C DP map (DP1 meter, DP13 valve, DP22/100 temp, DP26 volt) + valve TX DP13; credit Steve_Wilson 101901#8, Z2M TS0601_water_valve, Zemismart 214c.py",
+   "by": "workstream-C"
   },
   "issue:560": {
    "status": "done",
