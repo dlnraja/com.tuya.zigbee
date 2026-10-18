@@ -907,6 +907,9 @@
       ]
     }
   ],
+  "9.0.1513": {
+    "en": "v9.0.1513: automated publish, manifest sync, and Homey test promotion."
+  },
   "9.0.1512": {
     "en": "v9.0.1512: automated publish, manifest sync, and Homey test promotion."
   },
@@ -961,10 +964,7 @@
   "9.0.1495": {
     "en": "Moes and Zemismart actions merge ZCL, raw, Tuya DP and soft DP detect without degrading zcl-only couples."
   },
-  "9.0.1494": {
-    "en": "Complementary enrich from Johan multi-branch + Lidl (UNION only, no wipe)."
-  },
-  "9.0.1513": {
-    "en": "v9.0.1513: automated publish, manifest sync, and Homey test promotion."
+  "9.0.1514": {
+    "en": "v9.0.1514: automated publish, manifest sync, and Homey test promotion."
   }
 }
