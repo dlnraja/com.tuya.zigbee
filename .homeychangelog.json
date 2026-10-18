@@ -907,6 +907,9 @@
       ]
     }
   ],
+  "9.0.1522": {
+    "en": "v9.0.1522: automated publish, manifest sync, and Homey test promotion."
+  },
   "9.0.1520": {
     "en": "v9.0.1520: automated publish, manifest sync, and Homey test promotion."
   },
@@ -961,10 +964,7 @@
   "9.0.1502": {
     "en": "Publish payload slim: exclude root backups/ (~12 MB) from Homey package to reduce Athom socket hang up risk."
   },
-  "9.0.1501": {
-    "en": "Unblock CI: remove duplicate boiler_switch_energy flow conditions (driver compose vs global .homeycompose)."
-  },
-  "9.0.1522": {
-    "en": "v9.0.1522: automated publish, manifest sync, and Homey test promotion."
+  "9.0.1523": {
+    "en": "v9.0.1523: automated publish, manifest sync, and Homey test promotion."
   }
 }
