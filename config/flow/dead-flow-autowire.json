@@ -406,11 +406,6 @@
       "cap": "dim",
       "when": "change"
     },
-    "motion_sensor_radar_mmwave_no_motion": {
-      "driver": "motion_sensor_radar_mmwave",
-      "cap": "alarm_motion",
-      "when": false
-    },
     "remote_button_wireless_plug_measure_voltage__6eb92": {
       "driver": "remote_button_wireless_plug",
       "cap": "measure_voltage",
@@ -1074,22 +1069,6 @@
       "cap": "measure_humidity",
       "op": "above",
       "arg": "humidity"
-    },
-    "sensor_presence_radar_is_present": {
-      "driver": "sensor_presence_radar",
-      "cap": "alarm_human",
-      "op": true
-    },
-    "sensor_presence_radar_illuminance_above": {
-      "driver": "sensor_presence_radar",
-      "cap": "measure_luminance",
-      "op": "above",
-      "arg": "lux"
-    },
-    "sensor_presence_radar_motion_active": {
-      "driver": "sensor_presence_radar",
-      "cap": "alarm_motion",
-      "op": true
     },
     "smoke_detector_advanced_smoke_active": {
       "driver": "smoke_detector_advanced",
