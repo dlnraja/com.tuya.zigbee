@@ -15,6 +15,10 @@ const IGNORE_FILES = new Set([
 // Requires that may legitimately be missing: optional features loaded inside try/catch.
 const OPTIONAL = new Set([
   'lib/tuya/TuyaZigbeeDevice.js -> ../flow/DeclaredFlowCardAutoWire',
+  // WHY(2026-10-18): P2449 declared-card auto-wire is a master/bastien-only enhancement (needs ActuatorFlowHelper +
+  // ManifestDriverFlowIndex too); stable is a bug-fix-only channel so it is NOT ported. The loader's require sits in try/catch
+  // and only logs. The guard below enforces that every OPTIONAL entry stays inside try { }.
+  'lib/flow/UniversalFlowCardLoader.js -> ./DeclaredFlowCardAutoWire',
 ]);
 
 function stripComments(src) {
@@ -46,6 +50,17 @@ function scan() {
 }
 
 describe('runtime relative requires resolve', () => {
+  it('every OPTIONAL missing require is wrapped in try { } (never a bare crash path)', () => {
+    for (const key of OPTIONAL) {
+      const [file, target] = key.split(' -> ');
+      const src = stripComments(fs.readFileSync(path.join(ROOT, file), 'utf8')).split('\n');
+      const i = src.findIndex((l) => l.includes(`'${target}'`) || l.includes(`"${target}"`));
+      assert.ok(i >= 0, `${key} no longer present: remove it from OPTIONAL`);
+      const ctx = src.slice(Math.max(0, i - 3), i + 1).join('\n');
+      assert.ok(/\btry\s*\{/.test(ctx), `${key} must be inside try { }`);
+    }
+  });
+
   it('no driver/lib module requires a file that does not exist', () => {
     const missing = scan();
     assert.deepStrictEqual(missing, [], `missing modules:\n${missing.join('\n')}`);
