@@ -280,7 +280,7 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
         return Promise.resolve();
       }
       return triggerCard.trigger(this, tokens, {}).catch(err => {
-        this.error(`[WATER-VALVE] Flow '${triggerId}' failed: ${err.message}`);
+        this.error(`[WATER-VALVE] Flow '${triggerId}' failed: ${err.message} ctx=${JSON.stringify(debug)}`);
       });
     } catch (err) {
       this.error(`[WATER-VALVE] _safeTriggerFlow('${triggerId}') exception: ${err.message}`);
