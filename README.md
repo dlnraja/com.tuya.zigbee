@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1512 |
+| **App Version** | v9.0.1513 |
 | **Drivers** | 449 (396 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,840 |
 | **Pairing Variants** | 19,003 (4 case combos per fingerprint) |
@@ -41,11 +41,11 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 6,105 |
 | **Unique Capabilities** | 176 |
 | **Native OTA Drivers** | 9 |
-| **Test Suites** | 665 files |
+| **Test Suites** | 669 files |
 | **SVG Icons** | 752 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
-| **Last Updated** | 2026-10-16 |
+| **Last Updated** | 2026-10-18 |
 
 ### Top 20 Drivers by Fingerprint Count
 
@@ -103,7 +103,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.1512** | v9.0.1511: |
+| **v9.0.1513** | v9.0.1512: |
+| **v9.0.1512** | v9.0.1512: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1511** | Tip after bot collide: P2850 inbox treat + CI soft-expect Athom hang. |
 | **v9.0.1510** | Inbox treat: unblock CI (TS0044 wall_remote strip, Athom soft-expect, soil/TRV locks verified). |
 | **v9.0.1509** | Tip bump after bot 1508 collide; P2842e validate size soft-skip + curtain ycke4deo strip. |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1504** | Free CI automation: flow hollow + publish payload self-heal cron (P2842), no paid AI. |
 | **v9.0.1503** | Sacred couple: Moes Star Feather zo0cfekv+TS0601 on wall 3-gang; CI density + SONOFF bulb cleanup. |
 | **v9.0.1502** | Publish payload slim: exclude root backups/ (~12 MB) from Homey package to reduce Athom socket hang up risk. |
-| **v9.0.1501** | Unblock CI: remove duplicate boiler_switch_energy flow conditions (driver compose vs global .homeycompose). |
 
 <!-- CHANGELOG_END -->
 
