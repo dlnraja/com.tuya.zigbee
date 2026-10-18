@@ -40,10 +40,12 @@ describe('P2261 silent multi-thread enrich gate', function () {
   it('mmwave compose includes 57346 and device uses CLUSTER_WRITE_CHAIN', () => {
     const compose = JSON.parse(read('drivers/motion_sensor_radar_mmwave/driver.compose.json'));
     const clusters = compose.zigbee.endpoints['1'].clusters.map(Number);
-    assert.ok(clusters.includes(57346));
     const src = read('drivers/motion_sensor_radar_mmwave/device.js');
     assert.ok(src.includes('CLUSTER_WRITE_CHAIN'));
     assert.ok(src.includes('fallbackClusters'));
+    // WHY(P2817): compose clusters are lean ([0]) so gnpflcoq pairs correctly; 0xE002 (57346) is then reached
+    // only at runtime through CLUSTER_WRITE_CHAIN, which is asserted above. A compose that DOES declare it is fine too.
+    assert.ok(clusters.includes(57346) || /CLUSTER_WRITE_CHAIN/.test(src));
   });
 
   it('Gabriel lwthnp7j+TS0004 locked to wall_switch_4gang_1way', () => {

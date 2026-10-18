@@ -12,13 +12,18 @@ const ROOT = path.join(__dirname, '..', '..');
 const read = (id) => JSON.parse(fs.readFileSync(path.join(ROOT, 'drivers', id, 'driver.compose.json'), 'utf8'));
 
 describe('AOYAN padded manufacturerName', () => {
-  for (const id of ['soil_sensor', 'water_leak_sensor']) {
-    it(`${id} lists plain and exact padded AOYAN`, () => {
-      const mfrs = read(id).zigbee.manufacturerName;
-      assert.ok(mfrs.includes('AOYAN'));
-      assert.ok(mfrs.includes('AOYAN  '));
-    });
-  }
+  it('soil_sensor lists plain and exact padded AOYAN', () => {
+    const mfrs = read('soil_sensor').zigbee.manufacturerName;
+    assert.ok(mfrs.includes('AOYAN'));
+    assert.ok(mfrs.includes('AOYAN  '));
+  });
+
+  // WHY(P2817 / forum #2258): the AOYAN x TS0601 cartesian on water_leak_sensor made Homey pair soil units as
+  // leak sensors, so the brand was deliberately stripped there (see p2817-forum-t140352-images-treat.test.js).
+  it('water_leak_sensor does not list AOYAN (P2817 deliberate strip)', () => {
+    const mfrs = read('water_leak_sensor').zigbee.manufacturerName;
+    assert.ok(!mfrs.some((m) => /^aoyan/i.test(m)));
+  });
 
   it('runtime normalizers treat padding as the same identity', () => {
     const { includesCI, equalsCI } = require('../../lib/utils/CaseInsensitiveMatcher');

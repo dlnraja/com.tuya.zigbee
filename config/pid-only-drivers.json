@@ -6,10 +6,6 @@
       "reason": "catchall for unmatched curtain devices (pid TS0601), by design (compose metadata.driver.catchall)"
     },
     {
-      "id": "boiler_switch_energy",
-      "reason": "pid-only; its couples live on exact-pair drivers (W4)"
-    },
-    {
       "id": "device_plug_energy_monitor",
       "reason": "catchall + documented 2026-08-21 empty manufacturerName"
     },
