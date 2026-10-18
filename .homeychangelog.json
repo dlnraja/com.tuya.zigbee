@@ -907,6 +907,9 @@
       ]
     }
   ],
+  "9.0.1512": {
+    "en": "v9.0.1512: automated publish, manifest sync, and Homey test promotion."
+  },
   "9.0.1511": {
     "en": "Tip after bot collide: P2850 inbox treat + CI soft-expect Athom hang."
   },
@@ -961,10 +964,7 @@
   "9.0.1494": {
     "en": "Complementary enrich from Johan multi-branch + Lidl (UNION only, no wipe)."
   },
-  "9.0.1493": {
-    "en": "Clear TZE284 nkjintbl from app.json switch_2gang so publish gates pass (Athom processing path)."
-  },
-  "9.0.1512": {
-    "en": "v9.0.1512: automated publish, manifest sync, and Homey test promotion."
+  "9.0.1513": {
+    "en": "v9.0.1513: automated publish, manifest sync, and Homey test promotion."
   }
 }
