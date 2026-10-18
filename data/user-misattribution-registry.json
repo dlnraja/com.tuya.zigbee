@@ -1420,12 +1420,12 @@
       "productId": [
         "TS011F"
       ],
-      "canonicalDriver": "switch_usb_dongle",
+      "canonicalDriver": "usb_outlet_advanced",
       "forbiddenDrivers": [
         "climate_sensor"
       ],
       "protocol": "zcl",
-      "notes": "z2m TS011F_2_gang_2_usb_wall — 2 gang 2 usb wall outlet. No temperature or humidity endpoint; the climate catch-all had claimed it.",
+      "notes": "z2m TS011F_2_gang_2_usb_wall — 2 gang 2 usb wall outlet. No temperature or humidity endpoint; the climate catch-all had claimed it. | P2824 audit: FP lives on usb_outlet_advanced (ported from master)",
       "sources": [
         "z2m-herdsman",
         "P189"

@@ -278,8 +278,12 @@ describe('P92.80 — deleted tooling reimplemented + Z2M gap imports', () => {
     }
   });
   it('aoyan water leak + ZF24 corrupted-prefix presence are covered', () => {
-    const wl = JSON.parse(read('drivers/water_leak_sensor/driver.compose.json'));
-    assert.ok(wl.zigbee.manufacturerName.some((m) => /aoyan/i.test(m)), 'aoyan claimed');
+    // WHY(32e4f4acad P2817 + soil sensors #570/#571): AOYAN (AY-30xZ / CS-201Z / SG502Z) is a soil sensor family; the old
+    // water_leak_sensor claim was an AOYAN x water cartesian and was stripped. Assert the single correct owner (W4).
+    const aoyanOwners = fs.readdirSync('drivers').filter((d) => {
+      try { return JSON.parse(read(`drivers/${d}/driver.compose.json`)).zigbee.manufacturerName.some((m) => /aoyan/i.test(m)); } catch (_) { return false; }
+    });
+    assert.deepStrictEqual(aoyanOwners, ['soil_sensor'], 'aoyan claimed by soil_sensor only');
     const pr = JSON.parse(read('drivers/presence_sensor_radar/driver.compose.json'));
     assert.ok(pr.zigbee.manufacturerName.some((m) => /tze28c1000000/i.test(m)), 'ZF24 claimed');
   });
