@@ -60,8 +60,10 @@ describe('P2820 Z2M/ZHA quirks severe placements', () => {
   });
 
   it('cover motor ycke4deo on curtain_motor not presence', () => {
-    assert.ok(hasMfr('curtain_motor', '_tze204_ycke4deo'));
-    assert.ok(!hasMfr('presence_sensor_radar', '_tze204_ycke4deo'));
+    // WHY(1d790f7e0a, 9.0.1509 "radar mfr bleed on curtain_motor"): later deliberate decision — _TZE204_ycke4deo is owned by
+    // presence_sensor_radar and stripped off curtain_motor. One maker, one driver (W4): assert exactly that single owner.
+    assert.ok(!hasMfr('curtain_motor', '_tze204_ycke4deo'));
+    assert.ok(hasMfr('presence_sensor_radar', '_tze204_ycke4deo'));
   });
 
   it('missing Z2M couples added (presence / SOS / RGB / TRV)', () => {
