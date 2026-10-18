@@ -907,6 +907,9 @@
       ]
     }
   ],
+  "9.0.1518": {
+    "en": "v9.0.1518: automated publish, manifest sync, and Homey test promotion."
+  },
   "9.0.1517": {
     "en": "v9.0.1517: automated publish, manifest sync, and Homey test promotion."
   },
@@ -961,10 +964,7 @@
   "9.0.1499": {
     "en": "RF coexistence: silent enrich from Homey tip — hidden 2.4 GHz SSIDs and Thread/Matter LAN dependency (ChannelAccessFailure vs NoAck)."
   },
-  "9.0.1498": {
-    "en": "Zemismart 214C water valve (_TZE284_vuwtqx0t+TS0601): fixed contact_sensor FP misroute; sacred-keep for Unknown Zigbee tip interview."
-  },
-  "9.0.1518": {
-    "en": "v9.0.1518: automated publish, manifest sync, and Homey test promotion."
+  "9.0.1519": {
+    "en": "v9.0.1519: automated publish, manifest sync, and Homey test promotion."
   }
 }
