@@ -29,14 +29,17 @@ describe('P2813 fl8cuafl ANTIK TRV02 → device_radiator_valve', () => {
     assert.ok(pid.some((p) => /^ts0601$/i.test(p)), 'TS0601 missing');
   });
 
-  it('does not force fl8cuafl into me167Tails (Profile A default until proven)', () => {
+  it('fl8cuafl rides the SOFT me167 map only (P2818 #2261 ANTIK retail TV02-class, supersedes the P2813 "Profile A" default)', () => {
     const src = fs.readFileSync(
       path.join(ROOT, 'drivers', 'device_radiator_valve', 'device.js'),
       'utf8',
     );
     const tails = src.match(/me167Tails\s*=\s*\[([\s\S]*?)\];/);
     assert.ok(tails, 'me167Tails missing');
-    assert.ok(!/fl8cuafl/i.test(tails[1]), 'do not invent me167 for fl8cuafl without Z2M proof');
+    // WHY(P2818, 3fe6c51bca): deliberate later decision, documented at the tail entry: soft ME167 DP4/5 /10 until a user DP sniff
+    // proves otherwise. Guard that it stays an explicitly documented soft entry, not a silent one.
+    assert.ok(/fl8cuafl/i.test(tails[1]), 'fl8cuafl soft ME167 entry (P2818) missing');
+    assert.ok(/WHY\(P2818/.test(src), 'P2818 rationale comment missing');
   });
 
   it('registry pins canonical device_radiator_valve', () => {

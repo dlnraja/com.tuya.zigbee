@@ -116,7 +116,7 @@ describe('automation couple guard', () => {
       const c = path.join(ROOT, 'drivers', rem.driver, 'driver.compose.json');
       if (!fs.existsSync(c)) continue;
       const m = JSON.parse(fs.readFileSync(c, 'utf8')).zigbee.manufacturerName.map((x) => x.toLowerCase());
-      for (const x of rem.mfr) assert.ok(!m.includes(x.toLowerCase()), `${x} must stay off ${rem.driver}`);
+      for (const x of rem.mfr || []) assert.ok(!m.includes(x.toLowerCase()), `${x} must stay off ${rem.driver}`);
     }
   });
 
