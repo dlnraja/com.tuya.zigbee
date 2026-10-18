@@ -84,7 +84,9 @@ describe('P2554 button fleet first-press', () => {
       path.join(ROOT, 'drivers/button_wireless_2/driver.compose.json'), 'utf8'));
     const bw4 = JSON.parse(fs.readFileSync(
       path.join(ROOT, 'drivers/button_wireless_4/driver.compose.json'), 'utf8'));
-    assert.ok(bw2.zigbee.manufacturerName.includes('_TZ3000_dfgbtub0'));
+    // WHY(W4, d09e9531cf): dfgbtub0's only source-backed couple is TS0044 (profiles/couples/_TZ3000_dfgbtub0_TS0044.md),
+    // so it lives on button_wireless_4 alone; bw2 keeps TS0042 but must not co-own the maker (one couple, one driver).
+    assert.ok(!bw2.zigbee.manufacturerName.some((m) => /^_tz3000_dfgbtub0$/i.test(m)));
     assert.ok(bw2.zigbee.productId.includes('TS0042'));
     assert.ok(bw4.zigbee.manufacturerName.includes('_TZ3000_dfgbtub0'));
     assert.ok(bw4.zigbee.productId.includes('TS0044'));
