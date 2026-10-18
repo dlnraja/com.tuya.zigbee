@@ -98,6 +98,14 @@ jobs:
           console.log('✅ Dual-Layer: PASS — Zéro AggregateError');
           GATE
 
+      # WHY(P2842): free hang + hollow automation (no paid AI).
+      # ORDER MATTERS (2026-10-18): `homey app validate` re-composes .homeycompose/flow into the ROOT
+      # app.json (committed 2.36 MB compact -> 4.80 MB, 8.9 MB pretty). Measured after validate the
+      # 4.00 MB root-size check always failed. Run it on the committed manifest, i.e. BEFORE validate
+      # (same order as syntax-check.yml and auto-publish-on-push.yml). Limit unchanged.
+      - name: 🛡️ P2842 flow/publish self-heal check
+        run: node tools/ci/p2842-flow-publish-self-heal.js
+
       - name: Normalize Homey manifest before validation
         run: npm run fix:generated-flow-args
 
@@ -151,10 +159,6 @@ jobs:
 
       - name: 🛡️ Sacred couple registry audit (P151)
         run: node tools/ci/audit-sacred-couple.js --from-registry
-
-      # WHY(P2842): free hang + hollow automation (no paid AI)
-      - name: 🛡️ P2842 flow/publish self-heal check
-        run: node tools/ci/p2842-flow-publish-self-heal.js
 
       - name: 🛡️ Dual-claim compose gate (P167/P168)
         run: node tools/ci/dual-claim-compose-gate.js
