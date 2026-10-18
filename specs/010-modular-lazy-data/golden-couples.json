@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-18T22:49:44.597Z",
+ "generated": "2026-10-18T23:03:08.574Z",
  "drivers": 393,
  "snapshot": {
   "air_purifier": {
@@ -2290,9 +2290,9 @@
   },
   "wall_switch_4gang_1way": {
    "mfr": 6,
-   "pid": 5,
+   "pid": 4,
    "mfrSha": "3387bc7230367ad3",
-   "pidSha": "a831997986d87a46"
+   "pidSha": "76b0910ec663b814"
   },
   "wall_switch_5_gang_tuya": {
    "mfr": 1,
