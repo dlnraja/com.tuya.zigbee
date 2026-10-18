@@ -41,3 +41,4 @@
 {"build":null,"version":"9.0.1425","state":"test","stateMeta":null,"note":"valve fold retry, SAME content as 1424 (AggregateError) -> AggregateError is at least partly flaky","source":"run 38139104561"}
 {"build":3545,"version":"9.0.1426","state":"processing_failed","stateMeta":"AggregateError","note":"FUT089Z fold attempt 1"}
 {"build":null,"version":"9.0.1427","state":"test","stateMeta":null,"note":"FUT089Z fold attempt 2, same content"}
+{"build":3604,"version":"9.0.1523","state":"test","stateMeta":null,"note":"switch_module_whd02 released via workflow_dispatch release_held (run 39177562443), reached Test -> graduated out of publish-hold"}
