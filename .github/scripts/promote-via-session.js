@@ -16,6 +16,11 @@ try {
   if (appJson.id) APP = appJson.id;
   if (appJson.version) APP_VERSION = appJson.version;
 } catch {}
+// WHY(P2850, 2026-10-19): the promote job checks out the commit BEFORE the stable version bump, so app.json
+// is one patch behind the uploaded draft (run 39173097014 promoted draft #337 v5.12.443 instead of #338
+// v5.12.444 and the final gate went red). The workflow already exports the uploaded version: it wins.
+APP_VERSION = String(process.env.HOMEY_EXPECTED_VERSION || process.env.HOMEY_APP_VERSION
+  || process.env.EXPECTED_APP_VERSION || APP_VERSION || '').replace(/^v/i, '') || null;
 
 const BASE = 'https://apps-api.athom.com/api/v1';
 
