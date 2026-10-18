@@ -1,6 +1,8 @@
 ## [Unreleased]
 
 ### Fixed
+- **P2864 Zemismart 214C water valve (forum 101901#8, Steve_Wilson):** `_TZE284_vuwtqx0t`/`_TZE200_vuwtqx0t` now use the Z2M/ZHA DP map (DP1 meter total, DP13 valve + TX, DP14 auto clean, DP22/100 temp, DP26 battery) instead of reading the meter total as on/off.
+- **Memory/size:** detector data files via bounded cache; 230 KB DP table loaded on first use; 6 unread `lib/data` catalogs excluded from the package.
 - **P2814 soil Unknown (#571/#570):** pruned junk productIds on `soil_sensor` (TRV/ZBMINI/Battery switch�) so Athom pairing keeps QT-07S/AOYAN/HOBEIAN couples; Configure ready fallback.
 - **#559:** sacred-keep `_TZ3210_w0qqde0g`+TS011F on `plug_energy_monitor`.
 # Changelog
