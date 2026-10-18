@@ -631,7 +631,10 @@ try {
     const holdFile = path.join(__dirname, '..', 'config', 'publish-hold-drivers.json');
     if (fs.existsSync(holdFile)) {
       const hold = JSON.parse(fs.readFileSync(holdFile, 'utf8'));
-      const ids = new Set((hold.drivers || []).map((d) => d && d.id).filter(Boolean));
+      // P2830c: one-shot release of held ids (workflow_dispatch input release_held → PUBLISH_HOLD_RELEASE).
+      const { effectiveHoldIds } = require('./publish-hold-release');
+      const { ids, released } = effectiveHoldIds(hold, process.env.PUBLISH_HOLD_RELEASE);
+      if (released.length) console.log(`[publish-hold] RELEASED for this run only: ${released.join(', ')}`);
       if (ids.size > 0) {
         const manifest = JSON.parse(fs.readFileSync(destAppJson, 'utf8'));
         const before = (manifest.drivers || []).length;
