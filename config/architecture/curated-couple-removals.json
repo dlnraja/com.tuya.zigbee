@@ -574,6 +574,33 @@
       ],
       "why": "2026-10-11: ZBCMR-02 sole owner curtain_motor (same family as ogyg1y6b)",
       "source": "z2m ZBCMR-02"
+    },
+    {
+      "driver": "button_wireless_2",
+      "mfr": [
+        "_TZ3000_2dlwlvex",
+        "_TZ3000_cdamjqm9",
+        "_TZ3000_qcdqw8nf",
+        "_TZ3000_vvlivusi",
+        "_TZ3000_w05exif3",
+        "_tz3000_2dlwlvex",
+        "_tz3000_cdamjqm9",
+        "_tz3000_qcdqw8nf",
+        "_tz3000_vvlivusi",
+        "_tz3000_w05exif3",
+        "_TZ3000_2DLWLVEX",
+        "_tz3000_2DLWLVEX",
+        "_TZ3000_CDAMJQM9",
+        "_tz3000_CDAMJQM9",
+        "_TZ3000_QCDQW8NF",
+        "_tz3000_QCDQW8NF",
+        "_TZ3000_VVLIVUSI",
+        "_tz3000_VVLIVUSI",
+        "_TZ3000_W05EXIF3",
+        "_tz3000_W05EXIF3"
+      ],
+      "why": "2026-10-19 P2830b: five TS0003 3-gang wall switches (Johan #55/#254 family) were mis-owned by the 2-button remote driver; moved to switch_3gang with exact pid TS0003 (pinned). No external source ever listed them as TS0042 remotes.",
+      "source": "Johan Bendz com.tuya.zigbee issues #55 (_TZ3000_cdamjqm9 / TS0003, 3-way wall switch with neutral, Zemismart ZM-L03E-Z) and #254 (_TZ3000_2dlwlvex / TS0003, 3-rocker wall switch with neutral); same issue family lists qcdqw8nf, vvlivusi, w05exif3 as TS0003 3-gang wall switches in his supported-device README; issue #55 interview: 3 endpoints, each with onOff cluster 6, mains powered; Z2M TS0003 = 3 gang switch (state_left/center/right)"
     }
   ]
 }
