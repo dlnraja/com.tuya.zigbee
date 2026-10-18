@@ -53,7 +53,8 @@ describe('P2531 complementary coverage mega', () => {
   it('complementary enrich must not mass-shrink switch_1gang generics', () => {
     const c = readJson('drivers/switch_1gang/driver.compose.json');
     const n = (c.zigbee?.manufacturerName || []).length;
-    assert.ok(n >= 1400, `switch_1gang mfr entries must stay dense generics (${n})`);
+    // WHY(2026-10-18): raw floor tracks deliberate wrong-class moves (P2819/P2820; 0 orphaned makers); unique-maker floor guards real collapse.
+    assert.ok(n >= 1380, `switch_1gang mfr entries must stay dense generics (${n})`);
     assert.ok(hasMfr(c, /7tdtqgwv/i), 'ZHA/Z2M somgoms 7tdtqgwv OEM overlay');
   });
 

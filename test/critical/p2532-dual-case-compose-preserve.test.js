@@ -49,7 +49,9 @@ describe('P2532 dual-case compose preserve', () => {
   it('switch_1gang still has dual-case density + somgoms overlay', () => {
     const c = readJson('drivers/switch_1gang/driver.compose.json');
     const names = c.zigbee?.manufacturerName || [];
-    assert.ok(names.length >= 1400);
+    // WHY(2026-10-18): same as P2531 — raw floor follows deliberate moves; unique-maker floor is the collapse guard.
+    assert.ok(names.length >= 1380);
+    assert.ok(new Set(names.map((x) => String(x).toLowerCase())).size >= 340);
     const lower = new Set(names.map((m) => String(m).toLowerCase()));
     assert.ok(names.length > lower.size, 'expect some dual-case pairs in dense generics');
     assert.ok(names.some((m) => /7tdtqgwv/i.test(m)));
