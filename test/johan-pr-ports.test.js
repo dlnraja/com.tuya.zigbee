@@ -18,9 +18,11 @@ describe('Johan PR ports (PCr2 #43)', () => {
     const eps = z.endpoints['1'].clusters;
     for (const c of [1026, 1029, 61184]) assert.ok(eps.includes(c), String(c));
   });
-  it('the existing motion_sensor entry stays and has no TS0201 (no new collision)', () => {
+  it('motion_sensor has no TS0201 and no longer claims iq4ygaai (no new collision)', () => {
     const z = zig('motion_sensor');
-    assert.ok(z.manufacturerName.map((m) => m.toLowerCase()).includes('_tze200_iq4ygaai'));
+    // WHY(9923a4a17c): iq4ygaai is the THS317-ET-TY temp/humidity sensor; it was dropped from motion_sensor and lives
+    // only on temphumidsensor (asserted above), so it must not come back here.
+    assert.ok(!z.manufacturerName.map((m) => m.toLowerCase()).includes('_tze200_iq4ygaai'));
     assert.ok(!z.productId.map((p) => p.toLowerCase()).includes('ts0201'));
   });
 });

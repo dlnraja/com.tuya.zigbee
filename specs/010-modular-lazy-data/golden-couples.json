@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-18T22:26:46.277Z",
+ "generated": "2026-10-18T22:42:36.619Z",
  "drivers": 388,
  "snapshot": {
   "air_purifier": {
@@ -1941,9 +1941,9 @@
    "pidSha": "ab07303ec08cf935"
   },
   "switch_usb_dongle": {
-   "mfr": 7,
+   "mfr": 2,
    "pid": 2,
-   "mfrSha": "404d2c9ac3c7edaf",
+   "mfrSha": "4c477c108074b371",
    "pidSha": "d5939d250b4744ae"
   },
   "switch_wall": {
