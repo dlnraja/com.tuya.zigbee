@@ -107,3 +107,12 @@ lib/tuya/_quarantine
 data/user-impact-catalog.json
 data/dp_couple_knowledge.json
 .cursor
+
+# C2 (2026-10-18): lib/data catalogs with no runtime reader (grep over lib/ drivers/ app.js api.js settings/ finds
+# no reference; only tests/scripts/tools read them from the repo, never from the packaged app). ~0.37 MB less to upload.
+lib/data/new_fingerprints.json
+lib/data/fingerprint_map.json
+lib/data/generated_fingerprints.json
+lib/data/enrichment_data.json
+lib/data/categorized_devices.json
+lib/data/z2m_devices_full.json
