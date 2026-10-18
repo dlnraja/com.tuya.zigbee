@@ -37,3 +37,12 @@ Same root cause, same fix. Port: `lib/utils/MemwarnGuard.js`, `lib/utils/Bounded
 `DeviceTelemetryEstimator._energyReference`). Tests: `test/memwarn-guard.test.js`,
 `test/critical/p2863-bounded-json-cache.test.js`. Bastien's `invalid_flow_card_id` spam is also shared:
 see `UNBLOCK_MASTER_AND_ISSUE_560_2026-10-18.md` (FLOW-GUARD log-once + UniversalFlowCardLoader fallback).
+
+## Stable: DeclaredFlowCardAutoWire decision (2026-10-18)
+
+`lib/flow/UniversalFlowCardLoader.js` requires `./DeclaredFlowCardAutoWire` inside a `try { } catch` in `initialize()`.
+That P2449 auto-wire module (with its two companion flow modules) exists only on master/bastien-home. We did NOT
+port the three flow modules to stable: they change which flow cards get listeners at runtime on a branch whose
+`app.json` is intentionally frozen, so the behaviour risk is higher than the benefit. Instead the require stays an
+explicit optional one: `test/runtime-relative-requires.test.js` lists it in OPTIONAL (with the reason), and a new
+test enforces that every OPTIONAL entry is still wrapped in `try {` so it can never become a hard require.
