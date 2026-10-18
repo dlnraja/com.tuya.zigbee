@@ -25,7 +25,7 @@ describe('PresenceSimulationManager', () => {
     const mgr = new PresenceSimulationManager(null, {
       setDeviceState: async (d, v) => { states.push(v); },
     });
-    assert.strictEqual(mgr.start('a', fakeDevice('a'), { startHour: 0, endHour: 23 }), true);
+    assert.strictEqual(mgr.start('a', fakeDevice('a'), { startHour: 0, endHour: 24 }), true);
     assert.strictEqual(mgr.isActive('a'), true);
     assert.strictEqual(mgr.getReport().active_count, 1);
 
@@ -40,7 +40,7 @@ describe('PresenceSimulationManager', () => {
     const mgr = new PresenceSimulationManager(null, {
       setDeviceState: async (d, v) => { states.push(v); },
     });
-    mgr.start('a', fakeDevice('a', true), { startHour: 0, endHour: 23 });
+    mgr.start('a', fakeDevice('a', true), { startHour: 0, endHour: 24 });
     const session = mgr._sessions.get('a');
     session.originalState = true;
     await mgr.stop('a');
@@ -66,11 +66,14 @@ describe('PresenceSimulationManager', () => {
     const mgr = new PresenceSimulationManager(null, {
       setDeviceState: async (d, v) => { states.push(v); },
     });
-    mgr.start('a', fakeDevice('a'), { startHour: 0, endHour: 23 });
-    await mgr._runCycle('a');
-    assert.strictEqual(states[0], true); // ON dans la fenêtre
-    assert.ok(mgr._sessions.get('a').timer, 'OFF programmé');
-    await mgr.destroy();
+    try {
+      mgr.start('a', fakeDevice('a'), { startHour: 0, endHour: 24 });
+      await mgr._runCycle('a');
+      assert.strictEqual(states[0], true); // ON dans la fenêtre
+      assert.ok(mgr._sessions.get('a').timer, 'OFF programmé');
+    } finally {
+      await mgr.destroy(); // never leave the OFF timer alive: it kept mocha (no --exit) hanging until the 15 min CI timeout
+    }
   });
 
   it('stays OFF outside window and re-checks later', async () => {
