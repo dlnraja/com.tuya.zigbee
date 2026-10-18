@@ -19,6 +19,11 @@ const FRANKEVER_FK_BV05_MFRS = [
   '_tze200_nbqnmkee',
 ];
 const FRANKEVER_VALVE_MFRS = [...FRANKEVER_FK_V02_MFRS, ...FRANKEVER_FK_BV05_MFRS];
+// WHY(P2864 / forum 101901#8 Steve_Wilson): Zemismart 214C ultrasonic water meter + valve. Zigbee2MQTT
+// `TS0601_water_valve` (vuwtqx0t, TZE284 + TZE200) and the Zemismart ZHA quirk 214c.py agree on the DP map:
+// DP1 = total consumption (NOT the valve), DP13 = valve, DP14 = auto clean, DP21 = flow, DP22 = temp/100,
+// DP26 = battery voltage. The generic METERED map read DP1 as on/off and wrote the valve to DP1.
+const ZEMISMART_214C_MFRS = ['_tze284_vuwtqx0t', '_tze200_vuwtqx0t'];
 const TRUE_VALUES = new Set([true, 1, '1', 'true', 'open', 'on']);
 
 function isTuyaTrue(value) {
@@ -53,6 +58,13 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
     return this._fvCached;
   }
 
+  get isZemismart214c() {
+    if (this._z214cCached !== undefined) {return this._z214cCached;}
+    const mfr = this.getSetting('zb_manufacturer_name') || this.getData?.()?.manufacturerName || '';
+    this._z214cCached = ZEMISMART_214C_MFRS.some((m) => containsCI(mfr, m));
+    return this._z214cCached;
+  }
+
   get isFrankeverFkV02() {
     if (this._fv02Cached !== undefined) {return this._fv02Cached;}
     const mfr = this.getSetting('zb_manufacturer_name') || this.getData?.()?.manufacturerName || '';
@@ -69,6 +81,31 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
 
   get dpMappings() {
     const parentMappings = super.dpMappings || {};
+    // WHY(P2864): Zemismart 214C — DP map from Z2M TS0601_water_valve + Zemismart 214c.py (see above).
+    // DP2/3 (month/day totals, 8-byte frames), DP4 report period, DP5 fault bitmask, DP16 meter id and
+    // DP18 reverse flow stay internal: none of them is a valve state or an alarm_water leak signal.
+    if (this.isZemismart214c) {
+      return {
+        ...parentMappings,
+        1: { capability: 'meter_water', divisor: 1000 },
+        2: { capability: null, internal: 'month_consumption' },
+        3: { capability: null, internal: 'daily_consumption' },
+        4: { capability: null, internal: 'report_period' },
+        5: { capability: null, internal: 'faults' },
+        13: { capability: 'onoff', transform: isTuyaTrue },
+        14: { capability: null, setting: 'auto_clean' },
+        16: { capability: null, internal: 'meter_id' },
+        18: { capability: null, internal: 'reverse_water_consumed' },
+        21: { capability: null, internal: 'flow_rate' },
+        22: { capability: 'measure_temperature', divisor: 100 },
+        // raw x10 = mV (Z2M multiplyBy10, ZHA /100 = V); 3.6 V lithium cell, linear 2.8-3.4 V heuristic
+        26: { capability: 'measure_battery', transform: (v) => {
+          const mv = Number(v) * 10;
+          if (!Number.isFinite(mv)) {return null;}
+          return Math.max(0, Math.min(100, Math.round(((mv - 2800) / 600) * 100)));
+        } },
+      };
+    }
     if (this.isGardenTimer) {
       return {
         ...parentMappings,
@@ -131,6 +168,10 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
       if (this.isFrankeverValve) {
         forcePureTuyaDp(this, { force: true });
         this.log('[WATER-VALVE] P2473 FrankEver EF00-only — pure Tuya DP (no ZCL OnOff)');
+      } else if (this.isZemismart214c) {
+        // WHY(P2864): 214C interview is EF00-only too ([0,4,5,61184] + 0xED00), no genOnOff to talk to
+        forcePureTuyaDp(this, { force: true });
+        this.log('[WATER-VALVE] P2864 Zemismart 214C EF00-only — pure Tuya DP (valve = DP13)');
       }
       await super.onNodeInit({ zclNode });
       try {
@@ -156,6 +197,12 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
    * WHY(P2473): FrankEver TX must use max EF00/raw cascade — never ZCL OnOff(6).
    */
   async _setOnOff(value) {
+    if (this.isZemismart214c) {
+      // WHY(P2864): the valve is DP13 on the 214C; DP1 is the (read-only) water meter total.
+      this.log(`[WATER-VALVE] P2864 Zemismart 214C valve TX DP13=${value}`);
+      await sendEf00DpMaxFallback(this, 13, Boolean(value), 'bool');
+      return true;
+    }
     if (this.isFrankeverValve) {
       this.log(`[WATER-VALVE] P2473 FrankEver EF00 max TX onoff=${value}`);
       await sendEf00DpMaxFallback(this, 1, Boolean(value), 'bool');
