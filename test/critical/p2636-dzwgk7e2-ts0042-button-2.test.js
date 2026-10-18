@@ -22,7 +22,11 @@ describe('P2636 dzwgk7e2+TS0042 2-btn (phantom 4EP)', () => {
     assert.ok((c.zigbee.productId || []).includes('TS0042'));
     // WHY(1e301a5fcc + W4 9c32d98180, 2026-10-11): TS011F plugs 4ux0ondb/b28wrpvx and other misplaced
     // couples moved out on purpose — anti-purge floor lowered accordingly (still catches mass loss).
-    assert.ok((c.zigbee.manufacturerName || []).length >= 495); // 2026-10-11 second-source round: TS0003/TS0013 3-gang + r0pmi2p3 TS0014 moved to switch_3_gang/switch_4gang (curated removals). 2026-10-11 W4: qewo8dlz TS0013 (wired 3-gang, deCONZ) moved to switch_3_gang (curated removal)
+    // 2026-10-18: raw floor follows deliberate moves of 18 makers (13 -> switch_1gang, 3 -> switch_2gang, 1 plug strip, 1 TRV; 0 orphaned couples,
+    // verified against 9594b58449). The unique-maker floor is the real mass-purge guard.
+    assert.ok((c.zigbee.manufacturerName || []).length >= 420);
+    assert.ok(new Set((c.zigbee.manufacturerName || []).map((x) => String(x).toLowerCase())).size >= 100);
+    // 2026-10-11 second-source round: TS0003/TS0013 3-gang + r0pmi2p3 TS0014 moved to switch_3_gang/switch_4gang (curated removals). 2026-10-11 W4: qewo8dlz TS0013 (wired 3-gang, deCONZ) moved to switch_3_gang (curated removal)
   });
 
   it('device.js forces 2 buttons + P2636 dzwgk7e2 / skipEf00', () => {
