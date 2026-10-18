@@ -98,21 +98,22 @@ const SystemLogsCollector = require('./lib/diagnostics/SystemLogsCollector');
 const DeviceIdentificationDatabase = require('./lib/helpers/DeviceIdentificationDatabase');
 const DiagnosticAPI = require('./lib/diagnostics/DiagnosticAPI');
 const { LogBuffer } = require('./lib/utils/LogBuffer');
+const { lazyRequire } = require('./lib/utils/lazyRequire'); // P2830: deferred-pass modules load on first use
 const SuggestionEngine = require('./lib/smartadapt/SuggestionEngine');
-const { processMigrationQueue } = require('./lib/utils/migration-queue');
+const processMigrationQueue = (...a) => require('./lib/utils/migration-queue').processMigrationQueue(...a); // P2830 lazy
 const OTAUpdateManager = require('./lib/ota/OTAUpdateManager');
 const QuirksDatabase = require('./lib/quirks/QuirksDatabase');
-const EmergencyDeviceFix = require('./lib/emergency/EmergencyDeviceFix');
+const EmergencyDeviceFix = lazyRequire(require, './lib/emergency/EmergencyDeviceFix');
 
 // v9.1.0: Feature modules for flow cards (SolarElevation, TransitionEngine, etc.)
-const SolarElevation = require('./lib/features/SolarElevation');
-const TransitionEngine = require('./lib/features/TransitionEngine');
-const EnergyHistoryStore = require('./lib/features/EnergyHistoryStore');
-const TariffCalculator = require('./lib/features/TariffCalculator');
-const ScheduleManager = require('./lib/features/ScheduleManager');
-const ConditionEngine = require('./lib/features/ConditionEngine');
-const PredictiveHealthEngine = require('./lib/features/PredictiveHealthEngine');
-const NetworkTopologyCollector = require('./lib/features/NetworkTopologyCollector');
+const SolarElevation = lazyRequire(require, './lib/features/SolarElevation');
+const TransitionEngine = lazyRequire(require, './lib/features/TransitionEngine');
+const EnergyHistoryStore = lazyRequire(require, './lib/features/EnergyHistoryStore');
+const TariffCalculator = lazyRequire(require, './lib/features/TariffCalculator');
+const ScheduleManager = lazyRequire(require, './lib/features/ScheduleManager');
+const ConditionEngine = lazyRequire(require, './lib/features/ConditionEngine');
+const PredictiveHealthEngine = lazyRequire(require, './lib/features/PredictiveHealthEngine');
+const NetworkTopologyCollector = lazyRequire(require, './lib/features/NetworkTopologyCollector');
 
 let SourceCredits = {};
 try {
@@ -131,13 +132,13 @@ const HealthMonitor = require('./lib/health/HealthMonitor');
 const SanityFilter = require('./lib/filter/SanityFilter');
 
 // v9.1.0: New feature modules (Ideas #41, #44, #86, #87, #96, #98, #99)
-const DeviceGroupManager = require('./lib/groups/DeviceGroupManager');
-const DeviceHealthDashboard = require('./lib/health/DeviceHealthDashboard');
-const AutoDetectionPairingWizard = require('./lib/pairing/AutoDetectionPairingWizard');
-const UserFriendlyErrors = require('./lib/errors/UserFriendlyErrors');
+const DeviceGroupManager = lazyRequire(require, './lib/groups/DeviceGroupManager');
+const DeviceHealthDashboard = lazyRequire(require, './lib/health/DeviceHealthDashboard');
+const AutoDetectionPairingWizard = lazyRequire(require, './lib/pairing/AutoDetectionPairingWizard');
+const UserFriendlyErrors = lazyRequire(require, './lib/errors/UserFriendlyErrors');
 const { TestFramework } = require('./lib/testing');
-const ConfigSchemaValidator = require('./lib/validation/ConfigSchemaValidator');
-const CentralizedDPRegistry = require('./lib/registry/CentralizedDPRegistry');
+const ConfigSchemaValidator = lazyRequire(require, './lib/validation/ConfigSchemaValidator');
+const CentralizedDPRegistry = lazyRequire(require, './lib/registry/CentralizedDPRegistry');
 const BootBudget = require('./lib/performance/BootBudget');
 
 class TuyaUnifiedZigbeeApp extends Homey.App {
@@ -190,6 +191,13 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
       this.memwarnGuard = new MemwarnGuard({ log: (...a) => this.log(...a), error: (...a) => this.error(...a) });
       this.memwarnGuard.attach(this.homey);
       try { require('./lib/utils/memwarn-cleaners').registerAppCleaners(this.memwarnGuard, this.homey); } catch (_) { /* soft */ }
+      // P2830: heap curve + early cache trim before Homey's memwarn / SIGABRT (house app only: it runs at the ~64 MB cliff).
+      try {
+        if (/\.bastien\b/i.test(String(this.homey?.manifest?.id || ''))) {
+          const { HeapSentinel } = require('./lib/utils/HeapSentinel');
+          this.heapSentinel = new HeapSentinel({ guard: this.memwarnGuard, log: (...a) => this.log(...a) }).start(this.homey);
+        }
+      } catch (_) { /* soft */ }
     } catch (_) { /* best-effort */ }
     try {
       this.initializeSettings();
@@ -246,7 +254,12 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
           if (typeof orig === 'function') {
             try { return orig.apply(flow, args); }
             catch (e) {
-              this.log('[FLOW-GUARD]', m, args[0], e.message);
+              // P2830: log each missing card id once per process (was once per capability event).
+              const gk = `${m}:${args[0]}`;
+              if (!missingLogged.has(gk)) {
+                missingLogged.add(gk);
+                this.log('[FLOW-GUARD]', m, args[0], e.message, '(logged once)');
+              }
               return noopCard;
             }
           }
@@ -1748,6 +1761,7 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
   }
 
   async onUninit() {
+    try { this.heapSentinel?.stop(this.homey); } catch (_e) { /* soft */ }
     this._destroyed = true;
     this.log('⚠️ App uninitializing...');
     try {
