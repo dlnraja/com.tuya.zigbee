@@ -15,7 +15,11 @@ const { describe, it } = testApi;
 const ROOT = path.join(__dirname, '..', '..');
 const HDU = require('../../lib/ota/HomeyDeviceUpdates');
 
-describe('P2359 Homey Device Updates fusion', () => {
+describe('P2359 Homey Device Updates fusion', function () {
+  // WHY: verify-homey-device-updates.js spawns the full SSOT walk (~7 s on CI runners) which exceeds mocha's
+  // default 5 s in `npm test`; node:test has no such limit. spawnSync blocks, so the budget must be explicit.
+  this.timeout?.(60000);
+
   it('SSOT exists with expected drivers and sources', () => {
     const ssot = HDU.loadSsot();
     assert.ok(ssot.requirements?.homeyFirmwareMin);

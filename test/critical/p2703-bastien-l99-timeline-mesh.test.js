@@ -35,7 +35,13 @@ describe('P2703 Bastien L99 mesh + front-pin sacred couples', () => {
     assert.equal(b1.zigbee.productId[0], 'TS0041');
     assert.match(String(b2.zigbee.manufacturerName[0]), /dzwgk7e2/i);
     assert.equal(b2.zigbee.productId[0], 'TS0042');
-    assert.match(String(b3.zigbee.manufacturerName[0]), /vsxvaj9i/i);
+    // WHY: P2640 (GH#551) later front-pinned _TZ3000_famkxci2 on bw3 (publish-sacred-keep-couples), ahead of
+    // the P2703 vsxvaj9i pin. Both are house couples: the front slot is either of them and BOTH stay in the
+    // first 8 entries (4 case forms each) so a compact/budget cut can never drop them.
+    assert.match(String(b3.zigbee.manufacturerName[0]), /famkxci2|vsxvaj9i/i);
+    const b3Front = b3.zigbee.manufacturerName.slice(0, 8).join('|');
+    assert.match(b3Front, /vsxvaj9i/i, 'vsxvaj9i stays front-pinned on bw3');
+    assert.match(b3Front, /famkxci2/i, 'famkxci2 stays front-pinned on bw3');
     assert.equal(b3.zigbee.productId[0], 'TS0043');
     assert.ok(!(b3.zigbee.productId || []).includes('TS0601'), 'no TS0601 bleed on bw3');
     assert.ok(!(b2.zigbee.productId || []).includes('TS0041'), 'no TS0041 bleed on bw2');
