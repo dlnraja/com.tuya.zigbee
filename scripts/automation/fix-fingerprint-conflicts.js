@@ -147,7 +147,10 @@ const removalCounts = new Map(); // driver -> count of planned removals
 // P217: brand names are pid-disambiguated (HOBEIAN ZG-305Z vs ZG-303Z, Wing TS0203 vs ZTH).
 // Cartesian HOBEIAN×TS0601 is theoretical; Auto-Publish 32063635335 stripped HOBEIAN
 // from switch_2gang because sensor (55) beats switch (40) by exactly 15.
-const MULTI_DRIVER_BRANDS = new Set(['hobeian', 'wing']);
+// WHY(P2677/P2692, 2026-10-18): `heobian` is the Athom typo form of HOBEIAN (heobian == hobeian). It was missing here, so every
+// Auto-Publish run (Align -> fix-fingerprint-conflicts) stripped heobian/Heobian from button_wireless_1, illuminance_sensor and
+// vibration_sensor again after tools/ci/ensure-case-variants.js had added them (P2671/P2677 tests red after each version bump).
+const MULTI_DRIVER_BRANDS = new Set(['hobeian', 'heobian', 'wing']);
 function isPidDisambiguatedBrand(mfr) {
   return MULTI_DRIVER_BRANDS.has(String(mfr || '').toLowerCase());
 }
