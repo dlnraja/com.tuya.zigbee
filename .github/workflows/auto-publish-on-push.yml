@@ -23,6 +23,10 @@ on:
         description: 'Force Athom createBuild even if soft-expect would skip (P139 one-shot)'
         type: boolean
         default: false
+      release_held:
+        description: 'One-shot retry of held driver id(s) from config/publish-hold-drivers.json (comma separated; config unchanged). One id per dispatch for a bisect.'
+        type: string
+        default: ''
       transient_retry:
         description: 'Internal: retries already done in this chain (true=1); AggregateError max 2, transport max 1'
         type: string
@@ -43,6 +47,7 @@ concurrency:
 
 env:
   NODE_VERSION: "22"
+  PUBLISH_HOLD_RELEASE: ${{ github.event.inputs.release_held || '' }}
   NODE_OPTIONS: "--dns-result-order=ipv4first"
   # P2491: publish bots stay local — no remote AI burn
   AI_FORCE_LOCAL: "true"
