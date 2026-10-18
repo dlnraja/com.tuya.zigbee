@@ -131,6 +131,22 @@ function loadHeldIds() {
 }
 const HELD_IDS = loadHeldIds();
 
+// WHY(2026-10-18): deliberate pid-only / catch-all drivers own no manufacturerName (config/pid-only-drivers.json).
+// Their MF fallback source (backups/stable_app.json) left the repo in 9640f715af, so this phase flagged them forever.
+const PID_ONLY_JSON = path.join(ROOT, 'config', 'pid-only-drivers.json');
+function loadPidOnlyIds() {
+  try {
+    const h = JSON.parse(fs.readFileSync(PID_ONLY_JSON));
+    return new Set((h.drivers || []).filter(e => e && e.id && e.reason).map(e => e.id));
+  } catch (e) {
+    return new Set();
+  }
+}
+const PID_ONLY_IDS = loadPidOnlyIds();
+function hasPids(d) {
+  return d.zigbee && Array.isArray(d.zigbee.productId) && d.zigbee.productId.length > 0;
+}
+
 function hasMF(d) {
   return d.zigbee && Array.isArray(d.zigbee.manufacturerName) && d.zigbee.manufacturerName.length > 0;
 }
@@ -163,6 +179,9 @@ function phase1a_validateAppJson(app) {
       } else if (HELD_IDS.has(d.id)) {
         warnings.push(`HELD (publish-hold) driver sans MF: ${d.id}`);
         info(`HELD sans MF (exclu du publish): ${d.id}`);
+      } else if (PID_ONLY_IDS.has(d.id) && hasPids(d)) {
+        warnings.push(`PID-ONLY (documented) driver sans MF: ${d.id}`);
+        info(`PID-ONLY sans MF (voulu, config/pid-only-drivers.json): ${d.id}`);
       } else {
         stats.emptyMF.push({ id: d.id, type });
         errors.push('AGGREGATE_ERROR: ' + type + ' driver sans MF: ' + d.id);
@@ -319,6 +338,7 @@ function phase2_autoFix(app) {
     if (type !== 'zigbee' && type !== 'hybrid') return;
     if (hasMF(d)) return; // déjà OK
     if (HELD_IDS.has(d.id)) { return; } // held: excluded from publish, may own no couple
+    if (PID_ONLY_IDS.has(d.id) && hasPids(d)) { return; } // deliberate pid-only / catch-all driver
 
     const mfs = tryFixMFs(d.id, stableMap);
     if (mfs && mfs.length > 0) {

@@ -1,0 +1,61 @@
+{
+  "_why": "Zigbee drivers that deliberately own NO manufacturerName (pid-only / catch-all fallbacks; their couples live on exact-pair drivers). scripts/master-automation.js used to rebuild their manufacturerName from backups/stable_app.json, which was dropped from the repo by 9640f715af (payload slimming, 16/10); since then Fleet Intelligent Enrich failed in master-automation-fix ('ZIGBEE sans MF'). Listed drivers become a warning, not an error. Never add a driver here just to silence the gate: it must have a documented reason, and it must keep a non-empty productId.",
+  "drivers": [
+    {
+      "id": "air_purifier_curtain",
+      "reason": "catchall for unmatched curtain devices (pid TS0601), by design (compose metadata.driver.catchall)"
+    },
+    {
+      "id": "boiler_switch_energy",
+      "reason": "pid-only; its couples live on exact-pair drivers (W4)"
+    },
+    {
+      "id": "device_plug_energy_monitor",
+      "reason": "catchall + documented 2026-08-21 empty manufacturerName"
+    },
+    {
+      "id": "device_plug_smart",
+      "reason": "documented 2026-08-21 empty manufacturerName (pid-only hybrid plug); sensor pids on it are a known owner decision, see docs/knowledge/UNBLOCK_MASTER_AND_ISSUE_560_2026-10-18.md"
+    },
+    {
+      "id": "dimmer_1_gang_2",
+      "reason": "catchall + documented 2026-08-21 empty manufacturerName"
+    },
+    {
+      "id": "dimmer_dual_channel",
+      "reason": "documented 2026-08-21 empty manufacturerName"
+    },
+    {
+      "id": "double_power_point",
+      "reason": "catchall + documented 2026-08-21 empty manufacturerName"
+    },
+    {
+      "id": "outdoor_2_socket",
+      "reason": "documented 2026-08-21 empty manufacturerName"
+    },
+    {
+      "id": "pirsensor",
+      "reason": "documented 2026-08-21 empty manufacturerName"
+    },
+    {
+      "id": "remote_button_wireless_smart",
+      "reason": "pid-only; couples live on exact-pair drivers (W4)"
+    },
+    {
+      "id": "sensor_lcdtemphumidsensor_temphumidsensor",
+      "reason": "documented 2026-08-21 empty manufacturerName"
+    },
+    {
+      "id": "smart_rcbo",
+      "reason": "catchall for unlisted RCBO devices (compose metadata.driver.catchall)"
+    },
+    {
+      "id": "smart_remote_1_button_2",
+      "reason": "catchall for unlisted 1-button remotes (compose metadata.driver.catchall)"
+    },
+    {
+      "id": "switch_usb_dongle",
+      "reason": "pid-only; couples live on exact-pair drivers (W4)"
+    }
+  ]
+}
