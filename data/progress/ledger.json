@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-17T08:01:54.894Z",
+ "updated": "2026-10-18T08:19:05.907Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -18700,6 +18700,11 @@
    "date": "2026-10-10",
    "note": "closed issue; identities covered (_TZ3000_xabckq1v)",
    "by": "advance-sweep"
+  },
+  "johan-issue:1530": {
+   "status": "pending",
+   "kind": "issue",
+   "upstreamUpdatedAt": null
   },
   "johan-issue:154": {
    "status": "done",
