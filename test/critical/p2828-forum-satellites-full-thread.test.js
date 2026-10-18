@@ -33,13 +33,14 @@ function hasPid(driverId, pid) {
 }
 
 describe('P2828 forum satellites + full T26439 silent treat', () => {
-  it('wall_remote_3_gang EP1–3 have powerCfg+OnOff+E000 (Moes TS0043)', () => {
+  it('wall_remote_3_gang EP1–3 have powerCfg+OnOff natively; 0xE000 only as runtime overlay (Moes TS0043)', () => {
     const eps = compose('wall_remote_3_gang').zigbee?.endpoints || {};
     for (const ep of ['1', '2', '3']) {
       const clusters = (eps[ep]?.clusters || []).map(Number);
-      for (const c of [0, 1, 6, 57344]) {
+      for (const c of [0, 1, 6]) {
         assert.ok(clusters.includes(c), `EP${ep} missing cluster ${c}`);
       }
+      assert.ok(!clusters.includes(57344), `EP${ep} must not list 0xE000 as mandatory (native-matrix-gate)`);
       assert.ok((eps[ep]?.bindings || []).map(Number).includes(6), `EP${ep} OnOff bind`);
     }
   });

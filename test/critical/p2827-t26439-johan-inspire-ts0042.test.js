@@ -29,10 +29,13 @@ function hasMfr(driverId, needle) {
 }
 
 describe('P2827 T26439 #5520 Johan inspire enrich', () => {
-  it('wall_remote_2_gang EP1 has powerCfg+OnOff+E000 (Johan TS0042 interview shape)', () => {
+  it('wall_remote_2_gang EP1 has powerCfg+OnOff natively; 0xE000 is a runtime overlay, not a mandatory manifest cluster (native-matrix-gate)', () => {
     const ep1 = compose('wall_remote_2_gang').zigbee?.endpoints?.['1'];
     const clusters = (ep1?.clusters || []).map(Number);
-    for (const c of [0, 1, 6, 57344]) assert.ok(clusters.includes(c), `cluster ${c}`);
+    for (const c of [0, 1, 6]) assert.ok(clusters.includes(c), `cluster ${c}`);
+    assert.ok(!clusters.includes(57344), '0xE000 must stay out of mandatory endpoint clusters');
+    const hybrid = fs.readFileSync(path.join(ROOT, 'lib/devices/WallSceneRemoteHybridInit.js'), 'utf8');
+    assert.ok(/0xE000|57344/.test(hybrid), 'runtime E000 listen overlay present');
     assert.ok((ep1?.bindings || []).map(Number).includes(6));
   });
 
