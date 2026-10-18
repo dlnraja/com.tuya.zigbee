@@ -1,4 +1,4 @@
-# 📥 Community Inbox — 2026-10-17 09:19 UTC
+# 📥 Community Inbox — 2026-10-18 09:36 UTC
 
 Généré par `.github/scripts/community-inbox-digest.js` (workflow `community-inbox.yml`).
 
@@ -13,7 +13,7 @@ Généré par `.github/scripts/community-inbox-digest.js` (workflow `community-i
 
 - [#571](https://github.com/dlnraja/com.tuya.zigbee/issues/571) — [Bug] QT-07S (_TZE284_myd45weu / TS0601) remains unknown and Configure keeps loading — v9.0.1445 Test _(🔴 attente maintainer, maj 2026-10-12)_
 - [#570](https://github.com/dlnraja/com.tuya.zigbee/issues/570) — [soil_sensor] Bug: AOYAN AY-303Z soil sensor not recognized despite fingerprint in soil_sensor driver _(🔴 attente maintainer, maj 2026-10-12)_
-- [#560](https://github.com/dlnraja/com.tuya.zigbee/issues/560) — Bug report - TRV06 Smart Zigbee Radiator Valve - isn't working _(🔴 attente maintainer, maj 2026-10-09)_
+- [#560](https://github.com/dlnraja/com.tuya.zigbee/issues/560) — Bug report - TRV06 Smart Zigbee Radiator Valve - isn't working _(🔴 attente maintainer, maj 2026-10-17)_
 - [#550](https://github.com/dlnraja/com.tuya.zigbee/issues/550) — Bug report - [Short description] _(🔴 escaladé, maj 2026-10-04)_
 
 ## 🟡 Auto-résolues, en attente de retour
