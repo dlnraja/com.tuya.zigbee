@@ -298,19 +298,19 @@
       "mfr": [
         "_TYZB01_ncutbjdi"
       ],
-      "driver": "switch_1_gang",
+      "driver": "switch_1gang",
       "pid": "TS0003",
       "source": "johan + z2m",
-      "regression": "W4 Z2M-pid couple 2026-10-11 (Johan mfr + Z2M)"
+      "regression": "W4 Z2M-pid couple 2026-10-11 (Johan mfr + Z2M) | 2026-10-18 pin follows registry w4z + master (switch_1gang)"
     },
     {
       "mfr": [
         "_TYZB01_aneiicmq"
       ],
-      "driver": "switch_1_gang",
+      "driver": "switch_1gang",
       "pid": "TS0003",
       "source": "johan + z2m",
-      "regression": "W4 Z2M-pid couple 2026-10-11 (Johan mfr + Z2M)"
+      "regression": "W4 Z2M-pid couple 2026-10-11 (Johan mfr + Z2M) | 2026-10-18 pin follows registry w4z + master (switch_1gang)"
     },
     {
       "mfr": [
