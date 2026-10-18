@@ -907,6 +907,9 @@
       ]
     }
   ],
+  "9.0.1517": {
+    "en": "v9.0.1517: automated publish, manifest sync, and Homey test promotion."
+  },
   "9.0.1515": {
     "en": "v9.0.1515: automated publish, manifest sync, and Homey test promotion."
   },
@@ -961,10 +964,7 @@
   "9.0.1498": {
     "en": "Zemismart 214C water valve (_TZE284_vuwtqx0t+TS0601): fixed contact_sensor FP misroute; sacred-keep for Unknown Zigbee tip interview."
   },
-  "9.0.1497": {
-    "en": "Homey #zigbee tag silent enrich: Sonoff SWV (SONOFF/eWeLink + SWV-*) on garden water valve; removed SWV phantoms from button/smart valve drivers."
-  },
-  "9.0.1517": {
-    "en": "v9.0.1517: automated publish, manifest sync, and Homey test promotion."
+  "9.0.1518": {
+    "en": "v9.0.1518: automated publish, manifest sync, and Homey test promotion."
   }
 }
