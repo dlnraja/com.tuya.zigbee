@@ -625,6 +625,34 @@
       "pid": "TS0105",
       "source": "Z2M NovaDigital ZBCMR-01 (fingerprint TS0105|_TZE600_ogyg1y6b); Hubitat zemismart-zigbee-blind",
       "regression": "Lost-couple hold: TS0105 was blocked for cross-product; exact couple on curtain_motor (one-source 2026-10-11)."
+    },
+    {
+      "mfr": [
+        "_TZ3000_2dlwlvex",
+        "_TZ3000_cdamjqm9",
+        "_TZ3000_qcdqw8nf",
+        "_TZ3000_vvlivusi",
+        "_TZ3000_w05exif3",
+        "_tz3000_2dlwlvex",
+        "_tz3000_cdamjqm9",
+        "_tz3000_qcdqw8nf",
+        "_tz3000_vvlivusi",
+        "_tz3000_w05exif3",
+        "_TZ3000_2DLWLVEX",
+        "_tz3000_2DLWLVEX",
+        "_TZ3000_CDAMJQM9",
+        "_tz3000_CDAMJQM9",
+        "_TZ3000_QCDQW8NF",
+        "_tz3000_QCDQW8NF",
+        "_TZ3000_VVLIVUSI",
+        "_tz3000_VVLIVUSI",
+        "_TZ3000_W05EXIF3",
+        "_tz3000_W05EXIF3"
+      ],
+      "driver": "switch_3gang",
+      "pid": "TS0003",
+      "source": "Johan Bendz com.tuya.zigbee issues #55 (_TZ3000_cdamjqm9 / TS0003, 3-way wall switch with neutral, Zemismart ZM-L03E-Z) and #254 (_TZ3000_2dlwlvex / TS0003, 3-rocker wall switch with neutral); same issue family lists qcdqw8nf, vvlivusi, w05exif3 as TS0003 3-gang wall switches in his supported-device README; issue #55 interview: 3 endpoints, each with onOff cluster 6, mains powered; Z2M TS0003 = 3 gang switch (state_left/center/right)",
+      "regression": "P2830b 2026-10-19: these five were claimed by button_wireless_2 (auto-sync 2026-07, no external source for TS0042). Exact couple mfr+TS0003 belongs to the 3-gang switch; button_wireless_2 must not claim it."
     }
   ]
 }
