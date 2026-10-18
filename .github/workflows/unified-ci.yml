@@ -117,6 +117,16 @@ jobs:
 
       - name: Normalize Homey manifest after validation
         run: npm run fix:generated-flow-args && npm run check:homey-guidelines
+
+      # WHY(P2842b, 2026-10-19): `homey app validate` leaves a re-composed root app.json (2.36 -> 4.74 MB compact:
+      # .homeycompose/flow is merged in) plus a .homeybuild copy. The later publish-size gate (check:p2840 in
+      # check:p283x) measures both and always failed on that validate artifact, not on the committed manifest.
+      # Restore the committed file and drop the scratch build so every later gate sees what is in git (limit unchanged;
+      # the real upload is the pruned build checked by Auto-Publish).
+      - name: Restore committed app.json (validate artifact)
+        run: |
+          git checkout -- app.json
+          rm -rf .homeybuild
       
       - name: 🛡️ Fleetwood Integrity & Manifest Gateway
         run: node scripts/PRE_COMMIT_CHECKS.js
