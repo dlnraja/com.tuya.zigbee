@@ -1753,6 +1753,12 @@
       "pid": "TS0601",
       "driverId": "water_valve_smart",
       "note": "P2837 vuwtqx0t TZE200 sibling — Z2M TS0601_water_valve"
+    },
+    {
+      "mfr": "_TZE204_rzdkn5rx",
+      "pid": "TS0601",
+      "driverId": "boiler_switch_energy",
+      "note": "2026-10-18 forum-routing-regressions: exact couple had silently become an orphan when 732e11caa9 emptied boiler_switch_energy; restored and pinned (OCR _TZE28C1000* forms stay out, registry p2509)"
     }
   ]
 }
