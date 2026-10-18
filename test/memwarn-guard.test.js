@@ -17,4 +17,14 @@ describe('MemwarnGuard', () => {
     assert.strictEqual(g.attach(null), false);
     assert.strictEqual(g.handle().count, 0);
   });
+  it('survives process.memoryUsage() throwing (ENOENT uv_resident_set_memory, build 3590)', () => {
+    const orig = process.memoryUsage;
+    process.memoryUsage = () => { const e = new Error('ENOENT: uv_resident_set_memory'); e.code = 'ENOENT'; throw e; };
+    try {
+      const g = new MemwarnGuard();
+      const ev = g.handle({ count: 2, limit: 3 });
+      assert.strictEqual(ev.count, 2);
+      assert.ok(Number.isFinite(ev.heapMB));
+    } finally { process.memoryUsage = orig; }
+  });
 });
