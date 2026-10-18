@@ -16,7 +16,9 @@ try {
   console.error('Warning: could not read app.json:', e.message);
 }
 const APP = appJson.id || 'com.dlnraja.tuya.zigbee';
-const APP_VERSION = appJson.version || '';
+// WHY(P2850): env (uploaded draft version) beats the pre-bump app.json of the promote job checkout.
+const APP_VERSION = String(process.env.HOMEY_EXPECTED_VERSION || process.env.HOMEY_APP_VERSION
+  || process.env.EXPECTED_APP_VERSION || appJson.version || '').replace(/^v/i, '');
 
 const E = process.env.HOMEY_EMAIL, P = process.env.HOMEY_PASSWORD;
 const SUM = process.env.GITHUB_STEP_SUMMARY;
