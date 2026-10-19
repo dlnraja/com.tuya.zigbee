@@ -628,6 +628,17 @@
       ],
       "why": "2026-10-18 P189/P2824: USB wall outlet couples (TS011F) live on usb_outlet_advanced (registry canonical, same as master); duplicate on switch_usb_dongle removed (one couple, one driver)",
       "source": "registry+master P2824"
+    },
+    {
+      "driver": "button_wireless_4",
+      "mfr": [
+        "_TZ3000_abrsvsou",
+        "_tz3000_abrsvsou",
+        "_TZ3000_ABRSVSOU",
+        "_tz3000_ABRSVSOU"
+      ],
+      "why": "2026-10-19 user decision: _TZ3000_abrsvsou + TS004F is the HOBEIAN ZG-101ZD / ERS-10TZBVK-AA rotary knob (Z2M hobeian.ts ZG-101ZD, ZHA ts004f.py TuyaSmartRemote004FROK, deCONZ smart-knob DDF, Johan smart_knob_switch), not a 4-button remote; owner smart_knob_zg101zd",
+      "source": "z2m hobeian.ts + zhaquirks ts004f.py + deconz _TZ3000_TS004F_smart_knob.json"
     }
   ]
 }
