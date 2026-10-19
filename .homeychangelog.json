@@ -907,6 +907,9 @@
       ]
     }
   ],
+  "9.0.1525": {
+    "en": "v9.0.1525: automated publish, manifest sync, and Homey test promotion."
+  },
   "9.0.1524": {
     "en": "v9.0.1524: automated publish, manifest sync, and Homey test promotion."
   },
@@ -961,10 +964,7 @@
   "9.0.1505": {
     "en": "CI unblock: size gate soft-skip before build; switch_1gang density floor aligned after couple moves."
   },
-  "9.0.1504": {
-    "en": "Free CI automation: flow hollow + publish payload self-heal cron (P2842), no paid AI."
-  },
-  "9.0.1525": {
-    "en": "v9.0.1525: automated publish, manifest sync, and Homey test promotion."
+  "9.0.1526": {
+    "en": "v9.0.1526: automated publish, manifest sync, and Homey test promotion."
   }
 }
