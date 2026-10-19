@@ -92,3 +92,11 @@ https://community.homey.app/t/140352
   mfs_db, rotary SSOT (`dedicatedKnobDrivers`; `forbiddenOnKnobMfr` now empty), UI charter, Bastien house SSOT and the bot
   lists that re-added it. Test: `test/critical/p2871-4fjiwweb-knob.test.js`; golden snapshot refreshed.
 - Paired devices stay on `button_wireless_4` until re-paired. Bastien's house SSOT lists this couple: his knob needs a re-pair.
+
+## P2872–P2876 (19/10, follow-up fixes)
+
+- **P2872 raw OnOff press types.** The raw frame path (`PhysicalButtonMixin.onZigBeeMessage`, OnOff cmd 0/1/2) made every off/on/toggle a single press. A driver can now declare `RAW_ONOFF_PRESS_MAP`. `remote_button_wireless_smart` and `remote_button_wireless_wall` use their documented command-mode layout: toggle = single, on = double, off = long. `button_mode = dimmer` and every other driver keep `single`; the per-command debounce is unchanged. Note: Z2M itself reports these commands as `on`/`off`/`toggle` actions; multi-press via 0xFD is unaffected.
+- **P2873 knob rotation on real hardware.** Real TS004F / ZG-101ZD knobs list levelControl as an output cluster only, so zigbee-clusters creates no server cluster and remote rotations reach only `endpoint.bindings`. The knob setup now attaches its bound cluster when cluster 8 is an output (or a server), never replaces an existing binding, and drops same-direction repeats within 25 ms. Master and Bastien: `SmartKnobRotationMixin`; stable: `smart_knob_rotary`.
+- **P2874 one device argument per flow card.** `homey app build` always adds the driver device argument to driver flow cards; cards that also declared it by hand were built with two (wifi_ir_remote x6, presence_sensor_radar_clear_presence; latent on button_wireless_4 FUT089Z and valve_controller_5zone).
+- **P2875 voice-safety gate.** Bastien's copy predated the P2614/P2615 device-view rule (class button|remote may keep `maintenanceAction:false`); ported.
+- **P2876 workflow script references.** Stable now has repo-housekeeping, generate-script-registry and the p2231/p2283 tests. Remaining gaps are pinned in the test and only sit in workflows that a stable push never starts.
