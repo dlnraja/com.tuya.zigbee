@@ -631,6 +631,25 @@
       ],
       "why": "2026-10-19 user decision: _TZ3000_abrsvsou + TS004F is the HOBEIAN ZG-101ZD / ERS-10TZBVK-AA rotary knob (Z2M hobeian.ts ZG-101ZD, ZHA ts004f.py TuyaSmartRemote004FROK, deCONZ smart-knob DDF, Johan smart_knob_switch), not a 4-button remote; owner smart_knob_zg101zd",
       "source": "z2m hobeian.ts + zhaquirks ts004f.py + deconz _TZ3000_TS004F_smart_knob.json"
+    },
+    {
+      "driver": "climate_sensor",
+      "mfr": [
+        "_TZE284_9ern5sfh",
+        "_tze284_9ern5sfh",
+        "_TZE284_9ERN5SFH",
+        "_TZE204_9ern5sfh",
+        "_tze204_9ern5sfh",
+        "_TZE204_9ERN5SFH",
+        "_TZE200_9ern5sfh",
+        "_tze200_9ern5sfh",
+        "_TZE200_9ERN5SFH",
+        "_tze284_9ERN5SFH",
+        "_tze200_9ERN5SFH",
+        "_tze204_9ERN5SFH"
+      ],
+      "why": "2026-10-19 user decision: one couple one driver, aligned with master P2823. _TZE284_9ern5sfh + TS0601 is the RSH-HS03 LCD temperature/humidity sensor (Z2M TS0601_temperature_humidity_sensor_4, DP1 temp/10, DP2 humidity/10, DP4 battery; zhc #10167 \"with display\"; Johan #1328 RSH-HS03; forum 140352 #2263 Kizabgd). Owner lcdtemphumidsensor.",
+      "source": "z2m tuya.ts + zhc#10167 + JohanBendz#1328 + forum 140352#2263"
     }
   ]
 }
