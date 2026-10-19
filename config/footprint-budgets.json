@@ -1,0 +1,17 @@
+{
+  "_why": "Stable app budgets (P2830d), report-only (warn). Baseline from CI logs 2026-10-18: Homey CLI archive 38.2-38.5 MB / 4610-4631 files, app.json 3.50 MB (335 drivers). Tighten after one week of stable numbers.",
+  "mode": "warn",
+  "budgets": {
+    "payloadMB": 39,
+    "payloadFiles": 4700,
+    "appJsonMB": 3.7,
+    "libMB": 11,
+    "driversMB": 17,
+    "nodeModulesMB": 3.2,
+    "dataMB": 1.5,
+    "duplicateAssetMB": 8,
+    "bootHeapMB": 50,
+    "setIntervalSites": 170,
+    "memoryUsageSites": 20
+  }
+}

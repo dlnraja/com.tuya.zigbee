@@ -282,6 +282,10 @@ jobs:
         run: node scripts/ci/publish-size-gate.cjs || echo "::warning::Publish payload size above the soft limit (see report above)"
       - name: Prepare Publish Directory
         run: npm run prepare-publish
+
+      - name: Footprint report (ROM/RAM, warn-only)
+        continue-on-error: true
+        run: node scripts/ci/footprint-report.js || true
       # WHY(ported from master c25f077831/45a2d8f1a9): never upload while a stable build is still processing
       # (Athom invalid_state). Bounded 12 min inside a 25 min step; never fails the job.
       - name: Wait for Athom idle (previous stable build final)
