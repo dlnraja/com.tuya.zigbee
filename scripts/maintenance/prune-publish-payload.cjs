@@ -176,7 +176,17 @@ function main() {
   for (const sample of removed.samples) {
     console.log(`[prune-publish-payload]   - ${sample}`);
   }
-}
+
+  // P2885: lossless JSON minify + proven-unreferenced lib JS (load-checked, self-restoring).
+  // Runs in every workflow that already calls this script; LOSSLESS_SHRINK=0 disables it.
+  try {
+    const shrink = path.join(__dirname, 'lossless-shrink-payload.cjs');
+    if (fs.existsSync(shrink)) {
+      require('child_process').spawnSync(process.execPath, [shrink, target], { stdio: 'inherit', timeout: 300000 });
+    }
+  } catch (e) {
+    console.log(`::warning::[prune-publish-payload] lossless shrink skipped: ${e.message}`);
+  }}
 
 if (require.main === module) main();
 module.exports = { pruneUndeclaredViews };
