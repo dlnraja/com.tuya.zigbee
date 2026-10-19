@@ -680,6 +680,19 @@
       "driver": "smart_knob_zg101zd",
       "source": "Z2M tuya.ts ERS-10TZBVK-AA \"Smart knob\", ZHA TuyaSmartRemote004FROK MODELS_INFO, deCONZ smart knob DDF",
       "regression": "was parked on button_wireless_4 as a 4-button remote (P129/P2448); moved 2026-10-19 with abrsvsou"
+    },
+    {
+      "id": "p2890-ts0046-nrfkrgf4",
+      "mfr": [
+        "_TZ3000_nrfkrgf4",
+        "_tz3000_nrfkrgf4",
+        "_TZ3000_NRFKRGF4",
+        "_tz3000_NRFKRGF4"
+      ],
+      "driver": "button_wireless_6",
+      "pid": "TS0046",
+      "source": "Z2M zigbee-herdsman-converters tuya.ts: TS0046 \"Wireless switch with 6 buttons\" (LoraTap SS9600ZB white label), events via tuya on_off_action per endpoint = 1..6 x single/double/hold, battery; deCONZ devices/tuya/_TZ3000_TS0046_6gang_remote.json (manufacturer _TZ3000_nrfkrgf4, sleeper, Gold) + button_maps Tuya6gangMap: endpoints 0x01..0x06, OnOff cluster command 0xFD payload 0/1/2 = short/double/long",
+      "regression": "P2890 2026-10-19: couple sat in switch_1gang (mains relay, no TS0046 pid) so it never matched; user report: no driver worked on Homey Pro 2023. Exact couple belongs to the 6-button battery scene remote."
     }
   ]
 }
