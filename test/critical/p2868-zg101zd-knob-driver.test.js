@@ -173,3 +173,12 @@ describe('P2868 device — real zigbee-clusters frame path end to end', () => {
     assert.equal(Object.values(writes[0])[0], 1);
   });
 });
+
+describe('P2868 bare ZigBeeDevice gate (P102) knows the native-only knob', () => {
+  it('smart_knob_zg101zd is on the documented allowlist and the gate passes', () => {
+    const allow = readJson('tools/ci/bare-zigbee-allowlist.json');
+    assert.ok((allow.drivers || []).includes(D));
+    const r = require('child_process').spawnSync(process.execPath, ['tools/ci/bare-zigbee-device-gate.js'], { cwd: ROOT, encoding: 'utf8' });
+    assert.equal(r.status, 0, r.stdout + r.stderr);
+  });
+});
