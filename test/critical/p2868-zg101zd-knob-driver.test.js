@@ -33,9 +33,10 @@ for (const key of Object.keys(require.cache)) { if (!cacheBefore.has(key) && /sm
 const { ZCLNode } = require('zigbee-clusters');
 
 describe('P2868 smart_knob_zg101zd — exact couple, native pairing path', () => {
-  it('claims only _TZ3000_abrsvsou (case forms) + TS004F, native clusters, battery', () => {
+  it('claims only the ZG-101ZD / ERS-10TZBVK-AA makers (case forms) + TS004F, native clusters, battery', () => {
     assert.deepEqual(compose.zigbee.productId, ['TS004F']);
-    assert.deepEqual([...new Set(compose.zigbee.manufacturerName.map((m) => m.toLowerCase()))], ['_tz3000_abrsvsou']);
+    // P2871 (2026-10-19): _TZ3000_4fjiwweb joined (same knob family, Z2M tuya.ts ERS-10TZBVK-AA)
+    assert.deepEqual([...new Set(compose.zigbee.manufacturerName.map((m) => m.toLowerCase()))], ['_tz3000_abrsvsou', '_tz3000_4fjiwweb']);
     const ep = compose.zigbee.endpoints['1'];
     for (const c of [0, 1, 6]) { assert.ok(ep.clusters.includes(c), `cluster ${c}`); }
     for (const c of [5, 6, 8]) { assert.ok(ep.bindings.includes(c), `binding ${c}`); }
