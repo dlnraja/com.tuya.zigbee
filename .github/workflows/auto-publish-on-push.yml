@@ -776,9 +776,12 @@ jobs:
           echo "$final_out"
           kind=$(printf '%s' "$final_out" | node .github/scripts/athom-retry-policy.js classify 2>/dev/null || echo unknown)
           if [ "$final_rc" -eq 0 ] && ! printf '%s' "$final_out" | grep -q 'SOFT-EXPECT'; then node .github/scripts/publish-size-telemetry.js record test; exit 0; fi
-          node .github/scripts/publish-size-telemetry.js record "$([ "$final_rc" -eq 0 ] && echo soft-expect || echo failed)" "$kind"
           # Final state known and not Test: retry decision (budget 2 per chain, exponential backoff + jitter).
           out=$(node .github/scripts/transient-publish-retry.js) || true
+          # P2901: assert-athom-final only prints "processing_failed"; the Athom error text (AggregateError, socket
+          # hang up...) is read by the retry decision, so classify both outputs before recording the CSV row.
+          if [ "$kind" = "unknown" ]; then kind=$(printf '%s\n%s' "$final_out" "$out" | node .github/scripts/athom-retry-policy.js classify 2>/dev/null || echo unknown); fi
+          node .github/scripts/publish-size-telemetry.js record "$([ "$final_rc" -eq 0 ] && echo soft-expect || echo failed)" "$kind"
           echo "$out"; echo "$out" >> "$GITHUB_STEP_SUMMARY"
           if printf '%s' "$out" | grep -q '^\[transient-retry\] RETRY'; then
             next=$(printf '%s\n' "$out" | sed -n 's/^\[transient-retry\] NEXT=//p' | head -1)
