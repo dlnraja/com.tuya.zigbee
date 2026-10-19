@@ -322,16 +322,19 @@ async function uploadArchive(url, method, headers, archivePath) {
     try {
       // Re-create the stream per attempt: a consumed ReadStream cannot be replayed.
       const body = fs.createReadStream(archivePath);
+      // WHY(P2900): a stalled S3 PUT used to hang until the step timeout; abort it and retry instead.
       res = await fetch(url, {
         method,
         headers: { 'Content-Length': sz, ...headers },
         body,
+        duplex: 'half',
+        signal: AbortSignal.timeout(Number(process.env.HOMEY_UPLOAD_TIMEOUT_MS || 300000)),
       });
     } catch (networkErr) {
       const isLast = attempt === MAX_ATTEMPTS;
       err(`Upload attempt ${attempt}/${MAX_ATTEMPTS} network error: ${networkErr.message}${isLast ? ' (giving up)' : ''}`);
       if (isLast) throw networkErr;
-      await new Promise((r) => setTimeout(r, BACKOFF_MS[attempt - 1] || BACKOFF_MS[BACKOFF_MS.length - 1]));
+      await new Promise((r) => setTimeout(r, (BACKOFF_MS[attempt - 1] || BACKOFF_MS[BACKOFF_MS.length - 1]) + Math.floor(Math.random() * 1000)));
       continue;
     }
 
@@ -346,7 +349,7 @@ async function uploadArchive(url, method, headers, archivePath) {
 
     if (isServerError && !isLast) {
       err(`Upload attempt ${attempt}/${MAX_ATTEMPTS} got HTTP ${res.status}, retrying in ${BACKOFF_MS[attempt - 1]}ms...`);
-      await new Promise((r) => setTimeout(r, BACKOFF_MS[attempt - 1]));
+      await new Promise((r) => setTimeout(r, (BACKOFF_MS[attempt - 1] || BACKOFF_MS[BACKOFF_MS.length - 1]) + Math.floor(Math.random() * 1000)));
       continue;
     }
 
