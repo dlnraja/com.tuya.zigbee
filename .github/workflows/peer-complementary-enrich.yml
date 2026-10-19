@@ -125,7 +125,11 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git pull --rebase origin master || true
+          # WHY(P2892, 19/10/2026): the cron edits driver.compose.json only; the local
+          # compose<->app.json fingerprint gate then refused every commit (run 39256990089:
+          # v8gtiaed/dimmer_2_gang, vzekyi4c/smoke_sensor3). Mirror compose into app.json first.
+          node tools/ci/sync-appjson-with-drivers.js --apply || echo "P2892_SYNC_WARN"
           node scripts/ci/safe-auto-commit.js --id=peer-complementary-enrich \
             --message="enrich(peers): complementary Johan/Lidl FP rewrite (P2832 cron)" \
-            --paths="drivers reports" \
+            --paths="drivers reports app.json" \
             --max-per-day=1
