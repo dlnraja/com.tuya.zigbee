@@ -346,6 +346,13 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
         await super.onEndDeviceAnnounce();
       }
     } catch (_e) { /* soft */ }
+    // WHY(#560 root cause): a second onEndDeviceAnnounce() further down this class used to override
+    // this one, so the DP refresh on wake-up never ran. Both duties now live in this single method.
+    try {
+      this.log('[REJOIN] Device announced itself, refreshing state...');
+      if (typeof this._updateLastSeen === 'function') { this._updateLastSeen(); }
+      if (this._dataRecoveryManager) { this._dataRecoveryManager.forceRecovery?.(); }
+    } catch (_e3) { /* soft */ }
     try {
       this.log('[TRV] P2598 endDeviceAnnounce → DP refresh');
       this._scheduleTrvDpRefresh();
@@ -481,17 +488,6 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
   }
 
 
-  /**
-   * v7.4.6: Refresh state when device announces itself (rejoin/wakeup)
-   */
-  async onEndDeviceAnnounce() {
-    this.log('[REJOIN] Device announced itself, refreshing state...');
-    if (typeof this._updateLastSeen === 'function') {this._updateLastSeen();}
-    // Proactive data recovery if supported
-    if (this._dataRecoveryManager) {
-       this._dataRecoveryManager?.forceRecovery?.();
-    }
-  }
 }
 
 module.exports = RadiatorValveDevice;
