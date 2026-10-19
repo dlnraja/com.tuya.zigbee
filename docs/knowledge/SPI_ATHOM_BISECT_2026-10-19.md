@@ -12,4 +12,5 @@ Static findings before the bisect:
 
 | Step | Change | One-shot run | Build | Result |
 |---|---|---|---|---|
-| 1 | drop never-fired trigger led_controller_spi_tuya_brightness_changed (flow compose = Bastien empty form) | pending | | |
+| 1 | drop never-fired trigger led_controller_spi_tuya_brightness_changed (flow compose = Bastien empty form) | 39326655463 (+ retries 39328676023, 39331643608) | #3637 v9.0.1556, #3638 v9.0.1557, #3639 v9.0.1558 | AggregateError x3 -> not the cause |
+| 2 | + drop light_temperature, light_mode from the manifest (= Bastien caps onoff/dim/light_hue/light_saturation; device code keeps CT support via DP4 when the capability exists) | pending | | |
