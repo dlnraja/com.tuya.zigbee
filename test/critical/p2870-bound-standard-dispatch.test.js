@@ -215,8 +215,7 @@ describe('P2870 SmartKnobRotationMixin (smart_knob / smart_knob_rotary / smart_k
     dev.log = () => {};
     dev._handleKnobRotationStep = (dir, size) => steps.push([dir, size]);
     dev._handleKnobRotation = (dir, rate) => moves.push([dir, rate]);
-    // The mixin attaches its bound path only when levelControl is also exposed as a server cluster
-    // (known gap, reported: output-only knobs return before the bind).
+    // Server-cluster layout; the output-only layout of real knobs is covered by P2873.
     const { node, zclNode } = makeNode([0, 1, 3, 8]);
     dev._setupKnobLevelControl(zclNode);
     assert.ok(zclNode.endpoints[1].bindings.levelControl, 'bound path attached');
