@@ -123,6 +123,29 @@ function pruneBackupFiles(root, removed) {
   }
 }
 
+/**
+ * P2830d: pair/repair views a driver does not declare in app.json (e.g. the hyphenated
+ * `select-driver.html` twin of `select_driver.html`) can never be opened by Homey, so they are dead
+ * weight in the archive. Conservative: only drivers whose app.json entry declares that view list,
+ * only `.html` files inside drivers/<id>/(pair|repair)/, and only ids that are not declared.
+ */
+function pruneUndeclaredViews(root, removed) {
+  let manifest;
+  try { manifest = JSON.parse(fs.readFileSync(path.join(root, 'app.json'), 'utf8')); } catch { return; }
+  for (const d of manifest.drivers || []) {
+    for (const kind of ['pair', 'repair']) {
+      if (!Array.isArray(d[kind])) continue;
+      const declared = new Set(d[kind].map((v) => (v && typeof v === 'object' ? v.id : v)).filter(Boolean));
+      const dir = path.join(root, 'drivers', d.id, kind);
+      let files;
+      try { files = fs.readdirSync(dir); } catch { continue; }
+      for (const f of files) {
+        if (f.endsWith('.html') && !declared.has(f.slice(0, -5))) removePath(path.join(dir, f), `undeclared ${kind} view`, removed);
+      }
+    }
+  }
+}
+
 function main() {
   if (!fs.existsSync(target)) {
     console.error(`[prune-publish-payload] Missing publish directory: ${target}`);
@@ -136,6 +159,7 @@ function main() {
   removePath(path.join(target, 'data', '_used_mfrs.json'), 'diagnostic manufacturer inventory', removed);
   pruneNodeModules(target, removed);
   pruneBackupFiles(target, removed);
+  pruneUndeclaredViews(target, removed);
 
   // Prune dev artifacts
   removePath(path.join(target, 'pnpm-lock.yaml'), 'dev lockfile', removed);
@@ -154,4 +178,5 @@ function main() {
   }
 }
 
-main();
+if (require.main === module) main();
+module.exports = { pruneUndeclaredViews };

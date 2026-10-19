@@ -1,0 +1,17 @@
+{
+  "_why": "Bastien budgets (P2830d), report-only (warn). Baseline from CI logs 2026-10-18: payload 21.1-21.5 MB raw / 2667-2686 files, 5.1 MB gz, ~30 drivers; 7 of 7 builds reached Test.",
+  "mode": "warn",
+  "budgets": {
+    "payloadMB": 22,
+    "payloadFiles": 2750,
+    "appJsonMB": 3.0,
+    "libMB": 9,
+    "driversMB": 9,
+    "nodeModulesMB": 3.2,
+    "dataMB": 1.5,
+    "duplicateAssetMB": 3,
+    "bootHeapMB": 50,
+    "setIntervalSites": 170,
+    "memoryUsageSites": 20
+  }
+}
