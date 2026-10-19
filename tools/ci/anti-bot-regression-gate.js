@@ -461,11 +461,16 @@ const REQUIRED = [
       '_TZ3000_xabckq1v',
       '_TZ3000_czuyt8lz',
       '_TZ3000_b3mgfu0d',
-      '_TZ3000_abrsvsou',
       '_TZ3000_4fjiwweb',
       '_TZ3000_kfu8zapd',
       '_TZ3000_rco1yzb1',
     ],
+  },
+  // 2026-10-19 user decision: ZG-101ZD rotary knob owns abrsvsou+TS004F
+  {
+    id: 'zg101zd-abrsvsou-own-driver',
+    driver: 'smart_knob_zg101zd',
+    mfrs: ['_TZ3000_abrsvsou'],
   },
   {
     id: 'p212-ts0043-btn3',
@@ -928,7 +933,7 @@ const FP_REQUIRED = [
   { mfr: '_TZ3000_xabckq1v', driverId: 'button_wireless_4' },
   { mfr: '_TZ3000_czuyt8lz', driverId: 'button_wireless_4' },
   { mfr: '_TZ3000_b3mgfu0d', driverId: 'button_wireless_4' },
-  { mfr: '_TZ3000_abrsvsou', driverId: 'button_wireless_4' },
+  { mfr: '_TZ3000_abrsvsou', driverId: 'smart_knob_zg101zd' },
   { mfr: '_TZ3000_4fjiwweb', driverId: 'button_wireless_4' },
   { mfr: '_TZ3000_a7ouggvs', driverId: 'button_wireless_3' },
   { mfr: '_TZ3000_qzjcsmar', driverId: 'button_wireless_3' },
