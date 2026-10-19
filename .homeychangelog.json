@@ -907,6 +907,9 @@
       ]
     }
   ],
+  "9.0.1528": {
+    "en": "v9.0.1528: automated publish, manifest sync, and Homey test promotion."
+  },
   "9.0.1527": {
     "en": "v9.0.1527: automated publish, manifest sync, and Homey test promotion."
   },
@@ -961,10 +964,7 @@
   "9.0.1508": {
     "en": "CI: P2842 soft-skip size after validate; strip radar mfrs off curtain_motor (ycke4deo)."
   },
-  "9.0.1507": {
-    "en": "Restore smoke_sensor3 vzekyi4c+TS0205 after compose→app mirror; free heal purges .homeybuild/backups."
-  },
-  "9.0.1528": {
-    "en": "v9.0.1528: automated publish, manifest sync, and Homey test promotion."
+  "9.0.1529": {
+    "en": "v9.0.1529: automated publish, manifest sync, and Homey test promotion."
   }
 }
