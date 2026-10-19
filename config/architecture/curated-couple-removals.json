@@ -661,6 +661,17 @@
       ],
       "why": "2026-10-19: _TZ3000_4fjiwweb + TS004F is the Tuya ERS-10TZBVK-AA smart knob (Z2M tuya.ts ERS-10TZBVK-AA, ZHA ts004f.py TuyaSmartRemote004FROK, deCONZ smart-knob DDF), same knob family as ZG-101ZD, not a 4-button remote; owner smart_knob_zg101zd",
       "source": "z2m tuya.ts ERS-10TZBVK-AA + zhaquirks ts004f.py + deconz _TZ3000_TS004F_smart_knob.json"
+    },
+    {
+      "driver": "switch_1gang",
+      "mfr": [
+        "_TZ3000_nrfkrgf4",
+        "_tz3000_nrfkrgf4",
+        "_TZ3000_NRFKRGF4",
+        "_tz3000_NRFKRGF4"
+      ],
+      "why": "2026-10-19 P2890: _TZ3000_nrfkrgf4 is a TS0046 6-button battery scene remote, not a relay; moved to button_wireless_6 (pinned).",
+      "source": "P2890 Z2M zigbee-herdsman-converters tuya.ts: TS0046 \"Wireless switch with 6 buttons\" (LoraTap SS9600ZB white label), events via tuya on_off_action per endpoint = 1..6 x single/double/hold, battery; deCONZ devices/tuya/_TZ3000_TS0046_6gang_remote.json (manufacturer _TZ3000_nrfkrgf4, sleeper, Gold) + button_maps Tuya6gangMap: endpoints 0x01..0x06, OnOff cluster command 0xFD payload 0/1/2 = short/double/long"
     }
   ]
 }
