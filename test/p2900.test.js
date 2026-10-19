@@ -51,3 +51,13 @@ describe('P2900 GHA hardening', () => {
     assert.deepStrictEqual(bad, []);
   });
 });
+
+describe('P2900b Bastien telemetry result row', () => {
+  it('build-wait step records the outcome on every path', () => {
+    const f = path.join(root, '.github/workflows/bastien-publish.yml');
+    if (!fs.existsSync(f)) return;
+    const y = fs.readFileSync(f, 'utf8');
+    const step = y.slice(y.indexOf('- name: Wait Athom draft ready (P2726)'), y.indexOf('- name: Re-upload on Athom'));
+    for (const o of ['uploaded-ok', 'draft-not-ready', 'processing_failed-first']) assert.ok(step.includes(`publish-size-telemetry.js record ${o}`), o);
+  });
+});
