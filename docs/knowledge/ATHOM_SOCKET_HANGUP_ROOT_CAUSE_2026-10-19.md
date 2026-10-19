@@ -139,3 +139,7 @@ Other options checked and not taken:
 - i18n values equal to `en`: 0.046 MB, relies on runtime fallback;
 - settings hints: 0.235 MB, lossy;
 - merging per-driver cards: changes card ids and breaks user flows.
+
+## P2884 — Orchestrator red after P2883 (19/10, 10:10 Paris)
+- Cause: P2883 moved P2138 in pr-gate / validate / syntax-check / code-quality into the shared `.github/actions/rules-gates` step (`only: ...,p2138,...`). The P2281 lineage gate still grepped each workflow for the literal script name `p2138-sacred-couple-matrix-gate`, so it reported "missing P2138 matrix" although P2138 still ran hard.
+- Fix: the gate now also accepts a rules-gates step, but only if it is hard (no `soft: true`, no `continue-on-error: true`), selects `p2138` via `only:` or a profile that contains it, and `scripts/ci/rules-gates.js` maps `p2138` to the same script. Not weakened: dropping p2138 from `only:` or making the step soft still fails (test/ci/p2884-lineage-rules-gates.test.js).

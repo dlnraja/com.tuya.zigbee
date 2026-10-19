@@ -8,6 +8,50 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.join(__dirname, '..', '..');
+
+// P2884: a rules-gates step counts only if it is hard (no soft: true, no
+// continue-on-error: true) and selects the gate id via only: or a profile.
+function hardRulesGatesSelects(yaml, id) {
+  const lines = String(yaml).split(/\r?\n/);
+  const RG = require(path.join(ROOT, 'scripts', 'ci', 'rules-gates.js'));
+  const gates = (RG && RG.RULES_GATES) || [];
+  for (let i = 0; i < lines.length; i++) {
+    if (!/uses:\s*\.\/\.github\/actions\/rules-gates\b/.test(lines[i])) continue;
+    // step block: from the previous '- ' at step indent to the next one
+    let start = i;
+    while (start > 0 && !/^\s*-\s+(name|uses|id|if):/.test(lines[start])) start--;
+    const indent = (lines[start].match(/^(\s*)-/) || ['', ''])[1].length;
+    let end = i + 1;
+    while (end < lines.length) {
+      const m = lines[end].match(/^(\s*)-\s/);
+      if (m && m[1].length <= indent) break;
+      if (lines[end].trim() && (lines[end].match(/^(\s*)/)[1].length < indent)) break;
+      end++;
+    }
+    const block = lines.slice(start, end).join('\n');
+    if (/^\s*soft:\s*['"]?true/m.test(block)) continue;
+    if (/^\s*continue-on-error:\s*['"]?true/m.test(block)) continue;
+    const only = block.match(/^\s*only:\s*['"]?([^'"\n#]+)/m);
+    if (only) {
+      if (only[1].split(',').map((x) => x.trim()).includes(id)) return true;
+      continue;
+    }
+    const prof = (block.match(/^\s*profile:\s*['"]?([\w-]+)/m) || [null, 'core'])[1];
+    const g = gates.find((x) => x.id === id);
+    if (g && g.profiles.includes(prof)) return true;
+  }
+  return false;
+}
+
+function rulesGatesMaps(id, file) {
+  try {
+    const RG = require(path.join(ROOT, 'scripts', 'ci', 'rules-gates.js'));
+    const g = ((RG && RG.RULES_GATES) || []).find((x) => x.id === id);
+    return !!g && g.file === file && fs.existsSync(path.join(ROOT, file));
+  } catch (_) {
+    return false;
+  }
+}
 const LINEAGE = path.join(ROOT, 'config', 'enrichment', 'discovery-lineage.json');
 
 function read(p) {
@@ -98,8 +142,13 @@ function main() {
       continue;
     }
     const y = read(p);
-    if (!/p2138-sacred-couple-matrix-gate/.test(y)) fail(`${wf} missing P2138 matrix`);
-    else ok(`${wf} hard P2138`);
+    // P2884: since P2883 the hard workflows run P2138 through the shared
+    // .github/actions/rules-gates action (scripts/ci/rules-gates.js). Accept
+    // either the direct script or a HARD rules-gates step that selects p2138,
+    // and only when the runner really maps p2138 to the same script.
+    if (/p2138-sacred-couple-matrix-gate/.test(y)) ok(`${wf} hard P2138`);
+    else if (hardRulesGatesSelects(y, 'p2138') && rulesGatesMaps('p2138', 'tools/ci/p2138-sacred-couple-matrix-gate.js')) ok(`${wf} hard P2138 (shared rules-gates)`);
+    else fail(`${wf} missing P2138 matrix`);
   }
 
   // Guidelines lineage section
@@ -115,4 +164,5 @@ function main() {
   console.log('\nPASS: discovery-lineage enrich gate');
 }
 
-main();
+module.exports = { hardRulesGatesSelects, rulesGatesMaps };
+if (require.main === module) main();
