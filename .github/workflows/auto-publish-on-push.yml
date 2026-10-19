@@ -774,7 +774,9 @@ jobs:
           set +e
           final_out=$(node .github/scripts/assert-athom-final.js 2>&1); final_rc=$?
           echo "$final_out"
-          if [ "$final_rc" -eq 0 ] && ! printf '%s' "$final_out" | grep -q 'SOFT-EXPECT'; then exit 0; fi
+          kind=$(printf '%s' "$final_out" | node .github/scripts/athom-retry-policy.js classify 2>/dev/null || echo unknown)
+          if [ "$final_rc" -eq 0 ] && ! printf '%s' "$final_out" | grep -q 'SOFT-EXPECT'; then node .github/scripts/publish-size-telemetry.js record test; exit 0; fi
+          node .github/scripts/publish-size-telemetry.js record "$([ "$final_rc" -eq 0 ] && echo soft-expect || echo failed)" "$kind"
           # Final state known and not Test: retry decision (budget 2 per chain, exponential backoff + jitter).
           out=$(node .github/scripts/transient-publish-retry.js) || true
           echo "$out"; echo "$out" >> "$GITHUB_STEP_SUMMARY"
@@ -785,10 +787,21 @@ jobs:
             # WHY(P2893, 19/10/2026): carry release_held so the flake check retries the SAME content.
             # SPI one-shot 39281159242 (#3630 AggregateError) retried WITHOUT the held driver (#3631 Test),
             # which tells nothing about the held driver (bisect needs same-content flip).
-            gh workflow run auto-publish-on-push.yml --ref "${GITHUB_REF_NAME}" -f transient_retry="${next:-1}" -f release_held="${PUBLISH_HOLD_RELEASE:-}" || true
+            .github/scripts/gh-retry.sh gh workflow run auto-publish-on-push.yml --ref "${GITHUB_REF_NAME}" -f transient_retry="${next:-1}" -f release_held="${PUBLISH_HOLD_RELEASE:-}" || true
           fi
           if printf '%s' "$out" | grep -q '^\[transient-retry\] BISECT'; then
             echo "::warning::AggregateError after the retry budget: real content failure, bisect needed (see ledger docs/knowledge/athom-publish-outcomes.jsonl)"
           fi
           [ "$final_rc" -eq 0 ] && exit 0
           exit 1
+
+      # P2900: socket hang up / AggregateError vs size, one CSV row per upload (kept 90 days).
+      - name: Upload publish size telemetry
+        if: always()
+        continue-on-error: true
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: publish-size-telemetry-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/publish-size/
+          if-no-files-found: ignore
+          retention-days: 90
