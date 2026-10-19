@@ -1,11 +1,11 @@
-# 📥 Community Inbox — 2026-10-18 09:36 UTC
+# 📥 Community Inbox — 2026-10-19 10:44 UTC
 
 Généré par `.github/scripts/community-inbox-digest.js` (workflow `community-inbox.yml`).
 
 ## Résumé
 
 - Issues ouvertes : **6** — 🔴 à traiter : **4**, 🟡 attente utilisateur : 2, 🟢 maintainer actif : 0
-- PRs ouvertes : **0**
+- PRs ouvertes : **1**
 - Forum : **7** post(s) sans réponse du maintainer
 - Messages privés (lecture seule, jamais de réponse) : **20** thread(s), 7 mfr, 5 pid, 7 UUID diag
 
@@ -19,7 +19,11 @@ Généré par `.github/scripts/community-inbox-digest.js` (workflow `community-i
 ## 🟡 Auto-résolues, en attente de retour
 
 - [#559](https://github.com/dlnraja/com.tuya.zigbee/issues/559) — Smartplug _(maj 2026-10-03)_
-- [#557](https://github.com/dlnraja/com.tuya.zigbee/issues/557) — 🤖 Daily digest _(maj 2026-10-16)_
+- [#557](https://github.com/dlnraja/com.tuya.zigbee/issues/557) — 🤖 Daily digest _(maj 2026-10-19)_
+
+## 🔀 PRs ouvertes
+
+- [#573](https://github.com/dlnraja/com.tuya.zigbee/pull/573) — Weekly Homey knowledge/tooling refresh 2026-10-19 _(github-actions[bot], maj 2026-10-19)_
 
 ## 🌍 Forum — posts sans réponse
 
