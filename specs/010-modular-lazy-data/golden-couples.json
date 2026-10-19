@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-18T22:26:35.203Z",
- "drivers": 388,
+ "generated": "2026-10-19T06:33:51.872Z",
+ "drivers": 389,
  "snapshot": {
   "air_purifier": {
    "mfr": 4,
@@ -195,9 +195,9 @@
    "pidSha": "06cd0099c514e4ab"
   },
   "button_wireless_4": {
-   "mfr": 34,
+   "mfr": 33,
    "pid": 45,
-   "mfrSha": "98f55dde8c5c0f91",
+   "mfrSha": "525ca2deed78ed79",
    "pidSha": "fdbcbd0e265ae852"
   },
   "button_wireless_4_ts0041": {
@@ -279,9 +279,9 @@
    "pidSha": "3427697d0c296c9d"
   },
   "climate_sensor": {
-   "mfr": 535,
+   "mfr": 532,
    "pid": 32,
-   "mfrSha": "c443f368be767406",
+   "mfrSha": "521e88fa359b80e2",
    "pidSha": "4809a771f46a5606"
   },
   "climate_sensor_device": {
@@ -981,9 +981,9 @@
    "pidSha": "261617b7dd61d124"
   },
   "lcdtemphumidsensor": {
-   "mfr": 23,
+   "mfr": 26,
    "pid": 6,
-   "mfrSha": "d9771640c14587f8",
+   "mfrSha": "4255ebb70b58ea7d",
    "pidSha": "9be78874133bac72"
   },
   "lcdtemphumidsensor_2": {
@@ -1693,6 +1693,12 @@
    "pid": 4,
    "mfrSha": "2e1eebba4e2a01ba",
    "pidSha": "bea76b1883d9ef71"
+  },
+  "smart_knob_zg101zd": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "b59de572edfe9305",
+   "pidSha": "74df0f4d2b001cb5"
   },
   "smart_lcd_thermostat": {
    "mfr": 7,
