@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1523 |
+| **App Version** | v9.0.1524 |
 | **Drivers** | 449 (396 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,841 |
 | **Pairing Variants** | 19,018 (4 case combos per fingerprint) |
@@ -45,7 +45,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **SVG Icons** | 752 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
-| **Last Updated** | 2026-10-18 |
+| **Last Updated** | 2026-10-19 |
 
 ### Top 20 Drivers by Fingerprint Count
 
@@ -103,7 +103,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.1523** | v9.0.1522: |
+| **v9.0.1524** | v9.0.1523: |
+| **v9.0.1523** | v9.0.1523: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1522** | v9.0.1522: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1520** | v9.0.1520: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1519** | v9.0.1519: automated publish, manifest sync, and Homey test promotion. |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1513** | v9.0.1513: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1512** | v9.0.1512: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1511** | Tip after bot collide: P2850 inbox treat + CI soft-expect Athom hang. |
-| **v9.0.1510** | Inbox treat: unblock CI (TS0044 wall_remote strip, Athom soft-expect, soil/TRV locks verified). |
 
 <!-- CHANGELOG_END -->
 
