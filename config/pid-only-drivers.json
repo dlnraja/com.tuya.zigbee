@@ -52,6 +52,10 @@
     {
       "id": "switch_usb_dongle",
       "reason": "pid-only; couples live on exact-pair drivers (W4)"
+    },
+    {
+      "id": "valve_controller_5zone",
+      "reason": "2026-10-19 graduated from publish hold (#3635 v9.0.1554 Test). Its only couple _TZ3000_j0ktmul1/TS011F lives on switch_4gang (curated, GangCountAdapter gang 5); the driver keeps pid TS011F with a 5-endpoint manifest so it can only match a 5-EP device, no manufacturerName (one couple one driver)."
     }
   ]
 }
