@@ -70,7 +70,8 @@ function decide({ version, builds, alreadyRetried, retryCount, idleWaited = fals
 
 if (require.main === module) {
   const root = process.cwd();
-  const version = JSON.parse(fs.readFileSync(path.join(root, 'app.json'), 'utf8')).version;
+  // P2830g: the uploaded version (bump step output) wins over app.json, which the metadata step may reset.
+  const version = process.env.HOMEY_EXPECTED_VERSION || JSON.parse(fs.readFileSync(path.join(root, 'app.json'), 'utf8')).version;
   let builds = [];
   // Prefer the fresh read-only Athom snapshot written by scripts/ci/homey-build-status.js in this run.
   try {
