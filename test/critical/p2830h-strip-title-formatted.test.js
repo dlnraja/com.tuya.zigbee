@@ -35,3 +35,16 @@ describe('P2830h strip redundant titleFormatted', () => {
     assert.ok(i < src.indexOf('post Zigbee matrix compact'));
   });
 });
+
+describe('P2830h size gate judges the upload artifact', () => {
+  const gate = fs.readFileSync(path.join(__dirname, '../../scripts/ci/publish-size-gate.cjs'), 'utf8');
+  it('projects a raw homey build through sanitize + compact + strip before failing', () => {
+    assert.match(gate, /checkBuildAppJson\(path\.join\(ROOT, '\.homeybuild', 'app\.json'\)\)/);
+    const p = gate.slice(gate.indexOf('function projectUploadManifestBytes'));
+    const a = p.indexOf('sanitizeManifestFile'); const b = p.indexOf('compactManifestFile'); const c = p.indexOf('strip-redundant-title-formatted');
+    assert.ok(a > 0 && a < b && b < c);
+  });
+  it('still fails when the projection is above the limit', () => {
+    assert.match(gate, /Projected upload app\.json is .* above/);
+  });
+});
