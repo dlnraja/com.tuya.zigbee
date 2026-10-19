@@ -596,6 +596,14 @@ try {
       const raw = JSON.parse(fs.readFileSync(destAppJson));
       fs.writeFileSync(destAppJson, JSON.stringify(raw));
     } catch (_) { /* already compact */ }
+    // P2830h: lossless shrink: drop titleFormatted that homey-lib ignores (no visible arg, no [[..]]).
+    try {
+      const { stripFile } = require('./maintenance/strip-redundant-title-formatted.cjs');
+      const tf = stripFile(destAppJson);
+      console.log(`[P2830h] removed ${tf.removed} redundant titleFormatted (${(tf.bytes / 1048576).toFixed(3)} MB, lossless)`);
+    } catch (tfErr) {
+      console.warn('[P2830h] titleFormatted strip skipped:', tfErr.message);
+    }
     const sizeMB = fs.statSync(destAppJson).size / (1024 * 1024);
     console.log(`Target app.json size (post Zigbee matrix compact): ${sizeMB.toFixed(2)} MB`);
     if (sizeMB > 4) {
