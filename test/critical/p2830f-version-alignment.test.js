@@ -72,4 +72,17 @@ describe('P2830f version alignment', () => {
     const direct = fs.readFileSync(path.join(ROOT, 'scripts', 'direct-api-publish.js'), 'utf8');
     assert.match(direct, /already|uploaded|exists/i);
   });
+
+  it('final Athom gate and retry decision judge the uploaded version (HOMEY_EXPECTED_VERSION)', () => {
+    const wf = path.join(ROOT, '.github', 'workflows', 'auto-publish-on-push.yml');
+    if (fs.existsSync(wf)) {
+      const y = fs.readFileSync(wf, 'utf8');
+      const i = y.indexOf('Athom final state gate');
+      if (i >= 0) assert.match(y.slice(i, i + 1200), /HOMEY_EXPECTED_VERSION: \$\{\{ steps\.info\.outputs\.version \}\}/);
+    }
+    const r = path.join(ROOT, '.github', 'scripts', 'transient-publish-retry.js');
+    if (fs.existsSync(r)) assert.match(fs.readFileSync(r, 'utf8'), /process\.env\.HOMEY_EXPECTED_VERSION \|\|/);
+    const g = path.join(ROOT, '.github', 'scripts', 'assert-athom-final.js');
+    if (fs.existsSync(g)) assert.match(fs.readFileSync(g, 'utf8'), /process\.env\.HOMEY_EXPECTED_VERSION \|\| app\.version/);
+  });
 });
