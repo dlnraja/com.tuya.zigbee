@@ -72,7 +72,7 @@ jobs:
     timeout-minutes: 75  # idle wait (≤25) + publish + draft + final gate (≤15), like master 516c83444c
     steps:
       - name: Checkout bastien-home
-        uses: actions/checkout@v5
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
           ref: bastien-home
           fetch-depth: 1
@@ -94,7 +94,7 @@ jobs:
           echo "OK Bastien App ID locked"
 
       - name: Setup Node
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
@@ -213,6 +213,8 @@ jobs:
           fi
           # P2830d: lossless payload pruning (node_modules docs/tests/maps, backups, undeclared pair views), as on master.
           node "$GITHUB_WORKSPACE/scripts/maintenance/prune-publish-payload.cjs" "$PUBLISH_DIR" || echo "::warning::prune-publish-payload failed; uploading unpruned payload"
+          # P2900: per-upload size row for the socket-hang-up/size correlation CSV (shared with master/stable).
+          node "$GITHUB_WORKSPACE/.github/scripts/publish-size-telemetry.js" measure "$PUBLISH_DIR" || true
           # WHY(P2738): Homey CLI always createBuild — that flooded #114 PF while #113 healthy.
           # Prefer soft-expect direct-api (tip-lag / already-test / in-flight → exit 0, no spam).
           # Force path only on workflow_dispatch force_publish=true (cooldown one-shot).
@@ -228,7 +230,7 @@ jobs:
           else
             echo "::notice::Bastien soft-expect publish (P2732/P2738) — no Homey CLI createBuild"
           fi
-          publish_output=$(HOMEY_PAT="$HOMEY_PAT" HOMEY_API_TIMEOUT_MS="${HOMEY_API_TIMEOUT_MS:-120000}" \
+          publish_output=$(HOMEY_PAT="$HOMEY_PAT" HOMEY_API_TIMEOUT_MS="${HOMEY_API_TIMEOUT_MS:-180000}" \
             node "$GITHUB_WORKSPACE/scripts/direct-api-publish.js" --path "$PUBLISH_DIR" --channel test $FORCE_FLAG 2>&1)
           publish_status=$?
           set -e
@@ -276,9 +278,72 @@ jobs:
           fi
           echo "draft_ok=true" >> "$GITHUB_OUTPUT"
 
+      # WHY(P2900, 20/10/2026 Paris): Bastien was the only app with no retry after an Athom processing_failed
+      # (socket hang up / AggregateError), so one flake left Test behind until the next push. Same shared policy
+      # as master and stable: budget + jittered backoff from athom-retry-policy.js, each retry rebuilt with a
+      # strictly higher patch version (re-checked by the floor gate), unknown failures and tip-lag never retried.
+      - name: Re-upload on Athom processing_failed (fresh higher version)
+        id: reupload
+        if: steps.wait_draft.outputs.draft_ok == 'false' && steps.publish_bastien.outcome == 'success'
+        continue-on-error: true
+        timeout-minutes: 45
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          APP_ID: ${{ env.EXPECTED_APP_ID }}
+          TARGET_APP_ID: ${{ env.EXPECTED_APP_ID }}
+          HOMEY_DRAFT_WAIT_MS: ${{ env.HOMEY_DRAFT_WAIT_MS }}
+          HOMEY_DRAFT_EARLY_FAIL_MS: ${{ env.HOMEY_DRAFT_EARLY_FAIL_MS }}
+          HOMEY_CHANGELOG: 'Reliability fixes'
+        run: |
+          set +e
+          PUBLISH_DIR="${HOMEY_PUBLISH_DIR:-$(node -p "require('path').join(require('os').tmpdir(), 'homey-publish-temp')")}"
+          MAXR=$(node .github/scripts/athom-retry-policy.js get maxTransientRetries)
+          for retry in $(seq 1 "$MAXR"); do
+            V=$(node -p "require('./app.json').version")
+            status=$(node scripts/ci/homey-build-status.js "$APP_ID" 2>&1)
+            row=$(printf '%s\n' "$status" | grep -F "\"version\":\"$V\"" | head -1)
+            KIND=$(printf '%s' "$row" | node .github/scripts/athom-retry-policy.js classify)
+            # Athom often returns processing_failed with no error text (history: mostly socket hang up): transient budget.
+            if [ "$KIND" = "unknown" ] && ! printf '%s' "$row" | grep -Eqi '"[a-zA-Z]*(err|reason|message|log)[a-zA-Z]*":'; then KIND=transient; fi
+            HOMEY_EXPECTED_VERSION=$V TRANSIENT_RETRY=$((retry-1)) node .github/scripts/publish-size-telemetry.js record processing_failed "$KIND"
+            if ! printf '%s' "$row" | grep -qi 'processing_failed'; then echo "v$V is not processing_failed (tip-lag / in-flight): no re-upload"; break; fi
+            if [ "$KIND" = "unknown" ] || [ "$(node -e "const p=require('./.github/scripts/athom-retry-policy');console.log(p.shouldRetry(process.argv[1],process.argv[2])?'RETRY':'STOP')" "$KIND" $((retry-1)))" != "RETRY" ]; then echo "::warning::v$V failed ($KIND): not retryable by policy"; break; fi
+            DELAY=$(node .github/scripts/athom-retry-policy.js backoff "$retry")
+            echo "::warning::Athom processing_failed ($KIND) for v$V; backoff ${DELAY}s then rebuild as a new patch (retry $retry/$MAXR)"
+            sleep "$DELAY"
+            node .github/scripts/athom-version-floor.js --apply && node .github/scripts/bump-homey-version.js patch || { echo "::error::bump failed"; break; }
+            NEWV=$(node -p "require('./app.json').version")
+            if [ "$NEWV" = "$V" ] || [ "$(printf '%s\n%s\n' "$V" "$NEWV" | sort -V | tail -1)" != "$NEWV" ]; then echo "::error::refusing non-increasing $NEWV (was $V)"; break; fi
+            node .github/scripts/athom-version-floor.js --gate || break
+            npx homey app build && npm run prepare-publish || { echo "::error::rebuild failed"; break; }
+            (cd "$PUBLISH_DIR" && { [ -f package-lock.json ] && npm ci --omit=dev --ignore-scripts --no-audit --no-fund || true; })
+            node scripts/maintenance/prune-publish-payload.cjs "$PUBLISH_DIR" || true
+            node .github/scripts/publish-size-telemetry.js measure "$PUBLISH_DIR" || true
+            HOMEY_PAT="$HOMEY_PAT" HOMEY_API_TIMEOUT_MS=180000 node scripts/direct-api-publish.js --path "$PUBLISH_DIR" --channel test --force || echo "::warning::re-upload attempt failed"
+            OUT=$(mktemp)
+            GITHUB_OUTPUT="$OUT" node .github/scripts/wait-athom-draft-ready.js; rc=$?
+            if [ "$rc" -eq 0 ] && ! grep -q 'processing_failed_degraded=true' "$OUT"; then
+              HOMEY_EXPECTED_VERSION=$NEWV TRANSIENT_RETRY=$retry node .github/scripts/publish-size-telemetry.js record uploaded-ok
+              echo "draft_ok=true" >> "$GITHUB_OUTPUT"; echo "version=$NEWV" >> "$GITHUB_OUTPUT"; exit 0
+            fi
+          done
+          echo "draft_ok=false" >> "$GITHUB_OUTPUT"
+          echo "### Bastien Test NOT updated after re-uploads (Athom processing_failed)" >> "$GITHUB_STEP_SUMMARY"
+          exit 0
+
+      - name: Upload publish size telemetry
+        if: always()
+        continue-on-error: true
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: publish-size-telemetry-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/publish-size/
+          if-no-files-found: ignore
+          retention-days: 90
+
       # P2620: draft→test only when draft_ok (P2726/P2738 — never promote PF tip)
       - name: Install promotion tools
-        if: steps.wait_draft.outputs.draft_ok == 'true'
+        if: (steps.wait_draft.outputs.draft_ok == 'true' || steps.reupload.outputs.draft_ok == 'true')
         continue-on-error: true
         run: |
           sudo apt-get update -qq || true
@@ -291,7 +356,7 @@ jobs:
 
       - name: "Bastien Tier 1: Promote draft→test (Puppeteer)"
         id: promote_puppeteer
-        if: steps.wait_draft.outputs.draft_ok == 'true'
+        if: (steps.wait_draft.outputs.draft_ok == 'true' || steps.reupload.outputs.draft_ok == 'true')
         continue-on-error: true
         timeout-minutes: 8
         env:
@@ -304,7 +369,7 @@ jobs:
 
       - name: "Bastien Tier 2: Promote via API"
         id: promote_api
-        if: steps.wait_draft.outputs.draft_ok == 'true' && steps.promote_puppeteer.outcome != 'success'
+        if: (steps.wait_draft.outputs.draft_ok == 'true' || steps.reupload.outputs.draft_ok == 'true') && steps.promote_puppeteer.outcome != 'success'
         continue-on-error: true
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
