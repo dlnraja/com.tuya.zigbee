@@ -756,7 +756,10 @@ jobs:
 
       # WHY(2026-10-11): no false green — fail the run when Athom did not put this version in Test.
       - name: Athom final state gate (red unless Test)
-        if: always() && steps.pub.outcome == 'success'
+        # P2887: also after a FAILED publish step (force/direct-API path exits 1 on processing_failed, run
+        # 39224444574 -> #3622 v9.0.1541 AggregateError got no retry). The retry decision only acts when Athom
+        # has a build for HOMEY_EXPECTED_VERSION ("no Athom build" -> skip), so pre-upload errors never retry.
+        if: always() && (steps.pub.outcome == 'success' || steps.pub.outcome == 'failure')
         timeout-minutes: 15
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
