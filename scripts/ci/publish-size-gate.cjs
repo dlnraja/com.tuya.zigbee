@@ -192,31 +192,31 @@ function projectUploadManifestBytes(file) {
   }
 }
 
-function checkBuildAppJson(file) {
+function checkBuildAppJson(file, label = 'Build app.json', kind = 'raw homey build') {
   if (!fs.existsSync(file)) {
-    warnings.push(`Build app.json: missing, skipped (${path.relative(ROOT, file)})`);
+    warnings.push(`${label}: missing, skipped (${path.relative(ROOT, file)})`);
     return;
   }
   let rawBytes;
   try {
     rawBytes = Buffer.byteLength(JSON.stringify(JSON.parse(fs.readFileSync(file, 'utf8'))));
   } catch {
-    checkJsonUnderLimit('Build app.json', file, LIMITS.appJsonMB);
+    checkJsonUnderLimit(label, file, LIMITS.appJsonMB);
     return;
   }
   if (toMB(rawBytes) <= LIMITS.appJsonMB) {
-    checkJsonUnderLimit('Build app.json', file, LIMITS.appJsonMB);
+    checkJsonUnderLimit(label, file, LIMITS.appJsonMB);
     return;
   }
   const projected = projectUploadManifestBytes(file);
   if (projected === null || toMB(projected) > LIMITS.appJsonMB) {
-    checkJsonUnderLimit('Build app.json', file, LIMITS.appJsonMB);
+    checkJsonUnderLimit(label, file, LIMITS.appJsonMB);
     if (projected !== null) errors.push(`Projected upload app.json is ${fmtMB(projected)} MB after sanitize+compact+strip, above ${LIMITS.appJsonMB.toFixed(2)} MB`);
     return;
   }
-  addCheck('Build app.json (raw homey build, not uploaded)', rawBytes, LIMITS.appJsonMB, 'warn', `${path.relative(ROOT, file)} compact; not prepared yet`);
+  addCheck(`${label} (${kind}, not uploaded)`, rawBytes, LIMITS.appJsonMB, 'warn', `${path.relative(ROOT, file)} compact; not prepared yet`);
   addCheck('Projected upload app.json', projected, LIMITS.appJsonMB, 'pass', 'sanitize + Zigbee compact + titleFormatted strip, as prepare-publish');
-  warnings.push(`Build app.json is the raw homey build (${fmtMB(rawBytes)} MB); the upload manifest projects to ${fmtMB(projected)} MB. Run npm run prepare-publish to sync it.`);
+  warnings.push(`${label} is the ${kind} (${fmtMB(rawBytes)} MB); the upload manifest projects to ${fmtMB(projected)} MB. Run npm run prepare-publish to sync it.`);
 }
 
 function main() {
@@ -228,7 +228,9 @@ function main() {
   const rootApp = (preparedApp && fs.existsSync(preparedApp))
     ? preparedApp
     : path.join(ROOT, 'app.json');
-  checkJsonUnderLimit('Root app.json', rootApp, LIMITS.appJsonMB);
+  // P2830h: an unprepared root app.json (stable commits the composed manifest) is projected too.
+  if (rootApp === preparedApp) checkJsonUnderLimit('Root app.json', rootApp, LIMITS.appJsonMB);
+  else checkBuildAppJson(rootApp, 'Root app.json', 'composed source manifest');
   checkBuildAppJson(path.join(ROOT, '.homeybuild', 'app.json'));
 
   checkDirUnderLimit(
