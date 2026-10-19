@@ -243,13 +243,30 @@ function mergeRegistryCases(masterObj, bastienObj) {
   return out;
 }
 
-function mergeSacredKeep(masterObj, bastienObj) {
+// WHY(P2891): a sacred-keep entry whose driver is not in the target's published
+// set (stable-v5 publishes a subset of drivers) makes the P2288 sacred check fail
+// with "driver missing in publish". Only carry couples the target can keep.
+function targetDriverIds(rootDir) {
+  try {
+    const app = JSON.parse(fs.readFileSync(path.join(rootDir, 'app.json'), 'utf8'));
+    if (Array.isArray(app.drivers) && app.drivers.length) return new Set(app.drivers.map((d) => d.id));
+  } catch { /* fall back to the drivers folder */ }
+  try {
+    return new Set(fs.readdirSync(path.join(rootDir, 'drivers'))
+      .filter((d) => fs.existsSync(path.join(rootDir, 'drivers', d, 'driver.compose.json'))));
+  } catch {
+    return null;
+  }
+}
+
+function mergeSacredKeep(masterObj, bastienObj, allowedDrivers = null) {
   const out = JSON.parse(JSON.stringify(masterObj || { couples: [] }));
   const couples = Array.isArray(out.couples) ? out.couples : [];
   const key = (c) => `${String(c.mfr || '').toLowerCase()}|${String(c.pid || '')}|${String(c.driverId || '')}`;
   const seen = new Set(couples.map(key));
   for (const c of Array.isArray(bastienObj?.couples) ? bastienObj.couples : []) {
     if (!c || !c.mfr || !c.pid || !c.driverId) continue;
+    if (allowedDrivers && !allowedDrivers.has(c.driverId)) continue;
     const k = key(c);
     if (seen.has(k)) continue;
     seen.add(k);
@@ -299,7 +316,7 @@ function applyOne(rel, bastienBody, rootDir = ROOT) {
       return { ok: true, mode: 'create_sacred_keep' };
     }
     const masterObj = JSON.parse(fs.readFileSync(abs, 'utf8'));
-    const merged = mergeSacredKeep(masterObj, bastienObj);
+    const merged = mergeSacredKeep(masterObj, bastienObj, targetDriverIds(rootDir));
     fs.writeFileSync(abs, `${JSON.stringify(merged, null, 2)}\n`);
     return { ok: true, mode: 'merge_sacred_keep' };
   }
@@ -497,6 +514,7 @@ module.exports = {
   mergeComposeComplementary,
   mergeRegistryCases,
   mergeSacredKeep,
+  targetDriverIds,
   listBastienChangedFiles,
   FORBIDDEN_PATHS,
   PROMOTE_GLOBS,
