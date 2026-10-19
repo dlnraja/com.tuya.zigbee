@@ -1,9 +1,11 @@
 ## [Unreleased]
 
 ### Added
+- **P2871:** the Tuya ERS-10TZBVK-AA knob (`_TZ3000_4fjiwweb` + TS004F) now pairs as the rotary knob driver too (re-pair to switch from the 4-button driver).
 - **P2868 new driver `smart_knob_zg101zd`:** HOBEIAN ZG-101ZD / ERS-10TZBVK-AA rotary knob (`_TZ3000_abrsvsou` + TS004F). Native Zigbee pairing; triggers for rotate left/right, press, double press, hold and press+rotate; optional Tuya event mode setting. The couple left `button_wireless_4` (re-pair to switch driver).
 
 ### Fixed
+- **P2870:** Lidl/Livarno remote dimmer (TS1001) on/off/toggle/brightness Flow cards now fire; rotation direction from standard Zigbee step/move commands is read correctly.
 - **P2869:** `_TZE284_9ern5sfh` (RSH-HS03 LCD temperature/humidity) now pairs as the LCD sensor on every branch (one driver per couple).
 - **P2865/P2866/P2867 (#560 root causes):** `tuya.dataQuery` now always sends the empty query-all frame (callers passing `{seq,dp}` used to throw, so no active DP query was ever sent); `tuya.datapoint` fills missing status/transid/length (bare calls wrote length-0 frames); the radiator valve's wake-up DP refresh was shadowed by a duplicate `onEndDeviceAnnounce`.
 - **P2864 Zemismart 214C water valve (forum 101901#8, Steve_Wilson):** `_TZE284_vuwtqx0t`/`_TZE200_vuwtqx0t` now use the Z2M/ZHA DP map (DP1 meter total, DP13 valve + TX, DP14 auto clean, DP22/100 temp, DP26 battery) instead of reading the meter total as on/off.
