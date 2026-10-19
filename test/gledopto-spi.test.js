@@ -22,7 +22,9 @@ describe('Gledopto GL-SPI-206P', () => {
   });
   it('exact driver carries the couples; led_controller_rgb is the published fold host', () => {
     const j = compose('led_controller_spi_tuya');
-    assert.deepStrictEqual([...new Set(j.zigbee.manufacturerName.filter((m) => /^_tze/i.test(m)).map((m) => m.toLowerCase()))].sort(), ['_tze204_8fffc3kb', '_tze284_gt5al3bl', '_tze28c1000000_gt5al3bl']);
+    assert.deepStrictEqual([...new Set(j.zigbee.manufacturerName.filter((m) => /^_tze/i.test(m)).map((m) => m.toLowerCase()))].sort(), ['_tze204_8fffc3kb', '_tze284_gt5al3bl']);
+    // SPI bisect step 3 (20/10/2026): _TZE28C1000000_gt5al3bl kept on led_controller_rgb only
+    assert.ok(compose('led_controller_rgb').zigbee.manufacturerName.includes('_TZE28C1000000_gt5al3bl'));
     assert.strictEqual(j.class, 'light');
     // WHY(fold #3499): spi id held from Athom publish — couples live on led_controller_rgb
     assert.ok(compose('led_controller_rgb').zigbee.manufacturerName.includes('_TZE204_8fffc3kb'));
