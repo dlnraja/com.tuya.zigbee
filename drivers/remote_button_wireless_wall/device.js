@@ -970,5 +970,9 @@ class Button1GangDevice extends ButtonDevice {
   }
 }
 
+// WHY(P2872): the raw frame path used to turn every on/off/toggle into a
+// single press. This driver's documented command-mode layout is
+// toggle = single, on = double, off = long (button_mode 'dimmer' keeps single).
+Button1GangDevice.RAW_ONOFF_PRESS_MAP = Object.freeze({ 2: 'single', 1: 'double', 0: 'long' });
 module.exports = Button1GangDevice;
 
