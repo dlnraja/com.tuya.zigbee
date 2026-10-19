@@ -74,11 +74,11 @@ describe('P2826 T140352 fleet + flow harden', () => {
     for (const c of [0, 1, 1026, 1029, 61184]) assert.ok(clusters.includes(c), String(c));
   });
 
-  it('SPI flow keeps brightness_changed (P2449 declare⇒wire)', () => {
+  it('SPI flow: dead brightness_changed card dropped for the Athom bisect (19/10/2026, user-approved)', () => {
     const flow = JSON.parse(fs.readFileSync(
       path.join(ROOT, 'drivers/led_controller_spi_tuya/driver.flow.compose.json'), 'utf8'
     ));
-    assert.ok((flow.triggers || []).some((t) => t.id === 'led_controller_spi_tuya_brightness_changed'));
+    assert.ok(!(flow.triggers || []).some((t) => t.id === 'led_controller_spi_tuya_brightness_changed'));
   });
 
   it('npm check:p2826 wired', () => {
