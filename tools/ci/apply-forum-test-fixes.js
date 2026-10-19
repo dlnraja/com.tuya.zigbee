@@ -30,10 +30,10 @@ const MFR_MAP = {
     '_TZ3000_czuyt8lz',
     '_TZ3000_b3mgfu0d',
     '_TZ3000_rco1yzb1',
-    '_TZ3000_4fjiwweb',
   ],
   smart_knob_zg101zd: [
     '_TZ3000_abrsvsou',
+    '_TZ3000_4fjiwweb',
   ],
   smart_knob_rotary: [
     '_TZ3000_qja6nq5z',

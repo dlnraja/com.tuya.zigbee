@@ -94,10 +94,8 @@
     }
   ],
   "forbiddenOnKnobMfr": {
-    "note": "4fjiwweb stays button_wireless_4 — do not add to KNOB_MFR (abrsvsou moved to its own driver 2026-10-19)",
-    "mfr": [
-      "_TZ3000_4fjiwweb"
-    ],
+    "note": "4-button TS004F makers that must never enter KNOB_MFR. Empty since 2026-10-19: abrsvsou and 4fjiwweb are knobs on smart_knob_zg101zd (dedicatedKnobDrivers)",
+    "mfr": [],
     "driver": "button_wireless_4"
   },
   "dedicatedKnobDrivers": [
@@ -106,6 +104,15 @@
       "pid": "TS004F",
       "driver": "smart_knob_zg101zd",
       "z2m": "HOBEIAN ZG-101ZD / ERS-10TZBVK-AA",
+      "notInKnobMfr": true,
+      "since": "2026-10-19",
+      "mode": "native command mode by default; Tuya event mode optional (setting operating_mode)"
+    },
+    {
+      "mfr": "_TZ3000_4fjiwweb",
+      "pid": "TS004F",
+      "driver": "smart_knob_zg101zd",
+      "z2m": "Tuya ERS-10TZBVK-AA smart knob",
       "notInKnobMfr": true,
       "since": "2026-10-19",
       "mode": "native command mode by default; Tuya event mode optional (setting operating_mode)"

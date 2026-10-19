@@ -91,11 +91,13 @@ describe('forum routing regressions', () => {
       '_TZ3000_czuyt8lz',
       '_TZ3000_b3mgfu0d',
       '_TZ3000_rco1yzb1',
-      '_TZ3000_4fjiwweb',
     ];
     // 2026-10-19: abrsvsou+TS004F is the ZG-101ZD rotary knob (Z2M hobeian.ts) → own driver
     assertDriverClaims('smart_knob_zg101zd', '_TZ3000_abrsvsou');
     assertDriverDoesNotClaim('button_wireless_4', '_TZ3000_abrsvsou');
+    // 2026-10-19: 4fjiwweb+TS004F is the same knob family (Z2M tuya.ts ERS-10TZBVK-AA)
+    assertDriverClaims('smart_knob_zg101zd', '_TZ3000_4fjiwweb');
+    assertDriverDoesNotClaim('button_wireless_4', '_TZ3000_4fjiwweb');
     assert.strictEqual(require('../../lib/DeviceFingerprintDB').lookup('_TZ3000_abrsvsou', 'TS004F').driver, 'smart_knob_zg101zd');
     const rotaryManufacturers = [
       '_TZ3000_qja6nq5z',
