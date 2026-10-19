@@ -782,7 +782,10 @@ jobs:
             next=$(printf '%s\n' "$out" | sed -n 's/^\[transient-retry\] NEXT=//p' | head -1)
             wait_s=$(printf '%s\n' "$out" | sed -n 's/^\[transient-retry\] BACKOFF_S=//p' | head -1)
             echo "backoff ${wait_s:-60}s before retry ${next:-1} (jittered, serialized by the per-app concurrency group)"; sleep "${wait_s:-60}"
-            gh workflow run auto-publish-on-push.yml --ref "${GITHUB_REF_NAME}" -f transient_retry="${next:-1}" || true
+            # WHY(P2893, 19/10/2026): carry release_held so the flake check retries the SAME content.
+            # SPI one-shot 39281159242 (#3630 AggregateError) retried WITHOUT the held driver (#3631 Test),
+            # which tells nothing about the held driver (bisect needs same-content flip).
+            gh workflow run auto-publish-on-push.yml --ref "${GITHUB_REF_NAME}" -f transient_retry="${next:-1}" -f release_held="${PUBLISH_HOLD_RELEASE:-}" || true
           fi
           if printf '%s' "$out" | grep -q '^\[transient-retry\] BISECT'; then
             echo "::warning::AggregateError after the retry budget: real content failure, bisect needed (see ledger docs/knowledge/athom-publish-outcomes.jsonl)"
