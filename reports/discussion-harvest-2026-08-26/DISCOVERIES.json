@@ -1,0 +1,1053 @@
+{
+  "generatedAt": "2026-08-26T15:46:38.693Z",
+  "count": 74,
+  "discoveries": [
+    {
+      "id": "D001",
+      "source": "z2m/PJ-MGW1203",
+      "topic": "couple",
+      "mfr": "_TZE204_cjbofhxw",
+      "pid": "TS0601",
+      "summary": "Power clamp meter misrouted as smoke",
+      "tier": "A",
+      "impl": "done",
+      "driver": "power_clamp_meter",
+      "refs": [
+        "P2268"
+      ]
+    },
+    {
+      "id": "D002",
+      "source": "z2m/PJ-MGW1203",
+      "topic": "couple",
+      "mfr": "_TZE284_cjbofhxw",
+      "pid": "TS0601",
+      "summary": "Power clamp sibling TZE284",
+      "tier": "A",
+      "impl": "done",
+      "driver": "power_clamp_meter",
+      "refs": [
+        "P2268"
+      ]
+    },
+    {
+      "id": "D003",
+      "source": "z2m/ATMS10013Z3",
+      "topic": "couple",
+      "mfr": "_TZE284_a14rjslz",
+      "pid": "TS0601",
+      "summary": "3-phase energy meter misrouted as climate",
+      "tier": "A",
+      "impl": "done",
+      "driver": "energy_meter_3phase",
+      "refs": [
+        "P2268"
+      ]
+    },
+    {
+      "id": "D004",
+      "source": "zha#5260",
+      "topic": "couple",
+      "mfr": "_TZ3000_tonrapsk",
+      "pid": "TS0002",
+      "summary": "Zemismart ZB811 2-gang needs magic",
+      "tier": "A",
+      "impl": "done",
+      "driver": "switch_2gang",
+      "refs": [
+        "https://github.com/zigpy/zha-device-handlers/issues/5260"
+      ]
+    },
+    {
+      "id": "D005",
+      "source": "zha#5117",
+      "topic": "couple",
+      "mfr": "_TZE284_cf4b5ktf",
+      "pid": "TS0601",
+      "summary": "Moes 3-phase soft lock energy meter",
+      "tier": "B",
+      "impl": "done",
+      "driver": "energy_meter_3phase",
+      "refs": [
+        "P2268"
+      ]
+    },
+    {
+      "id": "D006",
+      "source": "zha#5252",
+      "topic": "dp",
+      "mfr": "_TZE284_gnpflcoq",
+      "pid": "TS0601",
+      "summary": "4in1 mmWave presence DP1 inverted 0=occupied; DP7 temp/10; DP8 humidity; DP11 lux — AlarmPolarity + device.js",
+      "tier": "B",
+      "impl": "done",
+      "driver": "motion_sensor_radar_mmwave",
+      "refs": [
+        "https://github.com/zigpy/zha-device-handlers/issues/5252"
+      ]
+    },
+    {
+      "id": "D007",
+      "source": "zha#5261",
+      "topic": "couple",
+      "mfr": "_TZ3000_402vrq2i",
+      "pid": "TS004F",
+      "summary": "Rotary knob stolen by 4-gang metering — lock smart_knob",
+      "tier": "A",
+      "impl": "done",
+      "driver": "smart_knob",
+      "refs": [
+        "https://github.com/zigpy/zha-device-handlers/pull/5261"
+      ]
+    },
+    {
+      "id": "D008",
+      "source": "z2m#32815",
+      "topic": "protocol",
+      "mfr": "_TZE204_hlx9tnzb",
+      "pid": "TS0601",
+      "summary": "Moes dimmer mesh flood after power cycle; remove from switch_1gang",
+      "tier": "B",
+      "impl": "done",
+      "driver": "dimmer_1_gang_tuya",
+      "refs": [
+        "https://github.com/Koenkk/zigbee2mqtt/issues/32815"
+      ]
+    },
+    {
+      "id": "D009",
+      "source": "zha#5185",
+      "topic": "protocol",
+      "mfr": "_TZ3210_6cmeijtd",
+      "pid": "TS011F",
+      "summary": "Nous A11Z 3-gang strip — unsteal usb_dongle_triple + magic packet multi-ep",
+      "tier": "A",
+      "impl": "done",
+      "driver": "socket_power_strip",
+      "refs": [
+        "https://github.com/zigpy/zha-device-handlers/issues/5185"
+      ]
+    },
+    {
+      "id": "D010",
+      "source": "zha#5243",
+      "topic": "couple",
+      "mfr": "_TZE204_mpbki2zm",
+      "pid": "TS0601",
+      "summary": "Wall thermostat already locked",
+      "tier": "A",
+      "impl": "done",
+      "driver": "wall_thermostat",
+      "refs": [
+        "https://github.com/zigpy/zha-device-handlers/issues/5243"
+      ]
+    },
+    {
+      "id": "D011",
+      "source": "zha#5226",
+      "topic": "quirk",
+      "mfr": "_TZ3210_ol1uhvza",
+      "pid": "TS130F",
+      "summary": "TS130F ol1uhvza invert_position TX/RX + reporting (ZHA#5226)",
+      "tier": "B",
+      "impl": "done",
+      "driver": "wall_curtain_switch",
+      "refs": [
+        "https://github.com/zigpy/zha-device-handlers/issues/5226"
+      ]
+    },
+    {
+      "id": "D012",
+      "source": "zha#5232",
+      "topic": "protocol",
+      "mfr": "_TZE284_aao3yzhs",
+      "pid": "TS0601",
+      "summary": "MCU time sync via GlobalTimeSyncEngine.guessFormat (soil locked)",
+      "tier": "C",
+      "impl": "done",
+      "driver": "soil_sensor",
+      "refs": [
+        "https://github.com/zigpy/zha-device-handlers/issues/5232"
+      ]
+    },
+    {
+      "id": "D013",
+      "source": "zha#5270",
+      "topic": "couple",
+      "mfr": "_TZ3210_jrhczaaa",
+      "pid": "TS130F",
+      "summary": "TS130F curtain variant",
+      "tier": "B",
+      "impl": "done",
+      "driver": "curtain_motor",
+      "refs": [
+        "https://github.com/zigpy/zha-device-handlers/pull/5270"
+      ]
+    },
+    {
+      "id": "D014",
+      "source": "zha#5241",
+      "topic": "couple",
+      "mfr": "_TZ3218_hdc8bbha",
+      "pid": "TS000F",
+      "summary": "TS000F hdc8bbha locked switch_1gang (P2272) — not switch_temp",
+      "tier": "D",
+      "impl": "done",
+      "driver": "switch_1gang",
+      "refs": [
+        "https://github.com/zigpy/zha-device-handlers/pull/5241"
+      ]
+    },
+    {
+      "id": "D015",
+      "source": "zha#5224",
+      "topic": "couple",
+      "mfr": "_TZ3000_te34fjg4",
+      "pid": "TS1002",
+      "summary": "te34fjg4+TS1002 locked scene_switch_4 0xFD (ZHA#5224)",
+      "tier": "A",
+      "impl": "done",
+      "driver": "scene_switch_4",
+      "refs": [
+        "https://github.com/zigpy/zha-device-handlers/pull/5224"
+      ]
+    },
+    {
+      "id": "D016",
+      "source": "zha#5206",
+      "topic": "couple",
+      "mfr": "_TZE204_pkpfn9hc",
+      "pid": "TS0601",
+      "summary": "CO2 sensor locked air_quality_co2",
+      "tier": "A",
+      "impl": "done",
+      "driver": "air_quality_co2",
+      "refs": [
+        "https://github.com/zigpy/zha-device-handlers/pull/5206"
+      ]
+    },
+    {
+      "id": "D017",
+      "source": "zha#5199",
+      "topic": "couple",
+      "mfr": "_TZE200_tyffvoij",
+      "pid": "TS0601",
+      "summary": "24GHz presence locked",
+      "tier": "A",
+      "impl": "done",
+      "driver": "presence_sensor_radar",
+      "refs": [
+        "https://github.com/zigpy/zha-device-handlers/pull/5199"
+      ]
+    },
+    {
+      "id": "D018",
+      "source": "zha#5237",
+      "topic": "couple",
+      "mfr": "_TZE200_xu4a5rhj",
+      "pid": "TS0601",
+      "summary": "Leisguar curtain motor present",
+      "tier": "A",
+      "impl": "done",
+      "driver": "curtain_motor",
+      "refs": [
+        "https://github.com/zigpy/zha-device-handlers/pull/5237"
+      ]
+    },
+    {
+      "id": "D019",
+      "source": "zha#5151",
+      "topic": "couple",
+      "mfr": "_TZE200_a4bpgplm",
+      "pid": "TS0601",
+      "summary": "GTZ06/AVATTO TRV07 locked",
+      "tier": "A",
+      "impl": "done",
+      "driver": "device_radiator_valve",
+      "refs": [
+        "https://github.com/zigpy/zha-device-handlers/pull/5151"
+      ]
+    },
+    {
+      "id": "D020",
+      "source": "z2m#32931",
+      "topic": "couple",
+      "mfr": "_TZE284_fqm2sfpe",
+      "pid": "TS0601",
+      "summary": "TRV support request — soft lock radiator valve",
+      "tier": "B",
+      "impl": "done",
+      "driver": "device_radiator_valve",
+      "refs": [
+        "https://github.com/Koenkk/zigbee2mqtt/issues/32931"
+      ]
+    },
+    {
+      "id": "D021",
+      "source": "z2m#32883",
+      "topic": "couple",
+      "mfr": "_TZE284_q9qytwfa",
+      "pid": "TS0601",
+      "summary": "Nisko water heater / power monitor locked",
+      "tier": "A",
+      "impl": "done",
+      "driver": "plug_energy_monitor",
+      "refs": [
+        "https://github.com/Koenkk/zigbee2mqtt/issues/32883"
+      ]
+    },
+    {
+      "id": "D022",
+      "source": "z2m#32905",
+      "topic": "couple",
+      "mfr": "_TZE200_7upwjcca",
+      "pid": "TS0601",
+      "summary": "External converter curtain — present in curtain_motor",
+      "tier": "A",
+      "impl": "done",
+      "driver": "curtain_motor",
+      "refs": [
+        "https://github.com/Koenkk/zigbee2mqtt/issues/32905"
+      ]
+    },
+    {
+      "id": "D023",
+      "source": "z2m#32756",
+      "topic": "couple",
+      "mfr": "_TZE284_tdg4ckyh",
+      "pid": "TS0601",
+      "summary": "tdg4ckyh soft-locked ir_blaster (P2272)",
+      "tier": "D",
+      "impl": "done",
+      "driver": null,
+      "refs": [
+        "https://github.com/Koenkk/zigbee2mqtt/issues/32756"
+      ]
+    },
+    {
+      "id": "D024",
+      "source": "zhc#12990",
+      "topic": "couple",
+      "mfr": null,
+      "pid": null,
+      "summary": "TH05-z / ZTH05 = ZigbeeTLc custom flash — watch upstream; do not invent pid",
+      "tier": "D",
+      "impl": "watch",
+      "driver": "lcdtemphumidsensor",
+      "refs": [
+        "https://github.com/Koenkk/zigbee-herdsman-converters/pull/12990"
+      ]
+    },
+    {
+      "id": "D025",
+      "source": "zhc#13004",
+      "topic": "protocol",
+      "mfr": null,
+      "pid": null,
+      "summary": "Make Tuya time sync configurable — aligns GlobalTimeSyncEngine",
+      "tier": "C",
+      "impl": "done",
+      "driver": null,
+      "refs": [
+        "https://github.com/Koenkk/zigbee-herdsman-converters/pull/13004"
+      ]
+    },
+    {
+      "id": "D026",
+      "source": "zhc#13003",
+      "topic": "protocol",
+      "mfr": null,
+      "pid": null,
+      "summary": "Sprinkler timestamp correction — MCU time formats",
+      "tier": "C",
+      "impl": "done",
+      "driver": null,
+      "refs": [
+        "https://github.com/Koenkk/zigbee-herdsman-converters/pull/13003"
+      ]
+    },
+    {
+      "id": "D027",
+      "source": "zhc#12948",
+      "topic": "couple",
+      "mfr": "_TZE284_q9qytwfa",
+      "pid": "TS0601",
+      "summary": "ZHC mirrors Nisko water heater DPs",
+      "tier": "A",
+      "impl": "done",
+      "driver": "plug_energy_monitor",
+      "refs": [
+        "https://github.com/Koenkk/zigbee-herdsman-converters/pull/12948"
+      ]
+    },
+    {
+      "id": "D028",
+      "source": "zhc#12973",
+      "topic": "couple",
+      "mfr": "_TZE284_lq0ffndf",
+      "pid": "TS0601",
+      "summary": "lq0ffndf soft-locked usb_outlet_advanced (P2272)",
+      "tier": "D",
+      "impl": "done",
+      "driver": null,
+      "refs": [
+        "https://github.com/Koenkk/zigbee-herdsman-converters/pull/12973"
+      ]
+    },
+    {
+      "id": "D029",
+      "source": "z2m#31244",
+      "topic": "couple",
+      "mfr": "_TZE284_kq1l5eu5",
+      "pid": "TS0601",
+      "summary": "kq1l5eu5 soft-locked wall_curtain_switch (P2272)",
+      "tier": "D",
+      "impl": "done",
+      "driver": "curtain_motor",
+      "refs": [
+        "P2268"
+      ]
+    },
+    {
+      "id": "D030",
+      "source": "z2m#31086",
+      "topic": "protocol",
+      "mfr": null,
+      "pid": "TH01Z",
+      "summary": "Failed to sync time TH01Z — time format fallback chain",
+      "tier": "C",
+      "impl": "done",
+      "driver": null,
+      "refs": [
+        "https://github.com/Koenkk/zigbee2mqtt/issues/31086"
+      ]
+    },
+    {
+      "id": "D031",
+      "source": "z2m#32838",
+      "topic": "protocol",
+      "mfr": null,
+      "pid": "TS1201",
+      "summary": "IR TS1201 chunked Zosung + EF00 DP201 fallback + _sendIR aliases",
+      "tier": "C",
+      "impl": "done",
+      "driver": "ir_blaster",
+      "refs": [
+        "https://github.com/Koenkk/zigbee2mqtt/issues/32838"
+      ]
+    },
+    {
+      "id": "D032",
+      "source": "zha#4960",
+      "topic": "dp",
+      "mfr": null,
+      "pid": null,
+      "summary": "Scaling SSOT = SmartDivisorManager (PARSER_SSOT)",
+      "tier": "C",
+      "impl": "done",
+      "driver": null,
+      "refs": [
+        "https://github.com/zigpy/zha-device-handlers/issues/4960"
+      ]
+    },
+    {
+      "id": "D033",
+      "source": "zha#5222",
+      "topic": "cluster",
+      "mfr": null,
+      "pid": "TS130F",
+      "summary": "TS130F backlight_switch 0x5000 wired via wall_curtain_switch settings",
+      "tier": "C",
+      "impl": "done",
+      "driver": "wall_curtain_switch",
+      "refs": [
+        "https://github.com/zigpy/zha-device-handlers/pull/5222"
+      ]
+    },
+    {
+      "id": "D034",
+      "source": "p2267",
+      "topic": "cluster",
+      "mfr": null,
+      "pid": null,
+      "summary": "0xE002=manuSpecificTuya2; E001=Tuya3; E000=Tuya4 taxonomy",
+      "tier": "C",
+      "impl": "done",
+      "driver": null,
+      "refs": [
+        "docs/knowledge/TUYA_E000_E001_E002.md"
+      ]
+    },
+    {
+      "id": "D035",
+      "source": "p2267",
+      "topic": "cluster",
+      "mfr": "_TZ3000_qaaysllp",
+      "pid": "TS0201",
+      "summary": "Neo lux LCD E002 D00D humidity max + virtual EP2 magic",
+      "tier": "A",
+      "impl": "done",
+      "driver": "lcdtemphumidluxsensor",
+      "refs": [
+        "P2267"
+      ]
+    },
+    {
+      "id": "D036",
+      "source": "hacf#38762",
+      "topic": "couple",
+      "mfr": "_TZ3000_bjawzodf",
+      "pid": "TY0201",
+      "summary": "Temu LCD TY0201+TS0201 magic path",
+      "tier": "A",
+      "impl": "done",
+      "driver": "lcdtemphumidsensor",
+      "refs": [
+        "P2266"
+      ]
+    },
+    {
+      "id": "D037",
+      "source": "git/P34",
+      "topic": "protocol",
+      "mfr": null,
+      "pid": null,
+      "summary": "LowLevelBridge bypass Homey SDK gaps — now thin→ProtocolFallbackChain",
+      "tier": "C",
+      "impl": "done",
+      "driver": null,
+      "refs": [
+        "1b7db2471"
+      ]
+    },
+    {
+      "id": "D038",
+      "source": "git/P102",
+      "topic": "protocol",
+      "mfr": null,
+      "pid": null,
+      "summary": "DeviceIOFacade unified driver I/O",
+      "tier": "C",
+      "impl": "done",
+      "driver": null,
+      "refs": [
+        "7a01afae8"
+      ]
+    },
+    {
+      "id": "D039",
+      "source": "git/P107",
+      "topic": "dp",
+      "mfr": null,
+      "pid": null,
+      "summary": "SmartDivisor anti double-division",
+      "tier": "C",
+      "impl": "done",
+      "driver": null,
+      "refs": [
+        "aad2482ae"
+      ]
+    },
+    {
+      "id": "D040",
+      "source": "git/P120",
+      "topic": "dp",
+      "mfr": null,
+      "pid": null,
+      "summary": "Double-division CI gate",
+      "tier": "C",
+      "impl": "done",
+      "driver": null,
+      "refs": [
+        "88977d28f"
+      ]
+    },
+    {
+      "id": "D041",
+      "source": "git/P214",
+      "topic": "protocol",
+      "mfr": null,
+      "pid": null,
+      "summary": "IntelligentProtocolDetect ZCL↔EF00 tree",
+      "tier": "C",
+      "impl": "done",
+      "driver": null,
+      "refs": [
+        "docs/architecture/LAYERS_CAPABILITY_PROTOCOL.md"
+      ]
+    },
+    {
+      "id": "D042",
+      "source": "git/P208",
+      "topic": "protocol",
+      "mfr": null,
+      "pid": null,
+      "summary": "ProtocolRxTxChain path table",
+      "tier": "C",
+      "impl": "done",
+      "driver": null,
+      "refs": [
+        "lib/layers/ProtocolRxTxChain.js"
+      ]
+    },
+    {
+      "id": "D043",
+      "source": "git/P92.122",
+      "topic": "protocol",
+      "mfr": null,
+      "pid": null,
+      "summary": "FallbackChains pathfinding unsupported→alt",
+      "tier": "C",
+      "impl": "done",
+      "driver": null,
+      "refs": [
+        "dc983d981"
+      ]
+    },
+    {
+      "id": "D044",
+      "source": "doctrine",
+      "topic": "workflow",
+      "mfr": null,
+      "pid": null,
+      "summary": "Sacred couple mfr+pid never invent pid",
+      "tier": "C",
+      "impl": "done",
+      "driver": null,
+      "refs": [
+        ".cursorrules"
+      ]
+    },
+    {
+      "id": "D045",
+      "source": "doctrine",
+      "topic": "workflow",
+      "mfr": null,
+      "pid": null,
+      "summary": "Forum silent T157628 SHADOW only",
+      "tier": "C",
+      "impl": "done",
+      "driver": null,
+      "refs": [
+        "docs/rules/FORUM_SILENT_HUMANIZE.md"
+      ]
+    },
+    {
+      "id": "D046",
+      "source": "doctrine",
+      "topic": "battery",
+      "mfr": null,
+      "pid": null,
+      "summary": "Ban linear battery (V-2.5)/0.5 — UnifiedBatteryHandler",
+      "tier": "C",
+      "impl": "done",
+      "driver": null,
+      "refs": [
+        "lib/battery/UnifiedBatteryHandler.js"
+      ]
+    },
+    {
+      "id": "D047",
+      "source": "doctrine",
+      "topic": "cluster",
+      "mfr": null,
+      "pid": null,
+      "summary": "BSEED zcl_only never force EF00",
+      "tier": "C",
+      "impl": "done",
+      "driver": null,
+      "refs": [
+        "IntelligentProtocolDetect"
+      ]
+    },
+    {
+      "id": "D048",
+      "source": "doctrine",
+      "topic": "dp",
+      "mfr": null,
+      "pid": null,
+      "summary": "MCU brightness 0-1000 clamp TuyaBrightnessScale",
+      "tier": "C",
+      "impl": "done",
+      "driver": null,
+      "refs": [
+        "P2138"
+      ]
+    },
+    {
+      "id": "D049",
+      "source": "zha#5123",
+      "topic": "couple",
+      "mfr": "HOBEIAN",
+      "pid": "ZG-204ZK",
+      "summary": "Presence sensor HOBEIAN couple-aware",
+      "tier": "A",
+      "impl": "done",
+      "driver": "presence_sensor_radar",
+      "refs": [
+        "https://github.com/zigpy/zha-device-handlers/pull/5123"
+      ]
+    },
+    {
+      "id": "D050",
+      "source": "z2m#32416",
+      "topic": "couple",
+      "mfr": null,
+      "pid": null,
+      "summary": "cjbofhxw clamp family already on power_clamp_meter (P2268)",
+      "tier": "D",
+      "impl": "done",
+      "driver": "power_clamp_meter",
+      "refs": [
+        "https://github.com/Koenkk/zigbee2mqtt/issues/32416"
+      ]
+    },
+    {
+      "id": "D051",
+      "source": "z2m#32609",
+      "topic": "couple",
+      "mfr": "_TZ3000_anptztic",
+      "pid": "TS0001",
+      "summary": "External converter 1gang — soft present plug/switch catalogs",
+      "tier": "B",
+      "impl": "done",
+      "driver": "plug_energy_monitor",
+      "refs": [
+        "https://github.com/Koenkk/zigbee2mqtt/issues/32609"
+      ]
+    },
+    {
+      "id": "D052",
+      "source": "z2m#32594",
+      "topic": "couple",
+      "mfr": "_TZE284_bjoccxbi",
+      "pid": "TS0601",
+      "summary": "bjoccxbi soft-locked led_controller_rgb (P2272)",
+      "tier": "D",
+      "impl": "done",
+      "driver": null,
+      "refs": [
+        "https://github.com/Koenkk/zigbee2mqtt/issues/32594"
+      ]
+    },
+    {
+      "id": "D053",
+      "source": "z2m#32638",
+      "topic": "couple",
+      "mfr": "_TZE284_u15pabbc",
+      "pid": "TS0601",
+      "summary": "u15pabbc soft-locked switch_1gang (P2272)",
+      "tier": "D",
+      "impl": "done",
+      "driver": null,
+      "refs": [
+        "https://github.com/Koenkk/zigbee2mqtt/issues/32638"
+      ]
+    },
+    {
+      "id": "D054",
+      "source": "zhc#12538",
+      "topic": "protocol",
+      "mfr": null,
+      "pid": null,
+      "summary": "ZclDefaultResponsePolicy skips wait for Tuya TS000x/TS011F/TS130F",
+      "tier": "C",
+      "impl": "done",
+      "driver": null,
+      "refs": [
+        "https://github.com/Koenkk/zigbee-herdsman-converters/pull/12538"
+      ]
+    },
+    {
+      "id": "D055",
+      "source": "p2270",
+      "topic": "workflow",
+      "mfr": null,
+      "pid": null,
+      "summary": "Discussion harvest pipeline + CommunicationPathFinder",
+      "tier": "C",
+      "impl": "done",
+      "driver": null,
+      "refs": [
+        "P2270"
+      ]
+    },
+    {
+      "id": "D056",
+      "source": "local-P2271",
+      "topic": "quirk",
+      "mfr": "_TZE284_gnpflcoq",
+      "pid": "TS0601",
+      "summary": "AlarmPolarityManager inverted motion lock",
+      "tier": "B",
+      "impl": "done",
+      "refs": [
+        "lib/managers/AlarmPolarityManager.js"
+      ]
+    },
+    {
+      "id": "D057",
+      "source": "local-P2272",
+      "topic": "couple",
+      "mfr": "_TZE204_tdg4ckyh",
+      "pid": "TS0601",
+      "summary": "Soft lock ir_blaster",
+      "tier": "B",
+      "impl": "done",
+      "refs": [
+        "drivers/ir_blaster/driver.compose.json"
+      ]
+    },
+    {
+      "id": "D058",
+      "source": "local-P2272",
+      "topic": "couple",
+      "mfr": "_TZE204_kq1l5eu5",
+      "pid": "TS0601",
+      "summary": "Soft lock wall_curtain_switch",
+      "tier": "B",
+      "impl": "done",
+      "refs": [
+        "drivers/wall_curtain_switch/driver.compose.json"
+      ]
+    },
+    {
+      "id": "D059",
+      "source": "local-P2272",
+      "topic": "couple",
+      "mfr": "_TZE204_bjoccxbi",
+      "pid": "TS0601",
+      "summary": "Soft lock led_controller_rgb",
+      "tier": "B",
+      "impl": "done",
+      "refs": [
+        "drivers/led_controller_rgb/driver.compose.json"
+      ]
+    },
+    {
+      "id": "D060",
+      "source": "local-P2272",
+      "topic": "couple",
+      "mfr": "_TZE204_lq0ffndf",
+      "pid": "TS0601",
+      "summary": "Soft lock usb_outlet_advanced + couple DP map",
+      "tier": "B",
+      "impl": "done",
+      "refs": [
+        "drivers/usb_outlet_advanced/driver.compose.json"
+      ]
+    },
+    {
+      "id": "D061",
+      "source": "local-P2273",
+      "topic": "couple",
+      "mfr": "_TZE204_guvc7pdy",
+      "pid": "TS0601",
+      "summary": "Unstolen from switch_1gang → curtain_motor",
+      "tier": "A",
+      "impl": "done",
+      "refs": [
+        "drivers/curtain_motor/driver.compose.json"
+      ]
+    },
+    {
+      "id": "D062",
+      "source": "local-P2269",
+      "topic": "workflow",
+      "mfr": "",
+      "pid": "",
+      "summary": "DeviceFusionHooks split + UniversalTuyaParser quarantine + SSOT docs",
+      "tier": "C",
+      "impl": "done",
+      "refs": [
+        "lib/io/DeviceFusionHooks.js",
+        "docs/architecture/SPAGHETTI_MAP.md"
+      ]
+    },
+    {
+      "id": "D063",
+      "source": "zha#4687",
+      "topic": "couple",
+      "mfr": "_TZE284_rccxox8p",
+      "pid": "TS0601",
+      "summary": "PA-44Z smoke unstolen from climate → smoke_sensor2",
+      "tier": "A",
+      "impl": "done",
+      "driver": "smoke_sensor2",
+      "refs": [
+        "https://github.com/zigpy/zha-device-handlers/issues/4687"
+      ]
+    },
+    {
+      "id": "D064",
+      "source": "zha#3955",
+      "topic": "couple",
+      "mfr": "_TZE284_dikb3dp6",
+      "pid": "TS0601",
+      "summary": "Zemismart 3-phase meter unstolen from climate → energy_meter_3phase",
+      "tier": "A",
+      "impl": "done",
+      "driver": "energy_meter_3phase",
+      "refs": [
+        "https://github.com/zigpy/zha-device-handlers/issues/3955"
+      ]
+    },
+    {
+      "id": "D065",
+      "source": "zha#3666",
+      "topic": "couple",
+      "mfr": "_TZE204_lpedvtvr",
+      "pid": "TS0601",
+      "summary": "Moes Star Ring unstolen climate→wall_thermostat",
+      "tier": "A",
+      "impl": "done",
+      "driver": "wall_thermostat",
+      "refs": [
+        "https://github.com/zigpy/zha-device-handlers/issues/3666"
+      ]
+    },
+    {
+      "id": "D066",
+      "source": "z2m#25372",
+      "topic": "couple",
+      "mfr": "_TZE204_xalsoe3m",
+      "pid": "TS0601",
+      "summary": "BHT-002 unstolen TRV→wall_thermostat",
+      "tier": "A",
+      "impl": "done",
+      "driver": "wall_thermostat",
+      "refs": [
+        "https://github.com/Koenkk/zigbee2mqtt/issues/25372"
+      ]
+    },
+    {
+      "id": "D067",
+      "source": "zha#4124",
+      "topic": "txrx",
+      "mfr": "_TZE204_ogx8u5z6",
+      "pid": "TS0601",
+      "summary": "P2278 me167 + DP47 cal ÷10 TX/RX (sibling _TZE284_ogx8u5z6)",
+      "tier": "A",
+      "impl": "done",
+      "driver": "device_radiator_valve",
+      "refs": [
+        "https://github.com/zigpy/zha-device-handlers/issues/4124",
+        "https://github.com/Koenkk/zigbee2mqtt/issues/25199"
+      ]
+    },
+    {
+      "id": "D068",
+      "source": "z2m-cover",
+      "topic": "couple",
+      "mfr": "_TZE284_1fuxihti",
+      "pid": "TS0601",
+      "summary": "P2279 cover unstolen from climate (+ TZE200/204 siblings)",
+      "tier": "A",
+      "impl": "done",
+      "driver": "curtain_motor",
+      "refs": [
+        "https://github.com/Koenkk/zigbee2mqtt/issues/31584"
+      ]
+    },
+    {
+      "id": "D069",
+      "source": "z2m#31275",
+      "topic": "couple",
+      "mfr": "_TZE284_mvtclclq",
+      "pid": "TS0601",
+      "summary": "P2279 DS-1450WN USB+plugs — unsteal wall_dimmer TZE200 + DP1-4 profile",
+      "tier": "A",
+      "impl": "done",
+      "driver": "usb_outlet_advanced",
+      "refs": [
+        "https://github.com/Koenkk/zigbee2mqtt/issues/31275",
+        "https://github.com/Koenkk/zigbee2mqtt/issues/28937"
+      ]
+    },
+    {
+      "id": "D070",
+      "source": "P2280",
+      "topic": "workflow",
+      "mfr": null,
+      "pid": null,
+      "summary": "Dual-app inconsistency sweep: stable unsteal P2274–P2279 + BOTH TX/RX backport",
+      "tier": "C",
+      "impl": "done",
+      "driver": null,
+      "refs": [
+        "reports/dual-inconsistency-2026-08-26/SUMMARY.md",
+        "config/architecture/dual-app-tracks.json"
+      ]
+    },
+    {
+      "id": "D071",
+      "source": "P102-P2268",
+      "topic": "workflow",
+      "mfr": null,
+      "pid": null,
+      "summary": "Workflow lineage: P102 forum silent → P2138 sacred matrix → P2206 privacy → P2228 CI vs Homey → P2267 E002 → P2268 parallel",
+      "tier": "C",
+      "impl": "done",
+      "driver": null,
+      "refs": [
+        ".github/WORKFLOW_GUIDELINES.md",
+        "docs/architecture/CI_VS_HOMEY_RUNTIME.md",
+        "docs/knowledge/TUYA_E000_E001_E002.md"
+      ]
+    },
+    {
+      "id": "D072",
+      "source": "plan-keep",
+      "topic": "cluster",
+      "mfr": null,
+      "pid": null,
+      "summary": "Keep ZclClusterLexicon E002=manuSpecificTuya2 + CommunicationPathFinder sacredZclOnly penalties + WHY headers",
+      "tier": "C",
+      "impl": "done",
+      "driver": null,
+      "refs": [
+        "lib/zigbee/ZclClusterLexicon.js",
+        "lib/protocol/CommunicationPathFinder.js",
+        "docs/architecture/COMM_PATHFINDING.md"
+      ]
+    },
+    {
+      "id": "D073",
+      "source": "P2281",
+      "topic": "workflow",
+      "mfr": null,
+      "pid": null,
+      "summary": "Workflow discovery lineage SSOT — past P102–P2266 + recent P2267/P2268 + present P2269+ wired in GHA",
+      "tier": "C",
+      "impl": "done",
+      "driver": null,
+      "refs": [
+        "config/enrichment/discovery-lineage.json",
+        "tools/ci/discovery-lineage-enrich-gate.js"
+      ]
+    },
+    {
+      "id": "D074",
+      "source": "forum-140352-2202",
+      "topic": "runtime-misattr",
+      "mfr": "_TZ3000_mrpevh8p",
+      "pid": "TS0041",
+      "summary": "Peter #2202: false HOBEIAN water MISATTR soil + Smartbutton 0xFD handleFrame arity",
+      "tier": "A",
+      "impl": "done",
+      "driver": "button_wireless_1",
+      "refs": [
+        "P2282",
+        "diag-95a7c6e5",
+        "HOBEIAN|3315-S"
+      ]
+    }
+  ],
+  "updated": "2026-10-14",
+  "mode": "SHADOW",
+  "rules": [
+    "mfr+pid only",
+    "never invent pid",
+    "no forum POST"
+  ]
+}
