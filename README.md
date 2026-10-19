@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1545 |
+| **App Version** | v9.0.1546 |
 | **Drivers** | 450 (397 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,841 |
 | **Pairing Variants** | 19,018 (4 case combos per fingerprint) |
@@ -41,7 +41,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 6,112 |
 | **Unique Capabilities** | 176 |
 | **Native OTA Drivers** | 9 |
-| **Test Suites** | 697 files |
+| **Test Suites** | 698 files |
 | **SVG Icons** | 753 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -52,7 +52,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
 | 1 | `climate_sensor` | 2,095 |
-| 2 | `switch_1gang` | 1,394 |
+| 2 | `switch_1gang` | 1,390 |
 | 3 | `curtain_motor` | 1,112 |
 | 4 | `presence_sensor_radar` | 1,003 |
 | 5 | `radiator_valve` | 609 |
@@ -103,7 +103,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.1545** | v9.0.1544: |
+| **v9.0.1546** | v9.0.1545: |
+| **v9.0.1545** | v9.0.1545: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1544** | v9.0.1544: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1543** | v9.0.1543: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1542** | v9.0.1542: automated publish, manifest sync, and Homey test promotion. |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1536** | v9.0.1536: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1535** | v9.0.1535: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1533** | v9.0.1533: automated publish, manifest sync, and Homey test promotion. |
-| **v9.0.1532** | v9.0.1532: automated publish, manifest sync, and Homey test promotion. |
 
 <!-- CHANGELOG_END -->
 
