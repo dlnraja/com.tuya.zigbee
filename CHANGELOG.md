@@ -18,7 +18,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.1545] - 2026-10-19
+## [9.0.1546] - 2026-10-19
+
+v9.0.1546: automated publish, manifest sync, and Homey test promotion.
+---
+
+ [9.0.1545] - 2026-10-19
 
 v9.0.1545: automated publish, manifest sync, and Homey test promotion.
 ---
