@@ -183,6 +183,8 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
     // Auto-fix: Remove battery capabilities for mains-powered devices
     await this.removeCapability('measure_battery').catch(() => {});
     await this.removeCapability('alarm_battery').catch(() => {});
+    // WHY(Wilhelm Dall 2026-10-17): exact climate-sensor couple paired here by pid -> fix class in place
+    try { await require('../../lib/utils/ClimateSensorClassHeal').healClimateSensorClass(this); } catch (_e) { /* soft */ }
     await this._safeInvoke(async () => {
       await super.onNodeInit({ zclNode });
       await this.initVirtualButtons();
