@@ -93,7 +93,7 @@ describe('P2448 — rotary knob command mode', () => {
     }
   });
 
-  it('4fjiwweb stays button_wireless_4 and off KNOB_MFR', () => {
+  it('forbiddenOnKnobMfr entries stay button_wireless_4 and off KNOB_MFR (4fjiwweb moved to the knob driver 2026-10-19)', () => {
     for (const mfr of ssot.forbiddenOnKnobMfr.mfr) {
       assert.ok(!KNOB_MFR.test(mfr));
       const hit = DeviceFingerprintDB.lookup(mfr, 'TS004F');

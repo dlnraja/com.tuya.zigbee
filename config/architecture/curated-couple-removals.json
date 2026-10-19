@@ -650,6 +650,17 @@
       ],
       "why": "2026-10-19 user decision: one couple one driver, aligned with master P2823. _TZE284_9ern5sfh + TS0601 is the RSH-HS03 LCD temperature/humidity sensor (Z2M TS0601_temperature_humidity_sensor_4, DP1 temp/10, DP2 humidity/10, DP4 battery; zhc #10167 \"with display\"; Johan #1328 RSH-HS03; forum 140352 #2263 Kizabgd). Owner lcdtemphumidsensor.",
       "source": "z2m tuya.ts + zhc#10167 + JohanBendz#1328 + forum 140352#2263"
+    },
+    {
+      "driver": "button_wireless_4",
+      "mfr": [
+        "_TZ3000_4fjiwweb",
+        "_tz3000_4fjiwweb",
+        "_TZ3000_4FJIWWEB",
+        "_tz3000_4FJIWWEB"
+      ],
+      "why": "2026-10-19: _TZ3000_4fjiwweb + TS004F is the Tuya ERS-10TZBVK-AA smart knob (Z2M tuya.ts ERS-10TZBVK-AA, ZHA ts004f.py TuyaSmartRemote004FROK, deCONZ smart-knob DDF), same knob family as ZG-101ZD, not a 4-button remote; owner smart_knob_zg101zd",
+      "source": "z2m tuya.ts ERS-10TZBVK-AA + zhaquirks ts004f.py + deconz _TZ3000_TS004F_smart_knob.json"
     }
   ]
 }
