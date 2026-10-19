@@ -1,7 +1,8 @@
 {
   "updated": "2026-08-14T11:02:17.377Z",
-  "note": "Legacy bare ZigBeeDevice leftovers. P133: smartPlug_DinRail migrated; ir_blaster remains.",
+  "note": "Legacy bare ZigBeeDevice leftovers. P133: smartPlug_DinRail migrated; ir_blaster remains. P2868 (2026-10-19): smart_knob_zg101zd stays on bare ZigBeeDevice on purpose - native-only knob (user decision), its own bound clusters decode every frame; the TuyaZigbeeDevice raw-frame/button/EF00 layers would double-handle 0xFC/0xFD and query an EF00 it does not have.",
   "drivers": [
-    "ir_blaster"
+    "ir_blaster",
+    "smart_knob_zg101zd"
   ]
 }
