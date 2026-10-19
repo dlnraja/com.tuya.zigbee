@@ -907,6 +907,9 @@
       ]
     }
   ],
+  "9.0.1531": {
+    "en": "v9.0.1531: automated publish, manifest sync, and Homey test promotion."
+  },
   "9.0.1530": {
     "en": "v9.0.1530: automated publish, manifest sync, and Homey test promotion."
   },
@@ -961,10 +964,7 @@
   "9.0.1511": {
     "en": "Tip after bot collide: P2850 inbox treat + CI soft-expect Athom hang."
   },
-  "9.0.1510": {
-    "en": "Inbox treat: unblock CI (TS0044 wall_remote strip, Athom soft-expect, soil/TRV locks verified)."
-  },
-  "9.0.1531": {
-    "en": "v9.0.1531: automated publish, manifest sync, and Homey test promotion."
+  "9.0.1532": {
+    "en": "v9.0.1532: automated publish, manifest sync, and Homey test promotion."
   }
 }
