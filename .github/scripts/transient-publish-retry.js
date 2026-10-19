@@ -10,15 +10,14 @@ const { TRANSIENT_RE } = require('./processing-failure-republish-check');
 
 // WHY(2026-10-11 user): AggregateError flakes (1424 F / 1425 T and 1426 F / 1427 T on identical content), so it
 // gets up to 2 bumped retries; transport failures keep 1. retryCount = retries already done in this chain.
-const MAX_AGG_RETRIES = 2;
+const POLICY = require('./athom-retry-policy');
+const MAX_AGG_RETRIES = POLICY.POLICY.maxAggregateRetries; // P2900: shared 3-app policy
 // P2830e (user 2026-10-19: Test must be reached reliably): transport failures now get 2 bumped retries per chain
 // (observed: identical archives flip between socket-hang-up and Test, ~45% failure rate on 35 MB payloads).
-const MAX_TRANSIENT_RETRIES = 2;
+const MAX_TRANSIENT_RETRIES = POLICY.POLICY.maxTransientRetries;
 
 // Exponential backoff with jitter before a retry dispatch (60s, 120s, 240s... capped at 240s, +0..30s).
-function backoffSeconds(attempt, rnd = Math.random) {
-  return Math.min(60 * (2 ** (Math.max(1, attempt) - 1)), 240) + Math.floor(rnd() * 30);
-}
+const backoffSeconds = POLICY.backoffSeconds;
 
 function parseRetryCount(v) {
   const s = String(v == null ? '' : v).trim().toLowerCase();

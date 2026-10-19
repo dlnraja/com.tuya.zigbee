@@ -74,7 +74,7 @@ jobs:
     timeout-minutes: 45
     steps:
       - name: Checkout bastien-home
-        uses: actions/checkout@v5
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
           ref: bastien-home
           fetch-depth: 1
@@ -96,7 +96,7 @@ jobs:
           echo "OK Bastien App ID locked"
 
       - name: Setup Node
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
