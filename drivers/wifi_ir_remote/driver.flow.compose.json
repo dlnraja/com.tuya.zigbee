@@ -26,13 +26,7 @@
           }
         }
       ],
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=wifi_ir_remote"
-        }
-      ]
+      "args": []
     },
     {
       "id": "wifi_ir_remote_code_learned",
@@ -59,13 +53,7 @@
           }
         }
       ],
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=wifi_ir_remote"
-        }
-      ]
+      "args": []
     },
     {
       "id": "wifi_ir_remote_learn_confirm_needed",
@@ -83,13 +71,7 @@
           }
         }
       ],
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=wifi_ir_remote"
-        }
-      ]
+      "args": []
     }
   ],
   "conditions": [],
@@ -101,11 +83,6 @@
         "fr": "Démarrer apprentissage IR"
       },
       "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=wifi_ir_remote"
-        },
         {
           "name": "name",
           "type": "text",
@@ -132,11 +109,6 @@
       },
       "args": [
         {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=wifi_ir_remote"
-        },
-        {
           "name": "name",
           "type": "text",
           "placeholder": {
@@ -152,11 +124,6 @@
         "fr": "Envoyer code IR brut / collé"
       },
       "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=wifi_ir_remote"
-        },
         {
           "name": "code",
           "type": "text",
