@@ -22,9 +22,16 @@ describe('P2830d footprint budgets (report-only)', () => {
     assert.equal(by.bootHeapMB.ok, true);
     assert.equal(by.libMB.note, 'not measured');
   });
-  it('the publish action runs the report as a non-blocking step', () => {
-    const y = fs.readFileSync(path.join(__dirname, '..', '..', '.github', 'actions', 'homey-app-publish', 'action.yml'), 'utf8');
-    assert.match(y, /footprint-report\.js/);
-    assert.match(y, /continue-on-error: true/);
+  it('the publish pipeline runs the report as a non-blocking step', () => {
+    const root = path.join(__dirname, '..', '..', '.github');
+    const files = ['actions/homey-app-publish/action.yml', 'workflows/publish-stable.yml', 'workflows/bastien-publish.yml']
+      .map((f) => path.join(root, f)).filter((f) => fs.existsSync(f));
+    const hit = files.filter((f) => /footprint-report\.js/.test(fs.readFileSync(f, 'utf8')));
+    assert.ok(hit.length >= 1, 'no publish workflow runs footprint-report.js');
+    for (const f of hit) {
+      const y = fs.readFileSync(f, 'utf8');
+      const i = y.indexOf('footprint-report.js');
+      assert.match(y.slice(Math.max(0, i - 200), i), /continue-on-error: true/, f);
+    }
   });
 });
