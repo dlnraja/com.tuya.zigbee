@@ -34,4 +34,11 @@ describe('P2830d footprint budgets (report-only)', () => {
       assert.match(y.slice(Math.max(0, i - 200), i), /continue-on-error: true/, f);
     }
   });
+  it('the publish pipeline prunes the payload before uploading (lossless)', () => {
+    const root = path.join(__dirname, '..', '..', '.github');
+    const files = ['actions/homey-app-publish/action.yml', 'workflows/publish-stable.yml', 'workflows/bastien-publish.yml']
+      .map((f) => path.join(root, f)).filter((f) => fs.existsSync(f));
+    const own = files.filter((f) => !/action\.yml$/.test(f) || /homey-app-publish/.test(f));
+    assert.ok(own.some((f) => /prune-publish-payload\.cjs/.test(fs.readFileSync(f, 'utf8'))), 'no publish workflow runs prune-publish-payload.cjs');
+  });
 });
