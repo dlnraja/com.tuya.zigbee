@@ -35,3 +35,21 @@ describe('P2867 tuya.dataQuery accepts any caller argument and does not wait for
     assert.ok(/_lastQueryAllAt/.test(src));
   });
 });
+
+describe('P2867 same behaviour on the cluster class registered at runtime (lib/clusters)', () => {
+  const { Cluster } = require('zigbee-clusters');
+  const RuntimeTuya = require('../../lib/clusters/TuyaSpecificCluster');
+  try { Cluster.addCluster(RuntimeTuya); } catch (_e) { /* already registered */ }
+  beforeEach(() => { frames.length = 0; });
+  it('dataQuery({seq,dp}) sends the empty query-all frame', async () => {
+    const c = new RuntimeTuya(endpoint);
+    await c.dataQuery({ seq: 1, dp: 2 });
+    await c.dataQuery();
+    assert.deepStrictEqual(frames.map((f) => f.slice(4)), ['03', '03']);
+  });
+  it('bare datapoint carries the real length', async () => {
+    const c = new RuntimeTuya(endpoint);
+    await c.datapoint({ dp: 36, datatype: 4, data: Buffer.from([1, 2, 3]) }, { waitForResponse: false });
+    assert.strictEqual(frames[0].slice(6 + 8, 6 + 12), '0003');
+  });
+});
