@@ -164,7 +164,7 @@
       { "issue": 1448, "couple": "_TZE284_hodyryli+TS0601", "driver": "climate_sensor_zt08" },
       { "issue": 1447, "couple": "_TZE204_cvub6xbb+TS0601", "driver": "wall_thermostat" },
       { "issue": 1444, "couple": "_TZE284_6ocnqlhn+TS0601", "driver": "din_rail_meter" },
-      { "issue": 1445, "couple": "_TZE284_9ern5sfh+TS0601", "driver": "climate_sensor" },
+      { "issue": 1445, "couple": "_TZE284_9ern5sfh+TS0601", "driver": "lcdtemphumidsensor" },
       { "issue": 1443, "couple": "_TZE204_mpbki2zm+TS0601", "driver": "wall_thermostat" }
     ]
   },
