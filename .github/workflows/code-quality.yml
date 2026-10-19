@@ -128,16 +128,18 @@ jobs:
           fi
           echo "✓ All driver.compose.json files valid"
 
-      - name: Anti-bot + P2138 sacred-couple matrix + P244x flow/knob
+      # WHY(gate-dedupe 2026-10-10): on push/PR these three gates are owned by unified-ci
+      # (master), syntax-check (stable-v5) and pr-gate (PRs); keep them here for the weekly run.
+      - name: Anti-bot + P2138 sacred-couple matrix + flow titleFormatted (shared rules-gates)
+        id: sacred_rules
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        uses: ./.github/actions/rules-gates
+        with:
+          only: anti-bot,p2138,flow-title
+
+      - name: P244x flow/knob + family gates
         id: sacred
         run: |
-          # WHY(gate-dedupe 2026-10-10): on push/PR these three gates are owned by unified-ci
-          # (master), syntax-check (stable-v5) and pr-gate (PRs); keep them here for the weekly run.
-          if [ "${{ github.event_name }}" = "schedule" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            node tools/ci/anti-bot-regression-gate.js
-            node tools/ci/p2138-sacred-couple-matrix-gate.js
-            npm run check:flow-titleformatted
-          fi
           npm run check:p244x
           npm run check:p246x
           npm run check:p248x
@@ -184,7 +186,7 @@ jobs:
             echo ""
             echo "- Lint: ${{ steps.lint.outcome == 'success' && '✅' || '⚠️' }}"
             echo "- JSON: ${{ steps.json.outcome == 'success' && '✅' || '❌' }}"
-            echo "- Sacred: ${{ steps.sacred.outcome == 'success' && '✅' || '❌' }}"
+            echo "- Sacred: ${{ (steps.sacred.outcome == 'success' && steps.sacred_rules.outcome != 'failure') && '✅' || '❌' }}"
             echo "- Health: ${{ steps.health.outcome == 'success' && '✅' || '⚠️' }}"
             echo ""
             echo "**Run**: ${{ github.run_id }}"

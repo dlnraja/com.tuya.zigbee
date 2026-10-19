@@ -351,9 +351,11 @@ jobs:
             echo "PM harvest written (never posted)" >> "$GITHUB_STEP_SUMMARY"
           fi
 
-      - name: 🛡️ P2138 sacred-couple matrix (checkout integrity)
+      - name: 🛡️ P2138 sacred-couple matrix (checkout integrity, shared rules-gates)
         if: always()
-        run: node tools/ci/p2138-sacred-couple-matrix-gate.js
+        uses: ./.github/actions/rules-gates
+        with:
+          only: p2138
 
       - name: P2607 Bastien → master soft promote (AUTO_SAFE)
         if: always()
