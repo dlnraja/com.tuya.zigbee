@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-18T23:03:08.574Z",
- "drivers": 393,
+ "generated": "2026-10-19T06:33:51.605Z",
+ "drivers": 394,
  "snapshot": {
   "air_purifier": {
    "mfr": 3,
@@ -201,9 +201,9 @@
    "pidSha": "06cd0099c514e4ab"
   },
   "button_wireless_4": {
-   "mfr": 33,
+   "mfr": 32,
    "pid": 40,
-   "mfrSha": "012cedd91d8c6f3c",
+   "mfrSha": "8cbcd86d36b5bf80",
    "pidSha": "db1d9492b3bc3407"
   },
   "button_wireless_4_ts0041": {
@@ -1705,6 +1705,12 @@
    "pid": 4,
    "mfrSha": "2e1eebba4e2a01ba",
    "pidSha": "bea76b1883d9ef71"
+  },
+  "smart_knob_zg101zd": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "b59de572edfe9305",
+   "pidSha": "74df0f4d2b001cb5"
   },
   "smart_lcd_thermostat": {
    "mfr": 7,
