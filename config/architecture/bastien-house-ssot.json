@@ -511,8 +511,8 @@
     {
       "mfr": "_TZ3000_abrsvsou",
       "pid": "TS004F",
-      "driver": "button_wireless_4",
-      "source": "P2448 stay 4-btn",
+      "driver": "smart_knob_zg101zd",
+      "source": "Z2M hobeian.ts ZG-101ZD (moved 2026-10-19)",
       "status": "verified-candidate",
       "enrichedAt": "2026-09-19"
     },
