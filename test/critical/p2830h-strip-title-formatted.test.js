@@ -44,6 +44,9 @@ describe('P2830h size gate judges the upload artifact', () => {
     const a = p.indexOf('sanitizeManifestFile'); const b = p.indexOf('compactManifestFile'); const c = p.indexOf('strip-redundant-title-formatted');
     assert.ok(a > 0 && a < b && b < c);
   });
+  it('projects an unprepared (composed) root app.json too', () => {
+    assert.match(gate, /checkBuildAppJson\(rootApp, 'Root app\.json', 'composed source manifest'\)/);
+  });
   it('still fails when the projection is above the limit', () => {
     assert.match(gate, /Projected upload app\.json is .* above/);
   });
