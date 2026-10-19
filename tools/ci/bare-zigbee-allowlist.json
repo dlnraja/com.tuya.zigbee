@@ -1,7 +1,8 @@
 {
   "updated": "2026-09-10T12:27:56.421Z",
-  "note": "P2446: migrated 27 bare ZigBeeDevice → TuyaZigbeeDevice/UnifiedSwitchBase. Only ir_blaster remains.",
+  "note": "P2446: migrated 27 bare ZigBeeDevice → TuyaZigbeeDevice/UnifiedSwitchBase. Only ir_blaster remains. P2868 (2026-10-19): smart_knob_zg101zd stays on bare ZigBeeDevice on purpose - native-only knob (user decision), its own bound clusters decode every frame; the TuyaZigbeeDevice raw-frame/button/EF00 layers would double-handle 0xFC/0xFD and query an EF00 it does not have.",
   "drivers": [
-    "ir_blaster"
+    "ir_blaster",
+    "smart_knob_zg101zd"
   ]
 }
