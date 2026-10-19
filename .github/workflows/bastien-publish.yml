@@ -267,15 +267,19 @@ jobs:
           set -e
           # WHY(P2738): early soft-continue writes processing_failed_degraded — do not promote PF tip
           if [ -n "${GITHUB_OUTPUT:-}" ] && grep -q 'processing_failed_degraded=true' "$GITHUB_OUTPUT" 2>/dev/null; then
+            node .github/scripts/publish-size-telemetry.js record processing_failed-first || true
             echo "::warning::Bastien tip PF soft-continued — skip promote (keep healthy older Test)"
             echo "draft_ok=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           if [ "$rc" -ne 0 ]; then
+            node .github/scripts/publish-size-telemetry.js record draft-not-ready || true
             echo "::warning::Bastien draft not ready (processing_failed / invalid_state) — skip promote"
             echo "draft_ok=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
+          # P2900b: result row also on the first-upload path (CSV had measures only when no retry ran).
+          node .github/scripts/publish-size-telemetry.js record uploaded-ok || true
           echo "draft_ok=true" >> "$GITHUB_OUTPUT"
 
       # WHY(P2900, 20/10/2026 Paris): Bastien was the only app with no retry after an Athom processing_failed
