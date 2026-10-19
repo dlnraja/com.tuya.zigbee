@@ -313,6 +313,8 @@ jobs:
           else
             npm install --omit=dev --ignore-scripts --no-audit --no-fund
           fi
+          # P2830d: same lossless pruning master already does (node_modules docs/tests/maps, backups, undeclared pair views).
+          node "$GITHUB_WORKSPACE/scripts/maintenance/prune-publish-payload.cjs" "$PUBLISH_DIR" || echo "::warning::prune-publish-payload failed; uploading unpruned payload"
           run_homey_cli_publish() {
             if [ -x "$GITHUB_WORKSPACE/node_modules/.bin/homey" ]; then
               HOMEY_HEADLESS=1 HOMEY_PAT="$HOMEY_PAT" "$GITHUB_WORKSPACE/node_modules/.bin/homey" app publish --path "$PUBLISH_DIR"
