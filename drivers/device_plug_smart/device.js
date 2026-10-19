@@ -107,6 +107,9 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
 
     // Parent handles onoff listener - DO NOT re-register
     await super.onNodeInit({ zclNode });
+    // WHY(Wilhelm Dall 2026-10-17): _TZ3000_bjawzodf/TY0201 temp+humidity sensor offered here by the
+    // pid-only fingerprints — fix the class in place (sensor), one-shot.
+    try { await require('../../lib/utils/ClimateSensorClassHeal').healClimateSensorClass(this); } catch (_e) { /* soft */ }
     this.log('[PLUG] v5.6.0 - DPs: 1,7,9,17-21,101,102 | ZCL: 6,2820,1794,EF00');
 
     // Setup ZCL energy monitoring (parent doesn't do this)
