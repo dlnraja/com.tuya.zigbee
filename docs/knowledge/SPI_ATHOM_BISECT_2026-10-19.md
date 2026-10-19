@@ -13,4 +13,5 @@ Static findings before the bisect:
 | Step | Change | One-shot run | Build | Result |
 |---|---|---|---|---|
 | 1 | drop never-fired trigger led_controller_spi_tuya_brightness_changed (flow compose = Bastien empty form) | 39326655463 (+ retries 39328676023, 39331643608) | #3637 v9.0.1556, #3638 v9.0.1557, #3639 v9.0.1558 | AggregateError x3 -> not the cause |
-| 2 | + drop light_temperature, light_mode from the manifest (= Bastien caps onoff/dim/light_hue/light_saturation; device code keeps CT support via DP4 when the capability exists) | pending | | |
+| 2 | + drop light_temperature, light_mode from the manifest (= Bastien caps onoff/dim/light_hue/light_saturation; device code keeps CT support via DP4 when the capability exists) | 39334371872 (+ retries 39335672791, 39338314235) | #3640 v9.0.1559, #3641 v9.0.1560, #3642 v9.0.1561 | AggregateError x3 -> not the cause |
+| 3 | + keep only the 4 base mfr ids (_TZE204_8fffc3kb, _TZE284_gt5al3bl + lowercase). Removed: 6 upper-case variants (matching is case-insensitive) and _TZE28C1000000_gt5al3bl (4 case forms), which stays on led_controller_rgb | pending | | |
