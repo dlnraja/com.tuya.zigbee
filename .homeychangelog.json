@@ -907,6 +907,9 @@
       ]
     }
   ],
+  "9.0.1527": {
+    "en": "v9.0.1527: automated publish, manifest sync, and Homey test promotion."
+  },
   "9.0.1526": {
     "en": "v9.0.1526: automated publish, manifest sync, and Homey test promotion."
   },
@@ -961,10 +964,7 @@
   "9.0.1507": {
     "en": "Restore smoke_sensor3 vzekyi4c+TS0205 after compose→app mirror; free heal purges .homeybuild/backups."
   },
-  "9.0.1506": {
-    "en": "CI unblock: purge validate backups in size heal; mirror compose→app.json fingerprints (P2842c/d)."
-  },
-  "9.0.1527": {
-    "en": "v9.0.1527: automated publish, manifest sync, and Homey test promotion."
+  "9.0.1528": {
+    "en": "v9.0.1528: automated publish, manifest sync, and Homey test promotion."
   }
 }
