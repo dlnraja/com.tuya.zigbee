@@ -233,7 +233,6 @@ function validateKnownTs004fRouting() {
     '_TZ3000_czuyt8lz',
     '_TZ3000_b3mgfu0d',
     '_TZ3000_rco1yzb1',
-    '_TZ3000_4fjiwweb',
   ];
   const rotaryManufacturers = [
     '_TZ3000_qja6nq5z',
