@@ -203,6 +203,7 @@ class SmartKnobRotaryDevice extends TuyaZigbeeDevice {
       });
       }
 
+      this._setupLevelControlBound(zclNode);
       await this._setupScenesCluster(zclNode);
       this._setupCommandListeners(zclNode);
       this._setupOnOffRotateFc(zclNode);
@@ -349,6 +350,43 @@ class SmartKnobRotaryDevice extends TuyaZigbeeDevice {
     case 3:
       this._triggerButtonPress('hold');
       break;
+    }
+  }
+
+  /**
+   * WHY(P2873): real knobs list levelControl as an OUTPUT cluster only, so the
+   * server-cluster listeners above never see a rotation. Remote commands reach
+   * endpoint.bindings[levelControl]; attach a bound cluster (never replacing one).
+   */
+  _setupLevelControlBound(zclNode) {
+    try {
+      const ep = zclNode?.endpoints?.[1];
+      if (!ep || typeof ep.bind !== 'function') {return;}
+      if (ep.bindings && ep.bindings[CLUSTER.LEVEL_CONTROL.NAME]) {return;}
+      const outIds = ep._descriptor?.outputClusters || ep.descriptor?.outputClusters || [];
+      const hasOutput = Array.isArray(outIds) && outIds.some((id) => Number(id) === 8);
+      const hasServer = !!ep.clusters?.[CLUSTER.LEVEL_CONTROL.NAME];
+      if (!hasOutput && !hasServer) {return;}
+      const LevelControlBoundCluster = require('../../lib/clusters/LevelControlBoundCluster');
+      const via = (kind) => (p) => {
+        const direction = (p?.mode || p?.moveMode) === 'up' ? 'up' : 'down';
+        const now = Date.now();
+        const last = this._p2873LastRotation;
+        this._p2873LastRotation = { direction, ts: now };
+        if (last && last.direction === direction && now - last.ts < 25) {return;}
+        if (kind === 'step') {this._handleRotationStep(direction, p?.stepSize || 10);}
+        else {this._handleRotation(direction, p?.rate || 50);}
+      };
+      ep.bind(CLUSTER.LEVEL_CONTROL.NAME, new LevelControlBoundCluster({
+        dispatchStandard: true,
+        onStep: via('step'),
+        onStepWithOnOff: via('step'),
+        onMove: via('move'),
+        onMoveWithOnOff: via('move'),
+      }));
+      this.log('[KNOB-RX] levelControl bound cluster attached');
+    } catch (err) {
+      this.log('[KNOB-RX] levelControl bound setup error:', err.message);
     }
   }
 
