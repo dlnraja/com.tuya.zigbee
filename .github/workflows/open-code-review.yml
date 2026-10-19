@@ -98,7 +98,7 @@ jobs:
 
       - uses: actions/setup-node@v5
         with:
-          node-version: '22'
+          node-version: '24'
 
       - name: Contre quoi gate P2582
         run: npm run check:p2582

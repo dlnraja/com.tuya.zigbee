@@ -89,7 +89,7 @@ jobs:
       - name: 📦 Setup Node.js
         uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
-          node-version: '22'
+          node-version: '24'
       - name: 🕗 Paris-time guard
         id: tz
         run: node scripts/digest/tz-guard.js --schedule="${{ github.event.schedule }}" --paris-hour=8
@@ -144,7 +144,7 @@ jobs:
       - name: 📦 Setup Node.js
         uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
-          node-version: '22'
+          node-version: '24'
       - name: 🕗 Paris-time guard
         id: tz
         run: node scripts/digest/tz-guard.js --schedule="${{ github.event.schedule }}" --paris-hour=8
@@ -181,7 +181,7 @@ jobs:
       - name: 📦 Setup Node.js
         uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
-          node-version: '22'
+          node-version: '24'
       - name: 🕗 Paris-time guard
         id: tz
         run: node scripts/digest/tz-guard.js --schedule="${{ github.event.schedule }}" --paris-hour=10
@@ -244,7 +244,7 @@ jobs:
       - name: 📦 Setup Node.js
         uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
-          node-version: '22'
+          node-version: '24'
       - name: 🕗 Paris-time guard
         id: tz
         run: node scripts/digest/tz-guard.js --schedule="${{ github.event.schedule }}" --paris-hour=11
@@ -340,7 +340,7 @@ jobs:
       - name: 📦 Setup Node.js
         uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
-          node-version: '22'
+          node-version: '24'
       - name: 🕗 Paris-time guard
         id: tz
         run: node scripts/digest/tz-guard.js --schedule="${{ github.event.schedule }}" --paris-hour=9
@@ -402,7 +402,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
-          node-version: '22'
+          node-version: '24'
       - name: Paris-time guard
         id: tz
         run: node scripts/digest/tz-guard.js --schedule="${{ github.event.schedule }}" --paris-hour=12
