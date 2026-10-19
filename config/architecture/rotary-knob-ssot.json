@@ -6,7 +6,7 @@
     "why": "ERS-10 / ZG-101ZD rotary knobs need genOnOff 0x8004=command so Homey receives levelControl brightness_step. Forcing scene killed rotation on smart_knob_rotary and missing KNOB_MFR couples. P2449 wires rotate/brightness flow cards + SmartKnobRotationMixin for smart_knob / switch UI-UX parity.",
     "dualApp": "BOTH",
     "doctrine": "manufacturerName+productId only; never invent pid; never force scene on rotary drivers; same TS004F pid with different mfr = different couples (uri7ongn dimmer vs kaflzta4 scene)",
-    "mfsNote": "KNOB_MFR lists are suffixes of manufacturerName — always pair with pid TS004F (or proven pid). Do not add abrsvsou/4fjiwweb (button_wireless_4+TS004F).",
+    "mfsNote": "KNOB_MFR lists are suffixes of manufacturerName — always pair with pid TS004F (or proven pid). Do not add 4fjiwweb (button_wireless_4+TS004F); abrsvsou lives on smart_knob_zg101zd (dedicatedKnobDrivers).",
     "identitySsot": "config/architecture/sacred-couple-ssot.json"
   },
   "commandModeDefault": {
@@ -36,10 +36,13 @@
     { "mfr": "_TZ3000_uri7ber7", "pid": "TS004F", "driver": "smart_knob_switch", "z2m": "TS004F knob switch" }
   ],
   "forbiddenOnKnobMfr": {
-    "note": "abrsvsou/4fjiwweb stay button_wireless_4 — do not add to KNOB_MFR",
-    "mfr": ["_TZ3000_abrsvsou", "_TZ3000_4fjiwweb"],
+    "note": "4fjiwweb stays button_wireless_4 — do not add to KNOB_MFR (abrsvsou moved to its own driver 2026-10-19)",
+    "mfr": ["_TZ3000_4fjiwweb"],
     "driver": "button_wireless_4"
   },
+  "dedicatedKnobDrivers": [
+    { "mfr": "_TZ3000_abrsvsou", "pid": "TS004F", "driver": "smart_knob_zg101zd", "z2m": "HOBEIAN ZG-101ZD / ERS-10TZBVK-AA", "notInKnobMfr": true, "since": "2026-10-19", "mode": "native command mode by default; Tuya event mode optional (setting operating_mode)" }
+  ],
   "rxPaths": {
     "commandMode": ["levelControl.step", "levelControl.move", "onOff.toggle"],
     "eventMode": ["genOnOff.0xFC rotate_left/right", "scenes.recall"]

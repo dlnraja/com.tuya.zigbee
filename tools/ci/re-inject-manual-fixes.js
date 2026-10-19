@@ -115,7 +115,7 @@ const MANUAL_FIXES = [
       '_TZ3000_xabckq1v', '_tz3000_xabckq1v', '_TZ3000_XABCKQ1V', '_tz3000_XABCKQ1V',
       '_TZ3000_czuyt8lz', '_tz3000_czuyt8lz', '_TZ3000_CZUYT8LZ', '_tz3000_CZUYT8LZ',
       '_TZ3000_b3mgfu0d', '_tz3000_b3mgfu0d', '_TZ3000_B3MGFU0D', '_tz3000_B3MGFU0D',
-      '_TZ3000_abrsvsou', '_tz3000_abrsvsou', '_TZ3000_ABRSVSOU', '_tz3000_ABRSVSOU',
+      // 2026-10-19: abrsvsou is the ZG-101ZD rotary knob → smart_knob_zg101zd (curated removal)
       '_TZ3000_4fjiwweb', '_tz3000_4fjiwweb', '_TZ3000_4FJIWWEB', '_tz3000_4FJIWWEB',
     ],
     addAtTop: false,

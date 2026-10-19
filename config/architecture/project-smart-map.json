@@ -156,7 +156,7 @@
   "knobsFlows": {
     "ssot": "config/architecture/rotary-knob-ssot.json",
     "doc": "docs/architecture/KNOB_FLOW_WIRING_SSOT.md",
-    "note": "each rotary couple is mfr+TS004F; kaflzta4 stays scene; abrsvsou stays button_wireless_4"
+    "note": "each rotary couple is mfr+TS004F; kaflzta4 stays scene; abrsvsou has its own driver smart_knob_zg101zd"
   },
   "buttonUi": {
     "ssot": "config/architecture/homey-button-ui-charter-ssot.json",
