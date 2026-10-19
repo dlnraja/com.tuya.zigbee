@@ -86,7 +86,14 @@ describe('P2448 — rotary knob command mode', () => {
     }
   });
 
-  it('abrsvsou/4fjiwweb stay button_wireless_4 and off KNOB_MFR', () => {
+  it('abrsvsou: own driver smart_knob_zg101zd, off KNOB_MFR (2026-10-19)', () => {
+    for (const c of ssot.dedicatedKnobDrivers) {
+      assert.ok(!KNOB_MFR.test(c.mfr));
+      assert.strictEqual(DeviceFingerprintDB.lookup(c.mfr, c.pid).driver, c.driver);
+    }
+  });
+
+  it('4fjiwweb stays button_wireless_4 and off KNOB_MFR', () => {
     for (const mfr of ssot.forbiddenOnKnobMfr.mfr) {
       assert.ok(!KNOB_MFR.test(mfr));
       const hit = DeviceFingerprintDB.lookup(mfr, 'TS004F');

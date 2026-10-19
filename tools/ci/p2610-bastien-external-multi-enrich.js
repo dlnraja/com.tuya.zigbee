@@ -117,7 +117,7 @@ const VERIFIED = [
   { mfr: '_TZ3000_b3mgfu0d', pid: 'TS004F', driver: 'button_wireless_4', src: 'Johan' },
   { mfr: '_TZ3000_11pg3ima', pid: 'TS004F', driver: 'button_wireless_4', src: 'Johan' },
   { mfr: '_TZ3000_et7afzxz', pid: 'TS004F', driver: 'button_wireless_4', src: 'Johan' },
-  { mfr: '_TZ3000_abrsvsou', pid: 'TS004F', driver: 'button_wireless_4', src: 'P2448 stay 4-btn' },
+  { mfr: '_TZ3000_abrsvsou', pid: 'TS004F', driver: 'smart_knob_zg101zd', src: 'Z2M hobeian.ts ZG-101ZD (2026-10-19)' },
   { mfr: '_TZ3000_4fjiwweb', pid: 'TS004F', driver: 'button_wireless_4', src: 'P2448 stay 4-btn' },
 ];
 
