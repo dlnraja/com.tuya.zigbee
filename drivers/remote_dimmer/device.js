@@ -44,6 +44,8 @@ class RemoteDimmerDevice extends PhysicalButtonMixin(VirtualButtonMixin(TuyaZigb
     this._lastActionTime = 0;
 
     zclNode.endpoints[1].bind(CLUSTER.ON_OFF.NAME, new OnOffBoundCluster({
+      // WHY(P2870): this driver's own cards (on/off/toggle) have no other RX path
+      dispatchStandard: true,
       onSetOn: () => this._handleAction('on'),
       onSetOff: () => this._handleAction('off'),
       onToggle: () => this._handleAction('toggle'),
@@ -51,6 +53,8 @@ class RemoteDimmerDevice extends PhysicalButtonMixin(VirtualButtonMixin(TuyaZigb
     this.log('[RemoteDimmer] OnOff bound');
 
     zclNode.endpoints[1].bind(CLUSTER.LEVEL_CONTROL.NAME, new LevelControlBoundCluster({
+      // WHY(P2870): brightness step/move/stop cards have no other RX path
+      dispatchStandard: true,
       onStep: (p) => this._handleAction(p.mode === 'up' ? 'brightness_step_up' : 'brightness_step_down', p),
       onStepWithOnOff: (p) => this._handleAction(p.mode === 'up' ? 'brightness_step_up' : 'brightness_step_down', p),
       onMove: (p) => this._handleAction(p.moveMode === 'up' ? 'brightness_move_up' : 'brightness_move_down', p),
