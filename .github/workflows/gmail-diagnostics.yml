@@ -185,8 +185,10 @@ jobs:
             .github/state/diag-recursive-inbox/automate-status.json || true
       - name: Diagnostic history gate
         run: npm run check:diag-history
-      - name: "Regression lessons gate (MUST-KEEP fatals)"
-        run: node tools/ci/regression-lessons-gate.js
+      - name: "Regression lessons gate (MUST-KEEP fatals, shared rules-gates)"
+        uses: ./.github/actions/rules-gates
+        with:
+          only: regression-lessons
       - name: "P100 Diag protocol gate (crash + sacred-couple cross-ref + dry apply)"
         if: always()
         continue-on-error: true
@@ -211,8 +213,15 @@ jobs:
         run: |
           node tools/ci/infer-enrich-from-incomplete.js --apply || true
           node tools/ci/ensure-case-variants.js --apply || true
-          node tools/ci/anti-bot-regression-gate.js --strip || true
-          node tools/ci/p2138-sacred-couple-matrix-gate.js || true
+
+      - name: "🛡️ Anti-bot strip + P2138 after infer-enrich apply (shared rules-gates, soft)"
+        if: always() && (github.event.inputs.auto_implement == 'true')
+        continue-on-error: true
+        uses: ./.github/actions/rules-gates
+        with:
+          only: anti-bot,p2138
+          strip: 'true'
+          soft: 'true'
 
       # WHY(P2529): after Gmail diags — deep functional audit (soft, complementary)
       - name: "P2529 deep functional enrich (soft)"
