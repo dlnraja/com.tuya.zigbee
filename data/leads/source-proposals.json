@@ -1,6 +1,6 @@
 {
   "$comment": "Change-driven proposals from data/sources/registry.json. Identifiers + our own one-line summaries; review before landing (W4 couples, research first).",
-  "updated": "2026-10-18T07:26:29.876Z",
+  "updated": "2026-10-19T08:04:41.994Z",
   "proposals": [
     {
       "source": "z2m-issues",
@@ -20326,6 +20326,334 @@
       "quirk": true,
       "credit": "Homey Community app topics: Switcher (iBush), HomeSuite (Gabriel_Pedrosa_Mach), Aqara Community (makleso6), Philips Hue Zigbee (Johan Bendz); Network Visualizer, sysInternals, Advanced Virtual Device, Then-card tokens petition, Mode Switch, Loops, Ultimate EMS, PELS, Energy Dashboard, Button+ and Zigbee help threads (forum authors)",
       "seenAt": "2026-10-18T07:26:27.572Z"
+    },
+    {
+      "source": "z2m-converters",
+      "kind": "converters",
+      "ref": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/89fc02b8600ac44d0ffc51cfc0289a615b37198c/src/devices/tuya.ts",
+      "summary": "modified src/devices/tuya.ts (+48/-13) between 2d506ca..89fc02b",
+      "mfrs": [
+        "_TZE200_iwn0gpzz",
+        "_TZE204_qyr2m29i"
+      ],
+      "pids": [],
+      "dps": [
+        35
+      ],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee-herdsman-converters contributors (MIT)",
+      "seenAt": "2026-10-19T08:04:32.477Z"
+    },
+    {
+      "source": "z2m-converters",
+      "kind": "converters",
+      "ref": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/89fc02b8600ac44d0ffc51cfc0289a615b37198c/src/devices/zigbeetlc.ts",
+      "summary": "modified src/devices/zigbeetlc.ts (+88/-0) between 2d506ca..89fc02b",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": false,
+      "quirk": true,
+      "credit": "Koen Kanters and zigbee-herdsman-converters contributors (MIT)",
+      "seenAt": "2026-10-19T08:04:32.477Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/19045",
+      "summary": "issue #19045 (closed) by seblu: ZY-M100-S_1 sensors report every second",
+      "mfrs": [
+        "_TZE204_sxm7l9xa"
+      ],
+      "pids": [],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-19T08:04:33.324Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/33425",
+      "summary": "issue #33425 (open) by BenWolstencroft: Moes BHT-002: writing `program` doesn't update state when the device doesn't report it back",
+      "mfrs": [
+        "_TZE204_aoclfnxz"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [
+        101
+      ],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-19T08:04:33.324Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/33429",
+      "summary": "issue #33429 (closed) by minor64: [External Converter]: TS0601 from _TZE284_tz0bdogs",
+      "mfrs": [
+        "_TZE284_tz0bdogs",
+        "_TZE204_eekpf0ft"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-19T08:04:33.325Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/33431",
+      "summary": "issue #33431 (open) by defakto2010: [External Converter]: TS1002 from _TZ3000_2vf1wumx",
+      "mfrs": [
+        "_TZ3000_2vf1wumx"
+      ],
+      "pids": [
+        "TS1002"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-19T08:04:33.325Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/33432",
+      "summary": "issue #33432 (open) by avg-I: [External Converter]: TS0224_1 from _TZ3000_c2yscrj8",
+      "mfrs": [
+        "_TZ3000_c2yscrj8"
+      ],
+      "pids": [
+        "TS0224"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-19T08:04:33.325Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/26100",
+      "summary": "issue #26100 (closed) by ZaharTheMad: [New device support]: RH-EU411-4U-001 _TZ3000_pl5v1yyy",
+      "mfrs": [
+        "_TZ3000_pl5v1yyy"
+      ],
+      "pids": [
+        "TS011F"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-19T08:04:33.325Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/18095",
+      "summary": "issue #18095 (closed) by pirracas77: [New device support]: ATMS1603AZ Tuya Smart ZigBee Energy Meter Din Rail with Clamp Current",
+      "mfrs": [
+        "_TZ3000_9ni6xxld"
+      ],
+      "pids": [
+        "TS011F"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-19T08:04:33.325Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/30977",
+      "summary": "issue #30977 (closed) by xtrmenl: [New device support]: TS0053 from _TZ3000_kvy2ny0a",
+      "mfrs": [
+        "_TZ3000_kvy2ny0a"
+      ],
+      "pids": [
+        "TS0053"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-19T08:04:33.325Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/pull/4970",
+      "summary": "PR #4970 (open) by ITJamie: Add ZHA quirk for Engo EONE and E40 thermostats",
+      "mfrs": [
+        "_TZE204_ca3i8m8p",
+        "_TZE204_glk6viwg"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [
+        16,
+        24,
+        3,
+        40,
+        44,
+        120,
+        34
+      ],
+      "bug": true,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-10-19T08:04:34.012Z"
+    },
+    {
+      "source": "homey-forum",
+      "kind": "forum",
+      "ref": "https://community.homey.app/t/26439/5537",
+      "summary": "post #5537 by Cam",
+      "mfrs": [
+        "_TZ3000_qja6nq5z"
+      ],
+      "pids": [
+        "TS004F"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Homey Community Forum members",
+      "seenAt": "2026-10-19T08:04:35.276Z"
+    },
+    {
+      "source": "homey-forum-apps-category",
+      "kind": "forum-app",
+      "ref": "https://community.homey.app/t/161061",
+      "summary": "new app topic #161061: Apple Home accessory states not updating through either Matter Bridge or HomeKit Device Bridge — Homey Pro mini (review for ideas; credit author)",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Homey Community Forum app authors (Apps category)",
+      "seenAt": "2026-10-19T08:04:35.417Z"
+    },
+    {
+      "source": "homey-forum-apps-category",
+      "kind": "forum-app",
+      "ref": "https://community.homey.app/t/156015/125",
+      "summary": "post #125 by Kaoh",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum app authors (Apps category)",
+      "seenAt": "2026-10-19T08:04:36.248Z"
+    },
+    {
+      "source": "homey-forum-apps-category",
+      "kind": "forum-app",
+      "ref": "https://community.homey.app/t/156015/127",
+      "summary": "post #127 by Kaoh",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": true,
+      "credit": "Homey Community Forum app authors (Apps category)",
+      "seenAt": "2026-10-19T08:04:36.248Z"
+    },
+    {
+      "source": "homey-forum-apps-category",
+      "kind": "forum-app",
+      "ref": "https://community.homey.app/t/156015/130",
+      "summary": "post #130 by Kaoh",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum app authors (Apps category)",
+      "seenAt": "2026-10-19T08:04:36.248Z"
+    },
+    {
+      "source": "homey-forum-apps-category",
+      "kind": "forum-app",
+      "ref": "https://community.homey.app/t/156015/131",
+      "summary": "post #131 by Kaoh",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": false,
+      "quirk": true,
+      "credit": "Homey Community Forum app authors (Apps category)",
+      "seenAt": "2026-10-19T08:04:36.248Z"
+    },
+    {
+      "source": "homey-forum-tag-zigbee",
+      "kind": "forum-zigbee",
+      "ref": "https://community.homey.app/t/152695/186",
+      "summary": "post #186 by David_K",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum members (tag: zigbee)",
+      "seenAt": "2026-10-19T08:04:38.402Z"
+    },
+    {
+      "source": "homey-forum-tag-zigbee",
+      "kind": "forum-zigbee",
+      "ref": "https://community.homey.app/t/152695/188",
+      "summary": "post #188 by SunBeech",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum members (tag: zigbee)",
+      "seenAt": "2026-10-19T08:04:38.402Z"
+    },
+    {
+      "source": "homey-forum-tag-zigbee",
+      "kind": "forum-zigbee",
+      "ref": "https://community.homey.app/t/152695/189",
+      "summary": "post #189 by Marcel_Visser",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum members (tag: zigbee)",
+      "seenAt": "2026-10-19T08:04:38.402Z"
+    },
+    {
+      "source": "homey-forum-tag-zigbee",
+      "kind": "forum-zigbee",
+      "ref": "https://community.homey.app/t/160737/8",
+      "summary": "post #8 by Bas_Moerenhout",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum members (tag: zigbee)",
+      "seenAt": "2026-10-19T08:04:39.179Z"
     }
   ]
 }
