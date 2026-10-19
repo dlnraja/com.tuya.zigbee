@@ -155,6 +155,60 @@ function checkArchive(file) {
   }
 }
 
+// WHY(P2830h): `homey app validate/build` writes .homeybuild/app.json with every
+// driver Flow card merged in (4.75 MB on master 9.0.1535). That raw file is NOT the
+// upload: prepare-publish sanitizes, compacts and strips it (3.48 MB) and syncs it
+// back here. When a job stops before prepare-publish (or a local commit runs after a
+// plain build), judge the projected upload manifest instead of the raw build file.
+function projectUploadManifestBytes(file) {
+  const tmp = path.join(os.tmpdir(), `size-gate-projection-${process.pid}.json`);
+  try {
+    fs.copyFileSync(file, tmp);
+    const quiet = console.log;
+    console.log = () => {};
+    try {
+      require('../maintenance/sanitize-manifest.cjs').sanitizeManifestFile(tmp);
+      require('../maintenance/compact-zigbee-identifiers.cjs').compactManifestFile(tmp);
+      require('../maintenance/strip-redundant-title-formatted.cjs').stripFile(tmp);
+    } finally {
+      console.log = quiet;
+    }
+    return Buffer.byteLength(JSON.stringify(JSON.parse(fs.readFileSync(tmp, 'utf8'))));
+  } catch (e) {
+    warnings.push(`Build app.json: upload projection failed (${e.message})`);
+    return null;
+  } finally {
+    try { fs.unlinkSync(tmp); } catch { /* ignore */ }
+  }
+}
+
+function checkBuildAppJson(file) {
+  if (!fs.existsSync(file)) {
+    warnings.push(`Build app.json: missing, skipped (${path.relative(ROOT, file)})`);
+    return;
+  }
+  let rawBytes;
+  try {
+    rawBytes = Buffer.byteLength(JSON.stringify(JSON.parse(fs.readFileSync(file, 'utf8'))));
+  } catch {
+    checkJsonUnderLimit('Build app.json', file, LIMITS.appJsonMB);
+    return;
+  }
+  if (toMB(rawBytes) <= LIMITS.appJsonMB) {
+    checkJsonUnderLimit('Build app.json', file, LIMITS.appJsonMB);
+    return;
+  }
+  const projected = projectUploadManifestBytes(file);
+  if (projected === null || toMB(projected) > LIMITS.appJsonMB) {
+    checkJsonUnderLimit('Build app.json', file, LIMITS.appJsonMB);
+    if (projected !== null) errors.push(`Projected upload app.json is ${fmtMB(projected)} MB after sanitize+compact+strip, above ${LIMITS.appJsonMB.toFixed(2)} MB`);
+    return;
+  }
+  addCheck('Build app.json (raw homey build, not uploaded)', rawBytes, LIMITS.appJsonMB, 'warn', `${path.relative(ROOT, file)} compact; not prepared yet`);
+  addCheck('Projected upload app.json', projected, LIMITS.appJsonMB, 'pass', 'sanitize + Zigbee compact + titleFormatted strip, as prepare-publish');
+  warnings.push(`Build app.json is the raw homey build (${fmtMB(rawBytes)} MB); the upload manifest projects to ${fmtMB(projected)} MB. Run npm run prepare-publish to sync it.`);
+}
+
 function main() {
   // WHY(P2561): prepare-publish compacts tmp/homey-publish-temp/app.json; the
   // workspace root app.json can still measure ~4.00MB compact and false-fail the
@@ -165,7 +219,7 @@ function main() {
     ? preparedApp
     : path.join(ROOT, 'app.json');
   checkJsonUnderLimit('Root app.json', rootApp, LIMITS.appJsonMB);
-  checkJsonUnderLimit('Build app.json', path.join(ROOT, '.homeybuild', 'app.json'), LIMITS.appJsonMB);
+  checkBuildAppJson(path.join(ROOT, '.homeybuild', 'app.json'));
 
   checkDirUnderLimit(
     'Build directory',
