@@ -85,6 +85,12 @@ jobs:
           if [ -n "$ISSUE" ]; then ARGS+=(--issue="$ISSUE"); fi
           node tools/ci/auto-bot-issue-triage.js "${ARGS[@]}"
 
+      # WHY(P2882): .github/state is gitignored, so the candidate list was never read again. Copy the
+      # missing mfrs into the tracked ledger as pending leads (mfr only, nothing placed in a driver).
+      - name: Hand off candidates to the progress ledger
+        continue-on-error: true
+        run: node scripts/progress/ingest-bot-candidates.js
+
       - name: "P2529 Deep functional enrich (GitHub issues → DP/flow/RX-TX)"
         continue-on-error: true
         timeout-minutes: 8
@@ -113,6 +119,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add .github/state/bot-auto-scan-candidates.json .github/state/bot-issue-triage-report.json || true
+          git add data/progress/ledger.json || true
           if git diff --cached --quiet; then
             echo "No state changes"
           else
