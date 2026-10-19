@@ -25,7 +25,9 @@ describe('fold FUT089Z -> button_wireless_4', () => {
     for (const ev of fut.EVENTS) {
       const c = flow.triggers.find((t) => t.id === `${fut.TRIGGER_PREFIX}${ev}`);
       assert.ok(c, ev);
-      assert.strictEqual(c.args.find((a) => a.type === 'device').filter, 'driver_id=button_wireless_4');
+      // WHY(P2874): homey app build adds the driver_id=button_wireless_4 device arg itself;
+      // a hand-written one is built twice.
+      assert.ok(!(c.args || []).some((a) => a.type === 'device'), `${ev} has no hand-written device arg`);
     }
   });
 });
