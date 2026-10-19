@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-19T05:00:42.736Z",
+ "updated": "2026-10-19T06:29:01.215Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -28121,6 +28121,18 @@
     "smoke_sensor"
    ],
    "note": "W4 smoke_sensor3 (pids there: ts0205…)"
+  },
+  "p2868-zg101zd-knob": {
+   "status": "done",
+   "date": "2026-10-19",
+   "note": "new driver smart_knob_zg101zd, abrsvsou+TS004F moved off button_wireless_4 (user decision 2026-10-19)",
+   "by": "c2"
+  },
+  "p2869-9ern5sfh-lcd-owner": {
+   "status": "done",
+   "date": "2026-10-19",
+   "note": "9ern5sfh+TS0601 pinned to lcdtemphumidsensor, stable/bastien aligned (Kizabgd #2263, Johan #1328)",
+   "by": "c2"
   },
   "root-cause:P2865-trv-announce": {
    "status": "done",
