@@ -535,6 +535,17 @@
       ],
       "why": "2026-10-19 P2830b: five TS0003 3-gang wall switches (Johan #55/#254 family) were mis-owned by the 2-button remote driver; moved to switch_3gang with exact pid TS0003 (pinned). No external source ever listed them as TS0042 remotes.",
       "source": "Johan Bendz com.tuya.zigbee issues #55 (_TZ3000_cdamjqm9 / TS0003, 3-way wall switch with neutral, Zemismart ZM-L03E-Z) and #254 (_TZ3000_2dlwlvex / TS0003, 3-rocker wall switch with neutral); same issue family lists qcdqw8nf, vvlivusi, w05exif3 as TS0003 3-gang wall switches in his supported-device README; issue #55 interview: 3 endpoints, each with onOff cluster 6, mains powered; Z2M TS0003 = 3 gang switch (state_left/center/right)"
+    },
+    {
+      "driver": "button_wireless_4",
+      "mfr": [
+        "_TZ3000_abrsvsou",
+        "_tz3000_abrsvsou",
+        "_TZ3000_ABRSVSOU",
+        "_tz3000_ABRSVSOU"
+      ],
+      "why": "2026-10-19 user decision: _TZ3000_abrsvsou + TS004F is the HOBEIAN ZG-101ZD / ERS-10TZBVK-AA rotary knob (Z2M hobeian.ts ZG-101ZD, ZHA ts004f.py TuyaSmartRemote004FROK, deCONZ smart-knob DDF, Johan smart_knob_switch), not a 4-button remote; owner smart_knob_zg101zd",
+      "source": "z2m hobeian.ts + zhaquirks ts004f.py + deconz _TZ3000_TS004F_smart_knob.json"
     }
   ]
 }

@@ -116,7 +116,8 @@ describe('P2530 recent variant + capability completer', () => {
     assert.ok(hasCap(valve, 'onoff.valve_2'));
 
     assert.ok(hasMfr(btn4, /_TZ3000_xffhmvhv/i));
-    assert.ok(hasMfr(btn4, /_TZ3000_abrsvsou/i));
+    // 2026-10-19: abrsvsou moved to its own rotary knob driver (curated removal from button_wireless_4)
+    assert.ok(!hasMfr(btn4, /_TZ3000_abrsvsou/i));
   });
 
   it('completer absorbs sacred-couple SSOT highRiskLocks as seeds (source lock)', () => {
