@@ -24,7 +24,9 @@ describe('P2636 dzwgk7e2+TS0042 2-btn (phantom 4EP)', () => {
     // couples moved out on purpose — anti-purge floor lowered accordingly (still catches mass loss).
     // 2026-10-18: raw floor follows deliberate moves of 18 makers (13 -> switch_1gang, 3 -> switch_2gang, 1 plug strip, 1 TRV; 0 orphaned couples,
     // verified against 9594b58449). The unique-maker floor is the real mass-purge guard.
-    assert.ok((c.zigbee.manufacturerName || []).length >= 420);
+    // 2026-10-19 (P2830b 39bc433e68): 5 TS0003 3-gang makers (cdamjqm9/2dlwlvex/qcdqw8nf/vvlivusi/w05exif3,
+    // 20 case entries) moved to switch_3gang on purpose, all 5 verified present there -> floor 420 -> 400.
+    assert.ok((c.zigbee.manufacturerName || []).length >= 400);
     assert.ok(new Set((c.zigbee.manufacturerName || []).map((x) => String(x).toLowerCase())).size >= 100);
     // 2026-10-11 second-source round: TS0003/TS0013 3-gang + r0pmi2p3 TS0014 moved to switch_3_gang/switch_4gang (curated removals). 2026-10-11 W4: qewo8dlz TS0013 (wired 3-gang, deCONZ) moved to switch_3_gang (curated removal)
   });
