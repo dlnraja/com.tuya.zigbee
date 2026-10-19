@@ -84,7 +84,9 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
         // Complementary battery DPs (Z2M thermostat_3 variants) — keep alarm on 35
         13: { capability: 'measure_battery', divisor: 1 },
         15: { capability: 'measure_battery', divisor: 1 },
-        35: { capability: 'alarm_battery', transform: (v) => v === 1 },
+        // WHY(#560 / Z2M TS0601_thermostat_3 `errorOrBatteryLow`): DP35 is a fault bitmap, bit 0 = battery low.
+        // alarm_battery is added lazily on the first DP35 report (see _handleDP) so TRVs that never send it stay clean.
+        35: { capability: 'alarm_battery', transform: (v) => (Number(v) & 1) === 1 },
         36: { capability: 'frost_protection', transform: (v) => v === true || v === 1 },
         39: { internal: true, type: 'anti_scaling', writable: true },
         // WHY P2278: ogx8u5z6 stores tenths (ZHA#4124); other ME167 = whole °C (Z2M raw)
@@ -129,6 +131,44 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     // Override parent - we handle target_temperature in _setupTRVListeners with correct DP per profile
     // Don't call super._registerCapabilityListeners() - it sends to wrong DP for me167
     this.log('[TRV] Using profile-specific capability listeners (not parent)');
+  }
+
+  /**
+   * WHY(#560 artisare, TRV06 _TZE200_rxq4iti9 / TS0601): the TRV has no humidity sensor, yet the
+   * driver-wide capability list always offers measure_humidity. Strip it for this exact couple only
+   * (soft, idempotent; other TRVs in this driver keep their capabilities).
+   */
+  _isNoHumidityTrv() {
+    try {
+      const mfr = this._resolveMfr().toLowerCase();
+      return mfr === '_tze200_rxq4iti9';
+    } catch (_e) { return false; }
+  }
+
+  async _stripPhantomHumidity() {
+    if (!this._isNoHumidityTrv() || !this.hasCapability('measure_humidity')) return;
+    try {
+      const cur = this.getCapabilityValue('measure_humidity');
+      if (cur !== null && cur !== undefined) return; // real data was reported: never remove
+      await this.removeCapability('measure_humidity');
+      this.log('[TRV] #560 removed phantom measure_humidity (TRV06 has no humidity sensor)');
+    } catch (e) {
+      this.log('[TRV] #560 humidity strip skipped:', e && e.message);
+    }
+  }
+
+  /**
+   * WHY(#560): me167 DP35 (fault bitmap, bit0 = low battery) -> alarm_battery, added only once a DP35
+   * report really arrives (Z2M exposes only a boolean battery_low for TRV06; no battery percentage).
+   */
+  _handleDP(dpId, raw) {
+    if (Number(dpId) === 35 && this.dpProfile === 'me167' && !this.hasCapability('alarm_battery')) {
+      Promise.resolve(this.addCapability('alarm_battery'))
+        .then(() => super._handleDP(dpId, raw))
+        .catch((e) => this.log('[TRV] #560 alarm_battery add skipped:', e && e.message));
+      return undefined;
+    }
+    return super._handleDP(dpId, raw);
   }
 
   async onNodeInit({ zclNode }) {
@@ -246,6 +286,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       }
       await this._setupTuyaDPMode?.();
     } catch (_e) { /* soft */ }
+    await this._stripPhantomHumidity();
 
     // Store manufacturerName for profile detection
     try {
@@ -346,6 +387,13 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
         await super.onEndDeviceAnnounce();
       }
     } catch (_e) { /* soft */ }
+    // WHY(#560 root cause): a second onEndDeviceAnnounce() further down this class used to override
+    // this one, so the DP refresh on wake-up never ran. Both duties now live in this single method.
+    try {
+      this.log('[REJOIN] Device announced itself, refreshing state...');
+      if (typeof this._updateLastSeen === 'function') { this._updateLastSeen(); }
+      if (this._dataRecoveryManager) { this._dataRecoveryManager.forceRecovery?.(); }
+    } catch (_e3) { /* soft */ }
     try {
       this.log('[TRV] P2598 endDeviceAnnounce → DP refresh');
       this._scheduleTrvDpRefresh();
@@ -481,17 +529,6 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
   }
 
 
-  /**
-   * v7.4.6: Refresh state when device announces itself (rejoin/wakeup)
-   */
-  async onEndDeviceAnnounce() {
-    this.log('[REJOIN] Device announced itself, refreshing state...');
-    if (typeof this._updateLastSeen === 'function') {this._updateLastSeen();}
-    // Proactive data recovery if supported
-    if (this._dataRecoveryManager) {
-       this._dataRecoveryManager?.forceRecovery?.();
-    }
-  }
 }
 
 module.exports = RadiatorValveDevice;

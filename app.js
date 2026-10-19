@@ -236,7 +236,14 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
           if (typeof orig === 'function') {
             try { return orig.apply(flow, args); }
             catch (e) {
-              this.log('[FLOW-GUARD]', m, args[0], e.message);
+              // WHY(#560 / Bastien diag): the same missing card id was logged on every call
+              // (home_mode_changed, capability_value_changed_generic, device_interaction). Log once per
+              // method+id, then skip quietly with the noop card.
+              const missKey = `${m}:${args[0]}`;
+              if (!missingLogged.has(missKey)) {
+                missingLogged.add(missKey);
+                this.log('[FLOW-GUARD]', m, args[0], e.message, '(further misses for this card are silent)');
+              }
               return noopCard;
             }
           }
