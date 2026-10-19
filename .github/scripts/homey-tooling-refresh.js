@@ -3,8 +3,9 @@
 /**
  * Weekly Homey tooling refresh (free, no AI). Reads npm "latest" for the homey CLI, homey-lib (validator),
  * homey-zigbeedriver and zigbee-clusters, records them in data/sources/homey-tooling.json, and:
- *  - CI tooling (safe to bump automatically): if the homey CLI needs a newer Node than the workflows use,
- *    raises `node-version` in .github/workflows/*.yml (only numeric majors, never lowers);
+ *  - CI tooling: if the homey CLI needs a newer Node than the workflows use, lists the workflows whose
+ *    `node-version` would have to be raised. Proposal only, never written: the bot token cannot push
+ *    workflow edits, and node22-tests / validate must keep testing the Node the app targets (2026-10-19);
  *  - runtime libs (homey-zigbeedriver, zigbee-clusters): proposal only, never bumped (user decision:
  *    keep current Athom libs for firmware 12.2-12.8 compatibility).
  * Appends a dated summary to docs/knowledge/HOMEY_TOOLING_WATCH.md. Exit 0; prints "changed=true|false".
@@ -29,18 +30,20 @@ async function latest(name) {
   return { version: j.version, node: (j.engines && j.engines.node) || null };
 }
 
-function bumpNode(minMajor) {
-  const changed = [];
-  for (const f of fs.readdirSync(WF).filter((x) => /\.ya?ml$/.test(x))) {
-    const p = path.join(WF, f);
-    const src = fs.readFileSync(p, 'utf8');
-    const out = src.replace(/(node-version:\s*['"]?)(\d+)(['"]?)/g, (all, a, v, b) => (Number(v) < minMajor ? `${a}${minMajor}${b}` : all));
-    if (out !== src) { changed.push(f); if (!DRY) { fs.writeFileSync(p, out); } }
+// Read-only: returns the workflow files whose numeric node-version is below minMajor. Never writes.
+function proposeNodeBump(minMajor, dir = WF) {
+  const below = [];
+  if (!fs.existsSync(dir)) { return below; }
+  for (const f of fs.readdirSync(dir).filter((x) => /\.ya?ml$/.test(x))) {
+    const src = fs.readFileSync(path.join(dir, f), 'utf8');
+    const re = /node-version:\s*['"]?(\d+)['"]?/g;
+    let m;
+    while ((m = re.exec(src))) { if (Number(m[1]) < minMajor) { below.push(f); break; } }
   }
-  return changed;
+  return below;
 }
 
-(async () => {
+async function main() {
   const prev = (() => { try { return JSON.parse(fs.readFileSync(OUT, 'utf8')); } catch { return { packages: {} }; } })();
   const now = { checkedAt: new Date().toISOString(), packages: {} };
   for (const n of PKGS) { try { now.packages[n] = await latest(n); } catch (e) { now.packages[n] = prev.packages[n] || { error: e.message }; } }
@@ -52,8 +55,11 @@ function bumpNode(minMajor) {
     if (b && a !== b) { notes.push(`- ${n}: ${a || '(new)'} -> ${b} (engines.node ${now.packages[n].node || 'n/a'}; ours ${deps[n] || 'CLI via npx'})`); }
   }
   const cliNode = major(now.packages.homey && now.packages.homey.node);
-  const bumped = cliNode ? bumpNode(cliNode) : [];
-  if (bumped.length) { notes.push(`- CI: node-version raised to ${cliNode} (homey CLI requires node ${now.packages.homey.node}) in ${bumped.join(', ')}`); }
+  const below = cliNode ? proposeNodeBump(cliNode) : [];
+  const cliChanged = !prev.packages.homey || (now.packages.homey && now.packages.homey.version !== prev.packages.homey.version);
+  if (below.length && cliChanged) {
+    notes.push(`- Proposal only: homey CLI ${now.packages.homey.version} asks for node ${now.packages.homey.node}; ${below.length} workflow(s) still set a lower node-version (${below.join(', ')}). Not changed automatically: review by hand, node22-tests and validate stay on the Node the app targets.`);
+  }
   for (const n of ['homey-zigbeedriver', 'zigbee-clusters']) {
     if (deps[n] && now.packages[n].version && !String(deps[n]).includes(now.packages[n].version)) {
       notes.push(`- Proposal only: ${n} ${deps[n]} -> ${now.packages[n].version} (runtime lib, kept on purpose; port useful fixes instead)`);
@@ -69,4 +75,9 @@ function bumpNode(minMajor) {
   console.log(notes.join('\n') || 'no tooling change');
   console.log(`changed=${changed}`);
   if (process.env.GITHUB_OUTPUT) { fs.appendFileSync(process.env.GITHUB_OUTPUT, `changed=${changed}\n`); }
-})().catch((e) => { console.error(e.message); process.exit(0); });
+}
+
+module.exports = { proposeNodeBump, major };
+if (require.main === module) {
+  main().catch((e) => { console.error(e.message); process.exit(0); });
+}
