@@ -1,0 +1,117 @@
+{
+  "name": {
+    "en": "Smart knob ZG-101ZD (rotary)",
+    "fr": "Bouton rotatif ZG-101ZD",
+    "nl": "Draaiknop ZG-101ZD",
+    "de": "Drehknopf ZG-101ZD"
+  },
+  "class": "remote",
+  "capabilities": [
+    "measure_battery"
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_abrsvsou",
+      "_tz3000_abrsvsou",
+      "_TZ3000_ABRSVSOU",
+      "_tz3000_ABRSVSOU"
+    ],
+    "productId": [
+      "TS004F"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3,
+          4,
+          6,
+          4096
+        ],
+        "bindings": [
+          3,
+          4,
+          5,
+          6,
+          8,
+          10,
+          25,
+          4096
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Press and hold the knob for about 10 seconds until the LED starts blinking, then release.",
+        "fr": "Maintenez le bouton enfoncé environ 10 secondes jusqu'à ce que la LED clignote, puis relâchez.",
+        "nl": "Houd de knop ongeveer 10 seconden ingedrukt tot de led knippert en laat dan los.",
+        "de": "Halten Sie den Knopf etwa 10 Sekunden gedrückt, bis die LED blinkt, und lassen Sie dann los."
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "operating_mode",
+      "type": "dropdown",
+      "value": "keep",
+      "label": {
+        "en": "Operating mode",
+        "fr": "Mode de fonctionnement",
+        "nl": "Werkingsmodus",
+        "de": "Betriebsmodus"
+      },
+      "values": [
+        {
+          "id": "keep",
+          "label": {
+            "en": "Keep the knob's current mode (default)",
+            "fr": "Garder le mode actuel du bouton (défaut)",
+            "nl": "Huidige modus van de knop behouden (standaard)",
+            "de": "Aktuellen Modus des Knopfs beibehalten (Standard)"
+          }
+        },
+        {
+          "id": "command",
+          "label": {
+            "en": "Command (standard Zigbee: press, rotate, press+rotate, hold)",
+            "fr": "Commande (Zigbee standard : appui, rotation, appui+rotation, maintien)",
+            "nl": "Commando (standaard Zigbee: druk, draai, druk+draai, vasthouden)",
+            "de": "Befehl (Standard-Zigbee: Drücken, Drehen, Drücken+Drehen, Halten)"
+          }
+        },
+        {
+          "id": "event",
+          "label": {
+            "en": "Event (Tuya: adds double press)",
+            "fr": "Événement (Tuya : ajoute le double appui)",
+            "nl": "Gebeurtenis (Tuya: voegt dubbel drukken toe)",
+            "de": "Ereignis (Tuya: fügt Doppeldruck hinzu)"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Both modes are understood at all times. Double press only exists in event mode; press+rotate only in command mode. The knob sleeps: press it once right before saving so it receives the change.",
+        "fr": "Les deux modes sont toujours compris. Le double appui n'existe qu'en mode événement ; appui+rotation seulement en mode commande. Le bouton dort : appuyez une fois juste avant d'enregistrer pour qu'il reçoive le changement.",
+        "nl": "Beide modi worden altijd begrepen. Dubbel drukken bestaat alleen in gebeurtenismodus, druk+draai alleen in commandomodus. De knop slaapt: druk er vlak voor het opslaan één keer op.",
+        "de": "Beide Modi werden immer verstanden. Doppeldruck gibt es nur im Ereignismodus, Drücken+Drehen nur im Befehlsmodus. Der Knopf schläft: kurz vor dem Speichern einmal drücken."
+      }
+    }
+  ]
+}

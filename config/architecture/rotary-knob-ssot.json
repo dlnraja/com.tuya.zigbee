@@ -94,13 +94,23 @@
     }
   ],
   "forbiddenOnKnobMfr": {
-    "note": "abrsvsou/4fjiwweb stay button_wireless_4 — do not add to KNOB_MFR",
+    "note": "4fjiwweb stays button_wireless_4 — do not add to KNOB_MFR (abrsvsou moved to its own driver 2026-10-19)",
     "mfr": [
-      "_TZ3000_abrsvsou",
       "_TZ3000_4fjiwweb"
     ],
     "driver": "button_wireless_4"
   },
+  "dedicatedKnobDrivers": [
+    {
+      "mfr": "_TZ3000_abrsvsou",
+      "pid": "TS004F",
+      "driver": "smart_knob_zg101zd",
+      "z2m": "HOBEIAN ZG-101ZD / ERS-10TZBVK-AA",
+      "notInKnobMfr": true,
+      "since": "2026-10-19",
+      "mode": "native command mode by default; Tuya event mode optional (setting operating_mode)"
+    }
+  ],
   "rxPaths": {
     "commandMode": [
       "levelControl.step",

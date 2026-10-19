@@ -653,6 +653,15 @@
       "pid": "TS0003",
       "source": "Johan Bendz com.tuya.zigbee issues #55 (_TZ3000_cdamjqm9 / TS0003, 3-way wall switch with neutral, Zemismart ZM-L03E-Z) and #254 (_TZ3000_2dlwlvex / TS0003, 3-rocker wall switch with neutral); same issue family lists qcdqw8nf, vvlivusi, w05exif3 as TS0003 3-gang wall switches in his supported-device README; issue #55 interview: 3 endpoints, each with onOff cluster 6, mains powered; Z2M TS0003 = 3 gang switch (state_left/center/right)",
       "regression": "P2830b 2026-10-19: these five were claimed by button_wireless_2 (auto-sync 2026-07, no external source for TS0042). Exact couple mfr+TS0003 belongs to the 3-gang switch; button_wireless_2 must not claim it."
+    },
+    {
+      "mfr": [
+        "_TZ3000_abrsvsou"
+      ],
+      "pid": "TS004F",
+      "driver": "smart_knob_zg101zd",
+      "source": "Z2M hobeian.ts ZG-101ZD (+ applicationVersion 145 ZG-101Z/D), ZHA TuyaSmartRemote004FROK, deCONZ smart knob DDF",
+      "regression": "was parked on button_wireless_4 as a 4-button remote (P129/P2448); moved 2026-10-19 by user decision"
     }
   ]
 }
