@@ -620,6 +620,17 @@
       ],
       "why": "2026-10-18: TS0207 water leak _TZ3000_85czd6fy is pinned to water_leak_sensor (couple-driver-pins, Johan + deCONZ); the 16/10 peer-compose rewrite had moved it onto water_detector (one couple, one driver)",
       "source": "lost-couples 2026-10-11 + pins"
+    },
+    {
+      "driver": "button_wireless_4",
+      "mfr": [
+        "_TZ3000_abrsvsou",
+        "_tz3000_abrsvsou",
+        "_TZ3000_ABRSVSOU",
+        "_tz3000_ABRSVSOU"
+      ],
+      "why": "2026-10-19 user decision: _TZ3000_abrsvsou + TS004F is the HOBEIAN ZG-101ZD / ERS-10TZBVK-AA rotary knob (Z2M hobeian.ts ZG-101ZD, ZHA ts004f.py TuyaSmartRemote004FROK, deCONZ smart-knob DDF, Johan smart_knob_switch), not a 4-button remote; owner smart_knob_zg101zd",
+      "source": "z2m hobeian.ts + zhaquirks ts004f.py + deconz _TZ3000_TS004F_smart_knob.json"
     }
   ]
 }

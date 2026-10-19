@@ -57,9 +57,9 @@
       },
       {
         "couple": "_TZ3000_abrsvsou+TS004F",
-        "driver": "button_wireless_4",
-        "role": "scene",
-        "ui": "4-endpoint scene — not smart_knob KNOB_MFR"
+        "driver": "smart_knob_zg101zd",
+        "role": "knob",
+        "ui": "ZG-101ZD rotary knob: rotate/press/double/hold triggers, native command mode"
       },
       {
         "couple": "_TZ3000_4fjiwweb+TS004F",
