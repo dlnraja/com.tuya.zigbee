@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-19T06:29:01.215Z",
+ "updated": "2026-10-19T07:28:49.771Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -28132,6 +28132,18 @@
    "status": "done",
    "date": "2026-10-19",
    "note": "9ern5sfh+TS0601 pinned to lcdtemphumidsensor, stable/bastien aligned (Kizabgd #2263, Johan #1328)",
+   "by": "c2"
+  },
+  "p2870-bound-standard-dispatch": {
+   "status": "done",
+   "date": "2026-10-19",
+   "note": "OnOff/LevelControl BoundCluster opt-in dispatch; remote_dimmer + knob mixin opted in; button families stay on raw L1",
+   "by": "c2"
+  },
+  "p2871-4fjiwweb-knob": {
+   "status": "done",
+   "date": "2026-10-19",
+   "note": "4fjiwweb+TS004F -> smart_knob_zg101zd (ERS-10TZBVK-AA)",
    "by": "c2"
   },
   "root-cause:P2865-trv-announce": {
