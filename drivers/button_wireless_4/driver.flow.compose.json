@@ -768,11 +768,6 @@
       },
       "args": [
         {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=button_wireless_4"
-        },
-        {
           "name": "zone_filter",
           "type": "dropdown",
           "title": {
@@ -890,11 +885,6 @@
       },
       "args": [
         {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=button_wireless_4"
-        },
-        {
           "name": "zone_filter",
           "type": "dropdown",
           "title": {
@@ -1011,11 +1001,6 @@
         "de": "FUT089Z-Fernbedienung: Helligkeit eingestellt"
       },
       "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=button_wireless_4"
-        },
         {
           "name": "zone_filter",
           "type": "dropdown",
@@ -1144,11 +1129,6 @@
         "de": "FUT089Z-Fernbedienung: Farbtemperatur eingestellt"
       },
       "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=button_wireless_4"
-        },
         {
           "name": "zone_filter",
           "type": "dropdown",
@@ -1289,11 +1269,6 @@
       },
       "args": [
         {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=button_wireless_4"
-        },
-        {
           "name": "zone_filter",
           "type": "dropdown",
           "title": {
@@ -1432,11 +1407,6 @@
         "de": "FUT089Z-Fernbedienung: Szenentaste gedrückt"
       },
       "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=button_wireless_4"
-        },
         {
           "name": "zone_filter",
           "type": "dropdown",
