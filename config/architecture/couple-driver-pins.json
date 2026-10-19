@@ -611,6 +611,15 @@
       "driver": "lcdtemphumidsensor",
       "source": "Z2M tuya.ts TS0601_temperature_humidity_sensor_4 (DP1/DP2 divideBy10, DP4 battery); zhc #10167 external converter \"Temperature & humidity sensor with display\"; JohanBendz #1328 RSH-HS03",
       "regression": "master moved it off climate_sensor in P2823 (Kizabgd #2263); stable-v5/bastien-home still had it on climate_sensor until 2026-10-19 (Johan #1328 users saw 100% humidity there)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_4fjiwweb"
+      ],
+      "pid": "TS004F",
+      "driver": "smart_knob_zg101zd",
+      "source": "Z2M tuya.ts ERS-10TZBVK-AA \"Smart knob\", ZHA TuyaSmartRemote004FROK MODELS_INFO, deCONZ smart knob DDF",
+      "regression": "was parked on button_wireless_4 as a 4-button remote (P129/P2448); moved 2026-10-19 with abrsvsou"
     }
   ]
 }
