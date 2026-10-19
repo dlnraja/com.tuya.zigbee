@@ -763,11 +763,23 @@ jobs:
           TRANSIENT_RETRY: ${{ github.event.inputs.transient_retry || 'false' }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          if node .github/scripts/assert-athom-final.js; then exit 0; fi
-          # Final state known and not Test: single transient retry decision (P139: a retry never retries).
+          # P2830e: SOFT-EXPECT (older healthy Test stays) is green for the job but NOT "reached Test":
+          # decide a bumped retry for it too, so Test follows the source reliably.
+          set +e
+          final_out=$(node .github/scripts/assert-athom-final.js 2>&1); final_rc=$?
+          echo "$final_out"
+          if [ "$final_rc" -eq 0 ] && ! printf '%s' "$final_out" | grep -q 'SOFT-EXPECT'; then exit 0; fi
+          # Final state known and not Test: retry decision (budget 2 per chain, exponential backoff + jitter).
           out=$(node .github/scripts/transient-publish-retry.js) || true
           echo "$out"; echo "$out" >> "$GITHUB_STEP_SUMMARY"
           if printf '%s' "$out" | grep -q '^\[transient-retry\] RETRY'; then
-            next=$(printf '%s\n' "$out" | sed -n 's/^\[transient-retry\] NEXT=//p' | head -1); gh workflow run auto-publish-on-push.yml --ref "${GITHUB_REF_NAME}" -f transient_retry="${next:-1}" || true
+            next=$(printf '%s\n' "$out" | sed -n 's/^\[transient-retry\] NEXT=//p' | head -1)
+            wait_s=$(printf '%s\n' "$out" | sed -n 's/^\[transient-retry\] BACKOFF_S=//p' | head -1)
+            echo "backoff ${wait_s:-60}s before retry ${next:-1} (jittered, serialized by the per-app concurrency group)"; sleep "${wait_s:-60}"
+            gh workflow run auto-publish-on-push.yml --ref "${GITHUB_REF_NAME}" -f transient_retry="${next:-1}" || true
           fi
+          if printf '%s' "$out" | grep -q '^\[transient-retry\] BISECT'; then
+            echo "::warning::AggregateError after the retry budget: real content failure, bisect needed (see ledger docs/knowledge/athom-publish-outcomes.jsonl)"
+          fi
+          [ "$final_rc" -eq 0 ] && exit 0
           exit 1

@@ -44,3 +44,10 @@
 {"build":3604,"version":"9.0.1523","state":"test","stateMeta":null,"note":"switch_module_whd02 released via workflow_dispatch release_held (run 39177562443), reached Test -> graduated out of publish-hold"}
 {"build":3606,"version":"9.0.1525","state":"processing_failed","stateMeta":"socket hang up","note":"led_controller_spi_tuya released via dispatch run 39179155985; transport error (also #3605 v9.0.1524 without spi failed same way) -> inconclusive, one retry"}
 {"build":3607,"version":"9.0.1526","state":"processing_failed","stateMeta":"socket hang up","note":"led_controller_spi_tuya release retry 2 (run 39180123044); 3 consecutive transport failures #3605(no spi)/#3606/#3607 after Test #3604 v9.0.1523 -> inconclusive, spi stays held; retry when Athom upload path is healthy again (control: normal push without spi must reach Test first)"}
+{"app":"master","version":"9.0.1519","build":3600,"state":"processing_failed","stateMeta":"socket hang up","archiveMB":35.84,"files":4537,"appJsonMB":3.93,"note":"size evidence 2026-10-19"}
+{"app":"master","version":"9.0.1520","build":3601,"state":"test","archiveMB":35.85,"files":4537,"appJsonMB":3.93,"note":"size evidence 2026-10-19 (same size as failing 1522)"}
+{"app":"master","version":"9.0.1522","build":3603,"state":"processing_failed","stateMeta":"socket hang up","archiveMB":35.85,"files":4537,"appJsonMB":3.93,"note":"size evidence 2026-10-19"}
+{"app":"master","version":"9.0.1524","build":3605,"state":"processing_failed","stateMeta":"socket hang up","archiveMB":35.85,"files":4537,"appJsonMB":3.93,"note":"no spi in payload"}
+{"app":"stable","version":"5.12.447","build":341,"state":"processing_failed","stateMeta":"socket hang up","archiveMB":38.33,"files":4631,"appJsonMB":3.5,"note":"same archive as 343"}
+{"app":"stable","version":"5.12.449","build":343,"state":"test","archiveMB":38.33,"files":4631,"appJsonMB":3.5,"note":"same archive as failing 341/339"}
+{"app":"bastien","version":"1.0.168","build":176,"state":"test","archiveMB":21.11,"gzMB":5.11,"files":2667,"note":"7/7 Bastien builds #170-#176 reached Test"}
