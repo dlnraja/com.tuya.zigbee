@@ -63,23 +63,16 @@ jobs:
       - name: 🔥 lib smoke-test (require every lib module)
         run: node tools/ci/lib-smoke-test.js
 
-      - name: 🛡️ Anti-bot regression gate
-        run: node tools/ci/anti-bot-regression-gate.js
-
-      - name: 🛡️ P2138 sacred-couple matrix gate
-        run: node tools/ci/p2138-sacred-couple-matrix-gate.js
+      - name: 🛡️ Rules gates (shared) - anti-bot, P2138 sacred-couple matrix, P214 adaptation, Spec 002 native-matrix, flow titleFormatted
+        uses: ./.github/actions/rules-gates
+        with:
+          only: anti-bot,p2138,p214,native-matrix,flow-title
 
       - name: 🛡️ P217 fork harvest sacred-couple gate
         run: node tools/ci/p217-fork-harvest-gate.js
 
-      - name: 🛡️ P214 intelligent ZCL/EF00 adaptation gate
-        run: node tools/ci/p214-intelligent-protocol-gate.js
-
       - name: 🛡️ P216 ZCL battery half-percent gate
         run: node tools/ci/p216-zcl-battery-half-percent-gate.js
-
-      - name: 🛡️ Spec 002 native-matrix gate (dual couples + mandatory non-native clusters + init guard + legacy duals)
-        run: node scripts/gates/native-matrix-gate.js
 
       - name: 🛡️ Layer coverage gate
         run: node tools/ci/layer-coverage-gate.js
@@ -96,7 +89,6 @@ jobs:
           node --test test/critical/p2438-multi-source-harvest-ai-limit.test.js
           node --test test/critical/p2439-kaflzta4-smart-knob-button.test.js
           npm run check:p244x
-          npm run check:flow-titleformatted
           npm run check:p246x
           npm run check:p248x
           npm run check:p249x
