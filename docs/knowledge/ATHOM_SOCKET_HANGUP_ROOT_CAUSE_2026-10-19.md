@@ -112,3 +112,35 @@ Other options checked and not taken:
 - i18n values equal to `en`: 0.046 MB, relies on runtime fallback;
 - settings hints: 0.235 MB, lossy;
 - merging per-driver cards: changes card ids and breaks user flows.
+## P2885 — further lossless shrink of the uploaded package (19/10, 10:30 Paris)
+
+Measured on a local reproduction of the CI publish dir (node 22, `homey app build` → optimise → `prepare-publish`
+→ `npm ci --omit=dev` → `prune-publish-payload`), isolated TMPDIR.
+
+| app | payload before | after P2885 | files | tar.gz |
+|---|---|---|---|---|
+| master | 30.54 MiB | 29.53 MiB (-1.00) | 4467 → 4399 | 8.53 → 8.39 MB |
+| stable | 32.22 MiB | 31.26 MiB (-0.96) | 4415 → 4339 | 10.86 → 10.70 MB |
+
+What was done (`scripts/maintenance/lossless-shrink-payload.cjs`, called from `prune-publish-payload.cjs`):
+- JSON in data/, config/, lib/, locales/, capabilities/ minified, only when the parse result is identical (master 327 files, -0.475 MB).
+- lib JS proven unreferenced removed (master 68 files, -0.53 MB; stable 76, -0.58 MB): not reachable by any static
+  require/import from app.js, api.js, driver/device/pair/repair/widgets/settings; basename (case-insensitive) not
+  mentioned in any other payload text file, iterated to a fixed point; lib/clusters never touched; any unreviewed
+  dynamic `require(expr)` disables the step. A Homey-less load check (app.js + every driver.js/device.js) runs
+  before and after; any new "Cannot find module" restores every file. `homey app validate --level publish` OK on the result.
+
+What was checked and kept, with the reason:
+- **Firmware (.bin, 2.54 MB, 10 files)**: the SDK requires them in `drivers/<id>/assets/firmware/` and lists them in
+  `driver.firmware.compose.json`; Athom stores them separately at upload and Homey downloads them only when an
+  update starts. No runtime/remote loading API exists → kept. The 3 identical pairs cannot be shared across drivers.
+- **Duplicate driver images/SVG/pair views (5.61 MB byte-identical)**: Homey needs per-driver assets by path
+  (`drivers/<id>/assets/...`); `LearnmodeTemplates` and `ButtonVisual` read them by path; the archive has no
+  sanctioned link mechanism → kept.
+- **SVG whitespace/comments/metadata**: only 0.11 MB possible → not worth the render risk.
+- **data/config/assets not named in code (0.40 MB)**: contains false positives (locales are loaded by Homey by
+  language; config/architecture files are read by computed names) → not removed.
+- **JS minification**: would change crash line numbers in user diagnostics → not done.
+
+Conclusion so far: the package is about 97 % runtime-required content; lossless levers are now exhausted
+at about -3 %. Failure-rate comparison: see the controlled series below.
