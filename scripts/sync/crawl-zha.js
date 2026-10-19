@@ -4,7 +4,6 @@
  * Uses raw.githubusercontent.com + known directory index
  * Run: node scripts/sync/crawl-zha.js
  */
-const { fetch } = require("./lib/fetch");
 const fs = require("fs");
 const path = require("path");
 
@@ -47,6 +46,60 @@ const OTHER_FILES = [
   "ewelink/__init__.py","sonoff/__init__.py",
 ];
 const ALL_FILES = [...TUYA_FILES, ...OTHER_FILES];
+const TREE_URL = "https://api.github.com/repos/zigpy/zha-device-handlers/git/trees/dev?recursive=1";
+const WANTED_DIRS = new Set(["tuya", ...OTHER_FILES.map((f) => f.split("/")[0])]);
+// WHY(P2881, 2026-10-19): 34 of the 55 hard-coded paths are gone upstream (404). Each 404 went through 3 attempts
+// with back-off, one file at a time, so the light sync in gmail-diagnostics hit its 150 s timeout every run.
+// Now: list the real files once (git tree, one call), never retry a 4xx, fetch a few files in parallel, and stop
+// at a deadline with a partial result instead of being killed.
+const FILE_TIMEOUT_MS = Number(process.env.ZHA_FILE_TIMEOUT_MS || 15000);
+const CONCURRENCY = Math.max(1, Number(process.env.ZHA_CONCURRENCY || 6));
+const DEADLINE_MS = Number(process.env.ZHA_DEADLINE_MS || 110000);
+
+async function getText(url, { timeout = FILE_TIMEOUT_MS, retries = 2, headers = {} } = {}) {
+  let lastErr;
+  for (let n = 1; n <= retries; n++) {
+    try {
+      const r = await globalThis.fetch(url, { headers: { "user-agent": "TuyaUnifiedSync/1.0", ...headers }, signal: AbortSignal.timeout(timeout) });
+      if (r.ok) { return await r.text(); }
+      lastErr = new Error(`HTTP ${r.status} for ${url}`);
+      if (r.status >= 400 && r.status < 500 && r.status !== 429) { throw Object.assign(lastErr, { permanent: true }); }
+    } catch (e) {
+      if (e && e.permanent) { throw e; }
+      lastErr = e;
+    }
+    if (n < retries) { await new Promise((res) => setTimeout(res, 1000 * n)); }
+  }
+  throw lastErr;
+}
+
+async function listQuirkFiles() {
+  try {
+    const tok = process.env.GITHUB_TOKEN || process.env.GH_TOKEN || "";
+    const headers = { accept: "application/vnd.github+json" };
+    if (tok) { headers.authorization = `Bearer ${tok}`; }
+    const tree = JSON.parse(await getText(TREE_URL, { headers, timeout: 20000 }));
+    const files = (tree.tree || [])
+      .filter((t) => t.type === "blob" && /^zhaquirks\/[^/]+\/.+\.py$/.test(t.path) && WANTED_DIRS.has(t.path.split("/")[1]))
+      .map((t) => t.path.slice("zhaquirks/".length));
+    if (files.length) { return { files, from: "git-tree" }; }
+  } catch (e) { console.log("[ZHA] tree listing failed, using the known list:", e.message); }
+  return { files: ALL_FILES, from: "known-list" };
+}
+
+async function fetchAll(files, deadlineAt) {
+  const out = [];
+  let next = 0, fetched = 0, skipped = 0, partial = false;
+  async function worker() {
+    while (next < files.length) {
+      if (Date.now() > deadlineAt) { partial = true; return; }
+      const f = files[next++];
+      try { out.push(...parseQuirks(await getText(RAW + f), f)); fetched++; } catch (_e) { skipped++; }
+    }
+  }
+  await Promise.all(Array.from({ length: Math.min(CONCURRENCY, files.length) }, worker));
+  return { fps: out, fetched, skipped, partial };
+}
 
 function parseQuirks(src, filepath) {
   const fps = [];
@@ -71,7 +124,7 @@ function parseQuirks(src, filepath) {
 }
 
 async function crawlZHA() {
-  console.log("[ZHA] Fetching " + ALL_FILES.length + " known quirk files (raw URLs)...");
+  const startedAt = Date.now();
 
   // Check cache first
   let cache;
@@ -83,26 +136,19 @@ async function crawlZHA() {
       if (cached) return cached;
     }
   }
-  const allFps = [];
-  let fetched = 0, skipped = 0;
-  for (const f of ALL_FILES) {
-    try {
-      const src = await fetch(RAW + f);
-      const fps = parseQuirks(src, f);
-      allFps.push(...fps);
-      fetched++;
-    } catch (e) { skipped++; }
-  }
-  console.log("[ZHA] Fetched: " + fetched + ", skipped: " + skipped);
+  const { files, from } = await listQuirkFiles();
+  console.log("[ZHA] Fetching " + files.length + " quirk files (" + from + ", " + CONCURRENCY + " in parallel)...");
+  const { fps: allFps, fetched, skipped, partial } = await fetchAll(files, startedAt + DEADLINE_MS);
+  console.log("[ZHA] Fetched: " + fetched + ", skipped: " + skipped + (partial ? " (deadline reached, partial)" : ""));
   const seen = new Set();
   const unique = allFps.filter(fp => { const k = fp.mfr.toLowerCase(); if (seen.has(k)) return false; seen.add(k); return true; });
   fs.mkdirSync(OUT, { recursive: true });
-  const result = { date: new Date().toISOString(), source: "zha-device-handlers (raw)", filesFetched: fetched, totalRaw: allFps.length, uniqueFingerprints: unique.length, fingerprints: unique };
+  const result = { date: new Date().toISOString(), source: "zha-device-handlers (raw)", listing: from, partial, filesFetched: fetched, totalRaw: allFps.length, uniqueFingerprints: unique.length, fingerprints: unique };
   fs.writeFileSync(path.join(OUT, "zha.json"), JSON.stringify(result, null, 2));
   console.log("[ZHA] " + unique.length + " unique Tuya fingerprints");
 
-  // Save to cache
-  if (cache) {
+  // Save to cache (a partial crawl is written but never cached, so the next run retries the full set)
+  if (cache && !partial) {
     cache.save(result);
     console.log("[ZHA] Cache SAVED");
   }
@@ -111,4 +157,8 @@ async function crawlZHA() {
 }
 
 module.exports = crawlZHA;
+module.exports.parseQuirks = parseQuirks;
+module.exports.listQuirkFiles = listQuirkFiles;
+module.exports.getText = getText;
+module.exports.fetchAll = fetchAll;
 if (require.main === module) crawlZHA().catch(e => { console.error("[ZHA] Error:", e.message); process.exit(1); });
