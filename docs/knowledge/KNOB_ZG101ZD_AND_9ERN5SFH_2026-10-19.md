@@ -64,3 +64,31 @@ https://github.com/dresden-elektronik/deconz-rest-plugin/blob/master/devices/tuy
 https://github.com/JohanBendz/com.tuya.zigbee/tree/SDK3/drivers/smart_knob_switch ·
 https://github.com/Koenkk/zigbee-herdsman-converters/issues/10167 · https://github.com/JohanBendz/com.tuya.zigbee/issues/1328 ·
 https://community.homey.app/t/140352
+
+## P2870 — standard ZCL commands reached no handler (OnOff / LevelControl BoundCluster)
+- zigbee-clusters sends every command a remote transmits (client → server) to `endpoint.bindings[cluster].handleFrame`.
+  Our `lib/clusters/OnOffBoundCluster.js` and `LevelControlBoundCluster.js` override `handleFrame` for the Tuya extras
+  (0xFD scene, 0xFC rotate, 0xF0 level) and returned early on every standard command id, so `setOn/setOff/toggle`,
+  `step/move/stop` (+ `WithOnOff`) and `moveToLevel` never ran. Also, the library decodes step/move mode as the strings
+  `'up'`/`'down'`, and the old `=== 0` test read every decoded frame as "down".
+- Fix (additive, opt-in): constructor option `dispatchStandard`. When true, standard commands go through the library's
+  own dispatcher to the named handler; errors are swallowed so the remote always gets a SUCCESS default response.
+  Direction accepts both 0/1 and 'up'/'down'.
+- Who opts in: `remote_dimmer` (its on/off/toggle/brightness cards had no other path) and `SmartKnobRotationMixin`
+  (Spec 006 bound path, already guarded by `_knobRotationDuplicate`; master only, the stable/bastien mixin has no bound path).
+- Who stays opted out, on purpose: the TuyaZigbeeDevice button families (`scene_switch_4`, `button_wireless_scene/valve/wall`,
+  `remote_button_wireless_scene/smart/valve/wall`). They already get standard commands through the raw L1 path
+  (`PhysicalButtonMixin.onZigBeeMessage`), so dispatching in the binding as well would fire a press twice.
+- Tests: `test/critical/p2870-bound-standard-dispatch.test.js` (real zigbee-clusters frames; per family; fails on the old code).
+- Not changed, for a later decision: the raw L1 path maps on/off/toggle all to "single" (some remotes mean double/long),
+  and `SmartKnobRotationMixin` only attaches its bound path when levelControl is also a server cluster (most knobs expose
+  it as output only), so command-mode rotation there still depends on the other paths.
+
+## P2871 — `_TZ3000_4fjiwweb` + `TS004F` joins `smart_knob_zg101zd`
+- Z2M `tuya.ts` lists it first under model ERS-10TZBVK-AA "Smart knob" (same converters as ZG-101ZD: toggle, step,
+  colour-temperature step, hue/saturation move, stop, Tuya multi_action, operation_mode). ZHA lists it in
+  `TuyaSmartRemote004FROK` MODELS_INFO; deCONZ in `_TZ3000_TS004F_smart_knob.json`. It is a knob, not a 4-button remote.
+- Moved off `button_wireless_4` (compose + app.json), curated removal, pin, FP DB, quirk registry, fingerprint maps,
+  mfs_db, rotary SSOT (`dedicatedKnobDrivers`; `forbiddenOnKnobMfr` now empty), UI charter, Bastien house SSOT and the bot
+  lists that re-added it. Test: `test/critical/p2871-4fjiwweb-knob.test.js`; golden snapshot refreshed.
+- Paired devices stay on `button_wireless_4` until re-paired. Bastien's house SSOT lists this couple: his knob needs a re-pair.
