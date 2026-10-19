@@ -48,10 +48,11 @@ describe('P2831 socket hang tip-mail storm', () => {
     assert.equal(forced.skip, false);
   });
 
-  it('transient-retry refuses socket hang when healthy Test exists', () => {
+  it('transient-retry refuses socket hang when healthy Test exists (legacy mode, P2830e default retries)', () => {
     const d = decide({
       version: '9.0.1480',
       builds: stormBuilds,
+      reachTest: false,
     });
     assert.equal(d.retry, false);
     assert.match(String(d.reason), /P2831|healthy Test|tip mail/i);

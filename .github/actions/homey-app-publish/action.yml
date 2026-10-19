@@ -50,6 +50,11 @@ runs:
       shell: bash
       run: npm run prepare-publish
 
+    - name: Footprint report (ROM/RAM, warn-only)
+      shell: bash
+      continue-on-error: true
+      run: node scripts/ci/footprint-report.js || true
+
     - name: Publish App
       id: publish
       shell: bash
