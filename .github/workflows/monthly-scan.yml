@@ -179,6 +179,12 @@ jobs:
           GITHUB_REPOSITORY: ${{ github.repository }}
         run: node tools/ci/auto-bot-issue-triage.js
 
+      # WHY(P2882): hand the missing mfrs to the tracked ledger (pending leads, mfr only) so they are not lost.
+      - name: Hand off candidates to the progress ledger
+        continue-on-error: true
+        if: steps.compare.outputs.has_missing == 'true'
+        run: node scripts/progress/ingest-bot-candidates.js
+
       - name: Commit scan state
         continue-on-error: true
         if: steps.compare.outputs.has_missing == 'true'
@@ -186,6 +192,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add .github/state/bot-auto-scan-candidates.json .github/state/bot-issue-triage-report.json || true
+          git add data/progress/ledger.json || true
           if ! git diff --cached --quiet; then
             git pull --rebase origin master || true
             git commit -m "auto: monthly Z2M scan candidates [skip ci]"
