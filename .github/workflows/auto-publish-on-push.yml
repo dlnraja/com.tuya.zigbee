@@ -762,6 +762,9 @@ jobs:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
           TRANSIENT_RETRY: ${{ github.event.inputs.transient_retry || 'false' }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # P2830g: gate + retry decision must judge the version THIS run uploaded (app.json can be reset by the
+          # metadata step; run 39211896020 judged v9.0.1533 while it had uploaded v9.0.1534 -> Test).
+          HOMEY_EXPECTED_VERSION: ${{ steps.info.outputs.version }}
         run: |
           # P2830e: SOFT-EXPECT (older healthy Test stays) is green for the job but NOT "reached Test":
           # decide a bumped retry for it too, so Test follows the source reliably.
