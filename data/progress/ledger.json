@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-18T21:35:26.043Z",
+ "updated": "2026-10-19T05:00:42.736Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -12958,11 +12958,29 @@
    "note": "P2864 Zemismart 214C DP map (DP1 meter, DP13 valve, DP22/100 temp, DP26 volt) + valve TX DP13; credit Steve_Wilson 101901#8, Z2M TS0601_water_valve, Zemismart 214c.py",
    "by": "workstream-C"
   },
+  "issue:559": {
+   "status": "done",
+   "date": "2026-10-19",
+   "note": "_TZ3210_w0qqde0g/TS011F already on plug_energy_monitor all trees (Lalla80111)",
+   "by": "workstream-C2"
+  },
   "issue:560": {
    "status": "done",
    "date": "2026-10-18",
    "note": "TRV06 rxq4iti9: DP35 bit0->alarm_battery lazy, humidity strip exact mfr, dp loader fallback; battery % none; DP102 unconfirmed (artisare)",
    "by": "exec-A"
+  },
+  "issue:570": {
+   "status": "done",
+   "date": "2026-10-19",
+   "note": "AOYAN AY-303Z plain+padded on soil_sensor; awaiting retest (edwinvdp)",
+   "by": "workstream-C2"
+  },
+  "issue:571": {
+   "status": "done",
+   "date": "2026-10-19",
+   "note": "soil_sensor couple + P2814 pruned productIds shipped; awaiting reporter retest (denis-papin)",
+   "by": "workstream-C2"
   },
   "johan-issue:1": {
    "status": "done",
@@ -28103,6 +28121,24 @@
     "smoke_sensor"
    ],
    "note": "W4 smoke_sensor3 (pids there: ts0205…)"
+  },
+  "root-cause:P2865-trv-announce": {
+   "status": "done",
+   "date": "2026-10-19",
+   "note": "duplicate onEndDeviceAnnounce killed wake DP refresh (#560)",
+   "by": "workstream-C2"
+  },
+  "root-cause:P2866-datapoint-normalize": {
+   "status": "done",
+   "date": "2026-10-19",
+   "note": "bare tuya.datapoint wrote length-0 frames at ~50 sites",
+   "by": "workstream-C2"
+  },
+  "root-cause:P2867-dataquery": {
+   "status": "done",
+   "date": "2026-10-19",
+   "note": "tuya.dataQuery args threw unexpected property; requestDP never queried (#560 diag)",
+   "by": "workstream-C2"
   },
   "task:ai-quota-guard": {
    "status": "done",
