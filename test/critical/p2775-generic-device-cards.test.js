@@ -154,7 +154,9 @@ describe('P2775/P2776 manifest quality', () => {
       const j = read(p);
       for (const t of ['triggers', 'conditions', 'actions']) {
         for (const c of j[t] || []) {
-          const explicitDev = (c.args || []).some((a) => a.type === 'device');
+          // WHY(P2874): every driver card gets its device arg from homey app build; driver triggers
+          // keep the trigger rule (no [[device]] titleFormatted) like the explicit-arg cards did.
+          const explicitDev = (c.args || []).some((a) => a.type === 'device') || t === 'triggers';
           // IR remotes / clear-presence must omit titleFormatted (repo rule, see regression-lessons-gate)
           const policyOmit = /(^|_)ir_remote_|_clear_presence$/.test(c.id);
           if (!explicitDev && !policyOmit && (c.args || []).some((a) => a.type !== 'device') && !c.titleFormatted) {missing.push(c.id);}

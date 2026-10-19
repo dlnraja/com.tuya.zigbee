@@ -33,7 +33,8 @@ describe('P2589 radar MCU restore + clear presence', () => {
     const actions = flow.actions || [];
     const clear = actions.find((a) => a.id === 'presence_sensor_radar_clear_presence');
     assert.ok(clear, 'clear action in compose');
-    assert.ok((clear.args || []).some((a) => a.type === 'device'), 'device arg');
+    // WHY(P2874): the device arg is added by homey app build (driver flow compose); hand-written it is built twice
+    assert.ok(!(clear.args || []).some((a) => a.type === 'device'), 'no hand-written device arg');
     // WHY(P2590c): omit titleFormatted (wifi_ir / P2487). Athom rejects missing
     // [[device]] tokens when titleFormatted exists; project gate forbids [[device]].
     assert.equal(clear.titleFormatted, undefined, 'no titleFormatted (Athom vs project catch-22)');
