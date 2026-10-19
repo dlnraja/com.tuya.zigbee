@@ -907,6 +907,9 @@
       ]
     }
   ],
+  "9.0.1529": {
+    "en": "v9.0.1529: automated publish, manifest sync, and Homey test promotion."
+  },
   "9.0.1528": {
     "en": "v9.0.1528: automated publish, manifest sync, and Homey test promotion."
   },
@@ -961,10 +964,7 @@
   "9.0.1509": {
     "en": "Tip bump after bot 1508 collide; P2842e validate size soft-skip + curtain ycke4deo strip."
   },
-  "9.0.1508": {
-    "en": "CI: P2842 soft-skip size after validate; strip radar mfrs off curtain_motor (ycke4deo)."
-  },
-  "9.0.1529": {
-    "en": "v9.0.1529: automated publish, manifest sync, and Homey test promotion."
+  "9.0.1530": {
+    "en": "v9.0.1530: automated publish, manifest sync, and Homey test promotion."
   }
 }
