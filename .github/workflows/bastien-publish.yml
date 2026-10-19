@@ -211,6 +211,8 @@ jobs:
           if [ -f package-lock.json ] || [ -f npm-shrinkwrap.json ]; then
             npm ci --omit=dev --ignore-scripts --no-audit --no-fund || true
           fi
+          # P2830d: lossless payload pruning (node_modules docs/tests/maps, backups, undeclared pair views), as on master.
+          node "$GITHUB_WORKSPACE/scripts/maintenance/prune-publish-payload.cjs" "$PUBLISH_DIR" || echo "::warning::prune-publish-payload failed; uploading unpruned payload"
           # WHY(P2738): Homey CLI always createBuild — that flooded #114 PF while #113 healthy.
           # Prefer soft-expect direct-api (tip-lag / already-test / in-flight → exit 0, no spam).
           # Force path only on workflow_dispatch force_publish=true (cooldown one-shot).
