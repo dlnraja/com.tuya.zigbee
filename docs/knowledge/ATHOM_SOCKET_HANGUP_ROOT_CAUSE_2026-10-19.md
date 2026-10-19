@@ -176,3 +176,10 @@ What was checked and kept, with the reason:
 
 Conclusion so far: the package is about 97 % runtime-required content; lossless levers are now exhausted
 at about -3 %. Failure-rate comparison: see the controlled series below.
+
+## P2888 lossless PNG recompression + after-series (19/10, 11:15-11:55 Paris)
+- Repo PNGs recompressed with oxipng L4 (safe strip), each verified pixel-identical (RGBA) and same dimensions: master 905 files 6.95 -> 4.86 MB (payload-relevant drivers+app images 3.79 -> 2.84 MB), stable 887 files 25.08 -> 20.57 MB (drivers+assets).
+- Finding: master's publish step already runs `optimize-build-images.cjs` (sharp, 2.55 -> 1.30 MB), so master's uploaded payload only moved 29.91 -> 29.86 MB (4400 files). Images are not what dominates master's payload any more.
+- After-series (push-triggered builds plus their built-in retry; no extra dispatches): master #3625 v9.0.1544 AggregateError -> auto-retry #3626 v9.0.1545 Test; stable #357 v5.12.463 socket hang up (pre-P2888 commit) -> #358 v5.12.464 Test (P2888 commit c18f4292c9).
+- Secondary: "The provided token is invalid" seen after a long processing_failed re-poll loop (#3622, stable #357); it follows the Athom failure and does not cause it.
+- Remaining big payload items (pair-view HTML 2.7 MB, SVG 2.3 MB, firmware 2.5 MB, app.json 3.46 MB, lib 10 MB) are needed at runtime or by the SDK by path, so they are kept. Retry with a new version stays the safety net.
