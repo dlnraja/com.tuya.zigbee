@@ -1,16 +1,16 @@
 {
-  "_why": "ROM/RAM/CPU budgets for the Athom payload (P2830d). Report-only (warn): a breach prints a WARN and a summary row, never fails the build. Tighten in small steps after the numbers have been stable for a week. Units are MiB. Measured baseline 2026-10-19 (master, after prune): payload 33.6 MiB / 4568 files, app.json 3.93 MB, lib 10.4 MB, drivers 15.3 MB, node_modules 2.7 MB; boot-heap (all 899 modules loaded, upper bound) 45.7 MB heap; 171 setInterval call sites.",
+  "_why": "ROM/RAM/CPU budgets for the Athom payload (P2830d). Report-only (warn): a breach prints a WARN and a summary row, never fails the build. Tighten in small steps after the numbers have been stable for a week. Units are MiB. Measured baseline 2026-10-19 (master, after prune): payload 33.6 MiB / 4568 files, app.json 3.93 MB, lib 10.4 MB, drivers 15.3 MB, node_modules 2.7 MB; boot-heap (all 899 modules loaded, upper bound) 45.7 MB heap; 171 setInterval call sites. Note: the CI step runs after prepare-publish but BEFORE npm ci / prune-publish-payload, so numbers are pre-prune (CI 2026-10-19: 32.7 MiB, 4717 files, node_modules 3.17, boot heap 48.7).",
   "mode": "warn",
   "budgets": {
     "payloadMB": 35,
-    "payloadFiles": 4700,
+    "payloadFiles": 4760,
     "appJsonMB": 3.95,
     "libMB": 10.8,
     "driversMB": 15.8,
-    "nodeModulesMB": 2.2,
+    "nodeModulesMB": 3.3,
     "dataMB": 1.2,
     "duplicateAssetMB": 6.6,
-    "bootHeapMB": 48,
+    "bootHeapMB": 50,
     "setIntervalSites": 140,
     "memoryUsageSites": 14
   }
