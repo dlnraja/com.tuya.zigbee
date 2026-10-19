@@ -443,13 +443,7 @@
         "fr": "Force la présence Homey à OFF si le radar reste Occupé (fantôme / MCU). Sans débrancher.",
         "de": "Homey-Anwesenheit auf AUS setzen bei hängendem Occupied."
       },
-      "args": [
-        {
-          "type": "device",
-          "name": "device",
-          "filter": "driver_id=presence_sensor_radar"
-        }
-      ]
+      "args": []
     }
   ]
 }

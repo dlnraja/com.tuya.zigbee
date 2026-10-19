@@ -8,13 +8,7 @@
         "nl": "Zone 1 aangezet",
         "de": "Zone 1 eingeschaltet"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=valve_controller_5zone"
-        }
-      ]
+      "args": []
     },
     {
       "id": "valve_controller_5zone_gang1_turned_off",
@@ -24,13 +18,7 @@
         "nl": "Zone 1 uitgezet",
         "de": "Zone 1 ausgeschaltet"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=valve_controller_5zone"
-        }
-      ]
+      "args": []
     },
     {
       "id": "valve_controller_5zone_gang2_turned_on",
@@ -40,13 +28,7 @@
         "nl": "Zone 2 aangezet",
         "de": "Zone 2 eingeschaltet"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=valve_controller_5zone"
-        }
-      ]
+      "args": []
     },
     {
       "id": "valve_controller_5zone_gang2_turned_off",
@@ -56,13 +38,7 @@
         "nl": "Zone 2 uitgezet",
         "de": "Zone 2 ausgeschaltet"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=valve_controller_5zone"
-        }
-      ]
+      "args": []
     },
     {
       "id": "valve_controller_5zone_gang3_turned_on",
@@ -72,13 +48,7 @@
         "nl": "Zone 3 aangezet",
         "de": "Zone 3 eingeschaltet"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=valve_controller_5zone"
-        }
-      ]
+      "args": []
     },
     {
       "id": "valve_controller_5zone_gang3_turned_off",
@@ -88,13 +58,7 @@
         "nl": "Zone 3 uitgezet",
         "de": "Zone 3 ausgeschaltet"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=valve_controller_5zone"
-        }
-      ]
+      "args": []
     },
     {
       "id": "valve_controller_5zone_gang4_turned_on",
@@ -104,13 +68,7 @@
         "nl": "Zone 4 aangezet",
         "de": "Zone 4 eingeschaltet"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=valve_controller_5zone"
-        }
-      ]
+      "args": []
     },
     {
       "id": "valve_controller_5zone_gang4_turned_off",
@@ -120,13 +78,7 @@
         "nl": "Zone 4 uitgezet",
         "de": "Zone 4 ausgeschaltet"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=valve_controller_5zone"
-        }
-      ]
+      "args": []
     },
     {
       "id": "valve_controller_5zone_gang5_turned_on",
@@ -136,13 +88,7 @@
         "nl": "Zone 5 aangezet",
         "de": "Zone 5 eingeschaltet"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=valve_controller_5zone"
-        }
-      ]
+      "args": []
     },
     {
       "id": "valve_controller_5zone_gang5_turned_off",
@@ -152,13 +98,7 @@
         "nl": "Zone 5 uitgezet",
         "de": "Zone 5 ausgeschaltet"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=valve_controller_5zone"
-        }
-      ]
+      "args": []
     }
   ],
   "conditions": [
@@ -170,13 +110,7 @@
         "nl": "Zone 1 is !{{aan|uit}}",
         "de": "Zone 1 ist !{{an|aus}}"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=valve_controller_5zone"
-        }
-      ]
+      "args": []
     },
     {
       "id": "valve_controller_5zone_zone2_is_on",
@@ -186,13 +120,7 @@
         "nl": "Zone 2 is !{{aan|uit}}",
         "de": "Zone 2 ist !{{an|aus}}"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=valve_controller_5zone"
-        }
-      ]
+      "args": []
     },
     {
       "id": "valve_controller_5zone_zone3_is_on",
@@ -202,13 +130,7 @@
         "nl": "Zone 3 is !{{aan|uit}}",
         "de": "Zone 3 ist !{{an|aus}}"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=valve_controller_5zone"
-        }
-      ]
+      "args": []
     },
     {
       "id": "valve_controller_5zone_zone4_is_on",
@@ -218,13 +140,7 @@
         "nl": "Zone 4 is !{{aan|uit}}",
         "de": "Zone 4 ist !{{an|aus}}"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=valve_controller_5zone"
-        }
-      ]
+      "args": []
     },
     {
       "id": "valve_controller_5zone_zone5_is_on",
@@ -234,13 +150,7 @@
         "nl": "Zone 5 is !{{aan|uit}}",
         "de": "Zone 5 ist !{{an|aus}}"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=valve_controller_5zone"
-        }
-      ]
+      "args": []
     }
   ],
   "actions": [
@@ -252,13 +162,7 @@
         "nl": "Zet aan zone 1",
         "de": "Zone 1 einschalten"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=valve_controller_5zone"
-        }
-      ]
+      "args": []
     },
     {
       "id": "valve_controller_5zone_zone1_off",
@@ -268,13 +172,7 @@
         "nl": "Zet uit zone 1",
         "de": "Zone 1 ausschalten"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=valve_controller_5zone"
-        }
-      ]
+      "args": []
     },
     {
       "id": "valve_controller_5zone_zone1_toggle",
@@ -284,13 +182,7 @@
         "nl": "Schakel om zone 1",
         "de": "Zone 1 umschalten"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=valve_controller_5zone"
-        }
-      ]
+      "args": []
     },
     {
       "id": "valve_controller_5zone_zone2_on",
@@ -300,13 +192,7 @@
         "nl": "Zet aan zone 2",
         "de": "Zone 2 einschalten"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=valve_controller_5zone"
-        }
-      ]
+      "args": []
     },
     {
       "id": "valve_controller_5zone_zone2_off",
@@ -316,13 +202,7 @@
         "nl": "Zet uit zone 2",
         "de": "Zone 2 ausschalten"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=valve_controller_5zone"
-        }
-      ]
+      "args": []
     },
     {
       "id": "valve_controller_5zone_zone2_toggle",
@@ -332,13 +212,7 @@
         "nl": "Schakel om zone 2",
         "de": "Zone 2 umschalten"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=valve_controller_5zone"
-        }
-      ]
+      "args": []
     },
     {
       "id": "valve_controller_5zone_zone3_on",
@@ -348,13 +222,7 @@
         "nl": "Zet aan zone 3",
         "de": "Zone 3 einschalten"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=valve_controller_5zone"
-        }
-      ]
+      "args": []
     },
     {
       "id": "valve_controller_5zone_zone3_off",
@@ -364,13 +232,7 @@
         "nl": "Zet uit zone 3",
         "de": "Zone 3 ausschalten"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=valve_controller_5zone"
-        }
-      ]
+      "args": []
     },
     {
       "id": "valve_controller_5zone_zone3_toggle",
@@ -380,13 +242,7 @@
         "nl": "Schakel om zone 3",
         "de": "Zone 3 umschalten"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=valve_controller_5zone"
-        }
-      ]
+      "args": []
     },
     {
       "id": "valve_controller_5zone_zone4_on",
@@ -396,13 +252,7 @@
         "nl": "Zet aan zone 4",
         "de": "Zone 4 einschalten"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=valve_controller_5zone"
-        }
-      ]
+      "args": []
     },
     {
       "id": "valve_controller_5zone_zone4_off",
@@ -412,13 +262,7 @@
         "nl": "Zet uit zone 4",
         "de": "Zone 4 ausschalten"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=valve_controller_5zone"
-        }
-      ]
+      "args": []
     },
     {
       "id": "valve_controller_5zone_zone4_toggle",
@@ -428,13 +272,7 @@
         "nl": "Schakel om zone 4",
         "de": "Zone 4 umschalten"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=valve_controller_5zone"
-        }
-      ]
+      "args": []
     },
     {
       "id": "valve_controller_5zone_zone5_on",
@@ -444,13 +282,7 @@
         "nl": "Zet aan zone 5",
         "de": "Zone 5 einschalten"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=valve_controller_5zone"
-        }
-      ]
+      "args": []
     },
     {
       "id": "valve_controller_5zone_zone5_off",
@@ -460,13 +292,7 @@
         "nl": "Zet uit zone 5",
         "de": "Zone 5 ausschalten"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=valve_controller_5zone"
-        }
-      ]
+      "args": []
     },
     {
       "id": "valve_controller_5zone_zone5_toggle",
@@ -476,13 +302,7 @@
         "nl": "Schakel om zone 5",
         "de": "Zone 5 umschalten"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=valve_controller_5zone"
-        }
-      ]
+      "args": []
     },
     {
       "id": "valve_controller_5zone_all_off",
@@ -492,13 +312,7 @@
         "nl": "Zet alle zones uit",
         "de": "Alle Zonen ausschalten"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=valve_controller_5zone"
-        }
-      ]
+      "args": []
     }
   ]
 }
