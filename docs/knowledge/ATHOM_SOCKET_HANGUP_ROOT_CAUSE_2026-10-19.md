@@ -105,3 +105,37 @@ and `ButtonVisual` reads the driver `large.png` by path at runtime, and pair vie
 - What makes the apps reach Test reliably now is the automation: every chain retries up to twice with a new version and
   exponential backoff + jitter; stable re-uploads in-run; all versions come from the floor script and are strictly higher than
   every uploaded build, failed drafts included (ledger + alignment gate p2830f).
+
+## Update 2026-10-19 09:40 (Europe/Paris): measure the uploaded app.json, shrink it losslessly (P2830h)
+
+**Wrong artifact.** `homey app validate/build` writes `.homeybuild/app.json` (and on stable the root
+`app.json`) with every driver Flow card merged in. That file is not uploaded: prepare-publish sanitizes,
+compacts the Zigbee matrix and syncs the prepared manifest back. When a job stopped before
+prepare-publish (master run 39212802011, guidelines error), the metadata-commit pre-commit hook judged
+the raw 4.75 MB build and failed. Stable's pre-step judged the 4.34 MB composed root (warn-only step).
+The gate now projects such a file through sanitize + compact + strip, the same steps as prepare-publish,
+and fails only if the projection is above 4.00 MB.
+
+| app | raw build app.json | upload app.json before | after P2830h | strip saved | cards stripped |
+|---|---|---|---|---|---|
+| master 9.0.1536 | 4.75-4.80 MB | 3.92-3.93 MB | 3.46-3.48 MB | 0.467 MB | 4930 |
+| stable 5.12.459 | 4.29-4.34 MB | ~3.5 MB | 3.07-3.08 MB | 0.439 MB | 4679 |
+| bastien | 4.47 MB | ~0.64 MB | 0.56 MB | 0.080 MB | 761 |
+
+**Lossless strip.** `scripts/maintenance/strip-redundant-title-formatted.cjs` removes `titleFormatted` only
+when homey-lib `App._validateFlowCard` ignores it: no argument other than the first `driver_id`-filtered
+device argument, no droptoken, and no `[[..]]`. The Flow UI then renders the title. Card ids, args,
+tokens and titles are unchanged. `homey app validate --level publish` gives the same 116 titleFormatted
+warnings before and after on master. It runs on the publish copy only; the compose sources are not
+modified.
+
+**Results:**
+- master #3617 v9.0.1536 Test (upload 3.46 MB, archive 34.95 MB / 4468 files); Test streak #3615-#3617;
+- stable #352 v5.12.458 socket hang up, then an in-run re-upload gave #353 v5.12.459 Test. A smaller
+  app.json does not by itself prevent the hang, which is consistent with the earlier finding; the
+  retry chain remains the fix.
+
+Other options checked and not taken:
+- i18n values equal to `en`: 0.046 MB, relies on runtime fallback;
+- settings hints: 0.235 MB, lossy;
+- merging per-driver cards: changes card ids and breaks user flows.
