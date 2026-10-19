@@ -9,7 +9,7 @@
  * 2. smart_knob_rotary must NOT force scene 0x8004=1
  * 3. Compose default button_mode = dimmer; cluster 8 (levelControl) present
  * 4. Sacred couples in rotary-knob-ssot.json match DeviceFingerprintDB
- * 5. 4fjiwweb stays OFF KNOB_MFR (button_wireless_4); abrsvsou has its own driver smart_knob_zg101zd
+ * 5. forbiddenOnKnobMfr stays OFF KNOB_MFR (button_wireless_4); abrsvsou + 4fjiwweb have their own driver smart_knob_zg101zd
  *
  * Usage: node tools/ci/p2448-rotary-knob-gate.js
  */
