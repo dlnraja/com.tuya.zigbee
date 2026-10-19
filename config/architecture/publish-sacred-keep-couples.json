@@ -1675,6 +1675,24 @@
       "pid": "TS0601",
       "driverId": "radiator_valve",
       "note": "P2821 ne4pikwm TZE200"
+    },
+    {
+      "mfr": "_TZE284_9ern5sfh",
+      "pid": "TS0601",
+      "driverId": "lcdtemphumidsensor",
+      "note": "P2823 Kizabgd #2263 LCD RSH-HS03 — aligned with master 2026-10-19 (one couple one driver)"
+    },
+    {
+      "mfr": "_TZE204_9ern5sfh",
+      "pid": "TS0601",
+      "driverId": "lcdtemphumidsensor",
+      "note": "P2823 Kizabgd #2263 LCD RSH-HS03 — aligned with master 2026-10-19 (one couple one driver)"
+    },
+    {
+      "mfr": "_TZE200_9ern5sfh",
+      "pid": "TS0601",
+      "driverId": "lcdtemphumidsensor",
+      "note": "P2823 Kizabgd #2263 LCD RSH-HS03 — aligned with master 2026-10-19 (one couple one driver)"
     }
   ]
 }
