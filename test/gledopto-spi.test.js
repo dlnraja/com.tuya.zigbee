@@ -53,14 +53,15 @@ describe('Tuya multi-DP single frame (GL-SPI-206P burst guard)', () => {
   });
   it('profile lists every manifest capability (no remove/re-add at boot) and brightness_changed is declared', () => {
     // Class lives in lib/ (fold host led_controller_rgb reuses it); CAPS is the boot profile.
-    // WHY(P2826/P2449): brightness_changed must stay declared⇒wirable (not empty compose).
+    // WHY(SPI bisect step 1, 19/10/2026, user-approved): the never-fired brightness_changed card was dropped
+    // to test whether it trips Athom (AggregateError 4/4). Flow compose is the explicit empty form Bastien ships.
     const src = fs.readFileSync(path.join(root, 'lib/devices/LedControllerSpiTuyaDevice.js'), 'utf8');
     const caps = JSON.parse(src.match(/const CAPS = (\[[^\]]+\])/)[1].replace(/'/g, '"'));
     assert.ok(/capabilities: CAPS/.test(src));
     for (const c of compose('led_controller_spi_tuya').capabilities) {assert.ok(caps.includes(c), c);}
     const flow = JSON.parse(fs.readFileSync(path.join(root, 'drivers/led_controller_spi_tuya/driver.flow.compose.json'), 'utf8'));
     assert.ok(Array.isArray(flow.triggers));
-    assert.ok(flow.triggers.some((t) => t.id === 'led_controller_spi_tuya_brightness_changed'));
+    assert.deepStrictEqual(flow.triggers, []);
     assert.deepStrictEqual(flow.conditions || [], []);
     assert.deepStrictEqual(flow.actions || [], []);
   });
