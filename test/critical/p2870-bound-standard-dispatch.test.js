@@ -13,6 +13,11 @@ const path = require('path');
 const Module = require('module');
 
 const ROOT = path.join(__dirname, '..', '..');
+// Other suites stub 'zigbee-clusters' through Module._load; a BoundCluster first cached under
+// such a stub fails endpoint.bind()'s instanceof check. Reload ours against the real module.
+for (const k of Object.keys(require.cache)) {
+  if (k.startsWith(ROOT) && /[\\/]lib[\\/]clusters[\\/]|SmartKnobRotationMixin|[\\/]drivers[\\/](remote_dimmer|smart_knob_rotary)[\\/]/.test(k)) { delete require.cache[k]; }
+}
 const { ZCLNode } = require('zigbee-clusters');
 const OnOffBoundCluster = require('../../lib/clusters/OnOffBoundCluster');
 const LevelControlBoundCluster = require('../../lib/clusters/LevelControlBoundCluster');
