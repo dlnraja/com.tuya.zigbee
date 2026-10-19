@@ -78,3 +78,30 @@ and `ButtonVisual` reads the driver `large.png` by path at runtime, and pair vie
   split the heavy per-driver assets (firmware .bin 2.5 MB, 2.3 MB svg) into lazily fetched data, and a controlled series of
   4-6 builds of one smaller payload.
 - Unrelated to size: the 9.0.1523 -> 1526 failures also hit builds without the released drivers, so SPI is not implicated.
+
+## Update 2026-10-19 morning — results after the fixes (times Paris)
+
+| app | build | version | archive / files | outcome | how |
+|---|---|---|---|---|---|
+| master | 3608 | 9.0.1527 | 35.87 MB / 4547 | socket hang up | push 2c15b18728 (06:54) |
+| master | 3609 | 9.0.1528 | 35.37 MB / 4461 | **Test** | automatic retry 1 (P2830e, 68 s backoff) |
+| master | 3610 | 9.0.1529 | ~35.4 MB / ~4462 | socket hang up | push 4114da52 (other worker) |
+| master | 3611 | 9.0.1530 | ~35.4 MB / ~4462 | socket hang up | automatic retry 1 |
+| master | 3612 | 9.0.1531 | 35.38 MB / 4462 | **Test** | automatic retry 2 (120 s backoff) |
+| master | 3613 | 9.0.1532 | ~35.4 MB / ~4462 | socket hang up | manual dispatch (aim: 2nd consecutive Test) |
+| stable | 344, 345, 346 | 5.12.450-452 | 38.34 MB / 4632-4633 | **Test** x3 | pushes |
+| stable | 347 | 5.12.453 | after prune (194 items, 1.25 MB removed) | socket hang up | push ab6f3e1fe2 |
+| stable | 348 | 5.12.454 | same | **Test** | in-run re-upload (new patch, backoff) |
+| bastien | 177 | 1.0.169 | 20.92 MB / 2669, 5.11 MB gz | **Test** | push |
+| bastien | 178 | 1.0.170 | 19.90 MB / 2501, 4.92 MB gz (prune) | **Test** | dispatch |
+
+- The removal of ~80-170 dead files (undeclared pair views + node_modules docs on stable/bastien) did not change the
+  master/stable failure rate in this small sample. Size reduction alone is not the fix.
+- Since 2026-10-18 23:53 Paris (21:53 UTC, from build 3605) master fails about 7 of 9 builds, while stable (smaller
+  app.json: 3.50 vs 3.93 MB, 6.1k vs fewer flow cards) fails 1 of 7 and Bastien 0 of 9. Content between a passing (3604)
+  and a failing (3605) master build differed only in version/changelog. The strongest remaining correlate is **app.json
+  complexity on Athom's processing side**: master app.json is 65 % flow cards (6,073 cards, 5,890 device-filtered per-driver
+  cards, 2.56 MB). That part cannot be shrunk losslessly (card ids are referenced by users' flows), so it stays as is.
+- What makes the apps reach Test reliably now is the automation: every chain retries up to twice with a new version and
+  exponential backoff + jitter; stable re-uploads in-run; all versions come from the floor script and are strictly higher than
+  every uploaded build, failed drafts included (ledger + alignment gate p2830f).
