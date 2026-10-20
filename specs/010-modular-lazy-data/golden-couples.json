@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-19T14:56:00.201Z",
+ "generated": "2026-10-20T06:45:06.977Z",
  "drivers": 389,
  "snapshot": {
   "air_purifier": {
@@ -568,9 +568,9 @@
   },
   "device_plug_smart": {
    "mfr": 0,
-   "pid": 20,
+   "pid": 7,
    "mfrSha": "e3b0c44298fc1c14",
-   "pidSha": "fc68e03dbe648c7c"
+   "pidSha": "9df2facc4568bdc5"
   },
   "device_plug_smart_water": {
    "mfr": 1,
@@ -1174,9 +1174,9 @@
   },
   "pirsensor": {
    "mfr": 0,
-   "pid": 1,
+   "pid": 2,
    "mfrSha": "e3b0c44298fc1c14",
-   "pidSha": "8798a92daa3dc5c2"
+   "pidSha": "6996f64d93016bc6"
   },
   "plug": {
    "mfr": 12,
@@ -1570,9 +1570,9 @@
   },
   "sensor_lcdtemphumidsensor_temphumidsensor": {
    "mfr": 0,
-   "pid": 4,
+   "pid": 14,
    "mfrSha": "e3b0c44298fc1c14",
-   "pidSha": "16eca7095d19bea2"
+   "pidSha": "52ab211a7e1438c9"
   },
   "sensor_motion_presence": {
    "mfr": 25,
