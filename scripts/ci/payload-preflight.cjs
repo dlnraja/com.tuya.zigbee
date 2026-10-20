@@ -59,7 +59,9 @@ function preflight(root) {
     try { fs.accessSync(abs, fs.constants.R_OK); } catch { errors.push(`unreadable: ${rel}`); }
     try { if (fs.statSync(abs).size === 0 && /\.(json|js|png|svg)$/.test(rel)) errors.push(`empty file: ${rel}`); } catch { /* reported above */ }
     if (rel.endsWith('.json') && !rel.startsWith('node_modules/') && !rel.startsWith('assets/templates/')) {
-      try { JSON.parse(fs.readFileSync(abs, 'utf8')); } catch (e) { errors.push(`invalid JSON: ${rel} (${e.message.slice(0, 80)})`); }
+      const buf = fs.readFileSync(abs);
+      if ((buf[0] === 0xff && buf[1] === 0xfe) || (buf[0] === 0xfe && buf[1] === 0xff)) { errors.push(`UTF-16 JSON (must be UTF-8): ${rel}`); continue; }
+      try { JSON.parse(buf.toString('utf8').replace(/^\uFEFF/, '')); } catch (e) { errors.push(`invalid JSON: ${rel} (${e.message.slice(0, 80)})`); }
     }
     const base = path.basename(rel);
     if (IMG[base] && /^drivers\/[^/]+\/assets\/images\//.test(rel)) {
@@ -99,7 +101,9 @@ function preflight(root) {
     for (const f of ['driver.js', 'device.js']) if (!set.has(`drivers/${d.id}/${f}`)) warns.push(`drivers/${d.id}/${f} missing`);
     for (const k of ['small', 'large']) {
       const p = d.images && d.images[k];
-      if (p && !set.has(p.replace(/^\//, ''))) errors.push(`driver ${d.id} image ${k} points to missing ${p}`);
+      if (!p) continue;
+      if (/^\/\//.test(p)) warns.push(`driver ${d.id} image ${k} path has a double leading slash: ${p}`);
+      if (!set.has(p.replace(/^\/+/, ''))) errors.push(`driver ${d.id} image ${k} points to missing ${p}`);
     }
   }
   for (const dir of fs.existsSync(path.join(root, 'drivers')) ? fs.readdirSync(path.join(root, 'drivers')) : []) {
