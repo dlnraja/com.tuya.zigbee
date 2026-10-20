@@ -161,7 +161,39 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
    * WHY(#560): me167 DP35 (fault bitmap, bit0 = low battery) -> alarm_battery, added only once a DP35
    * report really arrives (Z2M exposes only a boolean battery_low for TRV06; no battery percentage).
    */
+  /**
+   * WHY(#560 artisare 19/10, TRV06 _TZE200_rxq4iti9): "battery shows no value". Z2M TS0601_thermostat_3
+   * (EARU/AVATTO TRV06 whitelabel) has NO battery percentage DP — only battery_low inside the DP35 fault
+   * bitmap, and DP35 is rarely sent. So for this exact couple: show alarm_battery from pairing (false until
+   * DP35 bit0 says otherwise) and drop an empty measure_battery. If a battery % DP (6/13/15) ever arrives,
+   * measure_battery is re-added lazily in _handleDP, so nothing real is lost.
+   */
+  async _alignTrv06Battery() {
+    if (!this._isNoHumidityTrv()) return;
+    try {
+      if (!this.hasCapability('alarm_battery')) {
+        await this.addCapability('alarm_battery');
+        await this.setCapabilityValue('alarm_battery', false).catch(() => {});
+      }
+      if (this.hasCapability('measure_battery')) {
+        const cur = this.getCapabilityValue('measure_battery');
+        if (cur === null || cur === undefined) {
+          await this.removeCapability('measure_battery');
+          this.log('[TRV] #560 TRV06: no battery % DP (Z2M) -> alarm_battery only');
+        }
+      }
+    } catch (e) {
+      this.log('[TRV] #560 battery align skipped:', e && e.message);
+    }
+  }
+
   _handleDP(dpId, raw) {
+    if ([6, 13, 15].includes(Number(dpId)) && this._isNoHumidityTrv() && !this.hasCapability('measure_battery')) {
+      Promise.resolve(this.addCapability('measure_battery'))
+        .then(() => super._handleDP(dpId, raw))
+        .catch((e) => this.log('[TRV] #560 measure_battery re-add skipped:', e && e.message));
+      return undefined;
+    }
     if (Number(dpId) === 35 && this.dpProfile === 'me167' && !this.hasCapability('alarm_battery')) {
       Promise.resolve(this.addCapability('alarm_battery'))
         .then(() => super._handleDP(dpId, raw))
@@ -287,6 +319,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       await this._setupTuyaDPMode?.();
     } catch (_e) { /* soft */ }
     await this._stripPhantomHumidity();
+    await this._alignTrv06Battery();
 
     // Store manufacturerName for profile detection
     try {
