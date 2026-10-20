@@ -170,6 +170,37 @@ jobs:
           node .github/scripts/fetch-gmail-diagnostics.js
       - name: Privacy gate for Gmail outputs
         run: node .github/scripts/privacy-redactor.js .github/state/diagnostics-state.json .github/state/diagnostics-report.json .github/state/gmail-token-health.json .github/state/diagnostics-crossref.yml diagnostics
+      # P2908: findings of each diagnostics mail go to data/progress/ledger.json as diag:<hash>
+      # (kind, couples, identities not in a driver, error count, app version; no mail text, no sender).
+      # Idempotent (findings hash) and bounded (100 per run). A rolling queue in the Actions cache
+      # re-applies the last 300 findings, so a commit refused by safe-auto-commit loses nothing.
+      - name: Restore diagnostics ledger queue (cache)
+        uses: actions/cache/restore@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+        with:
+          path: .github/state/diag-ledger-queue.json
+          key: diag-ledger-queue-${{ github.run_id }}
+          restore-keys: diag-ledger-queue-
+      - name: Ledger intake (diagnostics findings, P2908)
+        id: diag_ledger
+        continue-on-error: true
+        run: node scripts/progress/ledger-intake.js diag .github/state/diagnostics-report.json --max=100
+      - name: Commit ledger (gated)
+        if: steps.diag_ledger.outcome == 'success'
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node scripts/ci/safe-auto-commit.js --id=gmail-diag-ledger --max-per-day=4 \
+            --message="chore(ledger): diagnostics findings" \
+            --paths="data/progress/ledger.json"
+      - name: Save diagnostics ledger queue (cache)
+        if: always() && hashFiles('.github/state/diag-ledger-queue.json') != ''
+        uses: actions/cache/save@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+        with:
+          path: .github/state/diag-ledger-queue.json
+          key: diag-ledger-queue-${{ github.run_id }}
       - name: "P2233 Recursive diag/interview treat (f647 methodology)"
         if: always()
         continue-on-error: true
