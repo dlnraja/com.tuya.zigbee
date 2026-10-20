@@ -4,7 +4,13 @@
  * Advance the full-history sweep checkpoint by one small free chunk.
  * No AI. Uses ledger + optional GitHub API (GITHUB_TOKEN). Never invents mfr/pid.
  *
- *   node scripts/progress/advance-sweep.js [--chunk=5] [--dry]
+ *   node scripts/progress/advance-sweep.js [--chunk=5] [--dl-chunk=<chunk>] [--forum-chunk=40]
+ *                                          [--only=all|johan|dlnraja|github|forum] [--dry]
+ *
+ * GitHub part (P2907): JohanBendz/com.tuya.zigbee (cursor github.johan.next) AND our own
+ * dlnraja/com.tuya.zigbee (cursor github.dlnraja.next). Until 2026-10-20 only the Johan loop
+ * existed, so github.dlnraja.next stayed at 1. A 404 past the repo's newest number stops the
+ * loop without moving the cursor (new issues are picked up later instead of being skipped).
  *
  * Checkpoint: data/leads/sweep-checkpoint.json
  * Deep-read cursor: data/leads/deep-read-checkpoint.json
@@ -25,7 +31,14 @@ const DRY = process.argv.includes('--dry');
 const CHUNK = Math.max(0, Math.min(60, Number(arg('chunk', '5')) || 0));
 // P2810: forum topics are swept from post 1 as well (public Discourse JSON, no AI).
 const FORUM_CHUNK = Math.max(0, Math.min(400, Number(arg('forum-chunk', '40')) || 0));
-const ONLY = arg('only', 'all'); // all | johan | forum
+const ONLY = arg('only', 'all'); // all | johan | dlnraja | github (johan+dlnraja) | forum
+// P2907: our own repo gets its own chunk (defaults to --chunk).
+const DL_CHUNK = Math.max(0, Math.min(60, Number(arg('dl-chunk', String(CHUNK))) || 0));
+const REPOS = {
+  johan: { slug: 'JohanBendz/com.tuya.zigbee', prefix: 'johan-issue', deepKey: 'JohanBendz' },
+  dlnraja: { slug: 'dlnraja/com.tuya.zigbee', prefix: 'dlnraja-issue', deepKey: 'dlnraja' },
+};
+const isBotLogin = (u) => !!u && (u.type === 'Bot' || /\[bot\]$/i.test(String(u.login || '')));
 const TOPICS = String(arg('topics', '140352,26439,146735,154077,21313,89271')).split(',').filter(Boolean);
 const sweepId = require('./lib/sweep-identity');
 const sweepForum = require('./lib/sweep-forum');
@@ -145,10 +158,10 @@ function buildDriverIndex() {
  * case-insensitive identity helper, per-couple coverage. Falls back to the legacy
  * body-only classifier when comments are unavailable.
  */
-function classifyIssueFull(n, issue, comments) {
-  const id = `johan-issue:${n}`;
+function classifyIssueFull(n, issue, comments, repo = REPOS.johan) {
+  const id = `${repo.prefix}:${n}`;
   const isPr = !!(issue && issue.pull_request);
-  const link = `https://github.com/JohanBendz/com.tuya.zigbee/${isPr ? 'pull' : 'issues'}/${n}`;
+  const link = `https://github.com/${repo.slug}/${isPr ? 'pull' : 'issues'}/${n}`;
   if (!issue || issue.error || issue.rateLimited) {
     return { id, status: issue && issue.rateLimited ? 'api-rate-limited' : 'needs-info', note: 'api unavailable; retry next run', sources: [link] };
   }
@@ -178,10 +191,10 @@ function classifyIssueFull(n, issue, comments) {
 }
 
 /** Heuristic classify: no invented couples. */
-function classifyIssue(n, issue) {
-  const id = `johan-issue:${n}`;
+function classifyIssue(n, issue, repo = REPOS.johan) {
+  const id = `${repo.prefix}:${n}`;
   if (!issue || issue.error || issue.rateLimited) {
-    return { id, status: 'needs-info', note: 'api unavailable or rate-limited', sources: [`https://github.com/JohanBendz/com.tuya.zigbee/issues/${n}`] };
+    return { id, status: 'needs-info', note: 'api unavailable or rate-limited', sources: [`https://github.com/${repo.slug}/issues/${n}`] };
   }
   const body = String(issue.body || '');
   const title = String(issue.title || '');
@@ -197,7 +210,7 @@ function classifyIssue(n, issue) {
       id,
       status: 'already-fixed',
       note: `historical merged/closed PR (${title.slice(0, 80)}); no open reliability work`,
-      sources: [`https://github.com/JohanBendz/com.tuya.zigbee/pull/${n}`],
+      sources: [`https://github.com/${repo.slug}/pull/${n}`],
     };
   }
   if (m.length && p.length) {
@@ -217,14 +230,14 @@ function classifyIssue(n, issue) {
         id,
         status: 'already-fixed',
         note: `couple(s) already present in drivers (${m.slice(0, 2).join(',')}/${p.slice(0, 2).join(',')})`,
-        sources: [`https://github.com/JohanBendz/com.tuya.zigbee/issues/${n}`],
+        sources: [`https://github.com/${repo.slug}/issues/${n}`],
       };
     }
     return {
       id,
       status: 'pending',
       note: `identities seen (${m.slice(0, 3).join(',')}|${p.slice(0, 3).join(',')}); needs code check`,
-      sources: [`https://github.com/JohanBendz/com.tuya.zigbee/issues/${n}`],
+      sources: [`https://github.com/${repo.slug}/issues/${n}`],
     };
   }
   if (p.length && !m.length) {
@@ -232,15 +245,85 @@ function classifyIssue(n, issue) {
       id,
       status: 'already-fixed',
       note: `pid-only historical request (${p.slice(0, 3).join(',')}); covered by class drivers when mfr unknown`,
-      sources: [`https://github.com/JohanBendz/com.tuya.zigbee/issues/${n}`],
+      sources: [`https://github.com/${repo.slug}/issues/${n}`],
     };
   }
   return {
     id,
     status: 'needs-info',
     note: 'no usable mfr+pid in thread body; defer until interview/diag',
-    sources: [`https://github.com/JohanBendz/com.tuya.zigbee/issues/${n}`],
+    sources: [`https://github.com/${repo.slug}/issues/${n}`],
   };
+}
+
+/** Newest issue/PR number of a repo (issues API lists both), or 0 when unknown. */
+async function repoTip(slug, get = ghGet) {
+  const r = await get(`https://api.github.com/repos/${slug}/issues?state=all&sort=created&direction=desc&per_page=1`).catch(() => null);
+  return Array.isArray(r) && r[0] && Number(r[0].number) ? Number(r[0].number) : 0;
+}
+
+/**
+ * P2907: one bounded chunk of our own repo (dlnraja/com.tuya.zigbee), same classifier as the
+ * Johan loop. Ledger: closed threads become done/deferred; open threads keep their current
+ * status (they still need a human answer), only the sweep note and upstream date are added.
+ * An entry already done (e.g. with a fix commit) is never downgraded.
+ */
+async function sweepOwnRepo(cp, deep, L, ledger, chunk, { get = ghGet, pause = sleep, offline = !!process.env.SWEEP_OFFLINE, dry = DRY } = {}) {
+  const repo = REPOS.dlnraja;
+  const start = Math.max(Number(cp.github.dlnraja.next) || 1, Number(deep.next && deep.next.dlnraja) || 1);
+  const out = { start, advanced: [], rateLimited: false, atTip: false, next: start };
+  let tip = null;
+  for (let i = 0; i < chunk; i++) {
+    const n = start + i;
+    const key = `${repo.prefix}:${n}`;
+    let issue = null;
+    if (offline) break; // offline: the own-repo cursor only moves on real data
+    // A network error or timeout ends this repo's chunk (cursor kept) instead of the whole run.
+    issue = await get(`https://api.github.com/repos/${repo.slug}/issues/${n}`).catch(() => ({ error: true, status: 'net' }));
+    if (issue && issue.rateLimited) { out.rateLimited = true; break; }
+    await pause(350);
+    if (issue && issue.error && issue.status === 404) {
+      if (tip === null) tip = await repoTip(repo.slug, get);
+      if (!tip || n > tip) { out.atTip = true; break; }
+      issue = { status: 404 };
+    } else if (issue && issue.error) {
+      break; // transient API error: retry the same number next run
+    }
+    let comments = null;
+    if (issue && !issue.error && issue.status !== 404 && Number(issue.comments) > 0) {
+      comments = await get(`https://api.github.com/repos/${repo.slug}/issues/${n}/comments?per_page=100`).catch(() => null);
+      if (comments && comments.rateLimited) { out.rateLimited = true; break; }
+      comments = Array.isArray(comments) ? comments.filter((c) => !isBotLogin(c.user)) : null;
+      await pause(250);
+    }
+    const classified = issue.status === 404
+      ? { id: key, status: 'no-action', note: 'number not found (deleted or transferred)', sources: [`https://github.com/${repo.slug}/issues/${n}`] }
+      : classifyIssueFull(n, issue, comments, repo);
+    const prev = cp.items.find((it) => it.id === key);
+    if (prev && prev.manual) { out.advanced.push({ n, status: prev.status, note: 'manual (kept)' }); continue; }
+    if (prev) Object.assign(prev, classified); else cp.items.push(classified);
+
+    if (!dry && classified.status !== 'no-action') {
+      const cur = (L.items && L.items[key]) || {};
+      const closed = issue.state === 'closed';
+      let status;
+      if (cur.status === 'done') status = 'done';
+      else if (!closed) status = cur.status || 'pending';
+      else status = classified.status === 'already-fixed' ? 'done' : 'deferred';
+      ledger.record(L, key, { status, note: classified.note || 'sweep', updatedAt: issue.updated_at || undefined, by: 'advance-sweep' });
+    }
+    out.advanced.push({ n, status: classified.status, note: classified.note });
+    if (!deep.done) deep.done = { JohanBendz: [], dlnraja: [] };
+    if (!Array.isArray(deep.done.dlnraja)) deep.done.dlnraja = [];
+    if (!deep.done.dlnraja.includes(n)) deep.done.dlnraja.push(n);
+  }
+  if (!out.rateLimited) {
+    out.next = start + out.advanced.length;
+    cp.github.dlnraja.next = out.next;
+    deep.next = deep.next || {};
+    deep.next.dlnraja = out.next;
+  }
+  return out;
 }
 
 async function main() {
@@ -265,8 +348,9 @@ async function main() {
   const L = ledger.load();
   const advanced = [];
   let rateLimited = false;
+  let johanTip = null;
 
-  const johanChunk = ONLY === 'forum' ? 0 : CHUNK;
+  const johanChunk = ['all', 'johan', 'github'].includes(ONLY) ? CHUNK : 0;
   for (let i = 0; i < johanChunk; i++) {
     const n = next + i;
     const key = `johan-issue:${n}`;
@@ -284,7 +368,12 @@ async function main() {
       if (!Array.isArray(comments)) comments = null;
       await sleep(250);
     }
-    if (issue && issue.error && issue.status === 404) issue = { status: 404 };
+    if (issue && issue.error && issue.status === 404) {
+      // P2907: past the newest upstream number -> stop here, keep the cursor (no silent skip).
+      if (johanTip === null) johanTip = await repoTip(REPOS.johan.slug);
+      if (johanTip && n > johanTip) break;
+      issue = { status: 404 };
+    }
     const classified = issue && issue.status === 404
       ? { id: key, status: 'no-action', note: 'number not found upstream', sources: [`https://github.com/JohanBendz/com.tuya.zigbee/issues/${n}`] }
       : (issue && !issue.error ? classifyIssueFull(n, issue, comments) : classifyIssue(n, issue));
@@ -322,10 +411,15 @@ async function main() {
     deep.next = deep.next || {};
     deep.next.JohanBendz = cp.github.johan.next;
   }
+  // Our own repo (P2907).
+  let own = { start: cp.github.dlnraja.next, advanced: [], rateLimited: false, atTip: false, next: cp.github.dlnraja.next };
+  if (['all', 'dlnraja', 'github'].includes(ONLY) && DL_CHUNK > 0) {
+    own = await sweepOwnRepo(cp, deep, L, ledger, DL_CHUNK);
+  }
   // Forum topics from post 1 (P2810).
   const forum = [];
   let forumRateLimited = false;
-  if (ONLY !== 'johan' && FORUM_CHUNK > 0) {
+  if (['all', 'forum'].includes(ONLY) && FORUM_CHUNK > 0) {
     for (const tid of TOPICS) {
       const st = cp.threads[tid] || (cp.threads[tid] = { lastPost: 0, status: 'pending' });
       if (st.status === 'caught-up' && st.sweptTo >= (st.lastPost || 0)) { /* re-check tail below */ }
@@ -337,7 +431,10 @@ async function main() {
         const prev = byId.get(it.id);
         if (prev && prev.manual) continue;
         if (prev) Object.assign(prev, it); else cp.items.push(it);
-        if (!DRY) {
+        // P2909: a post the forum catch-up already put in the ledger (forum-post:<t>/<n>) is not tracked twice.
+        const m = /^forum:(\d+)#(\d+)$/.exec(it.id || '');
+        const caughtUp = m && L.items && L.items[`forum-post:${m[1]}/${m[2]}`];
+        if (!DRY && !caughtUp) {
           if (it.status === 'already-fixed') ledger.record(L, it.id, { status: 'done', note: it.why, by: 'advance-sweep' });
           else if (it.status !== 'no-action') ledger.record(L, it.id, { status: 'deferred', note: it.why, by: 'advance-sweep' });
         }
@@ -346,10 +443,13 @@ async function main() {
       if (forumRateLimited) break;
     }
   }
-  const progressed = advanced.length > 0 || forum.some((f) => f.scanned > 0);
+  const progressed = advanced.length > 0 || own.advanced.length > 0 || forum.some((f) => f.scanned > 0);
   deep.updated = new Date().toISOString().slice(0, 10);
   cp.updated = new Date().toISOString();
-  cp.lastChunk = { at: cp.updated, advanced: advanced.length, rateLimited, items: advanced, forum, forumRateLimited, progressed };
+  cp.lastChunk = {
+    at: cp.updated, advanced: advanced.length, rateLimited, items: advanced, forum, forumRateLimited, progressed,
+    own: { advanced: own.advanced.length, next: cp.github.dlnraja.next, rateLimited: own.rateLimited, atTip: own.atTip, items: own.advanced },
+  };
   cp.stats = cp.items.reduce((a, it) => { a[it.status] = (a[it.status] || 0) + 1; return a; }, {});
 
   if (!DRY) {
@@ -363,6 +463,7 @@ async function main() {
     advanced: advanced.length,
     next: cp.github.johan.next,
     rateLimited,
+    own: { advanced: own.advanced.length, next: cp.github.dlnraja.next, rateLimited: own.rateLimited, atTip: own.atTip },
     forum,
     forumRateLimited,
     progressed,
@@ -375,11 +476,14 @@ async function main() {
   }
 }
 
-main().then(() => {
+if (require.main !== module) {
+  module.exports = { classifyIssueFull, classifyIssue, sweepOwnRepo, REPOS, isBotLogin };
+} else main().then(() => {
   // Progress guard: a run that only touches 'updated' is a silent stall (exit 2, soft in CI).
   try {
     const cp = loadJson(CP, {});
-    if (!DRY && cp.lastChunk && !cp.lastChunk.progressed && !cp.lastChunk.rateLimited && !cp.lastChunk.forumRateLimited) {
+    const ownRl = !!(cp.lastChunk && cp.lastChunk.own && cp.lastChunk.own.rateLimited);
+    if (!DRY && cp.lastChunk && !cp.lastChunk.progressed && !cp.lastChunk.rateLimited && !cp.lastChunk.forumRateLimited && !ownRl) {
       console.error('[advance-sweep] no progress this run');
       process.exitCode = 2;
     }

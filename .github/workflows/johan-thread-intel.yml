@@ -86,9 +86,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           # P2810: Johan issues (title+body+comments) AND the six forum topics from post 1.
+          # P2907: our own repo's issues/PRs too (cursor github.dlnraja.next; it never moved before).
+          # P2909: forum chunk 80 -> 180 posts/topic/day (pages of 20, 0.9 s apart, stops on 429/403).
           # Exit 2 = no progress at all (stall) -> visible warning, never a hard failure.
           node scripts/progress/advance-sweep.js --chunk=${{ vars.SWEEP_CHUNK || '15' }} \
-            --forum-chunk=${{ vars.SWEEP_FORUM_CHUNK || '80' }} || \
+            --dl-chunk=${{ vars.SWEEP_DL_CHUNK || vars.SWEEP_CHUNK || '15' }} \
+            --forum-chunk=${{ vars.SWEEP_FORUM_CHUNK || '180' }} || \
             { rc=$?; [ "$rc" = 2 ] && echo "::warning::history sweep made no progress this run"; true; }
           node scripts/progress/sweep-crosscheck.js || true
 

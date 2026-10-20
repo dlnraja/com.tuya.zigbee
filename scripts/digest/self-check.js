@@ -49,11 +49,12 @@ function sweepLines() {
   const sweep = load('data/leads/sweep-checkpoint.json', {});
   const deep = load('data/leads/deep-read-checkpoint.json', {});
   const nextJ = (sweep.github && sweep.github.johan && sweep.github.johan.next) || (deep.next && deep.next.JohanBendz) || '?';
+  const nextD = (sweep.github && sweep.github.dlnraja && sweep.github.dlnraja.next) || (deep.next && deep.next.dlnraja) || '?';
   const items = Array.isArray(sweep.items) ? sweep.items : [];
   const by = items.reduce((a, it) => { a[it.status] = (a[it.status] || 0) + 1; return a; }, {});
-  const threads = Object.entries(sweep.threads || {}).map(([t, v]) => `${t}@${v.lastPost}`).join(', ');
+  const threads = Object.entries(sweep.threads || {}).map(([t, v]) => `${t}@${v.sweptTo || 0}/${v.lastPost}`).join(', ');
   return [
-    `- History sweep: Johan next **#${nextJ}**; items ${JSON.stringify(by)}; forum ${threads || 'n/a'} (checkpoint ${sweep.updated ? sweep.updated.slice(0, 10) : 'n/a'}).`,
+    `- History sweep: Johan next **#${nextJ}**, our repo next **#${nextD}**; items ${JSON.stringify(by)}; forum ${threads || 'n/a'} (checkpoint ${sweep.updated ? sweep.updated.slice(0, 10) : 'n/a'}).`,
   ];
 }
 
