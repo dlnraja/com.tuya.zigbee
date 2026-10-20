@@ -31,3 +31,33 @@ That is about 40 % of the 64 MB budget, used before the first device event. Bigg
 ## Next levers (not done, would change startup behaviour)
 - Construct `OTAUpdateManager` and `TuyaUDPDiscovery` only when a WiFi or OTA-capable device exists (about 1.5 MB).
 - Split `BaseUnifiedDevice` feature managers into per-feature lazy loads.
+
+# P2915: load simulation, lazy OTA/UDP, flow card ids (20/10/2026)
+
+## Simulated load (`scripts/ci/load-heap-sim.js`, 150 devices of 5 drivers, 100 events each, then delete all)
+
+| branch | after init | after events: before → after | after delete: before → after | intervals left |
+|---|---|---|---|---|
+| master | 27 MB | 41.2 → 32.1 | 40.9 → 22.4 | 150 → 0 |
+| stable-v5 | 26.3 MB | 40.0 → 31.2 | 39.6 → 21.6 | 150 → 0 |
+| bastien-home | 26.4 MB | 40.0 → 31.7 | 39.9 → 22.1 | 150 → 0 |
+
+## Top retainers in the snapshot, before the fixes
+- **Diagnostic log ring per device** (`DiagnosticLogsCollector`): 6.3 MB of concatenated strings and 12 MB of strings. Each device kept 2000 entries, and each entry was a full `JSON.stringify` of every logged object. The `diagnosticLogsBuffer` of each driver class was a direct retainer (0.3–0.7 MB each).
+  - Fix: 200 entries per device, at most 300 characters each, objects summarised shallowly, strings stored flat.
+- **`DeviceTelemetryEstimator` intervals (120 of 150):**
+  - When `record()` attached the estimator, `this.telemetryEstimator` was never set, so `onDeleted`/`onUninit` never destroyed it.
+  - `destroy()` could also run during `init()`.
+  - Fix: destroy reaches the instance either way, and init stops if the estimator was destroyed.
+- **`DynamicCapabilityManager` (30):** `AutoAdaptiveDevice` (buttons and remotes) replaced the instance built by the base class without cleaning it up, which orphaned its 2 h interval. The base class's background step did the same.
+  - Fix: clean up the old instance or reuse it.
+
+## Lazy OTA and WiFi UDP discovery
+- **`OTAUpdateManager`:** built by `_ensureOTAManager()` on first need (flow card, scan, `getOTAManager()`, or auto-discovery when at least one device exists). It returns null and never throws on failure.
+- **`TuyaUDPDiscovery`:** started only when a `wifi_*` device exists. Any WiFi device starts it from its init (`ensureTuyaUDPDiscovery()`), once.
+- **Heap when loading `app.js`:** 3.1 → 2.4 MB (master), 2.9 → 2.2 MB (stable), 2.7 → 2.0 MB (Bastien).
+
+## Flow card ids
+- **Bastien:** `capability_value_changed_generic`, `device_interaction` and `home_mode_changed` were declared, but `bastien-publish-fleet-prune.js` dropped every card not prefixed by a kept driver. The Bastien 1.0.161 diagnostics logged "Invalid Flow Card ID" on every event. The three triggers are now kept.
+- **master:** declares all three.
+- **stable:** declares `capability_value_changed_generic` and guards the other two (`isCardDeclared` / `FlowCardPresence`).
