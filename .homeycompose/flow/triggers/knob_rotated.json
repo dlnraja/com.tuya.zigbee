@@ -39,7 +39,7 @@
     {
       "type": "device",
       "name": "device",
-      "filter": "driver_id=smart_knob,capabilities=dim"
+      "filter": "driver_id=smart_knob&capabilities=dim"
     }
   ]
 }
