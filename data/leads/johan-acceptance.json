@@ -1,14 +1,14 @@
 {
-  "generated": "2026-10-19T09:17:38.918Z",
+  "generated": "2026-10-20T07:14:46.149Z",
   "source": "data/leads/johan-canonical-index.json",
   "repo": "JohanBendz/com.tuya.zigbee",
   "note": "Acceptance view, structured fields only. missing-couple = identity cited upstream with no home driver here (verify real hardware before adding, W4). behaviour = needs physical test, not a pairing gap.",
   "summary": {
     "threads": 562,
-    "covered": 441,
+    "covered": 442,
     "behaviour": 93,
     "missing-couple": 9,
-    "dual-couple": 19,
+    "dual-couple": 18,
     "missingCouples": 6
   },
   "missingCouples": [
@@ -9133,12 +9133,11 @@
           "mfr": "_TZE204_8fffc3kb",
           "pid": "TS0601",
           "drivers": [
-            "led_controller_rgb",
-            "led_controller_spi_tuya"
+            "led_controller_rgb"
           ]
         }
       ],
-      "acceptance": "dual-couple"
+      "acceptance": "covered"
     },
     {
       "n": 1303,
