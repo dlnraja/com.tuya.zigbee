@@ -20,15 +20,28 @@
   "zigbee": {
     "manufacturerName": [],
     "productId": [
-      "TS0601_lcd",
-      "TS0601",
+      "RH3052",
+      "SM0201",
+      "TH01",
+      "THS317-ET",
       "TS0201",
-      "TY0201"
+      "TS0601",
+      "TS0601_lcd",
+      "TY0201",
+      "WSDCGQ01LM",
+      "WSDCGQ11LM",
+      "WSDCGQ12LM",
+      "lumi.sensor_ht",
+      "lumi.sensor_ht.agl02",
+      "lumi.weather"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
+          1,
+          1026,
+          1029,
           61184
         ]
       }
