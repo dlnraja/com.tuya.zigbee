@@ -291,7 +291,7 @@
       "bug": "single click not reported in scene mode; a later press (even 20 s apart) is seen as a double click",
       "workaround": "pair-scoped: genOnOff commandOn AND commandOff both mean one single press (toggle firmware alternates them), so no press is read as a double click",
       "status": "runtime",
-      "location": "drivers/button_wireless_4/device.js onOff command fallback (FirmwareQuirks.onOffCommandsAreSingle)",
+      "location": "drivers/button_wireless_4/device.js onOff command fallback (FirmwareQuirks.onOffCommandsAreSingle); P2910 auto click window on the raw L1 On/Off path when a double/triple Flow exists (lib/utils/ClickWindowAuto.js)",
       "source": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/423#issuecomment-2405850747"
       ],
