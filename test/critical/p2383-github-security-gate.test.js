@@ -33,7 +33,8 @@ describe('P2383 GitHub security elementary gate', () => {
       path.join(ROOT, '.github/workflows/fleet-intelligent-enrich.yml'),
       'utf8',
     );
-    assert.match(yml, /actions\/setup-node@v5/);
+    // P2912: actions are pinned to a commit SHA with the tag as comment (P2900 pin policy).
+    assert.match(yml, /actions\/setup-node@(v5\b|[0-9a-f]{40} # v5\b)/);
     assert.doesNotMatch(yml, /git push origin HEAD:master \|\| true/);
   });
 });
