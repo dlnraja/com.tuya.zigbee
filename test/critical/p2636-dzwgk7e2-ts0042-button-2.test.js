@@ -25,7 +25,9 @@ describe('P2636 dzwgk7e2+TS0042 2-btn (phantom 4EP)', () => {
     // 2026-10-18: raw floor follows the deliberate wrong-class moves P2819/P2820/d09e9531cf (486 -> 410 raw forms, unique makers 104 -> 103:
     // only dfgbtub0 left, to button_wireless_4, W4) — verified 0 orphaned couples; the unique-maker floor is the real mass-purge guard.
     // 2026-10-19: b919e24e92 (P2830b) moved 5 TS0003 3-gang wall-switch makers to switch_3gang (exact pid, pinned); 0 orphans, raw 410 -> 390, unique makers 103 -> 98.
-    assert.ok((c.zigbee.manufacturerName || []).length >= 380);
+    // 2026-10-20 (P2910): Lidl HG06338 3-socket strip makers vmpbygs5 + wzauvbcs (Z2M lidl.ts, TS011F) moved to socket_power_strip and
+    // LoraTap SS6400ZB ee8nrt2l (Z2M TS0044 4-button) to button_wireless_4 — dual-couple-legacy, 0 orphans, raw 390 -> 378, unique 98 -> 95.
+    assert.ok((c.zigbee.manufacturerName || []).length >= 375);
     assert.ok(new Set((c.zigbee.manufacturerName || []).map((x) => String(x).toLowerCase())).size >= 95);
     // 2026-10-11 second-source round: 9 TS0003/TS0013 3-gang + r0pmi2p3 TS0014 moved to switch_3_gang/switch_4gang (curated removals). 2026-10-11 johan-only round: key8kk7r+rrjr1q0u (3-btn) and zl1kmjqx (temp sensor) moved out (curated removals); qewo8dlz TS0013 3-gang moved to switch_3_gang (W4). 2026-10-11: _TZ3000_yw5tvzsk (TS0043, Johan+deCONZ) moved to button_wireless_3 (curated removal)
   });

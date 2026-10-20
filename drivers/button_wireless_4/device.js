@@ -51,6 +51,7 @@ class Button4GangDevice extends ButtonDevice {
     await this._setupLevelControlDetection(zclNode);
     await this._setupTuyaDPButtonDetection(zclNode);
     await this._setupRawFrameInterceptor(zclNode);
+    this._setupClickWindowAuto();
 
     this.log('[BUTTON_WIRELESS_4] P2616 hybrid UNION dedicated (E000/Level/DP/raw); UI: Button N device view');
   }
@@ -385,11 +386,64 @@ class Button4GangDevice extends ButtonDevice {
    * as single / double / triple, so slow double-clicks and triple-clicks work on firmware that
    * only sends one command per press. Native press types (0xFD / E000) are not affected.
    */
-  _clickWindowMs() {
+  _clickWindowMs(button) {
     try {
       const { clampWindow } = require('../../lib/utils/ClickAggregator');
-      return clampWindow(this.getSetting?.('click_window_ms'));
+      const explicit = clampWindow(this.getSetting?.('click_window_ms'));
+      if (explicit) {return explicit;}
+      // WHY(P2910 #423/#424): setting 0 = auto — window only for the quirk couple, only for a
+      // button that has a double/triple Flow, and only while firmware shows no native multi-press.
+      if (!this._clickWindowAuto) {return 0;}
+      const { effectiveWindow } = require('../../lib/utils/ClickWindowAuto');
+      return effectiveWindow({
+        explicitMs: 0,
+        quirk: true,
+        needed: this._clickWindowAuto.isNeeded(button),
+        nativeMulti: this._nativeMultiPressSeen === true,
+      });
     } catch (_e) { return 0; }
+  }
+
+  /** P2910: arm the auto click window only on the exact quirk couple (no Flow API calls elsewhere). */
+  _setupClickWindowAuto() {
+    try {
+      if (!require('../../lib/quirks/FirmwareQuirks').onOffCommandsAreSingle(this)) {return;}
+      const { ClickWindowAuto } = require('../../lib/utils/ClickWindowAuto');
+      this._clickWindowAuto = new ClickWindowAuto(this, { gangs: 4 });
+      Promise.resolve(this._clickWindowAuto.refresh()).then((set) => {
+        this.log(`[CLICK-WINDOW] auto mode armed (double/triple Flows on buttons: ${[...set].join(',') || 'none'})`);
+      }).catch(() => {});
+    } catch (e) { this.log('[CLICK-WINDOW] auto soft-skip:', e && e.message); }
+  }
+
+  /**
+   * P2910: live RX path for one-command-per-press remotes. Standard On/Off/Toggle sent by a remote
+   * reach the raw L1 path (PhysicalButtonMixin.onZigBeeMessage, every command = single); the
+   * cluster-event listeners above are kept as a complementary layer. When a click window is in
+   * effect for this button, presses are counted here first; otherwise the parent path runs
+   * unchanged, so a single press still fires immediately.
+   */
+  onZigBeeMessage(endpointId, clusterId, frame, meta) {
+    try {
+      const cid = Number(clusterId);
+      if (frame && (cid === 0x0006 || cid === 0xE000)) {
+        const d = frame.toJSON?.().data || frame.data || [];
+        const cmd = d && d.length >= 3 ? d[2] : undefined;
+        // WHY: 0xFD (scene mode) or E000 press frames = firmware counts clicks itself → no app window.
+        if ((cid === 0x0006 && cmd === 0xFD) || (cid === 0xE000 && cmd === 0)) {
+          if (!this._nativeMultiPressSeen) { this._nativeMultiPressSeen = true; this.log('[CLICK-WINDOW] native press frames seen — auto window off'); }
+        } else if (cid === 0x0006 && (cmd === 0 || cmd === 1 || cmd === 2) && d.length <= 3) {
+          const ep = Number(endpointId) || 1;
+          if (this._clickWindowMs(ep) > 0) {
+            if (!this._isDeduped(ep, `raw_cw_${cmd}`, 350)) {this._aggregateClick(ep);}
+            return true;
+          }
+        }
+      }
+    } catch (_e) { /* soft — parent path below still runs */ }
+    return typeof super.onZigBeeMessage === 'function'
+      ? super.onZigBeeMessage(endpointId, clusterId, frame, meta)
+      : false;
   }
 
   _aggregateClick(ep) {
@@ -399,7 +453,7 @@ class Button4GangDevice extends ButtonDevice {
         this._triggerButton4Gang(key, type, { aggregated: true }).catch?.(() => {});
       });
     }
-    return this._clickAggregator.press(ep, this._clickWindowMs());
+    return this._clickAggregator.press(ep, this._clickWindowMs(ep));
   }
 
   async _triggerButton4Gang(button, pressType, opts = {}) {
@@ -496,8 +550,17 @@ class Button4GangDevice extends ButtonDevice {
     return false;
   }
 
+  async onUninit() {
+    // WHY(P2910): release click timers and Flow card 'update' hooks on app restart too.
+    try { this._clickAggregator?.destroy(); } catch (_e) { /* soft */ }
+    try { this._clickWindowAuto?.destroy(); } catch (_e) { /* soft */ }
+    this._clickWindowAuto = null;
+    if (typeof super.onUninit === 'function') {await super.onUninit();}
+  }
+
   async onDeleted() {
     try { this._clickAggregator?.destroy(); } catch (_e) { /* soft */ }
+    try { this._clickWindowAuto?.destroy(); } catch (_e) { /* soft */ }
     if (this._rawZigbeeNode?.__tuyaButton4RawWrapper === this._rawZigbeeNode.handleFrame) {
       this._rawZigbeeNode.handleFrame = this._rawZigbeeOriginalHandleFrame || undefined;
       delete this._rawZigbeeNode.__tuyaButton4RawWrapper;
