@@ -804,6 +804,16 @@ jobs:
           exit 1
 
       # P2900: socket hang up / AggregateError vs size, one CSV row per upload (kept 90 days).
+      # P2917: write the highest CONFIRMED Test version back (state "test" from Athom), [skip ci], once,
+      # clean tree reset to origin, rebase + 3 bounded tries, never dispatches a run (no loop).
+      - name: Version write-back after Test ([skip ci])
+        if: always() && (steps.pub.outcome == 'success' || steps.pub.outcome == 'failure')
+        continue-on-error: true
+        timeout-minutes: 5
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: bash .github/scripts/version-writeback.sh master com.dlnraja.tuya.zigbee
+
       - name: Upload publish size telemetry
         if: always()
         continue-on-error: true
