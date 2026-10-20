@@ -173,7 +173,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     try {
       if (!this.hasCapability('alarm_battery')) {
         await this.addCapability('alarm_battery');
-        await this.setCapabilityValue('alarm_battery', false).catch(() => {});
+        await this.safeSetCapabilityValue('alarm_battery', false);
       }
       if (this.hasCapability('measure_battery')) {
         const cur = this.getCapabilityValue('measure_battery');
