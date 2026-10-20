@@ -123,6 +123,8 @@ jobs:
             fs.writeFileSync('app.json', a.startsWith('{\\n')?JSON.stringify(aj,null,2)+'\\n':JSON.stringify(aj));
             const pk=JSON.parse(fs.readFileSync('package.json','utf8')); pk.version='$NEW';
             fs.writeFileSync('package.json', JSON.stringify(pk,null,2)+'\\n');
+            // P2912: package-lock root versions too (stable 5.12.476 lock stayed 5.12.475 -> P2830f red)
+            if (fs.existsSync('package-lock.json')) { const lk=JSON.parse(fs.readFileSync('package-lock.json','utf8')); lk.version='$NEW'; if (lk.packages && lk.packages['']) lk.packages[''].version='$NEW'; fs.writeFileSync('package-lock.json', JSON.stringify(lk,null,2)+'\\n'); }
             const cl=JSON.parse(fs.readFileSync('.homeychangelog.json','utf8'));
             if (!cl['$NEW']) cl['$NEW']={en:'Device database and reliability updates.',fr:'Mises à jour de la base d’appareils et de la fiabilité.'};
             fs.writeFileSync('.homeychangelog.json', JSON.stringify(cl,null,2)+'\\n');
@@ -131,7 +133,7 @@ jobs:
 
       - name: Commit + push
         run: |
-          git add .homeycompose/app.json app.json package.json .homeychangelog.json lib/ data/ 2>/dev/null || true
+          git add .homeycompose/app.json app.json package.json package-lock.json .homeychangelog.json lib/ data/ 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No changes to commit"
             exit 0
