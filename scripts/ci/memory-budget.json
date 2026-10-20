@@ -1,0 +1,1 @@
+{ "codeHeapBudgetMb": 30, "why": "P2914: app.js + all drivers code heap measured 25-27 MB on 20/10/2026; Homey kills the app at ~64 MB" }
