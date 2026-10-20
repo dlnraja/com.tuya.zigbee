@@ -74,11 +74,8 @@ describe('P2826 T140352 fleet + flow harden', () => {
     for (const c of [0, 1, 1026, 1029, 61184]) assert.ok(clusters.includes(c), String(c));
   });
 
-  it('SPI flow: dead brightness_changed card dropped for the Athom bisect (19/10/2026, user-approved)', () => {
-    const flow = JSON.parse(fs.readFileSync(
-      path.join(ROOT, 'drivers/led_controller_spi_tuya/driver.flow.compose.json'), 'utf8'
-    ));
-    assert.ok(!(flow.triggers || []).some((t) => t.id === 'led_controller_spi_tuya_brightness_changed'));
+  it('SPI driver folded into led_controller_rgb (no separate flow compose, 20/10/2026)', () => {
+    assert.ok(!fs.existsSync(path.join(ROOT, 'drivers/led_controller_spi_tuya')));
   });
 
   it('npm check:p2826 wired', () => {
