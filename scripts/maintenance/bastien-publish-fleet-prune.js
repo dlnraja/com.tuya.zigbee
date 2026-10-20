@@ -16,6 +16,8 @@ const path = require('path');
 const APP_ID = 'com.dlnraja.tuya.zigbee.bastien';
 const SSOT = path.join(__dirname, '..', '..', 'config', 'architecture', 'bastien-publish-fleet-ssot.json');
 
+const BASTIEN_APP_LEVEL_TRIGGERS = new Set(['capability_value_changed_generic', 'device_interaction', 'home_mode_changed']);
+
 function readJson(p) {
   return JSON.parse(fs.readFileSync(p, 'utf8'));
 }
@@ -69,6 +71,9 @@ function pruneBastienPublishFleet(destAppJson, opts = {}) {
     if (!Array.isArray(cards)) continue;
     manifest.flow[section] = cards.filter((c) => {
       const id = String(c.id || '');
+      // P2915: app-level triggers fired on every device event; pruning them made each call log
+      // "Invalid Flow Card ID" (Bastien 1.0.161 diag 18/10) and the feature never fired.
+      if (section === 'triggers' && BASTIEN_APP_LEVEL_TRIGGERS.has(id)) return true;
       return keptDrivers.some((d) => id === d.id || id.startsWith(`${d.id}_`));
     });
   }
