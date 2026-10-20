@@ -70,6 +70,8 @@ jobs:
     name: Publish Bastien house app
     runs-on: ubuntu-latest
     timeout-minutes: 75  # idle wait (≤25) + publish + draft + final gate (≤15), like master 516c83444c
+    permissions:
+      contents: write  # P2915: version write-back commit only
     steps:
       - name: Checkout bastien-home
         uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
@@ -414,3 +416,22 @@ jobs:
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: node .github/scripts/assert-athom-final.js
+
+      # WHY(P2915): Bastien Test reached 1.0.182 while the branch still said 1.0.179 — the bumped
+      # manifests were never committed back. Write them back once, after Test is confirmed, as a
+      # [skip ci] commit (never re-triggers this workflow: no loop). Rebase + bounded retries.
+      - name: Version write-back ([skip ci])
+        if: success() && steps.publish_bastien.outcome == 'success'
+        timeout-minutes: 5
+        run: |
+          V=$(node -p "require('./app.json').version")
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add app.json .homeycompose/app.json package.json package-lock.json .homeychangelog.json .github/homey-version-floor 2>/dev/null || true
+          if git diff --cached --quiet; then echo "nothing to write back"; exit 0; fi
+          git commit -m "chore(bastien): v${V} written back after Test [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase -X theirs origin bastien-home && git push origin HEAD:bastien-home && exit 0
+            echo "::warning::write-back push attempt $i failed; retrying"; sleep $((i*10))
+          done
+          echo "::warning::version write-back not pushed (next run re-applies the Athom floor)"
