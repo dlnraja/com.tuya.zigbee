@@ -317,6 +317,8 @@ jobs:
           node "$GITHUB_WORKSPACE/scripts/maintenance/prune-publish-payload.cjs" "$PUBLISH_DIR" || echo "::warning::prune-publish-payload failed; uploading unpruned payload"
           # P2900: per-upload size row for the socket-hang-up/size correlation CSV (shared with master/Bastien).
           node "$GITHUB_WORKSPACE/.github/scripts/publish-size-telemetry.js" measure "$PUBLISH_DIR" || true
+          # P2902: local pre-upload check (Athom processing_failed has no error body).
+          node "$GITHUB_WORKSPACE/scripts/ci/payload-preflight.cjs" "$PUBLISH_DIR" || { [ "${PAYLOAD_PREFLIGHT:-}" = warn ] || { echo "::error::payload preflight failed (see ERROR lines)"; exit 2; }; }
           run_homey_cli_publish() {
             if [ -x "$GITHUB_WORKSPACE/node_modules/.bin/homey" ]; then
               HOMEY_HEADLESS=1 HOMEY_PAT="$HOMEY_PAT" "$GITHUB_WORKSPACE/node_modules/.bin/homey" app publish --path "$PUBLISH_DIR"
