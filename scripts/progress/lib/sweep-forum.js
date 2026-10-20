@@ -47,8 +47,9 @@ async function advanceTopic(tid, st, chunk, { delayMs = 900 } = {}) {
     await sleep(delayMs);
     const q = ids.map((id) => `post_ids[]=${id}`).join('&');
     const r = await getJson(`/t/${tid}/posts.json?${q}`);
-    if (r.rateLimited) return { rateLimited: true, items, scanned, noAction };
-    if (r.error || !r.post_stream) return { error: r.status, items, scanned, noAction };
+    // P2909: keep sweptTo in step with sweptId when a page stops the chunk early.
+    if (r.rateLimited) { st.sweptTo = maxNum; return { rateLimited: true, items, scanned, noAction }; }
+    if (r.error || !r.post_stream) { st.sweptTo = maxNum; return { error: r.status, items, scanned, noAction }; }
     const posts = (r.post_stream.posts || []).sort((a, b) => a.id - b.id);
     for (const p of posts) {
       scanned++;

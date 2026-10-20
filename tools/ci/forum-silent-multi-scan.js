@@ -281,7 +281,11 @@ async function main() {
   console.log('Policy: no forum replies from this script.');
 }
 
-main().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+// P2909: the topic list is also read by scripts/scanners/forum-catch-up.js (no scan on require).
+module.exports = { DEFAULT_TOPICS };
+if (require.main === module) {
+  main().catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
+}
