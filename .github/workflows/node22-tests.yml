@@ -41,5 +41,10 @@ jobs:
       - run: npm ci --ignore-scripts --no-audit --no-fund || npm install --ignore-scripts --no-audit --no-fund
       - name: Resilience + memwarn tests (hard)
         run: npx mocha test/zigbee-resilience.test.js test/memwarn-guard.test.js --timeout 10000
+      - name: Memory leak + budget tests (hard, P2914)
+        run: node --expose-gc node_modules/.bin/mocha test/p2914-memory-leak.test.js --timeout 120000
+      - name: Memory budget report (P2914)
+        if: always()
+        run: node --expose-gc scripts/ci/memory-budget.js --budget-mb "$(node -p "require('./scripts/ci/memory-budget.json').codeHeapBudgetMb")"
       - name: Full suite on Node 22
         run: npx mocha "test/**/*.test.js" --timeout 10000
