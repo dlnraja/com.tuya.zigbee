@@ -66,7 +66,11 @@ describe('P2830f version alignment', () => {
     assert.ok(files.length >= 1);
     for (const f of files) {
       const y = fs.readFileSync(path.join(wf, f), 'utf8');
-      const bumps = (y.match(/node\s+\S*bump-homey-version\.js/g) || []).length;
+      // P2912: a bump inside the transient-retry loop is a NEW version per re-upload (never a re-send);
+      // it is allowed only when guarded by the floor gate and the strictly-increasing refusal.
+      const lines = y.split('\n');
+      const bumps = lines.filter((l) => /node\s+\S*bump-homey-version\.js/.test(l)
+        && !(/athom-version-floor\.js --apply &&/.test(l) && /refusing non-increasing/.test(y) && /athom-version-floor\.js --gate/.test(y) && /for retry in/.test(y))).length;
       assert.ok(bumps <= 1, `${f}: bump-homey-version.js invoked ${bumps}x in one workflow (double bump risk)`);
     }
     const direct = fs.readFileSync(path.join(ROOT, 'scripts', 'direct-api-publish.js'), 'utf8');
