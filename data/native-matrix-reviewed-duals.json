@@ -145,39 +145,6 @@
       "reviewed_by": "user decision 2026-10-04 (executor-flowport research)"
     },
     {
-      "couple": "_TZE204_8fffc3kb|TS0601",
-      "drivers": [
-        "led_controller_spi_tuya",
-        "led_controller_rgb"
-      ],
-      "reason": "SPI pixel LED (GL-SPI-206P) held out of Athom publish; fold couples into led_controller_rgb so Test builds keep pairing. Exact SPI driver stays in source with FPs.",
-      "source": "zigbee-herdsman-converters src/devices/gledopto.ts GL-SPI-206P; fold #3499",
-      "date": "2026-10-10",
-      "reviewed_by": "fold held couples → published rgb host (Athom AggregateError on dedicated spi id)"
-    },
-    {
-      "couple": "_TZE284_gt5al3bl|TS0601",
-      "drivers": [
-        "led_controller_spi_tuya",
-        "led_controller_rgb"
-      ],
-      "reason": "SPI pixel LED (GL-SPI-206P) held out of Athom publish; fold couples into led_controller_rgb so Test builds keep pairing. Exact SPI driver stays in source with FPs.",
-      "source": "zigbee-herdsman-converters src/devices/gledopto.ts GL-SPI-206P; fold #3499",
-      "date": "2026-10-10",
-      "reviewed_by": "fold held couples → published rgb host (Athom AggregateError on dedicated spi id)"
-    },
-    {
-      "couple": "_TZE28C1000000_gt5al3bl|TS0601",
-      "drivers": [
-        "led_controller_spi_tuya",
-        "led_controller_rgb"
-      ],
-      "reason": "Same GL-SPI-206P family (TZE28C firmware prefix variant); fold host led_controller_rgb + held exact spi driver.",
-      "source": "fold #3499 / gledopto GL-SPI-206P",
-      "date": "2026-10-10",
-      "reviewed_by": "fold held couples → published rgb host"
-    },
-    {
       "couple": "_TZ3000_skueekg3|TS000F",
       "drivers": [
         "switch_module_whd02",

@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-19T14:55:58.396Z",
- "drivers": 394,
+ "generated": "2026-10-20T00:31:48.326Z",
+ "drivers": 393,
  "snapshot": {
   "air_purifier": {
    "mfr": 3,
@@ -1021,12 +1021,6 @@
    "pid": 3,
    "mfrSha": "90c57e838d0e2123",
    "pidSha": "595ceeb0a007d0a4"
-  },
-  "led_controller_spi_tuya": {
-   "mfr": 3,
-   "pid": 1,
-   "mfrSha": "19edad6dba1cf5e9",
-   "pidSha": "455c46e8c8549693"
   },
   "led_strip": {
    "mfr": 2,

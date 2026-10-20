@@ -1,15 +1,11 @@
 {
   "_why": "Drivers kept in source but left out of the Athom publish payload while they break Athom processing. Never-published drivers only (no paired device can depend on them). Re-enable by removing the entry once a dedicated bisect build passes.",
-  "drivers": [
-    {
-      "id": "led_controller_spi_tuya",
-      "since": "2026-10-10",
-      "reason": "Athom processing_failed AggregateError since 9.0.1331 (first build with this driver). Bisect J3 #3478 (I + spi + whd02 + sub_dim_set) and J4 #3479 (I + spi only) failed; I #3468 without it reached Test. Couples folded into led_controller_rgb (reviewed exception); exact driver FPs kept in source. 2026-10-11 release retry after pipeline fixes (serialized, idle wait): #3524 v9.0.1405 + #3526 v9.0.1407 both AggregateError → content failure confirmed, stays held. 2026-10-19 one-shot release (dispatch release_held, PUBLISH_HOLD_RELEASE) while whd02 passed #3604: runs 39179155985 (#3606 v9.0.1525) + 39180123044 (#3607 v9.0.1526) both 'socket hang up' = transport, and #3605 (no spi) failed the same way -> INCONCLUSIVE; retry once a normal push reaches Test again. 2026-10-19 18:00 (Paris) one-shot release run 39281159242: #3630 v9.0.1549 AggregateError with SPI in the payload; its automatic retry #3631 v9.0.1550 dropped the release (P2893 bug, now fixed) and reached Test without SPI. Still held; next: one more release dispatch (retry now keeps release_held) for a same-content flip check. 2026-10-19 18:45 (Paris) same-content retry with P2893: #3632 v9.0.1551 AggregateError and its retry #3633 v9.0.1552 AggregateError, both with SPI released, while #3631 without SPI reached Test -> CONTENT FAILURE CONFIRMED (3/3 today). Stays held; needs a code/manifest bisect of the driver itself (not a transport retry).",
-      "sacredCouplesOwnedElsewhere": true
-    }
-  ],
+  "drivers": [],
   "_graduated": {
     "switch_module_whd02": "2026-10-19 one-shot release (dispatch release_held, run 39177562443): master #3604 v9.0.1523 reached Test with the driver in the payload; earlier AggregateError builds were not content-related (same-content flip rule). Removed from hold; never hold a published driver again.",
     "valve_controller_5zone": "2026-10-19 one-shot release (dispatch release_held, run 39293541334): master #3635 v9.0.1554 reached Test first try with the driver in the payload (31 flow cards). The 2026-10-11 AggregateErrors were not content-related. Removed from hold; never hold a published driver again. Couple _TZ3000_j0ktmul1/TS011F stays on switch_4gang (moving it back is a separate decision)."
+  },
+  "_folded": {
+    "led_controller_spi_tuya": "2026-10-20 (Paris): removed from master. Bisect 19-20/10 (step 1 dead trigger, step 2 CT/mode caps, step 3 base mfr ids) failed 9/9 AggregateError (#3637-#3645, v9.0.1556-1564) -> cause outside the driver files. Devices are served by led_controller_rgb (published, in Test since the 10/10 fold c5def1c840) with lib/devices/LedControllerSpiTuyaDevice.js via onMapDeviceClass; all 12 mfr spellings kept there. Doc: docs/knowledge/SPI_ATHOM_BISECT_2026-10-19.md"
   }
 }
