@@ -17,7 +17,12 @@ describe('P2749f flow titleFormatted args gate', () => {
     const pkg = JSON.parse(fs.readFileSync(path.join(ROOT, 'package.json'), 'utf8'));
     assert.ok(pkg.scripts['check:flow-titleformatted']);
     const yml = fs.readFileSync(path.join(ROOT, '.github/workflows/auto-publish-on-push.yml'), 'utf8');
-    assert.ok(/check:flow-titleformatted/.test(yml));
+    // P2906: auto-publish may run it through the shared rules-gates action (id flow-title, same script).
+    const G = require('../../tools/ci/discovery-lineage-enrich-gate.js');
+    const RG = require('../../scripts/ci/rules-gates.js');
+    const viaShared = G.hardRulesGatesSelects(yml, 'flow-title')
+      && RG.RULES_GATES.some((g) => g.id === 'flow-title' && g.file === 'tools/ci/flow-titleformatted-args-gate.js');
+    assert.ok(/check:flow-titleformatted/.test(yml) || viaShared);
     const e2e = fs.readFileSync(path.join(ROOT, '.github/workflows/e2e-dashboard-test.yml'), 'utf8');
     assert.ok(/flow-titleformatted-args-gate/.test(e2e));
   });

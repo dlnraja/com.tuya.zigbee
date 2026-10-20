@@ -132,17 +132,20 @@ jobs:
       - name: Re-inject after conflict resolve
         run: node tools/ci/re-inject-manual-fixes.js
 
-      - name: Anti-bot regression gate
-        run: node tools/ci/anti-bot-regression-gate.js
-
-      - name: P2138 sacred-couple matrix gate
-        run: node tools/ci/p2138-sacred-couple-matrix-gate.js
+      # P2906: shared rules-gates action (scripts/ci/rules-gates.js), same gates, same order.
+      - name: Anti-bot regression gate + P2138 sacred-couple matrix gate (shared rules-gates)
+        uses: ./.github/actions/rules-gates
+        with:
+          only: anti-bot,p2138
 
       - name: P2448/P2449 knob + declared flow wiring
         run: npm run check:p244x
 
-      - name: Flow titleFormatted [[args]] gate (P2749f Athom publish)
-        run: npm run check:flow-titleformatted
+      # P2906: same script as `npm run check:flow-titleformatted` (tools/ci/flow-titleformatted-args-gate.js).
+      - name: Flow titleFormatted [[args]] gate (P2749f Athom publish, shared rules-gates)
+        uses: ./.github/actions/rules-gates
+        with:
+          only: flow-title
 
       - name: P246x anti-regression family
         run: npm run check:p246x
@@ -204,8 +207,10 @@ jobs:
       - name: Homey heap JSON size gate (P148/P157)
         run: node tools/ci/homey-heap-json-gate.js
 
-      - name: Regression lessons gate (MUST-KEEP fatals)
-        run: node tools/ci/regression-lessons-gate.js
+      - name: Regression lessons gate (MUST-KEEP fatals, shared rules-gates)
+        uses: ./.github/actions/rules-gates
+        with:
+          only: regression-lessons
 
       # ─────────────────────────────────────────────────────────────
       # 2. CHECK SECRETS

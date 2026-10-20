@@ -22,6 +22,7 @@ const path = require('path');
 const { spawnSync } = require('child_process');
 
 const ROOT = path.resolve(__dirname, '..', '..');
+const LOG_LINES = 200;
 
 // Order matters: anti-bot first (it may strip), sacred-couple matrix second.
 const RULES_GATES = [
@@ -48,8 +49,12 @@ function runGate(g, { strip = false, cwd = ROOT, timeout = 600000 } = {}) {
   const args = [abs];
   if (strip && g.id === 'anti-bot') args.push('--strip');
   const r = spawnSync(process.execPath, args, { cwd, encoding: 'utf8', timeout, maxBuffer: 64 * 1024 * 1024 });
-  const tail = `${r.stdout || ''}${r.stderr || ''}`.trim().split('\n').slice(-8).join(' | ');
-  return { id: g.id, file: g.file, status: r.status === 0 ? 'pass' : 'fail', code: r.status, tail };
+  const out = `${r.stdout || ''}${r.stderr || ''}`.trim();
+  const tail = out.split('\n').slice(-8).join(' | ');
+  // `log` keeps the last LOG_LINES lines so a failing gate shows as much as the old direct step did
+  // (bounded so a noisy gate cannot flood the job log).
+  const log = r.status === 0 ? '' : out.split('\n').slice(-LOG_LINES).join('\n');
+  return { id: g.id, file: g.file, status: r.status === 0 ? 'pass' : 'fail', code: r.status, tail, log };
 }
 
 function main(argv = process.argv.slice(2)) {
@@ -60,6 +65,11 @@ function main(argv = process.argv.slice(2)) {
   const results = gates.map((g) => {
     const r = runGate(g, { strip });
     console.log(`${r.status === 'pass' ? '✅' : r.status === 'skipped' ? '⏭️' : '❌'} ${r.id} (${r.file})${r.status === 'fail' ? ` exit ${r.code}: ${r.tail}` : ''}`);
+    if (r.status === 'fail' && r.log) {
+      console.log(`::group::${r.id} output (last ${LOG_LINES} lines)`);
+      console.log(r.log);
+      console.log('::endgroup::');
+    }
     return r;
   });
   const failed = results.filter((r) => r.status === 'fail');
@@ -72,5 +82,5 @@ function main(argv = process.argv.slice(2)) {
   return failed.length && !soft ? 1 : 0;
 }
 
-module.exports = { RULES_GATES, select, runGate };
+module.exports = { RULES_GATES, LOG_LINES, select, runGate };
 if (require.main === module) process.exitCode = main();

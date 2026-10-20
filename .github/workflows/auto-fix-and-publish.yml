@@ -100,11 +100,11 @@ jobs:
 
       # P94+: hard-fail if bot reintroduced known wrong Sacred Couple routings
       # (complements re-inject repair with a detect gate before publish commit)
-      - name: "🛡️ Anti-bot regression gate (P94+)"
-        run: node tools/ci/anti-bot-regression-gate.js
-
-      - name: "🛡️ P2138 sacred-couple matrix gate"
-        run: node tools/ci/p2138-sacred-couple-matrix-gate.js
+      # P2906: run through the shared rules-gates action (scripts/ci/rules-gates.js), same gates, same order.
+      - name: "🛡️ Anti-bot regression gate (P94+) + P2138 sacred-couple matrix gate (shared rules-gates)"
+        uses: ./.github/actions/rules-gates
+        with:
+          only: anti-bot,p2138
 
       # P2521d: auto-fix-all / sync-compose / enrich can leave pretty mfs_db —
       # recompact before family gates so check:p2521 Contre quoi stays green.
@@ -134,7 +134,13 @@ jobs:
               const f=p.join(dir,"driver.flow.compose.json");
               if (!fs.existsSync(f)) { fs.writeFileSync(f, JSON.stringify({triggers:[],conditions:[],actions:[]},null,2)+"\n"); console.log("scaffolded "+f); }
             }'
-          node scripts/gates/native-matrix-gate.js || [ ! -f scripts/gates/native-matrix-gate.js ]
+
+      # P2906: was an inline line of the scaffold step (skipped when the file is missing); the shared
+      # runner skips a missing gate file the same way and fails the job on a real failure.
+      - name: "🛡️ Spec 002 native-matrix gate (shared rules-gates)"
+        uses: ./.github/actions/rules-gates
+        with:
+          only: native-matrix
 
       - name: "🛡️ P244x / P246x / P248x / P249x family gates"
         run: |
@@ -205,17 +211,19 @@ jobs:
       - name: "🔁 Re-inject after conflict resolve"
         run: node tools/ci/re-inject-manual-fixes.js
 
-      - name: "🛡️ Anti-bot gate (post-enrich)"
-        run: node tools/ci/anti-bot-regression-gate.js --strip
+      - name: "🛡️ Anti-bot gate (post-enrich, --strip, shared rules-gates)"
+        uses: ./.github/actions/rules-gates
+        with:
+          only: anti-bot
+          strip: 'true'
 
       - name: "🛡️ P217 fork harvest sacred-couple gate"
         run: node tools/ci/p217-fork-harvest-gate.js
 
-      - name: "🛡️ P2138 sacred-couple matrix gate"
-        run: node tools/ci/p2138-sacred-couple-matrix-gate.js
-
-      - name: "🛡️ Regression lessons gate (MUST-KEEP fatals)"
-        run: node tools/ci/regression-lessons-gate.js
+      - name: "🛡️ P2138 sacred-couple matrix gate + Regression lessons gate (MUST-KEEP fatals) (shared rules-gates)"
+        uses: ./.github/actions/rules-gates
+        with:
+          only: p2138,regression-lessons
 
       - name: "📧 Gmail/dashboard crash pattern gate (P100)"
         continue-on-error: true
