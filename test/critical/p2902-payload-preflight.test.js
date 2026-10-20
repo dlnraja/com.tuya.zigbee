@@ -65,3 +65,12 @@ test('direct-api-publish refreshes token, dumps raw failed build, runs preflight
   assert.match(s, /dumpFailedBuild/);
   assert.match(s, /runPreflight\(appPath\)/);
 });
+test('double leading slash image path resolves (warn only); UTF-16 JSON is an error', () => {
+  const r = preflight(fixture((app, w) => {
+    app.drivers[0].images.small = '//drivers/a/assets/images/small.png';
+    w('data/u16.json', Buffer.concat([Buffer.from([0xff, 0xfe]), Buffer.from('{}', 'utf16le')]));
+  }));
+  assert.ok(r.warns.some((x) => /double leading slash/.test(x)));
+  assert.ok(r.errors.some((x) => /UTF-16 JSON/.test(x)));
+  assert.ok(!r.errors.some((x) => /points to missing/.test(x)));
+});
