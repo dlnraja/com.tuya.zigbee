@@ -221,6 +221,8 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
+          # P2913: checkouts live in master/ and stable/, so point the npm cache at master's lock file
+          cache-dependency-path: master/package-lock.json
       - name: Apply + commit (gated, [skip ci])
         continue-on-error: true
         env:
