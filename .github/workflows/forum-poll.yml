@@ -97,6 +97,35 @@ jobs:
             ${{ runner.os }}-intel-cache-${{ hashFiles('package-lock.json') }}-
             ${{ runner.os }}-intel-cache-
 
+      # P2909: every new post of every tracked thread past its cursor (data/leads/forum-lastseen.json),
+      # oldest first, pages of 20, bounded per topic and per run; findings -> ledger forum-post:<t>/<n>.
+      # The cursor is committed with the ledger, so a refused commit only means a re-read next run.
+      # WHY(first run 39385108463): runs before the scan/apply steps below, which can leave driver
+      # edits in the tree (compose-sync drift) that made safe-auto-commit refuse this data-only commit.
+      - name: 🧵 Forum catch-up past lastSeen (post by post, ledger)
+        id: forum_catchup
+        continue-on-error: true
+        timeout-minutes: 5
+        run: |
+          # Shared ledger: read cursor + ledger from the newest master so the gated commit rarely conflicts.
+          git pull -q --ff-only origin master || echo "::warning::forum catch-up: could not fast-forward, reading the checkout"
+          node scripts/scanners/forum-catch-up.js \
+            --per-topic=${{ vars.FORUM_CATCHUP_PER_TOPIC || '60' }} \
+            --budget=${{ vars.FORUM_CATCHUP_BUDGET || '240' }} \
+            --satellites=${{ vars.FORUM_CATCHUP_SATELLITES || '8' }}
+
+      - name: Commit forum catch-up cursor + ledger (gated)
+        if: steps.forum_catchup.outcome == 'success'
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node scripts/ci/safe-auto-commit.js --id=forum-ledger --max-per-day=6 \
+            --message="chore(ledger): forum posts past lastSeen" \
+            --paths="data/leads/forum-lastseen.json data/progress/ledger.json"
+
       - name: 🌍 Poll Forum
         id: poll
         run: |
@@ -233,32 +262,6 @@ jobs:
           echo "Policy: SHADOW forum — implement silently, never paste unchecked AI." >> $GITHUB_STEP_SUMMARY
 
       # READ-ONLY: image alts, download URLs, diag UUIDs on public threads. Never posts.
-      # P2909: every new post of every tracked thread past its cursor (data/leads/forum-lastseen.json),
-      # oldest first, pages of 20, bounded per topic and per run; findings -> ledger forum-post:<t>/<n>.
-      # The cursor is committed with the ledger, so a refused commit only means a re-read next run.
-      - name: 🧵 Forum catch-up past lastSeen (post by post, ledger)
-        id: forum_catchup
-        if: always()
-        continue-on-error: true
-        timeout-minutes: 5
-        run: |
-          node scripts/scanners/forum-catch-up.js \
-            --per-topic=${{ vars.FORUM_CATCHUP_PER_TOPIC || '60' }} \
-            --budget=${{ vars.FORUM_CATCHUP_BUDGET || '240' }} \
-            --satellites=${{ vars.FORUM_CATCHUP_SATELLITES || '8' }}
-
-      - name: Commit forum catch-up cursor + ledger (gated)
-        if: steps.forum_catchup.outcome == 'success'
-        continue-on-error: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          node scripts/ci/safe-auto-commit.js --id=forum-ledger --max-per-day=6 \
-            --message="chore(ledger): forum posts past lastSeen" \
-            --paths="data/leads/forum-lastseen.json data/progress/ledger.json"
-
       - name: 🖼️ Forum media / screenshot scan
         if: always()
         continue-on-error: true
