@@ -1,6 +1,6 @@
 # Automation coverage — manual tasks vs free workflows
 
-Updated 2026-10-19 (first written 2026-10-11). Our own wording. Follows `docs/progress/WORKFLOW_AUDIT_2026-10-04.md`.
+Updated 2026-10-20 (first written 2026-10-11). Our own wording. Follows `docs/progress/WORKFLOW_AUDIT_2026-10-04.md`.
 Rule: everything below runs on free GitHub Actions minutes with `GITHUB_TOKEN` (plus the existing
 Gmail/Homey secrets where noted); AI is optional and off by default (`AI_FORCE_LOCAL=true`,
 `AI_ALLOW_PAID=false`), so each workflow still works without AI.
@@ -29,9 +29,11 @@ It edits only its own section of the issue body (no comment, no commit, no publi
 | Case variants | `ensure-case-variants.js` (closed loop, auto-fix, auto-publish, gmail-diag) | 4–6 h | ✅ | |
 | Johan batch comments (incl. closed) | `johan-thread-intel.yml` → `scripts/scanners/johan-canonical-index.js` (`state=all`, closed + duplicates) | daily | ✅ | |
 | Forum ingestion | `forum-poll.yml`, `daily-digest` forum watch (6 topics) | 6×/day + weekdays | ✅ | polite budget, back-off on 429 |
+| Forum posts past lastSeen | `forum-poll.yml` → `scripts/scanners/forum-catch-up.js` (cursor `data/leads/forum-lastseen.json`) | each forum-poll run | ✅ (2026-10-20) | every post past the cursor, pages of 20, ≤60/topic and ≤240/run; sweep threads every run + 8 rotating satellites; ledger `forum-post:<t>/<n>` |
 | Diag emails | `gmail-diagnostics.yml`, `fetch-diags.yml` | 6 h | ✅ (fixed today) | processed-message state now persisted in Actions cache |
-| History sweep (`data/leads/sweep-checkpoint.json`) | `johan-thread-intel.yml` → `scripts/progress/advance-sweep.js` | daily | ✅ | last auto advance 2026-10-11; local forum chunk 2026-10-12 |
-| Rules gates | shared `scripts/ci/rules-gates.js` (+ `.github/actions/rules-gates`), `pr-gate`, `validate`, `code-quality`, `syntax-check`, `forum-poll`, `gmail-diagnostics`, `safe-auto-commit` | every push / auto-commit | ✅ (more callers 2026-10-19) | publish paths + `unified-ci` still hold their own copies |
+| Diag findings → ledger | `gmail-diagnostics.yml` → `scripts/progress/ledger-intake.js diag` | 6 h | ✅ (2026-10-20) | `diag:<hash>`: kind, couples, identities not in a driver, error count, app version; no mail text or sender; rolling queue in the Actions cache |
+| History sweep (`data/leads/sweep-checkpoint.json`) | `johan-thread-intel.yml` → `scripts/progress/advance-sweep.js` | daily | ✅ | Johan issues 15/day; our own repo 15/day since 2026-10-20 (`github.dlnraja.next`); forum 180 posts/topic/day since 2026-10-20 (was 80) |
+| Rules gates | shared `scripts/ci/rules-gates.js` (+ `.github/actions/rules-gates`), `pr-gate`, `validate`, `code-quality`, `syntax-check`, `forum-poll`, `gmail-diagnostics`, `safe-auto-commit`, `auto-fix-and-publish`, `auto-publish-on-push`, `unified-ci`, `publish-stable` | every push / auto-commit | ✅ (all callers 2026-10-20) | `publish-stable` keeps a direct fallback while stable-v5 has no shared runner |
 | Bot triage / monthly scan candidates | `scripts/progress/ingest-bot-candidates.js` → `data/progress/ledger.json` (`lead:<mfr>`, pending) | daily / monthly | ✅ (2026-10-19) | mfr only, nothing placed in a driver; read with `ledger-cli.js next lead` |
 | Homey SDK / tooling watch | `homey-knowledge-refresh.yml` (Mon 05:47 + Thu 09:23 UTC) | weekly | ✅ (2026-10-19) | draft PR with data/docs only; Node bumps are proposals |
 
@@ -101,18 +103,48 @@ It edits only its own section of the issue body (no comment, no commit, no publi
    set to exactly the gates they ran before, under the same conditions (soft stays soft). No gate was
    added or dropped.
 
+## Changes made on 2026-10-20
+
+1. **Last single gate copies moved to the shared action (P2906).** `auto-fix-and-publish`
+   (anti-bot + P2138; native-matrix, which was an inline line of the scaffold step; post-enrich
+   anti-bot with `strip`; P2138 + regression lessons), `auto-publish-on-push` (anti-bot + P2138,
+   flow titleFormatted, regression lessons) and `unified-ci` (regression lessons, anti-bot, P2138,
+   P214, one step each so the order with the other gates is kept) call `.github/actions/rules-gates`
+   with `only:` set to the gates they ran before. Nothing was added or dropped and every step stays
+   hard. `publish-stable` runs on pushes to stable-v5, whose tree has no shared runner yet, so it
+   uses the action only when the checkout has it and keeps the direct scripts as the fallback. The
+   runner now prints the last 200 lines of a failing gate (folded), so logs are as complete as with
+   the old direct steps. The P2749f test accepts the shared `flow-title` step.
+2. **History sweep of our own repo (P2907).** `advance-sweep.js` had only a Johan loop, so
+   `github.dlnraja.next` never left 1. It now also walks `dlnraja/com.tuya.zigbee` (issues and
+   PRs, same title + body + comments classifier, bot comments left out) with its own chunk
+   (`--dl-chunk`, default = `--chunk`, workflow `vars.SWEEP_DL_CHUNK`). Closed threads become
+   done/deferred in the ledger; open threads keep their status (they still need an answer); a done
+   entry is never downgraded. A 404 past the newest number stops the loop without moving the cursor
+   (Johan loop too), so future issues are not skipped. The digest self-check shows both cursors and
+   `swept/last` per forum thread.
+3. **Forum sweep chunk 80 → 180 (P2909).** Same pages of 20 ids 0.9 s apart (under the public
+   Discourse limits) and the same stop on 429/403. A chunk stopped early now also moves `sweptTo`.
+   At 180/day: 140352 catches up in about 9 days, 21313 in about 12, 26439 in about 3.
+4. **Ledger writers (P2908).** `scripts/progress/ledger-intake.js` (shared, additive, bounded,
+   idempotent by findings hash, never touches an entry someone else closed): `gmail-diagnostics`
+   writes `diag:<hash>`, `forum-poll` writes `forum-post:<topic>/<n>` (a post the history sweep
+   already holds as `forum:<t>#<n>` is skipped, and the sweep skips posts the catch-up holds).
+   Both commit through `safe-auto-commit` (`gmail-diag-ledger` max 4/day, `forum-ledger` max 6/day).
+5. **Forum post-by-post past lastSeen (P2909).** `scripts/scanners/forum-catch-up.js` keeps a cursor
+   per topic and reads every post past it, oldest first (see the coverage table). A topic seen for
+   the first time starts 40 posts before its tip; older history stays with the full-history sweep.
+
 ## Remaining gaps
 
-1. Ledger writers: bot triage and the monthly scan now write it (2026-10-19), along with the Johan
-   scanner and `advance-sweep`. Still missing: gmail-diagnostics (`diag:<hash>`), forum-poll
-   (`forum-post:<topic>/<n>`), oss-lan strict-apply.
-2. Forum post-by-post deep harvest beyond `lastSeen` for every thread in the sweep checkpoint;
-   today the digest forum watch reads the newest posts and the sweep stores per-thread `lastPost`.
-3. Single gate copies still left in `auto-fix-and-publish`, `auto-publish-on-push`, `publish-stable`
-   and `unified-ci`. Left alone on 2026-10-19 because another session was changing the publish path
-   the same morning; move them with `only:` in a quiet window.
-4. Draft PR #573 (old knowledge-refresh output with Node 24 edits in 34 workflows) needs closing by the
+1. Ledger writers: still missing in oss-lan strict-apply.
+2. stable-v5 and bastien-home have no shared rules-gates runner; their workflows keep direct gate
+   steps (master `publish-stable.yml` falls back to them). Port the runner + action when those
+   branches next take a CI port.
+3. Draft PR #573 (old knowledge-refresh output with Node 24 edits in 34 workflows) needs closing by the
    owner; until then the 6-day guard makes refresh runs skip (it ages out on 2026-10-25).
+4. Bundled `npm run check:*` lists inside one `run:` step (e.g. `check:flow-titleformatted` in the
+   unified-ci critical-test step) stay as they are: they are part of a family block, not a gate copy.
 
 ## Resume sweep notes (2026-10-12)
 
