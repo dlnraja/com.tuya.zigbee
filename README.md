@@ -33,15 +33,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1568 |
+| **App Version** | v9.0.1570 |
 | **Drivers** | 449 (396 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,841 |
-| **Pairing Variants** | 19,006 (4 case combos per fingerprint) |
+| **Pairing Variants** | 19,002 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 909 |
 | **Flow Cards** | 6,111 |
 | **Unique Capabilities** | 176 |
 | **Native OTA Drivers** | 9 |
-| **Test Suites** | 705 files |
+| **Test Suites** | 707 files |
 | **SVG Icons** | 752 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -51,7 +51,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 2,095 |
+| 1 | `climate_sensor` | 2,091 |
 | 2 | `switch_1gang` | 1,390 |
 | 3 | `curtain_motor` | 1,112 |
 | 4 | `presence_sensor_radar` | 1,003 |
@@ -59,7 +59,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 6 | `generic_tuya` | 581 |
 | 7 | `wall_dimmer_tuya` | 536 |
 | 8 | `device_radiator_valve` | 403 |
-| 9 | `button_wireless_2` | 390 |
+| 9 | `button_wireless_2` | 378 |
 | 10 | `switch_4gang` | 334 |
 | 11 | `switch_3gang` | 313 |
 | 12 | `diy_custom_zigbee` | 306 |
@@ -103,7 +103,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.1568** | v9.0.1567: |
+| **v9.0.1570** | v9.0.1568: |
+| **v9.0.1568** | v9.0.1568: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1567** | v9.0.1567: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1565** | v9.0.1565: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1563** | v9.0.1563: automated publish, manifest sync, and Homey test promotion. |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1558** | v9.0.1558: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1557** | v9.0.1557: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1556** | v9.0.1556: automated publish, manifest sync, and Homey test promotion. |
-| **v9.0.1555** | v9.0.1555: automated publish, manifest sync, and Homey test promotion. |
 
 <!-- CHANGELOG_END -->
 
