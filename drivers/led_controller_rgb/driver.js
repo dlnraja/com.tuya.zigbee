@@ -5,6 +5,7 @@ const { ZigBeeDriver } = require('homey-zigbeedriver');
 // WHY(2026-10-10 publish hold): led_controller_spi_tuya is held out of the Athom payload (any new driver id
 // fails Athom processing, see docs/knowledge/ATHOM_LIMITS.md). Its Gledopto GL-SPI-206P couples are folded
 // here as a variant profile: same capabilities, but the device uses the SPI class (DP61 single coalesced frame).
+// 2026-10-20: the separate driver was removed after a 9/9 AggregateError bisect; this fold is the only home.
 // Contre quoi: SPI controllers paired here would otherwise get the generic RGB DP layout and not respond.
 const SPI_MFRS = new Set(['_tze204_8fffc3kb', '_tze284_gt5al3bl', '_tze28c1000000_gt5al3bl']);
 

@@ -20,18 +20,14 @@ describe('Gledopto GL-SPI-206P', () => {
     assert.strictEqual(dimToDp(0.5), 500);
     assert.strictEqual(dimToDp(1), 1000);
   });
-  it('exact driver carries the couples; led_controller_rgb is the published fold host', () => {
-    const j = compose('led_controller_spi_tuya');
-    assert.deepStrictEqual([...new Set(j.zigbee.manufacturerName.filter((m) => /^_tze/i.test(m)).map((m) => m.toLowerCase()))].sort(), ['_tze204_8fffc3kb', '_tze284_gt5al3bl']);
-    // SPI bisect step 3 (20/10/2026): _TZE28C1000000_gt5al3bl kept on led_controller_rgb only
-    assert.ok(compose('led_controller_rgb').zigbee.manufacturerName.includes('_TZE28C1000000_gt5al3bl'));
-    assert.strictEqual(j.class, 'light');
-    // WHY(fold #3499): spi id held from Athom publish — couples live on led_controller_rgb
-    assert.ok(compose('led_controller_rgb').zigbee.manufacturerName.includes('_TZE204_8fffc3kb'));
-    const rev = JSON.parse(fs.readFileSync(path.join(root, 'data/native-matrix-reviewed-duals.json'), 'utf8')).entries;
-    for (const c of ['_TZE204_8fffc3kb|TS0601', '_TZE284_gt5al3bl|TS0601', '_TZE28C1000000_gt5al3bl|TS0601']) {
-      assert.ok(rev.some((e) => e.couple === c && e.drivers.includes('led_controller_spi_tuya') && e.drivers.includes('led_controller_rgb')), c);
-    }
+  it('led_controller_rgb carries every GL-SPI-206P couple (separate SPI driver removed 20/10/2026)', () => {
+    // WHY: Athom AggregateError 9/9 with led_controller_spi_tuya in the master payload (bisect doc
+    // docs/knowledge/SPI_ATHOM_BISECT_2026-10-19.md); the published fold host keeps all 12 spellings.
+    assert.ok(!fs.existsSync(path.join(root, 'drivers/led_controller_spi_tuya')));
+    const rgb = compose('led_controller_rgb');
+    assert.strictEqual(rgb.class, 'light');
+    assert.deepStrictEqual([...new Set(rgb.zigbee.manufacturerName.filter((m) => /8fffc3kb|gt5al3bl/i.test(m)).map((m) => m.toLowerCase()))].sort(),
+      ['_tze204_8fffc3kb', '_tze284_gt5al3bl', '_tze28c1000000_gt5al3bl']);
   });
 });
 
@@ -53,18 +49,13 @@ describe('Tuya multi-DP single frame (GL-SPI-206P burst guard)', () => {
   it('returns false without any EF00 path (caller falls back per DP)', async () => {
     assert.strictEqual(await sendMultiDp({ zclNode: { endpoints: {} } }, [{ dp: 1, value: true, type: 'bool' }]), false);
   });
-  it('profile lists every manifest capability (no remove/re-add at boot) and brightness_changed is declared', () => {
-    // Class lives in lib/ (fold host led_controller_rgb reuses it); CAPS is the boot profile.
-    // WHY(SPI bisect step 1, 19/10/2026, user-approved): the never-fired brightness_changed card was dropped
-    // to test whether it trips Athom (AggregateError 4/4). Flow compose is the explicit empty form Bastien ships.
+  it('SPI boot profile keeps colour temperature and light mode (no remove/re-add on the rgb host)', () => {
     const src = fs.readFileSync(path.join(root, 'lib/devices/LedControllerSpiTuyaDevice.js'), 'utf8');
     const caps = JSON.parse(src.match(/const CAPS = (\[[^\]]+\])/)[1].replace(/'/g, '"'));
     assert.ok(/capabilities: CAPS/.test(src));
-    for (const c of compose('led_controller_spi_tuya').capabilities) {assert.ok(caps.includes(c), c);}
-    const flow = JSON.parse(fs.readFileSync(path.join(root, 'drivers/led_controller_spi_tuya/driver.flow.compose.json'), 'utf8'));
-    assert.ok(Array.isArray(flow.triggers));
-    assert.deepStrictEqual(flow.triggers, []);
-    assert.deepStrictEqual(flow.conditions || [], []);
-    assert.deepStrictEqual(flow.actions || [], []);
+    for (const c of ['onoff', 'dim', 'light_hue', 'light_saturation', 'light_temperature', 'light_mode']) {
+      assert.ok(caps.includes(c), c);
+      assert.ok(compose('led_controller_rgb').capabilities.includes(c), c);
+    }
   });
 });
