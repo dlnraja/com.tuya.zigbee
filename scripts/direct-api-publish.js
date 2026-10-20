@@ -150,6 +150,7 @@ function ensureArchive() {
   for (const c of candidates) {
     if (fs.existsSync(c)) {
       const sz = fs.statSync(c).size;
+      runPreflight(APP_ROOT);
       if (sz === 0) {
         err(`FATAL: archive ${c} exists but is 0 bytes — build is broken (likely a reserved-name file hung tar-stream).`);
         err('Run: node scripts/maintenance/kill-stray-nulls.cjs --force --dir .homeybuild');
@@ -168,7 +169,27 @@ function ensureArchive() {
   return null;
 }
 
+// P2902: local pre-upload check of the exact payload (paths, names, JSON, images,
+// require closure, duplicate ids, flow args). PAYLOAD_PREFLIGHT=warn downgrades errors.
+function runPreflight(dir) {
+  if (process.env.PAYLOAD_PREFLIGHT === 'off') return;
+  let r;
+  try {
+    r = require('./ci/payload-preflight.cjs').preflight(dir);
+  } catch (e) {
+    log(`WARN: payload preflight could not run: ${e.message}`);
+    return;
+  }
+  log(`[payload-preflight] ${r.files} files, ${r.drivers} drivers, ${r.errors.length} error(s), ${r.warns.length} warning(s)`);
+  r.errors.forEach((e) => err(`  PREFLIGHT ERROR ${e}`));
+  if (r.errors.length && process.env.PAYLOAD_PREFLIGHT !== 'warn') {
+    err('FATAL: payload preflight failed — fix before uploading (Athom would answer processing_failed with no detail).');
+    process.exit(2);
+  }
+}
+
 async function packDirectory(appPath) {
+  runPreflight(appPath);
   const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'homey-direct-publish-'));
   const archivePath = path.join(tmpDir, `${APP_ID}.tar.gz`);
   let appSize = 0;
@@ -199,7 +220,27 @@ async function packDirectory(appPath) {
   return archivePath;
 }
 
-async function pollBuildState(api, token, buildId, { timeoutMs = 180000, intervalMs = 5000 } = {}) {
+const AUTH_EXPIRED_RE = /provided token is invalid|invalid[_ ]token|token (has )?expired|\b401\b|unauthori[sz]ed/i;
+
+// WHY(P2902, runs 39326655463/39334371872): Athom's processing_failed build carries no
+// error/feedback/stateMeta, so `detail={}` told us nothing. Dump every field of the raw
+// build object (long strings cut) to the log and to $RUNNER_TEMP for the artifact.
+function dumpFailedBuild(b, id) {
+  const raw = {};
+  for (const [k, v] of Object.entries(b || {})) {
+    if (typeof v === 'string' && v.length > 600) raw[k] = `${v.slice(0, 600)}…(${v.length} chars)`;
+    else raw[k] = v;
+  }
+  const json = JSON.stringify(raw, null, 2);
+  log(`RAW-BUILD #${id} keys=[${Object.keys(raw).join(',')}]`);
+  log(`RAW-BUILD #${id} body=${json.slice(0, 4000)}`);
+  const dir = process.env.RUNNER_TEMP ? path.join(process.env.RUNNER_TEMP, 'publish-size') : null;
+  if (dir) {
+    try { fs.mkdirSync(dir, { recursive: true }); fs.writeFileSync(path.join(dir, `athom-build-${id}.json`), json); } catch (_e) { /* best effort */ }
+  }
+}
+
+async function pollBuildState(api, token, buildId, { timeoutMs = 180000, intervalMs = 5000, refreshAuth = null } = {}) {
   // homey-api getBuild requires buildId as string (number throws type validation).
   const id = String(buildId);
   const deadline = Date.now() + timeoutMs;
@@ -209,7 +250,11 @@ async function pollBuildState(api, token, buildId, { timeoutMs = 180000, interva
   let consecutiveApiErrors = 0;
   let consecutiveFailurePolls = 0;
   const MAX_API_ERROR_RETRIES = 6;
-  const MAX_FAILURE_POLL_RETRIES = Number(process.env.HOMEY_BUILD_FAILURE_POLL_RETRIES || 5);
+  // P2902: processing_failed has never flipped back to ready in our history; 5 re-polls
+  // (5.5 min) only outlived the delegation token. Two short re-polls are enough.
+  const MAX_FAILURE_POLL_RETRIES = Number(process.env.HOMEY_BUILD_FAILURE_POLL_RETRIES || 2);
+  let authRefreshes = 0;
+  let dumped = false;
   while (Date.now() < deadline) {
     let b;
     try {
@@ -222,6 +267,12 @@ async function pollBuildState(api, token, buildId, { timeoutMs = 180000, interva
       consecutiveApiErrors = 0;
     } catch (apiErr) {
       const msg = String(apiErr?.message || apiErr);
+      if (refreshAuth && AUTH_EXPIRED_RE.test(msg) && authRefreshes < 3) {
+        authRefreshes++;
+        log(`WARN: Athom token rejected while polling #${id} (${msg}) — minting a fresh delegation token (${authRefreshes}/3)`);
+        ({ api, token } = await refreshAuth());
+        continue;
+      }
       if (TRANSIENT_RE.test(msg)) {
         consecutiveApiErrors++;
         const backoff = Math.min(consecutiveApiErrors * 8000, 60000);
@@ -243,10 +294,11 @@ async function pollBuildState(api, token, buildId, { timeoutMs = 180000, interva
     // processing_failed from Athom is often transient server-side — retry before fatal.
     if (FAILURE_STATES.has(state) || b?.error) {
       const detail = JSON.stringify(b?.error || b?.feedback || b?.stateMeta || {});
+      if (!dumped) { dumpFailedBuild(b, id); dumped = true; }
       const isTransientFailure = TRANSIENT_RE.test(detail) || state === 'processing_failed';
       if (isTransientFailure) {
         consecutiveFailurePolls++;
-        const backoff = Math.min(consecutiveFailurePolls * 30000, 90000);
+        const backoff = Math.min(consecutiveFailurePolls * 20000, 40000);
         log(`WARN: Build #${id} state=${state} (transient? ${consecutiveFailurePolls}/${MAX_FAILURE_POLL_RETRIES}) detail=${detail} — waiting ${backoff}ms before re-poll`);
         if (consecutiveFailurePolls <= MAX_FAILURE_POLL_RETRIES) {
           await new Promise((res) => setTimeout(res, backoff));
@@ -432,7 +484,8 @@ async function main() {
     process.exit(2);
   }
 
-  const { api, token } = await buildApi();
+  let { api, token } = await buildApi();
+  const refreshAuth = async () => { ({ api, token } = await buildApi()); return { api, token }; };
 
   const builds = await listBuilds(api, token);
   if (listOnly) return;
@@ -521,12 +574,15 @@ async function main() {
     finalBuild = await pollBuildState(api, token, buildId, {
       timeoutMs: BUILD_POLL_TIMEOUT_MS,
       intervalMs: BUILD_POLL_INTERVAL_MS,
+      refreshAuth,
     });
   } catch (pollErr) {
     // If this build failed but a peer of the same version is already test, soft-exit 0.
     // P2419/P139: also soft-exit when ANY healthy Test tip exists — Athom PF on a
     // newer draft must not red Auto-Publish / trigger bump-loops while users keep tip.
     try {
+      // P2902: the token may have expired during polling — mint a fresh one first.
+      try { await refreshAuth(); } catch (_e) { /* keep old token */ }
       const afterFail = await listBuilds(api, token);
       const peer = softExpectDecision(afterFail, APP_VERSION, { force, excludeBuildId: buildId });
       if (peer.skip && (peer.reason === 'already-test' || peer.reason === 'peer-test-after-failed')) {
