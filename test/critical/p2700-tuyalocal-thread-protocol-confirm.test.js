@@ -32,6 +32,8 @@ delete require.cache[clientPath];
 const TuyaLocalClient = require(clientPath);
 if (cachedClient) require.cache[clientPath] = cachedClient; else delete require.cache[clientPath];
 Module._load = origLoad;
+// P2914: tuyapi is now required lazily on connect, so pin the fake on this fresh class copy.
+TuyaLocalClient.__TuyAPI = FakeTuyAPI;
 
 const tick = () => new Promise((r) => setImmediate(r));
 
