@@ -10,7 +10,7 @@
     {
       "name": "device",
       "type": "device",
-      "filter": "driver_id=switch_1gang|driver_id=switch_2gang|driver_id=switch_3gang|driver_id=switch_4gang|driver_id=plug_smart"
+      "filter": "driver_id=switch_1gang|switch_2gang|switch_3gang|switch_4gang|plug_smart"
     },
     {
       "name": "behavior",
