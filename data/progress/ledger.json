@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-20T07:34:50.459Z",
+ "updated": "2026-10-20T07:39:14.342Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -10252,6 +10252,320 @@
    "link": "https://community.homey.app/t/146735/485",
    "images": 2
   },
+  "forum-post:149230/1": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "cbbdf5efde091b25",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 149230,
+   "post": 1,
+   "author": "Naresh_Kodali",
+   "link": "https://community.homey.app/t/149230/1",
+   "images": 2
+  },
+  "forum-post:149230/2": {
+   "status": "done",
+   "date": "2026-10-20",
+   "hash": "b291ebc2c18ff287",
+   "note": "identities already in a driver",
+   "by": "forum-poll",
+   "topic": 149230,
+   "post": 2,
+   "author": "spknemesis",
+   "link": "https://community.homey.app/t/149230/2",
+   "mfrs": [
+    "_TZE20C_3oycaicw"
+   ],
+   "pids": [
+    "TS0601"
+   ]
+  },
+  "forum-post:149230/3": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "8615dc1b6a5cb5a6",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 149230,
+   "post": 3,
+   "author": "Naresh_Kodali",
+   "link": "https://community.homey.app/t/149230/3",
+   "images": 2
+  },
+  "forum-post:150690/1": {
+   "status": "done",
+   "date": "2026-10-20",
+   "hash": "46db7d0aed8a0dce",
+   "note": "identities already in a driver",
+   "by": "forum-poll",
+   "topic": 150690,
+   "post": 1,
+   "author": "Relax_swe",
+   "link": "https://community.homey.app/t/150690/1",
+   "mfrs": [
+    "_TZ3000_zgyzgdua",
+    "_TZ3000_wkai4ga5",
+    "_TZ3000_gbm10jnj"
+   ],
+   "pids": [
+    "TS0044",
+    "TS0043"
+   ]
+  },
+  "forum-post:150690/10": {
+   "status": "done",
+   "date": "2026-10-20",
+   "hash": "0130a36a775c8a41",
+   "note": "identities already in a driver",
+   "by": "forum-poll",
+   "topic": 150690,
+   "post": 10,
+   "author": "Relax_swe",
+   "link": "https://community.homey.app/t/150690/10",
+   "mfrs": [
+    "_TZ3000_w8jwkczz"
+   ],
+   "pids": [
+    "TS0043"
+   ]
+  },
+  "forum-post:150690/11": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "8f14389b9cbdb6ca",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 150690,
+   "post": 11,
+   "author": "MLong",
+   "link": "https://community.homey.app/t/150690/11",
+   "images": 1
+  },
+  "forum-post:150690/13": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "a5807ed63237f619",
+   "note": "needs a closer look",
+   "by": "forum-poll",
+   "topic": 150690,
+   "post": 13,
+   "author": "Relax_swe",
+   "link": "https://community.homey.app/t/150690/13"
+  },
+  "forum-post:150690/14": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "f6caf40180540762",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 150690,
+   "post": 14,
+   "author": "Relax_swe",
+   "link": "https://community.homey.app/t/150690/14",
+   "images": 2
+  },
+  "forum-post:150690/15": {
+   "status": "done",
+   "date": "2026-10-20",
+   "hash": "2e7b503dd17439e8",
+   "note": "identities already in a driver",
+   "by": "forum-poll",
+   "topic": 150690,
+   "post": 15,
+   "author": "Chris_M",
+   "link": "https://community.homey.app/t/150690/15",
+   "mfrs": [
+    "_TZ3000_22ugzkme"
+   ],
+   "pids": [
+    "TS0041"
+   ]
+  },
+  "forum-post:150690/16": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "b8be1da05c040c7a",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 150690,
+   "post": 16,
+   "author": "Relax_swe",
+   "link": "https://community.homey.app/t/150690/16",
+   "images": 2
+  },
+  "forum-post:150690/2": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "270822698511e81e",
+   "note": "needs a closer look",
+   "by": "forum-poll",
+   "topic": 150690,
+   "post": 2,
+   "author": "MLong",
+   "link": "https://community.homey.app/t/150690/2"
+  },
+  "forum-post:150690/22": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "1a5384b0dad63e84",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 150690,
+   "post": 22,
+   "author": "Alex_Die_Grosse",
+   "link": "https://community.homey.app/t/150690/22",
+   "images": 1
+  },
+  "forum-post:150690/26": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "48cbe722f5e833ef",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 150690,
+   "post": 26,
+   "author": "Relax_swe",
+   "link": "https://community.homey.app/t/150690/26",
+   "images": 2
+  },
+  "forum-post:150690/28": {
+   "status": "done",
+   "date": "2026-10-20",
+   "hash": "071bafa4914e5767",
+   "note": "identities already in a driver",
+   "by": "forum-poll",
+   "topic": 150690,
+   "post": 28,
+   "author": "SteampunkLolcat",
+   "link": "https://community.homey.app/t/150690/28",
+   "mfrs": [
+    "_TZ3000_xabckq1v"
+   ],
+   "pids": [
+    "TS004F"
+   ]
+  },
+  "forum-post:150690/30": {
+   "status": "done",
+   "date": "2026-10-20",
+   "hash": "19bfce063717fdcb",
+   "note": "identities already in a driver",
+   "by": "forum-poll",
+   "topic": 150690,
+   "post": 30,
+   "author": "SteampunkLolcat",
+   "link": "https://community.homey.app/t/150690/30",
+   "mfrs": [
+    "_TZ3000_xabckq1v"
+   ],
+   "pids": [
+    "TS004F"
+   ]
+  },
+  "forum-post:150690/31": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "2a9de40c8d97b762",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 150690,
+   "post": 31,
+   "author": "Thomas_Knudsen",
+   "link": "https://community.homey.app/t/150690/31",
+   "images": 1
+  },
+  "forum-post:150690/33": {
+   "status": "done",
+   "date": "2026-10-20",
+   "hash": "a17a8dad07e2497b",
+   "note": "identities already in a driver",
+   "by": "forum-poll",
+   "topic": 150690,
+   "post": 33,
+   "author": "Graeme_Hindmarsh",
+   "link": "https://community.homey.app/t/150690/33",
+   "mfrs": [
+    "_TZ3000_kfu8zapd",
+    "_TZ3000_zgyzgdua",
+    "_TZ3000_wkai4ga5"
+   ],
+   "pids": [
+    "TS0044"
+   ]
+  },
+  "forum-post:150690/34": {
+   "status": "done",
+   "date": "2026-10-20",
+   "hash": "2efe7dd83f113f46",
+   "note": "identities already in a driver",
+   "by": "forum-poll",
+   "topic": 150690,
+   "post": 34,
+   "author": "Primordial",
+   "link": "https://community.homey.app/t/150690/34",
+   "mfrs": [
+    "_TZ3000_kfu8zapd"
+   ]
+  },
+  "forum-post:150690/35": {
+   "status": "done",
+   "date": "2026-10-20",
+   "hash": "c15afa372bb409cc",
+   "note": "identities already in a driver",
+   "by": "forum-poll",
+   "topic": 150690,
+   "post": 35,
+   "author": "Primordial",
+   "link": "https://community.homey.app/t/150690/35",
+   "mfrs": [
+    "_TZ3000_kfu8zapd"
+   ],
+   "pids": [
+    "TS0044"
+   ]
+  },
+  "forum-post:150690/36": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "e61b015a50213e1d",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 150690,
+   "post": 36,
+   "author": "SergeP",
+   "link": "https://community.homey.app/t/150690/36",
+   "images": 1
+  },
+  "forum-post:150690/39": {
+   "status": "done",
+   "date": "2026-10-20",
+   "hash": "c323fdff16146293",
+   "note": "identities already in a driver",
+   "by": "forum-poll",
+   "topic": 150690,
+   "post": 39,
+   "author": "Jocke_Wallen",
+   "link": "https://community.homey.app/t/150690/39",
+   "mfrs": [
+    "_TZ3000_kfu8zapd"
+   ],
+   "pids": [
+    "TS0044"
+   ]
+  },
+  "forum-post:150690/40": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "d2b01d030b546855",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 150690,
+   "post": 40,
+   "author": "SergeP",
+   "link": "https://community.homey.app/t/150690/40",
+   "images": 2
+  },
   "forum-post:154077/500": {
    "status": "pending",
    "date": "2026-10-20",
@@ -10275,6 +10589,570 @@
    "author": "Mariomark1541",
    "link": "https://community.homey.app/t/154077/504",
    "images": 1
+  },
+  "forum-post:154092/10": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "ec1a7e94867c44a8",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 154092,
+   "post": 10,
+   "author": "Michael_Hadjicosta",
+   "link": "https://community.homey.app/t/154092/10",
+   "pids": [
+    "TS0601"
+   ],
+   "images": 1
+  },
+  "forum-post:154092/13": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "002b44958a53e0ac",
+   "note": "needs a closer look",
+   "by": "forum-poll",
+   "topic": 154092,
+   "post": 13,
+   "author": "Michael_Hadjicosta",
+   "link": "https://community.homey.app/t/154092/13"
+  },
+  "forum-post:154092/17": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "8f6dbea0c48d9945",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 154092,
+   "post": 17,
+   "author": "Michael_Hadjicosta",
+   "link": "https://community.homey.app/t/154092/17",
+   "images": 1
+  },
+  "forum-post:154092/25": {
+   "status": "done",
+   "date": "2026-10-20",
+   "hash": "e010940d207eb56d",
+   "note": "identities already in a driver",
+   "by": "forum-poll",
+   "topic": 154092,
+   "post": 25,
+   "author": "JOSE_ANGEL_RUIZ_JIME",
+   "link": "https://community.homey.app/t/154092/25",
+   "mfrs": [
+    "_TZE200_m6lwazh9"
+   ],
+   "pids": [
+    "TS0601"
+   ]
+  },
+  "forum-post:154092/26": {
+   "status": "done",
+   "date": "2026-10-20",
+   "hash": "2b3723d3e00b13c5",
+   "note": "identities already in a driver",
+   "by": "forum-poll",
+   "topic": 154092,
+   "post": 26,
+   "author": "Zemismart_Official",
+   "link": "https://community.homey.app/t/154092/26",
+   "mfrs": [
+    "_TZE200_m6lwazh9"
+   ],
+   "pids": [
+    "TS0601"
+   ]
+  },
+  "forum-post:154092/28": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "555bf17d53856bb5",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 154092,
+   "post": 28,
+   "author": "Zemismart_Official",
+   "link": "https://community.homey.app/t/154092/28",
+   "images": 2
+  },
+  "forum-post:154092/29": {
+   "status": "done",
+   "date": "2026-10-20",
+   "hash": "b5d7c6984d6890fa",
+   "note": "identities already in a driver",
+   "by": "forum-poll",
+   "topic": 154092,
+   "post": 29,
+   "author": "Marcelo_Leite",
+   "link": "https://community.homey.app/t/154092/29",
+   "mfrs": [
+    "_TZE200_68nvbio9"
+   ],
+   "pids": [
+    "TS0601"
+   ]
+  },
+  "forum-post:154092/30": {
+   "status": "done",
+   "date": "2026-10-20",
+   "hash": "17d8a6a7628885c7",
+   "note": "identities already in a driver",
+   "by": "forum-poll",
+   "topic": 154092,
+   "post": 30,
+   "author": "Henk_Renting",
+   "link": "https://community.homey.app/t/154092/30",
+   "mfrs": [
+    "_TZE200_cf1sl3tj"
+   ],
+   "pids": [
+    "TS0601"
+   ]
+  },
+  "forum-post:154092/37": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "e1122a929c50eb52",
+   "note": "needs a closer look",
+   "by": "forum-poll",
+   "topic": 154092,
+   "post": 37,
+   "author": "Stefan_Persson2",
+   "link": "https://community.homey.app/t/154092/37",
+   "pids": [
+    "TS0601"
+   ]
+  },
+  "forum-post:154092/43": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "6e283ad1bfb2a8cb",
+   "note": "needs a closer look",
+   "by": "forum-poll",
+   "topic": 154092,
+   "post": 43,
+   "author": "Stefan_Persson2",
+   "link": "https://community.homey.app/t/154092/43",
+   "pids": [
+    "TS0601"
+   ]
+  },
+  "forum-post:154092/46": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "1b54d3b2164296f1",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 154092,
+   "post": 46,
+   "author": "smarthomesven",
+   "link": "https://community.homey.app/t/154092/46",
+   "images": 1
+  },
+  "forum-post:154092/48": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "de19ef56ebcd66e4",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 154092,
+   "post": 48,
+   "author": "Zemismart_Official",
+   "link": "https://community.homey.app/t/154092/48",
+   "images": 2
+  },
+  "forum-post:155212/1": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "0252abfee89a4ad9",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 155212,
+   "post": 1,
+   "author": "Zemismart_Official",
+   "link": "https://community.homey.app/t/155212/1",
+   "images": 3
+  },
+  "forum-post:155212/13": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "d2267f0516600c4c",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 155212,
+   "post": 13,
+   "author": "Kaspars_Smits",
+   "link": "https://community.homey.app/t/155212/13",
+   "images": 1
+  },
+  "forum-post:155212/16": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "dc0f46a06eb74c36",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 155212,
+   "post": 16,
+   "author": "smarthomesven",
+   "link": "https://community.homey.app/t/155212/16",
+   "images": 1
+  },
+  "forum-post:155212/19": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "0b6122d5d58803fa",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 155212,
+   "post": 19,
+   "author": "smarthomesven",
+   "link": "https://community.homey.app/t/155212/19",
+   "images": 2
+  },
+  "forum-post:155212/20": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "0f9904699af66c1b",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 155212,
+   "post": 20,
+   "author": "Kaspars_Smits",
+   "link": "https://community.homey.app/t/155212/20",
+   "images": 1
+  },
+  "forum-post:155212/22": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "75a6b24e749d4f24",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 155212,
+   "post": 22,
+   "author": "Kaspars_Smits",
+   "link": "https://community.homey.app/t/155212/22",
+   "images": 1
+  },
+  "forum-post:155212/24": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "8f72867daba44a81",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 155212,
+   "post": 24,
+   "author": "Kaspars_Smits",
+   "link": "https://community.homey.app/t/155212/24",
+   "images": 1
+  },
+  "forum-post:155212/25": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "f35aa3334ca9b44b",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 155212,
+   "post": 25,
+   "author": "Kaspars_Smits",
+   "link": "https://community.homey.app/t/155212/25",
+   "images": 1
+  },
+  "forum-post:155212/8": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "54319db51d32106a",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 155212,
+   "post": 8,
+   "author": "smarthomesven",
+   "link": "https://community.homey.app/t/155212/8",
+   "images": 3
+  },
+  "forum-post:155212/9": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "303da11d7844df02",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 155212,
+   "post": 9,
+   "author": "Kaspars_Smits",
+   "link": "https://community.homey.app/t/155212/9",
+   "images": 2
+  },
+  "forum-post:156967/101": {
+   "status": "done",
+   "date": "2026-10-20",
+   "hash": "47eae08a3b040c66",
+   "note": "identities already in a driver",
+   "by": "forum-poll",
+   "topic": 156967,
+   "post": 101,
+   "author": "ernesto_pons_montoro",
+   "link": "https://community.homey.app/t/156967/101",
+   "mfrs": [
+    "_TZ3210_5rta89nj"
+   ],
+   "pids": [
+    "TS0601"
+   ]
+  },
+  "forum-post:156967/102": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "712907273fa8676a",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 156967,
+   "post": 102,
+   "author": "SergeP",
+   "link": "https://community.homey.app/t/156967/102",
+   "images": 2
+  },
+  "forum-post:156967/103": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "b069ef686f407e0f",
+   "note": "needs a closer look",
+   "by": "forum-poll",
+   "topic": 156967,
+   "post": 103,
+   "author": "SunBeech",
+   "link": "https://community.homey.app/t/156967/103"
+  },
+  "forum-post:156967/104": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "2c6608db809264a5",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 156967,
+   "post": 104,
+   "author": "SergeP",
+   "link": "https://community.homey.app/t/156967/104",
+   "images": 2
+  },
+  "forum-post:156967/106": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "25194861f8a6f8af",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 156967,
+   "post": 106,
+   "author": "Drako74",
+   "link": "https://community.homey.app/t/156967/106",
+   "images": 1
+  },
+  "forum-post:156967/108": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "08258d2df0d20ad1",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 156967,
+   "post": 108,
+   "author": "Drako74",
+   "link": "https://community.homey.app/t/156967/108",
+   "images": 1
+  },
+  "forum-post:156967/110": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "4e462b78d66dd30c",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 156967,
+   "post": 110,
+   "author": "Drako74",
+   "link": "https://community.homey.app/t/156967/110",
+   "images": 1
+  },
+  "forum-post:156967/112": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "eacaa2aa738eb7aa",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 156967,
+   "post": 112,
+   "author": "SergeP",
+   "link": "https://community.homey.app/t/156967/112",
+   "images": 2
+  },
+  "forum-post:156967/115": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "13883aed29a1d66f",
+   "note": "needs a closer look",
+   "by": "forum-poll",
+   "topic": 156967,
+   "post": 115,
+   "author": "Drako74",
+   "link": "https://community.homey.app/t/156967/115"
+  },
+  "forum-post:156967/116": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "cb0f8c44eb76258a",
+   "note": "needs a closer look",
+   "by": "forum-poll",
+   "topic": 156967,
+   "post": 116,
+   "author": "Marcelo_Leite",
+   "link": "https://community.homey.app/t/156967/116"
+  },
+  "forum-post:156967/117": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "8a78637bdc90ebcc",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 156967,
+   "post": 117,
+   "author": "SergeP",
+   "link": "https://community.homey.app/t/156967/117",
+   "images": 2
+  },
+  "forum-post:156967/119": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "eb384f5fe8e8cfea",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 156967,
+   "post": 119,
+   "author": "SergeP",
+   "link": "https://community.homey.app/t/156967/119",
+   "images": 2
+  },
+  "forum-post:156967/120": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "8ecc401f2f2fda83",
+   "note": "needs a closer look",
+   "by": "forum-poll",
+   "topic": 156967,
+   "post": 120,
+   "author": "Marcelo_Leite",
+   "link": "https://community.homey.app/t/156967/120"
+  },
+  "forum-post:156967/123": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "3c496794138fd9e4",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 156967,
+   "post": 123,
+   "author": "Drako74",
+   "link": "https://community.homey.app/t/156967/123",
+   "images": 1
+  },
+  "forum-post:156967/124": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "0b81de3ab4f75539",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 156967,
+   "post": 124,
+   "author": "SergeP",
+   "link": "https://community.homey.app/t/156967/124",
+   "images": 2
+  },
+  "forum-post:156967/125": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "d83a4e1f88f6dbea",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 156967,
+   "post": 125,
+   "author": "SunBeech",
+   "link": "https://community.homey.app/t/156967/125",
+   "images": 1
+  },
+  "forum-post:156967/132": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "85871a688c22468e",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 156967,
+   "post": 132,
+   "author": "SergeP",
+   "link": "https://community.homey.app/t/156967/132",
+   "images": 2
+  },
+  "forum-post:156967/94": {
+   "status": "done",
+   "date": "2026-10-20",
+   "hash": "0c87c27a18b2bb03",
+   "note": "identities already in a driver",
+   "by": "forum-poll",
+   "topic": 156967,
+   "post": 94,
+   "author": "Marcelo_Leite",
+   "link": "https://community.homey.app/t/156967/94",
+   "mfrs": [
+    "_TZE204_t1blo2bj"
+   ],
+   "pids": [
+    "TS0601"
+   ]
+  },
+  "forum-post:158754/1": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "bba732dbf629491b",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 158754,
+   "post": 1,
+   "author": "Johan_Kluijfhout",
+   "link": "https://community.homey.app/t/158754/1",
+   "images": 2
+  },
+  "forum-post:158757/2": {
+   "status": "done",
+   "date": "2026-10-20",
+   "hash": "5161a602c7b1b79f",
+   "note": "identities already in a driver",
+   "by": "forum-poll",
+   "topic": 158757,
+   "post": 2,
+   "author": "Gabriel_Pedrosa_Mach",
+   "link": "https://community.homey.app/t/158757/2",
+   "mfrs": [
+    "_TZ3218_t9ynfz4x"
+   ],
+   "pids": [
+    "TS0225"
+   ]
+  },
+  "forum-post:158757/6": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "ab1dec0ca08d1e9f",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 158757,
+   "post": 6,
+   "author": "Gabriel_Pedrosa_Mach",
+   "link": "https://community.homey.app/t/158757/6",
+   "images": 2
+  },
+  "forum-post:158757/7": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "b30a41f5fc365a71",
+   "note": "needs a closer look",
+   "by": "forum-poll",
+   "topic": 158757,
+   "post": 7,
+   "author": "SunBeech",
+   "link": "https://community.homey.app/t/158757/7"
   },
   "forum-post:21313/2780": {
    "status": "pending",
@@ -11180,6 +12058,201 @@
    "pids": [
     "TS0601"
    ]
+  },
+  "forum-post:99614/285": {
+   "status": "done",
+   "date": "2026-10-20",
+   "hash": "a5abb4d882ae87d0",
+   "note": "identities already in a driver",
+   "by": "forum-poll",
+   "topic": 99614,
+   "post": 285,
+   "author": "Antek_Tek",
+   "link": "https://community.homey.app/t/99614/285",
+   "mfrs": [
+    "_TZ3000_v5498kdm"
+   ],
+   "pids": [
+    "TS0001"
+   ]
+  },
+  "forum-post:99614/286": {
+   "status": "done",
+   "date": "2026-10-20",
+   "hash": "3225490cc059ad98",
+   "note": "identities already in a driver",
+   "by": "forum-poll",
+   "topic": 99614,
+   "post": 286,
+   "author": "SergeP",
+   "link": "https://community.homey.app/t/99614/286",
+   "mfrs": [
+    "_TZ3000_v5498kdm"
+   ],
+   "pids": [
+    "TS0001"
+   ],
+   "images": 2
+  },
+  "forum-post:99614/290": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "eec63ce6eff44ccf",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 99614,
+   "post": 290,
+   "author": "SergeP",
+   "link": "https://community.homey.app/t/99614/290",
+   "images": 2
+  },
+  "forum-post:99614/296": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "afcbbf225f9a004a",
+   "note": "needs a closer look",
+   "by": "forum-poll",
+   "topic": 99614,
+   "post": 296,
+   "author": "Cedric_Hubert",
+   "link": "https://community.homey.app/t/99614/296"
+  },
+  "forum-post:99614/301": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "cf998cd9707d5533",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 99614,
+   "post": 301,
+   "author": "Didier_Pasquet",
+   "link": "https://community.homey.app/t/99614/301",
+   "images": 1
+  },
+  "forum-post:99614/302": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "e62747604f6e419d",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 99614,
+   "post": 302,
+   "author": "Didier_Pasquet",
+   "link": "https://community.homey.app/t/99614/302",
+   "images": 1
+  },
+  "forum-post:99614/303": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "ef7cd5c758efbd54",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 99614,
+   "post": 303,
+   "author": "SergeP",
+   "link": "https://community.homey.app/t/99614/303",
+   "images": 2
+  },
+  "forum-post:99614/304": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "1d0cc0beb0ffdac9",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 99614,
+   "post": 304,
+   "author": "Didier_Pasquet",
+   "link": "https://community.homey.app/t/99614/304",
+   "images": 3
+  },
+  "forum-post:99614/306": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "42beda2ed4b9f23b",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 99614,
+   "post": 306,
+   "author": "Didier_Pasquet",
+   "link": "https://community.homey.app/t/99614/306",
+   "images": 1
+  },
+  "forum-post:99614/315": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "ad6a7be02f5e9df3",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 99614,
+   "post": 315,
+   "author": "Serge62",
+   "link": "https://community.homey.app/t/99614/315",
+   "images": 1
+  },
+  "forum-post:99614/317": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "eb67101c7131e903",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 99614,
+   "post": 317,
+   "author": "Serge62",
+   "link": "https://community.homey.app/t/99614/317",
+   "images": 1
+  },
+  "forum-post:99614/318": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "72a8ffd928dd88a4",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 99614,
+   "post": 318,
+   "author": "Serge62",
+   "link": "https://community.homey.app/t/99614/318",
+   "images": 2
+  },
+  "forum-post:99614/321": {
+   "status": "done",
+   "date": "2026-10-20",
+   "hash": "c20da6ac283c9775",
+   "note": "identities already in a driver",
+   "by": "forum-poll",
+   "topic": 99614,
+   "post": 321,
+   "author": "Mates1134",
+   "link": "https://community.homey.app/t/99614/321",
+   "mfrs": [
+    "_TZE284_wtikaxzs"
+   ],
+   "pids": [
+    "TS0601"
+   ]
+  },
+  "forum-post:99614/323": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "ffacdfdf8cd77915",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 99614,
+   "post": 323,
+   "author": "SergeP",
+   "link": "https://community.homey.app/t/99614/323",
+   "images": 3
+  },
+  "forum-post:99614/324": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "1daf7369e8921012",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 99614,
+   "post": 324,
+   "author": "SergeP",
+   "link": "https://community.homey.app/t/99614/324",
+   "images": 3
   },
   "forum:140352#101": {
    "status": "done",
