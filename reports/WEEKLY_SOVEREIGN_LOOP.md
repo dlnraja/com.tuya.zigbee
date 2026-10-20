@@ -1,7 +1,7 @@
 # Weekly Sovereign Loop
 
-Generated: 2026-10-11T13:02:00.853Z
-Version: **9.0.1425** · Branch: `master`
+Generated: 2026-10-20T13:17:24.560Z
+Version: **9.0.1571** · Branch: `master`
 
 ## Quota policy
 - Cursor Automation = thin weekly brain (read report → bounded reliability fixes)
@@ -40,37 +40,39 @@ Version: **9.0.1425** · Branch: `master`
 - ❌ `self-improve.yml` — workflow not found
 
 ## Recent workflow runs
-- [in_progress] Weekly Sovereign Loop (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/38141321174
-- [success] Autonomous Verification (P37) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/38141176271
-- [success] Secure Notifications (Enhanced) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/38140809525
-- [success] Secure Notifications (Enhanced) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/38140677820
-- [cancelled] Secure Notifications (Enhanced) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/38140673373
-- [success] 🛡️ Unified CI/CD Orchestrator (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/38140540202
-- [success] code-quality (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/38140540054
-- [success] Node 22 runtime tests (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/38140540041
-- [success] 🤖 Auto-Fix + Publish Pipeline (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/38140540016
-- [success] Deploy Device Finder to GitHub Pages (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/38140540012
+- [in_progress] Weekly Sovereign Loop (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/39428679181
+- [success] 🔍 Validate Homey App (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/39428676268
+- [success] Gmail Auth Health Check (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/39427945096
+- [success] Tuya Deep Diagnostics Recovery (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/39427194903
+- [success] 🔇 Forum PM read-only (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/39427068453
+- [success] 🤖 Daily Digest (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/39426766955
+- [success] Autonomous Verification (P37) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/39425266548
+- [success] 🤖 Daily Digest (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/39424581376
+- [success] 🤖 Daily Digest (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/39421003474
+- [success] Autonomous Verification (P37) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/39418565348
 
 ## Publish / validate related
-- [success] 🤖 Auto-Fix + Publish Pipeline — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/38140540016
-- [in_progress] Auto-Publish on Push — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/38140540008
-- [success] Homey App Validate (all levels) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/38140539968
-- [success] 🤖 Auto-Fix + Publish Pipeline — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/38140030142
+- [success] 🔍 Validate Homey App — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/39428676268
+- [success] Fetch Homey Diagnostics — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/39417889736
 
 ## Open issues
+- #571 [Bug] QT-07S (_TZE284_myd45weu / TS0601) remains unknown and Configure keeps loading — v9.0.1445 Test
+- #570 [soil_sensor] Bug: AOYAN AY-303Z soil sensor not recognized despite fingerprint in soil_sensor driver
 - #560 Bug report - TRV06 Smart Zigbee Radiator Valve - isn't working
 - #559 Smartplug
 - #557 🤖 Daily digest
 - #550 Bug report - [Short description]
 
 ## Open PRs
-- none
+- #573 (draft) Weekly Homey knowledge/tooling refresh 2026-10-19 — https://github.com/dlnraja/com.tuya.zigbee/pull/573
 
 ## Cursor brain — do this week (max)
 - **P1**: Human issues remain open — verify FP/runtime fixes silently; do not mass-close needs-maintainer.
-  - #560 Bug report - TRV06 Smart Zigbee Radiator Valve - isn't working · #550 Bug report - [Short description]
+  - #571 [Bug] QT-07S (_TZE284_myd45weu / TS0601) remains unknown and Configure keeps loading — v9.0.1445 Test · #570 [soil_sensor] Bug: AOYAN AY-303Z soil sensor not recognized despite fingerprint in soil_sensor driver · #560 Bug report - TRV06 Smart Zigbee Radiator Valve - isn't working · #550 Bug report - [Short description]
 - **P0**: Local gates failing: dualClaim — fix before any publish.
 - **P1**: Some workflow dispatches failed (check GH_PAT / workflow names): mega-crawl.yml, gmail-diagnostics.yml, forum-poll.yml, auto-bot-issue-triage.yml, publish-diagnose.yml, safe-sync-stable.yml, self-improve.yml
+- **P2**: Only draft PRs open — ignore unless reliability-related.
+  - https://github.com/dlnraja/com.tuya.zigbee/pull/573
 
 ## Hard stops
 - Do NOT paste unchecked AI to Homey forum
