@@ -1,22 +1,18 @@
 {
-  "generated": "2026-10-20T07:14:46.149Z",
+  "generated": "2026-10-20T08:53:01.464Z",
   "source": "data/leads/johan-canonical-index.json",
   "repo": "JohanBendz/com.tuya.zigbee",
   "note": "Acceptance view, structured fields only. missing-couple = identity cited upstream with no home driver here (verify real hardware before adding, W4). behaviour = needs physical test, not a pairing gap.",
   "summary": {
     "threads": 562,
-    "covered": 442,
-    "behaviour": 93,
-    "missing-couple": 9,
+    "covered": 445,
+    "behaviour": 96,
+    "missing-couple": 3,
     "dual-couple": 18,
-    "missingCouples": 6
+    "missingCouples": 2
   },
   "missingCouples": [
-    "_TYZB01_0aps0h1r|TS0212",
-    "_TYZB01_o7m83470|TS0212",
-    "_TZ3000_5ftkaulg|TS0011",
     "_TZ3000_amal63is|TS0002",
-    "_TZ3000_ee8nrt2l|TS0044",
     "_TZB210_rkgngb5o|EP1"
   ],
   "rows": [
@@ -1532,7 +1528,9 @@
         {
           "mfr": "_TZ3000_5ftkaulg",
           "pid": "TS0011",
-          "drivers": []
+          "drivers": [
+            "switch_1gang"
+          ]
         },
         {
           "mfr": "_TZ3000_aetquff4",
@@ -1570,7 +1568,7 @@
           ]
         }
       ],
-      "acceptance": "missing-couple"
+      "acceptance": "behaviour"
     },
     {
       "n": 423,
@@ -2021,15 +2019,19 @@
         {
           "mfr": "_TYZB01_o7m83470",
           "pid": "TS0212",
-          "drivers": []
+          "drivers": [
+            "co_sensor"
+          ]
         },
         {
           "mfr": "_TYZB01_0aps0h1r",
           "pid": "TS0212",
-          "drivers": []
+          "drivers": [
+            "co_sensor"
+          ]
         }
       ],
-      "acceptance": "missing-couple"
+      "acceptance": "behaviour"
     },
     {
       "n": 515,
@@ -4449,7 +4451,9 @@
         {
           "mfr": "_TZ3000_ee8nrt2l",
           "pid": "TS0044",
-          "drivers": []
+          "drivers": [
+            "button_wireless_4"
+          ]
         },
         {
           "mfr": "_TZ3000_kfu8zapd",
@@ -4459,7 +4463,7 @@
           ]
         }
       ],
-      "acceptance": "missing-couple"
+      "acceptance": "behaviour"
     },
     {
       "n": 942,
@@ -4876,15 +4880,19 @@
         {
           "mfr": "_TYZB01_0aps0h1r",
           "pid": "TS0212",
-          "drivers": []
+          "drivers": [
+            "co_sensor"
+          ]
         },
         {
           "mfr": "_TYZB01_o7m83470",
           "pid": "TS0212",
-          "drivers": []
+          "drivers": [
+            "co_sensor"
+          ]
         }
       ],
-      "acceptance": "missing-couple"
+      "acceptance": "covered"
     },
     {
       "n": 980,
@@ -7027,10 +7035,12 @@
         {
           "mfr": "_TZ3000_ee8nrt2l",
           "pid": "TS0044",
-          "drivers": []
+          "drivers": [
+            "button_wireless_4"
+          ]
         }
       ],
-      "acceptance": "missing-couple"
+      "acceptance": "covered"
     },
     {
       "n": 1160,
@@ -7310,10 +7320,12 @@
         {
           "mfr": "_TZ3000_5ftkaulg",
           "pid": "TS0011",
-          "drivers": []
+          "drivers": [
+            "switch_1gang"
+          ]
         }
       ],
-      "acceptance": "missing-couple"
+      "acceptance": "covered"
     },
     {
       "n": 1180,
