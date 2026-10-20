@@ -47,3 +47,11 @@ the soft-expect check, the healthy-Test check and the classification for the siz
 ## Next signal
 The next PF writes `RAW-BUILD` keys to the log. If Athom ever returns a reason field, it will
 be there. Test: `test/critical/p2902-payload-preflight.test.js`.
+
+## Found by the preflight on its first stable run (39347599049, 20/10 ~02:40 Paris)
+- stable `data/sacred-couple-catch-all.json` was **UTF-16 LE with BOM** in the uploaded payload, so a
+  strict JSON parser fails on it. It is now converted to UTF-8 with the same content. The preflight
+  rejects UTF-16 JSON.
+- stable driver images are declared as `//drivers/<id>/assets/images/*.png` (double leading slash).
+  The files exist, so this is a warning only. The first preflight version flagged it wrongly and blocked
+  that run before upload, so no Athom version was spent.
