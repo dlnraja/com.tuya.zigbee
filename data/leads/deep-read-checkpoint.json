@@ -638,7 +638,22 @@
       627,
       628,
       629,
-      630
+      630,
+      631,
+      632,
+      633,
+      634,
+      635,
+      636,
+      637,
+      638,
+      639,
+      640,
+      641,
+      642,
+      643,
+      644,
+      645
     ],
     "dlnraja": [
       1,
@@ -655,12 +670,27 @@
       12,
       13,
       14,
-      15
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30
     ]
   },
   "next": {
-    "JohanBendz": 631,
-    "dlnraja": 16
+    "JohanBendz": 646,
+    "dlnraja": 31
   },
   "batchSize": 25,
   "howTo": "node scripts/progress/ledger-cli.js next johan-issue 25 ; read thread + all comments ; implement per constitution ; node scripts/progress/ledger-cli.js record johan-issue:N done <commit> <note> ; bump next here",
