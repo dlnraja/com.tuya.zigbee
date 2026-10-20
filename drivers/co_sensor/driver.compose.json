@@ -49,17 +49,28 @@
       "_TZE204_l4daccga",
       "_tze204_l4daccga",
       "_TZE200_vawy74yh",
-      "_tze200_vawy74yh"
+      "_tze200_vawy74yh",
+      "_TYZB01_0aps0h1r",
+      "_tyzb01_0aps0h1r",
+      "_TYZB01_0APS0H1R",
+      "_tyzb01_0APS0H1R",
+      "_TYZB01_o7m83470",
+      "_tyzb01_o7m83470",
+      "_TYZB01_O7M83470",
+      "_tyzb01_O7M83470"
     ],
     "productId": [
       "TS0601_co",
-      "TS0601"
+      "TS0601",
+      "TS0212"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          61184
+          61184,
+          1,
+          1280
         ]
       }
     }

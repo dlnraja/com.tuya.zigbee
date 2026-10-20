@@ -693,6 +693,90 @@
       "pid": "TS0046",
       "source": "Z2M zigbee-herdsman-converters tuya.ts: TS0046 \"Wireless switch with 6 buttons\" (LoraTap SS9600ZB white label), events via tuya on_off_action per endpoint = 1..6 x single/double/hold, battery; deCONZ devices/tuya/_TZ3000_TS0046_6gang_remote.json (manufacturer _TZ3000_nrfkrgf4, sleeper, Gold) + button_maps Tuya6gangMap: endpoints 0x01..0x06, OnOff cluster command 0xFD payload 0/1/2 = short/double/long",
       "regression": "P2890 2026-10-19: couple sat in switch_1gang (mains relay, no TS0046 pid) so it never matched; user report: no driver worked on Homey Pro 2023. Exact couple belongs to the 6-button battery scene remote."
+    },
+    {
+      "mfr": [
+        "_TZ3000_ee8nrt2l",
+        "_tz3000_ee8nrt2l",
+        "_TZ3000_EE8NRT2L",
+        "_tz3000_EE8NRT2L"
+      ],
+      "driver": "button_wireless_4",
+      "pid": "TS0044",
+      "source": "Z2M tuya.ts TS0044 whitelabel LoraTap SS6400ZB (4-button portable remote); upstream lead JohanBendz/com.tuya.zigbee#1159 (canonical #941)",
+      "regression": "P2910 2026-10-20 missing-couple from Johan closed-issue scan (one reliable source)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_5ftkaulg",
+        "_tz3000_5ftkaulg",
+        "_TZ3000_5FTKAULG",
+        "_tz3000_5FTKAULG"
+      ],
+      "driver": "switch_1gang",
+      "pid": "TS0011",
+      "source": "ZHA zha-device-handlers#2090 signature (EP1 0/3/4/5/6, 1-gang no neutral) + homed-service-zigbee#146 (same couple); upstream lead JohanBendz/com.tuya.zigbee#1178",
+      "regression": "P2910 2026-10-20 missing-couple from Johan closed-issue scan"
+    },
+    {
+      "mfr": [
+        "_TYZB01_0aps0h1r",
+        "_tyzb01_0aps0h1r",
+        "_TYZB01_0APS0H1R",
+        "_tyzb01_0APS0H1R"
+      ],
+      "driver": "co_sensor",
+      "pid": "TS0212",
+      "source": "Homey interview in JohanBendz/com.tuya.zigbee#977 (Alecto SMARTCOA10, IAS zoneType carbon monoxide, EP1 0/1/3/1280)",
+      "regression": "P2910 2026-10-20 missing-couple (TS0212 IAS CO family, upstream canonical #513)"
+    },
+    {
+      "mfr": [
+        "_TYZB01_o7m83470",
+        "_tyzb01_o7m83470",
+        "_TYZB01_O7M83470",
+        "_tyzb01_O7M83470"
+      ],
+      "driver": "co_sensor",
+      "pid": "TS0212",
+      "source": "SmartThings community Mariano_Colmenarejo Zigbee Smoke/CO driver entry TS0212/_TYZB01_o7m83470 (Nedis CO sensor, server clusters 0000/0001/0003/0500); upstream JohanBendz/com.tuya.zigbee#977 + canonical #513",
+      "regression": "P2910 2026-10-20 missing-couple (TS0212 IAS CO family)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_vmpbygs5",
+        "_tz3000_vmpbygs5",
+        "_TZ3000_VMPBYGS5",
+        "_tz3000_VMPBYGS5"
+      ],
+      "driver": "socket_power_strip",
+      "pid": "TS011F",
+      "source": "Z2M lidl.ts HG06338 Silvercrest 3-socket strip with USB (TS011F, endpoints l1-l3); symptom report JohanBendz/com.tuya.zigbee#127 (all sockets switch together)",
+      "regression": "P2910 2026-10-20 wrong-class: was on button_wireless_2 (removed there, dual-couple-legacy)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_oznonj5q",
+        "_tz3000_oznonj5q",
+        "_TZ3000_OZNONJ5Q",
+        "_tz3000_OZNONJ5Q"
+      ],
+      "driver": "socket_power_strip",
+      "pid": "TS011F",
+      "source": "Z2M lidl.ts HG06338 Silvercrest 3-socket strip with USB (TS011F, endpoints l1-l3); symptom report JohanBendz/com.tuya.zigbee#127",
+      "regression": "P2910 2026-10-20 wrong-class: was on switch_1gang (removed there, dual-couple-legacy)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_wzauvbcs",
+        "_tz3000_wzauvbcs",
+        "_TZ3000_WZAUVBCS",
+        "_tz3000_WZAUVBCS"
+      ],
+      "driver": "socket_power_strip",
+      "pid": "TS011F",
+      "source": "Z2M lidl.ts HG06338 Silvercrest 3-socket strip with USB (TS011F, endpoints l1-l3)",
+      "regression": "P2910 2026-10-20 dual couple: also on button_wireless_2 (removed there, dual-couple-legacy)"
     }
   ]
 }
