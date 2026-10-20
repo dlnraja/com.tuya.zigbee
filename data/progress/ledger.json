@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-20T07:29:10.049Z",
+ "updated": "2026-10-20T07:34:50.459Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -5945,6 +5945,189 @@
    "date": "2026-10-18",
    "note": "owner lcdtemphumidsensor; class heal from device_plug_smart/button_wireless_plug; wildcard pids on device_plug_smart left for owner (Wilhelm Dall)",
    "by": "exec-A"
+  },
+  "diag:06912ba3ff917d5d": {
+   "status": "done",
+   "date": "2026-10-20",
+   "hash": "8bcb69a370434b7d",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-20T06:51:30.000Z"
+  },
+  "diag:0b8ef406b019cc50": {
+   "status": "done",
+   "date": "2026-10-20",
+   "hash": "5a4a24dde6c5b5fd",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-19T05:20:16.000Z"
+  },
+  "diag:207431fc567e17b7": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "6e75594289bf362f",
+   "note": "bug_report mail; 1 error line(s)",
+   "by": "gmail-diagnostics",
+   "kind": "bug_report",
+   "mailDate": "2026-10-20T06:49:26.000Z",
+   "errors": 1
+  },
+  "diag:20bf953a0cb31bce": {
+   "status": "done",
+   "date": "2026-10-20",
+   "hash": "1d01531a220d1136",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-20T06:51:15.000Z"
+  },
+  "diag:483846fe176d7984": {
+   "status": "done",
+   "date": "2026-10-20",
+   "hash": "1c1a0e442a183a67",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-19T05:12:51.000Z"
+  },
+  "diag:4d7829483a76538b": {
+   "status": "done",
+   "date": "2026-10-20",
+   "hash": "01798e8cc906d7ff",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-19T05:20:32.000Z"
+  },
+  "diag:54d4a366f0a24c22": {
+   "status": "done",
+   "date": "2026-10-20",
+   "hash": "2c8b9ad8362aa602",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-20T06:51:25.000Z"
+  },
+  "diag:551075b56cf20f82": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "31d57b6002f9ce31",
+   "note": "github mail; 1 error line(s)",
+   "by": "gmail-diagnostics",
+   "kind": "github",
+   "mailDate": "2026-10-20T07:29:52.000Z",
+   "errors": 1
+  },
+  "diag:565c6e36f27c8add": {
+   "status": "done",
+   "date": "2026-10-20",
+   "hash": "df5d9de3bca3feab",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-20T07:33:13.000Z"
+  },
+  "diag:7bb9d9a875b18a45": {
+   "status": "done",
+   "date": "2026-10-20",
+   "hash": "3de0b9e12c0fea83",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-20T06:46:51.000Z"
+  },
+  "diag:865bd1f7ec5051a7": {
+   "status": "done",
+   "date": "2026-10-20",
+   "hash": "12b997bef3a5d464",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-20T07:16:12.000Z"
+  },
+  "diag:9bb59fc36194882d": {
+   "status": "done",
+   "date": "2026-10-20",
+   "hash": "0588ee07094d598b",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-20T06:51:23.000Z"
+  },
+  "diag:9ced6ce9394f6c30": {
+   "status": "done",
+   "date": "2026-10-20",
+   "hash": "e59692734248723e",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-20T06:46:59.000Z"
+  },
+  "diag:c66edc2fc109e881": {
+   "status": "done",
+   "date": "2026-10-20",
+   "hash": "a6a73c871705b1de",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-20T07:15:56.000Z"
+  },
+  "diag:d937b68e87b5b502": {
+   "status": "done",
+   "date": "2026-10-20",
+   "hash": "7ae9e6b615c67cb9",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-20T06:49:13.000Z"
+  },
+  "diag:dffafed97bf7606d": {
+   "status": "done",
+   "date": "2026-10-20",
+   "hash": "9133a6eaf4e4ad26",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-20T06:48:56.000Z"
+  },
+  "diag:e511901cbd290f7f": {
+   "status": "pending",
+   "date": "2026-10-20",
+   "hash": "87195fd596724f2d",
+   "note": "github mail; 1 error line(s)",
+   "by": "gmail-diagnostics",
+   "kind": "github",
+   "mailDate": "2026-10-20T07:19:10.000Z",
+   "errors": 1
+  },
+  "diag:e8d3837522ec8ab8": {
+   "status": "done",
+   "date": "2026-10-20",
+   "hash": "88f193652f29a187",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-20T06:48:42.000Z"
+  },
+  "diag:f326b067fe37d182": {
+   "status": "done",
+   "date": "2026-10-20",
+   "hash": "5fcce1a1c296efc6",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-19T05:13:07.000Z"
+  },
+  "diag:fe05299cb49c9aed": {
+   "status": "done",
+   "date": "2026-10-20",
+   "hash": "7f30b87c5648baa5",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-19T05:14:46.000Z"
   },
   "dlnraja-issue:1": {
    "status": "pending",
