@@ -552,6 +552,16 @@ jobs:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
           HOMEY_EXPECTED_VERSION: ${{ needs.publish.outputs.uploaded_version }}
         run: node .github/scripts/assert-athom-final.js
+      # P2917: write the highest CONFIRMED Test version back (state "test" from Athom), [skip ci], once,
+      # clean tree reset to origin, rebase + 3 bounded tries, never dispatches a run (no loop).
+      - name: Version write-back after Test ([skip ci])
+        if: always() && steps.soak.outputs.skip != 'true' && needs.publish.outputs.uploaded_version != ''
+        continue-on-error: true
+        timeout-minutes: 5
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: bash .github/scripts/version-writeback.sh stable-v5 com.dlnraja.tuya.zigbee.stable
+
       - name: Summary
         if: always()
         run: |
