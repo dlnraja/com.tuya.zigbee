@@ -131,7 +131,7 @@ It edits only its own section of the issue body (no comment, no commit, no publi
    writes `diag:<hash>`, `forum-poll` writes `forum-post:<topic>/<n>` (a post the history sweep
    already holds as `forum:<t>#<n>` is skipped, and the sweep skips posts the catch-up holds).
    Both commit through `safe-auto-commit` (`gmail-diag-ledger` max 4/day, `forum-ledger` max 6/day).
-5. **Forum post-by-post past lastSeen (P2909).** `scripts/scanners/forum-catch-up.js` keeps a cursor
+5. **Forum post-by-post past lastSeen (P2909, P2909b).** `scripts/scanners/forum-catch-up.js` keeps a cursor
    per topic and reads every post past it, oldest first (see the coverage table). A topic seen for
    the first time starts 40 posts before its tip; older history stays with the full-history sweep.
 
@@ -143,7 +143,15 @@ It edits only its own section of the issue body (no comment, no commit, no publi
    branches next take a CI port.
 3. Draft PR #573 (old knowledge-refresh output with Node 24 edits in 34 workflows) needs closing by the
    owner; until then the 6-day guard makes refresh runs skip (it ages out on 2026-10-25).
-4. Bundled `npm run check:*` lists inside one `run:` step (e.g. `check:flow-titleformatted` in the
+4. `forum-poll`: a scan/apply step writes a case variant into a driver compose (seen 2026-10-20:
+   `switch_2gang`, `_TZ3000_TONRAPSK`) without syncing app.json, so the later gated
+   "forum OCR leads" commit is refused by the compose-sync gate. The catch-up commit now runs before
+   those steps; the OCR commit still needs its own fix (run it earlier too, or sync app.json first).
+5. `data/progress/ledger.json` has several writers; two pushes in the same minute conflict on
+   rebase (seen when gmail-diagnostics and forum-poll were dispatched together). The diag queue and
+   the forum cursor make that lossless (re-applied next run); a merge-friendly ledger layout
+   would remove it.
+6. Bundled `npm run check:*` lists inside one `run:` step (e.g. `check:flow-titleformatted` in the
    unified-ci critical-test step) stay as they are: they are part of a family block, not a gate copy.
 
 ## Resume sweep notes (2026-10-12)
