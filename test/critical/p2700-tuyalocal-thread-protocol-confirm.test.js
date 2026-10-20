@@ -32,6 +32,8 @@ const origLoad = Module._load;
 Module._load = function (req, ...rest) { return req === 'tuyapi' ? FakeTuyAPI : origLoad.call(this, req, ...rest); };
 const TuyaLocalClient = require('../../lib/tuya-local/TuyaLocalClient');
 Module._load = origLoad;
+// P2914: tuyapi is now required lazily on connect, so pin the fake on this fresh class copy.
+TuyaLocalClient.__TuyAPI = FakeTuyAPI;
 if (prevCached) require.cache[clientPath] = prevCached; else delete require.cache[clientPath];
 
 const tick = () => new Promise((r) => setImmediate(r));
