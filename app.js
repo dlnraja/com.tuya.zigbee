@@ -101,7 +101,8 @@ const { LogBuffer } = require('./lib/utils/LogBuffer');
 const { lazyRequire } = require('./lib/utils/lazyRequire'); // P2830: deferred-pass modules load on first use
 const SuggestionEngine = require('./lib/smartadapt/SuggestionEngine');
 const processMigrationQueue = (...a) => require('./lib/utils/migration-queue').processMigrationQueue(...a); // P2830 lazy
-const OTAUpdateManager = require('./lib/ota/OTAUpdateManager');
+// P2915: OTA (~0.95 MB) and Tuya WiFi UDP discovery (~0.5 MB + dgram) load on first need, not at app start.
+const loadOTAUpdateManager = () => require('./lib/ota/OTAUpdateManager');
 const QuirksDatabase = require('./lib/quirks/QuirksDatabase');
 const EmergencyDeviceFix = lazyRequire(require, './lib/emergency/EmergencyDeviceFix');
 
@@ -126,7 +127,7 @@ try {
   };
 }
 
-const TuyaUDPDiscovery = require('./lib/tuya-local/TuyaUDPDiscovery');
+const loadTuyaUDPDiscovery = () => require('./lib/tuya-local/TuyaUDPDiscovery');
 const SessionManager = require('./lib/session/SessionManager');
 const HealthMonitor = require('./lib/health/HealthMonitor');
 const SanityFilter = require('./lib/filter/SanityFilter');
@@ -406,8 +407,8 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
     } catch (err) { this.error('⚠️ SuggestionEngine failed:', err.message); }
 
     try {
-      this.otaManager = new OTAUpdateManager(this.homey);
-      this.log('✅ OTA Update Manager initialized (auto-discovery deferred)');
+      // P2915: constructed by _ensureOTAManager() on first need (device present / flow card / scan).
+      this.log('⏭️ OTA Update Manager deferred until a device needs it');
     } catch (err) { this.error('⚠️ OTA Manager failed:', err.message); }
 
     try {
@@ -420,8 +421,8 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
     } catch (err) { this.error('⚠️ Quirks failed:', err.message); }
 
     try {
-      this._tuyaUDPDiscovery = new TuyaUDPDiscovery({ log: this.log.bind(this) });
-      this.log('⏭️ Tuya WiFi UDP discovery deferred (Zigbee devices start first)');
+      // P2915: created by ensureTuyaUDPDiscovery() only when a WiFi Tuya device exists or first inits.
+      this.log('⏭️ Tuya WiFi UDP discovery deferred until a WiFi device exists');
     } catch (err) {
       this.log('⚠️ Tuya UDP Discovery init failed (non-critical):', err.message);
     }
@@ -456,7 +457,7 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
           // WHY(P2357/P2359): fuse app OTA check with Homey Device Updates UX
           let HDU = null;
           try { HDU = require('./lib/ota/HomeyDeviceUpdates'); } catch { /* optional */ }
-          const update = await this.otaManager?.checkUpdate(args.device);
+          const update = await this._ensureOTAManager()?.checkUpdate(args.device);
           const platform = HDU?.isDeviceUpdatesPlatformReady?.(this.homey);
           const hasNative = HDU?.driverHasNativeFirmwareUpdates?.(args.device) === true;
           const payload = {
@@ -590,7 +591,7 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
       }
 
       try {
-        this.otaManager?.startAutoDiscovery?.(6 * 60 * 60 * 1000);
+        if (this._countAppDevices() > 0) { this._ensureOTAManager()?.startAutoDiscovery?.(6 * 60 * 60 * 1000); }
         this.log('✅ OTA Auto-Discovery started (6h interval)');
       } catch (e) {
         this.log('⚠️ OTA Auto-Discovery failed to start (non-critical):', e.message);
@@ -625,32 +626,7 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
       } catch (err) { this.error('⚠️ Insights failed:', err.message); }
 
       try {
-        if (this._tuyaUDPDiscovery && typeof this._tuyaUDPDiscovery.start === 'function') {
-          const updateDeviceIP = async (info) => {
-            try {
-              const drivers = Object.values(this.homey.drivers.getDrivers());
-              for (const driver of drivers) {
-                const devices = driver.getDevices() || [];
-                for (const device of devices) {
-                  const settings = device.getSettings();
-                  if (settings && settings.device_id === info.deviceId) {
-                    const currentIp = settings.ip || settings.ip_address || settings.device_ip;
-                    if (currentIp !== info.ip) {
-                      this.log(`🔄 [SMART-HEAL] IP change: ${currentIp || '—'} -> ${info.ip}`);
-                      await device.setSettings({ ip: info.ip, ip_address: info.ip }).catch((e) => this.error('[SMART-HEAL] Settings update failed', e));
-                    }
-                  }
-                }
-              }
-            } catch (err) {
-              this.error('[SMART-HEAL] Error updating IP:', err.message);
-            }
-          };
-          this._tuyaUDPDiscovery.on('device-updated', updateDeviceIP);
-          this._tuyaUDPDiscovery.on('device-found', updateDeviceIP);
-          await this._tuyaUDPDiscovery.start();
-          this.log('✅ Tuya WiFi UDP Discovery started (ports 6666/6667/6668/7000)');
-        }
+        if (this._hasWifiLocalDevices()) { await this.ensureTuyaUDPDiscovery(); } else { this.log('⏭️ Tuya WiFi UDP discovery not started: no WiFi device (starts when one inits)'); }
       } catch (err) {
         this.log('⚠️ Tuya UDP Discovery failed (non-critical):', err.message);
       }
@@ -925,7 +901,76 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
     }
   }
 
-  getOTAManager() { return this.otaManager; }
+  /** P2915: number of devices across all drivers (0 on any SDK error). */
+  _countAppDevices() {
+    try { return Object.values(this.homey.drivers.getDrivers()).reduce((n, d) => n + ((d.getDevices && d.getDevices()) || []).length, 0); } catch (_e) { return 0; }
+  }
+
+  /** P2915: true when at least one WiFi (Tuya local) device is paired. */
+  _hasWifiLocalDevices() {
+    try {
+      return Object.entries(this.homey.drivers.getDrivers())
+        .some(([id, d]) => /^wifi_|_wifi(_|$)/.test(id) && ((d.getDevices && d.getDevices()) || []).length > 0);
+    } catch (_e) { return false; }
+  }
+
+  /** P2915: lazy OTA manager; null (never throws) if it cannot be built. */
+  _ensureOTAManager() {
+    if (this.otaManager) { return this.otaManager; }
+    if (this._otaManagerFailed) { return null; }
+    try {
+      const OTAUpdateManager = loadOTAUpdateManager();
+      this.otaManager = new OTAUpdateManager(this.homey);
+      this.log('✅ OTA Update Manager initialized (on first need)');
+    } catch (err) {
+      this._otaManagerFailed = true;
+      this.error('⚠️ OTA Manager failed:', err.message);
+    }
+    return this.otaManager || null;
+  }
+
+  /** P2915: create + start Tuya WiFi UDP discovery once; WiFi devices call this from onInit. */
+  async ensureTuyaUDPDiscovery() {
+    if (this._tuyaUDPDiscoveryStarted) { return this._tuyaUDPDiscovery; }
+    this._tuyaUDPDiscoveryStarted = true;
+    try {
+      if (!this._tuyaUDPDiscovery) {
+        const TuyaUDPDiscovery = loadTuyaUDPDiscovery();
+        this._tuyaUDPDiscovery = new TuyaUDPDiscovery({ log: this.log.bind(this) });
+      }
+      if (this._tuyaUDPDiscovery && typeof this._tuyaUDPDiscovery.start === 'function') {
+      const updateDeviceIP = async (info) => {
+        try {
+          const drivers = Object.values(this.homey.drivers.getDrivers());
+          for (const driver of drivers) {
+            const devices = driver.getDevices() || [];
+            for (const device of devices) {
+              const settings = device.getSettings();
+              if (settings && settings.device_id === info.deviceId) {
+                const currentIp = settings.ip || settings.ip_address || settings.device_ip;
+                if (currentIp !== info.ip) {
+                  this.log(`🔄 [SMART-HEAL] IP change: ${currentIp || '—'} -> ${info.ip}`);
+                  await device.setSettings({ ip: info.ip, ip_address: info.ip }).catch((e) => this.error('[SMART-HEAL] Settings update failed', e));
+                }
+              }
+            }
+          }
+        } catch (err) {
+          this.error('[SMART-HEAL] Error updating IP:', err.message);
+        }
+      };
+      this._tuyaUDPDiscovery.on('device-updated', updateDeviceIP);
+      this._tuyaUDPDiscovery.on('device-found', updateDeviceIP);
+      await this._tuyaUDPDiscovery.start();
+      this.log('✅ Tuya WiFi UDP Discovery started (ports 6666/6667/6668/7000)');
+    }
+    } catch (err) {
+      this.log('⚠️ Tuya UDP Discovery failed (non-critical):', err.message);
+    }
+    return this._tuyaUDPDiscovery;
+  }
+
+  getOTAManager() { return this._ensureOTAManager(); }
   getQuirksDatabase() { return this.quirksDatabase; }
 
   // v9.1.0: Getters for new feature modules (Ideas #41, #44, #86, #87, #98, #99)
@@ -1576,7 +1621,7 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
       .registerRunListener(async (args) => {
         try {
           const device = args.device;
-          if (!device || !this.otaManager) {return false;}
+          if (!device || !this._ensureOTAManager()) {return false;}
           const id = device.getData?.()?.id;
           return !!(id && this.otaManager.discoveredUpdates?.has(id));
         } catch (err) { return false; }
@@ -1585,7 +1630,7 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
     this.homey.flow.getActionCard('ota_run_discovery')
       .registerRunListener(async () => {
         try {
-          if (!this.otaManager) {return false;}
+          if (!this._ensureOTAManager()) {return false;}
           await this.otaManager.runFullDiscoveryScan();
           return true;
         } catch (err) {
