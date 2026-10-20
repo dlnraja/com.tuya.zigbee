@@ -215,6 +215,8 @@ jobs:
           node "$GITHUB_WORKSPACE/scripts/maintenance/prune-publish-payload.cjs" "$PUBLISH_DIR" || echo "::warning::prune-publish-payload failed; uploading unpruned payload"
           # P2900: per-upload size row for the socket-hang-up/size correlation CSV (shared with master/stable).
           node "$GITHUB_WORKSPACE/.github/scripts/publish-size-telemetry.js" measure "$PUBLISH_DIR" || true
+          # P2902: local pre-upload check (Athom processing_failed has no error body).
+          node "$GITHUB_WORKSPACE/scripts/ci/payload-preflight.cjs" "$PUBLISH_DIR" || { [ "${PAYLOAD_PREFLIGHT:-}" = warn ] || { echo "::error::payload preflight failed (see ERROR lines)"; exit 2; }; }
           # WHY(P2738): Homey CLI always createBuild — that flooded #114 PF while #113 healthy.
           # Prefer soft-expect direct-api (tip-lag / already-test / in-flight → exit 0, no spam).
           # Force path only on workflow_dispatch force_publish=true (cooldown one-shot).
