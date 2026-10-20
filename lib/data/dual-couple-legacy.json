@@ -85,7 +85,11 @@
     "_tze284_0KIHJSYS",
     "_tze284_0kihjsys",
     "_tze284_G1ENHDSI",
-    "_tze284_g1enhdsi"
+    "_tze284_g1enhdsi",
+    "_tz3000_oznonj5q",
+    "_TZ3000_OZNONJ5Q",
+    "_TZ3000_oznonj5q",
+    "_tz3000_OZNONJ5Q"
    ],
    "productId": [],
    "couples": [
@@ -123,7 +127,19 @@
     "_TZ3000_CAYEPV1A",
     "_tz3000_CAYEPV1A",
     "_TZ3000_LEPZUHTO",
-    "_tz3000_LEPZUHTO"
+    "_tz3000_LEPZUHTO",
+    "_TZ3000_VMPBYGS5",
+    "_TZ3000_wzauvbcs",
+    "_TZ3000_vmpbygs5",
+    "_tz3000_vmpbygs5",
+    "_tz3000_wzauvbcs",
+    "_tz3000_VMPBYGS5",
+    "_TZ3000_WZAUVBCS",
+    "_tz3000_WZAUVBCS",
+    "_TZ3000_ee8nrt2l",
+    "_tz3000_ee8nrt2l",
+    "_TZ3000_EE8NRT2L",
+    "_tz3000_EE8NRT2L"
    ],
    "productId": [],
    "couples": [
@@ -144,6 +160,30 @@
     "https://github.com/Koenkk/zigbee-herdsman-converters/issues/7761",
     "https://github.com/Koenkk/zigbee-herdsman-converters/issues/10204"
    ]
+  },
+  "smoke_sensor2": {
+   "manufacturerName": [
+    "_tyzb01_0aps0h1r",
+    "_tyzb01_o7m83470",
+    "_TYZB01_0APS0H1R",
+    "_TYZB01_O7M83470",
+    "_TYZB01_0aps0h1r",
+    "_TYZB01_o7m83470",
+    "_tyzb01_0APS0H1R",
+    "_tyzb01_O7M83470"
+   ],
+   "productId": [],
+   "couples": []
+  },
+  "climate_sensor": {
+   "manufacturerName": [
+    "_tz3000_5ftkaulg",
+    "_TZ3000_5ftkaulg",
+    "_TZ3000_5FTKAULG",
+    "_tz3000_5FTKAULG"
+   ],
+   "productId": [],
+   "couples": []
   }
  }
 }

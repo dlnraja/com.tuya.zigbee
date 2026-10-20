@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-20T07:14:45.525Z",
+ "updated": "2026-10-20T07:18:15.170Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -14898,14 +14898,15 @@
    ]
   },
   "johan-issue:108": {
-   "status": "deferred",
+   "status": "no-action",
    "kind": "issue",
    "state": "closed",
    "comments": 7,
    "upstreamUpdatedAt": "2024-09-02T20:28:22Z",
-   "date": "2026-10-10",
-   "note": "closed issue; diag-only; research or diag needed",
-   "by": "advance-sweep"
+   "date": "2026-10-20",
+   "note": "1-gang dimmer rocker behaviour without identity; switch-type setting already exists on wall_dimmer_tuya / switch_dimmer_1gang / wall_dimmer_1gang_1way",
+   "by": "advance-sweep",
+   "via": "daily-resume-2026-10-20-wsb"
   },
   "johan-issue:1080": {
    "status": "pending",
@@ -17204,14 +17205,15 @@
    ]
   },
   "johan-issue:127": {
-   "status": "deferred",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 6,
    "upstreamUpdatedAt": "2026-10-01T10:58:49Z",
-   "date": "2026-10-10",
-   "note": "closed issue; request-no-identity; research or diag needed",
-   "by": "advance-sweep"
+   "date": "2026-10-20",
+   "note": "Lidl HG06338 3-socket strip (Z2M lidl.ts): _TZ3000_vmpbygs5 was on button_wireless_2, _TZ3000_oznonj5q on switch_1gang, _TZ3000_wzauvbcs on both button_wireless_2 and socket_power_strip -> all on socket_power_strip (EP1-3 bound), P2910; re-pair needed for devices paired on the old drivers",
+   "by": "advance-sweep",
+   "via": "daily-resume-2026-10-20-wsb"
   },
   "johan-issue:1270": {
    "status": "pending",
@@ -17712,14 +17714,15 @@
    ]
   },
   "johan-issue:131": {
-   "status": "deferred",
+   "status": "no-action",
    "kind": "issue",
    "state": "closed",
    "comments": 7,
    "upstreamUpdatedAt": "2022-01-24T13:45:12Z",
-   "date": "2026-10-10",
-   "note": "closed issue; request-no-identity; research or diag needed",
-   "by": "advance-sweep"
+   "date": "2026-10-20",
+   "note": "Livarno RGBW strip fixed by re-interview; white channel is driven by light_temperature, no code change",
+   "by": "advance-sweep",
+   "via": "daily-resume-2026-10-20-wsb"
   },
   "johan-issue:1310": {
    "status": "pending",
@@ -17968,14 +17971,15 @@
    ]
   },
   "johan-issue:133": {
-   "status": "deferred",
+   "status": "already-fixed",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
    "upstreamUpdatedAt": "2021-12-12T14:16:07Z",
-   "date": "2026-10-10",
-   "note": "closed issue; pid-only; research or diag needed",
-   "by": "advance-sweep"
+   "date": "2026-10-20",
+   "note": "NEO TS011F plug cited as _TZ3000w0qqde0g (missing underscore) = _TZ3000_w0qqde0g|TS011F, on plug_energy_monitor since b9a5f7aa9d (Z2M TS011F_plug_1 family)",
+   "by": "advance-sweep",
+   "via": "daily-resume-2026-10-20-wsb"
   },
   "johan-issue:1330": {
    "status": "pending",
@@ -18968,14 +18972,15 @@
    ]
   },
   "johan-issue:141": {
-   "status": "deferred",
+   "status": "no-action",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
    "upstreamUpdatedAt": "2023-10-01T21:06:38Z",
-   "date": "2026-10-10",
-   "note": "closed issue; request-no-identity; research or diag needed",
-   "by": "advance-sweep"
+   "date": "2026-10-20",
+   "note": "ZN288408 temp sensor: no interview / identity provided",
+   "by": "advance-sweep",
+   "via": "daily-resume-2026-10-20-wsb"
   },
   "johan-issue:1410": {
    "status": "pending",
@@ -20756,14 +20761,15 @@
    "by": "advance-sweep"
   },
   "johan-issue:221": {
-   "status": "deferred",
+   "status": "already-fixed",
    "kind": "issue",
    "state": "closed",
    "comments": 5,
    "upstreamUpdatedAt": "2024-09-02T20:21:37Z",
-   "date": "2026-10-10",
-   "note": "closed issue; pid-only; research or diag needed",
-   "by": "advance-sweep"
+   "date": "2026-10-20",
+   "note": "BlitzWolf BW-SHP13 = Z2M whitelabel _TZ3000_amdymr7l|TS011F, on plug_energy_monitor since 1bd93aa131",
+   "by": "advance-sweep",
+   "via": "daily-resume-2026-10-20-wsb"
   },
   "johan-issue:222": {
    "status": "done",
@@ -20920,14 +20926,15 @@
    "by": "advance-sweep"
   },
   "johan-issue:237": {
-   "status": "deferred",
+   "status": "already-fixed",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
    "upstreamUpdatedAt": "2023-03-04T00:19:36Z",
-   "date": "2026-10-10",
-   "note": "closed issue; diag-only; research or diag needed",
-   "by": "advance-sweep"
+   "date": "2026-10-20",
+   "note": "IH-K009 (Z2M TS0201: dowj6gyi/8ybe88nf/akqdg6g7) present: dowj6gyi->temphumidsensor2 (1bd93aa131), 8ybe88nf->temphumidsensor (7b64ef71f1), akqdg6g7->climate_sensor (cc0f3f79e2)",
+   "by": "advance-sweep",
+   "via": "daily-resume-2026-10-20-wsb"
   },
   "johan-issue:238": {
    "status": "done",
@@ -21011,14 +21018,15 @@
    "upstreamUpdatedAt": "2022-12-13T14:39:43Z"
   },
   "johan-issue:246": {
-   "status": "deferred",
+   "status": "no-action",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
    "upstreamUpdatedAt": "2022-12-01T15:58:00Z",
-   "date": "2026-10-10",
-   "note": "closed issue; diag-only; research or diag needed",
-   "by": "advance-sweep"
+   "date": "2026-10-20",
+   "note": "0.2.4 upstream crash, fixed upstream in 0.2.5",
+   "by": "advance-sweep",
+   "via": "daily-resume-2026-10-20-wsb"
   },
   "johan-issue:247": {
    "status": "pending",
@@ -21065,24 +21073,26 @@
    "by": "advance-sweep"
   },
   "johan-issue:251": {
-   "status": "deferred",
+   "status": "no-action",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
    "upstreamUpdatedAt": "2023-02-26T18:32:53Z",
-   "date": "2026-10-10",
-   "note": "closed issue; request-no-identity; research or diag needed",
-   "by": "advance-sweep"
+   "date": "2026-10-20",
+   "note": "no manufacturerName/productId given (generic temp sensor question)",
+   "by": "advance-sweep",
+   "via": "daily-resume-2026-10-20-wsb"
   },
   "johan-issue:252": {
-   "status": "deferred",
+   "status": "no-action",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
    "upstreamUpdatedAt": "2023-02-26T18:33:02Z",
-   "date": "2026-10-10",
-   "note": "closed issue; request-no-identity; research or diag needed",
-   "by": "advance-sweep"
+   "date": "2026-10-20",
+   "note": "buying question, no device identity",
+   "by": "advance-sweep",
+   "via": "daily-resume-2026-10-20-wsb"
   },
   "johan-issue:253": {
    "status": "pending",
@@ -21204,14 +21214,15 @@
    "by": "advance-sweep"
   },
   "johan-issue:264": {
-   "status": "deferred",
+   "status": "no-action",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
    "upstreamUpdatedAt": "2024-02-04T20:22:06Z",
-   "date": "2026-10-10",
-   "note": "closed issue; diag-only; research or diag needed",
-   "by": "advance-sweep"
+   "date": "2026-10-20",
+   "note": "error came from the Tuya Cloud app, not this Zigbee app",
+   "by": "advance-sweep",
+   "via": "daily-resume-2026-10-20-wsb"
   },
   "johan-issue:265": {
    "status": "done",
@@ -21638,14 +21649,15 @@
    "by": "advance-sweep"
   },
   "johan-issue:300": {
-   "status": "deferred",
+   "status": "no-action",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
    "upstreamUpdatedAt": "2026-07-12T21:37:16Z",
-   "date": "2026-10-10",
-   "note": "closed issue; request-no-identity; research or diag needed",
-   "by": "advance-sweep"
+   "date": "2026-10-20",
+   "note": "no identity; TS004F Moes knob family handled by smart_knob drivers",
+   "by": "advance-sweep",
+   "via": "daily-resume-2026-10-20-wsb"
   },
   "johan-issue:301": {
    "status": "deferred",
@@ -21695,14 +21707,15 @@
    "by": "advance-sweep"
   },
   "johan-issue:306": {
-   "status": "deferred",
+   "status": "no-action",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
    "upstreamUpdatedAt": "2023-06-18T17:16:24Z",
-   "date": "2026-10-10",
-   "note": "closed issue; request-no-identity; research or diag needed",
-   "by": "advance-sweep"
+   "date": "2026-10-20",
+   "note": "no identity (Moes temp + Aubess smoke request without ids)",
+   "by": "advance-sweep",
+   "via": "daily-resume-2026-10-20-wsb"
   },
   "johan-issue:307": {
    "status": "deferred",
@@ -21765,14 +21778,15 @@
    "by": "advance-sweep"
   },
   "johan-issue:312": {
-   "status": "deferred",
+   "status": "no-action",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
    "upstreamUpdatedAt": "2023-06-25T07:50:23Z",
-   "date": "2026-10-10",
-   "note": "closed issue; request-no-identity; research or diag needed",
-   "by": "advance-sweep"
+   "date": "2026-10-20",
+   "note": "no identity (Aubess temp/hum request)",
+   "by": "advance-sweep",
+   "via": "daily-resume-2026-10-20-wsb"
   },
   "johan-issue:313": {
    "status": "done",
@@ -21859,14 +21873,15 @@
    "by": "advance-sweep"
   },
   "johan-issue:320": {
-   "status": "deferred",
+   "status": "no-action",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
    "upstreamUpdatedAt": "2024-09-02T20:52:24Z",
-   "date": "2026-10-10",
-   "note": "closed issue; request-no-identity; research or diag needed",
-   "by": "advance-sweep"
+   "date": "2026-10-20",
+   "note": "fingerbot request without identity; fingerbot drivers exist",
+   "by": "advance-sweep",
+   "via": "daily-resume-2026-10-20-wsb"
   },
   "johan-issue:321": {
    "status": "done",
@@ -21879,14 +21894,15 @@
    "by": "advance-sweep"
   },
   "johan-issue:322": {
-   "status": "deferred",
+   "status": "no-action",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
    "upstreamUpdatedAt": "2023-09-14T22:56:53Z",
-   "date": "2026-10-10",
-   "note": "closed issue; request-no-identity; research or diag needed",
-   "by": "advance-sweep"
+   "date": "2026-10-20",
+   "note": "garage opener request without identity",
+   "by": "advance-sweep",
+   "via": "daily-resume-2026-10-20-wsb"
   },
   "johan-issue:323": {
    "status": "done",
@@ -21926,14 +21942,15 @@
    "by": "advance-sweep"
   },
   "johan-issue:327": {
-   "status": "deferred",
+   "status": "no-action",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
    "upstreamUpdatedAt": "2023-09-14T22:54:44Z",
-   "date": "2026-10-10",
-   "note": "closed issue; diag-only; research or diag needed",
-   "by": "advance-sweep"
+   "date": "2026-10-20",
+   "note": "Nedis ZBWS40WT is a TS0044 4-button white-label (Z2M); no manufacturerName given, TS0044 family handled by button_wireless_4/scene_switch_4",
+   "by": "advance-sweep",
+   "via": "daily-resume-2026-10-20-wsb"
   },
   "johan-issue:328": {
    "status": "done",
@@ -22006,14 +22023,15 @@
    "by": "advance-sweep"
   },
   "johan-issue:334": {
-   "status": "deferred",
+   "status": "no-action",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
    "upstreamUpdatedAt": "2023-09-14T22:53:54Z",
-   "date": "2026-10-10",
-   "note": "closed issue; request-no-identity; research or diag needed",
-   "by": "advance-sweep"
+   "date": "2026-10-20",
+   "note": "linked product is Wi-Fi, out of scope",
+   "by": "advance-sweep",
+   "via": "daily-resume-2026-10-20-wsb"
   },
   "johan-issue:335": {
    "status": "deferred",
@@ -22043,14 +22061,15 @@
    "by": "advance-sweep"
   },
   "johan-issue:338": {
-   "status": "deferred",
+   "status": "already-fixed",
    "kind": "issue",
    "state": "closed",
    "comments": 0,
    "upstreamUpdatedAt": "2024-09-02T20:51:32Z",
-   "date": "2026-10-10",
-   "note": "closed issue; diag-only; research or diag needed",
-   "by": "advance-sweep"
+   "date": "2026-10-20",
+   "note": "screenshot read: _TZ3000_gvn91tmx|TS011F (energy plug), on smartplug since 1bd93aa131",
+   "by": "advance-sweep",
+   "via": "daily-resume-2026-10-20-wsb"
   },
   "johan-issue:339": {
    "status": "pending",
@@ -22070,14 +22089,15 @@
    "by": "advance-sweep"
   },
   "johan-issue:340": {
-   "status": "deferred",
+   "status": "no-action",
    "kind": "issue",
    "state": "closed",
    "comments": 0,
    "upstreamUpdatedAt": "2024-09-02T20:52:38Z",
-   "date": "2026-10-10",
-   "note": "closed issue; diag-only; research or diag needed",
-   "by": "advance-sweep"
+   "date": "2026-10-20",
+   "note": "diagnostic id only (app restart), nothing actionable",
+   "by": "advance-sweep",
+   "via": "daily-resume-2026-10-20-wsb"
   },
   "johan-issue:341": {
    "status": "done",
@@ -22137,14 +22157,15 @@
    "by": "advance-sweep"
   },
   "johan-issue:347": {
-   "status": "deferred",
+   "status": "already-fixed",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
    "upstreamUpdatedAt": "2023-08-29T12:30:11Z",
-   "date": "2026-10-10",
-   "note": "closed issue; diag-only; research or diag needed",
-   "by": "advance-sweep"
+   "date": "2026-10-20",
+   "note": "ZG-204ZL presence pid on presence_sensor_radar since 7b64ef71f1; ZTH01 had no identity (new request needed for that one)",
+   "by": "advance-sweep",
+   "via": "daily-resume-2026-10-20-wsb"
   },
   "johan-issue:348": {
    "status": "done",
@@ -22157,14 +22178,15 @@
    "by": "advance-sweep"
   },
   "johan-issue:349": {
-   "status": "deferred",
+   "status": "already-fixed",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
    "upstreamUpdatedAt": "2023-08-28T19:13:33Z",
-   "date": "2026-10-10",
-   "note": "closed issue; pid-only; research or diag needed",
-   "by": "advance-sweep"
+   "date": "2026-10-20",
+   "note": "water valve cited as _TZ3000Z_iedbgyxt = _TZ3000_iedbgyxt|TS0001 (Z2M ZN231392 water/gas valve), on valvecontroller since 1bd93aa131",
+   "by": "advance-sweep",
+   "via": "daily-resume-2026-10-20-wsb"
   },
   "johan-issue:35": {
    "status": "deferred",
@@ -22191,24 +22213,26 @@
    "upstreamUpdatedAt": "2023-08-28T08:18:51Z"
   },
   "johan-issue:352": {
-   "status": "deferred",
+   "status": "no-action",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
    "upstreamUpdatedAt": "2023-08-28T06:23:59Z",
-   "date": "2026-10-10",
-   "note": "closed issue; diag-only; research or diag needed",
-   "by": "advance-sweep"
+   "date": "2026-10-20",
+   "note": "same upstream 0.2.14 regression as #353",
+   "by": "advance-sweep",
+   "via": "daily-resume-2026-10-20-wsb"
   },
   "johan-issue:353": {
-   "status": "deferred",
+   "status": "no-action",
    "kind": "issue",
    "state": "closed",
    "comments": 7,
    "upstreamUpdatedAt": "2023-08-28T06:23:45Z",
-   "date": "2026-10-10",
-   "note": "closed issue; diag-only; research or diag needed",
-   "by": "advance-sweep"
+   "date": "2026-10-20",
+   "note": "upstream 0.2.14 regression (expected_cluster_id_number), fixed upstream 0.2.16",
+   "by": "advance-sweep",
+   "via": "daily-resume-2026-10-20-wsb"
   },
   "johan-issue:354": {
    "status": "done",
@@ -22773,14 +22797,15 @@
    "by": "advance-sweep"
   },
   "johan-issue:4": {
-   "status": "deferred",
+   "status": "no-action",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
    "upstreamUpdatedAt": "2022-01-02T09:52:02Z",
-   "date": "2026-10-10",
-   "note": "closed issue; diag-only; research or diag needed",
-   "by": "advance-sweep"
+   "date": "2026-10-20",
+   "note": "Zemismart 2-gang DIY module, maintainer already added it; no manufacturerName given",
+   "by": "advance-sweep",
+   "via": "daily-resume-2026-10-20-wsb"
   },
   "johan-issue:40": {
    "status": "done",
@@ -23251,14 +23276,15 @@
    "by": "advance-sweep"
   },
   "johan-issue:437": {
-   "status": "deferred",
+   "status": "no-action",
    "kind": "issue",
    "state": "closed",
    "comments": 4,
    "upstreamUpdatedAt": "2023-09-30T08:41:12Z",
-   "date": "2026-10-10",
-   "note": "closed issue; diag-only; research or diag needed",
-   "by": "advance-sweep"
+   "date": "2026-10-20",
+   "note": "reporter traced it to a corrupted Homey Zigbee stack, fixed by Homey update",
+   "by": "advance-sweep",
+   "via": "daily-resume-2026-10-20-wsb"
   },
   "johan-issue:438": {
    "status": "done",
@@ -23891,14 +23917,15 @@
    "by": "advance-sweep"
   },
   "johan-issue:49": {
-   "status": "deferred",
+   "status": "no-action",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
    "upstreamUpdatedAt": "2021-02-06T23:06:49Z",
-   "date": "2026-10-10",
-   "note": "closed issue; diag-only; research or diag needed",
-   "by": "advance-sweep"
+   "date": "2026-10-20",
+   "note": "colour-temperature Flow arg takes 0..1 (Homey light_temperature); upstream help-text fix only, nothing device-specific",
+   "by": "advance-sweep",
+   "via": "daily-resume-2026-10-20-wsb"
   },
   "johan-issue:490": {
    "status": "deferred",
@@ -24377,14 +24404,15 @@
    "by": "advance-sweep"
   },
   "johan-issue:53": {
-   "status": "deferred",
+   "status": "no-action",
    "kind": "issue",
    "state": "closed",
    "comments": 4,
    "upstreamUpdatedAt": "2021-03-02T10:13:45Z",
-   "date": "2026-10-10",
-   "note": "closed issue; diag-only; research or diag needed",
-   "by": "advance-sweep"
+   "date": "2026-10-20",
+   "note": "secondary-gang timeouts traced by the reporter to the Homey v5 Zigbee stack, not the app",
+   "by": "advance-sweep",
+   "via": "daily-resume-2026-10-20-wsb"
   },
   "johan-issue:530": {
    "status": "done",
@@ -24733,14 +24761,15 @@
    "by": "advance-sweep"
   },
   "johan-issue:559": {
-   "status": "deferred",
+   "status": "no-action",
    "kind": "issue",
    "state": "closed",
    "comments": 0,
    "upstreamUpdatedAt": "2023-11-25T18:49:30Z",
-   "date": "2026-10-16",
-   "note": "closed issue; request-no-identity; research or diag needed",
-   "by": "advance-sweep"
+   "date": "2026-10-20",
+   "note": "empty request template",
+   "by": "advance-sweep",
+   "via": "daily-resume-2026-10-20-wsb"
   },
   "johan-issue:56": {
    "status": "done",
@@ -26747,14 +26776,15 @@
    "upstreamUpdatedAt": "2024-10-01T11:46:26Z"
   },
   "johan-issue:76": {
-   "status": "deferred",
+   "status": "no-action",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
    "upstreamUpdatedAt": "2021-05-27T08:21:04Z",
-   "date": "2026-10-10",
-   "note": "closed issue; diag-only; research or diag needed",
-   "by": "advance-sweep"
+   "date": "2026-10-20",
+   "note": "diagnostic id only, merged by the reporter into upstream #72",
+   "by": "advance-sweep",
+   "via": "daily-resume-2026-10-20-wsb"
   },
   "johan-issue:760": {
    "status": "pending",
@@ -29814,6 +29844,21 @@
    "status": "done",
    "date": "2026-10-04",
    "note": "ijey4q29/ykglasuj/kf2hbko4 climate_sensor -> contact_sensor_zigbee"
+  },
+  "p2910-click-window-auto": {
+   "status": "done",
+   "date": "2026-10-20",
+   "note": "_TZ3000_rco1yzb1|TS004F: auto click window (quirk couple + double/triple Flow + no native multi-press) on the live raw L1 On/Off path; JohanBendz#423/#424"
+  },
+  "p2910-johan-missing-couples": {
+   "status": "done",
+   "date": "2026-10-20",
+   "note": "ee8nrt2l|TS0044 -> button_wireless_4; 5ftkaulg|TS0011 -> switch_1gang; 0aps0h1r+o7m83470|TS0212 -> co_sensor (IAS CO); Lidl HG06338 vmpbygs5/oznonj5q/wzauvbcs|TS011F -> socket_power_strip"
+  },
+  "lead:_TZ3000_amal63is|TS0002": {
+   "status": "needs-info",
+   "date": "2026-10-20",
+   "note": "cited in JohanBendz#128 Batch 105 only; no Z2M/ZHA/blakadder/Hubitat source found; mfr stays on switch_1gang without TS0002"
   }
  }
 }
