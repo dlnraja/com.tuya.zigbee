@@ -1,12 +1,11 @@
 {
- "generated": "2026-10-16",
- "applied": 2,
+ "generated": "2026-10-20",
+ "applied": 0,
  "counts": {
-  "covered": 1550,
-  "lead": 13,
-  "applied": 2
+  "covered": 1555,
+  "lead": 13
  },
- "internalOnlyUncovered": 500,
+ "internalOnlyUncovered": 516,
  "results": [
   {
    "mfr": "_TYZB01_7yidyqxd",
@@ -14,16 +13,6 @@
    "source": "z2m:Tuya/TS0108",
    "status": "lead",
    "why": "no socket driver lists TS0108"
-  },
-  {
-   "mfr": "_TZ3210_fhx7lk3d",
-   "pid": "TS0001",
-   "source": "z2m:ClickSmart+/CMA30651",
-   "status": "applied",
-   "driver": "switch_zbeacon_ts0001",
-   "alsoIn": [
-    "plug_smart"
-   ]
   },
   {
    "mfr": "_TZE200_yh7aoahi",
@@ -82,23 +71,6 @@
    "why": "TS0601: DP layout differs per id, needs a capture"
   },
   {
-   "mfr": "_TZ3000_5ftkaulg",
-   "pid": "TS0011",
-   "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1178",
-   "status": "lead",
-   "why": "adding to air_purifier_motion, doorwindowsensor_3, pir_sensor_2, smart_door_window_sensor would put an existing couple on two drivers"
-  },
-  {
-   "mfr": "_TZ3000_ee8nrt2l",
-   "pid": "TS0044",
-   "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1159",
-   "status": "applied",
-   "driver": "scene_switch_4",
-   "alsoIn": [
-    "button_wireless_2"
-   ]
-  },
-  {
    "mfr": "_TZ3000_dfgbtub0",
    "pid": "TS0042",
    "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/864#issuecomment-2408511628",
@@ -118,6 +90,13 @@
    "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/270#issuecomment-1447298611",
    "status": "lead",
    "why": "no button driver lists TS004"
+  },
+  {
+   "mfr": "_TZE200_htnnfasr",
+   "pid": "TS0601",
+   "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/91",
+   "status": "lead",
+   "why": "TS0601: DP layout differs per id, needs a capture"
   }
  ]
 }
