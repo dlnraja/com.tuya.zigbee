@@ -183,7 +183,11 @@ jobs:
       - name: Ledger intake (diagnostics findings, P2908)
         id: diag_ledger
         continue-on-error: true
-        run: node scripts/progress/ledger-intake.js diag .github/state/diagnostics-report.json --max=100
+        run: |
+          # WHY(first run 39385111240): the ledger is shared with other writers; a checkout taken
+          # minutes earlier made the gated commit hit a rebase conflict. Write on the newest master.
+          git pull -q --ff-only origin master || echo "::warning::ledger intake: could not fast-forward, writing on the checkout"
+          node scripts/progress/ledger-intake.js diag .github/state/diagnostics-report.json --max=100
       - name: Commit ledger (gated)
         if: steps.diag_ledger.outcome == 'success'
         continue-on-error: true
