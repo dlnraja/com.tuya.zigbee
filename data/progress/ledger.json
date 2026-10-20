@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-20T20:58:53.978Z",
+ "updated": "2026-10-20T23:13:31.407Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -10885,6 +10885,23 @@
    ],
    "pids": [
     "TS0046"
+   ]
+  },
+  "forum-post:140352/2265": {
+   "status": "done",
+   "date": "2026-10-20",
+   "hash": "b8c07fe1add329c1",
+   "note": "identities already in a driver",
+   "by": "forum-poll",
+   "topic": 140352,
+   "post": 2265,
+   "author": "okidoki",
+   "link": "https://community.homey.app/t/140352/2265",
+   "mfrs": [
+    "_TZE284_8se38w3c"
+   ],
+   "pids": [
+    "TS0601"
    ]
   },
   "forum-post:146667/1": {
