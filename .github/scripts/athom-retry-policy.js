@@ -7,7 +7,7 @@
 // invalid_state is retried only after a completed idle wait; unknown failures never retry.
 const POLICY = Object.freeze({
   version: 1,
-  maxTransientRetries: 2, // socket hang up, ECONNRESET, S3 "specified key", timeouts
+  maxTransientRetries: 2, // socket hang up, ECONNRESET, S3 "specified key", timeouts, 502/503/504 by code or text (P2911)
   maxAggregateRetries: 2, // AggregateError flake check, then bisect
   maxInvalidStateRetries: 1,
   backoffBaseS: 60,
@@ -17,7 +17,7 @@ const POLICY = Object.freeze({
   buildPollTimeoutMs: 360000,
 });
 
-const TRANSIENT_RE = /socket hang up|ECONNRESET|ECONNABORTED|ETIMEDOUT|EPIPE|EAI_AGAIN|fetch failed|Timeout after \d+ms|specified key|NoSuchKey|too many requests|\b429\b|\b50[234]\b|ENOSPC|no space/i;
+const TRANSIENT_RE = /socket hang up|ECONNRESET|ECONNABORTED|ETIMEDOUT|EPIPE|EAI_AGAIN|fetch failed|Timeout after \d+ms|specified key|NoSuchKey|too many requests|\b429\b|\b50[234]\b|Bad Gateway|Service Unavailable|Gateway Time-?out|ENOSPC|no space/i;
 
 function classify(text) {
   const s = String(text || '');
