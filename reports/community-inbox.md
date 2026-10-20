@@ -1,4 +1,4 @@
-# 📥 Community Inbox — 2026-10-19 10:44 UTC
+# 📥 Community Inbox — 2026-10-20 10:02 UTC
 
 Généré par `.github/scripts/community-inbox-digest.js` (workflow `community-inbox.yml`).
 
@@ -6,20 +6,20 @@ Généré par `.github/scripts/community-inbox-digest.js` (workflow `community-i
 
 - Issues ouvertes : **6** — 🔴 à traiter : **4**, 🟡 attente utilisateur : 2, 🟢 maintainer actif : 0
 - PRs ouvertes : **1**
-- Forum : **7** post(s) sans réponse du maintainer
+- Forum : **8** post(s) sans réponse du maintainer
 - Messages privés (lecture seule, jamais de réponse) : **20** thread(s), 7 mfr, 5 pid, 7 UUID diag
 
 ## 🔴 Issues à traiter
 
 - [#571](https://github.com/dlnraja/com.tuya.zigbee/issues/571) — [Bug] QT-07S (_TZE284_myd45weu / TS0601) remains unknown and Configure keeps loading — v9.0.1445 Test _(🔴 attente maintainer, maj 2026-10-12)_
 - [#570](https://github.com/dlnraja/com.tuya.zigbee/issues/570) — [soil_sensor] Bug: AOYAN AY-303Z soil sensor not recognized despite fingerprint in soil_sensor driver _(🔴 attente maintainer, maj 2026-10-12)_
-- [#560](https://github.com/dlnraja/com.tuya.zigbee/issues/560) — Bug report - TRV06 Smart Zigbee Radiator Valve - isn't working _(🔴 attente maintainer, maj 2026-10-17)_
+- [#560](https://github.com/dlnraja/com.tuya.zigbee/issues/560) — Bug report - TRV06 Smart Zigbee Radiator Valve - isn't working _(🔴 attente maintainer, maj 2026-10-19)_
 - [#550](https://github.com/dlnraja/com.tuya.zigbee/issues/550) — Bug report - [Short description] _(🔴 escaladé, maj 2026-10-04)_
 
 ## 🟡 Auto-résolues, en attente de retour
 
 - [#559](https://github.com/dlnraja/com.tuya.zigbee/issues/559) — Smartplug _(maj 2026-10-03)_
-- [#557](https://github.com/dlnraja/com.tuya.zigbee/issues/557) — 🤖 Daily digest _(maj 2026-10-19)_
+- [#557](https://github.com/dlnraja/com.tuya.zigbee/issues/557) — 🤖 Daily digest _(maj 2026-10-20)_
 
 ## 🔀 PRs ouvertes
 
@@ -34,4 +34,5 @@ Généré par `.github/scripts/community-inbox-digest.js` (workflow `community-i
 - **marosk** (2026-10-12) :  Hi, Could you please add support for this Tuya Zigbee Radiator Thermostat (TRV)? It is sold by a local (Slovak) brand called ANTIK (model A
 - **Istvan_Mag** (2026-10-13) :  Hi I m new in this topic! Please help me to find which device i need use for this 4in1 sensor, not clearly to find the right one, or maybe 
 - **Kizabgd** (2026-10-15) :  Hi I can’t add Tuya Convenient Digital LCD Indoor Zigbee Temperature ( _TZE284_9ern5sfh / TS0601 ) Even though I select the dedicated “ Add
+- **Leinad** (2026-10-19) :  Hi, can you please add 6 Gang Scene Switch _TZ3000_nrfkrgf4 / TS0046. until now no availbale device is working with home por 2023 and lates
 
