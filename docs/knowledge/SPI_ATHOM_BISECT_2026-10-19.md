@@ -31,3 +31,5 @@ exists; other RGB devices keep their default class (test/spi-fold-routing.test.j
 (`_folded`). It never shipped, so no paired device depends on it. The extra "SPI minus another recent driver"
 build was skipped: Athom would only report the same opaque AggregateError, and the devices already pair on the
 published host. Credit: DP layout from zigbee-herdsman-converters gledopto.ts GL-SPI-206P (Koen Kanters and contributors).
+
+Outcome: master #3646 v9.0.1565 and #3647 v9.0.1566 reached Test after the removal (fold 896ea9f61f). CSV error kind fixed by P2901 (dc3ab1df91): #3645 recorded `AggregateError`.
