@@ -184,6 +184,25 @@ function purgeHomeybuildBackups() {
   }
 }
 
+function projectUploadBytes(file) {
+  const os = require('os');
+  const tmp = path.join(os.tmpdir(), `p2842-projection-${process.pid}.json`);
+  const quiet = console.log;
+  try {
+    fs.copyFileSync(file, tmp);
+    console.log = () => {};
+    require(path.join(ROOT, 'scripts/maintenance/sanitize-manifest.cjs')).sanitizeManifestFile(tmp);
+    require(path.join(ROOT, 'scripts/maintenance/compact-zigbee-identifiers.cjs')).compactManifestFile(tmp);
+    require(path.join(ROOT, 'scripts/maintenance/strip-redundant-title-formatted.cjs')).stripFile(tmp);
+    return Buffer.byteLength(JSON.stringify(JSON.parse(fs.readFileSync(tmp, 'utf8'))));
+  } catch {
+    return null;
+  } finally {
+    console.log = quiet;
+    try { fs.unlinkSync(tmp); } catch { /* ignore */ }
+  }
+}
+
 function rootAppJsonCompactOk() {
   const f = path.join(ROOT, 'app.json');
   if (!fs.existsSync(f)) {
@@ -194,8 +213,17 @@ function rootAppJsonCompactOk() {
     const compact = Buffer.byteLength(JSON.stringify(JSON.parse(fs.readFileSync(f, 'utf8'))));
     const mb = compact / (1024 * 1024);
     if (mb > 4) {
-      note('fail', `root app.json compact ${mb.toFixed(2)} MB > 4.00 MB`);
-      return false;
+      // WHY(P2912): after `homey app build` the root app.json carries every driver
+      // Flow card (4.75 MB); the upload is the prepare-publish projection
+      // (sanitize + Zigbee compact + titleFormatted strip). Judge that, like
+      // scripts/ci/publish-size-gate.cjs (P2830h), instead of false-failing validate.yml.
+      const projected = projectUploadBytes(f);
+      if (projected === null || projected / (1024 * 1024) > 4) {
+        note('fail', `root app.json compact ${mb.toFixed(2)} MB > 4.00 MB` + (projected === null ? ' (projection failed)' : `; projected upload ${(projected / 1048576).toFixed(2)} MB`));
+        return false;
+      }
+      note('ok', `root app.json raw ${mb.toFixed(2)} MB (built, not uploaded); projected upload ${(projected / 1048576).toFixed(2)} MB`);
+      return true;
     }
     note('ok', `root app.json compact ${mb.toFixed(2)} MB`);
     return true;
