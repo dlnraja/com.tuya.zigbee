@@ -141,7 +141,15 @@ jobs:
         run: npm ci --prefer-offline --no-audit || npm install
       - name: Crash regression guard - Homey timer context
         run: npm run check:timer-context
-      - name: Regression lessons gate (MUST-KEEP fatals)
+      # P2906: shared rules-gates action when the checkout has it (master dispatch); stable-v5 does
+      # not carry the shared runner yet, so the direct script stays as the fallback there.
+      - name: Regression lessons gate (MUST-KEEP fatals, shared rules-gates)
+        if: hashFiles('scripts/ci/rules-gates.js') != '' && hashFiles('.github/actions/rules-gates/action.yml') != ''
+        uses: ./.github/actions/rules-gates
+        with:
+          only: regression-lessons
+      - name: Regression lessons gate (MUST-KEEP fatals, branch without the shared runner)
+        if: hashFiles('scripts/ci/rules-gates.js') == '' || hashFiles('.github/actions/rules-gates/action.yml') == ''
         run: node tools/ci/regression-lessons-gate.js
       - name: Google Assistant / Alexa voice-safety gate
         run: npm run check:voice
@@ -249,10 +257,19 @@ jobs:
         env:
           HOMEY_CHANGELOG: 'Reliability improvements.'
         run: node .github/scripts/ensure-next-changelog.js
-      - name: "🛡️ Stable reliability gates (couple + sacred-keep)"
+      # P2906: anti-bot + P2138 via the shared rules-gates action when present (fallback: direct scripts).
+      - name: "🛡️ Stable reliability gates (anti-bot + P2138, shared rules-gates)"
+        if: hashFiles('scripts/ci/rules-gates.js') != '' && hashFiles('.github/actions/rules-gates/action.yml') != ''
+        uses: ./.github/actions/rules-gates
+        with:
+          only: anti-bot,p2138
+      - name: "🛡️ Stable reliability gates (anti-bot + P2138, branch without the shared runner)"
+        if: hashFiles('scripts/ci/rules-gates.js') == '' || hashFiles('.github/actions/rules-gates/action.yml') == ''
         run: |
           node tools/ci/anti-bot-regression-gate.js
           node tools/ci/p2138-sacred-couple-matrix-gate.js
+      - name: "🛡️ Stable reliability gates (couple + sacred-keep)"
+        run: |
           npm run check:p2288
           npm run check:p2494
           npm run check:p2495

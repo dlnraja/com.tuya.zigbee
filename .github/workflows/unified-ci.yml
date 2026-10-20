@@ -131,8 +131,12 @@ jobs:
       - name: 🛡️ Fleetwood Integrity & Manifest Gateway
         run: node scripts/PRE_COMMIT_CHECKS.js
 
-      - name: 🛡️ Regression lessons gate (MUST-KEEP fatals)
-        run: node tools/ci/regression-lessons-gate.js
+      # P2906: rules gates below run through the shared .github/actions/rules-gates action, one id per
+      # step so the order between the other gates of this job stays the same.
+      - name: 🛡️ Regression lessons gate (MUST-KEEP fatals, shared rules-gates)
+        uses: ./.github/actions/rules-gates
+        with:
+          only: regression-lessons
       
       - name: 🛡️ SDK 3 Strict Linter
         run: node scripts/maintenance/rule-21-linter.js
@@ -164,8 +168,10 @@ jobs:
           fi
           node .github/scripts/fp-collision-check.js --baseline .github/fingerprint-collision-baseline.json
 
-      - name: 🛡️ Anti-bot regression gate (P127)
-        run: node tools/ci/anti-bot-regression-gate.js
+      - name: 🛡️ Anti-bot regression gate (P127, shared rules-gates)
+        uses: ./.github/actions/rules-gates
+        with:
+          only: anti-bot
 
       - name: 🛡️ Sacred couple registry audit (P151)
         run: node tools/ci/audit-sacred-couple.js --from-registry
@@ -173,8 +179,10 @@ jobs:
       - name: 🛡️ Dual-claim compose gate (P167/P168)
         run: node tools/ci/dual-claim-compose-gate.js
 
-      - name: 🛡️ P2138 sacred-couple matrix gate
-        run: node tools/ci/p2138-sacred-couple-matrix-gate.js
+      - name: 🛡️ P2138 sacred-couple matrix gate (shared rules-gates)
+        uses: ./.github/actions/rules-gates
+        with:
+          only: p2138
 
       - name: 🛡️ Couple pin gate (SPM01/SPM02 never curtain_motor)
         run: node tools/ci/couple-pin-gate.js
@@ -203,8 +211,10 @@ jobs:
       - name: 🛡️ P217 fork harvest sacred-couple gate
         run: node tools/ci/p217-fork-harvest-gate.js
 
-      - name: 🛡️ P214 intelligent ZCL/EF00 adaptation gate
-        run: node tools/ci/p214-intelligent-protocol-gate.js
+      - name: 🛡️ P214 intelligent ZCL/EF00 adaptation gate (shared rules-gates)
+        uses: ./.github/actions/rules-gates
+        with:
+          only: p214
 
       - name: 🛡️ P216 ZCL battery half-percent gate
         run: node tools/ci/p216-zcl-battery-half-percent-gate.js
