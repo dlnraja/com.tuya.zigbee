@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-20T06:45:03.098Z",
+ "generated": "2026-10-20T09:18:15.091Z",
  "drivers": 393,
  "snapshot": {
   "air_purifier": {
@@ -189,9 +189,9 @@
    "pidSha": "97471aa91d3d60d5"
   },
   "button_wireless_2": {
-   "mfr": 98,
+   "mfr": 95,
    "pid": 100,
-   "mfrSha": "b44fd7618273b8ca",
+   "mfrSha": "4568887d4a1d8499",
    "pidSha": "25b2f5f37b8e4dd1"
   },
   "button_wireless_3": {
@@ -201,9 +201,9 @@
    "pidSha": "06cd0099c514e4ab"
   },
   "button_wireless_4": {
-   "mfr": 31,
+   "mfr": 32,
    "pid": 40,
-   "mfrSha": "59a13d6d31917c85",
+   "mfrSha": "6b0a1068e9b7d56f",
    "pidSha": "db1d9492b3bc3407"
   },
   "button_wireless_4_ts0041": {
@@ -285,9 +285,9 @@
    "pidSha": "3427697d0c296c9d"
   },
   "climate_sensor": {
-   "mfr": 532,
+   "mfr": 531,
    "pid": 32,
-   "mfrSha": "dd0e6956903fdb06",
+   "mfrSha": "32b690e633cefad6",
    "pidSha": "4809a771f46a5606"
   },
   "climate_sensor_device": {
@@ -345,10 +345,10 @@
    "pidSha": "455c46e8c8549693"
   },
   "co_sensor": {
-   "mfr": 8,
-   "pid": 2,
-   "mfrSha": "4fdc731f2d4235dd",
-   "pidSha": "777a8703abf8065f"
+   "mfr": 10,
+   "pid": 3,
+   "mfrSha": "589dabd6b909019a",
+   "pidSha": "98aaec19a4fb45ff"
   },
   "contact_sensor": {
    "mfr": 60,
@@ -1785,9 +1785,9 @@
    "pidSha": "14fd4884570649ac"
   },
   "smoke_sensor2": {
-   "mfr": 35,
+   "mfr": 33,
    "pid": 14,
-   "mfrSha": "575e2353d97eeca6",
+   "mfrSha": "564cc7bd0681db91",
    "pidSha": "91d04f847d60da6b"
   },
   "smoke_sensor3": {
@@ -1797,9 +1797,9 @@
    "pidSha": "ffba1e7b2343f15f"
   },
   "socket_power_strip": {
-   "mfr": 7,
+   "mfr": 9,
    "pid": 2,
-   "mfrSha": "cc33ad42c9b54023",
+   "mfrSha": "17919ee4eabbbb7c",
    "pidSha": "a9680825b1d052a2"
   },
   "socket_power_strip_four": {
@@ -1877,7 +1877,7 @@
   "switch_1gang": {
    "mfr": 354,
    "pid": 38,
-   "mfrSha": "eb39167fcbe741c1",
+   "mfrSha": "5ae7c82f6b3da866",
    "pidSha": "fd65b1d55ed8db6a"
   },
   "switch_2_gang": {
