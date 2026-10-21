@@ -29,7 +29,21 @@ function parseRetryCount(v) {
   return Number.isFinite(n) && n > 0 ? n : 0;
 }
 
-function decide({ version, builds, alreadyRetried, retryCount, idleWaited = false, reachTest = process.env.ATHOM_REACH_TEST !== '0' }) {
+function decide({ version, builds, alreadyRetried, retryCount, idleWaited = false, reachTest = process.env.ATHOM_REACH_TEST !== '0', hangupOnly = process.env.ATHOM_RETRY_HANGUP_ONLY === '1' }) {
+  // P-KB4 (master only, env ATHOM_RETRY_HANGUP_ONLY=1): no automatic retry for AggregateError / processing_failed;
+  // a single retry is kept for a socket hang up only.
+  if (hangupOnly) {
+    const bh = (builds || []).find((x) => String(x && x.version) === String(version));
+    if (!bh) return { retry: false, reason: `no Athom build for v${version}` };
+    const mh = (typeof bh.stateMeta === 'string' ? bh.stateMeta : JSON.stringify(bh.stateMeta || bh.failureDetail || '')) + ' ' + Object.entries(bh).filter(([k, v]) => v && /err|reason|message|log|fail/i.test(k)).map(([, v]) => (typeof v === 'string' ? v : JSON.stringify(v))).join(' ');
+    if (String(bh.state) !== 'processing_failed') return { retry: false, reason: `v${version} state ${bh.state}` };
+    const aggregate = /AggregateError/i.test(mh);
+    if (/socket hang up/i.test(mh) && !aggregate) {
+      const doneH = retryCount != null ? Number(retryCount) || 0 : (alreadyRetried ? 1 : 0);
+      return doneH >= 1 ? { retry: false, kind: 'socket hang up', reason: 'socket hang up: single retry already used' } : { retry: true, kind: 'socket hang up', next: 1, reason: `socket hang up on v${version} (single retry)` };
+    }
+    return { retry: false, kind: aggregate ? 'AggregateError' : 'processing_failed', reason: `master hang-up-only policy: no auto retry for ${aggregate ? 'AggregateError' : 'processing_failed'} on v${version}` };
+  }
   const done = retryCount != null ? Number(retryCount) || 0 : (alreadyRetried ? 1 : 0);
   const b0 = (builds || []).find((x) => String(x && x.version) === String(version));
   const bE = (builds || []).find((x) => String(x && x.version) === String(version));

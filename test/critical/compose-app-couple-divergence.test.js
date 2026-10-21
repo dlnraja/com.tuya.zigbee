@@ -13,6 +13,8 @@ function settingIds(node, out = new Set()) {
     if (typeof node.id === 'string') { out.add(node.id); }
     // `$extends` pulls a template from .homeycompose/drivers/settings/<id>.json (same id at build)
     for (const ext of [].concat(node.$extends || [])) { if (typeof ext === 'string') { out.add(ext); } }
+    // P-KB4: a group template brings its children ids along (e.g. pe_report_options)
+    for (const ext of [].concat(node.$extends || [])) { if (typeof ext === 'string') { const t = readJson(path.join(ROOT, '.homeycompose/drivers/settings', `${ext}.json`)); if (t && t.children) { settingIds(t.children, out); } } }
     if (node.children) { settingIds(node.children, out); }
   }
   return out;
