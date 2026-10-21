@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-21T07:45:22.696Z",
+  "updated": "2026-10-21T08:27:53.854Z",
   "threads": {
     "21313": {
       "lastPost": 2819,
@@ -14471,14 +14471,17 @@
     },
     {
       "id": "forum:26439#4658",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "LauraLuc",
       "link": "https://community.homey.app/t/26439/4658",
       "mfrs": [],
       "pids": [
         "TS011F"
       ],
-      "why": "pid-only"
+      "why": "pid-only",
+      "note": "Typed _TZ3000-gjnozsaz is _TZ3000_gjnozsaz × TS011F, present in smartplug.",
+      "triagedAt": "2026-10-21T08:27:53.854Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21b"
     },
     {
       "id": "forum:26439#4659",
@@ -17041,12 +17044,15 @@
     },
     {
       "id": "forum:140352#512",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Andre_Ringendahl",
       "link": "https://community.homey.app/t/140352/512",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "HOBEIAN × ZG-204ZL quoted in the post (Developer Tools) is now in presence_sensor_radar.",
+      "triagedAt": "2026-10-21T08:27:53.854Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21b"
     },
     {
       "id": "forum:140352#514",
@@ -22332,13 +22338,16 @@
     },
     {
       "id": "forum:140352#947",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Ronny_M",
       "link": "https://community.homey.app/t/140352/947",
       "mfrs": [],
       "pids": [],
       "images": 4,
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "HOBEIAN × ZG-101ZL is now in button_wireless_1.",
+      "triagedAt": "2026-10-21T08:27:53.854Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21b"
     },
     {
       "id": "forum:26439#5119",
@@ -23673,8 +23682,8 @@
     },
     {
       "id": "dlnraja-issue:21",
-      "status": "needs-info",
-      "note": "closed issue; pid-only; research or diag needed",
+      "status": "already-fixed",
+      "note": "3A Smart Home DE × LXN59-2S7LX1.0 in switch_2gang (P2922).",
       "sources": [
         "https://github.com/dlnraja/com.tuya.zigbee/issues/21"
       ],
@@ -23684,7 +23693,9 @@
       "pids": [
         "TS0001",
         "TS0011"
-      ]
+      ],
+      "triagedAt": "2026-10-21T08:27:53.854Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21b"
     },
     {
       "id": "dlnraja-issue:22",
@@ -23712,14 +23723,16 @@
     },
     {
       "id": "dlnraja-issue:23",
-      "status": "needs-info",
-      "note": "closed issue; request-no-identity; research or diag needed",
+      "status": "already-fixed",
+      "note": "eWeLink × CK-TLSR8656-SS5-01(7014) (interview in the issue) is in climate_sensor.",
       "sources": [
         "https://github.com/dlnraja/com.tuya.zigbee/issues/23"
       ],
       "author": "luuk0412-wq",
       "closedAt": "2025-11-27T00:22:40Z",
-      "comments": 1
+      "comments": 1,
+      "triagedAt": "2026-10-21T08:27:53.854Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21b"
     },
     {
       "id": "dlnraja-issue:24",
@@ -23735,13 +23748,15 @@
     {
       "id": "dlnraja-issue:25",
       "status": "needs-info",
-      "note": "closed issue; diag-only; research or diag needed",
+      "note": "Lead: Aqara RTCGQ13LM, interview LUMI × lumi.motion.agl04, ep1 clusters 0,1,3,1030 (native occupancy). The pid is on motion_sensor but LUMI is not, and motion_sensor ep1 declares only cluster 0; adding it needs the occupancy cluster declared. Source: issue interview + Z2M lumi.ts RTCGQ13LM.",
       "sources": [
         "https://github.com/dlnraja/com.tuya.zigbee/issues/25"
       ],
       "author": "GXA064",
       "closedAt": "2025-11-27T00:22:11Z",
-      "comments": 1
+      "comments": 1,
+      "triagedAt": "2026-10-21T08:27:53.854Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21b"
     },
     {
       "id": "dlnraja-issue:26",
@@ -24158,7 +24173,7 @@
     },
     {
       "id": "forum:140352#1016",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Mario_F",
       "link": "https://community.homey.app/t/140352/1016",
       "mfrs": [],
@@ -24166,7 +24181,10 @@
         "TS1201"
       ],
       "images": 1,
-      "why": "pid-only"
+      "why": "pid-only",
+      "note": "Moes UFO-R11: interview _TZ3290_ot6ewjvmejq5ekhl × TS1201 is in ir_blaster.",
+      "triagedAt": "2026-10-21T08:27:53.854Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21b"
     },
     {
       "id": "forum:140352#1021",
@@ -24680,12 +24698,15 @@
     },
     {
       "id": "forum:140352#1117",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Ronny_M",
       "link": "https://community.homey.app/t/140352/1117",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "HOBEIAN × ZG-101ZL is now in button_wireless_1.",
+      "triagedAt": "2026-10-21T08:27:53.854Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21b"
     },
     {
       "id": "forum:140352#1121",
@@ -24747,12 +24768,15 @@
     },
     {
       "id": "forum:140352#1128",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "FinnKje",
       "link": "https://community.homey.app/t/140352/1128",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "HOBEIAN × ZG-102ZM (packaging ZG-103ZL) is now in vibration_sensor.",
+      "triagedAt": "2026-10-21T08:27:53.854Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21b"
     },
     {
       "id": "forum:140352#1129",
@@ -24812,22 +24836,28 @@
     },
     {
       "id": "forum:26439#5321",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Frico_Mili",
       "link": "https://community.homey.app/t/26439/5321",
       "mfrs": [],
       "pids": [],
       "images": 2,
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "HOBEIAN × ZG-204Z is now in presence_sensor_radar.",
+      "triagedAt": "2026-10-21T08:27:53.854Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21b"
     },
     {
       "id": "forum:26439#5324",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Egil_Waldeland1",
       "link": "https://community.homey.app/t/26439/5324",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "HOBEIAN × ZG-204ZM is now in presence_sensor_radar.",
+      "triagedAt": "2026-10-21T08:27:53.854Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21b"
     },
     {
       "id": "forum:26439#5326",
@@ -25389,12 +25419,15 @@
     },
     {
       "id": "forum:26439#5488",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Sergio_B",
       "link": "https://community.homey.app/t/26439/5488",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Hobeian × ZG-101ZL is now in button_wireless_1 (case-insensitive).",
+      "triagedAt": "2026-10-21T08:27:53.854Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21b"
     },
     {
       "id": "forum:26439#5491",
