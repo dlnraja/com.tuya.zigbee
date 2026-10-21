@@ -1,7 +1,7 @@
 # Open leads
 
 - Provisional tier: 1 (data/leads/provisional-couples.json)
-- KB candidates not yet in a driver: 232 with a reliable source (conf 0.85–0.9), 96 single weak source (conf ≤0.7). Staged, not applied (manifest-size hold).
+- KB candidates not yet in a driver: 218 with a reliable source (conf 0.85–0.9), 96 single weak source (conf ≤0.7). Staged, not applied (manifest-size hold).
 
 | mfr | pid | status | conf | source |
 |---|---|---|---|---|
@@ -47,16 +47,12 @@
 | `_TYST11_zuhszj9s` | uhszj9s | kb-confirmed | 0.9 | https://github.com/zigpy/zha-device-handlers/blob/1d6598c32a8b4f054438f63f08fc36ff3d6b4930/zhaquirks/tuya/tuya_trv.py |
 | `_TYST11_zuhszj9s` | uhszj9s\u0000 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/SEA801-Zigbee_SEA802-Zigbee.html |
 | `_TYZB01_2jzbhomb` | SM0202 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/SBDV-00029.html |
-| `_TYZB01_4obovpbi` | TS0216 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/HS2WD-E.html |
 | `_TYZB01_7yidyqxd` | TS0108 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/TS0108.html |
-| `_TYZB01_bwsijaty` | TS0219 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/R7051.html |
 | `_TYZB01_epni2jgy` | TS0203 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/SBDV-00030.html |
 | `_TYZB01_hww2py6b` | TS1001 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/FB21-001.html |
 | `_TYZB01_lzrhtcxu` | SM0201 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/SS300.html |
 | `_TYZB01_o63ssaah` | TS0207 | kb-confirmed | 0.9 | https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/tuya/_TZ3000_TS0207_water_leak_sensor.json |
-| `_TYZB01_rs7ff6o7` | TS0219 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/R7051.html |
 | `_TYZB01_ub7urdza` | TS0041A | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/SBDV-00032.html |
-| `_TYZB01_ynsiasng` | TS0219 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/R7051.html |
 | `_TYZB01_z2umiwvq` | SM0202 | kb-confirmed | 0.9 | https://github.com/zigpy/zha-device-handlers/blob/1d6598c32a8b4f054438f63f08fc36ff3d6b4930/zhaquirks/tuya/sm0202_motion.py |
 | `_TZ1800_akzvkzqq` | TS0211 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/HG06668.html |
 | `_TZ1800_ho6i0zk9` | TY0203 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/HG06336.html |
@@ -77,26 +73,19 @@
 | `_TZ3000_gzvniqjb` | TS0011 | kb-confirmed | 0.9 | https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/tuya/_TZ3000_gzvniqjb_din_rail_switch.json |
 | `_TZ3000_hgm6k8ku` | TS0207 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/CK-BL702-ROUTER-01(7018).html |
 | `_TZ3000_hktqahrq` | TS0202 | kb-confirmed | 0.9 | https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/tuya/ts0202_presence_sensor.json |
-| `_TZ3000_hopb2kjm` | TS0002 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/TS0002_power.html |
 | `_TZ3000_i3rjdrwu` | TS0042 | kb-confirmed | 0.9 | https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/tuya/_TZ3000_TS0042_2gang_remote.json |
 | `_TZ3000_imdfhhud` | TS0207 | kb-confirmed | 0.9 | https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/tuya/_TZ3000_TS0207_rain_sensor.json |
 | `_TZ3000_it1hm1cr` | TS0207 | kb-confirmed | 0.9 | https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/tuya/_TZ3000_TS0207_water_leak_sensor.json |
 | `_TZ3000_j5fbnjeh` | TS0201 | kb-confirmed | 0.9 | https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/tesla/tsl-sen-tah_multi_sensor.json |
-| `_TZ3000_kxlmv9ag` | TS0207 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/TS0207_repeater.html |
 | `_TZ3000_lfa05ajd` | TS0201 | kb-confirmed | 0.9 | https://github.com/zigpy/zha-device-handlers/blob/1d6598c32a8b4f054438f63f08fc36ff3d6b4930/zhaquirks/tuya/ts0201.py |
 | `_TZ3000_mnlsbthu` | TS0202 | kb-confirmed | 0.9 | https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/tuya/_TZ3000_mnlsbthu_presence_sensor.json |
 | `_TZ3000_n0lphcok` | TS0207 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/TS0207_repeater.html |
 | `_TZ3000_oh7jddmx` | TS0502A | kb-confirmed | 0.9 | https://github.com/zigpy/zha-device-handlers/blob/1d6598c32a8b4f054438f63f08fc36ff3d6b4930/zhaquirks/lidl/cct.py |
 | `_TZ3000_piuensvr` | TS0207 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/CK-BL702-ROUTER-01(7018).html |
-| `_TZ3000_pkeqinnt` | TS0043 | kb-confirmed | 0.9 | https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/tuya/_TZ3000_TS0043_3gang_remote.json |
-| `_TZ3000_r80pzsb9` | TS0207 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/TS0207_repeater.html |
-| `_TZ3000_sgpbz53b` | TS0207 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/TS0207_repeater.html |
-| `_TZ3000_shopg9ss` | TS0207 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/TS0207_repeater.html |
 | `_TZ3000_v4mevirn` | TS011F | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/ZIGBEE-B09-UK.html |
 | `_TZ3000_w5s3mbyn` | TS0001 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/KES-606US-L1.html |
 | `_TZ3000_wbfgbpxq` | TS0044 | kb-confirmed | 0.9 | https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/tuya/_TZ3000_TS0044_4gang_remote.json |
 | `_TZ3000_wc3gjyp3` | TS004F | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/ERS-10TZBVB-AA.html |
-| `_TZ3000_wmlc9p9z` | TS0207 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/TS0207_repeater.html |
 | `_TZ3000_xdo0hj1k` | TS130F | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/TS130F_dual.html |
 | `_TZ3000_xeumnff9` | TS011F | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/ZMO-606-P2.html |
 | `_TZ3000_xr5m6kfg` | TS0505B | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/SMD4109W-RGB-ZB.html |
@@ -197,9 +186,7 @@
 | `_TZE284_agjqiu4h` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/D4Z-M.html |
 | `_TZE284_ajhu0zqb` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/SZW08.html |
 | `_TZE284_d4h8j2n6` | ZP-301Z | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/ZP-301Z.html |
-| `_TZE284_goecjd1t` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/ZWPM16.html |
 | `_TZE284_hbxadcl0` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/TS0601_6gang_switch_2.html |
-| `_TZE284_hkdl5fmv` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/ERS-10TZBVK-AA.html |
 | `_TZE284_hqys6frs` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/R12LM-Z10T.html |
 | `_TZE284_huu3td85` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/ZDMS16-1.html |
 | `_TZE284_iunyuzwe` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/W04-Z10T.html |
@@ -208,7 +195,6 @@
 | `_TZE284_uqzwwjas` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/ZSD20.html |
 | `_TZE284_vbgmewta` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/W04-Z10T.html |
 | `_TZE284_xr5yfele` | TS0601 | kb-confirmed | 0.9 | https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L14722 |
-| `_TZE284_xuflgcnz` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/ZVG1.html |
 | `_TZE284_zeeqkb0p` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/ZSD20.html |
 | `_TZE284_zm8zpwas` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/ZPV-01.html |
 | `_TZE28C1000000_19jwhi8c` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/ZN-USC1U-HT.html |
