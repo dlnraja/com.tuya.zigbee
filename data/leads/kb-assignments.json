@@ -54,6 +54,17 @@
    "rule": "sibling"
   },
   {
+   "mfr": "_TZ3000_kmsbwdol",
+   "pid": "TS130F",
+   "model": "TS130F_dual",
+   "refs": [
+    "https://www.zigbee2mqtt.io/devices/TS130F_dual.html",
+    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lonsonho.ts#L59"
+   ],
+   "driver": "curtain_module_2_gang",
+   "rule": "sibling"
+  },
+  {
    "mfr": "_TZ3000_xdo0hj1k",
    "pid": "TS130F",
    "model": "TS130F_dual",
@@ -70,6 +81,28 @@
    "model": "Window blinds (not reversed)",
    "refs": [
     "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/tuya/_TZB000_42ha4rsc_window_blinds.json"
+   ],
+   "driver": "curtain_motor",
+   "rule": "sibling"
+  },
+  {
+   "mfr": "_TZE284_a0hirjnh",
+   "pid": "TS0601",
+   "model": "TS0601_cover_12",
+   "refs": [
+    "https://www.zigbee2mqtt.io/devices/TS0601_cover_12.html",
+    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L26317"
+   ],
+   "driver": "curtain_motor",
+   "rule": "sibling"
+  },
+  {
+   "mfr": "_TZE284_z98viqa6",
+   "pid": "TS0601",
+   "model": "SFD02-Z",
+   "refs": [
+    "https://www.zigbee2mqtt.io/devices/SFD02-Z.html",
+    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/moes.ts#L560"
    ],
    "driver": "curtain_motor",
    "rule": "sibling"
@@ -194,6 +227,28 @@
    "rule": "pid-unique"
   },
   {
+   "mfr": "_TZ3000_ahvrgyac",
+   "pid": "TS0001",
+   "model": "TS0002_power",
+   "refs": [
+    "https://www.zigbee2mqtt.io/devices/TS0002_power.html",
+    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L8972"
+   ],
+   "driver": "switch_1gang",
+   "rule": "sibling"
+  },
+  {
+   "mfr": "_TZ3000_dlhhrhs8",
+   "pid": "TS000F",
+   "model": "AY301Z-2CH",
+   "refs": [
+    "https://www.zigbee2mqtt.io/devices/AY301Z-2CH.html",
+    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L4890"
+   ],
+   "driver": "switch_1gang",
+   "rule": "sibling"
+  },
+  {
    "mfr": "_TZ3000_hopb2kjm",
    "pid": "TS0002",
    "model": "TS0002_power",
@@ -205,6 +260,28 @@
    "rule": "sibling"
   },
   {
+   "mfr": "_TZ3000_nuenzetq",
+   "pid": "TS0002",
+   "model": "2 output module (TS0002)",
+   "refs": [
+    "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/tuya/_TZ3000_2channel_module.json",
+    "https://github.com/JohanBendz/com.tuya.zigbee/blob/328d24ed315131528f2358b66bb0b8259615a49e/drivers/relay_board_2_channel/driver.compose.json"
+   ],
+   "driver": "switch_2gang",
+   "rule": "sibling"
+  },
+  {
+   "mfr": "_TZ300A_57kqwetw",
+   "pid": "TS0726",
+   "model": "TS0726_4_gang_switch_and_4_scene",
+   "refs": [
+    "https://www.zigbee2mqtt.io/devices/TS0726_4_gang_switch_and_4_scene.html",
+    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L29869"
+   ],
+   "driver": "switch_4gang",
+   "rule": "sibling"
+  },
+  {
    "mfr": "_TZE284_xuflgcnz",
    "pid": "TS0601",
    "model": "ZVG1",
@@ -213,6 +290,17 @@
     "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/rtx.ts#L20"
    ],
    "driver": "valve_irrigation",
+   "rule": "sibling"
+  },
+  {
+   "mfr": "_TZ3210_o235agwx",
+   "pid": "TS110E",
+   "model": "TS110E_1gang_2",
+   "refs": [
+    "https://www.zigbee2mqtt.io/devices/TS110E_1gang_2.html",
+    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L16929"
+   ],
+   "driver": "wall_dimmer_tuya",
    "rule": "sibling"
   },
   {
@@ -809,6 +897,16 @@
    "why": "no sibling in our drivers"
   },
   {
+   "mfr": "_TYZB01_wpmo3ja3",
+   "pid": "TS0212",
+   "model": "HS3MS",
+   "refs": [
+    "https://www.zigbee2mqtt.io/devices/HS3MS.html",
+    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/heiman.ts#L2363"
+   ],
+   "why": "no sibling in our drivers"
+  },
+  {
    "mfr": "_TYZB01_z2umiwvq",
    "pid": "SM0202",
    "model": "zhaquirks/tuya/sm0202_motion.py",
@@ -826,6 +924,16 @@
     "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lidl.ts#L324"
    ],
    "why": "malformed ids (parser noise)"
+  },
+  {
+   "mfr": "_TZ3000_3o7r0mno",
+   "pid": "TS011F",
+   "model": "QS-Zigbee-SEC01-U",
+   "refs": [
+    "https://www.zigbee2mqtt.io/devices/QS-Zigbee-SEC01-U.html",
+    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L17607"
+   ],
+   "why": "siblings in several drivers: smartPlug_DinRail,button_wireless_2,switch_1gang"
   },
   {
    "mfr": "_TZ3000_5af5r192",
@@ -847,6 +955,15 @@
    "why": "siblings in several drivers: climate_sensor,doorwindowsensor_4,temphumidsensor2,lcdtemphumidsensor,temphumidsensor,temphumidsensor3"
   },
   {
+   "mfr": "_TZ3000_9evm3otq",
+   "pid": "TS0502A",
+   "model": "zhaquirks/lidl/cct.py",
+   "refs": [
+    "https://github.com/zigpy/zha-device-handlers/blob/1d6598c32a8b4f054438f63f08fc36ff3d6b4930/zhaquirks/lidl/cct.py"
+   ],
+   "why": "siblings in several drivers: tunable_bulb_E27,rgb_floor_led_light,tunable_spot_GU10,tunable_bulb_E14"
+  },
+  {
    "mfr": "_TZ3000_bb6xaihh",
    "pid": "SNZB-03",
    "model": "Presence sensor (TS0202)",
@@ -855,6 +972,16 @@
     "https://github.com/zigpy/zha-device-handlers/blob/1d6598c32a8b4f054438f63f08fc36ff3d6b4930/zhaquirks/tuya/tuya_motion.py"
    ],
    "why": "malformed ids (parser noise)"
+  },
+  {
+   "mfr": "_TZ3000_bbebkwjk",
+   "pid": "TS0001",
+   "model": "TS0001_switch_1_gang",
+   "refs": [
+    "https://www.zigbee2mqtt.io/devices/TS0001_switch_1_gang.html",
+    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L17680"
+   ],
+   "why": "siblings in several drivers: dimmer_wall_1gang,switch_1gang"
   },
   {
    "mfr": "_TZ3000_bkfe0bab",
@@ -867,6 +994,16 @@
    "why": "siblings in several drivers: button_wireless_plug,button_wireless_2"
   },
   {
+   "mfr": "_TZ3000_bu47m8pv",
+   "pid": "TS0003",
+   "model": "TS0003_switch_module_2",
+   "refs": [
+    "https://www.zigbee2mqtt.io/devices/TS0003_switch_module_2.html",
+    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L9409"
+   ],
+   "why": "siblings in several drivers: switch_3gang,switch_1gang"
+  },
+  {
    "mfr": "_TZ3000_c8bqthpo",
    "pid": "TS0207",
    "model": "SBDV-00154",
@@ -875,16 +1012,6 @@
     "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/sber.ts#L1454"
    ],
    "why": "no sibling in our drivers"
-  },
-  {
-   "mfr": "_TZ3000_dlhhrhs8",
-   "pid": "TS000F",
-   "model": "AY301Z-2CH",
-   "refs": [
-    "https://www.zigbee2mqtt.io/devices/AY301Z-2CH.html",
-    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L4890"
-   ],
-   "why": "siblings in several drivers: switch_1gang,switch_module_whd02"
   },
   {
    "mfr": "_TZ3000_eit7p838 ",
@@ -904,6 +1031,16 @@
     "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/tuya/_TZ3000_TS0201_temp_hum_sensor.json"
    ],
    "why": "siblings in several drivers: climate_sensor,doorwindowsensor_4,temphumidsensor2,lcdtemphumidsensor,temphumidsensor,temphumidsensor3"
+  },
+  {
+   "mfr": "_TZ3000_f6pgzqob",
+   "pid": "TS0003",
+   "model": "TS0003_switch_module_2",
+   "refs": [
+    "https://www.zigbee2mqtt.io/devices/TS0003_switch_module_2.html",
+    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L9409"
+   ],
+   "why": "siblings in several drivers: switch_3gang,switch_1gang"
   },
   {
    "mfr": "_TZ3000_gzvniqjb",
@@ -950,7 +1087,7 @@
    "refs": [
     "https://github.com/zigpy/zha-device-handlers/blob/1d6598c32a8b4f054438f63f08fc36ff3d6b4930/zhaquirks/lidl/cct.py"
    ],
-   "why": "siblings in several drivers: tunable_bulb_E27,rgb_floor_led_light,light_bulb_tunable_white,tunable_spot_GU10,tunable_bulb_E14"
+   "why": "siblings in several drivers: tunable_bulb_E27,rgb_floor_led_light,tunable_spot_GU10,tunable_bulb_E14"
   },
   {
    "mfr": "_TZ3000_v4mevirn",
@@ -1041,6 +1178,36 @@
    "why": "no sibling in our drivers"
   },
   {
+   "mfr": "_TZ3008_iooniers",
+   "pid": "TS011F",
+   "model": "SM0212",
+   "refs": [
+    "https://www.zigbee2mqtt.io/devices/SM0212.html",
+    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L12669"
+   ],
+   "why": "siblings in several drivers: usb_dongle_triple,smartplug,button_wireless_2,plug,plug_smart,plug_energy_monitor"
+  },
+  {
+   "mfr": "_TZ3008_qziabvzj",
+   "pid": "TS011F",
+   "model": "SM0212",
+   "refs": [
+    "https://www.zigbee2mqtt.io/devices/SM0212.html",
+    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L12669"
+   ],
+   "why": "siblings in several drivers: usb_dongle_triple,smartplug,button_wireless_2,plug,plug_smart,plug_energy_monitor"
+  },
+  {
+   "mfr": "_TZ3008_xvfd3nkp",
+   "pid": "TS011F",
+   "model": "SM0212",
+   "refs": [
+    "https://www.zigbee2mqtt.io/devices/SM0212.html",
+    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L12669"
+   ],
+   "why": "siblings in several drivers: usb_dongle_triple,smartplug,button_wireless_2,plug,plug_smart,plug_energy_monitor"
+  },
+  {
    "mfr": "_TZ3210_2uk4z8ce",
    "pid": "TS011F",
    "model": "ZP-LZ-FR2U",
@@ -1049,17 +1216,6 @@
     "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/moes.ts#L994"
    ],
    "why": "siblings in several drivers: button_wireless_plug,button_wireless_2,plug"
-  },
-  {
-   "mfr": "_TZ3210_4ubylghk",
-   "pid": "TS110E",
-   "model": "TS110E_2gang_2",
-   "refs": [
-    "https://github.com/JohanBendz/com.tuya.zigbee/blob/328d24ed315131528f2358b66bb0b8259615a49e/drivers/dimmer_2_gang/driver.compose.json",
-    "https://www.zigbee2mqtt.io/devices/TS110E_2gang_2.html",
-    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L17025"
-   ],
-   "why": "siblings in several drivers: dimmer_2_gang,switch_1gang,wall_dimmer_tuya"
   },
   {
    "mfr": "_TZ3210_4whigl8i",
@@ -1142,6 +1298,16 @@
    "refs": [
     "https://www.zigbee2mqtt.io/devices/YSR-MINI-01_rgbcct.html",
     "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/ysrsai.ts#L11"
+   ],
+   "why": "no sibling in our drivers"
+  },
+  {
+   "mfr": "_TZ3210_fhx7lk3d",
+   "pid": "TS0001",
+   "model": "CMA30651",
+   "refs": [
+    "https://www.zigbee2mqtt.io/devices/CMA30651.html",
+    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L6580"
    ],
    "why": "no sibling in our drivers"
   },
@@ -1276,15 +1442,6 @@
    "why": "no sibling in our drivers"
   },
   {
-   "mfr": "_TZE200_7ytb3h8u",
-   "pid": "TS0601",
-   "model": "zhaquirks/tuya/tuya_valve.py",
-   "refs": [
-    "https://github.com/zigpy/zha-device-handlers/blob/1d6598c32a8b4f054438f63f08fc36ff3d6b4930/zhaquirks/tuya/tuya_valve.py"
-   ],
-   "why": "siblings in several drivers: water_valve_smart,valve_irrigation,radiator_valve,motion_sensor,climate_sensor,valve_dual_irrigation,device_radiator_valve"
-  },
-  {
    "mfr": "_TZE200_agjqiu4h",
    "pid": "TS0601",
    "model": "D4Z-M",
@@ -1344,18 +1501,6 @@
    "why": "siblings in several drivers: rain_sensor,sensor_motion_presence"
   },
   {
-   "mfr": "_TZE200_htnnfasr",
-   "pid": "TS0601",
-   "model": "Parkside Smart Watering Timer (HG06875)",
-   "refs": [
-    "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/lidl/hg06875.json",
-    "https://www.zigbee2mqtt.io/devices/PSBZS_A1.html",
-    "https://github.com/zigpy/zha-device-handlers/blob/1d6598c32a8b4f054438f63f08fc36ff3d6b4930/zhaquirks/tuya/tuya_valve.py",
-    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lidl.ts#L405"
-   ],
-   "why": "siblings in several drivers: water_valve_smart,valve_irrigation,radiator_valve,motion_sensor,climate_sensor,valve_dual_irrigation,device_radiator_valve"
-  },
-  {
    "mfr": "_TZE200_lq0ffndf",
    "pid": "TS0601",
    "model": "MG-GPO02Z",
@@ -1405,17 +1550,6 @@
    "why": "no sibling in our drivers"
   },
   {
-   "mfr": "_TZE200_yh7aoahi",
-   "pid": "TS0601",
-   "model": "TS0601_smoke_4",
-   "refs": [
-    "https://github.com/JohanBendz/com.tuya.zigbee/blob/328d24ed315131528f2358b66bb0b8259615a49e/drivers/smoke_sensor2/driver.compose.json",
-    "https://www.zigbee2mqtt.io/devices/TS0601_smoke_4.html",
-    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L12892"
-   ],
-   "why": "siblings in several drivers: smoke_sensor2,smoke_detector_advanced,switch_wireless,socket_power_strip_four_three,climate_sensor"
-  },
-  {
    "mfr": "_TZE200_yp5tsi3y",
    "pid": "TS0601",
    "model": "EWS1154-Z",
@@ -1454,15 +1588,6 @@
     "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/beca.ts#L11"
    ],
    "why": "no sibling in our drivers"
-  },
-  {
-   "mfr": "_TZE204_7ytb3h8u",
-   "pid": "TS0601",
-   "model": "zhaquirks/tuya/tuya_valve.py",
-   "refs": [
-    "https://github.com/zigpy/zha-device-handlers/blob/1d6598c32a8b4f054438f63f08fc36ff3d6b4930/zhaquirks/tuya/tuya_valve.py"
-   ],
-   "why": "siblings in several drivers: water_valve_smart,valve_irrigation,radiator_valve,motion_sensor,climate_sensor,valve_dual_irrigation,device_radiator_valve"
   },
   {
    "mfr": "_TZE204_agjqiu4h",
@@ -1543,16 +1668,6 @@
     "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L14686"
    ],
    "why": "no sibling in our drivers"
-  },
-  {
-   "mfr": "_TZE204_y4jqpry8",
-   "pid": "TS0601",
-   "model": "ZMS-206US-4",
-   "refs": [
-    "https://www.zigbee2mqtt.io/devices/ZMS-206US-4.html",
-    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/zemismart.ts#L878"
-   ],
-   "why": "siblings in several drivers: climate_sensor,switch_4gang"
   },
   {
    "mfr": "_TZE204_zajeikkt",
@@ -1894,16 +2009,6 @@
    "why": "no sibling in our drivers"
   },
   {
-   "mfr": "_TZE284_7ytb3h8u",
-   "pid": "TS0601",
-   "model": "Tuya Smart water valve",
-   "refs": [
-    "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/tuya/_TZE284_7ytb3h8u_water_valve.json",
-    "https://github.com/zigpy/zha-device-handlers/blob/1d6598c32a8b4f054438f63f08fc36ff3d6b4930/zhaquirks/tuya/tuya_valve.py"
-   ],
-   "why": "siblings in several drivers: water_valve_smart,valve_irrigation,radiator_valve,motion_sensor,climate_sensor,valve_dual_irrigation,device_radiator_valve"
-  },
-  {
    "mfr": "_TZE284_agjqiu4h",
    "pid": "TS0601",
    "model": "D4Z-M",
@@ -1974,6 +2079,16 @@
    "why": "no sibling in our drivers"
   },
   {
+   "mfr": "_TZE284_pxwixtky",
+   "pid": "TS0601",
+   "model": "TS0601_cover_5",
+   "refs": [
+    "https://www.zigbee2mqtt.io/devices/TS0601_cover_5.html",
+    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L17790"
+   ],
+   "why": "siblings in several drivers: curtain_motor_shutter,curtain_motor"
+  },
+  {
    "mfr": "_TZE284_rfpyqax9",
    "pid": "TS0601",
    "model": "Pro Line X10",
@@ -2033,14 +2148,24 @@
    "why": "no sibling in our drivers"
   },
   {
-   "mfr": "_TZE284_zm8zpwas",
+   "mfr": "_TZE284_znkkcauq",
    "pid": "TS0601",
-   "model": "ZPV-01",
+   "model": "TS0601_switch_6_gang",
    "refs": [
-    "https://www.zigbee2mqtt.io/devices/ZPV-01.html",
-    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L22299"
+    "https://www.zigbee2mqtt.io/devices/TS0601_switch_6_gang.html",
+    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L7088"
    ],
-   "why": "siblings in several drivers: device_radiator_valve,water_valve_smart"
+   "why": "siblings in several drivers: wall_switch_6_gang_tuya,climate_sensor,switch_1gang"
+  },
+  {
+   "mfr": "_TZE284_zuq5xxib",
+   "pid": "TS0601",
+   "model": "TS0601_cover_1",
+   "refs": [
+    "https://www.zigbee2mqtt.io/devices/TS0601_cover_1.html",
+    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L9697"
+   ],
+   "why": "siblings in several drivers: curtain_motor,curtain_motor_tilt"
   },
   {
    "mfr": "_TZE28C1000000_19jwhi8c",
@@ -2162,6 +2287,16 @@
    "why": "malformed ids (parser noise)"
   },
   {
+   "mfr": "_TZE28C1000000_gt5al3bl",
+   "pid": "TS0601",
+   "model": "GL-SPI-206P",
+   "refs": [
+    "https://www.zigbee2mqtt.io/devices/GL-SPI-206P.html",
+    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/gledopto.ts#L1259"
+   ],
+   "why": "malformed ids (parser noise)"
+  },
+  {
    "mfr": "_TZE28C1000000_huu3td85",
    "pid": "TS0601",
    "model": "ZDMS16-1",
@@ -2232,22 +2367,22 @@
    "why": "malformed ids (parser noise)"
   },
   {
+   "mfr": "_TZE28C1000000_o409r73p",
+   "pid": "TS0601",
+   "model": "ZMZ609-2",
+   "refs": [
+    "https://www.zigbee2mqtt.io/devices/ZMZ609-2.html",
+    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/zemismart.ts#L1250"
+   ],
+   "why": "malformed ids (parser noise)"
+  },
+  {
    "mfr": "_TZE28C1000000_ra9zfiwr",
    "pid": "TS0601",
    "model": "E04CF-Z10T",
    "refs": [
     "https://www.zigbee2mqtt.io/devices/E04CF-Z10T.html",
     "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lincukoo.ts#L691"
-   ],
-   "why": "malformed ids (parser noise)"
-  },
-  {
-   "mfr": "_TZE28C1000000_rzdkn5rx",
-   "pid": "TS0601",
-   "model": "TS0601_multifunction_switch",
-   "refs": [
-    "https://www.zigbee2mqtt.io/devices/TS0601_multifunction_switch.html",
-    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L29297"
    ],
    "why": "malformed ids (parser noise)"
   },
