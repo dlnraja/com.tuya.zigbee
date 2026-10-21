@@ -126,7 +126,19 @@ function gate(files) {
   const n = git('log', `origin/${BRANCH}`, `--since=${today}T00:00:00Z`, '--fixed-strings', `--grep=[auto:${ID}]`, '--format=%h').stdout.trim().split('\n').filter(Boolean).length;
   if (n >= MAX) { git('reset', '-q'); summary(`safe-auto-commit [${ID}]: daily cap reached (${n}/${MAX}) — ${files.length} file(s) left for tomorrow.`); return; }
   // 3. gate
+  // WHY(P2918): earlier scan/apply steps of the same job can leave unrelated, unstaged edits (e.g. a
+  // compose-only case variant on switch_2gang, forum-poll run 39513142380). The gates must judge the
+  // staged change alone, so those edits are set aside during the gate and restored right after;
+  // they are never committed here (the commit only takes the index).
+  const dirty = git('status', '--porcelain', '--untracked-files=all').stdout.split('\n')
+    .filter((l) => l && (l[1] !== ' ' || l.startsWith('??')));
+  let isolated = false;
+  if (dirty.length) {
+    summary(`safe-auto-commit [${ID}]: ${dirty.length} unrelated working-tree change(s) set aside for the gate: ${dirty.slice(0, 10).map((l) => l.slice(3)).join(', ')}`);
+    isolated = git('stash', 'push', '-q', '--keep-index', '--include-untracked', '-m', 'safe-auto-commit-unrelated').status === 0;
+  }
   const errs = gate(files);
+  if (isolated && git('stash', 'pop', '-q').status !== 0) summary(`⚠️ safe-auto-commit [${ID}]: could not restore the set-aside changes (left in git stash).`);
   if (errs.length) { git('reset', '-q'); await report(`gate locale en échec (${errs.length})`, errs.join('\n')); return; }
   if (DRY) { git('reset', '-q'); summary(`safe-auto-commit [${ID}] DRY: gate OK on ${files.length} file(s), would commit.`); return; }
   // 4. commit + push with rebase retries (never force)
