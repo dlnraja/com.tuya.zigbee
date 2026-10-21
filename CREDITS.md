@@ -246,3 +246,10 @@ Details: `docs/knowledge/WIFI_LOCAL_PROTOCOLS_P2930.md`.
 - Aqara DJT11LM vibration sensor (`LUMI` / `lumi.vibration.aq1`, driver `vibration_sensor`, native Closures 0x0101 attributes 0x0055 event, 0x0503 angle, 0x0505 strength): attribute meaning from Koenkk/zigbee-herdsman-converters `src/lib/lumi.ts` (`lumi_vibration_analog`, DJT11LM in `src/devices/lumi.ts`) and the ZHA xiaomi vibration quirk (zigpy/zha-device-handlers). Optional overlay, own implementation (P2934).
 
 - P2951 (2026-10-21) `_TZ3000_dfgbtub0` / `TS0042` → `button_wireless_2` (2-button wireless): identity from Koenkk/zigbee-herdsman-converters `src/devices/tuya.ts` (TS0042 whitelabel Marmitek Push_LO), blakadder/zigbee Eardatek ESW-0ZAC-EU, JohanBendz/com.tuya.zigbee `wall_remote_2_gang`. The sacred `_TZ3000_dfgbtub0`/TS0044 couple stays on `button_wireless_4` (forum 156967#12); TS0042 was matched by no driver before. Fingerprints only; own code.
+
+## Knowledge base sources (P-KB)
+Facts (ids, DP numbers, model names) indexed with commit-pinned links; no prose or code copied. Full list and licences: `docs/knowledge/KB_SOURCES.md`.
+- **Koenkk** — zigbee2mqtt.io docs (GPL-3.0), zigbee-herdsman-converters (MIT), zigbee-OTA index
+- **zigpy** — zha-device-handlers (Apache-2.0); **dresden-elektronik** — deCONZ DDFs (BSD-3-Clause); **blakadder** — zigbee templates (MIT)
+- **make-all** — tuya-local (MIT); **jasonacox** — tinytuya (MIT); **rospogrigio** — localtuya (GPL-3.0); **JohanBendz** — com.tuya.zigbee (GPL-3.0)
+- **Athom** — node-zigbee-clusters, Homey Apps SDK docs; **Tuya** — developer docs (MCU/Zigbee serial protocol)
