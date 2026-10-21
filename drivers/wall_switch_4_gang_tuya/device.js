@@ -140,7 +140,7 @@ class wall_switch_4_gang_tuya extends TuyaSpecificClusterDevice {
         || (gang === 4 && subDeviceId === 'fourthGang');
       if (!mine) return;
       if (typeof this._triggerPhysicalFlow === 'function') {
-        this._triggerPhysicalFlow(gang, parsedValue ? 'on' : 'off');
+        this._triggerPhysicalFlow(gang, parsedValue ? 'on' : 'off', { path: 'ef00_dp' });
       }
       await this.safeSetCapabilityValue('onoff', !!parsedValue).catch((e) => this.error(e));
       return;
