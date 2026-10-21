@@ -6,7 +6,12 @@
 // Rules kept: every retry uses a strictly higher version; AggregateError gets the flake budget then a bisect;
 // invalid_state is retried only after a completed idle wait; unknown failures never retry.
 const POLICY = Object.freeze({
-  version: 1,
+  version: 2,
+  // P2924 (21/10/2026 Paris): "socket hang up" is reported by Athom as processing_failed AFTER a
+  // successful upload (CLI: "successfully uploaded", build created), on byte-identical payloads that
+  // reach Test on the next version (#3636-#3657: about half of the builds, 33.8-35.4 MB, no size link).
+  // It is a server-side flake, so it gets its own larger budget; each retry is a strictly higher version.
+  maxHangupRetries: 4,
   maxTransientRetries: 2, // socket hang up, ECONNRESET, S3 "specified key", timeouts, 502/503/504 by code or text (P2911)
   maxAggregateRetries: 2, // AggregateError flake check, then bisect
   maxInvalidStateRetries: 1,
@@ -31,7 +36,8 @@ function classify(text) {
 function budget(kind) {
   if (kind === 'AggregateError') return POLICY.maxAggregateRetries;
   if (kind === 'invalid_state') return POLICY.maxInvalidStateRetries;
-  if (kind === 'socket hang up' || kind === 'transient') return POLICY.maxTransientRetries;
+  if (kind === 'socket hang up') return POLICY.maxHangupRetries;
+  if (kind === 'transient') return POLICY.maxTransientRetries;
   return 0;
 }
 
@@ -46,13 +52,20 @@ function shouldRetry(kind, retriesDone, { idleWaited = true } = {}) {
   return Number(retriesDone || 0) < budget(kind);
 }
 
-module.exports = { POLICY, TRANSIENT_RE, classify, budget, backoffSeconds, shouldRetry };
+// Loop bound for in-run re-upload loops (stable, Bastien): the largest budget; each pass still asks retry-kind.
+function maxBudget() {
+  return Math.max(POLICY.maxHangupRetries, POLICY.maxTransientRetries, POLICY.maxAggregateRetries, POLICY.maxInvalidStateRetries);
+}
+
+module.exports = { POLICY, TRANSIENT_RE, classify, budget, backoffSeconds, shouldRetry, maxBudget };
 
 if (require.main === module) {
   const [cmd, a, b] = process.argv.slice(2);
   if (cmd === 'backoff') console.log(backoffSeconds(a));
   else if (cmd === 'classify') console.log(classify(a || require('fs').readFileSync(0, 'utf8')));
   else if (cmd === 'should-retry') { const k = classify(a); console.log(shouldRetry(k, b) ? `RETRY ${k}` : `STOP ${k}`); }
+  else if (cmd === 'retry-kind') console.log(shouldRetry(a, b) ? `RETRY ${a}` : `STOP ${a}`);
+  else if (cmd === 'max') console.log(maxBudget());
   else if (cmd === 'get') console.log(POLICY[a]);
   else console.log(JSON.stringify(POLICY));
 }
