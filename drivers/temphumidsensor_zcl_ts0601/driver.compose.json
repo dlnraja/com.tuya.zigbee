@@ -71,5 +71,12 @@
   },
   "metadata": {
     "source": "JohanBendz/com.tuya.zigbee#797 (physical Homey interview: EP1 in [0,1,1026,1029], out [25,10], no 0xEF00)"
-  }
+  },
+  "settings": [
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
+    }
+  ]
 }

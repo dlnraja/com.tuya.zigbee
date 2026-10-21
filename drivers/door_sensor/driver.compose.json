@@ -124,6 +124,11 @@
       "value": 24,
       "min": 1,
       "max": 168
+    },
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
     }
   ],
   "images": {

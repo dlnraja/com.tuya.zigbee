@@ -93,5 +93,12 @@
   ],
   "connectivity": [
     "zigbee"
+  ],
+  "settings": [
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
+    }
   ]
 }

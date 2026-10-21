@@ -90,5 +90,10 @@
         }
       }
     ]
+  },
+  {
+    "$extends": [
+      "zclClusterLayer"
+    ]
   }
 ]

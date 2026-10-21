@@ -113,5 +113,12 @@
   ],
   "ui": {
     "quickAction": "onoff"
-  }
+  },
+  "settings": [
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
+    }
+  ]
 }
