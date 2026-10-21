@@ -110,7 +110,9 @@ class ClimateSensorDevice extends UnifiedSensorBase {
 
     // ZT08 / _TZE284_hodyryli (GH #513): Z2M datapoints
     // DP1 temp×10, DP2 humidity raw 0-100, DP3 battery_state 0/1/2 → 10/50/100, DP38 probe×10
-    if (containsCI(mfr, 'hodyryli')) {
+    // TZ-ZT01_GA4 / _TZE284_8se38w3c and its long-name twin _TZE2841000000_8se38w3c
+    // (forum 140352#2265, okidoki; DP layout per Z2M tuya.ts TZ-ZT01_GA4): same DP3 battery_state enum.
+    if (containsCI(mfr, 'hodyryli') || containsCI(mfr, '8se38w3c')) {
       return {
         1: { capability: 'measure_temperature', smartDivisor: true, useInference: true },
         2: { capability: 'measure_humidity', smartDivisor: true, useInference: true },
