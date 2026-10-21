@@ -147,7 +147,7 @@ function homePage(branches) {
 function build(opts = {}) {
   const root = opts.root || ROOT;
   const out = opts.out || path.join(root, '.github', 'pages-build', 'docs');
-  const apps = opts.apps && opts.apps.length ? opts.apps : [{ branch: 'master', file: path.join(root, 'app.json') }];
+  const apps = opts.apps && opts.apps.length ? opts.apps : [{ file: path.join(root, 'app.json') }];
   const branches = [];
   for (const a of apps) {
     const json = typeof a.json === 'object' && a.json ? a.json : JSON.parse(fs.readFileSync(a.file, 'utf8'));
