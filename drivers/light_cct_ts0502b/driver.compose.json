@@ -79,5 +79,12 @@
       "natural_light": true
     },
     "source": "JohanBendz/com.tuya.zigbee#403 (canonical #178)"
-  }
+  },
+  "settings": [
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
+    }
+  ]
 }

@@ -138,6 +138,11 @@
         "nl": "LED-indicator"
       },
       "value": true
+    },
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
     }
   ],
   "zigbee": {

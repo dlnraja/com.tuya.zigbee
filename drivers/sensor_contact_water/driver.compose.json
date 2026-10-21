@@ -275,6 +275,11 @@
         "nl": "Wissel open/gesloten om indien sensor omgekeerd rapporteert"
       },
       "value": false
+    },
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
     }
   ],
   "images": {

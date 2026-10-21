@@ -109,6 +109,11 @@
       "hint": {
         "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press."
       }
+    },
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
     }
   ],
   "images": {

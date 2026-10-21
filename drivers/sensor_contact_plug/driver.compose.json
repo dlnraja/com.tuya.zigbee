@@ -591,6 +591,11 @@
         "en": "Minimum power change in Watts to trigger a report",
         "fr": "Changement minimum en Watts pour déclencher un rapport"
       }
+    },
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
     }
   ],
   "images": {

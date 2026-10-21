@@ -96,7 +96,13 @@
     "conditions": [],
     "actions": []
   },
-  "settings": [],
+  "settings": [
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
+    }
+  ],
   "version": "1.0.0",
   "connectivity": [
     "zigbee"

@@ -2617,6 +2617,11 @@
           "step": 1
         }
       ]
+    },
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
     }
   ],
   "images": {

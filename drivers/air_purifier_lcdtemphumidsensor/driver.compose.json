@@ -103,7 +103,13 @@
     "conditions": [],
     "actions": []
   },
-  "settings": [],
+  "settings": [
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
+    }
+  ],
   "id": "air_purifier_lcdtemphumidsensor",
   "version": "1.0.0",
   "connectivity": [

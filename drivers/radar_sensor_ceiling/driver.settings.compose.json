@@ -60,5 +60,10 @@
     "units": {
       "en": "seconds"
     }
+  },
+  {
+    "$extends": [
+      "zclClusterLayer"
+    ]
   }
 ]

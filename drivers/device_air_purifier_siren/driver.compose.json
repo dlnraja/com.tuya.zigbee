@@ -203,6 +203,11 @@
         "en": "How often to request battery status updates",
         "fr": "Fréquence de demande des mises àjour d'état de batterie"
       }
+    },
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
     }
   ],
   "images": {

@@ -57,5 +57,12 @@
   "images": {
     "small": "/drivers/sensor_ias_zonetype_ewelink/assets/images/small.png",
     "large": "/drivers/sensor_ias_zonetype_ewelink/assets/images/large.png"
-  }
+  },
+  "settings": [
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
+    }
+  ]
 }

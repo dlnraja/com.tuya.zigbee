@@ -121,6 +121,11 @@
         "en": "Zigbee Manufacturer"
       },
       "value": ""
+    },
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
     }
   ],
   "images": {

@@ -704,6 +704,11 @@
           "value": "None yet - waiting for device data"
         }
       ]
+    },
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
     }
   ],
   "platforms": [

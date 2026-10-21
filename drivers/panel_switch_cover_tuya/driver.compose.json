@@ -115,5 +115,12 @@
   },
   "metadata": {
     "source": "zigbee-herdsman-converters tuya.ts (Koen Kanters and contributors): _TZE200_rgeapp2c Semicom touch panel, 2 switches + 2 shutters. DP101/102 switches, DP1/4 cover action (open 0, stop 1, close 2), DP2/5 position."
-  }
+  },
+  "settings": [
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
+    }
+  ]
 }

@@ -211,6 +211,11 @@
           "value": ""
         }
       ]
+    },
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
     }
   ],
   "maintenanceActions": [
