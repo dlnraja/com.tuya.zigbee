@@ -14,6 +14,8 @@ const { execFileSync } = require('child_process');
 const OUT = process.env.PUBLISH_SIZE_DIR || path.join(process.env.RUNNER_TEMP || require('os').tmpdir(), 'publish-size');
 const HEAD = 'at_utc,branch,app_id,version,run_id,run_attempt,retry,payload_bytes,payload_files,archive_gz_bytes,app_json_bytes,drivers,flow_cards,outcome,kind';
 
+// P2930: after a CLI publish the dir holds a nested .homeybuild copy; counting it doubled stable retry
+// rows (66 MB / 8678 files) although the CLI uploads one tree. Skip any .homeybuild child (the measured dir itself may be one).
 function walk(dir) {
   let bytes = 0; let files = 0;
   const st = [dir];
@@ -23,7 +25,7 @@ function walk(dir) {
     try { ents = fs.readdirSync(d, { withFileTypes: true }); } catch (_e) { continue; }
     for (const e of ents) {
       const p = path.join(d, e.name);
-      if (e.isDirectory()) { if (e.name !== '.git') st.push(p); } else if (e.isFile()) { files++; bytes += fs.statSync(p).size; }
+      if (e.isDirectory()) { if (e.name !== '.git' && e.name !== '.homeybuild') st.push(p); } else if (e.isFile()) { files++; bytes += fs.statSync(p).size; }
     }
   }
   return { bytes, files };
@@ -31,7 +33,7 @@ function walk(dir) {
 
 function archiveGz(dir) {
   // Same shape the CLI uploads (tar.gz of the publish dir); streamed to a byte counter, no temp file.
-  try { return execFileSync('bash', ['-c', 'tar --exclude=.git -czf - -C "$1" . | wc -c', '_', dir], { encoding: 'utf8', maxBuffer: 1 << 20 }).trim() * 1; } catch (_e) { return null; }
+  try { return execFileSync('bash', ['-c', 'tar --exclude=.git --exclude=./.homeybuild -czf - -C "$1" . | wc -c', '_', dir], { encoding: 'utf8', maxBuffer: 1 << 20 }).trim() * 1; } catch (_e) { return null; }
 }
 
 function measure(dir) {
