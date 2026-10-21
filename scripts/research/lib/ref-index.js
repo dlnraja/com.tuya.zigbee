@@ -92,10 +92,10 @@ function johan(file) {
 function build(refDir, cacheFile) {
   const parts = { zhc: path.join(refDir, 'zhc'), zha: path.join(refDir, 'ext/zha-device-handlers'), deconz: path.join(refDir, 'ext/deconz-rest-plugin'),
     blak: path.join(refDir, 'ext/zigbee'), tl: path.join(refDir, 'ext/tuya-local'), johan: path.join(refDir, 'johan-app.json') };
-  const key = Object.values(parts).map(head).join('|');
+  const key = Object.values(parts).map(head).join('|') + '|kb:' + (() => { try { return fs.statSync(path.join(__dirname, '../../../data/kb/couples.json')).mtimeMs; } catch { return 0; } })();
   let prevMfrs = null;
   if (cacheFile && fs.existsSync(cacheFile)) { try { const c = JSON.parse(fs.readFileSync(cacheFile, 'utf8')); if (c.key === key) return c; prevMfrs = new Set(c.records.flatMap((r) => r.mfrs.map((m) => m.toLowerCase()))); } catch { /* rebuild */ } }
-  const records = [...zhc(parts.zhc), ...zha(parts.zha), ...deconz(parts.deconz), ...blakadder(parts.blak), ...tuyaLocal(parts.tl), ...johan(parts.johan)];
+  const records = [...require('./kb-local').records(), ...zhc(parts.zhc), ...zha(parts.zha), ...deconz(parts.deconz), ...blakadder(parts.blak), ...tuyaLocal(parts.tl), ...johan(parts.johan)];
   // upstream watch: manufacturerNames that appeared upstream since the previous index (incremental diff)
   const delta = prevMfrs ? [...new Set(records.flatMap((r) => r.mfrs.map((m) => m.toLowerCase())))].filter((m) => !prevMfrs.has(m)) : [];
   const out = { key, delta, built: new Date().toISOString(), present: Object.fromEntries(Object.entries(parts).map(([k, v]) => [k, fs.existsSync(v)])), records };
