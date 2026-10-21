@@ -20,11 +20,26 @@ on:
     branches:
       - bastien-home
     paths:
-      - '.homeycompose/app.json'
+      # P2930: every path that ends up in the Athom payload. Code-only commits (app.js, settings,
+      # locales, capabilities, config, prepare-publish/prune scripts) used to never publish.
+      # No double publish: the version write-back commit is [skip ci] and the group below serializes.
+      - '.homeycompose/**'
       - 'app.json'
+      - 'app.js'
+      - 'api.js'
       - 'package.json'
+      - 'package-lock.json'
       - 'drivers/**'
       - 'lib/**'
+      - 'capabilities/**'
+      - 'settings/**'
+      - 'locales/**'
+      - 'assets/**'
+      - 'config/**'
+      - 'workers/**'
+      - 'scripts/prepare-publish.js'
+      - 'scripts/maintenance/**'
+      - '.homeyignore'
       - '.homeychangelog.json'
 
 permissions:
