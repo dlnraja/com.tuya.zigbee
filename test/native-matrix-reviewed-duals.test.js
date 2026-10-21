@@ -15,7 +15,7 @@ describe('native-matrix reviewed exceptions', () => {
     for (const e of allow.entries) {
       for (const k of ['couple', 'drivers', 'reason', 'source', 'date']) { assert.ok(e[k], `${e.couple} ${k}`); }
       // Tuya OEM `_TZ…_xxxxxxxx|PID` or brand|model (e.g. HEIMAN|RC-EF-3.0)
-      assert.match(e.couple, /^(_[A-Za-z0-9]+_[a-z0-9]{8}|[A-Z][A-Z0-9_-]+)\|[A-Za-z0-9._-]+$/);
+      assert.match(e.couple, /^(_[A-Za-z0-9]+_[a-z0-9]{8}|[A-Z][A-Z0-9_-]+)\|[A-Za-z0-9._()-]+$/); // P2936: Xiaomi/LUMI interview PIDs carry "(7016)"
       const [mfr, pid] = e.couple.split('|');
       let pidHeld = false;
       for (const d of e.drivers) {
