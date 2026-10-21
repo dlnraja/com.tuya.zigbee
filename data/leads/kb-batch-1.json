@@ -1,0 +1,39 @@
+{
+ "batch": 1,
+ "applied": [
+  {
+   "mfr": "_TZ3000_r80pzsb9",
+   "pid": "TS0207",
+   "driver": "zigbee_repeater",
+   "rule": "sibling",
+   "source": "https://www.zigbee2mqtt.io/devices/TS0207_repeater.html"
+  },
+  {
+   "mfr": "_TZ3000_sgpbz53b",
+   "pid": "TS0207",
+   "driver": "zigbee_repeater",
+   "rule": "sibling",
+   "source": "https://www.zigbee2mqtt.io/devices/TS0207_repeater.html"
+  },
+  {
+   "mfr": "_TZ3000_shopg9ss",
+   "pid": "TS0207",
+   "driver": "zigbee_repeater",
+   "rule": "sibling",
+   "source": "https://www.zigbee2mqtt.io/devices/TS0207_repeater.html"
+  },
+  {
+   "mfr": "_TZ3000_wmlc9p9z",
+   "pid": "TS0207",
+   "driver": "zigbee_repeater",
+   "rule": "sibling",
+   "source": "https://www.zigbee2mqtt.io/devices/TS0207_repeater.html"
+  }
+ ],
+ "skipped": [],
+ "appJsonBytes": {
+  "before": 2645611,
+  "after": 2645687,
+  "delta": 76
+ }
+}
