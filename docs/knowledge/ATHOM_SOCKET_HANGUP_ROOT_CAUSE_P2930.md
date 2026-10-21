@@ -75,3 +75,17 @@ flip the outcome on its own. HEIMAN is ruled out as a trigger (stable and Bastie
 Today's data points to an Athom-side degradation that hits every app; the historical
 manifest-size correlation (section 1) is still real, but it is not the whole explanation.
 Next measurement: the share of failures per app over the next days, with `athom-build-history.yml`.
+
+## P2930f — bisect du 21/10/2026 (11:50–14:10, heure de Paris)
+
+**Bastien (bastien-home)** : contenu exact 1.0.187 puis P2931 → P2934 ajoutés un par un sur une branche temporaire (supprimée).
+- 1.0.197 (contenu 1.0.187) : processing_failed ; 1.0.198, même contenu : Test.
+- 1.0.199 (+ registre clusters P2931), 1.0.200 (+ WiFi P2930), 1.0.201 (+ overlay P2931), 1.0.204 (+ P2932-P2934) : tous en Test du premier coup.
+- Verdict : aucun commit coupable ; les échecs 1.0.188-1.0.196 étaient côté Athom (même contenu qui échoue puis passe). Taille stable (≈20,0-20,3 Mo, 640 cartes).
+
+**master** : dernier Test 9.0.1574 (20/10). Échecs AggregateError depuis 9.0.1575 (21/10 09:05 Paris).
+- Seul delta driver 1574→1575 : P2919 (HEIMAN/SmokeSensor-EF-3.0 sur smoke_detector_advanced, Samotech/eWeLight sur dimmer_1_gang).
+- Étape A : HEAD master sans le couple HEIMAN fumée → 9.0.1589 et 9.0.1590 AggregateError.
+- Étape B : contenu EXACT 9.0.1574 (dernier Test, 29,90 Mo / 4406 fichiers, identique) re-uploadé → 9.0.1591 AggregateError.
+- Verdict : la cause n'est PAS dans le contenu du dépôt depuis 1574 (ni P2951-P2953 tuya-local, ni HEIMAN, ni la taille : HEAD est plus petit, 27,3 Mo / 3777 fichiers / 4611 cartes). L'échec est propre à l'app Universal Tuya côté Athom (même archive qui passait la veille). Ne pas « corriger » du contenu à l'aveugle ; ne pas contacter Athom (règle).
+- Note pipeline : sur le groupe de concurrence partagé, chaque push master remplace le run en attente ; un dispatch de bisect doit être ré-armé jusqu'à démarrer.

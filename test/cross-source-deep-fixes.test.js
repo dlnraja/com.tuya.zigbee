@@ -283,7 +283,12 @@ describe('P92.80 — deleted tooling reimplemented + Z2M gap imports', () => {
     const aoyanOwners = fs.readdirSync('drivers').filter((d) => {
       try { return JSON.parse(read(`drivers/${d}/driver.compose.json`)).zigbee.manufacturerName.some((m) => /aoyan/i.test(m)); } catch (_) { return false; }
     });
-    assert.deepStrictEqual(aoyanOwners, ['soil_sensor'], 'aoyan claimed by soil_sensor only');
+    // P2958: exact-model dedicated drivers (AY204T radar, AY222Z leak) may hold AOYAN, only with their own model id.
+    const DEDICATED = { presence_radar_aoyan_ay204t: ['AY204T'], water_leak_aoyan_ay222z: ['AY222Z'] };
+    for (const d of aoyanOwners.filter((x) => DEDICATED[x])) {
+      assert.deepStrictEqual(JSON.parse(read(`drivers/${d}/driver.compose.json`)).zigbee.productId, DEDICATED[d], d);
+    }
+    assert.deepStrictEqual(aoyanOwners.filter((x) => !DEDICATED[x]), ['soil_sensor'], 'aoyan claimed by soil_sensor (plus exact-model dedicated drivers) only');
     const pr = JSON.parse(read('drivers/presence_sensor_radar/driver.compose.json'));
     assert.ok(pr.zigbee.manufacturerName.some((m) => /tze28c1000000/i.test(m)), 'ZF24 claimed');
   });

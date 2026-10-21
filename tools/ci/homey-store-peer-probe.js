@@ -196,7 +196,7 @@ async function main() {
     failCount: probes.length - ok.length,
     tuyaRelatedCount: tuyaRelated.length,
   };
-  fs.writeFileSync(path.join(OUT, 'athom-probe-wide.json'), JSON.stringify(report, null, 2));
+  fs.writeFileSync(path.join(OUT, 'athom-probe-wide.json'), require('./email-guard').redactText(JSON.stringify(report, null, 2))); // P2957: no author emails
   const md = [
     `# Homey Store peer probe ${report.generatedAt}`,
     '',

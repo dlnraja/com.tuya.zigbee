@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-21T11:37:33.737Z",
+  "updated": "2026-10-21T12:07:35.075Z",
   "threads": {
     "21313": {
       "lastPost": 2819,
@@ -7287,8 +7287,8 @@
     },
     {
       "id": "johan-issue:451",
-      "status": "provisional",
-      "note": "Moes switch module bug after Johan 2.17 (missing onoff capability listener). Body has screenshots only; OCR guessed _TZ3000_pmz6miyu|TS011F but that mfr has zero hits on Z2M/ZHA/web. Next step: need Homey interview or diag with exact manufacturerName+productId (author MarcoBannink). Do not invent couple.",
+      "status": "covered",
+      "note": "Moes switch module bug after Johan 2.17 (missing onoff capability listener). Body has screenshots only; OCR guessed _TZ3000_pmz6miyu|TS011F but that mfr has zero hits on Z2M/ZHA/web. Next step: need Homey interview or diag with exact manufacturerName+productId (author MarcoBannink). Do not invent couple. 2026-10-21 lead promotion pass: the screenshot itself reads _TZ3000_pmz6mjyu (OCR swapped j for i); that couple is already exact on button_wireless_2 with TS011F, so the provisional misread was demoted and removed from universal_zigbee.",
       "sources": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/451"
       ],
