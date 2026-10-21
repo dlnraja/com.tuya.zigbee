@@ -21,7 +21,7 @@ Build locally:
 ```
 node docs/tools/build-site.js --out /tmp/site && node docs/tools/check-links.js /tmp/site
 node docs/tools/build-readme.js
-node --test docs/tools/test/
+node --test docs/tools/test/*.test.js
 ```
 
 The *Deploy Device Finder to GitHub Pages* workflow rebuilds and link-checks the site on every
