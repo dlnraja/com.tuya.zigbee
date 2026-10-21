@@ -106377,7 +106377,7 @@ module.exports = {
  * BSEED devices often have firmware that requires Tuya DataPoint protocol
  * instead of standard Zigbee On/Off commands for multi-gang switches.
  * 
- * Based on user report from Loïc Salmona (loic.salmona@gmail.com)
+ * Based on user report from Loïc Salmona ([redacted-email])
  * Issue: Both gangs activate when triggering one gang via standard Zigbee
  * Solution: Use Tuya DP protocol (DP1=gang1, DP2=gang2, DP3=gang3, etc.)
  */
