@@ -611,6 +611,24 @@ try {
     process.env.HOMEY_PUBLISH_APPJSON = destAppJson;
   }
 
+  // 5a3) P2930: drop flow cards whose device filter names only drivers absent from the payload
+  // (compaction pruned 102 synthetic drivers, hold drops more; their cards stayed: ~25 % orphans).
+  // Lossless: no Flow can use a card of a driver that is not shipped. Fail closed if any remain.
+  try {
+    const { pruneOrphanCards, findOrphanCards } = require('./maintenance/prune-orphan-flow-cards.cjs');
+    const manifest = JSON.parse(fs.readFileSync(destAppJson, 'utf8'));
+    const r = pruneOrphanCards(manifest);
+    const left = findOrphanCards(manifest);
+    if (left.length) throw new Error(`${left.length} orphan flow card(s) remain: ${left.slice(0, 5).join(', ')}`);
+    fs.writeFileSync(destAppJson, JSON.stringify(manifest));
+    const buildAppJson = path.join(__dirname, '..', '.homeybuild', 'app.json');
+    if (fs.existsSync(path.dirname(buildAppJson))) fs.copyFileSync(destAppJson, buildAppJson);
+    console.log(`[P2930] orphan flow cards removed ${r.removed}, filters narrowed ${r.narrowed}`);
+  } catch (e) {
+    console.error('FATAL: orphan flow card prune failed:', e.message);
+    process.exit(1);
+  }
+
   // 5b) Remove publish-only caches that are not required for runtime startup.
   // Static app pairing support is already in app.json/driver.compose.json and
   // DeviceFingerprintDB. Keeping the full MFS cache pushes Athom processing over
