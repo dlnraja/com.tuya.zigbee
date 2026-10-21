@@ -1,7 +1,7 @@
 'use strict';
 const assert = require('assert');
-const V = require('../lib/tuya-local/TuyaProtocolVersions');
-const { buildProtocolFallbackChain } = require('../lib/tuya-local/UdpDiscoveryKeys');
+const V = require('../../lib/tuya-local/TuyaProtocolVersions');
+const { buildProtocolFallbackChain } = require('../../lib/tuya-local/UdpDiscoveryKeys');
 
 describe('P2930b Tuya protocol versions', () => {
   for (const v of ['3.1', '3.2', '3.3', '3.4', '3.5']) {
