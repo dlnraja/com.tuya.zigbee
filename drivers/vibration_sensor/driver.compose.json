@@ -23,6 +23,7 @@
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
+      "LUMI",
       "_tyzb01_3zv6oleo",
       "_tyzb01_3ZV6OLEO",
       "_TYZB01_3zv6oleo",
@@ -158,6 +159,7 @@
       "Heobian"
     ],
     "productId": [
+      "lumi.vibration.aq1",
       "AY02SZ",
       "CK-BL702-MWS-01(7016)",
       "TS011F",
@@ -186,7 +188,8 @@
       "1": {
         "clusters": [
           0,
-          6
+          6,
+          257
         ]
       }
     }
