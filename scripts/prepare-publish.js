@@ -692,6 +692,16 @@ try {
     const buildAppJson = path.join(__dirname, '..', '.homeybuild', 'app.json');
     if (fs.existsSync(path.dirname(buildAppJson))) fs.copyFileSync(destAppJson, buildAppJson);
     console.log(`[P2930] orphan flow cards removed ${r.removed}, filters narrowed ${r.narrowed}`);
+    // P2930b: driver folders of drivers absent from the manifest (102 compaction-pruned synthetic
+    // drivers on master: 2.78 MB / 682 files) were still shipped. Homey loads only manifest drivers
+    // and no shipped file requires these folders, so they are dead payload.
+    const keepIds = new Set((manifest.drivers || []).map((d) => d.id));
+    const drvRoot = path.join(destDir, 'drivers');
+    let deadDirs = 0;
+    for (const d of (fs.existsSync(drvRoot) ? fs.readdirSync(drvRoot) : [])) {
+      if (!keepIds.has(d) && fs.statSync(path.join(drvRoot, d)).isDirectory()) { fs.rmSync(path.join(drvRoot, d), { recursive: true, force: true }); deadDirs++; }
+    }
+    console.log(`[P2930b] removed ${deadDirs} driver folder(s) absent from the manifest`);
   } catch (e) {
     console.error('FATAL: orphan flow card prune failed:', e.message);
     process.exit(1);
