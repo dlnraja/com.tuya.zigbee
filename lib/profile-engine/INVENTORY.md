@@ -20,3 +20,10 @@ Ranked by value for users / risk. Status on branch kb/import.
 | 14 | KB → profile generator (zhc tuyaDatapoints → profiles) | zhc | — | TODO next batch |
 
 Kill switch: app setting `profile_engine_off` or env `PROFILE_ENGINE_OFF=1`. Native clusters stay the base; the engine only adds DP/extra mapping.
+
+## P-KB3 — wired (optional)
+- `ProfileLayerAttach.js`: attached in `TuyaZigbeeDevice` right after the ZCL cluster layer, detached on delete/uninit.
+  Fill-only (never adds/removes a capability), driver `dpMappings` win, kill switches `profile_engine` (device) / `profile_engine_off` (app) / env `PROFILE_ENGINE_OFF=1`.
+- Settings read when present (default off): `pe_debounce_ms`, `pe_throttle_ms`, `pe_filtered_attributes` (comma regex list), `pe_optimistic`, `pe_transition_ms`, `pe_group_id` (comma list), `<cap>_calibration`.
+- `transition.js` (transitionTime helper), `groups.js` (opt-in addGroup), runtime quirks `quirks.reporting` (max 8, best effort).
+- `scripts/kb/generate-profiles.js`: KB couples → match-only stubs in `data/kb/profiles-generated/` (not bundled, no DP guessing).
