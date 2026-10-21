@@ -324,3 +324,7 @@ class MySensor extends TuyaHybridDevice {
 -  Pas de polling agressif (batterie!)
 -  JSDoc complet
 -  Logs structurés `[MODULE]`
+
+## Documentation
+
+Public docs: https://dlnraja.github.io/com.tuya.zigbee/docs/ ([architecture](https://dlnraja.github.io/com.tuya.zigbee/docs/architecture.html), [FAQ](https://dlnraja.github.io/com.tuya.zigbee/docs/faq.html)). Sources of the docs: [`docs/`](../docs/README.md). Bugs: [GitHub issues](https://github.com/dlnraja/com.tuya.zigbee/issues).
