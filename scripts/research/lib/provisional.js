@@ -50,10 +50,26 @@ function drivers(root) {
   }
   return m;
 }
+/**
+ * OCR read-back guard (P2943): screenshot OCR swaps look-alike glyphs (i/j/l/1, o/0), e.g. the
+ * Johan #451 screenshot shows _TZ3000_pmz6mjyu but OCR produced _TZ3000_pmz6miyu. A provisional id
+ * that only differs from a manufacturerName already on a specific driver by such glyphs is a misread
+ * of that couple, not a new device. Returns the owning driver or null.
+ */
+const ocrKey = (s) => lc(s).replace(/[ijl1]/g, 'i').replace(/[o0]/g, 'o');
+function ocrTwin(drv, mfr) {
+  const k = ocrKey(mfr);
+  for (const [d, z] of drv) {
+    if (HOSTS.includes(d)) continue;
+    for (const m of z.mfrs) if (m !== lc(mfr) && ocrKey(m) === k) return { driver: d, mfr: m };
+  }
+  return null;
+}
 /** Pure gate for the provisional tier (unit-tested). */
 function canProvision(drv, mfr, pid) {
   if (!VALID_MFR.test(mfr || '') || /x{5,}|0{6,}/i.test(mfr)) return 'not a valid manufacturerName';
   const host = drv.get(HOST); if (!host) return 'no provisional host';
+  const twin = ocrTwin(drv, mfr); if (twin) return `OCR look-alike of ${twin.mfr} on ${twin.driver}`;
   if (!host.pids.has(String(pid).toUpperCase())) return `${pid} not a native productId of ${HOST}`;
   for (const [d, z] of drv) if (z.mfrs.has(lc(mfr)) && d !== HOST) return `manufacturerName already on ${d}`;
   return null;
@@ -120,6 +136,11 @@ function promoteDemote(root, look, write) {
       if (write) editMfr(root, HOST, e.mfr, 'remove');
       Object.assign(e, { status: 'demoted', reason: `manufacturerName now on ${other[0]}`, at: new Date().toISOString().slice(0, 10) }); demoted++; continue;
     }
+    const twin = ocrTwin(drv, e.mfr);
+    if (twin) { // misread of an id that already has an exact couple elsewhere: drop it from the host, keep the record
+      if (write) editMfr(root, HOST, e.mfr, 'remove');
+      Object.assign(e, { status: 'demoted', reason: `OCR look-alike of ${twin.mfr} already on ${twin.driver}`, at: new Date().toISOString().slice(0, 10) }); demoted++; continue;
+    }
     const confirmed = look && (look.byCouple.get(`${e.mfr}|${e.pid}`.toLowerCase()) || []);
     if (confirmed && confirmed.length) {
       const c = chooseDriver(drv, look, e.mfr, e.pid);
@@ -152,4 +173,4 @@ function updateCheckpoint(root, results) {
   cp.updated = new Date().toISOString(); fs.writeFileSync(f, `${JSON.stringify(cp, null, 2)}\n`);
 }
 
-module.exports = { HOSTS, canProvision, canPlace, applyResults, promoteDemote, updateCheckpoint };
+module.exports = { HOSTS, ocrTwin, canProvision, canPlace, applyResults, promoteDemote, updateCheckpoint };
