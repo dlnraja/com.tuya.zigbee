@@ -287,7 +287,9 @@ async function main() {
       DRAFT_SOFT_EXPECT
       && elapsed >= EARLY_FAIL_SOFT_MS
       && tipFail
-      && isTransientAthomFailure(tipFail)
+      // P2930d: any final failure of THIS version (AggregateError, empty meta...) is terminal; Athom never
+      // revives a failed build. Run 39568329713 polled 10 min + promoted a #3659 that failed in 10 s.
+      && (isTransientAthomFailure(tipFail) || isFailed(tipFail.state))
       && !classified.processing.length
       && !classified.ready.length
     ) {
