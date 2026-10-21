@@ -56,13 +56,13 @@ describe('P2930 WiFi/local coverage', () => {
 
   it('tuya-local catalog has exact sourced product ids and feeds enrichment', () => {
     assert.ok(cat._meta.commit && cat._meta.source.includes('make-all/tuya-local'));
-    assert.ok(Object.keys(cat.products).length > 1000);
-    for (const [id, src] of Object.entries(cat.products)) {
+    assert.ok(Object.keys(cat.p).length > 1000);
+    for (const [id, fi] of Object.entries(cat.p)) {
       assert.ok(/^[a-z0-9]{8,32}$/.test(id), id);
-      assert.ok(cat.schemas[src], src);
+      assert.ok(cat.f[fi] && cat.s[cat.f[fi][1]], id);
     }
     reg._resetCommunityCacheForTests();
-    const [pid, src] = Object.entries(cat.products)[0];
+    const [pid, fi] = Object.entries(cat.p)[0]; const src = cat.f[fi][0];
     const dev = { dpMappings: {}, getSettings: () => ({ product_id: pid }), log() {} };
     assert.ok(reg.enrichWiFiDpMappings(dev) > 0);
     assert.strictEqual(reg.lookupTuyaLocalSchema(pid).source, `make-all/tuya-local devices/${src}.yaml`);
