@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-21T08:52:59.837Z",
+  "updated": "2026-10-21T09:11:43.123Z",
   "threads": {
     "21313": {
       "lastPost": 2819,
@@ -11432,16 +11432,16 @@
     },
     {
       "id": "forum:26439#4483",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Raymond_Kop",
       "link": "https://community.homey.app/t/26439/4483",
       "mfrs": [],
       "pids": [],
       "images": 3,
       "why": "request-no-identity",
-      "note": "Tuya Zigbee siren, screenshots only.",
-      "triagedAt": "2026-10-21T07:50:55.868Z",
-      "triagedVia": "needs-info-web-pass-2026-10-21"
+      "note": "Screenshot OCR: _TZE204_t1blo2bj × TS0601, in siren.",
+      "triagedAt": "2026-10-21T09:11:43.123Z",
+      "triagedVia": "ocr-pass-2026-10-21"
     },
     {
       "id": "forum:26439#4491",
@@ -13251,16 +13251,16 @@
     },
     {
       "id": "forum:26439#4620",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "roberto2391",
       "link": "https://community.homey.app/t/26439/4620",
       "mfrs": [],
       "pids": [],
       "images": 6,
       "why": "request-no-identity",
-      "note": "Loginovo 24G ceiling presence sensor, photo only, no ids.",
-      "triagedAt": "2026-10-21T07:51:34.503Z",
-      "triagedVia": "needs-info-web-pass-2026-10-21"
+      "note": "Screenshot OCR: _TZE20x_ztc6ggyl, _TZE204_qasjif9e and _TZE204_sxm7l9xa (OCR read 719; real id per deCONZ PR #7051) × TS0601, all in presence_sensor_radar.",
+      "triagedAt": "2026-10-21T09:11:43.123Z",
+      "triagedVia": "ocr-pass-2026-10-21"
     },
     {
       "id": "forum:26439#4622",
@@ -17086,13 +17086,16 @@
     },
     {
       "id": "forum:26439#4795",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "DirkG",
       "link": "https://community.homey.app/t/26439/4795",
       "mfrs": [],
       "pids": [],
       "images": 1,
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Screenshot OCR: _TZE200_myd45weu / _TZE200_ga1maeof × TS0601, in soil_sensor.",
+      "triagedAt": "2026-10-21T09:11:43.123Z",
+      "triagedVia": "ocr-pass-2026-10-21"
     },
     {
       "id": "forum:26439#4796",
@@ -19171,13 +19174,16 @@
     },
     {
       "id": "forum:140352#634",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Sharif_Kandil",
       "link": "https://community.homey.app/t/140352/634",
       "mfrs": [],
       "pids": [],
       "images": 2,
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Screenshot OCR read _TZE200_ickatclh; real id _TZE200_icka1clh (Moes AM43, Z2M #20977 / ZHC 5fc3ede) × TS0601, in curtain_motor.",
+      "triagedAt": "2026-10-21T09:11:43.123Z",
+      "triagedVia": "ocr-pass-2026-10-21"
     },
     {
       "id": "forum:140352#644",
@@ -19236,13 +19242,16 @@
     },
     {
       "id": "forum:140352#653",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Sharif_Kandil",
       "link": "https://community.homey.app/t/140352/653",
       "mfrs": [],
       "pids": [],
       "images": 1,
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Same device as #634: _TZE200_icka1clh × TS0601 in curtain_motor.",
+      "triagedAt": "2026-10-21T09:11:43.123Z",
+      "triagedVia": "ocr-pass-2026-10-21"
     },
     {
       "id": "forum:140352#655",
@@ -20304,13 +20313,16 @@
     },
     {
       "id": "forum:140352#716",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Nicolas",
       "link": "https://community.homey.app/t/140352/716",
       "mfrs": [],
       "pids": [],
       "images": 2,
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Screenshot (visual check): _TZ3000_lqpt3mvr × TS0210, in vibration_sensor.",
+      "triagedAt": "2026-10-21T09:11:43.123Z",
+      "triagedVia": "ocr-pass-2026-10-21"
     },
     {
       "id": "forum:140352#719",
@@ -20476,13 +20488,16 @@
     },
     {
       "id": "forum:140352#747",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Eftychis_Georgilas",
       "link": "https://community.homey.app/t/140352/747",
       "mfrs": [],
       "pids": [],
       "images": 5,
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Screenshots (visual check): _TZ3000_wkai4ga5 and _TZ3000_5tqxpine × TS0044, both in scene_switch_4.",
+      "triagedAt": "2026-10-21T09:11:43.123Z",
+      "triagedVia": "ocr-pass-2026-10-21"
     },
     {
       "id": "forum:140352#752",
@@ -21694,7 +21709,10 @@
       "mfrs": [],
       "pids": [],
       "images": 1,
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Lead: screenshot shows Aqara lumi.vibration.aq1 (DJT11LM). Vibration is in Aqara-specific attributes, not a standard ZCL cluster; no driver yet. Source: screenshot + Z2M lumi.ts DJT11LM.",
+      "triagedAt": "2026-10-21T09:11:43.123Z",
+      "triagedVia": "ocr-pass-2026-10-21"
     },
     {
       "id": "forum:140352#818",
@@ -22842,13 +22860,16 @@
     },
     {
       "id": "forum:26439#5264",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Claus_Mortensen",
       "link": "https://community.homey.app/t/26439/5264",
       "mfrs": [],
       "pids": [],
       "images": 2,
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Screenshot OCR: _TZ3000_qd7hej8u × TS0505B, in bulb_rgb / dimmable_led_strip.",
+      "triagedAt": "2026-10-21T09:11:43.123Z",
+      "triagedVia": "ocr-pass-2026-10-21"
     },
     {
       "id": "forum:26439#5268",
@@ -25311,13 +25332,16 @@
     },
     {
       "id": "forum:26439#5458",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Kringloper",
       "link": "https://community.homey.app/t/26439/5458",
       "mfrs": [],
       "pids": [],
       "images": 1,
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Screenshot OCR: _TZE204_zenj4lxv × TS0601, in dimmer_2_gang_tuya.",
+      "triagedAt": "2026-10-21T09:11:43.123Z",
+      "triagedVia": "ocr-pass-2026-10-21"
     },
     {
       "id": "forum:26439#5459",
