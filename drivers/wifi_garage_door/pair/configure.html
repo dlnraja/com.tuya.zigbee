@@ -208,7 +208,7 @@ function doAutoPair(){
     if(!r.count){show('auto-err','No device found (cloud: '+(r.cloud_count||0)+', LAN: '+(r.lan_count||0)+'). Check that devices are powered and on the same network.');return}
     done=true;
     show('auto-ok','✅ '+r.count+' device(s) ready! Click Next to finish.');
-    if(typeof showView==='function'){try{showView('list_devices')}catch(e){}}
+    goList();
   });
 }
 
@@ -351,6 +351,9 @@ function onHomeyReady(Homey){
     H.emit('configure',{device_id:did,local_key:lk,ip:document.getElementById('m_ip').value.trim(),name:document.getElementById('m_name').value.trim(),protocol_version:document.getElementById('m_pv').value},function(err){if(err){show('man-err',err.message||String(err))}else{done=true}});
   });
 }
-function doTinytuyaImport(){var ok=document.getElementById('tt-ok'),er=document.getElementById('tt-err');ok.textContent='';er.textContent='';var t=(document.getElementById('tt_json').value||'').trim();if(!t){er.textContent='Paste devices.json / snapshot.json first';return}Homey.emit('tinytuya_import',{text:t},function(err,list){if(err){er.textContent=(err&&err.message)||String(err);return}var n=(list&&list.length)||0;if(!n){er.textContent='No device with a local key found';return}ok.textContent=n+' device(s) ready';try{Homey.showView('list_devices')}catch(e){}})}
+function _goListNow(){try{if(typeof Homey!=='undefined'&&typeof Homey.showView==='function'){Homey.showView('list_devices')}else if(typeof showView==='function'){showView('list_devices')}}catch(e){}}
+/* P2956 (port P3020): optional driver hint (forum 154077 #526/#527). Any error or no hint = go on as before. */
+function goList(){var gone=false;function go(){if(!gone){gone=true;_goListNow()}}var t=setTimeout(go,1500);try{Homey.emit('suggest_driver',{},function(err,r){if(err||!r||!r.hints||!r.hints.length){clearTimeout(t);go();return}clearTimeout(t);var el=document.getElementById('drv-hint');if(!el){el=document.createElement('div');el.id='drv-hint';el.style.cssText='margin:8px 0;padding:8px;border-radius:6px;background:#fff7e0;color:#664d00;font-size:13px';document.body.insertBefore(el,document.body.firstChild)}el.textContent='Tip: '+r.hints.slice(0,3).map(function(h){return h.name+' looks like '+h.suggested}).join('; ')+'. You can also add it with that driver.';setTimeout(go,3500)})}catch(e){clearTimeout(t);go()}}
+function doTinytuyaImport(){var ok=document.getElementById('tt-ok'),er=document.getElementById('tt-err');ok.textContent='';er.textContent='';var t=(document.getElementById('tt_json').value||'').trim();if(!t){er.textContent='Paste devices.json / snapshot.json first';return}Homey.emit('tinytuya_import',{text:t},function(err,list){if(err){er.textContent=(err&&err.message)||String(err);return}var n=(list&&list.length)||0;if(!n){er.textContent='No device with a local key found';return}ok.textContent=n+' device(s) ready';goList()})}
 </script>
 </body></html>
