@@ -1,0 +1,45 @@
+# P-KB: incremental knowledge-base refresh (Z2M, ZHC, ZHA, deCONZ, Blakadder, tuya-local, tinytuya, localtuya, Johan, zigbee-clusters, OTA)
+# Mirrors are cached between runs (actions/cache) so git fetch is incremental; outputs are byte-identical when nothing moved.
+# Never pushes to a release branch: changes land as one draft PR (data/kb is excluded from the Homey bundle).
+name: KB refresh (weekly)
+on:
+  schedule:
+    - cron: '35 4 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: write
+  pull-requests: write
+concurrency:
+  group: kb-refresh
+  cancel-in-progress: true
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 22
+      - uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        with:
+          path: .cache/kb
+          key: kb-mirrors-${{ github.run_id }}
+          restore-keys: kb-mirrors-
+      - name: Refresh KB
+        env:
+          KB_DIR: ${{ github.workspace }}/.cache/kb
+        run: bash scripts/kb/refresh.sh
+      - name: Open draft PR when changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git add data/kb data/leads/kb-enrich-candidates.json docs/knowledge/KB
+          if git diff --cached --quiet; then echo "KB unchanged"; exit 0; fi
+          b="kb/refresh-$(date -u +%Y%m%d)"
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$b" && git commit -m "chore(kb): incremental KB refresh [skip ci]"
+          git push -u origin "$b"
+          gh pr create --draft --base "${GITHUB_REF_NAME}" --head "$b" --title "KB refresh $(date -u +%F)" --body "Automated incremental KB refresh (facts + commit-pinned links only)."
