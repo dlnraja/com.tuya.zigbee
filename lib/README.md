@@ -25,3 +25,7 @@ Map: [`docs/architecture/LAYERS_CAPABILITY_PROTOCOL.md`](../docs/architecture/LA
 - No raw `setCapabilityValue('button', …)` for virtual UX — use mixin path + `markAppCommand`.
 - Mains: `mainsPowered === true`; do not mix `energy.approximation` with `measure_power`/`meter_power` in compose.
 - Homey runtime does **not** self-patch drivers; CI publishes fixes to Test.
+
+## Documentation
+
+Public docs: https://dlnraja.github.io/com.tuya.zigbee/docs/ ([architecture](https://dlnraja.github.io/com.tuya.zigbee/docs/architecture.html), [FAQ](https://dlnraja.github.io/com.tuya.zigbee/docs/faq.html)). Sources of the docs: [`docs/`](../docs/README.md). Bugs: [GitHub issues](https://github.com/dlnraja/com.tuya.zigbee/issues).
