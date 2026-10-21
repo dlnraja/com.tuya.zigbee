@@ -34,6 +34,9 @@ const REPORT_ONLY = process.argv.includes('--report-only');
 const JSON_OUTPUT = process.argv.includes('--json');
 const PREDICTIVE = process.argv.includes('--predictive') || JSON_OUTPUT;
 const SOFT_EXIT = process.argv.includes('--soft-exit');
+// P2921 (ported from master): manufacturer-level removals are report-only unless
+// --allow-mfr-removal is passed; dropping a whole name can lose couples silently.
+const ALLOW_MFR_REMOVAL = process.argv.includes('--allow-mfr-removal');
 const DDIR = DRIVERS_DIR;
 
 // Device category mapping for conflict resolution priority
@@ -841,10 +844,13 @@ function main() {
             if (!info.pidRemoval && currentMfrs.includes(m)) console.log(`  - ${m}: ${info.reason}`);
           }
         }
-        if (!DRY_RUN) {
+        if (!DRY_RUN && ALLOW_MFR_REMOVAL) {
           d.config.zigbee.manufacturerName = newMfrs;
+          modified = true;
+        } else if (!ALLOW_MFR_REMOVAL) {
+          totalMfrRemoved -= removed;
+          console.log(`  P2921 report-only: kept ${currentMfrs.filter(m => mfrsToRemove.has(m.toLowerCase())).join(', ')} in ${driverName} (use --allow-mfr-removal to strip)`);
         }
-        modified = true;
       }
     }
 

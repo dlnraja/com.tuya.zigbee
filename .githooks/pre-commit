@@ -8,6 +8,15 @@
 # INSTALL: git config core.hooksPath .githooks
 # Or run:  npm run hooks:install
 # ═══════════════════════════════════════════════════════════════════════════
+# P2920 (ported): refuse a built app.json (homey validate/build rewrite it).
+if git diff --cached --name-only | grep -qx 'app.json'; then
+  _p2920_size=$(git cat-file -s :app.json 2>/dev/null || echo 0)
+  if [ "$_p2920_size" -gt 7340032 ]; then
+    echo "P2920: staged app.json is $_p2920_size bytes (built manifest). Restore the source form: git checkout -- app.json" >&2
+    exit 1
+  fi
+fi
+
 
 set -e
 
