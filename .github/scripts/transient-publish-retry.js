@@ -15,6 +15,9 @@ const MAX_AGG_RETRIES = POLICY.POLICY.maxAggregateRetries; // P2900: shared 3-ap
 // P2830e (user 2026-10-19: Test must be reached reliably): transport failures now get 2 bumped retries per chain
 // (observed: identical archives flip between socket-hang-up and Test, ~45% failure rate on 35 MB payloads).
 const MAX_TRANSIENT_RETRIES = POLICY.POLICY.maxTransientRetries;
+// P2924: Athom-side hang-ups after a good upload get their own budget (see athom-retry-policy.js).
+const MAX_HANGUP_RETRIES = POLICY.POLICY.maxHangupRetries || MAX_TRANSIENT_RETRIES;
+const MAX_ANY_RETRIES = Math.max(MAX_AGG_RETRIES, MAX_TRANSIENT_RETRIES, MAX_HANGUP_RETRIES);
 
 // Exponential backoff with jitter before a retry dispatch (60s, 120s, 240s... capped at 240s, +0..30s).
 const backoffSeconds = POLICY.backoffSeconds;
@@ -29,7 +32,10 @@ function parseRetryCount(v) {
 function decide({ version, builds, alreadyRetried, retryCount, idleWaited = false, reachTest = process.env.ATHOM_REACH_TEST !== '0' }) {
   const done = retryCount != null ? Number(retryCount) || 0 : (alreadyRetried ? 1 : 0);
   const b0 = (builds || []).find((x) => String(x && x.version) === String(version));
-  if (done >= MAX_AGG_RETRIES) {
+  const bE = (builds || []).find((x) => String(x && x.version) === String(version));
+  const mE = bE ? `${typeof bE.stateMeta === 'string' ? bE.stateMeta : JSON.stringify(bE.stateMeta || bE.failureDetail || '')}` : '';
+  // P2924: only a hang-up chain may go past the AggregateError budget.
+  if (done >= MAX_ANY_RETRIES || (done >= MAX_AGG_RETRIES && !/socket hang up/i.test(mE))) {
     // P2830e: a chain that burned its budget on AggregateError is a REAL content failure -> ask for a bisect.
     const m0 = b0 ? `${typeof b0.stateMeta === 'string' ? b0.stateMeta : JSON.stringify(b0.stateMeta || b0.failureDetail || '')}` : '';
     return { retry: false, bisect: /AggregateError/i.test(m0), kind: /AggregateError/i.test(m0) ? 'AggregateError' : undefined, reason: `retry budget exhausted (${done})${/AggregateError/i.test(m0) ? ' - AggregateError x' + done + ': bisect needed' : ''}` };
@@ -62,8 +68,9 @@ function decide({ version, builds, alreadyRetried, retryCount, idleWaited = fals
   }
   if (/AggregateError/i.test(meta)) return { retry: true, kind: 'AggregateError', next: done + 1, reason: `AggregateError (flake check, retry ${done + 1}/${MAX_AGG_RETRIES}) on v${version}` };
   if (!TRANSIENT_RE.test(meta)) return { retry: false, kind: 'unknown', reason: `unknown failure: ${meta.slice(0, 120)}` };
-  if (done >= MAX_TRANSIENT_RETRIES) return { retry: false, reason: `transient retry budget exhausted (${done}/${MAX_TRANSIENT_RETRIES})` };
   const kind = /socket hang up/i.test(meta) ? 'socket hang up' : /specified key|nosuchkey/i.test(meta) ? 'specified key' : /enospc|no space/i.test(meta) ? 'ENOSPC' : 'transient';
+  const cap = kind === 'socket hang up' ? MAX_HANGUP_RETRIES : MAX_TRANSIENT_RETRIES;
+  if (done >= cap) return { retry: false, kind, reason: `${kind} retry budget exhausted (${done}/${cap})` };
   return { retry: true, kind, next: done + 1, reason: `transient (${meta.slice(0, 80)}) on v${version}` };
 }
 
@@ -111,4 +118,4 @@ if (require.main === module) {
   if (process.env.GITHUB_OUTPUT) fs.appendFileSync(process.env.GITHUB_OUTPUT, `retry=${d.retry}\n`);
 }
 
-module.exports = { decide, parseRetryCount, backoffSeconds, MAX_AGG_RETRIES, MAX_TRANSIENT_RETRIES };
+module.exports = { decide, parseRetryCount, backoffSeconds, MAX_AGG_RETRIES, MAX_TRANSIENT_RETRIES, MAX_HANGUP_RETRIES };
