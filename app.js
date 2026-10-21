@@ -5,6 +5,10 @@ require('./lib/suppress-punycode');
 
 const Homey = require('homey');
 
+// P2931: make Cluster.addCluster idempotent and merge-by-ID (drivers re-registering the legacy
+// 0xEF00 class used to replace the richer canonical one). See lib/zigbee/cluster/ClusterRegistry.
+try { require('./lib/zigbee/cluster/ClusterRegistry').install(); } catch (_) { /* best-effort */ }
+
 // Time cluster attributes, finite transition durations and the dim read-back fix from newer
 // Athom libraries, applied before any driver creates a ZCL node (see lib/zigbee/ZigbeeLibBackports).
 try { require('./lib/zigbee/ZigbeeLibBackports').apply(); } catch (_) { /* best-effort */ }
