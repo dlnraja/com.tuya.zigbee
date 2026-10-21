@@ -383,7 +383,8 @@ jobs:
           export APP_ID=$(node -p "require('$PUBLISH_DIR/app.json').id")
           echo "version=$HOMEY_EXPECTED_VERSION" >> "$GITHUB_OUTPUT"
           # P2900: budget and backoff come from the shared 3-app policy (.github/scripts/athom-retry-policy.js).
-          MAXR=$(node .github/scripts/athom-retry-policy.js get maxTransientRetries)
+          # P2924: loop bound = largest budget; each pass asks the policy for THIS failure kind (hang-up 4, other transient 2).
+          MAXR=$(node .github/scripts/athom-retry-policy.js max)
           for retry in $(seq 0 "$MAXR"); do
             OUT=$(mktemp)
             GITHUB_OUTPUT="$OUT" node .github/scripts/wait-athom-draft-ready.js || true
@@ -394,6 +395,7 @@ jobs:
             KIND=$(node scripts/ci/homey-build-status.js "$APP_ID" 2>/dev/null | node .github/scripts/athom-retry-policy.js classify 2>/dev/null || echo unknown)
             TRANSIENT_RETRY=$retry node .github/scripts/publish-size-telemetry.js record processing_failed "$KIND"
             [ "$retry" -ge "$MAXR" ] && break
+            node .github/scripts/athom-retry-policy.js retry-kind "$KIND" "$retry" | grep -q '^RETRY' || { echo "::warning::v$HOMEY_EXPECTED_VERSION failed ($KIND): retry budget for this kind used ($retry)"; break; }
             DELAY=$(node .github/scripts/athom-retry-policy.js backoff $((retry+1)))
             echo "::warning::Athom processing_failed for v$HOMEY_EXPECTED_VERSION; backoff ${DELAY}s then re-upload as a NEW patch version (retry $((retry+1))/$MAXR)"
             sleep "$DELAY"
@@ -407,7 +409,7 @@ jobs:
             node .github/scripts/publish-size-telemetry.js measure "$PUBLISH_DIR" || true
             (cd "$PUBLISH_DIR" && HOMEY_HEADLESS=1 HOMEY_PAT="$HOMEY_PAT" "$GITHUB_WORKSPACE/node_modules/.bin/homey" app publish --path "$PUBLISH_DIR") || echo "::warning::re-upload attempt failed"
           done
-          echo "::error::Athom kept failing to process stable builds up to v$HOMEY_EXPECTED_VERSION after 2 fresh-version re-uploads; Test stays on the previous build"
+          echo "::error::Athom kept failing to process stable builds up to v$HOMEY_EXPECTED_VERSION after the policy re-upload budget; Test stays on the previous build"
           echo "### Stable Test NOT updated: Athom processing_failed up to v$HOMEY_EXPECTED_VERSION" >> "$GITHUB_STEP_SUMMARY"
           # WHY(ported from master 9cfe3f5d08): no false green after exhausting re-uploads (the run used to end 0).
           exit 1
