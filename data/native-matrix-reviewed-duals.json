@@ -351,6 +351,17 @@
       "source": "Z2M lumi.ts DJT11LM / RTCGQ13LM",
       "date": "2026-10-21",
       "reviewed_by": "delegated rule 2026-10-21: specific driver wins (P2934)"
+    },
+    {
+      "couple": "_TZ3000_dfgbtub0|TS0215A",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "reason": "Cartesian side effect of placing the exact couple _TZ3000_dfgbtub0|TS0042 on button_wireless_2 (P2951) while the sacred _TZ3000_dfgbtub0|TS0044 stays on button_wireless_4. This maker ships only TS0042 (2-button) and TS0044 (4-button) remotes, never TS0215A, so the pair is theoretical; the other 33 shared productIds were already frozen in the native-matrix baseline.",
+      "source": "Z2M tuya.ts TS0042 whitelabel Marmitek Push_LO; Blakadder Eardatek ESW-0ZAC-EU; JohanBendz wall_remote_2_gang; forum 156967#12 (TS0044)",
+      "date": "2026-10-21",
+      "reviewed_by": "user decision 2026-10-21 (P2951): a couple is mfr+pid"
     }
   ]
 }
