@@ -19,3 +19,9 @@
 - Cross-product: no exact couple shared with any other driver (test p2921).
 - Risk note: a new driver once correlated with Athom AggregateError (SPI); if the build fails,
   use the release_held/bisect procedure, not a silent hold of a published driver.
+
+## Needs-info web pass, batch 1 (P2922)
+- 404 of 524 pending sources fetched (forum raw posts, GitHub issues); 20 triaged: 2 fixed
+  (3A Smart Home DE/LXN59-2S7LX1.0 -> switch_2gang; iHorn/LH02121 -> slim_motion_sensor),
+  8 already covered, 10 no-action (Philips Hue / Gledopto served by their own apps, thread
+  meta posts). 511 needs-info left. Most remaining posts carry no Zigbee identity at all.
