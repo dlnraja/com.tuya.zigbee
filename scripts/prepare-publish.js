@@ -763,6 +763,21 @@ try {
       console.warn(`Could not write HOMEY_PUBLISH_DIR to GITHUB_ENV: ${envErr.message}`);
     }
   }
+  // 6) P2928: validate the pruned Bastien publish dir (what Athom receives) at level publish.
+  try {
+    const m = JSON.parse(fs.readFileSync(destAppJson, 'utf8'));
+    if (m.id === 'com.dlnraja.tuya.zigbee.bastien' && process.env.SKIP_PRUNED_VALIDATE !== '1') {
+      const { spawnSync } = require('child_process');
+      const r = spawnSync(process.execPath, [path.join(__dirname, 'maintenance', 'bastien-pruned-validate.js'), destDir, 'publish'], { stdio: 'inherit' });
+      if (r.status !== 0) {
+        console.error('FATAL: P2928 pruned Bastien publish dir failed homey-lib publish validation');
+        process.exit(1);
+      }
+    }
+  } catch (pvErr) {
+    console.error('FATAL: P2928 pruned validate could not run:', pvErr.message);
+    process.exit(1);
+  }
   console.log(`Publish directory ready: ${destDir}`);
 
 } catch (err) {
