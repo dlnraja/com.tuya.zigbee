@@ -717,6 +717,35 @@
       "pid": "TS011F",
       "source": "Z2M lidl.ts HG06338 Silvercrest 3-socket strip with USB (TS011F, endpoints l1-l3)",
       "regression": "P2910 2026-10-20 dual couple: also on button_wireless_2 (removed there, dual-couple-legacy)"
+    },
+    {
+      "mfr": [
+        "HEIMAN"
+      ],
+      "driver": "heiman_keyfob",
+      "pid": "RC-EF-3.0",
+      "source": "zigbee-herdsman-converters PR #2182 (arnaud-gouder) + deCONZ #3828",
+      "regression": "P2921 dedicated native IAS ACE driver"
+    },
+    {
+      "mfr": [
+        "HEIMAN",
+        "Heiman"
+      ],
+      "driver": "heiman_siren",
+      "pid": "WarningDevice",
+      "source": "zigbee-herdsman-converters #1416/#3429 + deCONZ DDF #6400",
+      "regression": "P2921 dedicated native IAS WD driver"
+    },
+    {
+      "mfr": [
+        "HEIMAN",
+        "Heiman"
+      ],
+      "driver": "heiman_siren",
+      "pid": "WarningDevice-EF-3.0",
+      "source": "zigbee-herdsman-converters #3429 + deCONZ DDF #6400",
+      "regression": "P2921 dedicated native IAS WD driver"
     }
   ]
 }
