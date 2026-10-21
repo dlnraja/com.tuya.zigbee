@@ -85,7 +85,7 @@ jobs:
         run: node .github/scripts/generate-device-finder.js
 
       - name: Docs site generators — unit tests
-        run: node --test docs/tools/test/
+        run: node --test docs/tools/test/*.test.js
 
       - name: Fetch stable-v5 and bastien-home manifests (SSOT of the other two apps)
         continue-on-error: true

@@ -30,7 +30,7 @@ The site and README are generated: edit `docs/site-src/*.md`, the knowledge base
 ```
 node docs/tools/build-site.js --out /tmp/site && node docs/tools/check-links.js /tmp/site
 node docs/tools/build-readme.js
-node --test docs/tools/test/
+node --test docs/tools/test/*.test.js
 ```
 
 Documentation-only changes do not trigger an app publish.
