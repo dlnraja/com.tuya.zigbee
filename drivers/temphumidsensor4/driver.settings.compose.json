@@ -39,5 +39,10 @@
       "max": 10,
       "step": 1
     }
+  },
+  {
+    "$extends": [
+      "zclClusterLayer"
+    ]
   }
 ]

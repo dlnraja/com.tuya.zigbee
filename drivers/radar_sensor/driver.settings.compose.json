@@ -84,5 +84,10 @@
       "en": "seconds",
       "nl": "seconden"
     }
+  },
+  {
+    "$extends": [
+      "zclClusterLayer"
+    ]
   }
 ]

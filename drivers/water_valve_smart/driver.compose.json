@@ -338,6 +338,11 @@
         "en": "How often to request battery status updates",
         "fr": "Fréquence de demande des mises à jour d'état de batterie"
       }
+    },
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
     }
   ],
   "images": {

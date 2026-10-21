@@ -78,5 +78,12 @@
     ]
   },
   "id": "ultrasonic_water_meter",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "settings": [
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
+    }
+  ]
 }

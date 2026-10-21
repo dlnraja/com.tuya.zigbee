@@ -36,5 +36,10 @@
       "en": "%",
       "nl": "%"
     }
+  },
+  {
+    "$extends": [
+      "zclClusterLayer"
+    ]
   }
 ]

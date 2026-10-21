@@ -111,6 +111,11 @@
       "hint": {
         "en": "Add or subtract from humidity reading"
       }
+    },
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
     }
   ],
   "images": {

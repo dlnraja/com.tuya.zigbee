@@ -154,6 +154,11 @@
         "en": "Turn off only if the device misbehaves after a time sync (clock jumps, schedule resets).",
         "fr": "Désactivez seulement si l'appareil se comporte mal après une synchronisation de l'heure (horloge qui saute, programme réinitialisé)."
       }
+    },
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
     }
   ]
 }
