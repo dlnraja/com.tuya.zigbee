@@ -35,6 +35,13 @@ const ROOT = rootIdx >= 0 ? args[rootIdx + 1] : path.resolve(__dirname, '..', '.
 const driverIdx = args.indexOf('--driver');
 const ONLY_DRIVER = driverIdx >= 0 ? args[driverIdx + 1] : null;
 
+function dropPaddedTwins(original, next) {
+  const orig = new Set(original);
+  const padded = original.filter((m) => typeof m === 'string' && m !== m.trim()).map((m) => m.trim().toLowerCase());
+  if (!padded.length) return next;
+  return next.filter((m) => orig.has(m) || !padded.includes(String(m).trim().toLowerCase()));
+}
+
 function listDrivers() {
   const dir = path.join(ROOT, 'drivers');
   return fs.readdirSync(dir).filter((d) => {
@@ -103,6 +110,9 @@ function main() {
       nextPids = exp.list;
     }
 
+    // P-KB4: a padded manufacturerName ("AOYAN  ") is byte-exact (P2941/P2958); never inject its trimmed/lower twin
+    // (9.0.1593 bot added "aoyan" to presence_radar_aoyan_ay204t and broke the padded dedicated-driver test).
+    nextList = dropPaddedTwins(j.zigbee.manufacturerName, nextList);
     const mfrDelta = (nextList.length - before);
     if (!added && !brandExtra && !pidDelta) continue;
 
@@ -146,4 +156,6 @@ function main() {
   process.exit(0);
 }
 
-main();
+if (require.main === module) main();
+
+module.exports = { dropPaddedTwins };

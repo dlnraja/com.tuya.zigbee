@@ -24,12 +24,20 @@ describe('P-KB3 Athom manifest sanity', function () {
   it('every flow card title has an en string', () => {
     assert.deepStrictEqual(cards.filter(({ c }) => !c.title || typeof c.title.en !== 'string').map(({ c }) => c.id), []);
   });
-  it('driver images exist and are <= 1 MB', () => {
+  it('driver small/large images exist and are <= 1 MB', () => {
     const bad = [];
-    for (const d of app.drivers || []) for (const p of Object.values(d.images || {})) {
+    for (const d of app.drivers || []) for (const [k, p] of Object.entries(d.images || {})) { if (k === 'xlarge') continue; // xlarge is optional and handled by the build (stable passes without it)
       const f = path.join(ROOT, String(p).replace(/^\//, ''));
       if (!fs.existsSync(f)) bad.push(`${d.id}: missing ${p}`); else if (fs.statSync(f).size > 1024 * 1024) bad.push(`${d.id}: oversize ${p}`);
     }
     assert.deepStrictEqual(bad, []);
+  });
+});
+describe('P-KB4 ay204t capability options', () => {
+  it('presence_radar_aoyan_ay204t lists options only for its declared capabilities (compose + app.json)', () => {
+    const zf = path.join(ROOT, 'drivers/presence_radar_aoyan_ay204t/driver.compose.json'); if (!fs.existsSync(zf)) return;
+    const z = JSON.parse(fs.readFileSync(zf, 'utf8'));
+    const a = JSON.parse(fs.readFileSync(path.join(ROOT, 'app.json'), 'utf8')).drivers.find((d) => d.id === 'presence_radar_aoyan_ay204t');
+    for (const d of [z, a].filter(Boolean)) assert.deepStrictEqual(Object.keys(d.capabilitiesOptions || {}).filter((k) => !d.capabilities.includes(k)), []);
   });
 });

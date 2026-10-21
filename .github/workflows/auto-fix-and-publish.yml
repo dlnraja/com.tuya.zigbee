@@ -277,6 +277,22 @@ jobs:
           echo "### P139/P2325 republish gate" >> "$GITHUB_STEP_SUMMARY"
           echo "Refuse patch bump when Athom \`processing_failed\` / socket hang up and Test is already healthy." >> "$GITHUB_STEP_SUMMARY"
 
+      # P-KB4: master Athom publish breaker (last 3 master builds processing_failed -> no bump, no publish
+      # unless manual workflow_dispatch). stable-v5 never runs this step.
+      - name: 🧯 Master Athom publish breaker
+        if: github.ref_name == 'master'
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          HOMEY_BUILD_LIMIT: '5'
+          BREAKER_N: '3'
+        run: |
+          node scripts/ci/homey-build-status.js com.dlnraja.tuya.zigbee >/dev/null 2>&1 || true
+          out=$(node .github/scripts/master-publish-breaker.js com.dlnraja.tuya.zigbee); echo "$out"
+          if printf '%s' "$out" | grep -q '^\[breaker\] SKIP'; then
+            echo "publish_recovery_requires_bump=false" >> "$GITHUB_ENV"
+            echo "trigger_publish=false" >> "$GITHUB_ENV"
+          fi
+
       - name: 🔁 Bump version for Homey recovery publish
         # P139: only bump when recovery checker says so — never on bare
         # workflow_dispatch (that caused patch spam on socket hang up).

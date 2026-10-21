@@ -1,0 +1,78 @@
+{
+  "type": "group",
+  "label": {
+    "en": "Advanced report options (Z2M style)",
+    "fr": "Options de relève avancées (style Z2M)"
+  },
+  "children": [
+    {
+      "id": "profile_engine",
+      "type": "checkbox",
+      "label": {
+        "en": "Profile layer",
+        "fr": "Couche profils"
+      },
+      "value": true
+    },
+    {
+      "id": "pe_debounce_ms",
+      "type": "number",
+      "label": {
+        "en": "Debounce (ms, 0 = off)",
+        "fr": "Anti-rebond (ms, 0 = off)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 600000
+    },
+    {
+      "id": "pe_throttle_ms",
+      "type": "number",
+      "label": {
+        "en": "Throttle (ms, 0 = off)",
+        "fr": "Limitation (ms, 0 = off)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 600000
+    },
+    {
+      "id": "pe_filtered_attributes",
+      "type": "text",
+      "label": {
+        "en": "Filtered capabilities (comma list)",
+        "fr": "Capacités filtrées (liste, virgules)"
+      },
+      "value": ""
+    },
+    {
+      "id": "pe_optimistic",
+      "type": "checkbox",
+      "label": {
+        "en": "Optimistic state",
+        "fr": "État optimiste"
+      },
+      "value": false
+    },
+    {
+      "id": "pe_transition_ms",
+      "type": "number",
+      "label": {
+        "en": "Transition (ms, 0 = off)",
+        "fr": "Transition (ms, 0 = off)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 600000
+    },
+    {
+      "id": "pe_group_id",
+      "type": "text",
+      "label": {
+        "en": "Zigbee group ids (comma list)",
+        "fr": "Groupes Zigbee (liste, virgules)"
+      },
+      "value": ""
+    }
+  ]
+}
