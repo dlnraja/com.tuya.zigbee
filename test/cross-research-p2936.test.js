@@ -98,7 +98,8 @@ describe('P2936 provisional promotion / demotion', () => {
 describe('P2936 regression lock on placed and provisional couples', () => {
   const ROOT = path.join(__dirname, '..');
   const D = xr.driverIndex();
-  const applied = (JSON.parse(fs.readFileSync(path.join(ROOT, 'data/leads/auto-applied.json'), 'utf8')).applied || []).filter((a) => a.via === 'cross-research');
+  const AF = path.join(ROOT, 'data/leads/auto-applied.json');
+  const applied = ((fs.existsSync(AF) ? JSON.parse(fs.readFileSync(AF, 'utf8')) : {}).applied || []).filter((a) => a.via === 'cross-research');
   it('every cross-research couple lives on its target driver and on no other specific driver', () => {
     for (const a of applied) {
       const owners = xr.coveredBy(D, a.mfr, a.pid).filter((d) => !prov.HOSTS.includes(d));

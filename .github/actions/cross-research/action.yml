@@ -57,6 +57,13 @@ runs:
         fi
         git config user.name "github-actions[bot]"
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        node scripts/ci/safe-auto-commit.js --id='${{ inputs.id }}' --max-per-day=4 \
-          --message="chore(xr): cross-research ${{ inputs.items }}" \
-          --paths="drivers app.json CREDITS.md data/leads/cross-research-report.json data/leads/provisional-couples.json data/leads/auto-applied.json data/leads/sweep-checkpoint.json data/leads/upstream-delta.json data/diag-ids.json" || echo "::warning::commit refused"
+        P="drivers app.json CREDITS.md data/leads/cross-research-report.json data/leads/provisional-couples.json data/leads/auto-applied.json data/leads/sweep-checkpoint.json data/leads/upstream-delta.json data/diag-ids.json"
+        if [ -f scripts/ci/safe-auto-commit.js ]; then
+          node scripts/ci/safe-auto-commit.js --id='${{ inputs.id }}' --max-per-day=4 \
+            --message="chore(xr): cross-research ${{ inputs.items }}" --paths="$P" || echo "::warning::commit refused"
+        else # branches without safe-auto-commit: plain data commit, rebase-retry, never force
+          for f in $P; do [ -e "$f" ] && git add -- "$f"; done
+          git diff --cached --quiet && exit 0
+          git commit -q -m "chore(xr): cross-research ${{ inputs.items }} [skip ci]"
+          for i in 1 2 3; do git pull -q --rebase origin "${{ github.ref_name }}" && git push -q origin "HEAD:${{ github.ref_name }}" && break; sleep $((i*10)); done || echo "::warning::push failed"
+        fi
