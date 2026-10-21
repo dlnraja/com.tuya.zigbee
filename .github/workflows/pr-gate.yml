@@ -63,6 +63,12 @@ jobs:
       - name: 🔥 lib smoke-test (require every lib module)
         run: node tools/ci/lib-smoke-test.js
 
+      - name: 🧪 P2940 test pairing gate (report-only, blocks NEW untested lib/drivers files from 2026-11-04)
+        run: |
+          git fetch --no-tags --unshallow origin 2>/dev/null || true
+          git fetch --no-tags origin "${{ github.base_ref }}" || true
+          node tools/ci/test-pairing-gate.js --base="origin/${{ github.base_ref }}"
+
       - name: 🛡️ Rules gates (shared) - anti-bot, P2138 sacred-couple matrix, P214 adaptation, Spec 002 native-matrix, flow titleFormatted
         uses: ./.github/actions/rules-gates
         with:
