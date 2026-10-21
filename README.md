@@ -41,7 +41,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 6,118 |
 | **Unique Capabilities** | 176 |
 | **Native OTA Drivers** | 9 |
-| **Test Suites** | 718 files |
+| **Test Suites** | 721 files |
 | **SVG Icons** | 754 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -103,7 +103,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.1578** | v9.0.1575: |
+| **v9.0.1578** | v9.0.1578: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1575** | v9.0.1575: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1574** | TRV06 battery alarm, validation and reliability fixes. |
 | **v9.0.1571** | v9.0.1571: automated publish, manifest sync, and Homey test promotion. |
