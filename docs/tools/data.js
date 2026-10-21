@@ -11,15 +11,15 @@ const FORUM_URL = 'https://community.homey.app/t/140352';
 
 const BRANCHES = {
   master: {
-    branch: 'master', appId: 'com.dlnraja.tuya.zigbee', title: 'Universal Tuya',
+    branch: 'master', appId: 'com.dlnraja.tuya.zigbee', live: false, title: 'Universal Tuya',
     role: 'Main app: newest drivers and features. Ships to the Test channel first, then Live.',
   },
   'stable-v5': {
-    branch: 'stable-v5', appId: 'com.dlnraja.tuya.zigbee.stable', title: 'Tuya Unified (Stable)',
+    branch: 'stable-v5', appId: 'com.dlnraja.tuya.zigbee.stable', live: false, title: 'Tuya Unified (Stable)',
     role: 'Reliability line: receives fixes from master after a soak period; fewer moving parts.',
   },
   'bastien-home': {
-    branch: 'bastien-home', appId: 'com.dlnraja.tuya.zigbee.bastien', title: 'Zigbee Bastien',
+    branch: 'bastien-home', appId: 'com.dlnraja.tuya.zigbee.bastien', live: false, title: 'Zigbee Bastien',
     role: 'Dedicated build for one community installation; gets master fixes after they are proven.',
   },
 };
@@ -31,9 +31,13 @@ function branchFromAppId(id) {
   return 'master';
 }
 
+// Live channel: none of the three apps has a Live build yet (apps-api.athom.com liveVersion = null,
+// checked 2026-10-21; homey.app/a/<id>/ returns 404). Flip `live: true` in BRANCHES once Athom
+// approves a Live release; until then only the Test link is shown.
 function installLinks(appId) {
+  const meta = BRANCHES[branchFromAppId(appId)] || {};
   return {
-    live: 'https://homey.app/a/' + appId + '/',
+    live: meta.live ? 'https://homey.app/a/' + appId + '/' : null,
     test: 'https://homey.app/a/' + appId + '/test/',
   };
 }
