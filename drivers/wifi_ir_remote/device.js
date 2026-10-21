@@ -48,7 +48,7 @@ class WiFiIRRemoteDevice extends TuyaLocalDevice {
   _processDPUpdate(dps) {
     super._processDPUpdate(dps);
     // Prefer DP202 for learn RX; some firmwares echo on 201
-    const raw = dps['202'] != null ? dps['202'] : (this._learningActive ? dps['201'] : null);
+    const raw = dps['202'] != null ? dps['202'] : this._learningActive ? dps['201'] : null;
     if (raw != null && this._learningActive && this._pendingCodeName) {
       this._finishLearnCapture(String(raw)).catch((e) => this.error('[WIFI-IR] learn capture:', e.message));
     }
@@ -64,7 +64,7 @@ class WiFiIRRemoteDevice extends TuyaLocalDevice {
       this._learningActive = true;
       try {
         const card = this.homey.flow.getDeviceTriggerCard('wifi_ir_remote_learn_confirm_needed');
-        if (card) await card.trigger(this, { name: result.name }, {}).catch(() => {});
+        if (card) {await card.trigger(this, { name: result.name }, {}).catch(() => {});}
       } catch (_) { /* card optional */ }
       return;
     }
@@ -73,7 +73,7 @@ class WiFiIRRemoteDevice extends TuyaLocalDevice {
     this.log(`[WIFI-IR] Learned stored: ${result.name}`);
     try {
       const card = this.homey.flow.getDeviceTriggerCard('wifi_ir_remote_code_learned');
-      if (card) await card.trigger(this, { name: result.name, format: detectFormat(rawCode) }, {}).catch(() => {});
+      if (card) {await card.trigger(this, { name: result.name, format: detectFormat(rawCode) }, {}).catch(() => {});}
     } catch (_) { /* ignore */ }
   }
 
@@ -94,7 +94,7 @@ class WiFiIRRemoteDevice extends TuyaLocalDevice {
     this.log(`[WIFI-IR] Learning: ${this._pendingCodeName} (${duration}s)`);
     try {
       const card = this.homey.flow.getDeviceTriggerCard('wifi_ir_remote_learning_started');
-      if (card) await card.trigger(this, { name: this._pendingCodeName, timeout_s: Number(duration) || 30 }, {}).catch(() => {});
+      if (card) {await card.trigger(this, { name: this._pendingCodeName, timeout_s: Number(duration) || 30 }, {}).catch(() => {});}
     } catch (_) { /* ignore */ }
 
     if (this._learnTimeout) {
@@ -125,11 +125,11 @@ class WiFiIRRemoteDevice extends TuyaLocalDevice {
         });
         if (!flood.allow) {
           this.log(`[WIFI-IR] flood guard skip: ${flood.reason}`);
-          if (flood.hard) throw new Error(`IR flood guard: ${flood.reason}`);
+          if (flood.hard) {throw new Error(`IR flood guard: ${flood.reason}`);}
           return { ok: true, skipped: true, reason: flood.reason };
         }
       } catch (err) {
-        if (String(err && err.message || '').includes('IR flood guard')) throw err;
+        if (String(err && err.message || '').includes('IR flood guard')) {throw err;}
       }
     }
     if (!this._client || !this._client.connected) {
@@ -144,7 +144,7 @@ class WiFiIRRemoteDevice extends TuyaLocalDevice {
   }
 
   async deleteStoredCode(name) {
-    const map = { ...(await this._router.getLearnedMap(this)) };
+    const map = { ...await this._router.getLearnedMap(this) };
     delete map[name];
     await this._router.saveLearnedMap(this, map);
     this._learnedCodes = map;
@@ -152,7 +152,7 @@ class WiFiIRRemoteDevice extends TuyaLocalDevice {
   }
 
   async onDeleted() {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     this._destroyed = true;
     if (this._learnTimeout) {
       try { this.homey.clearTimeout(this._learnTimeout); } catch (_) { /* */ }

@@ -44,10 +44,10 @@ class WiFiAirQualityDevice extends TuyaLocalDevice {
       const pm25 = this.getCapabilityValue('measure_pm25');
       const level = computeAirQualityLevel(co2, pm25);
       const prev = this._aqLevel;
-      if (prev && prev === level) return;
+      if (prev && prev === level) {return;}
       this._aqLevel = level;
       try { await this.setStoreValue('aq_level', level); } catch (_e) { /* soft */ }
-      if (!prev) return; // seed — no flow spam on first paint
+      if (!prev) {return;} // seed — no flow spam on first paint
       await this.triggerFlowCard('wifi_air_quality_level_changed', {
         level,
         previous_level: prev,
@@ -65,7 +65,7 @@ class WiFiAirQualityDevice extends TuyaLocalDevice {
     const next = Number(raw);
     this._lastPm03 = next;
     try { await this.setStoreValue('last_pm03', next); } catch (_e) { /* soft */ }
-    if (!crossedAbove(prev, next, threshold)) return;
+    if (!crossedAbove(prev, next, threshold)) {return;}
     await this.triggerFlowCard('wifi_air_quality_pm03_above', { pm03: next }, { threshold });
   }
 
