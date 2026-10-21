@@ -230,3 +230,12 @@ Sources actually used or consulted for the Wi-Fi local stack (`lib/tuya-local/`)
 - P2922 (2026-10-21, own wording): `3A Smart Home DE` / `LXN59-2S7LX1.0` (Zemismart ZW-EU-02) from the Homey interview on JohanBendz/com.tuya.zigbee #575, model confirmed by Zigbee2MQTT (Koenkk/zigbee2mqtt #3905, lostpoint-ru); `iHorn` / `LH02121` motion sensor from the Homey interview on forum 26439#4851. No code copied.
 
 - P2923 (2026-10-21): `_TZE2841000000_8se38w3c` / TS0601 (TZ-ZT01_GA4 long-name variant) added to climate_sensor; DP3 battery_state enum mapping shared with ZT08. Reported by okidoki, Homey Community topic 140352 post #2265 (https://community.homey.app/t/140352/2265); DP layout from Zigbee2MQTT tuya.ts TZ-ZT01_GA4 (Koenkk).
+
+## P2930 — WiFi/local and protocol versions (2026-10-21)
+- **make-all/tuya-local** (Jason Rumney, MIT, commit 95300d05ac) — product_id → DP facts extracted by our own script; source config recorded per product.
+- **jasonacox/tinytuya** (MIT) — protocol 3.1–3.5 and the 3.22 alias, wizard export format.
+- **codetheweb/tuyapi** (MIT) — CONTROL_NEW / DP_QUERY_NEW for 3.4+.
+- **rospogrigio/localtuya, xZetsubou/hass-localtuya** (GPL-3.0, study only) — single-client limit, sub-device cid.
+- **PlusPlus-ua/ha_tuya_ble** — BLE protocol versions (documentation only).
+- **Koenkk/zigbee-herdsman-converters** (MIT) — EF00 command ids, appVersion layout.
+Details: `docs/knowledge/WIFI_LOCAL_PROTOCOLS_P2930.md`.
