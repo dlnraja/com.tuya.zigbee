@@ -89,7 +89,7 @@
     },
     {
       "$extends": [
-        "zclClusterLayer"
+        "zcl_cluster_layer"
       ]
     }
   ],
