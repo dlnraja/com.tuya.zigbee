@@ -11,6 +11,12 @@ on:
         default: '200'
 permissions:
   contents: read
+concurrency:
+  group: athom-build-history
+  cancel-in-progress: false
+defaults:
+  run:
+    shell: bash
 jobs:
   history:
     runs-on: ubuntu-latest
