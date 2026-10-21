@@ -155,6 +155,13 @@ Get these from <b>tinytuya wizard</b>, browser extension, or iot.tuya.com API Ex
 <div class="ok" id="lan-ok" style="max-height:140px;overflow:auto"></div>
 <div class="err" id="lan-err"></div>
 </div>
+<div class="box" id="tt-box">
+<b>Import tinytuya</b> — paste the content of <code>devices.json</code> or <code>snapshot.json</code> (tinytuya wizard). Gateway sub-devices get their cid automatically.
+<textarea id="tt_json" rows="4" style="width:100%;font-size:11px" placeholder='[{"id":"...","key":"...","ip":"..."}]'></textarea>
+<button class="btn btn-p" id="btn-tt" type="button" onclick="doTinytuyaImport()">📥 Import tinytuya</button>
+<div class="ok" id="tt-ok"></div>
+<div class="err" id="tt-err"></div>
+</div>
 <div class="fg"><label>Device ID *</label><input type="text" id="m_did" placeholder="e.g. bf1234abcdef567890"/></div>
 <div class="fg"><label>Local Key *</label><input type="text" id="m_lk" placeholder="16-char AES key"/></div>
 <div class="fg"><label>IP Address</label>
@@ -344,5 +351,6 @@ function onHomeyReady(Homey){
     H.emit('configure',{device_id:did,local_key:lk,ip:document.getElementById('m_ip').value.trim(),name:document.getElementById('m_name').value.trim(),protocol_version:document.getElementById('m_pv').value},function(err){if(err){show('man-err',err.message||String(err))}else{done=true}});
   });
 }
+function doTinytuyaImport(){var ok=document.getElementById('tt-ok'),er=document.getElementById('tt-err');ok.textContent='';er.textContent='';var t=(document.getElementById('tt_json').value||'').trim();if(!t){er.textContent='Paste devices.json / snapshot.json first';return}Homey.emit('tinytuya_import',{text:t},function(err,list){if(err){er.textContent=(err&&err.message)||String(err);return}var n=(list&&list.length)||0;if(!n){er.textContent='No device with a local key found';return}ok.textContent=n+' device(s) ready';try{Homey.showView('list_devices')}catch(e){}})}
 </script>
 </body></html>
