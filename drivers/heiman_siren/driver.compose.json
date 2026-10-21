@@ -68,5 +68,12 @@
         "de": "Reset-Taste etwa 5 Sekunden halten, bis die LED blinkt."
       }
     }
-  }
+  },
+  "settings": [
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
+    }
+  ]
 }

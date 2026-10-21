@@ -166,6 +166,11 @@
         "en": "Use if W/kWh readings are 10× too high or low.",
         "fr": "Si W/kWh sont ×10 trop hauts ou bas."
       }
+    },
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
     }
   ],
   "version": "1.0.0",

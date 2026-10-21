@@ -2289,6 +2289,11 @@
         "fr": "Relance le heal: pid, strip power, class light, energy, switch_type=state."
       },
       "value": false
+    },
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
     }
   ],
   "name": {

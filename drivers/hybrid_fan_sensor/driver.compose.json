@@ -120,6 +120,11 @@
       "min": -20,
       "max": 20,
       "step": 1
+    },
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
     }
   ],
   "images": {

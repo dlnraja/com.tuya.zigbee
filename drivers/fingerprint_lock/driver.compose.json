@@ -146,5 +146,12 @@
       "getable": true,
       "preventInsights": false
     }
-  }
+  },
+  "settings": [
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
+    }
+  ]
 }

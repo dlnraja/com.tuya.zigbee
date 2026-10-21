@@ -54,5 +54,12 @@
         "de": "SOS-Taste halten, bis die LED blinkt."
       }
     }
-  }
+  },
+  "settings": [
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
+    }
+  ]
 }
