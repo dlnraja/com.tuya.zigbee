@@ -17,6 +17,7 @@ class WiFiThermostatDevice extends TuyaLocalDevice {
       '3':  { capability: 'measure_temperature', smartDivisor: true },
       '4':  { capability: 'thermostat_mode', writable: true,
         transform: (v) => {
+          this._scheduleModeRefresh();
           if (typeof v === 'string') {return MODE_MAP[Object.keys(MODE_REV).indexOf(v)] || v;}
           return MODE_MAP[v] || 'heat';
         },
@@ -34,6 +35,21 @@ class WiFiThermostatDevice extends TuyaLocalDevice {
       '101': { capability: 'unknown' },
       '102': { capability: 'unknown' },
     };
+  }
+
+  /** P2953 (forum 154077 #171, Andi): re-read the setpoint shortly after a mode change. */
+  _scheduleModeRefresh() {
+    try {
+      const { refreshDelayAfterChange } = require('../../lib/tuya-local/WifiLanLessons');
+      const delay = refreshDelayAfterChange({ 4: true });
+      if (!delay || this._modeRefreshTimer || this._destroyed) {return;}
+      this._modeRefreshTimer = setTimeout(() => {
+        this._modeRefreshTimer = null;
+        const c = this._client;
+        if (!this._destroyed && c && typeof c.refresh === 'function') {Promise.resolve(c.refresh()).catch(() => {});}
+      }, delay);
+      if (this._modeRefreshTimer.unref) {this._modeRefreshTimer.unref();}
+    } catch (_e) { /* advisory */ }
   }
 
   async onInit() {
