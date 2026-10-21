@@ -1783,6 +1783,12 @@
       "pid": "WarningDevice-EF-3.0",
       "driverId": "heiman_siren",
       "note": "P2921 2026-10-21 HS2WD-E: zigbee-herdsman-converters #3429 genBasic dump + deCONZ DDF #6400 (BabaIsYou)"
+    },
+    {
+      "mfr": "HEIMAN",
+      "pid": "RC-EF-3.0",
+      "driverId": "button_emergency_sos",
+      "note": "PCr2-1 2026-10-04 ZHC heiman.ts HM1RC-2-E — keep through publish compaction"
     }
   ]
 }
