@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1586 |
+| **App Version** | v9.0.1587 |
 | **Drivers** | 451 (398 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,846 |
 | **Pairing Variants** | 19,029 (4 case combos per fingerprint) |
@@ -103,7 +103,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.1586** | v9.0.1584: |
+| **v9.0.1587** | v9.0.1586: |
+| **v9.0.1586** | v9.0.1586: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1584** | v9.0.1584: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1582** | v9.0.1582: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1578** | v9.0.1578: automated publish, manifest sync, and Homey test promotion. |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1568** | v9.0.1568: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1567** | v9.0.1567: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1565** | v9.0.1565: automated publish, manifest sync, and Homey test promotion. |
-| **v9.0.1563** | v9.0.1563: automated publish, manifest sync, and Homey test promotion. |
 
 <!-- CHANGELOG_END -->
 
