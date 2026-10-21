@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-21T20:58:47.222Z",
+ "updated": "2026-10-21T23:18:01.283Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -12134,6 +12134,18 @@
    "author": "smarthomesven",
    "link": "https://community.homey.app/t/146735/485",
    "images": 2
+  },
+  "forum-post:146735/508": {
+   "status": "pending",
+   "date": "2026-10-21",
+   "hash": "afcb481aedbcb901",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 146735,
+   "post": 508,
+   "author": "smarthomesven",
+   "link": "https://community.homey.app/t/146735/508",
+   "images": 1
   },
   "forum-post:149230/1": {
    "status": "pending",
