@@ -59,3 +59,19 @@ Size is not the main driver (section 2), so this is an optimisation, not the roo
 Failure rate of master/stable builds after 9985538dc4 / f178ceb896 (master) and 89214d1a88 / 94148bfc03 (stable),
 via `athom-build-history.yml`. Remaining lever if still > ~10 %: reduce the 4 611 remaining cards
 (driver-level duplicates) — needs a user decision as card ids are user-visible.
+
+## 7. First results after the fix (21/10/2026, Paris time)
+
+| App | Build | Payload | Result |
+|---|---|---|---|
+| Stable | 5.12.487 (11:12) | 28.0 MB / 3 655 files, 9.7 MB gz, app.json 2.59 MB, 4 046 cards, 0 orphans | processing_failed |
+| Stable | 5.12.488 (11:23) | same | processing_failed |
+| Master | 9.0.1579 (11:05) | orphan prune + dead folders removed | processing_failed |
+| Bastien (unchanged, 27 drivers) | 1.0.188 (11:11) | 21 MB, 0.65 MB app.json | processing_failed |
+
+Since 09:30 all three apps fail together, including the slim Bastien app (0/38 failures from
+13/10 to this morning). Removing the orphan cards (−25 % cards, −15 % app.json, −10 % files) did not
+flip the outcome on its own. HEIMAN is ruled out as a trigger (stable and Bastien do not ship it).
+Today's data points to an Athom-side degradation that hits every app; the historical
+manifest-size correlation (section 1) is still real, but it is not the whole explanation.
+Next measurement: the share of failures per app over the next days, with `athom-build-history.yml`.
