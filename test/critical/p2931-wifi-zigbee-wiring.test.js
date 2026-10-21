@@ -1,11 +1,11 @@
 'use strict';
 const assert = require('assert');
 const { EventEmitter } = require('events');
-const overlay = require('../lib/tuya/TuyaZigbeeProfileOverlay');
-const reg = require('../lib/tuya-local/WiFiDPRegistry');
-const mn = require('../lib/tuya-local/ManualEntryNormalizer');
-const { guessProtocolFromDiscovery } = require('../lib/tuya-local/UdpDiscoveryKeys');
-const cat = require('../data/wifi/tuya-local-product-schemas.json');
+const overlay = require('../../lib/tuya/TuyaZigbeeProfileOverlay');
+const reg = require('../../lib/tuya-local/WiFiDPRegistry');
+const mn = require('../../lib/tuya-local/ManualEntryNormalizer');
+const { guessProtocolFromDiscovery } = require('../../lib/tuya-local/UdpDiscoveryKeys');
+const cat = require('../../data/wifi/tuya-local-product-schemas.json');
 
 describe('P2931 wiring', () => {
   it('Zigbee profile overlay: passive, read-only, cleaned up', async () => {
@@ -76,7 +76,7 @@ describe('P2931 wiring', () => {
   });
 
   it('UDP discovery table is bounded', () => {
-    const D = require('../lib/tuya-local/TuyaUDPDiscovery');
+    const D = require('../../lib/tuya-local/TuyaUDPDiscovery');
     const d = Object.create(D.prototype);
     EventEmitter.call(d); d._devices = new Map(); d._log = () => {};
     for (let i = 0; i < 300; i++) {
