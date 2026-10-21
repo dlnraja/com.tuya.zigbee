@@ -142,5 +142,12 @@
         "de": "Halten Sie die Kopplungstaste etwa 5 Sekunden gedrückt, bis die LED schnell blinkt."
       }
     }
-  }
+  },
+  "settings": [
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
+    }
+  ]
 }

@@ -102,5 +102,12 @@
       "_TZE200_QCASMFAN",
       "_tze200_QCASMFAN"
     ]
-  }
+  },
+  "settings": [
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
+    }
+  ]
 }

@@ -151,6 +151,11 @@
         "nl": "Uit (standaard): de positieschuif wordt verborgen als het gordijn na langer gebruik nooit een positie meldt (alleen open/stop/dicht). Aan: nooit verbergen.",
         "de": "Aus (Standard): Der Positionsregler wird ausgeblendet, wenn der Vorhang nach längerer Nutzung nie eine Position meldet (nur Auf/Stopp/Zu). An: nie ausblenden."
       }
+    },
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
     }
   ],
   "id": "air_purifier_curtain",

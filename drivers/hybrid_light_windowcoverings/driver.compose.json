@@ -86,6 +86,11 @@
       "hint": {
         "en": "Restore previous light brightness when cover is fully opened"
       }
+    },
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
     }
   ],
   "images": {

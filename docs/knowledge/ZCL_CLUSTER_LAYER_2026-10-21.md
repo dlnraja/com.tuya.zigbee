@@ -23,3 +23,11 @@ zigbee-clusters (Cluster/BoundCluster/Endpoint) et doc SDK Athom ; spec ZCL 07-5
 
 ## Reste à faire
 Brancher `RoutedBoundCluster.bindAll`, `BindingPlanner` et `ReportingPlan` dans les classes de base (aujourd'hui bibliothèque opt-in), après observation de la fusion du registre sur un vrai appareil.
+
+## P2935 — branchement (2026-10-21)
+- `lib/zigbee/cluster/ClusterLayerAttach.js`, appelé APRÈS l'init native : (a) bloc différé de `TuyaZigbeeDevice.onNodeInit`, (b) enveloppe posée dans le constructeur de `TuyaZigbeeDevice` pour les bases qui n'appellent pas `super.onNodeInit` (BaseUnifiedDevice, TuyaUnifiedDevice…) : 15–20 s après leur init. Idempotent (`device._p2935`).
+- Couches, chacune en try/catch : capture BoundCluster (onOff, levelControl, scenes, colorControl, windowCovering, groups, iasACE ; jamais par-dessus une liaison du driver ; appuis seulement pour télécommandes pures / mode scène / relais découplé), liaisons bornées d'après le vrai descripteur (rien si absent), relève de secours du reporting via `homey.setInterval`, réveil (pollControl checkIn, rejoin, toute trame, ≤ 1 / 30 min), observateur OTA passif.
+- OTA : `OTAUpdateManager.noteClientRequest()` / `getClientReport()` enregistrent la vraie version, le type d'image, le code fabricant, l'offset et le statut de fin (≤ 200 appareils, historique ≤ 50). Ne répond jamais à l'appareil.
+- `scenes` n'a aucune commande dans zigbee-clusters 2.6 : `ScenesBoundCluster.recall()` ne pouvait jamais être appelé. Greffe view/remove/store/recall.
+- Interrupteurs : réglage appareil `zcl_cluster_layer` (template `.homeycompose/drivers/settings/zclClusterLayer.json`, activé par défaut, 382 drivers) ; drapeau app `zcl_cluster_layer_disabled` (ManagerSettings) = true pour tout couper.
+- Non couverts : 13 drivers au JSON non canonique (réglage absent = activé), et les drivers qui étendent `ZigBeeDevice` directement.

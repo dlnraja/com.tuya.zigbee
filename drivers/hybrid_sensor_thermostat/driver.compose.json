@@ -176,6 +176,11 @@
       "min": 20,
       "max": 45,
       "step": 0.5
+    },
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
     }
   ],
   "images": {

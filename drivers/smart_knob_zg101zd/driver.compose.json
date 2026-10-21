@@ -116,6 +116,11 @@
         "nl": "Beide modi worden altijd begrepen. Dubbel drukken bestaat alleen in gebeurtenismodus, druk+draai alleen in commandomodus. De knop slaapt: druk er vlak voor het opslaan één keer op.",
         "de": "Beide Modi werden immer verstanden. Doppeldruck gibt es nur im Ereignismodus, Drücken+Drehen nur im Befehlsmodus. Der Knopf schläft: kurz vor dem Speichern einmal drücken."
       }
+    },
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
     }
   ]
 }
