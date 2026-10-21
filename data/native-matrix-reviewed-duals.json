@@ -328,6 +328,29 @@
       "source": "dlnraja/com.tuya.zigbee#25 interview; Z2M lumi.ts RTCGQ13LM",
       "date": "2026-10-21",
       "reviewed_by": "user decision 2026-10-21 (P2929)"
+    },
+    {
+      "couple": "LUMI|TS0601",
+      "drivers": [
+        "device_generic_tuya_universal",
+        "motion_sensor",
+        "vibration_sensor"
+      ],
+      "reason": "Cartesian side effect of adding LUMI for lumi.vibration.aq1 (P2934): Aqara never reports this productId, so the pair is theoretical; real LUMI devices match on their own lumi.* model id (agl04 -> motion_sensor, vibration.aq1 -> vibration_sensor).",
+      "source": "Z2M lumi.ts DJT11LM / RTCGQ13LM",
+      "date": "2026-10-21",
+      "reviewed_by": "delegated rule 2026-10-21: specific driver wins (P2934)"
+    },
+    {
+      "couple": "LUMI|CK-BL702-MWS-01(7016)",
+      "drivers": [
+        "motion_sensor",
+        "vibration_sensor"
+      ],
+      "reason": "Cartesian side effect of adding LUMI for lumi.vibration.aq1 (P2934): Aqara never reports this productId, so the pair is theoretical; real LUMI devices match on their own lumi.* model id (agl04 -> motion_sensor, vibration.aq1 -> vibration_sensor).",
+      "source": "Z2M lumi.ts DJT11LM / RTCGQ13LM",
+      "date": "2026-10-21",
+      "reviewed_by": "delegated rule 2026-10-21: specific driver wins (P2934)"
     }
   ]
 }

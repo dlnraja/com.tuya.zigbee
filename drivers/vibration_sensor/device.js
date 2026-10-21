@@ -141,6 +141,11 @@ class VibrationSensorDevice extends UnifiedSensorBase {
       await this.removeCapability('measure_temperature').catch(() => {});
     }
 
+    // P2934: optional Aqara DJT11LM overlay (LUMI only, additive)
+    try {
+      require('../../lib/overlays/LumiVibrationOverlay').attachLumiVibrationOverlay(this, zclNode);
+    } catch (e) { /* optional */ }
+
     this.log('[VIBRATION] Ready', {
       pid: this._modelPid(),
       map: this._isHobeian102ZM() ? 'ZG-102ZM' : this._isHobeian103Z() ? 'ZG-103Z' : this._isHobeian228Z() ? 'ZG-228Z' : 'generic',
