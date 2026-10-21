@@ -3,7 +3,11 @@
 const UnifiedSensorBase = require('../../lib/devices/UnifiedSensorBase');
 const FirmwareQuirks = require('../../lib/quirks/FirmwareQuirks');
 const { RADAR_DIRECT_CAPS, radarDirectValue } = require('../../lib/sensors/RadarDirectMode');
-const { getSensorConfig, transformPresence } = require('./configs');
+// P2931: the per-model config table loads on first use, not at app start.
+const { lazy } = require('../../lib/utils/lazyRequire');
+const _configs = lazy(() => require('./configs'), { name: 'radar-configs' });
+const getSensorConfig = (...a) => _configs.getSensorConfig(...a);
+const transformPresence = (...a) => _configs.transformPresence(...a);
 const IntelligentPresenceInference = require('../../lib/sensors/IntelligentPresenceInference');
 const IntelligentDPAutoDiscovery = require('../../lib/sensors/IntelligentDPAutoDiscovery');
 const MfrHelper = require('../../lib/helpers/ManufacturerNameHelper');

@@ -1,8 +1,9 @@
 'use strict';
+const { lazy } = require('../../lib/utils/lazyRequire');
 const { safeDivide } = require('../../lib/utils/tuyaUtils.js');
 // v5.12.8: WiFi Camera Device - Tuya IPC with local control + RTSP/snapshot streaming
 const Homey = require('homey');
-const TuyaCameraClient = require('../../lib/tuya-camera/TuyaCameraClient');
+const TuyaCameraClient = lazy(() => require('../../lib/tuya-camera/TuyaCameraClient'), { name: 'TuyaCameraClient' }); // P2931 lazy
 const { safeSetCapabilityValue } = require('../../lib/utils/SafeCapability');
 const { safeSetTimeout, safeClearTimeout, safeSetInterval, safeClearInterval } = require('../../lib/utils/safe-timers');
 
