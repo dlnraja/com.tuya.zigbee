@@ -30,3 +30,10 @@ Johan's Homey apps, Athom's Tuya cloud app, Tasmota and OpenBeken templates: alr
 - Zigbee profile and generic mapper are not wired into the device runtime yet (pure modules + tests).
 - Enum-backed tuya-local binary sensors skipped (need a value table).
 - MCU serial and BLE versions are documented only (not a LAN or Zigbee path for us).
+
+## P2931 follow-up (2026-10-21)
+- Zigbee profile wired as an optional overlay (`lib/tuya/TuyaZigbeeProfileOverlay.js`): attached in `TuyaZigbeeDevice.onNodeInit`, one deferred Basic read (45-75 s, failure tolerated), passive EF00 listeners, store value `tuya_zb_profile`, detached in onUninit/onDeleted. Native handling unchanged.
+- Generic auto-mapper wired in `TuyaLocalDevice._onData` (once, high confidence, only capabilities the device already has).
+- Enum binary sensors from tuya-local: exact `dps_val` meaning true kept (`on`), applied via `transform` (66 rows).
+- Catalog compaction: identical schemas stored once (689 unique for 1467 configs). File 247 535 B -> 166 589 B (gzip 48 667 B). Products 1 912.
+- Audit: UDP discovery (ports 6666/6667/6668/7000, reuseAddr, 6699/ECB/raw-GCM cascade) OK; gaps fixed: device table bounded to 256, raw version label kept, 3.22 alias resolved. Active scan (TCP 6668, bounded concurrency) OK, no change. Manual IP: added normalisation (port suffix, spaces, invalid/broadcast IP, v3.x / 3.22 / 2.x labels, key spacing) in manual_add, repair configure and update_credentials.
