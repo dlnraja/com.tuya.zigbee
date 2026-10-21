@@ -19,7 +19,7 @@ const SSOT = path.join(__dirname, '..', '..', 'config', 'architecture', 'bastien
 const BASTIEN_APP_LEVEL_TRIGGERS = new Set(['capability_value_changed_generic', 'device_interaction', 'home_mode_changed']);
 
 /**
- * WHY(P2926 / Bastien diag 17-18/10 v1.0.161): the prune kept only driver-prefixed cards + 3 hardcoded
+ * WHY(P2929 / Bastien diag 17-18/10 v1.0.161): the prune kept only driver-prefixed cards + 3 hardcoded
  * app-level triggers. Every other app-level card the code asks for (auto-off, battery, scene, network…)
  * vanished from the published manifest -> "Invalid Flow Card ID" + Flows/buttons that never fire.
  * Keep each app-level card (id not owned by any driver of the full manifest) that the app code
@@ -108,6 +108,12 @@ function pruneBastienPublishFleet(destAppJson, opts = {}) {
   const keptIds = new Set(keptDrivers.map((d) => d.id));
   const referenced = opts.referencedCardIds || collectReferencedCardIds(opts.codeRoot || path.join(__dirname, '..', '..'));
   const isDriverOwned = (id) => allDriverIds.some((d) => id === d || id.startsWith(`${d}_`));
+  // Earlier publish steps (publish-hold) may already have dropped drivers whose cards remain:
+  // ownership also knows every driver folder of the repo.
+  let repoDriverIds = [];
+  try { repoDriverIds = fs.readdirSync(path.join(opts.codeRoot || path.join(__dirname, '..', '..'), 'drivers')); } catch (_e) { /* soft */ }
+  const byLen = [...new Set([...allDriverIds, ...repoDriverIds])].sort((a, b) => b.length - a.length);
+  const ownerOf = (id) => byLen.find((d) => id === d || id.startsWith(`${d}_`)) || null;
   const appLevelKept = [];
 
   // WHY(P2724 / Athom #106 invalid_state): keep ONLY flow cards for kept drivers.
@@ -124,7 +130,14 @@ function pruneBastienPublishFleet(destAppJson, opts = {}) {
         appLevelKept.push(id);
         return true;
       }
-      return keptDrivers.some((d) => id === d.id || id.startsWith(`${d.id}_`));
+      // P2928: owner = LONGEST driver id prefix over the FULL fleet. `climate_sensor_` used to claim
+      // cards of pruned `climate_sensor_device` / `climate_sensor_dimmer` -> 430 orphan cards shipped.
+      // A device arg filtered by driver_id names the real owner (ids like `switch_2gang_..._switch`
+      // belong to driver `switch`, not `switch_2gang`): trust it, trimmed to kept drivers.
+      const hasDriverFilter = (c.args || []).some((a) => a && a.type === 'device' && /driver_id=/.test(String(a.filter || '')));
+      if (hasDriverFilter) return appLevelCardDecision(c, keptIds) === 'keep';
+      const owner = ownerOf(id);
+      return !!owner && keptIds.has(owner);
     });
   }
 

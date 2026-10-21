@@ -1,6 +1,6 @@
 'use strict';
 /**
- * P2926 — Bastien publish prune must keep the app-level flow cards the code uses
+ * P2929 — Bastien publish prune must keep the app-level flow cards the code uses
  * (diag 17-18/10 v1.0.161: "Invalid Flow Card ID" + Flows/buttons not firing).
  */
 const { describe, it } = require('node:test');
@@ -17,7 +17,7 @@ function run(manifest, referenced) {
   return { r, out: JSON.parse(fs.readFileSync(f, 'utf8')) };
 }
 
-describe('P2926 app-level cards survive the Bastien prune', () => {
+describe('P2929 app-level cards survive the Bastien prune', () => {
   const ssot = require('../../config/architecture/bastien-publish-fleet-ssot.json');
   const kept = ssot.keepDriverIds.slice(0, 8).map((id) => ({ id }));
   const manifest = {
@@ -55,5 +55,16 @@ describe('P2926 app-level cards survive the Bastien prune', () => {
     const ref = prune.collectReferencedCardIds(path.join(__dirname, '..', '..'));
     assert.ok(ref.has('button_pressed'));
     assert.ok(ref.size > 100);
+  });
+});
+
+describe('P2928 longest-prefix card ownership', () => {
+  it('a kept driver does not claim cards of a pruned driver sharing its prefix', () => {
+    const ssot = require('../../config/architecture/bastien-publish-fleet-ssot.json');
+    const kept = ssot.keepDriverIds.slice(0, 8).map((id) => ({ id }));
+    const k = kept[0].id;
+    const { out } = run({ id: prune.APP_ID, drivers: [...kept, { id: `${k}_zzpruned` }],
+      flow: { triggers: [{ id: `${k}_fired` }, { id: `${k}_zzpruned_fired` }], conditions: [], actions: [] } }, []);
+    assert.deepEqual(out.flow.triggers.map((c) => c.id), [`${k}_fired`]);
   });
 });
