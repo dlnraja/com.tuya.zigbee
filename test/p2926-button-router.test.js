@@ -107,7 +107,9 @@ describe('P2926 attachButtonPaths — optional listeners', () => {
     const node = { endpoints: { 1: { clusters: { multistateInput: ms, onOff: oo } }, 2: { clusters: {} } }, handleFrame: () => 'root' };
     const rep = attachButtonPaths(dev, node);
     assert.strictEqual(rep.multistate, 1); assert.strictEqual(rep.onoff_attr, 1); assert.ok(rep.raw);
-    ms.h['attr.presentValue'](2); oo.h['attr.onOff'](true); oo.h['attr.tuyaOperationMode'](1);
+    ms.h['attr.presentValue'](2); oo.h['attr.onOff'](true);
+    const OM = require('../lib/zigbee/DeviceOperatingMode'); const o = OM.classifyOperatingFamily;
+    OM.classifyOperatingFamily = () => ({ writeSceneAttr: true }); oo.h['attr.tuyaOperationMode'](1); OM.classifyOperatingFamily = o;
     assert.deepStrictEqual(calls[0], [1, 'double', 'multistate']);
     assert.deepStrictEqual(calls[1], [1, 'single', 'onoff_attr']);
     assert.strictEqual(dev._buttonEventRouter.mode, 'scene');
@@ -137,5 +139,67 @@ describe('P2926 coverage report', () => {
     const b = rows.filter((r) => r.base === 'ButtonDevice');
     assert.ok(b.length >= 30);
     b.forEach((r) => ['multistate', 'onoff_attr', 'e000', 'e001', 'raw'].forEach((p) => assert.ok(r.paths.includes(p), `${r.driver} ${p}`)));
+  });
+});
+
+describe('P2926b — remaining items', () => {
+  const A = require('../lib/buttons/attachButtonPaths');
+  it('emulated presses never mark native multi; native double disables emulation', () => {
+    const r = new R.ButtonRouter();
+    r.admit({ button: 1, type: 'double', path: 'emulated' });
+    assert.ok(r.shouldEmulate('double'));
+    r.admit({ button: 2, type: 'double', path: 'tuya_fd' });
+    assert.strictEqual(r.shouldEmulate('double'), false);
+  });
+  it('DP cross-check is bounded and reports unexpected DPs', () => {
+    const r = new R.ButtonRouter();
+    assert.strictEqual(r.recordDp(1, { mfr: 'm', pid: 'TS0601', fw: '1' }, [1, 2]), null);
+    assert.match(r.recordDp(9, { mfr: 'm', pid: 'TS0601', fw: '1' }, [1, 2]), /DP9 not in profile/);
+    for (let i = 0; i < 10; i++) { r.recordDp(1, { mfr: `m${i}` }); }
+    assert.ok(Object.keys(r.dpSeen).length <= 5);
+  });
+  function dev(extra = {}) {
+    const store = {}; const settings = {};
+    return Object.assign({ log() {}, getCapabilities: () => ['button.1'], driver: { id: 'button_wireless_4', manifest: { class: 'button', zigbee: { endpoints: { 1: { bindings: [6] } } } } },
+      getStoreValue: (k) => store[k], setStoreValue: async (k, v) => { store[k] = v; }, setSettings: async (o) => Object.assign(settings, o),
+      getSettings: () => ({ zb_model_id: 'TS004F' }), getSetting: (k) => settings[k], store, settings }, extra);
+  }
+  it('wake window binds onOff on extra endpoints once (throttled), only with native binding', async () => {
+    const d = dev(); let binds = 0;
+    const node = { endpoints: { 1: { clusters: { onOff: { bind: async () => { binds++; } } } }, 2: { clusters: { onOff: { bind: async () => { binds++; } } } } } };
+    assert.ok(A.onWake(d, node)); await new Promise((r) => setImmediate(r));
+    assert.strictEqual(binds, 1);
+    assert.strictEqual(A.onWake(d, node), false);
+    const d2 = dev({ driver: { id: 'button_wireless_4', manifest: { class: 'button' } } });
+    assert.strictEqual(A.bindExtraEndpoints(d2, node), 0);
+  });
+  it('new TS004F device: button_mode follows the read 0x8004; failure keeps fallback', async () => {
+    const OM = require('../lib/zigbee/DeviceOperatingMode');
+    const orig = OM.classifyOperatingFamily; OM.classifyOperatingFamily = () => ({ writeSceneAttr: true });
+    try {
+      const d = dev(); d.store.p2926_new_device = true;
+      const node = { endpoints: { 1: { clusters: { onOff: { readAttributes: async () => ({ tuyaOperationMode: 0 }) } } } } };
+      assert.strictEqual(await A.initModeForNewDevice(d, node), 'dimmer');
+      assert.strictEqual(d.settings.button_mode, 'dimmer');
+      assert.strictEqual(d.store.p2926_new_device, false);
+      const d2 = dev(); d2.store.p2926_new_device = true;
+      const bad = { endpoints: { 1: { clusters: { onOff: { readAttributes: async () => { throw new Error('asleep'); } } } } } };
+      assert.strictEqual(await A.initModeForNewDevice(d2, bad), null);
+      assert.strictEqual(d2.settings.button_mode, undefined);
+      assert.strictEqual(d2.store.p2926_new_device, true, 'retry on next wake');
+    } finally { OM.classifyOperatingFamily = orig; }
+  });
+  it('E001 switchMode=1 marks scene mode and relay decoupled', () => {
+    const d = dev(); const h = {};
+    const node = { endpoints: { 1: { clusters: { tuyaE001: { on: (e, f) => { h[e] = f; } } } } }, handleFrame: () => 0 };
+    A.attachButtonPaths(d, node); h['attr.switchMode'](1);
+    assert.strictEqual(d._buttonEventRouter.mode, 'scene');
+    assert.strictEqual(d.store.relay_decoupled, true);
+  });
+  it('legacy PhysicalButtonMixin call sites are all path-tagged', () => {
+    const src = require('fs').readFileSync(require('path').join(__dirname, '../lib/mixins/PhysicalButtonMixin.js'), 'utf8');
+    const calls = src.split('\n').filter((l) => /_triggerPhysicalFlow\(/.test(l) && !/^\s*(\*|\/\/)|_triggerPhysicalFlow\(gang, pressType, tokens = \{\}\)/.test(l));
+    const untagged = calls.filter((l) => !/path:/.test(l));
+    assert.deepStrictEqual(untagged, []);
   });
 });
