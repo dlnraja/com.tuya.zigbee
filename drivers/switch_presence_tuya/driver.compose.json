@@ -85,5 +85,12 @@
   },
   "metadata": {
     "source": "zigbee-herdsman-converters tuya.ts (Koen Kanters and contributors): _TZE28C1000000_jlbsptkl 1-gang, _jaunkx9g 2-gang, _usmqzgdm 3-gang human presence switches. DP1-3 relays, DP101 presence (1 = present)."
-  }
+  },
+  "settings": [
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
+    }
+  ]
 }

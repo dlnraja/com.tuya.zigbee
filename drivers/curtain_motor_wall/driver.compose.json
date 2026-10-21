@@ -407,6 +407,11 @@
         "nl": "Doel van de flow-actie \"Ga naar favoriete positie\". 0 = dicht, 100 = open.",
         "de": "Ziel der Flow-Aktion \"Zur Lieblingsposition\". 0 = geschlossen, 100 = offen."
       }
+    },
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
     }
   ],
   "energy": {

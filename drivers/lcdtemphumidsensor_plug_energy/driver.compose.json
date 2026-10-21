@@ -396,6 +396,11 @@
         "en": "Adjust if total energy (kWh) readings are way off.",
         "fr": "Ajuster si l'énergie totale (kWh) est incorrecte."
       }
+    },
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
     }
   ],
   "images": {

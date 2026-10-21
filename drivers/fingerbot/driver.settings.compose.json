@@ -60,5 +60,10 @@
     "hint": {
       "en": "Enable touch control for the Finger Bot."
     }
+  },
+  {
+    "$extends": [
+      "zclClusterLayer"
+    ]
   }
 ]

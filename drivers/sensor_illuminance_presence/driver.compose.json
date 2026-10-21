@@ -661,6 +661,11 @@
         "en": "Enable/disable the LED indicator on the sensor",
         "fr": "Activer/désactiver l'indicateur LED"
       }
+    },
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
     }
   ],
   "images": {

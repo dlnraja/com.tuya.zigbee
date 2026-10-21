@@ -346,6 +346,11 @@
         "en": "Sync device time with Homey",
         "fr": "Synchroniser l'heure du device avec Homey"
       }
+    },
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
     }
   ],
   "images": {
