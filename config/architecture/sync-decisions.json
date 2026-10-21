@@ -1,0 +1,115 @@
+{
+  "_meta": "P2932 port decisions read by scripts/maintenance/sync-matrix.js. Keys: master short sha (9) or P-tag. Soak policy: features 7 days on master before stable-v5; exact sourced couples and crash/CI guards may go the same day; Bastien takes only what touches its fleet (config/architecture/bastien-publish-fleet-ssot.json) or shared runtime/CI.",
+  "decisions": {
+    "0b06fe82d": {
+      "stable": "hold (soak to 28/10)",
+      "bastien": "hold (soak)",
+      "why": "new WiFi/Zigbee runtime wiring, simulation-tested only"
+    },
+    "9d87becb7": {
+      "stable": "hold (soak to 28/10)",
+      "bastien": "hold (soak)",
+      "why": "WiFi/local feature (tuya-local schemas, version resolver); only the publish-side P2930 pieces were ported"
+    },
+    "f178ceb89": {
+      "stable": "ported 94148bfc0",
+      "bastien": "n/a",
+      "why": "Bastien prune already drops drivers outside its fleet (P2724/P2928)"
+    },
+    "9985538dc": {
+      "stable": "ported 89214d1a8",
+      "bastien": "ported (c8e6ccf39, own orphan-card gate)",
+      "why": ""
+    },
+    "830a81eaa": {
+      "stable": "n/a (.github, other worker)",
+      "bastien": "n/a (.github, other worker)",
+      "why": "read-only Athom build-history workflow lives on master"
+    },
+    "e45bd9e6b": {
+      "stable": "hold (soak to 28/10)",
+      "bastien": "hold (soak)",
+      "why": "resilience timer 5 s -> 30 s changes runtime timing; tag P2928 on Bastien is a different change (prune gate)"
+    },
+    "951e0cfb4": {
+      "stable": "ported 815bb23e2",
+      "bastien": "ported 7a28e407d",
+      "why": "user-requested button work"
+    },
+    "dc8273987": {
+      "stable": "ported 2ab01293c",
+      "bastien": "ported ab155f66a",
+      "why": "user-requested button work"
+    },
+    "9fe0af665": {
+      "stable": "hold with HEIMAN drivers",
+      "bastien": "n/a (no HEIMAN in fleet)",
+      "why": "reviewed-duals infra only needed with the HEIMAN couples"
+    },
+    "41ebd5c4d": {
+      "stable": "ported 26bab25b0",
+      "bastien": "ported c8e6ccf39",
+      "why": "crash guard (ENOENT memoryUsage)"
+    },
+    "d7a962970": {
+      "stable": "hold with HEIMAN drivers",
+      "bastien": "n/a",
+      "why": "fixes for the HEIMAN drivers and their test; follows P2921"
+    },
+    "790f7b5e6": {
+      "stable": "ported 9afd680fb (CI half)",
+      "bastien": "ported c711c9d7c (CI half)",
+      "why": "remaining files are master-only .github"
+    },
+    "182044798": {
+      "stable": "ported dd22398817 (P2932)",
+      "bastien": "ported 0ce3b7b3a4 (P2932)",
+      "why": "exact sourced couple + DP3 enum guarded by `?? v` (real % still passes through)"
+    },
+    "55393a92d": {
+      "stable": "hold with HEIMAN drivers",
+      "bastien": "n/a",
+      "why": "audit fix of the new HEIMAN drivers"
+    },
+    "671bf8b81": {
+      "stable": "ported dd22398817 (P2932)",
+      "bastien": "ported 0ce3b7b3a4 (P2932, switch_2gang only; slim_motion_sensor not in fleet)",
+      "why": "exact sourced couples"
+    },
+    "3a9b12122": {
+      "stable": "tooling ported 5162a91d5; drivers hold (soak to 28/10)",
+      "bastien": "tooling ported 2dacf870e; drivers n/a",
+      "why": "new native drivers, master publish not yet confirmed"
+    },
+    "623619541": {
+      "stable": "ported 5162a91d5",
+      "bastien": "ported 2dacf870e",
+      "why": ""
+    },
+    "2ccd47a30": {
+      "stable": "ported dd22398817 except HEIMAN smoke couple",
+      "bastien": "n/a (dimmer_1_gang / smoke not in fleet)",
+      "why": "HEIMAN x TS0601 collides with button_emergency_sos on stable without P2927 reviewed duals"
+    },
+    "b1c2ccf45": {
+      "stable": "n/a (master-only automation)",
+      "bastien": "n/a",
+      "why": "safe-auto-commit exists only on master"
+    },
+    "f7d7f74fe": {
+      "stable": "n/a",
+      "bastien": "n/a",
+      "why": "master version manifests"
+    },
+    "9e8fe0d69": {
+      "stable": "ported 0db61a888",
+      "bastien": "ported 67ed81d83",
+      "why": "memory fix"
+    },
+    "13d892109": {
+      "stable": "ported 6ec0f6879",
+      "bastien": "ported 5d16b703a",
+      "why": "memory fix"
+    }
+  }
+}

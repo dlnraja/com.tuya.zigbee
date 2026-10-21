@@ -241,3 +241,5 @@ Sources actually used or consulted for the Wi-Fi local stack (`lib/tuya-local/`)
 - **Koenkk/zigbee-herdsman-converters** (MIT) — EF00 command ids, appVersion layout.
 Details: `docs/knowledge/WIFI_LOCAL_PROTOCOLS_P2930.md`.
 - **zigpy/zha-device-handlers** (Apache-2.0) and **dresden-elektronik/deconz-rest-plugin** (BSD-3) — Tuya time answer / MCU version behaviour (P2933, own code).
+
+- P2932 (2026-10-21) OTA audit, own implementation: Tuya EF00 MCU OTA frame layout from Koenkk/zigbee-herdsman `src/zspec/zcl/definition/cluster.ts` (manuSpecificTuya 0x12-0x15); image index and SHA512 from Koenkk/zigbee-OTA `index.json`; provider and validation order compared with zigpy `zigpy/ota/providers.py`; Tuya MCU serial OTA 0x0A/0x0B from Tuya developer docs (MCU standard protocol, "MCU OTA Update"); Homey SDK "Zigbee Firmware Updates" for the server role and manifest rules.

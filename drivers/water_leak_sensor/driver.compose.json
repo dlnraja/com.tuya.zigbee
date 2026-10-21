@@ -616,6 +616,11 @@
           }
         ]
       }
-    ]
+    ],
+    "wakeInstruction": {
+      "en": "Battery sensor: press its button (or re-insert the battery) to wake it, then start Device Updates right away and keep it awake if the transfer stalls.",
+      "fr": "Capteur sur pile : appuyez sur son bouton (ou remettez la pile) pour le réveiller, puis lancez Device Updates aussitôt et réveillez-le à nouveau si le transfert se bloque.",
+      "nl": "Batterijsensor: druk op de knop (of plaats de batterij opnieuw) om hem te wekken en start Device Updates meteen."
+    }
   }
 }
