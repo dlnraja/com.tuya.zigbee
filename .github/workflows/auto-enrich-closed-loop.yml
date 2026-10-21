@@ -486,3 +486,34 @@ jobs:
             // No PR for scheduled runs - just push to master
             // safe-sync-stable handles the stable-v5 sync separately
             console.log('Loop completed. Changes committed to master.');
+
+  # P2936: full cross-research of every item this workflow handles (kill switch: vars.XR_ENABLED=false,
+  # report-only: vars.XR_APPLY=false). Bounded (max items, net/OCR caps), cached, no paid API.
+  cross-research:
+    needs: [closed-loop]
+    if: ${{ always() && vars.XR_ENABLED != 'false' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+      issues: read
+    concurrency:
+      group: cross-research-${{ github.ref_name }}
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          fetch-depth: 50
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --no-audit --no-fund --ignore-scripts
+      - uses: ./.github/actions/cross-research
+        env:
+          XR_ENABLED: ${{ vars.XR_ENABLED }}
+          XR_APPLY: ${{ vars.XR_APPLY }}
+        with:
+          items: needs-info
+          max: '120'
+          id: xr-auto-enrich-closed-loop
