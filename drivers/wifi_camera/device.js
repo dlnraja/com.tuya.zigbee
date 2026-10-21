@@ -91,7 +91,7 @@ class WiFiCameraDevice extends Homey.Device {
         id: s.device_id,
         key: s.local_key,
         ip: s.ip || undefined,
-        version: (!s.protocol_version || s.protocol_version === 'auto') ? '3.3' : s.protocol_version,
+        version: !s.protocol_version || s.protocol_version === 'auto' ? '3.3' : s.protocol_version,
         issueRefreshOnConnect: true,
       });
       this._tuyaDevice.on('connected', () => {

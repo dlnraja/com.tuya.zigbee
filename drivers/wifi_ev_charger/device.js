@@ -68,7 +68,7 @@ class WiFiEvChargerDevice extends TuyaLocalDevice {
   }
 
   async _processDPUpdate(dps) {
-    if (!dps || typeof dps !== 'object') return;
+    if (!dps || typeof dps !== 'object') {return;}
     const settings = (typeof this.getSettings === 'function' && this.getSettings()) || {};
 
     // P2642: charge history first (proven session kWh)
@@ -78,13 +78,13 @@ class WiFiEvChargerDevice extends TuyaLocalDevice {
       histCandidates.push({ dp: histDp, value: dps[histDp] });
     }
     for (const [k, v] of Object.entries(dps)) {
-      if (looksLikeChargeHistory(v)) histCandidates.push({ dp: Number(k), value: v });
+      if (looksLikeChargeHistory(v)) {histCandidates.push({ dp: Number(k), value: v });}
     }
     for (const { dp, value } of histCandidates) {
       const rec = parseEvChargerChargeHistory(value, {
         energyDivisor: Number(settings.history_energy_divisor) || 10,
       });
-      if (!rec) continue;
+      if (!rec) {continue;}
       await this._applyChargeHistory(rec);
       delete dps[dp];
       break;
@@ -99,7 +99,7 @@ class WiFiEvChargerDevice extends TuyaLocalDevice {
       candidates.push({ dp: 102, value: dps[102] });
     }
     for (const { dp, value } of candidates) {
-      if (!looksLikePhaseJson(value) && configured !== dp) continue;
+      if (!looksLikePhaseJson(value) && configured !== dp) {continue;}
       const block = parseEvChargerPhaseJson(value, {
         voltageDivisor: Number(settings.json_voltage_divisor) || 10,
         currentDivisor: Number(settings.json_current_divisor) || 10,
@@ -132,7 +132,7 @@ class WiFiEvChargerDevice extends TuyaLocalDevice {
     if (this.hasCapability('meter_power') && Number.isFinite(rec.kwh)) {
       await this.safeSetCapabilityValue('meter_power', Math.round(rec.kwh * 100) / 100);
     }
-    if (!shouldApplyChargeHistory(rec, this._lastChargeHistoryId) && !first) return;
+    if (!shouldApplyChargeHistory(rec, this._lastChargeHistoryId) && !first) {return;}
     const isNewSession = !first;
     this._lastChargeHistoryId = rec.id;
     try { await this.setStoreValue('lastHistoryId', rec.id); } catch (_e) { /* soft */ }
@@ -182,7 +182,7 @@ class WiFiEvChargerDevice extends TuyaLocalDevice {
   }
 
   async onDeleted() {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     this._destroyed = true;
     await super.onDeleted();
   }
