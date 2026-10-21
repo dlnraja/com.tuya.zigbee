@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-21T16:17:28.092Z",
+  "updated": "2026-10-21T17:01:48.971Z",
   "threads": {
     "21313": {
       "lastPost": 2819,
@@ -17221,7 +17221,7 @@
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 3
+        "sources": 10
       }
     },
     {
@@ -17295,7 +17295,7 @@
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 31
+        "sources": 32
       }
     },
     {
@@ -17821,11 +17821,15 @@
       "why": "diag-only",
       "crossResearch": {
         "at": "2026-10-21",
-        "verdict": "no-action",
-        "confidence": 0,
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
-        "sources": 32
+        "candidates": [
+          "https://www.zigbee2mqtt.io/devices/ZG-204ZV.html",
+          "https://www.zigbee2mqtt.io/devices/ZG-204ZV-z.html",
+          "https://www.zigbee2mqtt.io/devices/ZG-204ZV1-z.html"
+        ],
+        "sources": 37
       }
     },
     {
@@ -17843,7 +17847,7 @@
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 34
       }
     },
     {
@@ -17860,7 +17864,7 @@
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 32
       }
     },
     {
@@ -17874,11 +17878,15 @@
       "why": "diag-only",
       "crossResearch": {
         "at": "2026-10-21",
-        "verdict": "no-action",
-        "confidence": 0,
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
-        "sources": 0
+        "candidates": [
+          "https://www.zigbee2mqtt.io/devices/ZBMINIL2.html",
+          "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/master/devices/sonoff/zbmini-l_relay.json",
+          "https://zigbee.blakadder.com/Sonoff_ZBMINIL2.html"
+        ],
+        "sources": 33
       }
     },
     {
@@ -17895,11 +17903,11 @@
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
         "at": "2026-10-21",
-        "verdict": "no-action",
+        "verdict": "lead",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 25
       }
     },
     {
@@ -17926,11 +17934,15 @@
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
         "at": "2026-10-21",
-        "verdict": "no-action",
-        "confidence": 0,
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
-        "sources": 0
+        "candidates": [
+          "https://www.zigbee2mqtt.io/devices/ZBMINIL2.html",
+          "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/master/devices/sonoff/zbmini-l_relay.json",
+          "https://zigbee.blakadder.com/Sonoff_ZBMINIL2.html"
+        ],
+        "sources": 32
       }
     },
     {
@@ -17950,7 +17962,7 @@
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 31
       }
     },
     {
@@ -17980,7 +17992,7 @@
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 31
       }
     },
     {
@@ -17996,11 +18008,15 @@
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
         "at": "2026-10-21",
-        "verdict": "no-action",
-        "confidence": 0,
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
-        "sources": 0
+        "candidates": [
+          "https://www.zigbee2mqtt.io/devices/ZG-204ZL.html",
+          "https://zigbee.blakadder.com/Tuya_ZG-204ZL.html",
+          "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/master/devices/hobeian/hobeian_presence_light_sensor.json"
+        ],
+        "sources": 31
       }
     },
     {
@@ -18059,11 +18075,15 @@
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
         "at": "2026-10-21",
-        "verdict": "no-action",
-        "confidence": 0,
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
-        "sources": 0
+        "candidates": [
+          "https://www.zigbee2mqtt.io/devices/ZG-204ZL.html",
+          "https://zigbee.blakadder.com/Tuya_ZG-204ZL.html",
+          "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/master/devices/hobeian/hobeian_presence_light_sensor.json"
+        ],
+        "sources": 31
       }
     },
     {
@@ -18083,7 +18103,7 @@
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 31
       }
     },
     {
@@ -18146,7 +18166,7 @@
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 13
       }
     },
     {
@@ -18164,7 +18184,7 @@
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 36
       }
     },
     {
@@ -18213,11 +18233,11 @@
       "why": "request-no-identity",
       "crossResearch": {
         "at": "2026-10-21",
-        "verdict": "no-action",
+        "verdict": "lead",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 36
       }
     },
     {
@@ -18234,7 +18254,7 @@
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 32
       }
     },
     {
@@ -18247,11 +18267,11 @@
       "why": "request-no-identity",
       "crossResearch": {
         "at": "2026-10-21",
-        "verdict": "no-action",
+        "verdict": "lead",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 36
       }
     },
     {
@@ -18264,11 +18284,11 @@
       "why": "request-no-identity",
       "crossResearch": {
         "at": "2026-10-21",
-        "verdict": "no-action",
+        "verdict": "lead",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 36
       }
     },
     {
@@ -18281,11 +18301,14 @@
       "why": "request-no-identity",
       "crossResearch": {
         "at": "2026-10-21",
-        "verdict": "no-action",
-        "confidence": 0,
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
-        "sources": 0
+        "candidates": [
+          "https://www.zigbee2mqtt.io/devices/CTHS-317-ET.html",
+          "https://zigbee.blakadder.com/CASA_IA_CTHS-317-ET.html"
+        ],
+        "sources": 33
       }
     },
     {
@@ -18369,7 +18392,7 @@
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 31
       }
     },
     {
@@ -18382,11 +18405,15 @@
       "why": "request-no-identity",
       "crossResearch": {
         "at": "2026-10-21",
-        "verdict": "no-action",
-        "confidence": 0,
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
-        "sources": 0
+        "candidates": [
+          "https://www.zigbee2mqtt.io/devices/HS1SA-E.html",
+          "https://zigbee.blakadder.com/Heiman_HS1SA.html",
+          "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/trust/ZSDR-850_smoke_sensor.json"
+        ],
+        "sources": 31
       }
     },
     {
@@ -18426,11 +18453,11 @@
       "why": "request-no-identity",
       "crossResearch": {
         "at": "2026-10-21",
-        "verdict": "no-action",
+        "verdict": "lead",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 27
       }
     },
     {
@@ -18454,11 +18481,11 @@
       "why": "request-no-identity",
       "crossResearch": {
         "at": "2026-10-21",
-        "verdict": "no-action",
+        "verdict": "lead",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 28
       }
     },
     {
@@ -18472,11 +18499,11 @@
       "why": "request-no-identity",
       "crossResearch": {
         "at": "2026-10-21",
-        "verdict": "no-action",
+        "verdict": "lead",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 27
       }
     },
     {
@@ -18533,7 +18560,7 @@
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 5
       }
     },
     {
@@ -18550,7 +18577,7 @@
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 31
       }
     },
     {
