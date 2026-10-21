@@ -45,6 +45,22 @@ class WiFiCoverDevice extends TuyaLocalDevice {
     return this._coverPositionSource;
   }
 
+  /**
+   * P2954 (forum 154077 #491, Andi): when a cloud DP table is stored (cloud_dp_range_1 = enum
+   * range of DP1), pick the matching command set. Absent or unmatched -> unchanged behaviour.
+   */
+  _applyCloudCoverRange() {
+    try {
+      const range = this.getStoreValue('cloud_dp_range_1');
+      if (!Array.isArray(range)) {return;}
+      const { coverCommandSetFromRange } = require('../../lib/tuya-local/WifiDriverWiring');
+      const { COVER_COMMAND_SETS } = require('../../lib/tuya-local/TuyaDeviceTemplates');
+      const hit = coverCommandSetFromRange(range, COVER_COMMAND_SETS);
+      if (hit && hit.status === 'confirmed') {this._coverCommandSet = hit.name;}
+      this.log(`[WIFI-COVER] cloud range -> ${hit ? `${hit.name} (${hit.status})` : 'no match (lead)'}`);
+    } catch (_e) { /* optional */ }
+  }
+
   _learnCoverCommandSet(value) {
     const next = detectCoverCommandSet(value, this._coverCommandSet || null);
     if (next && next !== this._coverCommandSet) {
@@ -56,6 +72,7 @@ class WiFiCoverDevice extends TuyaLocalDevice {
 
   async onInit() {
     try { this._coverCommandSet = this.getStoreValue('cover_command_set') || null; } catch (_e) { /* store not ready */ }
+    this._applyCloudCoverRange();
     await super.onInit();
     this.log('[WIFI-COVER] Ready'); }
 
