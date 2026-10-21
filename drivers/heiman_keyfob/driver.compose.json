@@ -5,10 +5,9 @@
     "nl": "HEIMAN alarm-afstandsbediening",
     "de": "HEIMAN Alarm-Fernbedienung"
   },
-  "class": "remote",
+  "class": "other",
   "capabilities": [
-    "measure_battery",
-    "alarm_battery"
+    "measure_battery"
   ],
   "platforms": [
     "local"

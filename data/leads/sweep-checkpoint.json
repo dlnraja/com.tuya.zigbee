@@ -8476,12 +8476,15 @@
     },
     {
       "id": "forum:146735#8",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Cam",
       "link": "https://community.homey.app/t/146735/8",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Linked JohanBendz #1267 HOBEIAN/ZG-204ZL -> presence_sensor_radar and #1268 _TZ3000_5bpeda8u/TS0041 -> button_wireless_1.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:146735#10",
@@ -8495,12 +8498,15 @@
     },
     {
       "id": "forum:146735#11",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Mariomark1541",
       "link": "https://community.homey.app/t/146735/11",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: support/meta post or Tuya cloud/local (WiFi) app thread question; no Zigbee identity to act on.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:146735#15",
@@ -8519,7 +8525,10 @@
       "link": "https://community.homey.app/t/146735/24",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "WiFi lead: IKOHS ceiling fan (Tuya cloud), no DP map.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:146735#26",
@@ -8573,13 +8582,16 @@
     },
     {
       "id": "forum:146735#36",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Robert_Lewis",
       "link": "https://community.homey.app/t/146735/36",
       "mfrs": [],
       "pids": [],
       "images": 1,
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: support/meta post or Tuya cloud/local (WiFi) app thread question; no Zigbee identity to act on.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:146735#42",
@@ -8588,17 +8600,23 @@
       "link": "https://community.homey.app/t/146735/42",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "WiFi lead: ETU9-IOT-WIFI circuit breaker/meter, power DPs missing.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:146735#44",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "smarthomesven",
       "link": "https://community.homey.app/t/146735/44",
       "mfrs": [],
       "pids": [],
       "images": 1,
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: support/meta post or Tuya cloud/local (WiFi) app thread question; no Zigbee identity to act on.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:146735#52",
@@ -8612,12 +8630,15 @@
     },
     {
       "id": "forum:146735#54",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Frekel",
       "link": "https://community.homey.app/t/146735/54",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: support/meta post or Tuya cloud/local (WiFi) app thread question; no Zigbee identity to act on.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:146735#55",
@@ -8671,12 +8692,15 @@
     },
     {
       "id": "forum:146735#81",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "smarthomesven",
       "link": "https://community.homey.app/t/146735/81",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: support/meta post or Tuya cloud/local (WiFi) app thread question; no Zigbee identity to act on.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:154077#1",
@@ -8710,13 +8734,16 @@
     },
     {
       "id": "forum:154077#4",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "SunBeech",
       "link": "https://community.homey.app/t/154077/4",
       "mfrs": [],
       "pids": [],
       "images": 5,
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: support/meta post or Tuya cloud/local (WiFi) app thread question; no Zigbee identity to act on.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:154077#5",
@@ -8740,13 +8767,16 @@
     },
     {
       "id": "forum:154077#15",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "owuerker",
       "link": "https://community.homey.app/t/154077/15",
       "mfrs": [],
       "pids": [],
       "images": 1,
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: support/meta post or Tuya cloud/local (WiFi) app thread question; no Zigbee identity to act on.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:154077#19",
@@ -8760,13 +8790,16 @@
     },
     {
       "id": "forum:154077#20",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "smarthomesven",
       "link": "https://community.homey.app/t/154077/20",
       "mfrs": [],
       "pids": [],
       "images": 1,
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: support/meta post or Tuya cloud/local (WiFi) app thread question; no Zigbee identity to act on.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:154077#21",
@@ -8785,7 +8818,10 @@
       "link": "https://community.homey.app/t/154077/22",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "WiFi lead: Tuya ceiling fan DP60 on/off, DP62 speed, DP64 timer (Tuya Local).",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:154077#27",
@@ -8929,12 +8965,15 @@
     },
     {
       "id": "forum:154077#62",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Stephen_Petitt",
       "link": "https://community.homey.app/t/154077/62",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: support/meta post or Tuya cloud/local (WiFi) app thread question; no Zigbee identity to act on.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:154077#67",
@@ -8944,26 +8983,35 @@
       "mfrs": [],
       "pids": [],
       "images": 1,
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "WiFi lead: Poolex pool heat pump mode DP.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:154077#73",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Pieter_Pessers",
       "link": "https://community.homey.app/t/154077/73",
       "mfrs": [],
       "pids": [],
       "images": 1,
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: support/meta post or Tuya cloud/local (WiFi) app thread question; no Zigbee identity to act on.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:154077#75",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Pieter_Pessers",
       "link": "https://community.homey.app/t/154077/75",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: support/meta post or Tuya cloud/local (WiFi) app thread question; no Zigbee identity to act on.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:154077#78",
@@ -8987,21 +9035,27 @@
     },
     {
       "id": "forum:21313#3",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Marcel_Visser",
       "link": "https://community.homey.app/t/21313/3",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: support/meta post or Tuya cloud/local (WiFi) app thread question; no Zigbee identity to act on.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:21313#4",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Jurgen_Heine",
       "link": "https://community.homey.app/t/21313/4",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: support/meta post or Tuya cloud/local (WiFi) app thread question; no Zigbee identity to act on.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:21313#5",
@@ -9015,12 +9069,15 @@
     },
     {
       "id": "forum:21313#16",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Jurgen_Heine",
       "link": "https://community.homey.app/t/21313/16",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: support/meta post or Tuya cloud/local (WiFi) app thread question; no Zigbee identity to act on.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:21313#17",
@@ -9064,12 +9121,15 @@
     },
     {
       "id": "forum:21313#21",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Jurgen_Heine",
       "link": "https://community.homey.app/t/21313/21",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: support/meta post or Tuya cloud/local (WiFi) app thread question; no Zigbee identity to act on.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:21313#25",
@@ -9083,85 +9143,112 @@
     },
     {
       "id": "forum:21313#31",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Lenard_van_der_Maas",
       "link": "https://community.homey.app/t/21313/31",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: support/meta post or Tuya cloud/local (WiFi) app thread question; no Zigbee identity to act on.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:21313#32",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "viix",
       "link": "https://community.homey.app/t/21313/32",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: support/meta post or Tuya cloud/local (WiFi) app thread question; no Zigbee identity to act on.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:21313#33",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Jurgen_Heine",
       "link": "https://community.homey.app/t/21313/33",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: support/meta post or Tuya cloud/local (WiFi) app thread question; no Zigbee identity to act on.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:21313#39",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Jurgen_Heine",
       "link": "https://community.homey.app/t/21313/39",
       "mfrs": [],
       "pids": [],
       "images": 2,
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: support/meta post or Tuya cloud/local (WiFi) app thread question; no Zigbee identity to act on.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:21313#49",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Annie",
       "link": "https://community.homey.app/t/21313/49",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: support/meta post or Tuya cloud/local (WiFi) app thread question; no Zigbee identity to act on.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:21313#52",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Jurgen_Heine",
       "link": "https://community.homey.app/t/21313/52",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: support/meta post or Tuya cloud/local (WiFi) app thread question; no Zigbee identity to act on.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:21313#55",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Patrick_B",
       "link": "https://community.homey.app/t/21313/55",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: support/meta post or Tuya cloud/local (WiFi) app thread question; no Zigbee identity to act on.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:21313#66",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "pvkan",
       "link": "https://community.homey.app/t/21313/66",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: support/meta post or Tuya cloud/local (WiFi) app thread question; no Zigbee identity to act on.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:21313#75",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Jordi_Visbeen",
       "link": "https://community.homey.app/t/21313/75",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: support/meta post or Tuya cloud/local (WiFi) app thread question; no Zigbee identity to act on.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:21313#76",
@@ -10162,13 +10249,16 @@
     },
     {
       "id": "forum:140352#92",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Cam",
       "link": "https://community.homey.app/t/140352/92",
       "mfrs": [],
       "pids": [],
       "images": 1,
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Same devices as JohanBendz #1267/#1268, both covered.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#94",
@@ -10192,12 +10282,15 @@
     },
     {
       "id": "forum:140352#99",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Peter_van_Werkhoven",
       "link": "https://community.homey.app/t/140352/99",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "HOBEIAN/ZG-204ZV on presence_sensor_radar.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#101",
@@ -10215,12 +10308,15 @@
     },
     {
       "id": "forum:140352#102",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Peter_Kawa",
       "link": "https://community.homey.app/t/140352/102",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: support/meta post or Tuya cloud/local (WiFi) app thread question; no Zigbee identity to act on.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#104",
@@ -10234,12 +10330,15 @@
     },
     {
       "id": "forum:140352#116",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Cam",
       "link": "https://community.homey.app/t/140352/116",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Same devices as JohanBendz #1267/#1268, both covered.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#117",
@@ -10324,12 +10423,15 @@
     },
     {
       "id": "forum:26439#4423",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Paulo_Dias",
       "link": "https://community.homey.app/t/26439/4423",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: support/meta post or Tuya cloud/local (WiFi) app thread question; no Zigbee identity to act on.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:26439#4424",
@@ -10343,21 +10445,27 @@
     },
     {
       "id": "forum:26439#4428",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "robertklep",
       "link": "https://community.homey.app/t/26439/4428",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: support/meta post or Tuya cloud/local (WiFi) app thread question; no Zigbee identity to act on.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:26439#4429",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Rick_Delput",
       "link": "https://community.homey.app/t/26439/4429",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: support/meta post or Tuya cloud/local (WiFi) app thread question; no Zigbee identity to act on.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:26439#4432",
@@ -10368,7 +10476,10 @@
       "pids": [
         "TS0042"
       ],
-      "why": "pid-only"
+      "why": "pid-only",
+      "note": "TS0042 2-gang remote, mfr missing.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:26439#4437",
@@ -10377,7 +10488,10 @@
       "link": "https://community.homey.app/t/26439/4437",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "BSEED Zigbee shutter switch (Amazon link), no ids.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:26439#4438",
@@ -10407,12 +10521,15 @@
     },
     {
       "id": "forum:26439#4443",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Robert_Szilagyi",
       "link": "https://community.homey.app/t/26439/4443",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: support/meta post or Tuya cloud/local (WiFi) app thread question; no Zigbee identity to act on.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:146735#93",
@@ -10446,12 +10563,15 @@
     },
     {
       "id": "forum:146735#109",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "MarcoRuiter",
       "link": "https://community.homey.app/t/146735/109",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: support/meta post or Tuya cloud/local (WiFi) app thread question; no Zigbee identity to act on.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:146735#111",
@@ -10460,16 +10580,22 @@
       "link": "https://community.homey.app/t/146735/111",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "WiFi lead: Vonroc smart heater, only lock/light/countdown DPs seen.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:146735#125",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Tore_Th",
       "link": "https://community.homey.app/t/146735/125",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: support/meta post or Tuya cloud/local (WiFi) app thread question; no Zigbee identity to act on.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:154077#87",
@@ -10613,12 +10739,15 @@
     },
     {
       "id": "forum:154077#117",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Amersfoort",
       "link": "https://community.homey.app/t/154077/117",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: support/meta post or Tuya cloud/local (WiFi) app thread question; no Zigbee identity to act on.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:154077#118",
@@ -10652,30 +10781,39 @@
     },
     {
       "id": "forum:21313#87",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "vaderag",
       "link": "https://community.homey.app/t/21313/87",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: support/meta post or Tuya cloud/local (WiFi) app thread question; no Zigbee identity to act on.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:21313#88",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Wolter",
       "link": "https://community.homey.app/t/21313/88",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: support/meta post or Tuya cloud/local (WiFi) app thread question; no Zigbee identity to act on.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:21313#89",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "vaderag",
       "link": "https://community.homey.app/t/21313/89",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: support/meta post or Tuya cloud/local (WiFi) app thread question; no Zigbee identity to act on.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:21313#105",
@@ -10958,13 +11096,16 @@
     },
     {
       "id": "forum:140352#124",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Peter_van_Werkhoven",
       "link": "https://community.homey.app/t/140352/124",
       "mfrs": [],
       "pids": [],
       "images": 2,
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "HOBEIAN multisensor ZG-204ZV on presence_sensor_radar.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#128",
@@ -11019,7 +11160,10 @@
       "link": "https://community.homey.app/t/140352/141",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Zigbee button from AliExpress 1005007769107379, no interview.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#144",
@@ -11043,12 +11187,15 @@
     },
     {
       "id": "forum:140352#150",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "JohnnyBravo",
       "link": "https://community.homey.app/t/140352/150",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Linked JohanBendz #1284 eWeLink CK-TLSR8656-SS5-01(7014) on climate_sensor.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#152",
@@ -11117,13 +11264,16 @@
     },
     {
       "id": "forum:140352#165",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "xcaosx",
       "link": "https://community.homey.app/t/140352/165",
       "mfrs": [],
       "pids": [],
       "images": 1,
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: support/meta post or Tuya cloud/local (WiFi) app thread question; no Zigbee identity to act on.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#170",
@@ -11160,13 +11310,16 @@
     },
     {
       "id": "forum:140352#181",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Peter_Kawa",
       "link": "https://community.homey.app/t/140352/181",
       "mfrs": [],
       "pids": [],
       "images": 1,
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: support/meta post or Tuya cloud/local (WiFi) app thread question; no Zigbee identity to act on.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#192",
@@ -11177,7 +11330,10 @@
       "pids": [
         "TS0210"
       ],
-      "why": "pid-only"
+      "why": "pid-only",
+      "note": "TS0210 vibration sensor, mfr only on a GitHub request not linked.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#196",
@@ -11203,12 +11359,15 @@
     },
     {
       "id": "forum:26439#4466",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "robertklep",
       "link": "https://community.homey.app/t/26439/4466",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Reply: LTW012 is a Philips bulb.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:26439#4468",
@@ -11279,7 +11438,10 @@
       "mfrs": [],
       "pids": [],
       "images": 3,
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Tuya Zigbee siren, screenshots only.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:26439#4491",
@@ -11294,21 +11456,27 @@
     },
     {
       "id": "forum:26439#4493",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Edwin_F",
       "link": "https://community.homey.app/t/26439/4493",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: support/meta post or Tuya cloud/local (WiFi) app thread question; no Zigbee identity to act on.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:26439#4498",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "JvdMeulen",
       "link": "https://community.homey.app/t/26439/4498",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: support/meta post or Tuya cloud/local (WiFi) app thread question; no Zigbee identity to act on.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:26439#4499",
@@ -11330,16 +11498,22 @@
       "link": "https://community.homey.app/t/26439/4504",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Moes 4-button switch, no ids.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:26439#4513",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Cristmas",
       "link": "https://community.homey.app/t/26439/4513",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: support/meta post or Tuya cloud/local (WiFi) app thread question; no Zigbee identity to act on.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:26439#4519",
@@ -11399,13 +11573,16 @@
     },
     {
       "id": "forum:146735#126",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "SunBeech",
       "link": "https://community.homey.app/t/146735/126",
       "mfrs": [],
       "pids": [],
       "images": 1,
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: support/meta post or Tuya cloud/local (WiFi) app thread question; no Zigbee identity to act on.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:146735#129",
@@ -11415,7 +11592,10 @@
       "mfrs": [],
       "pids": [],
       "images": 2,
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "WiFi lead: LSC Glass Panel Heater 2000W heating state.",
+      "triagedAt": "2026-10-21T07:50:55.868Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:146735#130",
@@ -11459,12 +11639,15 @@
     },
     {
       "id": "forum:146735#136",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "sorted.bits",
       "link": "https://community.homey.app/t/146735/136",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:146735#140",
@@ -11478,12 +11661,15 @@
     },
     {
       "id": "forum:146735#142",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Chris_Starkey",
       "link": "https://community.homey.app/t/146735/142",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:146735#145",
@@ -11532,7 +11718,10 @@
       "link": "https://community.homey.app/t/146735/156",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "WiFi lead: Tuya WiFi energy meter, cloud product id wcihaluccfsoayqa.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:146735#157",
@@ -11571,7 +11760,10 @@
       "link": "https://community.homey.app/t/146735/174",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "WiFi lead: face recognition access panel, 2 commands missing.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:146735#175",
@@ -11580,7 +11772,10 @@
       "link": "https://community.homey.app/t/146735/175",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "WiFi lead: Arida Venti 160 WiFi room ventilator.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:146735#176",
@@ -11594,12 +11789,15 @@
     },
     {
       "id": "forum:146735#180",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "JJ10",
       "link": "https://community.homey.app/t/146735/180",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:146735#190",
@@ -11613,12 +11811,15 @@
     },
     {
       "id": "forum:146735#193",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "smarthomesven",
       "link": "https://community.homey.app/t/146735/193",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:146735#195",
@@ -11632,13 +11833,16 @@
     },
     {
       "id": "forum:146735#206",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "smarthomesven",
       "link": "https://community.homey.app/t/146735/206",
       "mfrs": [],
       "pids": [],
       "images": 1,
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:146735#201",
@@ -11652,13 +11856,16 @@
     },
     {
       "id": "forum:146735#210",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "smarthomesven",
       "link": "https://community.homey.app/t/146735/210",
       "mfrs": [],
       "pids": [],
       "images": 1,
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:146735#205",
@@ -11682,21 +11889,27 @@
     },
     {
       "id": "forum:154077#144",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Andi",
       "link": "https://community.homey.app/t/154077/144",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:154077#146",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Luca_Farronato",
       "link": "https://community.homey.app/t/154077/146",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:154077#150",
@@ -11750,12 +11963,15 @@
     },
     {
       "id": "forum:154077#170",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "JaccoStraaijer",
       "link": "https://community.homey.app/t/154077/170",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:154077#174",
@@ -11769,13 +11985,16 @@
     },
     {
       "id": "forum:154077#177",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Damian_Surma",
       "link": "https://community.homey.app/t/154077/177",
       "mfrs": [],
       "pids": [],
       "images": 7,
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:154077#179",
@@ -11879,156 +12098,207 @@
     },
     {
       "id": "forum:21313#143",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "runner780",
       "link": "https://community.homey.app/t/21313/143",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:21313#144",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Hugo",
       "link": "https://community.homey.app/t/21313/144",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:21313#148",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Hugo",
       "link": "https://community.homey.app/t/21313/148",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:21313#150",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "runner780",
       "link": "https://community.homey.app/t/21313/150",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:21313#153",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "runner780",
       "link": "https://community.homey.app/t/21313/153",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:21313#156",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Jurgen_Heine",
       "link": "https://community.homey.app/t/21313/156",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:21313#157",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Martin_Tschanun",
       "link": "https://community.homey.app/t/21313/157",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:21313#159",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Martin_Tschanun",
       "link": "https://community.homey.app/t/21313/159",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:21313#164",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Hugo",
       "link": "https://community.homey.app/t/21313/164",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:21313#165",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Jurgen_Heine",
       "link": "https://community.homey.app/t/21313/165",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:21313#166",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Hugo",
       "link": "https://community.homey.app/t/21313/166",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:21313#170",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "runner780",
       "link": "https://community.homey.app/t/21313/170",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:21313#176",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "runner780",
       "link": "https://community.homey.app/t/21313/176",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:21313#185",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Jurgen_Heine",
       "link": "https://community.homey.app/t/21313/185",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:21313#187",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Rene_van_Duijkeren",
       "link": "https://community.homey.app/t/21313/187",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:21313#194",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "runner780",
       "link": "https://community.homey.app/t/21313/194",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:21313#200",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Flamegrilled",
       "link": "https://community.homey.app/t/21313/200",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "johan-issue:511",
@@ -12257,24 +12527,28 @@
     },
     {
       "id": "johan-issue:524",
-      "status": "needs-info",
-      "note": "closed issue; request-no-identity; research or diag needed",
+      "status": "already-fixed",
+      "note": "QT-07S soil sensor = TS0601 + _TZE200/_TZE204/_TZE284_myd45weu (Z2M QT-07S page; ZHC dc6eb59 by Burki24; zigbee2mqtt #15191 kris969, #26073); all on soil_sensor.",
       "sources": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/524"
       ],
       "author": "nielsk1994",
-      "closedAt": "2024-09-08T00:05:07Z"
+      "closedAt": "2024-09-08T00:05:07Z",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "johan-issue:525",
-      "status": "needs-info",
-      "note": "closed issue; diag-only; research or diag needed",
+      "status": "no-action",
+      "note": "Generic pairing bug on Johan app, no device identity.",
       "sources": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/525"
       ],
       "author": "Johan-schiedam",
       "closedAt": "2026-09-30T22:05:05Z",
-      "comments": 9
+      "comments": 9,
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#205",
@@ -12338,12 +12612,15 @@
     },
     {
       "id": "forum:140352#218",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Karsten_Hille",
       "link": "https://community.homey.app/t/140352/218",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#224",
@@ -12380,12 +12657,15 @@
     },
     {
       "id": "forum:140352#235",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Peter_van_Werkhoven",
       "link": "https://community.homey.app/t/140352/235",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#239",
@@ -12451,21 +12731,27 @@
     },
     {
       "id": "forum:140352#249",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Gerrit_Fikse",
       "link": "https://community.homey.app/t/140352/249",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#256",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Cam",
       "link": "https://community.homey.app/t/140352/256",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#259",
@@ -12479,12 +12765,15 @@
     },
     {
       "id": "forum:140352#260",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "David_Piper",
       "link": "https://community.homey.app/t/140352/260",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#261",
@@ -12510,13 +12799,16 @@
     },
     {
       "id": "forum:140352#267",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Peter_van_Werkhoven",
       "link": "https://community.homey.app/t/140352/267",
       "mfrs": [],
       "pids": [],
       "images": 15,
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#270",
@@ -12534,12 +12826,15 @@
     },
     {
       "id": "forum:140352#271",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Peter_van_Werkhoven",
       "link": "https://community.homey.app/t/140352/271",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#274",
@@ -12553,13 +12848,16 @@
     },
     {
       "id": "forum:140352#275",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Cam",
       "link": "https://community.homey.app/t/140352/275",
       "mfrs": [],
       "pids": [],
       "images": 1,
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#278",
@@ -12576,21 +12874,27 @@
     },
     {
       "id": "forum:140352#280",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Peter_van_Werkhoven",
       "link": "https://community.homey.app/t/140352/280",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:26439#4550",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Roland_Twilt",
       "link": "https://community.homey.app/t/26439/4550",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:26439#4551",
@@ -12617,21 +12921,27 @@
     },
     {
       "id": "forum:26439#4557",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "JamesPigeon",
       "link": "https://community.homey.app/t/26439/4557",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:26439#4558",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "shahzadsk",
       "link": "https://community.homey.app/t/26439/4558",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:26439#4562",
@@ -12656,12 +12966,15 @@
     },
     {
       "id": "forum:26439#4568",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Sharkys",
       "link": "https://community.homey.app/t/26439/4568",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:26439#4571",
@@ -12712,22 +13025,28 @@
     },
     {
       "id": "forum:26439#4575",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Gisle_Johnsen",
       "link": "https://community.homey.app/t/26439/4575",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:26439#4576",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "El_Capitan",
       "link": "https://community.homey.app/t/26439/4576",
       "mfrs": [],
       "pids": [],
       "images": 1,
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:26439#4578",
@@ -12791,12 +13110,15 @@
     },
     {
       "id": "forum:26439#4587",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "wolfgang_linke",
       "link": "https://community.homey.app/t/26439/4587",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:26439#4591",
@@ -12845,21 +13167,27 @@
     },
     {
       "id": "forum:26439#4606",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Sharkys",
       "link": "https://community.homey.app/t/26439/4606",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:26439#4607",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "robertklep",
       "link": "https://community.homey.app/t/26439/4607",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:26439#4608",
@@ -12886,21 +13214,27 @@
     },
     {
       "id": "forum:26439#4612",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Alex069",
       "link": "https://community.homey.app/t/26439/4612",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:26439#4616",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Sharkys",
       "link": "https://community.homey.app/t/26439/4616",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:26439#4619",
@@ -12923,7 +13257,10 @@
       "mfrs": [],
       "pids": [],
       "images": 6,
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Loginovo 24G ceiling presence sensor, photo only, no ids.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:26439#4622",
@@ -12938,12 +13275,15 @@
     },
     {
       "id": "forum:26439#4628",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "roberto2391",
       "link": "https://community.homey.app/t/26439/4628",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:146735#217",
@@ -12987,12 +13327,15 @@
     },
     {
       "id": "forum:146735#225",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Goncalo_Barradas",
       "link": "https://community.homey.app/t/146735/225",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:146735#227",
@@ -13026,12 +13369,15 @@
     },
     {
       "id": "forum:146735#233",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "smarthomesven",
       "link": "https://community.homey.app/t/146735/233",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:146735#236",
@@ -13070,16 +13416,22 @@
       "link": "https://community.homey.app/t/146735/251",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "WiFi lead: Ideal Clima TQCT07 Wi-Fi module (Fancoil).",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:146735#254",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "SunBeech",
       "link": "https://community.homey.app/t/146735/254",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:146735#260",
@@ -13093,12 +13445,15 @@
     },
     {
       "id": "forum:146735#262",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "SunBeech",
       "link": "https://community.homey.app/t/146735/262",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:146735#266",
@@ -13122,12 +13477,15 @@
     },
     {
       "id": "forum:146735#281",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Wes_Holsteyn",
       "link": "https://community.homey.app/t/146735/281",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:146735#282",
@@ -13141,12 +13499,15 @@
     },
     {
       "id": "forum:146735#284",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Niels_Hubregtse",
       "link": "https://community.homey.app/t/146735/284",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:146735#292",
@@ -13210,12 +13571,15 @@
     },
     {
       "id": "forum:154077#226",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Elliot_Hallais",
       "link": "https://community.homey.app/t/154077/226",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:154077#232",
@@ -13409,12 +13773,15 @@
     },
     {
       "id": "forum:21313#244",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Jurgen_Heine",
       "link": "https://community.homey.app/t/21313/244",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:21313#254",
@@ -13448,12 +13815,15 @@
     },
     {
       "id": "forum:21313#277",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Camilla",
       "link": "https://community.homey.app/t/21313/277",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "johan-issue:526",
@@ -13687,41 +14057,53 @@
     },
     {
       "id": "forum:140352#288",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Ian_Gibbo",
       "link": "https://community.homey.app/t/140352/288",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#289",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Peter_van_Werkhoven",
       "link": "https://community.homey.app/t/140352/289",
       "mfrs": [],
       "pids": [],
       "images": 1,
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#293",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Naresh_Kodali",
       "link": "https://community.homey.app/t/140352/293",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#297",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Peter_van_Werkhoven",
       "link": "https://community.homey.app/t/140352/297",
       "mfrs": [],
       "pids": [],
       "images": 3,
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#298",
@@ -13747,31 +14129,40 @@
     },
     {
       "id": "forum:140352#303",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Cam",
       "link": "https://community.homey.app/t/140352/303",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#307",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Peter_van_Werkhoven",
       "link": "https://community.homey.app/t/140352/307",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#318",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Peter_van_Werkhoven",
       "link": "https://community.homey.app/t/140352/318",
       "mfrs": [],
       "pids": [],
       "images": 2,
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#319",
@@ -13789,31 +14180,40 @@
     },
     {
       "id": "forum:140352#321",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Peter_van_Werkhoven",
       "link": "https://community.homey.app/t/140352/321",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#326",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Peter_van_Werkhoven",
       "link": "https://community.homey.app/t/140352/326",
       "mfrs": [],
       "pids": [],
       "images": 1,
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#329",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Cam",
       "link": "https://community.homey.app/t/140352/329",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#330",
@@ -13827,39 +14227,51 @@
     },
     {
       "id": "forum:140352#336",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "DutchDuke",
       "link": "https://community.homey.app/t/140352/336",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#344",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Peter_van_Werkhoven",
       "link": "https://community.homey.app/t/140352/344",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#346",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Peter_van_Werkhoven",
       "link": "https://community.homey.app/t/140352/346",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#347",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "DutchDuke",
       "link": "https://community.homey.app/t/140352/347",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#349",
@@ -13876,22 +14288,28 @@
     },
     {
       "id": "forum:140352#350",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Peter_van_Werkhoven",
       "link": "https://community.homey.app/t/140352/350",
       "mfrs": [],
       "pids": [],
       "images": 1,
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#353",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Peter_van_Werkhoven",
       "link": "https://community.homey.app/t/140352/353",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Read 2026-10-21: diagnostic/version follow-up (2025 app builds, superseded) or other-app thread support; no new Zigbee identity.",
+      "triagedAt": "2026-10-21T07:51:34.503Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#358",
