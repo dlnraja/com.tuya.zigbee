@@ -3,6 +3,7 @@ const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
 const {
   detectCoverCommandSet, coverStateFromValue, coverValueFromState,
 } = require('../../lib/tuya-local/TuyaDeviceTemplates');
+const { CoverPositionSource } = require('../../lib/tuya-local/CoverPositionSource');
 
 class WiFiCoverDevice extends TuyaLocalDevice {
 
@@ -28,14 +29,20 @@ class WiFiCoverDevice extends TuyaLocalDevice {
           return 'stop';
         } },
       '2': { capability: 'windowcoverings_set', writable: true,
-        transform: (v) => v / 100,
+        // P2952 (forum 154077 #487/#489, Andi): DP2 is the target; once DP3 reports, it owns the tile.
+        transform: (v) => this._positionSource().accept(2, v) ? v / 100 : undefined,
         reverseTransform: (v) => Math.round(v * 100) },
       '3': { capability: 'windowcoverings_set',
-        transform: (v) => v / 100 },
+        transform: (v) => this._positionSource().accept(3, v) ? v / 100 : undefined },
       '5': { capability: null },
       '7': { capability: null },
       '12': { capability: null },
     };
+  }
+
+  _positionSource() {
+    if (!this._coverPositionSource) {this._coverPositionSource = new CoverPositionSource();}
+    return this._coverPositionSource;
   }
 
   _learnCoverCommandSet(value) {
