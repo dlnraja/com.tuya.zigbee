@@ -184,3 +184,4 @@
 - **PlusPlus-ua/ha_tuya_ble** — BLE protocol versions (documentation only).
 - **Koenkk/zigbee-herdsman-converters** (MIT) — EF00 command ids, appVersion layout.
 Details: `docs/knowledge/WIFI_LOCAL_PROTOCOLS_P2930.md`.
+- **zigpy/zha-device-handlers** (Apache-2.0) and **dresden-elektronik/deconz-rest-plugin** (BSD-3) — Tuya time answer / MCU version behaviour (P2933, own code).
