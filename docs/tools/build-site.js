@@ -91,6 +91,12 @@ function listKb(root) {
       out.push({ src: prefix + f, page: 'kb/' + slugName + '.html', group, file: path.join(dir, f) });
     }
   }
+  // P-KB: curated device-family pages live one level down (docs/knowledge/KB/devices/*.md)
+  const devDir = path.join(kbDir, 'devices');
+  if (fs.existsSync(devDir)) for (const f of fs.readdirSync(devDir).sort()) {
+    if (!f.endsWith('.md')) continue;
+    out.push({ src: 'docs/knowledge/KB/devices/' + f, page: 'kb/kb-devices-' + f.replace(/\.md$/, '') + '.html', group: 'Device families (KB)', file: path.join(devDir, f) });
+  }
   return out;
 }
 
