@@ -72,5 +72,10 @@
         "value": false
       }
     ]
+  },
+  {
+    "$extends": [
+      "zclClusterLayer"
+    ]
   }
 ]

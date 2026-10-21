@@ -102,5 +102,12 @@
       "_tze2841000000_6ycgarab",
       "_tze200_qcasmfan"
     ]
-  }
+  },
+  "settings": [
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
+    }
+  ]
 }

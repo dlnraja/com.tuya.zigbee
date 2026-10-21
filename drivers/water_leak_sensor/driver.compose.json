@@ -523,6 +523,11 @@
         "en": "XOR toggle against Auto polarity. Prefer Alarm polarity = Inverted for a hard flip. (Lasse_K forum)",
         "fr": "Bascule XOR sur Auto. Préférer Polarité = Inversé pour forcer."
       }
+    },
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
     }
   ],
   "images": {

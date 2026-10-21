@@ -134,7 +134,13 @@
       }
     }
   ],
-  "settings": [],
+  "settings": [
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
+    }
+  ],
   "id": "air_purifier_curtain",
   "version": "1.0.0",
   "connectivity": [

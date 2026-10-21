@@ -430,6 +430,11 @@
           }
         }
       ]
+    },
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
     }
   ],
   "pair": [
