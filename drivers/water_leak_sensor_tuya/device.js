@@ -10,7 +10,8 @@ const {
   safeSetInterval,
   safeClearInterval,
 } = require('../../lib/utils/safe-timers');
-const { tuyaDpToPercent } = require('../../lib/battery/BatteryMasterEngine');
+const { lazy } = require('../../lib/utils/lazyRequire');
+const tuyaDpToPercent = lazy(() => require('../../lib/battery/BatteryMasterEngine').tuyaDpToPercent, { name: 'tuyaDpToPercent' }); // P2931 lazy
 
 Cluster.addCluster(TuyaSpecificCluster);
 
