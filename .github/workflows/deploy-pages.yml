@@ -32,6 +32,8 @@ on:
       - '.github/scripts/generate-inbox-page.js'
       - '.github/scripts/generate-readme.js'
       - '.github/pages-build/**'
+      - 'docs/**'
+      - 'CREDITS.md'
       - '.github/workflows/deploy-pages.yml'
 
 permissions:
@@ -81,6 +83,26 @@ jobs:
 
       - name: Generate Device Finder
         run: node .github/scripts/generate-device-finder.js
+
+      - name: Docs site generators — unit tests
+        run: node --test docs/tools/test/
+
+      - name: Fetch stable-v5 and bastien-home manifests (SSOT of the other two apps)
+        continue-on-error: true
+        run: |
+          mkdir -p /tmp/apps
+          for b in stable-v5 bastien-home; do
+            git fetch --depth=1 origin "$b" && git show FETCH_HEAD:app.json > "/tmp/apps/$b.json" || rm -f "/tmp/apps/$b.json"
+          done
+
+      - name: Generate docs site (/docs/)
+        run: |
+          ARGS="--app master=app.json"
+          for b in stable-v5 bastien-home; do [ -s "/tmp/apps/$b.json" ] && ARGS="$ARGS --app $b=/tmp/apps/$b.json"; done
+          node docs/tools/build-site.js --out .github/pages-build/docs $ARGS
+
+      - name: Check docs links
+        run: node docs/tools/check-links.js .github/pages-build/docs
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
