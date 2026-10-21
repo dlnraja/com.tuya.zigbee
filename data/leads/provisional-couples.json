@@ -1,0 +1,17 @@
+{
+ "note": "P2936 provisional tier — see docs/knowledge/CROSS_RESEARCH_P2936.md",
+ "entries": [
+  {
+   "mfr": "_TZ3000_pmz6miyu",
+   "pid": "TS011F",
+   "host": "universal_zigbee",
+   "status": "provisional",
+   "confidence": 0.4,
+   "item": "johan-issue:451",
+   "evidence": "ocr-cache johan-issue:451",
+   "refs": [],
+   "why": "ids from evidence, no reference confirms the pairing yet",
+   "since": "2026-10-21"
+  }
+ ]
+}
