@@ -1,4 +1,4 @@
-# 📥 Community Inbox — 2026-10-20 10:02 UTC
+# 📥 Community Inbox — 2026-10-21 10:06 UTC
 
 Généré par `.github/scripts/community-inbox-digest.js` (workflow `community-inbox.yml`).
 
@@ -6,7 +6,7 @@ Généré par `.github/scripts/community-inbox-digest.js` (workflow `community-i
 
 - Issues ouvertes : **6** — 🔴 à traiter : **4**, 🟡 attente utilisateur : 2, 🟢 maintainer actif : 0
 - PRs ouvertes : **1**
-- Forum : **8** post(s) sans réponse du maintainer
+- Forum : **9** post(s) sans réponse du maintainer
 - Messages privés (lecture seule, jamais de réponse) : **20** thread(s), 7 mfr, 5 pid, 7 UUID diag
 
 ## 🔴 Issues à traiter
@@ -19,7 +19,7 @@ Généré par `.github/scripts/community-inbox-digest.js` (workflow `community-i
 ## 🟡 Auto-résolues, en attente de retour
 
 - [#559](https://github.com/dlnraja/com.tuya.zigbee/issues/559) — Smartplug _(maj 2026-10-03)_
-- [#557](https://github.com/dlnraja/com.tuya.zigbee/issues/557) — 🤖 Daily digest _(maj 2026-10-20)_
+- [#557](https://github.com/dlnraja/com.tuya.zigbee/issues/557) — 🤖 Daily digest _(maj 2026-10-21)_
 
 ## 🔀 PRs ouvertes
 
@@ -35,4 +35,5 @@ Généré par `.github/scripts/community-inbox-digest.js` (workflow `community-i
 - **Istvan_Mag** (2026-10-13) :  Hi I m new in this topic! Please help me to find which device i need use for this 4in1 sensor, not clearly to find the right one, or maybe 
 - **Kizabgd** (2026-10-15) :  Hi I can’t add Tuya Convenient Digital LCD Indoor Zigbee Temperature ( _TZE284_9ern5sfh / TS0601 ) Even though I select the dedicated “ Add
 - **Leinad** (2026-10-19) :  Hi, can you please add 6 Gang Scene Switch _TZ3000_nrfkrgf4 / TS0046. until now no availbale device is working with home por 2023 and lates
+- **okidoki** (2026-10-20) :  Device request: TZ-ZT01_GA4 (temp/humidity + external probe) — long manufacturer name Manufacturer: _TZE2841000000_8se38w3c, Product ID: TS
 
