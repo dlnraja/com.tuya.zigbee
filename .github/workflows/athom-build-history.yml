@@ -1,0 +1,36 @@
+# Triggers: workflow_dispatch | Secrets: HOMEY_PAT (read-only Athom build list)
+# WHY(P2930, 21/10/2026 Paris): socket hang up / processing_failed root-cause study needs the
+# full Athom build history (state + timestamps) of the three apps as a natural experiment.
+# Read-only: lists builds, never uploads, never changes a channel.
+name: Athom build history (read-only)
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: 'Builds per app'
+        default: '200'
+permissions:
+  contents: read
+jobs:
+  history:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444
+        with:
+          node-version: '22'
+      - run: mkdir -p "$RUNNER_TEMP/h" && cd "$RUNNER_TEMP/h" && npm init -y >/dev/null && npm install --no-audit --no-fund homey@4.4.1
+      - name: Dump build history
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          HOMEY_BUILD_LIMIT: ${{ inputs.limit }}
+        run: |
+          for app in com.dlnraja.tuya.zigbee com.dlnraja.tuya.zigbee.stable com.dlnraja.tuya.zigbee.bastien; do
+            (cd "$RUNNER_TEMP/h" && node "$GITHUB_WORKSPACE/scripts/ci/homey-build-status.js" "$app" > /dev/null) || true
+          done
+          ls data/status/
+      - uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4
+        with:
+          name: athom-build-history
+          path: data/status/homey-build-status-*.json
