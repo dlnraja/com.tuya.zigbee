@@ -23,6 +23,7 @@ describe('P2951 zcl_cluster_layer $extends', () => {
   it('every driver that pulls the layer uses $extends: ["zcl_cluster_layer"]', () => {
     const bad = [];
     for (const id of fs.readdirSync(path.join(ROOT, 'drivers'))) {
+      if (!fs.statSync(path.join(ROOT, 'drivers', id)).isDirectory()) continue; // drivers/README.md (docs)
       for (const name of ['driver.compose.json', 'driver.settings.compose.json']) {
         const f = path.join(ROOT, 'drivers', id, name);
         if (!fs.existsSync(f)) continue;
@@ -47,6 +48,7 @@ describe('P2951 zcl_cluster_layer $extends', () => {
     const app = JSON.parse(fs.readFileSync(path.join(ROOT, 'app.json'), 'utf8'));
     const per = {};
     for (const id of fs.readdirSync(path.join(ROOT, 'drivers'))) {
+      if (!fs.statSync(path.join(ROOT, 'drivers', id)).isDirectory()) continue; // drivers/README.md (docs)
       const c = JSON.parse(fs.readFileSync(path.join(ROOT, 'drivers', id, 'driver.compose.json'), 'utf8'));
       const s = settingIds(c.settings);
       const sf = path.join(ROOT, 'drivers', id, 'driver.settings.compose.json');
@@ -86,6 +88,7 @@ describe('P2951 _TZ3000_dfgbtub0|TS0042 on button_wireless_2', () => {
   it('exact couple resolves to button_wireless_2 only among button drivers', () => {
     const owners = [];
     for (const id of fs.readdirSync(path.join(ROOT, 'drivers'))) {
+      if (!fs.statSync(path.join(ROOT, 'drivers', id)).isDirectory()) continue; // drivers/README.md (docs)
       const f = path.join(ROOT, 'drivers', id, 'driver.compose.json');
       if (!fs.existsSync(f)) continue;
       const z = JSON.parse(fs.readFileSync(f, 'utf8')).zigbee || {};
