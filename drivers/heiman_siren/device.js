@@ -36,11 +36,6 @@ class HeimanSirenDevice extends ZigBeeDevice {
         getOpts: { getOnStart: true },
       });
     }
-    if (this.hasCapability('alarm_battery')) {
-      zclNode.endpoints[1]?.clusters?.powerConfiguration?.on?.('attr.batteryPercentageRemaining', (v) => {
-        if (v !== 255) {this.setCapabilityValue('alarm_battery', v / 2 <= 15).catch(() => {});}
-      });
-    }
     this.registerCapabilityListener('onoff', async (value) => this.sound(value ? 30 : 0));
   }
 
@@ -55,13 +50,19 @@ class HeimanSirenDevice extends ZigBeeDevice {
     });
     if (this._stopTimer) {this.homey.clearTimeout(this._stopTimer);}
     this._stopTimer = null;
-    await this.setCapabilityValue('onoff', seconds > 0).catch(() => {});
+    await this.safeSetCapabilityValue('onoff', seconds > 0);
     if (seconds > 0) {
       this._stopTimer = this.homey.setTimeout(() => {
         this._stopTimer = null;
-        this.setCapabilityValue('onoff', false).catch(() => {});
+        this.safeSetCapabilityValue('onoff', false);
       }, seconds * 1000);
     }
+  }
+
+  // WHY(P2924): never throw from a timer or a report; skip undeclared capabilities.
+  async safeSetCapabilityValue(cap, value) {
+    if (!this.hasCapability(cap)) {return;}
+    await super.setCapabilityValue(cap, value).catch((e) => this.error(`set ${cap}: ${e.message}`));
   }
 
   onDeleted() {

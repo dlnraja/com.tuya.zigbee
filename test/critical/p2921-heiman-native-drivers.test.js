@@ -8,12 +8,20 @@ const path = require('path');
 const Module = require('module');
 
 const ROOT = path.join(__dirname, '..', '..');
-const origLoad = Module._load;
-Module._load = function (req, ...rest) {
-  if (req === 'homey-zigbeedriver') {return { ZigBeeDevice: class {}, ZigBeeDriver: class {} };}
-  return origLoad.call(this, req, ...rest);
-};
-test.after(() => { Module._load = origLoad; });
+// WHY(P2924): other suites in the same process install their own homey-zigbeedriver mock
+// (spi-fold-routing has no ZigBeeDevice). Install ours only around our own require.
+function loadDevice(rel) {
+  const prev = Module._load;
+  Module._load = function (req, ...rest) {
+    if (req === 'homey-zigbeedriver') {return { ZigBeeDevice: class {}, ZigBeeDriver: class {} };}
+    return prev.call(this, req, ...rest);
+  };
+  try {
+    const f = require.resolve(path.join(ROOT, rel));
+    delete require.cache[f];
+    return require(f);
+  } finally { Module._load = prev; }
+}
 
 function couples() {
   const out = new Map();
@@ -53,7 +61,7 @@ test('native clusters only: IAS WD on the siren, IAS ACE binding on the keyfob',
 });
 
 test('siren startWarning payload follows ZCL IAS WD layout', () => {
-  const { warningPayload } = require(path.join(ROOT, 'drivers/heiman_siren/device.js'));
+  const { warningPayload } = loadDevice('drivers/heiman_siren/device.js');
   const on = warningPayload(30);
   assert.strictEqual(on.length, 5);
   assert.strictEqual(on[0] & 0x0f, 1);
@@ -63,7 +71,7 @@ test('siren startWarning payload follows ZCL IAS WD layout', () => {
 });
 
 test('keyfob maps every IAS ACE arm mode to a declared trigger', () => {
-  const { armModeOf, ARM_TRIGGER } = require(path.join(ROOT, 'drivers/heiman_keyfob/device.js'));
+  const { armModeOf, ARM_TRIGGER } = loadDevice('drivers/heiman_keyfob/device.js');
   const flow = require(path.join(ROOT, 'drivers/heiman_keyfob/driver.flow.compose.json'));
   const ids = new Set(flow.triggers.map((t) => t.id));
   for (const id of Object.values(ARM_TRIGGER)) {assert.ok(ids.has(id), id);}

@@ -30,7 +30,6 @@ class HeimanKeyfobDevice extends ZigBeeDevice {
         report: 'batteryPercentageRemaining',
         reportParser: (v) => {
           if (v === 255) {return null;}
-          if (this.hasCapability('alarm_battery')) {this.setCapabilityValue('alarm_battery', v / 2 <= 15).catch(() => {});}
           return Math.round(v / 2);
         },
         reportOpts: { configureAttributeReporting: { minInterval: 3600, maxInterval: 43200, minChange: 2 } },
