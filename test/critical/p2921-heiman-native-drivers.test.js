@@ -84,3 +84,11 @@ test('conflict resolver keeps manufacturer names unless explicitly allowed', () 
   const uz = require(path.join(ROOT, 'drivers/universal_zigbee/driver.compose.json'));
   assert.ok(uz.zigbee.manufacturerName.includes('Heiman') && uz.zigbee.manufacturerName.includes('heiman'));
 });
+
+test('guideline audit rules: no measure+alarm battery pair, keyfob class without button UI rule', () => {
+  for (const id of ['heiman_keyfob', 'heiman_siren']) {
+    const c = JSON.parse(fs.readFileSync(path.join(ROOT, 'drivers', id, 'driver.compose.json'), 'utf8'));
+    assert.ok(!(c.capabilities.includes('measure_battery') && c.capabilities.includes('alarm_battery')), id);
+    if (c.class === 'remote') {assert.ok(c.capabilities.some((x) => /^button(\.|$)/.test(x)), id);}
+  }
+});
