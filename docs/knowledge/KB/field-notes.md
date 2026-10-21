@@ -1,0 +1,54 @@
+# Field notes by topic (pointers to our own write-ups, commit-pinned via repo history)
+
+## Forum threads (140352, 154077, Zigbee tag, other apps)
+- [Fil « Device Capabilities » — synthèse pour notre app](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/DEVICE_CAPABILITIES_THREAD.md)
+- [Field notes — X/Twitter scan (2026-10-04)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/FIELD_NOTES_2026-10_X_SCAN.md)
+- [Homey forum — Apps category + zigbee tag digest (2026-10)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/FORUM_APPS_CATEGORY_DIGEST_2026-10.md)
+- [Forum sweep 2026-10-18 (workstream C, read-only)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/FORUM_SWEEP_2026-10-18.md)
+- [Forum Homey — fils clés (10/10/2026)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/FORUM_THREADS_DIGEST.md)
+- [Homey versions strictly incremental — all apps (rule from dlnraja, 2026-10-10)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/HOMEY_VERSION_FLOOR.md)
+- [Peter forum #2259 — diag `c05db40d` (OOM / app.json)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/PETER_C05DB40D_OOM_2026-10-11.md)
+- [Homey forum 154077 — "[APP][Pro] Tuya Local" (read 2026-10-11)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/TUYA_LOCAL_THREAD_154077.md)
+
+## Gmail diagnostics (patterns only)
+- [Athom "processing failed": diagnosis (20/10/2026, P2902)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/ATHOM_PROCESSING_FAILED_2026-10-20.md)
+- [Diagnostics et crashs Homey reçus par Gmail (01/08 → 10/10/2026)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/GMAIL_DIAGNOSTICS_2026-08-10.md)
+- [P2933 / P2934 — Homey diag reports via Gmail + Aqara DJT11LM (2026-10-21)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/P2933_P2934_GMAIL_DIAG_AND_DJT11LM_2026-10-21.md)
+- [Peter forum #2259 — diag `c05db40d` (OOM / app.json)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/PETER_C05DB40D_OOM_2026-10-11.md)
+
+## CI / Athom build history
+- [GitHub Actions — mesure et optimisation (10/10/2026)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/ACTIONS_OPTIMIZATION.md)
+- [Athom AggregateError on master — bisect result (2026-10-10)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/ATHOM_AGGREGATEERROR_BISECT_2026-10-10.md)
+- [Athom / Homey publish limits — what we know (2026-10-10, Paris)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/ATHOM_LIMITS.md)
+- [New driver ids rejected by Athom (AggregateError) — offline analysis 2026-10-11 (Paris)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/ATHOM_NEW_DRIVER_REJECTION_2026-10-11.md)
+- [Athom "processing failed": diagnosis (20/10/2026, P2902)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/ATHOM_PROCESSING_FAILED_2026-10-20.md)
+- [Athom `processing_failed | socket hang up` — evidence, conclusion, fixes (2026-10-19)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/ATHOM_SOCKET_HANGUP_ROOT_CAUSE_2026-10-19.md)
+- [Athom "socket hang up" / processing_failed / AggregateError — root-cause study (P2930, 21/10/2026 Paris)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/ATHOM_SOCKET_HANGUP_ROOT_CAUSE_P2930.md)
+- [Disabled workflows (P2916, 20/10/2026)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/DISABLED_WORKFLOWS_P2916.md)
+- [GitHub Actions hardening P2900 (20/10/2026, Paris time)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/GHA_HARDENING_P2900.md)
+- [Gledopto GL-SPI-206P (`led_controller_spi_tuya`) — runtime fix + Athom status (2026-10-10)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/GLEDOPTO_SPI_206P_FIX_2026-10-10.md)
+- [led_controller_spi_tuya — Athom AggregateError bisect (19/10/2026)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/SPI_ATHOM_BISECT_2026-10-19.md)
+
+## Bastien
+- [Lost couples restore — 2026-10-11 (bastien-home)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/LOST_COUPLES_RESTORE_2026-10-11.md)
+- [Node 22 — bastien-home per-file test verdicts (2026-10-11)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/NODE22_BASTIEN_TEST_VERDICTS_2026-10-11.md)
+- [Port round 2026-10-11 (master → stable-v5 / bastien-home)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/PORT_ROUND_2026-10-11.md)
+- [Sync matrix master -> stable-v5 / bastien-home (2026-10-21)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/SYNC_MATRIX_2026-10-21.md)
+
+## Homey firmware
+- [Homey firmware & Zigbee stack: research notes (2026-10-10)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/HOMEY_FIRMWARE.md)
+- [Homey news 2025-2026: what it means for this app (queue #101-#106)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/HOMEY_NEWS_2026_AUDIT.md)
+
+## Device field notes
+- [AOYAN padded manufacturerName (2026-10-12)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/AOYAN_PADDED_MANUFACTURER.md)
+- [Daily resume 2026-10-20 — workstream B (device research and fixes)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/DAILY_RESUME_2026-10-20_B.md)
+- [Fil « Device Capabilities » — synthèse pour notre app](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/DEVICE_CAPABILITIES_THREAD.md)
+- [device_plug_smart wildcard pids — decision (2026-10-20)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/DEVICE_PLUG_SMART_WILDCARD_DECISION_2026-10-20.md)
+- [Device truth catalog (every AI prompt)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/DEVICE_TRUTH.md)
+- [Field notes — curtain_motor "doesn't move" + mmWave class flip (2026-10-10)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/FIELD_NOTES_2026-10_CURTAIN_MMWAVE.md)
+- [Field notes — X/Twitter scan (2026-10-04)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/FIELD_NOTES_2026-10_X_SCAN.md)
+- [Gledopto GL-SPI-206P — recherche (10/10/2026)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/GLEDOPTO_GL_SPI_206P.md)
+- [Gledopto GL-SPI-206P (`led_controller_spi_tuya`) — runtime fix + Athom status (2026-10-10)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/GLEDOPTO_SPI_206P_FIX_2026-10-10.md)
+- [HOBEIAN ZG-101ZS = _TZ3000_bgtzm4ny + TS0044 → scene_switch_4 (2026-10-11, Paris)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/HOBEIAN_ZG101ZS_SCENE_SWITCH_2026-10-11.md)
+- [Device peculiarities — cross-source investigation](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/PECULIARITIES.md)
+- [Z2M generic device options → ideas for Homey (ideas only, nothing implemented)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/Z2M_GENERIC_CONCEPTS.md)

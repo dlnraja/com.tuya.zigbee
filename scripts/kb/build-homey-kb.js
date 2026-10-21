@@ -27,16 +27,23 @@ function pages(){const kb=J(path.join(ROOT,'data/kb/couples.json'),{sources:{},c
  P['athom-build.md']='# Athom build & publish lessons\n\n- Socket hang up: the upload succeeds; Athom-side processing fails later. Failure rate grows with manifest (app.json) size; parallel uploads and file count are not the cause. Retry policy v2: socket hang up 4 retries, other transient 2, AggregateError 2 then bisect, unknown none. Stop waiting once Athom marks a build failed.\n- AggregateError / processing_failed: found by bisecting commits between the last good and first bad build, then fixed and guarded in CI.\n- Size: keep research data out of the bundle via .homeyignore (backups/, tmp/, data/kb/, data/leads/).\n\nDetailed notes:\n'+kn.split('\n').filter(l=>/ATHOM|SOCKET|AGGREGATE|ACTIONS|GHA|WORKFLOW/i.test(l)).join('\n')+'\n';
  P['protocols.md']=`# Protocols (summary in our words)
 
-## Tuya EF00 / MCU (Zigbee)
-- Cluster 0xEF00 carries datapoints (DP id, type, length, value). Commands seen: 0x00 set, 0x01/0x02 report, 0x03 query, 0x10/0x11 MCU version, 0x24 time request (we answer UTC + local, 4+4 bytes), 0x25 gateway status. Sources: ${cite('zhc tuya.ts','https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/lib/tuya.ts')}, ${cite('deCONZ DPs','https://github.com/dresden-elektronik/deconz-rest-plugin/wiki/Tuya-Data-Point-Protocol')}, ${cite('Tuya MCU serial protocol','https://developer.tuya.com/en/docs/iot/tuya-zigbee-module-uart-communication-protocol?id=K9ear5khsqoty')}.
-- DP types: 0 raw, 1 bool, 2 value (4-byte BE), 3 string, 4 enum, 5 bitmap.
-- Sleepy devices: queue writes, flush on wake; send time at most every 30 min.
+## Tuya EF00 over the air (Zigbee cluster 0xEF00, fact-checked 2026-10-21)
+- Coordinator → device: 0x00 dataRequest (set DPs), 0x03 dataQuery (ask all DPs), 0x04 sendData, 0x10 mcuVersionRequest, 0x12/0x14 MCU OTA notify/block response, 0x24 mcuSyncTime (time answer), 0x25 gateway connection status, 0x61 weather sync. Source: ${cite('zigbee-herdsman cluster.ts','https://github.com/Koenkk/zigbee-herdsman/blob/master/src/zspec/zcl/definition/cluster.ts')}.
+- Device → coordinator: 0x01 dataResponse, 0x02 dataReport, 0x05/0x06 activeStatusReport(Alt), 0x11 mcuVersionResponse, 0x13/0x15 MCU OTA block request/result, 0x24 mcuSyncTime (time request), 0x25 gateway status request, 0x60 weather request. Same source.
+- Time answer = 8 bytes: 4-byte big-endian UTC seconds then 4-byte local seconds (UTC + zone + DST). Most devices use the 1970 epoch; some expect a 2000 epoch (Z2M option time_start: 1970/2000/off). Sources: ${cite('zhc tuya.ts','https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/lib/tuya.ts')}, ${cite('Tuya Zigbee UART protocol','https://developer.tuya.com/en/docs/iot/tuya-zigbee-module-uart-communication-protocol?id=K9ear5khsqoty')}.
+- DP datatypes: 0 raw, 1 bool, 2 value (4-byte BE), 3 string, 4 enum, 5 bitmap (1/2/4 bytes). Source: zhc tuya.ts dataTypes.
+- Some devices only start reporting after a dataQuery on announce/rejoin (zhc onEvent). Sleepy devices: queue writes, flush on wake.
 
-## Wi-Fi LAN 3.1–3.5
-- 3.1 AES-ECB on payload with MD5 signature; 3.3 AES-ECB whole payload with version header; 3.4 adds session-key negotiation and HMAC-SHA256; 3.5 uses AES-GCM with a new 0x6699 frame prefix. Sources: ${cite('tinytuya','https://github.com/jasonacox/tinytuya')}, ${cite('tuya-local','https://github.com/make-all/tuya-local')}, ${cite('localtuya','https://github.com/rospogrigio/localtuya')}.
+## Tuya module ↔ MCU serial (UART) protocol — not the same id space
+- Frames 55 AA, version, 2-byte seq, command, 2-byte length, data, checksum = sum of all previous bytes mod 256. UART ids differ from EF00 ids: e.g. 0x04 module→MCU DP data, 0x05 MCU response, 0x06 MCU report (with linkage), 0x2C report without linkage, 0x28 query DP, 0x0B–0x0E MCU OTA, 0x24 time sync, 0x3A/0x3B weather, 0x2B low-power wake window. Source: ${cite('Tuya MCU standard protocol (Zigbee)','https://developer.tuya.com/en/docs/mcu-standard-protocol/mcusdk-zigbee-uart-protocol?id=Kdg17v4544p37')}.
+- Locks use version byte 0x03 with the same 0x24 time layout. Source: ${cite('Tuya Zigbee lock MCU protocol','https://developer.tuya.com/en/docs/iot/zigbee-door-lock-universal-docking-agreement?id=K9bjcnh616mg5')}.
+
+## Wi-Fi LAN 3.1–3.5 (fact-checked against tinytuya core)
+- 3.1–3.4 frames start with prefix 0x000055AA; 3.5 uses prefix 0x00006699 with AES-GCM (auth tag; bad tag = frame dropped). Source: ${cite('tinytuya header.py / Monitor.py','https://github.com/jasonacox/tinytuya/tree/master/tinytuya/core')}.
+- 3.1: AES-ECB with the local key, only on control payloads, plus an MD5-based signature; 3.2/3.3: AES-ECB on the payload behind a version header, CRC32 trailer; 3.4: session-key negotiation before use and HMAC-SHA256 trailer instead of CRC; 3.5: session key + GCM. Sources: tinytuya XenonDevice.py, ${cite('tuya-local','https://github.com/make-all/tuya-local')}, ${cite('localtuya','https://github.com/rospogrigio/localtuya')}.
 
 ## ZCL clusters & bound clusters
-- Remotes send commands (onOff, levelControl, scenes, 0xE000/0xE001 Tuya) to the coordinator; Homey needs a BoundCluster to receive them. TS004F switches between dimmer and scene mode via attribute 0x8004 on onOff. Source: ${cite('Athom zigbee-clusters','https://github.com/athombv/node-zigbee-clusters')}.
+- Remotes send commands (onOff, levelControl, scenes, 0xE000/0xE001 Tuya) to the coordinator; Homey needs a BoundCluster to receive them. TS004F switches between command (dimmer) and event (scene) mode via manufacturer attribute 0x8004 tuyaOperationMode (enum8, 0=command, 1=event) on genOnOff (zhc tuya.ts). Source: ${cite('Athom zigbee-clusters','https://github.com/athombv/node-zigbee-clusters')}.
 
 ## OTA
 - Images indexed by manufacturerCode + imageType + fileVersion, with sha512. Homey performs OTA itself; we only read queryNextImage requests. Source: ${cite('Koenkk zigbee-OTA','https://github.com/Koenkk/zigbee-OTA')}.
@@ -51,6 +58,9 @@ function pages(){const kb=J(path.join(ROOT,'data/kb/couples.json'),{sources:{},c
 Related notes:
 ${kn.split('\n').filter(l=>/HOMEY|SDK|FLOW|BUTTON/i.test(l)).join('\n')}
 `;
+
+ const cat=(re)=>kn.split('\n').filter(l=>re.test(l)).join('\n')||'- (none yet)';
+ P['field-notes.md']='# Field notes by topic (pointers to our own write-ups, commit-pinned via repo history)\n\n## Forum threads (140352, 154077, Zigbee tag, other apps)\n'+cat(/FORUM|THREAD|X_SCAN|APPS/i)+'\n\n## Gmail diagnostics (patterns only)\n'+cat(/GMAIL|DIAG/i)+'\n\n## CI / Athom build history\n'+cat(/ATHOM|GHA|ACTIONS|WORKFLOW|CI_/i)+'\n\n## Bastien\n'+cat(/BASTIEN/i)+'\n\n## Homey firmware\n'+cat(/FIRMWARE|HOMEY_NEWS/i)+'\n\n## Device field notes\n'+cat(/FIELD|DEVICE|CURTAIN|SOIL|AOYAN|GLEDOPTO|HOBEIAN/i)+'\n';
  const prov=J(path.join(ROOT,'data/leads/provisional-couples.json'),{entries:[]}).entries;const cand=J(path.join(ROOT,'data/leads/kb-enrich-candidates.json'),{confirmed:[],provisional:[]});
  P['leads.md']=`# Open leads\n\n- Provisional tier: ${prov.length} (data/leads/provisional-couples.json)\n- KB candidates not yet in a driver: ${cand.confirmed.length} with a reliable source (conf 0.85–0.9), ${cand.provisional.length} single weak source (conf ≤0.7). Staged, not applied (manifest-size hold).\n\n| mfr | pid | status | conf | source |\n|---|---|---|---|---|\n`+prov.map(e=>`| \`${e.mfr}\` | ${e.pid} | ${e.status} | ${e.confidence} | ${e.evidence} |`).join('\n')+'\n'+cand.confirmed.map(e=>`| \`${e.mfr}\` | ${e.pid} | kb-confirmed | 0.9 | ${e.refs[0]} |`).join('\n')+'\n'+cand.provisional.map(e=>`| \`${e.mfr}\` | ${e.pid} | kb-weak | 0.6 | ${e.refs[0]} |`).join('\n')+'\n';
  const cr=fs.existsSync(path.join(ROOT,'CREDITS.md'))?fs.readFileSync(path.join(ROOT,'CREDITS.md'),'utf8'):'';
@@ -68,7 +78,7 @@ ${kn.split('\n').filter(l=>/HOMEY|SDK|FLOW|BUTTON/i.test(l)).join('\n')}
 `;
  const srcRows=Object.entries(S).map(([k,s])=>`| ${s.name} | ${s.repo} | ${s.license} | ${String(s.commit).slice(0,9)} | ${s.date} |`).join('\n');
  P['sources.md']=`# Sources\n\n| source | link | licence | commit | date |\n|---|---|---|---|---|\n${srcRows}\n\nOther inputs (pointers, facts only): Homey forum topics 140352, 154077, Zigbee tag, Unknown devices (${'https://community.homey.app/t/140352'}); GitHub issues/PRs of dlnraja/com.tuya.zigbee and JohanBendz/com.tuya.zigbee; CI history (GitHub Actions); Gmail diagnostics (patterns only, no personal data).\n`;
- P['INDEX.md']=`# Homey Tuya KB — index\n\nRegenerated by scripts/kb/build-homey-kb.js. Facts cited per row; text in our own words.\n\n- [Device families](devices/README.md)\n- [Protocols](protocols.md)\n- [Homey SDK](homey-sdk.md)\n- [Athom build lessons](athom-build.md)\n- [Project rules](project-rules.md)\n- [Lessons (P-numbers)](lessons.md)\n- [Open leads](leads.md)\n- [People & credits](people.md)\n- [FAQ](faq.md)\n- [Sources](sources.md)\n- [Changelog](CHANGELOG.md)\n`;
+ P['INDEX.md']=`# Homey Tuya KB — index\n\nRegenerated by scripts/kb/build-homey-kb.js. Facts cited per row; text in our own words.\n\n- [Device families](devices/README.md)\n- [Protocols](protocols.md)\n- [Homey SDK](homey-sdk.md)\n- [Athom build lessons](athom-build.md)\n- [Project rules](project-rules.md)\n- [Lessons (P-numbers)](lessons.md)\n- [Open leads](leads.md)\n- [People & credits](people.md)\n- [FAQ](faq.md)\n- [Field notes by topic](field-notes.md)\n- [Sources](sources.md)\n- [Changelog](CHANGELOG.md)\n`;
  return P;}
 function write(P,dir){const h=crypto.createHash('sha1');let changed=0;for(const [f,t] of Object.entries(P).sort()){h.update(f+t);const p=path.join(dir,f);fs.mkdirSync(path.dirname(p),{recursive:true});if(!fs.existsSync(p)||fs.readFileSync(p,'utf8')!==t){fs.writeFileSync(p,t);changed++;}}
  const hash=h.digest('hex').slice(0,12);const cl=path.join(dir,'CHANGELOG.md');const old=fs.existsSync(cl)?fs.readFileSync(cl,'utf8'):'# KB changelog\n';
