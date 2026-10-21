@@ -1,0 +1,61 @@
+# Athom "socket hang up" / processing_failed / AggregateError — root-cause study (P2930, 21/10/2026 Paris)
+
+Upload always succeeds; Athom's processing of the build fails 40–70 s later with no error body.
+Data: Athom build history of the three apps (read-only workflow `athom-build-history.yml`, run
+39570436772 / 39570806991), the `publish-size-telemetry` artifacts (41 rows) and the publish run logs.
+
+## 1. Natural experiment — failure rate vs manifest size
+
+| App | Window | Builds | processing_failed | Rate | Drivers | Flow cards in payload | app.json sent |
+|---|---|---|---|---|---|---|---|
+| Bastien | 19→24/09 (full manifest, before P2724 slim) | 105 | 53 | **50 %** | ~full | ~full | ~3+ MB |
+| Bastien | 25/09→21/10 (house-fleet slim, P2724) | 90 | 7 | **8 %** (0/38 since 13/10) | 27 | ~1 000 | 0.6 MB |
+| Stable | 17/09→21/10 | 199 | 58 | **29 %** | 338 | 5 455 | 3.2 MB |
+| Master | last 60 builds | 59 | 36 | **61 %** | 347–349 | 6 111–6 118 | 3.6 MB |
+
+Same account, same CLI, same pipeline: the rate follows the manifest (drivers × flow cards),
+and Bastien's own rate dropped from 50 % to 8 % on the day its manifest was slimmed.
+
+## 2. Hypotheses rejected with data
+
+| Hypothesis | Evidence | Verdict |
+|---|---|---|
+| Concurrent uploads of the 3 apps | Upload within ±5 min of another app: 3 fail / 9; alone: 13 fail / 21 (33 % vs 62 %) | No positive correlation — no cross-app serialization added |
+| Payload bytes / file count | Stable payload (33 MB) is larger than master (31 MB) yet fails half as often; Bastien 21 MB/2 511 files ≈ 0 % | Not the driver |
+| "66 MB / 8 678 files stable retries passed" | Telemetry artifact: it counted the nested `.homeybuild` the CLI writes; the CLI uploads one tree | Telemetry fixed (skips `.homeybuild`) |
+| Oversized images | 451 large.png 500×500, 451 small.png 75×75, total images 5.4 MB, largest 149 kB | Not the cause |
+| Zero-byte files, symlinks, non-ASCII names | 0 / 0 / 0 in the build | Not the cause |
+| Same content flips pass/fail | 9.0.1560–1563 near-identical: 4 fails then 1565–1567 pass | Non-deterministic → time budget on Athom's worker, scaled by manifest work |
+
+## 3. Defects found in the payload (fixed)
+
+| Defect | Master before | Master after | Stable before | Stable after |
+|---|---|---|---|---|
+| Orphan flow cards (device filter names only absent drivers) | 1 507 / 6 118 (25 %) | 0 / 4 611 | 1 409 / 5 455 (26 %) | 0 / 4 046 |
+| app.json sent | 3.65 MB | 3.09 MB (−15 %) | 3.23 MB | 2.73 MB |
+| Driver folders absent from the manifest (dead payload) | 102 dirs, 2.78 MB, 682 files | 0 | 104 dirs | 0 |
+
+Cause: the Zigbee matrix compaction prunes 102 synthetic drivers from the manifest but kept their
+flow cards and folders (the publish hold already dropped its own). Bastien had the same defect (430
+orphans, P2928). Every orphan card makes Athom's processor resolve a filter against a driver that
+does not exist. Fix: `scripts/maintenance/prune-orphan-flow-cards.cjs`, called by
+`scripts/prepare-publish.js` (step 5a3, fail-closed), lossless (no Flow can use a card of a driver
+that is not shipped); mixed filters only lose the absent ids. Payload validated by homey-lib at
+level `publish` on both branches.
+
+## 4. OTA firmware
+
+27 `.bin` files, 2.8 MB (~8 % of bytes, incompressible), some duplicated across drivers
+(e.g. `oem_zg_tl8258_plug_OTA_1.1.2.bin` in smartplug + plug_energy_monitor). None in pruned folders.
+Fetching on demand would save ~2.5 MB gz but changes runtime OTA behaviour; not done here.
+Size is not the main driver (section 2), so this is an optimisation, not the root-cause fix.
+
+## 5. Other CI fixes in P2930
+- `bastien-publish.yml` now triggers on every payload path (app.js, settings, locales, capabilities,
+  config, prepare/prune scripts), not only app.json; write-back stays `[skip ci]`, the per-app group serializes.
+- Retries (`athom-retry-policy.js`) kept as safety net.
+
+## 6. To measure next
+Failure rate of master/stable builds after 9985538dc4 / f178ceb896 (master) and 89214d1a88 / 94148bfc03 (stable),
+via `athom-build-history.yml`. Remaining lever if still > ~10 %: reduce the 4 611 remaining cards
+(driver-level duplicates) — needs a user decision as card ids are user-visible.
