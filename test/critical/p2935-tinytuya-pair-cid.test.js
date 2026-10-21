@@ -42,3 +42,16 @@ describe('P2935 tinytuya import fills cid / gateway at pairing', () => {
     await assert.rejects(handlers.tinytuya_import({ text: '{bad' }));
   });
 });
+
+describe('P2936 tinytuya import UI', () => {
+  it('every WiFi pair configure view has the import button wired to tinytuya_import', () => {
+    const fs = require('fs'); const path = require('path');
+    const root = path.join(__dirname, '..', '..', 'drivers');
+    const files = fs.readdirSync(root).map((d) => path.join(root, d, 'pair', 'configure.html')).filter((f) => fs.existsSync(f) && fs.readFileSync(f, 'utf8').includes('id="p-man"'));
+    assert.ok(files.length > 0);
+    for (const f of files) {
+      const s = fs.readFileSync(f, 'utf8');
+      assert.ok(s.includes('btn-tt') && s.includes("Homey.emit('tinytuya_import'"), f);
+    }
+  });
+});

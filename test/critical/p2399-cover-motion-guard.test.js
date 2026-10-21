@@ -12,7 +12,8 @@ const ROOT = path.join(__dirname, '..', '..');
 const cover = fs.readFileSync(path.join(ROOT, 'lib', 'devices', 'UnifiedCoverBase.js'), 'utf8');
 
 assert.match(cover, /P2399/);
-assert.match(cover, /moesZts \? 25000/);
+// P2513 (#533 Salvagr 2026-09-15) shortened the 25 s window to a short UI-release window on purpose.
+assert.match(cover, /moesZts \? (25000|2000)/);
 assert.match(cover, /arm before TX|arm BEFORE TX|arm first/i);
 // Guard armed before _sendTuyaDP for state up/down
 const stateBlock = cover.match(/if \(this\._isPureTuyaDP\) \{[\s\S]*?_sendTuyaDP\(1, cmd/);
