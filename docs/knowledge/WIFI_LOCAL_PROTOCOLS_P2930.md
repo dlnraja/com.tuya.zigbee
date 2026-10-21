@@ -37,3 +37,10 @@ Johan's Homey apps, Athom's Tuya cloud app, Tasmota and OpenBeken templates: alr
 - Enum binary sensors from tuya-local: exact `dps_val` meaning true kept (`on`), applied via `transform` (66 rows).
 - Catalog compaction: identical schemas stored once (689 unique for 1467 configs). File 247 535 B -> 166 589 B (gzip 48 667 B). Products 1 912.
 - Audit: UDP discovery (ports 6666/6667/6668/7000, reuseAddr, 6699/ECB/raw-GCM cascade) OK; gaps fixed: device table bounded to 256, raw version label kept, 3.22 alias resolved. Active scan (TCP 6668, bounded concurrency) OK, no change. Manual IP: added normalisation (port suffix, spaces, invalid/broadcast IP, v3.x / 3.22 / 2.x labels, key spacing) in manual_add, repair configure and update_credentials.
+
+## P2932-P2934 (2026-10-21)
+- Gateway sub-devices: `TuyaGatewayHub` shares one gateway client (single LAN session), channels per cid; `TuyaLocalClient.setSubDP/setSubDPs/refreshSub` pass `cid` to tuyapi; `dp-update-cid` routes reports. Used by `TuyaLocalDevice` when settings carry `cid` (or `node_id`) + `gateway_id` (optional `gateway_local_key/gateway_ip/gateway_protocol_version`).
+- MCU/time (`lib/tuya/TuyaMcuTimeService.js`, sources: Z2M tuya.ts MIT, ZHA tuya quirks Apache-2.0, deCONZ tuya.cpp BSD-3, ZCL 3.12): 0x24 answer = size(2)+UTC(4 BE)+local(4 BE), Homey timezone with DST via Intl, epoch 2000 list kept; 0x25 answered "connected"; 0x10/0x11 version request once + decode; 0x12 = lead + wake; 0x28 and E000/E001 time-like frames = leads (no documented source); ZCL Time 0x000A server (`lib/zigbee/TimeServerBoundCluster.js`) bound only if free.
+- Wake: any frame from a battery/sleepy node, pollControl check-in, MCU-initiated 0x10, rejoin → flush pending writes (≤20, latest per label, failures kept) then time push (30 min per device; remotes flush only). Request throttle 10 s. Rejoin: DP re-query 0x03 (≤4/h). Bounded diag `tuya_time_sync_diag` (20).
+- DP parsing variant: short-length layout used only after both standard parses fail and the buffer is consumed exactly.
+- Never duplicates: request answers skip when TuyaEF00Manager/_respondToTimeSyncRequest already exists.

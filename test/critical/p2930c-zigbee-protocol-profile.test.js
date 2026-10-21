@@ -1,6 +1,6 @@
 'use strict';
 const assert = require('assert');
-const Z = require('../lib/tuya/TuyaZigbeeProtocolProfile');
+const Z = require('../../lib/tuya/TuyaZigbeeProtocolProfile');
 
 describe('P2930c Tuya Zigbee protocol profile', () => {
   it('names every documented EF00 command', () => {
