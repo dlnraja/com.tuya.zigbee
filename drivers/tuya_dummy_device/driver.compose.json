@@ -53,5 +53,12 @@
       "_GENERIC_TUYA_DUMMY_DEVICE",
       "_generic_tuya_dummy_device"
     ]
-  }
+  },
+  "settings": [
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
+    }
+  ]
 }

@@ -82,6 +82,11 @@
       "type": "checkbox",
       "label": { "en": "LED indicator", "fr": "Voyant LED", "nl": "LED-indicator" },
       "value": true
+    },
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
     }
   ],
   "zigbee": {

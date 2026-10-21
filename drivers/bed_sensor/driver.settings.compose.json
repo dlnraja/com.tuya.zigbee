@@ -34,5 +34,10 @@
     "units": {
       "en": "mBAR"
     }
+  },
+  {
+    "$extends": [
+      "zclClusterLayer"
+    ]
   }
 ]

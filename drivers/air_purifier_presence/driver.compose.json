@@ -611,6 +611,11 @@
         "en": "LQI variance threshold (higher = less sensitive)",
         "fr": "Seuil de variance LQI (plus haut = moins sensible)"
       }
+    },
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
     }
   ],
   "images": {

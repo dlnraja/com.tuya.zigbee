@@ -245,6 +245,11 @@
         "en": "Scene mode (default) sends cluster 0x05 commands. Use \"Force scene mode\" for TS0041 4-endpoint devices and multi-press detection.",
         "fr": "Mode scène (par défaut) envoie des commandes cluster 0x05. Utiliser \"Forcer mode scène\" pour TS0041 4-endpoints et détection multi-clics."
       }
+    },
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
     }
   ],
   "images": {

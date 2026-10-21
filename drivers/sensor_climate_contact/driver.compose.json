@@ -462,6 +462,11 @@
       "hint": {
         "en": "SNZB-02P humidity offset"
       }
+    },
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
     }
   ],
   "images": {

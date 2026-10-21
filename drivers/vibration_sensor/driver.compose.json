@@ -267,6 +267,11 @@
       "value": 0,
       "min": 0,
       "max": 3600
+    },
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
     }
   ]
 }

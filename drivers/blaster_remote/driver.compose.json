@@ -86,7 +86,13 @@
     "conditions": [],
     "actions": []
   },
-  "settings": [],
+  "settings": [
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
+    }
+  ],
   "id": "blaster_remote",
   "version": "1.0.0",
   "connectivity": [

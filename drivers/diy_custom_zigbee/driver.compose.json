@@ -605,6 +605,11 @@
           ]
         }
       ]
+    },
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
     }
   ],
   "platforms": [
