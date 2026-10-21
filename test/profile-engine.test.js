@@ -1,0 +1,33 @@
+'use strict';
+const assert=require('assert');const path=require('path');
+const T=require('../lib/profile-engine/transforms');const {ReportOptions}=require('../lib/profile-engine/options');const A=require('../lib/profile-engine/availability');const PE=require('../lib/profile-engine/ProfileEngine');
+const DIR=path.join(__dirname,'../data/profiles');
+describe('P-KB2 profile engine',()=>{
+ it('transforms: divide, enum, bitmap, struct, bool, unknown op',()=>{
+  assert.strictEqual(T.apply(235,[{op:'divide',by:10}]),23.5);
+  assert.strictEqual(T.apply(1,[{op:'enum',map:{0:'off',1:'on'}}]),'on');
+  assert.deepStrictEqual(T.apply(5,[{op:'bitmap',bits:{0:'a',1:'b',2:'c'}}]),{a:true,b:false,c:true});
+  assert.deepStrictEqual(T.apply([0,1,0,0,0,10],[{op:'struct',fields:[{name:'x',offset:0,len:2},{name:'y',offset:2,len:4},{name:'z',offset:9,len:1}]}]),{x:1,y:10});
+  assert.strictEqual(T.apply(1,[{op:'bool',invert:true}]),false);
+  assert.strictEqual(T.apply(7,[{op:'nope'}]),7);assert.strictEqual(T.apply(null,[{op:'divide',by:10}]),null);});
+ it('invert round-trips writes',()=>{const s=[{op:'divide',by:10},{op:'offset',by:2}];assert.strictEqual(T.invert(T.apply(200,s),s),200);
+  assert.strictEqual(T.invert('on',[{op:'enum',map:{0:'off',1:'on'}}]),1);});
+ it('calibrate offset/percent/precision',()=>{assert.strictEqual(T.calibrate(21.04,{offset:-0.5,precision:1}),20.5);assert.strictEqual(T.calibrate(100,{percent:10}),110);assert.strictEqual(T.calibrate('x',{offset:1}),'x');});
+ it('ReportOptions defaults emit everything',()=>{const o=new ReportOptions();const e=[];o.push('a',1,(c,v)=>e.push(v));assert.deepStrictEqual(e,[1]);assert.strictEqual(o.afterCommand('a',2,()=>e.push(2)),false);});
+ it('ReportOptions filter / throttle / debounce / optimistic',()=>{let t=0;const timers=[];const o=new ReportOptions({filtered:['linkquality','meas.*_x'],throttleMs:1000,optimistic:true},{now:()=>t});const e=[];const em=(c,v)=>e.push(c+'='+v);
+  assert.strictEqual(o.push('linkquality',1,em),'filtered');o.push('temp',1,em);t=500;assert.strictEqual(o.push('temp',2,em),'throttled');t=1500;o.push('temp',3,em);assert.deepStrictEqual(e,['temp=1','temp=3']);
+  assert.strictEqual(o.afterCommand('onoff',true,em),true);
+  const d=new ReportOptions({debounceMs:300},{now:()=>t,setTimer:(f)=>{timers.push(f);return timers.length;},clearTimer:(i)=>{timers[i-1]=null;}});const e2=[];
+  d.push('p',1,(c,v)=>e2.push(v));d.push('p',2,(c,v)=>e2.push(v));timers.filter(Boolean).forEach(f=>f());assert.deepStrictEqual(e2,[2]);d.destroy();
+  assert.doesNotThrow(()=>new ReportOptions({filtered:['(']}));});
+ it('availability: grace, mains vs battery, ping only mains',()=>{assert.strictEqual(A.isAvailable({lastSeen:0,mains:true,now:1e9}),true);
+  assert.strictEqual(A.isAvailable({lastSeen:1,mains:true,now:1+11*60e3}),false);assert.strictEqual(A.isAvailable({lastSeen:1,mains:false,now:1+11*60e3}),true);
+  assert.strictEqual(A.shouldPing({lastSeen:1,mains:false,now:1e9}),false);assert.strictEqual(A.shouldPing({lastSeen:1,mains:true,now:1e9}),true);});
+ it('profiles: lazy find, whitelabel, decode/encode, variants',()=>{const p=PE.find('aoyan','ay-303z',{dir:DIR});assert.ok(p);assert.strictEqual(PE.whitelabelOf(p,'AOYAN').model,'AY-303Z');
+  assert.deepStrictEqual(PE.decode(p,103,215),[{cap:'measure_temperature',value:21.5,endpoint:1}]);assert.deepStrictEqual(PE.decode(p,999,1),[]);
+  const v={match:[],dps:{1:{cap:'onoff',steps:[{op:'bool'}],write:true}},variants:[{when:{appVersionMin:'1.2'},dps:{2:{cap:'onoff',steps:[{op:'bool'}],write:true},1:undefined}}],settings:{powerOnBehavior:{dp:14,map:{0:'off',1:'on',2:'previous'}},childLock:{dp:101}}};
+  assert.strictEqual(PE.encode(v,'onoff',true).dp,1);assert.strictEqual(PE.resolveDps(v,{appVersion:'1.3'})['2'].cap,'onoff');
+  assert.deepStrictEqual(PE.settingWrite(v,'powerOnBehavior','previous'),{dp:14,value:2});assert.deepStrictEqual(PE.settingWrite(v,'childLock',1),{dp:101,value:true});assert.strictEqual(PE.settingWrite(v,'x',1),null);
+  assert.strictEqual(PE.find('x','y',{dir:'/nonexistent'}),null);});
+ it('kill switch',()=>{assert.strictEqual(PE.enabled({settings:{get:()=>true}}),false);assert.strictEqual(PE.enabled({settings:{get:()=>null}}),true);process.env.PROFILE_ENGINE_OFF='1';try{assert.strictEqual(PE.enabled(null),false);}finally{delete process.env.PROFILE_ENGINE_OFF;}});
+});

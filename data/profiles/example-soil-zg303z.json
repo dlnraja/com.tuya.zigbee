@@ -1,0 +1,8 @@
+[{"id":"hobeian_zg303z_soil","match":[{"mfr":"HOBEIAN","pid":"ZG-303Z"},{"mfr":"AOYAN","pid":"AY-303Z"}],
+ "whitelabel":[{"mfr":"AOYAN","vendor":"AOYAN","model":"AY-303Z"}],
+ "dps":{"103":{"cap":"measure_temperature","steps":[{"op":"divide","by":10}]},
+        "107":{"cap":"measure_soil_moisture","steps":[]},
+        "108":{"cap":"measure_battery","steps":[{"op":"clamp","min":0,"max":100}]},
+        "109":{"cap":"measure_humidity","steps":[]}},
+ "source":{"name":"zigbee-herdsman-converters","url":"https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/hobeian.ts#L1304","commit":"cff1de4731a14a84094a8568d8bbf92aa5feb0db"},
+ "note":"Reference profile for the engine tests; the soil_sensor driver stays authoritative."}]
