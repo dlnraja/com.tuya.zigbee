@@ -305,7 +305,8 @@ jobs:
         run: |
           set +e
           PUBLISH_DIR="${HOMEY_PUBLISH_DIR:-$(node -p "require('path').join(require('os').tmpdir(), 'homey-publish-temp')")}"
-          MAXR=$(node .github/scripts/athom-retry-policy.js get maxTransientRetries)
+          # P2924: loop bound = largest budget; shouldRetry below still enforces the per-kind budget.
+          MAXR=$(node .github/scripts/athom-retry-policy.js max)
           for retry in $(seq 1 "$MAXR"); do
             V=$(node -p "require('./app.json').version")
             status=$(node scripts/ci/homey-build-status.js "$APP_ID" 2>&1)

@@ -11,7 +11,7 @@ const pol = require('../.github/scripts/athom-retry-policy');
 describe('P2900 GHA hardening', () => {
   it('policy file is byte-identical on master, stable-v5 and bastien-home', () => {
     const h = crypto.createHash('sha256').update(fs.readFileSync(path.join(root, '.github/scripts/athom-retry-policy.js'))).digest('hex');
-    assert.strictEqual(h, 'c09da7dd494420dc08550abde5e0b1a44014c9409d742db45090d9c3faad252e', 'edit athom-retry-policy.js on all three branches together and update this hash');
+    assert.strictEqual(h, 'fb28d2e24a5b4bf7a7972d3fc24e8460ae7fb70ff57b5782d3fcfaef8aa4fd48', 'edit athom-retry-policy.js on all three branches together and update this hash');
   });
   it('backoff is exponential, capped and jittered', () => {
     assert.strictEqual(pol.backoffSeconds(1, () => 0), 60);
@@ -25,7 +25,9 @@ describe('P2900 GHA hardening', () => {
     assert.strictEqual(pol.classify('invalid_state'), 'invalid_state');
     assert.strictEqual(pol.classify('bad driver compose'), 'unknown');
     assert.ok(pol.shouldRetry('socket hang up', 1));
-    assert.ok(!pol.shouldRetry('socket hang up', 2));
+    assert.ok(pol.shouldRetry('socket hang up', 3)); // P2924: hang-up budget 4
+    assert.ok(!pol.shouldRetry('socket hang up', 4));
+    assert.ok(!pol.shouldRetry('transient', 2));
     assert.ok(!pol.shouldRetry('unknown', 0));
     assert.ok(!pol.shouldRetry('invalid_state', 0, { idleWaited: false }));
   });
