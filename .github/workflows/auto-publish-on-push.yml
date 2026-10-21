@@ -484,6 +484,7 @@ jobs:
       # WHY(P139/P2301): processing_failed + transient HOMEY_PAT list errors must not
       # abort the job after a successful upload — still attempt draft→test promote.
       - name: Wait for Athom draft processing
+        id: waitdraft
         if: steps.pub.outcome == 'success'
         continue-on-error: true
         env:
@@ -505,6 +506,8 @@ jobs:
           if ! grep -q 'processing_failed_degraded=true' "$OUT"; then
             echo "Athom build for v$HOMEY_EXPECTED_VERSION is processing/ready"; exit 0
           fi
+          # P2930d: tell the promote tiers to skip a build Athom already failed (they cost ~6 min).
+          echo "athom_failed=true" >> "$GITHUB_OUTPUT"
           BID=$(grep -oE '(build_id|buildId|failed_build_id)=[0-9]+' "$OUT" | head -1 | cut -d= -f2)
           node scripts/ci/homey-build-status.js com.dlnraja.tuya.zigbee 2>/dev/null | head -3 || true
           echo "::error::Athom processing_failed for v$HOMEY_EXPECTED_VERSION (build #${BID:-see list above}); not re-uploading the same version"
@@ -519,7 +522,7 @@ jobs:
         run: npm install puppeteer athom-api --no-save
 
       - name: "Tier 1: Promote via Browser"
-        if: steps.check_pat.outputs.has_pat == 'true'
+        if: steps.check_pat.outputs.has_pat == 'true' && steps.waitdraft.outputs.athom_failed != 'true'
         id: promote_puppeteer
         continue-on-error: true
         timeout-minutes: 5
@@ -531,7 +534,7 @@ jobs:
 
       - name: "Tier 2: Promote via OAuth"
         id: promote_oauth
-        if: steps.check_pat.outputs.has_pat == 'true' && steps.promote_puppeteer.outcome != 'success'
+        if: steps.check_pat.outputs.has_pat == 'true' && steps.promote_puppeteer.outcome != 'success' && steps.waitdraft.outputs.athom_failed != 'true'
         continue-on-error: true
         timeout-minutes: 5
         env:
@@ -543,7 +546,7 @@ jobs:
 
       - name: "Tier 3: Promote via PAT API"
         id: promote_api
-        if: steps.check_pat.outputs.has_pat == 'true' && steps.promote_puppeteer.outcome != 'success' && steps.promote_oauth.outcome != 'success'
+        if: steps.check_pat.outputs.has_pat == 'true' && steps.promote_puppeteer.outcome != 'success' && steps.promote_oauth.outcome != 'success' && steps.waitdraft.outputs.athom_failed != 'true'
         continue-on-error: true
         timeout-minutes: 5
         env:
