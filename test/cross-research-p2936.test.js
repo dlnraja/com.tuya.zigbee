@@ -118,3 +118,26 @@ describe('P2936 regression lock on placed and provisional couples', () => {
     }
   });
 });
+
+describe('P2943 OCR look-alike guard on the provisional tier', () => {
+  const D = drv({ button_wireless_2: { m: ['_TZ3000_pmz6mjyu'], p: ['TS011F', 'TS0042'] }, universal_zigbee: { m: [], p: ['TS011F', 'TS0001'] } });
+  it('flags an id that only differs by i/j or o/0 glyphs from an owned manufacturerName', () => {
+    assert.deepStrictEqual(prov.ocrTwin(D, '_TZ3000_pmz6miyu'), { driver: 'button_wireless_2', mfr: '_tz3000_pmz6mjyu' });
+    assert.ok(/OCR look-alike/.test(prov.canProvision(D, '_TZ3000_pmz6miyu', 'TS011F')));
+  });
+  it('does not flag a genuinely different id or the owned id itself', () => {
+    assert.strictEqual(prov.ocrTwin(D, '_TZ3000_pmz6mjyu'), null);
+    assert.strictEqual(prov.ocrTwin(D, '_TZ3000_qwertyui'), null);
+    assert.strictEqual(prov.canProvision(D, '_TZ3000_qwertyui', 'TS011F'), null);
+  });
+  it('repo state: the #451 misread is demoted (kept, not deleted) and absent from every driver', () => {
+    const root = path.join(__dirname, '..');
+    const P = JSON.parse(fs.readFileSync(path.join(root, 'data/leads/provisional-couples.json'), 'utf8'));
+    const e = P.entries.find((x) => x.mfr === '_TZ3000_pmz6miyu');
+    assert.ok(e && e.status === 'demoted' && /pmz6mjyu/.test(e.reason));
+    const app = JSON.parse(fs.readFileSync(path.join(root, 'app.json'), 'utf8'));
+    for (const d of app.drivers) assert.ok(!((d.zigbee || {}).manufacturerName || []).some((m) => m.toLowerCase() === '_tz3000_pmz6miyu'), d.id);
+    const owner = app.drivers.find((d) => d.id === 'button_wireless_2');
+    assert.ok(owner.zigbee.manufacturerName.includes('_TZ3000_pmz6mjyu') && owner.zigbee.productId.includes('TS011F'));
+  });
+});
