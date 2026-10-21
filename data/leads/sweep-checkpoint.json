@@ -564,13 +564,13 @@
     },
     {
       "id": "johan-issue:27",
-      "status": "needs-info",
-      "note": "Previously api-unavailable. Re-fetch required; if still empty keep as needs-info. Next: re-pull issue body when GitHub budget allows.",
+      "status": "no-action",
+      "note": "Upstream issue deleted (HTTP 410 on 2026-10-21); nothing left to read.",
       "sources": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/27"
       ],
-      "triagedAt": "2026-10-12T07:08:03.955Z",
-      "triagedVia": "resume-sweep-2026-10-12"
+      "triagedAt": "2026-10-21T07:04:18.052Z",
+      "triagedVia": "resume-sweep-2026-10-21"
     },
     {
       "id": "johan-issue:28",
@@ -1642,12 +1642,14 @@
     {
       "id": "johan-issue:98",
       "status": "needs-info",
-      "note": "open issue; diag-only; research or diag needed",
+      "note": "Re-read 2026-10-21: RGB spot request with shop link and product photos only, no Zigbee identity in text or thread.",
       "sources": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/98"
       ],
       "author": "brembootje",
-      "comments": 2
+      "comments": 2,
+      "triagedAt": "2026-10-21T07:04:18.052Z",
+      "triagedVia": "resume-sweep-2026-10-21"
     },
     {
       "id": "johan-issue:99",
@@ -1664,15 +1666,15 @@
     },
     {
       "id": "johan-issue:100",
-      "status": "needs-info",
-      "note": "Still no identity after triage. Next: deep-read comments/attachments for manufacturerName+productId or mark no-action if Wi-Fi/BT only.",
+      "status": "deferred",
+      "note": "Exact identity HEIMAN / RC-EF-3.0 from the Homey interview in the issue (IAS ACE keyfob, in 0/1/3/1280/2821, out 25/1281). Needs IAS ACE arm/disarm/emergency command handling before a driver can host it; lead kept.",
       "sources": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/100"
       ],
       "author": "JohanBendz",
       "comments": 1,
-      "triagedAt": "2026-10-12T07:08:03.955Z",
-      "triagedVia": "resume-sweep-2026-10-12"
+      "triagedAt": "2026-10-21T07:04:18.052Z",
+      "triagedVia": "resume-sweep-2026-10-21"
     },
     {
       "id": "johan-issue:101",
@@ -2152,16 +2154,16 @@
     },
     {
       "id": "johan-issue:129",
-      "status": "needs-info",
-      "note": "No identity in checkpoint. Next: deep-read issue for interview JSON; place only exact mfr+pid.",
+      "status": "no-action",
+      "note": "Closed upstream as duplicate of the TRV canonical issue #12; no fingerprint in the thread.",
       "sources": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/129"
       ],
       "author": "Allansoegaardlarsen",
       "closedAt": "2026-09-30T20:20:05Z",
       "comments": 2,
-      "triagedAt": "2026-10-12T07:08:03.955Z",
-      "triagedVia": "resume-sweep-2026-10-12"
+      "triagedAt": "2026-10-21T07:04:18.052Z",
+      "triagedVia": "resume-sweep-2026-10-21"
     },
     {
       "id": "johan-issue:130",
@@ -2898,16 +2900,16 @@
     },
     {
       "id": "johan-issue:174",
-      "status": "needs-info",
-      "note": "BlitzWolf SHP15 request (Chopper8). No interview in body. Product name alone is not a sacred couple. Next: Homey interview with manufacturerName+productId (likely TS011F per Z2M SHP15 family, but mfr must be read from device). Do not invent mfr.",
+      "status": "no-action",
+      "note": "Closed; BlitzWolf SHP15 named by retail model only, no interview in the thread.",
       "sources": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/174"
       ],
       "author": "Chopper8",
       "closedAt": "2024-09-11T17:22:22Z",
       "comments": 1,
-      "triagedAt": "2026-10-12T07:08:03.955Z",
-      "triagedVia": "resume-sweep-2026-10-12"
+      "triagedAt": "2026-10-21T07:04:18.052Z",
+      "triagedVia": "resume-sweep-2026-10-21"
     },
     {
       "id": "johan-issue:175",
@@ -3148,15 +3150,15 @@
     },
     {
       "id": "johan-issue:190",
-      "status": "needs-info",
-      "note": "No identity in checkpoint. Next: deep-read issue for interview JSON; place only exact mfr+pid.",
+      "status": "fixed",
+      "note": "HEIMAN / SmokeSensor-EF-3.0 (Homey interview in the issue, native IAS zone smoke, Heiman HS1SA family already hosted) placed on smoke_detector_advanced, P2919.",
       "sources": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/190"
       ],
       "author": "JohanBendz",
       "comments": 5,
-      "triagedAt": "2026-10-12T07:08:03.955Z",
-      "triagedVia": "resume-sweep-2026-10-12"
+      "triagedAt": "2026-10-21T07:04:18.052Z",
+      "triagedVia": "resume-sweep-2026-10-21"
     },
     {
       "id": "johan-issue:191",
@@ -3222,7 +3224,7 @@
     {
       "id": "johan-issue:195",
       "status": "needs-info",
-      "note": "No identity in checkpoint. Next: deep-read issue for interview JSON; place only exact mfr+pid.",
+      "note": "Re-read 2026-10-21: title gives the maker without its leading underscore and no productId; the second reporter quotes a truncated 7-character maker. No exact couple.",
       "sources": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/195"
       ],
@@ -3231,8 +3233,8 @@
       "pids": [
         "TS0002"
       ],
-      "triagedAt": "2026-10-12T07:08:03.955Z",
-      "triagedVia": "resume-sweep-2026-10-12"
+      "triagedAt": "2026-10-21T07:04:18.052Z",
+      "triagedVia": "resume-sweep-2026-10-21"
     },
     {
       "id": "johan-issue:196",
@@ -3297,16 +3299,16 @@
     },
     {
       "id": "johan-issue:200",
-      "status": "needs-info",
-      "note": "No identity in checkpoint. Next: deep-read issue for interview JSON; place only exact mfr+pid.",
+      "status": "no-action",
+      "note": "Closed; shop link only, interview asked and never provided.",
       "sources": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/200"
       ],
       "author": "bvdp02",
       "closedAt": "2024-09-11T17:25:54Z",
       "comments": 1,
-      "triagedAt": "2026-10-12T07:08:03.955Z",
-      "triagedVia": "resume-sweep-2026-10-12"
+      "triagedAt": "2026-10-21T07:04:18.052Z",
+      "triagedVia": "resume-sweep-2026-10-21"
     },
     {
       "id": "johan-issue:201",
@@ -3510,12 +3512,14 @@
     {
       "id": "johan-issue:212",
       "status": "needs-info",
-      "note": "open issue; diag-only; research or diag needed",
+      "note": "Re-read 2026-10-21: Aubess sensor, identity only inside settings screenshots; left to the issue image OCR pass.",
       "sources": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/212"
       ],
       "author": "Fen67",
-      "comments": 2
+      "comments": 2,
+      "triagedAt": "2026-10-21T07:04:18.052Z",
+      "triagedVia": "resume-sweep-2026-10-21"
     },
     {
       "id": "johan-issue:213",
@@ -3756,11 +3760,13 @@
     {
       "id": "johan-issue:228",
       "status": "needs-info",
-      "note": "open issue; diag-only; research or diag needed",
+      "note": "Re-read 2026-10-21: points to forum 26439#2791 and a screenshot only; no identity in text.",
       "sources": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/228"
       ],
-      "author": "Norinvstor"
+      "author": "Norinvstor",
+      "triagedAt": "2026-10-21T07:04:18.052Z",
+      "triagedVia": "resume-sweep-2026-10-21"
     },
     {
       "id": "johan-issue:229",
@@ -3872,13 +3878,13 @@
     },
     {
       "id": "johan-issue:236",
-      "status": "needs-info",
-      "note": "No identity in checkpoint. Next: deep-read issue for interview JSON; place only exact mfr+pid.",
+      "status": "no-action",
+      "note": "Upstream issue deleted (HTTP 410 on 2026-10-21); nothing left to read.",
       "sources": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/236"
       ],
-      "triagedAt": "2026-10-12T07:08:03.955Z",
-      "triagedVia": "resume-sweep-2026-10-12"
+      "triagedAt": "2026-10-21T07:04:18.052Z",
+      "triagedVia": "resume-sweep-2026-10-21"
     },
     {
       "id": "johan-issue:237",
@@ -3956,11 +3962,13 @@
     {
       "id": "johan-issue:242",
       "status": "needs-info",
-      "note": "open issue; diag-only; research or diag needed",
+      "note": "Re-read 2026-10-21: double curtain module, product photo only, no identity.",
       "sources": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/242"
       ],
-      "author": "Marjet46"
+      "author": "Marjet46",
+      "triagedAt": "2026-10-21T07:04:18.052Z",
+      "triagedVia": "resume-sweep-2026-10-21"
     },
     {
       "id": "johan-issue:243",
@@ -4355,13 +4363,13 @@
     },
     {
       "id": "johan-issue:269",
-      "status": "needs-info",
-      "note": "No identity in checkpoint. Next: deep-read issue for interview JSON; place only exact mfr+pid.",
+      "status": "no-action",
+      "note": "Upstream issue deleted (HTTP 410 on 2026-10-21); nothing left to read.",
       "sources": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/269"
       ],
-      "triagedAt": "2026-10-12T07:08:03.955Z",
-      "triagedVia": "resume-sweep-2026-10-12"
+      "triagedAt": "2026-10-21T07:04:18.052Z",
+      "triagedVia": "resume-sweep-2026-10-21"
     },
     {
       "id": "johan-issue:270",
@@ -4603,13 +4611,15 @@
     },
     {
       "id": "johan-issue:284",
-      "status": "needs-info",
-      "note": "open issue; diag-only; research or diag needed",
+      "status": "fixed",
+      "note": "Samotech / SM311 (Homey device settings in the issue: zb_manufacturer_name + zb_product_id, router, dimmer) placed on dimmer_1_gang (native OnOff + Level), P2919.",
       "sources": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/284"
       ],
       "author": "HenryMD18",
-      "comments": 1
+      "comments": 1,
+      "triagedAt": "2026-10-21T07:04:18.052Z",
+      "triagedVia": "resume-sweep-2026-10-21"
     },
     {
       "id": "johan-issue:285",
@@ -4844,13 +4854,15 @@
     },
     {
       "id": "johan-issue:301",
-      "status": "needs-info",
-      "note": "open issue; diag-only; research or diag needed",
+      "status": "no-action",
+      "note": "Memory growth report on the upstream app (2021); our memory work is tracked in P2914/P2915.",
       "sources": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/301"
       ],
       "author": "magnusheino",
-      "comments": 3
+      "comments": 3,
+      "triagedAt": "2026-10-21T07:04:18.052Z",
+      "triagedVia": "resume-sweep-2026-10-21"
     },
     {
       "id": "johan-issue:302",
@@ -5099,13 +5111,15 @@
     },
     {
       "id": "johan-issue:318",
-      "status": "needs-info",
-      "note": "open issue; request-no-identity; research or diag needed",
+      "status": "already-fixed",
+      "note": "PJ-MGW1203 clamp meter: Z2M lists _TZE204/_TZE284_cjbofhxw TS0601, already on power_clamp_meter.",
       "sources": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/318"
       ],
       "author": "rwanrooy",
-      "comments": 1
+      "comments": 1,
+      "triagedAt": "2026-10-21T07:04:18.052Z",
+      "triagedVia": "resume-sweep-2026-10-21"
     },
     {
       "id": "johan-issue:319",
@@ -5354,12 +5368,14 @@
     },
     {
       "id": "johan-issue:335",
-      "status": "needs-info",
-      "note": "open issue; diag-only; research or diag needed",
+      "status": "no-action",
+      "note": "Flow condition parity question about the upstream app UI; no device identity.",
       "sources": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/335"
       ],
-      "author": "ruudvaneck"
+      "author": "ruudvaneck",
+      "triagedAt": "2026-10-21T07:04:18.052Z",
+      "triagedVia": "resume-sweep-2026-10-21"
     },
     {
       "id": "johan-issue:336",
@@ -5991,11 +6007,13 @@
     {
       "id": "johan-issue:377",
       "status": "needs-info",
-      "note": "open issue; diag-only; research or diag needed",
+      "note": "eWeLink SA-003-Zigbee plug request: template left unfilled, no interview strings in the issue.",
       "sources": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/377"
       ],
-      "author": "nissenhj"
+      "author": "nissenhj",
+      "triagedAt": "2026-10-21T07:04:18.052Z",
+      "triagedVia": "resume-sweep-2026-10-21"
     },
     {
       "id": "johan-issue:378",
@@ -6737,12 +6755,14 @@
     },
     {
       "id": "johan-issue:422",
-      "status": "needs-info",
-      "note": "open issue; request-no-identity; research or diag needed",
+      "status": "fixed",
+      "note": "eWeLight / ZB-DL01 0-10V dimmer (Homey interview in the issue, native OnOff + Level) placed on dimmer_1_gang, P2919.",
       "sources": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/422"
       ],
-      "author": "keesverruijt"
+      "author": "keesverruijt",
+      "triagedAt": "2026-10-21T07:04:18.052Z",
+      "triagedVia": "resume-sweep-2026-10-21"
     },
     {
       "id": "johan-issue:423",
@@ -7147,14 +7167,16 @@
     },
     {
       "id": "johan-issue:447",
-      "status": "needs-info",
-      "note": "closed issue; request-no-identity; research or diag needed",
+      "status": "deferred",
+      "note": "Exact identity Heiman / WarningDevice (interview in the issue, IAS WD 0x0502). Our siren driver class and capabilities do not fit a pure IAS WD siren yet; lead kept for a native siren driver.",
       "sources": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/447"
       ],
       "author": "SamCan92",
       "closedAt": "2026-09-30T20:32:55Z",
-      "comments": 1
+      "comments": 1,
+      "triagedAt": "2026-10-21T07:04:18.052Z",
+      "triagedVia": "resume-sweep-2026-10-21"
     },
     {
       "id": "johan-issue:448",
@@ -7269,14 +7291,16 @@
     },
     {
       "id": "johan-issue:454",
-      "status": "needs-info",
-      "note": "closed issue; diag-only; research or diag needed",
+      "status": "no-action",
+      "note": "Crash report on the upstream app with a diagnostic id only.",
       "sources": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/454"
       ],
       "author": "strejcd",
       "closedAt": "2024-10-04T23:08:25Z",
-      "comments": 2
+      "comments": 2,
+      "triagedAt": "2026-10-21T07:04:18.052Z",
+      "triagedVia": "resume-sweep-2026-10-21"
     },
     {
       "id": "johan-issue:455",
@@ -7527,12 +7551,14 @@
     },
     {
       "id": "johan-issue:469",
-      "status": "needs-info",
-      "note": "open issue; request-no-identity; research or diag needed",
+      "status": "no-action",
+      "note": "Wi-Fi infrared heating thermostat, no interview and not a Zigbee identity.",
       "sources": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/469"
       ],
-      "author": "Markroadrace"
+      "author": "Markroadrace",
+      "triagedAt": "2026-10-21T07:04:18.052Z",
+      "triagedVia": "resume-sweep-2026-10-21"
     },
     {
       "id": "johan-issue:470",
@@ -7820,14 +7846,16 @@
     },
     {
       "id": "johan-issue:486",
-      "status": "needs-info",
-      "note": "closed issue; diag-only; research or diag needed",
+      "status": "no-action",
+      "note": "Crash report on the upstream app, no identity.",
       "sources": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/486"
       ],
       "author": "Rickert1993",
       "closedAt": "2024-09-15T20:32:22Z",
-      "comments": 2
+      "comments": 2,
+      "triagedAt": "2026-10-21T07:04:18.052Z",
+      "triagedVia": "resume-sweep-2026-10-21"
     },
     {
       "id": "johan-issue:487",
@@ -7881,21 +7909,25 @@
     {
       "id": "johan-issue:490",
       "status": "needs-info",
-      "note": "open issue; diag-only; research or diag needed",
+      "note": "WOOX R7048 named by retail model only; reporter could not read the identity.",
       "sources": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/490"
       ],
       "author": "Uffesr",
-      "comments": 1
+      "comments": 1,
+      "triagedAt": "2026-10-21T07:04:18.052Z",
+      "triagedVia": "resume-sweep-2026-10-21"
     },
     {
       "id": "johan-issue:491",
-      "status": "needs-info",
-      "note": "open issue; diag-only; research or diag needed",
+      "status": "no-action",
+      "note": "Usage question about the upstream reset-energy flow card.",
       "sources": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/491"
       ],
-      "author": "PatrikMihalik"
+      "author": "PatrikMihalik",
+      "triagedAt": "2026-10-21T07:04:18.052Z",
+      "triagedVia": "resume-sweep-2026-10-21"
     },
     {
       "id": "johan-issue:492",
@@ -8117,30 +8149,39 @@
     },
     {
       "id": "forum:26439#1",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "johan_bendz",
       "link": "https://community.homey.app/t/26439/1",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Thread opening post (app overview).",
+      "triagedAt": "2026-10-21T07:04:18.052Z",
+      "triagedVia": "resume-sweep-2026-10-21"
     },
     {
       "id": "forum:26439#1281",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "johan_bendz",
       "link": "https://community.homey.app/t/26439/1281",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Maintainer personal status post, no device.",
+      "triagedAt": "2026-10-21T07:04:18.052Z",
+      "triagedVia": "resume-sweep-2026-10-21"
     },
     {
       "id": "forum:26439#1325",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "johan_bendz",
       "link": "https://community.homey.app/t/26439/1325",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Maintainer status post, no device.",
+      "triagedAt": "2026-10-21T07:04:18.052Z",
+      "triagedVia": "resume-sweep-2026-10-21"
     },
     {
       "id": "forum:26439#1453",
@@ -8154,21 +8195,27 @@
     },
     {
       "id": "forum:26439#1636",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "johan_bendz",
       "link": "https://community.homey.app/t/26439/1636",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "_TZE200_jthf7vb6 TS0601 water leak alarm already on water_leak_sensor.",
+      "triagedAt": "2026-10-21T07:04:18.052Z",
+      "triagedVia": "resume-sweep-2026-10-21"
     },
     {
       "id": "forum:26439#1702",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "johan_bendz",
       "link": "https://community.homey.app/t/26439/1702",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Maintainer release-timing post, no device.",
+      "triagedAt": "2026-10-21T07:04:18.052Z",
+      "triagedVia": "resume-sweep-2026-10-21"
     },
     {
       "id": "forum:26439#4117",
@@ -25643,12 +25690,12 @@
     "previousNext": 31
   },
   "stats": {
-    "already-fixed": 873,
-    "no-action": 649,
-    "needs-info": 554,
-    "fixed": 3,
-    "pending": 5,
-    "deferred": 1
+    "already-fixed": 875,
+    "no-action": 665,
+    "needs-info": 531,
+    "deferred": 3,
+    "fixed": 6,
+    "pending": 5
   },
   "progressed": true,
   "dailyResume20261020B": {
@@ -25773,6 +25820,132 @@
       },
       {
         "n": 559,
+        "status": "no-action"
+      }
+    ]
+  },
+  "dailyResume20261021": {
+    "at": "2026-10-21T07:04:24.419Z",
+    "advanced": 30,
+    "items": [
+      {
+        "id": "johan-issue:27",
+        "status": "no-action"
+      },
+      {
+        "id": "johan-issue:98",
+        "status": "needs-info"
+      },
+      {
+        "id": "johan-issue:100",
+        "status": "deferred"
+      },
+      {
+        "id": "johan-issue:129",
+        "status": "no-action"
+      },
+      {
+        "id": "johan-issue:174",
+        "status": "no-action"
+      },
+      {
+        "id": "johan-issue:190",
+        "status": "fixed"
+      },
+      {
+        "id": "johan-issue:195",
+        "status": "needs-info"
+      },
+      {
+        "id": "johan-issue:200",
+        "status": "no-action"
+      },
+      {
+        "id": "johan-issue:212",
+        "status": "needs-info"
+      },
+      {
+        "id": "johan-issue:228",
+        "status": "needs-info"
+      },
+      {
+        "id": "johan-issue:236",
+        "status": "no-action"
+      },
+      {
+        "id": "johan-issue:242",
+        "status": "needs-info"
+      },
+      {
+        "id": "johan-issue:269",
+        "status": "no-action"
+      },
+      {
+        "id": "johan-issue:284",
+        "status": "fixed"
+      },
+      {
+        "id": "johan-issue:301",
+        "status": "no-action"
+      },
+      {
+        "id": "johan-issue:318",
+        "status": "already-fixed"
+      },
+      {
+        "id": "johan-issue:335",
+        "status": "no-action"
+      },
+      {
+        "id": "johan-issue:377",
+        "status": "needs-info"
+      },
+      {
+        "id": "johan-issue:422",
+        "status": "fixed"
+      },
+      {
+        "id": "johan-issue:447",
+        "status": "deferred"
+      },
+      {
+        "id": "johan-issue:454",
+        "status": "no-action"
+      },
+      {
+        "id": "johan-issue:469",
+        "status": "no-action"
+      },
+      {
+        "id": "johan-issue:486",
+        "status": "no-action"
+      },
+      {
+        "id": "johan-issue:490",
+        "status": "needs-info"
+      },
+      {
+        "id": "johan-issue:491",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:26439#1",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:26439#1281",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:26439#1325",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:26439#1636",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:26439#1702",
         "status": "no-action"
       }
     ]
