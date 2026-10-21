@@ -38,5 +38,6 @@ describe('P2930 orphan flow card prune', () => {
     const src = require('fs').readFileSync(require('path').join(__dirname, '..', 'scripts', 'prepare-publish.js'), 'utf8');
     assert.ok(src.includes("require('./maintenance/prune-orphan-flow-cards.cjs')"));
     assert.ok(src.includes('FATAL: orphan flow card prune failed'));
+    assert.ok(src.includes('[P2930b] removed'), 'dead driver folders pruned');
   });
 });
