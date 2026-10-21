@@ -50,8 +50,10 @@ function mapEntity(e) {
     if (divisor && divisor !== 1) {row.s = divisor;}
     if (kind === 'binary_sensor' && dp.type !== 'boolean') {
       const on = (dp.mapping || []).find((m) => m && m.value === true && m.dps_val !== undefined);
-      // Enum-backed binary sensors need a value table our runtime does not apply yet: skip.
-      if (!on || true) {continue;}
+      // P2931: enum-backed binary sensor: keep only the exact dps_val(s) that mean "true".
+      const ons = (dp.mapping || []).filter((m) => m && m.value === true && m.dps_val !== undefined && m.dps_val !== null).map((m) => m.dps_val);
+      if (!on || !ons.length) {continue;}
+      row.on = ons.length === 1 ? ons[0] : ons;
     }
     out.push([String(dp.id), row]);
   }
@@ -79,7 +81,17 @@ function build(dir, commit) {
       products[key] = src;
     }
   }
-  return { _meta: { source: 'https://github.com/make-all/tuya-local (MIT, Jason Rumney / make-all)', commit: commit || null, configs: files.length, configsMapped: cfgWithProducts, products: Object.keys(products).length, schemas: Object.keys(schemas).length, capabilities: [...caps].sort(), layout: 'products[product_id lowercase] = source config name; schemas[config] = { dp: { c: capability, t: b|v|e, s?: divisor } }' }, products, schemas };
+  // P2931 compaction: identical schemas stored once; products point at a file index,
+  // files[i] = [config name, schema index]. Source per product is still exact.
+  const uniq = []; const uniqIdx = new Map(); const fileRows = []; const fileIdx = new Map();
+  for (const [name, d] of Object.entries(schemas)) {
+    const k = JSON.stringify(d);
+    if (!uniqIdx.has(k)) {uniqIdx.set(k, uniq.length); uniq.push(d);}
+    fileIdx.set(name, fileRows.length); fileRows.push([name, uniqIdx.get(k)]);
+  }
+  const prodIdx = {};
+  for (const [id, name] of Object.entries(products)) {prodIdx[id] = fileIdx.get(name);}
+  return { _meta: { source: 'make-all/tuya-local (MIT, Jason Rumney)', commit: commit || null, products: Object.keys(prodIdx).length, files: fileRows.length, configs: files.length, schemas: uniq.length, layout: 'p[id]=fileIdx; f[i]=[config,schemaIdx]; s[j]={dp:{c,t:b|v|e,s?,on?}}' }, p: prodIdx, f: fileRows, s: uniq };
 }
 
 if (require.main === module) {
