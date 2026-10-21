@@ -10,7 +10,7 @@ Chúng tôi theo dõi nhánh `main`.
 
 Nếu bạn tìm thấy một lỗ hổng bảo mật (ví dụ: một kỹ năng vượt qua kiểm tra "Sử dụng có Phép" hoặc thực thi mã độc hại mà không cảnh báo):
 
-1. Email: `security@antigravity.dev` (Placeholder)
+1. Email: `[redacted-email]` (Placeholder)
 2. Hoặc mở một **Private Advisory** (Cảnh báo Bảo mật Riêng tư) trên repository này.
 
 ## Chính sách Kỹ năng Tấn công (Offensive Skills Policy)

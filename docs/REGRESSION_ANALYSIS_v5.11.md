@@ -65,7 +65,7 @@ These are by-design or low-risk:
 - **Cause**: DP106 lux fires every 5s → 3 log lines each: (a) `[RADAR-BATTERY] Tuya response received`, (b) `static mapping` log, (c) `[RADAR-LUX] 0 lux (change: 100.0%)`
 - **Root causes**: (1) No same-value dedup — 0→0 always processed, (2) Change calc `currentLux > 0 ? ... : 100` returns 100% when both are 0, (3) Static mapping logged on every DP, (4) Per-event Tuya listener log
 - **Fix**: Same-value dedup, fix change formula `(finalLux > 0 ? 100 : 0)`, throttle static log to first occurrence, remove per-event log
-- **Diagnostic**: hcaron@synchrone.fr, Log ID 32709eaf
+- **Diagnostic**: [redacted-email], Log ID 32709eaf
 # Regression Analysis  v5.11.x Series
 
 **Date**: 2026-02-17 | **Versions**: v5.11.5  v5.11.13
@@ -133,4 +133,4 @@ These are by-design or low-risk:
 - **Cause**: DP106 lux fires every 5s  3 log lines each: (a) `[RADAR-BATTERY] Tuya response received`, (b) `static mapping` log, (c) `[RADAR-LUX] 0 lux (change: 100.0%)`
 - **Root causes**: (1) No same-value dedup  00 always processed, (2) Change calc `currentLux > 0 ? ... : 100` returns 100% when both are 0, (3) Static mapping logged on every DP, (4) Per-event Tuya listener log
 - **Fix**: Same-value dedup, fix change formula `(finalLux > 0 ? 100 : 0)`, throttle static log to first occurrence, remove per-event log
-- **Diagnostic**: hcaron@synchrone.fr, Log ID 32709eaf
+- **Diagnostic**: [redacted-email], Log ID 32709eaf
