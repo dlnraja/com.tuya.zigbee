@@ -219,7 +219,9 @@ function show(id,msg){var e=document.getElementById(id);e.textContent=msg;e.styl
 function showHtml(id,html){var e=document.getElementById(id);e.innerHTML=html;e.style.display='block'}
 function esc(t){return String(t==null?'':t).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
 function doTinytuyaImport(){var ok=document.getElementById('tt-ok'),er=document.getElementById('tt-err');ok.textContent='';er.textContent='';var t=(document.getElementById('tt_json').value||'').trim();if(!t){er.textContent='Paste devices.json / snapshot.json first';return}Homey.emit('tinytuya_import',{text:t},function(err,list){if(err){er.textContent=(err&&err.message)||String(err);return}var n=(list&&list.length)||0;if(!n){er.textContent='No device with a local key found';return}ok.textContent=n+' device(s) ready';goList()})}
-function goList(){try{if(H&&typeof H.showView==='function'){H.showView('list_devices')}}catch(e){}}
+function _goListNow(){try{if(H&&typeof H.showView==='function'){H.showView('list_devices')}}catch(e){}}
+/* P2956: optional driver hint (forum 154077 #526/#527). Any error or no hint = go on as before. */
+function goList(){var gone=false;function go(){if(!gone){gone=true;_goListNow()}}var t=setTimeout(go,1500);try{Homey.emit('suggest_driver',{},function(err,r){if(err||!r||!r.hints||!r.hints.length){clearTimeout(t);go();return}clearTimeout(t);var el=document.getElementById('drv-hint');if(!el){el=document.createElement('div');el.id='drv-hint';el.style.cssText='margin:8px 0;padding:8px;border-radius:6px;background:#fff7e0;color:#664d00;font-size:13px';document.body.insertBefore(el,document.body.firstChild)}el.textContent='Tip: '+r.hints.slice(0,3).map(function(h){return h.name+' looks like '+h.suggested}).join('; ')+'. You can also add it with that driver.';setTimeout(go,3500)})}catch(e){clearTimeout(t);go()}}
 function spin(id){var b=document.getElementById(id);b.disabled=true;b.dataset.orig=b.innerHTML;b.innerHTML='<span class="sp"></span>Scanning...'}
 function unspin(id){var b=document.getElementById(id);b.disabled=false;b.innerHTML=b.dataset.orig||'Scan'}
 
