@@ -107,3 +107,14 @@ test('README is generated from app.json with issues link and no hand-typed count
   const st = readme.render(Object.assign({}, APP, { id: 'com.dlnraja.tuya.zigbee.stable' }));
   assert.match(st, /This branch is `stable-v5`/);
 });
+
+test('P-KB: listKb includes curated device-family pages from docs/knowledge/KB/devices', () => {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'kbsite-'));
+  fs.mkdirSync(path.join(root, 'docs/knowledge/KB/devices'), { recursive: true });
+  fs.writeFileSync(path.join(root, 'docs/knowledge/KB/INDEX.md'), '# I\n');
+  fs.writeFileSync(path.join(root, 'docs/knowledge/KB/devices/TS0601.md'), '# Family TS0601\n');
+  const kb = site.listKb(root);
+  const dev = kb.find((k) => k.src === 'docs/knowledge/KB/devices/TS0601.md');
+  assert.ok(dev, 'device page listed');
+  assert.strictEqual(dev.page, 'kb/kb-devices-TS0601.html');
+});
