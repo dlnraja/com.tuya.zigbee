@@ -107,6 +107,9 @@ jobs:
           fi
         continue-on-error: true
 
+      - name: P2957 email guard (no third-party emails in tracked files)
+        run: node tools/ci/email-guard.js
+
       - name: Voice safety check
         id: voice
         run: npm run check:voice 2>&1 | tail -50
