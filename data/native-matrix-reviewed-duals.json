@@ -317,6 +317,17 @@
       "source": "docs/knowledge/P2927_HEIMAN_GENERIC_FALLBACK_DUALS_2026-10-21.md",
       "date": "2026-10-21",
       "reviewed_by": "user decision 2026-10-21 (P2927)"
+    },
+    {
+      "couple": "LUMI|TS0601",
+      "drivers": [
+        "device_generic_tuya_universal",
+        "motion_sensor"
+      ],
+      "reason": "Cartesian side effect of adding LUMI for lumi.motion.agl04 (P2929): Aqara never reports TS0601, so the pair is theoretical; the generic driver keeps it as before.",
+      "source": "dlnraja/com.tuya.zigbee#25 interview; Z2M lumi.ts RTCGQ13LM",
+      "date": "2026-10-21",
+      "reviewed_by": "user decision 2026-10-21 (P2929)"
     }
   ]
 }
