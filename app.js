@@ -1749,6 +1749,7 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
   }
 
   async onUninit() {
+    try { await require('./lib/utils/energy-kpi').flushKpi(this.homey); } catch (_e) { /* soft */ } // P2961
     this._destroyed = true;
     this.log('⚠️ App uninitializing...');
     try {
