@@ -1,11 +1,11 @@
 'use strict';
 const assert = require('assert');
-const gate = require('../lib/tuya-local/LocalConnectionGate');
-const plan = require('../lib/tuya-local/TuyaCommandPlan');
-const { parseImport } = require('../lib/tuya-local/TinyTuyaImport');
-const auto = require('../lib/tuya-local/GenericDpAutoMapper');
-const reg = require('../lib/tuya-local/WiFiDPRegistry');
-const cat = require('../data/wifi/tuya-local-product-schemas.json');
+const gate = require('../../lib/tuya-local/LocalConnectionGate');
+const plan = require('../../lib/tuya-local/TuyaCommandPlan');
+const { parseImport } = require('../../lib/tuya-local/TinyTuyaImport');
+const auto = require('../../lib/tuya-local/GenericDpAutoMapper');
+const reg = require('../../lib/tuya-local/WiFiDPRegistry');
+const cat = require('../../data/wifi/tuya-local-product-schemas.json');
 
 describe('P2930 WiFi/local coverage', () => {
   afterEach(() => gate._reset());
@@ -69,9 +69,9 @@ describe('P2930 WiFi/local coverage', () => {
   });
 
   it('client bounds its live queue and retries socket hang up', async () => {
-    const C = require('../lib/tuya-local/TuyaLocalClient');
+    const C = require('../../lib/tuya-local/TuyaLocalClient');
     const fs = require('fs');
-    const srcTxt = fs.readFileSync(require.resolve('../lib/tuya-local/TuyaLocalClient'), 'utf8');
+    const srcTxt = fs.readFileSync(require.resolve('../../lib/tuya-local/TuyaLocalClient'), 'utf8');
     assert.ok(/socket hang up/.test(srcTxt));
     const c = Object.create(C.prototype);
     c._commandQueue = new Array(64).fill({}); c._commandBusy = true; c._commandQueueLimit = 64;
