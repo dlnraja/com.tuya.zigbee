@@ -109,15 +109,23 @@ function assertSacredCouplesPresent(manifest, sacredAll) {
   return missing;
 }
 
+/** Manufacturer grouping key: case- and padding-insensitive (P2941). */
+function mfrKey(value) {
+  return String(value).trim().toLowerCase();
+}
+
 function uniqStrings(values) {
   const out = [];
   const seen = new Set();
   for (const value of Array.isArray(values) ? values : []) {
     if (typeof value !== 'string') continue;
-    const trimmed = value.trim();
-    if (!trimmed || seen.has(trimmed)) continue;
-    seen.add(trimmed);
-    out.push(trimmed);
+    // WHY(P2941, GH#570): keep the exact wire string. Some brands report a
+    // padded Basic manufacturerName (AOYAN AY-303Z/AY-302Z: "AOYAN  ", Z2M
+    // hobeian.ts whiteLabel fingerprint). Homey matches it byte-exact, so trimming
+    // here dropped the padded form from the publish manifest -> "Unknown device".
+    if (!value.trim() || seen.has(value)) continue;
+    seen.add(value);
+    out.push(value);
   }
   return out;
 }
@@ -140,7 +148,7 @@ function limitCaseForms(manufacturers, maxForms = DEFAULT_MAX_CASE_FORMS) {
   const groups = new Map();
   for (const value of manufacturers || []) {
     if (typeof value !== 'string' || !value.trim()) continue;
-    const k = value.toLowerCase();
+    const k = mfrKey(value);
     if (!groups.has(k)) groups.set(k, []);
     const list = groups.get(k);
     if (!list.includes(value)) list.push(value);
@@ -155,6 +163,10 @@ function limitCaseForms(manufacturers, maxForms = DEFAULT_MAX_CASE_FORMS) {
       if (!v || preferred.includes(v)) continue;
       preferred.push(v);
       if (preferred.length >= limit) break;
+    }
+    // P2941: padded wire forms are extra exact strings, never cut by the case cap.
+    for (const v of variants) {
+      if (v !== v.trim() && !preferred.includes(v)) preferred.push(v);
     }
     out.push(...preferred);
   }
@@ -327,7 +339,7 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
     const sacredPins = sacredPinsForDriver(sacredAll, driver.id);
     // WHY(P2340): SSOT pins must survive even when a prior compact pass already
     // dropped the mfr from app.json (clrdrnya / HOBEIAN on presence_sensor_radar).
-    const sacredMfrKeys = new Set(sacredPins.map((c) => String(c.mfr).toLowerCase()));
+    const sacredMfrKeys = new Set(sacredPins.map((c) => mfrKey(c.mfr)));
     const sacredPids = new Set(sacredPins.map((c) => String(c.pid).toUpperCase()));
     const sacredRequired = sacredPins;
 
@@ -380,7 +392,7 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
     // split (drop or keep all variants of a group together).
     const variantGroups = new Map(); // lowercaseKey -> [variants in original order]
     for (const v of manufacturers) {
-      const k = v.toLowerCase();
+      const k = mfrKey(v);
       if (!variantGroups.has(k)) {variantGroups.set(k, []);}
       variantGroups.get(k).push(v);
     }
@@ -391,9 +403,9 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
     let speculativeKeys = [];
     if (hasDb) {
       observed = manufacturers
-        .filter(value => db.byMfr.has(value.toLowerCase()))
-        .sort((a, b) => db.byMfr.get(b.toLowerCase()).confidence - db.byMfr.get(a.toLowerCase()).confidence);
-      speculative = manufacturers.filter(value => !db.byMfr.has(value.toLowerCase()));
+        .filter(value => db.byMfr.has(mfrKey(value)))
+        .sort((a, b) => db.byMfr.get(mfrKey(b)).confidence - db.byMfr.get(mfrKey(a)).confidence);
+      speculative = manufacturers.filter(value => !db.byMfr.has(mfrKey(value)));
       observedKeys = [...variantGroups.keys()]
         .filter(k => db.byMfr.has(k))
         .sort((a, b) => db.byMfr.get(b).confidence - db.byMfr.get(a).confidence);
@@ -410,7 +422,7 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
         && variantGroups.size * products.length > pidReduceOver) {
       const observedPidSet = new Set();
       for (const mfr of observed) {
-        for (const pid of db.byMfr.get(mfr.toLowerCase()).modelIds) {
+        for (const pid of db.byMfr.get(mfrKey(mfr)).modelIds) {
           if (products.includes(pid)) observedPidSet.add(pid);
         }
       }
@@ -459,7 +471,7 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
           ];
           // Force-include sacred groups even if over soft groupLimit.
           for (const sk of sacredMfrKeys) {
-            if (variantGroups.has(sk) && !nextManufacturers.some((m) => m.toLowerCase() === sk)) {
+            if (variantGroups.has(sk) && !nextManufacturers.some((m) => mfrKey(m) === sk)) {
               nextManufacturers = [...variantGroups.get(sk), ...nextManufacturers];
             }
           }
@@ -486,7 +498,7 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
         for (const sk of sacredMfrKeys) {
           if (variantGroups.has(sk)) keptKeys.add(sk);
         }
-        nextManufacturers = manufacturers.filter(v => keptKeys.has(v.toLowerCase()));
+        nextManufacturers = manufacturers.filter(v => keptKeys.has(mfrKey(v)));
       }
 
       // WHY(P2252): cap CASE forms so Athom raw cartesian stays near group budget
@@ -494,19 +506,19 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
       // If still over raw budget, cut more groups — never drop sacred keys
       while (
         nextManufacturers.length * nextProducts.length > maxDriverCombos
-        && new Set(nextManufacturers.map((v) => v.toLowerCase())).size > 1
+        && new Set(nextManufacturers.map((v) => mfrKey(v))).size > 1
       ) {
-        const keys = [...new Set(nextManufacturers.map((v) => v.toLowerCase()))];
+        const keys = [...new Set(nextManufacturers.map((v) => mfrKey(v)))];
         const drop = [...keys].reverse().find((k) => !sacredMfrKeys.has(k));
         if (!drop) break;
-        nextManufacturers = nextManufacturers.filter((v) => v.toLowerCase() !== drop);
+        nextManufacturers = nextManufacturers.filter((v) => mfrKey(v) !== drop);
       }
 
       driver.zigbee.manufacturerName = nextManufacturers;
       driver.zigbee.productId = nextProducts;
 
       const keptObservedCount = hasDb
-        ? nextManufacturers.filter(value => db.byMfr.has(value.toLowerCase())).length
+        ? nextManufacturers.filter(value => db.byMfr.has(mfrKey(value))).length
         : 0;
       observedKept += keptObservedCount;
 
@@ -532,21 +544,21 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
       let emitProducts = nextProducts;
       while (
         emitMfrs.length * emitProducts.length > maxDriverCombos
-        && new Set(emitMfrs.map((v) => v.toLowerCase())).size > 1
+        && new Set(emitMfrs.map((v) => mfrKey(v))).size > 1
       ) {
-        const keys = [...new Set(emitMfrs.map((v) => v.toLowerCase()))];
+        const keys = [...new Set(emitMfrs.map((v) => mfrKey(v)))];
         const drop = [...keys].reverse().find((k) => !sacredMfrKeys.has(k));
         if (!drop) break;
-        emitMfrs = emitMfrs.filter((v) => v.toLowerCase() !== drop);
+        emitMfrs = emitMfrs.filter((v) => mfrKey(v) !== drop);
       }
       for (const sk of sacredMfrKeys) {
-        if (!emitMfrs.some((m) => m.toLowerCase() === sk) && variantGroups.has(sk)) {
+        if (!emitMfrs.some((m) => mfrKey(m) === sk) && variantGroups.has(sk)) {
           emitMfrs = uniqStrings([...variantGroups.get(sk), ...emitMfrs]);
         }
       }
       const after = emitMfrs.length * emitProducts.length;
       observedKept += hasDb
-        ? emitMfrs.filter(value => db.byMfr.has(value.toLowerCase())).length
+        ? emitMfrs.filter(value => db.byMfr.has(mfrKey(value))).length
         : 0;
       afterTotal += after;
       const wasRescued = rescuedDrivers.some(r => r.id === driver.id);
@@ -643,12 +655,12 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
       const pins = sacredPinsForDriver(sacredAll, target.id);
       // WHY(P2348): pass2 must compare lowercase keys to lowercase sacred pins
       // (previously pinMfr held original case → sacred mfrs looked droppable).
-      const pinMfrLc = new Set(pins.map((p) => String(p.mfr).toLowerCase()));
+      const pinMfrLc = new Set(pins.map((p) => mfrKey(p.mfr)));
       const pinPid = new Set(pins.map((p) => String(p.pid).toUpperCase()));
       if (mfrs.length <= 1 && pids.length <= 1) continue;
 
       if (mfrs.length > pids.length) {
-        const keys = [...new Set(mfrs.map((v) => v.toLowerCase()))];
+        const keys = [...new Set(mfrs.map((v) => mfrKey(v)))];
         const drop = [...keys].reverse().find((k) => !pinMfrLc.has(k));
         if (!drop) {
           // Cannot drop mfr — try pid instead
@@ -659,7 +671,7 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
             break;
           }
         } else {
-          target.zigbee.manufacturerName = mfrs.filter((v) => v.toLowerCase() !== drop);
+          target.zigbee.manufacturerName = mfrs.filter((v) => mfrKey(v) !== drop);
           cutMade = true;
           break;
         }
@@ -670,10 +682,10 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
           cutMade = true;
           break;
         } else {
-          const keys = [...new Set(mfrs.map((v) => v.toLowerCase()))];
+          const keys = [...new Set(mfrs.map((v) => mfrKey(v)))];
           const drop = [...keys].reverse().find((k) => !pinMfrLc.has(k));
           if (drop) {
-            target.zigbee.manufacturerName = mfrs.filter((v) => v.toLowerCase() !== drop);
+            target.zigbee.manufacturerName = mfrs.filter((v) => mfrKey(v) !== drop);
             cutMade = true;
             break;
           }
@@ -724,7 +736,7 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
     if (!fw || !Array.isArray(fw.updates)) continue;
     const pids = new Set((driver.zigbee && driver.zigbee.productId) || []);
     const zigbeeMfrs = (driver.zigbee && driver.zigbee.manufacturerName) || [];
-    const mfrByLc = new Map(zigbeeMfrs.map((m) => [String(m).toLowerCase(), String(m)]));
+    const mfrByLc = new Map(zigbeeMfrs.map((m) => [mfrKey(m), String(m)]));
     const mfrsLc = new Set(mfrByLc.keys());
     const kept = [];
     for (const update of fw.updates) {
@@ -738,8 +750,8 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
         // WHY(P2257): homey-lib publish validation is case-sensitive on exact strings.
         // After compaction we may keep _tze200_* while OTA still cites _TZE200_*.
         const next = dev.manufacturerName
-          .filter((m) => mfrsLc.has(String(m).toLowerCase()))
-          .map((m) => mfrByLc.get(String(m).toLowerCase()) || m);
+          .filter((m) => mfrsLc.has(mfrKey(m)))
+          .map((m) => mfrByLc.get(mfrKey(m)) || m);
         if (next.length !== dev.manufacturerName.length
           || next.some((m, i) => m !== dev.manufacturerName[i])) {
           dev.manufacturerName = next;
