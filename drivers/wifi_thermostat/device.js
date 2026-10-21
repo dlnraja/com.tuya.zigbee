@@ -44,12 +44,13 @@ class WiFiThermostatDevice extends TuyaLocalDevice {
       const { refreshDelayAfterChange } = require('../../lib/tuya-local/WifiLanLessons');
       const delay = refreshDelayAfterChange({ 4: true });
       if (!delay || this._modeRefreshTimer || this._destroyed) {return;}
-      this._modeRefreshTimer = setTimeout(() => {
+      const { safeSetTimeout } = require('../../lib/utils/safe-timers');
+      this._modeRefreshTimer = safeSetTimeout(this, () => {
         this._modeRefreshTimer = null;
         const c = this._client;
         if (!this._destroyed && c && typeof c.refresh === 'function') {Promise.resolve(c.refresh()).catch(() => {});}
       }, delay);
-      if (this._modeRefreshTimer.unref) {this._modeRefreshTimer.unref();}
+      if (this._modeRefreshTimer && this._modeRefreshTimer.unref) {this._modeRefreshTimer.unref();}
     } catch (_e) { /* advisory */ }
   }
 
