@@ -1259,8 +1259,8 @@
     {
       "mfr": "HEIMAN",
       "pid": "RC-EF-3.0",
-      "driverId": "button_emergency_sos",
-      "note": "PCr2-1 2026-10-04 ZHC heiman.ts HM1RC-2-E — keep through publish compaction"
+      "driverId": "heiman_keyfob",
+      "note": "PCr2-1 2026-10-04 ZHC heiman.ts HM1RC-2-E — keep through publish compaction | P2921 2026-10-21: moved to dedicated heiman_keyfob (IAS ACE arm/disarm/emergency)"
     },
     {
       "mfr": "_TZE204_8fffc3kb",
@@ -1759,6 +1759,30 @@
       "pid": "TS0601",
       "driverId": "boiler_switch_energy",
       "note": "2026-10-18 forum-routing-regressions: exact couple had silently become an orphan when 732e11caa9 emptied boiler_switch_energy; restored and pinned (OCR _TZE28C1000* forms stay out, registry p2509)"
+    },
+    {
+      "mfr": "HEIMAN",
+      "pid": "WarningDevice",
+      "driverId": "heiman_siren",
+      "note": "P2921 2026-10-21 HS2WD-E: zigbee-herdsman-converters #3429 genBasic dump + deCONZ DDF #6400 (BabaIsYou)"
+    },
+    {
+      "mfr": "HEIMAN",
+      "pid": "WarningDevice-EF-3.0",
+      "driverId": "heiman_siren",
+      "note": "P2921 2026-10-21 HS2WD-E: zigbee-herdsman-converters #3429 genBasic dump + deCONZ DDF #6400 (BabaIsYou)"
+    },
+    {
+      "mfr": "Heiman",
+      "pid": "WarningDevice",
+      "driverId": "heiman_siren",
+      "note": "P2921 2026-10-21 HS2WD-E: zigbee-herdsman-converters #3429 genBasic dump + deCONZ DDF #6400 (BabaIsYou)"
+    },
+    {
+      "mfr": "Heiman",
+      "pid": "WarningDevice-EF-3.0",
+      "driverId": "heiman_siren",
+      "note": "P2921 2026-10-21 HS2WD-E: zigbee-herdsman-converters #3429 genBasic dump + deCONZ DDF #6400 (BabaIsYou)"
     }
   ]
 }

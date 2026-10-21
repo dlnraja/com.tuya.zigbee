@@ -35,6 +35,13 @@ const JSON_OUTPUT = process.argv.includes('--json');
 const PREDICTIVE = process.argv.includes('--predictive') || JSON_OUTPUT;
 // CI publish steps: apply removals but do not fail on known leftover dual-claims
 const SOFT_EXIT = process.argv.includes('--soft-exit');
+// P2921: dropping a whole manufacturerName from a driver can silently lose every
+// couple that name forms with that driver's other pids (Heiman left
+// universal_zigbee in v9.0.1575 while 63 of its pids had no specific driver).
+// Manufacturer-level removals are now report-only unless explicitly allowed.
+const ALLOW_MFR_REMOVAL = process.argv.includes('--allow-mfr-removal');
+const MFR_SKIP_REPORT = [];
+const ROOT_P2921 = path.join(__dirname, '..', '..');
 const DDIR = DRIVERS_DIR;
 
 // Device category mapping for conflict resolution priority
@@ -867,10 +874,15 @@ function main() {
             if (!info.pidRemoval && currentMfrs.includes(m)) console.log(`  - ${m}: ${info.reason}`);
           }
         }
-        if (!DRY_RUN) {
+        if (!DRY_RUN && ALLOW_MFR_REMOVAL) {
           d.config.zigbee.manufacturerName = newMfrs;
+          modified = true;
+        } else if (!ALLOW_MFR_REMOVAL) {
+          totalMfrRemoved -= removed;
+          const names = currentMfrs.filter(m => mfrsToRemove.has(m.toLowerCase()));
+          MFR_SKIP_REPORT.push({ driver: driverName, mfrs: names, reasons: names.map(m => (mfrRemovals.get(m) || mfrRemovals.get(m.toLowerCase()) || {}).reason || null) });
+          console.log(`  P2921 report-only: kept ${names.join(', ')} in ${driverName} (use --allow-mfr-removal to strip)`);
         }
-        modified = true;
       }
     }
 
@@ -904,6 +916,13 @@ function main() {
     }
   }
 
+  if (MFR_SKIP_REPORT.length) {
+    try {
+      fs.mkdirSync(path.join(ROOT_P2921, '.github', 'state'), { recursive: true });
+      fs.writeFileSync(path.join(ROOT_P2921, '.github', 'state', 'fp-conflict-mfr-report-only.json'),
+        JSON.stringify({ patch: 'P2921', generatedAt: new Date().toISOString(), kept: MFR_SKIP_REPORT }, null, 2) + '\n');
+    } catch (e) { console.log('P2921 report write failed:', e.message); }
+  }
   if (!JSON_OUTPUT) {
     console.log(`\nTotal: ${totalMfrRemoved} mfrs + ${totalPidRemoved} pids removed`);
     if (DRY_RUN) console.log('(DRY RUN - no files modified)');
