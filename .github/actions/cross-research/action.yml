@@ -1,0 +1,62 @@
+name: 'Cross-research (P2936)'
+description: >-
+  Full cross-check of every item a workflow handles (Z2M, ZHA, deCONZ, Blakadder, Johan, tuya-local,
+  forum, GitHub issues, Homey Gmail diag ids, OCR, git history; web/AI only within free quotas).
+  Places exact couples confirmed by a reference, hosts evidence-only ids in the provisional tier,
+  promotes/demotes provisional couples, feeds the sweep SSOT. Kill switch: repo variable XR_ENABLED=false.
+  Placement switch: XR_APPLY=false (report only). Data-only commit through safe-auto-commit (gates).
+inputs:
+  items:
+    description: 'needs-info | issues | forum | diags | all'
+    required: true
+  max:
+    description: 'max items per run (rate limit)'
+    required: false
+    default: '120'
+  id:
+    description: 'safe-auto-commit id'
+    required: true
+runs:
+  using: composite
+  steps:
+    - name: Restore cross-research cache
+      uses: actions/cache@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+      with:
+        path: |
+          .cache/xr
+          .cache/xr-ref
+          .cache/xr-ref-index.json
+        key: xr-${{ github.ref_name }}-${{ inputs.items }}-${{ github.run_id }}
+        restore-keys: |
+          xr-${{ github.ref_name }}-${{ inputs.items }}-
+          xr-${{ github.ref_name }}-
+    - name: Cross-research
+      shell: bash
+      env:
+        XR_ENABLED: ${{ env.XR_ENABLED }}
+        XR_REF: .cache/xr-ref
+        XR_NET_CAP: '400'
+        XR_OCR_CAP: '40'
+        GH_TOKEN: ${{ github.token }}
+      run: |
+        if [ "${XR_ENABLED:-true}" = "false" ]; then echo "cross-research disabled (XR_ENABLED=false)"; exit 0; fi
+        [ -f scripts/research/cross-research.js ] || { echo "cross-research not on this branch"; exit 0; }
+        command -v tesseract >/dev/null || (sudo apt-get install -y -qq tesseract-ocr >/dev/null 2>&1 || true)
+        bash scripts/research/fetch-refs.sh || true
+        if [ -f .github/state/diagnostics-report.json ]; then node scripts/research/diag-ids.js .github/state/diagnostics-report.json || true; fi
+        APPLY=--apply; [ "${XR_APPLY:-true}" = "false" ] && APPLY=
+        timeout 1500 node scripts/research/cross-research.js --items='${{ inputs.items }}' --max='${{ inputs.max }}' --max-place=10 --max-prov=10 $APPLY || echo "::warning::cross-research soft-failed"
+    - name: Gate + commit (data and fingerprints only)
+      shell: bash
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+      run: |
+        [ -f data/leads/cross-research-report.json ] || exit 0
+        if ! git diff --quiet -- drivers app.json; then
+          npx --no-install mocha test/cross-research-p2936.test.js || { echo "::warning::cross-research lock failed, reverting placements"; git checkout -- drivers app.json CREDITS.md data/leads/provisional-couples.json data/leads/auto-applied.json; }
+        fi
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        node scripts/ci/safe-auto-commit.js --id='${{ inputs.id }}' --max-per-day=4 \
+          --message="chore(xr): cross-research ${{ inputs.items }}" \
+          --paths="drivers app.json CREDITS.md data/leads/cross-research-report.json data/leads/provisional-couples.json data/leads/auto-applied.json data/leads/sweep-checkpoint.json data/leads/upstream-delta.json data/diag-ids.json" || echo "::warning::commit refused"
