@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-20T08:53:00.568Z",
+  "updated": "2026-10-21T07:45:22.696Z",
   "threads": {
     "21313": {
       "lastPost": 2819,
@@ -8249,13 +8249,16 @@
     },
     {
       "id": "forum:26439#4212",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Jamie",
       "link": "https://community.homey.app/t/26439/4212",
       "mfrs": [],
       "pids": [],
       "images": 2,
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Moderator note on thread rules.",
+      "triagedAt": "2026-10-21T07:45:22.696Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:26439#4220",
@@ -8337,22 +8340,28 @@
     },
     {
       "id": "forum:26439#4264",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Rickert1993",
       "link": "https://community.homey.app/t/26439/4264",
       "mfrs": [],
       "pids": [],
       "images": 1,
-      "why": "diag-only"
+      "why": "diag-only",
+      "note": "Crash report on Johan app 0.2.18 (2023), no device identity.",
+      "triagedAt": "2026-10-21T07:45:22.696Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:26439#4266",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "robertklep",
       "link": "https://community.homey.app/t/26439/4266",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "General advice about changing ids.",
+      "triagedAt": "2026-10-21T07:45:22.696Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:26439#4270",
@@ -8366,40 +8375,52 @@
     },
     {
       "id": "forum:26439#4273",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "JeeHaa",
       "link": "https://community.homey.app/t/26439/4273",
       "mfrs": [],
       "pids": [],
       "images": 2,
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Tip: Homey firmware adds power to generic Zigbee plugs.",
+      "triagedAt": "2026-10-21T07:45:22.696Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:26439#4279",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "green",
       "link": "https://community.homey.app/t/26439/4279",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Question about the interview tool, no device ids.",
+      "triagedAt": "2026-10-21T07:45:22.696Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:26439#4287",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "To_Lou",
       "link": "https://community.homey.app/t/26439/4287",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Advice to run a Zigbee interview.",
+      "triagedAt": "2026-10-21T07:45:22.696Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:26439#4289",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "robertklep",
       "link": "https://community.homey.app/t/26439/4289",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Advice to run a Zigbee interview.",
+      "triagedAt": "2026-10-21T07:45:22.696Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:26439#4290",
@@ -8413,12 +8434,15 @@
     },
     {
       "id": "forum:26439#4291",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "robertklep",
       "link": "https://community.homey.app/t/26439/4291",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "UI hint for the interview.",
+      "triagedAt": "2026-10-21T07:45:22.696Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:26439#4288",
@@ -9527,12 +9551,15 @@
     },
     {
       "id": "forum:89271#31",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Pavel_Karzov",
       "link": "https://community.homey.app/t/89271/31",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "GLEDOPTO GL-C-007 RGBW controller is served by the Gledopto Homey apps (com.gledopto, com.gledopto.lights).",
+      "triagedAt": "2026-10-21T07:45:22.696Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:89271#32",
@@ -11164,12 +11191,15 @@
     },
     {
       "id": "forum:26439#4465",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Gisle_Johnsen",
       "link": "https://community.homey.app/t/26439/4465",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "Philips LTW012 is a Hue bulb served by the Philips Hue app.",
+      "triagedAt": "2026-10-21T07:45:22.696Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:26439#4466",
@@ -13695,12 +13725,15 @@
     },
     {
       "id": "forum:140352#298",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Naresh_Kodali",
       "link": "https://community.homey.app/t/140352/298",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "HOBEIAN/ZG-204ZV on presence_sensor_radar.",
+      "triagedAt": "2026-10-21T07:45:22.696Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#302",
@@ -14178,12 +14211,15 @@
     },
     {
       "id": "forum:26439#4695",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Mark_Hermens",
       "link": "https://community.homey.app/t/26439/4695",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "eWeLight/ZB-CL01 on bulb_rgb.",
+      "triagedAt": "2026-10-21T07:45:22.696Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:26439#4697",
@@ -16789,12 +16825,15 @@
     },
     {
       "id": "forum:26439#4851",
-      "status": "needs-info",
+      "status": "fixed",
       "author": "zroth",
       "link": "https://community.homey.app/t/26439/4851",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "iHorn / LH02121 PIR motion sensor (IAS Zone 0x0500, device type 1026) added to slim_motion_sensor. Ids from the Homey interview in the post. Maker iHORN (ihorn.com.cn).",
+      "triagedAt": "2026-10-21T07:45:22.696Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:26439#4859",
@@ -17282,12 +17321,14 @@
     },
     {
       "id": "johan-issue:575",
-      "status": "needs-info",
-      "note": "open issue; request-no-identity; research or diag needed",
+      "status": "fixed",
+      "note": "3A Smart Home DE / LXN59-2S7LX1.0 (Zemismart ZW-EU-02, 2-gang relay, native onOff on EP1+EP2) added to switch_2gang. Ids from the Homey interview in the issue; Z2M lists the same model (Nue/3A, PR Koenkk/zigbee2mqtt #3905 by lostpoint-ru).",
       "sources": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/575"
       ],
-      "author": "MarceloSilvaLeite"
+      "author": "MarceloSilvaLeite",
+      "triagedAt": "2026-10-21T07:45:22.696Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "johan-issue:576",
@@ -18826,12 +18867,15 @@
     },
     {
       "id": "forum:140352#666",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "CVeer",
       "link": "https://community.homey.app/t/140352/666",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "HOBEIAN/ZG-227Z on climate_sensor.",
+      "triagedAt": "2026-10-21T07:45:22.696Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#667",
@@ -18848,14 +18892,17 @@
     },
     {
       "id": "forum:140352#669",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Fiek",
       "link": "https://community.homey.app/t/140352/669",
       "mfrs": [],
       "pids": [
         "TS0505B"
       ],
-      "why": "pid-only"
+      "why": "pid-only",
+      "note": "_TZ3210_s8lvbbuc/TS0505B owned only by light_bulb_rgb_rgbw (no climate driver claims it now).",
+      "triagedAt": "2026-10-21T07:45:22.696Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#670",
@@ -20051,14 +20098,17 @@
     },
     {
       "id": "forum:140352#757",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Haadeess",
       "link": "https://community.homey.app/t/140352/757",
       "mfrs": [],
       "pids": [
         "TS1201"
       ],
-      "why": "pid-only"
+      "why": "pid-only",
+      "note": "_TZ3290_7v1k4vufotpowp9z/TS1201 on ir_blaster.",
+      "triagedAt": "2026-10-21T07:45:22.696Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#760",
@@ -21267,12 +21317,15 @@
     },
     {
       "id": "forum:140352#824",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "JohnnyBravo",
       "link": "https://community.homey.app/t/140352/824",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "eWeLink/CK-TLSR8656-SS5-01(7014) on climate_sensor.",
+      "triagedAt": "2026-10-21T07:45:22.696Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#828",
@@ -21475,14 +21528,17 @@
     },
     {
       "id": "forum:140352#877",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Mario_F",
       "link": "https://community.homey.app/t/140352/877",
       "mfrs": [],
       "pids": [
         "TS1201"
       ],
-      "why": "pid-only"
+      "why": "pid-only",
+      "note": "Moes UFO-R11 _TZ3290_ot6ewjvmejq5ekhl/TS1201 on ir_blaster.",
+      "triagedAt": "2026-10-21T07:45:22.696Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#879",
@@ -21606,12 +21662,15 @@
     },
     {
       "id": "forum:140352#895",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Ronny_M",
       "link": "https://community.homey.app/t/140352/895",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "note": "HOBEIAN/ZG-101ZL on button_wireless_1.",
+      "triagedAt": "2026-10-21T07:45:22.696Z",
+      "triagedVia": "needs-info-web-pass-2026-10-21"
     },
     {
       "id": "forum:140352#898",
