@@ -41,12 +41,16 @@ function removeMfr(j, needle) {
 
 function addMfrs(j, list) {
   j.zigbee.manufacturerName = j.zigbee.manufacturerName || [];
-  const set = new Set(j.zigbee.manufacturerName);
+  // P2920: normalize at read. A spelling already present in any case is the
+  // couple; do not mint extra case forms (an all-caps _TZ3000_TONRAPSK was
+  // re-added on every sync phase and tripped the compose<->app.json gate).
+  const set = new Set(j.zigbee.manufacturerName.map((m) => String(m).toLowerCase()));
   let added = 0;
   for (const m of list) {
-    if (!set.has(m)) {
+    const key = String(m).toLowerCase();
+    if (!set.has(key)) {
       j.zigbee.manufacturerName.push(m);
-      set.add(m);
+      set.add(key);
       added++;
     }
   }
