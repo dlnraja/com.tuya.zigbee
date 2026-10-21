@@ -121,3 +121,5 @@ drivers/plug_smart/assets/firmware/1715138033-tk_common_link_lp_OTA_1.0.13.bin
 
 # KB (P-KB): research-only knowledge base, never shipped
 data/kb/
+# P-KB: research leads (KB candidates, cross-research reports) never ship
+data/leads/
