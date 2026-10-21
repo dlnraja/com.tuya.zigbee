@@ -1,0 +1,202 @@
+{
+ "batch": 0,
+ "applied": [
+  {
+   "mfr": "_TZ3000_pkeqinnt",
+   "pid": "TS0043",
+   "driver": "button_wireless_3",
+   "rule": "sibling",
+   "source": "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/tuya/_TZ3000_TS0043_3gang_remote.json"
+  },
+  {
+   "mfr": "_TZE284_hkdl5fmv",
+   "pid": "TS0601",
+   "driver": "energy_meter_din",
+   "rule": "sibling",
+   "source": "https://www.zigbee2mqtt.io/devices/ERS-10TZBVK-AA.html"
+  },
+  {
+   "mfr": "_TZE284_goecjd1t",
+   "pid": "TS0601",
+   "driver": "radiator_valve",
+   "rule": "sibling",
+   "source": "https://www.zigbee2mqtt.io/devices/ZWPM16.html"
+  },
+  {
+   "mfr": "_TYZB01_4obovpbi",
+   "pid": "TS0216",
+   "driver": "siren",
+   "rule": "sibling",
+   "source": "https://www.zigbee2mqtt.io/devices/HS2WD-E.html"
+  },
+  {
+   "mfr": "_TYZB01_bwsijaty",
+   "pid": "TS0219",
+   "driver": "siren",
+   "rule": "pid-unique",
+   "source": "https://www.zigbee2mqtt.io/devices/R7051.html"
+  },
+  {
+   "mfr": "_TYZB01_rs7ff6o7",
+   "pid": "TS0219",
+   "driver": "siren",
+   "rule": "pid-unique",
+   "source": "https://www.zigbee2mqtt.io/devices/R7051.html"
+  },
+  {
+   "mfr": "_TYZB01_ynsiasng",
+   "pid": "TS0219",
+   "driver": "siren",
+   "rule": "pid-unique",
+   "source": "https://www.zigbee2mqtt.io/devices/R7051.html"
+  },
+  {
+   "mfr": "_TZ3000_hopb2kjm",
+   "pid": "TS0002",
+   "driver": "switch_2gang",
+   "rule": "sibling",
+   "source": "https://www.zigbee2mqtt.io/devices/TS0002_power.html"
+  },
+  {
+   "mfr": "_TZE284_xuflgcnz",
+   "pid": "TS0601",
+   "driver": "valve_irrigation",
+   "rule": "sibling",
+   "source": "https://www.zigbee2mqtt.io/devices/ZVG1.html"
+  },
+  {
+   "mfr": "_TZ3000_kxlmv9ag",
+   "pid": "TS0207",
+   "driver": "zigbee_repeater",
+   "rule": "sibling",
+   "source": "https://www.zigbee2mqtt.io/devices/TS0207_repeater.html"
+  }
+ ],
+ "skipped": [
+  {
+   "mfr": "_TZ3000_i3rjdrwu",
+   "pid": "TS0042",
+   "driver": "button_wireless_2",
+   "why": "dual couple: 01MINIZB@switch_1gang,BASICZBR3@switch_1gang,S26R2ZB@switch_1gang,S31ZB@switch_1gang,TS0001@switch_1gang,TS0001_POWER@switch_1gang,TS0001_SWITCH@switch_1gang,TS0001_SWITCH_MODULE@switch_1gang,TS0003@switch_1gang,TS000F@switch_1gang,TS0011@switch_1gang,TS0012@switch_1gang,TS0014@switch_1gang,TS0101@switch_1gang,TS0111@switch_1gang,TS011F@switch_1gang,TS0601@switch_1gang,TS0726@switch_1gang,TS110E@switch_1gang,TS130F@switch_1gang,TS4100@switch_1gang,ZBM5-1C-120@switch_1gang,ZBM5-2C-120@switch_1gang,ZBM5-3C-120@switch_1gang,ZBMINI@switch_1gang,ZBMINIL2@switch_1gang,ZBMINIL2-R2@switch_1gang,ZBMINIR@switch_1gang,ZBMINIR2@switch_1gang,ZBMINIR2-R2@switch_1gang"
+  },
+  {
+   "mfr": "_TZE204_myd45weu",
+   "pid": "TS0222",
+   "driver": "climate_sensor",
+   "why": "dual couple: TS0601@soil_sensor"
+  },
+  {
+   "mfr": "_TZ3000_bmhwnl7s",
+   "pid": "TS130F",
+   "driver": "curtain_module_2_gang",
+   "why": "dual couple: TS0601@climate_sensor"
+  },
+  {
+   "mfr": "_TZ3000_esynmmox",
+   "pid": "TS130F",
+   "driver": "curtain_module_2_gang",
+   "why": "dual couple: TS0601@climate_sensor"
+  },
+  {
+   "mfr": "_TZ3000_xdo0hj1k",
+   "pid": "TS130F",
+   "driver": "curtain_module_2_gang",
+   "why": "dual couple: TS0601@climate_sensor"
+  },
+  {
+   "mfr": "_TZB000_yqjaollc",
+   "pid": "TS030F",
+   "driver": "curtain_motor",
+   "why": "dual couple: 01MINIZB@plug_energy_monitor,BASICZBR3@plug_energy_monitor,S26R2ZB@plug_energy_monitor,S31ZB@plug_energy_monitor,TS0001@plug_energy_monitor,TS0001_POWER@plug_energy_monitor,TS0001_SWITCH@plug_energy_monitor,TS0001_SWITCH_MODULE@plug_energy_monitor,TS000F@plug_energy_monitor,TS0011@plug_energy_monitor,TS0012@plug_energy_monitor,TS0014@plug_energy_monitor,TS0101@plug_energy_monitor,TS0111@plug_energy_monitor,TS011F@plug_energy_monitor,TS0601@plug_energy_monitor,TS0726@plug_energy_monitor,TS110E@plug_energy_monitor,TS130F@plug_energy_monitor,TS4100@plug_energy_monitor,ZBM5-1C-120@plug_energy_monitor,ZBM5-2C-120@plug_energy_monitor,ZBM5-3C-120@plug_energy_monitor,ZBMINI@plug_energy_monitor,ZBMINIL2@plug_energy_monitor,ZBMINIL2-R2@plug_energy_monitor,ZBMINIR@plug_energy_monitor,ZBMINIR2@plug_energy_monitor,ZBMINIR2-R2@plug_energy_monitor"
+  },
+  {
+   "mfr": "_TZ1800_akzvkzqq",
+   "pid": "TS0211",
+   "driver": "doorbell",
+   "why": "dual couple: TS0601@usb_dongle_triple"
+  },
+  {
+   "mfr": "_TZ3290_8xzb2ghn",
+   "pid": "TS1201",
+   "driver": "ir_blaster",
+   "why": "dual couple: TS0601@button_wireless_2,TS0002@button_wireless_2"
+  },
+  {
+   "mfr": "_TZ3290_uc8lwbi2",
+   "pid": "TS1201",
+   "driver": "ir_blaster",
+   "why": "dual couple: TS0601@button_wireless_2,TS0002@button_wireless_2"
+  },
+  {
+   "mfr": "_TZ3000_lfa05ajd",
+   "pid": "TS0201",
+   "driver": "lcdtemphumidluxsensor",
+   "why": "dual couple: TS0601@switch_1gang"
+  },
+  {
+   "mfr": "_TZ3000_imdfhhud",
+   "pid": "TS0207",
+   "driver": "rain_sensor",
+   "why": "dual couple: TS0601@sensor_contact_zigbee"
+  },
+  {
+   "mfr": "_TYZB01_o63ssaah",
+   "pid": "TS0207",
+   "driver": "water_leak_sensor",
+   "why": "dual couple: _TZ3000_EIT6L5@water_leak_sensor_tuya,_TZ3000_KYB656NO@water_leak_sensor_tuya,3315-S@water_leak_sensor_tuya,3315-SEU@water_leak_sensor_tuya,CK-TLSR8656-SS5-01(7019)@water_leak_sensor_tuya,HS1WL@water_leak_sensor_tuya,LS21001@water_leak_sensor_tuya,LUMI.SENSOR_WLEAK.AQ1@water_leak_sensor_tuya,SJCGQ11LM@water_leak_sensor_tuya,SJCGQ12LM@water_leak_sensor_tuya,SJCGQ13LM@water_leak_sensor_tuya,SNZB-05@water_leak_sensor_tuya,SNZB-05P@water_leak_sensor_tuya,SQ510A@water_leak_sensor_tuya,TS0601@water_leak_sensor_tuya,ZG-222Z@water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_abaplimj",
+   "pid": "TS0207",
+   "driver": "water_leak_sensor",
+   "why": "dual couple: _TZ3000_EIT6L5@water_leak_sensor_tuya,_TZ3000_KYB656NO@water_leak_sensor_tuya,3315-S@water_leak_sensor_tuya,3315-SEU@water_leak_sensor_tuya,CK-TLSR8656-SS5-01(7019)@water_leak_sensor_tuya,HS1WL@water_leak_sensor_tuya,LS21001@water_leak_sensor_tuya,LUMI.SENSOR_WLEAK.AQ1@water_leak_sensor_tuya,SJCGQ11LM@water_leak_sensor_tuya,SJCGQ12LM@water_leak_sensor_tuya,SJCGQ13LM@water_leak_sensor_tuya,SNZB-05@water_leak_sensor_tuya,SNZB-05P@water_leak_sensor_tuya,SQ510A@water_leak_sensor_tuya,TS0601@water_leak_sensor_tuya,ZG-222Z@water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_amis43tj",
+   "pid": "TS0207",
+   "driver": "water_leak_sensor",
+   "why": "dual couple: _TZ3000_EIT6L5@water_leak_sensor_tuya,_TZ3000_KYB656NO@water_leak_sensor_tuya,3315-S@water_leak_sensor_tuya,3315-SEU@water_leak_sensor_tuya,CK-TLSR8656-SS5-01(7019)@water_leak_sensor_tuya,HS1WL@water_leak_sensor_tuya,LS21001@water_leak_sensor_tuya,LUMI.SENSOR_WLEAK.AQ1@water_leak_sensor_tuya,SJCGQ11LM@water_leak_sensor_tuya,SJCGQ12LM@water_leak_sensor_tuya,SJCGQ13LM@water_leak_sensor_tuya,SNZB-05@water_leak_sensor_tuya,SNZB-05P@water_leak_sensor_tuya,SQ510A@water_leak_sensor_tuya,TS0601@water_leak_sensor_tuya,ZG-222Z@water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_arw23zcs",
+   "pid": "TS0207",
+   "driver": "water_leak_sensor",
+   "why": "dual couple: TS0601@switch_1gang"
+  },
+  {
+   "mfr": "_TZ3000_eit7p838",
+   "pid": "TS0207",
+   "driver": "water_leak_sensor",
+   "why": "dual couple: _TZ3000_EIT6L5@water_leak_sensor_tuya,_TZ3000_KYB656NO@water_leak_sensor_tuya,3315-S@water_leak_sensor_tuya,3315-SEU@water_leak_sensor_tuya,CK-TLSR8656-SS5-01(7019)@water_leak_sensor_tuya,HS1WL@water_leak_sensor_tuya,LS21001@water_leak_sensor_tuya,LUMI.SENSOR_WLEAK.AQ1@water_leak_sensor_tuya,SJCGQ11LM@water_leak_sensor_tuya,SJCGQ12LM@water_leak_sensor_tuya,SJCGQ13LM@water_leak_sensor_tuya,SNZB-05@water_leak_sensor_tuya,SNZB-05P@water_leak_sensor_tuya,SQ510A@water_leak_sensor_tuya,TS0601@water_leak_sensor_tuya,ZG-222Z@water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_hgm6k8ku",
+   "pid": "TS0207",
+   "driver": "water_leak_sensor",
+   "why": "dual couple: TS0601@climate_sensor"
+  },
+  {
+   "mfr": "_TZ3000_it1hm1cr",
+   "pid": "TS0207",
+   "driver": "water_leak_sensor",
+   "why": "dual couple: TS0601@switch_1gang"
+  },
+  {
+   "mfr": "_TZ3000_piuensvr",
+   "pid": "TS0207",
+   "driver": "water_leak_sensor",
+   "why": "dual couple: TS0601@climate_sensor"
+  },
+  {
+   "mfr": "_TZ3000_n0lphcok",
+   "pid": "TS0207",
+   "driver": "zigbee_repeater",
+   "why": "dual couple: TS0001@switch_1gang"
+  }
+ ],
+ "appJsonBytes": {
+  "before": 2645421,
+  "after": 2645611,
+  "delta": 190
+ }
+}
