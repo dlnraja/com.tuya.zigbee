@@ -185,3 +185,5 @@
 - **Koenkk/zigbee-herdsman-converters** (MIT) — EF00 command ids, appVersion layout.
 Details: `docs/knowledge/WIFI_LOCAL_PROTOCOLS_P2930.md`.
 - **zigpy/zha-device-handlers** (Apache-2.0) and **dresden-elektronik/deconz-rest-plugin** (BSD-3) — Tuya time answer / MCU version behaviour (P2933, own code).
+
+- P2932 port (2026-10-21) of master P2922/P2923 for drivers in the Bastien fleet only: `3A Smart Home DE`/`LXN59-2S7LX1.0` -> switch_2gang (JohanBendz/com.tuya.zigbee #575, Koenkk/zigbee2mqtt #3905); `_TZE2841000000_8se38w3c`/TS0601 -> climate_sensor with DP3 battery_state enum (forum 140352#2265 okidoki, Zigbee2MQTT tuya.ts TZ-ZT01_GA4 by Koenkk). Own wording.
