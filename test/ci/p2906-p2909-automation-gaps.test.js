@@ -47,7 +47,8 @@ describe('P2906 publish paths + unified-ci use the shared rules-gates action', (
     assert.ok(RG.LOG_LINES >= 100 && RG.LOG_LINES <= 1000);
     const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'rg-'));
     fs.mkdirSync(path.join(tmp, 'g'));
-    fs.writeFileSync(path.join(tmp, 'g/x.js'), 'for (let i=0;i<300;i++) console.log("line"+i); process.exit(3);');
+    fs.writeFileSync(path.join(tmp, 'g/x.js'), 'for (let i=0;i<300;i++) console.log("line"+i); process.exitCode = 3;');
+    // WHY(P2924): process.exit() could cut a piped stdout under CPU load (flake seen at line85); exitCode lets it flush.
     const r = RG.runGate({ id: 'x', file: 'g/x.js' }, { cwd: tmp });
     assert.strictEqual(r.status, 'fail');
     assert.strictEqual(r.log.split('\n').length, RG.LOG_LINES);
