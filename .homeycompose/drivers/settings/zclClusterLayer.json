@@ -1,0 +1,13 @@
+{
+  "id": "zcl_cluster_layer",
+  "type": "checkbox",
+  "label": {
+    "en": "ZCL cluster layer (advanced)",
+    "fr": "Couche clusters ZCL (avancé)"
+  },
+  "hint": {
+    "en": "Extra command capture, bounded bindings and reporting fallback on top of the native setup. Turn off if this device misbehaves.",
+    "fr": "Capture de commandes, liaisons bornées et relève de secours en plus de la configuration native. Désactivez si l'appareil se comporte mal."
+  },
+  "value": true
+}

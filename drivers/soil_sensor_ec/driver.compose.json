@@ -88,5 +88,12 @@
     "zigbee"
   ],
   "id": "soil_sensor_ec",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "settings": [
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
+    }
+  ]
 }

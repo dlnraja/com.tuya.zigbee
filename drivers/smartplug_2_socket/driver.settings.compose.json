@@ -156,5 +156,10 @@
         }
       }
     ]
+  },
+  {
+    "$extends": [
+      "zclClusterLayer"
+    ]
   }
 ]

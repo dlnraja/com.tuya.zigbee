@@ -241,6 +241,11 @@
         "en": "Dimmer/command (default) sends levelControl brightness steps on rotate. Scene mode uses OnOff 0xFC rotate_left/right instead.",
         "fr": "Dimmer/commande (défaut) envoie des pas levelControl à la rotation. Mode scène utilise OnOff 0xFC rotate_left/right."
       }
+    },
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
     }
   ]
 }

@@ -1028,6 +1028,11 @@
           }
         }
       ]
+    },
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
     }
   ],
   "name": {

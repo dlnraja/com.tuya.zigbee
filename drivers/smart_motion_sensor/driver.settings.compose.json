@@ -14,5 +14,10 @@
       "min": 1,
       "max": 99
     }
+  },
+  {
+    "$extends": [
+      "zclClusterLayer"
+    ]
   }
 ]

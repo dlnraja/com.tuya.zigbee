@@ -142,7 +142,13 @@
     "conditions": [],
     "actions": []
   },
-  "settings": [],
+  "settings": [
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
+    }
+  ],
   "id": "air_purifier_motion",
   "version": "1.0.0",
   "metadata": {

@@ -166,5 +166,12 @@
     }
   ],
   "id": "garage_door_opener",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "settings": [
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
+    }
+  ]
 }

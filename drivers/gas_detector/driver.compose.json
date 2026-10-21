@@ -346,6 +346,11 @@
         "en": "Enable if sensor reports gas alarm inverted (true when no gas, false when gas detected). Fixes NOUS E9 and similar devices.",
         "fr": "Activez si le capteur signale l'alarme gaz inversée (vrai quand pas de gaz, faux quand gaz détecté). Corrige NOUS E9 et appareils similaires."
       }
+    },
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
     }
   ],
   "images": {

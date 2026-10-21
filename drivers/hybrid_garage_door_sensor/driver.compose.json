@@ -118,6 +118,11 @@
       "hint": {
         "en": "Automatically close garage door after N seconds (0 to disable)"
       }
+    },
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
     }
   ],
   "images": {

@@ -284,6 +284,11 @@
         "en": "Sun-driven white temperature over the day.",
         "fr": "Blanc piloté par le soleil au fil du jour."
       }
+    },
+    {
+      "$extends": [
+        "zclClusterLayer"
+      ]
     }
   ],
   "images": {
