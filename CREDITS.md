@@ -253,3 +253,4 @@ Facts (ids, DP numbers, model names) indexed with commit-pinned links; no prose 
 - **zigpy** — zha-device-handlers (Apache-2.0); **dresden-elektronik** — deCONZ DDFs (BSD-3-Clause); **blakadder** — zigbee templates (MIT)
 - **make-all** — tuya-local (MIT); **jasonacox** — tinytuya (MIT); **rospogrigio** — localtuya (GPL-3.0); **JohanBendz** — com.tuya.zigbee (GPL-3.0)
 - **Athom** — node-zigbee-clusters, Homey Apps SDK docs; **Tuya** — developer docs (MCU/Zigbee serial protocol)
+- P2958 (2026-10-21): dedicated drivers for Z2M padded fingerprints AOYAN AY204T / AY222Z and BlitzWolf BW-IS9 `_TZ3000_eit7p838 ` (Koenkk/zigbee-herdsman-converters: hobeian.ts, tuya.ts PR #12488 by zyjsmile857, blitzwolf.ts).

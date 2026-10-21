@@ -5,13 +5,15 @@
    "mfr": "_TZ3000_pmz6miyu",
    "pid": "TS011F",
    "host": "universal_zigbee",
-   "status": "provisional",
+   "status": "demoted",
    "confidence": 0.4,
    "item": "johan-issue:451",
    "evidence": "ocr-cache johan-issue:451",
    "refs": [],
    "why": "ids from evidence, no reference confirms the pairing yet",
-   "since": "2026-10-21"
+   "since": "2026-10-21",
+   "reason": "OCR look-alike of _tz3000_pmz6mjyu already on button_wireless_2",
+   "at": "2026-10-21"
   }
  ]
 }
