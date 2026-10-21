@@ -1,0 +1,1150 @@
+{
+ "note": "P2936 ids extracted from Homey diag/crash/mail/CI reports (ids only)",
+ "updated": "2026-10-21T09:43:05.993Z",
+ "reports": [
+  {
+   "id": "1a15495a83e6c0bf",
+   "date": "2026-10-19T14:34:16Z",
+   "kind": "forum-mail",
+   "mfrs": [
+    "_TZ3000_nrfkrgf4"
+   ],
+   "pids": [
+    "TS0046"
+   ],
+   "logIds": [],
+   "couples": [
+    [
+     "_TZ3000_nrfkrgf4",
+     "TS0046"
+    ]
+   ],
+   "url": "gmail",
+   "excerpt": "Homey Community Forum: [APP][Pro] Universal TUYA Zigbee Device App - test"
+  },
+  {
+   "id": "1a141055ec5013b5",
+   "date": "2026-10-15T19:23:52Z",
+   "kind": "forum-mail",
+   "mfrs": [
+    "_TZE284_9ern5sfh"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "logIds": [],
+   "couples": [
+    [
+     "_TZE284_9ern5sfh",
+     "TS0601"
+    ]
+   ],
+   "url": "gmail",
+   "excerpt": "Homey Community Forum: [APP][Pro] Universal TUYA Zigbee Device App - test"
+  },
+  {
+   "id": "1a0fe50a55c72006",
+   "date": "2026-10-02T20:31:31Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZE284_rqcuwlsa"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "logIds": [],
+   "couples": [
+    [
+     "_TZE284_rqcuwlsa",
+     "TS0601"
+    ]
+   ],
+   "url": "gmail",
+   "excerpt": "Re: [JohanBendz/com.tuya.zigbee] Device Request - solar soil sensor - _TZE284_rqcuwlsa / TS0601 (Issue #1387)"
+  },
+  {
+   "id": "1a0fe5098ce526de",
+   "date": "2026-10-02T20:31:27Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZE284_hdml1aav"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "logIds": [],
+   "couples": [
+    [
+     "_TZE284_hdml1aav",
+     "TS0601"
+    ]
+   ],
+   "url": "gmail",
+   "excerpt": "Re: [JohanBendz/com.tuya.zigbee] Device Request - ZIGBEE Soil moister sensor - _TZE284_hdml1aav / [TS0601] (Issue #1363)"
+  },
+  {
+   "id": "1a0fe508af4903fa",
+   "date": "2026-10-02T20:31:24Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZE284_myd45weu"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "logIds": [],
+   "couples": [
+    [
+     "_TZE284_myd45weu",
+     "TS0601"
+    ]
+   ],
+   "url": "gmail",
+   "excerpt": "Re: [JohanBendz/com.tuya.zigbee] Device Request - [Tuya Smart Zigbee Soil Tester Temperature and Humidity Meter] - [TS0601 / _TZE284_myd45weu] (Issue #1280)"
+  },
+  {
+   "id": "1a0fe504fc1c4773",
+   "date": "2026-10-02T20:31:08Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZE284_rqcuwlsa"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "logIds": [],
+   "couples": [
+    [
+     "_TZE284_rqcuwlsa",
+     "TS0601"
+    ]
+   ],
+   "url": "gmail",
+   "excerpt": "Re: [JohanBendz/com.tuya.zigbee] Device Request - solar soil sensor - _TZE284_rqcuwlsa / TS0601 (Issue #1387)"
+  },
+  {
+   "id": "1a0fe503a6073c62",
+   "date": "2026-10-02T20:31:03Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZE284_hdml1aav"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "logIds": [],
+   "couples": [
+    [
+     "_TZE284_hdml1aav",
+     "TS0601"
+    ]
+   ],
+   "url": "gmail",
+   "excerpt": "Re: [JohanBendz/com.tuya.zigbee] Device Request - ZIGBEE Soil moister sensor - _TZE284_hdml1aav / [TS0601] (Issue #1363)"
+  },
+  {
+   "id": "1a0fe502b2c001ad",
+   "date": "2026-10-02T20:30:59Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZE284_myd45weu"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "logIds": [],
+   "couples": [
+    [
+     "_TZE284_myd45weu",
+     "TS0601"
+    ]
+   ],
+   "url": "gmail",
+   "excerpt": "Re: [JohanBendz/com.tuya.zigbee] Device Request - [Tuya Smart Zigbee Soil Tester Temperature and Humidity Meter] - [TS0601 / _TZE284_myd45weu] (Issue #1280)"
+  },
+  {
+   "id": "1a0fe4f68cb91990",
+   "date": "2026-10-02T20:30:04Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZE284_nhgdf6qr"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "logIds": [],
+   "couples": [
+    [
+     "_TZE284_nhgdf6qr",
+     "TS0601"
+    ]
+   ],
+   "url": "gmail",
+   "excerpt": "Re: [JohanBendz/com.tuya.zigbee] Device Request - [Soil sensor] - [_TZE284_nhgdf6qr] / [TS0601] (Issue #1223)"
+  },
+  {
+   "id": "1a0fe430bde41291",
+   "date": "2026-10-02T20:16:38Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZE200_ya4ft0w4"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "logIds": [],
+   "couples": [
+    [
+     "_TZE200_ya4ft0w4",
+     "TS0601"
+    ]
+   ],
+   "url": "gmail",
+   "excerpt": "Re: [JohanBendz/com.tuya.zigbee] Device Request - Radar Sensor - _TZE200_ya4ft0w4 / TS0601 (Issue #1185)"
+  },
+  {
+   "id": "1a0fe42fa3e91b17",
+   "date": "2026-10-02T20:16:35Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZE200_ya4ft0w4"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "logIds": [],
+   "couples": [
+    [
+     "_TZE200_ya4ft0w4",
+     "TS0601"
+    ]
+   ],
+   "url": "gmail",
+   "excerpt": "Re: [JohanBendz/com.tuya.zigbee] Device Request - Radar Sensor - _TZE200_ya4ft0w4 / TS0601 (Issue #1185)"
+  },
+  {
+   "id": "1a0fe38639917325",
+   "date": "2026-10-02T20:05:01Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZE284_rjxqso4a"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "logIds": [],
+   "couples": [
+    [
+     "_TZE284_rjxqso4a",
+     "TS0601"
+    ]
+   ],
+   "url": "gmail",
+   "excerpt": "Re: [JohanBendz/com.tuya.zigbee] Device Request - MOES carbon monoxide detector - _TZE284_rjxqso4a / TS0601 (Issue #1294)"
+  },
+  {
+   "id": "1a0fe3823c8092aa",
+   "date": "2026-10-02T20:04:44Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZE284_rjxqso4a"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "logIds": [],
+   "couples": [
+    [
+     "_TZE284_rjxqso4a",
+     "TS0601"
+    ]
+   ],
+   "url": "gmail",
+   "excerpt": "Re: [JohanBendz/com.tuya.zigbee] Device Request - MOES carbon monoxide detector - _TZE284_rjxqso4a / TS0601 (Issue #1294)"
+  },
+  {
+   "id": "1a0f6bfcbae8eb0b",
+   "date": "2026-10-01T09:15:57Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZE284_rqcuwlsa"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "logIds": [],
+   "couples": [
+    [
+     "_TZE284_rqcuwlsa",
+     "TS0601"
+    ]
+   ],
+   "url": "gmail",
+   "excerpt": "Re: [JohanBendz/com.tuya.zigbee] Device Request - solar soil sensor - _TZE284_rqcuwlsa / TS0601 (Issue #1387)"
+  },
+  {
+   "id": "1a0f6b7e6621408d",
+   "date": "2026-10-01T09:07:20Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZE284_hdml1aav"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "logIds": [],
+   "couples": [
+    [
+     "_TZE284_hdml1aav",
+     "TS0601"
+    ]
+   ],
+   "url": "gmail",
+   "excerpt": "Re: [JohanBendz/com.tuya.zigbee] Device Request - ZIGBEE Soil moister sensor - _TZE284_hdml1aav / [TS0601] (Issue #1363)"
+  },
+  {
+   "id": "1a0f69ac8f93b615",
+   "date": "2026-10-01T08:35:32Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZE284_rjxqso4a"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "logIds": [],
+   "couples": [
+    [
+     "_TZE284_rjxqso4a",
+     "TS0601"
+    ]
+   ],
+   "url": "gmail",
+   "excerpt": "Re: [JohanBendz/com.tuya.zigbee] Device Request - MOES carbon monoxide detector - _TZE284_rjxqso4a / TS0601 (Issue #1294)"
+  },
+  {
+   "id": "1a0f69a2de247cfa",
+   "date": "2026-10-01T08:34:52Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZE284_myd45weu"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "logIds": [],
+   "couples": [
+    [
+     "_TZE284_myd45weu",
+     "TS0601"
+    ]
+   ],
+   "url": "gmail",
+   "excerpt": "Re: [JohanBendz/com.tuya.zigbee] Device Request - [Tuya Smart Zigbee Soil Tester Temperature and Humidity Meter] - [TS0601 / _TZE284_myd45weu] (Issue #1280)"
+  },
+  {
+   "id": "1a0f686cb6a3c399",
+   "date": "2026-10-01T08:13:42Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZE284_nhgdf6qr"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "logIds": [],
+   "couples": [
+    [
+     "_TZE284_nhgdf6qr",
+     "TS0601"
+    ]
+   ],
+   "url": "gmail",
+   "excerpt": "Re: [JohanBendz/com.tuya.zigbee] Device Request - [Soil sensor] - [_TZE284_nhgdf6qr] / [TS0601] (Issue #1223)"
+  },
+  {
+   "id": "1a0f6860ec6ea8f6",
+   "date": "2026-10-01T08:12:54Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZE200_ya4ft0w4"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "logIds": [],
+   "couples": [
+    [
+     "_TZE200_ya4ft0w4",
+     "TS0601"
+    ]
+   ],
+   "url": "gmail",
+   "excerpt": "Re: [JohanBendz/com.tuya.zigbee] Device Request - Radar Sensor - _TZE200_ya4ft0w4 / TS0601 (Issue #1185)"
+  },
+  {
+   "id": "1a0f6807bcfd5397",
+   "date": "2026-10-01T08:06:48Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZE284_vvmbj46n"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "logIds": [],
+   "couples": [
+    [
+     "_TZE284_vvmbj46n",
+     "TS0601"
+    ]
+   ],
+   "url": "gmail",
+   "excerpt": "Re: [JohanBendz/com.tuya.zigbee] Device Request - Color LCD temperature/humidity sensor - _TZE284_vvmbj46n / TS0601 (Issue #1150)"
+  },
+  {
+   "id": "1a0f452663f46989",
+   "date": "2026-09-30T21:57:14Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZ3000_mrduubod"
+   ],
+   "pids": [
+    "TS0014"
+   ],
+   "logIds": [],
+   "couples": [
+    [
+     "_TZ3000_mrduubod",
+     "TS0014"
+    ]
+   ],
+   "url": "gmail",
+   "excerpt": "Re: [JohanBendz/com.tuya.zigbee] Device Request - Zigbee 4-Gang Smart Light Switch - Moes / TS0014 (Issue #1413)"
+  },
+  {
+   "id": "1a0ea2c13b4c5ae0",
+   "date": "2026-09-28T22:39:10Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZ3000_zutizvyk"
+   ],
+   "pids": [
+    "TS0203"
+   ],
+   "logIds": [],
+   "couples": [
+    [
+     "_TZ3000_zutizvyk",
+     "TS0203"
+    ]
+   ],
+   "url": "gmail",
+   "excerpt": "Re: [JohanBendz/com.tuya.zigbee] Zigbee Door & window sensor (Issue #1304)"
+  },
+  {
+   "id": "1a0e8b8501a0b740",
+   "date": "2026-09-28T15:53:06Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TYZB01_kvwjujy9"
+   ],
+   "pids": [
+    "TS0222"
+   ],
+   "logIds": [],
+   "couples": [
+    [
+     "_TYZB01_kvwjujy9",
+     "TS0222"
+    ]
+   ],
+   "url": "gmail",
+   "excerpt": "Re: [JohanBendz/com.tuya.zigbee] LCD Temp, Hum, Lux sensor - _TYZB01 _kvwjujy9 / TS0222 (Issue #213)"
+  },
+  {
+   "id": "1a0e8b46ef329927",
+   "date": "2026-09-28T15:48:51Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZ3000_zutizvyk"
+   ],
+   "pids": [
+    "TS0203"
+   ],
+   "logIds": [],
+   "couples": [
+    [
+     "_TZ3000_zutizvyk",
+     "TS0203"
+    ]
+   ],
+   "url": "gmail",
+   "excerpt": "Re: [JohanBendz/com.tuya.zigbee] Zigbee Door & window sensor (Issue #1304)"
+  },
+  {
+   "id": "1a075b5ce1e51437",
+   "date": "2026-09-06T07:54:02Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZ3000_blhvsaqf"
+   ],
+   "pids": [
+    "TS0001"
+   ],
+   "logIds": [],
+   "couples": [
+    [
+     "_TZ3000_blhvsaqf",
+     "TS0001"
+    ]
+   ],
+   "url": "gmail",
+   "excerpt": "Re: [dlnraja/com.tuya.zigbee] [Device Support Request] _TZ3000_blhvsaqf / TS0001 mapped to virtualdriverzigbee (Issue #540)"
+  },
+  {
+   "id": "1a071eec9ad8026d",
+   "date": "2026-09-05T14:17:47Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZ3000_blhvsaqf"
+   ],
+   "pids": [
+    "TS0001"
+   ],
+   "logIds": [],
+   "couples": [
+    [
+     "_TZ3000_blhvsaqf",
+     "TS0001"
+    ]
+   ],
+   "url": "gmail",
+   "excerpt": "Re: [dlnraja/com.tuya.zigbee] [Device Support Request] _TZ3000_blhvsaqf / TS0001 mapped to virtualdriverzigbee (Issue #540)"
+  },
+  {
+   "id": "1a071eeac4050c0b",
+   "date": "2026-09-05T14:17:40Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZ3000_blhvsaqf"
+   ],
+   "pids": [
+    "TS0001"
+   ],
+   "logIds": [],
+   "couples": [
+    [
+     "_TZ3000_blhvsaqf",
+     "TS0001"
+    ]
+   ],
+   "url": "gmail",
+   "excerpt": "Re: [dlnraja/com.tuya.zigbee] [Device Support Request] _TZ3000_blhvsaqf / TS0001 mapped to virtualdriverzigbee (Issue #540)"
+  },
+  {
+   "id": "19f5832559981864",
+   "date": "2026-07-12T21:18:39Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZ3000_izizvvyk"
+   ],
+   "pids": [],
+   "logIds": [],
+   "couples": [],
+   "url": "gmail",
+   "excerpt": "Re: [JohanBendz/com.tuya.zigbee] Zigbee Door & window sensor (Issue #1304)"
+  },
+  {
+   "id": "19f5590ed54baae8",
+   "date": "2026-07-12T09:03:06Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZ3000_u3nv1jwk"
+   ],
+   "pids": [
+    "TS0044"
+   ],
+   "logIds": [],
+   "couples": [
+    [
+     "_TZ3000_u3nv1jwk",
+     "TS0044"
+    ]
+   ],
+   "url": "gmail",
+   "excerpt": "Re: [dlnraja/com.tuya.zigbee] [DEVICE] 4 button touch remote (TS0044 / _TZ3000_u3nv1jwk) (Issue #76)"
+  },
+  {
+   "id": "19f366931d36ab88",
+   "date": "2026-07-06T07:51:28Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZ3000_u3nv1jwk"
+   ],
+   "pids": [
+    "TS0044"
+   ],
+   "logIds": [],
+   "couples": [
+    [
+     "_TZ3000_u3nv1jwk",
+     "TS0044"
+    ]
+   ],
+   "url": "gmail",
+   "excerpt": "Re: [dlnraja/com.tuya.zigbee] [DEVICE] 4 button touch remote (TS0044 / _TZ3000_u3nv1jwk) (Issue #76)"
+  },
+  {
+   "id": "19f36692803d9845",
+   "date": "2026-07-06T07:51:27Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZ3000_u3nv1jwk"
+   ],
+   "pids": [
+    "TS0044"
+   ],
+   "logIds": [],
+   "couples": [
+    [
+     "_TZ3000_u3nv1jwk",
+     "TS0044"
+    ]
+   ],
+   "url": "gmail",
+   "excerpt": "Re: [dlnraja/com.tuya.zigbee] [DEVICE] 4 button touch remote (TS0044 / _TZ3000_u3nv1jwk) (Issue #76)"
+  },
+  {
+   "id": "19f36690fcbd1429",
+   "date": "2026-07-06T07:51:19Z",
+   "kind": "diag",
+   "mfrs": [
+    "_TZ3000_u3nv1jwk"
+   ],
+   "pids": [
+    "TS0044"
+   ],
+   "logIds": [
+    "8c311284-2e91-457b-9648-2ff5bdc89a2c"
+   ],
+   "couples": [
+    [
+     "_TZ3000_u3nv1jwk",
+     "TS0044"
+    ]
+   ],
+   "url": "gmail",
+   "excerpt": "Re: [dlnraja/com.tuya.zigbee] [DEVICE] 4 button touch remote (TS0044 / _TZ3000_u3nv1jwk) (Issue #76)"
+  },
+  {
+   "id": "19eeb724143aaa16",
+   "date": "2026-06-21T18:29:51Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZ3000_mrduubod"
+   ],
+   "pids": [
+    "TS0014"
+   ],
+   "logIds": [],
+   "couples": [
+    [
+     "_TZ3000_mrduubod",
+     "TS0014"
+    ]
+   ],
+   "url": "gmail",
+   "excerpt": "Re: [JohanBendz/com.tuya.zigbee] Device Request - Zigbee 4-Gang Smart Light Switch - Moes / TS0014 (Issue #1413)"
+  },
+  {
+   "id": "19ecb2993c63d9d3",
+   "date": "2026-06-15T12:02:38Z",
+   "kind": "forum-mail",
+   "mfrs": [
+    "_TZE200_npj9bug3"
+   ],
+   "pids": [],
+   "logIds": [],
+   "couples": [],
+   "url": "gmail",
+   "excerpt": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test"
+  },
+  {
+   "id": "19ec5458fd8d711c",
+   "date": "2026-06-14T08:35:28Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZ3210_tgvtvdoc"
+   ],
+   "pids": [
+    "TS0207"
+   ],
+   "logIds": [],
+   "couples": [
+    [
+     "_TZ3210_tgvtvdoc",
+     "TS0207"
+    ]
+   ],
+   "url": "gmail",
+   "excerpt": "Re: [dlnraja/com.tuya.zigbee] Bug Report: Incorrect recognition of Rain Sensor TS0207 as Water Leak Sensor (Issue #388)"
+  },
+  {
+   "id": "19ec545061043ef3",
+   "date": "2026-06-14T08:34:53Z",
+   "kind": "forum-mail",
+   "mfrs": [
+    "_TYZB01_qezuin6k"
+   ],
+   "pids": [],
+   "logIds": [],
+   "couples": [],
+   "url": "gmail",
+   "excerpt": "Re: [dlnraja/com.tuya.zigbee] [Auto] 130 new fingerprints from community (2026-06) (Issue #418)"
+  },
+  {
+   "id": "19eabdffaa075289",
+   "date": "2026-06-09T10:14:00Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZ3210_jlf1nepw"
+   ],
+   "pids": [],
+   "logIds": [
+    "31dd492e-fc1d-4abd-833d-7636f2e65d10"
+   ],
+   "couples": [],
+   "url": "gmail",
+   "excerpt": "Re: [JohanBendz/com.tuya.zigbee] Device Request: Tuya Power Monitoring Plug variant (_TZ3210_jlf1nepw) (Issue #1408)"
+  },
+  {
+   "id": "19eab769dbbc1585",
+   "date": "2026-06-09T08:18:56Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZE200_9xfjixap"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "logIds": [],
+   "couples": [
+    [
+     "_TZE200_9xfjixap",
+     "TS0601"
+    ]
+   ],
+   "url": "gmail",
+   "excerpt": "Re: [dlnraja/com.tuya.zigbee] TS0601 _TZE200_9xfjixap #339#379 #381  #384 (Issue #395)"
+  },
+  {
+   "id": "19ea7e7965e6d7e0",
+   "date": "2026-06-08T15:43:50Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZE200_9xfjixap",
+    "_TZE284_oitavov2"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "logIds": [
+    "7e326019-9cdd-4980-97c6-bb9e1c5bd7ff"
+   ],
+   "couples": [
+    [
+     "_TZE200_9xfjixap",
+     "TS0601"
+    ],
+    [
+     "_TZE284_oitavov2",
+     "TS0601"
+    ]
+   ],
+   "url": "gmail",
+   "excerpt": "Re: [dlnraja/com.tuya.zigbee] TS0601 _TZE200_9xfjixap #339#379 #381  #384 (Issue #395)"
+  },
+  {
+   "id": "19ea79b2da087e74",
+   "date": "2026-06-08T14:20:21Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZE200_9xfjixap"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "logIds": [],
+   "couples": [
+    [
+     "_TZE200_9xfjixap",
+     "TS0601"
+    ]
+   ],
+   "url": "gmail",
+   "excerpt": "Re: [dlnraja/com.tuya.zigbee] TS0601 _TZE200_9xfjixap #339#379 #381  #384 (Issue #395)"
+  },
+  {
+   "id": "19ea77be88127aed",
+   "date": "2026-06-08T13:46:13Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZE200_9xfjixap"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "logIds": [
+    "1f183afb-71b4-4b11-88cb-835a657d33b2"
+   ],
+   "couples": [
+    [
+     "_TZE200_9xfjixap",
+     "TS0601"
+    ]
+   ],
+   "url": "gmail",
+   "excerpt": "Re: [dlnraja/com.tuya.zigbee] TS0601 _TZE200_9xfjixap #339#379 #381  #384 (Issue #395)"
+  },
+  {
+   "id": "19ea168fe1c37881",
+   "date": "2026-06-07T09:27:51Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZE284_aaeasoll"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "logIds": [],
+   "couples": [
+    [
+     "_TZE284_aaeasoll",
+     "TS0601"
+    ]
+   ],
+   "url": "gmail",
+   "excerpt": "Re: [JohanBendz/com.tuya.zigbee] Device Request - [SmarterCurry Solar Lux Sensor] - [SmarterCurry] / [TZE284_aaeasoll / TS0601] (Issue #1379)"
+  },
+  {
+   "id": "19ea124c1cdbe7fe",
+   "date": "2026-06-07T08:13:18Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZE200_9xfjixap"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "logIds": [],
+   "couples": [
+    [
+     "_TZE200_9xfjixap",
+     "TS0601"
+    ]
+   ],
+   "url": "gmail",
+   "excerpt": "Re: [dlnraja/com.tuya.zigbee] TS0601 _TZE200_9xfjixap #339#379 #381  #384 (Issue #395)"
+  },
+  {
+   "id": "19e984fa65c38c87",
+   "date": "2026-06-05T15:03:34Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZE200_hl0ss9oa"
+   ],
+   "pids": [],
+   "logIds": [],
+   "couples": [],
+   "url": "gmail",
+   "excerpt": "Re: [dlnraja/com.tuya.zigbee] 2.4 ghz MMwave _TZE200_hl0ss9oa (Issue #324)"
+  },
+  {
+   "id": "19e984e6ced38c87",
+   "date": "2026-06-05T15:02:11Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZE200_hl0ss9oa"
+   ],
+   "pids": [],
+   "logIds": [],
+   "couples": [],
+   "url": "gmail",
+   "excerpt": "Re: [dlnraja/com.tuya.zigbee] 2.4 ghz MMwave _TZE200_hl0ss9oa (Issue #324)"
+  },
+  {
+   "id": "19e96d2a6cb6f9d8",
+   "date": "2026-06-05T08:07:26Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZE200_3towulqd"
+   ],
+   "pids": [],
+   "logIds": [],
+   "couples": [],
+   "url": "gmail",
+   "excerpt": "Re: [dlnraja/com.tuya.zigbee] [motion_sensor_2] Bug: _TZE200_3towulqd  (Issue #337)"
+  },
+  {
+   "id": "19e92a13cab8d145",
+   "date": "2026-06-04T12:34:59Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZE200_3towulqd"
+   ],
+   "pids": [],
+   "logIds": [
+    "c6e470e8-40d7-4194-9452-06613b6ba1a1"
+   ],
+   "couples": [],
+   "url": "gmail",
+   "excerpt": "Re: [dlnraja/com.tuya.zigbee] [motion_sensor_2] Bug: _TZE200_3towulqd (Issue #337)"
+  },
+  {
+   "id": "19e929920d301058",
+   "date": "2026-06-04T12:26:06Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZE200_3towulqd"
+   ],
+   "pids": [],
+   "logIds": [],
+   "couples": [],
+   "url": "gmail",
+   "excerpt": "Re: [dlnraja/com.tuya.zigbee] [motion_sensor_2] Bug: _TZE200_3towulqd (Issue #337)"
+  },
+  {
+   "id": "19e91f2c88a0f18b",
+   "date": "2026-06-04T09:24:25Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZ3210_jlf1nepw"
+   ],
+   "pids": [],
+   "logIds": [],
+   "couples": [],
+   "url": "gmail",
+   "excerpt": "Re: [JohanBendz/com.tuya.zigbee] Device Request: Tuya Power Monitoring Plug variant (_TZ3210_jlf1nepw) (Issue #1408)"
+  },
+  {
+   "id": "19e8efeeb3c2bb91",
+   "date": "2026-06-03T19:38:49Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZ3210_jlf1nepw"
+   ],
+   "pids": [],
+   "logIds": [],
+   "couples": [],
+   "url": "gmail",
+   "excerpt": "Re: [JohanBendz/com.tuya.zigbee] Device Request: Tuya Power Monitoring Plug variant (_TZ3210_jlf1nepw) (Issue #1408)"
+  },
+  {
+   "id": "19e8ee6805fe6fb6",
+   "date": "2026-06-03T19:12:09Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZE200_9xfjixap"
+   ],
+   "pids": [],
+   "logIds": [
+    "255122ff-7f51-45bb-a1a6-66a462d55160"
+   ],
+   "couples": [],
+   "url": "gmail",
+   "excerpt": "Re: [dlnraja/com.tuya.zigbee] [radiator_valve] Bug: _TZE200_9xfjixap (Issue #339)"
+  },
+  {
+   "id": "19e8ec179055ef8e",
+   "date": "2026-06-03T18:31:42Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZ3210_jlf1nepw"
+   ],
+   "pids": [],
+   "logIds": [],
+   "couples": [],
+   "url": "gmail",
+   "excerpt": "Re: [JohanBendz/com.tuya.zigbee] Device Request: Tuya Power Monitoring Plug variant (_TZ3210_jlf1nepw) (Issue #1408)"
+  },
+  {
+   "id": "19e8e32410f45e09",
+   "date": "2026-06-03T15:55:15Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZ3210_jlf1nepw"
+   ],
+   "pids": [],
+   "logIds": [],
+   "couples": [],
+   "url": "gmail",
+   "excerpt": "Re: [JohanBendz/com.tuya.zigbee] Device Request: Tuya Power Monitoring Plug variant (_TZ3210_jlf1nepw) (Issue #1408)"
+  },
+  {
+   "id": "19e8968dad55d4be",
+   "date": "2026-06-02T17:36:48Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZE200_9xfjixap"
+   ],
+   "pids": [],
+   "logIds": [
+    "851c2566-ed03-4e22-b4fb-cbb18baf1ed9"
+   ],
+   "couples": [],
+   "url": "gmail",
+   "excerpt": "Re: [dlnraja/com.tuya.zigbee] [radiator_valve] Bug: _TZE200_9xfjixap (Issue #339)"
+  },
+  {
+   "id": "19e7d123390b91f8",
+   "date": "2026-05-31T08:06:43Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZE200_hl0ss9oa"
+   ],
+   "pids": [],
+   "logIds": [],
+   "couples": [],
+   "url": "gmail",
+   "excerpt": "Re: [dlnraja/com.tuya.zigbee] 2.4 ghz MMwave _TZE200_hl0ss9oa (Issue #324)"
+  },
+  {
+   "id": "19e7d1234afc26c2",
+   "date": "2026-05-31T08:06:43Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZE200_hl0ss9oa"
+   ],
+   "pids": [],
+   "logIds": [],
+   "couples": [],
+   "url": "gmail",
+   "excerpt": "Re: [dlnraja/com.tuya.zigbee] 2.4 ghz MMwave _TZE200_hl0ss9oa (Issue #324)"
+  },
+  {
+   "id": "19e7d1219a85c930",
+   "date": "2026-05-31T08:06:36Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZ3000_b4awzgct"
+   ],
+   "pids": [],
+   "logIds": [],
+   "couples": [],
+   "url": "gmail",
+   "excerpt": "Re: [dlnraja/com.tuya.zigbee] Smart Button (round). Added but not working (Issue #333)"
+  },
+  {
+   "id": "19e7d1211e50dbe9",
+   "date": "2026-05-31T08:06:34Z",
+   "kind": "forum-mail",
+   "mfrs": [
+    "_TYZB01_a476raq2"
+   ],
+   "pids": [],
+   "logIds": [],
+   "couples": [],
+   "url": "gmail",
+   "excerpt": "Re: [dlnraja/com.tuya.zigbee] [Auto] 51 new fingerprints from community (2026-05) (Issue #335)"
+  },
+  {
+   "id": "19e7d11f4b4b18cf",
+   "date": "2026-05-31T08:06:27Z",
+   "kind": "forum-mail",
+   "mfrs": [
+    "_TZE200_5zbp6j0u"
+   ],
+   "pids": [],
+   "logIds": [],
+   "couples": [],
+   "url": "gmail",
+   "excerpt": "Re: [dlnraja/com.tuya.zigbee] [Auto] 298 new fingerprints from community (2026-05) (Issue #336)"
+  },
+  {
+   "id": "19e7d11e151dc3a1",
+   "date": "2026-05-31T08:06:22Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZE200_3towulqd"
+   ],
+   "pids": [],
+   "logIds": [],
+   "couples": [],
+   "url": "gmail",
+   "excerpt": "Re: [dlnraja/com.tuya.zigbee] [motion_sensor_2] Bug: _TZE200_3towulqd (Issue #337)"
+  },
+  {
+   "id": "19e7d11cfc1cfa4c",
+   "date": "2026-05-31T08:06:17Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZE200_9xfjixap"
+   ],
+   "pids": [],
+   "logIds": [],
+   "couples": [],
+   "url": "gmail",
+   "excerpt": "Re: [dlnraja/com.tuya.zigbee] [radiator_valve] Bug: _TZE200_9xfjixap (Issue #339)"
+  },
+  {
+   "id": "19e7d11c860e6e70",
+   "date": "2026-05-31T08:06:15Z",
+   "kind": "forum-mail",
+   "mfrs": [
+    "_TYZB01_qezuin6k"
+   ],
+   "pids": [],
+   "logIds": [],
+   "couples": [],
+   "url": "gmail",
+   "excerpt": "Re: [dlnraja/com.tuya.zigbee] [Auto] 116 new fingerprints from community (2026-05) (Issue #352)"
+  },
+  {
+   "id": "19e5f193d89a386d",
+   "date": "2026-05-25T12:25:46Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZE200_9xfjixap"
+   ],
+   "pids": [],
+   "logIds": [],
+   "couples": [],
+   "url": "gmail",
+   "excerpt": "Re: [dlnraja/com.tuya.zigbee] [radiator_valve] Bug: _TZE200_9xfjixap (Issue #339)"
+  },
+  {
+   "id": "19e58fd816eccf64",
+   "date": "2026-05-24T07:57:47Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZ3000_famkxci2"
+   ],
+   "pids": [
+    "TS0043"
+   ],
+   "logIds": [],
+   "couples": [
+    [
+     "_TZ3000_famkxci2",
+     "TS0043"
+    ]
+   ],
+   "url": "gmail",
+   "excerpt": "Re: [dlnraja/com.tuya.zigbee] DEVICE REQUEST LORATAP TS0043 (Issue #322)"
+  },
+  {
+   "id": "19e58fd73025ec71",
+   "date": "2026-05-24T07:57:44Z",
+   "kind": "github-mail",
+   "mfrs": [
+    "_TZE200_hl0ss9oa"
+   ],
+   "pids": [],
+   "logIds": [],
+   "couples": [],
+   "url": "gmail",
+   "excerpt": "Re: [dlnraja/com.tuya.zigbee] 2.4 ghz MMwave _TZE200_hl0ss9oa (Issue #324)"
+  }
+ ]
+}
