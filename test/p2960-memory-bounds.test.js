@@ -174,16 +174,23 @@ describe('P2960 legacy log-buffer + migration-queue caps', () => {
 });
 
 describe('P2960 heap regression (soak)', () => {
-  it('10k KPI reports on 300 devices do not grow the heap by more than 8 MB', async function () {
-    this.timeout(20000);
-    const kpi = freshKpi();
-    const homey = fakeHomey();
-    if (global.gc) {global.gc();}
-    const before = process.memoryUsage().heapUsed;
-    for (let i = 0; i < 10000; i++) {await kpi.pushEnergySample(homey, `d${i % 300}`, { power: i, voltage: 230, current: 0.1 });}
-    await kpi.flushKpi(homey);
-    if (global.gc) {global.gc();}
-    const grew = process.memoryUsage().heapUsed - before;
+  // P2961: measured in an isolated `node --expose-gc` child so garbage from other suites cannot skew it.
+  it('10k KPI reports on 300 devices retain less than 8 MB of heap', function () {
+    this.timeout(30000);
+    const { execFileSync } = require('child_process');
+    const mod = JSON.stringify(require.resolve('../lib/utils/energy-kpi'));
+    const script = `
+      const kpi = require(${mod});
+      const store = {};
+      const homey = { settings: { get: async (k) => store[k] || null, set: async (k, v) => { store[k] = JSON.parse(JSON.stringify(v)); } },
+        setTimeout: () => ({}), clearTimeout() {} };
+      (async () => {
+        global.gc(); const before = process.memoryUsage().heapUsed;
+        for (let i = 0; i < 10000; i++) { await kpi.pushEnergySample(homey, 'd' + (i % 300), { power: i, voltage: 230, current: 0.1 }); }
+        await kpi.flushKpi(homey);
+        global.gc(); process.stdout.write(String(process.memoryUsage().heapUsed - before));
+      })();`;
+    const grew = Number(execFileSync(process.execPath, ['--expose-gc', '-e', script]).toString());
     assert.ok(grew < 8 * 1024 * 1024, `heap grew ${Math.round(grew / 1024)} KB`);
   });
 });
