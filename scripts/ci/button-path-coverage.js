@@ -13,8 +13,8 @@ const rows = [];
 for (const id of fs.readdirSync(drv).sort()) {
   const src = read(path.join(drv, id, 'device.js'));
   if (!src) { continue; }
-  const isBtn = /extends\s+ButtonDevice/.test(src);
-  const isMix = /PhysicalButtonMixin/.test(src);
+  const isBtn = /extends\s+[\w(]*ButtonDevice\b/.test(src);
+  const isMix = /PhysicalButtonMixin|extends\s+(UnifiedSwitchBase|TuyaSpecificClusterDevice|TuyaZigbeeDevice)\b/.test(src);
   if (!NAME.test(id) && !isBtn) { continue; }
   if (!isBtn && !isMix && !/_triggerPhysicalFlow|triggerButtonPress/.test(src)) { continue; }
   const base = isBtn ? 'ButtonDevice' : isMix ? 'PhysicalButtonMixin' : 'own';
@@ -29,7 +29,7 @@ for (const id of fs.readdirSync(drv).sort()) {
   if (has(/dp|datapoint/i)) { p.add('ef00_dp'); }
   if (has(/wrapHandleFrame|handleFrame/)) { p.add('raw'); }
   if (has(/multistateInput/)) { p.add('multistate'); }
-  if (isBtn) { ['multistate', 'onoff_attr', 'e000', 'e001', 'raw', 'unknown_capture', 'mode_8004_d020'].forEach((x) => p.add(x)); }
+  if (isBtn) { ['multistate', 'onoff_attr', 'e000', 'e001', 'raw', 'unknown_capture', 'mode_8004_d020', 'dp_crosscheck', 'wake_bind', 'scene_recall'].forEach((x) => p.add(x)); }
   const dedup = inherits || /_triggerPhysicalFlow/.test(src) ? 'router-dynamic' : 'local';
   rows.push({ driver: id, base, dedup, paths: [...p].sort() });
 }
