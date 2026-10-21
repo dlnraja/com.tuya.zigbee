@@ -33,15 +33,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1587 |
+| **App Version** | v9.0.1589 |
 | **Drivers** | 451 (398 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,846 |
-| **Pairing Variants** | 19,029 (4 case combos per fingerprint) |
+| **Pairing Variants** | 19,031 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 918 |
 | **Flow Cards** | 6,118 |
 | **Unique Capabilities** | 176 |
 | **Native OTA Drivers** | 9 |
-| **Test Suites** | 746 files |
+| **Test Suites** | 747 files |
 | **SVG Icons** | 754 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -59,7 +59,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 6 | `generic_tuya` | 581 |
 | 7 | `wall_dimmer_tuya` | 536 |
 | 8 | `device_radiator_valve` | 403 |
-| 9 | `button_wireless_2` | 378 |
+| 9 | `button_wireless_2` | 380 |
 | 10 | `switch_4gang` | 334 |
 | 11 | `switch_3gang` | 313 |
 | 12 | `diy_custom_zigbee` | 306 |
@@ -103,7 +103,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.1587** | v9.0.1586: |
+| **v9.0.1589** | v9.0.1587: |
+| **v9.0.1587** | v9.0.1587: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1586** | v9.0.1586: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1584** | v9.0.1584: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1582** | v9.0.1582: automated publish, manifest sync, and Homey test promotion. |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1570** | v9.0.1570: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1568** | v9.0.1568: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1567** | v9.0.1567: automated publish, manifest sync, and Homey test promotion. |
-| **v9.0.1565** | v9.0.1565: automated publish, manifest sync, and Homey test promotion. |
 
 <!-- CHANGELOG_END -->
 
