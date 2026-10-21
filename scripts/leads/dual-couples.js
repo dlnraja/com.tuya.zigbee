@@ -32,6 +32,7 @@
  */
 const fs = require('fs');
 const path = require('path');
+const { isReviewedCollision } = require('../../tools/ci/lib/reviewed-duals');
 
 const arg = (k, d) => { const a = process.argv.find((x) => x.startsWith(`--${k}=`)); return a ? a.slice(k.length + 3) : d; };
 const ROOT = path.resolve(arg('root', process.cwd()));
@@ -188,6 +189,8 @@ function classify(c, drivers, ev) {
   const key = `${c.mfr}|${c.pid}`;
   const pat = pattern(c, drivers);
   const seen = ev.external.has(key) ? 'external' : ev.internal.has(key) ? 'internal' : 'none';
+  // P2927: reviewed duals (data/native-matrix-reviewed-duals.json), e.g. specific driver + generic fallback.
+  if (isReviewedCollision(key, c.drivers)) {return { pattern: pat, seen, verdict: 'kept', why: 'reviewed dual (native-matrix-reviewed-duals.json): specific driver wins, generic is the fallback' };}
   const r = ev.registry.get(key);
   if (r && c.drivers.includes(r.canonical)) {return { pattern: pat, seen, verdict: 'clear', winner: r.canonical, why: `misattribution registry ${r.id}` };}
   const pk = pidKind(c.pid);

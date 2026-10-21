@@ -284,6 +284,39 @@
       "reason": "Manifest cross-product of the FUT089Z fold (both drivers list TS0601); runtime profile only activates on TS1002.",
       "source": "Z2M miboxer.ts; JohanBendz#1361; u236/homed",
       "date": "2026-10-11"
+    },
+    {
+      "couple": "HEIMAN|TS0041",
+      "drivers": [
+        "smoke_detector_advanced",
+        "universal_zigbee"
+      ],
+      "reason": "Specific driver wins, generic is the fallback (user rule 2026-10-20, kept by user decision 2026-10-21). smoke_detector_advanced is listed before universal_zigbee in app.json (drivers sorted by id), so Homey picks it first; universal_zigbee keeps the HEIMAN brand for its 63 other productIds that no specific driver owns.",
+      "source": "docs/knowledge/P2927_HEIMAN_GENERIC_FALLBACK_DUALS_2026-10-21.md",
+      "date": "2026-10-21",
+      "reviewed_by": "user decision 2026-10-21 (P2927)"
+    },
+    {
+      "couple": "HEIMAN|TS0205",
+      "drivers": [
+        "smoke_detector_advanced",
+        "universal_zigbee"
+      ],
+      "reason": "Specific driver wins, generic is the fallback (user rule 2026-10-20, kept by user decision 2026-10-21). smoke_detector_advanced is listed before universal_zigbee in app.json (drivers sorted by id), so Homey picks it first; universal_zigbee keeps the HEIMAN brand for its 63 other productIds that no specific driver owns.",
+      "source": "docs/knowledge/P2927_HEIMAN_GENERIC_FALLBACK_DUALS_2026-10-21.md",
+      "date": "2026-10-21",
+      "reviewed_by": "user decision 2026-10-21 (P2927)"
+    },
+    {
+      "couple": "HEIMAN|TS0601",
+      "drivers": [
+        "smoke_detector_advanced",
+        "universal_zigbee"
+      ],
+      "reason": "Specific driver wins, generic is the fallback (user rule 2026-10-20, kept by user decision 2026-10-21). smoke_detector_advanced is listed before universal_zigbee in app.json (drivers sorted by id), so Homey picks it first; universal_zigbee keeps the HEIMAN brand for its 63 other productIds that no specific driver owns.",
+      "source": "docs/knowledge/P2927_HEIMAN_GENERIC_FALLBACK_DUALS_2026-10-21.md",
+      "date": "2026-10-21",
+      "reviewed_by": "user decision 2026-10-21 (P2927)"
     }
   ]
 }
