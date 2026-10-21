@@ -6,7 +6,7 @@ Size: 18843
 
 Premier run. Ingest diags Athom/Gmail. JAMAIS poster/publish/cloud agent.
 
-Gmail connecté senetmarne@gmail.com. Thread diag du jour: 1a023f6ac3857a87 — deux reports 2026-08-21 ~10:56Z et ~19:11Z, sujet [com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report, from noreply@homey.app.
+Gmail connecté [redacted-email]. Thread diag du jour: 1a023f6ac3857a87 — deux reports 2026-08-21 ~10:56Z et ~19:11Z, sujet [com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report, from noreply@homey.app.
 
 À faire:
 1. Lire ce thread (PLAIN_TEXT), extraire UUID, version app, message user, stack, devices.
