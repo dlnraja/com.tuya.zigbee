@@ -33,15 +33,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1578 |
+| **App Version** | v9.0.1582 |
 | **Drivers** | 451 (398 Zigbee + 53 WiFi) |
 | **Unique Fingerprints** | 4,845 |
-| **Pairing Variants** | 19,024 (4 case combos per fingerprint) |
-| **Unique Product IDs** | 917 |
+| **Pairing Variants** | 19,027 (4 case combos per fingerprint) |
+| **Unique Product IDs** | 918 |
 | **Flow Cards** | 6,118 |
 | **Unique Capabilities** | 176 |
 | **Native OTA Drivers** | 9 |
-| **Test Suites** | 727 files |
+| **Test Suites** | 742 files |
 | **SVG Icons** | 754 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -64,7 +64,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 11 | `switch_3gang` | 313 |
 | 12 | `diy_custom_zigbee` | 306 |
 | 13 | `soil_sensor` | 293 |
-| 14 | `motion_sensor` | 288 |
+| 14 | `motion_sensor` | 289 |
 | 15 | `plug_energy_monitor` | 244 |
 | 16 | `contact_sensor` | 233 |
 | 17 | `switch_2gang` | 213 |
@@ -103,6 +103,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.1582** | v9.0.1578: |
 | **v9.0.1578** | v9.0.1578: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1575** | v9.0.1575: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1574** | TRV06 battery alarm, validation and reliability fixes. |
@@ -114,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.1563** | v9.0.1563: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1562** | v9.0.1562: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.1561** | v9.0.1561: automated publish, manifest sync, and Homey test promotion. |
-| **v9.0.1560** | v9.0.1560: automated publish, manifest sync, and Homey test promotion. |
 
 <!-- CHANGELOG_END -->
 
