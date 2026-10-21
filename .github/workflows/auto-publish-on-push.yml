@@ -65,10 +65,40 @@ defaults:
     shell: bash
 
 jobs:
+  # P-KB4: master Athom publish breaker — last N master builds processing_failed -> no publish unless manual dispatch.
+  breaker:
+    name: Master Athom publish breaker
+    if: ${{ github.event_name == 'workflow_dispatch' || !contains(github.event.head_commit.message, '[skip ci]') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      skip: ${{ steps.b.outputs.skip }}
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --ignore-scripts || npm install --ignore-scripts
+      - name: Read Athom builds (read-only) and decide
+        id: b
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          HOMEY_BUILD_LIMIT: '5'
+          TRANSIENT_RETRY: ${{ github.event.inputs.transient_retry || 'false' }}
+          BREAKER_N: '3'
+        run: |
+          node scripts/ci/homey-build-status.js com.dlnraja.tuya.zigbee >/dev/null 2>&1 || true
+          node .github/scripts/master-publish-breaker.js com.dlnraja.tuya.zigbee
+
   publish:
     name: Validate & Auto-Publish to Homey App Store
+    needs: breaker
     # WHY(P2384): workflow_dispatch must run even when tip commit is [skip ci]
-    if: ${{ github.event_name == 'workflow_dispatch' || !contains(github.event.head_commit.message, '[skip ci]') }}
+    if: ${{ needs.breaker.outputs.skip != 'true' && (github.event_name == 'workflow_dispatch' || !contains(github.event.head_commit.message, '[skip ci]')) }}
     runs-on: ubuntu-latest
     timeout-minutes: 45
     # v9.0.287 (P74): Bumped publish-size limits to 50 MB. With .homeyignore
@@ -773,6 +803,8 @@ jobs:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
           TRANSIENT_RETRY: ${{ github.event.inputs.transient_retry || 'false' }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # P-KB4: master retries only a socket hang up, once (no AggregateError / processing_failed auto retry).
+          ATHOM_RETRY_HANGUP_ONLY: '1'
           # P2830g: gate + retry decision must judge the version THIS run uploaded (app.json can be reset by the
           # metadata step; run 39211896020 judged v9.0.1533 while it had uploaded v9.0.1534 -> Test).
           HOMEY_EXPECTED_VERSION: ${{ steps.info.outputs.version }}

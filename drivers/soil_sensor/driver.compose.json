@@ -575,6 +575,11 @@
       "$extends": [
         "zcl_cluster_layer"
       ]
+    },
+    {
+      "$extends": [
+        "pe_report_options"
+      ]
     }
   ],
   "images": {
