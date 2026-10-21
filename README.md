@@ -28,7 +28,7 @@ Generated from `app.json` v9.0.1589:
 | Metric | Value |
 |---|---|
 | Drivers | 451 (395 Zigbee, 54 Wi-Fi, 2 other) |
-| Manufacturer names (case-insensitive) | 4,845 |
+| Manufacturer names (case-insensitive) | 4,844 |
 | Model / product ids | 615 |
 | Capabilities used | 176 |
 
