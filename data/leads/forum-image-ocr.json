@@ -5,7 +5,7 @@
   },
   "26439": {
    "tailId": 790166,
-   "backfillId": 500961
+   "backfillId": 511496
   },
   "89271": {
    "tailId": 425235,
@@ -13,10 +13,10 @@
   },
   "140352": {
    "tailId": 790957,
-   "backfillId": 664229
+   "backfillId": 665465
   },
   "146735": {
-   "tailId": 791005,
+   "tailId": 791344,
    "backfillId": 682202
   },
   "154077": {
@@ -3940,6 +3940,242 @@
    "ocr": "image-cap",
    "mfrs": [],
    "pids": []
+  },
+  {
+   "id": "forum:140352#438",
+   "link": "https://community.homey.app/t/140352/438",
+   "author": "Ian_Gibbo",
+   "at": "2025-10-19T15:31:00.687Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [],
+   "pids": [
+    "TS0044"
+   ]
+  },
+  {
+   "id": "forum:140352#439",
+   "link": "https://community.homey.app/t/140352/439",
+   "author": "dlnraja",
+   "at": "2025-10-19T15:52:29.267Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [],
+   "pids": [
+    "TS0044"
+   ]
+  },
+  {
+   "id": "forum:140352#462",
+   "link": "https://community.homey.app/t/140352/462",
+   "author": "Peter_van_Werkhoven",
+   "at": "2025-10-21T15:21:56.770Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [],
+   "pids": [],
+   "models": [
+    "ZG-204ZV"
+   ],
+   "brands": [
+    "HOBEIAN"
+   ]
+  },
+  {
+   "id": "forum:140352#464",
+   "link": "https://community.homey.app/t/140352/464",
+   "author": "Peter_van_Werkhoven",
+   "at": "2025-10-21T15:37:09.894Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [
+    "_TZ3000_0dumfk2z"
+   ],
+   "pids": [
+    "TS0215A"
+   ]
+  },
+  {
+   "id": "forum:140352#478",
+   "link": "https://community.homey.app/t/140352/478",
+   "author": "Cam",
+   "at": "2025-10-23T02:56:24.313Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [],
+   "pids": [],
+   "symptoms": [
+    "pairing"
+   ],
+   "quirkCandidates": [],
+   "triage": "daily-resume"
+  },
+  {
+   "id": "forum:140352#479",
+   "link": "https://community.homey.app/t/140352/479",
+   "author": "Jocke_Wallen",
+   "at": "2025-10-23T05:08:04.242Z",
+   "images": 1,
+   "ocr": "done",
+   "mfrs": [],
+   "pids": [],
+   "symptoms": [
+    "crash"
+   ],
+   "quirkCandidates": [],
+   "triage": "daily-resume"
+  },
+  {
+   "id": "forum:26439#4683",
+   "link": "https://community.homey.app/t/26439/4683",
+   "author": "Hans_Sabel",
+   "at": "2024-03-21T17:20:18.613Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [],
+   "pids": [],
+   "symptoms": [
+    "crash"
+   ],
+   "quirkCandidates": [],
+   "triage": "daily-resume"
+  },
+  {
+   "id": "forum:26439#4684",
+   "link": "https://community.homey.app/t/26439/4684",
+   "author": "Alex069",
+   "at": "2024-03-22T08:48:32.928Z",
+   "images": 2,
+   "ocr": "done",
+   "mfrs": [
+    "_TZ3000_gidy6sjs"
+   ],
+   "pids": [],
+   "fromImage": {
+    "mfrs": [
+     "_TZ3000_gidy6sjs"
+    ],
+    "pids": []
+   }
+  },
+  {
+   "id": "forum:26439#4694",
+   "link": "https://community.homey.app/t/26439/4694",
+   "author": "Eastmaster",
+   "at": "2024-03-29T12:26:03.007Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [
+    "_TZ3210_zdrhqmo0"
+   ],
+   "pids": [
+    "TS0502B"
+   ]
+  },
+  {
+   "id": "forum:26439#4697",
+   "link": "https://community.homey.app/t/26439/4697",
+   "author": "Alexander_Jeppsson",
+   "at": "2024-03-30T20:39:58.254Z",
+   "images": 1,
+   "ocr": "done",
+   "mfrs": [
+    "_TZ3210_up3pngle"
+   ],
+   "pids": [
+    "TS0205"
+   ]
+  },
+  {
+   "id": "forum:26439#4701",
+   "link": "https://community.homey.app/t/26439/4701",
+   "author": "Sharkys",
+   "at": "2024-04-04T06:18:45.347Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [
+    "_TZE204_ijxvkhd0",
+    "_TZE204_sxm7l9xa"
+   ],
+   "pids": []
+  },
+  {
+   "id": "forum:26439#4702",
+   "link": "https://community.homey.app/t/26439/4702",
+   "author": "Jazzper",
+   "at": "2024-04-08T19:09:31.217Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [
+    "_TZ3000_lqpt3mvr"
+   ],
+   "pids": [
+    "TS0210"
+   ],
+   "symptoms": [
+    "crash"
+   ],
+   "quirkCandidates": [
+    "_TZ3000_lqpt3mvr|TS0210:crash"
+   ],
+   "triage": "daily-resume"
+  },
+  {
+   "id": "forum:26439#4703",
+   "link": "https://community.homey.app/t/26439/4703",
+   "author": "MiK",
+   "at": "2024-04-09T08:20:29.530Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [],
+   "pids": [],
+   "models": [
+    "ZG-205Z"
+   ]
+  },
+  {
+   "id": "forum:26439#4711",
+   "link": "https://community.homey.app/t/26439/4711",
+   "author": "Pascal_Geusen",
+   "at": "2024-04-20T15:00:47.574Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [
+    "_TZ3000_fukaa7nc"
+   ],
+   "pids": [],
+   "symptoms": [
+    "pairing"
+   ],
+   "quirkCandidates": [
+    "_TZ3000_fukaa7nc|?:pairing"
+   ],
+   "triage": "daily-resume"
+  },
+  {
+   "id": "forum:26439#4719",
+   "link": "https://community.homey.app/t/26439/4719",
+   "author": "Sharkys",
+   "at": "2024-04-21T14:02:58.727Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [],
+   "pids": [],
+   "symptoms": [
+    "crash"
+   ],
+   "quirkCandidates": [],
+   "triage": "daily-resume"
+  },
+  {
+   "id": "forum:26439#4720",
+   "link": "https://community.homey.app/t/26439/4720",
+   "author": "Peter_van_Werkhoven",
+   "at": "2024-04-21T18:37:54.925Z",
+   "images": 2,
+   "ocr": "image-cap",
+   "mfrs": [],
+   "pids": []
   }
  ],
  "candidates": [
@@ -3947,17 +4183,17 @@
   "_TZE200_fl8cuafl|TS0601",
   "_TZE204_sxm719xa|TS0601"
  ],
- "generated": "2026-10-21T07:37:04.512Z",
+ "generated": "2026-10-22T07:36:22.132Z",
  "note": "Structured leads from forum posts + screenshots (OCR). No post or OCR text stored. candidates = cited couples with no home driver here; verify real hardware (W4) before adding.",
  "lastRun": {
-  "at": "2026-10-21T07:37:04.512Z",
+  "at": "2026-10-22T07:36:22.132Z",
   "tesseract": true,
   "images": 30,
   "report": [
    {
     "tid": "140352",
     "mode": "tail",
-    "n": 1
+    "n": 0
    },
    {
     "tid": "26439",
@@ -3967,7 +4203,7 @@
    {
     "tid": "146735",
     "mode": "tail",
-    "n": 3
+    "n": 1
    },
    {
     "tid": "154077",
@@ -4811,6 +5047,64 @@
    "id": "forum:26439#4676",
    "link": "https://community.homey.app/t/26439/4676",
    "author": "janklamer",
+   "symptoms": [
+    "crash"
+   ],
+   "mfrs": []
+  },
+  {
+   "id": "forum:140352#478",
+   "link": "https://community.homey.app/t/140352/478",
+   "author": "Cam",
+   "symptoms": [
+    "pairing"
+   ],
+   "mfrs": []
+  },
+  {
+   "id": "forum:140352#479",
+   "link": "https://community.homey.app/t/140352/479",
+   "author": "Jocke_Wallen",
+   "symptoms": [
+    "crash"
+   ],
+   "mfrs": []
+  },
+  {
+   "id": "forum:26439#4683",
+   "link": "https://community.homey.app/t/26439/4683",
+   "author": "Hans_Sabel",
+   "symptoms": [
+    "crash"
+   ],
+   "mfrs": []
+  },
+  {
+   "id": "forum:26439#4702",
+   "link": "https://community.homey.app/t/26439/4702",
+   "author": "Jazzper",
+   "symptoms": [
+    "crash"
+   ],
+   "mfrs": [
+    "_TZ3000_lqpt3mvr"
+   ]
+  },
+  {
+   "id": "forum:26439#4711",
+   "link": "https://community.homey.app/t/26439/4711",
+   "author": "Pascal_Geusen",
+   "symptoms": [
+    "pairing"
+   ],
+   "mfrs": [
+    "_TZ3000_fukaa7nc"
+   ]
+  },
+  {
+   "id": "forum:26439#4719",
+   "link": "https://community.homey.app/t/26439/4719",
+   "author": "Sharkys",
    "symptoms": [
     "crash"
    ],
