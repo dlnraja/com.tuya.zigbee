@@ -1,19 +1,9 @@
 {
-  "harvestedAt": "2026-10-22T16:04:28.257Z",
+  "harvestedAt": "2026-10-22T22:48:27.319Z",
   "repo": "dlnraja/com.tuya.zigbee",
   "auth": "token",
   "error": null,
   "issues": [
-    {
-      "number": 574,
-      "title": "🤖 Daily digest",
-      "labels": [
-        "bot-digest"
-      ],
-      "updatedAt": "2026-10-22T14:58:55Z",
-      "user": "github-actions[bot]",
-      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/574"
-    },
     {
       "number": 557,
       "title": "🤖 Daily digest",
@@ -85,6 +75,6 @@
       "draft": true
     }
   ],
-  "openIssueCount": 7,
+  "openIssueCount": 6,
   "openPrCount": 1
 }
