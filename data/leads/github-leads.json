@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-20",
+ "generated": "2026-10-23",
  "note": "read-only scan output; knownDrivers=[] means the mfr is not in any driver yet (review before applying)",
  "leads": [
   {
@@ -41,6 +41,18 @@
    "url": "https://github.com/Geim66/com.tuya.zigbee/blob/patch-1/drivers/switch_2_gang/driver.compose.json",
    "snippet": "\"_TZ3000_9er9cqgi\", }",
    "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3000_pmz6miyu",
+   "pids": [
+    "TS011F"
+   ],
+   "dps": [],
+   "firmware": [],
+   "knownDrivers": [],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/557#issuecomment-6318777939",
+   "snippet": "375b2d691e2c927913bce8edd5) fix(P2943): lead promotion pass demotes OCR misread _TZ3000_pmz6miyu\\|TS011F — `mfr:_tz3000_pmz6miyu`",
+   "seen": "2026-10-23"
   },
   {
    "mfr": "_TZ3000_stt211u9",
@@ -243,6 +255,16 @@
    "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/556",
    "snippet": "84_5qfrnbqs _TZE284_hbxadcl0 _TZE284_lyqazpe6 _TZE284_n41i9jyt _TZE284_pxwixtky _TZE284_rfpyqax9 _TZE284_tokhh9pf _TZE284_znkkcauq _TZE284_zuq5xxib ``` Queued for enrich; bot triage will close after processing.",
    "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZE284_zm8zpwas",
+   "pids": [],
+   "dps": [],
+   "firmware": [],
+   "knownDrivers": [],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1533",
+   "snippet": "The related Tuya valve controller _TZE284_zm8zpwas uses datapoint 1 for on/off control, datapoint 8 for valve position and datapoint 101 for battery level.",
+   "seen": "2026-10-23"
   },
   {
    "mfr": "_TZ3000_bgsigers",
@@ -663,6 +685,42 @@
    "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/270#issuecomment-5906975639",
    "snippet": "2026 triage update: the historical button-order bug for `_TZ3000_xabckq1v / TS004F` has now been fixed, but this issue remains open for the separate duplicate-trigger report.",
    "seen": "2026-10-01"
+  },
+  {
+   "mfr": "_TZ3000_xkap8wtb",
+   "pids": [
+    "TS0601",
+    "TS0505A",
+    "TS0202",
+    "TS0011F",
+    "TS0042",
+    "TS0041",
+    "TS0726",
+    "TS0043",
+    "TS0044",
+    "TS0203",
+    "TS0046",
+    "TS0003",
+    "TS0201",
+    "TS0004",
+    "TS0002",
+    "TS0501B",
+    "TS0001",
+    "TS0225",
+    "TS1201",
+    "TS000F"
+   ],
+   "dps": [],
+   "firmware": [
+    "bug",
+    "×10"
+   ],
+   "knownDrivers": [
+    "switch_1gang"
+   ],
+   "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/557#issuecomment-6318774878",
+   "snippet": "`cluster:0x1888` - mfr: `_tz3000_xkap8wtb` ✅ switch_1gang · interview Homey: `_TZ3000_xkap8wtb` TS000F · ep1 in[0x0000,0x0003,0x0004,0x0005,0x0006,0x000A,0xE000,0x0702,0x0B04,0x1000,0x1888] out[0x0019] ; ep242 in[0x000",
+   "seen": "2026-10-23"
   },
   {
    "mfr": "_TZ3000_xr3htd96",
