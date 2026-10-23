@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-23T08:50:15.209Z",
+ "updated": "2026-10-23T16:00:42.899Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -6322,6 +6322,18 @@
    "kind": "general",
    "mailDate": "2026-10-20T13:58:26.000Z"
   },
+  "diag:323ff48147afd3d2": {
+   "status": "pending",
+   "date": "2026-10-23",
+   "hash": "2b74784bfb547b5c",
+   "note": "github mail; 1 in several drivers",
+   "by": "gmail-diagnostics",
+   "kind": "github",
+   "mailDate": "2026-10-23T14:30:37.000Z",
+   "conflicts": [
+    "_TZ3000_cjfmu5he"
+   ]
+  },
   "diag:372f98c0ccb7089e": {
    "status": "done",
    "date": "2026-10-21",
@@ -6611,6 +6623,15 @@
    "kind": "general",
    "mailDate": "2026-10-21T07:58:14.000Z"
   },
+  "diag:5b0854522c11c19e": {
+   "status": "done",
+   "date": "2026-10-23",
+   "hash": "978f87becd171b66",
+   "note": "github mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "github",
+   "mailDate": "2026-10-23T13:41:16.000Z"
+  },
   "diag:5b6d57d128f573f0": {
    "status": "done",
    "date": "2026-10-21",
@@ -6899,6 +6920,15 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-10-21T09:12:19.000Z"
+  },
+  "diag:884ed91f18d6275b": {
+   "status": "done",
+   "date": "2026-10-23",
+   "hash": "37532f58a45100f8",
+   "note": "github mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "github",
+   "mailDate": "2026-10-23T11:57:55.000Z"
   },
   "diag:88ff76b31774ec2d": {
    "status": "done",
@@ -7466,6 +7496,25 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-10-21T09:58:06.000Z"
+  },
+  "diag:de39aea8f8283519": {
+   "status": "pending",
+   "date": "2026-10-23",
+   "hash": "8c0fee6791275642",
+   "note": "github mail; 5 couple(s); 1 in several drivers",
+   "by": "gmail-diagnostics",
+   "kind": "github",
+   "mailDate": "2026-10-23T14:31:13.000Z",
+   "couples": [
+    "_tz3000_e98krvvk|TS0012",
+    "_tze200_rxq4iti9|TS0601",
+    "_tz3000_upgcbody|TS0207",
+    "_tz3000_kstbkt6a|TS0207",
+    "_tze204_ijxvkhd0|TS0601"
+   ],
+   "conflicts": [
+    "_tz3000_kstbkt6a"
+   ]
   },
   "diag:df1d3a8ac60ddbc1": {
    "status": "done",
