@@ -1,6 +1,6 @@
 {
   "$comment": "Change-driven proposals from data/sources/registry.json. Identifiers + our own one-line summaries; review before landing (W4 couples, research first).",
-  "updated": "2026-10-22T07:56:47.800Z",
+  "updated": "2026-10-23T07:55:56.255Z",
   "proposals": [
     {
       "source": "z2m-issues",
@@ -22061,6 +22061,335 @@
       "quirk": false,
       "credit": "Homey Community Forum members (tag: zigbee)",
       "seenAt": "2026-10-22T07:56:42.135Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/33468",
+      "summary": "issue #33468 (open) by soukal24: [External Converter]: TS0601 from _TZE284_48ye65rk",
+      "mfrs": [
+        "_TZE284_48ye65rk"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [
+        16,
+        50,
+        125,
+        128,
+        109,
+        110,
+        116,
+        105,
+        104,
+        102,
+        130,
+        103,
+        106,
+        107,
+        129
+      ],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-23T07:55:49.124Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/29535",
+      "summary": "issue #29535 (closed) by engabd11: [External Converter]: TS0601 from _TZE204_wc2w9t1s",
+      "mfrs": [
+        "_TZE204_wc2w9t1s"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-23T07:55:49.125Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/33471",
+      "summary": "issue #33471 (open) by buhito81: UseeLink SM-0306E-2W (_TZ3000_cfnprab5): power_outage_memory gives UNSUPPORTED_ATTRIBUTE but is applied, value never shows",
+      "mfrs": [
+        "_TZ3000_cfnprab5"
+      ],
+      "pids": [
+        "TS011F"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-23T07:55:49.125Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/33475",
+      "summary": "issue #33475 (open) by decyng11: [New device support]: TS0601 from _TZE284_73llxjvf",
+      "mfrs": [
+        "_TZE284_73llxjvf"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-23T07:55:49.125Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/pull/5513",
+      "summary": "PR #5513 (closed) by jabla: Add HOBEIAN ZG-204ZX presence sensor",
+      "mfrs": [
+        "_TZE200_w0ap83qu"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [
+        111,
+        109,
+        4,
+        1
+      ],
+      "bug": true,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-10-23T07:55:49.878Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/pull/5514",
+      "summary": "PR #5514 (open) by jabla: Add RTX ZPS4 and newer NAS-PS10B2 variants, fix DP 102 and DP 12",
+      "mfrs": [
+        "_TZE284_1youk3hj",
+        "_TZE204_1youk3hj"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [
+        102,
+        12
+      ],
+      "bug": true,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-10-23T07:55:49.879Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/pull/4808",
+      "summary": "PR #4808 (open) by zer777: Add Haozee motion sensor (_TZE284_1youk3hj)",
+      "mfrs": [
+        "_TZE284_1youk3hj"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-10-23T07:55:49.879Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/pull/4599",
+      "summary": "PR #4599 (open) by andrewjswan: Add Arteco ZS-304Z Soil moisture sensor",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-10-23T07:55:49.879Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/pull/4044",
+      "summary": "PR #4044 (open) by Bruners: Add dedicated quirk for Tuya 24GHz mmWave radar `_TZE204_gkfbdvyx`",
+      "mfrs": [
+        "_TZE204_gkfbdvyx"
+      ],
+      "pids": [],
+      "dps": [],
+      "bug": false,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-10-23T07:55:49.879Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/pull/5517",
+      "summary": "PR #5517 (open) by eseverson: Verify learned TS1201 IR codes",
+      "mfrs": [],
+      "pids": [
+        "TS1201"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-10-23T07:55:49.879Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/pull/5516",
+      "summary": "PR #5516 (open) by eseverson: Fix dropped and unconfirmed TS1201 IR sends",
+      "mfrs": [],
+      "pids": [
+        "TS1201"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-10-23T07:55:49.879Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/pull/5515",
+      "summary": "PR #5515 (open) by afr4283: Add Zemismart SDM01 3-phase energy meter `_TZE284_gomuk3dc`",
+      "mfrs": [
+        "_TZE284_gomuk3dc",
+        "_TZE200_dikb3dp6",
+        "_TZE2xx_dikb3dp6"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-10-23T07:55:49.879Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/pull/4818",
+      "summary": "PR #4818 (open) by vvv2542: Add Tuya Bseed thermostat _TZE204_5toc8efa/_TZE200_5toc8efa",
+      "mfrs": [
+        "_TZE204_5toc8efa",
+        "_TZE200_5toc8efa"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-10-23T07:55:49.879Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1532",
+      "summary": "issue #1532 (open) by Bumbe80: Device Request - [Smart Room Thermostat] - [ Beca/Tuya] / [BAC-006AZB]",
+      "mfrs": [
+        "_TZE204_dzuqwsyg"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-23T07:55:50.618Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1533",
+      "summary": "issue #1533 (open) by martensko: Device Request - Smart Valve Controller - Moes / PF-PM070D TYZ",
+      "mfrs": [
+        "_TZE284_zm8zpwas"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [
+        1,
+        8,
+        101
+      ],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-10-23T07:55:50.618Z"
+    },
+    {
+      "source": "homey-forum-apps-category",
+      "kind": "forum-app",
+      "ref": "https://community.homey.app/t/156/7503",
+      "summary": "post #7503 by TedTolboom",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum app authors (Apps category)",
+      "seenAt": "2026-10-23T07:55:51.375Z"
+    },
+    {
+      "source": "homey-forum-apps-category",
+      "kind": "forum-app",
+      "ref": "https://community.homey.app/t/160453/252",
+      "summary": "post #252 by ThomasRS",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum app authors (Apps category)",
+      "seenAt": "2026-10-23T07:55:51.620Z"
+    },
+    {
+      "source": "homey-forum-tag-zigbee",
+      "kind": "forum-zigbee",
+      "ref": "https://community.homey.app/t/156/7503",
+      "summary": "post #7503 by TedTolboom",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum members (tag: zigbee)",
+      "seenAt": "2026-10-23T07:55:52.882Z"
+    },
+    {
+      "source": "homey-forum-tag-app",
+      "kind": "forum-app",
+      "ref": "https://community.homey.app/t/91888/309",
+      "summary": "post #309 by Amersfoort",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": true,
+      "credit": "Homey Community Forum app authors (tag: app)",
+      "seenAt": "2026-10-23T07:55:55.587Z"
     }
   ]
 }
