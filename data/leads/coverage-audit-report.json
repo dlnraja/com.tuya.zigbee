@@ -1,9 +1,9 @@
 {
- "generated": "2026-10-20",
+ "generated": "2026-10-23",
  "applied": 0,
  "counts": {
-  "covered": 1555,
-  "lead": 13
+  "covered": 1556,
+  "lead": 12
  },
  "internalOnlyUncovered": 516,
  "results": [
@@ -69,13 +69,6 @@
    "source": "z2m:Tuya/JKD-816COM-Z",
    "status": "lead",
    "why": "TS0601: DP layout differs per id, needs a capture"
-  },
-  {
-   "mfr": "_TZ3000_dfgbtub0",
-   "pid": "TS0042",
-   "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/864#issuecomment-2408511628",
-   "status": "lead",
-   "why": "2 same-class drivers list TS0042 (ambiguous: button_wireless_wall, scene_switch_wall)"
   },
   {
    "mfr": "_TZ3210_invesber",
