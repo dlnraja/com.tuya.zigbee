@@ -64,17 +64,8 @@ class smartplug extends TuyaZigbeeDevice {
     } */
  
     try {
-      const relayStatus = await this.zclNode.endpoints[1].clusters.onOff.readAttributes(['relayStatus']);
-      const childLock = await this.zclNode.endpoints[1].clusters.onOff.readAttributes(['childLock']);
-      const indicatorMode = await this.zclNode.endpoints[1].clusters.onOff.readAttributes(['indicatorMode']);
-
-      this.log("Relay Status supported by device");
-
-      await this.setSettings({
-        relay_status : ZCLDataTypes.enum8RelayStatus.args[0][relayStatus.relayStatus].toString(),
-        indicator_mode: ZCLDataTypes.enum8IndicatorMode.args[0][indicatorMode.indicatorMode].toString(),
-        child_lock: childLock.childLock ? "1" : "0",
-      });
+      // Spec 006: independent read-only sync (one unsupported attribute no longer hides the others)
+      await require('../../lib/helpers/TuyaOnOffSettingsSync').syncTuyaOnOffSettings(this, 1);
     } catch (error) {
       this.log("This device does not support Relay Control", error);
     }
@@ -140,12 +131,12 @@ class smartplug extends TuyaZigbeeDevice {
     let parsedValue = 0;
 
     if (changedKeys.includes('relay_status')) {
-      parsedValue = parseInt(newSettings.relay_status);
+      parsedValue = require('../../lib/helpers/TuyaOnOffSettingsSync').parseOutgoingEnum('relayStatus', newSettings.relay_status);
       await this.zclNode.endpoints[1].clusters.onOff.writeAttributes({ relayStatus: parsedValue });
     }
 
     if (changedKeys.includes('indicator_mode')) {
-      parsedValue = parseInt(newSettings.indicator_mode);
+      parsedValue = require('../../lib/helpers/TuyaOnOffSettingsSync').parseOutgoingEnum('indicatorMode', newSettings.indicator_mode);
       await this.zclNode.endpoints[1].clusters.onOff.writeAttributes({ indicatorMode: parsedValue });
     }
 
