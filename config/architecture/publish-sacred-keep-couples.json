@@ -1789,6 +1789,12 @@
       "pid": "RC-EF-3.0",
       "driverId": "button_emergency_sos",
       "note": "PCr2-1 2026-10-04 ZHC heiman.ts HM1RC-2-E — keep through publish compaction"
+    },
+    {
+      "mfr": "HEIMAN",
+      "pid": "SmokeSensor-EF-3.0",
+      "driverId": "smoke_detector_advanced",
+      "note": "P2974 port of P2919: Homey interview on JohanBendz/com.tuya.zigbee #190 (forum 26439#2296)"
     }
   ]
 }
