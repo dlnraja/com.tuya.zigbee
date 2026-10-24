@@ -175,19 +175,19 @@ class UsbDongleDualRepeaterDevice extends PhysicalButtonMixin(VirtualButtonMixin
         electrical.on('attr.activePower', value => {
           const power = safeMultiply(value, 1 / ENERGY_DIVISORS.measure_power.divisor);
           this.log('[USB_DONGLE] Power:', power, 'W');
-          if (this.hasCapability('measure_power')) this.safeSetCapabilityValue('measure_power', parseFloat(power)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+          if (this.hasCapability('measure_power')) {this.safeSetCapabilityValue('measure_power', parseFloat(power)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));}
       });
 
         electrical.on('attr.rmsVoltage', value => {
           const voltage = safeMultiply(value, 1 / ENERGY_DIVISORS.measure_voltage.divisor);
           this.log('[USB_DONGLE] Voltage:', voltage, 'V');
-          if (this.hasCapability('measure_voltage')) this.safeSetCapabilityValue('measure_voltage', parseFloat(voltage)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+          if (this.hasCapability('measure_voltage')) {this.safeSetCapabilityValue('measure_voltage', parseFloat(voltage)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));}
       });
 
         electrical.on('attr.rmsCurrent', value => {
           const current = value * (1 / ENERGY_DIVISORS.measure_current.divisor);
           this.log('[USB_DONGLE] Current:', current, 'A');
-          if (this.hasCapability('measure_current')) this.safeSetCapabilityValue('measure_current', parseFloat(current)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+          if (this.hasCapability('measure_current')) {this.safeSetCapabilityValue('measure_current', parseFloat(current)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));}
       });
 
         // Configure reporting
@@ -199,15 +199,15 @@ class UsbDongleDualRepeaterDevice extends PhysicalButtonMixin(VirtualButtonMixin
 
         electrical.readAttributes(['activePower', 'rmsVoltage', 'rmsCurrent']).then(data => {
           if (data?.activePower != null) {
-            const power = safeMultiply(data.activePower, 1 / ENERGY_DIVISORS.measure_power.divisor);if (this.hasCapability('measure_power')) this.safeSetCapabilityValue('measure_power', parseFloat(power)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+            const power = safeMultiply(data.activePower, 1 / ENERGY_DIVISORS.measure_power.divisor);if (this.hasCapability('measure_power')) {this.safeSetCapabilityValue('measure_power', parseFloat(power)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));}
           }
           if (data?.rmsVoltage != null) {
             const voltage = safeMultiply(data.rmsVoltage, 1 / ENERGY_DIVISORS.measure_voltage.divisor);
-            if (this.hasCapability('measure_voltage')) this.safeSetCapabilityValue('measure_voltage', parseFloat(voltage)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+            if (this.hasCapability('measure_voltage')) {this.safeSetCapabilityValue('measure_voltage', parseFloat(voltage)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));}
           }
           if (data?.rmsCurrent != null) {
             const current = data.rmsCurrent * (1 / ENERGY_DIVISORS.measure_current.divisor);
-            if (this.hasCapability('measure_current')) this.safeSetCapabilityValue('measure_current', parseFloat(current)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+            if (this.hasCapability('measure_current')) {this.safeSetCapabilityValue('measure_current', parseFloat(current)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));}
           }
         }).catch(() => {});
       }
@@ -218,7 +218,7 @@ class UsbDongleDualRepeaterDevice extends PhysicalButtonMixin(VirtualButtonMixin
         metering.on('attr.currentSummationDelivered', value => {
           const kWh = value / ENERGY_DIVISORS.meter_power.divisor;
           this.log('[USB_DONGLE] Energy:', kWh, 'kWh');
-          if (this.hasCapability('meter_power')) this.safeSetCapabilityValue('meter_power', parseFloat(kWh)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+          if (this.hasCapability('meter_power')) {this.safeSetCapabilityValue('meter_power', parseFloat(kWh)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));}
       });
 
         // Configure reporting
@@ -232,7 +232,7 @@ class UsbDongleDualRepeaterDevice extends PhysicalButtonMixin(VirtualButtonMixin
 
         metering.readAttributes(['currentSummationDelivered']).then(data => {
           if (data?.currentSummationDelivered != null) {
-            const kWh = data.currentSummationDelivered / ENERGY_DIVISORS.meter_power.divisor;if (this.hasCapability('meter_power')) this.safeSetCapabilityValue('meter_power', parseFloat(kWh)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+            const kWh = data.currentSummationDelivered / ENERGY_DIVISORS.meter_power.divisor;if (this.hasCapability('meter_power')) {this.safeSetCapabilityValue('meter_power', parseFloat(kWh)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));}
           }
         }).catch(() => {});
       }
@@ -241,7 +241,7 @@ class UsbDongleDualRepeaterDevice extends PhysicalButtonMixin(VirtualButtonMixin
     } catch (err) {
       this.error('[USB_DONGLE] Failed to configure energy reporting, will retry:', err.message);
       // Retry 1 min plus tard si le Zigbee stack n'était pas prÃªt
-      this.homey.setTimeout(() => { if (this._destroyed) return; this._configureEnergyReporting(zclNode); }, 60 * 1000);
+      this.homey.setTimeout(() => { if (this._destroyed) {return;} this._configureEnergyReporting(zclNode); }, 60 * 1000);
     }
   }
 

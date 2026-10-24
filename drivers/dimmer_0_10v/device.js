@@ -27,7 +27,7 @@ class Dimmer010vDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedLig
   }
 
   async onNodeInit({ zclNode }) {
-    if (this._initialized) return;
+    if (this._initialized) {return;}
     this._initialized = true;
 
     await super.onNodeInit({ zclNode });
@@ -36,7 +36,7 @@ class Dimmer010vDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedLig
 
   onDeleted() {
     this._destroyed = true;
-    if (super.onDeleted) super.onDeleted();
+    if (super.onDeleted) {super.onDeleted();}
   }
 }
 

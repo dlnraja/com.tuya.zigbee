@@ -25,7 +25,7 @@ async onInit() {
           return currentDim > level;
       });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Condition smart_knob_rotary_brightness_above: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition smart_knob_rotary_brightness_above: ${err.message}`); } }
 
     // ACTIONS
     try {
@@ -39,7 +39,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action smart_knob_rotary_set_brightness: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action smart_knob_rotary_set_brightness: ${err.message}`); } }
 
     this.log('[FLOW] All flow cards registered');
   }

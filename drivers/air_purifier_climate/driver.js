@@ -19,7 +19,7 @@ class AirPurifierDriver extends ZigBeeDriver {
 
   async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
 
     this.log('Air Purifier Driver initialized');
@@ -38,7 +38,7 @@ class AirPurifierDriver extends ZigBeeDriver {
     try {  const card = ( () => { try { return this.homey.flow.getActionCard('set_fan_speed'); } catch(e) { return null; } } )();
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device['setCapabilityValue']('dim', args.speed * 100);
           return true;
         });
@@ -47,7 +47,7 @@ class AirPurifierDriver extends ZigBeeDriver {
     try {  const card = ( () => { try { return this.homey.flow.getActionCard('turn_on'); } catch(e) { return null; } } )();
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device._setGangOnOff(1, true).catch(() => {});
           await args.device.setCapabilityValue('onoff', true).catch(() => {});
           return true;
@@ -57,7 +57,7 @@ class AirPurifierDriver extends ZigBeeDriver {
     try {  const card = ( () => { try { return this.homey.flow.getActionCard('turn_off'); } catch(e) { return null; } } )();
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device._setGangOnOff(1, false).catch(() => {});
           await args.device.setCapabilityValue('onoff', false).catch(() => {});
           return true;
@@ -67,7 +67,7 @@ class AirPurifierDriver extends ZigBeeDriver {
     try {  const card = ( () => { try { return this.homey.flow.getActionCard('toggle'); } catch(e) { return null; } } )();
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device['setCapabilityValue']('onoff', !args.device.getCapabilityValue('onoff'));
           return true;
         });
@@ -76,7 +76,7 @@ class AirPurifierDriver extends ZigBeeDriver {
     try {  const card = ( () => { try { return this.homey.flow.getActionCard('set_brightness'); } catch(e) { return null; } } )();
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device['setCapabilityValue']('dim', args.brightness * 100);
           return true;
         });

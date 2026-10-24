@@ -74,12 +74,12 @@ class WiFiRobotVacuumDevice extends TuyaLocalDevice {
         capability: 'vacuum_fan_speed',
         writable: true,
         transform: (v) => {
-          if (typeof v === 'number') return v;
+          if (typeof v === 'number') {return v;}
           const map = { low: 1, medium: 2, high: 3, max: 4 };
           return map[v] || v;
         },
         reverseTransform: (v) => {
-          if (typeof v === 'number') return v;
+          if (typeof v === 'number') {return v;}
           const map = { low: 1, medium: 2, high: 3, max: 4 };
           return map[v] ?? v;
         }
@@ -279,7 +279,7 @@ class WiFiRobotVacuumDevice extends TuyaLocalDevice {
    * Sends raw coordinate data for area or zone cleaning.
    */
   async startAreaClean(coords) {
-    if (!coords || !Array.isArray(coords)) return;
+    if (!coords || !Array.isArray(coords)) {return;}
     // DP 21: Area cleaning coordinates
     const buf = Buffer.from(coords.map(c => c & 0xFF));
     await this._setDP(21, buf);
@@ -296,7 +296,7 @@ class WiFiRobotVacuumDevice extends TuyaLocalDevice {
   }
 
   async onDeleted() {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     this._destroyed = true;
     this.log('[WIFI-ROBOT-VACUUM] Device deleted, cleaning up');
     await super.onDeleted();

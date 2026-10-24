@@ -31,7 +31,7 @@ class SmartSmokeDetectorAdvancedDriver extends ZigBeeDriver {
 
   async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
 
     this.log('SmartSmokeDetectorAdvancedDriver v5.5.568 initialized');
@@ -161,7 +161,7 @@ class SmartSmokeDetectorAdvancedDriver extends ZigBeeDriver {
       this.log(`[PAIR]  Device: ${manufacturerName} ${productId}`);
       
       // Check if this is the problematic TZE284 device
-      const isTZE284 = CI.containsCI((manufacturerName || ''), '_tze284_');
+      const isTZE284 = CI.containsCI(manufacturerName || '', '_tze284_');
       if (isTZE284) {
         this.log('[PAIR]  TZE284 device detected - applying enhanced pairing logic');
       }

@@ -24,7 +24,7 @@ class ButtonWireless2GangDriver extends ZigBeeDriver {
 
   async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
 
     this.log('ButtonWireless2GangDriver v5.5.533 initialized');

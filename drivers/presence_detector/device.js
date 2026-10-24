@@ -150,7 +150,7 @@ class PresenceDetectorDevice extends Homey.Device {
    * @private
    */
   async safesetCapability(capability, value) {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     try {
       await this.safeSetCapabilityValue(capability, value);
     } catch (err) {

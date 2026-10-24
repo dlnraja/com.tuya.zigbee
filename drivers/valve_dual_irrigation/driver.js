@@ -70,14 +70,14 @@ class ValveDualIrrigationDriver extends ZigBeeDriver {
 
     reg('valve_dual_irrigation_valve_irrigation_turn_on', async ({ device }) => {
       // Prefer valve_1 if the device has it, fallback to onoff.
-      const cap = (device && typeof device.hasCapability === 'function' && device.hasCapability('onoff.valve_1'))
+      const cap = device && typeof device.hasCapability === 'function' && device.hasCapability('onoff.valve_1')
         ? 'onoff.valve_1'
         : 'onoff';
       return setValve(device, cap, true);
     });
 
     reg('valve_dual_irrigation_valve_irrigation_turn_off', async ({ device }) => {
-      const cap = (device && typeof device.hasCapability === 'function' && device.hasCapability('onoff.valve_1'))
+      const cap = device && typeof device.hasCapability === 'function' && device.hasCapability('onoff.valve_1')
         ? 'onoff.valve_1'
         : 'onoff';
       return setValve(device, cap, false);
@@ -85,10 +85,10 @@ class ValveDualIrrigationDriver extends ZigBeeDriver {
 
     reg('valve_dual_irrigation_valve_irrigation_toggle', async ({ device }) => {
       if (!device) { return false; }
-      const cap = (typeof device.hasCapability === 'function' && device.hasCapability('onoff.valve_1'))
+      const cap = typeof device.hasCapability === 'function' && device.hasCapability('onoff.valve_1')
         ? 'onoff.valve_1'
         : 'onoff';
-      const current = (typeof device.getCapabilityValue === 'function') ? !!device.getCapabilityValue(cap) : false;
+      const current = typeof device.getCapabilityValue === 'function' ? !!device.getCapabilityValue(cap) : false;
       return setValve(device, cap, !current);
     });
   }

@@ -74,7 +74,7 @@ class DimmerWall1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(Light
   _markAppCommand() {
     this._appCommandPending = true;
     safeClearTimeout(this, this._appCommandTimeout);
-    this._appCommandTimeout = safeSetTimeout(this, () => { if (this._destroyed) return; this._appCommandPending = false; }, 2000);
+    this._appCommandTimeout = safeSetTimeout(this, () => { if (this._destroyed) {return;} this._appCommandPending = false; }, 2000);
   }
 
   _setOnOff(value) { this._markAppCommand(); return super._setOnOff(value); }

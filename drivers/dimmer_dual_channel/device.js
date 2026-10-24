@@ -65,7 +65,7 @@ class DimmerDualChannelDevice extends PhysicalButtonMixin(VirtualButtonMixin(Tuy
 
   /** Tuya DP ids per channel: state 1/3, brightness 2/4 (canonical 2ch dimmer). */
   _dpFor(channel, kind) {
-    return kind === 'onoff' ? (channel === 1 ? 1 : 3) : (channel === 1 ? 2 : 4);
+    return kind === 'onoff' ? channel === 1 ? 1 : 3 : channel === 1 ? 2 : 4;
   }
 
   async _sendDpFallback(dp, value, type) {
@@ -135,7 +135,7 @@ class DimmerDualChannelDevice extends PhysicalButtonMixin(VirtualButtonMixin(Tuy
       const clusters = zclNode.endpoints[channel] && zclNode.endpoints[channel].clusters;
       const cluster = clusters && (clusters.onOff || clusters.genOnOff || clusters.levelControl || clusters.genLevelCtrl);
       const target = attr === 'currentLevel'
-        ? (clusters && (clusters.levelControl || clusters.genLevelCtrl))
+        ? clusters && (clusters.levelControl || clusters.genLevelCtrl)
         : cluster;
       if (target && typeof target.on === 'function') {
         target.on(`attr.${attr}`, (v) => {

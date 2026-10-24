@@ -290,10 +290,10 @@ class SensorIlluminancePresenceDevice extends UnifiedSensorBase {
    */
   _startRadarCycle(zclNode) {
     // Time sync after 2s
-    this.homey.setTimeout(() => { if (this._destroyed) return; this._syncTime(zclNode); }, 2000);
+    this.homey.setTimeout(() => { if (this._destroyed) {return;} this._syncTime(zclNode); }, 2000);
 
     // Initial DP query after 3s
-    this.homey.setTimeout(() => { if (this._destroyed) return; this._refreshDPs(zclNode); }, 3000);
+    this.homey.setTimeout(() => { if (this._destroyed) {return;} this._refreshDPs(zclNode); }, 3000);
 
     if (this._getPresenceConfig().needsPolling === false) {
       this.log('[RADAR] Periodic DP polling disabled by device profile');
@@ -301,7 +301,7 @@ class SensorIlluminancePresenceDevice extends UnifiedSensorBase {
     }
 
     // Maintenance interval (60s)
-    this._maintenanceTimer = this.homey.setInterval(() => { if (this._destroyed) return; this._refreshDPs(zclNode); }, 60000);
+    this._maintenanceTimer = this.homey.setInterval(() => { if (this._destroyed) {return;} this._refreshDPs(zclNode); }, 60000);
   }
 
   async _syncTime(zclNode) {

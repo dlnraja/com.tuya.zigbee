@@ -13,7 +13,7 @@ class AirQualityCO2Driver extends ZigBeeDriver {
     }
   async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
     this.log('AirQualityCO2Driver v5.5.584 initialized');
     this._registerFlowCards();
@@ -28,32 +28,32 @@ class AirQualityCO2Driver extends ZigBeeDriver {
   const card = null;
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const val = args.device.getCapabilityValue('measure_co2') || 0;
           return val > (args.threshold || 400);
       });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Condition air_purifier_quality_hybrid_air_quality_co2_co2_above: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition air_purifier_quality_hybrid_air_quality_co2_co2_above: ${err.message}`); } }
 
     try {
       const card = this.homey.flow.getConditionCard('air_purifier_quality_air_quality_co2_below');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Condition air_purifier_quality_air_quality_co2_co2_below: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition air_purifier_quality_air_quality_co2_co2_below: ${err.message}`); } }
 
     try {
       const card = this.homey.flow.getConditionCard('air_purifier_quality_air_quality_co2_air_quality_good');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Condition air_purifier_quality_air_quality_co2_air_quality_good: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition air_purifier_quality_air_quality_co2_air_quality_good: ${err.message}`); } }
 
     this.log('[FLOW] All flow cards registered');
     }

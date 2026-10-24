@@ -15,7 +15,7 @@ class SmartScreenSwitchDriver extends ZigBeeDriver {
       const motionCard = this.homey.flow.getDeviceTriggerCard('smart_screen_switch_motion_detected');
       if (motionCard) {
         motionCard.registerRunListener(async (args, state) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return true;
         });
       }
@@ -27,7 +27,7 @@ class SmartScreenSwitchDriver extends ZigBeeDriver {
       const motionCondition = this.homey.flow.getConditionCard('smart_screen_switch_motion_active');
       if (motionCondition) {
         motionCondition.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('alarm_motion') === true;
         });
       }

@@ -147,8 +147,8 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
       this.zclNode?.ieeeAddress,
       this.node?.ieeeAddr,
       this.node?.ieeeAddress,
-      (typeof this.getData === 'function' && this.getData()?.ieeeAddress),
-      (typeof this.getData === 'function' && this.getData()?.ieeeAddr),
+      typeof this.getData === 'function' && this.getData()?.ieeeAddress,
+      typeof this.getData === 'function' && this.getData()?.ieeeAddr,
     ].filter(Boolean);
     for (const ie of candidates) {
       if (!_looksLikeIeee(ie)) {continue;}

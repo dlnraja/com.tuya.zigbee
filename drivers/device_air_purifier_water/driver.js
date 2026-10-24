@@ -16,7 +16,7 @@ class WaterTankMonitorDriver extends Driver {
 
   async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
     this.log('Liquid Level Sensor driver initializing...');
     this._registerFlowCards();
@@ -30,7 +30,7 @@ class WaterTankMonitorDriver extends Driver {
         const _card = this._getFlowCard(_tid, "trigger");
         if (_card) {
           _card.registerRunListener(async (args) => {
-            if (!args.device) return;
+            if (!args.device) {return;}
             args.device.emit("flow:" + _tid, args);
           });
         }
@@ -42,22 +42,22 @@ class WaterTankMonitorDriver extends Driver {
       const card = this.homey.flow.getConditionCard('device_air_purifier_water_water_tank_monitor_level_above');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const val = args.device.getCapabilityValue('measure_co2') || 0;
           return val > (args.threshold || 400);
       });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Condition device_air_purifier_water_water_tank_monitor_level_above: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition device_air_purifier_water_water_tank_monitor_level_above: ${err.message}`); } }
 
     try {
       const card = this.homey.flow.getConditionCard('device_air_purifier_water_water_tank_monitor_state_is');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Condition device_air_purifier_water_water_tank_monitor_state_is: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition device_air_purifier_water_water_tank_monitor_state_is: ${err.message}`); } }
 
     this.log('[FLOW] All flow cards registered');
   }

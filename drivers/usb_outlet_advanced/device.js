@@ -209,7 +209,7 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
   async _requestInitialStates() {
     // Wait a bit for device to be fully ready
     this.homey.setTimeout(async () => {
-      if (this._destroyed) return;
+      if (this._destroyed) {return;}
       if (this.safeTuyaDataQuery) {
         // All relevant control DPs
         const controlDPs = [1, 2, 3, 4, 7, 9, 10, 11, 12, 13, 101];

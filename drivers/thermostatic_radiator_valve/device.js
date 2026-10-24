@@ -149,7 +149,7 @@ class ThermostaticRadiatorValve extends TuyaThermostatEnhancedMixin(TuyaSpecific
         // v2.0.0: Route enhanced DP values to the mixin handler first
         if (this.handleEnhancedDP) {
             const handled = await this.handleEnhancedDP(dp, parsedValue);
-            if (handled) return;
+            if (handled) {return;}
         }
 
         switch (dp) {

@@ -33,7 +33,7 @@ class RainSensorDevice extends UnifiedSensorBase {
   }
 
     get dpMappings() {
-    const mfr = typeof this.getSetting === 'function' ? (this.getSetting('zb_manufacturer_name') || '') : '';
+    const mfr = typeof this.getSetting === 'function' ? this.getSetting('zb_manufacturer_name') || '' : '';
 
     // ── TS0601 HOBEIAN variants (ZG-223Z) ──
     if (containsCI(mfr, 'u6x1zyv2') || containsCI(mfr, 'jsaqgakf') || containsCI(mfr, '2pddnnrk') || containsCI(mfr, 'gt1gge3x')) {

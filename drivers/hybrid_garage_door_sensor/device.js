@@ -42,7 +42,7 @@ class HybridGarageDoorSensorDevice extends UnifiedSensorBase {
         // Motor runs for configured duration, then auto-stops
         if (motorDuration > 0) {
           this.homey.setTimeout(async () => {
-            if (this._destroyed) return;
+            if (this._destroyed) {return;}
             try {
               await this.sendTuyaDataPoint(1, 2, 'value'); // Stop command
             } catch { /* device may have already stopped */ }
@@ -56,7 +56,7 @@ class HybridGarageDoorSensorDevice extends UnifiedSensorBase {
       const autoCloseDelay = (this.getSetting('auto_close_delay') || 0) * 1000;
       if (autoCloseDelay > 0 && value === 'open') {
         this.homey.setTimeout(async () => {
-          if (this._destroyed) return;
+          if (this._destroyed) {return;}
           try {
             await this.sendTuyaDataPoint(1, 0, 'value'); // Close command
             this.log('[HYBRID_GARAGE_DOOR_SENSOR] Auto-closing garage door');

@@ -19,7 +19,7 @@ class ThermostaticRadiatorValveDriver extends ZigBeeDriver {
             const boostCard = this.homey.flow.getActionCard('thermostatic_radiator_valve_set_boost');
             if (boostCard) {
                 boostCard.registerRunListener(async (args) => {
-                    if (!args.device) return false;
+                    if (!args.device) {return false;}
                     const enabled = args.mode === 'on';
                     this.log(`Flow: Setting boost mode to ${args.mode}`);
                     if (typeof args.device.setBoostMode === 'function') {
@@ -37,7 +37,7 @@ class ThermostaticRadiatorValveDriver extends ZigBeeDriver {
             const frostCard = this.homey.flow.getActionCard('thermostatic_radiator_valve_set_frost_protection');
             if (frostCard) {
                 frostCard.registerRunListener(async (args) => {
-                    if (!args.device) return false;
+                    if (!args.device) {return false;}
                     const enabled = args.mode === 'on';
                     this.log(`Flow: Setting frost protection to ${args.mode}`);
                     if (typeof args.device.setFrostProtection === 'function') {
@@ -55,7 +55,7 @@ class ThermostaticRadiatorValveDriver extends ZigBeeDriver {
             const childLockCard = this.homey.flow.getActionCard('thermostatic_radiator_valve_set_child_lock');
             if (childLockCard) {
                 childLockCard.registerRunListener(async (args) => {
-                    if (!args.device) return false;
+                    if (!args.device) {return false;}
                     const enabled = args.mode === 'on';
                     this.log(`Flow: Setting child lock to ${args.mode}`);
                     if (typeof args.device.setChildLock === 'function') {
@@ -73,7 +73,7 @@ class ThermostaticRadiatorValveDriver extends ZigBeeDriver {
             const windowCard = this.homey.flow.getActionCard('thermostatic_radiator_valve_set_window_detection');
             if (windowCard) {
                 windowCard.registerRunListener(async (args) => {
-                    if (!args.device) return false;
+                    if (!args.device) {return false;}
                     const enabled = args.mode === 'on';
                     this.log(`Flow: Setting window detection to ${args.mode}`);
                     if (typeof args.device.setWindowDetection === 'function') {
@@ -91,7 +91,7 @@ class ThermostaticRadiatorValveDriver extends ZigBeeDriver {
             const boostCond = this.homey.flow.getConditionCard('thermostatic_radiator_valve_boost_active');
             if (boostCond) {
                 boostCond.registerRunListener(async (args) => {
-                    if (!args.device) return false;
+                    if (!args.device) {return false;}
                     if (typeof args.device.isBoostActive === 'function') {
                         return await args.device.isBoostActive();
                     }
@@ -107,7 +107,7 @@ class ThermostaticRadiatorValveDriver extends ZigBeeDriver {
             const childLockCond = this.homey.flow.getConditionCard('thermostatic_radiator_valve_child_lock_active');
             if (childLockCond) {
                 childLockCond.registerRunListener(async (args) => {
-                    if (!args.device) return false;
+                    if (!args.device) {return false;}
                     if (typeof args.device.isChildLockActive === 'function') {
                         return await args.device.isChildLockActive();
                     }

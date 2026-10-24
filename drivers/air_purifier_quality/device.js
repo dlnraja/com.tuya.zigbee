@@ -110,7 +110,7 @@ class AirQualityCO2Device extends UnifiedSensorBase {
    * v5.5.317: Validate CO2 with inference engine
    */
   _validateCO2(rawCO2) {
-    if (!this._airQualityInference) return rawCO2;
+    if (!this._airQualityInference) {return rawCO2;}
 
     const vocValue = this.getCapabilityValue('measure_voc');
     const validatedCO2 = this._airQualityInference.validateCO2(rawCO2, vocValue);
@@ -136,7 +136,7 @@ class AirQualityCO2Device extends UnifiedSensorBase {
 
   async _setupAirQualityZCL(zclNode) {
     const ep1 = zclNode?.endpoints?.[1];
-    if (!ep1) return;
+    if (!ep1) {return;}
 
     try {
       const temp = ep1.clusters?.msTemperatureMeasurement;
@@ -177,7 +177,7 @@ class AirQualityCO2Device extends UnifiedSensorBase {
    */
   async onEndDeviceAnnounce() {
     this.log('[REJOIN] Device announced itself, refreshing state...');
-    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    if (typeof this._updateLastSeen === 'function') {this._updateLastSeen();}
     // Proactive data recovery if supported
     if (this._dataRecoveryManager) {
        this._dataRecoveryManager.triggerRecovery();

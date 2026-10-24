@@ -22,7 +22,7 @@ class TuyaSirenDriver extends ZigBeeDriver {
 
   async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
 
     this.log('TuyaSirenDriver v5.11.28 initialized');
@@ -211,7 +211,7 @@ class TuyaSirenDriver extends ZigBeeDriver {
       } else {
         setMelodyAction.registerRunListener(async (args) => {
           const device = args.device;
-          if (!device) return false;
+          if (!device) {return false;}
           const melody = parseInt(args.melody , 10) || 0;
           this.log(`[FLOW] Action: Set melody to ${melody}`);
           try {

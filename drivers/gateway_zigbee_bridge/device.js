@@ -35,7 +35,7 @@ class ZbbridgeDevice extends AutoAdaptiveDevice {
   }
 
   async onDeleted() {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     this._destroyed = true;
     this.log('ZbbridgeDevice deleted');
     await super.onDeleted().catch(err => this.error(err));

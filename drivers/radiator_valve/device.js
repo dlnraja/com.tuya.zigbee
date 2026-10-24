@@ -20,19 +20,19 @@ const TRV_SCHEDULE_DPS = {
  * time_segment * 10 = minutes from midnight.
  */
 function decodeTRVSchedule(buffer) {
-  if (!buffer || !Buffer.isBuffer(buffer) || buffer.length < 3) return '';
+  if (!buffer || !Buffer.isBuffer(buffer) || buffer.length < 3) {return '';}
   const maxPeriods = Math.min(Math.floor(buffer.length / 3), 10);
   const periods = [];
   for (let i = 0; i < maxPeriods; i++) {
     const timeSegment = buffer[i * 3];
     const totalMinutes = timeSegment * 10;
-    if (totalMinutes > 1440) break; // beyond 24:00 = sentinel
+    if (totalMinutes > 1440) {break;} // beyond 24:00 = sentinel
     const hours = Math.floor(totalMinutes / 60);
     const minutes = totalMinutes % 60;
     const tempRaw = (buffer[i * 3 + 1] << 8) | buffer[i * 3 + 2];
     const temp = tempRaw / 10;
     periods.push(`${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}/${temp}`);
-    if (hours === 24) break;
+    if (hours === 24) {break;}
   }
   return periods.join(' ');
 }
@@ -43,17 +43,17 @@ function decodeTRVSchedule(buffer) {
  * Output: Buffer of 30 bytes (10 periods x 3 bytes each)
  */
 function encodeTRVSchedule(scheduleString) {
-  if (!scheduleString || typeof scheduleString !== 'string') return null;
+  if (!scheduleString || typeof scheduleString !== 'string') {return null;}
   const periods = scheduleString.trim().split(/\s+/).filter(Boolean);
   const maxPeriods = 10;
   const buf = Buffer.alloc(maxPeriods * 3, 0);
 
   for (let i = 0; i < Math.min(periods.length, maxPeriods); i++) {
     const [timePart, tempPart] = periods[i].split('/');
-    if (!timePart || tempPart === undefined) continue;
+    if (!timePart || tempPart === undefined) {continue;}
     const [h, m] = timePart.split(':').map(Number);
     const temp = parseFloat(tempPart);
-    if (isNaN(h) || isNaN(m) || isNaN(temp)) continue;
+    if (isNaN(h) || isNaN(m) || isNaN(temp)) {continue;}
     const totalMinutes = h * 60 + m;
     const timeSegment = Math.round(totalMinutes / 10);
     const tempRaw = Math.round(temp * 10);
@@ -171,7 +171,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       const ZigbeeTimeSync = require('../../lib/ZigbeeTimeSync');
       this._timeSync = new ZigbeeTimeSync(this, { throttleMs: 6 * 3600000 });
       this.homey.setTimeout(async () => {
-        if (this._destroyed) return;
+        if (this._destroyed) {return;}
         try {
           const result = await this._timeSync.sync({ force: true });
           if (!result.success && result.reason === 'no_rtc') {await this._tuyaTimeSyncFallback();}

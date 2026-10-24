@@ -42,8 +42,8 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     const dp = Number(dpId);
     let parsedValue = value;
     if (Buffer.isBuffer(value)) {
-       if (value.length === 4) parsedValue = value.readInt32BE(0);
-       else if (value.length === 1) parsedValue = value.readUInt8(0);
+       if (value.length === 4) {parsedValue = value.readInt32BE(0);}
+       else if (value.length === 1) {parsedValue = value.readUInt8(0);}
     }
 
     if (dp === 3) {
@@ -57,7 +57,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
   }
 
   onDeleted() {
-    if (typeof super.onDeleted === 'function') super.onDeleted();
+    if (typeof super.onDeleted === 'function') {super.onDeleted();}
   }
 }
 

@@ -80,7 +80,7 @@ class Switch1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       this.configureAttributeReporting(reportingPayload),
       { name: 'configureAttributeReporting', timeoutMs: SleepyInit.ZCL_TIMEOUT_MS }
     ).then((res) => {
-      if (res && res !== 'timeout') this.log('Attribute reporting configured successfully');
+      if (res && res !== 'timeout') {this.log('Attribute reporting configured successfully');}
     });
 
     // v5.8.95: Removed redundant _markAppCommand + broken _handleTuyaDatapoint wrapper.

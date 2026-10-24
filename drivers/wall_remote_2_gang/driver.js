@@ -18,7 +18,7 @@ class WallRemote2GangDriver extends Driver{
 
   async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
 this.log('wall_remote_2_gang driver init');
   

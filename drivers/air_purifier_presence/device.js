@@ -19,13 +19,13 @@ for (const [configName, config] of Object.entries(SENSOR_CONFIGS)) {
 function getSensorConfig(manufacturerName, modelId = null) {
   const mfrLower = CI.normalize(manufacturerName);
   const config = MANUFACTURER_CONFIG_MAP[mfrLower];
-  if (config) return config;
+  if (config) {return config;}
   return SENSOR_CONFIGS.DEFAULT;
 }
 
 function transformPresence(value, type, invertPresence = false) {
   let result;
-  if (value === null || value === undefined) return false;
+  if (value === null || value === undefined) {return false;}
   switch (type) {
     case 'presence_enum':
       result = value === 1 || value === 2;
@@ -47,7 +47,7 @@ class AirPurifierPresenceHybridDevice extends UnifiedSensorBase {
 
   _getSensorConfig() {
     const mfr = this._getManufacturerName();
-    if (this._sensorConfig) return this._sensorConfig;
+    if (this._sensorConfig) {return this._sensorConfig;}
     this._sensorConfig = getSensorConfig(mfr, getModelId(this));
     
     if (this._sensorConfig.configName === 'DEFAULT' && !this._dpAutoDiscovery) {
@@ -63,7 +63,7 @@ class AirPurifierPresenceHybridDevice extends UnifiedSensorBase {
       const discoveredMap = this._dpAutoDiscovery.getDynamicDPMap();
       const mergedMap = { ...config.dpMap };
       for (const [dpId, dpConfig] of Object.entries(discoveredMap)) {
-        if (!mergedMap[dpId]) mergedMap[dpId] = dpConfig;
+        if (!mergedMap[dpId]) {mergedMap[dpId] = dpConfig;}
       }
       return mergedMap;
     }
@@ -94,8 +94,8 @@ class AirPurifierPresenceHybridDevice extends UnifiedSensorBase {
     
     // Add Air Purifier specific mappings if not in dpMap
     // Typically: DP 1 (onoff), DP 22 (pm25)
-    if (!mappings[1]) mappings[1] = { capability: 'onoff' };
-    if (!mappings[22]) mappings[22] = { capability: 'measure_pm25' };
+    if (!mappings[1]) {mappings[1] = { capability: 'onoff' };}
+    if (!mappings[22]) {mappings[22] = { capability: 'measure_pm25' };}
 
     return mappings;
   }
@@ -109,7 +109,7 @@ class AirPurifierPresenceHybridDevice extends UnifiedSensorBase {
   }
 
   _handleTuyaResponse(data) {
-    if (!data) return;
+    if (!data) {return;}
     let dpId = data.dp || data.dpId || data.datapoint;
     const rawVal = this._parseBufferValue(data.value || data.data);
 
@@ -121,7 +121,7 @@ class AirPurifierPresenceHybridDevice extends UnifiedSensorBase {
     const PRESENCE_DPS = [1, 104, 105, 112];
 
     if (PRESENCE_DPS.includes(dpId) && dpId !== 1) { // 1 is usually power for air purifier
-      const presenceValue = transformPresence(rawVal, dpMap[dpId]?.type, (this.getSettings().invert_presence ?? this._getSensorConfig().invertPresence ?? false));
+      const presenceValue = transformPresence(rawVal, dpMap[dpId]?.type, this.getSettings().invert_presence ?? this._getSensorConfig().invertPresence ?? false);
       if (presenceValue !== null) {
         this._handlePresenceWithDebounce(presenceValue, dpId);
       }
@@ -130,10 +130,10 @@ class AirPurifierPresenceHybridDevice extends UnifiedSensorBase {
 
   _handlePresenceWithDebounce(presence, dpId) {
     const current = this.getCapabilityValue('alarm_motion');
-    if (presence === current) return;
+    if (presence === current) {return;}
 
     if (presence) {
-      if (this._intelGate) this._intelGate.process('alarm_motion', true);
+      if (this._intelGate) {this._intelGate.process('alarm_motion', true);}
       this.safeSetCapabilityValue('alarm_motion', true).catch(() => {});
       this._triggerPresenceFlows(true);
     } else {
@@ -153,7 +153,7 @@ class AirPurifierPresenceHybridDevice extends UnifiedSensorBase {
 
   async _setupZclClusters(zclNode) {
     const ep1 = zclNode?.endpoints?.[1];
-    if (!ep1) return;
+    if (!ep1) {return;}
 
     const temp = ep1.clusters?.msTemperatureMeasurement;
     if (temp?.on) {
@@ -181,8 +181,8 @@ class AirPurifierPresenceHybridDevice extends UnifiedSensorBase {
   }
 
   _parseBufferValue(data) {
-    if (typeof data === 'number') return data;
-    if (Buffer.isBuffer(data)) return data.readUIntBE(0, data.length);
+    if (typeof data === 'number') {return data;}
+    if (Buffer.isBuffer(data)) {return data.readUIntBE(0, data.length);}
     if (data && typeof data === 'object' && data.type === 'Buffer') {
       return Buffer.from(data.data).readUIntBE(0, data.data.length);
     }

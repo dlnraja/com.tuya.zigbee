@@ -67,7 +67,7 @@ class PresenceDetectorDriver extends Driver {
         const driverDevices = driver.getDevices() || [];
         for (const device of driverDevices) {
           // Skip the presence detector itself
-          if (device.driverId === 'presence_detector') continue;
+          if (device.driverId === 'presence_detector') {continue;}
 
           const caps = device.capabilities || [];
           const relevantCaps = caps.filter(c => [

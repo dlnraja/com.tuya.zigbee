@@ -55,14 +55,14 @@ class DinRailMeterDevice extends TuyaZigbeeDevice {
 
   async _setupElectricalMeasurement(zclNode) {
     const ep1 = zclNode.endpoints[1];
-    if (!ep1) return;
+    if (!ep1) {return;}
 
     const emCluster = ep1.clusters?.electricalMeasurement || ep1.clusters?.[2820];
     if (emCluster) {
       this.log('[EM] Electrical Measurement cluster found' );
 
       emCluster.on('attr.activePower', (value) => {
-        const power =((value * safeParse)(this._powerScale) * 10);
+        const power =(value * safeParse)(this._powerScale) * 10;
         this.log(`[EM] Power: ${power}W`);
         this.safeSetCapabilityValue('measure_power', power).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       });
@@ -94,10 +94,10 @@ class DinRailMeterDevice extends TuyaZigbeeDevice {
 
   async _setupTuyaDP(zclNode) {
     const ep1 = zclNode.endpoints[1];
-    if (!ep1) return;
+    if (!ep1) {return;}
 
     const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[CLUSTERS.TUYA_EF00];
-    if (!tuyaCluster) return;
+    if (!tuyaCluster) {return;}
 
     this.log('[TUYA] Tuya DP cluster found');
 
@@ -115,7 +115,7 @@ class DinRailMeterDevice extends TuyaZigbeeDevice {
   }
 
   _handleTuyaDP(data) {
-    if (!data || !data.dp) return;
+    if (!data || !data.dp) {return;}
     this._handleDP(data.dp, data.value );
   }
 

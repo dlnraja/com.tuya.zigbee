@@ -21,7 +21,7 @@ class PlugSmartDriver extends ZigBeeDriver {
     }
   async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
 
     this.log('PlugSmartDriver v5.5.570 initialized');
@@ -41,7 +41,7 @@ class PlugSmartDriver extends ZigBeeDriver {
       const card = null;
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
         this.log('[FLOW]  plug_smart_is_on');
@@ -53,7 +53,7 @@ class PlugSmartDriver extends ZigBeeDriver {
       const card = null;
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device._setGangOnOff(1, true).catch(() => {});
           await args.device.setCapabilityValue('onoff', true).catch(() => {});
           return true;
@@ -67,7 +67,7 @@ class PlugSmartDriver extends ZigBeeDriver {
       const card = null;
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device._setGangOnOff(1, false).catch(() => {});
           await args.device.setCapabilityValue('onoff', false).catch(() => {});
           return true;
@@ -81,7 +81,7 @@ class PlugSmartDriver extends ZigBeeDriver {
       const card = null;
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const current = args.device.getCapabilityValue('onoff');
           await args.device._setGangOnOff(1, !current).catch(() => {});
           await args.device.setCapabilityValue('onoff', !current).catch(() => {});
@@ -96,7 +96,7 @@ class PlugSmartDriver extends ZigBeeDriver {
       const card = null;
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const delay = args.delay || 10 * 1000;
           this.homey.setTimeout(() => args.device['setCapabilityValue']('onoff', true).catch(() => {}), delay);
           return true;
@@ -110,7 +110,7 @@ class PlugSmartDriver extends ZigBeeDriver {
       const card = null;
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const delay = args.delay || 10 * 1000;
           this.homey.setTimeout(() => args.device['setCapabilityValue']('onoff', false).catch(() => {}), delay);
           return true;
