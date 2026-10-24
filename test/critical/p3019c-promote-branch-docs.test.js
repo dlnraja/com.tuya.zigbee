@@ -54,6 +54,12 @@ describe('P3019c branch-specific KB docs are never promoted', () => {
     assert.ok(g);
     assert.deepStrictEqual([...g.outputs], ['docs/knowledge/KB/METHOD_COVERAGE.md']);
     assert.ok(fs.existsSync(path.join(ROOT, g.script)));
+    const d = shared.REGENERATORS.find((x) => x.script === 'scripts/kb/dp-endpoint-coverage.js');
+    assert.ok(d);
+    assert.deepStrictEqual([...d.outputs], ['docs/knowledge/KB/DP_ENDPOINT_COVERAGE.md']);
+    for (const r of shared.REGENERATORS) {
+      for (const o of r.outputs) {assert.strictEqual(shared.isBranchSpecific(o), true, o);}
+    }
   });
 
   it('regenerateAfterPromote returns only changed outputs and never throws', () => {
@@ -70,7 +76,7 @@ describe('P3019c branch-specific KB docs are never promoted', () => {
       return cmd === 'git' ? ' M docs/knowledge/KB/METHOD_COVERAGE.md\n' : '';
     };
     const res = shared.regenerateBranchDocs(ROOT, { execFileSync: fake });
-    assert.deepStrictEqual(res.changed, ['docs/knowledge/KB/METHOD_COVERAGE.md']);
+    assert.ok(res.changed.includes('docs/knowledge/KB/METHOD_COVERAGE.md'));
     assert.ok(calls[0].endsWith(path.join(ROOT, 'scripts/kb/method-coverage.js')));
     const none = shared.regenerateBranchDocs(path.join(ROOT, 'no-such-tree'), { execFileSync: fake });
     assert.deepStrictEqual(none, { ran: [], changed: [] });
