@@ -153,3 +153,23 @@ jobs:
           else
             echo "::warning::diagnostics/summary.json not found — diagnostics collection may have failed"
           fi
+
+      # P3021b: ledger wiring (same pattern as gmail-diagnostics P2908 / forum-poll P2909).
+      - name: Ledger intake (P3021b)
+        id: p3021b_ledger
+        if: always()
+        continue-on-error: true
+        run: |
+          git pull -q --ff-only origin master || echo "::warning::ledger intake: could not fast-forward, writing on the checkout"
+          node scripts/progress/ledger-intake.js diag .github/state/diagnostics-report.json --by=collect-diagnostics --queue=.github/state/diag-ledger-queue-collect-diagnostics.json --max=100
+      - name: Commit ledger (gated, P3021b)
+        if: always() && steps.p3021b_ledger.outcome == 'success'
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node scripts/ci/safe-auto-commit.js --id=collect-diagnostics-ledger --max-per-day=4 \
+            --message="chore(ledger): collect-diagnostics findings" \
+            --paths="data/progress/ledger.json"

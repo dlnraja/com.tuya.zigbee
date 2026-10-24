@@ -23,7 +23,7 @@ const CLOSED = new Set(['done', 'blocked', 'fixed', 'skipped-not-applicable']);
 const MAX_LIST = 8;
 const QUEUE_KEEP = 300;
 const FIELD_KEYS = ['kind', 'mailDate', 'appVersion', 'logIdShort', 'couples', 'unsupported', 'conflicts', 'drivers', 'kb',
-  'errors', 'topic', 'post', 'author', 'link', 'mfrs', 'pids', 'missing', 'images'];
+  'errors', 'topic', 'post', 'author', 'link', 'mfrs', 'pids', 'missing', 'images', 'counts', 'lastChangeRun'];
 
 const uniq = (a) => [...new Set((a || []).filter(Boolean).map(String))];
 // Identity-like tokens only: no spaces, no mail addresses, bounded length.
@@ -146,11 +146,75 @@ function recordForumPosts(items, L, { max = 150, by = 'forum-poll' } = {}) {
   return stats;
 }
 
+// ── Workflow run summaries (P3021b) ───────────────────────────────────────
+// Enrichment and diagnostics workflows that have no per-item findings still leave one bounded
+// entry per workflow (`workflow-run:<id>`), so the daily resume sees what they last changed.
+// Only numbers are kept (top level and one nested level), never free text from the summary.
+const MAX_COUNTS = 16;
+const RUN_ID = /^[a-z0-9][a-z0-9-]{1,63}$/;
+
+function summaryCounts(summary) {
+  const out = {};
+  const put = (k, v) => {
+    if (Object.keys(out).length >= MAX_COUNTS) {return;}
+    if (typeof v === 'number' && Number.isFinite(v) && /^[A-Za-z0-9_.]{1,48}$/.test(k)) {out[k] = v;}
+  };
+  if (!summary || typeof summary !== 'object' || Array.isArray(summary)) {return out;}
+  for (const [k, v] of Object.entries(summary)) {
+    if (typeof v === 'number') {put(k, v);} else if (Array.isArray(v)) {put(`${k}.length`, v.length);} else if (v && typeof v === 'object') {
+      for (const [k2, v2] of Object.entries(v)) {
+        if (typeof v2 === 'number') {put(`${k}.${k2}`, v2);} else if (Array.isArray(v2)) {put(`${k}.${k2}.length`, v2.length);}
+      }
+    }
+  }
+  return out;
+}
+
+/** Record one workflow run summary; returns 'new' | 'changed' | 'same' | 'protected' | 'invalid'. */
+function recordRunSummary(workflow, summary, L, { runId, missing = false } = {}) {
+  if (!RUN_ID.test(String(workflow || ''))) {return 'invalid';}
+  const counts = summaryCounts(summary);
+  const failed = missing || (summary && summary.ok === false);
+  const status = failed ? 'pending' : 'done';
+  const note = missing ? 'run left no summary file'
+    : failed ? 'run reported ok=false' : `run summary: ${Object.keys(counts).length} counter(s)`;
+  const fields = { counts };
+  if (runId && /^\d{1,20}$/.test(String(runId))) {fields.lastChangeRun = String(runId);}
+  // The hash ignores the run id: an unchanged summary does not rewrite the ledger.
+  const key = `workflow-run:${workflow}`;
+  const prev = L.items[key];
+  if (isProtected(prev, workflow)) {return 'protected';}
+  const contentHash = ledgerLib.hash({ status, counts });
+  if (prev && prev.hash === contentHash) {return 'same';}
+  const r = upsert(L, key, { status, note, fields, by: workflow });
+  L.items[key].hash = contentHash; // keep the run-id-free hash so the next identical run is 'same'
+  return r;
+}
+
+function mainRun(argv, opt, dry) {
+  const workflow = argv[1];
+  const file = argv[2] && !argv[2].startsWith('--') ? argv[2] : null;
+  if (!workflow || !RUN_ID.test(workflow)) { console.error('usage: ledger-intake.js run <workflow-id> [summary.json] [--dry]'); return 2; }
+  let summary = null;
+  let missing = !file;
+  if (file) { try { summary = JSON.parse(fs.readFileSync(path.resolve(ROOT, file), 'utf8')); } catch { missing = true; } }
+  const L = ledgerLib.load();
+  const r = recordRunSummary(workflow, summary, L, { runId: opt('run-id', process.env.GITHUB_RUN_ID), missing });
+  if (!dry && (r === 'new' || r === 'changed')) {ledgerLib.save(L);}
+  const line = `ledger run intake ${workflow}: ${r}${dry ? ' [dry]' : ''}`;
+  console.log(line);
+  if (process.env.GITHUB_STEP_SUMMARY) { try { fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, `- ${line}\n`); } catch { /* best effort */ } }
+  return 0;
+}
+
 function main(argv = process.argv.slice(2)) {
   const opt = (k, d) => { const a = argv.find((x) => x.startsWith(`--${k}=`)); return a ? a.slice(k.length + 3) : d; };
   const dry = argv.includes('--dry');
   const cmd = argv[0];
-  if (cmd !== 'diag') { console.error('usage: ledger-intake.js diag [report.json] [--queue=file] [--max=100] [--dry]'); return 2; }
+  if (cmd === 'run') {return mainRun(argv, opt, dry);}
+  if (cmd !== 'diag') { console.error('usage: ledger-intake.js diag [report.json] [--queue=file] [--max=100] [--by=workflow] [--dry] | run <workflow-id> [summary.json]'); return 2; }
+  const by = opt('by', 'gmail-diagnostics');
+  if (!RUN_ID.test(by)) { console.error('ledger-intake: --by must be a workflow id'); return 2; }
   const reportPath = argv[1] && !argv[1].startsWith('--') ? argv[1] : path.join(ROOT, '.github/state/diagnostics-report.json');
   const queuePath = opt('queue', path.join(ROOT, '.github/state/diag-ledger-queue.json'));
   let report = null;
@@ -158,18 +222,18 @@ function main(argv = process.argv.slice(2)) {
   let queue = [];
   try { queue = JSON.parse(fs.readFileSync(queuePath, 'utf8')).items || []; } catch { queue = []; }
   const L = ledgerLib.load();
-  const r = recordDiagnostics(report, L, { max: Math.max(1, Number(opt('max', '100')) || 100), queue });
+  const r = recordDiagnostics(report, L, { max: Math.max(1, Number(opt('max', '100')) || 100), queue, by });
   const changed = r.stats.new + r.stats.changed;
   if (!dry) {
     if (changed) {ledgerLib.save(L);}
     fs.mkdirSync(path.dirname(queuePath), { recursive: true });
     fs.writeFileSync(queuePath, `${JSON.stringify({ updated: new Date().toISOString(), items: r.queue }, null, 1)}\n`);
   }
-  const line = `ledger diag intake: ${JSON.stringify(r.stats)} (queue ${r.queue.length})${dry ? ' [dry]' : ''}`;
+  const line = `ledger diag intake (${by}): ${JSON.stringify(r.stats)} (queue ${r.queue.length})${dry ? ' [dry]' : ''}`;
   console.log(line);
   if (process.env.GITHUB_STEP_SUMMARY) { try { fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, `- ${line}\n`); } catch { /* best effort */ } }
   return 0;
 }
 
-module.exports = { recordDiagnostics, recordForumPosts, diagFinding, diagKey, upsert, isProtected };
+module.exports = { recordDiagnostics, recordForumPosts, diagFinding, diagKey, upsert, isProtected, recordRunSummary, summaryCounts, main };
 if (require.main === module) {process.exitCode = main();}

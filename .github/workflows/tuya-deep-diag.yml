@@ -233,3 +233,45 @@ jobs:
             screenshots/full-diag-report.json
           if-no-files-found: warn
           retention-days: 14
+
+  # P3021b: ledger wiring. The diagnose job stays read-only; only this job may push the ledger.
+  ledger:
+    needs: [diagnose]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      issues: write # safe-auto-commit: single refusal comment on the tracking issue
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: Download sanitized diagnostics
+        continue-on-error: true
+        uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0 # v5.0.0
+        with:
+          name: tuya-deep-diag-${{ github.run_id }}
+          path: .
+      - name: Ledger intake (P3021b)
+        id: p3021b_ledger
+        continue-on-error: true
+        run: |
+          git pull -q --ff-only origin master || echo "::warning::ledger intake: could not fast-forward, writing on the checkout"
+          node scripts/progress/ledger-intake.js diag .github/state/diagnostics-report.json --by=tuya-deep-diag --queue=.github/state/diag-ledger-queue-tuya-deep-diag.json --max=100
+      - name: Commit ledger (gated, P3021b)
+        if: steps.p3021b_ledger.outcome == 'success'
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node scripts/ci/safe-auto-commit.js --id=tuya-deep-diag-ledger --max-per-day=4 \
+            --message="chore(ledger): tuya-deep-diag findings" \
+            --paths="data/progress/ledger.json"
