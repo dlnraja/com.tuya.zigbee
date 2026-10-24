@@ -44,7 +44,10 @@ test('homey stub only replaces the CLI entry, with an SDK-shaped Device class', 
   const isCli = /[\\/]bin[\\/]homey\.js$/.test(resolved);
   assert.strictEqual(install(), isCli);
   if (isCli) {
-    const Homey = require('homey');
+    // Read the cache entry install() owns: under mocha every critical file shares one process and
+    // several of them hook Module._load to return their own fake 'homey' (never restored), so
+    // require('homey') there reflects another file's mock, not this stub's contract.
+    const Homey = require.cache[resolved].exports;
     assert.ok(Homey.__p3020Stub);
     assert.strictEqual(typeof Homey.Device, 'function');
   }
