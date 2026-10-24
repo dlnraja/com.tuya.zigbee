@@ -65,5 +65,6 @@ runs:
           for f in $P; do [ -e "$f" ] && git add -- "$f"; done
           git diff --cached --quiet && exit 0
           git commit -q -m "chore(xr): cross-research ${{ inputs.items }} [skip ci]"
-          for i in 1 2 3; do git pull -q --rebase origin "${{ github.ref_name }}" && git push -q origin "HEAD:${{ github.ref_name }}" && break; sleep $((i*10)); done || echo "::warning::push failed"
+          # P3025: shared bounded fetch/rebase/push (exp. backoff + jitter, never force); the old loop's `|| echo` never fired (for-loop exit = last sleep)
+          bash .github/scripts/git-push-retry.sh --branch "${{ github.ref_name }}" || echo "::warning::cross-research push failed (see git-push-retry log)"
         fi

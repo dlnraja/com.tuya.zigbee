@@ -261,7 +261,7 @@ jobs:
       - name: Create GitHub Release
         if: steps.pat.outputs.ok == 'true'
         continue-on-error: true
-        uses: softprops/action-gh-release@3bb12739c298aeb8a4eeaf626c5b8d85266b0e65 # v2
+        uses: softprops/action-gh-release@e598afbe1493e6b1bafb1f389cabb956eab91231 # v3.0.3
         with:
           tag_name: v${{ steps.bump.outputs.version }}
           name: v${{ steps.bump.outputs.version }}
