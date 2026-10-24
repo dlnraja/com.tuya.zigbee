@@ -1,0 +1,124 @@
+# WHY(P3025, 25/10/2026 Paris): the workflow estate (85 files) had no gate of its own outside the publish
+# pipelines, so broken YAML, Node 20 actions, unpinned actions or a new raw `git push` (non-fast-forward
+# races) only showed up when a bot run failed. This runs on every change to CI files and weekly, and fails
+# on REGRESSIONS only (existing debt is in .github/workflow-hygiene-baseline.json and may only shrink).
+name: CI self-check (actionlint + YAML + hygiene + manifest/data/lint gates)
+
+on:
+  push:
+    branches: [master, stable-v5, bastien-home]
+    paths:
+      - '.github/workflows/**'
+      - '.github/actions/**'
+      - '.github/scripts/git-push-retry.sh'
+      - '.github/workflow-hygiene-baseline.json'
+      - '.githooks/**'
+      - 'scripts/ci/workflow-hygiene-gate.js'
+      - 'scripts/ci/push-with-retry.js'
+      - 'scripts/ci/safe-auto-commit.js'
+      # P3025 data/manifest/lint gates
+      - 'scripts/ci/**'
+      - 'app.json'
+      - '.homeycompose/**'
+      - 'drivers/*/driver.compose.json'
+      - 'scripts/maintenance/sanitize-manifest.cjs'
+      - 'lib/zigbee/data/**'
+      - 'lib/memory/CatalogStore.js'
+      - 'scripts/data/**'
+      - '.github/lint-baseline.json'
+      - 'lib/**/*.js'
+      - 'drivers/**/*.js'
+  pull_request:
+    paths:
+      - '.github/**'
+      - '.githooks/**'
+      - 'scripts/ci/**'
+      - 'app.json'
+      - '.homeycompose/**'
+      - 'drivers/**'
+      - 'lib/**'
+      - 'scripts/data/**'
+  schedule:
+    - cron: '41 5 * * 1'
+  workflow_dispatch:
+
+# P2542 forfait policy for scheduled workflows (no AI is used here; kept for the repo-wide gate).
+env:
+  AI_PLAN_MODE: 'forfait'
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  AI_ALLOW_PAID: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
+
+defaults:
+  run:
+    shell: bash
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-self-check-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  self-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      ACTIONLINT_VERSION: '1.7.12'
+      ACTIONLINT_SHA256: '8aca8db96f1b94770f1b0d72b6dddcb1ebb8123cb3712530b08cc387b349a3d8'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+
+      - name: Setup Node 22
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '22'
+
+      - name: Install actionlint (pinned + sha256, retried on network blips only)
+        run: |
+          set -euo pipefail
+          url="https://github.com/rhysd/actionlint/releases/download/v${ACTIONLINT_VERSION}/actionlint_${ACTIONLINT_VERSION}_linux_amd64.tar.gz"
+          for i in 1 2 3; do curl -fsSL --retry 3 --retry-all-errors -o /tmp/al.tgz "$url" && break; sleep $((i*5)); done
+          echo "${ACTIONLINT_SHA256}  /tmp/al.tgz" | sha256sum -c -
+          tar -xzf /tmp/al.tgz -C /tmp actionlint
+
+      - name: actionlint (0 findings on master/stable/bastien at P3025 — any finding is a regression)
+        run: /tmp/actionlint -color -shellcheck= -pyflakes=
+
+      - name: YAML parse (every workflow/action file)
+        run: |
+          node -e '
+            const fs=require("fs"),path=require("path");let bad=0;
+            let yaml;try{yaml=require("js-yaml")}catch(_){yaml=null}
+            const files=[];const walk=d=>{if(!fs.existsSync(d))return;for(const e of fs.readdirSync(d,{withFileTypes:true})){const p=path.join(d,e.name);if(e.isDirectory())walk(p);else if(/\.ya?ml$/.test(e.name))files.push(p)}};
+            walk(".github/workflows");walk(".github/actions");
+            if(!yaml){console.log("js-yaml not installed: actionlint already parsed every workflow");process.exit(0)}
+            for(const f of files){try{yaml.load(fs.readFileSync(f,"utf8"))}catch(e){bad++;console.log(`::error file=${f}::${e.message.split("\n")[0]}`)}}
+            console.log(`${files.length} YAML file(s), ${bad} invalid`);process.exit(bad?1:0)'
+
+      - name: Hygiene ratchet (pins, Node 20 actions, node-version, timeouts, raw pushes)
+        run: node scripts/ci/workflow-hygiene-gate.js
+
+      - name: app.json ↔ compose drift (fingerprints + flow titleFormatted, lossless)
+        run: node scripts/ci/appjson-compose-drift-gate.js
+
+      - name: DP shards fresh (stale shards = silent fallback to the full catalogue)
+        run: |
+          if [ -f scripts/data/build-dp-shards.js ]; then node scripts/data/build-dp-shards.js --check
+          else echo "scripts/data/build-dp-shards.js absent on this branch — skipped"; fi
+
+      - name: Install deps for lint ratchet (npm ci, retried; failover npm install)
+        run: |
+          for i in 1 2 3; do npm ci --ignore-scripts --no-audit --no-fund && exit 0; sleep $((i*10)); done
+          npm install --ignore-scripts --no-audit --no-fund
+
+      - name: Lint ratchet (lib/ drivers/ — total may only go down, no file may get worse)
+        run: node scripts/ci/lint-ratchet.js
+
+      - name: Push helper + hygiene + data gate tests
+        run: |
+          git config --global user.name ci; git config --global user.email ci@localhost
+          node --test test/ci/p3025-git-push-retry.test.js test/ci/p3025-push-with-retry.test.js test/ci/p3025-workflow-hygiene-gate.test.js test/ci/p3025-hook-deps-check.test.js test/ci/p3025-appjson-compose-drift.test.js test/ci/p3025-lint-ratchet.test.js

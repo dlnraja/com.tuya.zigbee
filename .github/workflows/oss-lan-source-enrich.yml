@@ -40,10 +40,10 @@ jobs:
     timeout-minutes: 35
     steps:
       - name: Checkout
-        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
 
       - name: Setup Node
-        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
@@ -173,7 +173,7 @@ jobs:
           npm run check:p2658
 
       - name: Upload scanner artifacts
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
         with:
           name: oss-lan-source-data
           path: |
@@ -192,9 +192,9 @@ jobs:
             echo "No scanner data changes"
             exit 0
           fi
-          git pull --rebase origin master || true
           git commit -m "chore(P2658): refresh TinyTuya/tuya-local/peer probe data [skip ci]"
-          git push origin HEAD:master || true
+          # P3025: shared race-safe push (old pull-before-commit failed on the dirty tree; push||true hid losses)
+          bash .github/scripts/git-push-retry.sh --branch master || echo "::warning::P3025 oss-lan data not pushed (see git-push-retry log)"
 
   # P2790 — stable-v5 backport of device-compat-only couples written by the strict rule on master
   # (data/leads/auto-applied.json). Same driver must already list the pid on stable; [skip ci].
@@ -206,18 +206,18 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Checkout master
-        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
         with:
           ref: master
           path: master
       - name: Checkout stable-v5
-        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
         with:
           ref: stable-v5
           path: stable
           fetch-depth: 20
       - name: Setup Node
-        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'

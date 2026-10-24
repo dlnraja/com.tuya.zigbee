@@ -94,7 +94,7 @@ jobs:
         id: loop
 
       - name: Upload weekly report
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
         with:
           name: weekly-sovereign-loop
           path: |
@@ -115,9 +115,8 @@ jobs:
           fi
           # Commit BEFORE pull — avoids "index contains uncommitted changes" rebase failure
           git commit -m "chore(P136): weekly sovereign loop report [skip ci]" || exit 0
-          git pull --rebase --autostash origin master || true
-          # Verified push — step should use continue-on-error if soft failure is OK
-          git push origin HEAD:master
+          # Verified push — P3025 shared bounded rebase-retry (step continue-on-error handles soft failure)
+          bash .github/scripts/git-push-retry.sh --branch master
 
       - name: Summary
         run: |
