@@ -11883,14 +11883,16 @@
    "result": "already routed to one correct driver"
   },
   "forum-post:140352/2092": {
-   "status": "blocked",
+   "status": "pending",
    "source": "pc-harvest-r2",
-   "result": "diagnostic-report complaint; report content not accessible from box"
+   "result": "P3021b 2026-10-24: diag recovered by exact UUID in Gmail Homey diags (Log ID 7456c4f0-aee7-48d7-be5a-a84bbb505205, mail 2026-06-16T19:33Z, app v9.0.13, Homey Pro 2026 v13.2.1; user: 54 W shown but daily total 54 kWh). Mail body holds driver-init stdout only (no device lines), meter not identifiable; P87 TODO ProductValueValidator energy check still open",
+   "date": "2026-10-24"
   },
   "forum-post:140352/2093": {
-   "status": "blocked",
+   "status": "pending",
    "source": "pc-harvest-r2",
-   "result": "diagnostic-report complaint; report content not accessible from box"
+   "result": "P3021b 2026-10-24: diags correlated by date + symptom (not by UUID): Log IDs 1b2109ab-bdfa-4fea-a5ef-ff4031c48b5d (2026-06-21T12:24Z, \"Soil sensor detected as unknown zigbee\") and 3690dfdb-62f3-4938-a0f4-b14283af0ff6 (2026-06-21T18:10Z, soil_sensor: TS0601 but 0xEF00 not accessible), both app v9.0.13; no manufacturerName in the bodies, energy-meter part not covered",
+   "date": "2026-10-24"
   },
   "forum-post:140352/2099": {
    "status": "done",
@@ -11903,9 +11905,10 @@
    "result": "already routed to one correct driver"
   },
   "forum-post:140352/2134": {
-   "status": "blocked",
+   "status": "pending",
    "source": "pc-harvest-r2",
-   "result": "diagnostic-report complaint; report content not accessible from box"
+   "result": "P3021b 2026-10-24: diag recovered by exact UUID (Log ID f1e5b12d-5f69-4311-aaa7-b8bef967667c, mail 2026-08-08T08:18Z, app v9.0.434, Homey Pro Early 2023); already treated in reports/P149_GMAIL_HOMEY_DIAG_CROSS_2026-08-16.md (SOS .catch + getDiscoveries) and diag-recursive-treat-2026-09-02; contact invert / luminance / water-leak not re-verified on current code",
+   "date": "2026-10-24"
   },
   "forum-post:140352/2224": {
    "status": "done",
@@ -36892,9 +36895,10 @@
    ]
   },
   "lead:_TZ3000_amal63is|TS0002": {
-   "status": "needs-info",
+   "status": "blocked",
    "date": "2026-10-20",
-   "note": "cited in JohanBendz#128 Batch 105 only; no Z2M/ZHA/blakadder/Hubitat source found; mfr stays on switch_1gang without TS0002"
+   "note": "cited in JohanBendz#128 Batch 105 only; no Z2M/ZHA/blakadder/Hubitat source found; mfr stays on switch_1gang without TS0002",
+   "result": "P3021b 2026-10-24: no existing driver can take the exact couple without a NEW dual: every TS0002 driver except sr_zs_switch (3 gangs) and usb_dongle_dual_repeater shares TS0012 (or other pids) with switch_1gang, which already lists the mfr, so wall_switch_2gang_1way gave _tz3000_amal63is|TS0012 -> switch_1gang,wall_switch_2gang_1way (fp-collision + native-matrix gates red). Needs an owner decision: dedicated TS0002-only 2-gang driver, or move the mfr off switch_1gang"
   },
   "lead:_TZE200_wrmhp6b3": {
    "status": "deferred",
@@ -37218,24 +37222,28 @@
    "result": "audited; empty-mfr catch-alls not filled without sources; air_purifier_dimmer trigger prefix candidate"
   },
   "task:ledger-wire-auto-enrich-closed-loop": {
-   "status": "pending",
+   "status": "done",
    "date": "2026-10-03",
-   "note": "wire shouldProcess/record into auto-enrich-closed-loop.yml scripts"
+   "note": "wire shouldProcess/record into auto-enrich-closed-loop.yml scripts",
+   "result": "P3021b 2026-10-24: 6c8eed82e2 run mode on .github/state/auto-enrich/loop.json via scripts/progress/ledger-intake.js + gated safe-auto-commit --id=auto-enrich-closed-loop-ledger"
   },
   "task:ledger-wire-collect-diagnostics": {
-   "status": "pending",
+   "status": "done",
    "date": "2026-10-03",
-   "note": "wire shouldProcess/record into collect-diagnostics.yml scripts"
+   "note": "wire shouldProcess/record into collect-diagnostics.yml scripts",
+   "result": "P3021b 2026-10-24: 6c8eed82e2 diag mode --by=collect-diagnostics via scripts/progress/ledger-intake.js + gated safe-auto-commit --id=collect-diagnostics-ledger"
   },
   "task:ledger-wire-fetch-diags": {
-   "status": "pending",
+   "status": "done",
    "date": "2026-10-03",
-   "note": "wire shouldProcess/record into fetch-diags.yml scripts"
+   "note": "wire shouldProcess/record into fetch-diags.yml scripts",
+   "result": "P3021b 2026-10-24: 6c8eed82e2 diag mode --by=fetch-diags via scripts/progress/ledger-intake.js + gated safe-auto-commit --id=fetch-diags-ledger"
   },
   "task:ledger-wire-fleet-intelligent-enrich": {
-   "status": "pending",
+   "status": "done",
    "date": "2026-10-03",
-   "note": "wire shouldProcess/record into fleet-intelligent-enrich.yml scripts"
+   "note": "wire shouldProcess/record into fleet-intelligent-enrich.yml scripts",
+   "result": "P3021b 2026-10-24: 6c8eed82e2 run mode on reports/fleet-enrich-<date>/summary.json via scripts/progress/ledger-intake.js + gated safe-auto-commit --id=fleet-intelligent-enrich-ledger"
   },
   "task:ledger-wire-forum-poll": {
    "status": "done",
@@ -37250,14 +37258,16 @@
    "result": "P3021 2026-10-24: verified, gmail-diagnostics.yml writes diag:<hash> via scripts/progress/ledger-intake.js (P2908)"
   },
   "task:ledger-wire-monthly-device-enrichment": {
-   "status": "pending",
+   "status": "done",
    "date": "2026-10-03",
-   "note": "wire shouldProcess/record into monthly-device-enrichment.yml scripts"
+   "note": "wire shouldProcess/record into monthly-device-enrichment.yml scripts",
+   "result": "P3021b 2026-10-24: 6c8eed82e2 run mode on reports/monthly-<YYYYMM>.json (workflow disabled_manually) via scripts/progress/ledger-intake.js + gated safe-auto-commit --id=monthly-device-enrichment-ledger"
   },
   "task:ledger-wire-tuya-deep-diag": {
-   "status": "pending",
+   "status": "done",
    "date": "2026-10-03",
-   "note": "wire shouldProcess/record into tuya-deep-diag.yml scripts"
+   "note": "wire shouldProcess/record into tuya-deep-diag.yml scripts",
+   "result": "P3021b 2026-10-24: 6c8eed82e2 separate ledger job (diagnose job stays read-only), diag mode --by=tuya-deep-diag via scripts/progress/ledger-intake.js + gated safe-auto-commit --id=tuya-deep-diag-ledger"
   },
   "task:new-heiman-rc-ef-3.0": {
    "status": "pending",
