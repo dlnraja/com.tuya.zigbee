@@ -1712,7 +1712,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     const mfr = this._getManufacturerName();
 
     // Only apply to problematic sensors (case-insensitive)
-    if (!CI.includesCI(mfr, 'iadro9bf') && !CI.includesCI(mfr, 'qasjif9e')) {
+    // WHY(P3011): was CI.includesCI(mfr, 'iadro9bf') — reversed args, always false (never matched).
+    if (!CI.containsCI(mfr, 'iadro9bf') && !CI.containsCI(mfr, 'qasjif9e')) {
       return presence;
     }
 
@@ -1747,6 +1748,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     // Always update lastValue and lastUpdate for next comparison
     this._motionThrottle.lastValue = presence;
     this._motionThrottle.lastUpdate = now;
+    // WHY(P3011): never drop the value — stuck detection is observational only.
+    return presence;
   }
 
   // v5.8.50: Using centralized presence logic from UnifiedSensorBase

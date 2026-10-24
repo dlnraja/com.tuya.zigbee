@@ -1,6 +1,6 @@
 'use strict';
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
-const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
+const { resolveContactInvert } = require('../../lib/sensors/ContactDefaultInvert');
 const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
 
 
@@ -187,24 +187,15 @@ class ContactSensorDevice extends UnifiedSensorBase {
     // These sensors report closed=alarm, open=no alarm (inverted from standard)
     // v5.5.908: Added _TZ3000_996rpfy6 (blutch32 forum - always shows no)
     // v5.12.2: Added _TZE200_pay2byax (ZG-102ZL reversed contact)
-    const invertedByDefault = [
-      // v5.12.1: REMOVED HOBEIAN  Lasse_K #1592 'always ja': standard TS0203 IAS bit0=1=open maps directly to alarm_contact=true, no inversion needed
-      // 'HOBEIAN',  
-      '_TZ3000_26fmupbb',  // Known inverted
-      '_TZ3000_n2egfsli',  // Known inverted
-      '_TZ3000_oxslv1c9',  // Known inverted
-      '_TZ3000_402jjyro',  // Known inverted
-      '_TZ3000_2mbfxlzr',  // Known inverted
-      '_TZ3000_bzxloft2',  // Known inverted (forum reports)
-      '_TZ3000_yxqnffam',  // Known inverted (forum reports)
-      '_TZ3000_996rpfy6',  // v5.5.908: blutch32 forum - TS0203 always "no" fix
-      '_TZE200_pay2byax',  // v5.12.2: ZG-102ZL reversed
-    ].some(id => includesCI(mfr, id));
+    // WHY(P3011): was `[...].some(id => includesCI(mfr, id))` — reversed args, always false.
+    // DP-only inverted ids (Z2M ZG-102ZL inverse) now apply; IAS ids stay with AlarmPolarityManager.
     // v5.12.3: XOR  default inversion + user invert cancel each other out
+    const _pol = resolveContactInvert(mfr, userInvert, userReverse);
+    const invertedByDefault = _pol.invertedByDefault;
     this._invertedByDefault = invertedByDefault;
     if (invertedByDefault) {
-      this._invertContact = !(userInvert || userReverse);
-      this._userExplicitInvert = false;
+      this._invertContact = _pol.invertContact;
+      this._userExplicitInvert = _pol.userExplicitInvert;
       this.log(`[CONTACT] Sensor ${mfr} invertedByDefault=true userInvert=${userInvert} => _invertContact=${this._invertContact}`);
     }
 
