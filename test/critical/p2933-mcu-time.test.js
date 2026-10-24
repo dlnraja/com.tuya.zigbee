@@ -1,4 +1,6 @@
 'use strict';
+const { describe, it } = require('../_support/dual-runner'); // P3020: same file under node --test and mocha
+require('../_support/homey-stub'); // P3020: 'homey' is the CLI here; stub the SDK shape before homey-zigbeedriver loads
 const assert = require('assert');
 const { EventEmitter } = require('events');
 const T = require('../../lib/tuya/TuyaMcuTimeService');

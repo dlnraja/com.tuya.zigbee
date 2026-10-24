@@ -1,4 +1,5 @@
 'use strict';
+const { describe, it, beforeEach } = require('../_support/dual-runner'); // P3020: same file under node --test and mocha
 /**
  * Root cause behind the TRV/LCD "time sync does nothing" family (issue #560 follow-up, forum P2823b):
  * ~50 drivers call tuya.datapoint({ dp, datatype, data }) without status/transid/length. The cluster used to
