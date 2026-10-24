@@ -26,6 +26,22 @@ class WaterValveGardenDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unif
     }, 'onNodeInit');
   }
 
+  // P3019 (M10): HZ-WT02 watering countdown via 0xE001 setCountdown 0xFE (Z2M tuya.ts HZ-WT02).
+  // Opt-in: sent only when the user changes the setting, only for TS0049 _TZ3000_kz1anoi8.
+  async onSettings({ oldSettings, newSettings, changedKeys }) {
+    if (typeof super.onSettings === 'function') {
+      await super.onSettings({ oldSettings, newSettings, changedKeys });
+    }
+    if (!Array.isArray(changedKeys) || !changedKeys.includes('ts0049_water_countdown')) { return; }
+    const T = require('../../lib/tuya/Ts0049Countdown');
+    const mfr = this.getSetting?.('zb_manufacturer_name') || this.getStoreValue?.('zb_manufacturer_name') || '';
+    const pid = this.getData?.()?.productId || this.getSetting?.('zb_model_id') || this.getStoreValue?.('zb_model_id') || '';
+    const minutes = Number(newSettings.ts0049_water_countdown) || 0;
+    if (!T.isTs0049Couple(mfr, pid) || minutes < T.MIN_MIN) { return; }
+    const r = await T.sendCountdown(this, minutes);
+    this.log(`[VALVE-GARDEN] E001 setCountdown ${minutes} min -> ${r.ok ? 'sent' : r.reason}`);
+  }
+
   // v9.7.3: Custom DP mappings for specialized garden valve functions
   get dpMappings() {
     const parentMappings = super.dpMappings || {};

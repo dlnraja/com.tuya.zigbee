@@ -21,7 +21,8 @@ const compose = JSON.parse(
   fs.readFileSync(path.join(ROOT, 'drivers', 'soil_sensor', 'driver.compose.json'), 'utf8'),
 );
 
-const SOIL_PID_RE = /^(ts0601|zg-303z|zg-303zl|ay-303z|ay-302z|cs-201z|sgs02z|sg502z)$/i;
+// P3019: Arteco = Z2M ZS-SF00 soil fertility sensor (modelID "Arteco", manufacturerName "A89G12C").
+const SOIL_PID_RE = /^(ts0601|zg-303z|zg-303zl|ay-303z|ay-302z|cs-201z|sgs02z|sg502z|arteco)$/i;
 
 describe('P2811 soil QT-07S / AOYAN clusters + couples', () => {
   it('locks myd45weu + TS0601 and AOYAN + AY-303Z on soil_sensor', () => {

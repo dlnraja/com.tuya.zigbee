@@ -71,12 +71,30 @@ Tuya DP not mapped ─────> UnknownDPLogger.logUnknownDP ┘        │
 5. A user-taught mapping (Flow action "Teach unknown command") always wins. Remove it with "Forget unknown command".
 6. Repeated button frames with the same ZCL transaction number within 2 s count once (ZHA behaviour).
 
-## Open leads (no source yet)
+## Leads (P3019 review, 2026-10-24)
 
-- ZS-SF00: private frames seen, no converter.
-- `_TZE200_sinxpbrl` DP2 / DP102: meaning unconfirmed.
-- TS0726 DP18–DP20: likely per-gang settings; needs a sample with a known UI change.
-- Cluster 0x1888: no Z2M/ZHA/deCONZ definition found.
+Resolved, one reliable source each:
+
+- ZS-SF00 (Arteco soil fertility, `A89G12C|Arteco`): exact DP map from Koenkk/zigbee-herdsman-converters `src/devices/tuya.ts`
+  model ZS-SF00 (@1c90116): DP3 soil moisture, DP5 temperature /10, DP14 battery, DP101 air humidity, DP102 illuminance,
+  DP103–107 sampling/calibrations (stored), DP110/111 soil warning / water alarm, DP112 EC, DP114/115 fertility warning.
+  Code: `lib/profiles/ZsSf00Profile.js`, `drivers/soil_sensor` (productId `Arteco`), `COUPLE_DP['a89g12c|ARTECO']`.
+- sinxpbrl MC101Z dimmer DP2 / DP102: DP2 = work mode (0 white, 1 colour, 2 scene, 3 music), DP102 = do-not-disturb (bool);
+  also DP6 scene data, DP7 countdown (s), DP101 power memory. Source: Tuya schema in Koenkk/zigbee2mqtt#31445 (posted by
+  YoshiWalsh, reported by wiwill61) and JohanBendz/com.tuya.zigbee#1504 (martinheie-ui). Code: `COUPLE_DP` for
+  `_TZE28C1000000_sinxpbrl` and `_TZE284_sinxpbrl`, plus `drivers/mc101z_pwm_dimmer` (store values; DP102 as an
+  opt-in setting written only when the user changes it).
+
+Still open (typed fallback kept: the frame is decoded by type, logged with raw payload, and can be taught):
+
+- TS0726 DP18–DP20. Searched: Z2M tuya.ts TS0726 (ZCL only: E001 0xD020 switch mode, genOnOff 0x8001 indicator, scene
+  actions), ZHA quirks, deCONZ DDF, kkossev, SmartThings Edge, Johan + forks, Homey forum, GitHub code search.
+  tuya-local has DP18/19/20 only on Wi-Fi switches (random timing, inching, energy): not the Zigbee TS0726, not used.
+- Cluster 0x1888. Only zigpy/zha-device-handlers `TuyaZB1888Cluster` (PR #2592, TheJulianJES) exists, and it declares
+  no attributes or commands (seen on TS011F / TS0505B). We keep treating it as opaque and never bind it.
+
+The morning KB refresh keeps looking for both: `scripts/kb/open-leads.js` (run by `scripts/kb/refresh.sh`) greps
+every mirror with the patterns and web queries in `data/leads/open-protocol-leads.json` and flags files not yet read.
 
 See also [CROSS_APP_METHODS.md](CROSS_APP_METHODS.md) and [METHOD_COVERAGE.md](METHOD_COVERAGE.md).
 

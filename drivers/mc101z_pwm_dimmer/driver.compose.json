@@ -50,7 +50,11 @@
       "_TZE28C1000000_sinxpbrl",
       "_tze28c1000000_sinxpbrl",
       "_TZE28C1000000_SINXPBRL",
-      "_tze28c1000000_SINXPBRL"
+      "_tze28c1000000_SINXPBRL",
+      "_TZE284_sinxpbrl",
+      "_tze284_sinxpbrl",
+      "_TZE284_SINXPBRL",
+      "_tze284_SINXPBRL"
     ]
   },
   "version": "1.0.0",
@@ -62,6 +66,23 @@
       "$extends": [
         "zcl_cluster_layer"
       ]
+    },
+    {
+      "id": "do_not_disturb",
+      "type": "checkbox",
+      "label": {
+        "en": "Do Not Disturb",
+        "nl": "Niet storen",
+        "de": "Nicht stören",
+        "fr": "Ne pas déranger"
+      },
+      "value": false,
+      "hint": {
+        "en": "Optional. Keeps the dimmer off after a power loss (Tuya DP102). Only sent when you change this setting.",
+        "nl": "Optioneel. Houdt de dimmer uit na stroomuitval (Tuya DP102). Wordt alleen verzonden als u deze instelling wijzigt.",
+        "de": "Optional. Lässt den Dimmer nach einem Stromausfall aus (Tuya DP102). Wird nur gesendet, wenn Sie diese Einstellung ändern.",
+        "fr": "Optionnel. Garde le variateur éteint après une coupure (Tuya DP102). Envoyé uniquement quand vous modifiez ce réglage."
+      }
     }
   ]
 }

@@ -13,6 +13,18 @@ const COV = require('../../lib/zigbee/MethodCoverage');
 const OUT = path.join(__dirname, '..', '..', 'docs', 'knowledge', 'KB', 'METHOD_COVERAGE.md');
 const SYM = { yes: '✅', 'n/a': '—', 'dp-only': 'DP', missing: '❌' };
 
+function cellRows(m, ids) {
+  const out = [];
+  for (const [f, row] of Object.entries(m)) {
+    ids.forEach((id, i) => {
+      const extra = typeof COV.extraLayers === 'function' ? COV.extraLayers(f, id) : [];
+      if (row[id] === 'n/a') { out.push(`| ${f} | M${i + 1} ${id} | — | ${COV.naReason(f, id)} |`); }
+      else if (row[id] === 'yes' && extra.length) { out.push(`| ${f} | M${i + 1} ${id} | ✅ (P3019) | ${extra.map((x) => `${x.what}; source: ${x.src}`).join(' / ')} |`); }
+    });
+  }
+  return out;
+}
+
 function render() {
   const m = COV.coverageMatrix();
   const ids = COV.METHODS.map((x) => x.id);
@@ -34,8 +46,20 @@ function render() {
     '',
     '- **Private-cluster read (M3)**: only where Z2M/ZHA define a private attribute for that capability (E001 power-on, genOnOff 0x5000 backlight, closures 0xF000 moving state, E002 alarm thresholds).',
     '- **Derived (M7)**: only computable capabilities (power = V × I, current = P / V, alarm_battery ≤ 20 %, onoff ⇐ power > 0.5 W). Never written back to the device.',
-    '- **Write methods (M8–M10)**: sensor-only families (IAS, buttons, soil) have nothing to write. Manufacturer-specific writes only exist where a private cluster exists.',
+    '- **Write methods (M8–M10)**: sensor-only families (IAS, soil) have nothing to write; remotes only have the 0x8004 mode write (M9, P3019). Manufacturer-specific writes only exist where a private cluster exists.',
     '- Write failover never races EF00 DPs against ZCL on multi-gang ZCL switches (cross-link lesson, P92.122/CapabilityCommandRouter).',
+    '',
+    '## P3019: per-cell justification',
+    '',
+    'Every cell that is not ✅, and every ✅ that comes from a P3019 complementary layer (optional, never required at pairing, never removes anything). Re-checked against Z2M tuya.ts, ZHA quirks, deCONZ DDF, kkossev, SmartThings Edge, tuya-local/localtuya/tinytuya, Johan + forks.',
+    '',
+    '| family | method | status | justification / source |',
+    '|---|---|---|---|',
+    ...cellRows(m, ids),
+    '',
+    '### Write through another endpoint',
+    '',
+    'Evaluated in P3019 and not added: no source (Z2M, ZHA, deCONZ, kkossev) needs a write on a second endpoint for a single-endpoint device, and on multi-gang devices a fallback endpoint could switch the wrong gang. Reads may use the alternate endpoint (M4); writes stay on the capability endpoint.',
     '',
     '## Chain order and behaviour',
     '',
