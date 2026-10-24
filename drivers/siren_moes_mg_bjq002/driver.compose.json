@@ -1,0 +1,211 @@
+{
+  "name": {
+    "en": "Moes Plug-in Siren MG-BJQ002",
+    "fr": "Sirène sur prise Moes MG-BJQ002",
+    "nl": "Moes stekker-sirene MG-BJQ002",
+    "de": "Moes Steckdosen-Sirene MG-BJQ002"
+  },
+  "class": "other",
+  "capabilities": [
+    "onoff",
+    "volume_set",
+    "onoff.night_light"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE20C_tjz9ad5g",
+      "_tze20c_tjz9ad5g"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
+        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+      }
+    },
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5
+        ],
+        "bindings": []
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "mg_alarm_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Alarm mode",
+        "fr": "Mode d’alarme"
+      },
+      "value": "sound_light",
+      "values": [
+        {
+          "id": "sound",
+          "label": {
+            "en": "Sound",
+            "fr": "Son"
+          }
+        },
+        {
+          "id": "light",
+          "label": {
+            "en": "Light",
+            "fr": "Lumière"
+          }
+        },
+        {
+          "id": "sound_light",
+          "label": {
+            "en": "Sound + light",
+            "fr": "Son + lumière"
+          }
+        }
+      ]
+    },
+    {
+      "id": "mg_duration",
+      "type": "number",
+      "label": {
+        "en": "Alarm duration (s)",
+        "fr": "Durée d’alarme (s)"
+      },
+      "value": 30,
+      "min": 1,
+      "max": 1800,
+      "step": 1
+    },
+    {
+      "id": "mg_ringtone",
+      "type": "number",
+      "label": {
+        "en": "Ringtone (1–32)",
+        "fr": "Sonnerie (1–32)"
+      },
+      "value": 1,
+      "min": 1,
+      "max": 32,
+      "step": 1
+    },
+    {
+      "id": "mg_light_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Light mode",
+        "fr": "Mode lumière"
+      },
+      "value": "night_light",
+      "values": [
+        {
+          "id": "rainbow",
+          "label": {
+            "en": "Rainbow",
+            "fr": "Arc-en-ciel"
+          }
+        },
+        {
+          "id": "red_flash",
+          "label": {
+            "en": "Red flash",
+            "fr": "Flash rouge"
+          }
+        },
+        {
+          "id": "night_light",
+          "label": {
+            "en": "Night light",
+            "fr": "Veilleuse"
+          }
+        }
+      ]
+    }
+  ],
+  "images": {
+    "small": "/drivers/siren_moes_mg_bjq002/assets/images/small.png",
+    "large": "/drivers/siren_moes_mg_bjq002/assets/images/large.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "select_driver"
+      }
+    },
+    {
+      "id": "select_driver",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "capabilitiesOptions": {
+    "onoff.night_light": {
+      "title": {
+        "en": "Night light",
+        "fr": "Veilleuse",
+        "nl": "Nachtlampje",
+        "de": "Nachtlicht"
+      }
+    }
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    },
+    {
+      "id": "tuya_revive",
+      "title": {
+        "en": "Tuya Revive (device recovery)",
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
+      }
+    },
+    {
+      "id": "generate_issue_report",
+      "title": {
+        "en": "Generate support report (GitHub issue)",
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
+      }
+    },
+    {
+      "id": "zigbee_rebind",
+      "title": {
+        "en": "Re-bind & reconfigure reporting",
+        "fr": "Re-lier et reconfigurer les rapports",
+        "nl": "Opnieuw binden en rapportage instellen",
+        "de": "Neu binden und Reporting konfigurieren"
+      }
+    }
+  ],
+  "id": "siren_moes_mg_bjq002",
+  "version": "1.0.0",
+  "ui": {
+    "quickAction": "onoff"
+  }
+}

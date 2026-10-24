@@ -83,7 +83,7 @@ class SmartKnobRotaryDevice extends SmartKnobRotationMixin(TuyaZigbeeDevice) {
   async _enableTS004FOperatingMode(zclNode) {
     try {
       const modelId = this.getSetting('zb_model_id') || '';
-      if (!CI.includesCI(modelId, 'TS004F') && modelId) {
+      if (!CI.containsCI(modelId, 'TS004F') && modelId) { // WHY(P3011): containsCI (was reversed includesCI)
         // Still apply when model empty (ABSENT wake) — classifier handles it
       }
 

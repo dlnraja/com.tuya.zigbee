@@ -1,7 +1,7 @@
 'use strict';
 const { includesCI: _includesCI } = require('../../lib/utils/TuyaNormalizer');
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
-const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
+const { resolveContactInvert } = require('../../lib/sensors/ContactDefaultInvert');
 
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const { setupSonoffSensor, handleSonoffSensorSettings } = require('../../lib/mixins/SonoffSensorMixin');
@@ -113,22 +113,13 @@ class ContactSensorDevice extends UnifiedSensorBase {
       '_TZ3000_n2egfsli'
     ].some((_m) => _includesCI([_m], mfr));
 
-    const invertedByDefault = [
-      '_TZ3000_26fmupbb',
-      '_TZ3000_n2egfsli',
-      '_TZ3000_oxslv1c9',
-      '_TZ3000_402jjyro',
-      '_TZ3000_2mbfxlzr',
-      '_TZ3000_bzxloft2',
-      '_TZ3000_yxqnffam',
-      '_TZ3000_996rpfy6',
-      '_TZE200_pay2byax',
-    ].some(id => includesCI(mfr, id));
-    
-    this._invertedByDefault = invertedByDefault;
-    if (invertedByDefault) {
-      this._invertContact = !(userInvert || userReverse);
-      this._userExplicitInvert = false;
+    // WHY(P3011): was `[...].some(id => includesCI(mfr, id))` — reversed args, always false.
+    // DP-only inverted ids (Z2M ZG-102ZL inverse) now apply; IAS ids stay with AlarmPolarityManager.
+    const _pol = resolveContactInvert(mfr, userInvert, userReverse);
+    this._invertedByDefault = _pol.invertedByDefault;
+    if (_pol.invertedByDefault) {
+      this._invertContact = _pol.invertContact;
+      this._userExplicitInvert = _pol.userExplicitInvert;
     }
 
     if (this._isProblematicSensor) {
