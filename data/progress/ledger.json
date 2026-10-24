@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-24T14:59:04.176Z",
+ "updated": "2026-10-24T21:40:00.000Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -37238,14 +37238,16 @@
    "note": "wire shouldProcess/record into fleet-intelligent-enrich.yml scripts"
   },
   "task:ledger-wire-forum-poll": {
-   "status": "pending",
+   "status": "done",
    "date": "2026-10-03",
-   "note": "wire shouldProcess/record into forum-poll.yml scripts"
+   "note": "wire shouldProcess/record into forum-poll.yml scripts",
+   "result": "P3021 2026-10-24: verified, forum-poll.yml writes forum-post:<t>/<n> via ledger intake (P2909)"
   },
   "task:ledger-wire-gmail-diagnostics": {
-   "status": "pending",
+   "status": "done",
    "date": "2026-10-03",
-   "note": "wire shouldProcess/record into gmail-diagnostics.yml scripts"
+   "note": "wire shouldProcess/record into gmail-diagnostics.yml scripts",
+   "result": "P3021 2026-10-24: verified, gmail-diagnostics.yml writes diag:<hash> via scripts/progress/ledger-intake.js (P2908)"
   },
   "task:ledger-wire-monthly-device-enrichment": {
    "status": "pending",
@@ -37281,7 +37283,8 @@
   },
   "task:next-02": {
    "status": "pending",
-   "note": "stable grouped publish: push exec-stable 35b5248d29 (SimpleButtonGate) + backports #1501/#1502/#1503/TH01Z + device compat (4 new dedicated drivers, qoy0ekbd) — needs explicit approval (auto-review blocked direct push)"
+   "note": "stable grouped publish: push exec-stable 35b5248d29 (SimpleButtonGate) + backports #1501/#1502/#1503/TH01Z + device compat (4 new dedicated drivers, qoy0ekbd) — needs explicit approval (auto-review blocked direct push)",
+   "result": "P3021 2026-10-24: SimpleButtonGate shipped on stable-v5 as 3a0939b8d1 (gate + ButtonDevice wiring + test); #1501/#1502/#1503/TH01Z backports not found on stable-v5, still pending"
   },
   "task:next-03": {
    "status": "pending",
@@ -37536,16 +37539,18 @@
    "note": "run 37166982598 success"
   },
   "task:stable-grouped-port-2026-10-04": {
-   "status": "in-progress",
+   "status": "done",
    "date": "2026-10-04",
    "commit": "1d06791f0d",
-   "note": "run 37166982598"
+   "note": "run 37166982598",
+   "result": "P3021 2026-10-24: verified, 1d06791f0d is an ancestor of origin/stable-v5"
   },
   "task:stable-port-1298-1113": {
-   "status": "pending",
+   "status": "done",
    "date": "2026-10-04",
    "commit": "323c38eda0",
-   "note": "local exec-stable; push needs approval"
+   "note": "local exec-stable; push needs approval",
+   "result": "P3021 2026-10-24: verified, 323c38eda0 is an ancestor of origin/stable-v5"
   },
   "task:tooling-inventory": {
    "status": "pending",
