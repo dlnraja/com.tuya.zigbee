@@ -1,11 +1,11 @@
 'use strict';
 const { includesCI: _includesCI } = require('../../lib/utils/TuyaNormalizer');
-const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
+const { safeDivide, safeMultiply } = require('../../lib/utils/tuyaUtils.js');
 
 const TuyaUnifiedDevice = require('../../lib/devices/TuyaUnifiedDevice');
 const BatteryCalculator = require('../../lib/battery/BatteryCalculator');
 const { getAppVersionPrefixed } = require('../../lib/utils/AppVersion');
-const { SoilMoistureInference, BatteryInference } = require('../../lib/IntelligentSensorInference');
+const { SoilMoistureInference } = require('../../lib/IntelligentSensorInference');
 
 /**
  * 
@@ -482,14 +482,14 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     const normalizedMoisture = this._normalizeSoilMoisture(moisture, 'flow');
     if (normalizedMoisture === null) {return;}
     if (this._flowTriggerMoistureChanged) {
-      this._flowTriggerMoistureChanged.trigger(this, { moisture: normalizedMoisture }).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+      this._flowTriggerMoistureChanged.trigger(this, { moisture: normalizedMoisture }).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) { /* logging must never throw */ } }));
     }
     if (this._previousMoisture !== null) {
       if (normalizedMoisture < 30 && this._previousMoisture >= 30 && this._flowTriggerSoilDry) {
-        this._flowTriggerSoilDry.trigger(this, {}).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+        this._flowTriggerSoilDry.trigger(this, {}).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) { /* logging must never throw */ } }));
       }
       if (normalizedMoisture > 70 && this._previousMoisture <= 70 && this._flowTriggerSoilWet) {
-        this._flowTriggerSoilWet.trigger(this, {}).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+        this._flowTriggerSoilWet.trigger(this, {}).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) { /* logging must never throw */ } }));
       }
     }
     this._previousMoisture = normalizedMoisture;
@@ -501,7 +501,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
 
   _triggerECFlows(ecValue) {
     if (this._flowTriggerECChanged) {
-      this._flowTriggerECChanged.trigger(this, { ec: ecValue }).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+      this._flowTriggerECChanged.trigger(this, { ec: ecValue }).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) { /* logging must never throw */ } }));
     }
   }
 
