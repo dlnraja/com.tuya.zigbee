@@ -58,3 +58,11 @@ Forum topics scanned for unknown commands: Homey Community 140352 and 26439 (ano
 | [JohanBendz/com.tuya.zigbee#1504](https://github.com/JohanBendz/com.tuya.zigbee/issues/1504) | issue | sinxpbrl MC101Z report |
 | [zigpy/zha-device-handlers PR #2592](https://github.com/zigpy/zha-device-handlers/pull/2592) | PR | `TuyaZB1888Cluster` (empty: 0x1888 stays open) |
 | make-all/tuya-local | main | checked for TS0726 DP18–20: Wi-Fi only, not used |
+## DP + endpoint coverage (P3018)
+
+| data | upstream | licence | pointer | used for |
+|---|---|---|---|---|
+| `scripts/data/z2m-tuya-dps.json` | [Koenkk/zigbee-herdsman-converters](https://github.com/Koenkk/zigbee-herdsman-converters) `src/devices/*.ts` tuyaDatapoints | MIT | cff1de4731 | exact couple → DP name + converter token (facts only, rebuilt daily by scripts/kb/refresh.sh) |
+| `scripts/data/zha-tuya-dps.json` | [zigpy/zha-device-handlers](https://github.com/zigpy/zha-device-handlers) Tuya quirks (KB index) | Apache-2.0 | 1d6598c32a | DP numbers per couple (coverage audit) |
+| `lib/zigbee/EndpointCoverage.js` | ZCL specification (cluster ids, measuredValue scaling) | — | — | passive per-endpoint routing |
+

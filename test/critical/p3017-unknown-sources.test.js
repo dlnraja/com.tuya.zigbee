@@ -67,7 +67,8 @@ describe('P3017 per-couple DP name catalogue', () => {
   });
   it('shipped catalog is small, under lib/ (ships) and resolves a known couple', () => {
     const f = path.join(ROOT, 'lib', 'zigbee', 'data', 'unknown-dp-catalog.json');
-    assert.ok(fs.statSync(f).size < 120000);
+    // WHY(P3018): catalog v2 doubles couple coverage (604→1175, exact fingerprints) and adds converter tokens; still lazy-loaded and bounded.
+    assert.ok(fs.statSync(f).size < 180000);
     const cat = JSON.parse(fs.readFileSync(f, 'utf8'));
     assert.ok(Object.keys(cat.idx).length > 300);
     const r = I.interpretDp({ dp: 1, value: 123, datatype: 2, mfr: '_TZE284_6ocnqlhn', pid: 'TS0601' });

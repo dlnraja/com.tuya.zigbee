@@ -127,6 +127,11 @@ jobs:
         with:
           only: native-matrix
 
+      - name: 🧭 P3018 DP + endpoint coverage (report-only; duplicate numeric keys fail)
+        # WHY: legitimate gaps (no upstream converter, undeclared secondary EP) are reported, not blocking;
+        # a duplicate DP / numeric key in one object literal silently drops a mapping → hard fail.
+        run: node scripts/kb/dp-endpoint-coverage.js --check
+
       - name: 🛡️ P2448/P2449 knob + declared flow wiring
         run: npm run check:p244x
 
