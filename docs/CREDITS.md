@@ -494,3 +494,9 @@ Peer Homey apps and OSS projects keep their own licenses (often MIT). Our app is
 ### @kodalissri
 - `_TZ3000_zutizvykts0203`
 
+
+## P3017 — unknown commands and method chains (2026-10-24)
+
+- Reporter of [JohanBendz/com.tuya.zigbee#619](https://github.com/JohanBendz/com.tuya.zigbee/issues/619): DP101/DP102 of `_TZ3210_cwamkvua` TS0202.
+- Reporter of [dlnraja/com.tuya.zigbee#560](https://github.com/dlnraja/com.tuya.zigbee/issues/560): TRV06 logs with "unknown cmd" EF00 frames.
+- Koenkk and contributors (zigbee-herdsman-converters, zigbee-herdsman, Zigbee2MQTT), zigpy/ZHA contributors, dresden elektronik (deCONZ), make-all (tuya-local), rospogrigio and xZetsubou (localtuya), jasonacox (tinytuya), kkossev (Hubitat drivers, ideas only), SmartThings Edge drivers, ioBroker.zigbee, Domoticz-Zigbee, Tasmota, ESPHome. Methods were studied and rewritten; see docs/knowledge/KB/CROSS_APP_METHODS.md.
