@@ -1,7 +1,10 @@
 'use strict';
 
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
-const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
+const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
+// WHY(P3010): includesCI is (array, value) exact-match; called as (string, needle) it always
+// returned false, so the ZG-223Z and RB-SRAIN01 layouts below were never selected.
+// containsCI(str, sub) is the substring matcher these checks were written for.
 const { boolean } = require('../../lib/converters/ValueConverterRegistry');
 const { toNumber } = require('../../lib/tuya/PayloadNormalizer');
 
@@ -33,14 +36,18 @@ class RainSensorDevice extends UnifiedSensorBase {
     const mfr = typeof this.getSetting === 'function' ? (this.getSetting('zb_manufacturer_name') || '') : '';
 
     // ── TS0601 HOBEIAN variants (ZG-223Z) ──
-    if (includesCI(mfr, 'u6x1zyv2') || includesCI(mfr, 'jsaqgakf') || includesCI(mfr, '2pddnnrk')) {
+    if (containsCI(mfr, 'u6x1zyv2') || containsCI(mfr, 'jsaqgakf') || containsCI(mfr, '2pddnnrk') || containsCI(mfr, 'gt1gge3x')) {
+      // gt1gge3x: Z2M ZG-223Z sibling (Koenkk/zigbee-herdsman-converters PR #13340, jomders, 2026-10-01)
       return {
         1: { capability: 'alarm_water', transform: (v) => v !== 0 && v !== '0' && v !== false && v !== 'false' && v !== 'normal' },
         2: { capability: 'measure_humidity', divisor: 1, transform: anyNum(100000) },
         102: { capability: 'measure_luminance', divisor: 1, transform: anyNum(100000) },
         4: { capability: 'measure_battery', divisor: 1, transform: anyNum(100) },
         104: { capability: 'measure_battery', divisor: 1, transform: anyNum(100) },
-        106: { capability: 'measure_humidity', divisor: 1, transform: anyNum(100000) }
+        106: { capability: 'measure_humidity', divisor: 1, transform: anyNum(100000) },
+        // P3010: keep the generic-fallback DPs these ids used to receive, so enabling this branch loses nothing
+        15: { capability: 'measure_battery', divisor: 1, transform: anyNum(100) },
+        105: { capability: 'alarm_water', transform: rainMv(0) }
       };
     }
 
@@ -51,7 +58,7 @@ class RainSensorDevice extends UnifiedSensorBase {
     // Rain detection: IAS Zone (cluster 0x0500, zoneType "rain") + DP105 fallback
     // v9.0.40 FIX (#417): Map solar voltage to measure_luminance (declared capability),
     //   use measure_humidity for rain intensity, keep alarm_water from DP105 + IAS Zone
-    if (includesCI(mfr, 'tgvtvdoc') || includesCI(mfr, 'p68kms0l')) {
+    if (containsCI(mfr, 'tgvtvdoc') || containsCI(mfr, 'p68kms0l')) {
       return {
         4:  { capability: 'measure_battery', divisor: 1, transform: anyNum(100) },                    // Battery %
         101: { capability: 'measure_luminance', divisor: 1, transform: anyNum(100000) },                 // Solar voltage (mV) -> illuminance
