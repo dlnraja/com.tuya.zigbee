@@ -777,6 +777,23 @@
       "pid": "TS011F",
       "source": "Z2M lidl.ts HG06338 Silvercrest 3-socket strip with USB (TS011F, endpoints l1-l3)",
       "regression": "P2910 2026-10-20 dual couple: also on button_wireless_2 (removed there, dual-couple-legacy)"
+    },
+    {
+      "id": "p2970-bac002-beca-dzuqwsyg",
+      "mfr": [
+        "_TZE200_dzuqwsyg",
+        "_tze200_dzuqwsyg",
+        "_TZE200_DZUQWSYG",
+        "_tze200_DZUQWSYG",
+        "_TZE204_dzuqwsyg",
+        "_tze204_dzuqwsyg",
+        "_TZE204_DZUQWSYG",
+        "_tze204_DZUQWSYG"
+      ],
+      "driver": "wall_thermostat",
+      "pid": "TS0601",
+      "source": "Z2M zigbee-herdsman-converters tuya.ts BAC-002-ALZB (fingerprints _TZE200_dzuqwsyg/_TZE204_dzuqwsyg, whitelabel Beca BAC-003) + Koenkk/zigbee2mqtt discussion #25308 (Beca BAC-006AZB = _TZE204_dzuqwsyg)",
+      "regression": "P2970 2026-10-24: _TZE204_dzuqwsyg sat in switch_1gang (paired as a relay) and _TZE200_dzuqwsyg in device_radiator_valve (TRV DP map); store suggestion by Umberto Maffii: BAC-006AZB pairs but is not a thermostat."
     }
   ]
 }

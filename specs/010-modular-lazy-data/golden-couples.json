@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-20T09:18:49.765Z",
+ "generated": "2026-10-24T13:34:14.683Z",
  "drivers": 389,
  "snapshot": {
   "air_purifier": {
@@ -279,9 +279,9 @@
    "pidSha": "3427697d0c296c9d"
   },
   "climate_sensor": {
-   "mfr": 531,
+   "mfr": 532,
    "pid": 32,
-   "mfrSha": "e8a0d37cbad6b6be",
+   "mfrSha": "b29c16e331569e08",
    "pidSha": "4809a771f46a5606"
   },
   "climate_sensor_device": {
@@ -579,9 +579,9 @@
    "pidSha": "455c46e8c8549693"
   },
   "device_radiator_valve": {
-   "mfr": 98,
+   "mfr": 97,
    "pid": 1,
-   "mfrSha": "f747eb8eb4d0d1c0",
+   "mfrSha": "fa13881de9ca7a88",
    "pidSha": "455c46e8c8549693"
   },
   "device_radiator_valve_smart": {
@@ -615,10 +615,10 @@
    "pidSha": "455c46e8c8549693"
   },
   "dimmer_1_gang": {
-   "mfr": 8,
-   "pid": 3,
-   "mfrSha": "94b8bf77138288c8",
-   "pidSha": "626db59b8035d2cd"
+   "mfr": 10,
+   "pid": 5,
+   "mfrSha": "ade75cd93b61f1c9",
+   "pidSha": "72163d46b7927a84"
   },
   "dimmer_1_gang_2": {
    "mfr": 1,
@@ -1617,10 +1617,10 @@
    "pidSha": "455c46e8c8549693"
   },
   "slim_motion_sensor": {
-   "mfr": 2,
-   "pid": 1,
-   "mfrSha": "c3f23da021141452",
-   "pidSha": "8f4edb7b9077ac2e"
+   "mfr": 3,
+   "pid": 2,
+   "mfrSha": "9f9207d39f64e680",
+   "pidSha": "807cd66ebf624d74"
   },
   "smartPlug_DinRail": {
    "mfr": 4,
@@ -1869,9 +1869,9 @@
    "pidSha": "b46b96d17990cf37"
   },
   "switch_1gang": {
-   "mfr": 359,
+   "mfr": 358,
    "pid": 38,
-   "mfrSha": "cd8a35e713457ed0",
+   "mfrSha": "e7b8d1b5aa7b50c4",
    "pidSha": "fd65b1d55ed8db6a"
   },
   "switch_2_gang": {
@@ -1887,10 +1887,10 @@
    "pidSha": "5181eca4102958ba"
   },
   "switch_2gang": {
-   "mfr": 94,
-   "pid": 14,
-   "mfrSha": "16ea4231f5300d0f",
-   "pidSha": "830a6ff3ab71bd70"
+   "mfr": 95,
+   "pid": 15,
+   "mfrSha": "a6edc7a356da5f3c",
+   "pidSha": "f01c166c2aa06e7b"
   },
   "switch_3_gang": {
    "mfr": 11,
@@ -2283,9 +2283,9 @@
    "pidSha": "455c46e8c8549693"
   },
   "wall_thermostat": {
-   "mfr": 47,
+   "mfr": 49,
    "pid": 1,
-   "mfrSha": "a0eed6436bc8f688",
+   "mfrSha": "01cc85d770ec79e0",
    "pidSha": "455c46e8c8549693"
   },
   "water_detector": {
