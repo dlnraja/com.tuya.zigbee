@@ -1723,6 +1723,36 @@
       "pid": "SmokeSensor-EF-3.0",
       "driverId": "smoke_detector_advanced",
       "note": "P2974 port of P2919: Homey interview on JohanBendz/com.tuya.zigbee #190 (forum 26439#2296)"
+    },
+    {
+      "mfr": "_TZE28C1000000_jlbsptkl",
+      "pid": "TS0601",
+      "driverId": "switch_presence_tuya",
+      "note": "#108 2026-10-04 ZHC tuya.ts presence wall switch — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE28C1000000_jaunkx9g",
+      "pid": "TS0601",
+      "driverId": "switch_presence_tuya",
+      "note": "#108 2026-10-04 ZHC tuya.ts presence wall switch — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE28C1000000_usmqzgdm",
+      "pid": "TS0601",
+      "driverId": "switch_presence_tuya",
+      "note": "#108 2026-10-04 ZHC tuya.ts presence wall switch — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE200_rgeapp2c",
+      "pid": "TS0601",
+      "driverId": "panel_switch_cover_tuya",
+      "note": "#109 2026-10-04 ZHC tuya.ts Semicom panel (relays + covers) — keep through publish compaction"
+    },
+    {
+      "mfr": "_TZE204_r6kfl9ta",
+      "pid": "TS0601",
+      "driverId": "sound_sensor_tuya",
+      "note": "#100 2026-10-04 ZHC tuya.ts ZY-N1 sound sensor — keep through publish compaction"
     }
   ]
 }
