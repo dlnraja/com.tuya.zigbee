@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-24T22:03:50.646Z",
+ "updated": "2026-10-24T22:13:54.217Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -38233,6 +38233,12 @@
    "status": "done",
    "date": "2026-10-24",
    "note": "dsagrkvg (device_radiator_valve) + sdvbnmj5 (water_valve_smart) → valve_novato_zpv01; battery 4xAA (source https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/tuya.ts#L22298 + https://novato.com.tr/novato-katalog-v1.pdf (ZPV-01: 4 x AA alkaline))"
+  },
+  "task:p3022": {
+   "status": "done",
+   "date": "2026-10-24",
+   "note": "repo autopilot workflow: bot PR merge/close, bot/* branch cleanup, issue triage to ledger + draft replies in report, external PR couples to strict-apply leads; no comment, no issue close",
+   "by": "P3022"
   },
   "task:pair-2uollq9d-ts011f": {
    "status": "pending",
