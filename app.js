@@ -809,6 +809,8 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
       });
       if (allowHeavy) {this.homeModeManager.start();}
 
+      // P3016: app-level cards for unknown commands/DPs (registered only when declared)
+      try { require('./lib/flow/UnknownCommandFlowCards').register(this.homey, (...a) => this.log(...a)); } catch (_e) { /* non-critical */ }
       this.featureFlowCards = new FeatureFlowCards(this.homey);
       this.featureFlowCards.setSolarElevation(this.solarElevation);
       this.featureFlowCards.setTransitionEngine(this.transitionEngine);

@@ -1,0 +1,189 @@
+{
+  "id": "inferred_button_action",
+  "title": {
+    "en": "A button action was inferred from an unknown command",
+    "fr": "Une action bouton a été déduite d'une commande inconnue",
+    "nl": "Een knopactie is afgeleid van een onbekend commando",
+    "de": "Eine Tastenaktion wurde aus einem unbekannten Befehl abgeleitet"
+  },
+  "titleFormatted": {
+    "en": "A button action [[action]] was inferred from an unknown command",
+    "fr": "Une action bouton [[action]] a été déduite d'une commande inconnue",
+    "nl": "Knopactie [[action]] is afgeleid van een onbekend commando",
+    "de": "Tastenaktion [[action]] wurde aus einem unbekannten Befehl abgeleitet"
+  },
+  "hint": {
+    "en": "Press, double, long, release, rotate or scene inferred from frames/DPs the driver does not handle (P3016).",
+    "fr": "Appui, double, long, relâchement, rotation ou scène déduits de trames/DP non gérés par le driver (P3016)."
+  },
+  "tokens": [
+    {
+      "name": "device_name",
+      "type": "string",
+      "title": {
+        "en": "Device name",
+        "fr": "Nom de l'appareil"
+      },
+      "example": "Living remote"
+    },
+    {
+      "name": "button",
+      "type": "number",
+      "title": {
+        "en": "Button",
+        "fr": "Bouton"
+      },
+      "example": 1
+    },
+    {
+      "name": "action",
+      "type": "string",
+      "title": {
+        "en": "Action",
+        "fr": "Action"
+      },
+      "example": "double"
+    },
+    {
+      "name": "source",
+      "type": "string",
+      "title": {
+        "en": "Source",
+        "fr": "Source"
+      },
+      "example": "z2m:tuya.on_off_action(0xFD)"
+    },
+    {
+      "name": "confidence",
+      "type": "number",
+      "title": {
+        "en": "Confidence (0–1)",
+        "fr": "Confiance (0–1)"
+      },
+      "example": 0.95
+    }
+  ],
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "title": {
+        "en": "Device (optional filter)",
+        "fr": "Appareil (filtre optionnel)",
+        "nl": "Apparaat (optioneel filter)",
+        "de": "Gerät (optionaler Filter)"
+      }
+    },
+    {
+      "type": "dropdown",
+      "name": "action",
+      "title": {
+        "en": "Action",
+        "fr": "Action",
+        "nl": "Actie",
+        "de": "Aktion"
+      },
+      "values": [
+        {
+          "id": "any",
+          "title": {
+            "en": "Any action",
+            "fr": "N'importe quelle action",
+            "nl": "Elke actie",
+            "de": "Jede Aktion"
+          }
+        },
+        {
+          "id": "single",
+          "title": {
+            "en": "Single press",
+            "fr": "Appui simple",
+            "nl": "Enkele druk",
+            "de": "Einfacher Druck"
+          }
+        },
+        {
+          "id": "double",
+          "title": {
+            "en": "Double press",
+            "fr": "Double appui",
+            "nl": "Dubbele druk",
+            "de": "Doppelter Druck"
+          }
+        },
+        {
+          "id": "long",
+          "title": {
+            "en": "Long press / hold",
+            "fr": "Appui long",
+            "nl": "Lang indrukken",
+            "de": "Langer Druck"
+          }
+        },
+        {
+          "id": "release",
+          "title": {
+            "en": "Release",
+            "fr": "Relâchement",
+            "nl": "Loslaten",
+            "de": "Loslassen"
+          }
+        },
+        {
+          "id": "rotate_left",
+          "title": {
+            "en": "Rotate left",
+            "fr": "Rotation gauche",
+            "nl": "Links draaien",
+            "de": "Links drehen"
+          }
+        },
+        {
+          "id": "rotate_right",
+          "title": {
+            "en": "Rotate right",
+            "fr": "Rotation droite",
+            "nl": "Rechts draaien",
+            "de": "Rechts drehen"
+          }
+        },
+        {
+          "id": "scene",
+          "title": {
+            "en": "Scene recall",
+            "fr": "Rappel de scène",
+            "nl": "Scène oproepen",
+            "de": "Szene abrufen"
+          }
+        },
+        {
+          "id": "on",
+          "title": {
+            "en": "On",
+            "fr": "Allumer",
+            "nl": "Aan",
+            "de": "Ein"
+          }
+        },
+        {
+          "id": "off",
+          "title": {
+            "en": "Off",
+            "fr": "Éteindre",
+            "nl": "Uit",
+            "de": "Aus"
+          }
+        },
+        {
+          "id": "toggle",
+          "title": {
+            "en": "Toggle",
+            "fr": "Basculer",
+            "nl": "Schakelen",
+            "de": "Umschalten"
+          }
+        }
+      ]
+    }
+  ]
+}
