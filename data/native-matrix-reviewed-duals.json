@@ -169,12 +169,12 @@
     {
       "couple": "HEIMAN|RC-EF-3.0",
       "drivers": [
-        "button_emergency_sos",
+        "heiman_keyfob",
         "universal_zigbee"
       ],
-      "reason": "HEIMAN remote (IAS ACE emergency) added to the SOS driver; the brand name also sits in the generic universal_zigbee fallback, so mfr x pid artifacts (TS0215A/TS0218/TS0601) overlap. Nothing removed from the fallback.",
+      "reason": "P2974 (2026-10-24): HEIMAN HM1RC-2-E keyfob moved from button_emergency_sos to its dedicated heiman_keyfob driver (IAS ACE arm/disarm/emergency, same as master P2921). The brand name also sits in the generic universal_zigbee fallback (cartesian overlap); nothing removed from the fallback.",
       "source": "zigbee-herdsman-converters src/devices/heiman.ts HM1RC-2-E (modelID RC-EF-3.0)",
-      "date": "2026-10-04",
+      "date": "2026-10-24",
       "reviewed_by": "user order 2026-10-04 06:49 (PCr2-1, executor-flowport research)"
     },
     {
