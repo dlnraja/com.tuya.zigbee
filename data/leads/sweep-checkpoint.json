@@ -14562,7 +14562,7 @@
     },
     {
       "id": "forum:26439#4632",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Sibren_ter_Hove",
       "link": "https://community.homey.app/t/26439/4632",
       "mfrs": [],
@@ -14575,7 +14575,10 @@
         "couples": [],
         "candidates": [],
         "sources": 33
-      }
+      },
+      "note": "LCD temp/humidity sensor reported as unknown, no manufacturerName or productId given.",
+      "triagedAt": "2026-10-24T07:02:05.720Z",
+      "triagedVia": "resume-sweep-2026-10-24"
     },
     {
       "id": "forum:26439#4639",
@@ -14678,7 +14681,7 @@
     },
     {
       "id": "forum:26439#4650",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "johan_bendz",
       "link": "https://community.homey.app/t/26439/4650",
       "mfrs": [],
@@ -14691,7 +14694,10 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "note": "Maintainer reply on an app stability report, no device identity.",
+      "triagedAt": "2026-10-24T07:02:05.720Z",
+      "triagedVia": "resume-sweep-2026-10-24"
     },
     {
       "id": "forum:26439#4651",
@@ -14808,7 +14814,7 @@
     },
     {
       "id": "forum:26439#4672",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Paul_Sc",
       "link": "https://community.homey.app/t/26439/4672",
       "mfrs": [],
@@ -14822,7 +14828,10 @@
         "couples": [],
         "candidates": [],
         "sources": 35
-      }
+      },
+      "note": "Question about the pairing list of the upstream app version, no device identity.",
+      "triagedAt": "2026-10-24T07:02:05.720Z",
+      "triagedVia": "resume-sweep-2026-10-24"
     },
     {
       "id": "forum:26439#4674",
@@ -14879,7 +14888,7 @@
     },
     {
       "id": "forum:26439#4691",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Eastmaster",
       "link": "https://community.homey.app/t/26439/4691",
       "mfrs": [],
@@ -14892,7 +14901,10 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "note": "Development setup question (compose files regenerate app.json), no device.",
+      "triagedAt": "2026-10-24T07:02:05.720Z",
+      "triagedVia": "resume-sweep-2026-10-24"
     },
     {
       "id": "forum:26439#4694",
@@ -14934,7 +14946,7 @@
     },
     {
       "id": "forum:26439#4698",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Andreas_310",
       "link": "https://community.homey.app/t/26439/4698",
       "mfrs": [],
@@ -14947,11 +14959,14 @@
         "couples": [],
         "candidates": [],
         "sources": 18
-      }
+      },
+      "note": "Moes _TZE204_aoclfnxz thermostat (JohanBendz #489) already hosted on wall_thermostat.",
+      "triagedAt": "2026-10-24T07:02:05.720Z",
+      "triagedVia": "resume-sweep-2026-10-24"
     },
     {
       "id": "forum:26439#4699",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Rockhoppers",
       "link": "https://community.homey.app/t/26439/4699",
       "mfrs": [],
@@ -14964,7 +14979,10 @@
         "couples": [],
         "candidates": [],
         "sources": 33
-      }
+      },
+      "note": "Question about upstream maintenance status, no device.",
+      "triagedAt": "2026-10-24T07:02:05.720Z",
+      "triagedVia": "resume-sweep-2026-10-24"
     },
     {
       "id": "forum:26439#4700",
@@ -15003,7 +15021,7 @@
     },
     {
       "id": "forum:26439#4706",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "vikino",
       "link": "https://community.homey.app/t/26439/4706",
       "mfrs": [],
@@ -15018,11 +15036,14 @@
           "https://zigbee.blakadder.com/Yieryi_THE01840.html"
         ],
         "sources": 32
-      }
+      },
+      "note": "Short reply without device identity.",
+      "triagedAt": "2026-10-24T07:02:05.720Z",
+      "triagedVia": "resume-sweep-2026-10-24"
     },
     {
       "id": "forum:26439#4707",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "robertklep",
       "link": "https://community.homey.app/t/26439/4707",
       "mfrs": [],
@@ -15035,7 +15056,10 @@
         "couples": [],
         "candidates": [],
         "sources": 31
-      }
+      },
+      "note": "Short reply without device identity.",
+      "triagedAt": "2026-10-24T07:02:05.720Z",
+      "triagedVia": "resume-sweep-2026-10-24"
     },
     {
       "id": "forum:26439#4708",
@@ -15070,7 +15094,7 @@
     },
     {
       "id": "forum:146735#305",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Niels_Hubregtse",
       "link": "https://community.homey.app/t/146735/305",
       "mfrs": [],
@@ -15083,7 +15107,10 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "note": "Connection timeout report on another Wi-Fi app, diag code only.",
+      "triagedAt": "2026-10-24T07:02:05.720Z",
+      "triagedVia": "resume-sweep-2026-10-24"
     },
     {
       "id": "forum:146735#325",
@@ -15147,7 +15174,7 @@
     },
     {
       "id": "forum:146735#369",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "smarthomesven",
       "link": "https://community.homey.app/t/146735/369",
       "mfrs": [],
@@ -15160,11 +15187,14 @@
         "couples": [],
         "candidates": [],
         "sources": 31
-      }
+      },
+      "note": "Status update loss on another Wi-Fi app, diag code only.",
+      "triagedAt": "2026-10-24T07:02:05.720Z",
+      "triagedVia": "resume-sweep-2026-10-24"
     },
     {
       "id": "forum:146735#372",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Pieter_Pessers",
       "link": "https://community.homey.app/t/146735/372",
       "mfrs": [],
@@ -15177,11 +15207,14 @@
         "couples": [],
         "candidates": [],
         "sources": 31
-      }
+      },
+      "note": "Wall switch flow trigger loss on another Wi-Fi app after a while, diag code only.",
+      "triagedAt": "2026-10-24T07:02:05.720Z",
+      "triagedVia": "resume-sweep-2026-10-24"
     },
     {
       "id": "forum:146735#375",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "smarthomesven",
       "link": "https://community.homey.app/t/146735/375",
       "mfrs": [],
@@ -15194,7 +15227,10 @@
         "couples": [],
         "candidates": [],
         "sources": 31
-      }
+      },
+      "note": "Status updates stop after restart on another Wi-Fi app, diag code only.",
+      "triagedAt": "2026-10-24T07:02:05.720Z",
+      "triagedVia": "resume-sweep-2026-10-24"
     },
     {
       "id": "forum:154077#286",
@@ -15258,7 +15294,7 @@
     },
     {
       "id": "forum:154077#320",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Mates1134",
       "link": "https://community.homey.app/t/154077/320",
       "mfrs": [],
@@ -15271,7 +15307,10 @@
         "couples": [],
         "candidates": [],
         "sources": 5
-      }
+      },
+      "note": "Idea for Wi-Fi meters: let the user flag a meter as a solar producer for the Energy dashboard; kept as a Wi-Fi lead in the daily queue.",
+      "triagedAt": "2026-10-24T07:02:05.720Z",
+      "triagedVia": "resume-sweep-2026-10-24"
     },
     {
       "id": "forum:154077#323",
@@ -15295,7 +15334,7 @@
     },
     {
       "id": "forum:154077#327",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Jan-Feijen",
       "link": "https://community.homey.app/t/154077/327",
       "mfrs": [],
@@ -15308,7 +15347,10 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "note": "Tuya Local heat pump reconnect loop on protocol mismatch; lesson (rotate protocol versions after repeated resets) kept as a Wi-Fi lead.",
+      "triagedAt": "2026-10-24T07:02:05.720Z",
+      "triagedVia": "resume-sweep-2026-10-24"
     },
     {
       "id": "forum:154077#329",
@@ -15322,7 +15364,7 @@
     },
     {
       "id": "forum:154077#332",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Jan-Feijen",
       "link": "https://community.homey.app/t/154077/332",
       "mfrs": [],
@@ -15335,7 +15377,10 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "note": "Follow-up of the same protocol rotation test, no new identity.",
+      "triagedAt": "2026-10-24T07:02:05.720Z",
+      "triagedVia": "resume-sweep-2026-10-24"
     },
     {
       "id": "forum:154077#342",
@@ -15369,7 +15414,7 @@
     },
     {
       "id": "forum:154077#346",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Jan-Feijen",
       "link": "https://community.homey.app/t/154077/346",
       "mfrs": [],
@@ -15382,7 +15427,10 @@
         "couples": [],
         "candidates": [],
         "sources": 33
-      }
+      },
+      "note": "Support bundle for the same heat pump issue, no identity.",
+      "triagedAt": "2026-10-24T07:02:05.720Z",
+      "triagedVia": "resume-sweep-2026-10-24"
     },
     {
       "id": "forum:154077#347",
@@ -15476,7 +15524,7 @@
     },
     {
       "id": "forum:21313#288",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Jonas_Andersson2",
       "link": "https://community.homey.app/t/21313/288",
       "mfrs": [],
@@ -15489,7 +15537,10 @@
         "couples": [],
         "candidates": [],
         "sources": 4
-      }
+      },
+      "note": "Tuya cloud app discovery issue, not Zigbee.",
+      "triagedAt": "2026-10-24T07:02:05.720Z",
+      "triagedVia": "resume-sweep-2026-10-24"
     },
     {
       "id": "forum:21313#296",
@@ -15503,7 +15554,7 @@
     },
     {
       "id": "forum:21313#301",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Jurgen_Heine",
       "link": "https://community.homey.app/t/21313/301",
       "mfrs": [],
@@ -15516,11 +15567,14 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "note": "Cloud app maintainer note on discovery limit and dimming ranges, not Zigbee.",
+      "triagedAt": "2026-10-24T07:02:05.720Z",
+      "triagedVia": "resume-sweep-2026-10-24"
     },
     {
       "id": "forum:21313#303",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Jurgen_Heine",
       "link": "https://community.homey.app/t/21313/303",
       "mfrs": [],
@@ -15533,7 +15587,10 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "note": "Cloud app dimming range explanation, not Zigbee.",
+      "triagedAt": "2026-10-24T07:02:05.720Z",
+      "triagedVia": "resume-sweep-2026-10-24"
     },
     {
       "id": "forum:21313#306",
@@ -15557,7 +15614,7 @@
     },
     {
       "id": "forum:21313#316",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Jurgen_Heine",
       "link": "https://community.homey.app/t/21313/316",
       "mfrs": [],
@@ -15570,7 +15627,10 @@
         "couples": [],
         "candidates": [],
         "sources": 31
-      }
+      },
+      "note": "Cloud app note: sensors unsupported by its API.",
+      "triagedAt": "2026-10-24T07:02:05.720Z",
+      "triagedVia": "resume-sweep-2026-10-24"
     },
     {
       "id": "forum:21313#317",
@@ -15584,7 +15644,7 @@
     },
     {
       "id": "forum:21313#322",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Jakob_Kowalski",
       "link": "https://community.homey.app/t/21313/322",
       "mfrs": [],
@@ -15597,7 +15657,10 @@
         "couples": [],
         "candidates": [],
         "sources": 20
-      }
+      },
+      "note": "Cloud app question on battery sensors, not Zigbee.",
+      "triagedAt": "2026-10-24T07:02:05.720Z",
+      "triagedVia": "resume-sweep-2026-10-24"
     },
     {
       "id": "forum:21313#324",
@@ -15621,7 +15684,7 @@
     },
     {
       "id": "forum:21313#337",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "spajder_ua",
       "link": "https://community.homey.app/t/21313/337",
       "mfrs": [],
@@ -15635,7 +15698,10 @@
         "couples": [],
         "candidates": [],
         "sources": 21
-      }
+      },
+      "note": "Cloud app light unavailable report, diag code only.",
+      "triagedAt": "2026-10-24T07:02:05.720Z",
+      "triagedVia": "resume-sweep-2026-10-24"
     },
     {
       "id": "forum:21313#347",
@@ -15659,7 +15725,7 @@
     },
     {
       "id": "forum:21313#355",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Leon_Van_Poelwijk",
       "link": "https://community.homey.app/t/21313/355",
       "mfrs": [],
@@ -15672,7 +15738,10 @@
         "couples": [],
         "candidates": [],
         "sources": 1
-      }
+      },
+      "note": "Cloud app service unavailable report, diag code only.",
+      "triagedAt": "2026-10-24T07:02:05.720Z",
+      "triagedVia": "resume-sweep-2026-10-24"
     },
     {
       "id": "forum:21313#356",
@@ -15686,7 +15755,7 @@
     },
     {
       "id": "forum:21313#358",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Joep_Vullings",
       "link": "https://community.homey.app/t/21313/358",
       "mfrs": [],
@@ -15699,7 +15768,10 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "note": "Cloud app credential/connection issue, not Zigbee.",
+      "triagedAt": "2026-10-24T07:02:05.720Z",
+      "triagedVia": "resume-sweep-2026-10-24"
     },
     {
       "id": "forum:21313#360",
@@ -21458,7 +21530,7 @@
     },
     {
       "id": "forum:26439#5021",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "SunBeech",
       "link": "https://community.homey.app/t/26439/5021",
       "mfrs": [
@@ -21486,7 +21558,10 @@
         ],
         "candidates": [],
         "sources": 3
-      }
+      },
+      "note": "_TZ3000_dfgbtub0|TS0042 (Z2M whitelabel Marmitek Push_LO, 2-button) already hosted on button_wireless_2; nothing to add.",
+      "triagedAt": "2026-10-24T07:02:05.720Z",
+      "triagedVia": "resume-sweep-2026-10-24"
     },
     {
       "id": "forum:26439#5026",
@@ -35299,9 +35374,9 @@
     "previousNext": 31
   },
   "stats": {
-    "already-fixed": 1079,
-    "no-action": 962,
-    "needs-info": 480,
+    "already-fixed": 1081,
+    "no-action": 985,
+    "needs-info": 455,
     "deferred": 3,
     "fixed": 8,
     "covered": 1,
@@ -35557,6 +35632,112 @@
       {
         "id": "forum:26439#1702",
         "status": "no-action"
+      }
+    ]
+  },
+  "dailyResume20261024": {
+    "at": "2026-10-24T07:02:05.720Z",
+    "advanced": 25,
+    "items": [
+      {
+        "id": "forum:26439#4632",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:26439#4650",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:26439#4672",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:26439#4691",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:26439#4698",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:26439#4699",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:26439#4706",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:26439#4707",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:146735#305",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:146735#369",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:146735#372",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:146735#375",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:154077#320",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:154077#327",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:154077#332",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:154077#346",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:21313#288",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:21313#301",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:21313#303",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:21313#316",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:21313#322",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:21313#337",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:21313#355",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:21313#358",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:26439#5021",
+        "status": "already-fixed"
       }
     ]
   }
