@@ -168,6 +168,24 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
    * DP35 bit0 says otherwise) and drop an empty measure_battery. If a battery % DP (6/13/15) ever arrives,
    * measure_battery is re-added lazily in _handleDP, so nothing real is lost.
    */
+  /**
+   * WHY(P3001 / #560 artisare): TRV06 `_TZE200_rxq4iti9` firmware reports local
+   * temperature, setpoint and calibration in whole °C only (Z2M TRV06 docs: step 1;
+   * Z2M discussion #24659). Show a 1 °C setpoint step so the UI matches the device.
+   */
+  async _alignTrv06WholeDegree() {
+    if (!this._isNoHumidityTrv() || !this.hasCapability('target_temperature')) { return; }
+    try {
+      let cur = {};
+      try { cur = this.getCapabilityOptions('target_temperature') || {}; } catch (_e) { cur = {}; }
+      if (cur.step === 1 && cur.decimals === 0) { return; }
+      await this.setCapabilityOptions('target_temperature', { ...cur, step: 1, decimals: 0 });
+      this.log('[TRV] P3001 TRV06 setpoint step 1 °C (firmware whole degrees)');
+    } catch (e) {
+      this.log('[TRV] P3001 setpoint step skipped:', e?.message || e);
+    }
+  }
+
   async _alignTrv06Battery() {
     if (!this._isNoHumidityTrv()) return;
     try {
@@ -320,6 +338,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     } catch (_e) { /* soft */ }
     await this._stripPhantomHumidity();
     await this._alignTrv06Battery();
+    await this._alignTrv06WholeDegree();
 
     // Store manufacturerName for profile detection
     try {
@@ -478,8 +497,11 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     if (this.hasCapability('target_temperature')) {
       this.registerCapabilityListener('target_temperature', async (v) => {
         const dp = this.dpProfile === 'me167' ? 4 : 3;
+        // WHY(P3001 / #560): TRV06 firmware only honours whole °C (Z2M disc. #24659);
+        // decimals have been reported to glitch the setpoint → snap to 1 °C.
+        const target = this._isNoHumidityTrv() ? Math.round(Number(v)) : Number(v);
         // WHY(P2593 / Michaelp #2253): tenths °C as Tuya value DP (4-byte)
-        await this._sendTuyaDP(dp, Math.round(safeMultiply(Number(v), 10)), 'value');
+        await this._sendTuyaDP(dp, Math.round(safeMultiply(target, 10)), 'value');
       });
     }
   }
