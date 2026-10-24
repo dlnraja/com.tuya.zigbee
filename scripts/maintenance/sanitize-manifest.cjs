@@ -90,6 +90,34 @@ function dedupeFlowArgs(manifest) {
   return stripped;
 }
 
+// P3025: same rule as homey-lib App._checkTitleFormatted — the first device arg filtered by
+// driver_id/driverId is implicit and must NOT appear; every other arg (+droptoken) may.
+function deviceTitleFormattedValid(card) {
+  const args = Array.isArray(card.args) ? card.args : [];
+  const first = args.find(a => {
+    if (!a || a.type !== 'device') return false;
+    const f = new URLSearchParams(a.filter || '');
+    return f.has('driver_id') || f.has('driverId');
+  });
+  const names = args.filter(a => a !== first).map(a => a && a.name);
+  if (card.droptoken) names.push('droptoken');
+  // [[device]] with no referable arg cannot render: keep the legacy strip.
+  if (names.length === 0) return false;
+  const tf = card.titleFormatted;
+  const values = typeof tf === 'string' ? [tf] : Object.values(tf || {});
+  for (const v of values) {
+    const m = String(v).match(/\[\[(.*?)\]\]/gm);
+    if (!m) return false;
+    const seen = new Set();
+    for (const tok of m) {
+      const n = tok.slice(2, -2);
+      if (!names.includes(n) || seen.has(n)) return false;
+      seen.add(n);
+    }
+  }
+  return true;
+}
+
 function stripDeviceTitleFormatted(manifest) {
   let stripped = 0;
   const flow = manifest.flow || {};
@@ -100,6 +128,13 @@ function stripDeviceTitleFormatted(manifest) {
     for (const card of cards) {
       if (!card || !card.titleFormatted) continue;
       if (!JSON.stringify(card.titleFormatted).includes('[[device]]')) continue;
+      // WHY(P3025): v9.0.1596 bump stripped VALID [[device]] titleFormatted (unfiltered device
+      // arg, required by homey-lib — P3019b) from the tracked app.json. Strip only what
+      // homey-lib would reject (implicit driver_id device arg); fallback: old rule if the
+      // exact check throws.
+      let invalid = true;
+      try { invalid = !deviceTitleFormattedValid(card); } catch (_) { invalid = true; }
+      if (!invalid) continue;
       delete card.titleFormatted;
       stripped++;
     }
@@ -215,7 +250,13 @@ function sanitizeManifestFile(manifestPath, options = {}) {
   // 5) Strip device-token titleFormatted strings from compiled Flow cards.
   //    Athom's publish validator rejects [[device]] in titleFormatted for
   //    some generated driver conditions, even when local validation passes.
-  const deviceTitleFormatted = stripDeviceTitleFormatted(manifest);
+  //    P3025: never on the tracked root app.json (must stay == .homeycompose, lossless);
+  //    build/publish manifests (.homeybuild, temp) still get it. Opt-in override:
+  //    SANITIZE_ROOT_TITLEFORMATTED=1.
+  const isRootForTf = path.resolve(manifestPath) === path.join(APP_ROOT, 'app.json');
+  const deviceTitleFormatted = (isRootForTf && process.env.SANITIZE_ROOT_TITLEFORMATTED !== '1')
+    ? 0
+    : stripDeviceTitleFormatted(manifest);
   if (deviceTitleFormatted > 0) {
     changes += deviceTitleFormatted;
     log(`${label}: stripped ${deviceTitleFormatted} device titleFormatted Flow card(s).`);
@@ -273,4 +314,4 @@ if (require.main === module) {
   process.exit(failures > 0 ? 1 : 0);
 }
 
-module.exports = { sanitizeManifestFile, stripGeneratedButtonOptions, dedupeFlowArgs, stripDeviceTitleFormatted, normalizeFlowCardIds };
+module.exports = { sanitizeManifestFile, stripGeneratedButtonOptions, dedupeFlowArgs, stripDeviceTitleFormatted, deviceTitleFormattedValid, normalizeFlowCardIds };
