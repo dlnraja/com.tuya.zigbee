@@ -14,7 +14,7 @@ class outdoor2socket_driver extends ZigBeeDriver {
       const __card = this.homey.flow.getConditionCard('outdoor_2_socket_is_on');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
@@ -24,7 +24,7 @@ class outdoor2socket_driver extends ZigBeeDriver {
       const __card = this.homey.flow.getActionCard('outdoor_2_socket_turn_on');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           if (typeof args.device.safeSetCapabilityValue === 'function') {
             await args.device.safeSetCapabilityValue('onoff', true).catch(() => {});
           } else {
@@ -39,7 +39,7 @@ class outdoor2socket_driver extends ZigBeeDriver {
       const __card = this.homey.flow.getActionCard('outdoor_2_socket_turn_off');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           if (typeof args.device.safeSetCapabilityValue === 'function') {
             await args.device.safeSetCapabilityValue('onoff', false).catch(() => {});
           } else {
@@ -54,7 +54,7 @@ class outdoor2socket_driver extends ZigBeeDriver {
       const __card = this.homey.flow.getActionCard('outdoor_2_socket_toggle');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const v = !args.device.getCapabilityValue('onoff');
           if (typeof args.device.safeSetCapabilityValue === 'function') {
             await args.device.safeSetCapabilityValue('onoff', v).catch(() => {});

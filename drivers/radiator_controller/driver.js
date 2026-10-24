@@ -18,7 +18,7 @@ class RadiatorControllerDriver extends ZigBeeDriver {
       const __card = this.homey.flow.getConditionCard('radiator_controller_is_on');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
@@ -28,7 +28,7 @@ class RadiatorControllerDriver extends ZigBeeDriver {
       const __card = this.homey.flow.getActionCard('radiator_controller_turn_on');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           if (typeof args.device.safeSetCapabilityValue === 'function') {
             await args.device.safeSetCapabilityValue('onoff', true).catch(() => {});
           } else {
@@ -43,7 +43,7 @@ class RadiatorControllerDriver extends ZigBeeDriver {
       const __card = this.homey.flow.getActionCard('radiator_controller_turn_off');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           if (typeof args.device.safeSetCapabilityValue === 'function') {
             await args.device.safeSetCapabilityValue('onoff', false).catch(() => {});
           } else {
@@ -58,7 +58,7 @@ class RadiatorControllerDriver extends ZigBeeDriver {
       const __card = this.homey.flow.getActionCard('radiator_controller_toggle');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const v = !args.device.getCapabilityValue('onoff');
           if (typeof args.device.safeSetCapabilityValue === 'function') {
             await args.device.safeSetCapabilityValue('onoff', v).catch(() => {});
@@ -74,9 +74,9 @@ class RadiatorControllerDriver extends ZigBeeDriver {
       const __card = this.homey.flow.getActionCard('radiator_controller_set_temperature');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const raw = args.temperature ?? args.brightness ?? args.dim ?? args.value ?? args.speed;
-          if (raw === undefined) return false;
+          if (raw === undefined) {return false;}
           if (typeof args.device.safeSetCapabilityValue === 'function') {
             await args.device.safeSetCapabilityValue('target_temperature', raw).catch(() => {});
           } else {
@@ -91,9 +91,9 @@ class RadiatorControllerDriver extends ZigBeeDriver {
       const __card = this.homey.flow.getActionCard('set_temperature_offset');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const raw = args.temperature ?? args.brightness ?? args.dim ?? args.value ?? args.speed;
-          if (raw === undefined) return false;
+          if (raw === undefined) {return false;}
           if (typeof args.device.safeSetCapabilityValue === 'function') {
             await args.device.safeSetCapabilityValue('target_temperature', raw).catch(() => {});
           } else {
@@ -193,7 +193,7 @@ class RadiatorControllerDriver extends ZigBeeDriver {
     });
     regAction('radiator_controller_toggle', async ({ device }) => {
       const mode = device.currentMode;
-      const next = (!mode || mode === 'off') ? 'confort' : 'off';
+      const next = !mode || mode === 'off' ? 'confort' : 'off';
       if (typeof device._setHeatingMode === 'function') {
         return device._setHeatingMode(next);
       }

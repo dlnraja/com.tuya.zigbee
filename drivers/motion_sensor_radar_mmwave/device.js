@@ -87,7 +87,7 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
 
   /** Couple-aware TX for settings / Flow cards (gnpflcoq ≠ generic mmWave DP2/102). */
   async sendGnpflcoqSetting(key, rawValue) {
-    if (typeof this.sendTuyaCommand !== 'function') return false;
+    if (typeof this.sendTuyaCommand !== 'function') {return false;}
     if (key === 'radar_sensitivity' || key === 'motion_detection_sensitivity') {
       // DP9 enum: 0=low, 1=middle, 2=high (ZHA#5286). Map 0–9 slider → enum.
       const n = Number(rawValue);
@@ -98,7 +98,7 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
     if (key === 'fading_time' || key === 'detection_delay') {
       // DP12 pir_delay 10–180s (NOT DP102 — that is temp_compensate)
       let sec = Math.round(Number(rawValue));
-      if (!Number.isFinite(sec)) sec = 60;
+      if (!Number.isFinite(sec)) {sec = 60;}
       sec = Math.max(10, Math.min(180, sec));
       await this.sendTuyaCommand(12, sec, 'value');
       return true;
@@ -106,13 +106,13 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
     if (key === 'temperature_calibration') {
       // DP102 temp_compensate — tenths °C on many firmwares
       const v = Number(rawValue);
-      if (!Number.isFinite(v)) return false;
+      if (!Number.isFinite(v)) {return false;}
       await this.sendTuyaCommand(102, Math.round(v * 10), 'value');
       return true;
     }
     if (key === 'humidity_calibration') {
       const v = Number(rawValue);
-      if (!Number.isFinite(v)) return false;
+      if (!Number.isFinite(v)) {return false;}
       await this.sendTuyaCommand(103, Math.round(v), 'value');
       return true;
     }
@@ -249,7 +249,7 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
     for (const [attrKey, raw] of Object.entries(payload)) {
       const attrId = Number.isFinite(Number(attrKey)) ? Number(attrKey) : null;
       const byName = ATTR_NAME && Object.entries(ATTR_NAME).find(([, n]) => n === attrKey);
-      const resolvedId = attrId != null && !Number.isNaN(attrId) ? attrId : (byName ? Number(byName[0]) : null);
+      const resolvedId = attrId != null && !Number.isNaN(attrId) ? attrId : byName ? Number(byName[0]) : null;
       if (resolvedId == null) { continue; }
       const value = typeof raw === 'object' && raw !== null && 'value' in raw ? raw.value : raw;
       this._handleLinptechNamedAttr(resolvedId, value, ATTR_NAME[resolvedId] || attrKey);
@@ -433,7 +433,7 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
         }
       }
 
-      const chain = [plan.cluster, ...(plan.fallbackClusters || [])].filter((c, i, a) => a.indexOf(c) === i);
+      const chain = [plan.cluster, ...plan.fallbackClusters || []].filter((c, i, a) => a.indexOf(c) === i);
       let wrote = false;
       let lastCluster = plan.cluster;
       for (const clusterId of chain) {

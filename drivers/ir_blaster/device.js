@@ -839,11 +839,11 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
         });
         if (!flood.allow) {
           this.log(`[IR] flood guard skip: ${flood.reason}`);
-          if (flood.hard) throw new Error(`IR flood guard: ${flood.reason}`);
+          if (flood.hard) {throw new Error(`IR flood guard: ${flood.reason}`);}
           return { ok: true, skipped: true, reason: flood.reason };
         }
       } catch (err) {
-        if (String(err && err.message || '').includes('IR flood guard')) throw err;
+        if (String(err && err.message || '').includes('IR flood guard')) {throw err;}
       }
     }
 
@@ -1009,7 +1009,7 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
         this.log(`[IR-P2487] Confirm learn: press same button again for "${result.name}"`);
         return;
       }
-      if (this._pendingLearnOptions) this._pendingLearnOptions = null;
+      if (this._pendingLearnOptions) {this._pendingLearnOptions = null;}
       this.log(`[IR-P2487] Stored "${result.name}" (${detectFormat(code)})`);
       return;
     }
@@ -1705,7 +1705,7 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
 
   /** P2487: send via IntelligentIRRouter (library / learned / paste) */
   async sendViaRouter(opts = {}) {
-    if (!this._irRouter) this._irRouter = getRouter(this.homey);
+    if (!this._irRouter) {this._irRouter = getRouter(this.homey);}
     return this._irRouter.send({ device: this, ...opts });
   }
 }

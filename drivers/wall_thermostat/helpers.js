@@ -14,7 +14,7 @@ const TUYA_DATA_TYPES = {
  * WHY(P2300): Homey may deliver data as Buffer, number[], or already-decoded.
  */
 const getDataValue = (dpValue) => {
-  if (dpValue == null) return undefined;
+  if (dpValue == null) {return undefined;}
   if (dpValue.value !== undefined && dpValue.data === undefined) {
     return dpValue.value;
   }
@@ -41,10 +41,10 @@ const getDataValue = (dpValue) => {
     case TUYA_DATA_TYPES.bool:
       return Array.isArray(chunks) ? chunks[0] === 1 : !!chunks;
     case TUYA_DATA_TYPES.value:
-      if (typeof chunks === 'number') return chunks;
+      if (typeof chunks === 'number') {return chunks;}
       return convertMultiByteNumberPayloadToSingleDecimalNumber(chunks || []);
     case TUYA_DATA_TYPES.string: {
-      if (typeof chunks === 'string') return chunks;
+      if (typeof chunks === 'string') {return chunks;}
       let dataString = '';
       for (let i = 0; i < (chunks || []).length; ++i) {
         dataString += String.fromCharCode(chunks[i]);
@@ -54,11 +54,11 @@ const getDataValue = (dpValue) => {
     case TUYA_DATA_TYPES.enum:
       return Array.isArray(chunks) ? chunks[0] : Number(chunks);
     case TUYA_DATA_TYPES.bitmap:
-      if (typeof chunks === 'number') return chunks;
+      if (typeof chunks === 'number') {return chunks;}
       return convertMultiByteNumberPayloadToSingleDecimalNumber(chunks || []);
     default:
-      if (typeof chunks === 'number' || typeof chunks === 'boolean') return chunks;
-      if (Array.isArray(chunks) && chunks.length === 1) return chunks[0];
+      if (typeof chunks === 'number' || typeof chunks === 'boolean') {return chunks;}
+      if (Array.isArray(chunks) && chunks.length === 1) {return chunks[0];}
       return chunks;
   }
 };

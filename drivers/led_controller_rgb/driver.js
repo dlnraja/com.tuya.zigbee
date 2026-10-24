@@ -27,7 +27,7 @@ class LedControllerRgbDriver extends ZigBeeDriver {
     try {
       const mfr = String((device.getSetting && device.getSetting('zb_manufacturer_name'))
         || (device.getStore && device.getStore() && device.getStore().manufacturerName) || '').toLowerCase();
-      if (SPI_MFRS.has(mfr)) return require('../../lib/devices/LedControllerSpiTuyaDevice');
+      if (SPI_MFRS.has(mfr)) {return require('../../lib/devices/LedControllerSpiTuyaDevice');}
     } catch (_e) { /* fall back to the default device class */ }
     return require('./device');
   }
@@ -39,7 +39,7 @@ async onInit() {
       const __card = this.homey.flow.getConditionCard('led_controller_rgb_is_on');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
@@ -49,7 +49,7 @@ async onInit() {
       const __card = this.homey.flow.getActionCard('led_controller_rgb_turn_on');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           if (typeof args.device.safeSetCapabilityValue === 'function') {
             await args.device.safeSetCapabilityValue('onoff', true).catch(() => {});
           } else {
@@ -64,7 +64,7 @@ async onInit() {
       const __card = this.homey.flow.getActionCard('led_controller_rgb_turn_off');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           if (typeof args.device.safeSetCapabilityValue === 'function') {
             await args.device.safeSetCapabilityValue('onoff', false).catch(() => {});
           } else {
@@ -79,7 +79,7 @@ async onInit() {
       const __card = this.homey.flow.getActionCard('led_controller_rgb_toggle');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const v = !args.device.getCapabilityValue('onoff');
           if (typeof args.device.safeSetCapabilityValue === 'function') {
             await args.device.safeSetCapabilityValue('onoff', v).catch(() => {});
@@ -95,9 +95,9 @@ async onInit() {
       const __card = this.homey.flow.getActionCard('led_controller_rgb_set_brightness');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const raw = args.temperature ?? args.brightness ?? args.dim ?? args.value ?? args.speed;
-          if (raw === undefined) return false;
+          if (raw === undefined) {return false;}
           if (typeof args.device.safeSetCapabilityValue === 'function') {
             await args.device.safeSetCapabilityValue('dim', raw).catch(() => {});
           } else {

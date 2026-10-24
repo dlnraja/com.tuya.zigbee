@@ -41,19 +41,19 @@ class WallCurtainSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(Tuy
    */
   _shouldInvertPosition() {
     // Couple default ON for ol1uhvza (ZHA#5226); checkbox enables invert for other TS130F.
-    if (this._mfr().includes('ol1uhvza')) return true;
+    if (this._mfr().includes('ol1uhvza')) {return true;}
     return !!(typeof this.getSetting === 'function' && this.getSetting('invert_position'));
   }
 
   _toDevicePercent(homey01) {
     let pct = Math.round(Math.max(0, Math.min(1, Number(homey01) || 0)) * 100);
-    if (this._shouldInvertPosition()) pct = 100 - pct;
+    if (this._shouldInvertPosition()) {pct = 100 - pct;}
     return pct;
   }
 
   _fromDevicePercent(devicePct) {
     let pct = Math.max(0, Math.min(100, Number(devicePct) || 0));
-    if (this._shouldInvertPosition()) pct = 100 - pct;
+    if (this._shouldInvertPosition()) {pct = 100 - pct;}
     return pct / 100;
   }
 
@@ -77,7 +77,7 @@ class WallCurtainSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(Tuy
 
     if (this.hasCapability('windowcoverings_set')) {
       this.registerCapabilityListener('windowcoverings_set', async (value) => {
-        if (!cover?.goToLiftPercentage) return;
+        if (!cover?.goToLiftPercentage) {return;}
         const percentageLiftValue = this._toDevicePercent(value);
         this.log(`[WallCurtain] TX lift ${Math.round(value * 100)}% → device ${percentageLiftValue}%`);
         return cover.goToLiftPercentage({ percentageLiftValue });
@@ -86,7 +86,7 @@ class WallCurtainSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(Tuy
 
     if (this.hasCapability('windowcoverings_state')) {
       this.registerCapabilityListener('windowcoverings_state', async (value) => {
-        if (!cover) return;
+        if (!cover) {return;}
         switch (value) {
           case 'up': return cover.upOpen?.();
           case 'down': return cover.downClose?.();
