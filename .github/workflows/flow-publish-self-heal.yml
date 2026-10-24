@@ -54,13 +54,13 @@ jobs:
     if: ${{ vars.FLOW_PUBLISH_HEAL_DISABLED != 'true' }}
     steps:
       - name: Checkout
-        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node
-        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
@@ -95,7 +95,7 @@ jobs:
           npm run check:p2842 || echo "P2842_SOFT"
 
       - name: Upload heal reports
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
         with:
           name: flow-publish-heal
           path: reports/flow-publish-heal-*/
@@ -118,6 +118,6 @@ jobs:
             echo "No heal commit needed"
             exit 0
           fi
-          git pull --rebase origin master || true
+          # P3025: commit first, then the shared race-safe push (the old pre-commit pull failed on the dirty tree, push||true hid losses)
           git commit -m "chore(heal): P2842 flow/publish payload self-heal [skip ci]" || true
-          git push origin HEAD:master || true
+          bash .github/scripts/git-push-retry.sh --branch master || echo "::warning::P3025 self-heal commit not pushed (see git-push-retry log)"
