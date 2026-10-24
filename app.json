@@ -12439,11 +12439,23 @@
                   "fr": "Appui simple",
                   "nl": "Enkele druk",
                   "de": "Einfacher Druck"
+                },
+                "title": {
+                  "en": "Single press",
+                  "fr": "Appui simple",
+                  "nl": "Enkele druk",
+                  "de": "Einfacher Druck"
                 }
               },
               {
                 "id": "double",
                 "label": {
+                  "en": "Double press",
+                  "fr": "Double appui",
+                  "nl": "Dubbele druk",
+                  "de": "Doppelter Druck"
+                },
+                "title": {
                   "en": "Double press",
                   "fr": "Double appui",
                   "nl": "Dubbele druk",
@@ -12457,11 +12469,23 @@
                   "fr": "Appui long",
                   "nl": "Lange druk",
                   "de": "Langer Druck"
+                },
+                "title": {
+                  "en": "Long press",
+                  "fr": "Appui long",
+                  "nl": "Lange druk",
+                  "de": "Langer Druck"
                 }
               },
               {
                 "id": "release",
                 "label": {
+                  "en": "Release",
+                  "fr": "Relâchement",
+                  "nl": "Loslaten",
+                  "de": "Loslassen"
+                },
+                "title": {
                   "en": "Release",
                   "fr": "Relâchement",
                   "nl": "Loslaten",
@@ -12475,11 +12499,23 @@
                   "fr": "Rotation gauche",
                   "nl": "Links draaien",
                   "de": "Links drehen"
+                },
+                "title": {
+                  "en": "Rotate left",
+                  "fr": "Rotation gauche",
+                  "nl": "Links draaien",
+                  "de": "Links drehen"
                 }
               },
               {
                 "id": "rotate_right",
                 "label": {
+                  "en": "Rotate right",
+                  "fr": "Rotation droite",
+                  "nl": "Rechts draaien",
+                  "de": "Rechts drehen"
+                },
+                "title": {
                   "en": "Rotate right",
                   "fr": "Rotation droite",
                   "nl": "Rechts draaien",
@@ -12493,11 +12529,23 @@
                   "fr": "Scène",
                   "nl": "Scène",
                   "de": "Szene"
+                },
+                "title": {
+                  "en": "Scene",
+                  "fr": "Scène",
+                  "nl": "Scène",
+                  "de": "Szene"
                 }
               },
               {
                 "id": "on",
                 "label": {
+                  "en": "On",
+                  "fr": "Allumé",
+                  "nl": "Aan",
+                  "de": "Ein"
+                },
+                "title": {
                   "en": "On",
                   "fr": "Allumé",
                   "nl": "Aan",
@@ -12511,6 +12559,12 @@
                   "fr": "Éteint",
                   "nl": "Uit",
                   "de": "Aus"
+                },
+                "title": {
+                  "en": "Off",
+                  "fr": "Éteint",
+                  "nl": "Uit",
+                  "de": "Aus"
                 }
               },
               {
@@ -12520,11 +12574,23 @@
                   "fr": "Basculer",
                   "nl": "Schakelen",
                   "de": "Umschalten"
+                },
+                "title": {
+                  "en": "Toggle",
+                  "fr": "Basculer",
+                  "nl": "Schakelen",
+                  "de": "Umschalten"
                 }
               },
               {
                 "id": "ignore",
                 "label": {
+                  "en": "Ignore",
+                  "fr": "Ignorer",
+                  "nl": "Negeren",
+                  "de": "Ignorieren"
+                },
+                "title": {
                   "en": "Ignore",
                   "fr": "Ignorer",
                   "nl": "Negeren",
