@@ -185,5 +185,5 @@ jobs:
           fi
           git commit -m "chore(intel): L99 inbox intelligence report [skip ci]" || true
           # WHY(P2383): verified push — step already continue-on-error
-          git pull --rebase origin master || true
-          git push origin HEAD
+          # P3025: shared race-safe push (bounded rebase-retry, backoff + jitter, never force)
+          bash .github/scripts/git-push-retry.sh --branch "${GITHUB_REF_NAME}"

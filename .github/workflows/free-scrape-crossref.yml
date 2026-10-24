@@ -64,9 +64,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
-      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
 
-      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
@@ -109,7 +109,8 @@ jobs:
           git add data/sources/state.json data/leads/source-proposals.json
           git diff --cached --quiet && exit 0
           git commit -m "chore(sources): registry ingestion cursors + proposals [skip ci]"
-          for i in 1 2 3; do git pull --rebase -X theirs origin "${GITHUB_REF_NAME}" && git push origin HEAD:"${GITHUB_REF_NAME}" && exit 0; sleep $((i*10)); done
+          # P3025: shared race-safe push; --prefer-local = old "-X theirs" (bot cursor wins on its own state file)
+          bash .github/scripts/git-push-retry.sh --branch "${GITHUB_REF_NAME}" --prefer-local && exit 0
           echo "::warning::could not push source registry state"
 
       - name: Optional Homey/Gmail fetch for harvested diag UUIDs
@@ -135,7 +136,7 @@ jobs:
 
       - name: Upload report artifact
         if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
         with:
           name: free-scrape-crossref
           path: |

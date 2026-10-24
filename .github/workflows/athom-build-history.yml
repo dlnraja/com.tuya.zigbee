@@ -22,8 +22,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
-      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           node-version: '22'
       - run: mkdir -p "$RUNNER_TEMP/h" && cd "$RUNNER_TEMP/h" && npm init -y >/dev/null && npm install --no-audit --no-fund homey@4.4.1
@@ -36,7 +36,7 @@ jobs:
             (cd "$RUNNER_TEMP/h" && node "$GITHUB_WORKSPACE/scripts/ci/homey-build-status.js" "$app" > /dev/null) || true
           done
           ls data/status/
-      - uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4
+      - uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
         with:
           name: athom-build-history
           path: data/status/homey-build-status-*.json

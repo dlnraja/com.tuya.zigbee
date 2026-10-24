@@ -52,7 +52,7 @@ jobs:
         run: git fetch origin master --depth=50
 
       - name: Setup Node
-        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           node-version: '22'
 
@@ -139,5 +139,6 @@ jobs:
             exit 0
           fi
           git -c user.email="p52-bot@homey-mavis.local" -c user.name="P52 Sync Bot" commit -m "chore(P52-auto): sync safe changes from master"
-          git push origin stable-v5
+          # P3025: race-safe push; a concurrent stable bump conflicts -> exit 3, nothing pushed (no version collision)
+          bash .github/scripts/git-push-retry.sh --branch stable-v5
           echo "✓ Pushed to stable-v5"
