@@ -17,7 +17,7 @@ const { smartParse, smartDivisorDetect } = require('../../lib/managers/SmartDivi
 // v5.11.16: Clamp pour éviter les dépassements de flow
 function clampDim(val) {
   const n = Number(val);
-  if (isNaN(n)) return 0;
+  if (isNaN(n)) {return 0;}
   return Math.min(1, Math.max(0, n));
 }
 
@@ -127,7 +127,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
    * DP36+DP37 fallback for alternate firmware (issue #26578)
    */
   async _onBacklightModeChange(backlightMode) {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     this.log(`[BACKLIGHT] Setting backlight_mode: ${backlightMode}`);
 
     // Canonical mapping (UnifiedSwitchBase compatible)
@@ -150,7 +150,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
   }
 
   async _onLightTypeChange(lightType) {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     const lightMap = { '0': 0, '1': 1, '2': 2, 'led': 0, 'incandescent': 1, 'halogen': 2 };
     const lightTypeValue = lightMap[String(lightType).toLowerCase()];
     if (lightTypeValue !== undefined) {
@@ -163,7 +163,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
   async _applyInitialSettings() {
     try {
       const settings = this.getSettings();
-      if (!settings) return;
+      if (!settings) {return;}
 
       // Apply light_type if not default
       if (settings.light_type && settings.light_type !== '0') {
@@ -356,7 +356,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
     if (this._appCommandTimeout) {
       safeClearTimeout(this, this._appCommandTimeout);
     }
-    this._appCommandTimeout = safeSetTimeout(this, () => { if (this._destroyed) return; this._appCommandPending = false; }, 2000);
+    this._appCommandTimeout = safeSetTimeout(this, () => { if (this._destroyed) {return;} this._appCommandPending = false; }, 2000);
   }
 
   onDeleted() {

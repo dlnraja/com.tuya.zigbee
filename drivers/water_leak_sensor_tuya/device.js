@@ -52,7 +52,7 @@ class TuyaWaterLeakSensor extends TuyaSpecificClusterDevice {
         if (attrs?.zoneStatus !== undefined) {
           const zs = typeof attrs.zoneStatus === 'number'
             ? attrs.zoneStatus
-            : (attrs.zoneStatus?.alarm1 || attrs.zoneStatus?.alarm2 ? 1 : 0);
+            : attrs.zoneStatus?.alarm1 || attrs.zoneStatus?.alarm2 ? 1 : 0;
           this._receivedDpData = true;
           await this.safeSetCapabilityValue('alarm_water', Boolean(zs & 0x03)).catch(() => {});
           this.log(`[WATER-TUYA] Initial IAS zoneStatus=${zs} → alarm_water=${Boolean(zs & 0x03)}`);
@@ -73,7 +73,7 @@ class TuyaWaterLeakSensor extends TuyaSpecificClusterDevice {
     }, 5 * 60 * 1000);
 
     // Battery poll — guard destroyed / missing homey
-    const timerApi = (this.homey && typeof this.homey.setInterval === 'function') ? this.homey : globalThis;
+    const timerApi = this.homey && typeof this.homey.setInterval === 'function' ? this.homey : globalThis;
     this.batteryInterval = timerApi.setInterval(async () => {
       if (this._destroyed) {return;}
       try {

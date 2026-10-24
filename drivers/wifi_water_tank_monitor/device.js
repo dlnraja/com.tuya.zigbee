@@ -22,7 +22,7 @@ class WiFiWaterTankMonitorDevice extends TuyaLocalDevice {
   }
 
   async _processDPUpdate(dps) {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     await super._processDPUpdate(dps);
     this.log('[WIFI-TANK] Raw DPs:', JSON.stringify(dps));
     
@@ -91,7 +91,7 @@ class WiFiWaterTankMonitorDevice extends TuyaLocalDevice {
   }
 
   async onDeleted() {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     this._destroyed = true;
     this.log('[WIFI-TANK] Sensor deleted');
     await super.onDeleted();

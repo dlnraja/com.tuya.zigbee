@@ -98,7 +98,7 @@ const parseSchedule = (bytes) => {
         const tempRaw = Buffer.from(tempHexArray).readUIntBE(0, tempHexArray.length);
         const temp = tempRaw / 10;
         schedule.push(strHours + ":" + strMinutes + "/" + temp);
-        if (rHours === 24) break;
+        if (rHours === 24) {break;}
     }
 
     return schedule.join(' ');
@@ -132,8 +132,8 @@ const marshalSchedule = (workingDay, weekDayDataPoint, scheduleString) => {
 
     const schedule = scheduleString.trim().split(/\s+/);
     const schedulePeriods = schedule.length;
-    if (schedulePeriods > maxPeriodsInDay) throw new Error('There cannot be more than 10 periods in the schedule: ' + scheduleString);
-    if (schedulePeriods < 2) throw new Error('There cannot be less than 2 periods in the schedule: ' + scheduleString);
+    if (schedulePeriods > maxPeriodsInDay) {throw new Error('There cannot be more than 10 periods in the schedule: ' + scheduleString);}
+    if (schedulePeriods < 2) {throw new Error('There cannot be less than 2 periods in the schedule: ' + scheduleString);}
 
     let previousMinutes = -1;
 

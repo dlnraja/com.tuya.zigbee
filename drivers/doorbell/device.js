@@ -44,7 +44,7 @@ class DoorbellDevice extends UnifiedSensorBase {
       if (value) {
         try {
           const card = this.homey.flow.getDeviceTriggerCard('doorbell_button_pressed');
-          if (card) await card.trigger(this, {}).catch(() => {});
+          if (card) {await card.trigger(this, {}).catch(() => {});}
         } catch {}
       }
     });

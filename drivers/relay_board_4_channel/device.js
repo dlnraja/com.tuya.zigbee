@@ -56,7 +56,7 @@ class RelayBoard4ChannelDevice extends TuyaZigbeeDevice {
 
   onDeleted() {
     this.log('4 Channel Relay Board, channel', this._subDeviceId || 'unknown', 'removed');
-    if (typeof super.onDeleted === 'function') super.onDeleted();
+    if (typeof super.onDeleted === 'function') {super.onDeleted();}
   }
 }
 

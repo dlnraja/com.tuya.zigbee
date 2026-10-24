@@ -131,7 +131,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
     if (this._healthInterval) {clearInterval(this._healthInterval);}
 
     this._healthInterval = this.homey.setInterval(async () => {
-      if (this._destroyed) return;
+      if (this._destroyed) {return;}
       // Skip if device had recent successful communication
       if (Date.now() - (this._lastCommSuccess || 0) < 300000) {return;}
       
@@ -157,7 +157,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
    * v5.7.9: Cleanup on device removal
    */
   async onDeleted() {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     this._destroyed = true;
     if (this._healthInterval) {clearInterval(this._healthInterval);}
     await super.onDeleted?.();
@@ -222,13 +222,13 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
    * v5.5.322: Handle physical button press on curtain robot
    */
   async _handleButtonPress(value) {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     this.log(`[CURTAIN] 🔘 Button pressed: ${value}`);
     try {
       // Set button capability to trigger flows
       await this._safeSetCapability('button', true);
       // Reset after short delay
-      this.homey.setTimeout(() => { if (this._destroyed) return; this._safeSetCapability('button', false); }, 500);
+      this.homey.setTimeout(() => { if (this._destroyed) {return;} this._safeSetCapability('button', false); }, 500);
 
       // Trigger flow card if available
       const triggerCard = this.homey.flow.getDeviceTriggerCard('curtain_motor_wall_button_pressed');

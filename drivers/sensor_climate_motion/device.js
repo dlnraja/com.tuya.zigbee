@@ -14,7 +14,7 @@ class ClimateMotionSensorDevice extends UnifiedSensorBase {
       3: { capability: 'measure_humidity', divisor: 1 },
       5: {
         capability: 'measure_temperature',
-        transform: (v) => (v >= -40 && v <= 80) ? Math.round(v * 10) / 10 : null
+        transform: (v) => v >= -40 && v <= 80 ? Math.round(v * 10) / 10 : null
       }
     };
   }

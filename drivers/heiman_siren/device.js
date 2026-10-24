@@ -15,7 +15,7 @@ const IAS_WD_START_WARNING = 0x00;
 function warningPayload(seconds) {
   const on = seconds > 0;
   // warningInfo: bits 0-3 mode (1 = burglar), bits 4-5 strobe, bits 6-7 siren level
-  const info = on ? (0x01 | (0x01 << 4) | (0x02 << 6)) : 0x00;
+  const info = on ? 0x01 | (0x01 << 4) | (0x02 << 6) : 0x00;
   const buf = Buffer.alloc(5);
   buf.writeUInt8(info, 0);
   buf.writeUInt16LE(Math.max(0, Math.min(1800, seconds | 0)), 1);
@@ -31,7 +31,7 @@ class HeimanSirenDevice extends ZigBeeDevice {
       this.registerCapability('measure_battery', 'powerConfiguration', {
         get: 'batteryPercentageRemaining',
         report: 'batteryPercentageRemaining',
-        reportParser: (v) => (v === 255 ? null : Math.round(v / 2)),
+        reportParser: (v) => v === 255 ? null : Math.round(v / 2),
         reportOpts: { configureAttributeReporting: { minInterval: 60, maxInterval: 3600, minChange: 2 } },
         getOpts: { getOnStart: true },
       });

@@ -12,7 +12,7 @@ class Button1GangDriver extends BaseZigBeeDriver {
 
   async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
 
     this.log('Button1GangDriver v10.0.1 initialized');
@@ -78,7 +78,7 @@ class Button1GangDriver extends BaseZigBeeDriver {
       const batteryCard = this._getFlowCard('button_wireless_1_battery_low', 'trigger');
       if (batteryCard) {
         batteryCard.registerRunListener(async (args, state) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return true;
         });
         this.log('[FLOW] Registered: button_wireless_1_battery_low');

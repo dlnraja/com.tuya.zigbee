@@ -106,7 +106,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       
       // Initial sync after 10 seconds (let device settle)
       this.homey.setTimeout(async () => {
-        if (this._destroyed) return;
+        if (this._destroyed) {return;}
         try {
           const result = await this._timeSync.sync({ force: true });
           if (result.success) {
@@ -122,7 +122,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       
       // Periodic sync every 6 hours
       this._timeSyncInterval = this.homey.setInterval(async () => {
-        if (this._destroyed) return;
+        if (this._destroyed) {return;}
         try {
           const result = await this._timeSync.sync();
           if (!result.success && result.reason === 'no_rtc') {
@@ -222,7 +222,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
   _markAppCommand() {
     this._appCommandPending = true;
     safeClearTimeout(this, this._appCommandTimeout);
-    this._appCommandTimeout = safeSetTimeout(this, () => { if (this._destroyed) return; this._appCommandPending = false; }, 2000);
+    this._appCommandTimeout = safeSetTimeout(this, () => { if (this._destroyed) {return;} this._appCommandPending = false; }, 2000);
   }
 
   async _setupThermostatCluster(zclNode) {

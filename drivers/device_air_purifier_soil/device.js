@@ -162,7 +162,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
         // For other devices, DP 111 is alarm_water (bool).
         transform: (v) => {
           const mfr = this.getSetting?.('zb_manufacturer_name') || '';
-          if (mfr.includes('npj9bug3')) return v;
+          if (mfr.includes('npj9bug3')) {return v;}
           return v === 1; // Fallback to alarm_water
         }
       },
@@ -422,7 +422,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
         const threshold = this._soilWarningThreshold || 30;
         // v6.1.1: Force alarm to false if moisture is clearly safe (> threshold)
         // This resolves 'stuck' alarms when DP111 is latched or BVB smoothing occurs.
-        const alarm = (validatedMoisture < threshold);
+        const alarm = validatedMoisture < threshold;
         this._safeSetCapability('alarm_water', alarm);
         if (!alarm) {
           this.log(`[SOIL]  Forcing alarm_water to false as moisture ${validatedMoisture}% > ${threshold}%`);
@@ -579,7 +579,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
    */
   async onEndDeviceAnnounce() {
     this.log('[REJOIN] Device announced itself, refreshing state...');
-    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    if (typeof this._updateLastSeen === 'function') {this._updateLastSeen();}
     // Proactive data recovery if supported
     if (this._dataRecoveryManager) {
        this._dataRecoveryManager.triggerRecovery();

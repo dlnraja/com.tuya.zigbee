@@ -66,12 +66,12 @@ class DinRailSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
   _markAppCommand() {
     this._appCommandPending = true;
     safeClearTimeout(this, this._appCommandTimeout);
-    this._appCommandTimeout = safeSetTimeout(this, () => { if (this._destroyed) return; this._appCommandPending = false; }, 2000);
+    this._appCommandTimeout = safeSetTimeout(this, () => { if (this._destroyed) {return;} this._appCommandPending = false; }, 2000);
   }
 
   async _setupElectricalMeasurement(zclNode) {
     const ep1 = zclNode.endpoints[1];
-    if (!ep1) return;
+    if (!ep1) {return;}
 
     const emCluster = ep1.clusters?.electricalMeasurement || ep1.clusters?.[2820];
     if (emCluster) {
@@ -79,7 +79,7 @@ class DinRailSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
 
       if (this.hasCapability('measure_power')) {
         emCluster.on('attr.activePower', (value) => {
-          if (this._destroyed) return;
+          if (this._destroyed) {return;}
           const power = safeMultiply(value, ZCL_ENERGY_DIVISORS.measure_power.divisor);
           this.safeSetCapabilityValue('measure_power', power).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         });
@@ -87,7 +87,7 @@ class DinRailSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
 
       if (this.hasCapability('measure_voltage')) {
         emCluster.on('attr.rmsVoltage', (value) => {
-          if (this._destroyed) return;
+          if (this._destroyed) {return;}
           const voltage = safeMultiply(value, ZCL_ENERGY_DIVISORS.measure_voltage.divisor);
           this.safeSetCapabilityValue('measure_voltage', voltage).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         });
@@ -95,7 +95,7 @@ class DinRailSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
 
       if (this.hasCapability('measure_current')) {
         emCluster.on('attr.rmsCurrent', (value) => {
-          if (this._destroyed) return;
+          if (this._destroyed) {return;}
           const current = value * ZCL_ENERGY_DIVISORS.measure_current.divisor;
           this.safeSetCapabilityValue('measure_current', current).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         });
@@ -105,7 +105,7 @@ class DinRailSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     const meteringCluster = ep1.clusters?.metering || ep1.clusters?.[1794];
     if (meteringCluster && this.hasCapability('meter_power')) {
       meteringCluster.on('attr.currentSummationDelivered', (value) => {
-        if (this._destroyed) return;
+        if (this._destroyed) {return;}
         const energy = value * ZCL_ENERGY_DIVISORS.meter_power.divisor;
         this.safeSetCapabilityValue('meter_power', energy).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       });
@@ -114,10 +114,10 @@ class DinRailSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
 
   async _setupTuyaDP(zclNode) {
     const ep1 = zclNode.endpoints[1];
-    if (!ep1) return;
+    if (!ep1) {return;}
 
     const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184];
-    if (!tuyaCluster) return;
+    if (!tuyaCluster) {return;}
 
     this.log('[TUYA] Tuya DP cluster found');
 
@@ -131,7 +131,7 @@ class DinRailSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
   }
 
   _handleTuyaDP(data) {
-    if (!data || !data.dp ) return;
+    if (!data || !data.dp ) {return;}
     const { dp, value } = data;
 
     this.log(`[DP${dp}] Value: ${value}`);

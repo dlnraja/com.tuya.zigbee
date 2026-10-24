@@ -14,7 +14,7 @@ class D extends E{
     for(const c of['measure_power','measure_voltage','measure_current','meter_power']){if(!this.hasCapability(c)){await this.addCapability(c).catch(() => { });}}
     await super.onInit(); }
   async _processState(data){
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     super._processState(data);
     if(data.oneKwh!==undefined&&this.hasCapability('meter_power')){
       await this.safeSetCapabilityValue('meter_power',parseFloat(data.oneKwh)/100).catch(()=>{});
@@ -23,7 +23,7 @@ class D extends E{
 
 
   async onDeleted() {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     this._destroyed = true;
     this.log('Device deleted, cleaning up');
     await super.onDeleted();

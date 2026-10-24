@@ -107,12 +107,12 @@ class SmartAirDetectionBox extends TuyaSpecificClusterDevice {
       } catch (_e) { /* fall through */ }
     }
     const n = Number(raw);
-    if (!Number.isFinite(n)) return null;
+    if (!Number.isFinite(n)) {return null;}
     return n / fallbackDivisor;
   }
 
   async handleDataPoint(data) {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     const dp = data.dp;
     const value = getDataValue(data);
 
@@ -120,19 +120,19 @@ class SmartAirDetectionBox extends TuyaSpecificClusterDevice {
       case dataPoints.tsFormaldehyde: {
         const v = this._scaleSensor(dp, value, "measure_formaldehyde", 100);
         this.log("Formaldehyde: ", v);
-        if (v != null) await this.safeSetCapabilityValue("measure_formaldehyde", v).catch(() => {});
+        if (v != null) {await this.safeSetCapabilityValue("measure_formaldehyde", v).catch(() => {});}
         break;
       }
       case dataPoints.tsVOC: {
         const v = this._scaleSensor(dp, value, "measure_voc", 10);
         this.log("VOC: ", v);
-        if (v != null) await this.safeSetCapabilityValue("measure_voc", v).catch(() => {});
+        if (v != null) {await this.safeSetCapabilityValue("measure_voc", v).catch(() => {});}
         break;
       }
       case dataPoints.tsCO2: {
         const v = this._scaleSensor(dp, value, "measure_co2", 1);
         this.log("CO2: ", v);
-        if (v != null) await this.safeSetCapabilityValue("measure_co2", v).catch(() => {});
+        if (v != null) {await this.safeSetCapabilityValue("measure_co2", v).catch(() => {});}
         break;
       }
       case dataPoints.tsTemperature: {

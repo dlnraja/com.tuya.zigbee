@@ -223,10 +223,10 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
       this.log('onoff:', value);
       await this.writeBool(dataPoints.ALARM, value);
 
-      this.homey.setTimeout(() => { if (this._destroyed) return; this.queryAll().catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} })); }, 1200);
+      this.homey.setTimeout(() => { if (this._destroyed) {return;} this.queryAll().catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} })); }, 1200);
       });
 
-    this.homey.setTimeout(() => { if (this._destroyed) return; this.bootstrap().catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} })); }, 5000);
+    this.homey.setTimeout(() => { if (this._destroyed) {return;} this.bootstrap().catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} })); }, 5000);
   }
 
   _registerTimeBoundCluster(zclNode) {
@@ -376,7 +376,7 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
         sequenceNumber: data?.sequenceNumber ?? data?.payloadSize ?? 0,
       });
 
-      this.homey.setTimeout(() => { if (this._destroyed) return; this.queryAll().catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} })); }, 500);
+      this.homey.setTimeout(() => { if (this._destroyed) {return;} this.queryAll().catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} })); }, 500);
     } catch (error) {
       this.error('Failed to respond to Tuya timeSync request', error );
     }
@@ -391,7 +391,7 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
       this.log('[Tuya mcuVersionResponse 0x11] versionByte=', versionByte);
     }
 
-    this.homey.setTimeout(() => { if (this._destroyed) return; this.queryAll().catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} })); }, 500);
+    this.homey.setTimeout(() => { if (this._destroyed) {return;} this.queryAll().catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} })); }, 500);
   }
 
   async processTuyaMessage(source, data) {

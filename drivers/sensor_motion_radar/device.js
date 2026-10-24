@@ -133,7 +133,7 @@ class MotionRadarHybridDevice extends UnifiedSensorBase {
       this.configureAttributeReporting(reportingPayload),
       { name: 'configureAttributeReporting', timeoutMs: SleepyInit.ZCL_TIMEOUT_MS }
     ).then((res) => {
-      if (res && res !== 'timeout') this.log('Attribute reporting configured');
+      if (res && res !== 'timeout') {this.log('Attribute reporting configured');}
     });
 
     // Capability Management
@@ -201,7 +201,7 @@ class MotionRadarHybridDevice extends UnifiedSensorBase {
     if (this._luminanceQueryTimer) {clearInterval(this._luminanceQueryTimer);}
     const interval = this.mainsPowered ? 60000 : 300000;
     this._luminanceQueryTimer = this.homey.setInterval(async () => {
-      if (this._destroyed) return;
+      if (this._destroyed) {return;}
       if (this.safeTuyaDataQuery) {await this.safeTuyaDataQuery([12, 103]).catch(() => {});}
     }, interval);
   }
@@ -216,7 +216,7 @@ class MotionRadarHybridDevice extends UnifiedSensorBase {
 
   _setupOfflineCheck() {
     if (this._offlineCheckTimer) {clearInterval(this._offlineCheckTimer);}
-    this._offlineCheckTimer = this.homey.setInterval(() => { if (this._destroyed) return; const elapsed = Date.now() - this._lastEventTime;
+    this._offlineCheckTimer = this.homey.setInterval(() => { if (this._destroyed) {return;} const elapsed = Date.now() - this._lastEventTime;
       if (elapsed > MotionRadarHybridDevice.OFFLINE_CHECK_MS) {
         this.setUnavailable('Pas de signal depuis 60+ minutes').catch(() => {});
       } else {
@@ -240,7 +240,7 @@ class MotionRadarHybridDevice extends UnifiedSensorBase {
       const occCluster = endpoint?.clusters?.occupancySensing || endpoint?.clusters?.msOccupancySensing;
       if (occCluster) {
         occCluster.on('attr.occupancy', (v) => {
-          if (this._destroyed) return;
+          if (this._destroyed) {return;}
           this._updateLastEventTime();
           if (this.hasCapability('alarm_motion')) {this.safeSetCapabilityValue('alarm_motion', v > 0).catch(() => {});}
         });
@@ -254,7 +254,7 @@ class MotionRadarHybridDevice extends UnifiedSensorBase {
       const iasCluster = endpoint?.clusters?.iasZone || endpoint?.clusters?.ssIasZone;
       if (iasCluster) {
         iasCluster.onZoneStatusChangeNotification = (p) => {
-          if (this._destroyed) return;
+          if (this._destroyed) {return;}
           this._updateLastEventTime();
           const parsed = this._parseIASZoneStatus(p?.zoneStatus);
           if (this.hasCapability('alarm_motion')) {this.safeSetCapabilityValue('alarm_motion', parsed.alarm1 || parsed.alarm2).catch(() => {});}
@@ -273,7 +273,7 @@ class MotionRadarHybridDevice extends UnifiedSensorBase {
   }
 
   async onDeleted() {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     this._destroyed = true;
     if (this._offlineCheckTimer) {clearInterval(this._offlineCheckTimer);}
     if (this._luminanceQueryTimer) {clearInterval(this._luminanceQueryTimer);}

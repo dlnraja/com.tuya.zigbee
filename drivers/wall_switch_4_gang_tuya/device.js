@@ -44,9 +44,9 @@ class wall_switch_4_gang_tuya extends TuyaSpecificClusterDevice {
 
   async _setGangOnOff(gang, value) {
     const dp = gangStateDp(this._profile(), gang);
-    if (!dp) return false;
+    if (!dp) {return false;}
     this.log(`[FLOW] _setGangOnOff gang=${gang} dp=${dp} value=${value}`);
-    if (typeof this.markAppCommand === 'function') this.markAppCommand();
+    if (typeof this.markAppCommand === 'function') {this.markAppCommand();}
     await this.writeBool(dp, !!value);
     return true;
   }
@@ -96,12 +96,12 @@ class wall_switch_4_gang_tuya extends TuyaSpecificClusterDevice {
     // UI maintenance buttons → toggle matching gang DP
     for (let gang = 1; gang <= 4; gang++) {
       const cap = `button.${gang}`;
-      if (!this.hasCapability(cap)) continue;
+      if (!this.hasCapability(cap)) {continue;}
       const dp = gangStateDp(profile, gang);
       this.registerCapabilityListener(cap, async () => {
         const next = !this._dpStates?.[dp];
         this.log(`${cap} pressed (UI) — DP${dp} → ${next}`);
-        if (typeof this.markAppCommand === 'function') this.markAppCommand();
+        if (typeof this.markAppCommand === 'function') {this.markAppCommand();}
         await this.writeBool(dp, next);
         return true;
       });
@@ -113,7 +113,7 @@ class wall_switch_4_gang_tuya extends TuyaSpecificClusterDevice {
 
   async _setupGang(zclNode, gangName, dpOnOff) {
     this.registerCapabilityListener('onoff', async (value) => {
-      if (typeof this.markAppCommand === 'function') this.markAppCommand();
+      if (typeof this.markAppCommand === 'function') {this.markAppCommand();}
       this.log(`${gangName} on/off:`, value);
       await this.writeBool(dpOnOff, value);
     });
@@ -133,12 +133,12 @@ class wall_switch_4_gang_tuya extends TuyaSpecificClusterDevice {
     // Gang states
     for (let gang = 1; gang <= (profile.gangs || 4); gang++) {
       const gdp = gangStateDp(profile, gang);
-      if (dp !== gdp) continue;
+      if (dp !== gdp) {continue;}
       const mine = (gang === 1 && !this.isSubDevice())
         || (gang === 2 && subDeviceId === 'secondGang')
         || (gang === 3 && subDeviceId === 'thirdGang')
         || (gang === 4 && subDeviceId === 'fourthGang');
-      if (!mine) return;
+      if (!mine) {return;}
       if (typeof this._triggerPhysicalFlow === 'function') {
         this._triggerPhysicalFlow(gang, parsedValue ? 'on' : 'off', { path: 'ef00_dp' });
       }
@@ -230,24 +230,24 @@ class wall_switch_4_gang_tuya extends TuyaSpecificClusterDevice {
     const profile = this._profile();
     const key = `countdown_l${gang}`;
     const dp = profile.dps[key];
-    if (dp == null) return false;
-    if (typeof this.markAppCommand === 'function') this.markAppCommand();
+    if (dp == null) {return false;}
+    if (typeof this.markAppCommand === 'function') {this.markAppCommand();}
     await this.writeData32(dp, Math.max(0, Math.min(86400, Number(seconds) || 0)));
     return true;
   }
 
   async setChildLock(locked) {
     const dp = this._profile().dps.child_lock;
-    if (dp == null) return false;
-    if (typeof this.markAppCommand === 'function') this.markAppCommand();
+    if (dp == null) {return false;}
+    if (typeof this.markAppCommand === 'function') {this.markAppCommand();}
     await this.writeBool(dp, !!locked);
     return true;
   }
 
   async setBacklightSwitch(on) {
     const dp = this._profile().dps.backlight_switch;
-    if (dp == null) return false;
-    if (typeof this.markAppCommand === 'function') this.markAppCommand();
+    if (dp == null) {return false;}
+    if (typeof this.markAppCommand === 'function') {this.markAppCommand();}
     await this.writeBool(dp, !!on);
     return true;
   }

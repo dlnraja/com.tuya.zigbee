@@ -21,7 +21,7 @@ class AirPurifierClimateDevice extends TuyaSpecificClusterDevice {
   }
 
   async handleTuyaDataReport(data) {
-    if (!data || data.dp === null || data.dp === undefined) return;
+    if (!data || data.dp === null || data.dp === undefined) {return;}
     const v = data.data ?? data.value;
 
     if (data.dp === DP.state) {
@@ -43,7 +43,7 @@ class AirPurifierClimateDevice extends TuyaSpecificClusterDevice {
   }
 
   onDeleted() {
-    if (typeof super.onDeleted === 'function') super.onDeleted();
+    if (typeof super.onDeleted === 'function') {super.onDeleted();}
   }
 }
 

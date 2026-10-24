@@ -24,7 +24,7 @@ class WaterTankMonitorDevice extends UnifiedSensorBase {
    * Handle Tuya datapoints â€” Z2M TLC2206 verified mapping
    */
   async _handleDP(dp, value) {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     this.log(`[LIQUID] DP${dp}: ${value}`);
 
     try {
@@ -33,7 +33,7 @@ class WaterTankMonitorDevice extends UnifiedSensorBase {
           await this._handleLiquidState(value);
           break;
 
-        case 2: // liquid_depth (cm) — WHY(P2761 Johan #1477/Z2M TLC2206): DP2=cm; DP19/21 settings=mm
+        case 2: // liquid_depth (cm) ï¿½ WHY(P2761 Johan #1477/Z2M TLC2206): DP2=cm; DP19/21 settings=mm
           await this._handleLiquidDepth(value);
           break;
 
@@ -68,7 +68,7 @@ class WaterTankMonitorDevice extends UnifiedSensorBase {
   }
 
   async _handleLiquidState(value) {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     const parsed = typeof value === 'number' ? value : parseInt(value) || 0;
     const stateName = LIQUID_STATE[parsed] || 'normal';
     this._lastState = stateName;
@@ -100,7 +100,7 @@ class WaterTankMonitorDevice extends UnifiedSensorBase {
   }
 
   async _handleLiquidDepth(value) {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     const parsed = typeof value === 'number' ? value : parseInt(value) || 0;
     const depthCm = parsed;
     this._lastDepth = depthCm;
@@ -119,7 +119,7 @@ class WaterTankMonitorDevice extends UnifiedSensorBase {
   }
 
   async _handleLiquidPercent(value) {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     const parsed = typeof value === 'number' ? value : parseInt(value) || 0;
     const percent = Math.max(0, Math.min(100, parsed));
     this._lastPercent = percent;

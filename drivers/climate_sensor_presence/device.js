@@ -102,7 +102,7 @@ class ClimateSensorPresenceDevice extends UnifiedSensorBase {
         const isEnergy = ENERGY_CAPS.some(c => dpConfig.cap === c || dpConfig.cap.startsWith(`${c}.`));
         mappings[dp] = {
           capability: dpConfig.cap,
-          ...(isEnergy && !dpConfig.divisor ? { smartDivisor: true } : {}),
+          ...isEnergy && !dpConfig.divisor ? { smartDivisor: true } : {},
           transform: (v) => safeDivide(v, dpConfig.divisor || 1)
         };
       }

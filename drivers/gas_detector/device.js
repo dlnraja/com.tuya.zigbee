@@ -30,7 +30,7 @@ class GasDetectorDevice extends UnifiedSensorBase {
       1: {
         capability: 'alarm_gas',
         transform: (v) => {
-          const boolVal = (v === 1 || v === true);
+          const boolVal = v === 1 || v === true;
           const invert = device.getSetting('invert_alarm') || false;
           return invert ? !boolVal : boolVal;
         }

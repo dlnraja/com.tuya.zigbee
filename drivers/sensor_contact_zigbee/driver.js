@@ -20,7 +20,7 @@ class LonsonhoContactSensorDriver extends ZigBeeDriver {
 
   async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
 
     this.log('LonsonhoContactSensorDriver v5.5.570 initialized');
@@ -33,7 +33,7 @@ class LonsonhoContactSensorDriver extends ZigBeeDriver {
       const card = ( () => { try { return this.homey.flow.getConditionCard('contact_sensor_is_open'); } catch(e) { return null; } } )();
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('alarm_contact') === true;
         });
         this.log('[FLOW] Registered: contact_sensor_is_open');
@@ -45,7 +45,7 @@ class LonsonhoContactSensorDriver extends ZigBeeDriver {
       const card = ( () => { try { return this.homey.flow.getConditionCard('contact_sensor_battery_above'); } catch(e) { return null; } } )();
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const battery = args.device.getCapabilityValue('measure_battery') || 0;
           return battery > (args.threshold || 20);
         });

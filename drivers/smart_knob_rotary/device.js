@@ -227,9 +227,9 @@ class SmartKnobRotaryDevice extends TuyaZigbeeDevice {
           try {
             if (payload && Number(payload.cmdId) === 0xFC) {
               const dir = Number(payload.data?.[0] ?? payload.direction ?? 0);
-              if (dir === 1) this._triggerRotateLeft();
+              if (dir === 1) {this._triggerRotateLeft();}
               else if (dir === 2) { /* stop */ }
-              else this._triggerRotateRight();
+              else {this._triggerRotateRight();}
             }
           } catch (_e) { /* noop */ }
         });
@@ -250,8 +250,8 @@ class SmartKnobRotaryDevice extends TuyaZigbeeDevice {
               if (hdr && hdr.cmdId === 0xFC) {
                 const dir = data[hdr.payloadOffset] ?? 0;
                 self.log('[KNOB-FC] rotate dir=', dir);
-                if (dir === 1) self._triggerRotateLeft();
-                else if (dir !== 2) self._triggerRotateRight();
+                if (dir === 1) {self._triggerRotateLeft();}
+                else if (dir !== 2) {self._triggerRotateRight();}
               }
             }
           }

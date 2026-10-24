@@ -20,7 +20,7 @@ class AirQualityCO2Device extends SensorBase {
   get mainsPowered() {
     // WHY(P2296): Homey battery-status — mains NDIR CO2 must not show measure/alarm_battery
     const mfr = (this.getManufacturerName() || this.getSetting?.('zb_manufacturer_name') || '').toLowerCase();
-    if (isMainsCo2Mfr(mfr)) return true;
+    if (isMainsCo2Mfr(mfr)) {return true;}
     return false;
   }
 
@@ -102,8 +102,8 @@ class AirQualityCO2Device extends SensorBase {
         capability: 'measure_battery',
         transform: (v) => {
           // battery_state enum 0/1/2 → keep existing % or map low→10
-          if (v === 1 || v === 'low' || v === 2) return 10;
-          if (v === 0 || v === 'high') return this.getCapabilityValue('measure_battery') ?? 100;
+          if (v === 1 || v === 'low' || v === 2) {return 10;}
+          if (v === 0 || v === 'high') {return this.getCapabilityValue('measure_battery') ?? 100;}
           return null;
         },
       },
@@ -121,7 +121,7 @@ class AirQualityCO2Device extends SensorBase {
       if (this.mainsPowered) {
         this.log('[CO2] Mains powered variant — pruning battery capabilities');
         for (const cap of ['measure_battery', 'alarm_battery']) {
-          if (this.hasCapability(cap)) await this.removeCapability(cap).catch(() => {});
+          if (this.hasCapability(cap)) {await this.removeCapability(cap).catch(() => {});}
         }
       } else if (this.hasCapability('alarm_battery') && this.hasCapability('measure_battery')) {
         await this.removeCapability('alarm_battery').catch(() => {});
@@ -264,7 +264,7 @@ class AirQualityCO2Device extends SensorBase {
         'measure_temperature',
         (v) => {
           const t = parseFloat(v) / 100;
-          return (t >= -40 && t <= 80) ? t : null;
+          return t >= -40 && t <= 80 ? t : null;
         }
       );
       listenMeasured(
@@ -272,7 +272,7 @@ class AirQualityCO2Device extends SensorBase {
         'measure_humidity',
         (v) => {
           const h = parseFloat(v) / 100;
-          return (h >= 0 && h <= 100) ? h : null;
+          return h >= 0 && h <= 100 ? h : null;
         }
       );
       listenMeasured(
@@ -285,7 +285,7 @@ class AirQualityCO2Device extends SensorBase {
         'measure_pm25',
         (v) => {
           const n = parseFloat(v);
-          return (n >= 0 && n <= 1000) ? n : null;
+          return n >= 0 && n <= 1000 ? n : null;
         }
       );
       listenMeasured(
@@ -300,7 +300,7 @@ class AirQualityCO2Device extends SensorBase {
           const n = parseFloat(v);
           // Homey often gets µg/m³ or mg×100 — soft range gate only
           if (n > 50) {return n / 100;}
-          return (n >= 0 && n <= 50) ? n : null;
+          return n >= 0 && n <= 50 ? n : null;
         }
       );
     } catch (e) {

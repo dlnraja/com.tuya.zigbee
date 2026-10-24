@@ -9,11 +9,11 @@ const { Driver } = require('homey');
 class RelayBoard4ChannelDriver extends Driver {
   async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
 
     const setOnOff = async (device, value) => {
-      if (!device) return false;
+      if (!device) {return false;}
       if (typeof device.triggerCapabilityListener === 'function') {
         await device.triggerCapabilityListener('onoff', value).catch(() => {});
       } else {
@@ -31,13 +31,13 @@ class RelayBoard4ChannelDriver extends Driver {
     });
 
     this.homey.flow.getActionCard('relay_board_4_channel_toggle')?.registerRunListener(async (args) => {
-      if (!args.device) return false;
+      if (!args.device) {return false;}
       const v = args.device.getCapabilityValue('onoff');
       return setOnOff(args.device, !v);
     });
 
     this.homey.flow.getConditionCard('relay_board_4_channel_is_on')?.registerRunListener(async (args) => {
-      if (!args.device) return false;
+      if (!args.device) {return false;}
       return !!args.device.getCapabilityValue('onoff');
     });
   }
