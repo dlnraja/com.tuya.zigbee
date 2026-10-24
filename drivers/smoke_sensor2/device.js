@@ -10,6 +10,9 @@ const dataPoints = {
   tsSmokeAlarm: 1, // 0=Smoke Alarm On, 1=Smoke Alarm Off
   tsTamperAlert: 4,
   tsBatteryState: 14, // dp14 0=20% 1=50% 2=90% [dp=14] battery low   value 2 (FULL)
+  // AVATTO ZSD20 (_TZE284_uqzwwjas / _TZE284_zeeqkb0p): DP15 = battery % (raw 0-100).
+  // Source: Z2M avatto.ts ZSD20 (Koenkk/zigbee-herdsman-converters PR #13187, alblcl, 2026-09-30).
+  tsBatteryPercent: 15,
   // v9.x (upstream PR #1237): smoke+temp+humidity combo sensors (_TZE284_gyzlwu5q)
   tsTemperature: 23, // value | temperature x10
   tsHumidity: 24, // value | humidity %
@@ -111,6 +114,17 @@ class smoke_sensor2 extends TuyaSpecificClusterDevice {
         this.log("measure_battery | powerConfiguration - batteryPercentageRemaining (%): ", batteryPerc);
         this.safeSetCapabilityValue('alarm_battery', value === 0).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         this.safeSetCapabilityValue('measure_battery', batteryPerc).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+        break;
+      }
+
+      // DP15 battery % (AVATTO ZSD20 and other Tuya smoke alarms that report a percentage)
+      case dataPoints.tsBatteryPercent: {
+        const pct = Number(value);
+        if (!Number.isFinite(pct) || pct < 0 || pct > 100) { break; }
+        this.safeSetCapabilityValue('measure_battery', Math.round(pct)).catch((e) => this.error?.('[SMOKE] DP15 battery', e?.message || e));
+        if (this.hasCapability && this.hasCapability('alarm_battery')) {
+          this.safeSetCapabilityValue('alarm_battery', pct <= 10).catch(() => {});
+        }
         break;
       }
 
