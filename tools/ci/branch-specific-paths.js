@@ -35,6 +35,8 @@ const BRANCH_SPECIFIC_PATTERNS = Object.freeze([
  */
 const REGENERATORS = Object.freeze([
   Object.freeze({ script: 'scripts/kb/method-coverage.js', outputs: Object.freeze(['docs/knowledge/KB/METHOD_COVERAGE.md']) }),
+  // P3018 generator: reads the target tree's drivers, catalogue and interviews (deterministic).
+  Object.freeze({ script: 'scripts/kb/dp-endpoint-coverage.js', outputs: Object.freeze(['docs/knowledge/KB/DP_ENDPOINT_COVERAGE.md']) }),
 ]);
 
 function normalize(rel) {
