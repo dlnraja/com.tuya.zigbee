@@ -1,0 +1,47 @@
+{
+  "id": "unknown_command_forget",
+  "title": {
+    "en": "Forget a learned pattern on [[device]]",
+    "fr": "Oublier un motif appris sur [[device]]",
+    "nl": "Vergeet een geleerd patroon op [[device]]",
+    "de": "Gelerntes Muster auf [[device]] vergessen"
+  },
+  "titleFormatted": {
+    "en": "Forget pattern [[pattern]] on [[device]]",
+    "fr": "Oublier le motif [[pattern]] sur [[device]]",
+    "nl": "Vergeet patroon [[pattern]] op [[device]]",
+    "de": "Muster [[pattern]] auf [[device]] vergessen"
+  },
+  "hint": {
+    "en": "Removes your mapping or a learned guess so the interpreter decides again (P3017).",
+    "fr": "Supprime votre association ou une déduction apprise ; l'interpréteur redécide (P3017)."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "title": {
+        "en": "Device",
+        "fr": "Appareil",
+        "nl": "Apparaat",
+        "de": "Gerät"
+      }
+    },
+    {
+      "type": "text",
+      "name": "pattern",
+      "placeholder": {
+        "en": "f:ep1:0x0006:253:00",
+        "fr": "f:ep1:0x0006:253:00",
+        "nl": "f:ep1:0x0006:253:00",
+        "de": "f:ep1:0x0006:253:00"
+      },
+      "title": {
+        "en": "Pattern",
+        "fr": "Motif",
+        "nl": "Patroon",
+        "de": "Muster"
+      }
+    }
+  ]
+}
