@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-24T18:38:32.212Z",
+ "generated": "2026-10-24T19:21:26.638Z",
  "drivers": 391,
  "snapshot": {
   "air_purifier": {
@@ -279,9 +279,9 @@
    "pidSha": "3427697d0c296c9d"
   },
   "climate_sensor": {
-   "mfr": 528,
+   "mfr": 527,
    "pid": 32,
-   "mfrSha": "6b48ebd14d2b0a2c",
+   "mfrSha": "30ee06f6b74f154e",
    "pidSha": "4809a771f46a5606"
   },
   "climate_sensor_device": {
@@ -2325,9 +2325,9 @@
    "pidSha": "4e3ef65e098cb0b3"
   },
   "water_valve_garden": {
-   "mfr": 11,
+   "mfr": 12,
    "pid": 10,
-   "mfrSha": "6537ef99aa76ed4c",
+   "mfrSha": "8ff3e2c44b9ab403",
    "pidSha": "c8f72231c873aa05"
   },
   "water_valve_smart": {

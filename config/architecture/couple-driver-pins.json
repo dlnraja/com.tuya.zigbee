@@ -722,6 +722,30 @@
       "pid": "TS0601",
       "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/tuya.ts#L6115 + https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/tuya.ts#L6215",
       "regression": "P3014 2026-10-24 dual couple: also on dimmer_1_gang_tuya (removed there, curated-couple-removals); user decision 2026-10-24 one driver per couple."
+    },
+    {
+      "id": "p3015-moes-ts0049-valve",
+      "mfr": [
+        "_TZ3000_cjfmu5he",
+        "_tz3000_cjfmu5he",
+        "_TZ3000_CJFMU5HE",
+        "_TZ3000_mq4wujmp",
+        "_tz3000_mq4wujmp",
+        "_TZ3000_MQ4WUJMP",
+        "_TZ3000_5af5r192",
+        "_tz3000_5af5r192",
+        "_TZ3000_5AF5R192",
+        "_TZ3000_ogjpfoyn",
+        "_tz3000_ogjpfoyn",
+        "_TZ3000_OGJPFOYN",
+        "_TZ3000_kz1anoi8",
+        "_tz3000_kz1anoi8",
+        "_TZ3000_KZ1ANOI8"
+      ],
+      "driver": "water_valve_garden",
+      "pid": "TS0049",
+      "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/moes.ts#L1488 + https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/tuya.ts#L26460",
+      "regression": "P3015 2026-10-24: Moes ZWV-YC (cjfmu5he/mq4wujmp/5af5r192/ogjpfoyn) + Haozee HZ-WT02 (kz1anoi8) TS0049 water valves; canonical+lower+UPPER forms on the kept driver for case-sensitive Homey pairing."
     }
   ]
 }
