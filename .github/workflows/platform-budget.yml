@@ -1,0 +1,75 @@
+# P3026: platform budget report (Athom payload, Homey memory, GitHub Actions/repo/API limits).
+# Read-only: builds and prepares the payload in RUNNER_TEMP, never uploads to Athom, never pushes.
+# Report mode (exit 0) until stable; then set "mode": "block" in config/platform-limits.json.
+# Doc: docs/knowledge/KB/PLATFORM_LIMITS.md
+
+name: "Platform Budget (P3026)"
+
+on:
+  push:
+    branches: [master, stable-v5, bastien-home]
+    paths:
+      - "app.json"
+      - ".homeycompose/**"
+      - "drivers/**"
+      - "lib/**"
+      - "assets/**"
+      - "locales/**"
+      - ".homeyignore"
+      - "package-lock.json"
+      - "scripts/prepare-publish.js"
+      - "scripts/ci/platform-budget-gate.js"
+      - "config/platform-limits.json"
+      - ".github/workflows/**"
+  schedule:
+    - cron: "17 3 * * 1"
+  workflow_dispatch:
+
+defaults:
+  run:
+    shell: bash
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  # Never publishes: one run per ref, a newer push cancels the older run.
+  group: platform-budget-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  AI_PLAN_MODE: 'forfait'
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  AI_ALLOW_PAID: 'false'
+
+jobs:
+  budget:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: .github/npm-cache-key.sha256  # P3026: version-free key, one npm cache per dependency set
+      - run: npm ci --prefer-offline --no-audit
+      - name: npm cache key freshness (report only)
+        run: node scripts/ci/npm-cache-key.js || echo "::notice title=npm cache key::stale, run node scripts/ci/npm-cache-key.js --write"
+      - name: Use the publish caps of auto-publish-on-push
+        run: |
+          grep -oE 'HOMEY_ZIGBEE_MAX_(TOTAL_COMBOS|DRIVER_COMBOS|CASE_FORMS): *"?[0-9]+' .github/workflows/auto-publish-on-push.yml \
+            | sed -E 's/: *"?/=/' >> "$GITHUB_ENV" || true
+      - name: Build + prepare payload (local only, no upload)
+        env:
+          TMPDIR: ${{ runner.temp }}
+        run: |
+          npx homey app build
+          node scripts/prepare-publish.js || echo "::warning title=platform budget::prepare-publish failed, payload measures skipped"
+      - name: Platform budget gate
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TMPDIR: ${{ runner.temp }}
+        run: node scripts/ci/platform-budget-gate.js --online --publish-dir "${HOMEY_PUBLISH_DIR:-$RUNNER_TEMP/homey-publish-temp}"

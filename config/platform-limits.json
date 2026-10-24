@@ -1,0 +1,73 @@
+{
+  "_why": "P3026: every platform limit we can hit, with its source, one place. scripts/ci/platform-budget-gate.js measures each one and compares it with warnPct/failPct of the limit. mode=report never fails; switch to mode=block only after the report has stayed green for a week on all three branches (see docs/knowledge/KB/PLATFORM_LIMITS.md). Units: MB = MiB.",
+  "mode": "report",
+  "warnPct": 80,
+  "failPct": 90,
+  "limits": {
+    "upload_app_json_mb": {
+      "limit": 4,
+      "kind": "self",
+      "source": "Our safe ceiling for the uploaded (prepared) app.json, scripts/ci/publish-size-gate.cjs P2840. Athom documents no app.json size limit (node-homey-lib validator has none)."
+    },
+    "payload_mb": {
+      "limit": 50,
+      "kind": "self",
+      "source": "Our ceiling for the uncompressed prepared payload (HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB). Largest payload Athom accepted: stable 5.12.449 #343, 38.33 MB (athom-publish-outcomes.jsonl)."
+    },
+    "archive_gz_mb": {
+      "limit": 20,
+      "kind": "self",
+      "source": "Our ceiling for the gzip archive sent to Athom (HOMEY_ARCHIVE_MAX_MB). Not documented by Athom; a May 2026 publish fix noted rejections around 16 MB."
+    },
+    "zigbee_combos": {
+      "limit": 14000,
+      "kind": "self",
+      "source": "HOMEY_ZIGBEE_MAX_TOTAL_COMBOS in auto-publish-on-push.yml (P2252, owned by P3024b; the gate reads the live value, 14000 is the fallback): manufacturerName x productId budget kept after the Aug 2026 processing_failed series. Not documented by Athom.",
+      "limitFrom": {
+        "workflow": ".github/workflows/auto-publish-on-push.yml",
+        "env": "HOMEY_ZIGBEE_MAX_TOTAL_COMBOS"
+      },
+      "warnPct": 99,
+      "failPct": 100.01,
+      "note": "prepare-publish trims case variants until the total fits the cap, so the prepared payload sits just under it by design; only a value ABOVE the cap (compactor bypassed) fails."
+    },
+    "boot_heap_mb": {
+      "limit": 45,
+      "kind": "self",
+      "source": "P3023 MemoryBudget 'elevated' tier (lib/memory/MemoryBudget.js). Homey Pro 2023+: memwarn around 120-150 MB RSS then kill after ~50 s, >300 MB immediate kill (community.homey.app/t/152562, athombv/homey-apps-sdk-issues#371); Homey Pro 2016-2019 about 80 MB. Measured: every module loaded, upper bound."
+    },
+    "worst_data_heap_mb": {
+      "limit": 45,
+      "kind": "self",
+      "source": "Boot heap plus every lazy data file parsed at once (DP catalogue, its 32 shards, fingerprints.json, fp-shards). Same 45 MB P3023 tier."
+    },
+    "workflow_file_kb": {
+      "limit": 500,
+      "kind": "hard",
+      "source": "GitHub Actions: a workflow file above 500 KB does not start (docs.github.com/en/actions/reference/limits)."
+    },
+    "tracked_file_mb": {
+      "limit": 100,
+      "kind": "hard",
+      "source": "GitHub blocks pushes with a file above 100 MiB, warns above 50 MiB (docs.github.com, large files)."
+    },
+    "gha_cache_gb": {
+      "limit": 10,
+      "kind": "hard",
+      "online": true,
+      "source": "GitHub Actions cache storage per repository: 10 GB, oldest entries evicted beyond (docs.github.com/en/actions/reference/limits)."
+    },
+    "repo_size_gb": {
+      "limit": 5,
+      "kind": "soft",
+      "online": true,
+      "source": "GitHub recommends repositories under 1 GB and strongly under 5 GB (docs.github.com repository limits)."
+    },
+    "github_core_used_pct": {
+      "limit": 100,
+      "kind": "hard",
+      "online": true,
+      "source": "REST primary rate limit: GITHUB_TOKEN 1000 req/h per repo, PAT 5000 req/h; secondary limits on bursts (docs.github.com rate limits). Measured: share already used in the current window."
+    }
+  }
+}

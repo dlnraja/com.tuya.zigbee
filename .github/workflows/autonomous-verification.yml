@@ -65,6 +65,7 @@ jobs:
         with:
           node-version: '22'
           cache: 'npm'
+          cache-dependency-path: .github/npm-cache-key.sha256  # P3026: version-free key, one npm cache per dependency set
 
       - name: Install
         run: npm ci || npm install
@@ -129,6 +130,7 @@ jobs:
         with:
           node-version: '22'
           cache: 'npm'
+          cache-dependency-path: .github/npm-cache-key.sha256  # P3026: version-free key, one npm cache per dependency set
       - name: 🕗 Paris-time guard
         id: tz
         run: node scripts/digest/tz-guard.js --schedule="${{ github.event.schedule }}" --paris-hour=${{ startsWith(github.event.schedule, '30 ') && '8' || '16' }}

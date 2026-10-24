@@ -124,6 +124,7 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
+          cache-dependency-path: .github/npm-cache-key.sha256  # P3026: version-free key, one npm cache per dependency set
 
       - name: Install deps (cached)
         run: npm ci --prefer-offline --no-audit
