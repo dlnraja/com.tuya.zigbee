@@ -184,6 +184,61 @@
    ],
    "productId": [],
    "couples": []
+  },
+  "smart_garden_irrigation_control": {
+   "manufacturerName": [
+    "_TZ3000_mq4wujmp",
+    "_tz3000_mq4wujmp",
+    "_TZ3000_MQ4WUJMP",
+    "_tz3000_MQ4WUJMP",
+    "_TZ3000_cjfmu5he",
+    "_TZ3000_kz1anoi8",
+    "_tz3000_cjfmu5he",
+    "_tz3000_kz1anoi8",
+    "_TZ3000_CJFMU5HE",
+    "_tz3000_CJFMU5HE",
+    "_TZ3000_KZ1ANOI8",
+    "_tz3000_KZ1ANOI8"
+   ],
+   "productId": [],
+   "couples": [
+    "_tz3000_cjfmu5he|TS0049",
+    "_tz3000_kz1anoi8|TS0049",
+    "_tz3000_mq4wujmp|TS0049"
+   ],
+   "resolvedTo": {
+    "_tz3000_cjfmu5he": "water_valve_garden",
+    "_tz3000_kz1anoi8": "water_valve_garden",
+    "_tz3000_mq4wujmp": "water_valve_garden"
+   },
+   "date": "2026-10-24",
+   "sources": [
+    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/moes.ts#L1488",
+    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/tuya.ts#L26460",
+    "https://community.homey.app/t/26439"
+   ],
+   "note": "2026-10-24 P3014: Zigbee2MQTT defines these TS0049 couples as single-outlet water valves (Moes ZWV-YC, Haozee HZ-WT02); they were claimed by both water_valve_garden and smart_garden_irrigation_control. Kept on water_valve_garden (valve profile, pinned), removed from smart_garden_irrigation_control. Already-paired devices keep their driver."
+  },
+  "dimmer_1_gang_tuya": {
+   "manufacturerName": [
+    "_TZE284_LA2C2UO9",
+    "_tze284_la2c2uo9",
+    "_TZE284_la2c2uo9",
+    "_tze284_LA2C2UO9"
+   ],
+   "productId": [],
+   "couples": [
+    "_tze284_la2c2uo9|TS0601"
+   ],
+   "resolvedTo": {
+    "_tze284_la2c2uo9": "wall_dimmer_tuya"
+   },
+   "date": "2026-10-24",
+   "sources": [
+    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/tuya.ts#L6115",
+    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/tuya.ts#L6215"
+   ],
+   "note": "2026-10-24 P3014: Zigbee2MQTT lists _TZE200_la2c2uo9 (Moes MS-105Z smart dimmer module) in its TS0601 1-gang dimmer definition (DP1 state, DP2 brightness 0-1000); that definition family (_TZE200_la2c2uo9, _TZE200_ip2akl4w, _TZE204_68utemio, ...) lives on wall_dimmer_tuya, so the _TZE284_ variant stays there (pinned) and is removed from dimmer_1_gang_tuya. Already-paired devices keep their driver."
   }
  }
 }

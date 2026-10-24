@@ -781,6 +781,35 @@
       "pid": "TS0601",
       "source": "Z2M zigbee-herdsman-converters tuya.ts BAC-002-ALZB (fingerprints _TZE200_dzuqwsyg/_TZE204_dzuqwsyg, whitelabel Beca BAC-003) + Koenkk/zigbee2mqtt discussion #25308 (Beca BAC-006AZB = _TZE204_dzuqwsyg)",
       "regression": "P2970 2026-10-24: _TZE204_dzuqwsyg sat in switch_1gang (paired as a relay) and _TZE200_dzuqwsyg in device_radiator_valve (TRV DP map); store suggestion by Umberto Maffii: BAC-006AZB pairs but is not a thermostat."
+    },
+    {
+      "id": "p3014-irrigation-ts0049",
+      "mfr": [
+        "_tz3000_cjfmu5he",
+        "_TZ3000_kz1anoi8",
+        "_TZ3000_MQ4WUJMP",
+        "_TZ3000_cjfmu5he",
+        "_tz3000_kz1anoi8",
+        "_TZ3000_mq4wujmp",
+        "_tz3000_mq4wujmp"
+      ],
+      "driver": "water_valve_garden",
+      "pid": "TS0049",
+      "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/moes.ts#L1488 + https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/tuya.ts#L26460 + https://community.homey.app/t/26439",
+      "regression": "P3014 2026-10-24 dual couple: also on smart_garden_irrigation_control (removed there, dual-couple-legacy, curated-couple-removals); user decision 2026-10-24 one driver per couple."
+    },
+    {
+      "id": "p3014-dimmer-la2c2uo9",
+      "mfr": [
+        "_TZE284_LA2C2UO9",
+        "_tze284_la2c2uo9",
+        "_TZE284_la2c2uo9",
+        "_tze284_LA2C2UO9"
+      ],
+      "driver": "wall_dimmer_tuya",
+      "pid": "TS0601",
+      "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/tuya.ts#L6115 + https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/tuya.ts#L6215",
+      "regression": "P3014 2026-10-24 dual couple: also on dimmer_1_gang_tuya (removed there, dual-couple-legacy, curated-couple-removals); user decision 2026-10-24 one driver per couple."
     }
   ]
 }

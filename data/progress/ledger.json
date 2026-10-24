@@ -37602,6 +37602,16 @@
    "status": "done",
    "date": "2026-10-04",
    "note": "ijey4q29/ykglasuj/kf2hbko4 climate_sensor -> contact_sensor_zigbee"
+  },
+  "task:p3014-irrigation-ts0049": {
+   "status": "done",
+   "date": "2026-10-24",
+   "note": "_tz3000_cjfmu5he/_tz3000_kz1anoi8/_tz3000_mq4wujmp TS0049: kept on water_valve_garden, removed from smart_garden_irrigation_control (user decision one driver per couple; source https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/moes.ts#L1488)"
+  },
+  "task:p3014-dimmer-la2c2uo9": {
+   "status": "done",
+   "date": "2026-10-24",
+   "note": "_tze284_la2c2uo9 TS0601: kept on wall_dimmer_tuya, removed from dimmer_1_gang_tuya (user decision one driver per couple; source https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/tuya.ts#L6115)"
   }
  }
 }
