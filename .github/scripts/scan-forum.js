@@ -15,6 +15,7 @@ const SEED_TOPICS=[
   101901,  // [Tip] Unknown Zigbee device (interview requests)
   156,     // Aqara & Xiaomi Smart Home app thread (lumi quirks)
   160624,  // iBush: [APP][Pro] Switcher local control (UX ideas)
+  157537,  // Rick_D: [APP][Pro][SHS] Device Watchdog (staleness/battery ideas, read-only, P3028)
 ];
 
 // High-value search terms (consolidated from 42 to 12 to avoid Discourse rate limits)

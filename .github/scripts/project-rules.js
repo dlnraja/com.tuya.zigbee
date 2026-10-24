@@ -89,7 +89,7 @@ const PROJECT_RULES = [
 '',
 '### IDENTITY',
 '- App: com.dlnraja.tuya.zigbee | SDK3 | Repo: dlnraja/com.tuya.zigbee',
-'- Forum own thread: 140352 only for replies (auto-post dry-run). Scan 26439/146735/89271/43287/157628 READ-ONLY.',
+'- Forum own thread: 140352 only for replies (auto-post dry-run). Scan 26439/146735/89271/43287/157628/157537 READ-ONLY.',
 '',
 '### FORUM SILENT + HUMANIZE (T157628 / P108)',
 '- Default: DO NOT post on Homey Community. Enrich code/workflows silently.',
