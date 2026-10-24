@@ -1,4 +1,5 @@
 'use strict';
+const { describe, it } = require('../_support/dual-runner'); // P3020: same file under node --test and mocha
 
 // WHY: AOYAN AY-303Z/AY-302Z soil and AY222Z leak units send Basic
 // manufacturerName as "AOYAN  " (Z2M hobeian.ts / tuya.ts, PR #12488).

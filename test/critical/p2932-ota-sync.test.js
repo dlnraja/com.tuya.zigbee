@@ -1,4 +1,5 @@
 'use strict';
+const { describe, it } = require('../_support/dual-runner'); // P3020: same file under node --test and mocha
 // P2932 — OTA audit fixes (Tuya MCU OTA frames, Homey Device Updates routing,
 // firmware manifests) and the branch sync matrix tool.
 const assert = require('assert');

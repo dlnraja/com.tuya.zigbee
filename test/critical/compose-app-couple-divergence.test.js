@@ -1,4 +1,5 @@
 'use strict';
+const { describe, it } = require('../_support/dual-runner'); // P3020: same file under node --test and mocha
 // Guard: committed app.json must not carry couples or settings that exist in NO driver compose.
 // `homey app build` regenerates app.json from compose, so anything only in app.json is silently
 // dropped at publish. Stale copies of couples that moved to another driver are reported (not fatal).

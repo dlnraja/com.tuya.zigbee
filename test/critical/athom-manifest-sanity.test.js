@@ -1,4 +1,5 @@
 'use strict';
+const { describe, it } = require('../_support/dual-runner'); // P3020: same file under node --test and mocha
 /** P-KB3: Athom parse-safety guard (lesson 10/10: a {brightness} placeholder in a flow title broke master processing).
  *  Checks the source app.json: no {arg} curly placeholders in titles, no duplicate card/driver ids,
  *  every title has en, driver images exist and stay under 1 MB. */

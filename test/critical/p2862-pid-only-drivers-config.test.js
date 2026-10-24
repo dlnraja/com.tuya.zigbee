@@ -1,4 +1,5 @@
 'use strict';
+const { describe, it } = require('../_support/dual-runner'); // P3020: same file under node --test and mocha
 /**
  * Fleet Intelligent Enrich failed in master-automation-fix ("ZIGBEE sans MF") once backups/stable_app.json
  * left the repo (9640f715af). Deliberate pid-only drivers are now declared in config/pid-only-drivers.json.

@@ -1,4 +1,5 @@
 'use strict';
+const { describe, it } = require('../_support/dual-runner'); // P3020: same file under node --test and mocha
 const assert = require('assert');
 const { effectiveHoldIds, parseRelease } = require('../../scripts/publish-hold-release');
 

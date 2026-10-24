@@ -1,4 +1,5 @@
 'use strict';
+const { describe, it } = require('../_support/dual-runner'); // P3020: same file under node --test and mocha
 const assert = require('assert');
 const { dropPaddedTwins } = require('../../tools/ci/ensure-case-variants');
 describe('P-KB4 case variants keep padded names byte-exact', () => {

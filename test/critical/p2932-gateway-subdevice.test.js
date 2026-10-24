@@ -1,4 +1,5 @@
 'use strict';
+const { describe, it, afterEach } = require('../_support/dual-runner'); // P3020: same file under node --test and mocha
 const assert = require('assert');
 const { EventEmitter } = require('events');
 const hub = require('../../lib/tuya-local/TuyaGatewayHub');

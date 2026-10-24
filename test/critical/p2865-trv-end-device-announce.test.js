@@ -1,4 +1,5 @@
 'use strict';
+const { describe, it } = require('../_support/dual-runner'); // P3020: same file under node --test and mocha
 /**
  * Issue #560 (artisare, TRV06 _TZE200_rxq4iti9): the radiator-valve driver declared onEndDeviceAnnounce()
  * twice. In a JS class the later definition wins, so the P2598 "re-query DPs when the sleepy valve wakes up"

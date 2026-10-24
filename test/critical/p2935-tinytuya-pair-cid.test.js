@@ -1,4 +1,5 @@
 'use strict';
+const { describe, it, before } = require('../_support/dual-runner'); // P3020: same file under node --test and mocha
 const assert = require('assert');
 
 describe('P2935 tinytuya import fills cid / gateway at pairing', () => {

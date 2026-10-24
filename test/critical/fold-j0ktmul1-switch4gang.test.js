@@ -1,4 +1,5 @@
 'use strict';
+const { describe, it } = require('../_support/dual-runner'); // P3020: same file under node --test and mocha
 // 2026-10-11 fold: AutomatOn AUT000069 (_TZ3000_j0ktmul1 + TS011F) ships via switch_4gang with 5 gangs
 // (GangCountAdapter pattern) while valve_controller_5zone stays held from the Athom payload.
 const assert = require('assert');

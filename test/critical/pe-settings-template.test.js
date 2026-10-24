@@ -1,4 +1,5 @@
 'use strict';
+const { describe, it } = require('../_support/dual-runner'); // P3020: same file under node --test and mocha
 /** P-KB4: Z2M-style options exposed through the shared template, all off by default; compose and app.json aligned. */
 const assert = require('assert'); const fs = require('fs'); const path = require('path');
 const ROOT = path.join(__dirname, '../..');

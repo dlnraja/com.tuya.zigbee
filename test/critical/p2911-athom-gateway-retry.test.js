@@ -1,4 +1,5 @@
 'use strict';
+const { describe, it } = require('../_support/dual-runner'); // P3020: same file under node --test and mocha
 // P2911: Athom gateway errors (502/503/504, by code or by text) are transient and retried (Bastien run 39382266332 died on "Error: Bad Gateway").
 const assert = require('assert');
 const pol = require('../../.github/scripts/athom-retry-policy');
