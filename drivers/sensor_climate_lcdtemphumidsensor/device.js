@@ -135,6 +135,8 @@ class ClimateSensorDevice extends UnifiedSensorBase {
   _applyTempOffset(temp) {
     const offset = this.temperatureOffset;
     const calibrated = temp + offset;
+    // P3002: result goes straight to safeSetCapabilityValue → mark it (applied once)
+    try { require('../../lib/helpers/CalibrationLedger').mark(this, 'measure_temperature', temp, calibrated); } catch (_e) { /* optional */ }
     if (offset !== 0) {
       this.log(`[CALIBRATION] Temp: ${temp}Â°C + offset ${offset}Â°C = ${calibrated}Â°C`);
     }
@@ -149,6 +151,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
   _applyHumOffset(hum) {
     const offset = this.humidityOffset;
     const calibrated = Math.max(0, Math.min(100, hum + offset));
+    try { require('../../lib/helpers/CalibrationLedger').mark(this, 'measure_humidity', hum, calibrated); } catch (_e) { /* optional */ }
     if (offset !== 0) {
       this.log(`[CALIBRATION] Humidity: ${hum}% + offset ${offset}% = ${calibrated}%`);
     }
@@ -361,7 +364,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
       temperatureMeasurement: {
         attributeReport: (data) => {
           if (data.measuredValue !== undefined && data.measuredValue !== -32768) {
-            let rawTemp = data.measuredValue * 100;
+            let rawTemp = data.measuredValue / 100; // P3002: ZCL 0.01 units
             
             // v5.5.793: Validate range before processing
             if (rawTemp < VALIDATION.TEMP_MIN || rawTemp > VALIDATION.TEMP_MAX) {
@@ -393,7 +396,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
       relativeHumidity: {
         attributeReport: (data) => {
           if (data.measuredValue !== undefined) {
-            let rawHum = data.measuredValue * 100;
+            let rawHum = data.measuredValue / 100; // P3002: ZCL 0.01 units
             // v5.5.317: Validate with inference engine (smooths erratic readings)
             if (this._climateInference) {
               rawHum = this._climateInference.validateHumidity(rawHum);
@@ -1132,7 +1135,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
 
         if (typeof tempCluster.on === 'function') {
           tempCluster.on('attr.measuredValue', (value) => {
-            const temp = value * 100;
+            const temp = value / 100; // P3002: ZCL 0.01 °C
             if (temp >= VALIDATION.TEMP_MIN && temp <= VALIDATION.TEMP_MAX) {
               // v5.5.793: Apply calibration offset
               const calibratedTemp = this._applyTempOffset(temp);
@@ -1174,10 +1177,10 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
 
         if (typeof humCluster.on === 'function') {
           humCluster.on('attr.measuredValue', (value) => {
-            let hum = value * 100;
+            let hum = value / 100; // P3002: ZCL 0.01 %
             // v5.5.793: Auto-detect divisor for devices reporting 0-1000 scale
             if (hum > VALIDATION.HUMIDITY_AUTO_DIVISOR_THRESHOLD) {
-              hum = Math.round(hum);
+              hum = Math.round(hum / 10); // P3002: comment says divide by 10
             }
             if (hum >= VALIDATION.HUMIDITY_MIN && hum <= VALIDATION.HUMIDITY_MAX) {
               // v5.5.793: Apply calibration offset
@@ -1228,7 +1231,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
       try {
         const attrs = await tempCluster.readAttributes(['measuredValue']).catch(() => ({}));
         if (attrs.measuredValue !== undefined ) {
-          const temp = attrs.measuredValue * 100;
+          const temp = attrs.measuredValue / 100; // P3002: ZCL 0.01 units
           if (temp >= -40 && temp <= 80) {
             this.log(`[ZCL-READ]  Temperature: ${temp}Â°C`);
             await this.safeSetCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
@@ -1245,7 +1248,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
       try {
         const attrs = await humCluster.readAttributes(['measuredValue']).catch(() => ({}));
         if (attrs.measuredValue !== undefined ) {
-          const hum = attrs.measuredValue * 100;
+          const hum = attrs.measuredValue / 100; // P3002: ZCL 0.01 units
           if (hum >= 0 && hum <= 100) {
             this.log(`[ZCL-READ]  Humidity: ${hum}%`);
             await this.safeSetCapabilityValue('measure_humidity', parseFloat(hum)).catch(() => { });
@@ -1486,7 +1489,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
     // DP5=temperature(Ã·10), DP3=soil_moisture(%), DP15=battery(%)
     if (this._isSoilSensor()) {
       if (dp === 5) {
-        const temp = safeMultiply(this._applyTempOffset(value, 10));
+        const temp = value / 10; // P3002: ÷10 (Z2M soil DP5); offset applied once by safeSet
         this.log(`[SOIL] DP5 temperature raw=${value}  ${temp}Â°C`);
         await this.safeSetCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
         return;
@@ -1505,19 +1508,11 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
       }
     }
 
-    // Apply calibration offsets before passing to parent
-    let processedValue = value;
-
-    if (dp === 1 || dp === 6 || dp === 18) {
-      // Temperature DPs - apply offset after division
-      const rawTemp = safeMultiply(value, 10);
-      processedValue =safeMultiply(this._applyTempOffset(rawTemp, 10)); // Scale back for parent processing
-    } else if (dp === 2 || dp === 7 || dp === 103) {
-      // v5.11.26: FIX #1328 - auto-divisor before offset (raw value may be >100 e.g. 435=43.5%)
-      let hum = value;
-      if (hum > 100) hum = Math.round(hum);
-      processedValue = this._applyHumOffset(hum);
-    }
+    // WHY(P3002): pass the RAW value — the base mapping applies smartDivisor / P2825 humidity
+    // auto-divisor, then safeSetCapabilityValue applies the user offset exactly once.
+    // Was: safeMultiply(x) without factor → 0 °C (0 + offset), humidity 435 → clamp 100 %,
+    // and the offset added a 2nd/3rd time downstream.
+    const processedValue = value;
 
     // Call parent handler
     if (super._handleDP) {
@@ -1560,23 +1555,23 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
     // v5.5.190: Log with calibration info
     switch (dp) {
     case 1: // Temperature (standard) Ã·10
-      const temp1 = safeMultiply(this._applyTempOffset(rawValue, 10));
+      const temp1 = rawValue / 10;
       this.log(`[CLIMATE-DP] DP1 temperature raw=${rawValue}  ${temp1}Â°C`);
       break;
     case 18: // Temperature (alt) Ã·10
     case 6: // Temperature (some _TZE204 models)
-      const tempAlt = safeMultiply(this._applyTempOffset(rawValue, 10));
+      const tempAlt = rawValue / 10;
       this.log(`[CLIMATE-DP] DP${dp} temperature_alt raw=${rawValue}  ${tempAlt}Â°C`);
       break;
     case 2: // Humidity (standard)
-      const hum2raw = rawValue > 100 ? Math.round(rawValue) : rawValue;
-      const hum2 = this._applyHumOffset(hum2raw);
+      const hum2raw = rawValue > 100 ? Math.round(rawValue / 10) : rawValue;
+      const hum2 = hum2raw;
       this.log(`[CLIMATE-DP] DP2 humidity raw=${rawValue}  ${hum2}%`);
       break;
     case 7: // Humidity (some _TZE204 models)
     case 103: // Humidity (alt)
-      const humAltRaw = rawValue > 100 ? Math.round(rawValue) : rawValue;
-      const humAlt = this._applyHumOffset(humAltRaw);
+      const humAltRaw = rawValue > 100 ? Math.round(rawValue / 10) : rawValue;
+      const humAlt = humAltRaw;
       this.log(`[CLIMATE-DP] DP${dp} humidity_alt raw=${rawValue}  ${humAlt}%`);
       break;
     case 3: // Battery state enum (some _TZE200 devices)
