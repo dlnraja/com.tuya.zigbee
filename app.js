@@ -198,6 +198,13 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
       this.memwarnGuard.attach(this.homey);
       try { require('./lib/utils/memwarn-cleaners').registerAppCleaners(this.memwarnGuard, this.homey); } catch (_) { /* soft */ }
     } catch (_) { /* best-effort */ }
+    // P3023: app-wide memory budget (heap sampling → graded cache trims, slower re-probes).
+    try {
+      require('./lib/memory/budget-hooks').install(this.homey, {
+        log: (...a) => this.log(...a),
+        allDevices: (h) => require('./lib/utils/memwarn-cleaners')._allDevices(h),
+      });
+    } catch (_) { /* best-effort */ }
     this.initializeSettings();
 
     // P2351/P2373: re-bind soft getDriver on the live ManagerDrivers instance
@@ -1403,6 +1410,7 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
 
   async onUninit() {
     try { await require('./lib/utils/energy-kpi').flushKpi(this.homey); } catch (_e) { /* soft */ } // P2961
+    try { require('./lib/memory/budget-hooks').uninstall(); } catch (_e) { /* soft */ } // P3023
     this._destroyed = true;
     this.log('⚠️ App uninitializing...');
     try {
