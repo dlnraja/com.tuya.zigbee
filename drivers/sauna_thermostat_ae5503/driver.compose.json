@@ -1,0 +1,213 @@
+{
+  "name": {
+    "en": "Sauna Thermostat AE-5503",
+    "fr": "Thermostat sauna AE-5503",
+    "nl": "Sauna-thermostaat AE-5503",
+    "de": "Sauna-Thermostat AE-5503"
+  },
+  "class": "thermostat",
+  "capabilities": [
+    "onoff",
+    "target_temperature",
+    "measure_temperature",
+    "child_lock"
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE204_eaasry7v",
+      "_tze204_eaasry7v"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5
+        ],
+        "bindings": []
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "On the thermostat, open settings → Zigbee/Network → Pair, or hold the reset pin until the display shows pairing mode.",
+        "fr": "Réglages → Zigbee/Réseau → Appairer, ou maintenez reset jusqu'au mode appairage.",
+        "nl": "Instellingen → Zigbee/Netwerk → Pairen, of reset tot pairmodus op display.",
+        "de": "Einstellungen → Zigbee/Netz → Koppeln, oder Reset bis Pairing-Modus."
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/sauna_thermostat_ae5503/assets/images/small.png",
+    "large": "/drivers/sauna_thermostat_ae5503/assets/images/large.png"
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    },
+    {
+      "id": "tuya_revive",
+      "title": {
+        "en": "Tuya Revive (device recovery)",
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
+      }
+    },
+    {
+      "id": "generate_issue_report",
+      "title": {
+        "en": "Generate support report (GitHub issue)",
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
+      }
+    },
+    {
+      "id": "zigbee_rebind",
+      "title": {
+        "en": "Re-bind & reconfigure reporting",
+        "fr": "Re-lier et reconfigurer les rapports",
+        "nl": "Opnieuw binden en rapportage instellen",
+        "de": "Neu binden und Reporting konfigurieren"
+      }
+    }
+  ],
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Enhanced Features (v9.1)",
+        "fr": "Fonctionnalités Améliorées (v9.1)"
+      },
+      "children": [
+        {
+          "id": "temperature_calibration",
+          "type": "number",
+          "label": {
+            "en": "Temperature Offset (°C)",
+            "fr": "Décalage Température (°C)"
+          },
+          "value": 0,
+          "min": -10,
+          "max": 10,
+          "step": 0.1,
+          "hint": {
+            "en": "Calibration offset applied to temperature readings",
+            "fr": "Décalage de calibration appliqué aux relevés de température"
+          }
+        },
+        {
+          "id": "humidity_calibration",
+          "type": "number",
+          "label": {
+            "en": "Humidity Offset (%)",
+            "fr": "Décalage Humidité (%)"
+          },
+          "value": 0,
+          "min": -20,
+          "max": 20,
+          "step": 1,
+          "hint": {
+            "en": "Calibration offset applied to humidity readings",
+            "fr": "Décalage de calibration appliqué aux relevés d'humidité"
+          }
+        },
+        {
+          "id": "schedule_enabled",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable Device Schedule",
+            "fr": "Activer la Programmation"
+          },
+          "value": false,
+          "hint": {
+            "en": "Use the device's built-in weekly schedule (set via flow cards)",
+            "fr": "Utiliser la programmation hebdomadaire intégrée"
+          }
+        },
+        {
+          "id": "battery_check_interval",
+          "type": "number",
+          "label": {
+            "en": "Battery Check Interval (hours)",
+            "fr": "Intervalle Vérification Batterie (heures)"
+          },
+          "value": 24,
+          "min": 1,
+          "max": 168,
+          "step": 1,
+          "hint": {
+            "en": "How often to poll battery status",
+            "fr": "Fréquence de vérification de l'état de la batterie"
+          }
+        },
+        {
+          "id": "availability_timeout",
+          "type": "number",
+          "label": {
+            "en": "Offline Timeout (minutes, 0=disabled)",
+            "fr": "Délai Hors Ligne (minutes, 0=désactivé)"
+          },
+          "value": 0,
+          "min": 0,
+          "max": 1440,
+          "step": 5,
+          "hint": {
+            "en": "Minutes without messages before marking offline",
+            "fr": "Minutes sans messages avant de marquer hors ligne"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tuya_time_sync",
+      "type": "checkbox",
+      "value": true,
+      "label": {
+        "en": "Send time to the device",
+        "fr": "Envoyer l'heure à l'appareil"
+      },
+      "hint": {
+        "en": "Turn off only if the device misbehaves after a time sync (clock jumps, schedule resets).",
+        "fr": "Désactivez seulement si l'appareil se comporte mal après une synchronisation de l'heure (horloge qui saute, programme réinitialisé)."
+      }
+    },
+    {
+      "$extends": [
+        "zcl_cluster_layer"
+      ]
+    }
+  ],
+  "id": "sauna_thermostat_ae5503",
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "target_temperature": {
+      "min": 0,
+      "max": 120,
+      "step": 1,
+      "decimals": 0
+    },
+    "measure_temperature": {
+      "getable": true,
+      "preventInsights": false
+    }
+  },
+  "ui": {
+    "quickAction": "onoff"
+  }
+}
