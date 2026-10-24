@@ -264,10 +264,9 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
   async _handleTargetTemperature(temperature) {
     if (this._destroyed) {return;}
     if (typeof temperature === 'number' && temperature >= 5 && temperature <= 35) {
-      // Apply calibration
-      const calibratedTemp = temperature + this._temperatureCalibration;
-      await this.safeSetCapabilityValue('target_temperature', parseFloat(calibratedTemp)).catch(() => {});
-      this.log(`[HEATER]  Target temperature: ${temperature}Â°C (calibrated: ${calibratedTemp}Â°C)`);
+      // WHY(P3002): a setpoint is never calibrated (calibration corrects the measured value only).
+      await this.safeSetCapabilityValue('target_temperature', parseFloat(temperature)).catch(() => {});
+      this.log(`[HEATER]  Target temperature: ${temperature}Â°C`);
     } else {
       this.log(`[HEATER]  Invalid target temperature: ${temperature}`);
     }
@@ -279,9 +278,10 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
   async _handleCurrentTemperature(temperature) {
     if (this._destroyed) {return;}
     if (typeof temperature === 'number' && temperature >= -40 && temperature <= 80) {
-      // Apply calibration
-      const calibratedTemp = temperature + this._temperatureCalibration;
-      await this.safeSetCapabilityValue('measure_temperature', parseFloat(calibratedTemp)).catch(() => {});
+      // WHY(P3002): raw value — UnifiedThermostatBase._applyCalibration (called by safeSet) adds
+      // the temperature_calibration offset exactly once (was: here + again in safeSet).
+      const calibratedTemp = this._applyCalibration('measure_temperature', temperature, { forSet: true });
+      await this.safeSetCapabilityValue('measure_temperature', parseFloat(temperature)).catch(() => {});
       this.log(`[HEATER]  Current temperature: ${temperature}Â°C (calibrated: ${calibratedTemp}Â°C)`);
 
       // Check overheat protection
