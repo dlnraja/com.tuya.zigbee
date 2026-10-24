@@ -194,7 +194,8 @@ function main() {
     if (appTouched) {
       dirty++;
       console.log('[P2970] app.json synced');
-      if (!CHECK) {fs.writeFileSync(appFile, JSON.stringify(app, null, 2) + (raw.endsWith('\n') ? '\n' : ''));}
+      // WHY: stable/bastien ship a minified app.json; keep the original format
+      if (!CHECK) {fs.writeFileSync(appFile, (/^\{\s*\n/.test(raw) ? JSON.stringify(app, null, 2) : JSON.stringify(app)) + (raw.endsWith('\n') ? '\n' : ''));}
     }
   }
 
