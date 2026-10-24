@@ -37225,25 +37225,25 @@
    "status": "done",
    "date": "2026-10-03",
    "note": "wire shouldProcess/record into auto-enrich-closed-loop.yml scripts",
-   "result": "P3021b 2026-10-24: 6c8eed82e2 run mode on .github/state/auto-enrich/loop.json via scripts/progress/ledger-intake.js + gated safe-auto-commit --id=auto-enrich-closed-loop-ledger"
+   "result": "P3021b 2026-10-24: 7b1eb36e44 (feat(P3021b) wire the 6 remaining workflows) run mode on .github/state/auto-enrich/loop.json via scripts/progress/ledger-intake.js + gated safe-auto-commit --id=auto-enrich-closed-loop-ledger"
   },
   "task:ledger-wire-collect-diagnostics": {
    "status": "done",
    "date": "2026-10-03",
    "note": "wire shouldProcess/record into collect-diagnostics.yml scripts",
-   "result": "P3021b 2026-10-24: 6c8eed82e2 diag mode --by=collect-diagnostics via scripts/progress/ledger-intake.js + gated safe-auto-commit --id=collect-diagnostics-ledger"
+   "result": "P3021b 2026-10-24: 7b1eb36e44 (feat(P3021b) wire the 6 remaining workflows) diag mode --by=collect-diagnostics via scripts/progress/ledger-intake.js + gated safe-auto-commit --id=collect-diagnostics-ledger"
   },
   "task:ledger-wire-fetch-diags": {
    "status": "done",
    "date": "2026-10-03",
    "note": "wire shouldProcess/record into fetch-diags.yml scripts",
-   "result": "P3021b 2026-10-24: 6c8eed82e2 diag mode --by=fetch-diags via scripts/progress/ledger-intake.js + gated safe-auto-commit --id=fetch-diags-ledger"
+   "result": "P3021b 2026-10-24: 7b1eb36e44 (feat(P3021b) wire the 6 remaining workflows) diag mode --by=fetch-diags via scripts/progress/ledger-intake.js + gated safe-auto-commit --id=fetch-diags-ledger"
   },
   "task:ledger-wire-fleet-intelligent-enrich": {
    "status": "done",
    "date": "2026-10-03",
    "note": "wire shouldProcess/record into fleet-intelligent-enrich.yml scripts",
-   "result": "P3021b 2026-10-24: 6c8eed82e2 run mode on reports/fleet-enrich-<date>/summary.json via scripts/progress/ledger-intake.js + gated safe-auto-commit --id=fleet-intelligent-enrich-ledger"
+   "result": "P3021b 2026-10-24: 7b1eb36e44 (feat(P3021b) wire the 6 remaining workflows) run mode on reports/fleet-enrich-<date>/summary.json via scripts/progress/ledger-intake.js + gated safe-auto-commit --id=fleet-intelligent-enrich-ledger"
   },
   "task:ledger-wire-forum-poll": {
    "status": "done",
@@ -37261,13 +37261,13 @@
    "status": "done",
    "date": "2026-10-03",
    "note": "wire shouldProcess/record into monthly-device-enrichment.yml scripts",
-   "result": "P3021b 2026-10-24: 6c8eed82e2 run mode on reports/monthly-<YYYYMM>.json (workflow disabled_manually) via scripts/progress/ledger-intake.js + gated safe-auto-commit --id=monthly-device-enrichment-ledger"
+   "result": "P3021b 2026-10-24: 7b1eb36e44 (feat(P3021b) wire the 6 remaining workflows) run mode on reports/monthly-<YYYYMM>.json (workflow disabled_manually) via scripts/progress/ledger-intake.js + gated safe-auto-commit --id=monthly-device-enrichment-ledger"
   },
   "task:ledger-wire-tuya-deep-diag": {
    "status": "done",
    "date": "2026-10-03",
    "note": "wire shouldProcess/record into tuya-deep-diag.yml scripts",
-   "result": "P3021b 2026-10-24: 6c8eed82e2 separate ledger job (diagnose job stays read-only), diag mode --by=tuya-deep-diag via scripts/progress/ledger-intake.js + gated safe-auto-commit --id=tuya-deep-diag-ledger"
+   "result": "P3021b 2026-10-24: 7b1eb36e44 (feat(P3021b) wire the 6 remaining workflows) separate ledger job (diagnose job stays read-only), diag mode --by=tuya-deep-diag via scripts/progress/ledger-intake.js + gated safe-auto-commit --id=tuya-deep-diag-ledger"
   },
   "task:new-heiman-rc-ef-3.0": {
    "status": "pending",
