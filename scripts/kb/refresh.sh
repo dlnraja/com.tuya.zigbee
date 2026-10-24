@@ -17,3 +17,8 @@ node "$HERE/build-compact.js"
 node "$HERE/enrich-candidates.js"
 node "$HERE/build-homey-kb.js"
 node "$HERE/open-leads.js" || echo "warn: open-leads scan failed"
+# P3018: exact couple → DP name + converter (Z2M tuyaDatapoints) and ZHA DP numbers → catalogue v2 →
+# DP/endpoint coverage doc. Deterministic; files are rewritten only when the upstream facts change.
+node "$HERE/../data/harvest-z2m-tuya-dps.js" || echo "warn: tuyaDatapoints harvest failed"
+node "$HERE/../data/build-unknown-dp-catalog.js" || echo "warn: DP catalogue build failed"
+node "$HERE/dp-endpoint-coverage.js" || echo "warn: DP/endpoint coverage doc failed"
