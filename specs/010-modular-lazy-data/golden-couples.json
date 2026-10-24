@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-24T19:21:26.267Z",
+ "generated": "2026-10-24T22:05:23.354Z",
  "drivers": 391,
  "snapshot": {
   "air_purifier": {
@@ -279,9 +279,9 @@
    "pidSha": "3427697d0c296c9d"
   },
   "climate_sensor": {
-   "mfr": 531,
+   "mfr": 519,
    "pid": 32,
-   "mfrSha": "ddd49b3c9ef0da97",
+   "mfrSha": "263ae8c48eaa7d5a",
    "pidSha": "4809a771f46a5606"
   },
   "climate_sensor_device": {
@@ -393,9 +393,9 @@
    "pidSha": "c4343290bac9e455"
   },
   "curtain_motor": {
-   "mfr": 282,
+   "mfr": 279,
    "pid": 48,
-   "mfrSha": "651f6f87bc14dd37",
+   "mfrSha": "6fc71638d89f6f72",
    "pidSha": "00ba96ff94eb4bb5"
   },
   "curtain_motor_shutter": {
@@ -579,10 +579,10 @@
    "pidSha": "455c46e8c8549693"
   },
   "device_radiator_valve": {
-   "mfr": 97,
-   "pid": 1,
-   "mfrSha": "fa13881de9ca7a88",
-   "pidSha": "455c46e8c8549693"
+   "mfr": 96,
+   "pid": 2,
+   "mfrSha": "94935795f5b75862",
+   "pidSha": "eb014cbe97d74de9"
   },
   "device_radiator_valve_smart": {
    "mfr": 0,
@@ -681,9 +681,9 @@
    "pidSha": "6c95942761fd08e3"
   },
   "dimmer_wall_1gang": {
-   "mfr": 27,
+   "mfr": 26,
    "pid": 20,
-   "mfrSha": "c1b3d3fa0efb588c",
+   "mfrSha": "49bbf363601da1df",
    "pidSha": "fafa2cc8c54068d7"
   },
   "dimmer_wall_plug": {
@@ -1245,9 +1245,9 @@
    "pidSha": "3041fd34f640ddcb"
   },
   "presence_sensor_radar": {
-   "mfr": 252,
+   "mfr": 251,
    "pid": 56,
-   "mfrSha": "00d7021746d06bc2",
+   "mfrSha": "dfe0a16a80e0a672",
    "pidSha": "ac803567e8fc211a"
   },
   "radar_sensor": {
@@ -1557,9 +1557,9 @@
    "pidSha": "7fa640aea3e70b55"
   },
   "sensor_gas_presence": {
-   "mfr": 10,
+   "mfr": 9,
    "pid": 4,
-   "mfrSha": "07c97dbf1cb99e48",
+   "mfrSha": "c43c25d923dd8e83",
    "pidSha": "919c823c42eba473"
   },
   "sensor_ias_zonetype_ewelink": {
@@ -1827,10 +1827,10 @@
    "pidSha": "01d687d685c35f20"
   },
   "soil_sensor": {
-   "mfr": 74,
-   "pid": 7,
-   "mfrSha": "ed2350ffca31743c",
-   "pidSha": "60b6365f4f1d2f16"
+   "mfr": 83,
+   "pid": 8,
+   "mfrSha": "2c7c8608d05ef5ca",
+   "pidSha": "27f86b4ef90a4783"
   },
   "soil_sensor_ec": {
    "mfr": 1,
@@ -1881,9 +1881,9 @@
    "pidSha": "b46b96d17990cf37"
   },
   "switch_1gang": {
-   "mfr": 359,
+   "mfr": 357,
    "pid": 38,
-   "mfrSha": "3c2cae03ec8d707c",
+   "mfrSha": "ac2255eadccf6211",
    "pidSha": "fd65b1d55ed8db6a"
   },
   "switch_2_gang": {
@@ -2133,9 +2133,9 @@
    "pidSha": "455c46e8c8549693"
   },
   "valve_irrigation": {
-   "mfr": 29,
+   "mfr": 27,
    "pid": 3,
-   "mfrSha": "c6cec75a3011dfa4",
+   "mfrSha": "a9c525d949b780ea",
    "pidSha": "5c308053fde30f1f"
   },
   "valve_single": {
@@ -2152,9 +2152,9 @@
   },
   "vibration_sensor": {
    "mfr": 33,
-   "pid": 10,
+   "pid": 9,
    "mfrSha": "3db8feafac0ca84d",
-   "pidSha": "15d9e8ddb0c0fa4b"
+   "pidSha": "ca9cc05357f45540"
   },
   "wall_curtain_switch": {
    "mfr": 10,
