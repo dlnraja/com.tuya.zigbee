@@ -129141,6 +129141,259 @@
       }
     },
     {
+      "id": "switch_2gang_ts0002",
+      "name": {
+        "en": "Wall Switch 2-Gang (TS0002)",
+        "nl": "Wandschakelaar 2-voudig (TS0002)",
+        "fr": "Interrupteur mural 2 voies (TS0002)",
+        "de": "Wandschalter 2-fach (TS0002)",
+        "es": "Interruptor de pared 2 vías (TS0002)"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.gang2"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "images": {
+        "small": "/drivers/switch_2gang_ts0002/assets/images/small.png",
+        "large": "/drivers/switch_2gang_ts0002/assets/images/large.png"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_amal63is",
+          "_tz3000_amal63is",
+          "_TZ3000_AMAL63IS",
+          "_tz3000_AMAL63IS"
+        ],
+        "productId": [
+          "TS0002"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
+          "2": {
+            "clusters": [
+              4,
+              5,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "{{driverAssetsPath}}/icon.svg",
+          "instruction": {
+            "en": "Press and hold the reset button for 5 seconds until the LED blinks, or toggle 3 times quickly.",
+            "nl": "Houd de resetknop 5 seconden ingedrukt totdat de LED knippert, of schakel 3 keer snel.",
+            "fr": "Maintenez le bouton 5 secondes jusqu'à ce que la LED clignote, ou basculez 3 fois rapidement."
+          }
+        }
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Power-On Behavior",
+            "nl": "Gedrag bij inschakelen"
+          },
+          "children": [
+            {
+              "id": "power_on_behavior",
+              "type": "dropdown",
+              "label": {
+                "en": "Power-On Behavior",
+                "nl": "Gedrag bij inschakelen",
+                "de": "Einschaltverhalten",
+                "fr": "Comportement à la mise sous tension"
+              },
+              "hint": {
+                "en": "What happens when power is restored after an outage",
+                "nl": "Wat er gebeurt als de stroom terugkeert na een stroomstoring"
+              },
+              "value": "memory",
+              "values": [
+                {
+                  "id": "off",
+                  "label": {
+                    "en": "Always Off",
+                    "nl": "Altijd Uit"
+                  }
+                },
+                {
+                  "id": "on",
+                  "label": {
+                    "en": "Always On",
+                    "nl": "Altijd Aan"
+                  }
+                },
+                {
+                  "id": "memory",
+                  "label": {
+                    "en": "Last State",
+                    "nl": "Laatste status"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Connected switches",
+            "nl": "Gekoppelde schakelaars",
+            "fr": "Interrupteurs liés",
+            "de": "Verbundene Schalter"
+          },
+          "children": [
+            {
+              "id": "connected_siblings",
+              "type": "label",
+              "label": {
+                "en": "This wall unit",
+                "nl": "Dit wandapparaat",
+                "fr": "Cet interrupteur mural",
+                "de": "Diese Wandeinheit",
+                "it": "Questa unità a parete",
+                "es": "Esta unidad de pared",
+                "sv": "Denna väggenhet",
+                "pt": "Esta unidade de parede"
+              },
+              "value": "—"
+            },
+            {
+              "id": "traffic_stats",
+              "type": "label",
+              "label": {
+                "en": "Network activity",
+                "nl": "Netwerkactiviteit",
+                "fr": "Activité réseau",
+                "de": "Netzwerkaktivität",
+                "it": "Attività di rete",
+                "es": "Actividad de red",
+                "sv": "Nätverksaktivitet",
+                "pt": "Atividade de rede"
+              },
+              "value": "—"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Pulse / inching",
+            "nl": "Puls / inching",
+            "fr": "Impulsion / inching",
+            "de": "Impuls / Inching"
+          },
+          "children": [
+            {
+              "id": "inching",
+              "type": "checkbox",
+              "label": {
+                "en": "Pulse mode (auto-off)",
+                "nl": "Pulsmodus (automatisch uit)",
+                "fr": "Mode impulsion (extinction auto)",
+                "de": "Impulsmodus (Auto-Aus)"
+              },
+              "hint": {
+                "en": "Change LED and pulse only on the main gang tile. Homey Flows cover timers/countdowns.",
+                "nl": "LED en puls alleen op de hoofdtegel. Timers via Flows.",
+                "fr": "LED et impulsion uniquement sur la tuile principale. Les minuteries passent par les Flows."
+              },
+              "value": false
+            },
+            {
+              "id": "inching_duration",
+              "type": "number",
+              "label": {
+                "en": "Pulse duration (seconds)",
+                "nl": "Pulsduur (seconden)",
+                "fr": "Durée d'impulsion (secondes)",
+                "de": "Impulsdauer (Sekunden)"
+              },
+              "value": 60,
+              "min": 1,
+              "max": 3600
+            }
+          ]
+        },
+        {
+          "id": "zcl_cluster_layer",
+          "type": "checkbox",
+          "label": {
+            "en": "ZCL cluster layer (advanced)",
+            "fr": "Couche clusters ZCL (avancé)"
+          },
+          "hint": {
+            "en": "Extra command capture, bounded bindings and reporting fallback on top of the native setup. Turn off if this device misbehaves.",
+            "fr": "Capture de commandes, liaisons bornées et relève de secours en plus de la configuration native. Désactivez si l'appareil se comporte mal."
+          },
+          "value": true
+        }
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        },
+        {
+          "id": "tuya_revive",
+          "title": {
+            "en": "Tuya Revive (device recovery)",
+            "fr": "Tuya Revive (récupération appareil)",
+            "nl": "Tuya Revive (apparaatherstel)",
+            "de": "Tuya Revive (Gerätewiederherstellung)"
+          }
+        },
+        {
+          "id": "generate_issue_report",
+          "title": {
+            "en": "Generate support report (GitHub issue)",
+            "fr": "Générer rapport de support (issue GitHub)",
+            "nl": "Supportrapport genereren (GitHub issue)",
+            "de": "Supportbericht erstellen (GitHub Issue)"
+          }
+        },
+        {
+          "id": "zigbee_rebind",
+          "title": {
+            "en": "Re-bind & reconfigure reporting",
+            "fr": "Re-lier et reconfigurer les rapports",
+            "nl": "Opnieuw binden en rapportage instellen",
+            "de": "Neu binden und Reporting konfigurieren"
+          }
+        }
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      },
+      "metadata": {
+        "source": "JohanBendz/com.tuya.zigbee#128 (reporter, batch 105)"
+      }
+    },
+    {
       "id": "switch_3_gang",
       "name": {
         "en": "3 Gang Switch Module"
