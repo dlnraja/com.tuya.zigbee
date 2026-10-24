@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-24T13:46:38.794Z",
+ "generated": "2026-10-24T18:38:32.212Z",
  "drivers": 391,
  "snapshot": {
   "air_purifier": {
@@ -345,9 +345,9 @@
    "pidSha": "777a8703abf8065f"
   },
   "contact_sensor": {
-   "mfr": 57,
+   "mfr": 58,
    "pid": 26,
-   "mfrSha": "b6ee1e854992d056",
+   "mfrSha": "e8ceb55fae93eb6b",
    "pidSha": "413aba4e609c4fb1"
   },
   "contact_sensor_curtain": {
@@ -393,9 +393,9 @@
    "pidSha": "c4343290bac9e455"
   },
   "curtain_motor": {
-   "mfr": 275,
+   "mfr": 276,
    "pid": 48,
-   "mfrSha": "9c9df10543b14481",
+   "mfrSha": "15a3ef1544b1b3f7",
    "pidSha": "00ba96ff94eb4bb5"
   },
   "curtain_motor_shutter": {
@@ -627,9 +627,9 @@
    "pidSha": "d3e783e22d9f2160"
   },
   "dimmer_1_gang_tuya": {
-   "mfr": 13,
+   "mfr": 12,
    "pid": 12,
-   "mfrSha": "ef1348732c135fe8",
+   "mfrSha": "cb590b14c51c8628",
    "pidSha": "4ec845a853bc6530"
   },
   "dimmer_2_gang": {
@@ -1083,9 +1083,9 @@
    "pidSha": "b37ed01a69900c1e"
   },
   "light_cct_ts0502b": {
-   "mfr": 2,
+   "mfr": 4,
    "pid": 1,
-   "mfrSha": "ac7317e93069320b",
+   "mfrSha": "ffe3a900a9a879e6",
    "pidSha": "9e84a7b9a8e8cb87"
   },
   "light_dimmable_ts0501a": {
@@ -1095,9 +1095,9 @@
    "pidSha": "9ba9d3f04de6a2ef"
   },
   "light_rgbcct_ts0505b": {
-   "mfr": 11,
+   "mfr": 14,
    "pid": 1,
-   "mfrSha": "4000e7fb7cff08ef",
+   "mfrSha": "f87c5f1b24b5a54f",
    "pidSha": "38bdc69f98e98fe7"
   },
   "light_sensor_outdoor": {
@@ -1281,9 +1281,9 @@
    "pidSha": "455c46e8c8549693"
   },
   "rain_sensor": {
-   "mfr": 12,
+   "mfr": 13,
    "pid": 4,
-   "mfrSha": "ccbb163bfcfd75cf",
+   "mfrSha": "2dc1716283d3a1f4",
    "pidSha": "ebc0eb76557428e9"
   },
   "relay_board_1_channel": {
@@ -1455,9 +1455,9 @@
    "pidSha": "278e503d4862c11f"
   },
   "scene_switch_4": {
-   "mfr": 15,
+   "mfr": 16,
    "pid": 3,
-   "mfrSha": "6df33b933cf40232",
+   "mfrSha": "0eb353c3bc2bad8d",
    "pidSha": "852c1ed113914f3e"
   },
   "scene_switch_6": {
@@ -1665,9 +1665,9 @@
    "pidSha": "3e62bbb2f610b753"
   },
   "smart_garden_irrigation_control": {
-   "mfr": 4,
+   "mfr": 1,
    "pid": 11,
-   "mfrSha": "289acae1e8e21c6a",
+   "mfrSha": "85a9932f6a9efc73",
    "pidSha": "8b2aa9884e9e3a9d"
   },
   "smart_heater": {
@@ -1767,9 +1767,9 @@
    "pidSha": "a52af499d7d01202"
   },
   "smartplug": {
-   "mfr": 35,
+   "mfr": 36,
    "pid": 3,
-   "mfrSha": "aeec88b202438ac5",
+   "mfrSha": "a4373e2f406ef126",
    "pidSha": "d035b5d1165c0c3d"
   },
   "smartplug_2_socket": {
@@ -1791,9 +1791,9 @@
    "pidSha": "14fd4884570649ac"
   },
   "smoke_sensor2": {
-   "mfr": 34,
+   "mfr": 36,
    "pid": 14,
-   "mfrSha": "8747a6a6b933f537",
+   "mfrSha": "cf8210693d5e7780",
    "pidSha": "91d04f847d60da6b"
   },
   "smoke_sensor3": {
@@ -1881,9 +1881,9 @@
    "pidSha": "b46b96d17990cf37"
   },
   "switch_1gang": {
-   "mfr": 372,
+   "mfr": 373,
    "pid": 38,
-   "mfrSha": "d331751692661fec",
+   "mfrSha": "c9b503c12b4edaf7",
    "pidSha": "fd65b1d55ed8db6a"
   },
   "switch_2_gang": {
@@ -2307,9 +2307,9 @@
    "pidSha": "8218a22aa12bceb7"
   },
   "water_leak_sensor": {
-   "mfr": 37,
+   "mfr": 38,
    "pid": 21,
-   "mfrSha": "f6cddb121e8bf80b",
+   "mfrSha": "d634779fdef387d0",
    "pidSha": "ddd617471a56ff24"
   },
   "water_leak_sensor_tuya": {

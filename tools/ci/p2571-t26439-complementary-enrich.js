@@ -40,7 +40,8 @@ const LOCKS = [
   // TS0601 knob dimmer (Hogar / Z2M TS0601_knob_dimmer_switch)
   { driver: 'wall_dimmer_tuya', mfrs: ['_TZE284_tgeqdjgk', '_TZE200_tgeqdjgk', '_TZE204_tgeqdjgk'], pids: ['TS0601'] },
   // Garden irrigation quotes (Kai / Johan list)
-  { driver: 'smart_garden_irrigation_control', mfrs: ['_TZ3210_eymunffl', '_TZ3000_cjfmu5he', '_TZ3000_kz1anoi8', '_TZ3000_mq4wujmp'], pids: ['TS0101', 'TS0049'] },
+  // P3014: TS0049 cjfmu5he/kz1anoi8/mq4wujmp belong to water_valve_garden only (curated removal).
+  { driver: 'smart_garden_irrigation_control', mfrs: ['_TZ3210_eymunffl'], pids: ['TS0101', 'TS0049'] },
 ];
 
 /** Same (mfr,pid) must leave these drivers (wrong class / collision bleed). */
