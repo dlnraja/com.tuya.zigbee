@@ -26,8 +26,8 @@ leak. All 28 architectural tests PASS, 0 new Sacred Couples.
 | 2099 | VicBehrens | 2026-07-02 | Moes 4-gang `_TZ3000_mrduubod` "Missing Capability Listener: Button 1" | **FIXED: moved to wall_switch_4gang_1way + removed button.1-4 (R27)** |
 | 2098 | Jocke_Wallen | 2026-06-29 | Moes 4-button diagnostic | TODO |
 | 2097 | JiriG | 2026-06-27 | Soil sensor `_TZE284_myd45weu` unknown | Mfr OK in soil_sensor |
-| 2093 | blutch32 | 2026-06-21 | Soil sensors + energy meter 660kwh vs 1kwh | TODO: ProductValueValidator divisor fix |
-| 2092 | Lucas360 | 2026-06-16 | Energy usage broken (7456c4f0) | TODO: ProductValueValidator fix |
+| 2093 | blutch32 | 2026-06-21 | Soil sensors + energy meter 660kwh vs 1kwh | DONE P3021c: soil `A89G12C` DP5 ÷10 sticky, DP14 enum vs DP15 %, DP9 unit (SoilDpGuards); 0xEF00 passive P0 path confirmed working in diag 3690dfdb; contact onNodeInit crash (diag 1b2109ab) fixed upstream; energy part covered generically by PowerEnergySanity (power evidence) |
+| 2092 | Lucas360 | 2026-06-16 | Energy usage broken (7456c4f0) | DONE P3021c: PowerEnergySanity (power-vs-energy cross-check) + ProductValueValidator.checkPowerEnergyConsistency |
 | 2091 | Ronald_Bok | 2026-06-15 | Soil sensor `_TZE200_npj9bug3` as Curtain Module | Mfr OK in soil_sensor |
 | 2090 | Peter | 2026-06-14 | HOBEIAN ZG-222Z request | Mfr OK in water_leak_sensor (DP fix TODO) |
 | 2089 | Peter | 2026-06-14 | Luminance 0 KO + SOS/Smartbutton | P85 fix covers luminance; button ID issue TODO |
@@ -132,7 +132,7 @@ Aggregated audit:
 
 ## Open P88+ TODOs (extracted from forum)
 
-1. **Energy meter 660kwh vs 1kwh** (post 2093, 2092): ProductValueValidator divisor fix
+1. **Energy meter 660kwh vs 1kwh** (post 2093, 2092): ProductValueValidator divisor fix — P3021c: lib/energy/PowerEnergySanity.js (sticky per-device ÷10/100/1000 or ∫P·dt after 3 confirmations)
 2. **HOBEIAN ZG-222Z waterleak no data** (post 2090, 2111): DP mapping in
    `drivers/water_leak_sensor/device.js` for ZG-222Z
 3. **Moes 4-button remote button press** (post 2098, 2100, 2104): PhysicalButtonMixin audit

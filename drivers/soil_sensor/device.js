@@ -298,6 +298,25 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     }
   }
 
+  get _soilGuards() {
+    return require('../../lib/sensors/SoilDpGuards');
+  }
+
+  _soilGuardState() {
+    if (!this.__soilGuard) {
+      const mfr = this.getSetting?.('zb_manufacturer_name') || this.getStoreValue?.('zb_manufacturer_name') || '';
+      const stored = this.getStoreValue?.('p3021c_soil_guard') || {};
+      this.__soilGuard = this._soilGuards.newState(mfr, stored);
+    }
+    return this.__soilGuard;
+  }
+
+  _persistSoilGuard() {
+    const st = this.__soilGuard;
+    if (!st) {return;}
+    Promise.resolve(this.setStoreValue?.('p3021c_soil_guard', { scale10: st.scale10 })).catch(() => { });
+  }
+
   _handleDP(dpId, value) {
     const dp = Number(dpId);
     let parsedValue = value;
@@ -316,6 +335,17 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       this.log(`[SOIL] Ignoring overflow/sentinel value DP${dp} = ${parsedValue} (0x${(parsedValue >>> 0).toString(16).toUpperCase()})`);
       return;
     }
+
+    // WHY(P3021c / forum #2093 blutch32, diag 3690dfdb): DP9 = temperature_unit, DP14 = battery_state
+    // enum while DP15 = battery %, DP5 = °C×10 learned stickily (see lib/sensors/SoilDpGuards.js).
+    try {
+      const st = this._soilGuardState();
+      const g = this._soilGuards.guardAux(dp, parsedValue, st);
+      if (g && g.action === 'skip') {
+        this.log(`[SOIL] DP${dp} = ${parsedValue} not mapped (${g.reason})`);
+        return;
+      }
+    } catch (_e) { /* fail-open: keep the existing path */ }
 
     // WHY(P3019): ZS-SF00 reuses DP102/103/106/107/111 with other meanings than the generic
     // soil map (Z2M tuya.ts ZS-SF00). Couple-locked; unknown DPs fall through to the generic path.
@@ -458,6 +488,17 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       let temp = parsedValue;
       if (Math.abs(temp) > 1000) {temp = safeDivide(temp, 100);}
       else if (Math.abs(temp) > 100) {temp = safeDivide(temp, 10);}
+      if (dp === 5) {
+        // WHY(P3021c / forum #2093): sticky ÷10 once proven, so 9.5 °C (raw 95) is not shown as 95 °C.
+        try {
+          const st = this._soilGuardState();
+          const r = this._soilGuards.scaleDp5(parsedValue, st);
+          if (r.value !== null) {
+            temp = r.value;
+            if (r.learned) {this._persistSoilGuard();}
+          }
+        } catch (_e) { /* fail-open */ }
+      }
       this.log(`[SOIL] Temp DP${dp} = ${temp}Â°C`);
       this.safeSetCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
       this._triggerTemperatureFlows(temp);
