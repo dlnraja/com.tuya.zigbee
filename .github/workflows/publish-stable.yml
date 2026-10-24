@@ -17,6 +17,15 @@ on:
   push:
     branches:
       - stable-v5
+    # P3025: CI/test/docs-only pushes do not change the app payload -> no Athom upload (master uses the same idea).
+    paths-ignore:
+      - 'docs/**'
+      - 'reports/**'
+      - '**/*.md'
+      - 'test/**'
+      - '.githooks/**'
+      - '.github/workflows/ci-self-check.yml'
+      - '.github/workflow-hygiene-baseline.json'
   workflow_dispatch:
     inputs:
       force_test:
@@ -130,10 +139,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
         with:
           fetch-depth: 1
-      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           node-version: '22'
           cache: npm
@@ -176,10 +185,10 @@ jobs:
       skip: ${{ steps.soak.outputs.skip }}
       reason: ${{ steps.soak.outputs.reason }}
     steps:
-      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
         with:
           fetch-depth: 1
-      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           node-version: '22'
           cache: npm
@@ -203,10 +212,10 @@ jobs:
       uploaded_version: ${{ steps.reupload.outputs.version || steps.publish.outputs.version || steps.uploaded_version.outputs.version }}
       app_id: ${{ steps.uploaded_version.outputs.app_id }}
     steps:
-      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
         with:
           fetch-depth: 1
-      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           node-version: '22'
           cache: npm
@@ -386,13 +395,18 @@ jobs:
           # P2924: loop bound = largest budget; each pass asks the policy for THIS failure kind (hang-up 4, other transient 2).
           MAXR=$(node .github/scripts/athom-retry-policy.js max)
           for retry in $(seq 0 "$MAXR"); do
-            OUT=$(mktemp)
-            GITHUB_OUTPUT="$OUT" node .github/scripts/wait-athom-draft-ready.js || true
+            OUT=$(mktemp); WLOG=$(mktemp)
+            # P3025: keep the wait log — the failure reason ("socket hang up") is only on its stdout.
+            GITHUB_OUTPUT="$OUT" node .github/scripts/wait-athom-draft-ready.js 2>&1 | tee "$WLOG" || true
             if ! grep -q 'processing_failed_degraded=true' "$OUT"; then
               echo "Athom build for v$HOMEY_EXPECTED_VERSION is processing/ready (retry=$retry)"
               TRANSIENT_RETRY=$retry node .github/scripts/publish-size-telemetry.js record uploaded-ok; exit 0
             fi
-            KIND=$(node scripts/ci/homey-build-status.js "$APP_ID" 2>/dev/null | node .github/scripts/athom-retry-policy.js classify 2>/dev/null || echo unknown)
+            # P3025: classify THIS version's row (not the whole listing), then the wait log, then empty-error -> transient
+            # (21/10: 12 red runs where a plain socket hang up was classified "unknown" = budget 0). Failover: old classifier.
+            KIND=$(node scripts/ci/homey-build-status.js "$APP_ID" 2>/dev/null | node .github/scripts/athom-classify-failure.js --version "$HOMEY_EXPECTED_VERSION" --wait-log "$WLOG" || true)
+            [ -n "$KIND" ] || KIND=$(node .github/scripts/athom-retry-policy.js classify "$(cat "$WLOG")" 2>/dev/null || echo unknown)
+            if [ "$KIND" = "not-failed" ]; then echo "::warning::v$HOMEY_EXPECTED_VERSION build row is not processing_failed (tip-lag/in-flight): no blind re-upload"; KIND=unknown; fi
             TRANSIENT_RETRY=$retry node .github/scripts/publish-size-telemetry.js record processing_failed "$KIND"
             [ "$retry" -ge "$MAXR" ] && break
             node .github/scripts/athom-retry-policy.js retry-kind "$KIND" "$retry" | grep -q '^RETRY' || { echo "::warning::v$HOMEY_EXPECTED_VERSION failed ($KIND): retry budget for this kind used ($retry)"; break; }
@@ -417,7 +431,7 @@ jobs:
       - name: Upload publish size telemetry
         if: always()
         continue-on-error: true
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
         with:
           name: publish-size-telemetry-${{ github.run_id }}-${{ github.run_attempt }}
           path: ${{ runner.temp }}/publish-size/
@@ -464,8 +478,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 50  # + final gate (≤15)
     steps:
-      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
-      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           node-version: '22'
           cache: npm

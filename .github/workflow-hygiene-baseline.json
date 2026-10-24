@@ -1,0 +1,95 @@
+{
+  "note": "P3025 hygiene ratchet: shrink only. Regenerate with --update-baseline after FIXING debt, never to admit new debt.",
+  "findings": [
+    {
+      "rule": "raw-push",
+      "file": ".github/workflows/auto-fix-and-publish.yml",
+      "key": "count",
+      "count": 1
+    },
+    {
+      "rule": "raw-push",
+      "file": ".github/workflows/auto-publish-on-push.yml",
+      "key": "count",
+      "count": 1
+    },
+    {
+      "rule": "raw-push",
+      "file": ".github/workflows/blakadder-fetch.yml",
+      "key": "count",
+      "count": 1
+    },
+    {
+      "rule": "raw-push",
+      "file": ".github/workflows/bug-report-auto-pr.yml",
+      "key": "count",
+      "count": 1
+    },
+    {
+      "rule": "raw-push",
+      "file": ".github/workflows/continuous-flow.yml",
+      "key": "count",
+      "count": 1
+    },
+    {
+      "rule": "raw-push",
+      "file": ".github/workflows/fleet-intelligent-enrich.yml",
+      "key": "count",
+      "count": 1
+    },
+    {
+      "rule": "raw-push",
+      "file": ".github/workflows/kb-refresh.yml",
+      "key": "count",
+      "count": 1
+    },
+    {
+      "rule": "raw-push",
+      "file": ".github/workflows/l99-inbox-intelligence.yml",
+      "key": "count",
+      "count": 1
+    },
+    {
+      "rule": "raw-push",
+      "file": ".github/workflows/market-couples-intake.yml",
+      "key": "count",
+      "count": 1
+    },
+    {
+      "rule": "raw-push",
+      "file": ".github/workflows/monthly-tuya-intelligence.yml",
+      "key": "count",
+      "count": 1
+    },
+    {
+      "rule": "raw-push",
+      "file": ".github/workflows/project-resilience.yml",
+      "key": "count",
+      "count": 1
+    },
+    {
+      "rule": "raw-push",
+      "file": ".github/workflows/publish-stable.yml",
+      "key": "count",
+      "count": 1
+    },
+    {
+      "rule": "raw-push",
+      "file": ".github/workflows/publish.yml",
+      "key": "count",
+      "count": 2
+    },
+    {
+      "rule": "raw-push",
+      "file": ".github/workflows/safe-sync-stable.yml",
+      "key": "count",
+      "count": 1
+    },
+    {
+      "rule": "raw-push",
+      "file": ".github/workflows/weekly-sovereign-loop.yml",
+      "key": "count",
+      "count": 1
+    }
+  ]
+}
