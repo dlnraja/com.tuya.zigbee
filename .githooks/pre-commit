@@ -229,6 +229,9 @@ else
   echo -e "${GREEN}  PASSED: Full security scan${RESET}"
 fi
 
+# P3025: data/manifest gates (dp-shards auto-rebuild, app.json↔compose drift)
+[ -f "$ROOT/.githooks/lib-data-gates.sh" ] && . "$ROOT/.githooks/lib-data-gates.sh"
+
 # ─── Summary ─────────────────────────────────────────────────────────────────
 echo ""
 if [ $ERRORS -gt 0 ]; then
