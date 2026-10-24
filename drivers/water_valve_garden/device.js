@@ -74,7 +74,7 @@ class WaterValveGardenDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unif
    * v9.8.0: DEFENSIVE - Safe flow card trigger helper
    * Guards against missing homey.flow or triggerCard
    */
-  _safeTriggerFlow(triggerId, tokens = {}, debug = {}) {
+  _safeTriggerFlow(triggerId, tokens = {}) { // 3rd arg (debug context) accepted by callers, unused
     try {
       if (!this.homey?.flow) {
         this.log(`[VALVE-GARDEN] ⚠️ Cannot trigger flow '${triggerId}': homey.flow unavailable`);
