@@ -1,0 +1,44 @@
+{
+  "triggers": [
+    {
+      "id": "heiman_keyfob_disarm",
+      "title": {
+        "en": "Disarm pressed",
+        "fr": "Désarmer appuyé",
+        "nl": "Uitschakelen ingedrukt",
+        "de": "Unscharf gedrückt"
+      },
+      "args": []
+    },
+    {
+      "id": "heiman_keyfob_arm_home",
+      "title": {
+        "en": "Arm home pressed",
+        "fr": "Armer maison appuyé",
+        "nl": "Thuis inschakelen ingedrukt",
+        "de": "Zuhause scharf gedrückt"
+      },
+      "args": []
+    },
+    {
+      "id": "heiman_keyfob_arm_all",
+      "title": {
+        "en": "Arm all zones pressed",
+        "fr": "Armer toutes zones appuyé",
+        "nl": "Alle zones inschakelen ingedrukt",
+        "de": "Alle Zonen scharf gedrückt"
+      },
+      "args": []
+    },
+    {
+      "id": "heiman_keyfob_emergency",
+      "title": {
+        "en": "Emergency pressed",
+        "fr": "Urgence appuyée",
+        "nl": "Noodknop ingedrukt",
+        "de": "Notfall gedrückt"
+      },
+      "args": []
+    }
+  ]
+}

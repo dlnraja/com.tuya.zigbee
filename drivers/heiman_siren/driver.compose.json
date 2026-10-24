@@ -1,0 +1,79 @@
+{
+  "name": {
+    "en": "HEIMAN smart siren",
+    "fr": "Sirène HEIMAN",
+    "nl": "HEIMAN sirene",
+    "de": "HEIMAN Sirene"
+  },
+  "class": "other",
+  "capabilities": [
+    "onoff",
+    "measure_battery"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Siren",
+        "fr": "Sirène",
+        "nl": "Sirene",
+        "de": "Sirene"
+      }
+    }
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
+  },
+  "energy": {
+    "batteries": [
+      "OTHER"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "HEIMAN",
+      "Heiman",
+      "heiman"
+    ],
+    "productId": [
+      "WarningDevice",
+      "WarningDevice-EF-3.0"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3,
+          1280,
+          1282
+        ],
+        "bindings": [
+          1
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Press and hold the reset pin for about 5 seconds until the LED flashes.",
+        "fr": "Maintenez la touche reset environ 5 secondes jusqu’au clignotement de la LED.",
+        "nl": "Houd de resetknop ongeveer 5 seconden ingedrukt tot de LED knippert.",
+        "de": "Reset-Taste etwa 5 Sekunden halten, bis die LED blinkt."
+      }
+    }
+  },
+  "settings": [
+    {
+      "$extends": [
+        "zcl_cluster_layer"
+      ]
+    }
+  ]
+}
