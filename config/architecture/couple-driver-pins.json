@@ -852,6 +852,184 @@
       "pid": "TS0049",
       "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/moes.ts#L1488 + https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/tuya.ts#L26460",
       "regression": "P3015 2026-10-24: Moes ZWV-YC (cjfmu5he/mq4wujmp/5af5r192/ogjpfoyn) + Haozee HZ-WT02 (kz1anoi8) TS0049 water valves; canonical+lower+UPPER forms on the kept driver for case-sensitive Homey pairing."
+    },
+    {
+      "mfr": [
+        "_TZE200_2pddnnrk",
+        "_TZE200_jsaqgakf"
+      ],
+      "pid": "TS0601",
+      "driver": "rain_sensor",
+      "source": "P3018b Z2M HOBEIAN ZG-223Z rainwater detection sensor — https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/hobeian.ts#L1505"
+    },
+    {
+      "mfr": [
+        "_TZE200_4mh6tyyo"
+      ],
+      "pid": "TS0601",
+      "driver": "dimmer_1_gang_tuya",
+      "source": "P3018b Z2M Tuya TS0601_dimmer_1_gang_1 (Lerlink X706U) 1-gang DP dimmer — https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L6118"
+    },
+    {
+      "mfr": [
+        "_TZE204_dcnsggvz"
+      ],
+      "pid": "TS0601",
+      "driver": "dimmer_1_gang_tuya",
+      "source": "P3018b Z2M Tuya TS0601_dimmer_5 1-gang DP dimmer module — https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L6473"
+    },
+    {
+      "mfr": [
+        "_TZE204_5cuocqty"
+      ],
+      "pid": "TS0601",
+      "driver": "dimmer_1_gang_tuya",
+      "source": "P3018b Z2M AVATTO ZDMS16-1 1-channel dimmer module — https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/avatto.ts#L424"
+    },
+    {
+      "mfr": [
+        "_TZE204_9qhuzgo0"
+      ],
+      "pid": "TS0601",
+      "driver": "dimmer_1_gang_tuya",
+      "source": "P3018b Z2M Tuya TS0601_dimmer_1_gang_1 1-gang DP dimmer — https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L6121"
+    },
+    {
+      "mfr": [
+        "_TZE200_bjzrowv2"
+      ],
+      "pid": "TS0601",
+      "driver": "curtain_motor",
+      "source": "P3018b Z2M Tuya TS0601_cover_15 curtain motor — https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L26362"
+    },
+    {
+      "mfr": [
+        "_TZE284_r3szw0xr"
+      ],
+      "pid": "TS0601",
+      "driver": "curtain_motor",
+      "source": "P3018b Z2M Tuya TS0601_cover_11 cover motor — https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L26287"
+    },
+    {
+      "mfr": [
+        "_TZE200_eqpaxqdv"
+      ],
+      "pid": "TS0601",
+      "driver": "curtain_motor",
+      "source": "P3018b Z2M KnockautX PIMS3028 cover plug-in receiver — https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L27339"
+    },
+    {
+      "mfr": [
+        "_TZE200_locansqn"
+      ],
+      "pid": "TS0601",
+      "driver": "lcdtemphumidsensor",
+      "source": "P3018b Z2M Nous SZ-T04 temp/humidity with clock (raw % humidity, DIRECT_HUMIDITY list in lcdtemphumidsensor) — https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/nous.ts#L127"
+    },
+    {
+      "mfr": [
+        "_TZE200_ntcy3xu1"
+      ],
+      "pid": "TS0601",
+      "driver": "smoke_sensor2",
+      "source": "P3018b Z2M Tuya TS0601_smoke_6: smoke + tamper + battery_state only (no temp/humidity) — https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L12797"
+    },
+    {
+      "mfr": [
+        "_TZE200_rgeapp2c"
+      ],
+      "pid": "TS0601",
+      "driver": "panel_switch_cover_tuya",
+      "source": "P3018b Z2M Semicom touch panel 2 switches + 2 shutters — https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L9879"
+    },
+    {
+      "mfr": [
+        "_TZE200_zl1kmjqx"
+      ],
+      "pid": "TS0601",
+      "driver": "lcdtemphumidsensor_3",
+      "source": "P3018b Z2M Tuya TS0601_temperature_humidity_sensor_1 — https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L4019"
+    },
+    {
+      "mfr": [
+        "_TZE204_6fk3gewc",
+        "_TZE284_6fk3gewc"
+      ],
+      "pid": "TS0601",
+      "driver": "wall_switch_1gang_1way",
+      "source": "P3018b Z2M WETEN PCI E remote power card (DP1 switch) — https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/weten.ts#L19"
+    },
+    {
+      "mfr": [
+        "_TZE204_mrffaamu",
+        "_TZE284_mrffaamu",
+        "_TZE284_9xstqowh"
+      ],
+      "pid": "TS0601",
+      "driver": "smart_breaker",
+      "source": "P3018b Z2M Tongou TOQCB2-80 smart circuit breaker — https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L22490"
+    },
+    {
+      "mfr": [
+        "_TZE204_loejka0i",
+        "_TZE284_loejka0i"
+      ],
+      "pid": "TS0601",
+      "driver": "energy_meter_3phase",
+      "source": "P3018b Z2M Nous D4Z 3P+N energy monitor — https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/nous.ts#L257"
+    },
+    {
+      "mfr": [
+        "HOBEIAN"
+      ],
+      "pid": "CK-BL702-MWS-01(7016)",
+      "driver": "presence_sensor_radar",
+      "source": "P3018b Z2M HOBEIAN ZG-205Z/A 5.8/24 GHz presence sensor (also ZHA tuya_motion.py) — https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/hobeian.ts#L2042"
+    },
+    {
+      "mfr": [
+        "_TYST11_jeaxp72v"
+      ],
+      "pid": "eaxp72v",
+      "driver": "device_radiator_valve",
+      "source": "P3018b Z2M Siterwell GS361A-H04 TRV (zigbeeModel \"eaxp72v\\u0000\", same hardware as _TZE200_jeaxp72v already in this driver) — https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/siterwell.ts#L11 ; interview docs/data/interviews/eaxp72v__TYST11_jeaxp72v.json"
+    },
+    {
+      "mfr": [
+        "_TZE200_9cqcpkgb"
+      ],
+      "pid": "TS0601",
+      "driver": "soil_sensor",
+      "source": "P3018b-soil Z2M Tuya TS0601_soil soil sensor (DP3 moisture, DP5 temp ÷10, DP15 battery) — https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L5651"
+    },
+    {
+      "mfr": [
+        "_TZE284_33bwcga2",
+        "_TZE284_3urschql",
+        "_TZE284_ap9owrsa",
+        "_TZE284_nhgdf6qr",
+        "_TZE284_wckqztdq"
+      ],
+      "pid": "TS0601",
+      "driver": "soil_sensor",
+      "source": "P3018b-soil Z2M Tuya TS0601_soil_3 soil sensor (GIEX GX04/GX06) — https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L5733"
+    },
+    {
+      "mfr": [
+        "_TZE284_65gzcss7",
+        "_TZE284_yzr43ayq"
+      ],
+      "pid": "TS0601",
+      "driver": "soil_sensor",
+      "source": "P3018b-soil Z2M Arteco ZS-300Z/ZS-302Z/ZS-304Z soil moisture sensor — https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L26392"
+    },
+    {
+      "mfr": [
+        "_TZE284_k7p2q5d9"
+      ],
+      "pid": "TS0601",
+      "driver": "soil_sensor",
+      "source": "P3018b-soil Z2M Arteco ZS-300Z soil moisture sensor — https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L26391"
     }
   ]
 }

@@ -66,3 +66,24 @@ Forum topics scanned for unknown commands: Homey Community 140352 and 26439 (ano
 | `scripts/data/zha-tuya-dps.json` | [zigpy/zha-device-handlers](https://github.com/zigpy/zha-device-handlers) Tuya quirks (KB index) | Apache-2.0 | 1d6598c32a | DP numbers per couple (coverage audit) |
 | `lib/zigbee/EndpointCoverage.js` | ZCL specification (cluster ids, measuredValue scaling) | — | — | passive per-endpoint routing |
 
+
+## One couple = one driver (P3018b)
+
+| couple(s) | owner | upstream pointer (Koenkk/zigbee-herdsman-converters @cff1de4731) |
+|---|---|---|
+| `_TZE200_2pddnnrk`, `_TZE200_jsaqgakf` | rain_sensor | `src/devices/hobeian.ts` ZG-223Z |
+| `_TZE200_4mh6tyyo`, `_TZE204_dcnsggvz`, `_TZE204_9qhuzgo0`, `_TZE204_5cuocqty` | dimmer_1_gang_tuya | `src/devices/tuya.ts`, `src/devices/avatto.ts` ZDMS16-1 |
+| `_TZE200_bjzrowv2`, `_TZE284_r3szw0xr`, `_TZE200_eqpaxqdv` | curtain_motor | `src/devices/tuya.ts` covers, KnockautX PIMS3028 |
+| `_TZE200_locansqn` | lcdtemphumidsensor | `src/devices/nous.ts` SZ-T04 |
+| `_TZE200_ntcy3xu1` | smoke_sensor2 | `src/devices/tuya.ts` smoke (smoke/tamper/battery) |
+| `_TZE200_rgeapp2c` | panel_switch_cover_tuya | `src/devices/tuya.ts` Semicom panel |
+| `_TZE200_zl1kmjqx` | lcdtemphumidsensor_3 | `src/devices/tuya.ts` temp/humidity |
+| `_TZE204_6fk3gewc`, `_TZE284_6fk3gewc` | wall_switch_1gang_1way | `src/devices/weten.ts` PCI E |
+| `_TZE204_mrffaamu`, `_TZE284_mrffaamu`, `_TZE284_9xstqowh` | smart_breaker | `src/devices/tuya.ts` Tongou TOQCB2-80 |
+| `_TZE204_loejka0i`, `_TZE284_loejka0i` | energy_meter_3phase | `src/devices/nous.ts` D4Z |
+| HOBEIAN `CK-BL702-MWS-01(7016)` | presence (not vibration_sensor) | `src/devices/hobeian.ts` ZG-205Z/A; zigpy/zha-device-handlers `tuya_motion.py` |
+| `_TYST11_jeaxp72v` / `eaxp72v` | device_radiator_valve | `src/devices/siterwell.ts` GS361A-H04 |
+| `_TZ3000_cet6ch1r` TS130F EP2 0x0102 | curtain_motor_wall (passive EP2 info) | `src/lib/tuya.ts` cover_options: EP2 = calibration "to_close", moesCalibrationTime ÷10 s |
+| `_TZE200_9cqcpkgb` | soil_sensor | `src/devices/tuya.ts` TS0601_soil |
+| `_TZE284_33bwcga2`, `_TZE284_3urschql`, `_TZE284_ap9owrsa`, `_TZE284_nhgdf6qr`, `_TZE284_wckqztdq` | soil_sensor | `src/devices/tuya.ts` TS0601_soil_3 (GIEX GX04/GX06) |
+| `_TZE284_k7p2q5d9`, `_TZE284_65gzcss7`, `_TZE284_yzr43ayq` | soil_sensor | `src/devices/tuya.ts` Arteco ZS-300Z/302Z/304Z |
