@@ -1,5 +1,5 @@
 {
- "note": "R20 known entries (shrink-only). The MÜLLER LICHT forms are deliberate encoding hedges (UTF-8 vs Latin-1/cp1252 mojibake as reported by some firmwares/forum diags) and stay. The AOYAN two-space forms are the exact Basic manufacturerName that AOYAN soil (AY-303Z/AY-302Z) and leak (AY222Z) units send (Z2M hobeian.ts / tuya.ts, PR #12488); lowercase is the usual case variant. See docs/knowledge/AOYAN_PADDED_MANUFACTURER.md. P2958: dedicated drivers presence_radar_aoyan_ay204t / water_leak_aoyan_ay222z / water_leak_blitzwolf_bw_is9 carry the exact Z2M padded forms (hobeian.ts, tuya.ts, blitzwolf.ts).",
+ "note": "R20 known entries (shrink-only). The MÜLLER LICHT forms are deliberate encoding hedges (UTF-8 vs Latin-1/cp1252 mojibake as reported by some firmwares/forum diags) and stay. The AOYAN two-space forms are the exact Basic manufacturerName that AOYAN soil (AY-303Z/AY-302Z) and leak (AY222Z) units send (Z2M hobeian.ts / tuya.ts, PR #12488); lowercase is the usual case variant. See docs/knowledge/AOYAN_PADDED_MANUFACTURER.md. P2965: the P2958 dedicated-driver padded forms moved to the sourced allowlist data/rules/padded-mfr-allowlist.json; never add new entries here.",
  "malformed": [
   {
    "driver": "generic_tuya",
@@ -54,21 +54,6 @@
   {
    "driver": "water_leak_sensor",
    "value": "\"aoyan  \"",
-   "why": "leading/trailing whitespace"
-  },
-  {
-   "driver": "presence_radar_aoyan_ay204t",
-   "value": "\"AOYAN  \"",
-   "why": "leading/trailing whitespace"
-  },
-  {
-   "driver": "water_leak_aoyan_ay222z",
-   "value": "\"AOYAN  \"",
-   "why": "leading/trailing whitespace"
-  },
-  {
-   "driver": "water_leak_blitzwolf_bw_is9",
-   "value": "\"_TZ3000_eit7p838 \"",
    "why": "leading/trailing whitespace"
   }
  ],

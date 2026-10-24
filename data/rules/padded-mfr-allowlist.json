@@ -1,0 +1,43 @@
+{
+  "note": "Intentional padded manufacturerName strings (P2941 byte-exact padding, P2958 dedicated drivers). Additive and sourced; separate from tools/ci/identifier-audit-baseline.json, which stays shrink-only. tools/ci/identifier-audit.js accepts ONLY the exact string in the listed driver: the same string in another driver, a case twin (e.g. lowercase) or any unlisted padded name still fails. Drivers listed here are byte-exact: case-variant bots must not add twins to them. Credit: Koenkk/zigbee-herdsman-converters (Z2M) contributors; facts restated, not copied.",
+  "pinnedRef": "cff1de4731a14a84094a8568d8bbf92aa5feb0db",
+  "entries": [
+    {
+      "value": "AOYAN  ",
+      "driver": "presence_radar_aoyan_ay204t",
+      "productId": "AY204T",
+      "source": {
+        "project": "Koenkk/zigbee-herdsman-converters (Zigbee2MQTT)",
+        "file": "src/devices/hobeian.ts",
+        "detail": "ZG-204ZV whiteLabel AY204T, fingerprint modelID AY204T + manufacturerName with two trailing spaces",
+        "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/hobeian.ts#L1499"
+      },
+      "decision": ["P2941", "P2958"]
+    },
+    {
+      "value": "AOYAN  ",
+      "driver": "water_leak_aoyan_ay222z",
+      "productId": "AY222Z",
+      "source": {
+        "project": "Koenkk/zigbee-herdsman-converters (Zigbee2MQTT)",
+        "file": "src/devices/tuya.ts",
+        "detail": "TS0207 water leak whiteLabel AY222Z lists both AOYAN and the two-space padded form (PR #12488 by zyjsmile857: names kept exactly as reported)",
+        "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L5540",
+        "pr": "https://github.com/Koenkk/zigbee-herdsman-converters/pull/12488"
+      },
+      "decision": ["P2941", "P2958"]
+    },
+    {
+      "value": "_TZ3000_eit7p838 ",
+      "driver": "water_leak_blitzwolf_bw_is9",
+      "productId": "TS0207",
+      "source": {
+        "project": "Koenkk/zigbee-herdsman-converters (Zigbee2MQTT)",
+        "file": "src/devices/blitzwolf.ts",
+        "detail": "BW-IS9 water leak: tuya.fingerprint TS0207 with the one-trailing-space manufacturerName",
+        "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/blitzwolf.ts#L37"
+      },
+      "decision": ["P2941", "P2958"]
+    }
+  ]
+}
