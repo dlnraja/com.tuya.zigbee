@@ -48,3 +48,13 @@ Scanned 2026-10-24 (Europe/Paris) for how they handle unknown commands, fallback
 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) | SDK3 | see repo | pushed 2026-10-08 | issue #619 DP101/DP102 |
 
 Forum topics scanned for unknown commands: Homey Community 140352 and 26439 (anonymised, facts only).
+
+## P3019 sources (2026-10-24)
+
+| source | pointer | used for |
+|---|---|---|
+| [Koenkk/zigbee-herdsman-converters](https://github.com/Koenkk/zigbee-herdsman-converters) `src/devices/tuya.ts` | 1c90116 | ZS-SF00 DP map; HZ-WT02 TS0049 0xE001/0xFE countdown; TS004F 0x8004 mode |
+| [Koenkk/zigbee2mqtt#31445](https://github.com/Koenkk/zigbee2mqtt/issues/31445) | issue | sinxpbrl Tuya schema (DP2, DP6, DP7, DP101, DP102) |
+| [JohanBendz/com.tuya.zigbee#1504](https://github.com/JohanBendz/com.tuya.zigbee/issues/1504) | issue | sinxpbrl MC101Z report |
+| [zigpy/zha-device-handlers PR #2592](https://github.com/zigpy/zha-device-handlers/pull/2592) | PR | `TuyaZB1888Cluster` (empty: 0x1888 stays open) |
+| make-all/tuya-local | main | checked for TS0726 DP18–20: Wi-Fi only, not used |
