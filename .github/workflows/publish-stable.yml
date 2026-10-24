@@ -55,7 +55,8 @@ env:
   # v5.12.1 (P59 sync): stable has 30,211 combos (more than master due to
   # driver differences over time). 35,000 covers stable with headroom.
   # P2561: master-aligned caps (17000/2000 left root compact ~4.00MB → false-fail)
-  HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "14000"
+  # P3024b: our heuristic, not an Athom limit; fits the pinned publish baseline couples.
+  HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "15500"
   HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "1500"
   HOMEY_ZIGBEE_MAX_CASE_FORMS: "2"
   AI_PLAN_MODE: 'forfait'

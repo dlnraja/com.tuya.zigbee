@@ -118,3 +118,18 @@ The Auto-Fix doctrine (P139: no bump loops while an older Test is healthy) is un
 - Held drivers stay out of payload; couples shipped via existing drivers (WHD02→`switch_1gang`, SPI→`led_controller_rgb` + onMapDeviceClass).
 - R5 whd02 unhold still fails (#3496 key-missing) — do not unhold until a clean release probe passes.
 - P1 proved new driver ids can pass; fold is the shipping path for held couples.
+
+## Update 2026-10-25 (Paris) — P3024b combo cap vs pairing regression
+- `HOMEY_ZIGBEE_MAX_TOTAL_COMBOS` (14000 since 8e9914e2ee, 17000 before) is OUR heuristic, not an
+  Athom limit (see above: 13 995 combos on passing and failing builds; P2252 failures were 100k+).
+- Counting is raw mfr × pid per driver, every case form counted: in the 9.0.1597 candidate 52 % of
+  combos are extra case forms. Homey pairing matches byte-exact, so no case form is dropped blindly.
+- Regression: 9.0.1574 (build #3655, last Test package) → candidate lost 259 couples (192 mfrs), e.g.
+  52 on device_radiator_valve. Cause: a pin protects its whole case key, so case variants added to
+  the source later (ts0203/Ts0203 beside TS0203) became uncuttable and the cut fell on real couples.
+- Fix: every couple of test/fixtures/athom-last-test-package-couples.json (1574 + candidate) is pinned
+  exactly; pass 2 trims unpinned case variants first; orphan couples are re-pinned on their shipped
+  driver; prepare-publish 5a2b fails if one couple would disappear. Cap 15500 (fits the pinned floor
+  ~15 340; below the old 17000/20000 ceilings); app.json stays ~3.3 MB < 4 MB. Driver set unchanged.
+- Refresh the baseline after each Test build: `node scripts/maintenance/build-publish-baseline.cjs
+  <payload app.json> --merge --label "..."` (additive).
