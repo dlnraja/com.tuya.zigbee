@@ -16,6 +16,20 @@ describe('P-KB4 master Athom publish breaker', () => {
     assert.strictEqual(B.decide({ builds: [pf(3), pf(2), pf(1)], event: 'workflow_dispatch', transientRetry: '1' }).skip, true);
   });
   it('no snapshot -> closed (never blocks on missing data)', () => { assert.strictEqual(B.decide({ builds: [], event: 'push' }).skip, false); });
+  it('P2966: unreadable Athom state -> fail-closed on push / auto retry, one manual try allowed', () => {
+    assert.strictEqual(B.decide({ builds: [], event: 'push', snapshotOk: false }).skip, true);
+    assert.strictEqual(B.decide({ builds: [], event: 'workflow_dispatch', transientRetry: '1', snapshotOk: false }).skip, true);
+    assert.strictEqual(B.decide({ builds: [], event: 'workflow_dispatch', transientRetry: 'false', snapshotOk: false }).skip, false);
+    assert.strictEqual(B.decide({ builds: [pf(3), { id: 2, state: 'test' }, pf(1)], event: 'push', snapshotOk: true }).skip, false);
+  });
+  it('P2966: CLI fails closed on push when no snapshot can be read (run 40064359243 regression)', () => {
+    const os = require('os'); const { spawnSync } = require('child_process');
+    const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'brk-')); const out = path.join(tmp, 'out');
+    const r = spawnSync(process.execPath, [path.join(__dirname, '../../.github/scripts/master-publish-breaker.js'), 'com.example.none'],
+      { cwd: tmp, encoding: 'utf8', env: { ...process.env, GITHUB_EVENT_NAME: 'push', GITHUB_OUTPUT: out, BREAKER_READ_RETRIES: '0', GITHUB_STEP_SUMMARY: '' } });
+    assert.match(r.stdout, /\[breaker\] SKIP: Athom build state unreadable/);
+    assert.match(fs.readFileSync(out, 'utf8'), /skip=true/);
+  });
   it('hang-up-only policy: no retry for AggregateError, one for socket hang up', () => {
     assert.strictEqual(R.decide({ version: '9.0.5', builds: [pf(5)], retryCount: 0, hangupOnly: true }).retry, false);
     assert.strictEqual(R.decide({ version: '9.0.5', builds: [{ id: 5, version: '9.0.5', state: 'processing_failed' }], retryCount: 0, hangupOnly: true }).retry, false);
