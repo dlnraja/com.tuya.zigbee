@@ -3,6 +3,15 @@
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 const { boolean } = require('../../lib/converters/ValueConverterRegistry');
+const { toNumber } = require('../../lib/tuya/PayloadNormalizer');
+
+// WHY(P2972): some rain firmwares send numeric DPs as raw/bitmap bytes (Buffer, hex, base64, LE).
+// anyNum keeps plain numbers unchanged and returns null (= skip) when nothing numeric is found.
+const anyNum = (max) => (v) => toNumber(v, { max });
+const rainMv = (threshold) => (v) => {
+  const n = toNumber(v, { max: 100000 });
+  return n == null ? v !== 0 && v !== false && v !== '0' : n > threshold;
+};
 
 /**
  * Rain Sensor Device
@@ -27,11 +36,11 @@ class RainSensorDevice extends UnifiedSensorBase {
     if (includesCI(mfr, 'u6x1zyv2') || includesCI(mfr, 'jsaqgakf') || includesCI(mfr, '2pddnnrk')) {
       return {
         1: { capability: 'alarm_water', transform: (v) => v !== 0 && v !== '0' && v !== false && v !== 'false' && v !== 'normal' },
-        2: { capability: 'measure_humidity', divisor: 1 },
-        102: { capability: 'measure_luminance', divisor: 1 },
-        4: { capability: 'measure_battery', divisor: 1 },
-        104: { capability: 'measure_battery', divisor: 1 },
-        106: { capability: 'measure_humidity', divisor: 1 }
+        2: { capability: 'measure_humidity', divisor: 1, transform: anyNum(100000) },
+        102: { capability: 'measure_luminance', divisor: 1, transform: anyNum(100000) },
+        4: { capability: 'measure_battery', divisor: 1, transform: anyNum(100) },
+        104: { capability: 'measure_battery', divisor: 1, transform: anyNum(100) },
+        106: { capability: 'measure_humidity', divisor: 1, transform: anyNum(100000) }
       };
     }
 
@@ -44,10 +53,10 @@ class RainSensorDevice extends UnifiedSensorBase {
     //   use measure_humidity for rain intensity, keep alarm_water from DP105 + IAS Zone
     if (includesCI(mfr, 'tgvtvdoc') || includesCI(mfr, 'p68kms0l')) {
       return {
-        4:  { capability: 'measure_battery', divisor: 1 },                    // Battery %
-        101: { capability: 'measure_luminance', divisor: 1 },                 // Solar voltage (mV) -> illuminance
-        102: { capability: 'measure_humidity', divisor: 1 },                  // Avg 20min solar mV -> humidity (secondary metric)
-        105: { capability: 'alarm_water', transform: (v) => typeof v === 'number' ? v > 50 : !!v } // Rain intensity > 50mV = raining
+        4:  { capability: 'measure_battery', divisor: 1, transform: anyNum(100) },                    // Battery %
+        101: { capability: 'measure_luminance', divisor: 1, transform: anyNum(100000) },                 // Solar voltage (mV) -> illuminance
+        102: { capability: 'measure_humidity', divisor: 1, transform: anyNum(100000) },                  // Avg 20min solar mV -> humidity (secondary metric)
+        105: { capability: 'alarm_water', transform: rainMv(50) } // Rain intensity > 50mV = raining
       };
     }
 
@@ -55,13 +64,13 @@ class RainSensorDevice extends UnifiedSensorBase {
     return {
       // TS0601 DP layout (_TZE200_u6x1zyv2, _TZE200_jsaqgakf, etc.)
       1: { capability: 'alarm_water', transform: boolean() }, // Rain alarm boolean
-      2: { capability: 'measure_humidity', divisor: 1 }, // Rain level 0-100% (mapped as humidity)
-      4: { capability: 'measure_battery', divisor: 1 },  // Battery %
+      2: { capability: 'measure_humidity', divisor: 1, transform: anyNum(100000) }, // Rain level 0-100% (mapped as humidity)
+      4: { capability: 'measure_battery', divisor: 1, transform: anyNum(100) },  // Battery %
       // TS0207 and some TS0601 variants
-      15: { capability: 'measure_battery', divisor: 1 },
-      101: { capability: 'measure_luminance', divisor: 1 }, // Illuminance (lux)
-      105: { capability: 'alarm_water', transform: (v) => typeof v === 'number' ? v > 0 : (v !== 0 && v !== false) }, // Rain intensity -> rain alarm
-      106: { capability: 'measure_humidity', divisor: 1 }  // Rain level on some variants
+      15: { capability: 'measure_battery', divisor: 1, transform: anyNum(100) },
+      101: { capability: 'measure_luminance', divisor: 1, transform: anyNum(100000) }, // Illuminance (lux)
+      105: { capability: 'alarm_water', transform: rainMv(0) }, // Rain intensity -> rain alarm
+      106: { capability: 'measure_humidity', divisor: 1, transform: anyNum(100000) }  // Rain level on some variants
     };
   }
 
