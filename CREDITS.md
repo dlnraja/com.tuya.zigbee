@@ -232,3 +232,88 @@ Facts (ids, DP numbers, model names) indexed with commit-pinned links; no prose 
 - P3018 (2026-10-24) every DP + every endpoint: per-couple DP names and value converters harvested from Koenkk/zigbee-herdsman-converters `src/devices/*.ts` tuyaDatapoints (MIT, commit cff1de4731; facts only — tokens like div:10 / trueFalse / lookup, decoder rewritten in lib/zigbee/DpCatalogDecoder.js); ZHA quirk DP numbers from zigpy/zha-device-handlers (Apache-2.0, 1d6598c32a); ZCL scaling (measuredValue/100, lux = 10^((v-1)/10000)) from the ZCL specification. air_purifier_soil DP5 ÷10 per Z2M TS0601_soil. Own code (docs/knowledge/KB/DP_ENDPOINT_COVERAGE.md).
 - P3021b (2026-10-24) task:next-02 guard on stable-v5: #1501/#1502/#1503/TH01Z (JohanBendz develop-0.4 notes, already ported in bc94147c8d / ba7e104682) now covered by test/critical/p3021b-next02-ports.test.js.
 - P3011 port (2026-10-24, P3020): includesCI(array,value) misuse fixes from master f7dc12b775 (contact DP-only default inversion per Z2M hobeian.ts ZG-102ZL, TS0601_soil DP5 raw °C for oitavov2 per Z2M tuya.ts, OTA index manufacturerName string-or-array, radar stuck-check + TS004F containsCI). P3012/P3013 kept master-only (fingerprint-data cleanup and dedicated drivers).
+
+## GitHub issue reporters (P3020, 2026-10-24)
+
+Reporters of dlnraja/com.tuya.zigbee issues not credited elsewhere in this file. Their reports (logs, fingerprints, symptoms) fed fixes and locks; issue numbers listed for traceability.
+
+- @askseb — #30, #31
+- @avanderwulp — #417
+- @azkysmarthome — #126
+- @bartagergely — #94
+- @clementloridan — #198
+- @cristianoisaac — #168, #169, #206
+- @csmobiel — #101
+- @dalobalo — #161, #162
+- @DaPicardos — #328, #355, #360, #363, #367, #371, #378, #383, #388
+- @DAVID9SE — #121
+- @denis-papin — #571
+- @Didiervu91 — #75
+- @djfry134 — #92
+- @Domingoso — #135, #275
+- @draqlek — #554
+- @DVMasters — #98
+- @edwinvdp — #570
+- @elgato7 — #117, #122
+- @Ernst02507 — #113
+- @eskilask-maker — #89, #107, #109
+- @fcarrozzo — #99
+- @finnamu — #513, #516
+- @ftrueck — #338
+- @gfi63 — #26, #27, #33, #108
+- @gore- — #35
+- @GXA064 — #25
+- @Haellos07 — #77
+- @HiepSVG — #547, #550
+- @JeffreyOtten1234 — #95
+- @jocke-sve-62 — #76
+- @john1v — #188, #193, #194
+- @johnx1971 — #165
+- @kikosenra — #546
+- @kircuvaloglu — #34
+- @kodalissri — #28, #29, #32
+- @kringloper — #324
+- @l-i-n-k — #24
+- @laborhexe0210 — #37
+- @Lalla80111 — #114, #115, #124, #137, #314, #316, #333, #506, #559
+- @late4marshmellow — #163, #164
+- @luuk0412-wq — #23
+- @MarceloSilvaLeite — #19, #20, #21, #536
+- @migueleap — #540, #541, #542, #543, #544, #545, #551, #552, #553
+- @MitchV94 — #129
+- @mjolink — #96
+- @Necka44 — #93
+- @neeerd — #549
+- @Nespouique — #531
+- @NoroddH — #97
+- @Patrickske1 — #79
+- @PDominikPL — #305, #308, #331, #332
+- @pemikalsen-sudo — #184, #302
+- @pjmpessers — #102, #103, #104, #105
+- @Pollepa — #110
+- @Rickert1993 — #44
+- @RidderGH — #420
+- @ronaldbok — #172
+- @rsalinger — #22
+- @salvagr — #533
+- @sinan92 — #43
+- @Snacker80 — #183
+- @snorro80 — #91
+- @sondregjessing-blip — #428
+- @speerke — #329
+- @squizzeak — #424
+- @Ssssneak — #170
+- @stephanmaastricht — #511
+- @Tauno20 — #127
+- @telenut — #80
+- @tencoo — #200
+- @theunissendave — #88
+- @tjoepatjoep — #260, #312
+- @tknapstad — #78
+- @vbesteiro — #171
+- @Verectra — #87
+- @vikinos — #276
+- @vladivdv-bot — #317
+- @Wuma68 — #128, #173, #174, #548
+- @xDMcGee — #532
+- @xSondreBx — #82, #83
