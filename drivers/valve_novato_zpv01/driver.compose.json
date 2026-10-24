@@ -26,13 +26,23 @@
   },
   "energy": {
     "batteries": [
-      "OTHER"
+      "AA",
+      "AA",
+      "AA",
+      "AA"
     ]
   },
   "zigbee": {
     "manufacturerName": [
       "_TZE284_zm8zpwas",
-      "_tze284_zm8zpwas"
+      "_tze284_zm8zpwas",
+      "_TZE204_dsagrkvg",
+      "_tze204_dsagrkvg",
+      "_TZE204_DSAGRKVG",
+      "_TZE284_sdvbnmj5",
+      "_tze284_sdvbnmj5",
+      "_TZE284_SDVBNMJ5",
+      "_TZE284_ZM8ZPWAS"
     ],
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",

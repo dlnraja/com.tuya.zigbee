@@ -746,6 +746,28 @@
       ],
       "why": "2026-10-24 P3014: Zigbee2MQTT lists _TZE200_la2c2uo9 (Moes MS-105Z smart dimmer module) in its TS0601 1-gang dimmer definition (DP1 state, DP2 brightness 0-1000); that definition family (_TZE200_la2c2uo9, _TZE200_ip2akl4w, _TZE204_68utemio, ...) lives on wall_dimmer_tuya, so the _TZE284_ variant stays there (pinned) and is removed from dimmer_1_gang_tuya. Already-paired devices keep their driver.",
       "source": "P3014 https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/tuya.ts#L6115 + https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/tuya.ts#L6215"
+    },
+    {
+      "driver": "device_radiator_valve",
+      "mfr": [
+        "_TZE204_dsagrkvg",
+        "_tze204_dsagrkvg",
+        "_TZE204_DSAGRKVG",
+        "_tze204_DSAGRKVG"
+      ],
+      "why": "2026-10-24 P3015: Zigbee2MQTT lists _TZE204_dsagrkvg in its Novato ZPV-01 \"Battery powered smart valve\" definition (DP1 on/off, DP8 valve state, DP101 battery) together with _TZE284_zm8zpwas; it now lives on the dedicated valve_novato_zpv01 driver only (one driver per couple, user decision 2026-10-24). Already-paired devices keep their driver.",
+      "source": "P3015 https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/tuya.ts#L22298 + https://novato.com.tr/novato-katalog-v1.pdf (ZPV-01: 4 x AA alkaline)"
+    },
+    {
+      "driver": "water_valve_smart",
+      "mfr": [
+        "_TZE284_sdvbnmj5",
+        "_TZE284_SDVBNMJ5",
+        "_tze284_sdvbnmj5",
+        "_tze284_SDVBNMJ5"
+      ],
+      "why": "2026-10-24 P3015: Zigbee2MQTT lists _TZE284_sdvbnmj5 in its Novato ZPV-01 \"Battery powered smart valve\" definition (DP1 on/off, DP8 valve state, DP101 battery) together with _TZE284_zm8zpwas; it now lives on the dedicated valve_novato_zpv01 driver only (one driver per couple, user decision 2026-10-24). Already-paired devices keep their driver.",
+      "source": "P3015 https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/tuya.ts#L22298 + https://novato.com.tr/novato-katalog-v1.pdf (ZPV-01: 4 x AA alkaline)"
     }
   ]
 }

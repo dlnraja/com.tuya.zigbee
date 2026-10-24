@@ -55387,7 +55387,6 @@
           "_TZE204_6kijc7nd",
           "_tze204_9mjy74mp",
           "_tze204_cvcu2p6e",
-          "_TZE204_dsagrkvg",
           "_TZE204_g2ki0ejr",
           "_tze204_hvaxb2tc",
           "_TZE204_ilzkxrav",
@@ -55565,9 +55564,6 @@
           "_TZE204_CVCU2P6E",
           "_TZE204_cvcu2p6e",
           "_tze204_CVCU2P6E",
-          "_tze204_dsagrkvg",
-          "_TZE204_DSAGRKVG",
-          "_tze204_DSAGRKVG",
           "_tze204_g2ki0ejr",
           "_TZE204_G2KI0EJR",
           "_tze204_G2KI0EJR",
@@ -143390,13 +143386,23 @@
       },
       "energy": {
         "batteries": [
-          "OTHER"
+          "AA",
+          "AA",
+          "AA",
+          "AA"
         ]
       },
       "zigbee": {
         "manufacturerName": [
           "_TZE284_zm8zpwas",
-          "_tze284_zm8zpwas"
+          "_tze284_zm8zpwas",
+          "_TZE204_dsagrkvg",
+          "_tze204_dsagrkvg",
+          "_TZE204_DSAGRKVG",
+          "_TZE284_sdvbnmj5",
+          "_tze284_sdvbnmj5",
+          "_TZE284_SDVBNMJ5",
+          "_TZE284_ZM8ZPWAS"
         ],
         "learnmode": {
           "image": "/drivers/valve_novato_zpv01/assets/icon.svg",
@@ -152921,7 +152927,13 @@
           "_tz3000_mq4wujmp",
           "_TZE284_htnnfasr",
           "_tze284_htnnfasr",
-          "EWELINK"
+          "EWELINK",
+          "_TZ3000_CJFMU5HE",
+          "_TZ3000_5af5r192",
+          "_tz3000_5af5r192",
+          "_TZ3000_5AF5R192",
+          "_TZ3000_OGJPFOYN",
+          "_TZ3000_KZ1ANOI8"
         ],
         "productId": [
           "SWV-ZF2",
@@ -153113,7 +153125,6 @@
           "_TZE284_7ZAZVLYN",
           "_TZE284_7zazvlyn",
           "_TZE284_WT66HAAX",
-          "_TZE284_sdvbnmj5",
           "_TZE284_vuwtqx0t",
           "_tyzb01_a7sghmms",
           "_tze200_fphxkxue",
@@ -153135,8 +153146,6 @@
           "_tze204_wt66haax",
           "_tze284_7zazvlyn",
           "_tze284_wt66haax",
-          "_TZE284_SDVBNMJ5",
-          "_tze284_sdvbnmj5",
           "_TZE284_VUWTQX0T",
           "_tze284_vuwtqx0t",
           "_TYZB01_A7SGHMMS",
@@ -153165,7 +153174,6 @@
           "_tze204_WT66HAAX",
           "_tze284_7ZAZVLYN",
           "_tze284_WT66HAAX",
-          "_tze284_SDVBNMJ5",
           "_tze284_VUWTQX0T",
           "_tyzb01_A7SGHMMS",
           "_tze200_SH1BTABB",

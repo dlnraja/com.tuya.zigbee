@@ -1,9 +1,7 @@
 'use strict';
-const { safeDivide, safeParse } = require('../../lib/utils/tuyaUtils.js');
+const { safeDivide } = require('../../lib/utils/tuyaUtils.js');
 const { scaleSoilDp5 } = require('../../lib/sensors/SoilTempScale');
 
-
-const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
 
 
 const TuyaUnifiedDevice = require('../../lib/devices/TuyaUnifiedDevice');
@@ -302,7 +300,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
    * v5.5.334: Handle settings changes (Hobeian PR#6 fix)
    * Note: Calibration is now handled automatically by the base class.
    */
-  async onSettings({ oldSettings, newSettings, changedKeys }) {
+  async onSettings({ newSettings, changedKeys }) {
     this.log('[SOIL]  Settings changed:', changedKeys);
 
     if (changedKeys.includes('soil_warning_threshold')) {
