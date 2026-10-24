@@ -81,7 +81,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
         id: 'motion_sensor_radar_mmwave_set_detection_range',
         fn: async (args) => {
           // gnpflcoq has no range DPs 3/4 (ZHA#5286) — soft no-op
-          if (args.device._isGnpflcoq4in1?.()) return true;
+          if (args.device._isGnpflcoq4in1?.()) {return true;}
           if (args.device.sendTuyaCommand) {
             await args.device.sendTuyaCommand(3, Math.round((args.min || 0) * 100), 'value');
             await args.device.sendTuyaCommand(4, Math.round((args.max || 6) * 100), 'value');

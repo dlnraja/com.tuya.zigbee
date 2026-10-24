@@ -32,7 +32,7 @@ class IrRemoteDevice extends Homey.Device {
       this.registerCapabilityListener('onoff.ir_learn', async (value) => {
         try {
           const sender = this._resolveSender();
-          if (!sender) throw new Error('Associated IR sender not found');
+          if (!sender) {throw new Error('Associated IR sender not found');}
           if (sender.transport === 'homey') {
             throw new Error('Homey onboard IR is TX-only — learn on Zigbee/WiFi, paste Pronto, or store manual');
           }
@@ -64,14 +64,14 @@ class IrRemoteDevice extends Homey.Device {
 
   /** Store for learned map: physical blaster, or this virtual remote when Homey TX. */
   _storeDevice(sender) {
-    if (!sender) return this;
-    if (sender.transport === 'homey' || !sender.device) return this;
+    if (!sender) {return this;}
+    if (sender.transport === 'homey' || !sender.device) {return this;}
     return sender.device;
   }
 
   _sendOpts(extra = {}) {
     const sender = this._resolveSender();
-    if (!sender) return null;
+    if (!sender) {return null;}
     const storeDevice = this._storeDevice(sender);
     if (sender.transport === 'homey') {
       return {

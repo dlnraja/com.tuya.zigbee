@@ -35,7 +35,7 @@ class IrrigationController extends TuyaZigbeeDevice {
         if (options?.duration !== undefined) {
           this._onOffTimeout = safeSetTimeout(this, async () => {
             this._onOffTimeout = null;
-            if (this._destroyed) return;
+            if (this._destroyed) {return;}
             try {
               await zclNode.endpoints[1].clusters.onOff.setOff();
             } catch (err) {

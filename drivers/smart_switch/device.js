@@ -29,7 +29,7 @@ class smart_switch extends TuyaZigbeeDevice {
 
   onDeleted() {
     this.log('Smart Switch removed');
-    if (typeof super.onDeleted === 'function') super.onDeleted();
+    if (typeof super.onDeleted === 'function') {super.onDeleted();}
   }
 }
 

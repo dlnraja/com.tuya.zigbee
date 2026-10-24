@@ -11,7 +11,7 @@ class Button1GangDriver extends BaseZigBeeDriver {
 
   async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
 
     this.log('Button1GangDriver P2630 initialized');
@@ -40,7 +40,7 @@ class Button1GangDriver extends BaseZigBeeDriver {
     for (const triggerId of [...mainTriggers, ...button1Triggers, ...extras]) {
       try {
         const card = this._getFlowCard(triggerId, 'trigger');
-        if (!card) continue;
+        if (!card) {continue;}
         card.registerRunListener(async (args = {}, state = {}) => shouldRunForDeviceAndButton(args, state));
         this.log(`[FLOW] Registered: ${triggerId}`);
       } catch (e) {

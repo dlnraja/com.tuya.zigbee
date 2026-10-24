@@ -186,7 +186,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     // WHY(P2594): re-lock me167 maps + re-arm EF00 after identity (empty caps Contre quoi)
     try {
       if (this.dpProfile === 'me167') {
-        this._dynamicDpMappings = { ...(this._dynamicDpMappings || {}), ...this.dpMappings };
+        this._dynamicDpMappings = { ...this._dynamicDpMappings || {}, ...this.dpMappings };
       }
       await this._setupTuyaDPMode?.();
     } catch (_e) { /* soft */ }
@@ -248,9 +248,9 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
   _scheduleTrvDpRefresh() {
     try {
       safeSetTimeout(this, () => {
-        if (this._destroyed) return;
+        if (this._destroyed) {return;}
         const mgr = this.tuyaEF00Manager;
-        if (!mgr || typeof mgr.requestDP !== 'function') return;
+        if (!mgr || typeof mgr.requestDP !== 'function') {return;}
         const dps = this.dpProfile === 'me167'
           ? [2, 3, 4, 5, 7, 13, 15, 35]
           : [1, 2, 3, 4, 13, 15];
@@ -283,7 +283,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
 
     if (this.hasCapability('onoff')) {
       this.registerCapabilityListener('onoff', async (v) => {
-        if (this.dpProfile !== 'standard') return;
+        if (this.dpProfile !== 'standard') {return;}
         await this._sendTuyaDP(1, v, 'bool');
       });
     }
@@ -315,14 +315,14 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     try {
       if (this.tuyaEF00Manager && typeof this.tuyaEF00Manager.sendDP === 'function') {
         const ok = await this.tuyaEF00Manager.sendDP(dp, value, typeName);
-        if (ok) return true;
+        if (ok) {return true;}
       }
       if (this.io && typeof this.io.sendDP === 'function') {
         const ok = await this.io.sendDP(dp, value, { type: typeName });
-        if (ok) return true;
+        if (ok) {return true;}
       }
       const { sendTuyaDP } = require('../../lib/helpers/UniversalDriverInit');
-      return !!(await sendTuyaDP(this, dp, value, typeName));
+      return !!await sendTuyaDP(this, dp, value, typeName);
     } catch (err) {
       this.error(`[TRV] DP${dp} TX failed:`, err?.message || err);
       throw err;

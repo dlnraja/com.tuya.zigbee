@@ -14,7 +14,7 @@ class HybridHeaterThermostatDriver extends ZigBeeDriver {
       const __card = this.homey.flow.getConditionCard('hybrid_heater_thermostat_is_on');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
@@ -24,7 +24,7 @@ class HybridHeaterThermostatDriver extends ZigBeeDriver {
       const __card = this.homey.flow.getActionCard('hybrid_heater_thermostat_turn_on');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           if (typeof args.device.safeSetCapabilityValue === 'function') {
             await args.device.safeSetCapabilityValue('onoff', true).catch(() => {});
           } else {
@@ -39,7 +39,7 @@ class HybridHeaterThermostatDriver extends ZigBeeDriver {
       const __card = this.homey.flow.getActionCard('hybrid_heater_thermostat_turn_off');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           if (typeof args.device.safeSetCapabilityValue === 'function') {
             await args.device.safeSetCapabilityValue('onoff', false).catch(() => {});
           } else {

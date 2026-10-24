@@ -491,7 +491,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
             manufacturer: this.getSetting('zb_manufacturer_name') || '',
             batteryType: 'CR2032',
           })
-        : (value > 100 ? Math.round(value / 2) : value);
+        : value > 100 ? Math.round(value / 2) : value;
       if (percent === null || percent === undefined) {return;}
     } else {
       // Unit detection (V / 100mV / mV) plus the non-linear curve both live in

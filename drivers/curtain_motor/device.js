@@ -111,7 +111,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
       return {
         1: {
           capability: 'windowcoverings_state',
-          transform: (v) => (v === 0 || v === 'open' ? 'up' : v === 2 || v === 'close' ? 'down' : 'idle'),
+          transform: (v) => v === 0 || v === 'open' ? 'up' : v === 2 || v === 'close' ? 'down' : 'idle',
         },
         2: { capability: 'windowcoverings_set', transform: (v) => (100 - Number(v)) / 100 },
         13: { capability: 'measure_battery', divisor: 1 },
@@ -122,7 +122,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
       return {
         1: {
           capability: 'windowcoverings_state',
-          transform: (v) => (v === 0 || v === 'open' ? 'up' : v === 2 || v === 'close' ? 'down' : 'idle'),
+          transform: (v) => v === 0 || v === 'open' ? 'up' : v === 2 || v === 'close' ? 'down' : 'idle',
         },
         2: { capability: 'windowcoverings_set', transform: (v) => (100 - Number(v)) / 100 }, // Z2M moes_cover invert
         3: { capability: null, internal: 'calibration', writable: true },
@@ -136,7 +136,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
       return {
         1: {
           capability: 'windowcoverings_state',
-          transform: (v) => (v === 0 || v === 'open' ? 'up' : v === 2 || v === 'close' ? 'down' : 'idle'),
+          transform: (v) => v === 0 || v === 'open' ? 'up' : v === 2 || v === 'close' ? 'down' : 'idle',
         },
         8: { capability: 'windowcoverings_set', transform: (v) => Number(v) / 100 },
         9: { capability: 'windowcoverings_set', transform: (v) => Number(v) / 100 },
@@ -149,7 +149,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
       return {
         1: {
           capability: 'windowcoverings_state',
-          transform: (v) => (v === 0 || v === 'open' ? 'up' : v === 2 || v === 'close' ? 'down' : 'idle'),
+          transform: (v) => v === 0 || v === 'open' ? 'up' : v === 2 || v === 'close' ? 'down' : 'idle',
         },
         2: { capability: 'windowcoverings_set', transform: (v) => Number(v) / 100 },
         3: { capability: 'windowcoverings_set', transform: (v) => Number(v) / 100 },
@@ -447,8 +447,8 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
 
     const rawBuf = Buffer.isBuffer(data.data) ? data.data : null;
     const value = rawBuf
-      ? (rawBuf.length === 1 ? rawBuf[0] : rawBuf.readUIntBE(0, Math.min(rawBuf.length, 4)))
-      : (data.value ?? data.data?.[0]);
+      ? rawBuf.length === 1 ? rawBuf[0] : rawBuf.readUIntBE(0, Math.min(rawBuf.length, 4))
+      : data.value ?? data.data?.[0];
 
     this.log(`[CURTAIN] DP${dp} = ${value}`);
 

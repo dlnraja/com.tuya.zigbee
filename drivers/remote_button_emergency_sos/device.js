@@ -44,7 +44,7 @@ class RemoteEmergencySosDevice extends ButtonDevice {
   }
 
   async _raiseAlarm(button, pressType) {
-    if (!this.hasCapability('alarm_generic')) return;
+    if (!this.hasCapability('alarm_generic')) {return;}
 
     this.log(`[SOS-REMOTE] panic raised (button=${button}, press=${pressType})`);
     await this.safeSetCapabilityValue('alarm_generic', true).catch(() => {});

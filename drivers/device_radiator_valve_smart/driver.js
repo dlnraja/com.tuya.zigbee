@@ -10,9 +10,9 @@ async onInit() {
       const __card = this.homey.flow.getActionCard('device_radiator_valve_smart_set_target_temperature');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const raw = args.temperature ?? args.brightness ?? args.dim ?? args.value ?? args.speed;
-          if (raw === undefined) return false;
+          if (raw === undefined) {return false;}
           if (typeof args.device.safeSetCapabilityValue === 'function') {
             await args.device.safeSetCapabilityValue('target_temperature', raw).catch(() => {});
           } else {

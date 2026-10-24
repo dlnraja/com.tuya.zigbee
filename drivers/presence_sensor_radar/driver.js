@@ -99,7 +99,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
       if (clearCard) {
         clearCard.registerRunListener(async (args) => {
           const d = args.device;
-          if (!d) return false;
+          if (!d) {return false;}
           if (typeof d.forceClearPresence === 'function') {
             await d.forceClearPresence();
           } else if (typeof d.clearStuckPresence === 'function') {

@@ -35,7 +35,7 @@ class socket_power_strip_four extends TuyaZigbeeDevice {
 
   onDeleted() {
     this.log('Power Strip removed');
-    if (typeof super.onDeleted === 'function') super.onDeleted();
+    if (typeof super.onDeleted === 'function') {super.onDeleted();}
   }
 }
 
