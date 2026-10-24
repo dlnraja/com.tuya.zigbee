@@ -12,6 +12,9 @@ permissions:
 concurrency:
   group: kb-refresh
   cancel-in-progress: true
+defaults:
+  run:
+    shell: bash
 jobs:
   refresh:
     runs-on: ubuntu-latest
