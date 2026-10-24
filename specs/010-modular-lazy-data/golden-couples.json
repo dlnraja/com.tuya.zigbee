@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-20T06:45:06.977Z",
+ "generated": "2026-10-24T13:34:47.210Z",
  "drivers": 389,
  "snapshot": {
   "air_purifier": {
@@ -279,9 +279,9 @@
    "pidSha": "3427697d0c296c9d"
   },
   "climate_sensor": {
-   "mfr": 527,
+   "mfr": 528,
    "pid": 32,
-   "mfrSha": "511b4bcdcaa67283",
+   "mfrSha": "6b48ebd14d2b0a2c",
    "pidSha": "4809a771f46a5606"
   },
   "climate_sensor_device": {
@@ -579,9 +579,9 @@
    "pidSha": "455c46e8c8549693"
   },
   "device_radiator_valve": {
-   "mfr": 98,
+   "mfr": 97,
    "pid": 1,
-   "mfrSha": "f747eb8eb4d0d1c0",
+   "mfrSha": "fa13881de9ca7a88",
    "pidSha": "455c46e8c8549693"
   },
   "device_radiator_valve_smart": {
@@ -615,10 +615,10 @@
    "pidSha": "455c46e8c8549693"
   },
   "dimmer_1_gang": {
-   "mfr": 8,
-   "pid": 3,
-   "mfrSha": "94b8bf77138288c8",
-   "pidSha": "626db59b8035d2cd"
+   "mfr": 10,
+   "pid": 5,
+   "mfrSha": "ade75cd93b61f1c9",
+   "pidSha": "72163d46b7927a84"
   },
   "dimmer_1_gang_2": {
    "mfr": 0,
@@ -1869,9 +1869,9 @@
    "pidSha": "b46b96d17990cf37"
   },
   "switch_1gang": {
-   "mfr": 373,
+   "mfr": 372,
    "pid": 38,
-   "mfrSha": "5930a4505f3bd463",
+   "mfrSha": "d331751692661fec",
    "pidSha": "fd65b1d55ed8db6a"
   },
   "switch_2_gang": {
@@ -1887,10 +1887,10 @@
    "pidSha": "5181eca4102958ba"
   },
   "switch_2gang": {
-   "mfr": 93,
-   "pid": 14,
-   "mfrSha": "5fc42bc32a0b1d80",
-   "pidSha": "830a6ff3ab71bd70"
+   "mfr": 94,
+   "pid": 15,
+   "mfrSha": "3e0b32779188cb55",
+   "pidSha": "f01c166c2aa06e7b"
   },
   "switch_3_gang": {
    "mfr": 11,
@@ -2283,9 +2283,9 @@
    "pidSha": "455c46e8c8549693"
   },
   "wall_thermostat": {
-   "mfr": 45,
+   "mfr": 47,
    "pid": 2,
-   "mfrSha": "abb31f4cad64dcd6",
+   "mfrSha": "9fe1e582d0f13a25",
    "pidSha": "a56800d53024720a"
   },
   "water_detector": {
