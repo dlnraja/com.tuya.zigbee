@@ -1,4 +1,5 @@
 'use strict';
+const { describe, it } = require('../_support/dual-runner'); // P3020: same file under node --test and mocha
 /**
  * Issue #560 (artisare, TRV06 _TZE200_rxq4iti9 / TS0601, profile me167) — rewritten in our own words.
  *  - triggerDPReceived must not spam invalid_flow_card_id: it tries the device card, then the app card,

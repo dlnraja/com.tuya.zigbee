@@ -1,4 +1,5 @@
 'use strict';
+const { describe, it } = require('../_support/dual-runner'); // P3020: same file under node --test and mocha
 /**
  * P2971 — Issue #560 (TRV06 _TZE200_rxq4iti9, reported by artisare): diag showed
  * "No active query method available" then "[DATA-QUERY] Completed: 0/12 queries sent".

@@ -1,4 +1,5 @@
 'use strict';
+const { describe, it } = require('../_support/dual-runner'); // P3020: same file under node --test and mocha
 /**
  * Issue #554 (draqlek, TS0046 / _TZ3000_iszegwpd 6-gang wall remote) on Bastien's tree.
  * The remote joins with endpoints 1-4 only (interview in the issue, ZHA#2034); a manifest that demands

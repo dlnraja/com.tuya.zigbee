@@ -1,4 +1,5 @@
 'use strict';
+const { describe, it } = require('../_support/dual-runner'); // P3020: same file under node --test and mocha
 /**
  * P2972 — "cobsyrain decoding": COBS / hex / base64 / length-prefixed / BE-LE payload normalizer
  * plus Tuya rain-sensor DP decoder (RB-SRAIN01 new layout and legacy TS0601 layout).
