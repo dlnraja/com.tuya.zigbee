@@ -113,7 +113,7 @@ class DinRailMeterDevice extends UnifiedPlugBase {
     try {
       const { normalizeTongouAcFrequency } = require('../../lib/tuya/TongouAcFrequency');
       const hz = normalizeTongouAcFrequency(rawValue);
-      if (hz == null) return;
+      if (hz == null) {return;}
       this.setStoreValue?.('ac_frequency_hz', hz).catch(() => {});
       if (this.hasCapability('measure_frequency')) {
         this.safeSetCapabilityValue('measure_frequency', hz).catch(() => {});

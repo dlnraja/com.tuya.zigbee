@@ -401,9 +401,9 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
       const { resolvePolarity } = require('../../lib/managers/AlarmPolarityManager');
       // resolvePolarity reads getSetting — temporarily apply newSettings for resolve
       const prevGet = this.getSetting.bind(this);
-      this.getSetting = (k) => (Object.prototype.hasOwnProperty.call(newSettings, k)
+      this.getSetting = (k) => Object.prototype.hasOwnProperty.call(newSettings, k)
         ? newSettings[k]
-        : prevGet(k));
+        : prevGet(k);
       const pol = resolvePolarity(this, 'water');
       this.getSetting = prevGet;
       this._invertAlarm = !!pol.shouldInvert;

@@ -22,7 +22,7 @@ class HumidifierDriver extends Driver {
       const __card = this.homey.flow.getConditionCard('device_air_purifier_humidifier_is_on');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
@@ -32,7 +32,7 @@ class HumidifierDriver extends Driver {
       const __card = this.homey.flow.getActionCard('device_air_purifier_humidifier_turn_on');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           if (typeof args.device.safeSetCapabilityValue === 'function') {
             await args.device.safeSetCapabilityValue('onoff', true).catch(() => {});
           } else {
@@ -47,7 +47,7 @@ class HumidifierDriver extends Driver {
       const __card = this.homey.flow.getActionCard('device_air_purifier_humidifier_turn_off');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           if (typeof args.device.safeSetCapabilityValue === 'function') {
             await args.device.safeSetCapabilityValue('onoff', false).catch(() => {});
           } else {
@@ -62,7 +62,7 @@ class HumidifierDriver extends Driver {
       const __card = this.homey.flow.getActionCard('device_air_purifier_humidifier_toggle');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const v = !args.device.getCapabilityValue('onoff');
           if (typeof args.device.safeSetCapabilityValue === 'function') {
             await args.device.safeSetCapabilityValue('onoff', v).catch(() => {});
@@ -78,9 +78,9 @@ class HumidifierDriver extends Driver {
       const __card = this.homey.flow.getActionCard('device_air_purifier_humidifier_set_brightness');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const raw = args.temperature ?? args.brightness ?? args.dim ?? args.value ?? args.speed;
-          if (raw === undefined) return false;
+          if (raw === undefined) {return false;}
           if (typeof args.device.safeSetCapabilityValue === 'function') {
             await args.device.safeSetCapabilityValue('dim', raw).catch(() => {});
           } else {

@@ -66,7 +66,7 @@ class TuyaWaterLeakSensor extends TuyaSpecificClusterDevice {
                 if (attrs?.zoneStatus !== undefined) {
                     const zs = typeof attrs.zoneStatus === 'number'
                         ? attrs.zoneStatus
-                        : (attrs.zoneStatus?.alarm1 || attrs.zoneStatus?.alarm2 ? 1 : 0);
+                        : attrs.zoneStatus?.alarm1 || attrs.zoneStatus?.alarm2 ? 1 : 0;
                     this._receivedDpData = true; // any data path alive
                     await this.safeSetCapabilityValue('alarm_water', Boolean(zs & 0x03)).catch(() => {});
                     this.log(`[WATER-TUYA] Initial IAS zoneStatus=${zs} → alarm_water=${Boolean(zs & 0x03)}`);
@@ -113,7 +113,7 @@ class TuyaWaterLeakSensor extends TuyaSpecificClusterDevice {
         if (data.dp === 15) {
             // DP15 battery percent — normalize 0-50 / 0-100 / 0-200 (ZCL-style) scales
             const raw = Buffer.isBuffer(data.data)
-              ? (data.data.length >= 4 ? data.data.readUInt32BE(0) : data.data.readUIntBE(0, data.data.length))
+              ? data.data.length >= 4 ? data.data.readUInt32BE(0) : data.data.readUIntBE(0, data.data.length)
               : data.data;
             const mfr = this.getSetting?.('zb_manufacturer_name')
               || this.getData?.()?.manufacturerName

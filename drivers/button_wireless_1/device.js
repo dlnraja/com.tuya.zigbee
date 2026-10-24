@@ -67,9 +67,9 @@ class Button1GangDevice extends ButtonDevice {
       if (containsCI(mfr, 'axpdxqgu') || phantomClass
         || (/TS0041/i.test(String(pid)) && !/TS004F/i.test(String(pid)))) {
         const lockedMfr = containsCI(mfr, 'axpdxqgu') ? '_TZ3000_axpdxqgu'
-          : (containsCI(mfr, 'adndolvx') ? '_TZ3000_adndolvx'
-            : (containsCI(mfr, 'itb0omhv') ? '_TZ3000_itb0omhv'
-              : (containsCI(mfr, 'x7mej5oc') ? '_TZ3000_x7mej5oc' : String(mfr))));
+          : containsCI(mfr, 'adndolvx') ? '_TZ3000_adndolvx'
+            : containsCI(mfr, 'itb0omhv') ? '_TZ3000_itb0omhv'
+              : containsCI(mfr, 'x7mej5oc') ? '_TZ3000_x7mej5oc' : String(mfr);
         this._bastienTs0041Interview = {
           mfr: lockedMfr,
           pid: 'TS0041',

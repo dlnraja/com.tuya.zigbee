@@ -441,7 +441,7 @@ class PowerClampMeterDevice extends TuyaZigbeeDevice {
       return super.safeSetCapabilityValue(capability, value);
     }
     const rawSet = typeof this.setCapabilityValue === 'function' ? this.setCapabilityValue.bind(this) : null;
-    if (rawSet) return rawSet(capability, value).catch(() => {});
+    if (rawSet) {return rawSet(capability, value).catch(() => {});}
     return undefined;
   }
 

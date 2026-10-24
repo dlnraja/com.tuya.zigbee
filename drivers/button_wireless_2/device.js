@@ -26,7 +26,7 @@ class Button2GangDevice extends ButtonDevice {
       || this.getData?.()?.productId
       || '',
     ));
-    if (!sticky) return base;
+    if (!sticky) {return base;}
     return Object.assign({}, base, {
       brand: base.brand || 'Tuya',
       protocol: 'hybrid',

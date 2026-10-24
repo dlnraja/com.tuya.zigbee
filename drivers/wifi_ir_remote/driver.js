@@ -16,7 +16,7 @@ class WiFiIrRemoteDriver extends TuyaLocalDriver {
     const wrap = (id, fn) => {
       try {
         const card = this.homey.flow.getActionCard(id);
-        if (!card) return;
+        if (!card) {return;}
         card.registerRunListener(async (args) => fn(args));
       } catch (e) {
         this.error(`[WIFI-IR] flow ${id}:`, e.message);

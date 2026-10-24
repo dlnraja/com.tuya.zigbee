@@ -19,7 +19,7 @@ class IrRemoteDriver extends Homey.Driver {
     const wrap = (id, fn) => {
       try {
         const card = this.homey.flow.getActionCard(id);
-        if (!card) return;
+        if (!card) {return;}
         card.registerRunListener(async (args) => fn(args));
       } catch (e) {
         this.error(`[IR-REMOTE] flow ${id}:`, e.message);
@@ -49,7 +49,7 @@ class IrRemoteDriver extends Homey.Driver {
 
     wrap('ir_remote_send_learned', async (args) => {
       const opts = args.device._sendOpts({ learnedName: args.name });
-      if (!opts) throw new Error('IR sender not configured');
+      if (!opts) {throw new Error('IR sender not configured');}
       await this._router.send(opts);
       return true;
     });
@@ -59,14 +59,14 @@ class IrRemoteDriver extends Homey.Driver {
         code: args.code,
         format: args.format || 'auto',
       });
-      if (!opts) throw new Error('IR sender not configured');
+      if (!opts) {throw new Error('IR sender not configured');}
       await this._router.send(opts);
       return true;
     });
 
     wrap('ir_remote_start_learn', async (args) => {
       const sender = args.device._resolveSender();
-      if (!sender) throw new Error('IR sender not found');
+      if (!sender) {throw new Error('IR sender not found');}
       if (sender.transport === 'homey') {
         throw new Error('Homey onboard IR is TX-only — learn on Zigbee/WiFi');
       }
@@ -96,7 +96,7 @@ class IrRemoteDriver extends Homey.Driver {
         name: `${s.name} (${s.transport})`,
         data: { id: `virt_${s.driverId}_${s.id}` },
         settings: {
-          blaster_id: (s.driverId === 'ir_blaster' || s.driverId === 'blaster_remote') ? s.id : '',
+          blaster_id: s.driverId === 'ir_blaster' || s.driverId === 'blaster_remote' ? s.id : '',
           transport_driver: s.driverId,
           transport_id: s.id,
           ir_brand: 'Samsung',
