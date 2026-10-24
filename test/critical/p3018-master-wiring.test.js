@@ -1,4 +1,6 @@
 'use strict';
+// WHY: the critical suite also runs these files with `node --test` (no mocha globals) — same as p3017.
+const { describe, it, beforeEach } = require('node:test');
 
 // P3018 (master soak only): runtime wiring of the exact DP catalogue and passive endpoint layer.
 const assert = require('node:assert');
