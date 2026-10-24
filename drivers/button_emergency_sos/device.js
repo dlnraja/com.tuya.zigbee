@@ -70,6 +70,9 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
       this._enrollmentPending = false;
       this._batteryReportingConfigured = false;
       this._batteryBindComplete = false;
+      // WHY(P2364): DynCap must never reinvent SOS/battery DPs if EF00 path is enabled later
+      this._dynCapBlockDps = new Set([1, 4, 13, 14, 15, 101]);
+      this._forbiddenCapabilities = ['onoff', 'dim', 'measure_temperature', 'measure_humidity', 'alarm_contact', 'alarm_battery'];
 
       // 2. Ensure Capabilities
       await this._ensureCapabilities();
@@ -278,13 +281,24 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     if (dp === 1 || dp === 14 || (dp === 101 && typeof value !== 'number')) {
       // Tuya DP might send 1, true, 'true', or even 0/false depending on button release/press
       // For SOS buttons, any payload on these DPs usually means a press event
-      this._fireAlarm({ source: 'tuya-dp', dp, value });
+      this._fireAlarm({ source: 'tuya-dp', dp, value, pressType: 'single' });
+      return;
     }
 
-    // Button Actions (DP13)
+    // Button Actions (DP13) — enum 0=single, 1=double, 2=long/hold
     if (dp === 13) {
-      this._fireAlarm({ source: 'tuya-dp13', value });
+      const pressType = this._resolvePressType(value);
+      this._fireAlarm({ source: 'tuya-dp13', dp, value, pressType });
     }
+  }
+
+  /**
+   * Map Tuya DP13 / multistate press enums to flow tokens.
+   */
+  _resolvePressType(value) {
+    if (value === 1 || value === '1' || value === 'double') {return 'double';}
+    if (value === 2 || value === '2' || value === 'long' || value === 'hold') {return 'long';}
+    return 'single';
   }
 
   /**
@@ -385,14 +399,20 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
 
     // Set capability and trigger flow with source info
     await this.safeSetCapabilityValue('alarm_generic', true).catch(() => { });
-    if (this.driver?.triggerSOS) {
-      const source = (payload && payload.source) || 'unknown';
-      await this.driver.triggerSOS(this, { source });
+
+    const pressType = (payload && payload.pressType) || 'single';
+    if (pressType === 'double' && this.driver?.triggerDoublePress) {
+      await this.driver.triggerDoublePress(this);
+    } else if (pressType === 'long' && this.driver?.triggerLongPress) {
+      await this.driver.triggerLongPress(this);
+    } else if (this.driver?.triggerSOS) {
+      await this.driver.triggerSOS(this);
     }
 
     // v10.3.0 FIX (B6): Physical presses must fire the same flow sets as a
     // virtual UI press — pulse button.1 and fire the generic button_pressed
     // card (the SOS-specific card above stays the primary signal).
+    const flowType = pressType === 'long' ? 'hold' : pressType;
     if (this.hasCapability('button.1')) {
       await this.safeSetCapabilityValue('button.1', true).catch(() => { });
       const { safeSetTimeout } = require('../../lib/utils/safe-timers');
@@ -403,7 +423,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     }
     try {
       await this.homey.flow.getDeviceTriggerCard('button_pressed')
-        .trigger(this, { button: '1', type: 'single' }, {})
+        .trigger(this, { button: '1', type: flowType }, {})
         .catch(() => { });
     } catch (_e) { /* generic card not available for this driver */ }
 
@@ -413,6 +433,9 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     this._resetTimeout = safeSetTimeout(this, async () => {
       if (this._destroyed) {return;}
       await this.safeSetCapabilityValue('alarm_generic', false).catch(() => { });
+      if (this.driver?.triggerPhysicalOff) {
+        await this.driver.triggerPhysicalOff(this);
+      }
       this.log('[SOS] alarm_generic reset');
     }, 5000);
   }
@@ -480,6 +503,8 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     if (percent >= 0 && percent <= 100) {
       // WHY (P2248 / Peter #2190 / 0cea6870): SOS CR2032 still flipped 11↔20
       // after the 2s/15pp guard — widen to 15s and 10pp + log identity.
+      // WHY(P2256): also ignore micro-jitter (Δ≤5 within 60s) that drives
+      // nervous Homey timeline / battery_low edge chatter around threshold 20.
       const prev = this.getCapabilityValue('measure_battery');
       if (typeof prev === 'number') {
         const delta = Math.abs(prev - percent);
@@ -493,18 +518,29 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
           } catch (_e) { /* ignore */ }
           return;
         }
+        if (delta > 0 && delta <= 5 && age < 60_000) {
+          this.log(`[BATTERY] Ignore jitter ${prev}% → ${percent}% (Δ${delta} <60s)`);
+          return;
+        }
       }
       await this.safeSetCapabilityValue('measure_battery', percent).catch(() => { });
       try { await this.setStoreValue('sos_battery_last_write_at', Date.now()); } catch (_e) { /* ignore */ }
       this._updateActivity();
       this.log(`[BATTERY] ${percent}% (${type}=${value})`);
 
-      // v5.5.833: Trigger battery_low flow when below threshold
-      // alarm_battery deliberately NOT composed — flow card only (Homey guideline)
+      // v5.5.833 + P2256 hysteresis: latch low until clear above threshold+5
       const threshold = this.getSetting('battery_low_threshold') || 20;
+      const hyst = 5;
+      let latched = false;
+      try { latched = !!this.getStoreValue('sos_battery_low_latched'); } catch (_e) { /* ignore */ }
       if (percent <= threshold) {
-        if (this.driver?.triggerBatteryLow) {
+        if (!latched && this.driver?.triggerBatteryLow) {
           await this.driver.triggerBatteryLow(this, { battery_level: percent });
+          try { await this.setStoreValue('sos_battery_low_latched', true); } catch (_e2) { /* ignore */ }
+        }
+      } else if (percent > threshold + hyst) {
+        if (latched) {
+          try { await this.setStoreValue('sos_battery_low_latched', false); } catch (_e3) { /* ignore */ }
         }
       }
     }

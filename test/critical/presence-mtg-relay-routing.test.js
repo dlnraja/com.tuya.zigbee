@@ -20,6 +20,7 @@ const RELAY_MANUFACTURERS = [
   '_TZE284_4qznlkbu',
   '_TZE200_clrdrnya',
   '_TZE200_sbyx0lm6',
+  '_TZE284_clrdrnya',
 ];
 
 function readJson(relativePath) {
@@ -54,25 +55,31 @@ describe('MTG075/MTG035 relay presence radar routing', () => {
   it('maps issue #87 _TZE204_mtoaryre and sibling relay radars to a mains relay profile', () => {
     const { getSensorConfig } = require('../../drivers/presence_sensor_radar/configs');
     const altConfigs = require('../../drivers/sensor_illuminance_presence/configs');
+    // P202: clrdrnya family is presence_sensor_radar-only (not illuminance catch-all)
+    const CLRDRNYA = /clrdrnya/i;
 
     for (const manufacturer of RELAY_MANUFACTURERS) {
-      for (const lookup of [getSensorConfig, altConfigs.getSensorConfig]) {
-        const config = lookup(manufacturer, 'TS0601');
-        assert.strictEqual(config.configName, 'MTG075_ZB_RL_RELAY', `${manufacturer} must use relay profile`);
-        assert.strictEqual(config.mainsPowered, true, `${manufacturer} must be mains-powered`);
-        assert.strictEqual(config.noBatteryCapability, true, `${manufacturer} must not expose battery`);
-        assert.strictEqual(config.hasRelay, true, `${manufacturer} must expose relay`);
-        assert.strictEqual(config.relayDp, 108, `${manufacturer} relay must use DP108`);
-        assert.strictEqual(config.dpMap[1].cap, 'alarm_motion', `${manufacturer} DP1 must be presence`);
-        assert.strictEqual(config.dpMap[104].cap, 'measure_luminance', `${manufacturer} DP104 must be lux`);
-        assert.strictEqual(config.dpMap[108].cap, 'onoff', `${manufacturer} DP108 must be onoff`);
+      const radar = getSensorConfig(manufacturer, 'TS0601');
+      assert.strictEqual(radar.configName, 'MTG075_ZB_RL_RELAY', `${manufacturer} must use relay profile on radar`);
+      assert.strictEqual(radar.mainsPowered, true, `${manufacturer} must be mains-powered`);
+      assert.strictEqual(radar.noBatteryCapability, true, `${manufacturer} must not expose battery`);
+      assert.strictEqual(radar.hasRelay, true, `${manufacturer} must expose relay`);
+      assert.strictEqual(radar.relayDp, 108, `${manufacturer} relay must use DP108`);
+      assert.strictEqual(radar.dpMap[1].cap, 'alarm_motion', `${manufacturer} DP1 must be presence`);
+      assert.strictEqual(radar.dpMap[104].cap, 'measure_luminance', `${manufacturer} DP104 must be lux`);
+      assert.strictEqual(radar.dpMap[108].cap, 'onoff', `${manufacturer} DP108 must be onoff`);
+
+      if (!CLRDRNYA.test(manufacturer)) {
+        const legacy = altConfigs.getSensorConfig(manufacturer, 'TS0601');
+        assert.strictEqual(legacy.configName, 'MTG075_ZB_RL_RELAY', `${manufacturer} legacy illuminance profile`);
       }
     }
   });
 
   it('pairs the relay family with presence_sensor_radar and keeps onoff available for flows', () => {
     for (const source of [driverCompose('presence_sensor_radar'), appDriver('presence_sensor_radar')]) {
-      assert(source.capabilities.includes('onoff'), 'presence_sensor_radar must expose onoff for relay flow cards');
+      // WHY(P2603 be96dcb59f): no compose onoff (ceiling radars got a dead switch tile); relay
+      // configs add onoff at runtime (P2576 _ensureRelayOnoffCapability) — checked below.
       assert(source.capabilities.includes('alarm_human'), 'presence_sensor_radar must expose alarm_human');
       assert(source.capabilities.includes('measure_luminance'), 'presence_sensor_radar must expose lux');
       assert(source.capabilities.includes('measure_luminance.distance'), 'presence_sensor_radar must expose target distance');
@@ -81,6 +88,10 @@ describe('MTG075/MTG035 relay presence radar routing', () => {
         assert(includesCI(source.zigbee.manufacturerName, manufacturer), `presence_sensor_radar must claim ${manufacturer}`);
       }
     }
+
+    const dev = fs.readFileSync(path.join(__dirname, '..', '..', 'drivers', 'presence_sensor_radar', 'device.js'), 'utf8');
+    assert.ok(/_ensureRelayOnoffCapability\(\) \{[\s\S]{0,600}addCapability\('onoff'\)/.test(dev), 'relay radars add onoff at runtime (P2576/P2603)');
+    assert.ok(/WHY\(P2575[\s\S]{0,400}never drop it/.test(dev), 'relay onoff never stripped (P2575)');
 
     for (const source of [driverCompose('sensor_illuminance_presence'), appDriver('sensor_illuminance_presence')]) {
       assert(source.capabilities.includes('onoff'), 'legacy illuminance/presence driver must allow relay migration');

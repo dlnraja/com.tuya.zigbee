@@ -114,7 +114,7 @@
           "driver": "button_wireless_1",
           "deviceId": "28c1e9fd-d3cb-43a6-a341-0709a9b1da61",
           "altDeviceId": "34aecca9",
-          "couple": null,
+          "couple": "_TZ3000_mrpevh8p+TS0041",
           "symptoms": [
             "no presses",
             "HYBRID none in 1cf775a2"
@@ -123,7 +123,9 @@
             "ButtonDevice wake + deferred DataRecovery P2184",
             "measure_battery getable false"
           ],
-          "userAction": "Update ≥9.0.621 + re-pair; need interview for couple"
+          "userAction": "Update ≥9.0.621 + re-pair; need interview for couple",
+          "diag": "048cff91",
+          "forum": "#2230"
         }
       ],
       "forbiddenInvent": [

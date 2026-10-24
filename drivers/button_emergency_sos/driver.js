@@ -17,7 +17,10 @@ class SosEmergencyButtonDriver extends ZigBeeDriver {
       'button_emergency_sos_pressed',
       'button_emergency_sos_double_pressed',
       'button_emergency_sos_long_pressed',
-      'button_emergency_sos_battery_low'
+      'button_emergency_sos_battery_low',
+      // WHY(P2364): triggerSOS fires physical_on — must be registered or fallback races manifest
+      'button_emergency_sos_physical_on',
+      'button_emergency_sos_physical_off',
     ];
 
     this._flowCards = {};
@@ -35,7 +38,7 @@ class SosEmergencyButtonDriver extends ZigBeeDriver {
           this.log(`[FLOW] ${cardId} card not found in app manifest`);
         }
       } catch (e) {
-        this.error(`[FLOW] ${cardId} registration error:`, e.message);
+        this.log(`[FLOW] ${cardId} registration skipped:`, e.message);
       }
     }
   }
@@ -46,7 +49,8 @@ class SosEmergencyButtonDriver extends ZigBeeDriver {
   async triggerSOS(device, tokens = {}, state = {}) {
     this.log('[FLOW] triggerSOS called for', device.getName());
 
-    // v5.5.833: Trigger flow card explicitly with source tokens
+    // WHY: these cards declare no tokens. Passing { source } makes Homey
+    // reject the trigger ("invalid tokens") so Flows never fire.
     await this._triggerCard('button_emergency_sos_pressed', device, {}, state);
     await this._triggerCard('button_emergency_sos_physical_on', device, {}, state);
   }
@@ -68,10 +72,19 @@ class SosEmergencyButtonDriver extends ZigBeeDriver {
   }
 
   /**
+   * P2364: alarm_generic auto-reset should pair with physical_off for Flow parity.
+   */
+  async triggerPhysicalOff(device, tokens = {}, state = {}) {
+    this.log('[FLOW] triggerPhysicalOff called for', device.getName());
+    await this._triggerCard('button_emergency_sos_physical_off', device, {}, state);
+  }
+
+  /**
    * v5.5.833: Trigger battery low flow
    */
   async triggerBatteryLow(device, tokens = {}, state = {}) {
-    // WHY: Peter #2190 / 0cea6870 — debounce battery_low flow spam (60s).
+    // WHY: Peter #2190 / 0cea6870 — SOS battery jumped 11%→20% in <100ms and
+    // fired battery_low twice. Debounce identical flow spam for 60s.
     const now = Date.now();
     const last = device.getStoreValue?.('sos_battery_low_flow_at') || 0;
     if (now - last < 60_000) {
@@ -93,7 +106,7 @@ class SosEmergencyButtonDriver extends ZigBeeDriver {
         await card.trigger(device, tokens, state);
         this.log(`[FLOW] ${cardId} triggered successfully`);
       } catch (e) {
-        this.error(`[FLOW] ${cardId} trigger error:`, e.message);
+        this.log(`[FLOW] ${cardId} trigger skipped:`, e.message);
       }
     } else {
       // Fallback: re-fetch card from runtime
@@ -106,7 +119,7 @@ class SosEmergencyButtonDriver extends ZigBeeDriver {
           this.log(`[FLOW] ${cardId} card not available`);
         }
       } catch (e) {
-        this.error(`[FLOW] ${cardId} fallback error:`, e.message);
+        this.log(`[FLOW] ${cardId} fallback skipped:`, e.message);
       }
     }
   }
