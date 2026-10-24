@@ -1,0 +1,115 @@
+# Repo autopilot (P3022)
+# Triggers: cron daily 06:35 UTC + workflow_dispatch (dry_run, caps) | Secrets: GITHUB_TOKEN only | Free, no AI
+# Processes every open PR and issue WITHOUT posting anything (no comment, no mail, no issue close):
+#  - bot PRs (bot/*, auto/*, ai/monthly-audit-*): normal merge when current + gates green; closed silently
+#    when superseded by a newer PR of the same kind or stale (> max_behind commits behind and > 7 days old);
+#  - bot/* head branches: deleted only when superseded/merged/abandoned and carrying bot commits only;
+#  - external contributor PRs: analysed, exact new couples queued to data/leads/github-leads.json for the
+#    gated strict-apply intake (oss-lan-source-enrich); NEVER closed;
+#  - issues: classified against the driver composes, actionable ones written to the ledger, draft replies
+#    in the report artifact only; NEVER closed or commented.
+# Owner PRs and keep/pinned labels are never touched. Kill switch: vars.REPO_AUTOPILOT_DISABLED == 'true';
+# vars.REPO_AUTOPILOT_DRY == 'true' turns the schedule into a dry run.
+# Batch Analyze & Respond (auto-close-supported.yml) stays shadow: its schedule is forced dry-run (P2436).
+name: Repo autopilot (P3022)
+
+on:
+  schedule:
+    - cron: '35 6 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run: report only, no merge/close/delete/commit'
+        type: boolean
+        default: true
+      max_prs:
+        description: 'Max open PRs processed'
+        type: number
+        default: 10
+      max_issues:
+        description: 'Max open issues classified'
+        type: number
+        default: 30
+      max_merges:
+        description: 'Max bot PR merges'
+        type: number
+        default: 2
+      max_behind:
+        description: 'A bot PR more commits behind than this (and > 7 days old) is stale'
+        type: number
+        default: 150
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: read
+  checks: read
+  statuses: read
+
+concurrency:
+  group: repo-autopilot
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  AI_PLAN_MODE: 'forfait'
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  AI_ALLOW_PAID: 'false'
+  AI_ENSEMBLE: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
+  FORUM_AUTO_POST: '0'
+  GITHUB_RESOLVER_COMMENT: '0'
+  SAFE_AUTO_COMMIT_NO_COMMENT: '1'
+
+jobs:
+  autopilot:
+    if: ${{ vars.REPO_AUTOPILOT_DISABLED != 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: master
+          fetch-depth: 0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install (gates need the repo deps)
+        run: npm ci --prefer-offline --no-audit --ignore-scripts || npm install --no-audit --ignore-scripts
+
+      - name: Autopilot
+        id: run
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          AUTOPILOT_DRY: ${{ (github.event_name == 'workflow_dispatch' && inputs.dry_run) || (github.event_name == 'schedule' && vars.REPO_AUTOPILOT_DRY == 'true') }}
+        run: |
+          node scripts/ci/repo-autopilot.js --local-gate \
+            --max-prs=${{ inputs.max_prs || 10 }} --max-issues=${{ inputs.max_issues || 30 }} \
+            --max-merges=${{ inputs.max_merges || 2 }} --max-behind=${{ inputs.max_behind || 150 }} \
+            --out=reports/autopilot
+          echo "dry=$AUTOPILOT_DRY" >> "$GITHUB_OUTPUT"
+
+      - name: Commit ledger + leads (gated, bounded)
+        if: ${{ steps.run.outcome == 'success' && steps.run.outputs.dry != 'true' }}
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node scripts/ci/safe-auto-commit.js --id=repo-autopilot \
+            --message="chore(ledger): repo autopilot (PRs, bot branches, issue triage)" \
+            --paths="data/progress/ledger.json data/leads/github-leads.json"
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: repo-autopilot-report
+          path: reports/autopilot/
+          retention-days: 30
