@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-24T11:21:54.146Z",
+  "updated": "2026-10-24T12:49:16.195Z",
   "threads": {
     "21313": {
       "lastPost": 2819,
@@ -19816,7 +19816,7 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-21",
+        "at": "2026-10-24",
         "verdict": "lead",
         "confidence": 0.2,
         "couples": [],
@@ -19825,7 +19825,7 @@
           "https://zigbee.blakadder.com/Tuya_ZG-204ZL.html",
           "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/master/devices/hobeian/hobeian_presence_light_sensor.json"
         ],
-        "sources": 35
+        "sources": 32
       }
     },
     {
