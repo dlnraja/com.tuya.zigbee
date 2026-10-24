@@ -207,6 +207,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
     // shouldInvert already includes curated lists, smart learn, XOR checkboxes, explicit mode
     this._invertContact = !!pol.shouldInvert;
     this._userExplicitInvert = !!(userInvert || userReverse) && pol.mode === 'auto' && !invertedByDefault;
+    this._applyDpCoupleDefault(pol);
     this.log(`[CONTACT] Sensor ${mfr} polarity invert=${this._invertContact} reason=${pol.reason} mode=${pol.mode}`);
 
     if (this._isProblematicSensor) {
@@ -247,6 +248,23 @@ class ContactSensorDevice extends UnifiedSensorBase {
   }
 
   /**
+   * WHY(P3021c / forum #2134): exact-couple DP1 default inversion (HOBEIAN|ZG-102ZL,
+   * Z2M `valueConverter.inverse`). Only touches the DP path flags — IAS frames are
+   * never inverted here (UnifiedSensorBase/AlarmPolarityManager own them).
+   */
+  _applyDpCoupleDefault(pol) {
+    try {
+      const { resolveDpCoupleDefault } = require('../../lib/sensors/ContactDefaultInvert');
+      const ov = resolveDpCoupleDefault(pol);
+      if (!ov) {return;}
+      this._invertContact = ov.invertContact;
+      this._userExplicitInvert = false;
+      this._invertedByDefault = true;
+      pol.reason = ov.reason;
+    } catch (_e) { /* fail-open: keep AlarmPolarityManager result */ }
+  }
+
+  /**
    * v5.5.344: Handle settings changes
    */
   async onSettings({ oldSettings, newSettings, changedKeys }) {
@@ -272,6 +290,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
       this._userExplicitInvert = !!(newSettings.invert_contact || newSettings.reverse_alarm
         || this.getSetting('invert_contact') || this.getSetting('reverse_alarm'))
         && pol.mode === 'auto' && !this._invertedByDefault;
+      this._applyDpCoupleDefault(pol);
       this.log(`[CONTACT] Invert/polarity → ${this._invertContact} (${pol.reason})`);
       // Toggle current displayed state when user explicitly flips polarity
       const current = this.getCapabilityValue('alarm_contact');
