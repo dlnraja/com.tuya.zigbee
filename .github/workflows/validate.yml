@@ -139,6 +139,11 @@ jobs:
       - name: 🛡️ P217 fork harvest sacred-couple gate
         run: node tools/ci/p217-fork-harvest-gate.js
 
+      - name: 🧭 P3018 DP + endpoint coverage (report-only; duplicate numeric keys fail)
+        # WHY: legitimate gaps (no upstream converter, undeclared secondary EP) are reported, not blocking;
+        # a duplicate DP / numeric key in one object literal silently drops a mapping → hard fail.
+        run: node scripts/kb/dp-endpoint-coverage.js --check
+
       - name: 🖼️ Driver Images Pre-Check
         run: |
           MISS=0
