@@ -81,7 +81,22 @@ class lcdtemphumidsensor3 extends TuyaSpecificClusterDevice {
           this.error('Failed to process Tuya datapoint', err);
         }
       });
+      // Spec 006 (TH01Z-class clock): answer the device's own MCU time requests (0x24) so LCD
+      // clocks stay correct. Request-driven only (no periodic writes); epoch per mfr is decided
+      // by GlobalTimeSyncEngine / TuyaSpecificCluster.EPOCH_2000_MFRS. Never blocks init.
+      try {
+        const GlobalTimeSyncEngine = require('../../lib/tuya/GlobalTimeSyncEngine');
+        this._timeSyncEngine = new GlobalTimeSyncEngine(this);
+        this._timeSyncEngine.setupListener(zclNode);
+      } catch (err) {
+        this.log('Time-sync listener unavailable:', err && err.message);
+      }
     }
+  }
+
+  async onUninit() {
+    try { this._timeSyncEngine?.destroy?.(); } catch (_) { /* ignore */ }
+    if (typeof super.onUninit === 'function') {return super.onUninit();}
   }
 
 
@@ -121,6 +136,7 @@ class lcdtemphumidsensor3 extends TuyaSpecificClusterDevice {
   }
 
   onDeleted() {
+    try { this._timeSyncEngine?.destroy?.(); } catch (_) { /* ignore */ }
     super.onDeleted();
     this.log("LCD Temperature & Humidity sensor removed")
   }
