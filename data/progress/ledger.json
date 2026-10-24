@@ -37292,9 +37292,10 @@
    "note": "Johan branch gaps (docs/rules/JOHAN_BRANCHES_2026-10-03.md): _TZ3000_o9f2zqln TS0207 rain, _TZ3210_iystcadi TS0505A, _TZ3000_p26flek3 TS0001 relay (on climate_sensor) — read source interviews, then exact drivers; port to stable/bastien"
   },
   "task:next-02": {
-   "status": "pending",
+   "status": "done",
    "note": "stable grouped publish: push exec-stable 35b5248d29 (SimpleButtonGate) + backports #1501/#1502/#1503/TH01Z + device compat (4 new dedicated drivers, qoy0ekbd) — needs explicit approval (auto-review blocked direct push)",
-   "result": "P3021 2026-10-24: SimpleButtonGate shipped on stable-v5 as 3a0939b8d1 (gate + ButtonDevice wiring + test); #1501/#1502/#1503/TH01Z backports not found on stable-v5, still pending"
+   "result": "P3021 2026-10-24: SimpleButtonGate shipped on stable-v5 as 3a0939b8d1. P3021b 2026-10-24: #1501/#1502/#1503/TH01Z were already on stable-v5 (bc94147c8d, ba7e104682, 2026-10-03; earlier \"not found\" note was wrong) -> guard test + credits 60c6a2224b on stable-v5; ported additively to bastien-home 4759a17cda (UnknownDPLogger flood guard, CCT clamp01 + tuyaRgbMode catch, TuyaOnOffSettingsSync + 4 plug drivers, lcdtemphumidsensor_3 listener + node.manufacturerName); qoy0ekbd present on stable-v5 (climate_sensor)",
+   "date": "2026-10-24"
   },
   "task:next-03": {
    "status": "pending",
