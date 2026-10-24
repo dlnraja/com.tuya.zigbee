@@ -2,7 +2,6 @@
 
 const BaseZigBeeDriver = require('../../lib/drivers/BaseZigBeeDriver');
 const { setGangOnOff, setAllGangsOnOff } = require('../../lib/drivers/FlowGangControl');
-const { registerOnoffFlowCards } = require('../../lib/flow/ActuatorFlowHelper');
 
 // P3021c: dedicated TS0002-only 2-gang driver (see device.js for the why).
 // Flow cards mirror the relay subset of wall_switch_2gang_1way under this driver's own prefix;
@@ -32,9 +31,26 @@ class Switch2GangTs0002Driver extends BaseZigBeeDriver {
     }
   }
 
+  _condition(id, run) {
+    try {
+      const card = this.homey.flow.getConditionCard(id);
+      if (!card) { return; }
+      card.registerRunListener(async (args) => {
+        if (!args || !args.device) { return false; }
+        return run(args.device, args);
+      });
+    } catch (err) {
+      this.error(`[${P}] condition ${id}: ${err.message}`);
+    }
+  }
+
   _registerFlowCards() {
-    // is_on / turn_on / turn_off / toggle on gang 1
-    registerOnoffFlowCards(this, P, { gang: 1, capability: 'onoff' });
+    // is_on / turn_on / turn_off / toggle on gang 1 (stable-v5 has no ActuatorFlowHelper:
+    // same cards wired locally through FlowGangControl).
+    this._condition(`${P}_is_on`, (d) => d.getCapabilityValue('onoff') === true);
+    this._action(`${P}_turn_on`, (d) => setGangOnOff(d, 1, true));
+    this._action(`${P}_turn_off`, (d) => setGangOnOff(d, 1, false));
+    this._action(`${P}_toggle`, (d) => setGangOnOff(d, 1, 'toggle'));
     for (const gang of [1, 2]) {
       this._action(`${P}_turn_on_gang${gang}`, (d) => setGangOnOff(d, gang, true));
       this._action(`${P}_turn_off_gang${gang}`, (d) => setGangOnOff(d, gang, false));
