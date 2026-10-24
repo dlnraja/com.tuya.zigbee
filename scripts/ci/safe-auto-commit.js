@@ -15,7 +15,7 @@
  *                    setCapabilityValue / console.* in drivers, utf8 JSON loads in lib, wildcard mfr),
  *                    then the repo's own gates if present: auto-validation-gate, P2138 sacred-couple
  *                    matrix, regression-lessons, anti-bot regression.
- *  4. Push         — commit "<message> [auto:<id>] [skip ci]", pull --rebase + push with 3 retries,
+ *  4. Push         — commit "<message> [auto:<id>] [skip ci]", fetch + rebase + push, 5 tries, exp. backoff + jitter (P3025),
  *                    never force. Rebase conflict → abort.
  *  On any gate failure / conflict: nothing is pushed; ONE comment per workflow id on the tracking
  *  issue (#557, label bot-digest) is created or edited in place (no flood). Exit code stays 0 so the
@@ -25,6 +25,7 @@ const fs = require('fs');
 const path = require('path');
 const { spawnSync } = require('child_process');
 const { select: selectRulesGates } = require('./rules-gates');
+const { pushWithRetry } = require('./push-with-retry'); // P3025
 
 const RULES_GATE_FILES = selectRulesGates({ profile: 'full' }).map((g) => g.file);
 
@@ -146,12 +147,10 @@ function gate(files) {
   if (!git('config', 'user.name').stdout.trim()) { git('config', 'user.name', 'github-actions[bot]'); git('config', 'user.email', '41898282+github-actions[bot]@users.noreply.github.com'); }
   const c = git('commit', '-q', '-m', `${MSG} [auto:${ID}] [skip ci]`);
   if (c.status !== 0) { await report('git commit a échoué', c.stderr); return; }
-  for (let i = 1; i <= 3; i++) {
-    const r = git('pull', '-q', '--rebase', '--autostash', 'origin', BRANCH) // autostash: generators leave unrelated unstaged files;
-    if (r.status !== 0) { git('rebase', '--abort'); await report('conflit de rebase (autre worker sur la même zone)', r.stderr); return; }
-    const p = git('push', '-q', 'origin', `HEAD:${BRANCH}`);
-    if (p.status === 0) { out('committed', 'true'); summary(`✅ safe-auto-commit [${ID}]: ${files.length} file(s) pushed to ${BRANCH}.`); return; }
-    await new Promise((res) => setTimeout(res, 3000 * i + Math.random() * 4000));
-  }
-  await report('push refusé après 3 tentatives', '');
+  // P3025: shared bounded fetch/rebase(autostash)/push, exponential backoff + jitter; a fetch blip is retried,
+  // only a real rebase conflict stops (before, any failed pull was reported on #557 as a conflict).
+  const pr = await pushWithRetry({ branch: BRANCH, cwd: ROOT, git });
+  if (pr.ok) { out('committed', pr.reason === 'pushed' ? 'true' : 'false'); summary(`✅ safe-auto-commit [${ID}]: ${files.length} file(s) ${pr.reason === 'pushed' ? 'pushed' : 'already'} on ${BRANCH} (attempt ${pr.attempts}).`); return; }
+  if (pr.reason === 'conflict') { await report('conflit de rebase (autre worker sur la même zone)', pr.details); return; }
+  await report(`push refusé après ${pr.attempts} tentatives`, pr.details);
 })();

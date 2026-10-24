@@ -38,6 +38,8 @@ echo -e "${CYAN}╚════════════════════�
 echo ""
 
 ROOT="$(git rev-parse --show-toplevel)"
+# P3025: loud failure (not silent) when node/node_modules are missing; picks Node >= 22; one auto npm ci failover
+[ -f "$ROOT/.githooks/lib-deps-check.sh" ] && . "$ROOT/.githooks/lib-deps-check.sh"
 
 # ─── 1. Run mandatory check ──────────────────────────────────────────────────
 echo -e "${CYAN}[1/$TOTAL_CHECKS] Running comprehensive mandatory file check...${RESET}"
@@ -235,6 +237,9 @@ if ! node "$ROOT/scripts/ci/security-scanner.js"; then
 else
   echo -e "${GREEN}  PASSED: Full security scan${RESET}"
 fi
+
+# P3025: data/manifest gates (dp-shards auto-rebuild, app.json↔compose drift)
+[ -f "$ROOT/.githooks/lib-data-gates.sh" ] && . "$ROOT/.githooks/lib-data-gates.sh"
 
 # ─── Summary ─────────────────────────────────────────────────────────────────
 echo ""
