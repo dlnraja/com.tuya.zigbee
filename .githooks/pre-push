@@ -27,6 +27,8 @@ NODE_BIN="node"
 if command -v node.exe >/dev/null 2>&1; then
   NODE_BIN="node.exe"
 fi
+# P3025: loud failure (not silent) when node/node_modules are missing; picks Node >= 22; one auto npm ci failover
+[ -f "$ROOT/.githooks/lib-deps-check.sh" ] && . "$ROOT/.githooks/lib-deps-check.sh"
 export NODE_OPTIONS="${NODE_OPTIONS:-} --no-warnings"
 
 # Full mandatory check (blocking)
@@ -55,6 +57,17 @@ if [ -f "$ROOT/.github/scripts/fp-collision-check.js" ]; then
   if ! node "$ROOT/.github/scripts/fp-collision-check.js" --baseline "$ROOT/.github/fingerprint-collision-baseline.json" >/tmp/fp-collision.log 2>&1; then
     grep "NEW COLLISION" /tmp/fp-collision.log | head -20
     echo -e "${RED}❌ PUSH BLOCKED — new duplicate couple(s): add an exact-pair driver or a reviewed baseline entry (no removal)${RESET}"
+    exit 1
+  fi
+fi
+
+# P3025: hook/CI parity — the same shared rules-gates core profile CI runs (.github/actions/rules-gates).
+# Fast (~2 s); skip only for an emergency with HOOKS_SKIP_RULES_GATES=1 (CI still runs it).
+if [ -f "$ROOT/scripts/ci/rules-gates.js" ] && [ "${HOOKS_SKIP_RULES_GATES:-0}" != "1" ]; then
+  echo -e "${CYAN}[+] Shared rules-gates (core profile, same as CI)...${RESET}"
+  if ! (cd "$ROOT" && "$NODE_BIN" scripts/ci/rules-gates.js --profile=core) >/tmp/p3025-rules-gates.log 2>&1; then
+    tail -25 /tmp/p3025-rules-gates.log
+    echo -e "${RED}❌ PUSH BLOCKED — rules-gates core failed (same gate as CI). Run: node scripts/ci/rules-gates.js --profile=core${RESET}"
     exit 1
   fi
 fi
