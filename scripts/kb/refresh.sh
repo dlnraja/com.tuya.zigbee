@@ -24,4 +24,5 @@ node "$HERE/../data/harvest-z2m-tuya-dps.js" || echo "warn: tuyaDatapoints harve
 node "$HERE/../data/harvest-zha-quirk-dps.js" || echo "warn: ZHA per-quirk DP harvest failed"
 node "$HERE/../data/harvest-deconz-tuya-dps.js" || echo "warn: deCONZ DDF DP harvest failed"
 node "$HERE/../data/build-unknown-dp-catalog.js" || echo "warn: DP catalogue build failed"
+node "$HERE/../data/build-inferred-dp-family.js" || echo "warn: inferred DP family build failed"
 node "$HERE/dp-endpoint-coverage.js" || echo "warn: DP/endpoint coverage doc failed"

@@ -176,7 +176,10 @@ function audit() {
   for (const d of drivers) { for (const m of d.mfrs) { const k = m.toLowerCase(); if (!byMfr.has(k)) { byMfr.set(k, []); } if (!byMfr.get(k).includes(d)) { byMfr.get(k).push(d); } } } // WHY: caseless variants of one mfr in one compose = one driver
 
   const couples = [];
-  const totals = { couples: 0, dps: 0, driver: 0, exact: 0, generic: 0, catalogApply: 0 };
+  const totals = { couples: 0, dps: 0, driver: 0, exact: 0, generic: 0, catalogApply: 0, inferred: 0, inferredPid: 0, inferredCat: 0, inferredName: 0 };
+  // P3018b: optional low-confidence family layer (scripts/data/build-inferred-dp-family.js).
+  const inf = readJson(path.join(ROOT, 'lib', 'zigbee', 'data', 'inferred-dp-family.json'), null);
+  const infHas = (fk, dp) => { const f = inf && inf.fam && inf.fam[fk]; if (!f) { return null; } for (let i = 0; i < f.length; i += 5) { if (f[i] === dp) { return `${inf.names[f[i + 1]]}=${inf.convs[f[i + 2]]}`; } } return null; };
   const known = new Set([...Object.keys(cat.idx || {}), ...zhaLc.keys()]);
   for (const key of [...known].sort()) {
     const [mfr, pid] = key.split('|');
@@ -186,7 +189,7 @@ function audit() {
       const rows = new Map();
       for (const e of D.coupleDps(mfr, pid)) { rows.set(e.dp, { name: e.name, conv: e.conv }); }
       for (const dp of zhaLc.get(key) || []) { if (!rows.has(dp)) { rows.set(dp, { name: null, conv: null, zha: true }); } }
-      const c = { driver: d.id, mfr, pid, driverDps: [], exact: [], generic: [], apply: [] };
+      const c = { driver: d.id, mfr, pid, driverDps: [], exact: [], generic: [], apply: [], inferred: [] };
       for (const [dp, r] of [...rows.entries()].sort((a, b) => a[0] - b[0])) {
         totals.dps++;
         if (d.mapped.has(dp) || d.handled.has(dp)) { c.driverDps.push(dp); totals.driver++; continue; }
@@ -199,6 +202,10 @@ function audit() {
         } else {
           c.generic.push(r.name ? `${dp}:${r.name}` : `${dp}:zha`);
           totals.generic++;
+          const ip = infHas(`${pid}|${d.id}`, dp);
+          const ic = ip ? null : infHas(`*|${d.id}`, dp);
+          const inm = ip || ic || !r.name ? null : infHas(`n:${r.name}`, dp);
+          if (ip || ic || inm) { totals.inferred++; if (ip) { totals.inferredPid++; } else if (ic) { totals.inferredCat++; } else { totals.inferredName++; } c.inferred.push(`${dp}~${ip || ic || inm}${ip ? '' : (ic ? '(cat)' : '(name)')}`); }
         }
       }
       totals.couples++;
@@ -251,9 +258,9 @@ function audit() {
 function perDriver(couples) {
   const m = new Map();
   for (const c of couples) {
-    if (!m.has(c.driver)) { m.set(c.driver, { driver: c.driver, couples: 0, driverDps: 0, exact: 0, generic: 0, apply: 0 }); }
+    if (!m.has(c.driver)) { m.set(c.driver, { driver: c.driver, couples: 0, driverDps: 0, exact: 0, generic: 0, apply: 0, inferred: 0 }); }
     const r = m.get(c.driver);
-    r.couples++; r.driverDps += c.driverDps.length; r.exact += c.exact.length; r.generic += c.generic.length; r.apply += c.apply.length;
+    r.couples++; r.driverDps += c.driverDps.length; r.exact += c.exact.length; r.generic += c.generic.length; r.apply += c.apply.length; r.inferred += (c.inferred || []).length;
   }
   return [...m.values()].sort((x, y) => (x.driver < y.driver ? -1 : 1));
 }
@@ -275,20 +282,25 @@ function render(a) {
     `| driver | ${t.driver} | decoded by the driver (dpMappings or its DP handler) |`,
     `| exact | ${t.exact} | catalogue converter → exact value (UnknownCommandInterpreter 1b); master also writes ${t.catalogApply} of them to an existing measurement/alarm capability via DpCatalogDecoder (guarded: driver-owned caps / DPs, range, one DP per capability) |`,
     `| generic | ${t.generic} | no exact converter in any source → generic typed value (bool/value/enum/raw/bitmap), learned, exposed to Flows, stored as \`_unknown_dp_N\` — never dropped |`,
+    `| ↳ inferred candidate | ${t.inferred} | of the generic DPs, ${t.inferredPid} have a same-productId+driver family candidate ${t.inferredCat} a same-driver (category) candidate and ${t.inferredName} a same-name+DP-id candidate in \`lib/zigbee/data/inferred-dp-family.json\` — label **inferred**, low confidence, never a fact (see below) |`,
     '',
     '### Per driver',
     '',
-    '| driver | couples | driver DPs | exact | generic | master auto-apply |',
-    '|---|---|---|---|---|---|',
-    ...perDriver(a.couples).map((r) => `| ${r.driver} | ${r.couples} | ${r.driverDps} | ${r.exact} | ${r.generic} | ${r.apply} |`),
+    '### Inferred family layer (P3018b, optional)',
+    '',
+    'Built by `scripts/data/build-inferred-dp-family.js` from EXACT catalogue rows only: for a DP id, the dominant (name, converter) among couples of the same productId + Homey driver (tier `pid`: ≥ 2 couples, ≥ 2/3 agreement) or of the same driver (tier `cat`: ≥ 3 couples, ≥ 3/4 agreement), else the same DP id with the same source name in any catalogue couple (tier `name`: ≥ 3 couples, ≥ 3/4 agreement). Runtime (master only, `lib/zigbee/InferredDpLayer.js`): used only when the couple has NO exact converter for the DP; every report is decoded and range-checked; the interpretation is remembered per device (store `inferred_dp_confirm`, ≤ 32 DPs) and only written to an existing measurement/alarm capability after 3 consistent in-range reports with no out-of-range one; one out-of-range report rejects it for that device for good. Never overrides an exact decoder, a driver-owned capability/DP, or a heuristic veto. Zero TX.',
+    '',
+    '| driver | couples | driver DPs | exact | generic | inferred candidates | master auto-apply |',
+    '|---|---|---|---|---|---|---|',
+    ...perDriver(a.couples).map((r) => `| ${r.driver} | ${r.couples} | ${r.driverDps} | ${r.exact} | ${r.generic} | ${r.inferred || 0} | ${r.apply} |`),
     '',
     '### Generic-fallback DPs per couple (gaps: no exact converter in any source)',
     '',
     'Reason for each: the only sources are a name without converter (Z2M custom / unknown semantics, ZHA v1 ZCL-mapped, deCONZ script) or a ZHA quirk-file DP number (`:zha`). They are decoded as typed generic values until a source documents the scaling.',
     '',
-    '| driver | couple | generic DPs |',
-    '|---|---|---|',
-    ...a.couples.filter((c) => c.generic.length).map((c) => `| ${c.driver} | \`${c.mfr}\` ${c.pid} | ${c.generic.join(' ')} |`),
+    '| driver | couple | generic DPs | inferred candidates |',
+    '|---|---|---|---|',
+    ...a.couples.filter((c) => c.generic.length).map((c) => `| ${c.driver} | \`${c.mfr}\` ${c.pid} | ${c.generic.join(' ')} | ${(c.inferred || []).join(' ').replace(/\|/g, '\\|')} |`),
     '',
     '## Endpoints (interviews × compose × runtime)',
     '',

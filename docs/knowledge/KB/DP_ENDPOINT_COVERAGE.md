@@ -11,623 +11,628 @@ Couples audited (known to a source AND served by a driver): **1206** — source 
 | driver | 3518 | decoded by the driver (dpMappings or its DP handler) |
 | exact | 7796 | catalogue converter → exact value (UnknownCommandInterpreter 1b); master also writes 506 of them to an existing measurement/alarm capability via DpCatalogDecoder (guarded: driver-owned caps / DPs, range, one DP per capability) |
 | generic | 2724 | no exact converter in any source → generic typed value (bool/value/enum/raw/bitmap), learned, exposed to Flows, stored as `_unknown_dp_N` — never dropped |
+| ↳ inferred candidate | 683 | of the generic DPs, 524 have a same-productId+driver family candidate 13 a same-driver (category) candidate and 146 a same-name+DP-id candidate in `lib/zigbee/data/inferred-dp-family.json` — label **inferred**, low confidence, never a fact (see below) |
 
 ### Per driver
 
-| driver | couples | driver DPs | exact | generic | master auto-apply |
-|---|---|---|---|---|---|
-| air_quality_co2 | 16 | 25 | 62 | 6 | 33 |
-| air_quality_comprehensive | 1 | 5 | 0 | 0 | 0 |
-| bed_sensor | 1 | 5 | 3 | 0 | 1 |
-| boiler_switch_energy | 1 | 4 | 5 | 1 | 0 |
-| bulb_dimmable | 1 | 1 | 7 | 0 | 0 |
-| bulb_rgb | 1 | 13 | 0 | 0 | 0 |
-| bulb_rgbw | 1 | 11 | 0 | 0 | 0 |
-| bulb_tunable_white | 1 | 3 | 0 | 0 | 0 |
-| button_emergency_sos | 2 | 4 | 7 | 0 | 0 |
-| button_wireless | 1 | 0 | 0 | 6 | 0 |
-| button_wireless_1 | 1 | 0 | 1 | 0 | 0 |
-| button_wireless_2 | 4 | 3 | 11 | 0 | 0 |
-| button_wireless_3 | 2 | 2 | 4 | 0 | 0 |
-| ceiling_fan | 3 | 6 | 4 | 0 | 0 |
-| climate_sensor | 289 | 937 | 1982 | 438 | 90 |
-| climate_sensor_zt08 | 1 | 4 | 1 | 0 | 0 |
-| co_sensor | 4 | 13 | 7 | 0 | 0 |
-| contact_sensor | 2 | 2 | 0 | 0 | 0 |
-| contact_sensor_zigbee | 5 | 19 | 4 | 0 | 0 |
-| curtain_motor | 121 | 304 | 362 | 370 | 3 |
-| curtain_motor_shutter | 10 | 66 | 14 | 3 | 0 |
-| curtain_motor_tilt | 3 | 5 | 6 | 4 | 0 |
-| device_air_purifier_plug | 1 | 0 | 0 | 6 | 0 |
-| device_air_purifier_radiator | 1 | 4 | 19 | 12 | 0 |
-| device_radiator_valve | 68 | 123 | 780 | 296 | 64 |
-| device_radiator_valve_smart | 2 | 8 | 16 | 10 | 2 |
-| dimmer_1_gang_tuya | 8 | 0 | 64 | 0 | 0 |
-| dimmer_2_gang_tuya | 8 | 0 | 94 | 3 | 0 |
-| dimmer_wall_1gang | 2 | 15 | 33 | 6 | 0 |
-| din_rail_meter | 4 | 6 | 53 | 5 | 8 |
-| din_rail_switch | 2 | 6 | 0 | 8 | 0 |
-| doorwindowsensor_4 | 2 | 0 | 5 | 0 | 1 |
-| energy_meter_3phase | 20 | 20 | 225 | 38 | 26 |
-| energy_meter_din | 11 | 21 | 53 | 57 | 19 |
-| fan_controller | 4 | 14 | 6 | 0 | 0 |
-| fingerbot | 2 | 0 | 16 | 0 | 0 |
-| garage_door | 1 | 2 | 0 | 3 | 0 |
-| garage_door_opener | 6 | 6 | 4 | 8 | 0 |
-| gas_detector | 2 | 3 | 1 | 0 | 0 |
-| gas_sensor | 7 | 23 | 23 | 4 | 0 |
-| humidifier | 1 | 1 | 2 | 1 | 0 |
-| ir_blaster | 1 | 0 | 19 | 0 | 0 |
-| lcdtemphumidsensor | 6 | 44 | 24 | 3 | 0 |
-| lcdtemphumidsensor_3 | 9 | 0 | 100 | 4 | 16 |
-| led_controller_rgb | 4 | 10 | 15 | 9 | 0 |
-| light_bulb_rgb | 1 | 10 | 0 | 3 | 0 |
-| light_bulb_rgb_led | 1 | 10 | 0 | 3 | 0 |
-| light_sensor_outdoor | 1 | 0 | 3 | 0 | 1 |
-| motion_sensor | 8 | 17 | 21 | 2 | 4 |
-| motion_sensor_radar_mmwave | 4 | 10 | 0 | 0 | 0 |
-| motion_sensor_switch | 3 | 13 | 7 | 2 | 1 |
-| panel_switch_cover_tuya | 1 | 0 | 2 | 4 | 0 |
-| pir_sensor_2 | 2 | 0 | 11 | 34 | 1 |
-| plug_energy_monitor | 2 | 0 | 12 | 0 | 8 |
-| plug_smart | 1 | 3 | 3 | 3 | 0 |
-| pool_pump | 1 | 3 | 8 | 0 | 0 |
-| power_clamp_meter | 5 | 29 | 0 | 0 | 0 |
-| power_meter | 3 | 3 | 45 | 0 | 6 |
-| presence_radar_aoyan_ay204t | 1 | 0 | 12 | 0 | 2 |
-| presence_sensor_radar | 139 | 671 | 853 | 554 | 84 |
-| radiator_valve | 35 | 91 | 442 | 185 | 30 |
-| rain_sensor | 6 | 18 | 14 | 3 | 4 |
-| relay_board_4_channel | 1 | 0 | 12 | 0 | 0 |
-| sauna_thermostat_ae5503 | 1 | 3 | 1 | 0 | 0 |
-| sensor_climate_contact | 3 | 17 | 8 | 8 | 1 |
-| sensor_contact_zigbee | 3 | 3 | 2 | 1 | 0 |
-| sensor_gas_presence | 3 | 11 | 10 | 5 | 0 |
-| sensor_motion_presence | 6 | 11 | 23 | 1 | 0 |
-| siren | 8 | 20 | 36 | 10 | 1 |
-| siren_moes_mg_bjq002 | 1 | 0 | 5 | 1 | 0 |
-| siren_sirentemphumidsensor | 1 | 0 | 13 | 0 | 2 |
-| smart_breaker | 6 | 6 | 90 | 0 | 6 |
-| smart_irrigation_valve | 2 | 8 | 4 | 0 | 0 |
-| smart_lcd_thermostat | 1 | 1 | 11 | 1 | 1 |
-| smoke_sensor | 5 | 0 | 24 | 0 | 2 |
-| smoke_sensor2 | 10 | 0 | 48 | 2 | 7 |
-| smoke_sensor3 | 1 | 0 | 0 | 7 | 0 |
-| socket_power_strip_four_three | 1 | 0 | 3 | 0 | 0 |
-| soil_sensor | 37 | 304 | 30 | 6 | 0 |
-| sound_sensor_tuya | 1 | 0 | 10 | 0 | 0 |
-| switch_1gang | 33 | 110 | 279 | 27 | 26 |
-| switch_2gang | 11 | 40 | 56 | 52 | 8 |
-| switch_3gang | 12 | 46 | 47 | 39 | 2 |
-| switch_4_gang_metering | 4 | 12 | 24 | 0 | 3 |
-| switch_4gang | 9 | 0 | 120 | 84 | 0 |
-| switch_presence_tuya | 3 | 0 | 33 | 0 | 0 |
-| switch_temp_sensor | 2 | 0 | 1 | 2 | 0 |
-| switch_wall_5gang | 1 | 7 | 10 | 0 | 0 |
-| switch_wall_6gang | 11 | 66 | 50 | 0 | 0 |
-| switch_wall_6gang_metering | 1 | 6 | 15 | 0 | 4 |
-| switch_wall_8gang | 2 | 16 | 35 | 0 | 0 |
-| switch_wireless | 7 | 10 | 28 | 1 | 0 |
-| temphumidsensor | 2 | 4 | 0 | 0 | 0 |
-| temphumidsensor2 | 1 | 0 | 6 | 0 | 2 |
-| temphumidsensor3 | 1 | 0 | 6 | 0 | 2 |
-| thermostat_tuya_dp | 10 | 51 | 61 | 13 | 2 |
-| thermostatic_radiator_valve | 10 | 0 | 137 | 52 | 0 |
-| ultrasonic_heat_meter | 1 | 3 | 6 | 3 | 0 |
-| usb_outlet_advanced | 3 | 29 | 17 | 6 | 10 |
-| valve_dual_irrigation | 3 | 18 | 6 | 7 | 0 |
-| valve_irrigation | 15 | 11 | 158 | 16 | 0 |
-| valve_novato_zpv01 | 3 | 0 | 9 | 0 | 0 |
-| valve_single | 1 | 0 | 0 | 2 | 0 |
-| vibration_sensor | 5 | 12 | 17 | 5 | 0 |
-| wall_curtain_switch | 1 | 0 | 3 | 4 | 0 |
-| wall_dimmer_tuya | 43 | 0 | 379 | 11 | 0 |
-| wall_switch_1_gang_tuya | 1 | 0 | 8 | 8 | 0 |
-| wall_switch_1gang_1way | 3 | 3 | 18 | 0 | 0 |
-| wall_switch_3gang_1way | 3 | 8 | 47 | 0 | 0 |
-| wall_switch_4_gang_tuya | 4 | 0 | 41 | 0 | 0 |
-| wall_switch_6_gang_tuya | 6 | 0 | 48 | 0 | 0 |
-| wall_thermostat | 21 | 0 | 239 | 91 | 21 |
-| water_leak_sensor | 6 | 26 | 3 | 26 | 0 |
-| water_leak_sensor_tuya | 4 | 4 | 13 | 12 | 0 |
-| water_tank_monitor | 3 | 20 | 5 | 2 | 0 |
-| water_valve_smart | 12 | 16 | 76 | 125 | 2 |
+### Inferred family layer (P3018b, optional)
+
+Built by `scripts/data/build-inferred-dp-family.js` from EXACT catalogue rows only: for a DP id, the dominant (name, converter) among couples of the same productId + Homey driver (tier `pid`: ≥ 2 couples, ≥ 2/3 agreement) or of the same driver (tier `cat`: ≥ 3 couples, ≥ 3/4 agreement), else the same DP id with the same source name in any catalogue couple (tier `name`: ≥ 3 couples, ≥ 3/4 agreement). Runtime (master only, `lib/zigbee/InferredDpLayer.js`): used only when the couple has NO exact converter for the DP; every report is decoded and range-checked; the interpretation is remembered per device (store `inferred_dp_confirm`, ≤ 32 DPs) and only written to an existing measurement/alarm capability after 3 consistent in-range reports with no out-of-range one; one out-of-range report rejects it for that device for good. Never overrides an exact decoder, a driver-owned capability/DP, or a heuristic veto. Zero TX.
+
+| driver | couples | driver DPs | exact | generic | inferred candidates | master auto-apply |
+|---|---|---|---|---|---|---|
+| air_quality_co2 | 16 | 25 | 62 | 6 | 5 | 33 |
+| air_quality_comprehensive | 1 | 5 | 0 | 0 | 0 | 0 |
+| bed_sensor | 1 | 5 | 3 | 0 | 0 | 1 |
+| boiler_switch_energy | 1 | 4 | 5 | 1 | 0 | 0 |
+| bulb_dimmable | 1 | 1 | 7 | 0 | 0 | 0 |
+| bulb_rgb | 1 | 13 | 0 | 0 | 0 | 0 |
+| bulb_rgbw | 1 | 11 | 0 | 0 | 0 | 0 |
+| bulb_tunable_white | 1 | 3 | 0 | 0 | 0 | 0 |
+| button_emergency_sos | 2 | 4 | 7 | 0 | 0 | 0 |
+| button_wireless | 1 | 0 | 0 | 6 | 2 | 0 |
+| button_wireless_1 | 1 | 0 | 1 | 0 | 0 | 0 |
+| button_wireless_2 | 4 | 3 | 11 | 0 | 0 | 0 |
+| button_wireless_3 | 2 | 2 | 4 | 0 | 0 | 0 |
+| ceiling_fan | 3 | 6 | 4 | 0 | 0 | 0 |
+| climate_sensor | 289 | 937 | 1982 | 438 | 119 | 90 |
+| climate_sensor_zt08 | 1 | 4 | 1 | 0 | 0 | 0 |
+| co_sensor | 4 | 13 | 7 | 0 | 0 | 0 |
+| contact_sensor | 2 | 2 | 0 | 0 | 0 | 0 |
+| contact_sensor_zigbee | 5 | 19 | 4 | 0 | 0 | 0 |
+| curtain_motor | 121 | 304 | 362 | 370 | 74 | 3 |
+| curtain_motor_shutter | 10 | 66 | 14 | 3 | 0 | 0 |
+| curtain_motor_tilt | 3 | 5 | 6 | 4 | 0 | 0 |
+| device_air_purifier_plug | 1 | 0 | 0 | 6 | 0 | 0 |
+| device_air_purifier_radiator | 1 | 4 | 19 | 12 | 2 | 0 |
+| device_radiator_valve | 68 | 123 | 780 | 296 | 55 | 64 |
+| device_radiator_valve_smart | 2 | 8 | 16 | 10 | 0 | 2 |
+| dimmer_1_gang_tuya | 8 | 0 | 64 | 0 | 0 | 0 |
+| dimmer_2_gang_tuya | 8 | 0 | 94 | 3 | 2 | 0 |
+| dimmer_wall_1gang | 2 | 15 | 33 | 6 | 0 | 0 |
+| din_rail_meter | 4 | 6 | 53 | 5 | 3 | 8 |
+| din_rail_switch | 2 | 6 | 0 | 8 | 0 | 0 |
+| doorwindowsensor_4 | 2 | 0 | 5 | 0 | 0 | 1 |
+| energy_meter_3phase | 20 | 20 | 225 | 38 | 26 | 26 |
+| energy_meter_din | 11 | 21 | 53 | 57 | 10 | 19 |
+| fan_controller | 4 | 14 | 6 | 0 | 0 | 0 |
+| fingerbot | 2 | 0 | 16 | 0 | 0 | 0 |
+| garage_door | 1 | 2 | 0 | 3 | 0 | 0 |
+| garage_door_opener | 6 | 6 | 4 | 8 | 0 | 0 |
+| gas_detector | 2 | 3 | 1 | 0 | 0 | 0 |
+| gas_sensor | 7 | 23 | 23 | 4 | 3 | 0 |
+| humidifier | 1 | 1 | 2 | 1 | 0 | 0 |
+| ir_blaster | 1 | 0 | 19 | 0 | 0 | 0 |
+| lcdtemphumidsensor | 6 | 44 | 24 | 3 | 0 | 0 |
+| lcdtemphumidsensor_3 | 9 | 0 | 100 | 4 | 2 | 16 |
+| led_controller_rgb | 4 | 10 | 15 | 9 | 0 | 0 |
+| light_bulb_rgb | 1 | 10 | 0 | 3 | 0 | 0 |
+| light_bulb_rgb_led | 1 | 10 | 0 | 3 | 0 | 0 |
+| light_sensor_outdoor | 1 | 0 | 3 | 0 | 0 | 1 |
+| motion_sensor | 8 | 17 | 21 | 2 | 0 | 4 |
+| motion_sensor_radar_mmwave | 4 | 10 | 0 | 0 | 0 | 0 |
+| motion_sensor_switch | 3 | 13 | 7 | 2 | 0 | 1 |
+| panel_switch_cover_tuya | 1 | 0 | 2 | 4 | 0 | 0 |
+| pir_sensor_2 | 2 | 0 | 11 | 34 | 0 | 1 |
+| plug_energy_monitor | 2 | 0 | 12 | 0 | 0 | 8 |
+| plug_smart | 1 | 3 | 3 | 3 | 1 | 0 |
+| pool_pump | 1 | 3 | 8 | 0 | 0 | 0 |
+| power_clamp_meter | 5 | 29 | 0 | 0 | 0 | 0 |
+| power_meter | 3 | 3 | 45 | 0 | 0 | 6 |
+| presence_radar_aoyan_ay204t | 1 | 0 | 12 | 0 | 0 | 2 |
+| presence_sensor_radar | 139 | 671 | 853 | 554 | 166 | 84 |
+| radiator_valve | 35 | 91 | 442 | 185 | 117 | 30 |
+| rain_sensor | 6 | 18 | 14 | 3 | 2 | 4 |
+| relay_board_4_channel | 1 | 0 | 12 | 0 | 0 | 0 |
+| sauna_thermostat_ae5503 | 1 | 3 | 1 | 0 | 0 | 0 |
+| sensor_climate_contact | 3 | 17 | 8 | 8 | 0 | 1 |
+| sensor_contact_zigbee | 3 | 3 | 2 | 1 | 0 | 0 |
+| sensor_gas_presence | 3 | 11 | 10 | 5 | 0 | 0 |
+| sensor_motion_presence | 6 | 11 | 23 | 1 | 1 | 0 |
+| siren | 8 | 20 | 36 | 10 | 4 | 1 |
+| siren_moes_mg_bjq002 | 1 | 0 | 5 | 1 | 1 | 0 |
+| siren_sirentemphumidsensor | 1 | 0 | 13 | 0 | 0 | 2 |
+| smart_breaker | 6 | 6 | 90 | 0 | 0 | 6 |
+| smart_irrigation_valve | 2 | 8 | 4 | 0 | 0 | 0 |
+| smart_lcd_thermostat | 1 | 1 | 11 | 1 | 0 | 1 |
+| smoke_sensor | 5 | 0 | 24 | 0 | 0 | 2 |
+| smoke_sensor2 | 10 | 0 | 48 | 2 | 2 | 7 |
+| smoke_sensor3 | 1 | 0 | 0 | 7 | 0 | 0 |
+| socket_power_strip_four_three | 1 | 0 | 3 | 0 | 0 | 0 |
+| soil_sensor | 37 | 304 | 30 | 6 | 0 | 0 |
+| sound_sensor_tuya | 1 | 0 | 10 | 0 | 0 | 0 |
+| switch_1gang | 33 | 110 | 279 | 27 | 11 | 26 |
+| switch_2gang | 11 | 40 | 56 | 52 | 8 | 8 |
+| switch_3gang | 12 | 46 | 47 | 39 | 0 | 2 |
+| switch_4_gang_metering | 4 | 12 | 24 | 0 | 0 | 3 |
+| switch_4gang | 9 | 0 | 120 | 84 | 0 | 0 |
+| switch_presence_tuya | 3 | 0 | 33 | 0 | 0 | 0 |
+| switch_temp_sensor | 2 | 0 | 1 | 2 | 2 | 0 |
+| switch_wall_5gang | 1 | 7 | 10 | 0 | 0 | 0 |
+| switch_wall_6gang | 11 | 66 | 50 | 0 | 0 | 0 |
+| switch_wall_6gang_metering | 1 | 6 | 15 | 0 | 0 | 4 |
+| switch_wall_8gang | 2 | 16 | 35 | 0 | 0 | 0 |
+| switch_wireless | 7 | 10 | 28 | 1 | 0 | 0 |
+| temphumidsensor | 2 | 4 | 0 | 0 | 0 | 0 |
+| temphumidsensor2 | 1 | 0 | 6 | 0 | 0 | 2 |
+| temphumidsensor3 | 1 | 0 | 6 | 0 | 0 | 2 |
+| thermostat_tuya_dp | 10 | 51 | 61 | 13 | 4 | 2 |
+| thermostatic_radiator_valve | 10 | 0 | 137 | 52 | 2 | 0 |
+| ultrasonic_heat_meter | 1 | 3 | 6 | 3 | 0 | 0 |
+| usb_outlet_advanced | 3 | 29 | 17 | 6 | 0 | 10 |
+| valve_dual_irrigation | 3 | 18 | 6 | 7 | 3 | 0 |
+| valve_irrigation | 15 | 11 | 158 | 16 | 5 | 0 |
+| valve_novato_zpv01 | 3 | 0 | 9 | 0 | 0 | 0 |
+| valve_single | 1 | 0 | 0 | 2 | 1 | 0 |
+| vibration_sensor | 5 | 12 | 17 | 5 | 5 | 0 |
+| wall_curtain_switch | 1 | 0 | 3 | 4 | 1 | 0 |
+| wall_dimmer_tuya | 43 | 0 | 379 | 11 | 4 | 0 |
+| wall_switch_1_gang_tuya | 1 | 0 | 8 | 8 | 0 | 0 |
+| wall_switch_1gang_1way | 3 | 3 | 18 | 0 | 0 | 0 |
+| wall_switch_3gang_1way | 3 | 8 | 47 | 0 | 0 | 0 |
+| wall_switch_4_gang_tuya | 4 | 0 | 41 | 0 | 0 | 0 |
+| wall_switch_6_gang_tuya | 6 | 0 | 48 | 0 | 0 | 0 |
+| wall_thermostat | 21 | 0 | 239 | 91 | 17 | 21 |
+| water_leak_sensor | 6 | 26 | 3 | 26 | 0 | 0 |
+| water_leak_sensor_tuya | 4 | 4 | 13 | 12 | 6 | 0 |
+| water_tank_monitor | 3 | 20 | 5 | 2 | 0 | 0 |
+| water_valve_smart | 12 | 16 | 76 | 125 | 17 | 2 |
 
 ### Generic-fallback DPs per couple (gaps: no exact converter in any source)
 
 Reason for each: the only sources are a name without converter (Z2M custom / unknown semantics, ZHA v1 ZCL-mapped, deCONZ script) or a ZHA quirk-file DP number (`:zha`). They are decoded as typed generic values until a source documents the scaling.
 
-| driver | couple | generic DPs |
-|---|---|---|
-| switch_1gang | `_tyzb01_qeqvmvti` TS0011 | 17:measure_current 18:measure_power 19:measure_voltage 20:meter_power |
-| water_leak_sensor | `_tz3000_3dfewsk1` TS0207 | 7:muffling 102:alarm_time 103:alarm_ring 104:alarm_volume |
-| lcdtemphumidsensor | `_tz3000_bjawzodf` TS0201 | 3:measure_battery |
-| water_leak_sensor | `_tz3000_k4ej3ww2` TS0207 | 3:measure_battery 5:alarm_tamper 6:battery_voltage 7:muffling 19:alarm_water 102:alarm_time 103:alarm_ring 104:alarm_volume |
-| din_rail_switch | `_tz3000_qeuvnohg` TS011F | 18:measure_power 19:measure_voltage 20:measure_current 101:meter_power |
-| water_leak_sensor | `_tz3000_upgcbody` TS0207 | 3:measure_battery 5:alarm_tamper 6:battery_voltage 7:muffling 19:alarm_water 102:alarm_time 103:alarm_ring 104:alarm_volume |
-| switch_1gang | `_tz3000_v5498kdm` TS0001 | 17:measure_current 18:measure_power 19:measure_voltage 20:meter_power |
-| siren | `_tz3000_vdfwjopk` TS0219 | 1:onoff 4:alarm_tamper 5:volume_set 6:dp_6 7:dp_7 14:dp_14 15:measure_battery 16:dp_16 21:dp_21 104:onoff |
-| pir_sensor_2 | `_tz3040_bb6xaihh` TS0202 | 1:zha 2:zha 3:zha 4:zha 6:zha 9:zha 10:zha 11:zha 12:zha 13:zha 15:zha 16:zha 19:zha 101:zha 102:zha 103:zha 104:zha 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 114:zha 115:zha 116:zha 117:zha 118:zha 121:zha 122:zha 123:zha |
-| light_bulb_rgb | `_tz3210_0zabbfax` TS0503B | 3:dim 5:dp_5 26:dp_26 |
-| wall_dimmer_tuya | `_tz3210_5rta89nj` TS0601 | 102:state 104:position |
-| light_bulb_rgb_led | `_tz3210_iystcadi` TS0505B | 3:dim 5:dp_5 26:dp_26 |
-| lcdtemphumidsensor | `_tz3210_qkj7rujp` TS0201 | 3:measure_battery |
-| curtain_motor | `_tz3210_rundhkxp` TS030F | 2:position |
-| curtain_motor | `_tz3210_sxtfesc6` TS030F | 2:position |
-| rain_sensor | `_tz3210_tgvtvdoc` TS0207 | 102:measure_luminance 104:measure_battery 106:measure_humidity |
-| smoke_sensor3 | `_tz3210_up3pngle` TS0205 | 1:zha 4:zha 14:zha 15:zha 16:zha 101:zha 102:zha |
-| din_rail_switch | `_tz3210_vbfp8eyv` TS011F | 18:measure_power 19:measure_voltage 20:measure_current 101:meter_power |
-| motion_sensor | `_tz3210_wuhzzfqg` TS0202 | 107:temperature 108:humidity |
-| switch_temp_sensor | `_tz3218_7fiyo3kv` TS000F | 102:temperature |
-| switch_1gang | `_tz3218_hdc8bbha` TS000F | 17:measure_current 18:measure_power 19:measure_voltage 20:meter_power |
-| switch_temp_sensor | `_tz3218_ya5d6wth` TS000F | 102:temperature |
-| climate_sensor | `_tze200_0dvm9mva` TS0601 | 3:running_state |
-| device_radiator_valve | `_tze200_0hg58wyk` TS0601 | 101:schedule_monday 102:schedule_tuesday 103:schedule_wednesday 104:schedule_thursday 105:schedule_friday 106:schedule_saturday 107:schedule_sunday |
-| climate_sensor | `_tze200_0u3bj3rc` TS0601 | 105:triggerdistance |
-| curtain_motor | `_tze200_127x7wnl` TS0601 | 1:windowcoverings_state |
-| curtain_motor | `_tze200_1fuxihti` TS0601 | 1:windowcoverings_state 2:windowcoverings_set 4:mode 5:reverse 6:border 9:windowcoverings_tilt_set 12:backlight 16:border_limits 101:open_time 102:close_time |
-| water_valve_smart | `_tze200_1n2zev06` TS0601 | 1:onoff 5:meter_water 7:measure_battery |
-| curtain_motor | `_tze200_1vxgqfba` TS0601 | 5:motor_direction 11:zha 16:zha |
-| switch_3gang | `_tze200_2imwyigp` TS0601 | 17:measure_current 18:measure_power 19:measure_voltage 20:meter_power |
-| curtain_motor | `_tze200_2odrmqwq` TS0601 | 11:zha 16:zha |
-| curtain_motor | `_tze200_2vfxweng` TS0601 | 2:position |
-| valve_irrigation | `_tze200_2wg5qrjy` TS0601 | 5:energy |
-| air_quality_co2 | `_tze200_3ejwxpmu` TS0601 | 18:temperature |
-| curtain_motor | `_tze200_3i3exuay` TS0601 | 11:zha 16:zha |
-| climate_sensor | `_tze200_3yp57tby` TS0601 | 3:running_state |
-| climate_sensor | `_tze200_4aijvczq` TS0601 | 28:schedule_monday 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 32:schedule_friday 33:schedule_saturday 34:schedule_sunday |
-| radiator_valve | `_tze200_4hbx5cvx` TS0601 | 123:energy |
-| device_radiator_valve | `_tze200_4utwoz2` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday |
-| device_radiator_valve | `_tze200_4utwozi2` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday |
-| curtain_motor | `_tze200_5sbebbzs` TS0601 | 11:zha 16:zha |
-| water_valve_smart | `_tze200_5uodvhgc` TS0601 | 1:onoff 5:meter_water 7:measure_battery |
-| curtain_motor | `_tze200_68nvbi09` TS0601 | 1:windowcoverings_state 2:windowcoverings_set 4:mode 5:reverse 6:border 9:windowcoverings_tilt_set 12:backlight 16:border_limits 20:click_control 101:open_time 102:close_time |
-| curtain_motor | `_tze200_68nvbio9` TS0601 | 1:windowcoverings_state 2:windowcoverings_set 4:mode 5:reverse 6:border 9:windowcoverings_tilt_set 11:zha 12:backlight 16:border_limits 20:click_control 101:open_time 102:close_time |
-| device_radiator_valve | `_tze200_6rdj8dzm` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday |
-| device_air_purifier_plug | `_tze200_7bztmfm1` TS0601 | 2:zha 18:zha 19:zha 20:zha 21:zha 22:zha |
-| curtain_motor | `_tze200_7eue9vhc` TS0601 | 1:state 2:position 5:motor_direction 11:zha 16:zha 101:program |
-| curtain_motor | `_tze200_7upwjcca` TS0601 | 1:windowcoverings_state 2:windowcoverings_set 4:mode 5:reverse 6:border 9:windowcoverings_tilt_set 12:backlight 16:border_limits 101:open_time 102:close_time |
-| device_radiator_valve | `_tze200_7yoranx2` TS0601 | 2:preset 10:frost_protection 46:holiday_start_stop 106:schedule 107:system_mode 108:schedule_monday 109:schedule_wednesday 110:schedule_friday 111:schedule_sunday 112:schedule_tuesday 113:schedule_thursday 114:schedule_saturday |
-| valve_irrigation | `_tze200_81isopgh` TS0601 | 5:energy |
-| climate_sensor | `_tze200_9dhenr94` TS0601 | 3:action |
-| climate_sensor | `_tze200_9m4kmbfu` TS0601 | 3:running_state |
-| device_radiator_valve | `_tze200_9mjy74mp` TS0601 | 1:system_mode 17:schedule_monday 18:schedule_tuesday 19:schedule_wednesday 20:schedule_thursday 21:schedule_friday 23:schedule_sunday |
-| curtain_motor | `_tze200_9p5xmj5r` TS0601 | 1:windowcoverings_state 2:windowcoverings_set 4:mode 5:reverse 6:border 9:windowcoverings_tilt_set 11:zha 12:backlight 16:border_limits 20:click_control 101:open_time 102:close_time |
-| curtain_motor_shutter | `_tze200_9vpe3fl1` TS0601 | 11:zha 16:zha |
-| thermostatic_radiator_valve | `_tze200_9xfjixap` TS0601 | 28:schedule_monday 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 32:schedule_friday 33:schedule_saturday 34:schedule_sunday |
-| device_radiator_valve | `_tze200_a4bpgplm` TS0601 | 1:system_mode 2:thermostat_mode 4:target_temperature 5:measure_temperature 7:child_lock 17:schedule_monday 18:schedule_tuesday 19:schedule_wednesday 20:schedule_thursday 21:schedule_friday 23:schedule_sunday 35:alarm_battery 39:dp_39 |
-| water_valve_smart | `_tze200_a7sghmms` TS0601 | 1:zha 2:zha 3:zha 5:zha 6:zha 7:zha 10:zha 11:zha 12:zha 13:zha 14:zha 15:zha 19:zha 21:zha 22:zha 25:zha 26:zha 37:zha 38:zha 42:zha 47:zha 59:zha 101:zha 103:zha 104:zha 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 114:zha 115:zha |
-| curtain_motor | `_tze200_a8z0g46u` TS0601 | 2:state |
-| switch_1gang | `_tze200_abatw3kj` TS0601 | 9:faults |
-| presence_sensor_radar | `_tze200_ar0slwnd` TS0601 | 3:zha 6:errorcode 10:zha 11:zha 12:zha 16:zha 19:zha 103:zha 104:illuminance 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 114:zha 115:zha 116:zha 117:zha 118:zha 121:zha 122:zha 123:zha |
-| radiator_valve | `_tze200_awnadkan` TS0601 | 109:schedule_monday 110:schedule_tuesday 111:schedule_wednesday 112:schedule_thursday 113:schedule_friday 114:schedule_saturday 115:schedule_sunday |
-| curtain_motor | `_tze200_ax8a8ahx` TS0601 | 1:state 2:position 101:motor_direction 107:factory_reset |
-| sensor_climate_contact | `_tze200_aycxwiau` TS0601 | 11:errorcode |
-| radiator_valve | `_tze200_azqp6ssj` TS0601 | 3:running_state 101:system_mode |
-| curtain_motor | `_tze200_ba69l9ol` TS0601 | 1:state 2:position 11:zha 16:cover_limit 20:click_control |
-| curtain_motor | `_tze200_bjzrowv2` TS0601 | 1:state 2:position 5:motor_direction |
-| energy_meter_din | `_tze200_bkkmqmyo` TS0601 | 2:zha 15:zha 104:zha 106:zha 107:zha 108:zha 112:zha 113:zha 114:zha 115:zha 116:zha 117:zha 118:zha 119:zha 120:zha |
-| curtain_motor | `_tze200_bv1jcqqu` TS0601 | 1:state 2:position 5:motor_direction 11:zha 16:zha 101:program |
-| device_radiator_valve | `_tze200_bvrlmajk` TS0601 | 1:system_mode 17:schedule_monday 18:schedule_tuesday 19:schedule_wednesday 20:schedule_thursday 21:schedule_friday 23:schedule_sunday |
-| device_radiator_valve_smart | `_tze200_bvu2wnxz` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday |
-| energy_meter_din | `_tze200_byzdayie` TS0601 | 2:zha 15:zha 101:zha 103:zha 104:zha 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 113:zha 114:zha 115:zha 116:zha 117:zha 118:zha 119:zha 120:zha |
-| smart_lcd_thermostat | `_tze200_c88teujp` TS0601 | 101:system_mode |
-| curtain_motor | `_tze200_cf1sl3tj` TS0601 | 1:windowcoverings_state 2:windowcoverings_set 4:mode 5:reverse 6:border 9:windowcoverings_tilt_set 11:zha 12:backlight 16:border_limits 20:click_control 101:open_time 102:close_time |
-| curtain_motor | `_tze200_clm4gdw4` TS0601 | 2:position |
-| presence_sensor_radar | `_tze200_clrdrnya` TS0601 | 10:zha 11:zha 12:zha 16:zha 19:zha 117:zha 118:zha 121:zha 122:zha 123:zha |
-| curtain_motor | `_tze200_cowvfni3` TS0601 | 11:zha 16:zha |
-| curtain_motor | `_tze200_cpbo62rn` TS0601 | 1:state 2:position 101:motor_direction 107:factory_reset |
-| sensor_climate_contact | `_tze200_cxakecfo` TS0601 | 28:schedule_monday 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 32:schedule_friday 33:schedule_saturday 34:schedule_sunday |
-| valve_irrigation | `_tze200_d0ypnbvn` TS0601 | 1:state 26:fault |
-| device_radiator_valve | `_tze200_d3z1ukqw` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday |
-| climate_sensor | `_tze200_d9mzkhoq` TS0601 | 10:ph |
-| curtain_motor | `_tze200_dng9fn0k` TS0601 | 11:zha 16:zha |
-| curtain_motor | `_tze200_dq8bu0pt` TS0601 | 1:action 2:action 4:action |
-| device_radiator_valve | `_tze200_dv8abrrz` TS0601 | 1:system_mode 17:schedule_monday 18:schedule_tuesday 19:schedule_wednesday 20:schedule_thursday 21:schedule_friday 23:schedule_sunday |
-| climate_sensor | `_tze200_dwcarsat` TS0601 | 20:formaldehyd 21:voc |
-| wall_thermostat | `_tze200_dzuqwsyg` TS0601 | 1:state 2:system_mode 4:preset 27:local_temperature_calibration 101:schedule 202:schedule_text |
-| dimmer_2_gang_tuya | `_tze200_e3oitdyu` TS0601 | 2:bri 8:bri |
-| radiator_valve | `_tze200_e5hpkc6d` TS0601 | 123:energy |
-| device_radiator_valve | `_tze200_e9ba97vf` TS0601 | 2:preset 10:frost_protection 46:holiday_start_stop 106:schedule 107:system_mode 108:schedule_monday 109:schedule_wednesday 110:schedule_friday 111:schedule_sunday 112:schedule_tuesday 113:schedule_thursday 114:schedule_saturday |
-| climate_sensor | `_tze200_edl8pz1k` TS0601 | 105:schedule_saturday 106:schedule_friday 107:schedule_thursday 108:schedule_wednesday 109:schedule_tuesday 110:schedule_monday |
-| curtain_motor | `_tze200_eevqq1uv` TS0601 | 1:state 2:position 16:cover_limit 20:click_control |
-| climate_sensor | `_tze200_eo6xhfbo` TS0601 | 28:schedule_monday 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 32:schedule_friday 33:schedule_saturday 34:schedule_sunday |
-| curtain_motor | `_tze200_eqpaxqdv` TS0601 | 2:position 16:cover_limit |
-| curtain_motor_tilt | `_tze200_ergbiejo` TS0601 | 11:zha 16:zha |
-| energy_meter_din | `_tze200_ewxhg6o9` TS0601 | 2:zha 15:zha 101:zha 103:zha 104:zha 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 113:zha 114:zha 115:zha 116:zha 117:zha 118:zha 119:zha 120:zha |
-| climate_sensor | `_tze200_exfrnlow` TS0601 | 3:running_state |
-| curtain_motor | `_tze200_fctwhugx` TS0601 | 11:zha 16:zha |
-| curtain_motor | `_tze200_fodv6bkr` TS0601 | 1:state 2:position 5:motor_direction 12:motor_fault 16:cover_limit 20:click_control |
-| radiator_valve | `_tze200_fsow0qsk` TS0601 | 2:preset 10:frost_protection 46:holiday_start_stop 106:schedule 107:system_mode 108:schedule_monday 109:schedule_wednesday 110:schedule_friday 111:schedule_sunday 112:schedule_tuesday 113:schedule_thursday 114:schedule_saturday |
-| curtain_motor | `_tze200_fzo2pocs` TS0601 | 11:zha 16:zha |
-| curtain_motor | `_tze200_g5xqosu7` TS0601 | 1:state 2:position |
-| curtain_motor | `_tze200_gaj531w3` TS0601 | 11:zha 16:zha |
-| sensor_gas_presence | `_tze200_ggev5fsl` TS0601 | 6:zha 7:zha 10:zha 12:zha |
-| curtain_motor | `_tze200_gnw1rril` TS0601 | 2:position |
-| thermostatic_radiator_valve | `_tze200_gtouvmvl` TS0601 | 109:schedule_monday 110:schedule_tuesday 111:schedule_wednesday 112:schedule_thursday 113:schedule_friday 114:schedule_saturday 115:schedule_sunday |
-| curtain_motor | `_tze200_gubdgai2` TS0601 | 1:state 2:position 5:motor_direction 11:zha 16:cover_limit |
-| climate_sensor | `_tze200_h4cgnbzg` TS0601 | 3:running_state |
-| climate_sensor | `_tze200_hmabvy81` TS0601 | 3:action |
-| curtain_motor | `_tze200_hojryzzd` TS0601 | 11:zha 16:zha |
-| presence_sensor_radar | `_tze200_holel4dk` TS0601 | 3:zha 6:zha 10:zha 11:zha 12:zha 16:zha 19:zha 103:zha 104:zha 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 114:zha 115:zha 116:zha 117:zha 118:zha 121:zha 122:zha 123:zha |
-| curtain_motor | `_tze200_hsgrhjpf` TS0601 | 11:zha 16:zha |
-| thermostat_tuya_dp | `_tze200_hue3yfsn` TS0601 | 46:holiday_start_stop 106:schedule 107:system_mode 108:schedule_monday 109:schedule_wednesday 110:schedule_friday 111:schedule_sunday 112:schedule_tuesday 113:schedule_thursday 114:schedule_saturday |
-| radiator_valve | `_tze200_husqqvux` TS0601 | 2:preset 10:frost_protection 46:holiday_start_stop 106:schedule 107:system_mode 108:schedule_monday 109:schedule_wednesday 110:schedule_friday 111:schedule_sunday 112:schedule_tuesday 113:schedule_thursday 114:schedule_saturday |
-| device_radiator_valve_smart | `_tze200_hvaxb2tc` TS0601 | 29:schedule_thursday 30:schedule_friday 31:schedule_saturday 33:schedule_monday 34:schedule_tuesday |
-| presence_sensor_radar | `_tze200_hyhl5y36` TS0601 | 103:ai_self_learning 104:factory_reset 105:fast_setting 116:sensor_mode 125:home_environment |
-| thermostat_tuya_dp | `_tze200_i48qyn9s` TS0601 | 34:battery 45:fault_code 103:away_setting |
-| curtain_motor | `_tze200_icka1clh` TS0601 | 1:windowcoverings_state 2:position 5:motor_direction 11:zha 16:zha 103:set_upper_limit |
-| presence_sensor_radar | `_tze200_ikvncluo` TS0601 | 3:zha 6:zha 10:zha 11:zha 12:zha 16:zha 19:zha 103:zha 104:zha 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 114:zha 115:zha 116:zha 117:zha 118:zha 121:zha 122:zha 123:zha |
-| curtain_motor_tilt | `_tze200_iossyxra` TS0601 | 11:zha 16:zha |
-| climate_sensor | `_tze200_ivdc0kwl` TS0601 | 28:schedule_monday 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 32:schedule_friday 33:schedule_saturday 34:schedule_sunday |
-| climate_sensor | `_tze200_iwn0gpzz` TS0601 | 18:data_report_duration |
-| device_radiator_valve | `_tze200_jkfbph7l` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday |
-| ultrasonic_heat_meter | `_tze200_jt50ea5d` TS0601 | 3:daily_water_consumption 5:fault 19:instantaneous_flow_rate |
-| water_leak_sensor | `_tze200_jthf7vb6` TS0601 | 7:muffling 102:alarm_time 103:alarm_ring 104:alarm_volume |
-| presence_sensor_radar | `_tze200_jva8ink8` TS0601 | 3:zha 6:zha 10:zha 11:zha 12:zha 16:zha 19:zha 103:zha 104:zha 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 114:zha 115:zha 116:zha 117:zha 118:zha 121:zha 122:zha 123:zha |
-| radiator_valve | `_tze200_k1tumq4t` TS0601 | 2:preset 10:frost_protection 46:holiday_start_stop 106:schedule 107:system_mode 108:schedule_monday 109:schedule_wednesday 110:schedule_friday 111:schedule_sunday 112:schedule_tuesday 113:schedule_thursday 114:schedule_saturday |
-| presence_sensor_radar | `_tze200_ka8l86iu` TS0601 | 106:illuminance 108:indicator 110:battery |
-| pir_sensor_2 | `_tze200_kb5noeto` TS0601 | 6:errorcode |
-| radiator_valve | `_tze200_kds0pmmv` TS0601 | 2:preset 10:frost_protection 46:holiday_start_stop 106:schedule 107:system_mode 108:schedule_monday 109:schedule_wednesday 110:schedule_friday 111:schedule_sunday 112:schedule_tuesday 113:schedule_thursday 114:schedule_saturday |
-| climate_sensor | `_tze200_khah2lkr` TS0601 | 102:running_state 128:mode_state |
-| climate_sensor | `_tze200_kvpwq8z7` TS0601 | 6:zha 7:zha 10:zha 12:zha |
-| device_radiator_valve | `_tze200_lhzapfg9` TS0601 | 2:preset 10:frost_protection 46:holiday_start_stop 106:schedule 107:system_mode 108:schedule_monday 109:schedule_wednesday 110:schedule_friday 111:schedule_sunday 112:schedule_tuesday 113:schedule_thursday 114:schedule_saturday |
-| curtain_motor | `_tze200_libht6ua` TS0601 | 1:state 2:position 101:motor_direction 107:factory_reset |
-| radiator_valve | `_tze200_lllliz3p` TS0601 | 2:preset 10:frost_protection 46:holiday_start_stop 106:schedule 107:system_mode 108:schedule_monday 109:schedule_wednesday 110:schedule_friday 111:schedule_sunday 112:schedule_tuesday 113:schedule_thursday 114:schedule_saturday |
-| radiator_valve | `_tze200_lnbfnyxd` TS0601 | 2:preset 10:frost_protection 46:holiday_start_stop 106:schedule 107:system_mode 108:schedule_monday 109:schedule_wednesday 110:schedule_friday 111:schedule_sunday 112:schedule_tuesday 113:schedule_thursday 114:schedule_saturday |
-| energy_meter_3phase | `_tze200_loejka0i` TS0601 | 15:power_factor 16:energy_reset 17:alarm_set_1 18:alarm_set_2 104:power_a 107:power_b 110:power_c 111:power 118:power_factor_a 119:power_factor_b 120:power_factor_c |
-| presence_sensor_radar | `_tze200_lyetpprm` TS0601 | 3:zha 6:zha 10:zha 11:zha 12:zha 16:zha 19:zha 103:zha 104:zha 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 114:zha 115:zha 116:zha 117:zha 118:zha 121:zha 122:zha 123:zha |
-| curtain_motor | `_tze200_m6lwazh9` TS0601 | 1:windowcoverings_state 2:windowcoverings_set 4:mode 5:reverse 6:border 9:windowcoverings_tilt_set 12:backlight 16:border_limits 101:open_time 102:close_time |
-| air_quality_co2 | `_tze200_mja3fuja` TS0601 | 21:measure_voc 22:measure_formaldehyde |
-| curtain_motor | `_tze200_mlglxwp3` TS0601 | 1:state 2:position 5:motor_direction |
-| climate_sensor | `_tze200_moycceze` TS0601 | 26:action 27:action 28:action 29:action |
-| presence_sensor_radar | `_tze200_mp902om5` TS0601 | 10:zha 11:zha 12:zha 16:zha 19:zha 117:zha 118:zha 121:zha 122:zha 123:zha |
-| presence_sensor_radar | `_tze200_mrf6vtua` TS0601 | 3:zha 6:errorcode 10:zha 11:zha 12:zha 16:zha 19:zha 103:zha 104:illuminance 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 114:zha 115:zha 116:zha 117:zha 118:zha 121:zha 122:zha 123:zha |
-| radiator_valve | `_tze200_mudxchsu` TS0601 | 2:preset 10:frost_protection 46:holiday_start_stop 106:schedule 107:system_mode 108:schedule_monday 109:schedule_wednesday 110:schedule_friday 111:schedule_sunday 112:schedule_tuesday 113:schedule_thursday 114:schedule_saturday |
-| climate_sensor | `_tze200_mx6u6l4y` TS0601 | 105:triggerdistance |
-| climate_sensor | `_tze200_n9clpsht` TS0601 | 26:action 27:action 28:action 29:action |
-| water_valve_smart | `_tze200_nbqnmkee` TS0601 | 1:onoff 4:fault 5:meter_water 7:measure_battery 10:weather_delay 101:water_leakage_state 110:power_off_state |
-| curtain_motor | `_tze200_nhyj64w2` TS0601 | 11:zha 16:zha |
-| garage_door_opener | `_tze200_nklqjk62` TS0601 | 2:dp_2 4:dp_4 5:dp_5 11:dp_11 |
-| curtain_motor | `_tze200_nogaemzt` TS0601 | 11:zha 16:zha |
-| curtain_motor | `_tze200_nueqqe6k` TS0601 | 11:zha 16:zha |
-| climate_sensor | `_tze200_nvodulvi` TS0601 | 102:action 103:action 104:action 108:action 109:action 110:action 111:action |
-| curtain_motor | `_tze200_nw1r9hp6` TS0601 | 1:state 2:position 11:zha 16:cover_limit 20:click_control |
-| climate_sensor | `_tze200_ny94onlb` TS0601 | 18:data_report_duration |
-| climate_sensor | `_tze200_nyvavzbj` TS0601 | 26:action 27:action 28:action 29:action |
-| air_quality_co2 | `_tze200_ogkdpgy2` TS0601 | 18:temperature |
-| device_radiator_valve | `_tze200_ow09xlxm` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday |
-| curtain_motor | `_tze200_p2qzzazi` TS0601 | 1:state 2:position 5:motor_direction |
-| radiator_valve | `_tze200_p3dbf6qs` TS0601 | 29:schedule_thursday 30:schedule_friday 31:schedule_saturday 33:schedule_monday 34:schedule_tuesday |
-| climate_sensor | `_tze200_pbo8cj0z` TS0601 | 28:schedule_monday 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 32:schedule_friday 33:schedule_saturday 34:schedule_sunday |
-| curtain_motor | `_tze200_pk0sfzvr` TS0601 | 102:position 103:position |
-| curtain_motor | `_tze200_pw7mji0l` TS0601 | 1:state 2:position 11:zha 16:cover_limit 20:click_control |
-| device_radiator_valve | `_tze200_py4cm3he` TS0601 | 2:preset 10:frost_protection 46:holiday_start_stop 106:schedule 107:system_mode 108:schedule_monday 109:schedule_wednesday 110:schedule_friday 111:schedule_sunday 112:schedule_tuesday 113:schedule_thursday 114:schedule_saturday |
-| curtain_motor | `_tze200_qhlxve78` TS0601 | 18:data_report_duration |
-| lcdtemphumidsensor_3 | `_tze200_qyflbnbj` TS0601 | 1:temperature |
-| wall_dimmer_tuya | `_tze200_qzaing2g` TS0601 | 143:min_brightness 144:max_brightness |
-| climate_sensor | `_tze200_r5ksy7qo` TS0601 | 28:schedule_monday 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 32:schedule_friday 33:schedule_saturday 34:schedule_sunday |
-| curtain_motor | `_tze200_rddyvrci` TS0601 | 11:zha 16:zha |
-| panel_switch_cover_tuya | `_tze200_rgeapp2c` TS0601 | 1:state_c1 2:position_c1 4:state_c2 5:position_c2 |
-| device_radiator_valve | `_tze200_rtrmfadk` TS0601 | 1:system_mode 17:schedule_monday 18:schedule_tuesday 19:schedule_wednesday 20:schedule_thursday 21:schedule_friday 23:schedule_sunday |
-| device_radiator_valve | `_tze200_rv6iuyxb` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday |
-| device_radiator_valve | `_tze200_rxntag7i` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday |
-| device_radiator_valve | `_tze200_rxq4iti9` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday |
-| presence_sensor_radar | `_tze200_sbyx0lm6` TS0601 | 10:zha 11:zha 12:zha 16:zha 19:zha 117:zha 118:zha 121:zha 122:zha 123:zha |
-| presence_sensor_radar | `_tze200_sfiy5tfs` TS0601 | 3:zha 6:errorcode 10:zha 11:zha 12:zha 16:zha 19:zha 103:zha 104:illuminance 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 114:zha 115:zha 116:zha 117:zha 118:zha 121:zha 122:zha 123:zha |
-| curtain_motor | `_tze200_sfqyhvpv` TS0601 | 1:state 2:position 16:cover_limit 20:click_control |
-| presence_sensor_radar | `_tze200_sgpeacqp` TS0601 | 3:zha 6:zha 10:zha 11:zha 12:zha 16:zha 19:zha 103:zha 104:zha 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 114:zha 115:zha 116:zha 117:zha 118:zha 121:zha 122:zha 123:zha |
-| water_valve_smart | `_tze200_sh1btabb` TS0601 | 101:irrigation_start_time 111:energy 114:irrigation_duration |
-| curtain_motor | `_tze200_sq6affpe` TS0601 | 5:motor_direction 11:zha 16:zha |
-| radiator_valve | `_tze200_sur6q7ko` TS0601 | 2:preset 10:frost_protection 46:holiday_start_stop 106:schedule 107:system_mode 108:schedule_monday 109:schedule_wednesday 110:schedule_friday 111:schedule_sunday 112:schedule_tuesday 113:schedule_thursday 114:schedule_saturday |
-| device_radiator_valve | `_tze200_suxywabt` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday |
-| climate_sensor | `_tze200_thbr5z34` TS0601 | 109:valve_position |
-| climate_sensor | `_tze200_u319yc66` TS0601 | 6:zha 7:zha 10:zha 12:zha |
-| climate_sensor | `_tze200_u9bfwha0` TS0601 | 36:valve_position |
-| valve_irrigation | `_tze200_ugekduaj` TS0601 | 18:data_report_duration |
-| curtain_motor | `_tze200_uj3f4wr5` TS0601 | 1:windowcoverings_state |
-| climate_sensor | `_tze200_v1jqz5cy` TS0601 | 10:ph |
-| climate_sensor | `_tze200_v6ossqfy` TS0601 | 105:triggerdistance |
-| curtain_motor | `_tze200_vdiuwbkq` TS0601 | 1:state 2:position 5:motor_direction 11:zha 16:cover_limit |
-| curtain_motor | `_tze200_vexa5o82` TS0601 | 1:state 2:position 16:cover_limit 20:click_control |
-| wall_thermostat | `_tze200_viy9ihs7` TS0601 | 4:preset 16:zha 24:zha 28:zha 30:zha 104:working_day 105:zha 108:zha 109:schedule_weekday 111:zha 120:zha 121:zha 122:zha 123:zha |
-| valve_single | `_tze200_vrjkcam9` TS0601 | 1:state 26:fault |
-| water_valve_smart | `_tze200_vuwtqx0t` TS0601 | 2:month_consumption 3:daily_consumption 5:faults 18:reverse_water_consumed 21:flow_rate |
-| lcdtemphumidsensor | `_tze200_vvmbj46n` TS0601 | 3:measure_battery |
-| switch_wireless | `_tze200_vzekyi4c` TS0601 | 11:errorcode |
-| climate_sensor | `_tze200_wbhaespm` TS0601 | 17:overload_breaker 18:over_current_threshold |
-| climate_sensor | `_tze200_wdfurkoa` TS0601 | 5:motor_direction |
-| climate_sensor | `_tze200_wehza30a` TS0601 | 3:position 5:motor_direction 7:motor_state |
-| garage_door | `_tze200_wfxuhoea` TS0601 | 4:dp_4 5:dp_5 11:dp_11 |
-| curtain_motor | `_tze200_wmcdj3aq` TS0601 | 11:zha 16:zha |
-| device_radiator_valve | `_tze200_wsbfwodu` TS0601 | 2:preset 10:frost_protection 46:holiday_start_stop 106:schedule 107:system_mode 108:schedule_monday 109:schedule_wednesday 110:schedule_friday 111:schedule_sunday 112:schedule_tuesday 113:schedule_thursday 114:schedule_saturday |
-| water_valve_smart | `_tze200_wt9agwf3` TS0601 | 1:onoff 5:meter_water 7:measure_battery |
-| presence_sensor_radar | `_tze200_wukb7rhc` TS0601 | 3:zha 6:zha 10:zha 11:zha 12:zha 16:zha 19:zha 103:zha 104:zha 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 114:zha 115:zha 116:zha 117:zha 118:zha 121:zha 122:zha 123:zha |
-| climate_sensor | `_tze200_wv9ukqca` TS0601 | 3:action |
-| climate_sensor | `_tze200_x8fp01wi` TS0601 | 26:error_status 111:countdown 115:battery_state |
-| device_radiator_valve | `_tze200_x9axofse` TS0601 | 2:preset 10:frost_protection 46:holiday_start_stop 106:schedule 107:system_mode 108:schedule_monday 109:schedule_wednesday 110:schedule_friday 111:schedule_sunday 112:schedule_tuesday 113:schedule_thursday 114:schedule_saturday |
-| curtain_motor | `_tze200_xaabybja` TS0601 | 11:zha 16:zha |
-| wall_thermostat | `_tze200_xixlazkg` TS0601 | 44:local_temperature_calibration |
-| presence_sensor_radar | `_tze200_xpq2rzhq` TS0601 | 3:zha 6:zha 10:zha 11:zha 12:zha 16:zha 19:zha 103:zha 104:zha 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 114:zha 115:zha 116:zha 117:zha 118:zha 121:zha 122:zha 123:zha |
-| curtain_motor | `_tze200_xtrnjaoz` TS0601 | 1:state 9:position 11:motor_direction |
-| curtain_motor | `_tze200_xuzcvlku` TS0601 | 11:zha 16:zha |
-| presence_sensor_radar | `_tze200_y8jijhba` TS0601 | 104:humidity_calibration 105:temperature_calibration 109:temperature_unit 111:temperature |
-| climate_sensor | `_tze200_ybsqljjg` TS0601 | 28:schedule_monday 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 32:schedule_friday 33:schedule_saturday 34:schedule_sunday |
-| radiator_valve | `_tze200_ye5jkfsb` TS0601 | 2:preset |
-| curtain_motor | `_tze200_yenbr4om` TS0601 | 11:zha 16:zha |
-| climate_sensor | `_tze200_yjjdcqsq` TS0601 | 3:measure_battery |
-| vibration_sensor | `_tze200_yjryxpot` TS0601 | 7:tilt 102:y 103:z 104:sensitivity 105:battery |
-| device_radiator_valve | `_tze200_yqgbrdyo` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday |
-| device_radiator_valve | `_tze200_z1tyspqw` TS0601 | 1:system_mode 17:schedule_monday 18:schedule_tuesday 19:schedule_wednesday 20:schedule_thursday 21:schedule_friday 23:schedule_sunday |
-| curtain_motor | `_tze200_zah67ekd` TS0601 | 1:state 2:position 5:motor_direction 11:zha 16:zha 103:set_upper_limit |
-| presence_sensor_radar | `_tze200_zbfmvj13` TS0601 | 106:illuminance 108:indicator 110:battery |
-| lcdtemphumidsensor_3 | `_tze200_zl1kmjqx` TS0601 | 1:temperature |
-| climate_sensor | `_tze200_zlwr0raf` TS0601 | 21:instantaneous_demand |
-| curtain_motor | `_tze200_zpzndjez` TS0601 | 11:zha 16:zha |
-| climate_sensor | `_tze200_zr9c0day` TS0601 | 3:running_state |
-| presence_sensor_radar | `_tze200_ztc6ggyl` TS0601 | 3:zha 6:errorcode 10:zha 11:zha 12:zha 16:zha 19:zha 103:zha 104:illuminance 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 114:zha 115:zha 116:zha 117:zha 118:zha 121:zha 122:zha 123:zha |
-| radiator_valve | `_tze200_zuhszj9s` TS0601 | 3:running_state 101:system_mode |
-| curtain_motor | `_tze200_zuz7f94z` TS0601 | 11:zha 16:zha |
-| curtain_motor | `_tze200_zvo63cmo` TS0601 | 1:state 2:position |
-| wall_dimmer_tuya | `_tze204_1v1dxkck` TS0601 | 101:backlight_color |
-| presence_sensor_radar | `_tze204_1youk3hj` TS0601 | 12:presence_time |
-| curtain_motor | `_tze204_2rvvqjoa` TS0601 | 2:position 5:motor_direction |
-| switch_2gang | `_tze204_3ctwoaip` TS0601 | 15:indicator_status 19:delay_off_schedule 29:relay_status_l1 30:relay_status_l2 103:switch_color_on 104:switch_color_off 105:name_l1 106:name_l2 111:radar_config 209:cycle_schedule |
-| climate_sensor | `_tze204_3q3maeoo` TS0601 | 114:schedule_monday 115:schedule_tuesday 116:schedule_wednesday 117:schedule_thursday 118:schedule_friday 119:schedule_saturday 120:schedule_sunday 143:holiday_start_stop |
-| valve_irrigation | `_tze204_4fblxpma` TS0601 | 19:fault 107:refresh |
-| climate_sensor | `_tze204_6a4vxfnv` TS0601 | 105:schedule_saturday 106:schedule_friday 107:schedule_thursday 108:schedule_wednesday 109:schedule_tuesday 110:schedule_monday |
-| device_radiator_valve | `_tze204_6kijc7nd` TS0601 | 61:week_program_periods |
-| curtain_motor | `_tze204_7lb6j8wg` TS0601 | 2:position_c1 5:position_c2 102:position_c3 |
-| climate_sensor | `_tze204_7yyuo8sr` TS0601 | 7:max_set 8:min_set 22:liquid_level_percent 27:alarm_time 102:hydrate 103:water_drainage |
-| led_controller_rgb | `_tze204_8fffc3kb` TS0601 | 4:color_temp 51:scene 52:music_mode |
-| device_radiator_valve | `_tze204_9mjy74mp` TS0601 | 1:system_mode 17:schedule_monday 18:schedule_tuesday 19:schedule_wednesday 20:schedule_thursday 21:schedule_friday 23:schedule_sunday |
-| curtain_motor | `_tze204_a2jcoyuk` TS0601 | 1:windowcoverings_state |
-| water_valve_smart | `_tze204_a7sghmms` TS0601 | 1:zha 2:zha 3:zha 5:zha 6:zha 7:zha 10:zha 11:zha 12:zha 13:zha 14:zha 15:zha 19:zha 21:zha 22:zha 25:zha 26:zha 37:zha 38:zha 42:zha 47:zha 59:zha 101:zha 103:zha 104:zha 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 114:zha 115:zha |
-| curtain_motor | `_tze204_a8z0g46u` TS0601 | 2:state |
-| climate_sensor | `_tze204_a9ojznj8` TS0601 | 19:fault 107:refresh |
-| thermostatic_radiator_valve | `_tze204_aaeaifez` TS0601 | 11:fault 109:weekly_schedule |
-| climate_sensor | `_tze204_ac0fhfiq` TS0601 | 6:current |
-| wall_thermostat | `_tze204_aoclfnxz` TS0601 | 2:preset 36:valve_position |
-| curtain_motor | `_tze204_bjzrowv2` TS0601 | 1:state 2:position 5:motor_direction |
-| presence_sensor_radar | `_tze204_bvfld3xc` TS0601 | 106:tumble_alarm_time 114:motion_direction 115:motion_speed 118:fall_sensitivity |
-| radiator_valve | `_tze204_ca3i8m8p` TS0601 | 109:schedule_monday 110:schedule_tuesday 111:schedule_wednesday 112:schedule_thursday 113:schedule_friday 114:schedule_saturday 115:schedule_sunday |
-| radiator_valve | `_tze204_cg8hdnjv` TS0601 | 109:schedule_monday 110:schedule_tuesday 111:schedule_wednesday 112:schedule_thursday 113:schedule_friday 114:schedule_saturday 115:schedule_sunday |
-| presence_sensor_radar | `_tze204_clrdrnya` TS0601 | 10:zha 11:zha 12:zha 16:zha 19:zha 117:zha 118:zha 121:zha 122:zha 123:zha |
-| device_radiator_valve | `_tze204_cvcu2p6e` TS0601 | 1:system_mode 17:schedule_monday 18:schedule_tuesday 19:schedule_wednesday 20:schedule_thursday 21:schedule_friday 23:schedule_sunday |
-| valve_irrigation | `_tze204_d0ypnbvn` TS0601 | 1:state 26:fault |
-| climate_sensor | `_tze204_d6i25bwg` TS0601 | 114:schedule_monday 115:schedule_tuesday 116:schedule_wednesday 117:schedule_thursday 118:schedule_friday 119:schedule_saturday 120:schedule_sunday 143:holiday_start_stop |
-| radiator_valve | `_tze204_djurk6p5` TS0601 | 1:state 2:system_mode 109:schedule_monday 110:schedule_tuesday 111:schedule_wednesday 112:schedule_thursday 113:schedule_friday 114:schedule_saturday 115:schedule_sunday |
-| curtain_motor | `_tze204_dqy15zxy` TS0601 | 1:windowcoverings_state 2:position |
-| presence_sensor_radar | `_tze204_dtzziy1e` TS0601 | 10:zha 11:zha 12:zha 16:zha 19:zha 117:zha 118:zha 121:zha 122:zha 123:zha |
-| climate_sensor | `_tze204_dwcarsat` TS0601 | 20:formaldehyd 21:voc |
-| wall_thermostat | `_tze204_dzuqwsyg` TS0601 | 1:state 2:system_mode 4:preset 27:local_temperature_calibration 101:schedule 202:schedule_text |
-| radiator_valve | `_tze204_e5hpkc6d` TS0601 | 123:energy |
-| climate_sensor | `_tze204_edl8pz1k` TS0601 | 105:schedule_saturday 106:schedule_friday 107:schedule_thursday 108:schedule_wednesday 109:schedule_tuesday 110:schedule_monday |
-| climate_sensor | `_tze204_eekpf0ft` TS0601 | 28:schedule_monday 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 32:schedule_friday 33:schedule_saturday 34:schedule_sunday 35:fault_alarm |
-| curtain_motor | `_tze204_ejh6owwz` TS0601 | 1:state 2:position 16:cover_limit 20:click_control |
-| presence_sensor_radar | `_tze204_fwondbzy` TS0601 | 3:zha 6:zha 10:zha 11:zha 12:zha 16:zha 19:zha 103:zha 104:zha 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 114:zha 115:zha 116:zha 117:zha 118:zha 121:zha 122:zha 123:zha |
-| device_radiator_valve | `_tze204_g2ki0ejr` TS0601 | 18:schedule_tuesday 20:schedule_thursday 23:schedule_sunday |
-| curtain_motor | `_tze204_g5xqosu7` TS0601 | 1:state 2:position |
-| radiator_valve | `_tze204_glk6viwg` TS0601 | 1:state 2:system_mode 27:local_temperature_calibration 109:schedule_monday 110:schedule_tuesday 111:schedule_wednesday 112:schedule_thursday 113:schedule_friday 114:schedule_saturday 115:schedule_sunday |
-| wall_thermostat | `_tze204_gops3slb` TS0601 | 4:preset 109:schedule_weekday |
-| curtain_motor | `_tze204_guvc7pdy` TS0601 | 1:windowcoverings_state 2:windowcoverings_set 4:mode 5:reverse 6:border 9:windowcoverings_tilt_set 12:backlight 16:border_limits 101:open_time 102:close_time |
-| wall_thermostat | `_tze204_hpkusvom` TS0601 | 2:system_mode 27:local_temperature_calibration |
-| presence_sensor_radar | `_tze204_iaeejhvf` TS0601 | 10:zha 11:zha 12:zha 16:zha 19:zha 117:zha 118:zha 121:zha 122:zha 123:zha |
-| climate_sensor | `_tze204_iwn0gpzz` TS0601 | 18:data_report_duration |
-| climate_sensor | `_tze204_iyki9kjp` TS0601 | 19:delay_off_schedule 29:relay_status_l1 30:relay_status_l2 31:relay_status_l3 103:switch_color_on 104:switch_color_off 105:name_l1 106:name_l2 107:name_l3 111:radar_config 209:cycle_schedule |
-| climate_sensor | `_tze204_jcwbwckh` TS0601 | 18:meter_id |
-| radiator_valve | `_tze204_k6rdmisz` TS0601 | 2:system_mode 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday |
-| climate_sensor | `_tze204_k7v0eqke` TS0601 | 19:delay_off_schedule 29:relay_status_l1 30:relay_status_l2 31:relay_status_l3 103:switch_color_on 104:switch_color_off 105:name_l1 106:name_l2 107:name_l3 111:radar_config 209:cycle_schedule |
-| climate_sensor | `_tze204_kwi6bbk4` TS0601 | 3:battery_percentage_remaining |
-| presence_sensor_radar | `_tze204_laokfqwu` TS0601 | 6:errorcode 10:zha 11:zha 12:zha 16:zha 19:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 114:zha 115:zha 116:zha 117:zha 118:zha 121:zha 122:zha 123:zha |
-| lcdtemphumidsensor_3 | `_tze204_lb0fsvba` TS0601 | 17:leakage_threshold 18:over_current_threshold |
-| radiator_valve | `_tze204_lnxdk2ch` TS0601 | 1:state 2:system_mode 27:local_temperature_calibration 109:schedule_monday 110:schedule_tuesday 111:schedule_wednesday 112:schedule_thursday 113:schedule_friday 114:schedule_saturday 115:schedule_sunday |
-| energy_meter_3phase | `_tze204_loejka0i` TS0601 | 15:power_factor 16:energy_reset 17:alarm_set_1 18:alarm_set_2 104:power_a 107:power_b 110:power_c 111:power 118:power_factor_a 119:power_factor_b 120:power_factor_c |
-| wall_thermostat | `_tze204_lpedvtvr` TS0601 | 101:local_temperature_calibration |
-| climate_sensor | `_tze204_ltwbm23f` TS0601 | 102:schedule_monday 103:schedule_tuesday 104:schedule_wednesday 105:schedule_thursday 106:schedule_friday 107:schedule_saturday 108:schedule_sunday |
-| wall_thermostat | `_tze204_lzriup1j` TS0601 | 4:preset 109:schedule_weekday |
-| climate_sensor | `_tze204_m64smti7` TS0601 | 17:high_temperature_threshold 18:over_current_threshold |
-| wall_thermostat | `_tze204_mpbki2zm` TS0601 | 1:state 2:system_mode 27:local_temperature_calibration 106:schedule_sunday 107:schedule_saturday 108:schedule_friday 109:schedule_thursday 110:schedule_wednesday 111:schedule_tuesday 112:schedule_monday |
-| climate_sensor | `_tze204_mpg22jc1` TS0601 | 8:motor_direction |
-| presence_sensor_radar | `_tze204_mtoaryre` TS0601 | 10:zha 11:zha 12:zha 16:zha 19:zha 117:zha 118:zha 121:zha 122:zha 123:zha |
-| usb_outlet_advanced | `_tze204_mvtclclq` TS0601 | 20:meter_power |
-| garage_door_opener | `_tze204_nklqjk62` TS0601 | 2:dp_2 4:dp_4 5:dp_5 11:dp_11 |
-| climate_sensor | `_tze204_ny94onlb` TS0601 | 18:data_report_duration |
-| device_radiator_valve | `_tze204_o3x45p96` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday |
-| air_quality_co2 | `_tze204_ogkdpgy2` TS0601 | 18:temperature |
-| device_radiator_valve | `_tze204_ogx8u5z6` TS0601 | 2:thermostat_mode 4:target_temperature 13:measure_battery 15:measure_battery 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday 35:alarm_battery 102:dp_102 |
-| climate_sensor | `_tze204_oh8y8pv8` TS0601 | 104:working_day 109:schedule_weekday |
-| device_radiator_valve | `_tze204_p1qrtljn` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday |
-| thermostatic_radiator_valve | `_tze204_pcdmj88b` TS0601 | 28:schedule_monday 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 32:schedule_friday 33:schedule_saturday 34:schedule_sunday 35:fault_alarm |
-| presence_sensor_radar | `_tze204_pfayrzcw` TS0601 | 10:zha 11:zha 12:zha 16:zha 19:zha 117:zha 118:zha 121:zha 122:zha 123:zha |
-| air_quality_co2 | `_tze204_pkpfn9hc` TS0601 | 3:measure_temperature |
-| curtain_motor | `_tze204_q9xty0ad` TS0601 | 1:state 9:position 11:motor_direction |
-| presence_sensor_radar | `_tze204_qasjif9e` TS0601 | 6:zha 10:zha 11:zha 16:zha 19:zha 103:zha 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 114:zha 115:zha 116:zha 117:zha 118:zha 121:zha 122:zha 123:zha |
-| curtain_motor | `_tze204_qhlxve78` TS0601 | 18:data_report_duration |
-| wall_thermostat | `_tze204_qujphad5` TS0601 | 1:state 2:system_mode 27:local_temperature_calibration 106:schedule_sunday 107:schedule_saturday 108:schedule_friday 109:schedule_thursday 110:schedule_wednesday 111:schedule_tuesday 112:schedule_monday |
-| climate_sensor | `_tze204_qvxrkeif` TS0601 | 11:fault |
-| device_radiator_valve | `_tze204_qyr2m29i` TS0601 | 2:preset 102:schedule_monday 103:schedule_tuesday 104:schedule_wednesday 105:schedule_thursday 106:schedule_friday 107:schedule_saturday 108:schedule_sunday |
-| radiator_valve | `_tze204_r7brscr6` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday |
-| switch_3gang | `_tze204_rkbxtclc` TS0601 | 17:measure_current 18:measure_power 19:measure_voltage 20:meter_power |
-| device_radiator_valve | `_tze204_rtrmfadk` TS0601 | 1:system_mode 17:schedule_monday 18:schedule_tuesday 19:schedule_wednesday 20:schedule_thursday 21:schedule_friday 23:schedule_sunday |
-| climate_sensor | `_tze204_rzrrjkz2` TS0601 | 19:fault 107:refresh |
-| climate_sensor | `_tze204_sa2ueffe` TS0601 | 19:delay_off_schedule 29:relay_status 103:switch_color_on 104:switch_color_off 105:name 111:radar_config 209:cycle_schedule |
-| presence_sensor_radar | `_tze204_sbyx0lm6` TS0601 | 10:zha 11:zha 12:zha 16:zha 19:zha 117:zha 118:zha 121:zha 122:zha 123:zha |
-| climate_sensor | `_tze204_sooucan5` TS0601 | 6:zha 10:zha 11:zha 12:zha 16:zha 19:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 114:zha 115:zha 116:zha 117:zha 118:zha 121:zha 122:zha 123:zha |
-| climate_sensor | `_tze204_srmahpwl` TS0601 | 8:motor_direction |
-| climate_sensor | `_tze204_t9ffmdin` TS0601 | 11:prepayment 12:energy_balance_reset 16:state 17:alarm_set_1 18:alarm_set_2 102:reclosing_count 103:device_temperature 104:reclosing 105:countdown 106:cycle_schedule 107:reclosing_delay 108:random_timing 109:inching 119:power_on_delay 124:over_current_threshold_time 125:lost_flow_threshold_time 126:alarm_set_3 127:status 134:power_on_behavior |
-| device_radiator_valve | `_tze204_tagezcph` TS0601 | 101:schedule_monday 105:schedule_tuesday 106:schedule_wednesday 107:schedule_thursday 108:schedule_friday 109:schedule_saturday 110:schedule_sunday |
-| curtain_motor | `_tze204_tgl8i2np` TS0601 | 1:state 2:position 5:motor_direction |
-| curtain_motor | `_tze204_trwaxi57` TS0601 | 1:state 2:position |
-| climate_sensor | `_tze204_uab532m0` TS0601 | 19:fault 107:refresh |
-| valve_irrigation | `_tze204_ugekduaj` TS0601 | 18:data_report_duration |
-| gas_sensor | `_tze204_uo8qcagc` TS0601 | 6:zha 7:zha 8:zha 12:zha |
-| climate_sensor | `_tze204_v5xjyphj` TS0601 | 26:fault |
-| climate_sensor | `_tze204_vjpaih9f` TS0601 | 28:schedule_monday 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 32:schedule_friday 33:schedule_saturday 34:schedule_sunday 35:battery_low |
-| climate_sensor | `_tze204_wbhaespm` TS0601 | 17:overload_breaker 18:over_current_threshold |
-| thermostatic_radiator_valve | `_tze204_wc2w9t1s` TS0601 | 65:schedule_monday 66:schedule_tuesday 67:schedule_wednesday 68:schedule_thursday 69:schedule_friday 70:schedule_saturday 71:schedule_sunday |
-| device_radiator_valve | `_tze204_wsek35um` TS0601 | 7:children_lock |
-| climate_sensor | `_tze204_wwaeqnrf` TS0601 | 19:delay_off_schedule 29:relay_status_l1 30:relay_status_l2 31:relay_status_l3 32:relay_status_l4 103:switch_color_on 104:switch_color_off 105:name_l1 106:name_l2 107:name_l3 108:name_l4 111:radar_config 201:cycle_schedule |
-| climate_sensor | `_tze204_x8fp01wi` TS0601 | 26:error_status 111:countdown 115:battery_state |
-| wall_thermostat | `_tze204_xalsoe3m` TS0601 | 19:local_temperature_calibration 23:working_day 47:valve_state 68:programming_mode |
-| radiator_valve | `_tze204_xdtnpp1a` TS0601 | 18:schedule_tuesday 20:schedule_thursday 23:schedule_sunday |
-| switch_4gang | `_tze204_xibaabmu` TS0601 | 15:indicator_status 19:delay_off_schedule 29:relay_status_l1 30:relay_status_l2 31:relay_status_l3 32:relay_status_l4 103:switch_color_on 104:switch_color_off 105:name_l1 106:name_l2 107:name_l3 108:name_l4 111:radar_config 201:cycle_schedule |
-| wall_thermostat | `_tze204_xnbkhhdr` TS0601 | 4:preset 16:zha 24:zha 28:zha 30:zha 104:working_day 105:zha 108:zha 109:schedule_weekday 111:zha 120:zha 121:zha 122:zha 123:zha |
-| climate_sensor | `_tze204_xpq2rzhq` TS0601 | 3:zha 6:zha 10:zha 11:zha 12:zha 16:zha 19:zha 102:zha 103:zha 104:zha 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 114:zha 115:zha 116:zha 117:zha 118:zha 121:zha 122:zha 123:zha |
-| presence_sensor_radar | `_tze204_xsm7l9xa` TS0601 | 3:zha 6:zha 10:zha 11:zha 12:zha 16:zha 19:zha 103:zha 104:zha 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 114:zha 115:zha 116:zha 117:zha 118:zha 121:zha 122:zha 123:zha |
-| curtain_motor | `_tze204_xtrnjaoz` TS0601 | 1:state 9:position 11:motor_direction |
-| climate_sensor | `_tze204_z7a2jmyy` TS0601 | 19:fault 107:refresh |
-| climate_sensor | `_tze204_zjhoqbrd` TS0601 | 104:working_day 109:schedule_weekday |
-| wall_dimmer_tuya | `_tze204_znvwzxkq` TS0601 | 101:backlight_color |
-| presence_sensor_radar | `_tze204_ztc6ggyl` TS0601 | 3:zha 6:errorcode 10:zha 11:zha 12:zha 16:zha 19:zha 103:zha 104:illuminance 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 114:zha 115:zha 116:zha 117:zha 118:zha 121:zha 122:zha 123:zha |
-| presence_sensor_radar | `_tze204_ztqnh5cg` TS0601 | 6:errorcode 10:zha 11:zha 16:zha 19:zha 103:zha 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 114:zha 115:zha 116:zha 117:zha 118:zha 121:zha 122:zha 123:zha |
-| climate_sensor | `_tze204_zuepxzck` TS0601 | 19:delay_off_schedule 29:relay_status 103:switch_color_on 104:switch_color_off 105:name 111:radar_config 209:cycle_schedule |
-| curtain_motor | `_tze204_zxkwaztm` TS0601 | 67:schedule_weekday 68:schedule_holiday |
-| siren_moes_mg_bjq002 | `_tze20c_tjz9ad5g` TS0601 | 21:ringtone |
-| wall_curtain_switch | `_tze20c_xbexmf8h` TS130F | 1:state 2:position 8:motor_direction 10:calibration_time |
-| curtain_motor_shutter | `_tze210_inpjmc0h` TS0301 | 101:position_bottom |
-| curtain_motor | `_tze210_m6lwazh9` TS0301 | 1:windowcoverings_state 2:windowcoverings_set 4:mode 5:reverse 6:border 9:windowcoverings_tilt_set 12:backlight 16:border_limits 101:open_time 102:close_time |
-| curtain_motor | `_tze210_xgzzuerd` TS0301 | 1:state 9:position 11:motor_direction 16:cover_limit 20:click_control |
-| curtain_motor | `_tze210_yqwse3h5` TS0301 | 2:position_top 101:position_bottom 102:position_bottom |
-| curtain_motor | `_tze2841000000_3mzb0sdz` TS0601 | 1:state 9:position 11:motor_direction 16:cover_limit |
-| curtain_motor | `_tze2841000000_u68q868h` TS0601 | 1:state 9:position 11:motor_direction 16:cover_limit |
-| presence_sensor_radar | `_tze284_1youk3hj` TS0601 | 12:presence_time |
-| sensor_contact_zigbee | `_tze284_2baujqot` TS0601 | 23:action |
-| curtain_motor | `_tze284_2gi1hy8s` TS0601 | 1:state 9:position 11:motor_direction |
-| water_leak_sensor_tuya | `_tze284_2qx7sivb` TS0601 | 1:alarm_status 4:battery 102:dismiss_alarm 103:silent_mode |
-| switch_2gang | `_tze284_3ctwoaip` TS0601 | 15:indicator_status 19:delay_off_schedule 29:relay_status_l1 30:relay_status_l2 103:switch_color_on 104:switch_color_off 105:name_l1 106:name_l2 111:radar_config 209:cycle_schedule |
-| curtain_motor | `_tze284_3mzb0sdz` TS0601 | 1:windowcoverings_state 9:windowcoverings_set 16:border_limits |
-| switch_1gang | `_tze284_3xnyj4ga` TS0601 | 19:inching_l1 |
-| presence_sensor_radar | `_tze284_4qznlkbu` TS0601 | 10:zha 11:zha 12:zha 16:zha 19:zha 117:zha 118:zha 121:zha 122:zha 123:zha |
-| device_radiator_valve | `_tze284_4vbj3fxh` TS0601 | 1:state 2:system_mode |
-| din_rail_meter | `_tze284_5m4nchbm` TS0601 | 15:leakage 16:state 103:temperature |
-| presence_sensor_radar | `_tze284_5qfrnbqs` TS0601 | 119:system_info |
-| plug_smart | `_tze284_5yah8qx4` TS0601 | 2:brightness 3:brightness_min 5:brightness_max |
-| climate_sensor | `_tze284_6fopvb6v` TS0601 | 5:motor_direction |
-| curtain_motor | `_tze284_6hrnp30w` TS0601 | 1:state 2:position 5:motor_direction |
-| device_radiator_valve | `_tze284_6kijc7nd` TS0601 | 61:week_program_periods |
-| din_rail_meter | `_tze284_6ocnqlhn` TS0601 | 13:test1 140:lcd_brightness |
-| climate_sensor | `_tze284_6uyu20xu` TS0601 | 3:measure_battery |
-| switch_1gang | `_tze284_7e6v8u9f` TS0601 | 19:inching |
-| water_leak_sensor | `_tze284_7trh4ihp` TS0601 | 102:dismiss_alarm 103:silent_mode |
-| water_valve_smart | `_tze284_7zazvlyn` TS0601 | 1:action 2:action 3:action 4:action 5:action 6:action 7:action 8:action 125:led_switch_name_l1 126:led_switch_name_l2 127:led_switch_name_l3 128:led_switch_name_l4 129:cover_name_l1 130:cover_name_l2 131:cover_name_l3 132:cover_name_l4 137:switch_name_l1 138:switch_name_l2 139:switch_name_l3 140:switch_name_l4 141:scene_name_l1 142:scene_name_l2 143:scene_name_l3 144:scene_name_l4 145:scene_name_l5 146:scene_name_l6 147:scene_name_l7 148:scene_name_l8 |
-| water_leak_sensor_tuya | `_tze284_8sejxcue` TS0601 | 1:alarm_status 4:battery 102:dismiss_alarm 103:silent_mode |
-| curtain_motor | `_tze284_8whfphjv` TS0601 | 1:state 9:position 11:motor_direction |
-| valve_irrigation | `_tze284_8zizsafo` TS0601 | 104:state_1 105:state_2 |
-| curtain_motor | `_tze284_a0hirjnh` TS0601 | 1:state 2:position 5:motor_direction |
-| energy_meter_3phase | `_tze284_a14rjslz` TS0601 | 23:meter_power.exported |
-| switch_2gang | `_tze284_a2teqi5u` TS0601 | 105:name_l1 106:name_l2 |
-| climate_sensor | `_tze284_a9ojznj8` TS0601 | 19:fault 107:refresh |
-| device_radiator_valve | `_tze284_aaeaifez` TS0601 | 11:fault 109:weekly_schedule |
-| water_leak_sensor_tuya | `_tze284_aghfucwi` TS0601 | 1:alarm_status 4:battery 102:dismiss_alarm 103:silent_mode |
-| climate_sensor | `_tze284_ajlu4cud` TS0601 | 3:daily_consumption 5:faults 18:reverse_water_consumed 21:flow_rate |
-| curtain_motor | `_tze284_ajuasrmx` TS0601 | 103:ai_self_learning 116:sensor_mode 125:home_environment |
-| climate_sensor | `_tze284_atuj3i0w` TS0601 | 3:action 103:name_l1 104:name_l2 105:name_l3 106:name_l4 107:scene_name_l1 108:scene_name_l2 109:scene_name_l3 110:scene_name_l4 |
-| curtain_motor | `_tze284_b7kbnl6q` TS0601 | 1:state 2:position |
-| curtain_motor | `_tze284_bjzrowv2` TS0601 | 1:state 2:position 5:motor_direction |
-| device_radiator_valve | `_tze284_c6wv4xyo` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday |
-| energy_meter_3phase | `_tze284_cf4b5ktf` TS0601 | 23:meter_power.exported 29:measure_power.phase_total |
-| radiator_valve | `_tze284_cgr0rhza` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday 35:fault_alarm |
-| curtain_motor | `_tze284_clm4gdw4` TS0601 | 2:position |
-| valve_irrigation | `_tze284_d0ypnbvn` TS0601 | 1:state 26:fault |
-| wall_dimmer_tuya | `_tze284_da26abzz` TS0601 | 142:brightness |
-| energy_meter_3phase | `_tze284_dikb3dp6` TS0601 | 23:meter_power.exported 29:measure_power.phase_total |
-| switch_2gang | `_tze284_dmckrsxg` TS0601 | 15:indicator_status 19:delay_off_schedule 29:relay_status_l1 30:relay_status_l2 103:switch_color_on 104:switch_color_off 105:name_l1 106:name_l2 111:radar_config 209:cycle_schedule |
-| switch_3gang | `_tze284_e4pf6l87` TS0601 | 15:indicator_status 19:delay_off_schedule 29:relay_status_l1 30:relay_status_l2 31:relay_status_l3 103:switch_color_on 104:switch_color_off 105:name_l1 106:name_l2 107:name_l3 111:radar_config 209:cycle_schedule |
-| valve_dual_irrigation | `_tze284_eaet5qt5` TS0601 | 3:fan_speed 11:power_on_behavior |
-| climate_sensor | `_tze284_eekpf0ft` TS0601 | 28:schedule_monday 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 32:schedule_friday 33:schedule_saturday 34:schedule_sunday 35:fault_alarm |
-| switch_3gang | `_tze284_exfilann` TS0601 | 19:inching_l1 |
-| valve_dual_irrigation | `_tze284_fhvpaltk` TS0601 | 1:onoff.valve_1 2:onoff.valve_2 3:fan_speed 11:power_on_behavior 59:measure_battery |
-| curtain_motor | `_tze284_fodv6bkr` TS0601 | 1:windowcoverings_state |
-| device_radiator_valve | `_tze284_fqm2sfpe` TS0601 | 2:thermostat_mode 3:dp_3 4:target_temperature 5:measure_temperature 7:child_lock 13:measure_battery 15:measure_battery 35:alarm_battery 39:dp_39 101:dp_101 102:dp_102 |
-| curtain_motor | `_tze284_fzo2pocs` TS0601 | 1:state 2:position |
-| wall_thermostat | `_tze284_gops3slb` TS0601 | 4:preset 104:working_day 109:schedule_weekday |
-| led_controller_rgb | `_tze284_gt5al3bl` TS0601 | 4:color_temp 51:scene 52:music_mode |
-| curtain_motor | `_tze284_hbjwgkdh` TS0601 | 1:state 2:position |
-| climate_sensor | `_tze284_idn2htgu` TS0601 | 3:action 5:action 6:action 7:action 8:action 125:led_switch_name_l1 126:led_switch_name_l2 127:led_switch_name_l3 128:led_switch_name_l4 129:cover_name_l1 130:cover_name_l2 131:cover_name_l3 132:cover_name_l4 137:switch_name_l1 138:switch_name_l2 139:switch_name_l3 140:switch_name_l4 141:scene_name_l1 142:scene_name_l2 143:scene_name_l3 144:scene_name_l4 145:scene_name_l5 146:scene_name_l6 147:scene_name_l7 148:scene_name_l8 |
-| device_radiator_valve | `_tze284_iilebqoo` TS0601 | 104:state_1 105:state_2 |
-| humidifier | `_tze284_ikul00sx` TS0601 | 105:brightness |
-| climate_sensor | `_tze284_iwn0gpzz` TS0601 | 18:data_report_duration |
-| curtain_motor | `_tze284_iwyqtclw` TS0601 | 1:action 2:action 4:action 17:action 103:name_l1 106:name_l4 107:scene_name_l1 108:scene_name_l2 109:scene_name_l3 110:scene_name_l4 111:dimmer_name_l1 112:dimmer_name_l2 113:dimmer_name_l3 114:dimmer_name_l4 115:curtain_name_l1 116:curtain_name_l2 117:curtain_name_l3 118:curtain_name_l4 128:thermostat_name |
-| radiator_valve | `_tze284_k6rdmisz` TS0601 | 2:system_mode 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday |
-| climate_sensor | `_tze284_k7v0eqke` TS0601 | 19:delay_off_schedule 29:relay_status_l1 30:relay_status_l2 31:relay_status_l3 103:switch_color_on 104:switch_color_off 105:name_l1 106:name_l2 107:name_l3 111:radar_config 209:cycle_schedule |
-| presence_sensor_radar | `_tze284_koxaopnk` TS0601 | 3:position |
-| climate_sensor | `_tze284_kyyu8rbj` TS0601 | 8:min_set 24:relay_switch 102:pump_control |
-| curtain_motor | `_tze284_libht6ua` TS0601 | 1:state 2:position 101:motor_direction 107:factory_reset |
-| wall_switch_1_gang_tuya | `_tze284_lnyz4a6v` TS0601 | 15:indicator_status 19:delay_off_schedule 29:relay_status 103:switch_color_on 104:switch_color_off 105:name 111:radar_config 209:cycle_schedule |
-| energy_meter_3phase | `_tze284_loejka0i` TS0601 | 15:power_factor 16:energy_reset 17:alarm_set_1 18:alarm_set_2 104:power_a 107:power_b 110:power_c 111:power 118:power_factor_a 119:power_factor_b 120:power_factor_c |
-| climate_sensor | `_tze284_ltwbm23f` TS0601 | 102:schedule_monday 103:schedule_tuesday 104:schedule_wednesday 105:schedule_thursday 106:schedule_friday 107:schedule_saturday 108:schedule_sunday |
-| wall_dimmer_tuya | `_tze284_m1cvyneb` TS0601 | 1:switch 21:backlight |
-| climate_sensor | `_tze284_madl8ejv` TS0601 | 3:heating_demand |
-| switch_1gang | `_tze284_ms97nkyy` TS0601 | 9:action 10:action 11:action 12:action |
-| climate_sensor | `_tze284_mul9abs3` TS0601 | 24:local_temperature |
-| usb_outlet_advanced | `_tze284_mvtclclq` TS0601 | 3:onoff.usb1 4:onoff.usb2 11:onoff.usb1 12:onoff.usb2 20:meter_power |
-| water_tank_monitor | `_tze284_mxujdmxo` TS0601 | 24:relay_switch 102:pump_control |
-| curtain_motor | `_tze284_n73badib` TS0601 | 1:state 2:position 16:cover_limit 20:click_control |
-| device_air_purifier_radiator | `_tze284_nbv4tdaz` TS0601 | 4:current_heating_setpoint 5:local_temperature 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday 102:boost_time 105:window_delay 106:holiday_time 108:window_close_delay 114:override_temperature |
-| sensor_gas_presence | `_tze284_nj7sfid2` TS0601 | 3:action |
-| climate_sensor | `_tze284_nnhwcvbk` TS0601 | 19:fault 107:refresh |
-| thermostatic_radiator_valve | `_tze284_noixx2uz` TS0601 | 4:current_heating_setpoint 5:local_temperature 28:schedule_monday 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 32:schedule_friday 33:schedule_saturday 34:schedule_sunday |
-| dimmer_2_gang_tuya | `_tze284_nthhgkd6` TS0601 | 105:dimming_speed |
-| dimmer_wall_1gang | `_tze284_nvodulvi` TS0601 | 103:action 104:action 108:action 109:action 110:action 111:action |
-| climate_sensor | `_tze284_ny94onlb` TS0601 | 18:data_report_duration |
-| wall_dimmer_tuya | `_tze284_nzns7udm` TS0601 | 5:action |
-| device_radiator_valve | `_tze284_o3x45p96` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday |
-| switch_2gang | `_tze284_o409r73p` TS0601 | 104:radar_distance 105:name_l1 106:name_l2 111:screen_off_time |
-| device_radiator_valve | `_tze284_ogx8u5z6` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday |
-| presence_sensor_radar | `_tze284_ozf4e02o` TS0601 | 103:ai_self_learning 104:factory_reset 105:fast_setting 116:sensor_mode 125:home_environment |
-| device_radiator_valve | `_tze284_p3dbf6qs` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday |
-| thermostatic_radiator_valve | `_tze284_pcdmj88b` TS0601 | 28:schedule_monday 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 32:schedule_friday 33:schedule_saturday 34:schedule_sunday 35:fault_alarm |
-| motion_sensor_switch | `_tze284_pislt0wa` TS0601 | 101:auto_adjustment 102:switch_states |
-| curtain_motor | `_tze284_qhlxve78` TS0601 | 18:data_report_duration |
-| button_wireless | `_tze284_qoi1aqxg` TS0601 | 1:state 8:position 9:position 11:motor_direction 13:battery 16:cover_limit |
-| curtain_motor | `_tze284_r3szw0xr` TS0601 | 1:state 9:position 16:cover_limit |
-| presence_sensor_radar | `_tze284_rlytpmij` TS0601 | 20:fault_alarm 103:antifreeze |
-| device_radiator_valve | `_tze284_roujjevx` TS0601 | 7:schedules |
-| soil_sensor | `_tze284_rovbuqdo` TS0601 | 124:step_count 125:effect 126:speed 128:motion_up 129:motion_down 134:light_off_delay |
-| climate_sensor | `_tze284_rqcuwlsa` TS0601 | 102:humidity_alarm |
-| device_radiator_valve | `_tze284_rv6iuyxb` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday |
-| climate_sensor | `_tze284_rzrrjkz2` TS0601 | 19:fault 107:refresh |
-| climate_sensor | `_tze284_sonkaxrd` TS0601 | 10:warming_up 11:fault |
-| sensor_motion_presence | `_tze284_tre6haif` TS0601 | 102:alarm_mode |
-| switch_1gang | `_tze284_ty5neqqo` TS0601 | 28:schedule_monday 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 32:schedule_friday 33:schedule_saturday 34:schedule_sunday 35:fault |
-| climate_sensor | `_tze284_uab532m0` TS0601 | 19:fault 107:refresh |
-| curtain_motor | `_tze284_upt8lzi0` TS0601 | 1:windowcoverings_state 2:position |
-| smoke_sensor2 | `_tze284_uqzwwjas` TS0601 | 11:fault |
-| climate_sensor | `_tze284_v5xjyphj` TS0601 | 26:fault |
-| climate_sensor | `_tze284_vjpaih9f` TS0601 | 28:schedule_monday 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 32:schedule_friday 33:schedule_saturday 34:schedule_sunday 35:battery_low |
-| water_valve_smart | `_tze284_vuwtqx0t` TS0601 | 2:month_consumption 3:daily_consumption 5:faults 18:reverse_water_consumed 21:flow_rate |
-| climate_sensor | `_tze284_wbhaespm` TS0601 | 17:overload_breaker 18:over_current_threshold 29:total_active_power 32:ac_frequency 103:rms_voltage 104:rms_current 105:active_power 108:power_factor 112:rms_voltage_ph_b 113:rms_current_ph_b 114:active_power_ph_b 117:power_factor_ph_b 121:rms_voltage_ph_c 122:rms_current_ph_c 123:active_power_ph_c 126:power_factor_ph_c |
-| climate_sensor | `_tze284_wdfurkoa` TS0601 | 5:motor_direction |
-| climate_sensor | `_tze284_wwaeqnrf` TS0601 | 19:delay_off_schedule 29:relay_status_l1 30:relay_status_l2 31:relay_status_l3 32:relay_status_l4 103:switch_color_on 104:switch_color_off 105:name_l1 106:name_l2 107:name_l3 108:name_l4 111:radar_config 201:cycle_schedule |
-| thermostatic_radiator_valve | `_tze284_xdtnpp1a` TS0601 | 18:schedule_tuesday 20:schedule_thursday 22:schedule_saturday 23:schedule_sunday |
-| switch_4gang | `_tze284_xibaabmu` TS0601 | 15:indicator_status 19:delay_off_schedule 29:relay_status_l1 30:relay_status_l2 31:relay_status_l3 32:relay_status_l4 103:switch_color_on 104:switch_color_off 105:name_l1 106:name_l2 107:name_l3 108:name_l4 111:radar_config 201:cycle_schedule |
-| wall_thermostat | `_tze284_xnbkhhdr` TS0601 | 4:preset 16:zha 24:zha 28:zha 30:zha 104:working_day 105:zha 108:zha 109:schedule_weekday 111:zha 120:zha 121:zha 122:zha 123:zha |
-| switch_3gang | `_tze284_xvywzhmi` TS0601 | 105:name_l1 106:name_l2 107:name_l3 |
-| switch_4gang | `_tze284_y4jqpry8` TS0601 | 15:indicator_status 19:delay_off_schedule 29:relay_status_l1 30:relay_status_l2 31:relay_status_l3 32:relay_status_l4 103:switch_color_on 104:switch_color_off 105:name_l1 106:name_l2 107:name_l3 108:name_l4 111:radar_config 201:cycle_schedule |
-| device_radiator_valve | `_tze284_ymldrmzx` TS0601 | 103:schedule_monday 104:schedule_tuesday 105:schedule_wednesday 106:schedule_thursday 107:schedule_friday 108:schedule_saturday 109:schedule_sunday 110:holiday_time |
-| presence_sensor_radar | `_tze284_yrwmnya3` TS0601 | 3:action 5:action 6:action 7:action 8:action 17:action |
-| climate_sensor | `_tze284_z5jz7wpo` TS0601 | 3:speed |
-| climate_sensor | `_tze284_z7a2jmyy` TS0601 | 19:fault 107:refresh |
-| smoke_sensor2 | `_tze284_zeeqkb0p` TS0601 | 11:fault |
-| climate_sensor | `_tze284_zjhoqbrd` TS0601 | 104:working_day 109:schedule_weekday |
-| wall_dimmer_tuya | `_tze284_znvwzxkq` TS0601 | 101:backlight_color |
-| curtain_motor | `_tze284_zofmmt9s` TS0601 | 1:state 9:position 11:motor_direction 20:click_control |
-| presence_sensor_radar | `_tze28c1000000_1youk3hj` TS0601 | 12:presence_time |
-| switch_2gang | `_tze28c1000000_a2teqi5u` TS0601 | 105:name_l1 106:name_l2 |
-| switch_2gang | `_tze28c1000000_dmckrsxg` TS0601 | 15:indicator_status 19:delay_off_schedule 29:relay_status_l1 30:relay_status_l2 103:switch_color_on 104:switch_color_off 105:name_l1 106:name_l2 111:radar_config 209:cycle_schedule |
-| switch_3gang | `_tze28c1000000_e4pf6l87` TS0601 | 15:indicator_status 19:delay_off_schedule 29:relay_status_l1 30:relay_status_l2 31:relay_status_l3 103:switch_color_on 104:switch_color_off 105:name_l1 106:name_l2 107:name_l3 111:radar_config 209:cycle_schedule |
-| led_controller_rgb | `_tze28c1000000_gt5al3bl` TS0601 | 4:color_temp 51:scene 52:music_mode |
-| curtain_motor | `_tze28c1000000_i8sdouy0` TS0601 | 1:state 2:position |
-| switch_2gang | `_tze28c1000000_o409r73p` TS0601 | 104:radar_distance 105:name_l1 106:name_l2 111:screen_off_time |
-| switch_4gang | `_tze28c1000000_pmbxyf97` TS0601 | 15:indicator_status 19:delay_off_schedule 29:relay_status_l1 30:relay_status_l2 31:relay_status_l3 32:relay_status_l4 103:switch_color_on 104:switch_color_off 105:name_l1 106:name_l2 107:name_l3 108:name_l4 111:radar_config 201:cycle_schedule |
-| boiler_switch_energy | `_tze28c1000000_rzdkn5rx` TS0601 | 19:inching |
-| valve_irrigation | `_tze28c1000000_v5xjyphj` TS0601 | 1:state 26:fault |
-| switch_4gang | `_tze28c1000000_xibaabmu` TS0601 | 15:indicator_status 19:delay_off_schedule 29:relay_status_l1 30:relay_status_l2 31:relay_status_l3 32:relay_status_l4 103:switch_color_on 104:switch_color_off 105:name_l1 106:name_l2 107:name_l3 108:name_l4 111:radar_config 201:cycle_schedule |
-| switch_3gang | `_tze28c1000000_xvywzhmi` TS0601 | 105:name_l1 106:name_l2 107:name_l3 |
-| switch_4gang | `_tze28c1000000_y4jqpry8` TS0601 | 15:indicator_status 19:delay_off_schedule 29:relay_status_l1 30:relay_status_l2 31:relay_status_l3 32:relay_status_l4 103:switch_color_on 104:switch_color_off 105:name_l1 106:name_l2 107:name_l3 108:name_l4 111:radar_config 201:cycle_schedule |
-| presence_sensor_radar | `hobeian` ZG-204ZL | 12:illuminance |
-| presence_sensor_radar | `hobeian` ZG-204ZV | 106:illuminance 111:temperature |
+| driver | couple | generic DPs | inferred candidates |
+|---|---|---|---|
+| switch_1gang | `_tyzb01_qeqvmvti` TS0011 | 17:measure_current 18:measure_power 19:measure_voltage 20:meter_power | 17~window=lookup:{"0":"close","1":"open"}(cat) 19~local_temperature_calibration=raw(cat) |
+| water_leak_sensor | `_tz3000_3dfewsk1` TS0207 | 7:muffling 102:alarm_time 103:alarm_ring 104:alarm_volume |  |
+| lcdtemphumidsensor | `_tz3000_bjawzodf` TS0201 | 3:measure_battery |  |
+| water_leak_sensor | `_tz3000_k4ej3ww2` TS0207 | 3:measure_battery 5:alarm_tamper 6:battery_voltage 7:muffling 19:alarm_water 102:alarm_time 103:alarm_ring 104:alarm_volume |  |
+| din_rail_switch | `_tz3000_qeuvnohg` TS011F | 18:measure_power 19:measure_voltage 20:measure_current 101:meter_power |  |
+| water_leak_sensor | `_tz3000_upgcbody` TS0207 | 3:measure_battery 5:alarm_tamper 6:battery_voltage 7:muffling 19:alarm_water 102:alarm_time 103:alarm_ring 104:alarm_volume |  |
+| switch_1gang | `_tz3000_v5498kdm` TS0001 | 17:measure_current 18:measure_power 19:measure_voltage 20:meter_power | 17~window=lookup:{"0":"close","1":"open"}(cat) 19~local_temperature_calibration=raw(cat) |
+| siren | `_tz3000_vdfwjopk` TS0219 | 1:onoff 4:alarm_tamper 5:volume_set 6:dp_6 7:dp_7 14:dp_14 15:measure_battery 16:dp_16 21:dp_21 104:onoff | 1~alarm_state=lookup:{"0":"alarm_sound","1":"alarm_light","2":"alarm_sound_light","3":"no_alarm"}(cat) 5~alarm_volume=lookup:{"0":"low","1":"medium","2":"high"}(cat) 6~charging=raw(cat) 15~battery=raw(cat) |
+| pir_sensor_2 | `_tz3040_bb6xaihh` TS0202 | 1:zha 2:zha 3:zha 4:zha 6:zha 9:zha 10:zha 11:zha 12:zha 13:zha 15:zha 16:zha 19:zha 101:zha 102:zha 103:zha 104:zha 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 114:zha 115:zha 116:zha 117:zha 118:zha 121:zha 122:zha 123:zha |  |
+| light_bulb_rgb | `_tz3210_0zabbfax` TS0503B | 3:dim 5:dp_5 26:dp_26 |  |
+| wall_dimmer_tuya | `_tz3210_5rta89nj` TS0601 | 102:state 104:position | 102~state=onOff |
+| light_bulb_rgb_led | `_tz3210_iystcadi` TS0505B | 3:dim 5:dp_5 26:dp_26 |  |
+| lcdtemphumidsensor | `_tz3210_qkj7rujp` TS0201 | 3:measure_battery |  |
+| curtain_motor | `_tz3210_rundhkxp` TS030F | 2:position |  |
+| curtain_motor | `_tz3210_sxtfesc6` TS030F | 2:position |  |
+| rain_sensor | `_tz3210_tgvtvdoc` TS0207 | 102:measure_luminance 104:measure_battery 106:measure_humidity | 102~illuminance=raw(cat) 104~battery=raw(cat) |
+| smoke_sensor3 | `_tz3210_up3pngle` TS0205 | 1:zha 4:zha 14:zha 15:zha 16:zha 101:zha 102:zha |  |
+| din_rail_switch | `_tz3210_vbfp8eyv` TS011F | 18:measure_power 19:measure_voltage 20:measure_current 101:meter_power |  |
+| motion_sensor | `_tz3210_wuhzzfqg` TS0202 | 107:temperature 108:humidity |  |
+| switch_temp_sensor | `_tz3218_7fiyo3kv` TS000F | 102:temperature | 102~temperature=div:10(name) |
+| switch_1gang | `_tz3218_hdc8bbha` TS000F | 17:measure_current 18:measure_power 19:measure_voltage 20:meter_power | 17~window=lookup:{"0":"close","1":"open"}(cat) 19~local_temperature_calibration=raw(cat) |
+| switch_temp_sensor | `_tz3218_ya5d6wth` TS000F | 102:temperature | 102~temperature=div:10(name) |
+| climate_sensor | `_tze200_0dvm9mva` TS0601 | 3:running_state |  |
+| device_radiator_valve | `_tze200_0hg58wyk` TS0601 | 101:schedule_monday 102:schedule_tuesday 103:schedule_wednesday 104:schedule_thursday 105:schedule_friday 106:schedule_saturday 107:schedule_sunday |  |
+| climate_sensor | `_tze200_0u3bj3rc` TS0601 | 105:triggerdistance |  |
+| curtain_motor | `_tze200_127x7wnl` TS0601 | 1:windowcoverings_state |  |
+| curtain_motor | `_tze200_1fuxihti` TS0601 | 1:windowcoverings_state 2:windowcoverings_set 4:mode 5:reverse 6:border 9:windowcoverings_tilt_set 12:backlight 16:border_limits 101:open_time 102:close_time | 4~mode=lookup:{"0":"off","1":"auto","2":"heat"}(name) |
+| water_valve_smart | `_tze200_1n2zev06` TS0601 | 1:onoff 5:meter_water 7:measure_battery |  |
+| curtain_motor | `_tze200_1vxgqfba` TS0601 | 5:motor_direction 11:zha 16:zha | 5~motor_direction=lookup:{"false":"normal","true":"reversed"}(name) |
+| switch_3gang | `_tze200_2imwyigp` TS0601 | 17:measure_current 18:measure_power 19:measure_voltage 20:meter_power |  |
+| curtain_motor | `_tze200_2odrmqwq` TS0601 | 11:zha 16:zha |  |
+| curtain_motor | `_tze200_2vfxweng` TS0601 | 2:position |  |
+| valve_irrigation | `_tze200_2wg5qrjy` TS0601 | 5:energy |  |
+| air_quality_co2 | `_tze200_3ejwxpmu` TS0601 | 18:temperature | 18~temperature=div:10 |
+| curtain_motor | `_tze200_3i3exuay` TS0601 | 11:zha 16:zha |  |
+| climate_sensor | `_tze200_3yp57tby` TS0601 | 3:running_state |  |
+| climate_sensor | `_tze200_4aijvczq` TS0601 | 28:schedule_monday 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 32:schedule_friday 33:schedule_saturday 34:schedule_sunday | 28~fan_mode=lookup:{"0":"low","1":"medium","2":"high","3":"auto"} 29~power=raw 30~countdown_l1=raw 31~countdown_l2=raw 32~ac_frequency=div:100 33~countdown_l4=raw |
+| radiator_valve | `_tze200_4hbx5cvx` TS0601 | 123:energy |  |
+| device_radiator_valve | `_tze200_4utwoz2` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday | 31~working_day=lookup:{"0":"mon_sun","1":"mon_fri+sat+sun","2":"separate"} |
+| device_radiator_valve | `_tze200_4utwozi2` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday | 31~working_day=lookup:{"0":"mon_sun","1":"mon_fri+sat+sun","2":"separate"} |
+| curtain_motor | `_tze200_5sbebbzs` TS0601 | 11:zha 16:zha |  |
+| water_valve_smart | `_tze200_5uodvhgc` TS0601 | 1:onoff 5:meter_water 7:measure_battery |  |
+| curtain_motor | `_tze200_68nvbi09` TS0601 | 1:windowcoverings_state 2:windowcoverings_set 4:mode 5:reverse 6:border 9:windowcoverings_tilt_set 12:backlight 16:border_limits 20:click_control 101:open_time 102:close_time | 4~mode=lookup:{"0":"off","1":"auto","2":"heat"}(name) |
+| curtain_motor | `_tze200_68nvbio9` TS0601 | 1:windowcoverings_state 2:windowcoverings_set 4:mode 5:reverse 6:border 9:windowcoverings_tilt_set 11:zha 12:backlight 16:border_limits 20:click_control 101:open_time 102:close_time | 4~mode=lookup:{"0":"off","1":"auto","2":"heat"}(name) |
+| device_radiator_valve | `_tze200_6rdj8dzm` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday | 31~working_day=lookup:{"0":"mon_sun","1":"mon_fri+sat+sun","2":"separate"} |
+| device_air_purifier_plug | `_tze200_7bztmfm1` TS0601 | 2:zha 18:zha 19:zha 20:zha 21:zha 22:zha |  |
+| curtain_motor | `_tze200_7eue9vhc` TS0601 | 1:state 2:position 5:motor_direction 11:zha 16:zha 101:program | 1~state=onOff(name) 5~motor_direction=lookup:{"false":"normal","true":"reversed"}(name) |
+| curtain_motor | `_tze200_7upwjcca` TS0601 | 1:windowcoverings_state 2:windowcoverings_set 4:mode 5:reverse 6:border 9:windowcoverings_tilt_set 12:backlight 16:border_limits 101:open_time 102:close_time | 4~mode=lookup:{"0":"off","1":"auto","2":"heat"}(name) |
+| device_radiator_valve | `_tze200_7yoranx2` TS0601 | 2:preset 10:frost_protection 46:holiday_start_stop 106:schedule 107:system_mode 108:schedule_monday 109:schedule_wednesday 110:schedule_friday 111:schedule_sunday 112:schedule_tuesday 113:schedule_thursday 114:schedule_saturday |  |
+| valve_irrigation | `_tze200_81isopgh` TS0601 | 5:energy |  |
+| climate_sensor | `_tze200_9dhenr94` TS0601 | 3:action |  |
+| climate_sensor | `_tze200_9m4kmbfu` TS0601 | 3:running_state |  |
+| device_radiator_valve | `_tze200_9mjy74mp` TS0601 | 1:system_mode 17:schedule_monday 18:schedule_tuesday 19:schedule_wednesday 20:schedule_thursday 21:schedule_friday 23:schedule_sunday | 17~window_open=lookup:{"0":"close","1":"open"} 18~windowopen_set=raw 20~setvalve=raw |
+| curtain_motor | `_tze200_9p5xmj5r` TS0601 | 1:windowcoverings_state 2:windowcoverings_set 4:mode 5:reverse 6:border 9:windowcoverings_tilt_set 11:zha 12:backlight 16:border_limits 20:click_control 101:open_time 102:close_time | 4~mode=lookup:{"0":"off","1":"auto","2":"heat"}(name) |
+| curtain_motor_shutter | `_tze200_9vpe3fl1` TS0601 | 11:zha 16:zha |  |
+| thermostatic_radiator_valve | `_tze200_9xfjixap` TS0601 | 28:schedule_monday 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 32:schedule_friday 33:schedule_saturday 34:schedule_sunday |  |
+| device_radiator_valve | `_tze200_a4bpgplm` TS0601 | 1:system_mode 2:thermostat_mode 4:target_temperature 5:measure_temperature 7:child_lock 17:schedule_monday 18:schedule_tuesday 19:schedule_wednesday 20:schedule_thursday 21:schedule_friday 23:schedule_sunday 35:alarm_battery 39:dp_39 | 5~local_temperature=div:10 17~window_open=lookup:{"0":"close","1":"open"} 18~windowopen_set=raw 20~setvalve=raw 39~scale_protection=onOff |
+| water_valve_smart | `_tze200_a7sghmms` TS0601 | 1:zha 2:zha 3:zha 5:zha 6:zha 7:zha 10:zha 11:zha 12:zha 13:zha 14:zha 15:zha 19:zha 21:zha 22:zha 25:zha 26:zha 37:zha 38:zha 42:zha 47:zha 59:zha 101:zha 103:zha 104:zha 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 114:zha 115:zha | 11~countdown=raw 13~state=bool 14~auto_clean=onOff 22~temperature=div:100 26~voltage=mul:10 101~set_valve_position=raw |
+| curtain_motor | `_tze200_a8z0g46u` TS0601 | 2:state |  |
+| switch_1gang | `_tze200_abatw3kj` TS0601 | 9:faults | 9~countdown_3=raw |
+| presence_sensor_radar | `_tze200_ar0slwnd` TS0601 | 3:zha 6:errorcode 10:zha 11:zha 12:zha 16:zha 19:zha 103:zha 104:illuminance 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 114:zha 115:zha 116:zha 117:zha 118:zha 121:zha 122:zha 123:zha | 6~equipment_status=raw 11~human_motion_state=lookup:{"0":"none","1":"small","2":"large"} 12~illuminance=raw 116~distance_report=lookup:{"0":"OFF","1":"ON"} 121~battery=raw 123~motion_detection_sensitivity=raw |
+| radiator_valve | `_tze200_awnadkan` TS0601 | 109:schedule_monday 110:schedule_tuesday 111:schedule_wednesday 112:schedule_thursday 113:schedule_friday 114:schedule_saturday 115:schedule_sunday | 109~zone_5_linked=onOff 110~zone_6_linked=onOff 111~zone_a_name=raw 112~zone_b_name=raw 113~zone_1_name=raw 114~zone_2_name=raw 115~online=bool |
+| curtain_motor | `_tze200_ax8a8ahx` TS0601 | 1:state 2:position 101:motor_direction 107:factory_reset | 1~state=onOff(name) |
+| sensor_climate_contact | `_tze200_aycxwiau` TS0601 | 11:errorcode |  |
+| radiator_valve | `_tze200_azqp6ssj` TS0601 | 3:running_state 101:system_mode |  |
+| curtain_motor | `_tze200_ba69l9ol` TS0601 | 1:state 2:position 11:zha 16:cover_limit 20:click_control | 1~state=onOff(name) |
+| curtain_motor | `_tze200_bjzrowv2` TS0601 | 1:state 2:position 5:motor_direction | 1~state=onOff(name) 5~motor_direction=lookup:{"false":"normal","true":"reversed"}(name) |
+| energy_meter_din | `_tze200_bkkmqmyo` TS0601 | 2:zha 15:zha 104:zha 106:zha 107:zha 108:zha 112:zha 113:zha 114:zha 115:zha 116:zha 117:zha 118:zha 119:zha 120:zha |  |
+| curtain_motor | `_tze200_bv1jcqqu` TS0601 | 1:state 2:position 5:motor_direction 11:zha 16:zha 101:program | 1~state=onOff(name) 5~motor_direction=lookup:{"false":"normal","true":"reversed"}(name) |
+| device_radiator_valve | `_tze200_bvrlmajk` TS0601 | 1:system_mode 17:schedule_monday 18:schedule_tuesday 19:schedule_wednesday 20:schedule_thursday 21:schedule_friday 23:schedule_sunday | 17~window_open=lookup:{"0":"close","1":"open"} 18~windowopen_set=raw 20~setvalve=raw |
+| device_radiator_valve_smart | `_tze200_bvu2wnxz` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday |  |
+| energy_meter_din | `_tze200_byzdayie` TS0601 | 2:zha 15:zha 101:zha 103:zha 104:zha 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 113:zha 114:zha 115:zha 116:zha 117:zha 118:zha 119:zha 120:zha | 103~power=raw 105~ac_frequency=div:100 109~energy_reactive=div:100 110~power_reactive=raw 111~power_factor=div:10 |
+| smart_lcd_thermostat | `_tze200_c88teujp` TS0601 | 101:system_mode |  |
+| curtain_motor | `_tze200_cf1sl3tj` TS0601 | 1:windowcoverings_state 2:windowcoverings_set 4:mode 5:reverse 6:border 9:windowcoverings_tilt_set 11:zha 12:backlight 16:border_limits 20:click_control 101:open_time 102:close_time | 4~mode=lookup:{"0":"off","1":"auto","2":"heat"}(name) |
+| curtain_motor | `_tze200_clm4gdw4` TS0601 | 2:position |  |
+| presence_sensor_radar | `_tze200_clrdrnya` TS0601 | 10:zha 11:zha 12:zha 16:zha 19:zha 117:zha 118:zha 121:zha 122:zha 123:zha | 11~human_motion_state=lookup:{"0":"none","1":"small","2":"large"} 12~illuminance=raw 121~battery=raw 123~motion_detection_sensitivity=raw |
+| curtain_motor | `_tze200_cowvfni3` TS0601 | 11:zha 16:zha |  |
+| curtain_motor | `_tze200_cpbo62rn` TS0601 | 1:state 2:position 101:motor_direction 107:factory_reset | 1~state=onOff(name) |
+| sensor_climate_contact | `_tze200_cxakecfo` TS0601 | 28:schedule_monday 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 32:schedule_friday 33:schedule_saturday 34:schedule_sunday |  |
+| valve_irrigation | `_tze200_d0ypnbvn` TS0601 | 1:state 26:fault | 1~state=onOff(name) |
+| device_radiator_valve | `_tze200_d3z1ukqw` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday | 31~working_day=lookup:{"0":"mon_sun","1":"mon_fri+sat+sun","2":"separate"} |
+| climate_sensor | `_tze200_d9mzkhoq` TS0601 | 10:ph |  |
+| curtain_motor | `_tze200_dng9fn0k` TS0601 | 11:zha 16:zha |  |
+| curtain_motor | `_tze200_dq8bu0pt` TS0601 | 1:action 2:action 4:action |  |
+| device_radiator_valve | `_tze200_dv8abrrz` TS0601 | 1:system_mode 17:schedule_monday 18:schedule_tuesday 19:schedule_wednesday 20:schedule_thursday 21:schedule_friday 23:schedule_sunday | 17~window_open=lookup:{"0":"close","1":"open"} 18~windowopen_set=raw 20~setvalve=raw |
+| climate_sensor | `_tze200_dwcarsat` TS0601 | 20:formaldehyd 21:voc |  |
+| wall_thermostat | `_tze200_dzuqwsyg` TS0601 | 1:state 2:system_mode 4:preset 27:local_temperature_calibration 101:schedule 202:schedule_text | 1~state=onOff(name) 101~running_state=lookup:{"0":"idle","1":"heat"} |
+| dimmer_2_gang_tuya | `_tze200_e3oitdyu` TS0601 | 2:bri 8:bri | 2~brightness_l1=scale:0,254,0,1000 8~brightness_l2=scale:0,254,0,1000 |
+| radiator_valve | `_tze200_e5hpkc6d` TS0601 | 123:energy |  |
+| device_radiator_valve | `_tze200_e9ba97vf` TS0601 | 2:preset 10:frost_protection 46:holiday_start_stop 106:schedule 107:system_mode 108:schedule_monday 109:schedule_wednesday 110:schedule_friday 111:schedule_sunday 112:schedule_tuesday 113:schedule_thursday 114:schedule_saturday |  |
+| climate_sensor | `_tze200_edl8pz1k` TS0601 | 105:schedule_saturday 106:schedule_friday 107:schedule_thursday 108:schedule_wednesday 109:schedule_tuesday 110:schedule_monday |  |
+| curtain_motor | `_tze200_eevqq1uv` TS0601 | 1:state 2:position 16:cover_limit 20:click_control | 1~state=onOff(name) |
+| climate_sensor | `_tze200_eo6xhfbo` TS0601 | 28:schedule_monday 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 32:schedule_friday 33:schedule_saturday 34:schedule_sunday | 28~fan_mode=lookup:{"0":"low","1":"medium","2":"high","3":"auto"} 29~power=raw 30~countdown_l1=raw 31~countdown_l2=raw 32~ac_frequency=div:100 33~countdown_l4=raw |
+| curtain_motor | `_tze200_eqpaxqdv` TS0601 | 2:position 16:cover_limit |  |
+| curtain_motor_tilt | `_tze200_ergbiejo` TS0601 | 11:zha 16:zha |  |
+| energy_meter_din | `_tze200_ewxhg6o9` TS0601 | 2:zha 15:zha 101:zha 103:zha 104:zha 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 113:zha 114:zha 115:zha 116:zha 117:zha 118:zha 119:zha 120:zha | 103~power=raw 105~ac_frequency=div:100 109~energy_reactive=div:100 110~power_reactive=raw 111~power_factor=div:10 |
+| climate_sensor | `_tze200_exfrnlow` TS0601 | 3:running_state |  |
+| curtain_motor | `_tze200_fctwhugx` TS0601 | 11:zha 16:zha |  |
+| curtain_motor | `_tze200_fodv6bkr` TS0601 | 1:state 2:position 5:motor_direction 12:motor_fault 16:cover_limit 20:click_control | 1~state=onOff(name) 5~motor_direction=lookup:{"false":"normal","true":"reversed"}(name) 12~motor_fault=tf:1(name) |
+| radiator_valve | `_tze200_fsow0qsk` TS0601 | 2:preset 10:frost_protection 46:holiday_start_stop 106:schedule 107:system_mode 108:schedule_monday 109:schedule_wednesday 110:schedule_friday 111:schedule_sunday 112:schedule_tuesday 113:schedule_thursday 114:schedule_saturday | 109~zone_5_linked=onOff 110~zone_6_linked=onOff 111~zone_a_name=raw 112~zone_b_name=raw 113~zone_1_name=raw 114~zone_2_name=raw |
+| curtain_motor | `_tze200_fzo2pocs` TS0601 | 11:zha 16:zha |  |
+| curtain_motor | `_tze200_g5xqosu7` TS0601 | 1:state 2:position | 1~state=onOff(name) |
+| curtain_motor | `_tze200_gaj531w3` TS0601 | 11:zha 16:zha |  |
+| sensor_gas_presence | `_tze200_ggev5fsl` TS0601 | 6:zha 7:zha 10:zha 12:zha |  |
+| curtain_motor | `_tze200_gnw1rril` TS0601 | 2:position |  |
+| thermostatic_radiator_valve | `_tze200_gtouvmvl` TS0601 | 109:schedule_monday 110:schedule_tuesday 111:schedule_wednesday 112:schedule_thursday 113:schedule_friday 114:schedule_saturday 115:schedule_sunday |  |
+| curtain_motor | `_tze200_gubdgai2` TS0601 | 1:state 2:position 5:motor_direction 11:zha 16:cover_limit | 1~state=onOff(name) 5~motor_direction=lookup:{"false":"normal","true":"reversed"}(name) |
+| climate_sensor | `_tze200_h4cgnbzg` TS0601 | 3:running_state |  |
+| climate_sensor | `_tze200_hmabvy81` TS0601 | 3:action |  |
+| curtain_motor | `_tze200_hojryzzd` TS0601 | 11:zha 16:zha |  |
+| presence_sensor_radar | `_tze200_holel4dk` TS0601 | 3:zha 6:zha 10:zha 11:zha 12:zha 16:zha 19:zha 103:zha 104:zha 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 114:zha 115:zha 116:zha 117:zha 118:zha 121:zha 122:zha 123:zha | 6~equipment_status=raw 11~human_motion_state=lookup:{"0":"none","1":"small","2":"large"} 12~illuminance=raw 116~distance_report=lookup:{"0":"OFF","1":"ON"} 121~battery=raw 123~motion_detection_sensitivity=raw |
+| curtain_motor | `_tze200_hsgrhjpf` TS0601 | 11:zha 16:zha |  |
+| thermostat_tuya_dp | `_tze200_hue3yfsn` TS0601 | 46:holiday_start_stop 106:schedule 107:system_mode 108:schedule_monday 109:schedule_wednesday 110:schedule_friday 111:schedule_sunday 112:schedule_tuesday 113:schedule_thursday 114:schedule_saturday | 108~schedule_enable=bool |
+| radiator_valve | `_tze200_husqqvux` TS0601 | 2:preset 10:frost_protection 46:holiday_start_stop 106:schedule 107:system_mode 108:schedule_monday 109:schedule_wednesday 110:schedule_friday 111:schedule_sunday 112:schedule_tuesday 113:schedule_thursday 114:schedule_saturday | 109~zone_5_linked=onOff 110~zone_6_linked=onOff 111~zone_a_name=raw 112~zone_b_name=raw 113~zone_1_name=raw 114~zone_2_name=raw |
+| device_radiator_valve_smart | `_tze200_hvaxb2tc` TS0601 | 29:schedule_thursday 30:schedule_friday 31:schedule_saturday 33:schedule_monday 34:schedule_tuesday |  |
+| presence_sensor_radar | `_tze200_hyhl5y36` TS0601 | 103:ai_self_learning 104:factory_reset 105:fast_setting 116:sensor_mode 125:home_environment | 116~distance_report=lookup:{"0":"OFF","1":"ON"} |
+| thermostat_tuya_dp | `_tze200_i48qyn9s` TS0601 | 34:battery 45:fault_code 103:away_setting | 34~battery=scale:0,100,50,150(name) 45~error_status=raw 103~occupied_heating_setpoint=div:10 |
+| curtain_motor | `_tze200_icka1clh` TS0601 | 1:windowcoverings_state 2:position 5:motor_direction 11:zha 16:zha 103:set_upper_limit | 5~motor_direction=lookup:{"false":"normal","true":"reversed"}(name) |
+| presence_sensor_radar | `_tze200_ikvncluo` TS0601 | 3:zha 6:zha 10:zha 11:zha 12:zha 16:zha 19:zha 103:zha 104:zha 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 114:zha 115:zha 116:zha 117:zha 118:zha 121:zha 122:zha 123:zha | 6~equipment_status=raw 11~human_motion_state=lookup:{"0":"none","1":"small","2":"large"} 12~illuminance=raw 116~distance_report=lookup:{"0":"OFF","1":"ON"} 121~battery=raw 123~motion_detection_sensitivity=raw |
+| curtain_motor_tilt | `_tze200_iossyxra` TS0601 | 11:zha 16:zha |  |
+| climate_sensor | `_tze200_ivdc0kwl` TS0601 | 28:schedule_monday 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 32:schedule_friday 33:schedule_saturday 34:schedule_sunday | 28~fan_mode=lookup:{"0":"low","1":"medium","2":"high","3":"auto"} 29~power=raw 30~countdown_l1=raw 31~countdown_l2=raw 32~ac_frequency=div:100 33~countdown_l4=raw |
+| climate_sensor | `_tze200_iwn0gpzz` TS0601 | 18:data_report_duration |  |
+| device_radiator_valve | `_tze200_jkfbph7l` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday | 31~working_day=lookup:{"0":"mon_sun","1":"mon_fri+sat+sun","2":"separate"} |
+| ultrasonic_heat_meter | `_tze200_jt50ea5d` TS0601 | 3:daily_water_consumption 5:fault 19:instantaneous_flow_rate |  |
+| water_leak_sensor | `_tze200_jthf7vb6` TS0601 | 7:muffling 102:alarm_time 103:alarm_ring 104:alarm_volume |  |
+| presence_sensor_radar | `_tze200_jva8ink8` TS0601 | 3:zha 6:zha 10:zha 11:zha 12:zha 16:zha 19:zha 103:zha 104:zha 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 114:zha 115:zha 116:zha 117:zha 118:zha 121:zha 122:zha 123:zha | 6~equipment_status=raw 11~human_motion_state=lookup:{"0":"none","1":"small","2":"large"} 12~illuminance=raw 116~distance_report=lookup:{"0":"OFF","1":"ON"} 121~battery=raw 123~motion_detection_sensitivity=raw |
+| radiator_valve | `_tze200_k1tumq4t` TS0601 | 2:preset 10:frost_protection 46:holiday_start_stop 106:schedule 107:system_mode 108:schedule_monday 109:schedule_wednesday 110:schedule_friday 111:schedule_sunday 112:schedule_tuesday 113:schedule_thursday 114:schedule_saturday | 109~zone_5_linked=onOff 110~zone_6_linked=onOff 111~zone_a_name=raw 112~zone_b_name=raw 113~zone_1_name=raw 114~zone_2_name=raw |
+| presence_sensor_radar | `_tze200_ka8l86iu` TS0601 | 106:illuminance 108:indicator 110:battery | 106~illuminance=raw(name) 108~indicator=onOff(name) 110~battery=raw(name) |
+| pir_sensor_2 | `_tze200_kb5noeto` TS0601 | 6:errorcode |  |
+| radiator_valve | `_tze200_kds0pmmv` TS0601 | 2:preset 10:frost_protection 46:holiday_start_stop 106:schedule 107:system_mode 108:schedule_monday 109:schedule_wednesday 110:schedule_friday 111:schedule_sunday 112:schedule_tuesday 113:schedule_thursday 114:schedule_saturday | 109~zone_5_linked=onOff 110~zone_6_linked=onOff 111~zone_a_name=raw 112~zone_b_name=raw 113~zone_1_name=raw 114~zone_2_name=raw |
+| climate_sensor | `_tze200_khah2lkr` TS0601 | 102:running_state 128:mode_state |  |
+| climate_sensor | `_tze200_kvpwq8z7` TS0601 | 6:zha 7:zha 10:zha 12:zha |  |
+| device_radiator_valve | `_tze200_lhzapfg9` TS0601 | 2:preset 10:frost_protection 46:holiday_start_stop 106:schedule 107:system_mode 108:schedule_monday 109:schedule_wednesday 110:schedule_friday 111:schedule_sunday 112:schedule_tuesday 113:schedule_thursday 114:schedule_saturday |  |
+| curtain_motor | `_tze200_libht6ua` TS0601 | 1:state 2:position 101:motor_direction 107:factory_reset | 1~state=onOff(name) |
+| radiator_valve | `_tze200_lllliz3p` TS0601 | 2:preset 10:frost_protection 46:holiday_start_stop 106:schedule 107:system_mode 108:schedule_monday 109:schedule_wednesday 110:schedule_friday 111:schedule_sunday 112:schedule_tuesday 113:schedule_thursday 114:schedule_saturday | 109~zone_5_linked=onOff 110~zone_6_linked=onOff 111~zone_a_name=raw 112~zone_b_name=raw 113~zone_1_name=raw 114~zone_2_name=raw |
+| radiator_valve | `_tze200_lnbfnyxd` TS0601 | 2:preset 10:frost_protection 46:holiday_start_stop 106:schedule 107:system_mode 108:schedule_monday 109:schedule_wednesday 110:schedule_friday 111:schedule_sunday 112:schedule_tuesday 113:schedule_thursday 114:schedule_saturday | 109~zone_5_linked=onOff 110~zone_6_linked=onOff 111~zone_a_name=raw 112~zone_b_name=raw 113~zone_1_name=raw 114~zone_2_name=raw |
+| energy_meter_3phase | `_tze200_loejka0i` TS0601 | 15:power_factor 16:energy_reset 17:alarm_set_1 18:alarm_set_2 104:power_a 107:power_b 110:power_c 111:power 118:power_factor_a 119:power_factor_b 120:power_factor_c | 15~power_factor=raw(name) 104~current_a=div:1000 107~power_b=raw(name) 110~energy_produced_a=div:100 111~power=raw(name) 118~energy_b=div:100 119~energy_produced_b=div:100 |
+| presence_sensor_radar | `_tze200_lyetpprm` TS0601 | 3:zha 6:zha 10:zha 11:zha 12:zha 16:zha 19:zha 103:zha 104:zha 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 114:zha 115:zha 116:zha 117:zha 118:zha 121:zha 122:zha 123:zha | 6~equipment_status=raw 11~human_motion_state=lookup:{"0":"none","1":"small","2":"large"} 12~illuminance=raw 116~distance_report=lookup:{"0":"OFF","1":"ON"} 121~battery=raw 123~motion_detection_sensitivity=raw |
+| curtain_motor | `_tze200_m6lwazh9` TS0601 | 1:windowcoverings_state 2:windowcoverings_set 4:mode 5:reverse 6:border 9:windowcoverings_tilt_set 12:backlight 16:border_limits 101:open_time 102:close_time | 4~mode=lookup:{"0":"off","1":"auto","2":"heat"}(name) |
+| air_quality_co2 | `_tze200_mja3fuja` TS0601 | 21:measure_voc 22:measure_formaldehyde | 21~measured_value=raw 22~measured_value=raw |
+| curtain_motor | `_tze200_mlglxwp3` TS0601 | 1:state 2:position 5:motor_direction | 1~state=onOff(name) 5~motor_direction=lookup:{"false":"normal","true":"reversed"}(name) |
+| climate_sensor | `_tze200_moycceze` TS0601 | 26:action 27:action 28:action 29:action | 27~local_temperature_calibration=raw 28~fan_mode=lookup:{"0":"low","1":"medium","2":"high","3":"auto"} 29~power=raw |
+| presence_sensor_radar | `_tze200_mp902om5` TS0601 | 10:zha 11:zha 12:zha 16:zha 19:zha 117:zha 118:zha 121:zha 122:zha 123:zha | 11~human_motion_state=lookup:{"0":"none","1":"small","2":"large"} 12~illuminance=raw 121~battery=raw 123~motion_detection_sensitivity=raw |
+| presence_sensor_radar | `_tze200_mrf6vtua` TS0601 | 3:zha 6:errorcode 10:zha 11:zha 12:zha 16:zha 19:zha 103:zha 104:illuminance 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 114:zha 115:zha 116:zha 117:zha 118:zha 121:zha 122:zha 123:zha | 6~equipment_status=raw 11~human_motion_state=lookup:{"0":"none","1":"small","2":"large"} 12~illuminance=raw 116~distance_report=lookup:{"0":"OFF","1":"ON"} 121~battery=raw 123~motion_detection_sensitivity=raw |
+| radiator_valve | `_tze200_mudxchsu` TS0601 | 2:preset 10:frost_protection 46:holiday_start_stop 106:schedule 107:system_mode 108:schedule_monday 109:schedule_wednesday 110:schedule_friday 111:schedule_sunday 112:schedule_tuesday 113:schedule_thursday 114:schedule_saturday | 109~zone_5_linked=onOff 110~zone_6_linked=onOff 111~zone_a_name=raw 112~zone_b_name=raw 113~zone_1_name=raw 114~zone_2_name=raw |
+| climate_sensor | `_tze200_mx6u6l4y` TS0601 | 105:triggerdistance |  |
+| climate_sensor | `_tze200_n9clpsht` TS0601 | 26:action 27:action 28:action 29:action | 27~local_temperature_calibration=raw 28~fan_mode=lookup:{"0":"low","1":"medium","2":"high","3":"auto"} 29~power=raw |
+| water_valve_smart | `_tze200_nbqnmkee` TS0601 | 1:onoff 4:fault 5:meter_water 7:measure_battery 10:weather_delay 101:water_leakage_state 110:power_off_state | 4~report_period=lookup:{"0":"1h","1":"2h","2":"3h","3":"4h","4":"6h","5":"8h","6":"12h","7":"24h"} 10~weather_delay=lookup:{"0":"disabled","1":"delayed_24h","2":"delayed_48h","3":"delayed_72h"}(name) 101~set_valve_position=raw |
+| curtain_motor | `_tze200_nhyj64w2` TS0601 | 11:zha 16:zha |  |
+| garage_door_opener | `_tze200_nklqjk62` TS0601 | 2:dp_2 4:dp_4 5:dp_5 11:dp_11 |  |
+| curtain_motor | `_tze200_nogaemzt` TS0601 | 11:zha 16:zha |  |
+| curtain_motor | `_tze200_nueqqe6k` TS0601 | 11:zha 16:zha |  |
+| climate_sensor | `_tze200_nvodulvi` TS0601 | 102:action 103:action 104:action 108:action 109:action 110:action 111:action |  |
+| curtain_motor | `_tze200_nw1r9hp6` TS0601 | 1:state 2:position 11:zha 16:cover_limit 20:click_control | 1~state=onOff(name) |
+| climate_sensor | `_tze200_ny94onlb` TS0601 | 18:data_report_duration |  |
+| climate_sensor | `_tze200_nyvavzbj` TS0601 | 26:action 27:action 28:action 29:action | 27~local_temperature_calibration=raw 28~fan_mode=lookup:{"0":"low","1":"medium","2":"high","3":"auto"} 29~power=raw |
+| air_quality_co2 | `_tze200_ogkdpgy2` TS0601 | 18:temperature | 18~temperature=div:10 |
+| device_radiator_valve | `_tze200_ow09xlxm` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday | 31~working_day=lookup:{"0":"mon_sun","1":"mon_fri+sat+sun","2":"separate"} |
+| curtain_motor | `_tze200_p2qzzazi` TS0601 | 1:state 2:position 5:motor_direction | 1~state=onOff(name) 5~motor_direction=lookup:{"false":"normal","true":"reversed"}(name) |
+| radiator_valve | `_tze200_p3dbf6qs` TS0601 | 29:schedule_thursday 30:schedule_friday 31:schedule_saturday 33:schedule_monday 34:schedule_tuesday | 30~child_lock=lookup:{"true":"LOCK","false":"UNLOCK"} 31~working_day=lookup:{"0":"mon_sun","1":"mon_fri+sat+sun","2":"separate"} 33~holiday_days=raw 34~humidity=raw |
+| climate_sensor | `_tze200_pbo8cj0z` TS0601 | 28:schedule_monday 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 32:schedule_friday 33:schedule_saturday 34:schedule_sunday | 28~fan_mode=lookup:{"0":"low","1":"medium","2":"high","3":"auto"} 29~power=raw 30~countdown_l1=raw 31~countdown_l2=raw 32~ac_frequency=div:100 33~countdown_l4=raw |
+| curtain_motor | `_tze200_pk0sfzvr` TS0601 | 102:position 103:position | 102~position=div:10(name) |
+| curtain_motor | `_tze200_pw7mji0l` TS0601 | 1:state 2:position 11:zha 16:cover_limit 20:click_control | 1~state=onOff(name) |
+| device_radiator_valve | `_tze200_py4cm3he` TS0601 | 2:preset 10:frost_protection 46:holiday_start_stop 106:schedule 107:system_mode 108:schedule_monday 109:schedule_wednesday 110:schedule_friday 111:schedule_sunday 112:schedule_tuesday 113:schedule_thursday 114:schedule_saturday |  |
+| curtain_motor | `_tze200_qhlxve78` TS0601 | 18:data_report_duration |  |
+| lcdtemphumidsensor_3 | `_tze200_qyflbnbj` TS0601 | 1:temperature | 1~temperature=div:10(name) |
+| wall_dimmer_tuya | `_tze200_qzaing2g` TS0601 | 143:min_brightness 144:max_brightness |  |
+| climate_sensor | `_tze200_r5ksy7qo` TS0601 | 28:schedule_monday 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 32:schedule_friday 33:schedule_saturday 34:schedule_sunday | 28~fan_mode=lookup:{"0":"low","1":"medium","2":"high","3":"auto"} 29~power=raw 30~countdown_l1=raw 31~countdown_l2=raw 32~ac_frequency=div:100 33~countdown_l4=raw |
+| curtain_motor | `_tze200_rddyvrci` TS0601 | 11:zha 16:zha |  |
+| panel_switch_cover_tuya | `_tze200_rgeapp2c` TS0601 | 1:state_c1 2:position_c1 4:state_c2 5:position_c2 |  |
+| device_radiator_valve | `_tze200_rtrmfadk` TS0601 | 1:system_mode 17:schedule_monday 18:schedule_tuesday 19:schedule_wednesday 20:schedule_thursday 21:schedule_friday 23:schedule_sunday | 17~window_open=lookup:{"0":"close","1":"open"} 18~windowopen_set=raw 20~setvalve=raw |
+| device_radiator_valve | `_tze200_rv6iuyxb` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday | 31~working_day=lookup:{"0":"mon_sun","1":"mon_fri+sat+sun","2":"separate"} |
+| device_radiator_valve | `_tze200_rxntag7i` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday | 31~working_day=lookup:{"0":"mon_sun","1":"mon_fri+sat+sun","2":"separate"} |
+| device_radiator_valve | `_tze200_rxq4iti9` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday | 31~working_day=lookup:{"0":"mon_sun","1":"mon_fri+sat+sun","2":"separate"} |
+| presence_sensor_radar | `_tze200_sbyx0lm6` TS0601 | 10:zha 11:zha 12:zha 16:zha 19:zha 117:zha 118:zha 121:zha 122:zha 123:zha | 11~human_motion_state=lookup:{"0":"none","1":"small","2":"large"} 12~illuminance=raw 121~battery=raw 123~motion_detection_sensitivity=raw |
+| presence_sensor_radar | `_tze200_sfiy5tfs` TS0601 | 3:zha 6:errorcode 10:zha 11:zha 12:zha 16:zha 19:zha 103:zha 104:illuminance 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 114:zha 115:zha 116:zha 117:zha 118:zha 121:zha 122:zha 123:zha | 6~equipment_status=raw 11~human_motion_state=lookup:{"0":"none","1":"small","2":"large"} 12~illuminance=raw 116~distance_report=lookup:{"0":"OFF","1":"ON"} 121~battery=raw 123~motion_detection_sensitivity=raw |
+| curtain_motor | `_tze200_sfqyhvpv` TS0601 | 1:state 2:position 16:cover_limit 20:click_control | 1~state=onOff(name) |
+| presence_sensor_radar | `_tze200_sgpeacqp` TS0601 | 3:zha 6:zha 10:zha 11:zha 12:zha 16:zha 19:zha 103:zha 104:zha 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 114:zha 115:zha 116:zha 117:zha 118:zha 121:zha 122:zha 123:zha | 6~equipment_status=raw 11~human_motion_state=lookup:{"0":"none","1":"small","2":"large"} 12~illuminance=raw 116~distance_report=lookup:{"0":"OFF","1":"ON"} 121~battery=raw 123~motion_detection_sensitivity=raw |
+| water_valve_smart | `_tze200_sh1btabb` TS0601 | 101:irrigation_start_time 111:energy 114:irrigation_duration | 101~set_valve_position=raw |
+| curtain_motor | `_tze200_sq6affpe` TS0601 | 5:motor_direction 11:zha 16:zha | 5~motor_direction=lookup:{"false":"normal","true":"reversed"}(name) |
+| radiator_valve | `_tze200_sur6q7ko` TS0601 | 2:preset 10:frost_protection 46:holiday_start_stop 106:schedule 107:system_mode 108:schedule_monday 109:schedule_wednesday 110:schedule_friday 111:schedule_sunday 112:schedule_tuesday 113:schedule_thursday 114:schedule_saturday | 109~zone_5_linked=onOff 110~zone_6_linked=onOff 111~zone_a_name=raw 112~zone_b_name=raw 113~zone_1_name=raw 114~zone_2_name=raw |
+| device_radiator_valve | `_tze200_suxywabt` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday | 31~working_day=lookup:{"0":"mon_sun","1":"mon_fri+sat+sun","2":"separate"} |
+| climate_sensor | `_tze200_thbr5z34` TS0601 | 109:valve_position |  |
+| climate_sensor | `_tze200_u319yc66` TS0601 | 6:zha 7:zha 10:zha 12:zha |  |
+| climate_sensor | `_tze200_u9bfwha0` TS0601 | 36:valve_position |  |
+| valve_irrigation | `_tze200_ugekduaj` TS0601 | 18:data_report_duration |  |
+| curtain_motor | `_tze200_uj3f4wr5` TS0601 | 1:windowcoverings_state |  |
+| climate_sensor | `_tze200_v1jqz5cy` TS0601 | 10:ph |  |
+| climate_sensor | `_tze200_v6ossqfy` TS0601 | 105:triggerdistance |  |
+| curtain_motor | `_tze200_vdiuwbkq` TS0601 | 1:state 2:position 5:motor_direction 11:zha 16:cover_limit | 1~state=onOff(name) 5~motor_direction=lookup:{"false":"normal","true":"reversed"}(name) |
+| curtain_motor | `_tze200_vexa5o82` TS0601 | 1:state 2:position 16:cover_limit 20:click_control | 1~state=onOff(name) |
+| wall_thermostat | `_tze200_viy9ihs7` TS0601 | 4:preset 16:zha 24:zha 28:zha 30:zha 104:working_day 105:zha 108:zha 109:schedule_weekday 111:zha 120:zha 121:zha 122:zha 123:zha | 24~local_temperature=div:10 28~fan_mode=lookup:{"0":"low","1":"medium","2":"high","3":"auto"} |
+| valve_single | `_tze200_vrjkcam9` TS0601 | 1:state 26:fault | 1~state=onOff(name) |
+| water_valve_smart | `_tze200_vuwtqx0t` TS0601 | 2:month_consumption 3:daily_consumption 5:faults 18:reverse_water_consumed 21:flow_rate |  |
+| lcdtemphumidsensor | `_tze200_vvmbj46n` TS0601 | 3:measure_battery |  |
+| switch_wireless | `_tze200_vzekyi4c` TS0601 | 11:errorcode |  |
+| climate_sensor | `_tze200_wbhaespm` TS0601 | 17:overload_breaker 18:over_current_threshold |  |
+| climate_sensor | `_tze200_wdfurkoa` TS0601 | 5:motor_direction | 5~motor_direction=lookup:{"false":"normal","true":"reversed"}(name) |
+| climate_sensor | `_tze200_wehza30a` TS0601 | 3:position 5:motor_direction 7:motor_state | 3~position=raw(name) 5~motor_direction=lookup:{"false":"normal","true":"reversed"}(name) |
+| garage_door | `_tze200_wfxuhoea` TS0601 | 4:dp_4 5:dp_5 11:dp_11 |  |
+| curtain_motor | `_tze200_wmcdj3aq` TS0601 | 11:zha 16:zha |  |
+| device_radiator_valve | `_tze200_wsbfwodu` TS0601 | 2:preset 10:frost_protection 46:holiday_start_stop 106:schedule 107:system_mode 108:schedule_monday 109:schedule_wednesday 110:schedule_friday 111:schedule_sunday 112:schedule_tuesday 113:schedule_thursday 114:schedule_saturday |  |
+| water_valve_smart | `_tze200_wt9agwf3` TS0601 | 1:onoff 5:meter_water 7:measure_battery |  |
+| presence_sensor_radar | `_tze200_wukb7rhc` TS0601 | 3:zha 6:zha 10:zha 11:zha 12:zha 16:zha 19:zha 103:zha 104:zha 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 114:zha 115:zha 116:zha 117:zha 118:zha 121:zha 122:zha 123:zha | 6~equipment_status=raw 11~human_motion_state=lookup:{"0":"none","1":"small","2":"large"} 12~illuminance=raw 116~distance_report=lookup:{"0":"OFF","1":"ON"} 121~battery=raw 123~motion_detection_sensitivity=raw |
+| climate_sensor | `_tze200_wv9ukqca` TS0601 | 3:action |  |
+| climate_sensor | `_tze200_x8fp01wi` TS0601 | 26:error_status 111:countdown 115:battery_state |  |
+| device_radiator_valve | `_tze200_x9axofse` TS0601 | 2:preset 10:frost_protection 46:holiday_start_stop 106:schedule 107:system_mode 108:schedule_monday 109:schedule_wednesday 110:schedule_friday 111:schedule_sunday 112:schedule_tuesday 113:schedule_thursday 114:schedule_saturday |  |
+| curtain_motor | `_tze200_xaabybja` TS0601 | 11:zha 16:zha |  |
+| wall_thermostat | `_tze200_xixlazkg` TS0601 | 44:local_temperature_calibration |  |
+| presence_sensor_radar | `_tze200_xpq2rzhq` TS0601 | 3:zha 6:zha 10:zha 11:zha 12:zha 16:zha 19:zha 103:zha 104:zha 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 114:zha 115:zha 116:zha 117:zha 118:zha 121:zha 122:zha 123:zha | 6~equipment_status=raw 11~human_motion_state=lookup:{"0":"none","1":"small","2":"large"} 12~illuminance=raw 116~distance_report=lookup:{"0":"OFF","1":"ON"} 121~battery=raw 123~motion_detection_sensitivity=raw |
+| curtain_motor | `_tze200_xtrnjaoz` TS0601 | 1:state 9:position 11:motor_direction | 1~state=onOff(name) |
+| curtain_motor | `_tze200_xuzcvlku` TS0601 | 11:zha 16:zha |  |
+| presence_sensor_radar | `_tze200_y8jijhba` TS0601 | 104:humidity_calibration 105:temperature_calibration 109:temperature_unit 111:temperature | 104~humidity_calibration=raw(name) 105~temperature_calibration=div:10(name) 109~temperature_unit=lookup:{"0":"celsius","1":"fahrenheit"}(name) 111~temperature=div:10(name) |
+| climate_sensor | `_tze200_ybsqljjg` TS0601 | 28:schedule_monday 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 32:schedule_friday 33:schedule_saturday 34:schedule_sunday | 28~fan_mode=lookup:{"0":"low","1":"medium","2":"high","3":"auto"} 29~power=raw 30~countdown_l1=raw 31~countdown_l2=raw 32~ac_frequency=div:100 33~countdown_l4=raw |
+| radiator_valve | `_tze200_ye5jkfsb` TS0601 | 2:preset |  |
+| curtain_motor | `_tze200_yenbr4om` TS0601 | 11:zha 16:zha |  |
+| climate_sensor | `_tze200_yjjdcqsq` TS0601 | 3:measure_battery |  |
+| vibration_sensor | `_tze200_yjryxpot` TS0601 | 7:tilt 102:y 103:z 104:sensitivity 105:battery | 7~tilt=tf:1 102~y=twos8:1 103~z=twos8:1 104~sensitivity=lookup:{"0":"low","1":"middle","2":"high"} 105~battery=raw |
+| device_radiator_valve | `_tze200_yqgbrdyo` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday | 31~working_day=lookup:{"0":"mon_sun","1":"mon_fri+sat+sun","2":"separate"} |
+| device_radiator_valve | `_tze200_z1tyspqw` TS0601 | 1:system_mode 17:schedule_monday 18:schedule_tuesday 19:schedule_wednesday 20:schedule_thursday 21:schedule_friday 23:schedule_sunday | 17~window_open=lookup:{"0":"close","1":"open"} 18~windowopen_set=raw 20~setvalve=raw |
+| curtain_motor | `_tze200_zah67ekd` TS0601 | 1:state 2:position 5:motor_direction 11:zha 16:zha 103:set_upper_limit | 1~state=onOff(name) 5~motor_direction=lookup:{"false":"normal","true":"reversed"}(name) |
+| presence_sensor_radar | `_tze200_zbfmvj13` TS0601 | 106:illuminance 108:indicator 110:battery | 106~illuminance=raw(name) 108~indicator=onOff(name) 110~battery=raw(name) |
+| lcdtemphumidsensor_3 | `_tze200_zl1kmjqx` TS0601 | 1:temperature | 1~temperature=div:10(name) |
+| climate_sensor | `_tze200_zlwr0raf` TS0601 | 21:instantaneous_demand |  |
+| curtain_motor | `_tze200_zpzndjez` TS0601 | 11:zha 16:zha |  |
+| climate_sensor | `_tze200_zr9c0day` TS0601 | 3:running_state |  |
+| presence_sensor_radar | `_tze200_ztc6ggyl` TS0601 | 3:zha 6:errorcode 10:zha 11:zha 12:zha 16:zha 19:zha 103:zha 104:illuminance 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 114:zha 115:zha 116:zha 117:zha 118:zha 121:zha 122:zha 123:zha | 6~equipment_status=raw 11~human_motion_state=lookup:{"0":"none","1":"small","2":"large"} 12~illuminance=raw 116~distance_report=lookup:{"0":"OFF","1":"ON"} 121~battery=raw 123~motion_detection_sensitivity=raw |
+| radiator_valve | `_tze200_zuhszj9s` TS0601 | 3:running_state 101:system_mode |  |
+| curtain_motor | `_tze200_zuz7f94z` TS0601 | 11:zha 16:zha |  |
+| curtain_motor | `_tze200_zvo63cmo` TS0601 | 1:state 2:position | 1~state=onOff(name) |
+| wall_dimmer_tuya | `_tze204_1v1dxkck` TS0601 | 101:backlight_color |  |
+| presence_sensor_radar | `_tze204_1youk3hj` TS0601 | 12:presence_time | 12~illuminance=raw |
+| curtain_motor | `_tze204_2rvvqjoa` TS0601 | 2:position 5:motor_direction | 5~motor_direction=lookup:{"false":"normal","true":"reversed"}(name) |
+| switch_2gang | `_tze204_3ctwoaip` TS0601 | 15:indicator_status 19:delay_off_schedule 29:relay_status_l1 30:relay_status_l2 103:switch_color_on 104:switch_color_off 105:name_l1 106:name_l2 111:radar_config 209:cycle_schedule | 29~power_on_behavior_l1=lookup:{"0":"off","1":"on","2":"previous"} 30~power_on_behavior_l2=lookup:{"0":"off","1":"on","2":"previous"} |
+| climate_sensor | `_tze204_3q3maeoo` TS0601 | 114:schedule_monday 115:schedule_tuesday 116:schedule_wednesday 117:schedule_thursday 118:schedule_friday 119:schedule_saturday 120:schedule_sunday 143:holiday_start_stop | 143~overcurrent_recloser=onOff |
+| valve_irrigation | `_tze204_4fblxpma` TS0601 | 19:fault 107:refresh | 107~power_b=raw |
+| climate_sensor | `_tze204_6a4vxfnv` TS0601 | 105:schedule_saturday 106:schedule_friday 107:schedule_thursday 108:schedule_wednesday 109:schedule_tuesday 110:schedule_monday |  |
+| device_radiator_valve | `_tze204_6kijc7nd` TS0601 | 61:week_program_periods |  |
+| curtain_motor | `_tze204_7lb6j8wg` TS0601 | 2:position_c1 5:position_c2 102:position_c3 |  |
+| climate_sensor | `_tze204_7yyuo8sr` TS0601 | 7:max_set 8:min_set 22:liquid_level_percent 27:alarm_time 102:hydrate 103:water_drainage | 27~local_temperature_calibration=raw |
+| led_controller_rgb | `_tze204_8fffc3kb` TS0601 | 4:color_temp 51:scene 52:music_mode |  |
+| device_radiator_valve | `_tze204_9mjy74mp` TS0601 | 1:system_mode 17:schedule_monday 18:schedule_tuesday 19:schedule_wednesday 20:schedule_thursday 21:schedule_friday 23:schedule_sunday | 17~window_open=lookup:{"0":"close","1":"open"} 18~windowopen_set=raw 20~setvalve=raw |
+| curtain_motor | `_tze204_a2jcoyuk` TS0601 | 1:windowcoverings_state |  |
+| water_valve_smart | `_tze204_a7sghmms` TS0601 | 1:zha 2:zha 3:zha 5:zha 6:zha 7:zha 10:zha 11:zha 12:zha 13:zha 14:zha 15:zha 19:zha 21:zha 22:zha 25:zha 26:zha 37:zha 38:zha 42:zha 47:zha 59:zha 101:zha 103:zha 104:zha 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 114:zha 115:zha | 11~countdown=raw 13~state=bool 14~auto_clean=onOff 22~temperature=div:100 26~voltage=mul:10 101~set_valve_position=raw |
+| curtain_motor | `_tze204_a8z0g46u` TS0601 | 2:state |  |
+| climate_sensor | `_tze204_a9ojznj8` TS0601 | 19:fault 107:refresh |  |
+| thermostatic_radiator_valve | `_tze204_aaeaifez` TS0601 | 11:fault 109:weekly_schedule |  |
+| climate_sensor | `_tze204_ac0fhfiq` TS0601 | 6:current |  |
+| wall_thermostat | `_tze204_aoclfnxz` TS0601 | 2:preset 36:valve_position |  |
+| curtain_motor | `_tze204_bjzrowv2` TS0601 | 1:state 2:position 5:motor_direction | 1~state=onOff(name) 5~motor_direction=lookup:{"false":"normal","true":"reversed"}(name) |
+| presence_sensor_radar | `_tze204_bvfld3xc` TS0601 | 106:tumble_alarm_time 114:motion_direction 115:motion_speed 118:fall_sensitivity | 106~tumble_alarm_time=raw(name) 114~motion_direction=lookup:{"0":"standing_still","1":"moving_forward","2":"moving_backward"}(name) 115~motion_speed=raw(name) 118~fall_sensitivity=raw(name) |
+| radiator_valve | `_tze204_ca3i8m8p` TS0601 | 109:schedule_monday 110:schedule_tuesday 111:schedule_wednesday 112:schedule_thursday 113:schedule_friday 114:schedule_saturday 115:schedule_sunday | 109~zone_5_linked=onOff 110~zone_6_linked=onOff 111~zone_a_name=raw 112~zone_b_name=raw 113~zone_1_name=raw 114~zone_2_name=raw 115~online=bool |
+| radiator_valve | `_tze204_cg8hdnjv` TS0601 | 109:schedule_monday 110:schedule_tuesday 111:schedule_wednesday 112:schedule_thursday 113:schedule_friday 114:schedule_saturday 115:schedule_sunday | 109~zone_5_linked=onOff 110~zone_6_linked=onOff 111~zone_a_name=raw 112~zone_b_name=raw 113~zone_1_name=raw 114~zone_2_name=raw 115~online=bool |
+| presence_sensor_radar | `_tze204_clrdrnya` TS0601 | 10:zha 11:zha 12:zha 16:zha 19:zha 117:zha 118:zha 121:zha 122:zha 123:zha | 11~human_motion_state=lookup:{"0":"none","1":"small","2":"large"} 12~illuminance=raw 121~battery=raw 123~motion_detection_sensitivity=raw |
+| device_radiator_valve | `_tze204_cvcu2p6e` TS0601 | 1:system_mode 17:schedule_monday 18:schedule_tuesday 19:schedule_wednesday 20:schedule_thursday 21:schedule_friday 23:schedule_sunday | 17~window_open=lookup:{"0":"close","1":"open"} 18~windowopen_set=raw 20~setvalve=raw |
+| valve_irrigation | `_tze204_d0ypnbvn` TS0601 | 1:state 26:fault | 1~state=onOff(name) |
+| climate_sensor | `_tze204_d6i25bwg` TS0601 | 114:schedule_monday 115:schedule_tuesday 116:schedule_wednesday 117:schedule_thursday 118:schedule_friday 119:schedule_saturday 120:schedule_sunday 143:holiday_start_stop | 143~overcurrent_recloser=onOff |
+| radiator_valve | `_tze204_djurk6p5` TS0601 | 1:state 2:system_mode 109:schedule_monday 110:schedule_tuesday 111:schedule_wednesday 112:schedule_thursday 113:schedule_friday 114:schedule_saturday 115:schedule_sunday | 1~state=onOff(name) 109~zone_5_linked=onOff 110~zone_6_linked=onOff 111~zone_a_name=raw 112~zone_b_name=raw 113~zone_1_name=raw 114~zone_2_name=raw 115~online=bool |
+| curtain_motor | `_tze204_dqy15zxy` TS0601 | 1:windowcoverings_state 2:position |  |
+| presence_sensor_radar | `_tze204_dtzziy1e` TS0601 | 10:zha 11:zha 12:zha 16:zha 19:zha 117:zha 118:zha 121:zha 122:zha 123:zha | 11~human_motion_state=lookup:{"0":"none","1":"small","2":"large"} 12~illuminance=raw 121~battery=raw 123~motion_detection_sensitivity=raw |
+| climate_sensor | `_tze204_dwcarsat` TS0601 | 20:formaldehyd 21:voc |  |
+| wall_thermostat | `_tze204_dzuqwsyg` TS0601 | 1:state 2:system_mode 4:preset 27:local_temperature_calibration 101:schedule 202:schedule_text | 1~state=onOff(name) 101~running_state=lookup:{"0":"idle","1":"heat"} |
+| radiator_valve | `_tze204_e5hpkc6d` TS0601 | 123:energy |  |
+| climate_sensor | `_tze204_edl8pz1k` TS0601 | 105:schedule_saturday 106:schedule_friday 107:schedule_thursday 108:schedule_wednesday 109:schedule_tuesday 110:schedule_monday |  |
+| climate_sensor | `_tze204_eekpf0ft` TS0601 | 28:schedule_monday 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 32:schedule_friday 33:schedule_saturday 34:schedule_sunday 35:fault_alarm | 28~fan_mode=lookup:{"0":"low","1":"medium","2":"high","3":"auto"} 29~power=raw 30~countdown_l1=raw 31~countdown_l2=raw 32~ac_frequency=div:100 33~countdown_l4=raw 35~error_status=raw |
+| curtain_motor | `_tze204_ejh6owwz` TS0601 | 1:state 2:position 16:cover_limit 20:click_control | 1~state=onOff(name) |
+| presence_sensor_radar | `_tze204_fwondbzy` TS0601 | 3:zha 6:zha 10:zha 11:zha 12:zha 16:zha 19:zha 103:zha 104:zha 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 114:zha 115:zha 116:zha 117:zha 118:zha 121:zha 122:zha 123:zha | 6~equipment_status=raw 11~human_motion_state=lookup:{"0":"none","1":"small","2":"large"} 12~illuminance=raw 116~distance_report=lookup:{"0":"OFF","1":"ON"} 121~battery=raw 123~motion_detection_sensitivity=raw |
+| device_radiator_valve | `_tze204_g2ki0ejr` TS0601 | 18:schedule_tuesday 20:schedule_thursday 23:schedule_sunday | 18~windowopen_set=raw 20~setvalve=raw |
+| curtain_motor | `_tze204_g5xqosu7` TS0601 | 1:state 2:position | 1~state=onOff(name) |
+| radiator_valve | `_tze204_glk6viwg` TS0601 | 1:state 2:system_mode 27:local_temperature_calibration 109:schedule_monday 110:schedule_tuesday 111:schedule_wednesday 112:schedule_thursday 113:schedule_friday 114:schedule_saturday 115:schedule_sunday | 1~state=onOff(name) 27~local_temperature_calibration=div:10 109~zone_5_linked=onOff 110~zone_6_linked=onOff 111~zone_a_name=raw 112~zone_b_name=raw 113~zone_1_name=raw 114~zone_2_name=raw 115~online=bool |
+| wall_thermostat | `_tze204_gops3slb` TS0601 | 4:preset 109:schedule_weekday |  |
+| curtain_motor | `_tze204_guvc7pdy` TS0601 | 1:windowcoverings_state 2:windowcoverings_set 4:mode 5:reverse 6:border 9:windowcoverings_tilt_set 12:backlight 16:border_limits 101:open_time 102:close_time | 4~mode=lookup:{"0":"off","1":"auto","2":"heat"}(name) |
+| wall_thermostat | `_tze204_hpkusvom` TS0601 | 2:system_mode 27:local_temperature_calibration |  |
+| presence_sensor_radar | `_tze204_iaeejhvf` TS0601 | 10:zha 11:zha 12:zha 16:zha 19:zha 117:zha 118:zha 121:zha 122:zha 123:zha | 11~human_motion_state=lookup:{"0":"none","1":"small","2":"large"} 12~illuminance=raw 121~battery=raw 123~motion_detection_sensitivity=raw |
+| climate_sensor | `_tze204_iwn0gpzz` TS0601 | 18:data_report_duration |  |
+| climate_sensor | `_tze204_iyki9kjp` TS0601 | 19:delay_off_schedule 29:relay_status_l1 30:relay_status_l2 31:relay_status_l3 103:switch_color_on 104:switch_color_off 105:name_l1 106:name_l2 107:name_l3 111:radar_config 209:cycle_schedule | 29~power=raw 30~countdown_l1=raw 31~countdown_l2=raw |
+| climate_sensor | `_tze204_jcwbwckh` TS0601 | 18:meter_id | 18~meter_id=raw(name) |
+| radiator_valve | `_tze204_k6rdmisz` TS0601 | 2:system_mode 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday | 30~child_lock=lookup:{"true":"LOCK","false":"UNLOCK"} 31~working_day=lookup:{"0":"mon_sun","1":"mon_fri+sat+sun","2":"separate"} 33~holiday_days=raw 34~humidity=raw |
+| climate_sensor | `_tze204_k7v0eqke` TS0601 | 19:delay_off_schedule 29:relay_status_l1 30:relay_status_l2 31:relay_status_l3 103:switch_color_on 104:switch_color_off 105:name_l1 106:name_l2 107:name_l3 111:radar_config 209:cycle_schedule | 29~power=raw 30~countdown_l1=raw 31~countdown_l2=raw |
+| climate_sensor | `_tze204_kwi6bbk4` TS0601 | 3:battery_percentage_remaining |  |
+| presence_sensor_radar | `_tze204_laokfqwu` TS0601 | 6:errorcode 10:zha 11:zha 12:zha 16:zha 19:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 114:zha 115:zha 116:zha 117:zha 118:zha 121:zha 122:zha 123:zha | 6~equipment_status=raw 11~human_motion_state=lookup:{"0":"none","1":"small","2":"large"} 12~illuminance=raw 116~distance_report=lookup:{"0":"OFF","1":"ON"} 121~battery=raw 123~motion_detection_sensitivity=raw |
+| lcdtemphumidsensor_3 | `_tze204_lb0fsvba` TS0601 | 17:leakage_threshold 18:over_current_threshold |  |
+| radiator_valve | `_tze204_lnxdk2ch` TS0601 | 1:state 2:system_mode 27:local_temperature_calibration 109:schedule_monday 110:schedule_tuesday 111:schedule_wednesday 112:schedule_thursday 113:schedule_friday 114:schedule_saturday 115:schedule_sunday | 1~state=onOff(name) 27~local_temperature_calibration=div:10 109~zone_5_linked=onOff 110~zone_6_linked=onOff 111~zone_a_name=raw 112~zone_b_name=raw 113~zone_1_name=raw 114~zone_2_name=raw 115~online=bool |
+| energy_meter_3phase | `_tze204_loejka0i` TS0601 | 15:power_factor 16:energy_reset 17:alarm_set_1 18:alarm_set_2 104:power_a 107:power_b 110:power_c 111:power 118:power_factor_a 119:power_factor_b 120:power_factor_c | 15~power_factor=raw(name) 104~current_a=div:1000 107~power_b=raw(name) 110~energy_produced_a=div:100 111~power=raw(name) 118~energy_b=div:100 119~energy_produced_b=div:100 |
+| wall_thermostat | `_tze204_lpedvtvr` TS0601 | 101:local_temperature_calibration | 101~running_state=lookup:{"0":"idle","1":"heat"} |
+| climate_sensor | `_tze204_ltwbm23f` TS0601 | 102:schedule_monday 103:schedule_tuesday 104:schedule_wednesday 105:schedule_thursday 106:schedule_friday 107:schedule_saturday 108:schedule_sunday |  |
+| wall_thermostat | `_tze204_lzriup1j` TS0601 | 4:preset 109:schedule_weekday |  |
+| climate_sensor | `_tze204_m64smti7` TS0601 | 17:high_temperature_threshold 18:over_current_threshold |  |
+| wall_thermostat | `_tze204_mpbki2zm` TS0601 | 1:state 2:system_mode 27:local_temperature_calibration 106:schedule_sunday 107:schedule_saturday 108:schedule_friday 109:schedule_thursday 110:schedule_wednesday 111:schedule_tuesday 112:schedule_monday | 1~state=onOff(name) 106~sensor=lookup:{"0":"internal","1":"external","2":"both"} 107~deadzone_temperature=div:10 |
+| climate_sensor | `_tze204_mpg22jc1` TS0601 | 8:motor_direction |  |
+| presence_sensor_radar | `_tze204_mtoaryre` TS0601 | 10:zha 11:zha 12:zha 16:zha 19:zha 117:zha 118:zha 121:zha 122:zha 123:zha | 11~human_motion_state=lookup:{"0":"none","1":"small","2":"large"} 12~illuminance=raw 121~battery=raw 123~motion_detection_sensitivity=raw |
+| usb_outlet_advanced | `_tze204_mvtclclq` TS0601 | 20:meter_power |  |
+| garage_door_opener | `_tze204_nklqjk62` TS0601 | 2:dp_2 4:dp_4 5:dp_5 11:dp_11 |  |
+| climate_sensor | `_tze204_ny94onlb` TS0601 | 18:data_report_duration |  |
+| device_radiator_valve | `_tze204_o3x45p96` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday | 31~working_day=lookup:{"0":"mon_sun","1":"mon_fri+sat+sun","2":"separate"} |
+| air_quality_co2 | `_tze204_ogkdpgy2` TS0601 | 18:temperature | 18~temperature=div:10 |
+| device_radiator_valve | `_tze204_ogx8u5z6` TS0601 | 2:thermostat_mode 4:target_temperature 13:measure_battery 15:measure_battery 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday 35:alarm_battery 102:dp_102 | 13~battery=raw 31~working_day=lookup:{"0":"mon_sun","1":"mon_fri+sat+sun","2":"separate"} |
+| climate_sensor | `_tze204_oh8y8pv8` TS0601 | 104:working_day 109:schedule_weekday |  |
+| device_radiator_valve | `_tze204_p1qrtljn` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday | 31~working_day=lookup:{"0":"mon_sun","1":"mon_fri+sat+sun","2":"separate"} |
+| thermostatic_radiator_valve | `_tze204_pcdmj88b` TS0601 | 28:schedule_monday 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 32:schedule_friday 33:schedule_saturday 34:schedule_sunday 35:fault_alarm |  |
+| presence_sensor_radar | `_tze204_pfayrzcw` TS0601 | 10:zha 11:zha 12:zha 16:zha 19:zha 117:zha 118:zha 121:zha 122:zha 123:zha | 11~human_motion_state=lookup:{"0":"none","1":"small","2":"large"} 12~illuminance=raw 121~battery=raw 123~motion_detection_sensitivity=raw |
+| air_quality_co2 | `_tze204_pkpfn9hc` TS0601 | 3:measure_temperature |  |
+| curtain_motor | `_tze204_q9xty0ad` TS0601 | 1:state 9:position 11:motor_direction | 1~state=onOff(name) |
+| presence_sensor_radar | `_tze204_qasjif9e` TS0601 | 6:zha 10:zha 11:zha 16:zha 19:zha 103:zha 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 114:zha 115:zha 116:zha 117:zha 118:zha 121:zha 122:zha 123:zha | 6~equipment_status=raw 11~human_motion_state=lookup:{"0":"none","1":"small","2":"large"} 116~distance_report=lookup:{"0":"OFF","1":"ON"} 121~battery=raw 123~motion_detection_sensitivity=raw |
+| curtain_motor | `_tze204_qhlxve78` TS0601 | 18:data_report_duration |  |
+| wall_thermostat | `_tze204_qujphad5` TS0601 | 1:state 2:system_mode 27:local_temperature_calibration 106:schedule_sunday 107:schedule_saturday 108:schedule_friday 109:schedule_thursday 110:schedule_wednesday 111:schedule_tuesday 112:schedule_monday | 1~state=onOff(name) 106~sensor=lookup:{"0":"internal","1":"external","2":"both"} 107~deadzone_temperature=div:10 |
+| climate_sensor | `_tze204_qvxrkeif` TS0601 | 11:fault |  |
+| device_radiator_valve | `_tze204_qyr2m29i` TS0601 | 2:preset 102:schedule_monday 103:schedule_tuesday 104:schedule_wednesday 105:schedule_thursday 106:schedule_friday 107:schedule_saturday 108:schedule_sunday |  |
+| radiator_valve | `_tze204_r7brscr6` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday | 30~child_lock=lookup:{"true":"LOCK","false":"UNLOCK"} 31~working_day=lookup:{"0":"mon_sun","1":"mon_fri+sat+sun","2":"separate"} 33~holiday_days=raw 34~humidity=raw |
+| switch_3gang | `_tze204_rkbxtclc` TS0601 | 17:measure_current 18:measure_power 19:measure_voltage 20:meter_power |  |
+| device_radiator_valve | `_tze204_rtrmfadk` TS0601 | 1:system_mode 17:schedule_monday 18:schedule_tuesday 19:schedule_wednesday 20:schedule_thursday 21:schedule_friday 23:schedule_sunday | 17~window_open=lookup:{"0":"close","1":"open"} 18~windowopen_set=raw 20~setvalve=raw |
+| climate_sensor | `_tze204_rzrrjkz2` TS0601 | 19:fault 107:refresh |  |
+| climate_sensor | `_tze204_sa2ueffe` TS0601 | 19:delay_off_schedule 29:relay_status 103:switch_color_on 104:switch_color_off 105:name 111:radar_config 209:cycle_schedule | 29~power=raw |
+| presence_sensor_radar | `_tze204_sbyx0lm6` TS0601 | 10:zha 11:zha 12:zha 16:zha 19:zha 117:zha 118:zha 121:zha 122:zha 123:zha | 11~human_motion_state=lookup:{"0":"none","1":"small","2":"large"} 12~illuminance=raw 121~battery=raw 123~motion_detection_sensitivity=raw |
+| climate_sensor | `_tze204_sooucan5` TS0601 | 6:zha 10:zha 11:zha 12:zha 16:zha 19:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 114:zha 115:zha 116:zha 117:zha 118:zha 121:zha 122:zha 123:zha |  |
+| climate_sensor | `_tze204_srmahpwl` TS0601 | 8:motor_direction |  |
+| climate_sensor | `_tze204_t9ffmdin` TS0601 | 11:prepayment 12:energy_balance_reset 16:state 17:alarm_set_1 18:alarm_set_2 102:reclosing_count 103:device_temperature 104:reclosing 105:countdown 106:cycle_schedule 107:reclosing_delay 108:random_timing 109:inching 119:power_on_delay 124:over_current_threshold_time 125:lost_flow_threshold_time 126:alarm_set_3 127:status 134:power_on_behavior | 16~state=onOff(name) 127~status=lookup:{"0":"standby","1":"active"}(name) 134~power_on_behavior=lookup:{"0":"off","1":"on","2":"previous"} |
+| device_radiator_valve | `_tze204_tagezcph` TS0601 | 101:schedule_monday 105:schedule_tuesday 106:schedule_wednesday 107:schedule_thursday 108:schedule_friday 109:schedule_saturday 110:schedule_sunday |  |
+| curtain_motor | `_tze204_tgl8i2np` TS0601 | 1:state 2:position 5:motor_direction | 1~state=onOff(name) 5~motor_direction=lookup:{"false":"normal","true":"reversed"}(name) |
+| curtain_motor | `_tze204_trwaxi57` TS0601 | 1:state 2:position | 1~state=onOff(name) |
+| climate_sensor | `_tze204_uab532m0` TS0601 | 19:fault 107:refresh |  |
+| valve_irrigation | `_tze204_ugekduaj` TS0601 | 18:data_report_duration |  |
+| gas_sensor | `_tze204_uo8qcagc` TS0601 | 6:zha 7:zha 8:zha 12:zha | 6~alarm_ringtone=lookup:{"0":"melody_1","1":"melody_2","2":"melody_3","3":"melody_4","4":"melody_5"} 7~alarm_time=raw 8~self_test=raw |
+| climate_sensor | `_tze204_v5xjyphj` TS0601 | 26:fault |  |
+| climate_sensor | `_tze204_vjpaih9f` TS0601 | 28:schedule_monday 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 32:schedule_friday 33:schedule_saturday 34:schedule_sunday 35:battery_low | 28~fan_mode=lookup:{"0":"low","1":"medium","2":"high","3":"auto"} 29~power=raw 30~countdown_l1=raw 31~countdown_l2=raw 32~ac_frequency=div:100 33~countdown_l4=raw 35~error_status=raw |
+| climate_sensor | `_tze204_wbhaespm` TS0601 | 17:overload_breaker 18:over_current_threshold |  |
+| thermostatic_radiator_valve | `_tze204_wc2w9t1s` TS0601 | 65:schedule_monday 66:schedule_tuesday 67:schedule_wednesday 68:schedule_thursday 69:schedule_friday 70:schedule_saturday 71:schedule_sunday |  |
+| device_radiator_valve | `_tze204_wsek35um` TS0601 | 7:children_lock |  |
+| climate_sensor | `_tze204_wwaeqnrf` TS0601 | 19:delay_off_schedule 29:relay_status_l1 30:relay_status_l2 31:relay_status_l3 32:relay_status_l4 103:switch_color_on 104:switch_color_off 105:name_l1 106:name_l2 107:name_l3 108:name_l4 111:radar_config 201:cycle_schedule | 29~power=raw 30~countdown_l1=raw 31~countdown_l2=raw 32~ac_frequency=div:100 |
+| climate_sensor | `_tze204_x8fp01wi` TS0601 | 26:error_status 111:countdown 115:battery_state |  |
+| wall_thermostat | `_tze204_xalsoe3m` TS0601 | 19:local_temperature_calibration 23:working_day 47:valve_state 68:programming_mode |  |
+| radiator_valve | `_tze204_xdtnpp1a` TS0601 | 18:schedule_tuesday 20:schedule_thursday 23:schedule_sunday | 18~current=div:1000 20~voltage=div:10 |
+| switch_4gang | `_tze204_xibaabmu` TS0601 | 15:indicator_status 19:delay_off_schedule 29:relay_status_l1 30:relay_status_l2 31:relay_status_l3 32:relay_status_l4 103:switch_color_on 104:switch_color_off 105:name_l1 106:name_l2 107:name_l3 108:name_l4 111:radar_config 201:cycle_schedule |  |
+| wall_thermostat | `_tze204_xnbkhhdr` TS0601 | 4:preset 16:zha 24:zha 28:zha 30:zha 104:working_day 105:zha 108:zha 109:schedule_weekday 111:zha 120:zha 121:zha 122:zha 123:zha | 24~local_temperature=div:10 28~fan_mode=lookup:{"0":"low","1":"medium","2":"high","3":"auto"} |
+| climate_sensor | `_tze204_xpq2rzhq` TS0601 | 3:zha 6:zha 10:zha 11:zha 12:zha 16:zha 19:zha 102:zha 103:zha 104:zha 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 114:zha 115:zha 116:zha 117:zha 118:zha 121:zha 122:zha 123:zha |  |
+| presence_sensor_radar | `_tze204_xsm7l9xa` TS0601 | 3:zha 6:zha 10:zha 11:zha 12:zha 16:zha 19:zha 103:zha 104:zha 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 114:zha 115:zha 116:zha 117:zha 118:zha 121:zha 122:zha 123:zha | 6~equipment_status=raw 11~human_motion_state=lookup:{"0":"none","1":"small","2":"large"} 12~illuminance=raw 116~distance_report=lookup:{"0":"OFF","1":"ON"} 121~battery=raw 123~motion_detection_sensitivity=raw |
+| curtain_motor | `_tze204_xtrnjaoz` TS0601 | 1:state 9:position 11:motor_direction | 1~state=onOff(name) |
+| climate_sensor | `_tze204_z7a2jmyy` TS0601 | 19:fault 107:refresh |  |
+| climate_sensor | `_tze204_zjhoqbrd` TS0601 | 104:working_day 109:schedule_weekday |  |
+| wall_dimmer_tuya | `_tze204_znvwzxkq` TS0601 | 101:backlight_color |  |
+| presence_sensor_radar | `_tze204_ztc6ggyl` TS0601 | 3:zha 6:errorcode 10:zha 11:zha 12:zha 16:zha 19:zha 103:zha 104:illuminance 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 114:zha 115:zha 116:zha 117:zha 118:zha 121:zha 122:zha 123:zha | 6~equipment_status=raw 11~human_motion_state=lookup:{"0":"none","1":"small","2":"large"} 12~illuminance=raw 116~distance_report=lookup:{"0":"OFF","1":"ON"} 121~battery=raw 123~motion_detection_sensitivity=raw |
+| presence_sensor_radar | `_tze204_ztqnh5cg` TS0601 | 6:errorcode 10:zha 11:zha 16:zha 19:zha 103:zha 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 114:zha 115:zha 116:zha 117:zha 118:zha 121:zha 122:zha 123:zha | 6~equipment_status=raw 11~human_motion_state=lookup:{"0":"none","1":"small","2":"large"} 116~distance_report=lookup:{"0":"OFF","1":"ON"} 121~battery=raw 123~motion_detection_sensitivity=raw |
+| climate_sensor | `_tze204_zuepxzck` TS0601 | 19:delay_off_schedule 29:relay_status 103:switch_color_on 104:switch_color_off 105:name 111:radar_config 209:cycle_schedule | 29~power=raw |
+| curtain_motor | `_tze204_zxkwaztm` TS0601 | 67:schedule_weekday 68:schedule_holiday |  |
+| siren_moes_mg_bjq002 | `_tze20c_tjz9ad5g` TS0601 | 21:ringtone | 21~ringtone=lookup:{"0":"melody1","1":"melody2","2":"melody3","3":"melody4","4":"melody5","5":"melody6","6":"melody7","7":"melody8","8":"door","9":"water","10":"temperature(name) |
+| wall_curtain_switch | `_tze20c_xbexmf8h` TS130F | 1:state 2:position 8:motor_direction 10:calibration_time | 1~state=onOff(name) |
+| curtain_motor_shutter | `_tze210_inpjmc0h` TS0301 | 101:position_bottom |  |
+| curtain_motor | `_tze210_m6lwazh9` TS0301 | 1:windowcoverings_state 2:windowcoverings_set 4:mode 5:reverse 6:border 9:windowcoverings_tilt_set 12:backlight 16:border_limits 101:open_time 102:close_time | 4~mode=lookup:{"0":"off","1":"auto","2":"heat"}(name) |
+| curtain_motor | `_tze210_xgzzuerd` TS0301 | 1:state 9:position 11:motor_direction 16:cover_limit 20:click_control | 1~state=onOff(name) |
+| curtain_motor | `_tze210_yqwse3h5` TS0301 | 2:position_top 101:position_bottom 102:position_bottom |  |
+| curtain_motor | `_tze2841000000_3mzb0sdz` TS0601 | 1:state 9:position 11:motor_direction 16:cover_limit | 1~state=onOff(name) |
+| curtain_motor | `_tze2841000000_u68q868h` TS0601 | 1:state 9:position 11:motor_direction 16:cover_limit | 1~state=onOff(name) |
+| presence_sensor_radar | `_tze284_1youk3hj` TS0601 | 12:presence_time | 12~illuminance=raw |
+| sensor_contact_zigbee | `_tze284_2baujqot` TS0601 | 23:action |  |
+| curtain_motor | `_tze284_2gi1hy8s` TS0601 | 1:state 9:position 11:motor_direction | 1~state=onOff(name) |
+| water_leak_sensor_tuya | `_tze284_2qx7sivb` TS0601 | 1:alarm_status 4:battery 102:dismiss_alarm 103:silent_mode | 1~alarm_status=lookup:{"0":"alarm","1":"normal"}(name) 4~battery=raw(name) |
+| switch_2gang | `_tze284_3ctwoaip` TS0601 | 15:indicator_status 19:delay_off_schedule 29:relay_status_l1 30:relay_status_l2 103:switch_color_on 104:switch_color_off 105:name_l1 106:name_l2 111:radar_config 209:cycle_schedule | 29~power_on_behavior_l1=lookup:{"0":"off","1":"on","2":"previous"} 30~power_on_behavior_l2=lookup:{"0":"off","1":"on","2":"previous"} |
+| curtain_motor | `_tze284_3mzb0sdz` TS0601 | 1:windowcoverings_state 9:windowcoverings_set 16:border_limits |  |
+| switch_1gang | `_tze284_3xnyj4ga` TS0601 | 19:inching_l1 | 19~local_temperature_calibration=raw |
+| presence_sensor_radar | `_tze284_4qznlkbu` TS0601 | 10:zha 11:zha 12:zha 16:zha 19:zha 117:zha 118:zha 121:zha 122:zha 123:zha | 11~human_motion_state=lookup:{"0":"none","1":"small","2":"large"} 12~illuminance=raw 121~battery=raw 123~motion_detection_sensitivity=raw |
+| device_radiator_valve | `_tze284_4vbj3fxh` TS0601 | 1:state 2:system_mode | 1~state=onOff(name) |
+| din_rail_meter | `_tze284_5m4nchbm` TS0601 | 15:leakage 16:state 103:temperature | 15~leakage=raw(name) 16~state=onOff(name) 103~temperature=raw(name) |
+| presence_sensor_radar | `_tze284_5qfrnbqs` TS0601 | 119:system_info | 119~lux_mode=lookup:{"0":"threshold","1":"report"} |
+| plug_smart | `_tze284_5yah8qx4` TS0601 | 2:brightness 3:brightness_min 5:brightness_max | 2~brightness=scale:0,254,0,1000(name) |
+| climate_sensor | `_tze284_6fopvb6v` TS0601 | 5:motor_direction | 5~motor_direction=lookup:{"false":"normal","true":"reversed"}(name) |
+| curtain_motor | `_tze284_6hrnp30w` TS0601 | 1:state 2:position 5:motor_direction | 1~state=onOff(name) 5~motor_direction=lookup:{"false":"normal","true":"reversed"}(name) |
+| device_radiator_valve | `_tze284_6kijc7nd` TS0601 | 61:week_program_periods |  |
+| din_rail_meter | `_tze284_6ocnqlhn` TS0601 | 13:test1 140:lcd_brightness |  |
+| climate_sensor | `_tze284_6uyu20xu` TS0601 | 3:measure_battery |  |
+| switch_1gang | `_tze284_7e6v8u9f` TS0601 | 19:inching | 19~local_temperature_calibration=raw |
+| water_leak_sensor | `_tze284_7trh4ihp` TS0601 | 102:dismiss_alarm 103:silent_mode |  |
+| water_valve_smart | `_tze284_7zazvlyn` TS0601 | 1:action 2:action 3:action 4:action 5:action 6:action 7:action 8:action 125:led_switch_name_l1 126:led_switch_name_l2 127:led_switch_name_l3 128:led_switch_name_l4 129:cover_name_l1 130:cover_name_l2 131:cover_name_l3 132:cover_name_l4 137:switch_name_l1 138:switch_name_l2 139:switch_name_l3 140:switch_name_l4 141:scene_name_l1 142:scene_name_l2 143:scene_name_l3 144:scene_name_l4 145:scene_name_l5 146:scene_name_l6 147:scene_name_l7 148:scene_name_l8 | 4~report_period=lookup:{"0":"1h","1":"2h","2":"3h","3":"4h","4":"6h","5":"8h","6":"12h","7":"24h"} |
+| water_leak_sensor_tuya | `_tze284_8sejxcue` TS0601 | 1:alarm_status 4:battery 102:dismiss_alarm 103:silent_mode | 1~alarm_status=lookup:{"0":"alarm","1":"normal"}(name) 4~battery=raw(name) |
+| curtain_motor | `_tze284_8whfphjv` TS0601 | 1:state 9:position 11:motor_direction | 1~state=onOff(name) |
+| valve_irrigation | `_tze284_8zizsafo` TS0601 | 104:state_1 105:state_2 |  |
+| curtain_motor | `_tze284_a0hirjnh` TS0601 | 1:state 2:position 5:motor_direction | 1~state=onOff(name) 5~motor_direction=lookup:{"false":"normal","true":"reversed"}(name) |
+| energy_meter_3phase | `_tze284_a14rjslz` TS0601 | 23:meter_power.exported | 23~produced_energy=div:100 |
+| switch_2gang | `_tze284_a2teqi5u` TS0601 | 105:name_l1 106:name_l2 |  |
+| climate_sensor | `_tze284_a9ojznj8` TS0601 | 19:fault 107:refresh |  |
+| device_radiator_valve | `_tze284_aaeaifez` TS0601 | 11:fault 109:weekly_schedule |  |
+| water_leak_sensor_tuya | `_tze284_aghfucwi` TS0601 | 1:alarm_status 4:battery 102:dismiss_alarm 103:silent_mode | 1~alarm_status=lookup:{"0":"alarm","1":"normal"}(name) 4~battery=raw(name) |
+| climate_sensor | `_tze284_ajlu4cud` TS0601 | 3:daily_consumption 5:faults 18:reverse_water_consumed 21:flow_rate |  |
+| curtain_motor | `_tze284_ajuasrmx` TS0601 | 103:ai_self_learning 116:sensor_mode 125:home_environment |  |
+| climate_sensor | `_tze284_atuj3i0w` TS0601 | 3:action 103:name_l1 104:name_l2 105:name_l3 106:name_l4 107:scene_name_l1 108:scene_name_l2 109:scene_name_l3 110:scene_name_l4 |  |
+| curtain_motor | `_tze284_b7kbnl6q` TS0601 | 1:state 2:position | 1~state=onOff(name) |
+| curtain_motor | `_tze284_bjzrowv2` TS0601 | 1:state 2:position 5:motor_direction | 1~state=onOff(name) 5~motor_direction=lookup:{"false":"normal","true":"reversed"}(name) |
+| device_radiator_valve | `_tze284_c6wv4xyo` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday | 31~working_day=lookup:{"0":"mon_sun","1":"mon_fri+sat+sun","2":"separate"} |
+| energy_meter_3phase | `_tze284_cf4b5ktf` TS0601 | 23:meter_power.exported 29:measure_power.phase_total | 23~produced_energy=div:100 29~power=raw |
+| radiator_valve | `_tze284_cgr0rhza` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday 35:fault_alarm | 30~child_lock=lookup:{"true":"LOCK","false":"UNLOCK"} 31~working_day=lookup:{"0":"mon_sun","1":"mon_fri+sat+sun","2":"separate"} 33~holiday_days=raw 34~humidity=raw |
+| curtain_motor | `_tze284_clm4gdw4` TS0601 | 2:position |  |
+| valve_irrigation | `_tze284_d0ypnbvn` TS0601 | 1:state 26:fault | 1~state=onOff(name) |
+| wall_dimmer_tuya | `_tze284_da26abzz` TS0601 | 142:brightness |  |
+| energy_meter_3phase | `_tze284_dikb3dp6` TS0601 | 23:meter_power.exported 29:measure_power.phase_total | 23~produced_energy=div:100 29~power=raw |
+| switch_2gang | `_tze284_dmckrsxg` TS0601 | 15:indicator_status 19:delay_off_schedule 29:relay_status_l1 30:relay_status_l2 103:switch_color_on 104:switch_color_off 105:name_l1 106:name_l2 111:radar_config 209:cycle_schedule | 29~power_on_behavior_l1=lookup:{"0":"off","1":"on","2":"previous"} 30~power_on_behavior_l2=lookup:{"0":"off","1":"on","2":"previous"} |
+| switch_3gang | `_tze284_e4pf6l87` TS0601 | 15:indicator_status 19:delay_off_schedule 29:relay_status_l1 30:relay_status_l2 31:relay_status_l3 103:switch_color_on 104:switch_color_off 105:name_l1 106:name_l2 107:name_l3 111:radar_config 209:cycle_schedule |  |
+| valve_dual_irrigation | `_tze284_eaet5qt5` TS0601 | 3:fan_speed 11:power_on_behavior | 3~fan_speed=lookup:{"0":"1","1":"2","2":"3","3":"4","4":"5"}(name) |
+| climate_sensor | `_tze284_eekpf0ft` TS0601 | 28:schedule_monday 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 32:schedule_friday 33:schedule_saturday 34:schedule_sunday 35:fault_alarm | 28~fan_mode=lookup:{"0":"low","1":"medium","2":"high","3":"auto"} 29~power=raw 30~countdown_l1=raw 31~countdown_l2=raw 32~ac_frequency=div:100 33~countdown_l4=raw 35~error_status=raw |
+| switch_3gang | `_tze284_exfilann` TS0601 | 19:inching_l1 |  |
+| valve_dual_irrigation | `_tze284_fhvpaltk` TS0601 | 1:onoff.valve_1 2:onoff.valve_2 3:fan_speed 11:power_on_behavior 59:measure_battery | 3~fan_speed=lookup:{"0":"1","1":"2","2":"3","3":"4","4":"5"}(name) 59~battery=raw |
+| curtain_motor | `_tze284_fodv6bkr` TS0601 | 1:windowcoverings_state |  |
+| device_radiator_valve | `_tze284_fqm2sfpe` TS0601 | 2:thermostat_mode 3:dp_3 4:target_temperature 5:measure_temperature 7:child_lock 13:measure_battery 15:measure_battery 35:alarm_battery 39:dp_39 101:dp_101 102:dp_102 | 5~local_temperature=div:10 13~battery=raw 39~scale_protection=onOff |
+| curtain_motor | `_tze284_fzo2pocs` TS0601 | 1:state 2:position | 1~state=onOff(name) |
+| wall_thermostat | `_tze284_gops3slb` TS0601 | 4:preset 104:working_day 109:schedule_weekday |  |
+| led_controller_rgb | `_tze284_gt5al3bl` TS0601 | 4:color_temp 51:scene 52:music_mode |  |
+| curtain_motor | `_tze284_hbjwgkdh` TS0601 | 1:state 2:position | 1~state=onOff(name) |
+| climate_sensor | `_tze284_idn2htgu` TS0601 | 3:action 5:action 6:action 7:action 8:action 125:led_switch_name_l1 126:led_switch_name_l2 127:led_switch_name_l3 128:led_switch_name_l4 129:cover_name_l1 130:cover_name_l2 131:cover_name_l3 132:cover_name_l4 137:switch_name_l1 138:switch_name_l2 139:switch_name_l3 140:switch_name_l4 141:scene_name_l1 142:scene_name_l2 143:scene_name_l3 144:scene_name_l4 145:scene_name_l5 146:scene_name_l6 147:scene_name_l7 148:scene_name_l8 | 129~illuminance_report=lookup:{"0":"off","1":"on"} 130~scale_protection=bool 131~temperature=div:10 132~speed_report=lookup:{"0":"off","1":"on"} 138~window_detection=onOff 139~window_opening_mode=lookup:{"0":"comfort","1":"comfort_-1","2":"comfort_-2","3":"eco","4":"antifrost","5":"off"} 140~window_opening_mode_duration=raw 141~reset_consumption=onOff 142~power_rating=raw 143~overcurrent_recloser=onOff 144~leakage_recloser=onOff 145~overpower_recloser=onOff |
+| device_radiator_valve | `_tze284_iilebqoo` TS0601 | 104:state_1 105:state_2 |  |
+| humidifier | `_tze284_ikul00sx` TS0601 | 105:brightness |  |
+| climate_sensor | `_tze284_iwn0gpzz` TS0601 | 18:data_report_duration |  |
+| curtain_motor | `_tze284_iwyqtclw` TS0601 | 1:action 2:action 4:action 17:action 103:name_l1 106:name_l4 107:scene_name_l1 108:scene_name_l2 109:scene_name_l3 110:scene_name_l4 111:dimmer_name_l1 112:dimmer_name_l2 113:dimmer_name_l3 114:dimmer_name_l4 115:curtain_name_l1 116:curtain_name_l2 117:curtain_name_l3 118:curtain_name_l4 128:thermostat_name | 111~power=raw |
+| radiator_valve | `_tze284_k6rdmisz` TS0601 | 2:system_mode 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday | 30~child_lock=lookup:{"true":"LOCK","false":"UNLOCK"} 31~working_day=lookup:{"0":"mon_sun","1":"mon_fri+sat+sun","2":"separate"} 33~holiday_days=raw 34~humidity=raw |
+| climate_sensor | `_tze284_k7v0eqke` TS0601 | 19:delay_off_schedule 29:relay_status_l1 30:relay_status_l2 31:relay_status_l3 103:switch_color_on 104:switch_color_off 105:name_l1 106:name_l2 107:name_l3 111:radar_config 209:cycle_schedule | 29~power=raw 30~countdown_l1=raw 31~countdown_l2=raw |
+| presence_sensor_radar | `_tze284_koxaopnk` TS0601 | 3:position | 3~position=raw(name) |
+| climate_sensor | `_tze284_kyyu8rbj` TS0601 | 8:min_set 24:relay_switch 102:pump_control |  |
+| curtain_motor | `_tze284_libht6ua` TS0601 | 1:state 2:position 101:motor_direction 107:factory_reset | 1~state=onOff(name) |
+| wall_switch_1_gang_tuya | `_tze284_lnyz4a6v` TS0601 | 15:indicator_status 19:delay_off_schedule 29:relay_status 103:switch_color_on 104:switch_color_off 105:name 111:radar_config 209:cycle_schedule |  |
+| energy_meter_3phase | `_tze284_loejka0i` TS0601 | 15:power_factor 16:energy_reset 17:alarm_set_1 18:alarm_set_2 104:power_a 107:power_b 110:power_c 111:power 118:power_factor_a 119:power_factor_b 120:power_factor_c | 15~power_factor=raw(name) 104~current_a=div:1000 107~power_b=raw(name) 110~energy_produced_a=div:100 111~power=raw(name) 118~energy_b=div:100 119~energy_produced_b=div:100 |
+| climate_sensor | `_tze284_ltwbm23f` TS0601 | 102:schedule_monday 103:schedule_tuesday 104:schedule_wednesday 105:schedule_thursday 106:schedule_friday 107:schedule_saturday 108:schedule_sunday |  |
+| wall_dimmer_tuya | `_tze284_m1cvyneb` TS0601 | 1:switch 21:backlight | 1~state=onOff 21~backlight_mode=lookup:{"0":"off","1":"normal","2":"inverted"} |
+| climate_sensor | `_tze284_madl8ejv` TS0601 | 3:heating_demand |  |
+| switch_1gang | `_tze284_ms97nkyy` TS0601 | 9:action 10:action 11:action 12:action | 9~countdown_3=raw 10~countdown_4=raw |
+| climate_sensor | `_tze284_mul9abs3` TS0601 | 24:local_temperature | 24~local_temperature=div:10(name) |
+| usb_outlet_advanced | `_tze284_mvtclclq` TS0601 | 3:onoff.usb1 4:onoff.usb2 11:onoff.usb1 12:onoff.usb2 20:meter_power |  |
+| water_tank_monitor | `_tze284_mxujdmxo` TS0601 | 24:relay_switch 102:pump_control |  |
+| curtain_motor | `_tze284_n73badib` TS0601 | 1:state 2:position 16:cover_limit 20:click_control | 1~state=onOff(name) |
+| device_air_purifier_radiator | `_tze284_nbv4tdaz` TS0601 | 4:current_heating_setpoint 5:local_temperature 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday 102:boost_time 105:window_delay 106:holiday_time 108:window_close_delay 114:override_temperature | 4~current_heating_setpoint=div:10(name) 5~local_temperature=div:10(name) |
+| sensor_gas_presence | `_tze284_nj7sfid2` TS0601 | 3:action |  |
+| climate_sensor | `_tze284_nnhwcvbk` TS0601 | 19:fault 107:refresh |  |
+| thermostatic_radiator_valve | `_tze284_noixx2uz` TS0601 | 4:current_heating_setpoint 5:local_temperature 28:schedule_monday 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 32:schedule_friday 33:schedule_saturday 34:schedule_sunday | 4~current_heating_setpoint=div:10 5~local_temperature=div:10 |
+| dimmer_2_gang_tuya | `_tze284_nthhgkd6` TS0601 | 105:dimming_speed |  |
+| dimmer_wall_1gang | `_tze284_nvodulvi` TS0601 | 103:action 104:action 108:action 109:action 110:action 111:action |  |
+| climate_sensor | `_tze284_ny94onlb` TS0601 | 18:data_report_duration |  |
+| wall_dimmer_tuya | `_tze284_nzns7udm` TS0601 | 5:action | 5~max_brightness=scale:0,254,0,1000 |
+| device_radiator_valve | `_tze284_o3x45p96` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday | 31~working_day=lookup:{"0":"mon_sun","1":"mon_fri+sat+sun","2":"separate"} |
+| switch_2gang | `_tze284_o409r73p` TS0601 | 104:radar_distance 105:name_l1 106:name_l2 111:screen_off_time |  |
+| device_radiator_valve | `_tze284_ogx8u5z6` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday | 31~working_day=lookup:{"0":"mon_sun","1":"mon_fri+sat+sun","2":"separate"} |
+| presence_sensor_radar | `_tze284_ozf4e02o` TS0601 | 103:ai_self_learning 104:factory_reset 105:fast_setting 116:sensor_mode 125:home_environment | 116~distance_report=lookup:{"0":"OFF","1":"ON"} |
+| device_radiator_valve | `_tze284_p3dbf6qs` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday | 31~working_day=lookup:{"0":"mon_sun","1":"mon_fri+sat+sun","2":"separate"} |
+| thermostatic_radiator_valve | `_tze284_pcdmj88b` TS0601 | 28:schedule_monday 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 32:schedule_friday 33:schedule_saturday 34:schedule_sunday 35:fault_alarm |  |
+| motion_sensor_switch | `_tze284_pislt0wa` TS0601 | 101:auto_adjustment 102:switch_states |  |
+| curtain_motor | `_tze284_qhlxve78` TS0601 | 18:data_report_duration |  |
+| button_wireless | `_tze284_qoi1aqxg` TS0601 | 1:state 8:position 9:position 11:motor_direction 13:battery 16:cover_limit | 1~state=onOff(name) 13~battery=raw(name) |
+| curtain_motor | `_tze284_r3szw0xr` TS0601 | 1:state 9:position 16:cover_limit | 1~state=onOff(name) |
+| presence_sensor_radar | `_tze284_rlytpmij` TS0601 | 20:fault_alarm 103:antifreeze | 20~illuminance=raw |
+| device_radiator_valve | `_tze284_roujjevx` TS0601 | 7:schedules |  |
+| soil_sensor | `_tze284_rovbuqdo` TS0601 | 124:step_count 125:effect 126:speed 128:motion_up 129:motion_down 134:light_off_delay |  |
+| climate_sensor | `_tze284_rqcuwlsa` TS0601 | 102:humidity_alarm |  |
+| device_radiator_valve | `_tze284_rv6iuyxb` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday | 31~working_day=lookup:{"0":"mon_sun","1":"mon_fri+sat+sun","2":"separate"} |
+| climate_sensor | `_tze284_rzrrjkz2` TS0601 | 19:fault 107:refresh |  |
+| climate_sensor | `_tze284_sonkaxrd` TS0601 | 10:warming_up 11:fault |  |
+| sensor_motion_presence | `_tze284_tre6haif` TS0601 | 102:alarm_mode | 102~lower=raw(cat) |
+| switch_1gang | `_tze284_ty5neqqo` TS0601 | 28:schedule_monday 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 32:schedule_friday 33:schedule_saturday 34:schedule_sunday 35:fault |  |
+| climate_sensor | `_tze284_uab532m0` TS0601 | 19:fault 107:refresh |  |
+| curtain_motor | `_tze284_upt8lzi0` TS0601 | 1:windowcoverings_state 2:position |  |
+| smoke_sensor2 | `_tze284_uqzwwjas` TS0601 | 11:fault | 11~device_fault=raw |
+| climate_sensor | `_tze284_v5xjyphj` TS0601 | 26:fault |  |
+| climate_sensor | `_tze284_vjpaih9f` TS0601 | 28:schedule_monday 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 32:schedule_friday 33:schedule_saturday 34:schedule_sunday 35:battery_low | 28~fan_mode=lookup:{"0":"low","1":"medium","2":"high","3":"auto"} 29~power=raw 30~countdown_l1=raw 31~countdown_l2=raw 32~ac_frequency=div:100 33~countdown_l4=raw 35~error_status=raw |
+| water_valve_smart | `_tze284_vuwtqx0t` TS0601 | 2:month_consumption 3:daily_consumption 5:faults 18:reverse_water_consumed 21:flow_rate |  |
+| climate_sensor | `_tze284_wbhaespm` TS0601 | 17:overload_breaker 18:over_current_threshold 29:total_active_power 32:ac_frequency 103:rms_voltage 104:rms_current 105:active_power 108:power_factor 112:rms_voltage_ph_b 113:rms_current_ph_b 114:active_power_ph_b 117:power_factor_ph_b 121:rms_voltage_ph_c 122:rms_current_ph_c 123:active_power_ph_c 126:power_factor_ph_c | 29~power=raw 32~ac_frequency=div:100 |
+| climate_sensor | `_tze284_wdfurkoa` TS0601 | 5:motor_direction | 5~motor_direction=lookup:{"false":"normal","true":"reversed"}(name) |
+| climate_sensor | `_tze284_wwaeqnrf` TS0601 | 19:delay_off_schedule 29:relay_status_l1 30:relay_status_l2 31:relay_status_l3 32:relay_status_l4 103:switch_color_on 104:switch_color_off 105:name_l1 106:name_l2 107:name_l3 108:name_l4 111:radar_config 201:cycle_schedule | 29~power=raw 30~countdown_l1=raw 31~countdown_l2=raw 32~ac_frequency=div:100 |
+| thermostatic_radiator_valve | `_tze284_xdtnpp1a` TS0601 | 18:schedule_tuesday 20:schedule_thursday 22:schedule_saturday 23:schedule_sunday |  |
+| switch_4gang | `_tze284_xibaabmu` TS0601 | 15:indicator_status 19:delay_off_schedule 29:relay_status_l1 30:relay_status_l2 31:relay_status_l3 32:relay_status_l4 103:switch_color_on 104:switch_color_off 105:name_l1 106:name_l2 107:name_l3 108:name_l4 111:radar_config 201:cycle_schedule |  |
+| wall_thermostat | `_tze284_xnbkhhdr` TS0601 | 4:preset 16:zha 24:zha 28:zha 30:zha 104:working_day 105:zha 108:zha 109:schedule_weekday 111:zha 120:zha 121:zha 122:zha 123:zha | 24~local_temperature=div:10 28~fan_mode=lookup:{"0":"low","1":"medium","2":"high","3":"auto"} |
+| switch_3gang | `_tze284_xvywzhmi` TS0601 | 105:name_l1 106:name_l2 107:name_l3 |  |
+| switch_4gang | `_tze284_y4jqpry8` TS0601 | 15:indicator_status 19:delay_off_schedule 29:relay_status_l1 30:relay_status_l2 31:relay_status_l3 32:relay_status_l4 103:switch_color_on 104:switch_color_off 105:name_l1 106:name_l2 107:name_l3 108:name_l4 111:radar_config 201:cycle_schedule |  |
+| device_radiator_valve | `_tze284_ymldrmzx` TS0601 | 103:schedule_monday 104:schedule_tuesday 105:schedule_wednesday 106:schedule_thursday 107:schedule_friday 108:schedule_saturday 109:schedule_sunday 110:holiday_time |  |
+| presence_sensor_radar | `_tze284_yrwmnya3` TS0601 | 3:action 5:action 6:action 7:action 8:action 17:action | 6~equipment_status=raw |
+| climate_sensor | `_tze284_z5jz7wpo` TS0601 | 3:speed |  |
+| climate_sensor | `_tze284_z7a2jmyy` TS0601 | 19:fault 107:refresh |  |
+| smoke_sensor2 | `_tze284_zeeqkb0p` TS0601 | 11:fault | 11~device_fault=raw |
+| climate_sensor | `_tze284_zjhoqbrd` TS0601 | 104:working_day 109:schedule_weekday |  |
+| wall_dimmer_tuya | `_tze284_znvwzxkq` TS0601 | 101:backlight_color |  |
+| curtain_motor | `_tze284_zofmmt9s` TS0601 | 1:state 9:position 11:motor_direction 20:click_control | 1~state=onOff(name) |
+| presence_sensor_radar | `_tze28c1000000_1youk3hj` TS0601 | 12:presence_time | 12~illuminance=raw |
+| switch_2gang | `_tze28c1000000_a2teqi5u` TS0601 | 105:name_l1 106:name_l2 |  |
+| switch_2gang | `_tze28c1000000_dmckrsxg` TS0601 | 15:indicator_status 19:delay_off_schedule 29:relay_status_l1 30:relay_status_l2 103:switch_color_on 104:switch_color_off 105:name_l1 106:name_l2 111:radar_config 209:cycle_schedule | 29~power_on_behavior_l1=lookup:{"0":"off","1":"on","2":"previous"} 30~power_on_behavior_l2=lookup:{"0":"off","1":"on","2":"previous"} |
+| switch_3gang | `_tze28c1000000_e4pf6l87` TS0601 | 15:indicator_status 19:delay_off_schedule 29:relay_status_l1 30:relay_status_l2 31:relay_status_l3 103:switch_color_on 104:switch_color_off 105:name_l1 106:name_l2 107:name_l3 111:radar_config 209:cycle_schedule |  |
+| led_controller_rgb | `_tze28c1000000_gt5al3bl` TS0601 | 4:color_temp 51:scene 52:music_mode |  |
+| curtain_motor | `_tze28c1000000_i8sdouy0` TS0601 | 1:state 2:position | 1~state=onOff(name) |
+| switch_2gang | `_tze28c1000000_o409r73p` TS0601 | 104:radar_distance 105:name_l1 106:name_l2 111:screen_off_time |  |
+| switch_4gang | `_tze28c1000000_pmbxyf97` TS0601 | 15:indicator_status 19:delay_off_schedule 29:relay_status_l1 30:relay_status_l2 31:relay_status_l3 32:relay_status_l4 103:switch_color_on 104:switch_color_off 105:name_l1 106:name_l2 107:name_l3 108:name_l4 111:radar_config 201:cycle_schedule |  |
+| boiler_switch_energy | `_tze28c1000000_rzdkn5rx` TS0601 | 19:inching |  |
+| valve_irrigation | `_tze28c1000000_v5xjyphj` TS0601 | 1:state 26:fault | 1~state=onOff(name) |
+| switch_4gang | `_tze28c1000000_xibaabmu` TS0601 | 15:indicator_status 19:delay_off_schedule 29:relay_status_l1 30:relay_status_l2 31:relay_status_l3 32:relay_status_l4 103:switch_color_on 104:switch_color_off 105:name_l1 106:name_l2 107:name_l3 108:name_l4 111:radar_config 201:cycle_schedule |  |
+| switch_3gang | `_tze28c1000000_xvywzhmi` TS0601 | 105:name_l1 106:name_l2 107:name_l3 |  |
+| switch_4gang | `_tze28c1000000_y4jqpry8` TS0601 | 15:indicator_status 19:delay_off_schedule 29:relay_status_l1 30:relay_status_l2 31:relay_status_l3 32:relay_status_l4 103:switch_color_on 104:switch_color_off 105:name_l1 106:name_l2 107:name_l3 108:name_l4 111:radar_config 201:cycle_schedule |  |
+| presence_sensor_radar | `hobeian` ZG-204ZL | 12:illuminance | 12~illuminance=raw(name) |
+| presence_sensor_radar | `hobeian` ZG-204ZV | 106:illuminance 111:temperature | 106~illuminance=raw(name) 111~temperature=div:10(name) |
 
 ## Endpoints (interviews × compose × runtime)
 
