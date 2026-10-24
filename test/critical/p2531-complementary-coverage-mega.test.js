@@ -55,7 +55,9 @@ describe('P2531 complementary coverage mega', () => {
     const n = (c.zigbee?.manufacturerName || []).length;
     // WHY(P2841): curated W4 moves (a2teqi5u/dmckrsxg → switch_2gang) may drop ~8
     // case forms; Contre quoi = mass wipe below 1390, not a brittle 1400 lock.
-    assert.ok(n >= 1390, `switch_1gang mfr entries must stay dense generics (${n})`);
+    // WHY(P2970): curated move of _TZE204_dzuqwsyg (Beca BAC-006AZB thermostat) to wall_thermostat
+    // drops 4 more case forms; floor 1380 still catches a mass wipe.
+    assert.ok(n >= 1380, `switch_1gang mfr entries must stay dense generics (${n})`);
     assert.ok(hasMfr(c, /7tdtqgwv/i), 'ZHA/Z2M somgoms 7tdtqgwv OEM overlay');
     const s2 = readJson('drivers/switch_2gang/driver.compose.json');
     assert.ok(hasMfr(s2, /a2teqi5u/i), 'a2teqi5u must live on switch_2gang after curated move');
