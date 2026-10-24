@@ -27,9 +27,12 @@ const SAFE_FILES = [
   'data/mfs_db.json',
 ];
 
+// P3019c: never sync per-branch generated/curated docs across branches (shared guard).
+const { isBranchSpecific } = require('./branch-specific-paths');
+
 // Get master content for each safe file
 const changes = [];
-for (const f of SAFE_FILES) {
+for (const f of SAFE_FILES.filter((x) => !isBranchSpecific(x))) {
   try {
     const masterContent = git(['show', `origin/master:${f}`]);
     const localContent = fs.readFileSync(f, 'utf8');
