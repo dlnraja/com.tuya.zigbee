@@ -3942,6 +3942,285 @@
             "filter": "capabilities=button.1,capabilities=button,capabilities=onoff,capabilities=button.toggle"
           }
         ]
+      },
+      {
+        "id": "unknown_command_received",
+        "title": {
+          "en": "An unknown command or DP was received",
+          "fr": "Une commande ou un DP inconnu a été reçu",
+          "nl": "Een onbekend commando of DP is ontvangen",
+          "de": "Ein unbekannter Befehl oder DP wurde empfangen"
+        },
+        "hint": {
+          "en": "Fires for frames and Tuya DPs no driver handles, with the decoded value and the inferred action (exact ZCL/Z2M/ZHA decoders first, learned or heuristic otherwise). Optional device filter (P3016).",
+          "fr": "Se déclenche pour les trames et DP Tuya non gérés, avec la valeur décodée et l'action déduite (décodeurs exacts ZCL/Z2M/ZHA d'abord, sinon appris ou heuristique). Filtre appareil optionnel (P3016)."
+        },
+        "tokens": [
+          {
+            "name": "device_name",
+            "type": "string",
+            "title": {
+              "en": "Device name",
+              "fr": "Nom de l'appareil"
+            },
+            "example": "Living remote"
+          },
+          {
+            "name": "cluster",
+            "type": "string",
+            "title": {
+              "en": "Cluster",
+              "fr": "Cluster"
+            },
+            "example": "0x0006"
+          },
+          {
+            "name": "command",
+            "type": "number",
+            "title": {
+              "en": "Command / DP",
+              "fr": "Commande / DP"
+            },
+            "example": 253
+          },
+          {
+            "name": "payload_hex",
+            "type": "string",
+            "title": {
+              "en": "Payload (hex)",
+              "fr": "Charge utile (hex)"
+            },
+            "example": "01"
+          },
+          {
+            "name": "decoded",
+            "type": "string",
+            "title": {
+              "en": "Decoded value",
+              "fr": "Valeur décodée"
+            },
+            "example": "{\"voltage\":244.2}"
+          },
+          {
+            "name": "inferred_action",
+            "type": "string",
+            "title": {
+              "en": "Inferred action",
+              "fr": "Action déduite"
+            },
+            "example": "double"
+          },
+          {
+            "name": "confidence",
+            "type": "number",
+            "title": {
+              "en": "Confidence (0–1)",
+              "fr": "Confiance (0–1)"
+            },
+            "example": 0.95
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "title": {
+              "en": "Device (optional filter)",
+              "fr": "Appareil (filtre optionnel)",
+              "nl": "Apparaat (optioneel filter)",
+              "de": "Gerät (optionaler Filter)"
+            }
+          }
+        ]
+      },
+      {
+        "id": "inferred_button_action",
+        "title": {
+          "en": "A button action was inferred from an unknown command",
+          "fr": "Une action bouton a été déduite d'une commande inconnue",
+          "nl": "Een knopactie is afgeleid van een onbekend commando",
+          "de": "Eine Tastenaktion wurde aus einem unbekannten Befehl abgeleitet"
+        },
+        "titleFormatted": {
+          "en": "A button action [[action]] was inferred from an unknown command",
+          "fr": "Une action bouton [[action]] a été déduite d'une commande inconnue",
+          "nl": "Knopactie [[action]] is afgeleid van een onbekend commando",
+          "de": "Tastenaktion [[action]] wurde aus einem unbekannten Befehl abgeleitet"
+        },
+        "hint": {
+          "en": "Press, double, long, release, rotate or scene inferred from frames/DPs the driver does not handle (P3016).",
+          "fr": "Appui, double, long, relâchement, rotation ou scène déduits de trames/DP non gérés par le driver (P3016)."
+        },
+        "tokens": [
+          {
+            "name": "device_name",
+            "type": "string",
+            "title": {
+              "en": "Device name",
+              "fr": "Nom de l'appareil"
+            },
+            "example": "Living remote"
+          },
+          {
+            "name": "button",
+            "type": "number",
+            "title": {
+              "en": "Button",
+              "fr": "Bouton"
+            },
+            "example": 1
+          },
+          {
+            "name": "action",
+            "type": "string",
+            "title": {
+              "en": "Action",
+              "fr": "Action"
+            },
+            "example": "double"
+          },
+          {
+            "name": "source",
+            "type": "string",
+            "title": {
+              "en": "Source",
+              "fr": "Source"
+            },
+            "example": "z2m:tuya.on_off_action(0xFD)"
+          },
+          {
+            "name": "confidence",
+            "type": "number",
+            "title": {
+              "en": "Confidence (0–1)",
+              "fr": "Confiance (0–1)"
+            },
+            "example": 0.95
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "title": {
+              "en": "Device (optional filter)",
+              "fr": "Appareil (filtre optionnel)",
+              "nl": "Apparaat (optioneel filter)",
+              "de": "Gerät (optionaler Filter)"
+            }
+          },
+          {
+            "type": "dropdown",
+            "name": "action",
+            "title": {
+              "en": "Action",
+              "fr": "Action",
+              "nl": "Actie",
+              "de": "Aktion"
+            },
+            "values": [
+              {
+                "id": "any",
+                "title": {
+                  "en": "Any action",
+                  "fr": "N'importe quelle action",
+                  "nl": "Elke actie",
+                  "de": "Jede Aktion"
+                }
+              },
+              {
+                "id": "single",
+                "title": {
+                  "en": "Single press",
+                  "fr": "Appui simple",
+                  "nl": "Enkele druk",
+                  "de": "Einfacher Druck"
+                }
+              },
+              {
+                "id": "double",
+                "title": {
+                  "en": "Double press",
+                  "fr": "Double appui",
+                  "nl": "Dubbele druk",
+                  "de": "Doppelter Druck"
+                }
+              },
+              {
+                "id": "long",
+                "title": {
+                  "en": "Long press / hold",
+                  "fr": "Appui long",
+                  "nl": "Lang indrukken",
+                  "de": "Langer Druck"
+                }
+              },
+              {
+                "id": "release",
+                "title": {
+                  "en": "Release",
+                  "fr": "Relâchement",
+                  "nl": "Loslaten",
+                  "de": "Loslassen"
+                }
+              },
+              {
+                "id": "rotate_left",
+                "title": {
+                  "en": "Rotate left",
+                  "fr": "Rotation gauche",
+                  "nl": "Links draaien",
+                  "de": "Links drehen"
+                }
+              },
+              {
+                "id": "rotate_right",
+                "title": {
+                  "en": "Rotate right",
+                  "fr": "Rotation droite",
+                  "nl": "Rechts draaien",
+                  "de": "Rechts drehen"
+                }
+              },
+              {
+                "id": "scene",
+                "title": {
+                  "en": "Scene recall",
+                  "fr": "Rappel de scène",
+                  "nl": "Scène oproepen",
+                  "de": "Szene abrufen"
+                }
+              },
+              {
+                "id": "on",
+                "title": {
+                  "en": "On",
+                  "fr": "Allumer",
+                  "nl": "Aan",
+                  "de": "Ein"
+                }
+              },
+              {
+                "id": "off",
+                "title": {
+                  "en": "Off",
+                  "fr": "Éteindre",
+                  "nl": "Uit",
+                  "de": "Aus"
+                }
+              },
+              {
+                "id": "toggle",
+                "title": {
+                  "en": "Toggle",
+                  "fr": "Basculer",
+                  "nl": "Schakelen",
+                  "de": "Umschalten"
+                }
+              }
+            ]
+          }
+        ]
       }
     ],
     "conditions": [
@@ -6641,6 +6920,155 @@
           "fr": "Une pièce !{{est|n'est pas}} occupée",
           "de": "Ein Raum !{{ist|ist nicht}} besetzt"
         }
+      },
+      {
+        "id": "last_inferred_action_is",
+        "title": {
+          "en": "Last inferred action of [[device]] !{{is|is not}} [[action]]",
+          "fr": "La dernière action déduite de [[device]] !{{est|n'est pas}} [[action]]",
+          "nl": "Laatst afgeleide actie van [[device]] !{{is|is niet}} [[action]]",
+          "de": "Letzte abgeleitete Aktion von [[device]] !{{ist|ist nicht}} [[action]]"
+        },
+        "titleFormatted": {
+          "en": "Last inferred action of [[device]] !{{is|is not}} [[action]] within [[minutes]] min",
+          "fr": "La dernière action déduite de [[device]] !{{est|n'est pas}} [[action]] depuis [[minutes]] min",
+          "nl": "Laatst afgeleide actie van [[device]] !{{is|is niet}} [[action]] binnen [[minutes]] min",
+          "de": "Letzte abgeleitete Aktion von [[device]] !{{ist|ist nicht}} [[action]] innerhalb [[minutes]] Min"
+        },
+        "hint": {
+          "en": "True when the last action inferred from an unknown command/DP of this device matches, within X minutes (P3016).",
+          "fr": "Vrai si la dernière action déduite d'une commande/DP inconnu de cet appareil correspond, depuis X minutes (P3016)."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "title": {
+              "en": "Device",
+              "fr": "Appareil",
+              "nl": "Apparaat",
+              "de": "Gerät"
+            }
+          },
+          {
+            "type": "dropdown",
+            "name": "action",
+            "title": {
+              "en": "Action",
+              "fr": "Action",
+              "nl": "Actie",
+              "de": "Aktion"
+            },
+            "values": [
+              {
+                "id": "single",
+                "title": {
+                  "en": "Single press",
+                  "fr": "Appui simple",
+                  "nl": "Enkele druk",
+                  "de": "Einfacher Druck"
+                }
+              },
+              {
+                "id": "double",
+                "title": {
+                  "en": "Double press",
+                  "fr": "Double appui",
+                  "nl": "Dubbele druk",
+                  "de": "Doppelter Druck"
+                }
+              },
+              {
+                "id": "long",
+                "title": {
+                  "en": "Long press / hold",
+                  "fr": "Appui long",
+                  "nl": "Lang indrukken",
+                  "de": "Langer Druck"
+                }
+              },
+              {
+                "id": "release",
+                "title": {
+                  "en": "Release",
+                  "fr": "Relâchement",
+                  "nl": "Loslaten",
+                  "de": "Loslassen"
+                }
+              },
+              {
+                "id": "rotate_left",
+                "title": {
+                  "en": "Rotate left",
+                  "fr": "Rotation gauche",
+                  "nl": "Links draaien",
+                  "de": "Links drehen"
+                }
+              },
+              {
+                "id": "rotate_right",
+                "title": {
+                  "en": "Rotate right",
+                  "fr": "Rotation droite",
+                  "nl": "Rechts draaien",
+                  "de": "Rechts drehen"
+                }
+              },
+              {
+                "id": "scene",
+                "title": {
+                  "en": "Scene recall",
+                  "fr": "Rappel de scène",
+                  "nl": "Scène oproepen",
+                  "de": "Szene abrufen"
+                }
+              },
+              {
+                "id": "on",
+                "title": {
+                  "en": "On",
+                  "fr": "Allumer",
+                  "nl": "Aan",
+                  "de": "Ein"
+                }
+              },
+              {
+                "id": "off",
+                "title": {
+                  "en": "Off",
+                  "fr": "Éteindre",
+                  "nl": "Uit",
+                  "de": "Aus"
+                }
+              },
+              {
+                "id": "toggle",
+                "title": {
+                  "en": "Toggle",
+                  "fr": "Basculer",
+                  "nl": "Schakelen",
+                  "de": "Umschalten"
+                }
+              }
+            ]
+          },
+          {
+            "name": "minutes",
+            "type": "number",
+            "title": {
+              "en": "Minutes",
+              "fr": "Minutes"
+            },
+            "min": 1,
+            "max": 1440,
+            "step": 1,
+            "value": 1,
+            "placeholder": {
+              "en": "1–1440",
+              "fr": "1–1440"
+            }
+          }
+        ]
       }
     ],
     "actions": [
@@ -11901,6 +12329,51 @@
           "de": "Fähigkeit für alle Geräte in Zone setzen [[zone]] [[capability]] [[value]] [[include_subzones]]",
           "fr": "Définir la capacité pour tous les appareils de la zone [[zone]] [[capability]] [[value]] [[include_subzones]]"
         }
+      },
+      {
+        "id": "unknown_commands_diag",
+        "title": {
+          "en": "Export unknown commands diagnostics of [[device]]",
+          "fr": "Exporter le diagnostic des commandes inconnues de [[device]]",
+          "nl": "Diagnose onbekende commando's van [[device]] exporteren",
+          "de": "Diagnose unbekannter Befehle von [[device]] exportieren"
+        },
+        "hint": {
+          "en": "JSON of learned patterns, inferred actions and counters. No names, ids or addresses (P3016).",
+          "fr": "JSON des motifs appris, actions déduites et compteurs. Sans nom, id ni adresse (P3016)."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "title": {
+              "en": "Device",
+              "fr": "Appareil",
+              "nl": "Apparaat",
+              "de": "Gerät"
+            }
+          }
+        ],
+        "tokens": [
+          {
+            "name": "json",
+            "type": "string",
+            "title": {
+              "en": "Diagnostics (JSON)",
+              "fr": "Diagnostic (JSON)"
+            },
+            "example": "{\"v\":1}"
+          },
+          {
+            "name": "count",
+            "type": "number",
+            "title": {
+              "en": "Learned patterns",
+              "fr": "Motifs appris"
+            },
+            "example": 3
+          }
+        ]
       }
     ]
   },
