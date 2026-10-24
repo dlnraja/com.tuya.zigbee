@@ -17281,7 +17281,9 @@
           "_TZE204_rzdkn5rx",
           "_TZE204_RZDKN5RX",
           "_tze204_rzdkn5rx",
-          "_tze204_RZDKN5RX"
+          "_tze204_RZDKN5RX",
+          "_TZE28C1000000_rzdkn5rx",
+          "_tze28c1000000_rzdkn5rx"
         ]
       },
       "images": {
@@ -101186,6 +101188,227 @@
     },
     {
       "name": {
+        "en": "Sauna Thermostat AE-5503",
+        "fr": "Thermostat sauna AE-5503",
+        "nl": "Sauna-thermostaat AE-5503",
+        "de": "Sauna-Thermostat AE-5503"
+      },
+      "class": "thermostat",
+      "capabilities": [
+        "onoff",
+        "target_temperature",
+        "measure_temperature",
+        "child_lock"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE204_eaasry7v",
+          "_tze204_eaasry7v"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5
+            ],
+            "bindings": []
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/sauna_thermostat_ae5503/assets/icon.svg",
+          "instruction": {
+            "en": "On the thermostat, open settings → Zigbee/Network → Pair, or hold the reset pin until the display shows pairing mode.",
+            "fr": "Réglages → Zigbee/Réseau → Appairer, ou maintenez reset jusqu'au mode appairage.",
+            "nl": "Instellingen → Zigbee/Netwerk → Pairen, of reset tot pairmodus op display.",
+            "de": "Einstellungen → Zigbee/Netz → Koppeln, oder Reset bis Pairing-Modus."
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/sauna_thermostat_ae5503/assets/images/small.png",
+        "large": "/drivers/sauna_thermostat_ae5503/assets/images/large.png"
+      },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        },
+        {
+          "id": "tuya_revive",
+          "title": {
+            "en": "Tuya Revive (device recovery)",
+            "fr": "Tuya Revive (récupération appareil)",
+            "nl": "Tuya Revive (apparaatherstel)",
+            "de": "Tuya Revive (Gerätewiederherstellung)"
+          }
+        },
+        {
+          "id": "generate_issue_report",
+          "title": {
+            "en": "Generate support report (GitHub issue)",
+            "fr": "Générer rapport de support (issue GitHub)",
+            "nl": "Supportrapport genereren (GitHub issue)",
+            "de": "Supportbericht erstellen (GitHub Issue)"
+          }
+        },
+        {
+          "id": "zigbee_rebind",
+          "title": {
+            "en": "Re-bind & reconfigure reporting",
+            "fr": "Re-lier et reconfigurer les rapports",
+            "nl": "Opnieuw binden en rapportage instellen",
+            "de": "Neu binden und Reporting konfigurieren"
+          }
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Enhanced Features (v9.1)",
+            "fr": "Fonctionnalités Améliorées (v9.1)"
+          },
+          "children": [
+            {
+              "id": "temperature_calibration",
+              "type": "number",
+              "label": {
+                "en": "Temperature Offset (°C)",
+                "fr": "Décalage Température (°C)"
+              },
+              "value": 0,
+              "min": -10,
+              "max": 10,
+              "step": 0.1,
+              "hint": {
+                "en": "Calibration offset applied to temperature readings",
+                "fr": "Décalage de calibration appliqué aux relevés de température"
+              }
+            },
+            {
+              "id": "humidity_calibration",
+              "type": "number",
+              "label": {
+                "en": "Humidity Offset (%)",
+                "fr": "Décalage Humidité (%)"
+              },
+              "value": 0,
+              "min": -20,
+              "max": 20,
+              "step": 1,
+              "hint": {
+                "en": "Calibration offset applied to humidity readings",
+                "fr": "Décalage de calibration appliqué aux relevés d'humidité"
+              }
+            },
+            {
+              "id": "schedule_enabled",
+              "type": "checkbox",
+              "label": {
+                "en": "Enable Device Schedule",
+                "fr": "Activer la Programmation"
+              },
+              "value": false,
+              "hint": {
+                "en": "Use the device's built-in weekly schedule (set via flow cards)",
+                "fr": "Utiliser la programmation hebdomadaire intégrée"
+              }
+            },
+            {
+              "id": "battery_check_interval",
+              "type": "number",
+              "label": {
+                "en": "Battery Check Interval (hours)",
+                "fr": "Intervalle Vérification Batterie (heures)"
+              },
+              "value": 24,
+              "min": 1,
+              "max": 168,
+              "step": 1,
+              "hint": {
+                "en": "How often to poll battery status",
+                "fr": "Fréquence de vérification de l'état de la batterie"
+              }
+            },
+            {
+              "id": "availability_timeout",
+              "type": "number",
+              "label": {
+                "en": "Offline Timeout (minutes, 0=disabled)",
+                "fr": "Délai Hors Ligne (minutes, 0=désactivé)"
+              },
+              "value": 0,
+              "min": 0,
+              "max": 1440,
+              "step": 5,
+              "hint": {
+                "en": "Minutes without messages before marking offline",
+                "fr": "Minutes sans messages avant de marquer hors ligne"
+              }
+            }
+          ]
+        },
+        {
+          "id": "tuya_time_sync",
+          "type": "checkbox",
+          "value": true,
+          "label": {
+            "en": "Send time to the device",
+            "fr": "Envoyer l'heure à l'appareil"
+          },
+          "hint": {
+            "en": "Turn off only if the device misbehaves after a time sync (clock jumps, schedule resets).",
+            "fr": "Désactivez seulement si l'appareil se comporte mal après une synchronisation de l'heure (horloge qui saute, programme réinitialisé)."
+          }
+        },
+        {
+          "id": "zcl_cluster_layer",
+          "type": "checkbox",
+          "label": {
+            "en": "ZCL cluster layer (advanced)",
+            "fr": "Couche clusters ZCL (avancé)"
+          },
+          "hint": {
+            "en": "Extra command capture, bounded bindings and reporting fallback on top of the native setup. Turn off if this device misbehaves.",
+            "fr": "Capture de commandes, liaisons bornées et relève de secours en plus de la configuration native. Désactivez si l'appareil se comporte mal."
+          },
+          "value": true
+        }
+      ],
+      "id": "sauna_thermostat_ae5503",
+      "version": "1.0.0",
+      "capabilitiesOptions": {
+        "target_temperature": {
+          "min": 0,
+          "max": 120,
+          "step": 1,
+          "decimals": 0
+        },
+        "measure_temperature": {
+          "getable": true,
+          "preventInsights": false
+        }
+      },
+      "ui": {
+        "quickAction": "onoff"
+      }
+    },
+    {
+      "name": {
         "en": "Scene Switch 1-Gang",
         "fr": "Interrupteur de scène 1 bouton",
         "nl": "Scèneschakelaar 1-gang",
@@ -114968,6 +115191,217 @@
         }
       ],
       "id": "siren",
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
+    },
+    {
+      "name": {
+        "en": "Moes Plug-in Siren MG-BJQ002",
+        "fr": "Sirène sur prise Moes MG-BJQ002",
+        "nl": "Moes stekker-sirene MG-BJQ002",
+        "de": "Moes Steckdosen-Sirene MG-BJQ002"
+      },
+      "class": "other",
+      "capabilities": [
+        "onoff",
+        "volume_set",
+        "onoff.night_light"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE20C_tjz9ad5g",
+          "_tze20c_tjz9ad5g"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "learnmode": {
+          "image": "/drivers/siren_moes_mg_bjq002/assets/icon.svg",
+          "instruction": {
+            "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+          }
+        },
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5
+            ],
+            "bindings": []
+          }
+        }
+      },
+      "settings": [
+        {
+          "id": "mg_alarm_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Alarm mode",
+            "fr": "Mode d’alarme"
+          },
+          "value": "sound_light",
+          "values": [
+            {
+              "id": "sound",
+              "label": {
+                "en": "Sound",
+                "fr": "Son"
+              }
+            },
+            {
+              "id": "light",
+              "label": {
+                "en": "Light",
+                "fr": "Lumière"
+              }
+            },
+            {
+              "id": "sound_light",
+              "label": {
+                "en": "Sound + light",
+                "fr": "Son + lumière"
+              }
+            }
+          ]
+        },
+        {
+          "id": "mg_duration",
+          "type": "number",
+          "label": {
+            "en": "Alarm duration (s)",
+            "fr": "Durée d’alarme (s)"
+          },
+          "value": 30,
+          "min": 1,
+          "max": 1800,
+          "step": 1
+        },
+        {
+          "id": "mg_ringtone",
+          "type": "number",
+          "label": {
+            "en": "Ringtone (1–32)",
+            "fr": "Sonnerie (1–32)"
+          },
+          "value": 1,
+          "min": 1,
+          "max": 32,
+          "step": 1
+        },
+        {
+          "id": "mg_light_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Light mode",
+            "fr": "Mode lumière"
+          },
+          "value": "night_light",
+          "values": [
+            {
+              "id": "rainbow",
+              "label": {
+                "en": "Rainbow",
+                "fr": "Arc-en-ciel"
+              }
+            },
+            {
+              "id": "red_flash",
+              "label": {
+                "en": "Red flash",
+                "fr": "Flash rouge"
+              }
+            },
+            {
+              "id": "night_light",
+              "label": {
+                "en": "Night light",
+                "fr": "Veilleuse"
+              }
+            }
+          ]
+        }
+      ],
+      "images": {
+        "small": "/drivers/siren_moes_mg_bjq002/assets/images/small.png",
+        "large": "/drivers/siren_moes_mg_bjq002/assets/images/large.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "select_driver"
+          }
+        },
+        {
+          "id": "select_driver",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "capabilitiesOptions": {
+        "onoff.night_light": {
+          "title": {
+            "en": "Night light",
+            "fr": "Veilleuse",
+            "nl": "Nachtlampje",
+            "de": "Nachtlicht"
+          }
+        }
+      },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        },
+        {
+          "id": "tuya_revive",
+          "title": {
+            "en": "Tuya Revive (device recovery)",
+            "fr": "Tuya Revive (récupération appareil)",
+            "nl": "Tuya Revive (apparaatherstel)",
+            "de": "Tuya Revive (Gerätewiederherstellung)"
+          }
+        },
+        {
+          "id": "generate_issue_report",
+          "title": {
+            "en": "Generate support report (GitHub issue)",
+            "fr": "Générer rapport de support (issue GitHub)",
+            "nl": "Supportrapport genereren (GitHub issue)",
+            "de": "Supportbericht erstellen (GitHub Issue)"
+          }
+        },
+        {
+          "id": "zigbee_rebind",
+          "title": {
+            "en": "Re-bind & reconfigure reporting",
+            "fr": "Re-lier et reconfigurer les rapports",
+            "nl": "Opnieuw binden en rapportage instellen",
+            "de": "Neu binden und Reporting konfigurieren"
+          }
+        }
+      ],
+      "id": "siren_moes_mg_bjq002",
       "version": "1.0.0",
       "ui": {
         "quickAction": "onoff"
@@ -134952,6 +135386,624 @@
     },
     {
       "name": {
+        "en": "6-Gang Wall Switch with Metering",
+        "fr": "Interrupteur mural 6 voies avec mesure",
+        "nl": "6-voudige wandschakelaar met meting",
+        "de": "6-fach Wandschalter mit Messung"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.gang2",
+        "onoff.gang3",
+        "onoff.gang4",
+        "onoff.gang5",
+        "onoff.gang6",
+        "measure_power",
+        "measure_voltage",
+        "measure_current",
+        "meter_power"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "title": {
+            "en": "Gang 1",
+            "fr": "Gang 1"
+          }
+        },
+        "onoff.gang2": {
+          "title": {
+            "en": "Gang 2",
+            "fr": "Gang 2"
+          }
+        },
+        "onoff.gang3": {
+          "title": {
+            "en": "Gang 3",
+            "fr": "Gang 3"
+          }
+        },
+        "onoff.gang4": {
+          "title": {
+            "en": "Gang 4",
+            "fr": "Gang 4"
+          }
+        },
+        "onoff.gang5": {
+          "title": {
+            "en": "Gang 5",
+            "fr": "Gang 5"
+          }
+        },
+        "onoff.gang6": {
+          "title": {
+            "en": "Gang 6",
+            "fr": "Gang 6"
+          }
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE284_hbxadcl0",
+          "_tze284_hbxadcl0"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "learnmode": {
+          "image": "/drivers/switch_wall_6gang_metering/assets/icon.svg",
+          "instruction": {
+            "en": "Press and hold the power button for 5 seconds until the LED blinks",
+            "fr": "Appuyez et maintenez le bouton d'alimentation pendant 5 secondes jusqu'à ce que la LED clignote"
+          }
+        },
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5
+            ],
+            "bindings": []
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/switch_wall_6gang_metering/assets/images/small.png",
+        "large": "/drivers/switch_wall_6gang_metering/assets/images/large.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Device Type Configuration",
+            "fr": "Configuration Type d'Appareil"
+          },
+          "children": [
+            {
+              "id": "device_type",
+              "type": "dropdown",
+              "label": {
+                "en": "Connected Device Type",
+                "fr": "Type d'Appareil Connecté"
+              },
+              "hint": {
+                "en": "Select the type of device connected to this module. Radiator will invert the ON/OFF logic.",
+                "fr": "Sélectionnez le type d'appareil connecté à ce module. Radiateur inversera la logique MARCHE/ARRÊT."
+              },
+              "value": "light",
+              "values": [
+                {
+                  "id": "light",
+                  "label": {
+                    "en": "💡 Éclairage",
+                    "fr": "💡 Éclairage"
+                  }
+                },
+                {
+                  "id": "outdoor_light",
+                  "label": {
+                    "en": "🏡 Éclairage extérieur",
+                    "fr": "🏡 Éclairage extérieur"
+                  }
+                },
+                {
+                  "id": "radiator",
+                  "label": {
+                    "en": "🔥 Radiateur (fil pilote)",
+                    "fr": "🔥 Radiateur (fil pilote)"
+                  }
+                },
+                {
+                  "id": "water_heater",
+                  "label": {
+                    "en": "🚿 Chauffe-eau / Cumulus",
+                    "fr": "🚿 Chauffe-eau / Cumulus"
+                  }
+                },
+                {
+                  "id": "boiler",
+                  "label": {
+                    "en": "🏠 Chaudière",
+                    "fr": "🏠 Chaudière"
+                  }
+                },
+                {
+                  "id": "underfloor_heating",
+                  "label": {
+                    "en": "🦶 Plancher chauffant",
+                    "fr": "🦶 Plancher chauffant"
+                  }
+                },
+                {
+                  "id": "fan",
+                  "label": {
+                    "en": "🌀 Ventilateur / VMC",
+                    "fr": "🌀 Ventilateur / VMC"
+                  }
+                },
+                {
+                  "id": "ac",
+                  "label": {
+                    "en": "❄️ Climatisation",
+                    "fr": "❄️ Climatisation"
+                  }
+                },
+                {
+                  "id": "extractor",
+                  "label": {
+                    "en": "💨 Extracteur / Hotte",
+                    "fr": "💨 Extracteur / Hotte"
+                  }
+                },
+                {
+                  "id": "shutter",
+                  "label": {
+                    "en": "🪟 Volet roulant / Store",
+                    "fr": "🪟 Volet roulant / Store"
+                  }
+                },
+                {
+                  "id": "gate",
+                  "label": {
+                    "en": "🚗 Portail / Garage",
+                    "fr": "🚗 Portail / Garage"
+                  }
+                },
+                {
+                  "id": "door_lock",
+                  "label": {
+                    "en": "🔐 Gâche / Serrure",
+                    "fr": "🔐 Gâche / Serrure"
+                  }
+                },
+                {
+                  "id": "pump",
+                  "label": {
+                    "en": "💧 Pompe",
+                    "fr": "💧 Pompe"
+                  }
+                },
+                {
+                  "id": "irrigation",
+                  "label": {
+                    "en": "🌱 Arrosage",
+                    "fr": "🌱 Arrosage"
+                  }
+                },
+                {
+                  "id": "pool",
+                  "label": {
+                    "en": "🏊 Équipement piscine",
+                    "fr": "🏊 Équipement piscine"
+                  }
+                },
+                {
+                  "id": "socket",
+                  "label": {
+                    "en": "🔌 Prise commandée",
+                    "fr": "🔌 Prise commandée"
+                  }
+                },
+                {
+                  "id": "appliance",
+                  "label": {
+                    "en": "🧺 Électroménager",
+                    "fr": "🧺 Électroménager"
+                  }
+                },
+                {
+                  "id": "coffee_machine",
+                  "label": {
+                    "en": "☕ Machine à café",
+                    "fr": "☕ Machine à café"
+                  }
+                },
+                {
+                  "id": "alarm",
+                  "label": {
+                    "en": "🚨 Alarme / Sirène",
+                    "fr": "🚨 Alarme / Sirène"
+                  }
+                },
+                {
+                  "id": "camera",
+                  "label": {
+                    "en": "📹 Caméra",
+                    "fr": "📹 Caméra"
+                  }
+                },
+                {
+                  "id": "tv",
+                  "label": {
+                    "en": "📺 TV / Écran",
+                    "fr": "📺 TV / Écran"
+                  }
+                },
+                {
+                  "id": "audio",
+                  "label": {
+                    "en": "🔊 Audio / Hifi",
+                    "fr": "🔊 Audio / Hifi"
+                  }
+                },
+                {
+                  "id": "fountain",
+                  "label": {
+                    "en": "⛲ Fontaine",
+                    "fr": "⛲ Fontaine"
+                  }
+                },
+                {
+                  "id": "other",
+                  "label": {
+                    "en": "⚙️ Autre appareil",
+                    "fr": "⚙️ Autre appareil"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "invert_logic_manual",
+              "type": "checkbox",
+              "label": {
+                "en": "Manual Logic Inversion",
+                "fr": "Inversion Logique Manuelle"
+              },
+              "hint": {
+                "en": "Force invert ON/OFF logic regardless of device type (advanced users only)",
+                "fr": "Forcer l'inversion de la logique MARCHE/ARRÊT indépendamment du type (utilisateurs avancés uniquement)"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": "power_source",
+          "type": "dropdown",
+          "label": {
+            "en": "Power Source",
+            "fr": "Source d'Alimentation"
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto Detect",
+                "fr": "Détection Automatique"
+              }
+            },
+            {
+              "id": "ac",
+              "label": {
+                "en": "AC Powered",
+                "fr": "Alimentation Secteur"
+              }
+            },
+            {
+              "id": "dc",
+              "label": {
+                "en": "DC Powered",
+                "fr": "Alimentation DC"
+              }
+            },
+            {
+              "id": "battery",
+              "label": {
+                "en": "Battery Powered",
+                "fr": "Sur Batterie"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Select power source manually or use auto-detection",
+            "fr": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique"
+          }
+        },
+        {
+          "id": "battery_type",
+          "type": "dropdown",
+          "label": {
+            "en": "Battery Type",
+            "fr": "Type de Batterie"
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto Detect",
+                "fr": "Détection Automatique"
+              }
+            },
+            {
+              "id": "CR2032",
+              "label": {
+                "en": "CR2032",
+                "fr": "CR2032 (Pile Bouton 3V)"
+              }
+            },
+            {
+              "id": "CR2450",
+              "label": {
+                "en": "CR2450",
+                "fr": "CR2450 (Pile Bouton 3V)"
+              }
+            },
+            {
+              "id": "AAA",
+              "label": {
+                "en": "AAA",
+                "fr": "AAA"
+              }
+            },
+            {
+              "id": "AA",
+              "label": {
+                "en": "AA",
+                "fr": "AA"
+              }
+            },
+            {
+              "id": "CR123A",
+              "label": {
+                "en": "CR123A",
+                "fr": "CR123A"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Select battery type manually or use auto-detection based on voltage",
+            "fr": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
+          }
+        },
+        {
+          "id": "battery_low_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold",
+            "fr": "Seuil Batterie Faible (%)"
+          },
+          "value": 20,
+          "min": 0,
+          "max": 50,
+          "step": 5,
+          "hint": {
+            "en": "Trigger low battery warning when below this percentage",
+            "fr": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
+          }
+        },
+        {
+          "id": "battery_critical_threshold",
+          "type": "number",
+          "label": {
+            "en": "Critical Battery Threshold",
+            "fr": "Seuil Batterie Critique (%)"
+          },
+          "value": 10,
+          "min": 0,
+          "max": 30,
+          "step": 5,
+          "hint": {
+            "en": "Trigger critical battery warning when below this percentage",
+            "fr": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
+          }
+        },
+        {
+          "id": "enable_battery_notifications",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable Battery Notifications",
+            "fr": "Activer Notifications Batterie"
+          },
+          "value": true,
+          "hint": {
+            "en": "Send flow notifications for battery events",
+            "fr": "Envoyer des notifications de flow pour les événements de batterie"
+          }
+        },
+        {
+          "id": "battery_report_interval",
+          "type": "number",
+          "label": {
+            "en": "Battery Report Interval",
+            "fr": "Intervalle Rapport Batterie (heures)"
+          },
+          "value": 24,
+          "min": 1,
+          "max": 168,
+          "step": 1,
+          "hint": {
+            "en": "How often to request battery status updates",
+            "fr": "Fréquence de demande des mises à jour d'état de batterie"
+          }
+        },
+        {
+          "id": "optimization_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Energy Optimization Mode",
+            "fr": "Mode Optimisation Énergétique"
+          },
+          "value": "balanced",
+          "values": [
+            {
+              "id": "performance",
+              "label": {
+                "en": "Performance (More responsive)",
+                "fr": "Performance (Plus réactif)"
+              }
+            },
+            {
+              "id": "balanced",
+              "label": {
+                "en": "Balanced",
+                "fr": "Équilibré"
+              }
+            },
+            {
+              "id": "power_saving",
+              "label": {
+                "en": "Power Saving (Longer battery)",
+                "fr": "Économie d'énergie (Batterie plus longue)"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Balance between responsiveness and battery life",
+            "fr": "Équilibre entre réactivité et durée de vie de la batterie"
+          }
+        },
+        {
+          "id": "enable_power_estimation",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable Power Estimation",
+            "fr": "Activer Estimation Puissance"
+          },
+          "value": true,
+          "hint": {
+            "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
+            "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
+          }
+        },
+        {
+          "id": "scene_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Scene Mode",
+            "fr": "Mode Scene"
+          },
+          "hint": {
+            "en": "Auto=normal+triggers, Magic=scene-only, Both=load+scene"
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto (Normal + flows)"
+              }
+            },
+            {
+              "id": "magic",
+              "label": {
+                "en": "Magic (Scene only)"
+              }
+            },
+            {
+              "id": "both",
+              "label": {
+                "en": "Both (Load + scene)"
+              }
+            }
+          ]
+        },
+        {
+          "id": "zcl_cluster_layer",
+          "type": "checkbox",
+          "label": {
+            "en": "ZCL cluster layer (advanced)",
+            "fr": "Couche clusters ZCL (avancé)"
+          },
+          "hint": {
+            "en": "Extra command capture, bounded bindings and reporting fallback on top of the native setup. Turn off if this device misbehaves.",
+            "fr": "Capture de commandes, liaisons bornées et relève de secours en plus de la configuration native. Désactivez si l'appareil se comporte mal."
+          },
+          "value": true
+        }
+      ],
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "select_driver"
+          }
+        },
+        {
+          "id": "select_driver",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        },
+        {
+          "id": "tuya_revive",
+          "title": {
+            "en": "Tuya Revive (device recovery)",
+            "fr": "Tuya Revive (récupération appareil)",
+            "nl": "Tuya Revive (apparaatherstel)",
+            "de": "Tuya Revive (Gerätewiederherstellung)"
+          }
+        },
+        {
+          "id": "generate_issue_report",
+          "title": {
+            "en": "Generate support report (GitHub issue)",
+            "fr": "Générer rapport de support (issue GitHub)",
+            "nl": "Supportrapport genereren (GitHub issue)",
+            "de": "Supportbericht erstellen (GitHub Issue)"
+          }
+        },
+        {
+          "id": "zigbee_rebind",
+          "title": {
+            "en": "Re-bind & reconfigure reporting",
+            "fr": "Re-lier et reconfigurer les rapports",
+            "nl": "Opnieuw binden en rapportage instellen",
+            "de": "Neu binden und Reporting konfigurieren"
+          }
+        }
+      ],
+      "id": "switch_wall_6gang_metering",
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
+    },
+    {
+      "name": {
         "en": "Wall Switch 7-Gang",
         "fr": "Interrupteur mural 7 gangs",
         "nl": "7-Voudige Wandschakelaar",
@@ -142325,6 +143377,311 @@
           "value": true
         }
       ]
+    },
+    {
+      "name": {
+        "en": "Novato Water Valve ZPV-01",
+        "fr": "Vanne d’eau Novato ZPV-01",
+        "nl": "Novato waterklep ZPV-01",
+        "de": "Novato Wasserventil ZPV-01"
+      },
+      "class": "other",
+      "capabilities": [
+        "onoff",
+        "measure_battery"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "title": {
+            "en": "Valve",
+            "fr": "Vanne",
+            "nl": "Klep",
+            "de": "Ventil"
+          }
+        },
+        "measure_battery": {
+          "getable": true,
+          "preventInsights": false
+        }
+      },
+      "energy": {
+        "batteries": [
+          "OTHER"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE284_zm8zpwas",
+          "_tze284_zm8zpwas"
+        ],
+        "learnmode": {
+          "image": "/drivers/valve_novato_zpv01/assets/icon.svg",
+          "instruction": {
+            "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+          }
+        },
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5
+            ],
+            "bindings": []
+          }
+        }
+      },
+      "settings": [
+        {
+          "id": "power_source",
+          "type": "dropdown",
+          "label": {
+            "en": "Power Source",
+            "fr": "Source d'Alimentation"
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto Detect",
+                "fr": "Détection Automatique"
+              }
+            },
+            {
+              "id": "ac",
+              "label": {
+                "en": "AC Powered",
+                "fr": "Alimentation Secteur"
+              }
+            },
+            {
+              "id": "dc",
+              "label": {
+                "en": "DC Powered",
+                "fr": "Alimentation DC"
+              }
+            },
+            {
+              "id": "battery",
+              "label": {
+                "en": "Battery Powered",
+                "fr": "Sur Batterie"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Select power source manually or use auto-detection",
+            "fr": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique"
+          }
+        },
+        {
+          "id": "battery_type",
+          "type": "dropdown",
+          "label": {
+            "en": "Battery Type",
+            "fr": "Type de Batterie"
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto Detect",
+                "fr": "Détection Automatique"
+              }
+            },
+            {
+              "id": "CR2032",
+              "label": {
+                "en": "CR2032",
+                "fr": "CR2032 (Pile Bouton 3V)"
+              }
+            },
+            {
+              "id": "CR2450",
+              "label": {
+                "en": "CR2450",
+                "fr": "CR2450 (Pile Bouton 3V)"
+              }
+            },
+            {
+              "id": "AAA",
+              "label": {
+                "en": "AAA",
+                "fr": "AAA"
+              }
+            },
+            {
+              "id": "AA",
+              "label": {
+                "en": "AA",
+                "fr": "AA"
+              }
+            },
+            {
+              "id": "CR123A",
+              "label": {
+                "en": "CR123A",
+                "fr": "CR123A"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Select battery type manually or use auto-detection based on voltage",
+            "fr": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
+          }
+        },
+        {
+          "id": "battery_low_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold",
+            "fr": "Seuil Batterie Faible (%)"
+          },
+          "value": 20,
+          "min": 0,
+          "max": 50,
+          "step": 5,
+          "hint": {
+            "en": "Trigger low battery warning when below this percentage",
+            "fr": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
+          }
+        },
+        {
+          "id": "battery_critical_threshold",
+          "type": "number",
+          "label": {
+            "en": "Critical Battery Threshold",
+            "fr": "Seuil Batterie Critique (%)"
+          },
+          "value": 10,
+          "min": 0,
+          "max": 30,
+          "step": 5,
+          "hint": {
+            "en": "Trigger critical battery warning when below this percentage",
+            "fr": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
+          }
+        },
+        {
+          "id": "enable_battery_notifications",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable Battery Notifications",
+            "fr": "Activer Notifications Batterie"
+          },
+          "value": true,
+          "hint": {
+            "en": "Send flow notifications for battery events",
+            "fr": "Envoyer des notifications de flow pour les événements de batterie"
+          }
+        },
+        {
+          "id": "battery_report_interval",
+          "type": "number",
+          "label": {
+            "en": "Battery Report Interval",
+            "fr": "Intervalle Rapport Batterie (heures)"
+          },
+          "value": 24,
+          "min": 1,
+          "max": 168,
+          "step": 1,
+          "hint": {
+            "en": "How often to request battery status updates",
+            "fr": "Fréquence de demande des mises à jour d'état de batterie"
+          }
+        },
+        {
+          "id": "zcl_cluster_layer",
+          "type": "checkbox",
+          "label": {
+            "en": "ZCL cluster layer (advanced)",
+            "fr": "Couche clusters ZCL (avancé)"
+          },
+          "hint": {
+            "en": "Extra command capture, bounded bindings and reporting fallback on top of the native setup. Turn off if this device misbehaves.",
+            "fr": "Capture de commandes, liaisons bornées et relève de secours en plus de la configuration native. Désactivez si l'appareil se comporte mal."
+          },
+          "value": true
+        }
+      ],
+      "images": {
+        "small": "/drivers/valve_novato_zpv01/assets/images/small.png",
+        "large": "/drivers/valve_novato_zpv01/assets/images/large.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "select_driver"
+          }
+        },
+        {
+          "id": "select_driver",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        },
+        {
+          "id": "tuya_revive",
+          "title": {
+            "en": "Tuya Revive (device recovery)",
+            "fr": "Tuya Revive (récupération appareil)",
+            "nl": "Tuya Revive (apparaatherstel)",
+            "de": "Tuya Revive (Gerätewiederherstellung)"
+          }
+        },
+        {
+          "id": "generate_issue_report",
+          "title": {
+            "en": "Generate support report (GitHub issue)",
+            "fr": "Générer rapport de support (issue GitHub)",
+            "nl": "Supportrapport genereren (GitHub issue)",
+            "de": "Supportbericht erstellen (GitHub Issue)"
+          }
+        },
+        {
+          "id": "zigbee_rebind",
+          "title": {
+            "en": "Re-bind & reconfigure reporting",
+            "fr": "Re-lier et reconfigurer les rapports",
+            "nl": "Opnieuw binden en rapportage instellen",
+            "de": "Neu binden und Reporting konfigurieren"
+          }
+        }
+      ],
+      "id": "valve_novato_zpv01",
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {

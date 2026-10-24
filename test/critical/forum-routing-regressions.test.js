@@ -241,9 +241,9 @@ describe('forum routing regressions', () => {
     assert.strictEqual(CompoundFingerprintDB.lookup('HOBEIAN', 'ZG-222Z')?.driver, 'water_leak_sensor');
     assert.strictEqual(RuntimeFingerprintDB.getDriverId('HOBEIAN', 'ZG-222Z'), 'water_leak_sensor');
 
-    // WHY: `_TZE28C100000_*` / `_TZE28C1000000_*` are OCR digit-pad forms (registry p2509-invent-junk-do-not-lock),
-    // dropped from boiler_switch_energy in 732e11caa9. The real couple `_TZE204_rzdkn5rx` must stay claimed
-    // (it had silently become an orphan there; restored 2026-10-18).
+    // WHY: `_TZE28C100000_*` (5 zeros) is an OCR digit-pad form (registry p2509-invent-junk-do-not-lock).
+    // `_TZE28C1000000_rzdkn5rx` (6 zeros) is real (Z2M #13211, 2026-09-16) and was re-claimed in P3012.
+    // The real couple `_TZE204_rzdkn5rx` must stay claimed (orphan restored 2026-10-18).
     for (const manufacturer of ['_TZE204_rzdkn5rx']) {
       assertDriverClaims('boiler_switch_energy', manufacturer);
       assertDriverDoesNotClaim('switch_1gang', manufacturer);
