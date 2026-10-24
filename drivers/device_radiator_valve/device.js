@@ -168,6 +168,12 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
    * DP35 bit0 says otherwise) and drop an empty measure_battery. If a battery % DP (6/13/15) ever arrives,
    * measure_battery is re-added lazily in _handleDP, so nothing real is lost.
    */
+  /** P3002d: single onNodeInit entry for TRV06 alignment (keeps max-statements flat). */
+  async _alignTrv06() {
+    await this._alignTrv06Battery();
+    await this._alignTrv06WholeDegree();
+  }
+
   /**
    * WHY(P3001 / #560 artisare): TRV06 `_TZE200_rxq4iti9` firmware reports local
    * temperature, setpoint and calibration in whole °C only (Z2M TRV06 docs: step 1;
@@ -337,8 +343,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       await this._setupTuyaDPMode?.();
     } catch (_e) { /* soft */ }
     await this._stripPhantomHumidity();
-    await this._alignTrv06Battery();
-    await this._alignTrv06WholeDegree();
+    await this._alignTrv06();
 
     // Store manufacturerName for profile detection
     try {
