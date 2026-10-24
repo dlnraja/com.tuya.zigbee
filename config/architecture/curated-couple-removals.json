@@ -768,6 +768,17 @@
       ],
       "why": "2026-10-24 P3015: Zigbee2MQTT lists _TZE284_sdvbnmj5 in its Novato ZPV-01 \"Battery powered smart valve\" definition (DP1 on/off, DP8 valve state, DP101 battery) together with _TZE284_zm8zpwas; it now lives on the dedicated valve_novato_zpv01 driver only (one driver per couple, user decision 2026-10-24). Already-paired devices keep their driver.",
       "source": "P3015 https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/tuya.ts#L22298 + https://novato.com.tr/novato-katalog-v1.pdf (ZPV-01: 4 x AA alkaline)"
+    },
+    {
+      "driver": "climate_sensor",
+      "mfr": [
+        "_tz3000_5af5r192",
+        "_TZ3000_5af5r192",
+        "_TZ3000_5AF5R192",
+        "_tz3000_5AF5R192"
+      ],
+      "why": "2026-10-24 P3015: _TZ3000_5af5r192 is the Moes ZWV-YC TS0049 water valve in Zigbee2MQTT (moes.ts#L1488), not a temperature/humidity sensor; the climate_sensor forms were bulk case-variant additions (P92.47/P92.61) without a hardware source and made _tz3000_5af5r192|TS0601 a dual couple with water_valve_garden. One driver per couple (user decision 2026-10-24); already-paired devices keep their driver.",
+      "source": "P3015 https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/moes.ts#L1488"
     }
   ]
 }
