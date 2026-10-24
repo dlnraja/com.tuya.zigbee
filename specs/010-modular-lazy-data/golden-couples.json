@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-24T13:34:14.683Z",
- "drivers": 389,
+ "generated": "2026-10-24T13:44:29.942Z",
+ "drivers": 391,
  "snapshot": {
   "air_purifier": {
    "mfr": 4,
@@ -165,10 +165,10 @@
    "pidSha": "9ec48670e5ce7315"
   },
   "button_emergency_sos": {
-   "mfr": 32,
-   "pid": 6,
-   "mfrSha": "739970b20ce494c0",
-   "pidSha": "635866b899c3aee7"
+   "mfr": 31,
+   "pid": 5,
+   "mfrSha": "830cf270d567e32b",
+   "pidSha": "ced4695a6c47df18"
   },
   "button_wireless": {
    "mfr": 7,
@@ -889,6 +889,18 @@
    "pid": 8,
    "mfrSha": "e90e3db3b3450b88",
    "pidSha": "53d2aded6942baf3"
+  },
+  "heiman_keyfob": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "8669df84af14a401",
+   "pidSha": "26266ba0a442b260"
+  },
+  "heiman_siren": {
+   "mfr": 1,
+   "pid": 2,
+   "mfrSha": "8669df84af14a401",
+   "pidSha": "4c39be271f443e1e"
   },
   "humidifier": {
    "mfr": 5,
@@ -1767,10 +1779,10 @@
    "pidSha": "720ce7b7ec09a25f"
   },
   "smoke_detector_advanced": {
-   "mfr": 3,
-   "pid": 15,
-   "mfrSha": "f0ebb763d43170ad",
-   "pidSha": "9d4e5eaba1deb655"
+   "mfr": 4,
+   "pid": 16,
+   "mfrSha": "9efa48399b8ff2cc",
+   "pidSha": "6bb4763014511564"
   },
   "smoke_sensor": {
    "mfr": 7,
