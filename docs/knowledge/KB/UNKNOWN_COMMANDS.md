@@ -48,6 +48,17 @@ Tuya DP not mapped ─────> UnknownDPLogger.logUnknownDP ┘        │
 | E000 0xF7/0xF8/0xFB | Tuya switches (manuSpecificTuya4) | Random timing / cycle timing / inching echo | Z2M tuya.ts manuSpecificTuya4 | Yes (`config_echo`) |
 | E000 other | TS0042/TS0046 (ZHA TuyaZBE000Cluster) | Private button event. The press byte layout is not confirmed | ZHA quirks tuya ts0042/ts0046 | Heuristic (0.45) |
 | E001 attr 0xD030 | Tuya switch modules | External switch type: 0 toggle, 1 state, 2 momentary | ZHA TuyaZBExternalSwitchTypeCluster | Already handled by switch drivers (config) |
+| genOnOff 0xFC [2] | TS004F knobs (scene mode) | Rotation stopped (release) | ZHA TuyaSmartRemoteOnOffCluster `rotate_type` 2 = stop | Yes, exact (`release`, 0.9) — P3017 |
+| genOnOff 0xF0 | Tuya switches | tuyaCountdown echo | Z2M tuya.ts genOnOff private | Yes (`config_echo`) — P3017 |
+| genLevelCtrl 0xF0 | Tuya dimmers | moveToLevelTuya: level u16 LE + transition time | Z2M tuya.ts genLevelCtrl private | Yes, exact (`value`) — P3017 |
+| lightingColorCtrl 0xE0/0xE1/0xF0/0xF9/0xFA/0xFB | Tuya RGB/CCT bulbs (TS0505B…) | min brightness / hue+sat+brightness u16 LE / RGB mode / power-on state / do-not-disturb / on-off transition (BE u24) | Z2M tuya.ts lightingColorCtrl private commands | Yes, exact (0xE1 decoded, others `config_echo`) — P3017 |
+| E001 0xE5/0xE6/0xE7 | Tuya switches (manuSpecificTuya3) | setOptions1/2/3 echo | Z2M tuya.ts manuSpecificTuya3 | Yes, exact (`config_echo`) — P3017 |
+| genBasic 0xF0 | many Tuya devices | tuyaSetup, no function | Z2M `fz.ignore_*` / tuya.ts genBasic | Yes (`ignore`) — P3017 |
+| 0xE002 / 0x1888 (any cmd) | climate sensors (E002), unknown 0x1888 vendor | E002 = alarm thresholds; 0x1888 not documented | Z2M manuSpecificTuya2 (E002); 0x1888: no source | `config_echo` 0.4 (opaque) — P3017. 0x1888 is an open lead |
+| EF00 DP101 enum 0/1/2 | `_TZ3210_cwamkvua` TS0202 (LKMSZ001) | Scene button single/double/hold | [JohanBendz#619](https://github.com/JohanBendz/com.tuya.zigbee/issues/619) | Yes, exact (couple) — P3017 |
+| EF00 DP102 enum 0/1 | `_TZ3210_cwamkvua` TS0202 | Illuminance dark / bright | [JohanBendz#619](https://github.com/JohanBendz/com.tuya.zigbee/issues/619) | Yes, exact (couple) — P3017 |
+| EF00 any DP on 604 known couples | all TS0601 couples in Z2M tuyaDatapoints / project research | DP name → semantic (press / state / alarm / config / measure, gang suffix) | Z2M tuyaDatapoints (zigbee-herdsman-converters @eb823146c7) + data/dp_couple_knowledge.json | Catalog step (0.85, exact semantic) — P3017 |
+| EF00 cmd 0x02 shown as "unknown cmd" in logs | all TS0601 (#560 log) | dataReport; the SDK cannot parse it, we forward it to the DP path | zigbee-herdsman manuSpecificTuya | Log now says "forwarded to EF00 DP path (not an error)" — P3017 |
 
 ## Rules for adding a decoder
 
@@ -56,6 +67,18 @@ Tuya DP not mapped ─────> UnknownDPLogger.logUnknownDP ┘        │
 2. Family decoders cover device classes. Keep their confidence below 0.75.
 3. Heuristics stay at or below 0.4. Learning can reinforce a pattern, but it never overrides an exact decoder or a user-taught entry.
 4. Never invent manufacturer ids. Never move a couple between drivers here; one couple belongs to one driver.
+
+5. A user-taught mapping (Flow action "Teach unknown command") always wins. Remove it with "Forget unknown command".
+6. Repeated button frames with the same ZCL transaction number within 2 s count once (ZHA behaviour).
+
+## Open leads (no source yet)
+
+- ZS-SF00: private frames seen, no converter.
+- `_TZE200_sinxpbrl` DP2 / DP102: meaning unconfirmed.
+- TS0726 DP18–DP20: likely per-gang settings; needs a sample with a known UI change.
+- Cluster 0x1888: no Z2M/ZHA/deCONZ definition found.
+
+See also [CROSS_APP_METHODS.md](CROSS_APP_METHODS.md) and [METHOD_COVERAGE.md](METHOD_COVERAGE.md).
 
 ## Credits
 
