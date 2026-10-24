@@ -7,6 +7,7 @@
 
 Related notes:
 - [Athom / Homey publish limits — what we know (2026-10-10, Paris)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/ATHOM_LIMITS.md)
+- [P2929 — Bastien app: crashes and failing Flow cards/buttons (21/10/2026, Paris)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/BASTIEN_CRASH_BUTTONS_P2929_2026-10-21.md)
 - [Button event router (P2926) — 2026-10-21](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/BUTTON_EVENT_ROUTER_P2926.md)
 - [Disabled workflows (P2916, 20/10/2026)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/DISABLED_WORKFLOWS_P2916.md)
 - [Homey forum — Apps category + zigbee tag digest (2026-10)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/FORUM_APPS_CATEGORY_DIGEST_2026-10.md)
@@ -19,4 +20,5 @@ Related notes:
 - [P2933 / P2934 — Homey diag reports via Gmail + Aqara DJT11LM (2026-10-21)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/P2933_P2934_GMAIL_DIAG_AND_DJT11LM_2026-10-21.md)
 - [Battery multi-button remotes — TS0041 / TS0042 / TS0043 / TS0044 / TS004F](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/TS004X_BATTERY_REMOTES.md)
 - [Homey forum 154077 — "[APP][Pro] Tuya Local" (read 2026-10-11)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/TUYA_LOCAL_THREAD_154077.md)
+- [Homey SDK / upstream watch — zigbee-clusters 3.9.0 and tuya-local (24/10/2026)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/UPSTREAM_HOMEY_SDK_ZIGBEE_CLUSTERS_2026-10-24.md)
 - [Z2M generic device options → ideas for Homey (ideas only, nothing implemented)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/Z2M_GENERIC_CONCEPTS.md)
