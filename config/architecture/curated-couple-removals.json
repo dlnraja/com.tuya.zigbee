@@ -587,6 +587,50 @@
       ],
       "why": "2026-10-19 P2890: _TZ3000_nrfkrgf4 is a TS0046 6-button battery scene remote, not a relay; moved to button_wireless_6 (pinned).",
       "source": "P2890 Z2M zigbee-herdsman-converters tuya.ts: TS0046 \"Wireless switch with 6 buttons\" (LoraTap SS9600ZB white label), events via tuya on_off_action per endpoint = 1..6 x single/double/hold, battery; deCONZ devices/tuya/_TZ3000_TS0046_6gang_remote.json (manufacturer _TZ3000_nrfkrgf4, sleeper, Gold) + button_maps Tuya6gangMap: endpoints 0x01..0x06, OnOff cluster command 0xFD payload 0/1/2 = short/double/long"
+    },
+    {
+      "driver": "switch_1gang",
+      "mfr": [
+        "_TZE204_dzuqwsyg",
+        "_tze204_dzuqwsyg",
+        "_TZE204_DZUQWSYG",
+        "_tze204_DZUQWSYG"
+      ],
+      "why": "2026-10-24 P2970: _TZE204_dzuqwsyg is a Beca BAC-002/BAC-006AZB fan-coil wall thermostat (TS0601), not a relay; moved to wall_thermostat (pinned).",
+      "source": "P2970 Z2M zigbee-herdsman-converters tuya.ts BAC-002-ALZB (fingerprints _TZE200_dzuqwsyg/_TZE204_dzuqwsyg, whitelabel Beca BAC-003) + Koenkk/zigbee2mqtt discussion #25308 (Beca BAC-006AZB = _TZE204_dzuqwsyg)"
+    },
+    {
+      "driver": "device_radiator_valve",
+      "mfr": [
+        "_TZE200_dzuqwsyg",
+        "_tze200_dzuqwsyg",
+        "_TZE200_DZUQWSYG",
+        "_tze200_DZUQWSYG"
+      ],
+      "why": "2026-10-24 P2970: _TZE200_dzuqwsyg is a Beca BAC-002/BAC-006AZB fan-coil wall thermostat (TS0601), not a radiator valve; moved to wall_thermostat (pinned).",
+      "source": "P2970 Z2M zigbee-herdsman-converters tuya.ts BAC-002-ALZB (fingerprints _TZE200_dzuqwsyg/_TZE204_dzuqwsyg, whitelabel Beca BAC-003) + Koenkk/zigbee2mqtt discussion #25308 (Beca BAC-006AZB = _TZE204_dzuqwsyg)"
+    },
+    {
+      "driver": "switch_1gang",
+      "mfr": [
+        "_TZE200_dzuqwsyg",
+        "_tze200_dzuqwsyg",
+        "_TZE200_DZUQWSYG",
+        "_tze200_DZUQWSYG"
+      ],
+      "why": "2026-10-24 P2970: _TZE200_dzuqwsyg is a Beca BAC-002/BAC-006AZB fan-coil wall thermostat (TS0601), not a relay; moved to wall_thermostat (pinned).",
+      "source": "P2970 Z2M zigbee-herdsman-converters tuya.ts BAC-002-ALZB (fingerprints _TZE200_dzuqwsyg/_TZE204_dzuqwsyg, whitelabel Beca BAC-003) + Koenkk/zigbee2mqtt discussion #25308 (Beca BAC-006AZB = _TZE204_dzuqwsyg)"
+    },
+    {
+      "driver": "device_radiator_valve",
+      "mfr": [
+        "_TZE204_dzuqwsyg",
+        "_tze204_dzuqwsyg",
+        "_TZE204_DZUQWSYG",
+        "_tze204_DZUQWSYG"
+      ],
+      "why": "2026-10-24 P2970: _TZE204_dzuqwsyg is a Beca BAC-002/BAC-006AZB fan-coil wall thermostat (TS0601), not a radiator valve; moved to wall_thermostat (pinned).",
+      "source": "P2970 Z2M zigbee-herdsman-converters tuya.ts BAC-002-ALZB (fingerprints _TZE200_dzuqwsyg/_TZE204_dzuqwsyg, whitelabel Beca BAC-003) + Koenkk/zigbee2mqtt discussion #25308 (Beca BAC-006AZB = _TZE204_dzuqwsyg)"
     }
   ]
 }
