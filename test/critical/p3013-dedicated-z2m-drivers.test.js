@@ -14,7 +14,7 @@ const CASES = [
   { id: 'sauna_thermostat_ae5503', base: 'thermostat_tuya_dp', mfr: '_TZE204_eaasry7v' },
   { id: 'siren_moes_mg_bjq002', base: 'siren', mfr: '_TZE20C_tjz9ad5g' },
   { id: 'switch_wall_6gang_metering', base: 'switch_wall_6gang', mfr: '_TZE284_hbxadcl0' },
-  { id: 'valve_novato_zpv01', base: 'water_valve_smart', mfr: '_TZE284_zm8zpwas' },
+  { id: 'valve_novato_zpv01', base: 'water_valve_smart', mfr: '_TZE284_zm8zpwas', family: ['_TZE204_dsagrkvg', '_TZE284_sdvbnmj5'] }, // P3015: whole Z2M ZPV-01 fingerprint list
 ];
 
 const readJson = (p) => JSON.parse(fs.readFileSync(path.join(ROOT, p), 'utf8'));
@@ -28,7 +28,8 @@ test('each P3013 couple is claimed by exactly its dedicated driver (compose + ap
     assert.deepStrictEqual(compose.zigbee.productId, ['TS0601'], c.id);
     assert.ok(compose.zigbee.manufacturerName.includes(c.mfr), `${c.id} claims ${c.mfr}`);
     for (const m of compose.zigbee.manufacturerName) {
-      assert.strictEqual(m.toLowerCase(), c.mfr.toLowerCase(), `${c.id} only carries case forms of ${c.mfr}`);
+      const allowed = [c.mfr, ...c.family || []].map((x) => x.toLowerCase());
+      assert.ok(allowed.includes(m.toLowerCase()), `${c.id} only carries case forms of ${allowed.join('/')} (got ${m})`);
     }
     for (const d of drivers) {
       if (d === c.id) {continue;}

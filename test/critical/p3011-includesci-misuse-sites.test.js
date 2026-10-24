@@ -81,13 +81,11 @@ describe('P3011 includesCI misuse sites', () => {
     }
   });
 
-  it('radar: throttle matches iadro9bf/qasjif9e via containsCI and never drops the value', () => {
+  it('radar: dead _throttleMotionSpam removed (P3015) — no caller, no reversed includesCI left', () => {
     const s = read('drivers/sensor_presence_radar/device.js');
-    assert.ok(s.includes("!CI.containsCI(mfr, 'iadro9bf') && !CI.containsCI(mfr, 'qasjif9e')"));
-    assert.ok(!s.replace(/\/\/.*$/gm, '').includes("CI.includesCI(mfr, 'iadro9bf')"));
-    const body = s.slice(s.indexOf('_throttleMotionSpam(presence, dpId) {'));
-    const end = body.indexOf('\n  }\n');
-    assert.ok(body.slice(0, end).includes('return presence;\n'), 'tail return');
+    const code = s.replace(/\/\/.*$/gm, '');
+    assert.ok(!code.includes('_throttleMotionSpam'), 'method and callers gone');
+    assert.ok(!code.includes("CI.includesCI(mfr, 'iadro9bf')"));
   });
 
   it('knob: TS004F check uses containsCI', () => {
