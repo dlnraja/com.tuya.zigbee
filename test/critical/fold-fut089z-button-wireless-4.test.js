@@ -1,4 +1,5 @@
 'use strict';
+const { describe, it } = require('../_support/dual-runner'); // P3020: same file under node --test and mocha
 // 2026-10-11 fold: MiBoxer FUT089Z (_TZ3000_xwh1e22x + TS1002) ships via button_wireless_4 with its own
 // zone profile (remote_rgbcct_8zone reverted: new driver ids rejected by Athom processing).
 const assert = require('assert');

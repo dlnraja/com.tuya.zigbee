@@ -1,4 +1,5 @@
 'use strict';
+const { describe, it } = require('../_support/dual-runner'); // P3020: same file under node --test and mocha
 // P2905: device_plug_smart keeps only plug-type wildcards; sensor wildcards live on class-correct pid-only fallbacks.
 const assert = require('assert');
 const path = require('path');

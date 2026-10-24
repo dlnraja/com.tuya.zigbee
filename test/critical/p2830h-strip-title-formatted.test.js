@@ -1,4 +1,5 @@
 'use strict';
+const { describe, it } = require('../_support/dual-runner'); // P3020: same file under node --test and mocha
 // P2830h: the publish-only titleFormatted strip must be lossless (homey-lib ignores the removed field).
 const assert = require('assert');
 const fs = require('fs');
