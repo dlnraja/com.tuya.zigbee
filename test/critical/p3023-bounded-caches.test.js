@@ -76,7 +76,20 @@ describe('P3023 bounded caches', () => {
     Life.releaseDevice(dev, { deleted: true });
   });
 
-  it('ZigbeeCommandPacer: user beats poll/reprobe, background is back-pressured, release drops background only', async () => {
+  const PRIO = require('../../lib/smart/SoakFlags').pacerPriority === true;
+  it('ZigbeeCommandPacer with priority off (stable / bastien): legacy FIFO, priority option ignored', async () => {
+    const dev = mkDev(5);
+    const order = [];
+    const job = (tag) => async () => { order.push(tag); return tag; };
+    const p = [
+      Pacer.paceZigbeeCommand(dev, job('a'), { priority: false, enabled: false }),
+      Pacer.paceZigbeeCommand(dev, job('b'), { priority: false, enabled: false }),
+      Pacer.paceZigbeeCommand(dev, job('c'), { priority: false, enabled: false }),
+    ];
+    assert.deepStrictEqual(await Promise.all(p), ['a', 'b', 'c']);
+    assert.deepStrictEqual(order, ['a', 'b', 'c']);
+  });
+  it('ZigbeeCommandPacer: user beats poll/reprobe, background is back-pressured, release drops background only', { skip: PRIO ? false : 'pacerPriority soaks on master only' }, async () => {
     const dev = mkDev(4);
     const order = [];
     const slow = (tag) => () => new Promise((r) => setTimeout(() => { order.push(tag); r(tag); }, 2));
