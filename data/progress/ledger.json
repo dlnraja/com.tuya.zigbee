@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-24T22:29:54.231Z",
+ "updated": "2026-10-24T22:36:19.000Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -12776,16 +12776,16 @@
    "result": "already routed to one correct driver"
   },
   "forum-post:140352/2092": {
-   "status": "pending",
+   "status": "done",
    "source": "pc-harvest-r2",
-   "result": "P3021b 2026-10-24: diag recovered by exact UUID in Gmail Homey diags (Log ID 7456c4f0-aee7-48d7-be5a-a84bbb505205, mail 2026-06-16T19:33Z, app v9.0.13, Homey Pro 2026 v13.2.1; user: 54 W shown but daily total 54 kWh). Mail body holds driver-init stdout only (no device lines), meter not identifiable; P87 TODO ProductValueValidator energy check still open",
-   "date": "2026-10-24"
+   "result": "P3021b 2026-10-24: diag recovered by exact UUID in Gmail Homey diags (Log ID 7456c4f0-aee7-48d7-be5a-a84bbb505205, mail 2026-06-16T19:33Z, app v9.0.13, Homey Pro 2026 v13.2.1; user: 54 W shown but daily total 54 kWh). Mail body holds driver-init stdout only (no device lines), meter not identifiable; P87 TODO ProductValueValidator energy check still open | P3021c 2026-10-25: generic power-vs-energy sanity (lib/energy/PowerEnergySanity.js + ProductValueValidator.checkPowerEnergyConsistency, hooks TuyaZigbeeDevice/BaseUnifiedDevice: meter_power deltas cross-checked against integrated measure_power: decade unit mix-up -> sticky per-device /f, DP mix-up -> integrate mode, only after consecutive votes, fail-open without power evidence, test p3021c-power-energy-sanity). master 4a234bdec1, stable-v5 3061d95f48+6621da1c19, bastien-home 7bcb5ddac0.",
+   "date": "2026-10-25"
   },
   "forum-post:140352/2093": {
-   "status": "pending",
+   "status": "done",
    "source": "pc-harvest-r2",
-   "result": "P3021b 2026-10-24: diags correlated by date + symptom (not by UUID): Log IDs 1b2109ab-bdfa-4fea-a5ef-ff4031c48b5d (2026-06-21T12:24Z, \"Soil sensor detected as unknown zigbee\") and 3690dfdb-62f3-4938-a0f4-b14283af0ff6 (2026-06-21T18:10Z, soil_sensor: TS0601 but 0xEF00 not accessible), both app v9.0.13; no manufacturerName in the bodies, energy-meter part not covered",
-   "date": "2026-10-24"
+   "result": "P3021b 2026-10-24: diags correlated by date + symptom (not by UUID): Log IDs 1b2109ab-bdfa-4fea-a5ef-ff4031c48b5d (2026-06-21T12:24Z, \"Soil sensor detected as unknown zigbee\") and 3690dfdb-62f3-4938-a0f4-b14283af0ff6 (2026-06-21T18:10Z, soil_sensor: TS0601 but 0xEF00 not accessible), both app v9.0.13; no manufacturerName in the bodies, energy-meter part not covered | P3021c 2026-10-25: 1b2109ab crash (_registerCapabilityListeners is not a function, v9.0.13) already fixed (defined in UnifiedSensorBase). 3690dfdb: A89G12C owned by soil_sensor; '0xEF00 not accessible' -> passive mode, raw DP frames parsed OK. Gaps fixed in lib/sensors/SoilDpGuards.js: DP5 temp auto-scale (/100 if >1000, sticky /10 learned if >100), DP14 battery_state skipped while DP15 fresh, DP9 temperature_unit never mapped to a measure; frame replay test p3021c-soil-2093-guards. master 736e2d53c1, stable-v5 6621da1c19, bastien-home 7bcb5ddac0.",
+   "date": "2026-10-25"
   },
   "forum-post:140352/2099": {
    "status": "done",
@@ -12798,10 +12798,10 @@
    "result": "already routed to one correct driver"
   },
   "forum-post:140352/2134": {
-   "status": "pending",
+   "status": "done",
    "source": "pc-harvest-r2",
-   "result": "P3021b 2026-10-24: diag recovered by exact UUID (Log ID f1e5b12d-5f69-4311-aaa7-b8bef967667c, mail 2026-08-08T08:18Z, app v9.0.434, Homey Pro Early 2023); already treated in reports/P149_GMAIL_HOMEY_DIAG_CROSS_2026-08-16.md (SOS .catch + getDiscoveries) and diag-recursive-treat-2026-09-02; contact invert / luminance / water-leak not re-verified on current code",
-   "date": "2026-10-24"
+   "result": "P3021b 2026-10-24: diag recovered by exact UUID (Log ID f1e5b12d-5f69-4311-aaa7-b8bef967667c, mail 2026-08-08T08:18Z, app v9.0.434, Homey Pro Early 2023); already treated in reports/P149_GMAIL_HOMEY_DIAG_CROSS_2026-08-16.md (SOS .catch + getDiscoveries) and diag-recursive-treat-2026-09-02; contact invert / luminance / water-leak not re-verified on current code | P3021c 2026-10-25: contact invert fixed for HOBEIAN|ZG-102ZL on the DP path (Z2M: DP1 true=closed; ContactDefaultInvert.resolveDpCoupleDefault, auto mode only, user setting wins, IAS path untouched; test p3021c-contact-zg102zl-dp-invert). Luminance OK on current code (validator type unknown, P143 blocks DP101 battery steal). Water detector: HOBEIAN ZG-222Z is IAS normal per Z2M = code; Peter's exact water couple unknown -> no change. master 736e2d53c1, stable-v5 6621da1c19, bastien-home 7bcb5ddac0.",
+   "date": "2026-10-25"
   },
   "forum-post:140352/2224": {
    "status": "done",
@@ -37800,10 +37800,10 @@
    ]
   },
   "lead:_TZ3000_amal63is|TS0002": {
-   "status": "blocked",
-   "date": "2026-10-20",
+   "status": "done",
+   "date": "2026-10-25",
    "note": "cited in JohanBendz#128 Batch 105 only; no Z2M/ZHA/blakadder/Hubitat source found; mfr stays on switch_1gang without TS0002",
-   "result": "P3021b 2026-10-24: no existing driver can take the exact couple without a NEW dual: every TS0002 driver except sr_zs_switch (3 gangs) and usb_dongle_dual_repeater shares TS0012 (or other pids) with switch_1gang, which already lists the mfr, so wall_switch_2gang_1way gave _tz3000_amal63is|TS0012 -> switch_1gang,wall_switch_2gang_1way (fp-collision + native-matrix gates red). Needs an owner decision: dedicated TS0002-only 2-gang driver, or move the mfr off switch_1gang"
+   "result": "P3021b 2026-10-24: no existing driver can take the exact couple without a NEW dual: every TS0002 driver except sr_zs_switch (3 gangs) and usb_dongle_dual_repeater shares TS0012 (or other pids) with switch_1gang, which already lists the mfr, so wall_switch_2gang_1way gave _tz3000_amal63is|TS0012 -> switch_1gang,wall_switch_2gang_1way (fp-collision + native-matrix gates red). Needs an owner decision: dedicated TS0002-only 2-gang driver, or move the mfr off switch_1gang | P3021c 2026-10-25: dedicated driver switch_2gang_ts0002 (TS0002 only, runtime of wall_switch_2gang_1way, ZCL onOff EP1/EP2, no 0xEF00); TS0012 stays on switch_1gang; source JohanBendz#128 batch 105 (credited). fp-collision + native-matrix green. master 4094a7a6ed, stable-v5 3061d95f48 (+6621da1c19 local flow wiring), bastien-home 227bb8d070."
   },
   "lead:_TZE200_wrmhp6b3": {
    "status": "deferred",
