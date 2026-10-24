@@ -1,4 +1,5 @@
 'use strict';
+const { describe, it } = require('../_support/dual-runner'); // P3020: same file under node --test and mocha
 // P2901: the size telemetry CSV recorded "unknown" for AggregateError failures on master (#3640-#3643).
 const assert = require('assert');
 const fs = require('fs');

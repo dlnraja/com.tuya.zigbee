@@ -1,4 +1,5 @@
 'use strict';
+const { describe, it, beforeEach } = require('../_support/dual-runner'); // P3020: same file under node --test and mocha
 /**
  * Issue #560 diagnostic ("[DATA-QUERY] Completed: 0/12 queries sent") - root cause shared by every Tuya DP device:
  * tuya.dataQuery has no payload, but TuyaEF00Manager.requestDP and several base classes called it with {seq, dp}

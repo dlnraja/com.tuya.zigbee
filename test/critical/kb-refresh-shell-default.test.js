@@ -1,4 +1,5 @@
 'use strict';
+const { describe, it } = require('../_support/dual-runner'); // P3020: same file under node --test and mocha
 const fs = require('fs'); const path = require('path'); const assert = require('assert');
 describe('P-KB kb-refresh workflow policy', () => {
   it('declares defaults.run.shell: bash (YAML policy gate)', () => {

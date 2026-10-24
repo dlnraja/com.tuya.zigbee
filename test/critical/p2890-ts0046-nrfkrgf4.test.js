@@ -1,4 +1,5 @@
 'use strict';
+const { describe, it } = require('../_support/dual-runner'); // P3020: same file under node --test and mocha
 
 // P2890 — _TZ3000_nrfkrgf4 / TS0046 is a 6-button battery scene remote (Z2M TS0046 generic
 // definition; deCONZ ships a dedicated Tuya6gangMap for this maker: endpoints 1..6, OnOff 0xFD,
