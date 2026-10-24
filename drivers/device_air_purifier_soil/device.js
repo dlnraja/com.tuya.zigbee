@@ -1,6 +1,6 @@
-const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 'use strict';
 const { safeDivide, safeParse } = require('../../lib/utils/tuyaUtils.js');
+const { scaleSoilDp5 } = require('../../lib/sensors/SoilTempScale');
 
 
 const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
@@ -113,8 +113,8 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
         capability: 'measure_temperature',
         transform: (v) => {
           // Auto-detect scale: >1000=Ã·100, 100-1000=Ã·10, 100=raw Â°C
-          if (Math.abs(v) > 1000) return v * 100;
-          if (Math.abs(v) > 100) return safeMultiply(v, 10);
+          if (Math.abs(v) > 1000) {return safeDivide(v, 100);} // P3011: documented ÷100
+          if (Math.abs(v) > 100) {return safeDivide(v, 10);} // P3011: was undefined safeMultiply (documented ÷10)
           return v; // Already in Â°C (_TZE284_oitavov2 QT-07S)
         }
       },
@@ -179,7 +179,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       // HOBEIAN ZG-303Z uses DP109 for air humidity instead
       101: { capability: 'measure_humidity', divisor: 1 },
       106: { capability: 'measure_ec', divisor: 1 },  // Alternate EC DP for advanced soil sensors
-      105: { capability: 'measure_humidity.soil', divisor: 1, transform: (v) => v > 100 ? safeMultiply(v, 10) : v },
+      105: { capability: 'measure_humidity.soil', divisor: 1, transform: (v) => v > 100 ? safeDivide(v, 10) : v } /* P3011: was undefined safeMultiply */,
     };
   }
 
@@ -325,7 +325,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
    * Correct formula: F = C Ã— 9/5 + 32
    */
   _celsiusToFahrenheit(celsius) {
-    return (celsius * safeMultiply(9, 5)) + 32;
+    return (celsius * safeDivide(9, 5)) + 32; // P3011: °F = °C×9/5+32
   }
 
   /**
@@ -333,7 +333,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
    * Formula: C = (F - 32) Ã— 5/9
    */
   _fahrenheitToCelsius(fahrenheit) {
-    return (fahrenheit - 32) * safeMultiply(5, 9);
+    return (fahrenheit - 32) * safeDivide(5, 9); // P3011: °C = (°F−32)×5/9
   }
 
   /**
@@ -436,12 +436,10 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
         this.log(`[SOIL]  DP5 value ${parsedValue} > 10000  compound frame artifact, skipping`);
         return;
       }
-      let temp = parsedValue;
-      const mfr = this.getSettingValue?.('zb_manufacturer_name') || '';const rawCelsius = includesCI(mfr, '_tze284_oitavov2') || includesCI(mfr, '_tze200_oitavov2');
-      if (rawCelsius) { /* already Â°C */ }
-      else if (temp > 1000) temp = temp * 100;
-      else if (temp > 100) temp = safeMultiply(temp, 10);
-      else temp = safeMultiply(temp, 10);
+      // WHY(P3011): was includesCI(mfr, '_tze200_oitavov2') — reversed args, always false.
+      // Z2M TS0601_soil DP5 = raw °C for oitavov2; legacy scaling kept for everything else.
+      const mfr = this.getSettingValue?.('zb_manufacturer_name') || this.getSetting?.('zb_manufacturer_name') || '';
+      const { temp } = scaleSoilDp5(mfr, parsedValue);
 
       this.log(`[SOIL]  TEMPERATURE DP5 = ${parsedValue}  Raw ${temp}Â°C` );
       this._safeSetCapability('measure_temperature', parseFloat(temp));
