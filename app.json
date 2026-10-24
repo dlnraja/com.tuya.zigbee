@@ -12374,6 +12374,232 @@
             "example": 3
           }
         ]
+      },
+      {
+        "id": "unknown_command_teach",
+        "title": {
+          "en": "Teach [[device]]: pattern means an action",
+          "fr": "Apprendre à [[device]] : un motif signifie une action",
+          "nl": "Leer [[device]]: patroon betekent een actie",
+          "de": "[[device]] beibringen: Muster bedeutet eine Aktion"
+        },
+        "titleFormatted": {
+          "en": "Teach [[device]]: pattern [[pattern]] = [[action]] on button [[button]]",
+          "fr": "Apprendre à [[device]] : motif [[pattern]] = [[action]] sur le bouton [[button]]",
+          "nl": "Leer [[device]]: patroon [[pattern]] = [[action]] op knop [[button]]",
+          "de": "[[device]] beibringen: Muster [[pattern]] = [[action]] auf Taste [[button]]"
+        },
+        "hint": {
+          "en": "Copy the pattern from the 'Unknown command received' token or the diagnostics export (e.g. f:ep1:0x0006:253:00 or dp:101:enum:0). Your mapping always wins over guesses (P3017).",
+          "fr": "Copiez le motif depuis le jeton « Commande inconnue reçue » ou l'export de diagnostic (ex. f:ep1:0x0006:253:00 ou dp:101:enum:0). Votre choix l'emporte toujours sur les déductions (P3017).",
+          "nl": "Kopieer het patroon uit het token of de diagnose-export (bv. f:ep1:0x0006:253:00 of dp:101:enum:0).",
+          "de": "Muster aus dem Token oder dem Diagnose-Export kopieren (z. B. f:ep1:0x0006:253:00 oder dp:101:enum:0)."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "title": {
+              "en": "Device",
+              "fr": "Appareil",
+              "nl": "Apparaat",
+              "de": "Gerät"
+            }
+          },
+          {
+            "type": "text",
+            "name": "pattern",
+            "placeholder": {
+              "en": "f:ep1:0x0006:253:00",
+              "fr": "f:ep1:0x0006:253:00",
+              "nl": "f:ep1:0x0006:253:00",
+              "de": "f:ep1:0x0006:253:00"
+            },
+            "title": {
+              "en": "Pattern",
+              "fr": "Motif",
+              "nl": "Patroon",
+              "de": "Muster"
+            }
+          },
+          {
+            "type": "dropdown",
+            "name": "action",
+            "title": {
+              "en": "Action",
+              "fr": "Action",
+              "nl": "Actie",
+              "de": "Aktion"
+            },
+            "values": [
+              {
+                "id": "single",
+                "label": {
+                  "en": "Single press",
+                  "fr": "Appui simple",
+                  "nl": "Enkele druk",
+                  "de": "Einfacher Druck"
+                }
+              },
+              {
+                "id": "double",
+                "label": {
+                  "en": "Double press",
+                  "fr": "Double appui",
+                  "nl": "Dubbele druk",
+                  "de": "Doppelter Druck"
+                }
+              },
+              {
+                "id": "long",
+                "label": {
+                  "en": "Long press",
+                  "fr": "Appui long",
+                  "nl": "Lange druk",
+                  "de": "Langer Druck"
+                }
+              },
+              {
+                "id": "release",
+                "label": {
+                  "en": "Release",
+                  "fr": "Relâchement",
+                  "nl": "Loslaten",
+                  "de": "Loslassen"
+                }
+              },
+              {
+                "id": "rotate_left",
+                "label": {
+                  "en": "Rotate left",
+                  "fr": "Rotation gauche",
+                  "nl": "Links draaien",
+                  "de": "Links drehen"
+                }
+              },
+              {
+                "id": "rotate_right",
+                "label": {
+                  "en": "Rotate right",
+                  "fr": "Rotation droite",
+                  "nl": "Rechts draaien",
+                  "de": "Rechts drehen"
+                }
+              },
+              {
+                "id": "scene",
+                "label": {
+                  "en": "Scene",
+                  "fr": "Scène",
+                  "nl": "Scène",
+                  "de": "Szene"
+                }
+              },
+              {
+                "id": "on",
+                "label": {
+                  "en": "On",
+                  "fr": "Allumé",
+                  "nl": "Aan",
+                  "de": "Ein"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "fr": "Éteint",
+                  "nl": "Uit",
+                  "de": "Aus"
+                }
+              },
+              {
+                "id": "toggle",
+                "label": {
+                  "en": "Toggle",
+                  "fr": "Basculer",
+                  "nl": "Schakelen",
+                  "de": "Umschalten"
+                }
+              },
+              {
+                "id": "ignore",
+                "label": {
+                  "en": "Ignore",
+                  "fr": "Ignorer",
+                  "nl": "Negeren",
+                  "de": "Ignorieren"
+                }
+              }
+            ]
+          },
+          {
+            "type": "number",
+            "name": "button",
+            "min": 1,
+            "max": 8,
+            "step": 1,
+            "placeholder": {
+              "en": "1",
+              "fr": "1",
+              "nl": "1",
+              "de": "1"
+            },
+            "title": {
+              "en": "Button",
+              "fr": "Bouton",
+              "nl": "Knop",
+              "de": "Taste"
+            }
+          }
+        ]
+      },
+      {
+        "id": "unknown_command_forget",
+        "title": {
+          "en": "Forget a learned pattern on [[device]]",
+          "fr": "Oublier un motif appris sur [[device]]",
+          "nl": "Vergeet een geleerd patroon op [[device]]",
+          "de": "Gelerntes Muster auf [[device]] vergessen"
+        },
+        "titleFormatted": {
+          "en": "Forget pattern [[pattern]] on [[device]]",
+          "fr": "Oublier le motif [[pattern]] sur [[device]]",
+          "nl": "Vergeet patroon [[pattern]] op [[device]]",
+          "de": "Muster [[pattern]] auf [[device]] vergessen"
+        },
+        "hint": {
+          "en": "Removes your mapping or a learned guess so the interpreter decides again (P3017).",
+          "fr": "Supprime votre association ou une déduction apprise ; l'interpréteur redécide (P3017)."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "title": {
+              "en": "Device",
+              "fr": "Appareil",
+              "nl": "Apparaat",
+              "de": "Gerät"
+            }
+          },
+          {
+            "type": "text",
+            "name": "pattern",
+            "placeholder": {
+              "en": "f:ep1:0x0006:253:00",
+              "fr": "f:ep1:0x0006:253:00",
+              "nl": "f:ep1:0x0006:253:00",
+              "de": "f:ep1:0x0006:253:00"
+            },
+            "title": {
+              "en": "Pattern",
+              "fr": "Motif",
+              "nl": "Patroon",
+              "de": "Muster"
+            }
+          }
+        ]
       }
     ]
   },
