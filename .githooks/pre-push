@@ -59,6 +59,19 @@ if [ -f "$ROOT/scripts/ci/rules-gates.js" ] && [ "${HOOKS_SKIP_RULES_GATES:-0}" 
   fi
 fi
 
+# P3025: same manifest/data/lint gates as ci-self-check (changed-files lint = fast).
+if [ "${HOOKS_SKIP_DATA_GATES:-0}" != "1" ]; then
+  for _g in "scripts/ci/appjson-compose-drift-gate.js" "scripts/data/build-dp-shards.js --check" "scripts/ci/lint-ratchet.js --changed"; do
+    _f=${_g%% *}
+    [ -f "$ROOT/$_f" ] || continue
+    if ! (cd "$ROOT" && "${NODE_BIN:-node}" $_g) >/tmp/p3025-data-gate.log 2>&1; then
+      tail -25 /tmp/p3025-data-gate.log
+      echo -e "${RED}❌ PUSH BLOCKED — gate failed: node $_g (same gate as CI ci-self-check)${RESET}"
+      exit 1
+    fi
+  done
+fi
+
 echo ""
 echo -e "${GREEN}╔══════════════════════════════════════════════════════════════╗${RESET}"
 echo -e "${GREEN}║  ✅ PRE-PUSH GATE PASSED — Push allowed                     ║${RESET}"

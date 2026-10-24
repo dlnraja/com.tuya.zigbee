@@ -2,7 +2,7 @@
 # pipelines, so broken YAML, Node 20 actions, unpinned actions or a new raw `git push` (non-fast-forward
 # races) only showed up when a bot run failed. This runs on every change to CI files and weekly, and fails
 # on REGRESSIONS only (existing debt is in .github/workflow-hygiene-baseline.json and may only shrink).
-name: CI self-check (actionlint + YAML + hygiene)
+name: CI self-check (actionlint + YAML + hygiene + manifest/data/lint gates)
 
 on:
   push:
@@ -16,11 +16,28 @@ on:
       - 'scripts/ci/workflow-hygiene-gate.js'
       - 'scripts/ci/push-with-retry.js'
       - 'scripts/ci/safe-auto-commit.js'
+      # P3025 data/manifest/lint gates
+      - 'scripts/ci/**'
+      - 'app.json'
+      - '.homeycompose/**'
+      - 'drivers/*/driver.compose.json'
+      - 'scripts/maintenance/sanitize-manifest.cjs'
+      - 'lib/zigbee/data/**'
+      - 'lib/memory/CatalogStore.js'
+      - 'scripts/data/**'
+      - '.github/lint-baseline.json'
+      - 'lib/**/*.js'
+      - 'drivers/**/*.js'
   pull_request:
     paths:
       - '.github/**'
       - '.githooks/**'
       - 'scripts/ci/**'
+      - 'app.json'
+      - '.homeycompose/**'
+      - 'drivers/**'
+      - 'lib/**'
+      - 'scripts/data/**'
   schedule:
     - cron: '41 5 * * 1'
   workflow_dispatch:
@@ -47,7 +64,7 @@ concurrency:
 jobs:
   self-check:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     env:
       ACTIONLINT_VERSION: '1.7.12'
       ACTIONLINT_SHA256: '8aca8db96f1b94770f1b0d72b6dddcb1ebb8123cb3712530b08cc387b349a3d8'
@@ -85,7 +102,23 @@ jobs:
       - name: Hygiene ratchet (pins, Node 20 actions, node-version, timeouts, raw pushes)
         run: node scripts/ci/workflow-hygiene-gate.js
 
-      - name: Push helper + hygiene tests
+      - name: app.json ↔ compose drift (fingerprints + flow titleFormatted, lossless)
+        run: node scripts/ci/appjson-compose-drift-gate.js
+
+      - name: DP shards fresh (stale shards = silent fallback to the full catalogue)
+        run: |
+          if [ -f scripts/data/build-dp-shards.js ]; then node scripts/data/build-dp-shards.js --check
+          else echo "scripts/data/build-dp-shards.js absent on this branch — skipped"; fi
+
+      - name: Install deps for lint ratchet (npm ci, retried; failover npm install)
+        run: |
+          for i in 1 2 3; do npm ci --ignore-scripts --no-audit --no-fund && exit 0; sleep $((i*10)); done
+          npm install --ignore-scripts --no-audit --no-fund
+
+      - name: Lint ratchet (lib/ drivers/ — total may only go down, no file may get worse)
+        run: node scripts/ci/lint-ratchet.js
+
+      - name: Push helper + hygiene + data gate tests
         run: |
           git config --global user.name ci; git config --global user.email ci@localhost
-          node --test test/ci/p3025-git-push-retry.test.js test/ci/p3025-push-with-retry.test.js test/ci/p3025-workflow-hygiene-gate.test.js test/ci/p3025-hook-deps-check.test.js
+          node --test test/ci/p3025-git-push-retry.test.js test/ci/p3025-push-with-retry.test.js test/ci/p3025-workflow-hygiene-gate.test.js test/ci/p3025-hook-deps-check.test.js test/ci/p3025-appjson-compose-drift.test.js test/ci/p3025-lint-ratchet.test.js
