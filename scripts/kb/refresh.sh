@@ -20,5 +20,8 @@ node "$HERE/open-leads.js" || echo "warn: open-leads scan failed"
 # P3018: exact couple → DP name + converter (Z2M tuyaDatapoints) and ZHA DP numbers → catalogue v2 →
 # DP/endpoint coverage doc. Deterministic; files are rewritten only when the upstream facts change.
 node "$HERE/../data/harvest-z2m-tuya-dps.js" || echo "warn: tuyaDatapoints harvest failed"
+# P3018b: remaining generic DPs — exact per-quirk ZHA builders + deCONZ DDF (fill-only into the catalogue).
+node "$HERE/../data/harvest-zha-quirk-dps.js" || echo "warn: ZHA per-quirk DP harvest failed"
+node "$HERE/../data/harvest-deconz-tuya-dps.js" || echo "warn: deCONZ DDF DP harvest failed"
 node "$HERE/../data/build-unknown-dp-catalog.js" || echo "warn: DP catalogue build failed"
 node "$HERE/dp-endpoint-coverage.js" || echo "warn: DP/endpoint coverage doc failed"
