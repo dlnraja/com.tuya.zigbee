@@ -19,6 +19,8 @@
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
+// P3019c: per-branch generated/curated KB docs never cross branches (see module header).
+const { isBranchSpecific, regenerateBranchDocs, BRANCH_SPECIFIC_PATHS } = require('./branch-specific-paths');
 
 const ROOT = path.resolve(__dirname, '..', '..');
 const APPLY = process.argv.includes('--apply');
@@ -119,6 +121,10 @@ function isForbidden(rel) {
 
 function isPromotable(rel) {
   if (isForbidden(rel)) return false;
+  // P3019c: METHOD_COVERAGE.md & co. describe the branch they live on — regenerate, never copy.
+  if (isBranchSpecific(rel)) {
+    return false;
+  }
   if (/^drivers\//.test(rel) && /\.(js|json)$/.test(rel)) return true;
   if (rel === 'data/user-misattribution-registry.json') return true;
   if (rel === 'config/architecture/publish-sacred-keep-couples.json') return true;
@@ -134,6 +140,9 @@ function isPromotable(rel) {
  */
 function classifyAutoSafe(rel) {
   if (!isPromotable(rel)) return false;
+  if (isBranchSpecific(rel)) {
+    return false;
+  }
   if (/^drivers\/.+\/driver\.compose\.json$/.test(rel)) return true;
   if (rel === 'data/user-misattribution-registry.json') return true;
   if (rel === 'config/architecture/publish-sacred-keep-couples.json') return true;
@@ -321,12 +330,39 @@ function applyOne(rel, bastienBody, rootDir = ROOT) {
     return { ok: true, mode: 'merge_sacred_keep' };
   }
 
+  // P3019c: docs are additive-only. The candidate list is diff-based, so a doc where the TARGET
+  // branch is ahead (master-only lessons, publish history…) would lose those lines if Bastien
+  // bytes were written. Only take Bastien bytes when they keep every target line.
+  if (/^docs\//.test(rel) && fs.existsSync(abs) && !isAdditiveDoc(fs.readFileSync(abs, 'utf8'), bastienBody)) {
+    return { ok: false, reason: 'docs_not_additive_target_ahead' };
+  }
+
   // Tests / docs / BOTH lib / new device.js — take Bastien bytes
   fs.writeFileSync(abs, bastienBody.endsWith('\n') ? bastienBody : `${bastienBody}\n`);
   return { ok: true, mode: 'checkout_bastien' };
 }
 
-function commitIfNeeded(rootDir, message, files) {
+/** P3019c: true when every non-blank line of targetBody is still present in incomingBody. */
+function isAdditiveDoc(targetBody, incomingBody) {
+  const have = new Set(String(incomingBody || '').split(/\r?\n/).map((l) => l.trimEnd()));
+  return String(targetBody || '').split(/\r?\n/).every((l) => !l.trim() || have.has(l.trimEnd()));
+}
+
+/**
+ * P3019c: after a promote/sync, rebuild the branch-specific generated docs from the TARGET tree's
+ * own code and return the changed outputs, to stage alongside the promoted files.
+ */
+function regenerateAfterPromote(rootDir, regen = regenerateBranchDocs) {
+  try {
+    const res = regen(rootDir) || {};
+    return Array.isArray(res.changed) ? res.changed : [];
+  } catch (e) {
+    console.warn('[bastien-promote] branch docs regeneration skipped:', e.message);
+    return [];
+  }
+}
+
+function commitIfNeeded(rootDir, message, files, regenerated = []) {
   if (!files.length) return false;
   // WHY(2026-10-10 workflow audit): a merged driver.compose.json from Bastien can carry fingerprint
   // entries that the dual-couple resolution removed on purpose (lib/data/dual-couple-legacy.json).
@@ -361,6 +397,12 @@ function commitIfNeeded(rootDir, message, files) {
   for (const bad of FORBIDDEN_PATHS) {
     if (staged.split(/\n/).includes(bad)) {
       sh(`git reset HEAD -- "${bad}"`, { cwd: rootDir });
+    }
+  }
+  // P3019c: a branch-specific doc may only be committed when it was regenerated on this tree.
+  for (const f of (sh('git diff --cached --name-only', { cwd: rootDir }) || '').split(/\n/).filter(Boolean)) {
+    if (isBranchSpecific(f) && !regenerated.includes(f)) {
+      sh(`git reset HEAD -- "${f}"`, { cwd: rootDir });
     }
   }
   const still = sh('git diff --cached --name-only', { cwd: rootDir });
@@ -412,11 +454,15 @@ function main() {
   }
 
   let committed = false;
+  const branchSpecificSkipped = allChanged.filter(isBranchSpecific);
+  let regenerated = [];
   if (APPLY && COMMIT && applied.length) {
+    regenerated = regenerateAfterPromote(ROOT);
     committed = commitIfNeeded(
       ROOT,
       'chore(P2607): autonomous Bastien→master promote [skip ci]',
-      applied.map((a) => a.rel),
+      [...applied.map((a) => a.rel), ...regenerated],
+      regenerated,
     );
     if (committed) {
       sh('git pull --rebase origin master || true');
@@ -454,10 +500,12 @@ function main() {
         }
       }
       if (COMMIT && stableApplied.length) {
+        const stableRegenerated = regenerateAfterPromote(stableDir);
         const ok = commitIfNeeded(
           stableDir,
           'chore(P2607): Bastien BOTH reliability → stable [skip ci]',
-          stableApplied.map((a) => a.rel),
+          [...stableApplied.map((a) => a.rel), ...stableRegenerated],
+          stableRegenerated,
         );
         if (ok) {
           try {
@@ -483,6 +531,8 @@ function main() {
     bastienRef: ref,
     appIdBastien: ssot.appId,
     forbiddenTouched: blocked,
+    branchSpecificSkipped,
+    regenerated,
     candidates,
     candidateCount: candidates.length,
     autoSafe,
@@ -526,6 +576,11 @@ module.exports = {
   targetDriverIds,
   listBastienChangedFiles,
   FORBIDDEN_PATHS,
+  BRANCH_SPECIFIC_PATHS,
+  isBranchSpecific,
+  regenerateAfterPromote,
+  isAdditiveDoc,
+  commitIfNeeded,
   PROMOTE_GLOBS,
   BOTH_LIB_RE,
 };
