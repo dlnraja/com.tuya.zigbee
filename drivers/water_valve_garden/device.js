@@ -22,6 +22,7 @@ class WaterValveGardenDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unif
       // Handles battery reporting, physical button detection, and relay logic.
       await super.onNodeInit({ zclNode  });
       await this.initVirtualButtons();
+      this._armTs0049CountdownReport(zclNode);
       this.log('[VALVE-GARDEN] ✅ v9.7.3 Universal initialization complete');
     }, 'onNodeInit');
   }
@@ -40,6 +41,25 @@ class WaterValveGardenDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unif
     if (!T.isTs0049Couple(mfr, pid) || minutes < T.MIN_MIN) { return; }
     const r = await T.sendCountdown(this, minutes);
     this.log(`[VALVE-GARDEN] E001 setCountdown ${minutes} min -> ${r.ok ? 'sent' : r.reason}`);
+  }
+
+  // P3019b: decode the HZ-WT02 0xE001 countdown report (cmd 0x0A) — RX only, exact couple only.
+  _armTs0049CountdownReport(zclNode) {
+    try {
+      const T = require('../../lib/tuya/Ts0049Countdown');
+      const mfr = this.getSetting?.('zb_manufacturer_name') || this.getStoreValue?.('zb_manufacturer_name') || '';
+      const pid = this.getData?.()?.productId || this.getSetting?.('zb_model_id') || this.getStoreValue?.('zb_model_id') || '';
+      if (!T.isTs0049Couple(mfr, pid)) { return false; }
+      const node = zclNode || this.zclNode;
+      return T.attachReportListener(node, (minutes) => {
+        this.log(`[VALVE-GARDEN] E001 countdown report: ${minutes} min`);
+        this.setStoreValue?.('ts0049_countdown_min', minutes)?.catch?.(() => {});
+        this.emit('irrigation_countdown', Math.round(minutes * 60));
+      });
+    } catch (err) {
+      this.log(`[VALVE-GARDEN] E001 report listener skipped: ${err.message}`);
+      return false;
+    }
   }
 
   // v9.7.3: Custom DP mappings for specialized garden valve functions
@@ -90,7 +110,7 @@ class WaterValveGardenDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unif
    * v9.8.0: DEFENSIVE - Safe flow card trigger helper
    * Guards against missing homey.flow or triggerCard
    */
-  _safeTriggerFlow(triggerId, tokens = {}, debug = {}) {
+  _safeTriggerFlow(triggerId, tokens = {}) { // 3rd arg (debug context) accepted by callers, unused
     try {
       if (!this.homey?.flow) {
         this.log(`[VALVE-GARDEN] ⚠️ Cannot trigger flow '${triggerId}': homey.flow unavailable`);

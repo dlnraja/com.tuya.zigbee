@@ -7,10 +7,10 @@
     "de": "Eine Tastenaktion wurde aus einem unbekannten Befehl abgeleitet"
   },
   "titleFormatted": {
-    "en": "A button action [[action]] was inferred from an unknown command",
-    "fr": "Une action bouton [[action]] a été déduite d'une commande inconnue",
-    "nl": "Knopactie [[action]] is afgeleid van een onbekend commando",
-    "de": "Tastenaktion [[action]] wurde aus einem unbekannten Befehl abgeleitet"
+    "en": "A button action [[action]] was inferred on [[device]] from an unknown command",
+    "fr": "Une action bouton [[action]] a été déduite sur [[device]] d'une commande inconnue",
+    "nl": "Knopactie [[action]] is op [[device]] afgeleid van een onbekend commando",
+    "de": "Tastenaktion [[action]] wurde auf [[device]] aus einem unbekannten Befehl abgeleitet"
   },
   "hint": {
     "en": "Press, double, long, release, rotate or scene inferred from frames/DPs the driver does not handle (P3016).",
