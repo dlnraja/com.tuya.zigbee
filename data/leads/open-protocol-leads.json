@@ -1,0 +1,84 @@
+{
+  "_doc": "P3019: protocol leads still without a reliable source. scripts/kb/open-leads.js greps the local mirrors for them on every KB refresh (morning routine); `queries` are for the web/GitHub/forum pass. Move a lead to `resolved` with its source once one reliable source confirms it. `known_files` = mirror files already read for that lead (2026-10-24, no answer); hits there are reported as known, others as NEW.",
+  "open": [
+    {
+      "id": "ts0726-dp18-20",
+      "what": "TS0726 DP18, DP19, DP20 (EF00 frames seen on Zigbee TS0726 wall switches)",
+      "searched": [
+        "Z2M tuya.ts TS0726 (ZCL only: E001 0xD020 switch_mode, genOnOff 0x8001 indicator, commandTuyaAction scenes)",
+        "ZHA ts0726 quirks",
+        "deCONZ DDF",
+        "tuya-local (Wi-Fi switches use DP18 random timing / DP19 inching / DP20 energy: not Zigbee, low confidence)",
+        "kkossev",
+        "SmartThings Edge",
+        "Johan + forks",
+        "Homey forum"
+      ],
+      "grep": {
+        "files": "\\.(ts|js|py|json|yaml|groovy|lua|md)$",
+        "all": [
+          "TS0726"
+        ],
+        "any": [
+          "\\b18\\b.*\\b(dp|datapoint)",
+          "\\b(dp|datapoint)\\D{0,6}(18|19|20)\\b"
+        ]
+      },
+      "queries": [
+        "TS0726 dp 18",
+        "TS0726 datapoint 19",
+        "TS0726 \"dp20\"",
+        "TS0726 inching",
+        "TS0726 relay_status dp"
+      ],
+      "known_files": [
+        "z2m-site/docs/supported-devices/README.md",
+        "zhc/src/devices/tuya.ts"
+      ]
+    },
+    {
+      "id": "cluster-0x1888",
+      "what": "Tuya private cluster 0x1888 (6280) seen on TS011F / TS0505B",
+      "searched": [
+        "ZHA TuyaZB1888Cluster (empty definition, zha-device-handlers PR #2592)",
+        "Z2M zigbee-herdsman cluster list",
+        "deCONZ general.xml",
+        "tuya-local",
+        "Homey forum"
+      ],
+      "grep": {
+        "files": "\\.(ts|js|py|json|xml|yaml|groovy|lua|md)$",
+        "all": [],
+        "any": [
+          "0x1888",
+          "TuyaZB1888",
+          "\\b6280\\b.*cluster|cluster.*\\b6280\\b"
+        ]
+      },
+      "queries": [
+        "\"0x1888\" tuya zigbee cluster",
+        "TuyaZB1888Cluster attributes",
+        "tuya cluster 6280"
+      ],
+      "known_files": [
+        "zha/zhaquirks/tuya/__init__.py",
+        "zha/zhaquirks/tuya/ts000f_switch.py",
+        "zha/zhaquirks/tuya/ts011f_plug.py"
+      ]
+    }
+  ],
+  "resolved": [
+    {
+      "id": "zs-sf00",
+      "what": "Arteco ZS-SF00 soil fertility sensor (A89G12C|Arteco)",
+      "source": "Koenkk/zigbee-herdsman-converters src/devices/tuya.ts model ZS-SF00 (@1c90116)",
+      "where": "lib/profiles/ZsSf00Profile.js, drivers/soil_sensor, COUPLE_DP"
+    },
+    {
+      "id": "sinxpbrl-dp2-dp102",
+      "what": "MC101Z sinxpbrl DP2 work_mode, DP102 do_not_disturb (+ DP6, DP7, DP101)",
+      "source": "Koenkk/zigbee2mqtt#31445 (Tuya schema posted by YoshiWalsh) + JohanBendz/com.tuya.zigbee#1504",
+      "where": "COUPLE_DP, drivers/mc101z_pwm_dimmer (master)"
+    }
+  ]
+}

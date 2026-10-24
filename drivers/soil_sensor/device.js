@@ -88,6 +88,14 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     return zg303Mfrs.includes(manufacturer);
   }
 
+  // P3019: Arteco ZS-SF00 (exact couple A89G12C|Arteco, Z2M tuya.ts) has its own DP layout.
+  get isZsSf00Variant() {
+    const { isZsSf00 } = require('../../lib/profiles/ZsSf00Profile');
+    const manufacturer = this.getSetting?.('zb_manufacturer_name') || this.getStoreValue?.('zb_manufacturer_name') || '';
+    const productId = this.getData?.()?.productId || this.getSetting?.('zb_model_id') || this.getStoreValue?.('zb_model_id') || '';
+    return isZsSf00(manufacturer, productId);
+  }
+
   /** Capabilities for soil sensors */
   get sensorCapabilities() {
     return [
@@ -306,6 +314,28 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     if (typeof parsedValue === 'number' && Number.isFinite(parsedValue) && Math.abs(parsedValue) >= 0x04000000) {
       this.log(`[SOIL] Ignoring overflow/sentinel value DP${dp} = ${parsedValue} (0x${(parsedValue >>> 0).toString(16).toUpperCase()})`);
       return;
+    }
+
+    // WHY(P3019): ZS-SF00 reuses DP102/103/106/107/111 with other meanings than the generic
+    // soil map (Z2M tuya.ts ZS-SF00). Couple-locked; unknown DPs fall through to the generic path.
+    if (this.isZsSf00Variant) {
+      const { decode } = require('../../lib/profiles/ZsSf00Profile');
+      const r = decode(dp, parsedValue);
+      if (r) {
+        this.log(`[SOIL] ZS-SF00 DP${dp} -> ${r.capability || r.store} = ${r.value}`);
+        if (r.capability) {
+          if (this.hasCapability(r.capability)) { this.safeSetCapabilityValue(r.capability, r.value).catch(() => { }); }
+          if (r.capability === 'measure_ec' && this.hasCapability('measure_conductivity')) {
+            this.safeSetCapabilityValue('measure_conductivity', r.value).catch(() => { });
+          }
+          // alarm_water comes from the device itself (DP111), not from the Homey-side threshold.
+          if (r.capability === 'measure_humidity.soil') { this._triggerMoistureFlows?.(r.value); }
+          if (r.capability === 'measure_ec') { this._triggerECFlows?.(r.value); }
+        } else if (r.store) {
+          Promise.resolve(this.setStoreValue?.(r.store, r.value)).catch(() => { });
+        }
+        return;
+      }
     }
 
     // Conductivity / EC (DP 4, 20, 22, 106, 112)

@@ -26,3 +26,22 @@ Studied 2026-10-24 (Europe/Paris). Facts are rewritten in our own words; no code
 6. DP-name catalogue per couple → semantic: `lib/zigbee/data/unknown-dp-catalog.json` + `UnknownCommandInterpreter` step 1b (Z2M tuyaDatapoints).
 7. Unknown kept with type and raw payload, plus a teach action: `UnknownCommandFlowCards` (tuya-local, Tasmota, ESPHome).
 8. Clear "not an error" log for frames the SDK cannot parse but we forward (EF00, Tuya Basic): `ZclFrameHeader.describeFrame` (Z2M ignore converters, #560 logs).
+
+## P3019 review of the "not applicable" cells (2026-10-24)
+
+Every n/a cell of METHOD_COVERAGE.md was checked again for a real, sourced use. Where one exists it is added as an
+optional extra layer: never needed at pairing, removes nothing, and the old path stays first.
+
+| family | method | change | source | our code |
+|---|---|---|---|---|
+| Buttons and remotes | M3 private-cluster read | n/a → yes | Z2M TS004F `tuyaOperationMode` (attr 0x8004 on genOnOff), ZHA `TuyaSmartRemoteOnOffCluster` | `lib/buttons/attachButtonPaths.initModeForNewDevice` |
+| Buttons and remotes | M9 attribute write instead of a command | n/a → yes | same (write 0x8004 to switch event/dimmer mode) | `lib/zigbee/DeviceOperatingMode.writeOperationMode` |
+
+Kept n/a, with the reason in METHOD_COVERAGE.md: M7 everywhere (deriving alarm_battery from measure_battery would put both
+capabilities on one device, which the project forbids); soil M8 (writing calibration through two paths risks a double
+offset); contact/water/smoke M8–M9 (sensors only, nothing to write); M10 for DIN meters, sirens, fans, TRVs and locks
+(no sourced private write found in Z2M, ZHA, deCONZ, kkossev or SmartThings Edge).
+
+Writing through another endpoint: evaluated, not added. The only safe case would be a single-gang device whose command
+lands on a different endpoint than the one it reports on; no source shows such a device needing it, and on multi-gang
+devices it could switch the wrong gang.
