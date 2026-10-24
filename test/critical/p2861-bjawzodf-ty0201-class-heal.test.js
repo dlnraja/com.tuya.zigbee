@@ -1,4 +1,5 @@
 'use strict';
+const { describe, it } = require('../_support/dual-runner'); // P3020: same file under node --test and mocha
 /**
  * Wilhelm Dall suggestion (2026-10-17): `_TZ3000_bjawzodf` / TY0201 temp+humidity sensor ended up on a
  * socket-class driver. Source of truth for the couple: Z2M WSD500A (TS0201 + _TZ3000_bjawzodf) and DB P2266.
