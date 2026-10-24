@@ -1,0 +1,149 @@
+{
+  "id": "last_inferred_action_is",
+  "title": {
+    "en": "Last inferred action of [[device]] !{{is|is not}} [[action]]",
+    "fr": "La dernière action déduite de [[device]] !{{est|n'est pas}} [[action]]",
+    "nl": "Laatst afgeleide actie van [[device]] !{{is|is niet}} [[action]]",
+    "de": "Letzte abgeleitete Aktion von [[device]] !{{ist|ist nicht}} [[action]]"
+  },
+  "titleFormatted": {
+    "en": "Last inferred action of [[device]] !{{is|is not}} [[action]] within [[minutes]] min",
+    "fr": "La dernière action déduite de [[device]] !{{est|n'est pas}} [[action]] depuis [[minutes]] min",
+    "nl": "Laatst afgeleide actie van [[device]] !{{is|is niet}} [[action]] binnen [[minutes]] min",
+    "de": "Letzte abgeleitete Aktion von [[device]] !{{ist|ist nicht}} [[action]] innerhalb [[minutes]] Min"
+  },
+  "hint": {
+    "en": "True when the last action inferred from an unknown command/DP of this device matches, within X minutes (P3016).",
+    "fr": "Vrai si la dernière action déduite d'une commande/DP inconnu de cet appareil correspond, depuis X minutes (P3016)."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "title": {
+        "en": "Device",
+        "fr": "Appareil",
+        "nl": "Apparaat",
+        "de": "Gerät"
+      }
+    },
+    {
+      "type": "dropdown",
+      "name": "action",
+      "title": {
+        "en": "Action",
+        "fr": "Action",
+        "nl": "Actie",
+        "de": "Aktion"
+      },
+      "values": [
+        {
+          "id": "single",
+          "title": {
+            "en": "Single press",
+            "fr": "Appui simple",
+            "nl": "Enkele druk",
+            "de": "Einfacher Druck"
+          }
+        },
+        {
+          "id": "double",
+          "title": {
+            "en": "Double press",
+            "fr": "Double appui",
+            "nl": "Dubbele druk",
+            "de": "Doppelter Druck"
+          }
+        },
+        {
+          "id": "long",
+          "title": {
+            "en": "Long press / hold",
+            "fr": "Appui long",
+            "nl": "Lang indrukken",
+            "de": "Langer Druck"
+          }
+        },
+        {
+          "id": "release",
+          "title": {
+            "en": "Release",
+            "fr": "Relâchement",
+            "nl": "Loslaten",
+            "de": "Loslassen"
+          }
+        },
+        {
+          "id": "rotate_left",
+          "title": {
+            "en": "Rotate left",
+            "fr": "Rotation gauche",
+            "nl": "Links draaien",
+            "de": "Links drehen"
+          }
+        },
+        {
+          "id": "rotate_right",
+          "title": {
+            "en": "Rotate right",
+            "fr": "Rotation droite",
+            "nl": "Rechts draaien",
+            "de": "Rechts drehen"
+          }
+        },
+        {
+          "id": "scene",
+          "title": {
+            "en": "Scene recall",
+            "fr": "Rappel de scène",
+            "nl": "Scène oproepen",
+            "de": "Szene abrufen"
+          }
+        },
+        {
+          "id": "on",
+          "title": {
+            "en": "On",
+            "fr": "Allumer",
+            "nl": "Aan",
+            "de": "Ein"
+          }
+        },
+        {
+          "id": "off",
+          "title": {
+            "en": "Off",
+            "fr": "Éteindre",
+            "nl": "Uit",
+            "de": "Aus"
+          }
+        },
+        {
+          "id": "toggle",
+          "title": {
+            "en": "Toggle",
+            "fr": "Basculer",
+            "nl": "Schakelen",
+            "de": "Umschalten"
+          }
+        }
+      ]
+    },
+    {
+      "name": "minutes",
+      "type": "number",
+      "title": {
+        "en": "Minutes",
+        "fr": "Minutes"
+      },
+      "min": 1,
+      "max": 1440,
+      "step": 1,
+      "value": 1,
+      "placeholder": {
+        "en": "1–1440",
+        "fr": "1–1440"
+      }
+    }
+  ]
+}
