@@ -338,7 +338,8 @@
     "check:p2817": "node --test test/critical/p2817-forum-t140352-images-treat.test.js",
     "check:p2818": "node --test test/critical/p2818-gnpflcoq-zha5286-dp-map.test.js",
     "check:p2821": "node --test test/critical/p2821-forum-fleet-silent-treat.test.js",
-    "check:p2822": "node --test test/critical/p2822-gh560-me167-dp4-not-battery.test.js"
+    "check:p2822": "node --test test/critical/p2822-gh560-me167-dp4-not-battery.test.js",
+    "sync:app-json-drivers": "node scripts/ci/sync-root-app-json-drivers.js"
   },
   "keywords": [
     "homey",
