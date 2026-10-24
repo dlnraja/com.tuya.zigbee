@@ -265,3 +265,88 @@ Facts (ids, DP numbers, model names) indexed with commit-pinned links; no prose 
 - P3017 (2026-10-24) unknown commands + method chains: decoders from JohanBendz/com.tuya.zigbee#619 (`_TZ3210_cwamkvua` TS0202 DP101 press / DP102 dark-bright), private Tuya commands from Koenkk/zigbee-herdsman-converters `src/lib/tuya.ts` (eb823146c7) and zigpy/zha-device-handlers tuya quirks (1d6598c32a, TSN dedup, rotate stop); DP-name catalogue from Z2M tuyaDatapoints; fallback/polling/magic/time-sync methods studied in deCONZ, tuya-local, localtuya, tinytuya, kkossev Hubitat (ideas only), SmartThings Edge, ioBroker, Domoticz, Tasmota, ESPHome — all rewritten (docs/knowledge/KB/CROSS_APP_METHODS.md).
 - P3019 (2026-10-24) coverage review: ZS-SF00 decoder rewritten from Koenkk/zigbee-herdsman-converters `src/devices/tuya.ts` (@1c90116); sinxpbrl DP2/DP6/DP7/DP101/DP102 from the Tuya schema posted by YoshiWalsh in Koenkk/zigbee2mqtt#31445 (reported by wiwill61) and JohanBendz/com.tuya.zigbee#1504 (martinheie-ui); HZ-WT02 TS0049 countdown (0xE001 cmd 0xFE) from Z2M tuya.ts; TS004F 0x8004 mode from Z2M and ZHA `TuyaSmartRemoteOnOffCluster`; cluster 0x1888 checked against ZHA `TuyaZB1888Cluster` (PR #2592, TheJulianJES). All rewritten.
 - P3018 (2026-10-24) every DP + every endpoint: per-couple DP names and value converters harvested from Koenkk/zigbee-herdsman-converters `src/devices/*.ts` tuyaDatapoints (MIT, commit cff1de4731; facts only — tokens like div:10 / trueFalse / lookup, decoder rewritten in lib/zigbee/DpCatalogDecoder.js); ZHA quirk DP numbers from zigpy/zha-device-handlers (Apache-2.0, 1d6598c32a); ZCL scaling (measuredValue/100, lux = 10^((v-1)/10000)) from the ZCL specification. air_purifier_soil DP5 ÷10 per Z2M TS0601_soil. Own code (docs/knowledge/KB/DP_ENDPOINT_COVERAGE.md).
+
+## GitHub issue reporters (P3020, 2026-10-24)
+
+Reporters of dlnraja/com.tuya.zigbee issues not credited elsewhere in this file. Their reports (logs, fingerprints, symptoms) fed fixes and locks; issue numbers listed for traceability.
+
+- @askseb — #30, #31
+- @avanderwulp — #417
+- @azkysmarthome — #126
+- @bartagergely — #94
+- @clementloridan — #198
+- @cristianoisaac — #168, #169, #206
+- @csmobiel — #101
+- @dalobalo — #161, #162
+- @DaPicardos — #328, #355, #360, #363, #367, #371, #378, #383, #388
+- @DAVID9SE — #121
+- @denis-papin — #571
+- @Didiervu91 — #75
+- @djfry134 — #92
+- @Domingoso — #135, #275
+- @draqlek — #554
+- @DVMasters — #98
+- @edwinvdp — #570
+- @elgato7 — #117, #122
+- @Ernst02507 — #113
+- @eskilask-maker — #89, #107, #109
+- @fcarrozzo — #99
+- @finnamu — #513, #516
+- @ftrueck — #338
+- @gfi63 — #26, #27, #33, #108
+- @gore- — #35
+- @GXA064 — #25
+- @Haellos07 — #77
+- @HiepSVG — #547, #550
+- @JeffreyOtten1234 — #95
+- @jocke-sve-62 — #76
+- @john1v — #188, #193, #194
+- @johnx1971 — #165
+- @kikosenra — #546
+- @kircuvaloglu — #34
+- @kodalissri — #28, #29, #32
+- @kringloper — #324
+- @l-i-n-k — #24
+- @laborhexe0210 — #37
+- @Lalla80111 — #114, #115, #124, #137, #314, #316, #333, #506, #559
+- @late4marshmellow — #163, #164
+- @luuk0412-wq — #23
+- @MarceloSilvaLeite — #19, #20, #21, #536
+- @migueleap — #540, #541, #542, #543, #544, #545, #551, #552, #553
+- @MitchV94 — #129
+- @mjolink — #96
+- @Necka44 — #93
+- @neeerd — #549
+- @Nespouique — #531
+- @NoroddH — #97
+- @Patrickske1 — #79
+- @PDominikPL — #305, #308, #331, #332
+- @pemikalsen-sudo — #184, #302
+- @pjmpessers — #102, #103, #104, #105
+- @Pollepa — #110
+- @Rickert1993 — #44
+- @RidderGH — #420
+- @ronaldbok — #172
+- @rsalinger — #22
+- @salvagr — #533
+- @sinan92 — #43
+- @Snacker80 — #183
+- @snorro80 — #91
+- @sondregjessing-blip — #428
+- @speerke — #329
+- @squizzeak — #424
+- @Ssssneak — #170
+- @stephanmaastricht — #511
+- @Tauno20 — #127
+- @telenut — #80
+- @tencoo — #200
+- @theunissendave — #88
+- @tjoepatjoep — #260, #312
+- @tknapstad — #78
+- @vbesteiro — #171
+- @Verectra — #87
+- @vikinos — #276
+- @vladivdv-bot — #317
+- @Wuma68 — #128, #173, #174, #548
+- @xDMcGee — #532
+- @xSondreBx — #82, #83
