@@ -38,6 +38,25 @@ const FCU_DATA_POINTS = {
 };
 
 const FCU_MFRS = ['_TZE204_mpbki2zm', '_TZE204_qujphad5'];
+
+/**
+ * WHY(P2970, Umberto Maffii store suggestion + Z2M tuya.ts "BAC-002-ALZB", whitelabel Beca BAC-003;
+ * Z2M discussion #25308: Beca BAC-006AZB = TS0601 `_TZE204_dzuqwsyg`): same FCU family as TYBAC-006
+ * (DP1 power, DP2 cool/heat/fan_only, DP24 temp /10, DP28 fan, DP40 lock) but three differences:
+ *   - DP16 setpoint is whole °C (Z2M valueConverter.raw), NOT tenths;
+ *   - DP4 is the preset bool (true = manual, false = auto/schedule);
+ *   - DP101 is the raw weekly schedule blob, NOT a manual-mode bool (must never be TX'd as bool).
+ * DP19 max temp, DP26 deadzone, DP27 calibration: read-only logs for now.
+ */
+const BAC002_MFRS = ['_TZE200_dzuqwsyg', '_TZE204_dzuqwsyg'];
+const BAC002_DATA_POINTS = {
+  preset: 4,
+  maxTemperature: 19,
+  deadzone: 26,
+  calibration: 27,
+  schedule: 101,
+};
+const BAC002_QUERY_DPS = [1, 2, 4, 16, 24, 28, 40];
 const FCU_SIGNAL_DPS = new Set([28, 36, 101]);
 const SYSTEM_MODE_RX = { 0: 'cool', 1: 'heat', 2: 'fan_only' };
 const SYSTEM_MODE_TX = { cool: 0, heat: 1, fan_only: 2 };
@@ -92,10 +111,32 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
     return { mfr: String(mfr || ''), pid: String(pid || '') };
   }
 
+  /** WHY(P2970): BAC-002 / Beca BAC-006AZB exact couples (TS0601 only). */
+  _isBac002Couple() {
+    if (this.getStoreValue?.('wall_thermo_bac002') === true) { return true; }
+    const { mfr, pid } = this._resolveMfrPid();
+    const pidOk = !pid || equalsCI(pid, 'TS0601');
+    return pidOk && BAC002_MFRS.some((m) => equalsCI(mfr, m));
+  }
+
+  _refreshBac002Flag() {
+    const was = !!this._bac002;
+    this._bac002 = this._isBac002Couple();
+    if (this._bac002) {
+      // DP16 is whole °C on this family — lock the scale so TX never multiplies by 10.
+      this._dp16Scale = 'raw';
+      if (!was) {
+        try { Promise.resolve(this.setStoreValue?.('wall_thermo_bac002', true)).catch(() => {}); } catch (_) { /* ignore */ }
+      }
+    }
+    return this._bac002;
+  }
+
   _isFcuCouple() {
     if (this.getStoreValue?.('wall_thermo_fcu') === true || this._fcuSignalSeen) {
       return true;
     }
+    if (this._isBac002Couple()) { return true; }
     const { mfr, pid } = this._resolveMfrPid();
     const mfrOk = FCU_MFRS.some((m) => equalsCI(mfr, m));
     // Pairing may omit pid briefly — FCU mfrs are sacred to TS0601 only
@@ -106,9 +147,10 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
   /** Prevent TuyaEF00Manager generic DP1→measure_temperature for this driver. */
   _installDpMappings() {
     const map = this._fcu ? FCU_DATA_POINTS : BHT_DATA_POINTS;
+    const bac002 = !!this._bac002;
     this.dpMappings = {
       [map.onOff]: { capability: 'onoff', type: 'bool' },
-      [map.targetTemperature]: { capability: 'target_temperature', type: 'value', divisor: 10 },
+      [map.targetTemperature]: { capability: 'target_temperature', type: 'value', divisor: bac002 ? 1 : 10 },
       [map.currentTemperature]: { capability: 'measure_temperature', type: 'value', divisor: 10 },
       [map.childlock]: { capability: 'child_lock', type: 'bool' },
     };
@@ -125,10 +167,18 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
       FCU_DATA_POINTS.fanMode,
       FCU_DATA_POINTS.manualMode,
     ].filter((n) => Number.isFinite(Number(n))).map(Number));
+    if (bac002) {
+      for (const dp of Object.values(BAC002_DATA_POINTS)) { this._dynCapBlockDps.add(dp); }
+    }
     if (this._fcu) {
       this.dpMappings[FCU_DATA_POINTS.systemMode] = { capability: 'thermostat_mode', type: 'enum' };
       this.dpMappings[FCU_DATA_POINTS.fanMode] = { capability: 'fan_mode', type: 'enum' };
-      this.dpMappings[FCU_DATA_POINTS.manualMode] = { capability: 'thermostat_programming', type: 'bool' };
+      if (bac002) {
+        this.dpMappings[BAC002_DATA_POINTS.preset] = { capability: 'thermostat_programming', type: 'bool' };
+        this.dpMappings[BAC002_DATA_POINTS.schedule] = { internal: true, type: 'raw' };
+      } else {
+        this.dpMappings[FCU_DATA_POINTS.manualMode] = { capability: 'thermostat_programming', type: 'bool' };
+      }
     }
     if (typeof this.dynamicCapabilityManager?.purgeDriverOwnedDiscoveries === 'function') {
       this.dynamicCapabilityManager.purgeDriverOwnedDiscoveries().catch(() => {});
@@ -180,6 +230,8 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
    */
   async _ensureFcuManualForTx() {
     if (!(this._fcu || this._fcuSignalSeen)) return;
+    // WHY(P2970): on BAC-002 DP101 is the schedule blob — a bool TX there would corrupt it.
+    if (this._bac002) { return; }
     if (!this._fcuManualDpConfirmed) {
       this.log('[WALL-THERMO] skip DP101 pre-TX (unconfirmed on this node)');
       return;
@@ -213,12 +265,14 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
       this._fcuManualDpConfirmed = true;
     }
 
+    this._refreshBac002Flag();
     this._fcu = this._isFcuCouple();
     this._installDpMappings();
     const id = this._resolveMfrPid();
     this.log(this._fcu
       ? `[WALL-THERMO] FCU path (${id.mfr}|${id.pid})`
       : `[WALL-THERMO] BHT path (${id.mfr}|${id.pid}) — will arm on DP28/36/101`);
+    if (this._bac002) { this.log('[WALL-THERMO] P2970 BAC-002 profile (DP16 whole °C, DP4 preset, DP101 schedule)'); }
 
     for (const cap of ['thermostat_programming', 'child_lock']) {
       if (!this.hasCapability(cap)) await this.addCapability(cap).catch(() => {});
@@ -278,6 +332,8 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
         this._cachedModelId = String(attrs.modelId);
         try { await this.setStoreValue?.('modelId', this._cachedModelId); } catch (_) { /* ignore */ }
       }
+      const wasBac = !!this._bac002;
+      if (this._refreshBac002Flag() && !wasBac) { this._installDpMappings(); }
       if (!this._fcu && this._isFcuCouple()) {
         await this._armFcu('basic-cluster');
       }
@@ -312,7 +368,10 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
     });
 
     this.registerCapabilityListener('thermostat_programming', async (mode) => {
-      if (this._fcu || this._fcuSignalSeen) {
+      if (this._bac002) {
+        // WHY(P2970): BAC-002 preset DP4 — true = manual, false = auto (Z2M BAC-002-ALZB).
+        await this._txBool(BAC002_DATA_POINTS.preset, String(mode) === '0');
+      } else if (this._fcu || this._fcuSignalSeen) {
         const manualOn = String(mode) === '0';
         this._fcuManualDpConfirmed = true;
         try { await this.setStoreValue?.('wall_thermo_fcu_manual_ok', true); } catch (_) { /* ignore */ }
@@ -405,7 +464,7 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
   }
 
   async _queryFcuState() {
-    const dps = FCU_QUERY_DPS;
+    const dps = this._bac002 ? BAC002_QUERY_DPS : FCU_QUERY_DPS;
     if (this.io && typeof this.io.requestDP === 'function') {
       for (const dp of dps) {
         await this.io.requestDP(dp, { silent: true }).catch(() => false);
@@ -479,6 +538,7 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
   }
 
   async _processFcuResponse(dp, parsedValue) {
+    if (this._bac002 && await this._processBac002Response(dp, parsedValue)) { return; }
     try {
       switch (dp) {
         case FCU_DATA_POINTS.onOff: {
@@ -541,11 +601,50 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
     }
   }
 
+  /**
+   * WHY(P2970): BAC-002 / BAC-006AZB DPs that differ from TYBAC-006. Returns true when handled.
+   */
+  async _processBac002Response(dp, parsedValue) {
+    try {
+      switch (dp) {
+        case BAC002_DATA_POINTS.preset:
+          await this.safeSetCapabilityValue('thermostat_programming', parsedValue ? '0' : '1');
+          return true;
+        case FCU_DATA_POINTS.targetTemperature: {
+          const raw = Number(parsedValue);
+          if (!Number.isFinite(raw)) { return true; }
+          // Whole °C per Z2M; tolerate a firmware that would answer in tenths (>= 100).
+          const value = raw >= 100 ? raw / 10 : raw;
+          await this.safeSetCapabilityValue('target_temperature', value);
+          return true;
+        }
+        case BAC002_DATA_POINTS.schedule: {
+          const len = Buffer.isBuffer(parsedValue) ? parsedValue.length
+            : (parsedValue && parsedValue.length) || 0;
+          this.log('[WALL-THERMO] BAC-002 schedule DP101 bytes', len);
+          return true;
+        }
+        case BAC002_DATA_POINTS.maxTemperature:
+        case BAC002_DATA_POINTS.deadzone:
+        case BAC002_DATA_POINTS.calibration:
+          this.log('[WALL-THERMO] BAC-002 DP', dp, parsedValue);
+          return true;
+        default:
+          return false;
+      }
+    } catch (e) {
+      this.log('[WALL-THERMO] BAC-002 DP', dp, 'set failed', e?.message || e);
+      return true;
+    }
+  }
+
   async _onZigbeeIdentityResolved(updates = {}) {
     if (updates.manufacturerName) this._cachedManufacturerName = String(updates.manufacturerName);
     if (updates.modelId || updates.productId) {
       this._cachedModelId = String(updates.modelId || updates.productId);
     }
+    const wasBac = !!this._bac002;
+    if (this._refreshBac002Flag() && !wasBac) { this._installDpMappings(); }
     if (!this._fcu && this._isFcuCouple()) {
       await this._armFcu('identity-resolved');
     }
@@ -553,3 +652,5 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
 }
 
 module.exports = WallThermostatDevice;
+module.exports.BAC002_MFRS = BAC002_MFRS;
+module.exports.BAC002_DATA_POINTS = BAC002_DATA_POINTS;

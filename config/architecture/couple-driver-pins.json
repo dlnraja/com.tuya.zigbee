@@ -633,6 +633,23 @@
       "pid": "TS0046",
       "source": "Z2M zigbee-herdsman-converters tuya.ts: TS0046 \"Wireless switch with 6 buttons\" (LoraTap SS9600ZB white label), events via tuya on_off_action per endpoint = 1..6 x single/double/hold, battery; deCONZ devices/tuya/_TZ3000_TS0046_6gang_remote.json (manufacturer _TZ3000_nrfkrgf4, sleeper, Gold) + button_maps Tuya6gangMap: endpoints 0x01..0x06, OnOff cluster command 0xFD payload 0/1/2 = short/double/long",
       "regression": "P2890 2026-10-19: couple sat in switch_1gang (mains relay, no TS0046 pid) so it never matched; user report: no driver worked on Homey Pro 2023. Exact couple belongs to the 6-button battery scene remote."
+    },
+    {
+      "id": "p2970-bac002-beca-dzuqwsyg",
+      "mfr": [
+        "_TZE200_dzuqwsyg",
+        "_tze200_dzuqwsyg",
+        "_TZE200_DZUQWSYG",
+        "_tze200_DZUQWSYG",
+        "_TZE204_dzuqwsyg",
+        "_tze204_dzuqwsyg",
+        "_TZE204_DZUQWSYG",
+        "_tze204_DZUQWSYG"
+      ],
+      "driver": "wall_thermostat",
+      "pid": "TS0601",
+      "source": "Z2M zigbee-herdsman-converters tuya.ts BAC-002-ALZB (fingerprints _TZE200_dzuqwsyg/_TZE204_dzuqwsyg, whitelabel Beca BAC-003) + Koenkk/zigbee2mqtt discussion #25308 (Beca BAC-006AZB = _TZE204_dzuqwsyg)",
+      "regression": "P2970 2026-10-24: _TZE204_dzuqwsyg sat in switch_1gang (paired as a relay) and _TZE200_dzuqwsyg in device_radiator_valve (TRV DP map); store suggestion by Umberto Maffii: BAC-006AZB pairs but is not a thermostat."
     }
   ]
 }
