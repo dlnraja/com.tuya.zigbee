@@ -1,6 +1,6 @@
 {
   "$comment": "Change-driven proposals from data/sources/registry.json. Identifiers + our own one-line summaries; review before landing (W4 couples, research first).",
-  "updated": "2026-10-23T07:55:56.255Z",
+  "updated": "2026-10-24T07:35:45.543Z",
   "proposals": [
     {
       "source": "z2m-issues",
@@ -22390,6 +22390,178 @@
       "quirk": true,
       "credit": "Homey Community Forum app authors (tag: app)",
       "seenAt": "2026-10-23T07:55:55.587Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/33478",
+      "summary": "issue #33478 (open) by KitHubek: Wrong device detected - EMOS P5640S detected as a [TS0001 / _TZ3000_audu82fa] 1 gang switch but THIS IS SMART VALVE",
+      "mfrs": [
+        "_TZ3000_audu82fa"
+      ],
+      "pids": [
+        "TS0001"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-24T07:35:38.817Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/33482",
+      "summary": "issue #33482 (open) by Flopi-flop: MINI-ZB2GS-L: send detached-mode presses to bound devices/groups, not only to the coordinator",
+      "mfrs": [],
+      "pids": [
+        "TS004F"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": true,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-24T07:35:38.817Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/32919",
+      "summary": "issue #32919 (open) by larslorenz: [External Converter]: TS0207 from _TZ3000_9dtcgbqs",
+      "mfrs": [
+        "_TZ3000_9dtcgbqs"
+      ],
+      "pids": [
+        "TS0207"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-24T07:35:38.818Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/32909",
+      "summary": "issue #32909 (open) by franhzyz: [TS0011 (TS0011_switch_module) / _TZ3000_ji4araar] ???",
+      "mfrs": [
+        "_TZ3000_ji4araar"
+      ],
+      "pids": [
+        "TS0011"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-10-24T07:35:38.818Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/pull/5364",
+      "summary": "PR #5364 (open) by iicc1: Add Tuya _TZE284_8se38w3c temperature and humidity sensor with external probe",
+      "mfrs": [
+        "_TZE284_8se38w3c"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [
+        38,
+        3
+      ],
+      "bug": false,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-10-24T07:35:39.543Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/issues/4277",
+      "summary": "issue #4277 (closed) by giopeco: [Device Support Request] Tuya Zigbee Smart Circuit Breaker TS0601 (_TZE284_wbhaespm) – clone of STB3L-125-ZJ",
+      "mfrs": [
+        "_TZE284_wbhaespm"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-10-24T07:35:39.543Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/pull/3870",
+      "summary": "PR #3870 (open) by prairiesnpr: Convert MoesBHT Thermostat to v2 (Tuya)",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-10-24T07:35:39.543Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/pull/4424",
+      "summary": "PR #4424 (open) by fradaloisio: Add Wenzhi/LeapMMW MTD085-ZB mmWave presence sensor",
+      "mfrs": [
+        "_TZ321C_fkzihax8"
+      ],
+      "pids": [
+        "TS0225"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-10-24T07:35:39.543Z"
+    },
+    {
+      "source": "homey-forum-apps-category",
+      "kind": "forum-app",
+      "ref": "https://community.homey.app/t/156/7515",
+      "summary": "post #7515 by Drako74",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum app authors (Apps category)",
+      "seenAt": "2026-10-24T07:35:41.067Z"
+    },
+    {
+      "source": "homey-forum-apps-category",
+      "kind": "forum-app",
+      "ref": "https://community.homey.app/t/161151/4",
+      "summary": "post #4 by Leopold",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum app authors (Apps category)",
+      "seenAt": "2026-10-24T07:35:41.514Z"
+    },
+    {
+      "source": "homey-forum-tag-zigbee",
+      "kind": "forum-zigbee",
+      "ref": "https://community.homey.app/t/156/7515",
+      "summary": "post #7515 by Drako74",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum members (tag: zigbee)",
+      "seenAt": "2026-10-24T07:35:42.541Z"
     }
   ]
 }
