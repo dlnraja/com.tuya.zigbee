@@ -63,6 +63,11 @@ describe('P3015 kept drivers are caseless at pairing and at runtime', () => {
       }
     });
 
+    it(`${c.id}: no other driver holds any form of it, whatever the productId`, () => {
+      const holders = composes.filter((d) => [].concat(d.z.manufacturerName || []).some((m) => normalize(m) === normalize(c.id))).map((d) => d.id);
+      assert.deepStrictEqual(holders, [c.keep]);
+    });
+
     it(`${c.id}: runtime fingerprint DB resolves every variant to ${c.keep}`, () => {
       const db = require('../../lib/tuya/DeviceFingerprintDB');
       for (const v of [...forms(c.id), ...odd(c.id)]) {
