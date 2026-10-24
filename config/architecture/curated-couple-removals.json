@@ -766,6 +766,17 @@
       ],
       "why": "2026-10-24 P3014: Zigbee2MQTT lists _TZE200_la2c2uo9 (Moes MS-105Z smart dimmer module) in its TS0601 1-gang dimmer definition (DP1 state, DP2 brightness 0-1000); that definition family (_TZE200_la2c2uo9, _TZE200_ip2akl4w, _TZE204_68utemio, ...) lives on wall_dimmer_tuya, so the _TZE284_ variant stays there (pinned) and is removed from dimmer_1_gang_tuya. Already-paired devices keep their driver.",
       "source": "P3014 https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/tuya.ts#L6115 + https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/tuya.ts#L6215"
+    },
+    {
+      "driver": "climate_sensor",
+      "mfr": [
+        "_tz3000_5af5r192",
+        "_TZ3000_5af5r192",
+        "_TZ3000_5AF5R192",
+        "_tz3000_5AF5R192"
+      ],
+      "why": "2026-10-24 P3015: _TZ3000_5af5r192 is the Moes ZWV-YC TS0049 water valve in Zigbee2MQTT (moes.ts#L1488), not a temperature/humidity sensor; the climate_sensor forms were bulk case-variant additions (P92.47/P92.61) without a hardware source and made _tz3000_5af5r192|TS0601 a dual couple with water_valve_garden. One driver per couple (user decision 2026-10-24); already-paired devices keep their driver.",
+      "source": "P3015 https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/moes.ts#L1488"
     }
   ]
 }
