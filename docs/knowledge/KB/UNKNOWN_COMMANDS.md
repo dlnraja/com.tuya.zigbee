@@ -82,7 +82,8 @@ Resolved, one reliable source each:
 - sinxpbrl MC101Z dimmer DP2 / DP102: DP2 = work mode (0 white, 1 colour, 2 scene, 3 music), DP102 = do-not-disturb (bool);
   also DP6 scene data, DP7 countdown (s), DP101 power memory. Source: Tuya schema in Koenkk/zigbee2mqtt#31445 (posted by
   YoshiWalsh, reported by wiwill61) and JohanBendz/com.tuya.zigbee#1504 (martinheie-ui). Code: `COUPLE_DP` for
-  `_TZE28C1000000_sinxpbrl` and `_TZE284_sinxpbrl` (decoders only on this branch).
+  `_TZE28C1000000_sinxpbrl` and `_TZE284_sinxpbrl`, plus `drivers/mc101z_pwm_dimmer` (store values; DP102 as an
+  opt-in setting written only when the user changes it).
 
 Still open (typed fallback kept: the frame is decoded by type, logged with raw payload, and can be taught):
 
