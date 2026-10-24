@@ -1,0 +1,45 @@
+{
+  "id": "unknown_commands_diag",
+  "title": {
+    "en": "Export unknown commands diagnostics of [[device]]",
+    "fr": "Exporter le diagnostic des commandes inconnues de [[device]]",
+    "nl": "Diagnose onbekende commando's van [[device]] exporteren",
+    "de": "Diagnose unbekannter Befehle von [[device]] exportieren"
+  },
+  "hint": {
+    "en": "JSON of learned patterns, inferred actions and counters. No names, ids or addresses (P3016).",
+    "fr": "JSON des motifs appris, actions déduites et compteurs. Sans nom, id ni adresse (P3016)."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "title": {
+        "en": "Device",
+        "fr": "Appareil",
+        "nl": "Apparaat",
+        "de": "Gerät"
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "name": "json",
+      "type": "string",
+      "title": {
+        "en": "Diagnostics (JSON)",
+        "fr": "Diagnostic (JSON)"
+      },
+      "example": "{\"v\":1}"
+    },
+    {
+      "name": "count",
+      "type": "number",
+      "title": {
+        "en": "Learned patterns",
+        "fr": "Motifs appris"
+      },
+      "example": 3
+    }
+  ]
+}

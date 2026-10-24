@@ -1,0 +1,90 @@
+{
+  "id": "unknown_command_received",
+  "title": {
+    "en": "An unknown command or DP was received",
+    "fr": "Une commande ou un DP inconnu a été reçu",
+    "nl": "Een onbekend commando of DP is ontvangen",
+    "de": "Ein unbekannter Befehl oder DP wurde empfangen"
+  },
+  "hint": {
+    "en": "Fires for frames and Tuya DPs no driver handles, with the decoded value and the inferred action (exact ZCL/Z2M/ZHA decoders first, learned or heuristic otherwise). Optional device filter (P3016).",
+    "fr": "Se déclenche pour les trames et DP Tuya non gérés, avec la valeur décodée et l'action déduite (décodeurs exacts ZCL/Z2M/ZHA d'abord, sinon appris ou heuristique). Filtre appareil optionnel (P3016)."
+  },
+  "tokens": [
+    {
+      "name": "device_name",
+      "type": "string",
+      "title": {
+        "en": "Device name",
+        "fr": "Nom de l'appareil"
+      },
+      "example": "Living remote"
+    },
+    {
+      "name": "cluster",
+      "type": "string",
+      "title": {
+        "en": "Cluster",
+        "fr": "Cluster"
+      },
+      "example": "0x0006"
+    },
+    {
+      "name": "command",
+      "type": "number",
+      "title": {
+        "en": "Command / DP",
+        "fr": "Commande / DP"
+      },
+      "example": 253
+    },
+    {
+      "name": "payload_hex",
+      "type": "string",
+      "title": {
+        "en": "Payload (hex)",
+        "fr": "Charge utile (hex)"
+      },
+      "example": "01"
+    },
+    {
+      "name": "decoded",
+      "type": "string",
+      "title": {
+        "en": "Decoded value",
+        "fr": "Valeur décodée"
+      },
+      "example": "{\"voltage\":244.2}"
+    },
+    {
+      "name": "inferred_action",
+      "type": "string",
+      "title": {
+        "en": "Inferred action",
+        "fr": "Action déduite"
+      },
+      "example": "double"
+    },
+    {
+      "name": "confidence",
+      "type": "number",
+      "title": {
+        "en": "Confidence (0–1)",
+        "fr": "Confiance (0–1)"
+      },
+      "example": 0.95
+    }
+  ],
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "title": {
+        "en": "Device (optional filter)",
+        "fr": "Appareil (filtre optionnel)",
+        "nl": "Apparaat (optioneel filter)",
+        "de": "Gerät (optionaler Filter)"
+      }
+    }
+  ]
+}
