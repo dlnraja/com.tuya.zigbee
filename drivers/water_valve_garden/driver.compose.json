@@ -129,6 +129,29 @@
       "value": ""
     },
     {
+      "id": "ts0049_water_countdown",
+      "type": "number",
+      "label": {
+        "en": "Watering countdown (HZ-WT02 only)",
+        "nl": "Aftelling bewatering (alleen HZ-WT02)",
+        "de": "Bewässerungs-Countdown (nur HZ-WT02)",
+        "fr": "Minuterie d'arrosage (HZ-WT02 uniquement)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 1440,
+      "step": 1,
+      "units": {
+        "en": "min"
+      },
+      "hint": {
+        "en": "Optional. 0 = off. For TS0049 _TZ3000_kz1anoi8 only: the valve closes by itself after this many minutes. Sent only when you change this value.",
+        "nl": "Optioneel. 0 = uit. Alleen voor TS0049 _TZ3000_kz1anoi8: de klep sluit zelf na dit aantal minuten. Wordt alleen verzonden als u deze waarde wijzigt.",
+        "de": "Optional. 0 = aus. Nur für TS0049 _TZ3000_kz1anoi8: Das Ventil schließt nach so vielen Minuten selbst. Wird nur gesendet, wenn Sie den Wert ändern.",
+        "fr": "Optionnel. 0 = désactivé. Uniquement pour TS0049 _TZ3000_kz1anoi8 : la vanne se ferme seule après ce nombre de minutes. Envoyé uniquement quand vous modifiez la valeur."
+      }
+    },
+    {
       "$extends": [
         "zcl_cluster_layer"
       ]
