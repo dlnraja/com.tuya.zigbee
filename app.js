@@ -12,6 +12,8 @@ try { require('./lib/zigbee/cluster/ClusterRegistry').install(); } catch (_) { /
 // Time cluster attributes, finite transition durations and the dim read-back fix from newer
 // Athom libraries, applied before any driver creates a ZCL node (see lib/zigbee/ZigbeeLibBackports).
 try { require('./lib/zigbee/ZigbeeLibBackports').apply(); } catch (_) { /* best-effort */ }
+// P3011: per-device memory of unsupported ZCL ops + unknown incoming frames → Flows (see file).
+try { require('./lib/zigbee/ZclUnsupportedGuard').install(); } catch (_) { /* best-effort */ }
 
 // WHY(P2306/P2351/P2373): Homey flow serializer can embed foreign driver URIs
 // (Hue ZG9101SAC_HP, virtualdriverzigbee) OR Homey class names (`light`).
@@ -289,9 +291,18 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
     // value after a device init only sets the baseline).
     try { require('./lib/flow/TriggerGuards').installTriggerCardGuard(this.homey.flow); } catch (_e) { /* soft */ }
 
+    // P3011: expected Zigbee outcomes (unsupported/READ_ONLY/timeout/transient) → one quiet,
+    // rate-limited line; real bugs keep the error-level log.
+    let rejectionTriage = null;
+    try {
+      rejectionTriage = require('./lib/zigbee/RejectionTriage').createTriage({
+        log: (...a) => this.log(...a),
+        error: (...a) => this.error(...a),
+      });
+    } catch (_e) { rejectionTriage = null; }
     process.on('unhandledRejection', (reason, promise) => {
       try {
-        this.error('UNHANDLED REJECTION at:', promise, 'reason:', reason);
+        if (rejectionTriage) { rejectionTriage.handle(reason, promise); } else { this.error('UNHANDLED REJECTION at:', promise, 'reason:', reason); }
       } catch (e) {
         console.error('Error logging unhandledRejection', e);
       }
@@ -335,6 +346,12 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
     try {
       registerCustomClusters(this);
       this.log('✅ Custom Zigbee clusters registered');
+      // P3011: guard the clusters registered just now too (idempotent)
+      try {
+        const zclGuard = require('./lib/zigbee/ZclUnsupportedGuard');
+        zclGuard.install();
+        if (this.homey.settings && this.homey.settings.get('zcl_unsupported_guard') === false) { zclGuard.setEnabled(false); }
+      } catch (_e) { /* best-effort */ }
     } catch (err) {
       this.error('❌ Failed to register custom clusters:', err);
     }
