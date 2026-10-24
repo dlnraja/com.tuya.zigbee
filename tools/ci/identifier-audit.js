@@ -28,7 +28,7 @@ function audit(root = ROOT) {
     const pids = [].concat(z.productId || []);
     for (const s of [...mfrs, ...pids]) {
       if (typeof s !== 'string') { malformed.push({ driver: d, value: String(s), why: 'not a string' }); continue; }
-      if (s !== s.trim()) { malformed.push({ driver: d, value: JSON.stringify(s), why: 'leading/trailing whitespace' }); } else if (INVISIBLE.test(s)) { malformed.push({ driver: d, value: JSON.stringify(s), why: 'invisible/control character' }); } else if (NON_ASCII.test(s)) { malformed.push({ driver: d, value: JSON.stringify(s), why: 'non-ASCII character' }); }
+      if (s !== s.trim()) { malformed.push({ driver: d, value: JSON.stringify(s), raw: s, why: 'leading/trailing whitespace' }); } else if (INVISIBLE.test(s)) { malformed.push({ driver: d, value: JSON.stringify(s), why: 'invisible/control character' }); } else if (NON_ASCII.test(s)) { malformed.push({ driver: d, value: JSON.stringify(s), why: 'non-ASCII character' }); }
     }
     const pidGroups = new Map();
     for (const pid of pids) { const k = String(pid).toUpperCase(); (pidGroups.get(k) || pidGroups.set(k, new Set()).get(k)).add(pid); }
@@ -53,18 +53,51 @@ function audit(root = ROOT) {
   return { malformed, hidden, pidVariants };
 }
 
-module.exports = { audit };
+// P2965: intentional padded manufacturerNames live in a separate, sourced, additive allowlist
+// (data/rules/padded-mfr-allowlist.json); the baseline stays shrink-only. A finding is accepted
+// only when it is padding (not invisible/non-ASCII), the raw string is byte-identical to an entry
+// AND it sits in that entry's driver. Case twins, other drivers and unlisted names still fail.
+const DEFAULT_ALLOWLIST = path.join(ROOT, 'data', 'rules', 'padded-mfr-allowlist.json');
+
+function loadAllowlist(file = DEFAULT_ALLOWLIST) {
+  if (!file || !fs.existsSync(file)) { return []; }
+  const j = JSON.parse(fs.readFileSync(file, 'utf8'));
+  const entries = Array.isArray(j) ? j : j.entries || [];
+  for (const e of entries) {
+    if (typeof e.value !== 'string' || e.value === e.value.trim() || !e.driver || !e.source || !e.source.url || !(e.decision || []).length) {
+      throw new Error(`padded-mfr allowlist: invalid entry ${JSON.stringify(e)} (needs padded value, driver, source.url, decision)`);
+    }
+  }
+  return entries;
+}
+
+function isAllowlisted(finding, entries) {
+  if (!finding || finding.why !== 'leading/trailing whitespace' || typeof finding.raw !== 'string') { return false; }
+  return entries.some((e) => e.driver === finding.driver && e.value === finding.raw);
+}
+
+function applyAllowlist(result, entries) {
+  const allowed = result.malformed.filter((m) => isAllowlisted(m, entries));
+  return { ...result, malformed: result.malformed.filter((m) => !isAllowlisted(m, entries)), allowlisted: allowed };
+}
+
+function freshVsBaseline(result, base) {
+  const known = new Set([...(base.malformed || []).map((m) => `${m.driver}:${m.value}`), ...(base.hidden || []).map((h) => h.key)]);
+  return [...result.malformed.map((m) => `${m.driver}:${m.value}`), ...result.hidden.map((h) => h.key)].filter((k) => !known.has(k));
+}
+
+module.exports = { audit, loadAllowlist, isAllowlisted, applyAllowlist, freshVsBaseline, DEFAULT_ALLOWLIST };
 
 if (require.main === module) {
-  const r = audit();
   const args = process.argv.slice(2);
+  const ai = args.indexOf('--allowlist');
+  const r = applyAllowlist(audit(), loadAllowlist(ai >= 0 ? args[ai + 1] : DEFAULT_ALLOWLIST));
   const bi = args.indexOf('--baseline');
   if (args.includes('--json')) { console.log(JSON.stringify(r, null, 1)); process.exit(0); }
-  console.log(`[identifier-audit] malformed=${r.malformed.length} hidden-case-collisions=${r.hidden.length} pid-case-variants=${r.pidVariants.length}`);
+  console.log(`[identifier-audit] malformed=${r.malformed.length} allowlisted-padded=${r.allowlisted.length} hidden-case-collisions=${r.hidden.length} pid-case-variants=${r.pidVariants.length}`);
   if (bi >= 0) {
     const base = JSON.parse(fs.readFileSync(args[bi + 1], 'utf8'));
-    const known = new Set([...(base.malformed || []).map((m) => `${m.driver}:${m.value}`), ...(base.hidden || []).map((h) => h.key)]);
-    const fresh = [...r.malformed.map((m) => `${m.driver}:${m.value}`), ...r.hidden.map((h) => h.key)].filter((k) => !known.has(k));
+    const fresh = freshVsBaseline(r, base);
     if (fresh.length) { console.error(`[identifier-audit] FAIL ${fresh.length} new:\n  ${fresh.slice(0, 30).join('\n  ')}`); process.exit(1); }
     console.log('[identifier-audit] OK 0 new vs baseline');
   }

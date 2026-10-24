@@ -4,7 +4,7 @@ const assert = require('assert');
 const fs = require('fs');
 const os = require('os');
 const path = require('path');
-const { audit } = require('../tools/ci/identifier-audit');
+const { audit, loadAllowlist, applyAllowlist, freshVsBaseline } = require('../tools/ci/identifier-audit');
 
 function fixture(drivers) {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'ida-'));
@@ -37,9 +37,7 @@ describe('R20 identifier audit', () => {
   it('repository has no new entries beyond the baseline', function () {
     this.timeout(60000);
     const base = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'tools', 'ci', 'identifier-audit-baseline.json'), 'utf8'));
-    const known = new Set([...base.malformed.map((m) => `${m.driver}:${m.value}`), ...base.hidden.map((h) => h.key)]);
-    const r = audit();
-    const fresh = [...r.malformed.map((m) => `${m.driver}:${m.value}`), ...r.hidden.map((h) => h.key)].filter((k) => !known.has(k));
-    assert.deepStrictEqual(fresh, []);
+    const r = applyAllowlist(audit(), loadAllowlist());
+    assert.deepStrictEqual(freshVsBaseline(r, base), []);
   });
 });
