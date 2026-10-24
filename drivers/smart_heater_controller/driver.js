@@ -23,7 +23,7 @@ async onInit() {
       const __card = this.homey.flow.getConditionCard('smart_heater_controller_is_on');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
@@ -33,7 +33,7 @@ async onInit() {
       const __card = this.homey.flow.getActionCard('smart_heater_controller_turn_on');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           if (typeof args.device.safeSetCapabilityValue === 'function') {
             await args.device.safeSetCapabilityValue('onoff', true).catch(() => {});
           } else {
@@ -48,7 +48,7 @@ async onInit() {
       const __card = this.homey.flow.getActionCard('smart_heater_controller_turn_off');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           if (typeof args.device.safeSetCapabilityValue === 'function') {
             await args.device.safeSetCapabilityValue('onoff', false).catch(() => {});
           } else {
@@ -63,7 +63,7 @@ async onInit() {
       const __card = this.homey.flow.getActionCard('smart_heater_controller_toggle');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const v = !args.device.getCapabilityValue('onoff');
           if (typeof args.device.safeSetCapabilityValue === 'function') {
             await args.device.safeSetCapabilityValue('onoff', v).catch(() => {});
@@ -79,9 +79,9 @@ async onInit() {
       const __card = this.homey.flow.getActionCard('smart_heater_controller_set_temperature');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const raw = args.temperature ?? args.brightness ?? args.dim ?? args.value ?? args.speed;
-          if (raw === undefined) return false;
+          if (raw === undefined) {return false;}
           if (typeof args.device.safeSetCapabilityValue === 'function') {
             await args.device.safeSetCapabilityValue('target_temperature', raw).catch(() => {});
           } else {

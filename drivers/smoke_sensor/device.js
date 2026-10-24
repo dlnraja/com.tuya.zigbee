@@ -34,7 +34,7 @@ class smoke_sensor extends TuyaZigbeeDevice {
   onIASZoneStatusChangeNotification({ zoneStatus, extendedStatus, zoneId, delay }) {
     this.log('IASZoneStatusChangeNotification received:', zoneStatus, extendedStatus, zoneId, delay);
     const set = (cap, val) => {
-      if (typeof this.hasCapability === 'function' && !this.hasCapability(cap)) return;
+      if (typeof this.hasCapability === 'function' && !this.hasCapability(cap)) {return;}
       this.safeSetCapabilityValue(cap, val).catch((e) => this.error(e));
     };
     set('alarm_smoke', !!(zoneStatus && zoneStatus.alarm1));

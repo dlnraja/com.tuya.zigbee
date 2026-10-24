@@ -10,7 +10,7 @@ class SmartScenePanelDriver extends ZigBeeDriver {
       const __card = this.homey.flow.getActionCard('smart_scene_panel_set_switch_1');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const v = !!(args.value ?? args.state ?? args.onoff);
           if (typeof args.device.safeSetCapabilityValue === 'function') {
             await args.device.safeSetCapabilityValue('onoff', v).catch(() => {});
@@ -26,7 +26,7 @@ class SmartScenePanelDriver extends ZigBeeDriver {
       const __card = this.homey.flow.getActionCard('smart_scene_panel_set_switch_2');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const v = !!(args.value ?? args.state ?? args.onoff);
           if (typeof args.device.safeSetCapabilityValue === 'function') {
             await args.device.safeSetCapabilityValue('onoff.2', v).catch(() => {});
@@ -42,7 +42,7 @@ class SmartScenePanelDriver extends ZigBeeDriver {
       const __card = this.homey.flow.getActionCard('smart_scene_panel_set_switch_3');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const v = !!(args.value ?? args.state ?? args.onoff);
           if (typeof args.device.safeSetCapabilityValue === 'function') {
             await args.device.safeSetCapabilityValue('onoff.3', v).catch(() => {});
@@ -58,7 +58,7 @@ class SmartScenePanelDriver extends ZigBeeDriver {
       const __card = this.homey.flow.getActionCard('smart_scene_panel_set_switch_4');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const v = !!(args.value ?? args.state ?? args.onoff);
           if (typeof args.device.safeSetCapabilityValue === 'function') {
             await args.device.safeSetCapabilityValue('onoff.4', v).catch(() => {});

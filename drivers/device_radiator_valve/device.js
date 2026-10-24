@@ -146,10 +146,10 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
   }
 
   async _stripPhantomHumidity() {
-    if (!this._isNoHumidityTrv() || !this.hasCapability('measure_humidity')) return;
+    if (!this._isNoHumidityTrv() || !this.hasCapability('measure_humidity')) {return;}
     try {
       const cur = this.getCapabilityValue('measure_humidity');
-      if (cur !== null && cur !== undefined) return; // real data was reported: never remove
+      if (cur !== null && cur !== undefined) {return;} // real data was reported: never remove
       await this.removeCapability('measure_humidity');
       this.log('[TRV] #560 removed phantom measure_humidity (TRV06 has no humidity sensor)');
     } catch (e) {
@@ -193,7 +193,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
   }
 
   async _alignTrv06Battery() {
-    if (!this._isNoHumidityTrv()) return;
+    if (!this._isNoHumidityTrv()) {return;}
     try {
       if (!this.hasCapability('alarm_battery')) {
         await this.addCapability('alarm_battery');
@@ -337,7 +337,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     // (super thermostat init may have run with empty mfr → wrong/empty dynamic maps)
     try {
       if (this.dpProfile === 'me167') {
-        this._dynamicDpMappings = { ...(this._dynamicDpMappings || {}), ...this.dpMappings };
+        this._dynamicDpMappings = { ...this._dynamicDpMappings || {}, ...this.dpMappings };
         this.log('[TRV] P2594 me167 DP maps re-locked after identity');
       }
       await this._setupTuyaDPMode?.();
@@ -416,7 +416,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       this._trvInitAt = this._trvInitAt || Date.now();
       this._deviceInitTime = this._deviceInitTime || this._trvInitAt;
       safeSetTimeout(this, () => {
-        if (this._destroyed) return;
+        if (this._destroyed) {return;}
         const dps = this.dpProfile === 'me167'
           ? [2, 3, 4, 5, 7, 13, 15, 35]
           : [1, 2, 3, 4, 13, 15];
@@ -426,7 +426,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
           tuyaDataQuery(this, dps, { logPrefix: '[TRV-REFRESH]', force: true }).catch(() => {});
         } catch (_e) {
           const mgr = this.tuyaEF00Manager;
-          if (!mgr || typeof mgr.requestDP !== 'function') return;
+          if (!mgr || typeof mgr.requestDP !== 'function') {return;}
           for (const id of dps) {
             try { mgr.requestDP(id, { force: true }).catch(() => {}); } catch (_e2) { /* soft */ }
           }
@@ -480,7 +480,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     // On/Off - NOT handled by parent (standard profile only)
     if (this.hasCapability('onoff')) {
       this.registerCapabilityListener('onoff', async (v) => {
-        if (this.dpProfile !== 'standard') return;
+        if (this.dpProfile !== 'standard') {return;}
         await this._sendTuyaDP(1, v, 'bool');
       });
     }
@@ -522,14 +522,14 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     try {
       if (this.tuyaEF00Manager && typeof this.tuyaEF00Manager.sendDP === 'function') {
         const ok = await this.tuyaEF00Manager.sendDP(dp, value, typeName);
-        if (ok) return true;
+        if (ok) {return true;}
       }
       if (this.io && typeof this.io.sendDP === 'function') {
         const ok = await this.io.sendDP(dp, value, { type: typeName });
-        if (ok) return true;
+        if (ok) {return true;}
       }
       const { sendTuyaDP } = require('../../lib/helpers/UniversalDriverInit');
-      return !!(await sendTuyaDP(this, dp, value, typeName));
+      return !!await sendTuyaDP(this, dp, value, typeName);
     } catch (err) {
       this.error(`[TRV] DP${dp} TX failed:`, err?.message || err);
       throw err;

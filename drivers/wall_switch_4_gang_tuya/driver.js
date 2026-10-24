@@ -9,11 +9,11 @@ const { Driver } = require('homey');
 class WallSwitch4GangTuyaDriver extends Driver {
   async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
 
     const gangAction = async (args, gang, value) => {
-      if (!args.device) return false;
+      if (!args.device) {return false;}
       if (typeof args.device._setGangOnOff === 'function') {
         await args.device._setGangOnOff(gang, value);
       } else {
@@ -23,7 +23,7 @@ class WallSwitch4GangTuyaDriver extends Driver {
     };
 
     const toggleGang = async (args, gang) => {
-      if (!args.device) return false;
+      if (!args.device) {return false;}
       const cur = args.device.getCapabilityValue('onoff') === true;
       return gangAction(args, gang, !cur);
     };
@@ -52,7 +52,7 @@ class WallSwitch4GangTuyaDriver extends Driver {
 
     this.homey.flow.getActionCard('wall_switch_4_gang_tuya_set_backlight')
       ?.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         await args.device.setSettings({ backlight_mode: args.mode }).catch(() => {});
         await args.device._applySettingsToDevice?.({ backlight_mode: args.mode }, ['backlight_mode']);
         return true;
@@ -60,7 +60,7 @@ class WallSwitch4GangTuyaDriver extends Driver {
 
     this.homey.flow.getActionCard('wall_switch_4_gang_tuya_set_power_on_behavior')
       ?.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         await args.device.setSettings({ power_on_behavior: args.mode }).catch(() => {});
         await args.device._applySettingsToDevice?.({ power_on_behavior: args.mode }, ['power_on_behavior']);
         return true;
@@ -68,21 +68,21 @@ class WallSwitch4GangTuyaDriver extends Driver {
 
     this.homey.flow.getActionCard('wall_switch_4_gang_tuya_set_child_lock')
       ?.registerRunListener(async (args) => {
-        if (!args.device?.setChildLock) return false;
+        if (!args.device?.setChildLock) {return false;}
         await args.device.setChildLock(!!args.locked);
         return true;
       });
 
     this.homey.flow.getActionCard('wall_switch_4_gang_tuya_set_backlight_switch')
       ?.registerRunListener(async (args) => {
-        if (!args.device?.setBacklightSwitch) return false;
+        if (!args.device?.setBacklightSwitch) {return false;}
         await args.device.setBacklightSwitch(!!args.on);
         return true;
       });
 
     this.homey.flow.getActionCard('wall_switch_4_gang_tuya_set_countdown')
       ?.registerRunListener(async (args) => {
-        if (!args.device?.setGangCountdown) return false;
+        if (!args.device?.setGangCountdown) {return false;}
         const gang = Number(args.gang) || 1;
         await args.device.setGangCountdown(gang, Number(args.seconds) || 0);
         return true;
@@ -92,13 +92,13 @@ class WallSwitch4GangTuyaDriver extends Driver {
     for (const gang of [1, 2, 3, 4]) {
       this.homey.flow.getConditionCard(`wall_switch_4_gang_tuya_gang${gang}_is_on`)
         ?.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
     }
     this.homey.flow.getConditionCard('wall_switch_4_gang_tuya_is_on')
       ?.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         return args.device.getCapabilityValue('onoff') === true;
       });
   }

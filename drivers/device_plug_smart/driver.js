@@ -24,7 +24,7 @@ class PlugSmartDriver extends ZigBeeDriver {
       const __card = this.homey.flow.getConditionCard('device_plug_smart_is_on');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
@@ -34,7 +34,7 @@ class PlugSmartDriver extends ZigBeeDriver {
       const __card = this.homey.flow.getActionCard('device_plug_smart_turn_on');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           if (typeof args.device.safeSetCapabilityValue === 'function') {
             await args.device.safeSetCapabilityValue('onoff', true).catch(() => {});
           } else {
@@ -49,7 +49,7 @@ class PlugSmartDriver extends ZigBeeDriver {
       const __card = this.homey.flow.getActionCard('device_plug_smart_turn_off');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           if (typeof args.device.safeSetCapabilityValue === 'function') {
             await args.device.safeSetCapabilityValue('onoff', false).catch(() => {});
           } else {
@@ -64,7 +64,7 @@ class PlugSmartDriver extends ZigBeeDriver {
       const __card = this.homey.flow.getActionCard('device_plug_smart_toggle');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const v = !args.device.getCapabilityValue('onoff');
           if (typeof args.device.safeSetCapabilityValue === 'function') {
             await args.device.safeSetCapabilityValue('onoff', v).catch(() => {});
@@ -80,7 +80,7 @@ class PlugSmartDriver extends ZigBeeDriver {
       const __card = this.homey.flow.getActionCard('device_plug_smart_turn_on_delay');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           if (typeof args.device.safeSetCapabilityValue === 'function') {
             await args.device.safeSetCapabilityValue('onoff', true).catch(() => {});
           } else {
@@ -95,7 +95,7 @@ class PlugSmartDriver extends ZigBeeDriver {
       const __card = this.homey.flow.getActionCard('device_plug_smart_turn_off_delay');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           if (typeof args.device.safeSetCapabilityValue === 'function') {
             await args.device.safeSetCapabilityValue('onoff', false).catch(() => {});
           } else {

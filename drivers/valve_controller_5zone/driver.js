@@ -3,7 +3,7 @@
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 const D = 'valve_controller_5zone';
-const capOf = (g) => (g === 1 ? 'onoff' : `onoff.gang${g}`);
+const capOf = (g) => g === 1 ? 'onoff' : `onoff.gang${g}`;
 
 class ValveController5ZoneDriver extends ZigBeeDriver {
   async onInit() {
@@ -25,7 +25,7 @@ class ValveController5ZoneDriver extends ZigBeeDriver {
   }
 
   _cond(id, fn) {
-    try { this.homey.flow.getConditionCard(id).registerRunListener(async (args) => (args.device ? fn(args) : false)); } catch (e) { this.error(`condition ${id}: ${e.message}`); }
+    try { this.homey.flow.getConditionCard(id).registerRunListener(async (args) => args.device ? fn(args) : false); } catch (e) { this.error(`condition ${id}: ${e.message}`); }
   }
 
   _act(id, fn) {

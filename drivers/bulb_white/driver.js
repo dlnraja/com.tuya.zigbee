@@ -15,7 +15,7 @@ class SmartBulbWhiteDriver extends ZigBeeDriver {
       const __card = this.homey.flow.getConditionCard('bulb_white_is_on');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
@@ -25,7 +25,7 @@ class SmartBulbWhiteDriver extends ZigBeeDriver {
       const __card = this.homey.flow.getActionCard('bulb_white_turn_on');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           if (typeof args.device.safeSetCapabilityValue === 'function') {
             await args.device.safeSetCapabilityValue('onoff', true).catch(() => {});
           } else {
@@ -40,7 +40,7 @@ class SmartBulbWhiteDriver extends ZigBeeDriver {
       const __card = this.homey.flow.getActionCard('bulb_white_turn_off');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           if (typeof args.device.safeSetCapabilityValue === 'function') {
             await args.device.safeSetCapabilityValue('onoff', false).catch(() => {});
           } else {
@@ -55,7 +55,7 @@ class SmartBulbWhiteDriver extends ZigBeeDriver {
       const __card = this.homey.flow.getActionCard('bulb_white_toggle');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const v = !args.device.getCapabilityValue('onoff');
           if (typeof args.device.safeSetCapabilityValue === 'function') {
             await args.device.safeSetCapabilityValue('onoff', v).catch(() => {});
@@ -71,9 +71,9 @@ class SmartBulbWhiteDriver extends ZigBeeDriver {
       const __card = this.homey.flow.getActionCard('bulb_white_set_dim');
       if (__card) {
         __card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const raw = args.temperature ?? args.brightness ?? args.dim ?? args.value ?? args.speed;
-          if (raw === undefined) return false;
+          if (raw === undefined) {return false;}
           if (typeof args.device.safeSetCapabilityValue === 'function') {
             await args.device.safeSetCapabilityValue('dim', raw).catch(() => {});
           } else {
@@ -99,7 +99,7 @@ class SmartBulbWhiteDriver extends ZigBeeDriver {
           if (raw == null) { return false; }
           let dim = Number(raw);
           if (!Number.isFinite(dim)) { return false; }
-          if (dim > 1) dim /= 100;
+          if (dim > 1) {dim /= 100;}
           dim = Math.max(0, Math.min(1, dim));
           return setActuatorCapability(args.device, 'dim', dim);
         });

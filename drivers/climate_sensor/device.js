@@ -25,7 +25,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
       pid = this.getSetting?.('zb_model_id') || this.getData?.()?.productId || '';
     } catch (_e) { /* soft */ }
     const eweTh = /ewelink/i.test(String(mfr)) || /CK-TLSR8656-SS5-0[12]\(7014\)/i.test(String(pid));
-    if (!eweTh) return base;
+    if (!eweTh) {return base;}
     return Object.assign({}, base, {
       noEf00: true,
       skipEf00Tx: true,
