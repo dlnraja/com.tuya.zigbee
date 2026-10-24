@@ -66,6 +66,7 @@ Forum topics scanned for unknown commands: Homey Community 140352 and 26439 (ano
 | `scripts/data/zha-tuya-dps.json` | [zigpy/zha-device-handlers](https://github.com/zigpy/zha-device-handlers) Tuya quirks (KB index) | Apache-2.0 | 1d6598c32a | DP numbers per couple (coverage audit) |
 | `scripts/data/zha-quirk-dps.json` | [zigpy/zha-device-handlers](https://github.com/zigpy/zha-device-handlers) `zhaquirks/**` (QuirkBuilder v2 chains + v1 `dp_to_attribute`) | Apache-2.0 | 1d6598c32a | P3018b: exact per-quirk couple → DP + attribute name + scaling (ZCL centi-units converted); fill-only into the catalogue |
 | `scripts/data/deconz-tuya-dps.json` | [dresden-elektronik/deconz-rest-plugin](https://github.com/dresden-elektronik/deconz-rest-plugin) `devices/**/*.json` DDF (`fn: tuya` items) | BSD-3-Clause | a4c17adfa0 | P3018b: exact couple → dpid + item + scaling (deCONZ 0.01 units converted); fill-only into the catalogue |
+| `lib/zigbee/data/inferred-dp-family.json` | derived from the catalogue rows above (no new upstream) | — | — | P3018b: optional **inferred** family candidates (pid+driver / driver / name+DP id), confirmed per device at runtime by `lib/zigbee/InferredDpLayer.js` (master) |
 | `lib/zigbee/EndpointCoverage.js` | ZCL specification (cluster ids, measuredValue scaling) | — | — | passive per-endpoint routing |
 
 
