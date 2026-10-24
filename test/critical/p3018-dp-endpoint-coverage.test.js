@@ -1,4 +1,6 @@
 'use strict';
+// WHY: the critical suite also runs these files with `node --test` (no mocha globals) — same as p3017.
+const { describe, it } = require('node:test');
 
 // P3018 — every DP and every endpoint handled: Z2M tuyaDatapoints harvest (names + converters),
 // catalogue v2, exact decoder with guards, interpreter exact values, passive endpoint coverage
