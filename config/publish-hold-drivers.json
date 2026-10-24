@@ -1,6 +1,77 @@
 {
   "_why": "Drivers kept in source but left out of the Athom publish payload while they break Athom processing. Never-published drivers only (no paired device can depend on them). Re-enable by removing the entry once a dedicated bisect build passes.",
-  "drivers": [],
+  "drivers": [
+    {
+      "id": "heiman_keyfob",
+      "since": "2026-10-25",
+      "addedBy": "3a9b121226 P2921",
+      "reason": "P3024 attempt 1 (25/10/2026): every master build after the 21/10 Athom incident (#3676-#3678, v9.0.1593-1595) added new never-published pairable driver ids on top of Test #3655 v9.0.1574 (347 -> 352 -> 356 drivers) and failed AggregateError; same pattern as SPI 9/9 and whd02/valve_5zone on 10-11/10. Held as one group to put the payload driver set back to the 1574 set. Never published (absent from test/fixtures/athom-test-9.0.1574-driver-ids.json); its couples are absent from 1574, so no paired device loses its driver. Graduate one id per release_held dispatch once a build reaches Test.",
+      "sacredCouplesOwnedElsewhere": false
+    },
+    {
+      "id": "heiman_siren",
+      "since": "2026-10-25",
+      "addedBy": "3a9b121226 P2921",
+      "reason": "P3024 attempt 1 (25/10/2026): every master build after the 21/10 Athom incident (#3676-#3678, v9.0.1593-1595) added new never-published pairable driver ids on top of Test #3655 v9.0.1574 (347 -> 352 -> 356 drivers) and failed AggregateError; same pattern as SPI 9/9 and whd02/valve_5zone on 10-11/10. Held as one group to put the payload driver set back to the 1574 set. Never published (absent from test/fixtures/athom-test-9.0.1574-driver-ids.json); its couples are absent from 1574, so no paired device loses its driver. Graduate one id per release_held dispatch once a build reaches Test.",
+      "sacredCouplesOwnedElsewhere": false
+    },
+    {
+      "id": "presence_radar_aoyan_ay204t",
+      "since": "2026-10-25",
+      "addedBy": "df30cef713 P2958",
+      "reason": "P3024 attempt 1 (25/10/2026): every master build after the 21/10 Athom incident (#3676-#3678, v9.0.1593-1595) added new never-published pairable driver ids on top of Test #3655 v9.0.1574 (347 -> 352 -> 356 drivers) and failed AggregateError; same pattern as SPI 9/9 and whd02/valve_5zone on 10-11/10. Held as one group to put the payload driver set back to the 1574 set. Never published (absent from test/fixtures/athom-test-9.0.1574-driver-ids.json); its couples are absent from 1574, so no paired device loses its driver. Graduate one id per release_held dispatch once a build reaches Test.",
+      "sacredCouplesOwnedElsewhere": false
+    },
+    {
+      "id": "water_leak_aoyan_ay222z",
+      "since": "2026-10-25",
+      "addedBy": "df30cef713 P2958",
+      "reason": "P3024 attempt 1 (25/10/2026): every master build after the 21/10 Athom incident (#3676-#3678, v9.0.1593-1595) added new never-published pairable driver ids on top of Test #3655 v9.0.1574 (347 -> 352 -> 356 drivers) and failed AggregateError; same pattern as SPI 9/9 and whd02/valve_5zone on 10-11/10. Held as one group to put the payload driver set back to the 1574 set. Never published (absent from test/fixtures/athom-test-9.0.1574-driver-ids.json); its couples are absent from 1574, so no paired device loses its driver. Graduate one id per release_held dispatch once a build reaches Test.",
+      "sacredCouplesOwnedElsewhere": false
+    },
+    {
+      "id": "water_leak_blitzwolf_bw_is9",
+      "since": "2026-10-25",
+      "addedBy": "df30cef713 P2958",
+      "reason": "P3024 attempt 1 (25/10/2026): every master build after the 21/10 Athom incident (#3676-#3678, v9.0.1593-1595) added new never-published pairable driver ids on top of Test #3655 v9.0.1574 (347 -> 352 -> 356 drivers) and failed AggregateError; same pattern as SPI 9/9 and whd02/valve_5zone on 10-11/10. Held as one group to put the payload driver set back to the 1574 set. Never published (absent from test/fixtures/athom-test-9.0.1574-driver-ids.json); its couples are absent from 1574, so no paired device loses its driver. Graduate one id per release_held dispatch once a build reaches Test.",
+      "sacredCouplesOwnedElsewhere": false
+    },
+    {
+      "id": "sauna_thermostat_ae5503",
+      "since": "2026-10-25",
+      "addedBy": "f7dc12b775 P3011-P3013",
+      "reason": "P3024 attempt 1 (25/10/2026): every master build after the 21/10 Athom incident (#3676-#3678, v9.0.1593-1595) added new never-published pairable driver ids on top of Test #3655 v9.0.1574 (347 -> 352 -> 356 drivers) and failed AggregateError; same pattern as SPI 9/9 and whd02/valve_5zone on 10-11/10. Held as one group to put the payload driver set back to the 1574 set. Never published (absent from test/fixtures/athom-test-9.0.1574-driver-ids.json); its couples are absent from 1574, so no paired device loses its driver. Graduate one id per release_held dispatch once a build reaches Test.",
+      "sacredCouplesOwnedElsewhere": false
+    },
+    {
+      "id": "siren_moes_mg_bjq002",
+      "since": "2026-10-25",
+      "addedBy": "f7dc12b775 P3011-P3013",
+      "reason": "P3024 attempt 1 (25/10/2026): every master build after the 21/10 Athom incident (#3676-#3678, v9.0.1593-1595) added new never-published pairable driver ids on top of Test #3655 v9.0.1574 (347 -> 352 -> 356 drivers) and failed AggregateError; same pattern as SPI 9/9 and whd02/valve_5zone on 10-11/10. Held as one group to put the payload driver set back to the 1574 set. Never published (absent from test/fixtures/athom-test-9.0.1574-driver-ids.json); its couples are absent from 1574, so no paired device loses its driver. Graduate one id per release_held dispatch once a build reaches Test.",
+      "sacredCouplesOwnedElsewhere": false
+    },
+    {
+      "id": "switch_wall_6gang_metering",
+      "since": "2026-10-25",
+      "addedBy": "f7dc12b775 P3011-P3013",
+      "reason": "P3024 attempt 1 (25/10/2026): every master build after the 21/10 Athom incident (#3676-#3678, v9.0.1593-1595) added new never-published pairable driver ids on top of Test #3655 v9.0.1574 (347 -> 352 -> 356 drivers) and failed AggregateError; same pattern as SPI 9/9 and whd02/valve_5zone on 10-11/10. Held as one group to put the payload driver set back to the 1574 set. Never published (absent from test/fixtures/athom-test-9.0.1574-driver-ids.json); its couples are absent from 1574, so no paired device loses its driver. Graduate one id per release_held dispatch once a build reaches Test.",
+      "sacredCouplesOwnedElsewhere": false
+    },
+    {
+      "id": "valve_novato_zpv01",
+      "since": "2026-10-25",
+      "addedBy": "f7dc12b775 P3011-P3013",
+      "reason": "P3024 attempt 1 (25/10/2026): every master build after the 21/10 Athom incident (#3676-#3678, v9.0.1593-1595) added new never-published pairable driver ids on top of Test #3655 v9.0.1574 (347 -> 352 -> 356 drivers) and failed AggregateError; same pattern as SPI 9/9 and whd02/valve_5zone on 10-11/10. Held as one group to put the payload driver set back to the 1574 set. Never published (absent from test/fixtures/athom-test-9.0.1574-driver-ids.json); its couples are absent from 1574, so no paired device loses its driver. Graduate one id per release_held dispatch once a build reaches Test.",
+      "sacredCouplesOwnedElsewhere": false
+    },
+    {
+      "id": "switch_2gang_ts0002",
+      "since": "2026-10-25",
+      "addedBy": "4094a7a6ed P3021c",
+      "reason": "P3024 attempt 1 (25/10/2026): every master build after the 21/10 Athom incident (#3676-#3678, v9.0.1593-1595) added new never-published pairable driver ids on top of Test #3655 v9.0.1574 (347 -> 352 -> 356 drivers) and failed AggregateError; same pattern as SPI 9/9 and whd02/valve_5zone on 10-11/10. Held as one group to put the payload driver set back to the 1574 set. Never published (absent from test/fixtures/athom-test-9.0.1574-driver-ids.json); its couples are absent from 1574, so no paired device loses its driver. Graduate one id per release_held dispatch once a build reaches Test.",
+      "sacredCouplesOwnedElsewhere": false
+    }
+  ],
   "_graduated": {
     "switch_module_whd02": "2026-10-19 one-shot release (dispatch release_held, run 39177562443): master #3604 v9.0.1523 reached Test with the driver in the payload; earlier AggregateError builds were not content-related (same-content flip rule). Removed from hold; never hold a published driver again.",
     "valve_controller_5zone": "2026-10-19 one-shot release (dispatch release_held, run 39293541334): master #3635 v9.0.1554 reached Test first try with the driver in the payload (31 flow cards). The 2026-10-11 AggregateErrors were not content-related. Removed from hold; never hold a published driver again. Couple _TZ3000_j0ktmul1/TS011F stays on switch_4gang (moving it back is a separate decision)."
