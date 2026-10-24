@@ -25,7 +25,7 @@ describe('P2561 publish size gate prepared-temp preference', () => {
     assert.match(src, /P2561/);
   });
 
-  it('stable Publish workflow caps combos at master-aligned 14000/1500', () => {
+  it('stable Publish workflow caps combos at master-aligned 15500/1500 (P3024b)', () => {
     const yml = path.join(ROOT, '.github/workflows/publish-stable.yml');
     if (!fs.existsSync(yml)) {
       // master track may not ship this workflow — soft OK
@@ -33,7 +33,7 @@ describe('P2561 publish size gate prepared-temp preference', () => {
       return;
     }
     const y = fs.readFileSync(yml, 'utf8');
-    assert.match(y, /HOMEY_ZIGBEE_MAX_TOTAL_COMBOS:\s*"14000"/);
+    assert.match(y, /HOMEY_ZIGBEE_MAX_TOTAL_COMBOS:\s*"15500"/);
     assert.match(y, /HOMEY_ZIGBEE_MAX_DRIVER_COMBOS:\s*"1500"/);
   });
 });
