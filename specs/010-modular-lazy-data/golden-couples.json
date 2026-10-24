@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-24T19:21:25.956Z",
+ "generated": "2026-10-24T21:43:59.687Z",
  "drivers": 402,
  "snapshot": {
   "air_purifier": {
@@ -189,9 +189,9 @@
    "pidSha": "97471aa91d3d60d5"
   },
   "button_wireless_2": {
-   "mfr": 96,
+   "mfr": 95,
    "pid": 100,
-   "mfrSha": "39f36c534e602b43",
+   "mfrSha": "12c2dd06a955e142",
    "pidSha": "25b2f5f37b8e4dd1"
   },
   "button_wireless_3": {
@@ -285,9 +285,9 @@
    "pidSha": "3427697d0c296c9d"
   },
   "climate_sensor": {
-   "mfr": 531,
+   "mfr": 519,
    "pid": 32,
-   "mfrSha": "cebfbde687d23e38",
+   "mfrSha": "0cf6b36c496b5064",
    "pidSha": "4809a771f46a5606"
   },
   "climate_sensor_device": {
@@ -399,9 +399,9 @@
    "pidSha": "c4343290bac9e455"
   },
   "curtain_motor": {
-   "mfr": 281,
+   "mfr": 278,
    "pid": 48,
-   "mfrSha": "824a398693118f72",
+   "mfrSha": "d8125ede2f0462d1",
    "pidSha": "00ba96ff94eb4bb5"
   },
   "curtain_motor_shutter": {
@@ -585,10 +585,10 @@
    "pidSha": "455c46e8c8549693"
   },
   "device_radiator_valve": {
-   "mfr": 107,
-   "pid": 1,
-   "mfrSha": "cc1bbd1629632f4d",
-   "pidSha": "455c46e8c8549693"
+   "mfr": 106,
+   "pid": 2,
+   "mfrSha": "79127ef317e86121",
+   "pidSha": "eb014cbe97d74de9"
   },
   "device_radiator_valve_smart": {
    "mfr": 2,
@@ -687,9 +687,9 @@
    "pidSha": "c24425335e22bfa5"
   },
   "dimmer_wall_1gang": {
-   "mfr": 27,
+   "mfr": 25,
    "pid": 20,
-   "mfrSha": "c1b3d3fa0efb588c",
+   "mfrSha": "b72abd63ec850823",
    "pidSha": "fafa2cc8c54068d7"
   },
   "dimmer_wall_plug": {
@@ -1005,9 +1005,9 @@
    "pidSha": "a858b6b4f28cd785"
   },
   "lcdtemphumidsensor_3": {
-   "mfr": 12,
+   "mfr": 11,
    "pid": 2,
-   "mfrSha": "e3e3f2e5440d194f",
+   "mfrSha": "f157e0a782d271a2",
    "pidSha": "eb0037885ed202bb"
   },
   "lcdtemphumidsensor_plug_energy": {
@@ -1113,9 +1113,9 @@
    "pidSha": "aa6986b1f318a8de"
   },
   "mc101z_pwm_dimmer": {
-   "mfr": 1,
+   "mfr": 2,
    "pid": 1,
-   "mfrSha": "0d359a106b3ddf4a",
+   "mfrSha": "4de55c1f080cf5f9",
    "pidSha": "455c46e8c8549693"
   },
   "module_mini_switch": {
@@ -1251,9 +1251,9 @@
    "pidSha": "3041fd34f640ddcb"
   },
   "presence_sensor_radar": {
-   "mfr": 254,
+   "mfr": 253,
    "pid": 56,
-   "mfrSha": "826c2bb421d3e81f",
+   "mfrSha": "7603d9eaf3cf3b86",
    "pidSha": "ac803567e8fc211a"
   },
   "radar_sensor": {
@@ -1575,9 +1575,9 @@
    "pidSha": "7fa640aea3e70b55"
   },
   "sensor_gas_presence": {
-   "mfr": 10,
+   "mfr": 9,
    "pid": 4,
-   "mfrSha": "07c97dbf1cb99e48",
+   "mfrSha": "c43c25d923dd8e83",
    "pidSha": "919c823c42eba473"
   },
   "sensor_ias_zonetype_ewelink": {
@@ -1605,9 +1605,9 @@
    "pidSha": "52ab211a7e1438c9"
   },
   "sensor_motion_presence": {
-   "mfr": 25,
+   "mfr": 23,
    "pid": 19,
-   "mfrSha": "1f3e22c034943d3a",
+   "mfrSha": "b7311512200ed5c6",
    "pidSha": "e7c5f08cc4f7e52a"
   },
   "sensor_motion_radar": {
@@ -1803,9 +1803,9 @@
    "pidSha": "720ce7b7ec09a25f"
   },
   "smoke_detector_advanced": {
-   "mfr": 4,
+   "mfr": 3,
    "pid": 16,
-   "mfrSha": "9efa48399b8ff2cc",
+   "mfrSha": "fcde369e3bd8b054",
    "pidSha": "6bb4763014511564"
   },
   "smoke_sensor": {
@@ -1851,10 +1851,10 @@
    "pidSha": "01d687d685c35f20"
   },
   "soil_sensor": {
-   "mfr": 76,
-   "pid": 7,
-   "mfrSha": "ff02a86a5234ec16",
-   "pidSha": "60b6365f4f1d2f16"
+   "mfr": 85,
+   "pid": 8,
+   "mfrSha": "31c667af94cd28a6",
+   "pidSha": "27f86b4ef90a4783"
   },
   "soil_sensor_ec": {
    "mfr": 1,
@@ -1905,9 +1905,9 @@
    "pidSha": "d885bcbf1a605531"
   },
   "switch_1gang": {
-   "mfr": 354,
+   "mfr": 352,
    "pid": 38,
-   "mfrSha": "86e87e96c9f2aae9",
+   "mfrSha": "e689f830c4a50c30",
    "pidSha": "fd65b1d55ed8db6a"
   },
   "switch_2_gang": {
@@ -2181,9 +2181,9 @@
    "pidSha": "455c46e8c8549693"
   },
   "valve_irrigation": {
-   "mfr": 30,
+   "mfr": 28,
    "pid": 3,
-   "mfrSha": "aa827c0843b0d662",
+   "mfrSha": "f66043443a45e389",
    "pidSha": "5c308053fde30f1f"
   },
   "valve_novato_zpv01": {
@@ -2206,9 +2206,9 @@
   },
   "vibration_sensor": {
    "mfr": 35,
-   "pid": 11,
+   "pid": 10,
    "mfrSha": "56a5973b732d477b",
-   "pidSha": "97af43b817028c9a"
+   "pidSha": "34750b19b8c07cfa"
   },
   "wall_curtain_switch": {
    "mfr": 10,

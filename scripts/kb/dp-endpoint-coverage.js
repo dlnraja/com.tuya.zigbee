@@ -31,8 +31,9 @@ const { mask, matchBracket, splitTop } = require('../data/harvest-z2m-tuya-dps')
 
 const ROOT = path.join(__dirname, '..', '..');
 const OUT = path.join(ROOT, 'docs', 'knowledge', 'KB', 'DP_ENDPOINT_COVERAGE.md');
+const NOTES = path.join(ROOT, 'docs', 'knowledge', 'KB', 'DP_ENDPOINT_COVERAGE.notes.md');
 
-const ROUTE_CLUSTERS = Object.freeze({ 6: ['onOff', 'onoff'], 1026: ['temperatureMeasurement', 'measure_temperature'], 1029: ['relativeHumidity', 'measure_humidity'], 1024: ['illuminanceMeasurement', 'measure_luminance'], 1030: ['occupancySensing', 'alarm_motion'] });
+const ROUTE_CLUSTERS = Object.freeze({ 6: ['onOff', 'onoff'], 1026: ['temperatureMeasurement', 'measure_temperature'], 1029: ['relativeHumidity', 'measure_humidity'], 1024: ['illuminanceMeasurement', 'measure_luminance'], 1030: ['occupancySensing', 'alarm_motion'], 258: ['windowCovering', 'windowcoverings_set', 'secondary'] }); // WHY(P3018b): 0x0102 is listened passively on secondary EPs (EndpointCoverage)
 // infrastructure clusters: inventoried, nothing to route (basic, power cfg, identify, groups, scenes,
 // OTA, time, poll control, green power, diagnostics, touchlink, Tuya EF00/E000/E001, ...)
 const INFRA = new Set([0, 1, 2, 3, 4, 5, 7, 9, 10, 25, 32, 33, 2821, 4096, 61184, 57344, 57345, 0xe002, 0xed00, 0xfc11, 0xfc57, 0xfcc0]);
@@ -288,12 +289,14 @@ function render(a) {
     '',
     `Interviews: **${e.couples}** couples (${e.noDriver} without a driver), **${e.endpoints}** endpoints: ${e.declared} declared in compose, ${e.routed} routed to a capability, ${e.listened} listened + exposed (no matching capability), ${e.infra} infrastructure-only, ${e.gp} green power (EP 242, ignored). Gaps: **${e.gaps}**.`,
     '',
-    'Runtime (master, `lib/zigbee/EndpointCoverage.js`): every endpoint is inventoried (store `endpoint_inventory`); onOff / temperature / humidity / illuminance / occupancy reports on an endpoint with no listener are routed to the SAME endpoint\'s capability (`cap` on the main EP, `cap.gangN|cap.N|cap.channelN|cap.socketN` on EP N) or recorded in UnknownCommandSink (learned + Flow `tuya_cluster_received`). No writes, no binds, no reads (zero TX). Writes stay per-endpoint (no cross-gang); alternate-endpoint reads remain a MethodChain fallback.',
+    'Runtime (master, `lib/zigbee/EndpointCoverage.js`): every endpoint is inventoried (store `endpoint_inventory`); onOff / temperature / humidity / illuminance / occupancy reports (and, on secondary endpoints only, windowCovering lift % + Tuya calibration attributes, stored as `endpoint_info`) on an endpoint with no listener are routed to the SAME endpoint\'s capability (`cap` on the main EP, `cap.gangN|cap.N|cap.channelN|cap.socketN` on EP N) or recorded in UnknownCommandSink (learned + Flow `tuya_cluster_received`). No writes, no binds, no reads (zero TX). Writes stay per-endpoint (no cross-gang); alternate-endpoint reads remain a MethodChain fallback.',
     '',
     '| couple | driver | endpoint | status | routes | gap |',
     '|---|---|---|---|---|---|',
     ...a.interviews.filter((r) => r.driver && r.eps.some((x) => x.ep !== 1 || x.gap)).flatMap((r) => r.eps.filter((x) => x.ep !== 1 || x.gap).map((x) => `| \`${r.mfr}\` ${r.pid} | ${r.driver} | ${x.ep} | ${x.status} | ${(x.routes || []).join(' ') || '—'} | ${x.gap || '—'} |`)),
     '',
+    // WHY(P3018b): hand-written research notes (sources, open items) survive regeneration.
+    ...(fs.existsSync(NOTES) ? [fs.readFileSync(NOTES, 'utf8').trim(), ''] : []),
     '## Gate',
     '',
     `\`--check\` (CI, report-only): fails only on duplicate numeric keys inside one object literal (drivers + lib). Current: ${a.dups.skipped ? 'skipped (acorn missing)' : a.dups.hits.length}.`,

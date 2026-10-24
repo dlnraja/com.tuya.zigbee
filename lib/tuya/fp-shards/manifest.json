@@ -1,9 +1,9 @@
 {
   "version": 1,
   "patch": "P2678",
-  "generatedAt": "2026-10-24T19:05:40.378Z",
+  "generatedAt": "2026-10-24T21:45:38.784Z",
   "source": "lib/tuya/fingerprints.json",
-  "sourceBytes": 931071,
+  "sourceBytes": 931106,
   "keyCount": 5781,
   "shardCount": 227,
   "shards": {
@@ -89,7 +89,7 @@
     },
     "OTHER_T": {
       "keys": 397,
-      "bytes": 63073
+      "bytes": 63087
     },
     "OTHER_U": {
       "keys": 6,
@@ -465,7 +465,7 @@
     },
     "TZE200_2": {
       "keys": 24,
-      "bytes": 3446
+      "bytes": 3442
     },
     "TZE200_3": {
       "keys": 16,
@@ -473,7 +473,7 @@
     },
     "TZE200_4": {
       "keys": 18,
-      "bytes": 2612
+      "bytes": 2625
     },
     "TZE200_5": {
       "keys": 20,
@@ -493,7 +493,7 @@
     },
     "TZE200_9": {
       "keys": 23,
-      "bytes": 3376
+      "bytes": 3373
     },
     "TZE200_a": {
       "keys": 44,
@@ -513,7 +513,7 @@
     },
     "TZE200_e": {
       "keys": 35,
-      "bytes": 5312
+      "bytes": 5272
     },
     "TZE200_f": {
       "keys": 28,
@@ -533,7 +533,7 @@
     },
     "TZE200_j": {
       "keys": 25,
-      "bytes": 3894
+      "bytes": 3890
     },
     "TZE200_k": {
       "keys": 35,
@@ -549,7 +549,7 @@
     },
     "TZE200_n": {
       "keys": 51,
-      "bytes": 8507
+      "bytes": 8496
     },
     "TZE200_o": {
       "keys": 23,
@@ -597,7 +597,7 @@
     },
     "TZE200_z": {
       "keys": 41,
-      "bytes": 6331
+      "bytes": 6350
     },
     "TZE201": {
       "keys": 1,
@@ -633,11 +633,11 @@
     },
     "TZE204_5": {
       "keys": 13,
-      "bytes": 1956
+      "bytes": 1974
     },
     "TZE204_6": {
       "keys": 12,
-      "bytes": 1736
+      "bytes": 1752
     },
     "TZE204_7": {
       "keys": 17,
@@ -649,7 +649,7 @@
     },
     "TZE204_9": {
       "keys": 10,
-      "bytes": 1510
+      "bytes": 1524
     },
     "TZE204_a": {
       "keys": 34,
@@ -665,7 +665,7 @@
     },
     "TZE204_d": {
       "keys": 36,
-      "bytes": 5461
+      "bytes": 5474
     },
     "TZE204_e": {
       "keys": 22,
@@ -697,11 +697,11 @@
     },
     "TZE204_l": {
       "keys": 32,
-      "bytes": 4941
+      "bytes": 4962
     },
     "TZE204_m": {
       "keys": 33,
-      "bytes": 4939
+      "bytes": 4934
     },
     "TZE204_n": {
       "keys": 28,
@@ -777,7 +777,7 @@
     },
     "TZE284_3": {
       "keys": 11,
-      "bytes": 1692
+      "bytes": 1680
     },
     "TZE284_4": {
       "keys": 14,
@@ -789,7 +789,7 @@
     },
     "TZE284_6": {
       "keys": 13,
-      "bytes": 1952
+      "bytes": 1972
     },
     "TZE284_7": {
       "keys": 8,
@@ -801,11 +801,11 @@
     },
     "TZE284_9": {
       "keys": 10,
-      "bytes": 1728
+      "bytes": 1723
     },
     "TZE284_a": {
       "keys": 38,
-      "bytes": 6160
+      "bytes": 6154
     },
     "TZE284_b": {
       "keys": 7,
@@ -845,19 +845,19 @@
     },
     "TZE284_k": {
       "keys": 17,
-      "bytes": 2580
+      "bytes": 2578
     },
     "TZE284_l": {
       "keys": 14,
-      "bytes": 2181
+      "bytes": 2202
     },
     "TZE284_m": {
       "keys": 17,
-      "bytes": 3124
+      "bytes": 3119
     },
     "TZE284_n": {
       "keys": 27,
-      "bytes": 4821
+      "bytes": 4815
     },
     "TZE284_o": {
       "keys": 9,
@@ -873,7 +873,7 @@
     },
     "TZE284_r": {
       "keys": 16,
-      "bytes": 2546
+      "bytes": 2523
     },
     "TZE284_s": {
       "keys": 11,
@@ -893,7 +893,7 @@
     },
     "TZE284_w": {
       "keys": 15,
-      "bytes": 2683
+      "bytes": 2677
     },
     "TZE284_x": {
       "keys": 11,
@@ -901,7 +901,7 @@
     },
     "TZE284_y": {
       "keys": 10,
-      "bytes": 1540
+      "bytes": 1538
     },
     "TZE284_z": {
       "keys": 24,
