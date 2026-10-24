@@ -27,9 +27,9 @@ describe('P3021 ledger unblock', () => {
     }
   });
 
-  it('leaves next-02 open with the partial evidence recorded', () => {
+  it('records the next-02 evidence (closed later by P3021b de0a681081)', () => {
     const item = ledger.items['task:next-02'];
-    assert.strictEqual(item.status, 'pending');
+    assert.ok(['pending', 'done'].includes(item.status), item.status);
     assert.match(item.result, /3a0939b8d1/);
   });
 });

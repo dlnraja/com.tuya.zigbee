@@ -45,7 +45,8 @@ const summary = (md) => { if (process.env.GITHUB_STEP_SUMMARY) fs.appendFileSync
 
 async function report(reason, details) {
   summary(`### 🚧 safe-auto-commit [${ID}] refused: ${reason}\n${details ? '```\n' + String(details).slice(-3000) + '\n```' : ''}`);
-  if (DRY || !process.env.GITHUB_TOKEN) return;
+  // P3022: SAFE_AUTO_COMMIT_NO_COMMENT=1 keeps a refusal in the run summary only (no issue comment).
+  if (DRY || !process.env.GITHUB_TOKEN || process.env.SAFE_AUTO_COMMIT_NO_COMMENT === '1') return;
   try {
     const L = require(path.join(ROOT, 'scripts', 'digest', 'lib.js'));
     const issue = await L.findTrackingIssue({ create: false });
