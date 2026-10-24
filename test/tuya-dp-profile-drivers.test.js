@@ -48,9 +48,12 @@ describe('exact-pair drivers', () => {
     const src = fs.readFileSync(path.join(root, 'drivers', 'panel_switch_cover_tuya', 'device.js'), 'utf8');
     for (const re of [/1: \{ cap: 'windowcoverings_state.c1'/, /5: \{ cap: 'windowcoverings_set.c2'/, /102: \{ cap: 'onoff.s2'/]) { assert.ok(re.test(src), re); }
   });
-  it('old drivers keep their couples (never remove)', () => {
-    assert.ok(compose('curtain_motor').zigbee.manufacturerName.includes('_TZE200_rgeapp2c'));
-    assert.ok(compose('climate_sensor').zigbee.manufacturerName.includes('_TZE284_9xstqowh'));
+  // WHY(P3018b, user decision 2026-10-24 "one couple, one driver"): the exact-pair driver is the
+  // single owner; the generic holders were dropped (curated-couple-removals) and the pin gate keeps it so.
+  it('exact-pair drivers are the single owner of their couple (any case)', () => {
+    const has = (d, m) => compose(d).zigbee.manufacturerName.some((x) => x.toLowerCase() === m);
+    assert.ok(has('panel_switch_cover_tuya', '_tze200_rgeapp2c') && !has('curtain_motor', '_tze200_rgeapp2c'));
+    assert.ok(has('smart_breaker', '_tze284_9xstqowh') && !has('climate_sensor', '_tze284_9xstqowh'));
   });
   it('energy_meter_3phase has the D4Z profile and valve_dual_irrigation a main switch', () => {
     const em = fs.readFileSync(path.join(root, 'drivers', 'energy_meter_3phase', 'device.js'), 'utf8');

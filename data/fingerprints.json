@@ -40,8 +40,8 @@
     ]
   },
   "_TZE200_ntcy3xu1": {
-    "driverId": "smoke_detector_advanced",
-    "type": "smoke_detector",
+    "driverId": "smoke_sensor2",
+    "type": "smoke_sensor2",
     "powerSource": "battery",
     "modelIds": [
       "TS0601"

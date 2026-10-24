@@ -779,6 +779,275 @@
       ],
       "why": "2026-10-24 P3015: _TZ3000_5af5r192 is the Moes ZWV-YC TS0049 water valve in Zigbee2MQTT (moes.ts#L1488), not a temperature/humidity sensor; the climate_sensor forms were bulk case-variant additions (P92.47/P92.61) without a hardware source and made _tz3000_5af5r192|TS0601 a dual couple with water_valve_garden. One driver per couple (user decision 2026-10-24); already-paired devices keep their driver.",
       "source": "P3015 https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/moes.ts#L1488"
+    },
+    {
+      "driver": "sensor_motion_presence",
+      "mfr": [
+        "_TZE200_jsaqgakf",
+        "_TZE200_2pddnnrk",
+        "_TZE200_JSAQGAKF",
+        "_tze200_jsaqgakf",
+        "_TZE200_2PDDNNRK",
+        "_tze200_2pddnnrk",
+        "_tze200_JSAQGAKF",
+        "_tze200_2PDDNNRK"
+      ],
+      "why": "2026-10-24 P3018b: _TZE200_2pddnnrk/_TZE200_jsaqgakf+TS0601 is HOBEIAN ZG-223Z rainwater detection sensor; owner rain_sensor. One couple, one driver (user decision 2026-10-24, specific beats generic); already-paired devices keep their driver.",
+      "source": "P3018b https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/hobeian.ts#L1505"
+    },
+    {
+      "driver": "dimmer_wall_1gang",
+      "mfr": [
+        "_TZE200_4mh6tyyo",
+        "_TZE200_4MH6TYYO",
+        "_tze200_4mh6tyyo",
+        "_tze200_4MH6TYYO"
+      ],
+      "why": "2026-10-24 P3018b: _TZE200_4mh6tyyo+TS0601 is Tuya TS0601_dimmer_1_gang_1 (Lerlink X706U) 1-gang DP dimmer; owner dimmer_1_gang_tuya. One couple, one driver (user decision 2026-10-24, specific beats generic); already-paired devices keep their driver.",
+      "source": "P3018b https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L6118"
+    },
+    {
+      "driver": "dimmer_wall_1gang",
+      "mfr": [
+        "_TZE204_dcnsggvz",
+        "_TZE204_DCNSGGVZ",
+        "_tze204_dcnsggvz",
+        "_tze204_DCNSGGVZ"
+      ],
+      "why": "2026-10-24 P3018b: _TZE204_dcnsggvz+TS0601 is Tuya TS0601_dimmer_5 1-gang DP dimmer module; owner dimmer_1_gang_tuya. One couple, one driver (user decision 2026-10-24, specific beats generic); already-paired devices keep their driver.",
+      "source": "P3018b https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L6473"
+    },
+    {
+      "driver": "switch_1gang",
+      "mfr": [
+        "_tze204_5cuocqty",
+        "_TZE204_5CUOCQTY",
+        "_TZE204_5cuocqty",
+        "_tze204_5CUOCQTY"
+      ],
+      "why": "2026-10-24 P3018b: _TZE204_5cuocqty+TS0601 is AVATTO ZDMS16-1 1-channel dimmer module; owner dimmer_1_gang_tuya. One couple, one driver (user decision 2026-10-24, specific beats generic); already-paired devices keep their driver.",
+      "source": "P3018b https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/avatto.ts#L424"
+    },
+    {
+      "driver": "switch_1gang",
+      "mfr": [
+        "_tze204_9qhuzgo0",
+        "_TZE204_9QHUZGO0",
+        "_TZE204_9qhuzgo0",
+        "_tze204_9QHUZGO0"
+      ],
+      "why": "2026-10-24 P3018b: _TZE204_9qhuzgo0+TS0601 is Tuya TS0601_dimmer_1_gang_1 1-gang DP dimmer; owner dimmer_1_gang_tuya. One couple, one driver (user decision 2026-10-24, specific beats generic); already-paired devices keep their driver.",
+      "source": "P3018b https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L6121"
+    },
+    {
+      "driver": "device_radiator_valve",
+      "mfr": [
+        "_tze200_bjzrowv2",
+        "_TZE200_BJZROWV2",
+        "_TZE200_bjzrowv2",
+        "_tze200_BJZROWV2"
+      ],
+      "why": "2026-10-24 P3018b: _TZE200_bjzrowv2+TS0601 is Tuya TS0601_cover_15 curtain motor; owner curtain_motor. One couple, one driver (user decision 2026-10-24, specific beats generic); already-paired devices keep their driver.",
+      "source": "P3018b https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L26362"
+    },
+    {
+      "driver": "device_radiator_valve",
+      "mfr": [
+        "_TZE284_r3szw0xr",
+        "_tze284_r3szw0xr",
+        "_TZE284_R3SZW0XR",
+        "_tze284_R3SZW0XR"
+      ],
+      "why": "2026-10-24 P3018b: _TZE284_r3szw0xr+TS0601 is Tuya TS0601_cover_11 cover motor; owner curtain_motor. One couple, one driver (user decision 2026-10-24, specific beats generic); already-paired devices keep their driver.",
+      "source": "P3018b https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L26287"
+    },
+    {
+      "driver": "sensor_gas_presence",
+      "mfr": [
+        "_TZE200_eqpaxqdv",
+        "_tze200_eqpaxqdv",
+        "_TZE200_EQPAXQDV",
+        "_tze200_EQPAXQDV"
+      ],
+      "why": "2026-10-24 P3018b: _TZE200_eqpaxqdv+TS0601 is KnockautX PIMS3028 cover plug-in receiver; owner curtain_motor. One couple, one driver (user decision 2026-10-24, specific beats generic); already-paired devices keep their driver.",
+      "source": "P3018b https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L27339"
+    },
+    {
+      "driver": "lcdtemphumidsensor_3",
+      "mfr": [
+        "_TZE200_locansqn",
+        "_tze200_locansqn",
+        "_TZE200_LOCANSQN",
+        "_tze200_LOCANSQN"
+      ],
+      "why": "2026-10-24 P3018b: _TZE200_locansqn+TS0601 is Nous SZ-T04 temp/humidity with clock (raw % humidity, DIRECT_HUMIDITY list in lcdtemphumidsensor); owner lcdtemphumidsensor. One couple, one driver (user decision 2026-10-24, specific beats generic); already-paired devices keep their driver.",
+      "source": "P3018b https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/nous.ts#L127"
+    },
+    {
+      "driver": "smoke_detector_advanced",
+      "mfr": [
+        "_TZE200_ntcy3xu1",
+        "_tze200_ntcy3xu1",
+        "_TZE200_NTCY3XU1",
+        "_tze200_NTCY3XU1"
+      ],
+      "why": "2026-10-24 P3018b: _TZE200_ntcy3xu1+TS0601 is Tuya TS0601_smoke_6: smoke + tamper + battery_state only (no temp/humidity); owner smoke_sensor2. One couple, one driver (user decision 2026-10-24, specific beats generic); already-paired devices keep their driver.",
+      "source": "P3018b https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L12797"
+    },
+    {
+      "driver": "curtain_motor",
+      "mfr": [
+        "_TZE200_rgeapp2c",
+        "_tze200_rgeapp2c",
+        "_TZE200_RGEAPP2C",
+        "_tze200_RGEAPP2C"
+      ],
+      "why": "2026-10-24 P3018b: _TZE200_rgeapp2c+TS0601 is Semicom touch panel 2 switches + 2 shutters; owner panel_switch_cover_tuya. One couple, one driver (user decision 2026-10-24, specific beats generic); already-paired devices keep their driver.",
+      "source": "P3018b https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L9879"
+    },
+    {
+      "driver": "button_wireless_2",
+      "mfr": [
+        "_TZE200_zl1kmjqx",
+        "_tze200_zl1kmjqx",
+        "_TZE200_ZL1KMJQX",
+        "_tze200_ZL1KMJQX"
+      ],
+      "why": "2026-10-24 P3018b: _TZE200_zl1kmjqx+TS0601 is Tuya TS0601_temperature_humidity_sensor_1; owner lcdtemphumidsensor_3. One couple, one driver (user decision 2026-10-24, specific beats generic); already-paired devices keep their driver.",
+      "source": "P3018b https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L4019"
+    },
+    {
+      "driver": "climate_sensor",
+      "mfr": [
+        "_tze204_6fk3gewc",
+        "_tze284_6fk3gewc",
+        "_TZE204_6fk3gewc",
+        "_TZE284_6fk3gewc",
+        "_TZE204_6FK3GEWC",
+        "_tze204_6FK3GEWC",
+        "_TZE284_6FK3GEWC",
+        "_tze284_6FK3GEWC"
+      ],
+      "why": "2026-10-24 P3018b: _TZE204_6fk3gewc/_TZE284_6fk3gewc+TS0601 is WETEN PCI E remote power card (DP1 switch); owner wall_switch_1gang_1way. One couple, one driver (user decision 2026-10-24, specific beats generic); already-paired devices keep their driver.",
+      "source": "P3018b https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/weten.ts#L19"
+    },
+    {
+      "driver": "climate_sensor",
+      "mfr": [
+        "_tze204_mrffaamu",
+        "_tze284_9xstqowh",
+        "_tze284_mrffaamu",
+        "_TZE204_mrffaamu",
+        "_TZE284_9xstqowh",
+        "_TZE284_mrffaamu",
+        "_TZE204_MRFFAAMU",
+        "_tze204_MRFFAAMU",
+        "_TZE284_9XSTQOWH",
+        "_tze284_9XSTQOWH",
+        "_TZE284_MRFFAAMU",
+        "_tze284_MRFFAAMU"
+      ],
+      "why": "2026-10-24 P3018b: _TZE204_mrffaamu/_TZE284_mrffaamu/_TZE284_9xstqowh+TS0601 is Tongou TOQCB2-80 smart circuit breaker; owner smart_breaker. One couple, one driver (user decision 2026-10-24, specific beats generic); already-paired devices keep their driver.",
+      "source": "P3018b https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L22490"
+    },
+    {
+      "driver": "valve_irrigation",
+      "mfr": [
+        "_tze204_loejka0i",
+        "_tze284_loejka0i",
+        "_TZE204_LOEJKA0I",
+        "_TZE284_LOEJKA0I",
+        "_TZE204_loejka0i",
+        "_TZE284_loejka0i",
+        "_tze204_LOEJKA0I",
+        "_tze284_LOEJKA0I"
+      ],
+      "why": "2026-10-24 P3018b: _TZE204_loejka0i/_TZE284_loejka0i+TS0601 is Nous D4Z 3P+N energy monitor; owner energy_meter_3phase. One couple, one driver (user decision 2026-10-24, specific beats generic); already-paired devices keep their driver.",
+      "source": "P3018b https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/nous.ts#L257"
+    },
+    {
+      "driver": "vibration_sensor",
+      "mfr": [],
+      "pid": [
+        "CK-BL702-MWS-01(7016)"
+      ],
+      "why": "2026-10-24 P3018b: HOBEIAN+CK-BL702-MWS-01(7016) is HOBEIAN ZG-205Z/A 5.8/24 GHz presence sensor (also ZHA tuya_motion.py); owner presence_sensor_radar. No vibration hardware uses this modelID in Z2M/ZHA/deCONZ, so the pid (not the brand) leaves vibration_sensor.",
+      "source": "P3018b https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/hobeian.ts#L2042"
+    },
+    {
+      "driver": "climate_sensor",
+      "mfr": [
+        "_tyst11_jeaxp72v",
+        "_TYST11_jeaxp72v",
+        "_TYST11_JEAXP72V",
+        "_tyst11_JEAXP72V"
+      ],
+      "why": "2026-10-24 P3018b: _TYST11_jeaxp72v is the Siterwell GS361A-H04 radiator valve (Z2M zigbeeModel eaxp72v), not a climate sensor; placed in device_radiator_valve with its real modelId so _tyst11_jeaxp72v|TS0601 would otherwise become a dual couple. One couple, one driver.",
+      "source": "P3018b https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/siterwell.ts#L11"
+    },
+    {
+      "driver": "presence_sensor_radar",
+      "mfr": [
+        "_tze200_9cqcpkgb",
+        "_TZE200_9cqcpkgb",
+        "_TZE200_9CQCPKGB",
+        "_tze200_9CQCPKGB"
+      ],
+      "why": "2026-10-24 P3018b: _TZE200_9cqcpkgb+TS0601 is Tuya TS0601_soil soil sensor (DP3 moisture, DP5 temp ÷10, DP15 battery); owner soil_sensor. One couple, one driver (specific soil driver beats the generic one); already-paired devices keep their driver.",
+      "source": "P3018b https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L5651"
+    },
+    {
+      "driver": "climate_sensor",
+      "mfr": [
+        "_tze284_33bwcga2",
+        "_tze284_3urschql",
+        "_tze284_ap9owrsa",
+        "_tze284_nhgdf6qr",
+        "_tze284_wckqztdq",
+        "_TZE284_33bwcga2",
+        "_TZE284_3urschql",
+        "_TZE284_ap9owrsa",
+        "_TZE284_nhgdf6qr",
+        "_TZE284_wckqztdq",
+        "_TZE284_33BWCGA2",
+        "_tze284_33BWCGA2",
+        "_TZE284_3URSCHQL",
+        "_tze284_3URSCHQL",
+        "_TZE284_AP9OWRSA",
+        "_tze284_AP9OWRSA",
+        "_TZE284_NHGDF6QR",
+        "_tze284_NHGDF6QR",
+        "_TZE284_WCKQZTDQ",
+        "_tze284_WCKQZTDQ"
+      ],
+      "why": "2026-10-24 P3018b: _TZE284_33bwcga2/_TZE284_3urschql/_TZE284_ap9owrsa/_TZE284_nhgdf6qr/_TZE284_wckqztdq+TS0601 is Tuya TS0601_soil_3 soil sensor (GIEX GX04/GX06); owner soil_sensor. One couple, one driver (specific soil driver beats the generic one); already-paired devices keep their driver.",
+      "source": "P3018b https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L5733"
+    },
+    {
+      "driver": "curtain_motor",
+      "mfr": [
+        "_TZE284_65gzcss7",
+        "_TZE284_yzr43ayq",
+        "_tze284_65gzcss7",
+        "_tze284_yzr43ayq",
+        "_TZE284_65GZCSS7",
+        "_tze284_65GZCSS7",
+        "_TZE284_YZR43AYQ",
+        "_tze284_YZR43AYQ"
+      ],
+      "why": "2026-10-24 P3018b: _TZE284_65gzcss7/_TZE284_yzr43ayq+TS0601 is Arteco ZS-300Z/ZS-302Z/ZS-304Z soil moisture sensor; owner soil_sensor. One couple, one driver (specific soil driver beats the generic one); already-paired devices keep their driver.",
+      "source": "P3018b https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L26392"
+    },
+    {
+      "driver": "climate_sensor",
+      "mfr": [
+        "_tze284_k7p2q5d9",
+        "_TZE284_k7p2q5d9",
+        "_TZE284_K7P2Q5D9",
+        "_tze284_K7P2Q5D9"
+      ],
+      "why": "2026-10-24 P3018b: _TZE284_k7p2q5d9+TS0601 is Arteco ZS-300Z soil moisture sensor; owner soil_sensor. One couple, one driver (specific soil driver beats the generic one); already-paired devices keep their driver.",
+      "source": "P3018b https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L26391"
     }
   ]
 }
