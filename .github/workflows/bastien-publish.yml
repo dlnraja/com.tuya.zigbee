@@ -89,7 +89,7 @@ jobs:
       contents: write  # P2915: version write-back commit only
     steps:
       - name: Checkout bastien-home
-        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
         with:
           ref: bastien-home
           fetch-depth: 1
@@ -111,7 +111,7 @@ jobs:
           echo "OK Bastien App ID locked"
 
       - name: Setup Node
-        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
@@ -326,9 +326,13 @@ jobs:
             V=$(node -p "require('./app.json').version")
             status=$(node scripts/ci/homey-build-status.js "$APP_ID" 2>&1)
             row=$(printf '%s\n' "$status" | grep -F "\"version\":\"$V\"" | head -1)
-            KIND=$(printf '%s' "$row" | node .github/scripts/athom-retry-policy.js classify)
-            # Athom often returns processing_failed with no error text (history: mostly socket hang up): transient budget.
-            if [ "$KIND" = "unknown" ] && ! printf '%s' "$row" | grep -Eqi '"[a-zA-Z]*(err|reason|message|log)[a-zA-Z]*":'; then KIND=transient; fi
+            # P3025: shared per-version classifier (same file as stable): row -> empty-error = transient. Failover: inline rule.
+            KIND=$(printf '%s\n' "$status" | node .github/scripts/athom-classify-failure.js --version "$V" 2>/dev/null)
+            if [ -z "$KIND" ] || [ "$KIND" = "not-failed" ]; then
+              KIND=$(printf '%s' "$row" | node .github/scripts/athom-retry-policy.js classify)
+              # Athom often returns processing_failed with no error text (history: mostly socket hang up): transient budget.
+              if [ "$KIND" = "unknown" ] && ! printf '%s' "$row" | grep -Eqi '"[a-zA-Z]*(err|reason|message|log)[a-zA-Z]*":'; then KIND=transient; fi
+            fi
             HOMEY_EXPECTED_VERSION=$V TRANSIENT_RETRY=$((retry-1)) node .github/scripts/publish-size-telemetry.js record processing_failed "$KIND"
             if ! printf '%s' "$row" | grep -qi 'processing_failed'; then echo "v$V is not processing_failed (tip-lag / in-flight): no re-upload"; break; fi
             if [ "$KIND" = "unknown" ] || [ "$(node -e "const p=require('./.github/scripts/athom-retry-policy');console.log(p.shouldRetry(process.argv[1],process.argv[2])?'RETRY':'STOP')" "$KIND" $((retry-1)))" != "RETRY" ]; then echo "::warning::v$V failed ($KIND): not retryable by policy"; break; fi
@@ -358,7 +362,7 @@ jobs:
       - name: Upload publish size telemetry
         if: always()
         continue-on-error: true
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
         with:
           name: publish-size-telemetry-${{ github.run_id }}-${{ github.run_attempt }}
           path: ${{ runner.temp }}/publish-size/
