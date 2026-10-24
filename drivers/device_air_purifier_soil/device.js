@@ -205,7 +205,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
         requireReporting: false,
         attributeReport: (data) => {
           if (data.measuredValue !== undefined) {
-            const temp = data.measuredValue * 100;
+            const temp = data.measuredValue / 100; // P3002: ZCL 0.01 units
             this.log(`[ZCL]  Temperature: ${temp}Â°C`);
             this._registerZigbeeHit?.();
             this.safeSetCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
@@ -222,7 +222,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
         requireReporting: false,
         attributeReport: (data) => {
           if (data.measuredValue !== undefined) {
-            const humidity = data.measuredValue * 100;
+            const humidity = data.measuredValue / 100; // P3002: ZCL 0.01 units
             this.log(`[ZCL]  Humidity/Moisture: ${humidity}%`);
             this._registerZigbeeHit?.();
             // v5.11.16: ZCL humidity = AIR humidity. Soil moisture comes via Tuya DP3.
