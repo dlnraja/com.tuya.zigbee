@@ -36,6 +36,7 @@ optional extra layer: never needed at pairing, removes nothing, and the old path
 |---|---|---|---|---|
 | Buttons and remotes | M3 private-cluster read | n/a → yes | Z2M TS004F `tuyaOperationMode` (attr 0x8004 on genOnOff), ZHA `TuyaSmartRemoteOnOffCluster` | `lib/buttons/attachButtonPaths.initModeForNewDevice` |
 | Buttons and remotes | M9 attribute write instead of a command | n/a → yes | same (write 0x8004 to switch event/dimmer mode) | `lib/zigbee/DeviceOperatingMode.writeOperationMode` |
+| Garden valves | M10 manufacturer-specific write | n/a → yes (opt-in setting) | Z2M tuya.ts HZ-WT02 (`_TZ3000_kz1anoi8` TS0049): cluster 0xE001 command 0xFE, payload `0x0B` + countdown seconds (u32 BE) | `lib/tuya/Ts0049Countdown.js`, `water_valve_garden` setting `ts0049_water_countdown` |
 
 Kept n/a, with the reason in METHOD_COVERAGE.md: M7 everywhere (deriving alarm_battery from measure_battery would put both
 capabilities on one device, which the project forbids); soil M8 (writing calibration through two paths risks a double
