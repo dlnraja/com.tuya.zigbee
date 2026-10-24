@@ -9,7 +9,7 @@ const { ZigBeeDriver } = require('homey-zigbeedriver');
 class DeviceDinRailDriver extends ZigBeeDriver {
   async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
     this.log('DeviceDinRailDriver initialized');
     this._registerFlowCards();
@@ -20,7 +20,7 @@ class DeviceDinRailDriver extends ZigBeeDriver {
       const card = this.homey.flow.getConditionCard('device_din_rail_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
@@ -41,7 +41,7 @@ class DeviceDinRailDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('device_din_rail_turn_on');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return setOnOff(args.device, true);
         });
       }
@@ -53,7 +53,7 @@ class DeviceDinRailDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('device_din_rail_turn_off');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return setOnOff(args.device, false);
         });
       }
@@ -65,7 +65,7 @@ class DeviceDinRailDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('device_din_rail_toggle');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const current = args.device.getCapabilityValue('onoff');
           return setOnOff(args.device, !current);
         });

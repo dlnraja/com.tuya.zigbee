@@ -123,7 +123,7 @@ class IRRemoteDevice extends TuyaZigbeeDevice {
 
   /** P2487: library / learned / paste via IntelligentIRRouter */
   async sendIntelligent(opts = {}) {
-    if (!this._irRouter) this._irRouter = getRouter(this.homey);
+    if (!this._irRouter) {this._irRouter = getRouter(this.homey);}
     return this._irRouter.send({ device: this, ...opts });
   }
 
@@ -143,11 +143,11 @@ class IRRemoteDevice extends TuyaZigbeeDevice {
         });
         if (!flood.allow) {
           this.log(`[IR-TX] flood guard skip: ${flood.reason}`);
-          if (flood.hard) throw new Error(`IR flood guard: ${flood.reason}`);
+          if (flood.hard) {throw new Error(`IR flood guard: ${flood.reason}`);}
           return false;
         }
       } catch (err) {
-        if (String(err && err.message || '').includes('IR flood guard')) throw err;
+        if (String(err && err.message || '').includes('IR flood guard')) {throw err;}
       }
     }
     // v10.8.0 (z2m ZS06 lesson): a spammed IR blaster can enter a transmit

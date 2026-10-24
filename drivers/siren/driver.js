@@ -89,8 +89,8 @@ async onInit() {
             await args.device.sendAlarmVolume(args.volume);
           } else if (typeof args.device._sendTuyaDP === 'function') {
             const vol = typeof args.volume === 'string'
-              ? ({ low: 0, medium: 1, high: 2 }[args.volume.toLowerCase()] ?? Number(args.volume) ?? 1)
-              : (Number(args.volume) || 0);
+              ? { low: 0, medium: 1, high: 2 }[args.volume.toLowerCase()] ?? Number(args.volume) ?? 1
+              : Number(args.volume) || 0;
             const validVol = Math.max(0, Math.min(2, isNaN(vol) ? 1 : vol));
             await args.device._sendTuyaDP(5, validVol, 'enum').catch(() => {});
             await args.device._sendTuyaDP(116, validVol, 'enum').catch(() => {});

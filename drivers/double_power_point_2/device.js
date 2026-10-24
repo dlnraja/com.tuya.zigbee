@@ -69,7 +69,7 @@ class doublepowerpoint2 extends TuyaZigbeeDevice {
 
   onDeleted() {
     this.log('Double Power Point removed');
-    if (typeof super.onDeleted === 'function') super.onDeleted();
+    if (typeof super.onDeleted === 'function') {super.onDeleted();}
   }
 }
 

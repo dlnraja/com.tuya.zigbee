@@ -777,7 +777,7 @@ for (const [configName, config] of Object.entries(SENSOR_CONFIGS)) {
 
 function getSensorConfig(manufacturerName, modelId = null) {
   // WHY(P2421/P2422): route by modelId first, then verified TZE mfr — never invent pid.
-  const model = (modelId && modelId !== 'null') ? String(modelId).toUpperCase() : '';
+  const model = modelId && modelId !== 'null' ? String(modelId).toUpperCase() : '';
   if (model.includes('ZG-204ZH') || model.includes('AY208Z')) {
     return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZH, configName: 'HOBEIAN_ZG204ZH' };
   }

@@ -42,7 +42,7 @@ class lcdtemphumidsensor2 extends TuyaZigbeeDevice {
 
   onDeleted() {
     this.log('temphumidsensor removed');
-    if (typeof super.onDeleted === 'function') super.onDeleted();
+    if (typeof super.onDeleted === 'function') {super.onDeleted();}
   }
 }
 

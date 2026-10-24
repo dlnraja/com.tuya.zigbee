@@ -46,8 +46,8 @@ class WallDimmerTuyaDriver extends Driver {
       // WHY(P2449): accept 0–100 range cards as well as 0–1
       const raw = args.brightness ?? args.dim;
       let dim = Number(raw);
-      if (!Number.isFinite(dim)) dim = 0;
-      if (dim > 1) dim /= 100;
+      if (!Number.isFinite(dim)) {dim = 0;}
+      if (dim > 1) {dim /= 100;}
       dim = Math.max(0, Math.min(1, dim));
       return runTx(args.device, 'dim', dim);
     });

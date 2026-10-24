@@ -124,7 +124,7 @@ class ClimatePresenceHybridDevice extends UnifiedSensorBase {
     const ep1 = zclNode?.endpoints?.[1];
     if (!ep1) {return;}
     const power = ep1.clusters?.genPowerCfg || ep1.clusters?.powerConfiguration;
-    if (power?.on) {power.on('attr.batteryPercentageRemaining', (v) => { const pct = UnifiedBatteryHandler.normalizeZigbeeValue(v, { manufacturer: (this.getSetting && this.getSetting('zb_manufacturer_name')) || '', batteryType: 'CR2032' }); if (pct != null) this.safeSetCapabilityValue('measure_battery', pct).catch(() => {}); });}
+    if (power?.on) {power.on('attr.batteryPercentageRemaining', (v) => { const pct = UnifiedBatteryHandler.normalizeZigbeeValue(v, { manufacturer: (this.getSetting && this.getSetting('zb_manufacturer_name')) || '', batteryType: 'CR2032' }); if (pct != null) {this.safeSetCapabilityValue('measure_battery', pct).catch(() => {});} });}
     const temp = ep1.clusters?.msTemperatureMeasurement;
     if (temp?.on) {temp.on('attr.measuredValue', (v) => this.safeSetCapabilityValue('measure_temperature', safeDivide(v, 100)).catch(() => {}));}
     const hum = ep1.clusters?.msRelativeHumidity;

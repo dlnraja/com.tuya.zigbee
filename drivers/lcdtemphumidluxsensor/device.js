@@ -253,7 +253,7 @@ class LcdTempHumidLuxSensor extends TuyaZigbeeDevice {
     }
     this._attributeBindings = [];
     this.log('LCD temperature, humidity and luminance sensor removed');
-    if (typeof super.onDeleted === 'function') super.onDeleted();
+    if (typeof super.onDeleted === 'function') {super.onDeleted();}
   }
 
 }

@@ -26,7 +26,7 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
       const conditionCard = this.homey.flow.getConditionCard('bulb_rgb_led_is_on');
       if (conditionCard) {
         conditionCard.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
@@ -38,7 +38,7 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
       const card = this.homey.flow.getConditionCard('bulb_rgb_led_rgb_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
@@ -56,7 +56,7 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
         const card = this.homey.flow.getActionCard(id);
         if (card) {
           card.registerRunListener(async (args) => {
-            if (!args.device) return false;
+            if (!args.device) {return false;}
             return setOnOff(args.device, value);
           });
         }
@@ -70,7 +70,7 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
         const card = this.homey.flow.getActionCard(id);
         if (card) {
           card.registerRunListener(async (args) => {
-            if (!args.device) return false;
+            if (!args.device) {return false;}
             const current = args.device.getCapabilityValue('onoff');
             return setOnOff(args.device, !current);
           });
@@ -84,9 +84,9 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('bulb_rgb_led_set_brightness');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const raw = Number(args.brightness);
-          if (!Number.isFinite(raw)) return false;
+          if (!Number.isFinite(raw)) {return false;}
           const dim = raw > 1 ? Math.max(0, Math.min(1, raw / 100)) : Math.max(0, Math.min(1, raw));
           if (typeof args.device.safeSetCapabilityValue === 'function') {
             await args.device.safeSetCapabilityValue('dim', dim).catch(() => {});
@@ -104,7 +104,7 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('bulb_rgb_led_rgb_set_dim');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const dim = Math.max(0, Math.min(1, Number(args.brightness) || 0));
           if (typeof args.device.safeSetCapabilityValue === 'function') {
             await args.device.safeSetCapabilityValue('dim', dim).catch(() => {});

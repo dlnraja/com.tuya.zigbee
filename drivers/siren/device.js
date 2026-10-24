@@ -139,8 +139,8 @@ class SirenDevice extends UnifiedPlugBase {
    */
   async sendAlarmVolume(volume) {
     const vol = typeof volume === 'string'
-      ? ({ low: 0, medium: 1, high: 2 }[volume.toLowerCase()] ?? Number(volume) ?? 1)
-      : (Number(volume) || 0);
+      ? { low: 0, medium: 1, high: 2 }[volume.toLowerCase()] ?? Number(volume) ?? 1
+      : Number(volume) || 0;
     const validVol = Math.max(0, Math.min(2, isNaN(vol) ? 1 : vol));
     try { await this._sendTuyaDP(5, validVol, 'enum'); } catch (e) {}
     try { await this._sendTuyaDP(116, validVol, 'enum'); } catch (e) {}

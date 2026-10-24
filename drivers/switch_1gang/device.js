@@ -91,7 +91,7 @@ class Switch1GangDevice extends UnifiedSwitchBase {
           this,
           buildCalmElectricalReportingConfigs({ withBattery: true, withJitter: true }),
         );
-        if (ok) this.log('[P2663] calm electrical reporting configured (jittered)');
+        if (ok) {this.log('[P2663] calm electrical reporting configured (jittered)');}
       } catch (err) {
         this.log('Attribute reporting config failed (device may not support it):', err.message);
       }

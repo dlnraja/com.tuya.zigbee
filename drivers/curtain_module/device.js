@@ -195,7 +195,7 @@ class curtain_module extends TuyaZigbeeDevice {
           this._reportPercentageDebounce = null;
         }
         this.log("Curtain Module removed");
-        if (typeof super.onDeleted === 'function') super.onDeleted();
+        if (typeof super.onDeleted === 'function') {super.onDeleted();}
     }
 
     onUninit() {

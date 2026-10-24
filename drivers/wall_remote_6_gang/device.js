@@ -82,7 +82,7 @@ class WallRemote6GangDevice extends ButtonDevice {
     // WHY(P2795): never configureReporting(onOff) — sleepy EndDevice bind/report
     // storms are a known "Connection impossible" / first-press-dead cause.
     try {
-      for (const epId of (this._observedButtonEps || observed)) {
+      for (const epId of this._observedButtonEps || observed) {
         const ep = zclNode?.endpoints?.[epId];
         const onOff = ep?.clusters?.onOff || ep?.clusters?.[6];
         if (onOff && typeof onOff.configureReporting === 'function') {

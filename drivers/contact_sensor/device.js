@@ -279,9 +279,9 @@ class ContactSensorDevice extends UnifiedSensorBase {
     // v5.8.98: Handle invert_contact / reverse_alarm / alarm_polarity via manager
     if (changedKeys.includes('invert_contact') || changedKeys.includes('reverse_alarm') || changedKeys.includes('alarm_polarity')) {
       const prevGet = this.getSetting.bind(this);
-      this.getSetting = (k) => (Object.prototype.hasOwnProperty.call(newSettings, k)
+      this.getSetting = (k) => Object.prototype.hasOwnProperty.call(newSettings, k)
         ? newSettings[k]
-        : prevGet(k));
+        : prevGet(k);
       const { resolvePolarity } = require('../../lib/managers/AlarmPolarityManager');
       const pol = resolvePolarity(this, 'contact');
       this.getSetting = prevGet;

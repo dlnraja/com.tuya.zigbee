@@ -250,10 +250,10 @@ class SceneSwitch4Device extends ButtonDevice {
             const cmd = f?.cmdId ?? f?.commandId ?? f?.command?.id;
             const looksFd = cmd === 0xFD || (d && d.length && d.includes(0xFD));
             if (looksFd) {
-              const scene = (typeof cmd === 'number' && d && d.length) ? d[0]
-                : (d && d.length > 1 ? d[d.length - 1] : 0);
+              const scene = typeof cmd === 'number' && d && d.length ? d[0]
+                : d && d.length > 1 ? d[d.length - 1] : 0;
               const pt = require('../../lib/utils/TuyaPressTypeMap').PRESS_MAP[scene] || 'single';
-              const gang = (epId >= 1 && epId <= 4) ? epId : 1;
+              const gang = epId >= 1 && epId <= 4 ? epId : 1;
               if (!self._isDeduped(gang, `raw-fd-${scene}`)) {
                 self.log(`[ONOFF-S4-RAW] EP${epId} 0xFD scene=${scene} -> ${pt}`);
                 await self._triggerSceneSwitch4(gang, pt);
@@ -266,7 +266,7 @@ class SceneSwitch4Device extends ButtonDevice {
               : Array.isArray(json?.data) ? Buffer.from(json.data)
               : Buffer.isBuffer(f) ? f : null;
             self.log(`[E000-S4-RAW] EP${epId} E000 frame`);
-            let btn = (epId >= 1 && epId <= 4) ? epId : 1;
+            let btn = epId >= 1 && epId <= 4 ? epId : 1;
             let pt = 'single';
             if (d?.length >= 2 && d[0] >= 1 && d[0] <= 4) {
               btn = d[0];
@@ -305,8 +305,8 @@ class SceneSwitch4Device extends ButtonDevice {
     // Prefer triggerButtonPress / _tryCard / _safeTriggerFlow (declared-only).
     try {
       const suffix = pressType === 'single' || pressType === 'pressed' ? 'pressed'
-        : (pressType === 'double' || pressType === 'double_press') ? 'double'
-          : (pressType === 'long' || pressType === 'long_press') ? 'long'
+        : pressType === 'double' || pressType === 'double_press' ? 'double'
+          : pressType === 'long' || pressType === 'long_press' ? 'long'
             : String(pressType || 'pressed');
       const typeMap = { pressed: 'single', double: 'double', long: 'long' };
       if (typeof this.triggerButtonPress === 'function') {

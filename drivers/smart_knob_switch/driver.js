@@ -34,7 +34,7 @@ class SmartKnobSwitchDriver extends Driver {
       const cond = this.homey.flow.getConditionCard('smart_knob_switch_brightness_above');
       if (cond) {
         cond.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const current = typeof args.device.getKnobBrightnessPercent === 'function'
             ? args.device.getKnobBrightnessPercent()
             : Number(args.device.getCapabilityValue('dim') ?? 0) * 100;
@@ -47,7 +47,7 @@ class SmartKnobSwitchDriver extends Driver {
       const act = this.homey.flow.getActionCard('smart_knob_switch_set_brightness');
       if (act) {
         act.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const brightness = Number(args.brightness ?? 100);
           if (typeof args.device.setKnobBrightnessPercent === 'function') {
             return args.device.setKnobBrightnessPercent(brightness);
