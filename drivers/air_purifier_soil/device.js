@@ -1,5 +1,16 @@
 'use strict';
-const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
+const { safeDivide, safeParse } = require('../../lib/utils/tuyaUtils.js');
+
+// WHY(P3018): DP5 is temperature in tenths (Z2M tuyaDatapoints soil sensors: [5,'temperature',divideBy10]).
+// The old code MULTIPLIED large raws (231 → 2310 °C) in both dpMappings and _handleDP. One shared
+// decoder now divides; small raws (≤100) are kept as-is (variants reporting whole °C) — unchanged.
+function soilTemperature(v) {
+  const n = Number(v);
+  if (!Number.isFinite(n)) { return null; }
+  if (Math.abs(n) > 1000) { return safeDivide(n, 100); }
+  if (Math.abs(n) > 100) { return safeDivide(n, 10); }
+  return n;
+}
 const TuyaUnifiedDevice = require('../../lib/devices/TuyaUnifiedDevice');
 
 class SoilSensorDevice extends TuyaUnifiedDevice {
@@ -15,14 +26,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
   get dpMappings() {
     return {
       3: { capability: 'measure_humidity.soil', divisor: 1 },
-      5: {
-        capability: 'measure_temperature',
-        transform: (v) => {
-          if (Math.abs(v) > 1000) {return v * 100;}
-          if (Math.abs(v) > 100) {return safeMultiply(v, 10);}
-          return v;
-        }
-      },
+      5: { capability: 'measure_temperature', transform: soilTemperature },
       15: { capability: 'measure_battery', divisor: 1 },
       14: { capability: 'measure_battery', transform: (v) => ({ 0: 10, 1: 50, 2: 100 }[v] ?? v) },
       112: { capability: 'measure_ec', divisor: 1 }
@@ -45,9 +49,8 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     if (dp === 3) {
       this.safeSetCapabilityValue('measure_humidity.soil', parseFloat(parsedValue)).catch(() => { });
     } else if (dp === 5) {
-      let temp = parsedValue;
-      if (temp > 100) {temp = safeMultiply(temp, 10);}
-      this.safeSetCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
+      const temp = soilTemperature(parsedValue);
+      if (temp !== null) { this.safeSetCapabilityValue('measure_temperature', temp).catch(() => { }); }
     } else {
       super._handleDP(dpId, value);
     }
@@ -87,3 +90,4 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
 }
 
 module.exports = SoilSensorDevice;
+module.exports.soilTemperature = soilTemperature;
