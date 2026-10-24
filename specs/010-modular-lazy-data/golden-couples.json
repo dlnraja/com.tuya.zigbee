@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-24T18:37:44.723Z",
+ "generated": "2026-10-24T19:07:45.008Z",
  "drivers": 402,
  "snapshot": {
   "air_purifier": {
@@ -585,9 +585,9 @@
    "pidSha": "455c46e8c8549693"
   },
   "device_radiator_valve": {
-   "mfr": 108,
+   "mfr": 107,
    "pid": 1,
-   "mfrSha": "b13b5d16a7020b89",
+   "mfrSha": "cc1bbd1629632f4d",
    "pidSha": "455c46e8c8549693"
   },
   "device_radiator_valve_smart": {
@@ -2187,9 +2187,9 @@
    "pidSha": "5c308053fde30f1f"
   },
   "valve_novato_zpv01": {
-   "mfr": 1,
+   "mfr": 3,
    "pid": 1,
-   "mfrSha": "b56bda4f328eaf74",
+   "mfrSha": "3888d71789895845",
    "pidSha": "455c46e8c8549693"
   },
   "valve_single": {
@@ -2391,15 +2391,15 @@
    "pidSha": "4e3ef65e098cb0b3"
   },
   "water_valve_garden": {
-   "mfr": 13,
+   "mfr": 14,
    "pid": 9,
-   "mfrSha": "5410ed990cc788cd",
+   "mfrSha": "50b98bd6a771f178",
    "pidSha": "fe84fd7ecb27e526"
   },
   "water_valve_smart": {
-   "mfr": 26,
+   "mfr": 25,
    "pid": 4,
-   "mfrSha": "3f03889fd8b97799",
+   "mfrSha": "e29b82a2d6244fce",
    "pidSha": "df253ecb1e47260e"
   },
   "weather_station_outdoor": {

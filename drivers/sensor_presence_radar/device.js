@@ -1701,57 +1701,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     return null;
   }
 
-  /**
-   * v5.5.902: FORUM FIX - Enhanced stuck detection for motion spam
-   * _TZE284_iadro9bf sends motion=YES every 20s even without presence
-   * v5.5.357: Original throttle + v5.5.902: Stuck pattern detection
-   * Solution: If device is stuck sending same value, use distance-based inference instead
-   */
-  _throttleMotionSpam(presence, dpId) {
-    const config = this._getSensorConfig();
-    // v5.7.34: Use _getManufacturerName() for consistent multi-source retrieval
-    const mfr = this._getManufacturerName();
-
-    // Only apply to problematic sensors (case-insensitive)
-    // WHY(P3011): was CI.includesCI(mfr, 'iadro9bf') — reversed args, always false (never matched).
-    if (!CI.containsCI(mfr, 'iadro9bf') && !CI.containsCI(mfr, 'qasjif9e')) {
-      return presence;
-    }
-
-    const now = Date.now();
-    this._motionThrottle = this._motionThrottle || {
-      lastUpdate: 0,
-      lastValue: null,
-      spamCount: 0,
-      consecutiveSame: 0,  // v5.5.902: Track consecutive same values
-      stuckMode: false     // v5.5.902: Device is stuck - use inference only
-    };
-
-    const timeSinceLastUpdate = now - this._motionThrottle.lastUpdate;
-
-    // v5.5.902: STUCK PATTERN DETECTION
-    // If we receive the same value 5+ times in a row, device is likely stuck
-    if (presence === this._motionThrottle.lastValue) {
-      this._motionThrottle.consecutiveSame++;
-      if (this._motionThrottle.consecutiveSame >= 5 && !this._motionThrottle.stuckMode) {
-        this._motionThrottle.stuckMode = true;
-        this.log(`[RADAR] âšï¸ STUCK MODE ACTIVATED: ${this._motionThrottle.consecutiveSame} consecutive ${presence} values - using distance inference only`);
-      }
-    } else {
-      // Value changed - reset stuck detection
-      if (this._motionThrottle.stuckMode) {
-        this.log(`[RADAR]  STUCK MODE CLEARED: value changed from ${this._motionThrottle.lastValue} to ${presence}`);
-      }
-      this._motionThrottle.consecutiveSame = 0;
-      this._motionThrottle.stuckMode = false;
-    }
-
-    // Always update lastValue and lastUpdate for next comparison
-    this._motionThrottle.lastValue = presence;
-    this._motionThrottle.lastUpdate = now;
-    // WHY(P3011): never drop the value — stuck detection is observational only.
-    return presence;
-  }
+  // P3015 2026-10-24: removed _throttleMotionSpam() — no caller anywhere (drivers/lib/tests) and since P3011 it
+  // returned its input unchanged (observational only), so removal has no runtime effect.
 
   // v5.8.50: Using centralized presence logic from UnifiedSensorBase
   
