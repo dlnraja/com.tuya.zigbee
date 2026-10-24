@@ -20,10 +20,10 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.join(__dirname, '..', '..');
-const { NAME_CAP } = require('../../lib/zigbee/DpCatalogDecoder');
+const { NAME_CAP, VETO_CAP } = require('../../lib/zigbee/DpCatalogDecoder');
 const OUT = path.join(ROOT, 'lib', 'zigbee', 'data', 'unknown-dp-catalog.json');
 
-function build({ z2m, knowledge, tuyaDps }) {
+function build({ z2m, knowledge, tuyaDps, zhaQuirks, deconz }) {
   const couples = new Map(); // key -> Map(dp -> name)
   const convs = new Map(); // key -> Map(dp -> converter token)  (P3018)
   const put = (mfr, pid, dp, name, conv, override = true) => {
@@ -45,6 +45,24 @@ function build({ z2m, knowledge, tuyaDps }) {
   for (const [key, rows] of Object.entries((tuyaDps && tuyaDps.couples) || {})) {
     const [mfr, pid] = key.split('|');
     for (const [dp, name, conv] of rows || []) { put(mfr, pid, dp, name, conv); }
+  }
+  // P3018b: second/third sources — ZHA per-quirk (scripts/data/harvest-zha-quirk-dps.js) and deCONZ
+  // DDF (scripts/data/harvest-deconz-tuya-dps.js). WHY: Z2M stays authoritative; another project only
+  // ADDS a DP Z2M does not list for the couple, or gives a converter to a Z2M DP that has none when
+  // both name the same meaning (same name or same Homey capability). Never replaces a Z2M converter.
+  const fill = { added: 0, conv: 0, conflict: 0 };
+  const same = (a, b) => a === b || (!!NAME_CAP[a] && NAME_CAP[a] === NAME_CAP[b]) || (!!VETO_CAP[a] && VETO_CAP[a] === VETO_CAP[b]);
+  for (const src of [zhaQuirks, deconz]) {
+    for (const [key0, rows] of Object.entries((src && src.couples) || {})) {
+      const [mfr, pid] = key0.split('|');
+      const key = `${String(mfr).toLowerCase()}|${String(pid).toUpperCase()}`;
+      for (const [dp, name, conv] of rows || []) {
+        const has = couples.has(key) && couples.get(key).has(Number(dp));
+        if (!has) { put(mfr, pid, dp, name, conv); fill.added++; continue; }
+        if (!conv || /^other\b|^lookup$/.test(String(conv)) || convs.get(key).has(Number(dp))) { continue; }
+        if (same(couples.get(key).get(Number(dp)), name)) { convs.get(key).set(Number(dp), String(conv).slice(0, 160)); fill.conv++; } else { fill.conflict++; }
+      }
+    }
   }
   for (const [key, row] of Object.entries((knowledge && knowledge.couples) || {})) {
     const [mfr, pid] = key.split('|');
@@ -87,10 +105,11 @@ function build({ z2m, knowledge, tuyaDps }) {
     }
     if (mfr && pid && Object.keys(m).length) { caps[`${mfr.toLowerCase()}|${pid.toUpperCase()}`] = m; }
   }
+  build.lastFill = fill;
   return {
     v: 2,
     caps,
-    src: 'z2m tuyaDatapoints names+converters (zigbee-herdsman-converters, MIT) + data/dp_couple_knowledge.json',
+    src: 'z2m tuyaDatapoints names+converters (zigbee-herdsman-converters, MIT) + ZHA quirks (Apache-2.0) + deCONZ DDF (BSD-3-Clause) fill-ins + data/dp_couple_knowledge.json',
     names,
     profiles,
     idx,
@@ -104,11 +123,12 @@ if (require.main === module) {
   const knowledge = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'dp_couple_knowledge.json'), 'utf8'));
   const tdPath = path.join(ROOT, 'scripts', 'data', 'z2m-tuya-dps.json');
   const tuyaDps = fs.existsSync(tdPath) ? JSON.parse(fs.readFileSync(tdPath, 'utf8')) : null;
-  const out = build({ z2m, knowledge, tuyaDps });
+  const opt = (f) => { const p = path.join(ROOT, 'scripts', 'data', f); return fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, 'utf8')) : null; };
+  const out = build({ z2m, knowledge, tuyaDps, zhaQuirks: opt('zha-quirk-dps.json'), deconz: opt('deconz-tuya-dps.json') });
   out.generated = (tuyaDps && tuyaDps.date) || (z2m && z2m.date) || null;
   fs.mkdirSync(path.dirname(OUT), { recursive: true });
   fs.writeFileSync(OUT, JSON.stringify(out));
-  console.log(`unknown-dp-catalog: ${Object.keys(out.idx).length} couples, ${out.profiles.length} profiles, ${out.names.length} names, ${fs.statSync(OUT).size} bytes`);
+  console.log(`unknown-dp-catalog: fill=${JSON.stringify(build.lastFill)} ${Object.keys(out.idx).length} couples, ${out.profiles.length} profiles, ${out.names.length} names, ${fs.statSync(OUT).size} bytes`);
 }
 
 module.exports = { build };
