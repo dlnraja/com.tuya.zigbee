@@ -631,6 +631,18 @@
       ],
       "why": "2026-10-24 P2970: _TZE204_dzuqwsyg is a Beca BAC-002/BAC-006AZB fan-coil wall thermostat (TS0601), not a radiator valve; moved to wall_thermostat (pinned).",
       "source": "P2970 Z2M zigbee-herdsman-converters tuya.ts BAC-002-ALZB (fingerprints _TZE200_dzuqwsyg/_TZE204_dzuqwsyg, whitelabel Beca BAC-003) + Koenkk/zigbee2mqtt discussion #25308 (Beca BAC-006AZB = _TZE204_dzuqwsyg)"
+    },
+    {
+      "driver": "button_emergency_sos",
+      "mfr": [
+        "HEIMAN",
+        "heiman"
+      ],
+      "pid": [
+        "RC-EF-3.0"
+      ],
+      "why": "2026-10-24 P2974: HEIMAN HM1RC-2-E (RC-EF-3.0) is a 4-button IAS ACE alarm keyfob (disarm / arm home / arm all / emergency); dedicated driver heiman_keyfob (pinned). The SOS driver exposed only the emergency alarm.",
+      "source": "P2974 port of master P2921; zigbee-herdsman-converters PR #2182 (arnaud-gouder), deCONZ #3828"
     }
   ]
 }

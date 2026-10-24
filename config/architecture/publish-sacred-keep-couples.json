@@ -1229,8 +1229,8 @@
     {
       "mfr": "HEIMAN",
       "pid": "RC-EF-3.0",
-      "driverId": "button_emergency_sos",
-      "note": "PCr2-1 2026-10-04 ZHC heiman.ts HM1RC-2-E — keep through publish compaction"
+      "driverId": "heiman_keyfob",
+      "note": "PCr2-1 2026-10-04 ZHC heiman.ts HM1RC-2-E — keep through publish compaction | P2974 2026-10-24: moved to dedicated heiman_keyfob (IAS ACE arm/disarm/emergency)"
     },
     {
       "mfr": "_TZE204_8fffc3kb",
@@ -1693,6 +1693,36 @@
       "pid": "TS0601",
       "driverId": "lcdtemphumidsensor",
       "note": "P2823 Kizabgd #2263 LCD RSH-HS03 — aligned with master 2026-10-19 (one couple one driver)"
+    },
+    {
+      "mfr": "HEIMAN",
+      "pid": "WarningDevice",
+      "driverId": "heiman_siren",
+      "note": "P2974 port of P2921 HS2WD-E: zigbee-herdsman-converters #3429 genBasic dump + deCONZ DDF #6400 (BabaIsYou)"
+    },
+    {
+      "mfr": "HEIMAN",
+      "pid": "WarningDevice-EF-3.0",
+      "driverId": "heiman_siren",
+      "note": "P2974 port of P2921 HS2WD-E: zigbee-herdsman-converters #3429 genBasic dump + deCONZ DDF #6400 (BabaIsYou)"
+    },
+    {
+      "mfr": "Heiman",
+      "pid": "WarningDevice",
+      "driverId": "heiman_siren",
+      "note": "P2974 port of P2921 HS2WD-E: zigbee-herdsman-converters #3429 genBasic dump + deCONZ DDF #6400 (BabaIsYou)"
+    },
+    {
+      "mfr": "Heiman",
+      "pid": "WarningDevice-EF-3.0",
+      "driverId": "heiman_siren",
+      "note": "P2974 port of P2921 HS2WD-E: zigbee-herdsman-converters #3429 genBasic dump + deCONZ DDF #6400 (BabaIsYou)"
+    },
+    {
+      "mfr": "HEIMAN",
+      "pid": "SmokeSensor-EF-3.0",
+      "driverId": "smoke_detector_advanced",
+      "note": "P2974 port of P2919: Homey interview on JohanBendz/com.tuya.zigbee #190 (forum 26439#2296)"
     }
   ]
 }

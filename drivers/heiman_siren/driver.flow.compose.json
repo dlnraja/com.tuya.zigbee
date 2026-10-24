@@ -1,0 +1,57 @@
+{
+  "triggers": [],
+  "conditions": [
+    {
+      "id": "heiman_siren_is_on",
+      "title": {
+        "en": "Siren !{{is|is not}} sounding",
+        "fr": "La sirène !{{sonne|ne sonne pas}}",
+        "nl": "Sirene !{{loeit|loeit niet}}",
+        "de": "Sirene !{{tönt|tönt nicht}}"
+      },
+      "args": []
+    }
+  ],
+  "actions": [
+    {
+      "id": "heiman_siren_start",
+      "title": {
+        "en": "Start siren for a duration",
+        "fr": "Déclencher la sirène pour une durée",
+        "nl": "Sirene starten voor een duur",
+        "de": "Sirene für eine Dauer starten"
+      },
+      "titleFormatted": {
+        "en": "Start siren for [[seconds]] seconds",
+        "fr": "Déclencher la sirène pendant [[seconds]] secondes",
+        "nl": "Sirene starten voor [[seconds]] seconden",
+        "de": "Sirene für [[seconds]] Sekunden starten"
+      },
+      "args": [
+        {
+          "type": "number",
+          "name": "seconds",
+          "min": 1,
+          "max": 1800,
+          "step": 1,
+          "placeholder": {
+            "en": "seconds",
+            "fr": "secondes",
+            "nl": "seconden",
+            "de": "Sekunden"
+          }
+        }
+      ]
+    },
+    {
+      "id": "heiman_siren_stop",
+      "title": {
+        "en": "Stop siren",
+        "fr": "Arrêter la sirène",
+        "nl": "Sirene stoppen",
+        "de": "Sirene stoppen"
+      },
+      "args": []
+    }
+  ]
+}

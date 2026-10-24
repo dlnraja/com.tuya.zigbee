@@ -794,6 +794,44 @@
       "pid": "TS0601",
       "source": "Z2M zigbee-herdsman-converters tuya.ts BAC-002-ALZB (fingerprints _TZE200_dzuqwsyg/_TZE204_dzuqwsyg, whitelabel Beca BAC-003) + Koenkk/zigbee2mqtt discussion #25308 (Beca BAC-006AZB = _TZE204_dzuqwsyg)",
       "regression": "P2970 2026-10-24: _TZE204_dzuqwsyg sat in switch_1gang (paired as a relay) and _TZE200_dzuqwsyg in device_radiator_valve (TRV DP map); store suggestion by Umberto Maffii: BAC-006AZB pairs but is not a thermostat."
+    },
+    {
+      "mfr": [
+        "HEIMAN"
+      ],
+      "driver": "heiman_keyfob",
+      "pid": "RC-EF-3.0",
+      "source": "zigbee-herdsman-converters PR #2182 (arnaud-gouder) + deCONZ #3828",
+      "regression": "P2974 port of P2921 dedicated native IAS ACE driver (was button_emergency_sos)"
+    },
+    {
+      "mfr": [
+        "HEIMAN",
+        "Heiman"
+      ],
+      "driver": "heiman_siren",
+      "pid": "WarningDevice",
+      "source": "zigbee-herdsman-converters #1416/#3429 + deCONZ DDF #6400",
+      "regression": "P2974 port of P2921 dedicated native IAS WD driver"
+    },
+    {
+      "mfr": [
+        "HEIMAN",
+        "Heiman"
+      ],
+      "driver": "heiman_siren",
+      "pid": "WarningDevice-EF-3.0",
+      "source": "zigbee-herdsman-converters #3429 + deCONZ DDF #6400",
+      "regression": "P2974 port of P2921 dedicated native IAS WD driver"
+    },
+    {
+      "mfr": [
+        "HEIMAN"
+      ],
+      "driver": "smoke_detector_advanced",
+      "pid": "SmokeSensor-EF-3.0",
+      "source": "Homey interview JohanBendz/com.tuya.zigbee #190 (forum 26439#2296)",
+      "regression": "P2974 port of P2919 native smoke couple"
     }
   ]
 }

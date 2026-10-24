@@ -1,8 +1,10 @@
 {
   "updated": "2026-09-10T12:27:56.421Z",
-  "note": "P2446: migrated 27 bare ZigBeeDevice → TuyaZigbeeDevice/UnifiedSwitchBase. Only ir_blaster remains. P2868 (2026-10-19): smart_knob_zg101zd stays on bare ZigBeeDevice on purpose - native-only knob (user decision), its own bound clusters decode every frame; the TuyaZigbeeDevice raw-frame/button/EF00 layers would double-handle 0xFC/0xFD and query an EF00 it does not have.",
+  "note": "P2446: migrated 27 bare ZigBeeDevice → TuyaZigbeeDevice/UnifiedSwitchBase. Only ir_blaster remains. P2868 (2026-10-19): smart_knob_zg101zd stays on bare ZigBeeDevice on purpose - native-only knob (user decision), its own bound clusters decode every frame; the TuyaZigbeeDevice raw-frame/button/EF00 layers would double-handle 0xFC/0xFD and query an EF00 it does not have. P2921/P2974 (2026-10-24): heiman_keyfob and heiman_siren are non-Tuya HEIMAN devices on pure ZCL (IAS ACE / IAS WD); the Tuya base layers (EF00 query, magic packet) do not apply.",
   "drivers": [
     "ir_blaster",
-    "smart_knob_zg101zd"
+    "smart_knob_zg101zd",
+    "heiman_keyfob",
+    "heiman_siren"
   ]
 }
