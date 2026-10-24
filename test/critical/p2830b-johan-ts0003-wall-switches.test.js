@@ -1,4 +1,5 @@
 'use strict';
+const { describe, it } = require('../_support/dual-runner'); // P3020: same file under node --test and mocha
 
 // P2830b — five Tuya TS0003 3-gang mains wall switches (credit: Johan Bendz, issues #55 and #254,
 // plus his supported-device list) were claimed by the 2-button remote driver button_wireless_2.

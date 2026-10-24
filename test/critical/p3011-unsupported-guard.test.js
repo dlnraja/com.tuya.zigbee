@@ -1,4 +1,5 @@
 'use strict';
+const { describe, it, beforeEach } = require('../_support/dual-runner'); // P3020: same file under node --test and mocha
 /**
  * P3011 — every "unsupported" outcome handled per device (owner request: "Il faut gérer tout les
  * commandes non supporté"). Covers: the classifier (2.6 Error(status), 3.9 ZCLError, Default
