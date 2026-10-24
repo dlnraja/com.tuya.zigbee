@@ -56,9 +56,18 @@ describe('P2956 cloud DP table + pairing hint', () => {
     const ssot = fs.readFileSync(path.join(root, 'wifi_generic/pair/configure.html'), 'utf8');
     assert.ok(ssot.includes("emit('suggest_driver'"));
     assert.ok(ssot.includes('_goListNow'));
-    for (const d of fs.readdirSync(root).filter((x) => x.startsWith('wifi_'))) {
+    // P3020 port: on this branch the wifi_ewelink_* / wifi_sonoff_* drivers are not
+    // Tuya-local (eWeLink driver / plain Driver) and ship their OWN pair view, so the
+    // sync invariant applies only to drivers whose driver.js is built on lib/tuya-local.
+    const isEwelink = (d) => {
+      try { return !/tuya-local/.test(fs.readFileSync(path.join(root, d, 'driver.js'), 'utf8')); } catch (_e) { return true; }
+    };
+    let checked = 0;
+    for (const d of fs.readdirSync(root).filter((x) => x.startsWith('wifi_') && !isEwelink(x))) {
       const f = path.join(root, d, 'pair/configure.html');
+      if (fs.existsSync(f)) checked++;
       if (fs.existsSync(f)) {assert.strictEqual(fs.readFileSync(f, 'utf8'), ssot, d);}
     }
+    assert.ok(checked >= 10, 'expected the Tuya-local wifi pair views to be checked');
   });
 });
