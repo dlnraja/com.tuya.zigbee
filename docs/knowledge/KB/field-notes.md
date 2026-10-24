@@ -30,6 +30,7 @@
 - [led_controller_spi_tuya — Athom AggregateError bisect (19/10/2026)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/SPI_ATHOM_BISECT_2026-10-19.md)
 
 ## Bastien
+- [P2929 — Bastien app: crashes and failing Flow cards/buttons (21/10/2026, Paris)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/BASTIEN_CRASH_BUTTONS_P2929_2026-10-21.md)
 - [Lost couples restore — 2026-10-11 (bastien-home)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/LOST_COUPLES_RESTORE_2026-10-11.md)
 - [Node 22 — bastien-home per-file test verdicts (2026-10-11)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/NODE22_BASTIEN_TEST_VERDICTS_2026-10-11.md)
 - [Port round 2026-10-11 (master → stable-v5 / bastien-home)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/PORT_ROUND_2026-10-11.md)

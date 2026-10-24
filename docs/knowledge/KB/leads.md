@@ -1,11 +1,11 @@
 # Open leads
 
 - Provisional tier: 1 (data/leads/provisional-couples.json)
-- KB candidates not yet in a driver: 218 with a reliable source (conf 0.85–0.9), 96 single weak source (conf ≤0.7). Staged, not applied (manifest-size hold).
+- KB candidates not yet in a driver: 216 with a reliable source (conf 0.85–0.9), 96 single weak source (conf ≤0.7). Staged, not applied (manifest-size hold).
 
 | mfr | pid | status | conf | source |
 |---|---|---|---|---|
-| `_TZ3000_pmz6miyu` | TS011F | provisional | 0.4 | ocr-cache johan-issue:451 |
+| `_TZ3000_pmz6miyu` | TS011F | demoted | 0.4 | ocr-cache johan-issue:451 |
 | `TS0201-z` | Tuya | kb-confirmed | 0.9 | https://github.com/zigpy/zha-device-handlers/blob/1d6598c32a8b4f054438f63f08fc36ff3d6b4930/zhaquirks/custom/telink.py |
 | `TS0601` | TZE200_0zaf1cr8 | kb-confirmed | 0.9 | https://github.com/zigpy/zha-device-handlers/blob/1d6598c32a8b4f054438f63f08fc36ff3d6b4930/zhaquirks/tuya/tuya_smoke.py |
 | `TS0601` | TZE200_nlrfgpny | kb-confirmed | 0.9 | https://github.com/zigpy/zha-device-handlers/blob/1d6598c32a8b4f054438f63f08fc36ff3d6b4930/zhaquirks/tuya/tuya_siren.py |
@@ -66,8 +66,6 @@
 | `_TZ3000_bmhwnl7s` | TS130F | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/TS130F_dual.html |
 | `_TZ3000_c8bqthpo` | TS0207 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/SBDV-00154.html |
 | `_TZ3000_dlhhrhs8` | TS000F | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/AY301Z-2CH.html |
-| `_TZ3000_eit7p838 ` | TS0207 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/BW-IS9.html |
-| `_TZ3000_eit7p838` | TS0207 | kb-confirmed | 0.9 | https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/tuya/_TZ3000_TS0207_water_leak_sensor.json |
 | `_TZ3000_ena8vgqb` | TS0201 | kb-confirmed | 0.9 | https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/tuya/_TZ3000_TS0201_temp_hum_sensor.json |
 | `_TZ3000_esynmmox` | TS130F | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/TS130F_dual.html |
 | `_TZ3000_gzvniqjb` | TS0011 | kb-confirmed | 0.9 | https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/tuya/_TZ3000_gzvniqjb_din_rail_switch.json |
