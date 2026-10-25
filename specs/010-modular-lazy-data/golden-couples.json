@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-24T22:07:57.695Z",
- "drivers": 391,
+ "generated": "2026-10-25T00:36:11.202Z",
+ "drivers": 392,
  "snapshot": {
   "air_purifier": {
    "mfr": 3,
@@ -177,9 +177,9 @@
    "pidSha": "907c50f03c1b4f74"
   },
   "button_wireless_1": {
-   "mfr": 34,
+   "mfr": 35,
    "pid": 32,
-   "mfrSha": "dcd33ae5c898c4a7",
+   "mfrSha": "4bf9396b7e6d9cff",
    "pidSha": "97471aa91d3d60d5"
   },
   "button_wireless_2": {
@@ -189,9 +189,9 @@
    "pidSha": "25b2f5f37b8e4dd1"
   },
   "button_wireless_3": {
-   "mfr": 23,
+   "mfr": 24,
    "pid": 1,
-   "mfrSha": "d8162248c0439b8b",
+   "mfrSha": "b420f7dd9f3d79e3",
    "pidSha": "06cd0099c514e4ab"
   },
   "button_wireless_4": {
@@ -393,9 +393,9 @@
    "pidSha": "c4343290bac9e455"
   },
   "curtain_motor": {
-   "mfr": 273,
+   "mfr": 275,
    "pid": 48,
-   "mfrSha": "48f9fdddd6e7958c",
+   "mfrSha": "fb9c0fb987c4e7ac",
    "pidSha": "00ba96ff94eb4bb5"
   },
   "curtain_motor_shutter": {
@@ -1197,9 +1197,9 @@
    "pidSha": "cd8cc01224270f0e"
   },
   "plug_energy_monitor": {
-   "mfr": 59,
+   "mfr": 62,
    "pid": 77,
-   "mfrSha": "e744f7d81ad7fc5f",
+   "mfrSha": "62a2e1f7c8006c5f",
    "pidSha": "996946b3efddf5b8"
   },
   "plug_smart": {
@@ -1455,9 +1455,9 @@
    "pidSha": "278e503d4862c11f"
   },
   "scene_switch_4": {
-   "mfr": 16,
+   "mfr": 17,
    "pid": 3,
-   "mfrSha": "0eb353c3bc2bad8d",
+   "mfrSha": "0bfa355fd22b65b0",
    "pidSha": "852c1ed113914f3e"
   },
   "scene_switch_6": {
@@ -1881,9 +1881,9 @@
    "pidSha": "b46b96d17990cf37"
   },
   "switch_1gang": {
-   "mfr": 371,
+   "mfr": 373,
    "pid": 38,
-   "mfrSha": "b523a6b0c147469a",
+   "mfrSha": "1db15b4924facdb3",
    "pidSha": "fd65b1d55ed8db6a"
   },
   "switch_2_gang": {
@@ -1899,10 +1899,16 @@
    "pidSha": "5181eca4102958ba"
   },
   "switch_2gang": {
-   "mfr": 94,
+   "mfr": 97,
    "pid": 15,
-   "mfrSha": "3e0b32779188cb55",
+   "mfrSha": "0acbd0f786aa09fc",
    "pidSha": "f01c166c2aa06e7b"
+  },
+  "switch_2gang_ts0002": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "ee8f66853a1fc811",
+   "pidSha": "a7f885cfce4bbc62"
   },
   "switch_3_gang": {
    "mfr": 11,
@@ -1911,9 +1917,9 @@
    "pidSha": "1c2e035cec82b333"
   },
   "switch_3gang": {
-   "mfr": 65,
+   "mfr": 67,
    "pid": 46,
-   "mfrSha": "1721feda14feb1e1",
+   "mfrSha": "4548c9f8a6b57015",
    "pidSha": "870729bf5269aac9"
   },
   "switch_4_gang_metering": {
@@ -1923,9 +1929,9 @@
    "pidSha": "79608defafa31586"
   },
   "switch_4gang": {
-   "mfr": 82,
+   "mfr": 83,
    "pid": 40,
-   "mfrSha": "d4ee8af5f9235fac",
+   "mfrSha": "a4f6ea795b878d65",
    "pidSha": "13ec4d7cc3589c0a"
   },
   "switch_dimmer_1gang": {
@@ -2169,9 +2175,9 @@
    "pidSha": "1326f3b1090e234a"
   },
   "wall_dimmer_tuya": {
-   "mfr": 133,
+   "mfr": 134,
    "pid": 14,
-   "mfrSha": "dba43948c2393424",
+   "mfrSha": "0de1aec5fd95556a",
    "pidSha": "86e609055c5d6281"
   },
   "wall_remote_1_gang": {
