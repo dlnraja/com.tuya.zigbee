@@ -21,6 +21,8 @@ const BRANCH_SPECIFIC_PATHS = Object.freeze([
   'docs/knowledge/KB/DP_ENDPOINT_COVERAGE.md', // generated per branch (DP × endpoint matrix)
   'docs/knowledge/DEVICE_TRUTH.md', // generated: tools/ci/build-device-truth.js (reads drivers/)
   'docs/knowledge/device-truth.json', // generated: tools/ci/build-device-truth.js
+  'docs/knowledge/KB/CODE_REFERENCE.md', // P3032 generated: scripts/kb/code-reference.js (reads this tree)
+  'docs/knowledge/KB/DOC_COVERAGE.md', // P3032 generated: scripts/kb/doc-coverage.js (reads this tree)
 ]);
 
 /** Patterns for any other generated per-branch coverage matrix (future *_COVERAGE.md files). */
@@ -37,6 +39,9 @@ const REGENERATORS = Object.freeze([
   Object.freeze({ script: 'scripts/kb/method-coverage.js', outputs: Object.freeze(['docs/knowledge/KB/METHOD_COVERAGE.md']) }),
   // P3018 generator: reads the target tree's drivers, catalogue and interviews (deterministic).
   Object.freeze({ script: 'scripts/kb/dp-endpoint-coverage.js', outputs: Object.freeze(['docs/knowledge/KB/DP_ENDPOINT_COVERAGE.md']) }),
+  // P3032 generators: code reference and doc coverage, both read the target tree only.
+  Object.freeze({ script: 'scripts/kb/code-reference.js', outputs: Object.freeze(['docs/knowledge/KB/CODE_REFERENCE.md']) }),
+  Object.freeze({ script: 'scripts/kb/doc-coverage.js', outputs: Object.freeze(['docs/knowledge/KB/DOC_COVERAGE.md']) }),
 ]);
 
 function normalize(rel) {

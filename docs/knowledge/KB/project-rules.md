@@ -45,6 +45,7 @@ Full texts (SSOT):
 - [Session Stability & Heuristic Rules Specification](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/SESSION_STABILITY_SUMMARY.md)
 - [The "56 Years Ago" Bug and Tuya Sleepy Devices](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/SLEEPY_TUYA_56_YEARS_BUG.md)
 - [Unit-test anti-régression (P2469)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/UNIT_TEST_ANTI_REGRESSION.md)
+- [Rule (SSOT): unknown commands and method chains (P3016–P3017)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/UNKNOWN_AND_METHOD_CHAINS.md)
 - [Unsupported Devices & Categories](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/UNSUPPORTED_DEVICES.md)
 - [User Device Expectations — Tuya Unified Zigbee](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/USER_DEVICE_EXPECTATIONS.md)
 - [W5 interview vs driver clusters (PCr2-2, 2026-10-04)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/W5_INTERVIEW_CLUSTER_AUDIT_2026-10-04.md)

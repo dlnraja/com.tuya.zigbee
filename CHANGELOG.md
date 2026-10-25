@@ -1,5 +1,16 @@
 ## [Unreleased]
 
+### Added (2026-10-24/25, master soak)
+- **P3029:** Zigbee command numbering (TSN) now continues per device across app restarts, so the first commands after Homey's nightly reboot are no longer ignored by some firmwares (kill switch `zcl_tsn_continuity`).
+- **P3028:** availability learns each battery device's normal reporting gap; buttons and remotes are no longer marked unavailable for staying silent; flapping devices and many-devices-at-once outages are flagged; a single sudden low-battery reading waits for confirmation.
+- **P3023:** memory budget (lazy DP catalogue, bounded caches, 45/60/75 MB degrade tiers); bounded smart helpers behind soak flags.
+- **P3018b / P3016 / P3017:** more DPs decoded exactly (ZHA per-quirk + deCONZ DDF sources), optional inferred DP layer, interpretation of unknown commands with teach/forget Flow actions.
+- **P3021c:** dedicated `switch_2gang_ts0002` driver for `_TZ3000_amal63is` + TS0002; power-vs-energy sanity check; ZG-102ZL contact default inverse; soil sensor DP guards.
+
+### Fixed (2026-10-24/25)
+- **P3025:** the manifest clean-up no longer strips valid Flow card `titleFormatted`; CI gates for app.json/compose drift, DP shards and lint ratchet; race-safe pushes with rebase retry.
+- **P3024b:** no couple of the last Test package (9.0.1574) can be lost in the publish payload (259 restored; baseline gate).
+
 ### Added
 - **P2871:** the Tuya ERS-10TZBVK-AA knob (`_TZ3000_4fjiwweb` + TS004F) now pairs as the rotary knob driver too (re-pair to switch from the 4-button driver).
 - **P2868 new driver `smart_knob_zg101zd`:** HOBEIAN ZG-101ZD / ERS-10TZBVK-AA rotary knob (`_TZ3000_abrsvsou` + TS004F). Native Zigbee pairing; triggers for rotate left/right, press, double press, hold and press+rotate; optional Tuya event mode setting. The couple left `button_wireless_4` (re-pair to switch driver).
