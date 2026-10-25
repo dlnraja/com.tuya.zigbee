@@ -75,6 +75,48 @@
       "note": "Issue #513 ZT08 climate sensor sacred keep; P3070 moved the pin from climate_sensor to its hardware driver (P133 one couple, one driver)"
     },
     {
+      "mfr": "_TZ3210_7vgttna6",
+      "pid": "TS0001",
+      "driverId": "fingerbot",
+      "note": "P3055 one couple one driver: Tuya Zigbee fingerbot plus (Z2M tuya.ts TS0001_fingerbot + ZHA tuya_fingerbot); was listed on sensor_motion_presence, a wrong-class driver, and missing from the store build; drivers/fingerbot/device.js already handles this mfr"
+    },
+    {
+      "mfr": "_TZ3210_a04acm9s",
+      "pid": "TS0001",
+      "driverId": "fingerbot",
+      "note": "P3055 one couple one driver: Tuya Zigbee fingerbot plus (Z2M tuya.ts TS0001_fingerbot + ZHA tuya_fingerbot); was listed on sensor_motion_presence, a wrong-class driver, and missing from the store build; drivers/fingerbot/device.js already handles this mfr"
+    },
+    {
+      "mfr": "_TZ3210_cm9mbpr1",
+      "pid": "TS0001",
+      "driverId": "fingerbot",
+      "note": "P3055 one couple one driver: Tuya Zigbee fingerbot plus (Z2M tuya.ts TS0001_fingerbot); was listed on sensor_motion_presence, a wrong-class driver, and missing from the store build; drivers/fingerbot/device.js already handles this mfr"
+    },
+    {
+      "mfr": "_TZ3000_0t4zjtia",
+      "pid": "TS0001",
+      "driverId": "wall_switch_1gang_1way",
+      "note": "P3055 compaction-shuffle guard: SmartThings Tuya Zigbee switch fingerprint for this couple, its only driver; not in the 9.0.1574 baseline, so the fingerbot pins let pass2 drop it"
+    },
+    {
+      "mfr": "_TZE200_tz32mtza",
+      "pid": "TS0601",
+      "driverId": "wall_switch_3gang_1way",
+      "note": "P3055 compaction-shuffle guard: Z2M moes.ts ZTS-EU_3gang wall touch switch (3 gang), also ZHA and Blakadder; only case variants were in the payload, and the fingerbot pins let pass2 drop them"
+    },
+    {
+      "mfr": "_TZE200_3ejwxpmu",
+      "pid": "TS0601",
+      "driverId": "air_quality_co2",
+      "note": "P3055 compaction-shuffle guard: Z2M tuya.ts TS0601_temperature_humidity_co2_sensor (CO2 sensor), also ZHA; not in the 9.0.1574 baseline, so freeing budget elsewhere let pass2 drop it"
+    },
+    {
+      "mfr": "_TZE284_8zizsafo",
+      "pid": "TS0601",
+      "driverId": "valve_irrigation",
+      "note": "P3055 compaction-shuffle guard: Z2M tuya.ts GIEX GX03 2-zone watering timer, also ZHA and Hubitat; only case variants were in the payload and P3055 budget changes let pass2 drop them"
+    },
+    {
       "mfr": "_TZ3000_mrpevh8p",
       "pid": "TS0041",
       "driverId": "button_wireless_1",

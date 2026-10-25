@@ -55,7 +55,22 @@ Freeing budget changes which unpinned groups pass2 cuts at the 17000 cap. Four a
 - `_TZE284_tre6haif`+TS0601 on sensor_motion_presence (Z2M TS0601_pir_solar);
 - `_TZ3000_ynmowqk2`+TS011F on smartplug (Z2M lidl.ts).
 
-Result: canonical attested couples in the payload went from 1493 to 1499, and the only intended losses are the hodyryli@climate_sensor parasites. Some non-canonical case variants (e.g. `_tyzb01_m6ec2pgj`) were trimmed by the existing case-form limit. Devices report the canonical string.
+The fingerbot move (below) freed budget again, and four more attested couples dropped out one after another. They are pinned too:
+- `_TZ3000_0t4zjtia`+TS0001 on wall_switch_1gang_1way (SmartThings; its only driver);
+- `_TZE200_tz32mtza`+TS0601 on wall_switch_3gang_1way (Z2M moes.ts ZTS-EU_3gang, also ZHA and Blakadder);
+- `_TZE200_3ejwxpmu`+TS0601 on air_quality_co2 (Z2M TS0601_temperature_humidity_co2_sensor, also ZHA);
+- `_TZE284_8zizsafo`+TS0601 on valve_irrigation (Z2M GIEX GX03 2-zone watering timer, also ZHA and Hubitat). Before this, only case variants were in the payload.
+
+Final check (built payload vs master payload, case-insensitive, per driver): the only attested couple that leaves a driver is hodyryli@climate_sensor, which is intended. Earlier result before the fingerbot step: canonical attested couples in the payload went from 1493 to 1499, and the only intended losses are the hodyryli@climate_sensor parasites. Some non-canonical case variants (e.g. `_tyzb01_m6ec2pgj`) were trimmed by the existing case-form limit. Devices report the canonical string.
+
+## Fingerbot plus on TS0001 (steering 2)
+
+`_TZ3210_7vgttna6`, `_TZ3210_a04acm9s` and `_TZ3210_cm9mbpr1` with TS0001 are the Tuya Zigbee fingerbot plus (Z2M tuya.ts `TS0001_fingerbot` for all three; ZHA `tuya_fingerbot` for the first two). On master they were listed on sensor_motion_presence, a wrong-class driver; the store build had them on no TS0001 driver. fingerbot already had TS0001 and its device.js already handles this mfr family.
+- Decision: the 4 case forms of each mfr leave sensor_motion_presence and go to fingerbot. A sacred pin keeps the exact couple on fingerbot. One couple, one driver.
+- Already-paired devices keep their driver, because only matching changes. The 9.0.1574 baseline has none of these mfrs, so no exemption is needed.
+- Lead, not changed (runtime, not matching): `lib/tuya/fingerprints.json` and the fp shards still hint `_TZ3210_7vgttna6` as motion_sensor and the uppercase forms as bulb_rgb TS0503A.
+
+`_TZ3210_d3m9v8p6` and `_TZ3210_pwj6vuj9` on fingerbot: no Z2M, ZHA, Johan, web, forum or diag hit. They have been on fingerbot since the v7.2.9 import (2026-04-11; earlier history was lost). Every data file that lists them was generated from the compose file. They are in the 9.0.1574 baseline and nothing proves them wrong, so they are **kept**.
 
 ## Credits
 

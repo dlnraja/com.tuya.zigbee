@@ -10,6 +10,8 @@ const { describe, it } = require('../_support/dual-runner'); // P3020: same file
 //  - _TZE284_hodyryli + TS0601 (TuYa ZT08 weather station, Z2M tuya.ts, #513) pairs on climate_sensor_zt08
 //    only: the sacred pin pointed at climate_sensor and the baseline re-attached 11 parasitic
 //    hodyryli@climate_sensor couples, which put the mfr back on climate_sensor (dual with TS0601).
+//  - fingerbot plus _TZ3210_7vgttna6/a04acm9s/cm9mbpr1 + TS0001 (Z2M TS0001_fingerbot, ZHA tuya_fingerbot)
+//    pair on fingerbot only (were on sensor_motion_presence); unsourced d3m9v8p6/pwj6vuj9 stay on fingerbot.
 const assert = require('assert');
 const fs = require('fs');
 const path = require('path');
@@ -85,5 +87,27 @@ describe('P3055 parasite decisions', function () {
     for (const [a, b, , own] of D.attested) assert.ok(owners(m.drivers, a, b).length > 0, `${a}+${b} lost`);
     for (const [a, b, id] of D.guardPins) assert.ok(has(m.drivers, id, a, b), `${a}+${b} guard pin on ${id}`);
     assert.deepStrictEqual(checkBaseline(m, loadPublishBaseline(ROOT)).missing, []);
+  });
+
+  it('fingerbot plus couples: source + sacred pin on fingerbot only; unsourced fingerbot mfrs kept', () => {
+    const drivers = source().drivers;
+    for (const [m, p, from, to] of D.fingerbot.moved) {
+      assert.deepStrictEqual(owners(drivers, m, p), [to], `${m}+${p}`);
+      const lc = m.toLowerCase();
+      const fromD = drivers.find((d) => d.id === from);
+      assert.ok(!(fromD.zigbee.manufacturerName || []).some((x) => x.toLowerCase() === lc), `${m} still on ${from}`);
+      assert.ok(sacred.some((c) => c.mfr === m && c.pid === p && c.driverId === to), `sacred pin ${m}`);
+      assert.ok(!sacred.some((c) => c.mfr.toLowerCase() === lc && c.driverId !== to), `pin elsewhere ${m}`);
+    }
+    const fb = drivers.find((d) => d.id === D.fingerbot.keptUnsourced.driverId);
+    for (const m of D.fingerbot.keptUnsourced.mfrs) {
+      assert.ok((fb.zigbee.manufacturerName || []).some((x) => x.toLowerCase() === m.toLowerCase()), `${m} removed from fingerbot`);
+    }
+    for (const [m, p, id] of D.guardPins) assert.ok(sacred.some((c) => c.mfr === m && c.pid === p && c.driverId === id), `guard pin ${m}`);
+  });
+
+  it('publish payload: fingerbot plus couples on fingerbot only', () => {
+    const m = getPayload();
+    for (const [a, b, , to] of D.fingerbot.moved) assert.deepStrictEqual(owners(m.drivers, a, b), [to], `${a}+${b}`);
   });
 });
