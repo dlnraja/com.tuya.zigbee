@@ -46,6 +46,16 @@ const DISCOURSE_SPACING = {
 const GITHUB_SPACING = 200; // 0.2s between requests
 
 // ===== ENHANCED fetchWithRetry =====
+// P3026: GitHub primary rate limit without Retry-After (403/429 with x-ratelimit-remaining: 0).
+// Returns ms to wait until x-ratelimit-reset (+1 s), or null when the headers do not say "exhausted".
+function githubRateLimitWaitMs(headers, nowMs = Date.now()) {
+  const get = (k) => (headers && typeof headers.get === 'function' ? headers.get(k) : headers && headers[k]);
+  if (String(get('x-ratelimit-remaining')) !== '0') return null;
+  const reset = parseInt(get('x-ratelimit-reset'), 10);
+  if (!Number.isFinite(reset)) return null;
+  return Math.max(1000, reset * 1000 - nowMs + 1000);
+}
+
 async function fetchWithRetry(url, opts = {}, ro = {}) {
   const {
     retries = 4,
@@ -108,6 +118,12 @@ async function fetchWithRetry(url, opts = {}, ro = {}) {
           await sleep(w);
           continue;
         }
+        const rlWait = githubRateLimitWaitMs(r.headers);
+        if (rlWait != null && i < retries && rlWait <= maxDelay) {
+          console.log('  [' + (label || 'retry') + '] 403 rate-limit exhausted, wait ' + Math.round(rlWait / 1000) + 's until reset');
+          await sleep(rlWait);
+          continue;
+        }
         return r;
       }
 
@@ -117,8 +133,11 @@ async function fetchWithRetry(url, opts = {}, ro = {}) {
         // Parse wait time from headers or body
         let waitMs = 0;
         const retryAfter = r.headers.get('retry-after');
+        const rlWait429 = githubRateLimitWaitMs(r.headers);
         if (retryAfter) {
           waitMs = parseInt(retryAfter, 10) * 1000;
+        } else if (rlWait429 != null) {
+          waitMs = rlWait429;
         } else {
           // Discourse sends {extras:{wait_seconds:N}} or "too many" in body
           try {
@@ -253,4 +272,4 @@ async function processBatch(items, handler, opts = {}) {
   return { ok, fail, skip };
 }
 
-module.exports = { fetchWithRetry, retryAsync, sleep, throttle, setThrottle, processBatch, DISCOURSE_SPACING };
+module.exports = { githubRateLimitWaitMs, fetchWithRetry, retryAsync, sleep, throttle, setThrottle, processBatch, DISCOURSE_SPACING };
