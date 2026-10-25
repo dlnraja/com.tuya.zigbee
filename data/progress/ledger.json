@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-25T15:58:03.135Z",
+ "updated": "2026-10-25T16:14:16.011Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -39625,6 +39625,12 @@
    "status": "done",
    "date": "2026-10-25",
    "note": "9 new TS0601 drivers (lead p3038c), codec enum/delta, hvac_system_mode; master only",
+   "by": "p3039"
+  },
+  "p3039d-class-moves": {
+   "status": "partial",
+   "date": "2026-10-25",
+   "note": "cxakecfo->device_radiator_valve, 7bztmfm1->co_sensor_dcr_co pushed; smoke_4 x4, ntcy3xu1, mwd3c2at, PIRIV01 held: P3024b re-pin would duplicate couple, needs owner yes for exemptions",
    "by": "p3039"
   },
   "root-cause:P2865-trv-announce": {
