@@ -16,7 +16,6 @@
   "capabilities": [
     "alarm_smoke",
     "alarm_tamper",
-    "alarm_battery",
     "measure_battery"
   ],
   "energy": {
