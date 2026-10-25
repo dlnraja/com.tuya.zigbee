@@ -1,13 +1,15 @@
 {
   "_why": "P3036c (25/10/2026 Paris): single source of the publish Zigbee caps. Read by scripts/lib/publish-caps.cjs (prepare-publish, platform budget gate, z2m-coverage, tests, workflows). Change a cap here only; the publish workflows no longer set HOMEY_ZIGBEE_* caps (an env var with that name still overrides for a manual run). Values stay within what Athom accepted (docs/knowledge/ATHOM_LIMITS.md on master).",
   "caps": {
-    "maxTotalCombos": 17000,
-    "maxDriverCombos": 1008,
+    "maxTotalCombos": 20000,
+    "maxDriverCombos": 1500,
     "maxCaseForms": 2,
-    "kbTopupMaxTotal": 20000,
-    "kbTopupMaxDriver": 1008,
-    "ts0601TopupMaxTotal": 20000,
-    "ts0601TopupMaxDriver": 1008
+    "kbTopupMaxTotal": 45000,
+    "kbTopupMaxDriver": 2000,
+    "ts0601TopupMaxTotal": 45000,
+    "ts0601TopupMaxDriver": 2000,
+    "maxUploadAppJsonBytes": 3537000,
+    "allowAboveMeasuredCombos": 1
   },
   "measured": {
     "acceptedMaxTotalCombos": 20000,
@@ -24,6 +26,27 @@
     "acceptedMaxUploadAppJsonMb": 3.93,
     "acceptedMaxPayloadMb": 38.33,
     "processingMinutes": 5,
-    "rejectedForSize": "P2252 at 100k+ raw combos; the October AggregateErrors (9.0.1365, 9.0.1426) were not combo related (9.0.1364 accepted with the same payload)"
+    "rejectedForSize": "P2252 at 100k+ raw combos; the October AggregateErrors (9.0.1365, 9.0.1426) were not combo related (9.0.1364 accepted with the same payload)",
+    "acceptedMaxUploadAppJsonBytes": 3930000,
+    "rejectedMinTotalCombos": 100000
+  },
+  "decision": {
+    "id": "P3036d",
+    "when": "2026-10-25 17:29 Paris",
+    "by": "owner (t523u)",
+    "rule": "The real bound is the uploaded app.json size: cap = 90 % of the largest accepted (3.93 MB, 9.0.1520) = 3537000 bytes, checked on the final upload. Combos: 20000 accepted, only rejection at 100k+; top-ups up to 45000 (< 90 % of 100k), per driver 2000 (caps of the accepted 9.0.664/698). Every addition is an exact mfr+pid couple a source compose declares (owner t524u).",
+    "rollback": {
+      "when": "Athom refuses the next normal master upload (processing_failed not transient)",
+      "caps": {
+        "maxTotalCombos": 17000,
+        "maxDriverCombos": 1008,
+        "maxCaseForms": 2,
+        "kbTopupMaxTotal": 20000,
+        "kbTopupMaxDriver": 1008,
+        "ts0601TopupMaxTotal": 20000,
+        "ts0601TopupMaxDriver": 1008
+      },
+      "how": "restore these caps here (single source) and set allowAboveMeasuredCombos 0; the bisect handles the rest"
+    }
   }
 }
