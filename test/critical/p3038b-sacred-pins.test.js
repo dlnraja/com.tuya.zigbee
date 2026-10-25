@@ -12,6 +12,7 @@ const fs = require('fs');
 const os = require('os');
 const path = require('path');
 const ROOT = path.join(__dirname, '..', '..');
+const CAPS = require(path.join(ROOT, 'scripts', 'lib', 'publish-caps.cjs')).loadPublishCaps({ root: ROOT, env: {} }); // P3036c single cap source
 const { compactZigbeeIdentifiers } = require(path.join(ROOT, 'scripts', 'maintenance', 'compact-zigbee-identifiers.cjs'));
 const PINS = [
   { mfr: '_TZE200_yenbr4om', pid: 'TS0601', driverId: 'curtain_motor' },
@@ -26,7 +27,7 @@ function getPayload() {
     payload = JSON.parse(fs.readFileSync(path.join(ROOT, 'app.json'), 'utf8'));
     const cwd = process.cwd();
     process.chdir(ROOT);
-    try { payload.__r = compactZigbeeIdentifiers(payload, (()=>{const y=fs.readFileSync(path.join(ROOT,'.github','workflows','auto-publish-on-push.yml'),'utf8');return {maxTotalCombos:Number(y.match(/HOMEY_ZIGBEE_MAX_TOTAL_COMBOS:\s*"(\d+)"/)[1]),maxDriverCombos:1500,maxCaseForms:2};})()); } finally { process.chdir(cwd); }
+    try { payload.__r = compactZigbeeIdentifiers(payload, { maxTotalCombos: CAPS.maxTotalCombos, maxDriverCombos: CAPS.maxDriverCombos, maxCaseForms: CAPS.maxCaseForms }); } finally { process.chdir(cwd); }
   }
   return payload;
 }

@@ -59,10 +59,8 @@ jobs:
       - run: npm ci --prefer-offline --no-audit
       - name: npm cache key freshness (report only)
         run: node scripts/ci/npm-cache-key.js || echo "::notice title=npm cache key::stale, run node scripts/ci/npm-cache-key.js --write"
-      - name: Use the publish caps of auto-publish-on-push
-        run: |
-          grep -oE 'HOMEY_ZIGBEE_MAX_(TOTAL_COMBOS|DRIVER_COMBOS|CASE_FORMS): *"?[0-9]+' .github/workflows/auto-publish-on-push.yml \
-            | sed -E 's/: *"?/=/' >> "$GITHUB_ENV" || true
+      - name: Publish caps (config/publish-caps.json, P3036c single source)
+        run: node scripts/lib/publish-caps.cjs --github-env | tee -a "$GITHUB_ENV"
       - name: Build + prepare payload (local only, no upload)
         env:
           TMPDIR: ${{ runner.temp }}
