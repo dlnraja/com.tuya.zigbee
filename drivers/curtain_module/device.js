@@ -1,5 +1,6 @@
-const { safeFlowCard } = require('../../lib/flow/FlowCardPresence');
 "use strict";
+
+const { safeFlowCard } = require('../../lib/flow/FlowCardPresence');
 
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { Cluster, debug, CLUSTER } = require("zigbee-clusters");
