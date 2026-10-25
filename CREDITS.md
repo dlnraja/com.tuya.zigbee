@@ -419,5 +419,12 @@ A heartfelt thank you to:
   radio traffic right after a device joins: the first-start reads, binds and reporting setups are now deduplicated,
   cached and paced. Thanks also to the Zigbee2MQTT `configureMagicPacket` authors for the read order of the Tuya
   basic attributes (own implementation, no upstream code copied).
+- Batch P3050 (Fingerbot Plus): **Yannis Assael (iassael)**, a big thank you for PR #577. You tracked down why every
+  command to the Moes Fingerbot Plus (`_TZ3210_j4pdtz9v` / TS0001) timed out: invalid `sendData` arguments, a send
+  cascade that keeps a sleeping device waiting, and a settings replay that blocks startup. You also tested the fix on
+  your own Homey Pro. Your commit is merged as-is, and the same idea now covers the other Fingerbot Plus ids. Thanks
+  also to the Zigbee2MQTT (`TS0001_fingerbot`), ZHA (`tuya_fingerbot.py`) and deCONZ (`_TZ3210_dse8ogfy_fingerbot`)
+  authors for the DP matrix we checked against, and to **dalobalo** (#161, #162) and **Joep_K** (forum 140352) for
+  the reports (own implementation, no upstream code copied).
 - And every forum member and GitHub issue reporter who sent a fingerprint, a diagnostic or a "this works now":
   you are listed by handle in the sections above, and new names are added with each batch.

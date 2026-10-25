@@ -37,20 +37,20 @@ async onInit() {
     };
 
     reg('getActionCard', 'fingerbot_push', async ({ device }) => {
-      await device.triggerPush();
+      await device.triggerFingerBotPress();
       });
     reg('getActionCard', 'fingerbot_turn_on', async ({ device }) => {
       await device.setCapabilityValue('onoff', true).catch(() => {});
-      await device.sendTuyaDP(1, 'bool', true);
+      await device.flowSetOnOff(true); // P3050: sendTuyaDP does not exist here; same path as the onoff UI
       });
     reg('getActionCard', 'fingerbot_turn_off', async ({ device }) => {
       await device.setCapabilityValue('onoff', false).catch(() => {});
-      await device.sendTuyaDP(1, 'bool', false);
+      await device.flowSetOnOff(false); // P3050: sendTuyaDP does not exist here; same path as the onoff UI
       });
     reg('getActionCard', 'fingerbot_toggle', async ({ device }) => {
       const cur = device.getCapabilityValue('onoff');
       await device.setCapabilityValue('onoff', !cur).catch(() => {});
-      await device.sendTuyaDP(1, 'bool', !cur);
+      await device.flowSetOnOff(!cur); // P3050: sendTuyaDP does not exist here; same path as the onoff UI
       });
     reg('getConditionCard', 'fingerbot_is_on', async ({ device }) => {
       return device.getCapabilityValue('onoff') === true;
