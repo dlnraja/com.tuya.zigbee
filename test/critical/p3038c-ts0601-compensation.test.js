@@ -58,4 +58,8 @@ describe('P3038c TS0601 coverage compensation', function () {
     const drv = source();
     for (const l of LEADS.leads) assert.deepStrictEqual(claims(drv, l.mfr, 'TS0601'), [], `${l.mfr} is a lead, not a mapping`);
   });
+  it('leads resolved later point at their exact driver only (P3039a wjk6rurm)', () => {
+    const drv = source();
+    for (const l of LEADS.resolved || []) assert.deepStrictEqual(claims(drv, l.mfr, 'TS0601'), [l.resolvedBy.driverId], `${l.mfr} resolved by ${l.resolvedBy.step}`);
+  });
 });

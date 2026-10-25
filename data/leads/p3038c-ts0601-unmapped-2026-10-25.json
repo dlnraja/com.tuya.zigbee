@@ -65,18 +65,6 @@
       "reason": "no fitting existing driver (new driver needed)"
     },
     {
-      "mfr": "_TZE200_wjk6rurm",
-      "pid": "TS0601",
-      "model": "SPM02V1-GT",
-      "description": "Smart energy monitor for 3P+N system",
-      "source": {
-        "src": "zhc",
-        "model": "SPM02V1-GT",
-        "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L18784"
-      },
-      "reason": "power_meter already lists this mfr with productId \"ts0601\" in lower case; adding it to energy_meter_3phase makes a new case-insensitive dual (native-matrix gate). Needs owner decision: reviewed dual or fix the power_meter pid case"
-    },
-    {
       "mfr": "_TZE200_yp5tsi3y",
       "pid": "TS0601",
       "model": "EWS1154-Z",
@@ -113,18 +101,6 @@
       "reason": "no fitting existing driver (new driver needed)"
     },
     {
-      "mfr": "_TZE204_wjk6rurm",
-      "pid": "TS0601",
-      "model": "SPM02V1-GT",
-      "description": "Smart energy monitor for 3P+N system",
-      "source": {
-        "src": "zhc",
-        "model": "SPM02V1-GT",
-        "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L18784"
-      },
-      "reason": "power_meter already lists this mfr with productId \"ts0601\" in lower case; adding it to energy_meter_3phase makes a new case-insensitive dual (native-matrix gate). Needs owner decision: reviewed dual or fix the power_meter pid case"
-    },
-    {
       "mfr": "_TZE20C1000000_p3g8xiug",
       "pid": "TS0601",
       "model": "TS0601_3ch_bidirectional_meter",
@@ -159,6 +135,50 @@
         "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L14686"
       },
       "reason": "no fitting existing driver (new driver needed)"
+    }
+  ],
+  "excluded": [
+    {
+      "mfr": "_TZE20X_xxxxxxxx",
+      "reason": "Johan tuya_dummy_device placeholder, not a real device"
+    }
+  ],
+  "resolved": [
+    {
+      "mfr": "_TZE200_wjk6rurm",
+      "pid": "TS0601",
+      "model": "SPM02V1-GT",
+      "description": "Smart energy monitor for 3P+N system",
+      "source": {
+        "src": "zhc",
+        "model": "SPM02V1-GT",
+        "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L18784"
+      },
+      "reason": "power_meter already lists this mfr with productId \"ts0601\" in lower case; adding it to energy_meter_3phase makes a new case-insensitive dual (native-matrix gate). Needs owner decision: reviewed dual or fix the power_meter pid case",
+      "resolvedBy": {
+        "step": "P3039a",
+        "commit": "942b6c038f",
+        "driverId": "power_meter",
+        "how": "exact TS0601 productId added next to the lower-case ts0601 already on power_meter (same Z2M source, additive)"
+      }
+    },
+    {
+      "mfr": "_TZE204_wjk6rurm",
+      "pid": "TS0601",
+      "model": "SPM02V1-GT",
+      "description": "Smart energy monitor for 3P+N system",
+      "source": {
+        "src": "zhc",
+        "model": "SPM02V1-GT",
+        "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L18784"
+      },
+      "reason": "power_meter already lists this mfr with productId \"ts0601\" in lower case; adding it to energy_meter_3phase makes a new case-insensitive dual (native-matrix gate). Needs owner decision: reviewed dual or fix the power_meter pid case",
+      "resolvedBy": {
+        "step": "P3039a",
+        "commit": "942b6c038f",
+        "driverId": "power_meter",
+        "how": "exact TS0601 productId added next to the lower-case ts0601 already on power_meter (same Z2M source, additive)"
+      }
     },
     {
       "mfr": "_TZE284_wjk6rurm",
@@ -170,13 +190,13 @@
         "model": "SPM02V1-GT",
         "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L18784"
       },
-      "reason": "power_meter already lists this mfr with productId \"ts0601\" in lower case; adding it to energy_meter_3phase makes a new case-insensitive dual (native-matrix gate). Needs owner decision: reviewed dual or fix the power_meter pid case"
-    }
-  ],
-  "excluded": [
-    {
-      "mfr": "_TZE20X_xxxxxxxx",
-      "reason": "Johan tuya_dummy_device placeholder, not a real device"
+      "reason": "power_meter already lists this mfr with productId \"ts0601\" in lower case; adding it to energy_meter_3phase makes a new case-insensitive dual (native-matrix gate). Needs owner decision: reviewed dual or fix the power_meter pid case",
+      "resolvedBy": {
+        "step": "P3039a",
+        "commit": "942b6c038f",
+        "driverId": "power_meter",
+        "how": "exact TS0601 productId added next to the lower-case ts0601 already on power_meter (same Z2M source, additive)"
+      }
     }
   ]
 }
