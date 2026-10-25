@@ -166,7 +166,13 @@ function resolveLimit(def, root = ROOT) {
     try {
       const yml = fs.readFileSync(path.join(root, def.limitFrom.workflow), 'utf8');
       const m = new RegExp(`${def.limitFrom.env}\\s*:\\s*["']?(\\d+(?:\\.\\d+)?)`).exec(yml);
-      if (m) return Number(m[1]);
+      // P3036: a second cap that may legitimately raise the payload above the first (TS0601 top-up ceiling).
+      let also = 0;
+      for (const env of [].concat(def.limitFrom.alsoEnv || [])) {
+        const a = new RegExp(`${env}\\s*:\\s*["']?(\\d+(?:\\.\\d+)?)`).exec(yml);
+        if (a) also = Math.max(also, Number(a[1]));
+      }
+      if (m) return Math.max(Number(m[1]), also);
     } catch { /* fall back to the static limit */ }
   }
   return def.limit;

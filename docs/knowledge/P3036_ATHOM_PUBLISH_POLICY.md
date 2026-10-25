@@ -39,6 +39,9 @@ This policy turns those findings into rules that every upload path follows.
 | transient | socket hang up, ECONNRESET, ETIMEDOUT, 5xx, timeouts, invalid_state | exactly 1, after >= 300 s + 0-60 s jitter, once the previous build is final | not tripped; the retry is exempt (fixes run 40194918949) | no |
 | real | AggregateError, processing_failed (without a transient cause), validation errors, unknown | none | tripped | yes |
 
+A bare `processing_failed` row with no reason at all keeps the P3025 rule in `athom-classify-failure.js`
+(wait log first, then empty error -> transient): Athom history shows those are mostly hang-ups.
+
 The in-run fallbacks (`homey-app-publish` action, `homey-publish` action, Auto-Fix publish job,
 publish-stable and bastien-publish loops) call `athom-publish-policy.js fallback` and record
 `ATHOM_RETRY_USED=1`, so a run can never retry twice.
@@ -64,6 +67,16 @@ If rejections come back, rerun the bisect: set status=running (drafts only + `bi
 `CI_GATE_SHA`, `CI_GATE_BRANCH`, `CI_GATE_WAIT_MS`, `CI_GATE_POLL_MS`, `CI_GATE_DISPATCH_MISSING`,
 `CI_GATE_DISPATCH_AFTER_MS`, `CI_GATE_SKIP` (manual only, not wired in any workflow), `EVENT_NAME`,
 `TRANSIENT_RETRY`, `DEFERRED_RETRY`, `FORCE_PUBLISH`, `ATHOM_MIN_INTERVAL_MIN`, `ATHOM_MAX_SUCCESS_PER_24H`,
-`ATHOM_CI_REQUIRED`, `ATHOM_RETRY_USED`, `ATHOM_REACH_TEST`, `DEFERRED_DRY_RUN`.
+`ATHOM_CI_REQUIRED`, `ATHOM_RETRY_USED`, `ATHOM_REACH_TEST`, `DEFERRED_DRY_RUN`, `HOMEY_ZIGBEE_TOPUP_MAX_TOTAL`,
+`HOMEY_ZIGBEE_TOPUP_MAX_DRIVER`, `HOMEY_ZIGBEE_TOPUP_ALLOW_UNMEASURED`.
 
-Tests: `test/critical/p3036-athom-publish-policy.test.js`.
+## TS0601 couples dropped by the compaction (lead L-P3037-01)
+Measurements, root cause and the measured Athom ceiling: `ATHOM_LIMITS.md`, section "P3036 measured combo
+ceiling and TS0601 top-up". In short: `scripts/maintenance/ts0601-topup.cjs` runs after the compaction and
+only adds missing (manufacturer, TS0601) groups up to `HOMEY_ZIGBEE_TOPUP_MAX_TOTAL` (20000 = highest combo
+count Athom accepted from us) and `HOMEY_ZIGBEE_TOPUP_MAX_DRIVER` (2000). On master it brings back 540
+groups (15 498 -> 19 999 combos); 2 162 stay out because the per-driver cartesian product makes them cost
+~64k combos in their current drivers. Getting all of them in needs a TS0601-only carrier driver or real
+probe uploads above 20k: both are owner decisions.
+
+Tests: `test/critical/p3036-athom-publish-policy.test.js`, `test/critical/p3036-ts0601-topup.test.js`.

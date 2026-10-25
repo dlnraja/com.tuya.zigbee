@@ -133,3 +133,38 @@ The Auto-Fix doctrine (P139: no bump loops while an older Test is healthy) is un
   ~15 340; below the old 17000/20000 ceilings); app.json stays ~3.3 MB < 4 MB. Driver set unchanged.
 - Refresh the baseline after each Test build: `node scripts/maintenance/build-publish-baseline.cjs
   <payload app.json> --merge --label "..."` (additive).
+
+## Update 2026-10-25 (Paris) — P3036 measured combo ceiling and TS0601 top-up
+- Lead L-P3037-01 (forum pass, master 2dc7ff9ac3): the compaction drops TS0601 couples that the
+  composes declare. Re-measured on master after P3038 (db128e34f0): at 15500/1500/2 the payload has
+  15 498 combos, 357 of 459 drivers, app.json 1.77 MB; 2 955 manufacturers (case-insensitive) have
+  their (mfr, TS0601) couple in NO payload driver (2 702 of them could go into a payload driver that
+  already carries TS0601). The forum's 1 643 counted fewer drivers; the order of magnitude is the same.
+  P3038 freed nothing in the payload: the 9 drivers had no manufacturer left, so they were already
+  pruned (0 combos).
+- Why: the cost is cartesian per driver. climate_sensor: source 2 005 mfrs × 61 pids, pass 1 keeps
+  58 × 34 observed pids, pass 2 ends at 19 × 12 = 228 combos. One more real TS0601 manufacturer
+  there costs 2 case forms × 12 pids = 24 combos. The 1574 baseline pins (14 282 couples, pinned exactly
+  by P3024b) already fill ~15 340 of the 15 500 cap, leaving ~160 combos for everything else.
+- What Athom really accepted (payload rebuilt with each commit's own compactor and caps; these are
+  "align/sync to Test" commits, so close to but not proven byte-identical with the uploaded payload):
+  9.0.664 Test (fbcb2246c6, caps 20000/2000) 20 000 combos, app.json 3.03 MB; 9.0.698 Test
+  (e961b1f6cf) 19 986 combos, 3.04 MB; 9.0.914 Test #3177 (e65e7fab16, 17000/2000) 16 986 combos.
+  Rejected: P2252 at 100k+ raw. October rejections at 13 995 were not combo related. So the highest
+  ceiling we have evidence for is ~20 000 combos; nothing between 20k and 100k has been tried.
+- Putting all 2 955 groups back into their current drivers would cost ~63 700 extra combos (~79k total;
+  switch_1gang 12.8k, climate_sensor 11.9k, presence_sensor_radar 10.2k, curtain_motor 3.6k): far above
+  anything accepted. Raising the plain cap to 20000 gains 4 485 couples but only 226 TS0601 groups,
+  because pass 2 spends the room on other pids.
+- Fix (additive): scripts/maintenance/ts0601-topup.cjs runs after the compaction in prepare-publish and
+  only ADDS missing (mfr, TS0601) groups, mfs_db-observed first then cheapest, into payload drivers that
+  already carry TS0601 and whose compose lists that manufacturer; up to HOMEY_ZIGBEE_TOPUP_MAX_TOTAL
+  (20000, clamped to the measured maximum unless HOMEY_ZIGBEE_TOPUP_ALLOW_UNMEASURED=1) and
+  HOMEY_ZIGBEE_TOPUP_MAX_DRIVER (2000). Same driver set, no productId added, max 2 case forms, nothing
+  removed (test: p3036-ts0601-topup). Result on master: +540 groups (+4 501 combos, all seen in mfs_db),
+  15 498 → 19 999 combos, app.json 1.79 MB; 2 162 groups still out. Disable: set the ceiling to "0".
+- To bring ALL of them in without passing 20k, the cartesian cost must go: a TS0601-only carrier
+  (sibling driver with productId ["TS0601"] only: ~2 combos per manufacturer, ~6k for all 2 955) or a
+  per-driver split. That changes the driver set (new driver ids were an AggregateError suspect, disproved
+  by P1 / P3034), so it is a proposal for the owner, not done here. Measuring above 20k needs real
+  uploads (one step per allowed slot under P3036 spacing: 22k, 25k, 30k), also an owner decision.
