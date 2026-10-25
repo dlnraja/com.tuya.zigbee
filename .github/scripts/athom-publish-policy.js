@@ -29,11 +29,14 @@ const path = require('path');
 const POLICY_VERSION = 1;
 
 // Per-app policy. Env overrides (per workflow): ATHOM_MIN_INTERVAL_MIN, ATHOM_MAX_SUCCESS_PER_24H,
-// ATHOM_CI_REQUIRED (comma list of workflow files).
+// ATHOM_CI_REQUIRED (comma list of workflow files), ATHOM_CROSS_APP_MIN_INTERVAL_MIN (P3048).
+// crossAppMinIntervalMin absent = 0 (stable / bastien keep their behaviour).
 const APPS = {
   'com.dlnraja.tuya.zigbee': {
     key: 'master', branch: 'master', lock: 'athom-publish-master',
     minIntervalMin: 120, maxSuccessPer24h: 1,
+    // P3048: >= 2 h since the last upload of ANY of the 3 apps before a master upload.
+    crossAppMinIntervalMin: 120,
     ci: ['syntax-check.yml', 'unified-ci.yml', 'node22-tests.yml', 'homey-app-validate.yml'],
   },
   'com.dlnraja.tuya.zigbee.stable': {
@@ -66,6 +69,7 @@ function appPolicy(appId, env = process.env) {
     appId, ...base,
     minIntervalMin: num(env.ATHOM_MIN_INTERVAL_MIN, base.minIntervalMin),
     maxSuccessPer24h: num(env.ATHOM_MAX_SUCCESS_PER_24H, base.maxSuccessPer24h),
+    crossAppMinIntervalMin: num(env.ATHOM_CROSS_APP_MIN_INTERVAL_MIN, base.crossAppMinIntervalMin || 0),
     ci: ci.length ? ci : base.ci.slice(),
   };
 }
@@ -192,6 +196,16 @@ function uploadEvents({ builds, outcomes, appId }) {
   return [...ev.values()].sort((a, b) => b.t - a.t);
 }
 
+/** P3048: newest upload of every OTHER app (outcomes ledger + their snapshots when readable). */
+function crossAppEvents({ appId, outcomes, otherBuilds = {} } = {}) {
+  const all = [];
+  for (const id of Object.keys(APPS)) {
+    if (id === appId) continue;
+    for (const e of uploadEvents({ builds: otherBuilds[id] || [], outcomes, appId: id })) all.push({ ...e, app: id });
+  }
+  return all.sort((a, b) => b.t - a.t);
+}
+
 function busyBuild(builds, now) {
   for (const b of sortBuilds(builds)) {
     const st = String(b.state || '');
@@ -209,7 +223,7 @@ function busyBuild(builds, now) {
  * deferred=true means "held for a reason that clears by itself": the self-heal slot retries later.
  */
 function slotDecision({ appId, builds, outcomes, snapshotOk = true, eventName, transientRetry, force, deferredRetry,
-  now = Date.now(), env = process.env } = {}) {
+  now = Date.now(), env = process.env, otherBuilds } = {}) {
   const p = appPolicy(appId, env);
   if (!p) return { go: true, reason: `no P3036 policy for ${appId}`, deferred: false };
   const manual = eventName === 'workflow_dispatch' && !retryCountOf(transientRetry) && !isTrue(deferredRetry);
@@ -221,6 +235,13 @@ function slotDecision({ appId, builds, outcomes, snapshotOk = true, eventName, t
   const nowMs = typeof now === 'number' ? now : Date.parse(now);
   const busy = busyBuild(builds, nowMs);
   if (busy) return { go: false, reason: `build #${busy.id} v${busy.version || '?'} still ${busy.state}: no upload while processing`, deferred: true };
+  if (p.crossAppMinIntervalMin > 0) {
+    const other = crossAppEvents({ appId, outcomes, otherBuilds })[0];
+    if (other && nowMs - other.t >= 0 && nowMs - other.t < p.crossAppMinIntervalMin * 60000) {
+      const left = Math.ceil((p.crossAppMinIntervalMin * 60000 - (nowMs - other.t)) / 60000);
+      return { go: false, reason: `${other.app} uploaded ${Math.round((nowMs - other.t) / 60000)} min ago < ${p.crossAppMinIntervalMin} min across apps (next slot in ~${left} min)`, deferred: true };
+    }
+  }
   const exempt = singleRetryExempt({ builds, transientRetry });
   const ev = uploadEvents({ builds, outcomes, appId });
   const last = ev[0];
@@ -293,7 +314,7 @@ function isCodeFile(f) { return CODE_FILE_RE.test(String(f || '')); }
 module.exports = {
   POLICY_VERSION, APPS, RETRY, TRANSIENT_RE, CODE_FILE_RE,
   appPolicy, appIdForKey, classify, backoffSeconds, retryDecision,
-  singleRetryExempt, breakerAssess, retryCountOf, slotDecision, busyBuild, uploadEvents,
+  singleRetryExempt, breakerAssess, retryCountOf, slotDecision, busyBuild, uploadEvents, crossAppEvents,
   evaluateCi, runState, isCodeFile, isTrue, versionOnlyDiff,
 };
 
@@ -459,7 +480,9 @@ async function main() {
   }
   if (cmd === 'slot' || cmd === 'gate') {
     const snap = readSnapshot(appId);
-    result.slot = slotDecision({ appId, builds: snap.builds, outcomes: readOutcomes(), snapshotOk: snap.ok, ...ev });
+    const otherBuilds = {};
+    for (const id of Object.keys(APPS)) if (id !== appId) { const o = readSnapshot(id); if (o.ok) otherBuilds[id] = o.builds; }
+    result.slot = slotDecision({ appId, builds: snap.builds, outcomes: readOutcomes(), snapshotOk: snap.ok, otherBuilds, ...ev });
     if (!result.slot.go) { go = false; deferred = deferred || result.slot.deferred; reasons.push(result.slot.reason); }
   }
   result.go = go; result.deferred = !go && deferred; result.reason = go ? 'all P3036 gates green' : reasons.join('; ');
