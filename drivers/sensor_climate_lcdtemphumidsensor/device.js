@@ -210,14 +210,16 @@ class ClimateSensorDevice extends UnifiedSensorBase {
         transform: (v) => {
           // v5.5.792: Auto-detect divisor based on value range
           // If value > 100, it's likely Ã—10 scaled (e.g., 650  65.0%)
-          if (v > 100) {return Math.round(v);}
+          if (v > 1000) {return Math.round(v / 100);}
+          if (v > 100) {return Math.round(v / 10);} // P3002: P2825 port (650→65 %), missed in a36121d984
           return v;
         }
       },
       7: {
         capability: 'measure_humidity',
         transform: (v) => {
-          if (v > 100) {return Math.round(v);}
+          if (v > 1000) {return Math.round(v / 100);}
+          if (v > 100) {return Math.round(v / 10);} // P3002: P2825 port (650→65 %), missed in a36121d984
           return v;
         }
       },
