@@ -26,7 +26,10 @@ describe('P2252 Athom zigbee combo budget', () => {
     assert.ok(out.includes('HOBEIAN') || out.includes('hobeian'));
   });
 
-  it('compact enforces RAW afterTotal ≤ maxTotal (not unique-case lie)', () => {
+  // WHY(P3039): compacting the full app.json (~470 drivers + P3024b baseline pins) takes 3-10 s on CI/box;
+  // the default 2000 ms mocha timeout failed this test spuriously.
+  it('compact enforces RAW afterTotal ≤ maxTotal (not unique-case lie)', function () {
+    if (this && typeof this.timeout === 'function') this.timeout(60000);
     const tmp = path.join(os.tmpdir(), `p2252-compact-${Date.now()}.json`);
     fs.copyFileSync(path.join(ROOT, 'app.json'), tmp);
     const result = compactManifestFile(tmp, {
