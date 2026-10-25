@@ -272,6 +272,8 @@ jobs:
           fi
 
       - name: 💾 Commit fixes
+        env:
+          HOOKS_AUTO_FIX_DRIFT: '1'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -286,6 +288,11 @@ jobs:
             done
           }
           restore_volatile_artifacts
+          # P3035: auto-fix steps edit driver.compose.json fingerprints; re-sync app.json from
+          # compose before staging so the P3025 pre-commit drift gate does not block the commit.
+          if [ -f scripts/ci/appjson-compose-drift-gate.js ]; then
+            node scripts/ci/appjson-compose-drift-gate.js --fix || echo "::warning::P3035 app.json compose re-sync failed"
+          fi
           stage_auto_fix_paths
           if ! git diff --staged --quiet; then
             git commit -m "🤖 auto-fix-all: automated fixes [skip ci]"
