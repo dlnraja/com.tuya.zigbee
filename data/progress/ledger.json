@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-25T08:43:28.230Z",
+ "updated": "2026-10-25T10:16:18.405Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -6024,6 +6024,15 @@
    "kind": "general",
    "mailDate": "2026-10-21T09:29:11.000Z"
   },
+  "diag:05b778f83c2dfddb": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "18dcbc1e99860df4",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-25T07:00:37.000Z"
+  },
   "diag:06912ba3ff917d5d": {
    "status": "done",
    "date": "2026-10-20",
@@ -7041,6 +7050,15 @@
    "kind": "general",
    "mailDate": "2026-10-20T14:09:10.000Z"
   },
+  "diag:5c5fc09fe85d61b4": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "d7e14ac18dc305b8",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-25T07:03:26.000Z"
+  },
   "diag:5ce7fdd8eaba5642": {
    "status": "pending",
    "date": "2026-10-21",
@@ -7757,6 +7775,18 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-10-20T08:10:25.000Z"
+  },
+  "diag:a23896c7b5be77e2": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "21355170e570774d",
+   "note": "interview mail; 1 couple(s); nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "interview",
+   "mailDate": "2026-10-25T08:53:47.000Z",
+   "couples": [
+    "_TZE284_z7a2jmyy|TS0601"
+   ]
   },
   "diag:a25fbad05d6da232": {
    "status": "done",
@@ -8582,6 +8612,15 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-10-21T08:52:29.000Z"
+  },
+  "diag:e48b658ee1b3768b": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "dc192c68f0609837",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-25T07:00:53.000Z"
   },
   "diag:e4d6196378c3d462": {
    "status": "done",
