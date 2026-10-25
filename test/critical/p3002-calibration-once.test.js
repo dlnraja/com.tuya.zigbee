@@ -141,7 +141,8 @@ describe('P3002 calibration applied exactly once', () => {
       const src = fs.readFileSync(path.join(ROOT, 'drivers', d, 'device.js'), 'utf8');
       assert.ok(!/safeMultiply\(this\._apply(Temp|Hum)Offset\([^)]*\)\)/.test(src), d);
       assert.ok(!/measuredValue \* 100/.test(src), d);
-      assert.ok(!/if \(v > 100\) \{return Math\.round\(v\);\}/.test(src), d);
+      // P3034: match braced (P3025 eslint curly) AND unbraced forms, so the guard is never vacuous.
+      assert.ok(!/if \(v > 100\) \{?\s*return Math\.round\(v\);?\s*\}?/.test(src), d);
     }
     const z = fs.readFileSync(path.join(ROOT, 'lib/tuya/TuyaZigbeeDevice.js'), 'utf8');
     assert.ok(z.includes('CalibrationLedger.consume(this, capability, value)'));
