@@ -90,4 +90,5 @@ jobs:
           git config --local user.name "GitHub Action"
           git add data/enriched_intelligence.json reports/URL_AUDIT.md reports/url_audit_report.json reports/MONTHLY_SUMMARY.md
           git commit -m "chore(intelligence): monthly automated url audit and enrichment [skip ci]" || echo "No changes to commit"
-          git push
+          # P3025: bare `git push` was rejected whenever another bot pushed first
+          bash .github/scripts/git-push-retry.sh --branch "${GITHUB_REF_NAME}"

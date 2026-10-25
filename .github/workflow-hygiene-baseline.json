@@ -9,12 +9,6 @@
     },
     {
       "rule": "raw-push",
-      "file": ".github/workflows/auto-publish-on-push.yml",
-      "key": "count",
-      "count": 1
-    },
-    {
-      "rule": "raw-push",
       "file": ".github/workflows/blakadder-fetch.yml",
       "key": "count",
       "count": 1
@@ -57,12 +51,6 @@
     },
     {
       "rule": "raw-push",
-      "file": ".github/workflows/monthly-tuya-intelligence.yml",
-      "key": "count",
-      "count": 1
-    },
-    {
-      "rule": "raw-push",
       "file": ".github/workflows/project-resilience.yml",
       "key": "count",
       "count": 1
@@ -72,12 +60,6 @@
       "file": ".github/workflows/publish-stable.yml",
       "key": "count",
       "count": 1
-    },
-    {
-      "rule": "raw-push",
-      "file": ".github/workflows/publish.yml",
-      "key": "count",
-      "count": 2
     },
     {
       "rule": "raw-push",
