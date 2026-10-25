@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-25T11:48:21.616Z",
+ "updated": "2026-10-25T11:59:56.434Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -15,6 +15,120 @@
    "date": "2026-10-25",
    "note": "attempt 1/3 (24h) runs 40147508102,40162040962: P3035 re-sync app.json from compose before staging in Commit fixes",
    "by": "homey-ci-autofix"
+  },
+  "autopilot-issue:550": {
+   "status": "deferred",
+   "date": "2026-10-25",
+   "hash": "b8585fd5266b33ad",
+   "note": "already-supported: supported and referenced by a fix commit; owner replies (draft in autopilot report), never auto-closed",
+   "by": "repo-autopilot",
+   "kind": "already-supported",
+   "author": "HiepSVG",
+   "link": "https://github.com/dlnraja/com.tuya.zigbee/issues/550",
+   "mfrs": [
+    "_TZE204_gkfbdvyx"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "drivers": [
+    "presence_sensor_radar"
+   ],
+   "counts": {
+    "dps": 6,
+    "diag": 5,
+    "fixCommits": 5
+   }
+  },
+  "autopilot-issue:559": {
+   "status": "deferred",
+   "date": "2026-10-25",
+   "hash": "7b10e046ad5cae00",
+   "note": "already-supported: supported and referenced by a fix commit; owner replies (draft in autopilot report), never auto-closed",
+   "by": "repo-autopilot",
+   "kind": "already-supported",
+   "author": "Lalla80111",
+   "link": "https://github.com/dlnraja/com.tuya.zigbee/issues/559",
+   "mfrs": [
+    "_TZ3210_w0qqde0g"
+   ],
+   "pids": [
+    "TS011F"
+   ],
+   "drivers": [
+    "plug_energy_monitor"
+   ],
+   "counts": {
+    "dps": 0,
+    "diag": 1,
+    "fixCommits": 1
+   }
+  },
+  "autopilot-issue:560": {
+   "status": "deferred",
+   "date": "2026-10-25",
+   "hash": "0af5b28c98872840",
+   "note": "already-supported: supported and referenced by a fix commit; owner replies (draft in autopilot report), never auto-closed",
+   "by": "repo-autopilot",
+   "kind": "already-supported",
+   "author": "artisare",
+   "link": "https://github.com/dlnraja/com.tuya.zigbee/issues/560",
+   "mfrs": [
+    "_TZE200_rxq4iti9"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "drivers": [
+    "device_radiator_valve"
+   ],
+   "counts": {
+    "dps": 12,
+    "diag": 2,
+    "fixCommits": 5
+   }
+  },
+  "autopilot-issue:570": {
+   "status": "deferred",
+   "date": "2026-10-25",
+   "hash": "35dbd951f5819102",
+   "note": "already-supported: referenced by fix commit(s); no couple in the text; owner replies (draft in autopilot report), never auto-closed",
+   "by": "repo-autopilot",
+   "kind": "already-supported",
+   "author": "edwinvdp",
+   "link": "https://github.com/dlnraja/com.tuya.zigbee/issues/570",
+   "mfrs": [],
+   "pids": [],
+   "drivers": [],
+   "counts": {
+    "dps": 0,
+    "diag": 1,
+    "fixCommits": 2
+   }
+  },
+  "autopilot-issue:571": {
+   "status": "deferred",
+   "date": "2026-10-25",
+   "hash": "9f9cf36b9cbb86da",
+   "note": "already-supported: supported and referenced by a fix commit; owner replies (draft in autopilot report), never auto-closed",
+   "by": "repo-autopilot",
+   "kind": "already-supported",
+   "author": "denis-papin",
+   "link": "https://github.com/dlnraja/com.tuya.zigbee/issues/571",
+   "mfrs": [
+    "_TZE284_myd45weu"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "drivers": [
+    "soil_sensor"
+   ],
+   "counts": {
+    "dps": 0,
+    "diag": 1,
+    "fixCommits": 2
+   }
   },
   "conflict:_tz3000_4uuaja4a|ts0726": {
    "status": "done",
@@ -39181,6 +39295,22 @@
     "delta.pids": 1
    },
    "lastChangeRun": "40170017948"
+  },
+  "workflow-run:repo-autopilot": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "5b1ebfa3f745cb05",
+   "note": "run summary: 6 counter(s)",
+   "by": "repo-autopilot",
+   "counts": {
+    "closed": 0,
+    "merged": 0,
+    "branchesDeleted": 1,
+    "issues": 6,
+    "external": 0,
+    "leadsAdded": 0
+   },
+   "lastChangeRun": "40190947487"
   }
  }
 }
