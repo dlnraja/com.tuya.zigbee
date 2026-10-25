@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-25T00:47:52.222Z",
+ "generated": "2026-10-25T17:34:38.216Z",
  "drivers": 392,
  "snapshot": {
   "air_purifier": {
@@ -568,9 +568,9 @@
   },
   "device_plug_smart": {
    "mfr": 0,
-   "pid": 8,
+   "pid": 7,
    "mfrSha": "e3b0c44298fc1c14",
-   "pidSha": "626ef0e7531513e6"
+   "pidSha": "2037d2504d7835d0"
   },
   "device_plug_smart_water": {
    "mfr": 1,
@@ -670,9 +670,9 @@
   },
   "dimmer_dual_channel": {
    "mfr": 0,
-   "pid": 2,
+   "pid": 1,
    "mfrSha": "e3b0c44298fc1c14",
-   "pidSha": "b8e8f65f7524bfbf"
+   "pidSha": "98b320267c2ba16a"
   },
   "dimmer_ts110e": {
    "mfr": 2,
@@ -772,9 +772,9 @@
   },
   "double_power_point": {
    "mfr": 0,
-   "pid": 2,
+   "pid": 1,
    "mfrSha": "e3b0c44298fc1c14",
-   "pidSha": "720ce7b7ec09a25f"
+   "pidSha": "ee3881b630706571"
   },
   "double_power_point_2": {
    "mfr": 9,
@@ -1233,9 +1233,9 @@
    "pidSha": "74df414b6b5ef7ae"
   },
   "power_meter": {
-   "mfr": 15,
+   "mfr": 14,
    "pid": 5,
-   "mfrSha": "31cbf1ce7004bec1",
+   "mfrSha": "64483f9acefaa130",
    "pidSha": "d565aee9e57c0f78"
   },
   "presence_sensor_ceiling": {
@@ -1348,9 +1348,9 @@
   },
   "remote_button_wireless_smart": {
    "mfr": 0,
-   "pid": 2,
+   "pid": 1,
    "mfrSha": "e3b0c44298fc1c14",
-   "pidSha": "f3e89c56b663e4d7"
+   "pidSha": "bee580cb2039fffe"
   },
   "remote_button_wireless_usb": {
    "mfr": 0,
@@ -1461,9 +1461,9 @@
    "pidSha": "278e503d4862c11f"
   },
   "scene_switch_4": {
-   "mfr": 17,
+   "mfr": 18,
    "pid": 3,
-   "mfrSha": "0bfa355fd22b65b0",
+   "mfrSha": "c1c85477ad519cd6",
    "pidSha": "852c1ed113914f3e"
   },
   "scene_switch_6": {
@@ -1582,9 +1582,9 @@
   },
   "sensor_lcdtemphumidsensor_temphumidsensor": {
    "mfr": 0,
-   "pid": 14,
+   "pid": 13,
    "mfrSha": "e3b0c44298fc1c14",
-   "pidSha": "52ab211a7e1438c9"
+   "pidSha": "fbca25dc37c9b88e"
   },
   "sensor_motion_presence": {
    "mfr": 25,
