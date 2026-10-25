@@ -126,6 +126,22 @@ class FingerBot extends TuyaSpecificClusterDevice {
     return 'datapoint';
   }
 
+  /**
+   * One sendData (0x04) frame per DP, straight to the cluster.
+   * The inherited cascade (EF00 manager -> setData 0x00 -> raw -> magic -> rescan)
+   * queues several frames this firmware ignores, and the sendData fallback passed
+   * {dp, datatype, data} where the cluster expects {seq, dpValues}.
+   */
+  async _sendTuyaDatapoint(dp, datatype, length, data) {
+    const header = Buffer.from([dp & 0xff, datatype & 0xff, (length >> 8) & 0xff, length & 0xff]);
+    const seq = this._transactionID;
+    this.transactionID = seq + 1;
+    return this.zclNode.endpoints[1].clusters.tuya.sendData({
+      seq,
+      dpValues: Buffer.concat([header, data]),
+    });
+  }
+
   async onNodeInit({ zclNode }) {
     this.log('Initializing FingerBot device...');
     
@@ -143,17 +159,7 @@ class FingerBot extends TuyaSpecificClusterDevice {
     this._registerTimeBoundCluster(zclNode);
 
     try {
-      // --- Attribute Reporting Configuration ---
-      await this.configureAttributeReporting([
-        {
-          cluster: 'genPowerCfg',
-          attributeName: 'batteryPercentageRemaining',
-          minInterval: 3600,
-          maxInterval: 43200,
-          minChange: 2,
-        }
-      ]).catch(err => this.log('Attribute reporting config failed:', err.message));
-
+      // No genPowerCfg on this device (in: 0, 6, 0xEF00) - battery arrives as DP105.
       await super.onNodeInit({ zclNode });
 
       this._registerOnOffHandling(zclNode);
@@ -164,8 +170,8 @@ class FingerBot extends TuyaSpecificClusterDevice {
         'manufacturerName', 'zclVersion', 'appVersion', 'modelId', 'powerSource', 'attributeReportingStatus',
       ]).catch(err => this.error('Error reading attributes:', err));
 
-      // Apply current settings once on init.
-      await this.applyConfiguredSettings({ includeMode: true });
+      // Settings are pushed from onSettings only: replaying six DP writes on every
+      // init floods a sleepy end device and user commands time out behind them.
 
     } catch (err) {
       this.error('FingerBot initialization error:', err.message);
