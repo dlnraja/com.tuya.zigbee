@@ -149,7 +149,13 @@ describe('P3024b publish baseline couples', () => {
     assert.deepStrictEqual(missing.slice(0, 10), [], `${missing.length} baseline couples lost`);
     // Exact pairing: each couple is present byte-exact in at least one shipped driver.
     const have = payloadCouples(manifest);
-    for (const c of baselineCouples(baseline)) assert.ok(have.has(`${c.mfr}\u0000${c.pid}`));
+    // WHY(P3039d): reviewed exemptions (owner yes, reason) are the only couples allowed to leave.
+    const exempt = new Set((baseline.exemptions || []).filter((e) => e && e.reason).map((e) => `${e.mfr}\u0000${e.pid}`));
+    for (const c of baselineCouples(baseline)) {
+      const k = `${c.mfr}\u0000${c.pid}`;
+      if (exempt.has(k)) continue;
+      assert.ok(have.has(k), `${c.mfr}+${c.pid} (was ${c.driverId})`);
+    }
   });
 
   it('runtime fingerprint lookup is caseless (fallback for already-paired devices)', () => {

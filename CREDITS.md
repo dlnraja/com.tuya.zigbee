@@ -406,5 +406,12 @@ A heartfelt thank you to:
 - Batch P3039d (class moves, one couple one driver): the `tuya.ts` contributors of the **DCR-CO** carbon monoxide
   detector (`7bztmfm1`) and of the **AVATTO ME168** radiator valve (`cxakecfo`): thanks to your definitions these
   devices now pair on a CO detector and a TRV driver instead of a plug and a contact sensor.
+- Batch P3039d lot B (one couple, one driver; truth key = exact manufacturer + product id): the `tuya.ts`
+  contributors of **TS0601_smoke_4** (`_TZE200_t5p1vj8r`, `uebojraa`, `vzekyi4c`, `dq1mfjug`), **TS0601_smoke_1**
+  (`_TZE204_ntcy3xu1`, tamper DP), the **TS0202 PIR** `_TZ3000_mwd3c2at` and the **Excellux ZG-104PLV** PIR
+  (`PIRIV01`): thank you, these smoke and motion sensors now pair on smoke / motion drivers instead of a wireless
+  switch, a power strip, an irrigation valve and a motion relay. Thanks also to Koen Kanters and the Zigbee2MQTT
+  community for the per-device fingerprints that let us check every couple one by one (own implementation, no
+  upstream code copied).
 - And every forum member and GitHub issue reporter who sent a fingerprint, a diagnostic or a "this works now":
   you are listed by handle in the sections above, and new names are added with each batch.

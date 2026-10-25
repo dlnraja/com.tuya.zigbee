@@ -15,6 +15,7 @@
   ],
   "capabilities": [
     "alarm_smoke",
+    "alarm_tamper",
     "alarm_battery",
     "measure_battery"
   ],
@@ -39,7 +40,27 @@
       "_TZE200_yh7aoahi",
       "_tze200_yh7aoahi",
       "_TZE200_YH7AOAHI",
-      "_tze200_YH7AOAHI"
+      "_tze200_YH7AOAHI",
+      "_TZE200_t5p1vj8r",
+      "_tze200_t5p1vj8r",
+      "_TZE200_T5P1VJ8R",
+      "_tze200_T5P1VJ8R",
+      "_TZE200_uebojraa",
+      "_tze200_uebojraa",
+      "_TZE200_UEBOJRAA",
+      "_tze200_UEBOJRAA",
+      "_TZE200_vzekyi4c",
+      "_tze200_vzekyi4c",
+      "_TZE200_VZEKYI4C",
+      "_tze200_VZEKYI4C",
+      "_TZE200_dq1mfjug",
+      "_tze200_dq1mfjug",
+      "_TZE200_DQ1MFJUG",
+      "_tze200_DQ1MFJUG",
+      "_TZE204_ntcy3xu1",
+      "_tze204_ntcy3xu1",
+      "_TZE204_NTCY3XU1",
+      "_tze204_NTCY3XU1"
     ],
     "productId": [
       "TS0601"
@@ -65,6 +86,6 @@
     }
   },
   "metadata": {
-    "source": "zigbee-herdsman-converters tuya.ts TS0601_smoke_4 (_TZE200_yh7aoahi): DP1 smoke (raw 0 = smoke), DP14 battery state (0 = low), DP15 battery %. TS0601 only; the TS0205 couple on smoke_sensor3 is left in place. Reimplemented and credited (P3039), no upstream code copied."
+    "source": "zigbee-herdsman-converters tuya.ts TS0601_smoke_4 (_TZE200_yh7aoahi, t5p1vj8r, uebojraa, vzekyi4c, dq1mfjug) and TS0601_smoke_1 (_TZE204_ntcy3xu1): DP1 smoke (raw 0 = smoke), DP4 tamper (smoke_1 only), DP14 battery state / battery low (0 = low), DP15 battery % (smoke_4 only). TS0601 only; the TS0205 couple on smoke_sensor3 is left in place. Reimplemented and credited (P3039), no upstream code copied."
   }
 }
