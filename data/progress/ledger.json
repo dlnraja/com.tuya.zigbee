@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-25T17:35:00.172Z",
+ "updated": "2026-10-25T19:45:00.000Z",
  "checkpoints": {
   "journal": "docs/progress/JOURNAL.md"
  },
@@ -22,6 +22,12 @@
    "date": "2026-10-25",
    "note": "no dual on bastien-home: _TZE204_byzdayie only on energy_meter_din (compose + app.json); power_meter holds _TZE284_byzdayie (other mfr, single owner, no source in our Z2M cache, left untouched: removal needs owner yes)",
    "by": "p3044"
+  },
+  "p3048-autofix-bastien-node22": {
+   "status": "done",
+   "date": "2026-10-25",
+   "note": "autofix attempt 1/3, signature node22-tests|Full suite on Node 22|p2830f+p3020+case-variants+gledopto-spi; additive: P3042b test port, dual-runner binds, 87 lowercase/canonical forms of P3038c couples, SPI test keeps R16 long form apart",
+   "by": "homey-ci-prs"
   }
  }
 }

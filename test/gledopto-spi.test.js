@@ -21,7 +21,10 @@ describe('Gledopto GL-SPI-206P', () => {
   });
   it('exact driver carries the couples, switch_1gang keeps them (reviewed exception)', () => {
     const j = compose('led_controller_spi_tuya');
-    assert.deepStrictEqual(j.zigbee.manufacturerName.filter((m) => m.startsWith('_TZE')).sort(), ['_TZE204_8fffc3kb', '_TZE284_gt5al3bl']);
+    // P3048: the verified long Tuya form (R16 exception, zhc gledopto.ts via P3038c) is the same device, kept apart here.
+    const LONG = /^_TZE28(C|4)1000000_/;
+    assert.deepStrictEqual(j.zigbee.manufacturerName.filter((m) => m.startsWith('_TZE') && !LONG.test(m)).sort(), ['_TZE204_8fffc3kb', '_TZE284_gt5al3bl']);
+    for (const m of j.zigbee.manufacturerName.filter((x) => LONG.test(x))) assert.match(m, /_gt5al3bl$/, m);
     assert.strictEqual(j.class, 'light');
     assert.ok(compose('switch_1gang').zigbee.manufacturerName.includes('_TZE204_8fffc3kb'));
     const rev = JSON.parse(fs.readFileSync(path.join(root, 'data/native-matrix-reviewed-duals.json'), 'utf8')).entries;

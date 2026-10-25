@@ -4,6 +4,7 @@
 const assert = require('assert');
 const fs = require('fs');
 const path = require('path');
+const { describe, it } = require('../_support/dual-runner');
 const read = (id) => JSON.parse(fs.readFileSync(path.join(__dirname, '../../drivers', id, 'driver.compose.json'), 'utf8'));
 const has = (c, m) => c.zigbee.manufacturerName.some((x) => x.toLowerCase() === m);
 
