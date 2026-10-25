@@ -16,6 +16,10 @@ const ENV = {
   kbTopupMaxDriver: 'HOMEY_ZIGBEE_KB_TOPUP_MAX_DRIVER',
   ts0601TopupMaxTotal: 'HOMEY_ZIGBEE_TOPUP_MAX_TOTAL',
   ts0601TopupMaxDriver: 'HOMEY_ZIGBEE_TOPUP_MAX_DRIVER',
+  // P3036d (owner decision 25/10/2026 17:29 Paris): the real bound is the uploaded app.json size;
+  // top-ups may pass the 20000 combos seen accepted (1 = allowed, 0 = clamp to the measured maximum).
+  maxUploadAppJsonBytes: 'HOMEY_MAX_UPLOAD_APP_JSON_BYTES',
+  allowAboveMeasuredCombos: 'HOMEY_ZIGBEE_TOPUP_ALLOW_UNMEASURED',
 };
 const FILE = path.join('config', 'publish-caps.json');
 
