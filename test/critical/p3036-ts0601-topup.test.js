@@ -103,7 +103,7 @@ describe('P3036 TS0601 top-up (additive, measured ceiling)', () => {
       assert.ok(v > 0 && v <= T.MEASURED_ACCEPTED_MAX_TOTAL, `${wf}: ${v}`);
     }
     const lim = JSON.parse(fs.readFileSync(path.join(ROOT, 'config/platform-limits.json'), 'utf8'));
-    assert.deepStrictEqual(lim.limits.zigbee_combos.limitFrom.alsoEnv, ['HOMEY_ZIGBEE_TOPUP_MAX_TOTAL']);
+    assert.deepStrictEqual(lim.limits.zigbee_combos.limitFrom.alsoEnv, ['HOMEY_ZIGBEE_TOPUP_MAX_TOTAL', 'HOMEY_ZIGBEE_KB_TOPUP_MAX_TOTAL']);
   });
   it('real tree: compaction at the house caps + top-up loses no couple and keeps the driver set', function () {
     this.timeout(120000);

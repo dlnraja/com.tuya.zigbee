@@ -56,8 +56,11 @@ env:
   # driver differences over time). 35,000 covers stable with headroom.
   # P2561: master-aligned caps (17000/2000 left root compact ~4.00MB → false-fail)
   # P3024b: our heuristic, not an Athom limit; fits the pinned publish baseline couples.
-  HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "15500"
+  # P3036b: 17000 = measured accepted (9.0.914 at 16986, 9.0.664/698 at ~20000); see docs/knowledge/ATHOM_LIMITS.md.
+  HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "17000"
   HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "1500"
+  # P3036b: KB couple top-up after compaction (adds only; clamped to 20000 total / 1008 per driver, the measured accepted maxima).
+  HOMEY_ZIGBEE_KB_TOPUP_MAX_TOTAL: "20000"
   HOMEY_ZIGBEE_MAX_CASE_FORMS: "2"
   AI_PLAN_MODE: 'forfait'
   AI_FORCE_LOCAL: 'true'

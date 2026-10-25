@@ -80,3 +80,13 @@ groups (15 498 -> 19 999 combos); 2 162 stay out because the per-driver cartesia
 probe uploads above 20k: both are owner decisions.
 
 Tests: `test/critical/p3036-athom-publish-policy.test.js`, `test/critical/p3036-ts0601-topup.test.js`.
+
+## P3036b: base cap 17000 + KB couple top-up (25/10/2026, Paris)
+- `HOMEY_ZIGBEE_MAX_TOTAL_COMBOS` 17000 and `HOMEY_ZIGBEE_KB_TOPUP_MAX_TOTAL` 20000 in the three publish
+  workflows; `scripts/maintenance/kb-couple-topup.cjs` runs in `scripts/prepare-publish.js` after the
+  compaction and before the TS0601 top-up. Adds only, same driver set, ≤ 20 000 total / 1 008 per driver
+  (measured accepted maxima, docs/knowledge/ATHOM_LIMITS.md on master).
+- Tier 1 = `config/architecture/kb-topup-priority.json` (KB couples the P3038c pins pushed out); a
+  FATAL(P3036b) stops the publish if one is not put back. Tier 2 = other KB couples, best couples per combo.
+- Platform budget gate: `alsoEnv` includes `HOMEY_ZIGBEE_KB_TOPUP_MAX_TOTAL`. Test:
+  `test/critical/p3036b-kb-couple-topup.test.js`.
