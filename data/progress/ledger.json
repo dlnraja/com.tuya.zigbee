@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-25T16:44:51.902Z",
+ "updated": "2026-10-25T17:37:41.000Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -40476,6 +40476,12 @@
     "leadsAdded": 0
    },
    "lastChangeRun": "40190947487"
+  },
+  "P3041": {
+   "status": "done",
+   "date": "2026-10-25",
+   "note": "owner yes t526s3030 18:32 Paris: artifact case twin prune ON + measured-safe caps 17000/1008 (top-ups 20000/1008, allowAboveMeasuredCombos 0); P3024b case-equivalent mode (same driver, prune report); master 19982 combos, max 1008, 0 above, 3269669 B, 13719 couples, 0 baseline couple lost; local commits on work/p3041-master, not pushed (#3683); TS0601 carrier siblings not yet",
+   "by": "p3041"
   }
  }
 }

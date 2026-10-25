@@ -22,7 +22,8 @@ describe('P3036d raised caps, upload size bound, per-couple coverage top-up', ()
     assert.ok(CAPS.maxUploadAppJsonBytes > 0 && CAPS.maxUploadAppJsonBytes <= 0.9 * m.acceptedMaxUploadAppJsonBytes);
     assert.ok(L.payloadCeiling(CAPS) <= 0.9 * m.rejectedMinTotalCombos);
     const d = L.readFile(ROOT).decision;
-    assert.strictEqual(d.id, 'P3036d');
+    // P3041 (owner yes t526s3030 18:32 Paris) supersedes P3036d with the safe caps; P3036d stays recorded.
+    assert.ok(d.id === 'P3036d' || (d.id === 'P3041' && d.previous && d.previous.id === 'P3036d'), d.id);
     assert.ok(d.rollback.caps.maxTotalCombos > 0);
   });
 

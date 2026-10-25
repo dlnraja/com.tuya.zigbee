@@ -1,17 +1,17 @@
 {
-  "_why": "P3036c (25/10/2026 Paris): single source of the publish Zigbee caps. Read by scripts/lib/publish-caps.cjs (prepare-publish, platform budget gate, z2m-coverage, tests, workflows). Change a cap here only; the publish workflows no longer set HOMEY_ZIGBEE_* caps (an env var with that name still overrides for a manual run). Values stay within what Athom accepted (docs/knowledge/ATHOM_LIMITS.md on master). P3041: caseFormsNeedSource 1 = unsourced all-lower/all-upper case twins get no compaction/top-up room (removes nothing pinned); pruneArtifactCaseForms 1 = also prune pinned twins whose sourced/canonical twin stays on the same driver (owner yes needed, default 0).",
+  "_why": "P3036c (25/10/2026 Paris): single source of the publish Zigbee caps. Read by scripts/lib/publish-caps.cjs (prepare-publish, platform budget gate, z2m-coverage, tests, workflows). Change a cap here only; the publish workflows no longer set HOMEY_ZIGBEE_* caps (an env var with that name still overrides for a manual run). P3041 (owner yes t526s3030, 25/10/2026 18:32 Paris): back to the measured-safe caps (17000 base, 1008 per driver, top-ups 20000/1008, allowAboveMeasuredCombos 0) = what Athom has actually accepted (20000 total, 1008 per driver). caseFormsNeedSource 1 = an all-lower/all-upper case form with no external source gets no compaction/top-up room. pruneArtifactCaseForms 1 = such a form is also removed when it was pinned, but only when the same driver keeps a sourced or mixed-case form of the same manufacturer with the same productIds; the P3024b gate then counts that couple as kept case-insensitively (caseEquivalent) and still fails on any couple lost case-insensitively. The removed list is written next to the payload (p3041-case-prune.json).",
   "caps": {
-    "maxTotalCombos": 20000,
-    "maxDriverCombos": 1500,
+    "maxTotalCombos": 17000,
+    "maxDriverCombos": 1008,
     "maxCaseForms": 2,
-    "kbTopupMaxTotal": 45000,
-    "kbTopupMaxDriver": 2000,
-    "ts0601TopupMaxTotal": 45000,
-    "ts0601TopupMaxDriver": 2000,
+    "kbTopupMaxTotal": 20000,
+    "kbTopupMaxDriver": 1008,
+    "ts0601TopupMaxTotal": 20000,
+    "ts0601TopupMaxDriver": 1008,
     "maxUploadAppJsonBytes": 3537000,
-    "allowAboveMeasuredCombos": 1,
+    "allowAboveMeasuredCombos": 0,
     "caseFormsNeedSource": 1,
-    "pruneArtifactCaseForms": 0
+    "pruneArtifactCaseForms": 1
   },
   "measured": {
     "acceptedMaxTotalCombos": 20000,
@@ -33,12 +33,12 @@
     "rejectedMinTotalCombos": 100000
   },
   "decision": {
-    "id": "P3036d",
-    "when": "2026-10-25 17:29 Paris",
-    "by": "owner (t523u)",
-    "rule": "The real bound is the uploaded app.json size: cap = 90 % of the largest accepted (3.93 MB, 9.0.1520) = 3537000 bytes, checked on the final upload. Combos: 20000 accepted, only rejection at 100k+; top-ups up to 45000 (< 90 % of 100k), per driver 2000 (caps of the accepted 9.0.664/698). Every addition is an exact mfr+pid couple a source compose declares (owner t524u).",
+    "id": "P3041",
+    "when": "2026-10-25 18:32 Paris",
+    "by": "owner (t526s3030)",
+    "rule": "Measured-safe caps (P3036d rollback values) with the artifact case twin prune ON: no driver above 1008 combos, total <= 20000 (accepted), every baseline couple kept case-insensitively on its driver with its sourced/canonical form. Upload app.json cap 3537000 B unchanged.",
     "rollback": {
-      "when": "Athom refuses the next normal master upload (processing_failed not transient)",
+      "when": "a real device is seen reporting a pruned all-lower/all-upper form, or the owner reverts",
       "caps": {
         "maxTotalCombos": 17000,
         "maxDriverCombos": 1008,
@@ -46,9 +46,26 @@
         "kbTopupMaxTotal": 20000,
         "kbTopupMaxDriver": 1008,
         "ts0601TopupMaxTotal": 20000,
-        "ts0601TopupMaxDriver": 1008
+        "ts0601TopupMaxDriver": 1008,
+        "pruneArtifactCaseForms": 0
       },
-      "how": "restore these caps here (single source) and set allowAboveMeasuredCombos 0; the bisect handles the rest"
+      "how": "set pruneArtifactCaseForms 0 here (the exact P3024b gate comes back, same safe caps); to go back to the P3036d raised caps restore decision.previous.caps"
+    },
+    "previous": {
+      "id": "P3036d",
+      "when": "2026-10-25 17:29 Paris",
+      "by": "owner (t523u)",
+      "rule": "The real bound is the uploaded app.json size: cap = 90 % of the largest accepted (3.93 MB, 9.0.1520) = 3537000 bytes, checked on the final upload. Combos: 20000 accepted, only rejection at 100k+; top-ups up to 45000 (< 90 % of 100k), per driver 2000 (caps of the accepted 9.0.664/698). Every addition is an exact mfr+pid couple a source compose declares (owner t524u).",
+      "caps": {
+        "maxTotalCombos": 20000,
+        "maxDriverCombos": 1500,
+        "maxCaseForms": 2,
+        "kbTopupMaxTotal": 45000,
+        "kbTopupMaxDriver": 2000,
+        "ts0601TopupMaxTotal": 45000,
+        "ts0601TopupMaxDriver": 2000,
+        "allowAboveMeasuredCombos": 1
+      }
     }
   }
 }
