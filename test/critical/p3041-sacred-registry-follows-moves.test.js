@@ -21,22 +21,22 @@ describe('P3041 sacred registry follows class moves', () => {
     assert.ok(lc(c.mfr).includes('_tz3000_mwd3c2at') && c.productId.includes('TS0202'));
     const z = compose('slim_motion_sensor').zigbee;
     assert.ok(lc(z.manufacturerName).includes('_tz3000_mwd3c2at') && z.productId.includes('TS0202'));
-    for (const f of c.forbiddenDrivers) assert.notEqual(f, c.canonicalDriver);
+    for (const f of c.forbiddenDrivers) {assert.notEqual(f, c.canonicalDriver);}
   });
 
   it('every locked registry couple: its canonical driver exists and claims mfr+pid', () => {
     const bad = [];
     for (const c of reg.cases || []) {
-      if (c.doNotTouch === true || c.doNotLock === true || !c.canonicalDriver) continue;
+      if (c.doNotTouch === true || c.doNotLock === true || !c.canonicalDriver) {continue;}
       const mfr = String((c.mfr || [])[0] || '').toLowerCase();
       const pid = String((c.productId || [])[0] || '').toLowerCase();
-      if (!mfr) continue;
+      if (!mfr) {continue;}
       const p = path.join(ROOT, 'drivers', c.canonicalDriver, 'driver.compose.json');
       if (!fs.existsSync(p)) { bad.push(`${c.id}: missing driver ${c.canonicalDriver}`); continue; }
       const z = compose(c.canonicalDriver).zigbee || {};
       const okM = lc(z.manufacturerName).includes(mfr);
       const okP = !pid || lc(z.productId).includes(pid);
-      if (!okM || !okP) bad.push(`${c.id}: ${c.canonicalDriver} lacks ${mfr}|${pid}`);
+      if (!okM || !okP) {bad.push(`${c.id}: ${c.canonicalDriver} lacks ${mfr}|${pid}`);}
     }
     assert.deepEqual(bad, []);
   });
