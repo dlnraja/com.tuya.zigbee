@@ -12,6 +12,7 @@
 - **P3045 memory:** memory readings no longer crash the app when Homey refuses `process.memoryUsage()` (ENOENT); the memory guards fall back to V8 heap statistics instead of going blind.
 - **P3045 Flow cards:** looking up a Flow card that is missing from the build returns a harmless stand-in and logs once, so there is no more `invalid_flow_card_id` crash or log flood. No card was removed or renamed.
 - **P3045 mapping data:** 145 driver profiles in `driver-mapping-database.json` now match their driver's own class and capabilities; for example, switches no longer get a battery and plugs are sockets. The device indexes are unchanged.
+- **P3046 memory (Bastien OOM):** each device no longer keeps its own copy of the full list of Flow card ids (about 330 KB per device). Devices now share one list per driver, which removes about 20 MB on a 60-device home and stops the "JavaScript heap out of memory" crash loop seen a few minutes after start.
 - **P3025:** the manifest clean-up no longer strips valid Flow card `titleFormatted`; CI gates for app.json/compose drift, DP shards and lint ratchet; race-safe pushes with rebase retry.
 - **P3024b:** no couple of the last Test package (9.0.1574) can be lost in the publish payload (259 restored; baseline gate).
 
