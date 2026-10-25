@@ -14,6 +14,8 @@ try { require('./lib/zigbee/cluster/ClusterRegistry').install(); } catch (_) { /
 try { require('./lib/zigbee/ZigbeeLibBackports').apply(); } catch (_) { /* best-effort */ }
 // P3011: per-device memory of unsupported ZCL ops + unknown incoming frames → Flows (see file).
 try { require('./lib/zigbee/ZclUnsupportedGuard').install(); } catch (_) { /* best-effort */ }
+// P3029: one ZCL TSN per device, continued across restarts (Aqara topic 156, makleso6/Jan_Z/TedTolboom)
+try { require('./lib/zigbee/ZclTsnContinuity').install(); } catch (_) { /* best-effort */ }
 
 // WHY(P2306/P2351/P2373): Homey flow serializer can embed foreign driver URIs
 // (Hue ZG9101SAC_HP, virtualdriverzigbee) OR Homey class names (`light`).
@@ -358,6 +360,7 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         const zclGuard = require('./lib/zigbee/ZclUnsupportedGuard');
         zclGuard.install();
         if (this.homey.settings && this.homey.settings.get('zcl_unsupported_guard') === false) { zclGuard.setEnabled(false); }
+        try { if (this.homey.settings && this.homey.settings.get('zcl_tsn_continuity') === false) { require('./lib/zigbee/ZclTsnContinuity').setEnabled(false); } } catch (_e) { /* best-effort */ }
       } catch (_e) { /* best-effort */ }
     } catch (err) {
       this.error('❌ Failed to register custom clusters:', err);

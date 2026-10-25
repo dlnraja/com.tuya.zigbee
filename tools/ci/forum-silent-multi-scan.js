@@ -70,6 +70,15 @@ const DEFAULT_TOPICS = [
   { id: 101901, name: 'unknown-zigbee-device-tip', replyAllowed: false },
   { id: 36418, name: 'sonoff-zigbee-peer-app', replyAllowed: false },
   { id: 159511, name: 'zemismart-spm02-review', replyAllowed: false },
+  // P3029 Homey Community Apps category (https://community.homey.app/c/apps/7) — READ-ONLY technique sources
+  { id: 156, name: 'aqara-official-tsn-ota', replyAllowed: false },
+  { id: 160590, name: 'aqara-community-local', replyAllowed: false },
+  { id: 160757, name: 'cadabi-tested-zigbee', replyAllowed: false },
+  { id: 76161, name: 'frient-zigbee-rejoin', replyAllowed: false },
+  { id: 160554, name: 'namron-power-stops-updating', replyAllowed: false },
+  { id: 158462, name: 'sensor-watchdog-per-capability', replyAllowed: false },
+  { id: 158852, name: 'power-estimator-dim-colour', replyAllowed: false },
+  { id: 153712, name: 'unreal-battery-energy-gaps', replyAllowed: false },
 ];
 
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
