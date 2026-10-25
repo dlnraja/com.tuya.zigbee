@@ -1,0 +1,84 @@
+# P3048 — AI-free automation loop (docs/knowledge/AUTOMATION_COVERAGE.md).
+# Daily, deterministic, free (GITHUB_TOKEN only, Node built-ins, no AI, no paid service):
+#   self-maintenance (journal repair/rotation, pointer self-repair, bounded caches, learned transient patterns)
+#   -> CI failure collection (journal) -> workflow watchdog (journal + at most 1 labelled issue per run, one per
+#   signature, never a comment) -> reply CANDIDATES (never posted) -> DIGEST.md -> one [skip ci] commit.
+# No post, no comment, no reaction, no mail, no Athom call. The [skip ci] commit does not re-trigger anything.
+name: Automation loop (P3048, no AI)
+
+on:
+  schedule:
+    - cron: '10 5 * * *'   # 06:10 / 07:10 Paris, after storage-cleanup (03:30 UTC)
+  workflow_dispatch:
+    inputs:
+      issues:
+        description: 'Let the watchdog open labelled issues (max 1 per run)'
+        type: boolean
+        default: true
+
+permissions:
+  contents: write   # one [skip ci] commit of the journal / digest via safe-auto-commit
+  actions: read     # runs, jobs, logs, artifacts
+  issues: write     # watchdog: at most 1 new labelled issue per run, never a comment
+
+concurrency:
+  group: automation-journal
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  AI_PLAN_MODE: 'forfait'
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  AI_ALLOW_PAID: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
+
+jobs:
+  loop:
+    if: ${{ vars.AUTOMATION_LOOP_DISABLED != 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      AUTOMATION_WATCH_ISSUES: ${{ (github.event_name == 'schedule' || inputs.issues) && vars.AUTOMATION_WATCH_ISSUES != 'false' && 'true' || 'false' }}
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          fetch-depth: 50   # self-repair restores a corrupt pointer from its last valid version in history
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: .github/npm-cache-key.sha256
+      - name: Dependencies (local gates of safe-auto-commit)
+        run: npm ci --prefer-offline --no-audit --ignore-scripts || true
+      - name: Other branches (versions for the digest, shallow)
+        run: git fetch -q --depth=1 origin +refs/heads/stable-v5:refs/remotes/origin/stable-v5 +refs/heads/bastien-home:refs/remotes/origin/bastien-home || true
+
+      - name: Self-maintenance (rotate, repair, bound, learn)
+        run: node scripts/automation/self-maintain.cjs
+      - name: CI failures of the last 24 h -> journal
+        run: node scripts/automation/ci-failure.cjs collect --hours=24
+      - name: Workflow watchdog
+        run: node scripts/automation/workflow-watchdog.cjs
+      - name: Reply candidates (never posted)
+        run: node scripts/automation/reply-candidates.cjs
+      - name: Digest
+        run: node scripts/automation/digest.cjs --fetch-package-combos
+      - name: Journal summary
+        run: |
+          node scripts/automation/journal.cjs append --workflow=automation-loop --status=ok \
+            --key="automation-loop:$(date -u +%F)" --summary="daily loop run ${GITHUB_RUN_ID}: self-maintain, ci-collect, watchdog, reply-candidates, digest"
+
+      - name: Commit journal + digest (gated, [skip ci])
+        env:
+          SAFE_AUTO_COMMIT_NO_COMMENT: '1'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node scripts/ci/safe-auto-commit.js --id=automation-loop --max-per-day=2 \
+            --message="chore(automation): journal + digest (P3048, no AI)" \
+            --paths="data/progress/automation-journal.jsonl data/progress/archive data/progress/reply-candidates.json docs/progress/DIGEST.md data/automation data/status/workflow-watchdog.json data/status/package-combos.json data/leads/ocr-hash-cache.json data/leads/forum-lastseen.json data/leads/image-ocr-cursor.json data/leads/issue557-cursor.json data/leads/deep-read-checkpoint.json data/leads/resume-checkpoint.json data/leads/sweep-checkpoint.json data/sources/state.json docs/automation/leads-other-apps-cursor.json"

@@ -293,8 +293,9 @@ jobs:
         continue-on-error: true
         timeout-minutes: 12
         run: |
-          sudo apt-get install -y -qq --no-install-recommends tesseract-ocr >/dev/null 2>&1 || \
-            { sudo apt-get update -qq >/dev/null && sudo apt-get install -y -qq --no-install-recommends tesseract-ocr >/dev/null; } || true
+          # P3048 (free): eng+fra packs from Ubuntu apt, hash cache data/leads/ocr-hash-cache.json (no re-download).
+          sudo apt-get install -y -qq --no-install-recommends tesseract-ocr tesseract-ocr-fra >/dev/null 2>&1 || \
+            { sudo apt-get update -qq >/dev/null && sudo apt-get install -y -qq --no-install-recommends tesseract-ocr tesseract-ocr-fra >/dev/null; } || true
           node scripts/scanners/forum-image-ocr.js --max-images=${{ vars.FORUM_OCR_MAX_IMAGES || '30' }} --max-posts=120
 
       - name: Commit forum OCR leads (gated)
@@ -307,7 +308,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           node scripts/ci/safe-auto-commit.js --id=forum-image-ocr \
             --message="chore(leads): forum screenshot OCR leads" \
-            --paths="data/leads/forum-image-ocr.json"
+            --paths="data/leads/forum-image-ocr.json data/leads/ocr-hash-cache.json"
 
       - name: 🩺 Inbox diag UUID harvest (P2326 SHADOW)
         if: always()
