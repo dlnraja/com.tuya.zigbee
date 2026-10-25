@@ -20,25 +20,35 @@ const fs = require('fs');
 const APP_ID = process.env.HOMEY_APP_ID || 'com.dlnraja.tuya.zigbee';
 const RECENT_WINDOW = Number(process.env.VERSION_HEALTH_WINDOW || 20);
 
-async function main() {
-  const client = require('../../.github/scripts/homey-apps-api-client');
-  const api = await client.createClient({ log: () => {} });
-  const builds = await client.getBuilds(api, APP_ID, { limit: 500 });
+// P3025b: the healthy Test tip must be looked up across ALL builds, not only
+// the display window. Root cause of the red cron since 2026-10-22 12:24 Paris:
+// ten consecutive processing_failed drafts (#3667-#3676) pushed the healthy
+// Test build #3655 (9.0.1574) out of the 20-build window, so tipHealthy went
+// false and every draft became "stuck". The window stays for the report only.
+function patchOf(v) {
+  const m = String(v || '').match(/(\d+)\.(\d+)\.(\d+)/);
+  return m ? Number(m[1]) * 1e8 + Number(m[2]) * 1e5 + Number(m[3]) : NaN;
+}
 
-  const recent = builds
+function evaluate(builds, opts = {}) {
+  const now = opts.now != null ? opts.now : Date.now();
+  const env = opts.env || process.env;
+  const windowSize = Number(env.VERSION_HEALTH_WINDOW || RECENT_WINDOW);
+  const all = (builds || [])
     .filter((b) => b && typeof b.id === 'number')
-    .sort((a, b) => b.id - a.id)
-    .slice(0, RECENT_WINDOW);
+    .sort((a, b) => b.id - a.id);
+  const recent = all.slice(0, windowSize);
 
   // Only alert on FRESH signals — crash counters and processing_failed are
   // cumulative/sticky on old builds, so without an age window the workflow
   // would stay red forever.
   const DAY_MS = 24 * 3600 * 1000;
-  const ageDays = (b) => (Date.now() - new Date(b.stateChangedAt || b.createdAt || 0).getTime()) / DAY_MS;
+  const ageDays = (b) => (now - new Date(b.stateChangedAt || b.createdAt || 0).getTime()) / DAY_MS;
   // The real question: "is the CURRENT channel build healthy?" — judge the
-  // newest build per channel, not sticky counters on superseded ones.
+  // newest build per channel (searched over ALL builds), not sticky counters
+  // on superseded ones.
   const latestByChannel = {};
-  for (const b of recent) {
+  for (const b of all) {
     if (['test', 'live'].includes(b.state) && !latestByChannel[b.state]) {latestByChannel[b.state] = b;}
   }
   const crashed = Object.values(latestByChannel).filter((b) => (b.crashes || 0) > 0 && ageDays(b) <= 14);
@@ -47,7 +57,7 @@ async function main() {
   const lines = [
     '## Version Health (apps-api)',
     '',
-    `Window: last ${recent.length} builds of ${APP_ID}`,
+    `Window: last ${recent.length} builds of ${opts.appId || APP_ID}`,
     '',
     '| Build | Version | State | Crashes |',
     '|---|---|---|---|',
@@ -59,15 +69,20 @@ async function main() {
   // report in summary but do not fail the cron when crashes are clean.
   // Hard-fail only when:
   //   - soft-expect disabled, OR
-  //   - no healthy testing tip in window AND a processing_failed is older than FAIL_AGE_H
+  //   - no healthy testing tip AND a processing_failed is older than FAIL_AGE_H, OR
+  //   - (P3025b) the healthy tip lags the newest failed draft by more than
+  //     VERSION_HEALTH_MAX_TIP_LAG patches (default 32 = wait-draft P139 cap).
   // P2419: a newer draft can fail while an older tip stays healthy — do not red the cron.
-  const softExpect = process.env.VERSION_HEALTH_SOFT_EXPECT !== '0';
-  const failAgeH = Number(process.env.VERSION_HEALTH_FAIL_AGE_H || 6);
-  const newestTesting = recent.find((b) => b.state === 'test' || b.state === 'testing');
+  const softExpect = env.VERSION_HEALTH_SOFT_EXPECT !== '0';
+  const failAgeH = Number(env.VERSION_HEALTH_FAIL_AGE_H || 6);
+  const maxTipLag = Number(env.VERSION_HEALTH_MAX_TIP_LAG || 32);
+  const newestTesting = all.find((b) => b.state === 'test' || b.state === 'testing');
   const tipHealthy = !!(newestTesting && !(Number(newestTesting.crashes) > 0));
+  const tipLag = (b) => newestTesting ? patchOf(b.version) - patchOf(newestTesting.version) : NaN;
+  const tipTooOld = (b) => tipHealthy && Number.isFinite(tipLag(b)) && tipLag(b) > maxTipLag;
   const stuckFailed = failed.filter((b) => {
-    if (tipHealthy) return false; // WHY: healthy tip on Test = users OK; draft PF is Athom noise
-    if (newestTesting && newestTesting.id > b.id) return false;
+    if (tipHealthy && !tipTooOld(b)) {return false;} // WHY: healthy tip on Test = users OK; draft PF is Athom noise
+    if (!tipHealthy && newestTesting && newestTesting.id > b.id) {return false;}
     return ageDays(b) * 24 >= failAgeH;
   });
 
@@ -80,28 +95,43 @@ async function main() {
     const label = softExpect && stuckFailed.length === 0 ? '⚠️' : '❌';
     lines.push(`${label} processing_failed builds: ${failed.map((b) => `#${b.id} v${b.version}`).join(', ')}`);
     if (tipHealthy) {
-      lines.push(`ℹ️ P139/P2419 soft-expect: healthy Test tip #${newestTesting.id} v${newestTesting.version} — ignoring draft processing_failed.`);
+      const lag = tipLag(failed[0]);
+      const outside = !recent.includes(newestTesting) ? ' (outside the display window)' : '';
+      lines.push(`ℹ️ P139/P2419 soft-expect: healthy Test tip #${newestTesting.id} v${newestTesting.version}${outside}, patch lag ${Number.isFinite(lag) ? lag : '?'} (max ${maxTipLag}) — ignoring draft processing_failed.`);
     }
     if (!softExpect || stuckFailed.length > 0) {
       bad = true;
       if (stuckFailed.length > 0) {
-        lines.push(`❌ stuck processing_failed (>${failAgeH}h, no healthy tip): ${stuckFailed.map((b) => `#${b.id}`).join(', ')}`);
+        const why = tipHealthy ? `healthy tip lags > ${maxTipLag} patches` : 'no healthy tip';
+        lines.push(`❌ stuck processing_failed (>${failAgeH}h, ${why}): ${stuckFailed.map((b) => `#${b.id}`).join(', ')}`);
       }
     } else if (!tipHealthy) {
       lines.push('ℹ️ P139 soft-expect: Athom processing_failed ignored while age < fail window.');
     }
   }
   if (!bad) {lines.push('✅ No crashed or failed builds in the window.');}
+  return { bad, lines, recent, failed, stuckFailed, crashed, newestTesting, tipHealthy };
+}
+
+async function main() {
+  const client = require('../../.github/scripts/homey-apps-api-client');
+  const api = await client.createClient({ log: () => {} });
+  const builds = await client.getBuilds(api, APP_ID, { limit: 500 });
+  const { bad, lines } = evaluate(builds);
 
   const out = lines.join('\n');
   console.log(out);
   if (process.env.GITHUB_STEP_SUMMARY) {
-    fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, out + '\n');
+    fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, `${out  }\n`);
   }
   if (bad) {process.exit(1);}
 }
 
-main().catch((e) => {
-  console.log(`::warning::version-health-check could not complete: ${e.message}`);
-  // Auth/network failures must not turn the cron red — the report says enough.
-});
+module.exports = { evaluate, patchOf };
+
+if (require.main === module) {
+  main().catch((e) => {
+    console.log(`::warning::version-health-check could not complete: ${e.message}`);
+    // Auth/network failures must not turn the cron red — the report says enough.
+  });
+}

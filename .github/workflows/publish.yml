@@ -247,9 +247,9 @@ jobs:
           # v9.0.378: intégrer les commits concurrents (bots auto-fix) avant de pousser.
           # -X theirs : en cas de conflit sur les fichiers générés (app.json…),
           # la version du pipeline fait foi (il régénère tout de toute façon).
-          git pull --rebase -X theirs origin "$BRANCH" || git rebase --abort
-          git push origin HEAD:"refs/heads/$BRANCH"
-          git push origin -f "v${{ steps.bump.outputs.version }}"
+          # P3025b: race-safe helper (fetch + rebase -X theirs + backoff, never forced). The tag is re-pointed
+          # at the commit really pushed and pushed without -f (an existing remote tag is never moved).
+          bash .github/scripts/git-push-retry.sh --branch "$BRANCH" --prefer-local --tag "v${{ steps.bump.outputs.version }}"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -372,7 +372,7 @@ jobs:
 
       - name: Upload promote screenshots
         if: always()
-        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0 (node24, P3025b)
         with:
           name: publish-promote-screenshots
           path: screenshots/

@@ -599,34 +599,15 @@ jobs:
               exit 0
             fi
           fi
-          git fetch origin master
-          if ! git merge-base --is-ancestor origin/master HEAD; then
-            if ! git rebase -X ours origin/master; then
-              echo "::warning::Generated publish metadata conflicted with origin/master; dropping metadata commit and keeping origin/master."
-              git rebase --abort || true
-              git reset --hard origin/master
-            fi
-          else
-            echo "origin/master is already an ancestor of HEAD; skipping rebase"
-          fi
-          # P204: retry push on concurrent ref lock (same pattern as Auto-Fix)
-          pushed=0
-          for attempt in 1 2 3 4; do
-            if git push origin HEAD:refs/heads/master; then
-              pushed=1
-              break
-            fi
-            echo "::warning::Publish metadata push attempt ${attempt} failed; fetch+rebase and retry"
-            git fetch origin master
-            if ! git rebase -X ours origin/master; then
-              git rebase --abort || true
-              git reset --hard origin/master
-              echo "::warning::Giving up metadata push after rebase conflict"
-              exit 0
-            fi
-            sleep $((attempt * 3))
-          done
-          if [ "$pushed" != "1" ]; then
+          # P3025b: race-safe helper replaces the raw 4-attempt push loop. Same conflict policy:
+          # upstream wins (old `rebase -X ours`); a conflicting metadata commit is dropped, never forced.
+          push_rc=0
+          bash .github/scripts/git-push-retry.sh --branch master --prefer-remote --attempts 4 || push_rc=$?
+          if [ "$push_rc" = "3" ]; then
+            echo "::warning::Generated publish metadata conflicted with origin/master; dropping metadata commit and keeping origin/master."
+            git fetch -q origin master && git reset --hard origin/master
+            exit 0
+          elif [ "$push_rc" != "0" ]; then
             echo "::warning::Publish metadata push exhausted retries; skipping"
             exit 0
           fi
