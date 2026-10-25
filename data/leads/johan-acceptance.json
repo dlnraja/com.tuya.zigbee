@@ -1,18 +1,17 @@
 {
-  "generated": "2026-10-24T08:24:09.178Z",
+  "generated": "2026-10-25T08:43:28.942Z",
   "source": "data/leads/johan-canonical-index.json",
   "repo": "JohanBendz/com.tuya.zigbee",
   "note": "Acceptance view, structured fields only. missing-couple = identity cited upstream with no home driver here (verify real hardware before adding, W4). behaviour = needs physical test, not a pairing gap.",
   "summary": {
     "threads": 562,
-    "covered": 445,
-    "behaviour": 96,
-    "missing-couple": 3,
-    "dual-couple": 18,
-    "missingCouples": 2
+    "covered": 453,
+    "behaviour": 100,
+    "dual-couple": 8,
+    "missing-couple": 1,
+    "missingCouples": 1
   },
   "missingCouples": [
-    "_TZ3000_amal63is|TS0002",
     "_TZB210_rkgngb5o|EP1"
   ],
   "rows": [
@@ -278,7 +277,9 @@
         {
           "mfr": "_TZ3000_amal63is",
           "pid": "TS0002",
-          "drivers": []
+          "drivers": [
+            "switch_2gang_ts0002"
+          ]
         },
         {
           "mfr": "_TZ3000_mvvw8wnx",
@@ -302,7 +303,7 @@
           ]
         }
       ],
-      "acceptance": "missing-couple"
+      "acceptance": "behaviour"
     },
     {
       "n": 140,
@@ -411,12 +412,11 @@
           "mfr": "_TZE200_locansqn",
           "pid": "TS0601",
           "drivers": [
-            "lcdtemphumidsensor",
-            "lcdtemphumidsensor_3"
+            "lcdtemphumidsensor"
           ]
         }
       ],
-      "acceptance": "dual-couple"
+      "acceptance": "covered"
     },
     {
       "n": 165,
@@ -2551,12 +2551,11 @@
           "mfr": "_TZE200_locansqn",
           "pid": "TS0601",
           "drivers": [
-            "lcdtemphumidsensor",
-            "lcdtemphumidsensor_3"
+            "lcdtemphumidsensor"
           ]
         }
       ],
-      "acceptance": "dual-couple"
+      "acceptance": "covered"
     },
     {
       "n": 602,
@@ -4518,12 +4517,11 @@
           "mfr": "_TZE204_5cuocqty",
           "pid": "TS0601",
           "drivers": [
-            "dimmer_1_gang_tuya",
-            "switch_1gang"
+            "dimmer_1_gang_tuya"
           ]
         }
       ],
-      "acceptance": "dual-couple"
+      "acceptance": "behaviour"
     },
     {
       "n": 945,
@@ -4925,12 +4923,11 @@
           "mfr": "_TZE204_5cuocqty",
           "pid": "TS0601",
           "drivers": [
-            "dimmer_1_gang_tuya",
-            "switch_1gang"
+            "dimmer_1_gang_tuya"
           ]
         }
       ],
-      "acceptance": "dual-couple"
+      "acceptance": "covered"
     },
     {
       "n": 985,
@@ -5033,10 +5030,12 @@
         {
           "mfr": "_TZ3000_amal63is",
           "pid": "TS0002",
-          "drivers": []
+          "drivers": [
+            "switch_2gang_ts0002"
+          ]
         }
       ],
-      "acceptance": "missing-couple"
+      "acceptance": "behaviour"
     },
     {
       "n": 992,
@@ -5543,12 +5542,11 @@
           "mfr": "_TZE204_6fk3gewc",
           "pid": "TS0601",
           "drivers": [
-            "climate_sensor",
             "wall_switch_1gang_1way"
           ]
         }
       ],
-      "acceptance": "dual-couple"
+      "acceptance": "covered"
     },
     {
       "n": 1047,
@@ -6169,12 +6167,11 @@
           "mfr": "_TZE200_locansqn",
           "pid": "TS0601",
           "drivers": [
-            "lcdtemphumidsensor",
-            "lcdtemphumidsensor_3"
+            "lcdtemphumidsensor"
           ]
         }
       ],
-      "acceptance": "dual-couple"
+      "acceptance": "behaviour"
     },
     {
       "n": 1105,
@@ -6401,12 +6398,11 @@
           "mfr": "_TZE200_locansqn",
           "pid": "TS0601",
           "drivers": [
-            "lcdtemphumidsensor",
-            "lcdtemphumidsensor_3"
+            "lcdtemphumidsensor"
           ]
         }
       ],
-      "acceptance": "dual-couple"
+      "acceptance": "covered"
     },
     {
       "n": 1121,
@@ -6828,12 +6824,11 @@
           "mfr": "_TZE204_6fk3gewc",
           "pid": "TS0601",
           "drivers": [
-            "climate_sensor",
             "wall_switch_1gang_1way"
           ]
         }
       ],
-      "acceptance": "dual-couple"
+      "acceptance": "covered"
     },
     {
       "n": 1149,
@@ -7965,7 +7960,7 @@
           "mfr": "_TZE284_nhgdf6qr",
           "pid": "TS0601",
           "drivers": [
-            "climate_sensor"
+            "soil_sensor"
           ]
         },
         {
@@ -8721,12 +8716,11 @@
           "mfr": "_TZE204_dcnsggvz",
           "pid": "TS0601",
           "drivers": [
-            "dimmer_1_gang_tuya",
-            "dimmer_wall_1gang"
+            "dimmer_1_gang_tuya"
           ]
         }
       ],
-      "acceptance": "dual-couple"
+      "acceptance": "covered"
     },
     {
       "n": 1283,
@@ -12803,12 +12797,11 @@
           "mfr": "_TZE200_locansqn",
           "pid": "TS0601",
           "drivers": [
-            "lcdtemphumidsensor",
-            "lcdtemphumidsensor_3"
+            "lcdtemphumidsensor"
           ]
         }
       ],
-      "acceptance": "dual-couple"
+      "acceptance": "covered"
     },
     {
       "n": 1476,
@@ -13221,8 +13214,7 @@
           "mfr": "_TZE200_locansqn",
           "pid": "TS0601",
           "drivers": [
-            "lcdtemphumidsensor",
-            "lcdtemphumidsensor_3"
+            "lcdtemphumidsensor"
           ]
         }
       ],
