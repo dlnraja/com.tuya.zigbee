@@ -6,7 +6,7 @@
 const assert = require('assert');
 const fs = require('fs');
 const path = require('path');
-const { describe, it } = require('node:test');
+const { describe, it } = require('../_support/dual-runner'); // P3020: node --test and mocha
 
 const ROOT = path.join(__dirname, '..', '..');
 const L = require(path.join(ROOT, 'scripts', 'lib', 'publish-caps.cjs'));
