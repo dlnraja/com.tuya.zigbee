@@ -22,6 +22,7 @@
 - **drenso/com.tuya2** - TypeScript Tuya cloud app (OAuth2 patterns)
 - **gpmachado** (`gpmachado/com.gpm.homesuite`, GPL-3.0, ideas only — no code copied) — availability last-seen / rejoin ideas, lifecycle `onUninit` teardown, Poll Control skip on sleepy nodes, Homey settings over ZCL dump, interview-driven sacred couples
 - **andiwirz** - Protocol auto-detect, DP discovery tool
+- **iBush** (Switcher app for Homey, [community t/160624](https://community.homey.app/t/160624)) - ideas only, our own code: timer-for-a-set-time card, time-left token / timer-running trigger, auto-shutdown, child-lock, correct-known-AC-state.
 - **rebtor** - TuyAPI local control
 - **jurgenheine** - Cloud API patterns
 - **robertklep/homey-tuya-zigbee** - Community Tuya Zigbee
