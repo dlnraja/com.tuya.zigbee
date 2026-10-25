@@ -26,7 +26,7 @@ function getPayload() {
     payload = JSON.parse(fs.readFileSync(path.join(ROOT, 'app.json'), 'utf8'));
     const cwd = process.cwd();
     process.chdir(ROOT);
-    try { payload.__r = compactZigbeeIdentifiers(payload, {}); } finally { process.chdir(cwd); }
+    try { payload.__r = compactZigbeeIdentifiers(payload, (()=>{const y=fs.readFileSync(path.join(ROOT,'.github','workflows','auto-publish-on-push.yml'),'utf8');return {maxTotalCombos:Number(y.match(/HOMEY_ZIGBEE_MAX_TOTAL_COMBOS:\s*"(\d+)"/)[1]),maxDriverCombos:1500,maxCaseForms:2};})()); } finally { process.chdir(cwd); }
   }
   return payload;
 }

@@ -1,0 +1,170 @@
+{
+  "id": "P3038c",
+  "date": "2026-10-25",
+  "branch": "master",
+  "note": "TS0601 couples left without an exact driver after P3038 removed TS0601 from empty-manufacturer drivers. Not added: no fitting existing driver or no reliable source. Do not invent a mapping; a new driver is needed.",
+  "leads": [
+    {
+      "mfr": "_TZE200_4jvmbiph",
+      "pid": "TS0601",
+      "model": "MG-AU03",
+      "description": "Double GPO with light switch, energy monitoring and RGB backlights",
+      "source": {
+        "src": "zhc",
+        "model": "MG-AU03",
+        "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/makegood.ts#L347"
+      },
+      "reason": "no fitting existing driver (new driver needed)"
+    },
+    {
+      "mfr": "_TZE200_lq0ffndf",
+      "pid": "TS0601",
+      "model": "MG-GPO02Z",
+      "description": "Double GPO with energy monitoring and RGB backlights",
+      "source": {
+        "src": "zhc",
+        "model": "MG-GPO02Z",
+        "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/makegood.ts#L288"
+      },
+      "reason": "no fitting existing driver (new driver needed)"
+    },
+    {
+      "mfr": "_TZE200_rt5dklro",
+      "pid": "TS0601",
+      "model": "WKE502Z",
+      "description": "Smart Zigbee keypad with RFID badge reader",
+      "source": {
+        "src": "zhc",
+        "model": "WKE502Z",
+        "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/daewoo.ts#L70"
+      },
+      "reason": "no fitting existing driver (new driver needed)"
+    },
+    {
+      "mfr": "_TZE200_wjk6rurm",
+      "pid": "TS0601",
+      "model": "SPM02V1-GT",
+      "description": "Smart energy monitor for 3P+N system",
+      "source": {
+        "src": "zhc",
+        "model": "SPM02V1-GT",
+        "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/tuya.ts#L18784"
+      },
+      "reason": "power_meter already lists this mfr with productId \"ts0601\" in lower case; adding it to energy_meter_3phase makes a new case-insensitive dual (native-matrix gate). Needs owner decision: reviewed dual or fix the power_meter pid case"
+    },
+    {
+      "mfr": "_TZE200_yh7aoahi",
+      "pid": "TS0601",
+      "model": "TS0601_smoke_4",
+      "description": "Smoke sensor",
+      "source": {
+        "src": "zhc",
+        "model": "TS0601_smoke_4",
+        "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/tuya.ts#L12892"
+      },
+      "reason": "every TS0601 smoke driver also lists TS0205, and smoke_sensor3 already owns this mfr on TS0205: adding it would create a new fingerprint collision; owner choice needed (bastien-home carries it on smoke_sensor)"
+    },
+    {
+      "mfr": "_TZE200_yp5tsi3y",
+      "pid": "TS0601",
+      "model": "EWS1154-Z",
+      "description": "Wall switch",
+      "source": {
+        "src": "zhc",
+        "model": "EWS1154-Z",
+        "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/box.ts#L260"
+      },
+      "reason": "no fitting existing driver (new driver needed)"
+    },
+    {
+      "mfr": "_TZE204_6ewjlefg",
+      "pid": "TS0601",
+      "model": "BVRF-L001",
+      "description": "VRF/VRV central air-conditioning thermostat",
+      "source": {
+        "src": "zhc",
+        "model": "BVRF-L001",
+        "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/beca.ts#L11"
+      },
+      "reason": "no fitting existing driver (new driver needed)"
+    },
+    {
+      "mfr": "_TZE204_rfpyqax9",
+      "pid": "TS0601",
+      "model": "Pro Line X10",
+      "description": "Underfloor heating controller - 8 zones",
+      "source": {
+        "src": "zhc",
+        "model": "Pro Line X10",
+        "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/tuya.ts#L14686"
+      },
+      "reason": "no fitting existing driver (new driver needed)"
+    },
+    {
+      "mfr": "_TZE204_wjk6rurm",
+      "pid": "TS0601",
+      "model": "SPM02V1-GT",
+      "description": "Smart energy monitor for 3P+N system",
+      "source": {
+        "src": "zhc",
+        "model": "SPM02V1-GT",
+        "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/tuya.ts#L18784"
+      },
+      "reason": "power_meter already lists this mfr with productId \"ts0601\" in lower case; adding it to energy_meter_3phase makes a new case-insensitive dual (native-matrix gate). Needs owner decision: reviewed dual or fix the power_meter pid case"
+    },
+    {
+      "mfr": "_TZE20C1000000_p3g8xiug",
+      "pid": "TS0601",
+      "model": "TS0601_3ch_bidirectional_meter",
+      "description": "3-channel bidirectional smart energy meter with relay",
+      "source": {
+        "src": "zhc",
+        "model": "TS0601_3ch_bidirectional_meter",
+        "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/tuya.ts#L18992"
+      },
+      "reason": "no fitting existing driver (new driver needed)"
+    },
+    {
+      "mfr": "_TZE284_1oft6qso",
+      "pid": "TS0601",
+      "model": "CH8Z",
+      "description": "Underfloor heating controller - 8 zones",
+      "source": {
+        "src": "zhc",
+        "model": "CH8Z",
+        "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/automaton.ts#L38"
+      },
+      "reason": "no fitting existing driver (new driver needed)"
+    },
+    {
+      "mfr": "_TZE284_rfpyqax9",
+      "pid": "TS0601",
+      "model": "Pro Line X10",
+      "description": "Underfloor heating controller - 8 zones",
+      "source": {
+        "src": "zhc",
+        "model": "Pro Line X10",
+        "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/tuya.ts#L14686"
+      },
+      "reason": "no fitting existing driver (new driver needed)"
+    },
+    {
+      "mfr": "_TZE284_wjk6rurm",
+      "pid": "TS0601",
+      "model": "SPM02V1-GT",
+      "description": "Smart energy monitor for 3P+N system",
+      "source": {
+        "src": "zhc",
+        "model": "SPM02V1-GT",
+        "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/tuya.ts#L18784"
+      },
+      "reason": "power_meter already lists this mfr with productId \"ts0601\" in lower case; adding it to energy_meter_3phase makes a new case-insensitive dual (native-matrix gate). Needs owner decision: reviewed dual or fix the power_meter pid case"
+    }
+  ],
+  "excluded": [
+    {
+      "mfr": "_TZE20X_xxxxxxxx",
+      "reason": "Johan tuya_dummy_device placeholder, not a real device"
+    }
+  ]
+}
