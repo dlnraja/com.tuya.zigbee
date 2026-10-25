@@ -37,7 +37,7 @@ async onInit() {
     };
 
     reg('getActionCard', 'fingerbot_push', async ({ device }) => {
-      await device.triggerPush();
+      await device.triggerFingerBotPress();
       });
     reg('getActionCard', 'fingerbot_turn_on', async ({ device }) => {
       await device.setCapabilityValue('onoff', true).catch(() => {});
