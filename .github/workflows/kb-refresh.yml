@@ -45,7 +45,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          git add data/kb data/leads/kb-enrich-candidates.json docs/knowledge/KB
+          git add data/kb data/leads/kb-enrich-candidates.json docs/knowledge/KB docs/knowledge/Z2M_COVERAGE.md
           if git diff --cached --quiet; then echo "KB unchanged"; exit 0; fi
           b="kb/refresh-$(date -u +%Y%m%d)"
           git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
