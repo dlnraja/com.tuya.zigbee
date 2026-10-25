@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-25T16:55:52.516Z",
+ "updated": "2026-10-25T17:17:50.249Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -40468,22 +40468,22 @@
   "workflow-run:fleet-intelligent-enrich": {
    "status": "done",
    "date": "2026-10-25",
-   "hash": "db6dd5c730c4798a",
+   "hash": "7d76591dae6d5730",
    "note": "run summary: 10 counter(s)",
    "by": "fleet-intelligent-enrich",
    "counts": {
     "phases.length": 31,
-    "baseline.driverCount": 459,
-    "baseline.mfrEntries": 19005,
-    "baseline.pidEntries": 3548,
-    "final.driverCount": 459,
-    "final.mfrEntries": 19027,
-    "final.pidEntries": 3549,
+    "baseline.driverCount": 470,
+    "baseline.mfrEntries": 19056,
+    "baseline.pidEntries": 3551,
+    "final.driverCount": 470,
+    "final.mfrEntries": 19072,
+    "final.pidEntries": 3552,
     "delta.drivers": 0,
-    "delta.mfrs": 22,
+    "delta.mfrs": 16,
     "delta.pids": 1
    },
-   "lastChangeRun": "40170017948"
+   "lastChangeRun": "40215273279"
   },
   "workflow-run:repo-autopilot": {
    "status": "done",
