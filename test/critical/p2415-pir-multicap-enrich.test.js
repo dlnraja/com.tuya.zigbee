@@ -15,7 +15,8 @@ function hasPid(c, p) {
   return (c.zigbee?.productId || []).includes(p);
 }
 
-const presence = compose('presence_sensor_radar');
+// P3057: radar family (parent + TS0601 sibling)
+const presence = require('../helpers/radar-family').radarFamilyCompose();
 const motion = compose('motion_sensor');
 const soil = compose('soil_sensor');
 const climate = compose('climate_sensor');

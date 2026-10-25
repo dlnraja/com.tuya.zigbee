@@ -1,0 +1,62 @@
+{
+  "id": "presence_sensor_radar_zone_active",
+  "title": {
+    "en": "Zone !{{1|2|3}} presence !{{is|is not}} detected",
+    "fr": "Présence zone !{{1|2|3}} !{{détectée|non détectée}}"
+  },
+  "hint": {
+    "en": "Check if a specific detection zone has active presence",
+    "fr": "Vérifier si une zone de détection précise a une présence active"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=presence_sensor_radar|presence_sensor_radar_ts0601"
+    },
+    {
+      "name": "zone",
+      "type": "dropdown",
+      "values": [
+        {
+          "id": "1",
+          "title": {
+            "en": "Zone 1 (Near)"
+          },
+          "label": {
+            "en": "Zone 1 (Near)",
+            "fr": "Zone 1 (proche)"
+          }
+        },
+        {
+          "id": "2",
+          "title": {
+            "en": "Zone 2 (Mid)"
+          },
+          "label": {
+            "en": "Zone 2 (Mid)",
+            "fr": "Zone 2 (milieu)"
+          }
+        },
+        {
+          "id": "3",
+          "title": {
+            "en": "Zone 3 (Far)"
+          },
+          "label": {
+            "en": "Zone 3 (Far)",
+            "fr": "Zone 3 (loin)"
+          }
+        }
+      ],
+      "title": {
+        "en": "Zone",
+        "fr": "Zone"
+      }
+    }
+  ],
+  "titleFormatted": {
+    "en": "Zone !{{1|2|3}} presence !{{is|is not}} detected [[zone]]",
+    "fr": "Présence zone !{{1|2|3}} !{{détectée|non détectée}} [[zone]]"
+  }
+}

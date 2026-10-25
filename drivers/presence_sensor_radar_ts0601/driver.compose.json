@@ -1,0 +1,2143 @@
+{
+  "name": {
+    "en": "Presence Sensor (Radar / mmWave, Tuya TS0601)",
+    "fr": "Capteur de présence (Radar / mmWave, Tuya TS0601)",
+    "nl": "Aanwezigheidssensor (Radar / mmWave, Tuya TS0601)",
+    "de": "Anwesenheitssensor (Radar / mmWave, Tuya TS0601)"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_motion",
+    "measure_luminance",
+    "alarm_human",
+    "measure_luminance.distance"
+  ],
+  "capabilitiesOptions": {
+    "alarm_human": {
+      "title": {
+        "en": "Human presence",
+        "nl": "Menselijke aanwezigheid",
+        "fr": "Présence humaine",
+        "de": "Menschliche Anwesenheit",
+        "es": "Presencia humana"
+      },
+      "insightsTitleTrue": {
+        "en": "Presence detected",
+        "nl": "Aanwezigheid gedetecteerd",
+        "fr": "Présence détectée",
+        "de": "Anwesenheit erkannt",
+        "es": "Presencia detectada"
+      },
+      "insightsTitleFalse": {
+        "en": "No presence",
+        "nl": "Geen aanwezigheid",
+        "fr": "Aucune présence",
+        "de": "Keine Anwesenheit",
+        "es": "Sin presencia"
+      },
+      "getable": true,
+      "preventInsights": false
+    },
+    "alarm_motion": {
+      "title": {
+        "en": "Motion alarm",
+        "nl": "Bewegingsalarm",
+        "fr": "Alarme de mouvement",
+        "de": "Bewegungsalarm",
+        "es": "Alarma de movimiento"
+      },
+      "preventInsights": true,
+      "getable": true
+    },
+    "measure_luminance.distance": {
+      "title": {
+        "en": "Detection Distance",
+        "fr": "Distance de Détection",
+        "nl": "Detectieafstand",
+        "de": "Erkennungsdistanz"
+      },
+      "units": "m",
+      "getable": true,
+      "preventInsights": true
+    },
+    "alarm_motion.zone1": {
+      "title": {
+        "en": "Zone 1 Presence",
+        "fr": "Présence Zone 1",
+        "nl": "Zone 1 Aanwezigheid",
+        "de": "Zone 1 Anwesenheit"
+      },
+      "getable": true,
+      "preventInsights": true
+    },
+    "alarm_motion.zone2": {
+      "title": {
+        "en": "Zone 2 Presence",
+        "fr": "Présence Zone 2",
+        "nl": "Zone 2 Aanwezigheid",
+        "de": "Zone 2 Anwesenheit"
+      },
+      "getable": true,
+      "preventInsights": true
+    },
+    "alarm_motion.zone3": {
+      "title": {
+        "en": "Zone 3 Presence",
+        "fr": "Présence Zone 3",
+        "nl": "Zone 3 Aanwezigheid",
+        "de": "Zone 3 Anwesenheit"
+      },
+      "getable": true,
+      "preventInsights": true
+    },
+    "measure_luminance.distance.zone1": {
+      "title": {
+        "en": "Zone 1 Distance",
+        "fr": "Distance Zone 1",
+        "nl": "Zone 1 Afstand",
+        "de": "Zone 1 Distanz"
+      },
+      "units": "m",
+      "getable": true,
+      "preventInsights": true
+    },
+    "measure_luminance.distance.zone2": {
+      "title": {
+        "en": "Zone 2 Distance",
+        "fr": "Distance Zone 2",
+        "nl": "Zone 2 Afstand",
+        "de": "Zone 2 Distanz"
+      },
+      "units": "m",
+      "getable": true,
+      "preventInsights": true
+    },
+    "measure_luminance.distance.zone3": {
+      "title": {
+        "en": "Zone 3 Distance",
+        "fr": "Distance Zone 3",
+        "nl": "Zone 3 Afstand",
+        "de": "Zone 3 Distanz"
+      },
+      "units": "m",
+      "getable": true,
+      "preventInsights": true
+    },
+    "measure_motion.classification": {
+      "title": {
+        "en": "Movement Classification",
+        "fr": "Classification Mouvement",
+        "nl": "Bewegingsclassificatie",
+        "de": "Bewegungsklassifikation"
+      }
+    },
+    "onoff": {
+      "title": {
+        "en": "Relay",
+        "fr": "Relais",
+        "nl": "Relais",
+        "de": "Relais"
+      }
+    },
+    "measure_luminance": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_temperature": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_humidity": {
+      "getable": true,
+      "preventInsights": false
+    }
+  },
+  "subDevices": [],
+  "zigbee": {
+    "manufacturerName": [
+      "_tze204_sbyx0lm6",
+      "_TZE204_sbyx0lm6",
+      "_tze200_sbyx0lm6",
+      "_TZE200_sbyx0lm6",
+      "_tze204_iadro9bf",
+      "_tze200_1ibpyhdc",
+      "_tze200_1youk3hj",
+      "_tze200_5b5noeto",
+      "_tze200_7gclukjs",
+      "_tze200_ahpcyzth",
+      "_tze200_ar0slwnd",
+      "_tze200_bfmfhxra",
+      "_tze200_bh3n6gk8",
+      "_tze200_cqtamhh5",
+      "_tze200_df04ghrb",
+      "_tze200_f1pvdgoh",
+      "_tze200_ges7h5mj",
+      "_tze200_ghynnvos",
+      "_tze200_gjldowol",
+      "_tze200_gkfb",
+      "_tze200_grgol3xp",
+      "_tze200_holel4dk",
+      "_tze200_hyhl5y36",
+      "_tze200_ikvncluo",
+      "_tze200_juzago6i",
+      "_tze200_jva8ink8",
+      "_tze200_kccdzaeo",
+      "_tze200_khzbklyh",
+      "_tze200_kijxnb8q",
+      "_tze200_laokfqwu",
+      "_tze200_llvwkkde",
+      "_tze200_lu01t0zl",
+      "_tze200_lyetpprm",
+      "_tze200_me6wtiqs",
+      "_tze200_mp902om5",
+      "_tze200_mrf6vtua",
+      "_tze200_muvkrjr5",
+      "_tze200_nbkshs6k",
+      "_tze200_p9zbdqgs",
+      "_tze200_pnyz5qpy",
+      "_tze200_ppuj1vem",
+      "_tze200_qasjif9e",
+      "_tze200_qomxlryd",
+      "_tze200_rhgsbacq",
+      "_tze200_s6hzw8g2",
+      "_tze200_s7rsrtbg",
+      "_tze200_sfiy5tfs",
+      "_tze200_sfiy8puu",
+      "_tze200_sgfmfpiy",
+      "_tze200_sgpeacqp",
+      "_tze200_tmszbtzq",
+      "_tze200_toeldckg",
+      "_tze200_ttcovulf",
+      "_tze200_uli8wasj",
+      "_tze200_w0ap83qu",
+      "_tze200_wukb7rhc",
+      "_tze200_xlnzk169",
+      "_tze200_xpq2rber",
+      "_tze200_xpq2rzhq",
+      "_tze200_y8wkaq6w",
+      "_tze200_ya4ft0w4",
+      "_tze200_ybwa4x5a",
+      "_tze200_zcl6go6a",
+      "_tze200_ztc6ggyl",
+      "_tze200_ztqnh5cg",
+      "_tze201_ztc6ggyl",
+      "_tze202_ztc6ggyl",
+      "_tze203_ztc6ggyl",
+      "_tze204_1youk3hj",
+      "_tze204_2aaelwxk",
+      "_tze204_3towulqd",
+      "_tze204_7gclukjs",
+      "_tze204_b8vxct9l",
+      "_tze204_bmdsp6bs",
+      "_tze204_bvfld3xc",
+      "_tze204_dapwryy7",
+      "_tze204_debczeci",
+      "_tze204_e5m9c5hl",
+      "_tze204_eaulras5",
+      "_tze204_f2rflfa6",
+      "_tze204_fwondbzy",
+      "_tze204_ges7h5mj",
+      "_tze204_gkfb",
+      "_tze204_grgol3xp",
+      "_tze204_hl0ss9oa",
+      "_tze204_holel4dk",
+      "_tze204_hyt4iucb",
+      "_tze204_iaeejhvf",
+      "_tze204_ijxvkhd0",
+      "_tze204_ikvncluo",
+      "_tze204_izy1g1mb",
+      "_tze204_jva8ink8",
+      "_tze204_kyhbrfyl",
+      "_tze204_laokfqwu",
+      "_tze204_lbbg34rj",
+      "_tze204_lyetpprm",
+      "_tze204_mrf6vtua",
+      "_tze204_mtoaryre",
+      "_tze204_muvkrjr5",
+      "_tze204_nbkshs6k",
+      "_tze204_no6qtgtl",
+      "_tze204_oh8y2grn",
+      "_tze204_pfayrzcw",
+      "_tze204_pnyz5qpy",
+      "_tze204_qasifk8z",
+      "_tze204_qasjmygc",
+      "_tze204_qomxlryd",
+      "_tze204_rhgsbacq",
+      "_tze204_rqhsbjr2",
+      "_tze204_sbkgeilo",
+      "_tze204_sfiy5tfs",
+      "_tze204_sfiy8puu",
+      "_tze204_sgfmfpiy",
+      "_tze204_uli8wasj",
+      "_tze204_wukb7rhc",
+      "_tze204_xpq2rber",
+      "_tze204_xsm7l9xa",
+      "_tze204_y8jijhba",
+      "_tze204_ya4ft0w4",
+      "_tze204_ybwa4x5a",
+      "_tze204_zg204z",
+      "_tze204_zg204zh",
+      "_tze204_ztc6ggyl",
+      "_tze204_ztqnh5cg",
+      "_tze284_1lvln0x6",
+      "_tze284_1youk3hj",
+      "_tze284_4qznlkbu",
+      "_tze284_8catj2au",
+      "_tze284_9ovska9w",
+      "_tze284_ar5przmw",
+      "_tze284_bquwrqh1",
+      "_tze284_chcnj5st",
+      "_tze284_cipobaav",
+      "_tze284_dapwryy7",
+      "_tze284_ft7qqpx3",
+      "_tze284_fwondbzy",
+      "_tze284_gkfb",
+      "_tze284_gw05grph",
+      "_tze284_h7oalfxa",
+      "_tze284_hgeqeyuv",
+      "_tze284_iadro9bf",
+      "_tze284_ijxvkhd0",
+      "_tze284_ka8l86iu",
+      "_tze284_koxaopnk",
+      "_tze284_mrf6vtua",
+      "_tze284_n5q2t8na",
+      "_tze284_ozf4e02o",
+      "_tze284_pzm3wab5",
+      "_tze284_qasjif9e",
+      "_tze284_rlytpmij",
+      "_tze284_sbyx0lm6",
+      "_tze284_sxm7l9xa",
+      "_tze284_twybxdzl",
+      "_tze284_vceqncho",
+      "_tze284_who1jxwd",
+      "_tze284_xsm7l9xa",
+      "_tze284_yrwmnya3",
+      "_tze284_ztc6ggyl",
+      "_tze284_ztqnh5cg",
+      "_tze28c1000000_hgeqeyuv",
+      "_tze28c1000000_pzm3wab5",
+      "_tze28c1000000_twybxdzl",
+      "_TZE284_grxx6qek",
+      "_TZE200_iadro9bf",
+      "_TZE200_sxm7l9xa",
+      "_TZE284_mexuq6lm",
+      "_TZE204_iadro9bf",
+      "_TZE200_1ibpyhdc",
+      "_TZE200_1youk3hj",
+      "_TZE200_5b5noeto",
+      "_TZE200_7gclukjs",
+      "_TZE200_ahpcyzth",
+      "_TZE200_ar0slwnd",
+      "_TZE200_bfmfhxra",
+      "_TZE200_bh3n6gk8",
+      "_TZE200_cqtamhh5",
+      "_TZE200_df04ghrb",
+      "_TZE200_f1pvdgoh",
+      "_TZE200_ges7h5mj",
+      "_TZE200_ghynnvos",
+      "_TZE200_gjldowol",
+      "_TZE200_gkfb",
+      "_TZE200_grgol3xp",
+      "_TZE200_holel4dk",
+      "_TZE200_hyhl5y36",
+      "_TZE200_ikvncluo",
+      "_TZE200_juzago6i",
+      "_TZE200_jva8ink8",
+      "_TZE200_kccdzaeo",
+      "_TZE200_khzbklyh",
+      "_TZE200_kijxnb8q",
+      "_TZE200_laokfqwu",
+      "_TZE200_llvwkkde",
+      "_TZE200_lu01t0zl",
+      "_TZE200_lyetpprm",
+      "_TZE200_me6wtiqs",
+      "_TZE200_mp902om5",
+      "_TZE200_mrf6vtua",
+      "_TZE200_muvkrjr5",
+      "_TZE200_nbkshs6k",
+      "_TZE200_p9zbdqgs",
+      "_TZE200_pnyz5qpy",
+      "_TZE200_ppuj1vem",
+      "_TZE200_qasjif9e",
+      "_TZE200_qomxlryd",
+      "_TZE200_rhgsbacq",
+      "_TZE200_s6hzw8g2",
+      "_TZE200_s7rsrtbg",
+      "_TZE200_sfiy5tfs",
+      "_TZE200_sfiy8puu",
+      "_TZE200_sgfmfpiy",
+      "_TZE200_sgpeacqp",
+      "_TZE200_tmszbtzq",
+      "_TZE200_toeldckg",
+      "_TZE200_ttcovulf",
+      "_TZE200_uli8wasj",
+      "_TZE200_w0ap83qu",
+      "_TZE200_wukb7rhc",
+      "_TZE200_xlnzk169",
+      "_TZE200_xpq2rber",
+      "_TZE200_xpq2rzhq",
+      "_TZE200_y8wkaq6w",
+      "_TZE200_ya4ft0w4",
+      "_TZE200_ybwa4x5a",
+      "_TZE200_zcl6go6a",
+      "_TZE200_ztc6ggyl",
+      "_TZE200_ztqnh5cg",
+      "_TZE201_ztc6ggyl",
+      "_TZE202_ztc6ggyl",
+      "_TZE203_ztc6ggyl",
+      "_TZE204_1youk3hj",
+      "_TZE204_2aaelwxk",
+      "_TZE204_3towulqd",
+      "_TZE204_7gclukjs",
+      "_TZE204_b8vxct9l",
+      "_TZE204_bmdsp6bs",
+      "_TZE204_bvfld3xc",
+      "_TZE204_dapwryy7",
+      "_TZE204_debczeci",
+      "_TZE204_e5m9c5hl",
+      "_TZE204_eaulras5",
+      "_TZE204_f2rflfa6",
+      "_TZE204_fwondbzy",
+      "_TZE204_ges7h5mj",
+      "_TZE204_gkfb",
+      "_TZE204_grgol3xp",
+      "_TZE204_hl0ss9oa",
+      "_TZE204_holel4dk",
+      "_TZE204_hyt4iucb",
+      "_TZE204_iaeejhvf",
+      "_TZE204_ijxvkhd0",
+      "_TZE204_ikvncluo",
+      "_TZE204_izy1g1mb",
+      "_TZE204_jva8ink8",
+      "_TZE204_kyhbrfyl",
+      "_TZE204_laokfqwu",
+      "_TZE204_lbbg34rj",
+      "_TZE204_lyetpprm",
+      "_TZE204_mrf6vtua",
+      "_TZE204_mtoaryre",
+      "_TZE204_muvkrjr5",
+      "_TZE204_nbkshs6k",
+      "_TZE204_no6qtgtl",
+      "_TZE204_oh8y2grn",
+      "_TZE204_pfayrzcw",
+      "_TZE204_pnyz5qpy",
+      "_TZE204_qasifk8z",
+      "_TZE204_qasjmygc",
+      "_TZE204_qomxlryd",
+      "_TZE204_rhgsbacq",
+      "_TZE204_rqhsbjr2",
+      "_TZE204_sbkgeilo",
+      "_TZE204_sfiy5tfs",
+      "_TZE204_sfiy8puu",
+      "_TZE204_sgfmfpiy",
+      "_TZE204_uli8wasj",
+      "_TZE204_wukb7rhc",
+      "_TZE204_xpq2rber",
+      "_TZE204_xsm7l9xa",
+      "_TZE204_y8jijhba",
+      "_TZE204_ya4ft0w4",
+      "_TZE204_ybwa4x5a",
+      "_TZE204_zg204z",
+      "_TZE204_zg204zh",
+      "_TZE204_ztc6ggyl",
+      "_TZE204_ztqnh5cg",
+      "_TZE284_1lvln0x6",
+      "_TZE284_1youk3hj",
+      "_TZE284_4qznlkbu",
+      "_TZE284_8catj2au",
+      "_TZE284_9ovska9w",
+      "_TZE284_ar5przmw",
+      "_TZE284_bquwrqh1",
+      "_TZE284_chcnj5st",
+      "_TZE284_cipobaav",
+      "_TZE284_dapwryy7",
+      "_TZE284_ft7qqpx3",
+      "_TZE284_fwondbzy",
+      "_TZE284_gkfb",
+      "_TZE284_gw05grph",
+      "_TZE284_h7oalfxa",
+      "_TZE284_hgeqeyuv",
+      "_TZE284_iadro9bf",
+      "_TZE284_ijxvkhd0",
+      "_TZE284_ka8l86iu",
+      "_TZE284_koxaopnk",
+      "_TZE284_mrf6vtua",
+      "_TZE284_n5q2t8na",
+      "_TZE284_ozf4e02o",
+      "_TZE284_pzm3wab5",
+      "_TZE284_qasjif9e",
+      "_TZE284_rlytpmij",
+      "_TZE284_sbyx0lm6",
+      "_TZE284_sxm7l9xa",
+      "_TZE284_twybxdzl",
+      "_TZE284_vceqncho",
+      "_TZE284_who1jxwd",
+      "_TZE284_xsm7l9xa",
+      "_TZE284_yrwmnya3",
+      "_TZE284_ztc6ggyl",
+      "_TZE284_ztqnh5cg",
+      "_TZE28C1000000_hgeqeyuv",
+      "_TZE28C1000000_pzm3wab5",
+      "_TZE28C1000000_twybxdzl",
+      "_tze284_grxx6qek",
+      "_tze200_iadro9bf",
+      "_tze200_sxm7l9xa",
+      "_tze284_mexuq6lm",
+      "_TZE204_MUVKRJR5",
+      "_tze204_MUVKRJR5",
+      "_TZE200_RHGSBACQ",
+      "_TZE204_RHGSBACQ",
+      "_TZE284_RHGSBACQ",
+      "_tze284_rhgsbacq",
+      "_TZE204_3TOWULQD",
+      "_TZE284_3TOWULQD",
+      "_tze284_3towulqd",
+      "_TZE200_debczeci",
+      "_tze200_debczeci",
+      "_TZE204_CRQ3R3LA",
+      "_TZE284_CRQ3R3LA",
+      "_tze204_crq3r3la",
+      "_tze284_crq3r3la",
+      "_TZE204_DEBCZECI",
+      "_TZE284_1LVLN0X6",
+      "_TZE200_DEBCZECI",
+      "_TZE204_2AAELWXK",
+      "_TZE284_2AAELWXK",
+      "_tze284_2aaelwxk",
+      "_TZE200_YA4FT0W4",
+      "_TZE204_YA4FT0W4",
+      "_TZE284_YA4FT0W4",
+      "_tze284_ya4ft0w4",
+      "_TZE204_NBKSHS6K",
+      "_TZE200_NBKSHS6K",
+      "_TZE284_NBKSHS6K",
+      "_tze284_nbkshs6k",
+      "_TZE204_DAPWRYY7",
+      "_TZE200_DAPWRYY7",
+      "_TZE284_DAPWRYY7",
+      "_tze200_dapwryy7",
+      "_TZE200_BH3N6GK8",
+      "_TZE204_BH3N6GK8",
+      "_TZE284_BH3N6GK8",
+      "_tze204_bh3n6gk8",
+      "_tze284_bh3n6gk8",
+      "_TZE200_QASJIF9E",
+      "_TZE284_QASJIF9E",
+      "_TZE204_LAOKFQWU",
+      "_TZE200_LAOKFQWU",
+      "_TZE284_LAOKFQWU",
+      "_tze284_laokfqwu",
+      "_TZE204_ZTQNH5CG",
+      "_TZE200_ZTQNH5CG",
+      "_TZE284_ZTQNH5CG",
+      "_TZE200_MUVKRJR5",
+      "_TZE284_MUVKRJR5",
+      "_tze284_muvkrjr5",
+      "_TZE204_FWONDBZY",
+      "_TZE200_FWONDBZY",
+      "_TZE284_FWONDBZY",
+      "_tze200_fwondbzy",
+      "_TZE204_E5M9C5HL",
+      "_TZE200_E5M9C5HL",
+      "_TZE284_E5M9C5HL",
+      "_tze200_e5m9c5hl",
+      "_tze284_e5m9c5hl",
+      "_TZE204_7GCLUKJS",
+      "_TZE200_7GCLUKJS",
+      "_TZE284_7GCLUKJS",
+      "_tze284_7gclukjs",
+      "_TZE204_MTOARYRE",
+      "_TZE200_MTOARYRE",
+      "_TZE284_MTOARYRE",
+      "_tze200_mtoaryre",
+      "_tze284_mtoaryre",
+      "_TZE200_LU01T0ZL",
+      "_TZE204_LU01T0ZL",
+      "_TZE284_LU01T0ZL",
+      "_tze204_lu01t0zl",
+      "_tze284_lu01t0zl",
+      "_TZE200_S6HZW8G2",
+      "_TZE204_S6HZW8G2",
+      "_TZE284_S6HZW8G2",
+      "_tze204_s6hzw8g2",
+      "_tze284_s6hzw8g2",
+      "_TZE284_DTZZIY1E",
+      "_tze284_dtzziy1e",
+      "_TZE204_IAEEJHVF",
+      "_TZE200_IAEEJHVF",
+      "_TZE284_IAEEJHVF",
+      "_tze200_iaeejhvf",
+      "_tze284_iaeejhvf",
+      "_TZE204_GKFB",
+      "_TZE200_GKFB",
+      "_TZE284_GKFB",
+      "_TZE284_DWCARSAT",
+      "_tze284_dwcarsat",
+      "_TZE284_1YOUK3HJ",
+      "_TZE200_1YOUK3HJ",
+      "_TZE204_1YOUK3HJ",
+      "_TZE204_BVFLD3XC",
+      "_TZE200_BVFLD3XC",
+      "_TZE284_BVFLD3XC",
+      "_tze200_bvfld3xc",
+      "_tze284_bvfld3xc",
+      "_TZE284_IADRO9BF",
+      "_TZE200_IADRO9BF",
+      "_TZE204_IADRO9BF",
+      "_TZE284_BQUWRQH1",
+      "_TZE200_BQUWRQH1",
+      "_TZE204_BQUWRQH1",
+      "_tze200_bquwrqh1",
+      "_tze204_bquwrqh1",
+      "_TZE200_GHYNNVOS",
+      "_TZE204_GHYNNVOS",
+      "_TZE284_GHYNNVOS",
+      "_tze204_ghynnvos",
+      "_tze284_ghynnvos",
+      "_TZE200_SXM7L9XA",
+      "_TZE284_SXM7L9XA",
+      "_TZE204_ZTC6GGYL",
+      "_TZE200_ZTC6GGYL",
+      "_TZE284_ZTC6GGYL",
+      "_TZE204_IJXVKHD0",
+      "_TZE200_IJXVKHD0",
+      "_TZE284_IJXVKHD0",
+      "_tze200_ijxvkhd0",
+      "_TZE284_rhgsbacq",
+      "_TZE284_y8jijhba",
+      "_tze284_y8jijhba",
+      "_TZE284_3towulqd",
+      "_TZE204_crq3r3la",
+      "_TZE284_crq3r3la",
+      "_TZE284_2aaelwxk",
+      "_TZE284_ya4ft0w4",
+      "_TZE284_nbkshs6k",
+      "_TZE200_dapwryy7",
+      "_TZE204_bh3n6gk8",
+      "_TZE284_bh3n6gk8",
+      "_TZE284_laokfqwu",
+      "_TZE284_muvkrjr5",
+      "_TZE200_fwondbzy",
+      "_TZE200_e5m9c5hl",
+      "_TZE284_e5m9c5hl",
+      "_TZE284_7gclukjs",
+      "_TZE200_mtoaryre",
+      "_TZE284_mtoaryre",
+      "_TZE204_lu01t0zl",
+      "_TZE284_lu01t0zl",
+      "_TZE204_s6hzw8g2",
+      "_TZE284_s6hzw8g2",
+      "_TZE284_dtzziy1e",
+      "_TZE200_iaeejhvf",
+      "_TZE284_iaeejhvf",
+      "_TZE284_dwcarsat",
+      "_TZE200_bvfld3xc",
+      "_TZE284_bvfld3xc",
+      "_TZE200_bquwrqh1",
+      "_TZE204_bquwrqh1",
+      "_TZE204_ghynnvos",
+      "_TZE284_ghynnvos",
+      "_TZE200_ijxvkhd0",
+      "_TZE204_SBYX0LM6",
+      "_tze204_SBYX0LM6",
+      "_TZE200_SBYX0LM6",
+      "_tze200_SBYX0LM6",
+      "_tze204_IADRO9BF",
+      "_TZE200_1IBPYHDC",
+      "_tze200_1IBPYHDC",
+      "_tze200_1YOUK3HJ",
+      "_TZE200_5B5NOETO",
+      "_tze200_5B5NOETO",
+      "_tze200_7GCLUKJS",
+      "_TZE200_AHPCYZTH",
+      "_tze200_AHPCYZTH",
+      "_TZE200_AR0SLWND",
+      "_tze200_AR0SLWND",
+      "_TZE200_BFMFHXRA",
+      "_tze200_BFMFHXRA",
+      "_tze200_BH3N6GK8",
+      "_TZE200_CQTAMHH5",
+      "_tze200_CQTAMHH5",
+      "_TZE200_DF04GHRB",
+      "_tze200_DF04GHRB",
+      "_TZE200_F1PVDGOH",
+      "_tze200_F1PVDGOH",
+      "_TZE200_GES7H5MJ",
+      "_tze200_GES7H5MJ",
+      "_tze200_GHYNNVOS",
+      "_TZE200_GJLDOWOL",
+      "_tze200_GJLDOWOL",
+      "_tze200_GKFB",
+      "_TZE200_GRGOL3XP",
+      "_tze200_GRGOL3XP",
+      "_TZE200_HOLEL4DK",
+      "_tze200_HOLEL4DK",
+      "_TZE200_HYHL5Y36",
+      "_tze200_HYHL5Y36",
+      "_TZE200_IKVNCLUO",
+      "_tze200_IKVNCLUO",
+      "_TZE200_JUZAGO6I",
+      "_tze200_JUZAGO6I",
+      "_TZE200_JVA8INK8",
+      "_tze200_JVA8INK8",
+      "_TZE200_KCCDZAEO",
+      "_tze200_KCCDZAEO",
+      "_TZE200_KHZBKLYH",
+      "_tze200_KHZBKLYH",
+      "_TZE200_KIJXNB8Q",
+      "_tze200_KIJXNB8Q",
+      "_tze200_LAOKFQWU",
+      "_TZE200_LLVWKKDE",
+      "_tze200_LLVWKKDE",
+      "_tze200_LU01T0ZL",
+      "_TZE200_LYETPPRM",
+      "_tze200_LYETPPRM",
+      "_TZE200_ME6WTIQS",
+      "_tze200_ME6WTIQS",
+      "_TZE200_MP902OM5",
+      "_tze200_MP902OM5",
+      "_TZE200_MRF6VTUA",
+      "_tze200_MRF6VTUA",
+      "_tze200_MUVKRJR5",
+      "_tze200_NBKSHS6K",
+      "_TZE200_P9ZBDQGS",
+      "_tze200_P9ZBDQGS",
+      "_TZE200_PNYZ5QPY",
+      "_tze200_PNYZ5QPY",
+      "_TZE200_PPUJ1VEM",
+      "_tze200_PPUJ1VEM",
+      "_tze200_QASJIF9E",
+      "_TZE200_QOMXLRYD",
+      "_tze200_QOMXLRYD",
+      "_tze200_RHGSBACQ",
+      "_tze200_S6HZW8G2",
+      "_TZE200_S7RSRTBG",
+      "_tze200_S7RSRTBG",
+      "_TZE200_SFIY5TFS",
+      "_tze200_SFIY5TFS",
+      "_TZE200_SFIY8PUU",
+      "_tze200_SFIY8PUU",
+      "_TZE200_SGFMFPIY",
+      "_tze200_SGFMFPIY",
+      "_TZE200_SGPEACQP",
+      "_tze200_SGPEACQP",
+      "_TZE200_TMSZBTZQ",
+      "_tze200_TMSZBTZQ",
+      "_TZE200_TOELDCKG",
+      "_tze200_TOELDCKG",
+      "_TZE200_TTCOVULF",
+      "_tze200_TTCOVULF",
+      "_TZE200_ULI8WASJ",
+      "_tze200_ULI8WASJ",
+      "_TZE200_W0AP83QU",
+      "_tze200_W0AP83QU",
+      "_TZE200_WUKB7RHC",
+      "_tze200_WUKB7RHC",
+      "_TZE200_XLNZK169",
+      "_tze200_XLNZK169",
+      "_TZE200_XPQ2RBER",
+      "_tze200_XPQ2RBER",
+      "_TZE200_XPQ2RZHQ",
+      "_tze200_XPQ2RZHQ",
+      "_TZE200_Y8WKAQ6W",
+      "_tze200_Y8WKAQ6W",
+      "_tze200_YA4FT0W4",
+      "_TZE200_YBWA4X5A",
+      "_tze200_YBWA4X5A",
+      "_TZE200_ZCL6GO6A",
+      "_tze200_ZCL6GO6A",
+      "_tze200_ZTC6GGYL",
+      "_tze200_ZTQNH5CG",
+      "_TZE201_ZTC6GGYL",
+      "_tze201_ZTC6GGYL",
+      "_TZE202_ZTC6GGYL",
+      "_tze202_ZTC6GGYL",
+      "_TZE203_ZTC6GGYL",
+      "_tze203_ZTC6GGYL",
+      "_tze204_1YOUK3HJ",
+      "_tze204_2AAELWXK",
+      "_tze204_3TOWULQD",
+      "_tze204_7GCLUKJS",
+      "_TZE204_B8VXCT9L",
+      "_tze204_B8VXCT9L",
+      "_TZE204_BMDSP6BS",
+      "_tze204_BMDSP6BS",
+      "_tze204_BVFLD3XC",
+      "_tze204_DAPWRYY7",
+      "_tze204_DEBCZECI",
+      "_tze204_E5M9C5HL",
+      "_TZE204_EAULRAS5",
+      "_tze204_EAULRAS5",
+      "_TZE204_F2RFLFA6",
+      "_tze204_F2RFLFA6",
+      "_tze204_FWONDBZY",
+      "_TZE204_GES7H5MJ",
+      "_tze204_GES7H5MJ",
+      "_tze204_GKFB",
+      "_TZE204_GRGOL3XP",
+      "_tze204_GRGOL3XP",
+      "_TZE204_HL0SS9OA",
+      "_tze204_HL0SS9OA",
+      "_TZE204_HOLEL4DK",
+      "_tze204_HOLEL4DK",
+      "_TZE204_HYT4IUCB",
+      "_tze204_HYT4IUCB",
+      "_tze204_IAEEJHVF",
+      "_tze204_IJXVKHD0",
+      "_TZE204_IKVNCLUO",
+      "_tze204_IKVNCLUO",
+      "_TZE204_IZY1G1MB",
+      "_tze204_IZY1G1MB",
+      "_TZE204_JVA8INK8",
+      "_tze204_JVA8INK8",
+      "_TZE204_KYHBRFYL",
+      "_tze204_KYHBRFYL",
+      "_tze204_LAOKFQWU",
+      "_TZE204_LBBG34RJ",
+      "_tze204_LBBG34RJ",
+      "_TZE204_LYETPPRM",
+      "_tze204_LYETPPRM",
+      "_TZE204_MRF6VTUA",
+      "_tze204_MRF6VTUA",
+      "_tze204_MTOARYRE",
+      "_tze204_NBKSHS6K",
+      "_TZE204_NO6QTGTL",
+      "_tze204_NO6QTGTL",
+      "_TZE204_OH8Y2GRN",
+      "_tze204_OH8Y2GRN",
+      "_TZE204_PFAYRZCW",
+      "_tze204_PFAYRZCW",
+      "_TZE204_PNYZ5QPY",
+      "_tze204_PNYZ5QPY",
+      "_TZE204_QASIFK8Z",
+      "_tze204_QASIFK8Z",
+      "_TZE204_QASJMYGC",
+      "_tze204_QASJMYGC",
+      "_TZE204_QOMXLRYD",
+      "_tze204_QOMXLRYD",
+      "_tze204_RHGSBACQ",
+      "_TZE204_RQHSBJR2",
+      "_tze204_RQHSBJR2",
+      "_TZE204_SBKGEILO",
+      "_tze204_SBKGEILO",
+      "_TZE204_SFIY5TFS",
+      "_tze204_SFIY5TFS",
+      "_TZE204_SFIY8PUU",
+      "_tze204_SFIY8PUU",
+      "_TZE204_SGFMFPIY",
+      "_tze204_SGFMFPIY",
+      "_TZE204_ULI8WASJ",
+      "_tze204_ULI8WASJ",
+      "_TZE204_WUKB7RHC",
+      "_tze204_WUKB7RHC",
+      "_TZE204_XPQ2RBER",
+      "_tze204_XPQ2RBER",
+      "_TZE204_XSM7L9XA",
+      "_tze204_XSM7L9XA",
+      "_TZE204_Y8JIJHBA",
+      "_tze204_Y8JIJHBA",
+      "_tze204_YA4FT0W4",
+      "_TZE204_YBWA4X5A",
+      "_tze204_YBWA4X5A",
+      "_TZE204_ZG204Z",
+      "_tze204_ZG204Z",
+      "_TZE204_ZG204ZH",
+      "_tze204_ZG204ZH",
+      "_tze204_ZTC6GGYL",
+      "_tze204_ZTQNH5CG",
+      "_tze284_1LVLN0X6",
+      "_tze284_1YOUK3HJ",
+      "_TZE284_4QZNLKBU",
+      "_tze284_4QZNLKBU",
+      "_TZE284_8CATJ2AU",
+      "_tze284_8CATJ2AU",
+      "_TZE284_9OVSKA9W",
+      "_tze284_9OVSKA9W",
+      "_TZE284_AR5PRZMW",
+      "_tze284_AR5PRZMW",
+      "_tze284_BQUWRQH1",
+      "_TZE284_CHCNJ5ST",
+      "_tze284_CHCNJ5ST",
+      "_TZE284_CIPOBAAV",
+      "_tze284_CIPOBAAV",
+      "_tze284_DAPWRYY7",
+      "_TZE284_FT7QQPX3",
+      "_tze284_FT7QQPX3",
+      "_tze284_FWONDBZY",
+      "_tze284_GKFB",
+      "_TZE284_GW05GRPH",
+      "_tze284_GW05GRPH",
+      "_TZE284_H7OALFXA",
+      "_tze284_H7OALFXA",
+      "_TZE284_HGEQEYUV",
+      "_tze284_HGEQEYUV",
+      "_tze284_IADRO9BF",
+      "_tze284_IJXVKHD0",
+      "_TZE284_KA8L86IU",
+      "_tze284_KA8L86IU",
+      "_TZE284_KOXAOPNK",
+      "_tze284_KOXAOPNK",
+      "_TZE284_MRF6VTUA",
+      "_tze284_MRF6VTUA",
+      "_TZE284_N5Q2T8NA",
+      "_tze284_N5Q2T8NA",
+      "_TZE284_OZF4E02O",
+      "_tze284_OZF4E02O",
+      "_TZE284_PZM3WAB5",
+      "_tze284_PZM3WAB5",
+      "_tze284_QASJIF9E",
+      "_TZE284_RLYTPMIJ",
+      "_tze284_RLYTPMIJ",
+      "_TZE284_SBYX0LM6",
+      "_tze284_SBYX0LM6",
+      "_tze284_SXM7L9XA",
+      "_TZE284_TWYBXDZL",
+      "_tze284_TWYBXDZL",
+      "_TZE284_VCEQNCHO",
+      "_tze284_VCEQNCHO",
+      "_TZE284_WHO1JXWD",
+      "_tze284_WHO1JXWD",
+      "_TZE284_XSM7L9XA",
+      "_tze284_XSM7L9XA",
+      "_TZE284_YRWMNYA3",
+      "_tze284_YRWMNYA3",
+      "_tze284_ZTC6GGYL",
+      "_tze284_ZTQNH5CG",
+      "_TZE28C1000000_HGEQEYUV",
+      "_tze28c1000000_HGEQEYUV",
+      "_TZE28C1000000_PZM3WAB5",
+      "_tze28c1000000_PZM3WAB5",
+      "_TZE28C1000000_TWYBXDZL",
+      "_tze28c1000000_TWYBXDZL",
+      "_TZE284_GRXX6QEK",
+      "_tze284_GRXX6QEK",
+      "_tze200_IADRO9BF",
+      "_tze200_SXM7L9XA",
+      "_TZE284_MEXUQ6LM",
+      "_tze284_MEXUQ6LM",
+      "_tze284_RHGSBACQ",
+      "_tze284_3TOWULQD",
+      "_tze200_DEBCZECI",
+      "_tze204_CRQ3R3LA",
+      "_tze284_CRQ3R3LA",
+      "_tze284_2AAELWXK",
+      "_tze284_YA4FT0W4",
+      "_tze284_NBKSHS6K",
+      "_tze200_DAPWRYY7",
+      "_tze204_BH3N6GK8",
+      "_tze284_BH3N6GK8",
+      "_tze284_LAOKFQWU",
+      "_tze284_MUVKRJR5",
+      "_tze200_FWONDBZY",
+      "_tze200_E5M9C5HL",
+      "_tze284_E5M9C5HL",
+      "_tze284_7GCLUKJS",
+      "_tze200_MTOARYRE",
+      "_tze284_MTOARYRE",
+      "_tze204_LU01T0ZL",
+      "_tze284_LU01T0ZL",
+      "_tze204_S6HZW8G2",
+      "_tze284_S6HZW8G2",
+      "_tze284_DTZZIY1E",
+      "_tze200_IAEEJHVF",
+      "_tze284_IAEEJHVF",
+      "_tze284_DWCARSAT",
+      "_tze200_BVFLD3XC",
+      "_tze284_BVFLD3XC",
+      "_tze200_BQUWRQH1",
+      "_tze204_BQUWRQH1",
+      "_tze204_GHYNNVOS",
+      "_tze284_GHYNNVOS",
+      "_tze200_IJXVKHD0",
+      "_TZE284_Y8JIJHBA",
+      "_tze284_Y8JIJHBA",
+      "_tze284_5qfrnbqs",
+      "_TZE284_5QFRNBQS",
+      "_tze284_bw4ayyeh",
+      "_TZE284_BW4AYYEH",
+      "_TZE284_5qfrnbqs",
+      "_TZE284_bw4ayyeh",
+      "_TZE200_kyhbrfyl",
+      "_TZE284_kyhbrfyl",
+      "_tze200_kyhbrfyl",
+      "_tze284_kyhbrfyl",
+      "_TZE204_ycke4deo",
+      "_tze204_ycke4deo"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
+        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+      }
+    },
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0
+        ]
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "power_source",
+      "type": "dropdown",
+      "label": {
+        "en": "Power Source",
+        "fr": "Source d'Alimentation"
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto Detect",
+            "fr": "Détection Automatique"
+          }
+        },
+        {
+          "id": "ac",
+          "label": {
+            "en": "AC Powered",
+            "fr": "Alimentation Secteur"
+          }
+        },
+        {
+          "id": "dc",
+          "label": {
+            "en": "DC Powered",
+            "fr": "Alimentation DC"
+          }
+        },
+        {
+          "id": "battery",
+          "label": {
+            "en": "Battery Powered",
+            "fr": "Sur Batterie"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Select power source manually or use auto-detection",
+        "fr": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique"
+      }
+    },
+    {
+      "id": "battery_type",
+      "type": "dropdown",
+      "label": {
+        "en": "Battery Type",
+        "fr": "Type de Batterie"
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto Detect",
+            "fr": "Détection Automatique"
+          }
+        },
+        {
+          "id": "CR2032",
+          "label": {
+            "en": "CR2032",
+            "fr": "CR2032 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "CR2450",
+          "label": {
+            "en": "CR2450",
+            "fr": "CR2450 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "AAA",
+          "label": {
+            "en": "AAA",
+            "fr": "AAA"
+          }
+        },
+        {
+          "id": "AA",
+          "label": {
+            "en": "AA",
+            "fr": "AA"
+          }
+        },
+        {
+          "id": "CR123A",
+          "label": {
+            "en": "CR123A",
+            "fr": "CR123A"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Select battery type manually or use auto-detection based on voltage",
+        "fr": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
+      }
+    },
+    {
+      "id": "battery_low_threshold",
+      "type": "number",
+      "label": {
+        "en": "Low Battery Threshold",
+        "fr": "Seuil Batterie Faible (%)"
+      },
+      "value": 20,
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "hint": {
+        "en": "Trigger low battery warning when below this percentage",
+        "fr": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "battery_critical_threshold",
+      "type": "number",
+      "label": {
+        "en": "Critical Battery Threshold",
+        "fr": "Seuil Batterie Critique (%)"
+      },
+      "value": 10,
+      "min": 0,
+      "max": 30,
+      "step": 5,
+      "hint": {
+        "en": "Trigger critical battery warning when below this percentage",
+        "fr": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "enable_battery_notifications",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Battery Notifications",
+        "fr": "Activer Notifications Batterie"
+      },
+      "value": true,
+      "hint": {
+        "en": "Send flow notifications for battery events",
+        "fr": "Envoyer des notifications de flow pour les événements de batterie"
+      }
+    },
+    {
+      "id": "battery_report_interval",
+      "type": "number",
+      "label": {
+        "en": "Battery Report Interval",
+        "fr": "Intervalle Rapport Batterie (heures)"
+      },
+      "value": 24,
+      "min": 1,
+      "max": 168,
+      "step": 1,
+      "hint": {
+        "en": "How often to request battery status updates",
+        "fr": "Fréquence de demande des mises à jour d'état de batterie"
+      }
+    },
+    {
+      "id": "optimization_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Energy Optimization Mode",
+        "fr": "Mode Optimisation Énergétique"
+      },
+      "value": "balanced",
+      "values": [
+        {
+          "id": "performance",
+          "label": {
+            "en": "Performance (More responsive)",
+            "fr": "Performance (Plus réactif)"
+          }
+        },
+        {
+          "id": "balanced",
+          "label": {
+            "en": "Balanced",
+            "fr": "Équilibré"
+          }
+        },
+        {
+          "id": "power_saving",
+          "label": {
+            "en": "Power Saving (Longer battery)",
+            "fr": "Économie d'énergie (Batterie plus longue)"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Balance between responsiveness and battery life",
+        "fr": "Équilibre entre réactivité et durée de vie de la batterie"
+      }
+    },
+    {
+      "id": "enable_power_estimation",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Power Estimation",
+        "fr": "Activer Estimation Puissance"
+      },
+      "value": true,
+      "hint": {
+        "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
+        "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
+      }
+    },
+    {
+      "id": "invert_presence",
+      "type": "checkbox",
+      "label": {
+        "en": "Invert Presence Detection",
+        "fr": "Inverser Détection Présence"
+      },
+      "value": false,
+      "hint": {
+        "en": "Enable if presence shows active when room is empty and inactive when occupied (firmware bug workaround)",
+        "fr": "Activer si la présence indique actif quand la pièce est vide et inactif quand occupée (contournement bug firmware)"
+      }
+    },
+    {
+      "id": "motion_detection_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Motion Detection Mode",
+        "fr": "Mode de Détection",
+        "nl": "Bewegingsdetectie Modus",
+        "de": "Bewegungserkennungsmodus"
+      },
+      "value": "1",
+      "values": [
+        {
+          "id": "0",
+          "label": {
+            "en": "PIR Only",
+            "fr": "PIR Uniquement",
+            "nl": "Alleen PIR",
+            "de": "Nur PIR"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "PIR + Radar (Recommended)",
+            "fr": "PIR + Radar (Recommandé)",
+            "nl": "PIR + Radar (Aanbevolen)",
+            "de": "PIR + Radar (Empfohlen)"
+          }
+        },
+        {
+          "id": "2",
+          "label": {
+            "en": "Radar Only",
+            "fr": "Radar Uniquement",
+            "nl": "Alleen Radar",
+            "de": "Nur Radar"
+          }
+        }
+      ],
+      "hint": {
+        "en": "ZG-204ZM: Select detection method (PIR for motion, Radar for presence)",
+        "fr": "ZG-204ZM: Sélectionner la méthode de détection (PIR pour mouvement, Radar pour présence)"
+      }
+    },
+    {
+      "id": "motion_detection_sensitivity",
+      "type": "number",
+      "label": {
+        "en": "Motion Sensitivity",
+        "fr": "Sensibilité Mouvement",
+        "nl": "Bewegingsgevoeligheid",
+        "de": "Bewegungsempfindlichkeit"
+      },
+      "value": 5,
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "hint": {
+        "en": "ZG-204ZM: PIR/Radar motion sensitivity (0=lowest, 10=highest)",
+        "fr": "ZG-204ZM: Sensibilité PIR/Radar (0=minimum, 10=maximum)"
+      }
+    },
+    {
+      "id": "large_motion_sensitivity",
+      "type": "number",
+      "label": {
+        "en": "Large Motion Sensitivity",
+        "fr": "Sensibilité Grand Mouvement"
+      },
+      "value": 5,
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "hint": {
+        "en": "ZG-204ZM: Sensitivity for detecting large movements like walking (0=lowest, 10=highest)",
+        "fr": "ZG-204ZM: Sensibilité pour détecter les grands mouvements comme marcher (0=min, 10=max)"
+      }
+    },
+    {
+      "id": "large_motion_distance",
+      "type": "number",
+      "label": {
+        "en": "Large Motion Distance",
+        "fr": "Distance Grand Mouvement"
+      },
+      "value": 10,
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "units": "m",
+      "hint": {
+        "en": "ZG-204ZM: Maximum distance for detecting large movements (0-10 meters)",
+        "fr": "ZG-204ZM: Distance maximale pour détecter les grands mouvements (0-10 mètres)"
+      }
+    },
+    {
+      "id": "static_detection_distance",
+      "type": "number",
+      "label": {
+        "en": "Static Detection Distance",
+        "fr": "Distance Détection Statique",
+        "nl": "Statische Detectie Afstand",
+        "de": "Statische Erkennungsdistanz"
+      },
+      "value": 6,
+      "min": 0,
+      "max": 6,
+      "step": 1,
+      "units": "m",
+      "hint": {
+        "en": "ZG-204ZM: Maximum distance for detecting stationary persons (0-6 meters)",
+        "fr": "ZG-204ZM: Distance maximale pour détecter les personnes immobiles (0-6 mètres)"
+      }
+    },
+    {
+      "id": "static_detection_sensitivity",
+      "type": "number",
+      "label": {
+        "en": "Static Detection Sensitivity",
+        "fr": "Sensibilité Détection Statique",
+        "nl": "Statische Detectie Gevoeligheid",
+        "de": "Statische Erkennungsempfindlichkeit"
+      },
+      "value": 5,
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "hint": {
+        "en": "ZG-204ZM: Sensitivity for detecting stationary persons (0=lowest, 10=highest)",
+        "fr": "ZG-204ZM: Sensibilité pour détecter les personnes immobiles (0=minimum, 10=maximum)"
+      }
+    },
+    {
+      "id": "small_detection_distance",
+      "type": "number",
+      "label": {
+        "en": "Small Motion Distance",
+        "fr": "Distance Petit Mouvement"
+      },
+      "value": 6,
+      "min": 0,
+      "max": 6,
+      "step": 1,
+      "units": "m",
+      "hint": {
+        "en": "ZG-204ZM: Maximum distance for detecting micro-movements like breathing (0-6 meters)",
+        "fr": "ZG-204ZM: Distance maximale pour détecter les micro-mouvements comme la respiration (0-6 mètres)"
+      }
+    },
+    {
+      "id": "small_detection_sensitivity",
+      "type": "number",
+      "label": {
+        "en": "Small Motion Sensitivity",
+        "fr": "Sensibilité Petit Mouvement"
+      },
+      "value": 5,
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "hint": {
+        "en": "ZG-204ZM: Sensitivity for detecting micro-movements like breathing (0=lowest, 10=highest)",
+        "fr": "ZG-204ZM: Sensibilité pour détecter les micro-mouvements (0=minimum, 10=maximum)"
+      }
+    },
+    {
+      "id": "fading_time",
+      "type": "number",
+      "label": {
+        "en": "Presence Keep Time",
+        "fr": "Temps de Maintien Présence",
+        "nl": "Aanwezigheid Vasthoudtijd",
+        "de": "Anwesenheit Haltezeit"
+      },
+      "value": 90,
+      "min": 0,
+      "max": 28800,
+      "step": 10,
+      "units": "s",
+      "hint": {
+        "en": "ZG-204ZM/ZV: How long presence stays active after last detection (seconds)",
+        "fr": "ZG-204ZM/ZV: Durée de maintien de la présence après dernière détection (secondes)"
+      }
+    },
+    {
+      "id": "illuminance_interval",
+      "type": "number",
+      "label": {
+        "en": "Illuminance Report Interval (s) — ZG-204ZV",
+        "fr": "Intervalle Rapport Luminosité (s) — ZG-204ZV",
+        "nl": "Verlichtingsrapport-interval (s) — ZG-204ZV",
+        "de": "Beleuchtungsbericht-Intervall (s) — ZG-204ZV"
+      },
+      "value": 30,
+      "min": 1,
+      "max": 720,
+      "step": 1,
+      "units": "s",
+      "hint": {
+        "en": "ZG-204ZV DP 107: how often the device reports illuminance (seconds)",
+        "fr": "ZG-204ZV DP 107: fréquence à laquelle l'appareil rapporte la luminosité (secondes)"
+      }
+    },
+    {
+      "id": "humidity_calibration",
+      "type": "number",
+      "label": {
+        "en": "Humidity Calibration (%) — ZG-204ZV",
+        "fr": "Calibration Humidité (%) — ZG-204ZV",
+        "nl": "Vochtigheidskalibratie (%) — ZG-204ZV",
+        "de": "Feuchtigkeitskalibrierung (%) — ZG-204ZV"
+      },
+      "value": 0,
+      "min": -30,
+      "max": 30,
+      "step": 1,
+      "units": "%",
+      "hint": {
+        "en": "ZG-204ZV DP 104: humidity calibration offset (added to reported value)",
+        "fr": "ZG-204ZV DP 104: décalage de calibration d'humidité (ajouté à la valeur rapportée)"
+      }
+    },
+    {
+      "id": "temperature_calibration",
+      "type": "number",
+      "label": {
+        "en": "Temperature Calibration (°C) — ZG-204ZV",
+        "fr": "Calibration Température (°C) — ZG-204ZV",
+        "nl": "Temperatuurkalibratie (°C) — ZG-204ZV",
+        "de": "Temperaturkalibrierung (°C) — ZG-204ZV"
+      },
+      "value": 0,
+      "min": -20,
+      "max": 20,
+      "step": 0.1,
+      "units": "°C",
+      "hint": {
+        "en": "ZG-204ZV DP 105: temperature calibration offset (added to reported value)",
+        "fr": "ZG-204ZV DP 105: décalage de calibration de température (ajouté à la valeur rapportée)"
+      }
+    },
+    {
+      "id": "temperature_unit",
+      "type": "dropdown",
+      "label": {
+        "en": "Temperature Unit — ZG-204ZV",
+        "fr": "Unité de Température — ZG-204ZV",
+        "nl": "Temperatuureenheid — ZG-204ZV",
+        "de": "Temperatureinheit — ZG-204ZV"
+      },
+      "value": "celsius",
+      "values": [
+        {
+          "id": "celsius",
+          "label": {
+            "en": "Celsius (°C)",
+            "fr": "Celsius (°C)"
+          }
+        },
+        {
+          "id": "fahrenheit",
+          "label": {
+            "en": "Fahrenheit (°F)",
+            "fr": "Fahrenheit (°F)"
+          }
+        }
+      ],
+      "hint": {
+        "en": "ZG-204ZV DP 109: temperature display unit",
+        "fr": "ZG-204ZV DP 109: unité d'affichage de la température"
+      }
+    },
+    {
+      "id": "radar_sensitivity",
+      "type": "number",
+      "label": {
+        "en": "Radar Sensitivity",
+        "fr": "Sensibilité Radar"
+      },
+      "value": 5,
+      "min": 1,
+      "max": 9,
+      "step": 1,
+      "hint": {
+        "en": "Radar detection sensitivity (1=lowest, 9=highest)",
+        "fr": "Sensibilité radar (1=min, 9=max)"
+      }
+    },
+    {
+      "id": "min_range",
+      "type": "number",
+      "label": {
+        "en": "Minimum Detection Range",
+        "fr": "Portée Minimale"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 10,
+      "step": 0.5,
+      "units": "m",
+      "hint": {
+        "en": "Minimum detection range (0-10m)",
+        "fr": "Portée minimale de détection (0-10m)"
+      }
+    },
+    {
+      "id": "max_range",
+      "type": "number",
+      "label": {
+        "en": "Maximum Detection Range",
+        "fr": "Portée Maximale"
+      },
+      "value": 6,
+      "min": 0,
+      "max": 10,
+      "step": 0.5,
+      "units": "m",
+      "hint": {
+        "en": "Maximum detection range (0-10m)",
+        "fr": "Portée maximale de détection (0-10m)"
+      }
+    },
+    {
+      "id": "detection_delay",
+      "type": "number",
+      "label": {
+        "en": "Detection Delay",
+        "fr": "Délai de Détection"
+      },
+      "value": 1,
+      "min": 0,
+      "max": 10,
+      "step": 0.1,
+      "units": "s",
+      "hint": {
+        "en": "Delay before presence is reported (0-10s)",
+        "fr": "Délai avant signalement de présence (0-10s)"
+      }
+    },
+    {
+      "id": "sensitivity",
+      "type": "number",
+      "label": {
+        "en": "Radar Sensitivity",
+        "fr": "Sensibilité Radar",
+        "nl": "Radargevoeligheid",
+        "de": "Radarempfindlichkeit"
+      },
+      "value": 5,
+      "min": 0,
+      "max": 9,
+      "step": 1,
+      "hint": {
+        "en": "ZY-M100: Overall radar detection sensitivity (0=lowest, 9=highest)",
+        "fr": "ZY-M100: Sensibilité globale du radar (0=min, 9=max)"
+      }
+    },
+    {
+      "id": "near_distance",
+      "type": "number",
+      "label": {
+        "en": "Near Detection Distance",
+        "fr": "Distance Proche",
+        "nl": "Nabije Detectieafstand",
+        "de": "Nahe Erkennungsdistanz"
+      },
+      "value": 3,
+      "min": 0,
+      "max": 10,
+      "step": 0.5,
+      "units": "m",
+      "hint": {
+        "en": "ZY-M100: Near detection zone boundary (0-10m)",
+        "fr": "ZY-M100: Limite de la zone de détection proche (0-10m)"
+      }
+    },
+    {
+      "id": "far_distance",
+      "type": "number",
+      "label": {
+        "en": "Far Detection Distance",
+        "fr": "Distance Lointaine",
+        "nl": "Verre Detectieafstand",
+        "de": "Ferne Erkennungsdistanz"
+      },
+      "value": 6,
+      "min": 0,
+      "max": 10,
+      "step": 0.5,
+      "units": "m",
+      "hint": {
+        "en": "ZY-M100: Far detection zone boundary (0-10m)",
+        "fr": "ZY-M100: Limite de la zone de détection lointaine (0-10m)"
+      }
+    },
+    {
+      "id": "static_sensitivity",
+      "type": "number",
+      "label": {
+        "en": "Static Sensitivity",
+        "fr": "Sensibilité Statique",
+        "nl": "Statische Gevoeligheid",
+        "de": "Statische Empfindlichkeit"
+      },
+      "value": 5,
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "hint": {
+        "en": "ZY-M100: Sensitivity for detecting stationary persons (0=lowest, 10=highest)",
+        "fr": "ZY-M100: Sensibilité pour détecter les personnes immobiles (0=min, 10=max)"
+      }
+    },
+    {
+      "id": "motion_sensitivity",
+      "type": "number",
+      "label": {
+        "en": "Motion Sensitivity",
+        "fr": "Sensibilité Mouvement",
+        "nl": "Bewegingsgevoeligheid",
+        "de": "Bewegungsempfindlichkeit"
+      },
+      "value": 5,
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "hint": {
+        "en": "ZY-M100: Sensitivity for detecting moving persons (0=lowest, 10=highest)",
+        "fr": "ZY-M100: Sensibilité pour détecter les personnes en mouvement (0=min, 10=max)"
+      }
+    },
+    {
+      "id": "indicator",
+      "type": "checkbox",
+      "label": {
+        "en": "LED Indicator",
+        "fr": "Indicateur LED",
+        "nl": "LED Indicator",
+        "de": "LED-Anzeige"
+      },
+      "value": true,
+      "hint": {
+        "en": "Enable/disable the LED indicator on the sensor",
+        "fr": "Activer/désactiver l'indicateur LED"
+      }
+    },
+    {
+      "id": "time",
+      "type": "number",
+      "label": {
+        "en": "Time (s) — ZG-204ZM",
+        "fr": "Temps (s) — ZG-204ZM",
+        "nl": "Tijd (s) — ZG-204ZM",
+        "de": "Zeit (s) — ZG-204ZM"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 28800,
+      "step": 1,
+      "units": "s",
+      "hint": {
+        "en": "Time setting (ZG-204ZM DP 114) — seconds before report",
+        "fr": "Réglage du temps (ZG-204ZM DP 114) — secondes avant rapport"
+      }
+    },
+    {
+      "id": "alarm_time",
+      "type": "number",
+      "label": {
+        "en": "Alarm Time (s) — ZG-204ZM",
+        "fr": "Temps d'alarme (s) — ZG-204ZM",
+        "nl": "Alarmtijd (s) — ZG-204ZM",
+        "de": "Alarmzeit (s) — ZG-204ZM"
+      },
+      "value": 30,
+      "min": 0,
+      "max": 28800,
+      "step": 1,
+      "units": "s",
+      "hint": {
+        "en": "Alarm duration (ZG-204ZM DP 115) — seconds of alarm output",
+        "fr": "Durée d'alarme (ZG-204ZM DP 115) — secondes de sortie d'alarme"
+      }
+    },
+    {
+      "id": "alarm_volume",
+      "type": "number",
+      "label": {
+        "en": "Alarm Volume (%) — ZG-204ZM",
+        "fr": "Volume d'alarme (%) — ZG-204ZM",
+        "nl": "Alarmvolume (%) — ZG-204ZM",
+        "de": "Alarmlautstärke (%) — ZG-204ZM"
+      },
+      "value": 50,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "units": "%",
+      "hint": {
+        "en": "Alarm volume (ZG-204ZM DP 116) — 0=mute, 100=max",
+        "fr": "Volume d'alarme (ZG-204ZM DP 116) — 0=muet, 100=max"
+      }
+    },
+    {
+      "id": "working_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Working Mode — ZG-204ZM",
+        "fr": "Mode de fonctionnement — ZG-204ZM",
+        "nl": "Werkmodus — ZG-204ZM",
+        "de": "Arbeitsmodus — ZG-204ZM"
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto (recommended)",
+            "fr": "Auto (recommandé)"
+          }
+        },
+        {
+          "id": "manual",
+          "label": {
+            "en": "Manual",
+            "fr": "Manuel"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Working mode (ZG-204ZM DP 117) — auto uses auto1/2/3, manual uses user settings",
+        "fr": "Mode de fonctionnement (ZG-204ZM DP 117) — auto utilise auto1/2/3, manuel utilise les paramètres utilisateur"
+      }
+    },
+    {
+      "id": "anti_interference",
+      "type": "checkbox",
+      "label": {
+        "en": "Anti-Interference (ZG-204ZV/ZK)",
+        "fr": "Anti-Interférence (ZG-204ZV/ZK)",
+        "nl": "Anti-Interferentie (ZG-204ZV/ZK)",
+        "de": "Anti-Interferenz (ZG-204ZV/ZK)"
+      },
+      "value": false,
+      "hint": {
+        "en": "Enable anti-interference to reduce false presence triggers from Wi-Fi/RF noise (only for ZG-204ZV/ZK family mmWave sensors).",
+        "fr": "Active la fonction anti-interférence pour réduire les faux déclenchements de présence dus au bruit Wi-Fi/RF (uniquement pour la famille ZG-204ZV/ZK)."
+      }
+    },
+    {
+      "id": "shield_range",
+      "type": "number",
+      "min": 0,
+      "max": 8,
+      "unit": "m",
+      "label": {
+        "en": "Shield range",
+        "fr": "Portée de masquage",
+        "nl": "Afschermbereik"
+      },
+      "value": 0
+    },
+    {
+      "id": "detection_range",
+      "type": "number",
+      "min": 0,
+      "max": 8,
+      "unit": "m",
+      "label": {
+        "en": "Detection range",
+        "fr": "Portée de détection",
+        "nl": "Detectiebereik"
+      },
+      "value": 8
+    },
+    {
+      "id": "entry_filter_time",
+      "type": "number",
+      "min": 0,
+      "max": 10,
+      "unit": "s",
+      "label": {
+        "en": "Entry filter time",
+        "fr": "Filtre d’entrée (temps)",
+        "nl": "Toegangsfiltertijd"
+      },
+      "value": 0
+    },
+    {
+      "id": "departure_delay",
+      "type": "number",
+      "min": 0,
+      "max": 3600,
+      "unit": "s",
+      "label": {
+        "en": "Departure delay",
+        "fr": "Délai de départ",
+        "nl": "Vertrekvertraging"
+      },
+      "hint": {
+        "en": "Seconds after target leaves before clear. Manufacturer recommends ≥15s (lower causes false clears).",
+        "fr": "Secondes après départ avant clear. Fabricant recommande ≥15s (plus bas → faux négatifs).",
+        "nl": "Seconden na vertrek voor clear. Fabrikant adviseert ≥15s."
+      },
+      "value": 30
+    },
+    {
+      "id": "entry_sensitivity",
+      "type": "number",
+      "min": 0,
+      "max": 9,
+      "label": {
+        "en": "Entry sensitivity",
+        "fr": "Sensibilité d’entrée",
+        "nl": "Toegangsgevoeligheid"
+      },
+      "value": 0
+    },
+    {
+      "id": "entry_distance_indentation",
+      "type": "number",
+      "min": 0,
+      "max": 8,
+      "unit": "m",
+      "label": {
+        "en": "Entry distance indentation",
+        "fr": "Indentation distance d’entrée",
+        "nl": "Toegangsafstand-inspringing"
+      },
+      "value": 0
+    },
+    {
+      "id": "breaker_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Breaker mode",
+        "fr": "Mode disjoncteur",
+        "nl": "Breakermodus"
+      },
+      "value": "standard",
+      "values": [
+        {
+          "id": "standard",
+          "label": {
+            "en": "Standard"
+          }
+        },
+        {
+          "id": "local",
+          "label": {
+            "en": "Local"
+          }
+        }
+      ]
+    },
+    {
+      "id": "status_indication",
+      "type": "dropdown",
+      "label": {
+        "en": "Status indication",
+        "fr": "Indication d’état",
+        "nl": "Statusindicatie"
+      },
+      "value": "0",
+      "values": [
+        {
+          "id": "0",
+          "label": {
+            "en": "Off",
+            "fr": "Arrêt",
+            "nl": "Uit"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "On",
+            "fr": "Marche",
+            "nl": "Aan"
+          }
+        }
+      ]
+    },
+    {
+      "id": "illuminance_threshold",
+      "type": "number",
+      "min": 0,
+      "max": 420,
+      "unit": "lux",
+      "label": {
+        "en": "Illuminance threshold",
+        "fr": "Seuil de luminosité",
+        "nl": "Lichtdrempel"
+      },
+      "value": 0
+    },
+    {
+      "id": "breaker_polarity",
+      "type": "dropdown",
+      "label": {
+        "en": "Breaker polarity",
+        "fr": "Polarité disjoncteur",
+        "nl": "Breakerpolariteit"
+      },
+      "value": "NC",
+      "values": [
+        {
+          "id": "NC",
+          "label": {
+            "en": "NC (normally closed)",
+            "fr": "NF (normalement fermé)",
+            "nl": "NG (normaal gesloten)"
+          }
+        },
+        {
+          "id": "NO",
+          "label": {
+            "en": "NO (normally open)",
+            "fr": "NO (normalement ouvert)",
+            "nl": "NO (normaal open)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block_time",
+      "type": "number",
+      "min": 0,
+      "max": 10,
+      "unit": "s",
+      "label": {
+        "en": "Block time",
+        "fr": "Temps de blocage",
+        "nl": "Blokkeertijd"
+      },
+      "value": 0
+    },
+    {
+      "id": "sensor_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Sensor mode",
+        "fr": "Mode capteur",
+        "nl": "Sensormodus"
+      },
+      "hint": {
+        "en": "On = normal radar. Occupied forces firmware presence ON forever — with Smart presence under Occupied, Homey still tracks real presence from distance/lux. Unoccupied forces clear.",
+        "fr": "Marche = radar normal. Occupé force la présence firmware à ON — avec Présence smart sous Occupé, Homey suit encore la vraie présence via distance/lux. Inoccupé force l’absence.",
+        "nl": "Aan = normale radar. Bezet forceert firmware-aanwezigheid permanent — met Slimme aanwezigheid onder Bezet volgt Homey nog echte aanwezigheid via afstand/lux."
+      },
+      "value": "on",
+      "values": [
+        {
+          "id": "on",
+          "label": {
+            "en": "On (normal)",
+            "fr": "Marche (normal)",
+            "nl": "Aan (normaal)"
+          }
+        },
+        {
+          "id": "off",
+          "label": {
+            "en": "Off",
+            "fr": "Arrêt",
+            "nl": "Uit"
+          }
+        },
+        {
+          "id": "occupied",
+          "label": {
+            "en": "Occupied (firmware force — smart overlay OK)",
+            "fr": "Occupé (force firmware — overlay smart OK)",
+            "nl": "Bezet (firmware-force — slimme overlay OK)"
+          }
+        },
+        {
+          "id": "unoccupied",
+          "label": {
+            "en": "Unoccupied (force clear)",
+            "fr": "Inoccupé (force absent)",
+            "nl": "Onbezet (forceert leeg)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "smart_presence_while_occupied",
+      "type": "checkbox",
+      "label": {
+        "en": "Smart presence while Occupied",
+        "fr": "Présence smart sous Occupé",
+        "nl": "Slimme aanwezigheid bij Bezet"
+      },
+      "hint": {
+        "en": "When Sensor mode is Occupied, ignore forced DP1 and drive Homey presence from distance/lux. Distance, lux, relay and settings keep updating. Recommended ON.",
+        "fr": "Si le mode est Occupé, ignore DP1 forcé et pilote la présence Homey via distance/lux. Distance, lux, relais et réglages continuent. Recommandé ON.",
+        "nl": "Bij sensormodus Bezet: negeer geforceerde DP1 en stuur Homey-aanwezigheid via afstand/lux. Aanbevolen AAN."
+      },
+      "value": true
+    },
+    {
+      "id": "auto_unlock_occupied_on_empty",
+      "type": "checkbox",
+      "label": {
+        "en": "Auto-unlock Occupied when room empty",
+        "fr": "Déverrouiller Occupé si pièce vide",
+        "nl": "Bezet automatisch ontgrendelen bij lege kamer"
+      },
+      "hint": {
+        "en": "Write Sensor mode back to On after soft-clear (empty room). Off = keep Occupied firmware mode and rely on smart overlay.",
+        "fr": "Repasse le mode capteur sur Marche après soft-clear (pièce vide). Off = garde Occupé et s’appuie sur l’overlay smart.",
+        "nl": "Zet sensormodus terug naar Aan na soft-clear. Uit = houd Bezet en gebruik slimme overlay."
+      },
+      "value": false
+    },
+    {
+      "id": "motion_false_detection",
+      "type": "checkbox",
+      "label": {
+        "en": "Motion false detection filter",
+        "fr": "Filtre fausses détections mouvement",
+        "nl": "Filter valse bewegingsdetectie"
+      },
+      "value": false
+    },
+    {
+      "id": "micro_minimum_distance",
+      "type": "number",
+      "min": 0,
+      "max": 8,
+      "unit": "m",
+      "label": {
+        "en": "Micro minimum distance",
+        "fr": "Distance min micro-mouvements",
+        "nl": "Micro minimale afstand"
+      },
+      "value": 0
+    },
+    {
+      "id": "motionless_minimum_distance",
+      "type": "number",
+      "min": 0,
+      "max": 8,
+      "unit": "m",
+      "label": {
+        "en": "Static minimum distance",
+        "fr": "Distance min statique",
+        "nl": "Statische minimale afstand"
+      },
+      "value": 0
+    },
+    {
+      "id": "breathe_false_detection",
+      "type": "checkbox",
+      "label": {
+        "en": "Breathing false detection filter",
+        "fr": "Filtre fausses détections respiration",
+        "nl": "Filter valse ademhalingsdetectie"
+      },
+      "value": false
+    }
+  ],
+  "images": {
+    "small": "/drivers/presence_sensor_radar_ts0601/assets/images/small.png",
+    "large": "/drivers/presence_sensor_radar_ts0601/assets/images/large.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "select_driver"
+      }
+    },
+    {
+      "id": "select_driver",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    },
+    {
+      "id": "tuya_revive",
+      "title": {
+        "en": "Tuya Revive (device recovery)",
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
+      }
+    },
+    {
+      "id": "generate_issue_report",
+      "title": {
+        "en": "Generate support report (GitHub issue)",
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
+      }
+    },
+    {
+      "id": "zigbee_rebind",
+      "title": {
+        "en": "Re-bind & reconfigure reporting",
+        "fr": "Re-lier et reconfigurer les rapports",
+        "nl": "Opnieuw binden en rapportage instellen",
+        "de": "Neu binden und Reporting konfigurieren"
+      }
+    }
+  ],
+  "id": "presence_sensor_radar_ts0601",
+  "version": "1.0.0",
+  "ui": {
+    "quickAction": "alarm_human"
+  }
+}

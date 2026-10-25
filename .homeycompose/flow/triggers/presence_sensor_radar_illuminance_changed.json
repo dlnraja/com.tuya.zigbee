@@ -1,0 +1,29 @@
+{
+  "id": "presence_sensor_radar_illuminance_changed",
+  "title": {
+    "en": "Illuminance changed",
+    "nl": "Lichtsterkte veranderd",
+    "fr": "Luminosité changée",
+    "de": "Helligkeit geändert"
+  },
+  "tokens": [
+    {
+      "name": "lux",
+      "type": "number",
+      "title": {
+        "en": "Illuminance (lux)",
+        "nl": "Lichtsterkte (lux)",
+        "fr": "Luminosité (lux)",
+        "de": "Helligkeit (lux)"
+      },
+      "example": 150
+    }
+  ],
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=presence_sensor_radar|presence_sensor_radar_ts0601"
+    }
+  ]
+}

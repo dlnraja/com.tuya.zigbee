@@ -1,0 +1,27 @@
+{
+  "id": "presence_sensor_radar_temperature_changed",
+  "title": {
+    "en": "Temperature changed",
+    "fr": "Température changée",
+    "nl": "Temperatuur gewijzigd",
+    "de": "Temperatur geändert"
+  },
+  "tokens": [
+    {
+      "name": "temperature",
+      "type": "number",
+      "title": {
+        "en": "Temperature (°C)",
+        "fr": "Température (°C)"
+      },
+      "example": 22.5
+    }
+  ],
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=presence_sensor_radar|presence_sensor_radar_ts0601"
+    }
+  ]
+}

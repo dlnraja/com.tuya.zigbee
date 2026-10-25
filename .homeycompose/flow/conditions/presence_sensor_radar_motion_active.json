@@ -1,0 +1,16 @@
+{
+  "id": "presence_sensor_radar_motion_active",
+  "title": {
+    "en": "Motion !{{is|is not}} detected",
+    "fr": "Mouvement !{{est|n'est pas}} détecté",
+    "nl": "Beweging !{{is|is niet}} gedetecteerd",
+    "de": "Bewegung !{{ist|ist nicht}} erkannt"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=presence_sensor_radar|presence_sensor_radar_ts0601"
+    }
+  ]
+}

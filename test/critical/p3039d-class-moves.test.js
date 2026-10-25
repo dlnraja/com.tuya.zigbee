@@ -73,7 +73,8 @@ describe('P3039d class moves', () => {
   it('P3024b exemptions = exactly the 34 parasitic combos approved in t522s3008, with reason', () => {
     const f = JSON.parse(fs.readFileSync(path.join(ROOT, 'test/fixtures/athom-last-test-package-couples.json'), 'utf8'));
     // P3055 (owner yes t555u) appended its own exemptions; they are guarded by p3055-parasite-decisions.
-    const ex = f.exemptions.filter((e) => e.approvedBy !== 't555u');
+    // P3057 (owner t561u) appended phantom-couple exemptions; they are guarded by p3057-headroom.
+    const ex = f.exemptions.filter((e) => e.approvedBy !== 't555u' && e.approvedBy !== 't561u');
     assert.strictEqual(ex.length, 34);
     const want = {
       switch_wireless: [/^_tze200_(t5p1vj8r|uebojraa|vzekyi4c|dq1mfjug)$/i, ['TS0601_wirelesssw', 'TS0215A'], 16],

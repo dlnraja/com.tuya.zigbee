@@ -1,0 +1,32 @@
+{
+  "id": "presence_sensor_radar_distance_within",
+  "title": {
+    "en": "Target !{{is|is not}} within distance",
+    "nl": "Doel !{{is|is niet}} binnen afstand",
+    "fr": "Cible !{{est|n'est pas}} dans la distance",
+    "de": "Ziel !{{ist|ist nicht}} innerhalb der Entfernung"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=presence_sensor_radar|presence_sensor_radar_ts0601"
+    },
+    {
+      "name": "distance",
+      "type": "number",
+      "min": 0,
+      "max": 800,
+      "step": 10,
+      "placeholder": {
+        "en": "300"
+      }
+    }
+  ],
+  "titleFormatted": {
+    "en": "Target !{{is|is not}} within distance [[distance]]",
+    "nl": "Doel !{{is|is niet}} binnen afstand [[distance]]",
+    "fr": "Cible !{{est|n'est pas}} dans la distance [[distance]]",
+    "de": "Ziel !{{ist|ist nicht}} innerhalb der Entfernung [[distance]]"
+  }
+}
