@@ -8,6 +8,10 @@
 - **P3021c:** dedicated `switch_2gang_ts0002` driver for `_TZ3000_amal63is` + TS0002; power-vs-energy sanity check; ZG-102ZL contact default inverse; soil sensor DP guards.
 
 ### Fixed (2026-10-24/25)
+- **P3045 (#560, thanks artisare):** the EARU TRV06 (`_TZE200_rxq4iti9`) loses its phantom humidity for good, even when a stray value had been written, and it can no longer come back; the valve has no humidity sensor (Z2M definition). Its battery is a low-battery alarm only, because the firmware sends no percentage. Whole-degree readings are a firmware limit, confirmed by Z2M users.
+- **P3045 memory:** memory readings no longer crash the app when Homey refuses `process.memoryUsage()` (ENOENT); the memory guards fall back to V8 heap statistics instead of going blind.
+- **P3045 Flow cards:** looking up a Flow card that is missing from the build returns a harmless stand-in and logs once, so there is no more `invalid_flow_card_id` crash or log flood. No card was removed or renamed.
+- **P3045 mapping data:** 145 driver profiles in `driver-mapping-database.json` now match their driver's own class and capabilities; for example, switches no longer get a battery and plugs are sockets. The device indexes are unchanged.
 - **P3025:** the manifest clean-up no longer strips valid Flow card `titleFormatted`; CI gates for app.json/compose drift, DP shards and lint ratchet; race-safe pushes with rebase retry.
 - **P3024b:** no couple of the last Test package (9.0.1574) can be lost in the publish payload (259 restored; baseline gate).
 
