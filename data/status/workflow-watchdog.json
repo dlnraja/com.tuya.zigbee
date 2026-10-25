@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-25T19:53:18.392Z",
+  "checked": 51,
+  "findings": [
+    {
+      "kind": "repeated-failure",
+      "sig": "ci-817f8bd5923b",
+      "wf": ".github/workflows/pr-gate.yml",
+      "detail": "3 failures in 72 h: 🚦 PR Gate failed on fix/fingerbot-senddata (🚦 Version + Sacred Couple + routing / 🔥 lib smoke-test (require every lib module): unknown)"
+    },
+    {
+      "kind": "repeated-failure",
+      "sig": "ci-b446e2740f9d",
+      "wf": ".github/workflows/node22-tests.yml",
+      "detail": "8 failures in 72 h: Node 22 runtime tests failed on stable-v5 (test / Full suite on Node 22: code-or-test)"
+    },
+    {
+      "kind": "repeated-failure",
+      "sig": "ci-bd6d4433bab2",
+      "wf": ".github/workflows/syntax-check.yml",
+      "detail": "4 failures in 72 h: 🔍 Syntax Check & SDK3 Validation failed on master (syntax-check / Energy compose gate: no-log)"
+    },
+    {
+      "kind": "repeated-failure",
+      "sig": "ci-d64a0d71ff46",
+      "wf": ".github/workflows/unified-ci.yml",
+      "detail": "7 failures in 72 h: 🛡️ Unified CI/CD Orchestrator failed on master (🔍 Universal Validation (SDK 3 Strict) / Normalize Homey manifest after validation: no-log)"
+    },
+    {
+      "kind": "repeated-failure",
+      "sig": "ci-351d901e2c87",
+      "wf": ".github/workflows/node22-tests.yml",
+      "detail": "14 failures in 72 h: Node 22 runtime tests failed on bastien-home (test / Full suite on Node 22: no-log)"
+    }
+  ]
+}

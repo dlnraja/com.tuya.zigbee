@@ -1,0 +1,172 @@
+{
+  "generated": "2026-10-25T19:53:34.415Z",
+  "note": "P3048: candidates only. No workflow posts, comments or reacts. A human (or the Grok Bot anti-flood routine) decides.",
+  "limits": {
+    "autoPost": false,
+    "maxRepliesPerRun": 1,
+    "maxRepliesPer7Days": 3,
+    "maxForumRepliesPer7Days": 1,
+    "minDaysBetweenRepliesSameThread": 14,
+    "quietHoursAfterAnyReply": 24,
+    "stopOn": [
+      "warning",
+      "captcha",
+      "403",
+      "429",
+      "moderation",
+      "AI remark"
+    ],
+    "never": [
+      "open/close/edit issues",
+      "reactions",
+      "mentions of third parties",
+      "replies to Athom, moderators or bots",
+      "reviving threads idle > 60 days"
+    ]
+  },
+  "scanned": {
+    "commits": 300,
+    "issues": 33
+  },
+  "candidates": [],
+  "skipped": [
+    {
+      "issue": 576,
+      "reason": "closed"
+    },
+    {
+      "issue": 560,
+      "title": "Bug report - TRV06 Smart Zigbee Radiator Valve - isn't working",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/560",
+      "commit": "c22edfb1d2",
+      "commitAt": "2026-10-25T18:14:58Z",
+      "ci": "green",
+      "lastAuthor": "dlnraja",
+      "reason": "last message is from the owner"
+    },
+    {
+      "issue": 24659,
+      "reason": "not found"
+    },
+    {
+      "issue": 3683,
+      "reason": "not found"
+    },
+    {
+      "issue": 3682,
+      "reason": "not found"
+    },
+    {
+      "issue": 6,
+      "reason": "pull request"
+    },
+    {
+      "issue": 394,
+      "reason": "closed"
+    },
+    {
+      "issue": 1534,
+      "reason": "not found"
+    },
+    {
+      "issue": 3655,
+      "reason": "not found"
+    },
+    {
+      "issue": 244,
+      "reason": "pull request"
+    },
+    {
+      "issue": 258,
+      "reason": "closed"
+    },
+    {
+      "issue": 511,
+      "reason": "closed"
+    },
+    {
+      "issue": 761,
+      "reason": "not found"
+    },
+    {
+      "issue": 774,
+      "reason": "not found"
+    },
+    {
+      "issue": 824,
+      "reason": "not found"
+    },
+    {
+      "issue": 826,
+      "reason": "not found"
+    },
+    {
+      "issue": 1087,
+      "reason": "not found"
+    },
+    {
+      "issue": 1585,
+      "reason": "not found"
+    },
+    {
+      "issue": 1626,
+      "reason": "not found"
+    },
+    {
+      "issue": 2157,
+      "reason": "not found"
+    },
+    {
+      "issue": 3679,
+      "reason": "not found"
+    },
+    {
+      "issue": 2134,
+      "reason": "not found"
+    },
+    {
+      "issue": 2093,
+      "reason": "not found"
+    },
+    {
+      "issue": 2092,
+      "reason": "not found"
+    },
+    {
+      "issue": 13340,
+      "reason": "not found"
+    },
+    {
+      "issue": 13187,
+      "reason": "not found"
+    },
+    {
+      "issue": 13132,
+      "reason": "not found"
+    },
+    {
+      "issue": 13179,
+      "reason": "not found"
+    },
+    {
+      "issue": 13141,
+      "reason": "not found"
+    },
+    {
+      "issue": 13243,
+      "reason": "not found"
+    },
+    {
+      "issue": 5776,
+      "reason": "not found"
+    },
+    {
+      "issue": 25308,
+      "reason": "not found"
+    },
+    {
+      "issue": 12488,
+      "reason": "not found"
+    }
+  ]
+}
