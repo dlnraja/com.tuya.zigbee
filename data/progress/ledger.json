@@ -1,0 +1,15 @@
+{
+ "version": 1,
+ "updated": "2026-10-25T17:35:00.101Z",
+ "checkpoints": {
+  "journal": "docs/progress/JOURNAL.md"
+ },
+ "items": {
+  "p3044-golden-refresh-stable-v5": {
+   "status": "done",
+   "date": "2026-10-25",
+   "note": "golden refreshed; lost lines = P3038 wildcard drops + sourced moves; exact couples lost: 0; restored: 0",
+   "by": "p3044"
+  }
+ }
+}
