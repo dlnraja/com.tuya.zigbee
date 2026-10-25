@@ -157,8 +157,7 @@ describe('P3024b publish baseline couples', () => {
   it('every baseline couple (last Test package of this app) survives compaction of the real manifest exactly', function () {
     if (this && this.timeout) this.timeout(120000);
     const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'app.json'), 'utf8'));
-    const y = fs.readFileSync(path.join(ROOT, '.github', 'workflows', 'bastien-publish.yml'), 'utf8');
-    const cap = Number(y.match(/HOMEY_ZIGBEE_MAX_TOTAL_COMBOS:\s*["']?(\d+)/)[1]);
+    const cap = CAPS.maxTotalCombos; // P3036c single source
     const baseline = loadPublishBaseline(ROOT);
     const r = compactZigbeeIdentifiers(manifest, {
       repoRoot: ROOT, maxTotalCombos: cap, maxDriverCombos: CAPS.maxDriverCombos, maxCaseForms: CAPS.maxCaseForms,
