@@ -1,0 +1,1733 @@
+{
+ "_why": "P3031 (2026-10-25): exact mfr×pid couples present in older branch/tag history (or in another branch HEAD) and missing at HEAD; each re-added only with a noted attesting source, in the most specific existing driver; no new driver, no curated-removal hit, no cross-product.",
+ "generated": "2026-10-25T00:32:04.242Z",
+ "branches": {
+  "master": {
+   "restored": [
+    {
+     "mfr": "_TZE204_y4jqpry8",
+     "pid": "TS0601",
+     "driver": "wall_switch_4_gang_tuya",
+     "model": "zemismart.ts-878- model: \"ZMS-206US-4\", zemismart.ts-880- description: \"Smart screen switch 4 gang US\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/zemismart.ts#L878",
+      "https://www.zigbee2mqtt.io/devices/ZMS-206US-4.html"
+     ],
+     "lastTouch": "732e11caa9 2026-10-16 enrich(zemismart): official Homey app couples complementary (9.0.1496)"
+    },
+    {
+     "mfr": "_TZE200_htnnfasr",
+     "pid": "TS0601",
+     "driver": "water_valve_smart",
+     "model": "lidl.ts-405- model: \"PSBZS A1\", lidl.ts-407- description: \"Parkside smart watering timer\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs",
+      "ZHA",
+      "deCONZ",
+      "Blakadder"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lidl.ts#L405",
+      "https://www.zigbee2mqtt.io/devices/PSBZS_A1.html"
+     ],
+     "lastTouch": "26944f7e17 2026-07-23 v9.0.342: 431 drivers, 2890 FPs [skip ci]"
+    },
+    {
+     "mfr": "_TZE200_7ytb3h8u",
+     "pid": "TS0601",
+     "driver": "water_valve_smart",
+     "sources": [
+      "ZHA",
+      "Z2M-converters",
+      "Z2M-converters(whitelabel)"
+     ],
+     "urls": [
+      "https://github.com/zigpy/zha-device-handlers/blob/1d6598c32a8b4f054438f63f08fc36ff3d6b4930/zhaquirks/tuya/tuya_valve.py",
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/giex.ts#L63"
+     ],
+     "lastTouch": "21d3fb7136 2026-10-16 v9.0.1497: 449 drivers, 4303 FPs [skip ci]"
+    },
+    {
+     "mfr": "_TZE204_7ytb3h8u",
+     "pid": "TS0601",
+     "driver": "water_valve_smart",
+     "sources": [
+      "ZHA",
+      "Z2M-converters",
+      "Z2M-converters(whitelabel)"
+     ],
+     "urls": [
+      "https://github.com/zigpy/zha-device-handlers/blob/1d6598c32a8b4f054438f63f08fc36ff3d6b4930/zhaquirks/tuya/tuya_valve.py",
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/giex.ts#L63"
+     ],
+     "lastTouch": "21d3fb7136 2026-10-16 v9.0.1497: 449 drivers, 4303 FPs [skip ci]"
+    },
+    {
+     "mfr": "_TZE284_7ytb3h8u",
+     "pid": "TS0601",
+     "driver": "water_valve_smart",
+     "sources": [
+      "ZHA",
+      "deCONZ",
+      "Z2M-converters",
+      "Z2M-converters(whitelabel)"
+     ],
+     "urls": [
+      "https://github.com/zigpy/zha-device-handlers/blob/1d6598c32a8b4f054438f63f08fc36ff3d6b4930/zhaquirks/tuya/tuya_valve.py",
+      "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/tuya/_TZE284_7ytb3h8u_water_valve.json"
+     ],
+     "lastTouch": "7b64ef71f1 2026-07-10 v9.0.192: 430 drivers, 2637 FPs [skip ci]"
+    },
+    {
+     "mfr": "_TZ3210_4zinq6io",
+     "pid": "TS0501B",
+     "driver": "led_controller_dimmable",
+     "sources": [
+      "ZHA",
+      "Blakadder"
+     ],
+     "urls": [
+      "https://github.com/zigpy/zha-device-handlers/blob/1d6598c32a8b4f054438f63f08fc36ff3d6b4930/zhaquirks/tuya/ts0501bs.py",
+      "https://zigbee.blakadder.com/Tuya_TS0501B.html"
+     ],
+     "lastTouch": "730efb7c6c 2026-09-16 feat(P2531): complementary coverage mega forum/Z2M/ZHA/OEM overlays tip 9.0.970"
+    },
+    {
+     "mfr": "_TZ3210_9q49basr",
+     "pid": "TS0501B",
+     "driver": "led_controller_dimmable",
+     "sources": [
+      "ZHA",
+      "Blakadder"
+     ],
+     "urls": [
+      "https://github.com/zigpy/zha-device-handlers/blob/1d6598c32a8b4f054438f63f08fc36ff3d6b4930/zhaquirks/tuya/ts0501bs.py",
+      "https://zigbee.blakadder.com/Tuya_TS0501B.html"
+     ],
+     "lastTouch": "730efb7c6c 2026-09-16 feat(P2531): complementary coverage mega forum/Z2M/ZHA/OEM overlays tip 9.0.970"
+    },
+    {
+     "mfr": "_TZ3210_e5t9bfdv",
+     "pid": "TS0501B",
+     "driver": "led_controller_dimmable",
+     "sources": [
+      "ZHA",
+      "Blakadder"
+     ],
+     "urls": [
+      "https://github.com/zigpy/zha-device-handlers/blob/1d6598c32a8b4f054438f63f08fc36ff3d6b4930/zhaquirks/tuya/ts0501bs.py",
+      "https://zigbee.blakadder.com/Tuya_TS0501B.html"
+     ],
+     "lastTouch": "730efb7c6c 2026-09-16 feat(P2531): complementary coverage mega forum/Z2M/ZHA/OEM overlays tip 9.0.970"
+    },
+    {
+     "mfr": "_TZ3210_agjx0pxt",
+     "pid": "TS0501B",
+     "driver": "led_controller_dimmable",
+     "sources": [
+      "ZHA"
+     ],
+     "urls": [
+      "https://github.com/zigpy/zha-device-handlers/blob/1d6598c32a8b4f054438f63f08fc36ff3d6b4930/zhaquirks/tuya/ts0501bs.py"
+     ],
+     "lastTouch": "730efb7c6c 2026-09-16 feat(P2531): complementary coverage mega forum/Z2M/ZHA/OEM overlays tip 9.0.970"
+    },
+    {
+     "mfr": "_TZ3210_d062rv7j",
+     "pid": "TS0501B",
+     "driver": "led_controller_dimmable",
+     "sources": [
+      "ZHA"
+     ],
+     "urls": [
+      "https://github.com/zigpy/zha-device-handlers/blob/1d6598c32a8b4f054438f63f08fc36ff3d6b4930/zhaquirks/tuya/ts0501bs.py"
+     ],
+     "lastTouch": "730efb7c6c 2026-09-16 feat(P2531): complementary coverage mega forum/Z2M/ZHA/OEM overlays tip 9.0.970"
+    },
+    {
+     "mfr": "_TZ3210_i680rtja",
+     "pid": "TS0501B",
+     "driver": "led_controller_dimmable",
+     "sources": [
+      "ZHA",
+      "Blakadder"
+     ],
+     "urls": [
+      "https://github.com/zigpy/zha-device-handlers/blob/1d6598c32a8b4f054438f63f08fc36ff3d6b4930/zhaquirks/tuya/ts0501bs.py",
+      "https://zigbee.blakadder.com/Tuya_TS0501B.html"
+     ],
+     "lastTouch": "730efb7c6c 2026-09-16 feat(P2531): complementary coverage mega forum/Z2M/ZHA/OEM overlays tip 9.0.970"
+    },
+    {
+     "mfr": "_TZ3210_syh4kuef",
+     "pid": "TS0501B",
+     "driver": "led_controller_dimmable",
+     "sources": [
+      "ZHA"
+     ],
+     "urls": [
+      "https://github.com/zigpy/zha-device-handlers/blob/1d6598c32a8b4f054438f63f08fc36ff3d6b4930/zhaquirks/tuya/ts0501bs.py"
+     ],
+     "lastTouch": "730efb7c6c 2026-09-16 feat(P2531): complementary coverage mega forum/Z2M/ZHA/OEM overlays tip 9.0.970"
+    },
+    {
+     "mfr": "_TZE284_ajhu0zqb",
+     "pid": "TS0601",
+     "driver": "water_leak_sensor_tuya",
+     "model": "lincukoo.ts-22- model: \"SZW08\", lincukoo.ts-24- description: \"Smart water leakage/lack alarm sensor\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lincukoo.ts#L22",
+      "https://www.zigbee2mqtt.io/devices/SZW08.html"
+     ],
+     "lastTouch": "never-on-this-branch (attested on another branch/tag)"
+    },
+    {
+     "mfr": "_TYZB01_hww2py6b",
+     "pid": "TS1001",
+     "driver": "remote_dimmer",
+     "model": "lidl.ts-343- model: \"FB21-001\", lidl.ts-345- description: \"Livarno Lux switch and dimming light remote control\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs",
+      "Blakadder"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lidl.ts#L343",
+      "https://www.zigbee2mqtt.io/devices/FB21-001.html"
+     ],
+     "lastTouch": "ef278a61c0 2026-07-16 feat(P68): Blakadder integration (12 new FPs, 100% coverage) + flow card dups v2 + climate_sensor voltage titleFormatt"
+    },
+    {
+     "mfr": "_TZ3000_ztrfrcsu",
+     "pid": "TS1001",
+     "driver": "remote_dimmer",
+     "model": "aldi.ts-11- model: \"141L100RC\", aldi.ts-13- description: \"MEGOS switch and dimming light remote control\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/aldi.ts#L11",
+      "https://www.zigbee2mqtt.io/devices/141L100RC.html"
+     ],
+     "lastTouch": "0d64d2f26c 2026-09-22 v9.0.1164: 434 drivers, 4174 FPs [skip ci]"
+    },
+    {
+     "mfr": "_TYZB01_ub7urdza",
+     "pid": "TS0041A",
+     "driver": "button_wireless_1",
+     "model": "sber.ts-1429- model: \"SBDV-00032\", sber.ts-1431- description: \"Smart button\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/sber.ts#L1429",
+      "https://www.zigbee2mqtt.io/devices/SBDV-00032.html"
+     ],
+     "lastTouch": "never-on-this-branch (attested on another branch/tag)"
+    },
+    {
+     "mfr": "_TZE200_b0ihkhxh",
+     "pid": "TS0601",
+     "driver": "wall_switch_1_gang_tuya",
+     "model": "orztech.ts:19: model: \"_TZE200_b0ihkhxh\", orztech.ts-21- description: \"1 gang touch wall switch\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/orztech.ts#L19",
+      "https://www.zigbee2mqtt.io/devices/_TZE200_b0ihkhxh.html"
+     ],
+     "lastTouch": "never-on-this-branch (attested on another branch/tag)"
+    },
+    {
+     "mfr": "_TZE200_ra6wrlgv",
+     "pid": "TS0601",
+     "driver": "curtain_motor_shutter",
+     "model": "box.ts-223- model: \"ERC2206-Z\", box.ts-225- description: \"Roller shutter controller\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/box.ts#L223",
+      "https://www.zigbee2mqtt.io/devices/ERC2206-Z.html"
+     ],
+     "lastTouch": "never-on-this-branch (attested on another branch/tag)"
+    },
+    {
+     "mfr": "_TZ3210_2uk4z8ce",
+     "pid": "TS011F",
+     "driver": "smartplug",
+     "model": "moes.ts-994- model: \"ZP-LZ-FR2U\", moes.ts-996- description: \"Zigbee 3.0 dual USB wireless socket plug\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/moes.ts#L994",
+      "https://www.zigbee2mqtt.io/devices/ZP-LZ-FR2U.html"
+     ],
+     "lastTouch": "730efb7c6c 2026-09-16 feat(P2531): complementary coverage mega forum/Z2M/ZHA/OEM overlays tip 9.0.970"
+    },
+    {
+     "mfr": "_TZE204_qaxkdgyt",
+     "pid": "TS0601",
+     "driver": "gas_detector",
+     "model": "tuya.ts-28632- model: \"JKD-816COM-Z\", tuya.ts-28634- description: \"Carbon monoxide & gas sensor\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L28632",
+      "https://www.zigbee2mqtt.io/devices/JKD-816COM-Z.html"
+     ],
+     "lastTouch": "aed577d956 2026-10-14 fix(soil): strip qaxkdgyt smoke bleed from soil_sensor"
+    },
+    {
+     "mfr": "_TZ3000_ena8vgqb",
+     "pid": "TS0201",
+     "driver": "temphumidsensor",
+     "sources": [
+      "deCONZ"
+     ],
+     "urls": [
+      "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/tuya/_TZ3000_TS0201_temp_hum_sensor.json"
+     ],
+     "lastTouch": "90cdd9d286 2026-09-22 🔄 self-improve: product-reference, case variants, docs 2026-09-22 [skip ci]"
+    },
+    {
+     "mfr": "_TZ3000_5nrcorgu",
+     "pid": "TS0201",
+     "driver": "temphumidsensor",
+     "sources": [
+      "deCONZ"
+     ],
+     "urls": [
+      "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/tuya/_TZ3000_TS0201_temp_hum_sensor.json"
+     ],
+     "lastTouch": "90cdd9d286 2026-09-22 🔄 self-improve: product-reference, case variants, docs 2026-09-22 [skip ci]"
+    },
+    {
+     "mfr": "_TZ3000_yujem9ee",
+     "pid": "TS0201",
+     "driver": "temphumidsensor",
+     "model": "tuya.ts-8137- model: \"WSD500A\", tuya.ts-8139- description: \"Temperature & humidity sensor\",",
+     "sources": [
+      "Z2M-converters(whitelabel)"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L8098"
+     ],
+     "lastTouch": "69fbd5dfd4 2026-07-29 v9.0.349: 431 drivers, 2933 FPs [skip ci]"
+    },
+    {
+     "mfr": "_TZ3000_xzhnra8x",
+     "pid": "TS011F",
+     "driver": "smartplug",
+     "sources": [
+      "deCONZ"
+     ],
+     "urls": [
+      "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/neo/nas-wr01B_ts011f.json"
+     ],
+     "lastTouch": "never-on-this-branch (attested on another branch/tag)"
+    },
+    {
+     "mfr": "_TZ3000_dlhhrhs8",
+     "pid": "TS000F",
+     "driver": "switch_module_whd02",
+     "model": "tuya.ts-4866- model: \"WHD02\", tuya.ts-4869- {vendor: \"Tuya\", model: \"iHSW02\"},",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L4890",
+      "https://www.zigbee2mqtt.io/devices/AY301Z-2CH.html"
+     ],
+     "lastTouch": "137ad15029 2026-07-14 v9.0.221: 431 drivers, 2810 FPs [skip ci]"
+    },
+    {
+     "mfr": "_TZ3000_wbfgbpxq",
+     "pid": "TS0044",
+     "driver": "scene_switch_4",
+     "sources": [
+      "deCONZ"
+     ],
+     "urls": [
+      "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/tuya/_TZ3000_TS0044_4gang_remote.json"
+     ],
+     "lastTouch": "90cdd9d286 2026-09-22 🔄 self-improve: product-reference, case variants, docs 2026-09-22 [skip ci]"
+    },
+    {
+     "mfr": "_TZ3000_g5xawfcq",
+     "pid": "TS0503B",
+     "driver": "led_strip_rgbw",
+     "sources": [
+      "Blakadder"
+     ],
+     "urls": [
+      "https://zigbee.blakadder.com/Tuya_TS0503B.html"
+     ],
+     "lastTouch": "7c49f0d951 2026-08-20 fix(master): P2202 fork-dump FP collision hygiene + baseline refresh"
+    },
+    {
+     "mfr": "_TZB210_endmggws",
+     "pid": "TS0505B",
+     "driver": "light_rgbcct_ts0505b",
+     "model": "tuya.ts-5191- model: \"TS0505B_2\", tuya.ts-5193- description: \"Zigbee GU10/E14 5W smart bulb\",",
+     "sources": [
+      "Z2M-converters(whitelabel)"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L5071"
+     ],
+     "lastTouch": "4bd6e9dc85 2026-08-16 fix: class-scale sacred couples across all Homey driver types"
+    },
+    {
+     "mfr": "_TZ3210_jd3z4yig",
+     "pid": "TS0505B",
+     "driver": "light_rgbcct_ts0505b",
+     "model": "tuya.ts-5191- model: \"TS0505B_2\", tuya.ts-5193- description: \"Zigbee GU10/E14 5W smart bulb\",",
+     "sources": [
+      "Z2M-converters(whitelabel)"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L5071"
+     ],
+     "lastTouch": "4bd6e9dc85 2026-08-16 fix: class-scale sacred couples across all Homey driver types"
+    },
+    {
+     "mfr": "_TZB210_ue01a0s2",
+     "pid": "TS0502B",
+     "driver": "light_cct_ts0502b",
+     "model": "tuya.ts-8053- model: \"TS0504A\", tuya.ts-8055- description: \"RGBW LED controller\",",
+     "sources": [
+      "Z2M-converters(whitelabel)"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L8005"
+     ],
+     "lastTouch": "edaf0a06fd 2026-08-11 🤖 auto-fix-all: automated fixes [skip ci]"
+    },
+    {
+     "mfr": "_TZ3210_09hzmirw",
+     "pid": "TS0502B",
+     "driver": "light_cct_ts0502b",
+     "model": "tuya.ts-8053- model: \"TS0504A\", tuya.ts-8055- description: \"RGBW LED controller\",",
+     "sources": [
+      "Z2M-converters(whitelabel)"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L8005"
+     ],
+     "lastTouch": "da4f83f7a9 2026-08-24 🤖 auto-fix-all: automated fixes [skip ci]"
+    }
+   ]
+  },
+  "stable-v5": {
+   "restored": [
+    {
+     "mfr": "_TZ3000_9evm3otq",
+     "pid": "TS0502A",
+     "driver": "light_bulb_tunable_white",
+     "sources": [
+      "ZHA"
+     ],
+     "urls": [
+      "https://github.com/zigpy/zha-device-handlers/blob/1d6598c32a8b4f054438f63f08fc36ff3d6b4930/zhaquirks/lidl/cct.py"
+     ],
+     "lastTouch": "e3af59e9d0 2026-08-11 feat(P99): backport case-insensitive enrich/auto-fix + Homey case variants"
+    },
+    {
+     "mfr": "_TZ3000_kdpxju99",
+     "pid": "TS0505A",
+     "driver": "rgb_spot_GU10",
+     "model": "tuya.ts-8100- model: \"TS0201\", tuya.ts-8102- description: \"Temperature & humidity sensor with display\",",
+     "sources": [
+      "Blakadder",
+      "JohanBendz-app",
+      "Homey-app:JohanBendz_com.lidl",
+      "Homey-app:johan",
+      "Z2M-converters(whitelabel)"
+     ],
+     "urls": [
+      "https://zigbee.blakadder.com/Lidl_HG06106A.html",
+      "https://github.com/JohanBendz/com.tuya.zigbee/blob/328d24ed315131528f2358b66bb0b8259615a49e/drivers/rgb_spot_GU10/driver.compose.json"
+     ],
+     "lastTouch": "6f5bce6468 2026-08-19 🤖 auto-fix-all: automated fixes [skip ci]"
+    },
+    {
+     "mfr": "_TZ3000_riwp3k79",
+     "pid": "TS0505A",
+     "driver": "rgb_led_strip",
+     "model": "tuya.ts-8100- model: \"TS0201\", tuya.ts-8102- description: \"Temperature & humidity sensor with display\",",
+     "sources": [
+      "Blakadder",
+      "JohanBendz-app",
+      "Homey-app:JohanBendz_com.lidl",
+      "Homey-app:johan",
+      "Z2M-converters(whitelabel)"
+     ],
+     "urls": [
+      "https://zigbee.blakadder.com/Lidl_HG06104A.html",
+      "https://github.com/JohanBendz/com.tuya.zigbee/blob/328d24ed315131528f2358b66bb0b8259615a49e/drivers/rgb_led_strip/driver.compose.json"
+     ],
+     "lastTouch": "6f5bce6468 2026-08-19 🤖 auto-fix-all: automated fixes [skip ci]"
+    },
+    {
+     "mfr": "_TZ3210_eejm8dcr",
+     "pid": "TS0505B",
+     "driver": "led_strip_rgbw",
+     "sources": [
+      "interview"
+     ],
+     "urls": [
+      "docs/data/DEVICE_INTERVIEWS.json#INT-150"
+     ],
+     "lastTouch": "f80e7bdb32 2026-09-15 fix(P2516-P2519): BOTH enrich anti-regression + 3ph meter RX ÔÇö tip 5.12.188"
+    },
+    {
+     "mfr": "_TZ3000_utagpnzs",
+     "pid": "TS0505A",
+     "driver": "rgb_wall_led_light",
+     "sources": [
+      "Blakadder",
+      "JohanBendz-app",
+      "Homey-app:JohanBendz_com.lidl",
+      "Homey-app:johan"
+     ],
+     "urls": [
+      "https://zigbee.blakadder.com/Lidl_HG06701A.html",
+      "https://github.com/JohanBendz/com.tuya.zigbee/blob/328d24ed315131528f2358b66bb0b8259615a49e/drivers/rgb_wall_led_light/driver.compose.json"
+     ],
+     "lastTouch": "6f5bce6468 2026-08-19 🤖 auto-fix-all: automated fixes [skip ci]"
+    },
+    {
+     "mfr": "_TZ3000_5bsf8vaj",
+     "pid": "TS0505A",
+     "driver": "rgb_wall_led_light",
+     "sources": [
+      "Blakadder",
+      "JohanBendz-app",
+      "Homey-app:JohanBendz_com.lidl",
+      "Homey-app:johan"
+     ],
+     "urls": [
+      "https://zigbee.blakadder.com/Lidl_HG06701B.html",
+      "https://github.com/JohanBendz/com.tuya.zigbee/blob/328d24ed315131528f2358b66bb0b8259615a49e/drivers/rgb_wall_led_light/driver.compose.json"
+     ],
+     "lastTouch": "6f5bce6468 2026-08-19 🤖 auto-fix-all: automated fixes [skip ci]"
+    },
+    {
+     "mfr": "_TZ3000_pkeqinnt",
+     "pid": "TS0043",
+     "driver": "button_wireless_3",
+     "sources": [
+      "deCONZ"
+     ],
+     "urls": [
+      "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/tuya/_TZ3000_TS0043_3gang_remote.json"
+     ],
+     "lastTouch": "e3af59e9d0 2026-08-11 feat(P99): backport case-insensitive enrich/auto-fix + Homey case variants"
+    },
+    {
+     "mfr": "_TZ3000_kxlmv9ag",
+     "pid": "TS0207",
+     "driver": "zigbee_repeater",
+     "model": "tuya.ts-5511- model: \"TS0207_repeater\", tuya.ts-5513- description: \"Repeater\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L5511",
+      "https://www.zigbee2mqtt.io/devices/TS0207_repeater.html"
+     ],
+     "lastTouch": "6f5bce6468 2026-08-19 🤖 auto-fix-all: automated fixes [skip ci]"
+    },
+    {
+     "mfr": "_TZ3000_r80pzsb9",
+     "pid": "TS0207",
+     "driver": "zigbee_repeater",
+     "model": "tuya.ts-5511- model: \"TS0207_repeater\", tuya.ts-5513- description: \"Repeater\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L5511",
+      "https://www.zigbee2mqtt.io/devices/TS0207_repeater.html"
+     ],
+     "lastTouch": "6f5bce6468 2026-08-19 🤖 auto-fix-all: automated fixes [skip ci]"
+    },
+    {
+     "mfr": "_TZ3000_shopg9ss",
+     "pid": "TS0207",
+     "driver": "zigbee_repeater",
+     "model": "tuya.ts-5511- model: \"TS0207_repeater\", tuya.ts-5513- description: \"Repeater\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L5511",
+      "https://www.zigbee2mqtt.io/devices/TS0207_repeater.html"
+     ],
+     "lastTouch": "6f5bce6468 2026-08-19 🤖 auto-fix-all: automated fixes [skip ci]"
+    },
+    {
+     "mfr": "_TZ3000_wmlc9p9z",
+     "pid": "TS0207",
+     "driver": "zigbee_repeater",
+     "model": "tuya.ts-5511- model: \"TS0207_repeater\", tuya.ts-5513- description: \"Repeater\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L5511",
+      "https://www.zigbee2mqtt.io/devices/TS0207_repeater.html"
+     ],
+     "lastTouch": "6f5bce6468 2026-08-19 🤖 auto-fix-all: automated fixes [skip ci]"
+    },
+    {
+     "mfr": "_TZ3000_b1q8kwmh",
+     "pid": "TS011F",
+     "driver": "device_plug_energy",
+     "model": "zemismart.ts-601- model: \"ZMO-606-20A\", zemismart.ts-603- description: \"Smart 20A outlet\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/zemismart.ts#L601",
+      "https://www.zigbee2mqtt.io/devices/ZMO-606-20A.html"
+     ],
+     "lastTouch": "e3af59e9d0 2026-08-11 feat(P99): backport case-insensitive enrich/auto-fix + Homey case variants"
+    },
+    {
+     "mfr": "_TZE284_hkdl5fmv",
+     "pid": "TS0601",
+     "driver": "energy_meter_din",
+     "model": "tuya.ts-15857- model: \"TS0601_rcbo\", tuya.ts-15860- {vendor: \"HOCH\", model: \"ZJSBL7-100Z\"},",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L15951",
+      "https://www.zigbee2mqtt.io/devices/ERS-10TZBVK-AA.html"
+     ],
+     "lastTouch": "never-on-this-branch (attested on another branch/tag)"
+    },
+    {
+     "mfr": "_TZE28C1000000_gt5al3bl",
+     "pid": "TS0601",
+     "driver": "led_controller_rgb",
+     "model": "gledopto.ts-1259- model: \"GL-SPI-206P\", gledopto.ts-1261- description: \"SPI pixel controller RGBCCT/RGBW/RGB\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/gledopto.ts#L1259",
+      "https://www.zigbee2mqtt.io/devices/GL-SPI-206P.html"
+     ],
+     "lastTouch": "never-on-this-branch (attested on another branch/tag)"
+    },
+    {
+     "mfr": "_TZ3000_sgpbz53b",
+     "pid": "TS0207",
+     "driver": "zigbee_repeater",
+     "model": "tuya.ts-5511- model: \"TS0207_repeater\", tuya.ts-5513- description: \"Repeater\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L5511",
+      "https://www.zigbee2mqtt.io/devices/TS0207_repeater.html"
+     ],
+     "lastTouch": "6f5bce6468 2026-08-19 🤖 auto-fix-all: automated fixes [skip ci]"
+    },
+    {
+     "mfr": "_TYZB01_4obovpbi",
+     "pid": "TS0216",
+     "driver": "siren",
+     "model": "heiman.ts-2654- model: \"HS2WD-E\", heiman.ts-2656- description: \"Smart siren\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/heiman.ts#L2654",
+      "https://www.zigbee2mqtt.io/devices/HS2WD-E.html"
+     ],
+     "lastTouch": "never-on-this-branch (attested on another branch/tag)"
+    },
+    {
+     "mfr": "_TYZB01_bwsijaty",
+     "pid": "TS0219",
+     "driver": "siren",
+     "model": "woox.ts-71- model: \"R7051\", woox.ts-73- description: \"Smart siren\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/woox.ts#L71",
+      "https://www.zigbee2mqtt.io/devices/R7051.html"
+     ],
+     "lastTouch": "never-on-this-branch (attested on another branch/tag)"
+    },
+    {
+     "mfr": "_TYZB01_rs7ff6o7",
+     "pid": "TS0219",
+     "driver": "siren",
+     "model": "woox.ts-71- model: \"R7051\", woox.ts-73- description: \"Smart siren\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/woox.ts#L71",
+      "https://www.zigbee2mqtt.io/devices/R7051.html"
+     ],
+     "lastTouch": "never-on-this-branch (attested on another branch/tag)"
+    },
+    {
+     "mfr": "_TYZB01_ynsiasng",
+     "pid": "TS0219",
+     "driver": "siren",
+     "model": "woox.ts-71- model: \"R7051\", woox.ts-73- description: \"Smart siren\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/woox.ts#L71",
+      "https://www.zigbee2mqtt.io/devices/R7051.html"
+     ],
+     "lastTouch": "never-on-this-branch (attested on another branch/tag)"
+    },
+    {
+     "mfr": "_TZE28C1000000_o409r73p",
+     "pid": "TS0601",
+     "driver": "switch_2gang",
+     "model": "zemismart.ts-1250- model: \"ZMZ609-2\", zemismart.ts-1252- description: \"Zigbee neutral touchscreen switch 2 gang with power monitoring\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/zemismart.ts#L1250",
+      "https://www.zigbee2mqtt.io/devices/ZMZ609-2.html"
+     ],
+     "lastTouch": "never-on-this-branch (attested on another branch/tag)"
+    },
+    {
+     "mfr": "_TZ3000_hopb2kjm",
+     "pid": "TS0002",
+     "driver": "switch_2gang",
+     "model": "tuya.ts-8972- model: \"TS0002_power\", tuya.ts-8974- description: \"2 gang switch with power monitoring\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs",
+      "Z2M-converters(whitelabel)"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L8972",
+      "https://www.zigbee2mqtt.io/devices/TS0002_power.html"
+     ],
+     "lastTouch": "never-on-this-branch (attested on another branch/tag)"
+    },
+    {
+     "mfr": "_TZE284_xuflgcnz",
+     "pid": "TS0601",
+     "driver": "valve_irrigation",
+     "model": "rtx.ts-20- model: \"ZVG1\", rtx.ts-22- description: \"Zigbee smart water valve\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/rtx.ts#L20",
+      "https://www.zigbee2mqtt.io/devices/ZVG1.html"
+     ],
+     "lastTouch": "never-on-this-branch (attested on another branch/tag)"
+    },
+    {
+     "mfr": "_TZ3210_4zinq6io",
+     "pid": "TS0501B",
+     "driver": "led_controller_dimmable",
+     "sources": [
+      "ZHA",
+      "Blakadder"
+     ],
+     "urls": [
+      "https://github.com/zigpy/zha-device-handlers/blob/1d6598c32a8b4f054438f63f08fc36ff3d6b4930/zhaquirks/tuya/ts0501bs.py",
+      "https://zigbee.blakadder.com/Tuya_TS0501B.html"
+     ],
+     "lastTouch": "730efb7c6c 2026-09-16 feat(P2531): complementary coverage mega forum/Z2M/ZHA/OEM overlays tip 9.0.970"
+    },
+    {
+     "mfr": "_TZ3210_9q49basr",
+     "pid": "TS0501B",
+     "driver": "led_controller_dimmable",
+     "sources": [
+      "ZHA",
+      "Blakadder"
+     ],
+     "urls": [
+      "https://github.com/zigpy/zha-device-handlers/blob/1d6598c32a8b4f054438f63f08fc36ff3d6b4930/zhaquirks/tuya/ts0501bs.py",
+      "https://zigbee.blakadder.com/Tuya_TS0501B.html"
+     ],
+     "lastTouch": "730efb7c6c 2026-09-16 feat(P2531): complementary coverage mega forum/Z2M/ZHA/OEM overlays tip 9.0.970"
+    },
+    {
+     "mfr": "_TZ3210_e5t9bfdv",
+     "pid": "TS0501B",
+     "driver": "led_controller_dimmable",
+     "sources": [
+      "ZHA",
+      "Blakadder"
+     ],
+     "urls": [
+      "https://github.com/zigpy/zha-device-handlers/blob/1d6598c32a8b4f054438f63f08fc36ff3d6b4930/zhaquirks/tuya/ts0501bs.py",
+      "https://zigbee.blakadder.com/Tuya_TS0501B.html"
+     ],
+     "lastTouch": "730efb7c6c 2026-09-16 feat(P2531): complementary coverage mega forum/Z2M/ZHA/OEM overlays tip 9.0.970"
+    },
+    {
+     "mfr": "_TZ3210_agjx0pxt",
+     "pid": "TS0501B",
+     "driver": "led_controller_dimmable",
+     "sources": [
+      "ZHA"
+     ],
+     "urls": [
+      "https://github.com/zigpy/zha-device-handlers/blob/1d6598c32a8b4f054438f63f08fc36ff3d6b4930/zhaquirks/tuya/ts0501bs.py"
+     ],
+     "lastTouch": "730efb7c6c 2026-09-16 feat(P2531): complementary coverage mega forum/Z2M/ZHA/OEM overlays tip 9.0.970"
+    },
+    {
+     "mfr": "_TZ3210_d062rv7j",
+     "pid": "TS0501B",
+     "driver": "led_controller_dimmable",
+     "sources": [
+      "ZHA"
+     ],
+     "urls": [
+      "https://github.com/zigpy/zha-device-handlers/blob/1d6598c32a8b4f054438f63f08fc36ff3d6b4930/zhaquirks/tuya/ts0501bs.py"
+     ],
+     "lastTouch": "730efb7c6c 2026-09-16 feat(P2531): complementary coverage mega forum/Z2M/ZHA/OEM overlays tip 9.0.970"
+    },
+    {
+     "mfr": "_TZ3210_i680rtja",
+     "pid": "TS0501B",
+     "driver": "led_controller_dimmable",
+     "sources": [
+      "ZHA",
+      "Blakadder"
+     ],
+     "urls": [
+      "https://github.com/zigpy/zha-device-handlers/blob/1d6598c32a8b4f054438f63f08fc36ff3d6b4930/zhaquirks/tuya/ts0501bs.py",
+      "https://zigbee.blakadder.com/Tuya_TS0501B.html"
+     ],
+     "lastTouch": "730efb7c6c 2026-09-16 feat(P2531): complementary coverage mega forum/Z2M/ZHA/OEM overlays tip 9.0.970"
+    },
+    {
+     "mfr": "_TZ3210_syh4kuef",
+     "pid": "TS0501B",
+     "driver": "led_controller_dimmable",
+     "sources": [
+      "ZHA"
+     ],
+     "urls": [
+      "https://github.com/zigpy/zha-device-handlers/blob/1d6598c32a8b4f054438f63f08fc36ff3d6b4930/zhaquirks/tuya/ts0501bs.py"
+     ],
+     "lastTouch": "730efb7c6c 2026-09-16 feat(P2531): complementary coverage mega forum/Z2M/ZHA/OEM overlays tip 9.0.970"
+    },
+    {
+     "mfr": "_TZE284_ajhu0zqb",
+     "pid": "TS0601",
+     "driver": "water_leak_sensor_tuya",
+     "model": "lincukoo.ts-22- model: \"SZW08\", lincukoo.ts-24- description: \"Smart water leakage/lack alarm sensor\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lincukoo.ts#L22",
+      "https://www.zigbee2mqtt.io/devices/SZW08.html"
+     ],
+     "lastTouch": "never-on-this-branch (attested on another branch/tag)"
+    },
+    {
+     "mfr": "_TYZB01_hww2py6b",
+     "pid": "TS1001",
+     "driver": "remote_dimmer",
+     "model": "lidl.ts-343- model: \"FB21-001\", lidl.ts-345- description: \"Livarno Lux switch and dimming light remote control\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs",
+      "Blakadder"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lidl.ts#L343",
+      "https://www.zigbee2mqtt.io/devices/FB21-001.html"
+     ],
+     "lastTouch": "ef278a61c0 2026-07-16 feat(P68): Blakadder integration (12 new FPs, 100% coverage) + flow card dups v2 + climate_sensor voltage titleFormatt"
+    },
+    {
+     "mfr": "_TZ3000_ztrfrcsu",
+     "pid": "TS1001",
+     "driver": "remote_dimmer",
+     "model": "aldi.ts-11- model: \"141L100RC\", aldi.ts-13- description: \"MEGOS switch and dimming light remote control\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/aldi.ts#L11",
+      "https://www.zigbee2mqtt.io/devices/141L100RC.html"
+     ],
+     "lastTouch": "0d64d2f26c 2026-09-22 v9.0.1164: 434 drivers, 4174 FPs [skip ci]"
+    },
+    {
+     "mfr": "_TYZB01_ub7urdza",
+     "pid": "TS0041A",
+     "driver": "button_wireless_1",
+     "model": "sber.ts-1429- model: \"SBDV-00032\", sber.ts-1431- description: \"Smart button\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/sber.ts#L1429",
+      "https://www.zigbee2mqtt.io/devices/SBDV-00032.html"
+     ],
+     "lastTouch": "never-on-this-branch (attested on another branch/tag)"
+    },
+    {
+     "mfr": "_TZE200_b0ihkhxh",
+     "pid": "TS0601",
+     "driver": "wall_switch_1_gang_tuya",
+     "model": "orztech.ts:19: model: \"_TZE200_b0ihkhxh\", orztech.ts-21- description: \"1 gang touch wall switch\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/orztech.ts#L19",
+      "https://www.zigbee2mqtt.io/devices/_TZE200_b0ihkhxh.html"
+     ],
+     "lastTouch": "never-on-this-branch (attested on another branch/tag)"
+    },
+    {
+     "mfr": "_TZE200_ra6wrlgv",
+     "pid": "TS0601",
+     "driver": "curtain_motor_shutter",
+     "model": "box.ts-223- model: \"ERC2206-Z\", box.ts-225- description: \"Roller shutter controller\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/box.ts#L223",
+      "https://www.zigbee2mqtt.io/devices/ERC2206-Z.html"
+     ],
+     "lastTouch": "never-on-this-branch (attested on another branch/tag)"
+    },
+    {
+     "mfr": "_TZ3210_2uk4z8ce",
+     "pid": "TS011F",
+     "driver": "smartplug",
+     "model": "moes.ts-994- model: \"ZP-LZ-FR2U\", moes.ts-996- description: \"Zigbee 3.0 dual USB wireless socket plug\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/moes.ts#L994",
+      "https://www.zigbee2mqtt.io/devices/ZP-LZ-FR2U.html"
+     ],
+     "lastTouch": "730efb7c6c 2026-09-16 feat(P2531): complementary coverage mega forum/Z2M/ZHA/OEM overlays tip 9.0.970"
+    },
+    {
+     "mfr": "_TZ3000_xzhnra8x",
+     "pid": "TS011F",
+     "driver": "smartplug",
+     "sources": [
+      "deCONZ"
+     ],
+     "urls": [
+      "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/neo/nas-wr01B_ts011f.json"
+     ],
+     "lastTouch": "never-on-this-branch (attested on another branch/tag)"
+    },
+    {
+     "mfr": "_TZ3000_wbfgbpxq",
+     "pid": "TS0044",
+     "driver": "scene_switch_4",
+     "sources": [
+      "deCONZ"
+     ],
+     "urls": [
+      "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/tuya/_TZ3000_TS0044_4gang_remote.json"
+     ],
+     "lastTouch": "90cdd9d286 2026-09-22 🔄 self-improve: product-reference, case variants, docs 2026-09-22 [skip ci]"
+    },
+    {
+     "mfr": "_TZ3000_g5xawfcq",
+     "pid": "TS0503B",
+     "driver": "led_strip_rgbw",
+     "sources": [
+      "Blakadder"
+     ],
+     "urls": [
+      "https://zigbee.blakadder.com/Tuya_TS0503B.html"
+     ],
+     "lastTouch": "7c49f0d951 2026-08-20 fix(master): P2202 fork-dump FP collision hygiene + baseline refresh"
+    },
+    {
+     "mfr": "_TZ3210_jd3z4yig",
+     "pid": "TS0505B",
+     "driver": "light_rgbcct_ts0505b",
+     "model": "tuya.ts-5191- model: \"TS0505B_2\", tuya.ts-5193- description: \"Zigbee GU10/E14 5W smart bulb\",",
+     "sources": [
+      "Z2M-converters(whitelabel)"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L5071"
+     ],
+     "lastTouch": "4bd6e9dc85 2026-08-16 fix: class-scale sacred couples across all Homey driver types"
+    },
+    {
+     "mfr": "_TZB210_ue01a0s2",
+     "pid": "TS0502B",
+     "driver": "light_cct_ts0502b",
+     "model": "tuya.ts-8053- model: \"TS0504A\", tuya.ts-8055- description: \"RGBW LED controller\",",
+     "sources": [
+      "Z2M-converters(whitelabel)"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L8005"
+     ],
+     "lastTouch": "edaf0a06fd 2026-08-11 🤖 auto-fix-all: automated fixes [skip ci]"
+    },
+    {
+     "mfr": "_TZ3210_09hzmirw",
+     "pid": "TS0502B",
+     "driver": "light_cct_ts0502b",
+     "model": "tuya.ts-8053- model: \"TS0504A\", tuya.ts-8055- description: \"RGBW LED controller\",",
+     "sources": [
+      "Z2M-converters(whitelabel)"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L8005"
+     ],
+     "lastTouch": "da4f83f7a9 2026-08-24 🤖 auto-fix-all: automated fixes [skip ci]"
+    },
+    {
+     "mfr": "_TZ3000_ena8vgqb",
+     "pid": "TS0201",
+     "driver": "temphumidsensor3",
+     "sources": [
+      "deCONZ"
+     ],
+     "urls": [
+      "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/tuya/_TZ3000_TS0201_temp_hum_sensor.json"
+     ],
+     "lastTouch": "90cdd9d286 2026-09-22 🔄 self-improve: product-reference, case variants, docs 2026-09-22 [skip ci]"
+    },
+    {
+     "mfr": "_TZ3000_5nrcorgu",
+     "pid": "TS0201",
+     "driver": "temphumidsensor3",
+     "sources": [
+      "deCONZ"
+     ],
+     "urls": [
+      "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/tuya/_TZ3000_TS0201_temp_hum_sensor.json"
+     ],
+     "lastTouch": "90cdd9d286 2026-09-22 🔄 self-improve: product-reference, case variants, docs 2026-09-22 [skip ci]"
+    }
+   ]
+  },
+  "bastien-home": {
+   "restored": [
+    {
+     "mfr": "_TZ3000_nuenzetq",
+     "pid": "TS0002",
+     "driver": "switch_2gang",
+     "model": "tuya.ts-9276- model: \"_TZ3000_h1ipgkwn\", tuya.ts-9277- description: \"2 channel USB switch\",",
+     "sources": [
+      "deCONZ",
+      "JohanBendz-app",
+      "Homey-app:johan",
+      "Z2M-converters(whitelabel)"
+     ],
+     "urls": [
+      "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/tuya/_TZ3000_2channel_module.json",
+      "https://github.com/JohanBendz/com.tuya.zigbee/blob/328d24ed315131528f2358b66bb0b8259615a49e/drivers/relay_board_2_channel/driver.compose.json"
+     ],
+     "lastTouch": "c31b02a49c 2026-10-04 fix(devices): signed/unsigned DP decoding + meter counter guard; BSEED 2uollq9d plug, ZG-2002 nuenzetq relay (same pla"
+    },
+    {
+     "mfr": "_TZ3000_pkeqinnt",
+     "pid": "TS0043",
+     "driver": "button_wireless_3",
+     "sources": [
+      "deCONZ"
+     ],
+     "urls": [
+      "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/tuya/_TZ3000_TS0043_3gang_remote.json"
+     ],
+     "lastTouch": "e3af59e9d0 2026-08-11 feat(P99): backport case-insensitive enrich/auto-fix + Homey case variants"
+    },
+    {
+     "mfr": "_TZE284_a0hirjnh",
+     "pid": "TS0601",
+     "driver": "curtain_motor",
+     "model": "tuya.ts-26317- model: \"TS0601_cover_12\", tuya.ts-26319- description: \"Curtain motor\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs",
+      "Z2M-converters(whitelabel)"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L26317",
+      "https://www.zigbee2mqtt.io/devices/TS0601_cover_12.html"
+     ],
+     "lastTouch": "never-on-this-branch (attested on another branch/tag)"
+    },
+    {
+     "mfr": "_TZE284_zuq5xxib",
+     "pid": "TS0601",
+     "driver": "curtain_motor",
+     "model": "tuya.ts-9697- model: \"TS0601_cover_1\", tuya.ts-9699- description: \"Curtain motor/roller blind motor/window pusher/tubular motor\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L9697",
+      "https://www.zigbee2mqtt.io/devices/TS0601_cover_1.html"
+     ],
+     "lastTouch": "never-on-this-branch (attested on another branch/tag)"
+    },
+    {
+     "mfr": "_TZ3008_xvfd3nkp",
+     "pid": "TS011F",
+     "driver": "plug_energy_monitor",
+     "model": "tuya.ts-12486- model: \"TS011F_plug_1\", tuya.ts-12487- description: \"Smart plug (with power monitoring)\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs",
+      "Z2M-converters(whitelabel)"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L12669",
+      "https://www.zigbee2mqtt.io/devices/SM0212.html"
+     ],
+     "lastTouch": "never-on-this-branch (attested on another branch/tag)"
+    },
+    {
+     "mfr": "_TZ3008_qziabvzj",
+     "pid": "TS011F",
+     "driver": "plug_energy_monitor",
+     "model": "tuya.ts-12486- model: \"TS011F_plug_1\", tuya.ts-12487- description: \"Smart plug (with power monitoring)\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs",
+      "Z2M-converters(whitelabel)"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L12669",
+      "https://www.zigbee2mqtt.io/devices/SM0212.html"
+     ],
+     "lastTouch": "never-on-this-branch (attested on another branch/tag)"
+    },
+    {
+     "mfr": "_TZ3008_iooniers",
+     "pid": "TS011F",
+     "driver": "plug_energy_monitor",
+     "model": "tuya.ts-12486- model: \"TS011F_plug_1\", tuya.ts-12487- description: \"Smart plug (with power monitoring)\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs",
+      "Z2M-converters(whitelabel)"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L12669",
+      "https://www.zigbee2mqtt.io/devices/SM0212.html"
+     ],
+     "lastTouch": "never-on-this-branch (attested on another branch/tag)"
+    },
+    {
+     "mfr": "_TZ3000_ahvrgyac",
+     "pid": "TS0001",
+     "driver": "switch_1gang",
+     "model": "tuya.ts-8899- model: \"TS0001_power\", tuya.ts-8900- description: \"Switch with power monitoring\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs",
+      "Z2M-converters(whitelabel)"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L8972",
+      "https://www.zigbee2mqtt.io/devices/TS0002_power.html"
+     ],
+     "lastTouch": "never-on-this-branch (attested on another branch/tag)"
+    },
+    {
+     "mfr": "_TZ3000_bbebkwjk",
+     "pid": "TS0001",
+     "driver": "switch_1gang",
+     "model": "tuya.ts-17680- model: \"TS0001_switch_1_gang\", tuya.ts-17682- description: \"1-Gang switch with backlight\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L17680",
+      "https://www.zigbee2mqtt.io/devices/TS0001_switch_1_gang.html"
+     ],
+     "lastTouch": "never-on-this-branch (attested on another branch/tag)"
+    },
+    {
+     "mfr": "_TZE28C1000000_o409r73p",
+     "pid": "TS0601",
+     "driver": "switch_2gang",
+     "model": "zemismart.ts-1250- model: \"ZMZ609-2\", zemismart.ts-1252- description: \"Zigbee neutral touchscreen switch 2 gang with power monitoring\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/zemismart.ts#L1250",
+      "https://www.zigbee2mqtt.io/devices/ZMZ609-2.html"
+     ],
+     "lastTouch": "never-on-this-branch (attested on another branch/tag)"
+    },
+    {
+     "mfr": "_TZ3000_hopb2kjm",
+     "pid": "TS0002",
+     "driver": "switch_2gang",
+     "model": "tuya.ts-8972- model: \"TS0002_power\", tuya.ts-8974- description: \"2 gang switch with power monitoring\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs",
+      "Z2M-converters(whitelabel)"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L8972",
+      "https://www.zigbee2mqtt.io/devices/TS0002_power.html"
+     ],
+     "lastTouch": "never-on-this-branch (attested on another branch/tag)"
+    },
+    {
+     "mfr": "_TZ3000_bu47m8pv",
+     "pid": "TS0003",
+     "driver": "switch_3gang",
+     "model": "tuya.ts-9409- model: \"TS0003_switch_module_2\", tuya.ts-9411- description: \"3 gang switch module\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs",
+      "Z2M-converters(whitelabel)"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L9409",
+      "https://www.zigbee2mqtt.io/devices/TS0003_switch_module_2.html"
+     ],
+     "lastTouch": "never-on-this-branch (attested on another branch/tag)"
+    },
+    {
+     "mfr": "_TZ3000_f6pgzqob",
+     "pid": "TS0003",
+     "driver": "switch_3gang",
+     "model": "tuya.ts-9409- model: \"TS0003_switch_module_2\", tuya.ts-9411- description: \"3 gang switch module\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs",
+      "Z2M-converters(whitelabel)"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L9409",
+      "https://www.zigbee2mqtt.io/devices/TS0003_switch_module_2.html"
+     ],
+     "lastTouch": "never-on-this-branch (attested on another branch/tag)"
+    },
+    {
+     "mfr": "_TZ300A_57kqwetw",
+     "pid": "TS0726",
+     "driver": "switch_4gang",
+     "model": "tuya.ts-29869- model: \"TS0726_4_gang_switch_and_4_scene\", tuya.ts-29871- description: \"Multi 4 gang switch and 4 scene with backlight\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L29869",
+      "https://www.zigbee2mqtt.io/devices/TS0726_4_gang_switch_and_4_scene.html"
+     ],
+     "lastTouch": "never-on-this-branch (attested on another branch/tag)"
+    },
+    {
+     "mfr": "_TZ3210_o235agwx",
+     "pid": "TS110E",
+     "driver": "wall_dimmer_tuya",
+     "model": "tuya.ts-16929- model: \"TS110E_1gang_2\", tuya.ts-16931- description: \"1 channel dimmer\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L16929",
+      "https://www.zigbee2mqtt.io/devices/TS110E_1gang_2.html"
+     ],
+     "lastTouch": "never-on-this-branch (attested on another branch/tag)"
+    },
+    {
+     "mfr": "_TYZB01_ub7urdza",
+     "pid": "TS0041A",
+     "driver": "button_wireless_1",
+     "model": "sber.ts-1429- model: \"SBDV-00032\", sber.ts-1431- description: \"Smart button\",",
+     "sources": [
+      "Z2M-converters",
+      "Z2M-docs"
+     ],
+     "urls": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/sber.ts#L1429",
+      "https://www.zigbee2mqtt.io/devices/SBDV-00032.html"
+     ],
+     "lastTouch": "never-on-this-branch (attested on another branch/tag)"
+    },
+    {
+     "mfr": "_TZ3000_wbfgbpxq",
+     "pid": "TS0044",
+     "driver": "scene_switch_4",
+     "sources": [
+      "deCONZ"
+     ],
+     "urls": [
+      "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/tuya/_TZ3000_TS0044_4gang_remote.json"
+     ],
+     "lastTouch": "90cdd9d286 2026-09-22 🔄 self-improve: product-reference, case variants, docs 2026-09-22 [skip ci]"
+    }
+   ],
+   "suggestions_not_in_fleet": [
+    {
+     "mfr": "_TZ3210_4zinq6io",
+     "pid": "TS0501B",
+     "driver": "led_controller_dimmable",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TZ3210_9q49basr",
+     "pid": "TS0501B",
+     "driver": "led_controller_dimmable",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TZ3210_e5t9bfdv",
+     "pid": "TS0501B",
+     "driver": "led_controller_dimmable",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TZ3210_agjx0pxt",
+     "pid": "TS0501B",
+     "driver": "led_controller_dimmable",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TZ3210_d062rv7j",
+     "pid": "TS0501B",
+     "driver": "led_controller_dimmable",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TZ3210_i680rtja",
+     "pid": "TS0501B",
+     "driver": "led_controller_dimmable",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TZ3210_syh4kuef",
+     "pid": "TS0501B",
+     "driver": "led_controller_dimmable",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TYZB01_o63ssaah",
+     "pid": "TS0207",
+     "driver": "water_leak_sensor",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TZ3000_arw23zcs",
+     "pid": "TS0207",
+     "driver": "water_leak_sensor",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TZ3000_it1hm1cr",
+     "pid": "TS0207",
+     "driver": "water_leak_sensor",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TZ3000_amis43tj",
+     "pid": "TS0207",
+     "driver": "water_leak_sensor",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TZ3000_c8bqthpo",
+     "pid": "TS0207",
+     "driver": "water_leak_sensor",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TZE284_ajhu0zqb",
+     "pid": "TS0601",
+     "driver": "water_leak_sensor_tuya",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TYZB01_hww2py6b",
+     "pid": "TS1001",
+     "driver": "remote_dimmer",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TZ3000_ztrfrcsu",
+     "pid": "TS1001",
+     "driver": "remote_dimmer",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TZE200_b0ihkhxh",
+     "pid": "TS0601",
+     "driver": "wall_switch_1_gang_tuya",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TZE200_ra6wrlgv",
+     "pid": "TS0601",
+     "driver": "curtain_motor_shutter",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TZ3210_2uk4z8ce",
+     "pid": "TS011F",
+     "driver": "smartplug",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TZE204_qaxkdgyt",
+     "pid": "TS0601",
+     "driver": "gas_detector",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TZ3000_ena8vgqb",
+     "pid": "TS0201",
+     "driver": "temphumidsensor",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TZ3000_5nrcorgu",
+     "pid": "TS0201",
+     "driver": "temphumidsensor",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TZ3000_yujem9ee",
+     "pid": "TS0201",
+     "driver": "temphumidsensor",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TZ3000_xzhnra8x",
+     "pid": "TS011F",
+     "driver": "smartplug",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TZ3000_dlhhrhs8",
+     "pid": "TS000F",
+     "driver": "switch_module_whd02",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TZ3000_hktqahrq",
+     "pid": "TS0202",
+     "driver": "slim_motion_sensor",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TZE200_bq5c8xfe",
+     "pid": "TS0202",
+     "driver": "slim_motion_sensor",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TZ3000_g5xawfcq",
+     "pid": "TS0503B",
+     "driver": "led_strip_rgbw",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TZB210_endmggws",
+     "pid": "TS0505B",
+     "driver": "light_rgbcct_ts0505b",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TZ3210_jd3z4yig",
+     "pid": "TS0505B",
+     "driver": "light_rgbcct_ts0505b",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TZB210_ue01a0s2",
+     "pid": "TS0502B",
+     "driver": "light_cct_ts0502b",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TZ3210_09hzmirw",
+     "pid": "TS0502B",
+     "driver": "light_cct_ts0502b",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TZ3000_9evm3otq",
+     "pid": "TS0502A",
+     "driver": "light_bulb_tunable_white",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TZ3000_kxlmv9ag",
+     "pid": "TS0207",
+     "driver": "zigbee_repeater",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TZ3000_r80pzsb9",
+     "pid": "TS0207",
+     "driver": "zigbee_repeater",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TZ3000_shopg9ss",
+     "pid": "TS0207",
+     "driver": "zigbee_repeater",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TZ3000_wmlc9p9z",
+     "pid": "TS0207",
+     "driver": "zigbee_repeater",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TZE284_pxwixtky",
+     "pid": "TS0601",
+     "driver": "curtain_motor_shutter",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TZE284_hkdl5fmv",
+     "pid": "TS0601",
+     "driver": "energy_meter_din",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TZE28C1000000_gt5al3bl",
+     "pid": "TS0601",
+     "driver": "led_controller_rgb",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TZ3210_odlghna1",
+     "pid": "TS0503B",
+     "driver": "led_strip_rgbw",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TZ3000_sgpbz53b",
+     "pid": "TS0207",
+     "driver": "zigbee_repeater",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TYZB01_4obovpbi",
+     "pid": "TS0216",
+     "driver": "siren",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TYZB01_bwsijaty",
+     "pid": "TS0219",
+     "driver": "siren",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TYZB01_rs7ff6o7",
+     "pid": "TS0219",
+     "driver": "siren",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TYZB01_ynsiasng",
+     "pid": "TS0219",
+     "driver": "siren",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TZ3000_3o7r0mno",
+     "pid": "TS011F",
+     "driver": "smartPlug_DinRail",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TZE284_xuflgcnz",
+     "pid": "TS0601",
+     "driver": "valve_irrigation",
+     "why": "driver not in Bastien keepDriverIds"
+    },
+    {
+     "mfr": "_TZE284_znkkcauq",
+     "pid": "TS0601",
+     "driver": "wall_switch_6_gang_tuya",
+     "why": "driver not in Bastien keepDriverIds"
+    }
+   ]
+  }
+ },
+ "blocked": [
+  {
+   "mfr": "_TZE200_yh7aoahi",
+   "pid": "TS0601",
+   "why": "smoke: collides with (yh7aoahi,TS0205) in smoke_sensor3 for every smoke driver"
+  },
+  {
+   "mfr": "_TZ3210_4ubylghk",
+   "pid": "TS110E",
+   "why": "collision with rgb_led_strip TS0601"
+  },
+  {
+   "mfr": "_TZ3290_* (6)",
+   "pid": "TS1201",
+   "why": "IR blasters: mfrs sit as junk TS0601/TS0002 couples in climate_sensor/button_wireless_2"
+  },
+  {
+   "mfr": "_TZ1800_akzvkzqq",
+   "pid": "TS0211",
+   "why": "doorbell: collision with usb_dongle_triple"
+  },
+  {
+   "mfr": "_TZE204_myd45weu",
+   "pid": "TS0222",
+   "why": "collision with existing owner"
+  },
+  {
+   "mfr": "_TZ3000_0s1izerx/_TZ3000_bgsigers",
+   "pid": "SNTZ003/TY0201",
+   "why": "ambiguous whitelabel"
+  },
+  {
+   "mfr": "_TZ3000_abaplimj/_TZ3000_mqiev3jk",
+   "pid": "*",
+   "why": "Z2M solar rain sensor vs deCONZ leak: conflicting sources"
+  },
+  {
+   "mfr": "_TZ3000_hktqahrq",
+   "pid": "TS0202",
+   "why": "deCONZ context points to WHD02 switch module, voluntarily pruned in f5ed9b65bf (P2830): kept removed"
+  },
+  {
+   "mfr": "_TZE200_bq5c8xfe",
+   "pid": "TS0202",
+   "why": "Z2M says TS0601 temp/hum; voluntarily pruned in f5ed9b65bf (P2830): kept removed"
+  },
+  {
+   "mfr": "_TZE21C_dohbhb5k/_TZE21C_i2ij4rb3",
+   "pid": "TS0601",
+   "why": "thermostat-switch: driver uncertain"
+  },
+  {
+   "mfr": "SONOFF/non-Tuya (SNZB-02P …)",
+   "pid": "*",
+   "why": "~61 combos + collision risk, not restored"
+  },
+  {
+   "mfr": "malformed (eWeLi\\u0001…, TZ3000_air9m6af, wildcards, xxxxxxxx)",
+   "pid": "*",
+   "why": "not exact couples"
+  },
+  {
+   "mfr": "_TYZB01_o63ssaah",
+   "pid": "TS0207",
+   "why": "master: water_leak_blitzwolf_bw_is9 is a P2958 exact-couple driver and water_leak_sensor collides (fp-collision gate) with water_leak_sensor_tuya, which already lists this mfr; needs a dedicated driver"
+  },
+  {
+   "mfr": "_TZ3000_amis43tj",
+   "pid": "TS0207",
+   "why": "master: water_leak_blitzwolf_bw_is9 is a P2958 exact-couple driver and water_leak_sensor collides (fp-collision gate) with water_leak_sensor_tuya, which already lists this mfr; needs a dedicated driver"
+  },
+  {
+   "mfr": "_TZ3000_c8bqthpo",
+   "pid": "TS0207",
+   "why": "master: water_leak_blitzwolf_bw_is9 is a P2958 exact-couple driver and water_leak_sensor collides (fp-collision gate) with water_leak_sensor_tuya, which already lists this mfr; needs a dedicated driver"
+  },
+  {
+   "mfr": "_TZ3000_arw23zcs",
+   "pid": "TS0207",
+   "why": "master: water_leak_blitzwolf_bw_is9 is a P2958 exact-couple driver; water_leak_sensor also lists TS0601, so the mfr would collide (fp-collision gate) with its TS0601 entry in switch_1gang; needs a dedicated driver"
+  },
+  {
+   "mfr": "_TZ3000_it1hm1cr",
+   "pid": "TS0207",
+   "why": "master: water_leak_blitzwolf_bw_is9 is a P2958 exact-couple driver; water_leak_sensor also lists TS0601, so the mfr would collide (fp-collision gate) with its TS0601 entry in switch_1gang; needs a dedicated driver"
+  }
+ ],
+ "misplacementsToReview": [
+  {
+   "mfr": "_TZE284_goecjd1t",
+   "now": "radiator_valve",
+   "is": "AVATTO ZWPM16 energy meter (Z2M)"
+  },
+  {
+   "mfr": "_TZE284_z98viqa6",
+   "now": "curtain_motor",
+   "is": "Moes SFD02-Z dimmer (Z2M)"
+  }
+ ],
+ "branch": "master",
+ "dpEnriched": [
+  "_TZE200_7ytb3h8u|TS0601",
+  "_TZE204_7ytb3h8u|TS0601",
+  "_TZE200_ra6wrlgv|TS0601",
+  "_TZE284_xuflgcnz|TS0601"
+ ],
+ "_dpWhy": "names-only (capability null) Z2M-sourced DP rows in data/dp_couple_knowledge.json → unknown-dp-catalog + dp-shards; additive, never required at pairing"
+}
