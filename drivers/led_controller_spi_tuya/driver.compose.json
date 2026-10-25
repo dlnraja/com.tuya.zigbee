@@ -6,7 +6,12 @@
     "nl": "SPI pixel-LED-controller (Gledopto GL-SPI-206P)"
   },
   "class": "light",
-  "energy": { "approximation": { "usageOn": 15, "usageOff": 0.5 } },
+  "energy": {
+    "approximation": {
+      "usageOn": 15,
+      "usageOff": 0.5
+    }
+  },
   "platforms": [
     "local"
   ],
@@ -28,7 +33,8 @@
       "_TZE204_8fffc3kb",
       "_TZE284_gt5al3bl",
       "_tze204_8fffc3kb",
-      "_tze284_gt5al3bl"
+      "_tze284_gt5al3bl",
+      "_TZE28C1000000_gt5al3bl"
     ],
     "productId": [
       "TS0601"

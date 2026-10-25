@@ -6,7 +6,12 @@
     "de": "RGB LED Steuerung"
   },
   "class": "light",
-  "energy": { "approximation": { "usageOn": 15, "usageOff": 0.5 } },
+  "energy": {
+    "approximation": {
+      "usageOn": 15,
+      "usageOff": 0.5
+    }
+  },
   "capabilities": [
     "onoff",
     "dim",
@@ -25,7 +30,8 @@
       "_TZE284_bjoccxbi",
       "_tze284_bjoccxbi",
       "_TZE284_BJOCCXBI",
-      "_tze284_BJOCCXBI"
+      "_tze284_BJOCCXBI",
+      "_TZE204_zajeikkt"
     ],
     "productId": [
       "TS0503",
