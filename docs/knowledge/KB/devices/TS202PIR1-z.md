@@ -4,4 +4,4 @@
 
 | manufacturerName | upstream model | DPs (ZHA) | sources |
 |---|---|---|---|
-| `Tuya` |  |  | [ota@b050897](https://raw.githubusercontent.com/Koenkk/zigbee-OTA/master/images/pvvx/1141-0228-01403001-TS202PIR1.zigbee) |
+| `Tuya` |  |  | [ota@df5e8e1](https://raw.githubusercontent.com/Koenkk/zigbee-OTA/master/images/pvvx/1141-0228-01403001-TS202PIR1.zigbee) |

@@ -98,6 +98,12 @@ every mirror with the patterns and web queries in `data/leads/open-protocol-lead
 
 See also [CROSS_APP_METHODS.md](CROSS_APP_METHODS.md) and [METHOD_COVERAGE.md](METHOD_COVERAGE.md).
 
+## Harvest log
+
+- 2026-10-25: nothing new in diag mails, forum 140352/26439, project issues or the fetch-diags ledger. Sources gave one parsing rule
+  (signed int8 RSSI inside long raw Tuya blocks, make-all/tuya-local 0002e83, Wi-Fi) and one write-fallback idea (ESPHome PR #18525).
+  No decoder added: neither is confirmed for a Zigbee couple yet. Details: [UPSTREAM_DAILY_2026-10-25](../UPSTREAM_DAILY_2026-10-25.md).
+
 ## Credits
 
 Koenkk/zigbee2mqtt and zigbee-herdsman-converters (tuya.ts, fromZigbee), zigpy/zha-device-handlers (tuya quirks),
