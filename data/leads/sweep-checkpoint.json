@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-25T20:12:15.016Z",
+  "updated": "2026-10-25T20:45:10.693Z",
   "threads": {
     "21313": {
       "lastPost": 2819,
@@ -17111,7 +17111,7 @@
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 10
+        "sources": 11
       },
       "note": "Wi-Fi lead (queue item 4): EV charger charge-mode enum on DP14 (now / schedule / percentage / energy / delay) seen through Tuya Local; wifi_ev_charger has no mode picker for it yet.",
       "triagedAt": "2026-10-25T07:55:52.522Z",
