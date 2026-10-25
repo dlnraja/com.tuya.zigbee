@@ -1,0 +1,14 @@
+{
+  "task": "P3034",
+  "app_id": "com.dlnraja.tuya.zigbee",
+  "status": "running",
+  "updated_at": "2026-10-25T07:46:00+01:00",
+  "current_trial": 0,
+  "variable": "baseline: 10:00 routine upload of master tip (payload = 9.0.1597 content), CLI path",
+  "result": "pending",
+  "rules": "draft only, master app only, one variable per trial, one retry on socket hang up, never Test/Live promotion; 15:00 staged master routine sends nothing while status=running",
+  "trials": [
+    { "n": 0, "branch": "master", "variable": "baseline 10:00 routine", "upload_path": "cli", "result": "pending" }
+  ],
+  "next": { "n": 1, "branch": "bisect/1", "variable": "upload_path=direct-api-publish.js (same tip)" }
+}
