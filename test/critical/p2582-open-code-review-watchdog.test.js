@@ -66,7 +66,8 @@ describe('P2582/P2592 Open Code Review + radar watchdog OCR fixes', () => {
     const src = fs.readFileSync(path.join(ROOT, 'drivers/presence_sensor_radar/device.js'), 'utf8');
     assert.ok(src.includes('_clearStickyPresenceWatchdog'));
     assert.ok(src.includes('_presenceWatchdogTimer'));
-    assert.ok(src.includes('if (!this._lastDistanceAt) return'));
+    // P3034: P3025 eslint --fix (curly) wraps the early return in braces; both forms are the same guard.
+    assert.match(src, /if \(!this\._lastDistanceAt\) \{?\s*return;?\s*\}?/);
     assert.ok(!/age\s*=\s*.*:\s*Infinity/.test(src));
     assert.ok(/onDeleted[\s\S]*_clearStickyPresenceWatchdog/.test(src));
     assert.ok(/onUninit[\s\S]*_clearStickyPresenceWatchdog/.test(src));

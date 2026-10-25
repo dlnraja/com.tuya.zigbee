@@ -43,6 +43,7 @@ env:
   AI_FORCE_LOCAL: 'true'
   AI_ALLOW_REMOTE: 'false'
   AI_ALLOW_PAID: 'false'
+  GMAIL_DIAG_AI_MAX: '0' # P2542 forfait triple (gate tools/ci/p2542-local-auto-improve-gate.js)
 
 jobs:
   budget:
