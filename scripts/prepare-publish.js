@@ -800,6 +800,23 @@ try {
     process.exit(1);
   }
 
+  // 5d) P3047: last write of the payload JSON. Every non-ASCII char is written as \uXXXX
+  // (lossless, round trip checked), so app.json and the data files load as one-byte V8
+  // strings on Homey (half the parse heap; Bastien OOM in JsonParser<unsigned short>).
+  // Done here, not in the sources, so CI and enrichment writers keep readable UTF-8.
+  try {
+    const { asciiPublishPayload } = require('./maintenance/ascii-json.cjs');
+    const a = asciiPublishPayload(destDir);
+    console.log(`[P3047] ${a.files} JSON file(s) written as ASCII (app.json mode=${a.appJsonMode}, ${(a.appJsonBytes / 1048576).toFixed(2)} MB); parse text heap ${(a.textHeapBefore / 1048576).toFixed(2)} -> ${(a.textHeapAfter / 1048576).toFixed(2)} MB`);
+    if (a.appJsonBytes > 4 * 1024 * 1024) {
+      console.error('FATAL(P3047): app.json is larger than 4MB after ASCII escaping. Athom will reject.');
+      process.exit(1);
+    }
+  } catch (asciiErr) {
+    console.error('FATAL(P3047): ASCII JSON step failed:', asciiErr.message);
+    process.exit(1);
+  }
+
   // WHY(P2323): export absolute publish dir so the next CI step uses the same path
   // (avoids "Prepared publish directory is missing" when TMPDIR / runner env drifts).
   if (process.env.GITHUB_ENV) {
