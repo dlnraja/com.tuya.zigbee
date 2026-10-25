@@ -1753,6 +1753,18 @@
       "pid": "SmokeSensor-EF-3.0",
       "driverId": "smoke_detector_advanced",
       "note": "P2974 port of P2919: Homey interview on JohanBendz/com.tuya.zigbee #190 (forum 26439#2296)"
+    },
+    {
+      "mfr": "_TZ3000_bjawzodf",
+      "pid": "TY0201",
+      "driverId": "lcdtemphumidsensor",
+      "note": "P3038b 2026-10-25 Homey interview docs/data/interviews/TY0201__TZ3000_bjawzodf.json: LCD temp/humidity sensor; per-driver budget dropped it from the publish payload, so it paired on no driver (owner yes 25/10)"
+    },
+    {
+      "mfr": "_TZE200_yenbr4om",
+      "pid": "TS0601",
+      "driverId": "curtain_motor",
+      "note": "P3038b port of master P3037 (2dc7ff9ac3) 2026-10-25 GitHub #576 (migueleap): curtain module interview EP1 [0,4,5,61184], paired generic because compaction dropped the couple"
     }
   ]
 }
