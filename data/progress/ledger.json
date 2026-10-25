@@ -1,0 +1,21 @@
+{
+ "version": 1,
+ "updated": "2026-10-25T17:35:00.172Z",
+ "checkpoints": {
+  "journal": "docs/progress/JOURNAL.md"
+ },
+ "items": {
+  "p3044-golden-refresh-bastien-home": {
+   "status": "done",
+   "date": "2026-10-25",
+   "note": "golden refreshed; lost lines = P3038 wildcard drops + sourced moves; exact couples lost: 0; restored: 0; lead: byzdayie|TS0601 dual power_meter+energy_meter_din",
+   "by": "p3044"
+  },
+  "p3044b-p3038c-leads-resolved": {
+   "status": "done",
+   "date": "2026-10-25",
+   "note": "wjk6rurm x3 moved from P3038c leads to resolved (P3039a power_meter); test sub-case added",
+   "by": "p3044"
+  }
+ }
+}
