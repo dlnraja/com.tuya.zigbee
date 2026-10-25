@@ -8,6 +8,7 @@
 - **P3021c:** dedicated `switch_2gang_ts0002` driver for `_TZ3000_amal63is` + TS0002; power-vs-energy sanity check; ZG-102ZL contact default inverse; soil sensor DP guards.
 
 ### Fixed (2026-10-24/25)
+- **P3047 memory:** the published app.json and data files are now written as plain ASCII (other characters as `\uXXXX`, same content), so Homey reads them with half the memory. Follow-up to the Bastien out-of-memory crash.
 - **P3045 (#560, thanks artisare):** the EARU TRV06 (`_TZE200_rxq4iti9`) loses its phantom humidity for good, even when a stray value had been written, and it can no longer come back; the valve has no humidity sensor (Z2M definition). Its battery is a low-battery alarm only, because the firmware sends no percentage. Whole-degree readings are a firmware limit, confirmed by Z2M users.
 - **P3045 memory:** memory readings no longer crash the app when Homey refuses `process.memoryUsage()` (ENOENT); the memory guards fall back to V8 heap statistics instead of going blind.
 - **P3045 Flow cards:** looking up a Flow card that is missing from the build returns a harmless stand-in and logs once, so there is no more `invalid_flow_card_id` crash or log flood. No card was removed or renamed.

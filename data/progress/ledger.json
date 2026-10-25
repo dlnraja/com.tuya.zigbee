@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-25T18:32:18.910Z",
+ "updated": "2026-10-25T19:08:37.847Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -40625,6 +40625,12 @@
    "status": "done",
    "date": "2026-10-25",
    "note": "Per-device flow-id set clone (about 330 KB per device) replaced by one set per driver; Bastien OOM diag 097f1743; all 3 branches",
+   "by": "executor"
+  },
+  "task:p3047-ascii-json-payload": {
+   "status": "done",
+   "date": "2026-10-25",
+   "note": "prepare-publish writes every payload JSON as ASCII (\\uXXXX, round trip checked); app.json load text 6.50 -> 3.36 MB on master; all 3 branches",
    "by": "executor"
   },
   "task:pair-2uollq9d-ts011f": {
