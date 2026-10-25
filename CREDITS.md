@@ -369,3 +369,34 @@ Reporters of dlnraja/com.tuya.zigbee issues not credited elsewhere in this file.
 - **okidoki** — exact long-prefix mfr `_TZE2841000000_8se38w3c` seen on a climate sensor, [forum 140352 #2265](https://community.homey.app/t/140352/2265)
 - **@migueleap** — `_TZE200_yenbr4om` curtain module interview, GitHub #576
 - **Rick_D** — Device Watchdog idea: no "device lost" notice during the startup grace period and at most one per day, [forum 157537](https://community.homey.app/t/157537)
+
+## Thank you — the projects behind the coverage matrix (P3039, 2026-10-25)
+
+This app exists because many people documented Tuya devices long before we did, and shared it openly. The
+coverage matrix (`scripts/kb/z2m-coverage.js`, report `docs/knowledge/Z2M_COVERAGE.md`) reads only facts from
+their work: manufacturer + model identifiers, the capabilities a device offers and the Tuya datapoint numbers.
+Every couple keeps a link to where we found it. No code is copied; decoders are written in our own words.
+A heartfelt thank you to:
+
+- **Koenkk** and the hundreds of **Zigbee2MQTT / zigbee-herdsman-converters contributors**: the most complete
+  open map of Tuya devices there is, kept current almost daily. Most of what this app knows about Tuya
+  datapoints started from your work (MIT).
+- **The zigpy / ZHA team and the zha-device-handlers quirk authors**: careful, well-tested quirks that often
+  confirmed or corrected what we thought a device did (Apache-2.0).
+- **dresden elektronik and the deCONZ DDF contributors**: clear device description files that are a joy to read
+  (BSD-3-Clause).
+- **Johan Bendz** and everyone who contributed to the original **com.tuya.zigbee** Homey app and its forks:
+  this app grew out of yours, and your issue tracker is still where many users first report a new device.
+- **blakadder** and the contributors of the Zigbee device compatibility repository: the cross-platform
+  catalogue that answers "who else supports this?" in one page (MIT).
+- **kkossev (Krassimir Kossev)** and the Hubitat community drivers: patient, detailed reverse-engineering of
+  Tuya radars, TRVs and sensors, with fingerprints we could trust.
+- **The SmartThings Edge driver authors**, **Mariano Colmenarejo** in particular, and the SmartThings
+  Community drivers team.
+- **The ioBroker.zigbee maintainers**, the **Zigbee for Domoticz** team and the authors of the
+  **z4d-certified-devices** catalogue, and **arendst / the Tasmota Zigbee contributors** for the Zigbee
+  device templates.
+- Projects we read for the separate Wi-Fi/LAN matrix (leads only here): **make-all/tuya-local**,
+  **rospogrigio/localtuya** and its forks, **jasonacox/tinytuya** and the **ESPHome** community.
+- And every forum member and GitHub issue reporter who sent a fingerprint, a diagnostic or a "this works now":
+  you are listed by handle in the sections above, and new names are added with each batch.

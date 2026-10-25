@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-25T15:08:36.310Z",
+ "updated": "2026-10-25T15:34:40.966Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -39944,6 +39944,12 @@
    "status": "pending",
    "date": "2026-10-25",
    "note": "describe the items listed in docs/knowledge/KB/DOC_COVERAGE.md (report mode)"
+  },
+  "task:p3039-coverage-matrix": {
+   "status": "in_progress",
+   "date": "2026-10-25",
+   "note": "phase 1 matrix + adapters; phase 2 batches next",
+   "by": "p3039"
   },
   "task:pair-2uollq9d-ts011f": {
    "status": "pending",
