@@ -1885,6 +1885,12 @@
       "pid": "TS0601",
       "driverId": "water_valve_smart",
       "note": "P3037 2026-10-25 NEO sprinkler (Z2M neo.ts eb77ec10 L145-256); moved off climate_sensor, never shipped before"
+    },
+    {
+      "mfr": "_TZ3000_bjawzodf",
+      "pid": "TY0201",
+      "driverId": "lcdtemphumidsensor",
+      "note": "P3038b 2026-10-25 Homey interview docs/data/interviews/TY0201__TZ3000_bjawzodf.json: LCD temp/humidity sensor; per-driver budget dropped it from the publish payload, so it paired on no driver (owner yes 25/10)"
     }
   ]
 }
