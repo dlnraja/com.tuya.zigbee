@@ -173,3 +173,33 @@ describe('P3057 headroom: t561u phantom exemptions', () => {
     for (const e of ex) assert.ok(!(/^_tze2\d\d_/i.test(e.mfr) && lc(e.pid) === 'ts0601'), `${e.mfr}|${e.pid}`);
   });
 });
+
+describe('P3057 headroom: anti-bot gate reads the driver family', () => {
+  const { execFileSync, spawnSync } = require('child_process');
+  const os = require('os');
+  function tempRoot(withFamily) {
+    const t = fs.mkdtempSync(path.join(os.tmpdir(), 'p3057-ab-'));
+    for (const d of [PARENT, SIB]) {
+      fs.mkdirSync(path.join(t, 'drivers', d), { recursive: true });
+      fs.copyFileSync(path.join(ROOT, 'drivers', d, 'driver.compose.json'), path.join(t, 'drivers', d, 'driver.compose.json'));
+    }
+    if (withFamily) {
+      fs.mkdirSync(path.join(t, 'lib', 'utils'), { recursive: true });
+      fs.copyFileSync(path.join(ROOT, 'lib/utils/DriverFamily.js'), path.join(t, 'lib/utils/DriverFamily.js'));
+    }
+    return t;
+  }
+  const gate = path.join(ROOT, 'tools/ci/anti-bot-regression-gate.js');
+  it('REQUIRED radar names held by the sibling pass with the family map', () => {
+    const t = tempRoot(true);
+    try { execFileSync(process.execPath, [gate, '--root', t], { stdio: 'pipe' }); } finally { fs.rmSync(t, { recursive: true, force: true }); }
+  });
+  it('and would fail without it (the check is real)', () => {
+    const t = tempRoot(false);
+    try {
+      const r = spawnSync(process.execPath, [gate, '--root', t], { encoding: 'utf8' });
+      assert.notStrictEqual(r.status, 0);
+      assert.ok(/REQUIRED .*missing from drivers\/presence_sensor_radar/.test(r.stdout + r.stderr));
+    } finally { fs.rmSync(t, { recursive: true, force: true }); }
+  });
+});
