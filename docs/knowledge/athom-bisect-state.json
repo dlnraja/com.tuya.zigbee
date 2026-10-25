@@ -2,10 +2,10 @@
   "task": "P3034",
   "app_id": "com.dlnraja.tuya.zigbee",
   "status": "running",
-  "updated_at": "2026-10-25T08:30:00+01:00",
+  "updated_at": "2026-10-25T10:20:00+01:00",
   "current_trial": 0,
   "variable": "baseline: 10:00 routine upload of master tip (payload = 9.0.1597 content), CLI path",
-  "result": "pending",
+  "result": "trial 0 not sent (master red); awaiting new slot",
   "untagged_window": {
     "trial": 0,
     "from": "2026-10-25T09:45:00+01:00",
@@ -19,7 +19,8 @@
       "branch": "master",
       "variable": "baseline 10:00 routine",
       "upload_path": "cli",
-      "result": "pending"
+      "result": "not_sent",
+      "why": "10:00 one-shot routine pre-check: master tip f1b385212c red on CI gates (syntax-check TITAN pattern: lib/memory/CatalogStore.js JSON.parse(readFileSync utf8); orchestrator l99 gates: check-energy-divisor + flow-l99-orchestrator), runs 40147508176/40147508120 from 00:38 UTC; homey app validate --level publish OK locally, Node 22 tests + Homey App Validate green. Saved rule: no upload while master is red."
     }
   ],
   "next": {
