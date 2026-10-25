@@ -403,5 +403,8 @@ A heartfelt thank you to:
   **AutomatOn** (CH8Z) definitions, and the `tuya.ts` contributors for the **Tervix Pro Line X10** underfloor
   controller, the 3-channel bidirectional meter (`p3g8xiug`) and the TS0601 smoke sensor (`yh7aoahi`).
   Datapoints were reimplemented from your descriptions; no code copied.
+- Batch P3039d (class moves, one couple one driver): the `tuya.ts` contributors of the **DCR-CO** carbon monoxide
+  detector (`7bztmfm1`) and of the **AVATTO ME168** radiator valve (`cxakecfo`): thanks to your definitions these
+  devices now pair on a CO detector and a TRV driver instead of a plug and a contact sensor.
 - And every forum member and GitHub issue reporter who sent a fingerprint, a diagnostic or a "this works now":
   you are listed by handle in the sections above, and new names are added with each batch.
