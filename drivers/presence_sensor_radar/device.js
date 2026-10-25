@@ -133,6 +133,61 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
   /**
    * Cache the radar config lookup to avoid repeated calls.
    */
+  /** P3040b: true once the radar config comes from a resolved mfr (not the DEFAULT fallback). */
+  _radarConfigKnown() {
+    try {
+      const mfr = MfrHelper.getManufacturerName(this) || '';
+      const cfg = this._getRadarConfig() || {};
+      return !!mfr && !!cfg.configName && cfg.configName !== 'DEFAULT';
+    } catch (_e) { return false; }
+  }
+
+  /**
+   * WHY(P3040b, owner rule): a capability may only be removed from a radar when it is a phantom we
+   * added and that this radar can never feed, with the proof in code or a diag:
+   * - windowcoverings_* / dim: DynCap poison on a radar, never a radar feature (P2379/P2386/P2391, VicHY diags);
+   * - battery caps on a mains radar (P2511/P2599 VicHY #2252 OCR "Battery low" on mains MTG);
+   * - temperature/humidity when the resolved config states noTemperature/noHumidity, or a ceiling 24G;
+   * - zones/classification when the resolved config is single-zone;
+   * - onoff/button when the radar has no relay (P2595 GH#550 ceiling 24G).
+   * - a capability the driver does not declare, added at runtime by us, and never fed (value null;
+   *   Homey keeps the last value across restarts): nobody ever saw a value in it.
+   * Anything else (mostly: config not resolved yet and a value already shown) is kept inactive.
+   */
+  /** P3040b: runtime-added (not in compose) and never fed (null) => a phantom nobody saw a value in. */
+  _radarCapNeverFedRuntimeAdd(cap) {
+    try {
+      const declared = Array.isArray(this.driver?.manifest?.capabilities) && this.driver.manifest.capabilities.includes(cap);
+      if (declared || typeof this.getCapabilityValue !== 'function') {return false;}
+      const v = this.getCapabilityValue(cap);
+      return v === null || v === undefined;
+    } catch (_e) { return false; }
+  }
+
+  _radarStaleCapIsProvenPhantom(cap) {
+    try {
+      if (/^windowcoverings_/.test(cap) || cap === 'dim') {return true;}
+      if (this._radarCapNeverFedRuntimeAdd(cap)) {return true;}
+      const known = this._radarConfigKnown();
+      const cfg = this._getRadarConfig() || {};
+      const mfr = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
+      const isCeiling = /gkfbdvyx|laokfqwu|ya4ft0w4/.test(mfr) || cfg.configName === 'ZY_M100_CEILING_24G';
+      const mains = this.mainsPowered || MAINS_POWERED_RADARS.has(mfr) || MTG_RELAY_MFR_RE.test(mfr) || isCeiling;
+      if (cap === 'measure_battery' || cap === 'alarm_battery' || cap === 'tuya_battery_low') {
+        return !!mfr && (mains || (known && !!(cfg.noBatteryCapability || cfg.suppressBatteryCapability)));
+      }
+      if (cap === 'measure_temperature') {return isCeiling || (known && !!cfg.noTemperature);}
+      if (cap === 'measure_humidity') {return isCeiling || (known && !!cfg.noHumidity);}
+      if (/^alarm_motion\.zone|^measure_luminance\.distance\.zone|^measure_motion\.classification$/.test(cap)) {
+        return known && !cfg.hasMultiZone;
+      }
+      if (cap === 'onoff' || cap === 'button.1' || cap === 'button') {
+        return !!mfr && (isCeiling || (known && cfg.hasRelay === false) || (known && !cfg.hasRelay && !MTG_RELAY_MFR_RE.test(mfr)));
+      }
+      return false;
+    } catch (_e) { return false; }
+  }
+
   _getRadarConfig() {
     // WHY(P2391 / VicHY #2224): never freeze DEFAULT when mfr arrives late —
     // wrong cache can attach HOBEIAN battery DP121 → Homey "low battery" on mains MTG.
@@ -709,13 +764,18 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         phantoms.push('button.1', 'button', 'onoff');
       }
     }
-    if (cfg.noTemperature || isCeiling) {
+    // WHY(P3040b, owner rule "a less complete interview never removes a capability"): the
+    // config-dependent phantoms below are only proven once the radar config is resolved from the
+    // mfr. With an empty mfr (short interview, mfr late) the DEFAULT config has no noTemperature/
+    // hasMultiZone facts, so stripping zones there deleted what a multi-zone radar user saw.
+    const cfgKnown = this._radarConfigKnown();
+    if ((cfgKnown && cfg.noTemperature) || isCeiling) {
       phantoms.push('measure_temperature');
     }
-    if (cfg.noHumidity || isCeiling) {
+    if ((cfgKnown && cfg.noHumidity) || isCeiling) {
       phantoms.push('measure_humidity');
     }
-    if (!cfg.hasMultiZone) {
+    if (cfgKnown && !cfg.hasMultiZone) {
       phantoms.push(
         'alarm_motion.zone1',
         'alarm_motion.zone2',
@@ -1525,15 +1585,27 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       }
     }
 
+    // WHY(P3040b, owner rule): staleCaps used to be removed whenever the current config did not
+    // list them, so a radar whose mfr was not resolved yet (DEFAULT config) lost its battery,
+    // temperature, humidity or zones. Only a phantom proven for THIS radar goes now; the rest stay
+    // inactive. See _radarStaleCapIsProvenPhantom for each case.
     for (const cap of staleCaps) {
       if (this.hasCapability(cap) && !requiredCaps.has(cap)) {
+        if (!this._radarStaleCapIsProvenPhantom(cap)) {
+          this.log(`[RADAR] P3040b kept ${cap} inactive (not a proven phantom for this radar)`);
+          continue;
+        }
         await this.removeCapability(cap).catch(e => this.log(`[RADAR] Could not remove stale ${cap}: ${e.message}`));
       }
     }
 
     if (this.mainsPowered) {
       // P120 / P2472a: always strip phantom energy/climate caps on mains radars (clrdrnya / MTG075)
+      // WHY(P3040b): temperature/humidity only when the config says the radar has none (a mains
+      // radar whose dpMap feeds them keeps them: requiredCaps protects it).
       for (const phantom of ['measure_battery', 'alarm_battery', 'tuya_battery_low', 'measure_temperature', 'measure_humidity']) {
+        if (requiredCaps.has(phantom)) {continue;}
+        if (!this._radarStaleCapIsProvenPhantom(phantom)) {continue;}
         if (this.hasCapability(phantom)) {
           await this.removeCapability(phantom).catch(e => this.log(`[RADAR] Could not strip phantom ${phantom}: ${e.message}`));
         }

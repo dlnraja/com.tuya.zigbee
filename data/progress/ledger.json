@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-25T17:17:50.249Z",
+ "updated": "2026-10-25T17:23:25.536Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -11,15 +11,15 @@
  },
  "items": {
   "L-P3040-01": {
-   "status": "open",
+   "status": "done",
    "date": "2026-10-25",
-   "note": "water_valve_smart measure_battery stripped by mainsPowered plug base",
+   "note": "closed by P3040b",
    "by": "grok-bot"
   },
   "L-P3040-02": {
-   "status": "open",
+   "status": "done",
    "date": "2026-10-25",
-   "note": "CoupleGuard target drivers missing from driver-mapping-database.json (overlay no-op)",
+   "note": "closed by P3040b",
    "by": "grok-bot"
   },
   "L-P3040-03": {
@@ -29,9 +29,9 @@
    "by": "grok-bot"
   },
   "L-P3040-04": {
-   "status": "open",
+   "status": "done",
    "date": "2026-10-25",
-   "note": "curated cap removals motion/radar vs additive first-DP adaptation",
+   "note": "closed by P3040b",
    "by": "grok-bot"
   },
   "P3037": {
@@ -50,6 +50,12 @@
    "status": "done",
    "date": "2026-10-25",
    "note": "init TX pacer + pairing metrics + CoupleGuard exact driver/adapt/report once + motion_sensor init fixes",
+   "by": "grok-bot"
+  },
+  "P3040b": {
+   "status": "done",
+   "date": "2026-10-25",
+   "note": "water_valve battery per couple + 28 mapping profiles + no capability loss motion/radar (+ motion init fix port stable-v5/bastien-home)",
    "by": "grok-bot"
   },
   "autofix:auto-fix-and-publish|commit-fixes|p3025-appjson-drift": {
