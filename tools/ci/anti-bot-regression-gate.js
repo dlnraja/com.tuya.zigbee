@@ -31,6 +31,33 @@ function loadCompose(driverId) {
   return JSON.parse(fs.readFileSync(fp, 'utf8'));
 }
 
+// P3057: a combo-budget sibling (lib/utils/DriverFamily.js, e.g. presence_sensor_radar_ts0601) carries part
+// of its parent's names with the same runtime. REQUIRED / FORBIDDEN rules on the parent apply to the family.
+function familySiblings(driverId) {
+  try {
+    const { SIBLING_TO_PARENT } = require(path.join(ROOT, 'lib', 'utils', 'DriverFamily.js'));
+    return Object.keys(SIBLING_TO_PARENT).filter((s) => SIBLING_TO_PARENT[s] === driverId);
+  } catch {
+    return [];
+  }
+}
+
+function loadFamilyCompose(driverId) {
+  const base = loadCompose(driverId);
+  if (!base) return null;
+  const parts = [base, ...familySiblings(driverId).map(loadCompose).filter(Boolean)];
+  if (parts.length === 1) return base;
+  const z = (c, k) => (c.zigbee && c.zigbee[k]) || [];
+  return {
+    ...base,
+    zigbee: {
+      ...base.zigbee,
+      manufacturerName: parts.flatMap((c) => z(c, 'manufacturerName')),
+      productId: [...new Set(parts.flatMap((c) => z(c, 'productId')))],
+    },
+  };
+}
+
 function hasMfr(compose, mfr) {
   const list = (compose && compose.zigbee && compose.zigbee.manufacturerName) || [];
   return includesCI(list, mfr);
@@ -868,7 +895,7 @@ if (STRIP) {
 }
 
 for (const rule of FORBIDDEN) {
-  const compose = loadCompose(rule.driver);
+  const compose = loadFamilyCompose(rule.driver);
   if (!compose) {
     notes.push(`skip ${rule.id}: missing driver ${rule.driver}`);
     continue;
@@ -900,7 +927,7 @@ for (const rule of FORBIDDEN_PIDS) {
 }
 
 for (const rule of REQUIRED) {
-  const compose = loadCompose(rule.driver);
+  const compose = loadFamilyCompose(rule.driver);
   if (!compose) {
     // Stable may lack some master-only drivers — soft note, not fail
     notes.push(`skip required ${rule.id}: missing driver ${rule.driver}`);
