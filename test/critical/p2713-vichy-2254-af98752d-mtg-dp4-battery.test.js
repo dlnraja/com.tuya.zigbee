@@ -30,7 +30,8 @@ describe('P2713 VicHY #2254 af98752d MTG DP4/DP103 generic skip', () => {
     assert.match(src, /isPresenceRadarDriver && Number\(dp\) === 4/);
     assert.match(src, /Number\(dp\) === 103 && isMtgLuxFamily/);
     assert.match(src, /4:\s*isPresenceRadarDriver\s*\?\s*null\s*:\s*'measure_battery'/);
-    assert.match(src, /103:\s*\(isPresenceRadarDriver && isMtgLuxFamily\)\s*\?\s*null\s*:\s*'measure_luminance'/);
+    // P3034: P3025 eslint --fix (no-extra-parens) dropped the parens; && binds tighter than ?:, same logic.
+    assert.match(src, /103:\s*\(?isPresenceRadarDriver && isMtgLuxFamily\)?\s*\?\s*null\s*:\s*'measure_luminance'/);
   });
 
   it('MTG075 clrdrnya dpMap: DP4 setting detection_range, lux on DP104 not 103', () => {
