@@ -99,6 +99,37 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
     return this._neoCached;
   }
 
+  /**
+   * WHY(P3040b): UnifiedPlugBase declares every plug mains powered, so FirmwareQuirkCompensator and
+   * SmartBatteryManager stripped measure_battery (and set energy mains) on the battery families of this
+   * driver, although their DP maps carry a real battery value: NEO / Nous L14 DP11 % (4xAA, Z2M neo.ts),
+   * garden timers DP7, Zemismart 214C DP26 (lithium cell, Z2M TS0601_water_valve). Targeted per couple
+   * family: only these mfrs are battery; FrankEver FK and the METERED default stay mains (unchanged).
+   */
+  get isBatteryValve() {
+    try {
+      return !!(this.isNeoSprinkler || this.isGardenTimer || this.isZemismart214c);
+    } catch (_e) {
+      return false;
+    }
+  }
+
+  get mainsPowered() { return !this.isBatteryValve; }
+
+  /** WHY(P3040b): undo an earlier mains strip on battery families (energy + measure_battery), additive only. */
+  async _restoreBatteryValve() {
+    if (!this.isBatteryValve) {return false;}
+    try {
+      const energy = (typeof this.getEnergy === 'function' && this.getEnergy()) || {};
+      if (energy.mains === true || !Array.isArray(energy.batteries) || !energy.batteries.length) {
+        const batteries = this.driver?.manifest?.energy?.batteries || ['AA'];
+        if (typeof this.setEnergy === 'function') {await this.setEnergy({ batteries }).catch(() => {});}
+      }
+    } catch (_e) { /* soft */ }
+    if (!this.hasCapability('measure_battery')) {await this.addCapability('measure_battery').catch(() => {});}
+    return true;
+  }
+
   get isNeoLitreModel() {
     const mfr = this.getSetting('zb_manufacturer_name') || this.getData?.()?.manufacturerName || '';
     return NEO_LITRE_MFRS.some((m) => containsCI(mfr, m));
@@ -225,6 +256,8 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
         forcePureTuyaDp(this, { force: true });
         this.log('[WATER-VALVE] P2864 Zemismart 214C EF00-only — pure Tuya DP (valve = DP13)');
       }
+      // P3040b: before the base init, so SmartBatteryManager sees a battery device (no new strip)
+      if (this.isBatteryValve) {await this._restoreBatteryValve();}
       await super.onNodeInit({ zclNode });
       try {
         const mgr = this.tuyaEF00Manager || this._tuyaEF00Manager;
