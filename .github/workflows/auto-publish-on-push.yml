@@ -27,6 +27,10 @@ on:
         description: 'One-shot retry of held driver id(s) from config/publish-hold-drivers.json (comma separated; config unchanged). One id per dispatch for a bisect.'
         type: string
         default: ''
+      bisect_trial:
+        description: 'P3034: bisect trial number (manual trial run). Required to upload/promote master while docs/knowledge/athom-bisect-state.json status=running'
+        type: string
+        default: ''
       transient_retry:
         description: 'Internal: retries already done in this chain (true=1); AggregateError max 2, transport max 1'
         type: string
@@ -73,6 +77,8 @@ jobs:
     timeout-minutes: 10
     outputs:
       skip: ${{ steps.b.outputs.skip }}
+      bisect_hold_upload: ${{ steps.bh.outputs.hold_upload }}
+      bisect_hold_promote: ${{ steps.bh.outputs.hold_promote }}
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
         with:
@@ -94,12 +100,20 @@ jobs:
         run: |
           node scripts/ci/homey-build-status.js com.dlnraja.tuya.zigbee >/dev/null 2>&1 || true
           node .github/scripts/master-publish-breaker.js com.dlnraja.tuya.zigbee
+      # P3034: while an Athom bisect runs (docs/knowledge/athom-bisect-state.json status=running) push and
+      # self-heal runs must not upload or promote master; a manual dispatch with bisect_trial uploads a draft only.
+      - name: P3034 bisect hold
+        id: bh
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          BISECT_TRIAL: ${{ github.event.inputs.bisect_trial || '' }}
+        run: node .github/scripts/bisect-hold.js
 
   publish:
     name: Validate & Auto-Publish to Homey App Store
     needs: breaker
     # WHY(P2384): workflow_dispatch must run even when tip commit is [skip ci]
-    if: ${{ needs.breaker.outputs.skip != 'true' && (github.event_name == 'workflow_dispatch' || !contains(github.event.head_commit.message, '[skip ci]')) }}
+    if: ${{ needs.breaker.outputs.skip != 'true' && needs.breaker.outputs.bisect_hold_upload != 'true' && (github.event_name == 'workflow_dispatch' || !contains(github.event.head_commit.message, '[skip ci]')) }}
     runs-on: ubuntu-latest
     timeout-minutes: 45
     # v9.0.287 (P74): Bumped publish-size limits to 50 MB. With .homeyignore
@@ -551,12 +565,12 @@ jobs:
       # WHY(2026-10-11): transient retry moved into the final Athom gate (run 38099611305 decided at
       # 00:51 on an empty state; the failure #3513 landed at 00:58). Decide only on the final state.
       - name: Install Puppeteer (draft → test promotion)
-        if: steps.check_pat.outputs.has_pat == 'true'
+        if: steps.check_pat.outputs.has_pat == 'true' && needs.breaker.outputs.bisect_hold_promote != 'true'
         continue-on-error: true
         run: npm install puppeteer athom-api --no-save
 
       - name: "Tier 1: Promote via Browser"
-        if: steps.check_pat.outputs.has_pat == 'true' && steps.waitdraft.outputs.athom_failed != 'true'
+        if: steps.check_pat.outputs.has_pat == 'true' && steps.waitdraft.outputs.athom_failed != 'true' && needs.breaker.outputs.bisect_hold_promote != 'true'
         id: promote_puppeteer
         continue-on-error: true
         timeout-minutes: 5
@@ -568,7 +582,7 @@ jobs:
 
       - name: "Tier 2: Promote via OAuth"
         id: promote_oauth
-        if: steps.check_pat.outputs.has_pat == 'true' && steps.promote_puppeteer.outcome != 'success' && steps.waitdraft.outputs.athom_failed != 'true'
+        if: steps.check_pat.outputs.has_pat == 'true' && steps.promote_puppeteer.outcome != 'success' && steps.waitdraft.outputs.athom_failed != 'true' && needs.breaker.outputs.bisect_hold_promote != 'true'
         continue-on-error: true
         timeout-minutes: 5
         env:
@@ -580,7 +594,7 @@ jobs:
 
       - name: "Tier 3: Promote via PAT API"
         id: promote_api
-        if: steps.check_pat.outputs.has_pat == 'true' && steps.promote_puppeteer.outcome != 'success' && steps.promote_oauth.outcome != 'success' && steps.waitdraft.outputs.athom_failed != 'true'
+        if: steps.check_pat.outputs.has_pat == 'true' && steps.promote_puppeteer.outcome != 'success' && steps.promote_oauth.outcome != 'success' && steps.waitdraft.outputs.athom_failed != 'true' && needs.breaker.outputs.bisect_hold_promote != 'true'
         continue-on-error: true
         timeout-minutes: 5
         env:

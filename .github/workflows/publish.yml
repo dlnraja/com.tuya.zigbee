@@ -22,6 +22,10 @@ on:
         required: false
         default: 'false'
         description: "Internal: set by the one-shot transient retry (socket hang up / S3 key missing)"
+      bisect_trial:
+        description: 'P3034: bisect trial number (manual trial run). Required to upload/promote master while docs/knowledge/athom-bisect-state.json status=running'
+        type: string
+        default: ''
 permissions:
   contents: write
   actions: write
@@ -132,8 +136,33 @@ jobs:
         with:
           level: publish
 
+  # P3034: no master upload/promotion while an Athom bisect runs, except a manual dispatch with bisect_trial.
+  bisect-hold:
+    name: "P3034 bisect hold"
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      hold_upload: ${{ steps.bh.outputs.hold_upload }}
+      hold_promote: ${{ steps.bh.outputs.hold_promote }}
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          fetch-depth: 1
+          sparse-checkout: |
+            .github/scripts/bisect-hold.js
+            docs/knowledge/athom-bisect-state.json
+            .homeycompose/app.json
+          sparse-checkout-cone-mode: false
+      - name: P3034 bisect hold
+        id: bh
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          BISECT_TRIAL: ${{ github.event.inputs.bisect_trial || '' }}
+        run: node .github/scripts/bisect-hold.js
+
   version-and-publish:
-    needs: validate
+    needs: [validate, bisect-hold]
+    if: needs.bisect-hold.outputs.hold_upload != 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 60 # WHY(2026-10-11): idle wait + draft wait + final gate; 15 cancelled G1 run 38102492164
     steps:
@@ -299,12 +328,12 @@ jobs:
           sleep 120
 
       - name: Install Puppeteer
-        if: steps.pat.outputs.ok == 'true'
+        if: steps.pat.outputs.ok == 'true' && needs.bisect-hold.outputs.hold_promote != 'true'
         continue-on-error: true
         run: npm install puppeteer athom-api --no-save
 
       - name: "Tier 1: Promote via Browser (Puppeteer)"
-        if: steps.pat.outputs.ok == 'true'
+        if: steps.pat.outputs.ok == 'true' && needs.bisect-hold.outputs.hold_promote != 'true'
         id: promote_puppeteer
         continue-on-error: true
         timeout-minutes: 5
@@ -315,7 +344,7 @@ jobs:
         run: node .github/scripts/auto-promote-puppeteer.js
 
       - name: "Tier 2: Promote via OAuth (headless)"
-        if: steps.pat.outputs.ok == 'true' && steps.promote_puppeteer.outcome != 'success'
+        if: steps.pat.outputs.ok == 'true' && steps.promote_puppeteer.outcome != 'success' && needs.bisect-hold.outputs.hold_promote != 'true'
         id: promote_oauth
         continue-on-error: true
         timeout-minutes: 3
@@ -327,7 +356,7 @@ jobs:
         run: node .github/scripts/auto-promote-oauth.js
 
       - name: "Tier 3: Promote via API (PAT fallback)"
-        if: steps.pat.outputs.ok == 'true' && steps.promote_puppeteer.outcome != 'success' && steps.promote_oauth.outcome != 'success'
+        if: steps.pat.outputs.ok == 'true' && steps.promote_puppeteer.outcome != 'success' && steps.promote_oauth.outcome != 'success' && needs.bisect-hold.outputs.hold_promote != 'true'
         id: promote_api
         continue-on-error: true
         env:

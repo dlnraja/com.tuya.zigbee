@@ -16,6 +16,11 @@ on:
   schedule:
     - cron: '5 */6 * * *'  # Every 6 hours
   workflow_dispatch:
+    inputs:
+      bisect_trial:
+        description: 'P3034: bisect trial number (manual trial run). Required to upload/promote master while docs/knowledge/athom-bisect-state.json status=running'
+        type: string
+        default: ''
 
 defaults:
   run:
@@ -294,6 +299,21 @@ jobs:
             echo "trigger_publish=false" >> "$GITHUB_ENV"
           fi
 
+      # P3034: while docs/knowledge/athom-bisect-state.json says status=running, keep every auto-fix/commit step
+      # but never bump or upload master (it would add an uncontrolled sample to the bisect). Manual trials:
+      # workflow_dispatch with an explicit bisect_trial input. Other apps (stable-v5) are not affected.
+      - name: ⏸️ P3034 bisect hold (no master upload while a bisect runs)
+        id: bisect_hold
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          BISECT_TRIAL: ${{ github.event.inputs.bisect_trial || '' }}
+        run: |
+          out=$(node .github/scripts/bisect-hold.js); echo "$out"
+          if printf '%s' "$out" | grep -q 'hold_upload=true'; then
+            echo "publish_recovery_requires_bump=false" >> "$GITHUB_ENV"
+            echo "trigger_publish=false" >> "$GITHUB_ENV"
+          fi
+
       - name: 🔁 Bump version for Homey recovery publish
         # P139: only bump when recovery checker says so — never on bare
         # workflow_dispatch (that caused patch spam on socket hang up).
@@ -405,7 +425,7 @@ jobs:
       # WHY(2026-10-11): invalid_state when another build of this app was still processing. Bounded wait
       # for Athom to finish the previous build before uploading (read-only, never fails the job).
       - name: Wait for Athom idle (previous build final)
-        if: env.trigger_publish == 'true' && github.ref_name != 'stable-v5'
+        if: env.trigger_publish == 'true' && github.ref_name != 'stable-v5' && steps.bisect_hold.outputs.hold_upload != 'true'
         continue-on-error: true
         timeout-minutes: 25
         env:
@@ -416,7 +436,7 @@ jobs:
         # P193/P217/P2385: never Homey-publish 5.12 from this workflow while master 9.0 soaks.
         # Publish ONLY when recovery gate set trigger_publish=true — bare workflow_dispatch
         # must NOT bypass P139 (that spam-bumped on socket hang up).
-        if: env.trigger_publish == 'true' && github.ref_name != 'stable-v5'
+        if: env.trigger_publish == 'true' && github.ref_name != 'stable-v5' && steps.bisect_hold.outputs.hold_upload != 'true'
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
           # P138: Match workflow-level 50 MB (prepared dir ~37 MB uncompressed).
