@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-25T17:35:00.101Z",
+ "updated": "2026-10-25T18:14:10.310Z",
  "checkpoints": {
   "journal": "docs/progress/JOURNAL.md"
  },
@@ -10,6 +10,12 @@
    "date": "2026-10-25",
    "note": "golden refreshed; lost lines = P3038 wildcard drops + sourced moves; exact couples lost: 0; restored: 0",
    "by": "p3044"
+  },
+  "task:p3045-corrige-tout": {
+   "status": "done",
+   "date": "2026-10-25",
+   "note": "memwarn ENOENT fallback, safeFlowCard guard (stable port)",
+   "by": "p3045"
   }
  }
 }

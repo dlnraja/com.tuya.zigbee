@@ -1,5 +1,6 @@
 'use strict';
 
+const { safeFlowCard } = require('../../lib/flow/FlowCardPresence');
 const { CLUSTER } = require('zigbee-clusters');
 const { Cluster } = require('zigbee-clusters');
 const TuyaSpecificCluster = require('../../lib/TuyaSpecificCluster');
@@ -256,7 +257,7 @@ class SRZSSwitch extends TuyaSpecificClusterDevice {
      */
       async registerActionCards() {
         // Register configurable switch action
-        this.homey.flow.getActionCard('set_switch_state')
+        safeFlowCard(this.homey, 'getActionCard', 'set_switch_state')
             .registerRunListener(async (args) => {
                 const switchId = args.switch;
                 const state = args.state === 'true';
@@ -281,7 +282,7 @@ class SRZSSwitch extends TuyaSpecificClusterDevice {
      */
     async registerConditionCards() {
         // Register configurable switch condition
-        this.homey.flow.getConditionCard('switch_is')
+        safeFlowCard(this.homey, 'getConditionCard', 'switch_is')
             .registerRunListener(async (args, state) => {
                 const switchId = args.switch;
                 return ((args && args.device) || this).getCapabilityValue(`onoff_${switchId}`);
@@ -293,13 +294,13 @@ class SRZSSwitch extends TuyaSpecificClusterDevice {
      */
     async registerTriggerCards() {
         // Register configurable switch trigger
-        this._switchTrigger = this.homey.flow.getDeviceTriggerCard('switch_state_changed');
+        this._switchTrigger = safeFlowCard(this.homey, 'getDeviceTriggerCard', 'switch_state_changed');
         this._switchTrigger.registerRunListener(async (args, state) => {
             return args.switch === state.switch && args.state === state.state.toString();
         });
 
         // Register configurable scene trigger
-        this._sceneTrigger = this.homey.flow.getDeviceTriggerCard('scene_triggered_configurable');
+        this._sceneTrigger = safeFlowCard(this.homey, 'getDeviceTriggerCard', 'scene_triggered_configurable');
         this._sceneTrigger.registerRunListener(async (args, state) => {
             return args.scene === state.scene;
         });

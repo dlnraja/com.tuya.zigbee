@@ -1,5 +1,6 @@
 'use strict';
 
+const { safeFlowCard } = require('../../lib/flow/FlowCardPresence');
 const { debug, Cluster } = require('zigbee-clusters');
 const TuyaSpecificCluster = require('../../lib/TuyaSpecificCluster');
 const TuyaSpecificClusterDevice = require("../../lib/TuyaSpecificClusterDevice");
@@ -24,7 +25,7 @@ class radarSensor2 extends TuyaSpecificClusterDevice {
     this.enableDebug(); */
 
     // Initialize the flow card for target distance changes
-    this.targetDistanceTrigger = this.homey.flow.getDeviceTriggerCard('radar_sensor_2_target_distance_changed');
+    this.targetDistanceTrigger = safeFlowCard(this.homey, 'getDeviceTriggerCard', 'radar_sensor_2_target_distance_changed');
 
     // Read and log device attributes
     await this._readDeviceAttributes(zclNode);

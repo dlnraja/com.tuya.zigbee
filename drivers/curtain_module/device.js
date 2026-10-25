@@ -1,3 +1,4 @@
+const { safeFlowCard } = require('../../lib/flow/FlowCardPresence');
 "use strict";
 
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
@@ -116,14 +117,14 @@ class curtain_module extends TuyaZigbeeDevice {
             await this.setSettings({ reverse: attrs.motorReversal === 'On' });
         }    
 
-        const moveOpen = this.homey.flow.getActionCard("move_open");
+        const moveOpen = safeFlowCard(this.homey, 'getActionCard', 'move_open');
         // WHY: listener is shared by all devices of this driver (last registration wins) — act on the Flow's device, not the registering one.
         moveOpen.registerRunListener(async (args, state) => {
             const dev = (args && args.device) || this;
             await dev.zclNode.endpoints[1].clusters.windowCovering[UP_OPEN]();
         });
 
-        const moveClose = this.homey.flow.getActionCard("move_close");
+        const moveClose = safeFlowCard(this.homey, 'getActionCard', 'move_close');
         moveClose.registerRunListener(async (args, state) => {
             const dev = (args && args.device) || this;
             await dev.zclNode.endpoints[1].clusters.windowCovering[DOWN_CLOSE]();

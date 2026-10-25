@@ -2,6 +2,7 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 'use strict';
 
+const { safeFlowCard } = require('../../lib/flow/FlowCardPresence');
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 
@@ -15,7 +16,7 @@ class wall_remote_4_gang_2 extends UnifiedSwitchBase {
     await this._safeInvoke(async () => { this.log('🎨 Initializing 4 Gang Wall Remote (Type 2)...');
       // Call parent to setup raw frame fallbacks
       await super.onNodeInit({ zclNode  });
-      this._buttonPressedTriggerDevice = this.homey.flow.getDeviceTriggerCard('wall_remote_4_gang_buttons_2');
+      this._buttonPressedTriggerDevice = safeFlowCard(this.homey, 'getDeviceTriggerCard', 'wall_remote_4_gang_buttons_2');
       if (this._buttonPressedTriggerDevice) {
       this._buttonPressedTriggerDevice.registerRunListener(async (args, state) => {
       return args.button === state.button;

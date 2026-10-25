@@ -1,5 +1,6 @@
 'use strict';
 
+const { safeFlowCard } = require('../../lib/flow/FlowCardPresence');
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 let IRCodeLibrary;
 try { IRCodeLibrary = require('../../lib/ir/IRCodeLibrary'); } catch (e) { IRCodeLibrary = null; }
@@ -283,10 +284,10 @@ async onInit() {
         'Back': 'tv_back'
       };
       const card = (typeof this.homey.flow.getActionCard === 'function'
-        ? this.homey.flow.getActionCard('ir_blaster_send_tv_command')
+        ? safeFlowCard(this.homey, 'getActionCard', 'ir_blaster_send_tv_command')
         : null)
         || (typeof this.homey.flow.getDeviceActionCard === 'function'
-          ? this.homey.flow.getDeviceActionCard('ir_blaster_send_tv_command')
+          ? safeFlowCard(this.homey, 'getDeviceActionCard', 'ir_blaster_send_tv_command')
           : null);
       if (!card || typeof card.registerRunListener !== 'function') {
         this.log('[TV] ir_blaster_send_tv_command card unavailable');

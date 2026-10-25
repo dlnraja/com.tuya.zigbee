@@ -273,7 +273,12 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
                 return raw.apply(flow, args);
               }
             } catch (e) {
-              this.log('[FLOW-GUARD]', m, '→', altName, args[0], e.message);
+              // P3045: sibling-path misses are logged once per card id too (was once per event).
+              const sk = `${m}>${altName}:${args[0]}`;
+              if (!missingLogged.has(sk)) {
+                missingLogged.add(sk);
+                this.log('[FLOW-GUARD]', m, '→', altName, args[0], e.message, '(logged once)');
+              }
               return noopCard;
             }
           }
