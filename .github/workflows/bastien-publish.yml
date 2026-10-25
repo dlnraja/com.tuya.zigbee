@@ -16,6 +16,14 @@ on:
         description: 'Force Athom createBuild even if soft-expect would skip'
         type: boolean
         default: true
+      deferred_retry:
+        description: 'Internal (P3036): next-slot dispatch from master publish-self-heal after a held upload'
+        type: string
+        default: ''
+      override_spacing:
+        description: 'P3036 manual only: bypass the spacing / 24 h cap (green CI is still required)'
+        type: boolean
+        default: false
   push:
     branches:
       - bastien-home
@@ -47,8 +55,9 @@ permissions:
   actions: read
 
 concurrency:
-  # P139/P2696: shared Athom API mutex with master + stable (Gmail socket hang flood).
-  group: athom-developer-api-publish
+  # P139/P2696 then P3036: one lock per app (athom-publish-bastien), the group master's draft-to-test /
+  # verified-publish already use for Bastien. Spacing between apps comes from the P3036 gate.
+  group: athom-publish-bastien
   cancel-in-progress: false
 
 defaults:
@@ -83,8 +92,55 @@ env:
   LOCAL_ENERGY_LEARN: 'true'
 
 jobs:
+  # P3036: green CI + spacing + busy gate before any Athom upload (docs/knowledge/P3036_ATHOM_PUBLISH_POLICY.md on master).
+  # Never uploads. A hold leaves an athom-deferred-bastien-<run> marker; master publish-self-heal re-dispatches at the next slot.
+  p3036-gate:
+    name: "P3036 Athom publish gate"
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: read
+      actions: write
+    outputs:
+      go: ${{ steps.gate.outputs.go }}
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          ref: bastien-home
+          fetch-depth: 1
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '22'
+      - name: Install dependencies (read-only build snapshot)
+        run: npm ci --prefer-offline --no-audit --ignore-scripts || npm install --ignore-scripts
+      - name: Commit to gate (the checked-out branch head)
+        id: head
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: P3036 publish gate (green CI + spacing + busy)
+        id: gate
+        uses: ./.github/actions/athom-publish-gate
+        with:
+          app_id: com.dlnraja.tuya.zigbee.bastien
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          homey_pat: ${{ secrets.HOMEY_PAT }}
+          deferred_retry: ${{ github.event.inputs.deferred_retry || '' }}
+          override_spacing: ${{ github.event.inputs.override_spacing || '' }}
+          sha: ${{ steps.head.outputs.sha }}
+          wait_ms: '2400000'
+      - name: P3036 deferred marker (retry at the next slot)
+        if: steps.gate.outputs.go == 'false' && steps.gate.outputs.deferred == 'true'
+        continue-on-error: true
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0 (node24, P3025b)
+        with:
+          name: athom-deferred-bastien-${{ github.run_id }}
+          path: data/status/athom-publish-gate-com.dlnraja.tuya.zigbee.bastien.json
+          if-no-files-found: ignore
+          retention-days: 3
+
   publish-bastien:
     name: Publish Bastien house app
+    needs: p3036-gate
+    if: needs.p3036-gate.outputs.go == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 75  # idle wait (≤25) + publish + draft + final gate (≤15), like master 516c83444c
     permissions:

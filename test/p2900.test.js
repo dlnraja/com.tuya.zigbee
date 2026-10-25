@@ -11,23 +11,23 @@ const pol = require('../.github/scripts/athom-retry-policy');
 describe('P2900 GHA hardening', () => {
   it('policy file is byte-identical on master, stable-v5 and bastien-home', () => {
     const h = crypto.createHash('sha256').update(fs.readFileSync(path.join(root, '.github/scripts/athom-retry-policy.js'))).digest('hex');
-    assert.strictEqual(h, 'fb28d2e24a5b4bf7a7972d3fc24e8460ae7fb70ff57b5782d3fcfaef8aa4fd48', 'edit athom-retry-policy.js on all three branches together and update this hash');
+    assert.strictEqual(h, 'd357cf061d2ced203b1a72c58f4396cbdaa34b06a03efbcfeecb00021cd14888', 'edit athom-retry-policy.js on all three branches together and update this hash');
   });
-  it('backoff is exponential, capped and jittered', () => {
-    assert.strictEqual(pol.backoffSeconds(1, () => 0), 60);
-    assert.strictEqual(pol.backoffSeconds(2, () => 0), 120);
-    assert.strictEqual(pol.backoffSeconds(9, () => 0), 240);
-    assert.strictEqual(pol.backoffSeconds(1, () => 0.999), 89);
+  it('backoff is >= 5 min and jittered (P3036, was 60/120/240 s)', () => {
+    assert.strictEqual(pol.backoffSeconds(1, () => 0), 300);
+    assert.strictEqual(pol.backoffSeconds(2, () => 0), 300);
+    assert.strictEqual(pol.backoffSeconds(9, () => 0), 300);
+    assert.strictEqual(pol.backoffSeconds(1, () => 0.999), 360);
   });
   it('classifies and budgets failures', () => {
     assert.strictEqual(pol.classify('Error: socket hang up'), 'socket hang up');
     assert.strictEqual(pol.classify('AggregateError [x]'), 'AggregateError');
     assert.strictEqual(pol.classify('invalid_state'), 'invalid_state');
     assert.strictEqual(pol.classify('bad driver compose'), 'unknown');
-    assert.ok(pol.shouldRetry('socket hang up', 1));
-    assert.ok(pol.shouldRetry('socket hang up', 3)); // P2924: hang-up budget 4
-    assert.ok(!pol.shouldRetry('socket hang up', 4));
-    assert.ok(!pol.shouldRetry('transient', 2));
+    assert.ok(pol.shouldRetry('socket hang up', 0));
+    assert.ok(!pol.shouldRetry('socket hang up', 1)); // P3036: exactly one retry (was 4, P2924)
+    assert.ok(!pol.shouldRetry('transient', 1));
+    assert.ok(!pol.shouldRetry('AggregateError', 0)); // P3036: real failure, no retry
     assert.ok(!pol.shouldRetry('unknown', 0));
     assert.ok(!pol.shouldRetry('invalid_state', 0, { idleWaited: false }));
   });
