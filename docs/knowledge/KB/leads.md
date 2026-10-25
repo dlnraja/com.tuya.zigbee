@@ -1,7 +1,7 @@
 # Open leads
 
 - Provisional tier: 1 (data/leads/provisional-couples.json)
-- KB candidates not yet in a driver: 216 with a reliable source (conf 0.85–0.9), 96 single weak source (conf ≤0.7). Staged, not applied (manifest-size hold).
+- KB candidates not yet in a driver: 205 with a reliable source (conf 0.85–0.9), 96 single weak source (conf ≤0.7). Staged, not applied (manifest-size hold).
 
 | mfr | pid | status | conf | source |
 |---|---|---|---|---|
@@ -31,7 +31,6 @@
 | `_TYST11_fzo2pocs` | zo2pocs\u0000 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/TS0601_cover_1.html |
 | `_TYST11_hhrtiq0x` | hrtiq0x | kb-confirmed | 0.9 | https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/tuya/_TZE200_TYST11_trv.json |
 | `_TYST11_i5j6ifxj` | 5j6ifxj | kb-confirmed | 0.9 | https://github.com/zigpy/zha-device-handlers/blob/1d6598c32a8b4f054438f63f08fc36ff3d6b4930/zhaquirks/tuya/tuya_motion.py |
-| `_TYST11_jeaxp72v` | eaxp72v | kb-confirmed | 0.9 | https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/tuya/_TZE200_TYST11_trv.json |
 | `_TYST11_kfvq6avy` | fvq6avy | kb-confirmed | 0.9 | https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/tuya/_TZE200_TYST11_trv.json |
 | `_TYST11_owwdxjbx` | wwdxjbx | kb-confirmed | 0.9 | https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/tuya/_TZE200_TYST11_trv.json |
 | `_TYST11_pisltm67` | isltm67\u0000 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/S-LUX-ZB.html |
@@ -56,7 +55,6 @@
 | `_TYZB01_z2umiwvq` | SM0202 | kb-confirmed | 0.9 | https://github.com/zigpy/zha-device-handlers/blob/1d6598c32a8b4f054438f63f08fc36ff3d6b4930/zhaquirks/tuya/sm0202_motion.py |
 | `_TZ1800_akzvkzqq` | TS0211 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/HG06668.html |
 | `_TZ1800_ho6i0zk9` | TY0203 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/HG06336.html |
-| `_TZ3000_5af5r192` | TS0049 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/ZWV-YC.html |
 | `_TZ3000_5nrcorgu` | TS0201 | kb-confirmed | 0.9 | https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/tuya/_TZ3000_TS0201_temp_hum_sensor.json |
 | `_TZ3000_abaplimj` | TS0207 | kb-confirmed | 0.9 | https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/tuya/_TZ3000_TS0207_water_leak_sensor.json |
 | `_TZ3000_amis43tj` | TS0207 | kb-confirmed | 0.9 | https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/tuya/_TZ3000_TS0207_water_leak_sensor.json |
@@ -81,7 +79,6 @@
 | `_TZ3000_oh7jddmx` | TS0502A | kb-confirmed | 0.9 | https://github.com/zigpy/zha-device-handlers/blob/1d6598c32a8b4f054438f63f08fc36ff3d6b4930/zhaquirks/lidl/cct.py |
 | `_TZ3000_piuensvr` | TS0207 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/CK-BL702-ROUTER-01(7018).html |
 | `_TZ3000_v4mevirn` | TS011F | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/ZIGBEE-B09-UK.html |
-| `_TZ3000_w5s3mbyn` | TS0001 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/KES-606US-L1.html |
 | `_TZ3000_wbfgbpxq` | TS0044 | kb-confirmed | 0.9 | https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/tuya/_TZ3000_TS0044_4gang_remote.json |
 | `_TZ3000_wc3gjyp3` | TS004F | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/ERS-10TZBVB-AA.html |
 | `_TZ3000_xdo0hj1k` | TS130F | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/TS130F_dual.html |
@@ -123,13 +120,12 @@
 | `_TZE200_bq5c8xfe` | TS0202 | kb-confirmed | 0.9 | https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/tuya/ts0202_presence_sensor.json |
 | `_TZE200_d2nady2a` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/ST001.html |
 | `_TZE200_f1pvdgoh` | \u0000B | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/TS0601_pir.html |
-| `_TZE200_gt1gge3x` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/ZG-223Z.html |
 | `_TZE200_htnnfasr` | TS0601 | kb-confirmed | 0.9 | https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/lidl/hg06875.json |
 | `_TZE200_lq0ffndf` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/MG-GPO02Z.html |
 | `_TZE200_ops9sidw` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/MW833P.html |
 | `_TZE200_ra6wrlgv` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/ERC2206-Z.html |
 | `_TZE200_rt5dklro` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/WKE502Z.html |
-| `_TZE200_xnwxmj8z` | TS0601 | kb-confirmed | 0.9 | https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/makegood.ts#L413 |
+| `_TZE200_xnwxmj8z` | TS0601 | kb-confirmed | 0.9 | https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/makegood.ts#L413 |
 | `_TZE200_yh7aoahi` | TS0601 | kb-confirmed | 0.9 | https://github.com/JohanBendz/com.tuya.zigbee/blob/328d24ed315131528f2358b66bb0b8259615a49e/drivers/smoke_sensor2/driver.compose.json |
 | `_TZE200_yp5tsi3y` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/EWS1154-Z.html |
 | `_TZE204_08qc13ct` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/ZMS-206US-4.html |
@@ -138,7 +134,6 @@
 | `_TZE204_7ytb3h8u` | TS0601 | kb-confirmed | 0.9 | https://github.com/zigpy/zha-device-handlers/blob/1d6598c32a8b4f054438f63f08fc36ff3d6b4930/zhaquirks/tuya/tuya_valve.py |
 | `_TZE204_agjqiu4h` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/D4Z-M.html |
 | `_TZE204_d2nady2a` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/ST001.html |
-| `_TZE204_eaasry7v` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/AE-5503-S-H-ZIGBEE.html |
 | `_TZE204_huu3td85` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/ZDMS16-1.html |
 | `_TZE204_myd45weu` | TS0222 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/TS0222_temperature_humidity.html |
 | `_TZE204_nnhwcvbk` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/NAS-WV03B2.html |
@@ -146,9 +141,8 @@
 | `_TZE204_qaxkdgyt` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/JKD-816COM-Z.html |
 | `_TZE204_rfpyqax9` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/Pro_Line_X10.html |
 | `_TZE204_y4jqpry8` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/ZMS-206US-4.html |
-| `_TZE204_zajeikkt` | TS0601 | kb-confirmed | 0.9 | https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L30490 |
+| `_TZE204_zajeikkt` | TS0601 | kb-confirmed | 0.9 | https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/tuya.ts#L30490 |
 | `_TZE20C1000000_p3g8xiug` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/TS0601_3ch_bidirectional_meter.html |
-| `_TZE20C_tjz9ad5g` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/MG-BJQ002.html |
 | `_TZE20C_ycab9txf` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/ZAS-01P.html |
 | `_TZE21C_dohbhb5k` | TS0001 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/1-ZB-WSD.html |
 | `_TZE21C_i2ij4rb3` | TS0001 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/1-ZB-WSD.html |
@@ -184,17 +178,13 @@
 | `_TZE284_agjqiu4h` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/D4Z-M.html |
 | `_TZE284_ajhu0zqb` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/SZW08.html |
 | `_TZE284_d4h8j2n6` | ZP-301Z | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/ZP-301Z.html |
-| `_TZE284_hbxadcl0` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/TS0601_6gang_switch_2.html |
 | `_TZE284_hqys6frs` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/R12LM-Z10T.html |
 | `_TZE284_huu3td85` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/ZDMS16-1.html |
 | `_TZE284_iunyuzwe` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/W04-Z10T.html |
 | `_TZE284_rfpyqax9` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/Pro_Line_X10.html |
 | `_TZE284_rhocfd6y` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/07519L.html |
-| `_TZE284_uqzwwjas` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/ZSD20.html |
 | `_TZE284_vbgmewta` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/W04-Z10T.html |
-| `_TZE284_xr5yfele` | TS0601 | kb-confirmed | 0.9 | https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L14722 |
-| `_TZE284_zeeqkb0p` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/ZSD20.html |
-| `_TZE284_zm8zpwas` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/ZPV-01.html |
+| `_TZE284_xr5yfele` | TS0601 | kb-confirmed | 0.9 | https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/tuya.ts#L14722 |
 | `_TZE28C1000000_19jwhi8c` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/ZN-USC1U-HT.html |
 | `_TZE28C1000000_4ngwn2pj` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/MH03-8Z-OLED.html |
 | `_TZE28C1000000_59dz7ioi` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/MH03-3Z-OLED.html |
@@ -205,7 +195,7 @@
 | `_TZE28C1000000_dnhhp8ew` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/MH03-2Z-OLED.html |
 | `_TZE28C1000000_esnu2jxv` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/MH03-4Z-OLED.html |
 | `_TZE28C1000000_ewn672ef` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/ZF24Pro.html |
-| `_TZE28C1000000_f5efvtbv` | TS0601 | kb-confirmed | 0.9 | https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L7013 |
+| `_TZE28C1000000_f5efvtbv` | TS0601 | kb-confirmed | 0.9 | https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/tuya.ts#L7013 |
 | `_TZE28C1000000_fpwtjlfh` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/EZCP04.html |
 | `_TZE28C1000000_huu3td85` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/ZDMS16-1.html |
 | `_TZE28C1000000_hyt4iucb` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/E02C-Z10T.html |
@@ -215,7 +205,6 @@
 | `_TZE28C1000000_lw5ny7tp` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/SZLR08.html |
 | `_TZE28C1000000_ncc7uahd` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/MH03-1Z-OLED.html |
 | `_TZE28C1000000_ra9zfiwr` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/E04CF-Z10T.html |
-| `_TZE28C1000000_rzdkn5rx` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/TS0601_multifunction_switch.html |
 | `_TZE28C1000000_sndkanfr` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/SZLMR10.html |
 | `_TZE28C1000000_vosmoqsg` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/ZF24Pro.html |
 | `_TZE28C1000000_wkvfb2ld` | TS0601 | kb-confirmed | 0.9 | https://www.zigbee2mqtt.io/devices/MH03-6Z-OLED.html |

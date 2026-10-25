@@ -4,4 +4,4 @@
 
 | manufacturerName | upstream model | DPs (ZHA) | sources |
 |---|---|---|---|
-| `Slacky-DIY` | TS0044-z-SlD |  | [z2m@2d9af8d](https://www.zigbee2mqtt.io/devices/TS0044-z-SlD.html) [zhc@cff1de4](https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/slacky_diy.ts#L4704) |
+| `Slacky-DIY` | TS0044-z-SlD |  | [z2m@2d9af8d](https://www.zigbee2mqtt.io/devices/TS0044-z-SlD.html) [zhc@eb82314](https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/slacky_diy.ts#L4704) |
