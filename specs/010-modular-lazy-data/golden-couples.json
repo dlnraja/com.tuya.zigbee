@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-24T21:43:59.687Z",
- "drivers": 402,
+ "generated": "2026-10-25T15:06:49.182Z",
+ "drivers": 403,
  "snapshot": {
   "air_purifier": {
    "mfr": 3,
@@ -285,9 +285,9 @@
    "pidSha": "3427697d0c296c9d"
   },
   "climate_sensor": {
-   "mfr": 519,
+   "mfr": 510,
    "pid": 32,
-   "mfrSha": "0cf6b36c496b5064",
+   "mfrSha": "bbc038e646af7dc7",
    "pidSha": "4809a771f46a5606"
   },
   "climate_sensor_device": {
@@ -1473,9 +1473,9 @@
    "pidSha": "278e503d4862c11f"
   },
   "scene_switch_4": {
-   "mfr": 16,
+   "mfr": 17,
    "pid": 3,
-   "mfrSha": "0eb353c3bc2bad8d",
+   "mfrSha": "ba6eb10fd16f7c96",
    "pidSha": "852c1ed113914f3e"
   },
   "scene_switch_6": {
@@ -1927,6 +1927,12 @@
    "pid": 15,
    "mfrSha": "a253393503d9be39",
    "pidSha": "f01c166c2aa06e7b"
+  },
+  "switch_2gang_ts0002": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "ee8f66853a1fc811",
+   "pidSha": "a7f885cfce4bbc62"
   },
   "switch_3_gang": {
    "mfr": 11,
@@ -2397,9 +2403,9 @@
    "pidSha": "fe84fd7ecb27e526"
   },
   "water_valve_smart": {
-   "mfr": 25,
+   "mfr": 35,
    "pid": 4,
-   "mfrSha": "e29b82a2d6244fce",
+   "mfrSha": "8a8bf8df25300931",
    "pidSha": "df253ecb1e47260e"
   },
   "weather_station_outdoor": {

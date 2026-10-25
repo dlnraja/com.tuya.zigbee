@@ -363,3 +363,9 @@ Reporters of dlnraja/com.tuya.zigbee issues not credited elsewhere in this file.
 - **bkbartk** — Tuya fan optimistic/typed-default write idea, [esphome/esphome#18525](https://github.com/esphome/esphome/pull/18525)
 - **make-all/tuya-local contributors** (ozgurclcc PR #6308, surfnterd PR #6067 and others in 7169307…c6ea798) — Wi-Fi product ids and the signed RSSI byte rule (commit 0002e83), Wi-Fi leads only
 - **Koenkk/zigbee-OTA** — OTA index checked at df5e8e1 (no new image)
+
+## Forum ideas pass 2026-10-25 (P3037, own words, no code copied)
+- **seikossss** — NEO sprinkler `_TZE284_z7a2jmyy` interview and wrong-driver report, [forum 140352 #2268](https://community.homey.app/t/140352/2268); DP map facts from Koenkk/zigbee-herdsman-converters `src/devices/neo.ts` (commit eb77ec10e6, L145-256)
+- **okidoki** — exact long-prefix mfr `_TZE2841000000_8se38w3c` seen on a climate sensor, [forum 140352 #2265](https://community.homey.app/t/140352/2265)
+- **@migueleap** — `_TZE200_yenbr4om` curtain module interview, GitHub #576
+- **Rick_D** — Device Watchdog idea: no "device lost" notice during the startup grace period and at most one per day, [forum 157537](https://community.homey.app/t/157537)

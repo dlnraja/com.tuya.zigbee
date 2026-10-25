@@ -24,6 +24,19 @@ const FRANKEVER_VALVE_MFRS = [...FRANKEVER_FK_V02_MFRS, ...FRANKEVER_FK_BV05_MFR
 // DP1 = total consumption (NOT the valve), DP13 = valve, DP14 = auto clean, DP21 = flow, DP22 = temp/100,
 // DP26 = battery voltage. The generic METERED map read DP1 as on/off and wrote the valve to DP1.
 const ZEMISMART_214C_MFRS = ['_tze284_vuwtqx0t', '_tze200_vuwtqx0t'];
+// WHY(P3037 / forum 140352#2268 seikossss + Z2M neo.ts NAS-WV03B / NAS-WV03B2): NEO / Nous L14 battery
+// sprinkler timers. EF00-only end devices (4xAA). Z2M map: DP1 valve, DP3 status enum, DP5 countdown,
+// DP6 countdown left, DP9 current flow /1000, DP11 battery %, DP15 water total /1000 (litres on
+// _TZE2x4_z7a2jmyy only, gallons by default on the others), DP19 fault, DP104 child lock.
+// These couples sat on climate_sensor (no valve, no DP map) and paired as a dead tile.
+const NEO_SPRINKLER_MFRS = [
+  '_tze204_z7a2jmyy', '_tze284_z7a2jmyy',
+  '_tze204_rzrrjkz2', '_tze284_rzrrjkz2',
+  '_tze204_uab532m0', '_tze284_uab532m0',
+  '_tze204_nnhwcvbk', '_tze284_nnhwcvbk',
+  '_tze204_a9ojznj8', '_tze284_a9ojznj8',
+];
+const NEO_LITRE_MFRS = ['_tze204_z7a2jmyy', '_tze284_z7a2jmyy'];
 const TRUE_VALUES = new Set([true, 1, '1', 'true', 'open', 'on']);
 
 function isTuyaTrue(value) {
@@ -79,8 +92,43 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
     return this._fv05Cached;
   }
 
+  get isNeoSprinkler() {
+    if (this._neoCached !== undefined) {return this._neoCached;}
+    const mfr = this.getSetting('zb_manufacturer_name') || this.getData?.()?.manufacturerName || '';
+    this._neoCached = NEO_SPRINKLER_MFRS.some((m) => containsCI(mfr, m));
+    return this._neoCached;
+  }
+
+  get isNeoLitreModel() {
+    const mfr = this.getSetting('zb_manufacturer_name') || this.getData?.()?.manufacturerName || '';
+    return NEO_LITRE_MFRS.some((m) => containsCI(mfr, m));
+  }
+
   get dpMappings() {
     const parentMappings = super.dpMappings || {};
+    // WHY(P3037): NEO sprinkler — battery is a plain % (not mV like the METERED default), DP15 is the
+    // total. Only the litre model maps DP15 to meter_water (L/1000 -> m3 = raw/1e6); the gallon models
+    // keep it internal so we never show a wrong unit. Everything else stays internal (read-only).
+    if (this.isNeoSprinkler) {
+      return {
+        ...parentMappings,
+        1: { capability: 'onoff', transform: isTuyaTrue },
+        3: { capability: null, internal: 'sprinkler_status' },
+        5: { capability: null, internal: 'countdown_min' },
+        6: { capability: null, internal: 'countdown_left' },
+        9: { capability: null, internal: 'flow_rate' },
+        11: { capability: 'measure_battery', transform: (v) => {
+          const n = Number(v);
+          if (!Number.isFinite(n)) {return null;}
+          return Math.max(0, Math.min(100, Math.round(n)));
+        } },
+        15: this.isNeoLitreModel
+          ? { capability: 'meter_water', divisor: 1000000 }
+          : { capability: null, internal: 'water_total_raw' },
+        19: { capability: null, internal: 'faults' },
+        104: { capability: null, internal: 'child_lock' },
+      };
+    }
     // WHY(P2864): Zemismart 214C — DP map from Z2M TS0601_water_valve + Zemismart 214c.py (see above).
     // DP2/3 (month/day totals, 8-byte frames), DP4 report period, DP5 fault bitmask, DP16 meter id and
     // DP18 reverse flow stay internal: none of them is a valve state or an alarm_water leak signal.
@@ -168,6 +216,10 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
       if (this.isFrankeverValve) {
         forcePureTuyaDp(this, { force: true });
         this.log('[WATER-VALVE] P2473 FrankEver EF00-only — pure Tuya DP (no ZCL OnOff)');
+      } else if (this.isNeoSprinkler) {
+        // WHY(P3037): NEO / Nous L14 interview is EF00-only on EP1 (forum 140352#2268), no genOnOff
+        forcePureTuyaDp(this, { force: true });
+        this.log('[WATER-VALVE] P3037 NEO sprinkler EF00-only — pure Tuya DP (valve = DP1)');
       } else if (this.isZemismart214c) {
         // WHY(P2864): 214C interview is EF00-only too ([0,4,5,61184] + 0xED00), no genOnOff to talk to
         forcePureTuyaDp(this, { force: true });
@@ -189,7 +241,7 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
       if (!this.hasCapability('measure_temperature')) {await this.addCapability('measure_temperature').catch(() => { });}
       if (!this.hasCapability('alarm_water')) {await this.addCapability('alarm_water').catch(() => {});}
       if (this.hasCapability('alarm_motion')) {await this.removeCapability('alarm_motion').catch(() => {});}
-      this.log(`[WATER-VALVE] ✅ v9.7.3 Ready (${this.isFrankeverFkBv05 ? 'FRANKEVER-FK-BV05' : this.isFrankeverFkV02 ? 'FRANKEVER-FK-V02' : this.isGardenTimer ? 'GARDEN' : 'METERED'})`);
+      this.log(`[WATER-VALVE] ✅ v9.7.3 Ready (${this.isNeoSprinkler ? 'NEO-SPRINKLER' : this.isFrankeverFkBv05 ? 'FRANKEVER-FK-BV05' : this.isFrankeverFkV02 ? 'FRANKEVER-FK-V02' : this.isGardenTimer ? 'GARDEN' : 'METERED'})`);
     }, 'onNodeInit');
   }
 
@@ -203,8 +255,8 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
       await sendEf00DpMaxFallback(this, 13, Boolean(value), 'bool');
       return true;
     }
-    if (this.isFrankeverValve) {
-      this.log(`[WATER-VALVE] P2473 FrankEver EF00 max TX onoff=${value}`);
+    if (this.isFrankeverValve || this.isNeoSprinkler) {
+      this.log(`[WATER-VALVE] EF00 max TX DP1 onoff=${value} (${this.isNeoSprinkler ? "P3037 NEO" : "P2473 FrankEver"})`);
       await sendEf00DpMaxFallback(this, 1, Boolean(value), 'bool');
       return true;
     }

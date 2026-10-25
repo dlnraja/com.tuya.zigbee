@@ -1030,6 +1030,45 @@
       "pid": "TS0601",
       "driver": "soil_sensor",
       "source": "P3018b-soil Z2M Arteco ZS-300Z soil moisture sensor — https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L26391"
+    },
+    {
+      "id": "p3037-neo-sprinkler",
+      "mfr": [
+        "_TZE204_z7a2jmyy",
+        "_tze204_z7a2jmyy",
+        "_TZE204_Z7A2JMYY",
+        "_TZE284_z7a2jmyy",
+        "_tze284_z7a2jmyy",
+        "_TZE284_Z7A2JMYY",
+        "_TZE204_rzrrjkz2",
+        "_tze204_rzrrjkz2",
+        "_TZE204_RZRRJKZ2",
+        "_TZE284_rzrrjkz2",
+        "_tze284_rzrrjkz2",
+        "_TZE284_RZRRJKZ2",
+        "_TZE204_uab532m0",
+        "_tze204_uab532m0",
+        "_TZE204_UAB532M0",
+        "_TZE284_uab532m0",
+        "_tze284_uab532m0",
+        "_TZE284_UAB532M0",
+        "_TZE204_nnhwcvbk",
+        "_tze204_nnhwcvbk",
+        "_TZE204_NNHWCVBK",
+        "_TZE284_nnhwcvbk",
+        "_tze284_nnhwcvbk",
+        "_TZE284_NNHWCVBK",
+        "_TZE204_a9ojznj8",
+        "_tze204_a9ojznj8",
+        "_TZE204_A9OJZNJ8",
+        "_TZE284_a9ojznj8",
+        "_tze284_a9ojznj8",
+        "_TZE284_A9OJZNJ8"
+      ],
+      "driver": "water_valve_smart",
+      "pid": "TS0601",
+      "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb77ec10e6d931d277908ade895c93e955a06ccf/src/devices/neo.ts#L145-L256 (NAS-WV03B / NAS-WV05B2 / NAS-WV05B2-L / Nous L14 / NAS-WV03B2) + https://community.homey.app/t/140352/2268 (seikossss, _TZE284_z7a2jmyy interview: EF00 on EP1, end device)",
+      "regression": "P3037 2026-10-25: the NEO sprinkler family sat on climate_sensor (no valve, no DP map) and paired as a dead tile; one driver per couple, water_valve_smart has the per-mfr NEO DP profile."
     }
   ]
 }

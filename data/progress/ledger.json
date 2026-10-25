@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-25T13:12:28.013Z",
+ "updated": "2026-10-25T15:07:20.206Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -10,6 +10,18 @@
   "sweep": "data/leads/sweep-checkpoint.json"
  },
  "items": {
+  "P3037": {
+   "status": "done",
+   "date": "2026-10-25",
+   "note": "forum ideas pass: NEO sprinkler -> water_valve_smart (seikossss 140352#2268, Z2M neo.ts eb77ec10e6), 15 sacred pins (migueleap #576, okidoki 140352#2265, user diags), battery DP11 profile; leads data/leads/forum-ideas-2026-10-25.json",
+   "by": "grok-bot"
+  },
+  "P3037b": {
+   "status": "done",
+   "date": "2026-10-25",
+   "note": "reconnect/pairing-failure notice gate: 10 min startup grace + 24h per device (Device Watchdog idea, Rick_D, forum 157537)",
+   "by": "grok-bot"
+  },
   "autofix:auto-fix-and-publish|commit-fixes|p3025-appjson-drift": {
    "status": "in_progress",
    "date": "2026-10-25",

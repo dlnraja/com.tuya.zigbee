@@ -1,0 +1,105 @@
+{
+ "generated": "2026-10-25",
+ "by": "P3037 forum ideas pass (read-only, no account)",
+ "policy": "Leads only: not implemented because not verifiable in SDK/sources yet, or owned by another work item. Paraphrased, no copied text.",
+ "leads": [
+  {
+   "id": "L-P3037-01",
+   "topic": "compaction drops TS0601 couples",
+   "detail": "Local payload rebuild (15500/1500/2 caps) leaves ~1643 TS0601 couples from composes out of the published app.json (top: climate_sensor 414, curtain_motor 235, presence_sensor_radar 218). Users then see 'unknown device'. Owner: P3036 (publish workflow/caps) — not touched here.",
+   "source": "local build /workspace payload vs drivers/*/driver.compose.json, 2026-10-25",
+   "status": "lead"
+  },
+  {
+   "id": "L-P3037-02",
+   "topic": "gmail-diagnostics marked mails as nothing new",
+   "detail": "Interview for _TZE284_z7a2jmyy (NEO sprinkler) and mails about _TZE2841000000_8se38w3c were reported but the pipeline marked them as already handled while the couples were misrouted or dropped at publish.",
+   "source": "forum 140352 #2265 (okidoki), #2268 (seikossss)",
+   "status": "lead"
+  },
+  {
+   "id": "L-P3037-03",
+   "topic": "port NEO sprinkler move to stable-v5 / bastien-home",
+   "detail": "Both branches still carry the NEO sprinkler mfrs on climate_sensor. Data parts (pins, BatteryMasterEngine DP11 profile, couple move) should follow; behaviour (water_valve_smart NEO branch) master first.",
+   "source": "P3037 master commit",
+   "status": "todo"
+  },
+  {
+   "id": "L-P3037-04",
+   "topic": "_TZE2x4_4fblxpma NEO NAS-WV03B",
+   "detail": "Still on valve_irrigation; Z2M NEO definitions differ (no DP109). Check DP map before any move.",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/neo.ts",
+   "status": "lead"
+  },
+  {
+   "id": "L-P3037-05",
+   "topic": "per-category notification toggles + pause-until",
+   "detail": "Device Watchdog lets users switch each notification family on/off and pause alerts until a date/time. Our app could expose optional app settings for reconnect/battery/pairing notices (P3037b only added the grace/24h gate).",
+   "source": "https://community.homey.app/t/157537 (Rick_D, Device Watchdog v1.9.x)",
+   "status": "lead"
+  },
+  {
+   "id": "L-P3037-06",
+   "topic": "'which driver do I pick' help page",
+   "detail": "TaHoma thread shows many users unsure which driver matches a device; a short mapping page (model -> driver) in docs/ or app settings would reduce wrong pairings.",
+   "source": "https://community.homey.app/t/35206 (Adrian_Rockall, Stig_Syversen, ozstubbsy)",
+   "status": "lead"
+  },
+  {
+   "id": "L-P3037-07",
+   "topic": "self-reporting devices: no polling",
+   "detail": "Tuya Local allows polling interval 0 for devices that push their state, plus a longer keep-alive tolerance. Equivalent: make our optional periodic reads off by default for EF00 devices that report spontaneously.",
+   "source": "https://community.homey.app/t/154077 (Andi, Tuya Local)",
+   "status": "lead"
+  },
+  {
+   "id": "L-P3037-08",
+   "topic": "power refresh must not touch the switch DP",
+   "detail": "Tuya Local fixed a bug where refreshing power readings also queried/wrote the on/off DP. Audit our plug energy refresh paths to query only metering DPs.",
+   "source": "https://community.homey.app/t/154077 (Andi)",
+   "status": "lead"
+  },
+  {
+   "id": "L-P3037-09",
+   "topic": "optional mode picker + flows for radar presence mode (DP51-like)",
+   "detail": "Expose an optional enum setting + action card for radar presence/scene mode where the DP is confirmed per model.",
+   "source": "https://community.homey.app/t/154077 (Andi)",
+   "status": "lead"
+  },
+  {
+   "id": "L-P3037-10",
+   "topic": "HVAC action from valve-state DP on TRVs",
+   "detail": "Derive heating/idle from the valve-state DP to feed a thermostat_mode/heating indicator.",
+   "source": "https://community.homey.app/t/154077 (Andi)",
+   "status": "lead"
+  },
+  {
+   "id": "L-P3037-11",
+   "topic": "curtain slider invert semantics",
+   "detail": "Clarify invert setting: invert position vs invert direction; Tuya Local split them.",
+   "source": "https://community.homey.app/t/154077 (Andi)",
+   "status": "lead"
+  },
+  {
+   "id": "L-P3037-12",
+   "topic": "avoid TX bursts on rejoin",
+   "detail": "Route-discovery storms with TZ3000 plugs after removing a router. Our onNodeInit reads/configureReporting on rejoin should be spread (jitter) rather than burst.",
+   "source": "https://community.homey.app/t/154959 (Anders_Bee)",
+   "status": "lead"
+  },
+  {
+   "id": "L-P3037-13",
+   "topic": "Homey 13.5.x Zigbee instability",
+   "detail": "Context only: several users report mesh instability on firmware 13.5.x; do not chase app bugs for those symptoms without a diag.",
+   "source": "https://community.homey.app/t/159290",
+   "status": "context"
+  },
+  {
+   "id": "L-P3037-14",
+   "topic": "INNR GU10 unknown",
+   "detail": "Not Tuya; out of scope for this app.",
+   "source": "https://community.homey.app/t/152368",
+   "status": "out-of-scope"
+  }
+ ]
+}

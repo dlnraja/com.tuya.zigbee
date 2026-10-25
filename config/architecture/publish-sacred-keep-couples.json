@@ -1795,6 +1795,96 @@
       "pid": "SmokeSensor-EF-3.0",
       "driverId": "smoke_detector_advanced",
       "note": "P2974 port of P2919: Homey interview on JohanBendz/com.tuya.zigbee #190 (forum 26439#2296)"
+    },
+    {
+      "mfr": "_TZE200_yenbr4om",
+      "pid": "TS0601",
+      "driverId": "curtain_motor",
+      "note": "P3037 2026-10-25 GitHub #576 (migueleap): curtain module interview EP1 [0,4,5,61184], paired generic because compaction dropped the couple"
+    },
+    {
+      "mfr": "_TZE2841000000_8se38w3c",
+      "pid": "TS0601",
+      "driverId": "climate_sensor",
+      "note": "P3037 2026-10-25 forum 140352#2265 (okidoki): exact long-prefix mfr seen on the device; in compose but dropped by compaction"
+    },
+    {
+      "mfr": "_TZE284_z7a2jmyy",
+      "pid": "TS0601",
+      "driverId": "water_valve_smart",
+      "note": "P3037 2026-10-25 forum 140352#2268 (seikossss) NEO NAS-WV05B2-L + Z2M neo.ts NAS-WV03B; moved off climate_sensor"
+    },
+    {
+      "mfr": "_TZ3000_kstbkt6a",
+      "pid": "TS0207",
+      "driverId": "water_leak_sensor",
+      "note": "P3037 2026-10-25 user diag GitHub mail 2026-10-23 (ledger diag:de39aea8f8283519); in compose but dropped by compaction"
+    },
+    {
+      "mfr": "_TZE204_ijxvkhd0",
+      "pid": "TS0601",
+      "driverId": "presence_sensor_radar",
+      "note": "P3037 2026-10-25 user diag GitHub mail 2026-10-23 (ledger diag:de39aea8f8283519); in compose but dropped by compaction"
+    },
+    {
+      "mfr": "_TZE284_awepdiwi",
+      "pid": "TS0601",
+      "driverId": "soil_sensor",
+      "note": "P3037 2026-10-25 user diag GitHub mail 2026-10-20 (ledger diag:854eebd1a216648c); in compose but dropped by compaction"
+    },
+    {
+      "mfr": "_TZE204_z7a2jmyy",
+      "pid": "TS0601",
+      "driverId": "water_valve_smart",
+      "note": "P3037 2026-10-25 NEO sprinkler (Z2M neo.ts eb77ec10 L145-256); moved off climate_sensor, never shipped before"
+    },
+    {
+      "mfr": "_TZE204_rzrrjkz2",
+      "pid": "TS0601",
+      "driverId": "water_valve_smart",
+      "note": "P3037 2026-10-25 NEO sprinkler (Z2M neo.ts eb77ec10 L145-256); moved off climate_sensor, never shipped before"
+    },
+    {
+      "mfr": "_TZE204_uab532m0",
+      "pid": "TS0601",
+      "driverId": "water_valve_smart",
+      "note": "P3037 2026-10-25 NEO sprinkler (Z2M neo.ts eb77ec10 L145-256); moved off climate_sensor, never shipped before"
+    },
+    {
+      "mfr": "_TZE204_a9ojznj8",
+      "pid": "TS0601",
+      "driverId": "water_valve_smart",
+      "note": "P3037 2026-10-25 NEO sprinkler (Z2M neo.ts eb77ec10 L145-256); moved off climate_sensor, never shipped before"
+    },
+    {
+      "mfr": "_TZE204_nnhwcvbk",
+      "pid": "TS0601",
+      "driverId": "water_valve_smart",
+      "note": "P3037 2026-10-25 NEO sprinkler (Z2M neo.ts eb77ec10 L145-256); moved off climate_sensor, never shipped before"
+    },
+    {
+      "mfr": "_TZE284_rzrrjkz2",
+      "pid": "TS0601",
+      "driverId": "water_valve_smart",
+      "note": "P3037 2026-10-25 NEO sprinkler (Z2M neo.ts eb77ec10 L145-256); moved off climate_sensor, never shipped before"
+    },
+    {
+      "mfr": "_TZE284_uab532m0",
+      "pid": "TS0601",
+      "driverId": "water_valve_smart",
+      "note": "P3037 2026-10-25 NEO sprinkler (Z2M neo.ts eb77ec10 L145-256); moved off climate_sensor, never shipped before"
+    },
+    {
+      "mfr": "_TZE284_a9ojznj8",
+      "pid": "TS0601",
+      "driverId": "water_valve_smart",
+      "note": "P3037 2026-10-25 NEO sprinkler (Z2M neo.ts eb77ec10 L145-256); moved off climate_sensor, never shipped before"
+    },
+    {
+      "mfr": "_TZE284_nnhwcvbk",
+      "pid": "TS0601",
+      "driverId": "water_valve_smart",
+      "note": "P3037 2026-10-25 NEO sprinkler (Z2M neo.ts eb77ec10 L145-256); moved off climate_sensor, never shipped before"
     }
   ]
 }
