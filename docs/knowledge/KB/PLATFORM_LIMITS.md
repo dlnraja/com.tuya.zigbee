@@ -118,6 +118,14 @@ after and deleted, and a warning annotation fires when the cache is still at 80 
 `vars.STORAGE_CLEANUP_DISABLED`; `vars.STORAGE_CLEANUP_DRY` turns the schedule into a dry run.
 Stale `bot/*` PRs and branches are not touched here; `repo-autopilot.yml` (P3022) already does that.
 
+First real run (2026-10-25 02:40 Paris): 220 caches / 1.19 GB and 251 artifacts / 12.1 MB
+deleted, 0 errors. Caches went from 240 / 1.50 GB to 20 / 309 MB (3.1 % of the quota): one
+newest entry per family on master (18), stable-v5 (1) and bastien-home (1). The biggest kept
+families are the cross-research state caches of master (`xr-master-*`, up to ~85 MB each).
+Known side effect: jobs on one ref that restore npm caches with two different lockfile hashes
+(the jobs that check out another branch) keep only the newest hash, so the other one downloads
+again on its next run. That costs time, not correctness.
+
 ### Other CI changes
 
 - `.github/scripts/retry-helper.js`: a 403/429 with `x-ratelimit-remaining: 0` and no
