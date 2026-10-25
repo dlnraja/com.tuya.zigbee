@@ -32,9 +32,17 @@ on:
         type: string
         default: ''
       transient_retry:
-        description: 'Internal: retries already done in this chain (true=1); AggregateError max 2, transport max 1'
+        description: 'Internal: retries already done in this chain (true=1); P3036: transient max 1, AggregateError 0'
         type: string
         default: 'false'
+      deferred_retry:
+        description: 'Internal (P3036): next-slot dispatch from publish-self-heal after a held upload; counts as automatic'
+        type: string
+        default: ''
+      override_spacing:
+        description: 'P3036 manual only: bypass the spacing / 24 h cap (green CI is still required)'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -74,11 +82,12 @@ jobs:
     name: Master Athom publish breaker
     if: ${{ github.event_name == 'workflow_dispatch' || !contains(github.event.head_commit.message, '[skip ci]') }}
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 55  # P3036: the green-CI gate may wait up to 40 min for pending CI
     outputs:
       skip: ${{ steps.b.outputs.skip }}
       bisect_hold_upload: ${{ steps.bh.outputs.hold_upload }}
       bisect_hold_promote: ${{ steps.bh.outputs.hold_promote }}
+      p3036_go: ${{ steps.gate.outputs.go }}
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
         with:
@@ -96,6 +105,7 @@ jobs:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
           HOMEY_BUILD_LIMIT: '5'
           TRANSIENT_RETRY: ${{ github.event.inputs.transient_retry || 'false' }}
+          DEFERRED_RETRY: ${{ github.event.inputs.deferred_retry || '' }}
           BREAKER_N: '3'
         run: |
           node scripts/ci/homey-build-status.js com.dlnraja.tuya.zigbee >/dev/null 2>&1 || true
@@ -108,12 +118,35 @@ jobs:
           EVENT_NAME: ${{ github.event_name }}
           BISECT_TRIAL: ${{ inputs.bisect_trial }}  # P3034: no '||' coercion, trial '0' passes verbatim
         run: node .github/scripts/bisect-hold.js
+      # P3036: no Athom upload unless this SHA (or a code-identical ancestor) has Syntax Check, Unified CI/CD,
+      # Node 22 tests and Homey App Validate green, the spacing allows it (>= 2 h, 1 success / 24 h) and no build
+      # is processing. A hold is logged and retried at the next slot (publish-self-heal deferred job).
+      - name: P3036 publish gate (green CI + spacing + busy)
+        id: gate
+        if: steps.b.outputs.skip != 'true' && steps.bh.outputs.hold_upload != 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          EVENT_NAME: ${{ github.event_name }}
+          TRANSIENT_RETRY: ${{ github.event.inputs.transient_retry || '' }}
+          DEFERRED_RETRY: ${{ github.event.inputs.deferred_retry || '' }}
+          FORCE_PUBLISH: ${{ github.event.inputs.override_spacing || '' }}
+          CI_GATE_WAIT_MS: '2400000'
+        run: node .github/scripts/athom-publish-policy.js gate com.dlnraja.tuya.zigbee
+      - name: P3036 deferred marker (retry at the next slot)
+        if: steps.gate.outputs.go == 'false' && steps.gate.outputs.deferred == 'true'
+        continue-on-error: true
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0 (node24, P3025b)
+        with:
+          name: athom-deferred-master-${{ github.run_id }}
+          path: data/status/athom-publish-gate-com.dlnraja.tuya.zigbee.json
+          if-no-files-found: ignore
+          retention-days: 3
 
   publish:
     name: Validate & Auto-Publish to Homey App Store
     needs: breaker
     # WHY(P2384): workflow_dispatch must run even when tip commit is [skip ci]
-    if: ${{ needs.breaker.outputs.skip != 'true' && needs.breaker.outputs.bisect_hold_upload != 'true' && (github.event_name == 'workflow_dispatch' || !contains(github.event.head_commit.message, '[skip ci]')) }}
+    if: ${{ needs.breaker.outputs.skip != 'true' && needs.breaker.outputs.bisect_hold_upload != 'true' && needs.breaker.outputs.p3036_go != 'false' && (github.event_name == 'workflow_dispatch' || !contains(github.event.head_commit.message, '[skip ci]')) }}
     runs-on: ubuntu-latest
     timeout-minutes: 45
     # v9.0.287 (P74): Bumped publish-size limits to 50 MB. With .homeyignore
@@ -506,9 +539,25 @@ jobs:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: node .github/scripts/wait-athom-idle.js com.dlnraja.tuya.zigbee
 
+      # P3036: the idle wait gives up after its timeout; never upload while a build is still processing.
+      - name: P3036 busy re-check before upload
+        id: p3036_busy
+        if: steps.check_pat.outputs.has_pat == 'true'
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          EVENT_NAME: ${{ github.event_name }}
+          TRANSIENT_RETRY: ${{ github.event.inputs.transient_retry || '' }}
+          DEFERRED_RETRY: ${{ github.event.inputs.deferred_retry || '' }}
+          FORCE_PUBLISH: ${{ github.event.inputs.override_spacing || '' }}
+          ATHOM_MIN_INTERVAL_MIN: '0'        # spacing already checked by the gate job
+          ATHOM_MAX_SUCCESS_PER_24H: '999'
+        run: |
+          node scripts/ci/homey-build-status.js com.dlnraja.tuya.zigbee >/dev/null 2>&1 || true
+          node .github/scripts/athom-publish-policy.js slot com.dlnraja.tuya.zigbee
+
       - name: Publish to Homey App Store
         id: pub
-        if: steps.check_pat.outputs.has_pat == 'true'
+        if: steps.check_pat.outputs.has_pat == 'true' && steps.p3036_busy.outputs.go != 'false'
         uses: ./.github/actions/homey-app-publish
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
@@ -517,7 +566,7 @@ jobs:
       # 7. POST-PUBLISH (all continue-on-error)
       # ─────────────────────────────────────────────────────────────
       - name: Create GitHub Release
-        if: steps.check_pat.outputs.has_pat == 'true'
+        if: steps.check_pat.outputs.has_pat == 'true' && steps.p3036_busy.outputs.go != 'false'
         continue-on-error: true
         uses: softprops/action-gh-release@e598afbe1493e6b1bafb1f389cabb956eab91231 # v3.0.3 (node24, P3025b)
         with:
@@ -565,12 +614,12 @@ jobs:
       # WHY(2026-10-11): transient retry moved into the final Athom gate (run 38099611305 decided at
       # 00:51 on an empty state; the failure #3513 landed at 00:58). Decide only on the final state.
       - name: Install Puppeteer (draft → test promotion)
-        if: steps.check_pat.outputs.has_pat == 'true' && needs.breaker.outputs.bisect_hold_promote != 'true'
+        if: steps.check_pat.outputs.has_pat == 'true' && needs.breaker.outputs.bisect_hold_promote != 'true' && steps.p3036_busy.outputs.go != 'false'
         continue-on-error: true
         run: npm install puppeteer athom-api --no-save
 
       - name: "Tier 1: Promote via Browser"
-        if: steps.check_pat.outputs.has_pat == 'true' && steps.waitdraft.outputs.athom_failed != 'true' && needs.breaker.outputs.bisect_hold_promote != 'true'
+        if: steps.check_pat.outputs.has_pat == 'true' && steps.waitdraft.outputs.athom_failed != 'true' && needs.breaker.outputs.bisect_hold_promote != 'true' && steps.p3036_busy.outputs.go != 'false'
         id: promote_puppeteer
         continue-on-error: true
         timeout-minutes: 5
@@ -582,7 +631,7 @@ jobs:
 
       - name: "Tier 2: Promote via OAuth"
         id: promote_oauth
-        if: steps.check_pat.outputs.has_pat == 'true' && steps.promote_puppeteer.outcome != 'success' && steps.waitdraft.outputs.athom_failed != 'true' && needs.breaker.outputs.bisect_hold_promote != 'true'
+        if: steps.check_pat.outputs.has_pat == 'true' && steps.promote_puppeteer.outcome != 'success' && steps.waitdraft.outputs.athom_failed != 'true' && needs.breaker.outputs.bisect_hold_promote != 'true' && steps.p3036_busy.outputs.go != 'false'
         continue-on-error: true
         timeout-minutes: 5
         env:
@@ -594,7 +643,7 @@ jobs:
 
       - name: "Tier 3: Promote via PAT API"
         id: promote_api
-        if: steps.check_pat.outputs.has_pat == 'true' && steps.promote_puppeteer.outcome != 'success' && steps.promote_oauth.outcome != 'success' && steps.waitdraft.outputs.athom_failed != 'true' && needs.breaker.outputs.bisect_hold_promote != 'true'
+        if: steps.check_pat.outputs.has_pat == 'true' && steps.promote_puppeteer.outcome != 'success' && steps.promote_oauth.outcome != 'success' && steps.waitdraft.outputs.athom_failed != 'true' && needs.breaker.outputs.bisect_hold_promote != 'true' && steps.p3036_busy.outputs.go != 'false'
         continue-on-error: true
         timeout-minutes: 5
         env:
@@ -815,7 +864,7 @@ jobs:
           echo "$final_out"
           kind=$(printf '%s' "$final_out" | node .github/scripts/athom-retry-policy.js classify 2>/dev/null || echo unknown)
           if [ "$final_rc" -eq 0 ] && ! printf '%s' "$final_out" | grep -q 'SOFT-EXPECT'; then node .github/scripts/publish-size-telemetry.js record test; exit 0; fi
-          # Final state known and not Test: retry decision (budget 2 per chain, exponential backoff + jitter).
+          # Final state known and not Test: retry decision (P3036: one transient retry, backoff >= 300 s + jitter).
           out=$(node .github/scripts/transient-publish-retry.js) || true
           # P2901: assert-athom-final only prints "processing_failed"; the Athom error text (AggregateError, socket
           # hang up...) is read by the retry decision, so classify both outputs before recording the CSV row.
@@ -825,7 +874,7 @@ jobs:
           if printf '%s' "$out" | grep -q '^\[transient-retry\] RETRY'; then
             next=$(printf '%s\n' "$out" | sed -n 's/^\[transient-retry\] NEXT=//p' | head -1)
             wait_s=$(printf '%s\n' "$out" | sed -n 's/^\[transient-retry\] BACKOFF_S=//p' | head -1)
-            echo "backoff ${wait_s:-60}s before retry ${next:-1} (jittered, serialized by the per-app concurrency group)"; sleep "${wait_s:-60}"
+            echo "backoff ${wait_s:-300}s before retry ${next:-1} (jittered, serialized by the per-app concurrency group)"; sleep "${wait_s:-300}"
             # WHY(P2893, 19/10/2026): carry release_held so the flake check retries the SAME content.
             # SPI one-shot 39281159242 (#3630 AggregateError) retried WITHOUT the held driver (#3631 Test),
             # which tells nothing about the held driver (bisect needs same-content flip).

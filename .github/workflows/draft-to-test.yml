@@ -51,6 +51,10 @@ jobs:
     name: Promote Draft to Test (${{ inputs.branch || 'master' }})
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    # P3036: one lock per app shared by every publish workflow (job level: the workflow group stays promote-to-test-*).
+    concurrency:
+      group: athom-publish-${{ (inputs.branch || 'master') == 'stable-v5' && 'stable' || ((inputs.branch || 'master') == 'bastien-home' && 'bastien' || 'master') }}
+      cancel-in-progress: false
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
         with:

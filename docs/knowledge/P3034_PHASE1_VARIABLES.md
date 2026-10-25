@@ -22,3 +22,13 @@ Read-only evidence, 25/10/2026 (no upload made).
 3. Athom transient degradation / time of day / spacing between uploads.
 4. Content (cards, size, drivers, titleFormatted, duplicate ids, .homeyignore, workflow env): excluded by 1591.
 5. Version string, api field, changelog, compat: constant, excluded.
+
+## Outcome and exit (P3036, 25/10/2026)
+- Revised trial 0 passed: 9.0.1599 (#3682) draft at 14:20 Paris, Test at 14:26 (run 40197429891), after one
+  socket-hang-up retry. Same content as refused builds → ranking items 1 and 3 (Athom-side state, timing,
+  spacing) are the likely cause, together with red CI on earlier uploads. Strong presumption, not a proof.
+- The bisect is closed (status=done). The P3034 guard no longer forces drafts only or requires `bisect_trial`.
+  Normal flow under docs/knowledge/P3036_ATHOM_PUBLISH_POLICY.md: green CI gate, >= 2 h between master uploads,
+  at most 1 successful master upload per 24 h, one transient retry after >= 5 min, draft → Test automatic.
+  Live is never automatic.
+- If rejections come back: rerun the bisect (status=running re-arms drafts only + `bisect_trial`).

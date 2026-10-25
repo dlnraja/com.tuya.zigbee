@@ -58,7 +58,9 @@ test('scheduled/push master publishers are wired to the hold', () => {
   const af = wf('auto-fix-and-publish.yml');
   assert.match(af, /bisect_trial:/);
   assert.match(af, /id: bisect_hold[\s\S]*node \.github\/scripts\/bisect-hold\.js[\s\S]*trigger_publish=false/);
-  assert.strictEqual((af.match(/steps\.bisect_hold\.outputs\.hold_upload != 'true'/g) || []).length, 2, 'idle wait + publish');
+  // P3036: idle wait + publish moved to a separate gated `publish` job; the hold now blocks the hand-off.
+  assert.match(af, /id: p3036_handoff[\s\S]*steps\.bisect_hold\.outputs\.hold_upload \}\}" != "true"/, 'hold blocks the publish hand-off');
+  assert.match(af, /\n  publish:\n[\s\S]*needs\.auto-fix\.outputs\.publish == 'true'/, 'publish job runs only after the hand-off');
   assert.ok(af.indexOf('id: bisect_hold') < af.indexOf('name: 🔁 Bump version for Homey recovery publish'));
   assert.ok(af.indexOf('name: 💾 Commit fixes') > 0, 'auto-fix commit step kept');
   const ap = wf('auto-publish-on-push.yml');
@@ -67,9 +69,9 @@ test('scheduled/push master publishers are wired to the hold', () => {
   assert.ok((ap.match(/needs\.breaker\.outputs\.bisect_hold_promote != 'true'/g) || []).length >= 4, 'puppeteer + 3 promote tiers');
   const pb = wf('publish.yml');
   assert.match(pb, /bisect_trial:/);
-  assert.match(pb, /needs: \[validate, bisect-hold\]\n    if: needs\.bisect-hold\.outputs\.hold_upload != 'true'/);
+  assert.match(pb, /needs: \[validate, bisect-hold(, p3036-gate)?\]\n    if: needs\.bisect-hold\.outputs\.hold_upload != 'true'/);
   assert.ok((pb.match(/needs\.bisect-hold\.outputs\.hold_promote != 'true'/g) || []).length >= 4);
-  assert.match(wf('verified-publish-and-diagnostics.yml'), /needs: \[verify-and-lint, bisect-hold\]/);
+  assert.match(wf('verified-publish-and-diagnostics.yml'), /needs: \[verify-and-lint, bisect-hold(, p3036-gate)?\]/);
   assert.match(wf('draft-to-test-fleet.yml'), /HOLD_MASTER[\s\S]*INC_M=false/);
 });
 test('bisect state file parses', () => {
