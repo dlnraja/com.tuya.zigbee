@@ -505,12 +505,16 @@ try {
   // WHY(P2485): size gate MUST run AFTER this step — early exit blocked publish when
   // prettify-stripped JSON was still ~4.00MB but matrix compact would shrink it.
   // P3036: keep the uncompacted manifest so the TS0601 top-up can put back couples the compaction dropped.
+  // P3036c: every cap comes from config/publish-caps.json (env with the same name overrides for a manual run).
+  const publishCaps = require('./lib/publish-caps.cjs').loadPublishCaps();
+  console.log(`[P3036c] publish caps (config/publish-caps.json): total ${publishCaps.maxTotalCombos}, driver ${publishCaps.maxDriverCombos}, case forms ${publishCaps.maxCaseForms}, KB top-up ${publishCaps.kbTopupMaxTotal}/${publishCaps.kbTopupMaxDriver}, TS0601 top-up ${publishCaps.ts0601TopupMaxTotal}/${publishCaps.ts0601TopupMaxDriver}${Object.values(publishCaps.from).includes('env') ? ' (some from env)' : ''}`);
   let p3036TopupSource = null;
-  try { p3036TopupSource = Number(process.env.HOMEY_ZIGBEE_TOPUP_MAX_TOTAL) > 0 ? readJson(destAppJson) : null; } catch (_) { p3036TopupSource = null; }
+  try { p3036TopupSource = (publishCaps.ts0601TopupMaxTotal > 0 || publishCaps.kbTopupMaxTotal > 0) ? readJson(destAppJson) : null; } catch (_) { p3036TopupSource = null; }
   try {
     const compact = compactManifestFile(destAppJson, {
-      maxTotalCombos: Number(process.env.HOMEY_ZIGBEE_MAX_TOTAL_COMBOS) || undefined,
-      maxDriverCombos: Number(process.env.HOMEY_ZIGBEE_MAX_DRIVER_COMBOS) || undefined,
+      maxTotalCombos: publishCaps.maxTotalCombos || undefined,
+      maxDriverCombos: publishCaps.maxDriverCombos || undefined,
+      maxCaseForms: publishCaps.maxCaseForms || undefined,
     });
     if (compact.overTotalLimit) {
       console.error(`FATAL: publish manifest still has ${compact.afterTotal} Zigbee identifier combinations after compaction.`);
@@ -531,13 +535,35 @@ try {
       console.error('Restore them in a driver.compose.json or add an exemption (mfr, pid, driverId, reason) to test/fixtures/athom-last-test-package-couples.json.');
       process.exit(1);
     }
+    // P3036b: KB couple top-up first (adds only, same driver set, measured ceilings). Tier 1 puts back the
+    // KB couples listed in config/architecture/kb-topup-priority.json (pushed out by the P3038c pins),
+    // tier 2 the other KB couples (data/kb/couples.json) by couples per combo.
+    if (p3036TopupSource && publishCaps.kbTopupMaxTotal > 0) {
+      const kbTopUp = require('./maintenance/kb-couple-topup.cjs');
+      const kt = kbTopUp.topUpFile(p3036TopupSource, destAppJson, {
+        maxTotal: kbTopUp.ceilingFromEnv({ HOMEY_ZIGBEE_KB_TOPUP_MAX_TOTAL: String(publishCaps.kbTopupMaxTotal) }),
+        maxDriver: publishCaps.kbTopupMaxDriver || undefined,
+      });
+      const pr = kt.priority || { listed: 0, restored: [], already: 0, notPlaceable: [] };
+      console.log(`[P3036b] KB top-up: priority ${pr.restored.length} restored + ${pr.already} already in / ${pr.listed} listed; ${kt.restoredCouples.length} KB couple(s) added (+${kt.addedCombos} combos), ${kt.beforeTotal} -> ${kt.afterTotal} / ceiling ${kt.maxTotal}, driver max ${kt.maxDriver}; ${kt.stillMissing.length} still out (room), ${kt.unplaceable.length} unplaceable (productId or driver not in payload).`);
+      if (kt.driversAfter !== kt.driversBefore || kt.afterTotal > kt.maxTotal) {
+        console.error('FATAL(P3036b): KB top-up changed the driver set or passed its ceiling.');
+        process.exit(1);
+      }
+      if (pr.restored.length + pr.already < pr.listed) {
+        console.error(`FATAL(P3036b): ${pr.listed - pr.restored.length - pr.already} priority KB couple(s) could not be put back:`);
+        for (const c of kt.stillMissing.filter((x) => !String(x).includes('@')).slice(0, 20)) console.error(`  - ${c}`);
+        for (const c of pr.notPlaceable.slice(0, 20)) console.error(`  - ${c} (no payload driver declares it)`);
+        process.exit(1);
+      }
+    }
     // P3036: additive TS0601 top-up after the compaction (adds only, same driver set, measured ceiling).
-    if (p3036TopupSource) {
+    if (p3036TopupSource && publishCaps.ts0601TopupMaxTotal > 0) {
       const { topUpFile, ceilingFromEnv } = require('./maintenance/ts0601-topup.cjs');
       const tu = topUpFile(p3036TopupSource, destAppJson, {
-        maxTotal: ceilingFromEnv(),
-        maxDriver: Number(process.env.HOMEY_ZIGBEE_TOPUP_MAX_DRIVER) || undefined,
-        maxCaseForms: Number(process.env.HOMEY_ZIGBEE_MAX_CASE_FORMS) || 2,
+        maxTotal: ceilingFromEnv({ ...process.env, HOMEY_ZIGBEE_TOPUP_MAX_TOTAL: String(publishCaps.ts0601TopupMaxTotal) }),
+        maxDriver: publishCaps.ts0601TopupMaxDriver || undefined,
+        maxCaseForms: publishCaps.maxCaseForms || 2,
       });
       p3036TopupSource = null;
       console.log(`[P3036] TS0601 top-up: +${tu.addedGroups} manufacturer group(s) (+${tu.addedCombos} combos, ${tu.addedObserved} seen in mfs_db), ${tu.beforeTotal} -> ${tu.afterTotal} / ceiling ${tu.maxTotal}; ${tu.stillMissing} group(s) still out (need more room or a TS0601-only driver).`);
