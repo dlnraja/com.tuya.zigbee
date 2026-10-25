@@ -57,6 +57,10 @@ describe('P3038c TS0601 coverage compensation', function () {
   });
   it('leads were not silently added to a driver', () => {
     const drv = source();
-    for (const l of LEADS.leads) assert.deepStrictEqual(claims(drv, l.mfr, 'TS0601'), [], `${l.mfr} is a lead, not a mapping`);
+    for (const l of LEADS.leads) {
+      // A lead later turned into a driver mapping (P3039a/b/c) records it in resolvedBy; it must map there only.
+      const want = l.resolvedBy ? [l.resolvedBy.driverId] : [];
+      assert.deepStrictEqual(claims(drv, l.mfr, 'TS0601'), want, `${l.mfr} is a lead, not a mapping`);
+    }
   });
 });
