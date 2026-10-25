@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-25T10:19:59.755Z",
+  "updated": "2026-10-25T11:11:09.133Z",
   "threads": {
     "21313": {
       "lastPost": 2819,
@@ -17111,7 +17111,7 @@
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 11
+        "sources": 10
       },
       "note": "Wi-Fi lead (queue item 4): EV charger charge-mode enum on DP14 (now / schedule / percentage / energy / delay) seen through Tuya Local; wifi_ev_charger has no mode picker for it yet.",
       "triagedAt": "2026-10-25T07:55:52.522Z",
@@ -18575,7 +18575,7 @@
           "https://zigbee.blakadder.com/Heiman_HS1SA.html",
           "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/trust/ZSDR-850_smoke_sensor.json"
         ],
-        "sources": 31
+        "sources": 32
       }
     },
     {
@@ -18647,7 +18647,7 @@
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 28
+        "sources": 29
       }
     },
     {
@@ -19851,7 +19851,7 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-21",
+        "at": "2026-10-25",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -19954,7 +19954,7 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-21",
+        "at": "2026-10-25",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -20041,7 +20041,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-21",
+        "at": "2026-10-25",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -20105,7 +20105,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-21",
+        "at": "2026-10-25",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -20122,7 +20122,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-21",
+        "at": "2026-10-25",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -20139,7 +20139,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-21",
+        "at": "2026-10-25",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -20183,12 +20183,12 @@
       "images": 1,
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-21",
+        "at": "2026-10-25",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 33
+        "sources": 32
       }
     },
     {
@@ -20248,12 +20248,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-21",
+        "at": "2026-10-25",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 33
+        "sources": 32
       }
     },
     {
@@ -20266,12 +20266,12 @@
       "images": 1,
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-21",
+        "at": "2026-10-25",
         "verdict": "lead",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 34
+        "sources": 32
       }
     },
     {
@@ -20284,12 +20284,12 @@
       "images": 1,
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-21",
+        "at": "2026-10-25",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 34
+        "sources": 33
       }
     },
     {
@@ -20301,12 +20301,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-21",
+        "at": "2026-10-25",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 33
+        "sources": 32
       }
     },
     {
@@ -20318,12 +20318,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-21",
+        "at": "2026-10-25",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 33
+        "sources": 32
       }
     },
     {
@@ -20335,12 +20335,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-21",
+        "at": "2026-10-25",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 33
+        "sources": 32
       }
     },
     {
@@ -20363,12 +20363,12 @@
       "images": 1,
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-21",
+        "at": "2026-10-25",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 34
+        "sources": 33
       }
     },
     {
@@ -20381,7 +20381,7 @@
       "images": 4,
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-21",
+        "at": "2026-10-25",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -20418,7 +20418,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-21",
+        "at": "2026-10-25",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -20435,7 +20435,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-21",
+        "at": "2026-10-25",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -20453,7 +20453,7 @@
       "images": 2,
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-21",
+        "at": "2026-10-25",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -20481,7 +20481,7 @@
       "images": 1,
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-21",
+        "at": "2026-10-25",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -20508,7 +20508,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-21",
+        "at": "2026-10-25",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -20525,7 +20525,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-21",
+        "at": "2026-10-25",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -20542,7 +20542,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-21",
+        "at": "2026-10-25",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -20570,7 +20570,7 @@
       "images": 2,
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-21",
+        "at": "2026-10-25",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -20617,7 +20617,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-21",
+        "at": "2026-10-25",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -20634,7 +20634,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-21",
+        "at": "2026-10-25",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -20651,7 +20651,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-21",
+        "at": "2026-10-25",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
