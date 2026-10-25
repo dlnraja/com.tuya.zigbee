@@ -20,7 +20,8 @@ const ROOT = path.join(__dirname, '..', '..');
 describe('P2557 improve-all provenance + forum heals', () => {
   it('TuyaZigbeeDevice forwards meta into DeviceTelemetryEstimator.record', () => {
     const src = fs.readFileSync(path.join(ROOT, 'lib/tuya/TuyaZigbeeDevice.js'), 'utf8');
-    assert.match(src, /DeviceTelemetryEstimator\.record\([\s\S]*?\.\.\.\(meta/);
+    // P3034: P3025 eslint --fix (no-extra-parens) dropped the redundant parens; same precedence, same spread.
+    assert.match(src, /DeviceTelemetryEstimator\.record\([\s\S]*?\.\.\.\(?meta && typeof meta === 'object' \? meta : \{\}\)?,/);
     assert.match(src, /P2557/);
   });
 
