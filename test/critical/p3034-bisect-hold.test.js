@@ -25,6 +25,19 @@ test('manual dispatch with bisect_trial uploads but never promotes', () => {
   const s = decide({ state: running, appId: MASTER_APP, eventName: 'schedule', bisectTrial: '1', now });
   assert.strictEqual(s.hold_upload, true, 'bisect_trial only counts on workflow_dispatch');
 });
+test('trial 0 is a real trial (string or number), empty/null is not', () => {
+  for (const bisectTrial of ['0', 0, ' 0 ']) {
+    const d = decide({ state: running, appId: MASTER_APP, eventName: 'workflow_dispatch', bisectTrial, now });
+    assert.deepStrictEqual([d.hold_upload, d.hold_promote], [false, true], JSON.stringify(bisectTrial));
+    assert.match(d.reason, /bisect trial 0 /);
+  }
+  for (const bisectTrial of ['', '  ', null, undefined]) {
+    assert.strictEqual(decide({ state: running, appId: MASTER_APP, eventName: 'workflow_dispatch', bisectTrial, now }).hold_upload, true, String(bisectTrial));
+  }
+  for (const f of ['auto-fix-and-publish.yml', 'auto-publish-on-push.yml', 'publish.yml', 'verified-publish-and-diagnostics.yml']) {
+    assert.match(wf(f), /BISECT_TRIAL: \$\{\{ inputs\.bisect_trial \}\}/, f);
+  }
+});
 test('no hold when no state, status not running, or another app', () => {
   assert.strictEqual(decide({ state: null, appId: MASTER_APP, eventName: 'push', now }).hold_upload, false);
   assert.strictEqual(decide({ state: { ...running, status: 'done' }, appId: MASTER_APP, eventName: 'push', now }).hold_upload, false);
