@@ -657,14 +657,14 @@
         "pir_sensor_2"
       ],
       "protocol": "ias_zone",
-      "notes": "P3041 (25/10/2026 Paris): Z2M/ZHC list _TZ3000_mwd3c2at|TS0202 as RTX ZMS4 'Zigbee PIR sensor' (battery_low, occupancy), so P3039d lot B moved the couple to slim_motion_sensor; canonical realigned (it pointed at smart_irrigation_valve since P2240). The couple is kept; generic motion drivers stay forbidden.",
+      "notes": "P3041x (25/10/2026 Paris): Z2M/ZHC list _TZ3000_mwd3c2at|TS0202 as RTX ZMS4 'Zigbee PIR sensor' (battery_low, occupancy), so P3039d lot B moved the couple to slim_motion_sensor; canonical realigned (it pointed at smart_irrigation_valve since P2240). The couple is kept; generic motion drivers stay forbidden.",
       "sources": [
         "z2m",
         "zhc",
         "P2231",
         "P2240",
         "P3039d",
-        "P3041"
+        "P3041x"
       ],
       "tracks": {
         "master": {

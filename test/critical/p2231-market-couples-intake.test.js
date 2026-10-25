@@ -97,7 +97,7 @@ describe('market-driver-infer (P2231)', () => {
     }
   });
 
-  // P3041 (25/10/2026 Paris): Z2M ZMS4 is a PIR sensor; the registry lock now names slim_motion_sensor
+  // P3041x (25/10/2026 Paris): Z2M ZMS4 is a PIR sensor; the registry lock now names slim_motion_sensor
   // (P3039d lot B move), still not the generic motion_sensor default.
   it('resolveMarketDriver: registry lock for ZMS4 PIR overrides motion default', () => {
     const r = resolveMarketDriver('_TZ3000_mwd3c2at', 'TS0202');
