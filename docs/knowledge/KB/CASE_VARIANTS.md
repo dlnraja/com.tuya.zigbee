@@ -78,6 +78,36 @@ data is duplicated.
 
 Tests: `test/critical/p3027-case-variants-never-emitted.test.js`.
 
+## 6. Opt-in: pin a minted form through its wire spelling (P3027b, OFF by default)
+
+The 9.0.1574 fixture (`test/fixtures/athom-last-test-package-couples.json`)
+pins 13998 exact couples. Many are minted spellings (`_tz3000_x`, `ts0601`), so
+section 4 cannot omit them and they eat the budget.
+
+- **Fixture stays additive.** Every pinned string stays in `drivers`. A separate
+  `wireEquivalents` block maps a minted pin to its wire spelling, per driver.
+  An entry exists only if the wire spelling is already in that driver (fixture or
+  `app.json`), is wire-shaped, equals the minted string ignoring case, and is the
+  only such spelling. Evidence outliers are never mapped. Regenerate with
+  `node scripts/maintenance/build-wire-equivalents.cjs` (`--check` reports staleness;
+  the P3027b test fails when the block is stale).
+- **Switch:** `HOMEY_ZIGBEE_PIN_WIRE_EQUIVALENT=1` (only the exact value `1`).
+  Unset means the output is byte-identical to section 4.
+- **With the switch on:** the compactor pins the wire spelling, so the minted
+  copy becomes omittable. The P3024b gate (`publish-baseline-gate.cjs`, used by
+  `prepare-publish.js`) also counts a pinned couple as present when the recorded
+  wire spelling is in the payload with the same pid. It never accepts another
+  pid or a spelling that is not recorded. The no-loss guard still runs, with the
+  switch off, as the reference.
+- **Measured on the real tree at 15500:** raw 15493, 0 pins missing, 0
+  caseless couples lost vs switch off. Caseless couples go from 6776 to 13306,
+  and 9143 fixture couples are satisfied through equivalence.
+- **Activation:** set the variable in the publish workflow env, which covers
+  both the compactor and the gate in the same `prepare-publish.js` run. Do it
+  in a single upload as a soak, after the 25/10 10:00 master upload result.
+  Roll back by removing the variable. If the gate runs without the variable
+  on a payload built with it, the gate fails loudly; it never fails silently.
+
 ## Credits
 
 - Athom B.V. — Homey Apps SDK v3 documentation (Zigbee driver manifest).
