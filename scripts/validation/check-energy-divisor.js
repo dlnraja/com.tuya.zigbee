@@ -57,10 +57,36 @@ function getEnergyDrivers(dir) {
   return files;
 }
 
+const PROFILES_DIR = path.join(__dirname, '..', '..', 'lib', 'tuya', 'profiles');
+
+/** Sources of relative require()s from deviceFilePath that resolve inside lib/tuya/profiles/. */
+function requiredProfileSources(deviceFilePath) {
+  const out = [];
+  let src = '';
+  try { src = fs.readFileSync(deviceFilePath, 'utf8'); } catch (_) { return out; }
+  const re = /require\(\s*['"](\.{1,2}\/[^'"]+)['"]\s*\)/g;
+  let m;
+  while ((m = re.exec(src)) !== null) {
+    const base = path.resolve(path.dirname(deviceFilePath), m[1]);
+    for (const cand of [base, `${base}.js`]) {
+      if (!cand.startsWith(PROFILES_DIR + path.sep)) {continue;}
+      if (fs.existsSync(cand) && fs.statSync(cand).isFile()) {
+        try { out.push(fs.readFileSync(cand, 'utf8')); } catch (_) { /* ignore */ }
+        break;
+      }
+    }
+  }
+  return out;
+}
+
 // Check a single driver device file for divisor handling
 function checkDriver(driverName, deviceFilePath) {
   try {
-    const content = fs.readFileSync(deviceFilePath, 'utf8');
+    // P3034: dedicated Z2M drivers keep their DP table (incl. per-DP divisor) in a shared
+    // profile module under lib/tuya/profiles/ and return it from dpMappings (e.g.
+    // switch_wall_6gang_metering -> P3013DedicatedZ2MProfiles). Scan those required
+    // profile modules too, so an explicit divisor defined there is not reported missing.
+    const content = [fs.readFileSync(deviceFilePath, 'utf8'), ...requiredProfileSources(deviceFilePath)].join('\n');
 
     totalDrivers++;
 
