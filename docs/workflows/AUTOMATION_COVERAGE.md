@@ -135,6 +135,14 @@ It edits only its own section of the issue body (no comment, no commit, no publi
    per topic and reads every post past it, oldest first (see the coverage table). A topic seen for
    the first time starts 40 posts before its tip; older history stays with the full-history sweep.
 
+## Changes made on 2026-10-24/25
+
+- **P3022** `repo-autopilot.yml` (daily, `dry_run` default true): bot PR merge/close, silent issue triage, drafts in the report artifact only.
+- **P3025** `ci-self-check.yml` + `scripts/ci/workflow-hygiene-gate.js` (SHA pins, concurrency, timeouts), `scripts/ci/push-with-retry.js` / `.github/scripts/git-push-retry.sh` (rebase retry, never force), `scripts/ci/appjson-compose-drift-gate.js`, `scripts/ci/lint-ratchet.js`, `.github/scripts/athom-classify-failure.js`.
+- **P3026** `platform-budget.yml` + `scripts/ci/platform-budget-gate.js` (report mode, limits in `config/platform-limits.json`, see `docs/knowledge/KB/PLATFORM_LIMITS.md`); version-free npm cache key.
+- **P3024b** prepare-publish step 5a2b `scripts/maintenance/publish-baseline-gate.cjs`.
+- **P3032** `doc-coverage.yml` (report mode): runs `scripts/kb/doc-coverage.js` and `scripts/kb/code-reference.js --check`, summary in the job page.
+
 ## Remaining gaps
 
 1. Ledger writers: still missing in oss-lan strict-apply.
@@ -162,3 +170,21 @@ It edits only its own section of the issue body (no comment, no commit, no publi
 - **#424 / #423 click window:** `button_wireless_4` already has opt-in `click_window_ms` + triple aggregation on master — no new quirk this run.
 - **Monday `homey-knowledge-refresh.yml`:** cron `47 5 * * 1` present; Actions API listed **0 runs** for that workflow file on 2026-10-12 morning — treat as missed/not-started and re-check later or `workflow_dispatch`. Next-step: confirm workflow enabled and last success date.
 - **Remaining automation gaps (unchanged):** bot-triage/monthly-scan still lack a consumer; Z2M/ZHA sync timeout inside gmail-diagnostics; ledger writers coverage; forum `lastSeen` post-by-post; finish migrating any leftover single gate copies into shared `rules-gates`.
+
+## Other workflows (P3032 inventory)
+
+Listed from each file's own `name:` and header comment.
+
+- `bastien-promote-upstream.yml` — Bastien Promote Upstream: Bastien House → Public tracks autonomous promote (P2606 / P2607) One-way only: bastien-home learnings → master → BOTH reliability → stable-v5. Never copies App ID / version. Never reverse wholesale. (cron UTC 20 6 * * *, 20 18 * * *)
+- `community-inbox.yml` — 📥 Community Inbox: 📥 Community Inbox Digest (v9.0.362) Triggers: cron: 17 5 * * * + workflow_dispatch | Secrets: GITHUB_TOKEN only Generates reports/community-inbox.md — unified daily view of open issues, PRs and unans (cron UTC 17 5 * * *)
+- `daily-digest.yml` — 🤖 Daily Digest: 🤖 Daily Digest (free replacement for the Grok Bot "Homey digest", "Labs digest" and "forum scan" routines) Triggers: cron weekdays (Paris 08:16 Homey, 08:49 Labs, 10:23 Forum watch, 11:41 Inspiration (cron UTC 16 6 * * 1-5, 16 7 * * 1-5, 49 6 * * 1-5, 49 7 * * 1-5, 23 8 * * 1-5, 23 9 * * 1-5, 41 9 * * 1-5, 41 10 * * 1-5, 7 7 * * 1, 7 8 * * 1, 5 10 * * 1-5, 5 11 * * 1-5)
+- `flow-publish-self-heal.yml` — Flow + Publish Self-Heal (P2842): P2842 — Free flow + publish payload self-heal (no paid AI) Automates Contre quoi from P2839 hollow flows, P2840 backups bloat, P2841 zo0cfekv couple. Never forum POST. Deterministic local Node only (f (cron UTC 25 5 * * 2,5)
+- `homey-app-validate.yml` — Homey App Validate (all levels): P2562 forfait + local-smart-learn (all workflows)
+- `housekeeping.yml` — 🧹 Repo Housekeeping: 🧹 Repo Housekeeping (v9.0.368) Triggers: cron: 41 3 * * 1 (weekly, Monday 03:41 UTC) + workflow_dispatch Secrets: GITHUB_TOKEN only Safely tidies the repo root: only unreferenced files matching expli (cron UTC 41 3 * * 1)
+- `knowledge-graph-sync.yml` — 🧠 Knowledge Graph Daily Sync: 🧠 Knowledge Graph Daily Sync Triggers: cron: 30 2 * * * + workflow_dispatch | Secrets: GITHUB_TOKEN only Doc header added 2026-07-29 (workflows genealogy enrichment). P56 — Daily knowledge graph rebu (cron UTC 30 2 * * *)
+- `market-couples-intake.yml` — 📡 Market Couples Intake: Market couples intake (P2231 / P2232) Max-source sacred-couple harvest:   Blakadder + Z2M + ZHA + deCONZ + Johan + Gmail/diag/crash + forum SHADOW   + interviews + device-truth locks + own GitHub inte (cron UTC 50 4 * * *)
+- `nightly-audit.yml` — 🌙 Nightly Audit: 🌙 Nightly Audit Triggers: cron: 45 3 * * * + workflow_dispatch | Secrets: GITHUB_TOKEN only Doc header added 2026-07-29 (workflows genealogy enrichment). Runs the full P57 audit + smart-data-validato (cron UTC 45 3 * * *)
+- `peer-complementary-enrich.yml` — Peer Complementary Enrich (P2832): P2832 — Peer complementary enrich (Johan / Lidl / mega / prune) Autonomous free cron: UNION fingerprints into OUR drivers. Never forum POST. Never invent pid. Contre quoi: cartesian P2570 blast, wipe  (cron UTC 10 6 * * 1,4)
+- `publish-diagnose.yml` — 🔬 Publish Diagnose: 🔬 Publish Diagnose Triggers: workflow_dispatch,workflow_run | Secrets: GITHUB_TOKEN only Doc header added 2026-07-29 (workflows genealogy enrichment). Auto-runs after every "🚀 Publish Stable to Test
+- `smart-update.yml` — 🧠 Smart Update Orchestrator: 🧠 Smart Update Orchestrator Triggers: cron: 30 1 * * * + workflow_dispatch | Secrets: GITHUB_TOKEN only Doc header added 2026-07-29 (workflows genealogy enrichment). P2562 forfait + local-smart-learn (cron UTC 30 1 * * *)
+- `version-health.yml` — 🩺 Version Health: 🩺 Version Health — crash/regression watcher (apps-api) Weekly: pulls build states from the Athom Apps API and flags versions with crashes on test/live or processing_failed builds. Complements the for (cron UTC 27 5 * * 1,4)
