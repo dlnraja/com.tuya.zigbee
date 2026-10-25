@@ -1,0 +1,23 @@
+{
+  "id": "presence_sensor_radar_presence_detected",
+  "highlight": true,
+  "title": {
+    "en": "Presence detected",
+    "nl": "Aanwezigheid gedetecteerd",
+    "fr": "Présence détectée",
+    "de": "Anwesenheit erkannt"
+  },
+  "hint": {
+    "en": "Triggers when the mmWave radar detects human presence (even stationary)",
+    "nl": "Triggert wanneer de mmWave radar menselijke aanwezigheid detecteert (zelfs stilstaand)",
+    "fr": "Se déclenche quand le radar mmWave détecte une présence humaine (même immobile)",
+    "de": "Wird ausgelöst, wenn der mmWave-Radar menschliche Anwesenheit erkennt (auch stationär)"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=presence_sensor_radar|presence_sensor_radar_ts0601"
+    }
+  ]
+}

@@ -175,6 +175,16 @@ function resolveBaselinePins(manifest, baseline) {
     ps.m.add(pin.mfr);
     ps.p.add(pin.pid);
   };
+  // WHY(P3057): an owner-approved REMOVAL exemption (removed:true, e.g. P3055 t555u) means the
+  // couple is a parasite that must never be force-pinned again. Before this, such a couple was
+  // only skipped when no driver carried it; when another driver still matched it through its
+  // own cartesian, it was "moved" there and forced a whole new mfr/pid row (e.g. 62
+  // _TZ3000_9ni6xxld phantoms from gas_sensor_switch cost +280 combos on plug_energy_monitor).
+  // Move exemptions (P3039d) keep the old behaviour: the moved couple stays pinned on its owner.
+  const removedExempt = new Set(((baseline && baseline.exemptions) || [])
+    .filter((e) => e && e.mfr && e.pid && e.reason && e.removed === true)
+    .map((e) => `${e.mfr}\u0000${e.pid}\u0000${e.driverId || '*'}`));
+  let dropped = 0;
   const later = [];
   for (const c of couples) {
     const s = byId.get(c.driverId);
@@ -186,6 +196,11 @@ function resolveBaselinePins(manifest, baseline) {
     later.push(c);
   }
   for (const c of later) {
+    if (removedExempt.has(`${c.mfr}\u0000${c.pid}\u0000${c.driverId}`)
+      || removedExempt.has(`${c.mfr}\u0000${c.pid}\u0000*`)) {
+      dropped += 1;
+      continue;
+    }
     const now = ownersOf(c.mfr, c.pid);
     if (now.length > 0) {
       moved += 1;
@@ -222,7 +237,7 @@ function resolveBaselinePins(manifest, baseline) {
     }
     unresolved.push(`${c.mfr}+${c.pid} @ ${c.driverId}`);
   }
-  return { pins, unresolved, moved, restored, total: couples.length };
+  return { pins, unresolved, moved, restored, dropped, total: couples.length };
 }
 
 function assertSacredCouplesPresent(manifest, sacredAll) {
@@ -1021,6 +1036,7 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
     baselinePinned: baselineResolved.pins.length,
     baselineMoved: baselineResolved.moved,
     baselineRestored: baselineResolved.restored || 0,
+    baselineDropped: baselineResolved.dropped || 0,
     baselineUnresolved: baselineResolved.unresolved,
     overTotalLimit: afterTotal > maxTotalCombos,
   };

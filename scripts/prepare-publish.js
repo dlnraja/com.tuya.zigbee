@@ -547,7 +547,7 @@ try {
       }
     }
     if (compact.baselineTotal) {
-      console.log(`  - P3024b baseline ${compact.baselineVersion}: ${compact.baselineTotal} couples pinned (${compact.baselineMoved} moved to their current driver, ${compact.baselineRestored} re-pinned on their shipped driver)`);
+      console.log(`  - P3024b baseline ${compact.baselineVersion}: ${compact.baselineTotal} couples pinned (${compact.baselineMoved} moved to their current driver, ${compact.baselineRestored} re-pinned on their shipped driver, ${compact.baselineDropped || 0} owner-approved removals not re-pinned)`);
     }
     console.log(`Zigbee identifier matrix: ${compact.beforeTotal} -> ${compact.afterTotal} combinations across ${(compact.changes || []).length} compacted driver(s), ${compact.pruned || 0} pruned synthetic driver(s).`);
     if (compact.sacredPinned) {

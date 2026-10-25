@@ -1,0 +1,22 @@
+{
+  "id": "presence_sensor_radar_presence_cleared",
+  "title": {
+    "en": "Presence cleared",
+    "nl": "Aanwezigheid opgeheven",
+    "fr": "Présence terminée",
+    "de": "Anwesenheit beendet"
+  },
+  "hint": {
+    "en": "Triggers when no human presence is detected for the configured timeout",
+    "nl": "Triggert wanneer geen menselijke aanwezigheid wordt gedetecteerd gedurende de geconfigureerde timeout",
+    "fr": "Se déclenche quand aucune présence humaine n'est détectée pendant le délai configuré",
+    "de": "Wird ausgelöst, wenn für die konfigurierte Zeitüberschreitung keine menschliche Anwesenheit erkannt wird"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=presence_sensor_radar|presence_sensor_radar_ts0601"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "presence_sensor_radar_movement_classificatio_ee75a",
+  "title": {
+    "en": "Movement classification changed",
+    "fr": "Classification du mouvement modifiée"
+  },
+  "hint": {
+    "en": "Triggers when the type of detected movement changes (none/stationary/micro/small/large)",
+    "fr": "Se déclenche quand le type de mouvement détecté change (none/stationary/micro/small/large)"
+  },
+  "tokens": [
+    {
+      "name": "classification",
+      "type": "string",
+      "title": {
+        "en": "Classification"
+      },
+      "example": "large_motion"
+    }
+  ],
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=presence_sensor_radar|presence_sensor_radar_ts0601"
+    }
+  ]
+}
