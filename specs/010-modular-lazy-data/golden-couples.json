@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-24T21:43:59.687Z",
- "drivers": 402,
+ "generated": "2026-10-25T00:47:03.164Z",
+ "drivers": 403,
  "snapshot": {
   "air_purifier": {
    "mfr": 3,
@@ -183,9 +183,9 @@
    "pidSha": "907c50f03c1b4f74"
   },
   "button_wireless_1": {
-   "mfr": 39,
+   "mfr": 40,
    "pid": 32,
-   "mfrSha": "fbd62112e59a8240",
+   "mfrSha": "c8d45a8a4e5f59c8",
    "pidSha": "97471aa91d3d60d5"
   },
   "button_wireless_2": {
@@ -405,9 +405,9 @@
    "pidSha": "00ba96ff94eb4bb5"
   },
   "curtain_motor_shutter": {
-   "mfr": 23,
+   "mfr": 24,
    "pid": 44,
-   "mfrSha": "dfa8050fee5126dd",
+   "mfrSha": "2b399f25c9208407",
    "pidSha": "167ad4e6d48fc2fa"
   },
   "curtain_motor_tilt": {
@@ -855,9 +855,9 @@
    "pidSha": "6657506bd357ec18"
   },
   "gas_detector": {
-   "mfr": 11,
+   "mfr": 12,
    "pid": 8,
-   "mfrSha": "fe20c29cb24e12a5",
+   "mfrSha": "fa6022d2fc376478",
    "pidSha": "480a275813c8653e"
   },
   "gas_sensor": {
@@ -1023,9 +1023,9 @@
    "pidSha": "9b704ef096b15bd7"
   },
   "led_controller_dimmable": {
-   "mfr": 5,
+   "mfr": 12,
    "pid": 4,
-   "mfrSha": "4b46322914792835",
+   "mfrSha": "e03a2d5e1f007886",
    "pidSha": "a42dded92aa1c0bd"
   },
   "led_controller_rgb": {
@@ -1047,9 +1047,9 @@
    "pidSha": "64ee7873940d7e1e"
   },
   "led_strip_rgbw": {
-   "mfr": 9,
+   "mfr": 10,
    "pid": 27,
-   "mfrSha": "45a92b2a76b5953d",
+   "mfrSha": "31728733b5ccc547",
    "pidSha": "37f997a4a19de5a3"
   },
   "light_bulb_dimmable_tunable": {
@@ -1083,9 +1083,9 @@
    "pidSha": "b37ed01a69900c1e"
   },
   "light_cct_ts0502b": {
-   "mfr": 3,
+   "mfr": 5,
    "pid": 1,
-   "mfrSha": "35e408ac50317ff7",
+   "mfrSha": "9b4d7d25ee864f29",
    "pidSha": "9e84a7b9a8e8cb87"
   },
   "light_dimmable_ts0501a": {
@@ -1095,9 +1095,9 @@
    "pidSha": "9ba9d3f04de6a2ef"
   },
   "light_rgbcct_ts0505b": {
-   "mfr": 14,
+   "mfr": 16,
    "pid": 1,
-   "mfrSha": "f87c5f1b24b5a54f",
+   "mfrSha": "2810e6cd9df3eb3e",
    "pidSha": "38bdc69f98e98fe7"
   },
   "light_sensor_outdoor": {
@@ -1377,9 +1377,9 @@
    "pidSha": "fb8ef2c1ffae69fb"
   },
   "remote_dimmer": {
-   "mfr": 1,
+   "mfr": 3,
    "pid": 1,
-   "mfrSha": "2093aa6042dfee20",
+   "mfrSha": "85126b1023b4e1b5",
    "pidSha": "38f5ac236fa162ab"
   },
   "rgb_bulb_E14": {
@@ -1473,9 +1473,9 @@
    "pidSha": "278e503d4862c11f"
   },
   "scene_switch_4": {
-   "mfr": 16,
+   "mfr": 17,
    "pid": 3,
-   "mfrSha": "0eb353c3bc2bad8d",
+   "mfrSha": "0bfa355fd22b65b0",
    "pidSha": "852c1ed113914f3e"
   },
   "scene_switch_6": {
@@ -1791,9 +1791,9 @@
    "pidSha": "a52af499d7d01202"
   },
   "smartplug": {
-   "mfr": 40,
+   "mfr": 42,
    "pid": 3,
-   "mfrSha": "292e8db4a2b190ee",
+   "mfrSha": "8be07d1c1be481ed",
    "pidSha": "d035b5d1165c0c3d"
   },
   "smartplug_2_socket": {
@@ -1928,6 +1928,12 @@
    "mfrSha": "a253393503d9be39",
    "pidSha": "f01c166c2aa06e7b"
   },
+  "switch_2gang_ts0002": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "ee8f66853a1fc811",
+   "pidSha": "a7f885cfce4bbc62"
+  },
   "switch_3_gang": {
    "mfr": 11,
    "pid": 2,
@@ -1959,9 +1965,9 @@
    "pidSha": "455c46e8c8549693"
   },
   "switch_module_whd02": {
-   "mfr": 1,
+   "mfr": 2,
    "pid": 1,
-   "mfrSha": "3f8b40c96392af30",
+   "mfrSha": "60a108f1345a41bc",
    "pidSha": "ab07303ec08cf935"
   },
   "switch_plug_1": {
@@ -2043,9 +2049,9 @@
    "pidSha": "bd28b9c90314cbd2"
   },
   "temphumidsensor": {
-   "mfr": 20,
+   "mfr": 23,
    "pid": 4,
-   "mfrSha": "f484ab44621a7b4e",
+   "mfrSha": "896d83618b1e8cf3",
    "pidSha": "d6b9ec7c03b11cd7"
   },
   "temphumidsensor2": {
@@ -2283,9 +2289,9 @@
    "pidSha": "77d1f07899dbce60"
   },
   "wall_switch_1_gang_tuya": {
-   "mfr": 5,
+   "mfr": 6,
    "pid": 26,
-   "mfrSha": "07cfdedc61c63014",
+   "mfrSha": "4d7db9bc9bc8decd",
    "pidSha": "a919bfb9daea8608"
   },
   "wall_switch_1gang_1way": {
@@ -2325,9 +2331,9 @@
    "pidSha": "584064452315f597"
   },
   "wall_switch_4_gang_tuya": {
-   "mfr": 8,
+   "mfr": 9,
    "pid": 1,
-   "mfrSha": "fa698f8a26cc88b0",
+   "mfrSha": "77fb1de8b373252d",
    "pidSha": "455c46e8c8549693"
   },
   "wall_switch_4gang_1way": {
@@ -2379,9 +2385,9 @@
    "pidSha": "ddd617471a56ff24"
   },
   "water_leak_sensor_tuya": {
-   "mfr": 35,
+   "mfr": 36,
    "pid": 17,
-   "mfrSha": "c0055298b92c51cb",
+   "mfrSha": "ac513e2ebeaf206e",
    "pidSha": "64256b5c3fce47c6"
   },
   "water_tank_monitor": {
@@ -2397,9 +2403,9 @@
    "pidSha": "fe84fd7ecb27e526"
   },
   "water_valve_smart": {
-   "mfr": 25,
+   "mfr": 29,
    "pid": 4,
-   "mfrSha": "e29b82a2d6244fce",
+   "mfrSha": "e0ba98d4e64abbc9",
    "pidSha": "df253ecb1e47260e"
   },
   "weather_station_outdoor": {

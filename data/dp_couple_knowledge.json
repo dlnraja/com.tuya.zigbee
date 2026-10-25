@@ -1,7 +1,7 @@
 {
   "_meta": {
     "version": "1.0.0",
-    "updated": "2026-09-18",
+    "updated": "2026-10-25",
     "doctrine": "Lock interpretation by sacred couple (mfr+pid). Same DP number ≠ same meaning.",
     "tuyaTypes": {
       "0": "RAW / byte_array — requires explicit layout parser; never auto-map to humidity",
@@ -12,7 +12,7 @@
       "5": "BITMAP"
     },
     "lastSync": "2026-10-14T06:43:19.468Z",
-    "coupleCount": 209
+    "coupleCount": 213
   },
   "globalDpCollisions": {
     "1": [
@@ -8987,6 +8987,257 @@
           "direction": "rx",
           "capability": "measure_humidity",
           "source": "driver-dpMappings"
+        }
+      }
+    },
+    "_TZE200_7ytb3h8u|TS0601": {
+      "caseId": "p3031-giex-gx02-water-valve",
+      "driver": "water_valve_smart",
+      "model": "GX02 / QT06_2",
+      "vendor": "GIEX",
+      "sources": [
+        "z2m-giex.ts-QT06_2 (fingerprint+whitelabel GX02)",
+        "z2m-legacy.giexWaterValve dp map"
+      ],
+      "seed": "p3031",
+      "dps": {
+        "1": {
+          "name": "irrigation_mode",
+          "tuyaType": 4,
+          "direction": "both",
+          "capability": null,
+          "notes": "duration vs capacity mode"
+        },
+        "2": {
+          "name": "state",
+          "tuyaType": 1,
+          "direction": "both",
+          "capability": null
+        },
+        "101": {
+          "name": "irrigation_start_time",
+          "direction": "rx",
+          "capability": null
+        },
+        "102": {
+          "name": "irrigation_end_time",
+          "direction": "rx",
+          "capability": null
+        },
+        "103": {
+          "name": "irrigation_cycles",
+          "tuyaType": 2,
+          "direction": "both",
+          "capability": null
+        },
+        "104": {
+          "name": "irrigation_target",
+          "tuyaType": 2,
+          "direction": "both",
+          "capability": null,
+          "notes": "seconds or litres depending on mode"
+        },
+        "105": {
+          "name": "irrigation_interval",
+          "tuyaType": 2,
+          "direction": "both",
+          "capability": null
+        },
+        "106": {
+          "name": "current_temperature",
+          "tuyaType": 2,
+          "direction": "rx",
+          "capability": null
+        },
+        "108": {
+          "name": "battery",
+          "tuyaType": 2,
+          "direction": "rx",
+          "capability": null
+        },
+        "111": {
+          "name": "water_consumed",
+          "tuyaType": 2,
+          "direction": "rx",
+          "capability": null
+        },
+        "114": {
+          "name": "last_irrigation_duration",
+          "direction": "rx",
+          "capability": null
+        }
+      }
+    },
+    "_TZE204_7ytb3h8u|TS0601": {
+      "caseId": "p3031-giex-gx02-water-valve",
+      "driver": "water_valve_smart",
+      "model": "GX02 / QT06_2",
+      "vendor": "GIEX",
+      "sources": [
+        "z2m-giex.ts-QT06_2 (fingerprint+whitelabel GX02)",
+        "z2m-legacy.giexWaterValve dp map"
+      ],
+      "seed": "p3031",
+      "dps": {
+        "1": {
+          "name": "irrigation_mode",
+          "tuyaType": 4,
+          "direction": "both",
+          "capability": null,
+          "notes": "duration vs capacity mode"
+        },
+        "2": {
+          "name": "state",
+          "tuyaType": 1,
+          "direction": "both",
+          "capability": null
+        },
+        "101": {
+          "name": "irrigation_start_time",
+          "direction": "rx",
+          "capability": null
+        },
+        "102": {
+          "name": "irrigation_end_time",
+          "direction": "rx",
+          "capability": null
+        },
+        "103": {
+          "name": "irrigation_cycles",
+          "tuyaType": 2,
+          "direction": "both",
+          "capability": null
+        },
+        "104": {
+          "name": "irrigation_target",
+          "tuyaType": 2,
+          "direction": "both",
+          "capability": null,
+          "notes": "seconds or litres depending on mode"
+        },
+        "105": {
+          "name": "irrigation_interval",
+          "tuyaType": 2,
+          "direction": "both",
+          "capability": null
+        },
+        "106": {
+          "name": "current_temperature",
+          "tuyaType": 2,
+          "direction": "rx",
+          "capability": null
+        },
+        "108": {
+          "name": "battery",
+          "tuyaType": 2,
+          "direction": "rx",
+          "capability": null
+        },
+        "111": {
+          "name": "water_consumed",
+          "tuyaType": 2,
+          "direction": "rx",
+          "capability": null
+        },
+        "114": {
+          "name": "last_irrigation_duration",
+          "direction": "rx",
+          "capability": null
+        }
+      }
+    },
+    "_TZE200_ra6wrlgv|TS0601": {
+      "caseId": "p3031-box-erc2206z-shutter",
+      "driver": "curtain_motor_shutter",
+      "model": "ERC2206-Z",
+      "vendor": "BOX",
+      "sources": [
+        "z2m-box.ts-ERC2206-Z"
+      ],
+      "seed": "p3031",
+      "dps": {
+        "1": {
+          "name": "state",
+          "tuyaType": 4,
+          "direction": "both",
+          "capability": null,
+          "notes": "open=0 stop=1 close=2"
+        },
+        "5": {
+          "name": "motor_direction",
+          "tuyaType": 4,
+          "direction": "both",
+          "capability": null,
+          "notes": "forward=0 back=1"
+        },
+        "101": {
+          "name": "record_rf",
+          "tuyaType": 1,
+          "direction": "tx",
+          "capability": null
+        },
+        "102": {
+          "name": "clear_rf",
+          "tuyaType": 1,
+          "direction": "tx",
+          "capability": null
+        }
+      }
+    },
+    "_TZE284_xuflgcnz|TS0601": {
+      "caseId": "p3031-rtx-zvg1-valve",
+      "driver": "valve_irrigation",
+      "model": "ZVG1",
+      "vendor": "RTX",
+      "sources": [
+        "z2m-rtx.ts-ZVG1",
+        "z2m-legacy.fz.ZVG1 dp switch"
+      ],
+      "seed": "p3031",
+      "dps": {
+        "1": {
+          "name": "state",
+          "tuyaType": 1,
+          "direction": "both",
+          "capability": null
+        },
+        "5": {
+          "name": "water_consumed",
+          "tuyaType": 2,
+          "direction": "rx",
+          "capability": null,
+          "notes": "raw/33.814 = litres per Z2M"
+        },
+        "7": {
+          "name": "battery",
+          "tuyaType": 2,
+          "direction": "rx",
+          "capability": null
+        },
+        "10": {
+          "name": "weather_delay",
+          "tuyaType": 4,
+          "direction": "both",
+          "capability": null
+        },
+        "11": {
+          "name": "timer_time_left",
+          "tuyaType": 2,
+          "direction": "rx",
+          "capability": null,
+          "notes": "seconds; Z2M shows minutes"
+        },
+        "12": {
+          "name": "timer_state",
+          "tuyaType": 4,
+          "direction": "rx",
+          "capability": null
+        },
+        "15": {
+          "name": "last_valve_open_duration",
+          "tuyaType": 2,
+          "direction": "rx",
+          "capability": null
         }
       }
     }
