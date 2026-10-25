@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-25T20:08:26.686Z",
+ "updated": "2026-10-25T21:03:48.567Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -7171,6 +7171,15 @@
    "by": "tuya-deep-diag",
    "kind": "general",
    "mailDate": "2026-10-19T15:25:31.000Z"
+  },
+  "diag:3e35a9aa43cdf43c": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "608f5fdd420f3302",
+   "note": "github mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "github",
+   "mailDate": "2026-10-25T20:44:30.000Z"
   },
   "diag:3e7d01d2c511a65a": {
    "status": "done",
