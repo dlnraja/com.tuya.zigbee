@@ -31,9 +31,11 @@ jobs:
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
           HOMEY_BUILD_LIMIT: ${{ inputs.limit }}
+          HOMEY_API_TIMEOUT_MS: '120000' # P3034: master list > 10 s
         run: |
           for app in com.dlnraja.tuya.zigbee com.dlnraja.tuya.zigbee.stable com.dlnraja.tuya.zigbee.bastien; do
             (cd "$RUNNER_TEMP/h" && node "$GITHUB_WORKSPACE/scripts/ci/homey-build-status.js" "$app" > /dev/null) || true
+            node -e "const d=require('$GITHUB_WORKSPACE/data/status/homey-build-status-'+process.argv[1]+'.json');console.log(process.argv[1],'list_ms='+d.list_ms,'count='+d.list_count,'kept='+d.builds.length,'err='+(d.error||''))" "$app" || true
           done
           ls data/status/
       - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0 (node24, P3025b)
