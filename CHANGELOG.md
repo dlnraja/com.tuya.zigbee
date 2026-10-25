@@ -1,23 +1,8 @@
 # Changelog
 
 ## Unreleased — docs refresh (P3032, stable-v5)
-### Added (2026-10-24/25, master soak)
-- **P3029:** Zigbee command numbering (TSN) now continues per device across app restarts, so the first commands after Homey's nightly reboot are no longer ignored by some firmwares (kill switch `zcl_tsn_continuity`).
-- **P3028:** availability learns each battery device's normal reporting gap; buttons and remotes are no longer marked unavailable for staying silent; flapping devices and many-devices-at-once outages are flagged; a single sudden low-battery reading waits for confirmation.
-- **P3023:** memory budget (lazy DP catalogue, bounded caches, 45/60/75 MB degrade tiers); bounded smart helpers behind soak flags.
-- **P3018b / P3016 / P3017:** more DPs decoded exactly (ZHA per-quirk + deCONZ DDF sources), optional inferred DP layer, interpretation of unknown commands with teach/forget Flow actions.
-- **P3021c:** dedicated `switch_2gang_ts0002` driver for `_TZ3000_amal63is` + TS0002; power-vs-energy sanity check; ZG-102ZL contact default inverse; soil sensor DP guards.
-
-### Fixed (2026-10-24/25)
+### Fixed (2026-10-25)
 - **P3049 CI:** the JavaScript syntax audit of the PR gate now creates its report folder when it is missing, instead of failing every pull request with "no such file or directory" before checking anything.
-- **P3047 memory:** the published app.json and data files are now written as plain ASCII (other characters as `\uXXXX`, same content), so Homey reads them with half the memory. Follow-up to the Bastien out-of-memory crash.
-- **P3045 (#560, thanks artisare):** the EARU TRV06 (`_TZE200_rxq4iti9`) loses its phantom humidity for good, even when a stray value had been written, and it can no longer come back; the valve has no humidity sensor (Z2M definition). Its battery is a low-battery alarm only, because the firmware sends no percentage. Whole-degree readings are a firmware limit, confirmed by Z2M users.
-- **P3045 memory:** memory readings no longer crash the app when Homey refuses `process.memoryUsage()` (ENOENT); the memory guards fall back to V8 heap statistics instead of going blind.
-- **P3045 Flow cards:** looking up a Flow card that is missing from the build returns a harmless stand-in and logs once, so there is no more `invalid_flow_card_id` crash or log flood. No card was removed or renamed.
-- **P3045 mapping data:** 145 driver profiles in `driver-mapping-database.json` now match their driver's own class and capabilities; for example, switches no longer get a battery and plugs are sockets. The device indexes are unchanged.
-- **P3046 memory (Bastien OOM):** each device no longer keeps its own copy of the full list of Flow card ids (about 330 KB per device). Devices now share one list per driver, which removes about 20 MB on a 60-device home and stops the "JavaScript heap out of memory" crash loop seen a few minutes after start.
-- **P3025:** the manifest clean-up no longer strips valid Flow card `titleFormatted`; CI gates for app.json/compose drift, DP shards and lint ratchet; race-safe pushes with rebase retry.
-- **P3024b:** no couple of the last Test package (9.0.1574) can be lost in the publish payload (259 restored; baseline gate).
 
 ### Added
 - `scripts/kb/doc-coverage.js` + report-only workflow `doc-coverage.yml`: lists modules, gates, workflows, env flags, drivers and KB files not yet documented (`docs/knowledge/KB/DOC_COVERAGE.md`).
