@@ -17,6 +17,10 @@ const readJson = (f) => JSON.parse(fs.readFileSync(path.join(ROOT, f), 'utf8'));
 const parse = (v) => { const m = String(v || '').match(/^(\d+)\.(\d+)\.(\d+)$/); return m ? m.slice(1).map(Number) : null; };
 const cmp = (a, b) => { const x = parse(a); const y = parse(b); for (let i = 0; i < 3; i++) if (x[i] !== y[i]) return x[i] - y[i]; return 0; };
 
+// P3042b: a changelog key may be at most one patch above the committed version (the curated
+// notes for the next publish, kept by bump-homey-version.js); anything further is refused.
+const changelogKeyAllowed = (k, version) => { const [a, b, c] = parse(version); return cmp(k, `${a}.${b}.${c + 1}`) <= 0; };
+
 describe('P2830f version alignment', () => {
   const app = readJson('app.json');
 
@@ -48,10 +52,21 @@ describe('P2830f version alignment', () => {
     const f = path.join(ROOT, '.homeychangelog.json');
     if (!fs.existsSync(f)) return;
     const major = parse(app.version)[0];
+    const [ma, mi, pa] = parse(app.version);
+    const nextPatch = `${ma}.${mi}.${pa + 1}`;
     for (const k of Object.keys(readJson('.homeychangelog.json'))) {
       // legacy keys from another line (e.g. 9.0.x kept in a 5.x changelog) are not comparable
-      if (parse(k) && parse(k)[0] === major) assert.ok(cmp(k, app.version) <= 0, `changelog key ${k} > ${app.version}`);
+      // P3042b: bump-homey-version.js keeps a curated entry already written for the next patch
+      // (release notes prepared before the publish bump), so exactly version+1 patch is allowed.
+      if (parse(k) && parse(k)[0] === major) assert.ok(changelogKeyAllowed(k, app.version), `changelog key ${k} > ${nextPatch} (next of ${app.version})`);
     }
+  });
+
+  it('P3042b: a changelog key two patches ahead is still refused', () => {
+    assert.equal(changelogKeyAllowed('9.0.1602', '9.0.1601'), true);
+    assert.equal(changelogKeyAllowed('9.0.1601', '9.0.1601'), true);
+    assert.equal(changelogKeyAllowed('9.0.1603', '9.0.1601'), false);
+    assert.equal(changelogKeyAllowed('9.1.0', '9.0.1601'), false);
   });
 
   it('the in-app version is read from the manifest, never a hard-coded constant', () => {
