@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-25T15:52:41.631Z",
+ "updated": "2026-10-25T15:58:03.135Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -39619,6 +39619,12 @@
    "status": "done",
    "date": "2026-10-25",
    "note": "power_meter exact TS0601 added (additive); compaction still drops the variant, sacred pin proposed",
+   "by": "p3039"
+  },
+  "p3039b-ts0601-new-drivers": {
+   "status": "done",
+   "date": "2026-10-25",
+   "note": "9 new TS0601 drivers (lead p3038c), codec enum/delta, hvac_system_mode; master only",
    "by": "p3039"
   },
   "root-cause:P2865-trv-announce": {

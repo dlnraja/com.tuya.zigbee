@@ -1,0 +1,81 @@
+{
+  "id": "keypad_alarm_wke502z",
+  "name": {
+    "en": "Alarm keypad (Daewoo WKE502Z)",
+    "fr": "Clavier d’alarme (Daewoo WKE502Z)",
+    "nl": "Alarmtoetsenbord (Daewoo WKE502Z)",
+    "de": "Alarmtastatur (Daewoo WKE502Z)"
+  },
+  "class": "homealarm",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "measure_battery",
+    "alarm_tamper",
+    "homealarm_state",
+    "alarm_generic"
+  ],
+  "capabilitiesOptions": {
+    "alarm_generic": {
+      "title": {
+        "en": "SOS",
+        "fr": "SOS",
+        "nl": "SOS",
+        "de": "SOS"
+      }
+    }
+  },
+  "energy": {
+    "batteries": [
+      "OTHER"
+    ]
+  },
+  "images": {
+    "small": "/drivers/keypad_alarm_wke502z/assets/images/small.png",
+    "large": "/drivers/keypad_alarm_wke502z/assets/images/large.png"
+  },
+  "settings": [
+    {
+      "$extends": [
+        "zcl_cluster_layer"
+      ]
+    }
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_rt5dklro",
+      "_tze200_rt5dklro",
+      "_TZE200_RT5DKLRO",
+      "_tze200_RT5DKLRO"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5
+        ],
+        "bindings": []
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Press and hold the reset button for about 5 seconds until the keypad beeps.",
+        "fr": "Maintenez le bouton reset environ 5 secondes jusqu’à ce que le clavier bipe.",
+        "nl": "Houd de resetknop ongeveer 5 seconden ingedrukt tot het toetsenbord piept.",
+        "de": "Halten Sie die Reset-Taste etwa 5 Sekunden gedrückt, bis die Tastatur piept."
+      }
+    }
+  },
+  "metadata": {
+    "source": "zigbee-herdsman-converters daewoo.ts WKE502Z (_TZE200_rt5dklro): DP3 battery, DP23 armed, DP24 tamper, DP26 disarm, DP27 arm away, DP28 arm home, DP29 SOS, DP101 hub mode (written once after the first report, never at pairing). Reimplemented and credited (P3039), no upstream code copied."
+  }
+}
