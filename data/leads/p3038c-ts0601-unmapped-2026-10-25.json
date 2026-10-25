@@ -224,6 +224,18 @@
         "id": "P3039a",
         "driverId": "power_meter"
       }
+    },
+    {
+      "mfr": "_TZE204_qaxkdgyt",
+      "pid": "TS0601",
+      "model": "JKD-816COM-Z",
+      "description": "Carbon monoxide & gas sensor",
+      "source": {
+        "src": "zhc",
+        "model": "JKD-816COM-Z",
+        "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/tuya.ts#L28632"
+      },
+      "reason": "held back by P3036d (t524u per-couple rule): on gas_sensor the mfr x 15 pids cartesian adds 12 combos no source lists, and _TZE204_qaxkdgyt|TS0205 on smoke_sensor3 becomes a multi-driver parasitic; 13 NEW parasitic combos for the mfr-multi-driver audit. Needs a TS0601-only gas+CO driver (DP1 gas, DP2 gas_value, DP18/19 CO), or the owner's yes to grow the parasitic baseline."
     }
   ],
   "excluded": [
