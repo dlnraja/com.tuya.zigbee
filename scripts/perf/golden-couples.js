@@ -51,7 +51,9 @@ function familyView(snap) {
   try { ({ SIBLING_TO_PARENT } = require(path.join(ROOT, 'lib', 'utils', 'DriverFamily.js'))); } catch { /* optional */ }
   const out = { ...snap };
   for (const [sib, parent] of Object.entries(SIBLING_TO_PARENT)) {
-    if (!out[parent] || !snap[sib]) continue;
+    if (!out[parent] || !snap[sib]) {
+      continue;
+    }
     const mfrs = [...new Set([...out[parent].mfrs, ...snap[sib].mfrs])].sort();
     const pids = [...new Set([...out[parent].pids, ...snap[sib].pids])].sort();
     out[parent] = { mfr: mfrs.length, pid: pids.length, mfrSha: sha(mfrs), pidSha: sha(pids), mfrs, pids };
