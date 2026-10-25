@@ -290,10 +290,15 @@ function comboCount(driver) {
  * Cap CASE variants per unique manufacturer key.
  * Prefer original first occurrence, then lowercase, then uppercase.
  */
-function limitCaseForms(manufacturers, maxForms = DEFAULT_MAX_CASE_FORMS) {
+function limitCaseForms(manufacturers, maxForms = DEFAULT_MAX_CASE_FORMS, sourcedForms = null) {
   const limit = Math.max(1, Number(maxForms) || DEFAULT_MAX_CASE_FORMS);
   const groups = new Map();
-  for (const value of manufacturers || []) {
+  // WHY(P3041): with a Set of sourced exact forms, unsourced all-lower/all-upper twins of a sourced or
+  // canonical form are not spent (scripts/lib/case-form-sources.cjs); the room goes to real groups.
+  const input = sourcedForms instanceof Set
+    ? require('../lib/case-form-sources.cjs').splitArtifactForms(manufacturers, sourcedForms).kept
+    : manufacturers;
+  for (const value of input || []) {
     if (typeof value !== 'string' || !value.trim()) continue;
     const k = mfrKey(value);
     if (!groups.has(k)) groups.set(k, []);
@@ -454,6 +459,7 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
     || process.env.HOMEY_ZIGBEE_MAX_CASE_FORMS
     || DEFAULT_MAX_CASE_FORMS,
   );
+  const caseFormSources = opts.caseFormSources instanceof Set ? opts.caseFormSources : null; // P3041
 
   const repoRoot = opts.repoRoot || path.join(__dirname, '..', '..');
   const sacredOnly = Array.isArray(opts.sacredKeep)
@@ -667,7 +673,7 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
       }
 
       // WHY(P2252): cap CASE forms so Athom raw cartesian stays near group budget
-      nextManufacturers = limitCaseForms(nextManufacturers, maxCaseForms);
+      nextManufacturers = limitCaseForms(nextManufacturers, maxCaseForms, caseFormSources);
       // If still over raw budget, cut more groups — never drop sacred keys
       while (
         nextManufacturers.length * nextProducts.length > maxDriverCombos
@@ -705,7 +711,7 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
       afterTotal += after;
     } else {
       // Still cap CASE forms on under-budget drivers (Athom raw cartesian)
-      let emitMfrs = limitCaseForms(manufacturers, maxCaseForms);
+      let emitMfrs = limitCaseForms(manufacturers, maxCaseForms, caseFormSources);
       let emitProducts = nextProducts;
       while (
         emitMfrs.length * emitProducts.length > maxDriverCombos

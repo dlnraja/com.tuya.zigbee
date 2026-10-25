@@ -32,8 +32,21 @@ function payloadCouples(manifest) {
   return set;
 }
 
-function checkBaseline(manifest, baseline) {
+function checkBaseline(manifest, baseline, opts = {}) {
   const have = payloadCouples(manifest);
+  // P3041 (opt-in prune, owner yes needed): an unsourced all-lower/all-upper twin of a baseline couple counts
+  // as kept when a sourced or mixed-case form of the same manufacturer ships with the same productId.
+  const sourced = opts.caseEquivalentSourced instanceof Set ? opts.caseEquivalentSourced : null;
+  let folded = null;
+  if (sourced) {
+    const { isPureCase } = require('../lib/case-form-sources.cjs');
+    folded = new Set();
+    for (const k of have) {
+      const [m, p] = k.split('\u0000');
+      if (sourced.has(m) || !isPureCase(m)) folded.add(`${m.trim().toLowerCase()}\u0000${p}`);
+    }
+  }
+  let caseEquivalent = 0;
   const exempt = new Set(((baseline && baseline.exemptions) || [])
     .filter((e) => e && e.mfr && e.pid && e.reason)
     .map((e) => `${e.mfr}\u0000${e.pid}`));
@@ -44,9 +57,11 @@ function checkBaseline(manifest, baseline) {
     const k = `${c.mfr}\u0000${c.pid}`;
     if (seen.has(k)) continue;
     seen.add(k);
-    if (!have.has(k) && !exempt.has(k)) missing.push(`${c.mfr}+${c.pid} (was ${c.driverId})`);
+    if (have.has(k) || exempt.has(k)) continue;
+    if (folded && !sourced.has(c.mfr) && folded.has(`${String(c.mfr).trim().toLowerCase()}\u0000${c.pid}`)) { caseEquivalent += 1; continue; }
+    missing.push(`${c.mfr}+${c.pid} (was ${c.driverId})`);
   }
-  return { total: seen.size, missing };
+  return { total: seen.size, missing, caseEquivalent };
 }
 
 if (require.main === module) {

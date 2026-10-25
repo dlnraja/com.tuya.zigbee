@@ -39,7 +39,7 @@ function totalCombos(manifest) {
  * Candidate groups: one per lower-case manufacturer whose (mfr, pid) couple is in no payload driver,
  * placed on the cheapest payload driver (fewest productIds) whose SOURCE compose lists it with that pid.
  */
-function candidates(source, payload, { productId = 'TS0601', maxCaseForms = 2, observed = null } = {}) {
+function candidates(source, payload, { productId = 'TS0601', maxCaseForms = 2, observed = null, caseFormSources = null } = {}) {
   const pid = lc(productId);
   const present = presentCouples(payload);
   const payById = new Map((payload.drivers || []).filter((d) => d && d.zigbee).map((d) => [d.id, d]));
@@ -59,7 +59,7 @@ function candidates(source, payload, { productId = 'TS0601', maxCaseForms = 2, o
       groups.get(k).push(m);
     }
     for (const [k, variants] of groups) {
-      const forms = limitCaseForms(variants, maxCaseForms);
+      const forms = limitCaseForms(variants, maxCaseForms, caseFormSources); // P3041: no unsourced twin
       const cost = forms.length * payPids.length;
       const prev = best.get(k);
       if (!prev || cost < prev.cost) {

@@ -20,6 +20,10 @@ const ENV = {
   // top-ups may pass the 20000 combos seen accepted (1 = allowed, 0 = clamp to the measured maximum).
   maxUploadAppJsonBytes: 'HOMEY_MAX_UPLOAD_APP_JSON_BYTES',
   allowAboveMeasuredCombos: 'HOMEY_ZIGBEE_TOPUP_ALLOW_UNMEASURED',
+  // P3041: 1 = the compaction and the TS0601 top-up spend no room on unsourced all-lower/all-upper twins
+  // (never removes a form already in the payload); 1 = also prune such twins already pinned (owner yes needed).
+  caseFormsNeedSource: 'HOMEY_ZIGBEE_CASE_FORMS_NEED_SOURCE',
+  pruneArtifactCaseForms: 'HOMEY_ZIGBEE_PRUNE_ARTIFACT_CASE_FORMS',
 };
 const FILE = path.join('config', 'publish-caps.json');
 
