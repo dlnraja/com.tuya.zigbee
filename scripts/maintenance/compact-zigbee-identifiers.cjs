@@ -26,6 +26,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const caseEvidence = require('./case-variant-evidence.cjs');
 
 // Legacy budgets (no mfs_db available): historical behavior.
 const DEFAULT_MAX_DRIVER_COMBOS = 350;
@@ -273,6 +274,21 @@ function uniqStrings(values) {
   return out;
 }
 
+// WHY(P3027): caseless (driver, mfr, pid) keys of a manifest, for the no-loss guard.
+function caselessCoupleSet(manifest) {
+  const out = new Set();
+  for (const d of (manifest && manifest.drivers) || []) {
+    const z = d && d.zigbee;
+    if (!z) continue;
+    for (const m of z.manufacturerName || []) {
+      for (const p of z.productId || []) {
+        out.add(`${d.id}\u0000${mfrKey(m)}\u0000${String(p).trim().toUpperCase()}`);
+      }
+    }
+  }
+  return out;
+}
+
 function comboCount(driver) {
   const zigbee = driver && driver.zigbee;
   if (!zigbee) return 0;
@@ -286,7 +302,7 @@ function comboCount(driver) {
  * Cap CASE variants per unique manufacturer key.
  * Prefer original first occurrence, then lowercase, then uppercase.
  */
-function limitCaseForms(manufacturers, maxForms = DEFAULT_MAX_CASE_FORMS) {
+function limitCaseForms(manufacturers, maxForms = DEFAULT_MAX_CASE_FORMS, legacyOrder = false) {
   const limit = Math.max(1, Number(maxForms) || DEFAULT_MAX_CASE_FORMS);
   const groups = new Map();
   for (const value of manufacturers || []) {
@@ -304,7 +320,12 @@ function limitCaseForms(manufacturers, maxForms = DEFAULT_MAX_CASE_FORMS) {
     const first = variants[0];
     // WHY(P2671): brand interviews (HOBEIAN) report UPPERCASE — prefer upper then lower.
     const brandish = upper && lower && !String(first).startsWith('_');
-    const order = brandish ? [upper, lower, first, ...variants] : [first, lower, upper, ...variants];
+    // WHY(P3027): the Tuya wire shape (_TZ3000_abcd) is the only spelling devices
+    // send; keep it first so the case cap never leaves only _tz3000_/_TZ3000_ABCD.
+    const wire = legacyOrder ? [] : variants.filter((v) => caseEvidence.isWireShapedMfr(v));
+    const order = brandish
+      ? [upper, lower, first, ...variants]
+      : [...wire, first, lower, upper, ...variants];
     for (const v of order) {
       if (!v || preferred.includes(v)) continue;
       preferred.push(v);
@@ -471,6 +492,53 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
     ? [...sacredOnly, ...baselineResolved.pins]
     : sacredOnly;
   const sacredMissing = [];
+  // WHY(P3027): Tuya case forms no device sends (all-lower _tz3000_x, all-upper
+  // _TZ3000_X, ts0601) are dropped from the publish manifest when the wire-shaped
+  // sibling is present. Exact pins and evidence outliers are never dropped.
+  const dropNeverEmitted = opts.dropNeverEmitted !== undefined
+    ? opts.dropNeverEmitted !== false
+    : process.env.HOMEY_ZIGBEE_DROP_NEVER_EMITTED !== '0';
+  const neverEmittedKeep = new Set(opts.wireEvidence
+    ? [...opts.wireEvidence]
+    : caseEvidence.loadWireEvidence(repoRoot));
+  for (const c of sacredAll) {
+    neverEmittedKeep.add(String(c.mfr));
+    neverEmittedKeep.add(String(c.pid));
+  }
+  for (const c of baselineCouples(baseline)) {
+    neverEmittedKeep.add(c.mfr);
+    neverEmittedKeep.add(c.pid);
+  }
+  for (const e of (baseline && baseline.exemptions) || []) {
+    if (e && e.mfr) neverEmittedKeep.add(String(e.mfr));
+    if (e && e.pid) neverEmittedKeep.add(String(e.pid));
+  }
+  let neverEmittedDropped = 0;
+  // WHY(P3027): internal switch that reproduces the pre-P3027 case order, used
+  // only by the no-loss guard below to know what the old compactor shipped.
+  const legacyCaseOrder = opts.legacyCaseOrder === true;
+  // WHY(P3027): the omission must never cost a published couple. Run the old
+  // logic on a copy first; every caseless (driver, mfr, pid) it keeps is
+  // protected from the budget cuts below, and if the new result still misses
+  // one (or breaks the cap) the old result is shipped unchanged.
+  let legacyGuard = null;
+  if (dropNeverEmitted && opts.noLossGuard !== false && !opts._legacyRun) {
+    const legacyManifest = JSON.parse(JSON.stringify(manifest));
+    const legacyResult = compactZigbeeIdentifiers(legacyManifest, {
+      ...opts,
+      dropNeverEmitted: false,
+      legacyCaseOrder: true,
+      _legacyRun: true,
+      verbose: false,
+    });
+    legacyGuard = {
+      manifest: legacyManifest,
+      result: legacyResult,
+      keep: caselessCoupleSet(legacyManifest),
+    };
+  }
+  const isProtected = (driverId, mfr, pid) => !!legacyGuard
+    && legacyGuard.keep.has(`${driverId}\u0000${mfrKey(mfr)}\u0000${String(pid).trim().toUpperCase()}`);
 
   const changes = [];
   const prunedDrivers = [];
@@ -544,6 +612,19 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
         }
       } else if (syntheticCount > 0) {
         manufacturers = realManufacturers;
+      }
+    }
+
+    if (dropNeverEmitted) {
+      const m = caseEvidence.dropNeverEmittedCaseForms(manufacturers, 'mfr', neverEmittedKeep);
+      const p = caseEvidence.dropNeverEmittedCaseForms(products, 'pid', neverEmittedKeep);
+      if (m.dropped.length || p.dropped.length) {
+        manufacturers = m.kept;
+        products = p.kept;
+        neverEmittedDropped += m.dropped.length + p.dropped.length;
+        if (verbose) {
+          logLines.push(`[compact]   ${driver.id}: never-emitted case forms omitted: ${[...m.dropped, ...p.dropped].join(', ')}`);
+        }
       }
     }
 
@@ -663,7 +744,7 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
       }
 
       // WHY(P2252): cap CASE forms so Athom raw cartesian stays near group budget
-      nextManufacturers = limitCaseForms(nextManufacturers, maxCaseForms);
+      nextManufacturers = limitCaseForms(nextManufacturers, maxCaseForms, legacyCaseOrder);
       // If still over raw budget, cut more groups — never drop sacred keys
       while (
         nextManufacturers.length * nextProducts.length > maxDriverCombos
@@ -701,7 +782,7 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
       afterTotal += after;
     } else {
       // Still cap CASE forms on under-budget drivers (Athom raw cartesian)
-      let emitMfrs = limitCaseForms(manufacturers, maxCaseForms);
+      let emitMfrs = limitCaseForms(manufacturers, maxCaseForms, legacyCaseOrder);
       let emitProducts = nextProducts;
       while (
         emitMfrs.length * emitProducts.length > maxDriverCombos
@@ -824,10 +905,18 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
       const pinPidExact = new Set(pins.map((p) => String(p.pid)));
       const pinMfrLc = new Set(pins.map((p) => mfrKey(p.mfr)));
       const pinPidUc = new Set(pins.map((p) => String(p.pid).toUpperCase()));
-      const variantPid = [...pids].reverse()
-        .find((p) => !pinPidExact.has(p) && pinPidUc.has(p.toUpperCase()));
-      const variantMfr = [...mfrs].reverse()
-        .find((v) => v === v.trim() && !pinMfrExact.has(v) && pinMfrLc.has(mfrKey(v)));
+      // WHY(P3027): trim never-emitted spellings first; the wire-shaped one
+      // (TS0203, _TZ3000_abcd) is what the device sends, so it goes last.
+      const pidCands = [...pids].reverse()
+        .filter((p) => !pinPidExact.has(p) && pinPidUc.has(p.toUpperCase()));
+      const mfrCands = [...mfrs].reverse()
+        .filter((v) => v === v.trim() && !pinMfrExact.has(v) && pinMfrLc.has(mfrKey(v)));
+      const variantPid = legacyCaseOrder
+        ? pidCands[0]
+        : (pidCands.find((p) => !caseEvidence.isWireShapedPid(p)) ?? pidCands[0]);
+      const variantMfr = legacyCaseOrder
+        ? mfrCands[0]
+        : (mfrCands.find((v) => !caseEvidence.isWireShapedMfr(v)) ?? mfrCands[0]);
       if (variantPid !== undefined && (mfrs.length <= pids.length || variantMfr === undefined)) {
         d.zigbee.productId = pids.filter((p) => p !== variantPid);
       } else if (variantMfr !== undefined) {
@@ -841,6 +930,9 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
     }
     if (!trimmed) break;
     afterTotal = rawTotal();
+  }
+  if (neverEmittedDropped > 0) {
+    logLines.push(`[compact] P3027: omitted ${neverEmittedDropped} never-emitted case form(s) (wire-shaped sibling kept)`);
   }
   if (pass2VariantCuts > 0) {
     logLines.push(`[compact] pass2: trimmed ${pass2VariantCuts} unpinned case variant(s) of pinned couples (now ${afterTotal})`);
@@ -856,6 +948,13 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
       const mfrs = uniqStrings(target.zigbee.manufacturerName);
       const pids = uniqStrings(target.zigbee.productId);
       const pins = sacredPinsForDriver(sacredAll, target.id);
+      // WHY(P3027): no-loss guard — a mfr group or pid whose removal would drop a
+      // caseless couple the old compactor shipped is not a candidate.
+      const mfrGroupSafe = (k) => !legacyGuard
+        || !pids.some((p) => isProtected(target.id, k, p));
+      const pidSafe = (p) => !legacyGuard
+        || pids.some((q) => q !== p && q.trim().toUpperCase() === p.trim().toUpperCase())
+        || !mfrs.some((m) => isProtected(target.id, m, p));
       // WHY(P2348): pass2 must compare lowercase keys to lowercase sacred pins
       // (previously pinMfr held original case → sacred mfrs looked droppable).
       const pinMfrLc = new Set(pins.map((p) => mfrKey(p.mfr)));
@@ -864,10 +963,10 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
 
       if (mfrs.length > pids.length) {
         const keys = [...new Set(mfrs.map((v) => mfrKey(v)))];
-        const drop = [...keys].reverse().find((k) => !pinMfrLc.has(k));
+        const drop = [...keys].reverse().find((k) => !pinMfrLc.has(k) && mfrGroupSafe(k));
         if (!drop) {
           // Cannot drop mfr — try pid instead
-          const dropPid = [...pids].reverse().find((p) => !pinPid.has(String(p).toUpperCase()));
+          const dropPid = [...pids].reverse().find((p) => !pinPid.has(String(p).toUpperCase()) && pidSafe(p));
           if (dropPid) {
             target.zigbee.productId = pids.filter((p) => p !== dropPid);
             cutMade = true;
@@ -879,14 +978,14 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
           break;
         }
       } else {
-        const dropPid = [...pids].reverse().find((p) => !pinPid.has(String(p).toUpperCase()));
+        const dropPid = [...pids].reverse().find((p) => !pinPid.has(String(p).toUpperCase()) && pidSafe(p));
         if (dropPid) {
           target.zigbee.productId = pids.filter((p) => p !== dropPid);
           cutMade = true;
           break;
         } else {
           const keys = [...new Set(mfrs.map((v) => mfrKey(v)))];
-          const drop = [...keys].reverse().find((k) => !pinMfrLc.has(k));
+          const drop = [...keys].reverse().find((k) => !pinMfrLc.has(k) && mfrGroupSafe(k));
           if (drop) {
             target.zigbee.manufacturerName = mfrs.filter((v) => mfrKey(v) !== drop);
             cutMade = true;
@@ -929,6 +1028,26 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
     sacredMissing.push(miss);
   }
   afterTotal = rawTotal();
+
+  // WHY(P3027): no-loss guard fallback — ship the old result when the new one
+  // would lose a caseless couple the old one kept, or misses the cap/pins.
+  let noLossFallback = false;
+  let noLossLost = 0;
+  if (legacyGuard) {
+    const now = caselessCoupleSet(manifest);
+    for (const k of legacyGuard.keep) if (!now.has(k)) noLossLost += 1;
+    const legacyOk = (legacyGuard.result.sacredMissing || []).length === 0;
+    if (legacyOk && (noLossLost > 0 || afterTotal > maxTotalCombos || sacredMissing.length > 0)) {
+      noLossFallback = true;
+      manifest.drivers = legacyGuard.manifest.drivers;
+      sacredMissing.length = 0;
+      afterTotal = rawTotal();
+      neverEmittedDropped = 0;
+      logLines.push(`[compact] P3027: no-loss guard — new result lost ${noLossLost} caseless couple(s); shipped the pre-P3027 result`);
+    } else if (noLossLost === 0) {
+      logLines.push('[compact] P3027: no-loss guard OK (every caseless couple of the pre-P3027 result kept)');
+    }
+  }
 
   // Keep OTA firmwareUpdates consistent with the (possibly compacted) zigbee
   // identifier lists: homey-lib 'publish' validation rejects firmware updates
@@ -999,6 +1118,9 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
     changes,
     pruned: prunedDrivers.length,
     prunedDrivers,
+    neverEmittedDropped,
+    noLossFallback,
+    noLossLost,
     rescuedDrivers,
     filteredSyntheticManufacturers,
     firmwareAligned,
