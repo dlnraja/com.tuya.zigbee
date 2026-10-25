@@ -1,0 +1,13 @@
+{
+  "_doc": "P3027 — exact manufacturerName/productId strings that break the usual Tuya wire shape but were seen as-is in a reliable source. The compactor never omits them. Rule and sources: docs/knowledge/KB/CASE_VARIANTS.md",
+  "updated": "2026-10-25",
+  "manufacturerName": [
+    { "value": "_TZ3000_nPGIPl5D", "source": "Z2M tuya fingerprint (exact ===), Blakadder" },
+    { "value": "_TYST11_KGbxAXL2", "source": "Z2M, ZHA quirk, Blakadder" },
+    { "value": "_Tz3000_0Zfrhq4I", "source": "ZHA quirk (zigpy/zha-device-handlers)" },
+    { "value": "_TZ3000_TS004F", "source": "deCONZ device DDF" },
+    { "value": "_tz3000_i8jfiezr", "source": "Blakadder page (Z2M lists _TZ3000_i8jfiezr; kept as uncertain)" },
+    { "value": "_tz3000_llfaquvp", "source": "Blakadder page (Z2M lists _TZ3000_llfaquvp; kept as uncertain)" }
+  ],
+  "productId": []
+}
