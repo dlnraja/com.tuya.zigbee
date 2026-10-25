@@ -26,6 +26,7 @@ Handles and their contributions, extracted from CREDITS.md (no personal data).
 - **JohanBendz** - Original Tuya Zigbee app author (com.tuya.zigbee), foundational patterns
 - **Community members** - All forum contributors who reported issues #2091, #5472, #388, #383, #420, #417 and requested device support
 - **Reddit communities** - r/homey, r/zigbee, r/homeautomation for cross-platform device knowledge
+- **motren** — device interview of the TS0044 scene remote `_TZ3000_pd9mpyh4` (JohanBendz/com.tuya.zigbee#1534); placed on `scene_switch_4` 2026-10-25
 - **Peter** - HOBEIAN ZG-222Z water leak sensor (Issue #2090)
 - **Community** - MMWave radar motion sensor (Issue #420)
 - **Community** - Bed sensor verification (Issue #383)
@@ -97,6 +98,7 @@ Handles and their contributions, extracted from CREDITS.md (no personal data).
 - **Kimi Code CLI + WebBridge** — autonomous CI repair, portal cartography, forum operations
 - **Johan Bendz** and the reporters of JohanBendz/com.tuya.zigbee #1298, #414, #1486, #1315 (PR #1508) — interviews of HOBEIAN ZG-102ZL / `_TZE200_pay2byax` contact+lux sensors; Koenkk/zigbee-herdsman-converters `hobeian.ts` for the DP layout. Our rules: `docs/rules/JOHAN_1298_CONTACT_LUX.md`.
 - **Johan Bendz** and the reporters of JohanBendz/com.tuya.zigbee #1113, #1475, #1008, #925 — physical interviews showing one eWeLink/SNZB-03 identity used by a PIR and a water detector, and the "disambiguate by IAS zoneType" approach. Our rules: `docs/rules/JOHAN_1113_AMBIGUOUS_IAS_IDENTITY.md`.
+- **Cadabi** (Homey Community topic [160757](https://community.homey.app/t/160757), post 788018, P3029) — tested couple `_TZB210_3zfp8mki` + TS0505B, kept on a single driver (pin test); topic added to the read-only forum scan.
 - **make-all/tuya-local** (Jason Rumney, MIT, commit 95300d05ac) — product_id → DP facts extracted by our own script; source config recorded per product.
 - **jasonacox/tinytuya** (MIT) — protocol 3.1–3.5 and the 3.22 alias, wizard export format.
 - **codetheweb/tuyapi** (MIT) — CONTROL_NEW / DP_QUERY_NEW for 3.4+.
@@ -108,5 +110,8 @@ Handles and their contributions, extracted from CREDITS.md (no personal data).
 - **zigpy** — zha-device-handlers (Apache-2.0); **dresden-elektronik** — deCONZ DDFs (BSD-3-Clause); **blakadder** — zigbee templates (MIT)
 - **make-all** — tuya-local (MIT); **jasonacox** — tinytuya (MIT); **rospogrigio** — localtuya (GPL-3.0); **JohanBendz** — com.tuya.zigbee (GPL-3.0)
 - **Athom** — node-zigbee-clusters, Homey Apps SDK docs; **Tuya** — developer docs (MCU/Zigbee serial protocol)
+- **bkbartk** — Tuya fan optimistic/typed-default write idea, [esphome/esphome#18525](https://github.com/esphome/esphome/pull/18525)
+- **make-all/tuya-local contributors** (ozgurclcc PR #6308, surfnterd PR #6067 and others in 7169307…c6ea798) — Wi-Fi product ids and the signed RSSI byte rule (commit 0002e83), Wi-Fi leads only
+- **Koenkk/zigbee-OTA** — OTA index checked at df5e8e1 (no new image)
 
 Full list: https://github.com/dlnraja/com.tuya.zigbee/blob/master/CREDITS.md
