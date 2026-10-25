@@ -1,0 +1,28 @@
+{
+  "_why": "P3039d / t524u: the truth key is the exact mfr+pid couple, never the mfr alone. Homey matches the cartesian mfr x pid of a driver, so a mfr listed on a driver can generate combos no real device reports. For each driver, mfr (lowercase) -> the pids that are REAL for that mfr on that driver (source cited). It checks the paired couple at init: an unlisted pid for a listed mfr logs and sets a soft warning (re-pair hint), the device keeps working. Mfrs not listed are not constrained. lib/utils/CoupleGuard.js (runtime) and scripts/ci/mfr-multi-driver-audit.js (CI) read this file as the reviewed list of real couples.",
+  "drivers": {
+    "smoke_sensor_ts0601_dp": {
+      "_source": "zigbee-herdsman-converters tuya.ts TS0601_smoke_4 (_TZE200_t5p1vj8r/uebojraa/vzekyi4c/dq1mfjug/yh7aoahi) and TS0601_smoke_1 (_TZE204_ntcy3xu1)",
+      "mfrs": {
+        "_tze200_t5p1vj8r": ["TS0601"],
+        "_tze200_uebojraa": ["TS0601"],
+        "_tze200_vzekyi4c": ["TS0601"],
+        "_tze200_dq1mfjug": ["TS0601"],
+        "_tze200_yh7aoahi": ["TS0601"],
+        "_tze204_ntcy3xu1": ["TS0601"]
+      }
+    },
+    "slim_motion_sensor": {
+      "_source": "zigbee-herdsman-converters tuya.ts TS0202 PIR (_TZ3000_mwd3c2at); this driver also lists pid LH02121 for other mfrs, so _TZ3000_mwd3c2at|LH02121 is a combo no device reports",
+      "mfrs": { "_tz3000_mwd3c2at": ["TS0202"] }
+    },
+    "motion_sensor_excellux_zg104plv": {
+      "_source": "zigbee-herdsman-converters tuya.ts ZG-104PLV (modelId Excellux, manufacturerName PIRIV01)",
+      "mfrs": { "piriv01": ["Excellux"] }
+    },
+    "co_sensor_dcr_co": {
+      "_source": "zigbee-herdsman-converters tuya.ts DCR-CO (_TZE200_7bztmfm1, _TZE204_7bztmfm1)",
+      "mfrs": { "_tze200_7bztmfm1": ["TS0601"], "_tze204_7bztmfm1": ["TS0601"] }
+    }
+  }
+}
