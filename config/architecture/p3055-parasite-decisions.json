@@ -2200,6 +2200,57 @@
    "_TZ3000_ynmowqk2",
    "TS011F",
    "smartplug"
+  ],
+  [
+   "_TZ3000_0t4zjtia",
+   "TS0001",
+   "wall_switch_1gang_1way"
+  ],
+  [
+   "_TZE200_tz32mtza",
+   "TS0601",
+   "wall_switch_3gang_1way"
+  ],
+  [
+   "_TZE200_3ejwxpmu",
+   "TS0601",
+   "air_quality_co2"
+  ],
+  [
+   "_TZE284_8zizsafo",
+   "TS0601",
+   "valve_irrigation"
   ]
- ]
+ ],
+ "fingerbot": {
+  "_why": "Steering 2 (t555u + one couple one driver): Tuya Zigbee fingerbot plus on TS0001. Sources: Z2M tuya.ts TS0001_fingerbot (all 3), ZHA tuya_fingerbot (7vgttna6, a04acm9s). They were on sensor_motion_presence (wrong class) in source and on no TS0001 driver in the store build; matching-only move, paired devices keep their driver.",
+  "moved": [
+   [
+    "_TZ3210_7vgttna6",
+    "TS0001",
+    "sensor_motion_presence",
+    "fingerbot"
+   ],
+   [
+    "_TZ3210_a04acm9s",
+    "TS0001",
+    "sensor_motion_presence",
+    "fingerbot"
+   ],
+   [
+    "_TZ3210_cm9mbpr1",
+    "TS0001",
+    "sensor_motion_presence",
+    "fingerbot"
+   ]
+  ],
+  "keptUnsourced": {
+   "mfrs": [
+    "_TZ3210_d3m9v8p6",
+    "_TZ3210_pwj6vuj9"
+   ],
+   "driverId": "fingerbot",
+   "note": "In drivers/fingerbot since the v7.2.9 import (2026-04-11, earlier history lost); every data entry derives from the compose file; no Z2M/ZHA/Johan/web/forum/diag hit; present in the 9.0.1574 baseline; nothing proves them wrong, so kept (never remove a couple that may be user-reported)."
+  }
+ }
 }
