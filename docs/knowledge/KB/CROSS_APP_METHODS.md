@@ -45,3 +45,10 @@ offset); contact/water/smoke M8–M9 (sensors only, nothing to write); M10 for D
 Writing through another endpoint: evaluated, not added. The only safe case would be a single-gang device whose command
 lands on a different endpoint than the one it reports on; no source shows such a device needing it, and on multi-gang
 devices it could switch the wrong gang.
+
+## Ideas logged by the daily KB refresh
+
+| date | idea (our words) | source | status |
+|---|---|---|---|
+| 2026-10-25 | Write before the first report: if a DP was never seen, pick its wire type from the function (speed = value, oscillation = bool) and show the requested state optimistically until the device echoes it | [esphome/esphome#18525](https://github.com/esphome/esphome/pull/18525) (bkbartk) | idea only; our chain already re-reads after a write |
+| 2026-10-25 | RSSI packed in a long raw DP is a signed int8 | [make-all/tuya-local 0002e83](https://github.com/make-all/tuya-local/commit/0002e83) (K-Rain KRX8, Wi-Fi) | rule noted; apply when a Zigbee raw block with RSSI is sourced |
