@@ -8,7 +8,10 @@ const SENSOR = ['RH3052','SM0201','TH01','THS317-ET','WSDCGQ01LM','WSDCGQ11LM','
 describe('P2905 device_plug_smart wildcard policy', () => {
   const plug = R('device_plug_smart');
   it('plug keeps plug-type wildcard fallbacks', () => {
-    for (const p of ['TS011F','TS0101','TS0601','TS0049']) assert.ok(plug.productId.includes(p), p);
+    for (const p of ['TS011F','TS0101','TS0049']) assert.ok(plug.productId.includes(p), p);
+  });
+  it('P3038: TS0601 wildcard dropped (owner yes 25/10, #576)', () => {
+    assert.ok(!plug.productId.includes('TS0601'));
   });
   it('no sensor pid wildcard on the socket driver', () => {
     for (const p of [...SENSOR,'TS0202']) assert.ok(!plug.productId.includes(p), p);
