@@ -108,6 +108,7 @@ describe('P2795 — #554 TS0046/_TZ3000_iszegwpd 4-EP pairing', () => {
       path.join(ROOT, 'lib/devices/WallSceneRemoteHybridInit.js'),
       'utf8',
     );
-    assert.ok(src.includes('if (!endpoint) continue'));
+    // P3034: P3025 eslint --fix (curly) wraps the skip in braces; both forms are the same soft-skip.
+    assert.match(src, /if \(!endpoint\) \{?\s*continue;?\s*\}?/);
   });
 });

@@ -39,6 +39,14 @@ defaults:
   run:
     shell: bash
 
+# P2542: every scheduled workflow carries the local forfait env (no AI used here; gate tools/ci/p2542-local-auto-improve-gate.js).
+env:
+  AI_PLAN_MODE: 'forfait'
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  AI_ALLOW_PAID: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
+
 jobs:
   cleanup:
     if: ${{ vars.STORAGE_CLEANUP_DISABLED != 'true' }}
