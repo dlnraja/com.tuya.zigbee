@@ -168,3 +168,39 @@ The Auto-Fix doctrine (P139: no bump loops while an older Test is healthy) is un
   per-driver split. That changes the driver set (new driver ids were an AggregateError suspect, disproved
   by P1 / P3034), so it is a proposal for the owner, not done here. Measuring above 20k needs real
   uploads (one step per allowed slot under P3036 spacing: 22k, 25k, 30k), also an owner decision.
+
+## Update 2026-10-25 16:55 (Paris) — P3036b measured limits, base cap 17000, KB couple top-up
+- Measured on every build we could rebuild (payload rebuilt with that commit's own compactor and caps):
+
+  | Build | Athom outcome | Caps | Total combos | Largest driver | Other |
+  |---|---|---|---|---|---|
+  | 9.0.664 | Test | 20000/2000 | 20 000 | 272 | largest mfr list 206 |
+  | 9.0.698 | Test | 20000/2000 | 19 986 | | largest mfr list 270 |
+  | 9.0.914 | Test #3177 | 17000/2000 | 16 986 | 290 | |
+  | 9.0.1364 | accepted | 14000/1500 | 13 995 | 882 | |
+  | 9.0.1365 | AggregateError | 14000/1500 | 13 995 (same payload as 1364) | | not combo related |
+  | 9.0.1426 | AggregateError | 14000/1500 | 14 000 | | not combo related |
+  | 9.0.1520 | accepted | 14000/1500 | 13 996 | 1 008 (presence_sensor_radar) | app.json uploaded 3.93 MB |
+  | 9.0.1599 | Test | 15500/1500 | 15 499 | 180 | upload 13:52 → draft 13:57 (~5 min) |
+  | stable 5.12.449 | accepted | 14000/1500 | 13 998 | 1 008 | archive 38.33 MB |
+  | stable 5.12.504 | Test | 15500/1500 | 15 497 | | |
+
+  Largest productId list 48–51 everywhere. Rejected for size: only P2252 (100k+ raw). So the measured
+  accepted maxima are ~20 000 total combos, 1 008 per driver, app.json 3.93 MB; processing ~5 min.
+- Why P3038c did not fit 15500: a sacred pin keeps its manufacturer's whole row (mfr × every kept pid of
+  the driver), so 81/77 pins cost ~700 combos and pushed the total to 16 216 (master) / 15 753 (stable);
+  on bastien-home it fit (15 499) but pushed out 794 unguaranteed couples, 72 of them known by the KB.
+- Fix (additive): base `HOMEY_ZIGBEE_MAX_TOTAL_COMBOS` 17000 (≤ 9.0.914's 16 986 + margin, far below
+  20 000) in auto-publish-on-push, publish-stable and bastien-publish; then
+  `scripts/maintenance/kb-couple-topup.cjs` (`HOMEY_ZIGBEE_KB_TOPUP_MAX_TOTAL` 20000, clamped to 20 000
+  total and 1 008 per driver) ADDS KB couples (`data/kb/couples.json`, exact bytes) that a payload driver's
+  compose declares. Tier 1: `config/architecture/kb-topup-priority.json` (KB couples the P3038c pins
+  pushed out: master 91, stable-v5 117, bastien-home 72), a trimmed productId may be restored for these;
+  FATAL in prepare-publish if one cannot be put back. Tier 2: the other KB couples, one manufacturer form
+  per (driver, mfr), only where the productId is already shipped. Never a new driver. Runs before the
+  TS0601 top-up (master), which now gets the little room left.
+- Simulated on the three trees (17000 + KB 20000): master 16 996 → 19 997 (+737 KB couples), stable-v5
+  16 987 → 19 996 (+712), bastien-home 17 000 → 19 997 (+797). KB couples shipped vs before P3038c:
+  744 → 1 538, 762 → 1 522, 755 → 1 626; KB couples lost vs before P3038c: 0 on all three.
+  Still out: ~1 000–1 200 KB couples for lack of room, 273–378 unplaceable (productId or driver not in
+  the payload). Not done: case-form dedup (waits for P3027) and phantom-combination pruning.

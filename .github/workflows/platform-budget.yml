@@ -61,7 +61,7 @@ jobs:
         run: node scripts/ci/npm-cache-key.js || echo "::notice title=npm cache key::stale, run node scripts/ci/npm-cache-key.js --write"
       - name: Use the publish caps of auto-publish-on-push
         run: |
-          grep -oE 'HOMEY_ZIGBEE_(MAX_TOTAL_COMBOS|MAX_DRIVER_COMBOS|MAX_CASE_FORMS|TOPUP_MAX_TOTAL|TOPUP_MAX_DRIVER): *"?[0-9]+' .github/workflows/auto-publish-on-push.yml \
+          grep -oE 'HOMEY_ZIGBEE_(MAX_TOTAL_COMBOS|MAX_DRIVER_COMBOS|MAX_CASE_FORMS|TOPUP_MAX_TOTAL|TOPUP_MAX_DRIVER|KB_TOPUP_MAX_TOTAL): *"?[0-9]+' .github/workflows/auto-publish-on-push.yml \
             | sed -E 's/: *"?/=/' >> "$GITHUB_ENV" || true
       - name: Build + prepare payload (local only, no upload)
         env:

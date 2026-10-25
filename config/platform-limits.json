@@ -26,7 +26,7 @@
       "limitFrom": {
         "workflow": ".github/workflows/auto-publish-on-push.yml",
         "env": "HOMEY_ZIGBEE_MAX_TOTAL_COMBOS",
-        "alsoEnv": ["HOMEY_ZIGBEE_TOPUP_MAX_TOTAL"]
+        "alsoEnv": ["HOMEY_ZIGBEE_TOPUP_MAX_TOTAL", "HOMEY_ZIGBEE_KB_TOPUP_MAX_TOTAL"]
       },
       "warnPct": 99,
       "failPct": 100.01,

@@ -116,7 +116,7 @@ function payloadSet(root) {
   const pick = (k, d) => process.env[k] || workflowEnv(root, k) || d;
   const env = {
     ...process.env,
-    HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: pick('HOMEY_ZIGBEE_MAX_TOTAL_COMBOS', '15500'),
+    HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: pick('HOMEY_ZIGBEE_MAX_TOTAL_COMBOS', '17000'),
     HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: pick('HOMEY_ZIGBEE_MAX_DRIVER_COMBOS', '1500'),
     HOMEY_ZIGBEE_MAX_CASE_FORMS: pick('HOMEY_ZIGBEE_MAX_CASE_FORMS', '2'),
   };
@@ -124,14 +124,21 @@ function payloadSet(root) {
   const topDrv = pick('HOMEY_ZIGBEE_TOPUP_MAX_DRIVER', '');
   const topFile = path.join(root, 'scripts/maintenance/ts0601-topup.cjs');
   if (topMax) { env.HOMEY_ZIGBEE_TOPUP_MAX_TOTAL = topMax; }
+  // WHY(P3036b): publish runs the KB couple top-up before the TS0601 one; mirror it when the branch has it.
+  const kbMax = pick('HOMEY_ZIGBEE_KB_TOPUP_MAX_TOTAL', '');
+  const kbFile = path.join(root, 'scripts/maintenance/kb-couple-topup.cjs');
+  if (kbMax) { env.HOMEY_ZIGBEE_KB_TOPUP_MAX_TOTAL = kbMax; }
   // WHY(P3036): publish re-adds TS0601 groups after compaction (same driver set); mirror it when the branch has it.
   const code = `const fs=require('fs');const C=require(${JSON.stringify(path.join(root, 'scripts/maintenance/compact-zigbee-identifiers.cjs'))});
     const source=JSON.parse(fs.readFileSync(${JSON.stringify(src)},'utf8'));
-    const r=C.compactManifestFile(${JSON.stringify(tmp)},{});let top=null;
+    const r=C.compactManifestFile(${JSON.stringify(tmp)},{});let top=null;let kbt=null;
+    if(${JSON.stringify(!!kbMax)}&&fs.existsSync(${JSON.stringify(kbFile)})){const K=require(${JSON.stringify(kbFile)});
+      const kt=K.topUpFile(source,${JSON.stringify(tmp)},{maxTotal:K.ceilingFromEnv(),root:${JSON.stringify(root)}});
+      kbt={added:kt.restoredCouples.length,afterTotal:kt.afterTotal,ceiling:kt.maxTotal};}
     if(${JSON.stringify(!!topMax)}&&fs.existsSync(${JSON.stringify(topFile)})){const T=require(${JSON.stringify(topFile)});
       const tu=T.topUpFile(source,${JSON.stringify(tmp)},{maxTotal:T.ceilingFromEnv(),maxDriver:Number(${JSON.stringify(topDrv)})||undefined,maxCaseForms:Number(process.env.HOMEY_ZIGBEE_MAX_CASE_FORMS)||2});
       top={addedGroups:tu.addedGroups,afterTotal:tu.afterTotal,ceiling:tu.maxTotal};}
-    process.stdout.write(JSON.stringify({afterTotal:top?top.afterTotal:r.afterTotal,compacted:r.afterTotal,max:r.maxTotalCombos,over:!!r.overTotalLimit,topUp:top}));`;
+    process.stdout.write(JSON.stringify({afterTotal:top?top.afterTotal:(kbt?kbt.afterTotal:r.afterTotal),compacted:r.afterTotal,max:r.maxTotalCombos,over:!!r.overTotalLimit,topUp:top,kbTopUp:kbt}));`;
   let info = null;
   try { info = JSON.parse(cp.execFileSync(process.execPath, ['-e', code], { cwd: root, env, stdio: ['ignore', 'pipe', 'ignore'], maxBuffer: 64 << 20 }).toString()); } catch (_e) { info = null; }
   const set = new Set();
@@ -294,7 +301,7 @@ function markdown(out) {
   }
   L.push('', `Wi-Fi / LAN projects (${WIFI_LEADS.join(', ')}) belong to the separate wifi-local matrix: leads only here.`, '');
   L.push('## Branch payloads', '', '| Branch | App | Version | Payload combos / cap | Compacted, other case form kept |', '|---|---|---|---|---:|');
-  for (const b of BRANCHES) { const m = out.branches[b]; L.push(m ? `| ${b} | ${m.app} | ${m.version} | ${m.payload ? `${m.payload.compacted} / ${m.payload.max}${m.payload.topUp ? ` + TS0601 top-up → ${m.payload.topUp.afterTotal} / ${m.payload.topUp.ceiling}` : ''}${m.payload.over ? ' (over)' : ''}` : 'payload not rebuilt'} | ${m.compactedCaseOnly || 0} |` : `| ${b} | not evaluated | | | |`); }
+  for (const b of BRANCHES) { const m = out.branches[b]; L.push(m ? `| ${b} | ${m.app} | ${m.version} | ${m.payload ? `${m.payload.compacted} / ${m.payload.max}${m.payload.kbTopUp ? ` + KB top-up → ${m.payload.kbTopUp.afterTotal} / ${m.payload.kbTopUp.ceiling}` : ''}${m.payload.topUp ? ` + TS0601 top-up → ${m.payload.topUp.afterTotal} / ${m.payload.topUp.ceiling}` : ''}${m.payload.over ? ' (over)' : ''}` : 'payload not rebuilt'} | ${m.compactedCaseOnly || 0} |` : `| ${b} | not evaluated | | | |`); }
   L.push('', 'The payload cap (15,500 couples, our own heuristic shared with the publish workflows, plus the P3036 TS0601 top-up where the branch has it) is the binding limit: any couple added to app.json beyond it is compacted out again, so new couples are only worth adding together with a compaction gain (P3036). Couples we cannot ship are listed as on hold, never removed.');
   L.push('', '## Counts per source and branch', '');
   L.push('| Source | Branch | Total | Absent | Compacted | Wrong class | Partial | Complete |', '|---|---|---:|---:|---:|---:|---:|---:|');
