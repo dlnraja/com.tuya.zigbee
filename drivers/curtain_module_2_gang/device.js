@@ -1,3 +1,4 @@
+const { safeFlowCard } = require('../../lib/flow/FlowCardPresence');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 "use strict";
@@ -140,7 +141,7 @@ class curtain_module_2_gang extends UnifiedSwitchBase {
             this.setSettings({ reverse: attrs.motorReversal === "On" });
         }
 
-        const moveOpen = this.homey.flow.getActionCard("move_open_2gang");
+        const moveOpen = safeFlowCard(this.homey, 'getActionCard', 'move_open_2gang');
         // WHY: listener is shared by all devices of this driver (last registration wins) — act on the Flow's device, not the registering one.
         moveOpen.registerRunListener(async (args, state) => {
             const dev = (args && args.device) || this;
@@ -148,7 +149,7 @@ class curtain_module_2_gang extends UnifiedSwitchBase {
             await dev.zclNode.endpoints[ep].clusters.windowCovering[UP_OPEN]();
         });
 
-        const moveClose = this.homey.flow.getActionCard("move_close_2gang");
+        const moveClose = safeFlowCard(this.homey, 'getActionCard', 'move_close_2gang');
         moveClose.registerRunListener(async (args, state) => {
             const dev = (args && args.device) || this;
             const ep = (dev.getData?.() || {}).subDeviceId === "secondModule" ? 2 : 1;
