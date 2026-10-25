@@ -29,9 +29,11 @@ describe('P3039d class moves', () => {
       assert.ok(!(ep.bindings || []).includes(61184));
     }
   });
-  it('device_air_purifier_plug keeps its manufacturers (other couples) but no longer claims TS0601', () => {
+  it('device_air_purifier_plug no longer claims TS0601 (P3055: nor _TZE200_7bztmfm1, no source attests any of its couples there)', () => {
     const p = compose('device_air_purifier_plug');
-    assert.ok(has(p, '_TZE200_7bztmfm1'));
+    // P3039d kept the mfr for its other couples; P3055 (owner yes t555u) checked each of them
+    // as an exact couple and none is attested, so the DCR-CO mfr left the plug driver.
+    assert.ok(!has(p, '_TZE200_7bztmfm1'));
     assert.ok(!p.zigbee.productId.includes('TS0601'));
   });
   it('DCR-CO DP1 raw 0 means CO detected, DP2 is ppm/100', () => {
