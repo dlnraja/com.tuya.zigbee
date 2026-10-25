@@ -36,6 +36,14 @@ on:
         description: 'Force Athom createBuild even if soft-expect would skip (P139 one-shot)'
         type: boolean
         default: false
+      deferred_retry:
+        description: 'Internal (P3036): next-slot dispatch from master publish-self-heal after a held upload'
+        type: string
+        default: ''
+      override_spacing:
+        description: 'P3036 manual only: bypass the spacing / 24 h cap (green CI is still required)'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -204,10 +212,57 @@ jobs:
           STABLE_FORCE_TEST: ${{ github.event.inputs.force_test || 'false' }}
         run: node .github/scripts/refuse-stable-test-overwrite.js
 
-  publish:
-    name: "Publish to Draft"
+  # P3036: green CI + spacing + busy gate before any Athom upload (docs/knowledge/P3036_ATHOM_PUBLISH_POLICY.md on master).
+  # Never uploads. A hold leaves an athom-deferred-stable-<run> marker; master publish-self-heal re-dispatches at the next slot.
+  p3036-gate:
+    name: "P3036 Athom publish gate"
     needs: [pre-validation, soak]
     if: needs.soak.outputs.skip != 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: read
+      actions: write
+    outputs:
+      go: ${{ steps.gate.outputs.go }}
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 1
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '22'
+      - name: Install dependencies (read-only build snapshot)
+        run: npm ci --prefer-offline --no-audit --ignore-scripts || npm install --ignore-scripts
+      - name: Commit to gate (the checked-out branch head)
+        id: head
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: P3036 publish gate (green CI + spacing + busy)
+        id: gate
+        uses: ./.github/actions/athom-publish-gate
+        with:
+          app_id: com.dlnraja.tuya.zigbee.stable
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          homey_pat: ${{ secrets.HOMEY_PAT }}
+          deferred_retry: ${{ github.event.inputs.deferred_retry || '' }}
+          override_spacing: ${{ github.event.inputs.override_spacing || '' }}
+          sha: ${{ steps.head.outputs.sha }}
+          wait_ms: '2400000'
+      - name: P3036 deferred marker (retry at the next slot)
+        if: steps.gate.outputs.go == 'false' && steps.gate.outputs.deferred == 'true'
+        continue-on-error: true
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0 (node24, P3025b)
+        with:
+          name: athom-deferred-stable-${{ github.run_id }}
+          path: data/status/athom-publish-gate-com.dlnraja.tuya.zigbee.stable.json
+          if-no-files-found: ignore
+          retention-days: 3
+
+  publish:
+    name: "Publish to Draft"
+    needs: [pre-validation, soak, p3036-gate]
+    if: needs.soak.outputs.skip != 'true' && needs.p3036-gate.outputs.go == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 65  # + idle wait (≤25), like master 516c83444c
     # WHY(P2355): Homey build may bump patch in-job; promote must wait that version.
@@ -349,8 +404,19 @@ jobs:
           else
             publish_output=$(run_homey_cli_publish 2>&1)
             publish_status=$?
-            if [ "$publish_status" -ne 0 ] && printf '%s\n' "$publish_output" | grep -Eiq 'Timeout after [0-9]+ms|fetch failed|ETIMEDOUT|ECONNRESET|ECONNABORTED|socket hang up|too many requests|\b429\b|processing_failed'; then
-              echo "::warning::Homey CLI publish hit a transient Athom hang; retrying via direct Athom Apps API with extended timeouts."
+            # P3036: one shared classification. Transient (hang-up, ECONNRESET, 5xx, timeout) -> exactly ONE retry
+            # after >= 5 min; AggregateError / processing_failed / validation -> no retry (real failure, diagnose).
+            p3036_decision="STOP unknown no-failure"
+            if [ "$publish_status" -ne 0 ]; then
+              p3036_decision=$(printf '%s\n' "$publish_output" | ATHOM_RETRY_USED="${ATHOM_RETRY_USED:-0}" node "$GITHUB_WORKSPACE/.github/scripts/athom-publish-policy.js" fallback 2>/dev/null || echo "STOP unknown policy-error")
+              echo "P3036 fallback decision: $p3036_decision"
+            fi
+            if [ "${p3036_decision%% *}" = "RETRY" ]; then
+              p3036_wait="${p3036_decision#RETRY }"
+              export ATHOM_RETRY_USED=1; echo "ATHOM_RETRY_USED=1" >> "$GITHUB_ENV"
+              echo "::warning::Homey CLI publish hit a transient Athom error; one retry via direct Athom Apps API in ${p3036_wait}s (P3036)."
+              sleep "$p3036_wait"
+              (cd "$GITHUB_WORKSPACE" && timeout 900 node .github/scripts/wait-athom-idle.js) || true
               fallback_output=$(HOMEY_PAT="$HOMEY_PAT" HOMEY_API_TIMEOUT_MS="${HOMEY_API_TIMEOUT_MS:-120000}" HOMEY_BUILD_POLL_TIMEOUT_MS="${HOMEY_BUILD_POLL_TIMEOUT_MS:-360000}" node "$GITHUB_WORKSPACE/scripts/direct-api-publish.js" --path "$PUBLISH_DIR" --channel test 2>&1)
               fallback_status=$?
               publish_output="$(printf '%s\n%s' "$publish_output" "$fallback_output")"
@@ -399,7 +465,7 @@ jobs:
           # P2900: budget and backoff come from the shared 3-app policy (.github/scripts/athom-retry-policy.js).
           # P2924: loop bound = largest budget; each pass asks the policy for THIS failure kind (hang-up 4, other transient 2).
           MAXR=$(node .github/scripts/athom-retry-policy.js max)
-          for retry in $(seq 0 "$MAXR"); do
+          for retry in $(seq "${ATHOM_RETRY_USED:-0}" "$MAXR"); do  # P3036: the in-run fallback already used the single retry
             OUT=$(mktemp); WLOG=$(mktemp)
             # P3025: keep the wait log — the failure reason ("socket hang up") is only on its stdout.
             GITHUB_OUTPUT="$OUT" node .github/scripts/wait-athom-draft-ready.js 2>&1 | tee "$WLOG" || true

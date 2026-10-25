@@ -485,6 +485,9 @@ try {
   // stay small enough for the App Store processor.
   // WHY(P2485): size gate MUST run AFTER this step — early exit blocked publish when
   // prettify-stripped JSON was still ~4.00MB but matrix compact would shrink it.
+  // P3036: keep the uncompacted manifest so the TS0601 top-up can put back couples the compaction dropped.
+  let p3036TopupSource = null;
+  try { p3036TopupSource = Number(process.env.HOMEY_ZIGBEE_TOPUP_MAX_TOTAL) > 0 ? readJson(destAppJson) : null; } catch (_) { p3036TopupSource = null; }
   try {
     const compact = compactManifestFile(destAppJson, {
       maxTotalCombos: Number(process.env.HOMEY_ZIGBEE_MAX_TOTAL_COMBOS) || undefined,
@@ -508,6 +511,21 @@ try {
       for (const m of compact.baselineUnresolved.slice(0, 20)) console.error(`  - ${m}`);
       console.error('Restore them in a driver.compose.json or add an exemption (mfr, pid, driverId, reason) to test/fixtures/athom-last-test-package-couples.json.');
       process.exit(1);
+    }
+    // P3036: additive TS0601 top-up after the compaction (adds only, same driver set, measured ceiling).
+    if (p3036TopupSource) {
+      const { topUpFile, ceilingFromEnv } = require('./maintenance/ts0601-topup.cjs');
+      const tu = topUpFile(p3036TopupSource, destAppJson, {
+        maxTotal: ceilingFromEnv(),
+        maxDriver: Number(process.env.HOMEY_ZIGBEE_TOPUP_MAX_DRIVER) || undefined,
+        maxCaseForms: Number(process.env.HOMEY_ZIGBEE_MAX_CASE_FORMS) || 2,
+      });
+      p3036TopupSource = null;
+      console.log(`[P3036] TS0601 top-up: +${tu.addedGroups} manufacturer group(s) (+${tu.addedCombos} combos, ${tu.addedObserved} seen in mfs_db), ${tu.beforeTotal} -> ${tu.afterTotal} / ceiling ${tu.maxTotal}; ${tu.stillMissing} group(s) still out (need more room or a TS0601-only driver).`);
+      if (tu.driversAfter !== tu.driversBefore || tu.afterTotal > tu.maxTotal) {
+        console.error('FATAL(P3036): TS0601 top-up changed the driver set or passed its ceiling.');
+        process.exit(1);
+      }
     }
     if (compact.baselineTotal) {
       console.log(`  - P3024b baseline ${compact.baselineVersion}: ${compact.baselineTotal} couples pinned (${compact.baselineMoved} moved to their current driver, ${compact.baselineRestored} re-pinned on their shipped driver)`);
