@@ -74,6 +74,8 @@ function measureUpload(dir) {
     const manifest = JSON.parse(fs.readFileSync(path.join(dir, 'app.json'), 'utf8'));
     out.upload_app_json_mb = Buffer.byteLength(JSON.stringify(manifest)) / MB;
     out.zigbee_combos = (manifest.drivers || []).reduce((s, d) => s + comboCount(d), 0);
+    // P3048: biggest driver of the PUBLISHED payload, read by the AI-free digest (margin under the per-driver cap).
+    for (const d of manifest.drivers || []) { const n = comboCount(d); if (!(out._maxDriverCombos >= n)) { out._maxDriverCombos = n; out._maxDriverId = d.id; } }
     out.drivers = (manifest.drivers || []).length;
   } catch { /* unreadable manifest: skipped */ }
   const tar = spawnSync('tar', ['-cf', '-', '-C', dir, '.'], { maxBuffer: 1024 * MB });
@@ -194,7 +196,7 @@ function main() {
   const measures = Object.assign({}, dir ? measureUpload(dir) : measureProjectedAppJson(), measureHeap(), measureRepoFiles(), args.online ? measureOnline() : {});
   const report = buildReport(measures, cfg);
   report.mode = mode;
-  report.info = { publishDir: dir, drivers: measures.drivers, payloadFiles: measures.payload_files, largestTracked: measures._largestTracked, cacheEntries: measures._cacheEntries, appJsonFrom: measures._appJsonFrom || (dir ? 'prepared app.json' : null), npmCacheKey: npmCacheKeyState() };
+  report.info = { publishDir: dir, drivers: measures.drivers, payloadFiles: measures.payload_files, largestTracked: measures._largestTracked, cacheEntries: measures._cacheEntries, appJsonFrom: measures._appJsonFrom || (dir ? 'prepared app.json' : null), zigbeeCombos: measures.zigbee_combos, maxDriverCombos: measures._maxDriverCombos, maxDriverId: measures._maxDriverId, npmCacheKey: npmCacheKeyState() };
   report.at = new Date().toISOString();
   if (args.out) {
     fs.mkdirSync(path.dirname(path.resolve(args.out)), { recursive: true });

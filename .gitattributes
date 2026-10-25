@@ -4,3 +4,6 @@ app.json merge=ours
 
 # Always take newer version for these files
 *.md merge=union
+
+# P3048: append-only automation journal, concurrent appends never conflict on rebase
+data/progress/automation-journal.jsonl merge=union
