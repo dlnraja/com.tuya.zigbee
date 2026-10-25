@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-25T16:14:16.011Z",
+ "updated": "2026-10-25T16:17:29.314Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -39614,6 +39614,12 @@
    "status": "done",
    "date": "2026-10-20",
    "note": "ee8nrt2l|TS0044 -> button_wireless_4; 5ftkaulg|TS0011 -> switch_1gang; 0aps0h1r+o7m83470|TS0212 -> co_sensor (IAS CO); Lidl HG06338 vmpbygs5/oznonj5q/wzauvbcs|TS011F -> socket_power_strip"
+  },
+  "p3039-test-hygiene": {
+   "status": "done",
+   "date": "2026-10-25",
+   "note": "p2252 timeout 60s on compaction test; spec010 golden refreshed (lost lines = P3038 owner-yes wildcard drops + P3039d moves)",
+   "by": "p3039"
   },
   "p3039a-power-meter-ts0601-case": {
    "status": "done",
