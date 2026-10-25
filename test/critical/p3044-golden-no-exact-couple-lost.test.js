@@ -8,6 +8,7 @@
 //    energy_meter_din when power_meter no longer lists it, _TZE200_yh7aoahi|TS0205 on smoke_sensor
 //    when smoke_sensor3 no longer lists it;
 //  - the golden snapshot matches the current compose files (no hidden shrink).
+const { describe, it } = require('../_support/dual-runner');
 const assert = require('assert');
 const fs = require('fs');
 const path = require('path');
