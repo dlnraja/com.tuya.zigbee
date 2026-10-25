@@ -1765,6 +1765,528 @@
       "pid": "TS0601",
       "driverId": "curtain_motor",
       "note": "P3038b port of master P3037 (2dc7ff9ac3) 2026-10-25 GitHub #576 (migueleap): curtain module interview EP1 [0,4,5,61184], paired generic because compaction dropped the couple"
+    },
+    {
+      "mfr": "_TZE200_3ymoslep",
+      "pid": "TS0601",
+      "driverId": "radiator_valve",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc SEA801-Zigbee/SEA802-Zigbee: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/saswell.ts#L44"
+    },
+    {
+      "mfr": "_TZE200_agjqiu4h",
+      "pid": "TS0601",
+      "driverId": "energy_meter_3phase",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc D4Z-M: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/nous.ts#L338"
+    },
+    {
+      "mfr": "_TZE200_b0ihkhxh",
+      "pid": "TS0601",
+      "driverId": "switch_1gang",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc _TZE200_b0ihkhxh: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/orztech.ts#L19"
+    },
+    {
+      "mfr": "_TZE200_d2nady2a",
+      "pid": "TS0601",
+      "driverId": "thermostat_tuya_dp",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc ST001: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/gluon.ts#L13"
+    },
+    {
+      "mfr": "_TZE200_ops9sidw",
+      "pid": "TS0601",
+      "driverId": "presence_sensor_radar",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc MW833P: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/mowe.ts#L11"
+    },
+    {
+      "mfr": "_TZE200_ra6wrlgv",
+      "pid": "TS0601",
+      "driverId": "curtain_motor",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc ERC2206-Z: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/box.ts#L223"
+    },
+    {
+      "mfr": "_TZE200_xnwxmj8z",
+      "pid": "TS0601",
+      "driverId": "switch_1_gang_metering",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc MG-AU01ZLMV01-XX: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/makegood.ts#L413"
+    },
+    {
+      "mfr": "_TZE204_08qc13ct",
+      "pid": "TS0601",
+      "driverId": "switch_4gang",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc ZMS-206US-4: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/zemismart.ts#L878"
+    },
+    {
+      "mfr": "_TZE204_3ymoslep",
+      "pid": "TS0601",
+      "driverId": "radiator_valve",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc SEA801-Zigbee/SEA802-Zigbee: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/saswell.ts#L44"
+    },
+    {
+      "mfr": "_TZE204_agjqiu4h",
+      "pid": "TS0601",
+      "driverId": "energy_meter_3phase",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc D4Z-M: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/nous.ts#L338"
+    },
+    {
+      "mfr": "_TZE204_d2nady2a",
+      "pid": "TS0601",
+      "driverId": "thermostat_tuya_dp",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc ST001: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/gluon.ts#L13"
+    },
+    {
+      "mfr": "_TZE204_eaasry7v",
+      "pid": "TS0601",
+      "driverId": "thermostat_tuya_dp",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc AE-5503-S-H-ZIGBEE: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L8565"
+    },
+    {
+      "mfr": "_TZE204_huu3td85",
+      "pid": "TS0601",
+      "driverId": "wall_dimmer_tuya",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc ZDMS16-1: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/avatto.ts#L434"
+    },
+    {
+      "mfr": "_TZE204_nnhwcvbk",
+      "pid": "TS0601",
+      "driverId": "water_valve_smart",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc NAS-WV03B2: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/neo.ts#L257"
+    },
+    {
+      "mfr": "_TZE204_pxbjch8m",
+      "pid": "TS0601",
+      "driverId": "wall_curtain_switch",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc TS0601_cover_with_1_switch_limited: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L17937"
+    },
+    {
+      "mfr": "_TZE204_qaxkdgyt",
+      "pid": "TS0601",
+      "driverId": "gas_sensor",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc JKD-816COM-Z: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L28632"
+    },
+    {
+      "mfr": "_TZE204_zajeikkt",
+      "pid": "TS0601",
+      "driverId": "led_controller_rgb",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc SP107E-Zigbee: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L30490"
+    },
+    {
+      "mfr": "_TZE20C_tjz9ad5g",
+      "pid": "TS0601",
+      "driverId": "siren",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc MG-BJQ002: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L23165"
+    },
+    {
+      "mfr": "_TZE20C_ycab9txf",
+      "pid": "TS0601",
+      "driverId": "siren",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc ZAS-01P: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L29543"
+    },
+    {
+      "mfr": "_TZE2841000000_2gi1hy8s",
+      "pid": "TS0601",
+      "driverId": "curtain_motor",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc MB60L-ZG-ZT-TY: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L10648"
+    },
+    {
+      "mfr": "_TZE2841000000_2qx7sivb",
+      "pid": "TS0601",
+      "driverId": "vibration_sensor",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc TS0601_vibration_alarm_sensor: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lincukoo.ts#L446"
+    },
+    {
+      "mfr": "_TZE2841000000_3ymoslep",
+      "pid": "TS0601",
+      "driverId": "radiator_valve",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc SEA801-Zigbee/SEA802-Zigbee: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/saswell.ts#L44"
+    },
+    {
+      "mfr": "_TZE2841000000_4dosadbh",
+      "pid": "TS0601",
+      "driverId": "climate_sensor",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc SZT04: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lincukoo.ts#L251"
+    },
+    {
+      "mfr": "_TZE2841000000_7qc2wlqr",
+      "pid": "TS0601",
+      "driverId": "curtain_motor",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc BL82-TYZ1: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/manhot.ts#L13"
+    },
+    {
+      "mfr": "_TZE2841000000_7trh4ihp",
+      "pid": "TS0601",
+      "driverId": "vibration_sensor",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc TS0601_vibration_alarm_sensor: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lincukoo.ts#L446"
+    },
+    {
+      "mfr": "_TZE2841000000_8sejxcue",
+      "pid": "TS0601",
+      "driverId": "vibration_sensor",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc TS0601_vibration_alarm_sensor: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lincukoo.ts#L446"
+    },
+    {
+      "mfr": "_TZE2841000000_9ovska9w",
+      "pid": "TS0601",
+      "driverId": "motion_sensor",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc SZLM04U: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lincukoo.ts#L100"
+    },
+    {
+      "mfr": "_TZE2841000000_aghfucwi",
+      "pid": "TS0601",
+      "driverId": "vibration_sensor",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc TS0601_vibration_alarm_sensor: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lincukoo.ts#L446"
+    },
+    {
+      "mfr": "_TZE2841000000_ajhu0zqb",
+      "pid": "TS0601",
+      "driverId": "water_leak_sensor_tuya",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc SZW08: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lincukoo.ts#L22"
+    },
+    {
+      "mfr": "_TZE2841000000_bquwrqh1",
+      "pid": "TS0601",
+      "driverId": "motion_sensor",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc SZLM04U: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lincukoo.ts#L100"
+    },
+    {
+      "mfr": "_TZE2841000000_chcnj5st",
+      "pid": "TS0601",
+      "driverId": "fingerbot_switch",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc CZF02: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lincukoo.ts#L174"
+    },
+    {
+      "mfr": "_TZE2841000000_cipobaav",
+      "pid": "TS0601",
+      "driverId": "presence_sensor_radar",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc B08LRT-Z10T: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lincukoo.ts#L921"
+    },
+    {
+      "mfr": "_TZE2841000000_gw05grph",
+      "pid": "TS0601",
+      "driverId": "fingerbot_switch",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc CZF02: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lincukoo.ts#L174"
+    },
+    {
+      "mfr": "_TZE2841000000_h7oalfxa",
+      "pid": "TS0601",
+      "driverId": "presence_sensor_radar",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc R12LM-Z20T: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lincukoo.ts#L875"
+    },
+    {
+      "mfr": "_TZE2841000000_hqys6frs",
+      "pid": "TS0601",
+      "driverId": "presence_sensor_radar",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc R12LM-Z10T: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lincukoo.ts#L488"
+    },
+    {
+      "mfr": "_TZE2841000000_iunyuzwe",
+      "pid": "TS0601",
+      "driverId": "water_leak_sensor_tuya",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc W04-Z10T: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lincukoo.ts#L400"
+    },
+    {
+      "mfr": "_TZE2841000000_mpzuabwk",
+      "pid": "TS0601",
+      "driverId": "climate_sensor",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc SZT04: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lincukoo.ts#L251"
+    },
+    {
+      "mfr": "_TZE2841000000_nt4pquef",
+      "pid": "TS0601",
+      "driverId": "soil_sensor",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc SGS02Z: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L6066"
+    },
+    {
+      "mfr": "_TZE2841000000_pislt0wa",
+      "pid": "TS0601",
+      "driverId": "fingerbot_switch",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc CZF02: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lincukoo.ts#L174"
+    },
+    {
+      "mfr": "_TZE2841000000_rs62zxk8",
+      "pid": "TS0601",
+      "driverId": "climate_sensor",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc SZT04: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lincukoo.ts#L251"
+    },
+    {
+      "mfr": "_TZE2841000000_vbgmewta",
+      "pid": "TS0601",
+      "driverId": "water_leak_sensor_tuya",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc W04-Z10T: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lincukoo.ts#L400"
+    },
+    {
+      "mfr": "_TZE2841000000_zzm83zpz",
+      "pid": "TS0601",
+      "driverId": "presence_sensor_radar",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc R12LM-Z11T: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lincukoo.ts#L832"
+    },
+    {
+      "mfr": "_TZE284_3ymoslep",
+      "pid": "TS0601",
+      "driverId": "radiator_valve",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc SEA801-Zigbee/SEA802-Zigbee: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/saswell.ts#L44"
+    },
+    {
+      "mfr": "_TZE284_4fblxpma",
+      "pid": "TS0601",
+      "driverId": "water_valve_smart",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc NAS-WV03B2: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/neo.ts#L257"
+    },
+    {
+      "mfr": "_TZE284_4ngwn2pj",
+      "pid": "TS0601",
+      "driverId": "switch_wall_8gang",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc MH03-8Z-OLED: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/manhot.ts#L590"
+    },
+    {
+      "mfr": "_TZE284_7qc2wlqr",
+      "pid": "TS0601",
+      "driverId": "curtain_motor",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc BL82-TYZ1: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/manhot.ts#L13"
+    },
+    {
+      "mfr": "_TZE284_agjqiu4h",
+      "pid": "TS0601",
+      "driverId": "energy_meter_3phase",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc D4Z-M: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/nous.ts#L338"
+    },
+    {
+      "mfr": "_TZE284_ajhu0zqb",
+      "pid": "TS0601",
+      "driverId": "water_leak_sensor_tuya",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc SZW08: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lincukoo.ts#L22"
+    },
+    {
+      "mfr": "_TZE284_goecjd1t",
+      "pid": "TS0601",
+      "driverId": "din_rail_meter",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc ZWPM16: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/avatto.ts#L331"
+    },
+    {
+      "mfr": "_TZE284_hbxadcl0",
+      "pid": "TS0601",
+      "driverId": "wall_switch_6_gang_tuya",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc TS0601_6gang_switch_2: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L29173"
+    },
+    {
+      "mfr": "_TZE284_hkdl5fmv",
+      "pid": "TS0601",
+      "driverId": "smart_knob_rotary",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc ERS-10TZBVK-AA: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L15951"
+    },
+    {
+      "mfr": "_TZE284_hqys6frs",
+      "pid": "TS0601",
+      "driverId": "presence_sensor_radar",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc R12LM-Z10T: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lincukoo.ts#L488"
+    },
+    {
+      "mfr": "_TZE284_huu3td85",
+      "pid": "TS0601",
+      "driverId": "wall_dimmer_tuya",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc ZDMS16-1: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/avatto.ts#L434"
+    },
+    {
+      "mfr": "_TZE284_iunyuzwe",
+      "pid": "TS0601",
+      "driverId": "water_leak_sensor_tuya",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc W04-Z10T: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lincukoo.ts#L400"
+    },
+    {
+      "mfr": "_TZE284_pxwixtky",
+      "pid": "TS0601",
+      "driverId": "curtain_motor_shutter",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc TS0601_cover_5: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L17790"
+    },
+    {
+      "mfr": "_TZE284_rhocfd6y",
+      "pid": "TS0601",
+      "driverId": "water_leak_sensor_tuya",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc 07519L: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/immax.ts#L446"
+    },
+    {
+      "mfr": "_TZE284_vbgmewta",
+      "pid": "TS0601",
+      "driverId": "water_leak_sensor_tuya",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc W04-Z10T: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lincukoo.ts#L400"
+    },
+    {
+      "mfr": "_TZE284_xr5yfele",
+      "pid": "TS0601",
+      "driverId": "wall_thermostat",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc 119710: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L14722"
+    },
+    {
+      "mfr": "_TZE284_xuflgcnz",
+      "pid": "TS0601",
+      "driverId": "valve_irrigation",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc ZVG1: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/rtx.ts#L20"
+    },
+    {
+      "mfr": "_TZE284_z98viqa6",
+      "pid": "TS0601",
+      "driverId": "wall_dimmer_tuya",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc SFD02-Z: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/moes.ts#L560"
+    },
+    {
+      "mfr": "_TZE284_znkkcauq",
+      "pid": "TS0601",
+      "driverId": "wall_switch_6_gang_tuya",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc TS0601_switch_6_gang: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L7088"
+    },
+    {
+      "mfr": "_TZE28C1000000_19jwhi8c",
+      "pid": "TS0601",
+      "driverId": "wall_curtain_switch",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc ZN-USC1U-HT: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/zemismart.ts#L1133"
+    },
+    {
+      "mfr": "_TZE28C1000000_4ngwn2pj",
+      "pid": "TS0601",
+      "driverId": "switch_wall_8gang",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc MH03-8Z-OLED: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/manhot.ts#L590"
+    },
+    {
+      "mfr": "_TZE28C1000000_59dz7ioi",
+      "pid": "TS0601",
+      "driverId": "switch_3gang",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc MH03-3Z-OLED: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/manhot.ts#L206"
+    },
+    {
+      "mfr": "_TZE28C1000000_aaeaifez",
+      "pid": "TS0601",
+      "driverId": "wall_thermostat",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc ZWT100: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/avatto.ts#L673"
+    },
+    {
+      "mfr": "_TZE28C1000000_b8vxct9l",
+      "pid": "TS0601",
+      "driverId": "presence_sensor_radar",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc SZLR08T: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lincukoo.ts#L344"
+    },
+    {
+      "mfr": "_TZE28C1000000_bjf8qum1",
+      "pid": "TS0601",
+      "driverId": "presence_sensor_radar",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc SZLMR10: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lincukoo.ts#L131"
+    },
+    {
+      "mfr": "_TZE28C1000000_brx4eku5",
+      "pid": "TS0601",
+      "driverId": "dimmer_1_gang_tuya",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc QADZ1LR: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/qa.ts#L346"
+    },
+    {
+      "mfr": "_TZE28C1000000_dnhhp8ew",
+      "pid": "TS0601",
+      "driverId": "switch_2gang",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc MH03-2Z-OLED: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/manhot.ts#L108"
+    },
+    {
+      "mfr": "_TZE28C1000000_esnu2jxv",
+      "pid": "TS0601",
+      "driverId": "switch_4gang",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc MH03-4Z-OLED: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/manhot.ts#L318"
+    },
+    {
+      "mfr": "_TZE28C1000000_ewn672ef",
+      "pid": "TS0601",
+      "driverId": "presence_sensor_radar",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc ZF24Pro: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L10175"
+    },
+    {
+      "mfr": "_TZE28C1000000_f5efvtbv",
+      "pid": "TS0601",
+      "driverId": "relay_board_4_channel",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc OXT-4CH-RELAY-AC: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L7013"
+    },
+    {
+      "mfr": "_TZE28C1000000_fpwtjlfh",
+      "pid": "TS0601",
+      "driverId": "air_quality_co2",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc EZCP04: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lincukoo.ts#L638"
+    },
+    {
+      "mfr": "_TZE28C1000000_gt5al3bl",
+      "pid": "TS0601",
+      "driverId": "led_controller_spi_tuya",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc GL-SPI-206P: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/gledopto.ts#L1259"
+    },
+    {
+      "mfr": "_TZE28C1000000_huu3td85",
+      "pid": "TS0601",
+      "driverId": "wall_dimmer_tuya",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc ZDMS16-1: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/avatto.ts#L434"
+    },
+    {
+      "mfr": "_TZE28C1000000_hyt4iucb",
+      "pid": "TS0601",
+      "driverId": "air_quality_co2",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc E02C-Z10T: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lincukoo.ts#L531"
+    },
+    {
+      "mfr": "_TZE28C1000000_isvlaage",
+      "pid": "TS0601",
+      "driverId": "air_quality_co2",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc EZC04: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lincukoo.ts#L593"
+    },
+    {
+      "mfr": "_TZE28C1000000_khoqss0a",
+      "pid": "TS0601",
+      "driverId": "presence_sensor_radar",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc SZR07: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lincukoo.ts#L310"
+    },
+    {
+      "mfr": "_TZE28C1000000_l4daccga",
+      "pid": "TS0601",
+      "driverId": "siren",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc A08-Z10T: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lincukoo.ts#L742"
+    },
+    {
+      "mfr": "_TZE28C1000000_lw5ny7tp",
+      "pid": "TS0601",
+      "driverId": "presence_sensor_radar",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc SZLR08: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lincukoo.ts#L47"
+    },
+    {
+      "mfr": "_TZE28C1000000_ncc7uahd",
+      "pid": "TS0601",
+      "driverId": "switch_1gang",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc MH03-1Z-OLED: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/manhot.ts#L36"
+    },
+    {
+      "mfr": "_TZE28C1000000_ra9zfiwr",
+      "pid": "TS0601",
+      "driverId": "gas_sensor",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc E04CF-Z10T: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lincukoo.ts#L691"
+    },
+    {
+      "mfr": "_TZE28C1000000_sndkanfr",
+      "pid": "TS0601",
+      "driverId": "presence_sensor_radar",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc SZLMR10: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/lincukoo.ts#L131"
+    },
+    {
+      "mfr": "_TZE28C1000000_vosmoqsg",
+      "pid": "TS0601",
+      "driverId": "presence_sensor_radar",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc ZF24Pro: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L10175"
+    },
+    {
+      "mfr": "_TZE28C1000000_wkvfb2ld",
+      "pid": "TS0601",
+      "driverId": "wall_switch_6_gang_tuya",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc MH03-6Z-OLED: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/manhot.ts#L438"
+    },
+    {
+      "mfr": "_TZE28C1000000_yxun3xvr",
+      "pid": "TS0601",
+      "driverId": "switch_1gang",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc TS0601_1gang_switch: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L29027"
+    },
+    {
+      "mfr": "_TZE28C1000000_zykra2yj",
+      "pid": "TS0601",
+      "driverId": "wall_switch_6_gang_tuya",
+      "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc MH03-6Z-OLED: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/manhot.ts#L438"
     }
   ]
 }
