@@ -71,8 +71,32 @@
     {
       "mfr": "_TZE284_hodyryli",
       "pid": "TS0601",
-      "driverId": "climate_sensor",
-      "note": "Issue #513 ZT08 climate sensor sacred keep"
+      "driverId": "climate_sensor_zt08",
+      "note": "Issue #513 ZT08 climate sensor sacred keep (P3055: pinned on climate_sensor_zt08, the ZT08 weather-station driver; Z2M tuya.ts ZT08 fingerprint TS0601 only)"
+    },
+    {
+      "mfr": "_TYZB01_m6ec2pgj",
+      "pid": "TS0222",
+      "driverId": "illuminance_sensor",
+      "note": "P3055 compaction-shuffle guard: Z2M tuya.ts TS0222 light intensity sensor fingerprint (also deCONZ, Blakadder, Hubitat kkossev per couple-driver-pins); not in the 9.0.1574 baseline, so freeing budget elsewhere let pass2 drop it"
+    },
+    {
+      "mfr": "_TZ3000_rid8lzvo",
+      "pid": "TS0203",
+      "driverId": "sensor_contact_zigbee",
+      "note": "P3055 compaction-shuffle guard: Z2M tuya.ts TS0203 door sensor whitelabel Wing WZDA1; exact wire string was not kept by pass2 (only other case forms)"
+    },
+    {
+      "mfr": "_TZE284_tre6haif",
+      "pid": "TS0601",
+      "driverId": "sensor_motion_presence",
+      "note": "P3055 compaction-shuffle guard: Z2M tuya.ts TS0601_pir_solar Solar PIR occupancy sensor fingerprint; kept so budget freed by the parasite removal cannot move the pass2 cut onto it"
+    },
+    {
+      "mfr": "_TZ3000_ynmowqk2",
+      "pid": "TS011F",
+      "driverId": "smartplug",
+      "note": "P3055 compaction-shuffle guard: Z2M lidl.ts TS011F plug fingerprint; kept so budget freed by the parasite removal cannot move the pass2 cut onto it"
     },
     {
       "mfr": "_TZ3000_mrpevh8p",
