@@ -606,9 +606,10 @@ class MotionSensorDevice extends UnifiedSensorBase {
   }
 
   async onNodeInit({ zclNode }) {
-    // Auto-fix: Remove battery capabilities for mains-powered devices
-    await this.removeCapability('measure_battery').catch(() => {});
-    await this.removeCapability('alarm_battery').catch(() => {});
+    // WHY(P3040b, owner rule "a less complete interview never degrades a driver nor removes a capability"):
+    // v9.0.192 stripped measure_battery/alarm_battery at EVERY start "for mains-powered devices", but this
+    // driver is battery (get mainsPowered() { return false; }): users lost the battery tile and its
+    // insights/flows on each restart until a ZCL report re-added it. Removed, nothing replaces it.
     // v9.0.251 (P60): Attribute reporting moved to non-blocking for sleepy
     // EndDevices (e.g. ZG-204ZM). Without this fix, the driver blocks 5s
     // waiting for an ACK from the device, which has already gone to sleep.
@@ -840,14 +841,9 @@ class MotionSensorDevice extends UnifiedSensorBase {
       this._hasTemperatureCluster = false;
       this._hasHumidityCluster = false;
       // Only remove if NOT a variant
-      if (this.hasCapability('measure_temperature')) {
-        await this.removeCapability('measure_temperature').catch(() => { });
-        this.log('[MOTION-CLUSTERS]  Removed measure_temperature (confirmed PIR-only)');
-      }
-      if (this.hasCapability('measure_humidity')) {
-        await this.removeCapability('measure_humidity').catch(() => { });
-        this.log('[MOTION-CLUSTERS]  Removed measure_humidity (confirmed PIR-only)');
-      }
+      // P3040b: only a never-fed phantom goes (the PIR-only list was already wrong once: 3towulqd)
+      await this._retireUnfedCapability('measure_temperature', 'confirmed PIR-only');
+      await this._retireUnfedCapability('measure_humidity', 'confirmed PIR-only');
       return;
     }
 
@@ -922,16 +918,15 @@ class MotionSensorDevice extends UnifiedSensorBase {
       }
     }
 
-    // v5.8.32: Remove stale capabilities from previous versions
-    // Only for non-variant devices (variants wait for Tuya DP data)
+    // WHY(P3040b): v5.8.32 removed temperature/humidity when this interview did not list the cluster.
+    // The cluster list depends on how complete the interview was, so a shorter interview deleted a
+    // capability the user saw (compose declares both). Now: kept and left inactive, never removed here.
     if (!this._isVariantDevice) {
       if (!this._hasTemperatureCluster && this.hasCapability('measure_temperature')) {
-        await this.removeCapability('measure_temperature').catch(() => {});
-        this.log('[MOTION-CLUSTERS]  Removed stale measure_temperature (no cluster, not variant)');
+        this.log('[MOTION-CLUSTERS]  measure_temperature kept inactive (no cluster in this interview, P3040b)');
       }
       if (!this._hasHumidityCluster && this.hasCapability('measure_humidity')) {
-        await this.removeCapability('measure_humidity').catch(() => {});
-        this.log('[MOTION-CLUSTERS]  Removed stale measure_humidity (no cluster, not variant)');
+        this.log('[MOTION-CLUSTERS]  measure_humidity kept inactive (no cluster in this interview, P3040b)');
       }
     }
 
@@ -949,6 +944,26 @@ class MotionSensorDevice extends UnifiedSensorBase {
    * DON'T remove capabilities for variant devices - add dynamically from DPs
    * This handles ZG-204ZL vs ZG-204ZV with same manufacturerName
    */
+  /**
+   * WHY(P3040b, owner rule): a capability the user already saw is never removed by a less complete
+   * interview. Removal is only allowed for a phantom we added and that was never fed (value null,
+   * Homey persists the last value across restarts). A fed capability is kept, inactive.
+   * @returns {Promise<boolean>} true when removed
+   */
+  async _retireUnfedCapability(cap, reason) {
+    try {
+      if (!this.hasCapability(cap)) {return false;}
+      const v = this.getCapabilityValue(cap);
+      if (v !== null && v !== undefined) {
+        this.log(`[MOTION]  ${cap} kept inactive (${reason}): already fed (${v}), not removed`);
+        return false;
+      }
+      await this.removeCapability(cap).catch(() => {});
+      this.log(`[MOTION]  ${cap} removed (${reason}): never fed phantom`);
+      return true;
+    } catch (_e) { return false; }
+  }
+
   async _ensureTuyaDPCapabilities() {
     const profile = this._getManufacturerProfile();
     
@@ -980,19 +995,13 @@ class MotionSensorDevice extends UnifiedSensorBase {
       this._permissiveCleanupTimeout = this.homey.setTimeout(async () => {
         if (this._destroyed) {return;}
         try {
-          if (!this._hasReceivedTempDP && this.hasCapability('measure_temperature')) {
-            const val = this.getCapabilityValue('measure_temperature');
-            if (val === 0 || val === null) {
-              await this.removeCapability('measure_temperature').catch(() => {});
-              this.log('[MOTION-DP]  Permissive cleanup: removed measure_temperature (no DP in 5min)');
-            }
+          // P3040b: the permissive caps were added by us upfront; only a never-fed one (null) goes.
+          // 0 °C / 0 % / 10 % are real values a user may have seen, so they no longer trigger a removal.
+          if (!this._hasReceivedTempDP) {
+            await this._retireUnfedCapability('measure_temperature', 'permissive, no DP in 5 min');
           }
-          if (!this._hasReceivedHumidityDP && this.hasCapability('measure_humidity')) {
-            const val = this.getCapabilityValue('measure_humidity');
-            if (val === 0 || val === null || val === 10) {
-              await this.removeCapability('measure_humidity').catch(() => {});
-              this.log('[MOTION-DP]  Permissive cleanup: removed measure_humidity (no DP in 5min)');
-            }
+          if (!this._hasReceivedHumidityDP) {
+            await this._retireUnfedCapability('measure_humidity', 'permissive, no DP in 5 min');
           }
         } catch (e) {
           this.log('[MOTION-DP]  Permissive cleanup error:', e.message);
@@ -1020,16 +1029,10 @@ class MotionSensorDevice extends UnifiedSensorBase {
       this.log('[MOTION-DP]  Confirmed PIR-only device - checking capabilities');
       // Even for PIR-only, don't remove if device has reported these DPs
       if (!this._hasReceivedTempDP) {
-        if (this.hasCapability('measure_temperature')) {
-          await this.removeCapability('measure_temperature').catch(() => {});
-          this.log('[MOTION-DP]  Removed measure_temperature (no DP received)');
-        }
+        await this._retireUnfedCapability('measure_temperature', 'ZG204ZL PIR-only, no DP received');
       }
       if (!this._hasReceivedHumidityDP) {
-        if (this.hasCapability('measure_humidity')) {
-          await this.removeCapability('measure_humidity').catch(() => {});
-          this.log('[MOTION-DP]  Removed measure_humidity (no DP received)');
-        }
+        await this._retireUnfedCapability('measure_humidity', 'ZG204ZL PIR-only, no DP received');
       }
       if (!this.hasCapability('measure_battery')) {
         await this.addCapability('measure_battery').catch(() => {});

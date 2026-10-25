@@ -16,6 +16,10 @@ const ROOT = path.resolve(__dirname, '..', '..');
 const args = process.argv.slice(2);
 const horizonS = Number(args[args.indexOf('--horizon') + 1] || 0) || 120;
 const asJson = args.includes('--json');
+// --mfr X: override the manufacturer of the traced drivers; --stripped: start as a device an earlier
+// mains strip left without measure_battery and with energy {mains:true} (P3040b)
+const mfrOverride = args.includes('--mfr') ? args[args.indexOf('--mfr') + 1] : null;
+const startStripped = args.includes('--stripped');
 
 // ---------- virtual clock ----------
 let now = 0;
@@ -149,7 +153,7 @@ class DeviceStub {
   getAvailable() { return true; }
   getClass() { return 'sensor'; }
   async setClass() {}
-  getEnergy() { return {}; } async setEnergy() {}
+  getEnergy() { return this._energy || {}; } async setEnergy(e) { this._energy = e; trace.push({ t: now, kind: 'energy', detail: JSON.stringify(e) }); }
   async ready() {}
   get manifest() { return {}; }
 }
@@ -178,7 +182,8 @@ const PROFILES = {
 };
 
 async function runOne(driverId) {
-  const p = PROFILES[driverId] || { mfr: '_TZE200_test0000', pid: 'TS0601', endpoints: { 1: ['basic', 'tuya'] } };
+  const base = PROFILES[driverId] || { mfr: '_TZE200_test0000', pid: 'TS0601', endpoints: { 1: ['basic', 'tuya'] } };
+  const p = mfrOverride ? { ...base, mfr: mfrOverride } : base;
   trace = []; now = 0; timers.clear(); seed = 3040;
   currentDriverId = driverId;
   const errors = [];
@@ -186,6 +191,7 @@ async function runOne(driverId) {
   const onErr = (e) => { errors.push(String(e && e.message || e).slice(0, 160)); if (e && e.stack) {errStacks.push(String(e.stack).split('\n').slice(0, 4).join(' | '));} };
   process.on('unhandledRejection', onErr);
   let initMs = null;
+  let lastCaps = null;
   try {
     const Cls = require(path.join(ROOT, 'drivers', driverId, 'device.js'));
     const dev = new Cls();
@@ -196,6 +202,7 @@ async function runOne(driverId) {
     const compose = require(path.join(ROOT, 'drivers', driverId, 'driver.compose.json'));
     dev._caps = (compose.capabilities || []).slice();
     dev.driver.manifest = { id: driverId, energy: compose.energy || {}, capabilities: dev._caps.slice() };
+    if (startStripped) { dev._caps = dev._caps.filter((c) => c !== 'measure_battery' && c !== 'alarm_battery'); dev._energy = { batteries: null, mains: true }; }
     const node = fakeNode(p);
     dev.node = node;
     dev.zclNode = node;
@@ -218,6 +225,7 @@ async function runOne(driverId) {
     }
     await flush();
     await Promise.race([pInit, Promise.resolve()]);
+    lastCaps = dev._caps.slice();
     try { dev._destroyed = true; await dev.onDeleted?.(); } catch (_e) { /* soft */ }
   } catch (e) { onErr(e); }
   process.removeListener('unhandledRejection', onErr);
@@ -235,6 +243,8 @@ async function runOne(driverId) {
     byKind,
     capsAdded: trace.filter((r) => r.kind === 'cap+').map((r) => r.detail),
     capsRemoved: trace.filter((r) => r.kind === 'cap-').map((r) => r.detail),
+    energy: (trace.filter((r) => r.kind === 'energy').pop() || {}).detail || null,
+    finalCaps: lastCaps,
     capOps: trace.filter((r) => r.kind === 'cap-' || r.kind === 'cap+').map((r) => `${r.t}ms ${r.kind} ${r.detail}${r.at ? ` @ ${r.at}` : ''}`),
     notifications: trace.filter((r) => r.kind === 'notify').length,
     errors: [...new Set(errors)].slice(0, 5),
@@ -246,7 +256,7 @@ async function runOne(driverId) {
 const realLog = console.log;
 if (asJson || !args.includes('--verbose')) { console.log = () => {}; console.info = () => {}; console.warn = () => {}; console.debug = () => {}; console.error = () => {}; }
 (async () => {
-  const ids = args.filter((a, i) => !a.startsWith('--') && args[i - 1] !== '--horizon');
+  const ids = args.filter((a, i) => !a.startsWith('--') && args[i - 1] !== '--horizon' && args[i - 1] !== '--mfr');
   const list = ids.length ? ids : Object.keys(PROFILES);
   const out = [];
   for (const id of list) {out.push(await runOne(id));}

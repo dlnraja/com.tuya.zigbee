@@ -31801,6 +31801,316 @@
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
+    },
+    "smoke_sensor_ts0601_dp": {
+      "name": "Smoke detector (Tuya TS0601 DP)",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_smoke",
+        "alarm_tamper",
+        "alarm_battery",
+        "measure_battery"
+      ]
+    },
+    "slim_motion_sensor": {
+      "name": "Slim motion sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_battery",
+        "button.1"
+      ]
+    },
+    "motion_sensor_excellux_zg104plv": {
+      "name": "PIR motion + light sensor (Excellux ZG-104PLV)",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_battery",
+        "measure_luminance"
+      ]
+    },
+    "co_sensor_dcr_co": {
+      "name": "CO detector (Tuya DCR-CO)",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_co",
+        "measure_co"
+      ]
+    },
+    "gpo_double_light_mg_au03": {
+      "name": "Double GPO + light switch (MakeGood MG-AU03)",
+      "class": "socket",
+      "capabilities": [
+        "onoff.l1",
+        "onoff.l2",
+        "onoff.l3",
+        "meter_power",
+        "measure_current",
+        "measure_power",
+        "measure_voltage",
+        "child_lock",
+        "onoff"
+      ]
+    },
+    "gpo_double_mg_gpo02z": {
+      "name": "Double GPO (MakeGood MG-GPO02Z)",
+      "class": "socket",
+      "capabilities": [
+        "onoff.l1",
+        "onoff.l2",
+        "meter_power",
+        "measure_current",
+        "measure_power",
+        "measure_voltage",
+        "child_lock",
+        "onoff"
+      ]
+    },
+    "keypad_alarm_wke502z": {
+      "name": "Alarm keypad (Daewoo WKE502Z)",
+      "class": "homealarm",
+      "capabilities": [
+        "measure_battery",
+        "alarm_tamper",
+        "homealarm_state",
+        "alarm_generic"
+      ]
+    },
+    "wall_switch_rf_ews1154z": {
+      "name": "Wall switch with RF remote (Box EWS1154-Z)",
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ]
+    },
+    "thermostat_vrf_bvrf_l001": {
+      "name": "VRF air-conditioning controller (Beca BVRF-L001)",
+      "class": "thermostat",
+      "capabilities": [
+        "onoff",
+        "hvac_system_mode",
+        "target_temperature",
+        "measure_temperature",
+        "child_lock",
+        "fan_mode"
+      ]
+    },
+    "ufh_controller_pro_line_x10": {
+      "name": "Underfloor heating controller, 8 zones (Tervix Pro Line X10)",
+      "class": "heater",
+      "capabilities": [
+        "onoff",
+        "onoff.z1",
+        "onoff.z2",
+        "onoff.z3",
+        "onoff.z4",
+        "onoff.z5",
+        "onoff.z6",
+        "onoff.z7",
+        "onoff.z8",
+        "alarm_generic.pump",
+        "alarm_generic.boiler",
+        "hvac_system_mode"
+      ]
+    },
+    "ufh_controller_ch8z": {
+      "name": "Underfloor heating controller, 8 zones (AutomatOn CH8Z)",
+      "class": "heater",
+      "capabilities": [
+        "onoff.l1",
+        "onoff.l2",
+        "onoff.l3",
+        "onoff.l4",
+        "onoff.l5",
+        "onoff.l6",
+        "onoff.l7",
+        "onoff.l8",
+        "child_lock"
+      ]
+    },
+    "energy_meter_3ch_bidirectional": {
+      "name": "3-channel bidirectional energy meter with relay",
+      "class": "socket",
+      "capabilities": [
+        "meter_power",
+        "meter_power.produced",
+        "measure_power",
+        "onoff",
+        "measure_voltage",
+        "measure_current.a",
+        "measure_current.b",
+        "measure_current.c",
+        "measure_power.a",
+        "measure_power.b",
+        "measure_power.c",
+        "measure_power_factor.a",
+        "measure_power_factor.b",
+        "measure_power_factor.c",
+        "meter_power.a",
+        "meter_power.reverse_a",
+        "meter_power.b",
+        "meter_power.reverse_b",
+        "meter_power.c",
+        "meter_power.reverse_c",
+        "measure_temperature"
+      ]
+    },
+    "dimmer_1_gang": {
+      "name": "1 Gang Dimmer Module",
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "measure_battery",
+        "button.1"
+      ]
+    },
+    "dimmer_1_gang_tuya": {
+      "name": "1 Gang Dimmer Module",
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "measure_battery",
+        "button.1"
+      ]
+    },
+    "heiman_keyfob": {
+      "name": "HEIMAN alarm keyfob",
+      "class": "other",
+      "capabilities": [
+        "measure_battery"
+      ]
+    },
+    "heiman_siren": {
+      "name": "HEIMAN smart siren",
+      "class": "other",
+      "capabilities": [
+        "onoff",
+        "measure_battery"
+      ]
+    },
+    "lcdtemphumidsensor_3": {
+      "name": "LCD Temperature & Humidity Sensor",
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery",
+        "button.1"
+      ]
+    },
+    "panel_switch_cover_tuya": {
+      "name": "Touch Panel 2 Switches + 2 Shutters (Tuya)",
+      "class": "windowcoverings",
+      "capabilities": [
+        "windowcoverings_state.c1",
+        "windowcoverings_set.c1",
+        "windowcoverings_state.c2",
+        "windowcoverings_set.c2",
+        "onoff",
+        "onoff.s2",
+        "windowcoverings_state",
+        "windowcoverings_set"
+      ]
+    },
+    "smart_knob_zg101zd": {
+      "name": "Smart knob ZG-101ZD (rotary)",
+      "class": "button",
+      "capabilities": [
+        "measure_battery"
+      ]
+    },
+    "smartplug": {
+      "name": "Smart Plug with metering",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "measure_current",
+        "measure_voltage",
+        "child_lock",
+        "button.1"
+      ]
+    },
+    "smoke_sensor": {
+      "name": "Smoke Sensor",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_smoke",
+        "measure_battery",
+        "button.1"
+      ]
+    },
+    "smoke_sensor2": {
+      "name": "Smoke Sensor",
+      "class": "sensor",
+      "capabilities": [
+        "measure_battery",
+        "alarm_smoke",
+        "alarm_tamper",
+        "button.1"
+      ]
+    },
+    "socket_power_strip": {
+      "name": "3 Socket Power Strip",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "button.1"
+      ]
+    },
+    "switch_3_gang": {
+      "name": "3 Gang Switch Module",
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_battery",
+        "button.1",
+        "button.2",
+        "button.3"
+      ]
+    },
+    "temphumidsensor3": {
+      "name": "Temperature & Humidity Sensor",
+      "class": "sensor",
+      "capabilities": [
+        "measure_battery",
+        "measure_humidity",
+        "measure_temperature",
+        "button.1"
+      ]
+    },
+    "valve_novato_zpv01": {
+      "name": "Novato Water Valve ZPV-01",
+      "class": "other",
+      "capabilities": [
+        "onoff",
+        "measure_battery"
+      ]
+    },
+    "wall_dimmer_tuya": {
+      "name": "Wall Dimmer",
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "button.1"
+      ]
+    },
+    "wall_thermostat": {
+      "name": "Wall Thermostat",
+      "class": "thermostat",
+      "capabilities": [
+        "onoff",
+        "thermostat_programming",
+        "measure_temperature",
+        "target_temperature",
+        "child_lock",
+        "button.1"
+      ]
     }
   },
   "parsers": {
