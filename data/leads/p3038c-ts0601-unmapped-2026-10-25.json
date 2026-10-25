@@ -74,7 +74,12 @@
         "model": "SPM02V1-GT",
         "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L18784"
       },
-      "reason": "power_meter already lists this mfr with productId \"ts0601\" in lower case; adding it to energy_meter_3phase makes a new case-insensitive dual (native-matrix gate). Needs owner decision: reviewed dual or fix the power_meter pid case"
+      "reason": "power_meter already lists this mfr with productId \"ts0601\" in lower case; adding it to energy_meter_3phase makes a new case-insensitive dual (native-matrix gate). Needs owner decision: reviewed dual or fix the power_meter pid case",
+      "resolvedBy": {
+        "commit": "a9a842933b",
+        "id": "P3039a",
+        "driverId": "power_meter"
+      }
     },
     {
       "mfr": "_TZE200_yp5tsi3y",
@@ -122,7 +127,12 @@
         "model": "SPM02V1-GT",
         "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L18784"
       },
-      "reason": "power_meter already lists this mfr with productId \"ts0601\" in lower case; adding it to energy_meter_3phase makes a new case-insensitive dual (native-matrix gate). Needs owner decision: reviewed dual or fix the power_meter pid case"
+      "reason": "power_meter already lists this mfr with productId \"ts0601\" in lower case; adding it to energy_meter_3phase makes a new case-insensitive dual (native-matrix gate). Needs owner decision: reviewed dual or fix the power_meter pid case",
+      "resolvedBy": {
+        "commit": "a9a842933b",
+        "id": "P3039a",
+        "driverId": "power_meter"
+      }
     },
     {
       "mfr": "_TZE20C1000000_p3g8xiug",
@@ -170,7 +180,12 @@
         "model": "SPM02V1-GT",
         "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L18784"
       },
-      "reason": "power_meter already lists this mfr with productId \"ts0601\" in lower case; adding it to energy_meter_3phase makes a new case-insensitive dual (native-matrix gate). Needs owner decision: reviewed dual or fix the power_meter pid case"
+      "reason": "power_meter already lists this mfr with productId \"ts0601\" in lower case; adding it to energy_meter_3phase makes a new case-insensitive dual (native-matrix gate). Needs owner decision: reviewed dual or fix the power_meter pid case",
+      "resolvedBy": {
+        "commit": "a9a842933b",
+        "id": "P3039a",
+        "driverId": "power_meter"
+      }
     }
   ],
   "excluded": []
