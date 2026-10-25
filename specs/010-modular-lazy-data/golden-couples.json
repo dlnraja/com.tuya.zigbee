@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-25T15:06:49.182Z",
- "drivers": 403,
+ "generated": "2026-10-25T16:17:11.847Z",
+ "drivers": 413,
  "snapshot": {
   "air_purifier": {
    "mfr": 3,
@@ -350,6 +350,12 @@
    "mfrSha": "589dabd6b909019a",
    "pidSha": "98aaec19a4fb45ff"
   },
+  "co_sensor_dcr_co": {
+   "mfr": 2,
+   "pid": 1,
+   "mfrSha": "fd1f6526cf3a48f4",
+   "pidSha": "455c46e8c8549693"
+  },
   "contact_sensor": {
    "mfr": 61,
    "pid": 26,
@@ -460,9 +466,9 @@
   },
   "device_air_purifier_plug": {
    "mfr": 2,
-   "pid": 54,
+   "pid": 53,
    "mfrSha": "fd1f6526cf3a48f4",
-   "pidSha": "eeb53a88a0338ea3"
+   "pidSha": "19f9159d5a9bf993"
   },
   "device_air_purifier_presence": {
    "mfr": 1,
@@ -568,15 +574,15 @@
   },
   "device_plug_energy_monitor": {
    "mfr": 0,
-   "pid": 3,
+   "pid": 2,
    "mfrSha": "e3b0c44298fc1c14",
-   "pidSha": "9f35c5dffebc5da0"
+   "pidSha": "16cf3bb48d8ea5a3"
   },
   "device_plug_smart": {
    "mfr": 0,
-   "pid": 7,
+   "pid": 6,
    "mfrSha": "e3b0c44298fc1c14",
-   "pidSha": "9df2facc4568bdc5"
+   "pidSha": "a5bf0f2eba40c96e"
   },
   "device_plug_smart_water": {
    "mfr": 1,
@@ -585,9 +591,9 @@
    "pidSha": "455c46e8c8549693"
   },
   "device_radiator_valve": {
-   "mfr": 106,
+   "mfr": 107,
    "pid": 2,
-   "mfrSha": "79127ef317e86121",
+   "mfrSha": "b42a6fc001623203",
    "pidSha": "eb014cbe97d74de9"
   },
   "device_radiator_valve_smart": {
@@ -628,9 +634,9 @@
   },
   "dimmer_1_gang_2": {
    "mfr": 0,
-   "pid": 11,
+   "pid": 10,
    "mfrSha": "e3b0c44298fc1c14",
-   "pidSha": "d3e783e22d9f2160"
+   "pidSha": "81d1a1b0bd0b36c1"
   },
   "dimmer_1_gang_tuya": {
    "mfr": 15,
@@ -676,9 +682,9 @@
   },
   "dimmer_dual_channel": {
    "mfr": 0,
-   "pid": 2,
+   "pid": 1,
    "mfrSha": "e3b0c44298fc1c14",
-   "pidSha": "b8e8f65f7524bfbf"
+   "pidSha": "98b320267c2ba16a"
   },
   "dimmer_ts110e": {
    "mfr": 2,
@@ -778,15 +784,21 @@
   },
   "double_power_point": {
    "mfr": 0,
-   "pid": 2,
+   "pid": 1,
    "mfrSha": "e3b0c44298fc1c14",
-   "pidSha": "720ce7b7ec09a25f"
+   "pidSha": "ee3881b630706571"
   },
   "double_power_point_2": {
    "mfr": 3,
    "pid": 2,
    "mfrSha": "3fbbeaa61492d98f",
    "pidSha": "720ce7b7ec09a25f"
+  },
+  "energy_meter_3ch_bidirectional": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "b317c16134b79331",
+   "pidSha": "455c46e8c8549693"
   },
   "energy_meter_3phase": {
    "mfr": 21,
@@ -890,6 +902,18 @@
    "mfrSha": "c5ab0da166a871a6",
    "pidSha": "eff8a90efdd5d27f"
   },
+  "gpo_double_light_mg_au03": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "d903c08fd68cf8b2",
+   "pidSha": "455c46e8c8549693"
+  },
+  "gpo_double_mg_gpo02z": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "c46c4545a3980fcb",
+   "pidSha": "455c46e8c8549693"
+  },
   "handheld_remote_4_buttons": {
    "mfr": 9,
    "pid": 7,
@@ -985,6 +1009,12 @@
    "pid": 5,
    "mfrSha": "941fcd15cc2997b4",
    "pidSha": "22e4403748643810"
+  },
+  "keypad_alarm_wke502z": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "308cdb12b8bc0e4b",
+   "pidSha": "455c46e8c8549693"
   },
   "lcdtemphumidluxsensor": {
    "mfr": 6,
@@ -1150,9 +1180,9 @@
   },
   "outdoor_2_socket": {
    "mfr": 0,
-   "pid": 2,
+   "pid": 1,
    "mfrSha": "e3b0c44298fc1c14",
-   "pidSha": "720ce7b7ec09a25f"
+   "pidSha": "ee3881b630706571"
   },
   "outdoor_plug": {
    "mfr": 2,
@@ -1354,9 +1384,9 @@
   },
   "remote_button_wireless_smart": {
    "mfr": 0,
-   "pid": 2,
+   "pid": 1,
    "mfrSha": "e3b0c44298fc1c14",
-   "pidSha": "f3e89c56b663e4d7"
+   "pidSha": "bee580cb2039fffe"
   },
   "remote_button_wireless_usb": {
    "mfr": 1,
@@ -1497,9 +1527,9 @@
    "pidSha": "433f428a8ac246d5"
   },
   "sensor_climate_contact": {
-   "mfr": 3,
+   "mfr": 2,
    "pid": 1,
-   "mfrSha": "5fcdf16d9b532b9a",
+   "mfrSha": "eeb095c37392b88e",
    "pidSha": "455c46e8c8549693"
   },
   "sensor_climate_lcdtemphumidsensor": {
@@ -1600,9 +1630,9 @@
   },
   "sensor_lcdtemphumidsensor_temphumidsensor": {
    "mfr": 0,
-   "pid": 14,
+   "pid": 13,
    "mfrSha": "e3b0c44298fc1c14",
-   "pidSha": "52ab211a7e1438c9"
+   "pidSha": "fbca25dc37c9b88e"
   },
   "sensor_motion_presence": {
    "mfr": 23,
@@ -1825,6 +1855,12 @@
    "pid": 1,
    "mfrSha": "556b93db800cd5f4",
    "pidSha": "ffba1e7b2343f15f"
+  },
+  "smoke_sensor_ts0601_dp": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "c3fc005eca7b86b0",
+   "pidSha": "455c46e8c8549693"
   },
   "socket_power_strip": {
    "mfr": 9,
@@ -2102,6 +2138,12 @@
    "mfrSha": "ad1eccd1022a8247",
    "pidSha": "687391de8701e2ed"
   },
+  "thermostat_vrf_bvrf_l001": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "70dfc058d9bf9ce5",
+   "pidSha": "455c46e8c8549693"
+  },
   "thermostatic_radiator_valve": {
    "mfr": 34,
    "pid": 20,
@@ -2130,6 +2172,18 @@
    "mfr": 1,
    "pid": 1,
    "mfrSha": "cc7bd330ea9dc3e9",
+   "pidSha": "455c46e8c8549693"
+  },
+  "ufh_controller_ch8z": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "1fbe2e02ae298edd",
+   "pidSha": "455c46e8c8549693"
+  },
+  "ufh_controller_pro_line_x10": {
+   "mfr": 2,
+   "pid": 1,
+   "mfrSha": "e413d0f7925e51a1",
    "pidSha": "455c46e8c8549693"
   },
   "ultrasonic_heat_meter": {
@@ -2352,6 +2406,12 @@
    "mfr": 12,
    "pid": 1,
    "mfrSha": "696760d8afe3c440",
+   "pidSha": "455c46e8c8549693"
+  },
+  "wall_switch_rf_ews1154z": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "8a5101a9a2624b72",
    "pidSha": "455c46e8c8549693"
   },
   "wall_thermostat": {
