@@ -1,1 +1,354 @@
-{"triggers":[],"conditions":[],"actions":[]}
+{
+  "triggers": [
+    {
+      "id": "switch_wall_6gang_metering_physical_gang1_on",
+      "title": {
+        "en": "Physical gang 1 ON",
+        "fr": "Physique gang 1 ON",
+        "nl": "Fysiek gang 1 AAN",
+        "de": "Physisch gang 1 EIN"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical gang 1 ON",
+        "fr": "Physique gang 1 ON",
+        "nl": "Fysiek gang 1 AAN",
+        "de": "Physisch gang 1 EIN"
+      }
+    },
+    {
+      "id": "switch_wall_6gang_metering_physical_gang1_off",
+      "title": {
+        "en": "Physical gang 1 OFF",
+        "fr": "Physique gang 1 OFF",
+        "nl": "Fysiek gang 1 UIT",
+        "de": "Physisch gang 1 AUS"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical gang 1 OFF",
+        "fr": "Physique gang 1 OFF",
+        "nl": "Fysiek gang 1 UIT",
+        "de": "Physisch gang 1 AUS"
+      }
+    },
+    {
+      "id": "switch_wall_6gang_metering_physical_gang2_on",
+      "title": {
+        "en": "Physical gang 2 ON",
+        "fr": "Physique gang 2 ON",
+        "nl": "Fysiek gang 2 AAN",
+        "de": "Physisch gang 2 EIN"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical gang 2 ON",
+        "fr": "Physique gang 2 ON",
+        "nl": "Fysiek gang 2 AAN",
+        "de": "Physisch gang 2 EIN"
+      }
+    },
+    {
+      "id": "switch_wall_6gang_metering_physical_gang2_off",
+      "title": {
+        "en": "Physical gang 2 OFF",
+        "fr": "Physique gang 2 OFF",
+        "nl": "Fysiek gang 2 UIT",
+        "de": "Physisch gang 2 AUS"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical gang 2 OFF",
+        "fr": "Physique gang 2 OFF",
+        "nl": "Fysiek gang 2 UIT",
+        "de": "Physisch gang 2 AUS"
+      }
+    },
+    {
+      "id": "switch_wall_6gang_metering_physical_gang3_on",
+      "title": {
+        "en": "Physical gang 3 ON",
+        "fr": "Physique gang 3 ON",
+        "nl": "Fysiek gang 3 AAN",
+        "de": "Physisch gang 3 EIN"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical gang 3 ON",
+        "fr": "Physique gang 3 ON",
+        "nl": "Fysiek gang 3 AAN",
+        "de": "Physisch gang 3 EIN"
+      }
+    },
+    {
+      "id": "switch_wall_6gang_metering_physical_gang3_off",
+      "title": {
+        "en": "Physical gang 3 OFF",
+        "fr": "Physique gang 3 OFF",
+        "nl": "Fysiek gang 3 UIT",
+        "de": "Physisch gang 3 AUS"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical gang 3 OFF",
+        "fr": "Physique gang 3 OFF",
+        "nl": "Fysiek gang 3 UIT",
+        "de": "Physisch gang 3 AUS"
+      }
+    },
+    {
+      "id": "switch_wall_6gang_metering_physical_gang4_on",
+      "title": {
+        "en": "Physical gang 4 ON",
+        "fr": "Physique gang 4 ON",
+        "nl": "Fysiek gang 4 AAN",
+        "de": "Physisch gang 4 EIN"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical gang 4 ON",
+        "fr": "Physique gang 4 ON",
+        "nl": "Fysiek gang 4 AAN",
+        "de": "Physisch gang 4 EIN"
+      }
+    },
+    {
+      "id": "switch_wall_6gang_metering_physical_gang4_off",
+      "title": {
+        "en": "Physical gang 4 OFF",
+        "fr": "Physique gang 4 OFF",
+        "nl": "Fysiek gang 4 UIT",
+        "de": "Physisch gang 4 AUS"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical gang 4 OFF",
+        "fr": "Physique gang 4 OFF",
+        "nl": "Fysiek gang 4 UIT",
+        "de": "Physisch gang 4 AUS"
+      }
+    },
+    {
+      "id": "switch_wall_6gang_metering_physical_gang5_on",
+      "title": {
+        "en": "Physical gang 5 ON",
+        "fr": "Physique gang 5 ON",
+        "nl": "Fysiek gang 5 AAN",
+        "de": "Physisch gang 5 EIN"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical gang 5 ON",
+        "fr": "Physique gang 5 ON",
+        "nl": "Fysiek gang 5 AAN",
+        "de": "Physisch gang 5 EIN"
+      }
+    },
+    {
+      "id": "switch_wall_6gang_metering_physical_gang5_off",
+      "title": {
+        "en": "Physical gang 5 OFF",
+        "fr": "Physique gang 5 OFF",
+        "nl": "Fysiek gang 5 UIT",
+        "de": "Physisch gang 5 AUS"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical gang 5 OFF",
+        "fr": "Physique gang 5 OFF",
+        "nl": "Fysiek gang 5 UIT",
+        "de": "Physisch gang 5 AUS"
+      }
+    },
+    {
+      "id": "switch_wall_6gang_metering_physical_gang6_on",
+      "title": {
+        "en": "Physical gang 6 ON",
+        "fr": "Physique gang 6 ON",
+        "nl": "Fysiek gang 6 AAN",
+        "de": "Physisch gang 6 EIN"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical gang 6 ON",
+        "fr": "Physique gang 6 ON",
+        "nl": "Fysiek gang 6 AAN",
+        "de": "Physisch gang 6 EIN"
+      }
+    },
+    {
+      "id": "switch_wall_6gang_metering_physical_gang6_off",
+      "title": {
+        "en": "Physical gang 6 OFF",
+        "fr": "Physique gang 6 OFF",
+        "nl": "Fysiek gang 6 UIT",
+        "de": "Physisch gang 6 AUS"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical gang 6 OFF",
+        "fr": "Physique gang 6 OFF",
+        "nl": "Fysiek gang 6 UIT",
+        "de": "Physisch gang 6 AUS"
+      }
+    },
+    {
+      "id": "switch_wall_6gang_metering_gang1_scene",
+      "title": {
+        "en": "Gang 1 scene triggered",
+        "fr": "Scène de la voie 1 déclenchée",
+        "nl": "Scène van kanaal 1 geactiveerd",
+        "de": "Szene von Kanal 1 ausgelöst"
+      },
+      "args": [],
+      "tokens": [
+        {
+          "name": "action",
+          "type": "string",
+          "title": {
+            "en": "Action"
+          },
+          "example": {
+            "en": "on"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Gang 1 scene triggered ({action})",
+        "fr": "Scène voie 1 déclenchée ({action})"
+      }
+    },
+    {
+      "id": "switch_wall_6gang_metering_gang2_scene",
+      "title": {
+        "en": "Gang 2 scene triggered",
+        "fr": "Scène de la voie 2 déclenchée",
+        "nl": "Scène van kanaal 2 geactiveerd",
+        "de": "Szene von Kanal 2 ausgelöst"
+      },
+      "args": [],
+      "tokens": [
+        {
+          "name": "action",
+          "type": "string",
+          "title": {
+            "en": "Action"
+          },
+          "example": {
+            "en": "on"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Gang 2 scene triggered ({action})",
+        "fr": "Scène voie 2 déclenchée ({action})"
+      }
+    },
+    {
+      "id": "switch_wall_6gang_metering_gang3_scene",
+      "title": {
+        "en": "Gang 3 scene triggered",
+        "fr": "Scène de la voie 3 déclenchée",
+        "nl": "Scène van kanaal 3 geactiveerd",
+        "de": "Szene von Kanal 3 ausgelöst"
+      },
+      "args": [],
+      "tokens": [
+        {
+          "name": "action",
+          "type": "string",
+          "title": {
+            "en": "Action"
+          },
+          "example": {
+            "en": "on"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Gang 3 scene triggered ({action})",
+        "fr": "Scène voie 3 déclenchée ({action})"
+      }
+    },
+    {
+      "id": "switch_wall_6gang_metering_gang4_scene",
+      "title": {
+        "en": "Gang 4 scene triggered",
+        "fr": "Scène de la voie 4 déclenchée",
+        "nl": "Scène van kanaal 4 geactiveerd",
+        "de": "Szene von Kanal 4 ausgelöst"
+      },
+      "args": [],
+      "tokens": [
+        {
+          "name": "action",
+          "type": "string",
+          "title": {
+            "en": "Action"
+          },
+          "example": {
+            "en": "on"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Gang 4 scene triggered ({action})",
+        "fr": "Scène voie 4 déclenchée ({action})"
+      }
+    },
+    {
+      "id": "switch_wall_6gang_metering_gang5_scene",
+      "title": {
+        "en": "Gang 5 scene triggered",
+        "fr": "Scène de la voie 5 déclenchée",
+        "nl": "Scène van kanaal 5 geactiveerd",
+        "de": "Szene von Kanal 5 ausgelöst"
+      },
+      "args": [],
+      "tokens": [
+        {
+          "name": "action",
+          "type": "string",
+          "title": {
+            "en": "Action"
+          },
+          "example": {
+            "en": "on"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Gang 5 scene triggered ({action})",
+        "fr": "Scène voie 5 déclenchée ({action})"
+      }
+    },
+    {
+      "id": "switch_wall_6gang_metering_gang6_scene",
+      "title": {
+        "en": "Gang 6 scene triggered",
+        "fr": "Scène de la voie 6 déclenchée",
+        "nl": "Scène van kanaal 6 geactiveerd",
+        "de": "Szene von Kanal 6 ausgelöst"
+      },
+      "args": [],
+      "tokens": [
+        {
+          "name": "action",
+          "type": "string",
+          "title": {
+            "en": "Action"
+          },
+          "example": {
+            "en": "on"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Gang 6 scene triggered ({action})",
+        "fr": "Scène voie 6 déclenchée ({action})"
+      }
+    }
+  ],
+  "conditions": [],
+  "actions": []
+}

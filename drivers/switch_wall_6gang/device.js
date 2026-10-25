@@ -14,6 +14,26 @@ const ZCL_ONLY_MANUFACTURERS_6G = [
 ];
 
 class Switch6GangDevice extends UnifiedSwitchBase {
+  /**
+   * P3034: trigger card for this device's own driver first (e.g. switch_wall_6gang_metering_*),
+   * then the historical switch_wall_6gang_* id. Never throws; null when neither exists.
+   */
+  _p3034OwnTriggerCard(baseId) {
+    const did = this.driver && this.driver.id;
+    const ids = [];
+    if (did && did !== 'switch_wall_6gang' && baseId.startsWith('switch_wall_6gang_')) {
+      ids.push(`${did}_${baseId.slice('switch_wall_6gang_'.length)}`);
+    }
+    ids.push(baseId);
+    for (const id of ids) {
+      try {
+        const card = this.homey.flow.getDeviceTriggerCard(id);
+        if (card) {return card;}
+      } catch (_) { /* card not declared for this driver */ }
+    }
+    return null;
+  }
+
   get gangCount() { return 6; }
 
   /**
@@ -129,7 +149,8 @@ class Switch6GangDevice extends UnifiedSwitchBase {
           if (isPhysical && (mode === 'auto' || mode === 'both')) {
             const flowId = `switch_wall_6gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
             try {
-              const card = this.homey.flow.getDeviceTriggerCard(flowId);
+              // P3034: subclasses (switch_wall_6gang_metering) own their cards under their driver id.
+              const card = this._p3034OwnTriggerCard(flowId);
               if (card) {
                 await card.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
                 this.log(`[SWITCH-6G] Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
@@ -139,7 +160,7 @@ class Switch6GangDevice extends UnifiedSwitchBase {
           if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
             const sceneId = `switch_wall_6gang_gang${epNum}_scene`;
             try {
-              const card = this.homey.flow.getDeviceTriggerCard(sceneId);
+              const card = this._p3034OwnTriggerCard(sceneId);
               if (card) {
                 await card.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
                 this.log(`[SWITCH-6G] Scene G${epNum} ${value ? 'on' : 'off'}`);
