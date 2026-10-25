@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-25T06:47:08.344Z",
+ "updated": "2026-10-25T07:18:20.434Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -10,6 +10,12 @@
   "sweep": "data/leads/sweep-checkpoint.json"
  },
  "items": {
+  "autofix:auto-fix-and-publish|commit-fixes|p3025-appjson-drift": {
+   "status": "in_progress",
+   "date": "2026-10-25",
+   "note": "attempt 1/3 (24h) runs 40147508102,40162040962: P3035 re-sync app.json from compose before staging in Commit fixes",
+   "by": "homey-ci-autofix"
+  },
   "conflict:_tz3000_4uuaja4a|ts0726": {
    "status": "done",
    "date": "2026-10-04",
