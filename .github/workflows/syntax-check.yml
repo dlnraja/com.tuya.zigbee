@@ -63,6 +63,7 @@ jobs:
         uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           cache: npm
+          cache-dependency-path: .github/npm-cache-key.sha256  # P3026: version-free key, one npm cache per dependency set
           node-version: '22'
 
       - name: Install dependencies
