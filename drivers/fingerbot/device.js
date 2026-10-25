@@ -126,6 +126,28 @@ class FingerBot extends TuyaSpecificClusterDevice {
     return 'datapoint';
   }
 
+  /**
+   * sendData variants: one frame per DP instead of the inherited io.sendDP cascade,
+   * which waits out several timeouts on this sleepy end device.
+   * Three TuyaSpecificCluster files register as 'tuya' with different sendData args;
+   * use whichever shape the loaded one declares.
+   */
+  async _sendTuyaDatapoint(dp, datatype, length, data, ...rest) {
+    if (this.getTuyaCommandName(dp) !== 'sendData') {
+      return super._sendTuyaDatapoint(dp, datatype, length, data, ...rest);
+    }
+
+    const cluster = this.zclNode.endpoints[1].clusters.tuya;
+    const transid = this.transactionID;
+    this.transactionID = transid + 1;
+
+    if (cluster.constructor.COMMANDS?.sendData?.args?.seq) {
+      const header = Buffer.from([dp & 0xff, datatype & 0xff, (length >> 8) & 0xff, length & 0xff]);
+      return cluster.sendData({ seq: transid, dpValues: Buffer.concat([header, data]) });
+    }
+    return cluster.sendData({ status: 0, transid, dp, datatype, length, data });
+  }
+
   async onNodeInit({ zclNode }) {
     this.log('Initializing FingerBot device...');
     
@@ -143,17 +165,6 @@ class FingerBot extends TuyaSpecificClusterDevice {
     this._registerTimeBoundCluster(zclNode);
 
     try {
-      // --- Attribute Reporting Configuration ---
-      await this.configureAttributeReporting([
-        {
-          cluster: 'genPowerCfg',
-          attributeName: 'batteryPercentageRemaining',
-          minInterval: 3600,
-          maxInterval: 43200,
-          minChange: 2,
-        }
-      ]).catch(err => this.log('Attribute reporting config failed:', err.message));
-
       await super.onNodeInit({ zclNode });
 
       this._registerOnOffHandling(zclNode);
@@ -163,9 +174,6 @@ class FingerBot extends TuyaSpecificClusterDevice {
       await zclNode.endpoints[1].clusters.basic.readAttributes([
         'manufacturerName', 'zclVersion', 'appVersion', 'modelId', 'powerSource', 'attributeReportingStatus',
       ]).catch(err => this.error('Error reading attributes:', err));
-
-      // Apply current settings once on init.
-      await this.applyConfiguredSettings({ includeMode: true });
 
     } catch (err) {
       this.error('FingerBot initialization error:', err.message);
@@ -442,46 +450,6 @@ class FingerBot extends TuyaSpecificClusterDevice {
 
     default:
       this.log('Unhandled FingerBot DP:', dp, 'value:', parsedValue);
-    }
-  }
-
-  async applyConfiguredSettings({ includeMode = false } = {}) {
-    const mode = this._getConfiguredMode();
-    const lower = this.getSetting('lower_limit');
-    const upper = this.getSetting('upper_limit');
-    const delay = this.getSetting('sustain_time') ?? this.getSetting('delay');
-    const reverse = this.getSetting('reverse_direction') ?? this.getSetting('reverse');
-    const touch = this.getSetting('touch');
-
-    try {
-      if (includeMode) {
-        await this.writeEnum(V1_FINGER_BOT_DATA_POINTS.mode, MODE[mode]);
-      }
-
-      if (typeof lower === 'number') {
-        await this.writeData32(V1_FINGER_BOT_DATA_POINTS.lowerLimit, lower);
-      }
-
-      if (typeof upper === 'number') {
-        await this.writeData32(V1_FINGER_BOT_DATA_POINTS.upperLimit, upper);
-      }
-
-      if (typeof delay === 'number') {
-        await this.writeData32(V1_FINGER_BOT_DATA_POINTS.delay, delay);
-      }
-
-      if (typeof reverse === 'boolean') {
-        await this.writeEnum(
-          V1_FINGER_BOT_DATA_POINTS.reverse,
-          reverse ? 1 : 0,
-        );
-      }
-
-      if (typeof touch === 'boolean') {
-        await this.writeEnum(V1_FINGER_BOT_DATA_POINTS.touch, touch ? 1 : 0);
-      }
-    } catch (err) {
-      this.error('Failed to apply FingerBot settings', err);
     }
   }
 
