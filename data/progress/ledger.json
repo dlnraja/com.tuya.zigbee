@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-25T13:00:29.564Z",
+ "updated": "2026-10-25T13:12:28.013Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -14410,6 +14410,23 @@
    "link": "https://community.homey.app/t/140352/2265",
    "mfrs": [
     "_TZE284_8se38w3c"
+   ],
+   "pids": [
+    "TS0601"
+   ]
+  },
+  "forum-post:140352/2268": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "edfc24273a06b23d",
+   "note": "identities already in a driver",
+   "by": "forum-poll",
+   "topic": 140352,
+   "post": 2268,
+   "author": "seikossss",
+   "link": "https://community.homey.app/t/140352/2268",
+   "mfrs": [
+    "_TZE284_z7a2jmyy"
    ],
    "pids": [
     "TS0601"
