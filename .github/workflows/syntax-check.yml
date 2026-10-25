@@ -27,6 +27,8 @@ on:
       - 'package*.json'
       - 'scripts/ci/**'
       - 'scripts/validation/**'
+  # P3034: manual run to prove master green after a [skip ci] fix push.
+  workflow_dispatch:
 
 permissions:
   contents: read
