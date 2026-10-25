@@ -1,0 +1,68 @@
+{
+  "id": "wall_switch_rf_ews1154z",
+  "name": {
+    "en": "Wall switch with RF remote (Box EWS1154-Z)",
+    "fr": "Interrupteur mural avec télécommande RF (Box EWS1154-Z)",
+    "nl": "Wandschakelaar met RF-afstandsbediening (Box EWS1154-Z)",
+    "de": "Wandschalter mit RF-Fernbedienung (Box EWS1154-Z)"
+  },
+  "class": "socket",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "onoff"
+  ],
+  "energy": {
+    "approximation": {
+      "usageConstant": 0.5
+    }
+  },
+  "images": {
+    "small": "/drivers/wall_switch_rf_ews1154z/assets/images/small.png",
+    "large": "/drivers/wall_switch_rf_ews1154z/assets/images/large.png"
+  },
+  "settings": [
+    {
+      "$extends": [
+        "zcl_cluster_layer"
+      ]
+    }
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_yp5tsi3y",
+      "_tze200_yp5tsi3y",
+      "_TZE200_YP5TSI3Y",
+      "_tze200_YP5TSI3Y"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5
+        ],
+        "bindings": []
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Press and hold the switch for about 10 seconds until the indicator blinks.",
+        "fr": "Maintenez l’interrupteur environ 10 secondes jusqu’à ce que le voyant clignote.",
+        "nl": "Houd de schakelaar ongeveer 10 seconden ingedrukt tot het lampje knippert.",
+        "de": "Halten Sie den Schalter etwa 10 Sekunden gedrückt, bis die Anzeige blinkt."
+      }
+    }
+  },
+  "metadata": {
+    "source": "zigbee-herdsman-converters box.ts EWS1154-Z (_TZE200_yp5tsi3y): DP0x13 (19) on/off. RF learning (DP0x66-0x69) is not exposed. Reimplemented and credited (P3039), no upstream code copied."
+  }
+}

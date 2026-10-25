@@ -1,0 +1,80 @@
+{
+  "id": "thermostat_vrf_bvrf_l001",
+  "name": {
+    "en": "VRF air-conditioning controller (Beca BVRF-L001)",
+    "fr": "Contrôleur de climatisation VRF (Beca BVRF-L001)",
+    "nl": "VRF-airco-regelaar (Beca BVRF-L001)",
+    "de": "VRF-Klimaregler (Beca BVRF-L001)"
+  },
+  "class": "thermostat",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "onoff",
+    "hvac_system_mode",
+    "target_temperature",
+    "measure_temperature",
+    "child_lock",
+    "fan_mode"
+  ],
+  "capabilitiesOptions": {
+    "target_temperature": {
+      "min": 16,
+      "max": 32,
+      "step": 1
+    }
+  },
+  "energy": {
+    "approximation": {
+      "usageConstant": 0.5
+    }
+  },
+  "images": {
+    "small": "/drivers/thermostat_vrf_bvrf_l001/assets/images/small.png",
+    "large": "/drivers/thermostat_vrf_bvrf_l001/assets/images/large.png"
+  },
+  "settings": [
+    {
+      "$extends": [
+        "zcl_cluster_layer"
+      ]
+    }
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE204_6ewjlefg",
+      "_tze204_6ewjlefg",
+      "_TZE204_6EWJLEFG",
+      "_tze204_6EWJLEFG"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5
+        ],
+        "bindings": []
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Hold the power and mode buttons together until the Zigbee icon blinks.",
+        "fr": "Maintenez les boutons marche et mode ensemble jusqu’à ce que l’icône Zigbee clignote.",
+        "nl": "Houd de aan- en modusknop samen ingedrukt tot het Zigbee-pictogram knippert.",
+        "de": "Halten Sie Ein- und Modustaste gleichzeitig gedrückt, bis das Zigbee-Symbol blinkt."
+      }
+    }
+  },
+  "metadata": {
+    "source": "zigbee-herdsman-converters beca.ts BVRF-L001 (_TZE204_6ewjlefg): DP1 state, DP2 system mode (0 cool, 1 heat, 2 fan_only, 3 dry), DP16 setpoint x10 (16-32 C), DP24 local temperature /10, DP40 child lock, DP49 fan mode (0 auto, 1 low, 2 medium, 3 high). Reimplemented and credited (P3039), no upstream code copied."
+  }
+}

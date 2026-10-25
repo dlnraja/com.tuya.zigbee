@@ -1,0 +1,70 @@
+{
+  "id": "smoke_sensor_ts0601_dp",
+  "name": {
+    "en": "Smoke detector (Tuya TS0601 DP)",
+    "fr": "Détecteur de fumée (Tuya TS0601 DP)",
+    "nl": "Rookmelder (Tuya TS0601 DP)",
+    "de": "Rauchmelder (Tuya TS0601 DP)"
+  },
+  "class": "sensor",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "alarm_smoke",
+    "alarm_battery",
+    "measure_battery"
+  ],
+  "energy": {
+    "batteries": [
+      "OTHER"
+    ]
+  },
+  "images": {
+    "small": "/drivers/smoke_sensor_ts0601_dp/assets/images/small.png",
+    "large": "/drivers/smoke_sensor_ts0601_dp/assets/images/large.png"
+  },
+  "settings": [
+    {
+      "$extends": [
+        "zcl_cluster_layer"
+      ]
+    }
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_yh7aoahi",
+      "_tze200_yh7aoahi",
+      "_TZE200_YH7AOAHI",
+      "_tze200_YH7AOAHI"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5
+        ],
+        "bindings": []
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Press and hold the test button for about 5 seconds until the indicator blinks.",
+        "fr": "Maintenez le bouton de test environ 5 secondes jusqu’à ce que le voyant clignote.",
+        "nl": "Houd de testknop ongeveer 5 seconden ingedrukt tot het lampje knippert.",
+        "de": "Halten Sie die Testtaste etwa 5 Sekunden gedrückt, bis die Anzeige blinkt."
+      }
+    }
+  },
+  "metadata": {
+    "source": "zigbee-herdsman-converters tuya.ts TS0601_smoke_4 (_TZE200_yh7aoahi): DP1 smoke (raw 0 = smoke), DP14 battery state (0 = low), DP15 battery %. TS0601 only; the TS0205 couple on smoke_sensor3 is left in place. Reimplemented and credited (P3039), no upstream code copied."
+  }
+}

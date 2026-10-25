@@ -1,0 +1,101 @@
+{
+  "id": "gpo_double_mg_gpo02z",
+  "name": {
+    "en": "Double GPO (MakeGood MG-GPO02Z)",
+    "fr": "Double prise (MakeGood MG-GPO02Z)",
+    "nl": "Dubbel stopcontact (MakeGood MG-GPO02Z)",
+    "de": "Doppelsteckdose (MakeGood MG-GPO02Z)"
+  },
+  "class": "socket",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "onoff.l1",
+    "onoff.l2",
+    "meter_power",
+    "measure_current",
+    "measure_power",
+    "measure_voltage",
+    "child_lock",
+    "onoff"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "All outlets",
+        "fr": "Toutes les sorties",
+        "nl": "Alle uitgangen",
+        "de": "Alle Ausgänge"
+      }
+    },
+    "onoff.l1": {
+      "title": {
+        "en": "Channel 1",
+        "fr": "Canal 1",
+        "nl": "Kanaal 1",
+        "de": "Kanal 1"
+      }
+    },
+    "onoff.l2": {
+      "title": {
+        "en": "Channel 2",
+        "fr": "Canal 2",
+        "nl": "Kanaal 2",
+        "de": "Kanal 2"
+      }
+    }
+  },
+  "energy": {
+    "approximation": {
+      "usageConstant": 0.5
+    }
+  },
+  "images": {
+    "small": "/drivers/gpo_double_mg_gpo02z/assets/images/small.png",
+    "large": "/drivers/gpo_double_mg_gpo02z/assets/images/large.png"
+  },
+  "settings": [
+    {
+      "$extends": [
+        "zcl_cluster_layer"
+      ]
+    }
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_lq0ffndf",
+      "_tze200_lq0ffndf",
+      "_TZE200_LQ0FFNDF",
+      "_tze200_LQ0FFNDF"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5
+        ],
+        "bindings": []
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Press and hold the power button for about 5 seconds until the indicator blinks.",
+        "fr": "Maintenez le bouton d’alimentation environ 5 secondes jusqu’à ce que le voyant clignote.",
+        "nl": "Houd de aan/uit-knop ongeveer 5 seconden ingedrukt tot het lampje knippert.",
+        "de": "Halten Sie die Ein-/Aus-Taste etwa 5 Sekunden gedrückt, bis die Anzeige blinkt."
+      }
+    }
+  },
+  "metadata": {
+    "source": "zigbee-herdsman-converters makegood.ts MG-GPO02Z (_TZE200_lq0ffndf): DP1-2 state l1-l2, DP20 energy increment /1000 (accumulated), DP21 current /1000, DP22 power /10, DP23 voltage /10, DP101 child lock, DP136 all on/off. Reimplemented and credited (P3039), no upstream code copied."
+  }
+}

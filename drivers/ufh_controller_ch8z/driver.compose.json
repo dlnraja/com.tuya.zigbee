@@ -1,0 +1,142 @@
+{
+  "id": "ufh_controller_ch8z",
+  "name": {
+    "en": "Underfloor heating controller, 8 zones (AutomatOn CH8Z)",
+    "fr": "Contrôleur de plancher chauffant, 8 zones (AutomatOn CH8Z)",
+    "nl": "Vloerverwarmingsregelaar, 8 zones (AutomatOn CH8Z)",
+    "de": "Fußbodenheizungsregler, 8 Zonen (AutomatOn CH8Z)"
+  },
+  "class": "heater",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "onoff.l1",
+    "onoff.l2",
+    "onoff.l3",
+    "onoff.l4",
+    "onoff.l5",
+    "onoff.l6",
+    "onoff.l7",
+    "onoff.l8",
+    "child_lock"
+  ],
+  "capabilitiesOptions": {
+    "onoff.l1": {
+      "title": {
+        "en": "Zone 1",
+        "fr": "Zone 1",
+        "nl": "Zone 1",
+        "de": "Zone 1"
+      }
+    },
+    "onoff.l2": {
+      "title": {
+        "en": "Zone 2",
+        "fr": "Zone 2",
+        "nl": "Zone 2",
+        "de": "Zone 2"
+      }
+    },
+    "onoff.l3": {
+      "title": {
+        "en": "Zone 3",
+        "fr": "Zone 3",
+        "nl": "Zone 3",
+        "de": "Zone 3"
+      }
+    },
+    "onoff.l4": {
+      "title": {
+        "en": "Zone 4",
+        "fr": "Zone 4",
+        "nl": "Zone 4",
+        "de": "Zone 4"
+      }
+    },
+    "onoff.l5": {
+      "title": {
+        "en": "Zone 5",
+        "fr": "Zone 5",
+        "nl": "Zone 5",
+        "de": "Zone 5"
+      }
+    },
+    "onoff.l6": {
+      "title": {
+        "en": "Zone 6",
+        "fr": "Zone 6",
+        "nl": "Zone 6",
+        "de": "Zone 6"
+      }
+    },
+    "onoff.l7": {
+      "title": {
+        "en": "Zone 7",
+        "fr": "Zone 7",
+        "nl": "Zone 7",
+        "de": "Zone 7"
+      }
+    },
+    "onoff.l8": {
+      "title": {
+        "en": "Zone 8",
+        "fr": "Zone 8",
+        "nl": "Zone 8",
+        "de": "Zone 8"
+      }
+    }
+  },
+  "energy": {
+    "approximation": {
+      "usageConstant": 0.5
+    }
+  },
+  "images": {
+    "small": "/drivers/ufh_controller_ch8z/assets/images/small.png",
+    "large": "/drivers/ufh_controller_ch8z/assets/images/large.png"
+  },
+  "settings": [
+    {
+      "$extends": [
+        "zcl_cluster_layer"
+      ]
+    }
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE284_1oft6qso",
+      "_tze284_1oft6qso",
+      "_TZE284_1OFT6QSO",
+      "_tze284_1OFT6QSO"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5
+        ],
+        "bindings": []
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Hold the pairing button on the controller until the Zigbee LED blinks.",
+        "fr": "Maintenez le bouton d’appairage du contrôleur jusqu’à ce que la LED Zigbee clignote.",
+        "nl": "Houd de koppelknop van de regelaar ingedrukt tot de Zigbee-led knippert.",
+        "de": "Halten Sie die Kopplungstaste am Regler gedrückt, bis die Zigbee-LED blinkt."
+      }
+    }
+  },
+  "metadata": {
+    "source": "zigbee-herdsman-converters automaton.ts CH8Z (_TZE284_1oft6qso): DP1-8 channel 1-8 state, DP29 child lock. DP9-16 countdown and DP27 power-on behaviour are not exposed. Reimplemented and credited (P3039), no upstream code copied."
+  }
+}
