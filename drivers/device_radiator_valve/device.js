@@ -146,12 +146,17 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
   }
 
   async _stripPhantomHumidity() {
-    if (!this._isNoHumidityTrv() || !this.hasCapability('measure_humidity')) {return;}
+    if (!this._isNoHumidityTrv()) {return;}
+    // WHY(P3045 / #560): proven phantom, not a guess — the Z2M TS0601_thermostat_3 definition (EARU TRV06,
+    // this exact couple) has no humidity DP and exposes no humidity, and Z2M disc. #24659 lists none either.
+    // Any value on measure_humidity can only come from a misrouted DP, so it is removed even when non-null,
+    // and the capability is forbidden so hot-swap / dynamic managers never re-add it.
+    this._forbiddenCapabilities = Array.from(new Set([...this._forbiddenCapabilities || [], 'measure_humidity']));
+    if (!this.hasCapability('measure_humidity')) {return;}
     try {
       const cur = this.getCapabilityValue('measure_humidity');
-      if (cur !== null && cur !== undefined) {return;} // real data was reported: never remove
       await this.removeCapability('measure_humidity');
-      this.log('[TRV] #560 removed phantom measure_humidity (TRV06 has no humidity sensor)');
+      this.log(`[TRV] #560 removed phantom measure_humidity (TRV06 has no humidity sensor; last value ${cur})`);
     } catch (e) {
       this.log('[TRV] #560 humidity strip skipped:', e && e.message);
     }

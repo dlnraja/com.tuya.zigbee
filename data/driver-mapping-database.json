@@ -27764,11 +27764,8 @@
     },
     "air_purifier_climate": {
       "name": "Air Purifier Climate Hybrid",
-      "class": "fan",
+      "class": "sensor",
       "capabilities": [
-        "onoff",
-        "dim",
-        "measure_pm25",
         "measure_temperature",
         "measure_humidity",
         "measure_battery",
@@ -27785,10 +27782,7 @@
         "measure_battery",
         "measure_luminance",
         "measure_radio_stability",
-        "measure_maintenance_score",
-        "dim",
-        "measure_pm25",
-        "onoff"
+        "measure_maintenance_score"
       ]
     },
     "air_purifier_curtain": {
@@ -27798,50 +27792,36 @@
         "windowcoverings_state",
         "windowcoverings_set",
         "windowcoverings_tilt_set",
-        "alarm_generic",
         "measure_battery",
-        "onoff",
-        "dim",
-        "measure_pm25",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
     },
     "air_purifier_dimmer": {
       "name": "Air Purifier Dimmer Hybrid",
-      "class": "light",
+      "class": "sensor",
       "capabilities": [
-        "dim",
-        "onoff",
         "measure_power",
-        "measure_battery",
-        "measure_pm25",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
     },
     "air_purifier_din": {
       "name": "Air Purifier Din Hybrid",
-      "class": "socket",
+      "class": "sensor",
       "capabilities": [
-        "onoff",
         "measure_power",
         "meter_power",
         "measure_voltage",
         "measure_current",
-        "dim",
-        "measure_pm25",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
     },
     "air_purifier_lcdtemphumidsensor": {
       "name": "Air Purifier Lcdtemphumidsensor Hybrid",
-      "class": "fan",
+      "class": "sensor",
       "capabilities": [
-        "onoff",
-        "dim",
-        "measure_pm25",
         "measure_temperature",
         "measure_humidity",
         "measure_battery",
@@ -27851,11 +27831,8 @@
     },
     "air_purifier_motion": {
       "name": "Air Purifier Motion Hybrid",
-      "class": "fan",
+      "class": "sensor",
       "capabilities": [
-        "onoff",
-        "dim",
-        "measure_pm25",
         "measure_battery",
         "measure_luminance",
         "alarm_motion",
@@ -27871,12 +27848,8 @@
         "measure_luminance",
         "measure_temperature",
         "measure_humidity",
-        "alarm_human",
         "measure_battery",
         "measure_luminance.distance",
-        "onoff",
-        "dim",
-        "measure_pm25",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -27888,13 +27861,9 @@
         "measure_co2",
         "measure_temperature",
         "measure_humidity",
-        "measure_pm25",
         "measure_voc",
         "measure_formaldehyde",
         "alarm_generic",
-        "measure_battery",
-        "onoff",
-        "dim",
         "measure_power",
         "measure_radio_stability",
         "measure_maintenance_score"
@@ -27921,16 +27890,10 @@
       "name": "Air Purifier Siren Hybrid",
       "class": "other",
       "capabilities": [
-        "onoff",
         "measure_temperature",
         "measure_humidity",
-        "alarm_battery",
         "alarm_siren",
         "alarm_motion",
-        "measure_battery",
-        "alarm_generic",
-        "dim",
-        "measure_pm25",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -27947,27 +27910,20 @@
         "alarm_water",
         "measure_ec",
         "measure_conductivity",
-        "onoff",
-        "dim",
-        "measure_pm25",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
     },
     "air_purifier_switch": {
       "name": "Air Purifier Switch Hybrid",
-      "class": "socket",
+      "class": "sensor",
       "capabilities": [
-        "onoff",
-        "measure_battery",
         "measure_power",
         "meter_power",
         "measure_voltage",
         "measure_current",
         "button.toggle",
         "button.identify",
-        "dim",
-        "measure_pm25",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -28000,19 +27956,17 @@
         "measure_voc",
         "measure_formaldehyde",
         "alarm_generic",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
     },
     "blaster_remote": {
       "name": "Blaster Remote Hybrid",
-      "class": "remote",
+      "class": "other",
       "capabilities": [
         "button.learn_ir",
         "ir_learned_code",
         "ir_send_code",
-        "measure_battery",
         "onoff",
         "measure_radio_stability",
         "measure_maintenance_score"
@@ -28027,7 +27981,6 @@
         "light_mode",
         "light_saturation",
         "light_temperature",
-        "measure_battery",
         "onoff",
         "measure_radio_stability",
         "measure_maintenance_score"
@@ -28043,8 +27996,6 @@
         "light_temperature",
         "light_mode",
         "onoff",
-        "measure_battery",
-        "measure_power",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -28059,7 +28010,6 @@
         "light_temperature",
         "light_mode",
         "onoff",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -28074,7 +28024,6 @@
         "light_saturation",
         "light_temperature",
         "light_mode",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -28089,7 +28038,6 @@
         "light_temperature",
         "light_mode",
         "onoff",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -28104,7 +28052,6 @@
         "light_temperature",
         "light_mode",
         "onoff",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -28119,7 +28066,6 @@
         "light_temperature",
         "light_mode",
         "onoff",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -28134,14 +28080,13 @@
         "light_temperature",
         "light_mode",
         "onoff",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
     },
     "button_emergency_sos": {
       "name": "Sos Emergency Button",
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "alarm_generic",
         "measure_battery",
@@ -28160,7 +28105,7 @@
     },
     "button_wireless_1": {
       "name": "1-Buttons Wireless Controller",
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "button.1",
         "measure_battery",
@@ -28170,7 +28115,7 @@
     },
     "button_wireless_2": {
       "name": "2-Buttons Wireless Controller",
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "button.1",
         "button.2",
@@ -28181,7 +28126,7 @@
     },
     "button_wireless_3": {
       "name": "3-Button Wireless Controller",
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "button.1",
         "button.2",
@@ -28193,7 +28138,7 @@
     },
     "button_wireless_4": {
       "name": "4-Buttons Wireless Controller",
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "button.1",
         "button.2",
@@ -28206,7 +28151,7 @@
     },
     "button_wireless_6": {
       "name": "6-Buttons Wireless Controller",
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "button.1",
         "button.2",
@@ -28221,7 +28166,7 @@
     },
     "button_wireless_8": {
       "name": "8-Buttons Wireless Controller",
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "button.1",
         "button.2",
@@ -28241,7 +28186,6 @@
       "class": "socket",
       "capabilities": [
         "onoff",
-        "measure_battery",
         "measure_power",
         "meter_power",
         "measure_voltage",
@@ -28266,14 +28210,13 @@
         "onoff",
         "button.1",
         "button.2",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
     },
     "button_wireless_scene": {
       "name": "Button Wireless Scene Hybrid",
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "button.1",
         "button.2",
@@ -28284,7 +28227,7 @@
     },
     "button_wireless_smart": {
       "name": "Button Wireless Smart Hybrid",
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "button.1",
         "measure_battery",
@@ -28305,7 +28248,6 @@
         "button.toggle_1",
         "button.toggle_2",
         "button.identify",
-        "measure_battery",
         "button.1",
         "button.2",
         "measure_radio_stability",
@@ -28322,7 +28264,6 @@
         "meter_power",
         "measure_voltage",
         "measure_current",
-        "measure_battery",
         "button.1",
         "button.2",
         "measure_radio_stability",
@@ -28331,7 +28272,7 @@
     },
     "button_wireless_valve": {
       "name": "Button Wireless Valve Hybrid",
-      "class": "sensor",
+      "class": "socket",
       "capabilities": [
         "button.1",
         "button.2",
@@ -28344,7 +28285,7 @@
     },
     "button_wireless_wall": {
       "name": "Button Wireless Wall Hybrid",
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "button.1",
         "button.2",
@@ -28361,7 +28302,6 @@
         "dim",
         "onoff",
         "dim.speed",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -28384,7 +28324,6 @@
         "dim",
         "onoff",
         "measure_power",
-        "measure_battery",
         "measure_temperature",
         "measure_humidity",
         "measure_radio_stability",
@@ -28399,7 +28338,6 @@
         "alarm_co",
         "alarm_co2",
         "alarm_gas",
-        "measure_battery",
         "measure_temperature",
         "measure_humidity",
         "measure_radio_stability",
@@ -28415,7 +28353,6 @@
         "meter_power",
         "measure_current",
         "measure_voltage",
-        "measure_battery",
         "measure_temperature",
         "measure_humidity",
         "measure_radio_stability",
@@ -28431,7 +28368,6 @@
         "measure_temperature",
         "measure_humidity",
         "alarm_human",
-        "measure_battery",
         "measure_luminance.distance",
         "alarm_contact",
         "alarm_tamper",
@@ -28459,7 +28395,6 @@
         "onoff.gang4",
         "measure_temperature",
         "measure_humidity",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -28469,7 +28404,6 @@
       "class": "socket",
       "capabilities": [
         "onoff",
-        "measure_battery",
         "measure_power",
         "meter_power",
         "measure_voltage",
@@ -28516,7 +28450,6 @@
       "class": "sensor",
       "capabilities": [
         "alarm_contact",
-        "measure_battery",
         "alarm_tamper",
         "measure_luminance",
         "dim",
@@ -28535,7 +28468,6 @@
         "meter_power",
         "measure_current",
         "measure_voltage",
-        "measure_battery",
         "alarm_contact",
         "alarm_tamper",
         "measure_luminance",
@@ -28548,7 +28480,6 @@
       "class": "socket",
       "capabilities": [
         "onoff",
-        "measure_battery",
         "measure_power",
         "meter_power",
         "measure_voltage",
@@ -28615,8 +28546,6 @@
         "measure_luminance",
         "button",
         "dim",
-        "measure_battery",
-        "alarm_generic",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -28628,11 +28557,7 @@
         "windowcoverings_state",
         "windowcoverings_set",
         "windowcoverings_tilt_set",
-        "measure_luminance",
-        "button",
-        "dim",
         "measure_battery",
-        "alarm_generic",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -28647,7 +28572,6 @@
         "measure_luminance",
         "button",
         "dim",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -28690,7 +28614,6 @@
         "onoff",
         "dim",
         "measure_humidity",
-        "dim.humidity",
         "measure_pm25",
         "measure_radio_stability",
         "measure_maintenance_score"
@@ -28703,7 +28626,6 @@
         "target_temperature",
         "measure_temperature",
         "thermostat_mode",
-        "measure_battery",
         "onoff",
         "measure_humidity",
         "dim",
@@ -28717,7 +28639,6 @@
       "class": "light",
       "capabilities": [
         "dim",
-        "measure_battery",
         "onoff",
         "light_hue",
         "light_saturation",
@@ -28786,7 +28707,6 @@
         "measure_voc",
         "measure_formaldehyde",
         "alarm_generic",
-        "measure_battery",
         "onoff",
         "dim",
         "measure_radio_stability",
@@ -28800,7 +28720,6 @@
         "target_temperature",
         "measure_temperature",
         "thermostat_mode",
-        "measure_battery",
         "onoff",
         "dim",
         "measure_pm25",
@@ -28813,7 +28732,6 @@
       "class": "other",
       "capabilities": [
         "alarm_motion",
-        "measure_battery",
         "alarm_generic",
         "onoff",
         "dim",
@@ -28879,7 +28797,6 @@
         "target_temperature",
         "measure_temperature",
         "thermostat_mode",
-        "measure_battery",
         "onoff",
         "measure_humidity",
         "dim",
@@ -28897,7 +28814,6 @@
         "alarm_water_low",
         "alarm_water_high",
         "alarm_water",
-        "alarm_battery",
         "onoff",
         "dim",
         "measure_pm25",
@@ -28907,17 +28823,9 @@
     },
     "device_din_rail_meter": {
       "name": "Device Din Rail Meter Hybrid",
-      "class": "fan",
+      "class": "doorbell",
       "capabilities": [
-        "dim.humidity",
-        "measure_humidity",
-        "measure_temperature",
         "measure_power",
-        "alarm_water",
-        "onoff",
-        "target_temperature",
-        "dim.speed",
-        "measure_battery",
         "meter_power",
         "measure_voltage",
         "measure_current",
@@ -28974,7 +28882,6 @@
         "meter_power",
         "measure_current",
         "measure_voltage",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -28988,7 +28895,6 @@
         "meter_power",
         "measure_current",
         "measure_voltage",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -29002,7 +28908,6 @@
         "meter_power",
         "measure_current",
         "measure_voltage",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -29016,7 +28921,6 @@
         "meter_power",
         "measure_current",
         "measure_voltage",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -29053,10 +28957,6 @@
       "capabilities": [
         "onoff",
         "dim",
-        "onoff.channel2",
-        "dim.channel2",
-        "onoff.channel3",
-        "dim.channel3",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -29069,8 +28969,6 @@
         "dim",
         "onoff.channel2",
         "dim.channel2",
-        "measure_power",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -29092,7 +28990,6 @@
         "dim",
         "onoff",
         "measure_power",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -29107,14 +29004,13 @@
         "measure_current",
         "onoff",
         "dim",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
     },
     "dimmer_wall_switch": {
       "name": "Dimmer Wall Switch Hybrid",
-      "class": "socket",
+      "class": "light",
       "capabilities": [
         "onoff",
         "onoff.gang2",
@@ -29125,7 +29021,6 @@
         "button.toggle_1",
         "button.toggle_2",
         "button.identify",
-        "measure_battery",
         "dim",
         "measure_radio_stability",
         "measure_maintenance_score"
@@ -29138,7 +29033,6 @@
         "dim",
         "onoff",
         "measure_power",
-        "measure_battery",
         "alarm_water",
         "alarm_tamper",
         "measure_radio_stability",
@@ -29232,7 +29126,6 @@
         "measure_power.phase1",
         "measure_power.phase2",
         "measure_power.phase3",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -29264,7 +29157,6 @@
       "class": "socket",
       "capabilities": [
         "onoff",
-        "measure_battery",
         "measure_power",
         "meter_power",
         "measure_voltage",
@@ -29309,7 +29201,6 @@
         "measure_temperature",
         "measure_humidity",
         "measure_pm25",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -29342,7 +29233,6 @@
         "alarm_co",
         "alarm_co2",
         "alarm_gas",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -29356,7 +29246,6 @@
         "alarm_contact",
         "alarm_gas",
         "alarm_tamper",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -29365,7 +29254,6 @@
       "name": "Zbbridge",
       "class": "other",
       "capabilities": [
-        "alarm_generic",
         "measure_battery",
         "onoff",
         "measure_radio_stability",
@@ -29376,9 +29264,9 @@
       "name": "Generic DIY Zigbee Device",
       "class": "other",
       "capabilities": [
-        "measure_battery",
         "measure_radio_stability",
-        "measure_maintenance_score"
+        "measure_maintenance_score",
+        "button.1"
       ]
     },
     "generic_tuya": {
@@ -29397,7 +29285,6 @@
       "class": "remote",
       "capabilities": [
         "button",
-        "alarm_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -29409,7 +29296,6 @@
         "onoff",
         "dim",
         "measure_humidity",
-        "dim.humidity",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -29423,7 +29309,6 @@
         "thermostat_mode",
         "dim.speed",
         "onoff",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -29444,7 +29329,6 @@
       "name": "Dehumidifier (Smart)",
       "class": "fan",
       "capabilities": [
-        "dim.humidity",
         "measure_humidity",
         "measure_temperature",
         "measure_power",
@@ -29452,7 +29336,6 @@
         "onoff",
         "target_temperature",
         "dim.speed",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -29480,14 +29363,14 @@
     },
     "ir_remote": {
       "name": "Zigbee IR Remote (Moes/Tuya)",
-      "class": "remote",
+      "class": "other",
       "capabilities": [
-        "button.learn_ir",
-        "ir_learned_code",
-        "ir_send_code",
-        "measure_battery",
         "measure_radio_stability",
-        "measure_maintenance_score"
+        "measure_maintenance_score",
+        "onoff",
+        "onoff.ir_learn",
+        "button.ir_test",
+        "button.1"
       ]
     },
     "lcdtemphumidsensor": {
@@ -29510,9 +29393,6 @@
         "measure_voltage",
         "measure_current",
         "onoff",
-        "measure_temperature",
-        "measure_humidity",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -29525,7 +29405,6 @@
         "dim",
         "light_temperature",
         "light_mode",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -29550,7 +29429,6 @@
         "light_saturation",
         "light_temperature",
         "light_mode",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -29560,7 +29438,6 @@
       "class": "light",
       "capabilities": [
         "dim",
-        "measure_battery",
         "onoff",
         "light_hue",
         "light_saturation",
@@ -29579,7 +29456,6 @@
         "light_temperature",
         "light_mode",
         "onoff",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -29594,7 +29470,6 @@
         "light_mode",
         "dim",
         "onoff",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -29608,7 +29483,6 @@
         "light_mode",
         "light_saturation",
         "light_temperature",
-        "measure_battery",
         "onoff",
         "measure_radio_stability",
         "measure_maintenance_score"
@@ -29624,7 +29498,6 @@
         "light_temperature",
         "light_mode",
         "onoff",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -29639,7 +29512,6 @@
         "light_temperature",
         "light_mode",
         "onoff",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -29654,7 +29526,6 @@
         "light_temperature",
         "light_mode",
         "onoff",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -29685,8 +29556,6 @@
       "name": "Module Mini Switch Hybrid",
       "class": "socket",
       "capabilities": [
-        "measure_battery",
-        "alarm_generic",
         "measure_power",
         "measure_voltage",
         "measure_current",
@@ -29701,7 +29570,6 @@
       "class": "sensor",
       "capabilities": [
         "alarm_motion",
-        "measure_battery",
         "measure_luminance",
         "measure_temperature",
         "measure_humidity",
@@ -29740,7 +29608,6 @@
       "class": "socket",
       "capabilities": [
         "onoff",
-        "measure_battery",
         "measure_power",
         "meter_power",
         "measure_voltage",
@@ -29779,15 +29646,8 @@
     },
     "plug_energy_monitor": {
       "name": "Plug Energy Monitor Hybrid",
-      "class": "sensor",
+      "class": "socket",
       "capabilities": [
-        "measure_temperature",
-        "measure_humidity",
-        "measure_battery",
-        "alarm_contact",
-        "alarm_tamper",
-        "measure_luminance",
-        "alarm_water",
         "measure_power",
         "meter_power",
         "measure_voltage",
@@ -29801,7 +29661,6 @@
       "name": "Smart Plug with Energy Monitoring",
       "class": "socket",
       "capabilities": [
-        "measure_battery",
         "measure_current",
         "measure_power",
         "measure_voltage",
@@ -29816,7 +29675,6 @@
       "class": "socket",
       "capabilities": [
         "onoff",
-        "measure_battery",
         "measure_power",
         "meter_power",
         "measure_voltage",
@@ -29861,7 +29719,6 @@
         "meter_power",
         "measure_voltage",
         "measure_current",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -29884,10 +29741,7 @@
       "capabilities": [
         "alarm_motion",
         "measure_luminance",
-        "measure_temperature",
-        "measure_humidity",
         "alarm_human",
-        "measure_battery",
         "measure_luminance.distance",
         "measure_radio_stability",
         "measure_maintenance_score"
@@ -29971,27 +29825,21 @@
     },
     "remote_button_wireless_handheld": {
       "name": "Remote Button Wireless Handheld Hybrid",
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "button.1",
         "button.2",
         "button.3",
         "button.4",
         "measure_battery",
-        "button",
-        "alarm_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
     },
     "remote_button_wireless": {
       "name": "Remote Button Wireless Hybrid",
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
-        "button.rotate_left",
-        "button.rotate_right",
-        "button.press",
-        "dim",
         "measure_battery",
         "button.1",
         "measure_radio_stability",
@@ -30009,14 +29857,13 @@
         "onoff",
         "button.1",
         "button.2",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
     },
     "remote_button_wireless_scene": {
       "name": "Remote Button Wireless Scene Hybrid",
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "button.1",
         "button.2",
@@ -30027,7 +29874,7 @@
     },
     "remote_button_wireless_smart": {
       "name": "Remote Button Wireless Smart Hybrid",
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "button.1",
         "measure_battery",
@@ -30045,7 +29892,6 @@
         "meter_power",
         "measure_voltage",
         "measure_current",
-        "measure_battery",
         "button.1",
         "button.2",
         "measure_radio_stability",
@@ -30054,7 +29900,7 @@
     },
     "remote_button_wireless_valve": {
       "name": "Remote Button Wireless Valve Hybrid",
-      "class": "sensor",
+      "class": "socket",
       "capabilities": [
         "button.1",
         "button.2",
@@ -30067,7 +29913,7 @@
     },
     "remote_button_wireless_wall": {
       "name": "Remote Button Wireless Wall Hybrid",
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "button.1",
         "measure_battery",
@@ -30086,7 +29932,7 @@
     },
     "scene_switch_1": {
       "name": "Scene Switch 1-Gang",
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "button.1",
         "measure_battery",
@@ -30096,7 +29942,7 @@
     },
     "scene_switch_2": {
       "name": "Scene Switch 2-Gang",
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "button.1",
         "button.2",
@@ -30107,7 +29953,7 @@
     },
     "scene_switch_3": {
       "name": "Scene Switch 3-Gang",
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "button.1",
         "button.2",
@@ -30119,7 +29965,7 @@
     },
     "scene_switch_4": {
       "name": "Scene Switch 4-Gang",
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "button.1",
         "button.2",
@@ -30132,7 +29978,7 @@
     },
     "scene_switch_6": {
       "name": "Scene Switch 6-Gang",
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "button.1",
         "button.2",
@@ -30147,7 +29993,7 @@
     },
     "scene_switch_wall": {
       "name": "Scene Switch Wall Hybrid",
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "button.1",
         "button.2",
@@ -30162,7 +30008,6 @@
       "capabilities": [
         "measure_temperature",
         "measure_humidity",
-        "measure_battery",
         "alarm_contact",
         "alarm_tamper",
         "measure_luminance",
@@ -30224,7 +30069,6 @@
         "onoff.gang4",
         "measure_temperature",
         "measure_humidity",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -30245,7 +30089,6 @@
       "class": "sensor",
       "capabilities": [
         "alarm_motion",
-        "measure_battery",
         "measure_luminance",
         "measure_temperature",
         "measure_humidity",
@@ -30264,7 +30107,6 @@
         "meter_power",
         "measure_current",
         "measure_voltage",
-        "measure_battery",
         "alarm_contact",
         "alarm_tamper",
         "measure_luminance",
@@ -30322,7 +30164,6 @@
       "capabilities": [
         "alarm_contact",
         "alarm_tamper",
-        "measure_battery",
         "measure_luminance",
         "measure_radio_stability",
         "measure_maintenance_score"
@@ -30403,7 +30244,6 @@
         "measure_temperature",
         "measure_humidity",
         "alarm_human",
-        "measure_battery",
         "measure_luminance.distance",
         "alarm_contact",
         "alarm_tamper",
@@ -30415,7 +30255,6 @@
       "name": "Roller Shutter Controller",
       "class": "windowcoverings",
       "capabilities": [
-        "alarm_generic",
         "windowcoverings_state",
         "measure_battery",
         "windowcoverings_set",
@@ -30444,7 +30283,6 @@
         "onoff",
         "measure_temperature",
         "measure_humidity",
-        "alarm_battery",
         "alarm_siren",
         "measure_radio_stability",
         "measure_maintenance_score"
@@ -30457,7 +30295,6 @@
         "onoff",
         "measure_temperature",
         "measure_humidity",
-        "alarm_battery",
         "alarm_siren",
         "alarm_motion",
         "measure_battery",
@@ -30499,7 +30336,6 @@
         "thermostat_mode",
         "measure_temperature",
         "measure_power",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -30521,7 +30357,7 @@
     },
     "smart_knob": {
       "name": "Smart Knob",
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "button",
         "dim",
@@ -30532,7 +30368,7 @@
     },
     "smart_knob_rotary": {
       "name": "Smart Knob Rotary Hybrid",
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "button.rotate_left",
         "button.rotate_right",
@@ -30540,21 +30376,16 @@
         "dim",
         "measure_battery",
         "button.1",
-        "button.2",
-        "button.3",
-        "button.4",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
     },
     "smart_knob_switch": {
       "name": "Smart Knob Switch Hybrid",
-      "class": "sensor",
+      "class": "remote",
       "capabilities": [
-        "button",
         "dim",
         "measure_battery",
-        "alarm_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -30576,12 +30407,10 @@
       "class": "other",
       "capabilities": [
         "onoff",
-        "alarm_generic",
         "measure_power",
         "meter_power",
         "measure_current",
         "measure_voltage",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -30664,7 +30493,6 @@
       "class": "socket",
       "capabilities": [
         "onoff",
-        "measure_battery",
         "measure_power",
         "meter_power",
         "measure_voltage",
@@ -30688,7 +30516,6 @@
         "button.toggle_1",
         "button.toggle_2",
         "button.identify",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -30706,7 +30533,6 @@
         "button.toggle_2",
         "button.toggle_3",
         "button.identify",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -30720,12 +30546,6 @@
         "onoff.gang3",
         "onoff.gang4",
         "measure_power",
-        "button.toggle_1",
-        "button.toggle_2",
-        "button.toggle_3",
-        "button.toggle_4",
-        "button.identify",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -30753,7 +30573,6 @@
         "button.toggle_1",
         "button.toggle_2",
         "button.identify",
-        "measure_battery",
         "button.toggle",
         "measure_radio_stability",
         "measure_maintenance_score"
@@ -30766,7 +30585,6 @@
         "onoff",
         "measure_power",
         "meter_power",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -30779,7 +30597,6 @@
         "onoff.outlet2",
         "measure_power",
         "meter_power",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -30790,7 +30607,6 @@
       "capabilities": [
         "onoff",
         "measure_temperature",
-        "measure_humidity",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -30861,7 +30677,6 @@
       "name": "Wireless Switch",
       "class": "sensor",
       "capabilities": [
-        "alarm_generic",
         "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
@@ -30895,7 +30710,6 @@
         "measure_temperature.ch3",
         "measure_temperature.ch4",
         "thermostat_mode",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -30966,7 +30780,6 @@
         "meter_power",
         "measure_voltage",
         "measure_current",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -30999,14 +30812,13 @@
         "meter_power",
         "measure_voltage",
         "measure_current",
-        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
     },
     "valve_irrigation": {
       "name": "Smart Valve 4-Way",
-      "class": "thermostat",
+      "class": "socket",
       "capabilities": [
         "dim.valve_1",
         "dim.valve_2",
@@ -31020,7 +30832,7 @@
     },
     "valve_single": {
       "name": "Smart Valve 1-Way",
-      "class": "thermostat",
+      "class": "other",
       "capabilities": [
         "onoff",
         "dim.valve",
@@ -31053,7 +30865,7 @@
     },
     "wall_dimmer_1gang_1way": {
       "name": "Wall Dimmer 1-Gang 1-Way",
-      "class": "socket",
+      "class": "light",
       "capabilities": [
         "onoff",
         "dim",
@@ -31204,7 +31016,6 @@
         "alarm_water_low",
         "alarm_water_high",
         "alarm_water",
-        "alarm_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -31434,8 +31245,6 @@
       "class": "socket",
       "capabilities": [
         "onoff",
-        "measure_temperature",
-        "measure_humidity",
         "measure_radio_stability",
         "measure_maintenance_score"
       ]
@@ -31808,7 +31617,6 @@
       "capabilities": [
         "alarm_smoke",
         "alarm_tamper",
-        "alarm_battery",
         "measure_battery"
       ]
     },
