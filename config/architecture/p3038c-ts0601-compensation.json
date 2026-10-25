@@ -132,14 +132,6 @@
       "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/tuya.ts#L17937"
     },
     {
-      "mfr": "_TZE204_qaxkdgyt",
-      "pid": "TS0601",
-      "driverId": "gas_sensor",
-      "model": "JKD-816COM-Z",
-      "source": "zhc",
-      "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/tuya.ts#L28632"
-    },
-    {
       "mfr": "_TZE204_y4jqpry8",
       "pid": "TS0601",
       "driverId": "switch_4gang",
