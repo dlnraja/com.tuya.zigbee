@@ -12,6 +12,9 @@ const ROOT = path.resolve(__dirname, '..', '..');
 const r = (id, extra = []) => require.resolve(id, { paths: [...extra, ROOT, process.cwd()] });
 // P2930: HOMEY_BUILD_LIMIT widens the read-only history window (default unchanged: 10 fetched / 8 kept).
 const LIMIT = Math.max(1, Math.min(500, parseInt(process.env.HOMEY_BUILD_LIMIT || '', 10) || 8));
+// P3034: master's build list (3 680 builds) times out at the SDK default 10 s while stable/Bastien answer;
+// HOMEY_API_TIMEOUT_MS widens it and list_ms / list_count record how slow and how big the answer is.
+const TIMEOUT_MS = Math.max(1000, Math.min(300000, parseInt(process.env.HOMEY_API_TIMEOUT_MS || '', 10) || 10000));
 const appId = process.argv[2] || JSON.parse(fs.readFileSync(path.join(ROOT, 'package.json'), 'utf8')).homeyAppId || 'com.dlnraja.tuya.zigbee';
 
 (async () => {
@@ -34,12 +37,16 @@ const appId = process.argv[2] || JSON.parse(fs.readFileSync(path.join(ROOT, 'pac
     save(); console.log(`HOMEY_PAT ${out.pat}: ${out.error}`); process.exit(out.pat === 'invalid' ? 2 : 0);
   }
   const api = new AthomAppsAPI({ token });
-  const list = await api.getBuilds({ $token: token, appId, $query: { limit: LIMIT } }).catch((e) => { out.error = e.message; return []; });
+  const t0 = Date.now();
+  const list = await api.getBuilds({ $token: token, appId, $timeout: TIMEOUT_MS, $query: { limit: LIMIT } }).catch((e) => { out.error = e.message; return []; });
+  out.list_ms = Date.now() - t0;
+  out.timeout_ms = TIMEOUT_MS;
+  out.list_count = Array.isArray(list) ? list.length : (list?.data || []).length;
   const builds = (Array.isArray(list) ? list : list?.data || []).sort((a, b) => (b.id || 0) - (a.id || 0)).slice(0, LIMIT);
   for (const b of builds) {
     const row = { id: b.id, version: b.version, state: b.state, channel: b.channel || null, at: b.stateChangedAt, created: b.createdAt || null, size: b.size || b.archiveSize || null };
     if (/fail|error|revoked/i.test(String(b.state))) {
-      const full = await api.getBuild({ $token: token, appId, buildId: b.id }).catch(() => null);
+      const full = await api.getBuild({ $token: token, appId, buildId: b.id, $timeout: TIMEOUT_MS }).catch(() => null);
       const src = full || b;
       for (const [k, v] of Object.entries(src)) {
         if (/err|reason|message|log|fail/i.test(k) && v) row[k] = typeof v === 'string' ? v.slice(0, 2000) : JSON.stringify(v).slice(0, 2000);
