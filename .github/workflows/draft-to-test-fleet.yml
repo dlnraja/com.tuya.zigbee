@@ -56,7 +56,23 @@ jobs:
     outputs:
       matrix: ${{ steps.set.outputs.matrix }}
     steps:
+      # P3034: never promote master (scheduled or not) while an Athom bisect runs: trials are drafts only.
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          fetch-depth: 1
+          sparse-checkout: |
+            .github/scripts/bisect-hold.js
+            docs/knowledge/athom-bisect-state.json
+          sparse-checkout-cone-mode: false
+      - name: P3034 bisect hold (master only)
+        id: bh
+        env:
+          APP_ID: com.dlnraja.tuya.zigbee
+          EVENT_NAME: ${{ github.event_name }}
+        run: node .github/scripts/bisect-hold.js
       - id: set
+        env:
+          HOLD_MASTER: ${{ steps.bh.outputs.hold_promote }}
         run: |
           set -euo pipefail
           if [ "${{ github.event_name }}" = "schedule" ]; then
@@ -73,6 +89,7 @@ jobs:
             if [ "$first" -eq 1 ]; then first=0; else items+=","; fi
             items+=$(printf '{"branch":"%s","app_id":"%s","label":"%s"}' "$branch" "$app" "$label")
           }
+          if [ "${HOLD_MASTER:-false}" = "true" ]; then INC_M=false; echo "P3034 bisect running: master excluded from promotion"; fi
           [ "$INC_M" = "true" ] && add "master" "com.dlnraja.tuya.zigbee" "Universal"
           [ "$INC_S" = "true" ] && add "stable-v5" "com.dlnraja.tuya.zigbee.stable" "Stable"
           [ "$INC_B" = "true" ] && add "bastien-home" "com.dlnraja.tuya.zigbee.bastien" "Bastien"
