@@ -33,7 +33,8 @@ function decide({ state, stateError, appId, eventName, bisectTrial, now }) {
   if (!state) {return allow('no bisect state file');}
   if (String(state.status || '').toLowerCase() !== 'running') {return allow(`bisect status=${state.status || 'unset'}`);}
   if (state.app_id && state.app_id !== MASTER_APP) {return allow(`bisect targets ${state.app_id}`);}
-  const trial = String(bisectTrial || '').trim();
+  // P3034: trial 0 is a valid trial id ('0' or numeric 0 must not read as "no trial").
+  const trial = (bisectTrial === undefined || bisectTrial === null || bisectTrial === false) ? '' : String(bisectTrial).trim();
   if (eventName === 'workflow_dispatch' && trial) {
     return { hold_upload: false, hold_promote: true, reason: `bisect trial ${trial} (manual dispatch): upload allowed, promotion held (drafts only)` };
   }

@@ -168,7 +168,7 @@ jobs:
         id: bh
         env:
           EVENT_NAME: ${{ github.event_name }}
-          BISECT_TRIAL: ${{ github.event.inputs.bisect_trial || '' }}
+          BISECT_TRIAL: ${{ inputs.bisect_trial }}  # P3034: no '||' coercion, trial '0' passes verbatim
         run: node .github/scripts/bisect-hold.js
 
   build-and-publish:

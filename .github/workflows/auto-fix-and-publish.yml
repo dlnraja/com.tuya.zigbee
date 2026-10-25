@@ -306,7 +306,7 @@ jobs:
         id: bisect_hold
         env:
           EVENT_NAME: ${{ github.event_name }}
-          BISECT_TRIAL: ${{ github.event.inputs.bisect_trial || '' }}
+          BISECT_TRIAL: ${{ inputs.bisect_trial }}  # P3034: no '||' coercion, trial '0' passes verbatim
         run: |
           out=$(node .github/scripts/bisect-hold.js); echo "$out"
           if printf '%s' "$out" | grep -q 'hold_upload=true'; then
