@@ -200,6 +200,9 @@ function main() {
     fs.mkdirSync(path.dirname(path.resolve(args.out)), { recursive: true });
     fs.writeFileSync(args.out, `${JSON.stringify(report, null, 2)}\n`);
   }
+  // P3034: workflow-command warnings go BEFORE the report so --json stdout stays one parseable JSON document
+  // (bastien-home Node 22 run 40181886652: '::warning' after the JSON broke JSON.parse in CI only).
+  if (process.env.GITHUB_ACTIONS) for (const id of report.failing) console.log(`::warning title=platform budget::${id} at or above ${report.failPct}% of its limit`);
   if (args.json) { console.log(JSON.stringify(report, null, 2)); } else {
     for (const r of report.rows) console.log(`[platform-budget] ${r.status.toUpperCase().padEnd(7)} ${r.id.padEnd(22)} ${r.value == null ? '-' : r.value} / ${r.limit}${r.pct == null ? '' : ` (${r.pct}%)`}`);
     console.log(`[platform-budget] mode=${mode} warn=${report.warnPct}% fail=${report.failPct}% failing=${report.failing.join(',') || 'none'}`);
@@ -209,7 +212,6 @@ function main() {
       ...report.rows.map((r) => `| ${r.id} | ${r.value == null ? '-' : r.value} | ${r.limit} | ${r.pct == null ? '-' : `${r.pct}%`} | ${r.status} |`)].join('\n');
     try { fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, `${md}\n`); } catch { /* no summary */ }
   }
-  if (process.env.GITHUB_ACTIONS) for (const id of report.failing) console.log(`::warning title=platform budget::${id} at or above ${report.failPct}% of its limit`);
   process.exitCode = mode === 'block' && report.failing.length ? 1 : 0;
 }
 
