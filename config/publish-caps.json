@@ -1,0 +1,29 @@
+{
+  "_why": "P3036c (25/10/2026 Paris): single source of the publish Zigbee caps. Read by scripts/lib/publish-caps.cjs (prepare-publish, platform budget gate, z2m-coverage, tests, workflows). Change a cap here only; the publish workflows no longer set HOMEY_ZIGBEE_* caps (an env var with that name still overrides for a manual run). Values stay within what Athom accepted (docs/knowledge/ATHOM_LIMITS.md on master).",
+  "caps": {
+    "maxTotalCombos": 17000,
+    "maxDriverCombos": 1008,
+    "maxCaseForms": 2,
+    "kbTopupMaxTotal": 20000,
+    "kbTopupMaxDriver": 1008,
+    "ts0601TopupMaxTotal": 20000,
+    "ts0601TopupMaxDriver": 1008
+  },
+  "measured": {
+    "acceptedMaxTotalCombos": 20000,
+    "acceptedMaxTotalBuilds": [
+      "9.0.664 (20000)",
+      "9.0.698 (19986)",
+      "9.0.914 (16986)"
+    ],
+    "acceptedMaxDriverCombos": 1008,
+    "acceptedMaxDriverBuilds": [
+      "9.0.1520 presence_sensor_radar",
+      "stable 5.12.449"
+    ],
+    "acceptedMaxUploadAppJsonMb": 3.93,
+    "acceptedMaxPayloadMb": 38.33,
+    "processingMinutes": 5,
+    "rejectedForSize": "P2252 at 100k+ raw combos; the October AggregateErrors (9.0.1365, 9.0.1426) were not combo related (9.0.1364 accepted with the same payload)"
+  }
+}

@@ -204,3 +204,29 @@ The Auto-Fix doctrine (P139: no bump loops while an older Test is healthy) is un
   744 → 1 538, 762 → 1 522, 755 → 1 626; KB couples lost vs before P3038c: 0 on all three.
   Still out: ~1 000–1 200 KB couples for lack of room, 273–378 unplaceable (productId or driver not in
   the payload). Not done: case-form dedup (waits for P3027) and phantom-combination pruning.
+
+## Update 2026-10-25 17:20 (Paris) — P3036c single cap source, SPM02V1-GT pin, coverage target
+- One source: `config/publish-caps.json` (`caps` + the `measured` block above), read through
+  `scripts/lib/publish-caps.cjs` by prepare-publish, the compactor defaults, the platform budget gate
+  (`limitFrom.capsFile`), `scripts/kb/z2m-coverage.js`, the tests and the workflows
+  (`platform-budget.yml` runs `node scripts/lib/publish-caps.cjs --github-env`). The publish workflows no
+  longer set any `HOMEY_ZIGBEE_*` cap (they said 15500 while a simulation used 17000). An env var with the
+  historical name still overrides for a manual run. Guard: `test/critical/p3036c-single-cap-source.test.js`.
+- Values: base 17000, per driver 1008 (= measured accepted max), 2 case forms, KB top-up 20000/1008,
+  TS0601 top-up 20000/1008 on master (0 = dormant on stable-v5 / bastien-home).
+- Simulated full pipeline (sanitize → compact → KB top-up → TS0601 top-up): master 16 997 → 20 000,
+  stable-v5 16 987 → 19 996, bastien-home 17 000 → 19 997; sacredMissing 0; KB priority couples
+  91/117/72 all back. Uploaded app.json +14–17 KB (master 1.787 → 1.801 MB, bastien 3.198 → 3.214 MB),
+  ~93.4 % of the 4 MB gate, under the 3.93 MB accepted.
+- `wjk6rurm|TS0601` (SPM02V1-GT, exact forms `_TZE200/_TZE204/_TZE284_wjk6rurm`) pinned on power_meter
+  (master, after P3039a fd00ad088e); shipped in the simulated payload.
+- Coverage target (data/kb/z2m-coverage.json, master: 2 254 couples known by sources but compacted):
+  now shipped 731 (651 byte-exact); stable-v5 810/2 318, bastien-home 923/2 303. Putting back every
+  remaining one would need ~44 600 combos (measured by a top-up with no ceiling), more than twice the
+  accepted 20 000, because each couple costs its whole mfr row × the driver's productIds. Next levers,
+  not done: case-form dedup once P3027 is merged, a per-driver split (owner decision: new driver ids),
+  or a measured probe above 20k (owner decision: real uploads).
+- Per driver: presence_sensor_radar is 1 364 combos on master (1 403 stable, 1 281 bastien), above the
+  measured 1 008. Not new: origin/master already shipped 1 078 there because the P3024b baseline pins
+  (lower-case pid twins included) are exact and bypass the per-driver cap; P3038c adds to it. No Athom
+  rejection has ever been tied to a per-driver count; the case dedup after P3027 is the fix.

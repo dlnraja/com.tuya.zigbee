@@ -104,6 +104,16 @@ function readBranch(root) {
 
 /** Read KEY: "value" from the branch's own publish workflow, so each branch is simulated with its real settings. */
 function workflowEnv(root, key) {
+  // P3036c: a branch with config/publish-caps.json keeps its caps there only (single source).
+  const capsLib = path.join(root, 'scripts/lib/publish-caps.cjs');
+  if (fs.existsSync(path.join(root, 'config/publish-caps.json')) && fs.existsSync(capsLib)) {
+    try {
+      const L = require(capsLib);
+      const caps = L.loadPublishCaps({ root, env: {} });
+      const k = Object.keys(L.ENV).find((x) => L.ENV[x] === key);
+      return k && caps[k] > 0 ? String(caps[k]) : null;
+    } catch (_e) { /* fall back to the workflow */ }
+  }
   const f = path.join(root, '.github/workflows/auto-publish-on-push.yml');
   try { const m = fs.readFileSync(f, 'utf8').match(new RegExp(`${key}:\\s*["']?(\\d+)`)); return m ? m[1] : null; } catch (_e) { return null; }
 }
@@ -133,7 +143,7 @@ function payloadSet(root) {
     const source=JSON.parse(fs.readFileSync(${JSON.stringify(src)},'utf8'));
     const r=C.compactManifestFile(${JSON.stringify(tmp)},{});let top=null;let kbt=null;
     if(${JSON.stringify(!!kbMax)}&&fs.existsSync(${JSON.stringify(kbFile)})){const K=require(${JSON.stringify(kbFile)});
-      const kt=K.topUpFile(source,${JSON.stringify(tmp)},{maxTotal:K.ceilingFromEnv(),root:${JSON.stringify(root)}});
+      const kt=K.topUpFile(source,${JSON.stringify(tmp)},{maxTotal:K.ceilingFromEnv(),maxDriver:Number(${JSON.stringify(pick('HOMEY_ZIGBEE_KB_TOPUP_MAX_DRIVER', ''))})||undefined,root:${JSON.stringify(root)}});
       kbt={added:kt.restoredCouples.length,afterTotal:kt.afterTotal,ceiling:kt.maxTotal};}
     if(${JSON.stringify(!!topMax)}&&fs.existsSync(${JSON.stringify(topFile)})){const T=require(${JSON.stringify(topFile)});
       const tu=T.topUpFile(source,${JSON.stringify(tmp)},{maxTotal:T.ceilingFromEnv(),maxDriver:Number(${JSON.stringify(topDrv)})||undefined,maxCaseForms:Number(process.env.HOMEY_ZIGBEE_MAX_CASE_FORMS)||2});

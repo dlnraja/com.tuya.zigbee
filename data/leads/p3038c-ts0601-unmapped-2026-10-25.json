@@ -14,7 +14,12 @@
         "model": "MG-AU03",
         "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/makegood.ts#L347"
       },
-      "reason": "no fitting existing driver (new driver needed)"
+      "reason": "no fitting existing driver (new driver needed)",
+      "resolvedBy": {
+        "commit": "fd33137958",
+        "id": "P3039b/c",
+        "driverId": "gpo_double_light_mg_au03"
+      }
     },
     {
       "mfr": "_TZE200_lq0ffndf",
@@ -26,7 +31,12 @@
         "model": "MG-GPO02Z",
         "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/makegood.ts#L288"
       },
-      "reason": "no fitting existing driver (new driver needed)"
+      "reason": "no fitting existing driver (new driver needed)",
+      "resolvedBy": {
+        "commit": "fd33137958",
+        "id": "P3039b/c",
+        "driverId": "gpo_double_mg_gpo02z"
+      }
     },
     {
       "mfr": "_TZE200_rt5dklro",
@@ -38,7 +48,12 @@
         "model": "WKE502Z",
         "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/daewoo.ts#L70"
       },
-      "reason": "no fitting existing driver (new driver needed)"
+      "reason": "no fitting existing driver (new driver needed)",
+      "resolvedBy": {
+        "commit": "fd33137958",
+        "id": "P3039b/c",
+        "driverId": "keypad_alarm_wke502z"
+      }
     },
     {
       "mfr": "_TZE200_wjk6rurm",
@@ -50,7 +65,12 @@
         "model": "SPM02V1-GT",
         "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/tuya.ts#L18784"
       },
-      "reason": "power_meter already lists this mfr with productId \"ts0601\" in lower case; adding it to energy_meter_3phase makes a new case-insensitive dual (native-matrix gate). Needs owner decision: reviewed dual or fix the power_meter pid case"
+      "reason": "power_meter already lists this mfr with productId \"ts0601\" in lower case; adding it to energy_meter_3phase makes a new case-insensitive dual (native-matrix gate). Needs owner decision: reviewed dual or fix the power_meter pid case",
+      "resolvedBy": {
+        "commit": "fd00ad088e",
+        "id": "P3039a",
+        "driverId": "power_meter"
+      }
     },
     {
       "mfr": "_TZE200_yh7aoahi",
@@ -62,7 +82,12 @@
         "model": "TS0601_smoke_4",
         "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/tuya.ts#L12892"
       },
-      "reason": "every TS0601 smoke driver also lists TS0205, and smoke_sensor3 already owns this mfr on TS0205: adding it would create a new fingerprint collision; owner choice needed (bastien-home carries it on smoke_sensor)"
+      "reason": "every TS0601 smoke driver also lists TS0205, and smoke_sensor3 already owns this mfr on TS0205: adding it would create a new fingerprint collision; owner choice needed (bastien-home carries it on smoke_sensor)",
+      "resolvedBy": {
+        "commit": "fd33137958",
+        "id": "P3039b/c",
+        "driverId": "smoke_sensor_ts0601_dp"
+      }
     },
     {
       "mfr": "_TZE200_yp5tsi3y",
@@ -74,7 +99,12 @@
         "model": "EWS1154-Z",
         "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/box.ts#L260"
       },
-      "reason": "no fitting existing driver (new driver needed)"
+      "reason": "no fitting existing driver (new driver needed)",
+      "resolvedBy": {
+        "commit": "fd33137958",
+        "id": "P3039b/c",
+        "driverId": "wall_switch_rf_ews1154z"
+      }
     },
     {
       "mfr": "_TZE204_6ewjlefg",
@@ -86,7 +116,12 @@
         "model": "BVRF-L001",
         "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/beca.ts#L11"
       },
-      "reason": "no fitting existing driver (new driver needed)"
+      "reason": "no fitting existing driver (new driver needed)",
+      "resolvedBy": {
+        "commit": "fd33137958",
+        "id": "P3039b/c",
+        "driverId": "thermostat_vrf_bvrf_l001"
+      }
     },
     {
       "mfr": "_TZE204_rfpyqax9",
@@ -98,7 +133,12 @@
         "model": "Pro Line X10",
         "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/tuya.ts#L14686"
       },
-      "reason": "no fitting existing driver (new driver needed)"
+      "reason": "no fitting existing driver (new driver needed)",
+      "resolvedBy": {
+        "commit": "fd33137958",
+        "id": "P3039b/c",
+        "driverId": "ufh_controller_pro_line_x10"
+      }
     },
     {
       "mfr": "_TZE204_wjk6rurm",
@@ -110,7 +150,12 @@
         "model": "SPM02V1-GT",
         "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/tuya.ts#L18784"
       },
-      "reason": "power_meter already lists this mfr with productId \"ts0601\" in lower case; adding it to energy_meter_3phase makes a new case-insensitive dual (native-matrix gate). Needs owner decision: reviewed dual or fix the power_meter pid case"
+      "reason": "power_meter already lists this mfr with productId \"ts0601\" in lower case; adding it to energy_meter_3phase makes a new case-insensitive dual (native-matrix gate). Needs owner decision: reviewed dual or fix the power_meter pid case",
+      "resolvedBy": {
+        "commit": "fd00ad088e",
+        "id": "P3039a",
+        "driverId": "power_meter"
+      }
     },
     {
       "mfr": "_TZE20C1000000_p3g8xiug",
@@ -122,7 +167,12 @@
         "model": "TS0601_3ch_bidirectional_meter",
         "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/tuya.ts#L18992"
       },
-      "reason": "no fitting existing driver (new driver needed)"
+      "reason": "no fitting existing driver (new driver needed)",
+      "resolvedBy": {
+        "commit": "fd33137958",
+        "id": "P3039b/c",
+        "driverId": "energy_meter_3ch_bidirectional"
+      }
     },
     {
       "mfr": "_TZE284_1oft6qso",
@@ -134,7 +184,12 @@
         "model": "CH8Z",
         "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/automaton.ts#L38"
       },
-      "reason": "no fitting existing driver (new driver needed)"
+      "reason": "no fitting existing driver (new driver needed)",
+      "resolvedBy": {
+        "commit": "fd33137958",
+        "id": "P3039b/c",
+        "driverId": "ufh_controller_ch8z"
+      }
     },
     {
       "mfr": "_TZE284_rfpyqax9",
@@ -146,7 +201,12 @@
         "model": "Pro Line X10",
         "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/tuya.ts#L14686"
       },
-      "reason": "no fitting existing driver (new driver needed)"
+      "reason": "no fitting existing driver (new driver needed)",
+      "resolvedBy": {
+        "commit": "fd33137958",
+        "id": "P3039b/c",
+        "driverId": "ufh_controller_pro_line_x10"
+      }
     },
     {
       "mfr": "_TZE284_wjk6rurm",
@@ -158,7 +218,12 @@
         "model": "SPM02V1-GT",
         "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/tuya.ts#L18784"
       },
-      "reason": "power_meter already lists this mfr with productId \"ts0601\" in lower case; adding it to energy_meter_3phase makes a new case-insensitive dual (native-matrix gate). Needs owner decision: reviewed dual or fix the power_meter pid case"
+      "reason": "power_meter already lists this mfr with productId \"ts0601\" in lower case; adding it to energy_meter_3phase makes a new case-insensitive dual (native-matrix gate). Needs owner decision: reviewed dual or fix the power_meter pid case",
+      "resolvedBy": {
+        "commit": "fd00ad088e",
+        "id": "P3039a",
+        "driverId": "power_meter"
+      }
     }
   ],
   "excluded": [

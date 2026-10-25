@@ -26,6 +26,7 @@ const { checkBaseline, payloadCouples } = require('../../scripts/maintenance/pub
 const { mergeDrivers, countCouples } = require('../../scripts/maintenance/build-publish-baseline.cjs');
 
 const ROOT = path.join(__dirname, '..', '..');
+const CAPS = require(path.join(ROOT, 'scripts', 'lib', 'publish-caps.cjs')).loadPublishCaps({ root: ROOT, env: {} }); // P3036c single cap source
 const FIXTURE = path.join(ROOT, 'test', 'fixtures', 'athom-last-test-package-couples.json');
 const NO_DB = { byMfr: new Map(), byDriver: new Map() };
 
@@ -128,7 +129,8 @@ describe('P3024b publish baseline couples', () => {
       const file = path.join(ROOT, '.github', 'workflows', wf);
       if (!fs.existsSync(file)) continue;
       const y = fs.readFileSync(file, 'utf8');
-      const cap = Number((y.match(/HOMEY_ZIGBEE_MAX_TOTAL_COMBOS:\s*["']?(\d+)/) || [])[1]);
+      assert.ok(!/HOMEY_ZIGBEE_MAX_TOTAL_COMBOS:\s*["']?\d+/.test(y), `${wf} must read config/publish-caps.json (P3036c)`);
+      const cap = CAPS.maxTotalCombos;
       assert.ok(cap >= 15500 && cap <= 20000, `${wf} cap ${cap}`);
     }
   });
@@ -136,11 +138,10 @@ describe('P3024b publish baseline couples', () => {
   it('every baseline couple (1574 + candidate) survives compaction of the real manifest exactly', function () {
     if (this && this.timeout) this.timeout(120000);
     const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'app.json'), 'utf8'));
-    const y = fs.readFileSync(path.join(ROOT, '.github', 'workflows', 'auto-publish-on-push.yml'), 'utf8');
-    const cap = Number(y.match(/HOMEY_ZIGBEE_MAX_TOTAL_COMBOS:\s*"(\d+)"/)[1]);
+    const cap = CAPS.maxTotalCombos;
     const baseline = loadPublishBaseline(ROOT);
     const r = compactZigbeeIdentifiers(manifest, {
-      repoRoot: ROOT, maxTotalCombos: cap, maxDriverCombos: 1500, maxCaseForms: 2,
+      repoRoot: ROOT, maxTotalCombos: cap, maxDriverCombos: CAPS.maxDriverCombos, maxCaseForms: CAPS.maxCaseForms,
     });
     assert.deepStrictEqual(r.baselineUnresolved, []);
     assert.ok(!r.overTotalLimit, `combos ${r.afterTotal} > ${cap}`);

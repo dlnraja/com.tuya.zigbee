@@ -90,3 +90,13 @@ Tests: `test/critical/p3036-athom-publish-policy.test.js`, `test/critical/p3036-
   FATAL(P3036b) stops the publish if one is not put back. Tier 2 = other KB couples, best couples per combo.
 - Platform budget gate: `alsoEnv` includes `HOMEY_ZIGBEE_KB_TOPUP_MAX_TOTAL`. Test:
   `test/critical/p3036b-kb-couple-topup.test.js`.
+
+## P3036c: single cap source (25/10/2026 17:20, Paris)
+- `config/publish-caps.json` is the only place for the Zigbee publish caps; `scripts/lib/publish-caps.cjs`
+  serves prepare-publish, the compactor defaults, the budget gate, z2m-coverage, tests and workflows.
+  No `HOMEY_ZIGBEE_*` cap in any workflow (guard `test/critical/p3036c-single-cap-source.test.js`).
+- Routine « Homey envois master par étapes » (replacement text, the routine itself is not edited): green CI
+  first; ≥ 2 h between uploads per app, one lock per app; at most 1 successful upload per day plus 1 retry
+  ≥ 5 min after a transient hang-up (shared transient/real classification; a real error opens the breaker
+  and writes a diagnostic); draft→Test automatic, Live always manual; bisect_trial only while
+  status=running (stop on done); no upload while Athom is still processing the previous build.

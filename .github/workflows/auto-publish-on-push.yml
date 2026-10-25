@@ -158,21 +158,11 @@ jobs:
       HOMEY_PUBLISH_FINAL_MAX_MB: "50"
       HOMEY_PUBLISH_SOURCE_MAX_MB: "50"
       HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB: "50"
-      # P3024b: our own heuristic (NOT an Athom limit, see ATHOM_LIMITS.md). 15500 fits every
-      # couple of the last Test package + current candidate (test/fixtures/athom-last-test-package-couples.json).
-      # P3036b: 17000 = measured accepted (9.0.914 at 16986, 9.0.664/698 at ~20000); see docs/knowledge/ATHOM_LIMITS.md.
-      HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "17000"
-      HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "1500"
-      # P3036b: KB couple top-up after compaction (adds only; clamped to 20000 total / 1008 per driver, the measured accepted maxima).
-      HOMEY_ZIGBEE_KB_TOPUP_MAX_TOTAL: "20000"
-      # P3036: additive TS0601 top-up after compaction, up to the measured Athom-accepted ceiling
-      # (~20000 combos: 9.0.664/9.0.698 Test). Adds only, same driver set. "0" disables it.
-      HOMEY_ZIGBEE_TOPUP_MAX_TOTAL: "20000"
-      HOMEY_ZIGBEE_TOPUP_MAX_DRIVER: "2000"
+      # P3036c: Zigbee caps live in config/publish-caps.json only (scripts/lib/publish-caps.cjs);
+      # prepare-publish, the compactor and the budget gate read it. No HOMEY_ZIGBEE_* cap here.
       # P2384: Athom apps API + draft wait — longer than 60s/360s (tip socket hang up)
       HOMEY_API_TIMEOUT_MS: "120000"
       HOMEY_BUILD_POLL_TIMEOUT_MS: "360000"
-      HOMEY_ZIGBEE_MAX_CASE_FORMS: "2"
       HOMEY_DRAFT_WAIT_MS: "600000"
       HOMEY_HEALTHY_TEST_PATCH_LAG: "8"
       HOMEY_FORCE_PUBLISH: ${{ github.event_name == 'workflow_dispatch' && inputs.force_publish == true && '1' || '0' }}
