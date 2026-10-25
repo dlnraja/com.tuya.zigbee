@@ -166,11 +166,6 @@
       }
     }
   },
-  "energy": {
-    "approximation": {
-      "usageConstant": 0.5
-    }
-  },
   "images": {
     "small": "/drivers/energy_meter_3ch_bidirectional/assets/images/small.png",
     "large": "/drivers/energy_meter_3ch_bidirectional/assets/images/large.png"
