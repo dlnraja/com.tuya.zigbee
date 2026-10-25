@@ -73,4 +73,13 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           TMPDIR: ${{ runner.temp }}
-        run: node scripts/ci/platform-budget-gate.js --online --publish-dir "${HOMEY_PUBLISH_DIR:-$RUNNER_TEMP/homey-publish-temp}"
+        run: node scripts/ci/platform-budget-gate.js --online --publish-dir "${HOMEY_PUBLISH_DIR:-$RUNNER_TEMP/homey-publish-temp}" --out "$RUNNER_TEMP/platform-budget-report.json"
+      # P3048: the AI-free digest (automation-loop.yml) reads the published-payload combos from this artifact.
+      - name: Keep the report for the digest
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: platform-budget-report
+          path: ${{ runner.temp }}/platform-budget-report.json
+          retention-days: 14
+          if-no-files-found: ignore
