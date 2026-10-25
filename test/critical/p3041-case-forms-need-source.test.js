@@ -52,10 +52,33 @@ describe('P3041 case forms need a source', () => {
     // a SOURCED lowercase form is never folded away
     assert.strictEqual(checkBaseline(payload, baseline, { caseEquivalentSourced: new Set(['_tze200_x']) }).missing.length, 1);
   });
-  it('config: twins need a source (on), prune of pinned twins off until the owner says yes', () => {
+  it('config (owner yes t526s3030): prune ON, measured-safe caps 17000/1008, top-ups 20000/1008, nothing above measured', () => {
     const c = caps.loadPublishCaps({ env: {} });
     assert.strictEqual(c.caseFormsNeedSource, 1);
-    assert.strictEqual(c.pruneArtifactCaseForms, 0);
+    assert.strictEqual(c.pruneArtifactCaseForms, 1);
+    assert.deepStrictEqual([c.maxTotalCombos, c.maxDriverCombos, c.kbTopupMaxTotal, c.kbTopupMaxDriver, c.ts0601TopupMaxTotal, c.ts0601TopupMaxDriver, c.allowAboveMeasuredCombos],
+      [17000, 1008, 20000, 1008, 20000, 1008, 0]);
+    assert.ok(c.maxDriverCombos <= c.measured.acceptedMaxDriverCombos && c.ts0601TopupMaxTotal <= c.measured.acceptedMaxTotalCombos);
+    const d = caps.readFile(require('path').join(__dirname, '..', '..')).decision;
+    assert.strictEqual(d.id, 'P3041');
+    assert.match(d.by, /t526s3030/);
+    assert.strictEqual(d.rollback.caps.pruneArtifactCaseForms, 0);
+  });
+  it('case-equivalent gate with the prune report: the canonical form must stay on the driver it was pruned from', () => {
+    const baseline = { drivers: { d: { m: ['_TZE200_x', '_tze200_x'], p: ['TS0601'] } }, exemptions: [] };
+    const pruned = [{ driverId: 'd', form: '_tze200_x', productIds: ['TS0601'] }];
+    const same = { drivers: [{ id: 'd', zigbee: { productId: ['TS0601'], manufacturerName: ['_TZE200_x'] } }] };
+    const r = checkBaseline(same, baseline, { caseEquivalentSourced: new Set(), caseEquivalentPruned: pruned });
+    assert.deepStrictEqual([r.missing.length, r.caseEquivalent], [0, 1]);
+    const moved = { drivers: [{ id: 'd', zigbee: { productId: ['TS0002'], manufacturerName: ['HEIMAN'] } }, { id: 'e', zigbee: { productId: ['TS0601'], manufacturerName: ['_TZE200_x'] } }] };
+    assert.strictEqual(checkBaseline(moved, baseline, { caseEquivalentSourced: new Set(), caseEquivalentPruned: pruned }).missing.length, 1);
+    // not in the prune report = not an artifact the prune removed: stays a real loss
+    assert.strictEqual(checkBaseline(same, baseline, { caseEquivalentSourced: new Set(), caseEquivalentPruned: [] }).missing.length, 1);
+  });
+  it('prepare-publish wires the prune report into the final P3024b gate', () => {
+    const s = require('fs').readFileSync(require('path').join(__dirname, '..', '..', 'scripts', 'prepare-publish.js'), 'utf8');
+    assert.match(s, /caseEquivalentPruned: p3041Pruned/);
+    assert.match(s, /p3041Pruned = pr\.removed/);
   });
   it('the sourced set comes from external sources only (no minted all-lowercase Tuya mass)', () => {
     const S = loadSourcedForms();

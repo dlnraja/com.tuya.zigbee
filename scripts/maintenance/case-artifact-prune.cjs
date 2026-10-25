@@ -22,7 +22,7 @@ function pruneManifest(manifest, sourced) {
     for (const f of artifacts) {
       // Invariant: a case-equivalent form stays on this driver (else it is not an artifact).
       if (!keptKeys.has(String(f).trim().toLowerCase())) report.orphaned.push(`${f}@${d.id}`);
-      report.removed.push({ driverId: d.id, form: f, productIds: pids.length });
+      report.removed.push({ driverId: d.id, form: f, productIds: pids.slice() });
     }
     z.manufacturerName = kept;
     report.removedForms += artifacts.length;

@@ -511,6 +511,7 @@ try {
   // P3041: exact manufacturer strings an external source has seen; unsourced case twins get no room.
   const p3041Sourced = (publishCaps.caseFormsNeedSource || publishCaps.pruneArtifactCaseForms)
     ? require('./lib/case-form-sources.cjs').loadSourcedForms() : null;
+  let p3041Pruned = null; // prune report, read by the final P3024b case-equivalent gate
   if (p3041Sourced) console.log(`[P3041] case forms need a source: ${p3041Sourced.size} sourced exact form(s); prune of pinned twins ${publishCaps.pruneArtifactCaseForms ? 'ON' : 'off'}`);
   let p3036TopupSource = null;
   try { p3036TopupSource = (publishCaps.ts0601TopupMaxTotal > 0 || publishCaps.kbTopupMaxTotal > 0) ? readJson(destAppJson) : null; } catch (_) { p3036TopupSource = null; }
@@ -594,6 +595,7 @@ try {
         process.exit(1);
       }
       fs.writeFileSync(destAppJson, JSON.stringify(pay), 'utf8');
+      p3041Pruned = pr.removed;
       console.log(`[P3041] case prune: ${pr.removedForms} unsourced twin form(s) removed (-${pr.removedCombos} combos) in ${Object.keys(pr.perDriver).length} driver(s); each keeps its sourced/canonical twin.`);
       try { fs.writeFileSync(path.join(path.dirname(destAppJson), 'p3041-case-prune.json'), JSON.stringify(pr.removed), 'utf8'); } catch (_) { /* report only */ }
       if (p3036TopupSource && publishCaps.kbTopupMaxTotal > 0) {
@@ -795,14 +797,14 @@ try {
     const baseline = loadPublishBaseline(path.join(__dirname, '..'));
     if (!baseline) throw new Error('baseline couples file missing (test/fixtures/athom-last-test-package-couples.json)');
     const r = checkBaseline(JSON.parse(fs.readFileSync(destAppJson, 'utf8')), baseline,
-      publishCaps.pruneArtifactCaseForms && p3041Sourced ? { caseEquivalentSourced: p3041Sourced } : {});
-    if (r.caseEquivalent) console.log(`[P3041] P3024b: ${r.caseEquivalent} baseline couple(s) kept through their sourced/canonical case twin (opt-in prune).`);
+      publishCaps.pruneArtifactCaseForms && p3041Sourced ? { caseEquivalentSourced: p3041Sourced, caseEquivalentPruned: p3041Pruned || [] } : {});
+    if (r.caseEquivalent) console.log(`[P3041] P3024b: ${r.caseEquivalent} baseline couple(s) kept through their sourced/canonical case twin (P3041 case-equivalent mode, same driver).`);
     if (r.missing.length) {
       console.error(`FATAL(P3024b): ${r.missing.length}/${r.total} couple(s) of Test package ${baseline.version} would disappear from the payload:`);
       for (const m of r.missing.slice(0, 20)) console.error(`  - ${m}`);
       process.exit(1);
     }
-    console.log(`[P3024b] all ${r.total} couples of Test package ${baseline.version} present in payload`);
+    console.log(`[P3024b] all ${r.total} couples of Test package ${baseline.version} present in payload${r.caseEquivalent ? ` (${r.total - r.caseEquivalent} byte-exact, ${r.caseEquivalent} case-equivalent on the same driver, P3041)` : ''}`);
   } catch (e) {
     console.error('FATAL(P3024b): baseline couple gate failed:', e.message);
     process.exit(1);

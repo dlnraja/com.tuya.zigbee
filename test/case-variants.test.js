@@ -16,6 +16,16 @@ const testApi = global.describe && global.it ? global : require('node:test');
 const { describe, it } = testApi;
 
 const { pairingCaseVariants } = require('../lib/utils/TuyaNormalizer');
+const { loadSourcedForms } = require('../scripts/lib/case-form-sources.cjs');
+// WHY(P3041, owner yes t526s3030 25/10/2026 18:32 Paris): an all-lower/all-upper twin that no external source
+// has ever seen is an artifact the publish prune removes anyway (config/publish-caps.json pruneArtifactCaseForms).
+// So a form an external source reported exactly does not need such a twin in its driver; a missing twin is
+// still an error when the form present is itself unsourced, or when the twin is sourced.
+let SOURCED = null;
+const twinNotRequired = (present, variant) => {
+  if (!SOURCED) {SOURCED = loadSourcedForms(ROOT);}
+  return SOURCED.has(present) && !SOURCED.has(variant);
+};
 const ROOT = path.join(__dirname, '..');
 const TUYA_RX = /^_t[zy][a-z0-9]{4,}_/i;
 const SYNTHETIC_RX = /_disabled|_dummy|_generic|_hybrid|_master|placeholder|needs_/i;
@@ -44,7 +54,7 @@ describe('case-variant completeness (pairing, unknown device prevention)', () =>
         // normalization); the manifest only needs the Homey-critical forms that same SSOT produces
         // (canonical + lowercase). ALL-UPPER copies are not required and blow the P2252 combo budget.
         for (const v of pairingCaseVariants(lc)) {
-          if (!exact.has(v)) {missing.push(`${d.id}: ${m} (manque ${v})`);}
+          if (!exact.has(v) && !twinNotRequired(m, v)) {missing.push(`${d.id}: ${m} (manque ${v})`);}
         }
       }
     }
@@ -90,7 +100,7 @@ describe('case-variant completeness (pairing, unknown device prevention)', () =>
         if (!TUYA_RX.test(lc) || SYNTHETIC_RX.test(lc)) {continue;}
         // WHY(P99/P2677): only the SSOT pairing forms; other casings are matched at read time (TuyaNormalizer).
         for (const v of pairingCaseVariants(lc)) {
-          if (!exact.has(v)) {missing.push(`${d.id}: ${m} (manque combo ${v})`);}
+          if (!exact.has(v) && !twinNotRequired(m, v)) {missing.push(`${d.id}: ${m} (manque combo ${v})`);}
         }
       }
     }

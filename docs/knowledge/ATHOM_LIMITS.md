@@ -260,3 +260,8 @@ Owner decision 17:29 (t523u) and rule 17:31 (t524u). 15500 was our own heuristic
 - Bytes: flow 1646 KB + settings 800 KB of 3.33 MB; zigbee identifiers ~4 %. No lossless SDK lever (cards/settings are expanded per driver; merging cards breaks Flows).
 - `caseFormsNeedSource` (ON): unsourced all-lower/upper twins get no compaction/top-up room: +332 real couples at the same combos.
 - `pruneArtifactCaseForms` (OFF, owner yes): at the measured-safe caps 17000/1008 it ships 13719 case-folded couples instead of 9143, max/driver 1008 (was 1364). Details: `docs/knowledge/P3041_PAYLOAD_REDUCTION_2026-10-25.md`.
+
+## Update 2026-10-25 18:37 (Paris) — P3041 ON (owner yes t526s3030)
+- Caps back to the measured-safe values: 17000 base, 1008 per driver, top-ups 20000/1008, `allowAboveMeasuredCombos: 0`; artifact case twin prune ON.
+- Master payload: 19 982 combos, max 1008 per driver, 0 driver above 1008, 3 269 669 B uploaded, 13 719 case-folded couples (9 143 with the same caps without the prune).
+- P3024b runs in case-equivalent mode: 14 227 baseline couples kept (5 648 through the sourced/canonical form on the same driver), 0 lost. Not pushed (#3683 under analysis).
