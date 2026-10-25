@@ -1,11 +1,11 @@
 {
   "task": "P3034",
   "app_id": "com.dlnraja.tuya.zigbee",
-  "status": "running",
-  "updated_at": "2026-10-25T10:25:00+01:00",
+  "status": "done",
+  "updated_at": "2026-10-25T14:25:00+01:00",
   "current_trial": 0,
   "variable": "revised trial 0: 9.0.1597 payload + P3034 CI gate fixes (wip/p3034-gates 94e3947767 + follow-ups; no runtime change beyond CatalogStore Buffer read and switch_wall_6gang_metering own flow cards), CLI path (auto-publish-on-push.yml), manual workflow_dispatch bisect_trial=0, draft only, ~13:30 Paris after the 13:05 Auto-Fix cron and >=2h without any upload on the 3 apps",
-  "result": "pending: revised trial 0 planned ~13:30 Paris",
+  "result": "PASS: revised trial 0 (CLI path, manual dispatch bisect_trial=0, master tip 47cb6bb34e, CI green) gave v9.0.1599 build #3682 state=draft without processing error after one socket-hang-up retry (first attempt v9.0.1598 #3681 processing_failed socket hang up)",
   "rules": "draft only, master app only, one variable per trial, one retry on socket hang up, never Test/Live promotion; 15:00 staged master routine sends nothing while status=running",
   "trials": [
     {
@@ -23,13 +23,35 @@
       "variable": "1597 + P3034 gate fixes",
       "upload_path": "cli",
       "trigger": "workflow_dispatch auto-publish-on-push.yml bisect_trial=0",
-      "result": "pending"
+      "result": "pass",
+      "runs": [
+        40194047724,
+        40194918949,
+        40195030403
+      ],
+      "builds": [
+        {
+          "version": "9.0.1598",
+          "build": 3681,
+          "state": "processing_failed",
+          "stateMeta": "socket hang up",
+          "created": "2026-10-25T12:45:21Z"
+        },
+        {
+          "version": "9.0.1599",
+          "build": 3682,
+          "state": "draft",
+          "created": "2026-10-25T12:57:19Z",
+          "note": "upload 13:57 Paris, draft confirmed by final gate 14:20 Paris, promotion held"
+        }
+      ],
+      "notes": "auto transient retry 40194918949 was skipped by the master breaker (3 failed builds, manual dispatch required), so the single allowed retry was a manual dispatch bisect_trial=0 (40195030403). Final gate red only because it requires Test, which is held by design."
     }
   ],
   "next": {
-    "n": 1,
-    "branch": "bisect/1",
-    "variable": "upload_path=direct-api-publish.js (same tip)"
+    "n": null,
+    "note": "bisect closed; trial 1 cancelled"
   },
-  "window_note": "P3034 10:25: untagged_window (09:45-11:00) removed on dlnraja's decision; every master upload now needs a manual dispatch with bisect_trial"
+  "window_note": "P3034 10:25: untagged_window (09:45-11:00) removed on dlnraja's decision; every master upload now needs a manual dispatch with bisect_trial",
+  "conclusion": "Same code with green CI and a quiet upload window processes normally on Athom: the master rejections came from red CI / timing and transient Athom-side socket hang up, not from the app payload. Trial 1 (direct-api-publish.js) not needed. The 15:00 staged master routine may resume its plan; drafts only until a decision on promotion."
 }
