@@ -78,8 +78,156 @@ function loadSacredKeepCouples(repoRoot) {
   return [];
 }
 
+// WHY(P3024b): baseline pins add ~14k entries; index per driver instead of a
+// full filter on every pass2 iteration (pass2 can loop thousands of times).
+const PIN_INDEX = new WeakMap();
 function sacredPinsForDriver(sacredAll, driverId) {
-  return sacredAll.filter((c) => c.driverId === driverId);
+  let index = PIN_INDEX.get(sacredAll);
+  if (!index) {
+    index = new Map();
+    for (const c of sacredAll) {
+      if (!index.has(c.driverId)) index.set(c.driverId, []);
+      index.get(c.driverId).push(c);
+    }
+    PIN_INDEX.set(sacredAll, index);
+  }
+  return index.get(driverId) || [];
+}
+
+/**
+ * WHY(P3024b): the 14000 combo budget silently cut 261 couples (192 mfrs, e.g.
+ * device_radiator_valve, smart_garden_irrigation_control) that the last Athom
+ * Test package (9.0.1574) paired. Budget cuts must never remove a couple users
+ * could already pair. test/fixtures/athom-last-test-package-couples.json holds
+ * that package's exact couples (per driver m x p, exact case).
+ */
+function defaultBaselinePath(repoRoot) {
+  return path.join(repoRoot, 'test', 'fixtures', 'athom-last-test-package-couples.json');
+}
+
+function loadPublishBaseline(repoRoot, file) {
+  const target = file || process.env.HOMEY_PUBLISH_BASELINE_PATH || defaultBaselinePath(repoRoot);
+  try {
+    if (!fs.existsSync(target)) return null;
+    const raw = JSON.parse(fs.readFileSync(target, 'utf8'));
+    return raw && raw.drivers ? raw : null;
+  } catch {
+    return null;
+  }
+}
+
+/** Every exact couple of the baseline as [{mfr, pid, driverId}]. */
+function baselineCouples(baseline) {
+  const out = [];
+  for (const [driverId, entry] of Object.entries((baseline && baseline.drivers) || {})) {
+    for (const mfr of (entry && entry.m) || []) {
+      for (const pid of (entry && entry.p) || []) {
+        out.push({ mfr: String(mfr), pid: String(pid), driverId });
+      }
+    }
+  }
+  // P3024c: exact couples an OLDER Test package shipped and a later build lost. Kept as an
+  // exact list (not merged into drivers m x p) so restoring them never invents a cross couple.
+  for (const r of (baseline && baseline.restored) || []) {
+    if (r && r.mfr && r.pid && r.driverId) out.push({ mfr: String(r.mfr), pid: String(r.pid), driverId: String(r.driverId) });
+  }
+  return out;
+}
+
+/**
+ * Resolve baseline couples against the PRE-compact manifest (exact strings).
+ * Same driver first; if the couple moved (one couple, one driver), pin it on
+ * the driver(s) that own it now. A couple no driver carries any more is
+ * "unresolved" unless listed in baseline.exemptions [{mfr,pid,driverId,reason}].
+ */
+function resolveBaselinePins(manifest, baseline) {
+  const couples = baselineCouples(baseline);
+  const byId = new Map();
+  const owners = new Map(); // "mfr\u0000pid" -> [driverId]
+  for (const d of manifest.drivers || []) {
+    if (!d || !d.zigbee) continue;
+    const m = new Set((d.zigbee.manufacturerName || []).map(String));
+    const p = new Set((d.zigbee.productId || []).map(String));
+    byId.set(d.id, { m, p });
+  }
+  const ownersOf = (mfr, pid) => {
+    const k = `${mfr}\u0000${pid}`;
+    if (!owners.has(k)) {
+      const list = [];
+      for (const [id, s] of byId) if (s.m.has(mfr) && s.p.has(pid)) list.push(id);
+      owners.set(k, list);
+    }
+    return owners.get(k);
+  };
+  const exempt = new Set(((baseline && baseline.exemptions) || [])
+    .filter((e) => e && e.mfr && e.pid && e.reason)
+    .map((e) => `${e.mfr}\u0000${e.pid}\u0000${e.driverId || '*'}`));
+  const pins = [];
+  const unresolved = [];
+  const seen = new Set();
+  let moved = 0;
+  let restored = 0;
+  const push = (pin) => {
+    const k = `${pin.mfr}\u0000${pin.pid}\u0000${pin.driverId}`;
+    if (seen.has(k)) return;
+    seen.add(k);
+    pins.push(pin);
+  };
+  const pinnedSets = new Map(); // driverId -> { m:Set, p:Set } of pins chosen so far
+  const addPinned = (pin) => {
+    if (!pinnedSets.has(pin.driverId)) pinnedSets.set(pin.driverId, { m: new Set(), p: new Set() });
+    const ps = pinnedSets.get(pin.driverId);
+    ps.m.add(pin.mfr);
+    ps.p.add(pin.pid);
+  };
+  const later = [];
+  for (const c of couples) {
+    const s = byId.get(c.driverId);
+    if (s && s.m.has(c.mfr) && s.p.has(c.pid)) {
+      push(c);
+      addPinned(c);
+      continue;
+    }
+    later.push(c);
+  }
+  for (const c of later) {
+    const now = ownersOf(c.mfr, c.pid);
+    if (now.length > 0) {
+      moved += 1;
+      // One couple, one driver: pin on ONE current owner. WHY(P3024b): pick the owner
+      // whose pinned cartesian grows least (a pid pinned on universal_zigbee's 94 mfrs
+      // cost +282 combos); ties keep manifest order.
+      let best = now[0];
+      let bestCost = Infinity;
+      for (const id of now) {
+        const ps = pinnedSets.get(id) || { m: new Set(), p: new Set() };
+        const newM = !ps.m.has(c.mfr);
+        const newP = !ps.p.has(c.pid);
+        const cost = (newM ? Math.max(1, ps.p.size) : 0) + (newP ? Math.max(1, ps.m.size) : 0)
+          + (newM && newP ? 1 : 0);
+        if (cost < bestCost) {
+          bestCost = cost;
+          best = id;
+        }
+      }
+      const pin = { mfr: c.mfr, pid: c.pid, driverId: best };
+      push(pin);
+      addPinned(pin);
+      continue;
+    }
+    if (exempt.has(`${c.mfr}\u0000${c.pid}\u0000${c.driverId}`) || exempt.has(`${c.mfr}\u0000${c.pid}\u0000*`)) continue;
+    if (byId.has(c.driverId)) {
+      // WHY(P3024b): no driver owns this couple any more (a later source curation or an
+      // mfs_db rescue that did not re-run). Nothing else can claim it, so re-pin it on the
+      // driver that shipped it: devices keep pairing exactly as in the Test package.
+      restored += 1;
+      push(c);
+      addPinned(c);
+      continue;
+    }
+    unresolved.push(`${c.mfr}+${c.pid} @ ${c.driverId}`);
+  }
+  return { pins, unresolved, moved, restored, total: couples.length };
 }
 
 function assertSacredCouplesPresent(manifest, sacredAll) {
@@ -306,9 +454,24 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
   );
 
   const repoRoot = opts.repoRoot || path.join(__dirname, '..', '..');
-  const sacredAll = Array.isArray(opts.sacredKeep)
+  const sacredOnly = Array.isArray(opts.sacredKeep)
     ? opts.sacredKeep
     : loadSacredKeepCouples(repoRoot);
+  // WHY(P3024b): pin every couple of the last Athom Test package (see loadPublishBaseline).
+  // WHY(P3024b): the auto-loaded baseline only applies to the real app manifest, so unit
+  // tests with synthetic manifests (same driver ids) never get real couples injected.
+  const autoBaseline = Object.prototype.hasOwnProperty.call(opts, 'baseline')
+    ? null
+    : loadPublishBaseline(repoRoot, opts.baselinePath);
+  const baseline = Object.prototype.hasOwnProperty.call(opts, 'baseline')
+    ? opts.baseline
+    : (autoBaseline && (!autoBaseline.appId || autoBaseline.appId === manifest.id) ? autoBaseline : null);
+  const baselineResolved = baseline
+    ? resolveBaselinePins(manifest, baseline)
+    : { pins: [], unresolved: [], moved: 0, total: 0 };
+  const sacredAll = baselineResolved.pins.length > 0
+    ? [...sacredOnly, ...baselineResolved.pins]
+    : sacredOnly;
   const sacredMissing = [];
 
   const changes = [];
@@ -640,8 +803,50 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
 
   // WHY(P2252): second pass — enforce RAW total Athom cartesian budget
   let pass2Cuts = 0;
+  let pass2VariantCuts = 0;
   const rawTotal = () => (manifest.drivers || []).reduce((sum, d) => sum + comboCount(d), 0);
   afterTotal = rawTotal();
+  // WHY(P3024b): a pin protects its whole case key in the loop below, so case
+  // variants added to the source after the pinned package (ts0203/Ts0203 beside
+  // the shipped TS0203) were uncuttable and inflated the total by ~2700 combos.
+  // Phase A trims only those variants (largest driver first): the exact pinned
+  // string stays, so no published couple is lost. Padded wire forms are kept.
+  while (afterTotal > maxTotalCombos) {
+    let trimmed = false;
+    const ranked = (manifest.drivers || [])
+      .map((d) => ({ d, c: comboCount(d) }))
+      .filter((x) => x.c > 1)
+      .sort((x, y) => y.c - x.c);
+    for (const { d } of ranked) {
+      const pins = sacredPinsForDriver(sacredAll, d.id);
+      if (!pins.length) continue;
+      const mfrs = uniqStrings(d.zigbee.manufacturerName);
+      const pids = uniqStrings(d.zigbee.productId);
+      const pinMfrExact = new Set(pins.map((p) => String(p.mfr)));
+      const pinPidExact = new Set(pins.map((p) => String(p.pid)));
+      const pinMfrLc = new Set(pins.map((p) => mfrKey(p.mfr)));
+      const pinPidUc = new Set(pins.map((p) => String(p.pid).toUpperCase()));
+      const variantPid = [...pids].reverse()
+        .find((p) => !pinPidExact.has(p) && pinPidUc.has(p.toUpperCase()));
+      const variantMfr = [...mfrs].reverse()
+        .find((v) => v === v.trim() && !pinMfrExact.has(v) && pinMfrLc.has(mfrKey(v)));
+      if (variantPid !== undefined && (mfrs.length <= pids.length || variantMfr === undefined)) {
+        d.zigbee.productId = pids.filter((p) => p !== variantPid);
+      } else if (variantMfr !== undefined) {
+        d.zigbee.manufacturerName = mfrs.filter((v) => v !== variantMfr);
+      } else {
+        continue;
+      }
+      trimmed = true;
+      pass2VariantCuts += 1;
+      break;
+    }
+    if (!trimmed) break;
+    afterTotal = rawTotal();
+  }
+  if (pass2VariantCuts > 0) {
+    logLines.push(`[compact] pass2: trimmed ${pass2VariantCuts} unpinned case variant(s) of pinned couples (now ${afterTotal})`);
+  }
   while (afterTotal > maxTotalCombos) {
     const ranked = (manifest.drivers || [])
       .map((d) => ({ d, c: comboCount(d) }))
@@ -813,6 +1018,12 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
     mfsDbLoaded: hasDb,
     mfsDbPath: hasDb ? db.path : undefined,
     logLines,
+    baselineVersion: baseline ? baseline.version : undefined,
+    baselineTotal: baselineResolved.total,
+    baselinePinned: baselineResolved.pins.length,
+    baselineMoved: baselineResolved.moved,
+    baselineRestored: baselineResolved.restored || 0,
+    baselineUnresolved: baselineResolved.unresolved,
     overTotalLimit: afterTotal > maxTotalCombos,
   };
 }
@@ -875,4 +1086,7 @@ module.exports = {
   loadMfsDatabase,
   loadSacredKeepCouples,
   assertSacredCouplesPresent,
+  loadPublishBaseline,
+  baselineCouples,
+  resolveBaselinePins,
 };

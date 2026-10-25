@@ -501,6 +501,17 @@ try {
       console.error('See config/architecture/publish-sacred-keep-couples.json — raise driver budget or pin list.');
       process.exit(1);
     }
+    // WHY(P3024b): a couple of the last Test package that no driver carries any more
+    // would vanish from pairing; fail unless exempted with a reason in the baseline file.
+    if ((compact.baselineUnresolved || []).length > 0) {
+      console.error(`FATAL(P3024b): ${compact.baselineUnresolved.length} couple(s) of Test package ${compact.baselineVersion} are in no driver any more:`);
+      for (const m of compact.baselineUnresolved.slice(0, 20)) console.error(`  - ${m}`);
+      console.error('Restore them in a driver.compose.json or add an exemption (mfr, pid, driverId, reason) to test/fixtures/athom-last-test-package-couples.json.');
+      process.exit(1);
+    }
+    if (compact.baselineTotal) {
+      console.log(`  - P3024b baseline ${compact.baselineVersion}: ${compact.baselineTotal} couples pinned (${compact.baselineMoved} moved to their current driver, ${compact.baselineRestored} re-pinned on their shipped driver)`);
+    }
     console.log(`Zigbee identifier matrix: ${compact.beforeTotal} -> ${compact.afterTotal} combinations across ${(compact.changes || []).length} compacted driver(s), ${compact.pruned || 0} pruned synthetic driver(s).`);
     if (compact.sacredPinned) {
       console.log(`  - sacred keep pins injected: ${compact.sacredPinned}`);
@@ -609,6 +620,24 @@ try {
 
     // WHY(P2561): point size-gate at compacted publish app.json (not fat root).
     process.env.HOMEY_PUBLISH_APPJSON = destAppJson;
+  }
+
+  // 5a2b) P3024b (port P3024c): no couple of the last Athom Test package may disappear from the final payload.
+  try {
+    const { checkBaseline } = require('./maintenance/publish-baseline-gate.cjs');
+    const { loadPublishBaseline } = require('./maintenance/compact-zigbee-identifiers.cjs');
+    const baseline = loadPublishBaseline(path.join(__dirname, '..'));
+    if (!baseline) throw new Error('baseline couples file missing (test/fixtures/athom-last-test-package-couples.json)');
+    const r = checkBaseline(JSON.parse(fs.readFileSync(destAppJson, 'utf8')), baseline);
+    if (r.missing.length) {
+      console.error(`FATAL(P3024b): ${r.missing.length}/${r.total} couple(s) of Test package ${baseline.version} would disappear from the payload:`);
+      for (const m of r.missing.slice(0, 20)) console.error(`  - ${m}`);
+      process.exit(1);
+    }
+    console.log(`[P3024b] all ${r.total} couples of Test package ${baseline.version} present in payload`);
+  } catch (e) {
+    console.error('FATAL(P3024b): baseline couple gate failed:', e.message);
+    process.exit(1);
   }
 
   // 5a3) P2930: drop flow cards whose device filter names only drivers absent from the payload
