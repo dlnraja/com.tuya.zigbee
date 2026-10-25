@@ -4,6 +4,14 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## Unreleased — docs refresh (P3032, bastien-home)
+
+### Added
+- `scripts/kb/doc-coverage.js` + report-only workflow `doc-coverage.yml`: lists modules, gates, workflows, env flags, drivers and KB files not yet documented (`docs/knowledge/KB/DOC_COVERAGE.md`).
+- `scripts/kb/code-reference.js`: `CODE_REFERENCE.md` built from each file's own header and env-flag reads.
+- `WORK_2026-10-24_25.md`: this branch's P3015–P3030 commits; INDEX lists every KB file.
+- Ports on this branch: P3029 forum scan sources + Cadabi couple pin, P3026 platform budget gate, P3024c publish-baseline couples, P3025 lossless app.json + lint ratchet + push helper, P3030 TaHoma cover lessons (queue, is-moving, movement-finished, final position re-read, numeric-string DP fix).
+
 ## v9.0.901 (2026-09-12)
 
 ### Fixed
