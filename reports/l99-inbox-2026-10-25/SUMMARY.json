@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T15:05:57.816Z",
+  "generatedAt": "2026-10-25T22:07:38.490Z",
   "date": "2026-10-25",
   "mode": "full",
   "phases": [
@@ -12,35 +12,35 @@
     {
       "name": "github",
       "ok": true,
-      "durationMs": 404
+      "durationMs": 236
     },
     {
       "name": "gmail",
       "ok": true,
-      "durationMs": 146,
+      "durationMs": 244,
       "details": {
         "crash": {
           "ok": true,
           "skipped": false,
           "status": 0,
-          "durationMs": 24,
+          "durationMs": 40,
           "stderr": "",
-          "stdoutTail": "[gmail-crash-pattern-gate] sources=32 hits=0 unknown=0\n  wrote .github/state/gmail-crash-patterns.json\n  verdict: ok\n"
+          "stdoutTail": "[gmail-crash-pattern-gate] sources=32 hits=3 unknown=0\n  heap_oom_live_data: 3 source-hit(s)\n  wrote .github/state/gmail-crash-patterns.json\n  verdict: ok\n"
         },
         "treat": {
           "ok": true,
           "skipped": false,
           "status": 0,
-          "durationMs": 120,
+          "durationMs": 203,
           "stderr": "",
-          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-10-25\n{\n  \"generatedAt\": \"2026-10-25T15:05:58.356Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 36,\n  \"derivedFromInterview\": 0,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 3,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 5,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 2,\n    \"processing_failed\": 5,\n    \"scene_0x8004\": 2,\n    \"aggregate_error\": 1,\n    \"invalid_flow_card\": 1,\n    \"missing_capability_listener\": 1\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 36 gmailBodies= 30\n"
+          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-10-25\n{\n  \"generatedAt\": \"2026-10-25T22:07:38.958Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 35,\n  \"derivedFromInterview\": 0,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 4,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 4,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 2,\n    \"processing_failed\": 4,\n    \"scene_0x8004\": 3,\n    \"heap_oom\": 2,\n    \"invalid_flow_card\": 1,\n    \"missing_capability_listener\": 1\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 35 gmailBodies= 30\n"
         }
       }
     },
     {
       "name": "forum",
       "ok": true,
-      "durationMs": 35411,
+      "durationMs": 34890,
       "skipScan": false,
       "steps": [
         {
@@ -64,7 +64,7 @@
     {
       "name": "drivers",
       "ok": true,
-      "durationMs": 1156,
+      "durationMs": 2001,
       "mfs": {
         "high": 0,
         "changes": 0,
@@ -75,14 +75,14 @@
     {
       "name": "functionalDeep",
       "ok": true,
-      "durationMs": 2379,
+      "durationMs": 1284,
       "note": "P2529 complementary deep functional (soft)"
     },
     {
       "name": "prioritize",
       "ok": true,
       "durationMs": 1,
-      "count": 8
+      "count": 4
     },
     {
       "name": "docs",
@@ -93,32 +93,22 @@
     {
       "name": "gates",
       "ok": true,
-      "durationMs": 1720
+      "durationMs": 2953
     }
   ],
   "github": {
-    "harvestedAt": "2026-10-25T15:05:58.220Z",
+    "harvestedAt": "2026-10-25T22:07:38.726Z",
     "repo": "dlnraja/com.tuya.zigbee",
     "auth": "token",
     "error": null,
     "issues": [
-      {
-        "number": 576,
-        "title": "TS0601 / _TZE200_yenbr4om not recognized as curtain_motor (falls back to generic)",
-        "labels": [
-          "bug"
-        ],
-        "updatedAt": "2026-10-25T14:16:20Z",
-        "user": "migueleap",
-        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/576"
-      },
       {
         "number": 557,
         "title": "🤖 Daily digest",
         "labels": [
           "bot-digest"
         ],
-        "updatedAt": "2026-10-25T11:09:57Z",
+        "updatedAt": "2026-10-25T20:44:08Z",
         "user": "dlnraja",
         "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/557"
       },
@@ -128,25 +118,9 @@
         "labels": [
           "bug"
         ],
-        "updatedAt": "2026-10-23T11:34:03Z",
+        "updatedAt": "2026-10-25T18:54:54Z",
         "user": "artisare",
         "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/560"
-      },
-      {
-        "number": 571,
-        "title": "[Bug] QT-07S (_TZE284_myd45weu / TS0601) remains unknown and Configure keeps loading — v9.0.1445 Test",
-        "labels": [],
-        "updatedAt": "2026-10-12T18:58:40Z",
-        "user": "denis-papin",
-        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/571"
-      },
-      {
-        "number": 570,
-        "title": "[soil_sensor] Bug: AOYAN AY-303Z soil sensor not recognized despite fingerprint in soil_sensor driver",
-        "labels": [],
-        "updatedAt": "2026-10-12T14:44:45Z",
-        "user": "edwinvdp",
-        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/570"
       },
       {
         "number": 550,
@@ -158,38 +132,25 @@
         "updatedAt": "2026-10-04T08:18:31Z",
         "user": "HiepSVG",
         "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/550"
-      },
-      {
-        "number": 559,
-        "title": "Smartplug",
-        "labels": [
-          "enhancement",
-          "device-request",
-          "auto-triage",
-          "fingerprint-supported"
-        ],
-        "updatedAt": "2026-10-03T21:01:31Z",
-        "user": "Lalla80111",
-        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/559"
       }
     ],
     "prs": [],
-    "openIssueCount": 7,
+    "openIssueCount": 3,
     "openPrCount": 0
   },
   "forum": {
     "path": "/home/runner/work/com.tuya.zigbee/com.tuya.zigbee/.github/state/forum/actionable-processor-report.json",
     "totals": {
-      "posts": 336,
+      "posts": 337,
       "withCouples": 83,
       "needAction": 109,
-      "both": 213,
+      "both": 214,
       "masterOnly": 17
     },
-    "posts": 336
+    "posts": 337
   },
   "gmail": {
-    "generatedAt": "2026-10-25T15:05:58.240Z",
+    "generatedAt": "2026-10-25T22:07:38.759Z",
     "sourcesScanned": 32,
     "patternCounts": {
       "flow_getDeviceActionCard": 0,
@@ -204,7 +165,7 @@
       "dcm_auditCapabilities_missing": 0,
       "capability_ref_undefined": 0,
       "clusterutils_destroyed_unbound": 0,
-      "heap_oom_live_data": 0,
+      "heap_oom_live_data": 3,
       "setName_not_fn": 0,
       "sub_capability_value_not_string": 0,
       "ERR_IAS_SLEEPY_TIMEOUT": 0,
@@ -215,7 +176,53 @@
       "ERR_AUDIT_CAPABILITIES": 0,
       "ERR_ZIGBEE_ROUTE_FULL": 0
     },
-    "hits": [],
+    "hits": [
+      {
+        "pattern": "heap_oom_live_data",
+        "severity": "fatal",
+        "status": "fixed_p148",
+        "fix": "LiveDataUpdater: cap overlay (1500), store ≤180KB, manifest version check before segments, heap skip (P148)",
+        "source": ".github/state/diagnostics-report.json",
+        "sacred": {
+          "mfrs": [
+            "_TZ3210_j4pdtz9v",
+            "_TZ3210_j4pdtz"
+          ],
+          "pids": [
+            "TS0044",
+            "TS0001"
+          ]
+        }
+      },
+      {
+        "pattern": "heap_oom_live_data",
+        "severity": "fatal",
+        "status": "fixed_p148",
+        "fix": "LiveDataUpdater: cap overlay (1500), store ≤180KB, manifest version check before segments, heap skip (P148)",
+        "source": ".github/state/diagnostics-crossref.yml",
+        "sacred": {
+          "mfrs": [
+            "_TZ3210_j4pdtz9v"
+          ],
+          "pids": [
+            "TS0001"
+          ]
+        }
+      },
+      {
+        "pattern": "heap_oom_live_data",
+        "severity": "fatal",
+        "status": "fixed_p148",
+        "fix": "LiveDataUpdater: cap overlay (1500), store ≤180KB, manifest version check before segments, heap skip (P148)",
+        "source": ".github/state/diagnostics-report.json#diag",
+        "sacred": {
+          "mfrs": [],
+          "pids": [
+            "TS0044"
+          ]
+        }
+      }
+    ],
     "unknownFatals": [],
     "knownFixed": [
       "flow_getDeviceActionCard",
@@ -248,16 +255,6 @@
     "fail": false
   },
   "priority": [
-    {
-      "score": 90,
-      "dualApp": "BOTH",
-      "source": "github-issue",
-      "id": "#576",
-      "title": "TS0601 / _TZE200_yenbr4om not recognized as curtain_motor (falls back to generic)",
-      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/576",
-      "action": "investigate-code-silent",
-      "forumReply": "NEVER"
-    },
     {
       "score": 90,
       "dualApp": "BOTH",
@@ -296,40 +293,10 @@
       "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/557",
       "action": "investigate-code-silent",
       "forumReply": "NEVER"
-    },
-    {
-      "score": 70,
-      "dualApp": "BOTH",
-      "source": "github-issue",
-      "id": "#571",
-      "title": "[Bug] QT-07S (_TZE284_myd45weu / TS0601) remains unknown and Configure keeps loading — v9.0.1445 Test",
-      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/571",
-      "action": "investigate-code-silent",
-      "forumReply": "NEVER"
-    },
-    {
-      "score": 70,
-      "dualApp": "BOTH",
-      "source": "github-issue",
-      "id": "#570",
-      "title": "[soil_sensor] Bug: AOYAN AY-303Z soil sensor not recognized despite fingerprint in soil_sensor driver",
-      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/570",
-      "action": "investigate-code-silent",
-      "forumReply": "NEVER"
-    },
-    {
-      "score": 70,
-      "dualApp": "BOTH",
-      "source": "github-issue",
-      "id": "#559",
-      "title": "Smartplug",
-      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/559",
-      "action": "investigate-code-silent",
-      "forumReply": "NEVER"
     }
   ],
   "functionalDeep": {
     "ok": true,
-    "durationMs": 2379
+    "durationMs": 1284
   }
 }

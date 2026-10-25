@@ -4,13 +4,13 @@ Silent only. **Never** Homey forum POST / PM / AI paste (T157628).
 Lock **manufacturerName + productId** only. Never invent pid. Dual-app: BOTH | MASTER_ONLY | STABLE_ONLY.
 **P2529:** also audit DP / clusters / flow wire / RX-TX (not couple-lock only).
 
-Generated: **2026-10-25T15:05:57.816Z** · Mode: `full`
+Generated: **2026-10-25T22:07:38.490Z** · Mode: `full`
 
 ## Snapshot
 
 | Channel | Count / note |
 |---------|--------------|
-| GitHub open issues | 7 |
+| GitHub open issues | 3 |
 | GitHub open PRs | 0 |
 | Forum needAction | 109 |
 | Gmail crash state | present |
@@ -21,23 +21,19 @@ Generated: **2026-10-25T15:05:57.816Z** · Mode: `full`
 
 | Score | Dual | Source | ID | Action |
 |------:|------|--------|----|--------|
-| 90 | BOTH | github-issue | #576 | investigate-code-silent |
 | 90 | BOTH | github-issue | #560 | investigate-code-silent |
 | 90 | BOTH | github-issue | #550 | investigate-code-silent |
 | 75 | BOTH | forum | forum-need-action | enrich:investigate + deep-functional (DP/cluster/flow/RX-TX, not mfr+pid only) |
 | 70 | BOTH | github-issue | #557 | investigate-code-silent |
-| 70 | BOTH | github-issue | #571 | investigate-code-silent |
-| 70 | BOTH | github-issue | #570 | investigate-code-silent |
-| 70 | BOTH | github-issue | #559 | investigate-code-silent |
 
 ## Phase results
 
 - **guard**: ok (0ms)
-- **github**: ok (404ms)
-- **gmail**: ok (146ms)
-- **forum**: ok (35411ms)
-- **drivers**: ok (1156ms)
-- **functionalDeep**: ok (2379ms)
+- **github**: ok (236ms)
+- **gmail**: ok (244ms)
+- **forum**: ok (34890ms)
+- **drivers**: ok (2001ms)
+- **functionalDeep**: ok (1284ms)
 
 ## Doctrine
 
