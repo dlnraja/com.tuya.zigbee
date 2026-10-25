@@ -9,13 +9,14 @@ const path = require('path');
 const { describe, it } = require('node:test');
 
 const ROOT = path.join(__dirname, '..', '..');
+const CAPS = require(path.join(ROOT, 'scripts', 'lib', 'publish-caps.cjs')).loadPublishCaps({ root: ROOT, env: {} }); // P3036c single cap source
 const K = require(path.join(ROOT, 'scripts/maintenance/kb-couple-topup.cjs'));
 const clone = (o) => JSON.parse(JSON.stringify(o));
 const drv = (id, m, p) => ({ id, zigbee: { manufacturerName: m, productId: p } });
-const wfEnv = (file, key) => {
-  const y = fs.readFileSync(path.join(ROOT, '.github/workflows', file), 'utf8');
-  const m = new RegExp(`${key}:\\s*["']?(\\d+)`).exec(y);
-  return m ? Number(m[1]) : null;
+// P3036c: caps come from config/publish-caps.json (env var names kept as the lookup keys).
+const wfEnv = (_file, key) => {
+  const k = Object.keys(require(path.join(ROOT, 'scripts', 'lib', 'publish-caps.cjs')).ENV).find((x) => require(path.join(ROOT, 'scripts', 'lib', 'publish-caps.cjs')).ENV[x] === key);
+  return k ? CAPS[k] : null;
 };
 
 describe('P3036b KB couple top-up', () => {
@@ -60,7 +61,7 @@ describe('P3036b KB couple top-up', () => {
       assert.ok(kbMax > 17000 && kbMax <= 20000, `${f} KB ceiling ${kbMax}`);
     }
     const lim = JSON.parse(fs.readFileSync(path.join(ROOT, 'config/platform-limits.json'), 'utf8'));
-    assert.ok(lim.limits.zigbee_combos.limitFrom.alsoEnv.includes('HOMEY_ZIGBEE_KB_TOPUP_MAX_TOTAL'));
+    assert.ok(lim.limits.zigbee_combos.limitFrom.keys.includes('kbTopupMaxTotal'));
   });
 
   it('prepare-publish runs the KB top-up before the TS0601 top-up, with FATAL guards', () => {
@@ -77,12 +78,12 @@ describe('P3036b KB couple top-up', () => {
     const src = JSON.parse(fs.readFileSync(path.join(ROOT, 'app.json'), 'utf8'));
     if (!Array.isArray(src.drivers) || !src.drivers.some((d) => d.zigbee)) return;
     const pay = clone(src);
-    const c = C.compactZigbeeIdentifiers(pay, { maxTotalCombos: wfEnv('auto-publish-on-push.yml', 'HOMEY_ZIGBEE_MAX_TOTAL_COMBOS'), maxDriverCombos: 1500, maxCaseForms: 2, repoRoot: ROOT });
+    const c = C.compactZigbeeIdentifiers(pay, { maxTotalCombos: wfEnv('auto-publish-on-push.yml', 'HOMEY_ZIGBEE_MAX_TOTAL_COMBOS'), maxDriverCombos: CAPS.maxDriverCombos, maxCaseForms: CAPS.maxCaseForms, repoRoot: ROOT });
     assert.ok(!c.overTotalLimit);
     assert.deepStrictEqual(c.sacredMissing || [], []);
     const before = K.exactCouples(pay);
     const ids = pay.drivers.map((d) => d.id).join(',');
-    const r = K.topUp(src, pay, { maxTotal: wfEnv('auto-publish-on-push.yml', 'HOMEY_ZIGBEE_KB_TOPUP_MAX_TOTAL'), root: ROOT });
+    const r = K.topUp(src, pay, { maxTotal: CAPS.kbTopupMaxTotal, maxDriver: CAPS.kbTopupMaxDriver, root: ROOT });
     const after = K.exactCouples(pay);
     for (const k of before) assert.ok(after.has(k), `lost ${k}`);
     assert.strictEqual(pay.drivers.map((d) => d.id).join(','), ids);

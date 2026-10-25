@@ -50,13 +50,12 @@ describe('P2252 Athom zigbee combo budget', () => {
     fs.unlinkSync(tmp);
   });
 
-  it('auto-publish env uses Athom-safe combo caps', () => {
+  it('publish caps (config/publish-caps.json, P3036c single source) stay Athom-safe', () => {
     const yml = fs.readFileSync(path.join(ROOT, '.github/workflows/auto-publish-on-push.yml'), 'utf8');
-    // WHY(8e9914e2ee): budgets were tightened (14000 / 1500) — accept any Athom-safe cap ≤ the old ceiling.
-    const tot = Number((yml.match(/HOMEY_ZIGBEE_MAX_TOTAL_COMBOS:\s*"(\d+)"/) || [])[1]);
-    const drv = Number((yml.match(/HOMEY_ZIGBEE_MAX_DRIVER_COMBOS:\s*"(\d+)"/) || [])[1]);
-    assert.ok(tot > 0 && tot <= 20000, `total combos ${tot}`);
-    assert.ok(drv > 0 && drv <= 2000, `driver combos ${drv}`);
+    const caps = require(path.join(ROOT, 'scripts', 'lib', 'publish-caps.cjs')).loadPublishCaps({ root: ROOT, env: {} });
+    assert.ok(caps.maxTotalCombos > 0 && caps.maxTotalCombos <= 20000, `total combos ${caps.maxTotalCombos}`);
+    assert.ok(caps.maxDriverCombos > 0 && caps.maxDriverCombos <= 2000, `driver combos ${caps.maxDriverCombos}`);
+    assert.ok(!/HOMEY_ZIGBEE_MAX_TOTAL_COMBOS:\s*"\d+"/.test(yml), 'workflow must not hard-code the cap (P3036c)');
     assert.ok(/HOMEY_DRAFT_WAIT_MS:\s*"(?:360000|600000)"/.test(yml));
   });
 });

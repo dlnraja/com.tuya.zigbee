@@ -162,6 +162,15 @@ function npmCacheKeyState() {
 
 /** A limit can follow the value the workflow really uses (e.g. the combos cap owned by P3024b). */
 function resolveLimit(def, root = ROOT) {
+  // P3036c: the combos caps have one source, config/publish-caps.json; the payload may reach the highest listed key.
+  if (def && def.limitFrom && def.limitFrom.capsFile) {
+    try {
+      const caps = JSON.parse(fs.readFileSync(path.join(root, def.limitFrom.capsFile), 'utf8')).caps || {};
+      const vals = [].concat(def.limitFrom.keys || []).map((k) => Number(caps[k]) || 0);
+      const top = Math.max(0, ...vals);
+      if (top > 0) return top;
+    } catch { /* fall back to the static limit */ }
+  }
   if (def && def.limitFrom && def.limitFrom.workflow && def.limitFrom.env) {
     try {
       const yml = fs.readFileSync(path.join(root, def.limitFrom.workflow), 'utf8');

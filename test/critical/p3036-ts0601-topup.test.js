@@ -8,6 +8,7 @@ const T = require('../../scripts/maintenance/ts0601-topup.cjs');
 const C = require('../../scripts/maintenance/compact-zigbee-identifiers.cjs');
 
 const ROOT = path.resolve(__dirname, '../..');
+const CAPS = require(path.join(ROOT, 'scripts', 'lib', 'publish-caps.cjs')).loadPublishCaps({ root: ROOT, env: {} }); // P3036c single cap source
 const drv = (id, mfrs, pids) => ({ id, zigbee: { manufacturerName: mfrs, productId: pids } });
 const clone = (o) => JSON.parse(JSON.stringify(o));
 
@@ -97,13 +98,13 @@ describe('P3036 TS0601 top-up (additive, measured ceiling)', () => {
     const pp = fs.readFileSync(path.join(ROOT, 'scripts/prepare-publish.js'), 'utf8');
     assert.match(pp, /topUpFile\(p3036TopupSource, destAppJson/);
     assert.ok(pp.indexOf('topUpFile(') > pp.indexOf('baselineUnresolved'), 'runs after the compaction checks');
-    for (const wf of ['auto-publish-on-push.yml', 'auto-fix-and-publish.yml']) {
-      const y = fs.readFileSync(path.join(ROOT, '.github/workflows', wf), 'utf8');
-      const v = Number((y.match(/HOMEY_ZIGBEE_TOPUP_MAX_TOTAL:\s*"(\d+)"/) || [])[1]);
-      assert.ok(v > 0 && v <= T.MEASURED_ACCEPTED_MAX_TOTAL, `${wf}: ${v}`);
-    }
+    // P3036c: the ceiling lives in config/publish-caps.json; the workflows no longer set it.
+    const v = CAPS.ts0601TopupMaxTotal;
+    assert.ok(v >= 0 && v <= T.MEASURED_ACCEPTED_MAX_TOTAL, `ts0601TopupMaxTotal ${v}`);
+    assert.match(pp, /publishCaps\.ts0601TopupMaxTotal/);
     const lim = JSON.parse(fs.readFileSync(path.join(ROOT, 'config/platform-limits.json'), 'utf8'));
-    assert.deepStrictEqual(lim.limits.zigbee_combos.limitFrom.alsoEnv, ['HOMEY_ZIGBEE_TOPUP_MAX_TOTAL', 'HOMEY_ZIGBEE_KB_TOPUP_MAX_TOTAL']);
+    assert.strictEqual(lim.limits.zigbee_combos.limitFrom.capsFile, 'config/publish-caps.json');
+    assert.ok(lim.limits.zigbee_combos.limitFrom.keys.includes('ts0601TopupMaxTotal'));
   });
   it('real tree: compaction at the house caps + top-up loses no couple and keeps the driver set', function () {
     this.timeout(120000);

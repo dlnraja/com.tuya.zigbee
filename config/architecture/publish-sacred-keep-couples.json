@@ -2377,6 +2377,24 @@
       "pid": "TS0601",
       "driverId": "wall_switch_6_gang_tuya",
       "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc MH03-6Z-OLED: https://github.com/Koenkk/zigbee-herdsman-converters/blob/eb823146c7f182702cd733ece1722d32d0206222/src/devices/manhot.ts#L438"
+    },
+    {
+      "mfr": "_TZE200_wjk6rurm",
+      "pid": "TS0601",
+      "driverId": "power_meter",
+      "note": "P3036c 25/10/2026: exact TS0601 form for SPM02V1-GT (zigbee-herdsman-converters, P3039a fd00ad088e). Homey matches productId byte-exact; compaction kept only ts0601, so pin the exact form (owner request 17:04 Paris)."
+    },
+    {
+      "mfr": "_TZE204_wjk6rurm",
+      "pid": "TS0601",
+      "driverId": "power_meter",
+      "note": "P3036c 25/10/2026: exact TS0601 form for SPM02V1-GT (zigbee-herdsman-converters, P3039a fd00ad088e). Homey matches productId byte-exact; compaction kept only ts0601, so pin the exact form (owner request 17:04 Paris)."
+    },
+    {
+      "mfr": "_TZE284_wjk6rurm",
+      "pid": "TS0601",
+      "driverId": "power_meter",
+      "note": "P3036c 25/10/2026: exact TS0601 form for SPM02V1-GT (zigbee-herdsman-converters, P3039a fd00ad088e). Homey matches productId byte-exact; compaction kept only ts0601, so pin the exact form (owner request 17:04 Paris)."
     }
   ]
 }
