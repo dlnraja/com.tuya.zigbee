@@ -27,6 +27,7 @@
 const fs = require('fs');
 const path = require('path');
 const caseEvidence = require('./case-variant-evidence.cjs');
+const wireEq = require('./build-wire-equivalents.cjs');
 
 // Legacy budgets (no mfs_db available): historical behavior.
 const DEFAULT_MAX_DRIVER_COMBOS = 350;
@@ -482,9 +483,17 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
   const autoBaseline = Object.prototype.hasOwnProperty.call(opts, 'baseline')
     ? null
     : loadPublishBaseline(repoRoot, opts.baselinePath);
-  const baseline = Object.prototype.hasOwnProperty.call(opts, 'baseline')
+  const rawBaseline = Object.prototype.hasOwnProperty.call(opts, 'baseline')
     ? opts.baseline
     : (autoBaseline && (!autoBaseline.appId || autoBaseline.appId === manifest.id) ? autoBaseline : null);
+  // WHY(P3027b): opt-in (HOMEY_ZIGBEE_PIN_WIRE_EQUIVALENT=1, default off). A pinned
+  // minted case form (_tz3000_x / ts0601) is pinned through its wire spelling,
+  // recorded in baseline.wireEquivalents (only spellings already in the driver).
+  // The fixture itself is not changed; the gate accepts the same equivalence.
+  const pinWireEquivalent = wireEq.wireEquivalentEnabled(opts);
+  const baseline = pinWireEquivalent && rawBaseline
+    ? wireEq.applyWireEquivalents(rawBaseline)
+    : rawBaseline;
   const baselineResolved = baseline
     ? resolveBaselinePins(manifest, baseline)
     : { pins: [], unresolved: [], moved: 0, total: 0 };
@@ -527,6 +536,7 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
     const legacyResult = compactZigbeeIdentifiers(legacyManifest, {
       ...opts,
       dropNeverEmitted: false,
+      pinWireEquivalent: false,
       legacyCaseOrder: true,
       _legacyRun: true,
       verbose: false,
@@ -1119,6 +1129,7 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
     pruned: prunedDrivers.length,
     prunedDrivers,
     neverEmittedDropped,
+    pinWireEquivalent,
     noLossFallback,
     noLossLost,
     rescuedDrivers,

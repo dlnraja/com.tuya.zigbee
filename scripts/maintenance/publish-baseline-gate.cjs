@@ -19,6 +19,7 @@
 const fs = require('fs');
 const path = require('path');
 const { loadPublishBaseline, baselineCouples } = require('./compact-zigbee-identifiers.cjs');
+const { wireEquivalentEnabled } = require('./build-wire-equivalents.cjs');
 
 function payloadCouples(manifest) {
   const set = new Set();
@@ -32,21 +33,45 @@ function payloadCouples(manifest) {
   return set;
 }
 
-function checkBaseline(manifest, baseline) {
+/**
+ * WHY(P3027b): with HOMEY_ZIGBEE_PIN_WIRE_EQUIVALENT=1 (default off) a pinned
+ * minted case form also counts as present when its recorded wire spelling
+ * (baseline.wireEquivalents, same driver) is in the payload with the same pid.
+ */
+function checkBaseline(manifest, baseline, opts = {}) {
   const have = payloadCouples(manifest);
+  const eq = wireEquivalentEnabled(opts) && baseline && baseline.wireEquivalents
+    ? (baseline.wireEquivalents.drivers || {})
+    : null;
+  const equivalentKey = (c) => {
+    const e = eq && eq[c.driverId];
+    if (!e) return null;
+    const m = (e.m && e.m[c.mfr]) || c.mfr;
+    const p = (e.p && e.p[c.pid]) || c.pid;
+    return m === c.mfr && p === c.pid ? null : `${m}\u0000${p}`;
+  };
+  let viaEquivalent = 0;
   const exempt = new Set(((baseline && baseline.exemptions) || [])
     .filter((e) => e && e.mfr && e.pid && e.reason)
     .map((e) => `${e.mfr}\u0000${e.pid}`));
   const missing = [];
   const seen = new Set();
   const couples = baselineCouples(baseline);
+  const byKey = new Map();
   for (const c of couples) {
     const k = `${c.mfr}\u0000${c.pid}`;
-    if (seen.has(k)) continue;
-    seen.add(k);
-    if (!have.has(k) && !exempt.has(k)) missing.push(`${c.mfr}+${c.pid} (was ${c.driverId})`);
+    if (!byKey.has(k)) byKey.set(k, []);
+    byKey.get(k).push(c);
   }
-  return { total: seen.size, missing };
+  for (const [k, list] of byKey) {
+    seen.add(k);
+    if (have.has(k) || exempt.has(k)) continue;
+    const alt = list.map(equivalentKey).find((ek) => ek && have.has(ek));
+    if (alt) { viaEquivalent += 1; continue; }
+    const c = list[0];
+    missing.push(`${c.mfr}+${c.pid} (was ${c.driverId})`);
+  }
+  return { total: seen.size, missing, viaEquivalent };
 }
 
 if (require.main === module) {
@@ -67,7 +92,7 @@ if (require.main === module) {
     for (const m of r.missing.slice(0, 30)) console.error(`  - ${m}`);
     process.exit(1);
   }
-  console.log(`[P3024b] OK: all ${r.total} couples of Test package ${baseline.version} present in payload`);
+  console.log(`[P3024b] OK: all ${r.total} couples of Test package ${baseline.version} present in payload${r.viaEquivalent ? ` (${r.viaEquivalent} via P3027b wire equivalent)` : ''}`);
 }
 
 module.exports = { checkBaseline, payloadCouples };
