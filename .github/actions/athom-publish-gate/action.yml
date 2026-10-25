@@ -1,0 +1,63 @@
+# P3036: shared Athom publish gate (docs/knowledge/P3036_ATHOM_PUBLISH_POLICY.md).
+# Green CI on this SHA (or a code-identical ancestor) + per-app spacing + no build processing.
+# Never uploads, never fails the job: read the `go` output and skip the upload when it is 'false'.
+name: 'P3036 Athom publish gate'
+description: 'Green-CI gate, upload spacing and busy check before any Athom upload (athom-publish-policy.js)'
+inputs:
+  app_id:
+    description: 'Athom app id (com.dlnraja.tuya.zigbee, .stable, .bastien)'
+    required: true
+  github_token:
+    description: 'Token with actions:read (and actions:write to dispatch missing CI)'
+    required: true
+  homey_pat:
+    description: 'HOMEY_PAT secret, used read-only to refresh the build snapshot'
+    required: false
+    default: ''
+  transient_retry:
+    required: false
+    default: ''
+  deferred_retry:
+    required: false
+    default: ''
+  override_spacing:
+    description: 'Manual dispatch only: bypass spacing / 24 h cap (CI must still be green)'
+    required: false
+    default: ''
+  sha:
+    description: 'Commit to gate (default: github.sha)'
+    required: false
+    default: ''
+  wait_ms:
+    description: 'How long to wait for pending CI (ms)'
+    required: false
+    default: '2400000'
+outputs:
+  go:
+    description: "'true' when the upload may run"
+    value: ${{ steps.g.outputs.go }}
+  deferred:
+    description: "'true' when the hold should be retried at the next slot"
+    value: ${{ steps.g.outputs.deferred }}
+  reason:
+    value: ${{ steps.g.outputs.reason }}
+runs:
+  using: composite
+  steps:
+    - id: g
+      shell: bash
+      env:
+        APP_ID: ${{ inputs.app_id }}
+        GITHUB_TOKEN: ${{ inputs.github_token }}
+        HOMEY_PAT: ${{ inputs.homey_pat }}
+        EVENT_NAME: ${{ github.event_name }}
+        TRANSIENT_RETRY: ${{ inputs.transient_retry }}
+        DEFERRED_RETRY: ${{ inputs.deferred_retry }}
+        FORCE_PUBLISH: ${{ inputs.override_spacing }}
+        CI_GATE_WAIT_MS: ${{ inputs.wait_ms }}
+        CI_GATE_SHA: ${{ inputs.sha || github.sha }}
+      run: |
+        if [ -n "$HOMEY_PAT" ] && [ -f scripts/ci/homey-build-status.js ]; then
+          node scripts/ci/homey-build-status.js "$APP_ID" >/dev/null 2>&1 || true
+        fi
+        node .github/scripts/athom-publish-policy.js gate "$APP_ID"

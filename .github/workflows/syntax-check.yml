@@ -27,6 +27,8 @@ on:
       - 'package*.json'
       - 'scripts/ci/**'
       - 'scripts/validation/**'
+  # P3036: the publish gate dispatches a required check that a path filter skipped.
+  workflow_dispatch:
 
 permissions:
   contents: read
