@@ -22,10 +22,11 @@
     "zigbee_combos": {
       "limit": 14000,
       "kind": "self",
-      "source": "HOMEY_ZIGBEE_MAX_TOTAL_COMBOS in auto-publish-on-push.yml (P2252, owned by P3024b; the gate reads the live value, 14000 is the fallback): manufacturerName x productId budget kept after the Aug 2026 processing_failed series. Not documented by Athom.",
+      "source": "HOMEY_ZIGBEE_MAX_TOTAL_COMBOS in auto-publish-on-push.yml (P2252, owned by P3024b; the gate reads the live value, 14000 is the fallback): manufacturerName x productId budget kept after the Aug 2026 processing_failed series. Not documented by Athom. P3036: HOMEY_ZIGBEE_TOPUP_MAX_TOTAL when higher (TS0601 top-up, measured Athom-accepted ceiling ~20000).",
       "limitFrom": {
         "workflow": ".github/workflows/auto-publish-on-push.yml",
-        "env": "HOMEY_ZIGBEE_MAX_TOTAL_COMBOS"
+        "env": "HOMEY_ZIGBEE_MAX_TOTAL_COMBOS",
+        "alsoEnv": ["HOMEY_ZIGBEE_TOPUP_MAX_TOTAL"]
       },
       "warnPct": 99,
       "failPct": 100.01,

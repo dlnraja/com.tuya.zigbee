@@ -162,6 +162,10 @@ jobs:
       # couple of the last Test package + current candidate (test/fixtures/athom-last-test-package-couples.json).
       HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "15500"
       HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "1500"
+      # P3036: additive TS0601 top-up after compaction, up to the measured Athom-accepted ceiling
+      # (~20000 combos: 9.0.664/9.0.698 Test). Adds only, same driver set. "0" disables it.
+      HOMEY_ZIGBEE_TOPUP_MAX_TOTAL: "20000"
+      HOMEY_ZIGBEE_TOPUP_MAX_DRIVER: "2000"
       # P2384: Athom apps API + draft wait — longer than 60s/360s (tip socket hang up)
       HOMEY_API_TIMEOUT_MS: "120000"
       HOMEY_BUILD_POLL_TIMEOUT_MS: "360000"
