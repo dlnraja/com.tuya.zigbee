@@ -653,6 +653,56 @@ function guardComposeLocks(rootDir, applied, originals, run = defaultRunTest) {
   return { kept, reverted };
 }
 
+/**
+ * P3056: publish-budget locks. A promote must never push the TARGET over its compaction budget
+ * (P3024b combo cap) — on 2026-10-25 a [skip ci] promote of P3038c sacred pins pushed master to
+ * 16216 and stable-v5 to 15834 combos (> 15500), hidden from CI. For each lock test that exists on
+ * the target and fails after the promote, the sacred-keep file is restored first, then (if still
+ * red) the promoted composes too; when that makes the test green those files are reverted with
+ * reason `publish_budget_lock` (they stay on Bastien and are ported later). A test that still
+ * fails with the originals is a pre-existing failure and changes nothing.
+ */
+const PUBLISH_BUDGET_LOCKS = ['test/critical/p3024b-publish-baseline-couples.test.js'];
+const SACRED_KEEP_REL = 'config/architecture/publish-sacred-keep-couples.json';
+
+function guardPublishBudget(rootDir, applied, originals, run = defaultRunTest, locks = PUBLISH_BUDGET_LOCKS) {
+  const isCompose = (rel) => /^drivers\/[^/]+\/driver\.compose\.json$/.test(rel);
+  const sensitive = applied.filter((a) => a.rel === SACRED_KEEP_REL || isCompose(a.rel));
+  if (!sensitive.length) {return { kept: applied, reverted: [] };}
+  const live = locks.filter((t) => fs.existsSync(path.join(rootDir, t)));
+  const groups = [sensitive.filter((a) => a.rel === SACRED_KEEP_REL), sensitive].filter((g) => g.length);
+  const out = new Set();
+  const why = new Map();
+  const restore = (a) => {
+    const abs = path.join(rootDir, a.rel);
+    const before = originals.get(a.rel);
+    if (before == null) {fs.rmSync(abs, { force: true });}
+    else {fs.writeFileSync(abs, before);}
+  };
+  for (const t of live) {
+    if (run(rootDir, t)) {continue;}
+    let fixed = false;
+    for (const g of groups) {
+      const todo = g.filter((a) => !out.has(a.rel));
+      const now = todo.map((a) => ({ a, body: fs.existsSync(path.join(rootDir, a.rel)) ? fs.readFileSync(path.join(rootDir, a.rel), 'utf8') : null }));
+      todo.forEach(restore);
+      if (run(rootDir, t)) {
+        todo.forEach((a) => { out.add(a.rel); why.set(a.rel, t); });
+        fixed = true;
+        break;
+      }
+      for (const x of now) {
+        if (x.body == null) {fs.rmSync(path.join(rootDir, x.a.rel), { force: true });}
+        else {fs.writeFileSync(path.join(rootDir, x.a.rel), x.body);}
+      }
+    }
+    if (!fixed) {console.warn(`[bastien-promote] ${t} red before the promote too — left as is`);}
+  }
+  const kept = applied.filter((a) => !out.has(a.rel));
+  const reverted = applied.filter((a) => out.has(a.rel)).map((a) => ({ rel: a.rel, reason: 'publish_budget_lock', test: why.get(a.rel) }));
+  return { kept, reverted };
+}
+
 function regenerateAfterPromote(rootDir, regen = regenerateBranchDocs) {
   try {
     const res = regen(rootDir) || {};
@@ -765,6 +815,9 @@ function main() {
     const g = guardComposeLocks(ROOT, applied, originals);
     applied.splice(0, applied.length, ...g.kept);
     skipped.push(...g.reverted);
+    const b = guardPublishBudget(ROOT, applied, originals);
+    applied.splice(0, applied.length, ...b.kept);
+    skipped.push(...b.reverted);
     appJsonSynced = syncAppJsonFingerprints(ROOT, composeDriverIds(applied));
   }
 
@@ -824,6 +877,9 @@ function main() {
       const sg = guardComposeLocks(stableDir, stableApplied, stableOriginals);
       stableApplied.splice(0, stableApplied.length, ...sg.kept);
       skipped.push(...sg.reverted.map((r) => ({ ...r, rel: `stable:${r.rel}` })));
+      const sb = guardPublishBudget(stableDir, stableApplied, stableOriginals);
+      stableApplied.splice(0, stableApplied.length, ...sb.kept);
+      skipped.push(...sb.reverted.map((r) => ({ ...r, rel: `stable:${r.rel}` })));
       const stableAppSynced = syncAppJsonFingerprints(stableDir, composeDriverIds(stableApplied));
       if (COMMIT && stableApplied.length) {
         const stableRegenerated = regenerateAfterPromote(stableDir);
@@ -915,6 +971,8 @@ module.exports = {
   promoteOne,
   verifyPromotedTests,
   guardComposeLocks,
+  guardPublishBudget,
+  PUBLISH_BUDGET_LOCKS,
   dropClaimedElsewhere,
   dropCollidingAdditions,
   restrictToMaster,
