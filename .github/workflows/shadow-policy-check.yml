@@ -23,8 +23,9 @@ permissions:
   contents: read
 
 concurrency:
-  group: shadow-policy-check
-  cancel-in-progress: false
+  # P3026: read-only policy check, never publishes: one run per ref, a newer push cancels the older run.
+  group: shadow-policy-check-${{ github.ref }}
+  cancel-in-progress: true
 # P2562 forfait + local-smart-learn (all workflows)
 env:
   AI_PLAN_MODE: 'forfait'
@@ -48,6 +49,7 @@ jobs:
         with:
           node-version: 22
           cache: npm
+          cache-dependency-path: .github/npm-cache-key.sha256  # P3026: version-free key, one npm cache per dependency set
       - name: Install deps
         run: |
           if [ -f package.json ]; then
