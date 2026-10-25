@@ -6,6 +6,7 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ## Unreleased — docs refresh (P3032, bastien-home)
 ### Fixed (2026-10-25)
+- **P3052 credits:** thanks to **iBush** (Switcher app, community t/160624) for the timer / auto-shutdown card ideas already shipped here since P2976 (own implementation), now also listed in CREDITS.md. Thanks also to **rospogrigio/localtuya and forks** (study only, no code copied).
 - **P3049 CI:** the JavaScript syntax audit of the PR gate now creates its report folder when it is missing, instead of failing every pull request with "no such file or directory" before checking anything.
 
 ### Added
