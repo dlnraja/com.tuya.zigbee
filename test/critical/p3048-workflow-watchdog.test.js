@@ -37,7 +37,8 @@ test('repeatedFailures: same real signature >= 3 times, publish ignored', () => 
 test('scheduledWorkflows: the repo workflows parse and none runs more often than hourly', () => {
   const list = W.scheduledWorkflows();
   assert.ok(list.length > 5);
-  assert.ok(list.some((w) => w.file === 'automation-loop.yml'));
+  // Port branches: schedules only run from master, so automation-loop.yml lives on master only.
+  if (require('fs').existsSync(path.join(__dirname, '..', '..', '.github', 'workflows', 'automation-loop.yml'))) assert.ok(list.some((w) => w.file === 'automation-loop.yml'));
   for (const w of list.filter((x) => /^(automation-loop|ci-autofix)\.yml$/.test(x.file))) assert.ok(w.periodH >= 1, w.file);
   assert.strictEqual(W.LABEL, 'automation-watch');
 });
