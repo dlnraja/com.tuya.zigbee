@@ -508,6 +508,10 @@ try {
   // P3036c: every cap comes from config/publish-caps.json (env with the same name overrides for a manual run).
   const publishCaps = require('./lib/publish-caps.cjs').loadPublishCaps();
   console.log(`[P3036c] publish caps (config/publish-caps.json): total ${publishCaps.maxTotalCombos}, driver ${publishCaps.maxDriverCombos}, case forms ${publishCaps.maxCaseForms}, KB top-up ${publishCaps.kbTopupMaxTotal}/${publishCaps.kbTopupMaxDriver}, TS0601 top-up ${publishCaps.ts0601TopupMaxTotal}/${publishCaps.ts0601TopupMaxDriver}${Object.values(publishCaps.from).includes('env') ? ' (some from env)' : ''}`);
+  // P3041: exact manufacturer strings an external source has seen; unsourced case twins get no room.
+  const p3041Sourced = (publishCaps.caseFormsNeedSource || publishCaps.pruneArtifactCaseForms)
+    ? require('./lib/case-form-sources.cjs').loadSourcedForms() : null;
+  if (p3041Sourced) console.log(`[P3041] case forms need a source: ${p3041Sourced.size} sourced exact form(s); prune of pinned twins ${publishCaps.pruneArtifactCaseForms ? 'ON' : 'off'}`);
   let p3036TopupSource = null;
   try { p3036TopupSource = (publishCaps.ts0601TopupMaxTotal > 0 || publishCaps.kbTopupMaxTotal > 0) ? readJson(destAppJson) : null; } catch (_) { p3036TopupSource = null; }
   try {
@@ -515,6 +519,7 @@ try {
       maxTotalCombos: publishCaps.maxTotalCombos || undefined,
       maxDriverCombos: publishCaps.maxDriverCombos || undefined,
       maxCaseForms: publishCaps.maxCaseForms || undefined,
+      caseFormSources: publishCaps.caseFormsNeedSource ? p3041Sourced : undefined,
     });
     if (compact.overTotalLimit) {
       console.error(`FATAL: publish manifest still has ${compact.afterTotal} Zigbee identifier combinations after compaction.`);
@@ -569,14 +574,53 @@ try {
           ...(publishCaps.allowAboveMeasuredCombos ? { HOMEY_ZIGBEE_TOPUP_ALLOW_UNMEASURED: '1' } : {}) }),
         maxDriver: publishCaps.ts0601TopupMaxDriver || undefined,
         maxCaseForms: publishCaps.maxCaseForms || 2,
+        caseFormSources: publishCaps.caseFormsNeedSource ? p3041Sourced : undefined,
       });
-      p3036TopupSource = null;
       console.log(`[P3036] TS0601 top-up: +${tu.addedGroups} manufacturer group(s) (+${tu.addedCombos} combos, ${tu.addedObserved} seen in mfs_db), ${tu.beforeTotal} -> ${tu.afterTotal} / ceiling ${tu.maxTotal}; ${tu.stillMissing} group(s) still out (need more room or a TS0601-only driver).`);
       if (tu.driversAfter !== tu.driversBefore || tu.afterTotal > tu.maxTotal) {
         console.error('FATAL(P3036): TS0601 top-up changed the driver set or passed its ceiling.');
         process.exit(1);
       }
     }
+    // P3041 (OPT-IN, owner yes needed): prune unsourced case twins already in the payload (incl. P3024b pins
+    // whose sourced/canonical twin stays on the same driver), then give the room back to real couples.
+    if (publishCaps.pruneArtifactCaseForms && p3041Sourced) {
+      const { pruneManifest } = require('./maintenance/case-artifact-prune.cjs');
+      const pay = readJson(destAppJson);
+      const driversBefore = (pay.drivers || []).length;
+      const pr = pruneManifest(pay, p3041Sourced);
+      if (pr.orphaned.length || (pay.drivers || []).length !== driversBefore) {
+        console.error(`FATAL(P3041): case prune would orphan ${pr.orphaned.length} couple(s): ${pr.orphaned.slice(0, 10).join(', ')}`);
+        process.exit(1);
+      }
+      fs.writeFileSync(destAppJson, JSON.stringify(pay), 'utf8');
+      console.log(`[P3041] case prune: ${pr.removedForms} unsourced twin form(s) removed (-${pr.removedCombos} combos) in ${Object.keys(pr.perDriver).length} driver(s); each keeps its sourced/canonical twin.`);
+      try { fs.writeFileSync(path.join(path.dirname(destAppJson), 'p3041-case-prune.json'), JSON.stringify(pr.removed), 'utf8'); } catch (_) { /* report only */ }
+      if (p3036TopupSource && publishCaps.kbTopupMaxTotal > 0) {
+        const kbTopUp = require('./maintenance/kb-couple-topup.cjs');
+        const kt2 = kbTopUp.topUpFile(p3036TopupSource, destAppJson, {
+          maxTotal: publishCaps.allowAboveMeasuredCombos ? publishCaps.kbTopupMaxTotal
+            : kbTopUp.ceilingFromEnv({ HOMEY_ZIGBEE_KB_TOPUP_MAX_TOTAL: String(publishCaps.kbTopupMaxTotal) }),
+          maxDriver: publishCaps.kbTopupMaxDriver || undefined,
+          allowUnmeasured: !!publishCaps.allowAboveMeasuredCombos,
+        });
+        console.log(`[P3041] KB top-up after prune: +${kt2.restoredCouples.length} KB couple(s) (+${kt2.addedCombos} combos), ${kt2.beforeTotal} -> ${kt2.afterTotal}${kt2.coverage && kt2.coverage.listed ? `, coverage +${kt2.coverage.restored.length}` : ''}.`);
+        if (kt2.driversAfter !== kt2.driversBefore || kt2.afterTotal > kt2.maxTotal) { console.error('FATAL(P3041): KB re-top-up changed the driver set or passed its ceiling.'); process.exit(1); }
+      }
+      if (p3036TopupSource && publishCaps.ts0601TopupMaxTotal > 0) {
+        const { topUpFile, ceilingFromEnv } = require('./maintenance/ts0601-topup.cjs');
+        const tu2 = topUpFile(p3036TopupSource, destAppJson, {
+          maxTotal: ceilingFromEnv({ ...process.env, HOMEY_ZIGBEE_TOPUP_MAX_TOTAL: String(publishCaps.ts0601TopupMaxTotal),
+            ...(publishCaps.allowAboveMeasuredCombos ? { HOMEY_ZIGBEE_TOPUP_ALLOW_UNMEASURED: '1' } : {}) }),
+          maxDriver: publishCaps.ts0601TopupMaxDriver || undefined,
+          maxCaseForms: publishCaps.maxCaseForms || 2,
+          caseFormSources: p3041Sourced,
+        });
+        console.log(`[P3041] TS0601 top-up after prune: +${tu2.addedGroups} group(s) (+${tu2.addedCombos} combos), ${tu2.beforeTotal} -> ${tu2.afterTotal}; ${tu2.stillMissing} still out.`);
+        if (tu2.driversAfter !== tu2.driversBefore || tu2.afterTotal > tu2.maxTotal) { console.error('FATAL(P3041): TS0601 re-top-up changed the driver set or passed its ceiling.'); process.exit(1); }
+      }
+    }
+    p3036TopupSource = null;
     if (compact.baselineTotal) {
       console.log(`  - P3024b baseline ${compact.baselineVersion}: ${compact.baselineTotal} couples pinned (${compact.baselineMoved} moved to their current driver, ${compact.baselineRestored} re-pinned on their shipped driver)`);
     }
@@ -750,7 +794,9 @@ try {
     const { loadPublishBaseline } = require('./maintenance/compact-zigbee-identifiers.cjs');
     const baseline = loadPublishBaseline(path.join(__dirname, '..'));
     if (!baseline) throw new Error('baseline couples file missing (test/fixtures/athom-last-test-package-couples.json)');
-    const r = checkBaseline(JSON.parse(fs.readFileSync(destAppJson, 'utf8')), baseline);
+    const r = checkBaseline(JSON.parse(fs.readFileSync(destAppJson, 'utf8')), baseline,
+      publishCaps.pruneArtifactCaseForms && p3041Sourced ? { caseEquivalentSourced: p3041Sourced } : {});
+    if (r.caseEquivalent) console.log(`[P3041] P3024b: ${r.caseEquivalent} baseline couple(s) kept through their sourced/canonical case twin (opt-in prune).`);
     if (r.missing.length) {
       console.error(`FATAL(P3024b): ${r.missing.length}/${r.total} couple(s) of Test package ${baseline.version} would disappear from the payload:`);
       for (const m of r.missing.slice(0, 20)) console.error(`  - ${m}`);

@@ -255,3 +255,8 @@ Owner decision 17:29 (t523u) and rule 17:31 (t524u). 15500 was our own heuristic
 
   P3024b: 0 lost on all 3. Bastien: 0 couple lost vs before P3038c, KB couples 182 → 1339. No byte reduction was needed: the payload is already minified, has no duplicate byte-identical forms, and its empty fields weigh 4 KB.
 - Rollback: if Athom refuses the next normal master upload (not a transient error), restore `decision.rollback.caps` in the config (17000 / 1008 / 20000 / 1008) and set `allowAboveMeasuredCombos` to 0. The bisect does the rest. No manual Athom upload.
+
+## Update 2026-10-25 18:30 (Paris) — P3041 reduction levers (measured)
+- Bytes: flow 1646 KB + settings 800 KB of 3.33 MB; zigbee identifiers ~4 %. No lossless SDK lever (cards/settings are expanded per driver; merging cards breaks Flows).
+- `caseFormsNeedSource` (ON): unsourced all-lower/upper twins get no compaction/top-up room: +332 real couples at the same combos.
+- `pruneArtifactCaseForms` (OFF, owner yes): at the measured-safe caps 17000/1008 it ships 13719 case-folded couples instead of 9143, max/driver 1008 (was 1364). Details: `docs/knowledge/P3041_PAYLOAD_REDUCTION_2026-10-25.md`.

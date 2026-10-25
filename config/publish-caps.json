@@ -1,5 +1,5 @@
 {
-  "_why": "P3036c (25/10/2026 Paris): single source of the publish Zigbee caps. Read by scripts/lib/publish-caps.cjs (prepare-publish, platform budget gate, z2m-coverage, tests, workflows). Change a cap here only; the publish workflows no longer set HOMEY_ZIGBEE_* caps (an env var with that name still overrides for a manual run). Values stay within what Athom accepted (docs/knowledge/ATHOM_LIMITS.md on master).",
+  "_why": "P3036c (25/10/2026 Paris): single source of the publish Zigbee caps. Read by scripts/lib/publish-caps.cjs (prepare-publish, platform budget gate, z2m-coverage, tests, workflows). Change a cap here only; the publish workflows no longer set HOMEY_ZIGBEE_* caps (an env var with that name still overrides for a manual run). Values stay within what Athom accepted (docs/knowledge/ATHOM_LIMITS.md on master). P3041: caseFormsNeedSource 1 = unsourced all-lower/all-upper case twins get no compaction/top-up room (removes nothing pinned); pruneArtifactCaseForms 1 = also prune pinned twins whose sourced/canonical twin stays on the same driver (owner yes needed, default 0).",
   "caps": {
     "maxTotalCombos": 20000,
     "maxDriverCombos": 1500,
@@ -9,7 +9,9 @@
     "ts0601TopupMaxTotal": 45000,
     "ts0601TopupMaxDriver": 2000,
     "maxUploadAppJsonBytes": 3537000,
-    "allowAboveMeasuredCombos": 1
+    "allowAboveMeasuredCombos": 1,
+    "caseFormsNeedSource": 1,
+    "pruneArtifactCaseForms": 0
   },
   "measured": {
     "acceptedMaxTotalCombos": 20000,
