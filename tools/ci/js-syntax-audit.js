@@ -42,8 +42,12 @@ for (const f of files) {
 }
 
 const rel = files.length;
+// P3049: .github/state is not tracked on every branch (absent on master/bastien-home) —
+// create it so the audit reports syntax instead of dying on ENOENT (failed pr-gate on every PR).
+const STATE_DIR = path.join(ROOT, '.github', 'state');
+fs.mkdirSync(STATE_DIR, { recursive: true });
 fs.writeFileSync(
-  path.join(ROOT, '.github', 'state', 'js-syntax-audit.json'),
+  path.join(STATE_DIR, 'js-syntax-audit.json'),
   JSON.stringify({ generated: new Date().toISOString(), total: rel, bad }, null, 1)
 );
 console.log(`[js-syntax-audit] ${rel} fichiers vérifiés | syntaxe invalide: ${bad.length}`);
