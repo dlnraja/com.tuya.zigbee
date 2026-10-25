@@ -110,3 +110,13 @@ loop guard and daily cap, `ci-autofix` ignores re-run attempts and its own compl
 - The per-signature cap of `ci-autofix` uses the journal, which the daily loop updates; between two loops
   the per-workflow cap (3 re-runs in 24 h, counted live from the API) is the effective guard.
 - The watchdog only sees workflows with an active `schedule:`; dispatch-only workflows are not watched.
+
+## Branches (stable-v5, bastien-home)
+
+GitHub runs `schedule` and `workflow_run` triggers from the default branch only, so `automation-loop.yml`,
+`ci-autofix.yml` and the forum OCR step stay on master. They still cover the port branches: the loop fetches
+`stable-v5` and `bastien-home` (depth 1) for the digest, and the watchdog and CI failure collector read runs of
+every branch through the API. The port branches get the byte-identical `athom-publish-policy.js` (hash checked by
+`test/critical/p3036-athom-publish-policy.test.js`), the gate action, the scripts in `scripts/automation/`,
+`data/automation/failure-patterns.json`, the platform-budget report artifact, the journal `merge=union` rule and
+the `p3048-*` tests, so a manual `workflow_dispatch` on a branch uses the same code.
