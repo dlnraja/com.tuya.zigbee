@@ -4,6 +4,7 @@ First commit that names each P-number; summary is the commit subject. Details li
 
 | P | date | commit | subject |
 |---|---|---|---|
+| P3033 | 2026-10-25 | [c3181f761](https://github.com/dlnraja/com.tuya.zigbee/commit/c3181f7610db79852cc680c3f7af7e72055aa1e1) | docs(P3033): storage cleanup first run results [skip ci] |
 | P3032 | 2026-10-25 | [10755eff8](https://github.com/dlnraja/com.tuya.zigbee/commit/10755eff8489541c9503ad05bebc6abaf8101185) | docs(P3032): work log covers P3030 TaHoma lessons (c0112d6148) [skip ci] |
 | P3030 | 2026-10-25 | [10755eff8](https://github.com/dlnraja/com.tuya.zigbee/commit/10755eff8489541c9503ad05bebc6abaf8101185) | docs(P3032): work log covers P3030 TaHoma lessons (c0112d6148) [skip ci] |
 | P3029 | 2026-10-25 | [69386974c](https://github.com/dlnraja/com.tuya.zigbee/commit/69386974c2e095e3821ee6961ab093813348c14d) | docs(P3032): complete docs + references — code-reference and doc-coverage generators (report-mode CI), INDEX covers every KB file, work log P3015-P3029, PLATFOR |

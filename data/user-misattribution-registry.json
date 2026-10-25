@@ -9266,6 +9266,25 @@
         "P2890",
         "user report 2026-10-19"
       ]
+    },
+    {
+      "id": "p3034-pd9mpyh4-ts0044-scene",
+      "mfr": [
+        "_TZ3000_pd9mpyh4",
+        "_tz3000_pd9mpyh4"
+      ],
+      "productId": [
+        "TS0044"
+      ],
+      "canonicalDriver": "scene_switch_4",
+      "forbiddenDrivers": [
+        "button_wireless_4",
+        "smart_knob",
+        "wall_dimmer_tuya"
+      ],
+      "protocol": "zcl",
+      "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1534 (device interview by motren, 2026-10-24)",
+      "notes": "Daily KB 2026-10-25: battery 4-button scene remote, EP1 0/1/6/0xE000 + EP2-4 genOnOff, same layout as zgyzgdua/wkai4ga5. One reliable source (user interview)."
     }
   ],
   "entries": {
