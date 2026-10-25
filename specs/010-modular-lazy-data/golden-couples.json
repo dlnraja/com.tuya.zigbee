@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-25T16:17:11.847Z",
- "drivers": 413,
+ "generated": "2026-10-25T16:35:26.028Z",
+ "drivers": 414,
  "snapshot": {
   "air_purifier": {
    "mfr": 3,
@@ -1166,6 +1166,12 @@
    "mfrSha": "a438b24ea9c80d45",
    "pidSha": "3ba96bb1ed045b60"
   },
+  "motion_sensor_excellux_zg104plv": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "25a595cfb658bb03",
+   "pidSha": "55637e4a15072a7b"
+  },
   "motion_sensor_radar_mmwave": {
    "mfr": 11,
    "pid": 7,
@@ -1173,9 +1179,9 @@
    "pidSha": "bf550bfce5b1a93d"
   },
   "motion_sensor_switch": {
-   "mfr": 3,
+   "mfr": 2,
    "pid": 5,
-   "mfrSha": "142c1129de8825d6",
+   "mfrSha": "632b05904da72e68",
    "pidSha": "d708cdcadb08389b"
   },
   "outdoor_2_socket": {
@@ -1683,9 +1689,9 @@
    "pidSha": "455c46e8c8549693"
   },
   "slim_motion_sensor": {
-   "mfr": 3,
+   "mfr": 4,
    "pid": 2,
-   "mfrSha": "9f9207d39f64e680",
+   "mfrSha": "0af4589fd14bbfb4",
    "pidSha": "807cd66ebf624d74"
   },
   "smartPlug_DinRail": {
@@ -1737,9 +1743,9 @@
    "pidSha": "a799fdf7956e93cd"
   },
   "smart_irrigation_valve": {
-   "mfr": 3,
+   "mfr": 2,
    "pid": 3,
-   "mfrSha": "b2467773e4bfc1f2",
+   "mfrSha": "47fb61b31748a51e",
    "pidSha": "f10b428ccaa7b390"
   },
   "smart_knob": {
@@ -1857,9 +1863,9 @@
    "pidSha": "ffba1e7b2343f15f"
   },
   "smoke_sensor_ts0601_dp": {
-   "mfr": 1,
+   "mfr": 6,
    "pid": 1,
-   "mfrSha": "c3fc005eca7b86b0",
+   "mfrSha": "41c76995f561c386",
    "pidSha": "455c46e8c8549693"
   },
   "socket_power_strip": {
@@ -1875,9 +1881,9 @@
    "pidSha": "d427455deeb9007c"
   },
   "socket_power_strip_four_three": {
-   "mfr": 5,
+   "mfr": 4,
    "pid": 4,
-   "mfrSha": "a73b7bdcb5507a87",
+   "mfrSha": "5ad4166641af55c1",
    "pidSha": "332c9f0db6816ace"
   },
   "socket_power_strip_four_two": {
@@ -2073,9 +2079,9 @@
    "pidSha": "a18913768ad7ed2f"
   },
   "switch_wireless": {
-   "mfr": 15,
+   "mfr": 11,
    "pid": 3,
-   "mfrSha": "1cb4a695a7cf4b05",
+   "mfrSha": "c7d34c772aa7dc45",
    "pidSha": "81c373714c228628"
   },
   "switch_zbeacon_ts0001": {

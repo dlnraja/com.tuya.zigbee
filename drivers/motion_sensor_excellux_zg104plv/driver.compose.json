@@ -1,0 +1,68 @@
+{
+  "id": "motion_sensor_excellux_zg104plv",
+  "name": {
+    "en": "PIR motion + light sensor (Excellux ZG-104PLV)",
+    "fr": "Détecteur de mouvement + luminosité (Excellux ZG-104PLV)",
+    "nl": "Bewegings- + lichtsensor (Excellux ZG-104PLV)",
+    "de": "Bewegungs- + Lichtsensor (Excellux ZG-104PLV)"
+  },
+  "class": "sensor",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "alarm_motion",
+    "measure_battery",
+    "measure_luminance"
+  ],
+  "energy": {
+    "batteries": [
+      "OTHER"
+    ]
+  },
+  "images": {
+    "small": "/drivers/motion_sensor_excellux_zg104plv/assets/images/small.png",
+    "large": "/drivers/motion_sensor_excellux_zg104plv/assets/images/large.png"
+  },
+  "settings": [
+    {
+      "$extends": [
+        "zcl_cluster_layer"
+      ]
+    }
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "PIRIV01",
+      "piriv01"
+    ],
+    "productId": [
+      "Excellux"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5
+        ],
+        "bindings": []
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Press the pairing button for about 5 seconds until the indicator blinks.",
+        "fr": "Appuyez sur le bouton d’appairage environ 5 secondes jusqu’à ce que le voyant clignote.",
+        "nl": "Druk ongeveer 5 seconden op de koppelknop tot het lampje knippert.",
+        "de": "Drücken Sie die Kopplungstaste etwa 5 Sekunden, bis die Anzeige blinkt."
+      }
+    }
+  },
+  "metadata": {
+    "source": "zigbee-herdsman-converters tuya.ts ZG-104PLV (Excellux, modelId Excellux / manufacturer PIRIV01): DP1 occupancy (1 = motion), DP4 battery %, DP20 illuminance (lux). Vibration DP3/DP50 and tuning DPs not exposed. Reimplemented and credited (P3039), no upstream code copied."
+  }
+}
