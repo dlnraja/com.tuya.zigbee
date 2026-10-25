@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-25T15:34:40.966Z",
+ "updated": "2026-10-25T15:52:41.631Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -39614,6 +39614,12 @@
    "status": "done",
    "date": "2026-10-20",
    "note": "ee8nrt2l|TS0044 -> button_wireless_4; 5ftkaulg|TS0011 -> switch_1gang; 0aps0h1r+o7m83470|TS0212 -> co_sensor (IAS CO); Lidl HG06338 vmpbygs5/oznonj5q/wzauvbcs|TS011F -> socket_power_strip"
+  },
+  "p3039a-power-meter-ts0601-case": {
+   "status": "done",
+   "date": "2026-10-25",
+   "note": "power_meter exact TS0601 added (additive); compaction still drops the variant, sacred pin proposed",
+   "by": "p3039"
   },
   "root-cause:P2865-trv-announce": {
    "status": "done",

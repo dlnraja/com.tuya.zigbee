@@ -162,7 +162,7 @@ function args(argv) {
   for (let i = 2; i < argv.length; i++) {
     const a = argv[i];
     const v = () => argv[++i];
-    if (a === '--kb') { o.kb = v(); } else if (a === '--zhc-pkg') { o.zhcPkg = v(); } else if (a === '--root') { const [b, d] = v().split('='); o.roots[b] = path.resolve(d); } else if (a === '--sources') { o.sources = v().split(','); } else if (a === '--out-json') { o.outJson = v(); } else if (a === '--out-md') { o.outMd = v(); } else if (a === '--no-worktrees') { o.noWorktrees = true; }
+    if (a === '--help' || a === '-h') { o.help = true; } else if (a === '--kb') { o.kb = v(); } else if (a === '--zhc-pkg') { o.zhcPkg = v(); } else if (a === '--root') { const [b, d] = v().split('='); o.roots[b] = path.resolve(d); } else if (a === '--sources') { o.sources = v().split(','); } else if (a === '--out-json') { o.outJson = v(); } else if (a === '--out-md') { o.outMd = v(); } else if (a === '--no-worktrees') { o.noWorktrees = true; }
   }
   return o;
 }
@@ -312,6 +312,7 @@ function markdown(out) {
 
 function main() {
   const o = args(process.argv);
+  if (o.help) { process.stdout.write(fs.readFileSync(__filename, 'utf8').split('\n').filter((l) => /^ \*   node /.test(l) || /^ \*\s+\[--/.test(l)).join('\n') + '\n'); return; }
   const made = ensureRoots(o);
   try {
     const { sources, couples } = build(o);
