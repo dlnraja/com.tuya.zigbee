@@ -162,11 +162,26 @@ function npmCacheKeyState() {
 
 /** A limit can follow the value the workflow really uses (e.g. the combos cap owned by P3024b). */
 function resolveLimit(def, root = ROOT) {
+  // P3036c: the combos caps have one source, config/publish-caps.json; the payload may reach the highest listed key.
+  if (def && def.limitFrom && def.limitFrom.capsFile) {
+    try {
+      const caps = JSON.parse(fs.readFileSync(path.join(root, def.limitFrom.capsFile), 'utf8')).caps || {};
+      const vals = [].concat(def.limitFrom.keys || []).map((k) => Number(caps[k]) || 0);
+      const top = Math.max(0, ...vals);
+      if (top > 0) return top;
+    } catch { /* fall back to the static limit */ }
+  }
   if (def && def.limitFrom && def.limitFrom.workflow && def.limitFrom.env) {
     try {
       const yml = fs.readFileSync(path.join(root, def.limitFrom.workflow), 'utf8');
       const m = new RegExp(`${def.limitFrom.env}\\s*:\\s*["']?(\\d+(?:\\.\\d+)?)`).exec(yml);
-      if (m) return Number(m[1]);
+      // P3036b: a second cap that may legitimately raise the payload above the first (KB top-up ceiling).
+      let also = 0;
+      for (const env of [].concat(def.limitFrom.alsoEnv || [])) {
+        const a = new RegExp(`${env}\\s*:\\s*["']?(\\d+(?:\\.\\d+)?)`).exec(yml);
+        if (a) also = Math.max(also, Number(a[1]));
+      }
+      if (m) return Math.max(Number(m[1]), also);
     } catch { /* fall back to the static limit */ }
   }
   return def.limit;

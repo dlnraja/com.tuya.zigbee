@@ -9,6 +9,7 @@ const assert = require('assert');
 const fs = require('fs');
 const path = require('path');
 const ROOT = path.join(__dirname, '..', '..');
+const CAPS = require(path.join(ROOT, 'scripts', 'lib', 'publish-caps.cjs')).loadPublishCaps({ root: ROOT, env: {} }); // P3036c single cap source
 const rj = (...p) => JSON.parse(fs.readFileSync(path.join(ROOT, ...p), 'utf8'));
 const { compactZigbeeIdentifiers } = require(path.join(ROOT, 'scripts', 'maintenance', 'compact-zigbee-identifiers.cjs'));
 const LEDGER = rj('config', 'architecture', 'p3038c-ts0601-compensation.json').added;
@@ -48,7 +49,7 @@ describe('P3038c TS0601 coverage compensation', function () {
     const cwd = process.cwd();
     process.chdir(ROOT);
     let r;
-    try { r = compactZigbeeIdentifiers(m, (()=>{const y=fs.readFileSync(path.join(ROOT,'.github','workflows','auto-publish-on-push.yml'),'utf8');return {maxTotalCombos:Number(y.match(/HOMEY_ZIGBEE_MAX_TOTAL_COMBOS:\s*"(\d+)"/)[1]),maxDriverCombos:1500,maxCaseForms:2};})()); } finally { process.chdir(cwd); }
+    try { r = compactZigbeeIdentifiers(m, { maxTotalCombos: CAPS.maxTotalCombos, maxDriverCombos: CAPS.maxDriverCombos, maxCaseForms: CAPS.maxCaseForms }); } finally { process.chdir(cwd); }
     assert.strictEqual(r.overTotalLimit, false);
     assert.deepStrictEqual(r.sacredMissing || [], []);
     assert.deepStrictEqual(wildcards(m.drivers, 'TS0601'), [], 'payload must carry no TS0601 wildcard');

@@ -22,10 +22,14 @@
     "zigbee_combos": {
       "limit": 14000,
       "kind": "self",
-      "source": "HOMEY_ZIGBEE_MAX_TOTAL_COMBOS in auto-publish-on-push.yml (P2252, owned by P3024b; the gate reads the live value, 14000 is the fallback): manufacturerName x productId budget kept after the Aug 2026 processing_failed series. Not documented by Athom.",
+      "source": "config/publish-caps.json (P3036c single source; the gate takes the highest of maxTotalCombos and the KB/TS0601 top-up ceilings, 14000 is the fallback). manufacturerName x productId budget; Athom accepted ~20000 total and 1008 per driver (docs/knowledge/ATHOM_LIMITS.md). Not documented by Athom.",
       "limitFrom": {
-        "workflow": ".github/workflows/auto-publish-on-push.yml",
-        "env": "HOMEY_ZIGBEE_MAX_TOTAL_COMBOS"
+        "capsFile": "config/publish-caps.json",
+        "keys": [
+          "maxTotalCombos",
+          "kbTopupMaxTotal",
+          "ts0601TopupMaxTotal"
+        ]
       },
       "warnPct": 99,
       "failPct": 100.01,
