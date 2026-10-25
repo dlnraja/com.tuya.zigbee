@@ -97,9 +97,11 @@ describe('market-driver-infer (P2231)', () => {
     }
   });
 
-  it('resolveMarketDriver: Z2M water valve overrides motion default', () => {
+  // P3041 (25/10/2026 Paris): Z2M ZMS4 is a PIR sensor; the registry lock now names slim_motion_sensor
+  // (P3039d lot B move), still not the generic motion_sensor default.
+  it('resolveMarketDriver: registry lock for ZMS4 PIR overrides motion default', () => {
     const r = resolveMarketDriver('_TZ3000_mwd3c2at', 'TS0202');
-    assert.equal(r.driver, 'smart_irrigation_valve');
+    assert.equal(r.driver, 'slim_motion_sensor');
     assert.equal(r.applySafe, true);
     assert.ok(['z2m_desc', 'registry', 'device_truth'].includes(r.tier));
   });

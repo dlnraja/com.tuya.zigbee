@@ -650,18 +650,21 @@
       "productId": [
         "TS0202"
       ],
-      "canonicalDriver": "smart_irrigation_valve",
+      "canonicalDriver": "slim_motion_sensor",
       "forbiddenDrivers": [
         "motion_sensor",
         "sensor_motion_presence",
         "pir_sensor_2"
       ],
-      "protocol": "tuya_ef00",
-      "notes": "Z2M irrigation/water valve — TS0202 must not cartesian to motion PIR default (P2231 CI-safe without z2m.json index).",
+      "protocol": "ias_zone",
+      "notes": "P3041 (25/10/2026 Paris): Z2M/ZHC list _TZ3000_mwd3c2at|TS0202 as RTX ZMS4 'Zigbee PIR sensor' (battery_low, occupancy), so P3039d lot B moved the couple to slim_motion_sensor; canonical realigned (it pointed at smart_irrigation_valve since P2240). The couple is kept; generic motion drivers stay forbidden.",
       "sources": [
         "z2m",
+        "zhc",
         "P2231",
-        "P2240"
+        "P2240",
+        "P3039d",
+        "P3041"
       ],
       "tracks": {
         "master": {
