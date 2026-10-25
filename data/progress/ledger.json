@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-25T01:57:40.810Z",
+ "updated": "2026-10-25T05:00:11.278Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -6628,6 +6628,15 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-10-21T13:17:15.000Z"
+  },
+  "diag:3d767b596c572963": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "e669cc943d16754b",
+   "note": "github mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "github",
+   "mailDate": "2026-10-25T03:57:49.000Z"
   },
   "diag:3d89201258ee96e3": {
    "status": "done",
