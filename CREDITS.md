@@ -14,6 +14,7 @@
 - **zigpy/zha-device-handlers** - ZHA Tuya quirks (zhaquirks/tuya/)
 - **jasonacox/tinytuya** - Tuya local protocol implementation
 - **make-all/tuya-local** - Tuya Local for Home Assistant (YAML config DP mappings)
+- **rospogrigio/localtuya and forks (e.g. xZetsubou/hass-localtuya)** (GPL-3.0) - localtuya and forks: inspiration only, no code copied. Behaviour notes in our own words: `docs/automation/localtuya-study.md`.
 - **dresden-elektronik/deconz-rest-plugin** - deCONZ Tuya support and Data Point Protocol documentation
 
 ## Community Contributors
@@ -21,6 +22,7 @@
 - **drenso/com.tuya2** - TypeScript Tuya cloud app (OAuth2 patterns)
 - **gpmachado** (`gpmachado/com.gpm.homesuite`, GPL-3.0, ideas only — no code copied) — availability last-seen persist + boot grace, rejoin vs timeout (`device_rejoined`), lifecycle `onUninit` teardown, Poll Control skip on sleepy nodes, Homey settings over ZCL dump, jitter/TX pacing (no thundering herd), inching/power-on/backlight re-apply, interview-driven sacred couples, settings-as-labels, connected-devices grouping, rejoin-history settings tab, hide dead firmware settings. Dual-app tags in `.ai/KNOWLEDGE_CACHE.json` → `recentDiscoveries.homesuite`. HomeSuite itself credits **StyraHem / s-dimaio** (Homey.Sonoff.Zigbee) and JohanBendz — acknowledged as HomeSuite’s upstream, not copied here.
 - **andiwirz** - Protocol auto-detect, DP discovery tool
+- **iBush** (Switcher app for Homey, [community t/160624](https://community.homey.app/t/160624)) - ideas only, our own code: timer-for-a-set-time card, time-left token / timer-running trigger, auto-shutdown, child-lock, correct-known-AC-state.
 - **rebtor** - TuyAPI local control
 - **jurgenheine** - Cloud API patterns
 - **robertklep/homey-tuya-zigbee** - Community Tuya Zigbee
