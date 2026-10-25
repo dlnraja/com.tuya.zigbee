@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-25T17:41:34.436Z",
+ "updated": "2026-10-25T18:14:58.704Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -40614,6 +40614,12 @@
    "date": "2026-10-25",
    "note": "phase 1 matrix + adapters; phase 2 batches next",
    "by": "p3039"
+  },
+  "task:p3045-corrige-tout": {
+   "status": "done",
+   "date": "2026-10-25",
+   "note": "memwarn ENOENT fallback, safeFlowCard guard, 145 mapping profiles aligned, #560 TRV06 humidity proven phantom",
+   "by": "p3045"
   },
   "task:pair-2uollq9d-ts011f": {
    "status": "pending",
