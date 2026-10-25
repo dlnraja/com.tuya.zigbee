@@ -33,6 +33,12 @@ describe('P3043 smoke_sensor_ts0601_dp battery capabilities', () => {
     }
     assert.ok(compose.capabilities.includes('alarm_smoke') && compose.capabilities.includes('alarm_tamper'));
   });
+  it('P3043d: the hot-swap profile in driver-mapping-database mirrors the driver (no alarm_battery)', () => {
+    const prof = require(path.join(ROOT, 'data', 'driver-mapping-database.json')).drivers.smoke_sensor_ts0601_dp;
+    assert.ok(prof.capabilities.includes('measure_battery'));
+    assert.ok(!prof.capabilities.includes('alarm_battery'));
+    for (const cap of prof.capabilities) {assert.ok(compose.capabilities.includes(cap), cap);}
+  });
   it('DP14 battery_state is a fallback until DP15 is seen', () => {
     const d = fake();
     d._onProfileDP(14, 0);
