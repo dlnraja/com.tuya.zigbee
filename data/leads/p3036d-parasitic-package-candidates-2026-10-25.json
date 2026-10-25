@@ -1,0 +1,5225 @@
+{
+ "_why": "P3036d / t524u: parasitic mfr x pid combos (mfr on 2+ drivers, pid that no source lists for it, per scripts/ci/mfr-multi-driver-audit.js) found in the PUBLISHED package. Report only, nothing removed. 'candidates' are outside the P3024b baseline and the sacred pins: they may leave the package if room is needed. 'baselineNeedsOwnerYes' are in the P3024b baseline or pinned: list only, removing them needs dlnraja's yes. 'freeableWithoutCollateral' = mfr forms whose every combo on that driver is a candidate (dropping the form from the package loses no couple a source knows).",
+ "generated": "2026-10-25",
+ "payload": "master a7c8e190fe prepare-publish",
+ "sourceParasitic": 2233,
+ "packageParasitic": 1039,
+ "candidates": 389,
+ "baselineNeedsOwnerYes": 650,
+ "freeableWithoutCollateral": [
+  {
+   "driverId": "water_leak_sensor_tuya",
+   "mfrs": 10,
+   "combos": 100
+  },
+  {
+   "driverId": "plug_smart",
+   "mfrs": 3,
+   "combos": 33
+  },
+  {
+   "driverId": "temphumidsensor_zcl_th01",
+   "mfrs": 1,
+   "combos": 1
+  }
+ ],
+ "candidatesList": [
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "TS0012",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "TS0013",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "TS0014",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "TS0041",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "TS0042",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "TS0043",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "TS0044",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "TS0052",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "TS0111",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "TS011F",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "TS0121",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "TS0215A",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "TS0502",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "TS0502A",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "TS0601",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "TS0601_dim1",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "TS1101",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "TS110E",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "TS0012",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "TS0013",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "TS0014",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "TS0041",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "TS0042",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "TS0043",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "TS0044",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "TS0052",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "TS0111",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "TS011F",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "TS0121",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "TS0215A",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "TS0502",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "TS0502A",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "TS0601",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "TS0601_dim1",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "TS1101",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "TS110E",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "TS004F",
+   "driverId": "button_wireless_1"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "TS0215A",
+   "driverId": "button_wireless_1"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "TS004F",
+   "driverId": "button_wireless_1"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "TS0215A",
+   "driverId": "button_wireless_1"
+  },
+  {
+   "mfr": "_TZ3000_cehuw1lw",
+   "pid": "TS0004",
+   "driverId": "button_wireless_plug"
+  },
+  {
+   "mfr": "_TZ3000_cehuw1lw",
+   "pid": "TS0111",
+   "driverId": "button_wireless_plug"
+  },
+  {
+   "mfr": "_TZ3000_cehuw1lw",
+   "pid": "TS0121",
+   "driverId": "button_wireless_plug"
+  },
+  {
+   "mfr": "_TZ3000_cehuw1lw",
+   "pid": "TS0201",
+   "driverId": "button_wireless_plug"
+  },
+  {
+   "mfr": "_TZ3000_cehuw1lw",
+   "pid": "TS0601",
+   "driverId": "button_wireless_plug"
+  },
+  {
+   "mfr": "_tz3000_cehuw1lw",
+   "pid": "TS0004",
+   "driverId": "button_wireless_plug"
+  },
+  {
+   "mfr": "_tz3000_cehuw1lw",
+   "pid": "TS0111",
+   "driverId": "button_wireless_plug"
+  },
+  {
+   "mfr": "_tz3000_cehuw1lw",
+   "pid": "TS0121",
+   "driverId": "button_wireless_plug"
+  },
+  {
+   "mfr": "_tz3000_cehuw1lw",
+   "pid": "TS0201",
+   "driverId": "button_wireless_plug"
+  },
+  {
+   "mfr": "_tz3000_cehuw1lw",
+   "pid": "TS0601",
+   "driverId": "button_wireless_plug"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "SNZB-02",
+   "driverId": "climate_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "SNZB-02",
+   "driverId": "climate_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "SNZB-04",
+   "driverId": "contact_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "E1603/E1702",
+   "driverId": "contact_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "MCCGQ01LM",
+   "driverId": "contact_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "DoorWindow-Sensor-ZB3.0",
+   "driverId": "contact_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "MCT-340 E",
+   "driverId": "contact_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "SNZB-04",
+   "driverId": "contact_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "E1603/E1702",
+   "driverId": "contact_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "MCCGQ01LM",
+   "driverId": "contact_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "DoorWindow-Sensor-ZB3.0",
+   "driverId": "contact_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "MCT-340 E",
+   "driverId": "contact_sensor"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "ZBMINI",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "ZBMINIL2",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "ZIGSTAR",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "eT093WRG",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "eT093WRO",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "eTRV0100",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "eTRV0101",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "eTRV0103",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "CC2530",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "CC2531",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "CC2652",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "CUSTOM",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "DIY",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "EFEKTA",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "ESP32",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "MAKER",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "PTVO",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "RELAY",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "ROUTER",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "SENSOR",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "ZBMINI",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "ZBMINIL2",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "ZIGSTAR",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "eT093WRG",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "eT093WRO",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "eTRV0100",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "eTRV0101",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "eTRV0103",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "CC2530",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "CC2531",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "CC2652",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "CUSTOM",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "DIY",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "EFEKTA",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "ESP32",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "MAKER",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "PTVO",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "RELAY",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "ROUTER",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "SENSOR",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "ZBMINI",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "ZBMINIL2",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "ZIGSTAR",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "eT093WRG",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "eT093WRO",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "eTRV0100",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "eTRV0101",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "eTRV0103",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "CC2530",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "CC2531",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "CC2652",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "CUSTOM",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "DIY",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "EFEKTA",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "ESP32",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "MAKER",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "PTVO",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "RELAY",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "ROUTER",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "SENSOR",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "ZBMINI",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "ZBMINIL2",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "ZIGSTAR",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "eT093WRG",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "eT093WRO",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "eTRV0100",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "eTRV0101",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "eTRV0103",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "CC2530",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "CC2531",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "CC2652",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "CUSTOM",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "DIY",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "EFEKTA",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "ESP32",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "MAKER",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "PTVO",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "RELAY",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "ROUTER",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "SENSOR",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "ZBEACON",
+   "pid": "lumi.sensor_ht.agl02",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "ZBEACON",
+   "pid": "lumi.weather",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "zbeacon",
+   "pid": "lumi.sensor_ht.agl02",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "zbeacon",
+   "pid": "lumi.weather",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "Zbeacon",
+   "pid": "DS01",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "Zbeacon",
+   "pid": "Excellux",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "Zbeacon",
+   "pid": "RH3052",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "Zbeacon",
+   "pid": "SM0201",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "Zbeacon",
+   "pid": "THS317-ET",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "Zbeacon",
+   "pid": "TS0201",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "Zbeacon",
+   "pid": "TS0202",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "Zbeacon",
+   "pid": "TS0222",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "Zbeacon",
+   "pid": "TS0601",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "Zbeacon",
+   "pid": "TS1201",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "Zbeacon",
+   "pid": "TY0201",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "Zbeacon",
+   "pid": "WSDCGQ01LM",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "Zbeacon",
+   "pid": "WSDCGQ11LM",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "Zbeacon",
+   "pid": "WSDCGQ12LM",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "Zbeacon",
+   "pid": "lumi.sensor_ht",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "Zbeacon",
+   "pid": "lumi.sensor_ht.agl02",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "Zbeacon",
+   "pid": "lumi.weather",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "_TZ3000_hyfvrar3",
+   "pid": "TS0001",
+   "driverId": "plug"
+  },
+  {
+   "mfr": "_TZ3000_hyfvrar3",
+   "pid": "TS0001_fingerbot",
+   "driverId": "plug"
+  },
+  {
+   "mfr": "_TZ3000_hyfvrar3",
+   "pid": "TS0003",
+   "driverId": "plug"
+  },
+  {
+   "mfr": "_TZ3000_hyfvrar3",
+   "pid": "TS000F",
+   "driverId": "plug"
+  },
+  {
+   "mfr": "_TZ3000_hyfvrar3",
+   "pid": "TS0011",
+   "driverId": "plug"
+  },
+  {
+   "mfr": "_tz3000_hyfvrar3",
+   "pid": "TS0001",
+   "driverId": "plug"
+  },
+  {
+   "mfr": "_tz3000_hyfvrar3",
+   "pid": "TS0001_fingerbot",
+   "driverId": "plug"
+  },
+  {
+   "mfr": "_tz3000_hyfvrar3",
+   "pid": "TS0003",
+   "driverId": "plug"
+  },
+  {
+   "mfr": "_tz3000_hyfvrar3",
+   "pid": "TS000F",
+   "driverId": "plug"
+  },
+  {
+   "mfr": "_tz3000_hyfvrar3",
+   "pid": "TS0011",
+   "driverId": "plug"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "HY0104",
+   "driverId": "plug_energy_monitor"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "HY0105",
+   "driverId": "plug_energy_monitor"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "JZ-ZB-005",
+   "driverId": "plug_energy_monitor"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "LSPA9",
+   "driverId": "plug_energy_monitor"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "TS0121",
+   "driverId": "plug_energy_monitor"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "TSO121",
+   "driverId": "plug_energy_monitor"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "TS0505B",
+   "driverId": "plug_energy_monitor"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "HY0104",
+   "driverId": "plug_energy_monitor"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "HY0105",
+   "driverId": "plug_energy_monitor"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "JZ-ZB-005",
+   "driverId": "plug_energy_monitor"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "LSPA9",
+   "driverId": "plug_energy_monitor"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "TS0121",
+   "driverId": "plug_energy_monitor"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "TSO121",
+   "driverId": "plug_energy_monitor"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "TS0505B",
+   "driverId": "plug_energy_monitor"
+  },
+  {
+   "mfr": "ZBEACON",
+   "pid": "TS0111",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "ZBEACON",
+   "pid": "TS0101",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "ZBEACON",
+   "pid": "TS011F",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "ZBEACON",
+   "pid": "S26R2ZB",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "ZBEACON",
+   "pid": "S31 Lite zb",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "ZBEACON",
+   "pid": "S40LITE",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "ZBEACON",
+   "pid": "S60ZBTPF",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "ZBEACON",
+   "pid": "S60ZBTPG",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "ZBEACON",
+   "pid": "TS0002",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "ZBEACON",
+   "pid": "TS0121",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "zbeacon",
+   "pid": "TS0111",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "zbeacon",
+   "pid": "TS0101",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "zbeacon",
+   "pid": "TS011F",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "zbeacon",
+   "pid": "S26R2ZB",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "zbeacon",
+   "pid": "S31 Lite zb",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "zbeacon",
+   "pid": "S40LITE",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "zbeacon",
+   "pid": "S60ZBTPF",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "zbeacon",
+   "pid": "S60ZBTPG",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "zbeacon",
+   "pid": "TS0002",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "zbeacon",
+   "pid": "TS0121",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "Zbeacon",
+   "pid": "TS0111",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "Zbeacon",
+   "pid": "TS0101",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "Zbeacon",
+   "pid": "TS0601",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "Zbeacon",
+   "pid": "TS011F",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "Zbeacon",
+   "pid": "S26R2ZB",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "Zbeacon",
+   "pid": "S31 Lite zb",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "Zbeacon",
+   "pid": "S40LITE",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "Zbeacon",
+   "pid": "S60ZBTPF",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "Zbeacon",
+   "pid": "S60ZBTPG",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "Zbeacon",
+   "pid": "TS0002",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "Zbeacon",
+   "pid": "TS0121",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "_tz3210_fhx7lk3d",
+   "pid": "TS0111",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "_tz3210_fhx7lk3d",
+   "pid": "TS0101",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "_tz3210_fhx7lk3d",
+   "pid": "TS0601",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "_tz3210_fhx7lk3d",
+   "pid": "TS011F",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "_tz3210_fhx7lk3d",
+   "pid": "S26R2ZB",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "_tz3210_fhx7lk3d",
+   "pid": "S31 Lite zb",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "_tz3210_fhx7lk3d",
+   "pid": "S40LITE",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "_tz3210_fhx7lk3d",
+   "pid": "S60ZBTPF",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "_tz3210_fhx7lk3d",
+   "pid": "S60ZBTPG",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "_tz3210_fhx7lk3d",
+   "pid": "TS0002",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "_tz3210_fhx7lk3d",
+   "pid": "TS0121",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "_TZ3210_FHX7LK3D",
+   "pid": "TS0111",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "_TZ3210_FHX7LK3D",
+   "pid": "TS0101",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "_TZ3210_FHX7LK3D",
+   "pid": "TS0601",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "_TZ3210_FHX7LK3D",
+   "pid": "TS011F",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "_TZ3210_FHX7LK3D",
+   "pid": "S26R2ZB",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "_TZ3210_FHX7LK3D",
+   "pid": "S31 Lite zb",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "_TZ3210_FHX7LK3D",
+   "pid": "S40LITE",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "_TZ3210_FHX7LK3D",
+   "pid": "S60ZBTPF",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "_TZ3210_FHX7LK3D",
+   "pid": "S60ZBTPG",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "_TZ3210_FHX7LK3D",
+   "pid": "TS0002",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "_TZ3210_FHX7LK3D",
+   "pid": "TS0121",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "_TZE284_xpq2rzhq",
+   "pid": "CK-BL702-MWS-01(7016)",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "_tze284_xpq2rzhq",
+   "pid": "CK-BL702-MWS-01(7016)",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "_TZ3000_cehuw1lw",
+   "pid": "TS0121",
+   "driverId": "smartplug"
+  },
+  {
+   "mfr": "_TZ3000_cehuw1lw",
+   "pid": "TSO121",
+   "driverId": "smartplug"
+  },
+  {
+   "mfr": "_tz3000_cehuw1lw",
+   "pid": "TS0121",
+   "driverId": "smartplug"
+  },
+  {
+   "mfr": "_tz3000_cehuw1lw",
+   "pid": "TSO121",
+   "driverId": "smartplug"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "Arteco",
+   "driverId": "soil_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "Arteco",
+   "driverId": "soil_sensor"
+  },
+  {
+   "mfr": "AOYAN",
+   "pid": "Arteco",
+   "driverId": "soil_sensor"
+  },
+  {
+   "mfr": "aoyan",
+   "pid": "Arteco",
+   "driverId": "soil_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "TS0726",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "TS0726",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "_TZ3000_skueekg3",
+   "pid": "TS0601",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "_TZ3000_skueekg3",
+   "pid": "TS0726",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "_tz3000_skueekg3",
+   "pid": "TS0601",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "_tz3000_skueekg3",
+   "pid": "TS0726",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "TS0013",
+   "driverId": "switch_2gang"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "TS0726",
+   "driverId": "switch_2gang"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "TS0013",
+   "driverId": "switch_2gang"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "TS0726",
+   "driverId": "switch_2gang"
+  },
+  {
+   "mfr": "_TZE200_0zaf1cr8",
+   "pid": "01MINIZB",
+   "driverId": "switch_3gang"
+  },
+  {
+   "mfr": "_TZE200_0zaf1cr8",
+   "pid": "BASICZBR3",
+   "driverId": "switch_3gang"
+  },
+  {
+   "mfr": "_TZE200_0zaf1cr8",
+   "pid": "JZ-ZB-004",
+   "driverId": "switch_3gang"
+  },
+  {
+   "mfr": "_TZE200_0zaf1cr8",
+   "pid": "TS0003",
+   "driverId": "switch_3gang"
+  },
+  {
+   "mfr": "_TZE200_0zaf1cr8",
+   "pid": "ts0003",
+   "driverId": "switch_3gang"
+  },
+  {
+   "mfr": "_TZE200_0zaf1cr8",
+   "pid": "Ts0003",
+   "driverId": "switch_3gang"
+  },
+  {
+   "mfr": "_TZE200_0zaf1cr8",
+   "pid": "S26R2ZB",
+   "driverId": "switch_3gang"
+  },
+  {
+   "mfr": "_TZE200_0zaf1cr8",
+   "pid": "S31ZB",
+   "driverId": "switch_3gang"
+  },
+  {
+   "mfr": "_TZE200_0zaf1cr8",
+   "pid": "TS0001",
+   "driverId": "switch_3gang"
+  },
+  {
+   "mfr": "_TZE200_0zaf1cr8",
+   "pid": "TS0013",
+   "driverId": "switch_3gang"
+  },
+  {
+   "mfr": "_TZE200_0zaf1cr8",
+   "pid": "TS0043",
+   "driverId": "switch_3gang"
+  },
+  {
+   "mfr": "_TZE200_0zaf1cr8",
+   "pid": "TS0726",
+   "driverId": "switch_3gang"
+  },
+  {
+   "mfr": "_TZE284_0zaf1cr8",
+   "pid": "01MINIZB",
+   "driverId": "switch_3gang"
+  },
+  {
+   "mfr": "_TZE284_0zaf1cr8",
+   "pid": "BASICZBR3",
+   "driverId": "switch_3gang"
+  },
+  {
+   "mfr": "_TZE284_0zaf1cr8",
+   "pid": "JZ-ZB-004",
+   "driverId": "switch_3gang"
+  },
+  {
+   "mfr": "_TZE284_0zaf1cr8",
+   "pid": "TS0003",
+   "driverId": "switch_3gang"
+  },
+  {
+   "mfr": "_TZE284_0zaf1cr8",
+   "pid": "ts0003",
+   "driverId": "switch_3gang"
+  },
+  {
+   "mfr": "_TZE284_0zaf1cr8",
+   "pid": "Ts0003",
+   "driverId": "switch_3gang"
+  },
+  {
+   "mfr": "_TZE284_0zaf1cr8",
+   "pid": "S26R2ZB",
+   "driverId": "switch_3gang"
+  },
+  {
+   "mfr": "_TZE284_0zaf1cr8",
+   "pid": "S31ZB",
+   "driverId": "switch_3gang"
+  },
+  {
+   "mfr": "_TZE284_0zaf1cr8",
+   "pid": "TS0001",
+   "driverId": "switch_3gang"
+  },
+  {
+   "mfr": "_TZE284_0zaf1cr8",
+   "pid": "TS0013",
+   "driverId": "switch_3gang"
+  },
+  {
+   "mfr": "_TZE284_0zaf1cr8",
+   "pid": "TS0043",
+   "driverId": "switch_3gang"
+  },
+  {
+   "mfr": "_TZE284_0zaf1cr8",
+   "pid": "TS0726",
+   "driverId": "switch_3gang"
+  },
+  {
+   "mfr": "Zbeacon",
+   "pid": "TH01",
+   "driverId": "temphumidsensor_zcl_th01"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "TS0210",
+   "driverId": "vibration_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "TS0210",
+   "driverId": "vibration_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "SNZB-05",
+   "driverId": "water_leak_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "SNZB-05",
+   "driverId": "water_leak_sensor"
+  },
+  {
+   "mfr": "_tz3000_kxlmv9ag",
+   "pid": "ZG-222Z",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_kxlmv9ag",
+   "pid": "LS21001",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_kxlmv9ag",
+   "pid": "SJCGQ11LM",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_kxlmv9ag",
+   "pid": "SJCGQ12LM",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_kxlmv9ag",
+   "pid": "SJCGQ13LM",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_kxlmv9ag",
+   "pid": "HS1WL",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_kxlmv9ag",
+   "pid": "SNZB-05",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_kxlmv9ag",
+   "pid": "3315-S",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_kxlmv9ag",
+   "pid": "TS0601",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_kxlmv9ag",
+   "pid": "q9mpfhw",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_KXLMV9AG",
+   "pid": "ZG-222Z",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_KXLMV9AG",
+   "pid": "LS21001",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_KXLMV9AG",
+   "pid": "SJCGQ11LM",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_KXLMV9AG",
+   "pid": "SJCGQ12LM",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_KXLMV9AG",
+   "pid": "SJCGQ13LM",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_KXLMV9AG",
+   "pid": "HS1WL",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_KXLMV9AG",
+   "pid": "SNZB-05",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_KXLMV9AG",
+   "pid": "3315-S",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_KXLMV9AG",
+   "pid": "TS0601",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_KXLMV9AG",
+   "pid": "q9mpfhw",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_r80pzsb9",
+   "pid": "ZG-222Z",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_r80pzsb9",
+   "pid": "LS21001",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_r80pzsb9",
+   "pid": "SJCGQ11LM",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_r80pzsb9",
+   "pid": "SJCGQ12LM",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_r80pzsb9",
+   "pid": "SJCGQ13LM",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_r80pzsb9",
+   "pid": "HS1WL",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_r80pzsb9",
+   "pid": "SNZB-05",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_r80pzsb9",
+   "pid": "3315-S",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_r80pzsb9",
+   "pid": "TS0601",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_r80pzsb9",
+   "pid": "q9mpfhw",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_R80PZSB9",
+   "pid": "ZG-222Z",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_R80PZSB9",
+   "pid": "LS21001",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_R80PZSB9",
+   "pid": "SJCGQ11LM",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_R80PZSB9",
+   "pid": "SJCGQ12LM",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_R80PZSB9",
+   "pid": "SJCGQ13LM",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_R80PZSB9",
+   "pid": "HS1WL",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_R80PZSB9",
+   "pid": "SNZB-05",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_R80PZSB9",
+   "pid": "3315-S",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_R80PZSB9",
+   "pid": "TS0601",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_R80PZSB9",
+   "pid": "q9mpfhw",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_sgpbz53b",
+   "pid": "ZG-222Z",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_sgpbz53b",
+   "pid": "LS21001",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_sgpbz53b",
+   "pid": "SJCGQ11LM",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_sgpbz53b",
+   "pid": "SJCGQ12LM",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_sgpbz53b",
+   "pid": "SJCGQ13LM",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_sgpbz53b",
+   "pid": "HS1WL",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_sgpbz53b",
+   "pid": "SNZB-05",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_sgpbz53b",
+   "pid": "3315-S",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_sgpbz53b",
+   "pid": "TS0601",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_sgpbz53b",
+   "pid": "q9mpfhw",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_SGPBZ53B",
+   "pid": "ZG-222Z",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_SGPBZ53B",
+   "pid": "LS21001",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_SGPBZ53B",
+   "pid": "SJCGQ11LM",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_SGPBZ53B",
+   "pid": "SJCGQ12LM",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_SGPBZ53B",
+   "pid": "SJCGQ13LM",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_SGPBZ53B",
+   "pid": "HS1WL",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_SGPBZ53B",
+   "pid": "SNZB-05",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_SGPBZ53B",
+   "pid": "3315-S",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_SGPBZ53B",
+   "pid": "TS0601",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_SGPBZ53B",
+   "pid": "q9mpfhw",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_shopg9ss",
+   "pid": "ZG-222Z",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_shopg9ss",
+   "pid": "LS21001",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_shopg9ss",
+   "pid": "SJCGQ11LM",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_shopg9ss",
+   "pid": "SJCGQ12LM",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_shopg9ss",
+   "pid": "SJCGQ13LM",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_shopg9ss",
+   "pid": "HS1WL",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_shopg9ss",
+   "pid": "SNZB-05",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_shopg9ss",
+   "pid": "3315-S",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_shopg9ss",
+   "pid": "TS0601",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_shopg9ss",
+   "pid": "q9mpfhw",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_SHOPG9SS",
+   "pid": "ZG-222Z",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_SHOPG9SS",
+   "pid": "LS21001",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_SHOPG9SS",
+   "pid": "SJCGQ11LM",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_SHOPG9SS",
+   "pid": "SJCGQ12LM",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_SHOPG9SS",
+   "pid": "SJCGQ13LM",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_SHOPG9SS",
+   "pid": "HS1WL",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_SHOPG9SS",
+   "pid": "SNZB-05",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_SHOPG9SS",
+   "pid": "3315-S",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_SHOPG9SS",
+   "pid": "TS0601",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_SHOPG9SS",
+   "pid": "q9mpfhw",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_wmlc9p9z",
+   "pid": "ZG-222Z",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_wmlc9p9z",
+   "pid": "LS21001",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_wmlc9p9z",
+   "pid": "SJCGQ11LM",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_wmlc9p9z",
+   "pid": "SJCGQ12LM",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_wmlc9p9z",
+   "pid": "SJCGQ13LM",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_wmlc9p9z",
+   "pid": "HS1WL",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_wmlc9p9z",
+   "pid": "SNZB-05",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_wmlc9p9z",
+   "pid": "3315-S",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_wmlc9p9z",
+   "pid": "TS0601",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_tz3000_wmlc9p9z",
+   "pid": "q9mpfhw",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_WMLC9P9Z",
+   "pid": "ZG-222Z",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_WMLC9P9Z",
+   "pid": "LS21001",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_WMLC9P9Z",
+   "pid": "SJCGQ11LM",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_WMLC9P9Z",
+   "pid": "SJCGQ12LM",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_WMLC9P9Z",
+   "pid": "SJCGQ13LM",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_WMLC9P9Z",
+   "pid": "HS1WL",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_WMLC9P9Z",
+   "pid": "SNZB-05",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_WMLC9P9Z",
+   "pid": "3315-S",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_WMLC9P9Z",
+   "pid": "TS0601",
+   "driverId": "water_leak_sensor_tuya"
+  },
+  {
+   "mfr": "_TZ3000_WMLC9P9Z",
+   "pid": "q9mpfhw",
+   "driverId": "water_leak_sensor_tuya"
+  }
+ ],
+ "baselineList": [
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "Classic A60 TW",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "E11-N13",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "E11-N14",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "E12-N13",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "E12-N14",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "GL-B-007Z",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "GL-C-007",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "LED1545G12",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "LED1546G12",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "LTW001",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "LTW004",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "LTW010",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "LTW012",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "LTW013",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "LTW015",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "RB 178 T",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "RS 128 T",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "TS0001",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "TS0002",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "TS0003",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "TS000F",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "TS0011",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "TS0502B",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "Classic A60 TW",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "E11-N13",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "E11-N14",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "E12-N13",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "E12-N14",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "GL-B-007Z",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "GL-C-007",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "LED1545G12",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "LED1546G12",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "LTW001",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "LTW004",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "LTW010",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "LTW012",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "LTW013",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "LTW015",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "RB 178 T",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "RS 128 T",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "TS0001",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "TS0002",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "TS0003",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "TS000F",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "TS0011",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "TS0502B",
+   "driverId": "bulb_tunable_white"
+  },
+  {
+   "mfr": "ZBEACON",
+   "pid": "TS0505B",
+   "driverId": "bulb_zbeacon_ts0505b"
+  },
+  {
+   "mfr": "zbeacon",
+   "pid": "TS0505B",
+   "driverId": "bulb_zbeacon_ts0505b"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ts0041",
+   "driverId": "button_wireless_1"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "Ts0041",
+   "driverId": "button_wireless_1"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "TS0041",
+   "driverId": "button_wireless_1"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "TS0601",
+   "driverId": "button_wireless_1"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "zg-101zl",
+   "driverId": "button_wireless_1"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ZG-101ZL",
+   "driverId": "button_wireless_1"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "TS0001",
+   "driverId": "button_wireless_1"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ts0041",
+   "driverId": "button_wireless_1"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "Ts0041",
+   "driverId": "button_wireless_1"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "TS0041",
+   "driverId": "button_wireless_1"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "TS0601",
+   "driverId": "button_wireless_1"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "zg-101zl",
+   "driverId": "button_wireless_1"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ZG-101ZL",
+   "driverId": "button_wireless_1"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "TS0001",
+   "driverId": "button_wireless_1"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "CK-TLSR8656-SS5-02(7014)",
+   "driverId": "climate_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "CK-TLSR8656-SS5-01(7014)",
+   "driverId": "climate_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ZTH13-3.0",
+   "driverId": "climate_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ZTH11-3.0",
+   "driverId": "climate_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "TS0201",
+   "driverId": "climate_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ZG-227Z",
+   "driverId": "climate_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "TS0601",
+   "driverId": "climate_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ts0201",
+   "driverId": "climate_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "Ts0201",
+   "driverId": "climate_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "zg-227z",
+   "driverId": "climate_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ts0601",
+   "driverId": "climate_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "Ts0601",
+   "driverId": "climate_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "CK-TLSR8656-SS5-02(7014)",
+   "driverId": "climate_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "CK-TLSR8656-SS5-01(7014)",
+   "driverId": "climate_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ZTH13-3.0",
+   "driverId": "climate_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ZTH11-3.0",
+   "driverId": "climate_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "TS0201",
+   "driverId": "climate_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ZG-227Z",
+   "driverId": "climate_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "TS0601",
+   "driverId": "climate_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ts0201",
+   "driverId": "climate_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "Ts0201",
+   "driverId": "climate_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "zg-227z",
+   "driverId": "climate_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ts0601",
+   "driverId": "climate_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "Ts0601",
+   "driverId": "climate_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "TS0203",
+   "driverId": "contact_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "3300-S",
+   "driverId": "contact_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "3320-L",
+   "driverId": "contact_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "CK-TLSR8656-SS5-01(7003)",
+   "driverId": "contact_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "DS01",
+   "driverId": "contact_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ZG-102Z",
+   "driverId": "contact_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ts0203",
+   "driverId": "contact_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "Ts0203",
+   "driverId": "contact_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "zg-102z",
+   "driverId": "contact_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "TS0203",
+   "driverId": "contact_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "3300-S",
+   "driverId": "contact_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "3320-L",
+   "driverId": "contact_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "CK-TLSR8656-SS5-01(7003)",
+   "driverId": "contact_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "DS01",
+   "driverId": "contact_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ZG-102Z",
+   "driverId": "contact_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ts0203",
+   "driverId": "contact_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "Ts0203",
+   "driverId": "contact_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "zg-102z",
+   "driverId": "contact_sensor"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "0x8040",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "BASICZBR3",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "BSP-EZ2",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "BSP-FZ2",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "Battery switch, 1 button",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "Battery switch, 2 buttons",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "PJ-1203A",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "S26R2ZB",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "S31ZB",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "S40ZBTPB",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "TRV001",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "TRV003",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "TS0026",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "TS0041A",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "TS0044",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "TS004F",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "TS0052",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "TS0105",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "TS011F",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "TS0224",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "TS0601_meter",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE200_7bztmfm1",
+   "pid": "TS0901",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "0x8040",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "BASICZBR3",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "BSP-EZ2",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "BSP-FZ2",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "Battery switch, 1 button",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "Battery switch, 2 buttons",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "PJ-1203A",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "S26R2ZB",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "S31ZB",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "S40ZBTPB",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "TRV001",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "TRV003",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "TS0026",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "TS0041A",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "TS0044",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "TS004F",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "TS0052",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "TS0105",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "TS011F",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "TS0224",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "TS0601_meter",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze200_7bztmfm1",
+   "pid": "TS0901",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "0x8040",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "BASICZBR3",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "BSP-EZ2",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "BSP-FZ2",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "Battery switch, 1 button",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "Battery switch, 2 buttons",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "PJ-1203A",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "S26R2ZB",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "S31ZB",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "S40ZBTPB",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "TRV001",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "TRV003",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "TS0026",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "TS0041A",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "TS0044",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "TS004F",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "TS0052",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "TS0105",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "TS011F",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "TS0224",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "TS0601_meter",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_TZE204_7bztmfm1",
+   "pid": "TS0901",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "0x8040",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "BASICZBR3",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "BSP-EZ2",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "BSP-FZ2",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "Battery switch, 1 button",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "Battery switch, 2 buttons",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "PJ-1203A",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "S26R2ZB",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "S31ZB",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "S40ZBTPB",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "TRV001",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "TRV003",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "TS0026",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "TS0041A",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "TS0044",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "TS004F",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "TS0052",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "TS0105",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "TS011F",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "TS0224",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "TS0601_meter",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "_tze204_7bztmfm1",
+   "pid": "TS0901",
+   "driverId": "device_air_purifier_plug"
+  },
+  {
+   "mfr": "ZBEACON",
+   "pid": "DS01",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "ZBEACON",
+   "pid": "Excellux",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "ZBEACON",
+   "pid": "RH3052",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "ZBEACON",
+   "pid": "SM0201",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "ZBEACON",
+   "pid": "THS317-ET",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "ZBEACON",
+   "pid": "TS0201",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "ZBEACON",
+   "pid": "TS0202",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "ZBEACON",
+   "pid": "TS0222",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "ZBEACON",
+   "pid": "TS0601",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "ZBEACON",
+   "pid": "TS1201",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "ZBEACON",
+   "pid": "TY0201",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "ZBEACON",
+   "pid": "WSDCGQ01LM",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "ZBEACON",
+   "pid": "WSDCGQ11LM",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "ZBEACON",
+   "pid": "WSDCGQ12LM",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "ZBEACON",
+   "pid": "lumi.sensor_ht",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "zbeacon",
+   "pid": "DS01",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "zbeacon",
+   "pid": "Excellux",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "zbeacon",
+   "pid": "RH3052",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "zbeacon",
+   "pid": "SM0201",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "zbeacon",
+   "pid": "THS317-ET",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "zbeacon",
+   "pid": "TS0201",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "zbeacon",
+   "pid": "TS0202",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "zbeacon",
+   "pid": "TS0222",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "zbeacon",
+   "pid": "TS0601",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "zbeacon",
+   "pid": "TS1201",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "zbeacon",
+   "pid": "TY0201",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "zbeacon",
+   "pid": "WSDCGQ01LM",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "zbeacon",
+   "pid": "WSDCGQ11LM",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "zbeacon",
+   "pid": "WSDCGQ12LM",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "zbeacon",
+   "pid": "lumi.sensor_ht",
+   "driverId": "doorwindowsensor_4"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "01MINIZB",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "3315-S",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "3315-Seu",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "BASICZBR3",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "CK-TLSR8656-SS5-01(7019)",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "HS1WL",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "LS21001",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "S26R2ZB",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "S31ZB",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "SJCGQ11LM",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "SJCGQ12LM",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "SJCGQ13LM",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "SQ510A",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "TS0001",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "TS0001_power",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "TS0001_switch",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "TS0001_switch_module",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "TS0002",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "TS0003",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "TS0004",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "TS000F",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "TS0011",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "TS0012",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "TS0014",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "TS0041",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "TS0101",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "TS0111",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "TS0203",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "TS0601",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "TS0601_generic",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "TS0603",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "TS0726",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "TS110E",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "TS130F",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "TS4100",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "ZBM5-1C-120",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "ZBM5-2C-120",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "ZBM5-3C-120",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "ZBMINI",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "ZBMINIL2",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "ZBMINIL2-R2",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "ZBMINIR",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "ZBMINIR2",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "ZBMINIR2-R2",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "_tz3000_eit6l5",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "_tz3000_kyb656no",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "lumi.sensor_wleak.aq1",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "01MINIZB",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "3315-S",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "3315-Seu",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "BASICZBR3",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "CK-TLSR8656-SS5-01(7019)",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "HS1WL",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "LS21001",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "S26R2ZB",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "S31ZB",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "SJCGQ11LM",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "SJCGQ12LM",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "SJCGQ13LM",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "SQ510A",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "TS0001",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "TS0001_power",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "TS0001_switch",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "TS0001_switch_module",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "TS0002",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "TS0003",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "TS0004",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "TS000F",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "TS0011",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "TS0012",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "TS0014",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "TS0041",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "TS0101",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "TS0111",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "TS0203",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "TS0601",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "TS0601_generic",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "TS0603",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "TS0726",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "TS110E",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "TS130F",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "TS4100",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "ZBM5-1C-120",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "ZBM5-2C-120",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "ZBM5-3C-120",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "ZBMINI",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "ZBMINIL2",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "ZBMINIL2-R2",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "ZBMINIR",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "ZBMINIR2",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "ZBMINIR2-R2",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "_tz3000_eit6l5",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "_tz3000_kyb656no",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "lumi.sensor_wleak.aq1",
+   "driverId": "gas_sensor_switch"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "TS0222",
+   "driverId": "illuminance_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "TS0601",
+   "driverId": "illuminance_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ZG-106Z",
+   "driverId": "illuminance_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ts0222",
+   "driverId": "illuminance_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "Ts0222",
+   "driverId": "illuminance_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "zg-106z",
+   "driverId": "illuminance_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "TS0222",
+   "driverId": "illuminance_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "TS0601",
+   "driverId": "illuminance_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ZG-106Z",
+   "driverId": "illuminance_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ts0222",
+   "driverId": "illuminance_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "Ts0222",
+   "driverId": "illuminance_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "zg-106z",
+   "driverId": "illuminance_sensor"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "TS0601_led",
+   "driverId": "led_controller_dimmable"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "TRI-C1ZR",
+   "driverId": "led_controller_dimmable"
+  },
+  {
+   "mfr": "_TZB210_rkgngb5o",
+   "pid": "TRI-K1ZR",
+   "driverId": "led_controller_dimmable"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "TS0601_led",
+   "driverId": "led_controller_dimmable"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "TRI-C1ZR",
+   "driverId": "led_controller_dimmable"
+  },
+  {
+   "mfr": "_tzb210_rkgngb5o",
+   "pid": "TRI-K1ZR",
+   "driverId": "led_controller_dimmable"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "TS0601",
+   "driverId": "plug_energy_monitor"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "01MINIZB",
+   "driverId": "plug_energy_monitor"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "A11Z",
+   "driverId": "plug_energy_monitor"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "A7Z",
+   "driverId": "plug_energy_monitor"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "BASICZBR3",
+   "driverId": "plug_energy_monitor"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "CK-BL702-SWP-01(7020)",
+   "driverId": "plug_energy_monitor"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "E1603/E1702/E1708",
+   "driverId": "plug_energy_monitor"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "pid": "S26R2ZB",
+   "driverId": "plug_energy_monitor"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "TS0601",
+   "driverId": "plug_energy_monitor"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "01MINIZB",
+   "driverId": "plug_energy_monitor"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "A11Z",
+   "driverId": "plug_energy_monitor"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "A7Z",
+   "driverId": "plug_energy_monitor"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "BASICZBR3",
+   "driverId": "plug_energy_monitor"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "CK-BL702-SWP-01(7020)",
+   "driverId": "plug_energy_monitor"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "E1603/E1702/E1708",
+   "driverId": "plug_energy_monitor"
+  },
+  {
+   "mfr": "_tz3000_9ni6xxld",
+   "pid": "S26R2ZB",
+   "driverId": "plug_energy_monitor"
+  },
+  {
+   "mfr": "ZBEACON",
+   "pid": "TS0601",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "zbeacon",
+   "pid": "TS0601",
+   "driverId": "plug_smart"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "TS0601",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ZG-204ZE",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ZG-204ZH",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ZG-204ZK",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ZG-204ZL",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ZG-204ZM",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ZG-204ZV",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ZG-204ZX",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ZG-302ZL",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ZG-302ZM",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ts0601",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "Ts0601",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "zg-204ze",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "zg-204zh",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "zg-204zk",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "zg-204zl",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "zg-204zm",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "zg-204zv",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "zg-204zx",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "zg-302zl",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "zg-302zm",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "TS0601",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ZG-204ZE",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ZG-204ZH",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ZG-204ZK",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ZG-204ZL",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ZG-204ZM",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ZG-204ZV",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ZG-204ZX",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ZG-302ZL",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ZG-302ZM",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ts0601",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "Ts0601",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "zg-204ze",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "zg-204zh",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "zg-204zk",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "zg-204zl",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "zg-204zm",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "zg-204zv",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "zg-204zx",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "zg-302zl",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "zg-302zm",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "_TZE284_xpq2rzhq",
+   "pid": "ZG-204ZE",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "_TZE284_xpq2rzhq",
+   "pid": "ZG-204ZH",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "_TZE284_xpq2rzhq",
+   "pid": "ZG-204ZK",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "_TZE284_xpq2rzhq",
+   "pid": "ZG-204ZL",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "_TZE284_xpq2rzhq",
+   "pid": "ZG-204ZM",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "_TZE284_xpq2rzhq",
+   "pid": "ZG-204ZV",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "_TZE284_xpq2rzhq",
+   "pid": "ZG-204ZX",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "_TZE284_xpq2rzhq",
+   "pid": "ZG-302ZL",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "_TZE284_xpq2rzhq",
+   "pid": "ZG-302ZM",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "_TZE284_xpq2rzhq",
+   "pid": "zg-204ze",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "_TZE284_xpq2rzhq",
+   "pid": "zg-204zh",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "_TZE284_xpq2rzhq",
+   "pid": "zg-204zk",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "_TZE284_xpq2rzhq",
+   "pid": "zg-204zl",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "_TZE284_xpq2rzhq",
+   "pid": "zg-204zm",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "_TZE284_xpq2rzhq",
+   "pid": "zg-204zv",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "_TZE284_xpq2rzhq",
+   "pid": "zg-204zx",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "_TZE284_xpq2rzhq",
+   "pid": "zg-302zl",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "_TZE284_xpq2rzhq",
+   "pid": "zg-302zm",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "_tze284_xpq2rzhq",
+   "pid": "ZG-204ZE",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "_tze284_xpq2rzhq",
+   "pid": "ZG-204ZH",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "_tze284_xpq2rzhq",
+   "pid": "ZG-204ZK",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "_tze284_xpq2rzhq",
+   "pid": "ZG-204ZL",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "_tze284_xpq2rzhq",
+   "pid": "ZG-204ZM",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "_tze284_xpq2rzhq",
+   "pid": "ZG-204ZV",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "_tze284_xpq2rzhq",
+   "pid": "ZG-204ZX",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "_tze284_xpq2rzhq",
+   "pid": "ZG-302ZL",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "_tze284_xpq2rzhq",
+   "pid": "ZG-302ZM",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "_tze284_xpq2rzhq",
+   "pid": "zg-204ze",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "_tze284_xpq2rzhq",
+   "pid": "zg-204zh",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "_tze284_xpq2rzhq",
+   "pid": "zg-204zk",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "_tze284_xpq2rzhq",
+   "pid": "zg-204zl",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "_tze284_xpq2rzhq",
+   "pid": "zg-204zm",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "_tze284_xpq2rzhq",
+   "pid": "zg-204zv",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "_tze284_xpq2rzhq",
+   "pid": "zg-204zx",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "_tze284_xpq2rzhq",
+   "pid": "zg-302zl",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "_tze284_xpq2rzhq",
+   "pid": "zg-302zm",
+   "driverId": "presence_sensor_radar"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "TS0207",
+   "driverId": "rain_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "TS0207_rain",
+   "driverId": "rain_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "TS0601",
+   "driverId": "rain_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ZG-223Z",
+   "driverId": "rain_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ts0207",
+   "driverId": "rain_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "Ts0207",
+   "driverId": "rain_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ts0207_rain",
+   "driverId": "rain_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "TS0207_RAIN",
+   "driverId": "rain_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "Ts0207_rain",
+   "driverId": "rain_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "zg-223z",
+   "driverId": "rain_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "TS0207",
+   "driverId": "rain_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "TS0207_rain",
+   "driverId": "rain_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "TS0601",
+   "driverId": "rain_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ZG-223Z",
+   "driverId": "rain_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ts0207",
+   "driverId": "rain_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "Ts0207",
+   "driverId": "rain_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ts0207_rain",
+   "driverId": "rain_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "TS0207_RAIN",
+   "driverId": "rain_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "Ts0207_rain",
+   "driverId": "rain_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "zg-223z",
+   "driverId": "rain_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "TS0044",
+   "driverId": "scene_switch_4"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "TS1002",
+   "driverId": "scene_switch_4"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ts0044",
+   "driverId": "scene_switch_4"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "Ts0044",
+   "driverId": "scene_switch_4"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ts1002",
+   "driverId": "scene_switch_4"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "Ts1002",
+   "driverId": "scene_switch_4"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ZG-101ZS",
+   "driverId": "scene_switch_4"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "TS0044",
+   "driverId": "scene_switch_4"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "TS1002",
+   "driverId": "scene_switch_4"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ts0044",
+   "driverId": "scene_switch_4"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "Ts0044",
+   "driverId": "scene_switch_4"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ts1002",
+   "driverId": "scene_switch_4"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "Ts1002",
+   "driverId": "scene_switch_4"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ZG-101ZS",
+   "driverId": "scene_switch_4"
+  },
+  {
+   "mfr": "_TZ3000_cayepv1a",
+   "pid": "TS0121",
+   "driverId": "smartPlug_DinRail"
+  },
+  {
+   "mfr": "_TZ3000_cayepv1a",
+   "pid": "TSO121",
+   "driverId": "smartPlug_DinRail"
+  },
+  {
+   "mfr": "_tz3000_cayepv1a",
+   "pid": "TS0121",
+   "driverId": "smartPlug_DinRail"
+  },
+  {
+   "mfr": "_tz3000_cayepv1a",
+   "pid": "TSO121",
+   "driverId": "smartPlug_DinRail"
+  },
+  {
+   "mfr": "_TZ3000_yi0n4xfd",
+   "pid": "TS0121",
+   "driverId": "smartPlug_DinRail"
+  },
+  {
+   "mfr": "_TZ3000_yi0n4xfd",
+   "pid": "TSO121",
+   "driverId": "smartPlug_DinRail"
+  },
+  {
+   "mfr": "_tz3000_yi0n4xfd",
+   "pid": "TS0121",
+   "driverId": "smartPlug_DinRail"
+  },
+  {
+   "mfr": "_tz3000_yi0n4xfd",
+   "pid": "TSO121",
+   "driverId": "smartPlug_DinRail"
+  },
+  {
+   "mfr": "_TZ3290_ixd9mvv4",
+   "pid": "TS0601",
+   "driverId": "smart_irrigation_valve"
+  },
+  {
+   "mfr": "_TZ3290_ixd9mvv4",
+   "pid": "TS0202",
+   "driverId": "smart_irrigation_valve"
+  },
+  {
+   "mfr": "_tz3290_ixd9mvv4",
+   "pid": "TS0601",
+   "driverId": "smart_irrigation_valve"
+  },
+  {
+   "mfr": "_tz3290_ixd9mvv4",
+   "pid": "TS0202",
+   "driverId": "smart_irrigation_valve"
+  },
+  {
+   "mfr": "_TZE284_6ycgarab",
+   "pid": "TS0205",
+   "driverId": "smoke_sensor"
+  },
+  {
+   "mfr": "_TZE284_6ycgarab",
+   "pid": "SMD9300",
+   "driverId": "smoke_sensor"
+  },
+  {
+   "mfr": "_tze284_6ycgarab",
+   "pid": "TS0205",
+   "driverId": "smoke_sensor"
+  },
+  {
+   "mfr": "_tze284_6ycgarab",
+   "pid": "SMD9300",
+   "driverId": "smoke_sensor"
+  },
+  {
+   "mfr": "_TZE200_0zaf1cr8",
+   "pid": "TS0205",
+   "driverId": "smoke_sensor3"
+  },
+  {
+   "mfr": "_tze200_0zaf1cr8",
+   "pid": "TS0205",
+   "driverId": "smoke_sensor3"
+  },
+  {
+   "mfr": "_TZE200_yh7aoahi",
+   "pid": "TS0205",
+   "driverId": "smoke_sensor3"
+  },
+  {
+   "mfr": "_tze200_yh7aoahi",
+   "pid": "TS0205",
+   "driverId": "smoke_sensor3"
+  },
+  {
+   "mfr": "_TZE284_0zaf1cr8",
+   "pid": "TS0205",
+   "driverId": "smoke_sensor3"
+  },
+  {
+   "mfr": "_tze284_0zaf1cr8",
+   "pid": "TS0205",
+   "driverId": "smoke_sensor3"
+  },
+  {
+   "mfr": "_TZE284_6ycgarab",
+   "pid": "TS0205",
+   "driverId": "smoke_sensor3"
+  },
+  {
+   "mfr": "_tze284_6ycgarab",
+   "pid": "TS0205",
+   "driverId": "smoke_sensor3"
+  },
+  {
+   "mfr": "_TZE200_vzekyi4c",
+   "pid": "TS0205",
+   "driverId": "smoke_sensor3"
+  },
+  {
+   "mfr": "_tze200_vzekyi4c",
+   "pid": "TS0205",
+   "driverId": "smoke_sensor3"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "AY-303Z",
+   "driverId": "soil_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ay-303z",
+   "driverId": "soil_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "AY-302Z",
+   "driverId": "soil_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ay-302z",
+   "driverId": "soil_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "TS0601",
+   "driverId": "soil_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ZG-303Z",
+   "driverId": "soil_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ts0601",
+   "driverId": "soil_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "zg-303z",
+   "driverId": "soil_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "AY-303Z",
+   "driverId": "soil_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ay-303z",
+   "driverId": "soil_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "AY-302Z",
+   "driverId": "soil_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ay-302z",
+   "driverId": "soil_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "TS0601",
+   "driverId": "soil_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ZG-303Z",
+   "driverId": "soil_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ts0601",
+   "driverId": "soil_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "zg-303z",
+   "driverId": "soil_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ZG-301Z",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "TS0001",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "TS0003",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "TS000F",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "TS0011",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "TS011F",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "TS0601",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "zg-301z",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ts0001",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "Ts0001",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ts0003",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "Ts0003",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ts000f",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "Ts000f",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ts0011",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "Ts0011",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ts011f",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "Ts011f",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ZG-301Z",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "TS0001",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "TS0003",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "TS000F",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "TS0011",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "TS011F",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "TS0601",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "zg-301z",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ts0001",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "Ts0001",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ts0003",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "Ts0003",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ts000f",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "Ts000f",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ts0011",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "Ts0011",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ts011f",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "Ts011f",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "_TZ3000_skueekg3",
+   "pid": "TS0003",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "_TZ3000_skueekg3",
+   "pid": "TS0011",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "_TZ3000_skueekg3",
+   "pid": "TS011F",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "_TZ3000_skueekg3",
+   "pid": "ts0003",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "_TZ3000_skueekg3",
+   "pid": "Ts0003",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "_TZ3000_skueekg3",
+   "pid": "ts0011",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "_TZ3000_skueekg3",
+   "pid": "Ts0011",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "_TZ3000_skueekg3",
+   "pid": "ts011f",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "_TZ3000_skueekg3",
+   "pid": "Ts011f",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "_tz3000_skueekg3",
+   "pid": "TS0003",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "_tz3000_skueekg3",
+   "pid": "TS0011",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "_tz3000_skueekg3",
+   "pid": "TS011F",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "_tz3000_skueekg3",
+   "pid": "ts0003",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "_tz3000_skueekg3",
+   "pid": "Ts0003",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "_tz3000_skueekg3",
+   "pid": "ts0011",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "_tz3000_skueekg3",
+   "pid": "Ts0011",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "_tz3000_skueekg3",
+   "pid": "ts011f",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "_tz3000_skueekg3",
+   "pid": "Ts011f",
+   "driverId": "switch_1gang"
+  },
+  {
+   "mfr": "_TZ3000_cayepv1a",
+   "pid": "TS0601",
+   "driverId": "switch_2_gang_metering"
+  },
+  {
+   "mfr": "_TZ3000_cayepv1a",
+   "pid": "TS004F",
+   "driverId": "switch_2_gang_metering"
+  },
+  {
+   "mfr": "_TZ3000_cayepv1a",
+   "pid": "TS0002",
+   "driverId": "switch_2_gang_metering"
+  },
+  {
+   "mfr": "_tz3000_cayepv1a",
+   "pid": "TS0601",
+   "driverId": "switch_2_gang_metering"
+  },
+  {
+   "mfr": "_tz3000_cayepv1a",
+   "pid": "TS004F",
+   "driverId": "switch_2_gang_metering"
+  },
+  {
+   "mfr": "_tz3000_cayepv1a",
+   "pid": "TS0002",
+   "driverId": "switch_2_gang_metering"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ZG-305Z",
+   "driverId": "switch_2gang"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "TS0002",
+   "driverId": "switch_2gang"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "TS0012",
+   "driverId": "switch_2gang"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "TS0601",
+   "driverId": "switch_2gang"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ZG-301Z-2CH",
+   "driverId": "switch_2gang"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "zg-305z",
+   "driverId": "switch_2gang"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ts0002",
+   "driverId": "switch_2gang"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "Ts0002",
+   "driverId": "switch_2gang"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ts0012",
+   "driverId": "switch_2gang"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "Ts0012",
+   "driverId": "switch_2gang"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ts0601",
+   "driverId": "switch_2gang"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "Ts0601",
+   "driverId": "switch_2gang"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "zg-301z-2ch",
+   "driverId": "switch_2gang"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "TS0003",
+   "driverId": "switch_2gang"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "TS011F",
+   "driverId": "switch_2gang"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "TS000F",
+   "driverId": "switch_2gang"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ZG-305Z",
+   "driverId": "switch_2gang"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "TS0002",
+   "driverId": "switch_2gang"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "TS0012",
+   "driverId": "switch_2gang"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "TS0601",
+   "driverId": "switch_2gang"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ZG-301Z-2CH",
+   "driverId": "switch_2gang"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "zg-305z",
+   "driverId": "switch_2gang"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ts0002",
+   "driverId": "switch_2gang"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "Ts0002",
+   "driverId": "switch_2gang"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ts0012",
+   "driverId": "switch_2gang"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "Ts0012",
+   "driverId": "switch_2gang"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ts0601",
+   "driverId": "switch_2gang"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "Ts0601",
+   "driverId": "switch_2gang"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "zg-301z-2ch",
+   "driverId": "switch_2gang"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "TS0003",
+   "driverId": "switch_2gang"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "TS011F",
+   "driverId": "switch_2gang"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "TS000F",
+   "driverId": "switch_2gang"
+  },
+  {
+   "mfr": "ZBEACON",
+   "pid": "TS0001",
+   "driverId": "switch_zbeacon_ts0001"
+  },
+  {
+   "mfr": "zbeacon",
+   "pid": "TS0001",
+   "driverId": "switch_zbeacon_ts0001"
+  },
+  {
+   "mfr": "ZBEACON",
+   "pid": "TH01",
+   "driverId": "temphumidsensor_zcl_th01"
+  },
+  {
+   "mfr": "zbeacon",
+   "pid": "TH01",
+   "driverId": "temphumidsensor_zcl_th01"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "AY02SZ",
+   "driverId": "vibration_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "TS011F",
+   "driverId": "vibration_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "TS0209",
+   "driverId": "vibration_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "TS0601",
+   "driverId": "vibration_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ZG-102ZM",
+   "driverId": "vibration_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ZG-103Z",
+   "driverId": "vibration_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ZG-228Z",
+   "driverId": "vibration_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "zg-102zm",
+   "driverId": "vibration_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "zg-103z",
+   "driverId": "vibration_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "zg-228z",
+   "driverId": "vibration_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "AY02SZ",
+   "driverId": "vibration_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "TS011F",
+   "driverId": "vibration_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "TS0209",
+   "driverId": "vibration_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "TS0601",
+   "driverId": "vibration_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ZG-102ZM",
+   "driverId": "vibration_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ZG-103Z",
+   "driverId": "vibration_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ZG-228Z",
+   "driverId": "vibration_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "zg-102zm",
+   "driverId": "vibration_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "zg-103z",
+   "driverId": "vibration_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "zg-228z",
+   "driverId": "vibration_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "3315-S",
+   "driverId": "water_leak_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "TS0207",
+   "driverId": "water_leak_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ZG-222Z",
+   "driverId": "water_leak_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ZG-226Z",
+   "driverId": "water_leak_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "3315-s",
+   "driverId": "water_leak_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ts0207",
+   "driverId": "water_leak_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "Ts0207",
+   "driverId": "water_leak_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "zg-222z",
+   "driverId": "water_leak_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "zg-226z",
+   "driverId": "water_leak_sensor"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "pid": "TS0601",
+   "driverId": "water_leak_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "3315-S",
+   "driverId": "water_leak_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "TS0207",
+   "driverId": "water_leak_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ZG-222Z",
+   "driverId": "water_leak_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ZG-226Z",
+   "driverId": "water_leak_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "3315-s",
+   "driverId": "water_leak_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "ts0207",
+   "driverId": "water_leak_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "Ts0207",
+   "driverId": "water_leak_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "zg-222z",
+   "driverId": "water_leak_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "zg-226z",
+   "driverId": "water_leak_sensor"
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "TS0601",
+   "driverId": "water_leak_sensor"
+  },
+  {
+   "mfr": "_TZ3290_IXD9MVV4",
+   "pid": "TS0601_watervalve",
+   "driverId": "water_valve_smart"
+  },
+  {
+   "mfr": "_TZ3290_IXD9MVV4",
+   "pid": "TS0601",
+   "driverId": "water_valve_smart"
+  },
+  {
+   "mfr": "_TZ3290_IXD9MVV4",
+   "pid": "TS0111",
+   "driverId": "water_valve_smart"
+  },
+  {
+   "mfr": "_TZ3290_IXD9MVV4",
+   "pid": "TS0001",
+   "driverId": "water_valve_smart"
+  },
+  {
+   "mfr": "_tz3290_ixd9mvv4",
+   "pid": "TS0601_watervalve",
+   "driverId": "water_valve_smart"
+  },
+  {
+   "mfr": "_tz3290_ixd9mvv4",
+   "pid": "TS0601",
+   "driverId": "water_valve_smart"
+  },
+  {
+   "mfr": "_tz3290_ixd9mvv4",
+   "pid": "TS0111",
+   "driverId": "water_valve_smart"
+  },
+  {
+   "mfr": "_tz3290_ixd9mvv4",
+   "pid": "TS0001",
+   "driverId": "water_valve_smart"
+  }
+ ]
+}

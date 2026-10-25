@@ -125,3 +125,9 @@ Owner decision 17:29 (t523u) and rule 17:31 (t524u). 15500 was our own heuristic
 
   P3024b: 0 lost on all 3. Bastien: 0 couple lost vs before P3038c, KB couples 182 → 1339. No byte reduction was needed: the payload is already minified, has no duplicate byte-identical forms, and its empty fields weigh 4 KB.
 - Rollback: if Athom refuses the next normal master upload (not a transient error), restore `decision.rollback.caps` in the config (17000 / 1008 / 20000 / 1008) and set `allowAboveMeasuredCombos` to 0. The bisect does the rest. No manual Athom upload.
+- Parasitic combos (17:55 Paris, after P3039d lot B `b8116e6427`): the mfr-multi-driver audit counts 2233 in the source. 1039 of them are in the published master package:
+  - 650 are in the P3024b baseline or pinned. They are listed only; removing them needs dlnraja's yes.
+  - 389 are outside it, so they can leave the package if room is needed.
+  - Only 134 can go without collateral (every combo of that mfr form on that driver is parasitic): water_leak_sensor_tuya 10 forms/100, plug_smart 3/33, temphumidsensor_zcl_th01 1/1.
+  - Nothing is removed for now. The upload stays under its byte cap (3327316 B, 94.1 %), and those 134 combos would not free the drivers that stay full (2000 per driver). List: `data/leads/p3036d-parasitic-package-candidates-2026-10-25.json`.
+- `_TZE204_qaxkdgyt`|TS0601 (JKD-816COM-Z, P3038c) is held back from gas_sensor on master. The cartesian product would add 13 NEW parasitic combos (audit test P3039d). It is now a lead until a TS0601-only gas+CO driver exists. On bastien-home it has been on gas_sensor since 211520ca81 (pushed, so not touched).
