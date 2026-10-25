@@ -1,26 +1,16 @@
 {
-  "harvestedAt": "2026-10-25T15:05:58.220Z",
+  "harvestedAt": "2026-10-25T22:07:38.726Z",
   "repo": "dlnraja/com.tuya.zigbee",
   "auth": "token",
   "error": null,
   "issues": [
-    {
-      "number": 576,
-      "title": "TS0601 / _TZE200_yenbr4om not recognized as curtain_motor (falls back to generic)",
-      "labels": [
-        "bug"
-      ],
-      "updatedAt": "2026-10-25T14:16:20Z",
-      "user": "migueleap",
-      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/576"
-    },
     {
       "number": 557,
       "title": "🤖 Daily digest",
       "labels": [
         "bot-digest"
       ],
-      "updatedAt": "2026-10-25T11:09:57Z",
+      "updatedAt": "2026-10-25T20:44:08Z",
       "user": "dlnraja",
       "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/557"
     },
@@ -30,25 +20,9 @@
       "labels": [
         "bug"
       ],
-      "updatedAt": "2026-10-23T11:34:03Z",
+      "updatedAt": "2026-10-25T18:54:54Z",
       "user": "artisare",
       "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/560"
-    },
-    {
-      "number": 571,
-      "title": "[Bug] QT-07S (_TZE284_myd45weu / TS0601) remains unknown and Configure keeps loading — v9.0.1445 Test",
-      "labels": [],
-      "updatedAt": "2026-10-12T18:58:40Z",
-      "user": "denis-papin",
-      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/571"
-    },
-    {
-      "number": 570,
-      "title": "[soil_sensor] Bug: AOYAN AY-303Z soil sensor not recognized despite fingerprint in soil_sensor driver",
-      "labels": [],
-      "updatedAt": "2026-10-12T14:44:45Z",
-      "user": "edwinvdp",
-      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/570"
     },
     {
       "number": 550,
@@ -60,22 +34,9 @@
       "updatedAt": "2026-10-04T08:18:31Z",
       "user": "HiepSVG",
       "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/550"
-    },
-    {
-      "number": 559,
-      "title": "Smartplug",
-      "labels": [
-        "enhancement",
-        "device-request",
-        "auto-triage",
-        "fingerprint-supported"
-      ],
-      "updatedAt": "2026-10-03T21:01:31Z",
-      "user": "Lalla80111",
-      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/559"
     }
   ],
   "prs": [],
-  "openIssueCount": 7,
+  "openIssueCount": 3,
   "openPrCount": 0
 }
