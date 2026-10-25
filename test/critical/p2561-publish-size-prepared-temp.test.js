@@ -25,7 +25,7 @@ describe('P2561 publish size gate prepared-temp preference', () => {
     assert.match(src, /P2561/);
   });
 
-  it('stable Publish caps come from config/publish-caps.json: 17000 total, per driver <= 1500 (P3024b, P3036b/c measured)', () => {
+  it('stable Publish caps come from config/publish-caps.json: base total within the accepted maximum, per driver <= 1500 (P3024b, P3036b/c/d measured)', () => {
     const yml = path.join(ROOT, '.github/workflows/publish-stable.yml');
     if (!fs.existsSync(yml)) {
       // master track may not ship this workflow — soft OK
@@ -35,7 +35,7 @@ describe('P2561 publish size gate prepared-temp preference', () => {
     const y = fs.readFileSync(yml, 'utf8');
     assert.doesNotMatch(y, /HOMEY_ZIGBEE_MAX_TOTAL_COMBOS:\s*"\d+"/, 'P3036c: no cap in the workflow');
     const caps = require(path.join(ROOT, 'scripts', 'lib', 'publish-caps.cjs')).loadPublishCaps({ root: ROOT, env: {} });
-    assert.strictEqual(caps.maxTotalCombos, 17000);
+    assert.ok(caps.maxTotalCombos > 0 && caps.maxTotalCombos <= caps.measured.acceptedMaxTotalCombos, String(caps.maxTotalCombos));
     assert.ok(caps.maxDriverCombos > 0 && caps.maxDriverCombos <= 1500, String(caps.maxDriverCombos));
   });
 });

@@ -541,9 +541,13 @@ try {
     if (p3036TopupSource && publishCaps.kbTopupMaxTotal > 0) {
       const kbTopUp = require('./maintenance/kb-couple-topup.cjs');
       const kt = kbTopUp.topUpFile(p3036TopupSource, destAppJson, {
-        maxTotal: kbTopUp.ceilingFromEnv({ HOMEY_ZIGBEE_KB_TOPUP_MAX_TOTAL: String(publishCaps.kbTopupMaxTotal) }),
+        // P3036d: above the measured 20000 only when config/publish-caps.json allows it (owner decision).
+        maxTotal: publishCaps.allowAboveMeasuredCombos ? publishCaps.kbTopupMaxTotal
+          : kbTopUp.ceilingFromEnv({ HOMEY_ZIGBEE_KB_TOPUP_MAX_TOTAL: String(publishCaps.kbTopupMaxTotal) }),
         maxDriver: publishCaps.kbTopupMaxDriver || undefined,
+        allowUnmeasured: !!publishCaps.allowAboveMeasuredCombos,
       });
+      if (kt.coverage && kt.coverage.listed) console.log(`[P3036d] coverage matrix top-up: ${kt.coverage.restored.length} compacted couple(s) put back, ${kt.coverage.already} already in, ${kt.coverage.noRoom} no room, ${kt.coverage.notPlaceable} not declared byte-exact by a payload driver / ${kt.coverage.listed} listed.`);
       const pr = kt.priority || { listed: 0, restored: [], already: 0, notPlaceable: [] };
       console.log(`[P3036b] KB top-up: priority ${pr.restored.length} restored + ${pr.already} already in / ${pr.listed} listed; ${kt.restoredCouples.length} KB couple(s) added (+${kt.addedCombos} combos), ${kt.beforeTotal} -> ${kt.afterTotal} / ceiling ${kt.maxTotal}, driver max ${kt.maxDriver}; ${kt.stillMissing.length} still out (room), ${kt.unplaceable.length} unplaceable (productId or driver not in payload).`);
       if (kt.driversAfter !== kt.driversBefore || kt.afterTotal > kt.maxTotal) {
@@ -561,7 +565,8 @@ try {
     if (p3036TopupSource && publishCaps.ts0601TopupMaxTotal > 0) {
       const { topUpFile, ceilingFromEnv } = require('./maintenance/ts0601-topup.cjs');
       const tu = topUpFile(p3036TopupSource, destAppJson, {
-        maxTotal: ceilingFromEnv({ ...process.env, HOMEY_ZIGBEE_TOPUP_MAX_TOTAL: String(publishCaps.ts0601TopupMaxTotal) }),
+        maxTotal: ceilingFromEnv({ ...process.env, HOMEY_ZIGBEE_TOPUP_MAX_TOTAL: String(publishCaps.ts0601TopupMaxTotal),
+          ...(publishCaps.allowAboveMeasuredCombos ? { HOMEY_ZIGBEE_TOPUP_ALLOW_UNMEASURED: '1' } : {}) }),
         maxDriver: publishCaps.ts0601TopupMaxDriver || undefined,
         maxCaseForms: publishCaps.maxCaseForms || 2,
       });
@@ -677,7 +682,12 @@ try {
     }
     const sizeMB = fs.statSync(destAppJson).size / (1024 * 1024);
     console.log(`Target app.json size (post Zigbee matrix compact): ${sizeMB.toFixed(2)} MB`);
-    if (sizeMB > 4) {
+    // P3036d: with an upload byte cap in config/publish-caps.json, the binding check is the final one below
+    // (after the orphan flow card prune, i.e. the app.json actually uploaded); this intermediate figure
+    // still contains the orphan cards (it was the "93 %" of the 4 MB gate, 3.73 MB vs 3.13 MB uploaded).
+    if (sizeMB > 4 && publishCaps.maxUploadAppJsonBytes > 0) {
+      console.warn(`[P3036d] intermediate app.json ${sizeMB.toFixed(2)} MB > 4 MB before the orphan prune; the final upload gate decides.`);
+    } else if (sizeMB > 4) {
       console.error('FATAL: app.json is larger than 4MB after Zigbee compaction. Athom will reject.');
       console.error('Lower HOMEY_ZIGBEE_MAX_TOTAL_COMBOS / MAX_DRIVER_COMBOS or split broad drivers.');
       process.exit(1);
@@ -717,6 +727,18 @@ try {
   } catch (e) {
     console.error('FATAL(P3024b): baseline couple gate failed:', e.message);
     process.exit(1);
+  }
+
+  // P3036d: final upload size gate on the app.json actually uploaded. Cap = 90 % of the largest app.json
+  // Athom accepted (3.93 MB, 9.0.1520), from config/publish-caps.json.
+  {
+    const upBytes = fs.statSync(destAppJson).size;
+    const upCap = Number(publishCaps.maxUploadAppJsonBytes) || 0;
+    console.log(`[P3036d] uploaded app.json ${upBytes} bytes${upCap ? ` / cap ${upCap} (${(100 * upBytes / upCap).toFixed(1)} %)` : ''}`);
+    if (upCap && upBytes > upCap) {
+      console.error(`FATAL(P3036d): uploaded app.json ${upBytes} bytes > ${upCap} (config/publish-caps.json maxUploadAppJsonBytes). Lower kbTopupMaxTotal / ts0601TopupMaxTotal.`);
+      process.exit(1);
+    }
   }
 
   // 5b) Remove publish-only caches that are not required for runtime startup.
