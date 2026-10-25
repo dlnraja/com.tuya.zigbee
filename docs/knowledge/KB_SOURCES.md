@@ -15,7 +15,7 @@ Mirrors live outside the repo (/workspace/kb/<source>, shallow git clones). The 
 | Johan Bendz Tuya Zigbee | https://github.com/JohanBendz/com.tuya.zigbee | GPL-3.0 | driver couples |
 | Athom zigbee-clusters | https://github.com/athombv/node-zigbee-clusters | MIT | cluster/attribute ids |
 | Koenkk zigbee-OTA | https://github.com/Koenkk/zigbee-OTA | see repo | OTA image index (code, type, version, sha512) |
-| Homey Apps SDK docs | https://apps.developer.homey.app | Athom | SDK rules (links only) |
+| Homey Apps SDK docs | https://apps.developer.homey.app (the old GitHub repo athombv/homey-apps-sdk-v3-docs is gone, 404 since 2026-10-24) | Athom | SDK rules (links only) |
 | Tuya developer docs (MCU/Zigbee serial) | https://developer.tuya.com/en/docs/iot | Tuya | EF00 command semantics (links only) |
 
 Refresh: `scripts/kb/refresh.sh` (git fetch per mirror; rebuild only when HEAD changed; outputs byte-identical when unchanged).
@@ -28,24 +28,24 @@ Scanned 2026-10-24 (Europe/Paris) for how they handle unknown commands, fallback
 |---|---|---|---|---|
 | [Koenkk/zigbee-herdsman-converters](https://github.com/Koenkk/zigbee-herdsman-converters) | master | MIT | eb823146c7 (2026-10-24) | tuya.ts private commands, tuyaDatapoints names, magic packet, mcuSyncTime |
 | [Koenkk/zigbee-herdsman](https://github.com/Koenkk/zigbee-herdsman) | master | MIT | c1dcb1155e | manuSpecificTuya cluster commands |
-| [Koenkk/zigbee2mqtt](https://github.com/Koenkk/zigbee2mqtt) | master | GPL-3.0 | pushed 2026-10-24 | ideas only |
+| [Koenkk/zigbee2mqtt](https://github.com/Koenkk/zigbee2mqtt) | master | GPL-3.0 | pushed 2026-10-24 (checked 2026-10-25) | ideas only |
 | [zigpy/zha-device-handlers](https://github.com/zigpy/zha-device-handlers) | dev | Apache-2.0 | 1d6598c32a (2026-10-11) | Tuya private clusters, TSN dedup, rotate_type |
-| [zigpy/zha](https://github.com/zigpy/zha) | dev | Apache-2.0 | — | quirks v2 behaviour |
+| [zigpy/zha](https://github.com/zigpy/zha) | dev | Apache-2.0 | 6decce1ed4 (2026-10-24, deps only) | quirks v2 behaviour |
 | [dresden-elektronik/deconz-rest-plugin](https://github.com/dresden-elektronik/deconz-rest-plugin) | master | BSD-3-Clause | pushed 2026-09-10 | DDF read functions, refresh.interval |
-| [make-all/tuya-local](https://github.com/make-all/tuya-local) | main | MIT | — | unknown DP exposure, DP refresh |
+| [make-all/tuya-local](https://github.com/make-all/tuya-local) | main | MIT | c6ea7984d6 (2026-10-25) | unknown DP exposure, DP refresh |
 | [rospogrigio/localtuya](https://github.com/rospogrigio/localtuya) | master | GPL-3.0 | pushed 2026-01-29 | ideas only |
 | [xZetsubou/hass-localtuya](https://github.com/xZetsubou/hass-localtuya) | master | GPL-3.0 | pushed 2026-10-21 | ideas only |
 | [jasonacox/tinytuya](https://github.com/jasonacox/tinytuya) | master | MIT | pushed 2026-10-13 | DP_QUERY / UPDATEDPS |
 | [kkossev/Hubitat](https://github.com/kkossev/Hubitat) | development | none stated | pushed 2026-10-20 | ideas only (no licence: nothing reused) |
-| [SmartThingsCommunity/SmartThingsEdgeDrivers](https://github.com/SmartThingsCommunity/SmartThingsEdgeDrivers) | main | Apache-2.0 | pushed 2026-10-23 | sub-driver chain, health check |
+| [SmartThingsCommunity/SmartThingsEdgeDrivers](https://github.com/SmartThingsCommunity/SmartThingsEdgeDrivers) | main | Apache-2.0 | 3c3946ec07 (2026-10-23) | sub-driver chain, health check |
 | [ioBroker/ioBroker.zigbee](https://github.com/ioBroker/ioBroker.zigbee) | master | MIT | pushed 2026-10-16 | polling option |
-| [domoticz/domoticz](https://github.com/domoticz/domoticz) | development | GPL-3.0 | — | ideas only |
-| [zigbeefordomoticz/Domoticz-Zigbee](https://github.com/zigbeefordomoticz/Domoticz-Zigbee) | stable9 | GPL-3.0 | — | ideas only |
-| [arendst/Tasmota](https://github.com/arendst/Tasmota) | development | GPL-3.0 | — | raw unknown attribute logging (idea) |
-| [esphome/esphome](https://github.com/esphome/esphome) | dev | see repo | — | Tuya DP query at boot (idea) |
-| [Koenkk/zigbee-OTA](https://github.com/Koenkk/zigbee-OTA) | master | GPL-3.0 | — | OTA index |
-| [blakadder/zigbee](https://github.com/blakadder/zigbee) | master | MIT | — | white-label models |
-| [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) | SDK3 | see repo | pushed 2026-10-08 | issue #619 DP101/DP102 |
+| [domoticz/domoticz](https://github.com/domoticz/domoticz) | development | GPL-3.0 | pushed 2026-10-19 | ideas only |
+| [zigbeefordomoticz/Domoticz-Zigbee](https://github.com/zigbeefordomoticz/Domoticz-Zigbee) | stable9 | GPL-3.0 | pushed 2026-10-24 (no stable9 commit) | ideas only |
+| [arendst/Tasmota](https://github.com/arendst/Tasmota) | development | GPL-3.0 | pushed 2026-10-24 (no Zigbee file change) | raw unknown attribute logging (idea) |
+| [esphome/esphome](https://github.com/esphome/esphome) | dev | see repo | b90e1e43a3 (2026-10-24, components/tuya) | Tuya DP query at boot (idea) |
+| [Koenkk/zigbee-OTA](https://github.com/Koenkk/zigbee-OTA) | master | GPL-3.0 | df5e8e13f0 (2026-10-25, index.json unchanged) | OTA index |
+| [blakadder/zigbee](https://github.com/blakadder/zigbee) | master | MIT | d96e8aaf72 | white-label models |
+| [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) | SDK3 | see repo | pushed 2026-10-08; issues read to #1534 (2026-10-24) | issue #619 DP101/DP102; #1534 `_TZ3000_pd9mpyh4` TS0044 interview |
 
 Forum topics scanned for unknown commands: Homey Community 140352 and 26439 (anonymised, facts only).
 
@@ -90,3 +90,7 @@ Forum topics scanned for unknown commands: Homey Community 140352 and 26439 (ano
 | `_TZE200_9cqcpkgb` | soil_sensor | `src/devices/tuya.ts` TS0601_soil |
 | `_TZE284_33bwcga2`, `_TZE284_3urschql`, `_TZE284_ap9owrsa`, `_TZE284_nhgdf6qr`, `_TZE284_wckqztdq` | soil_sensor | `src/devices/tuya.ts` TS0601_soil_3 (GIEX GX04/GX06) |
 | `_TZE284_k7p2q5d9`, `_TZE284_65gzcss7`, `_TZE284_yzr43ayq` | soil_sensor | `src/devices/tuya.ts` Arteco ZS-300Z/302Z/304Z |
+
+## Daily refresh log
+
+- 2026-10-25: changed = tuya-local (c6ea7984d6), zigbee-OTA (df5e8e13f0, index.json unchanged), esphome Tuya (b90e1e43a3), zha deps. Unchanged = zhc eb823146c7, herdsman c1dcb11, z2m docs 2d9af8d, ZHA quirks 1d6598c, deCONZ a4c17ad, Blakadder d96e8aa, tinytuya 3c0a687, localtuya 59c95cd, Johan code 328d24e, zigbee-clusters b859be7. Notes: [UPSTREAM_DAILY_2026-10-25.md](UPSTREAM_DAILY_2026-10-25.md).

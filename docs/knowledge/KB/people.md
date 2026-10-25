@@ -39,6 +39,7 @@ Handles and their contributions, extracted from CREDITS.md (no personal data).
 - **JohanBendz** - Original Tuya Zigbee app author (com.tuya.zigbee), foundational patterns. His 2026 issue triage ("Batch" consolidation comments with exact device identities, acceptance objectives and known regressions, e.g. #423/#424 click-window request) is indexed as leads in `data/leads/johan-
 - **Community members** - All forum contributors who reported issues #2091, #5472, #388, #383, #420, #417 and requested device support
 - **Reddit communities** - r/homey, r/zigbee, r/homeautomation for cross-platform device knowledge
+- **motren** — device interview of the TS0044 scene remote `_TZ3000_pd9mpyh4` (JohanBendz/com.tuya.zigbee#1534); placed on `scene_switch_4` 2026-10-25
 - **OMGatito** — Meian TS0224 siren `_TZ3000_cipibmnp` (JohanBendz#465); placed on `siren` 2026-10-12
 - **Peter** - HOBEIAN ZG-222Z water leak sensor (Issue #2090)
 - **Community** - MMWave radar motion sensor (Issue #420)
@@ -140,5 +141,8 @@ Handles and their contributions, extracted from CREDITS.md (no personal data).
 - **zigpy** — zha-device-handlers (Apache-2.0); **dresden-elektronik** — deCONZ DDFs (BSD-3-Clause); **blakadder** — zigbee templates (MIT)
 - **make-all** — tuya-local (MIT); **jasonacox** — tinytuya (MIT); **rospogrigio** — localtuya (GPL-3.0); **JohanBendz** — com.tuya.zigbee (GPL-3.0)
 - **Athom** — node-zigbee-clusters, Homey Apps SDK docs; **Tuya** — developer docs (MCU/Zigbee serial protocol)
+- **bkbartk** — Tuya fan optimistic/typed-default write idea, [esphome/esphome#18525](https://github.com/esphome/esphome/pull/18525)
+- **make-all/tuya-local contributors** (ozgurclcc PR #6308, surfnterd PR #6067 and others in 7169307…c6ea798) — Wi-Fi product ids and the signed RSSI byte rule (commit 0002e83), Wi-Fi leads only
+- **Koenkk/zigbee-OTA** — OTA index checked at df5e8e1 (no new image)
 
 Full list: https://github.com/dlnraja/com.tuya.zigbee/blob/master/CREDITS.md
