@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-25T05:00:11.278Z",
+ "updated": "2026-10-25T06:47:08.344Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -38677,6 +38677,26 @@
    "status": "done",
    "date": "2026-10-04",
    "note": "ijey4q29/ykglasuj/kf2hbko4 climate_sensor -> contact_sensor_zigbee"
+  },
+  "workflow-run:fleet-intelligent-enrich": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "db6dd5c730c4798a",
+   "note": "run summary: 10 counter(s)",
+   "by": "fleet-intelligent-enrich",
+   "counts": {
+    "phases.length": 31,
+    "baseline.driverCount": 459,
+    "baseline.mfrEntries": 19005,
+    "baseline.pidEntries": 3548,
+    "final.driverCount": 459,
+    "final.mfrEntries": 19027,
+    "final.pidEntries": 3549,
+    "delta.drivers": 0,
+    "delta.mfrs": 22,
+    "delta.pids": 1
+   },
+   "lastChangeRun": "40170017948"
   }
  }
 }
