@@ -8,13 +8,19 @@
   "p3044-golden-refresh-bastien-home": {
    "status": "done",
    "date": "2026-10-25",
-   "note": "golden refreshed; lost lines = P3038 wildcard drops + sourced moves; exact couples lost: 0; restored: 0; lead: byzdayie|TS0601 dual power_meter+energy_meter_din",
+   "note": "golden refreshed; lost lines = P3038 wildcard drops + sourced moves; exact couples lost: 0; restored: 0; _TZE204_byzdayie|TS0601 single owner energy_meter_din (no dual, verified 18:50)",
    "by": "p3044"
   },
   "p3044b-p3038c-leads-resolved": {
    "status": "done",
    "date": "2026-10-25",
    "note": "wjk6rurm x3 moved from P3038c leads to resolved (P3039a power_meter); test sub-case added",
+   "by": "p3044"
+  },
+  "p3044c-byzdayie-check": {
+   "status": "done",
+   "date": "2026-10-25",
+   "note": "no dual on bastien-home: _TZE204_byzdayie only on energy_meter_din (compose + app.json); power_meter holds _TZE284_byzdayie (other mfr, single owner, no source in our Z2M cache, left untouched: removal needs owner yes)",
    "by": "p3044"
   }
  }
