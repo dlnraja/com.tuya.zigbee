@@ -8,6 +8,8 @@ const TuyaOnOffCluster = require('../../lib/clusters/TuyaOnOffCluster');
 const TuyaSpecificClusterDevice = require('../../lib/tuya/TuyaSpecificClusterDevice');
 const { getDataValue } = require('../../lib/TuyaHelpers');
 const { V1_FINGER_BOT_DATA_POINTS } = require('../../lib/tuya/TuyaDataPointsJohan');
+const { buildDpCommandArgs } = require('../../lib/tuya/TuyaDpCommandArgs');
+const { getManufacturerName, getModelId } = require('../../lib/helpers/ManufacturerNameHelper');
 
 Cluster.addCluster(TuyaSpecificCluster);
 Cluster.addCluster(TuyaOnOffCluster);
@@ -26,6 +28,38 @@ const REMOTE_PRESS_DEBOUNCE_MS = 800;
 const MOMENTARY_GUI_PULSE_MS = 700;
 const BATTERY_LOW_THRESHOLD = 20;
 const ZIGBEE_EPOCH_MS = Date.UTC(2000, 0, 1, 0, 0, 0);
+
+// P3050 (PR #577 by iassael + Z2M TS0001_fingerbot): exact TS0001 couples whose MCU only
+// accepts DP writes as cmd 0x04 (sendData). Source: zigbee-herdsman-converters
+// src/devices/tuya.ts, model TS0001_fingerbot, meta.tuyaSendCommand = 'sendData'.
+const SENDDATA_TS0001_COUPLES = new Set([
+  '_tz3210_dse8ogfy', '_tz3210_j4pdtz9v', '_tz3210_7vgttna6', '_tz3210_a04acm9s', '_tz3210_cm9mbpr1',
+]);
+// Same source: lower 50-100 %, upper 0-50 %, sustain 0-10 s, touch is a bool DP (107).
+const SENDDATA_LIMITS = { lower: [50, 100], upper: [0, 50], delay: [0, 10] };
+const DIRECT_SEND_TIMEOUT_MS = 12000;  // hang guard above zigbee-clusters' own 10 s response timeout
+const FALLBACK_SEND_TIMEOUT_MS = 12000; // whole inherited cascade, capped
+const SETTINGS_REPLAY_DELAY_MS = 30000;
+const SETTINGS_CONFIRMED_KEY = 'fingerbot_settings_confirmed';
+const SETTINGS_DPS = [102, 103, 104, 106, 107];
+
+// Errors raised before any byte left Homey: safe to retry through the inherited path.
+function isPreSendError(err) {
+  if (!err) {return false;}
+  if (err.code === 'P3050_PRESEND') {return true;}
+  return /unexpected property|is not a function|Cannot read propert/i.test(String(err.message || ''));
+}
+
+function withTimeout(promise, ms, homey) {
+  let timer;
+  const t = new Promise((_, reject) => {
+    const set = homey && typeof homey.setTimeout === 'function' ? homey.setTimeout.bind(homey) : setTimeout;
+    timer = set(() => reject(Object.assign(new Error(`timeout after ${ms} ms`), { code: 'P3050_TIMEOUT' })), ms);
+  });
+  return Promise.race([promise, t]).finally(() => {
+    try { (homey && typeof homey.clearTimeout === 'function' ? homey.clearTimeout.bind(homey) : clearTimeout)(timer); } catch (_e) { /* noop */ }
+  });
+}
 
 const ZCL_STATUS_SUCCESS = 0x00;
 const ZCL_STATUS_UNSUPPORTED_ATTRIBUTE = 0x01;
@@ -120,32 +154,132 @@ class FingerBot extends TuyaSpecificClusterDevice {
     ).toLowerCase();
 
     // Fingerbot variants requiring cmd 0x04 (sendData) instead of cmd 0x00 (datapoint)
-    if (mfr.includes('j4pdtz9v') || mfr.includes('7vgttna6') || mfr.includes('a04acm9s') || mfr.includes('dse8ogfy')) {
+    if (mfr.includes('j4pdtz9v') || mfr.includes('7vgttna6') || mfr.includes('a04acm9s') || mfr.includes('dse8ogfy') || mfr.includes('cm9mbpr1')) {
       return 'sendData';
     }
     return 'datapoint';
   }
 
   /**
-   * sendData variants: one frame per DP instead of the inherited io.sendDP cascade,
-   * which waits out several timeouts on this sleepy end device.
-   * Three TuyaSpecificCluster files register as 'tuya' with different sendData args;
-   * use whichever shape the loaded one declares.
+   * P3050: exact couple check (mfr + productId), not mfr alone.
+   */
+  _isSendDataCouple() {
+    const mfr = String(getManufacturerName(this) || '').trim().toLowerCase();
+    const pid = String(getModelId(this) || '').trim().toUpperCase();
+    return SENDDATA_TS0001_COUPLES.has(mfr) && (pid === 'TS0001' || pid === 'TS0001_FINGERBOT' || pid === '');
+  }
+
+  /**
+   * P3050, from iassael's PR #577 (aa6b56c, earlier 0739b32 + 274111e, tested on Homey Pro fw 13.5.0 with
+   * _TZ3210_j4pdtz9v). For the exact sendData couples, write the DP as ONE cmd 0x04 frame
+   * straight to the cluster, with args that follow the live schema, the same call he tested.
+   * The inherited cascade sends 0x00 frames that this firmware ignores, and waits out
+   * timeouts on a sleepy end device. If the frame may have left (any send or response error,
+   * or the hang guard), we never re-send it, because that would press twice. We fall back to
+   * the inherited path, capped in time, only when nothing could be sent at all (no cluster,
+   * args refused). Every other manufacturer keeps the inherited path unchanged.
    */
   async _sendTuyaDatapoint(dp, datatype, length, data, ...rest) {
-    if (this.getTuyaCommandName(dp) !== 'sendData') {
+    if (!this._isSendDataCouple()) {
       return super._sendTuyaDatapoint(dp, datatype, length, data, ...rest);
     }
-
-    const cluster = this.zclNode.endpoints[1].clusters.tuya;
-    const transid = this.transactionID;
-    this.transactionID = transid + 1;
-
-    if (cluster.constructor.COMMANDS?.sendData?.args?.seq) {
-      const header = Buffer.from([dp & 0xff, datatype & 0xff, (length >> 8) & 0xff, length & 0xff]);
-      return cluster.sendData({ seq: transid, dpValues: Buffer.concat([header, data]) });
+    this._lastUserTxAt = Date.now();
+    try {
+      await withTimeout(this._sendDataDirect(dp, datatype, data), DIRECT_SEND_TIMEOUT_MS, this.homey);
+      return true;
+    } catch (err) {
+      if (!isPreSendError(err)) {throw err;}
+      this.log(`[P3050] direct sendData DP${dp} failed (${err && err.message}), bounded fallback`);
     }
-    return cluster.sendData({ status: 0, transid, dp, datatype, length, data });
+    return withTimeout(super._sendTuyaDatapoint(dp, datatype, length, data, 1, 200), FALLBACK_SEND_TIMEOUT_MS, this.homey);
+  }
+
+  async _sendDataDirect(dp, datatype, data) {
+    const ep = this.zclNode?.endpoints?.[1];
+    const cluster = ep?.clusters?.tuya || ep?.clusters?.manuSpecificTuya;
+    if (!cluster || typeof cluster.sendData !== 'function') {
+      throw Object.assign(new Error('no tuya.sendData on ep1'), { code: 'P3050_PRESEND' });
+    }
+    const seq = this.transactionID;
+    this.transactionID = seq + 1;
+    const args = buildDpCommandArgs(cluster, 'sendData', { dp, datatype, data, transid: seq });
+    return cluster.sendData(args);
+  }
+
+  /** Z2M ranges for the sendData couples; other couples are written as configured. */
+  _clampForCouple(kind, value) {
+    if (typeof value !== 'number' || !this._isSendDataCouple() || !SENDDATA_LIMITS[kind]) {return value;}
+    const [min, max] = SENDDATA_LIMITS[kind];
+    return Math.min(max, Math.max(min, Math.round(value)));
+  }
+
+  /** Touch (DP107) is a bool on the Z2M couples; keep the historical enum write for the others. */
+  async _writeTouch(on) {
+    if (this._isSendDataCouple()) {return this.writeBool(V1_FINGER_BOT_DATA_POINTS.touch, !!on);}
+    return this.writeEnum(V1_FINGER_BOT_DATA_POINTS.touch, on ? 1 : 0);
+  }
+
+  /**
+   * P3050: settings replay, deferred and non-blocking. Runs once per init, only while the device
+   * never confirmed its settings, after the first frame from the device (it is awake then) or a
+   * delay, and yields to any user command sent meanwhile.
+   */
+  _scheduleSettingsReplay() {
+    if (this._settingsReplayTimer || this._settingsReplayDone) {return;}
+    if (this.getStoreValue?.(SETTINGS_CONFIRMED_KEY) === true) {
+      this._settingsReplayDone = true;
+      return;
+    }
+    const scheduledAt = Date.now();
+    const run = () => {
+      this._settingsReplayTimer = null;
+      if (this._destroyed || this._settingsReplayDone) {return;}
+      if ((this._lastUserTxAt || 0) > scheduledAt) {
+        this.log('[P3050] settings replay skipped: a user command went first');
+        this._settingsReplayDone = true;
+        return;
+      }
+      this._settingsReplayDone = true;
+      this.applyConfiguredSettings({ includeMode: true })
+        .catch(err => this.log('[P3050] deferred settings replay failed:', err && err.message));
+    };
+    this._settingsReplayRun = run;
+    this._settingsReplayTimer = this.homey.setTimeout(run, SETTINGS_REPLAY_DELAY_MS);
+  }
+
+  _onDeviceFrame(dp) {
+    if (SETTINGS_DPS.includes(dp)) {
+      this._settingsSeen = this._settingsSeen || new Set();
+      this._settingsSeen.add(dp);
+      if (this._settingsSeen.size >= 2 && this.getStoreValue?.(SETTINGS_CONFIRMED_KEY) !== true) {
+        this.setStoreValue?.(SETTINGS_CONFIRMED_KEY, true)?.catch?.(() => {});
+      }
+    }
+    // Device just talked: it is awake, run a pending replay now instead of waiting.
+    if (this._settingsReplayTimer && typeof this._settingsReplayRun === 'function') {
+      try { this.homey.clearTimeout(this._settingsReplayTimer); } catch (_e) { /* noop */ }
+      this._settingsReplayRun();
+    }
+  }
+
+  /** genPowerCfg reporting: optional, fire-and-forget, only if the cluster is really on ep1. */
+  _configureBatteryReportingOptional(zclNode) {
+    const ep = zclNode?.endpoints?.[1];
+    if (!ep?.clusters?.powerConfiguration) {
+      this.log('[P3050] no genPowerCfg on ep1, battery comes from DP105');
+      return;
+    }
+    Promise.resolve()
+      .then(() => this.configureAttributeReporting([
+        {
+          cluster: 'genPowerCfg',
+          attributeName: 'batteryPercentageRemaining',
+          minInterval: 3600,
+          maxInterval: 43200,
+          minChange: 2,
+        },
+      ]))
+      .catch(err => this.log('Attribute reporting config failed:', err && err.message));
   }
 
   async onNodeInit({ zclNode }) {
@@ -165,6 +299,10 @@ class FingerBot extends TuyaSpecificClusterDevice {
     this._registerTimeBoundCluster(zclNode);
 
     try {
+      // P3050: battery reporting stays, but optional and never awaited (PR #577 noted that
+      // _TZ3210_j4pdtz9v has no genPowerCfg and reports battery as DP105).
+      this._configureBatteryReportingOptional(zclNode);
+
       await super.onNodeInit({ zclNode });
 
       this._registerOnOffHandling(zclNode);
@@ -175,11 +313,28 @@ class FingerBot extends TuyaSpecificClusterDevice {
         'manufacturerName', 'zclVersion', 'appVersion', 'modelId', 'powerSource', 'attributeReportingStatus',
       ]).catch(err => this.error('Error reading attributes:', err));
 
+      // P3050: settings replay deferred + non-blocking (was awaited here and held user commands).
+      this._scheduleSettingsReplay();
+
     } catch (err) {
       this.error('FingerBot initialization error:', err.message);
     }
 
     this.log('FingerBot initialization complete.');
+  }
+
+  /**
+   * P3050: the turn on/off/toggle Flow cards called device.sendTuyaDP(), which this class does not
+   * have (found with the Push-card check from iassael's PR #577, aa6b56c). These TS0001 bots switch through
+   * the ZCL onOff cluster, so the cards now take the same path as the onoff capability (mode-aware).
+   */
+  async flowSetOnOff(value) {
+    if (typeof this.triggerCapabilityListener === 'function' && this.hasCapability('onoff')) {
+      return this.triggerCapabilityListener('onoff', !!value);
+    }
+    const onOff = this.zclNode?.endpoints?.[1]?.clusters?.onOff;
+    if (!onOff) {throw new Error('onOff cluster not available');}
+    return value ? onOff.setOn() : onOff.setOff();
   }
 
   _registerOnOffHandling(zclNode) {
@@ -393,6 +548,7 @@ class FingerBot extends TuyaSpecificClusterDevice {
     const parsedValue = getDataValue(data);
 
     this.log(`FingerBot DP ${dp}:`, parsedValue);
+    try { this._onDeviceFrame(dp); } catch (_e) { /* never block RX */ }
 
     switch (dp) {
     case V1_FINGER_BOT_DATA_POINTS.battery:
@@ -448,8 +604,52 @@ class FingerBot extends TuyaSpecificClusterDevice {
       this.log('FingerBot touch DP report:', parsedValue);
       break;
 
+    case 109: // Z2M TS0001_fingerbot: program (raw), read-only here
+      this.log('FingerBot program DP report:', parsedValue);
+      break;
+
     default:
       this.log('Unhandled FingerBot DP:', dp, 'value:', parsedValue);
+    }
+  }
+
+  async applyConfiguredSettings({ includeMode = false } = {}) {
+    const mode = this._getConfiguredMode();
+    const lower = this.getSetting('lower_limit');
+    const upper = this.getSetting('upper_limit');
+    const delay = this.getSetting('sustain_time') ?? this.getSetting('delay');
+    const reverse = this.getSetting('reverse_direction') ?? this.getSetting('reverse');
+    const touch = this.getSetting('touch');
+
+    try {
+      if (includeMode) {
+        await this.writeEnum(V1_FINGER_BOT_DATA_POINTS.mode, MODE[mode]);
+      }
+
+      if (typeof lower === 'number') {
+        await this.writeData32(V1_FINGER_BOT_DATA_POINTS.lowerLimit, this._clampForCouple('lower', lower));
+      }
+
+      if (typeof upper === 'number') {
+        await this.writeData32(V1_FINGER_BOT_DATA_POINTS.upperLimit, this._clampForCouple('upper', upper));
+      }
+
+      if (typeof delay === 'number') {
+        await this.writeData32(V1_FINGER_BOT_DATA_POINTS.delay, this._clampForCouple('delay', delay));
+      }
+
+      if (typeof reverse === 'boolean') {
+        await this.writeEnum(
+          V1_FINGER_BOT_DATA_POINTS.reverse,
+          reverse ? 1 : 0,
+        );
+      }
+
+      if (typeof touch === 'boolean') {
+        await this._writeTouch(touch);
+      }
+    } catch (err) {
+      this.error('Failed to apply FingerBot settings', err);
     }
   }
 
@@ -468,14 +668,14 @@ class FingerBot extends TuyaSpecificClusterDevice {
       case 'lower_limit':
         await this.writeData32(
           V1_FINGER_BOT_DATA_POINTS.lowerLimit,
-          newSettings.lower_limit,
+          this._clampForCouple('lower', newSettings.lower_limit),
         );
         break;
 
       case 'upper_limit':
         await this.writeData32(
           V1_FINGER_BOT_DATA_POINTS.upperLimit,
-          newSettings.upper_limit,
+          this._clampForCouple('upper', newSettings.upper_limit),
         );
         break;
 
@@ -483,7 +683,7 @@ class FingerBot extends TuyaSpecificClusterDevice {
       case 'delay':
         await this.writeData32(
           V1_FINGER_BOT_DATA_POINTS.delay,
-          newSettings.sustain_time ?? newSettings.delay,
+          this._clampForCouple('delay', newSettings.sustain_time ?? newSettings.delay),
         );
         break;
 
@@ -501,7 +701,7 @@ class FingerBot extends TuyaSpecificClusterDevice {
 
       case 'touch':
         if (typeof newSettings.touch === 'boolean') {
-          await this.writeEnum(V1_FINGER_BOT_DATA_POINTS.touch, newSettings.touch ? 1 : 0);
+          await this._writeTouch(newSettings.touch);
         }
         break;
 
@@ -557,6 +757,10 @@ class FingerBot extends TuyaSpecificClusterDevice {
     super.onDeleted();
     if (this._guiPulseTimeout) {
       this.homey.clearTimeout(this._guiPulseTimeout);
+    }
+    if (this._settingsReplayTimer) {
+      this.homey.clearTimeout(this._settingsReplayTimer);
+      this._settingsReplayTimer = null;
     }
 
     this.log('FingerBot device removed from Homey.');
