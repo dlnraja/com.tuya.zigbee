@@ -7,6 +7,9 @@
 // promotion still held: trials are drafts only). An optional time-boxed window in the state file
 // (untagged_window {trial, from, until}) lets the pre-planned routine trial (trial 0) run unchanged.
 // Other apps (stable, Bastien) are never affected. Always exits 0; writes hold_upload / hold_promote / reason.
+// P3036 (25/10/2026): the bisect is closed (status=done) -> this guard allows everything and the normal flow
+// (P3036 publish gate, draft -> Test automatic, Live never automatic) applies. Setting status=running again
+// re-arms drafts only + bisect_trial: that is how to rerun the bisect if Athom rejections come back.
 const fs = require('fs');
 const path = require('path');
 

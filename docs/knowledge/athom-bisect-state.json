@@ -2,11 +2,11 @@
   "task": "P3034",
   "app_id": "com.dlnraja.tuya.zigbee",
   "status": "done",
-  "updated_at": "2026-10-25T14:25:00+01:00",
+  "updated_at": "2026-10-25T17:30:00+01:00",
   "current_trial": 0,
   "variable": "revised trial 0: 9.0.1597 payload + P3034 CI gate fixes (wip/p3034-gates 94e3947767 + follow-ups; no runtime change beyond CatalogStore Buffer read and switch_wall_6gang_metering own flow cards), CLI path (auto-publish-on-push.yml), manual workflow_dispatch bisect_trial=0, draft only, ~13:30 Paris after the 13:05 Auto-Fix cron and >=2h without any upload on the 3 apps",
   "result": "PASS: revised trial 0 (CLI path, manual dispatch bisect_trial=0, master tip 47cb6bb34e, CI green) gave v9.0.1599 build #3682 state=draft without processing error after one socket-hang-up retry (first attempt v9.0.1598 #3681 processing_failed socket hang up)",
-  "rules": "draft only, master app only, one variable per trial, one retry on socket hang up, never Test/Live promotion; 15:00 staged master routine sends nothing while status=running",
+  "rules": "Only while status=running: draft only, master app only, one variable per trial, one retry on socket hang up, never Test/Live promotion, uploads need a manual dispatch with bisect_trial; the staged master routine sends nothing while status=running. With status=done these rules are off (P3036).",
   "trials": [
     {
       "n": 0,
@@ -52,6 +52,12 @@
     "n": null,
     "note": "bisect closed; trial 1 cancelled"
   },
-  "window_note": "P3034 10:25: untagged_window (09:45-11:00) removed on dlnraja's decision; every master upload now needs a manual dispatch with bisect_trial",
-  "conclusion": "Same code with green CI and a quiet upload window processes normally on Athom: the master rejections came from red CI / timing and transient Athom-side socket hang up, not from the app payload. Trial 1 (direct-api-publish.js) not needed. The 15:00 staged master routine may resume its plan; drafts only until a decision on promotion."
+  "window_note": "P3034 10:25: untagged_window (09:45-11:00) removed on dlnraja's decision; every master upload now needs a manual dispatch with bisect_trial. P3036: with status=done no bisect_trial is needed any more; bisect_trial only matters again when status=running.",
+  "conclusion": "Same code with green CI and a quiet upload window processes normally on Athom: the master rejections came from red CI / timing and transient Athom-side socket hang up, not from the app payload (strong presumption, not a proof). Trial 1 (direct-api-publish.js) not needed. P3036 (25/10/2026): back to the normal flow under the shared publish policy (.github/scripts/athom-publish-policy.js): green CI gate, >= 2 h between master uploads and at most 1 successful master upload per 24 h, no upload while a build is processing, one transient retry after >= 5 min, draft -> Test automatic when processing is OK, Live is never automatic. If rejections come back, rerun the bisect: set status=running (bisect-hold.js re-arms drafts only + bisect_trial).",
+  "p3036": {
+    "at": "2026-10-25T17:30:00+01:00",
+    "policy": ".github/scripts/athom-publish-policy.js",
+    "doc": "docs/knowledge/P3036_ATHOM_PUBLISH_POLICY.md",
+    "rerun": "If rejections come back, rerun the bisect: set status to running and record the trial plan here."
+  }
 }

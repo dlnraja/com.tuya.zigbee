@@ -17,43 +17,40 @@ test('refuses hang retry when healthy Test exists (legacy P2831 mode, ATHOM_REAC
   assert.strictEqual(d.retry, false);
   assert.match(String(d.reason), /P2831|healthy Test/i);
 });
-// P2830e: default policy = reach Test; a healthy older Test no longer blocks the bumped retry (2 per chain).
-test('P2830e retries hang even with healthy older Test, max 4 per chain (P2924)', () => {
+// P2830e: default policy = reach Test; a healthy older Test does not block the bumped retry. P3036: one per chain.
+test('P2830e retries hang even with healthy older Test, max 1 per chain (P3036)', () => {
   const builds = [
     { version: '9.0.1', state: 'processing_failed', stateMeta: 'socket hang up' },
     { version: '9.0.0', state: 'test', id: 99 },
   ];
   const first = decide({ version: '9.0.1', builds });
   assert.strictEqual(first.retry, true); assert.strictEqual(first.next, 1);
-  const second = decide({ version: '9.0.1', builds, retryCount: 1 });
-  assert.strictEqual(second.retry, true); assert.strictEqual(second.next, 2);
-  assert.strictEqual(decide({ version: '9.0.1', builds, retryCount: 3 }).retry, true);
-  assert.strictEqual(decide({ version: '9.0.1', builds, retryCount: 4 }).retry, false);
+  assert.strictEqual(decide({ version: '9.0.1', builds, retryCount: 1 }).retry, false);
+  assert.strictEqual(decide({ version: '9.0.1', builds, retryCount: 0, retryUsed: true }).retry, false, 'in-run fallback used the retry');
 });
 test('P2830e AggregateError after the retry budget requests a bisect, never a retry', () => {
   const d = decide({ version: '9.0.1', builds: B('processing_failed', 'AggregateError'), retryCount: 2 });
   assert.strictEqual(d.retry, false); assert.strictEqual(d.bisect, true);
   assert.strictEqual(decide({ version: '9.0.1', builds: B('processing_failed', 'socket hang up'), retryCount: 4 }).bisect || false, false);
 });
-test('P2830e backoff grows with jitter and is capped', () => {
+test('P3036 backoff is >= 5 min with jitter', () => {
   const { backoffSeconds } = require('../../.github/scripts/transient-publish-retry');
-  assert.strictEqual(backoffSeconds(1, () => 0), 60); assert.strictEqual(backoffSeconds(2, () => 0), 120);
-  assert.strictEqual(backoffSeconds(3, () => 0), 240); assert.strictEqual(backoffSeconds(9, () => 0.999), 269);
+  assert.strictEqual(backoffSeconds(1, () => 0), 300); assert.strictEqual(backoffSeconds(2, () => 0), 300);
+  assert.strictEqual(backoffSeconds(9, () => 0.999), 360);
 });
 test('retries once on S3 key does not exist', () => assert.strictEqual(decide({ version: '9.0.1', builds: B('processing_failed', 'The specified key does not exist.') }).retry, true));
-// WHY(2026-10-11 user): AggregateError flakes on identical content (1424F/1425T, 1426F/1427T) -> up to TWO bumped retries.
-test('retries AggregateError once', () => assert.strictEqual(decide({ version: '9.0.1', builds: B('processing_failed', 'AggregateError') }).retry, true));
-test('retries AggregateError a second time from the first retry run', () => {
-  const d = decide({ version: '9.0.1', builds: B('processing_failed', 'AggregateError'), alreadyRetried: true });
-  assert.strictEqual(d.retry, true); assert.strictEqual(d.next, 2);
+// P3036 (25/10/2026): AggregateError is a real failure (bisect P3034 cleared the content) -> never retried.
+test('never retries AggregateError (P3036, was 2 flake retries)', () => {
+  const d = decide({ version: '9.0.1', builds: B('processing_failed', 'AggregateError') });
+  assert.strictEqual(d.retry, false); assert.strictEqual(d.tripBreaker, true); assert.strictEqual(d.bisect, true);
 });
 test('never retries AggregateError after two retries', () => assert.strictEqual(decide({ version: '9.0.1', builds: B('processing_failed', 'AggregateError'), retryCount: 2 }).retry, false));
 test('retry count parsing (legacy true = 1)', () => {
   assert.strictEqual(parseRetryCount('true'), 1); assert.strictEqual(parseRetryCount('false'), 0);
   assert.strictEqual(parseRetryCount('2'), 2); assert.strictEqual(parseRetryCount(undefined), 0);
 });
-test('a first retry run may retry once more (P2924 hang-up budget 4), never beyond', () => {
-  assert.strictEqual(decide({ version: '9.0.1', builds: B('processing_failed', 'socket hang up'), alreadyRetried: true }).retry, true);
+test('a retry run never retries again (P3036 single retry)', () => {
+  assert.strictEqual(decide({ version: '9.0.1', builds: B('processing_failed', 'socket hang up'), alreadyRetried: true }).retry, false);
   assert.strictEqual(decide({ version: '9.0.1', builds: B('processing_failed', 'socket hang up'), retryCount: 4 }).retry, false);
 });
 test('no retry when in Test', () => assert.strictEqual(decide({ version: '9.0.1', builds: B('test', {}) }).retry, false));

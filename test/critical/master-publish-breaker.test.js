@@ -9,8 +9,17 @@ describe('P-KB4 master Athom publish breaker', () => {
   it('opens after N processing_failed builds on push', () => {
     assert.strictEqual(B.decide({ builds: [pf(3), pf(2), pf(1)], event: 'push' }).skip, true);
   });
-  it('stays closed when one of the last N reached test', () => {
-    assert.strictEqual(B.decide({ builds: [pf(3), { id: 2, state: 'test' }, pf(1)], event: 'push' }).skip, false);
+  it('stays closed when one of the last N reached test and the latest failure is transient', () => {
+    const h = { id: 3, version: '9.0.3', state: 'processing_failed', stateMeta: 'socket hang up' };
+    assert.strictEqual(B.decide({ builds: [h, { id: 2, state: 'test' }, pf(1)], event: 'push' }).skip, false);
+  });
+  it('P3036: a real latest failure (AggregateError) trips the breaker on push', () => {
+    assert.strictEqual(B.decide({ builds: [pf(3), { id: 2, state: 'test' }, pf(1)], event: 'push' }).skip, true);
+  });
+  it('P3036: the single automatic retry of a hang-up is never blocked (run 40194918949)', () => {
+    const h = (id) => ({ id, version: `9.0.${id}`, state: 'processing_failed', stateMeta: 'socket hang up' });
+    assert.strictEqual(B.decide({ builds: [h(3), h(2), h(1)], event: 'workflow_dispatch', transientRetry: '1', snapshotOk: true }).skip, false);
+    assert.strictEqual(B.decide({ builds: [h(3), h(2), h(1)], event: 'workflow_dispatch', transientRetry: '2', snapshotOk: true }).skip, true);
   });
   it('manual dispatch may try once; automatic retry dispatch may not', () => {
     assert.strictEqual(B.decide({ builds: [pf(3), pf(2), pf(1)], event: 'workflow_dispatch', transientRetry: 'false' }).skip, false);
@@ -21,7 +30,7 @@ describe('P-KB4 master Athom publish breaker', () => {
     assert.strictEqual(B.decide({ builds: [], event: 'push', snapshotOk: false }).skip, true);
     assert.strictEqual(B.decide({ builds: [], event: 'workflow_dispatch', transientRetry: '1', snapshotOk: false }).skip, true);
     assert.strictEqual(B.decide({ builds: [], event: 'workflow_dispatch', transientRetry: 'false', snapshotOk: false }).skip, false);
-    assert.strictEqual(B.decide({ builds: [pf(3), { id: 2, state: 'test' }, pf(1)], event: 'push', snapshotOk: true }).skip, false);
+    assert.strictEqual(B.decide({ builds: [{ id: 3, state: 'test' }, pf(2), pf(1)], event: 'push', snapshotOk: true }).skip, false);
   });
   it('P2966: CLI fails closed on push when no snapshot can be read (run 40064359243 regression)', () => {
     const os = require('os'); const { spawnSync } = require('child_process');
@@ -38,8 +47,8 @@ describe('P-KB4 master Athom publish breaker', () => {
     assert.strictEqual(R.decide({ version: '9.0.5', builds: [h], retryCount: 0, hangupOnly: true }).retry, true);
     assert.strictEqual(R.decide({ version: '9.0.5', builds: [h], retryCount: 1, hangupOnly: true }).retry, false);
   });
-  it('shared policy unchanged without the flag (stable/bastien)', () => {
-    assert.strictEqual(R.decide({ version: '9.0.5', builds: [pf(5)], retryCount: 0, hangupOnly: false }).retry, true);
+  it('P3036: same rule without the flag (stable/bastien): AggregateError never retried', () => {
+    assert.strictEqual(R.decide({ version: '9.0.5', builds: [pf(5)], retryCount: 0, hangupOnly: false }).retry, false);
   });
   it('workflows are wired: breaker job gates publish, hang-up-only env set, auto-fix step master only', () => {
     const a = W('auto-publish-on-push.yml');

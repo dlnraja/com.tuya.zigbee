@@ -171,13 +171,51 @@ jobs:
           BISECT_TRIAL: ${{ inputs.bisect_trial }}  # P3034: no '||' coercion, trial '0' passes verbatim
         run: node .github/scripts/bisect-hold.js
 
+  # P3036: green CI + spacing + busy gate before any Athom upload (docs/knowledge/P3036_ATHOM_PUBLISH_POLICY.md).
+  p3036-gate:
+    name: "P3036 Athom publish gate"
+    needs: bisect-hold
+    if: needs.bisect-hold.outputs.hold_promote != 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      actions: read
+    outputs:
+      go: ${{ steps.gate.outputs.go }}
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: .github/npm-cache-key.sha256  # P3026: version-free key, one npm cache per dependency set
+      - name: Install dependencies (read-only build snapshot)
+        run: npm ci --prefer-offline --no-audit --ignore-scripts || npm install --ignore-scripts
+      - name: P3036 publish gate
+        id: gate
+        uses: ./.github/actions/athom-publish-gate
+        with:
+          app_id: ${{ github.ref_name == 'stable-v5' && 'com.dlnraja.tuya.zigbee.stable' || (github.ref_name == 'bastien-home' && 'com.dlnraja.tuya.zigbee.bastien' || 'com.dlnraja.tuya.zigbee') }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          homey_pat: ${{ secrets.HOMEY_PAT }}
+          transient_retry: 'false'
+          wait_ms: '1200000'
+
   build-and-publish:
     name: 🚀 Build & Publish Test Channel
     runs-on: ubuntu-latest
     timeout-minutes: 45
-    needs: [verify-and-lint, bisect-hold]
+    needs: [verify-and-lint, bisect-hold, p3036-gate]
     # P3034: the Athom publish action also lands on Test; held while a bisect runs.
-    if: needs.bisect-hold.outputs.hold_promote != 'true'
+    # P3036: and only when the publish gate says go (green CI, spacing, no build processing).
+    if: needs.bisect-hold.outputs.hold_promote != 'true' && needs.p3036-gate.outputs.go == 'true'
+    # P3036: one lock per app shared by every publish workflow (job level: the workflow group differs).
+    concurrency:
+      group: athom-publish-${{ github.ref_name == 'stable-v5' && 'stable' || (github.ref_name == 'bastien-home' && 'bastien' || 'master') }}
+      cancel-in-progress: false
     steps:
       - name: Checkout Code
         uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0

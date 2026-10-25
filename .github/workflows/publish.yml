@@ -160,9 +160,42 @@ jobs:
           BISECT_TRIAL: ${{ inputs.bisect_trial }}  # P3034: no '||' coercion, trial '0' passes verbatim
         run: node .github/scripts/bisect-hold.js
 
-  version-and-publish:
-    needs: [validate, bisect-hold]
+  # P3036: green CI + spacing + busy gate before any Athom upload (docs/knowledge/P3036_ATHOM_PUBLISH_POLICY.md).
+  p3036-gate:
+    name: "P3036 Athom publish gate"
+    needs: bisect-hold
     if: needs.bisect-hold.outputs.hold_upload != 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      actions: write
+    outputs:
+      go: ${{ steps.gate.outputs.go }}
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: .github/npm-cache-key.sha256  # P3026: version-free key, one npm cache per dependency set
+      - name: Install dependencies (read-only build snapshot)
+        run: npm ci --prefer-offline --no-audit --ignore-scripts || npm install --ignore-scripts
+      - name: P3036 publish gate
+        id: gate
+        uses: ./.github/actions/athom-publish-gate
+        with:
+          app_id: com.dlnraja.tuya.zigbee
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          homey_pat: ${{ secrets.HOMEY_PAT }}
+          transient_retry: ${{ github.event.inputs.transient_retry || '' }}
+          wait_ms: '1200000'
+
+  version-and-publish:
+    needs: [validate, bisect-hold, p3036-gate]
+    if: needs.bisect-hold.outputs.hold_upload != 'true' && needs.p3036-gate.outputs.go == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 60 # WHY(2026-10-11): idle wait + draft wait + final gate; 15 cancelled G1 run 38102492164
     steps:
