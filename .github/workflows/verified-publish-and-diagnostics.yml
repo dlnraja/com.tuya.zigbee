@@ -16,6 +16,10 @@ on:
         description: "Lancer l'analyse des logs de crash"
         type: boolean
         default: true
+      bisect_trial:
+        description: 'P3034: bisect trial number (manual trial run). Required to upload/promote master while docs/knowledge/athom-bisect-state.json status=running'
+        type: string
+        default: ''
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -143,11 +147,37 @@ jobs:
           path: reports/diagnostics/
 
   # 3. Build et Publication
+  # P3034: no master upload/promotion while an Athom bisect runs, except a manual dispatch with bisect_trial.
+  bisect-hold:
+    name: "P3034 bisect hold"
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      hold_upload: ${{ steps.bh.outputs.hold_upload }}
+      hold_promote: ${{ steps.bh.outputs.hold_promote }}
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          fetch-depth: 1
+          sparse-checkout: |
+            .github/scripts/bisect-hold.js
+            docs/knowledge/athom-bisect-state.json
+            .homeycompose/app.json
+          sparse-checkout-cone-mode: false
+      - name: P3034 bisect hold
+        id: bh
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          BISECT_TRIAL: ${{ github.event.inputs.bisect_trial || '' }}
+        run: node .github/scripts/bisect-hold.js
+
   build-and-publish:
     name: 🚀 Build & Publish Test Channel
     runs-on: ubuntu-latest
     timeout-minutes: 45
-    needs: verify-and-lint
+    needs: [verify-and-lint, bisect-hold]
+    # P3034: the Athom publish action also lands on Test; held while a bisect runs.
+    if: needs.bisect-hold.outputs.hold_promote != 'true'
     steps:
       - name: Checkout Code
         uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
