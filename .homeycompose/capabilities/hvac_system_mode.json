@@ -1,0 +1,22 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "System mode",
+    "fr": "Mode système",
+    "nl": "Systeemmodus",
+    "de": "Systemmodus"
+  },
+  "desc": {
+    "en": "Heating, cooling, fan-only or dry mode of an HVAC controller (P3039)",
+    "fr": "Mode chauffage, froid, ventilation ou déshumidification d’un contrôleur CVC (P3039)"
+  },
+  "values": [
+    { "id": "cool", "title": { "en": "Cool", "fr": "Froid", "nl": "Koelen", "de": "Kühlen" } },
+    { "id": "heat", "title": { "en": "Heat", "fr": "Chaud", "nl": "Verwarmen", "de": "Heizen" } },
+    { "id": "fan_only", "title": { "en": "Fan only", "fr": "Ventilation", "nl": "Alleen ventilator", "de": "Nur Lüfter" } },
+    { "id": "dry", "title": { "en": "Dry", "fr": "Déshumidification", "nl": "Drogen", "de": "Entfeuchten" } }
+  ],
+  "getable": true,
+  "setable": true,
+  "uiComponent": "picker"
+}

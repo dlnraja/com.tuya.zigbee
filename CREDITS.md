@@ -398,5 +398,10 @@ A heartfelt thank you to:
   device templates.
 - Projects we read for the separate Wi-Fi/LAN matrix (leads only here): **make-all/tuya-local**,
   **rospogrigio/localtuya** and its forks, **jasonacox/tinytuya** and the **ESPHome** community.
+- Batch P3039b/c (nine new TS0601 drivers): the zigbee-herdsman-converters authors of the **MakeGood**
+  (MG-AU03, MG-GPO02Z), **Daewoo** (WKE502Z keypad), **Box** (EWS1154-Z), **Beca** (BVRF-L001 VRF thermostat),
+  **AutomatOn** (CH8Z) definitions, and the `tuya.ts` contributors for the **Tervix Pro Line X10** underfloor
+  controller, the 3-channel bidirectional meter (`p3g8xiug`) and the TS0601 smoke sensor (`yh7aoahi`).
+  Datapoints were reimplemented from your descriptions; no code copied.
 - And every forum member and GitHub issue reporter who sent a fingerprint, a diagnostic or a "this works now":
   you are listed by handle in the sections above, and new names are added with each batch.

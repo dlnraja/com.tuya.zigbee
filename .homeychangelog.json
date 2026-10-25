@@ -908,8 +908,8 @@
     }
   ],
   "9.0.1602": {
-    "en": "Thanks to the Zigbee2MQTT / zigbee-herdsman-converters contributors: SPM02V1-GT power meter now also matched with the exact TS0601 product id.",
-    "fr": "Merci aux contributeurs de Zigbee2MQTT / zigbee-herdsman-converters : le compteur SPM02V1-GT est aussi reconnu avec l'identifiant produit exact TS0601."
+    "en": "Thanks to the Zigbee2MQTT / zigbee-herdsman-converters contributors: SPM02V1-GT power meter now also matched with the exact TS0601 product id. Nine new drivers thanks to the MakeGood, Daewoo, Box, Beca, AutomatOn and Tervix device authors in zigbee-herdsman-converters: MG-AU03, MG-GPO02Z, WKE502Z keypad, EWS1154-Z, BVRF-L001, CH8Z, Pro Line X10, 3-channel bidirectional meter, TS0601 smoke sensor.",
+    "fr": "Merci aux contributeurs de Zigbee2MQTT / zigbee-herdsman-converters : le compteur SPM02V1-GT est aussi reconnu avec l'identifiant produit exact TS0601. Neuf nouveaux drivers grâce aux auteurs MakeGood, Daewoo, Box, Beca, AutomatOn et Tervix de zigbee-herdsman-converters : MG-AU03, MG-GPO02Z, clavier WKE502Z, EWS1154-Z, BVRF-L001, CH8Z, Pro Line X10, compteur 3 canaux bidirectionnel, détecteur de fumée TS0601."
   },
   "9.0.1600": {
     "en": "v9.0.1600: automated publish, manifest sync, and Homey test promotion."

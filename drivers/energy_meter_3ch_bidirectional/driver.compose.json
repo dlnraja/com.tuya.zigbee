@@ -1,0 +1,218 @@
+{
+  "id": "energy_meter_3ch_bidirectional",
+  "name": {
+    "en": "3-channel bidirectional energy meter with relay",
+    "fr": "Compteur d’énergie bidirectionnel 3 canaux avec relais",
+    "nl": "Bidirectionele energiemeter 3 kanalen met relais",
+    "de": "Bidirektionaler 3-Kanal-Energiezähler mit Relais"
+  },
+  "class": "socket",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "meter_power",
+    "meter_power.produced",
+    "measure_power",
+    "onoff",
+    "measure_voltage",
+    "measure_current.a",
+    "measure_current.b",
+    "measure_current.c",
+    "measure_power.a",
+    "measure_power.b",
+    "measure_power.c",
+    "measure_power_factor.a",
+    "measure_power_factor.b",
+    "measure_power_factor.c",
+    "meter_power.a",
+    "meter_power.reverse_a",
+    "meter_power.b",
+    "meter_power.reverse_b",
+    "meter_power.c",
+    "meter_power.reverse_c",
+    "measure_temperature"
+  ],
+  "capabilitiesOptions": {
+    "meter_power.produced": {
+      "title": {
+        "en": "Energy produced",
+        "fr": "Énergie produite",
+        "nl": "Geproduceerde energie",
+        "de": "Erzeugte Energie"
+      }
+    },
+    "measure_current.a": {
+      "title": {
+        "en": "Current A",
+        "fr": "Courant A",
+        "nl": "Stroom A",
+        "de": "Strom A"
+      }
+    },
+    "measure_power.a": {
+      "title": {
+        "en": "Power A",
+        "fr": "Puissance A",
+        "nl": "Vermogen A",
+        "de": "Leistung A"
+      }
+    },
+    "measure_power_factor.a": {
+      "title": {
+        "en": "Power factor A",
+        "fr": "Facteur de puissance A",
+        "nl": "Arbeidsfactor A",
+        "de": "Leistungsfaktor A"
+      }
+    },
+    "meter_power.a": {
+      "title": {
+        "en": "Energy A",
+        "fr": "Énergie A",
+        "nl": "Energie A",
+        "de": "Energie A"
+      }
+    },
+    "meter_power.reverse_a": {
+      "title": {
+        "en": "Reverse energy A",
+        "fr": "Énergie inverse A",
+        "nl": "Teruggeleverde energie A",
+        "de": "Rückspeisung A"
+      }
+    },
+    "measure_current.b": {
+      "title": {
+        "en": "Current B",
+        "fr": "Courant B",
+        "nl": "Stroom B",
+        "de": "Strom B"
+      }
+    },
+    "measure_power.b": {
+      "title": {
+        "en": "Power B",
+        "fr": "Puissance B",
+        "nl": "Vermogen B",
+        "de": "Leistung B"
+      }
+    },
+    "measure_power_factor.b": {
+      "title": {
+        "en": "Power factor B",
+        "fr": "Facteur de puissance B",
+        "nl": "Arbeidsfactor B",
+        "de": "Leistungsfaktor B"
+      }
+    },
+    "meter_power.b": {
+      "title": {
+        "en": "Energy B",
+        "fr": "Énergie B",
+        "nl": "Energie B",
+        "de": "Energie B"
+      }
+    },
+    "meter_power.reverse_b": {
+      "title": {
+        "en": "Reverse energy B",
+        "fr": "Énergie inverse B",
+        "nl": "Teruggeleverde energie B",
+        "de": "Rückspeisung B"
+      }
+    },
+    "measure_current.c": {
+      "title": {
+        "en": "Current C",
+        "fr": "Courant C",
+        "nl": "Stroom C",
+        "de": "Strom C"
+      }
+    },
+    "measure_power.c": {
+      "title": {
+        "en": "Power C",
+        "fr": "Puissance C",
+        "nl": "Vermogen C",
+        "de": "Leistung C"
+      }
+    },
+    "measure_power_factor.c": {
+      "title": {
+        "en": "Power factor C",
+        "fr": "Facteur de puissance C",
+        "nl": "Arbeidsfactor C",
+        "de": "Leistungsfaktor C"
+      }
+    },
+    "meter_power.c": {
+      "title": {
+        "en": "Energy C",
+        "fr": "Énergie C",
+        "nl": "Energie C",
+        "de": "Energie C"
+      }
+    },
+    "meter_power.reverse_c": {
+      "title": {
+        "en": "Reverse energy C",
+        "fr": "Énergie inverse C",
+        "nl": "Teruggeleverde energie C",
+        "de": "Rückspeisung C"
+      }
+    }
+  },
+  "energy": {
+    "approximation": {
+      "usageConstant": 0.5
+    }
+  },
+  "images": {
+    "small": "/drivers/energy_meter_3ch_bidirectional/assets/images/small.png",
+    "large": "/drivers/energy_meter_3ch_bidirectional/assets/images/large.png"
+  },
+  "settings": [
+    {
+      "$extends": [
+        "zcl_cluster_layer"
+      ]
+    }
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE20C1000000_p3g8xiug",
+      "_tze20c1000000_p3g8xiug",
+      "_TZE20C1000000_P3G8XIUG",
+      "_tze20c1000000_P3G8XIUG"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5
+        ],
+        "bindings": []
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Hold the button on the meter for about 5 seconds until the indicator blinks.",
+        "fr": "Maintenez le bouton du compteur environ 5 secondes jusqu’à ce que le voyant clignote.",
+        "nl": "Houd de knop van de meter ongeveer 5 seconden ingedrukt tot het lampje knippert.",
+        "de": "Halten Sie die Taste am Zähler etwa 5 Sekunden gedrückt, bis die Anzeige blinkt."
+      }
+    }
+  },
+  "metadata": {
+    "source": "zigbee-herdsman-converters tuya.ts TS0601_3ch_bidirectional_meter (_TZE20C1000000_p3g8xiug): DP16 relay, DP1/2 energy and produced energy /100, DP9 power /10, DP101 voltage /10, DP131 temperature /10, DP102-104 current A-C /1000, DP105-107 power A-C /10, DP108-110 power factor A-C /100, DP125-130 energy and reverse energy A-C /100. Reimplemented and credited (P3039), no upstream code copied."
+  }
+}
