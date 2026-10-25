@@ -8,22 +8,6 @@
       "count": 1
     },
     {
-      "rule": "node20-action",
-      "file": ".github/workflows/auto-publish-on-push.yml",
-      "key": "softprops/action-gh-release@3bb12739c298aeb8a4eeaf626c5b8d85266b0e65"
-    },
-    {
-      "rule": "node20-action",
-      "file": ".github/workflows/auto-publish-on-push.yml",
-      "key": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02"
-    },
-    {
-      "rule": "raw-push",
-      "file": ".github/workflows/auto-publish-on-push.yml",
-      "key": "count",
-      "count": 1
-    },
-    {
       "rule": "raw-push",
       "file": ".github/workflows/bug-report-auto-pr.yml",
       "key": "count",
@@ -40,17 +24,6 @@
       "file": ".github/workflows/kb-refresh.yml",
       "key": "count",
       "count": 1
-    },
-    {
-      "rule": "node20-action",
-      "file": ".github/workflows/publish.yml",
-      "key": "softprops/action-gh-release@3bb12739c298aeb8a4eeaf626c5b8d85266b0e65"
-    },
-    {
-      "rule": "raw-push",
-      "file": ".github/workflows/publish.yml",
-      "key": "count",
-      "count": 2
     }
   ]
 }
