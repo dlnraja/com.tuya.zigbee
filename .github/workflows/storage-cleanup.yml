@@ -1,0 +1,74 @@
+# CI storage cleanup (P3033)
+# Triggers: cron daily 03:30 UTC + workflow_dispatch (dry_run) | Secrets: GITHUB_TOKEN only | Free, no AI
+# Keeps GitHub Actions storage under the 10 GB cache quota (10.66 GB reached in Oct 2026):
+#  - caches: newest entry per key family and ref kept; older ones, caches of deleted branches / closed PRs,
+#    and non-state caches idle 7+ days are deleted. Newest per family on master / stable-v5 / bastien-home and
+#    newest of every state cache declared in the workflows (run_id keys, *-state-*) are never deleted.
+#  - artifacts older than 14 days are deleted, except the newest of a name a later run downloads.
+# Report mode: summary + warning annotation above 80 % of config/platform-limits.json gha_cache_gb; never
+# blocks another workflow. Rules and tests: scripts/ci/storage-cleanup.js, test/critical/p3033-storage-cleanup.test.js.
+# Stale bot/* PRs and branches are already handled by repo-autopilot.yml (P3022), not here.
+# Kill switch: vars.STORAGE_CLEANUP_DISABLED == 'true'; vars.STORAGE_CLEANUP_DRY == 'true' makes the schedule a dry run.
+name: Storage cleanup (P3033)
+
+on:
+  schedule:
+    - cron: '30 3 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run: list what would be deleted, delete nothing'
+        type: boolean
+        default: true
+      max_deletions:
+        description: 'Max caches (and max artifacts) deleted in one run'
+        type: number
+        default: 400
+
+# WHY pull-requests: read — open PR list, so caches of closed PRs (refs/pull/N/merge) can be told apart.
+permissions:
+  actions: write
+  contents: read
+  pull-requests: read
+
+concurrency:
+  group: storage-cleanup
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  cleanup:
+    if: ${{ vars.STORAGE_CLEANUP_DISABLED != 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          fetch-depth: 1
+      # WHY no `cache: npm`: the script has no dependencies, and a cleanup job must not add caches.
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '22'
+
+      - name: Clean caches and artifacts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CLEANUP_DRY: ${{ (github.event_name == 'workflow_dispatch' && inputs.dry_run) || (github.event_name == 'schedule' && vars.STORAGE_CLEANUP_DRY == 'true') }}
+          MAX_DELETIONS: ${{ inputs.max_deletions || 400 }}
+        run: |
+          MODE=--apply
+          [ "$CLEANUP_DRY" = "true" ] && MODE=--dry-run
+          node scripts/ci/storage-cleanup.js "$MODE" --max-deletions="$MAX_DELETIONS" --out=reports/storage-cleanup
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0 (node24, P3025b)
+        with:
+          name: storage-cleanup-report
+          path: reports/storage-cleanup/
+          retention-days: 7
+          if-no-files-found: ignore
