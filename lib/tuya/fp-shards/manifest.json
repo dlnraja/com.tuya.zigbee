@@ -1,9 +1,9 @@
 {
   "version": 1,
   "patch": "P2678",
-  "generatedAt": "2026-10-24T21:45:38.784Z",
+  "generatedAt": "2026-10-25T14:55:00.174Z",
   "source": "lib/tuya/fingerprints.json",
-  "sourceBytes": 931106,
+  "sourceBytes": 931166,
   "keyCount": 5781,
   "shardCount": 227,
   "shards": {
@@ -653,7 +653,7 @@
     },
     "TZE204_a": {
       "keys": 34,
-      "bytes": 5061
+      "bytes": 5067
     },
     "TZE204_b": {
       "keys": 19,
@@ -721,7 +721,7 @@
     },
     "TZE204_r": {
       "keys": 23,
-      "bytes": 3837
+      "bytes": 3843
     },
     "TZE204_s": {
       "keys": 27,
@@ -733,7 +733,7 @@
     },
     "TZE204_u": {
       "keys": 18,
-      "bytes": 2756
+      "bytes": 2762
     },
     "TZE204_v": {
       "keys": 16,
@@ -753,7 +753,7 @@
     },
     "TZE204_z": {
       "keys": 33,
-      "bytes": 5107
+      "bytes": 5119
     },
     "TZE210": {
       "keys": 2,
@@ -805,7 +805,7 @@
     },
     "TZE284_a": {
       "keys": 38,
-      "bytes": 6154
+      "bytes": 6160
     },
     "TZE284_b": {
       "keys": 7,
@@ -857,7 +857,7 @@
     },
     "TZE284_n": {
       "keys": 27,
-      "bytes": 4815
+      "bytes": 4821
     },
     "TZE284_o": {
       "keys": 9,
@@ -873,7 +873,7 @@
     },
     "TZE284_r": {
       "keys": 16,
-      "bytes": 2523
+      "bytes": 2529
     },
     "TZE284_s": {
       "keys": 11,
@@ -885,7 +885,7 @@
     },
     "TZE284_u": {
       "keys": 10,
-      "bytes": 1395
+      "bytes": 1401
     },
     "TZE284_v": {
       "keys": 16,
@@ -905,7 +905,7 @@
     },
     "TZE284_z": {
       "keys": 24,
-      "bytes": 3878
+      "bytes": 3884
     },
     "TZE600": {
       "keys": 2,
