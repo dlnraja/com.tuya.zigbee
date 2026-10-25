@@ -413,5 +413,9 @@ A heartfelt thank you to:
   switch, a power strip, an irrigation valve and a motion relay. Thanks also to Koen Kanters and the Zigbee2MQTT
   community for the per-device fingerprints that let us check every couple one by one (own implementation, no
   upstream code copied).
+- Batch P3040 (smarter pairing): **Anders_Bee** (Homey forum topic 154959) for the advice to avoid bursts of
+  radio traffic right after a device joins: the first-start reads, binds and reporting setups are now deduplicated,
+  cached and paced. Thanks also to the Zigbee2MQTT `configureMagicPacket` authors for the read order of the Tuya
+  basic attributes (own implementation, no upstream code copied).
 - And every forum member and GitHub issue reporter who sent a fingerprint, a diagnostic or a "this works now":
   you are listed by handle in the sections above, and new names are added with each batch.

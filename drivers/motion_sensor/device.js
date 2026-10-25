@@ -713,7 +713,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
 
     // v5.5.355: SMART LUX REPORTING - Independent luminance updates
     this._luxSmartReporting = {
-      lastLuxValue,
+      lastLuxValue: null, // P3040: was a bare undefined identifier → ReferenceError killed onNodeInit
       lastLuxTime: 0,
       luxReportInterval: 5 * 60 * 1000, // 5 minutes base interval
       luxChangeThreshold: 10, // 10% change threshold
@@ -1373,8 +1373,10 @@ class MotionSensorDevice extends UnifiedSensorBase {
       return null;
     }
 
+    // P3040: readId was declared inside try and used in catch → ReferenceError on every failed
+    // read, the pending mark was never cleared and that read stayed blocked for the session.
+    const readId = `${cluster.name || cluster.constructor.name}_${attributes.join('_')}`;
     try {
-      const readId = `${cluster.name || cluster.constructor.name}_${attributes.join('_')}`;
 
       if (this._pendingZclReads.has(readId)) {
         this.log(`[SLEEPY]  ZCL read already pending: ${readId}`);
