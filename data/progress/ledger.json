@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-25T21:03:48.567Z",
+ "updated": "2026-10-25T22:10:49.488Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -6114,6 +6114,25 @@
    "note": "owner lcdtemphumidsensor; class heal from device_plug_smart/button_wireless_plug; wildcard pids on device_plug_smart left for owner (Wilhelm Dall)",
    "by": "exec-A"
   },
+  "diag:011ec73e9982a90c": {
+   "status": "pending",
+   "date": "2026-10-25",
+   "hash": "da1556fddec30067",
+   "note": "bug_report mail; 1 error line(s)",
+   "by": "tuya-deep-diag",
+   "kind": "bug_report",
+   "mailDate": "2026-10-19T22:03:21.000Z",
+   "errors": 1
+  },
+  "diag:0137927c7bc51258": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "98110259a6e25fe1",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-19T23:43:56.000Z"
+  },
   "diag:016a85d624f20bf5": {
    "status": "done",
    "date": "2026-10-21",
@@ -6141,6 +6160,15 @@
    "kind": "general",
    "mailDate": "2026-10-21T10:08:51.000Z"
   },
+  "diag:0267110cc12bea1a": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "4b4630e7f2bd5fcf",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-19T16:11:56.000Z"
+  },
   "diag:02761cc0a05b1618": {
    "status": "done",
    "date": "2026-10-21",
@@ -6149,6 +6177,15 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-10-21T10:11:05.000Z"
+  },
+  "diag:039caed8f1711a28": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "8d427b36060397f5",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-19T16:36:50.000Z"
   },
   "diag:039d4d79243d433d": {
    "status": "done",
@@ -6357,6 +6394,16 @@
    "kind": "general",
    "mailDate": "2026-10-19T09:22:12.000Z"
   },
+  "diag:0d8917026b2dc27d": {
+   "status": "pending",
+   "date": "2026-10-25",
+   "hash": "7142c6abc7088339",
+   "note": "bug_report mail; 1 error line(s)",
+   "by": "tuya-deep-diag",
+   "kind": "bug_report",
+   "mailDate": "2026-10-19T16:49:07.000Z",
+   "errors": 1
+  },
   "diag:0e3217a10a671cdf": {
    "status": "done",
    "date": "2026-10-25",
@@ -6550,6 +6597,24 @@
    "kind": "general",
    "mailDate": "2026-10-20T13:22:35.000Z"
   },
+  "diag:1a74d967968392f3": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "54fb8643c02837c2",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-20T00:17:35.000Z"
+  },
+  "diag:1a95517f14b79b9a": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "8d383affd848738c",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-20T01:06:08.000Z"
+  },
   "diag:1af6b2aaf3c05571": {
    "status": "done",
    "date": "2026-10-25",
@@ -6567,6 +6632,15 @@
    "by": "tuya-deep-diag",
    "kind": "general",
    "mailDate": "2026-10-18T22:37:54.000Z"
+  },
+  "diag:1c1cffe237ea5c2e": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "2a2c2fbbbc23a66c",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-19T17:15:31.000Z"
   },
   "diag:1c437f840181d067": {
    "status": "done",
@@ -6704,6 +6778,16 @@
    "kind": "general",
    "mailDate": "2026-10-21T12:17:36.000Z"
   },
+  "diag:248058858d08f44a": {
+   "status": "pending",
+   "date": "2026-10-25",
+   "hash": "9725767f256cea23",
+   "note": "bug_report mail; 1 error line(s)",
+   "by": "tuya-deep-diag",
+   "kind": "bug_report",
+   "mailDate": "2026-10-19T21:38:42.000Z",
+   "errors": 1
+  },
   "diag:24ad94f708ca46e7": {
    "status": "done",
    "date": "2026-10-24",
@@ -6786,6 +6870,15 @@
    "kind": "general",
    "mailDate": "2026-10-19T07:40:30.000Z"
   },
+  "diag:283c3f9452cd50f8": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "22396239088e68b6",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-19T16:48:52.000Z"
+  },
   "diag:2855966df386851a": {
    "status": "pending",
    "date": "2026-10-21",
@@ -6840,6 +6933,15 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-10-24T22:55:07.000Z"
+  },
+  "diag:2a0732f1a454a754": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "2a19add69517d0c4",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-20T00:15:51.000Z"
   },
   "diag:2a77a3dcd91bfe7d": {
    "status": "done",
@@ -6897,6 +6999,15 @@
    "by": "tuya-deep-diag",
    "kind": "general",
    "mailDate": "2026-10-18T23:03:39.000Z"
+  },
+  "diag:2d6f893813892b64": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "b898e83d57ac9a3e",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-19T23:22:04.000Z"
   },
   "diag:2d7af1d748597603": {
    "status": "done",
@@ -7028,6 +7139,15 @@
    "kind": "general",
    "mailDate": "2026-10-18T22:49:34.000Z"
   },
+  "diag:3508b93895f5a4da": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "57212226145cc244",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-20T00:50:29.000Z"
+  },
   "diag:35a127d96f8a04e5": {
    "status": "done",
    "date": "2026-10-25",
@@ -7045,6 +7165,16 @@
    "by": "fetch-diags",
    "kind": "general",
    "mailDate": "2026-10-25T15:15:38.000Z"
+  },
+  "diag:3657cc6833775afa": {
+   "status": "pending",
+   "date": "2026-10-25",
+   "hash": "ff53cd8c455298e6",
+   "note": "bug_report mail; 1 error line(s)",
+   "by": "tuya-deep-diag",
+   "kind": "bug_report",
+   "mailDate": "2026-10-19T22:24:58.000Z",
+   "errors": 1
   },
   "diag:3689d43970c930a6": {
    "status": "done",
@@ -7127,6 +7257,24 @@
    "kind": "general",
    "mailDate": "2026-10-20T13:22:19.000Z"
   },
+  "diag:3af7c87671ce5211": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "aa8c3172ed439f77",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-19T21:24:24.000Z"
+  },
+  "diag:3b63383282eed7d4": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "045c42a523757211",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-19T16:09:38.000Z"
+  },
   "diag:3c5e0060da9e512c": {
    "status": "done",
    "date": "2026-10-21",
@@ -7144,6 +7292,15 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-10-25T12:57:20.000Z"
+  },
+  "diag:3cc57b8a42efd6d0": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "5af421c76adfb6fd",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-20T00:50:14.000Z"
   },
   "diag:3d767b596c572963": {
    "status": "done",
@@ -7225,6 +7382,25 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-10-21T10:28:15.000Z"
+  },
+  "diag:40ca92d9bf8d5bfa": {
+   "status": "pending",
+   "date": "2026-10-25",
+   "hash": "a0201af23461eac1",
+   "note": "bug_report mail; 1 error line(s)",
+   "by": "tuya-deep-diag",
+   "kind": "bug_report",
+   "mailDate": "2026-10-19T22:59:31.000Z",
+   "errors": 1
+  },
+  "diag:416d42d71c36fe15": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "d9e966f9fbf707a9",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-20T00:15:52.000Z"
   },
   "diag:41b4c9bd8c08379d": {
    "status": "done",
@@ -7326,6 +7502,24 @@
    "kind": "general",
    "mailDate": "2026-10-18T23:46:59.000Z"
   },
+  "diag:4c5307db8c2d8768": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "0c04d9cf0cafd1e8",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-19T22:32:46.000Z"
+  },
+  "diag:4c541a6736fb75cd": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "d4721db6b0bfebc6",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-20T00:40:39.000Z"
+  },
   "diag:4d33ba6b7abc96f8": {
    "status": "done",
    "date": "2026-10-21",
@@ -7343,6 +7537,15 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-10-19T05:20:32.000Z"
+  },
+  "diag:4e372f675bd689b2": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "c943974b35d2d1b3",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-20T00:40:23.000Z"
   },
   "diag:4f5fc1b691a1fbd6": {
    "status": "done",
@@ -7370,6 +7573,15 @@
    "by": "tuya-deep-diag",
    "kind": "general",
    "mailDate": "2026-10-18T23:28:16.000Z"
+  },
+  "diag:4fd8e847f8e2477a": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "89e94d8c2131a1d3",
+   "note": "github mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "github",
+   "mailDate": "2026-10-19T16:28:32.000Z"
   },
   "diag:504f19c78c9a2496": {
    "status": "pending",
@@ -7434,6 +7646,15 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-10-20T13:26:44.000Z"
+  },
+  "diag:5394c2ec01d3c6bf": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "b258e1d8a82d1a86",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-20T00:34:40.000Z"
   },
   "diag:547a426324e265bc": {
    "status": "done",
@@ -7607,6 +7828,15 @@
    "kind": "general",
    "mailDate": "2026-10-21T08:24:01.000Z"
   },
+  "diag:59d951ad55feeaca": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "613e6c3e05fb99f7",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-19T21:38:26.000Z"
+  },
   "diag:5a46ed06c3fb88f1": {
    "status": "done",
    "date": "2026-10-21",
@@ -7725,6 +7955,15 @@
    "kind": "general",
    "mailDate": "2026-10-18T22:44:27.000Z"
   },
+  "diag:608fb7ba3dc877b0": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "82c3ca7aae80d164",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-19T17:38:25.000Z"
+  },
   "diag:622ae925ba5d7f99": {
    "status": "done",
    "date": "2026-10-25",
@@ -7770,6 +8009,16 @@
    "kind": "general",
    "mailDate": "2026-10-21T09:32:26.000Z"
   },
+  "diag:6436bb7ba0a60b3e": {
+   "status": "pending",
+   "date": "2026-10-25",
+   "hash": "9f612d8aa18ece6e",
+   "note": "bug_report mail; 1 error line(s)",
+   "by": "tuya-deep-diag",
+   "kind": "bug_report",
+   "mailDate": "2026-10-19T22:36:33.000Z",
+   "errors": 1
+  },
   "diag:646361f6b988da9c": {
    "status": "done",
    "date": "2026-10-25",
@@ -7806,6 +8055,15 @@
    "kind": "general",
    "mailDate": "2026-10-19T05:48:23.000Z"
   },
+  "diag:659b07b34ee1e6f6": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "deb21e03efdd3ce3",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-20T00:52:16.000Z"
+  },
   "diag:668d83c2eeff638d": {
    "status": "done",
    "date": "2026-10-25",
@@ -7841,6 +8099,15 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-10-20T13:40:33.000Z"
+  },
+  "diag:6935f6bbbc7d1579": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "8f97a2dd45da2cb4",
+   "note": "github mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "github",
+   "mailDate": "2026-10-20T10:34:44.000Z"
   },
   "diag:69df26e821d66bc3": {
    "status": "pending",
@@ -7920,6 +8187,24 @@
    "kind": "general",
    "mailDate": "2026-10-18T23:56:08.000Z"
   },
+  "diag:6e4cc006930b5a21": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "3091cde65a14b1df",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-20T00:42:33.000Z"
+  },
+  "diag:6ec051b8e80ea615": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "0bc180b68a32f05e",
+   "note": "github mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "github",
+   "mailDate": "2026-10-19T19:56:57.000Z"
+  },
   "diag:6ed39b4b4846a74e": {
    "status": "done",
    "date": "2026-10-20",
@@ -7928,6 +8213,15 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-10-20T08:06:49.000Z"
+  },
+  "diag:6f2981f4fa6db2dd": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "c54b08cde9cf3f3f",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-19T17:37:39.000Z"
   },
   "diag:6faebd7f6076214c": {
    "status": "done",
@@ -7956,6 +8250,25 @@
    "kind": "general",
    "mailDate": "2026-10-20T14:01:21.000Z"
   },
+  "diag:72621fc478b3bd1d": {
+   "status": "pending",
+   "date": "2026-10-25",
+   "hash": "fee47098337aebe2",
+   "note": "bug_report mail; 1 error line(s)",
+   "by": "tuya-deep-diag",
+   "kind": "bug_report",
+   "mailDate": "2026-10-19T17:15:45.000Z",
+   "errors": 1
+  },
+  "diag:7371a5d22e033f62": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "070d2513b78a9223",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-20T00:36:39.000Z"
+  },
   "diag:74302bc5ec981786": {
    "status": "done",
    "date": "2026-10-24",
@@ -7973,6 +8286,25 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-10-21T09:24:18.000Z"
+  },
+  "diag:74a5943ae3e88177": {
+   "status": "pending",
+   "date": "2026-10-25",
+   "hash": "21224b873857e913",
+   "note": "bug_report mail; 1 error line(s)",
+   "by": "tuya-deep-diag",
+   "kind": "bug_report",
+   "mailDate": "2026-10-19T21:24:52.000Z",
+   "errors": 1
+  },
+  "diag:7548f7db08ba998d": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "635292c7439ddef4",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-20T00:43:11.000Z"
   },
   "diag:76c7cd91daae4076": {
    "status": "done",
@@ -8100,6 +8432,15 @@
    "kind": "general",
    "mailDate": "2026-10-20T13:56:28.000Z"
   },
+  "diag:7ff3761c118cab94": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "21be661c7353bfc6",
+   "note": "github mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "github",
+   "mailDate": "2026-10-19T16:41:37.000Z"
+  },
   "diag:809012a7b8557176": {
    "status": "done",
    "date": "2026-10-24",
@@ -8126,6 +8467,16 @@
    "by": "gmail-diagnostics",
    "kind": "bug_report",
    "mailDate": "2026-10-21T13:20:18.000Z",
+   "errors": 1
+  },
+  "diag:8310b57bedebd2a6": {
+   "status": "pending",
+   "date": "2026-10-25",
+   "hash": "b72f80fd780a8834",
+   "note": "bug_report mail; 1 error line(s)",
+   "by": "tuya-deep-diag",
+   "kind": "bug_report",
+   "mailDate": "2026-10-19T23:44:11.000Z",
    "errors": 1
   },
   "diag:8319a04f9498da48": {
@@ -8377,6 +8728,24 @@
    "kind": "general",
    "mailDate": "2026-10-19T05:35:52.000Z"
   },
+  "diag:90c642e7d19e90d3": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "752caf8341b965ae",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-19T22:03:06.000Z"
+  },
+  "diag:90c72d930f1891b8": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "786a1dc57b595680",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-20T01:02:26.000Z"
+  },
   "diag:91b79936d79164fa": {
    "status": "done",
    "date": "2026-10-20",
@@ -8413,6 +8782,15 @@
    "kind": "general",
    "mailDate": "2026-10-21T13:34:12.000Z"
   },
+  "diag:936b9b0edd95e1a5": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "1dd1d149ec329bba",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-20T00:42:48.000Z"
+  },
   "diag:93785df5d7cc6779": {
    "status": "done",
    "date": "2026-10-21",
@@ -8421,6 +8799,22 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-10-21T10:20:08.000Z"
+  },
+  "diag:939914d277554184": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "92b2f9d3ace15e27",
+   "note": "github mail; 5 couple(s); nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "github",
+   "mailDate": "2026-10-19T16:42:05.000Z",
+   "couples": [
+    "_tze284_0ints6wl|TS0601",
+    "_tz3000_fllyghyj|TS0201",
+    "_tz3000_xr3htd96|TS0201",
+    "_tz3000_nrfkrgf4|TS0046",
+    "_tze284_9ern5sfh|TS0601"
+   ]
   },
   "diag:93caa0ebe7858fab": {
    "status": "done",
@@ -8449,6 +8843,15 @@
    "by": "tuya-deep-diag",
    "kind": "general",
    "mailDate": "2026-10-18T23:07:25.000Z"
+  },
+  "diag:954df102bff0af1a": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "3ae4d70bc5407a7e",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-19T17:48:34.000Z"
   },
   "diag:9608c5dddcffb9d1": {
    "status": "done",
@@ -8514,6 +8917,15 @@
    "kind": "general",
    "mailDate": "2026-10-19T05:32:05.000Z"
   },
+  "diag:97fb1008df1241b0": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "f1e7bbbdfea58f8a",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-19T17:48:48.000Z"
+  },
   "diag:98912dd6e12e4099": {
    "status": "done",
    "date": "2026-10-21",
@@ -8550,6 +8962,15 @@
    "kind": "general",
    "mailDate": "2026-10-20T06:51:23.000Z"
   },
+  "diag:9be2fc7097c40662": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "4c686692374fa7e5",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-20T00:19:57.000Z"
+  },
   "diag:9c55fdc9b173048c": {
    "status": "done",
    "date": "2026-10-25",
@@ -8558,6 +8979,16 @@
    "by": "tuya-deep-diag",
    "kind": "general",
    "mailDate": "2026-10-19T08:34:50.000Z"
+  },
+  "diag:9cce0ce561a8e695": {
+   "status": "pending",
+   "date": "2026-10-25",
+   "hash": "6e4e9811a15be18c",
+   "note": "bug_report mail; 1 error line(s)",
+   "by": "tuya-deep-diag",
+   "kind": "bug_report",
+   "mailDate": "2026-10-19T23:22:22.000Z",
+   "errors": 1
   },
   "diag:9ced6ce9394f6c30": {
    "status": "done",
@@ -8724,6 +9155,15 @@
    "kind": "general",
    "mailDate": "2026-10-21T10:01:24.000Z"
   },
+  "diag:a4ad1ec75a0fc3b3": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "baf7f6febc6731bc",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-20T01:05:48.000Z"
+  },
   "diag:a4c5f0f70f49dab6": {
    "status": "done",
    "date": "2026-10-25",
@@ -8769,6 +9209,16 @@
    "kind": "general",
    "mailDate": "2026-10-19T07:06:13.000Z"
   },
+  "diag:a76029d5b95acee6": {
+   "status": "pending",
+   "date": "2026-10-25",
+   "hash": "fbb7afed48ea6b07",
+   "note": "bug_report mail; 1 error line(s)",
+   "by": "tuya-deep-diag",
+   "kind": "bug_report",
+   "mailDate": "2026-10-20T00:11:48.000Z",
+   "errors": 1
+  },
   "diag:a91062a0249b5ce0": {
    "status": "done",
    "date": "2026-10-24",
@@ -8777,6 +9227,15 @@
    "by": "tuya-deep-diag",
    "kind": "general",
    "mailDate": "2026-10-19T05:48:14.000Z"
+  },
+  "diag:a9acd3337d16b7c2": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "bfc1e0ce3995e4eb",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-19T17:38:11.000Z"
   },
   "diag:a9d017684b2dd361": {
    "status": "done",
@@ -8877,6 +9336,15 @@
    "kind": "general",
    "mailDate": "2026-10-19T05:48:08.000Z"
   },
+  "diag:ae43f3543e768e78": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "df96e70c964ab3c2",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-20T00:34:24.000Z"
+  },
   "diag:af1d3720df9c5a38": {
    "status": "done",
    "date": "2026-10-24",
@@ -8940,6 +9408,18 @@
    "kind": "general",
    "mailDate": "2026-10-19T06:37:40.000Z"
   },
+  "diag:b133eb9257a69e27": {
+   "status": "pending",
+   "date": "2026-10-25",
+   "hash": "282eae7f121efd77",
+   "note": "github mail; 1 in several drivers",
+   "by": "tuya-deep-diag",
+   "kind": "github",
+   "mailDate": "2026-10-19T16:41:29.000Z",
+   "conflicts": [
+    "_TZ3000_gjnozsaz"
+   ]
+  },
   "diag:b13e8ebc2725f8be": {
    "status": "done",
    "date": "2026-10-21",
@@ -8948,6 +9428,15 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-10-21T13:08:22.000Z"
+  },
+  "diag:b22bce9941498851": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "4ab8722f3e49ef15",
+   "note": "github mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "github",
+   "mailDate": "2026-10-19T21:36:01.000Z"
   },
   "diag:b273335e3a9d2e6c": {
    "status": "done",
@@ -8966,6 +9455,15 @@
    "by": "tuya-deep-diag",
    "kind": "general",
    "mailDate": "2026-10-19T07:36:31.000Z"
+  },
+  "diag:b433b47c1e8a8a1b": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "bf2ea5160151625b",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-19T22:24:13.000Z"
   },
   "diag:b4c634b93192f6cf": {
    "status": "done",
@@ -8993,6 +9491,15 @@
    "by": "tuya-deep-diag",
    "kind": "general",
    "mailDate": "2026-10-19T05:35:38.000Z"
+  },
+  "diag:b59652e4518ccee4": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "9c3bf901e5da12eb",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-19T22:33:00.000Z"
   },
   "diag:b6431e70818f4e77": {
    "status": "done",
@@ -9111,6 +9618,15 @@
    "kind": "general",
    "mailDate": "2026-10-21T08:24:45.000Z"
   },
+  "diag:bb7890ca00cf6577": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "66005a733592fccf",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-20T00:17:21.000Z"
+  },
   "diag:bb9eb260a4faee8b": {
    "status": "done",
    "date": "2026-10-24",
@@ -9128,6 +9644,15 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-10-21T09:48:02.000Z"
+  },
+  "diag:bc6901648928a443": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "f8c32e506416aae5",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-19T22:32:55.000Z"
   },
   "diag:bc9ec1293bf201a2": {
    "status": "done",
@@ -9254,6 +9779,15 @@
    "by": "tuya-deep-diag",
    "kind": "general",
    "mailDate": "2026-10-18T23:56:03.000Z"
+  },
+  "diag:c426203b8a787045": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "6274bd86b3c9ae18",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-19T22:23:55.000Z"
   },
   "diag:c59d467b9213a9d5": {
    "status": "done",
@@ -9440,6 +9974,24 @@
    "mailDate": "2026-10-21T08:22:27.000Z",
    "errors": 1
   },
+  "diag:d244ce2bd5245640": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "f01d21f95042f79d",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-19T17:50:45.000Z"
+  },
+  "diag:d2767c2cdef633f1": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "589945edb5d5f952",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-19T22:59:18.000Z"
+  },
   "diag:d292c15b9c7855a3": {
    "status": "done",
    "date": "2026-10-21",
@@ -9575,6 +10127,15 @@
    "kind": "general",
    "mailDate": "2026-10-18T22:41:12.000Z"
   },
+  "diag:d724c8c0bcc9ef30": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "5f51609cbad0b3e6",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-20T00:44:44.000Z"
+  },
   "diag:d822bd46ae80bb63": {
    "status": "done",
    "date": "2026-10-25",
@@ -9583,6 +10144,15 @@
    "by": "tuya-deep-diag",
    "kind": "general",
    "mailDate": "2026-10-19T08:39:11.000Z"
+  },
+  "diag:d8f6d0c4ee463e0e": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "a10a0f55249c469c",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-19T22:36:17.000Z"
   },
   "diag:d937b68e87b5b502": {
    "status": "done",
@@ -9601,6 +10171,15 @@
    "by": "tuya-deep-diag",
    "kind": "general",
    "mailDate": "2026-10-18T23:33:45.000Z"
+  },
+  "diag:d96cf72ba07b2244": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "d73922494e86eb6a",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-20T00:15:44.000Z"
   },
   "diag:d9d4f74dc39c2238": {
    "status": "done",
@@ -9628,6 +10207,15 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-10-21T09:43:28.000Z"
+  },
+  "diag:db9322f02d895874": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "d1a556d315617034",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-20T00:11:33.000Z"
   },
   "diag:dc0dfa925cc466ea": {
    "status": "done",
@@ -9729,6 +10317,15 @@
    "kind": "general",
    "mailDate": "2026-10-20T06:48:56.000Z"
   },
+  "diag:e124363cc876074b": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "6d36258cc91304f2",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-20T01:02:11.000Z"
+  },
   "diag:e185fb9d062dcc2e": {
    "status": "done",
    "date": "2026-10-20",
@@ -9755,6 +10352,15 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-10-21T10:28:16.000Z"
+  },
+  "diag:e28591cb6c4b4cbd": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "4434e7d24898b71d",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-20T01:08:45.000Z"
   },
   "diag:e2a81da56ce7c6d8": {
    "status": "done",
@@ -9832,6 +10438,15 @@
     "_TYZB01_v8gtiaed",
     "_TZE200_vzekyi4c"
    ]
+  },
+  "diag:e6e0bb314a407b92": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "6999f52794b829c4",
+   "note": "github mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "github",
+   "mailDate": "2026-10-20T11:44:19.000Z"
   },
   "diag:e79327ae070bfb84": {
    "status": "done",
@@ -10092,6 +10707,15 @@
    "kind": "general",
    "mailDate": "2026-10-19T08:13:39.000Z"
   },
+  "diag:f83117640fa5a4ad": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "3358ae6e76dba898",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-19T22:26:39.000Z"
+  },
   "diag:f862aab1ff07a751": {
    "status": "done",
    "date": "2026-10-22",
@@ -10129,6 +10753,16 @@
     "switch_1gang"
    ],
    "errors": 4
+  },
+  "diag:f8c7482c87cd0bcf": {
+   "status": "pending",
+   "date": "2026-10-25",
+   "hash": "6b525fe77df20e3e",
+   "note": "bug_report mail; 1 error line(s)",
+   "by": "tuya-deep-diag",
+   "kind": "bug_report",
+   "mailDate": "2026-10-19T16:37:12.000Z",
+   "errors": 1
   },
   "diag:f8cac0cc3a08fb56": {
    "status": "done",
@@ -10201,6 +10835,15 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-10-20T13:26:53.000Z"
+  },
+  "diag:fdb30fb7dbf0e254": {
+   "status": "done",
+   "date": "2026-10-25",
+   "hash": "69d67df5cdfd0796",
+   "note": "general mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "general",
+   "mailDate": "2026-10-19T22:24:40.000Z"
   },
   "diag:fe05299cb49c9aed": {
    "status": "done",
