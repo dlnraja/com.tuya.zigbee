@@ -1,16 +1,26 @@
 {
-  "harvestedAt": "2026-10-25T08:47:31.181Z",
+  "harvestedAt": "2026-10-25T15:05:58.220Z",
   "repo": "dlnraja/com.tuya.zigbee",
   "auth": "token",
   "error": null,
   "issues": [
+    {
+      "number": 576,
+      "title": "TS0601 / _TZE200_yenbr4om not recognized as curtain_motor (falls back to generic)",
+      "labels": [
+        "bug"
+      ],
+      "updatedAt": "2026-10-25T14:16:20Z",
+      "user": "migueleap",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/576"
+    },
     {
       "number": 557,
       "title": "🤖 Daily digest",
       "labels": [
         "bot-digest"
       ],
-      "updatedAt": "2026-10-25T06:47:06Z",
+      "updatedAt": "2026-10-25T11:09:57Z",
       "user": "dlnraja",
       "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/557"
     },
@@ -66,6 +76,6 @@
     }
   ],
   "prs": [],
-  "openIssueCount": 6,
+  "openIssueCount": 7,
   "openPrCount": 0
 }
