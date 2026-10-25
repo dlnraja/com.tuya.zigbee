@@ -129,17 +129,19 @@ class FingerBot extends TuyaSpecificClusterDevice {
   /**
    * One sendData (0x04) frame per DP, straight to the cluster.
    * The inherited cascade (EF00 manager -> setData 0x00 -> raw -> magic -> rescan)
-   * queues several frames this firmware ignores, and the sendData fallback passed
-   * {dp, datatype, data} where the cluster expects {seq, dpValues}.
+   * waits out several timeouts on this sleepy end device before anything gets through.
+   * lib/TuyaSpecificCluster, lib/clusters/ and lib/tuya/ all register as 'tuya' with
+   * different sendData args; whichever loads last wins, so follow the live definition.
    */
   async _sendTuyaDatapoint(dp, datatype, length, data) {
-    const header = Buffer.from([dp & 0xff, datatype & 0xff, (length >> 8) & 0xff, length & 0xff]);
-    const seq = this._transactionID;
-    this.transactionID = seq + 1;
-    return this.zclNode.endpoints[1].clusters.tuya.sendData({
-      seq,
-      dpValues: Buffer.concat([header, data]),
-    });
+    const cluster = this.zclNode.endpoints[1].clusters.tuya;
+    const transid = this.transactionID;
+    this.transactionID = transid + 1;
+    if (cluster.constructor.COMMANDS?.sendData?.args?.seq) {
+      const header = Buffer.from([dp & 0xff, datatype & 0xff, (length >> 8) & 0xff, length & 0xff]);
+      return cluster.sendData({ seq: transid, dpValues: Buffer.concat([header, data]) });
+    }
+    return cluster.sendData({ status: 0, transid, dp, datatype, length, data });
   }
 
   async onNodeInit({ zclNode }) {
