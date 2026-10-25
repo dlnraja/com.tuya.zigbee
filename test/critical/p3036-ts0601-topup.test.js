@@ -100,7 +100,8 @@ describe('P3036 TS0601 top-up (additive, measured ceiling)', () => {
     assert.ok(pp.indexOf('topUpFile(') > pp.indexOf('baselineUnresolved'), 'runs after the compaction checks');
     // P3036c: the ceiling lives in config/publish-caps.json; the workflows no longer set it.
     const v = CAPS.ts0601TopupMaxTotal;
-    assert.ok(v >= 0 && v <= T.MEASURED_ACCEPTED_MAX_TOTAL, `ts0601TopupMaxTotal ${v}`);
+    // P3036d: above the measured maximum only with the owner decision recorded in the config (allowAboveMeasuredCombos).
+    assert.ok(v >= 0 && (v <= T.MEASURED_ACCEPTED_MAX_TOTAL || (CAPS.allowAboveMeasuredCombos === 1 && v <= 0.9 * CAPS.measured.rejectedMinTotalCombos)), `ts0601TopupMaxTotal ${v}`);
     assert.match(pp, /publishCaps\.ts0601TopupMaxTotal/);
     const lim = JSON.parse(fs.readFileSync(path.join(ROOT, 'config/platform-limits.json'), 'utf8'));
     assert.strictEqual(lim.limits.zigbee_combos.limitFrom.capsFile, 'config/publish-caps.json');

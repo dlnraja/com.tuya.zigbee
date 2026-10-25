@@ -26,9 +26,21 @@ describe('P3036c single publish cap source', () => {
   it('caps stay within what Athom accepted (measured block)', () => {
     const m = CAPS.measured;
     assert.ok(m.acceptedMaxTotalCombos > 0 && m.acceptedMaxDriverCombos > 0);
-    assert.ok(L.payloadCeiling(CAPS) <= m.acceptedMaxTotalCombos, `ceiling ${L.payloadCeiling(CAPS)}`);
-    for (const k of ['maxDriverCombos', 'kbTopupMaxDriver', 'ts0601TopupMaxDriver']) {
-      assert.ok(CAPS[k] <= m.acceptedMaxDriverCombos, `${k} ${CAPS[k]}`);
+    assert.ok(CAPS.maxTotalCombos <= m.acceptedMaxTotalCombos, `base ${CAPS.maxTotalCombos}`);
+    if (CAPS.allowAboveMeasuredCombos === 1) {
+      // P3036d (owner decision 25/10/2026 17:29 Paris): the binding limit is the uploaded app.json size;
+      // top-ups keep >= 10 % margin under the only combo rejection and the upload cap is <= 90 % of the
+      // largest accepted app.json. The previous caps are kept in the config for the rollback.
+      const d = L.readFile(ROOT).decision;
+      assert.ok(d && d.rollback && d.rollback.caps, 'decision + rollback caps recorded');
+      assert.ok(d.rollback.caps.kbTopupMaxTotal <= m.acceptedMaxTotalCombos && d.rollback.caps.maxDriverCombos <= m.acceptedMaxDriverCombos);
+      assert.ok(L.payloadCeiling(CAPS) <= 0.9 * m.rejectedMinTotalCombos, `ceiling ${L.payloadCeiling(CAPS)}`);
+      assert.ok(CAPS.maxUploadAppJsonBytes > 0 && CAPS.maxUploadAppJsonBytes <= 0.9 * m.acceptedMaxUploadAppJsonBytes, `upload ${CAPS.maxUploadAppJsonBytes}`);
+    } else {
+      assert.ok(L.payloadCeiling(CAPS) <= m.acceptedMaxTotalCombos, `ceiling ${L.payloadCeiling(CAPS)}`);
+      for (const k of ['maxDriverCombos', 'kbTopupMaxDriver', 'ts0601TopupMaxDriver']) {
+        assert.ok(CAPS[k] <= m.acceptedMaxDriverCombos, `${k} ${CAPS[k]}`);
+      }
     }
     assert.ok(CAPS.maxTotalCombos <= CAPS.kbTopupMaxTotal || CAPS.kbTopupMaxTotal === 0);
   });

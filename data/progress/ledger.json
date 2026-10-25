@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-25T16:42:00.392Z",
+ "updated": "2026-10-25T16:44:51.902Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -10,6 +10,12 @@
   "sweep": "data/leads/sweep-checkpoint.json"
  },
  "items": {
+  "P3036d": {
+   "status": "done",
+   "date": "2026-10-25",
+   "note": "owner decision t523u 17:29 Paris + rule t524u 17:31: unified caps raised (base 20000/1500, top-ups 45000/2000), bound = uploaded app.json <= 3537000 B (90% of 3.93 MB accepted), checked FATAL on final upload; coverage tier per exact mfr+pid couple; master 44972 combos 3.32 MB 1781/2254; rollback = decision.rollback.caps (17000/1008/20000/1008) + allowAboveMeasuredCombos 0 if Athom refuses the next normal master upload",
+   "by": "p3036d"
+  },
   "P3037": {
    "status": "done",
    "date": "2026-10-25",
