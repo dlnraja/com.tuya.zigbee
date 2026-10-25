@@ -1,0 +1,93 @@
+{
+  "baseline": "ca08984b70",
+  "note": "P3050 t558u: fingerbot surface on master before PR #577; nothing here may disappear",
+  "capabilities": [
+    "button.1",
+    "button.push",
+    "finger_bot_mode",
+    "measure_battery",
+    "onoff"
+  ],
+  "settings": [
+    "delay",
+    "lower_limit",
+    "reverse",
+    "touch",
+    "upper_limit"
+  ],
+  "flow": {
+    "triggers": [
+      "fingerbot_battery_low",
+      "fingerbot_button_pressed",
+      "fingerbot_turned_off",
+      "fingerbot_turned_on"
+    ],
+    "conditions": [
+      "fingerbot_is_on"
+    ],
+    "actions": [
+      "fingerbot_push",
+      "fingerbot_toggle",
+      "fingerbot_turn_off",
+      "fingerbot_turn_on"
+    ]
+  },
+  "manufacturerName": [
+    "_TZ3210_232NRYQH",
+    "_TZ3210_232nryqh",
+    "_TZ3210_D3M9V8P6",
+    "_TZ3210_DSE8OGFY",
+    "_TZ3210_DSE8OGFY_FINGERBOT",
+    "_TZ3210_J4PDTZ9V",
+    "_TZ3210_OKBSS9DY",
+    "_TZ3210_PWJ6VUJ9",
+    "_TZ3210_d3m9v8p6",
+    "_TZ3210_dse8ogfy",
+    "_TZ3210_dse8ogfy_fingerbot",
+    "_TZ3210_j4pdtz9v",
+    "_TZ3210_okbss9dy",
+    "_TZ3210_pwj6vuj9",
+    "_tz3210_232NRYQH",
+    "_tz3210_232nryqh",
+    "_tz3210_D3M9V8P6",
+    "_tz3210_DSE8OGFY",
+    "_tz3210_DSE8OGFY_FINGERBOT",
+    "_tz3210_J4PDTZ9V",
+    "_tz3210_OKBSS9DY",
+    "_tz3210_PWJ6VUJ9",
+    "_tz3210_d3m9v8p6",
+    "_tz3210_dse8ogfy",
+    "_tz3210_dse8ogfy_fingerbot",
+    "_tz3210_j4pdtz9v",
+    "_tz3210_okbss9dy",
+    "_tz3210_pwj6vuj9"
+  ],
+  "productId": [
+    "TS0001",
+    "TS0001_fingerbot",
+    "TS0003",
+    "TS000F",
+    "TS0011",
+    "TS011F"
+  ],
+  "deviceMethods": [
+    "_getConfiguredMode",
+    "_getFlowCard",
+    "_normalizeMode",
+    "_pulseMomentaryGui",
+    "_registerOnOffHandling",
+    "_registerTimeBoundCluster",
+    "_registerTuyaListeners",
+    "_setCapabilitySafe",
+    "_triggerFlowCard",
+    "applyConfiguredSettings",
+    "getTuyaCommandName",
+    "onDeleted",
+    "onEndDeviceAnnounce",
+    "onNodeInit",
+    "onSettings",
+    "processDatapoint",
+    "readAttributes",
+    "triggerFingerBotPress"
+  ]
+}
