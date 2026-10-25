@@ -27,23 +27,27 @@
 const fs = require('fs');
 const path = require('path');
 
+// P3036c: default caps come from the single source config/publish-caps.json (numbers below are fallbacks).
+let PUBLISH_CAPS = null;
+try { PUBLISH_CAPS = require('../lib/publish-caps.cjs').readFile(path.join(__dirname, '..', '..')).caps; } catch (_e) { PUBLISH_CAPS = null; }
+
 // Legacy budgets (no mfs_db available): historical behavior.
 const DEFAULT_MAX_DRIVER_COMBOS = 350;
-const DEFAULT_MAX_TOTAL_COMBOS = 17000;
+const DEFAULT_MAX_TOTAL_COMBOS = (PUBLISH_CAPS && PUBLISH_CAPS.maxTotalCombos) || 17000;
 // Prioritized budgets (mfs_db available).
 // WHY(P2252): Athom expands manufacturerName[] × productId[] using RAW array
 // lengths (every CASE form counts). Unique-lowercase under-counting let
 // publish think ~28k while Athom saw 100k+ → processor socket hang up /
 // processing_failed (#2977 on 9.0.646). Keep raw totals Athom-safe.
-const PRIORITIZED_MAX_DRIVER_COMBOS = 1500;
-const PRIORITIZED_MAX_TOTAL_COMBOS = 17000;
+const PRIORITIZED_MAX_DRIVER_COMBOS = (PUBLISH_CAPS && PUBLISH_CAPS.maxDriverCombos) || 1500;
+const PRIORITIZED_MAX_TOTAL_COMBOS = (PUBLISH_CAPS && PUBLISH_CAPS.maxTotalCombos) || 17000;
 // Above this per-driver combo count (and only when mfs_db is available),
 // productIds are reduced to the ones actually observed with the driver's
 // manufacturers — this shrinks the cross-product without losing any real pair.
 const DEFAULT_PID_REDUCE_OVER = 350;
 // Max CASE string forms kept per unique manufacturer (Homey matching is
 // often case-sensitive). 2 = canonical + lowercase covers HOBEIAN/hobeian.
-const DEFAULT_MAX_CASE_FORMS = 2;
+const DEFAULT_MAX_CASE_FORMS = (PUBLISH_CAPS && PUBLISH_CAPS.maxCaseForms) || 2;
 const SYNTHETIC_MANUFACTURER_RE = /unknown|dummy|placeholder|needs_device_assignment|needs_exact_fingerprint|migrated_to|^_generic_|^_GENERIC_|^_hybrid_|^_HYBRID_|^_master_|^_MASTER_|^_disabled_|^_DISABLED_/;
 const MFS_DB_META_KEYS = new Set(['_meta', 'sources', 'devices', 'driverMapping', 'stats', 'diff']);
 

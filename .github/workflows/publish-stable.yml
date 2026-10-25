@@ -74,9 +74,8 @@ env:
   # P2561: master-aligned caps (17000/2000 left root compact ~4.00MB → false-fail)
   # P3024b/P3024c: our heuristic, not an Athom limit; fits the pinned publish baseline couples
   # (test/fixtures/athom-last-test-package-couples.json = this app's last Test package).
-  HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "15500"
-  HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "1500"
-  HOMEY_ZIGBEE_MAX_CASE_FORMS: "2"
+  # P3036c: Zigbee caps live in config/publish-caps.json only (scripts/lib/publish-caps.cjs);
+  # prepare-publish, the compactor and the budget gate read it. No HOMEY_ZIGBEE_* cap here.
   AI_PLAN_MODE: 'forfait'
   AI_FORCE_LOCAL: 'true'
   AI_ALLOW_REMOTE: 'false'
