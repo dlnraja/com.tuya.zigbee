@@ -21,13 +21,15 @@ const NODE20_SHAS = new Set([
   '5bef64f19d7facfb25b37b414482c7164d639639', 'a26af69be951a213d495a4c3e4e4022e16d87065', 'd6db90164ac5ed86f2b6aed7e0febac5b3c0c03e',
   '56afc609e74202658d3ffba0e8f6dda462b719fa', '21025c705c08248db411dc16f3619e6b5f9ea21a', '3bb12739c298aeb8a4eeaf626c5b8d85266b0e65',
   'c5a7806660adbe173f04e3e038b0ccdcd758773c',
+  // P3025b: upload-artifact v5.0.0 still declares runs.using node20 (verified on action.yml @ SHA).
+  '330a01c490aca151604b8cf639adc76d48f6c5d4',
 ]);
 
 function listFiles(root) {
   const out = [];
   const wf = path.join(root, '.github', 'workflows');
-  if (fs.existsSync(wf)) for (const f of fs.readdirSync(wf)) if (/\.ya?ml$/.test(f)) out.push(path.join(wf, f));
-  const walk = (d) => { if (!fs.existsSync(d)) return; for (const e of fs.readdirSync(d, { withFileTypes: true })) { const p = path.join(d, e.name); if (e.isDirectory()) walk(p); else if (/^action\.ya?ml$/.test(e.name)) out.push(p); } };
+  if (fs.existsSync(wf)) {for (const f of fs.readdirSync(wf)) {if (/\.ya?ml$/.test(f)) {out.push(path.join(wf, f));}}}
+  const walk = (d) => { if (!fs.existsSync(d)) {return;} for (const e of fs.readdirSync(d, { withFileTypes: true })) { const p = path.join(d, e.name); if (e.isDirectory()) {walk(p);} else if (/^action\.ya?ml$/.test(e.name)) {out.push(p);} } };
   walk(path.join(root, '.github', 'actions'));
   return out.sort();
 }
@@ -35,16 +37,16 @@ function listFiles(root) {
 function jobsWithoutTimeout(text) {
   // Line-based: top-level `jobs:` block, job keys at 2-space indent; reusable-workflow jobs (uses:) are exempt.
   const lines = text.split('\n'); const res = [];
-  const j = lines.findIndex((l) => /^jobs:\s*$/.test(l)); if (j < 0) return res;
+  const j = lines.findIndex((l) => /^jobs:\s*$/.test(l)); if (j < 0) {return res;}
   let cur = null; let has = false; let reusable = false;
-  const flush = () => { if (cur && !has && !reusable) res.push(cur); };
+  const flush = () => { if (cur && !has && !reusable) {res.push(cur);} };
   for (let i = j + 1; i < lines.length; i++) {
     const l = lines[i];
-    if (/^\S/.test(l) && !/^#/.test(l)) break;
+    if (/^\S/.test(l) && !/^#/.test(l)) {break;}
     const m = l.match(/^ {2}([A-Za-z0-9_-]+):\s*(#.*)?$/);
     if (m) { flush(); cur = m[1]; has = false; reusable = false; continue; }
-    if (/^ {4}timeout-minutes:/.test(l)) has = true;
-    if (/^ {4}uses:/.test(l)) reusable = true;
+    if (/^ {4}timeout-minutes:/.test(l)) {has = true;}
+    if (/^ {4}uses:/.test(l)) {reusable = true;}
   }
   flush();
   return res;
@@ -58,19 +60,19 @@ function scan(root) {
     const lines = text.split('\n');
     let rawPush = 0;
     lines.forEach((l, i) => {
-      if (/^\s*#/.test(l) || /^\s*-?\s*name:/.test(l)) return;
+      if (/^\s*#/.test(l) || /^\s*-?\s*name:/.test(l)) {return;}
       const u = l.match(/^\s*-?\s*uses:\s*['"]?([^\s'"#]+)/);
       if (u && !u[1].startsWith('./') && !u[1].startsWith('docker://')) {
         const [, ref = ''] = u[1].split('@');
-        if (!/^[0-9a-f]{40}$/.test(ref)) findings.push({ rule: 'unpinned', file: rel, key: u[1] });
-        else if (NODE20_SHAS.has(ref)) findings.push({ rule: 'node20-action', file: rel, key: u[1] });
+        if (!/^[0-9a-f]{40}$/.test(ref)) {findings.push({ rule: 'unpinned', file: rel, key: u[1] });}
+        else if (NODE20_SHAS.has(ref)) {findings.push({ rule: 'node20-action', file: rel, key: u[1] });}
       }
       const nv = l.match(/^\s*node-version:\s*['"]?(\d+)/);
-      if (nv && Number(nv[1]) < 22) findings.push({ rule: 'node-runtime', file: rel, key: `node-version ${nv[1]} (line ${i + 1})` });
-      if (/\bgit\s+push\b/.test(l) && !/git-push-retry|push-with-retry/.test(l) && !/--dry-run/.test(l)) rawPush++;
+      if (nv && Number(nv[1]) < 22) {findings.push({ rule: 'node-runtime', file: rel, key: `node-version ${nv[1]} (line ${i + 1})` });}
+      if (/\bgit\s+push\b/.test(l) && !/git-push-retry|push-with-retry/.test(l) && !/--dry-run/.test(l)) {rawPush++;}
     });
-    if (rawPush) findings.push({ rule: 'raw-push', file: rel, key: 'count', count: rawPush });
-    if (rel.startsWith('.github/workflows/')) for (const job of jobsWithoutTimeout(text)) findings.push({ rule: 'no-timeout', file: rel, key: job });
+    if (rawPush) {findings.push({ rule: 'raw-push', file: rel, key: 'count', count: rawPush });}
+    if (rel.startsWith('.github/workflows/')) {for (const job of jobsWithoutTimeout(text)) {findings.push({ rule: 'no-timeout', file: rel, key: job });}}
   }
   return findings;
 }
@@ -82,8 +84,8 @@ function compare(findings, baseline) {
   const regressions = [];
   for (const f of findings) {
     const b = base.get(id(f));
-    if (!b) regressions.push(f);
-    else if (f.rule === 'raw-push' && f.count > (b.count || 0)) regressions.push({ ...f, was: b.count });
+    if (!b) {regressions.push(f);}
+    else if (f.rule === 'raw-push' && f.count > (b.count || 0)) {regressions.push({ ...f, was: b.count });}
   }
   const fixed = [...base.keys()].filter((k) => !findings.some((f) => id(f) === k));
   return { regressions, fixed };
@@ -94,20 +96,20 @@ function main(argv = process.argv.slice(2)) {
   const bpath = path.join(root, '.github', 'workflow-hygiene-baseline.json');
   const findings = scan(root);
   if (argv.includes('--update-baseline')) {
-    fs.writeFileSync(bpath, JSON.stringify({ note: 'P3025 hygiene ratchet: shrink only. Regenerate with --update-baseline after FIXING debt, never to admit new debt.', findings }, null, 2) + '\n');
+    fs.writeFileSync(bpath, `${JSON.stringify({ note: 'P3025 hygiene ratchet: shrink only. Regenerate with --update-baseline after FIXING debt, never to admit new debt.', findings }, null, 2)  }\n`);
     console.log(`[workflow-hygiene] baseline written: ${findings.length} finding(s)`); return 0;
   }
   const baseline = fs.existsSync(bpath) ? JSON.parse(fs.readFileSync(bpath, 'utf8')) : { findings: [] };
   const { regressions, fixed } = compare(findings, baseline);
-  if (argv.includes('--json')) console.log(JSON.stringify({ findings: findings.length, regressions, fixed }, null, 2));
-  const by = {}; for (const f of findings) by[f.rule] = (by[f.rule] || 0) + (f.count || 1);
+  if (argv.includes('--json')) {console.log(JSON.stringify({ findings: findings.length, regressions, fixed }, null, 2));}
+  const by = {}; for (const f of findings) {by[f.rule] = (by[f.rule] || 0) + (f.count || 1);}
   console.log(`[workflow-hygiene] ${findings.length} known finding(s) ${JSON.stringify(by)}; fixed vs baseline: ${fixed.length}`);
   if (regressions.length) {
-    for (const r of regressions) console.log(`::error file=${r.file}::P3025 hygiene regression [${r.rule}] ${r.key}${r.count ? ` count ${r.count} (baseline ${r.was || 0}) — use .github/scripts/git-push-retry.sh` : ''}`);
+    for (const r of regressions) {console.log(`::error file=${r.file}::P3025 hygiene regression [${r.rule}] ${r.key}${r.count ? ` count ${r.count} (baseline ${r.was || 0}) — use .github/scripts/git-push-retry.sh` : ''}`);}
     console.log(`[workflow-hygiene] FAIL ${regressions.length} regression(s)`); return 1;
   }
   console.log('[workflow-hygiene] OK no regression'); return 0;
 }
 
 module.exports = { scan, compare, jobsWithoutTimeout, NODE20_SHAS };
-if (require.main === module) process.exitCode = main();
+if (require.main === module) {process.exitCode = main();}
