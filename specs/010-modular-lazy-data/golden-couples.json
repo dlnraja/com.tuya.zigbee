@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-26T17:35:19.574Z",
+ "generated": "2026-10-26T23:42:58.925Z",
  "drivers": 417,
  "snapshot": {
   "air_conditioner_aetz01": {
@@ -160,9 +160,9 @@
   },
   "bulb_tunable_white": {
    "mfr": 2,
-   "pid": 46,
+   "pid": 25,
    "mfrSha": "d65b3ef008068252",
-   "pidSha": "d2bdb3ab2515b77c"
+   "pidSha": "8f6f86e10260608b"
   },
   "bulb_white": {
    "mfr": 1,
@@ -471,10 +471,10 @@
    "pidSha": "3ba96bb1ed045b60"
   },
   "device_air_purifier_plug": {
-   "mfr": 2,
-   "pid": 53,
-   "mfrSha": "fd1f6526cf3a48f4",
-   "pidSha": "19f9159d5a9bf993"
+   "mfr": 1,
+   "pid": 32,
+   "mfrSha": "f69483b7f88603d3",
+   "pidSha": "817112c8a6ff0948"
   },
   "device_air_purifier_presence": {
    "mfr": 1,
@@ -784,9 +784,9 @@
   },
   "doorwindowsensor_4": {
    "mfr": 3,
-   "pid": 18,
+   "pid": 7,
    "mfrSha": "72ba7add780a60b7",
-   "pidSha": "53087b42b7013a9f"
+   "pidSha": "bd54147bd9f91900"
   },
   "double_power_point": {
    "mfr": 0,
@@ -831,9 +831,9 @@
    "pidSha": "455c46e8c8549693"
   },
   "fingerbot": {
-   "mfr": 7,
+   "mfr": 10,
    "pid": 6,
-   "mfrSha": "e5247d1620c3125e",
+   "mfrSha": "7c788fe57e7dbb49",
    "pidSha": "cd8cc01224270f0e"
   },
   "fingerbot_switch": {
@@ -892,9 +892,9 @@
   },
   "gas_sensor_switch": {
    "mfr": 1,
-   "pid": 48,
+   "pid": 1,
    "mfrSha": "002812706265bc20",
-   "pidSha": "8807c1a05823d077"
+   "pidSha": "ee3881b630706571"
   },
   "gateway_zigbee_bridge": {
    "mfr": 1,
@@ -1653,9 +1653,9 @@
    "pidSha": "fbca25dc37c9b88e"
   },
   "sensor_motion_presence": {
-   "mfr": 23,
+   "mfr": 20,
    "pid": 19,
-   "mfrSha": "b7311512200ed5c6",
+   "mfrSha": "e70e18143e25d722",
    "pidSha": "e7c5f08cc4f7e52a"
   },
   "sensor_motion_radar": {
@@ -1869,9 +1869,9 @@
    "pidSha": "91d04f847d60da6b"
   },
   "smoke_sensor3": {
-   "mfr": 10,
+   "mfr": 8,
    "pid": 1,
-   "mfrSha": "ebdd90b512b4790c",
+   "mfrSha": "14dfe4eac71becc1",
    "pidSha": "ffba1e7b2343f15f"
   },
   "smoke_sensor_ts0601_dp": {
@@ -1972,9 +1972,9 @@
   },
   "switch_2_gang_metering": {
    "mfr": 1,
-   "pid": 3,
+   "pid": 2,
    "mfrSha": "2a1d9b73a58bceb2",
-   "pidSha": "5181eca4102958ba"
+   "pidSha": "ffc6ba76002e2990"
   },
   "switch_2gang": {
    "mfr": 106,
