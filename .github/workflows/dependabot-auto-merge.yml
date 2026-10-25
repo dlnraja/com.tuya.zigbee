@@ -16,6 +16,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  actions: read   # P3048: wait-pr-checks reads the workflow runs of the PR head SHA
 
 concurrency:
   group: dependabot-auto-merge-${{ github.event.pull_request.number }}
@@ -43,7 +44,7 @@ jobs:
     name: Auto-merge Dependabot PRs
     runs-on: ubuntu-latest
     if: github.actor == 'dependabot[bot]'
-    timeout-minutes: 10
+    timeout-minutes: 45   # P3048: waits for the PR gates (max 35 min of polite polling)
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
         with:
@@ -66,19 +67,36 @@ jobs:
           node --check app.js
           echo "valid=true" >> $GITHUB_OUTPUT
 
+      # P3048 t539u (b): master has no branch protection, so --auto merged right away. Merge only when every
+      # workflow on the PR head SHA finished green (Homey App Validate / Node 22 tests / Syntax Check required).
+      - name: Wait for the PR gates
+        id: gates
+        if: steps.validate.outputs.valid == 'true' && (steps.meta.outputs.update-type == 'version-update:semver-patch' || steps.meta.outputs.update-type == 'version-update:semver-minor')
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: node scripts/automation/wait-pr-checks.cjs --sha="$HEAD_SHA" --self="Dependabot Auto-Merge" --min-required="${{ steps.meta.outputs.package-ecosystem == 'npm_and_yarn' && '2' || '1' }}"
+
       - name: Auto-approve patch/minor updates
-        if: (steps.meta.outputs.update-type == 'version-update:semver-patch' || steps.meta.outputs.update-type == 'version-update:semver-minor') && steps.validate.outputs.valid == 'true'
+        if: (steps.meta.outputs.update-type == 'version-update:semver-patch' || steps.meta.outputs.update-type == 'version-update:semver-minor') && steps.validate.outputs.valid == 'true' && steps.gates.outputs.green == 'true'
         run: gh pr review -R dlnraja/com.tuya.zigbee --approve "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
           GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
 
       - name: Auto-merge patch/minor updates
-        if: (steps.meta.outputs.update-type == 'version-update:semver-patch' || steps.meta.outputs.update-type == 'version-update:semver-minor') && steps.validate.outputs.valid == 'true'
-        run: gh pr merge -R dlnraja/com.tuya.zigbee --auto --squash "$PR_URL"
+        if: (steps.meta.outputs.update-type == 'version-update:semver-patch' || steps.meta.outputs.update-type == 'version-update:semver-minor') && steps.validate.outputs.valid == 'true' && steps.gates.outputs.green == 'true'
+        run: gh pr merge -R dlnraja/com.tuya.zigbee --squash --match-head-commit "$HEAD_SHA" "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
           GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+
+      - name: Gates not green, left for review
+        if: steps.gates.outcome == 'success' && steps.gates.outputs.green != 'true'
+        env:
+          REASON: ${{ steps.gates.outputs.reason }}
+        run: echo "::notice title=Dependabot gate::not merged — ${REASON}"
 
       - name: Label major updates for review
         if: steps.meta.outputs.update-type == 'version-update:semver-major'

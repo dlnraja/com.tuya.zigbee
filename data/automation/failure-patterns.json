@@ -1,0 +1,4 @@
+{
+  "note": "P3048: CI failure patterns learned without AI from the automation journal (additive only). A message joins 'transient' after >= 2 runs recovered by a plain re-run of the same commit within 30 days, never when it looks like a code/test/validation failure. Remove an entry by hand only.",
+  "transient": []
+}
