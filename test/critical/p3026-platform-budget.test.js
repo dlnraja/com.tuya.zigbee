@@ -122,3 +122,14 @@ test('PLATFORM_LIMITS.md documents every configured limit and is listed in the K
   assert.match(fs.readFileSync(path.join(kb, 'INDEX.md'), 'utf8'), /PLATFORM_LIMITS\.md/);
   for (const words of [/app\.json/i, /payload/i, /archive/i, /combos|productId/i, /heap/i, /Workflow file/i, /cache/i, /Repository size/i, /quota|rate/i, /tracked file/i]) assert.match(doc, words);
 });
+
+test('P3034: --json stdout stays parseable under GITHUB_ACTIONS even when a limit fails', () => {
+  const { spawnSync } = require('child_process');
+  const r = spawnSync(process.execPath, [path.join(ROOT, 'scripts', 'ci', 'platform-budget-gate.js'), '--json', '--publish-dir', path.join(ROOT, 'does-not-exist')],
+    { cwd: ROOT, encoding: 'utf8', timeout: 240000, env: { ...process.env, PLATFORM_BUDGET_MODE: '', GITHUB_ACTIONS: 'true', GITHUB_STEP_SUMMARY: '' } });
+  assert.strictEqual(r.status, 0, r.stderr);
+  const rep = JSON.parse(r.stdout.slice(r.stdout.indexOf('{')));
+  assert.strictEqual(rep.mode, 'report');
+  const tail = r.stdout.slice(r.stdout.lastIndexOf('}') + 1);
+  assert.strictEqual(tail.trim(), '', 'nothing after the JSON report');
+});
