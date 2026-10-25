@@ -29,6 +29,9 @@ const SDK3BestPractices = require('../../lib/SDK3BestPractices');
  * ║  Variants: GIRIER, Lonsonho, Zemismart, MOES, Longsam                      ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
+// WHY(P3051 / GH#576): Z2M bseed.ts BSEED_TS0601_cover fingerprint, exact couples (x TS0601).
+const BSEED_CURTAIN_SWITCH_MFRS = new Set(['_tze200_yenbr4om', '_tze200_bdblidq3', '_tze204_bdblidq3']);
+
 class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedCoverBase)) {
 
   // WHY(P2296): Homey battery-status — ZM16EL/ZM85EL are Battery EndDevices (DP13 %).
@@ -105,8 +108,41 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
     return mfr.includes('gubdgai2') || mfr.includes('vdiuwbkq');
   }
 
+  /**
+   * WHY(P3051 / GH#576): BSEED TS0601 curtain switch. Sources: Z2M bseed.ts
+   * BSEED_TS0601_cover (legacy tuya_cover: DP1 state, DP2 position, DP3 arrived
+   * position, DP5 config, DP7 coverChange, DP105 motor speed) and ZHA
+   * ts0601_cover.py (_TZE200_yenbr4om). Exact couples only, never a substring:
+   * the generic map read DP3 as `dim` and DP105 as a button press here.
+   */
+  _isBseedCurtainSwitch() {
+    const mfr = String(
+      this.getManufacturerName?.()
+      || this.getSetting?.('zb_manufacturer_name')
+      || this.getData?.()?.manufacturerName
+      || ''
+    ).trim().toLowerCase();
+    const pid = String(this.getSetting?.('zb_model_id') || this.getData?.()?.productId || 'TS0601').trim().toUpperCase();
+    return pid === 'TS0601' && BSEED_CURTAIN_SWITCH_MFRS.has(mfr);
+  }
+
   // v5.5.322: Extended DP mappings with lux sensor and button support
   get dpMappings() {
+    if (this._isBseedCurtainSwitch()) {
+      // WHY(P3051): direction kept as the generic map (no inversion) — Z2M does not list these
+      // in coverPositionInvert; ZHA uses an inverted class, so the user setting invert_position stays the switch.
+      return {
+        1: {
+          capability: 'windowcoverings_state',
+          transform: (v) => v === 0 || v === 'open' ? 'up' : v === 2 || v === 'close' ? 'down' : 'idle',
+        },
+        2: { capability: 'windowcoverings_set', transform: (v) => Number(v) / 100 },
+        3: { capability: 'windowcoverings_set', transform: (v) => Number(v) / 100 },
+        5: { capability: null, internal: 'config' },
+        7: { capability: null, internal: 'cover_change' },
+        105: { capability: null, internal: 'motor_speed', writable: true },
+      };
+    }
     if (this._isQuoyaM515()) {
       return {
         1: {
@@ -476,7 +512,8 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
       this.log(`[CURTAIN] 🔋 Battery: ${battery}%`);
     }
 
-    if ((dp === 15 || dp === 105) && this.hasCapability('button')) {
+    // WHY(P3051 / GH#576): BSEED DP105 is motor speed (Z2M bseed.ts), not a button press
+    if ((dp === 15 || dp === 105) && this.hasCapability('button') && !(dp === 105 && this._isBseedCurtainSwitch())) {
       this._handleButtonPress(value);
     }
   }
