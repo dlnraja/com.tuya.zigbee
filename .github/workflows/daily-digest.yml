@@ -203,7 +203,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # Universal Tuya Zigbee · Tuya Zigbee (JohanBendz) · device-request archive · Smart Life · Tuya Local · Tuya Cloud
-          FORUM_TOPICS: '140352,26439,89271,146735,154077,21313'
+          FORUM_TOPICS: '140352,26439,89271,146735,154077,21313,35206'
           FORUM_NOTIFY: any
           FORUM_MAX_REQUESTS: '4'           # global cap across ALL topics per run (unchanged politeness)
           FORUM_BACKOFF_HOURS: '20'

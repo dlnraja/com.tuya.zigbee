@@ -9,7 +9,7 @@
  * Topics (FORUM_TOPICS, first = primary, checked every run; the others rotate oldest-checked first):
  *   140352 Universal Tuya Zigbee (this app, test thread) · 26439 Tuya Zigbee (JohanBendz app)
  *   89271 Tuya Zigbee device-request archive · 146735 Tuya Smart Life · 154077 Tuya Local
- *   21313 Tuya Cloud
+ *   21313 Tuya Cloud · 35206 Somfy TaHoma & Connexoon (Adrian Rockall; cover lessons, P3030)
  * Politeness (unchanged global limits): ≤ FORUM_MAX_REQUESTS (4) Discourse requests per run across
  * ALL topics, random 2–5 s between requests, descriptive User-Agent. One request per topic normally
  * (`/t/<id>/<lastSeen+1>.json` returns the window of new posts + metadata); a second only when more
@@ -25,7 +25,7 @@ const E = require('./enrich');
 const LD = require('./leads');
 
 const BASE = process.env.FORUM_BASE || 'https://community.homey.app';
-const TOPICS = (process.env.FORUM_TOPICS || process.env.FORUM_TOPIC || '140352,26439,89271,146735,154077,21313').split(',').map((x) => x.trim()).filter((x) => /^\d+$/.test(x));
+const TOPICS = (process.env.FORUM_TOPICS || process.env.FORUM_TOPIC || '140352,26439,89271,146735,154077,21313,35206').split(',').map((x) => x.trim()).filter((x) => /^\d+$/.test(x));
 const MAX_NEW = Math.min(Number(process.env.FORUM_MAX_NEW || 60), 100);
 const BOOT = Number(process.env.FORUM_BOOTSTRAP || 0);
 const NOTIFY = process.env.FORUM_NOTIFY || 'any';
