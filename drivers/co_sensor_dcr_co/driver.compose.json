@@ -1,0 +1,73 @@
+{
+  "id": "co_sensor_dcr_co",
+  "name": {
+    "en": "CO detector (Tuya DCR-CO)",
+    "fr": "Détecteur de CO (Tuya DCR-CO)",
+    "nl": "CO-melder (Tuya DCR-CO)",
+    "de": "CO-Melder (Tuya DCR-CO)"
+  },
+  "class": "sensor",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "alarm_co",
+    "measure_co"
+  ],
+  "energy": {
+    "approximation": {
+      "usageConstant": 0.5
+    }
+  },
+  "images": {
+    "small": "/drivers/co_sensor_dcr_co/assets/images/small.png",
+    "large": "/drivers/co_sensor_dcr_co/assets/images/large.png"
+  },
+  "settings": [
+    {
+      "$extends": [
+        "zcl_cluster_layer"
+      ]
+    }
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_7bztmfm1",
+      "_tze200_7bztmfm1",
+      "_TZE200_7BZTMFM1",
+      "_tze200_7BZTMFM1",
+      "_TZE204_7bztmfm1",
+      "_tze204_7bztmfm1",
+      "_TZE204_7BZTMFM1",
+      "_tze204_7BZTMFM1"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5
+        ],
+        "bindings": []
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Hold the reset/pairing button until the indicator blinks.",
+        "fr": "Maintenez le bouton reset/appairage jusqu’à ce que le voyant clignote.",
+        "nl": "Houd de reset-/koppelknop ingedrukt tot het lampje knippert.",
+        "de": "Halten Sie die Reset-/Kopplungstaste gedrückt, bis die Anzeige blinkt."
+      }
+    }
+  },
+  "metadata": {
+    "source": "zigbee-herdsman-converters tuya.ts DCR-CO (_TZE200_7bztmfm1/_TZE204_7bztmfm1, legacy tuya_CO): DP1 carbon monoxide alarm (raw 0 = CO detected), DP2 CO level /100. Reimplemented and credited (P3039), no upstream code copied."
+  }
+}
