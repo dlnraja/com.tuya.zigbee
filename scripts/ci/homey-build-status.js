@@ -49,7 +49,7 @@ const appId = process.argv[2] || JSON.parse(fs.readFileSync(path.join(ROOT, 'pac
       const full = await api.getBuild({ $token: token, appId, buildId: b.id, $timeout: TIMEOUT_MS }).catch(() => null);
       const src = full || b;
       for (const [k, v] of Object.entries(src)) {
-        if (/err|reason|message|log|fail/i.test(k) && v) row[k] = typeof v === 'string' ? v.slice(0, 2000) : JSON.stringify(v).slice(0, 2000);
+        if (/err|reason|message|log|fail|meta|detail/i.test(k) && v) row[k] = typeof v === 'string' ? v.slice(0, 2000) : JSON.stringify(v).slice(0, 2000);
       }
     }
     out.builds.push(row);
