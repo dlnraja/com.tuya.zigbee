@@ -142,6 +142,7 @@ It edits only its own section of the issue body (no comment, no commit, no publi
 - **P3026** `platform-budget.yml` + `scripts/ci/platform-budget-gate.js` (report mode, limits in `config/platform-limits.json`, see `docs/knowledge/KB/PLATFORM_LIMITS.md`); version-free npm cache key.
 - **P3024b** prepare-publish step 5a2b `scripts/maintenance/publish-baseline-gate.cjs`.
 - **P3032** `doc-coverage.yml` (report mode): runs `scripts/kb/doc-coverage.js` and `scripts/kb/code-reference.js --check`, summary in the job page.
+- **P3033** `storage-cleanup.yml` (daily 03:30 UTC, master only, dispatch `dry_run` default true): deletes superseded / idle / orphan Actions caches and artifacts older than 14 days, keeps the newest per family on the three release branches and every state cache; rules in `scripts/ci/storage-cleanup.js`, see `docs/knowledge/KB/PLATFORM_LIMITS.md`.
 
 ## Remaining gaps
 

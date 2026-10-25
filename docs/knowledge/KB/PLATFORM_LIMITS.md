@@ -90,6 +90,33 @@ repository-size docs. The repo is public, so standard-runner minutes and artifac
   lockfile either way). Six jobs that check out another ref at the root keep the default.
 - Old entries are left to age out by LRU. Deleting them is an action outside the box and needs
   the owner's approval.
+- Update 2026-10-25: the owner approved it; the old npm entries were removed by hand, leaving
+  237 caches / 1.26 GB. The `actions/cache/usage` endpoint trails the real list for hours after
+  a bulk delete (it still said 10.5 GB / 339 entries while the list held 1.26 GB), so trust the
+  list (`/actions/caches`), not the usage figure, right after a cleanup.
+
+### Automatic storage cleanup (P3033)
+
+`.github/workflows/storage-cleanup.yml` runs every day at 03:30 UTC on master (scheduled
+workflows only run from the default branch, and the cache API covers every branch of the repo,
+so one copy is enough; stable-v5 and bastien-home do not get one). Manual runs take `dry_run`
+(default on) and `max_deletions`. Rules live in `scripts/ci/storage-cleanup.js`:
+
+| Object | Deleted when | Never deleted |
+|---|---|---|
+| Cache | an older entry of the same family on the same ref exists (family = key minus trailing hash / run id / version) | the newest entry of each family on master, stable-v5, bastien-home |
+| Cache | its branch is gone or its PR is closed (`refs/pull/N/merge`) | when the branch/PR list could not be read, this rule is skipped |
+| Cache | the newest entry of a non-state family was not used for 7 days | the newest entry of a state cache found in the workflows (`run_id` keys such as gmail-diag-state, resolver-state, diag-ledger-queue, quirks-db, xr-*; names with state/baseline/ledger/queue) |
+| Artifact | older than 14 days | the newest artifact of a name another run downloads later (`forum-poll`, `sanitized-diagnostics-report`, `digest-leads-*`) |
+
+The state and cross-run lists are read from the workflow files and `.github/actions/*/action.yml`
+on each run, so a new state cache is protected without editing the script. Calls go through
+`.github/scripts/retry-helper.js` (403/429 waits, 5xx backoff), pages are capped at 40 and
+deletions at 400 per kind per run (largest first). The job summary gives counts and sizes before,
+after and deleted, and a warning annotation fires when the cache is still at 80 % or more of
+`gha_cache_gb` in `config/platform-limits.json`. It never fails and blocks nothing. Kill switch:
+`vars.STORAGE_CLEANUP_DISABLED`; `vars.STORAGE_CLEANUP_DRY` turns the schedule into a dry run.
+Stale `bot/*` PRs and branches are not touched here; `repo-autopilot.yml` (P3022) already does that.
 
 ### Other CI changes
 
@@ -106,7 +133,8 @@ repository-size docs. The repo is public, so standard-runner minutes and artifac
 
 - **Case-variant dedup in the manifest beyond the current compactor**: no proof that Homey's
   pairing match is case-insensitive; removing a case form could leave a device unpaired.
-- **Deleting old Actions caches**: outside the box, needs approval; LRU will clear them.
+- **Deleting old Actions caches**: done since 2026-10-25 by the daily storage-cleanup workflow
+  (P3033, owner approved), see above.
 - **Lossy image compression on stable-v5**: would change images.
 - **`queue: max` on the Athom publish groups**: changes publish behaviour.
 - **The combos cap value**: owned by P3024b.
@@ -115,4 +143,6 @@ repository-size docs. The repo is public, so standard-runner minutes and artifac
 
 `test/critical/p3026-platform-budget.test.js` (limits config, thresholds, combos rule, live cap,
 report mode, npm cache key, rate-limit wait) and `test/critical/p3026-driver-images.test.js`
-(PNG signature and Homey sizes for every driver image).
+(PNG signature and Homey sizes for every driver image). `test/critical/p3033-storage-cleanup.test.js`
+covers the cleanup rules (families, protected refs, state caches, gone refs, cap, artifact age,
+workflow parsing, quota threshold).
