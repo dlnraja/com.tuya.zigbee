@@ -54,11 +54,12 @@ describe('P3036b KB couple top-up', () => {
     assert.strictEqual(K.ceilingFromEnv({}), 0);
   });
 
-  it('effective publish workflows: base 17000, KB top-up ≤ 20000', () => {
+  it('effective publish caps: base within the accepted maximum, KB top-up above it only with the recorded decision (P3036d)', () => {
     for (const f of ['auto-publish-on-push.yml', 'publish-stable.yml', 'bastien-publish.yml']) {
-      assert.strictEqual(wfEnv(f, 'HOMEY_ZIGBEE_MAX_TOTAL_COMBOS'), 17000, f);
+      assert.ok(wfEnv(f, 'HOMEY_ZIGBEE_MAX_TOTAL_COMBOS') <= CAPS.measured.acceptedMaxTotalCombos, f);
       const kbMax = wfEnv(f, 'HOMEY_ZIGBEE_KB_TOPUP_MAX_TOTAL');
-      assert.ok(kbMax > 17000 && kbMax <= 20000, `${f} KB ceiling ${kbMax}`);
+      const kbCeil = CAPS.allowAboveMeasuredCombos === 1 ? 0.9 * CAPS.measured.rejectedMinTotalCombos : 20000;
+      assert.ok(kbMax > CAPS.maxTotalCombos - 1 && kbMax <= kbCeil, `${f} KB ceiling ${kbMax}`);
     }
     const lim = JSON.parse(fs.readFileSync(path.join(ROOT, 'config/platform-limits.json'), 'utf8'));
     assert.ok(lim.limits.zigbee_combos.limitFrom.keys.includes('kbTopupMaxTotal'));
@@ -73,7 +74,7 @@ describe('P3036b KB couple top-up', () => {
     assert.match(s, /FATAL\(P3036b\): .*priority KB couple/);
   });
 
-  it('real tree: workflow caps + KB top-up put back every priority couple, ≤ 20000, same drivers, nothing lost', function () {
+  it('real tree: config caps + KB top-up put back every priority couple, within the ceilings, same drivers, nothing lost', function () {
     const C = require(path.join(ROOT, 'scripts/maintenance/compact-zigbee-identifiers.cjs'));
     const src = JSON.parse(fs.readFileSync(path.join(ROOT, 'app.json'), 'utf8'));
     if (!Array.isArray(src.drivers) || !src.drivers.some((d) => d.zigbee)) return;
@@ -83,12 +84,12 @@ describe('P3036b KB couple top-up', () => {
     assert.deepStrictEqual(c.sacredMissing || [], []);
     const before = K.exactCouples(pay);
     const ids = pay.drivers.map((d) => d.id).join(',');
-    const r = K.topUp(src, pay, { maxTotal: CAPS.kbTopupMaxTotal, maxDriver: CAPS.kbTopupMaxDriver, root: ROOT });
+    const r = K.topUp(src, pay, { maxTotal: CAPS.kbTopupMaxTotal, maxDriver: CAPS.kbTopupMaxDriver, allowUnmeasured: CAPS.allowAboveMeasuredCombos === 1, root: ROOT });
     const after = K.exactCouples(pay);
     for (const k of before) assert.ok(after.has(k), `lost ${k}`);
     assert.strictEqual(pay.drivers.map((d) => d.id).join(','), ids);
-    assert.ok(r.afterTotal <= 20000);
+    assert.ok(r.afterTotal <= Math.max(20000, CAPS.allowAboveMeasuredCombos === 1 ? CAPS.kbTopupMaxTotal : 0));
     assert.strictEqual(r.priority.restored.length + r.priority.already, r.priority.listed, `priority not restored: ${r.stillMissing.slice(0, 5)}`);
-    for (const d of pay.drivers) if (d.zigbee) assert.ok([].concat(d.zigbee.manufacturerName || []).length * [].concat(d.zigbee.productId || []).length <= Math.max(1500, K.MEASURED_ACCEPTED_MAX_DRIVER), d.id);
+    for (const d of pay.drivers) if (d.zigbee) assert.ok([].concat(d.zigbee.manufacturerName || []).length * [].concat(d.zigbee.productId || []).length <= Math.max(1500, K.MEASURED_ACCEPTED_MAX_DRIVER, CAPS.allowAboveMeasuredCombos === 1 ? CAPS.kbTopupMaxDriver : 0), d.id);
   });
 });

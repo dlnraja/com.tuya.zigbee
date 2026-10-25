@@ -117,3 +117,28 @@ Tests: `test/critical/p3036-athom-publish-policy.test.js`, `test/critical/p3036-
   and writes a diagnostic); draft→Test automatic, Live always manual; bisect_trial only while
   status=running (stop on done); no upload while Athom is still processing the previous build.
 - Port note (stable-v5): TS0601 top-up dormant here (ts0601TopupMaxTotal 0); measured limits and the coverage target are in docs/knowledge/ATHOM_LIMITS.md on master.
+
+## P3036d: raised caps, the real bound is the uploaded app.json (25/10/2026 17:45, Paris)
+
+Owner decision 17:29 (t523u) and rule 17:31 (t524u). 15500 was our own heuristic. Measured on the CI and on the accepted builds:
+
+- The "93 %" of `upload_app_json_mb` was the intermediate app.json that prepare-publish checks against its own 4 MB gate (3.73 MB). That file still contains the orphan flow cards that P2930 removes afterwards. The app.json actually uploaded was 3.13 MB at 19976 combos (platform-budget run of 17:15 Paris, master). #3682 (9.0.1599, 15499 combos, largest driver 180) went to Test.
+- Largest app.json Athom accepted: 3.93 MB (9.0.1520, archive measure). Combos: 20000 accepted (9.0.664). The only combo rejection was P2252, at 100k+.
+- Caps (single source `config/publish-caps.json`):
+  - base compaction: 20000 total, 1500 per driver;
+  - top-ups (KB, coverage matrix, TS0601): up to 45000 total and 2000 per driver (`allowAboveMeasuredCombos` 1). 45000 is under 90 % of the only rejection.
+  - binding check: `maxUploadAppJsonBytes` 3537000 (90 % of 3.93 MB), tested by FATAL(P3036d) on the final uploaded app.json. The intermediate 4 MB check only warns when this cap is set.
+- New tier 1b in `kb-couple-topup.cjs`: the couples `data/kb/z2m-coverage.json` lists as compacted out (on the ports, the snapshot `data/kb/coverage-compacted-couples.json`). It puts them back one exact mfr+pid couple at a time, on the cheapest driver whose compose declares the couple byte-exact (adding its productId if needed), cheapest first, within the ceilings.
+  - Nothing is ever removed.
+  - No manufacturer leaves a driver because it exists elsewhere.
+  - Case forms with different productIds are never merged.
+- Measured with the real `prepare-publish.js`:
+
+  | | master | stable-v5 | bastien-home (27 house drivers) |
+  |---|---|---|---|
+  | combos | 44972 | 36830 | 17633 |
+  | uploaded app.json | 3323603 B (94.0 % of the cap) | 2923217 B | 521399 B |
+  | coverage couples compacted out, now shipped | 1781/2254 (was 651) | 1826/2318 | 1163/2303 |
+
+  P3024b: 0 lost on all 3. Bastien: 0 couple lost vs before P3038c, KB couples 182 → 1339. No byte reduction was needed: the payload is already minified, has no duplicate byte-identical forms, and its empty fields weigh 4 KB.
+- Rollback: if Athom refuses the next normal master upload (not a transient error), restore `decision.rollback.caps` in the config (17000 / 1008 / 20000 / 1008) and set `allowAboveMeasuredCombos` to 0. The bisect does the rest. No manual Athom upload.

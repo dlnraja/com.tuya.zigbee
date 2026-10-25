@@ -27,6 +27,28 @@ function loadKbCouples(root = path.join(__dirname, '..', '..')) {
 }
 
 /** Priority couples of this branch (config/architecture/kb-topup-priority.json, "couples": ["mfr|pid", ...]). */
+/**
+ * P3036d: couples data/kb/z2m-coverage.json lists as known by the sources but compacted out of a branch
+ * payload ("compacted"). Exact "mfr|pid" keys only; empty when the file is absent (ports).
+ */
+function loadCoverageCompacted(root = path.join(__dirname, '..', '..')) {
+  try {
+    const j = JSON.parse(fs.readFileSync(path.join(root, 'data', 'kb', 'z2m-coverage.json'), 'utf8'));
+    const out = new Set();
+    for (const r of j.rows || []) {
+      if (!r || typeof r.k !== 'string' || !r.k.includes('|')) continue;
+      if (Object.values(r.b || {}).some((v) => Array.isArray(v) && v[0] === 'compacted')) out.add(r.k);
+    }
+    return out;
+  } catch (_) {
+    // Branches without the full matrix carry a snapshot of its compacted keys.
+    try {
+      const s = JSON.parse(fs.readFileSync(path.join(root, 'data', 'kb', 'coverage-compacted-couples.json'), 'utf8'));
+      return new Set(arr(s.couples).filter((k) => k.includes('|')));
+    } catch (__) { return new Set(); }
+  }
+}
+
 function loadPriority(root = path.join(__dirname, '..', '..')) {
   try {
     const j = JSON.parse(fs.readFileSync(path.join(root, 'config', 'architecture', 'kb-topup-priority.json'), 'utf8'));
@@ -126,6 +148,53 @@ function topUp(source, payload, opts = {}) {
     report.priority.restored.push(`${c}@${pick.d.id}`);
     report.restoredCouples.push(`${c}@${pick.d.id}`);
   }
+  // Tier 1b (P3036d): couples the coverage matrix lists as compacted out (data/kb/z2m-coverage.json),
+  // per exact mfr+pid couple (never per manufacturer alone): the couple must be declared byte-exact by a
+  // source compose; it goes back on its cheapest declaring payload driver (the productId may be restored
+  // there too), cheapest first, within the same ceilings. Not fatal: what does not fit stays out.
+  report.coverage = { listed: 0, restored: [], already: 0, notPlaceable: 0, noRoom: 0 };
+  const coverage = opts.coverage || (opts.coverage === null ? new Set() : loadCoverageCompacted(opts.root));
+  const pickFor = (c) => {
+    const cut = c.lastIndexOf('|'); const mfr = c.slice(0, cut); const pid = c.slice(cut + 1);
+    if (!mfr.trim() || !pid.trim() || isSyntheticManufacturer(mfr)) return null;
+    let pick = null;
+    for (const sd of source.drivers || []) {
+      const z = sd && sd.zigbee;
+      if (!z || sd.deprecated || !arr(z.manufacturerName).includes(mfr) || !arr(z.productId).includes(pid)) continue;
+      const d = byId.get(sd.id);
+      if (!d || !d.zigbee) continue;
+      const ms = arr(d.zigbee.manufacturerName); const ps = arr(d.zigbee.productId);
+      const nm = ms.length + (ms.includes(mfr) ? 0 : 1); const np = ps.length + (ps.includes(pid) ? 0 : 1);
+      const cost = nm * np - ms.length * ps.length;
+      if (!pick || cost < pick.cost || (cost === pick.cost && sd.id < pick.d.id)) pick = { d, cost, mfr, pid };
+    }
+    return pick;
+  };
+  let shipped = exactCouples(payload);
+  const covList = [];
+  for (const c of [...coverage].sort()) {
+    report.coverage.listed += 1;
+    if (shipped.has(c)) { report.coverage.already += 1; continue; }
+    const p = pickFor(c);
+    if (!p) { report.coverage.notPlaceable += 1; continue; }
+    covList.push({ c, cost: p.cost });
+  }
+  covList.sort((a, b) => a.cost - b.cost || a.c.localeCompare(b.c));
+  for (const { c } of covList) {
+    if (shipped.has(c)) { report.coverage.already += 1; continue; } // an earlier addition made it present
+    const p = pickFor(c); // cost may have changed after earlier additions
+    if (!p) { report.coverage.notPlaceable += 1; continue; }
+    if (total + p.cost > maxTotal || comboCount(p.d) + p.cost > maxDriver) { report.coverage.noRoom += 1; continue; }
+    const z = p.d.zigbee;
+    if (!arr(z.manufacturerName).includes(p.mfr)) z.manufacturerName = arr(z.manufacturerName).concat([p.mfr]);
+    if (!arr(z.productId).includes(p.pid)) z.productId = arr(z.productId).concat([p.pid]);
+    total += p.cost;
+    report.addedCombos += p.cost;
+    report.addedForms += 1;
+    report.coverage.restored.push(`${c}@${p.d.id}`);
+    report.restoredCouples.push(`${c}@${p.d.id}`);
+    shipped = exactCouples(payload);
+  }
   // Tier 2: every other KB couple, grouped per (driver, manufacturer form), best couples-per-combo first.
   const { groups, unplaceable } = candidates(source, payload, kb);
   report.unplaceable = unplaceable;
@@ -158,4 +227,4 @@ function ceilingFromEnv(env = process.env) {
   return v > MEASURED_ACCEPTED_MAX_TOTAL ? MEASURED_ACCEPTED_MAX_TOTAL : v;
 }
 
-module.exports = { MEASURED_ACCEPTED_MAX_DRIVER, loadKbCouples, loadPriority, exactCouples, candidates, topUp, topUpFile, ceilingFromEnv };
+module.exports = { MEASURED_ACCEPTED_MAX_DRIVER, loadKbCouples, loadPriority, loadCoverageCompacted, exactCouples, candidates, topUp, topUpFile, ceilingFromEnv };
