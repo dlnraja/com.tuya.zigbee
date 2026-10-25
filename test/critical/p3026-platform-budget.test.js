@@ -115,3 +115,10 @@ test('.homeyignore keeps backups/ out of the Homey build', () => {
   const lines = fs.readFileSync(path.join(ROOT, '.homeyignore'), 'utf8').split(/\r?\n/).map((l) => l.trim());
   assert.ok(lines.includes('backups') || lines.includes('backups/'));
 });
+
+test('PLATFORM_LIMITS.md documents every configured limit and is listed in the KB index', () => {
+  const kb = path.join(ROOT, 'docs', 'knowledge', 'KB');
+  const doc = fs.readFileSync(path.join(kb, 'PLATFORM_LIMITS.md'), 'utf8');
+  assert.match(fs.readFileSync(path.join(kb, 'INDEX.md'), 'utf8'), /PLATFORM_LIMITS\.md/);
+  for (const words of [/app\.json/i, /payload/i, /archive/i, /combos|productId/i, /heap/i, /Workflow file/i, /cache/i, /Repository size/i, /quota|rate/i, /tracked file/i]) assert.match(doc, words);
+});
