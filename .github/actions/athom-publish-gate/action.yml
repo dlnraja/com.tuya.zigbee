@@ -59,5 +59,11 @@ runs:
       run: |
         if [ -n "$HOMEY_PAT" ] && [ -f scripts/ci/homey-build-status.js ]; then
           node scripts/ci/homey-build-status.js "$APP_ID" >/dev/null 2>&1 || true
+          # P3048: master also waits 2 h after an upload of ANY app, so refresh the other two snapshots (read-only).
+          if [ "$APP_ID" = "com.dlnraja.tuya.zigbee" ]; then
+            for other in com.dlnraja.tuya.zigbee.stable com.dlnraja.tuya.zigbee.bastien; do
+              node scripts/ci/homey-build-status.js "$other" >/dev/null 2>&1 || true
+            done
+          fi
         fi
         node .github/scripts/athom-publish-policy.js gate "$APP_ID"

@@ -1,0 +1,56 @@
+# P3048 — deterministic CI autofix (no AI, GITHUB_TOKEN only).
+# A failed run of a NON-publish workflow is classified from its job logs:
+#   transient (socket hang up, ETIMEDOUT, ECONNRESET, 5xx, 429, runner/registry hiccup, learned literals)
+#     -> exactly ONE `rerun-failed-jobs` (attempt 1 only, max 3 re-runs per workflow and 3 per signature in 24 h);
+#   anything else -> recorded (step summary + data/status/ci-autofix-last.json; the daily automation loop
+#     journals it with a workflow+job+step+message signature and the watchdog raises repeated ones).
+# Publish workflows are never in this list and are refused again by name in the script.
+# Never commits, never comments, never posts. Its own completion is not watched (no loop).
+name: CI autofix (P3048, no AI)
+
+on:
+  workflow_run:
+    workflows:
+      - "Node 22 runtime tests"
+      - "Homey App Validate (all levels)"
+      - "🔍 Syntax Check & SDK3 Validation"
+      - "🛡️ Unified CI/CD Orchestrator"
+      - "🔍 Validate Homey App"
+      - "Platform Budget (P3026)"
+    types: [completed]
+
+permissions:
+  actions: write    # rerun-failed-jobs
+  contents: read
+
+concurrency:
+  group: ci-autofix-${{ github.event.workflow_run.id }}
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  AI_PLAN_MODE: 'forfait'
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  AI_ALLOW_PAID: 'false'
+
+jobs:
+  triage:
+    if: ${{ github.event.workflow_run.conclusion == 'failure' && github.event.workflow_run.run_attempt == 1 && vars.CI_AUTOFIX_DISABLED != 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: 22
+      - name: Classify and re-run once if transient
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RUN_ID: ${{ github.event.workflow_run.id }}
+        run: node scripts/automation/ci-failure.cjs handle --run-id="$RUN_ID"
