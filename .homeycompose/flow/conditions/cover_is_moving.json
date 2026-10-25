@@ -1,0 +1,34 @@
+{
+  "id": "cover_is_moving",
+  "title": {
+    "en": "Cover !{{is|is not}} moving",
+    "fr": "Le volet !{{est|n'est pas}} en mouvement",
+    "nl": "Rolluik !{{beweegt|beweegt niet}}",
+    "de": "Rollladen !{{bewegt sich|bewegt sich nicht}}"
+  },
+  "hint": {
+    "en": "True between a move command (or a position change) and the end of the move. Most reliable for moves started from Homey.",
+    "fr": "Vrai entre un ordre de mouvement (ou un changement de position) et la fin du mouvement. Plus fiable pour les mouvements lancés depuis Homey.",
+    "nl": "Waar tussen een bewegingsopdracht (of positiewijziging) en het einde van de beweging. Het betrouwbaarst voor bewegingen die vanuit Homey zijn gestart.",
+    "de": "Wahr zwischen einem Fahrbefehl (oder einer Positionsänderung) und dem Ende der Bewegung. Am zuverlässigsten für Bewegungen, die von Homey gestartet wurden."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=windowcoverings_set",
+      "title": {
+        "en": "Cover",
+        "fr": "Volet",
+        "nl": "Rolluik",
+        "de": "Rollladen"
+      }
+    }
+  ],
+  "titleFormatted": {
+    "en": "[[device]] !{{is|is not}} moving",
+    "fr": "[[device]] !{{est|n'est pas}} en mouvement",
+    "nl": "[[device]] !{{beweegt|beweegt niet}}",
+    "de": "[[device]] !{{bewegt sich|bewegt sich nicht}}"
+  }
+}

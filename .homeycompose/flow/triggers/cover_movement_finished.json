@@ -1,0 +1,80 @@
+{
+  "id": "cover_movement_finished",
+  "title": {
+    "en": "Cover movement finished",
+    "fr": "Mouvement du volet terminé",
+    "nl": "Beweging van rolluik voltooid",
+    "de": "Rollladenbewegung beendet"
+  },
+  "hint": {
+    "en": "Fires once when a move ends: target reached, stopped, settled (no more position reports), failed, or travel time elapsed. Also fires for moves made with a remote or by hand when the cover reports its position.",
+    "fr": "Se déclenche une fois à la fin d'un mouvement : cible atteinte, arrêt, position stable (plus de rapports), échec, ou durée de course écoulée. Fonctionne aussi pour les mouvements faits à la télécommande ou à la main si le volet rapporte sa position.",
+    "nl": "Gaat één keer af als een beweging eindigt: doel bereikt, gestopt, stabiel (geen positiemeldingen meer), mislukt, of looptijd verstreken. Werkt ook bij bediening met afstandsbediening of met de hand als het rolluik zijn positie meldt.",
+    "de": "Löst einmal aus, wenn eine Bewegung endet: Ziel erreicht, gestoppt, ruhig (keine Positionsmeldungen mehr), fehlgeschlagen oder Laufzeit abgelaufen. Auch bei Bedienung per Fernbedienung oder von Hand, wenn der Rollladen seine Position meldet."
+  },
+  "tokens": [
+    {
+      "name": "success",
+      "type": "boolean",
+      "title": {
+        "en": "Success",
+        "fr": "Succès",
+        "nl": "Gelukt",
+        "de": "Erfolg"
+      },
+      "example": true
+    },
+    {
+      "name": "reached",
+      "type": "boolean",
+      "title": {
+        "en": "Target reached",
+        "fr": "Cible atteinte",
+        "nl": "Doel bereikt",
+        "de": "Ziel erreicht"
+      },
+      "example": true
+    },
+    {
+      "name": "position",
+      "type": "number",
+      "title": {
+        "en": "Position (%; -1 = unknown)",
+        "fr": "Position (% ; -1 = inconnue)",
+        "nl": "Positie (%; -1 = onbekend)",
+        "de": "Position (%; -1 = unbekannt)"
+      },
+      "example": 100
+    },
+    {
+      "name": "reason",
+      "type": "string",
+      "title": {
+        "en": "Reason",
+        "fr": "Raison",
+        "nl": "Reden",
+        "de": "Grund"
+      },
+      "example": "reached"
+    }
+  ],
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=windowcoverings_set",
+      "title": {
+        "en": "Cover",
+        "fr": "Volet",
+        "nl": "Rolluik",
+        "de": "Rollladen"
+      }
+    }
+  ],
+  "titleFormatted": {
+    "en": "[[device]] finished moving",
+    "fr": "[[device]] a fini de bouger",
+    "nl": "[[device]] is klaar met bewegen",
+    "de": "[[device]] hat die Bewegung beendet"
+  }
+}
