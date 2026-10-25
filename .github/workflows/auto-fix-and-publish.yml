@@ -67,6 +67,9 @@ jobs:
   auto-fix:
     runs-on: ubuntu-latest
     timeout-minutes: 25
+    outputs:
+      publish: ${{ steps.p3036_handoff.outputs.publish }}
+      sha: ${{ steps.p3036_handoff.outputs.sha }}
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
         with:
@@ -422,21 +425,131 @@ jobs:
             echo "No auto-fix changes to commit"
           fi
 
+      # P3036: hand the upload to the gated, locked jobs below (only when this run would have uploaded).
+      - name: P3036 publish hand-off
+        id: p3036_handoff
+        run: |
+          sha=$(git rev-parse HEAD)
+          publish=false
+          if [ "${trigger_publish:-}" = "true" ] && [ "$GITHUB_REF_NAME" != "stable-v5" ] && [ "${{ steps.bisect_hold.outputs.hold_upload }}" != "true" ]; then
+            git fetch -q origin "$GITHUB_REF_NAME" || true
+            if git merge-base --is-ancestor "$sha" "origin/$GITHUB_REF_NAME" 2>/dev/null; then publish=true; else echo "::warning::P3036: $sha not on origin/$GITHUB_REF_NAME; no upload this run"; fi
+          fi
+          echo "publish=$publish" >> "$GITHUB_OUTPUT"; echo "sha=$sha" >> "$GITHUB_OUTPUT"
+          echo "P3036 hand-off: publish=$publish sha=$sha"
+
+      - name: 🔔 Notify on failure
+        if: failure()
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
+        with:
+          script: |
+            // P202: never hardcode a closed issue (was spam-commenting #420 on every Auto-Fix failure)
+            const url = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const body = `⚠️ Auto-Fix pipeline failed. Check [run #${context.runId}](${url})`;
+            core.summary.addRaw(body).write();
+            core.warning(body);
+            // Optional: comment only on an OPEN issue whose body mentions AutofixNotify, else skip
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'autofix-notify',
+              per_page: 1,
+            });
+            if (issues.length) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issues[0].number,
+                body,
+              });
+            }
+
+  # P3036: green CI on the exact commit (auto-fix commits are [skip ci]: CI is dispatched if missing) + spacing.
+  p3036-gate:
+    name: "P3036 Athom publish gate"
+    needs: auto-fix
+    if: needs.auto-fix.outputs.publish == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: read
+      actions: write
+    outputs:
+      go: ${{ steps.gate.outputs.go }}
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          ref: ${{ needs.auto-fix.outputs.sha }}
+          fetch-depth: 1
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: .github/npm-cache-key.sha256  # P3026: version-free key, one npm cache per dependency set
+      - name: Install dependencies (read-only build snapshot)
+        run: npm ci --prefer-offline --no-audit --ignore-scripts || npm install --ignore-scripts
+      - name: P3036 publish gate
+        id: gate
+        uses: ./.github/actions/athom-publish-gate
+        with:
+          app_id: com.dlnraja.tuya.zigbee
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          homey_pat: ${{ secrets.HOMEY_PAT }}
+          sha: ${{ needs.auto-fix.outputs.sha }}
+          wait_ms: '1800000'
+
+  # P3036: the upload itself, under the per-app lock shared by every master publish workflow. Only this job
+  # takes athom-publish-master, so a plain auto-fix run never replaces a pending Auto-Publish run.
+  publish:
+    name: "Publish recovery build (gated)"
+    needs: [auto-fix, p3036-gate]
+    if: needs.auto-fix.outputs.publish == 'true' && needs.p3036-gate.outputs.go == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    concurrency:
+      group: athom-publish-master
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          ref: ${{ needs.auto-fix.outputs.sha }}
+          fetch-depth: 1
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: .github/npm-cache-key.sha256  # P3026: version-free key, one npm cache per dependency set
+      - name: Install deps
+        run: npm ci --prefer-offline --no-audit || npm install --no-audit
+
       # WHY(2026-10-11): invalid_state when another build of this app was still processing. Bounded wait
       # for Athom to finish the previous build before uploading (read-only, never fails the job).
       - name: Wait for Athom idle (previous build final)
-        if: env.trigger_publish == 'true' && github.ref_name != 'stable-v5' && steps.bisect_hold.outputs.hold_upload != 'true'
         continue-on-error: true
         timeout-minutes: 25
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: node .github/scripts/wait-athom-idle.js com.dlnraja.tuya.zigbee
 
+      # P3036: never upload while a build is still processing (the idle wait gives up after its timeout).
+      - name: P3036 busy re-check before upload
+        id: p3036_busy
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          EVENT_NAME: ${{ github.event_name }}
+          ATHOM_MIN_INTERVAL_MIN: '0'        # spacing already checked by the p3036-gate job
+          ATHOM_MAX_SUCCESS_PER_24H: '999'
+        run: |
+          node scripts/ci/homey-build-status.js com.dlnraja.tuya.zigbee >/dev/null 2>&1 || true
+          node .github/scripts/athom-publish-policy.js slot com.dlnraja.tuya.zigbee
+
       - name: 🚀 Publish if needed
         # P193/P217/P2385: never Homey-publish 5.12 from this workflow while master 9.0 soaks.
         # Publish ONLY when recovery gate set trigger_publish=true — bare workflow_dispatch
         # must NOT bypass P139 (that spam-bumped on socket hang up).
-        if: env.trigger_publish == 'true' && github.ref_name != 'stable-v5' && steps.bisect_hold.outputs.hold_upload != 'true'
+        # P3036: runs in its own job under the per-app lock, after the green-CI/spacing gate.
+        if: steps.p3036_busy.outputs.go != 'false'
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
           # P138: Match workflow-level 50 MB (prepared dir ~37 MB uncompressed).
@@ -485,8 +598,18 @@ jobs:
           set +e
           publish_output=$(run_homey_cli_publish 2>&1)
           publish_status=$?
-          if [ "$publish_status" -ne 0 ] && printf '%s\n' "$publish_output" | grep -Eiq 'Timeout after [0-9]+ms|fetch failed|ETIMEDOUT|ECONNRESET|ECONNABORTED|socket hang up|too many requests|\b429\b|processing_failed'; then
-            echo "::warning::Homey CLI publish hit a transient Athom hang; retrying via direct Athom Apps API with extended timeouts."
+          # P3036: one shared rule (athom-publish-policy.js fallback): one retry for a transient error only,
+          # after >= 300 s + jitter and once the previous build is final; never for AggregateError / processing_failed.
+          p3036_decision="STOP unknown no-failure"
+          if [ "$publish_status" -ne 0 ]; then
+            p3036_decision=$(printf '%s\n' "$publish_output" | ATHOM_RETRY_USED="${ATHOM_RETRY_USED:-0}" node "$GITHUB_WORKSPACE/.github/scripts/athom-publish-policy.js" fallback 2>/dev/null || echo "STOP unknown policy-error")
+            echo "P3036 fallback decision: $p3036_decision"
+          fi
+          if [ "${p3036_decision%% *}" = "RETRY" ]; then
+            echo "ATHOM_RETRY_USED=1" >> "$GITHUB_ENV"
+            echo "::warning::Homey CLI publish hit a transient Athom error; one retry via direct Athom Apps API in ${p3036_decision#RETRY }s (P3036)."
+            sleep "${p3036_decision#RETRY }"
+            HOMEY_PAT="$HOMEY_PAT" timeout 900 node "$GITHUB_WORKSPACE/.github/scripts/wait-athom-idle.js" com.dlnraja.tuya.zigbee || true
             fallback_output=$(HOMEY_PAT="$HOMEY_PAT" HOMEY_API_TIMEOUT_MS="${HOMEY_API_TIMEOUT_MS:-120000}" HOMEY_BUILD_POLL_TIMEOUT_MS="${HOMEY_BUILD_POLL_TIMEOUT_MS:-360000}" node "$GITHUB_WORKSPACE/scripts/direct-api-publish.js" --path "$PUBLISH_DIR" --channel test 2>&1)
             fallback_status=$?
             publish_output="$(printf '%s\n%s' "$publish_output" "$fallback_output")"
@@ -510,30 +633,3 @@ jobs:
         run: |
           sleep 60
           timeout 150 node scripts/automation/dashboard-monitor.js --latest || true
-
-      - name: 🔔 Notify on failure
-        if: failure()
-        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
-        with:
-          script: |
-            // P202: never hardcode a closed issue (was spam-commenting #420 on every Auto-Fix failure)
-            const url = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
-            const body = `⚠️ Auto-Fix pipeline failed. Check [run #${context.runId}](${url})`;
-            core.summary.addRaw(body).write();
-            core.warning(body);
-            // Optional: comment only on an OPEN issue whose body mentions AutofixNotify, else skip
-            const { data: issues } = await github.rest.issues.listForRepo({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              state: 'open',
-              labels: 'autofix-notify',
-              per_page: 1,
-            });
-            if (issues.length) {
-              await github.rest.issues.createComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: issues[0].number,
-                body,
-              });
-            }

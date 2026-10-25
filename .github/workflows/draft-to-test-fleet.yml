@@ -108,6 +108,10 @@ jobs:
         include: ${{ fromJson(needs.matrix-prep.outputs.matrix) }}
     runs-on: ubuntu-latest
     timeout-minutes: 25
+    # P3036: one lock per app shared by every publish workflow; no promotion while an upload of the same app runs.
+    concurrency:
+      group: athom-publish-${{ matrix.branch == 'stable-v5' && 'stable' || (matrix.branch == 'bastien-home' && 'bastien' || 'master') }}
+      cancel-in-progress: false
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
         with:

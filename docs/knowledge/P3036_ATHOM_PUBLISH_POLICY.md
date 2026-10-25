@@ -1,0 +1,69 @@
+# P3036: Athom publish policy (green CI, spacing, one retry, bisect exit)
+
+25/10/2026 (Paris, UTC+1). Applies to master (`com.dlnraja.tuya.zigbee`), stable-v5 (`.stable`) and
+bastien-home (`.bastien`). Scheduled workflows run from master only.
+
+## Why
+P3034 closed with 9.0.1599 (#3682): the same payload that had been refused went to draft and then to Test
+once CI was green and the upload window was quiet. The refusals line up with red CI, uploads sent too close
+together and Athom-side `socket hang up`, not with the app content. That is a strong presumption, not a proof.
+This policy turns those findings into rules that every upload path follows.
+
+## Rules
+| Rule | master | stable-v5 | bastien-home |
+|---|---|---|---|
+| Green CI required on the SHA (or a code-identical ancestor) | Syntax Check, Unified CI/CD, Node 22 tests, Homey App Validate | Syntax Check, Node 22 tests, Homey App Validate | Node 22 tests, Homey App Validate |
+| Minimum gap between two uploads | 120 min | 60 min | 60 min |
+| Successful uploads per 24 h | 1 | 4 | 4 |
+| Lock (concurrency group) | `athom-publish-master` | `athom-publish-stable` | `athom-publish-bastien` |
+
+- **CI gate.** A `[skip ci]` data/docs commit on top of a green SHA is accepted when no code file changed
+  (a version-only `package.json` / `package-lock.json` bump is not code). Cancelled/skipped runs are ignored.
+  Red or pending (after `CI_GATE_WAIT_MS`, default 40 min) → no upload, logged, retried at the next slot.
+  Missing CI on the SHA is dispatched once (`CI_GATE_DISPATCH_MISSING`, after `CI_GATE_DISPATCH_AFTER_MS`).
+- **Spacing.** Taken from the build snapshot (`data/status/homey-build-status-<app>.json`) merged with the
+  ledger `docs/knowledge/athom-publish-outcomes.jsonl`. Counted successes: states test / live / approved.
+  Overrides: `ATHOM_MIN_INTERVAL_MIN`, `ATHOM_MAX_SUCCESS_PER_24H`, `ATHOM_CI_REQUIRED` (comma list).
+- **Busy.** No upload while a previous build of the same app is still processing (stuck `waiting_for_files`
+  > 5 min and non-final builds > 6 h are ignored). Re-checked right before the upload step.
+- **Unreadable data.** Automatic runs hold (fail closed). A manual dispatch may try.
+- **Manual override.** `override_spacing` (workflow_dispatch input, mapped to `FORCE_PUBLISH`) bypasses spacing
+  and the 24 h cap for a manual run only. It never bypasses the CI gate.
+
+## Error classification (one module for every path)
+`classify()` in `.github/scripts/athom-publish-policy.js`; `athom-retry-policy.js` and
+`transient-publish-retry.js` delegate to it.
+
+| Kind | Examples | Retry | Breaker | Diagnostic |
+|---|---|---|---|---|
+| transient | socket hang up, ECONNRESET, ETIMEDOUT, 5xx, timeouts, invalid_state | exactly 1, after >= 300 s + 0-60 s jitter, once the previous build is final | not tripped; the retry is exempt (fixes run 40194918949) | no |
+| real | AggregateError, processing_failed (without a transient cause), validation errors, unknown | none | tripped | yes |
+
+The in-run fallbacks (`homey-app-publish` action, `homey-publish` action, Auto-Fix publish job,
+publish-stable and bastien-publish loops) call `athom-publish-policy.js fallback` and record
+`ATHOM_RETRY_USED=1`, so a run can never retry twice.
+
+## Where it is wired
+- `auto-publish-on-push.yml`: gate steps in the breaker job (`p3036_go`), busy re-check before `id: pub`.
+- `publish.yml`, `verified-publish-and-diagnostics.yml`: `p3036-gate` job (composite action
+  `.github/actions/athom-publish-gate`).
+- `auto-fix-and-publish.yml`: the recovery upload moved to its own `publish` job under `athom-publish-master`,
+  after a `p3036-gate` job. Plain auto-fix runs never take the lock.
+- `draft-to-test.yml`, `draft-to-test-fleet.yml`: job-level per-app lock.
+- `publish-self-heal.yml`: `deferred` job runs `.github/scripts/athom-deferred-dispatch.js`: a held run leaves an
+  `athom-deferred-<app>-<run>` artifact; the next slot dispatches the app's workflow once with
+  `deferred_retry=true` (automatic run, same gate). Artifacts are never deleted by this job.
+- stable-v5 `publish-stable.yml`, bastien-home `bastien-publish.yml`: same gate and lock names.
+
+## Bisect exit
+`docs/knowledge/athom-bisect-state.json` status=done → `bisect-hold.js` allows everything: no forced drafts,
+no `bisect_trial`. Normal flow: draft → Test automatically when processing is OK. **Live is never automatic.**
+If rejections come back, rerun the bisect: set status=running (drafts only + `bisect_trial` are re-armed).
+
+## Env flags
+`CI_GATE_SHA`, `CI_GATE_BRANCH`, `CI_GATE_WAIT_MS`, `CI_GATE_POLL_MS`, `CI_GATE_DISPATCH_MISSING`,
+`CI_GATE_DISPATCH_AFTER_MS`, `CI_GATE_SKIP` (manual only, not wired in any workflow), `EVENT_NAME`,
+`TRANSIENT_RETRY`, `DEFERRED_RETRY`, `FORCE_PUBLISH`, `ATHOM_MIN_INTERVAL_MIN`, `ATHOM_MAX_SUCCESS_PER_24H`,
+`ATHOM_CI_REQUIRED`, `ATHOM_RETRY_USED`, `ATHOM_REACH_TEST`, `DEFERRED_DRY_RUN`.
+
+Tests: `test/critical/p3036-athom-publish-policy.test.js`.

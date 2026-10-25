@@ -118,8 +118,23 @@ runs:
           if [ "$publish_status" -eq 0 ] && ! verify_payload_identity post; then
             echo "::error::P3025b: package rebuilt by homey app publish differs from the validated one (see diff above)"
           fi
-          if [ "$publish_status" -ne 0 ] && printf '%s\n' "$publish_output" | grep -Eiq 'Timeout after [0-9]+ms|fetch failed|ETIMEDOUT|ECONNRESET|ECONNABORTED|socket hang up|too many requests|\b429\b|processing_failed'; then
-            echo "::warning::Homey CLI publish hit a transient Athom hang; retrying via direct Athom Apps API with extended timeouts."
+          # P3036: one shared rule (athom-publish-policy.js fallback): only a transient error (socket hang up,
+          # ECONNRESET, ETIMEDOUT, 5xx, timeout, invalid_state) gets ONE retry, after >= 300 s + jitter and once the
+          # previous build is final. AggregateError / processing_failed / validation: no retry (real failure).
+          p3036_decision="STOP unknown no-failure"
+          if [ "$publish_status" -ne 0 ]; then
+            p3036_decision=$(printf '%s\n' "$publish_output" | ATHOM_RETRY_USED="${ATHOM_RETRY_USED:-0}" node "$GITHUB_WORKSPACE/.github/scripts/athom-publish-policy.js" fallback 2>/dev/null || echo "STOP unknown policy-error")
+            echo "P3036 fallback decision: $p3036_decision"
+          fi
+          if [ "${p3036_decision%% *}" = "RETRY" ]; then
+            p3036_wait="${p3036_decision#RETRY }"
+            echo "ATHOM_RETRY_USED=1" >> "$GITHUB_ENV"
+            echo "::warning::Homey CLI publish hit a transient Athom error; one retry via direct Athom Apps API in ${p3036_wait}s (P3036)."
+            sleep "$p3036_wait"
+            P3036_APP=$(node -p "require('./app.json').id" 2>/dev/null || echo "com.dlnraja.tuya.zigbee")
+            if [ -f "$GITHUB_WORKSPACE/.github/scripts/wait-athom-idle.js" ]; then
+              HOMEY_PAT="$HOMEY_PAT" timeout 900 node "$GITHUB_WORKSPACE/.github/scripts/wait-athom-idle.js" "$P3036_APP" || true
+            fi
             fallback_output=$(verify_payload_identity pre && HOMEY_PAT="$HOMEY_PAT" HOMEY_API_TIMEOUT_MS="${HOMEY_API_TIMEOUT_MS:-180000}" HOMEY_BUILD_POLL_TIMEOUT_MS="${HOMEY_BUILD_POLL_TIMEOUT_MS:-360000}" node "$GITHUB_WORKSPACE/scripts/direct-api-publish.js" --path "$PUBLISH_DIR" --channel test 2>&1)
             fallback_status=$?
             publish_output="$(printf '%s\n%s' "$publish_output" "$fallback_output")"

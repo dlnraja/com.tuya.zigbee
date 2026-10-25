@@ -162,4 +162,24 @@ jobs:
             echo "run Publish Stable→Test here — shared App ID would overwrite master Test."
           } >> $GITHUB_STEP_SUMMARY
           # Shared App ID: only re-trigger master Auto-Publish, never Publish Stable→Test.
-          gh workflow run "Auto-Publish on Push" --ref master 2>&1 | tee -a $GITHUB_STEP_SUMMARY || true
+          # P3036: dispatched as an automatic run (deferred_retry) so the breaker and the publish gate apply.
+          gh workflow run "Auto-Publish on Push" --ref master -f deferred_retry=true 2>&1 | tee -a $GITHUB_STEP_SUMMARY || true
+
+  # P3036: "retry at the next slot" for uploads held by the publish gate (red/pending CI, spacing, busy build).
+  # Reads athom-deferred-<app>-<run> artifacts (never deletes them) and dispatches the app's publish workflow
+  # once with deferred_retry=true; that run goes through the same gate again.
+  deferred:
+    name: "P3036 next-slot retry of held uploads"
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          fetch-depth: 1
+          sparse-checkout: |
+            .github/scripts/athom-deferred-dispatch.js
+          sparse-checkout-cone-mode: false
+      - name: Dispatch held uploads (master, stable-v5, bastien-home)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node .github/scripts/athom-deferred-dispatch.js master,stable,bastien

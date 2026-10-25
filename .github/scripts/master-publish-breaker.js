@@ -10,6 +10,10 @@ const DEFAULT_N = 3;
 // fail-open -> 9.0.1594 (#3677) burned on processing_failed while the parallel auto-fix run read #3674..#3676
 // and skipped. Now: when the snapshot is unreadable/empty (snapshotOk === false) an AUTOMATIC event skips
 // (fail-closed); a manual dispatch may still try once. Callers that pass no snapshotOk keep the old behaviour.
+// P3036 (25/10/2026 Paris): run 40194918949 (automatic hang-up retry) was skipped by this breaker. Now the single
+// automatic retry (transient_retry=1) of a TRANSIENT latest failure is never blocked, and the breaker also trips
+// as soon as the latest build failed for a REAL reason (AggregateError, processing_failed, validation).
+const P3036 = require('./athom-publish-policy');
 function decide({ builds, n = DEFAULT_N, event, transientRetry, snapshotOk }) {
   const manual = event === 'workflow_dispatch' && !(transientRetry && transientRetry !== 'false' && transientRetry !== '0');
   const known = (builds || []).filter((b) => b && b.id != null);
@@ -17,11 +21,16 @@ function decide({ builds, n = DEFAULT_N, event, transientRetry, snapshotOk }) {
     if (manual) return { skip: false, tripped: false, unknown: true, reason: 'Athom build state unreadable but manual dispatch -> one try allowed' };
     return { skip: true, tripped: false, unknown: true, reason: 'Athom build state unreadable (0 builds): fail-closed on automatic event; manual workflow_dispatch required' };
   }
-  const last = (builds || []).filter((b) => b && b.id != null).sort((a, b) => b.id - a.id).slice(0, n);
-  const tripped = last.length >= n && last.every((b) => String(b.state) === 'processing_failed');
-  if (!tripped) return { skip: false, tripped: false, reason: `last ${last.length} builds not all processing_failed` };
-  if (manual) return { skip: false, tripped: true, reason: `breaker open (last ${n} failed) but manual dispatch -> one try allowed` };
-  return { skip: true, tripped: true, reason: `breaker open: last ${n} master builds processing_failed (#${last.map((b) => b.id).join(',#')}); manual workflow_dispatch required` };
+  const exempt = P3036.singleRetryExempt({ builds: known, transientRetry });
+  if (exempt.exempt) return { skip: false, tripped: false, exempt: true, reason: `P3036 ${exempt.reason}: breaker does not block the single retry` };
+  const last = known.slice().sort((a, b) => b.id - a.id).slice(0, n);
+  const allFailed = last.length >= n && last.every((b) => String(b.state) === 'processing_failed');
+  const real = P3036.breakerAssess({ builds: known, n });
+  const tripped = allFailed || real.tripped;
+  const why = allFailed ? `last ${n} master builds processing_failed (#${last.map((b) => b.id).join(',#')})` : real.reason;
+  if (!tripped) return { skip: false, tripped: false, reason: `last ${last.length} builds not all processing_failed, latest not a real failure` };
+  if (manual) return { skip: false, tripped: true, reason: `breaker open (${why}) but manual dispatch -> one try allowed` };
+  return { skip: true, tripped: true, reason: `breaker open: ${why}; manual workflow_dispatch required` };
 }
 module.exports = { decide, DEFAULT_N };
 function readSnapshot(appId) {
@@ -42,7 +51,7 @@ if (require.main === module) {
     require('child_process').spawnSync(process.execPath, [path.join(process.cwd(), 'scripts', 'ci', 'homey-build-status.js'), appId], { stdio: ['ignore', 'ignore', 'inherit'], env: process.env, timeout: 120000 });
     snap = readSnapshot(appId);
   }
-  const d = decide({ builds: snap.builds, n: parseInt(process.env.BREAKER_N || '', 10) || DEFAULT_N, event: process.env.GITHUB_EVENT_NAME, transientRetry: process.env.TRANSIENT_RETRY, snapshotOk: snap.builds.length > 0 });
+  const d = decide({ builds: snap.builds, n: parseInt(process.env.BREAKER_N || '', 10) || DEFAULT_N, event: (process.env.DEFERRED_RETRY === 'true' ? 'schedule' : process.env.GITHUB_EVENT_NAME), /* P3036: a deferred next-slot dispatch is automatic */ transientRetry: process.env.TRANSIENT_RETRY, snapshotOk: snap.builds.length > 0 });
   console.log(`[breaker] ${d.skip ? 'SKIP' : 'go'}: ${d.reason}`);
   if (process.env.GITHUB_OUTPUT) fs.appendFileSync(process.env.GITHUB_OUTPUT, `skip=${d.skip}\n`);
   if (d.skip && process.env.GITHUB_STEP_SUMMARY) fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, `### Master publish breaker open\n${d.reason}\n`);
