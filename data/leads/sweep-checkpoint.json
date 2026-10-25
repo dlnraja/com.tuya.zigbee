@@ -1678,15 +1678,15 @@
     },
     {
       "id": "johan-issue:100",
-      "status": "deferred",
-      "note": "Exact identity HEIMAN / RC-EF-3.0 from the Homey interview in the issue (IAS ACE keyfob, in 0/1/3/1280/2821, out 25/1281). Needs IAS ACE arm/disarm/emergency command handling before a driver can host it; lead kept.",
+      "status": "fixed",
+      "note": "Keyfob now hosted by the native heiman_keyfob driver (IAS ACE arm/disarm/emergency): master P2921 3a9b121226, stable-v5 755d877d4c and bastien-home 6a58e5b6e6 (P2974).",
       "sources": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/100"
       ],
       "author": "JohanBendz",
       "comments": 1,
-      "triagedAt": "2026-10-21T07:04:18.052Z",
-      "triagedVia": "resume-sweep-2026-10-21"
+      "triagedAt": "2026-10-25T07:55:52.522Z",
+      "triagedVia": "resume-sweep-2026-10-25"
     },
     {
       "id": "johan-issue:101",
@@ -7223,16 +7223,16 @@
     },
     {
       "id": "johan-issue:447",
-      "status": "deferred",
-      "note": "Exact identity Heiman / WarningDevice (interview in the issue, IAS WD 0x0502). Our siren driver class and capabilities do not fit a pure IAS WD siren yet; lead kept for a native siren driver.",
+      "status": "fixed",
+      "note": "Siren now hosted by the native heiman_siren driver (IAS WD warning): master P2921 3a9b121226, stable-v5 755d877d4c and bastien-home 6a58e5b6e6 (P2974).",
       "sources": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/447"
       ],
       "author": "SamCan92",
       "closedAt": "2026-09-30T20:32:55Z",
       "comments": 1,
-      "triagedAt": "2026-10-21T07:04:18.052Z",
-      "triagedVia": "resume-sweep-2026-10-21"
+      "triagedAt": "2026-10-25T07:55:52.522Z",
+      "triagedVia": "resume-sweep-2026-10-25"
     },
     {
       "id": "johan-issue:448",
@@ -15775,7 +15775,7 @@
     },
     {
       "id": "forum:21313#360",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Jurgen_Heine",
       "link": "https://community.homey.app/t/21313/360",
       "mfrs": [],
@@ -15788,7 +15788,10 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "note": "Re-read raw post: discussion, how-to or other-app support, no device identity to act on. Thread 21313 is the Tuya cloud app of another developer (credentials, legacy devices, scenes).",
+      "triagedAt": "2026-10-25T07:55:52.522Z",
+      "triagedVia": "resume-sweep-2026-10-25"
     },
     {
       "id": "johan-issue:541",
@@ -16534,7 +16537,7 @@
     },
     {
       "id": "forum:26439#4715",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "johan_bendz",
       "link": "https://community.homey.app/t/26439/4715",
       "mfrs": [],
@@ -16547,7 +16550,10 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "note": "Re-read raw post: discussion, how-to or other-app support, no device identity to act on.",
+      "triagedAt": "2026-10-25T07:55:52.522Z",
+      "triagedVia": "resume-sweep-2026-10-25"
     },
     {
       "id": "forum:26439#4716",
@@ -16581,7 +16587,7 @@
     },
     {
       "id": "forum:26439#4723",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Peter_van_Werkhoven",
       "link": "https://community.homey.app/t/26439/4723",
       "mfrs": [],
@@ -16594,11 +16600,14 @@
         "couples": [],
         "candidates": [],
         "sources": 31
-      }
+      },
+      "note": "Re-read raw post: discussion, how-to or other-app support, no device identity to act on.",
+      "triagedAt": "2026-10-25T07:55:52.522Z",
+      "triagedVia": "resume-sweep-2026-10-25"
     },
     {
       "id": "forum:26439#4724",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Fadoz_nl",
       "link": "https://community.homey.app/t/26439/4724",
       "mfrs": [],
@@ -16611,11 +16620,14 @@
         "couples": [],
         "candidates": [],
         "sources": 7
-      }
+      },
+      "note": "Re-read raw post: discussion, how-to or other-app support, no device identity to act on.",
+      "triagedAt": "2026-10-25T07:55:52.522Z",
+      "triagedVia": "resume-sweep-2026-10-25"
     },
     {
       "id": "forum:26439#4725",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "robertklep",
       "link": "https://community.homey.app/t/26439/4725",
       "mfrs": [],
@@ -16628,11 +16640,14 @@
         "couples": [],
         "candidates": [],
         "sources": 31
-      }
+      },
+      "note": "Re-read raw post: discussion, how-to or other-app support, no device identity to act on.",
+      "triagedAt": "2026-10-25T07:55:52.522Z",
+      "triagedVia": "resume-sweep-2026-10-25"
     },
     {
       "id": "forum:26439#4726",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Fadoz_nl",
       "link": "https://community.homey.app/t/26439/4726",
       "mfrs": [],
@@ -16645,7 +16660,10 @@
         "couples": [],
         "candidates": [],
         "sources": 7
-      }
+      },
+      "note": "Re-read raw post: discussion, how-to or other-app support, no device identity to act on.",
+      "triagedAt": "2026-10-25T07:55:52.522Z",
+      "triagedVia": "resume-sweep-2026-10-25"
     },
     {
       "id": "forum:26439#4730",
@@ -16758,7 +16776,7 @@
     },
     {
       "id": "forum:26439#4755",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Sharkys",
       "link": "https://community.homey.app/t/26439/4755",
       "mfrs": [],
@@ -16771,7 +16789,10 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "note": "Re-read raw post: discussion, how-to or other-app support, no device identity to act on.",
+      "triagedAt": "2026-10-25T07:55:52.522Z",
+      "triagedVia": "resume-sweep-2026-10-25"
     },
     {
       "id": "forum:26439#4756",
@@ -16798,7 +16819,7 @@
     },
     {
       "id": "forum:26439#4763",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Sharkys",
       "link": "https://community.homey.app/t/26439/4763",
       "mfrs": [],
@@ -16815,7 +16836,10 @@
           "https://zigbee.blakadder.com/CASA_IA_CTHS-317-ET.html"
         ],
         "sources": 32
-      }
+      },
+      "note": "Re-read raw post: discussion, how-to or other-app support, no device identity to act on.",
+      "triagedAt": "2026-10-25T07:55:52.522Z",
+      "triagedVia": "resume-sweep-2026-10-25"
     },
     {
       "id": "forum:26439#4765",
@@ -16832,7 +16856,7 @@
     },
     {
       "id": "forum:26439#4775",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Polleke",
       "link": "https://community.homey.app/t/26439/4775",
       "mfrs": [],
@@ -16845,7 +16869,10 @@
         "couples": [],
         "candidates": [],
         "sources": 7
-      }
+      },
+      "note": "Re-read raw post: discussion, how-to or other-app support, no device identity to act on.",
+      "triagedAt": "2026-10-25T07:55:52.522Z",
+      "triagedVia": "resume-sweep-2026-10-25"
     },
     {
       "id": "forum:26439#4778",
@@ -16882,7 +16909,7 @@
     },
     {
       "id": "forum:146735#385",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "bayrambass",
       "link": "https://community.homey.app/t/146735/385",
       "mfrs": [],
@@ -16895,7 +16922,10 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "note": "Re-read raw post: discussion, how-to or other-app support, no device identity to act on.",
+      "triagedAt": "2026-10-25T07:55:52.522Z",
+      "triagedVia": "resume-sweep-2026-10-25"
     },
     {
       "id": "forum:146735#398",
@@ -17009,7 +17039,7 @@
     },
     {
       "id": "forum:146735#450",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Reidar_Skuland",
       "link": "https://community.homey.app/t/146735/450",
       "mfrs": [],
@@ -17022,7 +17052,10 @@
         "couples": [],
         "candidates": [],
         "sources": 10
-      }
+      },
+      "note": "Re-read raw post: discussion, how-to or other-app support, no device identity to act on.",
+      "triagedAt": "2026-10-25T07:55:52.522Z",
+      "triagedVia": "resume-sweep-2026-10-25"
     },
     {
       "id": "forum:146735#453",
@@ -17079,7 +17112,10 @@
         "couples": [],
         "candidates": [],
         "sources": 11
-      }
+      },
+      "note": "Wi-Fi lead (queue item 4): EV charger charge-mode enum on DP14 (now / schedule / percentage / energy / delay) seen through Tuya Local; wifi_ev_charger has no mode picker for it yet.",
+      "triagedAt": "2026-10-25T07:55:52.522Z",
+      "triagedVia": "resume-sweep-2026-10-25"
     },
     {
       "id": "forum:154077#383",
@@ -17106,7 +17142,10 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "note": "Wi-Fi lead (queue item 4): a 4-gang Wi-Fi switch (switch_1..switch_4 in its spec, no metering) lands on the single-switch plug driver, hiding gangs 2-4; detect extra switch DPs and expose them additively.",
+      "triagedAt": "2026-10-25T07:55:52.522Z",
+      "triagedVia": "resume-sweep-2026-10-25"
     },
     {
       "id": "forum:154077#394",
@@ -17150,7 +17189,7 @@
     },
     {
       "id": "forum:154077#405",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Sebastian_Klas",
       "link": "https://community.homey.app/t/154077/405",
       "mfrs": [],
@@ -17163,7 +17202,10 @@
         "couples": [],
         "candidates": [],
         "sources": 2
-      }
+      },
+      "note": "EV charger (category qccdz) phase values: handled by the JSON phase parser in lib/tuya-local/EvChargerPhaseJson.js (P2641).",
+      "triagedAt": "2026-10-25T07:55:52.522Z",
+      "triagedVia": "resume-sweep-2026-10-25"
     },
     {
       "id": "forum:154077#409",
@@ -17237,7 +17279,7 @@
     },
     {
       "id": "forum:21313#368",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Adrian_Rockall",
       "link": "https://community.homey.app/t/21313/368",
       "mfrs": [],
@@ -17250,7 +17292,10 @@
         "couples": [],
         "candidates": [],
         "sources": 33
-      }
+      },
+      "note": "Re-read raw post: discussion, how-to or other-app support, no device identity to act on. Thread 21313 is the Tuya cloud app of another developer (credentials, legacy devices, scenes).",
+      "triagedAt": "2026-10-25T07:55:52.522Z",
+      "triagedVia": "resume-sweep-2026-10-25"
     },
     {
       "id": "forum:21313#376",
@@ -17264,7 +17309,7 @@
     },
     {
       "id": "forum:21313#383",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Jurgen_Heine",
       "link": "https://community.homey.app/t/21313/383",
       "mfrs": [],
@@ -17277,11 +17322,14 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "note": "Re-read raw post: discussion, how-to or other-app support, no device identity to act on. Thread 21313 is the Tuya cloud app of another developer (credentials, legacy devices, scenes).",
+      "triagedAt": "2026-10-25T07:55:52.522Z",
+      "triagedVia": "resume-sweep-2026-10-25"
     },
     {
       "id": "forum:21313#384",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Paul_W",
       "link": "https://community.homey.app/t/21313/384",
       "mfrs": [],
@@ -17294,7 +17342,10 @@
         "couples": [],
         "candidates": [],
         "sources": 10
-      }
+      },
+      "note": "Re-read raw post: discussion, how-to or other-app support, no device identity to act on. Thread 21313 is the Tuya cloud app of another developer (credentials, legacy devices, scenes).",
+      "triagedAt": "2026-10-25T07:55:52.522Z",
+      "triagedVia": "resume-sweep-2026-10-25"
     },
     {
       "id": "forum:21313#393",
@@ -17308,7 +17359,7 @@
     },
     {
       "id": "forum:21313#400",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Morad_Ahassad",
       "link": "https://community.homey.app/t/21313/400",
       "mfrs": [],
@@ -17321,7 +17372,10 @@
         "couples": [],
         "candidates": [],
         "sources": 10
-      }
+      },
+      "note": "Re-read raw post: discussion, how-to or other-app support, no device identity to act on. Thread 21313 is the Tuya cloud app of another developer (credentials, legacy devices, scenes).",
+      "triagedAt": "2026-10-25T07:55:52.522Z",
+      "triagedVia": "resume-sweep-2026-10-25"
     },
     {
       "id": "forum:21313#402",
@@ -17355,7 +17409,7 @@
     },
     {
       "id": "forum:21313#408",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Jurgen_Heine",
       "link": "https://community.homey.app/t/21313/408",
       "mfrs": [],
@@ -17368,11 +17422,14 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "note": "Re-read raw post: discussion, how-to or other-app support, no device identity to act on. Thread 21313 is the Tuya cloud app of another developer (credentials, legacy devices, scenes).",
+      "triagedAt": "2026-10-25T07:55:52.522Z",
+      "triagedVia": "resume-sweep-2026-10-25"
     },
     {
       "id": "forum:21313#429",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "kalpik",
       "link": "https://community.homey.app/t/21313/429",
       "mfrs": [],
@@ -17385,11 +17442,14 @@
         "couples": [],
         "candidates": [],
         "sources": 28
-      }
+      },
+      "note": "Re-read raw post: discussion, how-to or other-app support, no device identity to act on. Thread 21313 is the Tuya cloud app of another developer (credentials, legacy devices, scenes).",
+      "triagedAt": "2026-10-25T07:55:52.522Z",
+      "triagedVia": "resume-sweep-2026-10-25"
     },
     {
       "id": "forum:21313#430",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Sjoerd1",
       "link": "https://community.homey.app/t/21313/430",
       "mfrs": [],
@@ -17406,7 +17466,10 @@
           "https://www.zigbee2mqtt.io/devices/AU-A1GUZBCX5.html"
         ],
         "sources": 31
-      }
+      },
+      "note": "Re-read raw post: discussion, how-to or other-app support, no device identity to act on. Thread 21313 is the Tuya cloud app of another developer (credentials, legacy devices, scenes).",
+      "triagedAt": "2026-10-25T07:55:52.522Z",
+      "triagedVia": "resume-sweep-2026-10-25"
     },
     {
       "id": "forum:21313#432",
@@ -17420,7 +17483,7 @@
     },
     {
       "id": "forum:21313#439",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Sjoerd1",
       "link": "https://community.homey.app/t/21313/439",
       "mfrs": [],
@@ -17438,11 +17501,14 @@
           "https://www.zigbee2mqtt.io/devices/AU-A1GUZBCX5.html"
         ],
         "sources": 32
-      }
+      },
+      "note": "Re-read raw post: discussion, how-to or other-app support, no device identity to act on. Thread 21313 is the Tuya cloud app of another developer (credentials, legacy devices, scenes).",
+      "triagedAt": "2026-10-25T07:55:52.522Z",
+      "triagedVia": "resume-sweep-2026-10-25"
     },
     {
       "id": "forum:21313#441",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Sjoerd1",
       "link": "https://community.homey.app/t/21313/441",
       "mfrs": [],
@@ -17459,11 +17525,14 @@
           "https://www.zigbee2mqtt.io/devices/AU-A1GUZBCX5.html"
         ],
         "sources": 32
-      }
+      },
+      "note": "Re-read raw post: discussion, how-to or other-app support, no device identity to act on. Thread 21313 is the Tuya cloud app of another developer (credentials, legacy devices, scenes).",
+      "triagedAt": "2026-10-25T07:55:52.522Z",
+      "triagedVia": "resume-sweep-2026-10-25"
     },
     {
       "id": "forum:21313#443",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Sjoerd1",
       "link": "https://community.homey.app/t/21313/443",
       "mfrs": [],
@@ -17480,7 +17549,10 @@
           "https://www.zigbee2mqtt.io/devices/AU-A1GUZBCX5.html"
         ],
         "sources": 32
-      }
+      },
+      "note": "Re-read raw post: discussion, how-to or other-app support, no device identity to act on. Thread 21313 is the Tuya cloud app of another developer (credentials, legacy devices, scenes).",
+      "triagedAt": "2026-10-25T07:55:52.522Z",
+      "triagedVia": "resume-sweep-2026-10-25"
     },
     {
       "id": "johan-issue:556",
@@ -17884,7 +17956,7 @@
     },
     {
       "id": "forum:140352#467",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Peter_van_Werkhoven",
       "link": "https://community.homey.app/t/140352/467",
       "mfrs": [],
@@ -17902,11 +17974,14 @@
           "https://www.zigbee2mqtt.io/devices/ZG-204ZV1-z.html"
         ],
         "sources": 37
-      }
+      },
+      "note": "SOS button press not reaching flows on a 4.1.x build; historical report, the IAS zone press path was reworked since (button_emergency_sos). No identity in the post.",
+      "triagedAt": "2026-10-25T07:55:52.522Z",
+      "triagedVia": "resume-sweep-2026-10-25"
     },
     {
       "id": "forum:140352#474",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "ugrbnk",
       "link": "https://community.homey.app/t/140352/474",
       "mfrs": [],
@@ -17920,11 +17995,14 @@
         "couples": [],
         "candidates": [],
         "sources": 34
-      }
+      },
+      "note": "Re-read raw post: discussion, how-to or other-app support, no device identity to act on.",
+      "triagedAt": "2026-10-25T07:55:52.522Z",
+      "triagedVia": "resume-sweep-2026-10-25"
     },
     {
       "id": "forum:140352#476",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Peter_van_Werkhoven",
       "link": "https://community.homey.app/t/140352/476",
       "mfrs": [],
@@ -17937,11 +18015,14 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "note": "SOS button press not reaching flows on a 4.1.x build; historical report, the IAS zone press path was reworked since (button_emergency_sos). No identity in the post.",
+      "triagedAt": "2026-10-25T07:55:52.522Z",
+      "triagedVia": "resume-sweep-2026-10-25"
     },
     {
       "id": "forum:140352#479",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Jocke_Wallen",
       "link": "https://community.homey.app/t/140352/479",
       "mfrs": [],
@@ -17959,7 +18040,10 @@
           "https://zigbee.blakadder.com/Sonoff_ZBMINIL2.html"
         ],
         "sources": 34
-      }
+      },
+      "note": "Re-read raw post: discussion, how-to or other-app support, no device identity to act on.",
+      "triagedAt": "2026-10-25T07:55:52.522Z",
+      "triagedVia": "resume-sweep-2026-10-25"
     },
     {
       "id": "forum:140352#484",
@@ -18225,7 +18309,7 @@
     },
     {
       "id": "forum:140352#517",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Andries_de_Jonge",
       "link": "https://community.homey.app/t/140352/517",
       "mfrs": [],
@@ -18239,7 +18323,10 @@
         "couples": [],
         "candidates": [],
         "sources": 14
-      }
+      },
+      "note": "Re-read raw post: discussion, how-to or other-app support, no device identity to act on.",
+      "triagedAt": "2026-10-25T07:55:52.522Z",
+      "triagedVia": "resume-sweep-2026-10-25"
     },
     {
       "id": "forum:26439#4793",
@@ -18257,7 +18344,10 @@
         "couples": [],
         "candidates": [],
         "sources": 37
-      }
+      },
+      "note": "Two identical sensors, one pairs and one is unknown; identity only in screenshots, left to the image OCR pass.",
+      "triagedAt": "2026-10-25T07:55:52.522Z",
+      "triagedVia": "resume-sweep-2026-10-25"
     },
     {
       "id": "forum:26439#4795",
@@ -31919,8 +32009,8 @@
     },
     {
       "id": "johan-issue:665",
-      "status": "pending",
-      "note": "open issue; missing couple(s) _TZ3210_ejctepku|TS0505B; needs code check",
+      "status": "deferred",
+      "note": "Exact couple _TZ3210_ejctepku|TS0505B from the Homey interview (GU10 RGBCW bulb, colour cluster 0x0300). The mfr only sits on wall_dimmer_tuya via the legacy TS0601_dim1 list (mfs_db hint, confidence 0.08), so adding it to light_bulb_rgb_rgbw makes one new collision on the TS0601 phantom. Needs a reviewed wrong-class move or dual-legacy entry on master after the P3034 bisect, then soak and ports.",
       "sources": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/665"
       ],
@@ -31943,7 +32033,9 @@
           "image-ocr"
         ],
         "from": "pending"
-      }
+      },
+      "triagedAt": "2026-10-25T07:55:52.522Z",
+      "triagedVia": "resume-sweep-2026-10-25"
     },
     {
       "id": "johan-issue:666",
@@ -33212,7 +33304,7 @@
     },
     {
       "id": "forum:140352#1521",
-      "status": "pending",
+      "status": "already-fixed",
       "author": "dlnraja",
       "link": "https://community.homey.app/t/140352/1521",
       "mfrs": [
@@ -33240,7 +33332,10 @@
           ]
         }
       ],
-      "why": "couple-missing"
+      "why": "couple-missing",
+      "note": "The post lists several ids at once; the TS0726 pairing is an artefact. Z2M tuya.ts gives _TZE200_jt50ea5d as TS0601 heat meter (on ultrasonic_heat_meter) and _TZ3210_jaap6jeb as TS0505B RGB+CCT bulb (on bulb_rgbw); both real couples already covered.",
+      "triagedAt": "2026-10-25T07:55:52.522Z",
+      "triagedVia": "resume-sweep-2026-10-25"
     },
     {
       "id": "forum:146735#508",
@@ -34210,7 +34305,7 @@
     },
     {
       "id": "forum:140352#1567",
-      "status": "pending",
+      "status": "already-fixed",
       "author": "Peter_van_Werkhoven",
       "link": "https://community.homey.app/t/140352/1567",
       "mfrs": [
@@ -34230,7 +34325,10 @@
         }
       ],
       "images": 4,
-      "why": "couple-missing"
+      "why": "couple-missing",
+      "note": "_TZE200_pay2byax is a TS0601 door/window contact (deCONZ DDF, ZHA tuya_contact, Z2M hobeian) and sits on contact_sensor_zigbee; the TS0215A pairing in the post belongs to the other id.",
+      "triagedAt": "2026-10-25T07:55:52.522Z",
+      "triagedVia": "resume-sweep-2026-10-25"
     },
     {
       "id": "forum:140352#1568",
@@ -36984,13 +37082,12 @@
     "previousNext": 31
   },
   "stats": {
-    "already-fixed": 1118,
-    "no-action": 1054,
-    "needs-info": 491,
-    "deferred": 3,
-    "fixed": 8,
+    "already-fixed": 1121,
+    "no-action": 1080,
+    "needs-info": 464,
+    "fixed": 10,
     "covered": 1,
-    "pending": 3
+    "deferred": 2
   },
   "progressed": true,
   "dailyResume20261020B": {
@@ -37348,6 +37445,152 @@
       {
         "id": "forum:26439#5021",
         "status": "already-fixed"
+      }
+    ]
+  },
+  "dailyResume20261025": {
+    "at": "2026-10-25T07:55:52.522Z",
+    "advanced": 35,
+    "items": [
+      {
+        "id": "johan-issue:100",
+        "status": "fixed"
+      },
+      {
+        "id": "johan-issue:447",
+        "status": "fixed"
+      },
+      {
+        "id": "forum:140352#1521",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#1567",
+        "status": "already-fixed"
+      },
+      {
+        "id": "johan-issue:665",
+        "status": "deferred"
+      },
+      {
+        "id": "forum:21313#360",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:26439#4715",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:26439#4723",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:26439#4724",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:26439#4725",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:26439#4726",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:26439#4755",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:26439#4763",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:26439#4775",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:146735#385",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:146735#450",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:21313#368",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:21313#383",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:21313#384",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:21313#400",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:21313#408",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:21313#429",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:21313#430",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:21313#439",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:21313#441",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:21313#443",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:140352#474",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:140352#479",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:140352#517",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:140352#467",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:140352#476",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:154077#405",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:154077#379",
+        "status": "needs-info"
+      },
+      {
+        "id": "forum:154077#386",
+        "status": "needs-info"
+      },
+      {
+        "id": "forum:26439#4793",
+        "status": "needs-info"
       }
     ]
   }
