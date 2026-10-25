@@ -1,5 +1,5 @@
 'use strict';
-// P3041 (25/10/2026 Paris): P3039d lot B moved _TZ3000_mwd3c2at|TS0202 (Z2M RTX ZMS4, PIR) to
+// P3041x (25/10/2026 Paris): P3039d lot B moved _TZ3000_mwd3c2at|TS0202 (Z2M RTX ZMS4, PIR) to
 // slim_motion_sensor but the misattribution registry still named smart_irrigation_valve, so
 // audit-sacred-couple --from-registry failed (p2841, Auto-Fix + Publish red since 17:43).
 // Guard: every locked registry couple is claimed by exactly its canonical driver, and this couple stays.
@@ -13,7 +13,7 @@ const reg = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'user-misattribut
 const compose = (id) => JSON.parse(fs.readFileSync(path.join(ROOT, 'drivers', id, 'driver.compose.json'), 'utf8'));
 const lc = (a) => (a || []).map((x) => String(x).toLowerCase());
 
-describe('P3041 sacred registry follows class moves', () => {
+describe('P3041x sacred registry follows class moves', () => {
   it('_TZ3000_mwd3c2at|TS0202 is locked to slim_motion_sensor and still shipped there', () => {
     const c = reg.cases.find((x) => x.id === 'p2240-mwd3c2at-irrigation-valve-ts0202');
     assert.ok(c, 'registry case kept');
