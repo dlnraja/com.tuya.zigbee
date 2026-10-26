@@ -1,5 +1,6 @@
 'use strict';
 // P2964 — one test per Homey SDK rule, with a good and a bad fixture.
+const { describe, it } = require('../_support/dual-runner');
 const assert = require('assert');
 const fs = require('fs');
 const os = require('os');

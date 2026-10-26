@@ -8,7 +8,7 @@ function goodApp() {
     compatibility: '>=12.5.0',
     sdk: 3,
     platforms: ['local'],
-    support: 'mailto:dev@example.invalid',
+    support: 'mailto:user@example.com',
     name: { en: 'Good' },
     author: { name: 'Dev' },
     category: 'tools',

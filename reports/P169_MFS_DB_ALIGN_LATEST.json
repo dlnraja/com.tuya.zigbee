@@ -1,15 +1,22 @@
 {
-  "timestamp": "2026-10-26T05:41:42.652Z",
+  "timestamp": "2026-10-26T09:36:11.879Z",
   "gate": "align-mfs-db-intelligent",
   "apply": false,
   "check": true,
-  "changeCount": 6,
+  "changeCount": 7,
   "skippedCount": 84,
   "highSeverityCount": 0,
   "byAction": {
-    "compose_exclusive": 6
+    "compose_exclusive": 7
   },
   "changes": [
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_AMQUDJR0",
+      "from": "bulb_rgb",
+      "to": "lcdtemphumidsensor"
+    },
     {
       "severity": "medium",
       "action": "compose_exclusive",
