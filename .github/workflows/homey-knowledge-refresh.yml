@@ -110,3 +110,12 @@ jobs:
           gh pr create --draft --base "${GITHUB_REF_NAME}" --head "$b" \
             --title "Weekly Homey knowledge/tooling refresh $(date -u +%F)" \
             --body "Automatic, free, no AI. Review data/leads/source-proposals.json and docs/knowledge/HOMEY_TOOLING_WATCH.md. Runtime libs and CI node-version bumps are proposals only (HOMEY_TOOLING_WATCH.md)."
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Weekly refresh of Homey firmware and tooling notes; version bumps stay proposals in the docs."; else s="Stopped early ($JOB_STATUS); the red step above says why. Weekly refresh of Homey firmware and tooling notes; version bumps stay proposals in the docs."; fi
+          node scripts/lib/report-writer.js --title "homey-knowledge-refresh" --summary "$s" --headers "item|value" --row "job|refresh" --row "result|$JOB_STATUS" --thanks "Koen Kanters and the zigbee-herdsman-converters contributors" --thanks "zigpy / ZHA, deCONZ, tuya-local, tinytuya and localtuya authors" >> "$GITHUB_STEP_SUMMARY" || true

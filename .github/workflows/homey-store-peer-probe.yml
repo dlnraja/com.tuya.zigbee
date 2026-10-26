@@ -81,3 +81,12 @@ jobs:
           git commit -m "chore(P2657): refresh Homey Store peer probe [skip ci]"
           # P3025: shared race-safe push (old pull-before-commit failed on the dirty tree; push||true hid losses)
           bash .github/scripts/git-push-retry.sh --branch master || echo "::warning::P3025 peer probe not pushed (see git-push-retry log)"
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Weekly read-only look at other Zigbee/Tuya/Wi-Fi apps in the Homey store to spot gaps."; else s="Stopped early ($JOB_STATUS); the red step above says why. Weekly read-only look at other Zigbee/Tuya/Wi-Fi apps in the Homey store to spot gaps."; fi
+          node scripts/lib/report-writer.js --title "homey-store-peer-probe" --summary "$s" --headers "item|value" --row "job|probe" --row "result|$JOB_STATUS" --thanks "Koen Kanters and the zigbee-herdsman-converters / Zigbee2MQTT contributors" --thanks "the zigpy / ZHA device handler authors" --thanks "the authors of the other Homey store apps we compare with" >> "$GITHUB_STEP_SUMMARY" || true

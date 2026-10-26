@@ -8,7 +8,9 @@ const path = require('path');
 
 const ROOT = path.join(__dirname, '..', '..');
 const MIGRATED = ['ci-self-check.yml', 'node22-tests.yml', 'validate.yml', 'homey-app-validate.yml',
-  'publish.yml', 'publish-stable.yml', 'bastien-publish.yml', 'auto-publish-on-push.yml', 'draft-to-test.yml', 'draft-to-test-fleet.yml'];
+  'publish.yml', 'publish-stable.yml', 'bastien-publish.yml', 'auto-publish-on-push.yml', 'draft-to-test.yml', 'draft-to-test-fleet.yml',
+  // enrich + kb (step 2c)
+  'auto-enrich-closed-loop.yml', 'blakadder-fetch.yml', 'driver-maintenance.yml', 'fleet-intelligent-enrich.yml', 'free-scrape-crossref.yml', 'homey-knowledge-refresh.yml', 'homey-store-peer-probe.yml', 'kb-refresh.yml', 'knowledge-graph-sync.yml', 'market-couples-intake.yml', 'mega-crawl.yml', 'monthly-community-sync.yml', 'monthly-device-enrichment.yml', 'monthly-enrichment.yml', 'monthly-scan.yml', 'monthly-tuya-intelligence.yml', 'oss-lan-source-enrich.yml', 'peer-complementary-enrich.yml'];
 
 for (const wf of MIGRATED) {
   test(`${wf}: summary goes through report-writer, always, with a guard`, () => {
@@ -16,11 +18,22 @@ for (const wf of MIGRATED) {
     if (!fs.existsSync(p)) return;
     const src = fs.readFileSync(p, 'utf8');
     assert.match(src, /node scripts\/lib\/report-writer\.js --title/);
-    assert.match(src, /\[ -f scripts\/lib\/report-writer\.js \]/);
-    const steps = src.split(/\n\s+- name: /).filter((b) => /report-writer\.js --title/.test(b));
-    for (const b of steps) assert.match(b, /if: always\(\)/, `${wf}: summary step must run on failure too`);
   });
 }
+
+test('every helper summary step runs always() and skips quietly when the helper is absent', () => {
+  const dir = path.join(ROOT, '.github', 'workflows');
+  let n = 0;
+  for (const f of fs.readdirSync(dir).filter((x) => /\.ya?ml$/.test(x))) {
+    const src = fs.readFileSync(path.join(dir, f), 'utf8');
+    for (const b of src.split(/\n\s+- name: /).filter((x) => /report-writer\.js --title/.test(x))) {
+      n++;
+      assert.match(b, /if: always\(\)/, `${f}: summary step must run on failure too`);
+      assert.match(b, /\[ -f scripts\/lib\/report-writer\.js \]/, `${f}: summary step needs the file guard`);
+    }
+  }
+  assert.ok(n >= MIGRATED.filter((w) => fs.existsSync(path.join(dir, w))).length, `only ${n} helper summary steps`);
+});
 
 test('report-writer CLI output is short and carries the marker', () => {
   const { execFileSync } = require('child_process');
