@@ -50,14 +50,16 @@
     {
       "type": "group",
       "label": {
-        "en": "Tuya Local"
+        "en": "Tuya Local",
+        "fr": "Tuya local"
       },
       "children": [
         {
           "id": "device_id",
           "type": "text",
           "label": {
-            "en": "Device ID"
+            "en": "Device ID",
+            "fr": "ID de l'appareil"
           },
           "value": ""
         },
@@ -65,7 +67,8 @@
           "id": "local_key",
           "type": "text",
           "label": {
-            "en": "Local Key"
+            "en": "Local Key",
+            "fr": "Clé locale"
           },
           "value": ""
         },
@@ -73,7 +76,8 @@
           "id": "ip",
           "type": "text",
           "label": {
-            "en": "IP"
+            "en": "IP",
+            "fr": "IP"
           },
           "value": ""
         },
@@ -81,7 +85,8 @@
           "id": "protocol_version",
           "type": "dropdown",
           "label": {
-            "en": "Protocol"
+            "en": "Protocol",
+            "fr": "Protocole"
           },
           "value": "auto",
           "values": [

@@ -40,14 +40,16 @@
     {
       "type": "group",
       "label": {
-        "en": "Tuya Local"
+        "en": "Tuya Local",
+        "fr": "Tuya local"
       },
       "children": [
         {
           "id": "device_id",
           "type": "text",
           "label": {
-            "en": "Device ID"
+            "en": "Device ID",
+            "fr": "ID de l'appareil"
           },
           "value": ""
         },
@@ -55,7 +57,8 @@
           "id": "local_key",
           "type": "text",
           "label": {
-            "en": "Local Key"
+            "en": "Local Key",
+            "fr": "Clé locale"
           },
           "value": ""
         },
@@ -63,7 +66,8 @@
           "id": "ip",
           "type": "text",
           "label": {
-            "en": "IP"
+            "en": "IP",
+            "fr": "IP"
           },
           "value": ""
         },
@@ -71,7 +75,8 @@
           "id": "protocol_version",
           "type": "dropdown",
           "label": {
-            "en": "Protocol"
+            "en": "Protocol",
+            "fr": "Protocole"
           },
           "value": "auto",
           "values": [
@@ -111,7 +116,8 @@
           "id": "fan_speed_min",
           "type": "number",
           "label": {
-            "en": "Fan speed DP minimum"
+            "en": "Fan speed DP minimum",
+            "fr": "Vitesse de ventilateur DP minimale"
           },
           "hint": {
             "en": "Raw DP value for 0% speed. Keep 0 for percentage-based fans; use 1 for fans that expect 1-6."
@@ -122,7 +128,8 @@
           "id": "fan_speed_max",
           "type": "number",
           "label": {
-            "en": "Fan speed DP maximum"
+            "en": "Fan speed DP maximum",
+            "fr": "Vitesse de ventilateur DP maximale"
           },
           "hint": {
             "en": "Raw DP value for 100% speed. Keep 100 for percentage-based fans; use 6 for fans that expect 1-6."

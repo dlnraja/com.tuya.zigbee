@@ -186,14 +186,16 @@
     {
       "type": "group",
       "label": {
-        "en": "Tuya Local"
+        "en": "Tuya Local",
+        "fr": "Tuya local"
       },
       "children": [
         {
           "id": "device_id",
           "type": "text",
           "label": {
-            "en": "Device ID"
+            "en": "Device ID",
+            "fr": "ID de l'appareil"
           },
           "value": ""
         },
@@ -201,7 +203,8 @@
           "id": "local_key",
           "type": "text",
           "label": {
-            "en": "Local Key"
+            "en": "Local Key",
+            "fr": "Clé locale"
           },
           "value": ""
         },
@@ -209,7 +212,8 @@
           "id": "ip",
           "type": "text",
           "label": {
-            "en": "IP"
+            "en": "IP",
+            "fr": "IP"
           },
           "value": ""
         },
@@ -217,7 +221,8 @@
           "id": "protocol_version",
           "type": "dropdown",
           "label": {
-            "en": "Protocol"
+            "en": "Protocol",
+            "fr": "Protocole"
           },
           "value": "auto",
           "values": [
@@ -298,7 +303,8 @@
     {
       "type": "group",
       "label": {
-        "en": "Vacuum Settings (Idea #25)"
+        "en": "Vacuum Settings (Idea #25)",
+        "fr": "Réglages de l'aspirateur (idée n° 25)"
       },
       "hint": {
         "en": "Configure vacuum cleaning preferences"
@@ -308,7 +314,8 @@
           "id": "default_mode",
           "type": "dropdown",
           "label": {
-            "en": "Default Vacuum Mode"
+            "en": "Default Vacuum Mode",
+            "fr": "Mode d'aspiration par défaut"
           },
           "value": "standard",
           "values": [
@@ -345,7 +352,8 @@
           "id": "default_clean_mode",
           "type": "dropdown",
           "label": {
-            "en": "Default Cleaning Mode"
+            "en": "Default Cleaning Mode",
+            "fr": "Mode de nettoyage par défaut"
           },
           "value": "sweep_and_mop",
           "values": [
@@ -376,7 +384,8 @@
           "id": "auto_dock_after_clean",
           "type": "checkbox",
           "label": {
-            "en": "Auto Return to Dock"
+            "en": "Auto Return to Dock",
+            "fr": "Retour automatique à la base"
           },
           "value": true,
           "hint": {

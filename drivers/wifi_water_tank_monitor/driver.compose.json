@@ -85,14 +85,16 @@
     {
       "type": "group",
       "label": {
-        "en": "Tuya Local Connection"
+        "en": "Tuya Local Connection",
+        "fr": "Connexion Tuya locale"
       },
       "children": [
         {
           "id": "device_id",
           "type": "text",
           "label": {
-            "en": "Device ID"
+            "en": "Device ID",
+            "fr": "ID de l'appareil"
           },
           "value": ""
         },
@@ -100,7 +102,8 @@
           "id": "local_key",
           "type": "text",
           "label": {
-            "en": "Local Key"
+            "en": "Local Key",
+            "fr": "Clé locale"
           },
           "value": ""
         },
@@ -108,7 +111,8 @@
           "id": "ip",
           "type": "text",
           "label": {
-            "en": "IP Address"
+            "en": "IP Address",
+            "fr": "Adresse IP"
           },
           "value": ""
         },
@@ -116,7 +120,8 @@
           "id": "protocol_version",
           "type": "dropdown",
           "label": {
-            "en": "Protocol Version"
+            "en": "Protocol Version",
+            "fr": "Version du protocole"
           },
           "value": "auto",
           "values": [
@@ -197,14 +202,16 @@
     {
       "type": "group",
       "label": {
-        "en": "Tank Configuration"
+        "en": "Tank Configuration",
+        "fr": "Configuration de la cuve"
       },
       "children": [
         {
           "id": "installation_height",
           "type": "number",
           "label": {
-            "en": "Installation Height (mm)"
+            "en": "Installation Height (mm)",
+            "fr": "Hauteur d'installation (mm)"
           },
           "hint": {
             "en": "Distance from sensor to tank bottom in mm (DP19, 10-4000)"
@@ -219,7 +226,8 @@
           "id": "liquid_depth_max",
           "type": "number",
           "label": {
-            "en": "Sensor to Full Line (mm)"
+            "en": "Sensor to Full Line (mm)",
+            "fr": "Distance capteur–niveau plein (mm)"
           },
           "hint": {
             "en": "Height from sensor to liquid surface when full (DP21, 10-4000)"
@@ -234,7 +242,8 @@
           "id": "max_set",
           "type": "number",
           "label": {
-            "en": "Max Alarm Level (%)"
+            "en": "Max Alarm Level (%)",
+            "fr": "Niveau d'alarme max. (%)"
           },
           "hint": {
             "en": "High level alarm threshold percentage (DP7, 0-100)"
@@ -249,7 +258,8 @@
           "id": "min_set",
           "type": "number",
           "label": {
-            "en": "Min Alarm Level (%)"
+            "en": "Min Alarm Level (%)",
+            "fr": "Niveau d'alarme min. (%)"
           },
           "hint": {
             "en": "Low level alarm threshold percentage (DP8, 0-100)"

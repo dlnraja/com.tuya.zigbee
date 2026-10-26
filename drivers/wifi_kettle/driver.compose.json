@@ -58,14 +58,16 @@
     {
       "type": "group",
       "label": {
-        "en": "Tuya Local Connection"
+        "en": "Tuya Local Connection",
+        "fr": "Connexion Tuya locale"
       },
       "children": [
         {
           "id": "device_id",
           "type": "text",
           "label": {
-            "en": "Device ID"
+            "en": "Device ID",
+            "fr": "ID de l'appareil"
           },
           "hint": {
             "en": "Tuya device ID (from Tuya IoT platform)"
@@ -76,7 +78,8 @@
           "id": "local_key",
           "type": "text",
           "label": {
-            "en": "Local Key"
+            "en": "Local Key",
+            "fr": "Clé locale"
           },
           "hint": {
             "en": "AES local key (from Tuya IoT platform)"
@@ -87,7 +90,8 @@
           "id": "ip",
           "type": "text",
           "label": {
-            "en": "IP Address"
+            "en": "IP Address",
+            "fr": "Adresse IP"
           },
           "hint": {
             "en": "Device LAN IP (optional, auto-discovered if empty)"
@@ -98,7 +102,8 @@
           "id": "protocol_version",
           "type": "dropdown",
           "label": {
-            "en": "Protocol Version"
+            "en": "Protocol Version",
+            "fr": "Version du protocole"
           },
           "hint": {
             "en": "Tuya protocol version"
