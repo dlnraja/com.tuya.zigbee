@@ -1,13 +1,191 @@
 {
-  "timestamp": "2026-10-24T09:13:58.259Z",
+  "timestamp": "2026-10-24T22:37:36.973Z",
   "gate": "align-mfs-db-intelligent",
   "apply": false,
   "check": true,
-  "changeCount": 0,
-  "skippedCount": 84,
+  "changeCount": 25,
+  "skippedCount": 83,
   "highSeverityCount": 0,
-  "byAction": {},
-  "changes": [],
+  "byAction": {
+    "compose_exclusive": 25
+  },
+  "changes": [
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_zl1kmjqx",
+      "from": "button_wireless_2",
+      "to": "lcdtemphumidsensor_3"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_5AF5R192",
+      "from": "climate_sensor",
+      "to": "water_valve_garden"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE204_DSAGRKVG",
+      "from": "device_radiator_valve",
+      "to": "valve_novato_zpv01"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE284_33BWCGA2",
+      "from": "climate_sensor",
+      "to": "soil_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE284_3URSCHQL",
+      "from": "climate_sensor",
+      "to": "soil_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE284_AP9OWRSA",
+      "from": "climate_sensor",
+      "to": "soil_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE284_K7P2Q5D9",
+      "from": "climate_sensor",
+      "to": "soil_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE284_NHGDF6QR",
+      "from": "climate_sensor",
+      "to": "soil_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE284_R3SZW0XR",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE284_WCKQZTDQ",
+      "from": "climate_sensor",
+      "to": "soil_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE284_YZR43AYQ",
+      "from": "curtain_motor",
+      "to": "soil_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TYST11_jeaxp72v",
+      "from": "climate_sensor",
+      "to": "device_radiator_valve"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE284_65gzcss7",
+      "from": "curtain_motor",
+      "to": "soil_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3000_mq4wujmp",
+      "from": "smart_garden_irrigation_control",
+      "to": "water_valve_garden"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_4mh6tyyo",
+      "from": "dimmer_wall_1gang",
+      "to": "dimmer_1_gang_tuya"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE204_dcnsggvz",
+      "from": "dimmer_wall_1gang",
+      "to": "dimmer_1_gang_tuya"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tze200_9cqcpkgb",
+      "from": "presence_sensor_radar",
+      "to": "soil_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tze200_eqpaxqdv",
+      "from": "sensor_gas_presence",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_ntcy3xu1",
+      "from": "smoke_detector_advanced",
+      "to": "smoke_sensor2"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tze204_9qhuzgo0",
+      "from": "switch_1gang",
+      "to": "dimmer_1_gang_tuya"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tze204_loejka0i",
+      "from": "valve_irrigation",
+      "to": "energy_meter_3phase"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tze284_loejka0i",
+      "from": "valve_irrigation",
+      "to": "energy_meter_3phase"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tze204_5cuocqty",
+      "from": "switch_1gang",
+      "to": "dimmer_1_gang_tuya"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE284_sdvbnmj5",
+      "from": "water_valve_smart",
+      "to": "valve_novato_zpv01"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tze200_rgeapp2c",
+      "from": "curtain_motor",
+      "to": "panel_switch_cover_tuya"
+    }
+  ],
   "skipped": [
     {
       "reason": "registry_driver_missing",
