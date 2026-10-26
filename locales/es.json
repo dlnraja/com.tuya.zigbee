@@ -340,7 +340,15 @@
     "comm_error": "Error de comunicación: __reason__",
     "missing_device_id": "Falta device_id",
     "connection_failed": "Conexión fallida",
-    "no_ip": "Sin IP - configúrela en ajustes"
+    "no_ip": "Sin IP - configúrela en ajustes",
+    "local_auth_cloud_recovery": "Error de autenticación: puede que la clave local haya cambiado. Intentando la recuperación en la nube activada...",
+    "local_auth_local_first": "Error de autenticación: puede que la clave local haya cambiado. El modo local primero mantiene desactivado el respaldo en la nube; actualiza la clave desde Reparar.",
+    "local_reconnecting": "Dispositivo desconectado. Reconectando automáticamente...",
+    "discovery_timeout": "Tiempo de búsqueda agotado: asigna una IP fija en los ajustes si tu router bloquea las difusiones UDP.",
+    "local_unreachable_cloud_ok": "Dispositivo inaccesible en local, accesible por la nube: revisa la alimentación y la red. Reintentando por LAN...",
+    "local_key_recovered_link": "Clave local recuperada automáticamente mediante el enlace de Smart Life. Reconectando...",
+    "local_key_recovered": "Clave local recuperada automáticamente. Reconectando...",
+    "auto_recovery_failed": "La recuperación automática falló. Revisa tus credenciales de la API en la nube o vuelve a emparejar."
   },
   "warnings": {
     "battery_low": "Batería baja — reemplazar pronto",

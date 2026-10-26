@@ -340,7 +340,15 @@
     "comm_error": "Kommunikationsfehler: __reason__",
     "missing_device_id": "device_id fehlt",
     "connection_failed": "Verbindung fehlgeschlagen",
-    "no_ip": "Keine IP - in den Einstellungen festlegen"
+    "no_ip": "Keine IP - in den Einstellungen festlegen",
+    "local_auth_cloud_recovery": "Authentifizierung fehlgeschlagen: Der lokale Schlüssel hat sich vielleicht geändert. Aktivierte Cloud-Wiederherstellung läuft...",
+    "local_auth_local_first": "Authentifizierung fehlgeschlagen: Der lokale Schlüssel hat sich vielleicht geändert. Im Modus „lokal zuerst“ bleibt die Cloud-Reserve aus; Schlüssel über Reparieren aktualisieren.",
+    "local_reconnecting": "Gerät getrennt. Automatische Neuverbindung...",
+    "discovery_timeout": "Zeitüberschreitung bei der Suche: Bitte in den Einstellungen eine feste IP vergeben, falls dein Router UDP-Broadcasts blockiert.",
+    "local_unreachable_cloud_ok": "Gerät lokal nicht erreichbar, über die Cloud erreichbar: Stromversorgung/Netzwerk prüfen. Neuer LAN-Versuch läuft...",
+    "local_key_recovered_link": "Lokaler Schlüssel automatisch über die Smart-Life-Verknüpfung wiederhergestellt. Neuverbindung...",
+    "local_key_recovered": "Lokaler Schlüssel automatisch wiederhergestellt. Neuverbindung...",
+    "auto_recovery_failed": "Automatische Wiederherstellung fehlgeschlagen. Bitte Cloud-API-Zugangsdaten prüfen oder neu koppeln."
   },
   "warnings": {
     "battery_low": "Batterie schwach — bald ersetzen",

@@ -340,7 +340,15 @@
     "comm_error": "Communication error: __reason__",
     "missing_device_id": "Missing device_id",
     "connection_failed": "Connection failed",
-    "no_ip": "No IP - configure in settings"
+    "no_ip": "No IP - configure in settings",
+    "local_auth_cloud_recovery": "Authentication failed: Local key might have changed. Attempting opted-in cloud recovery...",
+    "local_auth_local_first": "Authentication failed: Local key might have changed. Local-first mode keeps cloud fallback disabled; update the key from Repair.",
+    "local_reconnecting": "Device disconnected. Reconnecting automatically...",
+    "discovery_timeout": "Discovery timeout: Please assign a Static IP in settings if your router blocks UDP broadcasts.",
+    "local_unreachable_cloud_ok": "Device unreachable locally. Cloud reachable: check device power/network. LAN retry in progress...",
+    "local_key_recovered_link": "Local key auto-recovered via Smart Life link. Reconnecting...",
+    "local_key_recovered": "Local key auto-recovered successfully. Reconnecting...",
+    "auto_recovery_failed": "Auto-recovery failed. Please check your Cloud API credentials or re-pair."
   },
   "warnings": {
     "battery_low": "Battery low — replace soon",

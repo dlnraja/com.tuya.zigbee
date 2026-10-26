@@ -20,10 +20,10 @@ describe('P3070 driver names: app.json keeps compose locales', () => {
     const missing = [];
     for (const d of app.drivers || []) {
       const p = path.join(ROOT, 'drivers', d.id, 'driver.compose.json');
-      if (!fs.existsSync(p)) continue;
+      if (!fs.existsSync(p)) {continue;}
       const c = JSON.parse(fs.readFileSync(p, 'utf8'));
       for (const lang of Object.keys(c.name || {})) {
-        if (!(d.name && d.name[lang])) missing.push(`${d.id}.${lang}`);
+        if (!(d.name && d.name[lang])) {missing.push(`${d.id}.${lang}`);}
       }
     }
     assert.deepStrictEqual(missing, []);
