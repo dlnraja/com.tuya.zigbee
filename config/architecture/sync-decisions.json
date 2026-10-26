@@ -110,6 +110,11 @@
       "stable": "ported 6ec0f6879",
       "bastien": "ported 5d16b703a",
       "why": "memory fix"
+    },
+    "95cf2d369": {
+      "stable": "ported 023e52e74 same day (catalogue move, should have soaked first); kept, not reverted: legacy climate_sensor runtime verified by p3070-hodyryli-legacy-runtime; soak watch to 02/11",
+      "bastien": "n/a (baseline 1.0.209 keeps the couple on climate_sensor)",
+      "why": "P3070 one couple, one driver: _TZE284_hodyryli+TS0601 on climate_sensor_zt08"
     }
   }
 }
