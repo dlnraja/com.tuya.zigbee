@@ -185,7 +185,7 @@ test('bisect exit: state file and docs describe the normal flow (draft -> Test, 
 
 test('policy file is byte-identical on master, stable-v5 and bastien-home', () => {
   const h = crypto.createHash('sha256').update(fs.readFileSync(path.join(ROOT, '.github/scripts/athom-publish-policy.js'))).digest('hex');
-  assert.strictEqual(h, '539fb296addaaf32262049399237f11f601d8b24cae5f5b722c2377854416c0c', 'edit athom-publish-policy.js on all three branches together and update this hash');
+  assert.strictEqual(h, 'bbe8a72e2e425231a75ae58846b07e5eb8e44bc529119761c41deb2be54c0391', 'edit athom-publish-policy.js on all three branches together and update this hash');
 });
 test('ci gate: a version-only package.json bump is not a code change', () => {
   assert.strictEqual(P.versionOnlyDiff('--- a/package.json\n+++ b/package.json\n@@ -3 +3 @@\n-  "version": "9.0.1599",\n+  "version": "9.0.1600",'), true);
@@ -216,4 +216,13 @@ test('in-run fallbacks: every direct-api fallback asks the shared policy first',
     assert.match(s, /athom-publish-policy\.js" fallback/, `${f}: direct-api fallback must use the P3036 policy`);
     assert.match(s, /ATHOM_RETRY_USED=1/, `${f}: must record the single retry`);
   }
+});
+
+// P3075 (t613u): 26/10 15:04 staged send held 40 min on "CI missing" for a SHA that was no longer the tip
+test('ci gate: missing CI on a superseded SHA holds at once instead of dispatching CI on the newer tip', () => {
+  assert.strictEqual(P.missingCiAction({ state: 'missing', sha: 'a1', tip: 'b2' }), 'superseded');
+  assert.strictEqual(P.missingCiAction({ state: 'missing', sha: 'a1', tip: 'a1' }), 'dispatch');
+  assert.strictEqual(P.missingCiAction({ state: 'missing', sha: 'a1', tip: null }), 'dispatch');
+  assert.strictEqual(P.missingCiAction({ state: 'pending', sha: 'a1', tip: 'b2' }), 'wait');
+  assert.strictEqual(P.missingCiAction({ state: 'green', sha: 'a1', tip: 'b2' }), 'wait');
 });
