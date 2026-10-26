@@ -38,14 +38,33 @@ const MG_DIM02Z_DP_MAP = {
 const MG_DIM02Z_METER = { 21: ['measure_current', 1000], 22: ['measure_power', 10], 23: ['measure_voltage', 10] };
 function isMgDim02z(mfr) { return MG_DIM02Z.has(String(mfr || '').toLowerCase()); }
 
+// P3066: Tuya dimmer knob with two lights (_TZE200/_TZE284_tgeqdjgk, Z2M tuya.ts TS0601_knob_dimmer_switch;
+// facts only, own code). DP102 state, DP103 brightness 0-1000, DP107 colour temperature 0-1000 (154-370 mired,
+// 0 = cold), DP111/112 button actions. The V1 DP1/DP2 map never matched it. light_temperature is added only
+// after the first DP107 report; nothing is written at pairing.
+const KNOB = new Set(['_tze200_tgeqdjgk', '_tze284_tgeqdjgk']);
+const KNOB_DP_MAP = {
+  onoff: { dp: 102, type: 'bool', encode: (v) => Boolean(v) },
+  dim: { dp: 103, type: 'value', encode: (v) => toTuyaBrightness(v) },
+};
+const KNOB_DPS = [102, 103, 105, 106, 107, 111, 112, 121, 122, 131, 132, 141];
+function isKnob(mfr) { return KNOB.has(String(mfr || '').toLowerCase()); }
+
 class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
 
   _isMgDim02z() {
     return isMgDim02z(this.getSetting?.('zb_manufacturer_name') || this.getData?.()?.manufacturerName);
   }
 
+  _isKnob() {
+    return isKnob(this.getSetting?.('zb_manufacturer_name') || this.getData?.()?.manufacturerName);
+  }
+
   /** Per-couple datapoint map for TX (default = V1 single-gang dimmer). */
-  _dimmerDpMap() { return this._isMgDim02z() ? MG_DIM02Z_DP_MAP : EF00_DP_MAP; }
+  _dimmerDpMap() {
+    if (this._isMgDim02z()) { return MG_DIM02Z_DP_MAP; }
+    return this._isKnob() ? KNOB_DP_MAP : EF00_DP_MAP;
+  }
 
   // v9.0.74: This device is mains-powered. Declare it so UnifiedBatteryHandler
   // does not add a false measure_battery capability (fixes false-battery reports).
@@ -71,6 +90,7 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
     ]);
     // P3064: MG-DIM02Z datapoints are owned by _processMgDim02z, never by dynamic discovery.
     if (this._isMgDim02z()) { for (const dp of [141, 142, 143, 144, 146, 21, 22, 23]) { this._dynCapBlockDps.add(dp); } }
+    this._initKnob();
     if (typeof this.dynamicCapabilityManager?.purgeDriverOwnedDiscoveries === 'function') {
       await this.dynamicCapabilityManager.purgeDriverOwnedDiscoveries().catch(() => {});
     }
@@ -337,7 +357,7 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
     const dataType = data.datatype;
     this.log(`Processing DP ${dp}, Data Type: ${dataType}, Parsed Value:`, parsedValue);
 
-    if (this._isMgDim02z() && this._processMgDim02z(dp, parsedValue)) { return; }
+    if (this._processLayoutDp(dp, parsedValue)) { return; }
 
     switch (dp) {
       case V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.onOff:
@@ -409,6 +429,47 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
     return false;
   }
 
+  /** Couple-specific DP layouts (MG-DIM02Z, knob); true when the DP was consumed. */
+  _processLayoutDp(dp, v) {
+    if (this._isMgDim02z()) { return this._processMgDim02z(dp, v); }
+    return this._isKnob() && this._processKnob(dp, v);
+  }
+
+  _initKnob() {
+    if (!this._isKnob()) { return; }
+    for (const dp of KNOB_DPS) { this._dynCapBlockDps.add(dp); }
+    if (this.hasCapability('light_temperature')) { this._registerKnobTemperature(); }
+  }
+
+  /** P3066: knob dimmer datapoints; returns true when the DP belongs to that layout. */
+  _processKnob(dp, v) {
+    const err = this._boundError || ((e) => { try { this.error(e); } catch (_) { /* noop */ } });
+    if (dp === 102) { this.safeSetCapabilityValue('onoff', v === true || v === 1).catch(err); return true; }
+    if (dp === 103) { this.safeSetCapabilityValue('dim', fromTuyaBrightness(v)).catch(err); return true; }
+    if (dp === 107) {
+      const t = Number(v);
+      if (Number.isFinite(t) && t >= 0 && t <= 1000) {
+        require('../../lib/helpers/LateCapability').ensureAndSet(this, 'light_temperature', t / 1000)
+          .then((ok) => { if (ok) { this._registerKnobTemperature(); } }).catch(() => {});
+      }
+      return true;
+    }
+    if (KNOB_DPS.includes(dp)) { this.log('[KNOB] informational DP', dp, v); return true; }
+    return false;
+  }
+
+  _registerKnobTemperature() {
+    if (this._knobTempListener) { return; }
+    this._knobTempListener = true;
+    try {
+      this.registerCapabilityListener('light_temperature', async (value) => {
+        const raw = Math.min(1000, Math.max(0, Math.round(Number(value) * 1000)));
+        const ok = await this.writeData32(107, raw);
+        if (!ok) { throw new Error('dp_107_not_sent'); }
+      });
+    } catch (_e) { this._knobTempListener = false; }
+  }
+
   /**
    * Z2M TS0601_dimmer_1_gang_1 + #28658: DP14 power-on, DP4 light type, DP21 backlight.
    * Backlight values MUST stay strings (off/normal/inverted).
@@ -448,4 +509,6 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
 
 module.exports = wall_dimmer_tuya;
 module.exports.isMgDim02z = isMgDim02z;
+module.exports.isKnob = isKnob;
+module.exports.KNOB_DP_MAP = KNOB_DP_MAP;
 module.exports.MG_DIM02Z_DP_MAP = MG_DIM02Z_DP_MAP;

@@ -11,6 +11,12 @@
 - **P3018b / P3016 / P3017:** more DPs decoded exactly (ZHA per-quirk + deCONZ DDF sources), optional inferred DP layer, interpretation of unknown commands with teach/forget Flow actions.
 - **P3021c:** dedicated `switch_2gang_ts0002` driver for `_TZ3000_amal63is` + TS0002; power-vs-energy sanity check; ZG-102ZL contact default inverse; soil sensor DP guards.
 
+### Fixed (2026-10-26, P3066 parked datapoints + catalogue doubt, master soak)
+- **Tuya DIN meter `_TZE200/_TZE204_lsanae15` (Z2M TS0601_din_2):** DP1 is now read as energy (/100 kWh), not as the relay; voltage, current and power come from the packed DP6; the relay is DP16 (read and write).
+- **BAC-001 fan-coil thermostat `_TZE204_hpkusvom`:** starts on the fan-coil path (cool/heat/fan only, fan speed) instead of the floor-heating path; no extra write.
+- **Dimmer knob with two lights `_TZE200/_TZE284_tgeqdjgk`:** on/off and brightness use the knob's own datapoints (102/103); colour temperature (DP107) appears after the first report and can be set.
+- **EcoDim ED-10032 CCT filament bulb `_TZ3210_09hzmirw` + TS0502B:** now pairs on the CCT light driver (it was only listed under the smoke sensor); the old smoke-sensor combinations are untouched.
+
 ### Fixed (2026-10-26, P3066 P52 sync guard)
 - `safe-sync-stable.yml` now runs `tools/ci/sync-driver-mapping-guard.js` (from master): rows the sync changes in `fingerprints.json` / `mfs_db.json` keep stable's composed driver (second `_TZE284_la2c2uo9` regression, 6897a290f5). The stable bump also pre-writes the next patch changelog entry (en + fr).
 

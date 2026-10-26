@@ -1,9 +1,9 @@
 {
   "version": 1,
   "patch": "P2678",
-  "generatedAt": "2026-10-25T14:55:00.174Z",
+  "generatedAt": "2026-10-26T10:53:27.359Z",
   "source": "lib/tuya/fingerprints.json",
-  "sourceBytes": 931166,
+  "sourceBytes": 931247,
   "keyCount": 5781,
   "shardCount": 227,
   "shards": {
@@ -293,7 +293,7 @@
     },
     "TZ3210_0": {
       "keys": 9,
-      "bytes": 1482
+      "bytes": 1487
     },
     "TZ3210_1": {
       "keys": 2,
@@ -321,7 +321,7 @@
     },
     "TZ3210_7": {
       "keys": 6,
-      "bytes": 928
+      "bytes": 1004
     },
     "TZ3210_8": {
       "keys": 2,
