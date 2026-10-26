@@ -108,8 +108,8 @@ class WiFiCoverDevice extends TuyaLocalDevice {
     if (state === 'idle') {this._clearTravelTimer();}
     if (pos === null) {return;}
     try { this.setStoreValue('cover_estimated_position', pos).catch(() => {}); } catch (_e) { /* ignore */ }
-    if (state === 'idle' && typeof this.setCapabilityValue === 'function') {
-      this.setCapabilityValue('windowcoverings_set', Math.round(pos * 100) / 100).catch(() => {});
+    if (state === 'idle' && typeof this.safeSetCapabilityValue === 'function') {
+      this.safeSetCapabilityValue('windowcoverings_set', Math.round(pos * 100) / 100).catch(() => {});
     }
   }
 
