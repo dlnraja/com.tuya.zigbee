@@ -21,7 +21,7 @@ try { RW = require('../lib/report-writer'); } catch (_) { RW = null; }
 const VER_RE = /^\d+\.\d+\.\d+$/;
 // Old generic texts that say nothing about the build; an entry made only of one of these gets refilled.
 const PLACEHOLDER_RE = [/^y{20,}$/i, /^v\d+\.\d+\.\d+:\s*$/, /automated publish, manifest sync/i,
-  /^v\d+\.\d+\.\d+: Bug fixes and improvements\.?$/i, /^Reliability improvements\.?$/i];
+  /^(v\d+\.\d+\.\d+:\s*)?(Bug fixes and improvements|Reliability improvements|Device compatibility and reliability improvements)\.?$/i];
 const USER_TYPES = new Set(['fix', 'feat', 'perf']);
 
 function isPlaceholder(text) {

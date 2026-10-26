@@ -88,7 +88,8 @@ if (fs.existsSync(".homeychangelog.json")) {
     let ordered = changelog;
     try {
       const ce = require("../../scripts/automation/changelog-entry");
-      if (!changelogText) entry = ce.summarize(ce.subjectsSinceLastPublish());
+      // The default/extracted text is often a generic line; only a real one wins over our summary.
+      if (!changelogText || ce.isPlaceholder(changelogText)) entry = ce.summarize(ce.subjectsSinceLastPublish());
       changelog[nextVersion] = entry;
       ordered = ce.orderChangelog(changelog);
     } catch (_) { changelog[nextVersion] = entry; }

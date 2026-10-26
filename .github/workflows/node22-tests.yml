@@ -14,9 +14,14 @@ on:
   pull_request:
     paths: ['lib/**', 'drivers/**/*.js', 'app.js', 'test/**', 'package.json']
   workflow_dispatch:
+# P3069: on a busy master (several workers pushing every few minutes) cancel-in-progress killed every
+# run before it finished, so nobody saw a verdict for an hour. Now a push to a branch lets the running
+# job finish; GitHub keeps only the newest waiting run in the group and drops the ones in between, so
+# at most one run plus one queued run exist and no extra minutes are spent. Pull requests still
+# cancel the older run, since only the latest PR head matters there. See docs/knowledge/CI_CONCURRENCY.md.
 concurrency:
   group: node22-tests-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 permissions:
   contents: read
 defaults:
