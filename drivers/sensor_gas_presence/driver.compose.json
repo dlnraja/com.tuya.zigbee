@@ -771,68 +771,7 @@
       }
     }
   ],
-  "flow": {
-    "triggers": [],
-    "conditions": [],
-    "actions": [
-      {
-        "id": "sensor_gas_presence_run_self_test",
-        "title": {
-          "en": "Run self-test", "de": "Selbsttest ausführen", "nl": "Zelftest uitvoeren",
-          "fr": "Lancer auto-test"
-        },
-        "args": [
-          {
-            "name": "test_type",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "smoke",
-                "title": {
-                  "en": "Smoke Test",
-                  "fr": "Test Fumée"
-                },
-                "label": {
-                  "en": "Smoke Test",
-                  "fr": "Test Fumée"
-                }
-              },
-              {
-                "id": "co",
-                "title": {
-                  "en": "CO Test",
-                  "fr": "Test CO"
-                },
-                "label": {
-                  "en": "CO Test",
-                  "fr": "Test CO"
-                }
-              },
-              {
-                "id": "all",
-                "title": {
-                  "en": "Full Test",
-                  "fr": "Test Complet"
-                },
-                "label": {
-                  "en": "Full Test",
-                  "fr": "Test Complet"
-                }
-              }
-            ],
-            "title": {
-              "en": "Test Type",
-              "fr": "Test Type"
-            }
-          }
-        ],
-        "titleFormatted": {
-          "en": "Run self-test [[test_type]]",
-          "fr": "Lancer auto-test [[test_type]]"
-        }
-      }
-    ]
-  },
+  
   "id": "sensor_gas_presence",
   "version": "1.0.0"
 }

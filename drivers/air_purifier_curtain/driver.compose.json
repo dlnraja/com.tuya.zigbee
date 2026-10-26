@@ -25,78 +25,7 @@
       "CR2450"
     ]
   },
-  "flow": {
-    "actions": [
-      {
-        "id": "air_purifier_curtain_curtain_calibrate",
-        "title": {
-          "en": "Calibrate curtain motor", "de": "Vorhangmotor kalibrieren",
-          "nl": "Kalibreer gordijnmotor",
-          "fr": "Calibrer le moteur du rideau"
-        },
-        "hint": {
-          "en": "Run full open/close cycle for position calibration",
-          "nl": "Voer volledige open/sluit cyclus uit voor positie kalibratie",
-          "fr": "Effectuer un cycle complet ouverture/fermeture pour calibrer la position"
-        }
-      },
-      {
-        "id": "air_purifier_curtain_curtain_reset_position",
-        "title": {
-          "en": "Reset position to 0%", "de": "Position auf 0 % zurücksetzen",
-          "nl": "Reset positie naar 0%",
-          "fr": "Réinitialiser la position à 0 %"
-        },
-        "hint": {
-          "en": "Reset current position to fully closed",
-          "nl": "Reset huidige positie naar volledig gesloten",
-          "fr": "Réinitialiser la position actuelle à complètement fermé"
-        }
-      },
-      {
-        "id": "air_purifier_curtain_curtain_hold",
-        "title": {
-          "en": "Hold curtain position", "de": "Vorhangposition halten",
-          "nl": "Gordijn positie vasthouden",
-          "fr": "Maintenir position rideau"
-        },
-        "hint": {
-          "en": "Stop curtain movement and hold at current position",
-          "nl": "Stop gordijn beweging en houd huidige positie vast",
-          "fr": "Arrêter le rideau et le maintenir à sa position actuelle"
-        }
-      },
-      {
-        "id": "air_purifier_curtain_curtain_open_partial",
-        "title": {
-          "en": "Open curtain partially", "de": "Vorhang teilweise öffnen",
-          "nl": "Gordijn gedeeltelijk openen",
-          "fr": "Ouvrir rideau partiellement"
-        },
-        "args": [
-          {
-            "type": "range",
-            "name": "position",
-            "min": 0,
-            "max": 100,
-            "step": 1,
-            "label": "%",
-            "labelMultiplier": 1,
-            "title": {
-              "en": "Position",
-              "fr": "Position"
-            }
-          }
-        ],
-        "titleFormatted": {
-          "en": "Open curtain partially [[position]]",
-          "fr": "Ouvrir rideau partiellement [[position]]"
-        }
-      }
-    ],
-    "triggers": [],
-    "conditions": []
-  },
+  
   "maintenanceActions": [
     {
       "id": "ota_check",
