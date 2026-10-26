@@ -117,3 +117,12 @@ jobs:
           npm run check:p283x
           npm run check:p2580
           npm run check:publish
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Blocks PRs with bad versions, duplicate manufacturer/product pairs or broken manifests."; else s="Stopped early ($JOB_STATUS); the red step above says why. Blocks PRs with bad versions, duplicate manufacturer/product pairs or broken manifests."; fi
+          node scripts/lib/report-writer.js --title "pr-gate" --summary "$s" --headers "item|value" --row "job|gate" --row "result|$JOB_STATUS" --thanks "GitHub Actions docs" --thanks "rhysd (actionlint)" >> "$GITHUB_STEP_SUMMARY" || true

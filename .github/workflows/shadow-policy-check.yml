@@ -69,3 +69,12 @@ jobs:
           node --check .github/scripts/github-shadow-policy.js
           node --check .github/scripts/check-github-shadow-policy.js
           node .github/scripts/check-github-shadow-policy.js
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Checks that our scripts keep forum and upstream actions in shadow (read-only) mode."; else s="Stopped early ($JOB_STATUS); the red step above says why. Checks that our scripts keep forum and upstream actions in shadow (read-only) mode."; fi
+          node scripts/lib/report-writer.js --title "shadow-policy-check" --summary "$s" --headers "item|value" --row "job|policy" --row "result|$JOB_STATUS" --thanks "GitHub Actions docs" --thanks "rhysd (actionlint)" >> "$GITHUB_STEP_SUMMARY" || true

@@ -473,6 +473,15 @@ jobs:
                 body,
               });
             }
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Runs the safe automatic fixes, the gates, then sends a build to the Athom draft/test channel."; else s="Stopped early ($JOB_STATUS); the red step above says why. Runs the safe automatic fixes, the gates, then sends a build to the Athom draft/test channel."; fi
+          node scripts/lib/report-writer.js --title "auto-fix-and-publish" --summary "$s" --headers "item|value" --row "job|auto-fix" --row "result|$JOB_STATUS" --thanks "Athom's official Homey app GitHub Actions (athombv)" --thanks "the Homey developer docs on build channels" >> "$GITHUB_STEP_SUMMARY" || true
 
   # P3036: green CI on the exact commit (auto-fix commits are [skip ci]: CI is dispatched if missing) + spacing.
   p3036-gate:

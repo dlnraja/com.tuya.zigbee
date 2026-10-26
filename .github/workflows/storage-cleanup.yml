@@ -87,3 +87,12 @@ jobs:
           path: reports/storage-cleanup/
           retention-days: 7
           if-no-files-found: ignore
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Daily trim of old caches and artifacts to stay under the free storage quota."; else s="Stopped early ($JOB_STATUS); the red step above says why. Daily trim of old caches and artifacts to stay under the free storage quota."; fi
+          node scripts/lib/report-writer.js --title "storage-cleanup" --summary "$s" --headers "item|value" --row "job|cleanup" --row "result|$JOB_STATUS" --thanks "GitHub Actions docs" --thanks "rhysd (actionlint)" >> "$GITHUB_STEP_SUMMARY" || true

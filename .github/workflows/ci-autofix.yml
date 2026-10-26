@@ -62,3 +62,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           RUN_ID: ${{ github.event.workflow_run.id }}
         run: node scripts/automation/ci-failure.cjs handle --run-id="$RUN_ID"
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. When a non-publish workflow fails for a network hiccup, re-runs it once; real failures are only logged."; else s="Stopped early ($JOB_STATUS); the red step above says why. When a non-publish workflow fails for a network hiccup, re-runs it once; real failures are only logged."; fi
+          node scripts/lib/report-writer.js --title "ci-autofix" --summary "$s" --headers "item|value" --row "job|triage" --row "result|$JOB_STATUS" --thanks "GitHub Actions docs" --thanks "rhysd (actionlint)" >> "$GITHUB_STEP_SUMMARY" || true

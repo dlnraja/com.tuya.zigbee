@@ -130,3 +130,12 @@ jobs:
           # P3025: commit first, then the shared race-safe push (the old pre-commit pull failed on the dirty tree, push||true hid losses)
           git commit -m "chore(heal): P2842 flow/publish payload self-heal [skip ci]" || true
           bash .github/scripts/git-push-retry.sh --branch master || echo "::warning::P3025 self-heal commit not pushed (see git-push-retry log)"
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Twice a week: repairs empty Flow cards and payload bloat before they reach a publish. Local Node only."; else s="Stopped early ($JOB_STATUS); the red step above says why. Twice a week: repairs empty Flow cards and payload bloat before they reach a publish. Local Node only."; fi
+          node scripts/lib/report-writer.js --title "flow-publish-self-heal" --summary "$s" --headers "item|value" --row "job|heal" --row "result|$JOB_STATUS" --thanks "Athom's official Homey app GitHub Actions (athombv)" --thanks "the Homey developer docs on build channels" >> "$GITHUB_STEP_SUMMARY" || true

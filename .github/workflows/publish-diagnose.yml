@@ -194,3 +194,12 @@ jobs:
           # Re-trigger with skip=tuya-local to avoid the worst-offender.
           echo "## 🔁 Auto-retry: re-triggering mega-crawl with skip=tuya-local" >> $GITHUB_STEP_SUMMARY
           gh workflow run "🕷️ Mega Crawler" --ref master --field skip=tuya-local --field timeout=300 || true
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Runs after each stable publish and explains what went wrong when it failed."; else s="Stopped early ($JOB_STATUS); the red step above says why. Runs after each stable publish and explains what went wrong when it failed."; fi
+          node scripts/lib/report-writer.js --title "publish-diagnose" --summary "$s" --headers "item|value" --row "job|diagnose" --row "result|$JOB_STATUS" --thanks "Athom's official Homey app GitHub Actions (athombv)" --thanks "the Homey developer docs on build channels" >> "$GITHUB_STEP_SUMMARY" || true
