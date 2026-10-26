@@ -311,3 +311,12 @@ jobs:
           fi
           echo "bastien_test_ok=true" >> "$GITHUB_OUTPUT"
           echo "### Bastien Test OK" >> "$GITHUB_STEP_SUMMARY"
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="The bastien app build was published; the version step above has the number."; else s="Bastien publishing stopped before the end; the red step says why and nothing after it ran."; fi
+          node scripts/lib/report-writer.js --title "Publish (bastien app)" --summary "$s" --headers "item|value" --row "branch|bastien-home" --row "app id|com.dlnraja.tuya.zigbee.bastien" --row "result|$JOB_STATUS" --thanks "Athom Homey CLI" --thanks "GitHub Actions docs" >> "$GITHUB_STEP_SUMMARY" || true

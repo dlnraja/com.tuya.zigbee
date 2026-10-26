@@ -514,3 +514,12 @@ jobs:
             next=$(printf '%s\n' "$out" | sed -n 's/^\[transient-retry\] NEXT=//p' | head -1); gh workflow run publish.yml --ref "${GITHUB_REF_NAME}" -f transient_retry="${next:-1}" || true
           fi
           exit 1
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="The master app build was published to Athom as a draft or test build; the version step above has the number."; else s="Publishing stopped before the end; the red step says why and nothing after it ran."; fi
+          node scripts/lib/report-writer.js --title "Publish (master app)" --summary "$s" --headers "item|value" --row "branch|master" --row "app id|com.dlnraja.tuya.zigbee" --row "result|$JOB_STATUS" --thanks "Athom Homey CLI" --thanks "GitHub Actions docs" >> "$GITHUB_STEP_SUMMARY" || true

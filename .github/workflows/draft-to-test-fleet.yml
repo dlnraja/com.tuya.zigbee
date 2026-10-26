@@ -210,3 +210,12 @@ jobs:
           echo "- OAuth: ${{ steps.promote_oauth.outcome }}" >> "$GITHUB_STEP_SUMMARY"
           echo "- API: ${{ steps.promote_api.outcome }}" >> "$GITHUB_STEP_SUMMARY"
           echo "- Test URL: https://homey.app/a/${{ matrix.app_id }}/test/" >> "$GITHUB_STEP_SUMMARY"
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="This app's newest draft build was moved to the test channel."; else s="This app's draft was not moved to test; the red step says why."; fi
+          node scripts/lib/report-writer.js --title "Draft to test (all apps)" --summary "$s" --headers "item|value" --row "channel|draft to test" --row "result|$JOB_STATUS" --thanks "Athom Homey CLI" --thanks "GitHub Actions docs" >> "$GITHUB_STEP_SUMMARY" || true

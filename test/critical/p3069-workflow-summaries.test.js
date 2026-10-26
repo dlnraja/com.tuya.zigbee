@@ -7,7 +7,8 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.join(__dirname, '..', '..');
-const MIGRATED = ['ci-self-check.yml', 'node22-tests.yml', 'validate.yml', 'homey-app-validate.yml'];
+const MIGRATED = ['ci-self-check.yml', 'node22-tests.yml', 'validate.yml', 'homey-app-validate.yml',
+  'publish.yml', 'publish-stable.yml', 'bastien-publish.yml', 'auto-publish-on-push.yml', 'draft-to-test.yml', 'draft-to-test-fleet.yml'];
 
 for (const wf of MIGRATED) {
   test(`${wf}: summary goes through report-writer, always, with a guard`, () => {
@@ -27,4 +28,12 @@ test('report-writer CLI output is short and carries the marker', () => {
     '--title', 'X', '--summary', 'All good.', '--headers', 'a|b', '--row', '1|2', '--thanks', 'Mocha'], { encoding: 'utf8' });
   assert.match(out, /^<!-- report-writer:v1/);
   assert.ok(out.split('\n').length < 20, out);
+});
+
+test('auto-publish-on-push: first-line picks use awk, not head, under pipefail (no SIGPIPE 141)', () => {
+  const p = path.join(ROOT, '.github', 'workflows', 'auto-publish-on-push.yml');
+  if (!fs.existsSync(p)) return;
+  const src = fs.readFileSync(p, 'utf8');
+  assert.ok(!/(?:NEXT|BACKOFF_S)=\/\/p' \| head -1/.test(src));
+  assert.ok(!/failed_build_id\)=\[0-9\]\+' "\$OUT" \| head -1/.test(src));
 });

@@ -617,7 +617,7 @@ jobs:
           fi
           # P2930d: tell the promote tiers to skip a build Athom already failed (they cost ~6 min).
           echo "athom_failed=true" >> "$GITHUB_OUTPUT"
-          BID=$(grep -oE '(build_id|buildId|failed_build_id)=[0-9]+' "$OUT" | head -1 | cut -d= -f2)
+          BID=$(grep -oE '(build_id|buildId|failed_build_id)=[0-9]+' "$OUT" | awk 'NR==1' | cut -d= -f2)
           node scripts/ci/homey-build-status.js com.dlnraja.tuya.zigbee 2>/dev/null | head -3 || true
           echo "::error::Athom processing_failed for v$HOMEY_EXPECTED_VERSION (build #${BID:-see list above}); not re-uploading the same version"
           echo "### Test NOT updated: Athom processing_failed for v$HOMEY_EXPECTED_VERSION (build #${BID:-?})" >> "$GITHUB_STEP_SUMMARY"
@@ -884,8 +884,8 @@ jobs:
           node .github/scripts/publish-size-telemetry.js record "$([ "$final_rc" -eq 0 ] && echo soft-expect || echo failed)" "$kind"
           echo "$out"; echo "$out" >> "$GITHUB_STEP_SUMMARY"
           if printf '%s' "$out" | grep -q '^\[transient-retry\] RETRY'; then
-            next=$(printf '%s\n' "$out" | sed -n 's/^\[transient-retry\] NEXT=//p' | head -1)
-            wait_s=$(printf '%s\n' "$out" | sed -n 's/^\[transient-retry\] BACKOFF_S=//p' | head -1)
+            next=$(printf '%s\n' "$out" | sed -n 's/^\[transient-retry\] NEXT=//p' | awk 'NR==1')
+            wait_s=$(printf '%s\n' "$out" | sed -n 's/^\[transient-retry\] BACKOFF_S=//p' | awk 'NR==1')
             echo "backoff ${wait_s:-300}s before retry ${next:-1} (jittered, serialized by the per-app concurrency group)"; sleep "${wait_s:-300}"
             # WHY(P2893, 19/10/2026): carry release_held so the flake check retries the SAME content.
             # SPI one-shot 39281159242 (#3630 AggregateError) retried WITHOUT the held driver (#3631 Test),
@@ -918,3 +918,12 @@ jobs:
           path: ${{ runner.temp }}/publish-size/
           if-no-files-found: ignore
           retention-days: 90
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="The push-triggered publish finished; the version step above has the number."; else s="The push-triggered publish stopped; the red step says why. The breaker job decides when it may retry."; fi
+          node scripts/lib/report-writer.js --title "Auto publish on push" --summary "$s" --headers "item|value" --row "trigger|push" --row "result|$JOB_STATUS" --thanks "Athom Homey CLI" --thanks "GitHub Actions docs" >> "$GITHUB_STEP_SUMMARY" || true
