@@ -58,7 +58,8 @@
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
-        "en": "Press the button for 7 seconds (until LED starts blinking)."
+        "en": "Press the button for 7 seconds (until LED starts blinking).",
+        "fr": "Appuyez 7 s sur le bouton (jusqu'au clignotement de la LED)."
       }
     }
   },

@@ -20,7 +20,8 @@
   },
   "learnmode": {
     "instruction": {
-      "en": "This driver will log all incoming Tuya datapoints. Please share diagnostic reports for analysis."
+      "en": "This driver will log all incoming Tuya datapoints. Please share diagnostic reports for analysis.",
+      "fr": "Ce driver enregistre tous les datapoints Tuya reçus. Partagez un rapport de diagnostic pour analyse."
     }
   },
   "version": "1.0.0",

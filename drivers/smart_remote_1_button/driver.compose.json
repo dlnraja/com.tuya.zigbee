@@ -57,7 +57,8 @@
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
-        "en": "Press the reset button for aprox 10 seconds (the LED should start blinking)."
+        "en": "Press the reset button for aprox 10 seconds (the LED should start blinking).",
+        "fr": "Appuyez env. 10 s sur le bouton reset (la LED clignote)."
       }
     }
   },
