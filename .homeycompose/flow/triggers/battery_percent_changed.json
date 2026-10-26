@@ -7,7 +7,7 @@
     "de": "Batterieprozent geändert"
   },
   "hint": {
-    "en": "Fires when measure_battery updates (token: percent).",
+    "en": "When measure_battery updates (token: percent).",
     "fr": "Déclenché quand measure_battery change (jeton: percent)."
   },
   "tokens": [

@@ -7,8 +7,8 @@
     "de": "OTA-Firmware-Update verfügbar"
   },
   "hint": {
-    "en": "Triggers when the OTA discovery finds a newer firmware for a device (checked periodically against the public zigbee-OTA index)",
-    "fr": "Se déclenche quand la découverte OTA trouve un firmware plus récent pour un device (vérifié périodiquement sur l'index public zigbee-OTA)"
+    "en": "When the OTA discovery finds a newer firmware for a device (checked periodically against the public zigbee-OTA index)",
+    "fr": "Quand la découverte OTA trouve un firmware plus récent pour un device (vérifié périodiquement sur l'index public zigbee-OTA)"
   },
   "args": [
     {

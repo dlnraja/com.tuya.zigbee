@@ -7,8 +7,8 @@
     "de": "Router offline"
   },
   "hint": {
-    "en": "Triggers when a router device goes offline, potentially disrupting mesh connectivity",
-    "fr": "Se déclenche quand un routeur se déconnecte, ce qui peut perturber le maillage"
+    "en": "When a router device goes offline, potentially disrupting mesh connectivity",
+    "fr": "Quand un routeur se déconnecte, ce qui peut perturber le maillage"
   },
   "args": [],
   "tokens": [

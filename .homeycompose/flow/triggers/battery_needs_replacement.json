@@ -7,10 +7,10 @@
     "de": "Batterie muss ersetzt werden"
   },
   "hint": {
-    "en": "Triggers when battery health drops to replacement level or a replacement is detected",
-    "fr": "Se déclenche lorsque la santé de la batterie descend au niveau de remplacement",
-    "nl": "Activeert wanneer de batterij gezondheid daalt tot vervangingsniveau",
-    "de": "Wird ausgelöst, wenn der Batteriezustand das Ersetzungsniveau erreicht"
+    "en": "When battery health drops to replacement level or a replacement is detected",
+    "fr": "Quand la santé de la batterie descend au niveau de remplacement",
+    "nl": "Wanneer de batterij gezondheid daalt tot vervangingsniveau",
+    "de": "Wenn der Batteriezustand das Ersetzungsniveau erreicht"
   },
   "args": [
     {
