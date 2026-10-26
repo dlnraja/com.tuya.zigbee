@@ -19,8 +19,8 @@ const pairAndRepairViews = () => {
   for (const d of fs.readdirSync(path.join(ROOT, 'drivers'))) {
     for (const sub of ['pair', 'repair']) {
       const dir = path.join(ROOT, 'drivers', d, sub);
-      if (!fs.existsSync(dir)) continue;
-      for (const f of fs.readdirSync(dir)) if (f.endsWith('.html')) out.push(read(path.join(dir, f)));
+      if (!fs.existsSync(dir)) {continue;}
+      for (const f of fs.readdirSync(dir)) {if (f.endsWith('.html')) {out.push(read(path.join(dir, f)));}}
     }
   }
   return out.join('\n');
@@ -37,10 +37,10 @@ describe('P3070 Wi-Fi local FAQ matches the shipped code', () => {
   it('every UI promise in the FAQ is present in the pair/repair views', () => {
     const s = read(FAQ);
     const views = pairAndRepairViews();
-    if (/Fetch local key from linked account/.test(s)) assert.match(views, /Fetch local key from linked account/);
-    if (/User Code/.test(s)) assert.match(views, /User Code/);
-    if (/SmartLink QR/.test(s)) assert.match(views, /SmartLink QR/);
-    if (/devices\.json/.test(s)) assert.match(views, /devices\.json/);
+    if (/Fetch local key from linked account/.test(s)) {assert.match(views, /Fetch local key from linked account/);}
+    if (/User Code/.test(s)) {assert.match(views, /User Code/);}
+    if (/SmartLink QR/.test(s)) {assert.match(views, /SmartLink QR/);}
+    if (/devices\.json/.test(s)) {assert.match(views, /devices\.json/);}
   });
 
   it('Offline Grace default in the FAQ equals the code default', () => {
