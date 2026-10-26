@@ -21,7 +21,6 @@
       "min": 0,
       "max": 100,
       "step": 5,
-      "value": 80,
       "placeholder": {
         "en": "0–100",
         "fr": "0–100"
@@ -37,7 +36,6 @@
       "min": 0,
       "max": 50,
       "step": 1,
-      "value": 2,
       "placeholder": {
         "en": "0–50",
         "fr": "0–50"
