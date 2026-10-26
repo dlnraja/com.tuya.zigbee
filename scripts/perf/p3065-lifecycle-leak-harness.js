@@ -57,7 +57,7 @@ process.on('unhandledRejection',x=>{const m='UR: '+String(x&&x.message).slice(0,
   await new Promise(r=>setTimeout(r,300));if(FL>1){out.flood.push(MB());if(process.env.INTRO&&(b===0||b===FL-1))(out.intro=out.intro||[]).push(p3065Collections(devs));}}
   const he=MB();
   for(const d of devs){try{await d.onDeleted?.()}catch(e){}try{await d.onUninit?.()}catch(e){}}
-  devs.length=0;await new Promise(r=>setTimeout(r,300));const hd=MB();
+  devs.length=0;await new Promise(r=>setTimeout(r,+process.env.SETTLE||300));const hd=MB();
   const alive={};for(const [n,w] of refs){if(w.deref())alive[n]=(alive[n]||0)+1}
   out.cycles.push({afterInit:hi,afterEvents:he,afterDelete:hd,aliveDevices:alive,timersLeft:[...timers].filter(t=>!t._destroyed).length});
  }
