@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-26T12:30:34.846Z",
+ "generated": "2026-10-26T12:48:16.147Z",
  "drivers": 414,
  "snapshot": {
   "air_purifier": {
@@ -405,9 +405,9 @@
    "pidSha": "c4343290bac9e455"
   },
   "curtain_motor": {
-   "mfr": 278,
+   "mfr": 277,
    "pid": 48,
-   "mfrSha": "d8125ede2f0462d1",
+   "mfrSha": "5aead8281108214e",
    "pidSha": "00ba96ff94eb4bb5"
   },
   "curtain_motor_shutter": {
@@ -1965,9 +1965,9 @@
    "pidSha": "5181eca4102958ba"
   },
   "switch_2gang": {
-   "mfr": 105,
+   "mfr": 106,
    "pid": 15,
-   "mfrSha": "a253393503d9be39",
+   "mfrSha": "444ba1efdcf28577",
    "pidSha": "f01c166c2aa06e7b"
   },
   "switch_2gang_ts0002": {

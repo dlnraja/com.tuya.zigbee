@@ -36,6 +36,7 @@ re-pair). New couples are not added in this batch (combo budget unchanged; maste
 | `_TZ3210_09hzmirw` (4 casings) × TS0205/TS0601/SMD9300 in smoke_sensor | removed (parasite) | Z2M tuya.ts TS0502B whiteLabel EcoDim ED-10032 | none: Homey keeps paired devices on their driver id; new pairings go to light_cct_ts0502b |
 | `_TZE200_6ycgarab`, `_TZE204_6ycgarab` in smoke_sensor | unsourced-kept | none upstream | none |
 | `_TZE284_6ycgarab` × TS0205 in smoke_sensor3 | dropped from smoke_sensor3 (double claim) | Z2M TS0601_smoke_co, ZHA quirks #4181 (TS0601), Tasmota `TZE284_6ycgarab.zb` (TS0601) | none; couple still in payload via smoke_sensor, baseline gate OK |
+| `_TZE200_7deq70b8` (2 casings each) × TS0601 in curtain_motor | moved to `switch_2gang` (wrong class; pinned sacred-keep) | Z2M tuya.ts TS0601_switch (same entry as _TZE200_nkjintbl), ZHA TuyaDoubleSwitchGP, blakadder ZY-US 2 | none (was never in the published payload under curtain_motor) |
 
 ## Credits
 DP layouts: Koen Kanters and the zigbee-herdsman-converters contributors (tuya.ts models
