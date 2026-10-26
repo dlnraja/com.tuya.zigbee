@@ -123,7 +123,8 @@
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
-        "en": "A tile for each button will be created. Press the first button (or the setup button if one exists) for 10 seconds (the LED should start blinking)."
+        "en": "A tile for each button will be created. Press the first button (or the setup button if one exists) for 10 seconds (the LED should start blinking).",
+        "fr": "Une vignette par bouton sera créée. Appuyez 10 s sur le premier bouton (ou le bouton de configuration s'il existe) (la LED clignote)."
       }
     }
   },
