@@ -2,7 +2,9 @@
   "id": "wall_socket",
   "name": {
     "en": "Wall Socket with metering",
-    "fr": "Prise murale avec mesure"
+    "fr": "Prise murale avec mesure",
+    "de": "Wandsteckdose mit Messung",
+    "nl": "Wandcontactdoos met meting"
   },
   "class": "socket",
   "platforms": [

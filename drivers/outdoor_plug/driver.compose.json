@@ -2,7 +2,9 @@
   "id": "outdoorplug",
   "name": {
     "en": "Outdoor Plug without metering",
-    "fr": "Prise extérieure sans mesure"
+    "fr": "Prise extérieure sans mesure",
+    "de": "Außensteckdose ohne Messung",
+    "nl": "Buitenstekker zonder meting"
   },
   "class": "socket",
   "platforms": [

@@ -2,7 +2,9 @@
   "id": "smartplug_2_socket",
   "name": {
     "en": "Double Socket Smart Plug",
-    "fr": "Prise connectée double"
+    "fr": "Prise connectée double",
+    "de": "Smarter Doppelstecker",
+    "nl": "Slimme dubbele stekker"
   },
   "class": "socket",
   "platforms": [

@@ -2,7 +2,9 @@
   "id": "smartplug",
   "name": {
     "en": "Smart Plug with metering",
-    "fr": "Prise connectée avec mesure"
+    "fr": "Prise connectée avec mesure",
+    "de": "Smarter Stecker mit Messung",
+    "nl": "Slimme stekker met meting"
   },
   "class": "socket",
   "platforms": [

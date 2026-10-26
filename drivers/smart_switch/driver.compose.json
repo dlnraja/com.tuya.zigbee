@@ -2,7 +2,9 @@
   "id": "smart_switch",
   "name": {
     "en": "Smart Switch",
-    "fr": "Interrupteur connecté"
+    "fr": "Interrupteur connecté",
+    "de": "Smarter Schalter",
+    "nl": "Slimme schakelaar"
   },
   "class": "socket",
   "platforms": [

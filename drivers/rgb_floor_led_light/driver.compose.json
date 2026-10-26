@@ -2,7 +2,9 @@
   "id": "rgb_floor_led_light",
   "name": {
     "en": "Livarno Lux Atmosphere Floor LED Light",
-    "fr": "Lampadaire LED d'ambiance Livarno Lux"
+    "fr": "Lampadaire LED d'ambiance Livarno Lux",
+    "de": "Livarno Lux LED-Stehleuchte Atmosphere",
+    "nl": "Livarno Lux led-vloerlamp Atmosphere"
   },
   "$extends": [
     "light_color_ambiance"

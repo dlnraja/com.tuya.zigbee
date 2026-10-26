@@ -2,7 +2,9 @@
   "id": "rgb_bulb_E14",
   "name": {
     "en": "RGB Bulb E14",
-    "fr": "Ampoule RGB E14"
+    "fr": "Ampoule RGB E14",
+    "de": "RGB-Lampe E14",
+    "nl": "RGB-lamp E14"
   },
   "$extends": [
     "light_color_ambiance"

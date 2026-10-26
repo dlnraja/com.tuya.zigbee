@@ -2,7 +2,9 @@
   "id": "pir_sensor_2",
   "name": {
     "en": "Smart PIR Motion Sensor",
-    "fr": "Détecteur de mouvement PIR connecté"
+    "fr": "Détecteur de mouvement PIR connecté",
+    "de": "Smarter PIR-Bewegungsmelder",
+    "nl": "Slimme PIR-bewegingssensor"
   },
   "class": "sensor",
   "platforms": [

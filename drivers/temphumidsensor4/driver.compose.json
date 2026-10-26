@@ -3,7 +3,9 @@
   "name": {
     "en": "Temperature & Humidity Sensor",
     "fr": "Capteur de température et d'humidité",
-    "sv": "Temperatur- och fuktighetssensor"
+    "sv": "Temperatur- och fuktighetssensor",
+    "de": "Temperatur- & Feuchtesensor",
+    "nl": "Temperatuur- & vochtsensor"
   },
   "class": "sensor",
   "capabilities": [

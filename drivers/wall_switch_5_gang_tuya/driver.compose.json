@@ -2,7 +2,9 @@
   "id": "wall_switch_5_gang_tuya",
   "name": {
     "en": "5 Gang Wall Switch",
-    "fr": "Interrupteur mural 5 voies"
+    "fr": "Interrupteur mural 5 voies",
+    "de": "Wandschalter 5-fach",
+    "nl": "Wandschakelaar 5-voudig"
   },
   "class": "socket",
   "platforms": [

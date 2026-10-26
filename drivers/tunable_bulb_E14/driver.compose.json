@@ -2,7 +2,9 @@
   "id": "tunable_bulb_E14",
   "name": {
     "en": "Tunable Bulb E14",
-    "fr": "Ampoule blanc réglable E14"
+    "fr": "Ampoule blanc réglable E14",
+    "de": "Farbtemperatur-Lampe E14",
+    "nl": "Kleurtemperatuurlamp E14"
   },
   "$extends": [
     "light_white_ambiance"

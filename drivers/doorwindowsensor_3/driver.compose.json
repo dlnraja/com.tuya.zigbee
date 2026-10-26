@@ -2,7 +2,9 @@
   "id": "doorwindowsensor_3",
   "name": {
     "en": "Door & Window Sensor",
-    "fr": "Capteur de porte et fenêtre"
+    "fr": "Capteur de porte et fenêtre",
+    "de": "Tür- & Fenstersensor",
+    "nl": "Deur- & raamsensor"
   },
   "class": "sensor",
   "platforms": [

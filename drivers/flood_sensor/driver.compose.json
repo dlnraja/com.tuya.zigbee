@@ -2,7 +2,9 @@
   "id": "floodsensor",
   "name": {
     "en": "Flood sensor",
-    "fr": "Détecteur d'inondation"
+    "fr": "Détecteur d'inondation",
+    "de": "Wassersensor",
+    "nl": "Overstromingssensor"
   },
   "class": "sensor",
   "platforms": [

@@ -2,7 +2,9 @@
   "id": "rgb_led_strip",
   "name": {
     "en": "RGB LED Strip",
-    "fr": "Ruban LED RGB"
+    "fr": "Ruban LED RGB",
+    "de": "RGB-LED-Streifen",
+    "nl": "RGB-ledstrip"
   },
   "$extends": [
     "light_color_ambiance"

@@ -2,7 +2,9 @@
   "id": "rgb_led_strip_controller",
   "name": {
     "en": "RGB LED Strip Controller",
-    "fr": "Contrôleur de ruban LED RGB"
+    "fr": "Contrôleur de ruban LED RGB",
+    "de": "RGB-LED-Streifen-Controller",
+    "nl": "RGB-ledstrip-controller"
   },
   "$extends": [
     "light_color"

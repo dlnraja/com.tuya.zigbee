@@ -2,7 +2,9 @@
   "id": "rgb_spot_GardenLight",
   "name": {
     "en": "RGB Spot Garden light",
-    "fr": "Spot de jardin RGB"
+    "fr": "Spot de jardin RGB",
+    "de": "RGB-Gartenstrahler",
+    "nl": "RGB-tuinspot"
   },
   "$extends": [
     "light_color_ambiance"

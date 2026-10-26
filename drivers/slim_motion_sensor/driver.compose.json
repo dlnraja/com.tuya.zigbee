@@ -2,7 +2,9 @@
   "id": "slim_motion_sensor",
   "name": {
     "en": "Slim motion sensor",
-    "fr": "Détecteur de mouvement fin"
+    "fr": "Détecteur de mouvement fin",
+    "de": "Flacher Bewegungsmelder",
+    "nl": "Platte bewegingssensor"
   },
   "class": "sensor",
   "platforms": [

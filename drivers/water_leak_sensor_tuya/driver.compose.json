@@ -2,7 +2,9 @@
   "id": "WaterLeakSensor",
   "name": {
     "en": "Water Leak Sensor",
-    "fr": "Détecteur de fuite d'eau"
+    "fr": "Détecteur de fuite d'eau",
+    "de": "Wasserlecksensor",
+    "nl": "Waterlekdetector"
   },
   "class": "sensor",
   "platforms": [

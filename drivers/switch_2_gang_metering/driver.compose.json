@@ -2,7 +2,9 @@
   "id": "switch_2_gang_metering",
   "name": {
     "en": "2 Gang Switch Module with metering",
-    "fr": "Module interrupteur 2 voies avec mesure"
+    "fr": "Module interrupteur 2 voies avec mesure",
+    "de": "Schaltmodul 2-fach mit Messung",
+    "nl": "Schakelmodule 2-voudig met meting"
   },
   "class": "socket",
   "platforms": [

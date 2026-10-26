@@ -1,7 +1,9 @@
 {
   "name": {
     "en": "Boiler Switch with Energy Monitoring",
-    "fr": "Interrupteur Chaudière avec Monitoring Énergie"
+    "fr": "Interrupteur Chaudière avec Monitoring Énergie",
+    "de": "Boilerschalter mit Energiemessung",
+    "nl": "Boilerschakelaar met energiemeting"
   },
   "class": "socket",
   "capabilities": [
