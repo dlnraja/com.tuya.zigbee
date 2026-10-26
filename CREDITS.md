@@ -444,5 +444,8 @@ A heartfelt thank you to:
   ZSS-HM-SSD01), **the zigpy/zha-device-handlers contributors** (`zhaquirks/tuya/tuya_smoke.py`), **blakadder**
   (Moes ZSS-HM-SSD01 page) and the Hubitat Tuya Zigbee Smoke Detector driver authors, whose datapoint facts show
   `_TZE200/_TZE204/_TZE284_vawy74yh` is a smoke detector (own implementation, no upstream code copied).
+- Batch P3067 (radiator valves): **Koen Kanters and the zigbee-herdsman-converters contributors** (`avatto.ts`
+  ME168_AVATTO) and **Deennoo and the Domoticz Zigbee for Domoticz contributors** (TS0601-ME168 model), whose
+  datapoint facts show the ME168 layout of `_TZE200_cxakecfo/ybsqljjg/4aijvczq/r5ksy7qo` (own implementation).
 - And every forum member and GitHub issue reporter who sent a fingerprint, a diagnostic or a "this works now":
   you are listed by handle in the sections above, and new names are added with each batch.

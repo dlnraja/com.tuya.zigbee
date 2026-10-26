@@ -19,6 +19,20 @@ const setupSonoffTRVZB = require('../../lib/mixins/SonoffTRVZBMixin');
  *   v5.6.0: Added bidirectional virtual buttons for mode / (boost / child_lock)     
  * 
  */
+// WHY(P3067 family 5): ME168 differs from ME167 only above DP7 (Z2M avatto.ts ME168_AVATTO):
+// DP14 window detection switch, DP15 window state (0 = open, trueFalseEnum0) — not a battery %,
+// DP101 comfort temp /10, DP103 boost time min, DP104 boost countdown, DP105 eco temp /10.
+const ME168_RE = /_tze200_(cxakecfo|ybsqljjg|4aijvczq|r5ksy7qo)$/i;
+const ME168_DPS = {
+  14: { internal: true, type: 'window_detection', writable: true },
+  15: { internal: true, type: 'window_open', transform: (v) => Number(v) === 0 },
+  101: { internal: true, type: 'comfort_temp', divisor: 10, writable: true },
+  102: { internal: true, type: 'switch_unused' },
+  103: { internal: true, type: 'boost_time', writable: true },
+  104: { internal: true, type: 'boost_countdown' },
+  105: { internal: true, type: 'eco_temp', divisor: 10, writable: true },
+};
+
 class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedThermostatBase)) {
 
   get mainsPowered() { return false; }
@@ -60,6 +74,10 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       // WHY(P2818/#2261): ANTIK ATK-TRV02 `_TZE200_fl8cuafl` — retail TV02-class (manual InS/AdA);
       // not yet in Z2M herdsman; soft ME167 map (DP4/5 ÷10) until user DP sniff proves otherwise.
       'fl8cuafl',
+      // WHY(P3067 family 5): AVATTO / Girier ME168 (Z2M avatto.ts ME168_AVATTO, Domoticz z4d TS0601-ME168):
+      // DP2 mode, DP3 work state, DP4 setpoint /10, DP5 temperature /10, DP6 battery, DP7 lock, DP35 fault —
+      // the ME167 core. Profile A read DP3 as setpoint and DP4 as temperature.
+      'cxakecfo', 'ybsqljjg', '4aijvczq', 'r5ksy7qo',
     ];
     return me167Tails.some((t) => mfr.includes(t)) ? 'me167' : 'standard';
   }
@@ -73,7 +91,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       // Profile B: AVATTO ME167/TRV06 / thermostat_3 DP mapping
       // WHY(P2598 / Z2M#25199 / Michaelp #2253): DP4/5 are always ÷10 — never smartDivisor
       // (auto-detect can leave raw tenths as °C → looks empty/wrong after pair).
-      return {
+      const me167 = {
         2: { capability: 'thermostat_mode', transform: (v) => ({ 0: 'auto', 1: 'heat', 2: 'off' }[v] ?? 'heat') },
         3: { internal: true, type: 'running_state', transform: (v) => v === 0 ? 'heat' : 'idle' },
         4: { capability: 'target_temperature', divisor: 10 },
@@ -95,6 +113,8 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
         101: { internal: true, type: 'eco_mode', writable: true },
         102: { internal: true, type: 'eco_temp', divisor: 10, writable: true },
       };
+      if (ME168_RE.test(mfr)) { return { ...me167, ...ME168_DPS }; }
+      return me167;
     }
     // Profile A: Standard TRV DP mapping (MOES, etc.)
     return {
