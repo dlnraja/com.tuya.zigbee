@@ -1,4 +1,5 @@
 'use strict';
+const { safeFlowCard } = require('../../lib/flow/FlowCardPresence'); // P3068: undeclared legacy ids -> logged-once no-op
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
@@ -13,13 +14,13 @@ async onInit() {
 
   _registerFlowCards() {
     // TRIGGERS
-    try { this.homey.flow.getDeviceTriggerCard('hvac_dehumidifier_dehumidifier_turned_on'); } catch (e) {}
-    try { this.homey.flow.getDeviceTriggerCard('hvac_dehumidifier_dehumidifier_turned_off'); } catch (e) {}
-    try { this.homey.flow.getDeviceTriggerCard('hvac_dehumidifier_dehumidifier_measure_humidity_changed'); } catch (e) {}
-    try { this.homey.flow.getDeviceTriggerCard('hvac_dehumidifier_dehumidifier_measure_temperature_changed'); } catch (e) {}
-    try { this.homey.flow.getDeviceTriggerCard('hvac_dehumidifier_dehumidifier_measure_power_changed'); } catch (e) {}
-    try { this.homey.flow.getDeviceTriggerCard('hvac_dehumidifier_dehumidifier_alarm_water_true'); } catch (e) {}
-    try { this.homey.flow.getDeviceTriggerCard('hvac_dehumidifier_dehumidifier_alarm_water_false'); } catch (e) {}
+    try { safeFlowCard(this.homey, 'getDeviceTriggerCard', 'hvac_dehumidifier_dehumidifier_turned_on'); } catch (e) {}
+    try { safeFlowCard(this.homey, 'getDeviceTriggerCard', 'hvac_dehumidifier_dehumidifier_turned_off'); } catch (e) {}
+    try { safeFlowCard(this.homey, 'getDeviceTriggerCard', 'hvac_dehumidifier_dehumidifier_measure_humidity_changed'); } catch (e) {}
+    try { safeFlowCard(this.homey, 'getDeviceTriggerCard', 'hvac_dehumidifier_dehumidifier_measure_temperature_changed'); } catch (e) {}
+    try { safeFlowCard(this.homey, 'getDeviceTriggerCard', 'hvac_dehumidifier_dehumidifier_measure_power_changed'); } catch (e) {}
+    try { safeFlowCard(this.homey, 'getDeviceTriggerCard', 'hvac_dehumidifier_dehumidifier_alarm_water_true'); } catch (e) {}
+    try { safeFlowCard(this.homey, 'getDeviceTriggerCard', 'hvac_dehumidifier_dehumidifier_alarm_water_false'); } catch (e) {}
     try { this.homey.flow.getDeviceTriggerCard('hvac_dehumidifier_turned_on'); } catch (e) {}
     try { this.homey.flow.getDeviceTriggerCard('hvac_dehumidifier_turned_off'); } catch (e) {}
     try { this.homey.flow.getDeviceTriggerCard('hvac_dehumidifier_humidity_changed'); } catch (e) {}
@@ -30,7 +31,7 @@ async onInit() {
 
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('hvac_dehumidifier_dehumidifier_is_on');
+      const card = safeFlowCard(this.homey, 'getConditionCard', 'hvac_dehumidifier_dehumidifier_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -61,7 +62,7 @@ async onInit() {
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('hvac_dehumidifier_dehumidifier_turn_on');
+      const card = safeFlowCard(this.homey, 'getActionCard', 'hvac_dehumidifier_dehumidifier_turn_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -72,7 +73,7 @@ async onInit() {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action hvac_dehumidifier_dehumidifier_turn_on: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('hvac_dehumidifier_dehumidifier_turn_off');
+      const card = safeFlowCard(this.homey, 'getActionCard', 'hvac_dehumidifier_dehumidifier_turn_off');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -83,7 +84,7 @@ async onInit() {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action hvac_dehumidifier_dehumidifier_turn_off: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('hvac_dehumidifier_dehumidifier_toggle');
+      const card = safeFlowCard(this.homey, 'getActionCard', 'hvac_dehumidifier_dehumidifier_toggle');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}

@@ -1,4 +1,5 @@
 'use strict';
+const { safeFlowCard } = require('../../lib/flow/FlowCardPresence'); // P3068: undeclared legacy ids -> logged-once no-op
 
 const UnifiedSensorBase = require('../../lib/devices/UnifiedSensorBase');
 const FirmwareQuirks = require('../../lib/quirks/FirmwareQuirks');
@@ -335,7 +336,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         if (!split || value === true) {this._triggerPresenceFlows(value);}
         else if (split && value === false) {
           try {
-            this.homey.flow.getDeviceTriggerCard('presence_sensor_radar_motion_cleared')
+            safeFlowCard(this.homey, 'getDeviceTriggerCard', 'presence_sensor_radar_motion_cleared')
               ?.trigger?.(this, {}).catch(() => {});
           } catch (_e) { /* soft — card may be absent */ }
         }

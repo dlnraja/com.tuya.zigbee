@@ -1,4 +1,5 @@
 'use strict';
+const { safeFlowCard } = require('../../lib/flow/FlowCardPresence'); // P3068: undeclared legacy ids -> logged-once no-op
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 
 class WeatherStationOutdoorDevice extends UnifiedSensorBase {
@@ -66,10 +67,10 @@ class WeatherStationOutdoorDevice extends UnifiedSensorBase {
     try {
       switch (capability) {
       case 'measure_temperature':
-        this.homey.flow.getDeviceTriggerCard('weather_station_outdoor_outdoor_temperature_changed')?.trigger(this, { temperature: value }, {}).catch(() => {})
+        safeFlowCard(this.homey, 'getDeviceTriggerCard', 'weather_station_outdoor_outdoor_temperature_changed')?.trigger(this, { temperature: value }, {}).catch(() => {})
         break;
       case 'measure_humidity':
-        this.homey.flow.getDeviceTriggerCard('weather_station_outdoor_outdoor_humidity_changed')?.trigger(this, { humidity: value }, {}).catch(() => {})
+        safeFlowCard(this.homey, 'getDeviceTriggerCard', 'weather_station_outdoor_outdoor_humidity_changed')?.trigger(this, { humidity: value }, {}).catch(() => {})
         break;
       case 'measure_pressure': {
         this.homey.flow.getDeviceTriggerCard('weather_station_outdoor_pressure_changed')?.trigger(this, { pressure: value }, {}).catch(() => {})

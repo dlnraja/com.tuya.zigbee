@@ -1,4 +1,5 @@
 'use strict';
+const { safeFlowCard } = require('../../lib/flow/FlowCardPresence'); // P3068: undeclared legacy ids -> logged-once no-op
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
@@ -21,7 +22,7 @@ class EnergyMeterDinDriver extends ZigBeeDriver {
     }
 
     try {
-      const powerCard = this.homey.flow.getConditionCard('energy_meter_din_power_above');
+      const powerCard = safeFlowCard(this.homey, 'getConditionCard', 'energy_meter_din_power_above');
       if (powerCard) {
         powerCard.registerRunListener(async (args) => {
           if (!args.device) {return false;}

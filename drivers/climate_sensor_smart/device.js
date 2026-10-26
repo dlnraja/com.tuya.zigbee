@@ -1,4 +1,5 @@
 'use strict';
+const { safeFlowCard } = require('../../lib/flow/FlowCardPresence'); // P3068: undeclared legacy ids -> logged-once no-op
 
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 
@@ -81,7 +82,7 @@ class SmartScenePanelDevice extends TuyaZigbeeDevice {
       const flowCardId = `climate_sensor_smart_smart_scene_panel_switch_${g}_changed`;
       this.homey.flow.getDeviceTriggerCard(flowCardId).trigger(this, { state: !!value }, {}).catch(() => {})
     } else if (dp >= 5 && dp <= 8) {
-      this.homey.flow.getDeviceTriggerCard('climate_sensor_smart_smart_scene_panel_scene_activated').trigger(this, { scene: String(dp) }, { scene: String(dp) }).catch(() => {})
+      safeFlowCard(this.homey, 'getDeviceTriggerCard', 'climate_sensor_smart_smart_scene_panel_scene_activated').trigger(this, { scene: String(dp) }, { scene: String(dp) }).catch(() => {})
     } else if (dp === 38) {
       this.log(`[SCENE-PANEL] relay_status=${value}`);
     } else if (dp === 106) {

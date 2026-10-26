@@ -1,4 +1,5 @@
 'use strict';
+const { safeFlowCard } = require('../../lib/flow/FlowCardPresence'); // P3068: undeclared legacy ids -> logged-once no-op
 const { safeDivide, safeParse } = require('../../lib/utils/tuyaUtils.js');
 const { boolean } = require('../../lib/converters/ValueConverterRegistry');
 
@@ -227,7 +228,7 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
    */
   _registerButtonFlowTrigger() {
     try {
-      this.homey.flow.getDeviceTriggerCard('usb_outlet_button_pressed')?.trigger(this, {}, {}).catch((err) => this.error(err))
+      safeFlowCard(this.homey, 'getDeviceTriggerCard', 'usb_outlet_button_pressed')?.trigger(this, {}, {}).catch((err) => this.error(err))
       this.log('[USB-ADV] Button flow trigger registered');
     } catch (err) {
       this.log('[USB-ADV] Button flow trigger not available:', err.message);

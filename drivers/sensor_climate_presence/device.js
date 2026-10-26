@@ -1,4 +1,5 @@
 'use strict';
+const { safeFlowCard } = require('../../lib/flow/FlowCardPresence'); // P3068: undeclared legacy ids -> logged-once no-op
 const UnifiedBatteryHandler = require('../../lib/battery/UnifiedBatteryHandler');
 const CI = require('../../lib/utils/CaseInsensitiveMatcher');
 const { getManufacturer, getModelId } = require('../../lib/helpers/DeviceDataHelper');
@@ -117,7 +118,7 @@ class ClimatePresenceHybridDevice extends UnifiedSensorBase {
     const cardId = detected ? 'sensor_climate_presence_sensor_presence_rada_34c19' : 'sensor_climate_presence_sensor_presence_rada_05404';
     try { await this.homey.flow.getDeviceTriggerCard(cardId).trigger(this, {}).catch(() => {}); } catch (e) {}
     if (detected) {
-      try { await this.homey.flow.getDeviceTriggerCard('sensor_climate_presence_sensor_radar_motion__34acb').trigger(this, {}).catch(() => {}); } catch (e) {}
+      try { await safeFlowCard(this.homey, 'getDeviceTriggerCard', 'sensor_climate_presence_sensor_radar_motion__34acb').trigger(this, {}).catch(() => {}); } catch (e) {}
     }
   }
   async _setupZclClusters(zclNode) {

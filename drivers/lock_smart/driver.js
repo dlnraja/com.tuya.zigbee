@@ -1,4 +1,5 @@
 'use strict';
+const { safeFlowCard } = require('../../lib/flow/FlowCardPresence'); // P3068: undeclared legacy ids -> logged-once no-op
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
@@ -16,7 +17,7 @@ async onInit() {
 
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('lock_locked');
+      const card = safeFlowCard(this.homey, 'getConditionCard', 'lock_locked');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -26,7 +27,7 @@ async onInit() {
     } catch (err) { if (this.developerDebugMode) { this.error(`Condition lock_smart_is_locked: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getConditionCard('lock_active');
+      const card = safeFlowCard(this.homey, 'getConditionCard', 'lock_active');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}

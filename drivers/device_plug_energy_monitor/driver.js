@@ -1,4 +1,5 @@
 'use strict';
+const { safeFlowCard } = require('../../lib/flow/FlowCardPresence'); // P3068: undeclared legacy ids -> logged-once no-op
 
 const { safeMultiply } = require('../../lib/utils/tuyaUtils.js');
 const { ZigBeeDriver } = require('homey-zigbeedriver');
@@ -38,7 +39,7 @@ class PlugSmartDriver extends ZigBeeDriver {
     // END TRIGGERS
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('device_plug_energy_monitor_plug_on');
+      const card = safeFlowCard(this.homey, 'getConditionCard', 'device_plug_energy_monitor_plug_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -49,7 +50,7 @@ class PlugSmartDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('device_plug_energy_monitor_plug_on');
+      const card = safeFlowCard(this.homey, 'getActionCard', 'device_plug_energy_monitor_plug_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -60,7 +61,7 @@ class PlugSmartDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action device_plug_energy_monitor_plug_smart_turn_on: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('device_plug_energy_monitor_plug_off');
+      const card = safeFlowCard(this.homey, 'getActionCard', 'device_plug_energy_monitor_plug_off');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -71,7 +72,7 @@ class PlugSmartDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action device_plug_energy_monitor_plug_smart_turn_off: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('device_plug_energy_monitor_plug_plug_energy_monitor_plug_plug_energy_monitor_plug_on_delay');
+      const card = safeFlowCard(this.homey, 'getActionCard', 'device_plug_energy_monitor_plug_plug_energy_monitor_plug_plug_energy_monitor_plug_on_delay');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -82,7 +83,7 @@ class PlugSmartDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action device_plug_energy_monitor_plug_smart_turn_on_delay: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('device_plug_energy_monitor_plug_off_delay');
+      const card = safeFlowCard(this.homey, 'getActionCard', 'device_plug_energy_monitor_plug_off_delay');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -93,7 +94,7 @@ class PlugSmartDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action device_plug_energy_monitor_plug_smart_turn_off_delay: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('device_plug_energy_monitor_plug_indicator');
+      const card = safeFlowCard(this.homey, 'getActionCard', 'device_plug_energy_monitor_plug_indicator');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -105,7 +106,7 @@ class PlugSmartDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action device_plug_energy_monitor_plug_smart_set_indicator: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('device_plug_energy_monitor_plug_power_on');
+      const card = safeFlowCard(this.homey, 'getActionCard', 'device_plug_energy_monitor_plug_power_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}

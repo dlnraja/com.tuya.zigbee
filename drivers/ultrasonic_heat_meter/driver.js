@@ -1,4 +1,5 @@
 'use strict';
+const { safeFlowCard } = require('../../lib/flow/FlowCardPresence'); // P3068: undeclared legacy ids -> logged-once no-op
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
@@ -12,7 +13,7 @@ class UltrasonicHeatMeterDriver extends ZigBeeDriver {
 
   _registerFlowCards() {
     try {
-      const batteryCard = this.homey.flow.getConditionCard('ultrasonic_heat_meter_battery_low');
+      const batteryCard = safeFlowCard(this.homey, 'getConditionCard', 'ultrasonic_heat_meter_battery_low');
       if (batteryCard) {
         batteryCard.registerRunListener(async (args) => {
           if (!args.device) {return false;}

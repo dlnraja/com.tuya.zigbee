@@ -1,4 +1,5 @@
 'use strict';
+const { safeFlowCard } = require('../../lib/flow/FlowCardPresence'); // P3068: undeclared legacy ids -> logged-once no-op
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
@@ -28,7 +29,7 @@ async onInit() {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action device_radiator_valve_smart_hybrid_set_target_temperature: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('device_radiator_valve_temperature');
+      const card = safeFlowCard(this.homey, 'getActionCard', 'device_radiator_valve_temperature');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}

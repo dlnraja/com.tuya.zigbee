@@ -1,4 +1,5 @@
 'use strict';
+const { safeFlowCard } = require('../../lib/flow/FlowCardPresence'); // P3068: undeclared legacy ids -> logged-once no-op
 const { safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
@@ -35,7 +36,7 @@ class AirPurifierDriver extends ZigBeeDriver {
   
   } catch (e) { this.error(`Trigger ${id}: ${e.message}`); }
     }
-    try {  const card = ( () => { try { return this.homey.flow.getActionCard('set_fan_speed'); } catch(e) { return null; } } )();
+    try {  const card = ( () => { try { return safeFlowCard(this.homey, 'getActionCard', 'set_fan_speed'); } catch(e) { return null; } } )();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -44,7 +45,7 @@ class AirPurifierDriver extends ZigBeeDriver {
         });
       }
     } catch (e) { this.error('Action set_fan_speed:', e.message); }
-    try {  const card = ( () => { try { return this.homey.flow.getActionCard('turn_on'); } catch(e) { return null; } } )();
+    try {  const card = ( () => { try { return safeFlowCard(this.homey, 'getActionCard', 'turn_on'); } catch(e) { return null; } } )();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -54,7 +55,7 @@ class AirPurifierDriver extends ZigBeeDriver {
         });
       }
     } catch (e) { this.error('Action turn_on:', e.message); }
-    try {  const card = ( () => { try { return this.homey.flow.getActionCard('turn_off'); } catch(e) { return null; } } )();
+    try {  const card = ( () => { try { return safeFlowCard(this.homey, 'getActionCard', 'turn_off'); } catch(e) { return null; } } )();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -64,7 +65,7 @@ class AirPurifierDriver extends ZigBeeDriver {
         });
       }
     } catch (e) { this.error('Action turn_off:', e.message); }
-    try {  const card = ( () => { try { return this.homey.flow.getActionCard('toggle'); } catch(e) { return null; } } )();
+    try {  const card = ( () => { try { return safeFlowCard(this.homey, 'getActionCard', 'toggle'); } catch(e) { return null; } } )();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -73,7 +74,7 @@ class AirPurifierDriver extends ZigBeeDriver {
         });
       }
     } catch (e) { this.error('Action toggle:', e.message); }
-    try {  const card = ( () => { try { return this.homey.flow.getActionCard('set_brightness'); } catch(e) { return null; } } )();
+    try {  const card = ( () => { try { return safeFlowCard(this.homey, 'getActionCard', 'set_brightness'); } catch(e) { return null; } } )();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}

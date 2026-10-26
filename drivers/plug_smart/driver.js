@@ -1,4 +1,5 @@
 'use strict';
+const { safeFlowCard } = require('../../lib/flow/FlowCardPresence'); // P3068: undeclared legacy ids -> logged-once no-op
 
 const { safeMultiply } = require('../../lib/utils/tuyaUtils.js');
 const { ZigBeeDriver } = require('homey-zigbeedriver');
@@ -16,7 +17,7 @@ async onInit() {
     // TRIGGERS
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('plug_on');
+      const card = safeFlowCard(this.homey, 'getConditionCard', 'plug_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -27,7 +28,7 @@ async onInit() {
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('plug_on');
+      const card = safeFlowCard(this.homey, 'getActionCard', 'plug_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -38,7 +39,7 @@ async onInit() {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action plug_smart_turn_on: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('plug_off');
+      const card = safeFlowCard(this.homey, 'getActionCard', 'plug_off');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -49,7 +50,7 @@ async onInit() {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action plug_smart_turn_off: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('plug_on_delay');
+      const card = safeFlowCard(this.homey, 'getActionCard', 'plug_on_delay');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -60,7 +61,7 @@ async onInit() {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action plug_smart_turn_on_delay: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('plug_off_delay');
+      const card = safeFlowCard(this.homey, 'getActionCard', 'plug_off_delay');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -71,7 +72,7 @@ async onInit() {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action plug_smart_turn_off_delay: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('plug_indicator');
+      const card = safeFlowCard(this.homey, 'getActionCard', 'plug_indicator');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -83,7 +84,7 @@ async onInit() {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action plug_smart_set_indicator: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('plug_power_on');
+      const card = safeFlowCard(this.homey, 'getActionCard', 'plug_power_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}

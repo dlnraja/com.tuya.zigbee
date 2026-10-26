@@ -1,4 +1,5 @@
 'use strict';
+const { safeFlowCard } = require('../../lib/flow/FlowCardPresence'); // P3068: undeclared legacy ids -> logged-once no-op
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
@@ -12,7 +13,7 @@ class SmartScreenSwitchDriver extends ZigBeeDriver {
 
   _registerFlowCards() {
     try {
-      const motionCard = this.homey.flow.getDeviceTriggerCard('smart_screen_switch_motion_detected');
+      const motionCard = safeFlowCard(this.homey, 'getDeviceTriggerCard', 'smart_screen_switch_motion_detected');
       if (motionCard) {
         motionCard.registerRunListener(async (args, state) => {
           if (!args.device) {return false;}
@@ -24,7 +25,7 @@ class SmartScreenSwitchDriver extends ZigBeeDriver {
     }
 
     try {
-      const motionCondition = this.homey.flow.getConditionCard('smart_screen_switch_motion_active');
+      const motionCondition = safeFlowCard(this.homey, 'getConditionCard', 'smart_screen_switch_motion_active');
       if (motionCondition) {
         motionCondition.registerRunListener(async (args) => {
           if (!args.device) {return false;}

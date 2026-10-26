@@ -1,4 +1,5 @@
 'use strict';
+const { safeFlowCard } = require('../../lib/flow/FlowCardPresence'); // P3068: undeclared legacy ids -> logged-once no-op
 
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { Cluster } = require('zigbee-clusters');
@@ -71,14 +72,14 @@ class RadiatorControllerDevice extends TuyaZigbeeDevice {
 
   async setupFlowCards() {
     try {
-        const modeChanged = (() => { try { return this.homey.flow.getDeviceTriggerCard('radiator_mode_changed'); } catch (e) { return null; } })();
+        const modeChanged = (() => { try { return safeFlowCard(this.homey, 'getDeviceTriggerCard', 'radiator_mode_changed'); } catch (e) { return null; } })();
         this._radiatorModeChangedTrigger = modeChanged;
     } catch (e) {
         this.log('radiator_mode_changed trigger not available');
     }
 
     try {
-        const heatingAction = (() => { try { return this.homey.flow.getActionCard('set_heating_mode'); } catch (e) { return null; } })();
+        const heatingAction = (() => { try { return safeFlowCard(this.homey, 'getActionCard', 'set_heating_mode'); } catch (e) { return null; } })();
         heatingAction.registerRunListener(async (args) => this._setHeatingMode(args.mode));
     } catch (e) {
         this.log('set_heating_mode action not available');

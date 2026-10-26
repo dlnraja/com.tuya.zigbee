@@ -1,4 +1,5 @@
 'use strict';
+const { safeFlowCard } = require('../../lib/flow/FlowCardPresence'); // P3068: undeclared legacy ids -> logged-once no-op
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
@@ -37,7 +38,7 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // CONDITION: Siren is/is not sounding
     //
     try {
-      const sirenCondition = this.homey.flow.getConditionCard('device_air_purifier_siren_siren_is_sounding');
+      const sirenCondition = safeFlowCard(this.homey, 'getConditionCard', 'device_air_purifier_siren_siren_is_sounding');
 
       if (!sirenCondition) {
         this.log('[FLOW] Condition device_air_purifier_siren_siren_is_sounding not defined in app.json - skipping');
@@ -62,7 +63,7 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // ACTION: Turn on siren
     //
     try {
-      const turnOnAction = this.homey.flow.getActionCard('device_air_purifier_siren_siren_turn_on');
+      const turnOnAction = safeFlowCard(this.homey, 'getActionCard', 'device_air_purifier_siren_siren_turn_on');
 
       if (!turnOnAction) {
         this.log('[FLOW] Action device_air_purifier_siren_siren_turn_on not defined in app.json - skipping');
@@ -97,7 +98,7 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // ACTION: Turn off siren
     //
     try {
-      const turnOffAction = this.homey.flow.getActionCard('device_air_purifier_siren_siren_turn_off');
+      const turnOffAction = safeFlowCard(this.homey, 'getActionCard', 'device_air_purifier_siren_siren_turn_off');
 
       if (!turnOffAction) {
         this.log('[FLOW] Action device_air_purifier_siren_siren_turn_off not defined in app.json - skipping');
@@ -132,7 +133,7 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // ACTION: Set volume
     //
     try {
-      const setVolumeAction = this.homey.flow.getActionCard('device_air_purifier_siren_siren_set_volume');
+      const setVolumeAction = safeFlowCard(this.homey, 'getActionCard', 'device_air_purifier_siren_siren_set_volume');
 
       if (!setVolumeAction) {
         this.log('[FLOW] Action device_air_purifier_siren_siren_set_volume not defined in app.json - skipping');
@@ -169,7 +170,7 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // ACTION: Set duration
     //
     try {
-      const setDurationAction = this.homey.flow.getActionCard('device_air_purifier_siren_siren_set_duration');
+      const setDurationAction = safeFlowCard(this.homey, 'getActionCard', 'device_air_purifier_siren_siren_set_duration');
 
       if (!setDurationAction) {
         this.log('[FLOW] Action device_air_purifier_siren_siren_set_duration not defined in app.json - skipping');
@@ -204,7 +205,7 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // ACTION: Set melody
     //
     try {
-      const setMelodyAction = this.homey.flow.getActionCard('device_air_purifier_siren_siren_set_melody');
+      const setMelodyAction = safeFlowCard(this.homey, 'getActionCard', 'device_air_purifier_siren_siren_set_melody');
 
       if (!setMelodyAction) {
         this.log('[FLOW] Action device_air_purifier_siren_siren_set_melody not defined in app.json - skipping');

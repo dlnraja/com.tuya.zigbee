@@ -1,4 +1,5 @@
 'use strict';
+const { safeFlowCard } = require('../../lib/flow/FlowCardPresence'); // P3068: undeclared legacy ids -> logged-once no-op
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
@@ -16,19 +17,8 @@ class RadiatorControllerDriver extends ZigBeeDriver {
 
     // Triggers (déclenchés depuis device.js)
     try {
-      const flow = this.homey.flow;
-      this._radiatorModeChangedCard = (typeof flow.getDeviceTriggerCard === 'function'
-        ? flow.getDeviceTriggerCard('radiator_mode_changed')
-        : null)
-        || (typeof flow.getTriggerCard === 'function'
-          ? flow.getTriggerCard('radiator_mode_changed')
-          : null);
-      this._pilotSignalSentCard = (typeof flow.getDeviceTriggerCard === 'function'
-        ? flow.getDeviceTriggerCard('pilot_signal_sent')
-        : null)
-        || (typeof flow.getTriggerCard === 'function'
-          ? flow.getTriggerCard('pilot_signal_sent')
-          : null);
+      this._radiatorModeChangedCard = safeFlowCard(this.homey, 'getDeviceTriggerCard', 'radiator_mode_changed');
+      this._pilotSignalSentCard = safeFlowCard(this.homey, 'getDeviceTriggerCard', 'pilot_signal_sent');
     } catch (e) {
       this.log('[Flow] triggers', e.message);
     }
