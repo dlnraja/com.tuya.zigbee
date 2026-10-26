@@ -100,6 +100,15 @@ class ClimateSensorDevice extends UnifiedSensorBase {
 
   get dpMappings() {
     const mfr = this._manufacturerName();
+    // P3067: _TZE204/_TZE284_vawy74yh is the Moes ZSS-HM-SSD01 smoke detector (Z2M moes.ts, ZHA
+    // tuya_smoke.py, blakadder), not a climate sensor. New pairings go to smoke_sensor; a device already
+    // paired here gets DP1 0 = smoke on alarm_smoke (added on first report), never a temperature.
+    if (/^_tze2(00|04|84)_vawy74yh$/i.test(String(mfr))) {
+      return {
+        1: { capability: 'alarm_smoke', transform: (v) => Number(v) === 0, dynamicAdd: true },
+        15: { capability: 'measure_battery', divisor: 1 },
+      };
+    }
     if (containsCI(mfr, 'AAEASOLL')) {
       return {
         2: { capability: 'measure_luminance', divisor: 1 },
