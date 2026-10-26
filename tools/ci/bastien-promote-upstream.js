@@ -23,6 +23,7 @@ const { execSync } = require('child_process');
 const { isBranchSpecific, regenerateBranchDocs, BRANCH_SPECIFIC_PATHS } = require('./branch-specific-paths');
 // P3019d: three-way (merge-base / target / Bastien) — never revert a file where the target is ahead.
 const TW = require('./three-way-promote');
+const HOLD = require('./promote-hold-guard');
 
 const ROOT = path.resolve(__dirname, '..', '..');
 const APPLY = process.argv.includes('--apply');
@@ -818,6 +819,13 @@ function main() {
     const b = guardPublishBudget(ROOT, applied, originals);
     applied.splice(0, applied.length, ...b.kept);
     skipped.push(...b.reverted);
+    // P3057-2: no behaviour/pin promote to master while its send is pending or a hold window runs.
+    const hin = HOLD.loadHoldInputs(ROOT, 'master');
+    const hs = HOLD.holdState(hin);
+    const h = HOLD.guardPublishHold(ROOT, applied, originals, hs, hin.cfg);
+    applied.splice(0, applied.length, ...h.kept);
+    skipped.push(...h.reverted);
+    if (hs.active) {console.log('[bastien-promote] master publish hold:', hs.reasons.join('; '));}
     appJsonSynced = syncAppJsonFingerprints(ROOT, composeDriverIds(applied));
   }
 
@@ -880,6 +888,12 @@ function main() {
       const sb = guardPublishBudget(stableDir, stableApplied, stableOriginals);
       stableApplied.splice(0, stableApplied.length, ...sb.kept);
       skipped.push(...sb.reverted.map((r) => ({ ...r, rel: `stable:${r.rel}` })));
+      const shin = HOLD.loadHoldInputs(stableDir, 'stable', ROOT);
+      const shs = HOLD.holdState(shin);
+      const sh2 = HOLD.guardPublishHold(stableDir, stableApplied, stableOriginals, shs, shin.cfg);
+      stableApplied.splice(0, stableApplied.length, ...sh2.kept);
+      skipped.push(...sh2.reverted.map((r) => ({ ...r, rel: `stable:${r.rel}` })));
+      if (shs.active) {console.log('[bastien-promote] stable publish hold:', shs.reasons.join('; '));}
       const stableAppSynced = syncAppJsonFingerprints(stableDir, composeDriverIds(stableApplied));
       if (COMMIT && stableApplied.length) {
         const stableRegenerated = regenerateAfterPromote(stableDir);
@@ -919,6 +933,7 @@ function main() {
     targetAheadSkipped: skipped.filter((x) => x.reason === 'target_ahead').map((x) => x.rel),
     appJsonFingerprintsSynced: appJsonSynced,
     targetTestLock: skipped.filter((x) => x.reason === 'target_test_lock').map((x) => `${x.rel} (${x.test})`),
+    publishHoldSkipped: skipped.filter((x) => x.reason === 'publish_hold_active').map((x) => x.rel),
     testFailsOnTarget: skipped.filter((x) => x.reason === 'test_fails_on_target').map((x) => x.rel),
     regenerated,
     candidates,

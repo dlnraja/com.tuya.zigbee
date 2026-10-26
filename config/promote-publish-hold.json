@@ -1,0 +1,12 @@
+{
+  "_doc": "P3057-2: while a target app has a publish hold window or a pending (not yet accepted) Athom send, the autonomous Bastien promote may only bring CI/test/docs paths and the data-safety allowlist below to master/stable. Behaviour and pin files (drivers/**, sacred keep couples, app.json, other lib/**) stay on Bastien and are ported after the accept. Read by tools/ci/promote-hold-guard.js.",
+  "holds": [
+    { "app": "master", "until": "2026-10-26T13:57:00+01:00", "reason": "P3036 spacing hold after master send 9.0.1601 (pending accept)" }
+  ],
+  "dataSafetyAllow": [
+    "lib/utils/MemwarnGuard.js",
+    "lib/utils/safeMemoryUsage.js",
+    "lib/memory/",
+    "lib/flow/FlowCardPresence.js"
+  ]
+}
