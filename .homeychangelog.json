@@ -1086,6 +1086,10 @@
     "en": "CRITICAL: sdkVersion fix (Processing failed), Missing Capability Listener (setable:false), timer fallback, battery restore, duplicate method fix, HOBEIAN ZG-301Z, NFKD normalize, 87 fingerprints restored, Polos validator",
     "fr": "CRITIQUE: sdkVersion (Processing failed), Missing Capability Listener, fallback timer, batterie, HOBEIAN, NFKD, 87 fingerprints, Polos"
   },
+  "5.12.511": {
+    "en": "Device fixes and improvements for thermostat, plug, switch (10 fixes).",
+    "fr": "Corrections et améliorations pour : thermostat, prise, interrupteur (10 correctifs)."
+  },
   "5.12.509": {
     "en": "Smoke and CO detectors: TS0601 models (_TZE284_6ycgarab, _TZE284_aoah6bv8, _TZE2841000000_6ycgarab, _TZE284_qvzsq3s2, _TZE200_qcasmfan) now report smoke, CO, battery and tamper (receive-only). The _TZE284_la2c2uo9 dimmer and nine TS0601 soil/climate couples point again to the driver that pairs them on this channel. Thanks to the Zigbee2MQTT / zigbee-herdsman-converters contributors.",
     "fr": "Détecteurs de fumée et de CO : les modèles TS0601 (_TZE284_6ycgarab, _TZE284_aoah6bv8, _TZE2841000000_6ycgarab, _TZE284_qvzsq3s2, _TZE200_qcasmfan) remontent fumée, CO, batterie et sabotage (lecture seule). Le variateur _TZE284_la2c2uo9 et neuf couples TS0601 sol/climat pointent de nouveau vers le driver qui les appaire sur ce canal. Merci aux contributeurs de Zigbee2MQTT / zigbee-herdsman-converters."
