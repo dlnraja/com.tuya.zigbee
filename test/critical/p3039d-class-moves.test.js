@@ -70,7 +70,11 @@ describe('P3039d class moves', () => {
   });
   it('P3024b exemptions = exactly the 34 parasitic combos approved in t522s3008, with reason', () => {
     const f = JSON.parse(fs.readFileSync(path.join(ROOT, 'test/fixtures/athom-last-test-package-couples.json'), 'utf8'));
-    const ex = f.exemptions;
+    // WHY(P3067): later owner-approved removals (approvedBy + reason + date, e.g. EcoDim 09hzmirw smoke parasites)
+    // are additive to the baseline; this test keeps pinning exactly the 34 t522s3008 entries.
+    const later = f.exemptions.filter((e) => e.approvedBy !== 't522s3008');
+    for (const e of later) {assert.ok(e.mfr && e.pid && e.reason && e.approvedBy && e.date, `later exemption ${e.mfr}|${e.pid} needs reason/approvedBy/date`);}
+    const ex = f.exemptions.filter((e) => e.approvedBy === 't522s3008');
     assert.strictEqual(ex.length, 34);
     const want = {
       switch_wireless: [/^_tze200_(t5p1vj8r|uebojraa|vzekyi4c|dq1mfjug)$/i, ['TS0601_wirelesssw', 'TS0215A'], 16],
