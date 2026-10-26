@@ -15,6 +15,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { linkRef } = require(path.join(__dirname, '..', '..', 'scripts', 'lib', 'report-writer.js')); // P3069: link + topic, never the title
 const { spawnSync } = require('child_process');
 
 const ROOT = path.join(__dirname, '..', '..');
@@ -110,7 +111,7 @@ function recentRuns(limit = 12) {
 }
 
 function openIssues() {
-  const r = gh(['issue', 'list', '--state', 'open', '--limit', '20', '--json', 'number,title,labels,updatedAt']);
+  const r = gh(['issue', 'list', '--state', 'open', '--limit', '20', '--json', 'number,title,labels,updatedAt,url']);
   if (!r.ok) return [];
   try {
     return JSON.parse(r.out);
@@ -235,7 +236,7 @@ function main() {
     report.recommendations.push({
       priority: 'P1',
       action: 'Human issues remain open — verify FP/runtime fixes silently; do not mass-close needs-maintainer.',
-      refs: humanIssues.slice(0, 10).map((i) => `#${i.number} ${i.title}`),
+      refs: humanIssues.slice(0, 10).map((i) => linkRef({ id: i.number, url: i.url, text: i.title })),
     });
   }
   const gateFail = Object.entries(report.gates).filter(([, g]) => !g.ok);
@@ -318,13 +319,13 @@ function main() {
   md.push('## Open issues');
   if (!report.issues.length) md.push('- none');
   for (const i of report.issues.slice(0, 15)) {
-    md.push(`- #${i.number} ${i.title}`);
+    md.push(`- ${linkRef({ id: i.number, url: i.url, text: i.title })}`);
   }
   md.push('');
   md.push('## Open PRs');
   if (!report.prs.length) md.push('- none');
   for (const p of report.prs.slice(0, 10)) {
-    md.push(`- #${p.number}${p.isDraft ? ' (draft)' : ''} ${p.title} — ${p.url || ''}`);
+    md.push(`- ${linkRef({ id: p.number, url: p.url, text: p.title })}${p.isDraft ? ' (draft)' : ''}`);
   }
   md.push('');
   md.push('## Cursor brain — do this week (max)');

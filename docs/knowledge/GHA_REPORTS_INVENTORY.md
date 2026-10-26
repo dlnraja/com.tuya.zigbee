@@ -1,7 +1,7 @@
 <!-- report-writer:v1 lang=en -->
 ### GitHub Actions reports — inventory (P3069)
 
-90 workflows: 86 write a job summary, 86 already use the shared report helper and 90 carry our own "about" header. 29 scripts still interpolate third-party titles or bodies, and 24 docs hold long quoted passages to rewrite.
+90 workflows: 86 write a job summary, 86 already use the shared report helper and 90 carry our own "about" header. 23 scripts still interpolate third-party titles or bodies, and 23 docs hold long quoted passages to rewrite.
 
 | workflow | about header | job summary | shared helper | writes to GitHub |
 | --- | --- | --- | --- | --- |
@@ -100,16 +100,13 @@
 
 - `.github/scripts/athom-login-cartography.js` — 1 line(s)
 - `.github/scripts/generate-dashboards-page.js` — 1 line(s)
-- `.github/scripts/github-issue-manager.js` — 2 line(s)
 - `.github/scripts/internet-research-tool.js` — 2 line(s)
-- `.github/scripts/nightly-processor.js` — 1 line(s)
 - `.github/scripts/scan-johan-full.js` — 1 line(s)
 - `.github/scripts/variant-scanner.js` — 1 line(s)
 - `scripts/diag/flow-trigger-reach.js` — 1 line(s)
 - `tools/ci/auto-bot-issue-triage.js` — 1 line(s)
 - `tools/ci/button-issues-deep.js` — 3 line(s)
 - `tools/ci/check-open-buttons.js` — 1 line(s)
-- `tools/ci/collect-johan-comments-to-delete.js` — 1 line(s)
 - `tools/ci/device-investigator.js` — 1 line(s)
 - `tools/ci/fetch-all-activity.js` — 1 line(s)
 - `tools/ci/fetch-dlnraja-comments-public.js` — 1 line(s)
@@ -119,13 +116,10 @@
 - `tools/ci/homey-sdk-rules.js` — 1 line(s)
 - `tools/ci/parse-forum-digest.js` — 1 line(s)
 - `tools/ci/regression-lessons-gate.js` — 1 line(s)
-- `tools/ci/search-forum-posts-v2.js` — 3 line(s)
-- `tools/ci/search-forum-posts.js` — 2 line(s)
 - `tools/ci/search-forum-v2.js` — 4 line(s)
 - `tools/ci/search-forum.js` — 1 line(s)
 - `tools/ci/session-start.js` — 1 line(s)
 - `tools/ci/temporal-cross-ref.js` — 1 line(s)
-- `tools/ci/weekly-sovereign-loop.js` — 3 line(s)
 - `tools/shadow-mode/shadow-mode-v2.js` — 1 line(s)
 
 </details>
@@ -133,7 +127,6 @@
 <details><summary>Docs with long quoted passages (to rewrite)</summary>
 
 - `reports/AUDIT_HOMEY_2026-07-27.md` — 1
-- `reports/GLOBAL_IMPROVEMENT_PLAN.md` — 11
 - `reports/HISTORY_PURGE.md` — 1
 - `reports/INVESTIGATION_2026-07-10.md` — 1
 - `reports/L99_INVESTIGATION_2026-08-15.md` — 1
@@ -153,8 +146,8 @@
 - `reports/kimi-2026-07-29/forum-13-users-triage.md` — 2
 - `reports/kimi-2026-07-29/forum-bugs-reliquats-solo.md` — 2
 - `reports/kimi-2026-07-30/RAPPORT_TESTS_AUDITS.md` — 1
-- `reports/removed-personal-dir/ANDROID_BOUYGUES_FINE_TUNE.md` — 1
-- `reports/removed-personal-dir/removed-personal-file.md` — 6
+- `reports/myskills-cv/ANDROID_BOUYGUES_FINE_TUNE.md` — 1
+- `reports/myskills-cv/LINKEDIN_ABOUT_SOURCE.md` — 6
 - `reports/p2234b-sacred-couple-refine-2026-08-24.md` — 1
 
 </details>
