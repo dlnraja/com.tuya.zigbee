@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased — docs refresh (P3032, stable-v5)
+### Fixed (2026-10-26, P3066 sync guard)
+- `lib/tuya/fingerprints.json`: `_TZE284_la2c2uo9` back to `dimmer_1_gang_tuya` and 9 TS0601 climate couples back to `climate_sensor` (overwritten by the P52 sync 6897a290f5); `tools/ci/sync-driver-mapping-guard.js` keeps the target branch mapping on future syncs; pending 5.12.509 changelog entry (en + fr).
+
 ### Fixed (2026-10-26, P3064 safety port)
 - Smoke sensor: TS0601 smoke / CO couples already listed in the driver (`_TZE284_6ycgarab`, `_TZE284_aoah6bv8`, `_TZE2841000000_6ycgarab`, `_TZE284_qvzsq3s2`, `_TZE200_qcasmfan`) now read their Tuya datapoints (smoke, CO, battery, tamper), receive-only, no write at pairing. DP layouts from zigbee-herdsman-converters (Koen Kanters and contributors).
 
