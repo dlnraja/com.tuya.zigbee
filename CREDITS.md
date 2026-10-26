@@ -167,6 +167,14 @@ Sources actually used or consulted for the Wi-Fi local stack (`lib/tuya-local/`)
 - **[andiwirz/com.tuyalocal](https://github.com/andiwirz/com.tuyalocal)** (MIT) — Homey Tuya-local app: frequency-first protocol order, command gap, stale-data watchdog patterns (reimplemented earlier, credited in code).
 - **[Drenso/com.tuya2](https://github.com/Drenso/com.tuya2)**, **[jurgenheine/com.tuya.cloud](https://github.com/jurgenheine/com.tuya.cloud)** (MIT), **[rebtor/nl.rebtor.tuya](https://github.com/rebtor/nl.rebtor.tuya)** (MIT) — earlier Homey Tuya apps whose cloud/LAN patterns informed the original design.
 
+## IR blasters — Zigbee Zosung + Tuya Wi-Fi (P3063, 2026-10-26)
+Own implementation in `lib/ir/ZosungIRProtocol.js`, `lib/ir/TuyaWifiIRProtocol.js` and `lib/ir/IRFormatConverter.js`; no upstream code copied:
+- **[Koenkk/zigbee-herdsman-converters](https://github.com/Koenkk/zigbee-herdsman-converters)** (MIT, Koen Kanters and the `zosung.ts` contributors) — consulted: 0xED00 frame layout (msgpart + msgpartcrc), chunk sizes, Code00 resend, ZG-IR01 seq 0, `{key_num,key1}` message.
+- **[mildsunrise — Tuya IR code format notes](https://gist.github.com/mildsunrise/1d576669b63a260d2cff35fda63ec0b5)** — consulted: FastLZ-style block layout of Tuya `key_code`.
+- **[jbouwh — Home Assistant Tuya IR encoder gist](https://gist.github.com/jbouwh)** — consulted: literal-only encoding is the safe choice for cheap Tuya IR chips.
+- **[jasonacox/tinytuya](https://github.com/jasonacox/tinytuya)** (MIT) — consulted: `IRRemoteControlDevice` control types 1/2, `send_ir` / `study` / `study_exit` / `study_key`, learned code on DP202 or DP2.
+- **[make-all/tuya-local](https://github.com/make-all/tuya-local)** (MIT, Jason Rumney and contributors) — consulted: single-DP `send_ir` JSON with `"1"` raw prefix, multi-DP send, split of long gaps.
+
 ## Licenses (SPDX)
 
 | Project | License | Usage |

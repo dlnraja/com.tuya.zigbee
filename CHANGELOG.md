@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+### Improved (2026-10-26, P3063 IR blasters, master soak)
+- **Zigbee IR blasters (Zosung TS1201 / ZS06 / ZG-IR01):** sending and learning now follow the exact frame layout of the device (each chunk carries its own length and checksum), every code goes through the chunked transfer the blaster expects, one transfer runs at a time, a missed start is resent, and learned chunks are checked for position and checksum with a bounded buffer. Codes pasted as Pronto, Broadlink, Global Caché or raw timings are now converted to the real Tuya code format; codes saved by older app versions are repaired automatically when sent. Thanks to the Zigbee2MQTT `zosung` authors, mildsunrise and jbouwh for the format notes.
+- **Wi-Fi IR blasters (Tuya local):** sending uses the `send_ir` command the blaster understands, learning starts and stops with `study` / `study_exit`, and blasters using the newer DP1–DP13 layout are detected and handled. Pasted Pronto or timing codes are converted for Wi-Fi. Thanks to the tinytuya and tuya-local authors.
+
 ### Added (2026-10-24/25, master soak)
 - **P3029:** Zigbee command numbering (TSN) now continues per device across app restarts, so the first commands after Homey's nightly reboot are no longer ignored by some firmwares (kill switch `zcl_tsn_continuity`).
 - **P3028:** availability learns each battery device's normal reporting gap; buttons and remotes are no longer marked unavailable for staying silent; flapping devices and many-devices-at-once outages are flagged; a single sudden low-battery reading waits for confirmation.
