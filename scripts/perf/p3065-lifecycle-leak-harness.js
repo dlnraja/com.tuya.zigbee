@@ -16,7 +16,7 @@ function p3065Collections(devs){const agg={};const seen=new WeakSet();
 const Module=require('module'),path=require('path'),fs=require('fs'),v8=require('v8'),EE=require('events');
 const root=path.resolve(process.argv[2]);const N=+process.argv[3]||100,E=+process.argv[4]||100,C=+process.argv[5]||4;
 const timers=new Set();
-const homeyT={setTimeout:(f,ms,...a)=>{const t=setTimeout(f,Math.min(ms,50),...a);t.unref();return t},clearTimeout,setInterval:(f,ms)=>{const t=setInterval(f,Math.max(ms,1000));t.unref();t._src=(new Error().stack.split('\n').slice(2).find(l=>!/safe-timers|SafeTimerAccessor|SDK3CompatBridge|OwnedTimer/.test(l))||'').trim().replace(root,'');timers.add(t);return t},clearInterval:(t)=>{timers.delete(t);clearInterval(t)}};
+const homeyT={setTimeout:(f,ms,...a)=>{const t=setTimeout(f,Math.min(ms,50),...a);t.unref();return t},clearTimeout,setInterval:(f,ms)=>{const t=setInterval(f,Math.max(ms,1000));t.unref();t._ms=ms;/* P3068: callback read back from t._onTimeout (nulled by clear) — no extra retention */t._src=(new Error().stack.split('\n').slice(2).find(l=>!/safe-timers|SafeTimerAccessor|SDK3CompatBridge|OwnedTimer/.test(l))||'').trim().replace(root,'');timers.add(t);return t},clearInterval:(t)=>{timers.delete(t);clearInterval(t)}};
 const noop=()=>{};const P=new Proxy(function(){},{get:(t,k)=>k==='then'?undefined:(k===Symbol.toPrimitive?()=>0:P),apply:()=>P,construct:()=>P});
 const flowCard=()=>({registerRunListener(){return this},registerArgumentAutocompleteListener(){return this},trigger:async()=>{},on(){return this}});
 class SimpleDevice extends EE{constructor(id,driverId){super();this._id=id;this._caps={};this._store={};this._settings={manufacturerName:'_TZ3000_test',zb_manufacturer_name:'_TZ3000_test',zb_model_id:'TS0001'};this.driver={id:driverId,manifest:{id:driverId,capabilities:['onoff']},getDevices:()=>[]};
@@ -56,10 +56,16 @@ process.on('unhandledRejection',x=>{const m='UR: '+String(x&&x.message).slice(0,
   for(let e=0;e<E;e++)for(const d of devs){const z=d.zclNode;if(!z)continue;const on=z.endpoints?.[1]?.clusters?.onOff;try{if(on)on.emit('attr.onOff',e%2===0)}catch(x){EV(d,x)}const t=z.endpoints?.[1]?.clusters?.tuya;if(t){try{t.emit('response',{dp:(e%20)+1,datatype:2,data:Buffer.from([0,0,(e>>8)&255,e&255]),seq:(b*E+e)&0xffff});t.emit('reporting',{dp:1,datatype:1,data:Buffer.from([e%2])})}catch(x){EV(d,x)}}}
   await new Promise(r=>setTimeout(r,300));if(FL>1){out.flood.push(MB());if(process.env.INTRO&&(b===0||b===FL-1))(out.intro=out.intro||[]).push(p3065Collections(devs));}}
   const he=MB();
+  // P3068 DAY: simulated 24 h — every armed Homey interval fires ceil(86400000/ms) times (capped by DAY_CAP, default 288),
+  // interleaved with one report per device per round; periodic code paths (maintenance, health, caches) run a full day.
+  let hday=null;if(process.env.DAY){const cap=+process.env.DAY_CAP||288;const live=[...timers].filter(t=>!t._destroyed&&typeof t._onTimeout==='function');const runs=live.map(t=>Math.min(cap,Math.ceil(86400000/Math.max(t._ms||60000,1000))));const R=Math.max(0,...runs);
+   for(let r=0;r<R;r++){for(let i=0;i<live.length;i++){if(r<runs[i]&&!live[i]._destroyed&&typeof live[i]._onTimeout==='function'){try{const p=live[i]._onTimeout();if(p&&p.catch)p.catch(x=>EV({},x))}catch(x){EV({},x)}}}
+    for(const d of devs){const on=d.zclNode?.endpoints?.[1]?.clusters?.onOff;try{if(on)on.emit('attr.onOff',r%2===0)}catch(x){EV(d,x)}}if(r%16===15)await new Promise(q=>setImmediate(q));}
+   await new Promise(q=>setTimeout(q,300));hday=MB();out.dayTimers=live.length;out.dayRounds=R;}
   for(const d of devs){try{await d.onDeleted?.()}catch(e){}try{await d.onUninit?.()}catch(e){}}
   devs.length=0;await new Promise(r=>setTimeout(r,+process.env.SETTLE||300));const hd=MB();
   const alive={};for(const [n,w] of refs){if(w.deref())alive[n]=(alive[n]||0)+1}
-  out.cycles.push({afterInit:hi,afterEvents:he,afterDelete:hd,aliveDevices:alive,timersLeft:[...timers].filter(t=>!t._destroyed).length});
+  out.cycles.push({afterInit:hi,afterEvents:he,afterDay:hday,afterDelete:hd,aliveDevices:alive,timersLeft:[...timers].filter(t=>!t._destroyed).length});
  }
  out.initErrs=initErrs;out.evErr=evErr;
  out.timerSrc=Object.entries([...timers].filter(t=>!t._destroyed).reduce((a,t)=>(a[t._src]=(a[t._src]||0)+1,a),{})).sort((a,b)=>b[1]-a[1]).slice(0,8);
