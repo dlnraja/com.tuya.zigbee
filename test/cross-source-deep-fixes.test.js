@@ -161,7 +161,7 @@ describe('P92.74 — To-Do cross-source enrichments', () => {
   it('ZG-205Z presence sensor is not in climate_sensor', () => {
     const climate = JSON.parse(read('drivers/climate_sensor/driver.compose.json'));
     assert.ok(!/dapwryy7/i.test(climate.zigbee.manufacturerName.join(' ')));
-    const radar = JSON.parse(read('drivers/presence_sensor_radar/driver.compose.json'));
+    const radar = require('./helpers/radar-family').radarFamilyCompose(); // P3057: parent + TS0601 sibling
     assert.ok(radar.zigbee.manufacturerName.some((m) => /dapwryy7/i.test(m)));
   });
   it('ZY-M100 zero-emission firmware filter is present on both DP entry points', () => {
@@ -289,7 +289,7 @@ describe('P92.80 — deleted tooling reimplemented + Z2M gap imports', () => {
       assert.deepStrictEqual(JSON.parse(read(`drivers/${d}/driver.compose.json`)).zigbee.productId, DEDICATED[d], d);
     }
     assert.deepStrictEqual(aoyanOwners.filter((x) => !DEDICATED[x]), ['soil_sensor'], 'aoyan claimed by soil_sensor (plus exact-model dedicated drivers) only');
-    const pr = JSON.parse(read('drivers/presence_sensor_radar/driver.compose.json'));
+    const pr = require('./helpers/radar-family').radarFamilyCompose(); // P3057: parent + TS0601 sibling
     assert.ok(pr.zigbee.manufacturerName.some((m) => /tze28c1000000/i.test(m)), 'ZF24 claimed');
   });
   it('deleted functions survive elsewhere (workflows consolidated, magic packet inline)', () => {

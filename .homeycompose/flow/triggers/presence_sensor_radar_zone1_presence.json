@@ -1,0 +1,20 @@
+{
+  "id": "presence_sensor_radar_zone1_presence",
+  "title": {
+    "en": "Zone 1 presence detected",
+    "fr": "Présence détectée en zone 1",
+    "nl": "Aanwezigheid gedetecteerd in zone 1",
+    "de": "Anwesenheit in Zone 1 erkannt"
+  },
+  "hint": {
+    "en": "Triggers when presence is detected in Zone 1 (near field)",
+    "fr": "Se déclenche quand une présence est détectée en zone 1 (champ proche)"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=presence_sensor_radar|presence_sensor_radar_ts0601"
+    }
+  ]
+}

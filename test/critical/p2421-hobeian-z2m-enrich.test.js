@@ -56,8 +56,8 @@ function testYflzeeqjNotClimateFallback() {
 
 function testComposeLocks() {
   const fs = require('fs');
-  const presence = JSON.parse(fs.readFileSync(
-    path.join(__dirname, '../../drivers/presence_sensor_radar/driver.compose.json'), 'utf8'));
+  // P3057: radar family (parent + TS0601 sibling)
+  const presence = require('../helpers/radar-family').radarFamilyCompose();
   const climate = JSON.parse(fs.readFileSync(
     path.join(__dirname, '../../drivers/climate_sensor/driver.compose.json'), 'utf8'));
   const vib = JSON.parse(fs.readFileSync(

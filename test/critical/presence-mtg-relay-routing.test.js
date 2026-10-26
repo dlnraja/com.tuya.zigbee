@@ -77,7 +77,9 @@ describe('MTG075/MTG035 relay presence radar routing', () => {
   });
 
   it('pairs the relay family with presence_sensor_radar and keeps onoff available for flows', () => {
-    for (const source of [driverCompose('presence_sensor_radar'), appDriver('presence_sensor_radar')]) {
+    // P3057: radar family (parent + TS0601 sibling) claims the relay family
+    const fam = require('../helpers/radar-family');
+    for (const source of [fam.radarFamilyCompose(), fam.radarFamilyAppDriver(readJson('app.json'))]) {
       // WHY(P2603 + f89b25d075): onoff left the static compose (ceiling radars have no relay); relay variants
       // get it at runtime via _ensureRelayOnoffCapability (P2576), with onoff capabilitiesOptions kept.
       assert(source.capabilities.includes('onoff') || (source.capabilitiesOptions && source.capabilitiesOptions.onoff),

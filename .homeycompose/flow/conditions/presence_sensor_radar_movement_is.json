@@ -1,0 +1,82 @@
+{
+  "id": "presence_sensor_radar_movement_is",
+  "title": {
+    "en": "Movement type !{{is|is not}}",
+    "fr": "Le type de mouvement !{{est|n'est pas}}"
+  },
+  "hint": {
+    "en": "Check the current movement classification (none, stationary, micro_motion, small_motion, large_motion)",
+    "fr": "Vérifier la classification actuelle du mouvement (none, stationary, micro_motion, small_motion, large_motion)"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=presence_sensor_radar|presence_sensor_radar_ts0601"
+    },
+    {
+      "name": "classification",
+      "type": "dropdown",
+      "values": [
+        {
+          "id": "none",
+          "title": {
+            "en": "None"
+          },
+          "label": {
+            "en": "None",
+            "fr": "Aucun"
+          }
+        },
+        {
+          "id": "stationary",
+          "title": {
+            "en": "Stationary"
+          },
+          "label": {
+            "en": "Stationary",
+            "fr": "Immobile"
+          }
+        },
+        {
+          "id": "micro_motion",
+          "title": {
+            "en": "Micro Motion (breathing)"
+          },
+          "label": {
+            "en": "Micro Motion (breathing)",
+            "fr": "Micro-mouvement (respiration)"
+          }
+        },
+        {
+          "id": "small_motion",
+          "title": {
+            "en": "Small Motion (limb)"
+          },
+          "label": {
+            "en": "Small Motion (limb)",
+            "fr": "Petit mouvement (membre)"
+          }
+        },
+        {
+          "id": "large_motion",
+          "title": {
+            "en": "Large Motion (walking)"
+          },
+          "label": {
+            "en": "Large Motion (walking)",
+            "fr": "Grand mouvement (marche)"
+          }
+        }
+      ],
+      "title": {
+        "en": "Classification",
+        "fr": "Classification"
+      }
+    }
+  ],
+  "titleFormatted": {
+    "en": "Movement type !{{is|is not}} [[classification]]",
+    "fr": "Le type de mouvement !{{est|n'est pas}} [[classification]]"
+  }
+}
