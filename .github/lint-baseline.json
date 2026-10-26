@@ -1,6 +1,6 @@
 {
  "note": "P3025 lint ratchet — counts may only go down; regenerate with --update-baseline",
- "total": 1843,
+ "total": 1813,
  "files": {
   "drivers/air_purifier_climate/device.js": 2,
   "drivers/air_purifier_climate/driver.js": 1,
@@ -466,7 +466,6 @@
   "lib/tuya/TuyaDPParser.js": 4,
   "lib/tuya/TuyaDataPointsZ2M.js": 2,
   "lib/tuya/TuyaEF00Base.js": 1,
-  "lib/tuya/TuyaEF00Manager.js": 28,
   "lib/tuya/TuyaEF00Parser.js": 1,
   "lib/tuya/TuyaGatewayEmulator.js": 2,
   "lib/tuya/TuyaModernExtend.js": 11,
@@ -494,7 +493,6 @@
   "lib/utils/ErrorClassifier.js": 1,
   "lib/utils/PromiseUtils.js": 1,
   "lib/utils/RetryWithBackoff.js": 2,
-  "lib/utils/SleepyDeviceInit.js": 2,
   "lib/utils/TitleSanitizer.js": 1,
   "lib/utils/TuyaNormalizer.js": 1,
   "lib/utils/UnknownDPLogger.js": 1,
