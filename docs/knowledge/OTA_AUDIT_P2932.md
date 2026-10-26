@@ -9,7 +9,7 @@ Source: Homey SDK, "Zigbee Firmware Updates" (https://apps.developer.homey.app/w
 - Since Homey firmware 13.2.0 and mobile app 9.10.0, **Homey is the Zigbee OTA server**. The device sends `queryNextImageRequest`, then `imageBlockRequest`/`imagePageRequest` and `upgradeEndRequest` (ZCL spec ch. 11). Homey picks the image from `driver.firmwareUpdates`, serves the blocks, detects stalls and aborts, and lets the user retry.
 - **The user always starts the update** in the Homey app. It is never forced and the app cannot start it by itself.
 - The images must be listed in the manifest. Each one needs `fileVersion`, `imageType`, `manufacturerCode`, `size`, `name` and `integrity`, and the file goes in `drivers/<id>/assets/firmware/`. `wakeInstruction` is shown for sleepy devices.
-- "When you upload your Homey App, the firmware files are stored separately from your App. Only when Homey starts installing an update for a device, it will download the required files." So the images are **not** in the runtime app. They count only in the upload package.
+- In our words (same Athom SDK page, Athom docs team): an uploaded app's firmware files are kept apart from the app itself, and Homey only fetches them at the moment it begins updating a device. So the images are **not** in the runtime app. They count only in the upload package.
 
 Consequence for the asked items:
 
