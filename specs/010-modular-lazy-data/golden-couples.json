@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-26T12:31:57.265Z",
+ "generated": "2026-10-26T14:05:13.609Z",
  "drivers": 392,
  "snapshot": {
   "air_purifier": {
@@ -279,9 +279,9 @@
    "pidSha": "3427697d0c296c9d"
   },
   "climate_sensor": {
-   "mfr": 519,
+   "mfr": 517,
    "pid": 32,
-   "mfrSha": "263ae8c48eaa7d5a",
+   "mfrSha": "873624e52827fb9f",
    "pidSha": "4809a771f46a5606"
   },
   "climate_sensor_device": {
@@ -339,9 +339,9 @@
    "pidSha": "455c46e8c8549693"
   },
   "co_sensor": {
-   "mfr": 11,
+   "mfr": 10,
    "pid": 3,
-   "mfrSha": "d88deec8ca5940c0",
+   "mfrSha": "6eee7e73f5790ef0",
    "pidSha": "98aaec19a4fb45ff"
   },
   "contact_sensor": {
@@ -1785,9 +1785,9 @@
    "pidSha": "6bb4763014511564"
   },
   "smoke_sensor": {
-   "mfr": 6,
+   "mfr": 9,
    "pid": 3,
-   "mfrSha": "2b12509c79238459",
+   "mfrSha": "cba37c340fd2d95d",
    "pidSha": "14fd4884570649ac"
   },
   "smoke_sensor2": {

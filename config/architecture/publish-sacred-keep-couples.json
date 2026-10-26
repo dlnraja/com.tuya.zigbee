@@ -1765,6 +1765,24 @@
       "pid": "TS0601",
       "driverId": "curtain_motor",
       "note": "P3038b port of master P3037 (2dc7ff9ac3) 2026-10-25 GitHub #576 (migueleap): curtain module interview EP1 [0,4,5,61184], paired generic because compaction dropped the couple"
+    },
+    {
+      "mfr": "_TZE200_vawy74yh",
+      "pid": "TS0601",
+      "driverId": "smoke_sensor",
+      "note": "P3067 family 4: Moes ZSS-HM-SSD01 smoke detector (Z2M moes.ts, ZHA tuya_smoke.py, blakadder) moved from co_sensor/climate_sensor"
+    },
+    {
+      "mfr": "_TZE204_vawy74yh",
+      "pid": "TS0601",
+      "driverId": "smoke_sensor",
+      "note": "P3067 family 4: Moes ZSS-HM-SSD01 smoke detector (Z2M moes.ts, ZHA tuya_smoke.py, blakadder) moved from co_sensor/climate_sensor"
+    },
+    {
+      "mfr": "_TZE284_vawy74yh",
+      "pid": "TS0601",
+      "driverId": "smoke_sensor",
+      "note": "P3067 family 4: Moes ZSS-HM-SSD01 smoke detector (Z2M moes.ts, ZHA tuya_smoke.py, blakadder) moved from co_sensor/climate_sensor"
     }
   ]
 }
