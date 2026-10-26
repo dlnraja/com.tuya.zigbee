@@ -1,7 +1,7 @@
 {
  "note": "P3068 memory-hazard ratchet baseline — counts may only go down",
  "totals": {
-  "hot-stringify": 61,
+  "hot-stringify": 49,
   "unbounded-collection": 85,
   "raw-timer": 4
  },
@@ -104,26 +104,21 @@
   "lib/devices/AirPurifierFilterLife.js": {
    "unbounded-collection": 1
   },
-  "lib/devices/BaseTuyaDPDevice.js": {
-   "hot-stringify": 1
-  },
   "lib/devices/BaseUnifiedDevice.js": {
    "unbounded-collection": 1,
-   "hot-stringify": 2
+   "hot-stringify": 1
   },
   "lib/devices/GangCountAdapter.js": {
    "unbounded-collection": 1
   },
   "lib/devices/TuyaUnifiedDevice.js": {
-   "unbounded-collection": 1,
-   "hot-stringify": 6
+   "unbounded-collection": 1
   },
   "lib/devices/UnifiedSensorBase.js": {
-   "hot-stringify": 4
+   "hot-stringify": 3
   },
   "lib/devices/UnifiedSwitchBase.js": {
-   "unbounded-collection": 2,
-   "hot-stringify": 1
+   "unbounded-collection": 2
   },
   "lib/diagnostics/DiagnosticLogsCollector.js": {
    "hot-stringify": 8
@@ -133,9 +128,6 @@
   },
   "lib/drivers/DynamicDriverMatcher.js": {
    "unbounded-collection": 1
-  },
-  "lib/dynamic/AutoAdaptiveDevice.js": {
-   "hot-stringify": 1
   },
   "lib/dynamic/DynamicCapabilityManager.js": {
    "unbounded-collection": 3
@@ -188,9 +180,6 @@
   },
   "lib/mixins/PhysicalButtonMixin.js": {
    "unbounded-collection": 1
-  },
-  "lib/mixins/TuyaDeviceMixin.js": {
-   "hot-stringify": 1
   },
   "lib/multichannel/MultiChannelManager.js": {
    "unbounded-collection": 2
