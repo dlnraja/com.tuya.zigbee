@@ -1,0 +1,46 @@
+{
+  "id": "hvac_system_mode_changed",
+  "title": {
+    "en": "System mode changed",
+    "fr": "Mode système modifié",
+    "nl": "Systeemmodus gewijzigd",
+    "de": "Systemmodus geändert"
+  },
+  "titleFormatted": {
+    "en": "System mode of [[device]] changed",
+    "fr": "Mode système de [[device]] modifié",
+    "nl": "Systeemmodus van [[device]] gewijzigd",
+    "de": "Systemmodus von [[device]] geändert"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=hvac_system_mode"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "mode",
+      "type": "string",
+      "title": {
+        "en": "Mode",
+        "fr": "Mode",
+        "nl": "Modus",
+        "de": "Modus"
+      },
+      "example": "cool"
+    },
+    {
+      "name": "previous",
+      "type": "string",
+      "title": {
+        "en": "Previous mode",
+        "fr": "Mode précédent",
+        "nl": "Vorige modus",
+        "de": "Vorheriger Modus"
+      },
+      "example": "heat"
+    }
+  ]
+}

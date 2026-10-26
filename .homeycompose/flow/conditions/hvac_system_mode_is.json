@@ -1,0 +1,32 @@
+{
+  "id": "hvac_system_mode_is",
+  "title": {
+    "en": "System mode !{{is|is not}}",
+    "fr": "Mode système !{{est|n'est pas}}",
+    "nl": "Systeemmodus !{{is|is niet}}",
+    "de": "Systemmodus !{{ist|ist nicht}}"
+  },
+  "titleFormatted": {
+    "en": "System mode of [[device]] !{{is|is not}} [[mode]]",
+    "fr": "Le mode système de [[device]] !{{est|n'est pas}} [[mode]]",
+    "nl": "Systeemmodus van [[device]] !{{is|is niet}} [[mode]]",
+    "de": "Systemmodus von [[device]] !{{ist|ist nicht}} [[mode]]"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=hvac_system_mode"
+    },
+    {
+      "type": "autocomplete",
+      "name": "mode",
+      "title": {
+        "en": "Mode",
+        "fr": "Mode",
+        "nl": "Modus",
+        "de": "Modus"
+      }
+    }
+  ]
+}
