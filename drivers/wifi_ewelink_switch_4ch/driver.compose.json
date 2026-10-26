@@ -73,14 +73,16 @@
     {
       "type": "group",
       "label": {
-        "en": "eWeLink LAN"
+        "en": "eWeLink LAN",
+        "fr": "eWeLink LAN"
       },
       "children": [
         {
           "id": "device_id",
           "type": "text",
           "label": {
-            "en": "Device ID"
+            "en": "Device ID",
+            "fr": "ID de l'appareil"
           },
           "value": ""
         },
@@ -88,7 +90,8 @@
           "id": "api_key",
           "type": "text",
           "label": {
-            "en": "API Key"
+            "en": "API Key",
+            "fr": "Clé API"
           },
           "value": ""
         },
@@ -96,7 +99,8 @@
           "id": "ip",
           "type": "text",
           "label": {
-            "en": "IP Address"
+            "en": "IP Address",
+            "fr": "Adresse IP"
           },
           "value": ""
         },
@@ -104,7 +108,8 @@
           "id": "encrypt",
           "type": "checkbox",
           "label": {
-            "en": "Encrypted"
+            "en": "Encrypted",
+            "fr": "Chiffré"
           },
           "value": true
         }
