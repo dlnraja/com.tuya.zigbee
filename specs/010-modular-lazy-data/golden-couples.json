@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-26T14:53:26.040Z",
+ "generated": "2026-10-26T15:32:32.013Z",
  "drivers": 414,
  "snapshot": {
   "air_purifier": {
@@ -1035,9 +1035,9 @@
    "pidSha": "a858b6b4f28cd785"
   },
   "lcdtemphumidsensor_3": {
-   "mfr": 11,
+   "mfr": 10,
    "pid": 2,
-   "mfrSha": "f157e0a782d271a2",
+   "mfrSha": "5200eca24a78d451",
    "pidSha": "eb0037885ed202bb"
   },
   "lcdtemphumidsensor_plug_energy": {
@@ -1707,9 +1707,9 @@
    "pidSha": "455c46e8c8549693"
   },
   "smart_breaker": {
-   "mfr": 7,
+   "mfr": 8,
    "pid": 2,
-   "mfrSha": "3470205ba7513afd",
+   "mfrSha": "7796e82fbcd1e1c0",
    "pidSha": "8de83880ca6634fa"
   },
   "smart_button_switch": {
