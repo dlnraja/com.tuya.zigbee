@@ -49,6 +49,9 @@ class WiFiIrRemoteDriver extends TuyaLocalDriver {
   }
 
   async onRepair(session, device) {
+    // P3072: keep the Tuya credential handlers (configure / update_credentials / refresh_key);
+    // the IR wizard only adds its own, none share a name.
+    await super.onRepair(session, device);
     registerIrWizardHandlers(session, {
       homey: this.homey,
       device,

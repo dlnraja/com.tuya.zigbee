@@ -2,6 +2,7 @@
 'use strict';
 
 const { Driver } = require('homey');
+const { registerEweLinkRepairHandlers } = require('../../lib/ewelink-local/eweLinkRepair'); // P3072
 
 class WifiSonoffSmate2Driver extends Driver {
 
@@ -30,6 +31,11 @@ class WifiSonoffSmate2Driver extends Driver {
         await args.device.setCapabilityValue('onoff', !v).catch(() => {});
         return true;
       });
+  }
+
+  // P3072: Repair → change IP / device key, reconnects at once (same handler as EweLinkLocalDriver)
+  async onRepair(session, device) {
+    registerEweLinkRepairHandlers(session, device, { log: (...a) => this.log(...a) });
   }
 }
 

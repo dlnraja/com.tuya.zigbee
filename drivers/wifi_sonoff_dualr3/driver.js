@@ -10,6 +10,11 @@ class WifiSonoffDualr3Driver extends ZigBeeDriver {
     this._flowCardsRegistered = true;
     registerGangOnoffFlowCards(this, 'wifi_sonoff_dualr3', 2);
   }
+
+  // P3072: Repair → change IP / device key, reconnects at once (same handler as EweLinkLocalDriver)
+  async onRepair(session, device) {
+    registerEweLinkRepairHandlers(session, device, { log: (...a) => this.log(...a) });
+  }
 }
 
 module.exports = WifiSonoffDualr3Driver;
