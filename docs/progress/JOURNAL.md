@@ -4,6 +4,7 @@ Human-readable log. Machine state: `data/progress/ledger.json` (read it before w
 
 ## 2026-10-26
 
+- 23:59 P3073 learning loop: design doc (4ca218fbe1), CI signature ledger (3ce0ca02bb), device observations per exact couple, DpScaleLearner (master soak, re-seeds SmartDivisor after restart), upstream cursors (GitHub + Reddit public JSON, low frequency, weekly report never posted).
 - 09:40 Daily resume (routine). Athom bisect state is done, so master pushes are no longer held by it; uploads still follow the P3036 breaker and the staged master plan.
 - Sweep: 25 oldest needs-info items settled (key dailyResume20261026): 18 thread 140352 reports from the 2025 app line about the ZG-204ZV multisensor and the SOS button marked already-fixed (both covered by current drivers), 6 posts without any exact identity marked no-action, Johan #490 fixed. needs-info 509 -> 484. Automatic sweep still advancing (checkpoint updated this morning).
 - P3061 (master d70b0e2c59): Woox R7048 _TZ3000_amqudjr0|TS0201 had been placed on bulb_rgb by the August bulk intake; moved with its case variants to lcdtemphumidsensor beside its twin _TZ3000_rusu2vzb (sources: Z2M woox definition, deCONZ), golden snapshot refreshed, regression test. Full npm test green apart from the expected golden change, now refreshed.
