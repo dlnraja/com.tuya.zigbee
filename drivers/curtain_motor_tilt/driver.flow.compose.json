@@ -174,43 +174,57 @@
       "id": "curtain_calibrate",
       "title": {
         "en": "Calibrate",
-        "fr": "Calibrate"
+        "fr": "Calibrer",
+        "de": "Kalibrieren",
+        "nl": "Kalibreren"
       },
       "args": [],
       "titleFormatted": {
         "en": "Calibrate",
-        "fr": "Calibrate"
+        "fr": "Calibrer",
+        "de": "Kalibrieren",
+        "nl": "Kalibreren"
       }
     },
     {
       "id": "curtain_reset_position",
       "title": {
         "en": "Reset position",
-        "fr": "Reset position"
+        "fr": "Réinitialiser la position",
+        "de": "Position zurücksetzen",
+        "nl": "Positie resetten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Reset position",
-        "fr": "Reset position"
+        "fr": "Réinitialiser la position",
+        "de": "Position zurücksetzen",
+        "nl": "Positie resetten"
       }
     },
     {
       "id": "curtain_hold",
       "title": {
         "en": "Hold and stop",
-        "fr": "Hold and stop"
+        "fr": "Maintenir et arrêter",
+        "de": "Halten und stoppen",
+        "nl": "Vasthouden en stoppen"
       },
       "args": [],
       "titleFormatted": {
         "en": "Hold and stop",
-        "fr": "Hold and stop"
+        "fr": "Maintenir et arrêter",
+        "de": "Halten und stoppen",
+        "nl": "Vasthouden en stoppen"
       }
     },
     {
       "id": "curtain_open_partial",
       "title": {
         "en": "Open partially",
-        "fr": "Open partially"
+        "fr": "Ouvrir partiellement",
+        "de": "Teilweise öffnen",
+        "nl": "Gedeeltelijk openen"
       },
       "args": [
         {
@@ -226,7 +240,9 @@
       ],
       "titleFormatted": {
         "en": "Open partially to [[position]]",
-        "fr": "Open partially to [[position]]"
+        "fr": "Ouvrir partiellement à [[position]]",
+        "de": "Teilweise öffnen auf [[position]]",
+        "nl": "Gedeeltelijk openen tot [[position]]"
       }
     }
   ]
