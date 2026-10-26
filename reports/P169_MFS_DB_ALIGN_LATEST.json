@@ -1,21 +1,77 @@
 {
-  "timestamp": "2026-10-26T09:36:11.879Z",
+  "timestamp": "2026-10-26T17:47:04.210Z",
   "gate": "align-mfs-db-intelligent",
   "apply": false,
   "check": true,
-  "changeCount": 7,
+  "changeCount": 18,
   "skippedCount": 84,
   "highSeverityCount": 0,
   "byAction": {
-    "compose_exclusive": 7
+    "compose_exclusive": 18
   },
   "changes": [
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tze200_kzm5w4iz",
+      "from": "button_emergency_sos",
+      "to": "vibration_sensor"
+    },
     {
       "severity": "medium",
       "action": "compose_exclusive",
       "mfr": "_TZ3000_AMQUDJR0",
       "from": "bulb_rgb",
       "to": "lcdtemphumidsensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_4AIJVCZQ",
+      "from": "climate_sensor",
+      "to": "device_radiator_valve"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_7DEQ70B8",
+      "from": "curtain_motor",
+      "to": "switch_2gang"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_R5KSY7QO",
+      "from": "climate_sensor",
+      "to": "device_radiator_valve"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_YBSQLJJG",
+      "from": "climate_sensor",
+      "to": "device_radiator_valve"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE204_VAWY74YH",
+      "from": "climate_sensor",
+      "to": "smoke_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE284_VAWY74YH",
+      "from": "climate_sensor",
+      "to": "smoke_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3210_09hzmirw",
+      "from": "smoke_sensor",
+      "to": "light_cct_ts0502b"
     },
     {
       "severity": "medium",
@@ -48,9 +104,30 @@
     {
       "severity": "medium",
       "action": "compose_exclusive",
+      "mfr": "_TZE284_6ycgarab",
+      "from": "smoke_sensor3",
+      "to": "smoke_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
       "mfr": "_tze204_ntcy3xu1",
       "from": "socket_power_strip_four_three",
       "to": "smoke_sensor_ts0601_dp"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tze200_vawy74yh",
+      "from": "co_sensor",
+      "to": "smoke_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tze204_lb0fsvba",
+      "from": "lcdtemphumidsensor_3",
+      "to": "smart_breaker"
     },
     {
       "severity": "medium",

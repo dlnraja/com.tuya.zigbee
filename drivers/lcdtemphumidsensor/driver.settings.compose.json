@@ -12,11 +12,9 @@
       "en": "Set a value to compensate a temperature offset.\nRange: -10 - 10, step size 0.1, \ndefault: 0 [°C]"
     },
     "value": 0,
-    "attr": {
-      "min": -10,
-      "max": 10,
-      "step": 0.1
-    }
+    "min": -10,
+    "max": 10,
+    "step": 0.1
   },
   {
     "id": "temperature_decimals",
@@ -55,15 +53,13 @@
       "nl": "Stel een correctiewaarde in om een Luchtvochtigheids verschil te compenseren.\nBereik: -10 - 10, stap grootte 1, \nstandaard: 0 [%]"
     },
     "value": 0,
-    "attr": {
-      "min": -10,
-      "max": 10,
-      "step": 1
-    },
     "units": {
       "en": "%",
       "nl": "%"
-    }
+    },
+    "min": -10,
+    "max": 10,
+    "step": 1
   },
   {
     "id": "humidity_decimals",
@@ -90,12 +86,18 @@
   },
   {
     "type": "group",
-    "label": { "en": "Tuya alarm (0xE002)", "fr": "Alarme Tuya (0xE002)" },
+    "label": {
+      "en": "Tuya alarm (0xE002)",
+      "fr": "Alarme Tuya (0xE002)"
+    },
     "children": [
       {
         "id": "silence_alarm_beep",
         "type": "checkbox",
-        "label": { "en": "Silence alarm beeper", "fr": "Couper le bip d'alarme" },
+        "label": {
+          "en": "Silence alarm beeper",
+          "fr": "Couper le bip d'alarme"
+        },
         "hint": {
           "en": "Writes 0xE002 attr 0xD010=1. Wake the sensor (press button) then save."
         },
@@ -104,52 +106,108 @@
       {
         "id": "temperature_alarm_mode",
         "type": "dropdown",
-        "label": { "en": "Temperature alarm mode", "fr": "Mode d'alarme de température" },
+        "label": {
+          "en": "Temperature alarm mode",
+          "fr": "Mode d'alarme de température"
+        },
         "value": "off",
         "values": [
-          { "id": "off", "label": { "en": "Off" } },
-          { "id": "min", "label": { "en": "Min threshold" } },
-          { "id": "max", "label": { "en": "Max threshold" } }
+          {
+            "id": "off",
+            "label": {
+              "en": "Off"
+            }
+          },
+          {
+            "id": "min",
+            "label": {
+              "en": "Min threshold"
+            }
+          },
+          {
+            "id": "max",
+            "label": {
+              "en": "Max threshold"
+            }
+          }
         ]
       },
       {
         "id": "humidity_alarm_mode",
         "type": "dropdown",
-        "label": { "en": "Humidity alarm mode", "fr": "Mode d'alarme d'humidité" },
+        "label": {
+          "en": "Humidity alarm mode",
+          "fr": "Mode d'alarme d'humidité"
+        },
         "value": "off",
         "values": [
-          { "id": "off", "label": { "en": "Off" } },
-          { "id": "min", "label": { "en": "Min threshold" } },
-          { "id": "max", "label": { "en": "Max threshold" } }
+          {
+            "id": "off",
+            "label": {
+              "en": "Off"
+            }
+          },
+          {
+            "id": "min",
+            "label": {
+              "en": "Min threshold"
+            }
+          },
+          {
+            "id": "max",
+            "label": {
+              "en": "Max threshold"
+            }
+          }
         ]
       },
       {
         "id": "alarm_temperature_max",
         "type": "number",
-        "label": { "en": "Alarm temperature max (°C)", "fr": "Température d'alarme max. (°C)" },
+        "label": {
+          "en": "Alarm temperature max (°C)",
+          "fr": "Température d'alarme max. (°C)"
+        },
         "value": 40,
-        "attr": { "min": -40, "max": 80, "step": 1 }
+        "min": -40,
+        "max": 80,
+        "step": 1
       },
       {
         "id": "alarm_temperature_min",
         "type": "number",
-        "label": { "en": "Alarm temperature min (°C)", "fr": "Température d'alarme min. (°C)" },
+        "label": {
+          "en": "Alarm temperature min (°C)",
+          "fr": "Température d'alarme min. (°C)"
+        },
         "value": 10,
-        "attr": { "min": -40, "max": 80, "step": 1 }
+        "min": -40,
+        "max": 80,
+        "step": 1
       },
       {
         "id": "alarm_humidity_max",
         "type": "number",
-        "label": { "en": "Alarm humidity max (%)", "fr": "Humidité d'alarme max. (%)" },
+        "label": {
+          "en": "Alarm humidity max (%)",
+          "fr": "Humidité d'alarme max. (%)"
+        },
         "value": 90,
-        "attr": { "min": 0, "max": 100, "step": 1 }
+        "min": 0,
+        "max": 100,
+        "step": 1
       },
       {
         "id": "alarm_humidity_min",
         "type": "number",
-        "label": { "en": "Alarm humidity min (%)", "fr": "Humidité d'alarme min. (%)" },
+        "label": {
+          "en": "Alarm humidity min (%)",
+          "fr": "Humidité d'alarme min. (%)"
+        },
         "value": 20,
-        "attr": { "min": 0, "max": 100, "step": 1 }
+        "min": 0,
+        "max": 100,
+        "step": 1
       }
     ]
   }

@@ -10,11 +10,9 @@
       "en": "Set a value to compensate if you experience that the Metered Power is not correct.\nRange: 0.8 - 1.2, step size 0.1, \ndefault: 1"
     },
     "value": 1,
-    "attr": {
-      "min": 0.8,
-      "max": 1.2,
-      "step": 0.1
-    }
+    "min": 0.8,
+    "max": 1.2,
+    "step": 0.1
   },
   {
     "id": "measure_offset",
@@ -27,11 +25,9 @@
       "en": "Set a value to compensate if you experience that the Measured Power is not correct.\nRange: 0.8 - 1.2, step size 0.1, \ndefault: 1"
     },
     "value": 1,
-    "attr": {
-      "min": 0.8,
-      "max": 1.2,
-      "step": 0.1
-    }
+    "min": 0.8,
+    "max": 1.2,
+    "step": 0.1
   },
   {
     "id": "minReportPower",
@@ -44,11 +40,9 @@
       "en": "Min interval before a report is sent to Homey (s)"
     },
     "value": 60,
-    "attr": {
-      "step": 1,
-      "min": 10,
-      "max": 86400
-    }
+    "min": 10,
+    "max": 86400,
+    "step": 1
   },
   {
     "id": "minReportCurrent",
@@ -61,11 +55,9 @@
       "en": "Min interval before a report is sent to Homey (s)"
     },
     "value": 60,
-    "attr": {
-      "step": 1,
-      "min": 10,
-      "max": 86400
-    }
+    "min": 10,
+    "max": 86400,
+    "step": 1
   },
   {
     "id": "minReportVoltage",
@@ -78,11 +70,9 @@
       "en": "Min interval before a report is sent to Homey (s)"
     },
     "value": 60,
-    "attr": {
-      "step": 1,
-      "min": 10,
-      "max": 86400
-    }
+    "min": 10,
+    "max": 86400,
+    "step": 1
   },
   {
     "type": "group",

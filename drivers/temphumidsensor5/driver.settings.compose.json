@@ -15,11 +15,9 @@
       "sv": "Ange ett värde för att korrigera felaktig temperatur.\nIntervall: -10 - 10, steg om 0.1, \nstandard: 0 [°C]"
     },
     "value": 0,
-    "attr": {
-      "min": -10,
-      "max": 10,
-      "step": 0.1
-    }
+    "min": -10,
+    "max": 10,
+    "step": 0.1
   },
   {
     "id": "humidity_offset",
@@ -39,11 +37,9 @@
       "sv": "Ange ett värde för att korrigera felaktig fuktighet.\nIntervall: -10 - 10, steg om 1, \nstandard: 0 [%]"
     },
     "value": 0,
-    "attr": {
-      "min": -10,
-      "max": 10,
-      "step": 1
-    }
+    "min": -10,
+    "max": 10,
+    "step": 1
   },
   {
     "$extends": [
