@@ -1,3 +1,11 @@
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: Checks the CI files themselves: actionlint, YAML, hygiene, report shape and lint ratchets;
+#   fails only on new debt.
+# Ideas from (thank you): GitHub Actions docs; rhysd (actionlint); the Athom homey CLI docs for the validate
+#   levels.
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
+#   posting stays off or ledger-gated.
+# <<< about
 # WHY(P3025, 25/10/2026 Paris): the workflow estate (85 files) had no gate of its own outside the publish
 # pipelines, so broken YAML, Node 20 actions, unpinned actions or a new raw `git push` (non-fast-forward
 # races) only showed up when a bot run failed. This runs on every change to CI files and weekly, and fails
@@ -18,6 +26,7 @@ on:
       # P3069 report helper + ratchet
       - 'scripts/lib/report-writer.js'
       - '.github/report-ratchet-baseline.json'
+      - '.github/workflow-about.json'
       - 'CREDITS.md'
       - 'scripts/ci/safe-auto-commit.js'
       # P3025 data/manifest/lint gates
@@ -109,6 +118,7 @@ jobs:
       - name: Report ratchet (about headers, no pasted third-party text, report shape — may only shrink)
         id: report_ratchet
         run: |
+          if [ -f scripts/ci/workflow-about.js ]; then node scripts/ci/workflow-about.js --check; fi
           if [ -f scripts/ci/report-structure-ratchet.js ]; then node scripts/ci/report-structure-ratchet.js
           else echo "report ratchet absent on this branch — skipped"; fi
 
@@ -132,7 +142,7 @@ jobs:
         run: |
           git config --global user.name ci; git config --global user.email ci@localhost
           node --test test/ci/p3025-git-push-retry.test.js test/ci/p3025-push-with-retry.test.js test/ci/p3025-workflow-hygiene-gate.test.js test/ci/p3025-hook-deps-check.test.js test/ci/p3025-appjson-compose-drift.test.js test/ci/p3025-lint-ratchet.test.js
-          if [ -f test/critical/p3069-report-writer.test.js ]; then node --test test/critical/p3069-report-writer.test.js test/critical/p3069-report-ratchet.test.js; fi
+          if [ -f test/critical/p3069-report-writer.test.js ]; then node --test test/critical/p3069-report-writer.test.js test/critical/p3069-report-ratchet.test.js test/critical/p3069-workflow-about.test.js; fi
 
       - name: Short summary (shared report helper)
         if: always()

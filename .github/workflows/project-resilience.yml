@@ -1,3 +1,10 @@
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: Daily inventory of features and past bugs, sorted by the biggest Homey gaps first.
+# Ideas from (thank you): Renovate and Dependabot for the merge-when-green pattern; the actions/stale and
+#   actions/labeler maintainers.
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
+#   posting stays off or ledger-gated.
+# <<< about
 # 🛡️ Project Resilience + Feature/Bug Inventory (P2222–P2225)
 # Inventory features + historical bugs → critical-first Homey-gap stacks → full audit.
 # SHADOW forum only. Never POST. Both tracks can run (App ID untouched).

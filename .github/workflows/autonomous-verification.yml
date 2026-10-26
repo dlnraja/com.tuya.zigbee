@@ -1,3 +1,11 @@
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: Every six hours: checks red/green of every workflow and writes to our own digest issue only
+#   when the state changes.
+# Ideas from (thank you): GitHub Actions docs; rhysd (actionlint); the Athom homey CLI docs for the validate
+#   levels.
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
+#   posting stays off or ledger-gated.
+# <<< about
 # Autonomous Verification (P37)
 # Triggers: cron: 15 */6 * * * + workflow_dispatch | Secrets: GITHUB_TOKEN only
 # + ci-health job (free replacement for the Grok "Homey CI health" routine): red/green of every

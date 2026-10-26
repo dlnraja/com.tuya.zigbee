@@ -1,3 +1,10 @@
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: Blocks PRs with bad versions, duplicate manufacturer/product pairs or broken manifests.
+# Ideas from (thank you): GitHub Actions docs; rhysd (actionlint); the Athom homey CLI docs for the validate
+#   levels.
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
+#   posting stays off or ledger-gated.
+# <<< about
 # 🚦 PR Gate (v9.0.584+)
 # Triggers: pull_request sur master et stable-v5 | Secrets: GITHUB_TOKEN only
 # Bloque les PRs qui: versions invalides/désynchronisées, conflits

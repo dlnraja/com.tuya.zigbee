@@ -1,3 +1,10 @@
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: Analyses diagnostic mails four times a day; works with local rules, AI only within free quota.
+# Ideas from (thank you): Homey users who send diagnostic reports by mail; the Homey developer docs on app
+#   diagnostics.
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
+#   posting stays off or ledger-gated.
+# <<< about
 # Gmail Diagnostics Auto-Analysis
 # Triggers: cron: 0 0,6,12,18 * * * + workflow_dispatch | Secrets: CEREBRAS_API_KEY,GH_PAT,GMAIL_APP_PASSWORD,GMAIL_CLIENT_ID,GMAIL_CLIENT_SECRET,GMAIL_EMAIL,GMAIL_REFRESH_TOKEN,GOOGLE_API_KEY,HF_TOKEN,HOMEY_PAT,HOMEY_PAT_API,KIMI_API_KEY,MISTRAL_API_KEY,NVIDIA_API_KEY,OPENROUTER_API_KEY,TOGETHER_API_KEY
 # Doc header added 2026-07-29 (workflows genealogy enrichment).

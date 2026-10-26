@@ -1,3 +1,11 @@
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: Twice a week: local-LAN data from TinyTuya, tuya-local and Homey peers for our Wi-Fi drivers.
+# Ideas from (thank you): Koen Kanters and the zigbee-herdsman-converters / Zigbee2MQTT contributors; the
+#   zigpy / ZHA device handler authors; Blakadder's Zigbee device database; JohanBendz's original Tuya Zigbee
+#   app (read-only reference); jasonacox (TinyTuya) and make-all (tuya-local).
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
+#   posting stays off or ledger-gated.
+# <<< about
 # P2658 — OSS LAN source enrich (TinyTuya / HA tuya-local / Homey peers)
 # Feeds complementary scanners + peer probe into data/ for algos. Never forum POST.
 name: OSS LAN Source Enrich

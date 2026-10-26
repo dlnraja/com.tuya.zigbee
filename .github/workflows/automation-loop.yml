@@ -1,3 +1,11 @@
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: Daily AI-free upkeep: journal repair, CI failure collection and a watchdog that opens at most
+#   one labelled issue per run.
+# Ideas from (thank you): Renovate and Dependabot for the merge-when-green pattern; the actions/stale and
+#   actions/labeler maintainers.
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
+#   posting stays off or ledger-gated.
+# <<< about
 # P3048 — AI-free automation loop (docs/knowledge/AUTOMATION_COVERAGE.md).
 # Daily, deterministic, free (GITHUB_TOKEN only, Node built-ins, no AI, no paid service):
 #   self-maintenance (journal repair/rotation, pointer self-repair, bounded caches, learned transient patterns)

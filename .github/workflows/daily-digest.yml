@@ -1,3 +1,11 @@
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: Weekday digests (Homey, Labs, forum watch, inspiration) as links and our own summaries.
+#   Report-only: no commit, no publish.
+# Ideas from (thank you): the Homey Community forum members who share fingerprints and diagnostics (read-only,
+#   never quoted); Discourse for its public JSON/RSS endpoints.
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
+#   posting stays off or ledger-gated.
+# <<< about
 # 🤖 Daily Digest (free replacement for the Grok Bot "Homey digest", "Labs digest" and "forum scan" routines)
 # Triggers: cron weekdays (Paris 08:16 Homey, 08:49 Labs, 10:23 Forum watch, 11:41 Inspiration JohanBendz —
 #   DST-safe via tz-guard) + workflow_dispatch. REPORT-ONLY: never commits, never touches drivers, never publishes.

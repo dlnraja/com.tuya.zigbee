@@ -1,3 +1,10 @@
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: Reopens a closed issue when a real person comments on it, so the daily jobs look at it again.
+# Ideas from (thank you): Renovate and Dependabot for the merge-when-green pattern; the actions/stale and
+#   actions/labeler maintainers.
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
+#   posting stays off or ledger-gated.
+# <<< about
 # Universal Tuya Zigbee - Auto-Reopen on User Comment
 # When a real user comments on a closed issue or PR, reopen it automatically
 # so that daily/nightly/upstream workflows re-process it.

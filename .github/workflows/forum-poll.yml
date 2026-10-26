@@ -1,3 +1,10 @@
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: Every four hours: scans the forum thread, PMs and screenshots for device data. Never posts.
+# Ideas from (thank you): the Homey Community forum members who share fingerprints and diagnostics (read-only,
+#   never quoted); Discourse for its public JSON/RSS endpoints.
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
+#   posting stays off or ledger-gated.
+# <<< about
 # 🌍 Forum Poll (P69)
 # Triggers: cron: 15 2,6,10,14,18,22 * * * + workflow_dispatch
 # Secrets: GITHUB_TOKEN; HOMEY_EMAIL+HOMEY_PASSWORD (or DISCOURSE_API_KEY) for PM harvest only
