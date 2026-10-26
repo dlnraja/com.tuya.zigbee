@@ -57,6 +57,13 @@ jobs:
       - name: 🚦 PR gate (version + Sacred Couple)
         run: node tools/ci/pr-gate.js --branch=${{ github.base_ref }}
 
+      - name: 📐 P2964 Homey SDK v3 rules (blocking = Athom publish rules; verified = report)
+        run: |
+          node tools/ci/homey-sdk-rules.js --compose --json --report-only > homey-sdk-rules-report.json
+          node tools/ci/homey-sdk-rules.js --compose
+          node tools/ci/homey-sdk-rules-doc.js --check
+          npx mocha test/critical/p2964-homey-sdk-rules.test.js --timeout 10000
+
       - name: 🔍 JS syntax audit (all repo files)
         run: node tools/ci/js-syntax-audit.js
 
