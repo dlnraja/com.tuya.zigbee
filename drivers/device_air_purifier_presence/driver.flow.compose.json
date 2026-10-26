@@ -328,6 +328,10 @@
         {
           "name": "lux",
           "type": "number",
+          "title": {
+            "en": "Lux",
+            "fr": "Lux"
+          },
           "min": 0,
           "max": 10000,
           "step": 10,
@@ -355,6 +359,10 @@
         {
           "name": "distance",
           "type": "number",
+          "title": {
+            "en": "Distance",
+            "fr": "Distance"
+          },
           "min": 0,
           "max": 800,
           "step": 10,

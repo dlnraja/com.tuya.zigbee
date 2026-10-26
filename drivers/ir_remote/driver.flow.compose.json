@@ -10,6 +10,10 @@
         {
           "name": "command",
           "type": "text",
+          "title": {
+            "en": "Command",
+            "fr": "Commande"
+          },
           "placeholder": {
             "en": "Power, Volume Up, OK...",
             "fr": "Alimentation, Volume +, OK..."
@@ -111,6 +115,10 @@
         {
           "name": "name",
           "type": "text",
+          "title": {
+            "en": "Name",
+            "fr": "Nom"
+          },
           "placeholder": {
             "en": "Power On"
           }
@@ -127,6 +135,10 @@
         {
           "name": "code",
           "type": "text",
+          "title": {
+            "en": "Code",
+            "fr": "Code"
+          },
           "placeholder": {
             "en": "Pronto / HEX / Broadlink / Zosung"
           }
@@ -196,6 +208,10 @@
         {
           "name": "name",
           "type": "text",
+          "title": {
+            "en": "Name",
+            "fr": "Nom"
+          },
           "placeholder": {
             "en": "Power"
           }
@@ -203,6 +219,10 @@
         {
           "name": "timeout_s",
           "type": "number",
+          "title": {
+            "en": "Timeout (s)",
+            "fr": "Délai max (s)"
+          },
           "placeholder": {
             "en": "30"
           },

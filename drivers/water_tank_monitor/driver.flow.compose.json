@@ -112,6 +112,10 @@
         {
           "name": "level",
           "type": "number",
+          "title": {
+            "en": "Level",
+            "fr": "Niveau"
+          },
           "min": 0,
           "max": 100,
           "step": 5,

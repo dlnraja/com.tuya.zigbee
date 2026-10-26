@@ -190,6 +190,10 @@
         {
           "name": "ppm",
           "type": "number",
+          "title": {
+            "en": "ppm",
+            "fr": "ppm"
+          },
           "min": 0,
           "max": 500,
           "step": 10,
@@ -217,6 +221,10 @@
         {
           "name": "threshold",
           "type": "number",
+          "title": {
+            "en": "Threshold",
+            "fr": "Seuil"
+          },
           "min": 0,
           "max": 100,
           "step": 5,
