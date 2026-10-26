@@ -11,11 +11,9 @@
       "it": "Imposta un valore per compensare lo scostamento della temperatura.\nRange: -10 - 10, step ze 0.1, \ndefault: 0 [°C]"
     },
     "value": 0,
-    "attr": {
-      "min": -10,
-      "max": 10,
-      "step": 0.1
-    }
+    "min": -10,
+    "max": 10,
+    "step": 0.1
   },
   {
     "id": "temperature_decimals",
@@ -56,15 +54,13 @@
       "it": "Imposta un valore per compensare lo scostamento dell'umidità.\nRange: -10 - 10, step size 1, \ndefault: 0 [%]"
     },
     "value": 0,
-    "attr": {
-      "min": -10,
-      "max": 10,
-      "step": 1
-    },
     "units": {
       "en": "%",
       "nl": "%"
-    }
+    },
+    "min": -10,
+    "max": 10,
+    "step": 1
   },
   {
     "id": "humidity_decimals",

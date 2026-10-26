@@ -54,29 +54,25 @@
           "id": "minBrightness",
           "type": "number",
           "label": {
-            "en": "Minimum Brightness (%)",
-            "de": "Minimale Helligkeit"
+            "en": "Minimum Brightness (1-255)",
+            "de": "Minimale Helligkeit (1-255)"
           },
           "value": 1,
-          "attr": {
-            "step": 1,
-            "min": 1,
-            "max": 255
-          }
+          "min": 1,
+          "max": 255,
+          "step": 1
         },
         {
           "id": "maxBrightness",
           "type": "number",
           "label": {
-            "en": "Maximum Brightness (%)",
-            "de": "Maximale Helligkeit"
+            "en": "Maximum Brightness (1-255)",
+            "de": "Maximale Helligkeit (1-255)"
           },
           "value": 255,
-          "attr": {
-            "step": 1,
-            "min": 1,
-            "max": 255
-          }
+          "min": 1,
+          "max": 255,
+          "step": 1
         }
       ]
     },

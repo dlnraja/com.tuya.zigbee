@@ -9,11 +9,9 @@
       "en": "This setting determines the threshold before a battery alarm is given."
     },
     "value": 20,
-    "attr": {
-      "step": 1,
-      "min": 10,
-      "max": 90
-    }
+    "min": 10,
+    "max": 90,
+    "step": 1
   },
   {
     "$extends": [
