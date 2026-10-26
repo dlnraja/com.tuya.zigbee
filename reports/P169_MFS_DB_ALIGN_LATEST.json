@@ -1,13 +1,58 @@
 {
-  "timestamp": "2026-10-25T09:30:25.235Z",
+  "timestamp": "2026-10-25T16:39:43.308Z",
   "gate": "align-mfs-db-intelligent",
   "apply": false,
   "check": true,
-  "changeCount": 0,
-  "skippedCount": 83,
+  "changeCount": 6,
+  "skippedCount": 84,
   "highSeverityCount": 0,
-  "byAction": {},
-  "changes": [],
+  "byAction": {
+    "compose_exclusive": 6
+  },
+  "changes": [
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_CXAKECFO",
+      "from": "sensor_climate_contact",
+      "to": "device_radiator_valve"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_t5p1vj8r",
+      "from": "switch_wireless",
+      "to": "smoke_sensor_ts0601_dp"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_uebojraa",
+      "from": "switch_wireless",
+      "to": "smoke_sensor_ts0601_dp"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_dq1mfjug",
+      "from": "switch_wireless",
+      "to": "smoke_sensor_ts0601_dp"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tze204_ntcy3xu1",
+      "from": "socket_power_strip_four_three",
+      "to": "smoke_sensor_ts0601_dp"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "piriv01",
+      "from": "motion_sensor_switch",
+      "to": "motion_sensor_excellux_zg104plv"
+    }
+  ],
   "skipped": [
     {
       "reason": "registry_driver_missing",
