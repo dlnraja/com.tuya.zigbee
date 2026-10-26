@@ -135,7 +135,7 @@ jobs:
             fi
             if ! git diff --quiet -- drivers; then
               echo "::error::prune applied compose strips not in commit — review and push"
-              git diff --stat -- drivers | head -40
+              git diff --stat -- drivers | sed -n "1,40p"  # P3068: no SIGPIPE under pipefail
               exit 1
             fi
           fi
