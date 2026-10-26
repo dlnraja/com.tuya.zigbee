@@ -1,7 +1,8 @@
 {
   "id": "lcdtemphumidluxsensor",
   "name": {
-    "en": "LCD Temperature, Humidity and Luminance Sensor"
+    "en": "LCD Temperature, Humidity and Luminance Sensor",
+    "fr": "Capteur de température, d'humidité et de luminosité LCD"
   },
   "class": "sensor",
   "platforms": [

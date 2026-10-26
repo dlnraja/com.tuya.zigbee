@@ -1,7 +1,8 @@
 {
   "id": "rgb_ceiling_led_light",
   "name": {
-    "en": "RGB Ceiling Led Light"
+    "en": "RGB Ceiling Led Light",
+    "fr": "Plafonnier LED RGB"
   },
   "$extends": [
     "light_color_ambiance"

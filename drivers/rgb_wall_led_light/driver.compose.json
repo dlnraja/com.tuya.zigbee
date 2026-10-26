@@ -1,7 +1,8 @@
 {
   "id": "rgb_wall_led_light",
   "name": {
-    "en": "Livarno Lux Smart LED Wall Light"
+    "en": "Livarno Lux Smart LED Wall Light",
+    "fr": "Applique murale LED connectée Livarno Lux"
   },
   "$extends": [
     "light_color_ambiance"

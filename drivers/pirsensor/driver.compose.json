@@ -1,7 +1,8 @@
 {
   "id": "pirsensor",
   "name": {
-    "en": "PIR Sensor"
+    "en": "PIR Sensor",
+    "fr": "Capteur PIR"
   },
   "class": "sensor",
   "platforms": [

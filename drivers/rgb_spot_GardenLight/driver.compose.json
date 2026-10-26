@@ -1,7 +1,8 @@
 {
   "id": "rgb_spot_GardenLight",
   "name": {
-    "en": "RGB Spot Garden light"
+    "en": "RGB Spot Garden light",
+    "fr": "Spot de jardin RGB"
   },
   "$extends": [
     "light_color_ambiance"
