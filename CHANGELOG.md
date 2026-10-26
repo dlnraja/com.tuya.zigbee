@@ -13,6 +13,9 @@
 
 ### Fixed (2026-10-26, P3066 parked datapoints + catalogue doubt, master soak)
 - `_TZE284_6ycgarab` (Tuya dual smoke + CO alarm): the fingerprint hint now names `smoke_sensor`, the driver that pairs it, instead of `smoke_detector_advanced`. Pairing is unchanged.
+- EcoDim ED-10032 CCT filament bulb (`_TZ3210_09hzmirw`): no longer offered by the smoke sensor driver; it pairs as a CCT light (`light_cct_ts0502b`). Bulbs already paired on the smoke driver stay paired; re-pair only to get light controls.
+- `_TZE284_6ycgarab` (smoke + CO alarm, TS0601 in Zigbee2MQTT, ZHA and Tasmota sources): now listed in one driver only (`smoke_sensor`); the extra entry in `smoke_sensor3` came from a TS0205 combination no real unit reports. Devices already paired stay where they are.
+- Developer tests: the flow-card id check no longer trusts a leftover build manifest from another branch.
 - **Tuya DIN meter `_TZE200/_TZE204_lsanae15` (Z2M TS0601_din_2):** DP1 is now read as energy (/100 kWh), not as the relay; voltage, current and power come from the packed DP6; the relay is DP16 (read and write).
 - **BAC-001 fan-coil thermostat `_TZE204_hpkusvom`:** starts on the fan-coil path (cool/heat/fan only, fan speed) instead of the floor-heating path; no extra write.
 - **Dimmer knob with two lights `_TZE200/_TZE284_tgeqdjgk`:** on/off and brightness use the knob's own datapoints (102/103); colour temperature (DP107) appears after the first report and can be set.
