@@ -1,0 +1,20 @@
+{
+  "id": "presence_sensor_radar_zone3_presence",
+  "title": {
+    "en": "Zone 3 presence detected",
+    "fr": "Présence détectée en zone 3",
+    "nl": "Aanwezigheid gedetecteerd in zone 3",
+    "de": "Anwesenheit in Zone 3 erkannt"
+  },
+  "hint": {
+    "en": "Triggers when presence is detected in Zone 3 (far field)",
+    "fr": "Se déclenche quand une présence est détectée en zone 3 (champ lointain)"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=presence_sensor_radar|presence_sensor_radar_ts0601"
+    }
+  ]
+}

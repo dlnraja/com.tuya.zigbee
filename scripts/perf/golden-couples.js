@@ -42,6 +42,24 @@ function snapshot() {
 }
 
 const now = snapshot();
+
+// P3057: a combo-budget sibling (lib/utils/DriverFamily.js) carries part of its parent's couples
+// (same device code, migration-safe parent id). The "no driver lost couples" check compares the
+// family union against the parent's golden entry, so a split never hides a real loss.
+function familyView(snap) {
+  let SIBLING_TO_PARENT = {};
+  try { ({ SIBLING_TO_PARENT } = require(path.join(ROOT, 'lib', 'utils', 'DriverFamily.js'))); } catch { /* optional */ }
+  const out = { ...snap };
+  for (const [sib, parent] of Object.entries(SIBLING_TO_PARENT)) {
+    if (!out[parent] || !snap[sib]) {
+      continue;
+    }
+    const mfrs = [...new Set([...out[parent].mfrs, ...snap[sib].mfrs])].sort();
+    const pids = [...new Set([...out[parent].pids, ...snap[sib].pids])].sort();
+    out[parent] = { mfr: mfrs.length, pid: pids.length, mfrSha: sha(mfrs), pidSha: sha(pids), mfrs, pids };
+  }
+  return out;
+}
 const slim = (s) => Object.fromEntries(Object.entries(s).map(([k, v]) =>
   [k, { mfr: v.mfr, pid: v.pid, mfrSha: v.mfrSha, pidSha: v.pidSha }]));
 
@@ -53,8 +71,9 @@ if (mode === 'write') {
 } else if (mode === 'check') {
   const old = JSON.parse(fs.readFileSync(FILE, 'utf8')).snapshot;
   const lost = []; const grown = []; const changed = [];
+  const fam = familyView(now);
   for (const [d, o] of Object.entries(old)) {
-    const n = now[d];
+    const n = fam[d];
     if (!n) { lost.push(`${d}: driver missing`); continue; }
     if (n.mfr < o.mfr || n.pid < o.pid) lost.push(`${d}: mfr ${o.mfr}->${n.mfr} pid ${o.pid}->${n.pid}`);
     else if (n.mfr > o.mfr || n.pid > o.pid) grown.push(d);

@@ -68,7 +68,8 @@ describe('P2261 silent multi-thread enrich gate', function () {
   });
 
   it('iHseno 1lvln0x6 sibling on presence_sensor_radar with debczeci', () => {
-    const compose = JSON.parse(read('drivers/presence_sensor_radar/driver.compose.json'));
+    // P3057: radar family (parent + TS0601 sibling)
+    const compose = require('../helpers/radar-family').radarFamilyCompose();
     assert.ok(compose.zigbee.manufacturerName.some((m) => /debczeci/i.test(m)));
     assert.ok(compose.zigbee.manufacturerName.some((m) => /1lvln0x6/i.test(m)));
     assert.ok(!compose.zigbee.manufacturerName.some((m) => /_TZ3000_1lvln0x6/i.test(m)), 'do not invent TZ3000 pid sibling');

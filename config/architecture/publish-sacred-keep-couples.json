@@ -1889,8 +1889,8 @@
     {
       "mfr": "_TZE204_ijxvkhd0",
       "pid": "TS0601",
-      "driverId": "presence_sensor_radar",
-      "note": "P3037 2026-10-25 user diag GitHub mail 2026-10-23 (ledger diag:de39aea8f8283519); in compose but dropped by compaction"
+      "driverId": "presence_sensor_radar_ts0601",
+      "note": "P3037 2026-10-25 user diag GitHub mail 2026-10-23 (ledger diag:de39aea8f8283519); in compose but dropped by compaction | P3057: TS0601 family split to presence_sensor_radar_ts0601 (same runtime)"
     },
     {
       "mfr": "_TZE284_awepdiwi",

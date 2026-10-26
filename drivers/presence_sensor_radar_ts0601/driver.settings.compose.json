@@ -1,0 +1,211 @@
+[
+  {
+    "id": "radar_sensitivity",
+    "type": "number",
+    "label": { "en": "Radar sensitivity", "fr": "Sensibilité radar", "nl": "Radargevoeligheid" },
+    "hint": {
+      "en": "0–9. Default 7–9 often causes ghost presence (fan/towel/micro-move never clears). Bathroom: try 2–4.",
+      "fr": "0–9. Défaut 7–9 → fausses présences (VMC/serviette). Salle de bain: essayer 2–4.",
+      "nl": "0–9. Standaard 7–9 geeft vaak ghost presence. Badkamer: probeer 2–4."
+    },
+    "value": 7,
+    "min": 0,
+    "max": 9
+  },
+  {
+    "id": "detection_range",
+    "type": "number",
+    "label": { "en": "Detection range", "fr": "Portée de détection", "nl": "Detectiebereik" },
+    "hint": {
+      "en": "Meters. Avoid too high (sees through drywall into hallway). 24G MTG075/MTG235: avoid below ~2.5m (unstable).",
+      "fr": "Mètres. Trop haut = voit à travers le placo/couloir. 24G MTG075/MTG235: éviter <~2,5 m (instable).",
+      "nl": "Meters. Te hoog = door muren heen. 24G MTG075/MTG235: liever niet onder ~2,5 m."
+    },
+    "value": 6,
+    "min": 0,
+    "max": 8,
+    "units": "m"
+  },
+  {
+    "id": "departure_delay",
+    "type": "number",
+    "label": { "en": "Departure delay", "fr": "Délai de départ", "nl": "Vertrekvertraging" },
+    "hint": {
+      "en": "Seconds after leave before clear. Too high looks frozen. Ghost presence: try 5–15s for test, then 15–45s. Also lower Radar sensitivity.",
+      "fr": "Secondes après départ avant clear. Trop haut = gelé. Fausse présence: tester 5–15s puis 15–45s. Baisser aussi la sensibilité radar.",
+      "nl": "Seconden na vertrek. Te hoog lijkt bevroren. Ghost presence: test 5–15s, daarna 15–45s. Verlaag ook radargevoeligheid."
+    },
+    "value": 30,
+    "min": 0,
+    "max": 3600,
+    "units": "s"
+  },
+  {
+    "id": "entry_sensitivity",
+    "type": "number",
+    "label": { "en": "Entry sensitivity", "fr": "Sensibilité d'entrée", "nl": "Toegangsgevoeligheid" },
+    "value": 7,
+    "min": 0,
+    "max": 9
+  },
+  {
+    "id": "illuminance_threshold",
+    "type": "number",
+    "label": { "en": "Illuminance threshold", "fr": "Seuil d'éclairement", "nl": "Verlichtingsdrempel" },
+    "value": 50,
+    "min": 0,
+    "max": 420,
+    "units": "lux"
+  },
+  {
+    "id": "sensor_mode",
+    "type": "dropdown",
+    "label": { "en": "Sensor mode", "fr": "Mode capteur", "nl": "Sensormodus" },
+    "hint": {
+      "en": "On = normal radar. Occupied forces firmware presence ON forever — with Smart presence under Occupied, Homey still tracks real presence from distance/lux. Unoccupied forces clear. Bathroom freeze with lux/distance still moving is usually sticky presence (VMC/fan) or long Departure delay — not the Homey Curtain type bug.",
+      "fr": "Marche = radar normal. Occupé force la présence firmware à ON — avec Présence smart sous Occupé, Homey suit encore la vraie présence via distance/lux. Inoccupé force l’absence. Gel salle de bain avec lux/distance qui bougent = souvent présence collante (VMC) ou délai de départ trop long — pas le bug Homey « Rideau ».",
+      "nl": "Aan = normale radar. Bezet forceert firmware-aanwezigheid permanent — met Slimme aanwezigheid onder Bezet volgt Homey nog echte aanwezigheid via afstand/lux. Onbezet forceert afwezig. Badkamer-freeze met lux/afstand die nog beweegt is meestal sticky presence (ventilator) of te lange vertrekvertraging — niet de Homey Gordijn-typebug."
+    },
+    "value": "on",
+    "values": [
+      { "id": "on", "label": { "en": "On (normal)", "fr": "Marche (normal)", "nl": "Aan (normaal)" } },
+      { "id": "off", "label": { "en": "Off", "fr": "Arrêt", "nl": "Uit" } },
+      { "id": "occupied", "label": { "en": "Occupied (firmware force — smart overlay OK)", "fr": "Occupé (force firmware — overlay smart OK)", "nl": "Bezet (firmware-force — slimme overlay OK)" } },
+      { "id": "unoccupied", "label": { "en": "Unoccupied (force clear)", "fr": "Inoccupé (force absent)", "nl": "Onbezet (forceert afwezig)" } }
+    ]
+  },
+  {
+    "id": "smart_presence_while_occupied",
+    "type": "checkbox",
+    "label": {
+      "en": "Smart presence while Occupied",
+      "fr": "Présence smart sous Occupé",
+      "nl": "Slimme aanwezigheid bij Bezet"
+    },
+    "hint": {
+      "en": "When Sensor mode is Occupied, ignore forced DP1 and drive Homey presence from distance/lux. Distance, lux, relay and settings keep updating. Recommended ON.",
+      "fr": "Si le mode est Occupé, ignore DP1 forcé et pilote la présence Homey via distance/lux. Distance, lux, relais et réglages continuent. Recommandé ON.",
+      "nl": "Bij sensormodus Bezet: negeer geforceerde DP1 en stuur Homey-aanwezigheid via afstand/lux. Aanbevolen AAN."
+    },
+    "value": true
+  },
+  {
+    "id": "auto_unlock_occupied_on_empty",
+    "type": "checkbox",
+    "label": {
+      "en": "Auto-unlock Occupied when room empty",
+      "fr": "Déverrouiller Occupé si pièce vide",
+      "nl": "Bezet automatisch ontgrendelen bij lege kamer"
+    },
+    "hint": {
+      "en": "Write Sensor mode back to On after soft-clear (empty room). Off = keep Occupied firmware mode and rely on smart overlay.",
+      "fr": "Repasse le mode capteur sur Marche après soft-clear (pièce vide). Off = garde Occupé et s’appuie sur l’overlay smart.",
+      "nl": "Zet sensormodus terug naar Aan na soft-clear. Uit = houd Bezet en gebruik slimme overlay."
+    },
+    "value": false
+  },
+  {
+    "id": "homey_curtain_flip_help",
+    "type": "label",
+    "label": {
+      "en": "If Homey shows Curtain/Rideau: update Test (≥9.0.995), restart the app 2–3 min. If still Curtain → remove device and re-pair as Presence Sensor Radar. Separate from sticky bathroom presence (VMC / Departure delay).",
+      "fr": "Si Homey affiche Rideau: Test (≥9.0.995), redémarrer l’app 2–3 min. Si toujours Rideau → supprimer et ré-associer en Presence Sensor Radar. Distinct du gel salle de bain (VMC / délai de départ).",
+      "nl": "Als Homey Gordijn toont: Test (≥9.0.995), app 2–3 min herstarten. Nog steeds Gordijn → verwijderen en opnieuw koppelen als Presence Sensor Radar. Los van sticky badkamer-presence (ventilator / vertrekvertraging)."
+    }
+  },
+  {
+    "id": "mtg_mcu_freeze_help",
+    "type": "label",
+    "label": {
+      "en": "If lux/distance still update but presence never changes: try unplug mains 2–3 min (MCU partial freeze). Also lower sensitivity 2–4 — default 7–9 often never clears in bathrooms.",
+      "fr": "Si lux/distance bougent mais la présence ne change plus: couper le 220V 2–3 min (MCU partiellement figé). Baisser aussi sensibilité 2–4 — défaut 7–9 ne clear souvent jamais en salle de bain.",
+      "nl": "Als lux/afstand nog updaten maar presence vastzit: 2–3 min stekker eruit (MCU freeze). Verlaag ook gevoeligheid naar 2–4."
+    }
+  },
+  {
+    "id": "clear_presence_now",
+    "type": "checkbox",
+    "label": {
+      "en": "Clear presence now (maintenance)",
+      "fr": "Effacer la présence maintenant (maintenance)",
+      "nl": "Presence nu wissen (onderhoud)"
+    },
+    "hint": {
+      "en": "Force Homey presence OFF without unplugging. Use when ghost presence stuck. Also available as a Flow action.",
+      "fr": "Force la présence Homey à OFF sans débrancher. Pour présence fantôme coincée. Aussi en carte Flow.",
+      "nl": "Forceer Homey-presence UIT zonder stekker. Ook als Flow-actie."
+    },
+    "value": false
+  },
+  {
+    "id": "survival_watchdog",
+    "type": "checkbox",
+    "label": {
+      "en": "Survival watchdog (auto-clear stuck Occupied)",
+      "fr": "Watchdog de survie (auto-clear Occupé coincé)",
+      "nl": "Survival watchdog (auto-clear vast Occupied)"
+    },
+    "hint": {
+      "en": "If no clear frame arrives within Departure delay + 5s, Homey forces presence OFF. Recommended ON for chatty mmWave sensors.",
+      "fr": "Si aucune trame clear n’arrive dans Délai de départ + 5s, Homey force la présence à OFF. Recommandé ON.",
+      "nl": "Als geen clear-frame binnen Vertrekvertraging + 5s komt, forceert Homey presence UIT. Aanbevolen AAN."
+    },
+    "value": true
+  },
+  {
+    "id": "radar_direct_mode",
+    "type": "checkbox",
+    "value": false,
+    "label": {
+      "en": "Direct mode (raw sensor values)",
+      "fr": "Mode direct (valeurs brutes du capteur)",
+      "nl": "Directe modus (ruwe sensorwaarden)"
+    },
+    "hint": {
+      "en": "Presence, lux and distance follow the sensor reports as-is: no smoothing, inference or automatic clearing. Try this if values lag or stay stuck. Off by default.",
+      "fr": "Présence, lux et distance suivent les rapports du capteur tels quels : sans lissage, inférence ni effacement automatique. À essayer si les valeurs traînent ou restent bloquées. Désactivé par défaut.",
+      "nl": "Aanwezigheid, lux en afstand volgen de sensorrapporten ongewijzigd: geen afvlakking, inferentie of automatisch wissen. Probeer dit als waarden achterlopen of vastlopen. Standaard uit."
+    }
+  },
+  {
+    "id": "radar_direct_distance_scale",
+    "type": "dropdown",
+    "value": "auto",
+    "label": {
+      "en": "Direct mode: distance unit",
+      "fr": "Mode direct : unité de distance",
+      "nl": "Directe modus: afstandseenheid"
+    },
+    "hint": {
+      "en": "Only used in direct mode. Auto uses the device profile; pick dm or cm if the distance is 10× off.",
+      "fr": "Utilisé uniquement en mode direct. Auto suit le profil de l'appareil ; choisir dm ou cm si la distance est fausse d'un facteur 10.",
+      "nl": "Alleen in directe modus. Auto volgt het apparaatprofiel; kies dm of cm als de afstand 10× afwijkt."
+    },
+    "values": [
+      {
+        "id": "auto",
+        "label": {
+          "en": "Auto",
+          "fr": "Auto",
+          "nl": "Auto"
+        }
+      },
+      {
+        "id": "dm",
+        "label": {
+          "en": "Decimetres (÷10)",
+          "fr": "Décimètres (÷10)",
+          "nl": "Decimeters (÷10)"
+        }
+      },
+      {
+        "id": "cm",
+        "label": {
+          "en": "Centimetres (÷100)",
+          "fr": "Centimètres (÷100)",
+          "nl": "Centimeters (÷100)"
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "id": "presence_sensor_radar_illuminance_above",
+  "title": {
+    "en": "Illuminance !{{is|is not}} above",
+    "nl": "Lichtsterkte !{{is|is niet}} boven",
+    "fr": "Luminosité !{{est|n'est pas}} au-dessus de",
+    "de": "Helligkeit !{{ist|ist nicht}} über"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=presence_sensor_radar|presence_sensor_radar_ts0601"
+    },
+    {
+      "name": "lux",
+      "type": "number",
+      "min": 0,
+      "max": 10000,
+      "step": 10,
+      "placeholder": {
+        "en": "100"
+      }
+    }
+  ],
+  "titleFormatted": {
+    "en": "Illuminance !{{is|is not}} above [[lux]]",
+    "nl": "Lichtsterkte !{{is|is niet}} boven [[lux]]",
+    "fr": "Luminosité !{{est|n'est pas}} au-dessus de [[lux]]",
+    "de": "Helligkeit !{{ist|ist nicht}} über [[lux]]"
+  }
+}

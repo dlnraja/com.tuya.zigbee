@@ -1,0 +1,16 @@
+{
+  "id": "presence_sensor_radar_is_present",
+  "title": {
+    "en": "Someone is present",
+    "nl": "Iemand is aanwezig",
+    "fr": "Quelqu'un est présent",
+    "de": "Jemand ist anwesend"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=presence_sensor_radar|presence_sensor_radar_ts0601"
+    }
+  ]
+}
