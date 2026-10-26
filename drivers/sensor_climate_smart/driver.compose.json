@@ -74,6 +74,8 @@
       "type": "dropdown",
       "label": {
         "en": "Power-On Behavior",
+        "nl": "Gedrag bij inschakelen",
+        "de": "Verhalten beim Einschalten",
         "fr": "Comportement à la mise sous tension"
       },
       "value": "memory",
