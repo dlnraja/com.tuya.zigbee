@@ -1,4 +1,5 @@
 'use strict';
+const { safeFlowCard } = require('../../lib/flow/FlowCardPresence'); // P3068: undeclared legacy ids -> logged-once no-op
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
@@ -79,10 +80,10 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
     // ACTIONS
     try {
       const selfTestCard = (typeof this.homey.flow.getActionCard === 'function'
-        ? this.homey.flow.getActionCard('sensor_gas_presence_run_self_test')
+        ? safeFlowCard(this.homey, 'getActionCard', 'sensor_gas_presence_run_self_test')
         : null)
         || (typeof this.homey.flow.getDeviceActionCard === 'function'
-          ? this.homey.flow.getDeviceActionCard('sensor_gas_presence_run_self_test')
+          ? safeFlowCard(this.homey, 'getDeviceActionCard', 'sensor_gas_presence_run_self_test')
           : null);
       if (selfTestCard) {
         selfTestCard.registerRunListener(async (args) => {

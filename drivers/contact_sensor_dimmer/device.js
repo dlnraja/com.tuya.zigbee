@@ -1,4 +1,5 @@
 'use strict';
+const { safeFlowCard } = require('../../lib/flow/FlowCardPresence'); // P3068: undeclared legacy ids -> logged-once no-op
 const { attachTamperListener } = require('../../lib/devices/DoorWindowContactHelper');
 
 const ZclBatteryMonitor = require('../../lib/battery/ZclBatteryMonitor');
@@ -50,7 +51,7 @@ class ContactSensorDimmerDevice extends TuyaZigbeeDevice {
       }, 500);
 
       const triggerCard = (() => {
-        try { return this.homey.flow.getDeviceTriggerCard('contact_sensor_dimmer_button_pressed'); }
+        try { return safeFlowCard(this.homey, 'getDeviceTriggerCard', 'contact_sensor_dimmer_button_pressed'); }
         catch (e) { return null; }
       })();
       

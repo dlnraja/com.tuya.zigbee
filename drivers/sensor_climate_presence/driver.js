@@ -1,4 +1,5 @@
 'use strict';
+const { safeFlowCard } = require('../../lib/flow/FlowCardPresence'); // P3068: undeclared legacy ids -> logged-once no-op
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
@@ -37,7 +38,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
     // END TRIGGERS
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('sensor_climate_presence_presence_sensor_radar_is_present_sensor_presence_radar');
+      const card = safeFlowCard(this.homey, 'getConditionCard', 'sensor_climate_presence_presence_sensor_radar_is_present_sensor_presence_radar');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -47,7 +48,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_climate_presence_presence_sensor_radar_is_present_sensor_presence_radar: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getConditionCard('sensor_climate_presence_presence_sensor_radar_illuminance_above_sensor_presence_radar');
+      const card = safeFlowCard(this.homey, 'getConditionCard', 'sensor_climate_presence_presence_sensor_radar_illuminance_above_sensor_presence_radar');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -57,7 +58,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_climate_presence_presence_sensor_radar_illuminance_above_sensor_presence_radar: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getConditionCard('sensor_climate_presence_presence_sensor_radar_distance_within_sensor_presence_radar');
+      const card = safeFlowCard(this.homey, 'getConditionCard', 'sensor_climate_presence_presence_sensor_radar_distance_within_sensor_presence_radar');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -67,7 +68,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_climate_presence_presence_sensor_radar_distance_within_sensor_presence_radar: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getConditionCard('sensor_climate_presence_presence_sensor_radar_motion_active_sensor_presence_radar');
+      const card = safeFlowCard(this.homey, 'getConditionCard', 'sensor_climate_presence_presence_sensor_radar_motion_active_sensor_presence_radar');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}

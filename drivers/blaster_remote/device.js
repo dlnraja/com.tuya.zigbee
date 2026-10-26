@@ -1,4 +1,5 @@
 'use strict';
+const { safeFlowCard } = require('../../lib/flow/FlowCardPresence'); // P3068: undeclared legacy ids -> logged-once no-op
 
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { Cluster } = require('zigbee-clusters');
@@ -308,7 +309,7 @@ class IRRemoteDevice extends TuyaZigbeeDevice {
       this.safeSetCapabilityValue('ir_learned_code', keyCode).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
 
       // Trigger flow
-      const card = this.homey.flow.getDeviceTriggerCard('ir_code_received');
+      const card = safeFlowCard(this.homey, 'getDeviceTriggerCard', 'ir_code_received');
       if (card) {
         card.trigger(this, { ir_code: keyCode }, {})
           .catch(err => this.error('[IR-RX] Flow trigger err:', err.message));

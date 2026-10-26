@@ -1,4 +1,5 @@
 'use strict';
+const { safeFlowCard } = require('../../lib/flow/FlowCardPresence'); // P3068: undeclared legacy ids -> logged-once no-op
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
@@ -106,7 +107,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_switch_switch_1gang_set_backlight_color: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('contact_sensor_switch_1gang_set_backlight_br_80fbc');
+      const card = safeFlowCard(this.homey, 'getActionCard', 'contact_sensor_switch_1gang_set_backlight_br_80fbc');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}

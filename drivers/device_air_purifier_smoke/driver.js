@@ -1,4 +1,5 @@
 'use strict';
+const { safeFlowCard } = require('../../lib/flow/FlowCardPresence'); // P3068: undeclared legacy ids -> logged-once no-op
 const CI = require('../../lib/utils/CaseInsensitiveMatcher');
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
@@ -57,7 +58,7 @@ class SmartSmokeDetectorAdvancedDriver extends ZigBeeDriver {
     // CONDITION: Smoke is/is not detected
     //
     try {
-      const smokeDetectedCondition = this.homey.flow.getConditionCard('device_air_purifier_smoke_smoke_detector_advanced_smoke_detected');
+      const smokeDetectedCondition = safeFlowCard(this.homey, 'getConditionCard', 'device_air_purifier_smoke_smoke_detector_advanced_smoke_detected');
 
       if (!smokeDetectedCondition) {
         this.log('[FLOW] Condition device_air_purifier_smoke_smoke_detector_advanced_smoke_detected not defined in app.json - skipping');
@@ -82,7 +83,7 @@ class SmartSmokeDetectorAdvancedDriver extends ZigBeeDriver {
     // CONDITION: Battery is/is not above threshold
     //
     try {
-      const batteryAboveCondition = this.homey.flow.getConditionCard('device_air_purifier_smoke_smoke_detector_advanced_battery_above');
+      const batteryAboveCondition = safeFlowCard(this.homey, 'getConditionCard', 'device_air_purifier_smoke_smoke_detector_advanced_battery_above');
 
       if (!batteryAboveCondition) {
         this.log('[FLOW] Condition device_air_purifier_smoke_smoke_detector_advanced_battery_above not defined in app.json - skipping');
@@ -109,7 +110,7 @@ class SmartSmokeDetectorAdvancedDriver extends ZigBeeDriver {
     // ACTION: Test the alarm
     //
     try {
-      const testAlarmAction = this.homey.flow.getActionCard('device_air_purifier_smoke_smoke_detector_advanced_test_alarm');
+      const testAlarmAction = safeFlowCard(this.homey, 'getActionCard', 'device_air_purifier_smoke_smoke_detector_advanced_test_alarm');
 
       if (!testAlarmAction) {
         this.log('[FLOW] Action device_air_purifier_smoke_smoke_detector_advanced_test_alarm not defined in app.json - skipping');

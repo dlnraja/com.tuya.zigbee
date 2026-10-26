@@ -1,4 +1,5 @@
 'use strict';
+const { safeFlowCard } = require('../../lib/flow/FlowCardPresence'); // P3068: undeclared legacy ids -> logged-once no-op
 
 const { Driver } = require('homey');
 
@@ -39,7 +40,7 @@ class WaterTankMonitorDriver extends Driver {
     // END TRIGGERS
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('device_air_purifier_water_water_tank_monitor_level_above');
+      const card = safeFlowCard(this.homey, 'getConditionCard', 'device_air_purifier_water_water_tank_monitor_level_above');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -50,7 +51,7 @@ class WaterTankMonitorDriver extends Driver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Condition device_air_purifier_water_water_tank_monitor_level_above: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getConditionCard('device_air_purifier_water_water_tank_monitor_state_is');
+      const card = safeFlowCard(this.homey, 'getConditionCard', 'device_air_purifier_water_water_tank_monitor_state_is');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}

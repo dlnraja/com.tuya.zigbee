@@ -1,4 +1,5 @@
 'use strict';
+const { safeFlowCard } = require('../../lib/flow/FlowCardPresence'); // P3068: undeclared legacy ids -> logged-once no-op
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
@@ -38,7 +39,7 @@ async onInit() {
     } catch (err) { if (this.developerDebugMode) { this.error(`Condition lcdtemphumidsensor_plug_energy_power_above: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getConditionCard('lcdtemphumidsensor_plug_energy_energy_above');
+      const card = safeFlowCard(this.homey, 'getConditionCard', 'lcdtemphumidsensor_plug_energy_energy_above');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
