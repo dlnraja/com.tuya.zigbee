@@ -39,10 +39,21 @@ describe('P2768 WiFi repair views', () => {
   });
 
   it('repair views emit configure / refresh_key and close with Homey.done()', () => {
+    // P3075: since P3070 a view only emits what its driver base registers. Tuya-local
+    // views keep configure + refresh_key, eWeLink views send configure, and drivers
+    // without an onRepair handler ship an info view that only closes. Either quote style.
+    const emits = (html, name) => new RegExp(`emit\\(\\s*['"]${name}['"]`).test(html);
     for (const id of ids) {
       const html = fs.readFileSync(path.join(driversDir, id, 'repair', 'configure.html'), 'utf8');
-      assert.match(html, /emit\(\s*'configure'/, `${id}: emits configure`);
-      assert.match(html, /emit\(\s*'refresh_key'/, `${id}: emits refresh_key`);
+      const drv = fs.existsSync(path.join(driversDir, id, 'driver.js'))
+        ? fs.readFileSync(path.join(driversDir, id, 'driver.js'), 'utf8') : '';
+      const infoOnly = !/\.emit\(/.test(html);
+      if (!infoOnly && drv.includes('/TuyaLocalDriver')) {
+        assert.ok(emits(html, 'configure'), `${id}: emits configure`);
+        assert.ok(emits(html, 'refresh_key'), `${id}: emits refresh_key`);
+      } else if (!infoOnly && drv.includes('/EweLinkLocalDriver')) {
+        assert.ok(emits(html, 'configure'), `${id}: emits configure`);
+      }
       assert.match(html, /\.done\(\)/, `${id}: calls Homey.done()`);
       assert.match(html, /onHomeyReady/, `${id}: Homey webview entry point`);
     }
