@@ -895,8 +895,8 @@
     }
   ],
   "5.12.508": {
-    "en": "Thanks to the Zigbee2MQTT / zigbee-herdsman-converters contributors: SPM02V1-GT power meter now also matched with the exact TS0601 product id; DDS238-1-Z1 (_TZE204_byzdayie) now pairs only with the DIN-rail energy meter driver (thanks Z2M contributors).",
-    "fr": "Merci aux contributeurs de Zigbee2MQTT / zigbee-herdsman-converters : le compteur SPM02V1-GT est aussi reconnu avec l'identifiant produit exact TS0601 ; le DDS238-1-Z1 (_TZE204_byzdayie) s'appaire uniquement avec le driver compteur rail DIN (merci aux contributeurs Z2M)."
+    "en": "Thanks to the Zigbee2MQTT / zigbee-herdsman-converters contributors: SPM02V1-GT power meter now also matched with the exact TS0601 product id; DDS238-1-Z1 (_TZE204_byzdayie) now pairs only with the DIN-rail energy meter driver (thanks Z2M contributors). The _TZE284_la2c2uo9 dimmer is owned again by the 1-gang dimmer driver; the runtime hint for _TZ3210_7vgttna6 now points to the TS0001 fingerbot (Z2M TS0001_fingerbot).",
+    "fr": "Merci aux contributeurs de Zigbee2MQTT / zigbee-herdsman-converters : le compteur SPM02V1-GT est aussi reconnu avec l'identifiant produit exact TS0601 ; le DDS238-1-Z1 (_TZE204_byzdayie) s'appaire uniquement avec le driver compteur rail DIN (merci aux contributeurs Z2M). Le variateur _TZE284_la2c2uo9 revient au driver variateur 1 voie ; l'indice d'exécution de _TZ3210_7vgttna6 pointe vers le fingerbot TS0001 (Z2M TS0001_fingerbot)."
   },
   "9.0.216": {
     "en": "Stability improvements and Homey test build recovery."

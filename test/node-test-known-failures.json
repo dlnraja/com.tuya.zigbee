@@ -1,0 +1,15 @@
+{
+  "why": "P3057-3 (2026-10-26): legacy node:test failures on stable-v5 that mocha hid (mocha exits with its own count). Each needs a held behavior/data change on stable (case-variant data, master-only flow-card counts, source-contract drift) and stays until that change lands after soak. The list may only shrink: lower maxEntries when removing one, never raise it.",
+  "maxEntries": 9,
+  "knownFailures": [
+    "test/anti-purge-guard.test.js::every mfs_db fingerprint is claimed by at least one driver in app.json",
+    "test/battery-sos-scaling.test.js::handles ZCL 100mV battery voltage units",
+    "test/button-press-types.test.js::wraps handleFrame with orig(...args)",
+    "test/case-variants.test.js::every Tuya fingerprint exists in both cases in every driver",
+    "test/central-guards.test.js::raw setCapabilityValue routes through the guarded safe wrapper",
+    "test/flow-cards-integrity.test.js::has flow cards",
+    "test/flow-cards-integrity.test.js::routes mfs_db pointent vers des drivers existants (rapport d'audit des dual-claims)",
+    "test/gang-index-magic-packet.test.js::is idempotent — sent once, then skipped (persisted)",
+    "test/hue-smart-features.test.js::source curve matches this mirror (anti-drift)"
+  ]
+}
