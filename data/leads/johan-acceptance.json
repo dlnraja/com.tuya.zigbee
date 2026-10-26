@@ -1,17 +1,18 @@
 {
-  "generated": "2026-10-25T08:43:28.942Z",
+  "generated": "2026-10-26T09:21:10.895Z",
   "source": "data/leads/johan-canonical-index.json",
   "repo": "JohanBendz/com.tuya.zigbee",
   "note": "Acceptance view, structured fields only. missing-couple = identity cited upstream with no home driver here (verify real hardware before adding, W4). behaviour = needs physical test, not a pairing gap.",
   "summary": {
-    "threads": 562,
-    "covered": 453,
+    "threads": 565,
+    "covered": 455,
     "behaviour": 100,
     "dual-couple": 8,
-    "missing-couple": 1,
-    "missingCouples": 1
+    "missing-couple": 2,
+    "missingCouples": 2
   },
   "missingCouples": [
+    "_TZ3210_iiacqpdz|TS011F",
     "_TZB210_rkgngb5o|EP1"
   ],
   "rows": [
@@ -4460,6 +4461,13 @@
           "drivers": [
             "button_wireless_4"
           ]
+        },
+        {
+          "mfr": "_TZ3000_pd9mpyh4",
+          "pid": "TS0044",
+          "drivers": [
+            "scene_switch_4"
+          ]
         }
       ],
       "acceptance": "behaviour"
@@ -4771,6 +4779,13 @@
           "drivers": [
             "wall_remote_6_gang"
           ]
+        },
+        {
+          "mfr": "_TZ3000_nrfkrgf4",
+          "pid": "TS0046",
+          "drivers": [
+            "button_wireless_6"
+          ]
         }
       ],
       "acceptance": "covered"
@@ -5032,6 +5047,13 @@
           "pid": "TS0002",
           "drivers": [
             "switch_2gang_ts0002"
+          ]
+        },
+        {
+          "mfr": "_TZ3000_i9w5mehz",
+          "pid": "TS0002",
+          "drivers": [
+            "switch_2gang"
           ]
         }
       ],
@@ -10382,6 +10404,13 @@
           "drivers": [
             "switch_zbeacon_ts0001"
           ]
+        },
+        {
+          "mfr": "_TZ3000_gbshwgag",
+          "pid": "TS0001",
+          "drivers": [
+            "switch_1gang"
+          ]
         }
       ],
       "acceptance": "dual-couple"
@@ -12389,7 +12418,8 @@
     {
       "n": 1470,
       "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1470",
-      "state": "open",
+      "state": "closed",
+      "closedAt": "2026-10-25T18:52:57Z",
       "regression": true,
       "objectives": [],
       "coverage": [
@@ -13576,7 +13606,8 @@
     {
       "n": 1525,
       "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1525",
-      "state": "open",
+      "state": "closed",
+      "closedAt": "2026-10-25T18:53:00Z",
       "regression": false,
       "objectives": [],
       "coverage": [
@@ -13585,6 +13616,57 @@
           "pid": "TS004F",
           "drivers": [
             "smart_knob_rotary"
+          ]
+        }
+      ],
+      "acceptance": "covered"
+    },
+    {
+      "n": 1530,
+      "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1530",
+      "state": "open",
+      "canonical": 1300,
+      "regression": false,
+      "objectives": [],
+      "coverage": [
+        {
+          "mfr": "_TZ3210_iiacqpdz",
+          "pid": "TS011F",
+          "drivers": []
+        }
+      ],
+      "acceptance": "missing-couple"
+    },
+    {
+      "n": 1532,
+      "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1532",
+      "state": "open",
+      "regression": false,
+      "objectives": [],
+      "coverage": [
+        {
+          "mfr": "_TZE204_dzuqwsyg",
+          "pid": "TS0601",
+          "drivers": [
+            "wall_thermostat"
+          ]
+        }
+      ],
+      "acceptance": "covered"
+    },
+    {
+      "n": 1540,
+      "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1540",
+      "state": "closed",
+      "closedAt": "2026-10-26T07:01:51Z",
+      "regression": false,
+      "objectives": [],
+      "coverage": [
+        {
+          "mfr": "_TZ3210_j4pdtz9v",
+          "pid": "TS0001",
+          "drivers": [
+            "fingerbot"
           ]
         }
       ],
