@@ -282,6 +282,18 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
     if (CI.startsWithCI(mfr, '_tze284')) {return 'TUYA_DP_LCD';}      // LCD with Tuya epoch
     if (CI.startsWithCI(mfr, '_tze200')) {return 'TUYA_DP';}          // Standard Tuya DP
     if (CI.startsWithCI(mfr, '_tze204')) {return 'TUYA_DP_ENHANCED';} // Enhanced Tuya DP
+    // WHY(P3076 port of master P2825 / Wilhelm): LCD TS0201 clones with the ZCL x10
+    // humidity quirk may also pack T/H into single-EP EF00 DPs; HYBRID keeps both live.
+    if (
+      CI.containsCI(mfr, 'ncw88jfq')
+      || CI.containsCI(mfr, 'ywagc4rj')
+      || CI.containsCI(mfr, 'isw9u95y')
+      || CI.containsCI(mfr, 'yupc0pb7')
+      || CI.containsCI(mfr, 'wol32olt')
+    ) {
+      return 'HYBRID';
+    }
+
     if (CI.startsWithCI(mfr, '_tz3000')) {return 'ZCL_STANDARD';}     // Pure ZCL
     if (CI.startsWithCI(mfr, '_tz3210')) {return 'ZCL_STANDARD';}     // Pure ZCL
 
