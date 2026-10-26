@@ -1,0 +1,125 @@
+{
+  "id": "capability_value_delta",
+  "title": {
+    "en": "A value changed (with previous value and difference)",
+    "fr": "Une valeur a changé (avec valeur précédente et écart)",
+    "nl": "Een waarde is gewijzigd (met vorige waarde en verschil)",
+    "de": "Ein Wert hat sich geändert (mit vorherigem Wert und Differenz)"
+  },
+  "titleFormatted": {
+    "en": "[[capability]] of [[device]] changed by at least [[min_delta]]",
+    "fr": "[[capability]] de [[device]] a changé d'au moins [[min_delta]]",
+    "nl": "[[capability]] van [[device]] is minstens [[min_delta]] gewijzigd",
+    "de": "[[capability]] von [[device]] hat sich um mindestens [[min_delta]] geändert"
+  },
+  "hint": {
+    "en": "Works for every capability, also per gang, channel or phase (onoff.gang2, measure_power.l1) and Tuya-specific ones. Use 0 to react to any change; a minimum difference only applies to numbers.",
+    "fr": "Fonctionne pour chaque capacité, aussi par voie, canal ou phase (onoff.gang2, measure_power.l1) et pour les capacités propres à Tuya. Mettez 0 pour réagir à tout changement ; l'écart minimum ne vaut que pour les nombres.",
+    "nl": "Werkt voor elke capaciteit, ook per kanaal of fase (onoff.gang2, measure_power.l1) en voor Tuya-specifieke. Gebruik 0 om op elke wijziging te reageren; een minimaal verschil geldt alleen voor getallen.",
+    "de": "Gilt für jede Fähigkeit, auch pro Kanal oder Phase (onoff.gang2, measure_power.l1) und für Tuya-spezifische. 0 reagiert auf jede Änderung; eine Mindestdifferenz gilt nur für Zahlen."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "title": {
+        "en": "Device",
+        "fr": "Appareil",
+        "nl": "Apparaat",
+        "de": "Gerät"
+      }
+    },
+    {
+      "type": "autocomplete",
+      "name": "capability",
+      "title": {
+        "en": "Capability",
+        "fr": "Capacité",
+        "nl": "Capaciteit",
+        "de": "Fähigkeit"
+      },
+      "placeholder": {
+        "en": "Search, e.g. onoff.gang2",
+        "fr": "Rechercher, ex. onoff.gang2",
+        "nl": "Zoeken, bijv. onoff.gang2",
+        "de": "Suchen, z. B. onoff.gang2"
+      }
+    },
+    {
+      "type": "number",
+      "name": "min_delta",
+      "min": 0,
+      "max": 1000000,
+      "step": 0.01,
+      "title": {
+        "en": "Minimum difference",
+        "fr": "Écart minimum",
+        "nl": "Minimaal verschil",
+        "de": "Mindestdifferenz"
+      },
+      "placeholder": {
+        "en": "0 = any change",
+        "fr": "0 = tout changement",
+        "nl": "0 = elke wijziging",
+        "de": "0 = jede Änderung"
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "name": "value",
+      "type": "number",
+      "title": {
+        "en": "New value",
+        "fr": "Nouvelle valeur",
+        "nl": "Nieuwe waarde",
+        "de": "Neuer Wert"
+      },
+      "example": 21.5
+    },
+    {
+      "name": "previous",
+      "type": "number",
+      "title": {
+        "en": "Previous value",
+        "fr": "Valeur précédente",
+        "nl": "Vorige waarde",
+        "de": "Vorheriger Wert"
+      },
+      "example": 20
+    },
+    {
+      "name": "delta",
+      "type": "number",
+      "title": {
+        "en": "Difference",
+        "fr": "Écart",
+        "nl": "Verschil",
+        "de": "Differenz"
+      },
+      "example": 1.5
+    },
+    {
+      "name": "text",
+      "type": "string",
+      "title": {
+        "en": "Value as text",
+        "fr": "Valeur en texte",
+        "nl": "Waarde als tekst",
+        "de": "Wert als Text"
+      },
+      "example": "21.5"
+    },
+    {
+      "name": "capability",
+      "type": "string",
+      "title": {
+        "en": "Capability",
+        "fr": "Capacité",
+        "nl": "Capaciteit",
+        "de": "Fähigkeit"
+      },
+      "example": "measure_temperature"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "id": "capability_value_is",
+  "title": {
+    "en": "A value !{{is|is not}}",
+    "fr": "Une valeur !{{est|n'est pas}}",
+    "nl": "Een waarde !{{is|is niet}}",
+    "de": "Ein Wert !{{ist|ist nicht}}"
+  },
+  "titleFormatted": {
+    "en": "[[capability]] of [[device]] !{{is|is not}} [[value]]",
+    "fr": "[[capability]] de [[device]] !{{est|n'est pas}} [[value]]",
+    "nl": "[[capability]] van [[device]] !{{is|is niet}} [[value]]",
+    "de": "[[capability]] von [[device]] !{{ist|ist nicht}} [[value]]"
+  },
+  "hint": {
+    "en": "Compare any capability (mode, preset, power-on behaviour, gang on/off, number) with a value picked from its own list.",
+    "fr": "Compare n'importe quelle capacité (mode, préréglage, comportement à la mise sous tension, voie allumée, nombre) à une valeur choisie dans sa propre liste.",
+    "nl": "Vergelijk elke capaciteit (modus, voorinstelling, gedrag na stroomuitval, kanaal aan/uit, getal) met een waarde uit de eigen lijst.",
+    "de": "Vergleicht jede Fähigkeit (Modus, Voreinstellung, Einschaltverhalten, Kanal an/aus, Zahl) mit einem Wert aus ihrer eigenen Liste."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "title": {
+        "en": "Device",
+        "fr": "Appareil",
+        "nl": "Apparaat",
+        "de": "Gerät"
+      }
+    },
+    {
+      "type": "autocomplete",
+      "name": "capability",
+      "title": {
+        "en": "Capability",
+        "fr": "Capacité",
+        "nl": "Capaciteit",
+        "de": "Fähigkeit"
+      },
+      "placeholder": {
+        "en": "Search, e.g. onoff.gang2",
+        "fr": "Rechercher, ex. onoff.gang2",
+        "nl": "Zoeken, bijv. onoff.gang2",
+        "de": "Suchen, z. B. onoff.gang2"
+      }
+    },
+    {
+      "type": "autocomplete",
+      "name": "value",
+      "title": {
+        "en": "Value",
+        "fr": "Valeur",
+        "nl": "Waarde",
+        "de": "Wert"
+      },
+      "placeholder": {
+        "en": "Pick a value or type a number",
+        "fr": "Choisir une valeur ou taper un nombre",
+        "nl": "Kies een waarde of typ een getal",
+        "de": "Wert wählen oder Zahl eingeben"
+      }
+    }
+  ]
+}
