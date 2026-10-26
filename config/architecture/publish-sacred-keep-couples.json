@@ -143,8 +143,8 @@
     {
       "mfr": "_TZ3000_dfgbtub0",
       "pid": "TS0042",
-      "driverId": "button_wireless_2",
-      "note": "P2353 Moes 2-btn sibling (same mfr, different pid)"
+      "driverId": "wall_remote_2_gang",
+      "note": "P2353 Moes 2-btn sibling (same mfr, different pid); P2870 owner wall_remote_2_gang (TS0042-only driver, no phantom dual with button_wireless_4)"
     },
     {
       "mfr": "_TZ3000_k4ej3ww2",

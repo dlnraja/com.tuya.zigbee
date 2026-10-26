@@ -650,6 +650,17 @@
       ],
       "why": "2026-10-19 user decision: one couple one driver, aligned with master P2823. _TZE284_9ern5sfh + TS0601 is the RSH-HS03 LCD temperature/humidity sensor (Z2M TS0601_temperature_humidity_sensor_4, DP1 temp/10, DP2 humidity/10, DP4 battery; zhc #10167 \"with display\"; Johan #1328 RSH-HS03; forum 140352 #2263 Kizabgd). Owner lcdtemphumidsensor.",
       "source": "z2m tuya.ts + zhc#10167 + JohanBendz#1328 + forum 140352#2263"
+    },
+    {
+      "driver": "climate_sensor",
+      "mfr": [
+        "_TZ3000_5ftkaulg",
+        "_tz3000_5ftkaulg",
+        "_TZ3000_5FTKAULG",
+        "_tz3000_5FTKAULG"
+      ],
+      "why": "P2870 2026-10-19: Chevolink/Smatrul no-neutral 1-gang wall switch TS0011 (ZHA #2090, homed #150, Z2M #21241, Johan #1178); no source ever placed it on a climate sensor; owner switch_1gang",
+      "source": "P2870"
     }
   ]
 }

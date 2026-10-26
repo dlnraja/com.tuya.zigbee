@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-19T06:33:51.605Z",
- "drivers": 394,
+ "generated": "2026-10-19T07:27:19.827Z",
+ "drivers": 395,
  "snapshot": {
   "air_purifier": {
    "mfr": 3,
@@ -285,9 +285,9 @@
    "pidSha": "3427697d0c296c9d"
   },
   "climate_sensor": {
-   "mfr": 532,
+   "mfr": 531,
    "pid": 32,
-   "mfrSha": "dd0e6956903fdb06",
+   "mfrSha": "32b690e633cefad6",
    "pidSha": "4809a771f46a5606"
   },
   "climate_sensor_device": {
@@ -349,6 +349,12 @@
    "pid": 2,
    "mfrSha": "4fdc731f2d4235dd",
    "pidSha": "777a8703abf8065f"
+  },
+  "co_sensor_ias": {
+   "mfr": 3,
+   "pid": 1,
+   "mfrSha": "bff923e4e58cd32c",
+   "pidSha": "39af8bbb241a8cd6"
   },
   "contact_sensor": {
    "mfr": 60,
@@ -1077,9 +1083,9 @@
    "pidSha": "b37ed01a69900c1e"
   },
   "light_cct_ts0502b": {
-   "mfr": 1,
+   "mfr": 2,
    "pid": 1,
-   "mfrSha": "06064301214ed4e7",
+   "mfrSha": "95b6d0266ded0170",
    "pidSha": "9e84a7b9a8e8cb87"
   },
   "light_dimmable_ts0501a": {
@@ -1089,9 +1095,9 @@
    "pidSha": "9ba9d3f04de6a2ef"
   },
   "light_rgbcct_ts0505b": {
-   "mfr": 11,
+   "mfr": 12,
    "pid": 1,
-   "mfrSha": "4000e7fb7cff08ef",
+   "mfrSha": "2318f56240489c43",
    "pidSha": "38bdc69f98e98fe7"
   },
   "light_sensor_outdoor": {
@@ -1455,9 +1461,9 @@
    "pidSha": "278e503d4862c11f"
   },
   "scene_switch_4": {
-   "mfr": 15,
+   "mfr": 16,
    "pid": 3,
-   "mfrSha": "6df33b933cf40232",
+   "mfrSha": "e72cb0eff1f9d8d9",
    "pidSha": "852c1ed113914f3e"
   },
   "scene_switch_6": {
@@ -1881,9 +1887,9 @@
    "pidSha": "d885bcbf1a605531"
   },
   "switch_1gang": {
-   "mfr": 355,
+   "mfr": 356,
    "pid": 38,
-   "mfrSha": "cb5eadf5617b482e",
+   "mfrSha": "4b2aca19659ed621",
    "pidSha": "fd65b1d55ed8db6a"
   },
   "switch_2_gang": {
@@ -2199,9 +2205,9 @@
    "pidSha": "fb8ef2c1ffae69fb"
   },
   "wall_remote_2_gang": {
-   "mfr": 3,
+   "mfr": 4,
    "pid": 1,
-   "mfrSha": "cf1e49cc664ae58e",
+   "mfrSha": "0dd48221072b5843",
    "pidSha": "233554c19932f6a9"
   },
   "wall_remote_3_gang": {

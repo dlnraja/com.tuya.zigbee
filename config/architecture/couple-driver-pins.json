@@ -611,6 +611,62 @@
       "driver": "lcdtemphumidsensor",
       "source": "Z2M tuya.ts TS0601_temperature_humidity_sensor_4 (DP1/DP2 divideBy10, DP4 battery); zhc #10167 external converter \"Temperature & humidity sensor with display\"; JohanBendz #1328 RSH-HS03",
       "regression": "master moved it off climate_sensor in P2823 (Kizabgd #2263); stable-v5/bastien-home still had it on climate_sensor until 2026-10-19 (Johan #1328 users saw 100% humidity there)"
+    },
+    {
+      "mfr": [
+        "_TZ3000_dfgbtub0"
+      ],
+      "pid": "TS0042",
+      "driver": "wall_remote_2_gang",
+      "source": "Z2M issue #33266 (nesty1990, MOES 2-gang TS0042 _TZ3000_dfgbtub0); Homey forum 26439#5021 (SunBeech, MOES 2-button TS0042, same id as the Marmitek 2-button); publish-sacred-keep P2353",
+      "regression": "dropped from button_wireless_2 in d09e9531cf (mfr-wide reading of a couple-only ban on its TS0044 sibling). Restored 2026-10-19 (P2870) on wall_remote_2_gang (TS0042-only 2-gang battery remote, EP1/EP2 onOff): putting the mfr back on button_wireless_2 would create the phantom dual _tz3000_dfgbtub0|TS0215A with button_wireless_4"
+    },
+    {
+      "mfr": [
+        "_TYZB01_o7m83470",
+        "_TYZB01_0aps0h1r",
+        "_TYZB01_wpmo3ja3"
+      ],
+      "pid": "TS0212",
+      "driver": "co_sensor_ias",
+      "source": "JohanBendz #513 (zipkidje, Nedis ZBDCO11WT interview) + #977 (Maxjong30201, Alecto SMARTCOA10 interview), both EP1 in 0/1/3/1280; SmartThings Edge Zigbee Smoke/CO Detector Mc fingerprints (Mariano Colmenarejo, co-battery for o7m83470 and wpmo3ja3); Z2M #9291 (jimmyeao, wpmo3ja3 = Heiman HS1CA-M IAS CO)",
+      "regression": "no driver carried TS0212 with these mfrs (o7m83470/0aps0h1r sat on smoke_sensor2 TS0205/TS0601, wpmo3ja3 on the EF00 co_sensor); new native IAS driver P2870"
+    },
+    {
+      "mfr": [
+        "_TZ3000_ee8nrt2l"
+      ],
+      "pid": "TS0044",
+      "driver": "scene_switch_4",
+      "source": "ZHA zha-device-handlers PR #1378 (aecay, E000 on EP2-4); deCONZ TS0044 4-gang remote DDF (Gold); SmartThings erickvneri button-battery (LoraTap 4-button); JohanBendz #1159 (MagicSergio91 interview)",
+      "regression": "mfr only on button_wireless_2 (no TS0044 there), so the real couple matched nothing; added P2870"
+    },
+    {
+      "mfr": [
+        "_TZ3000_5ftkaulg"
+      ],
+      "pid": "TS0011",
+      "driver": "switch_1gang",
+      "source": "ZHA #2090 (amiraizat124 signature EP1 0/3/4/5/6); homed-service-zigbee PR #150 (yaadyaad); Z2M #21241 (lysiong, Smatrul no-neutral 1-gang); JohanBendz #1178 (jautin981, Chevolink no-neutral interview)",
+      "regression": "mfr sat on climate_sensor without any source (bulk P92.61/P2670); moved P2870 with a legacy entry so paired devices keep their driver"
+    },
+    {
+      "mfr": [
+        "_TZ3210_ejctepku"
+      ],
+      "pid": "TS0505B",
+      "driver": "light_rgbcct_ts0505b",
+      "source": "JohanBendz #665 (Basb1234, Homey interview: GU10 RGB+CCT, EP1 0/3/4/5/6/8/768/4096 + 0x1888/0xFFEE)",
+      "regression": "mfr only on wall_dimmer_tuya via the synthetic TS0601_dim1 pid, so the real TS0505B couple matched nothing; added P2870 on the dedicated TS0505B driver (zero pid overlap)"
+    },
+    {
+      "mfr": [
+        "_TZ3210_invesber"
+      ],
+      "pid": "TS0502B",
+      "driver": "light_cct_ts0502b",
+      "source": "JohanBendz #824 (Eastmasters, Homey interview: CCT LED strip driver, EP1 0/3/4/5/6/8/768/4096/0xEF00 + GP EP242)",
+      "regression": "mfr only on wall_dimmer_tuya via TS0601_dim1 (dimmable_led_strip copy removed by anti-cartesian d09e9531cf); added P2870 on the dedicated TS0502B driver (zero pid overlap)"
     }
   ]
 }

@@ -84,3 +84,8 @@ Each entry: source (link + author), mechanism / symptom, what we did (or why not
 - Source: our own workflow `.github/workflows/forum-poll.yml` and the run artifacts of 2026-10-10.
 - Mechanism: the step named "Alibaba OCR" runs Open Code Review on our own commits (code review, not image OCR); forum media scanning only listed image URLs, and every forum result lived in run artifacts, never in `data/leads`.
 - What we did: `scripts/scanners/forum-image-ocr.js` (tesseract, Discourse CDN only, new posts first then backfill from post 1, bounded cursor) writes structured leads with coverage + candidate couples to `data/leads/forum-image-ocr.json`; wired into forum-poll.yml with a gated commit. No AI, no post or OCR text stored.
+
+## 2026-10-19 — Sweep blind spots and six exact couples (P2870)
+- Sources: see `docs/knowledge/SWEEP_AND_JOHAN_LEADS_2026-10-19.md` (Johan #513, #977, #1159, #1178, #665, #824 and their reporters; ZHA #1378/#2090; Z2M #9291/#21241/#33266; deCONZ TS0044 DDF; SmartThings Edge drivers by Mariano Colmenarejo and erickvneri; homed #150; forum 26439#5021).
+- Mechanism: the history sweep never walked our own repo, treated bot bodies as requests, skipped PR review comments, and could exit 0 with nothing saved when a socket dropped. Separately, several real couples matched nothing because the mfr sat on an unrelated driver without the right productId.
+- What we did: dlnraja loop + bot filter + review comments + settle/retry/drain guards; new native IAS `co_sensor_ias` (TS0212 CO alarms), and exact placements for ee8nrt2l/TS0044, 5ftkaulg/TS0011 (off climate_sensor with a legacy entry), dfgbtub0/TS0042, ejctepku/TS0505B, invesber/TS0502B. The "Not used yet" note of 2026-10-10 for o7m83470 / 0aps0h1r / 5ftkaulg is now resolved.

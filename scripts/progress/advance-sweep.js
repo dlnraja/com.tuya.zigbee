@@ -25,7 +25,11 @@ const DRY = process.argv.includes('--dry');
 const CHUNK = Math.max(0, Math.min(60, Number(arg('chunk', '5')) || 0));
 // P2810: forum topics are swept from post 1 as well (public Discourse JSON, no AI).
 const FORUM_CHUNK = Math.max(0, Math.min(400, Number(arg('forum-chunk', '40')) || 0));
-const ONLY = arg('only', 'all'); // all | johan | forum
+const ONLY = arg('only', 'all'); // all | johan | forum | dlnraja
+// P2870: our own repo (issues + PRs, open and closed, every comment) is swept like Johan's.
+const DL_CHUNK = Math.max(0, Math.min(60, Number(arg('dl-chunk', String(CHUNK))) || 0));
+const DL_REPO = 'dlnraja/com.tuya.zigbee';
+const JOHAN_REPO = 'JohanBendz/com.tuya.zigbee';
 const TOPICS = String(arg('topics', '140352,26439,146735,154077,21313,89271')).split(',').filter(Boolean);
 const sweepId = require('./lib/sweep-identity');
 const sweepForum = require('./lib/sweep-forum');
@@ -38,7 +42,7 @@ function saveJson(p, obj) {
   fs.writeFileSync(p, `${JSON.stringify(obj, null, 2)}\n`);
 }
 
-function ghGet(url) {
+function ghGetOnce(url) {
   const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN || '';
   return new Promise((resolve, reject) => {
     const u = new URL(url);
@@ -54,6 +58,11 @@ function ghGet(url) {
     }, (res) => {
       let b = '';
       res.on('data', (c) => { b += c; });
+      // P2870: a body cut mid-stream fires 'aborted'/'close' but never 'end'; settle anyway so
+      // the event loop cannot drain with main() still pending (silent exit 0, nothing saved).
+      res.on('aborted', () => reject(new Error('response aborted')));
+      res.on('error', reject);
+      res.on('close', () => { if (!res.complete) reject(new Error('response closed early')); });
       res.on('end', () => {
         if (res.statusCode === 403 || res.statusCode === 429) {
           resolve({ rateLimited: true, status: res.statusCode });
@@ -67,12 +76,31 @@ function ghGet(url) {
       });
     });
     req.on('error', reject);
+    req.on('close', () => reject(new Error('socket closed'))); // no-op once settled
     req.setTimeout(20000, () => { req.destroy(new Error('timeout')); });
     req.end();
   });
 }
 
 function sleep(ms) { return new Promise((r) => setTimeout(r, ms)); }
+
+/**
+ * WHY(P2870): a dropped socket (ECONNRESET / socket hang up) rejected the promise and killed
+ * the whole chunk. Retry twice with backoff; a persistent failure becomes {error,status:'net'}
+ * so the caller records a retry instead of crashing.
+ */
+async function ghGet(url) {
+  for (let i = 0; i < 3; i++) {
+    try {
+      const r = await ghGetOnce(url);
+      if (!(r && r.error && Number(r.status) >= 500) || i === 2) return r;
+    } catch (e) {
+      if (i === 2) return { error: true, status: 'net', body: String(e && e.message).slice(0, 120) };
+    }
+    await sleep(2000 * (i + 1));
+  }
+  return { error: true, status: 'net' };
+}
 
 function ensureCheckpoint(seedItems) {
   let cp = loadJson(CP, null);
@@ -145,17 +173,28 @@ function buildDriverIndex() {
  * case-insensitive identity helper, per-couple coverage. Falls back to the legacy
  * body-only classifier when comments are unavailable.
  */
-function classifyIssueFull(n, issue, comments) {
-  const id = `johan-issue:${n}`;
+function isBotUser(u) {
+  return !!(u && (u.type === 'Bot' || /\[bot\]$/i.test(String(u.login || ''))));
+}
+
+function classifyIssueFull(n, issue, comments, { repo = JOHAN_REPO, prefix = 'johan-issue' } = {}) {
+  const id = `${prefix}:${n}`;
   const isPr = !!(issue && issue.pull_request);
-  const link = `https://github.com/JohanBendz/com.tuya.zigbee/${isPr ? 'pull' : 'issues'}/${n}`;
+  const link = `https://github.com/${repo}/${isPr ? 'pull' : 'issues'}/${n}`;
   if (!issue || issue.error || issue.rateLimited) {
     return { id, status: issue && issue.rateLimited ? 'api-rate-limited' : 'needs-info', note: 'api unavailable; retry next run', sources: [link] };
   }
   if (issue.status === 404 || (issue.error && issue.status === 404)) {
     return { id, status: 'no-action', note: 'number not found upstream', sources: [link] };
   }
-  const texts = [issue.title, issue.body, ...(Array.isArray(comments) ? comments.map((c) => c.body) : [])].join('\n');
+  // P2870: bot-authored digests / auto PRs list hundreds of identities we wrote ourselves; only
+  // human text counts (bot title/body skipped, human comments on bot threads still read).
+  const botThread = isBotUser(issue.user);
+  const humanComments = Array.isArray(comments) ? comments.filter((c) => !isBotUser(c.user)) : [];
+  if (botThread && !humanComments.length) {
+    return { id, status: 'no-action', note: `${isPr ? 'PR' : 'issue'} by bot; no human comment`, sources: [link], author: issue.user && issue.user.login };
+  }
+  const texts = [botThread ? '' : issue.title, botThread ? '' : issue.body, ...humanComments.map((c) => c.body)].join('\n');
   const ids = sweepId.extract(texts);
   const merged = isPr && issue.pull_request && issue.pull_request.merged_at;
   const c = sweepId.classify(ids, { closedPr: isPr && issue.state === 'closed' });
@@ -266,7 +305,7 @@ async function main() {
   const advanced = [];
   let rateLimited = false;
 
-  const johanChunk = ONLY === 'forum' ? 0 : CHUNK;
+  const johanChunk = (ONLY === 'all' || ONLY === 'johan') ? CHUNK : 0;
   for (let i = 0; i < johanChunk; i++) {
     const n = next + i;
     const key = `johan-issue:${n}`;
@@ -282,6 +321,12 @@ async function main() {
       comments = await ghGet(`https://api.github.com/repos/JohanBendz/com.tuya.zigbee/issues/${n}/comments?per_page=100`);
       if (comments && comments.rateLimited) { rateLimited = true; break; }
       if (!Array.isArray(comments)) comments = null;
+      await sleep(250);
+    }
+    if (issue && issue.pull_request && !issue.error && !issue.rateLimited) {
+      // P2870: PR inline review comments (separate endpoint) are part of the thread.
+      const rc = await ghGet(`https://api.github.com/repos/${JOHAN_REPO}/pulls/${n}/comments?per_page=100`);
+      if (Array.isArray(rc) && rc.length) comments = [...(comments || []), ...rc];
       await sleep(250);
     }
     if (issue && issue.error && issue.status === 404) issue = { status: 404 };
@@ -322,10 +367,69 @@ async function main() {
     deep.next = deep.next || {};
     deep.next.JohanBendz = cp.github.johan.next;
   }
+  // P2870: our own repo, same classifier, cursor github.dlnraja.next (was never advanced).
+  const dlAdvanced = [];
+  let dlRateLimited = false;
+  const dlChunk = (ONLY === 'all' || ONLY === 'dlnraja') ? DL_CHUNK : 0;
+  const dlNext = Math.max(Number(cp.github.dlnraja.next) || 1, Number(deep.next && deep.next.dlnraja) || 1);
+  // Newest issue/PR number, so a deleted/transferred number (404) is skipped, not taken as the end.
+  let dlMax = Infinity;
+  if (dlChunk > 0) {
+    const newest = await ghGet(`https://api.github.com/repos/${DL_REPO}/issues?state=all&sort=created&direction=desc&per_page=1`);
+    if (Array.isArray(newest) && newest[0] && newest[0].number) dlMax = Number(newest[0].number);
+  }
+  let dlLast = null;
+  for (let i = 0; i < dlChunk && !rateLimited; i++) {
+    const n = dlNext + i;
+    const key = `dlnraja-issue:${n}`;
+    if (n > dlMax) { dlAdvanced.push({ n, status: 'no-action', note: 'past newest number', stop: true }); break; }
+    const issue = await ghGet(`https://api.github.com/repos/${DL_REPO}/issues/${n}`);
+    if (issue && issue.rateLimited) { dlRateLimited = true; break; }
+    await sleep(300);
+    if (issue && issue.error && issue.status === 404) {
+      // Deleted / transferred number inside the range: record and move on.
+      if (dlLast === null) dlLast = n;
+      const gone = { id: key, status: 'no-action', note: 'number not found (deleted or transferred)', sources: [`https://github.com/${DL_REPO}/issues/${n}`] };
+      const prevGone = cp.items.find((it) => it.id === key);
+      if (prevGone) Object.assign(prevGone, gone); else cp.items.push(gone);
+      dlAdvanced.push({ n, status: 'no-action', note: gone.note });
+      continue;
+    }
+    let comments = null;
+    if (issue && !issue.error && Number(issue.comments) > 0) {
+      comments = await ghGet(`https://api.github.com/repos/${DL_REPO}/issues/${n}/comments?per_page=100`);
+      if (comments && comments.rateLimited) { dlRateLimited = true; break; }
+      if (!Array.isArray(comments)) comments = null;
+      await sleep(250);
+    }
+    if (issue && issue.pull_request && !issue.error) {
+      // Inline review comments live on a separate endpoint (P2870).
+      const rc = await ghGet(`https://api.github.com/repos/${DL_REPO}/pulls/${n}/comments?per_page=100`);
+      if (Array.isArray(rc) && rc.length) comments = [...(comments || []), ...rc];
+      await sleep(250);
+    }
+    if (!issue || issue.error) { dlAdvanced.push({ n, status: 'retry', note: 'api error' }); break; }
+    const classified = classifyIssueFull(n, issue, comments, { repo: DL_REPO, prefix: 'dlnraja-issue' });
+    const prev = cp.items.find((it) => it.id === key);
+    if (prev && prev.manual) { dlAdvanced.push({ n, status: prev.status, note: 'manual (kept)' }); continue; }
+    if (prev) Object.assign(prev, classified); else cp.items.push(classified);
+    if (!DRY && classified.status === 'already-fixed') ledger.record(L, key, { status: 'done', note: classified.note, by: 'advance-sweep' });
+    else if (!DRY && (classified.status === 'needs-info' || classified.status === 'pending')) ledger.record(L, key, { status: 'deferred', note: classified.note, by: 'advance-sweep' });
+    dlAdvanced.push({ n, status: classified.status, note: classified.note });
+    if (!deep.done) deep.done = { JohanBendz: [], dlnraja: [] };
+    if (!deep.done.dlnraja) deep.done.dlnraja = [];
+    if (!deep.done.dlnraja.includes(n)) deep.done.dlnraja.push(n);
+  }
+  const dlDone = dlAdvanced.filter((a) => a.status !== 'retry' && !a.stop).length;
+  cp.github.dlnraja.next = dlNext + dlDone;
+  if (dlAdvanced.some((a) => a.stop)) cp.github.dlnraja.caughtUpAt = new Date().toISOString();
+  deep.next = deep.next || {};
+  deep.next.dlnraja = cp.github.dlnraja.next;
+
   // Forum topics from post 1 (P2810).
   const forum = [];
   let forumRateLimited = false;
-  if (ONLY !== 'johan' && FORUM_CHUNK > 0) {
+  if ((ONLY === 'all' || ONLY === 'forum') && FORUM_CHUNK > 0) {
     for (const tid of TOPICS) {
       const st = cp.threads[tid] || (cp.threads[tid] = { lastPost: 0, status: 'pending' });
       if (st.status === 'caught-up' && st.sweptTo >= (st.lastPost || 0)) { /* re-check tail below */ }
@@ -346,10 +450,10 @@ async function main() {
       if (forumRateLimited) break;
     }
   }
-  const progressed = advanced.length > 0 || forum.some((f) => f.scanned > 0);
+  const progressed = advanced.length > 0 || dlDone > 0 || forum.some((f) => f.scanned > 0);
   deep.updated = new Date().toISOString().slice(0, 10);
   cp.updated = new Date().toISOString();
-  cp.lastChunk = { at: cp.updated, advanced: advanced.length, rateLimited, items: advanced, forum, forumRateLimited, progressed };
+  cp.lastChunk = { at: cp.updated, advanced: advanced.length, rateLimited, items: advanced, dlnraja: { advanced: dlDone, next: cp.github.dlnraja.next, rateLimited: dlRateLimited, items: dlAdvanced }, forum, forumRateLimited, progressed };
   cp.stats = cp.items.reduce((a, it) => { a[it.status] = (a[it.status] || 0) + 1; return a; }, {});
 
   if (!DRY) {
@@ -362,6 +466,8 @@ async function main() {
     dry: DRY,
     advanced: advanced.length,
     next: cp.github.johan.next,
+    dlnrajaNext: cp.github.dlnraja.next,
+    dlnrajaAdvanced: dlDone,
     rateLimited,
     forum,
     forumRateLimited,
@@ -375,7 +481,17 @@ async function main() {
   }
 }
 
+// P2870: if every handle closes while main() is still awaiting, say so and fail loudly instead of
+// exiting 0 with no checkpoint written.
+let mainDone = false;
+process.on('beforeExit', () => {
+  if (!mainDone) {
+    console.error('[advance-sweep] event loop drained before the chunk finished (dropped request); nothing saved');
+    process.exitCode = 3;
+  }
+});
 main().then(() => {
+  mainDone = true;
   // Progress guard: a run that only touches 'updated' is a silent stall (exit 2, soft in CI).
   try {
     const cp = loadJson(CP, {});

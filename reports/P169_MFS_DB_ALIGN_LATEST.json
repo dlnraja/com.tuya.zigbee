@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-10-15T09:33:57.457Z",
+  "timestamp": "2026-10-19T07:37:28.023Z",
   "gate": "align-mfs-db-intelligent",
   "apply": false,
   "check": true,
   "changeCount": 0,
-  "skippedCount": 80,
+  "skippedCount": 85,
   "highSeverityCount": 0,
   "byAction": {},
   "changes": [],
@@ -167,6 +167,25 @@
       "reason": "registry_empty_mfr",
       "caseId": "p2821-forbid-cartesian-qd7hej8u-ts0041",
       "canon": null
+    },
+    {
+      "reason": "registry_driver_missing",
+      "caseId": "p2828-ocr-9em5sfh-not-invent",
+      "canon": null
+    },
+    {
+      "reason": "registry_driver_missing",
+      "caseId": "p2828-forum-pid-mix-reject"
+    },
+    {
+      "reason": "registry_cartesian_gang_refuse",
+      "caseId": "p2830b-johan-ts0003-wall-switches",
+      "canon": "switch_3gang",
+      "mfrCount": 20,
+      "gangPids": [
+        "ts0003",
+        "TS0003"
+      ]
     },
     {
       "reason": "registry_oem_multi_canon",
@@ -371,6 +390,14 @@
       ]
     },
     {
+      "reason": "registry_bare_brand_multi_canon",
+      "mfr": "ewelink",
+      "canon": "water_valve_garden",
+      "caseIds": [
+        "p2836-sonoff-swv-water-valve-garden"
+      ]
+    },
+    {
       "reason": "unclaimed_no_compose",
       "mfr": "_TZ3210_JLF1NEPW",
       "curated": "bulb_rgb"
@@ -564,45 +591,6 @@
         "led_controller_dimmable",
         "led_controller_rgb"
       ]
-    },
-    {
-      "reason": "unclaimed_multi",
-      "mfr": "_tz3000_dd8wwzcy",
-      "curated": "plug_energy_monitor",
-      "claimers": [
-        "climate_sensor",
-        "device_plug_energy"
-      ]
-    },
-    {
-      "reason": "pair_conflict_ambiguous",
-      "mfr": "_TZ3000_lf56vpxj",
-      "curated": "sensor_motion_presence",
-      "foreign": [
-        "sensor_climate_motion",
-        "slim_motion_sensor"
-      ],
-      "modelIds": [
-        "Excellux",
-        "TS0001",
-        "TS0202",
-        "TS0225",
-        "TS0601"
-      ]
-    },
-    {
-      "reason": "unclaimed_multi",
-      "mfr": "_TZ3000_lf56vpxj",
-      "curated": "sensor_motion_presence",
-      "claimers": [
-        "sensor_climate_motion",
-        "slim_motion_sensor"
-      ]
-    },
-    {
-      "reason": "unclaimed_no_compose",
-      "mfr": "Heiman",
-      "curated": "button_emergency_sos"
     }
   ],
   "highSeverity": []
