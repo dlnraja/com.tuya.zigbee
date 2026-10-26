@@ -493,13 +493,7 @@
           "example": 2
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Button 2 scene [[scene_id]] recalled ({scene_id})",
-        "fr": "Bouton 2 scène [[scene_id]] rappelée ({scene_id})",
-        "nl": "Knop 2 scène [[scène_id]] opgeroepen ({scene_id})",
-        "de": "Taste 2 Szene [[Szene_id]] aufgerufen ({scene_id})"
-      }
+      "args": []
     },
     {
       "id": "button_wireless_2_physical_on",

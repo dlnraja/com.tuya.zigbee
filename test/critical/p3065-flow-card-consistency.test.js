@@ -14,7 +14,7 @@ const BASELINE = {
   duplicateIds: 9, // driver.compose.json "flow" shadowed by driver.flow.compose.json (3 curtain/gas drivers)
   noEnTitle: 0,
   badArgs: 0,
-  titleFormattedUnknown: 16, // trigger titleFormatted referencing tokens (button scene/multi)
+  titleFormattedUnknown: 0, // P3065 uplift: arg-less triggers no longer carry a token-based titleFormatted
   undeclaredRefs: 17,
 };
 
@@ -26,4 +26,14 @@ for (const [key, max] of Object.entries(BASELINE)) {
 
 test('P3065 flow audit sees the whole card set', () => {
   assert.ok(r.counts.triggers > 1000 && r.counts.actions > 500 && r.counts.conditions > 100, JSON.stringify(r.counts));
+});
+
+test('P3065 flow uplift: no U+FFFD (broken encoding) in driver flow cards', () => {
+  const fs = require('fs');
+  const root = path.join(__dirname, '..', '..', 'drivers');
+  const bad = fs.readdirSync(root).filter((d) => {
+    const p = path.join(root, d, 'driver.flow.compose.json');
+    return fs.existsSync(p) && fs.readFileSync(p, 'utf8').includes('\uFFFD');
+  });
+  assert.deepStrictEqual(bad, []);
 });
