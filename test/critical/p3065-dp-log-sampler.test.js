@@ -50,3 +50,15 @@ test('P3065 TuyaEF00Manager frame logs go through compact()', () => {
   assert.ok(!src.includes('received: raw=${JSON.stringify(value)}'));
   assert.strictEqual((src.match(/dp-log-sampler'\)\.compact\(/g) || []).length, 4);
 });
+
+test('P3065 shouldLogDup samples per DP, bounded, verbose bypass', () => {
+  const { shouldLogDup } = require('../../lib/utils/dp-log-sampler');
+  const o = {};
+  const r = [];
+  for (let i = 0; i < 100; i += 1) {r.push(shouldLogDup(o, 1, false));}
+  assert.strictEqual(r.filter(Boolean).length, 5); // 1,2,3,50,100
+  assert.strictEqual(shouldLogDup(o, 2, false), true);
+  assert.strictEqual(shouldLogDup(o, 1, true), true);
+  for (let d = 0; d < 400; d += 1) {shouldLogDup(o, 'x' + d, false);}
+  assert.ok(Object.keys(o._p3065DupLogN).length <= 256);
+});
