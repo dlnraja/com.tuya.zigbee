@@ -156,6 +156,11 @@
       "cap": "measure_luminance",
       "when": "change"
     },
+    "device_air_purifier_presence_air_purifier_pr_15f89": {
+      "driver": "device_air_purifier_presence",
+      "cap": "measure_battery",
+      "when": "low"
+    },
     "device_air_purifier_quality_air_quality_comp_1d859": {
       "driver": "device_air_purifier_quality",
       "cap": "measure_temperature",
@@ -195,6 +200,11 @@
       "driver": "device_air_purifier_smoke",
       "cap": "alarm_tamper",
       "when": true
+    },
+    "device_air_purifier_smoke_detector_advanced__22e0b": {
+      "driver": "device_air_purifier_smoke",
+      "cap": "measure_battery",
+      "when": "low"
     },
     "device_air_purifier_smoke_detector_advanced__14f55": {
       "driver": "device_air_purifier_smoke",
@@ -285,6 +295,11 @@
       "driver": "device_radiator_valve",
       "cap": "measure_temperature",
       "when": "change"
+    },
+    "device_radiator_valve_radiator_valve_battery_5cda4": {
+      "driver": "device_radiator_valve",
+      "cap": "measure_battery",
+      "when": "low"
     },
     "device_radiator_valve_smart": {
       "driver": "device_radiator_valve_smart",
@@ -451,6 +466,16 @@
       "cap": "measure_current",
       "when": "change"
     },
+    "remote_button_wireless_scene_button_wireless_32e39": {
+      "driver": "remote_button_wireless_scene",
+      "cap": "measure_battery",
+      "when": "low"
+    },
+    "remote_button_wireless_valve_button_wireless_27465": {
+      "driver": "remote_button_wireless_valve",
+      "cap": "measure_battery",
+      "when": "low"
+    },
     "rgb_bulb_e14_turned_on_5f26e": {
       "driver": "rgb_bulb_E14",
       "cap": "onoff",
@@ -531,6 +556,11 @@
       "cap": "measure_humidity",
       "when": "change"
     },
+    "sensor_climate_lcdtemphumidsensor_climate_se_857a5": {
+      "driver": "sensor_climate_lcdtemphumidsensor",
+      "cap": "measure_battery",
+      "when": "low"
+    },
     "sensor_climate_lcdtemphumidsensor_climate_se_52d9c": {
       "driver": "sensor_climate_lcdtemphumidsensor",
       "cap": "measure_temperature",
@@ -581,6 +611,11 @@
       "cap": "measure_humidity",
       "when": "change"
     },
+    "sensor_lcdtemphumidsensor_temphumidsensor_lc_af394": {
+      "driver": "sensor_lcdtemphumidsensor_temphumidsensor",
+      "cap": "measure_battery",
+      "when": "low"
+    },
     "sensor_motion_radar_motion_sensor_radar_mmwa_ba591": {
       "driver": "sensor_motion_radar",
       "cap": "alarm_motion",
@@ -615,6 +650,11 @@
       "driver": "sensor_motion_radar",
       "cap": "measure_humidity",
       "when": "change"
+    },
+    "sensor_motion_radar_motion_sensor_radar_mmwa_07014": {
+      "driver": "sensor_motion_radar",
+      "cap": "measure_battery",
+      "when": "low"
     },
     "sensor_motion_radar_motion_sensor_radar_mmwa_494ef": {
       "driver": "sensor_motion_radar",

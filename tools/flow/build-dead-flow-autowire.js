@@ -38,7 +38,8 @@ const TRIGGER_RULES = [
   [/^co alarm cleared$/, () => ['alarm_co'], false],
   [/^co2 alert triggered$/, () => ['alarm_co2'], true],
   [/^co2 returned to normal$/, () => ['alarm_co2'], false],
-  [/^battery (is )?low$/, () => ['alarm_battery'], true],
+  // P3065 D8: no alarm_battery here, so measure_battery crossing (stateful, see DeadFlowAutoWire.lowCrossed)
+  [/^battery (is )?low$/, () => ['alarm_battery', 'measure_battery'], (cap) => cap === 'measure_battery' ? 'low' : true],
   [/^turned on$/, () => ['onoff'], true],
   [/^turned off$/, () => ['onoff'], false],
   [/^temperature changed$/, () => ['measure_temperature'], 'change'],
@@ -174,7 +175,7 @@ function build({ auditFile, strict } = {}) {
       for (const [re, prefs, when] of TRIGGER_RULES) {
         if (!re.test(title)) {continue;}
         const cap = pick(prefs(caps, title), caps);
-        if (cap) {out.triggers[t.id] = { driver: dir, cap, when };}
+        if (cap) {out.triggers[t.id] = { driver: dir, cap, when: typeof when === 'function' ? when(cap) : when };}
         break;
       }
     }
