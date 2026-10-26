@@ -1,0 +1,64 @@
+{
+  "id": "adaptive_lighting_set",
+  "title": {
+    "en": "Turn adaptive lighting on or off",
+    "fr": "Activer ou désactiver l'éclairage adaptatif",
+    "nl": "Adaptieve verlichting aan- of uitzetten",
+    "de": "Adaptive Beleuchtung ein- oder ausschalten"
+  },
+  "titleFormatted": {
+    "en": "Turn adaptive lighting of [[device]] [[state]]",
+    "fr": "Éclairage adaptatif de [[device]] : [[state]]",
+    "nl": "Zet adaptieve verlichting van [[device]] [[state]]",
+    "de": "Adaptive Beleuchtung von [[device]] [[state]] schalten"
+  },
+  "hint": {
+    "en": "White temperature and brightness follow the sun, computed locally on Homey.",
+    "fr": "La température de blanc et la luminosité suivent le soleil, calculées localement sur Homey.",
+    "nl": "Witte kleurtemperatuur en helderheid volgen de zon, lokaal berekend op Homey.",
+    "de": "Weißton und Helligkeit folgen der Sonne, lokal auf Homey berechnet."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=light_temperature",
+      "title": {
+        "en": "Light",
+        "fr": "Lampe",
+        "nl": "Lamp",
+        "de": "Leuchte"
+      }
+    },
+    {
+      "type": "dropdown",
+      "name": "state",
+      "title": {
+        "en": "State",
+        "fr": "État",
+        "nl": "Status",
+        "de": "Zustand"
+      },
+      "values": [
+        {
+          "id": "on",
+          "label": {
+            "en": "on",
+            "fr": "activé",
+            "nl": "aan",
+            "de": "ein"
+          }
+        },
+        {
+          "id": "off",
+          "label": {
+            "en": "off",
+            "fr": "désactivé",
+            "nl": "uit",
+            "de": "aus"
+          }
+        }
+      ]
+    }
+  ]
+}
