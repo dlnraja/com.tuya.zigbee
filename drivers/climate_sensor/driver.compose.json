@@ -2157,6 +2157,8 @@
           "type": "number",
           "label": {
             "en": "Temperature Offset (°C)",
+            "nl": "Temperatuurcorrectie (°C)",
+            "de": "Temperaturversatz (°C)",
             "fr": "Décalage Température (°C)"
           },
           "value": 0,
@@ -2173,6 +2175,8 @@
           "type": "number",
           "label": {
             "en": "Humidity Offset (%)",
+            "nl": "Vochtigheidscorrectie (%)",
+            "de": "Feuchtigkeitsversatz (%)",
             "fr": "Décalage Humidité (%)"
           },
           "value": 0,
@@ -2189,6 +2193,8 @@
           "type": "dropdown",
           "label": {
             "en": "Decimal Precision",
+            "nl": "Decimalen",
+            "de": "Dezimalstellen",
             "fr": "Précision"
           },
           "value": "1",
@@ -2491,6 +2497,7 @@
       "type": "group",
       "label": {
         "en": "Sensor Calibration",
+        "de": "Sensorkalibrierung",
         "fr": "Étalonnage du capteur",
         "nl": "Sensor Kalibratie"
       },
@@ -2500,6 +2507,7 @@
           "type": "number",
           "label": {
             "en": "Temperature offset",
+            "de": "Temperaturversatz",
             "fr": "Décalage de température",
             "nl": "Temperatuur correctie"
           },
@@ -2518,6 +2526,7 @@
           "type": "number",
           "label": {
             "en": "Humidity offset",
+            "de": "Feuchtigkeitsversatz",
             "fr": "Décalage d'humidité",
             "nl": "Luchtvochtigheid correctie"
           },
