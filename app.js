@@ -974,6 +974,20 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
       }
       if (this._tuyaUDPDiscovery && typeof this._tuyaUDPDiscovery.start === 'function') {
       const updateDeviceIP = async (info) => {
+        // P3072b: bounded, rate-limited rebind (all IP keys + live client); old loop kept as fallback
+        try {
+          if (!this._lanRebindRouter) {
+            const { LanRebindRouter } = require('./lib/wifi/LanRebindRouter');
+            this._lanRebindRouter = new LanRebindRouter({
+              listDevices: () => Object.values(this.homey.drivers.getDrivers()).flatMap((d) => d.getDevices() || []),
+              log: this.log.bind(this),
+            });
+          }
+          await this._lanRebindRouter.handle(info);
+          return;
+        } catch (e) {
+          this.log('[LAN-REBIND] router unavailable, legacy path:', e && e.message);
+        }
         try {
           const drivers = Object.values(this.homey.drivers.getDrivers());
           for (const driver of drivers) {
