@@ -8,10 +8,13 @@ button{margin-top:14px;padding:10px;width:100%}
 .msg{margin-top:10px;padding:8px;border-radius:4px;display:none}
 .err{background:#fde8e8;color:#9b1c1c}.ok{background:#e6f6ea;color:#1e6b35}
 small{color:#666}
+#st{background:#f3f4f6;padding:8px;border-radius:4px;font-size:13px;line-height:1.5}
 </style></head>
 <body>
 <!-- Repair view (WiFi local): update local key / IP / protocol of an existing device.
-     Handlers: TuyaLocalDriver.onRepair → configure, refresh_key, getSavedCredentials. -->
+     Handlers: TuyaLocalDriver.onRepair → configure, refresh_key, getSavedCredentials, repair_status, re_probe (P3072c). -->
+<div id="st">Checking device…</div>
+<button id="probe">Find device on the network</button>
 <p><small>Leave a field empty to keep its current value.</small></p>
 <label for="ip">IP address</label><input id="ip" placeholder="192.168.1.50" autocomplete="off">
 <label for="lk">Local key</label><input id="lk" placeholder="16 ascii or 32 hex characters" autocomplete="off">
@@ -25,8 +28,28 @@ small{color:#666}
 var H;
 function show(id,t){var e=document.getElementById(id);e.textContent=t;e.style.display='block';}
 function hide(){document.getElementById('err').style.display='none';document.getElementById('ok').style.display='none';}
+function status(){
+  H.emit('repair_status',{},function(err,s){
+    var el=document.getElementById('st'); if(err||!s){el.textContent='Status unavailable';return;}
+    var t=(s.connected?'Connected':'Not connected')+' · IP '+(s.ip||'?')+(s.protocol?' · v'+s.protocol:'');
+    if(s.udp)t+=' · seen on network at '+s.udp.ip+(s.udp.ageSec!=null?' ('+s.udp.ageSec+' s ago)':'');
+    else t+=s.udpRunning?' · not heard on network yet':'';
+    if(s.ipMismatch)t+=' · IP changed: press Find device';
+    if(s.lastError&&s.lastError.message)t+=' · last error: '+s.lastError.message;
+    if(!s.hasKey)t+=' · no local key saved';
+    el.textContent=t;
+  });
+}
 function onHomeyReady(Homey){
-  H=Homey; Homey.ready();
+  H=Homey; Homey.ready(); status();
+  document.getElementById('probe').onclick=function(){
+    hide(); show('ok','Searching (up to 8 s)…');
+    H.emit('re_probe',{},function(err,r){
+      hide(); if(err){show('err',err.message||String(err));return;}
+      if(!r||!r.ok){show('err',r&&r.reason==='not_heard'?'Device did not answer. Check it is powered and on the same network.':'Search unavailable ('+(r&&r.reason||'?')+')');return;}
+      show('ok',r.changed?'Found at '+r.ip+' — IP updated':'Found at '+r.ip+' (unchanged)'); status();
+    });
+  };
   document.getElementById('save').onclick=function(){
     hide();
     var p={};
