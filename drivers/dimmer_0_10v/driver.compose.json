@@ -48,11 +48,9 @@
             "en": "Minimum Brightness (%)"
           },
           "value": 0,
-          "attr": {
-            "step": 1,
-            "min": 0,
-            "max": 100
-          }
+          "min": 0,
+          "max": 100,
+          "step": 1
         },
         {
           "id": "maxBrightness",
@@ -61,11 +59,9 @@
             "en": "Maximum Brightness (%)"
           },
           "value": 100,
-          "attr": {
-            "step": 1,
-            "min": 0,
-            "max": 100
-          }
+          "min": 0,
+          "max": 100,
+          "step": 1
         }
       ]
     },
