@@ -340,7 +340,15 @@
     "comm_error": "Communicatiefout: __reason__",
     "missing_device_id": "device_id ontbreekt",
     "connection_failed": "Verbinding mislukt",
-    "no_ip": "Geen IP - stel in bij instellingen"
+    "no_ip": "Geen IP - stel in bij instellingen",
+    "local_auth_cloud_recovery": "Authenticatie mislukt: de lokale sleutel is mogelijk gewijzigd. Ingeschakeld cloudherstel wordt geprobeerd...",
+    "local_auth_local_first": "Authenticatie mislukt: de lokale sleutel is mogelijk gewijzigd. In de modus lokaal-eerst blijft de cloud-terugval uit; werk de sleutel bij via Repareren.",
+    "local_reconnecting": "Apparaat losgekoppeld. Automatisch opnieuw verbinden...",
+    "discovery_timeout": "Time-out bij zoeken: stel een vast IP-adres in bij de instellingen als je router UDP-broadcasts blokkeert.",
+    "local_unreachable_cloud_ok": "Apparaat lokaal onbereikbaar, wel via de cloud: controleer voeding/netwerk. Nieuwe LAN-poging bezig...",
+    "local_key_recovered_link": "Lokale sleutel automatisch hersteld via de Smart Life-koppeling. Opnieuw verbinden...",
+    "local_key_recovered": "Lokale sleutel automatisch hersteld. Opnieuw verbinden...",
+    "auto_recovery_failed": "Automatisch herstel mislukt. Controleer je Cloud API-gegevens of koppel opnieuw."
   },
   "warnings": {
     "battery_low": "Batterij bijna leeg — binnenkort vervangen",

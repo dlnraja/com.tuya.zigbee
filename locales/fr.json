@@ -340,7 +340,15 @@
     "comm_error": "Erreur de communication : __reason__",
     "missing_device_id": "device_id manquant",
     "connection_failed": "Échec de connexion",
-    "no_ip": "Pas d’IP - à configurer dans les réglages"
+    "no_ip": "Pas d’IP - à configurer dans les réglages",
+    "local_auth_cloud_recovery": "Échec d'authentification : la clé locale a peut-être changé. Récupération cloud (activée) en cours...",
+    "local_auth_local_first": "Échec d'authentification : la clé locale a peut-être changé. Le mode local d'abord laisse le secours cloud désactivé ; mettez la clé à jour via Réparer.",
+    "local_reconnecting": "Appareil déconnecté. Reconnexion automatique...",
+    "discovery_timeout": "Délai de découverte dépassé : attribuez une IP fixe dans les réglages si votre routeur bloque les diffusions UDP.",
+    "local_unreachable_cloud_ok": "Appareil injoignable en local, mais joignable via le cloud : vérifiez l'alimentation et le réseau. Nouvel essai LAN en cours...",
+    "local_key_recovered_link": "Clé locale récupérée automatiquement via le lien Smart Life. Reconnexion...",
+    "local_key_recovered": "Clé locale récupérée automatiquement. Reconnexion...",
+    "auto_recovery_failed": "Échec de la récupération automatique. Vérifiez vos identifiants Cloud API ou appairez à nouveau."
   },
   "warnings": {
     "battery_low": "Batterie faible — à remplacer bientôt",
