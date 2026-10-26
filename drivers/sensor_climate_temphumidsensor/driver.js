@@ -73,7 +73,7 @@ class ClimateSensorDriver extends ZigBeeDriver {
   }
         // A8: NaN Safety - use safeDivide/safeMultiply
   const val = args.device.getCapabilityValue('measure_temperature');
-        return temp !== null && temp > args.temp;
+        return val !== null && val > args.temp; // P3065: was undefined `temp`
       });
 
       this.tempBelowCondition?.registerRunListener(async (args ) => {
