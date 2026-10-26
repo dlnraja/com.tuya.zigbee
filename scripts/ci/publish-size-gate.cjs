@@ -81,12 +81,12 @@ function walkStats(dir, opts = {}) {
     for (const entry of entries) {
       const full = path.join(current, entry.name);
       if (entry.isDirectory()) {
-        if (excludedDirs.has(entry.name)) continue;
+        if (excludedDirs.has(entry.name)) {continue;}
         stack.push(full);
         continue;
       }
-      if (!entry.isFile()) continue;
-      if (excludedExtensions.has(path.extname(entry.name))) continue;
+      if (!entry.isFile()) {continue;}
+      if (excludedExtensions.has(path.extname(entry.name))) {continue;}
 
       try {
         const stat = fs.statSync(full);
@@ -147,8 +147,8 @@ function checkMfsDb() {
 function checkDirUnderLimit(label, dir, limitMB, opts = {}) {
   if (!fs.existsSync(dir)) {
     const message = `${label}: missing, skipped (${dir})`;
-    if (STRICT) errors.push(message);
-    else warnings.push(message);
+    if (STRICT) {errors.push(message);}
+    else {warnings.push(message);}
     return;
   }
   const stats = walkStats(dir, opts);
@@ -163,12 +163,12 @@ function checkDirUnderLimit(label, dir, limitMB, opts = {}) {
 }
 
 function checkArchive(file) {
-  if (!fs.existsSync(file)) return;
+  if (!fs.existsSync(file)) {return;}
   const stat = fs.statSync(file);
   const mb = toMB(stat.size);
   let status = 'pass';
-  if (mb > LIMITS.archiveMaxMB) status = 'fail';
-  else if (mb > LIMITS.archiveWarnMB) status = 'warn';
+  if (mb > LIMITS.archiveMaxMB) {status = 'fail';}
+  else if (mb > LIMITS.archiveWarnMB) {status = 'warn';}
   addCheck('Compressed archive', stat.size, LIMITS.archiveMaxMB, status, path.relative(ROOT, file));
   if (status === 'fail') {
     errors.push(`Compressed archive is ${fmtMB(stat.size)} MB, above hard upload limit ${LIMITS.archiveMaxMB.toFixed(2)} MB`);
@@ -238,7 +238,7 @@ function checkBuildAppJson(file, label = 'Build app.json', kind = 'raw homey bui
   const projected = projectUploadManifestBytes(file);
   if (projected === null || toMB(projected) > LIMITS.appJsonMB) {
     checkJsonUnderLimit(label, file, LIMITS.appJsonMB);
-    if (projected !== null) errors.push(`Projected upload app.json is ${fmtMB(projected)} MB after sanitize+compact+strip, above ${LIMITS.appJsonMB.toFixed(2)} MB`);
+    if (projected !== null) {errors.push(`Projected upload app.json is ${fmtMB(projected)} MB after sanitize+compact+strip, above ${LIMITS.appJsonMB.toFixed(2)} MB`);}
     return;
   }
   addCheck(`${label} (${kind}, not uploaded)`, rawBytes, LIMITS.appJsonMB, 'warn', `${path.relative(ROOT, file)} compact; not prepared yet`);
@@ -253,12 +253,12 @@ function main() {
   // gate. Prefer the prepared publish manifest when present.
   const preparedApp = process.env.HOMEY_PUBLISH_APPJSON
     || path.join(os.tmpdir(), 'homey-publish-temp', 'app.json');
-  const rootApp = (preparedApp && fs.existsSync(preparedApp))
+  const rootApp = preparedApp && fs.existsSync(preparedApp)
     ? preparedApp
     : path.join(ROOT, 'app.json');
   // P2830h: an unprepared root app.json (stable commits the composed manifest) is projected too.
-  if (rootApp === preparedApp) checkJsonUnderLimit('Root app.json', rootApp, LIMITS.appJsonMB);
-  else checkBuildAppJson(rootApp, 'Root app.json', 'composed source manifest');
+  if (rootApp === preparedApp) {checkJsonUnderLimit('Root app.json', rootApp, LIMITS.appJsonMB);}
+  else {checkBuildAppJson(rootApp, 'Root app.json', 'composed source manifest');}
   checkBuildAppJson(path.join(ROOT, '.homeybuild', 'app.json'));
   // P2793 — large runtime data: the lazily loaded fingerprint table ships with the app (keep it small;
   // fp-shards are the runtime path), and data/mfs_db.json must either stay out of the payload
@@ -296,7 +296,7 @@ function main() {
     if (toMB(lean.bytes) > leanWarnMB) {
       const msg = `Lean build ${fmtMB(lean.bytes)} MB > ${leanWarnMB} MB soft target (excl. backups) — trim firmware/learnmode/assets`;
       warnings.push(msg);
-      if (process.env.GITHUB_ACTIONS) console.log(`::warning title=publish lean size::${msg}`);
+      if (process.env.GITHUB_ACTIONS) {console.log(`::warning title=publish lean size::${msg}`);}
       for (const file of lean.largest.slice(0, 5)) {
         warnings.push(`Large lean build file: ${file.path} (${fmtMB(file.bytes)} MB)`);
       }
@@ -327,7 +327,7 @@ function main() {
       return null;
     }
   })();
-  if (appId) checkArchive(path.join(ROOT, '.homeybuild', `${appId}.tar.gz`));
+  if (appId) {checkArchive(path.join(ROOT, '.homeybuild', `${appId}.tar.gz`));}
   checkArchive(path.join(ROOT, '.homeybuild', 'app.tar.gz'));
 
   const ok = errors.length === 0;
