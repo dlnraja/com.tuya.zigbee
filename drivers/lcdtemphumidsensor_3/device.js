@@ -102,6 +102,12 @@ class lcdtemphumidsensor3 extends TuyaSpecificClusterDevice {
 
   async processResponse(data) {
     const dp = data.dp;
+    // P3067 family 9: _TZE204_lb0fsvba is a ZBN-DJ-63 breaker (Z2M tuya.ts), now owned by smart_breaker.
+    // On units already paired here DP1 is energy and DP2/DP4 are not humidity/battery: drop them.
+    if (/_lb0fsvba$/i.test(String(this.getSetting('zb_manufacturer_name') || ''))) {
+      this.log(`[LCD3] DP${dp} ignored: ZBN-DJ-63 breaker, re-pair as Smart breaker for energy/switch`);
+      return;
+    }
     const measuredValue = getDataValue(data);
     let parsedValue = 0;
 

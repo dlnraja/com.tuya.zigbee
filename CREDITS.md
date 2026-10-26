@@ -457,5 +457,7 @@ A heartfelt thank you to:
 - Batch P3067 (lights): **Koen Kanters and the zigbee-herdsman-converters contributors** (`gledopto.ts` GL-SPI-206P:
   DP3 white brightness, DP61 paint colour frame, DP53 pixel count, DP101 bead order, DP102 chip type, DP103 do not
   disturb; `tuya.ts` MG-DIM02Z DP143/144/146 and TS0601_knob_dimmer_switch DP106/141) (own implementation).
+- Batch P3067 (soil, breaker): **Koen Kanters and the zigbee-herdsman-converters contributors** (`hobeian.ts` CS-201Z /
+  ZG-303Z DP102/104/105/110-112 device-side calibration and sampling; `tuya.ts` ZBN-DJ-63 DP1/6/9/15/16/103/110) (own implementation).
 - And every forum member and GitHub issue reporter who sent a fingerprint, a diagnostic or a "this works now":
   you are listed by handle in the sections above, and new names are added with each batch.

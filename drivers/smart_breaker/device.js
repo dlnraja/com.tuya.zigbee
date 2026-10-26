@@ -42,6 +42,15 @@ class SmartBreakerDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedP
         16: { capability: 'onoff', transform: (v) => v === 1 || v === true },
       };
     }
+    // P3067 family 9: ZBN-DJ-63 (Z2M tuya.ts) shares the TOQCB2-80 layout; DP9 is the fault bitmap (0 = clear).
+    if (this._isZbnDj63()) {
+      return {
+        ...parentMappings,
+        1: { capability: 'meter_power', divisor: 100 },
+        9: { capability: 'alarm_generic', transform: (v) => Number(v) !== 0 },
+        16: { capability: 'onoff', transform: (v) => v === 1 || v === true },
+      };
+    }
 
     // TOWSMR1-40 RCBO uses different DP layout: DP6-8 for energy, DP9=energy, DP10=fault
     if (isTOWSMR1) {
@@ -75,10 +84,36 @@ class SmartBreakerDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedP
     return /_(kv1nvirl|lyqazpe6|9xstqowh|mrffaamu)$/.test(mfr);
   }
 
+  _hasPhaseStruct() {
+    return this._isToqcb280() || this._isZbnDj63();
+  }
+
+  _isZbnDj63() {
+    return /_lb0fsvba$/.test(String(this.getSetting('zb_manufacturer_name') || '').toLowerCase());
+  }
+
+  // P3067 family 9: ZBN-DJ-63 DP103 temperature (raw °C), DP15 leakage current (mA) and DP110 reverse
+  // energy (kWh /100), Z2M tuya.ts. Temperature is added late; the others are kept in the store.
+  _handleZbnDj63Dp(id, rawValue) {
+    if (id !== 103 && id !== 15 && id !== 110) {return false;}
+    const v = Number(rawValue);
+    if (!Number.isFinite(v)) {return true;}
+    if (id === 103) {
+      if (v > -40 && v < 150) {require('../../lib/helpers/LateCapability').ensureAndSet(this, 'measure_temperature', v).catch(() => {});}
+      return true;
+    }
+    if (id === 15 || id === 110) {
+      Promise.resolve().then(() => this.setStoreValue(id === 15 ? 'leakage_current_ma' : 'reverse_energy_kwh', id === 15 ? v : v / 100)).catch(() => {});
+      return true;
+    }
+    return false;
+  }
+
   // #108: phase A struct feeds the main V/A/W tiles; B and C are logged only (P2519).
   _handleDP(dpId, rawValue) {
     const id = Number(dpId);
-    if ((id === 6 || id === 7 || id === 8) && this._isToqcb280()) {
+    if (this._isZbnDj63() && this._handleZbnDj63Dp(id, rawValue)) {return;}
+    if ((id === 6 || id === 7 || id === 8) && this._hasPhaseStruct()) {
       const ph = require('../../lib/tuya/TuyaPhaseStruct').decodePhaseVariant2(rawValue);
       if (!ph) {return;}
       if (id !== 6) {
