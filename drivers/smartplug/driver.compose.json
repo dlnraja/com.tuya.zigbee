@@ -257,6 +257,8 @@
           "type": "dropdown",
           "label": {
             "en": "Power Measurement Scale",
+            "nl": "Schaal vermogensmeting",
+            "de": "Skalierung der Leistungsmessung",
             "fr": "Échelle de puissance"
           },
           "value": "1",
