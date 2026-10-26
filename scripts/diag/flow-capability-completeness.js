@@ -24,7 +24,7 @@ function keywords(cap, def) {
   const bare = cap.replace(/^(measure|alarm|meter|tuya|target)_/, '');
   k.add(bare); k.add(bare.replace(/_/g, ' '));
   const t = def && def.title && (def.title.en || def.title);
-  if (typeof t === 'string' && t.length > 2) k.add(t.toLowerCase());
+  if (typeof t === 'string' && t.length > 2) {k.add(t.toLowerCase());}
   return [...k].map((s) => s.toLowerCase());
 }
 
@@ -36,7 +36,7 @@ function names(card, kw) {
 
 function filterParts(card) {
   const f = [];
-  for (const a of card.args || []) if (a.type === 'device' && a.filter) f.push(String(a.filter));
+  for (const a of card.args || []) {if (a.type === 'device' && a.filter) {f.push(String(a.filter));}}
   return f.join('&');
 }
 function filterHasCap(filter, cap) {
@@ -51,30 +51,30 @@ function audit(root = ROOT) {
   const sys = systemCaps(root);
   const capDir = path.join(root, '.homeycompose', 'capabilities');
   const defs = {};
-  for (const f of fs.readdirSync(capDir)) if (f.endsWith('.json')) defs[f.slice(0, -5)] = rd(path.join(capDir, f));
+  for (const f of fs.readdirSync(capDir)) {if (f.endsWith('.json')) {defs[f.slice(0, -5)] = rd(path.join(capDir, f));}}
   const app = { triggers: [], conditions: [], actions: [] };
   for (const kind of Object.keys(app)) {
     const dir = path.join(root, '.homeycompose', 'flow', kind);
-    if (!fs.existsSync(dir)) continue;
-    for (const f of fs.readdirSync(dir)) if (f.endsWith('.json')) {
+    if (!fs.existsSync(dir)) {continue;}
+    for (const f of fs.readdirSync(dir)) {if (f.endsWith('.json')) {
       const c = rd(path.join(dir, f)); c.id = c.id || f.slice(0, -5); app[kind].push(c);
-    }
+    }}
   }
   const rows = [];
   for (const d of fs.readdirSync(path.join(root, 'drivers')).sort()) {
     const dc = path.join(root, 'drivers', d, 'driver.compose.json');
-    if (!fs.existsSync(dc)) continue;
+    if (!fs.existsSync(dc)) {continue;}
     const caps = rd(dc).capabilities || [];
     const ff = path.join(root, 'drivers', d, 'driver.flow.compose.json');
     const df = fs.existsSync(ff) ? rd(ff) : {};
     for (const cap of [...new Set(caps.map((c) => c.split('.')[0]))]) {
-      if (sys.has(cap)) continue; // Homey system cards exist — do not duplicate
+      if (sys.has(cap)) {continue;} // Homey system cards exist — do not duplicate
       const def = defs[cap] || {};
       const kw = keywords(cap, def);
       const need = [];
-      if (def.getable !== false) need.push('triggers');
-      if (def.type === 'boolean' || def.type === 'enum') need.push('conditions');
-      if (def.setable) need.push('actions');
+      if (def.getable !== false) {need.push('triggers');}
+      if (def.type === 'boolean' || def.type === 'enum') {need.push('conditions');}
+      if (def.setable) {need.push('actions');}
       for (const kind of need) {
         const own = (df[kind] || []).some((c) => names(c, kw));
         const shared = app[kind].some((c) => {
@@ -95,5 +95,5 @@ module.exports = { audit };
 if (require.main === module) {
   const r = audit();
   console.log({ checked: r.rows.length, missing: r.missing.length, genericOnly: r.genericOnly.length });
-  if (process.argv.includes('--list')) for (const m of (process.argv.includes('--generic') ? r.genericOnly : r.missing)) console.log(`${m.cap}\t${m.kind}\t${m.type}\t${m.driver}${m.defined ? '' : '\t(UNDEFINED cap)'}`);
+  if (process.argv.includes('--list')) {for (const m of process.argv.includes('--generic') ? r.genericOnly : r.missing) {console.log(`${m.cap}\t${m.kind}\t${m.type}\t${m.driver}${m.defined ? '' : '\t(UNDEFINED cap)'}`);}}
 }
