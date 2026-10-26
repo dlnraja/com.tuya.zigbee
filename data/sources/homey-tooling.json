@@ -1,0 +1,21 @@
+{
+  "checkedAt": "2026-10-26T11:32:24.559Z",
+  "packages": {
+    "homey": {
+      "version": "4.6.1",
+      "node": ">=24"
+    },
+    "homey-lib": {
+      "version": "2.52.3",
+      "node": ">=12.13.0"
+    },
+    "homey-zigbeedriver": {
+      "version": "2.2.18",
+      "node": ">=22"
+    },
+    "zigbee-clusters": {
+      "version": "3.9.1",
+      "node": ">=22"
+    }
+  }
+}
