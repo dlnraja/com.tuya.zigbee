@@ -58,6 +58,7 @@ jobs:
       - name: Publish payload build + size/structure report
         if: always()
         run: |
+          set -o pipefail  # P3069: a crash in the python report must fail the step, not hide behind tee
           rm -rf /tmp/homey-publish-temp
           npx homey app build >/dev/null 2>&1 || true
           node scripts/prepare-publish.js >/tmp/prepare.log 2>&1 || { tail -20 /tmp/prepare.log; exit 1; }
@@ -81,6 +82,17 @@ jobs:
         run: |
           [ -f scripts/validate/manifest-processor-audit.js ] || { echo "audit script missing"; exit 0; }
           for p in .homeybuild/app.json /tmp/homey-publish-temp/app.json; do
-            [ -f "$p" ] && { echo "### Processor audit: $p" | tee -a "$GITHUB_STEP_SUMMARY"; node scripts/validate/manifest-processor-audit.js "$p" 2>&1 | tail -60 | tee -a "$GITHUB_STEP_SUMMARY"; }
+            # P3069: the raw audit output is collapsed so the summary stays readable.
+            [ -f "$p" ] && { { echo "<details><summary>Processor audit: $p (last 60 lines)</summary>"; echo; echo '```'; node scripts/validate/manifest-processor-audit.js "$p" 2>&1 | tail -60; echo '```'; echo "</details>"; } | tee -a "$GITHUB_STEP_SUMMARY"; }
           done
           exit 0
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="debug and publish validation passed; the verified level is shown for information only."; else s="debug or publish validation failed; open the red step for the exact message."; fi
+          node scripts/lib/report-writer.js --title "Homey app validate (all levels)" --summary "$s" \
+            --headers "level|blocking" --row "debug|yes" --row "publish|yes" --row "verified|no, report only" \
+            --thanks "Athom Homey CLI" >> "$GITHUB_STEP_SUMMARY"

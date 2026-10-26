@@ -56,6 +56,14 @@ jobs:
         run: node --expose-gc scripts/ci/memory-budget.js --budget-mb "$(node -p "require('./scripts/ci/memory-budget.json').codeHeapBudgetMb")"
       - name: Full suite on Node 22
         run: npx mocha "test/**/*.test.js" --timeout 10000
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="All mocha suites passed on Node 22."; else s="A mocha suite failed on Node 22; the red step names the file."; fi
+          node scripts/lib/report-writer.js --title "Node 22 tests (mocha)" --summary "$s" --headers "part|what it checks" --row "resilience|reconnect and memory-warning guards" --row "memory|leak and heap budget" --row "full suite|every test file under mocha" --thanks "Node.js test runner" --thanks "Mocha" >> "$GITHUB_STEP_SUMMARY"
   # P3057-3: mocha exits with its own count, so node:test failures (process.exitCode) never failed the job.
   # Strict job: every node:test file under `node --test`; a failure fails the run unless it is in the
   # branch's frozen baseline (test/node-test-known-failures.json, may only shrink).
@@ -74,3 +82,11 @@ jobs:
       - run: npm ci --ignore-scripts --no-audit --no-fund || npm install --ignore-scripts --no-audit --no-fund
       - name: node:test strict (P3057-3)
         run: node tools/ci/node-test-strict.js --concurrency 4
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Every node:test file passed, or failed only inside the frozen baseline."; else s="A node:test file failed outside the frozen baseline."; fi
+          node scripts/lib/report-writer.js --title "Node 22 tests (node:test strict)" --summary "$s" --headers "part|what it checks" --row "strict|node --test on every file, baseline may only shrink" --thanks "Node.js test runner" --thanks "Mocha" >> "$GITHUB_STEP_SUMMARY"

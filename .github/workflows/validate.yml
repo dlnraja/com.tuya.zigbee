@@ -182,17 +182,27 @@ jobs:
       - name: 🧹 Sanitize generated manifest after validation
         run: node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json
 
+      # P3069: one short summary through the shared helper (same facts as before: app, version,
+      # level, drivers), written on success and on failure so the run page always says what happened.
       - name: ✅ Summary
-        if: success()
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+          APP_NAME: ${{ steps.info.outputs.name }}
+          APP_VERSION: ${{ steps.info.outputs.version }}
+          APP_DRIVERS: ${{ steps.info.outputs.drivers }}
+          LEVEL: ${{ inputs.level || 'publish' }}
         run: |
-          echo "## ✅ ${{ steps.info.outputs.name }} v${{ steps.info.outputs.version }}" >> $GITHUB_STEP_SUMMARY
-          echo "| Metric | Value |" >> $GITHUB_STEP_SUMMARY
-          echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
-          echo "| Validation Level | ${{ inputs.level || 'publish' }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Drivers | ${{ steps.info.outputs.drivers }} |" >> $GITHUB_STEP_SUMMARY
-
-      - name: ❌ Failed
-        if: failure()
-        run: |
-          echo "## ❌ Validation Failed" >> $GITHUB_STEP_SUMMARY
-          echo "Run \`npx homey app validate --level publish\` locally for details." >> $GITHUB_STEP_SUMMARY
+          if [ "$JOB_STATUS" = "success" ]; then
+            s="${APP_NAME:-app} v${APP_VERSION:-?} passes validation at level ${LEVEL}."
+          else
+            s="Validation failed. Run npx homey app validate --level ${LEVEL} locally; the red step above has the reason."
+          fi
+          if [ -f scripts/lib/report-writer.js ]; then
+            node scripts/lib/report-writer.js --title "Validate Homey app" --summary "$s" \
+              --headers "metric|value" \
+              --row "validation level|${LEVEL}" --row "drivers|${APP_DRIVERS:-?}" --row "result|${JOB_STATUS}" \
+              --thanks "Athom Homey CLI" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "### Validate Homey app" >> "$GITHUB_STEP_SUMMARY"; echo "$s" >> "$GITHUB_STEP_SUMMARY"
+          fi
