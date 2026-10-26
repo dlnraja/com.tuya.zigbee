@@ -1,9 +1,9 @@
 'use strict';
 
-const { ZigBeeDriver } = require('homey-zigbeedriver');
+const EweLinkLocalDriver = require('../../lib/ewelink-local/EweLinkLocalDriver'); // P3072: LAN pair handlers (ZigBeeDriver had none)
 const { registerGangOnoffFlowCards } = require('../../lib/flow/ActuatorFlowHelper');
 
-class WifiSonoffDualr3Driver extends ZigBeeDriver {
+class WifiSonoffDualr3Driver extends EweLinkLocalDriver {
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) { return; }
