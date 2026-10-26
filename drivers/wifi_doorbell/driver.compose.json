@@ -146,6 +146,26 @@
             "en": "Delay before marking unavailable / firing disconnect flows after a brief TCP drop (pet feeders, dehumidifiers).",
             "fr": "Délai avant indisponible / flux déconnecté après une brève coupure TCP (pet feeders, déshumidificateurs)."
           }
+        },
+        {
+          "id": "wifi_sleep_window_minutes",
+          "type": "number",
+          "label": {
+            "en": "Battery sleep window (minutes)",
+            "fr": "Fenêtre de veille batterie (minutes)",
+            "nl": "Batterij-slaapvenster (minuten)",
+            "de": "Batterie-Schlaffenster (Minuten)"
+          },
+          "value": 0,
+          "min": 0,
+          "max": 1440,
+          "units": {
+            "en": "min"
+          },
+          "hint": {
+            "en": "0 = off. For battery Wi-Fi devices that disconnect between reports: stay available for this long after the last report.",
+            "fr": "0 = désactivé. Pour les appareils Wi-Fi sur batterie qui se déconnectent entre deux rapports : rester disponible ce temps après le dernier rapport."
+          }
         }
       ]
     }

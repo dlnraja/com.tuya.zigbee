@@ -146,6 +146,31 @@
             "en": "Delay before marking unavailable / firing disconnect flows after a brief TCP drop (pet feeders, dehumidifiers).",
             "fr": "Délai avant indisponible / flux déconnecté après une brève coupure TCP (pet feeders, déshumidificateurs)."
           }
+        },
+        {
+          "id": "travel_time_s",
+          "type": "number",
+          "value": 0,
+          "min": 0,
+          "max": 300,
+          "step": 1,
+          "units": {
+            "en": "s"
+          },
+          "label": {
+            "en": "Travel time (time-based position)",
+            "fr": "Temps de course (position estimée)",
+            "nl": "Looptijd (geschatte positie)",
+            "de": "Laufzeit (geschätzte Position)",
+            "es": "Tiempo de recorrido (posición estimada)"
+          },
+          "hint": {
+            "en": "0 = off. Only for motors without a position report: seconds for a full close-to-open run, used to estimate and reach positions.",
+            "fr": "0 = désactivé. Seulement pour les moteurs sans retour de position : durée en secondes d'une course complète fermé→ouvert, utilisée pour estimer et atteindre une position.",
+            "nl": "0 = uit. Alleen voor motoren zonder positiemelding.",
+            "de": "0 = aus. Nur für Motoren ohne Positionsmeldung.",
+            "es": "0 = desactivado. Solo para motores sin informe de posición."
+          }
         }
       ]
     }
