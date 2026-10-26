@@ -1,4 +1,5 @@
 'use strict';
+const { safeFlowCard } = require('../../lib/flow/FlowCardPresence'); // P3068: undeclared legacy ids -> logged-once no-op
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
@@ -29,7 +30,7 @@ async onInit() {
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('device_generic_tuya_universal_generic_tuya_r_26517');
+      const card = safeFlowCard(this.homey, 'getActionCard', 'device_generic_tuya_universal_generic_tuya_r_26517');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
