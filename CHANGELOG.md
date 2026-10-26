@@ -3,6 +3,8 @@
 ### Fixed (2026-10-26, P3071c HOCH RCBO + P3071b upload headroom — master soak)
 - HOCH / WDYK ZJSBL7-100Z RCBO (`_TZE200_hkdl5fmv`, `_TZE284_hkdl5fmv`, energy_meter_din): voltage, current, power and energy now read from its own frame (DP101/102/103/113); temperature (DP105) appears only once the breaker reports it. Before, DP101-103 were misread as plug settings.
 - Publish copy only: shorter shared dropdown labels (battery type, power source, optimisation mode) and adaptive-lighting hint; option ids and stored values unchanged. Upload headroom 290 → 311 KB.
+### Improved (2026-10-26, P3073 the app remembers datapoint scales — master soak)
+- **Tuya devices whose datapoints are read without a fixed mapping** now remember, per device, which scale (/1, /10, /100, /1000) keeps fitting each value. After 20 readings that agree at least 9 times out of 10, the scale is reused straight after an app restart, so a temperature or power value no longer jumps by ten for a while. The memory is tiny (16 datapoints at most), saved at most once a day, and nothing is sent to the device or done at pairing.
 
 ### Fixed (2026-10-26, P3071 DIN energy meters — master soak)
 - **Tuya DIN meters TS0601_din_1** (`_TZE200_bkkmqmyo`, `_TZE204_bkkmqmyo`, `_TZE200_eaac7dkw`): datapoint 1 is the energy counter, not the relay, so the meter no longer switches the on/off tile; voltage and current are read from the packed DP6, power from DP103, frequency from DP105, and the relay is DP16 (both ways).

@@ -1,6 +1,11 @@
 {
   "_meta": "P2932 port decisions read by scripts/maintenance/sync-matrix.js. Keys: master short sha (9) or P-tag. Soak policy: features 7 days on master before stable-v5; exact sourced couples and crash/CI guards may go the same day; Bastien takes only what touches its fleet (config/architecture/bastien-publish-fleet-ssot.json) or shared runtime/CI.",
   "decisions": {
+    "P3073": {
+      "stable": "hold (soak to 02/11)",
+      "bastien": "hold (soak)",
+      "why": "DpScaleLearner hook in TuyaEF00Manager is runtime behavior (master first); the CI-only learning scripts may be ported later"
+    },
     "0b06fe82d": {
       "stable": "hold (soak to 28/10)",
       "bastien": "hold (soak)",
