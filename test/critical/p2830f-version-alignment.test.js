@@ -15,6 +15,7 @@ const path = require('path');
 const ROOT = path.join(__dirname, '..', '..');
 const readJson = (f) => JSON.parse(fs.readFileSync(path.join(ROOT, f), 'utf8'));
 const parse = (v) => { const m = String(v || '').match(/^(\d+)\.(\d+)\.(\d+)$/); return m ? m.slice(1).map(Number) : null; };
+const nextPatch = (v) => { const p = parse(v); return p ? `${p[0]}.${p[1]}.${p[2] + 1}` : null; };
 const cmp = (a, b) => { const x = parse(a); const y = parse(b); for (let i = 0; i < 3; i++) if (x[i] !== y[i]) return x[i] - y[i]; return 0; };
 
 describe('P2830f version alignment', () => {
@@ -50,7 +51,9 @@ describe('P2830f version alignment', () => {
     const major = parse(app.version)[0];
     for (const k of Object.keys(readJson('.homeychangelog.json'))) {
       // legacy keys from another line (e.g. 9.0.x kept in a 5.x changelog) are not comparable
-      if (parse(k) && parse(k)[0] === major) assert.ok(cmp(k, app.version) <= 0, `changelog key ${k} > ${app.version}`);
+      // P3057-3: one pending next-patch entry may be pre-written (ensure-next-changelog.js / stable-version-bump.js
+      // keep a non-empty entry instead of writing generic text at the bump); anything further ahead is refused.
+      if (parse(k) && parse(k)[0] === major) assert.ok(cmp(k, app.version) <= 0 || k === nextPatch(app.version), `changelog key ${k} > ${app.version}`);
     }
   });
 
