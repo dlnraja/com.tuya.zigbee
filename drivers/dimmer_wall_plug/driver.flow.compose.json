@@ -16,12 +16,12 @@
       "id": "dimmer_wall_plug_energy_monitor_turned_off",
       "title": {
         "en": "Turned off",
-        "fr": "Ã‰teint"
+        "fr": "Éteint"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned off",
-        "fr": "Ã‰teint"
+        "fr": "Éteint"
       }
     },
     {
@@ -105,7 +105,7 @@
           "type": "number",
           "title": {
             "en": "Energy (kWh)",
-            "fr": "Ã‰nergie (kWh)"
+            "fr": "Énergie (kWh)"
           },
           "example": 1.5
         }
@@ -122,14 +122,14 @@
         "en": "Power changed",
         "fr": "Puissance changée",
         "nl": "Vermogen gewijzigd",
-        "de": "Leistung geÃ¤ndert"
+        "de": "Leistung geändert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Power changed",
         "fr": "Puissance changée",
         "nl": "Vermogen gewijzigd",
-        "de": "Leistung geÃ¤ndert"
+        "de": "Leistung geändert"
       }
     },
     {
@@ -172,7 +172,7 @@
         "en": "Power !{{is|is not}} above",
         "nl": "Vermogen !{{is|is niet}} boven",
         "fr": "Puissance !{{est|n'est pas}} au-dessus de",
-        "de": "Leistung !{{ist|ist nicht}} Ã¼ber"
+        "de": "Leistung !{{ist|ist nicht}} über"
       },
       "args": [
         {
@@ -190,7 +190,7 @@
         "en": "Power !{{is|is not}} above [[power]]",
         "nl": "Vermogen !{{is|is niet}} boven [[power]]",
         "fr": "Puissance !{{est|n'est pas}} au-dessus de [[power]]",
-        "de": "Leistung !{{ist|ist nicht}} Ã¼ber [[power]]"
+        "de": "Leistung !{{ist|ist nicht}} über [[power]]"
       }
     },
     {
@@ -198,8 +198,8 @@
       "title": {
         "en": "Energy !{{is|is not}} above",
         "nl": "Energie !{{is|is niet}} boven",
-        "fr": "Ã‰nergie !{{est|n'est pas}} au-dessus de",
-        "de": "Energie !{{ist|ist nicht}} Ã¼ber"
+        "fr": "Énergie !{{est|n'est pas}} au-dessus de",
+        "de": "Energie !{{ist|ist nicht}} über"
       },
       "args": [
         {
@@ -216,8 +216,8 @@
       "titleFormatted": {
         "en": "Energy !{{is|is not}} above [[energy]]",
         "nl": "Energie !{{is|is niet}} boven [[energy]]",
-        "fr": "Ã‰nergie !{{est|n'est pas}} au-dessus de [[energy]]",
-        "de": "Energie !{{ist|ist nicht}} Ã¼ber [[energy]]"
+        "fr": "Énergie !{{est|n'est pas}} au-dessus de [[energy]]",
+        "de": "Energie !{{ist|ist nicht}} über [[energy]]"
       }
     }
   ],
@@ -243,14 +243,14 @@
       "title": {
         "en": "Turn off",
         "nl": "Uitschakelen",
-        "fr": "Ã‰teindre",
+        "fr": "Éteindre",
         "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn off",
         "nl": "Uitschakelen",
-        "fr": "Ã‰teindre",
+        "fr": "Éteindre",
         "de": "Ausschalten"
       }
     },
@@ -276,20 +276,20 @@
         "en": "Reset energy meter",
         "nl": "Energiemeter resetten",
         "fr": "Réinitialiser compteur",
-        "de": "EnergiezÃ¤hler zurÃ¼cksetzen"
+        "de": "Energiezähler zurücksetzen"
       },
       "hint": {
         "en": "Resets the energy consumption counter to 0 kWh",
         "nl": "Reset de energieverbruikteller naar 0 kWh",
         "fr": "Réinitialise le compteur de consommation à0 kWh",
-        "de": "Setzt den EnergieverbrauchszÃ¤hler auf 0 kWh zurÃ¼ck"
+        "de": "Setzt den Energieverbrauchszähler auf 0 kWh zurück"
       },
       "args": [],
       "titleFormatted": {
         "en": "Reset energy meter",
         "nl": "Energiemeter resetten",
         "fr": "Réinitialiser compteur",
-        "de": "EnergiezÃ¤hler zurÃ¼cksetzen"
+        "de": "Energiezähler zurücksetzen"
       }
     }
   ]

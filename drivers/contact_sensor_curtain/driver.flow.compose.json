@@ -169,14 +169,14 @@
         "en": "Luminance changed",
         "fr": "Luminance changée",
         "nl": "Lichtsterkte gewijzigd",
-        "de": "Helligkeit geÃ¤ndert"
+        "de": "Helligkeit geändert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Luminance changed",
         "fr": "Luminance changée",
         "nl": "Lichtsterkte gewijzigd",
-        "de": "Helligkeit geÃ¤ndert"
+        "de": "Helligkeit geändert"
       }
     }
   ],
@@ -261,14 +261,14 @@
       "id": "contact_sensor_curtain_motor_stop",
       "title": {
         "en": "Stop",
-        "fr": "ArrÃªter",
+        "fr": "Arrêter",
         "nl": "Stoppen",
         "de": "Stoppen"
       },
       "args": [],
       "titleFormatted": {
         "en": "Stop",
-        "fr": "ArrÃªter",
+        "fr": "Arrêter",
         "nl": "Stoppen",
         "de": "Stoppen"
       }
@@ -283,7 +283,7 @@
       },
       "hint": {
         "en": "Move to the saved favorite position (if supported)",
-        "fr": "Aller àla position favorite enregistrée"
+        "fr": "Aller à la position favorite enregistrée"
       },
       "args": [],
       "titleFormatted": {
@@ -359,14 +359,14 @@
         "en": "Open",
         "fr": "Ouvrir",
         "nl": "Openen",
-        "de": "Ã–ffnen"
+        "de": "Öffnen"
       },
       "args": [],
       "titleFormatted": {
         "en": "Open",
         "fr": "Ouvrir",
         "nl": "Openen",
-        "de": "Ã–ffnen"
+        "de": "Öffnen"
       }
     },
     {
@@ -375,14 +375,14 @@
         "en": "Close",
         "fr": "Fermer",
         "nl": "Sluiten",
-        "de": "SchlieÃŸen"
+        "de": "Schließen"
       },
       "args": [],
       "titleFormatted": {
         "en": "Close",
         "fr": "Fermer",
         "nl": "Sluiten",
-        "de": "SchlieÃŸen"
+        "de": "Schließen"
       }
     }
   ],

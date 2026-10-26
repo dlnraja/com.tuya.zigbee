@@ -4,7 +4,7 @@
     "en": "Generic Zigbee Device",
     "fr": "Appareil Zigbee Générique",
     "nl": "Universeel Zigbee-apparaat",
-    "de": "Universelles Zigbee-GerÃ¤t"
+    "de": "Universelles Zigbee-Gerät"
   },
   "class": "other",
   "capabilities": [
@@ -320,7 +320,7 @@
       "image": "/drivers/universal_zigbee/assets/learnmode.svg",
       "instruction": {
         "en": "Press the pairing button on your Zigbee device until it enters pairing mode.",
-        "fr": "Appuyez sur le bouton d'appairage de votre appareil Zigbee jusqu'àce qu'il passe en mode appairage."
+        "fr": "Appuyez sur le bouton d'appairage de votre appareil Zigbee jusqu'à ce qu'il passe en mode appairage."
       }
     }
   },

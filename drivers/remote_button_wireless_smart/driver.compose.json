@@ -4,7 +4,7 @@
     "nl": "Draadloze Slimme Afstandsbediening",
     "fr": "Bouton Télécommande Sans Fil Intelligent",
     "de": "Kabelloser Smart Fernbedienung",
-    "es": "BotÃ³n Remoto InalÃ¡mbrico Inteligente"
+    "es": "Botón Remoto Inalámbrico Inteligente"
   },
   "class": "button",
   "capabilities": [
@@ -28,10 +28,10 @@
         "nl": "Batterij",
         "de": "Batterie",
         "it": "Batteria",
-        "sv": "TrÃ¥dlÃ¶s",
-        "no": "TrÃ¥dlÃ¸s",
+        "sv": "Trådlös",
+        "no": "Trådløs",
         "es": "Controlador",
-        "da": "TrÃ¥dlÃ¸s"
+        "da": "Trådløs"
       },
       "getable": true,
       "preventInsights": false
@@ -63,7 +63,7 @@
       "image": "/drivers/button_wireless_1/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
-        "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'àce que la LED clignote rapidement",
+        "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
         "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'àce que la LED clignote rapidement",
         "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'àce que la LED clignote rapidement",
         "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'àce que la LED clignote rapidement",
@@ -243,7 +243,7 @@
       "step": 1,
       "hint": {
         "en": "How often to request battery status updates",
-        "fr": "Fréquence de demande des mises àjour d'état de batterie"
+        "fr": "Fréquence de demande des mises à jour d'état de batterie"
       }
     },
     {
@@ -251,7 +251,7 @@
       "type": "dropdown",
       "label": {
         "en": "Energy Optimization Mode",
-        "fr": "Mode Optimisation Ã‰nergétique"
+        "fr": "Mode Optimisation Énergétique"
       },
       "value": "balanced",
       "values": [
@@ -266,20 +266,20 @@
           "id": "balanced",
           "label": {
             "en": "Balanced",
-            "fr": "Ã‰quilibré"
+            "fr": "Équilibré"
           }
         },
         {
           "id": "power_saving",
           "label": {
             "en": "Power Saving (Longer battery)",
-            "fr": "Ã‰conomie d'énergie (Batterie plus longue)"
+            "fr": "Économie d'énergie (Batterie plus longue)"
           }
         }
       ],
       "hint": {
         "en": "Balance between responsiveness and battery life",
-        "fr": "Ã‰quilibre entre réactivité et durée de vie de la batterie"
+        "fr": "Équilibre entre réactivité et durée de vie de la batterie"
       }
     },
     {

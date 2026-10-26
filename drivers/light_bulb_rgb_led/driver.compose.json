@@ -4,7 +4,7 @@
     "nl": "Lichtbulb Rgb Led",
     "fr": "Ampoule Rgb Led",
     "de": "Lampen Rgb Led",
-    "es": "Bombilla Rgb Led HÃ­brida"
+    "es": "Bombilla Rgb Led Híbrida"
   },
   "class": "light",
   "capabilities": [
@@ -86,7 +86,7 @@
       "image": "/drivers/bulb_rgb/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
+        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
     },
     "productId": [
@@ -109,7 +109,7 @@
         "en": "Power On Behavior",
         "nl": "Gedrag bij inschakelen",
         "de": "Einschaltverhalten",
-        "fr": "Comportement àl'allumage"
+        "fr": "Comportement à l'allumage"
       },
       "value": "previous",
       "values": [
@@ -119,7 +119,7 @@
             "en": "Turn Off",
             "nl": "Uitschakelen",
             "de": "Ausschalten",
-            "fr": "Ã‰teindre"
+            "fr": "Éteindre"
           }
         },
         {
@@ -154,7 +154,7 @@
       "label": {
         "en": "Do Not Disturb",
         "nl": "Niet storen",
-        "de": "Nicht stÃ¶ren",
+        "de": "Nicht stören",
         "fr": "Ne pas déranger"
       },
       "value": false,
@@ -162,7 +162,7 @@
         "en": "Keep light off after power loss (prevents unwanted turn on)",
         "nl": "Lamp uit houden na stroomuitval (voorkomt ongewenst inschakelen)",
         "de": "Licht nach Stromausfall aus lassen (verhindert ungewolltes Einschalten)",
-        "fr": "Garder la lumière éteinte après coupure (empÃªche l'allumage non souhaité)"
+        "fr": "Garder la lumière éteinte après coupure (empêche l'allumage non souhaité)"
       }
     },
     {
@@ -171,7 +171,7 @@
       "label": {
         "en": "Transition Time (seconds)",
         "nl": "Overgangstijd (seconden)",
-        "de": "Ãœbergangszeit (Sekunden)",
+        "de": "Übergangszeit (Sekunden)",
         "fr": "Temps de transition (secondes)"
       },
       "value": 0.4,
@@ -181,7 +181,7 @@
       "hint": {
         "en": "Time for brightness/color transitions (0 = instant)",
         "nl": "Tijd voor helderheid/kleur overgangen (0 = direct)",
-        "de": "Zeit fÃ¼r Helligkeits-/FarbÃ¼bergÃ¤nge (0 = sofort)",
+        "de": "Zeit für Helligkeits-/Farbübergänge (0 = sofort)",
         "fr": "Temps pour les transitions de luminosité/couleur (0 = instantané)"
       }
     },
@@ -211,7 +211,7 @@
             "en": "Extended (2000K-6500K)",
             "nl": "Uitgebreid (2000K-6500K)",
             "de": "Erweitert (2000K-6500K)",
-            "fr": "Ã‰tendu (2000K-6500K)"
+            "fr": "Étendu (2000K-6500K)"
           }
         },
         {
@@ -227,7 +227,7 @@
       "hint": {
         "en": "Adjust color temperature range based on your bulb capabilities",
         "nl": "Pas kleurtemperatuurbereik aan op basis van lampcapaciteiten",
-        "de": "Farbtemperaturbereich basierend auf LampenfÃ¤higkeiten anpassen",
+        "de": "Farbtemperaturbereich basierend auf Lampenfähigkeiten anpassen",
         "fr": "Ajuster la plage de température de couleur selon les capacités de l'ampoule"
       }
     },
@@ -389,7 +389,7 @@
       "step": 1,
       "hint": {
         "en": "How often to request battery status updates",
-        "fr": "Fréquence de demande des mises àjour d'état de batterie"
+        "fr": "Fréquence de demande des mises à jour d'état de batterie"
       }
     },
     {
@@ -397,7 +397,7 @@
       "type": "dropdown",
       "label": {
         "en": "Energy Optimization Mode",
-        "fr": "Mode Optimisation Ã‰nergétique"
+        "fr": "Mode Optimisation Énergétique"
       },
       "value": "balanced",
       "values": [
@@ -412,20 +412,20 @@
           "id": "balanced",
           "label": {
             "en": "Balanced",
-            "fr": "Ã‰quilibré"
+            "fr": "Équilibré"
           }
         },
         {
           "id": "power_saving",
           "label": {
             "en": "Power Saving (Longer battery)",
-            "fr": "Ã‰conomie d'énergie (Batterie plus longue)"
+            "fr": "Économie d'énergie (Batterie plus longue)"
           }
         }
       ],
       "hint": {
         "en": "Balance between responsiveness and battery life",
-        "fr": "Ã‰quilibre entre réactivité et durée de vie de la batterie"
+        "fr": "Équilibre entre réactivité et durée de vie de la batterie"
       }
     },
     {

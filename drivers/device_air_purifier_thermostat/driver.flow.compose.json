@@ -11,8 +11,8 @@
           "name": "temperature",
           "type": "number",
           "title": {
-            "en": "Temperature (Â°C)",
-            "fr": "Température (Â°C)"
+            "en": "Temperature (°C)",
+            "fr": "Température (°C)"
           },
           "example": 21
         }
@@ -34,8 +34,8 @@
           "name": "temperature",
           "type": "number",
           "title": {
-            "en": "Temperature (Â°C)",
-            "fr": "Température (Â°C)"
+            "en": "Temperature (°C)",
+            "fr": "Température (°C)"
           },
           "example": 22.5
         }
@@ -85,12 +85,12 @@
       "id": "device_air_purifier_thermostat_thermostat_tuya_dp_heating_stopped",
       "title": {
         "en": "Heating stopped",
-        "fr": "Chauffage arrÃªté"
+        "fr": "Chauffage arrêté"
       },
       "args": [],
       "titleFormatted": {
         "en": "Heating stopped",
-        "fr": "Chauffage arrÃªté"
+        "fr": "Chauffage arrêté"
       }
     },
     {
@@ -113,14 +113,14 @@
       "id": "device_air_purifier_thermostat_thermostat_tuya_dp_turned_off",
       "title": {
         "en": "Turned off",
-        "fr": "Ã‰teint",
+        "fr": "Éteint",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned off",
-        "fr": "Ã‰teint",
+        "fr": "Éteint",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       }
@@ -131,14 +131,14 @@
         "en": "Temperature changed",
         "fr": "Température changée",
         "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geÃ¤ndert"
+        "de": "Temperatur geändert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Temperature changed",
         "fr": "Température changée",
         "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geÃ¤ndert"
+        "de": "Temperatur geändert"
       }
     },
     {
@@ -163,14 +163,14 @@
         "en": "Humidity changed",
         "fr": "Humidité changée",
         "nl": "Vochtigheid gewijzigd",
-        "de": "Feuchtigkeit geÃ¤ndert"
+        "de": "Feuchtigkeit geändert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Humidity changed",
         "fr": "Humidité changée",
         "nl": "Vochtigheid gewijzigd",
-        "de": "Feuchtigkeit geÃ¤ndert"
+        "de": "Feuchtigkeit geändert"
       }
     },
     {
@@ -237,24 +237,24 @@
       "id": "device_air_purifier_thermostat_thermostat_tuya_dp_temperature_above_target",
       "title": {
         "en": "Temperature is above target",
-        "fr": "Température supérieure àla cible"
+        "fr": "Température supérieure à la cible"
       },
       "args": [],
       "titleFormatted": {
         "en": "Temperature is above target",
-        "fr": "Température supérieure àla cible"
+        "fr": "Température supérieure à la cible"
       }
     },
     {
       "id": "device_air_purifier_thermostat_thermostat_tuya_dp_temperature_below_target",
       "title": {
         "en": "Temperature is below target",
-        "fr": "Température inférieure àla cible"
+        "fr": "Température inférieure à la cible"
       },
       "args": [],
       "titleFormatted": {
         "en": "Temperature is below target",
-        "fr": "Température inférieure àla cible"
+        "fr": "Température inférieure à la cible"
       }
     },
     {
@@ -272,11 +272,11 @@
               "id": "off",
               "title": {
                 "en": "Off",
-                "fr": "ArrÃªt"
+                "fr": "Arrêt"
               },
               "label": {
                 "en": "Off",
-                "fr": "ArrÃªt"
+                "fr": "Arrêt"
               }
             },
             {
@@ -397,11 +397,11 @@
               "id": "off",
               "title": {
                 "en": "Off",
-                "fr": "ArrÃªt"
+                "fr": "Arrêt"
               },
               "label": {
                 "en": "Off",
-                "fr": "ArrÃªt"
+                "fr": "Arrêt"
               }
             },
             {
@@ -556,56 +556,56 @@
             {
               "id": "comfort",
               "title": {
-                "en": "Comfort (21Â°C)",
-                "fr": "Confort (21Â°C)"
+                "en": "Comfort (21°C)",
+                "fr": "Confort (21°C)"
               },
               "label": {
-                "en": "Comfort (21Â°C)",
-                "fr": "Confort (21Â°C)"
+                "en": "Comfort (21°C)",
+                "fr": "Confort (21°C)"
               }
             },
             {
               "id": "eco",
               "title": {
-                "en": "Eco (18Â°C)",
-                "fr": "Ã‰co (18Â°C)"
+                "en": "Eco (18°C)",
+                "fr": "Éco (18°C)"
               },
               "label": {
-                "en": "Eco (18Â°C)",
-                "fr": "Ã‰co (18Â°C)"
+                "en": "Eco (18°C)",
+                "fr": "Éco (18°C)"
               }
             },
             {
               "id": "away",
               "title": {
-                "en": "Away (15Â°C)",
-                "fr": "Absent (15Â°C)"
+                "en": "Away (15°C)",
+                "fr": "Absent (15°C)"
               },
               "label": {
-                "en": "Away (15Â°C)",
-                "fr": "Absent (15Â°C)"
+                "en": "Away (15°C)",
+                "fr": "Absent (15°C)"
               }
             },
             {
               "id": "sleep",
               "title": {
-                "en": "Sleep (19Â°C)",
-                "fr": "Nuit (19Â°C)"
+                "en": "Sleep (19°C)",
+                "fr": "Nuit (19°C)"
               },
               "label": {
-                "en": "Sleep (19Â°C)",
-                "fr": "Nuit (19Â°C)"
+                "en": "Sleep (19°C)",
+                "fr": "Nuit (19°C)"
               }
             },
             {
               "id": "boost",
               "title": {
-                "en": "Boost (25Â°C)",
-                "fr": "Boost (25Â°C)"
+                "en": "Boost (25°C)",
+                "fr": "Boost (25°C)"
               },
               "label": {
-                "en": "Boost (25Â°C)",
-                "fr": "Boost (25Â°C)"
+                "en": "Boost (25°C)",
+                "fr": "Boost (25°C)"
               }
             }
           ],
@@ -674,14 +674,14 @@
       "id": "device_air_purifier_thermostat_thermostat_tuya_dp_turn_off",
       "title": {
         "en": "Turn off",
-        "fr": "Ã‰teindre",
+        "fr": "Éteindre",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn off",
-        "fr": "Ã‰teindre",
+        "fr": "Éteindre",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       }
