@@ -249,13 +249,18 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         getTriggerCard: 'getDeviceTriggerCard',
       };
       const missingLogged = global.__tuyaFlowGuardMissingLogged || (global.__tuyaFlowGuardMissingLogged = new Set());
+      // P3068: negative cache — an id Homey rejected once ("Invalid Flow Card ID") is answered with the noop
+      // card on every later call, without calling Homey again (no throw + stack capture per capability event).
+      const failedIds = global.__tuyaFlowGuardFailed || (global.__tuyaFlowGuardFailed = new Set());
       for (const m of ['getActionCard', 'getDeviceActionCard', 'getTriggerCard', 'getDeviceTriggerCard', 'getConditionCard', 'getDeviceConditionCard']) {
         const orig = flow[m];
         if (typeof orig === 'function' && orig.__crashGuarded) {continue;}
         const wrapped = (...args) => {
           if (typeof orig === 'function') {
+            if (failedIds.has(`${m}:${args[0]}`)) { return noopCard; }
             try { return orig.apply(flow, args); }
             catch (e) {
+              if (failedIds.size < 2000) { failedIds.add(`${m}:${args[0]}`); }
               // WHY(#560 / Bastien diag): the same missing card id was logged on every call
               // (home_mode_changed, capability_value_changed_generic, device_interaction). Log once per
               // method+id, then skip quietly with the noop card.
