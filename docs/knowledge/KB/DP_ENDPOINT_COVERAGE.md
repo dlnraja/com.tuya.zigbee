@@ -8,9 +8,9 @@ Couples audited (known to a source AND served by a driver): **1217** — source 
 
 | class | DPs | runtime behaviour |
 |---|---|---|
-| driver | 3499 | decoded by the driver (dpMappings or its DP handler) |
-| exact | 7935 | catalogue converter → exact value (UnknownCommandInterpreter 1b); master also writes 527 of them to an existing measurement/alarm capability via DpCatalogDecoder (guarded: driver-owned caps / DPs, range, one DP per capability) |
-| generic | 2757 | no exact converter in any source → generic typed value (bool/value/enum/raw/bitmap), learned, exposed to Flows, stored as `_unknown_dp_N` — never dropped |
+| driver | 3521 | decoded by the driver (dpMappings or its DP handler) |
+| exact | 7916 | catalogue converter → exact value (UnknownCommandInterpreter 1b); master also writes 525 of them to an existing measurement/alarm capability via DpCatalogDecoder (guarded: driver-owned caps / DPs, range, one DP per capability) |
+| generic | 2754 | no exact converter in any source → generic typed value (bool/value/enum/raw/bitmap), learned, exposed to Flows, stored as `_unknown_dp_N` — never dropped |
 | ↳ inferred candidate | 736 | of the generic DPs, 570 have a same-productId+driver family candidate 13 a same-driver (category) candidate and 153 a same-name+DP-id candidate in `lib/zigbee/data/inferred-dp-family.json` — label **inferred**, low confidence, never a fact (see below) |
 
 ### Per driver
@@ -101,7 +101,7 @@ Built by `scripts/data/build-inferred-dp-family.js` from EXACT catalogue rows on
 | smart_breaker | 6 | 6 | 90 | 0 | 0 | 6 |
 | smart_irrigation_valve | 1 | 2 | 4 | 0 | 0 | 0 |
 | smart_lcd_thermostat | 1 | 1 | 11 | 1 | 0 | 1 |
-| smoke_sensor | 5 | 0 | 24 | 0 | 0 | 2 |
+| smoke_sensor | 5 | 11 | 13 | 0 | 0 | 0 |
 | smoke_sensor2 | 10 | 0 | 48 | 2 | 2 | 7 |
 | smoke_sensor3 | 1 | 0 | 0 | 7 | 0 | 0 |
 | smoke_sensor_ts0601_dp | 6 | 11 | 9 | 1 | 0 | 8 |
@@ -135,7 +135,7 @@ Built by `scripts/data/build-inferred-dp-family.js` from EXACT catalogue rows on
 | valve_single | 1 | 0 | 0 | 2 | 1 | 0 |
 | vibration_sensor | 5 | 12 | 17 | 5 | 5 | 0 |
 | wall_curtain_switch | 1 | 0 | 3 | 4 | 1 | 0 |
-| wall_dimmer_tuya | 43 | 0 | 379 | 11 | 4 | 0 |
+| wall_dimmer_tuya | 43 | 11 | 371 | 8 | 4 | 0 |
 | wall_switch_1_gang_tuya | 1 | 0 | 8 | 8 | 0 | 0 |
 | wall_switch_1gang_1way | 3 | 3 | 18 | 0 | 0 | 0 |
 | wall_switch_3gang_1way | 3 | 8 | 47 | 0 | 0 | 0 |
@@ -322,7 +322,6 @@ Reason for each: the only sources are a name without converter (Z2M custom / unk
 | device_radiator_valve | `_tze200_py4cm3he` TS0601 | 2:preset 10:frost_protection 46:holiday_start_stop 106:schedule 107:system_mode 108:schedule_monday 109:schedule_wednesday 110:schedule_friday 111:schedule_sunday 112:schedule_tuesday 113:schedule_thursday 114:schedule_saturday |  |
 | curtain_motor | `_tze200_qhlxve78` TS0601 | 18:data_report_duration |  |
 | lcdtemphumidsensor_3 | `_tze200_qyflbnbj` TS0601 | 1:temperature | 1~temperature=div:10(name) |
-| wall_dimmer_tuya | `_tze200_qzaing2g` TS0601 | 143:min_brightness 144:max_brightness |  |
 | climate_sensor | `_tze200_r5ksy7qo` TS0601 | 28:schedule_monday 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 32:schedule_friday 33:schedule_saturday 34:schedule_sunday | 28~fan_mode=lookup:{"0":"low","1":"medium","2":"high","3":"auto"} 29~power=raw 30~countdown_l1=raw 31~countdown_l2=raw 32~ac_frequency=div:100 33~countdown_l4=raw |
 | curtain_motor | `_tze200_rddyvrci` TS0601 | 11:zha 16:zha |  |
 | panel_switch_cover_tuya | `_tze200_rgeapp2c` TS0601 | 1:state_c1 2:position_c1 4:state_c2 5:position_c2 |  |
@@ -552,7 +551,6 @@ Reason for each: the only sources are a name without converter (Z2M custom / unk
 | radiator_valve | `_tze284_cgr0rhza` TS0601 | 29:schedule_tuesday 30:schedule_wednesday 31:schedule_thursday 33:schedule_saturday 34:schedule_sunday 35:fault_alarm | 30~child_lock=lookup:{"true":"LOCK","false":"UNLOCK"} 31~working_day=lookup:{"0":"mon_sun","1":"mon_fri+sat+sun","2":"separate"} 33~holiday_days=raw 34~humidity=raw |
 | curtain_motor | `_tze284_clm4gdw4` TS0601 | 2:position |  |
 | valve_irrigation | `_tze284_d0ypnbvn` TS0601 | 1:state 26:fault | 1~state=onOff(name) |
-| wall_dimmer_tuya | `_tze284_da26abzz` TS0601 | 142:brightness |  |
 | energy_meter_3phase | `_tze284_dikb3dp6` TS0601 | 23:meter_power.exported 29:measure_power.phase_total | 23~produced_energy=div:100 29~power=raw |
 | switch_2gang | `_tze284_dmckrsxg` TS0601 | 15:indicator_status 19:delay_off_schedule 29:relay_status_l1 30:relay_status_l2 103:switch_color_on 104:switch_color_off 105:name_l1 106:name_l2 111:radar_config 209:cycle_schedule | 29~power_on_behavior_l1=lookup:{"0":"off","1":"on","2":"previous"} 30~power_on_behavior_l2=lookup:{"0":"off","1":"on","2":"previous"} |
 | switch_3gang | `_tze284_e4pf6l87` TS0601 | 15:indicator_status 19:delay_off_schedule 29:relay_status_l1 30:relay_status_l2 31:relay_status_l3 103:switch_color_on 104:switch_color_off 105:name_l1 106:name_l2 107:name_l3 111:radar_config 209:cycle_schedule |  |
@@ -756,4 +754,4 @@ Searched Z2M (`tuya.ts` TS0601_soil, _soil_2, _soil_3, SGS02Z, ZS-300Z/301Z/300T
 
 ## Gate
 
-`--check` (CI, report-only): fails only on duplicate numeric keys inside one object literal (drivers + lib). Current: 0.
+`--check` (CI, report-only): fails only on duplicate numeric keys inside one object literal (drivers + lib). Current: skipped (acorn missing).

@@ -24,6 +24,7 @@ Handles and their contributions, extracted from CREDITS.md (no personal data).
 - **iBush** (Switcher app for Homey, [community t/160624](https://community.homey.app/t/160624)) - ideas only, our own code: timer-for-a-set-time card, time-left token / timer-running trigger, auto-shutdown, child-lock, correct-known-AC-state.
 - **Steve_Wilson** ([t/101901 #8](https://community.homey.app/t/101901/8)) - interview of the Zemismart 214C valve (`_TZE284_vuwtqx0t`); with **Kigrou** (zigbee-herdsman-converters#10636, Z2M `TS0601_water_valve`) and Zemismart (`zemismart-zha-quirks` 214c.py) as the DP sources for P2864. DP tables 
 - **Istvan_Mag, Kizabgd, marosk, Dragan_Todorovic** (topics 140352 / 26439) - Developer Tools / interview data for `_TZE284_gnpflcoq`, `_TZE284_9ern5sfh`, `_TZE200_fl8cuafl`, `_TZE200_crq3r3la`; **julianjwong** (zha-device-handlers#5286) for the corrected gnpflcoq DP table.
+- **seikossss** ([t/140352 #2268](https://community.homey.app/t/140352/2268)) - request and fingerprint for the NEO NAS-WV05B2-L sprinkler timer (`_TZE284_z7a2jmyy` / TS0601), matched to the Z2M `neo.ts` definition.
 - **rebtor** - TuyAPI local control
 - **jurgenheine** - Cloud API patterns
 - **robertklep/homey-tuya-zigbee** - Community Tuya Zigbee
@@ -129,6 +130,11 @@ Handles and their contributions, extracted from CREDITS.md (no personal data).
 - **[tuya/tuya-connector-nodejs](https://github.com/tuya/tuya-connector-nodejs)** — consulted for the OpenAPI signature string format (empty optional-headers line, sorted query). No code copied.
 - **[andiwirz/com.tuyalocal](https://github.com/andiwirz/com.tuyalocal)** (MIT) — Homey Tuya-local app: frequency-first protocol order, command gap, stale-data watchdog patterns (reimplemented earlier, credited in code).
 - **[Drenso/com.tuya2](https://github.com/Drenso/com.tuya2)**, **[jurgenheine/com.tuya.cloud](https://github.com/jurgenheine/com.tuya.cloud)** (MIT), **[rebtor/nl.rebtor.tuya](https://github.com/rebtor/nl.rebtor.tuya)** (MIT) — earlier Homey Tuya apps whose cloud/LAN patterns informed the original d
+- **[Koenkk/zigbee-herdsman-converters](https://github.com/Koenkk/zigbee-herdsman-converters)** (MIT, Koen Kanters and the `zosung.ts` contributors) — consulted: 0xED00 frame layout (msgpart + msgpartcrc), chunk sizes, Code00 resend, ZG-IR01 seq 0, `{key_num,key1}` message.
+- **[mildsunrise — Tuya IR code format notes](https://gist.github.com/mildsunrise/1d576669b63a260d2cff35fda63ec0b5)** — consulted: FastLZ-style block layout of Tuya `key_code`.
+- **[jbouwh — Home Assistant Tuya IR encoder gist](https://gist.github.com/jbouwh)** — consulted: literal-only encoding is the safe choice for cheap Tuya IR chips.
+- **[jasonacox/tinytuya](https://github.com/jasonacox/tinytuya)** (MIT) — consulted: `IRRemoteControlDevice` control types 1/2, `send_ir` / `study` / `study_exit` / `study_key`, learned code on DP202 or DP2.
+- **[make-all/tuya-local](https://github.com/make-all/tuya-local)** (MIT, Jason Rumney and contributors) — consulted: single-DP `send_ir` JSON with `"1"` raw prefix, multi-DP send, split of long gaps.
 - **Athom B.V. — Matter Bridge app** (github.com/athombv/com.athom.matter-bridge, GPL-3.0): class/capability to Matter device-type mapping summarised in our own words in `data/matter-bridge-mapping.json` (read 2026-10-04, commit 045787d). No code copied.
 - **make-all/tuya-local** (Jason Rumney, MIT, commit 95300d05ac) — product_id → DP facts extracted by our own script; source config recorded per product.
 - **jasonacox/tinytuya** (MIT) — protocol 3.1–3.5 and the 3.22 alias, wizard export format.
@@ -156,5 +162,6 @@ Handles and their contributions, extracted from CREDITS.md (no personal data).
 - **kkossev (Krassimir Kossev)** and the Hubitat community drivers: patient, detailed reverse-engineering of
 - **The SmartThings Edge driver authors**, **Mariano Colmenarejo** in particular, and the SmartThings
 - **The ioBroker.zigbee maintainers**, the **Zigbee for Domoticz** team and the authors of the
+- **Koen Kanters and the zigbee-herdsman-converters contributors** - the second negative power encoding (plain 24-bit two's complement above 0x99999A, seen on some `_TZE200_nslr42tt` units) in packed phase DPs, used by P3060 `lib/tuya/TuyaNegPower24.js` (own implementation, no code copied).
 
 Full list: https://github.com/dlnraja/com.tuya.zigbee/blob/master/CREDITS.md
