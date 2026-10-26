@@ -13,8 +13,8 @@
     "de": "Timer von [[device]] gestartet oder beendet"
   },
   "hint": {
-    "en": "Fires when a countdown set by this app starts or ends. Idea credited to iBush's Switcher app (community.homey.app/t/160624).",
-    "fr": "Se déclenche quand un compte à rebours lancé par l'app démarre ou se termine. Idée créditée à l'app Switcher d'iBush."
+    "en": "When a countdown set by this app starts or ends. Idea credited to iBush's Switcher app (community.homey.app/t/160624).",
+    "fr": "Quand un compte à rebours lancé par l'app démarre ou se termine. Idée créditée à l'app Switcher d'iBush."
   },
   "args": [
     {

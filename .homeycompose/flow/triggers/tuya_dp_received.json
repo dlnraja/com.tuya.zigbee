@@ -7,8 +7,8 @@
     "de": "Tuya Datenpunkt empfangen"
   },
   "hint": {
-    "en": "Triggers when a raw Tuya DP is received. Use DP 0 to match any DP.",
-    "fr": "Se déclenche quand un DP Tuya brut est reçu. Utilisez DP 0 pour tous les DP."
+    "en": "When a raw Tuya DP is received. Use DP 0 to match any DP.",
+    "fr": "Quand un DP Tuya brut est reçu. Utilisez DP 0 pour tous les DP."
   },
   "tokens": [
     {

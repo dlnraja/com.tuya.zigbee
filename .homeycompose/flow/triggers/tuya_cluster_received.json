@@ -7,8 +7,8 @@
     "de": "Zigbee-Cluster-Ereignis empfangen"
   },
   "hint": {
-    "en": "Triggers when a manufacturer cluster frame is received (0xE000-0xFFFF).",
-    "fr": "Se déclenche quand une trame cluster fabricant est reçue."
+    "en": "When a manufacturer cluster frame is received (0xE000-0xFFFF).",
+    "fr": "Quand une trame cluster fabricant est reçue."
   },
   "tokens": [
     {

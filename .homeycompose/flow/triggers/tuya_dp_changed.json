@@ -7,8 +7,8 @@
     "de": "Ein Tuya-DP hat sich geändert"
   },
   "hint": {
-    "en": "Triggers when ANY DP value changes. Includes DP type info (raw/bool/value/string/enum/bitmap).",
-    "fr": "Se déclenche quand N'IMPORTE QUEL DP change. Inclut le type."
+    "en": "When ANY DP value changes. Includes DP type info (raw/bool/value/string/enum/bitmap).",
+    "fr": "Quand N'IMPORTE QUEL DP change. Inclut le type."
   },
   "tokens": [
     {
