@@ -9,11 +9,9 @@
       "en": "Set a value to compensate a temperature offset.\nRange: -10 - 10, step size 0.1, \ndefault: 0 [°C]"
     },
     "value": 0,
-    "attr": {
-      "min": -10,
-      "max": 10,
-      "step": 0.1
-    }
+    "min": -10,
+    "max": 10,
+    "step": 0.1
   },
   {
     "id": "temperature_decimals",
@@ -49,15 +47,13 @@
       "nl": "Stel een correctiewaarde in om een Luchtvochtigheids verschil te compenseren.\nBereik: -10 - 10, stap grootte 1, \nstandaard: 0 [%]"
     },
     "value": 0,
-    "attr": {
-      "min": -10,
-      "max": 10,
-      "step": 1
-    },
     "units": {
       "en": "%",
       "nl": "%"
-    }
+    },
+    "min": -10,
+    "max": 10,
+    "step": 1
   },
   {
     "id": "humidity_decimals",
