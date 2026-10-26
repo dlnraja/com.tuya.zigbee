@@ -7,8 +7,8 @@
     "de": "Gerät nicht mehr verfügbar"
   },
   "hint": {
-    "en": "Triggers when a device has been silent beyond its timeout (15 min mains, 24 h battery)",
-    "fr": "Se déclenche quand un appareil est silencieux au-delà de son délai (15 min secteur, 24 h batterie)"
+    "en": "When a device has been silent beyond its timeout (15 min mains, 24 h battery)",
+    "fr": "Quand un appareil est silencieux au-delà de son délai (15 min secteur, 24 h batterie)"
   },
   "args": [
     {

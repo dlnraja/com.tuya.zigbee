@@ -7,8 +7,8 @@
     "de": "Anwesenheit in Zone beendet"
   },
   "hint": {
-    "en": "Triggers when the Virtual Presence Detector determines a zone is no longer occupied",
-    "fr": "Se déclenche quand le détecteur de présence virtuel juge qu'une zone n'est plus occupée"
+    "en": "When the Virtual Presence Detector determines a zone is no longer occupied",
+    "fr": "Quand le détecteur de présence virtuel juge qu'une zone n'est plus occupée"
   },
   "args": [
     {

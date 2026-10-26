@@ -7,10 +7,10 @@
     "de": "Batteriezustand geändert"
   },
   "hint": {
-    "en": "Triggers when the battery health score changes to a new status level",
-    "fr": "Se déclenche lorsque le score de santé de la batterie change de niveau",
-    "nl": "Activeert wanneer de batterij gezondheidsscore naar een nieuw niveau wijzigt",
-    "de": "Wird ausgelöst, wenn sich der Batteriezustandsscore auf ein neues Niveau ändert"
+    "en": "When the battery health score changes to a new status level",
+    "fr": "Quand le score de santé de la batterie change de niveau",
+    "nl": "Wanneer de batterij gezondheidsscore naar een nieuw niveau wijzigt",
+    "de": "Wenn sich der Batteriezustandsscore auf ein neues Niveau ändert"
   },
   "args": [
     {

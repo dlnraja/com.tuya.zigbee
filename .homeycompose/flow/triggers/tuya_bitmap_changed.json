@@ -7,8 +7,8 @@
     "de": "Tuya-Bitmap-DP geändert"
   },
   "hint": {
-    "en": "Triggers when a bitmap (type 5) DP changes. Bitmap is a bitmask of active flags.",
-    "fr": "Se déclenche quand un DP bitmap (type 5) change."
+    "en": "When a bitmap (type 5) DP changes. Bitmap is a bitmask of active flags.",
+    "fr": "Quand un DP bitmap (type 5) change."
   },
   "tokens": [
     {
