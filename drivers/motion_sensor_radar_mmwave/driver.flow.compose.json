@@ -4,7 +4,9 @@
       "id": "motion_sensor_radar_mmwave_presence_detected",
       "title": {
         "en": "Presence detected",
-        "fr": "Présence détectée"
+        "fr": "Présence détectée",
+        "de": "Anwesenheit erkannt",
+        "nl": "Aanwezigheid gedetecteerd"
       },
       "args": [],
       "titleFormatted": {
@@ -16,7 +18,9 @@
       "id": "motion_sensor_radar_mmwave_presence_cleared",
       "title": {
         "en": "Presence cleared",
-        "fr": "Présence disparue"
+        "fr": "Présence disparue",
+        "de": "Anwesenheit beendet",
+        "nl": "Aanwezigheid beëindigd"
       },
       "args": [],
       "titleFormatted": {

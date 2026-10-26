@@ -562,7 +562,9 @@
       "id": "wall_switch_4_gang_tuya_set_power_on_behavior",
       "title": {
         "en": "Set power-on behavior",
-        "fr": "Comportement à la mise sous tension"
+        "fr": "Comportement à la mise sous tension",
+        "de": "Verhalten nach Stromausfall setzen",
+        "nl": "Gedrag na stroomuitval instellen"
       },
       "args": [
         {

@@ -66,7 +66,9 @@
       "id": "switch_wireless_single_press",
       "title": {
         "en": "Single press",
-        "fr": "Appui simple"
+        "fr": "Appui simple",
+        "de": "Einfacher Druck",
+        "nl": "Enkele druk"
       },
       "args": [],
       "titleFormatted": {
@@ -78,7 +80,9 @@
       "id": "switch_wireless_double_press",
       "title": {
         "en": "Double press",
-        "fr": "Double appui"
+        "fr": "Double appui",
+        "de": "Doppelter Druck",
+        "nl": "Dubbele druk"
       },
       "args": [],
       "titleFormatted": {
@@ -90,7 +94,9 @@
       "id": "switch_wireless_long_press",
       "title": {
         "en": "Long press",
-        "fr": "Appui long"
+        "fr": "Appui long",
+        "de": "Langer Druck",
+        "nl": "Lange druk"
       },
       "args": [],
       "titleFormatted": {
