@@ -1891,6 +1891,12 @@
       "pid": "TY0201",
       "driverId": "lcdtemphumidsensor",
       "note": "P3038b 2026-10-25 Homey interview docs/data/interviews/TY0201__TZ3000_bjawzodf.json: LCD temp/humidity sensor; per-driver budget dropped it from the publish payload, so it paired on no driver (owner yes 25/10)"
+    },
+    {
+      "mfr": "_TZE200_7deq70b8",
+      "pid": "TS0601",
+      "driverId": "switch_2gang",
+      "note": "P3067-covers 2026-10-26: Z2M TS0601_switch (same entry as _TZE200_nkjintbl), ZHA TuyaDoubleSwitchGP, blakadder ZY-US 2 wall switch 2 gang. Was wrongly listed in curtain_motor (never published there)."
     }
   ]
 }
