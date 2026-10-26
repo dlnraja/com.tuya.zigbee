@@ -20,6 +20,11 @@ class RadiatorValveZigbeeDevice extends UnifiedThermostatBase {
   get supportsEcoMode() { return true; }
   get supportsFrostProtection() { return true; }
   get supportsWindowDetection() { return true; }
+  // P3065: UnifiedThermostatBase defines a getter-only dpMappings, so the `this.dpMappings = {...}` below threw
+  // "Cannot set property dpMappings" and aborted onNodeInit before the capability listeners were registered.
+  // DP parsing keeps the base mappings (unchanged behaviour); the TRV table is kept for diagnostics.
+  get dpMappings() { return super.dpMappings; }
+  set dpMappings(v) { this._trvDpMappingsOverride = v; }
 
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });

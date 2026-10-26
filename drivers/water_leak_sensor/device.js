@@ -217,7 +217,9 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
   }
 
   get dpMappings() {
-    const alarmTransform = boolean();
+    // P3065: boolean() returns { fromDevice, toDevice }, not a function -> 'alarmTransform is not a function' on every DP1
+    const _alarmConv = boolean();
+    const alarmTransform = typeof _alarmConv === 'function' ? _alarmConv : (v) => _alarmConv.fromDevice(v);
     const transformAlarm = (value) => this._deviceProfile?.invertRawAlarm
       ? !alarmTransform(value)
       : alarmTransform(value);

@@ -258,6 +258,12 @@ const presenceDebounceState = new Map();  // deviceId -> { lastPresence: presenc
 // Problem: _TZE284_iadro9bf flips between 30 and 2000 lux every few seconds
 // Solution: 60s smoothing window + oscillation detection
 // v5.5.357: RONNY FORUM FIX - Enhanced oscillation lock for 30â†”2000 flip
+// P3065: luxSmoothingState was referenced but never declared (ReferenceError on every ZY-M100 lux DP).
+// Bounded per-device map so a long-lived app cannot grow it without limit.
+const LUX_SMOOTHING_MAX = 256;
+const luxSmoothingState = new Map();
+const _luxSet = luxSmoothingState.set.bind(luxSmoothingState);
+luxSmoothingState.set = (k, v) => { if (!luxSmoothingState.has(k) && luxSmoothingState.size >= LUX_SMOOTHING_MAX) { luxSmoothingState.delete(luxSmoothingState.keys().next().value); } return _luxSet(k, v); };
 function transformLux(rawValue, type, manufacturerName = '', deviceId = null) {
   // v5.5.316: Direct lux reporting confirmed (no conversion needed)
   let lux = typeof rawValue === 'number' ? rawValue : 0;
@@ -1465,7 +1471,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       const { smartParse } = require('../../lib/managers/SmartDivisorManager');
       const temp = smartParse(rawTemp, dpId, { manufacturerName: this.getSetting('zb_manufacturer_name') || '', capability: 'measure_temperature', deviceId: this.getData()?.id || '', defaultDivisor: 10 });
       if (temp >= -40 && temp <= 80) {
-        this.log(`[RADAR] ðŸŒ¡ï¸ DP${dpId} -> temperature = ${temp}Â°C (raw: ${rawTemp}, Ã·${divisor})`);
+        this.log(`[RADAR] ðŸŒ¡ï¸ DP${dpId} -> temperature = ${temp}Â°C (raw: ${rawTemp}, Ã·auto)`); // P3065: `divisor` was undefined
         this.safeSetCapabilityValue('measure_temperature', temp).catch(() => { });
       } else {
         this.log(`[RADAR] âšï¸ DP${dpId} temperature out of range: ${temp}Â°C (raw: ${rawTemp})`);
