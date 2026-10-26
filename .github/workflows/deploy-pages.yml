@@ -94,6 +94,15 @@ jobs:
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
           path: .github/pages-build
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Builds and deploys the Device Finder site to GitHub Pages."; else s="Stopped early ($JOB_STATUS); the red step above says why. Builds and deploys the Device Finder site to GitHub Pages."; fi
+          node scripts/lib/report-writer.js --title "deploy-pages" --summary "$s" --headers "item|value" --row "job|build" --row "result|$JOB_STATUS" --thanks "GitHub Actions docs" --thanks "rhysd (actionlint)" --thanks "the GitHub Pages actions maintainers" >> "$GITHUB_STEP_SUMMARY" || true
 
   deploy:
     needs: build

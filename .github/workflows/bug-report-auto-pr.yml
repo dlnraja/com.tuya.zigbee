@@ -119,3 +119,12 @@ jobs:
             --base master \
             --head "$BRANCH" \
             --label "auto-fix,bug"
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Turns a bug report into a draft fix PR; the AI step is optional and the job works without it."; else s="Stopped early ($JOB_STATUS); the red step above says why. Turns a bug report into a draft fix PR; the AI step is optional and the job works without it."; fi
+          node scripts/lib/report-writer.js --title "bug-report-auto-pr" --summary "$s" --headers "item|value" --row "job|process-bug" --row "result|$JOB_STATUS" --thanks "Renovate and Dependabot for the merge-when-green pattern" --thanks "the actions/stale and actions/labeler maintainers" >> "$GITHUB_STEP_SUMMARY" || true

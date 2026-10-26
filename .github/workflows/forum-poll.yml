@@ -356,6 +356,15 @@ jobs:
             .github/state/inbox-diag-harvest/
           if-no-files-found: warn
           retention-days: 7
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Every four hours: scans the forum thread, PMs and screenshots for device data. Never posts."; else s="Stopped early ($JOB_STATUS); the red step above says why. Every four hours: scans the forum thread, PMs and screenshots for device data. Never posts."; fi
+          node scripts/lib/report-writer.js --title "forum-poll" --summary "$s" --headers "item|value" --row "job|forum-poll" --row "result|$JOB_STATUS" --thanks "the Homey Community forum members who share fingerprints and diagnostics (read-only, never quoted)" --thanks "Discourse for its public JSON/RSS endpoints" >> "$GITHUB_STEP_SUMMARY" || true
 
   # P2936: full cross-research of every item this workflow handles (kill switch: vars.XR_ENABLED=false,
   # report-only: vars.XR_APPLY=false). Bounded (max items, net/OCR caps), cached, no paid API.

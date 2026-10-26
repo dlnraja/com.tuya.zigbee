@@ -66,3 +66,12 @@ jobs:
           HOMEY_REFRESH_TOKEN: ${{ secrets.HOMEY_REFRESH_TOKEN }}
           GH_PAT: ${{ secrets.GH_PAT }}
         run: node scripts/ci/version-health-check.js
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Twice a week: reads build states from the Athom Apps API and flags versions with crashes or failed processing."; else s="Stopped early ($JOB_STATUS); the red step above says why. Twice a week: reads build states from the Athom Apps API and flags versions with crashes or failed processing."; fi
+          node scripts/lib/report-writer.js --title "version-health" --summary "$s" --headers "item|value" --row "job|version-health" --row "result|$JOB_STATUS" --thanks "Athom's official Homey app GitHub Actions (athombv)" --thanks "the Homey developer docs on build channels" >> "$GITHUB_STEP_SUMMARY" || true

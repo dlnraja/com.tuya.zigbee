@@ -219,3 +219,12 @@ jobs:
           git commit -m "chore(resilience): inventory + critical-first audit [skip ci]" || exit 0
           # Verified push (no || true mask) — step continue-on-error handles soft failure
           git push origin "HEAD:${GITHUB_REF_NAME}"
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Daily inventory of features and past bugs, sorted by the biggest Homey gaps first."; else s="Stopped early ($JOB_STATUS); the red step above says why. Daily inventory of features and past bugs, sorted by the biggest Homey gaps first."; fi
+          node scripts/lib/report-writer.js --title "project-resilience" --summary "$s" --headers "item|value" --row "job|resilience" --row "result|$JOB_STATUS" --thanks "Renovate and Dependabot for the merge-when-green pattern" --thanks "the actions/stale and actions/labeler maintainers" >> "$GITHUB_STEP_SUMMARY" || true

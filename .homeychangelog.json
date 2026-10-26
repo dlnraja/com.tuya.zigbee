@@ -1,36 +1,4 @@
 {
-  "1.0.133": {
-    "en": "TRV me167 DP4 no longer steals battery; settings spinner dual fallback (P2822)."
-  },
-  "1.0.131": {
-    "en": "Z2M/ZHA/quirks couple recheck (P2820)."
-  },
-  "1.0.130": {
-    "en": "Blakadder recheck: misclassed couple moves (P2819)."
-  },
-  "1.0.129": {
-    "en": "Restore water_leak OTA firmware asset for Homey validate."
-  },
-  "1.0.128": {
-    "en": "4in1 mmWave DP map (PIR delay/sensitivity); ANTIK TRV soft ME167.",
-    "fr": "Mapping DP 4in1 mmWave; TRV ANTIK soft ME167."
-  },
-  "1.0.127": {
-    "en": "4in1 mmWave pairing + AOYAN soil water-leak cartesian fix.",
-    "fr": "Appairage 4in1 mmWave + fix cartesien AOYAN sol / fuite eau."
-  },
-  "1.0.126": {
-    "en": "Fixed multi-button release Flow cards and DP received trigger.",
-    "fr": "Correction des cartes Flow release multi-boutons et trigger DP."
-  },
-  "1.0.125": {
-    "en": "Soil sensors matched by manufacturer+model couple.",
-    "fr": "Capteurs sol appaires par couple fabricant+modele."
-  },
-  "1.0.124": {
-    "en": "Improved soil sensor pairing and Configure readiness.",
-    "fr": "Amelioration capteurs sol et Configure."
-  },
   "changelog": [
     {
       "version": "9.0.497",
@@ -939,10 +907,6 @@
       ]
     }
   ],
-  "1.0.213": {
-    "en": "Thanks to the Zigbee2MQTT / zigbee-herdsman-converters contributors: SPM02V1-GT power meter now also matched with the exact TS0601 product id. One couple, one driver: the Tuya smoke sensor _TZE200_yh7aoahi with product id TS0205 is now matched by one smoke driver only (it was listed twice).",
-    "fr": "Merci aux contributeurs de Zigbee2MQTT / zigbee-herdsman-converters : le compteur SPM02V1-GT est aussi reconnu avec l'identifiant produit exact TS0601. Un couple, un driver : le détecteur de fumée Tuya _TZE200_yh7aoahi avec l'identifiant produit TS0205 n'est plus reconnu que par un seul driver fumée (il était listé deux fois)."
-  },
   "9.0.1091": {
     "en": "Restored MTG075 couple profile (Occupied/quantized docs) so Auto-Publish Contre quoi stays green."
   },
@@ -3705,6 +3669,166 @@
   "5.12.0": {
     "en": "v5.12.0: stable-v5 batch sync (drivers, FPs, flows, manifest) from master v9.0.240–v9.0.260."
   },
+  "1.0.215": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "1.0.214": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "1.0.213": {
+    "en": "Thanks to the Zigbee2MQTT / zigbee-herdsman-converters contributors: SPM02V1-GT power meter now also matched with the exact TS0601 product id. One couple, one driver: the Tuya smoke sensor _TZE200_yh7aoahi with product id TS0205 is now matched by one smoke driver only (it was listed twice).",
+    "fr": "Merci aux contributeurs de Zigbee2MQTT / zigbee-herdsman-converters : le compteur SPM02V1-GT est aussi reconnu avec l'identifiant produit exact TS0601. Un couple, un driver : le détecteur de fumée Tuya _TZE200_yh7aoahi avec l'identifiant produit TS0205 n'est plus reconnu que par un seul driver fumée (il était listé deux fois)."
+  },
+  "1.0.212": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "1.0.211": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "1.0.210": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "1.0.209": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "1.0.208": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "1.0.207": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "1.0.206": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "1.0.205": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "1.0.204": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "1.0.203": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "1.0.201": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "1.0.200": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "1.0.199": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "1.0.198": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "1.0.187": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "1.0.186": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "1.0.185": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "1.0.184": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "1.0.182": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "1.0.179": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "1.0.133": {
+    "en": "TRV me167 DP4 no longer steals battery; settings spinner dual fallback (P2822)."
+  },
+  "1.0.132": {
+    "en": "Forum fleet silent treat: sacred-keep + cartesian forbids (P2821)."
+  },
+  "1.0.131": {
+    "en": "Z2M/ZHA/quirks couple recheck (P2820)."
+  },
+  "1.0.130": {
+    "en": "Blakadder recheck: misclassed couple moves (P2819)."
+  },
+  "1.0.129": {
+    "en": "Restore water_leak OTA firmware asset for Homey validate."
+  },
+  "1.0.128": {
+    "en": "4in1 mmWave DP map (PIR delay/sensitivity); ANTIK TRV soft ME167.",
+    "fr": "Mapping DP 4in1 mmWave; TRV ANTIK soft ME167."
+  },
+  "1.0.127": {
+    "en": "4in1 mmWave pairing + AOYAN soil water-leak cartesian fix.",
+    "fr": "Appairage 4in1 mmWave + fix cartesien AOYAN sol / fuite eau."
+  },
+  "1.0.126": {
+    "en": "Fixed multi-button release Flow cards and DP received trigger.",
+    "fr": "Correction des cartes Flow release multi-boutons et trigger DP."
+  },
+  "1.0.125": {
+    "en": "Soil sensors matched by manufacturer+model couple.",
+    "fr": "Capteurs sol appaires par couple fabricant+modele."
+  },
+  "1.0.124": {
+    "en": "Improved soil sensor pairing and Configure readiness.",
+    "fr": "Amelioration capteurs sol et Configure."
+  },
+  "1.0.123": {
+    "en": "Improved radiator valve and mmWave radar pairing for recent forum devices."
+  },
+  "1.0.122": {
+    "en": "P2761 Johan comment locks: Fantem/doorbell/PIR/contact."
+  },
+  "1.0.121": {
+    "en": "Johan L99 P2760: IAS leak vs tuya twin, kb5noeto IAS motion, air9m6af strip."
+  },
+  "1.0.120": {
+    "en": "Johan L99: Moes SR-ZS 3-gang, air-monitor couple lock, TS0207 leak enrich."
+  },
+  "1.0.119": {
+    "en": "Battery listen-only for coin cells; Johan couple collision locks (pay2byax / 6ycgarab)."
+  },
+  "1.0.118": {
+    "en": "Longer battery life: no proactive PowerCfg polls on coin-cell sensors/remotes. TS0043 interview clusters restored."
+  },
+  "1.0.117": {
+    "en": "P2757: Bastien app enhancement: refined anti-sag filter to >=8% under RF TX load, responsive battery replacement jump (>=10%), and guaranteed isWake anti-sag protection across button devices."
+  },
+  "1.0.116": {
+    "en": "P2756: Eliminate button battery drain: disable unsolicited periodic scene recovery writes on sleeping devices, guard awake readAttributes & Tuya DP storms, suppress polling & configureReporting on sleepy remotes, preserving CR2032 life."
+  },
+  "1.0.115": {
+    "en": "Battery consumption optimization & EMA anti-sag stability filter (TS0042/TS0043) + radar presence clear on leave."
+  },
+  "1.0.114": {
+    "en": "Fix battery state for multi-button TS0042/TS0043 remotes on awake; guard AutoAdaptive against unmounted Not Found."
+  },
+  "1.0.113": {
+    "en": "Radar hang-leave clear when lux+distance freeze; Wireless Button 3 = TS0043 only."
+  },
   "1.0.112": {
     "en": "Tagged Flows (label/token icon) now fire from all paths incl. complementary/raw RX. UPDATE Bastien Test to 1.0.112 then Restart once.",
     "fr": "Flows etiquetes (icone tag/token) se declenchent aussi en RX complementaire/raw. MAJ Bastien Test 1.0.112 puis Redemarrer une fois."
@@ -4092,129 +4216,5 @@
   "1.0.0": {
     "en": "Bastien house track bootstrap — private Homey install; upstream enrich only.",
     "fr": "Piste maison Bastien — install Homey privee; enrichissement upstream uniquement."
-  },
-  "1.0.113": {
-    "en": "Radar hang-leave clear when lux+distance freeze; Wireless Button 3 = TS0043 only."
-  },
-  "1.0.114": {
-    "en": "Fix battery state for multi-button TS0042/TS0043 remotes on awake; guard AutoAdaptive against unmounted Not Found."
-  },
-  "1.0.115": {
-    "en": "Battery consumption optimization & EMA anti-sag stability filter (TS0042/TS0043) + radar presence clear on leave."
-  },
-  "1.0.116": {
-    "en": "P2756: Eliminate button battery drain: disable unsolicited periodic scene recovery writes on sleeping devices, guard awake readAttributes & Tuya DP storms, suppress polling & configureReporting on sleepy remotes, preserving CR2032 life."
-  },
-  "1.0.117": {
-    "en": "P2757: Bastien app enhancement: refined anti-sag filter to >=8% under RF TX load, responsive battery replacement jump (>=10%), and guaranteed isWake anti-sag protection across button devices."
-  },
-  "1.0.118": {
-    "en": "Longer battery life: no proactive PowerCfg polls on coin-cell sensors/remotes. TS0043 interview clusters restored."
-  },
-  "1.0.119": {
-    "en": "Battery listen-only for coin cells; Johan couple collision locks (pay2byax / 6ycgarab)."
-  },
-  "1.0.120": {
-    "en": "Johan L99: Moes SR-ZS 3-gang, air-monitor couple lock, TS0207 leak enrich."
-  },
-  "1.0.121": {
-    "en": "Johan L99 P2760: IAS leak vs tuya twin, kb5noeto IAS motion, air9m6af strip."
-  },
-  "1.0.122": {
-    "en": "P2761 Johan comment locks: Fantem/doorbell/PIR/contact."
-  },
-  "1.0.123": {
-    "en": "Improved radiator valve and mmWave radar pairing for recent forum devices."
-  },
-  "1.0.132": {
-    "en": "Forum fleet silent treat: sacred-keep + cartesian forbids (P2821)."
-  },
-  "1.0.179": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "1.0.182": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "1.0.184": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "1.0.185": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "1.0.186": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "1.0.187": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "1.0.198": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "1.0.199": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "1.0.200": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "1.0.201": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "1.0.203": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "1.0.204": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "1.0.205": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "1.0.206": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "1.0.207": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "1.0.208": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "1.0.209": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "1.0.210": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "1.0.211": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "1.0.212": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "1.0.214": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "1.0.215": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
   }
 }

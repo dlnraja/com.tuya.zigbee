@@ -143,3 +143,12 @@ jobs:
             reports/ocr-intelligent-*/**
           if-no-files-found: warn
           retention-days: 14
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Twice a week: deterministic file selection and Homey rules for review; skipped when nothing relevant changed."; else s="Stopped early ($JOB_STATUS); the red step above says why. Twice a week: deterministic file selection and Homey rules for review; skipped when nothing relevant changed."; fi
+          node scripts/lib/report-writer.js --title "open-code-review" --summary "$s" --headers "item|value" --row "job|ocr-delegate" --row "result|$JOB_STATUS" --thanks "GitHub Actions docs" --thanks "rhysd (actionlint)" --thanks "Alibaba's Open Code Review project for the review flow idea" >> "$GITHUB_STEP_SUMMARY" || true

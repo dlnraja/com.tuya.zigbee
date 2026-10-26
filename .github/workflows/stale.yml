@@ -78,3 +78,12 @@ jobs:
           exempt-pr-labels: "pinned,security,auto-fix,new-device,pr-fingerprints"
           exempt-all-assignees: true
           operations-per-run: 100
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Weekly marking of stale issues and PRs."; else s="Stopped early ($JOB_STATUS); the red step above says why. Weekly marking of stale issues and PRs."; fi
+          node scripts/lib/report-writer.js --title "stale" --summary "$s" --headers "item|value" --row "job|stale" --row "result|$JOB_STATUS" --thanks "Renovate and Dependabot for the merge-when-green pattern" --thanks "the actions/stale and actions/labeler maintainers" --thanks "the actions/stale maintainers" >> "$GITHUB_STEP_SUMMARY" || true

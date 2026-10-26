@@ -184,3 +184,12 @@ jobs:
           echo "- Puppeteer: ${{ steps.promote_puppeteer.outcome }}" >> $GITHUB_STEP_SUMMARY
           echo "- OAuth: ${{ steps.promote_oauth.outcome }}" >> $GITHUB_STEP_SUMMARY
           echo "- API: ${{ steps.promote_api.outcome }}" >> $GITHUB_STEP_SUMMARY
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Promotes one app's draft build to the test channel (manual)."; else s="Stopped early ($JOB_STATUS); the red step above says why. Promotes one app's draft build to the test channel (manual)."; fi
+          node scripts/lib/report-writer.js --title "draft-to-test" --summary "$s" --headers "item|value" --row "job|promote" --row "result|$JOB_STATUS" --thanks "Athom's official Homey app GitHub Actions (athombv)" --thanks "the Homey developer docs on build channels" >> "$GITHUB_STEP_SUMMARY" || true

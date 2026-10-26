@@ -123,3 +123,12 @@ jobs:
             fi
             rm -f .github/state/_gmail_alert.txt .github/state/_imap_alert.txt
           fi
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Daily check that the mail login still works; raises a redacted alert in our own repo if not."; else s="Stopped early ($JOB_STATUS); the red step above says why. Daily check that the mail login still works; raises a redacted alert in our own repo if not."; fi
+          node scripts/lib/report-writer.js --title "gmail-token-keepalive" --summary "$s" --headers "item|value" --row "job|gmail-auth-health" --row "result|$JOB_STATUS" --thanks "Homey users who send diagnostic reports by mail" --thanks "the Homey developer docs on app diagnostics" >> "$GITHUB_STEP_SUMMARY" || true
