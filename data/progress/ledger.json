@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-26T11:43:35.414Z",
+ "updated": "2026-10-26T13:23:13.003Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -6286,6 +6286,15 @@
    "kind": "general",
    "mailDate": "2026-10-25T15:17:23.000Z"
   },
+  "diag:07a22f9f15046206": {
+   "status": "done",
+   "date": "2026-10-26",
+   "hash": "01153670ca2d5d85",
+   "note": "github mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "github",
+   "mailDate": "2026-10-26T12:42:16.000Z"
+  },
   "diag:08271841c81535fd": {
    "status": "done",
    "date": "2026-10-21",
@@ -7183,6 +7192,32 @@
    "by": "tuya-deep-diag",
    "kind": "general",
    "mailDate": "2026-10-19T09:15:44.000Z"
+  },
+  "diag:35d46107b92bfccf": {
+   "status": "pending",
+   "date": "2026-10-26",
+   "hash": "f55f6165aca98085",
+   "note": "github mail; 5 couple(s); 1 identity(ies) not in any driver; 5 in several drivers",
+   "by": "fetch-diags",
+   "kind": "github",
+   "mailDate": "2026-10-26T12:58:02.000Z",
+   "couples": [
+    "_tze200_t5p1vj8r|ts0601",
+    "_tze200_uebojraa|ts0601",
+    "_tze200_vzekyi4c|ts0205",
+    "_tze200_vzekyi4c|ts0601",
+    "_tze204_ntcy3xu1|ts0601"
+   ],
+   "unsupported": [
+    "ts0205"
+   ],
+   "conflicts": [
+    "_TYZB01_v8gtiaed",
+    "_TZE200_yh7aoahi",
+    "_TZ3000_l9brjwau",
+    "_TZ3000_eit7p838",
+    "_tze200_vzekyi4c"
+   ]
   },
   "diag:361526852cef01f9": {
    "status": "done",
