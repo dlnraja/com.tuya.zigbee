@@ -11,7 +11,8 @@ const ZosungIRTransmitBoundCluster = require('../../lib/clusters/ZosungIRTransmi
 const ZosungIRControlBoundCluster = require('../../lib/clusters/ZosungIRControlBoundCluster');
 const irBlasterInit = require('./irBlasterInit');
 const { getRouter } = require('../../lib/ir/IntelligentIRRouter');
-const { makeLearnedEntry, upsertLearnedMap, detectFormat } = require('../../lib/ir/IRFormatConverter');
+const { makeLearnedEntry, upsertLearnedMap, detectFormat, repairLegacyZosungCode } = require('../../lib/ir/IRFormatConverter');
+const ZosungProto = require('../../lib/ir/ZosungIRProtocol');
 
 // IR Blaster cluster IDs
 const ZOSUNG_IR_CONTROL_CLUSTER_ID = 0xE004;    // 57348 - ZosungIRControl
@@ -214,7 +215,7 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
         }
         this.log(`Learn mode attr: ${value ? 'ON' : 'OFF'}`);
         this._learningState = value ? LEARNING_STATES.LEARNING : LEARNING_STATES.IDLE;
-        this['safeSetCapabilityValue']('onoff', value).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+        this['safeSetCapabilityValue']('onoff', value).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) { /* log best-effort */ } }));
         this._triggerLearningStateChanged(this._learningState);
       });
     }
@@ -407,7 +408,12 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
         // v5.11.17: Device paired before cluster registration — manually instantiate
         this.log('[IR-SETUP] ⚠️ ZosungIRControl not in simple descriptor — creating manual instance');
         try {
-          irControlCluster = new ZosungIRControlCluster({ clusterEndpoint: endpoint });
+          // WHY(P3063): Cluster(endpoint) — the old {clusterEndpoint} arg broke sendFrame;
+          // registering it lets zigbee-clusters route inbound 0xE004 frames to it.
+          irControlCluster = new ZosungIRControlCluster(endpoint);
+          if (endpoint.clusters && !endpoint.clusters[ZosungIRControlCluster.NAME]) {
+            endpoint.clusters[ZosungIRControlCluster.NAME] = irControlCluster;
+          }
           this.log('[IR-SETUP] ✅ Manual ZosungIRControl instance created');
         } catch (e) {
           this.log('[IR-SETUP] ❌ Manual ZosungIRControl failed:', e.message);
@@ -447,7 +453,12 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
         // v5.11.17: Manual instantiation fallback
         this.log('[IR-SETUP] ⚠️ ZosungIRTransmit not in simple descriptor — creating manual instance');
         try {
-          irTransmitCluster = new ZosungIRTransmitCluster({ clusterEndpoint: endpoint });
+          // WHY(P3063): same as above — without registration the learned Code03/Code05
+          // (server→client) were rejected with cluster_unavailable.
+          irTransmitCluster = new ZosungIRTransmitCluster(endpoint);
+          if (endpoint.clusters && !endpoint.clusters[ZosungIRTransmitCluster.NAME]) {
+            endpoint.clusters[ZosungIRTransmitCluster.NAME] = irTransmitCluster;
+          }
           this.log('[IR-SETUP] ✅ Manual ZosungIRTransmit instance created');
         } catch (e) {
           this.log('[IR-SETUP] ❌ Manual ZosungIRTransmit failed:', e.message);
@@ -853,23 +864,20 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
     }
 
     try {
-      // v5.9.14: Always use Z2M-compatible key_num JSON format
-      const irMessage = JSON.stringify({
-        'key_num': 1,
-        'delay': 300,
-        'key1': {
-          'num': 1,
-          'freq': options.frequency || 38000,
-          'type': 1,
-          'key_code': codeStr
-        }
-      });
+      // WHY(P3063): Z2M normalizeIrMsg semantics — bare key_code, {key_num,key1} JSON,
+      // {key_code,...} or {timings[]} are all accepted; legacy app-made codes are repaired.
+      const msgInput = irCode && typeof irCode === 'object' && !Buffer.isBuffer(irCode) && !irCode.code
+        ? irCode
+        : repairLegacyZosungCode(codeStr);
+      const irMessage = ZosungProto.normalizeIrMsg(msgInput, { frequency: options.frequency });
 
       // v5.11.17: Use stored cluster instances
+      // WHY(P3063): the 0xED00 chunk transfer is the only path real Zosung blasters
+      // play — always try it first (was skipped for codes ≤ 100 chars).
       const irTransmitCluster = this._irTransmitCluster;
-      if (irTransmitCluster && codeStr.length > 100) {
+      if (irTransmitCluster) {
         try {
-          await this._sendChunkedIRCode(irMessage, irTransmitCluster);
+          await ZosungProto.runQueued(() => this._sendChunkedIRCode(irMessage, irTransmitCluster));
           this.log('IR code sent via chunked ZosungIRTransmit protocol');
           return;
         } catch (chunkErr) {
@@ -915,19 +923,21 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
    * Based on Zigbee2MQTT zosung_ir_code_to_send implementation
    */
   async _sendChunkedIRCode(irMessage, transmitCluster) {
-    // Generate sequence number
-    this._irSeq = ((this._irSeq || 0) + 1) % 0x10000;
-    const seq = this._irSeq;
+    if (this._destroyed) {throw new Error('device destroyed');}
+    // WHY(P3063): ZG-IR01 answers every chunk with seq 0 (Z2M); others increment mod 0x10000
+    const seq = ZosungProto.nextSeq(this._irSeq, this._getDeviceIdentity().modelId);
+    this._irSeq = seq;
 
-    // Store message for chunked transmission
     this._pendingIRMessage = irMessage;
     this._pendingIRSeq = seq;
+    this._irTxStarted = false;
+    this._irLastFrame = null; // new transfer: ZG-IR01 reuses seq 0 / position 0
+    this._irActiveTxCluster = transmitCluster;
 
     this.log(`Starting chunked IR transmission: seq=${seq}, length=${irMessage.length}`);
 
-    // v5.9.14: Send Z2M-compatible zosungSendIRCode00
-    await transmitCluster.startTransmit({
-      seq: seq,
+    const sendCode00 = () => transmitCluster.startTransmit({
+      seq,
       length: irMessage.length,
       unk1: 0x00000000,
       unk2: 0xE004,
@@ -935,31 +945,64 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
       cmd: 0x02,
       unk4: 0x0000
     });
+    this._irResendCode00 = sendCode00;
 
-    // Wait for acknowledgment and data requests
-    // The device will request chunks via codeDataRequest events
     return new Promise((resolve, reject) => {
-      const timeout = this.homey.setTimeout(() => {
-        if (this._destroyed) { return; }
+      let done = false;
+      const cleanup = () => {
+        done = true;
+        this.homey.clearTimeout(timeout);
+        this._stopCode00Retry();
         delete this._pendingIRMessage;
         delete this._pendingIRSeq;
+        this._irActiveTxCluster = null;
+        this._irTransmitResolve = null;
+        this._irTransmitReject = null;
+        this._irResendCode00 = null;
+      };
+      const timeout = this.homey.setTimeout(() => {
+        if (done) {return;}
+        cleanup();
         reject(new Error('IR transmission timeout'));
       }, 10000);
 
-      this._irTransmitResolve = () => {
-        this.homey.clearTimeout(timeout);
-        delete this._pendingIRMessage;
-        delete this._pendingIRSeq;
-        resolve();
-      };
+      this._irTransmitResolve = () => { if (!done) { cleanup(); resolve(); } };
+      this._irTransmitReject = (err) => { if (!done) { cleanup(); reject(err); } };
 
-      this._irTransmitReject = (err) => {
-        this.homey.clearTimeout(timeout);
-        delete this._pendingIRMessage;
-        delete this._pendingIRSeq;
-        reject(err);
-      };
+      // v5.9.14: Z2M-compatible zosungSendIRCode00
+      sendCode00().catch((err) => this._irTransmitReject?.(err));
     });
+  }
+
+  // WHY(P3063): Z2M resends Code00 every 2 s after Code01 until the first Code02
+  // (some blasters drop the first start). Bounded to 3 resends.
+  _startCode00Retry() {
+    if (this._irCode00Retry || this._irTxStarted || !this._irResendCode00) {return;}
+    let n = 0;
+    this._irCode00Retry = this.homey.setInterval(() => {
+      if (this._destroyed || this._irTxStarted || !this._irResendCode00 || ++n > 3) {
+        this._stopCode00Retry();
+        return;
+      }
+      this._irResendCode00().catch((e) => this.log('[IR-TX] Code00 resend err:', e.message));
+    }, 2000);
+  }
+
+  _stopCode00Retry() {
+    if (this._irCode00Retry) {
+      this.homey.clearInterval(this._irCode00Retry);
+      this._irCode00Retry = null;
+    }
+  }
+
+  // WHY(P3063): both the Cluster (server→client) and BoundCluster (client→server) paths
+  // can surface the same frame — drop exact duplicates seen within 1.5 s.
+  _isDuplicateIrFrame(kind, data) {
+    const key = `${kind}:${data?.seq}:${data?.position ?? ''}`;
+    const now = Date.now();
+    if (this._irLastFrame && this._irLastFrame.key === key && now - this._irLastFrame.at < 1500) {return true;}
+    this._irLastFrame = { key, at: now };
+    return false;
   }
 
   /**
@@ -1088,7 +1131,7 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
 
     // If we have a pending learn operation, store it with name
     if (this._pendingLearnName) {
-      this.storeLearnedCode(this._pendingLearnName, code).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+      this.storeLearnedCode(this._pendingLearnName, code).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) { /* log best-effort */ } }));
       this._pendingLearnName = null;
     }
   }
@@ -1104,7 +1147,7 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
     this._triggerLearningStateChanged(status);
 
     if (status === LEARNING_STATES.SUCCESS) {
-      this.readLastLearnedCode().catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+      this.readLastLearnedCode().catch(this._boundError || ((e) => { try { this.error(e); } catch (_) { /* log best-effort */ } }));
     }
   }
 
@@ -1127,6 +1170,7 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
   _setupTransmitProtocol(cluster) {
     cluster.on('startTransmitAck', (data) => {
       this.log('Transmit ACK received:', data);
+      this._startCode00Retry();
       const ackSeq = data.seq ?? data.sequenceNumber;
       if (this._pendingIRSeq !== undefined && ackSeq !== undefined && ackSeq !== this._pendingIRSeq) {
         this.log(`[IR-TX] Syncing seq from ACK: ${this._pendingIRSeq} -> ${ackSeq}`);
@@ -1148,6 +1192,7 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
     cluster.on('doneReceiving', async (data) => {
       this.log('[IR-RX] Code05 doneReceiving:', JSON.stringify(data));
       const seq = data.seq ?? data.sequenceNumber;
+      if (this._isDuplicateIrFrame('rx05', data)) {return;}
       await this._assembleAndFinishLearning(seq);
     });
 
@@ -1162,6 +1207,16 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
       this.log('📥 IR code transmission starting from device:', data);
       const seq = data.seq ?? data.sequenceNumber;
       const totalLength = data.length ?? data.totalLength ?? 0;
+      if (this._isDuplicateIrFrame('rx00', data)) {return;}
+      // WHY(P3063): bounded RX buffer — a corrupt length must not allocate megabytes
+      if (!(totalLength > 0) || totalLength > ZosungProto.MAX_LEARN_BYTES) {
+        this.log(`[IR-RX] ⚠️ Ignoring learn start with length=${totalLength}`);
+        return;
+      }
+      for (const k of Object.keys(this._receiveBuffers || {})) {
+        if (Date.now() - (this._receiveBuffers[k]?.startTime || 0) > 60000) {delete this._receiveBuffers[k];}
+      }
+      this._receiveBuffers = this._receiveBuffers || {};
 
       // v5.12.0: Z2M-compatible pre-allocated buffer for chunk assembly
       this._receiveBuffers[seq] = {
@@ -1221,54 +1276,55 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
    * v5.5.362: Handle received code chunk during learning
    */
   async _handleReceivedCodeChunk(data) {
-    if (this._destroyed) { return; }
+    if (this._destroyed || !data) { return; }
     const seq = data.seq ?? data.sequenceNumber;
     const position = data.position ?? 0;
-    let chunkData = data.msgpart ?? data.data;
-    let expectedCrc = data.msgpartcrc;
-    if (expectedCrc === undefined && Buffer.isBuffer(chunkData) && chunkData.length > 1) {
-      expectedCrc = chunkData[chunkData.length - 1];
-      chunkData = chunkData.slice(0, -1);
-    }
+    if (this._isDuplicateIrFrame('rx03', data)) {return;}
+    // WHY(P3063): fixed parser gives msgpart + msgpartcrc; tolerant fallback for raw frames
+    const { chunk: chunkData, crc: expectedCrc } = ZosungProto.parseRxChunk(data);
 
-    const buffer = this._receiveBuffers[seq];
+    const buffer = this._receiveBuffers && this._receiveBuffers[seq];
     if (!buffer) {
       this.log(`[IR-RX] ⚠️ Unexpected chunk for seq=${seq}, no buffer`);
       return;
     }
 
-    // v5.12.0: Z2M CRC validation — calcArrayCrc = sum of byte values % 256
-    if (expectedCrc !== undefined && Buffer.isBuffer(chunkData)) {
-      const crc = Array.from(chunkData.values()).reduce((a, b) => a + b, 0) % 0x100;
-      if (crc !== expectedCrc) {
-        this.error(`[IR-RX] CRC mismatch: got ${crc}, expected ${expectedCrc}`);
-        return;
-      }
+    // Z2M: chunk must land exactly at the expected position
+    if (buffer.buf && position !== buffer.position) {
+      this.log(`[IR-RX] ⚠️ Unexpected position ${position}, expecting ${buffer.position}`);
+      return;
     }
 
-    // v5.12.0: Z2M stores into pre-allocated buffer at position
-    if (buffer.buf && Buffer.isBuffer(chunkData)) {
-      chunkData.copy(buffer.buf, position);
-      buffer.position = position + chunkData.length;
-    } else {
-      buffer.chunks.push({ position, data: chunkData });
+    // v5.12.0: Z2M CRC validation — calcArrayCrc = sum of byte values % 256
+    if (expectedCrc !== undefined && ZosungProto.calcArrayCrc(chunkData) !== expectedCrc) {
+      this.error(`[IR-RX] CRC mismatch: got ${ZosungProto.calcArrayCrc(chunkData)}, expected ${expectedCrc}`);
+      return;
     }
-    buffer.receivedLength = Math.max(buffer.receivedLength, position + chunkData.length);
+    if (!chunkData.length || position + chunkData.length > buffer.totalLength) {
+      this.log(`[IR-RX] ⚠️ Chunk out of bounds pos=${position} len=${chunkData.length}/${buffer.totalLength}`);
+      return;
+    }
+
+    chunkData.copy(buffer.buf, position);
+    buffer.position = position + chunkData.length;
+    buffer.receivedLength = Math.max(buffer.receivedLength, buffer.position);
     this.log(`📥 Chunk: pos=${position}, len=${chunkData.length}, total=${buffer.receivedLength}/${buffer.totalLength}`);
 
+    const cl = this._irTransmitCluster;
     if (buffer.receivedLength >= buffer.totalLength) {
-      // v5.9.14: Send Code04 then assemble
-      const cl = this._irTransmitCluster;
+      // v5.9.14: Send Code04; device answers Code05 → _assembleAndFinishLearning
       if (cl) {
         try { await cl.doneSending({ zero0: 0, seq, zero1: 0 }); } catch (e) { this.log('Code04 err:', e.message); }
       }
-      await this._assembleReceivedCode(seq);
-    } else {
+      // WHY(P3063): if the Code05 never arrives, still deliver the complete code (bounded 3 s)
+      this.homey.setTimeout(() => {
+        if (this._destroyed || !this._receiveBuffers || !this._receiveBuffers[seq]) {return;}
+        this.log('[IR-RX] Code05 not received — finishing learn from complete buffer');
+        this._assembleAndFinishLearning(seq).catch((e) => this.log('[IR-RX] finish err:', e.message));
+      }, 3000);
+    } else if (cl) {
       // Request next chunk (Code02)
-      const cl = this._irTransmitCluster;
-      if (cl) {
-        try { await cl.codeDataRequest({ seq, position: buffer.receivedLength, maxlen: 0x38 }); } catch (e) { this.log('Code02 err:', e.message); }
-      }
+      try { await cl.codeDataRequest({ seq, position: buffer.receivedLength, maxlen: ZosungProto.CHUNK_RX_REQUEST }); } catch (e) { this.log('Code02 err:', e.message); }
     }
   }
 
@@ -1497,35 +1553,29 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
 
   // v5.5.361: Handle code data request for chunked transmission
   async _handleCodeDataRequest(data) {
-    if (this._destroyed) { return; }
+    if (this._destroyed || !data) { return; }
     if (!this._pendingIRMessage) {return;}
+    if (this._isDuplicateIrFrame('tx02', data)) {return;}
 
     // v5.9.14: Z2M-compatible field names
     const seq = data.seq ?? data.sequenceNumber;
     const position = data.position ?? 0;
-    const maxlen = data.maxlen ?? data.maxLength ?? 0x32;
+    this._irTxStarted = true;
+    this._stopCode00Retry();
 
     if (seq !== this._pendingIRSeq) {
       this.log(`[IR-TX] Seq mismatch: expected ${this._pendingIRSeq}, got ${seq} - syncing`);
       this._pendingIRSeq = seq;
     }
 
-    const part = this._pendingIRMessage.substring(position, position + maxlen);
-    const msgpart = Buffer.from(part);
-    // Z2M calcStringCrc: sum of char codes % 256
-    let crc = 0;
-    for (let i = 0; i < part.length; i++) {crc = (crc + part.charCodeAt(i)) % 256;}
+    // WHY(P3063): Z2M sends ≤ 0x32 chars per Code03 with msgpart (u8 length) + msgpartcrc
+    const { part, msgpart, msgpartcrc } = ZosungProto.txChunk(this._pendingIRMessage, position, data.maxlen ?? data.maxLength);
+    this.log(`Sending IR chunk: pos=${position}, len=${part.length}, crc=${msgpartcrc}`);
 
-    this.log(`Sending IR chunk: pos=${position}, len=${part.length}, crc=${crc}`);
-
-    if (this._irTransmitCluster) {
+    const txCl = this._irActiveTxCluster || this._irTransmitCluster;
+    if (txCl) {
       try {
-        await this._irTransmitCluster.codeDataResponse({
-          zero: 0,
-          seq: seq,
-          position: position,
-          msgpart: Buffer.concat([msgpart, Buffer.from([crc])])
-        });
+        await txCl.codeDataResponse({ zero: 0, seq, position, msgpart, msgpartcrc });
       } catch (err) {
         this.error('Failed to send code data response:', err);
         this._irTransmitReject?.(err);
@@ -1535,10 +1585,16 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
 
   // v5.12.0: Handle Code04 from device (sending complete) — respond with Code05 per Z2M
   async _handleTransmitComplete(data) {
-    if (this._destroyed) { return; }
+    if (this._destroyed || !data) { return; }
     const seq = data.seq ?? data.sequenceNumber;
-    // Z2M: send Code05 (doneReceiving) back to device
-    const cl = this._irTransmitCluster;
+    // WHY(P3063): a Code04 before the first Code02 is a leftover of a previous transfer
+    // (ZG-IR01 reuses seq 0) — acking it would resolve the new send too early.
+    if (this._pendingIRMessage && !this._irTxStarted) {
+      this.log(`[IR-TX] Ignoring Code04 before first chunk request (seq=${seq})`);
+      return;
+    }
+    if (this._isDuplicateIrFrame('tx04', data)) {return;}
+    const cl = this._irActiveTxCluster || this._irTransmitCluster;
     if (cl) {
       try { await cl.doneReceiving({ seq, zero: 0 }); } catch (e) { this.log('Code05 err:', e.message); }
     }
