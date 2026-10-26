@@ -34,7 +34,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Turned on",
-        "fr": "Allumé"
+        "fr": "Allumé",
+        "de": "Eingeschaltet",
+        "nl": "Aangezet"
       }
     },
     {
@@ -48,7 +50,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Turned off",
-        "fr": "Éteint"
+        "fr": "Éteint",
+        "de": "Ausgeschaltet",
+        "nl": "Uitgezet"
       }
     },
     {
@@ -126,7 +130,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Turn on",
-        "fr": "Allumer"
+        "fr": "Allumer",
+        "de": "Einschalten",
+        "nl": "Zet aan"
       }
     },
     {
@@ -140,7 +146,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Turn off",
-        "fr": "Éteindre"
+        "fr": "Éteindre",
+        "de": "Ausschalten",
+        "nl": "Zet uit"
       }
     },
     {
@@ -154,7 +162,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Toggle",
-        "fr": "Basculer"
+        "fr": "Basculer",
+        "de": "Umschalten",
+        "nl": "Wisselen"
       }
     },
     {

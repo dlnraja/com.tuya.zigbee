@@ -11,7 +11,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Gang 1 turned on",
-        "fr": "Voie 1 allumée"
+        "fr": "Voie 1 allumée",
+        "de": "Kanal 1 eingeschaltet",
+        "nl": "Kanaal 1 aangezet"
       }
     },
     {
@@ -25,7 +27,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Gang 1 turned off",
-        "fr": "Voie 1 éteinte"
+        "fr": "Voie 1 éteinte",
+        "de": "Kanal 1 ausgeschaltet",
+        "nl": "Kanaal 1 uitgezet"
       }
     },
     {
@@ -39,7 +43,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Gang 2 turned on",
-        "fr": "Voie 2 allumée"
+        "fr": "Voie 2 allumée",
+        "de": "Kanal 2 eingeschaltet",
+        "nl": "Kanaal 2 aangezet"
       }
     },
     {
@@ -53,7 +59,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Gang 2 turned off",
-        "fr": "Voie 2 éteinte"
+        "fr": "Voie 2 éteinte",
+        "de": "Kanal 2 ausgeschaltet",
+        "nl": "Kanaal 2 uitgezet"
       }
     },
     {
@@ -67,7 +75,9 @@
       },
       "titleFormatted": {
         "en": "Turned on physically - gang 1",
-        "fr": "Allumé physiquement - voie 1"
+        "fr": "Allumé physiquement - voie 1",
+        "de": "Physisch eingeschaltet - Kanal 1",
+        "nl": "Fysiek aangezet - kanaal 1"
       }
     },
     {
@@ -81,7 +91,9 @@
       },
       "titleFormatted": {
         "en": "Turned off physically - gang 1",
-        "fr": "Éteint physiquement - voie 1"
+        "fr": "Éteint physiquement - voie 1",
+        "de": "Physisch ausgeschaltet - Kanal 1",
+        "nl": "Fysiek uitgezet - kanaal 1"
       }
     },
     {
@@ -95,7 +107,9 @@
       },
       "titleFormatted": {
         "en": "Turned on physically - gang 2",
-        "fr": "Allumé physiquement - voie 2"
+        "fr": "Allumé physiquement - voie 2",
+        "de": "Physisch eingeschaltet - Kanal 2",
+        "nl": "Fysiek aangezet - kanaal 2"
       }
     },
     {
@@ -109,7 +123,9 @@
       },
       "titleFormatted": {
         "en": "Turned off physically - gang 2",
-        "fr": "Éteint physiquement - voie 2"
+        "fr": "Éteint physiquement - voie 2",
+        "de": "Physisch ausgeschaltet - Kanal 2",
+        "nl": "Fysiek uitgezet - kanaal 2"
       }
     }
   ],
@@ -125,7 +141,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Gang 1 is on",
-        "fr": "Voie 1 est allumée"
+        "fr": "Voie 1 est allumée",
+        "de": "Kanal 1 ist an",
+        "nl": "Kanaal 1 is aan"
       }
     },
     {
@@ -139,7 +157,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Gang 2 is on",
-        "fr": "Voie 2 est allumée"
+        "fr": "Voie 2 est allumée",
+        "de": "Kanal 2 ist an",
+        "nl": "Kanaal 2 is aan"
       }
     }
   ],

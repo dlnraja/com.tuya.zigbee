@@ -17,7 +17,8 @@
       "titleFormatted": {
         "en": "Turned on - physical button",
         "nl": "Aangezet - fysieke knop",
-        "fr": "Allumé - bouton physique"
+        "fr": "Allumé - bouton physique",
+        "de": "Eingeschaltet - physische Taste"
       }
     },
     {
@@ -37,7 +38,8 @@
       "titleFormatted": {
         "en": "Turned off - physical button",
         "nl": "Uitgezet - fysieke knop",
-        "fr": "Éteint - bouton physique"
+        "fr": "Éteint - bouton physique",
+        "de": "Ausgeschaltet - physische Taste"
       }
     },
     {
@@ -181,7 +183,9 @@
       },
       "titleFormatted": {
         "en": "Turned on physically - gang 1",
-        "fr": "Allumé physiquement - voie 1"
+        "fr": "Allumé physiquement - voie 1",
+        "de": "Physisch eingeschaltet - Kanal 1",
+        "nl": "Fysiek aangezet - kanaal 1"
       }
     },
     {
@@ -195,7 +199,9 @@
       },
       "titleFormatted": {
         "en": "Turned off physically - gang 1",
-        "fr": "Éteint physiquement - voie 1"
+        "fr": "Éteint physiquement - voie 1",
+        "de": "Physisch ausgeschaltet - Kanal 1",
+        "nl": "Fysiek uitgezet - kanaal 1"
       }
     }
   ],
@@ -396,7 +402,8 @@
               "id": "toggle",
               "title": {
                 "en": "Toggle",
-                "nl": "Tuimelschakelaar"
+                "nl": "Tuimelschakelaar",
+                "de": "Umschalten"
               },
               "label": {
                 "en": "Toggle",

@@ -62,7 +62,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Battery low",
-        "fr": "Batterie faible"
+        "fr": "Batterie faible",
+        "de": "Batterie schwach",
+        "nl": "Batterij bijna leeg"
       }
     },
     {
@@ -76,7 +78,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Temperature too high",
-        "fr": "Température trop haute"
+        "fr": "Température trop haute",
+        "de": "Temperatur zu hoch",
+        "nl": "Temperatuur te hoog"
       }
     },
     {
@@ -90,7 +94,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Temperature too low",
-        "fr": "Température trop basse"
+        "fr": "Température trop basse",
+        "de": "Temperatur zu niedrig",
+        "nl": "Temperatuur te laag"
       }
     },
     {
@@ -104,7 +110,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Humidity too high",
-        "fr": "Humidité trop haute"
+        "fr": "Humidité trop haute",
+        "de": "Luftfeuchtigkeit zu hoch",
+        "nl": "Luchtvochtigheid te hoog"
       }
     },
     {
@@ -118,7 +126,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Humidity too low",
-        "fr": "Humidité trop basse"
+        "fr": "Humidité trop basse",
+        "de": "Luftfeuchtigkeit zu niedrig",
+        "nl": "Luchtvochtigheid te laag"
       }
     },
     {

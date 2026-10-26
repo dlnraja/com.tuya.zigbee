@@ -11,7 +11,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Light turned on",
-        "fr": "Lumière allumée"
+        "fr": "Lumière allumée",
+        "de": "Licht eingeschaltet",
+        "nl": "Licht aangezet"
       }
     },
     {
@@ -25,7 +27,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Light turned off",
-        "fr": "Lumière éteinte"
+        "fr": "Lumière éteinte",
+        "de": "Licht ausgeschaltet",
+        "nl": "Licht uitgezet"
       }
     },
     {
@@ -39,7 +43,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Button pressed",
-        "fr": "Bouton appuyé"
+        "fr": "Bouton appuyé",
+        "de": "Taste gedrückt",
+        "nl": "Knop ingedrukt"
       }
     },
     {
@@ -114,7 +120,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Turn on",
-        "fr": "Allumer"
+        "fr": "Allumer",
+        "de": "Einschalten",
+        "nl": "Zet aan"
       }
     },
     {
@@ -128,7 +136,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Turn off",
-        "fr": "Éteindre"
+        "fr": "Éteindre",
+        "de": "Ausschalten",
+        "nl": "Zet uit"
       }
     },
     {

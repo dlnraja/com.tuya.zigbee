@@ -11,7 +11,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Turned on",
-        "fr": "Allume"
+        "fr": "Allume",
+        "de": "Eingeschaltet",
+        "nl": "Aangezet"
       }
     },
     {
@@ -25,7 +27,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Turned off",
-        "fr": "Eteint"
+        "fr": "Eteint",
+        "de": "Ausgeschaltet",
+        "nl": "Uitgezet"
       }
     },
     {
@@ -72,7 +76,8 @@
       "titleFormatted": {
         "en": "Gang 1 physical ON",
         "nl": "Gang 1 fysiek AAN",
-        "fr": "Voie 1 allumée (physique)"
+        "fr": "Voie 1 allumée (physique)",
+        "de": "Kanal 1 physisch EIN"
       }
     },
     {
@@ -87,7 +92,8 @@
       "titleFormatted": {
         "en": "Gang 1 physical OFF",
         "nl": "Gang 1 fysiek UIT",
-        "fr": "Voie 1 éteinte (physique)"
+        "fr": "Voie 1 éteinte (physique)",
+        "de": "Kanal 1 physisch AUS"
       }
     },
     {
@@ -102,7 +108,8 @@
       "titleFormatted": {
         "en": "Gang 2 physical ON",
         "nl": "Gang 2 fysiek AAN",
-        "fr": "Voie 2 allumée (physique)"
+        "fr": "Voie 2 allumée (physique)",
+        "de": "Kanal 2 physisch EIN"
       }
     },
     {
@@ -117,7 +124,8 @@
       "titleFormatted": {
         "en": "Gang 2 physical OFF",
         "nl": "Gang 2 fysiek UIT",
-        "fr": "Voie 2 éteinte (physique)"
+        "fr": "Voie 2 éteinte (physique)",
+        "de": "Kanal 2 physisch AUS"
       }
     },
     {
@@ -132,7 +140,8 @@
       "titleFormatted": {
         "en": "Gang 3 physical ON",
         "nl": "Gang 3 fysiek AAN",
-        "fr": "Voie 3 allumée (physique)"
+        "fr": "Voie 3 allumée (physique)",
+        "de": "Kanal 3 physisch EIN"
       }
     },
     {
@@ -147,7 +156,8 @@
       "titleFormatted": {
         "en": "Gang 3 physical OFF",
         "nl": "Gang 3 fysiek UIT",
-        "fr": "Voie 3 éteinte (physique)"
+        "fr": "Voie 3 éteinte (physique)",
+        "de": "Kanal 3 physisch AUS"
       }
     },
     {
@@ -162,7 +172,8 @@
       "titleFormatted": {
         "en": "Gang 4 physical ON",
         "nl": "Gang 4 fysiek AAN",
-        "fr": "Voie 4 allumée (physique)"
+        "fr": "Voie 4 allumée (physique)",
+        "de": "Kanal 4 physisch EIN"
       }
     },
     {
@@ -177,7 +188,8 @@
       "titleFormatted": {
         "en": "Gang 4 physical OFF",
         "nl": "Gang 4 fysiek UIT",
-        "fr": "Voie 4 éteinte (physique)"
+        "fr": "Voie 4 éteinte (physique)",
+        "de": "Kanal 4 physisch AUS"
       }
     }
   ],
@@ -273,7 +285,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Turn on",
-        "fr": "Allumer"
+        "fr": "Allumer",
+        "de": "Einschalten",
+        "nl": "Zet aan"
       }
     },
     {
@@ -287,7 +301,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Turn off",
-        "fr": "Eteindre"
+        "fr": "Eteindre",
+        "de": "Ausschalten",
+        "nl": "Zet uit"
       }
     },
     {
@@ -301,7 +317,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Toggle",
-        "fr": "Basculer"
+        "fr": "Basculer",
+        "de": "Umschalten",
+        "nl": "Wisselen"
       }
     },
     {

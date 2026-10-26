@@ -11,7 +11,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Turn on",
-        "fr": "Allumer"
+        "fr": "Allumer",
+        "de": "Einschalten",
+        "nl": "Zet aan"
       }
     },
     {
@@ -25,7 +27,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Turn off",
-        "fr": "Éteindre"
+        "fr": "Éteindre",
+        "de": "Ausschalten",
+        "nl": "Zet uit"
       }
     },
     {
@@ -87,7 +91,9 @@
       },
       "titleFormatted": {
         "en": "Gang 1 on - physical",
-        "fr": "Voie 1 allumée - physique"
+        "fr": "Voie 1 allumée - physique",
+        "de": "Kanal 1 an (physisch)",
+        "nl": "Kanaal 1 aan (fysiek)"
       }
     },
     {
@@ -101,7 +107,9 @@
       },
       "titleFormatted": {
         "en": "Gang 1 off - physical",
-        "fr": "Voie 1 éteinte - physique"
+        "fr": "Voie 1 éteinte - physique",
+        "de": "Kanal 1 aus (physisch)",
+        "nl": "Kanaal 1 uit (fysiek)"
       }
     },
     {
@@ -165,7 +173,9 @@
       },
       "titleFormatted": {
         "en": "Gang 2 on - physical",
-        "fr": "Voie 2 allumée - physique"
+        "fr": "Voie 2 allumée - physique",
+        "de": "Kanal 2 an (physisch)",
+        "nl": "Kanaal 2 aan (fysiek)"
       }
     },
     {
@@ -179,7 +189,9 @@
       },
       "titleFormatted": {
         "en": "Gang 2 off - physical",
-        "fr": "Voie 2 éteinte - physique"
+        "fr": "Voie 2 éteinte - physique",
+        "de": "Kanal 2 aus (physisch)",
+        "nl": "Kanaal 2 uit (fysiek)"
       }
     },
     {
@@ -243,7 +255,9 @@
       },
       "titleFormatted": {
         "en": "Gang 3 on - physical",
-        "fr": "Voie 3 allumée - physique"
+        "fr": "Voie 3 allumée - physique",
+        "de": "Kanal 3 an (physisch)",
+        "nl": "Kanaal 3 aan (fysiek)"
       }
     },
     {
@@ -257,7 +271,9 @@
       },
       "titleFormatted": {
         "en": "Gang 3 off - physical",
-        "fr": "Voie 3 éteinte - physique"
+        "fr": "Voie 3 éteinte - physique",
+        "de": "Kanal 3 aus (physisch)",
+        "nl": "Kanaal 3 uit (fysiek)"
       }
     },
     {

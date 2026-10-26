@@ -86,7 +86,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Heating started",
-        "fr": "Chauffage démarré"
+        "fr": "Chauffage démarré",
+        "de": "Heizen gestartet",
+        "nl": "Verwarming gestart"
       }
     },
     {
@@ -100,7 +102,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Heating stopped",
-        "fr": "Chauffage arrêté"
+        "fr": "Chauffage arrêté",
+        "de": "Heizen gestoppt",
+        "nl": "Verwarming gestopt"
       }
     },
     {
@@ -210,7 +214,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Temperature is above target",
-        "fr": "Température supérieure à la cible"
+        "fr": "Température supérieure à la cible",
+        "de": "Temperatur liegt über dem Ziel",
+        "nl": "Temperatuur is boven doel"
       }
     },
     {
@@ -224,7 +230,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Temperature is below target",
-        "fr": "Température inférieure à la cible"
+        "fr": "Température inférieure à la cible",
+        "de": "Temperatur liegt unter dem Ziel",
+        "nl": "Temperatuur is onder doel"
       }
     },
     {

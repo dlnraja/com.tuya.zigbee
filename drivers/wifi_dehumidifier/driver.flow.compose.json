@@ -75,7 +75,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Enable child lock",
-        "fr": "Activer verrou enfant"
+        "fr": "Activer verrou enfant",
+        "de": "Kindersicherung aktivieren",
+        "nl": "Kinderslot inschakelen"
       }
     },
     {
@@ -89,7 +91,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Disable child lock",
-        "fr": "Désactiver verrou enfant"
+        "fr": "Désactiver verrou enfant",
+        "de": "Kindersicherung deaktivieren",
+        "nl": "Kinderslot uitschakelen"
       }
     }
   ]

@@ -86,7 +86,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Heating started",
-        "fr": "Chauffage démarré"
+        "fr": "Chauffage démarré",
+        "de": "Heizen gestartet",
+        "nl": "Verwarming gestart"
       }
     },
     {
@@ -100,7 +102,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Heating stopped",
-        "fr": "Chauffage arrêté"
+        "fr": "Chauffage arrêté",
+        "de": "Heizen gestoppt",
+        "nl": "Verwarming gestopt"
       }
     },
     {
@@ -310,7 +314,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Temperature is above target",
-        "fr": "Température supérieure àla cible"
+        "fr": "Température supérieure àla cible",
+        "de": "Temperatur liegt über dem Ziel",
+        "nl": "Temperatuur is boven doel"
       }
     },
     {
@@ -324,7 +330,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Temperature is below target",
-        "fr": "Température inférieure àla cible"
+        "fr": "Température inférieure àla cible",
+        "de": "Temperatur liegt unter dem Ziel",
+        "nl": "Temperatuur is onder doel"
       }
     },
     {
@@ -839,7 +847,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Enable child lock",
-        "fr": "Activer verrou enfant"
+        "fr": "Activer verrou enfant",
+        "de": "Kindersicherung aktivieren",
+        "nl": "Kinderslot inschakelen"
       }
     },
     {
@@ -853,7 +863,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Disable child lock",
-        "fr": "Désactiver verrou enfant"
+        "fr": "Désactiver verrou enfant",
+        "de": "Kindersicherung deaktivieren",
+        "nl": "Kinderslot uitschakelen"
       }
     }
   ]

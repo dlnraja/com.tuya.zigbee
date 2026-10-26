@@ -11,7 +11,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Turn on",
-        "fr": "Allumer"
+        "fr": "Allumer",
+        "de": "Einschalten",
+        "nl": "Zet aan"
       }
     },
     {
@@ -25,7 +27,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Turn off",
-        "fr": "Éteindre"
+        "fr": "Éteindre",
+        "de": "Ausschalten",
+        "nl": "Zet uit"
       }
     },
     {
@@ -152,7 +156,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Physical gang 1 ON",
-        "fr": "Physique gang 1 ON"
+        "fr": "Physique gang 1 ON",
+        "de": "Kanal 1 physisch EIN",
+        "nl": "Kanaal 1 fysiek AAN"
       }
     },
     {
@@ -166,7 +172,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Physical gang 1 OFF",
-        "fr": "Physique gang 1 OFF"
+        "fr": "Physique gang 1 OFF",
+        "de": "Kanal 1 physisch AUS",
+        "nl": "Kanaal 1 fysiek UIT"
       }
     }
   ],

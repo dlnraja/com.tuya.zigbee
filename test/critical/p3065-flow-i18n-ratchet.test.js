@@ -9,9 +9,11 @@ const path = require('path');
 const ROOT = path.join(__dirname, '..', '..');
 const SAME_IN_FR = new Set(['Menu', 'Vibration', 'Scene', 'Mode', 'Code', 'Timer', 'Test']);
 const CEIL = { de: 370, nl: 359 };
+// titleFormatted gaps (P3065b: copied from the card's own title.de/nl when en matches)
+const CEIL_TF = { de: 1286, nl: 1262 };
 
 test('P3065 flow i18n: no FR placeholder titles, de/nl gaps never grow', () => {
-  const placeholders = []; const miss = { de: 0, nl: 0 };
+  const placeholders = []; const miss = { de: 0, nl: 0 }; const missTf = { de: 0, nl: 0 };
   const D = path.join(ROOT, 'drivers');
   for (const d of fs.readdirSync(D)) {
     const p = path.join(D, d, 'driver.flow.compose.json');
@@ -23,10 +25,10 @@ test('P3065 flow i18n: no FR placeholder titles, de/nl gaps never grow', () => {
           const t = c[f];
           if (t && t.fr && t.fr === t.en && /[a-z]{3}/i.test(t.en) && !SAME_IN_FR.has(t.en)) {placeholders.push(`${d}:${c.id}:${f}`);}
         }
-        for (const l of Object.keys(miss)) { if (c.title && c.title.en && !c.title[l]) {miss[l] += 1;} }
+        for (const l of Object.keys(miss)) { if (c.title && c.title.en && !c.title[l]) {miss[l] += 1;} if (c.titleFormatted && c.titleFormatted.en && !c.titleFormatted[l]) {missTf[l] += 1;} }
       }
     }
   }
   assert.deepStrictEqual(placeholders, []);
-  for (const l of Object.keys(CEIL)) {assert.ok(miss[l] <= CEIL[l], `${l} missing flow titles ${miss[l]} > ${CEIL[l]}`);}
+  for (const l of Object.keys(CEIL)) {assert.ok(miss[l] <= CEIL[l], `${l} missing flow titles ${miss[l]} > ${CEIL[l]}`); assert.ok(missTf[l] <= CEIL_TF[l], `${l} missing titleFormatted ${missTf[l]} > ${CEIL_TF[l]}`);}
 });
