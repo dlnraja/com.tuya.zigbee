@@ -25,9 +25,9 @@ Wi-Fi / LAN projects (tuya-local, localtuya, tinytuya, esphome) belong to the se
 
 | Branch | App | Version | Payload combos / cap | Compacted, other case form kept |
 |---|---|---|---|---:|
-| master | com.dlnraja.tuya.zigbee | 9.0.1601 | 15499 / 15500 + TS0601 top-up → 20000 / 20000 | 393 |
+| master | com.dlnraja.tuya.zigbee | 9.0.1601 | 15499 / 15500 + TS0601 top-up → 19998 / 20000 | 393 |
 | stable-v5 | com.dlnraja.tuya.zigbee.stable | 5.12.508 | 15498 / 15500 | 250 |
-| bastien-home | com.dlnraja.tuya.zigbee.bastien | 1.0.213 | 15495 / 15500 | 264 |
+| bastien-home | com.dlnraja.tuya.zigbee.bastien | 1.0.214 | 15500 / 15500 | 264 |
 
 The payload cap (15,500 couples, our own heuristic shared with the publish workflows, plus the P3036 TS0601 top-up where the branch has it) is the binding limit: any couple added to app.json beyond it is compacted out again, so new couples are only worth adding together with a compaction gain (P3036). Couples we cannot ship are listed as on hold, never removed.
 
@@ -35,33 +35,33 @@ The payload cap (15,500 couples, our own heuristic shared with the publish workf
 
 | Source | Branch | Total | Absent | Compacted | Wrong class | Partial | Complete |
 |---|---|---:|---:|---:|---:|---:|---:|
-| all | master | 3651 | 538 | 2306 | 3 | 156 | 648 |
-| all | stable-v5 | 3651 | 564 | 2363 | 9 | 129 | 586 |
-| all | bastien-home | 3651 | 498 | 2368 | 7 | 143 | 635 |
-| z2m | master | 2177 | 165 | 1503 | 3 | 156 | 350 |
-| z2m | stable-v5 | 2177 | 172 | 1570 | 9 | 129 | 297 |
-| z2m | bastien-home | 2177 | 106 | 1589 | 7 | 143 | 332 |
-| zha | master | 506 | 41 | 323 | 0 | 34 | 108 |
-| zha | stable-v5 | 506 | 32 | 350 | 2 | 25 | 97 |
-| zha | bastien-home | 506 | 38 | 350 | 1 | 25 | 92 |
+| all | master | 3651 | 536 | 2301 | 3 | 157 | 654 |
+| all | stable-v5 | 3651 | 564 | 2361 | 9 | 128 | 589 |
+| all | bastien-home | 3651 | 497 | 2363 | 7 | 142 | 642 |
+| z2m | master | 2177 | 164 | 1497 | 3 | 157 | 356 |
+| z2m | stable-v5 | 2177 | 172 | 1568 | 9 | 128 | 300 |
+| z2m | bastien-home | 2177 | 106 | 1586 | 7 | 142 | 336 |
+| zha | master | 506 | 41 | 322 | 0 | 32 | 111 |
+| zha | stable-v5 | 506 | 32 | 349 | 2 | 25 | 98 |
+| zha | bastien-home | 506 | 38 | 349 | 1 | 25 | 93 |
 | deconz | master | 400 | 30 | 244 | 0 | 15 | 111 |
 | deconz | stable-v5 | 400 | 29 | 253 | 1 | 15 | 102 |
-| deconz | bastien-home | 400 | 28 | 251 | 0 | 15 | 106 |
+| deconz | bastien-home | 400 | 28 | 250 | 0 | 15 | 107 |
 | johan | master | 1284 | 98 | 813 | 0 | 27 | 346 |
 | johan | stable-v5 | 1284 | 126 | 829 | 1 | 20 | 308 |
-| johan | bastien-home | 1284 | 112 | 794 | 1 | 24 | 353 |
-| blakadder | master | 626 | 59 | 405 | 0 | 36 | 126 |
-| blakadder | stable-v5 | 626 | 62 | 401 | 3 | 27 | 133 |
-| blakadder | bastien-home | 626 | 63 | 411 | 2 | 28 | 122 |
-| hubitat | master | 556 | 66 | 363 | 0 | 25 | 102 |
+| johan | bastien-home | 1284 | 112 | 791 | 1 | 24 | 356 |
+| blakadder | master | 626 | 59 | 404 | 0 | 34 | 129 |
+| blakadder | stable-v5 | 626 | 62 | 400 | 3 | 27 | 134 |
+| blakadder | bastien-home | 626 | 63 | 409 | 2 | 28 | 124 |
+| hubitat | master | 556 | 66 | 363 | 0 | 24 | 103 |
 | hubitat | stable-v5 | 556 | 62 | 376 | 1 | 21 | 96 |
 | hubitat | bastien-home | 556 | 65 | 369 | 1 | 21 | 100 |
-| smartthings | master | 550 | 136 | 279 | 0 | 10 | 125 |
+| smartthings | master | 550 | 135 | 280 | 0 | 10 | 125 |
 | smartthings | stable-v5 | 550 | 137 | 278 | 0 | 12 | 123 |
-| smartthings | bastien-home | 550 | 142 | 276 | 0 | 10 | 122 |
-| domoticz | master | 401 | 13 | 279 | 0 | 19 | 90 |
+| smartthings | bastien-home | 550 | 141 | 275 | 0 | 10 | 124 |
+| domoticz | master | 401 | 13 | 278 | 0 | 20 | 90 |
 | domoticz | stable-v5 | 401 | 16 | 296 | 1 | 16 | 72 |
-| domoticz | bastien-home | 401 | 16 | 289 | 0 | 17 | 79 |
+| domoticz | bastien-home | 401 | 16 | 288 | 0 | 17 | 80 |
 | tasmota | master | 10 | 1 | 6 | 0 | 2 | 1 |
 | tasmota | stable-v5 | 10 | 1 | 7 | 0 | 2 | 0 |
 | tasmota | bastien-home | 10 | 1 | 6 | 0 | 2 | 1 |
