@@ -4,6 +4,7 @@
     "type": "dropdown",
     "label": {
       "en": "Alarm volume",
+      "fr": "Volume de l'alarme",
       "nl": "Alarm volume",
       "de": "Alarm Lautstärke"
     },
@@ -54,6 +55,7 @@
     },
     "label": {
       "en": "Alarm duration time",
+      "fr": "Durée de l'alarme",
       "nl": "Alarm duratie",
       "de": "Alarmdauer"
     },
@@ -68,6 +70,7 @@
     "type": "dropdown",
     "label": {
       "en": "Alarm sound tune",
+      "fr": "Mélodie de l'alarme",
       "nl": "Melodie/geluid alarm",
       "de": "Alarm Melodie"
     },

@@ -2,14 +2,16 @@
   {
     "type": "group",
     "label": {
-      "en": "Motion Settings"
+      "en": "Motion Settings",
+      "fr": "Réglages du mouvement"
     },
     "children": [
       {
         "id": "fading_time",
         "type": "number",
         "label": {
-          "en": "Motion keep time"
+          "en": "Motion keep time",
+          "fr": "Durée de maintien du mouvement"
         },
         "hint": {
           "en": "How long motion stays active after detection (seconds)"
@@ -25,7 +27,8 @@
         "id": "motion_detection_sensitivity",
         "type": "number",
         "label": {
-          "en": "Motion detection sensitivity"
+          "en": "Motion detection sensitivity",
+          "fr": "Sensibilité de détection de mouvement"
         },
         "hint": {
           "en": "Higher value = more sensitive (0-19)"
@@ -39,14 +42,16 @@
   {
     "type": "group",
     "label": {
-      "en": "Light Settings"
+      "en": "Light Settings",
+      "fr": "Réglages de la lumière"
     },
     "children": [
       {
         "id": "illuminance_interval",
         "type": "number",
         "label": {
-          "en": "Light sensing interval"
+          "en": "Light sensing interval",
+          "fr": "Intervalle de mesure de la lumière"
         },
         "hint": {
           "en": "How often to update light level (minutes)"
@@ -63,14 +68,16 @@
   {
     "type": "group",
     "label": {
-      "en": "Device Settings"
+      "en": "Device Settings",
+      "fr": "Réglages de l'appareil"
     },
     "children": [
       {
         "id": "indicator",
         "type": "checkbox",
         "label": {
-          "en": "LED indicator"
+          "en": "LED indicator",
+          "fr": "Voyant LED"
         },
         "hint": {
           "en": "Enable LED indicator light"
@@ -81,7 +88,8 @@
         "id": "batteryThreshold",
         "type": "number",
         "label": {
-          "en": "Battery alarm threshold"
+          "en": "Battery alarm threshold",
+          "fr": "Seuil d'alarme de batterie"
         },
         "hint": {
           "en": "Trigger low battery alarm at this percentage"

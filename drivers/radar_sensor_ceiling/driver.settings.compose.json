@@ -3,7 +3,8 @@
     "id": "radar_sensitivity",
     "type": "number",
     "label": {
-      "en": "Radar sensitivity"
+      "en": "Radar sensitivity",
+      "fr": "Sensibilité du radar"
     },
     "value": 7,
     "min": 1,
@@ -13,7 +14,8 @@
     "id": "minimum_range",
     "type": "number",
     "label": {
-      "en": "Minimum range"
+      "en": "Minimum range",
+      "fr": "Portée minimale"
     },
     "value": 0,
     "min": 0,
@@ -26,7 +28,8 @@
     "id": "maximum_range",
     "type": "number",
     "label": {
-      "en": "Maximum range"
+      "en": "Maximum range",
+      "fr": "Portée maximale"
     },
     "value": 9.5,
     "min": 0,
@@ -39,7 +42,8 @@
     "id": "detection_delay",
     "type": "number",
     "label": {
-      "en": "Detection delay"
+      "en": "Detection delay",
+      "fr": "Délai de détection"
     },
     "value": 7,
     "min": 0,
@@ -52,7 +56,8 @@
     "id": "fading_time",
     "type": "number",
     "label": {
-      "en": "Fading time"
+      "en": "Fading time",
+      "fr": "Durée de fondu"
     },
     "value": 7,
     "min": 0,
