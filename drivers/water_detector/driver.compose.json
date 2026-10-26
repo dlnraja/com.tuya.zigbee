@@ -76,7 +76,8 @@
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
-        "en": "Push the button for aprox 10 seconds until the LED blinks rapidly. If nothing happens; put two fingers against the detectors and repeat."
+        "en": "Push the button for aprox 10 seconds until the LED blinks rapidly. If nothing happens; put two fingers against the detectors and repeat.",
+        "fr": "Appuyez env. 10 s sur le bouton jusqu'au clignotement rapide de la LED. Sinon, posez deux doigts sur les capteurs et recommencez."
       }
     }
   },

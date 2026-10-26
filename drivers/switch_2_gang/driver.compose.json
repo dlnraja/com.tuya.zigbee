@@ -77,7 +77,8 @@
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
-        "en": "Two tiles will be created, one for each channel of the device. Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
+        "en": "Two tiles will be created, one for each channel of the device. Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green).",
+        "fr": "Une vignette par canal sera créée. Appuyez 10 s sur le bouton de configuration ou allumez/éteignez 5 fois (la LED clignote en vert)."
       }
     },
     "manufacturerName": [

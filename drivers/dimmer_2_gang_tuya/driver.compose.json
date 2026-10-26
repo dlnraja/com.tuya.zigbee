@@ -206,7 +206,8 @@
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
-        "en": "Two tiles will be created, one for each channel of the device. Press the reset switch rapidly 10 times until the unit make a continously beep sound to enter pairing mode."
+        "en": "Two tiles will be created, one for each channel of the device. Press the reset switch rapidly 10 times until the unit make a continously beep sound to enter pairing mode.",
+        "fr": "Une vignette par canal sera créée. Appuyez 10 fois rapidement sur le bouton reset jusqu'à un bip continu."
       }
     }
   },

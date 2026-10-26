@@ -144,7 +144,8 @@
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
-        "en": "One device with 4 channels (gang 1–4). Press the setup button with channel 1 for ~10 seconds until the LED blinks blue. Re-pair after app update if you previously had four separate tiles."
+        "en": "One device with 4 channels (gang 1–4). Press the setup button with channel 1 for ~10 seconds until the LED blinks blue. Re-pair after app update if you previously had four separate tiles.",
+        "fr": "Un appareil à 4 canaux (1–4). Appuyez ~10 s sur le bouton de configuration avec le canal 1 jusqu'au clignotement bleu. Réappairez après mise à jour si vous aviez quatre vignettes."
       }
     },
     "manufacturerName": [

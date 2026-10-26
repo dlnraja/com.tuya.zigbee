@@ -328,7 +328,8 @@
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
-        "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
+        "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green).",
+        "fr": "Appuyez 10 s sur le bouton de configuration ou allumez/éteignez 5 fois (la LED clignote en vert)."
       }
     }
   },

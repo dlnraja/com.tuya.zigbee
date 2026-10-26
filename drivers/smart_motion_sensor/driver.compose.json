@@ -53,7 +53,8 @@
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
-        "en": "Insert a pin into the single hole on the side of the device and press it gently for aprox 5 seconds until the LED blinks rapidly. If the pairing does not start, press the setup button again for 10-15 seconds until the led stops blinking and then try again."
+        "en": "Insert a pin into the single hole on the side of the device and press it gently for aprox 5 seconds until the LED blinks rapidly. If the pairing does not start, press the setup button again for 10-15 seconds until the led stops blinking and then try again.",
+        "fr": "Insérez une épingle dans le trou latéral et appuyez doucement env. 5 s jusqu'au clignotement rapide de la LED. Sinon, appuyez 10-15 s jusqu'à l'arrêt du clignotement puis recommencez."
       }
     }
   },

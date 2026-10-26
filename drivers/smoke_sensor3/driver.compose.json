@@ -91,7 +91,8 @@
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
-        "en": "Press the RESET pinhole on the side of the unit for 5 seconds until LED blinks."
+        "en": "Press the RESET pinhole on the side of the unit for 5 seconds until LED blinks.",
+        "fr": "Appuyez 5 s dans le trou RESET latéral jusqu'au clignotement de la LED."
       }
     }
   },
