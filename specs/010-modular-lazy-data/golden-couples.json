@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-26T13:51:01.277Z",
+ "generated": "2026-10-26T14:20:05.014Z",
  "drivers": 414,
  "snapshot": {
   "air_purifier": {
@@ -285,9 +285,9 @@
    "pidSha": "3427697d0c296c9d"
   },
   "climate_sensor": {
-   "mfr": 508,
+   "mfr": 505,
    "pid": 32,
-   "mfrSha": "747f07da789cfea4",
+   "mfrSha": "ed0671eaecbcc435",
    "pidSha": "4809a771f46a5606"
   },
   "climate_sensor_device": {
@@ -591,9 +591,9 @@
    "pidSha": "455c46e8c8549693"
   },
   "device_radiator_valve": {
-   "mfr": 107,
+   "mfr": 110,
    "pid": 2,
-   "mfrSha": "b42a6fc001623203",
+   "mfrSha": "28b9dda9d5966586",
    "pidSha": "eb014cbe97d74de9"
   },
   "device_radiator_valve_smart": {

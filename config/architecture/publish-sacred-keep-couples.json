@@ -1915,6 +1915,30 @@
       "pid": "TS0601",
       "driverId": "smoke_sensor",
       "note": "P3067 family 4: Moes ZSS-HM-SSD01 smoke detector (Z2M moes.ts, ZHA tuya_smoke.py, blakadder) moved from co_sensor/climate_sensor"
+    },
+    {
+      "mfr": "_TZE200_cxakecfo",
+      "pid": "TS0601",
+      "driverId": "device_radiator_valve",
+      "note": "P3067 family 5: AVATTO/Girier ME168 TRV (Z2M avatto.ts ME168_AVATTO, Domoticz z4d TS0601-ME168), ME167-core DP profile"
+    },
+    {
+      "mfr": "_TZE200_ybsqljjg",
+      "pid": "TS0601",
+      "driverId": "device_radiator_valve",
+      "note": "P3067 family 5: AVATTO/Girier ME168 TRV (Z2M avatto.ts ME168_AVATTO, Domoticz z4d TS0601-ME168), ME167-core DP profile"
+    },
+    {
+      "mfr": "_TZE200_4aijvczq",
+      "pid": "TS0601",
+      "driverId": "device_radiator_valve",
+      "note": "P3067 family 5: AVATTO/Girier ME168 TRV (Z2M avatto.ts ME168_AVATTO, Domoticz z4d TS0601-ME168), ME167-core DP profile"
+    },
+    {
+      "mfr": "_TZE200_r5ksy7qo",
+      "pid": "TS0601",
+      "driverId": "device_radiator_valve",
+      "note": "P3067 family 5: AVATTO/Girier ME168 TRV (Z2M avatto.ts ME168_AVATTO, Domoticz z4d TS0601-ME168), ME167-core DP profile"
     }
   ]
 }
