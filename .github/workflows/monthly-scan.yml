@@ -1,3 +1,11 @@
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: Monthly scan of Zigbee2MQTT for Tuya devices we do not cover yet.
+# Ideas from (thank you): Koen Kanters and the zigbee-herdsman-converters / Zigbee2MQTT contributors; the
+#   zigpy / ZHA device handler authors; Blakadder's Zigbee device database; JohanBendz's original Tuya Zigbee
+#   app (read-only reference).
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
+#   posting stays off or ledger-gated.
+# <<< about
 # Universal Tuya Zigbee - Monthly Device Scan
 # v9.0.34 - Updated 2026-06-15
 # Scans Z2M for new Tuya devices and creates issues for missing fingerprints

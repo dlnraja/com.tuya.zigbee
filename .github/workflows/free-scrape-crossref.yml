@@ -1,3 +1,12 @@
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: Nightly cross-reference through free, keyless readers (Jina, Microlink, Wayback). Never posts.
+# Ideas from (thank you): Koen Kanters and the zigbee-herdsman-converters / Zigbee2MQTT contributors; the
+#   zigpy / ZHA device handler authors; Blakadder's Zigbee device database; JohanBendz's original Tuya Zigbee
+#   app (read-only reference); Jina Reader, Microlink, AllOrigins and the Internet Archive for free read
+#   access.
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
+#   posting stays off or ledger-gated.
+# <<< about
 # Free Scrape Cross-Ref — keyless-first intelligence harvest
 # Uses Jina/Microlink/AllOrigins/Wayback (+ optional Crawl4AI/Firecrawl budget).
 # Silent enrichment only — NEVER posts to Homey Community.

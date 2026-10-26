@@ -1,3 +1,10 @@
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: Weekly self-review of scripts and data; no external calls.
+# Ideas from (thank you): Renovate and Dependabot for the merge-when-green pattern; the actions/stale and
+#   actions/labeler maintainers.
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
+#   posting stays off or ledger-gated.
+# <<< about
 # 🔄 Self-Improve Orchestrator (v9.0.389)
 # Triggers: cron: 53 2 * * 2 (Tuesday 02:53 UTC) + workflow_dispatch
 # Secrets: GITHUB_TOKEN only — ZERO external API calls, ZERO cost.

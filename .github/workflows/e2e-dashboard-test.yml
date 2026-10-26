@@ -1,3 +1,10 @@
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: End-to-end check of the diagnostics dashboard, triggered after the daily flow.
+# Ideas from (thank you): GitHub Actions docs; rhysd (actionlint); the Athom homey CLI docs for the validate
+#   levels.
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
+#   posting stays off or ledger-gated.
+# <<< about
 # e2e-dashboard-test
 # Triggers: cron: 0 7 * * * + workflow_dispatch,workflow_run | Secrets: GITHUB_TOKEN only
 # Doc header added 2026-07-29 (workflows genealogy enrichment).

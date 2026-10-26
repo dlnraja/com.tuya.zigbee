@@ -83,7 +83,7 @@ for(const it of issues){
     iTriaged++;
     continue;
   }
-  const itTxt=`${it.title||''} ${it.body||''}`;
+  const itTxt=`${it.title||''} ${it.body||''}`; // ok-extract-only (P3069: only used to pick ids, never written out)
   const {allMfrs:iM,allPids:iP}=buildFullIndex();
   const {mfr:eM,pid:eP}=extractAllFP(itTxt,iM,iP);
   if(!eM.length)continue;
@@ -112,7 +112,7 @@ for(const pr of prs){
     pTriaged++;
     continue;
   }
-  const prTxt=`${pr.title||''} ${pr.body||''}`;
+  const prTxt=`${pr.title||''} ${pr.body||''}`; // ok-extract-only (P3069: only used to pick ids, never written out)
   const {allMfrs:pM,allPids:pP}=buildFullIndex();
   const {mfr:peM,pid:peP}=extractAllFP(prTxt,pM,pP);
   if(!peM.length)continue;
