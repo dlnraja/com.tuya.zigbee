@@ -88,7 +88,10 @@
     {
       "type": "group",
       "label": {
-        "en": "Universal Remote Config"
+        "en": "Universal Remote Config",
+        "nl": "Universele afstandsbediening instellen",
+        "de": "Universalfernbedienung einrichten",
+        "fr": "Configuration télécommande universelle"
       },
       "children": [
         {
@@ -96,7 +99,10 @@
           "type": "text",
           "value": "Samsung",
           "label": {
-            "en": "Remote Brand (e.g. Samsung, LG, Sony)"
+            "en": "Remote Brand (e.g. Samsung, LG, Sony)",
+            "nl": "Merk van de afstandsbediening (bv. Samsung, LG, Sony)",
+            "de": "Marke der Fernbedienung (z. B. Samsung, LG, Sony)",
+            "fr": "Marque de la télécommande (ex. Samsung, LG, Sony)"
           },
           "hint": {
             "en": "Type the brand of your TV or AC (must match IR database)."
@@ -107,7 +113,10 @@
           "type": "dropdown",
           "value": "TV",
           "label": {
-            "en": "Device Category"
+            "en": "Device Category",
+            "nl": "Apparaatcategorie",
+            "de": "Gerätekategorie",
+            "fr": "Catégorie d'appareil"
           },
           "values": [
             {

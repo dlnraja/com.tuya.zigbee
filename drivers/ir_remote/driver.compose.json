@@ -108,6 +108,8 @@
       "type": "dropdown",
       "label": {
         "en": "Device Category",
+        "nl": "Apparaatcategorie",
+        "de": "Gerätekategorie",
         "fr": "Catégorie d'appareil"
       },
       "values": [
@@ -153,7 +155,10 @@
       "id": "ir_power_on_name",
       "type": "text",
       "label": {
-        "en": "Power ON learned name"
+        "en": "Power ON learned name",
+        "nl": "Geleerde naam voor Aan",
+        "de": "Gelernter Name für Ein",
+        "fr": "Nom appris pour Marche"
       },
       "value": "Power On"
     },
@@ -161,7 +166,10 @@
       "id": "ir_power_off_name",
       "type": "text",
       "label": {
-        "en": "Power OFF learned name"
+        "en": "Power OFF learned name",
+        "nl": "Geleerde naam voor Uit",
+        "de": "Gelernter Name für Aus",
+        "fr": "Nom appris pour Arrêt"
       },
       "value": "Power Off"
     },
@@ -169,7 +177,10 @@
       "id": "ir_power_toggle_name",
       "type": "text",
       "label": {
-        "en": "Power toggle learned name"
+        "en": "Power toggle learned name",
+        "nl": "Geleerde naam voor Aan/Uit",
+        "de": "Gelernter Name für Ein/Aus",
+        "fr": "Nom appris pour Marche/Arrêt"
       },
       "value": "Power"
     }

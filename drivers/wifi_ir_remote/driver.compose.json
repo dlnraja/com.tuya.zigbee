@@ -42,14 +42,20 @@
     {
       "type": "group",
       "label": {
-        "en": "Tuya Local"
+        "en": "Tuya Local",
+        "nl": "Tuya lokaal",
+        "de": "Tuya lokal",
+        "fr": "Tuya local"
       },
       "children": [
         {
           "id": "device_id",
           "type": "text",
           "label": {
-            "en": "Device ID"
+            "en": "Device ID",
+            "nl": "Apparaat-ID",
+            "de": "Geräte-ID",
+            "fr": "ID de l'appareil"
           },
           "value": ""
         },
@@ -57,7 +63,10 @@
           "id": "local_key",
           "type": "text",
           "label": {
-            "en": "Local Key"
+            "en": "Local Key",
+            "nl": "Lokale sleutel",
+            "de": "Lokaler Schlüssel",
+            "fr": "Clé locale"
           },
           "value": ""
         },
@@ -65,7 +74,10 @@
           "id": "ip",
           "type": "text",
           "label": {
-            "en": "IP"
+            "en": "IP",
+            "nl": "IP",
+            "de": "IP",
+            "fr": "IP"
           },
           "value": ""
         },
@@ -73,7 +85,10 @@
           "id": "protocol_version",
           "type": "dropdown",
           "label": {
-            "en": "Protocol"
+            "en": "Protocol",
+            "nl": "Protocol",
+            "de": "Protokoll",
+            "fr": "Protocole"
           },
           "value": "auto",
           "values": [
