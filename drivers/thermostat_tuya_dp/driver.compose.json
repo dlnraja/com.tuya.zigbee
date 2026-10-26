@@ -318,6 +318,8 @@
           "type": "number",
           "label": {
             "en": "Temperature Offset (°C)",
+            "nl": "Temperatuurcorrectie (°C)",
+            "de": "Temperaturversatz (°C)",
             "fr": "Décalage Température (°C)"
           },
           "value": 0,
@@ -334,6 +336,8 @@
           "type": "number",
           "label": {
             "en": "Humidity Offset (%)",
+            "nl": "Vochtigheidscorrectie (%)",
+            "de": "Feuchtigkeitsversatz (%)",
             "fr": "Décalage Humidité (%)"
           },
           "value": 0,
@@ -398,6 +402,8 @@
       "value": true,
       "label": {
         "en": "Send time to the device",
+        "nl": "Tijd naar het apparaat sturen",
+        "de": "Uhrzeit an das Gerät senden",
         "fr": "Envoyer l'heure à l'appareil"
       },
       "hint": {
