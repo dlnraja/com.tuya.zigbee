@@ -461,12 +461,6 @@
                 "fr": "Éteint",
                 "nl": "Uit",
                 "de": "Aus"
-              },
-              "label": {
-                "en": "Off",
-                "fr": "Éteint",
-                "nl": "Uit",
-                "de": "Aus"
               }
             },
             {
@@ -476,23 +470,11 @@
                 "fr": "Normal (LED quand allumé)",
                 "nl": "Normaal (LED bij AAN)",
                 "de": "Normal (LED bei EIN)"
-              },
-              "label": {
-                "en": "Normal (LED when ON)",
-                "fr": "Normal (LED quand allumé)",
-                "nl": "Normaal (LED bij AAN)",
-                "de": "Normal (LED bei EIN)"
               }
             },
             {
               "id": "inverted",
               "title": {
-                "en": "Inverted (LED when OFF)",
-                "fr": "Inversé (LED quand éteint)",
-                "nl": "Omgekeerd (LED bij UIT)",
-                "de": "Invertiert (LED bei AUS)"
-              },
-              "label": {
                 "en": "Inverted (LED when OFF)",
                 "fr": "Inversé (LED quand éteint)",
                 "nl": "Omgekeerd (LED bij UIT)",
@@ -539,23 +521,11 @@
                 "fr": "État ON",
                 "nl": "AAN staat",
                 "de": "EIN-Zustand"
-              },
-              "label": {
-                "en": "ON state",
-                "fr": "État ON",
-                "nl": "AAN staat",
-                "de": "EIN-Zustand"
               }
             },
             {
               "id": "off",
               "title": {
-                "en": "OFF state",
-                "fr": "État OFF",
-                "nl": "UIT staat",
-                "de": "AUS-Zustand"
-              },
-              "label": {
                 "en": "OFF state",
                 "fr": "État OFF",
                 "nl": "UIT staat",
@@ -579,23 +549,11 @@
                 "fr": "Rouge",
                 "nl": "Rood",
                 "de": "Rot"
-              },
-              "label": {
-                "en": "Red",
-                "fr": "Rouge",
-                "nl": "Rood",
-                "de": "Rot"
               }
             },
             {
               "id": "blue",
               "title": {
-                "en": "Blue",
-                "fr": "Bleu",
-                "nl": "Blauw",
-                "de": "Blau"
-              },
-              "label": {
                 "en": "Blue",
                 "fr": "Bleu",
                 "nl": "Blauw",
@@ -609,23 +567,11 @@
                 "fr": "Vert",
                 "nl": "Groen",
                 "de": "Grün"
-              },
-              "label": {
-                "en": "Green",
-                "fr": "Vert",
-                "nl": "Groen",
-                "de": "Grün"
               }
             },
             {
               "id": "white",
               "title": {
-                "en": "White",
-                "fr": "Blanc",
-                "nl": "Wit",
-                "de": "Weiß"
-              },
-              "label": {
                 "en": "White",
                 "fr": "Blanc",
                 "nl": "Wit",
@@ -639,23 +585,11 @@
                 "fr": "Jaune",
                 "nl": "Geel",
                 "de": "Gelb"
-              },
-              "label": {
-                "en": "Yellow",
-                "fr": "Jaune",
-                "nl": "Geel",
-                "de": "Gelb"
               }
             },
             {
               "id": "magenta",
               "title": {
-                "en": "Magenta",
-                "fr": "Magenta",
-                "nl": "Magenta",
-                "de": "Magenta"
-              },
-              "label": {
                 "en": "Magenta",
                 "fr": "Magenta",
                 "nl": "Magenta",
@@ -669,12 +603,6 @@
                 "fr": "Cyan",
                 "nl": "Cyaan",
                 "de": "Cyan"
-              },
-              "label": {
-                "en": "Cyan",
-                "fr": "Cyan",
-                "nl": "Cyaan",
-                "de": "Cyan"
               }
             },
             {
@@ -684,23 +612,11 @@
                 "fr": "Blanc Chaud",
                 "nl": "Warm Wit",
                 "de": "Warmweiß"
-              },
-              "label": {
-                "en": "Warm White",
-                "fr": "Blanc Chaud",
-                "nl": "Warm Wit",
-                "de": "Warmweiß"
               }
             },
             {
               "id": "warm_yellow",
               "title": {
-                "en": "Warm Yellow",
-                "fr": "Jaune Chaud",
-                "nl": "Warm Geel",
-                "de": "Warmgelb"
-              },
-              "label": {
                 "en": "Warm Yellow",
                 "fr": "Jaune Chaud",
                 "nl": "Warm Geel",
@@ -816,23 +732,11 @@
                 "fr": "Verrouillé",
                 "nl": "Vergrendeld",
                 "de": "Gesperrt"
-              },
-              "label": {
-                "en": "Locked",
-                "fr": "Verrouillé",
-                "nl": "Vergrendeld",
-                "de": "Gesperrt"
               }
             },
             {
               "id": "false",
               "title": {
-                "en": "Unlocked",
-                "fr": "Déverrouillé",
-                "nl": "Ontgrendeld",
-                "de": "Entsperrt"
-              },
-              "label": {
                 "en": "Unlocked",
                 "fr": "Déverrouillé",
                 "nl": "Ontgrendeld",
@@ -865,9 +769,6 @@
             {
               "id": "auto",
               "title": {
-                "en": "Auto (Normal + flows)"
-              },
-              "label": {
                 "en": "Auto (Normal + flows)",
                 "fr": "Auto (normal + flows)"
               }
@@ -875,9 +776,6 @@
             {
               "id": "magic",
               "title": {
-                "en": "Magic (Scene only)"
-              },
-              "label": {
                 "en": "Magic (Scene only)",
                 "fr": "Magique (scène uniquement)"
               }
@@ -885,9 +783,6 @@
             {
               "id": "both",
               "title": {
-                "en": "Both (Load + scene)"
-              },
-              "label": {
                 "en": "Both (Load + scene)",
                 "fr": "Les deux (charge + scène)"
               }

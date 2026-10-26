@@ -180,10 +180,6 @@
               "id": "0",
               "title": {
                 "en": "Always Off",
-                "nl": "Altijd Uit"
-              },
-              "label": {
-                "en": "Always Off",
                 "nl": "Altijd Uit",
                 "fr": "Toujours éteint"
               }
@@ -192,10 +188,6 @@
               "id": "1",
               "title": {
                 "en": "On when Light ON (Normal)",
-                "nl": "Aan wanneer Licht AAN (Normaal)"
-              },
-              "label": {
-                "en": "On when Light ON (Normal)",
                 "nl": "Aan wanneer Licht AAN (Normaal)",
                 "fr": "Allumé quand la lumière est allumée (normal)"
               }
@@ -203,10 +195,6 @@
             {
               "id": "2",
               "title": {
-                "en": "On when Light OFF (Inverted)",
-                "nl": "Aan wanneer Licht UIT (Omgekeerd)"
-              },
-              "label": {
                 "en": "On when Light OFF (Inverted)",
                 "nl": "Aan wanneer Licht UIT (Omgekeerd)",
                 "fr": "Allumé quand la lumière est éteinte (inversé)"

@@ -1851,12 +1851,6 @@
                 "fr": "Éteint",
                 "nl": "Uit",
                 "de": "Aus"
-              },
-              "label": {
-                "en": "Off",
-                "fr": "Éteint",
-                "nl": "Uit",
-                "de": "Aus"
               }
             },
             {
@@ -1866,23 +1860,11 @@
                 "fr": "Normal",
                 "nl": "Normaal",
                 "de": "Normal"
-              },
-              "label": {
-                "en": "Normal (LED when ON)",
-                "fr": "Normal",
-                "nl": "Normaal",
-                "de": "Normal"
               }
             },
             {
               "id": "inverted",
               "title": {
-                "en": "Inverted (LED when OFF)",
-                "fr": "Inversé",
-                "nl": "Omgekeerd",
-                "de": "Invertiert"
-              },
-              "label": {
                 "en": "Inverted (LED when OFF)",
                 "fr": "Inversé",
                 "nl": "Omgekeerd",
@@ -1923,23 +1905,11 @@
                 "fr": "État ON",
                 "nl": "AAN",
                 "de": "EIN"
-              },
-              "label": {
-                "en": "ON state",
-                "fr": "État ON",
-                "nl": "AAN",
-                "de": "EIN"
               }
             },
             {
               "id": "off",
               "title": {
-                "en": "OFF state",
-                "fr": "État OFF",
-                "nl": "UIT",
-                "de": "AUS"
-              },
-              "label": {
                 "en": "OFF state",
                 "fr": "État OFF",
                 "nl": "UIT",
@@ -1959,9 +1929,6 @@
             {
               "id": "red",
               "title": {
-                "en": "Red"
-              },
-              "label": {
                 "en": "Red",
                 "fr": "Rouge"
               }
@@ -1969,9 +1936,6 @@
             {
               "id": "blue",
               "title": {
-                "en": "Blue"
-              },
-              "label": {
                 "en": "Blue",
                 "fr": "Bleu"
               }
@@ -1979,9 +1943,6 @@
             {
               "id": "green",
               "title": {
-                "en": "Green"
-              },
-              "label": {
                 "en": "Green",
                 "fr": "Vert"
               }
@@ -1989,9 +1950,6 @@
             {
               "id": "white",
               "title": {
-                "en": "White"
-              },
-              "label": {
                 "en": "White",
                 "fr": "Blanc"
               }
@@ -1999,9 +1957,6 @@
             {
               "id": "yellow",
               "title": {
-                "en": "Yellow"
-              },
-              "label": {
                 "en": "Yellow",
                 "fr": "Jaune"
               }
@@ -2009,9 +1964,6 @@
             {
               "id": "cyan",
               "title": {
-                "en": "Cyan"
-              },
-              "label": {
                 "en": "Cyan"
               }
             }
@@ -2119,9 +2071,6 @@
             {
               "id": "auto",
               "title": {
-                "en": "Auto (Normal + flows)"
-              },
-              "label": {
                 "en": "Auto (Normal + flows)",
                 "fr": "Auto (normal + flows)"
               }
@@ -2129,9 +2078,6 @@
             {
               "id": "magic",
               "title": {
-                "en": "Magic (Scene only)"
-              },
-              "label": {
                 "en": "Magic (Scene only)",
                 "fr": "Magique (scène uniquement)"
               }
@@ -2139,9 +2085,6 @@
             {
               "id": "both",
               "title": {
-                "en": "Both (Load + scene)"
-              },
-              "label": {
                 "en": "Both (Load + scene)",
                 "fr": "Les deux (charge + scène)"
               }

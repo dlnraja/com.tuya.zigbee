@@ -311,9 +311,6 @@
             {
               "id": "1",
               "title": {
-                "en": "Zone 1 (Near)"
-              },
-              "label": {
                 "en": "Zone 1 (Near)",
                 "fr": "Zone 1 (proche)"
               }
@@ -321,9 +318,6 @@
             {
               "id": "2",
               "title": {
-                "en": "Zone 2 (Mid)"
-              },
-              "label": {
                 "en": "Zone 2 (Mid)",
                 "fr": "Zone 2 (milieu)"
               }
@@ -331,9 +325,6 @@
             {
               "id": "3",
               "title": {
-                "en": "Zone 3 (Far)"
-              },
-              "label": {
                 "en": "Zone 3 (Far)",
                 "fr": "Zone 3 (loin)"
               }
@@ -368,9 +359,6 @@
             {
               "id": "none",
               "title": {
-                "en": "None"
-              },
-              "label": {
                 "en": "None",
                 "fr": "Aucun"
               }
@@ -378,9 +366,6 @@
             {
               "id": "stationary",
               "title": {
-                "en": "Stationary"
-              },
-              "label": {
                 "en": "Stationary",
                 "fr": "Immobile"
               }
@@ -388,9 +373,6 @@
             {
               "id": "micro_motion",
               "title": {
-                "en": "Micro Motion (breathing)"
-              },
-              "label": {
                 "en": "Micro Motion (breathing)",
                 "fr": "Micro-mouvement (respiration)"
               }
@@ -398,9 +380,6 @@
             {
               "id": "small_motion",
               "title": {
-                "en": "Small Motion (limb)"
-              },
-              "label": {
                 "en": "Small Motion (limb)",
                 "fr": "Petit mouvement (membre)"
               }
@@ -408,9 +387,6 @@
             {
               "id": "large_motion",
               "title": {
-                "en": "Large Motion (walking)"
-              },
-              "label": {
                 "en": "Large Motion (walking)",
                 "fr": "Grand mouvement (marche)"
               }

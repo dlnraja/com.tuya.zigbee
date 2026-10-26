@@ -48,11 +48,6 @@
               "title": {
                 "en": "Silence alarm",
                 "nl": "Alarm stil",
-                "de": "Stiller Alarm"
-              },
-              "label": {
-                "en": "Silence alarm",
-                "nl": "Alarm stil",
                 "de": "Stiller Alarm",
                 "fr": "Faire taire l'alarme"
               }
@@ -60,11 +55,6 @@
             {
               "id": "on/enable",
               "title": {
-                "en": "Sound alarm",
-                "nl": "Alarm luiden",
-                "de": "Akustischer Alarm"
-              },
-              "label": {
                 "en": "Sound alarm",
                 "nl": "Alarm luiden",
                 "de": "Akustischer Alarm",
@@ -147,11 +137,6 @@
               "title": {
                 "en": "Low",
                 "nl": "Laag",
-                "de": "Niedrig"
-              },
-              "label": {
-                "en": "Low",
-                "nl": "Laag",
                 "de": "Niedrig",
                 "fr": "Bas"
               }
@@ -161,11 +146,6 @@
               "title": {
                 "en": "Midle",
                 "nl": "Middelmatig",
-                "de": "Mittel"
-              },
-              "label": {
-                "en": "Midle",
-                "nl": "Middelmatig",
                 "de": "Mittel",
                 "fr": "Moyen"
               }
@@ -173,11 +153,6 @@
             {
               "id": "0",
               "title": {
-                "en": "High (default)",
-                "nl": "Hoog (standaard)",
-                "de": "Hoch (Standard)"
-              },
-              "label": {
                 "en": "High (default)",
                 "nl": "Hoog (standaard)",
                 "de": "Hoch (Standard)",
@@ -222,11 +197,6 @@
               "title": {
                 "en": "Doorbell 1",
                 "nl": "Doorbell 1",
-                "de": "Doorbell 1"
-              },
-              "label": {
-                "en": "Doorbell 1",
-                "nl": "Doorbell 1",
                 "de": "Doorbell 1",
                 "fr": "Sonnette 1"
               }
@@ -234,11 +204,6 @@
             {
               "id": "1",
               "title": {
-                "en": "For Elise (default)",
-                "nl": "Fur Elise (standaard)",
-                "de": "Fur Elise (Standard)"
-              },
-              "label": {
                 "en": "For Elise (default)",
                 "nl": "Fur Elise (standaard)",
                 "de": "Fur Elise (Standard)",
@@ -251,21 +216,11 @@
                 "en": "Westminster",
                 "nl": "Westminster",
                 "de": "Westminster"
-              },
-              "label": {
-                "en": "Westminster",
-                "nl": "Westminster",
-                "de": "Westminster"
               }
             },
             {
               "id": "3",
               "title": {
-                "en": "4 Key Chime",
-                "nl": "4 Key Chime",
-                "de": "4 Key Chime"
-              },
-              "label": {
                 "en": "4 Key Chime",
                 "nl": "4 Key Chime",
                 "de": "4 Key Chime",
@@ -277,11 +232,6 @@
               "title": {
                 "en": "William Tell",
                 "nl": "William Tell",
-                "de": "William Tell"
-              },
-              "label": {
-                "en": "William Tell",
-                "nl": "William Tell",
                 "de": "William Tell",
                 "fr": "Guillaume Tell"
               }
@@ -291,11 +241,6 @@
               "title": {
                 "en": "Mozart Piano",
                 "nl": "Mozart Piano",
-                "de": "Mozart Piano"
-              },
-              "label": {
-                "en": "Mozart Piano",
-                "nl": "Mozart Piano",
                 "de": "Mozart Piano",
                 "fr": "Piano Mozart"
               }
@@ -303,11 +248,6 @@
             {
               "id": "6",
               "title": {
-                "en": "Space Alarm",
-                "nl": "Space Alarm",
-                "de": "Space Alarm"
-              },
-              "label": {
                 "en": "Space Alarm",
                 "nl": "Space Alarm",
                 "de": "Space Alarm",
@@ -320,21 +260,11 @@
                 "en": "Klaxon",
                 "nl": "Klaxon",
                 "de": "Klaxon"
-              },
-              "label": {
-                "en": "Klaxon",
-                "nl": "Klaxon",
-                "de": "Klaxon"
               }
             },
             {
               "id": "8",
               "title": {
-                "en": "Meep meep",
-                "nl": "Meep meep",
-                "de": "Meep meep"
-              },
-              "label": {
                 "en": "Meep meep",
                 "nl": "Meep meep",
                 "de": "Meep meep",
@@ -346,11 +276,6 @@
               "title": {
                 "en": "Wheep",
                 "nl": "Wheep",
-                "de": "Wheep"
-              },
-              "label": {
-                "en": "Wheep",
-                "nl": "Wheep",
                 "de": "Wheep",
                 "fr": "Sifflement"
               }
@@ -358,11 +283,6 @@
             {
               "id": "10",
               "title": {
-                "en": "Barking dog",
-                "nl": "Barking dog",
-                "de": "Barking dog"
-              },
-              "label": {
                 "en": "Barking dog",
                 "nl": "Barking dog",
                 "de": "Barking dog",
@@ -374,11 +294,6 @@
               "title": {
                 "en": "Alarm Siren",
                 "nl": "Alarm Siren",
-                "de": "Alarm Siren"
-              },
-              "label": {
-                "en": "Alarm Siren",
-                "nl": "Alarm Siren",
                 "de": "Alarm Siren",
                 "fr": "Sirène d'alarme"
               }
@@ -386,11 +301,6 @@
             {
               "id": "12",
               "title": {
-                "en": "Doorbell 2",
-                "nl": "Doorbell 2",
-                "de": "Doorbell 2"
-              },
-              "label": {
                 "en": "Doorbell 2",
                 "nl": "Doorbell 2",
                 "de": "Doorbell 2",
@@ -402,11 +312,6 @@
               "title": {
                 "en": "Old Phone",
                 "nl": "Old Phone",
-                "de": "Old Phone"
-              },
-              "label": {
-                "en": "Old Phone",
-                "nl": "Old Phone",
                 "de": "Old Phone",
                 "fr": "Vieux téléphone"
               }
@@ -414,11 +319,6 @@
             {
               "id": "14",
               "title": {
-                "en": "Police Siren",
-                "nl": "Police Siren",
-                "de": "Police Siren"
-              },
-              "label": {
                 "en": "Police Siren",
                 "nl": "Police Siren",
                 "de": "Police Siren",
@@ -430,11 +330,6 @@
               "title": {
                 "en": "Evacuation bell",
                 "nl": "Evacuation bell",
-                "de": "Evacuation bell"
-              },
-              "label": {
-                "en": "Evacuation bell",
-                "nl": "Evacuation bell",
                 "de": "Evacuation bell",
                 "fr": "Cloche d'évacuation"
               }
@@ -444,11 +339,6 @@
               "title": {
                 "en": "Clock alarm",
                 "nl": "Clock alarm",
-                "de": "Clock alarm"
-              },
-              "label": {
-                "en": "Clock alarm",
-                "nl": "Clock alarm",
                 "de": "Clock alarm",
                 "fr": "Réveil"
               }
@@ -456,11 +346,6 @@
             {
               "id": "17",
               "title": {
-                "en": "Fire alarm",
-                "nl": "Fire alarm",
-                "de": "Fire alarm"
-              },
-              "label": {
                 "en": "Fire alarm",
                 "nl": "Fire alarm",
                 "de": "Fire alarm",

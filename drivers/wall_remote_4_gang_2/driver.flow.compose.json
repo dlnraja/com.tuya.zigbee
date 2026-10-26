@@ -18,9 +18,6 @@
             {
               "id": "leftUp",
               "title": {
-                "en": "Upper Left Button Pressed"
-              },
-              "label": {
                 "en": "Upper Left Button Pressed",
                 "fr": "Bouton haut gauche appuyé"
               }
@@ -28,9 +25,6 @@
             {
               "id": "rightUp",
               "title": {
-                "en": "Upper Right Button Pressed"
-              },
-              "label": {
                 "en": "Upper Right Button Pressed",
                 "fr": "Bouton haut droit appuyé"
               }
@@ -38,9 +32,6 @@
             {
               "id": "leftDown",
               "title": {
-                "en": "Lower Left Button Pressed"
-              },
-              "label": {
                 "en": "Lower Left Button Pressed",
                 "fr": "Bouton bas gauche appuyé"
               }
@@ -48,9 +39,6 @@
             {
               "id": "rightDown",
               "title": {
-                "en": "Lower Right Button Pressed"
-              },
-              "label": {
                 "en": "Lower Right Button Pressed",
                 "fr": "Bouton bas droit appuyé"
               }

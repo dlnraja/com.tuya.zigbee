@@ -537,10 +537,6 @@
               "title": {
                 "en": "Off",
                 "fr": "Éteint"
-              },
-              "label": {
-                "en": "Off",
-                "fr": "Éteint"
               }
             },
             {
@@ -548,19 +544,11 @@
               "title": {
                 "en": "Normal",
                 "fr": "Normal"
-              },
-              "label": {
-                "en": "Normal",
-                "fr": "Normal"
               }
             },
             {
               "id": "inverted",
               "title": {
-                "en": "Inverted",
-                "fr": "Inversé"
-              },
-              "label": {
                 "en": "Inverted",
                 "fr": "Inversé"
               }
@@ -595,9 +583,6 @@
             {
               "id": "auto",
               "title": {
-                "en": "Auto (Normal + flows)"
-              },
-              "label": {
                 "en": "Auto (Normal + flows)",
                 "fr": "Auto (normal + flows)"
               }
@@ -605,9 +590,6 @@
             {
               "id": "magic",
               "title": {
-                "en": "Magic (Scene only)"
-              },
-              "label": {
                 "en": "Magic (Scene only)",
                 "fr": "Magique (scène uniquement)"
               }
@@ -615,9 +597,6 @@
             {
               "id": "both",
               "title": {
-                "en": "Both (Load + scene)"
-              },
-              "label": {
                 "en": "Both (Load + scene)",
                 "fr": "Les deux (charge + scène)"
               }
@@ -653,10 +632,6 @@
               "id": "off",
               "title": {
                 "en": "Always Off",
-                "nl": "Altijd Uit"
-              },
-              "label": {
-                "en": "Always Off",
                 "nl": "Altijd Uit",
                 "fr": "Toujours éteint"
               }
@@ -665,10 +640,6 @@
               "id": "on",
               "title": {
                 "en": "Always On",
-                "nl": "Altijd Aan"
-              },
-              "label": {
-                "en": "Always On",
                 "nl": "Altijd Aan",
                 "fr": "Toujours allumé"
               }
@@ -676,10 +647,6 @@
             {
               "id": "memory",
               "title": {
-                "en": "Last State",
-                "nl": "Laatste status"
-              },
-              "label": {
                 "en": "Last State",
                 "nl": "Laatste status",
                 "fr": "Dernier état"

@@ -139,17 +139,11 @@
               "id": "auto",
               "title": {
                 "en": "Auto"
-              },
-              "label": {
-                "en": "Auto"
               }
             },
             {
               "id": "tuya_opaque",
               "title": {
-                "en": "Tuya opaque"
-              },
-              "label": {
                 "en": "Tuya opaque"
               }
             },
@@ -157,26 +151,17 @@
               "id": "pronto",
               "title": {
                 "en": "Pronto Hex"
-              },
-              "label": {
-                "en": "Pronto Hex"
               }
             },
             {
               "id": "broadlink",
               "title": {
                 "en": "Broadlink"
-              },
-              "label": {
-                "en": "Broadlink"
               }
             },
             {
               "id": "hex",
               "title": {
-                "en": "HEX timings"
-              },
-              "label": {
                 "en": "HEX timings",
                 "fr": "Timings HEX"
               }
@@ -184,9 +169,6 @@
             {
               "id": "globalcache",
               "title": {
-                "en": "Global Caché"
-              },
-              "label": {
                 "en": "Global Caché"
               }
             }

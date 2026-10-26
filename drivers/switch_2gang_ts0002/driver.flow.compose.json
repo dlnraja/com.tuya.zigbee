@@ -115,10 +115,6 @@
               "id": "off",
               "title": {
                 "en": "Always Off",
-                "nl": "Altijd Uit"
-              },
-              "label": {
-                "en": "Always Off",
                 "nl": "Altijd Uit",
                 "fr": "Toujours éteint"
               }
@@ -127,10 +123,6 @@
               "id": "on",
               "title": {
                 "en": "Always On",
-                "nl": "Altijd Aan"
-              },
-              "label": {
-                "en": "Always On",
                 "nl": "Altijd Aan",
                 "fr": "Toujours allumé"
               }
@@ -138,10 +130,6 @@
             {
               "id": "memory",
               "title": {
-                "en": "Last State",
-                "nl": "Laatste status"
-              },
-              "label": {
                 "en": "Last State",
                 "nl": "Laatste status",
                 "fr": "Dernier état"

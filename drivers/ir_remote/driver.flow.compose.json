@@ -33,19 +33,11 @@
               "title": {
                 "en": "Power",
                 "fr": "Alimentation"
-              },
-              "label": {
-                "en": "Power",
-                "fr": "Alimentation"
               }
             },
             {
               "id": "Mute",
               "title": {
-                "en": "Mute",
-                "fr": "Sourdine"
-              },
-              "label": {
                 "en": "Mute",
                 "fr": "Sourdine"
               }
@@ -55,19 +47,11 @@
               "title": {
                 "en": "Volume Up",
                 "fr": "Volume +"
-              },
-              "label": {
-                "en": "Volume Up",
-                "fr": "Volume +"
               }
             },
             {
               "id": "Volume Down",
               "title": {
-                "en": "Volume Down",
-                "fr": "Volume -"
-              },
-              "label": {
                 "en": "Volume Down",
                 "fr": "Volume -"
               }
@@ -77,19 +61,11 @@
               "title": {
                 "en": "Channel Up",
                 "fr": "Chaîne +"
-              },
-              "label": {
-                "en": "Channel Up",
-                "fr": "Chaîne +"
               }
             },
             {
               "id": "Channel Down",
               "title": {
-                "en": "Channel Down",
-                "fr": "Chaîne -"
-              },
-              "label": {
                 "en": "Channel Down",
                 "fr": "Chaîne -"
               }
@@ -99,10 +75,6 @@
               "title": {
                 "en": "Source",
                 "fr": "Source"
-              },
-              "label": {
-                "en": "Source",
-                "fr": "Source"
               }
             },
             {
@@ -110,19 +82,11 @@
               "title": {
                 "en": "Menu",
                 "fr": "Menu"
-              },
-              "label": {
-                "en": "Menu",
-                "fr": "Menu"
               }
             },
             {
               "id": "OK",
               "title": {
-                "en": "OK",
-                "fr": "OK"
-              },
-              "label": {
                 "en": "OK",
                 "fr": "OK"
               }
@@ -173,17 +137,11 @@
               "id": "auto",
               "title": {
                 "en": "Auto"
-              },
-              "label": {
-                "en": "Auto"
               }
             },
             {
               "id": "pronto",
               "title": {
-                "en": "Pronto Hex"
-              },
-              "label": {
                 "en": "Pronto Hex"
               }
             },
@@ -191,17 +149,11 @@
               "id": "broadlink",
               "title": {
                 "en": "Broadlink"
-              },
-              "label": {
-                "en": "Broadlink"
               }
             },
             {
               "id": "hex",
               "title": {
-                "en": "HEX timings"
-              },
-              "label": {
                 "en": "HEX timings",
                 "fr": "Timings HEX"
               }
@@ -210,26 +162,17 @@
               "id": "globalcache",
               "title": {
                 "en": "Global Caché"
-              },
-              "label": {
-                "en": "Global Caché"
               }
             },
             {
               "id": "zosung",
               "title": {
                 "en": "Zosung"
-              },
-              "label": {
-                "en": "Zosung"
               }
             },
             {
               "id": "tuya_opaque",
               "title": {
-                "en": "Tuya opaque"
-              },
-              "label": {
                 "en": "Tuya opaque"
               }
             }
