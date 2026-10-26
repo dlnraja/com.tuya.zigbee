@@ -94,6 +94,8 @@
           "type": "text",
           "label": {
             "en": "Device ID",
+            "nl": "Apparaat-ID",
+            "de": "Geräte-ID",
             "fr": "ID de l'appareil"
           },
           "value": ""
@@ -103,6 +105,8 @@
           "type": "text",
           "label": {
             "en": "Local Key",
+            "nl": "Lokale sleutel",
+            "de": "Lokaler Schlüssel",
             "fr": "Clé locale"
           },
           "value": ""
@@ -112,6 +116,8 @@
           "type": "text",
           "label": {
             "en": "IP Address",
+            "nl": "IP-adres",
+            "de": "IP-Adresse",
             "fr": "Adresse IP"
           },
           "value": ""
@@ -121,6 +127,8 @@
           "type": "dropdown",
           "label": {
             "en": "Protocol Version",
+            "nl": "Protocolversie",
+            "de": "Protokollversion",
             "fr": "Version du protocole"
           },
           "value": "auto",
