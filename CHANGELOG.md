@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+### Fixed (2026-10-26, P3071c HOCH RCBO + P3071b upload headroom — master soak)
+- HOCH / WDYK ZJSBL7-100Z RCBO (`_TZE200_hkdl5fmv`, `_TZE284_hkdl5fmv`, energy_meter_din): voltage, current, power and energy now read from its own frame (DP101/102/103/113); temperature (DP105) appears only once the breaker reports it. Before, DP101-103 were misread as plug settings.
+- Publish copy only: shorter shared dropdown labels (battery type, power source, optimisation mode) and adaptive-lighting hint; option ids and stored values unchanged. Upload headroom 290 → 311 KB.
+
 ### Fixed (2026-10-26, P3071 DIN energy meters — master soak)
 - **Tuya DIN meters TS0601_din_1** (`_TZE200_bkkmqmyo`, `_TZE204_bkkmqmyo`, `_TZE200_eaac7dkw`): datapoint 1 is the energy counter, not the relay, so the meter no longer switches the on/off tile; voltage and current are read from the packed DP6, power from DP103, frequency from DP105, and the relay is DP16 (both ways).
 - **SPM01V1-GT** (`_TZE204/_TZE284_d2zfgtij` in *DIN energy meter*): energy, voltage, current, power and frequency are now decoded; DP1 no longer toggles on/off.

@@ -45,6 +45,7 @@ function canonSettings(list, stats) {
   for (const s of Array.isArray(list) ? list : []) {
     if (!s || typeof s !== 'object') {continue;}
     if (Array.isArray(s.children)) { canonSettings(s.children, stats); continue; }
+    canonValues(s, stats);
     const c = s.id && CANON.settingHints[s.id];
     if (!c || !s.hint || s.hint.en !== c.from) {continue;}
     const before = Buffer.byteLength(JSON.stringify(s.hint));
@@ -52,6 +53,18 @@ function canonSettings(list, stats) {
     stats.hintBytes += before - Buffer.byteLength(JSON.stringify(s.hint));
     stats.hintsCanon += 1;
   }
+}
+
+// P3071b: shared dropdown labels (ids untouched, so stored values and device logic are unchanged).
+function canonValues(s, stats) {
+  const c = CANON.settingValues && CANON.settingValues[s.id];
+  if (!c || !Array.isArray(s.values) || s.values.length !== c.to.length) {return;}
+  const same = s.values.every((o, i) => o && o.id === c.to[i].id && o.label && o.label.en === c.from[i]);
+  if (!same) {return;}
+  const before = Buffer.byteLength(JSON.stringify(s.values));
+  s.values = c.to.map((o) => ({ id: o.id, label: { ...o.label } }));
+  stats.hintBytes += before - Buffer.byteLength(JSON.stringify(s.values));
+  stats.valuesCanon = (stats.valuesCanon || 0) + 1;
 }
 
 function canonMaintenance(list, stats) {
