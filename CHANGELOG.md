@@ -5,6 +5,9 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 ---
 
 ## Unreleased — docs refresh (P3032, bastien-home)
+### Fixed (2026-10-26, P3066 catalogue data)
+- `_TZ3210_09hzmirw` (EcoDim ED-10032 dimmable CCT filament bulb, TS0502B, per zigbee-herdsman-converters) can now pair on the CCT light driver, and the fingerprint database and its runtime shard point there; existing pairings are untouched.
+
 ### Fixed (2026-10-26, P3064 safety port)
 - Smoke sensor: TS0601 smoke / CO couples already listed in the driver (`_TZE284_6ycgarab`, `_TZE284_aoah6bv8`, `_TZE2841000000_6ycgarab`, `_TZE284_qvzsq3s2`, `_TZE200_qcasmfan`) now read their Tuya datapoints (smoke, CO, battery, tamper), receive-only, no write at pairing. DP layouts from zigbee-herdsman-converters (Koen Kanters and contributors).
 
