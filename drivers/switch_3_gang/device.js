@@ -31,7 +31,7 @@ class switch_3_gang extends UnifiedSwitchBase {
 
     onDeleted(){
       super.onDeleted();
-		this.log("3 Gang Switch, channel ", subDeviceId, " removed")
+		this.log("3 Gang Switch, channel ", (this.getData() || {}).subDeviceId, " removed") // P3065: was undefined -> ReferenceError in onDeleted
 	}
 
 }
