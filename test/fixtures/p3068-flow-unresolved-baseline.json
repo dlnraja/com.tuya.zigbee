@@ -1,24 +1,4 @@
 {
- "note": "P3068: literal Flow card ids used in code but not declared in the composed manifest; covered by the app.js FLOW-GUARD noop + negative cache. Only shrink this list.",
- "unresolved": [
-  "lib/battery/BatteryMonitoringMixin.js trigger battery_low",
-  "lib/battery/BatteryMonitoringSystem.js trigger low_battery_warning",
-  "lib/devices/BaseTuyaDPDevice.js trigger universal_battery_changed",
-  "lib/diagnostics/DeviceHealth.js trigger device_offline",
-  "lib/diagnostics/DeviceHealth.js trigger device_online",
-  "lib/dynamic/SmartButtonRouter.js trigger scene_button_pressed",
-  "lib/flow/FlowTriggerHelpers.js trigger alarm_triggered",
-  "lib/flow/FlowTriggerHelpers.js trigger button_released",
-  "lib/flow/FlowTriggerHelpers.js trigger contact_closed",
-  "lib/flow/FlowTriggerHelpers.js trigger contact_opened",
-  "lib/flow/FlowTriggerHelpers.js trigger device_offline",
-  "lib/flow/FlowTriggerHelpers.js trigger device_online",
-  "lib/flow/FlowTriggerHelpers.js trigger humidity_changed",
-  "lib/flow/FlowTriggerHelpers.js trigger motion_started",
-  "lib/flow/FlowTriggerHelpers.js trigger motion_stopped",
-  "lib/flow/FlowTriggerHelpers.js trigger presence_changed",
-  "lib/flow/FlowTriggerHelpers.js trigger target_temperature_reached",
-  "lib/flow/FlowTriggerHelpers.js trigger temperature_changed",
-  "lib/zigbee/GreenPowerManager.js trigger green_power_action"
- ]
+ "note": "P3068: literal Flow card ids used in code but not declared in the composed manifest; covered by the app.js FLOW-GUARD noop + negative cache. Only shrink this list. P3065 D15: the 19 legacy master ids now go through safeFlowCard (logged-once no-op when undeclared).",
+ "unresolved": []
 }
