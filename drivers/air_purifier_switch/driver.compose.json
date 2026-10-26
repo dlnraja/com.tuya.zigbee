@@ -493,7 +493,8 @@
       "id": "sonoff_network_led",
       "type": "dropdown",
       "label": {
-        "en": "Network LED (SONOFF)"
+        "en": "Network LED (SONOFF)",
+        "fr": "LED réseau (SONOFF)"
       },
       "value": "on",
       "values": [
@@ -518,7 +519,8 @@
       "id": "sonoff_turbo_mode",
       "type": "dropdown",
       "label": {
-        "en": "Turbo Mode (SONOFF)"
+        "en": "Turbo Mode (SONOFF)",
+        "fr": "Mode turbo (SONOFF)"
       },
       "value": "off",
       "values": [
@@ -543,7 +545,8 @@
       "id": "sonoff_detach_relay",
       "type": "dropdown",
       "label": {
-        "en": "Detach Relay (SONOFF)"
+        "en": "Detach Relay (SONOFF)",
+        "fr": "Relais détaché (SONOFF)"
       },
       "value": "off",
       "values": [
@@ -568,7 +571,8 @@
       "id": "sonoff_external_trigger",
       "type": "dropdown",
       "label": {
-        "en": "External Trigger (SONOFF)"
+        "en": "External Trigger (SONOFF)",
+        "fr": "Déclencheur externe (SONOFF)"
       },
       "value": "edge",
       "values": [

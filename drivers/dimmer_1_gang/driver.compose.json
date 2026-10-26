@@ -55,6 +55,7 @@
           "type": "number",
           "label": {
             "en": "Minimum Brightness (%)",
+            "fr": "Luminosité minimale (%)",
             "de": "Minimale Helligkeit"
           },
           "value": 1,
@@ -69,6 +70,7 @@
           "type": "number",
           "label": {
             "en": "Maximum Brightness (%)",
+            "fr": "Luminosité maximale (%)",
             "de": "Maximale Helligkeit"
           },
           "value": 255,

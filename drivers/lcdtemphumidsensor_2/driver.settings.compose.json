@@ -3,7 +3,8 @@
     "id": "temperature_offset",
     "type": "number",
     "label": {
-      "en": "Temperature offset"
+      "en": "Temperature offset",
+      "fr": "Décalage de température"
     },
     "hint": {
       "en": "Set a value to compensate a temperature offset.\nRange: -10 - 10, step size 0.1, \ndefault: 0 [°C]"
@@ -23,7 +24,8 @@
     "id": "temperature_decimals",
     "type": "radio",
     "label": {
-      "en": "Temperature reporting decimals"
+      "en": "Temperature reporting decimals",
+      "fr": "Décimales du rapport de température"
     },
     "value": "1",
     "values": [
@@ -46,6 +48,7 @@
     "type": "number",
     "label": {
       "en": "Humidity offset",
+      "fr": "Décalage d'humidité",
       "nl": "Luchtvochtigheids compensatie"
     },
     "hint": {
@@ -67,7 +70,8 @@
     "id": "humidity_decimals",
     "type": "radio",
     "label": {
-      "en": "Humidity reporting"
+      "en": "Humidity reporting",
+      "fr": "Rapport d'humidité"
     },
     "value": "1",
     "values": [

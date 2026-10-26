@@ -4,6 +4,7 @@
     "type": "radio",
     "label": {
       "en": "Motor moves in reverse direction",
+      "fr": "Le moteur tourne en sens inverse",
       "nl": "Motor beweegt in omgekeerde richting"
     },
     "value": "0",
@@ -29,6 +30,7 @@
     "type": "number",
     "label": {
       "en": "Maximum open percentage",
+      "fr": "Pourcentage d'ouverture maximal",
       "nl": "Maximale open percentage"
     },
     "hint": {
