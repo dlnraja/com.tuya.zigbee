@@ -53,6 +53,8 @@
       "type": "dropdown",
       "label": {
         "en": "Power-On Behavior",
+        "nl": "Gedrag bij inschakelen",
+        "de": "Verhalten beim Einschalten",
         "fr": "Comportement à la mise sous tension"
       },
       "hint": {
@@ -89,6 +91,8 @@
       "type": "dropdown",
       "label": {
         "en": "Power Measurement Scale",
+        "nl": "Schaal vermogensmeting",
+        "de": "Skalierung der Leistungsmessung",
         "fr": "Échelle de puissance"
       },
       "value": "1",

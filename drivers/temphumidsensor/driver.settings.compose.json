@@ -4,6 +4,8 @@
     "type": "number",
     "label": {
       "en": "Temperature offset (°C)",
+      "nl": "Temperatuurcorrectie (°C)",
+      "de": "Temperaturversatz (°C)",
       "fr": "Décalage de température (°C)"
     },
     "hint": {
@@ -44,6 +46,7 @@
     "type": "number",
     "label": {
       "en": "Humidity offset (%)",
+      "de": "Feuchtigkeitsversatz (%)",
       "fr": "Décalage d'humidité (%)",
       "nl": "Luchtvochtigheids compensatie (%)"
     },

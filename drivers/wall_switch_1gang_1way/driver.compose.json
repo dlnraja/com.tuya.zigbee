@@ -145,6 +145,7 @@
       "type": "group",
       "label": {
         "en": "Power-On Behavior",
+        "de": "Verhalten beim Einschalten",
         "fr": "Comportement à la mise sous tension",
         "nl": "Gedrag bij inschakelen"
       },
@@ -241,6 +242,7 @@
       "type": "group",
       "label": {
         "en": "Scene Mode",
+        "de": "Szenenmodus",
         "fr": "Mode scène",
         "nl": "Scènemodus"
       },
@@ -250,6 +252,7 @@
           "type": "dropdown",
           "label": {
             "en": "Scene Mode",
+            "de": "Szenenmodus",
             "fr": "Mode scène",
             "nl": "Scènemodus"
           },

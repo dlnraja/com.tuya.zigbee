@@ -235,6 +235,8 @@
       "type": "dropdown",
       "label": {
         "en": "Power Source",
+        "nl": "Voedingsbron",
+        "de": "Stromquelle",
         "fr": "Source d'Alimentation"
       },
       "value": "auto",
@@ -278,6 +280,8 @@
       "type": "dropdown",
       "label": {
         "en": "Battery Type",
+        "nl": "Batterijtype",
+        "de": "Batterietyp",
         "fr": "Type de Batterie"
       },
       "value": "auto",
@@ -335,6 +339,8 @@
       "type": "number",
       "label": {
         "en": "Low Battery Threshold",
+        "nl": "Drempel voor lage batterij",
+        "de": "Schwellenwert für niedrigen Akkustand",
         "fr": "Seuil Batterie Faible (%)"
       },
       "value": 20,
@@ -351,6 +357,8 @@
       "type": "number",
       "label": {
         "en": "Critical Battery Threshold",
+        "nl": "Drempel voor kritieke batterij",
+        "de": "Schwellenwert für kritischen Akkustand",
         "fr": "Seuil Batterie Critique (%)"
       },
       "value": 10,
@@ -367,6 +375,8 @@
       "type": "checkbox",
       "label": {
         "en": "Enable Battery Notifications",
+        "nl": "Batterijmeldingen inschakelen",
+        "de": "Batteriebenachrichtigungen aktivieren",
         "fr": "Activer Notifications Batterie"
       },
       "value": true,
@@ -380,6 +390,8 @@
       "type": "number",
       "label": {
         "en": "Battery Report Interval",
+        "nl": "Rapportage-interval batterij",
+        "de": "Batterie-Berichtsintervall",
         "fr": "Intervalle Rapport Batterie (heures)"
       },
       "value": 24,
@@ -396,6 +408,8 @@
       "type": "dropdown",
       "label": {
         "en": "Energy Optimization Mode",
+        "nl": "Energiebesparingsmodus",
+        "de": "Energiesparmodus",
         "fr": "Mode Optimisation Énergétique"
       },
       "value": "balanced",
@@ -432,6 +446,8 @@
       "type": "checkbox",
       "label": {
         "en": "Enable Power Estimation",
+        "nl": "Vermogensschatting inschakelen",
+        "de": "Leistungsschätzung aktivieren",
         "fr": "Activer Estimation Puissance"
       },
       "value": true,
@@ -445,6 +461,8 @@
       "type": "dropdown",
       "label": {
         "en": "Scene Mode",
+        "nl": "Scènemodus",
+        "de": "Szenenmodus",
         "fr": "Mode Scene"
       },
       "hint": {
