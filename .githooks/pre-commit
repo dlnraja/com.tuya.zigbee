@@ -28,7 +28,7 @@ YELLOW='\033[1;33m'
 CYAN='\033[0;36m'
 RESET='\033[0m'
 
-TOTAL_CHECKS=9
+TOTAL_CHECKS=10
 ERRORS=0
 
 echo ""
@@ -234,6 +234,19 @@ if ! node "$ROOT/scripts/ci/security-scanner.js"; then
   ERRORS=$((ERRORS + 1))
 else
   echo -e "${GREEN}  PASSED: Full security scan${RESET}"
+fi
+
+# ─── 10. P2964 Homey SDK rules (blocking rules only) ────────────────────────
+echo -e "${CYAN}[10/$TOTAL_CHECKS] Checking Homey SDK v3 rules (P2964)...${RESET}"
+if ! node "$ROOT/tools/ci/homey-sdk-rules.js" --compose --root="$ROOT" > /tmp/p2964-sdk-rules.log 2>&1; then
+  tail -n 40 /tmp/p2964-sdk-rules.log
+  echo -e "${RED}  COMMIT BLOCKED — Homey SDK rule violated (see docs/knowledge/HOMEY_SDK_RULES.md)${RESET}"
+  ERRORS=$((ERRORS + 1))
+elif ! node "$ROOT/tools/ci/homey-sdk-rules-doc.js" --check >/dev/null 2>&1; then
+  echo -e "${RED}  COMMIT BLOCKED — docs/knowledge/HOMEY_SDK_RULES.md is stale: node tools/ci/homey-sdk-rules-doc.js${RESET}"
+  ERRORS=$((ERRORS + 1))
+else
+  echo -e "${GREEN}  PASSED: Homey SDK rules${RESET}"
 fi
 
 # ─── Summary ─────────────────────────────────────────────────────────────────
