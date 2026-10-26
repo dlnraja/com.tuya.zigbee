@@ -101,6 +101,15 @@ function scanDocs() {
   return { excerpts, broken };
 }
 
+// P3075: safety guard steps (personal data, secrets, e-mail…) so the inventory shows what blocks a push.
+function scanGuards() {
+  const out = [];
+  for (const p of walk(path.join(ROOT, '.github', 'workflows'), ['.yml', '.yaml'])) {
+    for (const m of read(p).matchAll(/^\s*-\s*name:\s*['"]?([^'"\n]*\bguard\b[^'"\n]*)/gim)) out.push({ file: path.basename(p), step: m[1].trim() });
+  }
+  return out.sort((a, b) => (a.file + a.step).localeCompare(b.file + b.step));
+}
+
 function collect() {
   const wf = scanWorkflows();
   const docs = scanDocs();
@@ -108,6 +117,7 @@ function collect() {
     workflows: wf,
     workflowsWithoutAbout: wf.filter((w) => !w.about).map((w) => w.file),
     quotingScripts: scanScripts(),
+    guards: scanGuards(),
     docExcerpts: docs.excerpts,
     brokenReports: docs.broken,
   };
@@ -140,6 +150,7 @@ function inventoryMarkdown(cur) {
     wf.map((w) => [w.file, w.about ? 'yes' : 'no', w.summary ? 'yes' : '-', w.helper ? 'yes' : '-', w.posts ? 'own repo only (see notes)' : '-']));
   r.details('Scripts that interpolate third-party titles or bodies (to migrate)', cur.quotingScripts.map((x) => `- \`${x.file}\` — ${x.lines} line(s)`).join('\n') || '- none');
   r.details('Docs with long quoted passages (to rewrite)', Object.entries(cur.docExcerpts).map(([f, n]) => `- \`${f}\` — ${n}`).join('\n') || '- none');
+  r.details('Safety guard steps (block the run when they find something)', (cur.guards || []).map((g) => `- \`${g.file}\` — ${g.step}`).join('\n') || '- none');
   r.details('Notes on posting', [
     'Workflows flagged "writes to GitHub" only write inside this repository (labelled tracking issues, the digest issue, alerts).',
     'Nothing posts on the Homey Community forum or on upstream repositories; replies stay behind the anti-flood ledger (data/progress/replies-ledger.json).',
@@ -153,6 +164,8 @@ if (require.main === module) {
   const cur = collect();
   if (args.includes('--write-baseline')) {
     const out = { _doc: 'P3069 report ratchet: may only shrink. Regenerate: node scripts/ci/report-structure-ratchet.js --write-baseline', workflowsWithoutAbout: cur.workflowsWithoutAbout, quotingScripts: cur.quotingScripts, docExcerpts: cur.docExcerpts };
+    // P3075: keep the human scope note across rewrites (it explains the last shrink).
+    try { const old = JSON.parse(fs.readFileSync(BASELINE, 'utf8')); if (old._scope) out._scope = old._scope; } catch (_) { /* first write */ }
     fs.writeFileSync(BASELINE, JSON.stringify(out, null, 2) + '\n');
     console.log(`baseline written: ${cur.workflowsWithoutAbout.length} workflows without about, ${cur.quotingScripts.length} quoting scripts, ${Object.keys(cur.docExcerpts).length} docs with excerpts`);
   }

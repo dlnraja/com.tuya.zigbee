@@ -1,6 +1,8 @@
 // search-forum.js — search forum for our app
 const https = require('https');
 const fs = require('fs');
+const path = require('path');
+const { linkRef } = require(path.join(__dirname, '..', '..', 'scripts', 'lib', 'report-writer.js')); // P3075: link + topic, never the title
 
 function get(url) {
   return new Promise((resolve) => {
@@ -23,7 +25,7 @@ async function search() {
         const topics = data.topic_list?.topics || [];
         console.log('  Topics:', topics.length);
         for (const t of topics.slice(0, 10)) {
-          console.log('  - #' + t.id + ' [' + t.like_count + ' likes, ' + t.posts_count + ' posts] ' + t.title);
+          console.log('  - ' + linkRef({ id: t.id, url: 'https://community.homey.app/t/' + t.id, text: t.title }) + ' [' + t.like_count + ' likes, ' + t.posts_count + ' posts]');
         }
       } catch (e) {
         console.log('  Parse error:', e.message);
