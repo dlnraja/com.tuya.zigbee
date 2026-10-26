@@ -30,6 +30,10 @@
       "args": [
         {
           "type": "number",
+          "title": {
+            "en": "Seconds",
+            "fr": "Secondes"
+          },
           "name": "seconds",
           "min": 1,
           "max": 1800,

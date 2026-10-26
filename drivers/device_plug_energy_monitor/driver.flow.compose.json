@@ -142,6 +142,10 @@
         {
           "name": "threshold",
           "type": "number",
+          "title": {
+            "en": "Threshold",
+            "fr": "Seuil"
+          },
           "min": 1,
           "max": 3600,
           "placeholder": {
@@ -347,6 +351,10 @@
         {
           "name": "delay",
           "type": "number",
+          "title": {
+            "en": "Delay",
+            "fr": "Délai"
+          },
           "min": 1,
           "max": 3600,
           "step": 1,
@@ -374,6 +382,10 @@
         {
           "name": "delay",
           "type": "number",
+          "title": {
+            "en": "Delay",
+            "fr": "Délai"
+          },
           "min": 1,
           "max": 3600,
           "step": 1,
@@ -408,7 +420,8 @@
           "type": "dropdown",
           "name": "mode",
           "title": {
-            "en": "Mode"
+            "en": "Mode",
+            "fr": "Mode"
           },
           "values": [
             {

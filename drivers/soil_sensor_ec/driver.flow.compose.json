@@ -10,6 +10,10 @@
         {
           "name": "threshold",
           "type": "number",
+          "title": {
+            "en": "Threshold",
+            "fr": "Seuil"
+          },
           "min": 0,
           "max": 10000,
           "step": 10,
@@ -33,6 +37,10 @@
         {
           "name": "threshold",
           "type": "number",
+          "title": {
+            "en": "Threshold",
+            "fr": "Seuil"
+          },
           "min": 0,
           "max": 100,
           "step": 1,

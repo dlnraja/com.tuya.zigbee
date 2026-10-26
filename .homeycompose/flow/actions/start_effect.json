@@ -187,7 +187,10 @@
     {
       "type": "range",
       "name": "effect_speed",
-      "title": "/64",
+      "title": {
+        "en": "Speed (0–64)",
+        "fr": "Vitesse (0–64)"
+      },
       "min": 0,
       "max": 64,
       "step": 1

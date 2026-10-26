@@ -451,7 +451,8 @@
           "type": "dropdown",
           "name": "mode",
           "title": {
-            "en": "Mode"
+            "en": "Mode",
+            "fr": "Mode"
           },
           "values": [
             {
@@ -686,6 +687,10 @@
       "args": [
         {
           "type": "number",
+          "title": {
+            "en": "Seconds",
+            "fr": "Secondes"
+          },
           "name": "seconds",
           "min": 0,
           "max": 86400,
