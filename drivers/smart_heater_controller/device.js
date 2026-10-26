@@ -159,6 +159,35 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
   }
 
   /**
+   * P3065: Homey's Device has no registerSetting(); calling it threw a TypeError in onNodeInit, so
+   * thermostat-mode mapping and everything after it never ran. Keep the per-key handlers here and
+   * dispatch them from onSettings after the base class has handled the change.
+   */
+  registerSetting(key, handler) {
+    if (typeof handler !== 'function') {return;}
+    if (!this._p3065SettingHandlers) {this._p3065SettingHandlers = new Map();}
+    this._p3065SettingHandlers.set(key, handler);
+  }
+
+  async onSettings(event) {
+    const result = typeof super.onSettings === 'function' ? await super.onSettings(event) : undefined;
+    const handlers = this._p3065SettingHandlers;
+    if (handlers && event && Array.isArray(event.changedKeys)) {
+      for (const key of event.changedKeys) {
+        const v = (event.newSettings || {})[key];
+        // temperature_calibration: the base class already sends it once via the DP map (P3002);
+        // overheat_protection: _sendOverheatProtection packs a 1-byte value DP, unverified → memory only.
+        if (key === 'temperature_calibration') { this._temperatureCalibration = v; continue; }
+        if (key === 'overheat_protection') { this._overheatProtection = v; continue; }
+        const h = handlers.get(key);
+        if (!h) {continue;}
+        try { await h(v); } catch (e) { this.error(`[HEATER] setting ${key} handler failed:`, e && e.message); }
+      }
+    }
+    return result;
+  }
+
+  /**
    * Register setting change listeners
    */
   registerSettings() {
