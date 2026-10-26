@@ -138,7 +138,7 @@ async function webUnits(q) {
   if (process.env.XR_WEB !== 'google-cse' || !process.env.GOOGLE_CSE_KEY || webBudget <= 0) return [];
   webBudget--;
   const j = await cached(`web-${q}.json`, 30, () => getJson(`https://www.googleapis.com/customsearch/v1?key=${process.env.GOOGLE_CSE_KEY}&cx=${process.env.GOOGLE_CSE_CX}&q=${encodeURIComponent(q + ' zigbee _TZ')}`));
-  return ((j && j.items) || []).slice(0, 5).map((i) => ({ via: 'web', url: i.link, text: `${i.title} ${i.snippet}` }));
+  return ((j && j.items) || []).slice(0, 5).map((i) => ({ via: 'web', url: i.link, text: `${i.title} ${i.snippet}` })); // ok-extract-only (P3069: only used to pick ids, never written out)
 }
 
 // ---------- deduction ----------

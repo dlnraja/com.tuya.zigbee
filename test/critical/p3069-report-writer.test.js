@@ -73,3 +73,28 @@ test('write() appends to GITHUB_STEP_SUMMARY', () => {
   assert.match(md, /\*\*Merci\*\* — /);
   assert.deepStrictEqual(R.checkStructure(md), []);
 });
+
+test('linkRef gives link + author + topic words, never the original title', () => {
+  const title = 'My weird plug TS011F stops reporting power after reboot';
+  const s = R.linkRef({ id: 12, url: 'https://example.org/12', author: '@bob', text: title }, 'fr');
+  assert.match(s, /^\[#12\]\(https:\/\/example\.org\/12\) par @bob — sujet: /);
+  assert.match(s, /`TS011F`/);
+  assert.ok(!/weird|stops reporting|after reboot/i.test(s), s);
+  assert.strictEqual(R.linkRef({ id: 7, prefix: 'post ' }), 'post 7');
+  assert.strictEqual(R.linkRef({}), 'link');
+});
+
+test('digest scripts no longer print upstream titles (P3069 step 3b)', () => {
+  const fs = require('fs');
+  const root = path.join(__dirname, '..', '..');
+  const files = ['.github/scripts/community-inbox-digest.js', 'scripts/digest/digest-event.js', 'scripts/digest/homey-digest.js',
+    'scripts/digest/inspiration-scan.js', 'scripts/automation/digest.cjs', 'scripts/automation/reply-candidates.cjs', '.github/scripts/source-registry.js'];
+  for (const f of files) {
+    const p = path.join(root, f);
+    if (!fs.existsSync(p)) continue;
+    const src = fs.readFileSync(p, 'utf8');
+    assert.ok(!/L\.esc\((?:pr|f\.it|i)\.title\)/.test(src), `${f} still escapes a raw title into output`);
+    assert.ok(!/String\((?:it|t)\.title\)\.slice\(0, 140\)/.test(src), `${f} still slices a raw title into a summary`);
+    assert.ok(/topicOf|linkRef|\bref\(/.test(src), `${f} should use the shared helper`);
+  }
+});

@@ -66,7 +66,7 @@ function scanScripts() {
     if (!/GITHUB_STEP_SUMMARY|core\.summary|\.md['"`]|appendFileSync|writeFileSync|body:/.test(s)) continue;
     const lines = s.split('\n');
     const hits = [];
-    lines.forEach((l, i) => { if (QUOTE_RE.test(l) && !/topicOf|sourceRef|\/\/ ok-own-text/.test(l)) hits.push(i + 1); });
+    lines.forEach((l, i) => { if (QUOTE_RE.test(l) && !/topicOf|sourceRef|linkRef|\bref\(|\/\/ ok-(?:own-text|extract-only|console|private-mail)/.test(l)) hits.push(i + 1); });
     if (hits.length) out.push({ file: rel(p), lines: hits.length });
   }
   return out.sort((a, b) => a.file.localeCompare(b.file));

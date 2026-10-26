@@ -10,6 +10,8 @@
  */
 const fs = require('fs');
 const L = require('./lib');
+// P3069: PR lines carry the link, the author and our topic words, never the PR title itself.
+const RW = require('../lib/report-writer');
 const { failedJobs, BAD } = require('./ci-health');
 
 const ev = JSON.parse(fs.readFileSync(process.env.GITHUB_EVENT_PATH, 'utf8'));
@@ -22,8 +24,8 @@ L.run(async () => {
     const pr = ev.pull_request;
     if (IGN.includes(pr.user.login)) return console.log(`ignored actor ${pr.user.login}`);
     let what = null;
-    if (ev.action === 'opened' || ev.action === 'reopened') what = `🆕 PR ouverte #${pr.number} → \`${pr.base.ref}\` par ${L.esc(pr.user.login)} : ${L.esc(pr.title)}`;
-    else if (ev.action === 'closed' && pr.merged) what = `✅ PR mergée #${pr.number} → \`${pr.base.ref}\` (${L.short(pr.merge_commit_sha)}) : ${L.esc(pr.title)}`;
+    if (ev.action === 'opened' || ev.action === 'reopened') what = `🆕 PR ouverte #${pr.number} → \`${pr.base.ref}\` par @${L.esc(pr.user.login)} — sujet : ${RW.topicOf(pr.title, 'fr')}`;
+    else if (ev.action === 'closed' && pr.merged) what = `✅ PR mergée #${pr.number} → \`${pr.base.ref}\` (${L.short(pr.merge_commit_sha)}) par @${L.esc(pr.user.login)} — sujet : ${RW.topicOf(pr.title, 'fr')}`;
     if (!what) return console.log(`PR action ${ev.action} — silent`);
     const { issue } = await L.loadState('events');
     await L.postComment(issue, `${what}\n${pr.html_url}`);

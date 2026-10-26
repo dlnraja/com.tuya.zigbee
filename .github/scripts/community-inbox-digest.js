@@ -17,6 +17,9 @@
 const fs = require("fs");
 const path = require("path");
 const { fetchWithRetry } = require("./retry-helper");
+// P3069: list items link to the issue/post and say what it is about in our words; no titles or excerpts copied.
+let RW = null; try { RW = require("../../scripts/lib/report-writer"); } catch (_) { RW = null; }
+const ref = (o) => (RW ? RW.linkRef(Object.assign({}, o), "fr") : `[#${o.id}](${o.url})${o.author ? " par @" + o.author : ""}`);
 
 const GH = "https://api.github.com";
 const OWN = "dlnraja/com.tuya.zigbee";
@@ -66,7 +69,7 @@ async function enrichIssue(iss) {
   else if (lastBy === "bot") status = "🟡 auto-résolu (attente retour)";
   else if (lastBy === "owner") status = "🟢 maintainer actif";
   else status = "🔴 nouveau (aucun commentaire)";
-  return { number: iss.number, title: iss.title, labels, status, updated: (iss.updated_at || "").slice(0, 10), url: iss.html_url };
+  return { number: iss.number, title: iss.title, author: iss.user && iss.user.login, labels, status, updated: (iss.updated_at || "").slice(0, 10), url: iss.html_url };
 }
 
 function loadForumPosts() {
@@ -131,27 +134,27 @@ async function main() {
   L.push("");
   if (red.length) {
     L.push("## 🔴 Issues à traiter", "");
-    for (const i of red) L.push(`- [#${i.number}](${i.url}) — ${i.title} _(${i.status}, maj ${i.updated})_`);
+    for (const i of red) L.push(`- ${ref({ id: i.number, url: i.url, author: i.author, text: i.title })} _(${i.status}, maj ${i.updated})_`);
     L.push("");
   }
   if (yellow.length) {
     L.push("## 🟡 Auto-résolues, en attente de retour", "");
-    for (const i of yellow) L.push(`- [#${i.number}](${i.url}) — ${i.title} _(maj ${i.updated})_`);
+    for (const i of yellow) L.push(`- ${ref({ id: i.number, url: i.url, author: i.author, text: i.title })} _(maj ${i.updated})_`);
     L.push("");
   }
   if (green.length) {
     L.push("## 🟢 Maintainer actif dessus", "");
-    for (const i of green) L.push(`- [#${i.number}](${i.url}) — ${i.title} _(maj ${i.updated})_`);
+    for (const i of green) L.push(`- ${ref({ id: i.number, url: i.url, author: i.author, text: i.title })} _(maj ${i.updated})_`);
     L.push("");
   }
   if (prs.length) {
     L.push("## 🔀 PRs ouvertes", "");
-    for (const p of prs) L.push(`- [#${p.number}](${p.html_url}) — ${p.title} _(${p.user && p.user.login}, maj ${(p.updated_at || "").slice(0, 10)})_`);
+    for (const p of prs) L.push(`- ${ref({ id: p.number, url: p.html_url, author: p.user && p.user.login, text: p.title })} _(maj ${(p.updated_at || "").slice(0, 10)})_`);
     L.push("");
   }
   if (forum && forum.length) {
     L.push("## 🌍 Forum — posts sans réponse", "");
-    for (const p of forum) L.push(`- **${p.username}** (${(p.createdAt || p.date || "").slice(0, 10)}) : ${(p.excerpt || p.text || "").replace(/\s+/g, " ").slice(0, 140)}`);
+    for (const p of forum) L.push(`- ${ref({ id: p.post_number || p.id || "", url: p.url || p.postUrl || "", author: p.username, text: p.excerpt || p.text || "", prefix: "post " })} (${(p.createdAt || p.date || "").slice(0, 10)})`);
     L.push("");
   }
   const md = L.join("\n") + "\n";

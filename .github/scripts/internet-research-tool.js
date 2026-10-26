@@ -411,7 +411,7 @@ async function main() {
         if (!items.length) { console.log('No items found.'); return; }
         items.forEach((item, idx) => {
           const state = item.state === 'open' ? '🟢' : '🔴';
-          console.log(`${state} [${item.number}] ${item.title}`);
+          console.log(`${state} [${item.number}] ${item.title}`); // ok-console (P3069: local console only, not stored)
           console.log(`    Author: ${item.user?.login || 'N/A'} | Updated: ${item.updated_at?.substring(0, 10)}`);
           if (item.labels?.length) console.log(`    Labels: ${item.labels.map(l => l.name).join(', ')}`);
           console.log();

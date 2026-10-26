@@ -105,7 +105,7 @@ async function ocr(url) {
 }
 
 async function readIssue(repo, issue, out) {
-  const posts = [{ url: issue.html_url, user: issue.user?.login, body: `${issue.title}\n\n${issue.body || ''}` }];
+  const posts = [{ url: issue.html_url, user: issue.user?.login, body: `${issue.title}\n\n${issue.body || ''}` }]; // ok-extract-only (P3069: only used to pick ids, never written out)
   if (issue.comments > 0) {
     for (let page = 1; page <= 5; page++) {
       const cs = await gh(`repos/${repo}/issues/${issue.number}/comments?per_page=100&page=${page}`);

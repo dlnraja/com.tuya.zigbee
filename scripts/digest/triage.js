@@ -38,7 +38,7 @@ L.run(async () => {
   if (!it || it.pull_request) return console.log('not an issue');
   if (/\[bot\]$/.test(it.user.login) || (it.labels || []).some((l) => /bot-digest/.test(l.name))) return console.log('bot / tracking issue — skip');
   const repo = (ev.repository && ev.repository.full_name) || L.REPO;
-  const text = `${it.title}\n${it.body || ''}`;
+  const text = `${it.title}\n${it.body || ''}`; // ok-extract-only (P3069: only used to pick ids, never written out)
   const ex = E.extract(text);
   const idx = E.buildIndex(process.cwd());
   const chk = E.check(ex, idx);

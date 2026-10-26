@@ -298,7 +298,7 @@ async function main() {
   const before = out.byKey.size;
   const idx = buildIndex();
 
-  const issueText = (it) => extract(`${it.title || ''}\n\n${it.body || ''}`, it.html_url, idx, out);
+  const issueText = (it) => extract(`${it.title || ''}\n\n${it.body || ''}`, it.html_url, idx, out); // ok-extract-only (P3069: only used to pick ids, never written out)
   const commentText = (c) => extract(c.body, c.html_url, idx, out);
 
   try {

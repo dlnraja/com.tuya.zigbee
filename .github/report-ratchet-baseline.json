@@ -1,68 +1,7 @@
 {
   "_doc": "P3069 report ratchet: may only shrink. Regenerate: node scripts/ci/report-structure-ratchet.js --write-baseline",
   "workflowsWithoutAbout": [],
-  "quotingScripts": [
-    {
-      "file": ".github/scripts/ai-dp-extract.js",
-      "lines": 1
-    },
-    {
-      "file": ".github/scripts/community-inbox-digest.js",
-      "lines": 5
-    },
-    {
-      "file": ".github/scripts/gmail-local-reader.js",
-      "lines": 1
-    },
-    {
-      "file": ".github/scripts/internet-research-tool.js",
-      "lines": 1
-    },
-    {
-      "file": ".github/scripts/source-registry.js",
-      "lines": 4
-    },
-    {
-      "file": ".github/scripts/triage-run.js",
-      "lines": 2
-    },
-    {
-      "file": ".github/scripts/triage-upstream-enhanced.js",
-      "lines": 4
-    },
-    {
-      "file": "scripts/analysis/forum_analysis_complete.js",
-      "lines": 1
-    },
-    {
-      "file": "scripts/automation/digest.cjs",
-      "lines": 1
-    },
-    {
-      "file": "scripts/automation/reply-candidates.cjs",
-      "lines": 1
-    },
-    {
-      "file": "scripts/digest/quirks-scan.js",
-      "lines": 1
-    },
-    {
-      "file": "scripts/digest/triage.js",
-      "lines": 1
-    },
-    {
-      "file": "scripts/research/cross-research.js",
-      "lines": 1
-    },
-    {
-      "file": "scripts/scanners/github-leads-scan.js",
-      "lines": 1
-    },
-    {
-      "file": "scripts/scanners/issue-image-ocr.js",
-      "lines": 1
-    }
-  ],
+  "quotingScripts": [],
   "docExcerpts": {
     "docs/knowledge/AOYAN_PADDED_MANUFACTURER.md": 1,
     "docs/knowledge/DEVICE_TRUTH.md": 1,

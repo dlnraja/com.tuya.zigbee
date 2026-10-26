@@ -13,6 +13,8 @@
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+// P3069: proposals keep link + author + our topic words, not the upstream title.
+let RW = null; try { RW = require('../../scripts/lib/report-writer'); } catch (_) { RW = null; }
 
 const ROOT = path.resolve(__dirname, '..', '..');
 const REG_F = path.join(ROOT, 'data', 'sources', 'registry.json');
@@ -112,9 +114,9 @@ async function scanGithub(src, st, c) {
     const since = issuesSince || new Date(Date.now() - 7 * 86400e3).toISOString();
     const items = await c.json(`${GH}/repos/${src.repo}/issues?state=all&sort=updated&direction=asc&per_page=50&since=${encodeURIComponent(since)}`);
     for (const it of Array.isArray(items) ? items : []) {
-      const txt = `${it.title}\n${it.body || ''}`;
+      const txt = `${it.title}\n${it.body || ''}`; // ok-extract-only (P3069: only used to pick ids, never written out)
       if (!/tuya|_TZ|TS0|TS1|_TYZB|_TYST/i.test(txt)) {continue;}
-      const pr = proposal(src, it.html_url, `${it.pull_request ? 'PR' : 'issue'} #${it.number} (${it.state}) by ${it.user && it.user.login}: ${String(it.title).slice(0, 140)}`, txt);
+      const pr = proposal(src, it.html_url, `${it.pull_request ? 'PR' : 'issue'} #${it.number} (${it.state}) by ${it.user && it.user.login}, about: ${RW ? RW.topicOf(String(it.title)) : 'see link'}`, txt);
       if (pr) {out.push(pr);}
     }
     if (Array.isArray(items) && items.length) {issuesSince = items[items.length - 1].updated_at;}
@@ -188,9 +190,9 @@ async function scanDiscourseCategory(src, st, c) {
       listed.set(t.id, t);
       if (t.id > max) {max = t.id;}
       if (baseline || t.id <= since || t.pinned) {continue;}
-      const txt = `${t.title || ''} ${t.excerpt || ''}`;
+      const txt = `${t.title || ''} ${t.excerpt || ''}`; // ok-extract-only (P3069: only used to pick ids, never written out)
       if (!kw.test(txt)) {continue;}
-      out.push({ source: src.id, kind: 'forum-app', ref: `${src.url}/t/${t.id}`, summary: `new app topic #${t.id}: ${String(t.title).slice(0, 140)} (review for ideas; credit author)`, ...extract(txt), credit: src.credit, seenAt: new Date().toISOString() });
+      out.push({ source: src.id, kind: 'forum-app', ref: `${src.url}/t/${t.id}`, summary: `new app topic #${t.id}, about: ${RW ? RW.topicOf(String(t.title)) : 'see link'} (review for ideas; credit author)`, ...extract(txt), credit: src.credit, seenAt: new Date().toISOString() });
     }
   }
   // Follow new posts in recently active list topics (bounded, per-topic cursor = last post_number).

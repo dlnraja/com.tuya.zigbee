@@ -19,6 +19,8 @@
  */
 const crypto = require('crypto');
 const L = require('./lib');
+// P3069: upstream items are linked with author and our topic words; their titles are not copied.
+const RW = require('../lib/report-writer');
 const E = require('./enrich');
 const LD = require('./leads');
 const { lookup, stats } = require('./lookup');
@@ -135,7 +137,7 @@ L.run(async () => {
   const toLook = [...new Set(found.flatMap((f) => f.fresh).filter((u) => /^(mfr|pid):/.test(u)))].slice(0, MAX_LOOKUPS);
   const looks = [];
   for (const u of toLook) looks.push(`- \`${u}\`\n  - ${(await lookup(u)).join('\n  - ')}`);
-  const lines = found.slice(0, 40).map((f) => `- [${f.repo.split('/')[1]}#${f.it.number}](${f.it.html_url}) ${f.it.pull_request ? 'PR' : 'issue'} · ${f.it.state} · ${L.esc(f.it.title)}\n  - 🆕 ${f.fresh.map((u) => '`' + u + '`').join(', ')}\n  - ${f.leads}`);
+  const lines = found.slice(0, 40).map((f) => `- [${f.repo.split('/')[1]}#${f.it.number}](${f.it.html_url}) ${f.it.pull_request ? 'PR' : 'issue'} · ${f.it.state}${f.it.user ? ' · par @' + L.esc(f.it.user.login) : ''} · sujet : ${RW.topicOf(f.it.title, 'fr')}\n  - 🆕 ${f.fresh.map((u) => '`' + u + '`').join(', ')}\n  - ${f.leads}`);
   const s = stats();
   const md = `## 🧭 Inspiration ${OWNER} — ${found.length} élément(s) avec nouvelles pistes${ideas.length ? `, ${ideas.length} idée(s) de workflow` : ''}\n\n` +
     `${scanned} issue(s)/PR(s) (ouvertes + fermées, avec commentaires) analysées ce passage · ${st.scanned} au total · ${repoList.length} repo(s).\n\n` +
