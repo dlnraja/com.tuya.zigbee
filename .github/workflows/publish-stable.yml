@@ -338,6 +338,15 @@ jobs:
             fi
           fi
           echo "Draft publish completed"
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="The stable app build was published; the version step above has the number."; else s="Stable publishing stopped before the end; the red step says why and nothing after it ran."; fi
+          node scripts/lib/report-writer.js --title "Publish (stable app)" --summary "$s" --headers "item|value" --row "branch|stable-v5" --row "app id|com.dlnraja.tuya.zigbee.stable" --row "result|$JOB_STATUS" --thanks "Athom Homey CLI" --thanks "GitHub Actions docs" >> "$GITHUB_STEP_SUMMARY" || true
 
   soak-summary:
     name: "Soak decision"
