@@ -1,7 +1,8 @@
 {
   "id": "plug",
   "name": {
-    "en": "Smart Plug without metering"
+    "en": "Smart Plug without metering",
+    "fr": "Prise connectée sans mesure"
   },
   "class": "socket",
   "platforms": [

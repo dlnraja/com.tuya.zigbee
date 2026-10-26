@@ -1,7 +1,8 @@
 {
   "id": "rgb_led_strip",
   "name": {
-    "en": "RGB LED Strip"
+    "en": "RGB LED Strip",
+    "fr": "Ruban LED RGB"
   },
   "$extends": [
     "light_color_ambiance"

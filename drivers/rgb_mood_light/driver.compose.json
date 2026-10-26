@@ -1,7 +1,8 @@
 {
   "id": "rgb_mood_light",
   "name": {
-    "en": "RGB Mood Light"
+    "en": "RGB Mood Light",
+    "fr": "Lampe d'ambiance RGB"
   },
   "$extends": [
     "light_color_ambiance"

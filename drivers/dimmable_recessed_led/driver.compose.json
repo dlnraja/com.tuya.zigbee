@@ -1,7 +1,8 @@
 {
   "id": "dimmable_recessed_led",
   "name": {
-    "en": "Dimmable Recessed LED"
+    "en": "Dimmable Recessed LED",
+    "fr": "Spot LED encastré dimmable"
   },
   "$extends": [
     "light_white_ambiance"

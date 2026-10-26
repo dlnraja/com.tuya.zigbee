@@ -1,7 +1,8 @@
 {
   "id": "dimmable_led_strip",
   "name": {
-    "en": "Dimmable LED Strip"
+    "en": "Dimmable LED Strip",
+    "fr": "Ruban LED dimmable"
   },
   "$extends": [
     "light_white_ambiance"
