@@ -2,8 +2,8 @@
  "note": "P3068 memory-hazard ratchet baseline — counts may only go down",
  "totals": {
   "hot-stringify": 61,
-  "unbounded-collection": 103,
-  "raw-timer": 12
+  "unbounded-collection": 85,
+  "raw-timer": 4
  },
  "files": {
   "drivers/button_emergency_sos/device.js": {
@@ -59,19 +59,10 @@
   "drivers/wall_thermostat/device.js": {
    "unbounded-collection": 1
   },
-  "lib/DiagnosticEngine.js": {
-   "unbounded-collection": 1
-  },
   "lib/FlowCardHelper.js": {
    "unbounded-collection": 1
   },
   "lib/GlobalTimeSyncEngine.js": {
-   "unbounded-collection": 1
-  },
-  "lib/IntelligentSensorInference.js": {
-   "unbounded-collection": 2
-  },
-  "lib/LocalFirstEngine.js": {
    "unbounded-collection": 1
   },
   "lib/ProtocolAutoOptimizer.js": {
@@ -88,9 +79,6 @@
   },
   "lib/adapters/ExternalDeviceAdapter.js": {
    "hot-stringify": 1
-  },
-  "lib/autonomous/AutonomousVerificationEngine.js": {
-   "unbounded-collection": 3
   },
   "lib/clusters/CustomClusterManager.js": {
    "unbounded-collection": 1
@@ -109,9 +97,6 @@
   },
   "lib/converters/ValueConverterRegistry.js": {
    "unbounded-collection": 1
-  },
-  "lib/covers/CoverCommandQueue.js": {
-   "raw-timer": 1
   },
   "lib/data/SmartDataValidator.js": {
    "unbounded-collection": 1
@@ -201,9 +186,6 @@
   "lib/managers/SmartEnergyManager.js": {
    "unbounded-collection": 2
   },
-  "lib/memory/MemoryBudget.js": {
-   "raw-timer": 1
-  },
   "lib/mixins/PhysicalButtonMixin.js": {
    "unbounded-collection": 1
   },
@@ -213,29 +195,14 @@
   "lib/multichannel/MultiChannelManager.js": {
    "unbounded-collection": 2
   },
-  "lib/multichannel/ReceptionManager.js": {
-   "unbounded-collection": 2
-  },
   "lib/pairing/AutoDetectionPairingWizard.js": {
    "unbounded-collection": 2
   },
   "lib/pairing/EnrichmentScheduler.js": {
    "hot-stringify": 1
   },
-  "lib/performance/PerformanceOptimizer.js": {
-   "unbounded-collection": 1
-  },
-  "lib/performance/StartupTimeProfiler.js": {
-   "unbounded-collection": 3
-  },
-  "lib/protocol/HybridProtocolArbitrator.js": {
-   "unbounded-collection": 1
-  },
   "lib/protocol/HybridProtocolManager.js": {
    "hot-stringify": 1
-  },
-  "lib/reliability/ZigbeeResilience.js": {
-   "raw-timer": 1
   },
   "lib/security/DPValueInputValidator.js": {
    "unbounded-collection": 1
@@ -246,9 +213,6 @@
   "lib/sensors/IntelligentDPAutoDiscovery.js": {
    "unbounded-collection": 2
   },
-  "lib/smart/CoupleKnowledge.js": {
-   "raw-timer": 1
-  },
   "lib/templates/TuyaTS0601DeviceTemplate.js": {
    "hot-stringify": 1
   },
@@ -258,9 +222,6 @@
   "lib/tuya-local/TuyaLocalDevice.js": {
    "unbounded-collection": 1,
    "hot-stringify": 3
-  },
-  "lib/tuya-local/TuyaShadowPulsar.js": {
-   "raw-timer": 1
   },
   "lib/tuya/DpCoalescer.js": {
    "unbounded-collection": 1,
@@ -299,26 +260,16 @@
   "lib/tuya/_quarantine/UniversalTuyaParser.legacy.js": {
    "hot-stringify": 1
   },
-  "lib/utils/AdaptiveEventEmitter.js": {
-   "unbounded-collection": 2
-  },
-  "lib/utils/SmartValueProcessor.js": {
-   "unbounded-collection": 1
-  },
   "lib/utils/UniversalThrottleManager.js": {
-   "unbounded-collection": 1,
-   "raw-timer": 1
+   "unbounded-collection": 1
   },
   "lib/utils/UnknownDPLogger.js": {
    "hot-stringify": 2
   },
-  "lib/utils/clusterUtils.js": {
-   "raw-timer": 2
-  },
   "lib/utils/data/DPMappingEngine.js": {
    "unbounded-collection": 1
   },
-  "lib/utils/safe-timers.js": {
+  "lib/utils/nativeTimer.js": {
    "raw-timer": 2
   },
   "lib/ux/PrePairingCompatibilityCheck.js": {
@@ -335,9 +286,6 @@
   },
   "lib/zigbee/ZigbeeHealthMonitor.js": {
    "unbounded-collection": 2
-  },
-  "lib/zigbee/ZigbeeProtocolPatchManager.js": {
-   "unbounded-collection": 1
   },
   "lib/zigbee/cluster/BindingPlanner.js": {
    "unbounded-collection": 1
