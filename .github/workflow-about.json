@@ -1,0 +1,355 @@
+{
+  "_doc": "P3069: what each workflow does and whose ideas it uses, in our own words. Edit here, then run: node scripts/ci/workflow-about.js --write",
+  "groups": {
+    "ci": [
+      "GitHub Actions docs",
+      "rhysd (actionlint)",
+      "the Athom homey CLI docs for the validate levels"
+    ],
+    "publish": [
+      "Athom's official Homey app GitHub Actions (athombv)",
+      "the Homey developer docs on build channels"
+    ],
+    "enrich": [
+      "Koen Kanters and the zigbee-herdsman-converters / Zigbee2MQTT contributors",
+      "the zigpy / ZHA device handler authors",
+      "Blakadder's Zigbee device database",
+      "JohanBendz's original Tuya Zigbee app (read-only reference)"
+    ],
+    "forum": [
+      "the Homey Community forum members who share fingerprints and diagnostics (read-only, never quoted)",
+      "Discourse for its public JSON/RSS endpoints"
+    ],
+    "autopilot": [
+      "Renovate and Dependabot for the merge-when-green pattern",
+      "the actions/stale and actions/labeler maintainers"
+    ],
+    "diag": [
+      "Homey users who send diagnostic reports by mail",
+      "the Homey developer docs on app diagnostics"
+    ],
+    "kb": [
+      "Koen Kanters and the zigbee-herdsman-converters contributors",
+      "zigpy / ZHA, deCONZ, tuya-local, tinytuya and localtuya authors",
+      "Blakadder's Zigbee device database"
+    ]
+  },
+  "workflows": {
+    "activity-monitor.yml": {
+      "group": "autopilot",
+      "what": "Collects one day of repo, forum and crash activity into a private report. The schedule is off; the orchestrator covers it."
+    },
+    "agent-reach.yml": {
+      "group": "forum",
+      "what": "Cross-checks the forum watchers through a second free channel (RSS / web readers) and reports channel health.",
+      "also_thanks": [
+        "Panniantong/agent-reach for the multi-channel reader idea"
+      ]
+    },
+    "ai-monthly-audit.yml": {
+      "group": "autopilot",
+      "what": "Monthly code audit; uses an AI only when a free quota is configured and falls back to local checks otherwise."
+    },
+    "auto-bot-issue-triage.yml": {
+      "group": "autopilot",
+      "what": "Sorts issues opened by our own bots: pulls fingerprints out, records state, closes them. Human issues are never closed here."
+    },
+    "auto-close-supported.yml": {
+      "group": "autopilot",
+      "what": "Checks open issues against what the app already supports and prepares answers; closing human issues stays manual."
+    },
+    "auto-enrich-closed-loop.yml": {
+      "group": "enrich",
+      "what": "Every few hours: gathers new fingerprints from mail, diagnostics and public device databases and adds them to our own drivers."
+    },
+    "auto-fix-and-publish.yml": {
+      "group": "publish",
+      "what": "Runs the safe automatic fixes, the gates, then sends a build to the Athom draft/test channel."
+    },
+    "auto-publish-on-push.yml": {
+      "group": "publish",
+      "what": "Publishes to the Athom draft channel after a code push that passes the gates (docs-only pushes are skipped)."
+    },
+    "auto-reopen-on-comment.yml": {
+      "group": "autopilot",
+      "what": "Reopens a closed issue when a real person comments on it, so the daily jobs look at it again."
+    },
+    "autonomous-verification.yml": {
+      "group": "ci",
+      "what": "Every six hours: checks red/green of every workflow and writes to our own digest issue only when the state changes."
+    },
+    "bastien-publish.yml": {
+      "group": "publish",
+      "what": "Publishes the private Bastien house app (its own app ID only); manual by default."
+    },
+    "blakadder-fetch.yml": {
+      "group": "enrich",
+      "what": "Reads the Blakadder Zigbee database and cross-references it with our device list."
+    },
+    "bug-report-auto-pr.yml": {
+      "group": "autopilot",
+      "what": "Turns a bug report into a draft fix PR; the AI step is optional and the job works without it."
+    },
+    "build-error-diag.yml": {
+      "group": "publish",
+      "what": "Opens the Athom build page in a headless browser to read why a build failed (manual or daily)."
+    },
+    "ci-self-check.yml": {
+      "group": "ci",
+      "what": "Checks the CI files themselves: actionlint, YAML, hygiene, report shape and lint ratchets; fails only on new debt."
+    },
+    "code-quality.yml": {
+      "group": "ci",
+      "what": "Lint and code checks on pushes and PRs, plus the guard that we never write to the upstream repo."
+    },
+    "collect-diagnostics.yml": {
+      "group": "diag",
+      "what": "Weekly collection of diagnostics into a report artifact."
+    },
+    "community-inbox.yml": {
+      "group": "forum",
+      "what": "Daily single view of open issues, PRs and unanswered forum posts, written as links with short summaries. Read-only."
+    },
+    "continuous-flow.yml": {
+      "group": "autopilot",
+      "what": "One manual pipeline that replaces about ten older daily jobs (maintenance, enrich, reports)."
+    },
+    "delete-johan-comments.yml": {
+      "group": "autopilot",
+      "what": "Manual clean-up of our own old comments on the upstream repo; dry run by default."
+    },
+    "delete-own-upstream-comments.yml": {
+      "group": "autopilot",
+      "what": "Manual clean-up of our own upstream comments, behind an explicit confirmation input."
+    },
+    "dependabot-auto-merge.yml": {
+      "group": "autopilot",
+      "what": "Merges Dependabot updates once checks are green."
+    },
+    "deploy-pages.yml": {
+      "group": "ci",
+      "what": "Builds and deploys the Device Finder site to GitHub Pages.",
+      "also_thanks": [
+        "the GitHub Pages actions maintainers"
+      ]
+    },
+    "doc-coverage.yml": {
+      "group": "ci",
+      "what": "Lists modules, gates and workflows that no doc describes yet. Report only, never fails."
+    },
+    "draft-to-test-fleet.yml": {
+      "group": "publish",
+      "what": "Promotes the latest draft to test for each of our three apps in one manual run."
+    },
+    "draft-to-test.yml": {
+      "group": "publish",
+      "what": "Promotes one app's draft build to the test channel (manual)."
+    },
+    "driver-maintenance.yml": {
+      "group": "enrich",
+      "what": "Weekly: scaffolds missing drivers, finds fingerprint conflicts and proposes a PR."
+    },
+    "e2e-dashboard-test.yml": {
+      "group": "ci",
+      "what": "End-to-end check of the diagnostics dashboard, triggered after the daily flow."
+    },
+    "fetch-diags.yml": {
+      "group": "diag",
+      "what": "Fetches diagnostic mails every six hours and stores the structured part."
+    },
+    "fleet-intelligent-enrich.yml": {
+      "group": "enrich",
+      "what": "Twice a day: enrichment across all driver classes within the free scraping budget."
+    },
+    "forum-pm-read.yml": {
+      "group": "forum",
+      "what": "Reads our forum private messages for fingerprints and diagnostic IDs. Never posts; artifact only."
+    },
+    "forum-poll.yml": {
+      "group": "forum",
+      "what": "Every four hours: scans the forum thread, PMs and screenshots for device data. Never posts."
+    },
+    "free-scrape-crossref.yml": {
+      "group": "enrich",
+      "what": "Nightly cross-reference through free, keyless readers (Jina, Microlink, Wayback). Never posts.",
+      "also_thanks": [
+        "Jina Reader, Microlink, AllOrigins and the Internet Archive for free read access"
+      ]
+    },
+    "gmail-diagnostics.yml": {
+      "group": "diag",
+      "what": "Analyses diagnostic mails four times a day; works with local rules, AI only within free quota."
+    },
+    "gmail-token-keepalive.yml": {
+      "group": "diag",
+      "what": "Daily check that the mail login still works; raises a redacted alert in our own repo if not."
+    },
+    "homey-app-cicd.yml.manual": {
+      "group": "ci",
+      "what": "Older full CI/CD pipeline kept as a disabled reference file."
+    },
+    "homey-app-validate.yml": {
+      "group": "ci",
+      "what": "Runs homey app validate at every level on code changes."
+    },
+    "housekeeping.yml": {
+      "group": "autopilot",
+      "what": "Weekly tidy of the repo root: only unreferenced files matching explicit rules."
+    },
+    "kb-refresh.yml": {
+      "group": "kb",
+      "what": "Weekly incremental refresh of the knowledge base from public device projects, delivered as one draft PR."
+    },
+    "knowledge-graph-sync.yml": {
+      "group": "kb",
+      "what": "Rebuilds the device knowledge graph; schedule off because the nightly audit does it."
+    },
+    "l99-inbox-intelligence.yml": {
+      "group": "diag",
+      "what": "Three times a day: mail, issues and forum (shadow) into one prioritised private report. Never posts, never invents a product ID."
+    },
+    "labeler.yml": {
+      "group": "autopilot",
+      "what": "Labels PRs by touched paths; never checks out PR code."
+    },
+    "market-couples-intake.yml": {
+      "group": "enrich",
+      "what": "Collects manufacturer/product pairs from every public source and our own diagnostics, with device-truth locks."
+    },
+    "mega-crawl.yml": {
+      "group": "enrich",
+      "what": "Runs every crawler in a row; schedule off since it produced nothing that was kept."
+    },
+    "monthly-community-sync.yml": {
+      "group": "enrich",
+      "what": "Manual sync of fingerprints from community projects; only adds data."
+    },
+    "monthly-device-enrichment.yml": {
+      "group": "enrich",
+      "what": "Manual device enrichment pass, now part of the daily pipeline."
+    },
+    "monthly-enrichment.yml": {
+      "group": "enrich",
+      "what": "Manual monthly pass over forum threads, PRs and drivers; only adds."
+    },
+    "monthly-scan.yml": {
+      "group": "enrich",
+      "what": "Monthly scan of Zigbee2MQTT for Tuya devices we do not cover yet."
+    },
+    "monthly-tuya-intelligence.yml": {
+      "group": "kb",
+      "what": "Monthly link audit of our references; schedule off until its commit step is fixed."
+    },
+    "nightly-audit.yml": {
+      "group": "ci",
+      "what": "Nightly full audit, data validator and knowledge-graph rebuild."
+    },
+    "node22-tests.yml": {
+      "group": "ci",
+      "what": "Runs the test suite on Node 22, the runtime Homey apps use since firmware 12.9."
+    },
+    "notifications.yml": {
+      "group": "autopilot",
+      "what": "Internal notifications on issue and PR events (no secrets in the output)."
+    },
+    "offline-crash-analyzer.yml": {
+      "group": "diag",
+      "what": "Offline heuristic crash analysis; schedule off since the orchestrator runs it."
+    },
+    "platform-budget.yml": {
+      "group": "ci",
+      "what": "Reports payload size, memory and Actions/API usage against the platform limits. Read-only."
+    },
+    "pr-gate.yml": {
+      "group": "ci",
+      "what": "Blocks PRs with bad versions, duplicate manufacturer/product pairs or broken manifests."
+    },
+    "project-resilience.yml": {
+      "group": "autopilot",
+      "what": "Daily inventory of features and past bugs, sorted by the biggest Homey gaps first."
+    },
+    "publish-diagnose.yml": {
+      "group": "publish",
+      "what": "Runs after each stable publish and explains what went wrong when it failed."
+    },
+    "publish-self-heal.yml": {
+      "group": "publish",
+      "what": "Every four hours: detects Athom processing failures and retries safely."
+    },
+    "publish-stable.yml": {
+      "group": "publish",
+      "what": "Publishes the stable app to the test channel when stable-v5 moves."
+    },
+    "publish.yml": {
+      "group": "publish",
+      "what": "Manual publish through Athom's official actions (no CLI login)."
+    },
+    "recurrent-orchestrator.yml": {
+      "group": "autopilot",
+      "what": "Daily pipeline that runs all analysers in order and writes one report."
+    },
+    "safe-sync-stable.yml": {
+      "group": "autopilot",
+      "what": "Daily careful sync of reliability fixes from master to stable-v5."
+    },
+    "self-improve.yml": {
+      "group": "autopilot",
+      "what": "Weekly self-review of scripts and data; no external calls."
+    },
+    "shadow-policy-check.yml": {
+      "group": "ci",
+      "what": "Checks that our scripts keep forum and upstream actions in shadow (read-only) mode."
+    },
+    "smart-pr-merge.yml": {
+      "group": "autopilot",
+      "what": "Merges PRs that pass every check; the AI review is optional and skipped without a free quota."
+    },
+    "smart-update.yml": {
+      "group": "autopilot",
+      "what": "Plans dependency and data updates; schedule off, manual only."
+    },
+    "stale.yml": {
+      "group": "autopilot",
+      "what": "Weekly marking of stale issues and PRs.",
+      "also_thanks": [
+        "the actions/stale maintainers"
+      ]
+    },
+    "syntax-check.yml": {
+      "group": "ci",
+      "what": "Syntax and SDK3 checks on every code push."
+    },
+    "temporal-monitor.yml": {
+      "group": "autopilot",
+      "what": "Matches new issues against known bug patterns; schedule off since the orchestrator runs it."
+    },
+    "tuya-deep-diag.yml": {
+      "group": "diag",
+      "what": "Manual deep recovery of one diagnostic report from every source we have."
+    },
+    "unified-ci.yml": {
+      "group": "ci",
+      "what": "Main CI pipeline on pushes and PRs (docs-only pushes skipped)."
+    },
+    "upstream-guard.yml": {
+      "group": "ci",
+      "what": "Reusable check that a workflow never writes to the upstream repository."
+    },
+    "validate.yml": {
+      "group": "ci",
+      "what": "Daily and per-PR homey app validation."
+    },
+    "verified-publish-and-diagnostics.yml": {
+      "group": "publish",
+      "what": "Manual verify, diagnose and publish-to-test for a chosen version."
+    },
+    "version-health.yml": {
+      "group": "publish",
+      "what": "Twice a week: reads build states from the Athom Apps API and flags versions with crashes or failed processing."
+    },
+    "weekly-sovereign-loop.yml": {
+      "group": "autopilot",
+      "what": "Weekly heavy pass on free GitHub minutes; later automation only reads its report."
+    }
+  }
+}

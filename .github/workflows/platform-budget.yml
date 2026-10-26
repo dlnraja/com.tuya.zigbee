@@ -1,3 +1,10 @@
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: Reports payload size, memory and Actions/API usage against the platform limits. Read-only.
+# Ideas from (thank you): GitHub Actions docs; rhysd (actionlint); the Athom homey CLI docs for the validate
+#   levels.
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
+#   posting stays off or ledger-gated.
+# <<< about
 # P3026: platform budget report (Athom payload, Homey memory, GitHub Actions/repo/API limits).
 # Read-only: builds and prepares the payload in RUNNER_TEMP, never uploads to Athom, never pushes.
 # Report mode (exit 0) until stable; then set "mode": "block" in config/platform-limits.json.

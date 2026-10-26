@@ -11,6 +11,7 @@
  */
 const fs = require('fs');
 const path = require('path');
+const RW = require('../lib/report-writer');
 const { spawnSync } = require('child_process');
 
 const ROOT = path.join(__dirname, '..', '..');
@@ -94,7 +95,7 @@ function render(d) {
   L.push('', '## Candidats de réponse (rien n\'est publié automatiquement)', '');
   const rc = (d.replies || {}).candidates || [];
   if (!rc.length) L.push('Aucun.');
-  for (const c of rc) L.push(`- [#${c.issue}](${c.url}) ${c.title} — commit ${c.commit}, CI ${c.ci}`);
+  for (const c of rc) L.push(`- ${RW.linkRef({ id: c.issue, url: c.url, author: c.author, about: c.about || RW.topicOf(c.title || '', 'fr') }, 'fr')} — commit ${c.commit}, CI ${c.ci}`); // P3069: no copied title
   L.push('', '## Journal', '', `${d.journalCount} ligne(s) sur 72 h dans \`data/progress/automation-journal.jsonl\`.`, '');
   return `${L.join('\n')}\n`;
 }

@@ -178,7 +178,7 @@ function readFromPrIssueScan() {
   for (const pr of (scan.prs || []).slice(0, 10)) {
     out.push(toEmailRecord({
       id: `pr-${pr.number}-${Date.now()}`,
-      subject: `[PR #${pr.number}] ${pr.title}`,
+      subject: `[PR #${pr.number}] ${pr.title}`, // ok-private-mail (P3069: private mail to the maintainer, not stored in the repo)
       from: `github/${pr.user || 'unknown'}`,
       date: pr.createdAt,
       body: pr.body || '',

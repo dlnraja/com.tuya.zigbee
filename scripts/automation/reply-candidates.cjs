@@ -17,6 +17,7 @@
  */
 const fs = require('fs');
 const path = require('path');
+const RW = require('../lib/report-writer');
 
 const ROOT = path.join(__dirname, '..', '..');
 const OUT = path.join(ROOT, 'data', 'progress', 'reply-candidates.json');
@@ -84,7 +85,8 @@ async function main() {
     const runs = ((await gh(`/repos/${REPO}/actions/runs?head_sha=${c.sha}&per_page=50`, { soft: true })) || {}).workflow_runs || [];
     const ci = ciState(runs);
     const v = evaluate({ issue, lastComment, ci, owner, days, recentlyListed: listed.includes(n) });
-    const row = { issue: n, title: String(issue.title || '').slice(0, 120), url: issue.html_url, commit: c.sha.slice(0, 10), commitAt: (c.commit.committer || {}).date, ci, lastAuthor: lastComment ? lastComment.user.login : issue.user.login, reason: v.reason };
+    // P3069: keep the reporter's handle and our topic words, not their title text.
+    const row = { issue: n, about: RW.topicOf(String(issue.title || ''), 'fr'), author: (issue.user || {}).login, url: issue.html_url, commit: c.sha.slice(0, 10), commitAt: (c.commit.committer || {}).date, ci, lastAuthor: lastComment ? lastComment.user.login : issue.user.login, reason: v.reason };
     (v.candidate ? candidates : skipped).push(row);
   }
   const out = { generated: new Date().toISOString(), note: 'P3048: candidates only. No workflow posts, comments or reacts. A human (or the Grok Bot anti-flood routine) decides.', limits: LIMITS, scanned: { commits: commits.length, issues: refs.size }, candidates, skipped: skipped.slice(0, 60) };
@@ -93,7 +95,7 @@ async function main() {
     fs.writeFileSync(OUT, `${JSON.stringify(out, null, 2)}\n`);
     journal.append({ workflow: 'reply-candidates', status: 'info', key: `reply-candidates:${candidates.map((x) => x.issue).join(',') || 'none'}`, summary: `${candidates.length} reply candidate(s) from ${commits.length} commits / ${refs.size} referenced issues (nothing posted)`, data: { issues: candidates.map((x) => x.issue) } });
   }
-  const md = `### Reply candidates (P3048, nothing posted)\n${candidates.map((x) => `- #${x.issue} ${x.title} (commit ${x.commit}, CI ${x.ci})`).join('\n') || '- none'}\n`;
+  const md = `### Reply candidates (P3048, nothing posted)\n${candidates.map((x) => `- ${RW.linkRef({ id: x.issue, url: x.url, author: x.author, about: x.about })} (commit ${x.commit}, CI ${x.ci})`).join('\n') || '- none'}\n`;
   if (process.env.GITHUB_STEP_SUMMARY) fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, md);
   console.log(md);
 }

@@ -1,3 +1,10 @@
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: Nightly full audit, data validator and knowledge-graph rebuild.
+# Ideas from (thank you): GitHub Actions docs; rhysd (actionlint); the Athom homey CLI docs for the validate
+#   levels.
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
+#   posting stays off or ledger-gated.
+# <<< about
 # 🌙 Nightly Audit
 # Triggers: cron: 45 3 * * * + workflow_dispatch | Secrets: GITHUB_TOKEN only
 # Doc header added 2026-07-29 (workflows genealogy enrichment).
