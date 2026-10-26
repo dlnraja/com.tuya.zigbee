@@ -348,7 +348,15 @@
     "local_unreachable_cloud_ok": "Dispositivo inacessível localmente, mas acessível pela nuvem: verifique a alimentação e a rede. Nova tentativa LAN em curso...",
     "local_key_recovered_link": "Chave local recuperada automaticamente pela ligação Smart Life. A religar...",
     "local_key_recovered": "Chave local recuperada automaticamente. A religar...",
-    "auto_recovery_failed": "A recuperação automática falhou. Verifique as credenciais da Cloud API ou emparelhe de novo."
+    "auto_recovery_failed": "A recuperação automática falhou. Verifique as credenciais da Cloud API ou emparelhe de novo.",
+    "creds_required": "ID do dispositivo e Local Key obrigatórios",
+    "lan_probe_creds": "Não é possível contactar o dispositivo com estas credenciais: __reason__. Verifique a local_key (muda a cada novo emparelhamento) e o IP. Protocolos 3.1–3.5 testados. Ainda pode adicioná-lo offline (continuará a tentar na LAN).",
+    "cloud_creds_settings": "Configure primeiro o Access ID e o Access Secret Tuya nas definições da app.",
+    "cloud_creds_required": "Access ID e Access Secret obrigatórios (ou guarde-os nas definições da app).",
+    "unsupported_mode": "Modo não suportado ou credenciais em falta.",
+    "lan_probe_failed": "Teste LAN falhou: __reason__. Verifique IP / local_key, ou marque \"adicionar mesmo assim\" para criar o dispositivo offline (continua a tentar na LAN).",
+    "nothing_to_update": "Nada para atualizar",
+    "device_id_required": "ID do dispositivo obrigatório"
   },
   "warnings": {
     "battery_low": "Bateria fraca — substituir em breve",

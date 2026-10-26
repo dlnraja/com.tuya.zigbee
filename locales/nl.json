@@ -348,7 +348,15 @@
     "local_unreachable_cloud_ok": "Apparaat lokaal onbereikbaar, wel via de cloud: controleer voeding/netwerk. Nieuwe LAN-poging bezig...",
     "local_key_recovered_link": "Lokale sleutel automatisch hersteld via de Smart Life-koppeling. Opnieuw verbinden...",
     "local_key_recovered": "Lokale sleutel automatisch hersteld. Opnieuw verbinden...",
-    "auto_recovery_failed": "Automatisch herstel mislukt. Controleer je Cloud API-gegevens of koppel opnieuw."
+    "auto_recovery_failed": "Automatisch herstel mislukt. Controleer je Cloud API-gegevens of koppel opnieuw.",
+    "creds_required": "Apparaat-ID en Local Key vereist",
+    "lan_probe_creds": "Apparaat niet bereikbaar met deze gegevens: __reason__. Controleer de local_key (die verandert bij elke nieuwe koppeling) en het IP. Protocollen 3.1–3.5 geprobeerd. U kunt het toch offline toevoegen (het blijft het op het LAN proberen).",
+    "cloud_creds_settings": "Stel eerst de Tuya Access ID en Access Secret in bij de app-instellingen.",
+    "cloud_creds_required": "Access ID en Access Secret vereist (of sla ze op in de app-instellingen).",
+    "unsupported_mode": "Niet-ondersteunde modus of ontbrekende gegevens.",
+    "lan_probe_failed": "LAN-test mislukt: __reason__. Controleer IP / local_key, of vink \"toch toevoegen\" aan om het apparaat offline aan te maken (het blijft het op het LAN proberen).",
+    "nothing_to_update": "Niets bij te werken",
+    "device_id_required": "Apparaat-ID vereist"
   },
   "warnings": {
     "battery_low": "Batterij bijna leeg — binnenkort vervangen",

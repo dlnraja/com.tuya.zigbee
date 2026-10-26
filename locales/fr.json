@@ -348,7 +348,15 @@
     "local_unreachable_cloud_ok": "Appareil injoignable en local, mais joignable via le cloud : vérifiez l'alimentation et le réseau. Nouvel essai LAN en cours...",
     "local_key_recovered_link": "Clé locale récupérée automatiquement via le lien Smart Life. Reconnexion...",
     "local_key_recovered": "Clé locale récupérée automatiquement. Reconnexion...",
-    "auto_recovery_failed": "Échec de la récupération automatique. Vérifiez vos identifiants Cloud API ou appairez à nouveau."
+    "auto_recovery_failed": "Échec de la récupération automatique. Vérifiez vos identifiants Cloud API ou appairez à nouveau.",
+    "creds_required": "ID de l’appareil et Local Key requis",
+    "lan_probe_creds": "Appareil injoignable avec ces identifiants : __reason__. Vérifiez la local_key (elle change à chaque réappairage) et l’IP. Protocoles 3.1–3.5 essayés. Vous pouvez quand même l’ajouter hors ligne (il réessaiera sur le réseau local).",
+    "cloud_creds_settings": "Configurez d’abord l’Access ID et l’Access Secret Tuya dans les réglages de l’app.",
+    "cloud_creds_required": "Access ID et Access Secret requis (ou enregistrez-les dans les réglages de l’app).",
+    "unsupported_mode": "Mode non pris en charge ou identifiants manquants.",
+    "lan_probe_failed": "Test réseau local échoué : __reason__. Vérifiez l’IP / la local_key, ou cochez « ajouter quand même » pour créer l’appareil hors ligne (il réessaie sur le réseau local).",
+    "nothing_to_update": "Rien à mettre à jour",
+    "device_id_required": "ID de l’appareil requis"
   },
   "warnings": {
     "battery_low": "Batterie faible — à remplacer bientôt",
