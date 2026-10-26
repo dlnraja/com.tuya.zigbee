@@ -72,7 +72,9 @@ permissions:
 
 concurrency:
   group: ci-self-check-${{ github.ref }}
-  cancel-in-progress: true
+  # P3069: a push run finishes and newer pushes wait as one queued run (no extra minutes); PRs still cancel.
+  # See docs/knowledge/CI_CONCURRENCY.md.
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   self-check:
