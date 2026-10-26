@@ -38,8 +38,9 @@ re-pair). New couples are not added in this batch (combo budget unchanged; maste
 | `_TZE284_6ycgarab` × TS0205 in smoke_sensor3 | dropped from smoke_sensor3 (double claim) | Z2M TS0601_smoke_co, ZHA quirks #4181 (TS0601), Tasmota `TZE284_6ycgarab.zb` (TS0601) | none; couple still in payload via smoke_sensor, baseline gate OK |
 | `_TZE200_7deq70b8` (2 casings each) × TS0601 in curtain_motor | moved to `switch_2gang` (wrong class; pinned sacred-keep) | Z2M tuya.ts TS0601_switch (same entry as _TZE200_nkjintbl), ZHA TuyaDoubleSwitchGP, blakadder ZY-US 2 | none (was never in the published payload under curtain_motor) |
 | `_TZE204_pxbjch8m` × TS0601 | added to `panel_switch_cover_tuya` with its own exact profile (DP1 cover state, DP7 relay; DP8 motor direction left untouched, no write at pairing) | Z2M tuya.ts TS0601_cover_with_1_switch_limited | new couple, nobody paired before |
+| `_TZE200_vawy74yh` (co_sensor) and `_TZE204/_TZE284_vawy74yh` (climate_sensor) × TS0601 | moved to `smoke_sensor` (profile `ssd01`: DP1 0 = smoke, DP15 battery; pinned sacred-keep); co_sensor cartesian combos × TS0601_co/TS0212 removed with 4 baseline exemptions (approvedBy dlnraja t561u/t555u delegated); fingerprint hints → smoke_sensor | Z2M moes.ts ZSS-HM-SSD01, ZHA tuya_smoke.py, blakadder Moes_ZSS-HM-SSD01, Hubitat Tuya Zigbee Smoke Detector | none to re-pair: co_sensor / climate_sensor map DP1 to `alarm_smoke` (added on first report) for this mfr instead of alarm_co / temperature |
 
 ## Credits
 DP layouts: Koen Kanters and the zigbee-herdsman-converters contributors (tuya.ts models
-TS0601_smoke_co, PA-44Z, GSKS-ZB, MG-DIM02Z, SWS6TZ-WHITE, TOQCB2-80; moes.ts ZM7LT3).
+TS0601_smoke_co, PA-44Z, GSKS-ZB, moes.ts ZSS-HM-SSD01, MG-DIM02Z, SWS6TZ-WHITE, TOQCB2-80; moes.ts ZM7LT3).
 Facts only, own implementation, no code copied.

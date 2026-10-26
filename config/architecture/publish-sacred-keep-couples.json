@@ -1897,6 +1897,24 @@
       "pid": "TS0601",
       "driverId": "switch_2gang",
       "note": "P3067-covers 2026-10-26: Z2M TS0601_switch (same entry as _TZE200_nkjintbl), ZHA TuyaDoubleSwitchGP, blakadder ZY-US 2 wall switch 2 gang. Was wrongly listed in curtain_motor (never published there)."
+    },
+    {
+      "mfr": "_TZE200_vawy74yh",
+      "pid": "TS0601",
+      "driverId": "smoke_sensor",
+      "note": "P3067 family 4: Moes ZSS-HM-SSD01 smoke detector (Z2M moes.ts, ZHA tuya_smoke.py, blakadder) moved from co_sensor/climate_sensor"
+    },
+    {
+      "mfr": "_TZE204_vawy74yh",
+      "pid": "TS0601",
+      "driverId": "smoke_sensor",
+      "note": "P3067 family 4: Moes ZSS-HM-SSD01 smoke detector (Z2M moes.ts, ZHA tuya_smoke.py, blakadder) moved from co_sensor/climate_sensor"
+    },
+    {
+      "mfr": "_TZE284_vawy74yh",
+      "pid": "TS0601",
+      "driverId": "smoke_sensor",
+      "note": "P3067 family 4: Moes ZSS-HM-SSD01 smoke detector (Z2M moes.ts, ZHA tuya_smoke.py, blakadder) moved from co_sensor/climate_sensor"
     }
   ]
 }

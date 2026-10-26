@@ -12,10 +12,13 @@ const LateCapability = require('../../lib/helpers/LateCapability');
 //     DP1 enum 0 = smoke alarm, DP15 battery %, DP18 enum 0 = carbon monoxide alarm.
 //   PA-44Z (_TZE284_qvzsq3s2): DP1 0 = smoke, DP15 battery %.
 //   GSKS-ZB (_TZE200_qcasmfan): DP1 0 = smoke, DP4 tamper, DP15 battery %.
+//   P3067: Moes ZSS-HM-SSD01 (_TZE200/_TZE204/_TZE284_vawy74yh; Z2M moes.ts, ZHA tuya_smoke.py,
+//     blakadder, Hubitat): DP1 0 = smoke (trueFalse0), DP15 battery %.
 // Receive-only: nothing is written to 0xEF00. alarm_co / alarm_tamper are added only after a real report.
 const TS0601_SMOKE = {
   _tze284_6ycgarab: 'smoke_co', _tze284_aoah6bv8: 'smoke_co', _tze2841000000_6ycgarab: 'smoke_co',
   _tze284_qvzsq3s2: 'pa44z', _tze200_qcasmfan: 'gsks',
+  _tze200_vawy74yh: 'ssd01', _tze204_vawy74yh: 'ssd01', _tze284_vawy74yh: 'ssd01',
 };
 
 function smokeProfileFor(mfr) {

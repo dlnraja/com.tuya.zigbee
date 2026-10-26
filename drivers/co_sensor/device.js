@@ -2,6 +2,15 @@
 
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 
+// P3067: _TZE200_vawy74yh is the Moes ZSS-HM-SSD01 smoke detector (Z2M moes.ts, ZHA tuya_smoke.py,
+// blakadder, Hubitat), not a CO sensor: DP1 0 = smoke, DP15 battery %. New pairings go to smoke_sensor;
+// devices already paired here keep working: DP1 drives alarm_smoke (added on first report) and never alarm_co.
+const SMOKE_ONLY_MFRS = new Set(['_tze200_vawy74yh', '_tze204_vawy74yh', '_tze284_vawy74yh']);
+const SMOKE_ONLY_DPS = {
+  1: { capability: 'alarm_smoke', transform: (v) => Number(v) === 0, dynamicAdd: true },
+  15: { capability: 'measure_battery', divisor: 1 },
+};
+
 /**
  * COSensorDevice - v8.0.0
  * Carbon Monoxide sensor implementation using UnifiedSensorBase.
@@ -15,7 +24,14 @@ class COSensorDevice extends UnifiedSensorBase {
   }
 
   /** @override */
+  _isSmokeOnly() {
+    let mfr = '';
+    try { mfr = this.getSetting?.('zb_manufacturer_name') || this.getData?.()?.manufacturerName || ''; } catch (_e) { /* soft */ }
+    return SMOKE_ONLY_MFRS.has(String(mfr).toLowerCase());
+  }
+
   get dpMappings() {
+    if (this._isSmokeOnly()) { return SMOKE_ONLY_DPS; }
     return {
       1: { capability: 'alarm_co', type: 'bool' },
       2: { capability: 'measure_co', divisor: 1 },
@@ -43,7 +59,12 @@ class COSensorDevice extends UnifiedSensorBase {
     const mapping = this.dpMappings[dpId];
     if (mapping && mapping.capability) {
       let finalValue = value;
-      if (mapping.smartDivisor === true) {
+      if (mapping.dynamicAdd && !this.hasCapability(mapping.capability)) {
+        this.addCapability(mapping.capability).catch(() => {});
+      }
+      if (typeof mapping.transform === 'function') {
+        finalValue = mapping.transform(value);
+      } else if (mapping.smartDivisor === true) {
         const { smartParse } = require('../../lib/managers/SmartDivisorManager');
         finalValue = smartParse(value, dpId, {
           manufacturerName: this.getSetting('zb_manufacturer_name') || '',
