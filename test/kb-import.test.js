@@ -17,4 +17,9 @@ describe('P-KB importer',()=>{
  it('kb-local returns [] when file missing',()=>{assert.deepStrictEqual(kbLocal.records('/nonexistent/x.json'),[]);});
  it('enrich candidates skip covered couples and split by source reliability',()=>{const kb={couples:{'_TZE200_aaaa1111|TS0601':[['zhc','X','u']],'_TZ3000_bbbbbbbb|TS011F':[['johan','d','v']],'_TZ3000_cccccccc|TS0001':[['zha','q','w']]}};
   const c=enr.candidates(kb,new Set(['_tz3000_cccccccc|ts0001']));assert.strictEqual(c.confirmed.length,1);assert.strictEqual(c.provisional.length,1);});
+ it('P3068 candidate verdicts promote/demote exact couples only, additive',()=>{const kb={couples:{'TUYATEC-aaaa|RH3052':[['johan','t',"u1"]],'TUYATEC-aaaa|TS0201':[['johan','t',"u2"]],'_TZ3000_bbbb|RH3001':[['johan','d',"u3"]],'_TZ3000_dddd|TS0001':[['zhc','m',"u4"]]}};
+  const plain=enr.candidates(kb,new Set());assert.strictEqual(plain.demoted,undefined);assert.strictEqual(plain.provisional.length,3);
+  const v={promoted:[{mfr:'tuyatec-AAAA',pid:'rh3052',source:'blakadder',url:'https://b/1',target:'temphumidsensor',status:'parked-budget'}],demoted:[{mfr:'_TZ3000_bbbb',pid:'RH3001',reason:'x',upstreamPids:['TS0203']},{mfr:'_TZ3000_dddd',pid:'TS0001',reason:'ignored: reliable ref wins'}]};
+  const c=enr.candidates(kb,new Set(),v);assert.deepStrictEqual(c.confirmed.map(e=>e.pid).sort(),['RH3052','TS0001']);assert.strictEqual(c.confirmed.find(e=>e.pid==='RH3052').refs[0],'https://b/1');
+  assert.deepStrictEqual(c.provisional.map(e=>e.pid),['TS0201']);assert.deepStrictEqual(c.demoted.map(e=>e.mfr+'|'+e.pid),['_TZ3000_bbbb|RH3001']);});
 });

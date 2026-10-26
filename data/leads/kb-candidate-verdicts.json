@@ -1,0 +1,448 @@
+{
+ "note": "Verdicts of the weekday 'promotion des pistes' review on provisional KB candidates (P3068). promoted = exact couple confirmed by one reliable source; placement waits for publish-budget headroom. demoted = the provisional pid comes from a per-driver mfr x pid cross-product in Johan's app and reliable upstream sources list this manufacturerName with a different pid; kept here, never deleted. Nothing in drivers/ changes.",
+ "promoted": [
+  {
+   "mfr": "TUYATEC-qun7vq14",
+   "pid": "RH3052",
+   "source": "blakadder",
+   "model": "Hihome WZB-STH temperature/humidity sensor",
+   "url": "https://github.com/blakadder/zigbee/blob/d96e8aaf72ecdad807d3930900d9c8433051d2b4/_zigbee/Hihome_WZB-STH.md",
+   "target": "temphumidsensor",
+   "status": "parked-budget",
+   "note": "mfr currently only on hybrid_fan_sensor with TS0601 (class doubt, not touched)",
+   "at": "2026-10-26"
+  }
+ ],
+ "demoted": [
+  {
+   "mfr": "_TYZB01_digziiav",
+   "pid": "ZG-305Z",
+   "johanDriver": "switch_2_gang",
+   "upstreamPids": [
+    "TS0003"
+   ],
+   "placedIn": "button_wireless_2",
+   "reason": "pid from Johan per-driver cross-product; upstream lists this mfr with TS0003 (already placed)",
+   "at": "2026-10-26"
+  },
+  {
+   "mfr": "_TYZB01_sqmd19i1",
+   "pid": "Q9MPFHW",
+   "johanDriver": "water_detector",
+   "upstreamPids": [
+    "TS0207"
+   ],
+   "placedIn": "water_leak_sensor",
+   "reason": "pid from Johan per-driver cross-product; upstream lists this mfr with TS0207 (already placed)",
+   "at": "2026-10-26"
+  },
+  {
+   "mfr": "_TZ3000_18ejxno0",
+   "pid": "TS0042",
+   "johanDriver": "wall_switch_2_gang",
+   "upstreamPids": [
+    "TS0012"
+   ],
+   "placedIn": "switch_2gang",
+   "reason": "pid from Johan per-driver cross-product; upstream lists this mfr with TS0012 (already placed)",
+   "at": "2026-10-26"
+  },
+  {
+   "mfr": "_TZ3000_1bwpjvlz",
+   "pid": "RH3001",
+   "johanDriver": "doorwindowsensor",
+   "upstreamPids": [
+    "TS0203"
+   ],
+   "placedIn": "contact_sensor",
+   "reason": "pid from Johan per-driver cross-product; upstream lists this mfr with TS0203 (already placed)",
+   "at": "2026-10-26"
+  },
+  {
+   "mfr": "_TZ3000_2mbfxlzr",
+   "pid": "RH3001",
+   "johanDriver": "doorwindowsensor",
+   "upstreamPids": [
+    "TS0203"
+   ],
+   "placedIn": "contact_sensor",
+   "reason": "pid from Johan per-driver cross-product; upstream lists this mfr with TS0203 (already placed)",
+   "at": "2026-10-26"
+  },
+  {
+   "mfr": "_TZ3000_4ugnzsli",
+   "pid": "RH3001",
+   "johanDriver": "doorwindowsensor",
+   "upstreamPids": [
+    "TS0203"
+   ],
+   "placedIn": "contact_sensor",
+   "reason": "pid from Johan per-driver cross-product; upstream lists this mfr with TS0203 (already placed)",
+   "at": "2026-10-26"
+  },
+  {
+   "mfr": "_TZ3000_6zvw8ham",
+   "pid": "RH3001",
+   "johanDriver": "doorwindowsensor",
+   "upstreamPids": [
+    "TS0203"
+   ],
+   "placedIn": "contact_sensor",
+   "reason": "pid from Johan per-driver cross-product; upstream lists this mfr with TS0203 (already placed)",
+   "at": "2026-10-26"
+  },
+  {
+   "mfr": "_TZ3000_7d8yme6f",
+   "pid": "RH3001",
+   "johanDriver": "doorwindowsensor",
+   "upstreamPids": [
+    "TS0203"
+   ],
+   "placedIn": "contact_sensor",
+   "reason": "pid from Johan per-driver cross-product; upstream lists this mfr with TS0203 (already placed)",
+   "at": "2026-10-26"
+  },
+  {
+   "mfr": "_TZ3000_7tbsruql",
+   "pid": "RH3001",
+   "johanDriver": "doorwindowsensor_2",
+   "upstreamPids": [
+    "TS0203"
+   ],
+   "placedIn": "contact_sensor",
+   "reason": "pid from Johan per-driver cross-product; upstream lists this mfr with TS0203 (already placed)",
+   "at": "2026-10-26"
+  },
+  {
+   "mfr": "_TZ3000_85czd6fy",
+   "pid": "Q9MPFHW",
+   "johanDriver": "water_detector",
+   "upstreamPids": [
+    "TS0207"
+   ],
+   "placedIn": "water_leak_sensor",
+   "reason": "pid from Johan per-driver cross-product; upstream lists this mfr with TS0207 (already placed)",
+   "at": "2026-10-26"
+  },
+  {
+   "mfr": "_TZ3000_996rpfy6",
+   "pid": "RH3001",
+   "johanDriver": "doorwindowsensor",
+   "upstreamPids": [
+    "TS0203"
+   ],
+   "placedIn": "contact_sensor",
+   "reason": "pid from Johan per-driver cross-product; upstream lists this mfr with TS0203 (already placed)",
+   "at": "2026-10-26"
+  },
+  {
+   "mfr": "_TZ3000_au1rjicn",
+   "pid": "RH3001",
+   "johanDriver": "doorwindowsensor",
+   "upstreamPids": [
+    "TS0203"
+   ],
+   "placedIn": "contact_sensor",
+   "reason": "pid from Johan per-driver cross-product; upstream lists this mfr with TS0203 (already placed)",
+   "at": "2026-10-26"
+  },
+  {
+   "mfr": "_TZ3000_awvmkayh",
+   "pid": "Q9MPFHW",
+   "johanDriver": "water_detector",
+   "upstreamPids": [
+    "TS0207"
+   ],
+   "placedIn": "water_leak_sensor",
+   "reason": "pid from Johan per-driver cross-product; upstream lists this mfr with TS0207 (already placed)",
+   "at": "2026-10-26"
+  },
+  {
+   "mfr": "_TZ3000_bgsigers",
+   "pid": "RH3052",
+   "johanDriver": "temphumidsensor",
+   "upstreamPids": [
+    "TS0201"
+   ],
+   "placedIn": "lcdtemphumidsensor",
+   "reason": "pid from Johan per-driver cross-product; upstream lists this mfr with TS0201 (already placed)",
+   "at": "2026-10-26"
+  },
+  {
+   "mfr": "_TZ3000_bzxlofth",
+   "pid": "RH3001",
+   "johanDriver": "doorwindowsensor",
+   "upstreamPids": [
+    "TS0203"
+   ],
+   "placedIn": "contact_sensor",
+   "reason": "pid from Johan per-driver cross-product; upstream lists this mfr with TS0203 (already placed)",
+   "at": "2026-10-26"
+  },
+  {
+   "mfr": "_TZ3000_dbou1ap4",
+   "pid": "ZB-CL01",
+   "johanDriver": "rgb_bulb_E27",
+   "upstreamPids": [
+    "TS0505A"
+   ],
+   "placedIn": "light_bulb_rgb_rgbw",
+   "reason": "pid from Johan per-driver cross-product; upstream lists this mfr with TS0505A (already placed)",
+   "at": "2026-10-26"
+  },
+  {
+   "mfr": "_TZ3000_decxrtwa",
+   "pid": "RH3001",
+   "johanDriver": "doorwindowsensor",
+   "upstreamPids": [
+    "TS0203"
+   ],
+   "placedIn": "contact_sensor",
+   "reason": "pid from Johan per-driver cross-product; upstream lists this mfr with TS0203 (already placed)",
+   "at": "2026-10-26"
+  },
+  {
+   "mfr": "_TZ3000_k4ej3ww2",
+   "pid": "Q9MPFHW",
+   "johanDriver": "water_detector",
+   "upstreamPids": [
+    "TS0207"
+   ],
+   "placedIn": "water_leak_sensor",
+   "reason": "pid from Johan per-driver cross-product; upstream lists this mfr with TS0207 (already placed)",
+   "at": "2026-10-26"
+  },
+  {
+   "mfr": "_TZ3000_llfaquvp",
+   "pid": "ZG-305Z",
+   "johanDriver": "switch_2_gang",
+   "upstreamPids": [
+    "TS0012"
+   ],
+   "placedIn": "button_wireless_2",
+   "reason": "pid from Johan per-driver cross-product; upstream lists this mfr with TS0012 (already placed)",
+   "at": "2026-10-26"
+  },
+  {
+   "mfr": "_TZ3000_n2egfsli",
+   "pid": "RH3001",
+   "johanDriver": "doorwindowsensor",
+   "upstreamPids": [
+    "SNZB-04",
+    "TS0203"
+   ],
+   "placedIn": "contact_sensor",
+   "reason": "pid from Johan per-driver cross-product; upstream lists this mfr with SNZB-04/TS0203 (already placed)",
+   "at": "2026-10-26"
+  },
+  {
+   "mfr": "_TZ3000_ocjlo4ea",
+   "pid": "Q9MPFHW",
+   "johanDriver": "water_detector",
+   "upstreamPids": [
+    "TS0207"
+   ],
+   "placedIn": "water_leak_sensor",
+   "reason": "pid from Johan per-driver cross-product; upstream lists this mfr with TS0207 (already placed)",
+   "at": "2026-10-26"
+  },
+  {
+   "mfr": "_TZ3000_oxslv1c9",
+   "pid": "RH3001",
+   "johanDriver": "doorwindowsensor",
+   "upstreamPids": [
+    "TS0203"
+   ],
+   "placedIn": "contact_sensor",
+   "reason": "pid from Johan per-driver cross-product; upstream lists this mfr with TS0203 (already placed)",
+   "at": "2026-10-26"
+  },
+  {
+   "mfr": "_TZ3000_pmz6mjyu",
+   "pid": "ZG-305Z",
+   "johanDriver": "switch_2_gang",
+   "upstreamPids": [
+    "TS011F"
+   ],
+   "placedIn": "button_wireless_2",
+   "reason": "pid from Johan per-driver cross-product; upstream lists this mfr with TS011F (already placed)",
+   "at": "2026-10-26"
+  },
+  {
+   "mfr": "_TZ3000_qaa59zqd",
+   "pid": "ZG-305Z",
+   "johanDriver": "switch_2_gang",
+   "upstreamPids": [
+    "TS0002"
+   ],
+   "placedIn": "button_wireless_2",
+   "reason": "pid from Johan per-driver cross-product; upstream lists this mfr with TS0002 (already placed)",
+   "at": "2026-10-26"
+  },
+  {
+   "mfr": "_TZ3000_qeuvnohg",
+   "pid": "TS0121",
+   "johanDriver": "smartPlug_DinRail",
+   "upstreamPids": [
+    "TS011F"
+   ],
+   "placedIn": "din_rail_switch",
+   "reason": "pid from Johan per-driver cross-product; upstream lists this mfr with TS011F (already placed)",
+   "at": "2026-10-26"
+  },
+  {
+   "mfr": "_TZ3000_qeuvnohg",
+   "pid": "TSO121",
+   "johanDriver": "smartPlug_DinRail",
+   "upstreamPids": [
+    "TS011F"
+   ],
+   "placedIn": "din_rail_switch",
+   "reason": "pid from Johan per-driver cross-product; upstream lists this mfr with TS011F (already placed)",
+   "at": "2026-10-26"
+  },
+  {
+   "mfr": "_TZ3000_qewo8dlz",
+   "pid": "TS0043",
+   "johanDriver": "wall_switch_3_gang",
+   "upstreamPids": [
+    "TS0013"
+   ],
+   "placedIn": "switch_3_gang",
+   "reason": "pid from Johan per-driver cross-product; upstream lists this mfr with TS0013 (already placed)",
+   "at": "2026-10-26"
+  },
+  {
+   "mfr": "_TZ3000_rdfh8cfs",
+   "pid": "TS0121",
+   "johanDriver": "smartplug",
+   "upstreamPids": [
+    "TS011F"
+   ],
+   "placedIn": "switch_1gang",
+   "reason": "pid from Johan per-driver cross-product; upstream lists this mfr with TS011F (already placed)",
+   "at": "2026-10-26"
+  },
+  {
+   "mfr": "_TZ3000_rdfh8cfs",
+   "pid": "TSO121",
+   "johanDriver": "smartplug",
+   "upstreamPids": [
+    "TS011F"
+   ],
+   "placedIn": "switch_1gang",
+   "reason": "pid from Johan per-driver cross-product; upstream lists this mfr with TS011F (already placed)",
+   "at": "2026-10-26"
+  },
+  {
+   "mfr": "_TZ3000_rgchmad8",
+   "pid": "RH3001",
+   "johanDriver": "doorwindowsensor",
+   "upstreamPids": [
+    "TS0203"
+   ],
+   "placedIn": "contact_sensor",
+   "reason": "pid from Johan per-driver cross-product; upstream lists this mfr with TS0203 (already placed)",
+   "at": "2026-10-26"
+  },
+  {
+   "mfr": "_TZ3000_t6jriawg",
+   "pid": "Q9MPFHW",
+   "johanDriver": "water_detector",
+   "upstreamPids": [
+    "TS0207"
+   ],
+   "placedIn": "water_leak_sensor",
+   "reason": "pid from Johan per-driver cross-product; upstream lists this mfr with TS0207 (already placed)",
+   "at": "2026-10-26"
+  },
+  {
+   "mfr": "_TZ3000_v7chgqso",
+   "pid": "RH3001",
+   "johanDriver": "doorwindowsensor",
+   "upstreamPids": [
+    "TS0203"
+   ],
+   "placedIn": "contact_sensor",
+   "reason": "pid from Johan per-driver cross-product; upstream lists this mfr with TS0203 (already placed)",
+   "at": "2026-10-26"
+  },
+  {
+   "mfr": "_TZ3000_wuep9zng",
+   "pid": "RH3001",
+   "johanDriver": "flood_sensor",
+   "upstreamPids": [
+    "TS0207"
+   ],
+   "placedIn": "water_leak_sensor",
+   "reason": "pid from Johan per-driver cross-product; upstream lists this mfr with TS0207 (already placed)",
+   "at": "2026-10-26"
+  },
+  {
+   "mfr": "_TZ3000_ww9i3e0y",
+   "pid": "RH3001",
+   "johanDriver": "flood_sensor",
+   "upstreamPids": [
+    "TS0207"
+   ],
+   "placedIn": "water_leak_sensor",
+   "reason": "pid from Johan per-driver cross-product; upstream lists this mfr with TS0207 (already placed)",
+   "at": "2026-10-26"
+  },
+  {
+   "mfr": "_TZ3000_yxqnffam",
+   "pid": "RH3001",
+   "johanDriver": "doorwindowsensor",
+   "upstreamPids": [
+    "TS0203"
+   ],
+   "placedIn": "contact_sensor",
+   "reason": "pid from Johan per-driver cross-product; upstream lists this mfr with TS0203 (already placed)",
+   "at": "2026-10-26"
+  },
+  {
+   "mfr": "_TZ3210_4ubylghk",
+   "pid": "TS1101",
+   "johanDriver": "dimmer_2_gang",
+   "upstreamPids": [
+    "TS110E"
+   ],
+   "placedIn": "rgb_led_strip",
+   "reason": "pid from Johan per-driver cross-product; upstream lists this mfr with TS110E (already placed)",
+   "at": "2026-10-26"
+  },
+  {
+   "mfr": "_TZ3210_4ubylghk",
+   "pid": "TS110F",
+   "johanDriver": "dimmer_2_gang",
+   "upstreamPids": [
+    "TS110E"
+   ],
+   "placedIn": "rgb_led_strip",
+   "reason": "pid from Johan per-driver cross-product; upstream lists this mfr with TS110E (already placed)",
+   "at": "2026-10-26"
+  },
+  {
+   "mfr": "_TZ3210_5ct6e7ye",
+   "pid": "TSO121",
+   "johanDriver": "smartplug",
+   "upstreamPids": [
+    "TS011F"
+   ],
+   "placedIn": "plug_smart",
+   "reason": "pid from Johan per-driver cross-product; upstream lists this mfr with TS011F (already placed)",
+   "at": "2026-10-26"
+  },
+  {
+   "mfr": "_TZ3210_iystcadi",
+   "pid": "TS0505A",
+   "johanDriver": "rgb_led_light_bar",
+   "upstreamPids": [
+    "TS0505B"
+   ],
+   "placedIn": "light_bulb_rgb_led",
+   "reason": "pid from Johan per-driver cross-product; upstream lists this mfr with TS0505B (already placed)",
+   "at": "2026-10-26"
+  }
+ ]
+}
