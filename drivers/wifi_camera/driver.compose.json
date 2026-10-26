@@ -64,14 +64,16 @@
     {
       "type": "group",
       "label": {
-        "en": "Tuya Local"
+        "en": "Tuya Local",
+        "fr": "Tuya local"
       },
       "children": [
         {
           "id": "device_id",
           "type": "text",
           "label": {
-            "en": "Device ID"
+            "en": "Device ID",
+            "fr": "ID de l'appareil"
           },
           "value": ""
         },
@@ -79,7 +81,8 @@
           "id": "local_key",
           "type": "text",
           "label": {
-            "en": "Local Key"
+            "en": "Local Key",
+            "fr": "Clé locale"
           },
           "value": ""
         },
@@ -87,7 +90,8 @@
           "id": "ip",
           "type": "text",
           "label": {
-            "en": "IP Address"
+            "en": "IP Address",
+            "fr": "Adresse IP"
           },
           "value": ""
         },
@@ -95,7 +99,8 @@
           "id": "protocol_version",
           "type": "dropdown",
           "label": {
-            "en": "Protocol"
+            "en": "Protocol",
+            "fr": "Protocole"
           },
           "value": "3.4",
           "values": [
@@ -130,14 +135,16 @@
     {
       "type": "group",
       "label": {
-        "en": "Camera Stream"
+        "en": "Camera Stream",
+        "fr": "Flux de la caméra"
       },
       "children": [
         {
           "id": "stream_method",
           "type": "dropdown",
           "label": {
-            "en": "Stream Method"
+            "en": "Stream Method",
+            "fr": "Méthode de flux"
           },
           "value": "cloud_rtsp",
           "values": [
@@ -165,7 +172,8 @@
           "id": "rtsp_url",
           "type": "text",
           "label": {
-            "en": "RTSP URL (LAN mode)"
+            "en": "RTSP URL (LAN mode)",
+            "fr": "URL RTSP (mode LAN)"
           },
           "value": "",
           "hint": {
@@ -176,7 +184,8 @@
           "id": "night_vision",
           "type": "dropdown",
           "label": {
-            "en": "Night Vision"
+            "en": "Night Vision",
+            "fr": "Vision nocturne"
           },
           "value": "0",
           "values": [
@@ -204,7 +213,8 @@
           "id": "motion_sensitivity",
           "type": "dropdown",
           "label": {
-            "en": "Motion Sensitivity"
+            "en": "Motion Sensitivity",
+            "fr": "Sensibilité au mouvement"
           },
           "value": "1",
           "values": [
@@ -232,7 +242,8 @@
           "id": "motion_detection",
           "type": "checkbox",
           "label": {
-            "en": "Motion Detection"
+            "en": "Motion Detection",
+            "fr": "Détection de mouvement"
           },
           "value": true
         }
@@ -241,14 +252,16 @@
     {
       "type": "group",
       "label": {
-        "en": "Tuya Cloud (for RTSP)"
+        "en": "Tuya Cloud (for RTSP)",
+        "fr": "Tuya Cloud (pour RTSP)"
       },
       "children": [
         {
           "id": "tuya_access_id",
           "type": "text",
           "label": {
-            "en": "Access ID"
+            "en": "Access ID",
+            "fr": "ID d'accès"
           },
           "value": ""
         },
@@ -256,7 +269,8 @@
           "id": "tuya_access_key",
           "type": "password",
           "label": {
-            "en": "Access Secret"
+            "en": "Access Secret",
+            "fr": "Secret d'accès"
           },
           "value": ""
         },
@@ -264,7 +278,8 @@
           "id": "tuya_region",
           "type": "dropdown",
           "label": {
-            "en": "Region"
+            "en": "Region",
+            "fr": "Région"
           },
           "value": "eu",
           "values": [

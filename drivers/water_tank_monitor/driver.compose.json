@@ -247,7 +247,8 @@
           "id": "device_model_id",
           "type": "label",
           "label": {
-            "en": "Zigbee Model"
+            "en": "Zigbee Model",
+            "fr": "Modèle Zigbee"
           },
           "value": ""
         },
@@ -255,7 +256,8 @@
           "id": "device_manufacturer",
           "type": "label",
           "label": {
-            "en": "Manufacturer"
+            "en": "Manufacturer",
+            "fr": "Fabricant"
           },
           "value": ""
         }

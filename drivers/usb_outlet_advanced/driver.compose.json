@@ -417,6 +417,7 @@
       "type": "group",
       "label": {
         "en": "Energy Monitoring Calibration",
+        "fr": "Étalonnage de la mesure d'énergie",
         "nl": "Energie Meetwaarde Kalibratie"
       },
       "children": [
@@ -425,6 +426,7 @@
           "type": "dropdown",
           "label": {
             "en": "Voltage scaling",
+            "fr": "Mise à l'échelle de la tension",
             "nl": "Voltage schaling"
           },
           "hint": {
@@ -468,6 +470,7 @@
           "type": "dropdown",
           "label": {
             "en": "Current scaling",
+            "fr": "Mise à l'échelle du courant",
             "nl": "Stroom schaling"
           },
           "hint": {
@@ -511,6 +514,7 @@
           "type": "dropdown",
           "label": {
             "en": "Power scaling",
+            "fr": "Mise à l'échelle de la puissance",
             "nl": "Vermogen schaling"
           },
           "hint": {
@@ -549,6 +553,7 @@
       "type": "number",
       "label": {
         "en": "Power alert threshold",
+        "fr": "Seuil d'alerte de puissance",
         "nl": "Vermogen waarschuwing drempel"
       },
       "hint": {
@@ -566,6 +571,7 @@
       "type": "number",
       "label": {
         "en": "Standby detection threshold",
+        "fr": "Seuil de détection de veille",
         "nl": "Standby detectie drempel"
       },
       "hint": {

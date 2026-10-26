@@ -3,6 +3,7 @@
     "type": "group",
     "label": {
       "en": "💡 LED Indicator (Backlight)",
+      "fr": "💡 Voyant LED (rétroéclairage)",
       "nl": "💡 LED-indicator (Achtergrondverlichting)"
     },
     "children": [
@@ -11,6 +12,7 @@
         "type": "dropdown",
         "label": {
           "en": "LED Indicator Mode",
+          "fr": "Mode du voyant LED",
           "nl": "LED-indicator Modus"
         },
         "hint": {
