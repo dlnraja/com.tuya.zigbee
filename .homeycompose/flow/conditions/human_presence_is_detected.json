@@ -1,0 +1,28 @@
+{
+  "id": "human_presence_is_detected",
+  "title": {
+    "en": "Human presence !{{is|is not}} detected",
+    "fr": "Présence humaine !{{détectée|non détectée}}",
+    "nl": "Menselijke aanwezigheid !{{is|is niet}} gedetecteerd",
+    "de": "Personenanwesenheit !{{erkannt|nicht erkannt}}"
+  },
+  "titleFormatted": {
+    "en": "Presence !{{is|is not}} detected by [[device]]",
+    "fr": "Présence !{{détectée|non détectée}} par [[device]]",
+    "nl": "Aanwezigheid !{{is|is niet}} gedetecteerd door [[device]]",
+    "de": "Anwesenheit !{{wird|wird nicht}} von [[device]] erkannt"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=alarm_human",
+      "title": {
+        "en": "Device",
+        "fr": "Appareil",
+        "nl": "Apparaat",
+        "de": "Gerät"
+      }
+    }
+  ]
+}

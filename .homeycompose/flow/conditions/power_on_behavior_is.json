@@ -1,0 +1,67 @@
+{
+  "id": "power_on_behavior_is",
+  "title": {
+    "en": "Power-on behavior !{{is|is not}}",
+    "fr": "Comportement à la mise sous tension !{{est|n'est pas}}",
+    "nl": "Gedrag na stroomuitval !{{is|is niet}}",
+    "de": "Einschaltverhalten !{{ist|ist nicht}}"
+  },
+  "titleFormatted": {
+    "en": "Power-on behavior of [[device]] !{{is|is not}} [[behavior]]",
+    "fr": "Le comportement à la mise sous tension de [[device]] !{{est|n'est pas}} [[behavior]]",
+    "nl": "Gedrag bij inschakelen van [[device]] !{{is|is niet}} [[behavior]]",
+    "de": "Einschaltverhalten von [[device]] !{{ist|ist nicht}} [[behavior]]"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=power_on_behavior",
+      "title": {
+        "en": "Device",
+        "fr": "Appareil",
+        "nl": "Apparaat",
+        "de": "Gerät"
+      }
+    },
+    {
+      "type": "dropdown",
+      "name": "behavior",
+      "title": {
+        "en": "Behavior",
+        "fr": "Comportement",
+        "nl": "Gedrag",
+        "de": "Verhalten"
+      },
+      "values": [
+        {
+          "id": "off",
+          "label": {
+            "en": "off",
+            "fr": "éteint",
+            "nl": "uit",
+            "de": "aus"
+          }
+        },
+        {
+          "id": "on",
+          "label": {
+            "en": "on",
+            "fr": "allumé",
+            "nl": "aan",
+            "de": "an"
+          }
+        },
+        {
+          "id": "previous",
+          "label": {
+            "en": "previous state",
+            "fr": "état précédent",
+            "nl": "vorige stand",
+            "de": "vorheriger Zustand"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "id": "frost_protection_set",
+  "title": {
+    "en": "Set frost protection",
+    "fr": "Régler la protection antigel",
+    "nl": "Vorstbeveiliging instellen",
+    "de": "Frostschutz einstellen"
+  },
+  "titleFormatted": {
+    "en": "Turn frost protection of [[device]] [[state]]",
+    "fr": "Hors-gel de [[device]] : [[state]]",
+    "nl": "Zet vorstbeveiliging van [[device]] [[state]]",
+    "de": "Frostschutz von [[device]] [[state]] schalten"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=frost_protection",
+      "title": {
+        "en": "Device",
+        "fr": "Appareil",
+        "nl": "Apparaat",
+        "de": "Gerät"
+      }
+    },
+    {
+      "type": "dropdown",
+      "name": "state",
+      "title": {
+        "en": "State",
+        "fr": "État",
+        "nl": "Status",
+        "de": "Zustand"
+      },
+      "values": [
+        {
+          "id": "on",
+          "label": {
+            "en": "on",
+            "fr": "activée",
+            "nl": "aan",
+            "de": "an"
+          }
+        },
+        {
+          "id": "off",
+          "label": {
+            "en": "off",
+            "fr": "désactivée",
+            "nl": "uit",
+            "de": "aus"
+          }
+        }
+      ]
+    }
+  ]
+}

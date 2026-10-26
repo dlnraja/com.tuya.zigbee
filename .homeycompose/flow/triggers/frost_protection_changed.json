@@ -1,0 +1,80 @@
+{
+  "id": "frost_protection_changed",
+  "title": {
+    "en": "Frost protection changed",
+    "fr": "Protection antigel modifiée",
+    "nl": "Vorstbeveiliging gewijzigd",
+    "de": "Frostschutz geändert"
+  },
+  "titleFormatted": {
+    "en": "Frost protection of [[device]] turned [[state]]",
+    "fr": "Hors-gel de [[device]] passé à [[state]]",
+    "nl": "Vorstbeveiliging van [[device]] ging [[state]]",
+    "de": "Frostschutz von [[device]] wurde [[state]]"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=frost_protection",
+      "title": {
+        "en": "Device",
+        "fr": "Appareil",
+        "nl": "Apparaat",
+        "de": "Gerät"
+      }
+    },
+    {
+      "type": "dropdown",
+      "name": "state",
+      "title": {
+        "en": "State",
+        "fr": "État",
+        "nl": "Status",
+        "de": "Zustand"
+      },
+      "values": [
+        {
+          "id": "on",
+          "label": {
+            "en": "on",
+            "fr": "activée",
+            "nl": "aan",
+            "de": "an"
+          }
+        },
+        {
+          "id": "off",
+          "label": {
+            "en": "off",
+            "fr": "désactivée",
+            "nl": "uit",
+            "de": "aus"
+          }
+        },
+        {
+          "id": "any",
+          "label": {
+            "en": "on or off",
+            "fr": "activée ou désactivée",
+            "nl": "aan of uit",
+            "de": "an oder aus"
+          }
+        }
+      ]
+    }
+  ],
+  "tokens": [
+    {
+      "name": "state",
+      "type": "string",
+      "title": {
+        "en": "State",
+        "fr": "État",
+        "nl": "Status",
+        "de": "Zustand"
+      },
+      "example": "on"
+    }
+  ]
+}
