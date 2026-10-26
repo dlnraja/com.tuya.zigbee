@@ -170,6 +170,7 @@ function projectUploadManifestBytes(file) {
       require('../maintenance/sanitize-manifest.cjs').sanitizeManifestFile(tmp);
       require('../maintenance/compact-zigbee-identifiers.cjs').compactManifestFile(tmp);
       require('../maintenance/strip-redundant-title-formatted.cjs').stripFile(tmp);
+      require('../maintenance/compact-shared-text.cjs').compactFile(tmp); // P3068: as prepare-publish
     } finally {
       console.log = quiet;
     }
@@ -180,6 +181,20 @@ function projectUploadManifestBytes(file) {
   } finally {
     try { fs.unlinkSync(tmp); } catch { /* ignore */ }
   }
+}
+
+// P3068: upload headroom ratchet. Headroom = 4 MB limit - projected upload app.json. floorKB is a hard gate
+// that may only be raised (test/critical/p3068-upload-headroom.test.js); targetKB (300) is the goal, warn below it.
+function headroomPolicy() {
+  try { return JSON.parse(fs.readFileSync(path.join(ROOT, '.github', 'upload-headroom.json'), 'utf8')); } catch { return null; }
+}
+function checkUploadHeadroom(projectedBytes) {
+  const pol = headroomPolicy();
+  if (!pol || !Number.isFinite(projectedBytes)) { return; }
+  const headKB = ((LIMITS.appJsonMB * 1024 * 1024) - projectedBytes) / 1024;
+  const msg = `Upload app.json headroom ${headKB.toFixed(0)} KB (floor ${pol.floorKB} KB, target ${pol.targetKB} KB)`;
+  if (headKB < pol.floorKB) { errors.push(`${msg} — below floor: shrink text (shared hints, duplicated locales, flow hints) before adding more`); } else if (headKB < pol.targetKB) { warnings.push(msg); }
+  addCheck('Upload headroom (KB)', Math.round(headKB * 1024), pol.floorKB / 1024, headKB < pol.floorKB ? 'fail' : 'pass', msg);
 }
 
 function checkBuildAppJson(file, label = 'Build app.json', kind = 'raw homey build') {
@@ -206,6 +221,7 @@ function checkBuildAppJson(file, label = 'Build app.json', kind = 'raw homey bui
   }
   addCheck(`${label} (${kind}, not uploaded)`, rawBytes, LIMITS.appJsonMB, 'warn', `${path.relative(ROOT, file)} compact; not prepared yet`);
   addCheck('Projected upload app.json', projected, LIMITS.appJsonMB, 'pass', 'sanitize + Zigbee compact + titleFormatted strip, as prepare-publish');
+  checkUploadHeadroom(projected);
   warnings.push(`${label} is the ${kind} (${fmtMB(rawBytes)} MB); the upload manifest projects to ${fmtMB(projected)} MB. Run npm run prepare-publish to sync it.`);
 }
 
