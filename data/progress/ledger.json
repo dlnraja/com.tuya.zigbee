@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-25T22:20:52.138Z",
+ "updated": "2026-10-26T01:58:47.593Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -33,6 +33,24 @@
    "date": "2026-10-25",
    "note": "closed by P3040b",
    "by": "grok-bot"
+  },
+  "L-P3056-01": {
+   "status": "done",
+   "date": "2026-10-25",
+   "by": "grok-bot",
+   "note": "wip Node22 golden lost=7 (owner-approved P3055 removals) — snapshot regenerated b2a0b5a174; attempts 1/3"
+  },
+  "L-P3056-02": {
+   "status": "done",
+   "date": "2026-10-25",
+   "by": "grok-bot",
+   "note": "stable CI self-check lint ratchet curtain_module 4→5 (use strict below require, port 46244745b7) — fixed + p3056-use-strict-first guard test; attempts 1/3"
+  },
+  "L-P3056-03": {
+   "status": "done",
+   "date": "2026-10-25",
+   "by": "grok-bot",
+   "note": "P2607 [skip ci] promote put P3038c pins on master (16216) and stable (15834) > 15500 combos — reverted 527743efb8/6f5dad36b7, guardPublishBudget added to the promote; pins stay on bastien-home for the planned P3038c step; attempts 1/3"
   },
   "P3037": {
    "status": "done",
@@ -7266,6 +7284,15 @@
    "kind": "general",
    "mailDate": "2026-10-19T21:24:24.000Z"
   },
+  "diag:3b43069e903867d6": {
+   "status": "done",
+   "date": "2026-10-26",
+   "hash": "fe1b47d0eb16de8c",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-25T22:17:12.000Z"
+  },
   "diag:3b63383282eed7d4": {
    "status": "done",
    "date": "2026-10-25",
@@ -9456,6 +9483,15 @@
    "kind": "general",
    "mailDate": "2026-10-19T07:36:31.000Z"
   },
+  "diag:b3e4c72a1f4455e1": {
+   "status": "done",
+   "date": "2026-10-26",
+   "hash": "55d847e074aa98fc",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-25T22:17:11.000Z"
+  },
   "diag:b433b47c1e8a8a1b": {
    "status": "done",
    "date": "2026-10-25",
@@ -10533,6 +10569,15 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-10-21T10:40:27.000Z"
+  },
+  "diag:eb50d5868ff4fe0a": {
+   "status": "done",
+   "date": "2026-10-26",
+   "hash": "9459d6726025d46e",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-25T22:16:57.000Z"
   },
   "diag:ec1aabde1c41833c": {
    "status": "done",
@@ -41686,24 +41731,6 @@
     "leadsAdded": 0
    },
    "lastChangeRun": "40190947487"
-  },
-  "L-P3056-01": {
-   "status": "done",
-   "date": "2026-10-25",
-   "by": "grok-bot",
-   "note": "wip Node22 golden lost=7 (owner-approved P3055 removals) — snapshot regenerated b2a0b5a174; attempts 1/3"
-  },
-  "L-P3056-02": {
-   "status": "done",
-   "date": "2026-10-25",
-   "by": "grok-bot",
-   "note": "stable CI self-check lint ratchet curtain_module 4→5 (use strict below require, port 46244745b7) — fixed + p3056-use-strict-first guard test; attempts 1/3"
-  },
-  "L-P3056-03": {
-   "status": "done",
-   "date": "2026-10-25",
-   "by": "grok-bot",
-   "note": "P2607 [skip ci] promote put P3038c pins on master (16216) and stable (15834) > 15500 combos — reverted 527743efb8/6f5dad36b7, guardPublishBudget added to the promote; pins stay on bastien-home for the planned P3038c step; attempts 1/3"
   }
  }
 }
