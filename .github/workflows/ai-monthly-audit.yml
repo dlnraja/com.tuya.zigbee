@@ -107,7 +107,7 @@ jobs:
 
           # Safe base revision: HEAD~N may not exist (shallow/purged history)
           REV="HEAD~${COMMIT_COUNT:-50}"
-          git rev-parse --verify --quiet "$REV^{commit}" >/dev/null 2>&1 || REV="$(git rev-list --max-parents=0 HEAD | head -1)"
+          git rev-parse --verify --quiet "$REV^{commit}" >/dev/null 2>&1 || REV="$(git rev-list --max-parents=0 HEAD | sed -n 1p)"
           echo "base_rev=$REV" >> $GITHUB_OUTPUT
 
           # File change stats
