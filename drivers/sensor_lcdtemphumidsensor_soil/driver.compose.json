@@ -54,7 +54,7 @@
         "en": "Fertilizer (EC)",
         "fr": "Engrais (EC)",
         "nl": "Bemesting (EC)",
-        "de": "DÃ¼nger (EC)"
+        "de": "Dünger (EC)"
       }
     },
     "measure_conductivity": {
@@ -105,8 +105,8 @@
           "id": "temperature_calibration",
           "type": "number",
           "label": {
-            "en": "Temperature Offset (Â°C)",
-            "fr": "Décalage Température (Â°C)"
+            "en": "Temperature Offset (°C)",
+            "fr": "Décalage Température (°C)"
           },
           "value": 0,
           "min": -30,
@@ -164,13 +164,13 @@
             {
               "id": "1",
               "label": {
-                "en": "1 decimal (20.5Â°C)"
+                "en": "1 decimal (20.5°C)"
               }
             },
             {
               "id": "2",
               "label": {
-                "en": "2 decimals (20.53Â°C)"
+                "en": "2 decimals (20.53°C)"
               }
             }
           ]
@@ -221,15 +221,15 @@
             {
               "id": "celsius",
               "label": {
-                "en": "Celsius (Â°C)",
-                "fr": "Celsius (Â°C)"
+                "en": "Celsius (°C)",
+                "fr": "Celsius (°C)"
               }
             },
             {
               "id": "fahrenheit",
               "label": {
-                "en": "Fahrenheit (Â°F)",
-                "fr": "Fahrenheit (Â°F)"
+                "en": "Fahrenheit (°F)",
+                "fr": "Fahrenheit (°F)"
               }
             }
           ],

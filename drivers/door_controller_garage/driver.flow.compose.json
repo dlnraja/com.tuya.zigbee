@@ -7,20 +7,20 @@
         "en": "Door opened",
         "nl": "Deur geopend",
         "fr": "Porte ouverte",
-        "de": "TÃ¼r geÃ¶ffnet"
+        "de": "Tür geöffnet"
       },
       "hint": {
         "en": "Triggers when the door is opened",
         "nl": "Triggert wanneer de deur wordt geopend",
         "fr": "Se déclenche quand la porte est ouverte",
-        "de": "Wird ausgelÃ¶st, wenn die TÃ¼r geÃ¶ffnet wird"
+        "de": "Wird ausgelöst, wenn die Tür geöffnet wird"
       },
       "args": [],
       "titleFormatted": {
         "en": "Door opened",
         "nl": "Deur geopend",
         "fr": "Porte ouverte",
-        "de": "TÃ¼r geÃ¶ffnet"
+        "de": "Tür geöffnet"
       }
     },
     {
@@ -29,20 +29,20 @@
         "en": "Door closed",
         "nl": "Deur gesloten",
         "fr": "Porte fermée",
-        "de": "TÃ¼r geschlossen"
+        "de": "Tür geschlossen"
       },
       "hint": {
         "en": "Triggers when the door is closed",
         "nl": "Triggert wanneer de deur wordt gesloten",
         "fr": "Se déclenche quand la porte est fermée",
-        "de": "Wird ausgelÃ¶st, wenn die TÃ¼r geschlossen wird"
+        "de": "Wird ausgelöst, wenn die Tür geschlossen wird"
       },
       "args": [],
       "titleFormatted": {
         "en": "Door closed",
         "nl": "Deur gesloten",
         "fr": "Porte fermée",
-        "de": "TÃ¼r geschlossen"
+        "de": "Tür geschlossen"
       }
     },
     {
@@ -51,14 +51,14 @@
         "en": "Door locked",
         "nl": "Deur vergrendeld",
         "fr": "Porte verrouillée",
-        "de": "TÃ¼r verriegelt"
+        "de": "Tür verriegelt"
       },
       "args": [],
       "titleFormatted": {
         "en": "Door locked",
         "nl": "Deur vergrendeld",
         "fr": "Porte verrouillée",
-        "de": "TÃ¼r verriegelt"
+        "de": "Tür verriegelt"
       }
     },
     {
@@ -67,14 +67,14 @@
         "en": "Door unlocked",
         "nl": "Deur ontgrendeld",
         "fr": "Porte déverrouillée",
-        "de": "TÃ¼r entriegelt"
+        "de": "Tür entriegelt"
       },
       "args": [],
       "titleFormatted": {
         "en": "Door unlocked",
         "nl": "Deur ontgrendeld",
         "fr": "Porte déverrouillée",
-        "de": "TÃ¼r entriegelt"
+        "de": "Tür entriegelt"
       }
     },
     {
@@ -99,14 +99,14 @@
         "en": "Contact changed",
         "fr": "Contact changé",
         "nl": "Contact gewijzigd",
-        "de": "Kontakt geÃ¤ndert"
+        "de": "Kontakt geändert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Contact changed",
         "fr": "Contact changé",
         "nl": "Contact gewijzigd",
-        "de": "Kontakt geÃ¤ndert"
+        "de": "Kontakt geändert"
       }
     },
     {
@@ -131,14 +131,14 @@
         "en": "Lock changed",
         "fr": "Serrure changée",
         "nl": "Slot gewijzigd",
-        "de": "Schloss geÃ¤ndert"
+        "de": "Schloss geändert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Lock changed",
         "fr": "Serrure changée",
         "nl": "Slot gewijzigd",
-        "de": "Schloss geÃ¤ndert"
+        "de": "Schloss geändert"
       }
     }
   ],
@@ -149,14 +149,14 @@
         "en": "Door !{{is|is not}} open",
         "nl": "Deur !{{is|is niet}} open",
         "fr": "Porte !{{est|n'est pas}} ouverte",
-        "de": "TÃ¼r !{{ist|ist nicht}} offen"
+        "de": "Tür !{{ist|ist nicht}} offen"
       },
       "args": [],
       "titleFormatted": {
         "en": "Door !{{is|is not}} open",
         "nl": "Deur !{{is|is niet}} open",
         "fr": "Porte !{{est|n'est pas}} ouverte",
-        "de": "TÃ¼r !{{ist|ist nicht}} offen"
+        "de": "Tür !{{ist|ist nicht}} offen"
       }
     },
     {
@@ -165,14 +165,14 @@
         "en": "Door !{{is|is not}} locked",
         "nl": "Deur !{{is|is niet}} vergrendeld",
         "fr": "Porte !{{est|n'est pas}} verrouillée",
-        "de": "TÃ¼r !{{ist|ist nicht}} verriegelt"
+        "de": "Tür !{{ist|ist nicht}} verriegelt"
       },
       "args": [],
       "titleFormatted": {
         "en": "Door !{{is|is not}} locked",
         "nl": "Deur !{{is|is niet}} vergrendeld",
         "fr": "Porte !{{est|n'est pas}} verrouillée",
-        "de": "TÃ¼r !{{ist|ist nicht}} verriegelt"
+        "de": "Tür !{{ist|ist nicht}} verriegelt"
       }
     },
     {
@@ -215,14 +215,14 @@
         "en": "Open door",
         "nl": "Deur openen",
         "fr": "Ouvrir la porte",
-        "de": "TÃ¼r Ã¶ffnen"
+        "de": "Tür öffnen"
       },
       "args": [],
       "titleFormatted": {
         "en": "Open door",
         "nl": "Deur openen",
         "fr": "Ouvrir la porte",
-        "de": "TÃ¼r Ã¶ffnen"
+        "de": "Tür öffnen"
       }
     },
     {
@@ -231,14 +231,14 @@
         "en": "Close door",
         "nl": "Deur sluiten",
         "fr": "Fermer la porte",
-        "de": "TÃ¼r schlieÃŸen"
+        "de": "Tür schließen"
       },
       "args": [],
       "titleFormatted": {
         "en": "Close door",
         "nl": "Deur sluiten",
         "fr": "Fermer la porte",
-        "de": "TÃ¼r schlieÃŸen"
+        "de": "Tür schließen"
       }
     },
     {
@@ -247,14 +247,14 @@
         "en": "Lock door",
         "nl": "Deur vergrendelen",
         "fr": "Verrouiller la porte",
-        "de": "TÃ¼r verriegeln"
+        "de": "Tür verriegeln"
       },
       "args": [],
       "titleFormatted": {
         "en": "Lock door",
         "nl": "Deur vergrendelen",
         "fr": "Verrouiller la porte",
-        "de": "TÃ¼r verriegeln"
+        "de": "Tür verriegeln"
       }
     },
     {
@@ -263,14 +263,14 @@
         "en": "Unlock door",
         "nl": "Deur ontgrendelen",
         "fr": "Déverrouiller la porte",
-        "de": "TÃ¼r entriegeln"
+        "de": "Tür entriegeln"
       },
       "args": [],
       "titleFormatted": {
         "en": "Unlock door",
         "nl": "Deur ontgrendelen",
         "fr": "Déverrouiller la porte",
-        "de": "TÃ¼r entriegeln"
+        "de": "Tür entriegeln"
       }
     }
   ]

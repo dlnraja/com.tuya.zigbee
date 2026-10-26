@@ -12,8 +12,8 @@
           "name": "temperature",
           "type": "number",
           "title": {
-            "en": "Temperature (Â°C)",
-            "fr": "Température (Â°C)"
+            "en": "Temperature (°C)",
+            "fr": "Température (°C)"
           },
           "example": 22.5
         }
@@ -113,14 +113,14 @@
         "en": "Temperature changed",
         "fr": "Température changée",
         "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geÃ¤ndert"
+        "de": "Temperatur geändert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Temperature changed",
         "fr": "Température changée",
         "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geÃ¤ndert"
+        "de": "Temperatur geändert"
       }
     },
     {

@@ -31,7 +31,7 @@
     "meter_power": {
       "title": {
         "en": "Energy Consumed",
-        "fr": "Ã‰nergie Consommée"
+        "fr": "Énergie Consommée"
       },
       "units": "kWh",
       "getable": true,
@@ -40,7 +40,7 @@
     "meter_power.exported": {
       "title": {
         "en": "Energy Exported",
-        "fr": "Ã‰nergie Exportée"
+        "fr": "Énergie Exportée"
       },
       "units": "kWh",
       "getable": true,
@@ -91,29 +91,29 @@
           "type": "dropdown",
           "label": {
             "en": "Power Scale",
-            "fr": "Ã‰chelle Puissance"
+            "fr": "Échelle Puissance"
           },
           "value": "1",
           "values": [
             {
               "id": "0.1",
               "label": {
-                "en": "Ã·10",
-                "fr": "Ã·10"
+                "en": "÷10",
+                "fr": "÷10"
               }
             },
             {
               "id": "1",
               "label": {
-                "en": "Ã—1 (Default)",
-                "fr": "Ã—1 (Par défaut)"
+                "en": "×1 (Default)",
+                "fr": "×1 (Par défaut)"
               }
             },
             {
               "id": "10",
               "label": {
-                "en": "Ã—10",
-                "fr": "Ã—10"
+                "en": "×10",
+                "fr": "×10"
               }
             }
           ]
@@ -154,7 +154,7 @@
     "learnmode": {
       "instruction": {
         "en": "Press the pairing button on the meter for 5 seconds until LED blinks rapidly",
-        "fr": "Appuyez sur le bouton d'appairage du compteur pendant 5 secondes jusqu'àce que la LED clignote rapidement"
+        "fr": "Appuyez sur le bouton d'appairage du compteur pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
       }
     },
     "manufacturerName": [
