@@ -822,13 +822,7 @@
           "example": 4
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Button 4 scene [[scene_id]] recalled ({scene_id})",
-        "fr": "Bouton 4 scène [[scene_id]] rappelée ({scene_id})",
-        "nl": "Knop 4 scène [[scène_id]] opgeroepen ({scene_id})",
-        "de": "Taste 4 Szene [[Szene_id]] aufgerufen ({scene_id})"
-      }
+      "args": []
     },
     {
       "id": "button_wireless_4_physical_on",

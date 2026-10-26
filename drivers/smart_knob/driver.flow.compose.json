@@ -232,13 +232,7 @@
           "example": 1
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Button 1 scene [[scene_id]] recalled ({scene_id})",
-        "fr": "Bouton 1 sc??ne [[scene_id]] rappel??e ({scene_id})",
-        "nl": "Knop 1 sc??ne [[sc??ne_id]] opgeroepen ({scene_id})",
-        "de": "Taste 1 Szene [[Szene_id]] aufgerufen ({scene_id})"
-      }
+      "args": []
     },
     {
       "id": "smart_knob_rotate_left",

@@ -19,11 +19,7 @@
           "example": "1"
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Button pressed ([[button]]) ({button})",
-        "fr": "Bouton appuyé ([[button]]) ({button})"
-      }
+      "args": []
     },
     {
       "id": "remote_button_wireless_wall_btn_double",
@@ -44,11 +40,7 @@
           "example": "1"
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Button double-pressed ([[button]]) ({button})",
-        "fr": "Bouton double-cliqué ([[button]]) ({button})"
-      }
+      "args": []
     },
     {
       "id": "remote_button_wireless_wall_btn_long",
@@ -69,11 +61,7 @@
           "example": "1"
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Button long-pressed ([[button]]) ({button})",
-        "fr": "Bouton pressé longtemps ([[button]]) ({button})"
-      }
+      "args": []
     },
     {
       "id": "remote_button_wireless_wall_btn_multi",
@@ -103,11 +91,7 @@
           "example": 3
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Button multi-pressed ([[button]]) ([[count]]) ({button}) ({count})",
-        "fr": "Bouton multi-cliqué ([[button]]) ([[count]]) ({button}) ({count})"
-      }
+      "args": []
     },
     {
       "id": "remote_button_wireless_wall_btn1_pressed",
@@ -224,11 +208,7 @@
           "example": "single"
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Scene recalled ([[scene_id]]) ({scene_id}) ({button}) ({press_type})",
-        "fr": "Scène rappelée ([[scene_id]]) ({scene_id}) ({button}) ({press_type})"
-      }
+      "args": []
     },
     {
       "id": "remote_button_wireless_wall_battery_low",
