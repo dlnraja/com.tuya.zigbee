@@ -4,7 +4,9 @@
       "id": "lock_smart_locked",
       "title": {
         "en": "Locked",
-        "fr": "Verrouillé"
+        "fr": "Verrouillé",
+        "de": "Verriegelt",
+        "nl": "Vergrendeld"
       },
       "args": [],
       "titleFormatted": {
@@ -16,7 +18,9 @@
       "id": "lock_smart_unlocked",
       "title": {
         "en": "Unlocked",
-        "fr": "Déverrouillé"
+        "fr": "Déverrouillé",
+        "de": "Entriegelt",
+        "nl": "Ontgrendeld"
       },
       "args": [],
       "titleFormatted": {
@@ -78,7 +82,9 @@
       "id": "lock_smart_is_locked",
       "title": {
         "en": "Is !{{locked|unlocked}}",
-        "fr": "Est !{{verrouillé|déverrouillé}}"
+        "fr": "Est !{{verrouillé|déverrouillé}}",
+        "de": "Ist !{{verriegelt|entriegelt}}",
+        "nl": "Is !{{vergrendeld|ontgrendeld}}"
       },
       "args": [],
       "titleFormatted": {
@@ -108,7 +114,9 @@
       "id": "lock_smart_lock",
       "title": {
         "en": "Lock",
-        "fr": "Verrouiller"
+        "fr": "Verrouiller",
+        "de": "Verriegeln",
+        "nl": "Vergrendelen"
       },
       "args": [],
       "titleFormatted": {
@@ -120,7 +128,9 @@
       "id": "lock_smart_unlock",
       "title": {
         "en": "Unlock",
-        "fr": "Déverrouiller"
+        "fr": "Déverrouiller",
+        "de": "Entriegeln",
+        "nl": "Ontgrendelen"
       },
       "args": [],
       "titleFormatted": {

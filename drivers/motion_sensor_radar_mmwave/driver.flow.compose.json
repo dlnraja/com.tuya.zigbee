@@ -4,7 +4,9 @@
       "id": "motion_sensor_radar_mmwave_presence_detected",
       "title": {
         "en": "Presence detected",
-        "fr": "Présence détectée"
+        "fr": "Présence détectée",
+        "de": "Anwesenheit erkannt",
+        "nl": "Aanwezigheid gedetecteerd"
       },
       "args": [],
       "titleFormatted": {
@@ -16,7 +18,9 @@
       "id": "motion_sensor_radar_mmwave_presence_cleared",
       "title": {
         "en": "Presence cleared",
-        "fr": "Présence disparue"
+        "fr": "Présence disparue",
+        "de": "Anwesenheit beendet",
+        "nl": "Aanwezigheid beëindigd"
       },
       "args": [],
       "titleFormatted": {
@@ -44,7 +48,9 @@
       "id": "motion_sensor_radar_mmwave_no_motion",
       "title": {
         "en": "No motion",
-        "fr": "Aucun mouvement"
+        "fr": "Aucun mouvement",
+        "de": "Keine Bewegung",
+        "nl": "Geen beweging"
       },
       "args": [],
       "titleFormatted": {
@@ -247,7 +253,9 @@
       "id": "motion_sensor_radar_mmwave_is_presence_detected",
       "title": {
         "en": "Presence is !{{detected|not detected}}",
-        "fr": "Présence !{{détectée|non détectée}}"
+        "fr": "Présence !{{détectée|non détectée}}",
+        "de": "Anwesenheit !{{erkannt|nicht erkannt}}",
+        "nl": "Aanwezigheid !{{gedetecteerd|niet gedetecteerd}}"
       },
       "args": [],
       "titleFormatted": {
@@ -259,7 +267,9 @@
       "id": "motion_sensor_radar_mmwave_illuminance_above",
       "title": {
         "en": "Illuminance is above",
-        "fr": "Luminosité supérieure à"
+        "fr": "Luminosité supérieure à",
+        "de": "Helligkeit (Lux) ist über",
+        "nl": "Lichtsterkte is boven"
       },
       "args": [
         {
@@ -287,7 +297,9 @@
       "id": "motion_sensor_radar_mmwave_illuminance_below",
       "title": {
         "en": "Illuminance is below",
-        "fr": "Luminosité inférieure à"
+        "fr": "Luminosité inférieure à",
+        "de": "Helligkeit (Lux) ist unter",
+        "nl": "Lichtsterkte is onder"
       },
       "args": [
         {
@@ -365,7 +377,9 @@
       "id": "motion_sensor_radar_mmwave_set_radar_sensitivity",
       "title": {
         "en": "Set radar sensitivity",
-        "fr": "Définir sensibilité radar"
+        "fr": "Définir sensibilité radar",
+        "de": "Radarempfindlichkeit setzen",
+        "nl": "Radargevoeligheid instellen"
       },
       "args": [
         {
@@ -393,7 +407,9 @@
       "id": "motion_sensor_radar_mmwave_set_detection_range",
       "title": {
         "en": "Set detection range",
-        "fr": "Définir plage de détection"
+        "fr": "Définir plage de détection",
+        "de": "Erfassungsbereich setzen",
+        "nl": "Detectiebereik instellen"
       },
       "args": [
         {
@@ -436,7 +452,9 @@
       "id": "motion_sensor_radar_mmwave_set_fading_time",
       "title": {
         "en": "Set fading time",
-        "fr": "Définir délai d'absence"
+        "fr": "Définir délai d'absence",
+        "de": "Abklingzeit setzen",
+        "nl": "Uitlooptijd instellen"
       },
       "args": [
         {
@@ -464,7 +482,9 @@
       "id": "motion_sensor_radar_mmwave_set_detection_delay",
       "title": {
         "en": "Set detection delay",
-        "fr": "Définir délai de détection"
+        "fr": "Définir délai de détection",
+        "de": "Erfassungsverzögerung setzen",
+        "nl": "Detectievertraging instellen"
       },
       "args": [
         {

@@ -4,7 +4,9 @@
       "id": "wifi_cover_opened",
       "title": {
         "en": "Opened",
-        "fr": "Ouvert"
+        "fr": "Ouvert",
+        "de": "Geöffnet",
+        "nl": "Geopend"
       },
       "args": [],
       "titleFormatted": {
@@ -16,7 +18,9 @@
       "id": "wifi_cover_closed",
       "title": {
         "en": "Closed",
-        "fr": "Fermé"
+        "fr": "Fermé",
+        "de": "Geschlossen",
+        "nl": "Gesloten"
       },
       "args": [],
       "titleFormatted": {

@@ -5,7 +5,9 @@
       "highlight": true,
       "title": {
         "en": "Valve opened",
-        "fr": "Vanne ouverte"
+        "fr": "Vanne ouverte",
+        "de": "Ventil geöffnet",
+        "nl": "Klep geopend"
       },
       "args": [],
       "titleFormatted": {
@@ -17,7 +19,9 @@
       "id": "water_valve_smart_closed",
       "title": {
         "en": "Valve closed",
-        "fr": "Vanne fermée"
+        "fr": "Vanne fermée",
+        "de": "Ventil geschlossen",
+        "nl": "Klep gesloten"
       },
       "args": [],
       "titleFormatted": {
@@ -91,7 +95,9 @@
       "id": "water_valve_smart_battery_low",
       "title": {
         "en": "Battery is low",
-        "fr": "La batterie est faible"
+        "fr": "La batterie est faible",
+        "de": "Batterie ist schwach",
+        "nl": "Batterij is bijna leeg"
       },
       "args": [],
       "titleFormatted": {
@@ -147,7 +153,9 @@
       "id": "water_valve_smart_is_open",
       "title": {
         "en": "Valve !{{is|is not}} open",
-        "fr": "La vanne !{{est|n'est pas}} ouverte"
+        "fr": "La vanne !{{est|n'est pas}} ouverte",
+        "de": "Ventil !{{ist|ist nicht}} offen",
+        "nl": "Klep !{{is|is niet}} open"
       },
       "args": [],
       "titleFormatted": {
@@ -216,7 +224,9 @@
       "id": "water_valve_smart_open",
       "title": {
         "en": "Open valve",
-        "fr": "Ouvrir la vanne"
+        "fr": "Ouvrir la vanne",
+        "de": "Ventil öffnen",
+        "nl": "Klep openen"
       },
       "args": [],
       "titleFormatted": {
@@ -228,7 +238,9 @@
       "id": "water_valve_smart_close",
       "title": {
         "en": "Close valve",
-        "fr": "Fermer la vanne"
+        "fr": "Fermer la vanne",
+        "de": "Ventil schließen",
+        "nl": "Klep sluiten"
       },
       "args": [],
       "titleFormatted": {
@@ -240,7 +252,9 @@
       "id": "water_valve_smart_toggle",
       "title": {
         "en": "Toggle valve",
-        "fr": "Basculer la vanne"
+        "fr": "Basculer la vanne",
+        "de": "Ventil umschalten",
+        "nl": "Klep omschakelen"
       },
       "args": [],
       "titleFormatted": {

@@ -268,7 +268,9 @@
       "id": "switch_1gang_set_backlight",
       "title": {
         "en": "Set backlight mode",
-        "fr": "Régler le mode du rétroéclairage"
+        "fr": "Régler le mode du rétroéclairage",
+        "de": "Hintergrundlicht-Modus setzen",
+        "nl": "Achtergrondlichtmodus instellen"
       },
       "args": [
         {
@@ -468,7 +470,9 @@
       "id": "switch_1gang_set_power_on_behavior",
       "title": {
         "en": "Set power-on behavior",
-        "fr": "Régler le comportement à la mise sous tension"
+        "fr": "Régler le comportement à la mise sous tension",
+        "de": "Verhalten nach Stromausfall setzen",
+        "nl": "Gedrag na stroomuitval instellen"
       },
       "args": [
         {

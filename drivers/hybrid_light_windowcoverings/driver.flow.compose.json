@@ -86,7 +86,9 @@
       "id": "hybrid_light_windowcoverings_light_is_on",
       "title": {
         "en": "Light is on",
-        "fr": "Lumière est allumée"
+        "fr": "Lumière est allumée",
+        "de": "Licht ist an",
+        "nl": "Licht is aan"
       },
       "args": [],
       "titleFormatted": {
@@ -156,7 +158,9 @@
       "id": "hybrid_light_windowcoverings_open",
       "title": {
         "en": "Open cover",
-        "fr": "Ouvrir store"
+        "fr": "Ouvrir store",
+        "de": "Abdeckung öffnen",
+        "nl": "Bekleding openen"
       },
       "args": [],
       "titleFormatted": {
@@ -168,7 +172,9 @@
       "id": "hybrid_light_windowcoverings_close",
       "title": {
         "en": "Close cover",
-        "fr": "Fermer store"
+        "fr": "Fermer store",
+        "de": "Abdeckung schließen",
+        "nl": "Bekleding sluiten"
       },
       "args": [],
       "titleFormatted": {
@@ -180,7 +186,9 @@
       "id": "hybrid_light_windowcoverings_set_position",
       "title": {
         "en": "Set cover position",
-        "fr": "Régler position store"
+        "fr": "Régler position store",
+        "de": "Abdeckungsposition setzen",
+        "nl": "Positie bekleding instellen"
       },
       "args": [
         {
@@ -208,7 +216,9 @@
       "id": "hybrid_light_windowcoverings_light_on",
       "title": {
         "en": "Turn light on",
-        "fr": "Allumer lumière"
+        "fr": "Allumer lumière",
+        "de": "Licht einschalten",
+        "nl": "Licht aanzetten"
       },
       "args": [],
       "titleFormatted": {
@@ -220,7 +230,9 @@
       "id": "hybrid_light_windowcoverings_light_off",
       "title": {
         "en": "Turn light off",
-        "fr": "Éteindre lumière"
+        "fr": "Éteindre lumière",
+        "de": "Licht ausschalten",
+        "nl": "Licht uitzetten"
       },
       "args": [],
       "titleFormatted": {
@@ -232,7 +244,9 @@
       "id": "hybrid_light_windowcoverings_set_brightness",
       "title": {
         "en": "Set light brightness",
-        "fr": "Régler luminosité"
+        "fr": "Régler luminosité",
+        "de": "Lichthelligkeit setzen",
+        "nl": "Lichthelderheid instellen"
       },
       "args": [
         {
