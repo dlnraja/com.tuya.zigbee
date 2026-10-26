@@ -1,21 +1,403 @@
 {
-  "timestamp": "2026-10-11T01:42:35.708Z",
+  "timestamp": "2026-10-12T07:11:29.885Z",
   "gate": "align-mfs-db-intelligent",
   "apply": false,
-  "check": true,
-  "changeCount": 59,
-  "skippedCount": 66,
-  "highSeverityCount": 0,
+  "check": false,
+  "changeCount": 77,
+  "skippedCount": 74,
+  "highSeverityCount": 11,
   "byAction": {
-    "compose_exclusive": 59
+    "registry_force": 10,
+    "create_from_registry": 1,
+    "compose_exclusive": 66
   },
   "changes": [
+    {
+      "severity": "high",
+      "action": "registry_force",
+      "mfr": "_tz3000_z6fgd73r",
+      "from": {
+        "driverId": "usb_dongle_triple",
+        "modelIds": [
+          "S26R2ZB",
+          "S31 Lite zb",
+          "S40LITE",
+          "S60ZBTPF",
+          "S60ZBTPG",
+          "TS0101",
+          "TS0111",
+          "TS011F",
+          "TS0601"
+        ]
+      },
+      "to": {
+        "driverId": "switch_1gang",
+        "modelIds": [
+          "TS011F"
+        ]
+      },
+      "caseId": "lead-z6fgd73r-switch_1gang"
+    },
+    {
+      "severity": "high",
+      "action": "registry_force",
+      "mfr": "_tyzb02_key8kk7r",
+      "from": {
+        "driverId": "button_wireless_2",
+        "modelIds": [
+          "TS0001",
+          "TS0002",
+          "TS0003",
+          "TS000F",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0041",
+          "TS0042",
+          "TS004F",
+          "TS0101",
+          "TS0111",
+          "TS011F",
+          "TS0121",
+          "TS0122",
+          "TS0215A",
+          "TS0503A",
+          "TS0503B",
+          "TS0504B",
+          "TS0505A",
+          "TS0505B",
+          "TS0601",
+          "TS0726",
+          "TS1101",
+          "TS110E",
+          "TS110F",
+          "TS130F",
+          "TS4100",
+          "TSO121"
+        ]
+      },
+      "to": {
+        "driverId": "button_wireless_3",
+        "modelIds": [
+          "TS0043"
+        ]
+      },
+      "caseId": "johan-only-_tyzb02_key8kk7r"
+    },
+    {
+      "severity": "high",
+      "action": "registry_force",
+      "mfr": "_TZ3000_rrjr1q0u",
+      "from": {
+        "driverId": "button_wireless_2",
+        "modelIds": [
+          "TS0001",
+          "TS0002",
+          "TS0003",
+          "TS000F",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0041",
+          "TS0042",
+          "TS004F",
+          "TS0101",
+          "TS0111",
+          "TS011F",
+          "TS0121",
+          "TS0122",
+          "TS0215A",
+          "TS0503A",
+          "TS0503B",
+          "TS0504B",
+          "TS0505A",
+          "TS0505B",
+          "TS0601",
+          "TS0726",
+          "TS1101",
+          "TS110E",
+          "TS110F",
+          "TS130F",
+          "TS4100",
+          "TSO121"
+        ]
+      },
+      "to": {
+        "driverId": "button_wireless_3",
+        "modelIds": [
+          "TS0043"
+        ]
+      },
+      "caseId": "johan-only-_tz3000_rrjr1q0u"
+    },
+    {
+      "severity": "high",
+      "action": "registry_force",
+      "mfr": "_tz3000_mugyhz0q",
+      "from": {
+        "driverId": "water_leak_sensor_tuya",
+        "modelIds": [
+          "_TZ3000_EIT6L5",
+          "_TZ3000_KYB656NO",
+          "3315-S",
+          "3315-SEU",
+          "CK-TLSR8656-SS5-01(7019)",
+          "HS1WL",
+          "LS21001",
+          "LUMI.SENSOR_WLEAK.AQ1",
+          "Q9MPFHW",
+          "SJCGQ11LM",
+          "SJCGQ12LM",
+          "SJCGQ13LM",
+          "SNZB-05",
+          "SNZB-05P",
+          "SQ510A",
+          "TS0601",
+          "ZG-222Z"
+        ]
+      },
+      "to": {
+        "driverId": "water_leak_sensor",
+        "modelIds": [
+          "TS0207"
+        ]
+      },
+      "caseId": "johan-only-_tz3000_mugyhz0q"
+    },
+    {
+      "severity": "high",
+      "action": "registry_force",
+      "mfr": "_tz3000_0s9gukzt",
+      "from": {
+        "driverId": "water_leak_sensor_tuya",
+        "modelIds": [
+          "_TZ3000_EIT6L5",
+          "_TZ3000_KYB656NO",
+          "3315-S",
+          "3315-SEU",
+          "CK-TLSR8656-SS5-01(7019)",
+          "HS1WL",
+          "LS21001",
+          "LUMI.SENSOR_WLEAK.AQ1",
+          "Q9MPFHW",
+          "SJCGQ11LM",
+          "SJCGQ12LM",
+          "SJCGQ13LM",
+          "SNZB-05",
+          "SNZB-05P",
+          "SQ510A",
+          "TS0601",
+          "ZG-222Z"
+        ]
+      },
+      "to": {
+        "driverId": "water_leak_sensor",
+        "modelIds": [
+          "TS0207"
+        ]
+      },
+      "caseId": "johan-only-_tz3000_0s9gukzt"
+    },
+    {
+      "severity": "high",
+      "action": "registry_force",
+      "mfr": "_TZ3000_zl1kmjqx",
+      "from": {
+        "driverId": "button_wireless_2",
+        "modelIds": [
+          "TS0001",
+          "TS0002",
+          "TS0003",
+          "TS000F",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0041",
+          "TS0042",
+          "TS004F",
+          "TS0101",
+          "TS0111",
+          "TS011F",
+          "TS0121",
+          "TS0122",
+          "TS0215A",
+          "TS0503A",
+          "TS0503B",
+          "TS0504B",
+          "TS0505A",
+          "TS0505B",
+          "TS0601",
+          "TS0726",
+          "TS1101",
+          "TS110E",
+          "TS110F",
+          "TS130F",
+          "TS4100",
+          "TSO121"
+        ]
+      },
+      "to": {
+        "driverId": "climate_sensor",
+        "modelIds": [
+          "TS0201"
+        ]
+      },
+      "caseId": "johan-only-_tz3000_zl1kmjqx"
+    },
+    {
+      "severity": "high",
+      "action": "registry_force",
+      "mfr": "_tz3000_j0ktmul1",
+      "from": {
+        "driverId": "usb_dongle_triple",
+        "modelIds": [
+          "S26R2ZB",
+          "S31 Lite zb",
+          "S40LITE",
+          "S60ZBTPF",
+          "S60ZBTPG",
+          "TS0101",
+          "TS0111",
+          "TS011F",
+          "TS0601"
+        ]
+      },
+      "to": {
+        "driverId": "switch_4gang",
+        "modelIds": [
+          "TS011F"
+        ]
+      },
+      "caseId": "newdrv-valve_controller_5zone"
+    },
+    {
+      "severity": "high",
+      "action": "registry_force",
+      "mfr": "_TZE200_WRMHP6B3",
+      "from": {
+        "driverId": "curtain_motor",
+        "modelIds": [
+          "01MINIZB",
+          "AM02",
+          "AM43-0.45/40-ES-EB",
+          "AM43-0.45/40-ES-EZ",
+          "BASICZBR3",
+          "DS421",
+          "DS82",
+          "E1757",
+          "FYRTUR",
+          "KADRILJ",
+          "LUMI.CURTAIN",
+          "LUMI.CURTAIN.ACN002",
+          "LUMI.CURTAIN.HAGL04",
+          "S26R2ZB",
+          "S31ZB",
+          "TS0001",
+          "TS0001_POWER",
+          "TS0001_SWITCH",
+          "TS0001_SWITCH_MODULE",
+          "TS000F",
+          "TS0011",
+          "TS0012",
+          "TS0014",
+          "TS0101",
+          "TS0111",
+          "TS011F",
+          "TS0301",
+          "TS0302",
+          "TS030F",
+          "TS0601",
+          "TS0601_GENERIC",
+          "TS0603",
+          "TS0726",
+          "TS110E",
+          "TS130F",
+          "TS4100",
+          "ZBCURTAIN",
+          "ZBM5-1C-120",
+          "ZBM5-2C-120",
+          "ZBM5-3C-120",
+          "ZBMINI",
+          "ZBMINIL2",
+          "ZBMINIL2-R2",
+          "ZBMINIR",
+          "ZBMINIR2",
+          "ZBMINIR2-R2",
+          "ZG-301Z",
+          "ZG-302Z1"
+        ]
+      },
+      "to": {
+        "driverId": "soil_sensor",
+        "modelIds": [
+          "TS0601"
+        ]
+      },
+      "caseId": "p-wrmhp6b3-cs201z-soil-not-curtain"
+    },
+    {
+      "severity": "high",
+      "action": "registry_force",
+      "mfr": "_TZE600_ogyg1y6b",
+      "from": {
+        "driverId": "curtain_motor_shutter",
+        "modelIds": [
+          "TS0301",
+          "TS0601",
+          "TS0726"
+        ]
+      },
+      "to": {
+        "driverId": "curtain_motor",
+        "modelIds": [
+          "ts0105",
+          "TS0105"
+        ]
+      },
+      "caseId": "p-ogyg1y6b-zbcmr01-curtain-not-shutter"
+    },
+    {
+      "severity": "high",
+      "action": "create_from_registry",
+      "mfr": "_TZE600_5cu64znk",
+      "driverId": "curtain_motor",
+      "modelIds": [
+        "TS0105"
+      ],
+      "caseId": "p-5cu64znk-zbcmr02-shutter-ts0105"
+    },
+    {
+      "severity": "high",
+      "action": "registry_force",
+      "mfr": "_TZE600_5cu64znk",
+      "from": {
+        "driverId": null,
+        "modelIds": []
+      },
+      "to": {
+        "driverId": "curtain_motor",
+        "modelIds": [
+          "TS0105"
+        ]
+      },
+      "caseId": "p-5cu64znk-zbcmr02-shutter-ts0105"
+    },
     {
       "severity": "medium",
       "action": "compose_exclusive",
       "mfr": "_TZ3000_itnrsufe",
       "from": "button_wireless_2",
       "to": "lcdtemphumidsensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_yw5tvzsk",
+      "from": "button_wireless_2",
+      "to": "button_wireless_3"
     },
     {
       "severity": "medium",
@@ -209,6 +591,13 @@
     {
       "severity": "medium",
       "action": "compose_exclusive",
+      "mfr": "_tz3000_uaa99arv",
+      "from": "switch_1gang",
+      "to": "button_wireless_4"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
       "mfr": "_TZ3000_2uollq9d",
       "from": "sensor_gas_presence",
       "to": "plug_energy_monitor"
@@ -268,13 +657,6 @@
       "mfr": "_TYZB01_M6EC2PGJ",
       "from": "switch_1gang",
       "to": "illuminance_sensor"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TZ3000_FDXIHPP7",
-      "from": "wall_switch_1gang_1way",
-      "to": "switch_1gang"
     },
     {
       "severity": "medium",
@@ -370,6 +752,13 @@
     {
       "severity": "medium",
       "action": "compose_exclusive",
+      "mfr": "_tz3000_85czd6fy",
+      "from": "contact_sensor",
+      "to": "water_leak_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
       "mfr": "_tz3000_4qaowtdo",
       "from": "water_leak_sensor_tuya",
       "to": "water_leak_sensor"
@@ -398,7 +787,42 @@
     {
       "severity": "medium",
       "action": "compose_exclusive",
+      "mfr": "_tz3000_ocjlo4ea",
+      "from": "water_leak_sensor_tuya",
+      "to": "water_leak_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
       "mfr": "_tz3000_qhozxs2b",
+      "from": "water_leak_sensor_tuya",
+      "to": "water_leak_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3000_t6jriawg",
+      "from": "water_leak_sensor_tuya",
+      "to": "water_leak_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3000_wuep9zng",
+      "from": "water_leak_sensor_tuya",
+      "to": "water_leak_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3000_ww9i3e0y",
+      "from": "water_leak_sensor_tuya",
+      "to": "water_leak_sensor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3000_awvmkayh",
       "from": "water_leak_sensor_tuya",
       "to": "water_leak_sensor"
     },
@@ -425,6 +849,11 @@
     }
   ],
   "skipped": [
+    {
+      "reason": "registry_driver_missing",
+      "caseId": "p2605b-nkjintbl-tze284-ambiguous",
+      "canon": null
+    },
     {
       "reason": "registry_driver_missing",
       "caseId": "p2509-invent-junk-do-not-lock",
@@ -513,6 +942,41 @@
     {
       "reason": "registry_empty_mfr",
       "caseId": "p2644-4d4e1684-ts0043-not-wall-remote"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "johan-_tz3000_85czd6fy-ts0207",
+      "canon": "water_leak_sensor"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "johan-_tz3000_ww9i3e0y-ts0207",
+      "canon": "water_leak_sensor"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "johan-_tyzb02_key8kk7r-ts0043",
+      "canon": "button_wireless_3"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "johan-_tz3000_rrjr1q0u-ts0043",
+      "canon": "button_wireless_3"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "johan-_tz3000_yw5tvzsk-ts0043",
+      "canon": "button_wireless_3"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "johan-_tyzb01_bagt1e4o-ts0014",
+      "canon": "switch_4gang"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "johan-_tz3000_e98krvvk-ts0012",
+      "canon": "switch_2gang"
     },
     {
       "reason": "registry_oem_multi_canon",
@@ -971,5 +1435,17 @@
       ]
     }
   ],
-  "highSeverity": []
+  "highSeverity": [
+    "registry drift _tz3000_z6fgd73r → switch_1gang",
+    "registry drift _tyzb02_key8kk7r → button_wireless_3",
+    "registry drift _TZ3000_rrjr1q0u → button_wireless_3",
+    "registry drift _tz3000_mugyhz0q → water_leak_sensor",
+    "registry drift _tz3000_0s9gukzt → water_leak_sensor",
+    "registry drift _TZ3000_zl1kmjqx → climate_sensor",
+    "registry drift _tz3000_j0ktmul1 → switch_4gang",
+    "registry drift _TZE200_WRMHP6B3 → soil_sensor",
+    "registry drift _TZE600_ogyg1y6b → curtain_motor",
+    "missing mfs entry for registry p-5cu64znk-zbcmr02-shutter-ts0105",
+    "registry drift _TZE600_5cu64znk → curtain_motor"
+  ]
 }
