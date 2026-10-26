@@ -1,7 +1,8 @@
 {
   "id": "tunable_spot_GU10",
   "name": {
-    "en": "Tunable Spot GU10"
+    "en": "Tunable Spot GU10",
+    "fr": "Spot blanc réglable GU10"
   },
   "$extends": [
     "light_white_ambiance"

@@ -1,7 +1,8 @@
 {
   "id": "temphumidsensor2",
   "name": {
-    "en": "Temperature & Humidity Sensor"
+    "en": "Temperature & Humidity Sensor",
+    "fr": "Capteur de température et d'humidité"
   },
   "class": "sensor",
   "platforms": [

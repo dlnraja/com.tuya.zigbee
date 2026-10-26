@@ -1,7 +1,8 @@
 {
   "id": "tuya_dummy_driver",
   "name": {
-    "en": "Tuya Diagnostic Driver"
+    "en": "Tuya Diagnostic Driver",
+    "fr": "Pilote de diagnostic Tuya"
   },
   "class": "sensor",
   "platforms": [
