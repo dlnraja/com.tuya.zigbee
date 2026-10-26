@@ -56,11 +56,9 @@ peer-complementary-enrich, daily-digest) — no new cron unless none fits.
 - Reports: one weekly human summary through report-writer (links, counts, what was promoted, what waits), no public post.
 
 ## 5. Privacy
-- User ask pt588u: remove LinkedIn / personal CV material from sources or anonymise it. Found tracked (although
-  .gitignore lists reports/myskills-cv/): reports/myskills-cv/* (incl. LINKEDIN_ABOUT_SOURCE.md, CV html) and
-  reports/myskills-bouygues-dossier-2026-08-31.md on master and bastien-home; references in
-  .github/report-ratchet-baseline.json and docs/knowledge/GHA_REPORTS_INVENTORY.md. Done by the one-time, user-approved
-  history rewrite P3074 (26/10/2026): files gone from every branch and from history, guard added in CI.
+- User ask pt588u: take personal profile / CV material out of the sources. A few personal report files
+  were still tracked; they were removed from every branch and from history by the one-time, user-approved
+  rewrite P3074 (26/10/2026), and a personal-data guard now runs in CI (code-quality.yml).
 
 ## Tests (one per change)
 p3073-ci-signatures (fixtures, cap, flakiness), p3073-device-observations (exact couple only, caps), p3073-dp-learner
