@@ -7,8 +7,8 @@
     "de": "Roher Tuya-DP empfangen"
   },
   "hint": {
-    "en": "Triggers when a raw (type 0) DP is received. Data is provided as hex string.",
-    "fr": "Se déclenche quand un DP brut (type 0) est reçu. Données en hex."
+    "en": "When a raw (type 0) DP is received. Data is provided as hex string.",
+    "fr": "Quand un DP brut (type 0) est reçu. Données en hex."
   },
   "tokens": [
     {

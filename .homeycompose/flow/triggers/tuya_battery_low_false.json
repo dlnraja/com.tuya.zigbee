@@ -7,8 +7,8 @@
     "de": "Batterie erholt (App-Alarm gelöscht)"
   },
   "hint": {
-    "en": "Fires when tuya_battery_low clears after hysteresis above the low threshold.",
-    "fr": "Se déclenche quand tuya_battery_low s'efface après hystérésis au-dessus du seuil."
+    "en": "When tuya_battery_low clears after hysteresis above the low threshold.",
+    "fr": "Quand tuya_battery_low s'efface après hystérésis au-dessus du seuil."
   },
   "args": [
     {

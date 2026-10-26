@@ -7,9 +7,9 @@
     "fr": "Toute valeur de capacité changée"
   },
   "hint": {
-    "en": "Triggers when any capability on any device changes. Inspired by Device Capabilities (silent enrich).",
-    "nl": "Activeert wanneer een capaciteitswaarde op een apparaat wijzigt.",
-    "fr": "Se déclenche quand une capacité d'un appareil change. Inspiré de Device Capabilities (enrichissement silencieux)."
+    "en": "When any capability on any device changes. Inspired by Device Capabilities (silent enrich).",
+    "nl": "Wanneer een capaciteitswaarde op een apparaat wijzigt.",
+    "fr": "Quand une capacité d'un appareil change. Inspiré de Device Capabilities (enrichissement silencieux)."
   },
   "tokens": [
     {
