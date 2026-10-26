@@ -1,5 +1,7 @@
 'use strict';
 
+const ThermostatMeteringDps = require('../../lib/tuya/ThermostatMeteringDps');
+
 const TuyaSpecificCluster = require('../../lib/TuyaSpecificCluster');
 const TuyaOnOffCluster = require('../../lib/TuyaOnOffCluster');
 const TuyaSpecificClusterDevice = require('../../lib/TuyaSpecificClusterDevice');
@@ -490,6 +492,9 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
     if (!data || data.dp == null) {return;}
     const dp = Number(data.dp);
     const parsedValue = getDataValue(data);
+
+    // P3067: pilot-wire _TZE204_0hcjew5p metering DPs 11/101/102/107 (DP101 must not arm the FCU path)
+    if (ThermostatMeteringDps.handle(this, this._resolveMfrPid().mfr, dp, parsedValue)) {return;}
 
     // WHY(P2303 / Adam diag f84180b7): DP36 valve proved FCU while path was still BHT
     if (!this._fcu && FCU_SIGNAL_DPS.has(dp)) {
