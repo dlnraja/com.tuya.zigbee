@@ -67,14 +67,6 @@
       "lines": 1
     },
     {
-      "file": "tools/ci/search-forum-v2.js",
-      "lines": 4
-    },
-    {
-      "file": "tools/ci/search-forum.js",
-      "lines": 1
-    },
-    {
       "file": "tools/ci/session-start.js",
       "lines": 1
     },
@@ -88,5 +80,5 @@
     }
   ],
   "docExcerpts": {},
-  "_scope": "P3069 step 4 (2026-10-26), ported from master: weekly loop, forum searches, comment collector and issue manager link + topic instead of titles; AI prompts marked ok-extract-only; own plan files marked own-text-file. May only shrink."
+  "_scope": "P3075 (2026-10-26): forum searches (search-forum, search-forum-v2) now print link + topic instead of titles; personal-data guard listed in the inventory. P3069 step 4 (2026-10-26), ported from master: weekly loop, forum searches, comment collector and issue manager link + topic instead of titles; AI prompts marked ok-extract-only; own plan files marked own-text-file. May only shrink."
 }
