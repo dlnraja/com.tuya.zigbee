@@ -73,4 +73,4 @@ Facts only, own implementation, no code copied.
 | 10 DIN / 3-phase meters | din_1 DP1 read as relay, DP6 struct unread; *-GT DP6/7/8 phase structs unread | per-couple decode in energy_meter_din / energy_meter_3phase (test p3071) | DP17/18 alarm sets (zhc ignores them) |
 | 11 Smoke / gas | none | — | 288WZ DP1 (enum, already 0 = alarm), gas_sensor_2 DP13 (zhc ignores) |
 | 12 Garage / valves | none | — | TS0603 DP12 (zhc ignores), FK-BV05 windowcoverings_set (valve position) |
-| 13 UFH / sound / RCBO | none in code | — | Pro Line X10 DP101-110 already mapped; RCBO hkdl5fmv temperature parked (legacy hoch_din frame, lazy capability = manifest cost) |
+| 13 UFH / sound / RCBO | none in code | — | Pro Line X10 DP101-110 already mapped; RCBO hkdl5fmv: hoch_din frame decoded (DP101-103/113), temperature DP105 via LateCapability, 0 manifest bytes (P3071c) |

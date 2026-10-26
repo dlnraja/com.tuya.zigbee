@@ -1,6 +1,7 @@
 {
-  "note": "P3068: concise canonical texts for settings / maintenance actions copied into many drivers. Applied to the publish copy only when en === from (exact). Same meaning, shorter.",
+  "note": "P3068: concise canonical texts for settings / maintenance actions copied into many drivers. Applied to the publish copy only when en === from (exact). Same meaning, shorter. settingValues (P3071b): dropdown labels replaced only when the option ids match the canon ids in order and every en label equals 'from'; ids/values never change.",
   "settingHints": {
+    "adaptive_lighting": {"from": "On by default. Nothing changes until the light is next switched on; a manual change pauses it for 60 min. Untick to disable for this light (global switch: app settings).", "to": {"en": "On by default; applies at next switch-on, a manual change pauses it 60 min. Untick to disable here (global: app settings).", "fr": "Actif par défaut ; s'applique au prochain allumage, un réglage manuel le suspend 60 min. Décochez pour l'exclure (global : réglages de l'app)."}},
     "zcl_cluster_layer": { "from": "Extra command capture, bounded bindings and reporting fallback on top of the native setup. Turn off if this device misbehaves.", "to": { "en": "Extra command capture, bindings and reporting fallback. Untick if the device misbehaves.", "fr": "Capture, liaisons et relève de secours en plus. Décochez si l'appareil se comporte mal." } },
     "battery_type": { "from": "Select battery type manually or use auto-detection based on voltage", "to": { "en": "Manual choice, or Auto (from voltage)", "fr": "Choix manuel, ou Auto (selon la tension)" } },
     "power_source": { "from": "Select power source manually or use auto-detection", "to": { "en": "Manual choice, or Auto-detect", "fr": "Choix manuel, ou détection auto" } },
@@ -16,5 +17,10 @@
     "zigbee_rebind": { "from": "Re-bind & reconfigure reporting", "to": { "en": "Re-bind & reporting", "fr": "Re-lier et rapports", "nl": "Opnieuw binden", "de": "Neu binden" } },
     "tuya_revive": { "from": "Tuya Revive (device recovery)", "to": { "en": "Tuya Revive (recovery)", "fr": "Tuya Revive (récupération)", "nl": "Tuya Revive (herstel)", "de": "Tuya Revive (Wiederherstellung)" } },
     "ota_check": { "from": "Check Zigbee OTA Update", "to": { "en": "Check Zigbee OTA update", "fr": "Vérifier MàJ OTA", "nl": "OTA-update zoeken" } }
+  },
+  "settingValues": {
+    "battery_type": {"from": ["Auto Detect", "CR2032", "CR2450", "AAA", "AA", "CR123A"], "to": [{"id": "auto", "label": {"en": "Auto"}}, {"id": "CR2032", "label": {"en": "CR2032", "fr": "CR2032 (bouton 3V)"}}, {"id": "CR2450", "label": {"en": "CR2450", "fr": "CR2450 (bouton 3V)"}}, {"id": "AAA", "label": {"en": "AAA"}}, {"id": "AA", "label": {"en": "AA"}}, {"id": "CR123A", "label": {"en": "CR123A"}}]},
+    "power_source": {"from": ["Auto Detect", "AC Powered", "DC Powered", "Battery Powered"], "to": [{"id": "auto", "label": {"en": "Auto"}}, {"id": "ac", "label": {"en": "Mains (AC)", "fr": "Secteur (AC)"}}, {"id": "dc", "label": {"en": "DC"}}, {"id": "battery", "label": {"en": "Battery", "fr": "Batterie"}}]},
+    "optimization_mode": {"from": ["Performance (More responsive)", "Balanced", "Power Saving (Longer battery)"], "to": [{"id": "performance", "label": {"en": "Responsive", "fr": "Réactif"}}, {"id": "balanced", "label": {"en": "Balanced", "fr": "Équilibré"}}, {"id": "power_saving", "label": {"en": "Battery saver", "fr": "Économie batterie"}}]}
   }
 }

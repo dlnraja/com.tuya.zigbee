@@ -14,6 +14,11 @@ const DIN2_RE = /lsanae15/i;
 const DIN1_RE = /_(bkkmqmyo|eaac7dkw)$/i;
 const SPM01GT_RE = /_d2zfgtij$/i;
 const { decodePhase } = require('../../lib/tuya/SpmPhaseDecoder');
+const { ensureAndSet } = require('../../lib/helpers/LateCapability');
+// P3071c: HOCH/WDYK ZJSBL7-100Z RCBO (zhc TS0601_rcbo, legacy hoch_din frame): DP1 relay, DP101 V [b0b1]/10,
+// DP102 A [b1b2]/1000, DP103 W [b1b2]/10, DP113 kWh /100, DP105 °C (late capability, 0 manifest bytes).
+// WHY: the generic plug map read DP101-103 as power factor / alert settings and never showed V/A/W/kWh.
+const HOCH_RE = /^_tze(200|284)_hkdl5fmv$/i;
 const DIN1_SCALARS = {
   din1: { 1: { cap: 'meter_power', div: 100 }, 16: { cap: 'onoff', bool: true }, 103: { cap: 'measure_power', div: 1 }, 105: { cap: 'measure_frequency', div: 100 } },
   spm01gt: { 1: { cap: 'meter_power', div: 100 }, 32: { cap: 'measure_frequency', div: 100 } },
@@ -24,6 +29,28 @@ function decodeDin1Phase(raw) {
   if (Buffer.isBuffer(raw)) {buf = raw;} else if (typeof raw === 'string') {buf = Buffer.from(raw, 'base64');} else if (Array.isArray(raw)) {buf = Buffer.from(raw);}
   if (!buf || buf.length < 15) {return null;}
   return { voltage: ((buf[13] << 8) | buf[14]) / 10, current: ((buf[11] << 8) | buf[12]) / 1000 };
+}
+
+const HOCH_STRUCT = { 101: ['measure_voltage', 0, 2, 10], 102: ['measure_current', 1, 3, 1000], 103: ['measure_power', 1, 3, 10] };
+const HOCH_NUM = { 113: ['meter_power', 100], 105: ['measure_temperature', 1] };
+const HOCH_IGNORED = new Set([104, 106, 107, 108, 109, 110, 111, 112, 114, 117, 118, 119]);
+
+function _hochBuf(raw) {
+  if (Buffer.isBuffer(raw)) {return raw;}
+  if (typeof raw === 'string') {return Buffer.from(raw, 'base64');}
+  return Array.isArray(raw) ? Buffer.from(raw) : null;
+}
+
+function decodeHoch(dp, raw) {
+  const buf = _hochBuf(raw);
+  const st = HOCH_STRUCT[dp];
+  if (st) {return buf && buf.length >= st[2] ? { cap: st[0], value: ((buf[st[1]] << 8) | buf[st[1] + 1]) / st[3] } : null;}
+  const nm = HOCH_NUM[dp];
+  if (nm) {
+    const num = typeof raw === 'number' ? raw : buf && buf.length >= 1 && buf.length <= 4 ? buf.readUIntBE(0, buf.length) : NaN;
+    return Number.isFinite(num) ? { cap: nm[0], value: num / nm[1] } : null;
+  }
+  return HOCH_IGNORED.has(dp) ? { cap: null } : null;
 }
 
 function decodeDin2Phase(raw) {
@@ -68,7 +95,7 @@ class EnergyMeterDinDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifie
   _dinVariant() {
     if (this._dinVar !== undefined) {return this._dinVar;}
     const mfr = String(this.getSetting?.('zb_manufacturer_name') || this.getStore?.()?.manufacturerName || this.getData?.()?.manufacturerName || '').trim();
-    this._dinVar = DIN2_RE.test(mfr) ? 'din2' : DIN1_RE.test(mfr) ? 'din1' : SPM01GT_RE.test(mfr) ? 'spm01gt' : null;
+    this._dinVar = DIN2_RE.test(mfr) ? 'din2' : DIN1_RE.test(mfr) ? 'din1' : SPM01GT_RE.test(mfr) ? 'spm01gt' : HOCH_RE.test(mfr) ? 'hoch' : null;
     return this._dinVar;
   }
 
@@ -76,6 +103,7 @@ class EnergyMeterDinDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifie
     if (this._isDin2()) {return this._handleDin2DP(Number(dpId), rawValue);}
     const v = this._dinVariant();
     if (v === 'din1' || v === 'spm01gt') {return this._handleDin1DP(v, Number(dpId), rawValue);}
+    if (v === 'hoch') {return this._handleHochDP(Number(dpId), rawValue);}
     return super._handleDP(dpId, rawValue);
   }
 
@@ -89,6 +117,18 @@ class EnergyMeterDinDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifie
     }
     if (rule.bool) {return this._din2Set(rule.cap, raw === true || num === 1);}
     if (Number.isFinite(num) && num >= 0) {this._din2Set(rule.cap, num / rule.div);}
+    return undefined;
+  }
+
+  _handleHochDP(dp, raw) {
+    const r = decodeHoch(dp, raw);
+    if (!r) {return super._handleDP(dp, raw);}
+    if (!r.cap) {return undefined;}
+    if (r.cap === 'measure_temperature') {
+      ensureAndSet(this, r.cap, r.value).catch(() => {});
+      return undefined;
+    }
+    this._din2Set(r.cap, r.value);
     return undefined;
   }
 
@@ -155,3 +195,4 @@ class EnergyMeterDinDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifie
 module.exports = EnergyMeterDinDevice;
 module.exports.decodeDin2Phase = decodeDin2Phase;
 module.exports.decodeDin1Phase = decodeDin1Phase;
+module.exports.decodeHoch = decodeHoch;
