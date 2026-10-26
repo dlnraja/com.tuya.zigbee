@@ -147,7 +147,7 @@ const removalCounts = new Map(); // driver -> count of planned removals
 // P217: brand names are pid-disambiguated (HOBEIAN ZG-305Z vs ZG-303Z, Wing TS0203 vs ZTH).
 // Cartesian HOBEIAN×TS0601 is theoretical; Auto-Publish 32063635335 stripped HOBEIAN
 // from switch_2gang because sensor (55) beats switch (40) by exactly 15.
-const MULTI_DRIVER_BRANDS = new Set(['hobeian', 'wing']);
+const MULTI_DRIVER_BRANDS = new Set(['hobeian', 'heobian', 'wing']); // heobian = Athom typo form of hobeian (P2677); 9.0.1446 bot stripped it
 function isPidDisambiguatedBrand(mfr) {
   return MULTI_DRIVER_BRANDS.has(String(mfr || '').toLowerCase());
 }
