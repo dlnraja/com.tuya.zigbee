@@ -11,7 +11,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Turned on",
-        "fr": "Allumé"
+        "fr": "Allumé",
+        "de": "Eingeschaltet",
+        "nl": "Aangezet"
       }
     },
     {
@@ -25,7 +27,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Turned off",
-        "fr": "Éteint"
+        "fr": "Éteint",
+        "de": "Ausgeschaltet",
+        "nl": "Uitgezet"
       }
     },
     {
@@ -66,7 +70,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Is on",
-        "fr": "Est allumé"
+        "fr": "Est allumé",
+        "de": "Ist an",
+        "nl": "Is aan"
       }
     }
   ],

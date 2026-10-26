@@ -12,7 +12,8 @@
       "titleFormatted": {
         "en": "Turned on",
         "nl": "Aangezet",
-        "fr": "Allumé"
+        "fr": "Allumé",
+        "de": "Eingeschaltet"
       }
     },
     {
@@ -27,7 +28,8 @@
       "titleFormatted": {
         "en": "Turned off",
         "nl": "Uitgezet",
-        "fr": "Éteint"
+        "fr": "Éteint",
+        "de": "Ausgeschaltet"
       }
     },
     {
@@ -42,7 +44,8 @@
       "titleFormatted": {
         "en": "Gang 1 physical ON",
         "nl": "Gang 1 fysiek AAN",
-        "fr": "Voie 1 allumée (physique)"
+        "fr": "Voie 1 allumée (physique)",
+        "de": "Kanal 1 physisch EIN"
       }
     },
     {
@@ -57,7 +60,8 @@
       "titleFormatted": {
         "en": "Gang 1 physical OFF",
         "nl": "Gang 1 fysiek UIT",
-        "fr": "Voie 1 éteinte (physique)"
+        "fr": "Voie 1 éteinte (physique)",
+        "de": "Kanal 1 physisch AUS"
       }
     },
     {
@@ -72,7 +76,8 @@
       "titleFormatted": {
         "en": "Gang 2 physical ON",
         "nl": "Gang 2 fysiek AAN",
-        "fr": "Voie 2 allumée (physique)"
+        "fr": "Voie 2 allumée (physique)",
+        "de": "Kanal 2 physisch EIN"
       }
     },
     {
@@ -87,7 +92,8 @@
       "titleFormatted": {
         "en": "Gang 2 physical OFF",
         "nl": "Gang 2 fysiek UIT",
-        "fr": "Voie 2 éteinte (physique)"
+        "fr": "Voie 2 éteinte (physique)",
+        "de": "Kanal 2 physisch AUS"
       }
     }
   ],
@@ -167,7 +173,8 @@
       "titleFormatted": {
         "en": "Turn on",
         "nl": "Aanzetten",
-        "fr": "Allumer"
+        "fr": "Allumer",
+        "de": "Einschalten"
       }
     },
     {
@@ -182,7 +189,8 @@
       "titleFormatted": {
         "en": "Turn off",
         "nl": "Uitzetten",
-        "fr": "Éteindre"
+        "fr": "Éteindre",
+        "de": "Ausschalten"
       }
     },
     {
@@ -197,7 +205,8 @@
       "titleFormatted": {
         "en": "Toggle",
         "nl": "Wisselen",
-        "fr": "Basculer"
+        "fr": "Basculer",
+        "de": "Umschalten"
       }
     },
     {
@@ -212,7 +221,8 @@
       "titleFormatted": {
         "en": "Turn on gang 1",
         "nl": "Gang 1 aanzetten",
-        "fr": "Allumer la voie 1"
+        "fr": "Allumer la voie 1",
+        "de": "Kanal 1 einschalten"
       }
     },
     {
@@ -227,7 +237,8 @@
       "titleFormatted": {
         "en": "Turn off gang 1",
         "nl": "Gang 1 uitzetten",
-        "fr": "Éteindre la voie 1"
+        "fr": "Éteindre la voie 1",
+        "de": "Kanal 1 ausschalten"
       }
     },
     {
@@ -242,7 +253,8 @@
       "titleFormatted": {
         "en": "Toggle gang 1",
         "nl": "Gang 1 wisselen",
-        "fr": "Basculer la voie 1"
+        "fr": "Basculer la voie 1",
+        "de": "Kanal 1 umschalten"
       }
     },
     {
@@ -257,7 +269,8 @@
       "titleFormatted": {
         "en": "Turn on gang 2",
         "nl": "Gang 2 aanzetten",
-        "fr": "Allumer la voie 2"
+        "fr": "Allumer la voie 2",
+        "de": "Kanal 2 einschalten"
       }
     },
     {
@@ -272,7 +285,8 @@
       "titleFormatted": {
         "en": "Turn off gang 2",
         "nl": "Gang 2 uitzetten",
-        "fr": "Éteindre la voie 2"
+        "fr": "Éteindre la voie 2",
+        "de": "Kanal 2 ausschalten"
       }
     },
     {
@@ -287,7 +301,8 @@
       "titleFormatted": {
         "en": "Toggle gang 2",
         "nl": "Gang 2 wisselen",
-        "fr": "Basculer la voie 2"
+        "fr": "Basculer la voie 2",
+        "de": "Kanal 2 umschalten"
       }
     },
     {
@@ -302,7 +317,8 @@
       "titleFormatted": {
         "en": "Turn on all gangs",
         "nl": "Alle gangs aanzetten",
-        "fr": "Allumer toutes les voies"
+        "fr": "Allumer toutes les voies",
+        "de": "Alle Kanäle einschalten"
       }
     },
     {
@@ -317,7 +333,8 @@
       "titleFormatted": {
         "en": "Turn off all gangs",
         "nl": "Alle gangs uitzetten",
-        "fr": "Éteindre toutes les voies"
+        "fr": "Éteindre toutes les voies",
+        "de": "Alle Kanäle ausschalten"
       }
     }
   ],

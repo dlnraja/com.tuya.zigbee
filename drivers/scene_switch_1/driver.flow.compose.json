@@ -104,7 +104,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Button pressed",
-        "fr": "Bouton appuye"
+        "fr": "Bouton appuye",
+        "de": "Taste gedrückt",
+        "nl": "Knop ingedrukt"
       }
     },
     {
@@ -118,7 +120,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Button double-pressed",
-        "fr": "Bouton double-appui"
+        "fr": "Bouton double-appui",
+        "de": "Taste doppelt gedrückt",
+        "nl": "Knop dubbel ingedrukt"
       }
     },
     {
@@ -132,7 +136,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Button long-pressed",
-        "fr": "Bouton appui long"
+        "fr": "Bouton appui long",
+        "de": "Taste lange gedrückt",
+        "nl": "Knop lang ingedrukt"
       }
     },
     {
@@ -146,7 +152,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Button triple-pressed",
-        "fr": "Bouton triple-appui"
+        "fr": "Bouton triple-appui",
+        "de": "Taste dreimal gedrückt",
+        "nl": "Knop driemaal ingedrukt"
       }
     },
     {
@@ -160,7 +168,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Button released",
-        "fr": "Bouton relache"
+        "fr": "Bouton relache",
+        "de": "Taste losgelassen",
+        "nl": "Knop losgelaten"
       }
     }
   ],

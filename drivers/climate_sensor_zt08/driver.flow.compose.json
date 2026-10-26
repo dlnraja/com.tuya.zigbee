@@ -62,7 +62,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Battery low",
-        "fr": "Batterie faible"
+        "fr": "Batterie faible",
+        "de": "Batterie schwach",
+        "nl": "Batterij bijna leeg"
       }
     },
     {
@@ -76,7 +78,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Button pressed",
-        "fr": "Bouton pressé"
+        "fr": "Bouton pressé",
+        "de": "Taste gedrückt",
+        "nl": "Knop ingedrukt"
       }
     }
   ],

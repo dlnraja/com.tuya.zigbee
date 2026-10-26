@@ -38,7 +38,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Open",
-        "fr": "Ouvrir"
+        "fr": "Ouvrir",
+        "de": "Öffnen",
+        "nl": "Openen"
       }
     },
     {
@@ -52,7 +54,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Close",
-        "fr": "Fermer"
+        "fr": "Fermer",
+        "de": "Schließen",
+        "nl": "Sluiten"
       }
     },
     {
@@ -66,7 +70,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Stop",
-        "fr": "Arrêter"
+        "fr": "Arrêter",
+        "de": "Stoppen",
+        "nl": "Stoppen"
       }
     }
   ]

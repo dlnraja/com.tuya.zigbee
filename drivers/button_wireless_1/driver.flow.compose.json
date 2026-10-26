@@ -120,7 +120,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Button 1 pressed",
-        "fr": "Bouton 1 appuyé"
+        "fr": "Bouton 1 appuyé",
+        "de": "Taste 1 gedrückt",
+        "nl": "Knop 1 ingedrukt"
       }
     },
     {
@@ -134,7 +136,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Button 1 double-pressed",
-        "fr": "Bouton 1 double-cliqué"
+        "fr": "Bouton 1 double-cliqué",
+        "de": "Taste 1 doppelt gedrückt",
+        "nl": "Knop 1 dubbel ingedrukt"
       }
     },
     {
@@ -148,7 +152,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Button 1 long-pressed",
-        "fr": "Bouton 1 pressé longtemps"
+        "fr": "Bouton 1 pressé longtemps",
+        "de": "Taste 1 lange gedrückt",
+        "nl": "Knop 1 lang ingedrukt"
       }
     },
     {
@@ -162,7 +168,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Button 1 triple-pressed",
-        "fr": "Bouton 1 triple-cliqué"
+        "fr": "Bouton 1 triple-cliqué",
+        "de": "Taste 1 dreimal gedrückt",
+        "nl": "Knop 1 driemaal ingedrukt"
       }
     },
     {
@@ -176,7 +184,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Button 1 released - after hold",
-        "fr": "Bouton 1 relâché - après maintien"
+        "fr": "Bouton 1 relâché - après maintien",
+        "de": "Taste 1 nach Halten losgelassen",
+        "nl": "Knop 1 losgelaten na vasthouden"
       }
     },
     {

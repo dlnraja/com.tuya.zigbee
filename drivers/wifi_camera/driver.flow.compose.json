@@ -11,7 +11,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Motion detected",
-        "fr": "Mouvement détecté"
+        "fr": "Mouvement détecté",
+        "de": "Bewegung erkannt",
+        "nl": "Beweging gedetecteerd"
       }
     },
     {
@@ -25,7 +27,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Motion cleared",
-        "fr": "Fin de mouvement"
+        "fr": "Fin de mouvement",
+        "de": "Bewegung beendet",
+        "nl": "Beweging gestopt"
       }
     }
   ],

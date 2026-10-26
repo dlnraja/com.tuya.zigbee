@@ -12,7 +12,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Motion detected",
-        "fr": "Mouvement détecté"
+        "fr": "Mouvement détecté",
+        "de": "Bewegung erkannt",
+        "nl": "Beweging gedetecteerd"
       }
     },
     {
@@ -26,7 +28,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Motion cleared",
-        "fr": "Mouvement terminé"
+        "fr": "Mouvement terminé",
+        "de": "Bewegung beendet",
+        "nl": "Beweging gestopt"
       }
     },
     {
@@ -40,7 +44,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Battery low",
-        "fr": "Batterie faible"
+        "fr": "Batterie faible",
+        "de": "Batterie schwach",
+        "nl": "Batterij bijna leeg"
       }
     },
     {

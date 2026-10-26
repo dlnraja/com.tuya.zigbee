@@ -163,7 +163,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Turn on",
-        "fr": "Allumer"
+        "fr": "Allumer",
+        "de": "Einschalten",
+        "nl": "Zet aan"
       }
     },
     {
@@ -177,7 +179,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Turn off",
-        "fr": "Éteindre"
+        "fr": "Éteindre",
+        "de": "Ausschalten",
+        "nl": "Zet uit"
       }
     },
     {
@@ -191,7 +195,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Toggle",
-        "fr": "Basculer"
+        "fr": "Basculer",
+        "de": "Umschalten",
+        "nl": "Wisselen"
       }
     }
   ]

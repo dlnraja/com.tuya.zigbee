@@ -62,7 +62,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Battery low",
-        "fr": "Batterie faible"
+        "fr": "Batterie faible",
+        "de": "Batterie schwach",
+        "nl": "Batterij bijna leeg"
       }
     },
     {
@@ -76,7 +78,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Humidity too high",
-        "fr": "Humidité trop haute"
+        "fr": "Humidité trop haute",
+        "de": "Luftfeuchtigkeit zu hoch",
+        "nl": "Luchtvochtigheid te hoog"
       }
     },
     {
@@ -90,7 +94,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Humidity too low",
-        "fr": "Humidité trop basse"
+        "fr": "Humidité trop basse",
+        "de": "Luftfeuchtigkeit zu niedrig",
+        "nl": "Luchtvochtigheid te laag"
       }
     },
     {

@@ -11,7 +11,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Turned on",
-        "fr": "Allume"
+        "fr": "Allume",
+        "de": "Eingeschaltet",
+        "nl": "Aangezet"
       }
     },
     {
@@ -25,7 +27,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Turned off",
-        "fr": "Eteint"
+        "fr": "Eteint",
+        "de": "Ausgeschaltet",
+        "nl": "Uitgezet"
       }
     },
     {
@@ -71,7 +75,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Physical gang 1 ON",
-        "fr": "Physique gang 1 ON"
+        "fr": "Physique gang 1 ON",
+        "de": "Kanal 1 physisch EIN",
+        "nl": "Kanaal 1 fysiek AAN"
       }
     },
     {
@@ -85,7 +91,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Physical gang 1 OFF",
-        "fr": "Physique gang 1 OFF"
+        "fr": "Physique gang 1 OFF",
+        "de": "Kanal 1 physisch AUS",
+        "nl": "Kanaal 1 fysiek UIT"
       }
     },
     {
@@ -99,7 +107,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Physical gang 2 ON",
-        "fr": "Physique gang 2 ON"
+        "fr": "Physique gang 2 ON",
+        "de": "Kanal 2 physisch EIN",
+        "nl": "Kanaal 2 fysiek AAN"
       }
     },
     {
@@ -113,7 +123,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Physical gang 2 OFF",
-        "fr": "Physique gang 2 OFF"
+        "fr": "Physique gang 2 OFF",
+        "de": "Kanal 2 physisch AUS",
+        "nl": "Kanaal 2 fysiek UIT"
       }
     },
     {
@@ -127,7 +139,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Physical gang 3 ON",
-        "fr": "Physique gang 3 ON"
+        "fr": "Physique gang 3 ON",
+        "de": "Kanal 3 physisch EIN",
+        "nl": "Kanaal 3 fysiek AAN"
       }
     },
     {
@@ -141,7 +155,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Physical gang 3 OFF",
-        "fr": "Physique gang 3 OFF"
+        "fr": "Physique gang 3 OFF",
+        "de": "Kanal 3 physisch AUS",
+        "nl": "Kanaal 3 fysiek UIT"
       }
     },
     {
@@ -155,7 +171,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Physical gang 4 ON",
-        "fr": "Physique gang 4 ON"
+        "fr": "Physique gang 4 ON",
+        "de": "Kanal 4 physisch EIN",
+        "nl": "Kanaal 4 fysiek AAN"
       }
     },
     {
@@ -169,7 +187,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Physical gang 4 OFF",
-        "fr": "Physique gang 4 OFF"
+        "fr": "Physique gang 4 OFF",
+        "de": "Kanal 4 physisch AUS",
+        "nl": "Kanaal 4 fysiek UIT"
       }
     }
   ],
@@ -265,7 +285,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Turn on",
-        "fr": "Allumer"
+        "fr": "Allumer",
+        "de": "Einschalten",
+        "nl": "Zet aan"
       }
     },
     {
@@ -279,7 +301,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Turn off",
-        "fr": "Eteindre"
+        "fr": "Eteindre",
+        "de": "Ausschalten",
+        "nl": "Zet uit"
       }
     },
     {
@@ -293,7 +317,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Toggle",
-        "fr": "Basculer"
+        "fr": "Basculer",
+        "de": "Umschalten",
+        "nl": "Wisselen"
       }
     },
     {

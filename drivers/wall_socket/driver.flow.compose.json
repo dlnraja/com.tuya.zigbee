@@ -11,7 +11,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Turned on",
-        "fr": "Allume"
+        "fr": "Allume",
+        "de": "Eingeschaltet",
+        "nl": "Aangezet"
       }
     },
     {
@@ -25,7 +27,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Turned off",
-        "fr": "Eteint"
+        "fr": "Eteint",
+        "de": "Ausgeschaltet",
+        "nl": "Uitgezet"
       }
     },
     {
@@ -157,7 +161,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Turn on",
-        "fr": "Allumer"
+        "fr": "Allumer",
+        "de": "Einschalten",
+        "nl": "Zet aan"
       }
     },
     {
@@ -171,7 +177,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Turn off",
-        "fr": "Eteindre"
+        "fr": "Eteindre",
+        "de": "Ausschalten",
+        "nl": "Zet uit"
       }
     },
     {
@@ -185,7 +193,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Toggle",
-        "fr": "Basculer"
+        "fr": "Basculer",
+        "de": "Umschalten",
+        "nl": "Wisselen"
       }
     },
     {
@@ -199,7 +209,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Enable child lock",
-        "fr": "Activer verrou enfant"
+        "fr": "Activer verrou enfant",
+        "de": "Kindersicherung aktivieren",
+        "nl": "Kinderslot inschakelen"
       }
     },
     {
@@ -213,7 +225,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Disable child lock",
-        "fr": "Désactiver verrou enfant"
+        "fr": "Désactiver verrou enfant",
+        "de": "Kindersicherung deaktivieren",
+        "nl": "Kinderslot uitschakelen"
       }
     }
   ]

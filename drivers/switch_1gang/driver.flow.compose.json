@@ -75,7 +75,9 @@
       },
       "titleFormatted": {
         "en": "Turned on physically - gang 1",
-        "fr": "Allumé physiquement - voie 1"
+        "fr": "Allumé physiquement - voie 1",
+        "de": "Physisch eingeschaltet - Kanal 1",
+        "nl": "Fysiek aangezet - kanaal 1"
       }
     },
     {
@@ -89,7 +91,9 @@
       },
       "titleFormatted": {
         "en": "Turned off physically - gang 1",
-        "fr": "Éteint physiquement - voie 1"
+        "fr": "Éteint physiquement - voie 1",
+        "de": "Physisch ausgeschaltet - Kanal 1",
+        "nl": "Fysiek uitgezet - kanaal 1"
       }
     },
     {
@@ -539,7 +543,9 @@
               "id": "toggle",
               "title": {
                 "en": "Toggle",
-                "fr": "Toggle"
+                "fr": "Toggle",
+                "de": "Umschalten",
+                "nl": "Omschakelen"
               },
               "label": {
                 "en": "Toggle",
