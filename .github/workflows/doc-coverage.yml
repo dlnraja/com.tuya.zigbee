@@ -57,3 +57,12 @@ jobs:
           cat "$RUNNER_TEMP/doc-coverage.md" >> "$GITHUB_STEP_SUMMARY"
           node scripts/kb/doc-coverage.js --check || true
           node scripts/kb/code-reference.js --check || true
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Lists modules, gates and workflows that no doc describes yet. Report only, never fails."; else s="Stopped early ($JOB_STATUS); the red step above says why. Lists modules, gates and workflows that no doc describes yet. Report only, never fails."; fi
+          node scripts/lib/report-writer.js --title "doc-coverage" --summary "$s" --headers "item|value" --row "job|report" --row "result|$JOB_STATUS" --thanks "GitHub Actions docs" --thanks "rhysd (actionlint)" >> "$GITHUB_STEP_SUMMARY" || true

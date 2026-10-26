@@ -49,3 +49,12 @@ jobs:
         with:
           name: athom-build-history
           path: data/status/homey-build-status-*.json
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Lists the Athom build history of our three apps (read-only) to study processing failures."; else s="Stopped early ($JOB_STATUS); the red step above says why. Lists the Athom build history of our three apps (read-only) to study processing failures."; fi
+          node scripts/lib/report-writer.js --title "athom-build-history" --summary "$s" --headers "item|value" --row "job|history" --row "result|$JOB_STATUS" --thanks "Athom's official Homey app GitHub Actions (athombv)" --thanks "the Homey developer docs on build channels" >> "$GITHUB_STEP_SUMMARY" || true

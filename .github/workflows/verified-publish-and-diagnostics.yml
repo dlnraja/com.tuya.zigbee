@@ -112,6 +112,15 @@ jobs:
 
       - name: Sanitize generated manifest after validation
         run: npm run fix:generated-flow-args && npm run check:homey-guidelines
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Manual verify, diagnose and publish-to-test for a chosen version."; else s="Stopped early ($JOB_STATUS); the red step above says why. Manual verify, diagnose and publish-to-test for a chosen version."; fi
+          node scripts/lib/report-writer.js --title "verified-publish-and-diagnostics" --summary "$s" --headers "item|value" --row "job|verify-and-lint" --row "result|$JOB_STATUS" --thanks "Athom's official Homey app GitHub Actions (athombv)" --thanks "the Homey developer docs on build channels" >> "$GITHUB_STEP_SUMMARY" || true
 
   # 2. Analyse des Diagnostics (Simulation du dump email)
   analyze-diagnostics:

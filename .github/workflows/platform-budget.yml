@@ -90,3 +90,12 @@ jobs:
           path: ${{ runner.temp }}/platform-budget-report.json
           retention-days: 14
           if-no-files-found: ignore
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Reports payload size, memory and Actions/API usage against the platform limits. Read-only."; else s="Stopped early ($JOB_STATUS); the red step above says why. Reports payload size, memory and Actions/API usage against the platform limits. Read-only."; fi
+          node scripts/lib/report-writer.js --title "platform-budget" --summary "$s" --headers "item|value" --row "job|budget" --row "result|$JOB_STATUS" --thanks "GitHub Actions docs" --thanks "rhysd (actionlint)" >> "$GITHUB_STEP_SUMMARY" || true

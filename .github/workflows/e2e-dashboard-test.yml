@@ -273,3 +273,12 @@ jobs:
           echo "::error::Process error detected in one or both apps."
           echo "Master: ${{ steps.validate-master.outputs.PROCESS_ERROR_DETECTED }}"
           echo "Stable: ${{ steps.validate-stable.outputs.STABLE_PROCESS_ERROR }}"
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. End-to-end check of the diagnostics dashboard, triggered after the daily flow."; else s="Stopped early ($JOB_STATUS); the red step above says why. End-to-end check of the diagnostics dashboard, triggered after the daily flow."; fi
+          node scripts/lib/report-writer.js --title "e2e-dashboard-test" --summary "$s" --headers "item|value" --row "job|test" --row "result|$JOB_STATUS" --thanks "GitHub Actions docs" --thanks "rhysd (actionlint)" >> "$GITHUB_STEP_SUMMARY" || true
