@@ -47,7 +47,11 @@
       "_TZ3210_tlwlmwm6",
       "_tz3210_tlwlmwm6",
       "_TZ3210_tqwyiitv",
-      "_tz3210_tqwyiitv"
+      "_tz3210_tqwyiitv",
+      "_TZ3210_09hzmirw",
+      "_tz3210_09hzmirw",
+      "_TZ3210_09HZMIRW",
+      "_tz3210_09HZMIRW"
     ],
     "productId": [
       "TS0502B"
@@ -82,7 +86,7 @@
     "homey": {
       "natural_light": true
     },
-    "source": "JohanBendz/com.tuya.zigbee#403 (canonical #178)"
+    "source": "JohanBendz/com.tuya.zigbee#403 (canonical #178); _TZ3210_09hzmirw = EcoDim ED-10032 CCT filament bulb (Z2M tuya.ts TS0502B whiteLabel, P3066)"
   },
   "settings": [
     {

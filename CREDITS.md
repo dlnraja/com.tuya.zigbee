@@ -10,7 +10,7 @@
 
 ## Tuya Protocol References
 - **JohanBendz/com.tuya.zigbee** - Original Tuya Zigbee app for Homey (TuyaSpecificClusterDevice, DP constants, sub-devices)
-- **Koenkk/zigbee-herdsman-converters** - Z2M device definitions and Tuya converters
+- **Koenkk/zigbee-herdsman-converters** - Z2M device definitions and Tuya converters (P3066 DP tables: TS0601_din_2, BAC-001, TS0601_knob_dimmer_switch, EcoDim ED-10032 whiteLabel; facts only, own code)
 - **zigpy/zha-device-handlers** - ZHA Tuya quirks (zhaquirks/tuya/)
 - **jasonacox/tinytuya** - Tuya local protocol implementation
 - **make-all/tuya-local** - Tuya Local for Home Assistant (YAML config DP mappings)

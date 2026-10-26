@@ -37,7 +37,10 @@ const FCU_DATA_POINTS = {
   manualMode: 101,
 };
 
-const FCU_MFRS = ['_TZE204_mpbki2zm', '_TZE204_qujphad5'];
+// P3066: _TZE204_hpkusvom = Z2M tuya.ts BAC-001 (same FCU layout: DP2 cool/heat/fan_only, DP16/24 /10, DP28 fan).
+// It used to start on the BHT path (DP2 read as manual/program) until a DP28 report armed FCU; now FCU from init.
+// No DP101 write: the FCU manual-mode TX stays gated on a DP101 report, which BAC-001 never sends.
+const FCU_MFRS = ['_TZE204_mpbki2zm', '_TZE204_qujphad5', '_TZE204_hpkusvom'];
 
 /**
  * WHY(P2970, Umberto Maffii store suggestion + Z2M tuya.ts "BAC-002-ALZB", whitelabel Beca BAC-003;
@@ -653,4 +656,5 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
 
 module.exports = WallThermostatDevice;
 module.exports.BAC002_MFRS = BAC002_MFRS;
+module.exports.FCU_MFRS = FCU_MFRS;
 module.exports.BAC002_DATA_POINTS = BAC002_DATA_POINTS;
