@@ -4,7 +4,9 @@
       "id": "lock_smart_locked",
       "title": {
         "en": "Locked",
-        "fr": "Verrouillé"
+        "fr": "Verrouillé",
+        "de": "Verriegelt",
+        "nl": "Vergrendeld"
       },
       "args": [],
       "titleFormatted": {
@@ -16,7 +18,9 @@
       "id": "lock_smart_unlocked",
       "title": {
         "en": "Unlocked",
-        "fr": "Déverrouillé"
+        "fr": "Déverrouillé",
+        "de": "Entriegelt",
+        "nl": "Ontgrendeld"
       },
       "args": [],
       "titleFormatted": {
