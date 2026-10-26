@@ -23,10 +23,15 @@ describe('Spec 004: non-native layer contract', () => {
     const l = wrapLayer('slow', { read: () => new Promise(() => {}) }, { timeoutMs: 20 });
     const r = await l.read(); assert.ok(!r.ok && /timeout/.test(r.error));
   });
+  // P3075: timer-free so a loaded runner or a sibling test cannot stall it (was a 10 s
+  // timeout in the full Node 22 suite on 627cbf83f0 while the contract itself held).
   it('background never blocks or rejects', async () => {
-    let done = false; const start = Date.now();
-    background(async () => { await new Promise((r) => setTimeout(r, 30)); throw new Error('boom'); });
-    done = true; assert.ok(done && Date.now() - start < 20);
-    await new Promise((r) => setTimeout(r, 50));
+    let release; const gate = new Promise((r) => { release = r; });
+    let ran = false; let logged = null; let onLog; const seen = new Promise((r) => { onLog = r; });
+    const ret = background(async () => { await gate; ran = true; throw new Error('boom'); }, (m) => { logged = m; onLog(); });
+    assert.strictEqual(ret, undefined); // returns at once, nothing to await
+    assert.strictEqual(ran, false); // caller was not blocked on the task
+    release(); await seen;
+    assert.ok(ran && /background task failed: boom/.test(logged)); // failure logged, never rejected
   });
 });
