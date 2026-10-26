@@ -13,7 +13,7 @@ const ROOT = path.join(__dirname, '..', '..');
 const reach = require('../../scripts/diag/flow-trigger-reach');
 const W = require('../../lib/flow/DeadFlowAutoWire');
 
-const ORPHAN_CEIL = 128; // 2026-10-26 after P3065 (a); was 142
+const ORPHAN_CEIL = 127; // 2026-10-26 after P3065 D7 (universal_zigbee motion ended); was 128, 142
 
 test('P3065 (a): orphan driver triggers do not grow', () => {
   assert.ok(reach.orphan.length <= ORPHAN_CEIL, `orphans grew to ${reach.orphan.length}`);
@@ -33,6 +33,7 @@ const NEW = {
   sensor_motion_radar_motion_sensor_radar_mmwa_494ef: ['measure_battery', 63],
   sensor_motion_radar_motion_sensor_radar_mmwa_ce6c1: ['measure_luminance', 120],
   universal_zigbee_contact_open: ['alarm_contact', true],
+  universal_zigbee_motion_off: ['alarm_motion', false],
   wifi_door_lock_wifi_lock_locked: ['locked', true],
   wifi_door_lock_wifi_lock_unlocked: ['locked', false],
 };

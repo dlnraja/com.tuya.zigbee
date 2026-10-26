@@ -701,6 +701,11 @@
       "cap": "dim",
       "when": "change"
     },
+    "universal_zigbee_motion_off": {
+      "driver": "universal_zigbee",
+      "cap": "alarm_motion",
+      "when": false
+    },
     "universal_zigbee_contact_open": {
       "driver": "universal_zigbee",
       "cap": "alarm_contact",
