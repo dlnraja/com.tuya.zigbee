@@ -1,5 +1,8 @@
 ## [Unreleased]
 
+### Improved (2026-10-26, P3070 energy estimates for mains switches and dimmers — master soak)
+- **Wall switches and dimmers whose driver also covers battery models** (21 drivers, e.g. *Switch 1–3 gang*, *Wall switch 1–8 gang*, *Dimmer 1–3 gang*, *TS110E dimmer*) now give Homey Energy a default "power when on/off" (relay 40 W / 0.4 W, dimmer 40 W / 0.5 W) once the device is confirmed as mains powered. Battery models and sensors get nothing; you can still change the values in the device's energy settings.
+
 ### Fixed (2026-10-26, P3068 one couple, one driver — master soak)
 - **Four devices that were paired with a driver of the wrong type now pair with the right one** (new pairings; already paired devices keep working on their current driver, no re-pair needed):
   - Mercator Ikuü SISWD11-ZB inline dimmer (`_TZE200_jowqowye`) → *Wall dimmer (Tuya)* instead of *Ceiling fan*.
