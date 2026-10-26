@@ -83,8 +83,16 @@ if (fs.existsSync(".homeychangelog.json")) {
   const changelog = readJson(".homeychangelog.json");
   const current = changelog[nextVersion] && String(changelog[nextVersion].en || "");
   if (!current || /^y{20,}$/i.test(current) || /^v\d+\.\d+\.\d+:$/.test(current.trim())) {
-    changelog[nextVersion] = { en: changelogText || `v${nextVersion}: Bug fixes and improvements.` };
-    writeJson(".homeychangelog.json", changelog);
+    // P3069: without an explicit text, write a short en + fr line from our own commits (newest first).
+    let entry = { en: changelogText || `v${nextVersion}: Bug fixes and improvements.` };
+    let ordered = changelog;
+    try {
+      const ce = require("../../scripts/automation/changelog-entry");
+      if (!changelogText) entry = ce.summarize(ce.subjectsSinceLastPublish());
+      changelog[nextVersion] = entry;
+      ordered = ce.orderChangelog(changelog);
+    } catch (_) { changelog[nextVersion] = entry; }
+    writeJson(".homeychangelog.json", ordered);
   }
 }
 
