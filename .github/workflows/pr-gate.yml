@@ -58,6 +58,13 @@ jobs:
       - name: 🚦 PR gate (version + Sacred Couple)
         run: node tools/ci/pr-gate.js --branch=${{ github.base_ref }}
 
+      # P2964 rescued by P3062: report-only until the legacy "changelog" wrapper readers are migrated.
+      - name: 📐 P2964 Homey SDK v3 rules (report-only)
+        run: |
+          node tools/ci/homey-sdk-rules.js --compose --report-only
+          node tools/ci/homey-sdk-rules-doc.js --check
+          npx mocha test/critical/p2964-homey-sdk-rules.test.js --timeout 10000
+
       - name: 🔍 JS syntax audit (all repo files)
         run: node tools/ci/js-syntax-audit.js
 
