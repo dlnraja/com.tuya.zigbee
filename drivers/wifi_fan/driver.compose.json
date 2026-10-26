@@ -130,7 +130,10 @@
           "hint": {
             "en": "Raw DP value for 0% speed. Keep 0 for percentage-based fans; use 1 for fans that expect 1-6."
           },
-          "value": 0
+          "value": 0,
+          "min": 0,
+          "max": 1000,
+          "step": 1
         },
         {
           "id": "fan_speed_max",
@@ -142,7 +145,10 @@
           "hint": {
             "en": "Raw DP value for 100% speed. Keep 100 for percentage-based fans; use 6 for fans that expect 1-6."
           },
-          "value": 100
+          "value": 100,
+          "min": 0,
+          "max": 1000,
+          "step": 1
         },
         {
           "id": "command_gap_ms",
