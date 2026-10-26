@@ -37,7 +37,7 @@
         "en": "Light B (optional)",
         "fr": "Lumière B (option)"
       },
-      "optional": true
+      "required": false
     },
     {
       "type": "dropdown",

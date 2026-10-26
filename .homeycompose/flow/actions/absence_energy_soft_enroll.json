@@ -41,7 +41,7 @@
         "en": "Device B (optional)",
         "fr": "Appareil B (option)"
       },
-      "optional": true
+      "required": false
     },
     {
       "type": "dropdown",
