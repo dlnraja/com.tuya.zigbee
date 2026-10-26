@@ -94,6 +94,20 @@ function sourceRef({ name, id, url, author, text, about } = {}, lang = 'en') {
   return s;
 }
 
+/**
+ * Short list-item reference for digests: "[#12](url) by @a — about: light, `TS0601`".
+ * The other person's title/body is only used to pick topic words and ids, never shown.
+ */
+function linkRef({ id, url, author, text, about, prefix = '#' } = {}, lang = 'en') {
+  const L = T[lang] || T.en;
+  const label = id != null && id !== '' ? `${prefix}${id}` : 'link';
+  let s = url ? `[${label}](${url})` : label;
+  if (author) s += ` ${L.by} @${String(author).replace(/^@/, '')}`;
+  const topic = about || (text != null ? topicOf(text, lang) : '');
+  if (topic) s += ` — ${L.about}: ${stripEmoji(topic)}`;
+  return s;
+}
+
 // ── Verbatim detector: finds runs of >= n consecutive words shared with a fetched source.
 function words(s) { return String(s || '').toLowerCase().replace(/<[^>]+>/g, ' ').match(/[\p{L}\p{N}_'-]+/gu) || []; }
 function shingles(ws, n) { const set = new Set(); for (let i = 0; i + n <= ws.length; i++) set.add(ws.slice(i, i + n).join(' ')); return set; }
@@ -230,7 +244,8 @@ function checkStructure(md) {
 }
 
 const createReport = (o) => new Report(o);
-module.exports = { createReport, Report, sourceRef, topicOf, sanitize, findVerbatim, findQuotedExcerpts, checkStructure, stripEmoji, cell, MARK, DEFAULT_VERBATIM_WORDS };
+module.exports = {
+  linkRef, createReport, Report, sourceRef, topicOf, sanitize, findVerbatim, findQuotedExcerpts, checkStructure, stripEmoji, cell, MARK, DEFAULT_VERBATIM_WORDS };
 
 // CLI: node scripts/lib/report-writer.js --title "…" --summary "…" [--lang fr] [--row "a|b"]… [--headers "x|y"] [--thanks "…"]
 // Handy for plain `run:` steps that only need a short, well-formed summary.

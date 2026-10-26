@@ -42,7 +42,7 @@ function collectBlocks() {
       { cwd: ROOT, encoding: 'utf8', stdio: ['pipe', 'pipe', 'pipe'] }
     );
     for (const issue of JSON.parse(raw)) {
-      const text = `${issue.title}\n${issue.body || ''}`;
+      const text = `${issue.title}\n${issue.body || ''}`; // ok-extract-only (P3069: only used to pick ids, never written out)
       if (/\b(dp|datapoint|DP\d|_TZ\w{4}_\w+|cluster)/i.test(text)) {
         blocks.push({ source: `issue #${issue.number}`, text });
       }

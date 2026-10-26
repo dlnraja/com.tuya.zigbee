@@ -1,7 +1,7 @@
 <!-- report-writer:v1 lang=en -->
 ### GitHub Actions reports — inventory (P3069)
 
-90 workflows: 48 write a job summary, 1 already use the shared report helper and 90 carry our own "about" header. 15 scripts still interpolate third-party titles or bodies, and 46 docs hold long quoted passages to rewrite.
+90 workflows: 48 write a job summary, 1 already use the shared report helper and 90 carry our own "about" header. 0 scripts still interpolate third-party titles or bodies, and 46 docs hold long quoted passages to rewrite.
 
 | workflow | about header | job summary | shared helper | writes to GitHub |
 | --- | --- | --- | --- | --- |
@@ -98,21 +98,7 @@
 
 <details><summary>Scripts that interpolate third-party titles or bodies (to migrate)</summary>
 
-- `.github/scripts/ai-dp-extract.js` — 1 line(s)
-- `.github/scripts/community-inbox-digest.js` — 5 line(s)
-- `.github/scripts/gmail-local-reader.js` — 1 line(s)
-- `.github/scripts/internet-research-tool.js` — 1 line(s)
-- `.github/scripts/source-registry.js` — 4 line(s)
-- `.github/scripts/triage-run.js` — 2 line(s)
-- `.github/scripts/triage-upstream-enhanced.js` — 4 line(s)
-- `scripts/analysis/forum_analysis_complete.js` — 1 line(s)
-- `scripts/automation/digest.cjs` — 1 line(s)
-- `scripts/automation/reply-candidates.cjs` — 1 line(s)
-- `scripts/digest/quirks-scan.js` — 1 line(s)
-- `scripts/digest/triage.js` — 1 line(s)
-- `scripts/research/cross-research.js` — 1 line(s)
-- `scripts/scanners/github-leads-scan.js` — 1 line(s)
-- `scripts/scanners/issue-image-ocr.js` — 1 line(s)
+- none
 
 </details>
 

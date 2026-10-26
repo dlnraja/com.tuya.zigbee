@@ -13,6 +13,7 @@
 const fs = require('fs');
 const path = require('path');
 const L = require('./lib');
+const RW = require('../lib/report-writer');
 const E = require('./enrich');
 const LD = require('./leads');
 const BODIES = new Map(); // number -> body (memory only, never stored in state)
@@ -68,7 +69,7 @@ async function openItems() {
   // Search API counts PRs and issues separately in 2 calls.
   const q = async (type) => L.gh(`/search/issues?q=${encodeURIComponent(`repo:${REPO} is:open is:${type}`)}&per_page=30&sort=updated`);
   const prs = await q('pr'); const iss = await q('issue'); // sequential (spacing)
-  const m = (i) => { BODIES.set(i.number, `${i.title}\n${i.body || ''}`); return { n: i.number, t: i.title.slice(0, 80), u: i.user && i.user.login }; };
+  const m = (i) => { BODIES.set(i.number, `${i.title}\n${i.body || ''}`); return { n: i.number, t: RW.topicOf(i.title, 'fr'), u: i.user && i.user.login }; /* P3069: topic words, not the title */ };
   const isBot = (i) => (i.labels || []).some((l) => l.name === 'bot-digest');
   return { prs: { count: prs.total_count, items: prs.items.map(m) }, issues: { count: iss.total_count - iss.items.filter(isBot).length, items: iss.items.filter((i) => !isBot(i)).map(m) } };
 }
@@ -115,7 +116,7 @@ function diffLines(prev, cur) {
     const added = setDiff(p.items, c.items); const gone = setDiff(c.items, p.items);
     if (p.count !== c.count || added.length || gone.length) {
       lines.push(`${k === 'prs' ? 'PR' : 'Issues'} ouvertes : ${p.count} → **${c.count}**` +
-        (added.length ? `\n  - ➕ ${added.map((i) => `#${i.n} ${L.esc(i.t)}${leadsFor(i.n)}`).join('\n  - ➕ ')}` : '') +
+        (added.length ? `\n  - ➕ ${added.map((i) => `#${i.n}${i.u ? ' par @' + L.esc(i.u) : ''} — sujet : ${L.esc(i.t)}${leadsFor(i.n)}`).join('\n  - ➕ ')}` : '') +
         (gone.length ? `\n  - ✔️ fermées : ${gone.map((i) => '#' + i.n).join(', ')}` : ''));
     }
   }

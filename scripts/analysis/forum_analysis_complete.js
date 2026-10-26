@@ -413,7 +413,7 @@ async onNodeInit() {
 
     console.log('\n📋 FORUM ISSUES IDENTIFIED:');
     this.forumIssues.forEach((issue, index) => {
-      console.log(`${index + 1}. ${issue.title}`);
+      console.log(`${index + 1}. ${issue.title}`); // ok-console (P3069: local console only, not stored)
       console.log(`   Severity: ${issue.severity.toUpperCase()}`);
       console.log(`   User: ${issue.user}`);
       console.log(`   Impact: ${issue.impact}`);

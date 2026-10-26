@@ -55,7 +55,7 @@ L.run(async () => {
     let res;
     try { res = await L.gh(`/search/issues?q=${encodeURIComponent(q)}&per_page=10&sort=updated`); } catch (e) { if (e.name === 'StopDigest') throw e; L.log(`search ${c.mfr}: ${e.message.slice(0, 80)}`); continue; }
     for (const it of (res.items || [])) {
-      const text = `${it.title}\n${it.body || ''}`;
+      const text = `${it.title}\n${it.body || ''}`; // ok-extract-only (P3069: only used to pick ids, never written out)
       if (c.pid !== '?' && !text.toUpperCase().includes(String(c.pid).toUpperCase()) && !text.toLowerCase().includes(c.mfr.toLowerCase())) continue;
       const qs = Q.classify(text);
       if (qs.length) events.push(...Q.addEvidence(db, c.mfr, c.pid, qs, it.html_url, 'ext-tracker'));
