@@ -1,7 +1,7 @@
 {
  "note": "P3068 memory-hazard ratchet baseline — counts may only go down",
  "totals": {
-  "hot-stringify": 59,
+  "hot-stringify": 50,
   "unbounded-collection": 91,
   "raw-timer": 4
  },
@@ -104,9 +104,6 @@
   "lib/devices/AirPurifierFilterLife.js": {
    "unbounded-collection": 1
   },
-  "lib/devices/BaseTuyaDPDevice.js": {
-   "hot-stringify": 1
-  },
   "lib/devices/BaseUnifiedDevice.js": {
    "unbounded-collection": 1,
    "hot-stringify": 1
@@ -115,15 +112,13 @@
    "unbounded-collection": 1
   },
   "lib/devices/TuyaUnifiedDevice.js": {
-   "unbounded-collection": 1,
-   "hot-stringify": 6
+   "unbounded-collection": 1
   },
   "lib/devices/UnifiedSensorBase.js": {
    "hot-stringify": 3
   },
   "lib/devices/UnifiedSwitchBase.js": {
-   "unbounded-collection": 2,
-   "hot-stringify": 1
+   "unbounded-collection": 2
   },
   "lib/diagnostics/DiagnosticLogsCollector.js": {
    "hot-stringify": 8
@@ -194,9 +189,6 @@
   },
   "lib/mixins/PhysicalButtonMixin.js": {
    "unbounded-collection": 1
-  },
-  "lib/mixins/TuyaDeviceMixin.js": {
-   "hot-stringify": 1
   },
   "lib/multichannel/MultiChannelManager.js": {
    "unbounded-collection": 2
