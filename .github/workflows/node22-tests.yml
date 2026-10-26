@@ -49,9 +49,21 @@ jobs:
         run: node --expose-gc scripts/ci/memory-budget.js --budget-mb "$(node -p "require('./scripts/ci/memory-budget.json').codeHeapBudgetMb")"
       - name: Full suite on Node 22
         run: npx mocha "test/**/*.test.js" --timeout 10000
-      # P3057-3: mocha exits with its own count, so node:test failures (process.exitCode) never failed this job.
-      # Strict step: every node:test file under `node --test`; a failure fails the job unless it is in the
-      # branch's frozen baseline (test/node-test-known-failures.json, may only shrink).
+  # P3057-3: mocha exits with its own count, so node:test failures (process.exitCode) never failed the job.
+  # Strict job: every node:test file under `node --test`; a failure fails the run unless it is in the
+  # branch's frozen baseline (test/node-test-known-failures.json, may only shrink).
+  # P3065 (CI speed): own job, in parallel with the mocha suite (was a trailing step: ~3 min of the
+  # ~11 min wall). Same command, same gate; the workflow run still fails if either job fails.
+  strict:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: .github/npm-cache-key.sha256  # P3026: version-free key, one npm cache per dependency set
+      - run: npm ci --ignore-scripts --no-audit --no-fund || npm install --ignore-scripts --no-audit --no-fund
       - name: node:test strict (P3057-3)
-        if: always()
         run: node tools/ci/node-test-strict.js --concurrency 4
