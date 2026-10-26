@@ -482,3 +482,8 @@ A heartfelt thank you to:
 - Batch P3071c (HOCH RCBO): **the zigbee-herdsman-converters contributors** (`legacy.ts` hoch_din datapoints, `tuya.ts` TS0601_rcbo). Facts only, own decoder.
 - And every forum member and GitHub issue reporter who sent a fingerprint, a diagnostic or a "this works now":
   you are listed by handle in the sections above, and new names are added with each batch.
+
+## Learning loop and upstream watch (P3073, 2026-10-26) — ideas only, no code copied
+- **Agent Reach** (Panniantong, MIT) — the idea of reading many public channels through one read-only fallback; used only on the maintainer box, never in CI.
+- **Powercalc** (Home Assistant community) — the idea of learning a device profile from repeated readings before trusting it.
+- **Zigbee2MQTT / zigbee-herdsman-converters, ZHA quirks, deCONZ, tuya-local, localtuya, tinytuya, Hubitat (kkossev), Home Assistant, Johan Bendz and the fork maintainers, Athom SDK** — public projects followed "since last time"; anything found is rewritten in our words and credited before use.
