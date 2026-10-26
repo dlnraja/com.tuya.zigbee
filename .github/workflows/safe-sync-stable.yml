@@ -95,6 +95,17 @@ jobs:
               }
             }'
 
+      - name: 🛡️ Keep stable's driver mapping for synced couples (P3066)
+        # WHY(2026-10-26): 6897a290f5 copied master's fingerprints.json row for _TZE284_la2c2uo9
+        # (wall_dimmer_tuya) over stable's (dimmer_1_gang_tuya) plus 9 TS0601 climate rows → P3015 red,
+        # second regression of this kind. The guard comes from master (single source) and only touches
+        # rows this sync changed: if stable's driver.compose.json pairs the couple with another driver,
+        # stable's previous row is restored.
+        run: |
+          git show origin/master:tools/ci/sync-driver-mapping-guard.js > /tmp/sync-driver-mapping-guard.js
+          node /tmp/sync-driver-mapping-guard.js --base HEAD lib/tuya/fingerprints.json data/mfs_db.json
+          node /tmp/sync-driver-mapping-guard.js --check --base HEAD lib/tuya/fingerprints.json data/mfs_db.json
+
       - name: 🛡️ Couple guard (pins, sacred-keep, curated removals, golden)
         # WHY(2026-10-11): auto-fix-all / sync re-added curated removals (vrcfo4i0, heobian) and
         # stripped pinned couples. Skip (restore) any offending file, then fail if still dirty.
@@ -127,6 +138,9 @@ jobs:
             if (fs.existsSync('package-lock.json')) { const lk=JSON.parse(fs.readFileSync('package-lock.json','utf8')); lk.version='$NEW'; if (lk.packages && lk.packages['']) lk.packages[''].version='$NEW'; fs.writeFileSync('package-lock.json', JSON.stringify(lk,null,2)+'\\n'); }
             const cl=JSON.parse(fs.readFileSync('.homeychangelog.json','utf8'));
             if (!cl['$NEW']) cl['$NEW']={en:'Device database and reliability updates.',fr:'Mises à jour de la base d’appareils et de la fiabilité.'};
+            // P3066: stable keeps the NEXT patch pre-written too (P3057-3 invariant; 5.12.509 was missing after the 5.12.508 bump)
+            const NXT='$NEW'.split('.').map(Number); NXT[2]+=1; const nk=NXT.join('.');
+            if (!cl[nk] || !String(cl[nk].en||'').trim()) cl[nk]={en:'Device database and reliability updates.',fr:'Mises à jour de la base d’appareils et de la fiabilité.'};
             fs.writeFileSync('.homeychangelog.json', JSON.stringify(cl,null,2)+'\\n');
             console.log('Bumped to $NEW');
           "

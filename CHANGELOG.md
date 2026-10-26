@@ -11,6 +11,9 @@
 - **P3018b / P3016 / P3017:** more DPs decoded exactly (ZHA per-quirk + deCONZ DDF sources), optional inferred DP layer, interpretation of unknown commands with teach/forget Flow actions.
 - **P3021c:** dedicated `switch_2gang_ts0002` driver for `_TZ3000_amal63is` + TS0002; power-vs-energy sanity check; ZG-102ZL contact default inverse; soil sensor DP guards.
 
+### Fixed (2026-10-26, P3066 P52 sync guard)
+- `safe-sync-stable.yml` now runs `tools/ci/sync-driver-mapping-guard.js` (from master): rows the sync changes in `fingerprints.json` / `mfs_db.json` keep stable's composed driver (second `_TZE284_la2c2uo9` regression, 6897a290f5). The stable bump also pre-writes the next patch changelog entry (en + fr).
+
 ### Added / Fixed (2026-10-26, P3064 family uplift, master soak)
 - **Smoke / CO (safety):** Tuya TS0601 dual smoke & CO alarms (`_TZE284_6ycgarab`, `_TZE284_aoah6bv8`, `_TZE2841000000_6ycgarab`), PA-44Z (`_TZE284_qvzsq3s2`) and GSKS-ZB (`_TZE200_qcasmfan`) in the smoke sensor driver now report smoke, battery and, when present, carbon monoxide and tamper. Receive-only, nothing sent at pairing; the CO alarm appears after the first report. Thanks to the Zigbee2MQTT converter authors.
 - **MG-DIM02Z dimmer (`_TZE284_da26abzz`):** on/off and brightness use the module's own datapoints (141/142); power, current and voltage appear after the first report.
