@@ -1,34 +1,13 @@
 {
-  "timestamp": "2026-10-11T21:05:59.077Z",
+  "timestamp": "2026-10-12T12:46:05.376Z",
   "gate": "align-mfs-db-intelligent",
-  "apply": true,
-  "check": false,
-  "changeCount": 1,
-  "skippedCount": 67,
-  "highSeverityCount": 1,
-  "byAction": {
-    "registry_force": 1
-  },
-  "changes": [
-    {
-      "severity": "high",
-      "action": "registry_force",
-      "mfr": "_TZE600_5cu64znk",
-      "from": {
-        "driverId": "curtain_motor_shutter",
-        "modelIds": [
-          "TS0105"
-        ]
-      },
-      "to": {
-        "driverId": "curtain_motor",
-        "modelIds": [
-          "TS0105"
-        ]
-      },
-      "caseId": "p-5cu64znk-zbcmr02-shutter-ts0105"
-    }
-  ],
+  "apply": false,
+  "check": true,
+  "changeCount": 0,
+  "skippedCount": 74,
+  "highSeverityCount": 0,
+  "byAction": {},
+  "changes": [],
   "skipped": [
     {
       "reason": "registry_driver_missing",
@@ -123,6 +102,41 @@
     {
       "reason": "registry_empty_mfr",
       "caseId": "p2644-4d4e1684-ts0043-not-wall-remote"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "johan-_tz3000_85czd6fy-ts0207",
+      "canon": "water_leak_sensor"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "johan-_tz3000_ww9i3e0y-ts0207",
+      "canon": "water_leak_sensor"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "johan-_tyzb02_key8kk7r-ts0043",
+      "canon": "button_wireless_3"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "johan-_tz3000_rrjr1q0u-ts0043",
+      "canon": "button_wireless_3"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "johan-_tz3000_yw5tvzsk-ts0043",
+      "canon": "button_wireless_3"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "johan-_tyzb01_bagt1e4o-ts0014",
+      "canon": "switch_4gang"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "johan-_tz3000_e98krvvk-ts0012",
+      "canon": "switch_2gang"
     },
     {
       "reason": "registry_oem_multi_canon",
@@ -561,7 +575,5 @@
       "curated": "button_emergency_sos"
     }
   ],
-  "highSeverity": [
-    "registry drift _TZE600_5cu64znk → curtain_motor"
-  ]
+  "highSeverity": []
 }

@@ -1,0 +1,51 @@
+{
+  "generatedAt": "2026-10-12T12:46:46.749Z",
+  "mode": "apply",
+  "driversTouched": 2,
+  "orphanTokensFixed": 6,
+  "triggersAdded": 1,
+  "actionsAdded": 0,
+  "appJsonDedupe": {
+    "ok": true,
+    "report": {}
+  },
+  "z2mCrossRef": {
+    "count": 27
+  },
+  "subtools": [
+    {
+      "label": "ensure-physical-flow-cards",
+      "ok": true,
+      "exitCode": 0,
+      "tail": "[ensure-physical-flow-cards] apply\n  mixin drivers needing cards: 0\n  cards written: 0"
+    },
+    {
+      "label": "patch-missing-flow-listeners",
+      "ok": true,
+      "exitCode": 0,
+      "tail": "evice_air_purifier_humidifier\",\n      \"skip\": \"ok\"\n    },\n    {\n      \"id\": \"led_controller_dimmable\",\n      \"skip\": \"ok\"\n    },\n    {\n      \"id\": \"led_controller_rgb\",\n      \"skip\": \"ok\"\n    },\n    {\n      \"id\": \"led_controller_cct\",\n      \"skip\": \"ok\"\n    },\n    {\n      \"id\": \"plug_smart\",\n      \"skip\": \"ok\"\n    },\n    {\n      \"id\": \"smart_scene_panel\",\n      \"skip\": \"ok\"\n    },\n    {\n      \"id\": \"device_radiator_valve_smart\",\n      \"skip\": \"ok\"\n    },\n    {\n      \"id\": \"smart_heater\",\n      \"skip\": \"ok\"\n    },\n    {\n      \"id\": \"smart_heater_controller\",\n      \"skip\": \"ok\"\n    },\n    {\n      \"id\": \"hybrid_heater_thermostat\",\n      \"skip\": \"ok\"\n    },\n    {\n      \"id\": \"climate_sensor_plug\",\n      \"skip\": \"ok\"\n    },\n    {\n      \"id\": \"contact_sensor_plug\",\n      \"skip\": \"ok\"\n    }\n  ]\n}"
+    },
+    {
+      "label": "button-flow-harvest",
+      "ok": true,
+      "exitCode": 0,
+      "tail": "triggers\": 35\n    },\n    {\n      \"driverId\": \"scene_switch_6\",\n      \"triggers\": 35\n    },\n    {\n      \"driverId\": \"wall_remote_6_gang\",\n      \"triggers\": 35\n    },\n    {\n      \"driverId\": \"button_wireless_smart\",\n      \"triggers\": 30\n    },\n    {\n      \"driverId\": \"button_wireless_4_ts0041\",\n      \"triggers\": 26\n    },\n    {\n      \"driverId\": \"remote_button_wireless_handheld\",\n      \"triggers\": 26\n    },\n    {\n      \"driverId\": \"handheld_remote_4_buttons\",\n      \"triggers\": 25\n    },\n    {\n      \"driverId\": \"wall_remote_4_gang\",\n      \"triggers\": 25\n    },\n    {\n      \"driverId\": \"button_wireless_3\",\n      \"triggers\": 22\n    },\n    {\n      \"driverId\": \"remote_button_emergency_sos\",\n      \"triggers\": 21\n    },\n    {\n      \"driverId\": \"wall_remote_4_gang_3\",\n      \"triggers\": 21\n    }\n  ]\n}"
+    }
+  ],
+  "topChanges": [
+    {
+      "driver": "button_wireless_4",
+      "orphans": 6,
+      "triggers": [],
+      "actions": []
+    },
+    {
+      "driver": "led_controller_spi_tuya",
+      "orphans": 0,
+      "triggers": [
+        "led_controller_spi_tuya_brightness_changed"
+      ],
+      "actions": []
+    }
+  ]
+}
