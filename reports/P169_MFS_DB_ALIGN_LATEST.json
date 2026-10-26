@@ -1,269 +1,71 @@
 {
-  "timestamp": "2026-10-11T02:00:51.992Z",
+  "timestamp": "2026-10-24T17:49:39.492Z",
   "gate": "align-mfs-db-intelligent",
   "apply": false,
   "check": true,
-  "changeCount": 35,
-  "skippedCount": 60,
+  "changeCount": 7,
+  "skippedCount": 75,
   "highSeverityCount": 0,
   "byAction": {
-    "registry_compose_strip_couple_mfr": 2,
-    "compose_exclusive": 33
+    "compose_exclusive": 7
   },
   "changes": [
     {
       "severity": "medium",
-      "action": "registry_compose_strip_couple_mfr",
-      "mfr": "_tze200_nkjintbl",
-      "pid": "TS0601",
-      "from": "switch_2gang",
-      "to": null,
-      "removed": 1,
-      "caseId": "p2605-nkjintbl-tze200-not-switch2gang-not-btn-plug"
-    },
-    {
-      "severity": "medium",
-      "action": "registry_compose_strip_couple_mfr",
-      "mfr": "_TZE200_nkjintbl",
-      "pid": "TS0601",
-      "from": "switch_2gang",
-      "to": null,
-      "removed": 1,
-      "caseId": "p2605-nkjintbl-tze200-not-switch2gang-not-btn-plug"
+      "action": "compose_exclusive",
+      "mfr": "_TZ3000_VMPBYGS5",
+      "from": "button_wireless_2",
+      "to": "socket_power_strip"
     },
     {
       "severity": "medium",
       "action": "compose_exclusive",
-      "mfr": "_TZ3290_IXD9MVV4",
-      "from": "water_valve_smart",
-      "to": "smart_irrigation_valve"
+      "mfr": "_TZ3000_wzauvbcs",
+      "from": "button_wireless_2",
+      "to": "socket_power_strip"
     },
     {
       "severity": "medium",
       "action": "compose_exclusive",
-      "mfr": "_TZ3000_7Y90PANY",
+      "mfr": "_TZ3000_5FTKAULG",
       "from": "climate_sensor",
-      "to": "illuminance_sensor"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TZ3000_EGVB1P2G",
-      "from": "climate_sensor",
-      "to": "smart_knob"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TZ3000_LRFVZQ1E",
-      "from": "climate_sensor",
-      "to": "smart_knob"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TZ3210_M3MXV66L",
-      "from": "climate_sensor",
-      "to": "motion_sensor"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TZ3290_S6EZPA3J",
-      "from": "climate_sensor",
-      "to": "ir_blaster"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TZE284_VES1YCWX",
-      "from": "curtain_motor",
-      "to": "energy_meter_3phase"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_tze204_ves1ycwx",
-      "from": "curtain_motor",
-      "to": "energy_meter_3phase"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_tze200_ves1ycwx",
-      "from": "curtain_motor",
-      "to": "energy_meter_3phase"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TZ3000_7dcddnye",
-      "from": "dimmer_wall_1gang",
-      "to": "light_dimmable_ts0501a"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TZ3000_j6adk9id",
-      "from": "dimmer_wall_1gang",
-      "to": "illuminance_sensor"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_tyzb01_qezuin6k",
-      "from": "dimmer_1_gang",
-      "to": "dimmer_wall_1gang"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_tz3000_o1jzcxou",
-      "from": "gateway_zigbee_bridge",
-      "to": "plug_smart"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_tz3000_dd8wwzcy",
-      "from": "climate_sensor",
-      "to": "double_power_point_2"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_tz3000_kjfzuycl",
-      "from": "remote_button_wireless_smart",
-      "to": "smart_knob"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TZ3000_LBTPIODY",
-      "from": "water_leak_sensor",
-      "to": "temphumidsensor"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TYZB01_4MDQXXNN",
-      "from": "switch_1gang",
-      "to": "illuminance_sensor"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TYZB01_M6EC2PGJ",
-      "from": "switch_1gang",
-      "to": "illuminance_sensor"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TZ3000_FDXIHPP7",
-      "from": "wall_switch_1gang_1way",
       "to": "switch_1gang"
     },
     {
       "severity": "medium",
       "action": "compose_exclusive",
-      "mfr": "_TZ3000_SKUEEKG3",
-      "from": "wall_switch_1gang_1way",
-      "to": "switch_1gang"
+      "mfr": "_tyzb01_0aps0h1r",
+      "from": "smoke_sensor2",
+      "to": "co_sensor"
     },
     {
       "severity": "medium",
       "action": "compose_exclusive",
-      "mfr": "_tz3000_00mk2xzy",
-      "from": "usb_dongle_triple",
-      "to": "plug_smart"
+      "mfr": "_tyzb01_o7m83470",
+      "from": "smoke_sensor2",
+      "to": "co_sensor"
     },
     {
       "severity": "medium",
       "action": "compose_exclusive",
-      "mfr": "_tz3210_nhqka112",
-      "from": "usb_dongle_triple",
-      "to": "plug_smart"
+      "mfr": "_TZ3000_EE8NRT2L",
+      "from": "button_wireless_2",
+      "to": "button_wireless_4"
     },
     {
       "severity": "medium",
       "action": "compose_exclusive",
-      "mfr": "_tz3210_bep7ccew",
-      "from": "usb_dongle_triple",
-      "to": "double_power_point_2"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_tz3210_yvxjawlt",
-      "from": "usb_dongle_triple",
-      "to": "socket_power_strip_four"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_tz3000_8nyaanzb",
-      "from": "plug_energy_monitor",
-      "to": "double_power_point_2"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_tz3000_iy2c3n6p",
-      "from": "plug_energy_monitor",
-      "to": "double_power_point_2"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_tz3000_rgpqqmbj",
-      "from": "usb_dongle_triple",
-      "to": "double_power_point_2"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_tz3000_v1pdxuqq",
-      "from": "usb_dongle_triple",
-      "to": "plug_smart"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_tz3000_8a833yls",
-      "from": "usb_dongle_triple",
-      "to": "plug_smart"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_tz3000_nzkqcvvs",
-      "from": "usb_dongle_triple",
-      "to": "plug_smart"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_tz3000_rtcrrvia",
-      "from": "usb_dongle_triple",
-      "to": "plug_smart"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_tz3000_ysiog9xi",
-      "from": "usb_dongle_triple",
-      "to": "plug_smart"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_tz3000_rqbjepe8",
-      "from": "usb_dongle_triple",
-      "to": "double_power_point_2"
+      "mfr": "_TZ3000_OZNONJ5Q",
+      "from": "switch_1gang",
+      "to": "socket_power_strip"
     }
   ],
   "skipped": [
+    {
+      "reason": "registry_driver_missing",
+      "caseId": "p2605b-nkjintbl-tze284-ambiguous",
+      "canon": null
+    },
     {
       "reason": "registry_driver_missing",
       "caseId": "p2509-invent-junk-do-not-lock",
@@ -302,11 +104,6 @@
     {
       "reason": "registry_driver_missing",
       "caseId": "p2517-krwtzhfd-ts004f-not-leak",
-      "canon": null
-    },
-    {
-      "reason": "registry_driver_missing",
-      "caseId": "p2605-nkjintbl-tze200-not-switch2gang-not-btn-plug",
       "canon": null
     },
     {
@@ -357,6 +154,81 @@
     {
       "reason": "registry_empty_mfr",
       "caseId": "p2644-4d4e1684-ts0043-not-wall-remote"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "johan-_tz3000_85czd6fy-ts0207",
+      "canon": "water_leak_sensor"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "johan-_tz3000_ww9i3e0y-ts0207",
+      "canon": "water_leak_sensor"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "johan-_tyzb02_key8kk7r-ts0043",
+      "canon": "button_wireless_3"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "johan-_tz3000_rrjr1q0u-ts0043",
+      "canon": "button_wireless_3"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "johan-_tz3000_yw5tvzsk-ts0043",
+      "canon": "button_wireless_3"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "johan-_tyzb01_bagt1e4o-ts0014",
+      "canon": "switch_4gang"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "johan-_tz3000_e98krvvk-ts0012",
+      "canon": "switch_2gang"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "p2815-myd45weu-ts0601-soil",
+      "canon": "soil_sensor"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "p2815-aoyan-ay303z-soil",
+      "canon": "soil_sensor"
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "p2821-forbid-cartesian-zgyzgdua-ts0043",
+      "canon": null
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "p2821-forbid-cartesian-wkai4ga5-ts0043",
+      "canon": null
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "p2821-forbid-cartesian-4upl1fcj-ts0505b",
+      "canon": null
+    },
+    {
+      "reason": "registry_empty_mfr",
+      "caseId": "p2821-forbid-cartesian-qd7hej8u-ts0041",
+      "canon": null
+    },
+    {
+      "reason": "registry_cartesian_gang_refuse",
+      "caseId": "p2830b-johan-ts0003-wall-switches",
+      "canon": "switch_3gang",
+      "mfrCount": 20,
+      "gangPids": [
+        "ts0003",
+        "TS0003"
+      ]
     },
     {
       "reason": "registry_oem_multi_canon",
@@ -629,6 +501,16 @@
       "reason": "unclaimed_no_compose",
       "mfr": "_TZE204_pisltm67",
       "curated": "light_sensor_outdoor"
+    },
+    {
+      "reason": "unclaimed_multi",
+      "mfr": "Heiman",
+      "curated": "button_emergency_sos",
+      "claimers": [
+        "heiman_keyfob",
+        "heiman_siren",
+        "smoke_detector_advanced"
+      ]
     },
     {
       "reason": "unclaimed_no_compose",
