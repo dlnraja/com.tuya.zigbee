@@ -98,6 +98,14 @@ function normalizeBuild(b) {
   };
 }
 
+// WHY(P3062, rescued from the agg-wt worktree, first seen run 37184850703): the apps delegation
+// token minted from HOMEY_PAT expires after a few minutes, so every later getBuilds poll failed
+// with "The provided token is invalid." and the wait loop polled blind until MAX_MS.
+const TOKEN_INVALID_RE = /token is invalid|invalid[_ ]token|unauthori[sz]ed|\b401\b/i;
+function isTokenInvalidError(err) {
+  return TOKEN_INVALID_RE.test(String((err && err.message) || err || ''));
+}
+
 function isTransientAthomFailure(build) {
   if (!build || !isFailed(build.state)) return false;
   return TRANSIENT_FAIL_RE.test(String(build.stateMeta || ''));
@@ -243,8 +251,17 @@ async function main() {
 
   let lastFailed = null;
   while (Date.now() - started < MAX_MS) {
-    const list = await getBuilds(client, APP, { limit: 20 }).catch((e) => {
+    const list = await getBuilds(client, APP, { limit: 20 }).catch(async (e) => {
       console.log(`wait-draft: list failed (${e.message})`);
+      if (isTokenInvalidError(e)) {
+        // Re-mint the delegation token once per failed poll (bounded by the loop's own sleep/MAX_MS).
+        try {
+          client = await createClient({ log: console.log });
+          console.log('wait-draft: delegation token refreshed');
+        } catch (err) {
+          console.log(`wait-draft: token refresh failed (${err.message})`);
+        }
+      }
       return [];
     });
     const builds = (Array.isArray(list) ? list : []).map(normalizeBuild);
@@ -368,6 +385,7 @@ module.exports = {
   isReady,
   isFailed,
   isTransientAthomFailure,
+  isTokenInvalidError,
   parseSemver,
   patchDistance,
   healthyTestFallback,
