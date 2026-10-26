@@ -81,11 +81,11 @@ function fakeNode(spec) {
   for (const [ep, clusters] of Object.entries(spec.endpoints)) {
     const cl = {};
     for (const c of clusters) {cl[c] = fakeCluster(c, ep);}
-    endpoints[ep] = { clusters: cl, bindings: {}, bind() {}, ID: Number(ep) };
+    endpoints[ep] = { clusters: cl, bindings: {}, bind() {}, ID: Number(ep), on() {}, removeListener() {}, removeAllListeners() {} };
   }
   return {
     endpoints,
-    on() {}, off() {}, removeListener() {},
+    on() {}, off() {}, removeListener() {}, removeAllListeners() {}, // P3065: SDK onDeleted calls node.removeAllListeners()
     sendFrame: async (ep, cid) => rec('frame', `${ep}:0x${Number(cid).toString(16)}`),
     handleFrame() {},
   };
