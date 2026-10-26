@@ -134,6 +134,260 @@
       "$extends": [
         "zcl_cluster_layer"
       ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Pixel strip (SPI controllers)",
+        "fr": "Ruban de pixels (contrôleurs SPI)",
+        "nl": "Pixelstrip (SPI-controllers)",
+        "de": "Pixelstreifen (SPI-Controller)"
+      },
+      "children": [
+        {
+          "id": "spi_pixel_count",
+          "type": "number",
+          "value": 50,
+          "min": 10,
+          "max": 1000,
+          "step": 1,
+          "label": {
+            "en": "Number of pixels",
+            "fr": "Nombre de pixels",
+            "nl": "Aantal pixels",
+            "de": "Anzahl Pixel"
+          },
+          "hint": {
+            "en": "Gledopto GL-SPI-206P pixel controllers only. Sent only when you change it.",
+            "fr": "Contrôleurs de pixels Gledopto GL-SPI-206P uniquement. Envoyé seulement quand vous le modifiez.",
+            "nl": "Alleen Gledopto GL-SPI-206P pixelcontrollers. Alleen verzonden als u het wijzigt.",
+            "de": "Nur Gledopto GL-SPI-206P Pixel-Controller. Wird nur bei Änderung gesendet."
+          }
+        },
+        {
+          "id": "spi_chip_type",
+          "type": "dropdown",
+          "value": "3",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "WS2801"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "LPD6803"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "LPD8803"
+              }
+            },
+            {
+              "id": "3",
+              "label": {
+                "en": "WS2811"
+              }
+            },
+            {
+              "id": "4",
+              "label": {
+                "en": "TM1814B"
+              }
+            },
+            {
+              "id": "5",
+              "label": {
+                "en": "TM1934A"
+              }
+            },
+            {
+              "id": "6",
+              "label": {
+                "en": "SK6812"
+              }
+            },
+            {
+              "id": "7",
+              "label": {
+                "en": "SK9822"
+              }
+            },
+            {
+              "id": "8",
+              "label": {
+                "en": "UCS8904B"
+              }
+            },
+            {
+              "id": "9",
+              "label": {
+                "en": "WS2805"
+              }
+            }
+          ],
+          "label": {
+            "en": "LED chip",
+            "fr": "Puce LED",
+            "nl": "LED-chip",
+            "de": "LED-Chip"
+          },
+          "hint": {
+            "en": "Gledopto GL-SPI-206P pixel controllers only. Sent only when you change it.",
+            "fr": "Contrôleurs de pixels Gledopto GL-SPI-206P uniquement. Envoyé seulement quand vous le modifiez.",
+            "nl": "Alleen Gledopto GL-SPI-206P pixelcontrollers. Alleen verzonden als u het wijzigt.",
+            "de": "Nur Gledopto GL-SPI-206P Pixel-Controller. Wird nur bei Änderung gesendet."
+          }
+        },
+        {
+          "id": "spi_bead_sequence",
+          "type": "dropdown",
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "RGB"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "RBG"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "GRB"
+              }
+            },
+            {
+              "id": "3",
+              "label": {
+                "en": "GBR"
+              }
+            },
+            {
+              "id": "4",
+              "label": {
+                "en": "BRG"
+              }
+            },
+            {
+              "id": "5",
+              "label": {
+                "en": "BGR"
+              }
+            },
+            {
+              "id": "6",
+              "label": {
+                "en": "RGBW"
+              }
+            },
+            {
+              "id": "7",
+              "label": {
+                "en": "RBGW"
+              }
+            },
+            {
+              "id": "8",
+              "label": {
+                "en": "GRBW"
+              }
+            },
+            {
+              "id": "9",
+              "label": {
+                "en": "GBRW"
+              }
+            },
+            {
+              "id": "10",
+              "label": {
+                "en": "BRGW"
+              }
+            },
+            {
+              "id": "11",
+              "label": {
+                "en": "BGRW"
+              }
+            },
+            {
+              "id": "12",
+              "label": {
+                "en": "WRGB"
+              }
+            },
+            {
+              "id": "13",
+              "label": {
+                "en": "WRBG"
+              }
+            },
+            {
+              "id": "14",
+              "label": {
+                "en": "WGRB"
+              }
+            },
+            {
+              "id": "15",
+              "label": {
+                "en": "WGBR"
+              }
+            },
+            {
+              "id": "16",
+              "label": {
+                "en": "WBRG"
+              }
+            },
+            {
+              "id": "17",
+              "label": {
+                "en": "WBGR"
+              }
+            }
+          ],
+          "label": {
+            "en": "Colour order",
+            "fr": "Ordre des couleurs",
+            "nl": "Kleurvolgorde",
+            "de": "Farbreihenfolge"
+          },
+          "hint": {
+            "en": "Gledopto GL-SPI-206P pixel controllers only. Sent only when you change it.",
+            "fr": "Contrôleurs de pixels Gledopto GL-SPI-206P uniquement. Envoyé seulement quand vous le modifiez.",
+            "nl": "Alleen Gledopto GL-SPI-206P pixelcontrollers. Alleen verzonden als u het wijzigt.",
+            "de": "Nur Gledopto GL-SPI-206P Pixel-Controller. Wird nur bei Änderung gesendet."
+          }
+        },
+        {
+          "id": "spi_do_not_disturb",
+          "type": "checkbox",
+          "value": false,
+          "label": {
+            "en": "Do not disturb (stay off after a power cut)",
+            "fr": "Ne pas déranger (reste éteint après une coupure)",
+            "nl": "Niet storen (uit na stroomuitval)",
+            "de": "Nicht stören (nach Stromausfall aus)"
+          },
+          "hint": {
+            "en": "Gledopto GL-SPI-206P pixel controllers only. Sent only when you change it.",
+            "fr": "Contrôleurs de pixels Gledopto GL-SPI-206P uniquement. Envoyé seulement quand vous le modifiez.",
+            "nl": "Alleen Gledopto GL-SPI-206P pixelcontrollers. Alleen verzonden als u het wijzigt.",
+            "de": "Nur Gledopto GL-SPI-206P Pixel-Controller. Wird nur bei Änderung gesendet."
+          }
+        }
+      ]
     }
   ]
 }

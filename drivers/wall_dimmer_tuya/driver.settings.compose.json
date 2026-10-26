@@ -18,9 +18,24 @@
         },
         "value": "previous",
         "values": [
-          { "id": "off", "label": { "en": "Off" } },
-          { "id": "on", "label": { "en": "On" } },
-          { "id": "previous", "label": { "en": "Last state" } }
+          {
+            "id": "off",
+            "label": {
+              "en": "Off"
+            }
+          },
+          {
+            "id": "on",
+            "label": {
+              "en": "On"
+            }
+          },
+          {
+            "id": "previous",
+            "label": {
+              "en": "Last state"
+            }
+          }
         ]
       },
       {
@@ -35,9 +50,24 @@
         },
         "value": "led",
         "values": [
-          { "id": "led", "label": { "en": "LED" } },
-          { "id": "incandescent", "label": { "en": "Incandescent" } },
-          { "id": "halogen", "label": { "en": "Halogen" } }
+          {
+            "id": "led",
+            "label": {
+              "en": "LED"
+            }
+          },
+          {
+            "id": "incandescent",
+            "label": {
+              "en": "Incandescent"
+            }
+          },
+          {
+            "id": "halogen",
+            "label": {
+              "en": "Halogen"
+            }
+          }
         ]
       }
     ]
@@ -61,10 +91,113 @@
         },
         "value": "normal",
         "values": [
-          { "id": "off", "label": { "en": "Off" } },
-          { "id": "normal", "label": { "en": "Normal" } },
-          { "id": "inverted", "label": { "en": "Inverted" } }
+          {
+            "id": "off",
+            "label": {
+              "en": "Off"
+            }
+          },
+          {
+            "id": "normal",
+            "label": {
+              "en": "Normal"
+            }
+          },
+          {
+            "id": "inverted",
+            "label": {
+              "en": "Inverted"
+            }
+          }
         ]
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "label": {
+      "en": "MG-DIM02Z module / knob dimmer",
+      "fr": "Module MG-DIM02Z / variateur à bouton",
+      "nl": "MG-DIM02Z-module / draaidimmer",
+      "de": "MG-DIM02Z-Modul / Drehdimmer"
+    },
+    "children": [
+      {
+        "id": "mg_min_brightness",
+        "type": "number",
+        "value": 10,
+        "min": 0,
+        "max": 1000,
+        "step": 1,
+        "label": {
+          "en": "Minimum brightness (MG-DIM02Z)",
+          "fr": "Luminosité minimale (MG-DIM02Z)",
+          "nl": "Minimale helderheid (MG-DIM02Z)",
+          "de": "Minimale Helligkeit (MG-DIM02Z)"
+        },
+        "hint": {
+          "en": "Raw 0-1000 (DP143). Only for MG-DIM02Z, sent only when changed.",
+          "fr": "Brut 0-1000 (DP143). MG-DIM02Z uniquement, envoyé seulement si modifié.",
+          "nl": "Ruw 0-1000 (DP143). Alleen MG-DIM02Z, alleen verzonden bij wijziging.",
+          "de": "Roh 0-1000 (DP143). Nur MG-DIM02Z, nur bei Änderung gesendet."
+        }
+      },
+      {
+        "id": "mg_max_brightness",
+        "type": "number",
+        "value": 1000,
+        "min": 0,
+        "max": 1000,
+        "step": 1,
+        "label": {
+          "en": "Maximum brightness (MG-DIM02Z)",
+          "fr": "Luminosité maximale (MG-DIM02Z)",
+          "nl": "Maximale helderheid (MG-DIM02Z)",
+          "de": "Maximale Helligkeit (MG-DIM02Z)"
+        },
+        "hint": {
+          "en": "Raw 0-1000 (DP144). Only for MG-DIM02Z, sent only when changed.",
+          "fr": "Brut 0-1000 (DP144). MG-DIM02Z uniquement, envoyé seulement si modifié.",
+          "nl": "Ruw 0-1000 (DP144). Alleen MG-DIM02Z, alleen verzonden bij wijziging.",
+          "de": "Roh 0-1000 (DP144). Nur MG-DIM02Z, nur bei Änderung gesendet."
+        }
+      },
+      {
+        "id": "knob_mode",
+        "type": "dropdown",
+        "value": "knob",
+        "values": [
+          {
+            "id": "knob",
+            "label": {
+              "en": "Dimmer",
+              "fr": "Variateur",
+              "nl": "Dimmer",
+              "de": "Dimmer"
+            }
+          },
+          {
+            "id": "scene",
+            "label": {
+              "en": "Scene",
+              "fr": "Scène",
+              "nl": "Scène",
+              "de": "Szene"
+            }
+          }
+        ],
+        "label": {
+          "en": "Knob mode",
+          "fr": "Mode du bouton",
+          "nl": "Knopmodus",
+          "de": "Drehknopf-Modus"
+        },
+        "hint": {
+          "en": "Knob dimmer only (DP141).",
+          "fr": "Variateur à bouton uniquement (DP141).",
+          "nl": "Alleen draaidimmer (DP141).",
+          "de": "Nur Drehdimmer (DP141)."
+        }
       }
     ]
   }

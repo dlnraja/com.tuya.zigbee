@@ -425,7 +425,7 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
       }
       return true;
     }
-    if (dp === 143 || dp === 144 || dp === 146) { this.log('[MG-DIM02Z] informational DP', dp, v); return true; }
+    if (dp === 143 || dp === 144 || dp === 146) { this._mirrorLayoutSetting(dp, v); return true; }
     return false;
   }
 
@@ -454,6 +454,7 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
       }
       return true;
     }
+    if (dp === 106 || dp === 141) { this._mirrorLayoutSetting(dp, v); return true; }
     if (KNOB_DPS.includes(dp)) { this.log('[KNOB] informational DP', dp, v); return true; }
     return false;
   }
@@ -470,6 +471,40 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
     } catch (_e) { this._knobTempListener = false; }
   }
 
+  /** P3067: settings page follows what MG-DIM02Z / knob report (DP143/144/146, DP106/141); never blocks RX. */
+  _mirrorLayoutSetting(dp, v) {
+    const n = Number(v);
+    if (!Number.isFinite(n)) { return; }
+    const POWER = ['off', 'on', 'previous'];
+    const map = {
+      143: ['mg_min_brightness', n >= 0 && n <= 1000 ? n : null],
+      144: ['mg_max_brightness', n >= 0 && n <= 1000 ? n : null],
+      146: ['power_on_behavior', POWER[n] || null],
+      106: ['power_on_behavior', POWER[n] || null],
+      141: ['knob_mode', ['knob', 'scene'][n] || null],
+    }[dp];
+    if (!map || map[1] === null || this.getSetting?.(map[0]) === map[1]) { return; }
+    Promise.resolve().then(() => this.setSettings({ [map[0]]: map[1] })).catch(() => {});
+  }
+
+  /** P3067: per-layout DP for a shared setting (MG-DIM02Z DP146, knob DP106, V1 DP14). */
+  _powerOnDp() {
+    if (this._isMgDim02z()) { return 146; }
+    return this._isKnob() ? 106 : V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.powerOnBehavior;
+  }
+
+  /** P3067: MG-DIM02Z min/max brightness (DP143/144 raw 0-1000) and knob mode (DP141), written only on change. */
+  async _applyLayoutSettings(newSettings, keys) {
+    if (this._isMgDim02z()) {
+      for (const [key, dp] of [['mg_min_brightness', 143], ['mg_max_brightness', 144]]) {
+        if (keys.includes(key)) { await this.writeData32(dp, Math.max(0, Math.min(1000, Math.round(Number(newSettings[key]) || 0)))); }
+      }
+    }
+    if (this._isKnob() && keys.includes('knob_mode')) {
+      await this.writeEnum(141, newSettings.knob_mode === 'scene' ? 1 : 0);
+    }
+  }
+
   /**
    * Z2M TS0601_dimmer_1_gang_1 + #28658: DP14 power-on, DP4 light type, DP21 backlight.
    * Backlight values MUST stay strings (off/normal/inverted).
@@ -477,24 +512,25 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
   async onSettings({ newSettings, changedKeys }) {
     if (typeof this.markAppCommand === 'function') {this.markAppCommand();}
     await healZigbeeNodeIdentity(this, { force: false }).catch(() => {});
-    const keys = changedKeys || Object.keys(newSettings || {});
-
-    if (keys.includes('backlight_mode')) {
-      const mode = String(newSettings.backlight_mode || 'normal');
-      const enumVal = mode === 'off' ? 0 : mode === 'inverted' ? 2 : 1;
-      await this.writeEnum(V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.backlightMode, enumVal);
-    }
-
+    const ns = newSettings || {};
+    const keys = changedKeys || Object.keys(ns);
     if (keys.includes('power_on_behavior')) {
-      const mode = String(newSettings.power_on_behavior || 'previous');
-      const enumVal = mode === 'off' ? 0 : mode === 'on' ? 1 : 2;
-      await this.writeEnum(V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.powerOnBehavior, enumVal);
+      const mode = String(ns.power_on_behavior || 'previous');
+      await this.writeEnum(this._powerOnDp(), { off: 0, on: 1 }[mode] ?? 2);
     }
+    await this._applyLayoutSettings(ns, keys);
+    // WHY(P3067): backlight / light type are V1 DPs (21 / 4); the MG-DIM02Z and knob layouts use other DPs there.
+    if (!this._isMgDim02z() && !this._isKnob()) { await this._applyV1Settings(ns, keys); }
+  }
 
+  async _applyV1Settings(ns, keys) {
+    if (keys.includes('backlight_mode')) {
+      const mode = String(ns.backlight_mode || 'normal');
+      await this.writeEnum(V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.backlightMode, { off: 0, inverted: 2 }[mode] ?? 1);
+    }
     if (keys.includes('light_type')) {
-      const mode = String(newSettings.light_type || 'led');
-      const enumVal = mode === 'incandescent' ? 1 : mode === 'halogen' ? 2 : 0;
-      await this.writeEnum(V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.typeOfLightSource, enumVal);
+      const mode = String(ns.light_type || 'led');
+      await this.writeEnum(V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.typeOfLightSource, { incandescent: 1, halogen: 2 }[mode] ?? 0);
     }
   }
 

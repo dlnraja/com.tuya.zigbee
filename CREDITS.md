@@ -453,5 +453,8 @@ A heartfelt thank you to:
   WKE502Z: hub-mode DP101, arm ACK DP23, start-up arm mode DP25, options DP103-111, user DP112; `tuya.ts`
   TS0601_vibration_sensor) and **the zigpy/zha-device-handlers contributors** (`_TZE200_kzm5w4iz` DP1/3/10)
   (own implementation, no upstream code copied).
+- Batch P3067 (lights): **Koen Kanters and the zigbee-herdsman-converters contributors** (`gledopto.ts` GL-SPI-206P:
+  DP3 white brightness, DP61 paint colour frame, DP53 pixel count, DP101 bead order, DP102 chip type, DP103 do not
+  disturb; `tuya.ts` MG-DIM02Z DP143/144/146 and TS0601_knob_dimmer_switch DP106/141) (own implementation).
 - And every forum member and GitHub issue reporter who sent a fingerprint, a diagnostic or a "this works now":
   you are listed by handle in the sections above, and new names are added with each batch.
