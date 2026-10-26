@@ -35,14 +35,7 @@ test('P3068 startup memory budget: module-load heap under budget', { timeout: 12
 test('P3068 soak: N devices × M reports × C cycles keep the heap bounded', { timeout: 300000 }, () => {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'p3068-soak-'));
   const outFile = path.join(dir, 'out.json');
-  const ignored = fs.readFileSync(path.join(ROOT, '.homeyignore'), 'utf8').split(/\r?\n/)
-    .map((l) => l.trim()).filter((l) => /^data\/[^*!#\s]+$/.test(l)).map((l) => path.join(ROOT, l.replace(/\/$/, '')));
-  const preload = path.join(dir, 'shipped-payload.js');
-  fs.writeFileSync(preload, `'use strict';
-const fs = require('fs'); const IGN = ${JSON.stringify(ignored)};
-const hidden = (p) => { const s = String(p); return IGN.some((i) => s === i || s.startsWith(i + require('path').sep)); };
-const ex = fs.existsSync; fs.existsSync = (p) => (hidden(p) ? false : ex(p));
-`);
+  const preload = path.join(ROOT, 'test', '_support', 'shipped-payload-preload.js'); // P3068: shipped data/ only
   const env = { ...process.env, OUT: outFile };
   delete env.DRV; delete env.SNAP; delete env.FLOOD; // default 5 common drivers
   try {
