@@ -297,6 +297,39 @@
    "source": "community.homey.app/t/89271/560 (Patrik_Mihalik, interview); zigbee-herdsman-converters tuya.ts TS0207 water leak fingerprint list",
    "date": "2026-10-10",
    "reviewed_by": "P2810 history sweep 2026-10-10 (standing rule: exact driver for a reported couple, old phantom kept)"
+  },
+  {
+   "couple": "_TZ3000_mugyhz0q|TS0207",
+   "drivers": [
+    "water_leak_sensor",
+    "water_leak_sensor_tuya"
+   ],
+   "reason": "IAS water leak detector (TS0207, 899WZ whitelabel) reported upstream; exact couple placed on the TS0207 water leak driver; old manufacturer entry kept (artifacts only).",
+   "source": "zigbee-herdsman-converters tuya.ts (Tuya 899WZ whitelabel); JohanBendz/com.tuya.zigbee#594 + upstream water_detector driver",
+   "date": "2026-10-10",
+   "reviewed_by": "P2810 history sweep 2026-10-10 (standing rule: exact driver for a reported couple, old phantom kept)"
+  },
+  {
+   "couple": "_TZ3000_ww9i3e0y|TS0207",
+   "drivers": [
+    "water_leak_sensor",
+    "water_leak_sensor_tuya"
+   ],
+   "reason": "TS0207 water sensor reported upstream and implemented there as a flood sensor; exact couple placed on our TS0207 water leak driver; old manufacturer entry kept (artifacts only).",
+   "source": "JohanBendz/com.tuya.zigbee#659 (fransjvos, closed completed) + upstream flood_sensor driver (develop-0.4.1)",
+   "date": "2026-10-10",
+   "reviewed_by": "P2810 history sweep 2026-10-10 (standing rule: exact driver for a reported couple, old phantom kept)"
+  },
+  {
+   "couple": "_TZ3000_wuep9zng|TS0207",
+   "drivers": [
+    "water_leak_sensor",
+    "water_leak_sensor_tuya"
+   ],
+   "reason": "TS0207 water leak sensor reported upstream and implemented there as a flood sensor; exact couple placed on our TS0207 water leak driver; old manufacturer entry kept (artifacts only).",
+   "source": "JohanBendz/com.tuya.zigbee#897 (HakobDongian, closed completed) + upstream flood_sensor driver (develop-0.4.1)",
+   "date": "2026-10-10",
+   "reviewed_by": "P2810 history sweep 2026-10-10 (standing rule: exact driver for a reported couple, old phantom kept)"
   }
  ]
 }
