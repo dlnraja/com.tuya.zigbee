@@ -1,0 +1,383 @@
+{
+ "note": "P3068 memory-hazard ratchet baseline — counts may only go down",
+ "totals": {
+  "hot-stringify": 91,
+  "unbounded-collection": 108,
+  "raw-timer": 15
+ },
+ "files": {
+  "drivers/button_emergency_sos/device.js": {
+   "hot-stringify": 1
+  },
+  "drivers/din_rail_meter/device.js": {
+   "hot-stringify": 1
+  },
+  "drivers/generic_diy/device.js": {
+   "unbounded-collection": 1
+  },
+  "drivers/generic_tuya/device.js": {
+   "unbounded-collection": 1,
+   "hot-stringify": 1
+  },
+  "drivers/ir_blaster/device.js": {
+   "unbounded-collection": 1,
+   "hot-stringify": 1
+  },
+  "drivers/lcdtemphumidluxsensor/device.js": {
+   "unbounded-collection": 1
+  },
+  "drivers/led_controller_dimmable/device.js": {
+   "hot-stringify": 2
+  },
+  "drivers/motion_sensor_radar_mmwave/device.js": {
+   "unbounded-collection": 1
+  },
+  "drivers/presence_sensor_radar/device.js": {
+   "unbounded-collection": 1
+  },
+  "drivers/sensor_presence_radar/device.js": {
+   "hot-stringify": 1
+  },
+  "drivers/siren_sirentemphumidsensor/device.js": {
+   "unbounded-collection": 1
+  },
+  "drivers/sirentemphumidsensor/device.js": {
+   "unbounded-collection": 2
+  },
+  "drivers/smart_heater_controller/device.js": {
+   "unbounded-collection": 1
+  },
+  "drivers/switch_temp_sensor/device.js": {
+   "hot-stringify": 1
+  },
+  "drivers/temphumidsensor4/device.js": {
+   "hot-stringify": 1
+  },
+  "drivers/temphumidsensor5/device.js": {
+   "hot-stringify": 1
+  },
+  "drivers/wall_thermostat/device.js": {
+   "unbounded-collection": 1
+  },
+  "lib/DiagnosticEngine.js": {
+   "unbounded-collection": 1
+  },
+  "lib/FlowCardHelper.js": {
+   "unbounded-collection": 1
+  },
+  "lib/IntelligentSensorInference.js": {
+   "unbounded-collection": 2
+  },
+  "lib/LocalFirstEngine.js": {
+   "unbounded-collection": 1
+  },
+  "lib/ProtocolAutoOptimizer.js": {
+   "unbounded-collection": 1
+  },
+  "lib/TuyaRtcDetector.js": {
+   "hot-stringify": 1
+  },
+  "lib/TuyaUniversalBridge.js": {
+   "unbounded-collection": 1
+  },
+  "lib/UniversalDataHandler.js": {
+   "unbounded-collection": 2
+  },
+  "lib/adapters/ExternalDeviceAdapter.js": {
+   "hot-stringify": 1
+  },
+  "lib/autonomous/AutonomousVerificationEngine.js": {
+   "unbounded-collection": 3
+  },
+  "lib/clusters/CustomClusterManager.js": {
+   "unbounded-collection": 1
+  },
+  "lib/clusters/RawClusterFallback.js": {
+   "unbounded-collection": 1
+  },
+  "lib/clusters/TuyaBoundCluster.js": {
+   "hot-stringify": 3
+  },
+  "lib/clusters/TuyaE000BoundCluster.js": {
+   "hot-stringify": 1
+  },
+  "lib/clusters/TuyaE001BoundCluster.js": {
+   "hot-stringify": 1
+  },
+  "lib/clusters/TuyaE002BoundCluster.js": {
+   "hot-stringify": 1
+  },
+  "lib/clusters/UniversalClusterBinder.js": {
+   "unbounded-collection": 2
+  },
+  "lib/clusters/UnknownClusterHandler.js": {
+   "unbounded-collection": 2
+  },
+  "lib/converters/ValueConverterRegistry.js": {
+   "unbounded-collection": 1
+  },
+  "lib/covers/CoverCommandQueue.js": {
+   "raw-timer": 1
+  },
+  "lib/covers/CoverMotionTracker.js": {
+   "raw-timer": 1
+  },
+  "lib/data/SmartDataValidator.js": {
+   "unbounded-collection": 1
+  },
+  "lib/devices/AirPurifierFilterLife.js": {
+   "unbounded-collection": 1
+  },
+  "lib/devices/BaseTuyaDPDevice.js": {
+   "hot-stringify": 1
+  },
+  "lib/devices/BaseUnifiedDevice.js": {
+   "unbounded-collection": 1,
+   "hot-stringify": 2
+  },
+  "lib/devices/GangCountAdapter.js": {
+   "unbounded-collection": 1
+  },
+  "lib/devices/TuyaUnifiedDevice.js": {
+   "unbounded-collection": 1,
+   "hot-stringify": 6
+  },
+  "lib/devices/UnifiedSensorBase.js": {
+   "hot-stringify": 4
+  },
+  "lib/devices/UnifiedSwitchBase.js": {
+   "unbounded-collection": 2,
+   "hot-stringify": 1
+  },
+  "lib/diagnostics/DiagnosticLogsCollector.js": {
+   "hot-stringify": 8
+  },
+  "lib/discovery/SmartDeviceDiscovery.js": {
+   "unbounded-collection": 1
+  },
+  "lib/drivers/DynamicDriverMatcher.js": {
+   "unbounded-collection": 1
+  },
+  "lib/dynamic/AutoAdaptiveDevice.js": {
+   "hot-stringify": 1
+  },
+  "lib/dynamic/DynamicCapabilityManager.js": {
+   "unbounded-collection": 3
+  },
+  "lib/dynamic/DynamicEnergyManager.js": {
+   "unbounded-collection": 1
+  },
+  "lib/dynamic/DynamicFlowCardManager.js": {
+   "unbounded-collection": 5,
+   "raw-timer": 1
+  },
+  "lib/dynamic/SmartFlowManager.js": {
+   "unbounded-collection": 5
+  },
+  "lib/dynamic/UniversalSmartFeaturesHandler.js": {
+   "unbounded-collection": 2
+  },
+  "lib/energy/UniversalEnergyHandler.js": {
+   "unbounded-collection": 1
+  },
+  "lib/errors/UserFriendlyErrors.js": {
+   "unbounded-collection": 1
+  },
+  "lib/features/AbsenceEnergySoft.js": {
+   "unbounded-collection": 2
+  },
+  "lib/features/AdvancedMultiConditionFlows.js": {
+   "unbounded-collection": 1
+  },
+  "lib/features/CustomCapabilityTemplates.js": {
+   "unbounded-collection": 1
+  },
+  "lib/features/WelcomeHomeSoft.js": {
+   "unbounded-collection": 2
+  },
+  "lib/health/HealthMonitor.js": {
+   "unbounded-collection": 1
+  },
+  "lib/helpers/RobustInitializer.js": {
+   "hot-stringify": 3
+  },
+  "lib/helpers/UnknownDeviceHandler.js": {
+   "hot-stringify": 2
+  },
+  "lib/interpreters/UniversalRawInterpreter.js": {
+   "hot-stringify": 2
+  },
+  "lib/managers/AutonomousMigrationManager.js": {
+   "unbounded-collection": 1
+  },
+  "lib/managers/DynamicCapabilityManager.js": {
+   "unbounded-collection": 1
+  },
+  "lib/managers/IASZoneEnhanced.js": {
+   "hot-stringify": 1
+  },
+  "lib/managers/SmartEnergyManager.js": {
+   "unbounded-collection": 2
+  },
+  "lib/memory/MemoryBudget.js": {
+   "raw-timer": 1
+  },
+  "lib/mixins/PhysicalButtonMixin.js": {
+   "unbounded-collection": 1
+  },
+  "lib/mixins/TuyaDeviceMixin.js": {
+   "hot-stringify": 1
+  },
+  "lib/multichannel/MultiChannelManager.js": {
+   "unbounded-collection": 2
+  },
+  "lib/multichannel/ReceptionManager.js": {
+   "unbounded-collection": 2
+  },
+  "lib/pairing/AutoDetectionPairingWizard.js": {
+   "unbounded-collection": 2
+  },
+  "lib/pairing/EnrichmentScheduler.js": {
+   "hot-stringify": 1
+  },
+  "lib/performance/PerformanceOptimizer.js": {
+   "unbounded-collection": 1
+  },
+  "lib/performance/StartupTimeProfiler.js": {
+   "unbounded-collection": 3
+  },
+  "lib/protocol/HybridProtocolArbitrator.js": {
+   "unbounded-collection": 1
+  },
+  "lib/protocol/HybridProtocolManager.js": {
+   "hot-stringify": 1
+  },
+  "lib/reliability/ZigbeeResilience.js": {
+   "raw-timer": 1
+  },
+  "lib/security/DPValueInputValidator.js": {
+   "unbounded-collection": 1
+  },
+  "lib/security/SecurityGuard.js": {
+   "unbounded-collection": 1
+  },
+  "lib/sensors/IntelligentDPAutoDiscovery.js": {
+   "unbounded-collection": 2
+  },
+  "lib/smart/CoupleKnowledge.js": {
+   "raw-timer": 1
+  },
+  "lib/templates/TuyaTS0601DeviceTemplate.js": {
+   "hot-stringify": 1
+  },
+  "lib/tuya-local/TuyaCloudMQTT.js": {
+   "hot-stringify": 1
+  },
+  "lib/tuya-local/TuyaLocalDevice.js": {
+   "unbounded-collection": 1,
+   "hot-stringify": 3
+  },
+  "lib/tuya-local/TuyaShadowPulsar.js": {
+   "raw-timer": 1
+  },
+  "lib/tuya/DeviceFingerprintDB.js": {
+   "unbounded-collection": 1
+  },
+  "lib/tuya/DpCoalescer.js": {
+   "unbounded-collection": 1,
+   "raw-timer": 1
+  },
+  "lib/tuya/EnrichedDPMappings.js": {
+   "unbounded-collection": 1
+  },
+  "lib/tuya/TuyaClusterWrapper.js": {
+   "hot-stringify": 2
+  },
+  "lib/tuya/TuyaDPFlowCardManager.js": {
+   "unbounded-collection": 1
+  },
+  "lib/tuya/TuyaDPManager_Enhanced.js": {
+   "hot-stringify": 1
+  },
+  "lib/tuya/TuyaDataPointEngine.js": {
+   "hot-stringify": 5
+  },
+  "lib/tuya/TuyaEF00Manager.js": {
+   "hot-stringify": 16
+  },
+  "lib/tuya/TuyaEF00Parser.js": {
+   "hot-stringify": 1
+  },
+  "lib/tuya/TuyaProtocolManager.js": {
+   "hot-stringify": 1
+  },
+  "lib/tuya/TuyaSpecificClusterDevice.js": {
+   "unbounded-collection": 1
+  },
+  "lib/tuya/TuyaSpecificDevice.js": {
+   "hot-stringify": 1
+  },
+  "lib/tuya/TuyaTimeSyncFormats.js": {
+   "unbounded-collection": 1
+  },
+  "lib/tuya/TuyaUnifiedParser.js": {
+   "hot-stringify": 1
+  },
+  "lib/tuya/TuyaZigbeeDevice.js": {
+   "hot-stringify": 2
+  },
+  "lib/tuya/UniversalDPReceiver.js": {
+   "unbounded-collection": 2,
+   "hot-stringify": 1
+  },
+  "lib/tuya/_quarantine/UniversalTuyaParser.legacy.js": {
+   "hot-stringify": 1
+  },
+  "lib/utils/AdaptiveEventEmitter.js": {
+   "unbounded-collection": 2
+  },
+  "lib/utils/SleepyDeviceInit.js": {
+   "raw-timer": 2
+  },
+  "lib/utils/SmartValueProcessor.js": {
+   "unbounded-collection": 1
+  },
+  "lib/utils/UniversalThrottleManager.js": {
+   "unbounded-collection": 1,
+   "raw-timer": 1
+  },
+  "lib/utils/UnknownDPLogger.js": {
+   "hot-stringify": 2
+  },
+  "lib/utils/clusterUtils.js": {
+   "raw-timer": 2
+  },
+  "lib/utils/data/DPMappingEngine.js": {
+   "unbounded-collection": 1
+  },
+  "lib/utils/safe-timers.js": {
+   "raw-timer": 2
+  },
+  "lib/ux/PrePairingCompatibilityCheck.js": {
+   "unbounded-collection": 2
+  },
+  "lib/ux/SettingsUITooltips.js": {
+   "unbounded-collection": 1
+  },
+  "lib/validation/ConfigSchemaValidator.js": {
+   "unbounded-collection": 1
+  },
+  "lib/zigbee/ZclClusterLexicon.js": {
+   "unbounded-collection": 2
+  },
+  "lib/zigbee/ZigbeeHealthMonitor.js": {
+   "unbounded-collection": 2
+  },
+  "lib/zigbee/ZigbeeProtocolPatchManager.js": {
+   "unbounded-collection": 1
+  },
+  "lib/zigbee/cluster/BindingPlanner.js": {
+   "unbounded-collection": 1
+  }
+ }
+}
