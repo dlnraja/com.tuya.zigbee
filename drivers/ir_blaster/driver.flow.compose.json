@@ -6,7 +6,7 @@
         "en": "IR Learning Started",
         "nl": "IR Leren Gestart",
         "de": "IR-Lernen Gestartet",
-        "fr": "IR Learning Started"
+        "fr": "Apprentissage IR démarré"
       },
       "tokens": [
         {
@@ -48,7 +48,7 @@
         "en": "IR Learning State Changed",
         "nl": "IR Leer Status Gewijzigd",
         "de": "IR-Lern Status Geändert",
-        "fr": "IR Learning State Changed"
+        "fr": "État de l'apprentissage IR modifié"
       },
       "tokens": [
         {
@@ -80,7 +80,7 @@
         "en": "IR Code Learned",
         "nl": "IR Code Geleerd",
         "de": "IR-Code Gelernt",
-        "fr": "IR Code Learned"
+        "fr": "Code IR appris"
       },
       "tokens": [
         {
@@ -102,7 +102,7 @@
         "en": "IR Code Analyzed",
         "nl": "IR Code Geanalyseerd",
         "de": "IR-Code Analysiert",
-        "fr": "IR Code Analyzed"
+        "fr": "Code IR analysé"
       },
       "tokens": [
         {
@@ -176,7 +176,7 @@
         "en": "IR learning is active",
         "nl": "IR leren is actief",
         "de": "IR-Lernen ist aktiv",
-        "fr": "IR learning is active"
+        "fr": "L'apprentissage IR est actif"
       },
       "args": []
     },
@@ -186,7 +186,7 @@
         "en": "IR code exists",
         "nl": "IR code bestaat",
         "de": "IR-Code existiert",
-        "fr": "IR code exists"
+        "fr": "Le code IR existe"
       },
       "args": [
         {
@@ -209,7 +209,7 @@
         "en": "IR code exists [[code_name]]",
         "nl": "IR code bestaat [[code_name]]",
         "de": "IR-Code existiert [[code_name]]",
-        "fr": "IR code exists [[code_name]]"
+        "fr": "Le code IR [[code_name]] existe"
       }
     },
     {
@@ -218,7 +218,7 @@
         "en": "IR protocol detected",
         "nl": "IR protocol gedetecteerd",
         "de": "IR-Protokoll erkannt",
-        "fr": "IR protocol detected"
+        "fr": "Protocole IR détecté"
       },
       "args": [
         {
@@ -330,7 +330,7 @@
         "en": "IR protocol detected [[code_name]] [[protocol]]",
         "nl": "IR protocol gedetecteerd [[code_name]] [[protocol]]",
         "de": "IR-Protokoll erkannt [[code_name]] [[protocol]]",
-        "fr": "IR protocol detected [[code_name]] [[protocol]]"
+        "fr": "Protocole IR détecté pour [[code_name]] : [[protocol]]"
       }
     },
     {
@@ -351,7 +351,7 @@
         "en": "Learn IR Code",
         "nl": "Leer IR Code",
         "de": "IR-Code Lernen",
-        "fr": "Learn IR Code"
+        "fr": "Apprendre un code IR"
       },
       "args": [
         {
@@ -529,7 +529,7 @@
         "en": "Learn IR Code [[code_name]] [[duration_seconds]] [[protocol]] [[frequency]] [[category]]",
         "nl": "Leer IR Code [[code_name]] [[duration_seconds]] [[protocol]] [[frequency]] [[category]]",
         "de": "IR-Code Lernen [[code_name]] [[duration_seconds]] [[protocol]] [[frequency]] [[category]]",
-        "fr": "Learn IR Code [[code_name]] [[duration_seconds]] [[protocol]] [[frequency]] [[category]]"
+        "fr": "Apprendre le code IR [[code_name]] [[duration_seconds]] [[protocol]] [[frequency]] [[category]]"
       }
     },
     {
@@ -538,7 +538,7 @@
         "en": "Send IR Code",
         "nl": "Verstuur IR Code",
         "de": "IR-Code Senden",
-        "fr": "Send IR Code"
+        "fr": "Envoyer un code IR"
       },
       "hint": {
         "en": "Send a learned or raw IR code. Use the code name or paste a Base64 encoded IR code.",
@@ -706,7 +706,7 @@
         "en": "Send IR Code [[ir_code]] [[protocol]] [[frequency]] [[repeat]]",
         "nl": "Verstuur IR Code [[ir_code]] [[protocol]] [[frequency]] [[repeat]]",
         "de": "IR-Code Senden [[ir_code]] [[protocol]] [[frequency]] [[repeat]]",
-        "fr": "Send IR Code [[ir_code]] [[protocol]] [[frequency]] [[repeat]]"
+        "fr": "Envoyer le code IR [[ir_code]] [[protocol]] [[frequency]] [[repeat]]"
       }
     },
     {
@@ -715,7 +715,7 @@
         "en": "Send IR Code by Category",
         "nl": "Verstuur IR Code per Categorie",
         "de": "IR-Code nach Kategorie Senden",
-        "fr": "Send IR Code by Category"
+        "fr": "Envoyer un code IR par catégorie"
       },
       "hint": {
         "en": "Send a stored IR code from a specific category (e.g., TV Remote, AC).",
@@ -758,7 +758,7 @@
         "en": "Send IR Code by Category [[category]] [[code_name]]",
         "nl": "Verstuur IR Code per Categorie [[category]] [[code_name]]",
         "de": "IR-Code nach Kategorie Senden [[category]] [[code_name]]",
-        "fr": "Send IR Code by Category [[category]] [[code_name]]"
+        "fr": "Envoyer un code IR de la catégorie [[category]] : [[code_name]]"
       }
     },
     {
@@ -767,7 +767,7 @@
         "en": "Send AC Command",
         "nl": "Verstuur Airco Commando",
         "de": "AC-Befehl Senden",
-        "fr": "Send AC Command"
+        "fr": "Envoyer une commande de climatisation"
       },
       "hint": {
         "en": "Send AC command with mode, temperature and fan speed (SmartIR compatible)",
@@ -912,7 +912,7 @@
         "en": "Send AC Command [[mode]] [[temperature]] [[fan_speed]]",
         "nl": "Verstuur Airco Commando [[mode]] [[temperature]] [[fan_speed]]",
         "de": "AC-Befehl Senden [[mode]] [[temperature]] [[fan_speed]]",
-        "fr": "Send AC Command [[mode]] [[temperature]] [[fan_speed]]"
+        "fr": "Envoyer une commande de climatisation [[mode]] [[temperature]] [[fan_speed]]"
       }
     },
     {
