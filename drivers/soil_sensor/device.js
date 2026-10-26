@@ -413,9 +413,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     // and store in setting; do NOT trigger any flow (calibration is not a moisture event).
     if (dp === 105) {
       this.log(`[SOIL] Humidity calibration DP${dp} = ${parsedValue}`);
-      if (this.getSetting) {
-        this.setSettings({ humidity_calibration: Number(parsedValue) || 0 }).catch(() => {});
-      }
+      this._storeDeviceCalibration('humidity_calibration', parsedValue, 1);
       return;
     }
 
@@ -459,27 +457,18 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
                         : dp === 104 ? 'temperature_calibration'
                         : 'temperature_unit';
       this.log(`[SOIL] Calibration DP${dp} (${settingName}) = ${parsedValue}`);
-      if (this.getSetting) {
-        const v = Number(parsedValue);
-        if (Number.isFinite(v)) {
-          this.setSettings({ [settingName]: v }).catch(() => {});
-        }
-      }
+      // Z2M hobeian.ts CS-201Z / ZG-303Z: DP104 temperature_calibration is divideBy10.
+      this._storeDeviceCalibration(settingName, parsedValue, dp === 104 ? 10 : 1);
       return;
     }
 
-    // P64.10 ADD: ZG-303Z soil_warning (DP 110), temp_sampling (DP 111), soil_sampling (DP 112) — settings
+    // P64.10 ADD: ZG-303Z soil_warning (DP 110), temp_sampling (DP 111), soil_sampling (DP 112)
     if (dp === 110 || dp === 111 || dp === 112) {
       const settingName = dp === 110 ? 'soil_warning'
                         : dp === 111 ? 'temperature_sampling'
                         : 'soil_sampling';
       this.log(`[SOIL] Setting DP${dp} (${settingName}) = ${parsedValue}`);
-      if (this.getSetting) {
-        const v = Number(parsedValue);
-        if (Number.isFinite(v)) {
-          this.setSettings({ [settingName]: v }).catch(() => {});
-        }
-      }
+      this._storeDeviceCalibration(settingName, parsedValue, 1);
       return;
     }
 
@@ -505,6 +494,20 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     }
 
     super._handleDP(dpId, value);
+  }
+
+  /**
+   * WHY(P3067 family 9): the sensor applies its own calibration (DP102/104/105) before it reports, so its
+   * values are kept in the store, never copied into the Homey offset settings (temperature_calibration /
+   * humidity_calibration are added again by _applyCalibration: double offset, and DP104 is tenths, so a
+   * device offset of 1.5 °C showed as +15 °C). Sampling / warning DPs had no declared setting either.
+   */
+  _storeDeviceCalibration(name, raw, divisor) {
+    const v = Number(raw);
+    if (!Number.isFinite(v)) { return; }
+    const cur = (this.getStoreValue && this.getStoreValue('device_reported')) || {};
+    cur[name] = Math.round((v / divisor) * 10) / 10;
+    Promise.resolve().then(() => this.setStoreValue && this.setStoreValue('device_reported', cur)).catch(() => {});
   }
 
   _initFlowTriggers() {
