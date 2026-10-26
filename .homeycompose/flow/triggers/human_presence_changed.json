@@ -41,6 +41,12 @@
             "fr": "présente",
             "nl": "aanwezig",
             "de": "anwesend"
+          },
+          "title": {
+            "en": "present",
+            "fr": "présente",
+            "nl": "aanwezig",
+            "de": "anwesend"
           }
         },
         {
@@ -50,11 +56,23 @@
             "fr": "absente",
             "nl": "afwezig",
             "de": "abwesend"
+          },
+          "title": {
+            "en": "absent",
+            "fr": "absente",
+            "nl": "afwezig",
+            "de": "abwesend"
           }
         },
         {
           "id": "any",
           "label": {
+            "en": "present or absent",
+            "fr": "présente ou absente",
+            "nl": "aanwezig of afwezig",
+            "de": "anwesend oder abwesend"
+          },
+          "title": {
             "en": "present or absent",
             "fr": "présente ou absente",
             "nl": "aanwezig of afwezig",

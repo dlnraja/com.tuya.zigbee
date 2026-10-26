@@ -1,19 +1,19 @@
 {
   "id": "adaptive_lighting_pause",
   "title": {
-    "en": "Pause adaptive lighting",
+    "en": "Pause automatic white tone",
     "fr": "Suspendre l'éclairage adaptatif",
     "nl": "Adaptieve verlichting pauzeren",
     "de": "Adaptive Beleuchtung pausieren"
   },
   "titleFormatted": {
-    "en": "Pause adaptive lighting of [[device]] for [[minutes]] minutes",
+    "en": "Pause automatic white tone of [[device]] for [[minutes]] minutes",
     "fr": "Suspendre l'éclairage adaptatif de [[device]] pendant [[minutes]] minutes",
     "nl": "Pauzeer adaptieve verlichting van [[device]] voor [[minutes]] minuten",
     "de": "Adaptive Beleuchtung von [[device]] für [[minutes]] Minuten pausieren"
   },
   "hint": {
-    "en": "Resumes by itself afterwards. Does nothing when adaptive lighting is off.",
+    "en": "Resumes by itself afterwards. Does nothing when automatic white tone is off.",
     "fr": "Reprend toute seule ensuite. Sans effet si l'éclairage adaptatif est désactivé.",
     "nl": "Hervat daarna vanzelf. Doet niets als adaptieve verlichting uit staat.",
     "de": "Läuft danach von selbst weiter. Ohne Wirkung, wenn die adaptive Beleuchtung aus ist."
