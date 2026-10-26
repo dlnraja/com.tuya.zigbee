@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-26T14:20:05.014Z",
+ "generated": "2026-10-26T14:53:26.040Z",
  "drivers": 414,
  "snapshot": {
   "air_purifier": {
@@ -171,9 +171,9 @@
    "pidSha": "38bdc69f98e98fe7"
   },
   "button_emergency_sos": {
-   "mfr": 31,
+   "mfr": 30,
    "pid": 5,
-   "mfrSha": "830cf270d567e32b",
+   "mfrSha": "e8647f61f9698a53",
    "pidSha": "ced4695a6c47df18"
   },
   "button_wireless": {
@@ -2271,9 +2271,9 @@
    "pidSha": "159f93fb8bd65bf7"
   },
   "vibration_sensor": {
-   "mfr": 35,
+   "mfr": 36,
    "pid": 10,
-   "mfrSha": "56a5973b732d477b",
+   "mfrSha": "1697d5d509ba5036",
    "pidSha": "34750b19b8c07cfa"
   },
   "wall_curtain_switch": {

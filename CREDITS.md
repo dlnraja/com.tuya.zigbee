@@ -449,5 +449,9 @@ A heartfelt thank you to:
   datapoint facts show the ME168 layout of `_TZE200_cxakecfo/ybsqljjg/4aijvczq/r5ksy7qo` (own implementation).
 - Batch P3067 (covers): **Koen Kanters and the zigbee-herdsman-converters contributors** (`tuya.ts` TS0601_cover_4,
   Moes AM43-0.45/40-ES-EB), whose datapoint list shows DP101/102 are opening mode / factory reset on the AM43.
+- Batch P3067 (buttons / keypads): **Koen Kanters and the zigbee-herdsman-converters contributors** (`daewoo.ts`
+  WKE502Z: hub-mode DP101, arm ACK DP23, start-up arm mode DP25, options DP103-111, user DP112; `tuya.ts`
+  TS0601_vibration_sensor) and **the zigpy/zha-device-handlers contributors** (`_TZE200_kzm5w4iz` DP1/3/10)
+  (own implementation, no upstream code copied).
 - And every forum member and GitHub issue reporter who sent a fingerprint, a diagnostic or a "this works now":
   you are listed by handle in the sections above, and new names are added with each batch.

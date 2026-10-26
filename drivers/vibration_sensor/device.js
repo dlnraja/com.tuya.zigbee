@@ -65,7 +65,21 @@ class VibrationSensorDevice extends UnifiedSensorBase {
     return String(this._modelPid()).toUpperCase().includes('ZG-228Z');
   }
 
+  _isTs0601VibrationContact() {
+    // Z2M tuya.ts TS0601_vibration_sensor + ZHA quirk: DP1 contact, DP3 battery, DP10 vibration.
+    return /^_tze200_kzm5w4iz$/i.test(String(this.getSetting?.('zb_manufacturer_name') || this.getData?.()?.manufacturerName || ''));
+  }
+
   get dpMappings() {
+    // WHY(P3067 family 7): this couple was owned by button_emergency_sos, which forbids alarm_contact and
+    // knows no vibration DP. DP1 true = open (Z2M contact = !value), so alarm_contact = value.
+    if (this._isTs0601VibrationContact()) {
+      return {
+        1: { capability: 'alarm_contact', transform: boolean() },
+        3: { capability: 'measure_battery', divisor: 1 },
+        10: { capability: 'alarm_vibration', transform: boolean() },
+      };
+    }
     // Z2M ZG-102ZM: vibration + contact (inverse) + battery + sensitivity
     if (this._isHobeian102ZM()) {
       return {

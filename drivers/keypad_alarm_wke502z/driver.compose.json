@@ -43,6 +43,126 @@
       "$extends": [
         "zcl_cluster_layer"
       ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Keypad options",
+        "fr": "Options du clavier",
+        "nl": "Toetsenbordopties",
+        "de": "Tastaturoptionen"
+      },
+      "children": [
+        {
+          "id": "wke502z_arm_delay",
+          "type": "number",
+          "value": 0,
+          "min": 0,
+          "max": 180,
+          "step": 1,
+          "units": {
+            "en": "s",
+            "fr": "s",
+            "nl": "s",
+            "de": "s"
+          },
+          "label": {
+            "en": "Arm delay",
+            "fr": "Délai d’armement",
+            "nl": "Inschakelvertraging",
+            "de": "Scharfschaltverzögerung"
+          },
+          "hint": {
+            "en": "Sent when the keypad next wakes up.",
+            "fr": "Envoyé au prochain réveil du clavier.",
+            "nl": "Verzonden zodra het toetsenbord ontwaakt.",
+            "de": "Wird beim nächsten Aufwachen gesendet."
+          }
+        },
+        {
+          "id": "wke502z_arm_delay_beep",
+          "type": "checkbox",
+          "value": false,
+          "label": {
+            "en": "Beep during arm delay",
+            "fr": "Bip pendant le délai d’armement",
+            "nl": "Piep tijdens inschakelvertraging",
+            "de": "Piepton während Verzögerung"
+          }
+        },
+        {
+          "id": "wke502z_key_beep",
+          "type": "checkbox",
+          "value": false,
+          "label": {
+            "en": "Key beep",
+            "fr": "Bip des touches",
+            "nl": "Toetsgeluid",
+            "de": "Tastenton"
+          },
+          "hint": {
+            "en": "Reset by the keypad at power loss; sent again at start-up.",
+            "fr": "Remis à zéro par le clavier à la coupure ; renvoyé au démarrage.",
+            "nl": "Gereset bij stroomverlies; opnieuw verzonden bij opstarten.",
+            "de": "Bei Stromausfall zurückgesetzt; beim Start erneut gesendet."
+          }
+        },
+        {
+          "id": "wke502z_quick_home",
+          "type": "checkbox",
+          "value": false,
+          "label": {
+            "en": "Arm home without code",
+            "fr": "Armement partiel sans code",
+            "nl": "Thuis inschakelen zonder code",
+            "de": "Intern scharf ohne Code"
+          }
+        },
+        {
+          "id": "wke502z_quick_arm",
+          "type": "checkbox",
+          "value": false,
+          "label": {
+            "en": "Arm away without code",
+            "fr": "Armement total sans code",
+            "nl": "Afwezig inschakelen zonder code",
+            "de": "Extern scharf ohne Code"
+          }
+        },
+        {
+          "id": "wke502z_quick_disarm",
+          "type": "checkbox",
+          "value": false,
+          "label": {
+            "en": "Disarm without code",
+            "fr": "Désarmement sans code",
+            "nl": "Uitschakelen zonder code",
+            "de": "Unscharf ohne Code"
+          }
+        },
+        {
+          "id": "wke502z_quick_sos",
+          "type": "checkbox",
+          "value": false,
+          "label": {
+            "en": "SOS without code",
+            "fr": "SOS sans code",
+            "nl": "SOS zonder code",
+            "de": "SOS ohne Code"
+          }
+        },
+        {
+          "id": "wke502z_last_user",
+          "type": "label",
+          "value": "",
+          "label": {
+            "en": "Last user (badge/code slot)",
+            "fr": "Dernier utilisateur (badge/code)",
+            "nl": "Laatste gebruiker (badge/code)",
+            "de": "Letzter Benutzer (Badge/Code)"
+          }
+        }
+      ]
     }
   ],
   "zigbee": {
