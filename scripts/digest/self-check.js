@@ -58,6 +58,9 @@ function buildReport() {
     `- History sweep: Johan next **#${nextJ}**; items ${JSON.stringify(by)}; forum 140352 lastPost **${(sweep.threads && sweep.threads['140352'] && sweep.threads['140352'].lastPost) || '?'}**.`,
     '- Continuous-flow: **schedule stays always dry-run** (push trigger removed P2797c). Apply only via workflow_dispatch `mode=apply`. Same gates already run on push in syntax-check / code-quality / unified-ci.',
     '- Gate duplication: sacred-couple / anti-bot / P214 / fingerprint-sync / flow-title appear in ~5 workflows (safe-auto-commit, pr-gate, auto-fix-and-publish, unified-ci, fleet). Defer consolidation; keep shared gate scripts as SSOT.',
+    // P2810: per-topic forum sweep position (from post 1) + forum screenshot OCR candidates.
+    `- Forum sweep (swept/last): ${Object.entries(sweep.threads || {}).map(([t, s]) => `${t} ${s.sweptTo || 0}/${s.lastPost || '?'}`).join(', ') || 'n/a'}.`,
+    `- Forum OCR leads: ${(() => { const o = load(path.join(ROOT, 'data/leads/forum-image-ocr.json'), null); return o ? `${(o.entries || []).length} entries, ${(o.candidates || []).length} candidate couples` : 'not run yet'; })()}.`,
     `- Sweep updated: ${sweep.updated || 'n/a'}.`,
     '',
     '_No driver changes. No publish._',
