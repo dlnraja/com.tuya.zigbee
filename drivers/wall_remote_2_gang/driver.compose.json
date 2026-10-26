@@ -60,7 +60,8 @@
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
-        "en": "Press any button for approx 10 seconds (the LED should start blinking)."
+        "en": "Press any button for approx 10 seconds (the LED should start blinking).",
+        "fr": "Appuyez env. 10 s sur n'importe quel bouton (la LED clignote)."
       }
     }
   },

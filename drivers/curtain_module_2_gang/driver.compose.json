@@ -80,7 +80,8 @@
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
-        "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping)."
+        "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping).",
+        "fr": "Appuyez 10 s sur le bouton de configuration ou coupez/rétablissez l'alimentation 5 fois (la LED clignote / l'appareil bipe)."
       }
     },
     "manufacturerName": [
