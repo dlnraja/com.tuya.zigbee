@@ -4,7 +4,19 @@ const TuyaDpProfileDevice = require('../../lib/devices/TuyaDpProfileDevice');
 
 // DP layout from zigbee-herdsman-converters (tuya.ts, Koen Kanters and contributors); own implementation.
 class PanelSwitchCoverTuyaDevice extends TuyaDpProfileDevice {
-  profileFor() {
+  profileFor(mfr) {
+    // P3067-covers: _TZE204_pxbjch8m = Z2M TS0601_cover_with_1_switch_limited (cover without
+    // position + one relay): DP1 open/stop/close, DP7 relay l1. DP8 (motor direction) is left
+    // to the device, no write at pairing. Exact couple only; the 2+2 panel profile is unchanged.
+    if (String(mfr || '').toLowerCase() === '_tze204_pxbjch8m') {
+      return {
+        capabilities: ['windowcoverings_state', 'onoff'],
+        dps: {
+          1: { cap: 'windowcoverings_state', kind: 'coverState' },
+          7: { cap: 'onoff', kind: 'bool' },
+        },
+      };
+    }
     return {
       capabilities: ['windowcoverings_state.c1', 'windowcoverings_set.c1', 'windowcoverings_state.c2', 'windowcoverings_set.c2', 'onoff', 'onoff.s2',
         'windowcoverings_state', 'windowcoverings_set'],

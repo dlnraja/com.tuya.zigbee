@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-26T12:48:16.147Z",
+ "generated": "2026-10-26T13:34:06.312Z",
  "drivers": 414,
  "snapshot": {
   "air_purifier": {
@@ -1197,9 +1197,9 @@
    "pidSha": "3aca9bb9ec5d844f"
   },
   "panel_switch_cover_tuya": {
-   "mfr": 1,
+   "mfr": 2,
    "pid": 1,
-   "mfrSha": "78f5b13d1b2f6ffa",
+   "mfrSha": "08df0f8273045662",
    "pidSha": "455c46e8c8549693"
   },
   "pet_feeder": {

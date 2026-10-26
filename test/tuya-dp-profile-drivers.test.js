@@ -44,7 +44,8 @@ describe('exact-pair drivers', () => {
   });
   it('panel_switch_cover_tuya maps DP101/102 relays and DP1/2, DP4/5 covers', () => {
     const j = compose('panel_switch_cover_tuya');
-    assert.deepStrictEqual(j.zigbee.manufacturerName.filter(isCanon), ['_TZE200_rgeapp2c']);
+    // P3067-covers: + _TZE204_pxbjch8m (Z2M TS0601_cover_with_1_switch_limited, own profile).
+    assert.deepStrictEqual(j.zigbee.manufacturerName.filter(isCanon), ['_TZE200_rgeapp2c', '_TZE204_pxbjch8m']);
     const src = fs.readFileSync(path.join(root, 'drivers', 'panel_switch_cover_tuya', 'device.js'), 'utf8');
     for (const re of [/1: \{ cap: 'windowcoverings_state.c1'/, /5: \{ cap: 'windowcoverings_set.c2'/, /102: \{ cap: 'onoff.s2'/]) { assert.ok(re.test(src), re); }
   });
