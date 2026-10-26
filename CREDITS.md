@@ -176,6 +176,14 @@ Own implementation in `lib/ir/ZosungIRProtocol.js`, `lib/ir/TuyaWifiIRProtocol.j
 - **[jasonacox/tinytuya](https://github.com/jasonacox/tinytuya)** (MIT) — consulted: `IRRemoteControlDevice` control types 1/2, `send_ir` / `study` / `study_exit` / `study_key`, learned code on DP202 or DP2.
 - **[make-all/tuya-local](https://github.com/make-all/tuya-local)** (MIT, Jason Rumney and contributors) — consulted: single-DP `send_ir` JSON with `"1"` raw prefix, multi-DP send, split of long gaps.
 
+## Reports and automation (P3069, 2026-10-26) — ideas only, written in our own words
+- **GitHub** — the job summary feature (`$GITHUB_STEP_SUMMARY`) and its docs gave us the "one short page per run" format.
+- **The Renovate and Dependabot maintainers** — their PR bodies taught us to fold long detail into collapsed blocks and keep the top short.
+- **rhysd (actionlint)** — static checks for every workflow; our hygiene and report ratchets follow the same "fail only on new debt" spirit.
+- **The Homey Community forum moderators and the Zigbee2MQTT / ZHA trackers** — their habit of linking to a post instead of pasting it is
+  the rule our reports now follow: ID, link, author, then a summary in our words (`scripts/lib/report-writer.js`).
+- No code was copied from these projects; the helper and the ratchet (`scripts/ci/report-structure-ratchet.js`) are our own.
+
 ## Licenses (SPDX)
 
 | Project | License | Usage |
