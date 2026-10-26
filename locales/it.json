@@ -348,7 +348,15 @@
     "local_unreachable_cloud_ok": "Dispositivo non raggiungibile in locale, raggiungibile via cloud: controlla alimentazione e rete. Nuovo tentativo LAN in corso...",
     "local_key_recovered_link": "Chiave locale recuperata automaticamente tramite il collegamento Smart Life. Riconnessione...",
     "local_key_recovered": "Chiave locale recuperata automaticamente. Riconnessione...",
-    "auto_recovery_failed": "Recupero automatico non riuscito. Controlla le credenziali Cloud API o associa di nuovo."
+    "auto_recovery_failed": "Recupero automatico non riuscito. Controlla le credenziali Cloud API o associa di nuovo.",
+    "creds_required": "ID dispositivo e Local Key obbligatori",
+    "lan_probe_creds": "Dispositivo non raggiungibile con queste credenziali: __reason__. Controlla la local_key (cambia a ogni nuovo abbinamento) e l’IP. Protocolli 3.1–3.5 provati. Puoi comunque aggiungerlo offline (continuerà a riprovare sulla LAN).",
+    "cloud_creds_settings": "Configura prima Access ID e Access Secret Tuya nelle impostazioni dell’app.",
+    "cloud_creds_required": "Access ID e Access Secret obbligatori (oppure salvali nelle impostazioni dell’app).",
+    "unsupported_mode": "Modalità non supportata o credenziali mancanti.",
+    "lan_probe_failed": "Test LAN non riuscito: __reason__. Controlla IP / local_key, oppure spunta \"aggiungi comunque\" per creare il dispositivo offline (continua a riprovare sulla LAN).",
+    "nothing_to_update": "Niente da aggiornare",
+    "device_id_required": "ID dispositivo obbligatorio"
   },
   "warnings": {
     "battery_low": "Batteria scarica — sostituire presto",

@@ -348,7 +348,15 @@
     "local_unreachable_cloud_ok": "Urządzenie nieosiągalne lokalnie, ale dostępne w chmurze: sprawdź zasilanie i sieć. Trwa ponowna próba LAN...",
     "local_key_recovered_link": "Klucz lokalny odzyskany automatycznie przez połączenie Smart Life. Ponowne łączenie...",
     "local_key_recovered": "Klucz lokalny odzyskany automatycznie. Ponowne łączenie...",
-    "auto_recovery_failed": "Automatyczne odzyskiwanie nie powiodło się. Sprawdź dane Cloud API lub sparuj ponownie."
+    "auto_recovery_failed": "Automatyczne odzyskiwanie nie powiodło się. Sprawdź dane Cloud API lub sparuj ponownie.",
+    "creds_required": "Wymagane ID urządzenia i Local Key",
+    "lan_probe_creds": "Nie można połączyć się z urządzeniem przy tych danych: __reason__. Sprawdź local_key (zmienia się przy każdym ponownym parowaniu) i IP. Wypróbowano protokoły 3.1–3.5. Nadal możesz dodać je offline (będzie ponawiać próby w sieci LAN).",
+    "cloud_creds_settings": "Najpierw skonfiguruj Tuya Access ID i Access Secret w ustawieniach aplikacji.",
+    "cloud_creds_required": "Wymagane Access ID i Access Secret (lub zapisz je w ustawieniach aplikacji).",
+    "unsupported_mode": "Nieobsługiwany tryb lub brak danych logowania.",
+    "lan_probe_failed": "Test LAN nie powiódł się: __reason__. Sprawdź IP / local_key albo zaznacz „dodaj mimo to”, aby utworzyć urządzenie offline (będzie ponawiać próby w sieci LAN).",
+    "nothing_to_update": "Brak zmian do zapisania",
+    "device_id_required": "Wymagane ID urządzenia"
   },
   "warnings": {
     "battery_low": "Niski poziom baterii — wkrótce wymień",

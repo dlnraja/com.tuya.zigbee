@@ -348,7 +348,15 @@
     "local_unreachable_cloud_ok": "Enheten nås inte lokalt men via molnet: kontrollera ström och nätverk. Nytt LAN-försök pågår...",
     "local_key_recovered_link": "Lokal nyckel återställd automatiskt via Smart Life-länken. Återansluter...",
     "local_key_recovered": "Lokal nyckel återställd automatiskt. Återansluter...",
-    "auto_recovery_failed": "Automatisk återställning misslyckades. Kontrollera dina Cloud API-uppgifter eller para om."
+    "auto_recovery_failed": "Automatisk återställning misslyckades. Kontrollera dina Cloud API-uppgifter eller para om.",
+    "creds_required": "Enhets-ID och Local Key krävs",
+    "lan_probe_creds": "Enheten går inte att nå med dessa uppgifter: __reason__. Kontrollera local_key (den ändras vid varje ny parkoppling) och IP. Protokoll 3.1–3.5 provade. Du kan ändå lägga till den offline (den fortsätter försöka på LAN).",
+    "cloud_creds_settings": "Ange först Tuya Access ID och Access Secret i appens inställningar.",
+    "cloud_creds_required": "Access ID och Access Secret krävs (eller spara dem i appens inställningar).",
+    "unsupported_mode": "Läget stöds inte eller uppgifter saknas.",
+    "lan_probe_failed": "LAN-test misslyckades: __reason__. Kontrollera IP / local_key, eller kryssa i \"lägg till ändå\" för att skapa enheten offline (den fortsätter försöka på LAN).",
+    "nothing_to_update": "Inget att uppdatera",
+    "device_id_required": "Enhets-ID krävs"
   },
   "warnings": {
     "battery_low": "Lågt batteri — byt snart",
