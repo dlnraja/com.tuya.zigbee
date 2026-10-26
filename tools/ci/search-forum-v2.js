@@ -1,6 +1,8 @@
 // search-forum-v2.js — try different Discourse API endpoints
 const https = require('https');
 const fs = require('fs');
+const path = require('path');
+const { linkRef } = require(path.join(__dirname, '..', '..', 'scripts', 'lib', 'report-writer.js')); // P3075: link + topic, never the title
 
 function get(url) {
   return new Promise((resolve) => {
@@ -22,7 +24,7 @@ async function search() {
       const data = JSON.parse(r.body);
       console.log('  Topic count:', data.topic_list?.topics?.length);
       for (const t of (data.topic_list?.topics || []).slice(0, 10)) {
-        console.log('  - #' + t.id + ' [' + (t.like_count || 0) + ' likes, ' + (t.posts_count || 0) + ' posts] ' + t.title);
+        console.log('  - ' + linkRef({ id: t.id, url: 'https://community.homey.app/t/' + t.id, text: t.title }) + ' [' + (t.like_count || 0) + ' likes, ' + (t.posts_count || 0) + ' posts]');
       }
     } catch (e) {
       console.log('  Parse error:', e.message);
@@ -40,7 +42,7 @@ async function search() {
       const data = JSON.parse(r.body);
       console.log('  Keys:', Object.keys(data).slice(0, 10));
       if (data.topics) for (const t of data.topics.slice(0, 5)) {
-        console.log('  - ' + t.title);
+        console.log('  - ' + linkRef({ id: t.id, url: 'https://community.homey.app/t/' + t.id, text: t.title }));
       }
     } catch (e) { console.log('  Parse error'); }
   }
@@ -55,7 +57,7 @@ async function search() {
         const data = JSON.parse(r.body);
         if (Array.isArray(data)) {
           console.log('    Found:', data.length);
-          for (const item of data.slice(0, 3)) console.log('    - ' + (item.title || '').substring(0, 70));
+          for (const item of data.slice(0, 3)) console.log('    - ' + linkRef({ id: item.id, url: item.id ? 'https://community.homey.app/t/' + item.id : '', text: item.title || '' }));
         } else if (data.topics) {
           console.log('    Found:', data.topics.length);
         }
@@ -76,7 +78,7 @@ async function search() {
       console.log('  Total topics:', topics.length);
       for (const t of topics.slice(0, 10)) {
         if (t.title.match(/tuya|zigbee|dlnraja/i)) {
-          console.log('  - ' + t.title);
+          console.log('  - ' + linkRef({ id: t.id, url: 'https://community.homey.app/t/' + t.id, text: t.title }));
         }
       }
     } catch (e) { console.log('  Parse error'); }
