@@ -153,3 +153,12 @@ jobs:
           echo "- Issue comments deleted: ${{ steps.cleanup.outputs.issue_deleted || '0' }}" >> "$GITHUB_STEP_SUMMARY"
           echo "- Review comments deleted: ${{ steps.cleanup.outputs.review_deleted || '0' }}" >> "$GITHUB_STEP_SUMMARY"
           echo "- Remaining after verification: ${{ steps.cleanup.outputs.remaining || 'unknown' }}" >> "$GITHUB_STEP_SUMMARY"\n
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Manual clean-up of our own upstream comments, behind an explicit confirmation input."; else s="Stopped early ($JOB_STATUS); the red step above says why. Manual clean-up of our own upstream comments, behind an explicit confirmation input."; fi
+          node scripts/lib/report-writer.js --title "delete-own-upstream-comments" --summary "$s" --headers "item|value" --row "job|delete-own-comments" --row "result|$JOB_STATUS" --thanks "Renovate and Dependabot for the merge-when-green pattern" --thanks "the actions/stale and actions/labeler maintainers" >> "$GITHUB_STEP_SUMMARY" || true

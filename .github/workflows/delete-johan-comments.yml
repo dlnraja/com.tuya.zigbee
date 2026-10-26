@@ -165,3 +165,12 @@ jobs:
           fi
           echo ""
           echo "Run: ${{ github.run_id }}"
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Manual clean-up of our own old comments on the upstream repo; dry run by default."; else s="Stopped early ($JOB_STATUS); the red step above says why. Manual clean-up of our own old comments on the upstream repo; dry run by default."; fi
+          node scripts/lib/report-writer.js --title "delete-johan-comments" --summary "$s" --headers "item|value" --row "job|delete" --row "result|$JOB_STATUS" --thanks "Renovate and Dependabot for the merge-when-green pattern" --thanks "the actions/stale and actions/labeler maintainers" >> "$GITHUB_STEP_SUMMARY" || true

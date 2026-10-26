@@ -120,3 +120,12 @@ jobs:
           name: repo-autopilot-report
           path: reports/autopilot/
           retention-days: 30
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Daily pass over open PRs and issues without posting: merges green bot PRs, notes the rest."; else s="Stopped early ($JOB_STATUS); the red step above says why. Daily pass over open PRs and issues without posting: merges green bot PRs, notes the rest."; fi
+          node scripts/lib/report-writer.js --title "repo-autopilot" --summary "$s" --headers "item|value" --row "job|autopilot" --row "result|$JOB_STATUS" --thanks "Renovate and Dependabot for the merge-when-green pattern" --thanks "the actions/stale and actions/labeler maintainers" >> "$GITHUB_STEP_SUMMARY" || true

@@ -90,3 +90,12 @@ jobs:
           node scripts/ci/safe-auto-commit.js --id=automation-loop --max-per-day=2 \
             --message="chore(automation): journal + digest (P3048, no AI)" \
             --paths="data/progress/automation-journal.jsonl data/progress/archive data/progress/reply-candidates.json docs/progress/DIGEST.md data/automation data/status/workflow-watchdog.json data/status/package-combos.json data/leads/ocr-hash-cache.json data/leads/forum-lastseen.json data/leads/image-ocr-cursor.json data/leads/issue557-cursor.json data/leads/deep-read-checkpoint.json data/leads/resume-checkpoint.json data/leads/sweep-checkpoint.json data/sources/state.json docs/automation/leads-other-apps-cursor.json"
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Daily AI-free upkeep: journal repair, CI failure collection and a watchdog that opens at most one labelled issue per run."; else s="Stopped early ($JOB_STATUS); the red step above says why. Daily AI-free upkeep: journal repair, CI failure collection and a watchdog that opens at most one labelled issue per run."; fi
+          node scripts/lib/report-writer.js --title "automation-loop" --summary "$s" --headers "item|value" --row "job|loop" --row "result|$JOB_STATUS" --thanks "Renovate and Dependabot for the merge-when-green pattern" --thanks "the actions/stale and actions/labeler maintainers" >> "$GITHUB_STEP_SUMMARY" || true

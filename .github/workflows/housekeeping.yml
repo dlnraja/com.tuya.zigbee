@@ -94,3 +94,12 @@ jobs:
           else
             echo "Nothing to tidy"
           fi
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Weekly tidy of the repo root: only unreferenced files matching explicit rules."; else s="Stopped early ($JOB_STATUS); the red step above says why. Weekly tidy of the repo root: only unreferenced files matching explicit rules."; fi
+          node scripts/lib/report-writer.js --title "housekeeping" --summary "$s" --headers "item|value" --row "job|tidy" --row "result|$JOB_STATUS" --thanks "Renovate and Dependabot for the merge-when-green pattern" --thanks "the actions/stale and actions/labeler maintainers" >> "$GITHUB_STEP_SUMMARY" || true

@@ -139,6 +139,15 @@ jobs:
               echo "Report missing"
             fi
           } >> "$GITHUB_STEP_SUMMARY"
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Weekly heavy pass on free GitHub minutes; later automation only reads its report."; else s="Stopped early ($JOB_STATUS); the red step above says why. Weekly heavy pass on free GitHub minutes; later automation only reads its report."; fi
+          node scripts/lib/report-writer.js --title "weekly-sovereign-loop" --summary "$s" --headers "item|value" --row "job|sovereign" --row "result|$JOB_STATUS" --thanks "Renovate and Dependabot for the merge-when-green pattern" --thanks "the actions/stale and actions/labeler maintainers" >> "$GITHUB_STEP_SUMMARY" || true
 
   # P2936: full cross-research of every item this workflow handles (kill switch: vars.XR_ENABLED=false,
   # report-only: vars.XR_APPLY=false). Bounded (max items, net/OCR caps), cached, no paid API.
