@@ -327,7 +327,20 @@
     "not_ready": "Il dispositivo non è ancora pronto. Riprovare tra un momento.",
     "pairing_failed": "Associazione non riuscita. Reimpostare il dispositivo e riprovare.",
     "invalid_setting": "Valore di impostazione non valido",
-    "battery_read_failed": "Impossibile leggere lo stato della batteria"
+    "battery_read_failed": "Impossibile leggere lo stato della batteria",
+    "unreachable": "Dispositivo non raggiungibile",
+    "phantom": "Dispositivo fantasma. Eliminalo manualmente.",
+    "local_creds_missing": "Credenziali mancanti (device_id/local_key). Riassocia o usa Ripara.",
+    "local_creds_partial": "Credenziali locali mancanti. Aggiungi device_id/local_key con Ripara.",
+    "local_client": "Errore di connessione locale: __reason__",
+    "battery_sleep_silent": "Nessun report nella finestra di sospensione batteria",
+    "disconnected": "Dispositivo disconnesso",
+    "local_unreachable_retry": "Dispositivo non raggiungibile in rete locale. Nuovo tentativo automatico…",
+    "no_messages_timeout": "Nessun messaggio ricevuto entro il tempo impostato",
+    "comm_error": "Errore di comunicazione: __reason__",
+    "missing_device_id": "device_id mancante",
+    "connection_failed": "Connessione non riuscita",
+    "no_ip": "Nessun IP - impostalo nelle impostazioni"
   },
   "warnings": {
     "battery_low": "Batteria scarica — sostituire presto",

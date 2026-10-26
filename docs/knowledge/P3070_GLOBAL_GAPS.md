@@ -22,9 +22,9 @@ top-level `min`/`max`/`step`/`units`; ids must not use reserved prefixes).
 | 3 | `dimmer_1_gang` brightness limits 1–255 labelled "(%)"; mojibake "(mW  W)" | Medium | Low | P3070 | **Done** step 1 |
 | 4 | Generic `.homeychangelog.json` entries ("automated publish, manifest sync…"), versions out of order | High (store changelog useless to users) | Low | P3069 (generator in auto-publish workflow) | Note handed over |
 | 5 | 32 light/socket drivers with neither `measure_power` nor `energy.approximation` | High (no energy in Homey Energy) | Medium | P3067 | Note handed over |
-| 6 | Learnmode instructions missing in fr (128 drivers), de (249), nl (227); 53 learnmode without image; 69 Zigbee drivers without learnmode | Medium (pairing help) | Low, but ~14 KB for fr | P3070 next | Pending — size budget check vs 280 KB floor |
-| 7 | Driver names missing de/nl (97) or de (29) | Medium | Low (~6 KB) | P3070 next | Pending |
-| 8 | 27 `setUnavailable('…')` + 418 `throw new Error('…')` literal English strings; only 3 lib files use `homey.__` | Medium (non-English users see English) | Medium (behavior) | P3070, master-only | Pending (needs helper + soak) |
+| 6 | Learnmode instructions missing in fr (128 drivers), de (249), nl (227); 53 learnmode without image; 69 Zigbee drivers without learnmode | Medium (pairing help) | Low, but ~14 KB for fr | P3070 next | fr done on 3 branches (master 568a3084c1, stable 30aa60af30, bastien 3ab4b77e07); de/nl learnmode still pending (size) |
+| 7 | Driver names missing de/nl (97) or de (29) | Medium | Low (~6 KB) | P3070 next | Done on master 33700321ef (de 112, nl 85); headroom 302.2 → 297.0 KB |
+| 8 | 27 `setUnavailable('…')` + 418 `throw new Error('…')` literal English strings; only 3 lib files use `homey.__` | Medium (non-English users see English) | Medium (behavior) | P3070, master-only | Partly done (master only, soak): `lib/utils/LocalizedMessage.js` + 13 `errors.*` keys (en/fr/de/nl/es/it), 18 calls in 8 core files; drivers/*, UnifiedLightBase and UnifiedPlugBase left for the drivers worker (P3067); `throw new Error` untouched |
 | 9 | 470 drivers without `xlarge` image, 8 shared large images, 5 shared icons | Low–Medium (store look) | Low (assets, no app.json size) | P3067 (assets per family) | Listed |
 | 10 | 2245 settings without hint, 595 setting labels and 843 dropdown labels without fr/de/nl, 923 capabilitiesOptions titles without de/nl | Medium | Low, but large size cost | P3070 incremental | Pending; must stay within headroom |
 | 11 | 84 capabilitiesOptions for capabilities not declared statically | Low | **Keep** — may target capabilities added at runtime | — | Not changed on purpose |
@@ -33,11 +33,16 @@ top-level `min`/`max`/`step`/`units`; ids must not use reserved prefixes).
 | 14 | User docs: only `docs/user/FAQ_ZIGBEE_UPDATES.md` + `ZIGBEE_TROUBLESHOOTING_GUIDE.md`; no FAQ for Wi-Fi local credentials (Repair flow) | Medium | None | P3070 docs | Pending |
 | 15 | Locales `locales/*.json`: fr/de/nl/es/it complete (252/252 keys) | — | — | — | OK |
 
-## Pre-existing gate failure (not P3070)
+## Baseline gate: artifact, fixed
 
-`publish-baseline-gate.cjs` reports 177/14227 couples of the Test package 9.0.1574 as
-"would disappear". It fails identically on a clean `origin/master` checkout before any
-P3070 change, so it is reported, not fixed here.
+The 177/115/11 "would disappear" couples (master/stable/bastien) were a gate artifact: the gate
+was given the raw source `app.json`, while it is meant for the publish payload where
+`compactZigbeeIdentifiers` re-pins or moves couples. On the real payload no couple is lost
+(master 14227/14227, stable 14005, bastien 3730). The gate now builds the payload view in memory
+when it is pointed at the root `app.json` (master 5b2512b336, stable 1725b3eba1, bastien
+c172739f82). Bastien `_TZE284_hodyryli`: its 12 baseline pids ship in `climate_sensor`, like Test
+1.0.209. Open question for the owner: on master/stable the couple `_TZE284_hodyryli`+TS0601 ends up
+in both `climate_sensor` (re-pin) and `climate_sensor_zt08` (by P3024b design, not changed).
 
 ## Rules applied
 

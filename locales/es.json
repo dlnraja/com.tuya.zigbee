@@ -327,7 +327,20 @@
     "not_ready": "El dispositivo aún no está listo. Inténtelo de nuevo en un momento.",
     "pairing_failed": "Emparejamiento fallido. Reinicie el dispositivo e inténtelo de nuevo.",
     "invalid_setting": "Valor de ajuste no válido",
-    "battery_read_failed": "No se pudo leer el estado de la batería"
+    "battery_read_failed": "No se pudo leer el estado de la batería",
+    "unreachable": "Dispositivo no accesible",
+    "phantom": "Dispositivo fantasma. Elimínelo manualmente.",
+    "local_creds_missing": "Faltan credenciales (device_id/local_key). Vuelva a emparejar o use Reparar.",
+    "local_creds_partial": "Faltan credenciales locales. Añada device_id/local_key con Reparar.",
+    "local_client": "Error de conexión local: __reason__",
+    "battery_sleep_silent": "Sin informe en la ventana de reposo de batería",
+    "disconnected": "Dispositivo desconectado",
+    "local_unreachable_retry": "Dispositivo inaccesible en la red local. Reintentando automáticamente…",
+    "no_messages_timeout": "No se recibieron mensajes en el tiempo configurado",
+    "comm_error": "Error de comunicación: __reason__",
+    "missing_device_id": "Falta device_id",
+    "connection_failed": "Conexión fallida",
+    "no_ip": "Sin IP - configúrela en ajustes"
   },
   "warnings": {
     "battery_low": "Batería baja — reemplazar pronto",

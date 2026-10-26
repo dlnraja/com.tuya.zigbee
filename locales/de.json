@@ -327,7 +327,20 @@
     "not_ready": "Gerät ist noch nicht bereit. Bitte gleich erneut versuchen.",
     "pairing_failed": "Kopplung fehlgeschlagen. Gerät zurücksetzen und erneut versuchen.",
     "invalid_setting": "Ungültiger Einstellungswert",
-    "battery_read_failed": "Batteriestatus konnte nicht gelesen werden"
+    "battery_read_failed": "Batteriestatus konnte nicht gelesen werden",
+    "unreachable": "Gerät nicht erreichbar",
+    "phantom": "Phantomgerät. Bitte manuell löschen.",
+    "local_creds_missing": "Gerätedaten fehlen (device_id/local_key). Neu koppeln oder Reparieren nutzen.",
+    "local_creds_partial": "Lokale Zugangsdaten fehlen. device_id/local_key über Reparieren ergänzen.",
+    "local_client": "Lokaler Verbindungsfehler: __reason__",
+    "battery_sleep_silent": "Keine Meldung im Batterie-Schlaffenster",
+    "disconnected": "Gerät getrennt",
+    "local_unreachable_retry": "Gerät im lokalen Netz nicht erreichbar. Automatischer neuer Versuch…",
+    "no_messages_timeout": "Keine Nachricht innerhalb der eingestellten Zeit",
+    "comm_error": "Kommunikationsfehler: __reason__",
+    "missing_device_id": "device_id fehlt",
+    "connection_failed": "Verbindung fehlgeschlagen",
+    "no_ip": "Keine IP - in den Einstellungen festlegen"
   },
   "warnings": {
     "battery_low": "Batterie schwach — bald ersetzen",
