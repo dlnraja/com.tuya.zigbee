@@ -1,6 +1,10 @@
 # Changelog
 
 ## Unreleased — docs refresh (P3032, stable-v5)
+### Fixed (2026-10-26, P3066 catalogue data)
+- `_TZ3210_09hzmirw` (EcoDim ED-10032 dimmable CCT filament bulb, TS0502B, per zigbee-herdsman-converters) now resolves to the CCT light driver in the fingerprint database and its runtime shard; existing pairings are untouched.
+- `_TZE204_z7a2jmyy` back to `climate_sensor` (its only driver on this branch), a mapping the P52 sync 6897a290f5 had also overwritten.
+
 ### Fixed (2026-10-26, P3066 sync guard)
 - `lib/tuya/fingerprints.json`: `_TZE284_la2c2uo9` back to `dimmer_1_gang_tuya` and 9 TS0601 climate couples back to `climate_sensor` (overwritten by the P52 sync 6897a290f5); `tools/ci/sync-driver-mapping-guard.js` keeps the target branch mapping on future syncs; pending 5.12.509 changelog entry (en + fr).
 
