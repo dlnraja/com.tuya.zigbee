@@ -53,3 +53,23 @@ test('P3068 without detach the bounded fallback poller is still armed (behaviour
   CLA.detach(f.device);
   assert.strictEqual(f.armed.size, 0);
 });
+
+test('P3068 a late attach() after delete (detach already ran) arms nothing', async () => {
+  const f = fixture();
+  f.device._destroyed = true; // onDeleted/onUninit set this first, then detach() cleared _p2935
+  CLA.detach(f.device);
+  f.release();
+  const st = await CLA.attach(f.device, f.zclNode);
+  assert.strictEqual(st, null);
+  assert.strictEqual(f.armed.size, 0);
+});
+
+test('P3068 device destroyed while configureReporting is pending (no detach call) arms nothing', async () => {
+  const f = fixture();
+  const p = CLA.attach(f.device, f.zclNode);
+  for (let i = 0; i < 50 && f.calls() === 0; i++) await new Promise((r) => setImmediate(r));
+  f.device._destroyed = true;
+  f.release();
+  await p;
+  assert.strictEqual(f.armed.size, 0, `pollers armed for a destroyed device: ${f.armed.size}`);
+});
