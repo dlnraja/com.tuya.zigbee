@@ -1,3 +1,10 @@
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: Weekly refresh of Homey firmware and tooling notes; version bumps stay proposals in the docs.
+# Ideas from (thank you): Koen Kanters and the zigbee-herdsman-converters contributors; zigpy / ZHA, deCONZ,
+#   tuya-local, tinytuya and localtuya authors; Blakadder's Zigbee device database.
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
+#   posting stays off or ledger-gated.
+# <<< about
 # Weekly Homey knowledge + tooling refresh
 # Triggers: cron Mon 05:47 UTC + Thu 09:23 UTC (backup slot: GitHub may delay or drop a schedule) + workflow_dispatch
 # Secrets: GITHUB_TOKEN only | Free, no AI

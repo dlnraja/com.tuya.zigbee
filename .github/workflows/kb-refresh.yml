@@ -1,3 +1,11 @@
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: Weekly incremental refresh of the knowledge base from public device projects, delivered as one
+#   draft PR.
+# Ideas from (thank you): Koen Kanters and the zigbee-herdsman-converters contributors; zigpy / ZHA, deCONZ,
+#   tuya-local, tinytuya and localtuya authors; Blakadder's Zigbee device database.
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
+#   posting stays off or ledger-gated.
+# <<< about
 # P-KB: incremental knowledge-base refresh (Z2M, ZHC, ZHA, deCONZ, Blakadder, tuya-local, tinytuya, localtuya, Johan, zigbee-clusters, OTA)
 # Mirrors are cached between runs (actions/cache) so git fetch is incremental; outputs are byte-identical when nothing moved.
 # Never pushes to a release branch: changes land as one draft PR (data/kb is excluded from the Homey bundle).

@@ -1,100 +1,100 @@
 <!-- report-writer:v1 lang=en -->
 ### GitHub Actions reports — inventory (P3069)
 
-90 workflows: 48 write a job summary, 1 already use the shared report helper and 0 carry our own "about" header. 15 scripts still interpolate third-party titles or bodies, and 46 docs hold long quoted passages to rewrite.
+90 workflows: 48 write a job summary, 1 already use the shared report helper and 90 carry our own "about" header. 15 scripts still interpolate third-party titles or bodies, and 46 docs hold long quoted passages to rewrite.
 
 | workflow | about header | job summary | shared helper | writes to GitHub |
 | --- | --- | --- | --- | --- |
-| activity-monitor.yml | no | yes | - | - |
-| agent-reach.yml | no | - | - | - |
-| ai-monthly-audit.yml | no | - | - | - |
-| athom-build-history.yml | no | - | - | - |
-| auto-bot-issue-triage.yml | no | yes | - | - |
-| auto-close-supported.yml | no | yes | - | - |
-| auto-enrich-closed-loop.yml | no | yes | - | - |
-| auto-fix-and-publish.yml | no | yes | - | own repo only (see notes) |
-| auto-publish-on-push.yml | no | yes | - | - |
-| auto-reopen-on-comment.yml | no | - | - | - |
-| automation-loop.yml | no | - | - | - |
-| autonomous-verification.yml | no | - | - | - |
-| bastien-promote-upstream.yml | no | yes | - | - |
-| bastien-publish.yml | no | yes | - | - |
-| blakadder-fetch.yml | no | yes | - | - |
-| bug-report-auto-pr.yml | no | - | - | - |
-| build-error-diag.yml | no | yes | - | - |
-| ci-autofix.yml | no | - | - | - |
-| ci-self-check.yml | no | - | yes | - |
-| code-quality.yml | no | yes | - | - |
-| collect-diagnostics.yml | no | - | - | - |
-| community-inbox.yml | no | - | - | - |
-| continuous-flow.yml | no | yes | - | - |
-| daily-digest.yml | no | - | - | - |
-| delete-johan-comments.yml | no | - | - | - |
-| delete-own-upstream-comments.yml | no | yes | - | - |
-| dependabot-auto-merge.yml | no | - | - | - |
-| deploy-pages.yml | no | - | - | - |
-| doc-coverage.yml | no | yes | - | - |
-| draft-to-test-fleet.yml | no | yes | - | - |
-| draft-to-test.yml | no | yes | - | - |
-| driver-maintenance.yml | no | yes | - | - |
-| e2e-dashboard-test.yml | no | yes | - | - |
-| fetch-diags.yml | no | yes | - | - |
-| fleet-intelligent-enrich.yml | no | yes | - | - |
-| flow-publish-self-heal.yml | no | yes | - | - |
-| forum-pm-read.yml | no | yes | - | - |
-| forum-poll.yml | no | yes | - | - |
-| free-scrape-crossref.yml | no | yes | - | - |
-| gmail-diagnostics.yml | no | - | - | - |
-| gmail-token-keepalive.yml | no | - | - | own repo only (see notes) |
-| homey-app-validate.yml | no | yes | - | - |
-| homey-knowledge-refresh.yml | no | - | - | - |
-| homey-secrets-health.yml | no | - | - | - |
-| homey-store-peer-probe.yml | no | - | - | - |
-| housekeeping.yml | no | - | - | - |
-| johan-thread-intel.yml | no | yes | - | - |
-| kb-refresh.yml | no | - | - | - |
-| knowledge-graph-sync.yml | no | yes | - | - |
-| l99-inbox-intelligence.yml | no | yes | - | - |
-| labeler.yml | no | - | - | - |
-| market-couples-intake.yml | no | yes | - | - |
-| mega-crawl.yml | no | yes | - | - |
-| monthly-community-sync.yml | no | yes | - | own repo only (see notes) |
-| monthly-device-enrichment.yml | no | yes | - | - |
-| monthly-enrichment.yml | no | yes | - | - |
-| monthly-scan.yml | no | yes | - | own repo only (see notes) |
-| monthly-tuya-intelligence.yml | no | - | - | - |
-| nightly-audit.yml | no | yes | - | - |
-| node22-tests.yml | no | - | - | - |
-| notifications.yml | no | - | - | - |
-| offline-crash-analyzer.yml | no | yes | - | - |
-| open-code-review.yml | no | - | - | - |
-| oss-lan-source-enrich.yml | no | - | - | - |
-| peer-complementary-enrich.yml | no | yes | - | - |
-| platform-budget.yml | no | - | - | - |
-| pr-gate.yml | no | - | - | - |
-| project-resilience.yml | no | yes | - | - |
-| publish-diagnose.yml | no | yes | - | - |
-| publish-self-heal.yml | no | yes | - | - |
-| publish-stable.yml | no | yes | - | - |
-| publish.yml | no | yes | - | - |
-| recurrent-orchestrator.yml | no | yes | - | - |
-| repo-autopilot.yml | no | - | - | - |
-| safe-sync-stable.yml | no | - | - | - |
-| self-improve.yml | no | yes | - | - |
-| shadow-policy-check.yml | no | - | - | - |
-| smart-pr-merge.yml | no | yes | - | - |
-| smart-update.yml | no | yes | - | - |
-| stale.yml | no | - | - | - |
-| storage-cleanup.yml | no | - | - | - |
-| syntax-check.yml | no | - | - | - |
-| temporal-monitor.yml | no | - | - | - |
-| tuya-deep-diag.yml | no | - | - | - |
-| unified-ci.yml | no | - | - | - |
-| upstream-guard.yml | no | - | - | own repo only (see notes) |
-| validate.yml | no | yes | - | - |
-| verified-publish-and-diagnostics.yml | no | - | - | - |
-| version-health.yml | no | - | - | - |
-| weekly-sovereign-loop.yml | no | yes | - | - |
+| activity-monitor.yml | yes | yes | - | - |
+| agent-reach.yml | yes | - | - | - |
+| ai-monthly-audit.yml | yes | - | - | - |
+| athom-build-history.yml | yes | - | - | - |
+| auto-bot-issue-triage.yml | yes | yes | - | - |
+| auto-close-supported.yml | yes | yes | - | - |
+| auto-enrich-closed-loop.yml | yes | yes | - | - |
+| auto-fix-and-publish.yml | yes | yes | - | own repo only (see notes) |
+| auto-publish-on-push.yml | yes | yes | - | - |
+| auto-reopen-on-comment.yml | yes | - | - | - |
+| automation-loop.yml | yes | - | - | - |
+| autonomous-verification.yml | yes | - | - | - |
+| bastien-promote-upstream.yml | yes | yes | - | - |
+| bastien-publish.yml | yes | yes | - | - |
+| blakadder-fetch.yml | yes | yes | - | - |
+| bug-report-auto-pr.yml | yes | - | - | - |
+| build-error-diag.yml | yes | yes | - | - |
+| ci-autofix.yml | yes | - | - | - |
+| ci-self-check.yml | yes | - | yes | - |
+| code-quality.yml | yes | yes | - | - |
+| collect-diagnostics.yml | yes | - | - | - |
+| community-inbox.yml | yes | - | - | - |
+| continuous-flow.yml | yes | yes | - | - |
+| daily-digest.yml | yes | - | - | - |
+| delete-johan-comments.yml | yes | - | - | - |
+| delete-own-upstream-comments.yml | yes | yes | - | - |
+| dependabot-auto-merge.yml | yes | - | - | - |
+| deploy-pages.yml | yes | - | - | - |
+| doc-coverage.yml | yes | yes | - | - |
+| draft-to-test-fleet.yml | yes | yes | - | - |
+| draft-to-test.yml | yes | yes | - | - |
+| driver-maintenance.yml | yes | yes | - | - |
+| e2e-dashboard-test.yml | yes | yes | - | - |
+| fetch-diags.yml | yes | yes | - | - |
+| fleet-intelligent-enrich.yml | yes | yes | - | - |
+| flow-publish-self-heal.yml | yes | yes | - | - |
+| forum-pm-read.yml | yes | yes | - | - |
+| forum-poll.yml | yes | yes | - | - |
+| free-scrape-crossref.yml | yes | yes | - | - |
+| gmail-diagnostics.yml | yes | - | - | - |
+| gmail-token-keepalive.yml | yes | - | - | own repo only (see notes) |
+| homey-app-validate.yml | yes | yes | - | - |
+| homey-knowledge-refresh.yml | yes | - | - | - |
+| homey-secrets-health.yml | yes | - | - | - |
+| homey-store-peer-probe.yml | yes | - | - | - |
+| housekeeping.yml | yes | - | - | - |
+| johan-thread-intel.yml | yes | yes | - | - |
+| kb-refresh.yml | yes | - | - | - |
+| knowledge-graph-sync.yml | yes | yes | - | - |
+| l99-inbox-intelligence.yml | yes | yes | - | - |
+| labeler.yml | yes | - | - | - |
+| market-couples-intake.yml | yes | yes | - | - |
+| mega-crawl.yml | yes | yes | - | - |
+| monthly-community-sync.yml | yes | yes | - | own repo only (see notes) |
+| monthly-device-enrichment.yml | yes | yes | - | - |
+| monthly-enrichment.yml | yes | yes | - | - |
+| monthly-scan.yml | yes | yes | - | own repo only (see notes) |
+| monthly-tuya-intelligence.yml | yes | - | - | - |
+| nightly-audit.yml | yes | yes | - | - |
+| node22-tests.yml | yes | - | - | - |
+| notifications.yml | yes | - | - | - |
+| offline-crash-analyzer.yml | yes | yes | - | - |
+| open-code-review.yml | yes | - | - | - |
+| oss-lan-source-enrich.yml | yes | - | - | - |
+| peer-complementary-enrich.yml | yes | yes | - | - |
+| platform-budget.yml | yes | - | - | - |
+| pr-gate.yml | yes | - | - | - |
+| project-resilience.yml | yes | yes | - | - |
+| publish-diagnose.yml | yes | yes | - | - |
+| publish-self-heal.yml | yes | yes | - | - |
+| publish-stable.yml | yes | yes | - | - |
+| publish.yml | yes | yes | - | - |
+| recurrent-orchestrator.yml | yes | yes | - | - |
+| repo-autopilot.yml | yes | - | - | - |
+| safe-sync-stable.yml | yes | - | - | - |
+| self-improve.yml | yes | yes | - | - |
+| shadow-policy-check.yml | yes | - | - | - |
+| smart-pr-merge.yml | yes | yes | - | - |
+| smart-update.yml | yes | yes | - | - |
+| stale.yml | yes | - | - | - |
+| storage-cleanup.yml | yes | - | - | - |
+| syntax-check.yml | yes | - | - | - |
+| temporal-monitor.yml | yes | - | - | - |
+| tuya-deep-diag.yml | yes | - | - | - |
+| unified-ci.yml | yes | - | - | - |
+| upstream-guard.yml | yes | - | - | own repo only (see notes) |
+| validate.yml | yes | yes | - | - |
+| verified-publish-and-diagnostics.yml | yes | - | - | - |
+| version-health.yml | yes | - | - | - |
+| weekly-sovereign-loop.yml | yes | yes | - | - |
 
 <details><summary>Scripts that interpolate third-party titles or bodies (to migrate)</summary>
 
