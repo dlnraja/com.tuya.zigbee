@@ -533,6 +533,20 @@
   </div>
 
   <div class="card">
+    <h3>Adaptive lighting</h3>
+    <div class="tr">
+      <div>
+        <b>Adaptive lighting (all lights)</b><br>
+        <span style="font-size:11px;color:#666">Lights follow the sun: warm morning/evening, cooler at midday. Only when a light is on; pauses 60 min after any manual change. Untick to stop it everywhere; per light: device settings &gt; Adaptive lighting. / Éclairage adaptatif : décocher pour l'arrêter partout ; par lampe : réglages de l'appareil.</span>
+      </div>
+      <label class="sw">
+        <input type="checkbox" id="alg" checked onchange="setToggle('adaptive_lighting_global',this.checked)">
+        <span class="sl"></span>
+      </label>
+    </div>
+  </div>
+
+  <div class="card">
     <h3>Developer Settings</h3>
     <div class="tr">
       <div>
@@ -959,6 +973,7 @@
         });
         Homey.get('smartthings_client_id', function(e, v) { if (v && el('st-cid')) el('st-cid').value = v; });
         Homey.get('smartthings_client_secret', function(e, v) { updateSTSecretStatus(!!v); });
+        Homey.get('adaptive_lighting_global', function(e, v) { if (el('alg')) el('alg').checked = v !== false; });
         Homey.get('developer_debug_mode', function(e, v) { if (el('dbg')) el('dbg').checked = !!v; });
         Homey.get('issue_report_endpoint', function(e, v) { if (v && el('ire')) el('ire').value = v; });
         Homey.get('availability_trigger_grace_s', function(e, v) { if (v !== undefined && v !== null && v !== '' && el('avg')) el('avg').value = v; });

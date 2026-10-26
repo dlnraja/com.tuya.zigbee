@@ -243,5 +243,11 @@
   },
   "metadata": {
     "source": "JohanBendz/com.tuya.zigbee#128 (reporter, batch 105)"
+  },
+  "energy": {
+    "approximation": {
+      "usageOn": 40,
+      "usageOff": 0.4
+    }
   }
 }

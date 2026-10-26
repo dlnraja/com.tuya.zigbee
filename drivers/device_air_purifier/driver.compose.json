@@ -46,7 +46,11 @@
     "large": "/drivers/thermostat_tuya_dp/assets/images/large.png"
   },
   "energy": {
-    "mains": true
+    "mains": true,
+    "approximation": {
+      "usageOn": 25,
+      "usageOff": 0.5
+    }
   },
   "maintenanceActions": [
     {

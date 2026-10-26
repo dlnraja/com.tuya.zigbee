@@ -459,5 +459,10 @@ A heartfelt thank you to:
   disturb; `tuya.ts` MG-DIM02Z DP143/144/146 and TS0601_knob_dimmer_switch DP106/141) (own implementation).
 - Batch P3067 (soil, breaker): **Koen Kanters and the zigbee-herdsman-converters contributors** (`hobeian.ts` CS-201Z /
   ZG-303Z DP102/104/105/110-112 device-side calibration and sampling; `tuya.ts` ZBN-DJ-63 DP1/6/9/15/16/103/110) (own implementation).
+- Batch P3067 (adaptive lighting): **iGen** (article of 26/10/2026 on sun-following lighting: inspiration only) and
+  **the Home Assistant adaptive_lighting custom component authors** (idea of pausing after a manual change); colour
+  temperature physical range from the ZCL Color Control cluster spec (own implementation, no code copied).
+- Batch P3067 (energy estimates): **the Home Assistant powercalc authors** (idea of a per-brightness lookup table and
+  standby power); default watts are our own approximations, each with its reason in `data/energy/default-power.json`.
 - And every forum member and GitHub issue reporter who sent a fingerprint, a diagnostic or a "this works now":
   you are listed by handle in the sections above, and new names are added with each batch.

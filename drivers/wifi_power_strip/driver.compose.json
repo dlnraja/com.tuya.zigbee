@@ -279,6 +279,23 @@
         "en": "How the plug reports energy on DP17. Auto watches the readings and the power to decide. Your kWh total continues from its current value in every mode.",
         "fr": "Façon dont la prise envoie l'énergie sur DP17. Auto observe les relevés et la puissance pour décider. Ton total de kWh continue depuis sa valeur actuelle dans tous les modes."
       }
+    },
+    {
+      "id": "energy_source",
+      "type": "label",
+      "value": "default",
+      "label": {
+        "en": "Power value source",
+        "fr": "Origine de la puissance",
+        "de": "Herkunft des Leistungswerts",
+        "nl": "Bron van de vermogenswaarde"
+      },
+      "hint": {
+        "en": "Read-only: measured, calculated (V×I×PF), learned, user (your rated power) or default (approximation).",
+        "fr": "Lecture seule : mesurée, calculée (V×I×PF), apprise, utilisateur (puissance saisie) ou défaut (approximation).",
+        "de": "Nur lesen: gemessen, berechnet (V×I×PF), gelernt, Benutzer (Ihre Nennleistung) oder Standard (Näherung).",
+        "nl": "Alleen-lezen: gemeten, berekend (V×I×PF), geleerd, gebruiker (uw nominaal vermogen) of standaard (benadering)."
+      }
     }
   ],
   "platforms": [

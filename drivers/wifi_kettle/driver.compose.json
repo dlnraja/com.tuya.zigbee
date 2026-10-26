@@ -227,5 +227,11 @@
   "images": {
     "small": "/drivers/wifi_kettle/assets/images/small.png",
     "large": "/drivers/wifi_kettle/assets/images/large.png"
+  },
+  "energy": {
+    "approximation": {
+      "usageOn": 2000,
+      "usageOff": 0.3
+    }
   }
 }

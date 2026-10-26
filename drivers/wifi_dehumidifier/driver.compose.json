@@ -242,5 +242,11 @@
   "ui": {
     "quickAction": "onoff"
   },
-  "discovery": "tuya_wifi"
+  "discovery": "tuya_wifi",
+  "energy": {
+    "approximation": {
+      "usageOn": 25,
+      "usageOff": 0.5
+    }
+  }
 }

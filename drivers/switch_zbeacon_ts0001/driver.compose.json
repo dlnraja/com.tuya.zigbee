@@ -67,5 +67,11 @@
         "zcl_cluster_layer"
       ]
     }
-  ]
+  ],
+  "energy": {
+    "approximation": {
+      "usageOn": 40,
+      "usageOff": 0.4
+    }
+  }
 }

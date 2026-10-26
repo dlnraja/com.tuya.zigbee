@@ -373,5 +373,11 @@
   "version": "1.0.0",
   "ui": {
     "quickAction": "onoff"
+  },
+  "energy": {
+    "approximation": {
+      "usageOn": 3,
+      "usageOff": 3
+    }
   }
 }
