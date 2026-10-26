@@ -19,10 +19,10 @@ describe('P3070 learnmode French instructions', () => {
     const bad = [];
     for (const id of fs.readdirSync(path.join(ROOT, 'drivers'))) {
       const f = path.join(ROOT, 'drivers', id, 'driver.compose.json');
-      if (!fs.existsSync(f)) continue;
+      if (!fs.existsSync(f)) {continue;}
       for (const lm of lms(JSON.parse(fs.readFileSync(f, 'utf8')))) {
         const i = lm.instruction || {};
-        if (i.en && (!i.fr || !i.fr.trim() || i.fr === i.en)) bad.push(id);
+        if (i.en && (!i.fr || !i.fr.trim() || i.fr === i.en)) {bad.push(id);}
       }
     }
     assert.deepStrictEqual(bad, []);
@@ -33,12 +33,12 @@ describe('P3070 learnmode French instructions', () => {
     const bad = [];
     for (const d of app.drivers || []) {
       const f = path.join(ROOT, 'drivers', d.id, 'driver.compose.json');
-      if (!fs.existsSync(f)) continue;
+      if (!fs.existsSync(f)) {continue;}
       const c = lms(JSON.parse(fs.readFileSync(f, 'utf8')));
       lms(d).forEach((lm, k) => {
         const a = (lm.instruction || {}).fr;
         const b = c[k] && (c[k].instruction || {}).fr;
-        if (a !== b) bad.push(d.id);
+        if (a !== b) {bad.push(d.id);}
       });
     }
     assert.deepStrictEqual(bad, []);

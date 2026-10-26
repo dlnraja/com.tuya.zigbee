@@ -18,11 +18,11 @@ describe('P3070 driver names de/nl', () => {
     const bad = [];
     for (const id of fs.readdirSync(path.join(ROOT, 'drivers'))) {
       const f = path.join(ROOT, 'drivers', id, 'driver.compose.json');
-      if (!fs.existsSync(f)) continue;
+      if (!fs.existsSync(f)) {continue;}
       const n = JSON.parse(fs.readFileSync(f, 'utf8')).name || {};
-      if (!n.en) continue;
+      if (!n.en) {continue;}
       for (const l of ['de', 'nl']) {
-        if (typeof n[l] !== 'string' || !n[l].trim()) bad.push(`${id}:${l}`);
+        if (typeof n[l] !== 'string' || !n[l].trim()) {bad.push(`${id}:${l}`);}
       }
     }
     assert.deepStrictEqual(bad, []);
@@ -33,10 +33,10 @@ describe('P3070 driver names de/nl', () => {
     const bad = [];
     for (const d of app.drivers || []) {
       const f = path.join(ROOT, 'drivers', d.id, 'driver.compose.json');
-      if (!fs.existsSync(f) || !d.name) continue;
+      if (!fs.existsSync(f) || !d.name) {continue;}
       const n = JSON.parse(fs.readFileSync(f, 'utf8')).name || {};
       for (const l of ['de', 'nl']) {
-        if (d.name[l] !== undefined && d.name[l] !== n[l]) bad.push(`${d.id}:${l}`);
+        if (d.name[l] !== undefined && d.name[l] !== n[l]) {bad.push(`${d.id}:${l}`);}
       }
     }
     assert.deepStrictEqual(bad, []);

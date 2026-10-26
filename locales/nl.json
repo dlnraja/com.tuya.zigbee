@@ -327,7 +327,20 @@
     "not_ready": "Apparaat is nog niet gereed. Probeer het zo opnieuw.",
     "pairing_failed": "Koppelen mislukt. Reset het apparaat en probeer opnieuw.",
     "invalid_setting": "Ongeldige instellingswaarde",
-    "battery_read_failed": "Batterijstatus kon niet worden gelezen"
+    "battery_read_failed": "Batterijstatus kon niet worden gelezen",
+    "unreachable": "Apparaat niet bereikbaar",
+    "phantom": "Spookapparaat. Verwijder het handmatig.",
+    "local_creds_missing": "Apparaatgegevens ontbreken (device_id/local_key). Opnieuw koppelen of Repareren gebruiken.",
+    "local_creds_partial": "Lokale gegevens ontbreken. Voeg device_id/local_key toe via Repareren.",
+    "local_client": "Lokale verbindingsfout: __reason__",
+    "battery_sleep_silent": "Geen melding binnen het batterij-slaapvenster",
+    "disconnected": "Apparaat losgekoppeld",
+    "local_unreachable_retry": "Apparaat niet bereikbaar op het lokale netwerk. Automatisch opnieuw proberen…",
+    "no_messages_timeout": "Geen berichten ontvangen binnen de ingestelde tijd",
+    "comm_error": "Communicatiefout: __reason__",
+    "missing_device_id": "device_id ontbreekt",
+    "connection_failed": "Verbinding mislukt",
+    "no_ip": "Geen IP - stel in bij instellingen"
   },
   "warnings": {
     "battery_low": "Batterij bijna leeg — binnenkort vervangen",

@@ -1,4 +1,5 @@
 'use strict';
+const { localMsg } = require('./lib/utils/LocalizedMessage');
 
 // v5.11.185: Suppress punycode DEP0040 deprecation from transitive deps
 require('./lib/suppress-punycode');
@@ -899,7 +900,7 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
             if (hasSubDeviceId && isNoSubDeviceDriver) {
               phantomCount++;
               if (typeof device.setUnavailable === 'function') {
-                device.setUnavailable('⚠️ Phantom device. Delete manually.').catch(() => {});
+                device.setUnavailable(`⚠️ ${localMsg(device, 'phantom', 'Phantom device. Please delete it manually.')}`).catch(() => {});
               }
             } else {
               realCount++;

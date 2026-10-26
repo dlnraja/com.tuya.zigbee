@@ -327,7 +327,20 @@
     "not_ready": "L'appareil n'est pas encore prêt. Réessayez dans un instant.",
     "pairing_failed": "Appairage échoué. Réinitialisez l'appareil et réessayez.",
     "invalid_setting": "Valeur de paramètre invalide",
-    "battery_read_failed": "Impossible de lire l'état de la batterie"
+    "battery_read_failed": "Impossible de lire l'état de la batterie",
+    "unreachable": "Appareil injoignable",
+    "phantom": "Appareil fantôme. Supprimez-le manuellement.",
+    "local_creds_missing": "Identifiants manquants (device_id/local_key). Réappairez ou utilisez Réparer.",
+    "local_creds_partial": "Identifiants locaux manquants. Ajoutez device_id/local_key via Réparer pour le contrôle local complet.",
+    "local_client": "Erreur de connexion locale : __reason__",
+    "battery_sleep_silent": "Aucun rapport pendant la fenêtre de veille batterie",
+    "disconnected": "Appareil déconnecté",
+    "local_unreachable_retry": "Appareil injoignable sur le réseau local. Nouvel essai automatique…",
+    "no_messages_timeout": "Aucun message reçu dans le délai configuré",
+    "comm_error": "Erreur de communication : __reason__",
+    "missing_device_id": "device_id manquant",
+    "connection_failed": "Échec de connexion",
+    "no_ip": "Pas d’IP - à configurer dans les réglages"
   },
   "warnings": {
     "battery_low": "Batterie faible — à remplacer bientôt",

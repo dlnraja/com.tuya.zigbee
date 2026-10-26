@@ -327,7 +327,20 @@
     "not_ready": "Device is not ready yet. Try again in a moment.",
     "pairing_failed": "Pairing failed. Reset the device and try again.",
     "invalid_setting": "Invalid setting value",
-    "battery_read_failed": "Could not read battery status"
+    "battery_read_failed": "Could not read battery status",
+    "unreachable": "Device not reachable",
+    "phantom": "Phantom device. Please delete it manually.",
+    "local_creds_missing": "Missing device credentials (device_id/local_key). Re-pair or use Repair.",
+    "local_creds_partial": "Local credentials missing. Add device_id/local_key via Repair for full local control.",
+    "local_client": "Local connection error: __reason__",
+    "battery_sleep_silent": "No report within the battery sleep window",
+    "disconnected": "Device disconnected",
+    "local_unreachable_retry": "Device unreachable on local network. Retrying automatically...",
+    "no_messages_timeout": "No messages received within configured timeout",
+    "comm_error": "Communication error: __reason__",
+    "missing_device_id": "Missing device_id",
+    "connection_failed": "Connection failed",
+    "no_ip": "No IP - configure in settings"
   },
   "warnings": {
     "battery_low": "Battery low — replace soon",
