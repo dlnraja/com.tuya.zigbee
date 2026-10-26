@@ -104,3 +104,12 @@ jobs:
             .github/state/knowledge-graph-history/
           if-no-files-found: warn
           retention-days: 30
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Rebuilds the device knowledge graph; schedule off because the nightly audit does it."; else s="Stopped early ($JOB_STATUS); the red step above says why. Rebuilds the device knowledge graph; schedule off because the nightly audit does it."; fi
+          node scripts/lib/report-writer.js --title "knowledge-graph-sync" --summary "$s" --headers "item|value" --row "job|sync" --row "result|$JOB_STATUS" --thanks "Koen Kanters and the zigbee-herdsman-converters contributors" --thanks "zigpy / ZHA, deCONZ, tuya-local, tinytuya and localtuya authors" >> "$GITHUB_STEP_SUMMARY" || true

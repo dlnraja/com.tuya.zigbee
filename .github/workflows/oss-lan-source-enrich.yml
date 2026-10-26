@@ -204,6 +204,15 @@ jobs:
           git commit -m "chore(P2658): refresh TinyTuya/tuya-local/peer probe data [skip ci]"
           # P3025: shared race-safe push (old pull-before-commit failed on the dirty tree; push||true hid losses)
           bash .github/scripts/git-push-retry.sh --branch master || echo "::warning::P3025 oss-lan data not pushed (see git-push-retry log)"
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Twice a week: local-LAN data from TinyTuya, tuya-local and Homey peers for our Wi-Fi drivers."; else s="Stopped early ($JOB_STATUS); the red step above says why. Twice a week: local-LAN data from TinyTuya, tuya-local and Homey peers for our Wi-Fi drivers."; fi
+          node scripts/lib/report-writer.js --title "oss-lan-source-enrich" --summary "$s" --headers "item|value" --row "job|enrich" --row "result|$JOB_STATUS" --thanks "Koen Kanters and the zigbee-herdsman-converters / Zigbee2MQTT contributors" --thanks "the zigpy / ZHA device handler authors" --thanks "jasonacox (TinyTuya) and make-all (tuya-local)" >> "$GITHUB_STEP_SUMMARY" || true
 
   # P2790 — stable-v5 backport of device-compat-only couples written by the strict rule on master
   # (data/leads/auto-applied.json). Same driver must already list the pid on stable; [skip ci].
