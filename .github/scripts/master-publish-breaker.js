@@ -40,15 +40,25 @@ function readSnapshot(appId) {
   } catch { return { builds: [], pat: 'missing-snapshot' }; }
 }
 module.exports.readSnapshot = readSnapshot;
+// P3068: re-read schedule, exponential backoff; total worst case ~5 min (breaker job has 55 min, the P3036 gate up to 40).
+function rereadPlan(tries, base = { sleepS: 10, timeoutMs: 30000 }, capMs = 120000) {
+  return Array.from({ length: Math.max(0, Math.min(5, tries | 0)) }, (_, i) => ({ sleepS: base.sleepS * 2 ** i, timeoutMs: Math.min(capMs, base.timeoutMs * 2 ** i) }));
+}
+module.exports.rereadPlan = rereadPlan;
 if (require.main === module) {
   const appId = process.argv[2] || 'com.dlnraja.tuya.zigbee';
   let snap = readSnapshot(appId);
   // P2966: re-read Athom (read-only) up to 2 more times before concluding the state is unknown.
-  const tries = parseInt(process.env.BREAKER_READ_RETRIES || '2', 10) || 0;
-  for (let i = 0; i < tries && snap.builds.length === 0; i++) {
-    console.log(`[breaker] snapshot empty (pat=${snap.pat || '?'}${snap.error ? `, ${String(snap.error).slice(0, 120)}` : ''}) -> re-read ${i + 1}/${tries}`);
-    require('child_process').spawnSync('sleep', ['10']);
-    require('child_process').spawnSync(process.execPath, [path.join(process.cwd(), 'scripts', 'ci', 'homey-build-status.js'), appId], { stdio: ['ignore', 'ignore', 'inherit'], env: process.env, timeout: 120000 });
+  // P3068: master's build list (3 680 builds) answers in >10 s, so every re-read at the SDK default 10 s timed out
+  // (runs 40359765122 / 40362675998: "Timeout after 10000ms" x3). Re-reads now back off (sleep 10/20/40 s) and widen
+  // HOMEY_API_TIMEOUT_MS (30/60/120 s). Still fail-closed: an empty snapshot after the last try = skip (decide()).
+  const tries = Math.max(0, parseInt(process.env.BREAKER_READ_RETRIES || '3', 10) || 0);
+  for (const [i, step] of rereadPlan(tries).entries()) {
+    if (snap.builds.length > 0) break;
+    console.log(`[breaker] snapshot empty (pat=${snap.pat || '?'}${snap.error ? `, ${String(snap.error).slice(0, 120)}` : ''}) -> re-read ${i + 1}/${tries} after ${step.sleepS}s, timeout ${step.timeoutMs}ms`);
+    if (snap.pat === 'invalid' || snap.pat === 'missing') break; // P3068: a rejected/missing PAT will not heal by retrying
+    require('child_process').spawnSync('sleep', [String(step.sleepS)]);
+    require('child_process').spawnSync(process.execPath, [path.join(process.cwd(), 'scripts', 'ci', 'homey-build-status.js'), appId], { stdio: ['ignore', 'ignore', 'inherit'], env: { ...process.env, HOMEY_API_TIMEOUT_MS: String(step.timeoutMs) }, timeout: step.timeoutMs * 2 + 60000 });
     snap = readSnapshot(appId);
   }
   const d = decide({ builds: snap.builds, n: parseInt(process.env.BREAKER_N || '', 10) || DEFAULT_N, event: (process.env.DEFERRED_RETRY === 'true' ? 'schedule' : process.env.GITHUB_EVENT_NAME), /* P3036: a deferred next-slot dispatch is automatic */ transientRetry: process.env.TRANSIENT_RETRY, snapshotOk: snap.builds.length > 0 });
