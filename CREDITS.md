@@ -440,5 +440,9 @@ A heartfelt thank you to:
   layouts of the Tuya dual smoke & CO alarm (`TS0601_smoke_co`, Moes JKD-513COM-Z), PA-44Z and GSKS-ZB smoke
   detectors, the MG-DIM02Z dimmer module, the SWS6TZ-WHITE 6-gang switch, the TOQCB2-80 breaker temperature and the
   Moes ZM7LT3 three-phase meter (own implementation, no upstream code copied).
+- Batch P3067 (smoke / CO family): **Koen Kanters and the zigbee-herdsman-converters contributors** (`moes.ts`
+  ZSS-HM-SSD01), **the zigpy/zha-device-handlers contributors** (`zhaquirks/tuya/tuya_smoke.py`), **blakadder**
+  (Moes ZSS-HM-SSD01 page) and the Hubitat Tuya Zigbee Smoke Detector driver authors, whose datapoint facts show
+  `_TZE200/_TZE204/_TZE284_vawy74yh` is a smoke detector (own implementation, no upstream code copied).
 - And every forum member and GitHub issue reporter who sent a fingerprint, a diagnostic or a "this works now":
   you are listed by handle in the sections above, and new names are added with each batch.
