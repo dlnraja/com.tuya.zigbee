@@ -49,7 +49,8 @@
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
-        "en": "Open the device and press the reset button gently for aprox 10 seconds until the LED blinks rapidly."
+        "en": "Open the device and press the reset button gently for aprox 10 seconds until the LED blinks rapidly.",
+        "fr": "Ouvrez l'appareil et appuyez doucement env. 10 s sur le bouton reset jusqu'au clignotement rapide de la LED."
       }
     },
     "manufacturerName": [
