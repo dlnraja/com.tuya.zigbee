@@ -16,7 +16,7 @@ function p3065Collections(devs){const agg={};const seen=new WeakSet();
 const Module=require('module'),path=require('path'),fs=require('fs'),v8=require('v8'),EE=require('events');
 const root=path.resolve(process.argv[2]);const N=+process.argv[3]||100,E=+process.argv[4]||100,C=+process.argv[5]||4;
 const timers=new Set();
-const homeyT={setTimeout:(f,ms,...a)=>{const t=setTimeout(f,Math.min(ms,50),...a);t.unref();return t},clearTimeout,setInterval:(f,ms)=>{const t=setInterval(f,Math.max(ms,1000));t.unref();t._src=(new Error().stack.split('\n')[2]||'').trim().replace(root,'');timers.add(t);return t},clearInterval:(t)=>{timers.delete(t);clearInterval(t)}};
+const homeyT={setTimeout:(f,ms,...a)=>{const t=setTimeout(f,Math.min(ms,50),...a);t.unref();return t},clearTimeout,setInterval:(f,ms)=>{const t=setInterval(f,Math.max(ms,1000));t.unref();t._src=(new Error().stack.split('\n').slice(2).find(l=>!/safe-timers|SafeTimerAccessor|SDK3CompatBridge|OwnedTimer/.test(l))||'').trim().replace(root,'');timers.add(t);return t},clearInterval:(t)=>{timers.delete(t);clearInterval(t)}};
 const noop=()=>{};const P=new Proxy(function(){},{get:(t,k)=>k==='then'?undefined:(k===Symbol.toPrimitive?()=>0:P),apply:()=>P,construct:()=>P});
 const flowCard=()=>({registerRunListener(){return this},registerArgumentAutocompleteListener(){return this},trigger:async()=>{},on(){return this}});
 class SimpleDevice extends EE{constructor(id,driverId){super();this._id=id;this._caps={};this._store={};this._settings={manufacturerName:'_TZ3000_test',zb_manufacturer_name:'_TZ3000_test',zb_model_id:'TS0001'};this.driver={id:driverId,manifest:{id:driverId,capabilities:['onoff']},getDevices:()=>[]};
