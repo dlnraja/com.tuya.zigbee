@@ -144,6 +144,23 @@
     "https://github.com/Koenkk/zigbee-herdsman-converters/issues/7761",
     "https://github.com/Koenkk/zigbee-herdsman-converters/issues/10204"
    ]
+  },
+  "climate_sensor": {
+   "manufacturerName": [
+    "_TZ3000_5ftkaulg",
+    "_tz3000_5ftkaulg",
+    "_TZ3000_5FTKAULG",
+    "_tz3000_5FTKAULG"
+   ],
+   "productId": [],
+   "couples": [],
+   "resolvedTo": "switch_1gang",
+   "date": "2026-10-19",
+   "sources": [
+    "https://github.com/JohanBendz/com.tuya.zigbee/issues/1178",
+    "https://github.com/zigpy/zha-device-handlers/issues/2090",
+    "https://github.com/u236/homed-service-zigbee/pull/150"
+   ]
   }
  }
 }

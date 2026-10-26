@@ -75,7 +75,9 @@ describe('P2353 flow button trigger candidates', () => {
     );
     assert.ok(has('_TZ3000_wkai4ga5', 'TS0044', 'scene_switch_4'));
     assert.ok(has('_TZ3000_dfgbtub0', 'TS0044', 'button_wireless_4'));
-    assert.ok(has('_TZ3000_dfgbtub0', 'TS0042', 'button_wireless_2'));
+    // WHY(P2870, 2026-10-19): the TS0042 sibling now lives on wall_remote_2_gang (TS0042-only 2-button remote
+    // with its own button flow cards); on button_wireless_2 it re-created a dfgbtub0|TS0215A dual with button_wireless_4.
+    assert.ok(has('_TZ3000_dfgbtub0', 'TS0042', 'wall_remote_2_gang'));
   });
 
   it('no titleFormatted [[device]] in button/wall flow compose', () => {

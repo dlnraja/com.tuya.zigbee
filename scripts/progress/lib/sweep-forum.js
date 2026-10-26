@@ -9,10 +9,14 @@ const { extract, stripHtml, classify } = require('./sweep-identity');
 
 const HOST = 'community.homey.app';
 
-function getJson(pathname) {
+function getJsonOnce(pathname) {
   return new Promise((resolve) => {
     const req = https.request({ hostname: HOST, path: pathname, method: 'GET', headers: { 'User-Agent': 'dlnraja-sweep', Accept: 'application/json' } }, (res) => {
       let b = '';
+      // P2870: settle on aborted/closed bodies too (no 'end' event) — see advance-sweep ghGetOnce.
+      res.on('aborted', () => resolve({ error: true, status: 'net' }));
+      res.on('error', () => resolve({ error: true, status: 'net' }));
+      res.on('close', () => { if (!res.complete) resolve({ error: true, status: 'net' }); });
       res.on('data', (c) => { b += c; if (b.length > 8e6) req.destroy(); });
       res.on('end', () => {
         if (res.statusCode === 429 || res.statusCode === 403) return resolve({ rateLimited: true, status: res.statusCode });
@@ -21,11 +25,26 @@ function getJson(pathname) {
       });
     });
     req.on('error', () => resolve({ error: true, status: 'net' }));
-    req.setTimeout(20000, () => req.destroy());
+    req.on('close', () => resolve({ error: true, status: 'net' })); // no-op once settled
+    req.setTimeout(20000, () => req.destroy(new Error('timeout')));
     req.end();
   });
 }
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+/**
+ * WHY(P2870): a single dropped socket ("net") on the topic JSON skipped a whole topic for the
+ * day (2026-10-19 local run: 140352 + 146735 scanned 0). Retry transient network / 5xx / parse
+ * failures twice with a short backoff; 403/429 stay a clean rate-limit stop, 4xx stays an error.
+ */
+async function getJson(pathname, { retries = 2, backoffMs = 2500 } = {}) {
+  let r = await getJsonOnce(pathname);
+  for (let i = 0; i < retries && r && r.error && (r.status === 'net' || r.status === 'parse' || Number(r.status) >= 500); i++) {
+    await sleep(backoffMs * (i + 1));
+    r = await getJsonOnce(pathname);
+  }
+  return r;
+}
 
 function countImages(cooked) {
   const imgs = String(cooked || '').match(/<img [^>]*>/g) || [];
@@ -47,8 +66,9 @@ async function advanceTopic(tid, st, chunk, { delayMs = 900 } = {}) {
     await sleep(delayMs);
     const q = ids.map((id) => `post_ids[]=${id}`).join('&');
     const r = await getJson(`/t/${tid}/posts.json?${q}`);
-    if (r.rateLimited) return { rateLimited: true, items, scanned, noAction };
-    if (r.error || !r.post_stream) return { error: r.status, items, scanned, noAction };
+    // P2870: keep sweptTo in step with sweptId when a later batch fails mid-chunk.
+    if (r.rateLimited) { st.sweptTo = maxNum; return { rateLimited: true, items, scanned, noAction }; }
+    if (r.error || !r.post_stream) { st.sweptTo = maxNum; return { error: r.status, items, scanned, noAction }; }
     const posts = (r.post_stream.posts || []).sort((a, b) => a.id - b.id);
     for (const p of posts) {
       scanned++;
