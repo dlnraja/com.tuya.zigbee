@@ -16,7 +16,7 @@ const root = path.join(__dirname, '../..');
 const { audit } = require('../../scripts/diag/flow-capability-completeness');
 const V = require('../../lib/flow/CapabilityValueCards');
 
-const GENERIC_ONLY_CEIL = 107; // 2026-10-26 P3068: +3 = air_conditioner_aetz01 hvac_system_mode (generic cards only; dedicated cards = Flow worker). Was 104 after D10 family cards (was 194)
+const GENERIC_ONLY_CEIL = 98; // 2026-10-26 P3065 D24: -9 = hvac_system_mode family cards (3 drivers x trigger/condition/action). Was 107: 2026-10-26 P3068: +3 = air_conditioner_aetz01 hvac_system_mode (generic cards only; dedicated cards = Flow worker). Was 104 after D10 family cards (was 194)
 
 const capsManifest = {};
 for (const f of fs.readdirSync(path.join(root, '.homeycompose/capabilities'))) {

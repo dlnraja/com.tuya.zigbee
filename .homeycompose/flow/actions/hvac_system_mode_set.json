@@ -1,0 +1,32 @@
+{
+  "id": "hvac_system_mode_set",
+  "title": {
+    "en": "Set system mode",
+    "fr": "Régler le mode système",
+    "nl": "Systeemmodus instellen",
+    "de": "Systemmodus einstellen"
+  },
+  "titleFormatted": {
+    "en": "Set system mode of [[device]] to [[mode]]",
+    "fr": "Mode système de [[device]] : [[mode]]",
+    "nl": "Systeemmodus van [[device]] op [[mode]] zetten",
+    "de": "Systemmodus von [[device]] auf [[mode]] stellen"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=hvac_system_mode"
+    },
+    {
+      "type": "autocomplete",
+      "name": "mode",
+      "title": {
+        "en": "Mode",
+        "fr": "Mode",
+        "nl": "Modus",
+        "de": "Modus"
+      }
+    }
+  ]
+}
