@@ -26,7 +26,7 @@ Wi-Fi / LAN projects (tuya-local, localtuya, tinytuya, esphome) belong to the se
 | Branch | App | Version | Payload combos / cap | Compacted, other case form kept |
 |---|---|---|---|---:|
 | master | com.dlnraja.tuya.zigbee | 9.0.1601 | 15499 / 15500 + TS0601 top-up → 20000 / 20000 | 393 |
-| stable-v5 | com.dlnraja.tuya.zigbee.stable | 5.12.507 | 15498 / 15500 | 250 |
+| stable-v5 | com.dlnraja.tuya.zigbee.stable | 5.12.508 | 15498 / 15500 | 250 |
 | bastien-home | com.dlnraja.tuya.zigbee.bastien | 1.0.213 | 15495 / 15500 | 264 |
 
 The payload cap (15,500 couples, our own heuristic shared with the publish workflows, plus the P3036 TS0601 top-up where the branch has it) is the binding limit: any couple added to app.json beyond it is compacted out again, so new couples are only worth adding together with a compaction gain (P3036). Couples we cannot ship are listed as on hold, never removed.
@@ -35,10 +35,10 @@ The payload cap (15,500 couples, our own heuristic shared with the publish workf
 
 | Source | Branch | Total | Absent | Compacted | Wrong class | Partial | Complete |
 |---|---|---:|---:|---:|---:|---:|---:|
-| all | master | 3651 | 538 | 2306 | 3 | 157 | 647 |
+| all | master | 3651 | 538 | 2306 | 3 | 156 | 648 |
 | all | stable-v5 | 3651 | 564 | 2363 | 9 | 129 | 586 |
 | all | bastien-home | 3651 | 498 | 2368 | 7 | 143 | 635 |
-| z2m | master | 2177 | 165 | 1503 | 3 | 157 | 349 |
+| z2m | master | 2177 | 165 | 1503 | 3 | 156 | 350 |
 | z2m | stable-v5 | 2177 | 172 | 1570 | 9 | 129 | 297 |
 | z2m | bastien-home | 2177 | 106 | 1589 | 7 | 143 | 332 |
 | zha | master | 506 | 41 | 323 | 0 | 34 | 108 |
