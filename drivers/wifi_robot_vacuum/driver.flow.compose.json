@@ -7,8 +7,8 @@
         "fr": "Nettoyage démarré"
       },
       "hint": {
-        "en": "Triggers when the vacuum starts a cleaning cycle",
-        "fr": "Se déclenche quand l'aspirateur démarre un cycle de nettoyage"
+        "en": "When the vacuum starts a cleaning cycle",
+        "fr": "Quand l'aspirateur démarre un cycle de nettoyage"
       },
       "args": [],
       "titleFormatted": {
@@ -23,8 +23,8 @@
         "fr": "Nettoyage terminé"
       },
       "hint": {
-        "en": "Triggers when the vacuum completes a cleaning cycle",
-        "fr": "Se déclenche quand l'aspirateur termine un cycle de nettoyage"
+        "en": "When the vacuum completes a cleaning cycle",
+        "fr": "Quand l'aspirateur termine un cycle de nettoyage"
       },
       "args": [],
       "titleFormatted": {
@@ -41,8 +41,8 @@
         "de": "Batterie schwach"
       },
       "hint": {
-        "en": "Triggers when vacuum battery drops below threshold",
-        "fr": "Se déclenche quand la batterie de l'aspirateur passe sous le seuil"
+        "en": "When vacuum battery drops below threshold",
+        "fr": "Quand la batterie de l'aspirateur passe sous le seuil"
       },
       "args": [],
       "titleFormatted": {
@@ -59,8 +59,8 @@
         "fr": "Défaut détecté"
       },
       "hint": {
-        "en": "Triggers when the vacuum reports a fault or error",
-        "fr": "Se déclenche quand l'aspirateur signale une panne ou une erreur"
+        "en": "When the vacuum reports a fault or error",
+        "fr": "Quand l'aspirateur signale une panne ou une erreur"
       },
       "tokens": [
         {
@@ -86,8 +86,8 @@
         "fr": "La brosse doit être remplacée"
       },
       "hint": {
-        "en": "Triggers when main brush life drops below 10%",
-        "fr": "Se déclenche quand la durée de vie de la brosse principale passe sous 10 %"
+        "en": "When main brush life drops below 10%",
+        "fr": "Quand la durée de vie de la brosse principale passe sous 10 %"
       },
       "args": [],
       "titleFormatted": {
@@ -102,8 +102,8 @@
         "fr": "Le filtre doit être remplacé"
       },
       "hint": {
-        "en": "Triggers when filter life drops below 10%",
-        "fr": "Se déclenche quand la durée de vie du filtre passe sous 10 %"
+        "en": "When filter life drops below 10%",
+        "fr": "Quand la durée de vie du filtre passe sous 10 %"
       },
       "args": [],
       "titleFormatted": {
@@ -118,8 +118,8 @@
         "fr": "Réservoir d'eau bas"
       },
       "hint": {
-        "en": "Triggers when water tank level drops below 10%",
-        "fr": "Se déclenche quand le réservoir d'eau passe sous 10 %"
+        "en": "When water tank level drops below 10%",
+        "fr": "Quand le réservoir d'eau passe sous 10 %"
       },
       "args": [],
       "titleFormatted": {

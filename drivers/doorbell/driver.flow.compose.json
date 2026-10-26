@@ -10,10 +10,10 @@
         "de": "Türklingel gedrückt"
       },
       "hint": {
-        "en": "Triggers when someone presses the doorbell button",
-        "nl": "Triggert wanneer iemand op de deurbel drukt",
-        "fr": "Se déclenche quand quelqu'un appuie sur la sonnette",
-        "de": "Wird ausgelöst, wenn jemand die Türklingel drückt"
+        "en": "When someone presses the doorbell button",
+        "nl": "Wanneer iemand op de deurbel drukt",
+        "fr": "Quand quelqu'un appuie sur la sonnette",
+        "de": "Wenn jemand die Türklingel drückt"
       },
       "args": [],
       "titleFormatted": {
@@ -32,10 +32,10 @@
         "de": "Bewegung an der Tür"
       },
       "hint": {
-        "en": "Triggers when motion is detected near the doorbell (if supported)",
-        "nl": "Triggert wanneer beweging wordt gedetecteerd bij de deurbel (indien ondersteund)",
-        "fr": "Se déclenche quand un mouvement est détecté près de la sonnette (si supporté)",
-        "de": "Wird ausgelöst, wenn Bewegung in der Nähe der Türklingel erkannt wird (falls unterstützt)"
+        "en": "When motion is detected near the doorbell (if supported)",
+        "nl": "Wanneer beweging wordt gedetecteerd bij de deurbel (indien ondersteund)",
+        "fr": "Quand un mouvement est détecté près de la sonnette (si supporté)",
+        "de": "Wenn Bewegung in der Nähe der Türklingel erkannt wird (falls unterstützt)"
       },
       "args": [],
       "titleFormatted": {
@@ -54,10 +54,10 @@
         "de": "Manipulationsalarm"
       },
       "hint": {
-        "en": "Triggers when the doorbell has been tampered with",
-        "nl": "Triggert wanneer er met de deurbel is geknoeid",
-        "fr": "Se déclenche quand la sonnette a été sabotée",
-        "de": "Wird ausgelöst, wenn die Türklingel manipuliert wurde"
+        "en": "When the doorbell has been tampered with",
+        "nl": "Wanneer er met de deurbel is geknoeid",
+        "fr": "Quand la sonnette a été sabotée",
+        "de": "Wenn die Türklingel manipuliert wurde"
       },
       "args": [],
       "titleFormatted": {

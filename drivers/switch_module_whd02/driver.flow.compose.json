@@ -9,8 +9,8 @@
         "de": "Eingeschaltet - physische Taste"
       },
       "hint": {
-        "en": "Triggered when the switch is turned on using the physical button",
-        "nl": "Geactiveerd wanneer de schakelaar wordt aangezet met de fysieke knop",
+        "en": "When the switch is turned on using the physical button",
+        "nl": "Wanneer de schakelaar wordt aangezet met de fysieke knop",
         "fr": "Déclenché quand l'interrupteur est allumé avec le bouton physique"
       },
       "args": [],
@@ -30,8 +30,8 @@
         "de": "Ausgeschaltet - physische Taste"
       },
       "hint": {
-        "en": "Triggered when the switch is turned off using the physical button",
-        "nl": "Geactiveerd wanneer de schakelaar wordt uitgezet met de fysieke knop",
+        "en": "When the switch is turned off using the physical button",
+        "nl": "Wanneer de schakelaar wordt uitgezet met de fysieke knop",
         "fr": "Déclenché quand l'interrupteur est éteint avec le bouton physique"
       },
       "args": [],

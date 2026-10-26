@@ -10,10 +10,10 @@
         "de": "Vibration erkannt"
       },
       "hint": {
-        "en": "Triggers when the sensor detects movement or vibration",
-        "nl": "Triggert wanneer de sensor beweging of trillingen detecteert",
-        "fr": "Se déclenche quand le capteur détecte un mouvement ou une vibration",
-        "de": "Wird ausgelöst, wenn der Sensor Bewegung oder Vibration erkennt"
+        "en": "When the sensor detects movement or vibration",
+        "nl": "Wanneer de sensor beweging of trillingen detecteert",
+        "fr": "Quand le capteur détecte un mouvement ou une vibration",
+        "de": "Wenn der Sensor Bewegung oder Vibration erkennt"
       },
       "args": [],
       "titleFormatted": {
@@ -32,10 +32,10 @@
         "de": "Neigung erkannt"
       },
       "hint": {
-        "en": "Triggers when the sensor detects a change in orientation",
-        "nl": "Triggert wanneer de sensor een verandering in oriëntatie detecteert",
-        "fr": "Se déclenche quand le capteur détecte un changement d'orientation",
-        "de": "Wird ausgelöst, wenn der Sensor eine Änderung der Ausrichtung erkennt"
+        "en": "When the sensor detects a change in orientation",
+        "nl": "Wanneer de sensor een verandering in oriëntatie detecteert",
+        "fr": "Quand le capteur détecte un changement d'orientation",
+        "de": "Wenn der Sensor eine Änderung der Ausrichtung erkennt"
       },
       "args": [],
       "titleFormatted": {
@@ -54,10 +54,10 @@
         "de": "Fall erkannt"
       },
       "hint": {
-        "en": "Triggers when the sensor detects a freefall or drop",
-        "nl": "Triggert wanneer de sensor een vrije val of val detecteert",
-        "fr": "Se déclenche quand le capteur détecte une chute libre",
-        "de": "Wird ausgelöst, wenn der Sensor einen freien Fall erkennt"
+        "en": "When the sensor detects a freefall or drop",
+        "nl": "Wanneer de sensor een vrije val of val detecteert",
+        "fr": "Quand le capteur détecte une chute libre",
+        "de": "Wenn der Sensor einen freien Fall erkennt"
       },
       "args": [],
       "titleFormatted": {
@@ -76,10 +76,10 @@
         "de": "Manipulationsalarm"
       },
       "hint": {
-        "en": "Triggers when the sensor has been tampered with",
-        "nl": "Triggert wanneer er met de sensor is geknoeid",
-        "fr": "Se déclenche quand le capteur a été saboté",
-        "de": "Wird ausgelöst, wenn der Sensor manipuliert wurde"
+        "en": "When the sensor has been tampered with",
+        "nl": "Wanneer er met de sensor is geknoeid",
+        "fr": "Quand le capteur a été saboté",
+        "de": "Wenn der Sensor manipuliert wurde"
       },
       "args": [],
       "titleFormatted": {

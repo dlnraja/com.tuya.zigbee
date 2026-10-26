@@ -10,10 +10,10 @@
         "de": "Anwesenheit erkannt"
       },
       "hint": {
-        "en": "Triggers when the mmWave radar detects human presence (even stationary)",
-        "nl": "Triggert wanneer de mmWave radar menselijke aanwezigheid detecteert (zelfs stilstaand)",
-        "fr": "Se déclenche quand le radar mmWave détecte une présence humaine (même immobile)",
-        "de": "Wird ausgelöst, wenn der mmWave-Radar menschliche Anwesenheit erkennt (auch stationär)"
+        "en": "When the mmWave radar detects human presence (even stationary)",
+        "nl": "Wanneer de mmWave radar menselijke aanwezigheid detecteert (zelfs stilstaand)",
+        "fr": "Quand le radar mmWave détecte une présence humaine (même immobile)",
+        "de": "Wenn der mmWave-Radar menschliche Anwesenheit erkennt (auch stationär)"
       },
       "args": [],
       "titleFormatted": {
@@ -32,10 +32,10 @@
         "de": "Anwesenheit beendet"
       },
       "hint": {
-        "en": "Triggers when no human presence is detected for the configured timeout",
-        "nl": "Triggert wanneer geen menselijke aanwezigheid wordt gedetecteerd gedurende de geconfigureerde timeout",
-        "fr": "Se déclenche quand aucune présence humaine n'est détectée pendant le délai configuré",
-        "de": "Wird ausgelöst, wenn für die konfigurierte Zeitüberschreitung keine menschliche Anwesenheit erkannt wird"
+        "en": "When no human presence is detected for the configured timeout",
+        "nl": "Wanneer geen menselijke aanwezigheid wordt gedetecteerd gedurende de geconfigureerde timeout",
+        "fr": "Quand aucune présence humaine n'est détectée pendant le délai configuré",
+        "de": "Wenn für die konfigurierte Zeitüberschreitung keine menschliche Anwesenheit erkannt wird"
       },
       "args": [],
       "titleFormatted": {
@@ -54,10 +54,10 @@
         "de": "Bewegung erkannt"
       },
       "hint": {
-        "en": "Triggers when active motion is detected (walking, moving)",
-        "nl": "Triggert wanneer actieve beweging wordt gedetecteerd (lopen, bewegen)",
-        "fr": "Se déclenche quand un mouvement actif est détecté (marche, mouvement)",
-        "de": "Wird ausgelöst, wenn aktive Bewegung erkannt wordt (Gehen, Bewegen)"
+        "en": "When active motion is detected (walking, moving)",
+        "nl": "Wanneer actieve beweging wordt gedetecteerd (lopen, bewegen)",
+        "fr": "Quand un mouvement actif est détecté (marche, mouvement)",
+        "de": "Wenn aktive Bewegung erkannt wordt (Gehen, Bewegen)"
       },
       "args": [],
       "titleFormatted": {

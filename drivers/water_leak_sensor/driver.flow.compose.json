@@ -10,10 +10,10 @@
         "de": "Wasserleck erkannt"
       },
       "hint": {
-        "en": "Triggers when the sensor detects water",
-        "nl": "Triggert wanneer de sensor water detecteert",
-        "fr": "Se déclenche quand le capteur détecte de l'eau",
-        "de": "Wird ausgelöst, wenn der Sensor Wasser erkennt"
+        "en": "When the sensor detects water",
+        "nl": "Wanneer de sensor water detecteert",
+        "fr": "Quand le capteur détecte de l'eau",
+        "de": "Wenn der Sensor Wasser erkennt"
       },
       "args": [],
       "titleFormatted": {
@@ -32,10 +32,10 @@
         "de": "Wasserleck behoben"
       },
       "hint": {
-        "en": "Triggers when the sensor no longer detects water",
-        "nl": "Triggert wanneer de sensor geen water meer detecteert",
-        "fr": "Se déclenche quand le capteur ne détecte plus d'eau",
-        "de": "Wird ausgelöst, wenn der Sensor kein Wasser mehr erkennt"
+        "en": "When the sensor no longer detects water",
+        "nl": "Wanneer de sensor geen water meer detecteert",
+        "fr": "Quand le capteur ne détecte plus d'eau",
+        "de": "Wenn der Sensor kein Wasser mehr erkennt"
       },
       "args": [],
       "titleFormatted": {
@@ -54,10 +54,10 @@
         "de": "Batterie ist schwach"
       },
       "hint": {
-        "en": "Triggers when the battery level drops below threshold",
-        "nl": "Triggert wanneer het batterijniveau onder de drempel zakt",
-        "fr": "Se déclenche quand le niveau de batterie passe sous le seuil",
-        "de": "Wird ausgelöst, wenn der Batteriestand unter den Schwellenwert fällt"
+        "en": "When the battery level drops below threshold",
+        "nl": "Wanneer het batterijniveau onder de drempel zakt",
+        "fr": "Quand le niveau de batterie passe sous le seuil",
+        "de": "Wenn der Batteriestand unter den Schwellenwert fällt"
       },
       "args": [],
       "titleFormatted": {
@@ -76,10 +76,10 @@
         "de": "Manipulationsalarm"
       },
       "hint": {
-        "en": "Triggers when the sensor detects tampering (case opened)",
-        "nl": "Triggert wanneer de sensor sabotage detecteert (behuizing geopend)",
-        "fr": "Se déclenche quand le capteur détecte un sabotage (boîtier ouvert)",
-        "de": "Wird ausgelöst, wenn der Sensor eine Manipulation erkennt (Gehäuse geöffnet)"
+        "en": "When the sensor detects tampering (case opened)",
+        "nl": "Wanneer de sensor sabotage detecteert (behuizing geopend)",
+        "fr": "Quand le capteur détecte un sabotage (boîtier ouvert)",
+        "de": "Wenn der Sensor eine Manipulation erkennt (Gehäuse geöffnet)"
       },
       "args": [],
       "titleFormatted": {

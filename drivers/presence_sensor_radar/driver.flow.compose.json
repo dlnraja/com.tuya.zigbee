@@ -10,10 +10,10 @@
         "de": "Anwesenheit erkannt"
       },
       "hint": {
-        "en": "Triggers when the mmWave radar detects human presence (even stationary)",
-        "nl": "Triggert wanneer de mmWave radar menselijke aanwezigheid detecteert (zelfs stilstaand)",
-        "fr": "Se déclenche quand le radar mmWave détecte une présence humaine (même immobile)",
-        "de": "Wird ausgelöst, wenn der mmWave-Radar menschliche Anwesenheit erkennt (auch stationär)"
+        "en": "When the mmWave radar detects human presence (even stationary)",
+        "nl": "Wanneer de mmWave radar menselijke aanwezigheid detecteert (zelfs stilstaand)",
+        "fr": "Quand le radar mmWave détecte une présence humaine (même immobile)",
+        "de": "Wenn der mmWave-Radar menschliche Anwesenheit erkennt (auch stationär)"
       },
       "args": []
     },
@@ -26,10 +26,10 @@
         "de": "Anwesenheit beendet"
       },
       "hint": {
-        "en": "Triggers when no human presence is detected for the configured timeout",
-        "nl": "Triggert wanneer geen menselijke aanwezigheid wordt gedetecteerd gedurende de geconfigureerde timeout",
-        "fr": "Se déclenche quand aucune présence humaine n'est détectée pendant le délai configuré",
-        "de": "Wird ausgelöst, wenn für die konfigurierte Zeitüberschreitung keine menschliche Anwesenheit erkannt wird"
+        "en": "When no human presence is detected for the configured timeout",
+        "nl": "Wanneer geen menselijke aanwezigheid wordt gedetecteerd gedurende de geconfigureerde timeout",
+        "fr": "Quand aucune présence humaine n'est détectée pendant le délai configuré",
+        "de": "Wenn für die konfigurierte Zeitüberschreitung keine menschliche Anwesenheit erkannt wird"
       },
       "args": []
     },
@@ -42,10 +42,10 @@
         "de": "Bewegung erkannt"
       },
       "hint": {
-        "en": "Triggers when active motion is detected (walking, moving)",
-        "nl": "Triggert wanneer actieve beweging wordt gedetecteerd (lopen, bewegen)",
-        "fr": "Se déclenche quand un mouvement actif est détecté (marche, mouvement)",
-        "de": "Wird ausgelöst, wenn aktive Bewegung erkannt wird (Gehen, Bewegen)"
+        "en": "When active motion is detected (walking, moving)",
+        "nl": "Wanneer actieve beweging wordt gedetecteerd (lopen, bewegen)",
+        "fr": "Quand un mouvement actif est détecté (marche, mouvement)",
+        "de": "Wenn aktive Bewegung erkannt wird (Gehen, Bewegen)"
       },
       "args": []
     },
@@ -58,10 +58,10 @@
         "de": "Bewegung beendet"
       },
       "hint": {
-        "en": "Triggers when motion stops while motion and presence are reported separately",
-        "nl": "Triggert wanneer beweging stopt terwijl beweging en aanwezigheid apart worden gemeld",
-        "fr": "Se déclenche quand le mouvement cesse lorsque mouvement et présence sont remontés séparément",
-        "de": "Wird ausgelöst, wenn die Bewegung endet, während Bewegung und Anwesenheit getrennt gemeldet werden"
+        "en": "When motion stops while motion and presence are reported separately",
+        "nl": "Wanneer beweging stopt terwijl beweging en aanwezigheid apart worden gemeld",
+        "fr": "Quand le mouvement cesse lorsque mouvement et présence sont remontés séparément",
+        "de": "Wenn die Bewegung endet, während Bewegung und Anwesenheit getrennt gemeldet werden"
       },
       "args": []
     },
@@ -120,8 +120,8 @@
         "de": "Anwesenheit in Zone 1 erkannt"
       },
       "hint": {
-        "en": "Triggers when presence is detected in Zone 1 (near field)",
-        "fr": "Se déclenche quand une présence est détectée en zone 1 (champ proche)"
+        "en": "When presence is detected in Zone 1 (near field)",
+        "fr": "Quand une présence est détectée en zone 1 (champ proche)"
       },
       "args": []
     },
@@ -134,8 +134,8 @@
         "de": "Anwesenheit in Zone 2 erkannt"
       },
       "hint": {
-        "en": "Triggers when presence is detected in Zone 2 (mid field)",
-        "fr": "Se déclenche quand une présence est détectée en zone 2 (champ moyen)"
+        "en": "When presence is detected in Zone 2 (mid field)",
+        "fr": "Quand une présence est détectée en zone 2 (champ moyen)"
       },
       "args": []
     },
@@ -148,8 +148,8 @@
         "de": "Anwesenheit in Zone 3 erkannt"
       },
       "hint": {
-        "en": "Triggers when presence is detected in Zone 3 (far field)",
-        "fr": "Se déclenche quand une présence est détectée en zone 3 (champ lointain)"
+        "en": "When presence is detected in Zone 3 (far field)",
+        "fr": "Quand une présence est détectée en zone 3 (champ lointain)"
       },
       "args": []
     },
@@ -160,8 +160,8 @@
         "fr": "Classification du mouvement modifiée"
       },
       "hint": {
-        "en": "Triggers when the type of detected movement changes (none/stationary/micro/small/large)",
-        "fr": "Se déclenche quand le type de mouvement détecté change (none/stationary/micro/small/large)"
+        "en": "When the type of detected movement changes (none/stationary/micro/small/large)",
+        "fr": "Quand le type de mouvement détecté change (none/stationary/micro/small/large)"
       },
       "tokens": [
         {

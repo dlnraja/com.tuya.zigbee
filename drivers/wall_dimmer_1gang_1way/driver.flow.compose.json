@@ -9,8 +9,8 @@
         "de": "Eingeschaltet - physische Taste"
       },
       "hint": {
-        "en": "Triggered when the switch is turned on using the physical button",
-        "nl": "Geactiveerd wanneer de schakelaar wordt aangezet met de fysieke knop",
+        "en": "When the switch is turned on using the physical button",
+        "nl": "Wanneer de schakelaar wordt aangezet met de fysieke knop",
         "fr": "Déclenché quand l'interrupteur est allumé avec le bouton physique"
       },
       "args": [],
@@ -30,8 +30,8 @@
         "de": "Ausgeschaltet - physische Taste"
       },
       "hint": {
-        "en": "Triggered when the switch is turned off using the physical button",
-        "nl": "Geactiveerd wanneer de schakelaar wordt uitgezet met de fysieke knop",
+        "en": "When the switch is turned off using the physical button",
+        "nl": "Wanneer de schakelaar wordt uitgezet met de fysieke knop",
         "fr": "Déclenché quand l'interrupteur est éteint avec le bouton physique"
       },
       "args": [],
@@ -50,8 +50,8 @@
         "fr": "Luminosité augmentée - bouton physique"
       },
       "hint": {
-        "en": "Triggered when brightness is increased using the physical button",
-        "nl": "Geactiveerd wanneer de helderheid wordt verhoogd met de fysieke knop",
+        "en": "When brightness is increased using the physical button",
+        "nl": "Wanneer de helderheid wordt verhoogd met de fysieke knop",
         "fr": "Déclenché quand la luminosité est augmentée avec le bouton physique"
       },
       "tokens": [
@@ -81,8 +81,8 @@
         "fr": "Luminosité diminuée - bouton physique"
       },
       "hint": {
-        "en": "Triggered when brightness is decreased using the physical button",
-        "nl": "Geactiveerd wanneer de helderheid wordt verlaagd met de fysieke knop",
+        "en": "When brightness is decreased using the physical button",
+        "nl": "Wanneer de helderheid wordt verlaagd met de fysieke knop",
         "fr": "Déclenché quand la luminosité est baissée avec le bouton physique"
       },
       "tokens": [

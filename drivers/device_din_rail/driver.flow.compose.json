@@ -10,8 +10,8 @@
         "de": "Eingeschaltet"
       },
       "hint": {
-        "en": "Triggers when the device is turned on",
-        "fr": "Se déclenche quand l'appareil est allumé"
+        "en": "When the device is turned on",
+        "fr": "Quand l'appareil est allumé"
       },
       "args": [],
       "titleFormatted": {
@@ -30,8 +30,8 @@
         "de": "Ausgeschaltet"
       },
       "hint": {
-        "en": "Triggers when the device is turned off",
-        "fr": "Se déclenche quand l'appareil est éteint"
+        "en": "When the device is turned off",
+        "fr": "Quand l'appareil est éteint"
       },
       "args": [],
       "titleFormatted": {

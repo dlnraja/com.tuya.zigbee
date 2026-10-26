@@ -99,8 +99,8 @@
         "fr": "Niveau de qualité d'air modifié"
       },
       "hint": {
-        "en": "Fires when the overall verdict step changes — not on every measurement (P2647 / tuyalocal).",
-        "fr": "Se déclenche quand le verdict global change — pas à chaque mesure (P2647)."
+        "en": "When the overall verdict step changes — not on every measurement (P2647 / tuyalocal).",
+        "fr": "Quand le verdict global change — pas à chaque mesure (P2647)."
       },
       "tokens": [
         {

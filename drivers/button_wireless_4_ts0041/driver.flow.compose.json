@@ -9,8 +9,8 @@
         "de": "Eine Taste wurde gedrückt"
       },
       "hint": {
-        "en": "Triggers when any button is pressed. Use the button token in your flow.",
-        "fr": "Se déclenche quand un bouton est appuyé. Utilisez le jeton bouton dans votre flow."
+        "en": "When any button is pressed. Use the button token in your flow.",
+        "fr": "Quand un bouton est appuyé. Utilisez le jeton bouton dans votre flow."
       },
       "tokens": [
         {
@@ -38,8 +38,8 @@
         "de": "Eine Taste wurde doppelt gedrückt"
       },
       "hint": {
-        "en": "Triggers when any button is double-pressed.",
-        "fr": "Se déclenche quand un bouton est double-cliqué."
+        "en": "When any button is double-pressed.",
+        "fr": "Quand un bouton est double-cliqué."
       },
       "tokens": [
         {
@@ -67,8 +67,8 @@
         "de": "Eine Taste wurde lange gedrückt"
       },
       "hint": {
-        "en": "Triggers when any button is long-pressed.",
-        "fr": "Se déclenche quand un bouton est appuyé longtemps."
+        "en": "When any button is long-pressed.",
+        "fr": "Quand un bouton est appuyé longtemps."
       },
       "tokens": [
         {
@@ -96,8 +96,8 @@
         "de": "Eine Taste wurde mehrfach gedrückt"
       },
       "hint": {
-        "en": "Triggers when any button is pressed multiple times.",
-        "fr": "Se déclenche quand un bouton est appuyé plusieurs fois."
+        "en": "When any button is pressed multiple times.",
+        "fr": "Quand un bouton est appuyé plusieurs fois."
       },
       "tokens": [
         {
@@ -470,8 +470,8 @@
         "de": "Batteriestand hat sich geändert"
       },
       "hint": {
-        "en": "Fires when measure_battery updates (passive ZCL). Token = new %.",
-        "fr": "Se déclenche quand measure_battery change (ZCL passif). Jeton = nouveau %."
+        "en": "When measure_battery updates (passive ZCL). Token = new %.",
+        "fr": "Quand measure_battery change (ZCL passif). Jeton = nouveau %."
       },
       "tokens": [
         {

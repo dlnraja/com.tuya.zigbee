@@ -68,10 +68,10 @@
         "de": "Boden ist trocken - braucht Wasser"
       },
       "hint": {
-        "en": "Triggers when soil moisture drops below the configured dry threshold",
-        "nl": "Triggert wanneer de bodemvochtigheid onder de droge drempel zakt",
-        "fr": "Se déclenche quand l'humidité du sol passe sous le seuil de sécheresse",
-        "de": "Wird ausgelöst, wenn die Bodenfeuchtigkeit unter den Trockenschwellenwert fällt"
+        "en": "When soil moisture drops below the configured dry threshold",
+        "nl": "Wanneer de bodemvochtigheid onder de droge drempel zakt",
+        "fr": "Quand l'humidité du sol passe sous le seuil de sécheresse",
+        "de": "Wenn die Bodenfeuchtigkeit unter den Trockenschwellenwert fällt"
       },
       "args": [],
       "titleFormatted": {
@@ -90,10 +90,10 @@
         "de": "Boden ist nass"
       },
       "hint": {
-        "en": "Triggers when soil moisture rises above the configured wet threshold",
-        "nl": "Triggert wanneer de bodemvochtigheid boven de natte drempel stijgt",
-        "fr": "Se déclenche quand l'humidité du sol dépasse le seuil d'humidité",
-        "de": "Wird ausgelöst, wenn die Bodenfeuchtigkeit über den Nässeschwellenwert steigt"
+        "en": "When soil moisture rises above the configured wet threshold",
+        "nl": "Wanneer de bodemvochtigheid boven de natte drempel stijgt",
+        "fr": "Quand l'humidité du sol dépasse le seuil d'humidité",
+        "de": "Wenn die Bodenfeuchtigkeit über den Nässeschwellenwert steigt"
       },
       "args": [],
       "titleFormatted": {
@@ -112,10 +112,10 @@
         "de": "Bodenfeuchtigkeit ist optimal"
       },
       "hint": {
-        "en": "Triggers when soil moisture is in the optimal range for plant growth",
-        "nl": "Triggert wanneer de bodemvochtigheid in het optimale bereik voor plantengroei is",
-        "fr": "Se déclenche quand l'humidité du sol est dans la plage optimale pour la croissance des plantes",
-        "de": "Wird ausgelöst, wenn die Bodenfeuchtigkeit im optimalen Bereich für Pflanzenwachstum liegt"
+        "en": "When soil moisture is in the optimal range for plant growth",
+        "nl": "Wanneer de bodemvochtigheid in het optimale bereik voor plantengroei is",
+        "fr": "Quand l'humidité du sol est dans la plage optimale pour la croissance des plantes",
+        "de": "Wenn die Bodenfeuchtigkeit im optimalen Bereich für Pflanzenwachstum liegt"
       },
       "args": [],
       "titleFormatted": {
@@ -134,10 +134,10 @@
         "de": "Frostwarnung"
       },
       "hint": {
-        "en": "Triggers when soil temperature drops below 2°C - protect your plants!",
-        "nl": "Triggert wanneer de bodemtemperatuur onder 2°C zakt - bescherm je planten!",
-        "fr": "Se déclenche quand la température du sol passe sous 2°C - protégez vos plantes !",
-        "de": "Wird ausgelöst, wenn die Bodentemperatur unter 2°C fällt - schützen Sie Ihre Pflanzen!"
+        "en": "When soil temperature drops below 2°C - protect your plants!",
+        "nl": "Wanneer de bodemtemperatuur onder 2°C zakt - bescherm je planten!",
+        "fr": "Quand la température du sol passe sous 2°C - protégez vos plantes !",
+        "de": "Wenn die Bodentemperatur unter 2°C fällt - schützen Sie Ihre Pflanzen!"
       },
       "args": [],
       "titleFormatted": {

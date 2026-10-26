@@ -10,10 +10,10 @@
         "de": "Tür/Fenster geöffnet"
       },
       "hint": {
-        "en": "Triggers when the magnet separates from the sensor",
-        "nl": "Triggert wanneer de magneet van de sensor wordt gescheiden",
-        "fr": "Se déclenche quand l'aimant se sépare du capteur",
-        "de": "Wird ausgelöst, wenn der Magnet vom Sensor getrennt wird"
+        "en": "When the magnet separates from the sensor",
+        "nl": "Wanneer de magneet van de sensor wordt gescheiden",
+        "fr": "Quand l'aimant se sépare du capteur",
+        "de": "Wenn der Magnet vom Sensor getrennt wird"
       },
       "args": [],
       "titleFormatted": {
@@ -32,10 +32,10 @@
         "de": "Tür/Fenster geschlossen"
       },
       "hint": {
-        "en": "Triggers when the magnet contacts the sensor",
-        "nl": "Triggert wanneer de magneet de sensor raakt",
-        "fr": "Se déclenche quand l'aimant touche le capteur",
-        "de": "Wird ausgelöst, wenn der Magnet den Sensor berührt"
+        "en": "When the magnet contacts the sensor",
+        "nl": "Wanneer de magneet de sensor raakt",
+        "fr": "Quand l'aimant touche le capteur",
+        "de": "Wenn der Magnet den Sensor berührt"
       },
       "args": [],
       "titleFormatted": {
@@ -54,10 +54,10 @@
         "de": "Manipulationsalarm"
       },
       "hint": {
-        "en": "Triggers when the sensor has been tampered with",
-        "nl": "Triggert wanneer er met de sensor is geknoeid",
-        "fr": "Se déclenche quand le capteur a été saboté",
-        "de": "Wird ausgelöst, wenn der Sensor manipuliert wurde"
+        "en": "When the sensor has been tampered with",
+        "nl": "Wanneer er met de sensor is geknoeid",
+        "fr": "Quand le capteur a été saboté",
+        "de": "Wenn der Sensor manipuliert wurde"
       },
       "args": [],
       "titleFormatted": {
@@ -105,10 +105,10 @@
         "de": "Batterie ist schwach"
       },
       "hint": {
-        "en": "Triggers when battery drops below threshold",
-        "nl": "Triggert wanneer de batterij onder de drempel zakt",
-        "fr": "Se déclenche quand la batterie passe sous le seuil",
-        "de": "Wird ausgelöst, wenn die Batterie unter den Schwellenwert fällt"
+        "en": "When battery drops below threshold",
+        "nl": "Wanneer de batterij onder de drempel zakt",
+        "fr": "Quand la batterie passe sous le seuil",
+        "de": "Wenn die Batterie unter den Schwellenwert fällt"
       },
       "args": [],
       "titleFormatted": {
@@ -127,10 +127,10 @@
         "de": "Zu lange offen gelassen"
       },
       "hint": {
-        "en": "Triggers when the sensor has been open for the specified duration",
-        "nl": "Triggert wanneer de sensor langer dan de opgegeven tijd open is",
-        "fr": "Se déclenche quand le capteur est ouvert depuis la durée spécifiée",
-        "de": "Wird ausgelöst, wenn der Sensor länger als die angegebene Dauer offen ist"
+        "en": "When the sensor has been open for the specified duration",
+        "nl": "Wanneer de sensor langer dan de opgegeven tijd open is",
+        "fr": "Quand le capteur est ouvert depuis la durée spécifiée",
+        "de": "Wenn der Sensor länger als die angegebene Dauer offen ist"
       },
       "args": [],
       "titleFormatted": {

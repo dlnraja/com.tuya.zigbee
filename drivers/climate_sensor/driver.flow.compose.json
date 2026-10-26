@@ -156,8 +156,8 @@
         "de": "Batteriespannung geändert"
       },
       "hint": {
-        "en": "Triggers when the battery voltage changes (V). For Z2M-standard Zigbee devices like _TZ3000_fllyghyj (WSD500A) and similar.",
-        "fr": "Se déclenche quand la tension batterie change (V). Pour les devices Zigbee standard Z2M comme _TZ3000_fllyghyj (WSD500A) et similaires."
+        "en": "When the battery voltage changes (V). For Z2M-standard Zigbee devices like _TZ3000_fllyghyj (WSD500A) and similar.",
+        "fr": "Quand la tension batterie change (V). Pour les devices Zigbee standard Z2M comme _TZ3000_fllyghyj (WSD500A) et similaires."
       },
       "tokens": [
         {

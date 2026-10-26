@@ -16,10 +16,10 @@
         "de": "Anwesenheit im Raum erkannt ({confidence}) ({timestamp})"
       },
       "hint": {
-        "en": "Triggers when the virtual presence detector determines the room is occupied",
-        "nl": "Triggert wanneer de virtuele aanwezigheidsdetector bepaalt dat de kamer bezet is",
-        "fr": "Se déclenche quand le détecteur de présence virtuel détermine que la pièce est occupée",
-        "de": "Wird ausgelöst, wenn der virtuelle Anwesenheitssensor feststellt, dass der Raum besetzt ist"
+        "en": "When the virtual presence detector determines the room is occupied",
+        "nl": "Wanneer de virtuele aanwezigheidsdetector bepaalt dat de kamer bezet is",
+        "fr": "Quand le détecteur de présence virtuel détermine que la pièce est occupée",
+        "de": "Wenn der virtuelle Anwesenheitssensor feststellt, dass der Raum besetzt ist"
       },
       "tokens": [
         {
@@ -62,10 +62,10 @@
         "de": "Anwesenheit im Raum beendet ({duration_minutes}) ({timestamp})"
       },
       "hint": {
-        "en": "Triggers when the room is determined to be empty after timeout",
-        "nl": "Triggert wanneer de kamer als leeg wordt bepaald na timeout",
-        "fr": "Se déclenche quand la pièce est déterminée comme vide après le délai",
-        "de": "Wird ausgelöst, wenn der Raum nach dem Timeout als leer bestimmt wird"
+        "en": "When the room is determined to be empty after timeout",
+        "nl": "Wanneer de kamer als leeg wordt bepaald na timeout",
+        "fr": "Quand la pièce est déterminée comme vide après le délai",
+        "de": "Wenn der Raum nach dem Timeout als leer bestimmt wird"
       },
       "tokens": [
         {
@@ -108,10 +108,10 @@
         "de": "Vertrauen geändert ({confidence})"
       },
       "hint": {
-        "en": "Triggers when the presence confidence score changes",
-        "nl": "Triggert wanneer de aanwezigheidsvertrouwen score wijzigt",
-        "fr": "Se déclenche quand le score de confiance de présence change",
-        "de": "Wird ausgelöst, wenn sich der Anwesenheits-Vertrauenswert ändert"
+        "en": "When the presence confidence score changes",
+        "nl": "Wanneer de aanwezigheidsvertrouwen score wijzigt",
+        "fr": "Quand le score de confiance de présence change",
+        "de": "Wenn sich der Anwesenheits-Vertrauenswert ändert"
       },
       "tokens": [
         {
