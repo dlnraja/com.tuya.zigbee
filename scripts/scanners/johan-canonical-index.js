@@ -157,6 +157,21 @@ async function fetchAll(since) {
     url = nx ? nx[1] : null;
     await sleep(700);
   }
+  // P2870: PR inline review comments (pulls/comments) are a separate stream; Batch notes and
+  // maintainer verdicts posted on a diff line were missed. Soft: a failure keeps the rest.
+  url = `https://api.github.com/repos/${REPO}/pulls/comments?since=${since}&per_page=100&sort=created&direction=asc`;
+  for (let i = 0; url && i < MAX_PAGES; i++) {
+    let res;
+    try { res = await ghGet(url); } catch (e) { console.log(`[johan-index] review comments soft-skip: ${e.message}`); break; }
+    const { json, link } = res;
+    for (const c of json || []) {
+      const n = String(c.pull_request_url || '').split('/').pop();
+      if (n) {comments.push({ id: c.id, user: c.user && c.user.login, created_at: c.created_at, issue: n, url: c.html_url, body: c.body, kind: 'review' });}
+    }
+    const nx = String(link || '').match(/<([^>]+)>;\s*rel="next"/);
+    url = nx ? nx[1] : null;
+    await sleep(700);
+  }
   url = `https://api.github.com/repos/${REPO}/issues?state=all&since=${since}&per_page=100`;
   for (let i = 0; url && i < MAX_PAGES; i++) {
     const { json, link } = await ghGet(url);
