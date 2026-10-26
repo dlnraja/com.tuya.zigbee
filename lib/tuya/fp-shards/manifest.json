@@ -1,9 +1,9 @@
 {
   "version": 1,
   "patch": "P2678",
-  "generatedAt": "2026-10-26T10:53:27.359Z",
+  "generatedAt": "2026-10-26T11:23:11.731Z",
   "source": "lib/tuya/fingerprints.json",
-  "sourceBytes": 931247,
+  "sourceBytes": 931234,
   "keyCount": 5781,
   "shardCount": 227,
   "shards": {
@@ -789,7 +789,7 @@
     },
     "TZE284_6": {
       "keys": 13,
-      "bytes": 1972
+      "bytes": 1959
     },
     "TZE284_7": {
       "keys": 8,
