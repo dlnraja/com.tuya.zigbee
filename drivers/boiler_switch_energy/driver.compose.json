@@ -139,12 +139,6 @@
         "fr": "Origine de la puissance",
         "de": "Herkunft des Leistungswerts",
         "nl": "Bron van de vermogenswaarde"
-      },
-      "hint": {
-        "en": "Read-only: measured, calculated (V×I×PF), learned, user (your rated power) or default (approximation).",
-        "fr": "Lecture seule : mesurée, calculée (V×I×PF), apprise, utilisateur (puissance saisie) ou défaut (approximation).",
-        "de": "Nur lesen: gemessen, berechnet (V×I×PF), gelernt, Benutzer (Ihre Nennleistung) oder Standard (Näherung).",
-        "nl": "Alleen-lezen: gemeten, berekend (V×I×PF), geleerd, gebruiker (uw nominaal vermogen) of standaard (benadering)."
       }
     }
   ]

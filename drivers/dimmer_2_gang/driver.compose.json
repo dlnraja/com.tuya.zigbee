@@ -198,9 +198,7 @@
           },
           "hint": {
             "en": "On by default. Nothing changes until the light is next switched on; a manual change pauses it for 60 min. Untick to disable for this light (global switch: app settings).",
-            "fr": "Actif par défaut. Rien ne change avant le prochain allumage ; un réglage manuel le met en pause 60 min. Décochez pour désactiver sur cette lampe (interrupteur global : réglages de l'app).",
-            "de": "Standardmäßig aktiv. Erst beim nächsten Einschalten wirksam; eine manuelle Änderung pausiert es 60 Min. Abwählen, um es für diese Lampe zu deaktivieren (globaler Schalter: App-Einstellungen).",
-            "nl": "Standaard aan. Pas actief bij de volgende keer inschakelen; een handmatige wijziging pauzeert het 60 min. Uitvinken om het voor deze lamp uit te zetten (globale schakelaar: app-instellingen)."
+            "fr": "Actif par défaut. Rien ne change avant le prochain allumage ; un réglage manuel le met en pause 60 min. Décochez pour désactiver sur cette lampe (interrupteur global : réglages de l'app)."
           }
         },
         {
@@ -215,9 +213,7 @@
           },
           "hint": {
             "en": "Off by default. Dimmer-only lights only adapt when this is on.",
-            "fr": "Désactivé par défaut. Les lampes sans température de couleur ne s'adaptent que si cette option est active.",
-            "de": "Standardmäßig aus. Lampen ohne Farbtemperatur passen sich nur an, wenn dies aktiv ist.",
-            "nl": "Standaard uit. Lampen zonder kleurtemperatuur passen zich alleen aan als dit aan staat."
+            "fr": "Désactivé par défaut. Les lampes sans température de couleur ne s'adaptent que si cette option est active."
           }
         }
       ]
