@@ -5,11 +5,17 @@ const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
 const {
   decodeColor, encodeColor, detectColorFormat,
   detectLightSchema, legacyLightToModern, modernLightToLegacy,
+  colorTempToHomey, colorTempToDevice,
 } = require('../../lib/tuya-local/TuyaDeviceTemplates');
 
 class WiFiLightDevice extends TuyaLocalDevice {
   get mainsPowered() { return true; }
 
+
+  /** Opt-in per device: firmware whose temp_value is really 0 = cold (default false). */
+  _colorTempReversed() {
+    try { return typeof this.getSetting === 'function' && this.getSetting('color_temp_reversed') === true; } catch (_e) { return false; }
+  }
 
   get dpMappings() {
     return {
@@ -20,9 +26,13 @@ class WiFiLightDevice extends TuyaLocalDevice {
       '22': { capability: 'dim', writable: true,
         transform: (v) => Math.max(0, safeDivide(v - 10, 990)),
         reverseTransform: (v) => Math.round(safeMultiply(v, 990) + 10) },
+      // WHY(2026-10-10): Tuya temp_value 0 = warm .. 1000 = cool (tuya-local rgbcw_lightbulb 0..1000 → 2700..6500 K;
+      // localtuya light.py maps 0 to the warmest mired unless "reverse" is set). Homey light_temperature is
+      // 0 = cold .. 1 = warm, so the raw ratio was inverted. Opt-in setting color_temp_reversed restores the
+      // raw ratio for the rare firmware that really is reversed.
       '23': { capability: 'light_temperature', writable: true,
-        transform: (v) => safeDivide(v, 1000),
-        reverseTransform: (v) => Math.round(safeMultiply(v, 1000)) },
+        transform: (v) => colorTempToHomey(v, 1000, this._colorTempReversed()),
+        reverseTransform: (v) => colorTempToDevice(v, 1000, this._colorTempReversed()) },
       '24': { capability: '_dp24_color_hsv', writable: true },
       '25': { capability: '_dp25' },
       '26': { capability: '_dp26' },
