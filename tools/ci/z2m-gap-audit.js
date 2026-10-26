@@ -88,6 +88,9 @@ for (const [k, z] of Object.entries(z2mByMfr)) {
 report.exposeHints.sort((a, b) => b.z2mFeatures.length - a.z2mFeatures.length);
 report.z2mOnly.sort((a, b) => b.exposes - a.exposes);
 
+// P3068: .github/state/ is untracked (gitignored state files): a fresh checkout has no dir, so writing threw ENOENT
+// (test/cross-source-deep-fixes P92.80 red on bastien-home). Create it first.
+fs.mkdirSync(path.join(ROOT, '.github', 'state'), { recursive: true });
 fs.writeFileSync(path.join(ROOT, '.github', 'state', 'z2m-gap-audit.json'), JSON.stringify(report, null, 1));
 
 console.log(`[z2m-gap-audit] ${report.covered} mfrs couverts (nous + Z2M) | ${report.oursOnly} connus de Z2M NON claimés chez nous`);
