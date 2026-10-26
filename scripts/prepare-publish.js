@@ -590,6 +590,29 @@ try {
     process.exit(1);
   }
 
+  // 5a1) Drop Flow cards whose device filter only targets drivers that are NOT
+  // in the publish manifest (the compactor prunes ~99 synthetic drivers, but
+  // their ~1.4k device cards stayed behind: ~0.65 MB of dead manifest).
+  // WHY(P2798 Athom AggregateError): v9.0.1331 (+1.6 KB, 4,020,818 B compact
+  // app.json) failed Athom processing 12/12 times (#3442-#3453) while 9.0.1330
+  // (4,019,154 B) passed on retry 3 and 3.47 MB builds passed first time. The
+  // processor degrades with manifest size (socket hang up -> AggregateError),
+  // so keep the published manifest well below 4,000,000 bytes.
+  try {
+    const { pruneOrphanFlowCards } = require('./maintenance/prune-orphan-flow-cards.cjs');
+    const manifest = JSON.parse(fs.readFileSync(destAppJson, 'utf8'));
+    const res = pruneOrphanFlowCards(manifest);
+    if (res.removed > 0) {
+      fs.writeFileSync(destAppJson, JSON.stringify(manifest));
+      console.log(`[P2798] Pruned ${res.removed} orphan Flow card(s) bound only to drivers absent from the publish manifest (${(res.bytes / (1024 * 1024)).toFixed(2)} MB, ${res.drivers} driver id(s)).`);
+    } else {
+      console.log('[P2798] No orphan Flow cards in publish manifest.');
+    }
+  } catch (e) {
+    console.error('FATAL: orphan Flow card prune failed:', e.message);
+    process.exit(1);
+  }
+
   // 5a2) Athom hard limit — AFTER Zigbee matrix compact (whitespace-only can still be ~4.00MB)
   {
     try {
@@ -604,6 +627,13 @@ try {
       process.exit(1);
     }
     console.log('Success: app.json is under the 4MB Athom limit.');
+    {
+      const bytes = fs.statSync(destAppJson).size;
+      const warnBytes = Number(process.env.HOMEY_APP_JSON_PROCESSING_WARN_BYTES || 3900000);
+      if (bytes > warnBytes) {
+        console.warn(`::warning::Publish app.json is ${bytes} bytes (> ${warnBytes}). Athom processing failed 12/12 at 4,020,818 B (P2798) — shrink before publishing.`);
+      }
+    }
 
     // WHY(P2471 publish): publish-size-gate also measures ROOT .homeybuild/app.json.
     // Homey validate leaves an uncompacted ~4.00MB build copy; sync the compacted

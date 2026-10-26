@@ -243,8 +243,19 @@ async function main() {
 
   let lastFailed = null;
   while (Date.now() - started < MAX_MS) {
-    const list = await getBuilds(client, APP, { limit: 20 }).catch((e) => {
+    const list = await getBuilds(client, APP, { limit: 20 }).catch(async (e) => {
       console.log(`wait-draft: list failed (${e.message})`);
+      // WHY(P2798): the apps delegation token minted from HOMEY_PAT expires after
+      // ~4 min; every later poll then failed with "The provided token is invalid."
+      // (run 37184850703). Re-mint the delegation token instead of polling blind.
+      if (/token is invalid|invalid[_ ]token|unauthori[sz]ed|\b401\b/i.test(String(e && e.message))) {
+        try {
+          client = await createClient({ log: console.log });
+          console.log('wait-draft: delegation token refreshed');
+        } catch (err) {
+          console.log(`wait-draft: token refresh failed (${err.message})`);
+        }
+      }
       return [];
     });
     const builds = (Array.isArray(list) ? list : []).map(normalizeBuild);
