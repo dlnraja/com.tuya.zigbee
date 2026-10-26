@@ -649,6 +649,13 @@ try {
     } catch (tfErr) {
       console.warn('[P2830h] titleFormatted strip skipped:', tfErr.message);
     }
+    // P3068: shared-text compaction (identical-to-en locales dropped, canonical concise shared hints)
+    try {
+      const st = require('./maintenance/compact-shared-text.cjs').compactFile(destAppJson);
+      console.log(`[P3068] shared-text compaction -${(st.bytes / 1024).toFixed(1)} KB (locales ${st.localeDropped}, hints ${st.hintsCanon}, titles ${st.titlesCanon})`);
+    } catch (stErr) {
+      console.warn('[P3068] shared-text compaction skipped:', stErr.message);
+    }
     const sizeMB = fs.statSync(destAppJson).size / (1024 * 1024);
     console.log(`Target app.json size (post Zigbee matrix compact): ${sizeMB.toFixed(2)} MB`);
     if (sizeMB > 4) {
