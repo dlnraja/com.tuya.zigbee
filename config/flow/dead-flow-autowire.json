@@ -86,6 +86,21 @@
       "cap": "measure_temperature",
       "when": "change"
     },
+    "device_air_purifier_device_air_purifier_ther_559cc": {
+      "driver": "device_air_purifier",
+      "cap": "thermostat_mode",
+      "when": "change"
+    },
+    "device_air_purifier_device_air_purifier_ther_1ab31": {
+      "driver": "device_air_purifier",
+      "cap": "thermostat_mode",
+      "when": "enter:heat"
+    },
+    "device_air_purifier_device_air_purifier_ther_72b5b": {
+      "driver": "device_air_purifier",
+      "cap": "thermostat_mode",
+      "when": "leave:heat"
+    },
     "device_air_purifier_device_air_purifier_ther_2b4de": {
       "driver": "device_air_purifier",
       "cap": "onoff",
@@ -236,6 +251,21 @@
       "cap": "measure_temperature",
       "when": "change"
     },
+    "device_air_purifier_thermostat_thermostat_tu_2927e": {
+      "driver": "device_air_purifier_thermostat",
+      "cap": "thermostat_mode",
+      "when": "change"
+    },
+    "device_air_purifier_thermostat_thermostat_tu_db956": {
+      "driver": "device_air_purifier_thermostat",
+      "cap": "thermostat_mode",
+      "when": "enter:heat"
+    },
+    "device_air_purifier_thermostat_thermostat_tu_84662": {
+      "driver": "device_air_purifier_thermostat",
+      "cap": "thermostat_mode",
+      "when": "leave:heat"
+    },
     "device_air_purifier_thermostat_thermostat_tu_a47bf": {
       "driver": "device_air_purifier_thermostat",
       "cap": "onoff",
@@ -320,6 +350,21 @@
       "driver": "device_radiator_valve_thermostat",
       "cap": "measure_temperature",
       "when": "change"
+    },
+    "device_radiator_valve_thermostat_tuya_dp_mod_1cac8": {
+      "driver": "device_radiator_valve_thermostat",
+      "cap": "thermostat_mode",
+      "when": "change"
+    },
+    "device_radiator_valve_thermostat_tuya_dp_hea_81c5b": {
+      "driver": "device_radiator_valve_thermostat",
+      "cap": "thermostat_mode",
+      "when": "enter:heat"
+    },
+    "device_radiator_valve_thermostat_tuya_dp_hea_4f2c3": {
+      "driver": "device_radiator_valve_thermostat",
+      "cap": "thermostat_mode",
+      "when": "leave:heat"
     },
     "device_radiator_valve_thermostat_tuya_dp_tur_6295b": {
       "driver": "device_radiator_valve_thermostat",

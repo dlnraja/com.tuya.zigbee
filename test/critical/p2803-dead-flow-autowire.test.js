@@ -15,7 +15,7 @@ test('P2803 map entries use real driver capabilities and known ops', () => {
     for (const [id, v] of Object.entries(map[kind])) {
       const caps = JSON.parse(fs.readFileSync(path.join(ROOT, 'drivers', v.driver, 'driver.compose.json'), 'utf8')).capabilities || [];
       assert.ok(caps.includes(v.cap), `${id}: ${v.cap} not on ${v.driver}`);
-      if (kind === 'triggers') {assert.ok([true, false, 'change', 'low'].includes(v.when), id);} else {assert.ok([true, 'above', 'below'].includes(v.op), id);}
+      if (kind === 'triggers') {assert.ok([true, false, 'change', 'low'].includes(v.when) || /^(enter|leave):[a-z_]+$/.test(v.when), id);} else {assert.ok([true, 'above', 'below'].includes(v.op), id);}
     }
   }
 });

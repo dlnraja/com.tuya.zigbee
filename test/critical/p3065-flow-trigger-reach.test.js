@@ -13,7 +13,7 @@ const ROOT = path.join(__dirname, '..', '..');
 const reach = require('../../scripts/diag/flow-trigger-reach');
 const W = require('../../lib/flow/DeadFlowAutoWire');
 
-const ORPHAN_CEIL = 121; // 2026-10-26 after P3065 D8 (battery low); was 127, 128, 142
+const ORPHAN_CEIL = 112; // 2026-10-26 after P3065 D9 (thermostat mode); was 121, 127, 128, 142
 
 test('P3065 (a): orphan driver triggers do not grow', () => {
   assert.ok(reach.orphan.length <= ORPHAN_CEIL, `orphans grew to ${reach.orphan.length}`);
