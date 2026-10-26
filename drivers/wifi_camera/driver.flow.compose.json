@@ -48,9 +48,6 @@
             {
               "id": "on",
               "title": {
-                "en": "Privacy ON (camera off)"
-              },
-              "label": {
                 "en": "Privacy ON (camera off)",
                 "fr": "Confidentialité activée (caméra éteinte)"
               }
@@ -58,9 +55,6 @@
             {
               "id": "off",
               "title": {
-                "en": "Privacy OFF (camera on)"
-              },
-              "label": {
                 "en": "Privacy OFF (camera on)",
                 "fr": "Confidentialité désactivée (caméra allumée)"
               }
@@ -92,17 +86,11 @@
               "id": "0",
               "title": {
                 "en": "Auto"
-              },
-              "label": {
-                "en": "Auto"
               }
             },
             {
               "id": "1",
               "title": {
-                "en": "Off"
-              },
-              "label": {
                 "en": "Off",
                 "fr": "Éteint"
               }
@@ -110,9 +98,6 @@
             {
               "id": "2",
               "title": {
-                "en": "On"
-              },
-              "label": {
                 "en": "On",
                 "fr": "Allumé"
               }
@@ -143,9 +128,6 @@
             {
               "id": "0",
               "title": {
-                "en": "Up"
-              },
-              "label": {
                 "en": "Up",
                 "fr": "Haut"
               }
@@ -153,9 +135,6 @@
             {
               "id": "2",
               "title": {
-                "en": "Right"
-              },
-              "label": {
                 "en": "Right",
                 "fr": "Droite"
               }
@@ -163,9 +142,6 @@
             {
               "id": "4",
               "title": {
-                "en": "Down"
-              },
-              "label": {
                 "en": "Down",
                 "fr": "Bas"
               }
@@ -173,9 +149,6 @@
             {
               "id": "6",
               "title": {
-                "en": "Left"
-              },
-              "label": {
                 "en": "Left",
                 "fr": "Gauche"
               }

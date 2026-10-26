@@ -264,9 +264,6 @@
             {
               "id": "silent",
               "title": {
-                "en": "Silent"
-              },
-              "label": {
                 "en": "Silent",
                 "fr": "Silencieux"
               }
@@ -275,17 +272,11 @@
               "id": "standard",
               "title": {
                 "en": "Standard"
-              },
-              "label": {
-                "en": "Standard"
               }
             },
             {
               "id": "strong",
               "title": {
-                "en": "Strong"
-              },
-              "label": {
                 "en": "Strong",
                 "fr": "Fort"
               }
@@ -293,9 +284,6 @@
             {
               "id": "super",
               "title": {
-                "en": "Super"
-              },
-              "label": {
                 "en": "Super"
               }
             }
@@ -325,9 +313,6 @@
             {
               "id": "sweep",
               "title": {
-                "en": "Sweep"
-              },
-              "label": {
                 "en": "Sweep",
                 "fr": "Balayage"
               }
@@ -335,9 +320,6 @@
             {
               "id": "mop",
               "title": {
-                "en": "Mop"
-              },
-              "label": {
                 "en": "Mop",
                 "fr": "Serpillière"
               }
@@ -345,9 +327,6 @@
             {
               "id": "sweep_and_mop",
               "title": {
-                "en": "Sweep + Mop"
-              },
-              "label": {
                 "en": "Sweep + Mop",
                 "fr": "Balayage + serpillière"
               }
@@ -378,9 +357,6 @@
             {
               "id": "on",
               "title": {
-                "en": "On"
-              },
-              "label": {
                 "en": "On",
                 "fr": "Allumé"
               }
@@ -388,9 +364,6 @@
             {
               "id": "off",
               "title": {
-                "en": "Off"
-              },
-              "label": {
                 "en": "Off",
                 "fr": "Éteint"
               }

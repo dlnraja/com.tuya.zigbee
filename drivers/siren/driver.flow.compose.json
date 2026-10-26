@@ -219,12 +219,6 @@
                 "nl": "Laag",
                 "fr": "Bas",
                 "de": "Niedrig"
-              },
-              "label": {
-                "en": "Low",
-                "nl": "Laag",
-                "fr": "Bas",
-                "de": "Niedrig"
               }
             },
             {
@@ -234,23 +228,11 @@
                 "nl": "Gemiddeld",
                 "fr": "Moyen",
                 "de": "Mittel"
-              },
-              "label": {
-                "en": "Medium",
-                "nl": "Gemiddeld",
-                "fr": "Moyen",
-                "de": "Mittel"
               }
             },
             {
               "id": "high",
               "title": {
-                "en": "High",
-                "nl": "Hoog",
-                "fr": "Haut",
-                "de": "Hoch"
-              },
-              "label": {
                 "en": "High",
                 "nl": "Hoog",
                 "fr": "Haut",
@@ -322,19 +304,11 @@
               "title": {
                 "en": "Doorbell Chime",
                 "fr": "Sonnette"
-              },
-              "label": {
-                "en": "Doorbell Chime",
-                "fr": "Sonnette"
               }
             },
             {
               "id": "1",
               "title": {
-                "en": "Für Elise",
-                "fr": "Pour Élise"
-              },
-              "label": {
                 "en": "Für Elise",
                 "fr": "Pour Élise"
               }
@@ -344,19 +318,11 @@
               "title": {
                 "en": "Westminster Chimes",
                 "fr": "Carillon Westminster"
-              },
-              "label": {
-                "en": "Westminster Chimes",
-                "fr": "Carillon Westminster"
               }
             },
             {
               "id": "3",
               "title": {
-                "en": "4-Key Chime",
-                "fr": "Carillon 4 notes"
-              },
-              "label": {
                 "en": "4-Key Chime",
                 "fr": "Carillon 4 notes"
               }
@@ -366,19 +332,11 @@
               "title": {
                 "en": "William Tell Overture",
                 "fr": "Guillaume Tell"
-              },
-              "label": {
-                "en": "William Tell Overture",
-                "fr": "Guillaume Tell"
               }
             },
             {
               "id": "5",
               "title": {
-                "en": "Mozart Piano",
-                "fr": "Mozart Piano"
-              },
-              "label": {
                 "en": "Mozart Piano",
                 "fr": "Mozart Piano"
               }
@@ -388,19 +346,11 @@
               "title": {
                 "en": "Space Alarm",
                 "fr": "Alarme Spatiale"
-              },
-              "label": {
-                "en": "Space Alarm",
-                "fr": "Alarme Spatiale"
               }
             },
             {
               "id": "7",
               "title": {
-                "en": "Klaxon",
-                "fr": "Klaxon"
-              },
-              "label": {
                 "en": "Klaxon",
                 "fr": "Klaxon"
               }
@@ -410,19 +360,11 @@
               "title": {
                 "en": "Meep Meep",
                 "fr": "Bip Bip"
-              },
-              "label": {
-                "en": "Meep Meep",
-                "fr": "Bip Bip"
               }
             },
             {
               "id": "9",
               "title": {
-                "en": "Wheep",
-                "fr": "Sifflement"
-              },
-              "label": {
                 "en": "Wheep",
                 "fr": "Sifflement"
               }
@@ -432,19 +374,11 @@
               "title": {
                 "en": "Barking Dog",
                 "fr": "Chien qui aboie"
-              },
-              "label": {
-                "en": "Barking Dog",
-                "fr": "Chien qui aboie"
               }
             },
             {
               "id": "11",
               "title": {
-                "en": "Alarm Siren",
-                "fr": "Sirène d'alarme"
-              },
-              "label": {
                 "en": "Alarm Siren",
                 "fr": "Sirène d'alarme"
               }
@@ -454,19 +388,11 @@
               "title": {
                 "en": "Doorbell 2",
                 "fr": "Sonnette 2"
-              },
-              "label": {
-                "en": "Doorbell 2",
-                "fr": "Sonnette 2"
               }
             },
             {
               "id": "13",
               "title": {
-                "en": "Old Phone",
-                "fr": "Vieux téléphone"
-              },
-              "label": {
                 "en": "Old Phone",
                 "fr": "Vieux téléphone"
               }
@@ -476,19 +402,11 @@
               "title": {
                 "en": "Police Siren",
                 "fr": "Sirène Police"
-              },
-              "label": {
-                "en": "Police Siren",
-                "fr": "Sirène Police"
               }
             },
             {
               "id": "15",
               "title": {
-                "en": "Evacuation Bell",
-                "fr": "Cloche Évacuation"
-              },
-              "label": {
                 "en": "Evacuation Bell",
                 "fr": "Cloche Évacuation"
               }
@@ -498,19 +416,11 @@
               "title": {
                 "en": "Clock Alarm",
                 "fr": "Réveil"
-              },
-              "label": {
-                "en": "Clock Alarm",
-                "fr": "Réveil"
               }
             },
             {
               "id": "17",
               "title": {
-                "en": "Fire Alarm",
-                "fr": "Alarme Incendie"
-              },
-              "label": {
                 "en": "Fire Alarm",
                 "fr": "Alarme Incendie"
               }

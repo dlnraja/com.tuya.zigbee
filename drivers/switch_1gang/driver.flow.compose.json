@@ -277,23 +277,18 @@
           "values": [
             {
               "id": "off",
-              "title": "Off",
-              "label": {
+              "title": {
                 "en": "Off",
                 "fr": "Éteint"
               }
             },
             {
               "id": "normal",
-              "title": "Normal",
-              "label": {
-                "en": "Normal"
-              }
+              "title": "Normal"
             },
             {
               "id": "inverted",
-              "title": "Inverted",
-              "label": {
+              "title": {
                 "en": "Inverted",
                 "fr": "Inversé"
               }
@@ -323,32 +318,28 @@
           "values": [
             {
               "id": "white",
-              "title": "White",
-              "label": {
+              "title": {
                 "en": "White",
                 "fr": "Blanc"
               }
             },
             {
               "id": "red",
-              "title": "Red",
-              "label": {
+              "title": {
                 "en": "Red",
                 "fr": "Rouge"
               }
             },
             {
               "id": "blue",
-              "title": "Blue",
-              "label": {
+              "title": {
                 "en": "Blue",
                 "fr": "Bleu"
               }
             },
             {
               "id": "green",
-              "title": "Green",
-              "label": {
+              "title": {
                 "en": "Green",
                 "fr": "Vert"
               }
@@ -486,24 +477,21 @@
           "values": [
             {
               "id": "off",
-              "title": "Off",
-              "label": {
+              "title": {
                 "en": "Off",
                 "fr": "Éteint"
               }
             },
             {
               "id": "on",
-              "title": "On",
-              "label": {
+              "title": {
                 "en": "On",
                 "fr": "Allumé"
               }
             },
             {
               "id": "previous",
-              "title": "Previous state",
-              "label": {
+              "title": {
                 "en": "Previous state",
                 "fr": "État précédent"
               }
@@ -546,10 +534,6 @@
                 "fr": "Toggle",
                 "de": "Umschalten",
                 "nl": "Omschakelen"
-              },
-              "label": {
-                "en": "Toggle",
-                "fr": "Toggle"
               }
             },
             {
@@ -557,19 +541,11 @@
               "title": {
                 "en": "State (lights)",
                 "fr": "State (lumières)"
-              },
-              "label": {
-                "en": "State (lights)",
-                "fr": "State (lumières)"
               }
             },
             {
               "id": "momentary",
               "title": {
-                "en": "Momentary",
-                "fr": "Momentary"
-              },
-              "label": {
                 "en": "Momentary",
                 "fr": "Momentary"
               }

@@ -143,9 +143,6 @@
             {
               "id": "low",
               "title": {
-                "en": "Low"
-              },
-              "label": {
                 "en": "Low",
                 "fr": "Bas"
               }
@@ -154,17 +151,11 @@
               "id": "normal",
               "title": {
                 "en": "Normal"
-              },
-              "label": {
-                "en": "Normal"
               }
             },
             {
               "id": "high",
               "title": {
-                "en": "High"
-              },
-              "label": {
                 "en": "High",
                 "fr": "Haut"
               }

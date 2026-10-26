@@ -353,19 +353,11 @@
               "title": {
                 "en": "Off",
                 "fr": "Arrêt"
-              },
-              "label": {
-                "en": "Off",
-                "fr": "Arrêt"
               }
             },
             {
               "id": "heat",
               "title": {
-                "en": "Heat",
-                "fr": "Chauffage"
-              },
-              "label": {
                 "en": "Heat",
                 "fr": "Chauffage"
               }
@@ -375,19 +367,11 @@
               "title": {
                 "en": "Auto",
                 "fr": "Auto"
-              },
-              "label": {
-                "en": "Auto",
-                "fr": "Auto"
               }
             },
             {
               "id": "cool",
               "title": {
-                "en": "Cool",
-                "fr": "Refroidissement"
-              },
-              "label": {
                 "en": "Cool",
                 "fr": "Refroidissement"
               }
@@ -488,10 +472,6 @@
               "title": {
                 "en": "Off",
                 "fr": "Arrêt"
-              },
-              "label": {
-                "en": "Off",
-                "fr": "Arrêt"
               }
             },
             {
@@ -499,19 +479,11 @@
               "title": {
                 "en": "Heat",
                 "fr": "Chauffage"
-              },
-              "label": {
-                "en": "Heat",
-                "fr": "Chauffage"
               }
             },
             {
               "id": "auto",
               "title": {
-                "en": "Auto",
-                "fr": "Auto"
-              },
-              "label": {
                 "en": "Auto",
                 "fr": "Auto"
               }
@@ -612,19 +584,11 @@
               "title": {
                 "en": "Enabled",
                 "fr": "Activé"
-              },
-              "label": {
-                "en": "Enabled",
-                "fr": "Activé"
               }
             },
             {
               "id": "false",
               "title": {
-                "en": "Disabled",
-                "fr": "Désactivé"
-              },
-              "label": {
                 "en": "Disabled",
                 "fr": "Désactivé"
               }
@@ -662,19 +626,11 @@
               "title": {
                 "en": "Comfort (21°C)",
                 "fr": "Confort (21°C)"
-              },
-              "label": {
-                "en": "Comfort (21°C)",
-                "fr": "Confort (21°C)"
               }
             },
             {
               "id": "eco",
               "title": {
-                "en": "Eco (18°C)",
-                "fr": "Éco (18°C)"
-              },
-              "label": {
                 "en": "Eco (18°C)",
                 "fr": "Éco (18°C)"
               }
@@ -684,10 +640,6 @@
               "title": {
                 "en": "Away (15°C)",
                 "fr": "Absent (15°C)"
-              },
-              "label": {
-                "en": "Away (15°C)",
-                "fr": "Absent (15°C)"
               }
             },
             {
@@ -695,19 +647,11 @@
               "title": {
                 "en": "Sleep (19°C)",
                 "fr": "Nuit (19°C)"
-              },
-              "label": {
-                "en": "Sleep (19°C)",
-                "fr": "Nuit (19°C)"
               }
             },
             {
               "id": "boost",
               "title": {
-                "en": "Boost (25°C)",
-                "fr": "Boost (25°C)"
-              },
-              "label": {
                 "en": "Boost (25°C)",
                 "fr": "Boost (25°C)"
               }

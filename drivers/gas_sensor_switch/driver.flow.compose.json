@@ -1073,9 +1073,6 @@
             {
               "id": "off",
               "title": {
-                "en": "Off"
-              },
-              "label": {
                 "en": "Off",
                 "fr": "Éteint"
               }
@@ -1083,9 +1080,6 @@
             {
               "id": "normal",
               "title": {
-                "en": "Normal (LED when ON)"
-              },
-              "label": {
                 "en": "Normal (LED when ON)",
                 "fr": "Normal (LED quand allumé)"
               }
@@ -1093,9 +1087,6 @@
             {
               "id": "inverted",
               "title": {
-                "en": "Inverted (LED when OFF)"
-              },
-              "label": {
                 "en": "Inverted (LED when OFF)",
                 "fr": "Inversé (LED quand éteint)"
               }
@@ -1126,9 +1117,6 @@
             {
               "id": "on",
               "title": {
-                "en": "When ON"
-              },
-              "label": {
                 "en": "When ON",
                 "fr": "Quand allumé"
               }
@@ -1136,9 +1124,6 @@
             {
               "id": "off",
               "title": {
-                "en": "When OFF"
-              },
-              "label": {
                 "en": "When OFF",
                 "fr": "Quand éteint"
               }
@@ -1156,9 +1141,6 @@
             {
               "id": "blue",
               "title": {
-                "en": "Blue"
-              },
-              "label": {
                 "en": "Blue",
                 "fr": "Bleu"
               }
@@ -1166,9 +1148,6 @@
             {
               "id": "red",
               "title": {
-                "en": "Red"
-              },
-              "label": {
                 "en": "Red",
                 "fr": "Rouge"
               }
@@ -1176,9 +1155,6 @@
             {
               "id": "green",
               "title": {
-                "en": "Green"
-              },
-              "label": {
                 "en": "Green",
                 "fr": "Vert"
               }
@@ -1279,9 +1255,6 @@
             {
               "id": "auto",
               "title": {
-                "en": "Auto (Normal + flows)"
-              },
-              "label": {
                 "en": "Auto (Normal + flows)",
                 "fr": "Auto (normal + flows)"
               }
@@ -1289,9 +1262,6 @@
             {
               "id": "magic",
               "title": {
-                "en": "Magic (Scene only)"
-              },
-              "label": {
                 "en": "Magic (Scene only)",
                 "fr": "Magique (scène uniquement)"
               }
@@ -1299,9 +1269,6 @@
             {
               "id": "both",
               "title": {
-                "en": "Both (Load + scene)"
-              },
-              "label": {
                 "en": "Both (Load + scene)",
                 "fr": "Les deux (charge + scène)"
               }

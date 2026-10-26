@@ -73,9 +73,6 @@
             {
               "id": "bool",
               "title": {
-                "en": "Boolean"
-              },
-              "label": {
                 "en": "Boolean",
                 "fr": "Booléen"
               }
@@ -83,9 +80,6 @@
             {
               "id": "number",
               "title": {
-                "en": "Number"
-              },
-              "label": {
                 "en": "Number",
                 "fr": "Nombre"
               }
@@ -93,9 +87,6 @@
             {
               "id": "string",
               "title": {
-                "en": "String"
-              },
-              "label": {
                 "en": "String",
                 "fr": "Texte"
               }
@@ -103,9 +94,6 @@
             {
               "id": "json",
               "title": {
-                "en": "JSON"
-              },
-              "label": {
                 "en": "JSON"
               }
             }

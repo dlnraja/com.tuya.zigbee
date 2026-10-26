@@ -169,10 +169,6 @@
               "id": "off",
               "title": {
                 "en": "Always Off",
-                "nl": "Altijd Uit"
-              },
-              "label": {
-                "en": "Always Off",
                 "nl": "Altijd Uit",
                 "fr": "Toujours éteint"
               }
@@ -181,10 +177,6 @@
               "id": "normal",
               "title": {
                 "en": "On when Switch ON",
-                "nl": "Aan bij AAN"
-              },
-              "label": {
-                "en": "On when Switch ON",
                 "nl": "Aan bij AAN",
                 "fr": "Allumé quand l'interrupteur est allumé"
               }
@@ -192,10 +184,6 @@
             {
               "id": "inverted",
               "title": {
-                "en": "On when Switch OFF",
-                "nl": "Aan bij UIT"
-              },
-              "label": {
                 "en": "On when Switch OFF",
                 "nl": "Aan bij UIT",
                 "fr": "Allumé quand l'interrupteur est éteint"
@@ -232,10 +220,6 @@
               "id": "off",
               "title": {
                 "en": "Always Off",
-                "nl": "Altijd Uit"
-              },
-              "label": {
-                "en": "Always Off",
                 "nl": "Altijd Uit",
                 "fr": "Toujours éteint"
               }
@@ -244,10 +228,6 @@
               "id": "on",
               "title": {
                 "en": "Always On",
-                "nl": "Altijd Aan"
-              },
-              "label": {
-                "en": "Always On",
                 "nl": "Altijd Aan",
                 "fr": "Toujours allumé"
               }
@@ -255,10 +235,6 @@
             {
               "id": "memory",
               "title": {
-                "en": "Last State",
-                "nl": "Laatste status"
-              },
-              "label": {
                 "en": "Last State",
                 "nl": "Laatste status",
                 "fr": "Dernier état"
@@ -296,21 +272,13 @@
               "title": {
                 "en": "Toggle",
                 "nl": "Tuimelschakelaar",
-                "de": "Umschalten"
-              },
-              "label": {
-                "en": "Toggle",
-                "nl": "Tuimelschakelaar",
+                "de": "Umschalten",
                 "fr": "Basculer"
               }
             },
             {
               "id": "state",
               "title": {
-                "en": "State (Rocker)",
-                "nl": "Status (Wipschakelaar)"
-              },
-              "label": {
                 "en": "State (Rocker)",
                 "nl": "Status (Wipschakelaar)",
                 "fr": "État (bascule)"
@@ -319,10 +287,6 @@
             {
               "id": "momentary",
               "title": {
-                "en": "Momentary (Push Button)",
-                "nl": "Pulsdrukknop"
-              },
-              "label": {
                 "en": "Momentary (Push Button)",
                 "nl": "Pulsdrukknop",
                 "fr": "Momentané (bouton poussoir)"
@@ -358,9 +322,6 @@
             {
               "id": "auto",
               "title": {
-                "en": "Auto (Normal + flows)"
-              },
-              "label": {
                 "en": "Auto (Normal + flows)",
                 "fr": "Auto (normal + flows)"
               }
@@ -368,9 +329,6 @@
             {
               "id": "magic",
               "title": {
-                "en": "Magic (Scene only)"
-              },
-              "label": {
                 "en": "Magic (Scene only)",
                 "fr": "Magique (scène uniquement)"
               }
@@ -378,9 +336,6 @@
             {
               "id": "both",
               "title": {
-                "en": "Both (Load + scene)"
-              },
-              "label": {
                 "en": "Both (Load + scene)",
                 "fr": "Les deux (charge + scène)"
               }
