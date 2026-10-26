@@ -2,6 +2,7 @@
 // P3075: forum search tools print a link + topic (never the other person's title), and the
 // reports inventory lists every guard step, including the P3074 personal-data guard.
 const assert = require('assert');
+const { describe, it } = require('../_support/dual-runner');
 const fs = require('fs');
 const path = require('path');
 const ROOT = path.join(__dirname, '..', '..');

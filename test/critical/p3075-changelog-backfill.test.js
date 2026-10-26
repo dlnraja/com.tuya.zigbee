@@ -1,6 +1,7 @@
 'use strict';
 // P3075 (t587u): old changelog entries rewritten as granular en/fr notes, versions untouched.
 const assert = require('assert');
+const { describe, it } = require('../_support/dual-runner');
 const fs = require('fs');
 const path = require('path');
 const ROOT = path.join(__dirname, '..', '..');
