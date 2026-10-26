@@ -1,8 +1,21 @@
 'use strict';
 const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
+const { climateModeFromValue, climateValueFromMode } = require('../../lib/tuya-local/TuyaDeviceTemplates');
 
 const MODE_MAP = { 0: 'off', 1: 'heat', 2: 'auto', 3: 'eco' };
 const MODE_REV = { off: 0, heat: 1, auto: 2, eco: 3 };
+// WHY(2026-10-10): string firmwares (tuya-local hvac_mode vocabularies: hot/cold/auto, manual/program…) were
+// passed through untouched, which is not a valid thermostat_mode value. Learn the vocabulary per device and
+// convert both ways; integer firmwares keep MODE_MAP/MODE_REV unchanged.
+const STRING_MODE_SETS = ['auto_cold_hot', 'cool_heat_fan', 'manual_auto', 'manual_program'];
+const HOMEY_MODES = new Set(['auto', 'heat', 'cool', 'off']);
+function homeyModeFromToken(v) {
+  for (const set of STRING_MODE_SETS) {
+    const m = climateModeFromValue(v, set);
+    if (m) {return { set, mode: HOMEY_MODES.has(m) ? m : (m === 'heat_cool' ? 'auto' : null) };}
+  }
+  return null;
+}
 
 class WiFiThermostatDevice extends TuyaLocalDevice {
 
@@ -18,10 +31,21 @@ class WiFiThermostatDevice extends TuyaLocalDevice {
       '4':  { capability: 'thermostat_mode', writable: true,
         transform: (v) => {
           this._scheduleModeRefresh();
-          if (typeof v === 'string') {return MODE_MAP[Object.keys(MODE_REV).indexOf(v)] || v;}
+          if (typeof v === 'string') {
+            const hit = homeyModeFromToken(v);
+            if (hit) { this._modeTokenSet = hit.set; if (hit.mode) {return hit.mode;} }
+            return MODE_MAP[Object.keys(MODE_REV).indexOf(v)] || v;
+          }
+          this._modeTokenSet = null;
           return MODE_MAP[v] || 'heat';
         },
-        reverseTransform: (v) => MODE_REV[v] !== undefined ? MODE_REV[v] : 1 },
+        reverseTransform: (v) => {
+          if (this._modeTokenSet) {
+            const token = climateValueFromMode(v, this._modeTokenSet);
+            if (token !== null) {return token;}
+          }
+          return MODE_REV[v] !== undefined ? MODE_REV[v] : 1;
+        } },
       '5':  { capability: 'unknown' }, // system mode | tuya-local: "fan_mode" (x24/68 devices)
       '7':  { capability: 'child_lock', writable: true, transform: (v) => v === true || v === 1, reverseTransform: (v) => v === true }, // tuya-local: "lock" (x20/68 devices)
       '12': { capability: 'unknown' }, // child_lock
