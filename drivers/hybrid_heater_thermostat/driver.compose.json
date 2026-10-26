@@ -122,6 +122,8 @@
       "type": "number",
       "label": {
         "en": "Temperature Offset (°C)",
+        "nl": "Temperatuurcorrectie (°C)",
+        "de": "Temperaturversatz (°C)",
         "fr": "Décalage Température (°C)"
       },
       "value": 0,
@@ -158,6 +160,8 @@
       "type": "dropdown",
       "label": {
         "en": "Power Measurement Scale",
+        "nl": "Schaal vermogensmeting",
+        "de": "Skalierung der Leistungsmessung",
         "fr": "Échelle de puissance"
       },
       "value": "1",

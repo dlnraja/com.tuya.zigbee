@@ -90,6 +90,8 @@
       "type": "dropdown",
       "label": {
         "en": "Battery Type",
+        "nl": "Batterijtype",
+        "de": "Batterietyp",
         "fr": "Type de pile"
       },
       "value": "CR2032",
