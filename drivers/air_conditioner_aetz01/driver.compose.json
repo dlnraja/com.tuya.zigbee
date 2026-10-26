@@ -1,0 +1,152 @@
+{
+  "id": "air_conditioner_aetz01",
+  "name": {
+    "en": "Air conditioner (Tuya AETZ01_AC)",
+    "fr": "Climatiseur (Tuya AETZ01_AC)",
+    "nl": "Airconditioner (Tuya AETZ01_AC)",
+    "de": "Klimaanlage (Tuya AETZ01_AC)"
+  },
+  "class": "thermostat",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "onoff",
+    "target_temperature",
+    "measure_temperature",
+    "hvac_system_mode",
+    "fan_mode",
+    "measure_power",
+    "meter_power"
+  ],
+  "capabilitiesOptions": {
+    "target_temperature": {
+      "min": 16,
+      "max": 30,
+      "step": 1
+    },
+    "hvac_system_mode": {
+      "values": [
+        {
+          "id": "cool",
+          "title": {
+            "en": "Cool",
+            "fr": "Froid"
+          }
+        },
+        {
+          "id": "dry",
+          "title": {
+            "en": "Dry",
+            "fr": "Déshumidification"
+          }
+        },
+        {
+          "id": "fan_only",
+          "title": {
+            "en": "Fan only",
+            "fr": "Ventilation"
+          }
+        }
+      ]
+    }
+  },
+  "images": {
+    "small": "/drivers/air_conditioner_aetz01/assets/images/small.png",
+    "large": "/drivers/air_conditioner_aetz01/assets/images/large.png"
+  },
+  "settings": [
+    {
+      "id": "aetz01_swing",
+      "type": "checkbox",
+      "label": {
+        "en": "Swing",
+        "fr": "Oscillation",
+        "nl": "Swing",
+        "de": "Schwenken"
+      },
+      "value": false
+    },
+    {
+      "id": "aetz01_sleep",
+      "type": "checkbox",
+      "label": {
+        "en": "Sleep mode",
+        "fr": "Mode nuit",
+        "nl": "Slaapmodus",
+        "de": "Schlafmodus"
+      },
+      "value": false
+    },
+    {
+      "id": "aetz01_turbo",
+      "type": "checkbox",
+      "label": {
+        "en": "Turbo mode",
+        "fr": "Mode turbo",
+        "nl": "Turbomodus",
+        "de": "Turbomodus"
+      },
+      "value": false
+    },
+    {
+      "id": "aetz01_quiet",
+      "type": "checkbox",
+      "label": {
+        "en": "Quiet mode",
+        "fr": "Mode silencieux",
+        "nl": "Stille modus",
+        "de": "Leiser Modus"
+      },
+      "value": false
+    },
+    {
+      "id": "energy_source",
+      "type": "label",
+      "value": "default",
+      "label": {
+        "en": "Power value source",
+        "fr": "Origine de la puissance",
+        "de": "Herkunft des Leistungswerts",
+        "nl": "Bron van de vermogenswaarde"
+      }
+    },
+    {
+      "$extends": [
+        "zcl_cluster_layer"
+      ]
+    }
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_snfdqllf",
+      "_tze200_snfdqllf"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5
+        ],
+        "bindings": []
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Hold the pairing button of the AC module for 5 seconds until its LED blinks quickly.",
+        "fr": "Maintenez le bouton d’appairage du module de climatisation 5 secondes jusqu’à ce que sa LED clignote rapidement."
+      }
+    }
+  },
+  "metadata": {
+    "source": "zigbee-herdsman-converters tuya.ts AETZ01_AC (_TZE200_snfdqllf, Tuya smart air conditioner): DP1 on/off, DP2 setpoint 16-30 C, DP3 room temperature, DP4 mode cool/dry/fan_only (enum 0/1/2), DP5 fan low/medium/high/auto (enum 0-3), DP30 swing, DP25 sleep, DP102 turbo, DP103 quiet, DP116 power W, DP117 energy kWh. Moved out of device_radiator_valve. Reimplemented and credited (P3068), no upstream code copied."
+  }
+}

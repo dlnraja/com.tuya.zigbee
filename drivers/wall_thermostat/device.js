@@ -63,6 +63,9 @@ const BAC002_DATA_POINTS = {
 };
 const BAC002_QUERY_DPS = [1, 2, 4, 16, 24, 28, 40];
 const FCU_SIGNAL_DPS = new Set([28, 36, 101]);
+// P3068: pilot-wire thermostats whose DP101 is a metering value, not the FCU manual flag. Before P3067 a DP101
+// report armed the FCU path and persisted wall_thermo_fcu; for these the flag is ignored (capabilities kept).
+const NEVER_FCU_MFRS = ['_tze204_0hcjew5p'];
 const SYSTEM_MODE_RX = { 0: 'cool', 1: 'heat', 2: 'fan_only' };
 const SYSTEM_MODE_TX = { cool: 0, heat: 1, fan_only: 2 };
 const FAN_MODE_RX = { 0: 'low', 1: 'medium', 2: 'high', 3: 'auto' };
@@ -137,7 +140,33 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
     return this._bac002;
   }
 
+  _isNeverFcu() {
+    const { mfr } = this._resolveMfrPid();
+    return NEVER_FCU_MFRS.some((m) => equalsCI(mfr, m));
+  }
+
+  /**
+   * P3068: a pilot-wire device wrongly armed as FCU keeps thermostat_mode / fan_mode (never removed), but
+   * they are no longer updated nor listened to; once per device they are labelled unused (best effort,
+   * the SDK has no way to hide a capability without removing it).
+   */
+  _markFcuCapsUnused() {
+    if (this.getStoreValue?.('wall_thermo_fcu_unused_marked') === true) { return; }
+    const titles = {
+      thermostat_mode: { en: 'Mode (unused)', fr: 'Mode (inutilisé)' },
+      fan_mode: { en: 'Fan mode (unused)', fr: 'Mode ventilateur (inutilisé)' },
+    };
+    let touched = false;
+    for (const [cap, title] of Object.entries(titles)) {
+      if (!this.hasCapability?.(cap)) { continue; }
+      touched = true;
+      Promise.resolve(this.setCapabilityOptions?.(cap, { title, preventInsights: true })).catch(() => {});
+    }
+    if (touched) { Promise.resolve(this.setStoreValue?.('wall_thermo_fcu_unused_marked', true)).catch(() => {}); }
+  }
+
   _isFcuCouple() {
+    if (this._isNeverFcu()) { return false; }
     if (this.getStoreValue?.('wall_thermo_fcu') === true || this._fcuSignalSeen) {
       return true;
     }
@@ -246,6 +275,7 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
 
   async _armFcu(reason = 'signal') {
     if (this._fcu) {return;}
+    if (this._isNeverFcu()) { return; }
     this._fcu = true;
     this._fcuSignalSeen = true;
     try { await this.setStoreValue?.('wall_thermo_fcu', true); } catch (_) { /* ignore */ }
@@ -264,7 +294,12 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
 
     // Persist / restore FCU arm from prior session (Adam re-pair churn)
     if (this.getStoreValue?.('wall_thermo_fcu') === true) {
-      this._fcuSignalSeen = true;
+      if (this._isNeverFcu()) {
+        this.log('[WALL-THERMO] P3068 stored FCU flag ignored for a pilot-wire thermostat');
+        this._markFcuCapsUnused();
+      } else {
+        this._fcuSignalSeen = true;
+      }
     }
     if (this.getStoreValue?.('wall_thermo_fcu_manual_ok') === true) {
       this._fcuManualDpConfirmed = true;

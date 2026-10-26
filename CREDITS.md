@@ -474,5 +474,6 @@ A heartfelt thank you to:
 - Batch P3067 (energy estimates): **the Home Assistant powercalc authors** (idea of a per-brightness lookup table and
   standby power); default watts are our own approximations, each with its reason in `data/energy/default-power.json`.
 - Batch P3067 (thermostat metering): **the zigbee-herdsman-converters contributors** (`tuya.ts` AETZ01_AC, TWC-R01, TH-P1Z metering DPs and scales).
+- Batch P3068 (one couple, one driver): **the zigbee-herdsman-converters contributors** (`tuya.ts` AETZ01_AC, ZG-103V, TS0601_fan_5_levels_and_light_5_levels; `mercator.ts` SISWD11-ZB) and **Mercator Ikuü** (SISWD11-ZB specification sheet). Facts only, own implementation.
 - And every forum member and GitHub issue reporter who sent a fingerprint, a diagnostic or a "this works now":
   you are listed by handle in the sections above, and new names are added with each batch.
