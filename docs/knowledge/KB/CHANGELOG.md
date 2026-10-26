@@ -13,3 +13,4 @@
 - 2026-10-26 content f5db4a732503: 87 files updated, 93 total
 - 2026-10-26 kb-daily: UNKNOWN_COMMANDS +2 rows (EF00 0x25 reply framing checked vs Z2M/ZHA; 0xED00 segmented DP transfer of Moes ZM7LT3/ZM6LT1, provisional), 7 couples parked for publish budget, see ../UPSTREAM_DAILY_2026-10-26.md
 - 2026-10-26 weekly upstream check: P3060 two's complement negative power in packed phase DPs (zhc lib/tuya.ts); 4 more couples parked and 6 wrong-class leads, see ../UPSTREAM_WEEKLY_2026-10-26.md
+- 2026-10-26 content 927e28569925: 26 files updated, 93 total
