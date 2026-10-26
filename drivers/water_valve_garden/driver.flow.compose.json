@@ -5,7 +5,9 @@
       "highlight": true,
       "title": {
         "en": "Valve opened",
-        "fr": "Vanne ouverte"
+        "fr": "Vanne ouverte",
+        "de": "Ventil geöffnet",
+        "nl": "Klep geopend"
       },
       "args": [],
       "titleFormatted": {
@@ -79,7 +81,9 @@
       "id": "water_valve_garden_open",
       "title": {
         "en": "Open valve",
-        "fr": "Ouvrir la vanne"
+        "fr": "Ouvrir la vanne",
+        "de": "Ventil öffnen",
+        "nl": "Klep openen"
       },
       "args": [],
       "titleFormatted": {
@@ -91,7 +95,9 @@
       "id": "water_valve_garden_close",
       "title": {
         "en": "Close valve",
-        "fr": "Fermer la vanne"
+        "fr": "Fermer la vanne",
+        "de": "Ventil schließen",
+        "nl": "Klep sluiten"
       },
       "args": [],
       "titleFormatted": {
