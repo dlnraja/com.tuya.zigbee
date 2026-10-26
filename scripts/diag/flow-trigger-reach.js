@@ -4,7 +4,7 @@
 // mapped in config/flow/dead-flow-autowire.json (fired on capability change). The rest are
 // 'orphans': declared but never fired. Read-only. Usage: node scripts/diag/flow-trigger-reach.js [root] [--list]
 const fs = require('fs'), path = require('path');
-const root = require.main === module && process.argv[2] ? process.argv[2] : path.join(__dirname, '..', '..');
+const root = require.main === module && process.argv[2] && !process.argv[2].startsWith('--') ? process.argv[2] : path.join(__dirname, '..', '..');
 const files = [];
 const walk = (d) => { for (const e of fs.readdirSync(d, { withFileTypes: true })) { if (e.name === 'node_modules' || e.name.startsWith('.')) continue; const p = path.join(d, e.name); if (e.isDirectory()) walk(p); else if (e.name.endsWith('.js')) files.push(p); } };
 for (const d of ['lib', 'drivers']) walk(path.join(root, d));

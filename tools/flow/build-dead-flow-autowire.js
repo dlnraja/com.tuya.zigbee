@@ -152,6 +152,10 @@ function literalJsIds() {
   };
 }
 
+// P3065 D7: ids the generic suffix heuristic skips (a short template suffix such as `_off` matches)
+// although scripts/diag/flow-trigger-reach.js proves no code fires them. Verified one by one.
+const FORCE_TRIGGER_IDS = new Set(['universal_zigbee_motion_off']);
+
 function build({ auditFile, strict } = {}) {
   const dead = loadAuditDead(auditFile);
   const strictIds = strict === undefined ? !dead : Boolean(strict);
@@ -165,7 +169,7 @@ function build({ auditFile, strict } = {}) {
     try { flow = JSON.parse(fs.readFileSync(f, 'utf8')); } catch (_) { continue; }
     const caps = driverCaps(dir);
     for (const t of flow.triggers || []) {
-      if (!t || !t.id || (dead && !dead.has(t.id)) || literal.has(t.id, dir, strictIds)) {continue;}
+      if (!t || !t.id || (dead && !dead.has(t.id)) || (!FORCE_TRIGGER_IDS.has(t.id) && literal.has(t.id, dir, strictIds))) {continue;}
       const title = normTitle(t.title && t.title.en);
       for (const [re, prefs, when] of TRIGGER_RULES) {
         if (!re.test(title)) {continue;}
