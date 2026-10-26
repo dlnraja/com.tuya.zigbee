@@ -12,6 +12,7 @@
 - **P3021c:** dedicated `switch_2gang_ts0002` driver for `_TZ3000_amal63is` + TS0002; power-vs-energy sanity check; ZG-102ZL contact default inverse; soil sensor DP guards.
 
 ### Fixed (2026-10-26, P3066 parked datapoints + catalogue doubt, master soak)
+- `_TZE284_6ycgarab` (Tuya dual smoke + CO alarm): the fingerprint hint now names `smoke_sensor`, the driver that pairs it, instead of `smoke_detector_advanced`. Pairing is unchanged.
 - **Tuya DIN meter `_TZE200/_TZE204_lsanae15` (Z2M TS0601_din_2):** DP1 is now read as energy (/100 kWh), not as the relay; voltage, current and power come from the packed DP6; the relay is DP16 (read and write).
 - **BAC-001 fan-coil thermostat `_TZE204_hpkusvom`:** starts on the fan-coil path (cool/heat/fan only, fan speed) instead of the floor-heating path; no extra write.
 - **Dimmer knob with two lights `_TZE200/_TZE284_tgeqdjgk`:** on/off and brightness use the knob's own datapoints (102/103); colour temperature (DP107) appears after the first report and can be set.
