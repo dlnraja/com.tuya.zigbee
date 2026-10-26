@@ -2491,6 +2491,7 @@
       "type": "group",
       "label": {
         "en": "Sensor Calibration",
+        "fr": "Étalonnage du capteur",
         "nl": "Sensor Kalibratie"
       },
       "children": [
@@ -2499,6 +2500,7 @@
           "type": "number",
           "label": {
             "en": "Temperature offset",
+            "fr": "Décalage de température",
             "nl": "Temperatuur correctie"
           },
           "hint": {
@@ -2516,6 +2518,7 @@
           "type": "number",
           "label": {
             "en": "Humidity offset",
+            "fr": "Décalage d'humidité",
             "nl": "Luchtvochtigheid correctie"
           },
           "hint": {

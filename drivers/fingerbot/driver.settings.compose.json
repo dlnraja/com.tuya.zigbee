@@ -3,7 +3,8 @@
     "id": "reverse",
     "type": "checkbox",
     "label": {
-      "en": "Reverse mode"
+      "en": "Reverse mode",
+      "fr": "Mode inversé"
     },
     "hint": {
       "en": "Enable reverse operation mode."
@@ -13,7 +14,8 @@
     "id": "lower_limit",
     "type": "number",
     "label": {
-      "en": "Lower movement limit (%)"
+      "en": "Lower movement limit (%)",
+      "fr": "Limite basse de mouvement (%)"
     },
     "hint": {
       "en": "Set the lower limit of the Finger Bot's movement (in percentage)."
@@ -27,7 +29,8 @@
     "id": "upper_limit",
     "type": "number",
     "label": {
-      "en": "Upper movement limit (%)"
+      "en": "Upper movement limit (%)",
+      "fr": "Limite haute de mouvement (%)"
     },
     "hint": {
       "en": "Set the upper limit of the Finger Bot's movement (in percentage)."
@@ -41,7 +44,8 @@
     "id": "delay",
     "type": "number",
     "label": {
-      "en": "Delay (seconds)"
+      "en": "Delay (seconds)",
+      "fr": "Délai (secondes)"
     },
     "hint": {
       "en": "Set the sustain time for the Finger Bot (in seconds)."
@@ -55,7 +59,8 @@
     "id": "touch",
     "type": "checkbox",
     "label": {
-      "en": "Touch control"
+      "en": "Touch control",
+      "fr": "Commande tactile"
     },
     "hint": {
       "en": "Enable touch control for the Finger Bot."

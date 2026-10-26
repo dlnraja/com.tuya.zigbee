@@ -45,7 +45,8 @@
           "id": "minBrightness",
           "type": "number",
           "label": {
-            "en": "Minimum Brightness (%)"
+            "en": "Minimum Brightness (%)",
+            "fr": "Luminosité minimale (%)"
           },
           "value": 0,
           "attr": {
@@ -58,7 +59,8 @@
           "id": "maxBrightness",
           "type": "number",
           "label": {
-            "en": "Maximum Brightness (%)"
+            "en": "Maximum Brightness (%)",
+            "fr": "Luminosité maximale (%)"
           },
           "value": 100,
           "attr": {

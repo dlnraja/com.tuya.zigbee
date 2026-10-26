@@ -2,7 +2,7 @@
   {
     "id": "temperature_offset",
     "type": "number",
-    "label": { "en": "Temperature offset (°C)" },
+    "label": { "en": "Temperature offset (°C)", "fr": "Décalage de température (°C)" },
     "hint": {
       "en": "Set a value to compensate a temperature offset.\nRange: -10 - 10, step size 0.1, \ndefault: 0 [°C]"
     },
@@ -12,7 +12,7 @@
   {
     "id": "temperature_decimals",
     "type": "radio",
-    "label": { "en": "Temperature reporting decimals" },
+    "label": { "en": "Temperature reporting decimals", "fr": "Décimales du rapport de température" },
     "value": "1",
     "values": [
       { "id": "1", "label": { "en": "Report temperature value with 1 decimal (21.4 °C)" } },
@@ -24,6 +24,7 @@
     "type": "number",
     "label": {
       "en": "Humidity offset (%)",
+      "fr": "Décalage d'humidité (%)",
       "nl": "Luchtvochtigheids compensatie (%)"
     },
     "hint": {
@@ -37,7 +38,7 @@
   {
     "id": "humidity_decimals",
     "type": "radio",
-    "label": { "en": "Humidity reporting" },
+    "label": { "en": "Humidity reporting", "fr": "Rapport d'humidité" },
     "value": "1",
     "values": [
       { "id": "1", "label": { "en": "Report humidity value with 1 decimal (35.2 %)" } },
@@ -60,7 +61,7 @@
       {
         "id": "temperature_alarm_mode",
         "type": "dropdown",
-        "label": { "en": "Temperature alarm mode" },
+        "label": { "en": "Temperature alarm mode", "fr": "Mode d'alarme de température" },
         "value": "off",
         "values": [
           { "id": "off", "label": { "en": "Off" } },
@@ -71,7 +72,7 @@
       {
         "id": "humidity_alarm_mode",
         "type": "dropdown",
-        "label": { "en": "Humidity alarm mode" },
+        "label": { "en": "Humidity alarm mode", "fr": "Mode d'alarme d'humidité" },
         "value": "off",
         "values": [
           { "id": "off", "label": { "en": "Off" } },
@@ -82,28 +83,28 @@
       {
         "id": "alarm_temperature_max",
         "type": "number",
-        "label": { "en": "Alarm temperature max (°C)" },
+        "label": { "en": "Alarm temperature max (°C)", "fr": "Température d'alarme max. (°C)" },
         "value": 40,
         "attr": { "min": -40, "max": 80, "step": 1 }
       },
       {
         "id": "alarm_temperature_min",
         "type": "number",
-        "label": { "en": "Alarm temperature min (°C)" },
+        "label": { "en": "Alarm temperature min (°C)", "fr": "Température d'alarme min. (°C)" },
         "value": 10,
         "attr": { "min": -40, "max": 80, "step": 1 }
       },
       {
         "id": "alarm_humidity_max",
         "type": "number",
-        "label": { "en": "Alarm humidity max (%)" },
+        "label": { "en": "Alarm humidity max (%)", "fr": "Humidité d'alarme max. (%)" },
         "value": 90,
         "attr": { "min": 0, "max": 100, "step": 1 }
       },
       {
         "id": "alarm_humidity_min",
         "type": "number",
-        "label": { "en": "Alarm humidity min (%)" },
+        "label": { "en": "Alarm humidity min (%)", "fr": "Humidité d'alarme min. (%)" },
         "value": 20,
         "attr": { "min": 0, "max": 100, "step": 1 }
       }
