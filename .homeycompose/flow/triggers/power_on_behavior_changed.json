@@ -1,0 +1,52 @@
+{
+  "id": "power_on_behavior_changed",
+  "title": {
+    "en": "Power-on behavior changed",
+    "fr": "Comportement à la mise sous tension modifié",
+    "nl": "Gedrag na stroomuitval gewijzigd",
+    "de": "Einschaltverhalten geändert"
+  },
+  "titleFormatted": {
+    "en": "Power-on behavior of [[device]] changed",
+    "fr": "Comportement à la mise sous tension de [[device]] modifié",
+    "nl": "Gedrag bij inschakelen van [[device]] gewijzigd",
+    "de": "Einschaltverhalten von [[device]] geändert"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=power_on_behavior",
+      "title": {
+        "en": "Device",
+        "fr": "Appareil",
+        "nl": "Apparaat",
+        "de": "Gerät"
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "name": "behavior",
+      "type": "string",
+      "title": {
+        "en": "Behavior",
+        "fr": "Comportement",
+        "nl": "Gedrag",
+        "de": "Verhalten"
+      },
+      "example": "previous"
+    },
+    {
+      "name": "previous",
+      "type": "string",
+      "title": {
+        "en": "Previous behavior",
+        "fr": "Comportement précédent",
+        "nl": "Vorig gedrag",
+        "de": "Vorheriges Verhalten"
+      },
+      "example": "off"
+    }
+  ]
+}

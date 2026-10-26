@@ -1,0 +1,28 @@
+{
+  "id": "frost_protection_is_on",
+  "title": {
+    "en": "Frost protection !{{is|is not}} on",
+    "fr": "Protection antigel !{{activée|désactivée}}",
+    "nl": "Vorstbeveiliging !{{staat|staat niet}} aan",
+    "de": "Frostschutz !{{ist|ist nicht}} an"
+  },
+  "titleFormatted": {
+    "en": "Frost protection of [[device]] !{{is|is not}} on",
+    "fr": "Le hors-gel de [[device]] !{{est|n'est pas}} activé",
+    "nl": "Vorstbeveiliging van [[device]] !{{staat|staat niet}} aan",
+    "de": "Frostschutz von [[device]] !{{ist|ist nicht}} an"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=frost_protection",
+      "title": {
+        "en": "Device",
+        "fr": "Appareil",
+        "nl": "Apparaat",
+        "de": "Gerät"
+      }
+    }
+  ]
+}

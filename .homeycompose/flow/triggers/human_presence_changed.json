@@ -1,0 +1,80 @@
+{
+  "id": "human_presence_changed",
+  "title": {
+    "en": "Human presence changed",
+    "fr": "Présence humaine modifiée",
+    "nl": "Menselijke aanwezigheid gewijzigd",
+    "de": "Personenanwesenheit geändert"
+  },
+  "titleFormatted": {
+    "en": "Human presence on [[device]] became [[state]]",
+    "fr": "Présence humaine sur [[device]] : [[state]]",
+    "nl": "Aanwezigheid op [[device]] werd [[state]]",
+    "de": "Anwesenheit an [[device]] wurde [[state]]"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=alarm_human",
+      "title": {
+        "en": "Device",
+        "fr": "Appareil",
+        "nl": "Apparaat",
+        "de": "Gerät"
+      }
+    },
+    {
+      "type": "dropdown",
+      "name": "state",
+      "title": {
+        "en": "State",
+        "fr": "État",
+        "nl": "Status",
+        "de": "Zustand"
+      },
+      "values": [
+        {
+          "id": "present",
+          "label": {
+            "en": "present",
+            "fr": "présente",
+            "nl": "aanwezig",
+            "de": "anwesend"
+          }
+        },
+        {
+          "id": "absent",
+          "label": {
+            "en": "absent",
+            "fr": "absente",
+            "nl": "afwezig",
+            "de": "abwesend"
+          }
+        },
+        {
+          "id": "any",
+          "label": {
+            "en": "present or absent",
+            "fr": "présente ou absente",
+            "nl": "aanwezig of afwezig",
+            "de": "anwesend oder abwesend"
+          }
+        }
+      ]
+    }
+  ],
+  "tokens": [
+    {
+      "name": "state",
+      "type": "string",
+      "title": {
+        "en": "State",
+        "fr": "État",
+        "nl": "Status",
+        "de": "Zustand"
+      },
+      "example": "present"
+    }
+  ]
+}

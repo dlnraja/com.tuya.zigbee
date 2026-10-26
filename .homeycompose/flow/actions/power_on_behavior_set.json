@@ -1,0 +1,73 @@
+{
+  "id": "power_on_behavior_set",
+  "title": {
+    "en": "Set power-on behavior",
+    "fr": "Régler le comportement à la mise sous tension",
+    "nl": "Gedrag na stroomuitval instellen",
+    "de": "Einschaltverhalten einstellen"
+  },
+  "titleFormatted": {
+    "en": "Set power-on behavior of [[device]] to [[behavior]]",
+    "fr": "Comportement à la mise sous tension de [[device]] : [[behavior]]",
+    "nl": "Zet gedrag bij inschakelen van [[device]] op [[behavior]]",
+    "de": "Einschaltverhalten von [[device]] auf [[behavior]] setzen"
+  },
+  "hint": {
+    "en": "After a power cut the device stays off, turns on, or returns to its previous state.",
+    "fr": "Après une coupure de courant, l'appareil reste éteint, s'allume ou reprend son état précédent.",
+    "nl": "Na een stroomonderbreking blijft het apparaat uit, gaat het aan of keert het terug naar de vorige stand.",
+    "de": "Nach einem Stromausfall bleibt das Gerät aus, schaltet ein oder kehrt in den vorherigen Zustand zurück."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=power_on_behavior",
+      "title": {
+        "en": "Device",
+        "fr": "Appareil",
+        "nl": "Apparaat",
+        "de": "Gerät"
+      }
+    },
+    {
+      "type": "dropdown",
+      "name": "behavior",
+      "title": {
+        "en": "Behavior",
+        "fr": "Comportement",
+        "nl": "Gedrag",
+        "de": "Verhalten"
+      },
+      "values": [
+        {
+          "id": "off",
+          "label": {
+            "en": "off",
+            "fr": "éteint",
+            "nl": "uit",
+            "de": "aus"
+          }
+        },
+        {
+          "id": "on",
+          "label": {
+            "en": "on",
+            "fr": "allumé",
+            "nl": "aan",
+            "de": "an"
+          }
+        },
+        {
+          "id": "previous",
+          "label": {
+            "en": "previous state",
+            "fr": "état précédent",
+            "nl": "vorige stand",
+            "de": "vorheriger Zustand"
+          }
+        }
+      ]
+    }
+  ]
+}
