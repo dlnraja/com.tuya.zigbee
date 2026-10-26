@@ -10,3 +10,5 @@
 - 2026-10-25 content 00cea3958815: 1 files updated, 93 total
 - 2026-10-25 content bc1b1e53a8bb: 74 files updated, 93 total
 - 2026-10-25 content 0f4dbbe88d03: 8 files updated, 93 total
+- 2026-10-26 content f5db4a732503: 87 files updated, 93 total
+- 2026-10-26 kb-daily: UNKNOWN_COMMANDS +2 rows (EF00 0x25 reply framing checked vs Z2M/ZHA; 0xED00 segmented DP transfer of Moes ZM7LT3/ZM6LT1, provisional), 7 couples parked for publish budget, see ../UPSTREAM_DAILY_2026-10-26.md
