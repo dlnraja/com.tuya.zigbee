@@ -1,3 +1,10 @@
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: Publishes the private Bastien house app (its own app ID only); manual by default.
+# Ideas from (thank you): Athom's official Homey app GitHub Actions (athombv); the Homey developer docs on
+#   build channels.
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
+#   posting stays off or ledger-gated.
+# <<< about
 # Publish Zigbee Bastien (private house App ID only) — P2606 / P2738
 # Creates / updates Athom app com.dlnraja.tuya.zigbee.bastien
 # NEVER retargets Universal Tuya or Stable App IDs.
