@@ -10,6 +10,7 @@
  *
  *   node scripts/automation/changelog-backfill.js --dry [--limit N] [--from 9.0.1500] [--to 9.0.1601]
  *   node scripts/automation/changelog-backfill.js --write --limit 200
+ *   [--fill-fr] add a generated fr to English-only entries; [--max-commits 80] skip coarse ranges
  *   node scripts/automation/changelog-backfill.js --write --handwritten notes.json   (hand-written en/fr win)
  */
 const fs = require('fs');
@@ -82,9 +83,12 @@ function describe(subjects, { max = 4 } = {}) {
   for (const s of subjects || []) {
     const c = classify(s);
     if (!c) { internal++; continue; }
+    // Grouped by the first family a commit names; the other family it names is listed with it,
+    // so its model ids are never credited to a family on their own.
     const key = c.topics.length ? c.topics[0][0] : '';
     const g = groups[c.kind];
-    const cur = g.get(key) || { topic: c.topics[0] || null, models: new Set(), n: 0 };
+    const cur = g.get(key) || { key, topic: null, tops: new Map(), models: new Set(), n: 0 };
+    c.topics.forEach((t) => cur.tops.set(t[0], t[1]));
     c.models.forEach((x) => cur.models.add(x));
     cur.n++;
     g.set(key, cur);
@@ -94,12 +98,16 @@ function describe(subjects, { max = 4 } = {}) {
   for (const kind of ['feat', 'fix', 'perf']) {
     const items = { en: [], fr: [] };
     for (const [, v] of groups[kind]) {
+      // A second family that has its own item in this list is not repeated here.
+      const tops = [...v.tops].filter(([en]) => en === v.key || !groups[kind].has(en));
+      v.topic = tops.length ? [tops.map((t) => t[0]).join(' & '), tops.map((t) => t[1]).join(' & ')] : null;
       // Nothing a user can name (no device family, no model): counted, not listed.
       if (shown >= max || (!v.topic && !v.models.size)) { hidden += v.n; continue; }
       shown++;
       const ids = v.models.size ? ` (${[...v.models].slice(0, 3).join(', ')})` : '';
-      items.en.push((v.topic ? v.topic[0] : 'general reliability') + ids);
-      items.fr.push((v.topic ? v.topic[1] : 'fiabilité générale') + ids);
+      const gen = kind === 'fix' ? ['general reliability', 'fiabilité générale'] : ['device support', 'prise en charge des appareils'];
+      items.en.push((v.topic ? v.topic[0] : gen[0]) + ids);
+      items.fr.push((v.topic ? v.topic[1] : gen[1]) + ids);
     }
     if (items.en.length) {
       parts.en.push(`${KIND[kind][0]}: ${joinList(items.en, 'en')}.`);
@@ -164,7 +172,10 @@ function needsRewrite(entry, prevEntry) {
 }
 
 /** Rewrite in place (bounded by limit). Human English we wrote earlier is kept; only fr is added. */
-function backfill(obj, ranges, { limit = Infinity, from = null, to = null } = {}) {
+// fillFr: give an English-only entry a generated French note. Off by default, because the
+// generated French would not be a translation of the human English next to it.
+// maxCommits: a range wider than this is too coarse to describe one version honestly.
+function backfill(obj, ranges, { limit = Infinity, from = null, to = null, fillFr = false, maxCommits = 80 } = {}) {
   const keys = Object.keys(obj).filter((k) => /^\d+\.\d+\.\d+$/.test(k)).sort(CE.cmpVer);
   const changes = [];
   for (let i = 0; i < keys.length && changes.length < limit; i++) {
@@ -172,9 +183,10 @@ function backfill(obj, ranges, { limit = Infinity, from = null, to = null } = {}
     if (from && CE.cmpVer(v, from) < 0) continue;
     if (to && CE.cmpVer(v, to) > 0) continue;
     const why = needsRewrite(obj[v], obj[keys[i - 1]]);
-    if (!why) continue;
+    if (!why || (why === 'no-fr' && !fillFr)) continue;
     const subjects = ranges.get(v);
     if (!subjects) continue; // no bump commit on this branch: leave it, never guess
+    if (subjects.length > maxCommits) continue;
     const gen = describe(subjects);
     const before = obj[v];
     obj[v] = why === 'no-fr' ? { en: before.en, fr: gen.fr } : gen;
@@ -197,7 +209,7 @@ if (require.main === module) {
     manual.push({ version: v, why: 'handwritten', before: obj[v], after: e });
     obj[v] = { en: e.en, fr: e.fr };
   }
-  const changes = manual.concat(backfill(obj, ranges, { limit: Number(opt('--limit')) || Infinity, from: opt('--from'), to: opt('--to') }));
+  const changes = manual.concat(backfill(obj, ranges, { limit: Number(opt('--limit')) || Infinity, from: opt('--from'), to: opt('--to'), fillFr: args.includes('--fill-fr'), maxCommits: Number(opt('--max-commits')) || 80 }));
   if (args.includes('--write')) fs.writeFileSync(file, JSON.stringify(CE.orderChangelog(obj), null, 2) + '\n');
   if (args.includes('--json')) console.log(JSON.stringify(changes, null, 2));
   else console.log(`${changes.length} entr${changes.length === 1 ? 'y' : 'ies'} ${args.includes('--write') ? 'rewritten' : 'to rewrite'} (${ranges.size} versions mapped to commits)`);

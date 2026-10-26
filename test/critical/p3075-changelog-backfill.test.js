@@ -30,6 +30,15 @@ describe('P3075 changelog backfill', () => {
     assert.match(m.fr, /^Version de maintenance/);
   });
 
+  it('keeps a model with every family its commit names, and skips coarse ranges', () => {
+    const d = B.describe(['fix: TS0601 thermostat and curtain motor timing', 'fix: TS011F plug']);
+    assert.match(d.en, /thermostats & curtains and blinds \(TS0601\)/);
+    assert.doesNotMatch(d.en, /thermostats \(TS0601, TS011F\)/);
+    const obj = { '2.0.1': { en: 'Device compatibility and reliability improvements.' } };
+    const wide = new Map([['2.0.1', Array.from({ length: 200 }, (_, i) => 'fix: plug ' + i)]]);
+    assert.strictEqual(B.backfill(obj, wide).length, 0);
+  });
+
   it('finds version bumps by tag or subject', () => {
     assert.strictEqual(B.bumpOf('v9.0.1601: 459 drivers, 4335 FPs [skip ci]'), '9.0.1601');
     assert.strictEqual(B.bumpOf('chore(stable): v5.12.511 [skip ci]'), '5.12.511');
@@ -39,7 +48,9 @@ describe('P3075 changelog backfill', () => {
   it('never adds or removes versions and keeps human English', () => {
     const obj = { '1.0.2': { en: 'v1.0.2: automated publish, manifest sync, and Homey test promotion.' }, '1.0.1': { en: 'Radar distance re-arm and TS0043 pairing fix.' } };
     const ranges = new Map([['1.0.2', ['fix: radar presence TS0601']], ['1.0.1', ['fix: radar']]]);
-    const ch = B.backfill(obj, ranges);
+    const untouched = JSON.parse(JSON.stringify(obj));
+    assert.strictEqual(B.backfill(untouched, ranges).filter((c) => c.why === 'no-fr').length, 0, 'English-only kept as is by default');
+    const ch = B.backfill(obj, ranges, { fillFr: true });
     assert.deepStrictEqual(Object.keys(obj).sort(), ['1.0.1', '1.0.2']);
     assert.ok(!CE.isPlaceholder(obj['1.0.2'].en));
     assert.strictEqual(obj['1.0.1'].en, 'Radar distance re-arm and TS0043 pairing fix.');
