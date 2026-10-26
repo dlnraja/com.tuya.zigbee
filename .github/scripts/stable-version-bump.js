@@ -49,8 +49,12 @@ function setVersion(dir, v, { manifestsOnly = false } = {}) {
   if (fs.existsSync(cl)) {
     const j = readJson(cl);
     if (!j[v] || !String(j[v].en || '').trim()) {
-      j[v] = { en: process.env.HOMEY_CHANGELOG || 'Device compatibility and reliability improvements.' };
-      writeLikeOriginal(cl, j);
+      // P3069: a real HOMEY_CHANGELOG wins; otherwise a short en + fr line from our commits, newest first.
+      let ce = null;
+      try { ce = require('../../scripts/automation/changelog-entry'); } catch (_) { ce = null; }
+      const given = process.env.HOMEY_CHANGELOG || 'Device compatibility and reliability improvements.';
+      j[v] = ce && ce.isPlaceholder(given) ? ce.summarize(ce.subjectsSinceLastPublish(ROOT)) : { en: given };
+      writeLikeOriginal(cl, ce ? ce.orderChangelog(j) : j);
     }
   }
 }

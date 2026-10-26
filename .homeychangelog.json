@@ -1,99 +1,4 @@
 {
-  "5.12.509": {
-    "en": "Smoke and CO detectors: TS0601 models (_TZE284_6ycgarab, _TZE284_aoah6bv8, _TZE2841000000_6ycgarab, _TZE284_qvzsq3s2, _TZE200_qcasmfan) now report smoke, CO, battery and tamper (receive-only). The _TZE284_la2c2uo9 dimmer and nine TS0601 soil/climate couples point again to the driver that pairs them on this channel. Thanks to the Zigbee2MQTT / zigbee-herdsman-converters contributors.",
-    "fr": "Détecteurs de fumée et de CO : les modèles TS0601 (_TZE284_6ycgarab, _TZE284_aoah6bv8, _TZE2841000000_6ycgarab, _TZE284_qvzsq3s2, _TZE200_qcasmfan) remontent fumée, CO, batterie et sabotage (lecture seule). Le variateur _TZE284_la2c2uo9 et neuf couples TS0601 sol/climat pointent de nouveau vers le driver qui les appaire sur ce canal. Merci aux contributeurs de Zigbee2MQTT / zigbee-herdsman-converters."
-  },
-  "5.12.434": {
-    "en": "TRV me167 DP4 no longer steals battery; settings spinner dual fallback (P2822)."
-  },
-  "5.12.427": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.426": {
-    "en": "Blakadder recheck: misclassed couple moves (P2819)."
-  },
-  "5.12.422": {
-    "en": "P2818 mfs align gnpflcoq/fl8cuafl; drop master-only sacred-keep pins."
-  },
-  "5.12.421": {
-    "en": "4in1 mmWave DP map (PIR delay/sensitivity); ANTIK TRV soft ME167.",
-    "fr": "Mapping DP 4in1 mmWave; TRV ANTIK soft ME167."
-  },
-  "5.12.420": {
-    "en": "4in1 mmWave pairing + AOYAN soil water-leak cartesian fix.",
-    "fr": "Appairage 4in1 mmWave + fix cartesien AOYAN sol / fuite eau."
-  },
-  "5.12.417": {
-    "en": "Fixed multi-button release Flow cards and DP received trigger.",
-    "fr": "Correction des cartes Flow release multi-boutons et trigger DP."
-  },
-  "5.12.416": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.415": {
-    "en": "Improved soil sensor pairing reliability.",
-    "fr": "Fiabilite appairage capteurs sol."
-  },
-  "5.12.359": {
-    "en": "LCD temperature/humidity sensors answer time sync requests; better identity detection for sleepy sensors.",
-    "fr": "Capteurs LCD temperature/humidite: reponse aux demandes de synchronisation horaire; meilleure detection d identite des capteurs en veille."
-  },
-  "5.12.345": {
-    "en": "Radar: fix _TZE204_gkfbdvyx ghost capabilities, strip phantoms on ceiling 24G, fix 0m distance & presence lock (GH#550).",
-    "fr": "Radar: correction _TZE204_gkfbdvyx capacites fantomes plafond 24G, fix distance 0m et verrouillage presence (GH#550)."
-  },
-  "5.12.344": {
-    "en": "Sensors: AutoAdaptive anticrash protection, temperature & humidity sleep jump handling, battery replacement support. Update Test.",
-    "fr": "Capteurs: protection anticrash AutoAdaptive, gestion sauts sommeil temp/humidite, support remplacement pile. Maj Test."
-  },
-  "5.12.340": {
-    "en": "Remotes: snappy wake listen-only + skip MCU sync; lux/distance antiflood (Bastien house soak). Update Test.",
-    "fr": "Telecommandes: wake snappy listen-only + skip sync MCU; antiflood lux/distance (soak Bastien). Maj Test."
-  },
-  "5.12.336": {
-    "en": "Publish heal: scene remotes stay scene_switch_4 + ceiling radar P2725. Update Test.",
-    "fr": "Heal publish: scene remotes restent scene_switch_4 + radar P2725. Maj Test."
-  },
-  "5.12.335": {
-    "en": "Ceiling radar: sitting no false-clear; motion re-arm; lux less laggy. Update Test + Repair.",
-    "fr": "Radar plafond: immobilite sans false-clear; motion rearme; lux plus reactif. Maj Test + Repair."
-  },
-  "5.12.334": {
-    "en": "CI: align p2509 radar distance dual-scale assert (P2715/P2722). Update Test.",
-    "fr": "CI: align assert p2509 distance dual-scale (P2715/P2722). Maj Test."
-  },
-  "5.12.333": {
-    "en": "Publish heal: wkai4ga5/a4xycprs stay scene_switch_4. Update Test.",
-    "fr": "Publish heal: wkai4ga5/a4xycprs restent scene_switch_4. Maj Test."
-  },
-  "5.12.332": {
-    "en": "Ceiling radar: motion re-arms after stillness; distance display ~0.9. Update Test + Repair.",
-    "fr": "Radar plafond: motion se rearme apres immobilite; distance ~0.9. Maj Test + Repair."
-  },
-  "5.12.331": {
-    "en": "Reliability: snappy remotes no multi-second dead window on rapid toggle. Update Stable Test.",
-    "fr": "Fiabilite: telecommandes snappy sans fenetre morte multi-secondes. Maj Stable Test."
-  },
-  "5.12.330": {
-    "en": "Reliability: clear leftover LIVE-DATA overlay after OOM; less work on sleepy remote press. Update Stable Test.",
-    "fr": "Fiabilite: purge overlay LIVE-DATA apres OOM; moins de travail au press telecommande. Maj Stable Test."
-  },
-  "5.12.321": {
-    "en": "TS004x remotes: faster Flow to relay + TS0041 pairing bleed fix. Update Stable Test; re-pair Unknown button nodes.",
-    "fr": "Telecommandes TS004x: Flow vers relais plus rapide + correctif appairage TS0041. Maj Stable Test; re-appairer noeuds Inconnus."
-  },
-  "5.12.311": {
-    "en": "Publish heal: HOBEIAN OCR collisions + ZG-301Z sacred couple + energy safety (P2692). Update Test.",
-    "fr": "Heal publish: collisions OCR HOBEIAN + couple ZG-301Z + energie (P2692). Maj Test."
-  },
-  "5.12.310": {
-    "en": "Battery remotes: stop powerCfg TX storms that empty CR2032 (P2691). Update Test.",
-    "fr": "Telecommandes piles: stop tempetes powerCfg qui vident les CR2032 (P2691). Maj Test."
-  },
-  "5.12.297": {
-    "en": "HOBEIAN case-insensitive Athom forms + Z2M pids (P2677 BOTH).",
-    "fr": "HOBEIAN formes Athom caseless + pids Z2M (P2677 BOTH)."
-  },
   "changelog": [
     {
       "version": "5.12.81",
@@ -898,10 +803,6 @@
       ]
     }
   ],
-  "5.12.508": {
-    "en": "Thanks to the Zigbee2MQTT / zigbee-herdsman-converters contributors: SPM02V1-GT power meter now also matched with the exact TS0601 product id; DDS238-1-Z1 (_TZE204_byzdayie) now pairs only with the DIN-rail energy meter driver (thanks Z2M contributors). The _TZE284_la2c2uo9 dimmer is owned again by the 1-gang dimmer driver; the runtime hint for _TZ3210_7vgttna6 now points to the TS0001 fingerbot (Z2M TS0001_fingerbot).",
-    "fr": "Merci aux contributeurs de Zigbee2MQTT / zigbee-herdsman-converters : le compteur SPM02V1-GT est aussi reconnu avec l'identifiant produit exact TS0601 ; le DDS238-1-Z1 (_TZE204_byzdayie) s'appaire uniquement avec le driver compteur rail DIN (merci aux contributeurs Z2M). Le variateur _TZE284_la2c2uo9 revient au driver variateur 1 voie ; l'indice d'exécution de _TZ3210_7vgttna6 pointe vers le fingerbot TS0001 (Z2M TS0001_fingerbot)."
-  },
   "9.0.216": {
     "en": "Stability improvements and Homey test build recovery."
   },
@@ -1184,6 +1085,879 @@
   "9.0.53": {
     "en": "CRITICAL: sdkVersion fix (Processing failed), Missing Capability Listener (setable:false), timer fallback, battery restore, duplicate method fix, HOBEIAN ZG-301Z, NFKD normalize, 87 fingerprints restored, Polos validator",
     "fr": "CRITIQUE: sdkVersion (Processing failed), Missing Capability Listener, fallback timer, batterie, HOBEIAN, NFKD, 87 fingerprints, Polos"
+  },
+  "5.12.509": {
+    "en": "Smoke and CO detectors: TS0601 models (_TZE284_6ycgarab, _TZE284_aoah6bv8, _TZE2841000000_6ycgarab, _TZE284_qvzsq3s2, _TZE200_qcasmfan) now report smoke, CO, battery and tamper (receive-only). The _TZE284_la2c2uo9 dimmer and nine TS0601 soil/climate couples point again to the driver that pairs them on this channel. Thanks to the Zigbee2MQTT / zigbee-herdsman-converters contributors.",
+    "fr": "Détecteurs de fumée et de CO : les modèles TS0601 (_TZE284_6ycgarab, _TZE284_aoah6bv8, _TZE2841000000_6ycgarab, _TZE284_qvzsq3s2, _TZE200_qcasmfan) remontent fumée, CO, batterie et sabotage (lecture seule). Le variateur _TZE284_la2c2uo9 et neuf couples TS0601 sol/climat pointent de nouveau vers le driver qui les appaire sur ce canal. Merci aux contributeurs de Zigbee2MQTT / zigbee-herdsman-converters."
+  },
+  "5.12.508": {
+    "en": "Thanks to the Zigbee2MQTT / zigbee-herdsman-converters contributors: SPM02V1-GT power meter now also matched with the exact TS0601 product id; DDS238-1-Z1 (_TZE204_byzdayie) now pairs only with the DIN-rail energy meter driver (thanks Z2M contributors). The _TZE284_la2c2uo9 dimmer is owned again by the 1-gang dimmer driver; the runtime hint for _TZ3210_7vgttna6 now points to the TS0001 fingerbot (Z2M TS0001_fingerbot).",
+    "fr": "Merci aux contributeurs de Zigbee2MQTT / zigbee-herdsman-converters : le compteur SPM02V1-GT est aussi reconnu avec l'identifiant produit exact TS0601 ; le DDS238-1-Z1 (_TZE204_byzdayie) s'appaire uniquement avec le driver compteur rail DIN (merci aux contributeurs Z2M). Le variateur _TZE284_la2c2uo9 revient au driver variateur 1 voie ; l'indice d'exécution de _TZ3210_7vgttna6 pointe vers le fingerbot TS0001 (Z2M TS0001_fingerbot)."
+  },
+  "5.12.507": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.506": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.505": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "5.12.504": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.503": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.502": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.501": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "5.12.500": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "5.12.499": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "5.12.498": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.497": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.495": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.485": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "5.12.484": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.481": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.480": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.478": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.477": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.476": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "5.12.475": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.473": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.472": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.470": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.469": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.468": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.467": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.466": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.465": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "5.12.464": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.462": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.461": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.460": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.459": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.457": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.455": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.454": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.452": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.451": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.450": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.449": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.448": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.446": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.444": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.443": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.442": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.441": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.440": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "5.12.439": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "5.12.438": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "5.12.437": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "5.12.436": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.434": {
+    "en": "TRV me167 DP4 no longer steals battery; settings spinner dual fallback (P2822)."
+  },
+  "5.12.433": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.430": {
+    "en": "Forum fleet silent treat: sacred-keep + cartesian forbids (P2821)."
+  },
+  "5.12.429": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.427": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.426": {
+    "en": "Blakadder recheck: misclassed couple moves (P2819)."
+  },
+  "5.12.425": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "5.12.424": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.423": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.422": {
+    "en": "P2818 mfs align gnpflcoq/fl8cuafl; drop master-only sacred-keep pins."
+  },
+  "5.12.421": {
+    "en": "4in1 mmWave DP map (PIR delay/sensitivity); ANTIK TRV soft ME167.",
+    "fr": "Mapping DP 4in1 mmWave; TRV ANTIK soft ME167."
+  },
+  "5.12.420": {
+    "en": "4in1 mmWave pairing + AOYAN soil water-leak cartesian fix.",
+    "fr": "Appairage 4in1 mmWave + fix cartesien AOYAN sol / fuite eau."
+  },
+  "5.12.419": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.417": {
+    "en": "Fixed multi-button release Flow cards and DP received trigger.",
+    "fr": "Correction des cartes Flow release multi-boutons et trigger DP."
+  },
+  "5.12.416": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.415": {
+    "en": "Improved soil sensor pairing reliability.",
+    "fr": "Fiabilite appairage capteurs sol."
+  },
+  "5.12.414": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.413": {
+    "en": "Improved radiator valve and mmWave radar pairing for recent forum devices."
+  },
+  "5.12.412": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.411": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.410": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.408": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "5.12.407": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "5.12.406": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.405": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.402": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.400": {
+    "en": "P2761: Fantem ZB003-X motion locks; contact/doorbell/PIR off climate; tank DP2 cm."
+  },
+  "5.12.399": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.398": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.397": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.396": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.395": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.394": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.391": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "5.12.390": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.387": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.385": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.384": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.383": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.382": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.381": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.380": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.379": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.378": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.377": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "5.12.376": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.375": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.374": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.373": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "5.12.372": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "5.12.371": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "5.12.370": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "5.12.369": {
+    "en": "Device database and reliability updates.",
+    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
+  },
+  "5.12.368": {
+    "en": "Dimmers (2-gang dimmer module, dimmer wall switch, wall dimmer 1-gang) now use the Light device type, so the light ring and voice assistants treat them as lights. Paired devices switch once automatically; the device icon may change. Capabilities, IDs and flows are unchanged."
+  },
+  "5.12.367": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.366": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.365": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.364": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.363": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.362": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.361": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.360": {
+    "en": "Device compatibility and reliability improvements."
+  },
+  "5.12.359": {
+    "en": "LCD temperature/humidity sensors answer time sync requests; better identity detection for sleepy sensors.",
+    "fr": "Capteurs LCD temperature/humidite: reponse aux demandes de synchronisation horaire; meilleure detection d identite des capteurs en veille."
+  },
+  "5.12.358": {
+    "en": "Fixes: colour/CCT lights load again and keep colour temperature in range; smart plugs read power-on state, indicator and child lock independently; repeated unknown Tuya datapoints no longer flood the log.",
+    "fr": "Corrections : les ampoules couleur/CCT se chargent à nouveau et gardent une température de couleur valide ; les prises lisent état au démarrage, voyant et verrouillage séparément ; les datapoints Tuya inconnus répétés n’inondent plus le journal."
+  },
+  "5.12.357": {
+    "en": "Added support: TS011F smart plugs (_TZ3000_zgtbi4oy, _TZ3000_iiacqpdz, _TZ3000_dvqt7qrw), TS130F curtain modules (_TZ3000_vsj5o7dm, _TZ3000_os0wy3vh, _TZ3000_26gjlugm), TS0041 1-button remotes (_TZ3000_fa9mlvja, _TZ3000_vn88ezar). Multi-gang couple fixes from 5.12.356.",
+    "fr": "Support ajouté : prises TS011F (_TZ3000_zgtbi4oy, _TZ3000_iiacqpdz, _TZ3000_dvqt7qrw), modules volet TS130F (_TZ3000_vsj5o7dm, _TZ3000_os0wy3vh, _TZ3000_26gjlugm), télécommandes TS0041 1 bouton (_TZ3000_fa9mlvja, _TZ3000_vn88ezar). Corrections multi-gang de 5.12.356."
+  },
+  "5.12.355": {
+    "en": "fix(P2795): #554 TS0046/_TZ3000_iszegwpd pairs with 4-endpoint firmware (EP1–4 only).",
+    "fr": "fix(P2795): #554 TS0046/_TZ3000_iszegwpd appairage firmware 4 endpoints (EP1–4)."
+  },
+  "5.12.354": {
+    "en": "Device compatibility: 3-gang switch _TZ3000_lmcp6b0a / TS0003, 6-gang remote _TZ3000_iszegwpd / TS0046, contact sensor _TZ3000_bwjstafw / TS0203; pair-scoped firmware quirk fixes; LCD climate battery and WiFi repair fixes.",
+    "fr": "Compatibilite: interrupteur 3 voies _TZ3000_lmcp6b0a / TS0003, telecommande 6 boutons _TZ3000_iszegwpd / TS0046, capteur d'ouverture _TZ3000_bwjstafw / TS0203; correctifs firmware cibles; corrections batterie climat LCD et reparation WiFi."
+  },
+  "5.12.351": {
+    "en": "P2760 surgical Johan locks + refresh FP collision baseline (Stable)."
+  },
+  "5.12.350": {
+    "en": "P2759/P2760 CI heal: pay2byax anti-bot → contact_sensor_zigbee; siren safeSetCapabilityValue."
+  },
+  "5.12.349": {
+    "en": "Johan L99: Moes SR-ZS 3-gang, air-monitor couple lock, TS0207 leak enrich."
+  },
+  "5.12.348": {
+    "en": "Battery listen-only for coin cells; Johan couple collision locks (pay2byax / 6ycgarab)."
+  },
+  "5.12.347": {
+    "en": "Battery conservation: no proactive PowerCfg polls on coin-cell devices (P2757)."
+  },
+  "5.12.345": {
+    "en": "Radar: fix _TZE204_gkfbdvyx ghost capabilities, strip phantoms on ceiling 24G, fix 0m distance & presence lock (GH#550).",
+    "fr": "Radar: correction _TZE204_gkfbdvyx capacites fantomes plafond 24G, fix distance 0m et verrouillage presence (GH#550)."
+  },
+  "5.12.344": {
+    "en": "Sensors: AutoAdaptive anticrash protection, temperature & humidity sleep jump handling, battery replacement support. Update Test.",
+    "fr": "Capteurs: protection anticrash AutoAdaptive, gestion sauts sommeil temp/humidite, support remplacement pile. Maj Test."
+  },
+  "5.12.342": {
+    "en": "HiepSVG radar lux/distance/hang fixes (GH#550). Update Test; Repair once.",
+    "fr": "Radar HiepSVG lux/distance/freeze (GH#550). Maj Test; Repair."
+  },
+  "5.12.341": {
+    "en": "Ceiling radar lux→motion re-arm + TS0043 productId lock (GH#550/#551). Update Test; Repair.",
+    "fr": "Radar: rearm motion via lux + verrou TS0043 (GH#550/#551). Maj Test; Repair."
+  },
+  "5.12.340": {
+    "en": "Remotes: snappy wake listen-only + skip MCU sync; lux/distance antiflood (Bastien house soak). Update Test.",
+    "fr": "Telecommandes: wake snappy listen-only + skip sync MCU; antiflood lux/distance (soak Bastien). Maj Test."
+  },
+  "5.12.339": {
+    "en": "Improved ceiling radar lux/distance response and wireless button pairing."
+  },
+  "5.12.338": {
+    "en": "Improved wireless remote reliability (skip IAS enroll storm on scene buttons)."
+  },
+  "5.12.337": {
+    "en": "CI publish heal: HOBEIAN OCR collision keys (P2728). Update Test.",
+    "fr": "Heal CI publish: cles collision OCR HOBEIAN (P2728). Maj Test."
+  },
+  "5.12.336": {
+    "en": "Publish heal: scene remotes stay scene_switch_4 + ceiling radar P2725. Update Test.",
+    "fr": "Heal publish: scene remotes restent scene_switch_4 + radar P2725. Maj Test."
+  },
+  "5.12.335": {
+    "en": "Ceiling radar: sitting no false-clear; motion re-arm; lux less laggy. Update Test + Repair.",
+    "fr": "Radar plafond: immobilite sans false-clear; motion rearme; lux plus reactif. Maj Test + Repair."
+  },
+  "5.12.334": {
+    "en": "CI: align p2509 radar distance dual-scale assert (P2715/P2722). Update Test.",
+    "fr": "CI: align assert p2509 distance dual-scale (P2715/P2722). Maj Test."
+  },
+  "5.12.333": {
+    "en": "Publish heal: wkai4ga5/a4xycprs stay scene_switch_4. Update Test.",
+    "fr": "Publish heal: wkai4ga5/a4xycprs restent scene_switch_4. Maj Test."
+  },
+  "5.12.332": {
+    "en": "Ceiling radar: motion re-arms after stillness; distance display ~0.9. Update Test + Repair.",
+    "fr": "Radar plafond: motion se rearme apres immobilite; distance ~0.9. Maj Test + Repair."
+  },
+  "5.12.331": {
+    "en": "Reliability: snappy remotes no multi-second dead window on rapid toggle. Update Stable Test.",
+    "fr": "Fiabilite: telecommandes snappy sans fenetre morte multi-secondes. Maj Stable Test."
+  },
+  "5.12.330": {
+    "en": "Reliability: clear leftover LIVE-DATA overlay after OOM; less work on sleepy remote press. Update Stable Test.",
+    "fr": "Fiabilite: purge overlay LIVE-DATA apres OOM; moins de travail au press telecommande. Maj Stable Test."
+  },
+  "5.12.329": {
+    "en": "Remotes: stop Homey OOM crash that killed all buttons after press. Update Test + restart app once.",
+    "fr": "Telecommandes: stop crash OOM Homey qui tuait tous les boutons apres un appui. Maj Test + redemarrer app."
+  },
+  "5.12.328": {
+    "en": "App Settings: fix infinite spinner / blank page (Homey.ready). Update Test.",
+    "fr": "Reglages app: correction roue infinie / page blanche (Homey.ready). Maj Test."
+  },
+  "5.12.327": {
+    "en": "Improved Tuya datapoint TX framing and Wireless Button 3 pairing instructions (fleet treat)."
+  },
+  "5.12.326": {
+    "en": "Battery: precise % from chemistry curves (LiFePO4, NiMH, coin/akku) + voltage. Update Test.",
+    "fr": "Batterie: % precis courbes chimie (LiFePO4, NiMH, piles/akkus) + tension. Maj Test."
+  },
+  "5.12.325": {
+    "en": "Publish heal: scene remotes off button_wireless_4 + TS004x lean Flow. Update Test.",
+    "fr": "Heal: telecommandes scene hors bw4 + Flow lean TS004x. Maj Test."
+  },
+  "5.12.324": {
+    "en": "Strip alarm_battery conflict on remotes/climate (keep %).",
+    "fr": "Retire alarm_battery conflit remotes/climate (garde %)."
+  },
+  "5.12.323": {
+    "en": "Wireless remotes: hybrid parseZclHeader restore + lean Flow crash-safe. Update Test.",
+    "fr": "Telecommandes: parseZclHeader hybrid + Flow lean. Maj Test."
+  },
+  "5.12.322": {
+    "en": "Wireless remotes TS004x: lean Flow crash-safe, faster presses, battery % fix. Update Test.",
+    "fr": "Telecommandes TS004x: Flow lean anti-crash, presses plus rapides, batterie %. Maj Test."
+  },
+  "5.12.321": {
+    "en": "TS004x remotes: faster Flow to relay + TS0041 pairing bleed fix. Update Stable Test; re-pair Unknown button nodes.",
+    "fr": "Telecommandes TS004x: Flow vers relais plus rapide + correctif appairage TS0041. Maj Stable Test; re-appairer noeuds Inconnus."
+  },
+  "5.12.320": {
+    "en": "P2700: soft-arm raw + RX/TX + PFC for non-native Homey gaps"
+  },
+  "5.12.319": {
+    "en": "P2699: non-native DP/clusters complementary soft RX/TX (never mandatory)"
+  },
+  "5.12.318": {
+    "en": "P2698b: eWeLink 7014 climate mfr + switch_3gang syntax"
+  },
+  "5.12.317": {
+    "en": "P2698: strip radar FP bleed from curtain_motor (publish CI)"
+  },
+  "5.12.316": {
+    "en": "Fixed climate eWeLink couple and battery capability guideline."
+  },
+  "5.12.315": {
+    "en": "Improved fingerprint matching for wireless buttons and radiator valves."
+  },
+  "5.12.314": {
+    "en": "Improved publish reliability and CI integrity checks."
+  },
+  "5.12.313": {
+    "en": "P2693b: align VicHY MTG075 P2511 Contre quoi with P2575 DP1 trust (unblocks Stable publish)."
+  },
+  "5.12.312": {
+    "en": "TS0043/TS0042: snappy presses + no phantom-gang ghost. Use Homey Flow Button pressed.",
+    "fr": "TS0043/TS0042: appuis rapides + sans ghost. Utiliser Flow Bouton appuye."
+  },
+  "5.12.311": {
+    "en": "Publish heal: HOBEIAN OCR collisions + ZG-301Z sacred couple + energy safety (P2692). Update Test.",
+    "fr": "Heal publish: collisions OCR HOBEIAN + couple ZG-301Z + energie (P2692). Maj Test."
+  },
+  "5.12.310": {
+    "en": "Battery remotes: stop powerCfg TX storms that empty CR2032 (P2691). Update Test.",
+    "fr": "Telecommandes piles: stop tempetes powerCfg qui vident les CR2032 (P2691). Maj Test."
+  },
+  "5.12.309": {
+    "en": "Ceiling radar: restore lux + distance when find_switch goes cold. Update Test, remove radar, re-add.",
+    "fr": "Radar plafond: lux + distance restaures si find_switch tombe a froid. Maj Test, retirer, re-ajouter."
+  },
+  "5.12.308": {
+    "en": "Smarter battery % for coin cells and rechargeables — precise when low, without draining CR2032 or flooding the mesh. Update Test.",
+    "fr": "Batterie plus precise (piles/accus) sans vider les CR2032 ni saturer le mesh. Maj Test."
+  },
+  "5.12.307": {
+    "en": "Improved scene remote press latency and radiator valve pairing."
+  },
+  "5.12.306": {
+    "en": "TS0041 battery: less wake TX. Update Test."
+  },
+  "5.12.305": {
+    "en": "TS0041: pair Wireless Button 1 (not Unknown), Flow Bouton 1 appuye. Update + re-pair."
+  },
+  "5.12.304": {
+    "en": "P2683 sticky remotes + sacred 7dcddnye dimmer_wall only. Update Test + re-pair remotes."
+  },
+  "5.12.303": {
+    "en": "TS0043 vsxvaj9i + TS0042 sticky: Flow Button pressed (not Zigbee channels), snappier 2-btn. Update + re-pair remotes."
+  },
+  "5.12.302": {
+    "en": "Mesh calm onOff 1s floor + skip sleepy group-join (P2682)."
+  },
+  "5.12.301": {
+    "en": "Fix random physical Flows on switch bootstrap + TS0042 sticky profile (P2681)."
+  },
+  "5.12.300": {
+    "en": "Dynamic fingerprint shards + Buffer JSON.parse (OOM harden P2678)."
+  },
+  "5.12.299": {
+    "en": "Remove misattributed fllyghyj from temphumidsensor3 (P2666) + WiFi empty zigbee publish fix."
+  },
+  "5.12.298": {
+    "en": "Fixed WiFi publish validate (drop empty zigbee stubs) + HOBEIAN caseless Athom forms."
+  },
+  "5.12.297": {
+    "en": "HOBEIAN case-insensitive Athom forms + Z2M pids (P2677 BOTH).",
+    "fr": "HOBEIAN formes Athom caseless + pids Z2M (P2677 BOTH)."
+  },
+  "5.12.296": {
+    "en": "Intelligent dynamic energy: metered/approximate/battery adapts per device (P2672)."
+  },
+  "5.12.295": {
+    "en": "HOBEIAN fleet recognition: exact case forms + Z2M pids (3CH/MOTO/IR/210Z); drop ZG-222Z from radar."
+  },
+  "5.12.294": {
+    "en": "P2652: 4-gang switch pairing restored (ZCL-safe endpoints; no required metering). Update Stable Test; re-pair if needed."
+  },
+  "5.12.293": {
+    "en": "P2634: remove liygxtcq+TS0004 from switch_1gang (anti-bot). P2650 radar module + P2651 wifi stubs."
+  },
+  "5.12.292": {
+    "en": "P2651: drop empty wifi zigbee stubs (publish validate). P2650 TuyaRadarRangeScale crash fix."
+  },
+  "5.12.291": {
+    "en": "P2650: ship TuyaRadarRangeScale + soft-require (crash mail: Cannot find module on radar settings). Update Stable Test."
+  },
+  "5.12.290": {
+    "en": "Publish tip soak (build #211)."
+  },
+  "5.12.289": {
+    "en": "P2470: battery-skip log lock so publish gate stays green."
+  },
+  "5.12.288": {
+    "en": "P2645: sleepy remotes skip battery configure on pair; quiet Time 0x000A logs."
+  },
+  "5.12.287": {
+    "en": "P2644b: wall remote TS0041-only — stop 3ch remotes pairing as 1-button (Bastien 4d4e1684)."
+  },
+  "5.12.286": {
+    "en": "P2644: fix switch flow card IDs + remote CI crash (Bastien diags)."
+  },
+  "5.12.285": {
+    "en": "Fixed app settings blank infinite loader (Homey.ready before mesh/WiFi scan)."
+  },
+  "5.12.284": {
+    "en": "Improved local LAN reliability; fixed WiFi driver manifests for publish validation."
+  },
+  "5.12.283": {
+    "en": "Improved local LAN reliability (stale-data watchdog, fire-and-forget)."
+  },
+  "5.12.282": {
+    "en": "Reliability: TS0043 famkxci2 stays Wireless Button 3; TS130F e3vhyirx curtain wall switch lock; ceiling radar presence clear safer. Update Homey Test Stable + re-pair if Generic.",
+    "fr": "Fiabilite: TS0043 famkxci2 Bouton 3; TS130F e3vhyirx rideau mural; radar plafond presence. Maj Test Stable + re-appairer si Generique."
+  },
+  "5.12.281": {
+    "en": "Athom republish after #202 processing_failed; same reliability couple prune as 5.12.280. Update Homey Test."
+  },
+  "5.12.280": {
+    "en": "Reliability: removed misattributed Zigbee couples from wrong switch/LCD drivers; kept curtain/6-gang/dimmer/LCD canonical locks."
+  },
+  "5.12.279": {
+    "en": "Remove empty zigbee blocks from WiFi drivers (Homey validator). Update Homey Test."
+  },
+  "5.12.278": {
+    "en": "Strip empty zigbee from WiFi compose (validator) + LAN reliability. Update Homey Test."
+  },
+  "5.12.277": {
+    "en": "WiFi LAN reliability: offline grace + command gap + protocol auto-order (backport). Update Homey Test."
+  },
+  "5.12.276": {
+    "en": "Ceiling radar gkfbdvyx: lux DP103-only (no DP10 junk), skip discovery phantoms after Repair. Update Test + remove/re-add radar."
+  },
+  "5.12.275": {
+    "en": "Ceiling radar gkfbdvyx: prefer DP103 lux, longer phantom strip after tip update. Update Homey Test + Repair radar."
+  },
+  "5.12.274": {
+    "en": "Improved TS0043/TS0044 scene remote press detection with complementary fallback paths."
+  },
+  "5.12.273": {
+    "en": "TS0043 scene remotes: Button 1-3 in device view + hybrid RX. Update Test + re-pair if tiles were only under Maintenance."
+  },
+  "5.12.272": {
+    "en": "Voice-safety aligns with TS0044 Button N device view. Update Test."
+  },
+  "5.12.271": {
+    "en": "TS0044 scene remotes: Button 1-4 in device view + hybrid RX. Update Test + re-pair if tiles were only under Maintenance."
+  },
+  "5.12.270": {
+    "en": "Stable: prune remote mfs bleed to sacred mfr+pid couples. Update Stable Test."
+  },
+  "5.12.269": {
+    "en": "Stable: sacred mfr+pid couple locks for Moes ZT-YK remotes. Update Stable Test."
+  },
+  "5.12.268": {
+    "en": "Stable: track-adaptive critical test runner (skip MASTER_ONLY deps). Update Stable Test."
+  },
+  "5.12.267": {
+    "en": "Stable: fix syntax-check.yml UTF-8 + soft-skip MASTER_ONLY tests. Update Stable Test."
+  },
+  "5.12.266": {
+    "en": "Stable: syntax soft-skip missing MASTER_ONLY critical tests (P2611b). Update Stable Test."
+  },
+  "5.12.265": {
+    "en": "Stable: dual-app layer gate + IAS/battery reliability + Moes YK. Update Stable Test."
+  },
+  "5.12.264": {
+    "en": "mfs_db align after Bastien outbound tk3s5tyg rehome. Update Stable Test."
+  },
+  "5.12.263": {
+    "en": "Bastien outbound: TS0041 tk3s5tyg rehome from smoke + external inventory tooling. Update Stable Test."
+  },
+  "5.12.262": {
+    "en": "Wall/scene remotes 1-6 btn hybrid RX (battery+mains). Update Stable Test; Repair remotes if presses miss."
+  },
+  "5.12.261": {
+    "en": "ZG253 TRV: fix empty caps + setpoint TX (Homey datapoint args). Update + Repair radiator valve."
+  },
+  "5.12.259": {
+    "en": "ZG253 TRV: fix empty caps + setpoint TX (Homey datapoint args). Update + Repair radiator valve."
+  },
+  "5.12.258": {
+    "en": "TRV ogx8u5z6 EF00 pairing fix (forum) — no OnOff cluster required."
+  },
+  "5.12.257": {
+    "en": "Local smart learning for all workflows (CI habits + energy); forfait env on every GHA yml."
+  },
+  "5.12.256": {
+    "en": "Publish size-gate prefers prepared app.json; Smart Flow + local energy learner on both tips."
+  },
+  "5.12.255": {
+    "en": "Heal publish gate for Smart provenance energy mixin; keep local learner."
+  },
+  "5.12.254": {
+    "en": "Keep ceiling radar gkfbdvyx front-pinned for pairing; Smart Flow learner tip."
+  },
+  "5.12.253": {
+    "en": "Smart Flow provenance cards + local energy learning (habits, dim/color, measured vs estimate)."
+  },
+  "5.12.252": {
+    "en": "Fine treat: Moes ZTS/AM43 + ceiling radar magic handshake; front-pin #533/#547 couples for pairing."
+  },
+  "5.12.251": {
+    "en": "Elegant measured-first values: clean titles for real metrics; ≈ estimated, ƒ calculated, → predicted in UI and Smart Flows."
+  },
+  "5.12.250": {
+    "en": "Fleet provenance keeps estimate/calculated labels; radar class nudge; wall dimmer magic TX heal."
+  },
+  "5.12.249": {
+    "en": "Distinguish measured vs intelligent estimate vs calculated values in UI and Flow cards."
+  },
+  "5.12.248": {
+    "en": "Smartbutton History + presence WHEN/class heal even when reports say fine."
+  },
+  "5.12.247": {
+    "en": "Wireless buttons: first-press after sleep (Z2M/ZHA magic), TS0046 cascade, Moes remotes skip broken scene mode."
+  },
+  "5.12.246": {
+    "en": "P2553: intelligent History/Insights on across sensor drivers (battery, climate, energy, alarms); silence mmWave distance + twin motion spam."
+  },
+  "5.12.245": {
+    "en": "P2550/P2551 dual-app: Smartbutton Insights History recycle + radar History/presence harden (BOTH)."
+  },
+  "5.12.244": {
+    "en": "P2550/P2551: Smartbutton battery Insights History recycle; radar History dedupe + presence WHEN harden."
+  },
+  "5.12.243": {
+    "en": "Presence radar: lock sensor class, faster heal if Homey flips type without app update."
+  },
+  "5.12.242": {
+    "en": "Hardened SDK3 deferred init helper (no bare timers) + battery normalize."
+  },
+  "5.12.241": {
+    "en": "Improved Zigbee init safety and battery reporting (SDK3 P216)."
+  },
+  "5.12.240": {
+    "en": "Reliability BOTH: VicHY radar periodic curtain/class heal + presence flow edge (P2546)."
+  },
+  "5.12.239": {
+    "en": "CI dual-app: stable syntax LTS subset (skip MASTER_ONLY forfait IDE tests)."
+  },
+  "5.12.238": {
+    "en": "CI: fix P2435 ptjcjise Contre quoi to wall_switch_2gang_1way sacred couple."
+  },
+  "5.12.237": {
+    "en": "CI dual-app: soft-skip missing MASTER_ONLY critical tests on stable syntax-check."
+  },
+  "5.12.236": {
+    "en": "Reliability BOTH: P216 normalize ZCL battery (no blind /2) on Tuya parsers."
+  },
+  "5.12.235": {
+    "en": "Reliability BOTH: SmartBatteryManager L14 safe writers (P205 gate); no invent 100% from alarm."
+  },
+  "5.12.234": {
+    "en": "Fix remaining sacred-couple audit pairs (curtain + 3gang)."
+  },
+  "5.12.233": {
+    "en": "Stable dual-app layer gate + no invent default battery 100%."
+  },
+  "5.12.232": {
+    "en": "Sacred-couple dual-case FP cleanup for stable CI syntax."
+  },
+  "5.12.231": {
+    "en": "Stable CI: p246x reliability subset only (LTS helpers present)."
+  },
+  "5.12.230": {
+    "en": "CI heal: mfs_db align + wire check:p246x/p248x reliability gates."
+  },
+  "5.12.229": {
+    "en": "Aligned forfait unit tests with live daily AI cap (40)."
+  },
+  "5.12.228": {
+    "en": "Improved complementary I/O coverage (RX/TX/flow/energy/OTA) and multi-source OEM firmware indexes."
+  },
+  "5.12.227": {
+    "en": "Shared recent reliability advances (protocol fallbacks, air quality dual-case, local auto-improve)."
+  },
+  "5.12.226": {
+    "en": "Hardened cron automations for local-only self-improve and tighter AI plan limits (reliability)."
+  },
+  "5.12.225": {
+    "en": "Locked air-quality pairing to one driver and kept complementary DP logic (reliability)."
+  },
+  "5.12.224": {
+    "en": "Restored complementary air-quality fingerprints and dual-case enrich guards (reliability)."
+  },
+  "5.12.223": {
+    "en": "Improved complementary Zigbee DP/cluster/raw RX-TX paths (reliability) without replacing working EF00 maps."
+  },
+  "5.12.222": {
+    "en": "Intelligent Zigbee 4.0 / Suzi awareness (reliability) without inventing device fingerprints."
+  },
+  "5.12.221": {
+    "en": "mfs_db airbox align finalize (CI gate)."
+  },
+  "5.12.220": {
+    "en": "Aligned airbox fingerprint routing in mfs_db (reliability) after air quality lock."
+  },
+  "5.12.219": {
+    "en": "Improved air quality pairing for Tuya airbox sensors (reliability) without degrading other devices."
+  },
+  "5.12.218": {
+    "en": "Publish unblock: nkjintbl anti-bot (TZE204 on plug only) + Zigbee RF/MCU evolution without degrade."
+  },
+  "5.12.217": {
+    "en": "Fixed nkjintbl complementary bleed; Zigbee RF/MCU guidance without degrade."
+  },
+  "5.12.216": {
+    "en": "Improved Zigbee RF coexistence guidance and Tuya MCU time-sync resilience (no pairing degrade)."
+  },
+  "5.12.215": {
+    "en": "P2535: rkgngb5o+TS0501B on led_controller_dimmable (anti-bot Cartesian clear). Update Test."
+  },
+  "5.12.214": {
+    "en": "P2535: WZ1/Skydance _TZB210_rkgngb5o+TS0501B dimmable pairing. Update Test."
+  },
+  "5.12.213": {
+    "en": "P2534 VicHY MTG075: presence follows DP1 — stop distance=0 Flow WHEN flip-flop."
+  },
+  "5.12.212": {
+    "en": "P2533 Contre quoi merge helpers; strip nkjintbl switch bleed; mfs align for exclusive gbm10jnj."
+  },
+  "5.12.211": {
+    "en": "Added Contre quoi unit tests for complementary OEM overlays and dual-case compose preserve."
+  },
+  "5.12.210": {
+    "en": "Improved complementary OEM/forum/Z2M coverage overlays for recent Zigbee couples."
+  },
+  "5.12.209": {
+    "en": "Improved OEM/case variants and capabilities for recent Zigbee couples (covers, radar, dimmer, soil, DIN, buttons, knobs, plugs)."
+  },
+  "5.12.208": {
+    "en": "Synced wall dimmer firmware update manufacturer names with Zigbee fingerprints."
+  },
+  "5.12.207": {
+    "en": "OEM variants for recent couples; Moes SFC02 kq1l5eu5 on wall curtain switch."
+  },
+  "5.12.206": {
+    "en": "Completed OEM/case variants and capabilities for recent curtain, radar, dimmer and button couples."
+  },
+  "5.12.205": {
+    "en": "Deep functional enrich in inbox workflows ÔÇö DP, clusters, flows and RX/TX beyond fingerprint locks."
+  },
+  "5.12.204": {
+    "en": "Hardened radar DP ownership so lux/presence RX and presence flow edges stay correct."
+  },
+  "5.12.202": {
+    "en": "Hardened forum and scrape ingest against prompt injection and malicious markup."
+  },
+  "5.12.201": {
+    "en": "Presence radar WHEN cards fire on human presence; remaining flow conditions registered."
+  },
+  "5.12.200": {
+    "en": "Local WiFi credentials now survive Homey reboot without cloud re-login."
+  },
+  "5.12.199": {
+    "en": "Hardened mmWave presence flow triggers for all update paths."
+  },
+  "5.12.198": {
+    "en": "Improved mmWave presence flow triggers."
+  },
+  "5.12.197": {
+    "en": "L99: strip doNotLock invent climate bleed; harden forbidden placement. Update Stable Test."
   },
   "5.12.195": {
     "en": "Reliability: BSEED never forced to Tuya DP; P214 wire; Syntax skip-missing gates. Update Homey Test Stable."
@@ -1719,779 +2493,5 @@
   },
   "5.12.0": {
     "en": "v5.12.0: stable-v5 batch sync (drivers, FPs, flows, manifest) from master v9.0.240–v9.0.260."
-  },
-  "5.12.197": {
-    "en": "L99: strip doNotLock invent climate bleed; harden forbidden placement. Update Stable Test."
-  },
-  "5.12.198": {
-    "en": "Improved mmWave presence flow triggers."
-  },
-  "5.12.199": {
-    "en": "Hardened mmWave presence flow triggers for all update paths."
-  },
-  "5.12.200": {
-    "en": "Local WiFi credentials now survive Homey reboot without cloud re-login."
-  },
-  "5.12.201": {
-    "en": "Presence radar WHEN cards fire on human presence; remaining flow conditions registered."
-  },
-  "5.12.202": {
-    "en": "Hardened forum and scrape ingest against prompt injection and malicious markup."
-  },
-  "5.12.204": {
-    "en": "Hardened radar DP ownership so lux/presence RX and presence flow edges stay correct."
-  },
-  "5.12.205": {
-    "en": "Deep functional enrich in inbox workflows ÔÇö DP, clusters, flows and RX/TX beyond fingerprint locks."
-  },
-  "5.12.206": {
-    "en": "Completed OEM/case variants and capabilities for recent curtain, radar, dimmer and button couples."
-  },
-  "5.12.207": {
-    "en": "OEM variants for recent couples; Moes SFC02 kq1l5eu5 on wall curtain switch."
-  },
-  "5.12.208": {
-    "en": "Synced wall dimmer firmware update manufacturer names with Zigbee fingerprints."
-  },
-  "5.12.209": {
-    "en": "Improved OEM/case variants and capabilities for recent Zigbee couples (covers, radar, dimmer, soil, DIN, buttons, knobs, plugs)."
-  },
-  "5.12.210": {
-    "en": "Improved complementary OEM/forum/Z2M coverage overlays for recent Zigbee couples."
-  },
-  "5.12.211": {
-    "en": "Added Contre quoi unit tests for complementary OEM overlays and dual-case compose preserve."
-  },
-  "5.12.212": {
-    "en": "P2533 Contre quoi merge helpers; strip nkjintbl switch bleed; mfs align for exclusive gbm10jnj."
-  },
-  "5.12.213": {
-    "en": "P2534 VicHY MTG075: presence follows DP1 — stop distance=0 Flow WHEN flip-flop."
-  },
-  "5.12.214": {
-    "en": "P2535: WZ1/Skydance _TZB210_rkgngb5o+TS0501B dimmable pairing. Update Test."
-  },
-  "5.12.215": {
-    "en": "P2535: rkgngb5o+TS0501B on led_controller_dimmable (anti-bot Cartesian clear). Update Test."
-  },
-  "5.12.216": {
-    "en": "Improved Zigbee RF coexistence guidance and Tuya MCU time-sync resilience (no pairing degrade)."
-  },
-  "5.12.217": {
-    "en": "Fixed nkjintbl complementary bleed; Zigbee RF/MCU guidance without degrade."
-  },
-  "5.12.218": {
-    "en": "Publish unblock: nkjintbl anti-bot (TZE204 on plug only) + Zigbee RF/MCU evolution without degrade."
-  },
-  "5.12.219": {
-    "en": "Improved air quality pairing for Tuya airbox sensors (reliability) without degrading other devices."
-  },
-  "5.12.220": {
-    "en": "Aligned airbox fingerprint routing in mfs_db (reliability) after air quality lock."
-  },
-  "5.12.221": {
-    "en": "mfs_db airbox align finalize (CI gate)."
-  },
-  "5.12.222": {
-    "en": "Intelligent Zigbee 4.0 / Suzi awareness (reliability) without inventing device fingerprints."
-  },
-  "5.12.223": {
-    "en": "Improved complementary Zigbee DP/cluster/raw RX-TX paths (reliability) without replacing working EF00 maps."
-  },
-  "5.12.224": {
-    "en": "Restored complementary air-quality fingerprints and dual-case enrich guards (reliability)."
-  },
-  "5.12.225": {
-    "en": "Locked air-quality pairing to one driver and kept complementary DP logic (reliability)."
-  },
-  "5.12.226": {
-    "en": "Hardened cron automations for local-only self-improve and tighter AI plan limits (reliability)."
-  },
-  "5.12.227": {
-    "en": "Shared recent reliability advances (protocol fallbacks, air quality dual-case, local auto-improve)."
-  },
-  "5.12.228": {
-    "en": "Improved complementary I/O coverage (RX/TX/flow/energy/OTA) and multi-source OEM firmware indexes."
-  },
-  "5.12.229": {
-    "en": "Aligned forfait unit tests with live daily AI cap (40)."
-  },
-  "5.12.230": {
-    "en": "CI heal: mfs_db align + wire check:p246x/p248x reliability gates."
-  },
-  "5.12.231": {
-    "en": "Stable CI: p246x reliability subset only (LTS helpers present)."
-  },
-  "5.12.232": {
-    "en": "Sacred-couple dual-case FP cleanup for stable CI syntax."
-  },
-  "5.12.233": {
-    "en": "Stable dual-app layer gate + no invent default battery 100%."
-  },
-  "5.12.234": {
-    "en": "Fix remaining sacred-couple audit pairs (curtain + 3gang)."
-  },
-  "5.12.235": {
-    "en": "Reliability BOTH: SmartBatteryManager L14 safe writers (P205 gate); no invent 100% from alarm."
-  },
-  "5.12.236": {
-    "en": "Reliability BOTH: P216 normalize ZCL battery (no blind /2) on Tuya parsers."
-  },
-  "5.12.237": {
-    "en": "CI dual-app: soft-skip missing MASTER_ONLY critical tests on stable syntax-check."
-  },
-  "5.12.238": {
-    "en": "CI: fix P2435 ptjcjise Contre quoi to wall_switch_2gang_1way sacred couple."
-  },
-  "5.12.239": {
-    "en": "CI dual-app: stable syntax LTS subset (skip MASTER_ONLY forfait IDE tests)."
-  },
-  "5.12.240": {
-    "en": "Reliability BOTH: VicHY radar periodic curtain/class heal + presence flow edge (P2546)."
-  },
-  "5.12.241": {
-    "en": "Improved Zigbee init safety and battery reporting (SDK3 P216)."
-  },
-  "5.12.242": {
-    "en": "Hardened SDK3 deferred init helper (no bare timers) + battery normalize."
-  },
-  "5.12.243": {
-    "en": "Presence radar: lock sensor class, faster heal if Homey flips type without app update."
-  },
-  "5.12.244": {
-    "en": "P2550/P2551: Smartbutton battery Insights History recycle; radar History dedupe + presence WHEN harden."
-  },
-  "5.12.245": {
-    "en": "P2550/P2551 dual-app: Smartbutton Insights History recycle + radar History/presence harden (BOTH)."
-  },
-  "5.12.246": {
-    "en": "P2553: intelligent History/Insights on across sensor drivers (battery, climate, energy, alarms); silence mmWave distance + twin motion spam."
-  },
-  "5.12.247": {
-    "en": "Wireless buttons: first-press after sleep (Z2M/ZHA magic), TS0046 cascade, Moes remotes skip broken scene mode."
-  },
-  "5.12.248": {
-    "en": "Smartbutton History + presence WHEN/class heal even when reports say fine."
-  },
-  "5.12.249": {
-    "en": "Distinguish measured vs intelligent estimate vs calculated values in UI and Flow cards."
-  },
-  "5.12.250": {
-    "en": "Fleet provenance keeps estimate/calculated labels; radar class nudge; wall dimmer magic TX heal."
-  },
-  "5.12.251": {
-    "en": "Elegant measured-first values: clean titles for real metrics; ≈ estimated, ƒ calculated, → predicted in UI and Smart Flows."
-  },
-  "5.12.252": {
-    "en": "Fine treat: Moes ZTS/AM43 + ceiling radar magic handshake; front-pin #533/#547 couples for pairing."
-  },
-  "5.12.253": {
-    "en": "Smart Flow provenance cards + local energy learning (habits, dim/color, measured vs estimate)."
-  },
-  "5.12.254": {
-    "en": "Keep ceiling radar gkfbdvyx front-pinned for pairing; Smart Flow learner tip."
-  },
-  "5.12.255": {
-    "en": "Heal publish gate for Smart provenance energy mixin; keep local learner."
-  },
-  "5.12.256": {
-    "en": "Publish size-gate prefers prepared app.json; Smart Flow + local energy learner on both tips."
-  },
-  "5.12.257": {
-    "en": "Local smart learning for all workflows (CI habits + energy); forfait env on every GHA yml."
-  },
-  "5.12.258": {
-    "en": "TRV ogx8u5z6 EF00 pairing fix (forum) — no OnOff cluster required."
-  },
-  "5.12.259": {
-    "en": "ZG253 TRV: fix empty caps + setpoint TX (Homey datapoint args). Update + Repair radiator valve."
-  },
-  "5.12.261": {
-    "en": "ZG253 TRV: fix empty caps + setpoint TX (Homey datapoint args). Update + Repair radiator valve."
-  },
-  "5.12.262": {
-    "en": "Wall/scene remotes 1-6 btn hybrid RX (battery+mains). Update Stable Test; Repair remotes if presses miss."
-  },
-  "5.12.263": {
-    "en": "Bastien outbound: TS0041 tk3s5tyg rehome from smoke + external inventory tooling. Update Stable Test."
-  },
-  "5.12.264": {
-    "en": "mfs_db align after Bastien outbound tk3s5tyg rehome. Update Stable Test."
-  },
-  "5.12.265": {
-    "en": "Stable: dual-app layer gate + IAS/battery reliability + Moes YK. Update Stable Test."
-  },
-  "5.12.266": {
-    "en": "Stable: syntax soft-skip missing MASTER_ONLY critical tests (P2611b). Update Stable Test."
-  },
-  "5.12.267": {
-    "en": "Stable: fix syntax-check.yml UTF-8 + soft-skip MASTER_ONLY tests. Update Stable Test."
-  },
-  "5.12.268": {
-    "en": "Stable: track-adaptive critical test runner (skip MASTER_ONLY deps). Update Stable Test."
-  },
-  "5.12.269": {
-    "en": "Stable: sacred mfr+pid couple locks for Moes ZT-YK remotes. Update Stable Test."
-  },
-  "5.12.270": {
-    "en": "Stable: prune remote mfs bleed to sacred mfr+pid couples. Update Stable Test."
-  },
-  "5.12.271": {
-    "en": "TS0044 scene remotes: Button 1-4 in device view + hybrid RX. Update Test + re-pair if tiles were only under Maintenance."
-  },
-  "5.12.272": {
-    "en": "Voice-safety aligns with TS0044 Button N device view. Update Test."
-  },
-  "5.12.273": {
-    "en": "TS0043 scene remotes: Button 1-3 in device view + hybrid RX. Update Test + re-pair if tiles were only under Maintenance."
-  },
-  "5.12.274": {
-    "en": "Improved TS0043/TS0044 scene remote press detection with complementary fallback paths."
-  },
-  "5.12.275": {
-    "en": "Ceiling radar gkfbdvyx: prefer DP103 lux, longer phantom strip after tip update. Update Homey Test + Repair radar."
-  },
-  "5.12.276": {
-    "en": "Ceiling radar gkfbdvyx: lux DP103-only (no DP10 junk), skip discovery phantoms after Repair. Update Test + remove/re-add radar."
-  },
-  "5.12.277": {
-    "en": "WiFi LAN reliability: offline grace + command gap + protocol auto-order (backport). Update Homey Test."
-  },
-  "5.12.278": {
-    "en": "Strip empty zigbee from WiFi compose (validator) + LAN reliability. Update Homey Test."
-  },
-  "5.12.279": {
-    "en": "Remove empty zigbee blocks from WiFi drivers (Homey validator). Update Homey Test."
-  },
-  "5.12.280": {
-    "en": "Reliability: removed misattributed Zigbee couples from wrong switch/LCD drivers; kept curtain/6-gang/dimmer/LCD canonical locks."
-  },
-  "5.12.281": {
-    "en": "Athom republish after #202 processing_failed; same reliability couple prune as 5.12.280. Update Homey Test."
-  },
-  "5.12.282": {
-    "en": "Reliability: TS0043 famkxci2 stays Wireless Button 3; TS130F e3vhyirx curtain wall switch lock; ceiling radar presence clear safer. Update Homey Test Stable + re-pair if Generic.",
-    "fr": "Fiabilite: TS0043 famkxci2 Bouton 3; TS130F e3vhyirx rideau mural; radar plafond presence. Maj Test Stable + re-appairer si Generique."
-  },
-  "5.12.283": {
-    "en": "Improved local LAN reliability (stale-data watchdog, fire-and-forget)."
-  },
-  "5.12.284": {
-    "en": "Improved local LAN reliability; fixed WiFi driver manifests for publish validation."
-  },
-  "5.12.285": {
-    "en": "Fixed app settings blank infinite loader (Homey.ready before mesh/WiFi scan)."
-  },
-  "5.12.286": {
-    "en": "P2644: fix switch flow card IDs + remote CI crash (Bastien diags)."
-  },
-  "5.12.287": {
-    "en": "P2644b: wall remote TS0041-only — stop 3ch remotes pairing as 1-button (Bastien 4d4e1684)."
-  },
-  "5.12.288": {
-    "en": "P2645: sleepy remotes skip battery configure on pair; quiet Time 0x000A logs."
-  },
-  "5.12.289": {
-    "en": "P2470: battery-skip log lock so publish gate stays green."
-  },
-  "5.12.290": {
-    "en": "Publish tip soak (build #211)."
-  },
-  "5.12.291": {
-    "en": "P2650: ship TuyaRadarRangeScale + soft-require (crash mail: Cannot find module on radar settings). Update Stable Test."
-  },
-  "5.12.292": {
-    "en": "P2651: drop empty wifi zigbee stubs (publish validate). P2650 TuyaRadarRangeScale crash fix."
-  },
-  "5.12.293": {
-    "en": "P2634: remove liygxtcq+TS0004 from switch_1gang (anti-bot). P2650 radar module + P2651 wifi stubs."
-  },
-  "5.12.294": {
-    "en": "P2652: 4-gang switch pairing restored (ZCL-safe endpoints; no required metering). Update Stable Test; re-pair if needed."
-  },
-  "5.12.295": {
-    "en": "HOBEIAN fleet recognition: exact case forms + Z2M pids (3CH/MOTO/IR/210Z); drop ZG-222Z from radar."
-  },
-  "5.12.296": {
-    "en": "Intelligent dynamic energy: metered/approximate/battery adapts per device (P2672)."
-  },
-  "5.12.298": {
-    "en": "Fixed WiFi publish validate (drop empty zigbee stubs) + HOBEIAN caseless Athom forms."
-  },
-  "5.12.299": {
-    "en": "Remove misattributed fllyghyj from temphumidsensor3 (P2666) + WiFi empty zigbee publish fix."
-  },
-  "5.12.300": {
-    "en": "Dynamic fingerprint shards + Buffer JSON.parse (OOM harden P2678)."
-  },
-  "5.12.301": {
-    "en": "Fix random physical Flows on switch bootstrap + TS0042 sticky profile (P2681)."
-  },
-  "5.12.302": {
-    "en": "Mesh calm onOff 1s floor + skip sleepy group-join (P2682)."
-  },
-  "5.12.303": {
-    "en": "TS0043 vsxvaj9i + TS0042 sticky: Flow Button pressed (not Zigbee channels), snappier 2-btn. Update + re-pair remotes."
-  },
-  "5.12.304": {
-    "en": "P2683 sticky remotes + sacred 7dcddnye dimmer_wall only. Update Test + re-pair remotes."
-  },
-  "5.12.305": {
-    "en": "TS0041: pair Wireless Button 1 (not Unknown), Flow Bouton 1 appuye. Update + re-pair."
-  },
-  "5.12.306": {
-    "en": "TS0041 battery: less wake TX. Update Test."
-  },
-  "5.12.307": {
-    "en": "Improved scene remote press latency and radiator valve pairing."
-  },
-  "5.12.308": {
-    "en": "Smarter battery % for coin cells and rechargeables — precise when low, without draining CR2032 or flooding the mesh. Update Test.",
-    "fr": "Batterie plus precise (piles/accus) sans vider les CR2032 ni saturer le mesh. Maj Test."
-  },
-  "5.12.309": {
-    "en": "Ceiling radar: restore lux + distance when find_switch goes cold. Update Test, remove radar, re-add.",
-    "fr": "Radar plafond: lux + distance restaures si find_switch tombe a froid. Maj Test, retirer, re-ajouter."
-  },
-  "5.12.312": {
-    "en": "TS0043/TS0042: snappy presses + no phantom-gang ghost. Use Homey Flow Button pressed.",
-    "fr": "TS0043/TS0042: appuis rapides + sans ghost. Utiliser Flow Bouton appuye."
-  },
-  "5.12.313": {
-    "en": "P2693b: align VicHY MTG075 P2511 Contre quoi with P2575 DP1 trust (unblocks Stable publish)."
-  },
-  "5.12.314": {
-    "en": "Improved publish reliability and CI integrity checks."
-  },
-  "5.12.315": {
-    "en": "Improved fingerprint matching for wireless buttons and radiator valves."
-  },
-  "5.12.316": {
-    "en": "Fixed climate eWeLink couple and battery capability guideline."
-  },
-  "5.12.317": {
-    "en": "P2698: strip radar FP bleed from curtain_motor (publish CI)"
-  },
-  "5.12.318": {
-    "en": "P2698b: eWeLink 7014 climate mfr + switch_3gang syntax"
-  },
-  "5.12.319": {
-    "en": "P2699: non-native DP/clusters complementary soft RX/TX (never mandatory)"
-  },
-  "5.12.320": {
-    "en": "P2700: soft-arm raw + RX/TX + PFC for non-native Homey gaps"
-  },
-  "5.12.322": {
-    "en": "Wireless remotes TS004x: lean Flow crash-safe, faster presses, battery % fix. Update Test.",
-    "fr": "Telecommandes TS004x: Flow lean anti-crash, presses plus rapides, batterie %. Maj Test."
-  },
-  "5.12.323": {
-    "en": "Wireless remotes: hybrid parseZclHeader restore + lean Flow crash-safe. Update Test.",
-    "fr": "Telecommandes: parseZclHeader hybrid + Flow lean. Maj Test."
-  },
-  "5.12.324": {
-    "en": "Strip alarm_battery conflict on remotes/climate (keep %).",
-    "fr": "Retire alarm_battery conflit remotes/climate (garde %)."
-  },
-  "5.12.325": {
-    "en": "Publish heal: scene remotes off button_wireless_4 + TS004x lean Flow. Update Test.",
-    "fr": "Heal: telecommandes scene hors bw4 + Flow lean TS004x. Maj Test."
-  },
-  "5.12.326": {
-    "en": "Battery: precise % from chemistry curves (LiFePO4, NiMH, coin/akku) + voltage. Update Test.",
-    "fr": "Batterie: % precis courbes chimie (LiFePO4, NiMH, piles/akkus) + tension. Maj Test."
-  },
-  "5.12.327": {
-    "en": "Improved Tuya datapoint TX framing and Wireless Button 3 pairing instructions (fleet treat)."
-  },
-  "5.12.328": {
-    "en": "App Settings: fix infinite spinner / blank page (Homey.ready). Update Test.",
-    "fr": "Reglages app: correction roue infinie / page blanche (Homey.ready). Maj Test."
-  },
-  "5.12.329": {
-    "en": "Remotes: stop Homey OOM crash that killed all buttons after press. Update Test + restart app once.",
-    "fr": "Telecommandes: stop crash OOM Homey qui tuait tous les boutons apres un appui. Maj Test + redemarrer app."
-  },
-  "5.12.337": {
-    "en": "CI publish heal: HOBEIAN OCR collision keys (P2728). Update Test.",
-    "fr": "Heal CI publish: cles collision OCR HOBEIAN (P2728). Maj Test."
-  },
-  "5.12.338": {
-    "en": "Improved wireless remote reliability (skip IAS enroll storm on scene buttons)."
-  },
-  "5.12.339": {
-    "en": "Improved ceiling radar lux/distance response and wireless button pairing."
-  },
-  "5.12.341": {
-    "en": "Ceiling radar lux→motion re-arm + TS0043 productId lock (GH#550/#551). Update Test; Repair.",
-    "fr": "Radar: rearm motion via lux + verrou TS0043 (GH#550/#551). Maj Test; Repair."
-  },
-  "5.12.342": {
-    "en": "HiepSVG radar lux/distance/hang fixes (GH#550). Update Test; Repair once.",
-    "fr": "Radar HiepSVG lux/distance/freeze (GH#550). Maj Test; Repair."
-  },
-  "5.12.347": {
-    "en": "Battery conservation: no proactive PowerCfg polls on coin-cell devices (P2757)."
-  },
-  "5.12.348": {
-    "en": "Battery listen-only for coin cells; Johan couple collision locks (pay2byax / 6ycgarab)."
-  },
-  "5.12.349": {
-    "en": "Johan L99: Moes SR-ZS 3-gang, air-monitor couple lock, TS0207 leak enrich."
-  },
-  "5.12.350": {
-    "en": "P2759/P2760 CI heal: pay2byax anti-bot → contact_sensor_zigbee; siren safeSetCapabilityValue."
-  },
-  "5.12.351": {
-    "en": "P2760 surgical Johan locks + refresh FP collision baseline (Stable)."
-  },
-  "5.12.354": {
-    "en": "Device compatibility: 3-gang switch _TZ3000_lmcp6b0a / TS0003, 6-gang remote _TZ3000_iszegwpd / TS0046, contact sensor _TZ3000_bwjstafw / TS0203; pair-scoped firmware quirk fixes; LCD climate battery and WiFi repair fixes.",
-    "fr": "Compatibilite: interrupteur 3 voies _TZ3000_lmcp6b0a / TS0003, telecommande 6 boutons _TZ3000_iszegwpd / TS0046, capteur d'ouverture _TZ3000_bwjstafw / TS0203; correctifs firmware cibles; corrections batterie climat LCD et reparation WiFi."
-  },
-  "5.12.355": {
-    "en": "fix(P2795): #554 TS0046/_TZ3000_iszegwpd pairs with 4-endpoint firmware (EP1–4 only).",
-    "fr": "fix(P2795): #554 TS0046/_TZ3000_iszegwpd appairage firmware 4 endpoints (EP1–4)."
-  },
-  "5.12.357": {
-    "en": "Added support: TS011F smart plugs (_TZ3000_zgtbi4oy, _TZ3000_iiacqpdz, _TZ3000_dvqt7qrw), TS130F curtain modules (_TZ3000_vsj5o7dm, _TZ3000_os0wy3vh, _TZ3000_26gjlugm), TS0041 1-button remotes (_TZ3000_fa9mlvja, _TZ3000_vn88ezar). Multi-gang couple fixes from 5.12.356.",
-    "fr": "Support ajouté : prises TS011F (_TZ3000_zgtbi4oy, _TZ3000_iiacqpdz, _TZ3000_dvqt7qrw), modules volet TS130F (_TZ3000_vsj5o7dm, _TZ3000_os0wy3vh, _TZ3000_26gjlugm), télécommandes TS0041 1 bouton (_TZ3000_fa9mlvja, _TZ3000_vn88ezar). Corrections multi-gang de 5.12.356."
-  },
-  "5.12.358": {
-    "en": "Fixes: colour/CCT lights load again and keep colour temperature in range; smart plugs read power-on state, indicator and child lock independently; repeated unknown Tuya datapoints no longer flood the log.",
-    "fr": "Corrections : les ampoules couleur/CCT se chargent à nouveau et gardent une température de couleur valide ; les prises lisent état au démarrage, voyant et verrouillage séparément ; les datapoints Tuya inconnus répétés n’inondent plus le journal."
-  },
-  "5.12.360": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.361": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.362": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.363": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.364": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.365": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.366": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.367": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.368": {
-    "en": "Dimmers (2-gang dimmer module, dimmer wall switch, wall dimmer 1-gang) now use the Light device type, so the light ring and voice assistants treat them as lights. Paired devices switch once automatically; the device icon may change. Capabilities, IDs and flows are unchanged."
-  },
-  "5.12.369": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "5.12.370": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "5.12.371": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "5.12.372": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "5.12.373": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "5.12.374": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.375": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.376": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.377": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "5.12.378": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.379": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.380": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.381": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.382": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.383": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.384": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.385": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.387": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.390": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.391": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "5.12.394": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.395": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.396": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.397": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.398": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.399": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.400": {
-    "en": "P2761: Fantem ZB003-X motion locks; contact/doorbell/PIR off climate; tank DP2 cm."
-  },
-  "5.12.402": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.405": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.406": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.407": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "5.12.408": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "5.12.410": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.411": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.412": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.413": {
-    "en": "Improved radiator valve and mmWave radar pairing for recent forum devices."
-  },
-  "5.12.414": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.419": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.423": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.424": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.425": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "5.12.429": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.430": {
-    "en": "Forum fleet silent treat: sacred-keep + cartesian forbids (P2821)."
-  },
-  "5.12.433": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.436": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.437": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "5.12.438": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "5.12.439": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "5.12.440": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "5.12.441": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.442": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.443": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.444": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.446": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.448": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.449": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.450": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.451": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.452": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.454": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.455": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.457": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.459": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.460": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.461": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.462": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.464": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.465": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "5.12.466": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.467": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.468": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.469": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.470": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.472": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.473": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.475": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.476": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "5.12.477": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.478": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.480": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.481": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.484": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.485": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "5.12.495": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.497": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.498": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.499": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "5.12.500": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "5.12.501": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "5.12.502": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.503": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.504": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.505": {
-    "en": "Device database and reliability updates.",
-    "fr": "Mises à jour de la base d’appareils et de la fiabilité."
-  },
-  "5.12.506": {
-    "en": "Device compatibility and reliability improvements."
-  },
-  "5.12.507": {
-    "en": "Device compatibility and reliability improvements."
   }
 }

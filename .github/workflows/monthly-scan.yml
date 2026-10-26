@@ -200,3 +200,12 @@ jobs:
             git commit -m "auto: monthly Z2M scan candidates [skip ci]"
             bash scripts/ci/verified-git-push.sh master
           fi
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Monthly scan of Zigbee2MQTT for Tuya devices we do not cover yet."; else s="Stopped early ($JOB_STATUS); the red step above says why. Monthly scan of Zigbee2MQTT for Tuya devices we do not cover yet."; fi
+          node scripts/lib/report-writer.js --title "monthly-scan" --summary "$s" --headers "item|value" --row "job|scan" --row "result|$JOB_STATUS" --thanks "Koen Kanters and the zigbee-herdsman-converters / Zigbee2MQTT contributors" --thanks "the zigpy / ZHA device handler authors" >> "$GITHUB_STEP_SUMMARY" || true

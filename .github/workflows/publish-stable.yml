@@ -134,6 +134,15 @@ jobs:
             exit 0
           fi
           echo "No successful push publish for this SHA — continue dispatch"
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Publishes the stable app to the test channel when stable-v5 moves."; else s="Stopped early ($JOB_STATUS); the red step above says why. Publishes the stable app to the test channel when stable-v5 moves."; fi
+          node scripts/lib/report-writer.js --title "publish-stable" --summary "$s" --headers "item|value" --row "job|dispatch-dedupe" --row "result|$JOB_STATUS" --thanks "Athom's official Homey app GitHub Actions (athombv)" --thanks "the Homey developer docs on build channels" >> "$GITHUB_STEP_SUMMARY" || true
 
   upstream-guard:
     name: "🛡️ Upstream Guard"

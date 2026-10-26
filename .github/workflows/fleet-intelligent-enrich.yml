@@ -188,6 +188,15 @@ jobs:
             .cache/scraper-cache/_free-scrape-budget.json
             .github/state/intelligent-source-manifest.json
           retention-days: 7
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Twice a day: enrichment across all driver classes within the free scraping budget."; else s="Stopped early ($JOB_STATUS); the red step above says why. Twice a day: enrichment across all driver classes within the free scraping budget."; fi
+          node scripts/lib/report-writer.js --title "fleet-intelligent-enrich" --summary "$s" --headers "item|value" --row "job|fleet-enrich" --row "result|$JOB_STATUS" --thanks "Koen Kanters and the zigbee-herdsman-converters / Zigbee2MQTT contributors" --thanks "the zigpy / ZHA device handler authors" >> "$GITHUB_STEP_SUMMARY" || true
 
   # P2936: full cross-research of every item this workflow handles (kill switch: vars.XR_ENABLED=false,
   # report-only: vars.XR_APPLY=false). Bounded (max items, net/OCR caps), cached, no paid API.
