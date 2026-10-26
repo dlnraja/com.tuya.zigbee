@@ -468,7 +468,9 @@
       "id": "switch_1gang_set_power_on_behavior",
       "title": {
         "en": "Set power-on behavior",
-        "fr": "Régler le comportement à la mise sous tension"
+        "fr": "Régler le comportement à la mise sous tension",
+        "de": "Verhalten nach Stromausfall setzen",
+        "nl": "Gedrag na stroomuitval instellen"
       },
       "args": [
         {

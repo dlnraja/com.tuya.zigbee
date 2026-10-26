@@ -111,7 +111,9 @@
       "id": "hvac_dehumidifier_alarm_water_true",
       "title": {
         "en": "Water leak detected",
-        "fr": "Fuite d'eau détectée"
+        "fr": "Fuite d'eau détectée",
+        "de": "Wasserleck erkannt",
+        "nl": "Waterlek gedetecteerd"
       },
       "args": [],
       "titleFormatted": {
