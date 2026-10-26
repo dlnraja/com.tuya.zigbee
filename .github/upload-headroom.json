@@ -1,5 +1,5 @@
 {
   "note": "P3068: upload app.json headroom ratchet (4 MB Athom limit minus projected upload manifest). floorKB = hard CI gate, raise only; targetKB = goal (warn below). Flow cards are ~55% of the manifest: flow hints/token examples are the next lever (P3065).",
   "targetKB": 300,
-  "floorKB": 240
+  "floorKB": 280
 }

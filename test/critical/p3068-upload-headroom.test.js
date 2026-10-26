@@ -8,7 +8,7 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..', '..');
 const { compactSharedText, CANON } = require('../../scripts/maintenance/compact-shared-text.cjs');
 const read = (rel) => fs.readFileSync(path.join(ROOT, rel), 'utf8');
-const FLOOR_MIN_KB = 240; // raise together with .github/upload-headroom.json floorKB, never lower
+const FLOOR_MIN_KB = 280; // raise together with .github/upload-headroom.json floorKB, never lower
 
 test('locale dedupe is lossless: only non-en strings identical to en are dropped, app name untouched', () => {
   const m = {
