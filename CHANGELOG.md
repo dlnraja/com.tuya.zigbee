@@ -7,6 +7,9 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 ## Unreleased — docs refresh (P3032, bastien-home)
 ### Fixed (2026-10-26, P3066 catalogue data)
 - `_TZE284_6ycgarab` (Tuya dual smoke + CO alarm): the fingerprint hint now names `smoke_sensor`, the driver that pairs it, instead of `smoke_detector_advanced`. Pairing is unchanged.
+- EcoDim ED-10032 CCT filament bulb (`_TZ3210_09hzmirw`): no longer offered by the smoke sensor driver; it pairs as a CCT light (`light_cct_ts0502b`). Bulbs already paired on the smoke driver stay paired; re-pair only to get light controls.
+- `_TZE284_6ycgarab` (smoke + CO alarm, TS0601 in Zigbee2MQTT, ZHA and Tasmota sources): now listed in one driver only (`smoke_sensor`); the extra `smoke_sensor3` entry came from a TS0205 combination no real unit reports. Devices already paired stay where they are.
+- Developer tests: the flow-card id check no longer trusts a leftover build manifest from another branch.
 - `_TZ3210_09hzmirw` (EcoDim ED-10032 dimmable CCT filament bulb, TS0502B, per zigbee-herdsman-converters) can now pair on the CCT light driver, and the fingerprint database and its runtime shard point there; existing pairings are untouched.
 
 ### Fixed (2026-10-26, P3064 safety port)
