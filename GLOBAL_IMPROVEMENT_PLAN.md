@@ -1,4 +1,5 @@
 # 🌍 GLOBAL IMPROVEMENT PLAN — Phoenix Sovereign Unified Engine v9.0.0+
+<!-- own-text-file: our own plan and agent rules (dlnraja), not a quote of anyone else -->
 > **Branch**: `master` (Experimental/Beta) + `stable-v5` (Production/Stable)  
 > **App ID**: `com.dlnraja.tuya.zigbee` (Stable app: `com.dlnraja.tuya.zigbee.stable`)  
 > **Status**: ACTIVE & SECURED | **Zero-Defect Publish Quality Gate**: 100% Passed  

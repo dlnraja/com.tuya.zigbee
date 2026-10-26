@@ -1,7 +1,7 @@
 <!-- report-writer:v1 lang=en -->
 ### GitHub Actions reports — inventory (P3069)
 
-75 workflows: 71 write a job summary, 72 already use the shared report helper and 75 carry our own "about" header. 27 scripts still interpolate third-party titles or bodies, and 0 docs hold long quoted passages to rewrite.
+75 workflows: 71 write a job summary, 72 already use the shared report helper and 75 carry our own "about" header. 21 scripts still interpolate third-party titles or bodies, and 0 docs hold long quoted passages to rewrite.
 
 | workflow | about header | job summary | shared helper | writes to GitHub |
 | --- | --- | --- | --- | --- |
@@ -85,15 +85,12 @@
 
 - `.github/scripts/athom-login-cartography.js` — 1 line(s)
 - `.github/scripts/generate-dashboards-page.js` — 1 line(s)
-- `.github/scripts/github-issue-manager.js` — 2 line(s)
 - `.github/scripts/internet-research-tool.js` — 2 line(s)
-- `.github/scripts/nightly-processor.js` — 1 line(s)
 - `.github/scripts/scan-johan-full.js` — 1 line(s)
 - `.github/scripts/variant-scanner.js` — 1 line(s)
 - `tools/ci/auto-bot-issue-triage.js` — 1 line(s)
 - `tools/ci/button-issues-deep.js` — 3 line(s)
 - `tools/ci/check-open-buttons.js` — 1 line(s)
-- `tools/ci/collect-johan-comments-to-delete.js` — 1 line(s)
 - `tools/ci/device-investigator.js` — 1 line(s)
 - `tools/ci/fetch-all-activity.js` — 1 line(s)
 - `tools/ci/fetch-dlnraja-comments-public.js` — 1 line(s)
@@ -102,13 +99,10 @@
 - `tools/ci/generate-docs-index.js` — 2 line(s)
 - `tools/ci/parse-forum-digest.js` — 1 line(s)
 - `tools/ci/regression-lessons-gate.js` — 1 line(s)
-- `tools/ci/search-forum-posts-v2.js` — 3 line(s)
-- `tools/ci/search-forum-posts.js` — 2 line(s)
 - `tools/ci/search-forum-v2.js` — 4 line(s)
 - `tools/ci/search-forum.js` — 1 line(s)
 - `tools/ci/session-start.js` — 1 line(s)
 - `tools/ci/temporal-cross-ref.js` — 1 line(s)
-- `tools/ci/weekly-sovereign-loop.js` — 3 line(s)
 - `tools/shadow-mode/shadow-mode-v2.js` — 1 line(s)
 
 </details>
