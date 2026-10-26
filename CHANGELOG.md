@@ -2,6 +2,7 @@
 
 ## Unreleased — docs refresh (P3032, stable-v5)
 ### Fixed (2026-10-26, P3066 catalogue data)
+- EcoDim ED-10032 CCT filament bulb (`_TZ3210_09hzmirw`): no longer offered by the smoke sensor driver; it pairs as a CCT light (`light_cct_ts0502b`). Bulbs already paired on the smoke driver stay paired; re-pair only to get light controls.
 - `_TZE284_6ycgarab` (Tuya dual smoke + CO alarm): the fingerprint hint now names `smoke_sensor3`, the driver that pairs it on this branch, instead of `smoke_detector_advanced`. Pairing is unchanged.
 - `_TZ3210_09hzmirw` (EcoDim ED-10032 dimmable CCT filament bulb, TS0502B, per zigbee-herdsman-converters) now resolves to the CCT light driver in the fingerprint database and its runtime shard; existing pairings are untouched.
 - `_TZE204_z7a2jmyy` back to `climate_sensor` (its only driver on this branch), a mapping the P52 sync 6897a290f5 had also overwritten.
