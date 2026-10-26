@@ -1,0 +1,95 @@
+# DP × Cluster × Flow coverage — 2026-10-18
+
+Critical gaps: **0**
+
+## Drivers / Flow
+- Drivers: 449
+- With flow.compose: 449
+- Without: none
+- Flow card entries (compose): 5906
+
+## Clusters
+- Compose unique: 35
+- Lexicon size: 45
+- Missing from lexicon: 0
+
+## DP knowledge
+- Knowledge couples: 209
+- Registry couples (Tuya EF00-eligible): 264
+- Covered: 207 (78.4%)
+- Skipped brand/external soft-watch: 26
+- Uncovered:
+  - _TZE204_nkjintbl|TS0601
+  - _TZE200_nkjintbl|TS0601
+  - _TZ3000_fa9mlvja|TS0041
+  - _TZ3000_axpdxqgu|TS0041
+  - _TZ3000_vsxvaj9i|TS0043
+  - _TZ3000_ltt60asa|TS0004
+  - _TZ3000_dzwgk7e2|TS0042
+  - _TZ3000_fllyghyj|TS0201
+  - _TZ3000_lmcp6b0a|TS0003
+  - _TZ3000_z6fgd73r|TS011F
+  - _TYZB02_key8kk7r|TS0043
+  - _TZ3000_rrjr1q0u|TS0043
+  - _TZ3000_mugyhz0q|TS0207
+  - _TZ3000_0s9gukzt|TS0207
+  - _TZ3000_zl1kmjqx|TS0201
+  - _TYZB01_ncutbjdi|TS0003
+  - _TYZB01_aneiicmq|TS0003
+  - _TZ3210_zxbtub8r|TS110E
+  - _TZ3000_18ejxno0|TS0012
+  - _TZ3000_qewo8dlz|TS0013
+  - _TYZB01_iuepbmpv|TS0121
+  - _TZ3000_saiqcn0y|TS0201
+  - _TZ3000_xr3htd96|TS0201
+  - _TZ3000_j0ktmul1|TS011F
+  - _TYZB01_bagt1e4o|TS0014
+  - _TZ3000_e98krvvk|TS0012
+  - _TYZB01_b8cr31hp|TS0003
+  - _TYZB01_xiuox57i|TS0013
+  - _TZ3000_5e5ptb24|TS0013
+  - _TZ3000_aezbqpcu|TS0013
+  - _TZ3000_hlwm8e96|TS0013
+  - _TZ3000_lrgccsxm|TS0013
+  - _TZ3000_thhxrept|TS0003
+  - _TZ3000_wyhuocal|TS0013
+  - _TZ3000_r0pmi2p3|TS0014
+  - _TYZB01_vzrytttn|TS0012
+  - _TZ3000_s8r1qoyq|TS0012
+  - _TZ3000_dku2cfsc|TS0044
+  - _TZ3210_cehuw1lw|TS011F
+  - _TZ3210_a2erlvb8|TS0002
+  - _TZ3210_a2erlvb8|TS000F
+  - _TZ3000_bgtzm4ny|TS0044
+  - _TZE200_aj0oxo1i|TS0225
+  - _TZ3000_6oabgtzv|TS0207
+  - _TZ3000_fdxihpp7|TS0001
+  - _TZ3000_kjfzuycl|TS004F
+  - _TYZB01_qezuin6k|TS110F
+  - _TZE200_wrmhp6b3|TS0601
+  - _TZE600_ogyg1y6b|TS0105
+  - _TZE600_5cu64znk|TS0105
+  - _TZE200_fl8cuafl|TS0601
+  - _TZ3000_tzvbimpq|TS0042
+  - _TZE204_nqqylykc|TS0601
+  - _TZE200_crq3r3la|TS0601
+  - _TZ3000_w8jwkczz|TS0043
+  - _TZE284_vuwtqx0t|TS0601
+  - _TZ3000_2dlwlvex|TS0003
+
+## Flow heuristic smoke
+```json
+{
+  "undeclaredReturnsNull": true,
+  "remoteResolves": true,
+  "sceneResolves": true,
+  "capabilityResolves": true
+}
+```
+
+## Commands
+```bash
+node tools/ci/sync-dp-couple-knowledge.js --apply
+npm run audit:dp-couples
+npm run flow:l99
+```
