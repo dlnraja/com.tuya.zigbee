@@ -116,7 +116,8 @@
       "id": "zigbee_model_id",
       "type": "label",
       "label": {
-        "en": "Zigbee Model ID"
+        "en": "Zigbee Model ID",
+        "fr": "ID du modèle Zigbee"
       },
       "value": ""
     },
@@ -124,7 +125,8 @@
       "id": "zigbee_manufacturer_name",
       "type": "label",
       "label": {
-        "en": "Zigbee Manufacturer"
+        "en": "Zigbee Manufacturer",
+        "fr": "Fabricant Zigbee"
       },
       "value": ""
     },

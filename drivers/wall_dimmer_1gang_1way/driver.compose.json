@@ -77,6 +77,7 @@
       "type": "group",
       "label": {
         "en": "Dimmer Settings",
+        "fr": "Réglages du variateur",
         "nl": "Dimmer Instellingen"
       },
       "children": [
@@ -85,6 +86,7 @@
           "type": "number",
           "label": {
             "en": "Minimum Brightness (%)",
+            "fr": "Luminosité minimale (%)",
             "nl": "Minimale Helderheid (%)"
           },
           "hint": {
@@ -101,6 +103,7 @@
           "type": "dropdown",
           "label": {
             "en": "Power-on Behavior",
+            "fr": "Comportement à la mise sous tension",
             "nl": "Inschakelen Gedrag"
           },
           "hint": {
@@ -137,6 +140,7 @@
           "type": "dropdown",
           "label": {
             "en": "Light Type",
+            "fr": "Type d'éclairage",
             "nl": "Lichttype"
           },
           "hint": {
@@ -174,6 +178,7 @@
       "type": "group",
       "label": {
         "en": "💡 LED Indicator (Backlight)",
+        "fr": "💡 Voyant LED (rétroéclairage)",
         "nl": "💡 LED-indicator (Achtergrondverlichting)"
       },
       "children": [
@@ -182,6 +187,7 @@
           "type": "dropdown",
           "label": {
             "en": "LED Indicator Mode",
+            "fr": "Mode du voyant LED",
             "nl": "LED-indicator Modus"
           },
           "hint": {

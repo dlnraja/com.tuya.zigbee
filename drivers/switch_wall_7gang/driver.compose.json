@@ -412,7 +412,8 @@
       "id": "power_on_behavior",
       "type": "dropdown",
       "label": {
-        "en": "Power On Behavior"
+        "en": "Power On Behavior",
+        "fr": "Comportement à la mise sous tension"
       },
       "value": "previous",
       "values": [
@@ -440,7 +441,8 @@
       "id": "switch_type",
       "type": "dropdown",
       "label": {
-        "en": "Switch Type"
+        "en": "Switch Type",
+        "fr": "Type d'interrupteur"
       },
       "value": "toggle",
       "values": [

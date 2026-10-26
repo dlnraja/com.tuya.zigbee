@@ -4,6 +4,7 @@
     "type": "group",
     "label": {
       "en": "Motor control",
+      "fr": "Commande du moteur",
       "de": "Motorsteuerung"
     },
     "children": [
@@ -12,6 +13,7 @@
         "type": "checkbox",
         "label": {
           "en": "Reverse",
+          "fr": "Inverser",
           "de": "Rückwärts"
         },
         "value": false
@@ -56,6 +58,7 @@
         "type": "number",
         "label": {
           "en": "Movement time",
+          "fr": "Durée de mouvement",
           "de": "Bewegungszeit"
         },
         "hint": {
@@ -75,6 +78,7 @@
         "type": "checkbox",
         "label": {
           "en": "Calibration mode",
+          "fr": "Mode d'étalonnage",
           "de": "Kalibrierungsmodus"
         },
         "hint": {
@@ -90,6 +94,7 @@
     "type": "group",
     "label": {
       "en": "Controls",
+      "fr": "Commandes",
       "de": "Steuerelemente"
     },
     "children": [
@@ -98,6 +103,7 @@
         "type": "checkbox",
         "label": {
           "en": "State control",
+          "fr": "Contrôle de l'état",
           "de": "Zustandskontrolle"
         },
         "hint": {

@@ -4,6 +4,7 @@
     "type": "number",
     "label": {
       "en": "Temperature offset (°C)",
+      "fr": "Décalage de température (°C)",
       "it": "Offset della temperatura (°C)"
     },
     "hint": {
@@ -22,6 +23,7 @@
     "type": "radio",
     "label": {
       "en": "Temperature reporting decimals",
+      "fr": "Décimales du rapport de température",
       "it": "Decimali del report della temperatura"
     },
     "value": "1",
@@ -47,6 +49,7 @@
     "type": "number",
     "label": {
       "en": "Humidity offset (%)",
+      "fr": "Décalage d'humidité (%)",
       "nl": "Luchtvochtigheids compensatie (%)",
       "it": "Offset dell'umidità (%)"
     },
@@ -71,6 +74,7 @@
     "type": "radio",
     "label": {
       "en": "Humidity reporting",
+      "fr": "Rapport d'humidité",
       "it": "Report dell'umidità"
     },
     "value": "1",

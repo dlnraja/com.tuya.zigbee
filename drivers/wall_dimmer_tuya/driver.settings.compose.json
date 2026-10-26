@@ -2,14 +2,16 @@
   {
     "type": "group",
     "label": {
-      "en": "Dimmer (Tuya MCU)"
+      "en": "Dimmer (Tuya MCU)",
+      "fr": "Variateur (Tuya MCU)"
     },
     "children": [
       {
         "id": "power_on_behavior",
         "type": "dropdown",
         "label": {
-          "en": "Power-on behavior"
+          "en": "Power-on behavior",
+          "fr": "Comportement à la mise sous tension"
         },
         "hint": {
           "en": "After power loss (DP14). Z2M: off / on / previous."
@@ -25,7 +27,8 @@
         "id": "light_type",
         "type": "dropdown",
         "label": {
-          "en": "Light type"
+          "en": "Light type",
+          "fr": "Type d'éclairage"
         },
         "hint": {
           "en": "Load type for MCU dimming curve (DP4)."
@@ -42,14 +45,16 @@
   {
     "type": "group",
     "label": {
-      "en": "Backlight"
+      "en": "Backlight",
+      "fr": "Rétroéclairage"
     },
     "children": [
       {
         "id": "backlight_mode",
         "type": "dropdown",
         "label": {
-          "en": "Backlight mode"
+          "en": "Backlight mode",
+          "fr": "Mode de rétroéclairage"
         },
         "hint": {
           "en": "Strings only: off / normal / inverted (DP21). Never use numeric IDs in UI."

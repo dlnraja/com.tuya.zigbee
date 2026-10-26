@@ -180,6 +180,7 @@
       "type": "group",
       "label": {
         "en": "LED Indicator",
+        "fr": "Voyant LED",
         "nl": "LED-indicator"
       },
       "children": [
@@ -188,6 +189,7 @@
           "type": "dropdown",
           "label": {
             "en": "LED Mode",
+            "fr": "Mode LED",
             "nl": "LED Modus"
           },
           "value": "normal",
@@ -221,6 +223,7 @@
       "type": "group",
       "label": {
         "en": "Power-On Behavior",
+        "fr": "Comportement à la mise sous tension",
         "nl": "Gedrag bij inschakelen"
       },
       "children": [
@@ -268,6 +271,7 @@
       "type": "group",
       "label": {
         "en": "External Switch Type",
+        "fr": "Type d'interrupteur externe",
         "nl": "Extern schakelaartype"
       },
       "children": [
@@ -315,6 +319,7 @@
       "type": "group",
       "label": {
         "en": "Scene Mode",
+        "fr": "Mode scène",
         "nl": "Scènemodus"
       },
       "children": [
@@ -323,6 +328,7 @@
           "type": "dropdown",
           "label": {
             "en": "Scene Mode",
+            "fr": "Mode scène",
             "nl": "Scènemodus"
           },
           "hint": {
