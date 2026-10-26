@@ -58,7 +58,7 @@ test('TuyaZigbeeDevice exposes warn() (Homey has no warn)', () => {
 
 test('lifecycle harness: 3 delete/re-pair cycles leave no armed interval and no growing device count', { timeout: 240000 }, () => {
   const out = path.join(os.tmpdir(), `p3065-harness-${process.pid}.json`);
-  execFileSync(process.execPath, ['--expose-gc', '--max-old-space-size=256', path.join(ROOT, 'scripts/perf/p3065-lifecycle-leak-harness.js'), ROOT, '40', '40', '3'], {
+  execFileSync(process.execPath, ['--expose-gc', '--max-old-space-size=256', '-r', path.join(ROOT, 'test/_support/shipped-payload-preload.js'), /* P3068: shipped data/ only */ path.join(ROOT, 'scripts/perf/p3065-lifecycle-leak-harness.js'), ROOT, '40', '40', '3'], {
     cwd: ROOT, stdio: 'ignore', timeout: 230000,
     env: { ...process.env, OUT: out, DRV: 'switch_1gang,switch_2gang,button_wireless_4,climate_sensor,plug_energy_monitor,water_leak_sensor,motion_sensor' },
   });
