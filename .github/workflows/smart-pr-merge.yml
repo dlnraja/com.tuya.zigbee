@@ -141,3 +141,12 @@ jobs:
           echo "PR head SHA: ${{ steps.pr.outputs.head_sha || 'resolved-at-runtime' }}" >> $GITHUB_STEP_SUMMARY
           echo "PR base ref: ${{ steps.pr.outputs.base_ref || 'resolved-at-runtime' }}" >> $GITHUB_STEP_SUMMARY
           echo "Result: ${{ steps.merge.outcome }}" >> $GITHUB_STEP_SUMMARY
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Merges PRs that pass every check; the AI review is optional and skipped without a free quota."; else s="Stopped early ($JOB_STATUS); the red step above says why. Merges PRs that pass every check; the AI review is optional and skipped without a free quota."; fi
+          node scripts/lib/report-writer.js --title "smart-pr-merge" --summary "$s" --headers "item|value" --row "job|smart-merge" --row "result|$JOB_STATUS" --thanks "Renovate and Dependabot for the merge-when-green pattern" --thanks "the actions/stale and actions/labeler maintainers" >> "$GITHUB_STEP_SUMMARY" || true

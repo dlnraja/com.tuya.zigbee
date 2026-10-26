@@ -142,3 +142,12 @@ jobs:
           else
             echo "  ✓ No upstream writes in active workflows"
           fi
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Reusable check that a workflow never writes to the upstream repository."; else s="Stopped early ($JOB_STATUS); the red step above says why. Reusable check that a workflow never writes to the upstream repository."; fi
+          node scripts/lib/report-writer.js --title "upstream-guard" --summary "$s" --headers "item|value" --row "job|check" --row "result|$JOB_STATUS" --thanks "GitHub Actions docs" --thanks "rhysd (actionlint)" >> "$GITHUB_STEP_SUMMARY" || true

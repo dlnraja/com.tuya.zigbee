@@ -103,6 +103,15 @@ jobs:
         if: steps.find.outputs.stuck_runs == 'OK'
         run: |
           echo "## ✅ No stuck publish runs detected" >> $GITHUB_STEP_SUMMARY
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Every four hours: detects Athom processing failures and retries safely."; else s="Stopped early ($JOB_STATUS); the red step above says why. Every four hours: detects Athom processing failures and retries safely."; fi
+          node scripts/lib/report-writer.js --title "publish-self-heal" --summary "$s" --headers "item|value" --row "job|heal" --row "result|$JOB_STATUS" --thanks "Athom's official Homey app GitHub Actions (athombv)" --thanks "the Homey developer docs on build channels" >> "$GITHUB_STEP_SUMMARY" || true
 
   athom-heal:
     name: 🩹 Athom processing_failed self-heal

@@ -336,5 +336,6 @@ Reporters of dlnraja/com.tuya.zigbee issues not credited elsewhere in this file.
 - **rhysd (actionlint)** — static checks for every workflow; our hygiene and report ratchets follow the same "fail only on new debt" spirit.
 - **The Homey Community forum moderators and the Zigbee2MQTT / ZHA trackers** — their habit of linking to a post instead of pasting it is
   the rule our reports now follow: ID, link, author, then a summary in our words (`scripts/lib/report-writer.js`).
+- **GitHub Actions docs (concurrency groups)** — the one-running, one-waiting rule behind our Node 22 setting: pushes let the running job finish, PRs still cancel (`docs/knowledge/CI_CONCURRENCY.md`).
 - No code was copied from these projects; the helper and the ratchet (`scripts/ci/report-structure-ratchet.js`) are our own.
 

@@ -79,6 +79,15 @@ jobs:
             exit 1
           fi
           echo "✓ No upstream writes detected"
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Lint and code checks on pushes and PRs, plus the guard that we never write to the upstream repo."; else s="Stopped early ($JOB_STATUS); the red step above says why. Lint and code checks on pushes and PRs, plus the guard that we never write to the upstream repo."; fi
+          node scripts/lib/report-writer.js --title "code-quality" --summary "$s" --headers "item|value" --row "job|upstream-guard" --row "result|$JOB_STATUS" --thanks "GitHub Actions docs" --thanks "rhysd (actionlint)" >> "$GITHUB_STEP_SUMMARY" || true
 
   code-quality:
     name: Quality Checks

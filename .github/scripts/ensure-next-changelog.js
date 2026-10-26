@@ -28,14 +28,18 @@ function main() {
   const file = '.homeychangelog.json';
   const changelog = JSON.parse(fs.readFileSync(file, 'utf8'));
   const added = [];
+  // P3069: with no real HOMEY_CHANGELOG given, use a short en + fr line from our own commits; keep newest first.
+  let ce = null;
+  try { ce = require('../../scripts/automation/changelog-entry'); } catch (_) { ce = null; }
+  const entry = !ce || (process.env.HOMEY_CHANGELOG && !ce.isPlaceholder(TEXT)) ? { en: TEXT } : ce.summarize(ce.subjectsSinceLastPublish());
   for (const version of [current, next]) {
     if (!changelog[version] || !String(changelog[version].en || '').trim()) {
-      changelog[version] = { en: TEXT };
+      changelog[version] = { ...entry };
       added.push(version);
     }
   }
   if (added.length) {
-    fs.writeFileSync(file, `${JSON.stringify(changelog, null, 2)}\n`);
+    fs.writeFileSync(file, `${JSON.stringify(ce ? ce.orderChangelog(changelog) : changelog, null, 2)}\n`);
   }
   if (process.env.GITHUB_OUTPUT) {
     fs.appendFileSync(process.env.GITHUB_OUTPUT, `next=${next}\nadded=${added.join(',')}\n`);

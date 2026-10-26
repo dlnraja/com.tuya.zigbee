@@ -574,11 +574,19 @@ jobs:
           }
           // P2454: root-only — never stamp cosmiconfig / nested deps
           syncRootPackageVersion(version);
-          if (fs.existsSync('.homeychangelog.json')) {
+          // P3069: short en + fr line in our own words from our commits since the last publish, versions
+          // newest first; existing entries kept. The old inline branch below only runs if the module is gone.
+          let ce = null;
+          try { ce = require('./scripts/automation/changelog-entry'); } catch (_) { ce = null; }
+          if (ce && fs.existsSync('.homeychangelog.json')) {
+            const r = ce.updateChangelog(JSON.parse(fs.readFileSync('.homeychangelog.json', 'utf8')), version, ce.subjectsSinceLastPublish());
+            if (r.changed) fs.writeFileSync('.homeychangelog.json', JSON.stringify(r.obj, null, 2) + '\n');
+            console.log(`changelog v${version}: ${r.entry.en}`);
+          } else if (fs.existsSync('.homeychangelog.json')) {
             const changelog = JSON.parse(fs.readFileSync('.homeychangelog.json', 'utf8'));
             const current = changelog[version] && String(changelog[version].en || '');
             if (!current || /^y{20,}$/i.test(current) || /^v\d+\.\d+\.\d+:$/.test(current.trim())) {
-              changelog[version] = { en: `v${version}: automated publish, manifest sync, and Homey test promotion.` };
+              changelog[version] = { en: "Maintenance release: checks, tests and build tooling only; devices behave as before." };
               fs.writeFileSync('.homeychangelog.json', JSON.stringify(changelog, null, 2) + '\n');
             }
           }
@@ -687,3 +695,12 @@ jobs:
           else
             echo "⚠️ Validated only — HOMEY_PAT not set" >> $GITHUB_STEP_SUMMARY
           fi
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Publishes to the Athom draft channel after a code push that passes the gates (docs-only pushes are skipped)."; else s="Stopped early ($JOB_STATUS); the red step above says why. Publishes to the Athom draft channel after a code push that passes the gates (docs-only pushes are skipped)."; fi
+          node scripts/lib/report-writer.js --title "auto-publish-on-push" --summary "$s" --headers "item|value" --row "job|publish" --row "result|$JOB_STATUS" --thanks "Athom's official Homey app GitHub Actions (athombv)" --thanks "the Homey developer docs on build channels" >> "$GITHUB_STEP_SUMMARY" || true
