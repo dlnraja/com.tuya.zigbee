@@ -1,13 +1,100 @@
 {
-  "timestamp": "2026-10-25T09:30:25.235Z",
+  "timestamp": "2026-10-25T23:33:20.467Z",
   "gate": "align-mfs-db-intelligent",
   "apply": false,
   "check": true,
-  "changeCount": 0,
-  "skippedCount": 83,
+  "changeCount": 12,
+  "skippedCount": 84,
   "highSeverityCount": 0,
-  "byAction": {},
-  "changes": [],
+  "byAction": {
+    "compose_exclusive": 12
+  },
+  "changes": [
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3210_7VGTTNA6",
+      "from": "sensor_motion_presence",
+      "to": "fingerbot"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3210_A04ACM9S",
+      "from": "sensor_motion_presence",
+      "to": "fingerbot"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZ3210_CM9MBPR1",
+      "from": "sensor_motion_presence",
+      "to": "fingerbot"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tze200_7bztmfm1",
+      "from": "device_air_purifier_plug",
+      "to": "co_sensor_dcr_co"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_CXAKECFO",
+      "from": "sensor_climate_contact",
+      "to": "device_radiator_valve"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_0zaf1cr8",
+      "from": "smoke_sensor3",
+      "to": "switch_3gang"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE284_0zaf1cr8",
+      "from": "smoke_sensor3",
+      "to": "switch_3gang"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_t5p1vj8r",
+      "from": "switch_wireless",
+      "to": "smoke_sensor_ts0601_dp"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_uebojraa",
+      "from": "switch_wireless",
+      "to": "smoke_sensor_ts0601_dp"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_dq1mfjug",
+      "from": "switch_wireless",
+      "to": "smoke_sensor_ts0601_dp"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tze204_ntcy3xu1",
+      "from": "socket_power_strip_four_three",
+      "to": "smoke_sensor_ts0601_dp"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "piriv01",
+      "from": "motion_sensor_switch",
+      "to": "motion_sensor_excellux_zg104plv"
+    }
+  ],
   "skipped": [
     {
       "reason": "registry_driver_missing",
