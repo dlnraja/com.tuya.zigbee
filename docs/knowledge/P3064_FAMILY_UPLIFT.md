@@ -22,13 +22,20 @@ re-pair). New couples are not added in this batch (combo budget unchanged; maste
 | Plugs / energy meters | Moes ZM7LT3 3-phase (`_TZE284_cf4b5ktf`): total power DP9, phase structs DP6-8, PF/frequency not decoded. TOQCB2-80 breakers: internal temperature DP131 unused | Per-couple map + 18-byte phase struct (sum until DP9 seen); TOQCB2-80 DP131 → `measure_temperature` (late) | TOQCB2 protection thresholds DP102-119 as settings (needs compose settings); `energy_meter_din` lsanae15 DP3/4/17/21-24 (mostly unnamed upstream) |
 | Switches / relays | SWS6TZ-WHITE (`_TZE200_8eazvzo6`) metering DP21-23 ignored in `switch_wall_6gang` | Late `measure_current/power/voltage` on that couple only | hbxadcl0 DP107 (unnamed upstream, ignorable) |
 | Dimmers | MG-DIM02Z (`_TZE284_da26abzz`) in `wall_dimmer_tuya` uses DP141/142 + metering DP21-23; the V1 map (DP1/DP2, DP21 = backlight) misread it | Per-couple TX/RX map (141 state, 142 brightness 0-1000), late metering, DPs blocked from dynamic discovery | Knob dimmer `_TZE200_tgeqdjgk` colour temperature DP107 (needs TX too) |
-| Smoke / CO (safety) | TS0601 couples in the IAS-based `smoke_sensor` driver had no datapoint path at all | Receive-only DP path: TS0601_smoke_co (6ycgarab, aoah6bv8, 2841000000_6ycgarab) smoke DP1 / CO DP18 / battery DP15; PA-44Z (qvzsq3s2); GSKS-ZB (qcasmfan, + tamper DP4). `alarm_co` added late | `_TZE200_/_TZE204_6ycgarab` and `_TZ3210_09hzmirw` have no upstream smoke source (09hzmirw is an EcoDim bulb upstream) — left untouched, flagged |
+| Smoke / CO (safety) | TS0601 couples in the IAS-based `smoke_sensor` driver had no datapoint path at all | Receive-only DP path: TS0601_smoke_co (6ycgarab, aoah6bv8, 2841000000_6ycgarab) smoke DP1 / CO DP18 / battery DP15; PA-44Z (qvzsq3s2); GSKS-ZB (qcasmfan, + tamper DP4). `alarm_co` added late | `_TZE200_/_TZE204_6ycgarab`: **unsourced-kept** (long-present, no upstream source, not pinned — same policy as d3m9v8p6/pwj6vuj9). `_TZ3210_09hzmirw`: EcoDim CCT bulb, removed from smoke_sensor in P3067 (now `light_cct_ts0502b`, baseline exemptions approvedBy dlnraja t561u/t555u delegated). `_TZE284_6ycgarab`: TS0601 only (Z2M, ZHA #4181, Tasmota) — single owner `smoke_sensor`, the TS0205-only `smoke_sensor3` claim dropped (P3067) |
 | Thermostats / TRV | `windowcoverings_set` "missing" rows are artefacts (valve position) | — | hpkusvom DP1 check |
 | Covers | "onoff" exposes are upstream backlight/limit switches | — | — |
 | Buttons / keypads | keypad `_TZE284_rt5dklro` arm actions DP27/28, user DP112 | — | next batch |
 | Lights | LED controllers 8fffc3kb / gt5al3bl DP61 (paint colour) | — | next batch |
 | Climate / soil | soil AOYAN DP9 temperature unit; lb0fsvba DP6 | — | settings only, low impact |
 | Battery sensors | many `alarm_battery` / `measure_voltage` expose rows | — | intentionally not added (SDK rule: no measure_battery + alarm_battery together) |
+
+## P3067 catalogue decisions (2026-10-26)
+| Couple | Decision | Source | Effect on paired devices |
+|---|---|---|---|
+| `_TZ3210_09hzmirw` (4 casings) × TS0205/TS0601/SMD9300 in smoke_sensor | removed (parasite) | Z2M tuya.ts TS0502B whiteLabel EcoDim ED-10032 | none: Homey keeps paired devices on their driver id; new pairings go to light_cct_ts0502b |
+| `_TZE200_6ycgarab`, `_TZE204_6ycgarab` in smoke_sensor | unsourced-kept | none upstream | none |
+| `_TZE284_6ycgarab` × TS0205 in smoke_sensor3 | dropped from smoke_sensor3 (double claim) | Z2M TS0601_smoke_co, ZHA quirks #4181 (TS0601), Tasmota `TZE284_6ycgarab.zb` (TS0601) | none; couple still in payload via smoke_sensor, baseline gate OK |
 
 ## Credits
 DP layouts: Koen Kanters and the zigbee-herdsman-converters contributors (tuya.ts models

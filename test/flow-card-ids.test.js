@@ -38,21 +38,34 @@ function driverComposeFlow() {
   return out;
 }
 
+// WHY(P3067 2026-10-26): a leftover .homeybuild/app.json from another branch or an older build
+// (homey app validate/build in a reused worktree) used to REPLACE the source manifest, so the test
+// failed locally (45 "missing" ids on bastien-home) while CI, which never has .homeybuild, was green.
+// Source of truth = root app.json + every driver.flow.compose.json; a build copy is only merged when it
+// is the same app id + version and not older than app.json (a stale build is ignored, never trusted).
+function isFreshBuild(buildFile, rootApp) {
+  if (!fs.existsSync(buildFile)) {return false;}
+  try {
+    const b = JSON.parse(fs.readFileSync(buildFile, 'utf8'));
+    if (b.id !== rootApp.id || b.version !== rootApp.version) {return false;}
+    return fs.statSync(buildFile).mtimeMs >= fs.statSync(path.join(ROOT, 'app.json')).mtimeMs;
+  } catch { return false; }
+}
+
 function collectManifestIds() {
-  const appFile = fs.existsSync(path.join(ROOT, '.homeybuild', 'app.json'))
-    ? path.join(ROOT, '.homeybuild', 'app.json')
-    : path.join(ROOT, 'app.json');
-  const app = JSON.parse(fs.readFileSync(appFile, 'utf8'));
+  const rootApp = JSON.parse(fs.readFileSync(path.join(ROOT, 'app.json'), 'utf8'));
   const ids = new Set();
-  for (const section of ['triggers', 'actions', 'conditions']) {
-    for (const card of (app.flow && app.flow[section]) || []) {
-      if (card && card.id) { ids.add(card.id); }
+  const addFlow = (flow) => {
+    for (const section of ['triggers', 'actions', 'conditions']) {
+      for (const card of (flow && flow[section]) || []) {
+        if (card && card.id) { ids.add(card.id); }
+      }
     }
-  }
-  if (!fs.existsSync(path.join(ROOT, '.homeybuild', 'app.json'))) {
-    const dc = driverComposeFlow();
-    for (const t of Object.keys(dc)) {for (const c of dc[t]) {if (c && c.id) {ids.add(c.id);}}}
-  }
+  };
+  addFlow(rootApp.flow);
+  addFlow(driverComposeFlow());
+  const buildFile = path.join(ROOT, '.homeybuild', 'app.json');
+  if (isFreshBuild(buildFile, rootApp)) { addFlow(JSON.parse(fs.readFileSync(buildFile, 'utf8')).flow); }
   return ids;
 }
 
@@ -74,6 +87,8 @@ function collectReferencedIds(file) {
   }
   return ids;
 }
+
+module.exports = { collectManifestIds, isFreshBuild };
 
 describe('flow card IDs referenced by drivers exist in app.json', () => {
   it('has no missing literal flow card ID', () => {
