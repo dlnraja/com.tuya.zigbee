@@ -63,7 +63,11 @@ const TRIGGER_RULES = [
   [/^gas detected!?$/, () => ['alarm_gas'], true],
   [/^(carbon monoxide|co) detected!?$/, () => ['alarm_co'], true],
   [/^locked$/, () => ['locked'], true],
-  [/^unlocked$/, () => ['locked'], false]
+  [/^unlocked$/, () => ['locked'], false],
+  // P3065 D9: thermostat cards follow the existing mode capability (user decision, no new capability)
+  [/^(thermostat )?mode changed$/, () => ['thermostat_mode'], 'change'],
+  [/^heating started$/, () => ['thermostat_mode'], 'enter:heat'],
+  [/^heating stopped$/, () => ['thermostat_mode'], 'leave:heat']
 ];
 
 // [regex, capability preference list, op] ; op: true | above | below
