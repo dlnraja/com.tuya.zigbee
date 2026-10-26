@@ -124,7 +124,7 @@ class WiFiCoverDevice extends TuyaLocalDevice {
     const est = String(dp) === '2' ? this._travel() : null;
     const plan = est ? est.plan(Number(value) / 100) : null;
     if (!plan) {return super._setDP(dp, value);}
-    const cmd = (st) => (this._coverCommandSet ? coverValueFromState(st, this._coverCommandSet) : ({ up: 'open', down: 'close', idle: 'stop' }[st]));
+    const cmd = (st) => this._coverCommandSet ? coverValueFromState(st, this._coverCommandSet) : { up: 'open', down: 'close', idle: 'stop' }[st];
     this._clearTravelTimer();
     await super._setDP('1', cmd(plan.state));
     this._travelOnState(plan.state);

@@ -12,7 +12,7 @@ const HOMEY_MODES = new Set(['auto', 'heat', 'cool', 'off']);
 function homeyModeFromToken(v) {
   for (const set of STRING_MODE_SETS) {
     const m = climateModeFromValue(v, set);
-    if (m) {return { set, mode: HOMEY_MODES.has(m) ? m : (m === 'heat_cool' ? 'auto' : null) };}
+    if (m) {return { set, mode: HOMEY_MODES.has(m) ? m : m === 'heat_cool' ? 'auto' : null };}
   }
   return null;
 }
