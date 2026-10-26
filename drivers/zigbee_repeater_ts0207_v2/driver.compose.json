@@ -1,0 +1,102 @@
+{
+  "name": {
+    "en": "Zigbee Repeater TS0207 (v2)",
+    "fr": "Zigbee Repeater TS0207 (v2)"
+  },
+  "class": "other",
+  "capabilities": [
+    "button.1"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_n0lphcok",
+      "_tz3000_n0lphcok",
+      "_TZ3000_hgm6k8ku",
+      "_tz3000_hgm6k8ku",
+      "_TZ3000_piuensvr",
+      "_tz3000_piuensvr"
+    ],
+    "productId": [
+      "TS0207"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Plug in the USB repeater and hold button 5s."
+      }
+    }
+  },
+  "icon": "/drivers/zigbee_repeater_ts0207_v2/assets/icon.svg",
+  "images": {
+    "small": "/drivers/zigbee_repeater_ts0207_v2/assets/images/small.png",
+    "large": "/drivers/zigbee_repeater_ts0207_v2/assets/images/large.png"
+  },
+  "energy": {
+    "approximation": {
+      "usageConstant": 1
+    }
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    },
+    {
+      "id": "tuya_revive",
+      "title": {
+        "en": "Tuya Revive (device recovery)",
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
+      }
+    },
+    {
+      "id": "generate_issue_report",
+      "title": {
+        "en": "Generate support report (GitHub issue)",
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
+      }
+    },
+    {
+      "id": "zigbee_rebind",
+      "title": {
+        "en": "Re-bind & reconfigure reporting",
+        "fr": "Re-lier et reconfigurer les rapports",
+        "nl": "Opnieuw binden en rapportage instellen",
+        "de": "Neu binden und Reporting konfigurieren"
+      }
+    }
+  ],
+  "id": "zigbee_repeater_ts0207_v2",
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
+}

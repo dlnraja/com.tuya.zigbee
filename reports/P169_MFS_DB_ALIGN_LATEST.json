@@ -1,13 +1,23 @@
 {
-  "timestamp": "2026-10-21T09:44:54.071Z",
+  "timestamp": "2026-10-21T13:48:55.887Z",
   "gate": "align-mfs-db-intelligent",
   "apply": false,
   "check": true,
-  "changeCount": 0,
+  "changeCount": 1,
   "skippedCount": 84,
   "highSeverityCount": 0,
-  "byAction": {},
-  "changes": [],
+  "byAction": {
+    "compose_exclusive": 1
+  },
+  "changes": [
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz1800_akzvkzqq",
+      "from": "usb_dongle_triple",
+      "to": "doorbell_lidl_hg06668"
+    }
+  ],
   "skipped": [
     {
       "reason": "registry_driver_missing",
