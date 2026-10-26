@@ -139,6 +139,10 @@
         {
           "name": "threshold",
           "type": "number",
+          "title": {
+            "en": "Threshold",
+            "fr": "Seuil"
+          },
           "min": 0,
           "max": 100000,
           "step": 10,

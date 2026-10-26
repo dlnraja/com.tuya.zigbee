@@ -240,6 +240,10 @@
         {
           "name": "threshold",
           "type": "number",
+          "title": {
+            "en": "Threshold",
+            "fr": "Seuil"
+          },
           "min": 0,
           "max": 100,
           "step": 5,

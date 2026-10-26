@@ -214,6 +214,10 @@
         {
           "name": "power",
           "type": "number",
+          "title": {
+            "en": "Power",
+            "fr": "Puissance"
+          },
           "min": 0,
           "max": 3680,
           "step": 10,
@@ -241,6 +245,10 @@
         {
           "name": "energy",
           "type": "number",
+          "title": {
+            "en": "Energy",
+            "fr": "Énergie"
+          },
           "min": 0,
           "max": 10000,
           "step": 1,
