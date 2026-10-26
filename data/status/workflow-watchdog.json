@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-25T19:53:18.392Z",
+  "at": "2026-10-26T11:02:30.790Z",
   "checked": 51,
   "findings": [
     {
@@ -12,7 +12,7 @@
       "kind": "repeated-failure",
       "sig": "ci-b446e2740f9d",
       "wf": ".github/workflows/node22-tests.yml",
-      "detail": "8 failures in 72 h: Node 22 runtime tests failed on stable-v5 (test / Full suite on Node 22: code-or-test)"
+      "detail": "15 failures in 72 h: Node 22 runtime tests failed on wip/p3055-parasites (test / Full suite on Node 22: code-or-test)"
     },
     {
       "kind": "repeated-failure",
