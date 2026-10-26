@@ -182,7 +182,9 @@ Own implementation in `lib/ir/ZosungIRProtocol.js`, `lib/ir/TuyaWifiIRProtocol.j
 - **rhysd (actionlint)** — static checks for every workflow; our hygiene and report ratchets follow the same "fail only on new debt" spirit.
 - **The Homey Community forum moderators and the Zigbee2MQTT / ZHA trackers** — their habit of linking to a post instead of pasting it is
   the rule our reports now follow: ID, link, author, then a summary in our words (`scripts/lib/report-writer.js`).
-- **GitHub Actions docs (concurrency groups)** — the one-running, one-waiting rule behind our Node 22 setting: pushes let the running job finish, PRs still cancel (`docs/knowledge/CI_CONCURRENCY.md`).
+- **GitHub Actions docs (concurrency groups)** — the one-running, one-waiting rule behind our Node 22 setting: pushes let the running job finish, PRs still cancel (`docs/knowledge/CI_CONCURRENCY.md`); now also on the seven push-triggered checks listed there.
+- **Athom Homey SDK docs, "Zigbee firmware updates" page** (Athom docs team, https://apps.developer.homey.app/wireless/zigbee/zigbee-firmware-updates) — the line about firmware files being stored apart from the app and fetched only when an update starts is now told in our own words in `docs/knowledge/OTA_AUDIT_P2932.md`, not pasted.
+- **Community commenters on our issues** (john1v, pemikalsen-sudo, Ssssneak, late4marshmellow, dalobalo and others) — `reports/COMMUNITY-INTELLIGENCE.md` no longer reproduces their comments; each entry keeps the author, the issue link and a one-line topic, so the original stays where they wrote it. Thank you for the reports.
 - No code was copied from these projects; the helper and the ratchet (`scripts/ci/report-structure-ratchet.js`) are our own.
 
 ## Licenses (SPDX)

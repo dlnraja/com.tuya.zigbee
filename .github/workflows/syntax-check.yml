@@ -42,7 +42,9 @@ permissions:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  # P3069: a push run finishes and newer pushes wait as one queued run (no extra minutes); PRs still cancel.
+  # See docs/knowledge/CI_CONCURRENCY.md.
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 defaults:
   run:
