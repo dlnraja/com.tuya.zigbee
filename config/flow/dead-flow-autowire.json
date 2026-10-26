@@ -56,6 +56,26 @@
       "cap": "measure_luminance",
       "when": "change"
     },
+    "climate_sensor_presence_sensor_climate_prese_a91ea": {
+      "driver": "climate_sensor_presence",
+      "cap": "measure_luminance",
+      "when": "change"
+    },
+    "contact_sensor_curtain_motor_windowcoverings_f33e3": {
+      "driver": "contact_sensor_curtain",
+      "cap": "windowcoverings_set",
+      "when": "change"
+    },
+    "curtain_motor_shutter_curtain_motor_windowco_94ffa": {
+      "driver": "curtain_motor_shutter",
+      "cap": "windowcoverings_set",
+      "when": "change"
+    },
+    "curtain_motor_wall_curtain_motor_windowcover_ee1ea": {
+      "driver": "curtain_motor_wall",
+      "cap": "windowcoverings_set",
+      "when": "change"
+    },
     "device_air_purifier_device_air_purifier_ther_42884": {
       "driver": "device_air_purifier",
       "cap": "target_temperature",
@@ -127,6 +147,11 @@
       "when": true
     },
     "device_air_purifier_presence_air_purifier_pr_a928b": {
+      "driver": "device_air_purifier_presence",
+      "cap": "measure_luminance",
+      "when": "change"
+    },
+    "device_air_purifier_presence_air_purifier_pr_f0929": {
       "driver": "device_air_purifier_presence",
       "cap": "measure_luminance",
       "when": "change"
@@ -366,10 +391,20 @@
       "cap": "target_temperature",
       "when": "change"
     },
+    "gas_detector_gas_detected": {
+      "driver": "gas_detector",
+      "cap": "alarm_gas",
+      "when": true
+    },
     "gas_detector_gas_cleared": {
       "driver": "gas_detector",
       "cap": "alarm_gas",
       "when": false
+    },
+    "gas_detector_co_detected": {
+      "driver": "gas_detector",
+      "cap": "alarm_co",
+      "when": true
     },
     "gas_detector_co_cleared": {
       "driver": "gas_detector",
@@ -521,6 +556,16 @@
       "cap": "alarm_human",
       "when": false
     },
+    "sensor_lcdtemphumidsensor_soil_sensor_moistu_8517b": {
+      "driver": "sensor_lcdtemphumidsensor_soil",
+      "cap": "measure_humidity.soil",
+      "when": "change"
+    },
+    "sensor_lcdtemphumidsensor_soil_sensor_batter_d438e": {
+      "driver": "sensor_lcdtemphumidsensor_soil",
+      "cap": "measure_battery",
+      "when": "change"
+    },
     "sensor_lcdtemphumidsensor_soil_sensor_humidi_6314f": {
       "driver": "sensor_lcdtemphumidsensor_soil",
       "cap": "measure_humidity",
@@ -571,9 +616,19 @@
       "cap": "measure_humidity",
       "when": "change"
     },
+    "sensor_motion_radar_motion_sensor_radar_mmwa_494ef": {
+      "driver": "sensor_motion_radar",
+      "cap": "measure_battery",
+      "when": "change"
+    },
     "sensor_motion_radar_motion_sensor_radar_mmwa_73ab1": {
       "driver": "sensor_motion_radar",
       "cap": "measure_temperature",
+      "when": "change"
+    },
+    "sensor_motion_radar_motion_sensor_radar_mmwa_ce6c1": {
+      "driver": "sensor_motion_radar",
+      "cap": "measure_luminance",
       "when": "change"
     },
     "smartplug_dinrail_turned_on_99666": {
@@ -645,6 +700,21 @@
       "driver": "tunable_spot_GU10",
       "cap": "dim",
       "when": "change"
+    },
+    "universal_zigbee_contact_open": {
+      "driver": "universal_zigbee",
+      "cap": "alarm_contact",
+      "when": true
+    },
+    "wifi_door_lock_wifi_lock_locked": {
+      "driver": "wifi_door_lock",
+      "cap": "locked",
+      "when": true
+    },
+    "wifi_door_lock_wifi_lock_unlocked": {
+      "driver": "wifi_door_lock",
+      "cap": "locked",
+      "when": false
     }
   },
   "conditions": {
