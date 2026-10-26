@@ -301,7 +301,9 @@
       "id": "sensor_gas_presence_run_self_test",
       "title": {
         "en": "Run self test",
-        "fr": "Lancer l'auto-test"
+        "fr": "Lancer l'auto-test",
+        "de": "Selbsttest ausführen",
+        "nl": "Zelftest uitvoeren"
       },
       "args": [
         {
@@ -346,7 +348,9 @@
       ],
       "titleFormatted": {
         "en": "Run self test [[test_type]]",
-        "fr": "Lancer l'auto-test [[test_type]]"
+        "fr": "Lancer l'auto-test [[test_type]]",
+        "de": "Selbsttest ausführen [[test_type]]",
+        "nl": "Zelftest uitvoeren [[test_type]]"
       }
     }
   ]
