@@ -435,7 +435,7 @@ async function processGitHub(state,idx,pidx,appVersion,dryRun){
 
       const sysPrompt='You are reviewing a PR for Tuya Unified Zigbee v'+appVersion+'. Analyze the changes:\n- Check fingerprint correctness\n- Verify driver assignment\n- Check for common bugs (wrong import paths, wrong settings keys)\n- Suggest improvements\nUse GitHub markdown. Max 300 words.';
 
-      const userMsg='PR #'+pr.number+' by @'+(pr.user?.login||'?')+': '+pr.title+'\n'+text+'\nFingerprints: '+JSON.stringify(fpResults)+'\nChanged files:'+diffInfo;
+      const userMsg='PR #'+pr.number+' by @'+(pr.user?.login||'?')+': '+pr.title+'\n'+text+'\nFingerprints: '+JSON.stringify(fpResults)+'\nChanged files:'+diffInfo; // ok-extract-only: AI prompt input (optional, in-quota), not a report
 
       let prReply=null,prModel='template';
 

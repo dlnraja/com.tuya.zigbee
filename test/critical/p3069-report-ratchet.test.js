@@ -65,3 +65,33 @@ test('docs/knowledge and CREDITS.md carry no long quoted excerpt any more', () =
   const left = Object.keys(cur.docExcerpts).filter((f) => f.startsWith('docs/knowledge/') || /CREDITS\.md$/.test(f));
   assert.deepStrictEqual(left, []);
 });
+
+// P3069 step 4: digests and logs link to the source with a topic instead of repeating its title.
+test('a file that declares itself our own text near the top is not scanned; lower down it does not count', () => {
+  const quote = '> I am sorry to say that the issue is not resolved for my energy plug after the update yesterday.';
+  assert.deepStrictEqual(RW.findQuotedExcerpts(['# Plan', '<!-- own-text-file: our own rules -->', '', quote].join('\n')), []);
+  const late = ['# x', '', '', '', '', '', '<!-- own-text-file: late -->', quote].join('\n');
+  assert.strictEqual(RW.findQuotedExcerpts(late).length, 1);
+  assert.strictEqual(RW.findQuotedExcerpts(['<!-- own-text-file: -->', quote].join('\n')).length, 1, 'a reason is required');
+});
+test('weekly loop, forum searches, comment collector and issue manager no longer echo third-party titles', () => {
+  const fs = require('fs');
+  const ROOT = path.join(__dirname, '..', '..');
+  const flagged = G.scanScripts().map((x) => x.file);
+  for (const f of ['tools/ci/weekly-sovereign-loop.js', 'tools/ci/search-forum-posts.js', 'tools/ci/search-forum-posts-v2.js',
+    'tools/ci/collect-johan-comments-to-delete.js', '.github/scripts/github-issue-manager.js', '.github/scripts/nightly-processor.js']) {
+    if (!fs.existsSync(path.join(ROOT, f))) continue;
+    assert.ok(!flagged.includes(f), `${f} still quotes a title or body`);
+  }
+  const w = fs.readFileSync(path.join(ROOT, 'tools/ci/weekly-sovereign-loop.js'), 'utf8');
+  assert.match(w, /linkRef\(\{ id: i\.number, url: i\.url, text: i\.title \}\)/);
+  const gm = fs.readFileSync(path.join(ROOT, '.github/scripts/github-issue-manager.js'), 'utf8');
+  assert.match(gm, /forumMsg='\*\*GitHub #'\+issue\.number\+'\*\* — '\+topicOf\(issue\.title\)/);
+  assert.strictEqual((gm.match(/ok-extract-only: AI prompt input/g) || []).length, 2);
+});
+test('linkRef gives a link and topic words, never the title itself', () => {
+  const title = 'My kitchen light _TZ3000_abcdefgh keeps turning off after a few hours';
+  const s = RW.linkRef({ id: 12, url: 'https://x/12', text: title });
+  assert.ok(s.startsWith('[#12](https://x/12)'));
+  assert.ok(!s.includes('keeps turning off'));
+});

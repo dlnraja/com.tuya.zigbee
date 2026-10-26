@@ -1,4 +1,5 @@
 # GLOBAL IMPROVEMENT PLAN (historical)
+<!-- own-text-file: our own plan and agent rules (dlnraja), not a quote of anyone else -->
 
 > **Superseded as day-to-day compass by** [`docs/rules/PRAGMATIC_ROADMAP.md`](../docs/rules/PRAGMATIC_ROADMAP.md)  
 > Product name: **Universal Tuya** — not “Unified Engine”.  

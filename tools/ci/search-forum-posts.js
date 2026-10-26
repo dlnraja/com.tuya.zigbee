@@ -1,6 +1,8 @@
 // search-forum-posts.js — search and save forum results for our app
 const https = require('https');
 const fs = require('fs');
+const path = require('path');
+const { linkRef } = require(path.join(__dirname, '..', '..', 'scripts', 'lib', 'report-writer.js')); // P3069: link + topic, never the title
 
 function get(url) {
   return new Promise((resolve) => {
@@ -66,10 +68,7 @@ async function search() {
 
   // Show top 20
   for (const r of deduped.slice(0, 20)) {
-    console.log('  - #' + r.id + ' [' + (r.like_count || 0) + ' likes, ' + (r.posts_count || 0) + ' posts] ' + r.title);
-    if (r.excerpt) {
-      console.log('    > ' + r.excerpt.replace(/<[^>]+>/g, '').substring(0, 200));
-    }
+    console.log('  - ' + linkRef({ id: r.id, url: 'https://community.homey.app/t/' + r.id, text: (r.title || '') + ' ' + (r.excerpt || '') }) + ' [' + (r.like_count || 0) + ' likes, ' + (r.posts_count || 0) + ' posts]');
   }
 
   // Also get full post content for the top 5
@@ -85,7 +84,7 @@ async function search() {
         cooked: p.cooked?.substring(0, 2000),
         raw: p.raw?.substring(0, 1000)
       }));
-      console.log('  - ' + r.title + ' (posts: ' + r.posts.length + ')');
+      console.log('  - ' + linkRef({ id: r.id, url: 'https://community.homey.app/t/' + r.id, text: r.title }) + ' (posts: ' + r.posts.length + ')');
     }
   }
 

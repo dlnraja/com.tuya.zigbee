@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 const fs=require('fs'),path=require('path');
+const{linkRef,topicOf}=require(path.join(__dirname,'..','..','scripts','lib','report-writer.js')); // P3069: link + topic, never the author's words
 const{callAI,callAIEnsemble,analyzeImage,getAIBudget,textSimilarity,isDuplicateContent,MAX_POST_SIZE,smartMergePost}=require('./ai-helper');
 const{analyzeScreenshot,analyzeMultipleScreenshots,formatForAIContext}=require('./screenshot-analyzer');
 const{loadFingerprints,findAllDrivers,extractMfrFromText,extractAllFP,resolveFingerprint,buildFullIndex}=require('./load-fingerprints');
@@ -83,7 +84,7 @@ function markProcessed(state,repo,num){if(!state.processed.includes(repo+'#'+num
 // Classify issue with AI
 async function classifyIssue(issue,fpResults){
   const prompt='Classify this GitHub issue for a Zigbee device app. RULE: What a user reports is absolute truth — never contradict their observations, investigate instead. If user says device does not work, classify as bug_report even if FP is supported. Return ONLY a JSON object: {"type":"device_request|bug_report|feature|question|duplicate|stale|resolved","priority":"high|medium|low","shouldClose":true/false,"closeReason":"string or null","labels":["label1"],"summary":"one line"}';
-  const text='Issue #'+issue.number+' by @'+(issue.user?.login||'?')+':\nTitle: '+issue.title+'\nBody: '+(issue.body||'').slice(0,1500)+'\nFingerprints: '+JSON.stringify(fpResults)+'\nDays since update: '+daysSince(issue.updated_at)+'\nState: '+issue.state;
+  const text='Issue #'+issue.number+' by @'+(issue.user?.login||'?')+':\nTitle: '+issue.title+'\nBody: '+(issue.body||'').slice(0,1500)+'\nFingerprints: '+JSON.stringify(fpResults)+'\nDays since update: '+daysSince(issue.updated_at)+'\nState: '+issue.state; // ok-extract-only: AI prompt input (optional, in-quota), not a report; the model's reply is what gets reviewed
   const ai=await callAI(text,prompt,{maxTokens:512,complexity:'low'});
   if(!ai)return null;
   try{const m=ai.text.match(/\{[\s\S]*\}/);return m?JSON.parse(m[0]):null}catch{return null}
@@ -101,7 +102,7 @@ async function generateResponse(issue,fpResults,classification,variants,bugs,ima
   if(isUpstream)prompt+='\nCRITICAL: This issue is on the JohanBendz/com.tuya.zigbee upstream repo. You MUST clearly redirect the user to our actively maintained fork at [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee). Explain this fork supports way more devices than upstream. ALWAYS include the test install link: '+ctx.installUrl+' and community forum: '+ctx.forumUrl+'. Tell the user to install, then remove and re-pair their device. Report any issues on the forum thread or the dlnraja GitHub repo.';
   let profileCtx='';try{const det=detectFromGitHub(issue.user?.login||'',issue.body||'');profileCtx=buildPromptContext(det)}catch{}
   prompt+='\\n'+profileCtx+'Context: '+JSON.stringify(ctx);
-  let text='Issue: '+issue.title+'\nBy: @'+(issue.user?.login||'?')+'\nBody: '+(issue.body||'').slice(0,2000)+'\nFP results: '+JSON.stringify(fpResults)+'\nClassification: '+JSON.stringify(classification)+'\nVariants from Z2M/ZHA/Blakadder: '+JSON.stringify(variants||[])+'\nAssociated bugs: '+JSON.stringify(bugs||[]);
+  let text='Issue: '+issue.title+'\nBy: @'+(issue.user?.login||'?')+'\nBody: '+(issue.body||'').slice(0,2000)+'\nFP results: '+JSON.stringify(fpResults)+'\nClassification: '+JSON.stringify(classification)+'\nVariants from Z2M/ZHA/Blakadder: '+JSON.stringify(variants||[])+'\nAssociated bugs: '+JSON.stringify(bugs||[]); // ok-extract-only: AI prompt input (optional, in-quota), not a report; the model's reply is what gets reviewed
   if(bugFindings&&bugFindings.length)text+='\nBug investigation findings: '+JSON.stringify(bugFindings.map(b=>({fp:b.fp,driver:b.driver,findings:b.findings,divisors:b.divisors})));
   if(researchResults&&researchResults.length)text+='\nFP Research results: '+JSON.stringify(researchResults.map(r=>({fp:r.fp,driver:r.driver,pid:r.pid,confidence:r.confidence,method:r.method,vendor:r.vendor,deviceType:r.deviceType})));
   if(imageCtx)text+='\nImage analysis: '+imageCtx;
@@ -191,7 +192,7 @@ async function processIssue(repo,issue,state,report,extData){
   const newFPs=fpResults.filter(f=>!f.supported).map(f=>f.fp);
   const existingFPs=fpResults.filter(f=>f.supported);
   if(isEmptyTemplate(issue)){
-    console.log('  #'+issue.number+' [EMPTY TEMPLATE] '+issue.title?.slice(0,60));
+    console.log('  '+linkRef({id:issue.number,url:issue.html_url,text:issue.title})+' [EMPTY TEMPLATE]');
     const comments=await ghGet('/repos/'+repo+'/issues/'+issue.number+'/comments?per_page=5');
     const hasBot=comments&&comments.some(c=>(c.body||'').includes(TAG));
     if(!hasBot){
@@ -242,7 +243,7 @@ async function processIssue(repo,issue,state,report,extData){
   // Classify with AI (only for issues that need it — new FPs or bugs)
   const classification=await classifyIssue(issue,fpResults);
   if(!classification){console.log('  Skip #'+issue.number+' (AI classify failed)');return}
-  console.log('  #'+issue.number+' ['+classification.type+'/'+classification.priority+'] '+issue.title?.slice(0,60));
+  console.log('  '+linkRef({id:issue.number,url:issue.html_url,text:issue.title})+' ['+classification.type+'/'+classification.priority+']');
 
   // Track new fingerprints
   if(newFPs.length)report.newFingerprints.push(...newFPs.map(fp=>({fp,source:key,type:classification.type})));
@@ -303,7 +304,7 @@ async function processIssue(repo,issue,state,report,extData){
         console.log('    Responded');report.responded++;
         // Cross-post to forum for device requests
         if(classification.type==='device_request'||newFPs.length){
-          const forumMsg='**GitHub #'+issue.number+'** — '+issue.title+'\nFPs: '+allFPs.map(f=>'`'+f+'`').join(', ')+(variants.length?' | Variants: '+variants.flatMap(v=>v.variants).slice(0,5).map(v=>v.fp).join(', '):'')+'\n[View issue](https://github.com/'+repo+'/issues/'+issue.number+')';
+          const forumMsg='**GitHub #'+issue.number+'** — '+topicOf(issue.title)+'\nFPs: '+allFPs.map(f=>'`'+f+'`').join(', ')+(variants.length?' | Variants: '+variants.flatMap(v=>v.variants).slice(0,5).map(v=>v.fp).join(', '):'')+'\n[View issue](https://github.com/'+repo+'/issues/'+issue.number+')';
           await crossPostForum(forumMsg);
         }
         // Cross-ref to other repo
