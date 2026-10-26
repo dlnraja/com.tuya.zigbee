@@ -754,7 +754,7 @@
       {
         "id": "sensor_gas_presence_run_self_test",
         "title": {
-          "en": "Run self-test",
+          "en": "Run self-test", "de": "Selbsttest ausführen", "nl": "Zelftest uitvoeren",
           "fr": "Lancer auto-test"
         },
         "args": [
