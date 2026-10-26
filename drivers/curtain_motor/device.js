@@ -661,11 +661,19 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
         }
       }
 
-      if (openTime > 0) {
+      // WHY(P3067 family 6): DP101/102 are not travel times on these motors. AM43 `_TZE200_zah67ekd` /
+      // `_icka1clh` (Z2M tuya.ts TS0601_cover_4): DP101 opening_mode, DP102 factory_reset — writing a
+      // close time there resets the motor at every start. `libht6ua` (Z2M): DP101 motor_direction.
+      // fodv6bkr / ZM16B / Quoya M515 have no DP101/102 upstream. Keep the user settings, skip the writes.
+      const noTravelDps = this._isBatteryTubularRoller() || this._isQuoyaM515();
+      if (noTravelDps && (openTime > 0 || closeTime > 0)) {
+        this.log('[CURTAIN] open/close time not sent: DP101/102 mean something else on this motor');
+      }
+      if (openTime > 0 && !noTravelDps) {
         this.log(`[CURTAIN] Setting open_time: ${openTime}s`);
         await this._sendTuyaDP(101, openTime, 'value');
       }
-      if (closeTime > 0) {
+      if (closeTime > 0 && !noTravelDps) {
         this.log(`[CURTAIN] Setting close_time: ${closeTime}s`);
         await this._sendTuyaDP(102, closeTime, 'value');
       }
