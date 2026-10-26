@@ -45,6 +45,7 @@ re-pair). New couples are not added in this batch (combo budget unchanged; maste
 | Family | Sourced DPs mapped | Optional ZCL fallback | Lazy capabilities added | New / moved drivers | Left out (why) |
 |---|---|---|---|---|---|
 | Buttons / keypads | WKE502Z: 3, 23, 24, 25, 26-29, 101, 103-107, 110-112 (DP108/109 admin / user codes not exposed: secrets) ; kzm5w4iz 1, 3, 10 | not applicable (pure 0xEF00, nothing bound at pairing) | none new (alarm_contact / alarm_vibration already in vibration_sensor) | kzm5w4iz → vibration_sensor | measure_voltage on TS0041 / TS0215A (battery % already covers it) |
+| Lights | GL-SPI-206P: 1, 2, 3 (white only), 4, 61 RX+TX, 53, 101, 102, 103 ; MG-DIM02Z: 141-144, 146, 21-23 ; knob tgeqdjgk: 102, 103, 106, 107, 141 | ZCL onOff/level stay the primary path on TS050x bulbs (unchanged); SPI / MG / knob are pure 0xEF00 | none new (light_temperature on knob, measure_* on MG already lazy since P3064/P3066) | none | SPI DP7 countdown, DP51 scene, DP52 music (need Flow actions, handed to P3065); knob DP111/112 actions, DP121/122/131/132 second light (needs a 2-light driver, budget); `_TZE284_nvodulvi` M9-zigbee-SL 8-gang scene switch sits on dimmer_wall_1gang (wrong family, needs its own driver: deferred, budget) |
 
 ## P3067 catalogue decisions, buttons / keypads
 | Couple | Decision | Source | Effect on paired devices |
