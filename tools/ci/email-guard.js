@@ -9,7 +9,9 @@ const path = require('path');
 
 const RE = /[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}/g;
 const REDACTED = '[redacted-email]';
-const ALLOW_ADDR = new Set(['dlnraja@gmail.com', '[redacted-email]']);
+// Extra allowed addresses come from the EMAIL_GUARD_ALLOW env var / secret (comma-separated),
+// so no private address has to live in the repository.
+const ALLOW_ADDR = new Set(['dlnraja@gmail.com', ...String(process.env.EMAIL_GUARD_ALLOW || '').split(',').map((a) => a.trim().toLowerCase()).filter(Boolean)]);
 const ALLOW_DOMAIN = /(^|\.)(example\.(com|org|net)|email\.com|b\.com|users\.noreply\.github\.com|github\.com|homey\.app|athom\.com|athom\.discoursemail\.com|[a-z0-9-]+\.local|localhost)$/i;
 const ALLOW_LOCAL = /^(no-?reply|notifications?|support|security|bot|p\d+-bot)$/i;
 const SKIP_PATH = /(^|\/)(node_modules\/|(package-lock\.json|pnpm-lock\.yaml|yarn\.lock)$|LICEN[SC]E|\.git\/)|\.(png|jpe?g|gif|webp|svg|ico|zip|gz|pdf)$/i;

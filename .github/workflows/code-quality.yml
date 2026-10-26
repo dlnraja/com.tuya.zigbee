@@ -129,6 +129,11 @@ jobs:
 
       - name: P2957 email guard (no third-party emails in tracked files)
         run: node tools/ci/email-guard.js
+        env:
+          EMAIL_GUARD_ALLOW: ${{ secrets.EMAIL_GUARD_ALLOW }}
+
+      - name: P3074 personal-data guard (no CV/LinkedIn exports or personal contact data)
+        run: node tools/ci/personal-data-guard.js
 
       - name: Voice safety check
         id: voice
