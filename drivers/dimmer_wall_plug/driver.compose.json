@@ -25,6 +25,8 @@
       "type": "checkbox",
       "label": {
         "en": "Enable Power Estimation",
+        "nl": "Vermogensschatting inschakelen",
+        "de": "Leistungsschätzung aktivieren",
         "fr": "Activer Estimation Puissance"
       },
       "value": true,
@@ -38,6 +40,8 @@
       "type": "dropdown",
       "label": {
         "en": "Power Measurement Scale",
+        "nl": "Schaal vermogensmeting",
+        "de": "Skalierung der Leistungsmessung",
         "fr": "Échelle Mesure Puissance"
       },
       "value": "1",
