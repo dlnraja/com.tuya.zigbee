@@ -1,3 +1,10 @@
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: Runs the test suite on Node 22, the runtime Homey apps use since firmware 12.9.
+# Ideas from (thank you): GitHub Actions docs; rhysd (actionlint); the Athom homey CLI docs for the validate
+#   levels.
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
+#   posting stays off or ledger-gated.
+# <<< about
 name: Node 22 runtime tests
 # WHY (docs/knowledge/HOMEY_FIRMWARE.md): since Homey v12.9.0, apps run on Node 22 on every platform.
 # The homey CLI needs Node 24, but app code must stay Node 22 compatible, so the test suite runs on 22.

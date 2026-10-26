@@ -1,3 +1,12 @@
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: Every few hours: gathers new fingerprints from mail, diagnostics and public device databases
+#   and adds them to our own drivers.
+# Ideas from (thank you): Koen Kanters and the zigbee-herdsman-converters / Zigbee2MQTT contributors; the
+#   zigpy / ZHA device handler authors; Blakadder's Zigbee device database; JohanBendz's original Tuya Zigbee
+#   app (read-only reference).
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
+#   posting stays off or ledger-gated.
+# <<< about
 # 🔄 Auto-Enrich Closed Loop (P69)
 # Triggers: cron: 0 */4 * * * + workflow_dispatch | Secrets: GH_PAT,GMAIL_APP_PASSWORD,GMAIL_CLIENT_ID,GMAIL_CLIENT_SECRET,GMAIL_EMAIL,GMAIL_REFRESH_TOKEN,HOMEY_PAT,HOMEY_PAT_API,HOMEY_EMAIL,HOMEY_PASSWORD
 # Doc header added 2026-07-29 (workflows genealogy enrichment).

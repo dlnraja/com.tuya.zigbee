@@ -109,7 +109,7 @@ for(const it of issues){
     iTriaged++;
     continue;
   }
-  const itTxt2=`${it.title||''} ${it.body||''}`;
+  const itTxt2=`${it.title||''} ${it.body||''}`; // ok-extract-only (P3069: only used to pick ids, never written out)
   const {allMfrs:iM2,allPids:iP2}=buildFullIndex();
   const {mfr:eM2,pid:eP2}=extractAllFP(itTxt2,iM2,iP2);
   if(!eM2.length)continue;
@@ -122,7 +122,7 @@ for(const it of issues){
   missing.forEach(m=>newFps.push({fp:m,source:`${REPO}#${it.number}`,type:'issue'}));
   // v5.11.26: Bug investigation for supported FPs with bug-like keywords
   let bugInfo='';
-  const itText=`${it.title||''} ${it.body||''}`.toLowerCase();
+  const itText=`${it.title||''} ${it.body||''}`.toLowerCase(); // ok-extract-only (P3069: only used to pick ids, never written out)
   if(found.length&&itText.match(/bug|wrong|error|not work|broken|value|scaling|divisor|energy|battery/)){
     for(const[m]of found){
       try{const inv=investigateBug(m,itText);if(inv&&inv.findings.length){bugInfo+=`\n\n**Code investigation for \`${m}\`** (${inv.driver}):\n`+inv.findings.map(f=>'- '+f).join('\n');}}catch{}
@@ -143,7 +143,7 @@ for(const pr of prs){
     pTriaged++;
     continue;
   }
-  const prTxt2=`${pr.title||''} ${pr.body||''}`;
+  const prTxt2=`${pr.title||''} ${pr.body||''}`; // ok-extract-only (P3069: only used to pick ids, never written out)
   const {allMfrs:pM2,allPids:pP2}=buildFullIndex();
   const {mfr:peM2,pid:peP2}=extractAllFP(prTxt2,pM2,pP2);
   if(!peM2.length)continue;
@@ -167,7 +167,7 @@ if(SCAN_FORKS){
       await sleep(500); // Rate-limit: 0.5s between fork scans
       const fi=JSON.parse(gh(`issue list -R ${fork} -s open -L 10 --json number,title,body`));
       for(const it of fi){
-        const mfrs=extractMfrFromText(`${it.title||''} ${it.body||''}`);
+        const mfrs=extractMfrFromText(`${it.title||''} ${it.body||''}`); // ok-extract-only (P3069: only used to pick ids, never written out)
         if(!mfrs.length)continue;
         const found=mfrs.filter(m=>fps.has(m));
         const missing=mfrs.filter(m=>!fps.has(m));

@@ -1,0 +1,18 @@
+{
+  "_doc": "P3069 report ratchet: may only shrink. Regenerate: node scripts/ci/report-structure-ratchet.js --write-baseline",
+  "workflowsWithoutAbout": [],
+  "quotingScripts": [],
+  "docExcerpts": {
+    "docs/knowledge/FIELD_NOTES_2026-10_X_SCAN.md": 1,
+    "docs/knowledge/HOMEY_FIRMWARE.md": 1,
+    "docs/knowledge/KB/CODE_REFERENCE.md": 4,
+    "docs/knowledge/KB/UNKNOWN_COMMANDS.md": 1,
+    "docs/knowledge/P3036_ATHOM_PUBLISH_POLICY.md": 1,
+    "docs/knowledge/TS004X_BATTERY_REMOTES.md": 1,
+    "CREDITS.md": 1,
+    "reports/COMMUNITY-INTELLIGENCE.md": 148,
+    "reports/kimi-2026-07-28/backport-ondeleted-destroyed.md": 2,
+    "reports/kimi-2026-07-28/stable-checkers-pass.md": 1,
+    "reports/repomix-architecture.md": 1555
+  }
+}

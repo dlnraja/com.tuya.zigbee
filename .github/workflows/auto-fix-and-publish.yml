@@ -1,3 +1,10 @@
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: Runs the safe automatic fixes, the gates, then sends a build to the Athom draft/test channel.
+# Ideas from (thank you): Athom's official Homey app GitHub Actions (athombv); the Homey developer docs on
+#   build channels.
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
+#   posting stays off or ledger-gated.
+# <<< about
 # 🤖 Auto-Fix + Publish Pipeline
 # Triggers: cron: 5 */6 * * * + push,schedule,workflow_dispatch | Secrets: HOMEY_PAT
 # Doc header added 2026-07-29 (workflows genealogy enrichment).

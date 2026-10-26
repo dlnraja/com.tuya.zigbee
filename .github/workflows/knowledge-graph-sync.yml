@@ -1,3 +1,10 @@
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: Rebuilds the device knowledge graph; schedule off because the nightly audit does it.
+# Ideas from (thank you): Koen Kanters and the zigbee-herdsman-converters contributors; zigpy / ZHA, deCONZ,
+#   tuya-local, tinytuya and localtuya authors; Blakadder's Zigbee device database.
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
+#   posting stays off or ledger-gated.
+# <<< about
 # 🧠 Knowledge Graph Daily Sync
 # Triggers: cron: 30 2 * * * + workflow_dispatch | Secrets: GITHUB_TOKEN only
 # Doc header added 2026-07-29 (workflows genealogy enrichment).
