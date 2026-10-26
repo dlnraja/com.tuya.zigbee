@@ -39,7 +39,7 @@ class SmartRCBODevice extends UnifiedPlugBase {
   async onDeleted() {
     this._destroyed = true;
     await super.onDeleted();
-    await super.onNodeInit({ zclNode });
+    // P3065: removed super.onNodeInit({ zclNode }) (zclNode undefined -> ReferenceError; never re-init on delete)
     this.log('Device deleted, cleaning up');
   }
 }
