@@ -1414,7 +1414,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
   async _handleDP(dp, value, dataType) {
     if (this._destroyed) {return;}
     // Device is awake! Trigger time sync for LCD displays
-    if (CI.containsCI(getManufacturer(this), '_tze284')) {
+    if (CI.containsCI(manufacturerOf(this), '_tze284') /* P3065: was undefined getManufacturer -> ReferenceError on every DP */) {
       this._sendTimeSync().catch(() => { });
     }
 
