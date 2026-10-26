@@ -44,19 +44,36 @@ function loadForbiddenMfrDrivers() {
     for (const e of entries) {
       const forbidden = e.forbiddenDrivers || e.forbidDrivers || [];
       if (!forbidden.length) continue;
+      // WHY(P2870): forbidMode "couple" bans one mfr+pid, not the mfr. Treating it mfr-wide kept
+      // _TZ3000_dfgbtub0 off button_wireless_2 although only its TS0044 couple is banned there
+      // (TS0042 is the real 2-button couple). A couple ban now blocks the union only when the
+      // target driver would also carry one of the banned pids.
+      const couplePids = String(e.forbidMode || '').toLowerCase() === 'couple' && !e.doNotLock
+        ? [].concat(e.productId || []).map((x) => String(x).toUpperCase()) : null;
       for (const m of e.mfr || e.manufacturerName || []) {
         const k = String(m).toLowerCase();
-        if (!out.has(k)) out.set(k, new Set());
-        for (const d of forbidden) out.get(k).add(String(d));
+        if (!out.has(k)) out.set(k, new Map());
+        for (const d of forbidden) {
+          const prev = out.get(k).get(String(d));
+          if (prev === null) continue; // already banned mfr-wide
+          if (!couplePids || !couplePids.length) { out.get(k).set(String(d), null); continue; }
+          const set = prev || new Set();
+          couplePids.forEach((x) => set.add(x));
+          out.get(k).set(String(d), set);
+        }
       }
     }
   } catch (_e) { /* soft */ }
   return out;
 }
 
-function mfrForbiddenOnDriver(forbidIdx, mfr, driverId) {
-  const set = forbidIdx.get(String(mfr).toLowerCase());
-  return !!(set && set.has(driverId));
+function mfrForbiddenOnDriver(forbidIdx, mfr, driverId, driverPids = null) {
+  const byDriver = forbidIdx.get(String(mfr).toLowerCase());
+  if (!byDriver || !byDriver.has(driverId)) return false;
+  const pids = byDriver.get(driverId);
+  if (pids === null || !driverPids) return true; // mfr-wide ban, or pids unknown: stay strict
+  for (const p of driverPids) if (pids.has(String(p).toUpperCase())) return true;
+  return false;
 }
 
 /** Hard allow-list exceptions: mfr suffix → only these drivers may receive UNION (peer bleed Contre quoi). */
@@ -348,8 +365,9 @@ function applyBucket(driverId, bucket, forbidIdx = new Map()) {
   after.zigbee = after.zigbee || {};
 
   // WHY: peer remotes often list polluted mfr×pid cartesian — respect sacred forbid + allow-lists.
+  const driverPids = [...(before.zigbee?.productId || []), ...(bucket.pids || [])];
   const safeMfrs = [...bucket.mfrs].filter(
-    (m) => !mfrForbiddenOnDriver(forbidIdx, m, driverId) && !mfrBlockedByAllowList(m, driverId),
+    (m) => !mfrForbiddenOnDriver(forbidIdx, m, driverId, driverPids) && !mfrBlockedByAllowList(m, driverId),
   );
   const safePids = filterPidsForBucket(safeMfrs, bucket.pids).map((p) => String(p).toUpperCase());
   const forms = [];
