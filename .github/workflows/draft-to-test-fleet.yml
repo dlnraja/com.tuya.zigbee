@@ -86,6 +86,15 @@ jobs:
           items+="]"
           echo "matrix=$items" >> "$GITHUB_OUTPUT"
           echo "Fleet matrix: $items"
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Promotes the latest draft to test for each of our three apps in one manual run."; else s="Stopped early ($JOB_STATUS); the red step above says why. Promotes the latest draft to test for each of our three apps in one manual run."; fi
+          node scripts/lib/report-writer.js --title "draft-to-test-fleet" --summary "$s" --headers "item|value" --row "job|matrix-prep" --row "result|$JOB_STATUS" --thanks "Athom's official Homey app GitHub Actions (athombv)" --thanks "the Homey developer docs on build channels" >> "$GITHUB_STEP_SUMMARY" || true
 
   promote:
     name: Draft→Test ${{ matrix.label }}

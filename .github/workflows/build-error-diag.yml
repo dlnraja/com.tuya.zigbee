@@ -96,3 +96,12 @@ jobs:
           else
             echo "_No report file produced — check screenshots artifact._" >> $GITHUB_STEP_SUMMARY
           fi
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Opens the Athom build page in a headless browser to read why a build failed (manual or daily)."; else s="Stopped early ($JOB_STATUS); the red step above says why. Opens the Athom build page in a headless browser to read why a build failed (manual or daily)."; fi
+          node scripts/lib/report-writer.js --title "build-error-diag" --summary "$s" --headers "item|value" --row "job|diagnose" --row "result|$JOB_STATUS" --thanks "Athom's official Homey app GitHub Actions (athombv)" --thanks "the Homey developer docs on build channels" >> "$GITHUB_STEP_SUMMARY" || true

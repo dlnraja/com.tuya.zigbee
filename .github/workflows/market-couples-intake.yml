@@ -179,3 +179,12 @@ jobs:
           git commit -m "market(P2232): max-source intake + apply-safe couples v${VER} [skip ci]"
           git pull --rebase origin master || true
           git push origin HEAD:master
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Collects manufacturer/product pairs from every public source and our own diagnostics, with device-truth locks."; else s="Stopped early ($JOB_STATUS); the red step above says why. Collects manufacturer/product pairs from every public source and our own diagnostics, with device-truth locks."; fi
+          node scripts/lib/report-writer.js --title "market-couples-intake" --summary "$s" --headers "item|value" --row "job|intake" --row "result|$JOB_STATUS" --thanks "Koen Kanters and the zigbee-herdsman-converters / Zigbee2MQTT contributors" --thanks "the zigpy / ZHA device handler authors" >> "$GITHUB_STEP_SUMMARY" || true

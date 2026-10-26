@@ -121,6 +121,15 @@ jobs:
             echo "- Fixes available: $FIXES" >> $GITHUB_STEP_SUMMARY
             echo "- Need investigation: $INVESTIGATE" >> $GITHUB_STEP_SUMMARY
           fi
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Collects one day of repo, forum and crash activity into a private report. The schedule is off; the orchestrator covers it."; else s="Stopped early ($JOB_STATUS); the red step above says why. Collects one day of repo, forum and crash activity into a private report. The schedule is off; the orchestrator covers it."; fi
+          node scripts/lib/report-writer.js --title "activity-monitor" --summary "$s" --headers "item|value" --row "job|fetch-activity" --row "result|$JOB_STATUS" --thanks "Renovate and Dependabot for the merge-when-green pattern" --thanks "the actions/stale and actions/labeler maintainers" >> "$GITHUB_STEP_SUMMARY" || true
 
       # State persists via the cache step above (security policy: state files
       # must never be committed to git — see security-scanner).

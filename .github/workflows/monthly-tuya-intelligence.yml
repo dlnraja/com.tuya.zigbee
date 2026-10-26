@@ -99,3 +99,12 @@ jobs:
           git commit -m "chore(intelligence): monthly automated url audit and enrichment [skip ci]" || echo "No changes to commit"
           # P3025: bare `git push` was rejected whenever another bot pushed first
           bash .github/scripts/git-push-retry.sh --branch "${GITHUB_REF_NAME}"
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Monthly link audit of our references; schedule off until its commit step is fixed."; else s="Stopped early ($JOB_STATUS); the red step above says why. Monthly link audit of our references; schedule off until its commit step is fixed."; fi
+          node scripts/lib/report-writer.js --title "monthly-tuya-intelligence" --summary "$s" --headers "item|value" --row "job|audit-and-enrich" --row "result|$JOB_STATUS" --thanks "Koen Kanters and the zigbee-herdsman-converters contributors" --thanks "zigpy / ZHA, deCONZ, tuya-local, tinytuya and localtuya authors" >> "$GITHUB_STEP_SUMMARY" || true
