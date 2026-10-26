@@ -31,8 +31,9 @@ describe('P3070 localized status messages', () => {
     assert.strictEqual(localMsg({ homey: { __: () => undefined } }, 'a', 'C'), 'C');
   });
 
-  it('every key exists in en/fr/de/nl/es/it with the same tokens', () => {
-    for (const l of ['en', 'fr', 'de', 'nl', 'es', 'it']) {
+  it('every key exists in every locale with the same tokens', () => {
+    // WHY: every shipped locale (cs/da/no/sv/pl/pt/ru too), else i18n completeness goes red.
+    for (const l of fs.readdirSync(path.join(ROOT, 'locales')).filter((n) => n.endsWith('.json')).map((n) => n.slice(0, -5))) {
       const e = JSON.parse(fs.readFileSync(path.join(ROOT, 'locales', `${l}.json`), 'utf8')).errors || {};
       for (const k of KEYS) {
         assert.ok(typeof e[k] === 'string' && e[k].trim(), `${l}.errors.${k}`);
