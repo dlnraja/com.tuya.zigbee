@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-26T08:05:03.820Z",
+ "generated": "2026-10-26T12:30:34.846Z",
  "drivers": 414,
  "snapshot": {
   "air_purifier": {
@@ -1113,9 +1113,9 @@
    "pidSha": "b37ed01a69900c1e"
   },
   "light_cct_ts0502b": {
-   "mfr": 3,
+   "mfr": 4,
    "pid": 1,
-   "mfrSha": "35e408ac50317ff7",
+   "mfrSha": "c3eb71b817c61fa0",
    "pidSha": "9e84a7b9a8e8cb87"
   },
   "light_dimmable_ts0501a": {
@@ -1845,9 +1845,9 @@
    "pidSha": "6bb4763014511564"
   },
   "smoke_sensor": {
-   "mfr": 8,
+   "mfr": 7,
    "pid": 3,
-   "mfrSha": "6e611ca50a1c2fac",
+   "mfrSha": "d7150a46826fd210",
    "pidSha": "14fd4884570649ac"
   },
   "smoke_sensor2": {
@@ -1857,9 +1857,9 @@
    "pidSha": "91d04f847d60da6b"
   },
   "smoke_sensor3": {
-   "mfr": 11,
+   "mfr": 10,
    "pid": 1,
-   "mfrSha": "556b93db800cd5f4",
+   "mfrSha": "ebdd90b512b4790c",
    "pidSha": "ffba1e7b2343f15f"
   },
   "smoke_sensor_ts0601_dp": {
