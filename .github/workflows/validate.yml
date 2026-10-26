@@ -156,6 +156,10 @@ jobs:
         # a duplicate DP / numeric key in one object literal silently drops a mapping → hard fail.
         run: node scripts/kb/dp-endpoint-coverage.js --check
 
+      - name: 🧭 P3075 family completeness per gang / channel / phase (report-only)
+        # WHY: DPs, clusters, capabilities and Flow cards per channel, per family; gaps are leads, never a failure.
+        run: node scripts/kb/family-completeness.js --check
+
       - name: 🖼️ Driver Images Pre-Check
         run: |
           MISS=0
