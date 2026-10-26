@@ -34,6 +34,7 @@ test('existing real entries are kept, placeholders are refilled, versions end ne
   assert.strictEqual(r.obj['9.0.10'].en, obj['9.0.10'].en, 'old entries stay as they are (additive)');
   assert.ok(r.obj['9.0.11'].en && r.obj['9.0.11'].fr);
   assert.ok(ce.isPlaceholder(obj['9.0.10'].en) && ce.isPlaceholder('Reliability improvements.') && !ce.isPlaceholder('Real words.'));
+  for (const g of ['Bug fixes and improvements', 'v9.0.4: Bug fixes and improvements.', 'Device compatibility and reliability improvements.']) assert.ok(ce.isPlaceholder(g), g);
   const again = ce.updateChangelog(r.obj, '9.0.11', ['fix: something else']);
   assert.strictEqual(again.changed, false, 'a real entry is never rewritten');
 });
@@ -45,5 +46,22 @@ test('the repo changelog is ordered newest first and the generators no longer wr
     const s = fs.readFileSync(path.join(ROOT, f), 'utf8');
     assert.doesNotMatch(s, GENERIC, f);
     assert.match(s, /scripts\/automation\/changelog-entry/, f);
+  }
+});
+
+test('bump and ensure-next replace a generic HOMEY_CHANGELOG with our summary, keep a real one', () => {
+  const { execFileSync } = require('child_process');
+  const os = require('os');
+  for (const [text, expectGeneric] of [['Bug fixes and improvements', false], ['TRV06 battery alarm fix.', true]]) {
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'p3069-cl-'));
+    fs.writeFileSync(path.join(dir, 'app.json'), JSON.stringify({ version: '1.0.1' }));
+    fs.writeFileSync(path.join(dir, '.homeychangelog.json'), JSON.stringify({ '1.0.1': { en: 'Old.' } }));
+    execFileSync(process.execPath, [path.join(ROOT, '.github/scripts/ensure-next-changelog.js')], { cwd: dir, env: { ...process.env, HOMEY_CHANGELOG: text, GITHUB_OUTPUT: '' }, encoding: 'utf8' });
+    const out = JSON.parse(fs.readFileSync(path.join(dir, '.homeychangelog.json'), 'utf8'));
+    assert.deepStrictEqual(Object.keys(out), ['1.0.2', '1.0.1']);
+    assert.strictEqual(out['1.0.1'].en, 'Old.');
+    assert.strictEqual(out['1.0.2'].en === text, expectGeneric, out['1.0.2'].en);
+    if (!expectGeneric) assert.ok(out['1.0.2'].fr);
+    fs.rmSync(dir, { recursive: true, force: true });
   }
 });
