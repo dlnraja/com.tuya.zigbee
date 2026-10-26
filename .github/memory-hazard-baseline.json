@@ -2,7 +2,7 @@
  "note": "P3068 memory-hazard ratchet baseline — counts may only go down",
  "totals": {
   "hot-stringify": 59,
-  "unbounded-collection": 99,
+  "unbounded-collection": 91,
   "raw-timer": 4
  },
  "files": {
@@ -167,9 +167,6 @@
   },
   "lib/features/WelcomeHomeSoft.js": {
    "unbounded-collection": 2
-  },
-  "lib/flow/PredictiveFlowCards.js": {
-   "unbounded-collection": 8
   },
   "lib/health/HealthMonitor.js": {
    "unbounded-collection": 1
