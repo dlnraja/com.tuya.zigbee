@@ -309,13 +309,24 @@ function evaluateCi({ required, ancestry, runsByWorkflow, codeChanged } = {}) {
   return { state, perWorkflow: per };
 }
 
+// P3075 (t613u): the 26/10 15:04 staged master send held for 40 min on "CI missing" because the
+// CI of the dispatched SHA had been cancelled by newer pushes (cancel-in-progress) and the gate then
+// dispatched the missing workflows on the *branch*, i.e. on a newer tip that can never count for the
+// gated SHA. When the gated SHA is no longer the branch tip and its CI is missing, waiting or dispatching
+// is useless: hold at once as "superseded" so the next slot gates the tip.
+function missingCiAction({ state, sha, tip } = {}) {
+  if (state !== 'missing') return 'wait';
+  if (tip && sha && tip !== sha) return 'superseded';
+  return 'dispatch';
+}
+
 function isCodeFile(f) { return CODE_FILE_RE.test(String(f || '')); }
 
 module.exports = {
   POLICY_VERSION, APPS, RETRY, TRANSIENT_RE, CODE_FILE_RE,
   appPolicy, appIdForKey, classify, backoffSeconds, retryDecision,
   singleRetryExempt, breakerAssess, retryCountOf, slotDecision, busyBuild, uploadEvents, crossAppEvents,
-  evaluateCi, runState, isCodeFile, isTrue, versionOnlyDiff,
+  evaluateCi, missingCiAction, runState, isCodeFile, isTrue, versionOnlyDiff,
 };
 
 // ── CLI ──────────────────────────────────────────────────────────────────────────────────────
@@ -430,6 +441,14 @@ async function ciGate(appId) {
     last = evaluateCi({ required: p.ci, ancestry, runsByWorkflow, codeChanged: (s) => (diffCache.has(s) ? diffCache.get(s) : null) });
     if (last.state === 'green' || last.state === 'red') break;
     const elapsed = Date.now() - t0;
+    if (last.state === 'missing') {
+      let tip = null;
+      try { tip = (await gh(`/repos/${repo}/commits/${encodeURIComponent(branch)}`)).sha; } catch { /* unknown tip: keep the old behaviour */ }
+      if (missingCiAction({ state: last.state, sha, tip }) === 'superseded') {
+        last = { ...last, state: 'superseded', tip, reason: `${String(sha).slice(0, 10)} is no longer the ${branch} tip (${String(tip).slice(0, 10)}) and its CI is missing` };
+        break;
+      }
+    }
     if (last.state === 'missing' && !dispatched && elapsed >= dispatchAfterMs && isTrue(process.env.CI_GATE_DISPATCH_MISSING ?? '1')) {
       for (const [wf, r] of Object.entries(last.perWorkflow)) {
         if (r.state !== 'missing') continue;
