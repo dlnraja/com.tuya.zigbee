@@ -73,6 +73,12 @@ jobs:
       # P3073: fold the journal into a bounded signature ledger (proposals only, never edits a gate).
       - name: Learn CI signatures (P3073, proposals only)
         run: '[ -f scripts/learning/ci-signatures.cjs ] && node scripts/learning/ci-signatures.cjs --report || true'
+      # P3073 / t590u: upstream "since last time" cursors (GitHub public API + Reddit public JSON, each source at
+      # most every 1-3 days, Reddit paused 7 days at its first refusal). Weekly human report stays a local file in
+      # the runner; nothing is posted anywhere.
+      - name: Upstream watch (P3073, read-only)
+        timeout-minutes: 5
+        run: '[ -f scripts/learning/upstream-watch.cjs ] && node scripts/learning/upstream-watch.cjs --report || true'
       - name: Workflow watchdog
         run: node scripts/automation/workflow-watchdog.cjs
       - name: Reply candidates (never posted)
