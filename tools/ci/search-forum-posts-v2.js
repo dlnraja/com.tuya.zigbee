@@ -1,6 +1,7 @@
 // search-forum-posts-v2.js — proper search for our app (P55 — uses smart-fetch)
 const fs = require('fs');
 const path = require('path');
+const { linkRef } = require(path.join(__dirname, '..', '..', 'scripts', 'lib', 'report-writer.js')); // P3069: link + topic, never the title
 const { SmartFetcher } = require(path.resolve(__dirname, '..', '..', 'lib', 'scraper', 'smart-fetch'));
 
 // P55 — smart fetcher with browser UA + concurrency + cache + retry
@@ -87,7 +88,7 @@ async function search() {
 
   // Show topics
   for (const t of allTopics.values()) {
-    console.log('  - #' + t.id + ' [cat=' + t.category_id + '] ' + t.title);
+    console.log('  - ' + linkRef({ id: t.id, url: 'https://community.homey.app/t/' + t.id, text: t.title }) + ' [cat=' + t.category_id + ']');
   }
 
   // Get full post content for top 10 topics (parallel)
@@ -99,7 +100,7 @@ async function search() {
     const t = topics[i];
     const r = tResults[i];
     if (r.error || !r.body) {
-      console.log('  - ' + t.title + ' (error: ' + r.error + ')');
+      console.log('  - ' + linkRef({ id: t.id, url: 'https://community.homey.app/t/' + t.id, text: t.title }) + ' (error: ' + r.error + ')');
       continue;
     }
     try {
@@ -112,9 +113,9 @@ async function search() {
         raw: p.raw?.substring(0, 2000),
         cooked: p.cooked?.substring(0, 3000)
       }));
-      console.log('  - ' + t.title + ' (' + t.posts.length + ' posts)');
+      console.log('  - ' + linkRef({ id: t.id, url: 'https://community.homey.app/t/' + t.id, text: t.title }) + ' (' + t.posts.length + ' posts)');
     } catch (e) {
-      console.log('  - ' + t.title + ' (parse error)');
+      console.log('  - ' + linkRef({ id: t.id, url: 'https://community.homey.app/t/' + t.id, text: t.title }) + ' (parse error)');
     }
   }
 

@@ -1,4 +1,5 @@
 # 🎯 GLOBAL IMPROVEMENT PLAN — Universal Tuya Zigbee Engine v7.4.11+
+<!-- own-text-file: our own plan and agent rules (dlnraja), not a quote of anyone else -->
 
 > Comprehensive action plan for app quality, CI/CD optimization, and cost control.
 
