@@ -95,3 +95,12 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           node tools/ci/smart-update-orchestrator.js --trigger --silent
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Plans dependency and data updates; schedule off, manual only."; else s="Stopped early ($JOB_STATUS); the red step above says why. Plans dependency and data updates; schedule off, manual only."; fi
+          node scripts/lib/report-writer.js --title "smart-update" --summary "$s" --headers "item|value" --row "job|plan" --row "result|$JOB_STATUS" --thanks "Renovate and Dependabot for the merge-when-green pattern" --thanks "the actions/stale and actions/labeler maintainers" >> "$GITHUB_STEP_SUMMARY" || true

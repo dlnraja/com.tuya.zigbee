@@ -147,3 +147,12 @@ jobs:
             // WHY(P2394): reopen silently — no auto comment (AI-slop / "bot" smell).
             // Label only; maintainer replies in Dylan voice when needed.
             console.log(`✅ ${type} #${num} reopened and labeled (no auto-comment)`);
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Reopens a closed issue when a real person comments on it, so the daily jobs look at it again."; else s="Stopped early ($JOB_STATUS); the red step above says why. Reopens a closed issue when a real person comments on it, so the daily jobs look at it again."; fi
+          node scripts/lib/report-writer.js --title "auto-reopen-on-comment" --summary "$s" --headers "item|value" --row "job|reopen" --row "result|$JOB_STATUS" --thanks "Renovate and Dependabot for the merge-when-green pattern" --thanks "the actions/stale and actions/labeler maintainers" >> "$GITHUB_STEP_SUMMARY" || true

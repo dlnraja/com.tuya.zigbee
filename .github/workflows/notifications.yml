@@ -93,6 +93,15 @@ jobs:
         run: |
           echo "Event triggered in the repository: ${{ github.event_name }}"
           echo "Details: ${{ github.event.issue.html_url || github.event.pull_request.html_url }}"
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Internal notifications on issue and PR events (no secrets in the output)."; else s="Stopped early ($JOB_STATUS); the red step above says why. Internal notifications on issue and PR events (no secrets in the output)."; fi
+          node scripts/lib/report-writer.js --title "notifications" --summary "$s" --headers "item|value" --row "job|notify-maintainers" --row "result|$JOB_STATUS" --thanks "Renovate and Dependabot for the merge-when-green pattern" --thanks "the actions/stale and actions/labeler maintainers" >> "$GITHUB_STEP_SUMMARY" || true
 
   auto-triage:
     name: 🏷️ Auto-triage new issue (labels + "what we already know")
