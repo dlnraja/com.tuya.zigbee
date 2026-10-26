@@ -13,20 +13,12 @@
       "title": {
         "en": "Start (HH:MM)",
         "fr": "Début (HH:MM)"
-      },
-      "placeholder": {
-        "en": "Start (HH:MM)",
-        "fr": "Début (HH:MM)"
       }
     },
     {
       "type": "text",
       "name": "quiet_end",
       "title": {
-        "en": "End (HH:MM)",
-        "fr": "Fin (HH:MM)"
-      },
-      "placeholder": {
         "en": "End (HH:MM)",
         "fr": "Fin (HH:MM)"
       }

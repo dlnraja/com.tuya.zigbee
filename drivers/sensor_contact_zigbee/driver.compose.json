@@ -651,11 +651,6 @@
       }
     }
   ],
-  "flow": {
-    "triggers": [],
-    "conditions": [],
-    "actions": []
-  },
   "id": "sensor_contact_zigbee",
   "version": "1.0.0",
   "capabilitiesOptions": {

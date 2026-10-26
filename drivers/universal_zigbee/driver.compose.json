@@ -341,11 +341,6 @@
     "small": "/drivers/universal_zigbee/assets/images/small.png",
     "large": "/drivers/universal_zigbee/assets/images/large.png"
   },
-  "flow": {
-    "triggers": [],
-    "conditions": [],
-    "actions": []
-  },
   "settings": [
     {
       "id": "power_scale",
