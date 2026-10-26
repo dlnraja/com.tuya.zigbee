@@ -72,6 +72,8 @@
           "type": "text",
           "label": {
             "en": "Device ID",
+            "nl": "Apparaat-ID",
+            "de": "Geräte-ID",
             "fr": "ID Appareil"
           },
           "value": ""
@@ -99,6 +101,8 @@
           "type": "dropdown",
           "label": {
             "en": "Protocol Version",
+            "nl": "Protocolversie",
+            "de": "Protokollversion",
             "fr": "Version Protocole"
           },
           "value": "3.3",
