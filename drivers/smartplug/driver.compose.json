@@ -1,7 +1,8 @@
 {
   "id": "smartplug",
   "name": {
-    "en": "Smart Plug with metering"
+    "en": "Smart Plug with metering",
+    "fr": "Prise connectée avec mesure"
   },
   "class": "socket",
   "platforms": [

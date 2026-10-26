@@ -1,7 +1,8 @@
 {
   "id": "WaterLeakSensor",
   "name": {
-    "en": "Water Leak Sensor"
+    "en": "Water Leak Sensor",
+    "fr": "Détecteur de fuite d'eau"
   },
   "class": "sensor",
   "platforms": [

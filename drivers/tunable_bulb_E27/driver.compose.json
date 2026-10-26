@@ -1,7 +1,8 @@
 {
   "id": "tunable_bulb_E27",
   "name": {
-    "en": "Tunable Bulb E27"
+    "en": "Tunable Bulb E27",
+    "fr": "Ampoule blanc réglable E27"
   },
   "$extends": [
     "light_white_ambiance"
