@@ -110,7 +110,9 @@
       "id": "wifi_ewelink_led_set_light_temperature",
       "title": {
         "en": "Set light temperature",
-        "fr": "Régler la température de la lumière"
+        "fr": "Régler la température de la lumière",
+        "de": "Lichtfarbtemperatur setzen",
+        "nl": "Kleurtemperatuur instellen"
       },
       "args": [
         {

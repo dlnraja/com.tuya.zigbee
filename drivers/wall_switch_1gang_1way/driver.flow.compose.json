@@ -47,7 +47,8 @@
       "title": {
         "en": "Scene triggered",
         "nl": "Scène geactiveerd",
-        "fr": "Scène déclenchée"
+        "fr": "Scène déclenchée",
+        "de": "Szene ausgelöst"
       },
       "args": [],
       "tokens": [
@@ -102,7 +103,8 @@
       "title": {
         "nl": "Enkele druk",
         "en": "Single press",
-        "fr": "Appui simple"
+        "fr": "Appui simple",
+        "de": "Einfacher Druck"
       },
       "titleFormatted": {
         "nl": "Enkele druk",
@@ -116,7 +118,8 @@
       "title": {
         "nl": "Dubbele druk",
         "en": "Double press",
-        "fr": "Double appui"
+        "fr": "Double appui",
+        "de": "Doppelter Druck"
       },
       "titleFormatted": {
         "nl": "Dubbele druk",
@@ -130,7 +133,8 @@
       "title": {
         "nl": "Lange druk",
         "en": "Long press",
-        "fr": "Appui long"
+        "fr": "Appui long",
+        "de": "Langer Druck"
       },
       "tokens": [
         {
@@ -154,7 +158,8 @@
       "title": {
         "nl": "Drievoudige druk",
         "en": "Triple press",
-        "fr": "Triple appui"
+        "fr": "Triple appui",
+        "de": "Dreifacher Druck"
       },
       "tokens": [
         {

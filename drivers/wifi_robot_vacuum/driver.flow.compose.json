@@ -384,7 +384,9 @@
       "id": "wifi_robot_vacuum_set_volume",
       "title": {
         "en": "Set volume",
-        "fr": "Régler le volume"
+        "fr": "Régler le volume",
+        "de": "Lautstärke setzen",
+        "nl": "Volume instellen"
       },
       "args": [
         {

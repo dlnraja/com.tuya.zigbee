@@ -111,7 +111,9 @@
       "id": "device_din_rail_meter_hvac_dehumidifier_alar_73e5b",
       "title": {
         "en": "Water leak detected",
-        "fr": "Fuite d'eau détectée"
+        "fr": "Fuite d'eau détectée",
+        "de": "Wasserleck erkannt",
+        "nl": "Waterlek gedetecteerd"
       },
       "args": [],
       "titleFormatted": {
@@ -123,7 +125,9 @@
       "id": "device_din_rail_meter_hvac_dehumidifier_alar_b2881",
       "title": {
         "en": "No water leak",
-        "fr": "Aucune fuite d'eau"
+        "fr": "Aucune fuite d'eau",
+        "de": "Kein Wasserleck",
+        "nl": "Geen waterlek"
       },
       "args": [],
       "titleFormatted": {

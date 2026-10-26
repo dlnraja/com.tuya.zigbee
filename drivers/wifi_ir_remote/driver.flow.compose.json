@@ -105,7 +105,9 @@
       "id": "wifi_ir_remote_send_learned",
       "title": {
         "en": "Send learned IR code",
-        "fr": "Envoyer code IR appris"
+        "fr": "Envoyer code IR appris",
+        "de": "Gelernten IR-Code senden",
+        "nl": "Geleerde IR-code verzenden"
       },
       "args": [
         {

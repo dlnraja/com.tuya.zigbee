@@ -168,7 +168,9 @@
       "id": "universal_zigbee_contact_open",
       "title": {
         "en": "Contact opened",
-        "fr": "Contact ouvert"
+        "fr": "Contact ouvert",
+        "de": "Kontakt geöffnet",
+        "nl": "Contact geopend"
       },
       "args": [],
       "titleFormatted": {
@@ -180,7 +182,9 @@
       "id": "universal_zigbee_contact_closed",
       "title": {
         "en": "Contact closed",
-        "fr": "Contact ferme"
+        "fr": "Contact ferme",
+        "de": "Kontakt geschlossen",
+        "nl": "Contact gesloten"
       },
       "args": [],
       "titleFormatted": {
@@ -233,7 +237,9 @@
       "id": "universal_zigbee_thermostat_mode_changed",
       "title": {
         "en": "Thermostat mode changed",
-        "fr": "Mode thermostat change"
+        "fr": "Mode thermostat change",
+        "de": "Thermostatmodus geändert",
+        "nl": "Thermostaatmodus gewijzigd"
       },
       "args": [],
       "tokens": [
@@ -488,7 +494,9 @@
       "id": "universal_zigbee_set_position",
       "title": {
         "en": "Set position",
-        "fr": "Regler position"
+        "fr": "Regler position",
+        "de": "Position setzen",
+        "nl": "Positie instellen"
       },
       "args": [
         {
@@ -513,7 +521,9 @@
       "id": "universal_zigbee_set_thermostat_mode",
       "title": {
         "en": "Set thermostat mode",
-        "fr": "Regler mode thermostat"
+        "fr": "Regler mode thermostat",
+        "de": "Thermostatmodus setzen",
+        "nl": "Thermostaatmodus instellen"
       },
       "args": [
         {

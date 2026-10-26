@@ -81,7 +81,9 @@
       "id": "wifi_thermostat_set_temp",
       "title": {
         "en": "Set temperature",
-        "fr": "Régler la température"
+        "fr": "Régler la température",
+        "de": "Temperatur setzen",
+        "nl": "Temperatuur instellen"
       },
       "args": [
         {
