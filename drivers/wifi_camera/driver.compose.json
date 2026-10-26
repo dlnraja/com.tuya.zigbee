@@ -73,6 +73,8 @@
           "type": "text",
           "label": {
             "en": "Device ID",
+            "nl": "Apparaat-ID",
+            "de": "Geräte-ID",
             "fr": "ID de l'appareil"
           },
           "value": ""
@@ -82,6 +84,8 @@
           "type": "text",
           "label": {
             "en": "Local Key",
+            "nl": "Lokale sleutel",
+            "de": "Lokaler Schlüssel",
             "fr": "Clé locale"
           },
           "value": ""
@@ -91,6 +95,8 @@
           "type": "text",
           "label": {
             "en": "IP Address",
+            "nl": "IP-adres",
+            "de": "IP-Adresse",
             "fr": "Adresse IP"
           },
           "value": ""
@@ -100,6 +106,8 @@
           "type": "dropdown",
           "label": {
             "en": "Protocol",
+            "nl": "Protocol",
+            "de": "Protokoll",
             "fr": "Protocole"
           },
           "value": "3.4",
@@ -214,6 +222,8 @@
           "type": "dropdown",
           "label": {
             "en": "Motion Sensitivity",
+            "nl": "Bewegingsgevoeligheid",
+            "de": "Bewegungsempfindlichkeit",
             "fr": "Sensibilité au mouvement"
           },
           "value": "1",

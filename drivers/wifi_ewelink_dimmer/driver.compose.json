@@ -49,6 +49,8 @@
           "type": "text",
           "label": {
             "en": "Device ID",
+            "nl": "Apparaat-ID",
+            "de": "Geräte-ID",
             "fr": "ID de l'appareil"
           },
           "value": ""
@@ -58,6 +60,8 @@
           "type": "text",
           "label": {
             "en": "API Key",
+            "nl": "API-sleutel",
+            "de": "API-Schlüssel",
             "fr": "Clé API"
           },
           "value": ""
@@ -67,6 +71,8 @@
           "type": "text",
           "label": {
             "en": "IP Address",
+            "nl": "IP-adres",
+            "de": "IP-Adresse",
             "fr": "Adresse IP"
           },
           "value": ""
@@ -76,6 +82,8 @@
           "type": "checkbox",
           "label": {
             "en": "Encrypted",
+            "nl": "Versleuteld",
+            "de": "Verschlüsselt",
             "fr": "Chiffré"
           },
           "value": true
