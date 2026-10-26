@@ -15,6 +15,10 @@ on:
       - '.githooks/**'
       - 'scripts/ci/workflow-hygiene-gate.js'
       - 'scripts/ci/push-with-retry.js'
+      # P3069 report helper + ratchet
+      - 'scripts/lib/report-writer.js'
+      - '.github/report-ratchet-baseline.json'
+      - 'CREDITS.md'
       - 'scripts/ci/safe-auto-commit.js'
       # P3025 data/manifest/lint gates
       - 'scripts/ci/**'
@@ -102,6 +106,12 @@ jobs:
       - name: Hygiene ratchet (pins, Node 20 actions, node-version, timeouts, raw pushes)
         run: node scripts/ci/workflow-hygiene-gate.js
 
+      - name: Report ratchet (about headers, no pasted third-party text, report shape — may only shrink)
+        id: report_ratchet
+        run: |
+          if [ -f scripts/ci/report-structure-ratchet.js ]; then node scripts/ci/report-structure-ratchet.js
+          else echo "report ratchet absent on this branch — skipped"; fi
+
       - name: app.json ↔ compose drift (fingerprints + flow titleFormatted, lossless)
         run: node scripts/ci/appjson-compose-drift-gate.js
 
@@ -122,3 +132,19 @@ jobs:
         run: |
           git config --global user.name ci; git config --global user.email ci@localhost
           node --test test/ci/p3025-git-push-retry.test.js test/ci/p3025-push-with-retry.test.js test/ci/p3025-workflow-hygiene-gate.test.js test/ci/p3025-hook-deps-check.test.js test/ci/p3025-appjson-compose-drift.test.js test/ci/p3025-lint-ratchet.test.js
+          if [ -f test/critical/p3069-report-writer.test.js ]; then node --test test/critical/p3069-report-writer.test.js test/critical/p3069-report-ratchet.test.js; fi
+
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Every CI file gate passed on this commit. Nothing to fix."; else s="At least one CI file gate failed; the failing step above says which and why."; fi
+          node scripts/lib/report-writer.js --title "CI self-check" --summary "$s" \
+            --headers "gate|what it protects" \
+            --row "actionlint + YAML|workflows parse and use valid expressions" \
+            --row "hygiene ratchet|pinned actions, timeouts, pushes via the retry helper" \
+            --row "report ratchet|our own words in reports, about headers, report shape" \
+            --row "lint ratchet|lib/ and drivers/ never get worse" \
+            --thanks "actionlint by rhysd" --thanks "GitHub Actions docs"
