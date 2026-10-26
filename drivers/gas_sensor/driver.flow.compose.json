@@ -10,10 +10,10 @@
         "de": "Gas erkannt"
       },
       "hint": {
-        "en": "Triggers when combustible gas (methane/LPG/natural gas) is detected - CRITICAL SAFETY ALERT",
-        "nl": "Triggert wanneer brandbaar gas (methaan/LPG/aardgas) wordt gedetecteerd - KRITIEKE VEILIGHEIDSMELDING",
-        "fr": "Se déclenche quand du gaz combustible (méthane/GPL/gaz naturel) est détecté - ALERTE DE SÉCURITÉ CRITIQUE",
-        "de": "Wird ausgelöst, wenn brennbares Gas (Methan/LPG/Erdgas) erkannt wird - KRITISCHE SICHERHEITSWARNUNG"
+        "en": "When combustible gas (methane/LPG/natural gas) is detected - CRITICAL SAFETY ALERT",
+        "nl": "Wanneer brandbaar gas (methaan/LPG/aardgas) wordt gedetecteerd - KRITIEKE VEILIGHEIDSMELDING",
+        "fr": "Quand du gaz combustible (méthane/GPL/gaz naturel) est détecté - ALERTE DE SÉCURITÉ CRITIQUE",
+        "de": "Wenn brennbares Gas (Methan/LPG/Erdgas) erkannt wird - KRITISCHE SICHERHEITSWARNUNG"
       },
       "args": [],
       "titleFormatted": {
@@ -32,10 +32,10 @@
         "de": "Gas verschwunden"
       },
       "hint": {
-        "en": "Triggers when gas is no longer detected",
-        "nl": "Triggert wanneer geen gas meer wordt gedetecteerd",
-        "fr": "Se déclenche quand le gaz n'est plus détecté",
-        "de": "Wird ausgelöst, wenn kein Gas mehr erkannt wird"
+        "en": "When gas is no longer detected",
+        "nl": "Wanneer geen gas meer wordt gedetecteerd",
+        "fr": "Quand le gaz n'est plus détecté",
+        "de": "Wenn kein Gas mehr erkannt wird"
       },
       "args": [],
       "titleFormatted": {
@@ -55,10 +55,10 @@
         "de": "Kohlenmonoxid erkannt"
       },
       "hint": {
-        "en": "Triggers when CO is detected - CRITICAL SAFETY ALERT",
-        "nl": "Triggert wanneer CO wordt gedetecteerd - KRITIEKE VEILIGHEIDSMELDING",
-        "fr": "Se déclenche quand du CO est détecté - ALERTE DE SÉCURITÉ CRITIQUE",
-        "de": "Wird ausgelöst, wenn CO erkannt wird - KRITISCHE SICHERHEITSWARNUNG"
+        "en": "When CO is detected - CRITICAL SAFETY ALERT",
+        "nl": "Wanneer CO wordt gedetecteerd - KRITIEKE VEILIGHEIDSMELDING",
+        "fr": "Quand du CO est détecté - ALERTE DE SÉCURITÉ CRITIQUE",
+        "de": "Wenn CO erkannt wird - KRITISCHE SICHERHEITSWARNUNG"
       },
       "args": [],
       "titleFormatted": {
@@ -135,10 +135,10 @@
         "de": "Manipulationsalarm"
       },
       "hint": {
-        "en": "Triggers when the sensor detects tampering or fault condition",
-        "nl": "Triggert wanneer de sensor sabotage of een storing detecteert",
-        "fr": "Se déclenche quand le capteur détecte un sabotage ou une défaillance",
-        "de": "Wird ausgelöst, wenn der Sensor eine Manipulation oder einen Fehler erkennt"
+        "en": "When the sensor detects tampering or fault condition",
+        "nl": "Wanneer de sensor sabotage of een storing detecteert",
+        "fr": "Quand le capteur détecte un sabotage ou une défaillance",
+        "de": "Wenn der Sensor eine Manipulation oder einen Fehler erkennt"
       },
       "args": [],
       "titleFormatted": {

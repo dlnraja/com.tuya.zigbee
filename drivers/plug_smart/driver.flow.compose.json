@@ -10,10 +10,10 @@
         "de": "Eingeschaltet"
       },
       "hint": {
-        "en": "Triggers when the plug is turned on",
-        "nl": "Triggert wanneer de stekker wordt ingeschakeld",
-        "fr": "Se déclenche quand la prise est allumée",
-        "de": "Wird ausgelöst, wenn der Stecker eingeschaltet wird"
+        "en": "When the plug is turned on",
+        "nl": "Wanneer de stekker wordt ingeschakeld",
+        "fr": "Quand la prise est allumée",
+        "de": "Wenn der Stecker eingeschaltet wird"
       },
       "args": [],
       "titleFormatted": {
@@ -32,10 +32,10 @@
         "de": "Ausgeschaltet"
       },
       "hint": {
-        "en": "Triggers when the plug is turned off",
-        "nl": "Triggert wanneer de stekker wordt uitgeschakeld",
-        "fr": "Se déclenche quand la prise est éteinte",
-        "de": "Wird ausgelöst, wenn der Stecker ausgeschaltet wird"
+        "en": "When the plug is turned off",
+        "nl": "Wanneer de stekker wordt uitgeschakeld",
+        "fr": "Quand la prise est éteinte",
+        "de": "Wenn der Stecker ausgeschaltet wird"
       },
       "args": [],
       "titleFormatted": {
@@ -54,10 +54,10 @@
         "de": "Stromversorgung wiederhergestellt"
       },
       "hint": {
-        "en": "Triggers when power is restored after an outage",
-        "nl": "Triggert wanneer de stroom is hersteld na een stroomstoring",
-        "fr": "Se déclenche quand l'alimentation est rétablie après une coupure",
-        "de": "Wird ausgelöst, wenn die Stromversorgung nach einem Ausfall wiederhergestellt wird"
+        "en": "When power is restored after an outage",
+        "nl": "Wanneer de stroom is hersteld na een stroomstoring",
+        "fr": "Quand l'alimentation est rétablie après une coupure",
+        "de": "Wenn die Stromversorgung nach einem Ausfall wiederhergestellt wird"
       },
       "args": [],
       "titleFormatted": {

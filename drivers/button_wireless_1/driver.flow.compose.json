@@ -214,8 +214,8 @@
         "de": "Batteriestand hat sich geändert"
       },
       "hint": {
-        "en": "Fires when measure_battery updates (passive ZCL). Token = new %.",
-        "fr": "Se déclenche quand measure_battery change (ZCL passif). Jeton = nouveau %."
+        "en": "When measure_battery updates (passive ZCL). Token = new %.",
+        "fr": "Quand measure_battery change (ZCL passif). Jeton = nouveau %."
       },
       "tokens": [
         {

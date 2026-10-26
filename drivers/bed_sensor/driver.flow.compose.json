@@ -10,10 +10,10 @@
         "de": "Bett besetzt"
       },
       "hint": {
-        "en": "Triggers when someone lies down on the bed",
-        "fr": "Se déclenche quand quelqu'un se couche dans le lit",
-        "nl": "Wordt geactiveerd wanneer iemand in bed gaat liggen",
-        "de": "Wird ausgelöst, wenn jemand ins Bett geht"
+        "en": "When someone lies down on the bed",
+        "fr": "Quand quelqu'un se couche dans le lit",
+        "nl": "Wanneer iemand in bed gaat liggen",
+        "de": "Wenn jemand ins Bett geht"
       },
       "args": [],
       "titleFormatted": {
@@ -32,10 +32,10 @@
         "de": "Bett frei"
       },
       "hint": {
-        "en": "Triggers when someone gets out of bed",
-        "fr": "Se déclenche quand quelqu'un se lève du lit",
-        "nl": "Wordt geactiveerd wanneer iemand uit bed gaat",
-        "de": "Wird ausgelöst, wenn jemand aufsteht"
+        "en": "When someone gets out of bed",
+        "fr": "Quand quelqu'un se lève du lit",
+        "nl": "Wanneer iemand uit bed gaat",
+        "de": "Wenn jemand aufsteht"
       },
       "args": [],
       "titleFormatted": {

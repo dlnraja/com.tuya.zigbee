@@ -10,10 +10,10 @@
         "de": "CO erkannt"
       },
       "hint": {
-        "en": "Triggers when carbon monoxide is detected - CRITICAL SAFETY ALERT",
-        "nl": "Triggert wanneer koolmonoxide wordt gedetecteerd - KRITIEKE VEILIGHEIDSMELDING",
-        "fr": "Se déclenche quand du monoxyde de carbone est détecté - ALERTE DE SÉCURITÉ CRITIQUE",
-        "de": "Wird ausgelöst, wenn Kohlenmonoxid erkannt wird - KRITISCHE SICHERHEITSWARNUNG"
+        "en": "When carbon monoxide is detected - CRITICAL SAFETY ALERT",
+        "nl": "Wanneer koolmonoxide wordt gedetecteerd - KRITIEKE VEILIGHEIDSMELDING",
+        "fr": "Quand du monoxyde de carbone est détecté - ALERTE DE SÉCURITÉ CRITIQUE",
+        "de": "Wenn Kohlenmonoxid erkannt wird - KRITISCHE SICHERHEITSWARNUNG"
       },
       "args": [],
       "titleFormatted": {
@@ -32,10 +32,10 @@
         "de": "CO verschwunden"
       },
       "hint": {
-        "en": "Triggers when carbon monoxide is no longer detected",
-        "nl": "Triggert wanneer koolmonoxide niet meer wordt gedetecteerd",
-        "fr": "Se déclenche quand le monoxyde de carbone n'est plus détecté",
-        "de": "Wird ausgelöst, wenn kein Kohlenmonoxid mehr erkannt wird"
+        "en": "When carbon monoxide is no longer detected",
+        "nl": "Wanneer koolmonoxide niet meer wordt gedetecteerd",
+        "fr": "Quand le monoxyde de carbone n'est plus détecté",
+        "de": "Wenn kein Kohlenmonoxid mehr erkannt wird"
       },
       "args": [],
       "titleFormatted": {
@@ -83,10 +83,10 @@
         "de": "Batterie ist schwach"
       },
       "hint": {
-        "en": "Triggers when battery drops below threshold - Replace battery soon!",
-        "nl": "Triggert wanneer de batterij onder de drempel zakt - Vervang binnenkort de batterij!",
-        "fr": "Se déclenche quand la batterie passe sous le seuil - Remplacez la batterie bientôt !",
-        "de": "Wird ausgelöst, wenn die Batterie unter den Schwellenwert fällt - Batterie bald ersetzen!"
+        "en": "When battery drops below threshold - Replace battery soon!",
+        "nl": "Wanneer de batterij onder de drempel zakt - Vervang binnenkort de batterij!",
+        "fr": "Quand la batterie passe sous le seuil - Remplacez la batterie bientôt !",
+        "de": "Wenn die Batterie unter den Schwellenwert fällt - Batterie bald ersetzen!"
       },
       "args": [],
       "titleFormatted": {

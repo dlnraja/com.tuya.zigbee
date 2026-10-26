@@ -10,10 +10,10 @@
         "de": "Rauch erkannt"
       },
       "hint": {
-        "en": "Triggers when smoke is detected - CRITICAL SAFETY ALERT",
-        "nl": "Triggert wanneer rook wordt gedetecteerd - KRITIEKE VEILIGHEIDSMELDING",
-        "fr": "Se déclenche quand de la fumée est détectée - ALERTE DE SÉCURITÉ CRITIQUE",
-        "de": "Wird ausgelöst, wenn Rauch erkannt wird - KRITISCHE SICHERHEITSWARNUNG"
+        "en": "When smoke is detected - CRITICAL SAFETY ALERT",
+        "nl": "Wanneer rook wordt gedetecteerd - KRITIEKE VEILIGHEIDSMELDING",
+        "fr": "Quand de la fumée est détectée - ALERTE DE SÉCURITÉ CRITIQUE",
+        "de": "Wenn Rauch erkannt wird - KRITISCHE SICHERHEITSWARNUNG"
       },
       "args": [],
       "titleFormatted": {
@@ -32,10 +32,10 @@
         "de": "Rauch verschwunden"
       },
       "hint": {
-        "en": "Triggers when smoke is no longer detected",
-        "nl": "Triggert wanneer er geen rook meer wordt gedetecteerd",
-        "fr": "Se déclenche quand la fumée n'est plus détectée",
-        "de": "Wird ausgelöst, wenn kein Rauch mehr erkannt wird"
+        "en": "When smoke is no longer detected",
+        "nl": "Wanneer er geen rook meer wordt gedetecteerd",
+        "fr": "Quand la fumée n'est plus détectée",
+        "de": "Wenn kein Rauch mehr erkannt wird"
       },
       "args": [],
       "titleFormatted": {
@@ -54,10 +54,10 @@
         "de": "Manipulationsalarm"
       },
       "hint": {
-        "en": "Triggers when the detector has been tampered with",
-        "nl": "Triggert wanneer er met de detector is geknoeid",
-        "fr": "Se déclenche quand le détecteur a été saboté",
-        "de": "Wird ausgelöst, wenn der Melder manipuliert wurde"
+        "en": "When the detector has been tampered with",
+        "nl": "Wanneer er met de detector is geknoeid",
+        "fr": "Quand le détecteur a été saboté",
+        "de": "Wenn der Melder manipuliert wurde"
       },
       "args": [],
       "titleFormatted": {
@@ -76,10 +76,10 @@
         "de": "Batterie ist schwach"
       },
       "hint": {
-        "en": "Triggers when battery drops below threshold - Replace battery soon!",
-        "nl": "Triggert wanneer de batterij onder de drempel zakt - Vervang binnenkort de batterij!",
-        "fr": "Se déclenche quand la batterie passe sous le seuil - Remplacez la batterie bientôt !",
-        "de": "Wird ausgelöst, wenn die Batterie unter den Schwellenwert fällt - Batterie bald ersetzen!"
+        "en": "When battery drops below threshold - Replace battery soon!",
+        "nl": "Wanneer de batterij onder de drempel zakt - Vervang binnenkort de batterij!",
+        "fr": "Quand la batterie passe sous le seuil - Remplacez la batterie bientôt !",
+        "de": "Wenn die Batterie unter den Schwellenwert fällt - Batterie bald ersetzen!"
       },
       "args": [],
       "titleFormatted": {
@@ -98,10 +98,10 @@
         "de": "Testtaste gedrückt"
       },
       "hint": {
-        "en": "Triggers when the test button is pressed on the detector",
-        "nl": "Triggert wanneer de testknop op de detector wordt ingedrukt",
-        "fr": "Se déclenche quand le bouton test est pressé sur le détecteur",
-        "de": "Wird ausgelöst, wenn die Testtaste am Melder gedrückt wird"
+        "en": "When the test button is pressed on the detector",
+        "nl": "Wanneer de testknop op de detector wordt ingedrukt",
+        "fr": "Quand le bouton test est pressé sur le détecteur",
+        "de": "Wenn die Testtaste am Melder gedrückt wird"
       },
       "args": [],
       "titleFormatted": {
