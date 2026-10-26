@@ -13,7 +13,29 @@ const ZCL_ONLY_MANUFACTURERS_6G = [
   '_TZ3000_blhvsaqf', '_TZ3000_ysdv91bk', '_TZ3000_hafsqare'
 ];
 
+// P3064: SWS6TZ-WHITE (_TZE200_8eazvzo6) reports DP21 current mA, DP22 power 0.1 W, DP23 voltage 0.1 V
+// (source: zigbee-herdsman-converters tuya.ts model SWS6TZ-WHITE; facts only). The couple stays in this
+// driver (no re-pair); metering capabilities appear only after the first real report.
+const SWS6TZ = new Set(['_tze200_8eazvzo6']);
+const SWS6TZ_METER = { 21: ['measure_current', 1000], 22: ['measure_power', 10], 23: ['measure_voltage', 10] };
+function sws6tzMeter(mfr, dp, raw) {
+  if (!SWS6TZ.has(String(mfr || '').toLowerCase())) { return null; }
+  const m = SWS6TZ_METER[Number(dp)];
+  const n = Number(raw);
+  if (!m || !Number.isFinite(n) || n < 0) { return null; }
+  return [m[0], Math.round((n / m[1]) * 1000) / 1000];
+}
+
 class Switch6GangDevice extends UnifiedSwitchBase {
+  _handleDP(dpId, value) {
+    const hit = sws6tzMeter(this.getSetting?.('zb_manufacturer_name') || this.getData?.()?.manufacturerName, dpId, value);
+    if (hit) {
+      require('../../lib/helpers/LateCapability').ensureAndSet(this, hit[0], hit[1]).catch(() => {});
+      return;
+    }
+    return super._handleDP(dpId, value);
+  }
+
   /**
    * P3034: trigger card for this device's own driver first (e.g. switch_wall_6gang_metering_*),
    * then the historical switch_wall_6gang_* id. Never throws; null when neither exists.
@@ -184,3 +206,4 @@ class Switch6GangDevice extends UnifiedSwitchBase {
   }
 }
 module.exports = Switch6GangDevice;
+module.exports.sws6tzMeter = sws6tzMeter;

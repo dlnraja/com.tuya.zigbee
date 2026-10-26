@@ -2,6 +2,14 @@
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 const { spmVariant, decodePhase } = require('../../lib/tuya/SpmPhaseDecoder');
 
+// P3064: Moes ZM7LT3 three-phase CT meter. Exact couples from zigbee-herdsman-converters
+// src/devices/moes.ts (Koen Kanters and contributors, MIT) — facts re-expressed, no code copied.
+// DP1 energy, DP2 exported energy, DP9 total power, DP6/7/8 = 18-byte per-phase struct
+// (same layout as lib/tuya/TuyaPhaseLongV2), DP47/48 reactive/apparent, DP49 Hz, DP51 combined
+// energy, DP53 power factor, DP10 alarm bits.
+const MOES_ZM7LT3 = new Set(['_tze284_cf4b5ktf', '_tze28c1000000_cf4b5ktf']);
+function isMoesZm7lt3(mfr) { return MOES_ZM7LT3.has(String(mfr || '').trim().toLowerCase()); }
+
 class EnergyMeter3PhaseDevice extends UnifiedPlugBase {
   // WHY(P2518): mains DIN meter — never phantom battery / plug onoff
   get mainsPowered() { return true; }
@@ -50,6 +58,23 @@ class EnergyMeter3PhaseDevice extends UnifiedPlugBase {
         6: { capability: null, internal: 'spm_phase_a' },
         7: { capability: null, internal: 'spm_phase_b' },
         8: { capability: null, internal: 'spm_phase_c' },
+      };
+    }
+    if (isMoesZm7lt3(mfr)) {
+      return {
+        ...rest,
+        1: { capability: 'meter_power', divisor: 100 },
+        2: { capability: 'meter_power.exported', divisor: 100 },
+        6: { capability: null, internal: 'moes_phase_1' },
+        7: { capability: null, internal: 'moes_phase_2' },
+        8: { capability: null, internal: 'moes_phase_3' },
+        9: { capability: 'measure_power', divisor: 1 },
+        10: { capability: null, internal: 'alarm_status' },
+        47: { capability: null, internal: 'power_reactive' },
+        48: { capability: null, internal: 'power_apparent' },
+        49: { capability: null, internal: 'ac_frequency', divisor: 100 },
+        51: { capability: null, internal: 'combined_energy', divisor: 100 },
+        53: { capability: null, internal: 'power_factor', divisor: 100 },
       };
     }
     if (mfr.endsWith('_loejka0i')) {
@@ -186,6 +211,37 @@ class EnergyMeter3PhaseDevice extends UnifiedPlugBase {
       this.safeSetCapabilityValue('measure_power.phase_total', total).catch(() => { });
       return undefined;
     }
+    if (isMoesZm7lt3(mfr)) {
+      if (dpn === 6 || dpn === 7 || dpn === 8) {
+        // WHY: decodePhase accepts the 18-byte V2 struct first, so the Moes layout lands here.
+        const r = decodePhase(rawValue);
+        if (!r.ok) { this.log(`[ZM7LT3] DP${dpn} ignored (${r.reason})`); return undefined; }
+        const n = dpn - 5;
+        this.safeSetCapabilityValue(`measure_power.phase${n}`, r.power).catch(() => { });
+        if (n === 1) {
+          this.safeSetCapabilityValue('measure_voltage', r.voltage).catch(() => { });
+          this.safeSetCapabilityValue('measure_current', r.current).catch(() => { });
+        }
+        this._moesPhasePower = this._moesPhasePower || {};
+        this._moesPhasePower[n] = r.power;
+        // WHY: DP9 is the meter's own total; the phase sum is only a fallback until DP9 arrives.
+        if (!this._moesTotalSeen) {
+          const total = Object.values(this._moesPhasePower).reduce((a, b) => a + b, 0);
+          this.safeSetCapabilityValue('measure_power', total).catch(() => { });
+          this.safeSetCapabilityValue('measure_power.phase_total', total).catch(() => { });
+        }
+        return undefined;
+      }
+      if (dpn === 9) {
+        this._moesTotalSeen = true;
+        super._handleDP(dpId, rawValue);
+        const watts = this.getCapabilityValue('measure_power');
+        if (typeof watts === 'number' && Number.isFinite(watts) && this.hasCapability('measure_power.phase_total')) {
+          this.safeSetCapabilityValue('measure_power.phase_total', watts).catch(() => { });
+        }
+        return undefined;
+      }
+    }
     super._handleDP(dpId, rawValue);
     if (Number(dpId) === 29 && this.hasCapability('measure_power.phase_total')) {
       const watts = this.getCapabilityValue('measure_power');
@@ -202,3 +258,4 @@ class EnergyMeter3PhaseDevice extends UnifiedPlugBase {
   }
 }
 module.exports = EnergyMeter3PhaseDevice;
+module.exports.isMoesZm7lt3 = isMoesZm7lt3;
