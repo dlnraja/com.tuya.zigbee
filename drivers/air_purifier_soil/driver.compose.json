@@ -105,6 +105,8 @@
           "type": "number",
           "label": {
             "en": "Temperature Offset (°C)",
+            "nl": "Temperatuurcorrectie (°C)",
+            "de": "Temperaturversatz (°C)",
             "fr": "Décalage Température (°C)"
           },
           "value": 0,
@@ -153,6 +155,8 @@
           "type": "dropdown",
           "label": {
             "en": "Decimal Precision",
+            "nl": "Decimalen",
+            "de": "Dezimalstellen",
             "fr": "Précision"
           },
           "value": "1",
