@@ -1,0 +1,75 @@
+{
+  "id": "curtain_module_ts030f_blinds",
+  "name": {
+    "en": "Window Blinds TS030F",
+    "fr": "Window Blinds TS030F"
+  },
+  "class": "windowcoverings",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "windowcoverings_set",
+    "windowcoverings_state",
+    "button.1"
+  ],
+  "images": {
+    "small": "/drivers/curtain_module_ts030f_blinds/assets/images/small.png",
+    "large": "/drivers/curtain_module_ts030f_blinds/assets/images/large.png"
+  },
+  "energy": {
+    "approximation": {
+      "usageOn": 0,
+      "usageOff": 0
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZB000_yqjaollc",
+      "_tzb000_yqjaollc"
+    ],
+    "productId": [
+      "TS030F"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5,
+          258
+        ],
+        "bindings": [
+          258
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping)."
+      }
+    }
+  },
+  "version": "1.0.0",
+  "metadata": {
+    "driver": {
+      "catchall": true,
+      "reason": "Fallback for unmatched devices with PIDs: TS130F, TS0601, TS0726"
+    }
+  },
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
+}

@@ -1,0 +1,242 @@
+{
+  "name": {
+    "en": "IR Blaster KCTW1Z (TS1201)",
+    "fr": "IR Blaster KCTW1Z (TS1201)"
+  },
+  "class": "remote",
+  "capabilities": [
+    "onoff",
+    "measure_battery",
+    "volume_up",
+    "volume_down",
+    "channel_up",
+    "channel_down",
+    "button.mute",
+    "button.source",
+    "button.menu",
+    "button.enter",
+    "button.learn_ir",
+    "button.1"
+  ],
+  "capabilitiesOptions": {
+    "button.learn_ir": {
+      "title": {
+        "en": "Learn IR Code",
+        "nl": "Leer IR Code",
+        "de": "IR-Code lernen"
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
+    },
+    "onoff": {
+      "title": {
+        "en": "Power",
+        "nl": "Aan/Uit",
+        "de": "Ein/Aus"
+      }
+    },
+    "button.mute": {
+      "title": {
+        "en": "Mute"
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
+    },
+    "button.source": {
+      "title": {
+        "en": "Source/Input"
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
+    },
+    "button.menu": {
+      "title": {
+        "en": "Menu"
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
+    },
+    "button.enter": {
+      "title": {
+        "en": "OK/Enter"
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "measure_battery": {
+      "getable": true,
+      "preventInsights": false
+    }
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Universal Remote Config"
+      },
+      "children": [
+        {
+          "id": "ir_brand",
+          "type": "text",
+          "value": "Samsung",
+          "label": {
+            "en": "Remote Brand (e.g. Samsung, LG, Sony)"
+          },
+          "hint": {
+            "en": "Type the brand of your TV or AC (must match IR database)."
+          }
+        },
+        {
+          "id": "ir_category",
+          "type": "dropdown",
+          "value": "TV",
+          "label": {
+            "en": "Device Category"
+          },
+          "values": [
+            {
+              "id": "TV",
+              "label": {
+                "en": "TV"
+              }
+            },
+            {
+              "id": "Audio",
+              "label": {
+                "en": "Audio/Soundbar"
+              }
+            },
+            {
+              "id": "AC",
+              "label": {
+                "en": "Air Conditioner"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "$extends": [
+        "zcl_cluster_layer"
+      ]
+    }
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3290_8xzb2ghn",
+      "_tz3290_8xzb2ghn",
+      "_TZ3290_uc8lwbi2",
+      "_tz3290_uc8lwbi2",
+      "_TZ3290_jxvzqatwgsaqzx1u",
+      "_tz3290_jxvzqatwgsaqzx1u",
+      "_TZ3290_lypnqvlem5eq1ree",
+      "_tz3290_lypnqvlem5eq1ree",
+      "_TZ3290_rlkmy85q4pzoxobl",
+      "_tz3290_rlkmy85q4pzoxobl",
+      "_TZ3290_yac64inudpovoaba",
+      "_tz3290_yac64inudpovoaba"
+    ],
+    "productId": [
+      "TS1201"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          6,
+          57348,
+          60672,
+          61184
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Put the device in Zigbee pairing mode (usually hold reset/pairing 5 seconds until LED flashes).",
+        "fr": "Mode appairage Zigbee (souvent reset/pair 5 s jusqu'à LED clignotante).",
+        "nl": "Zet het apparaat in Zigbee-pairmodus (meestal reset/pair 5 s tot LED knippert).",
+        "de": "Gerät in Zigbee-Pairingmodus (meist Reset/Pair 5 s bis LED blinkt)."
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/ir_blaster_kctw1z/assets/images/small.png",
+    "large": "/drivers/ir_blaster_kctw1z/assets/images/large.png"
+  },
+  "energy": {
+    "batteries": [
+      "CR2450",
+      "CR2032"
+    ]
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    },
+    {
+      "id": "tuya_revive",
+      "title": {
+        "en": "Tuya Revive (device recovery)",
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
+      }
+    },
+    {
+      "id": "generate_issue_report",
+      "title": {
+        "en": "Generate support report (GitHub issue)",
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
+      }
+    },
+    {
+      "id": "zigbee_rebind",
+      "title": {
+        "en": "Re-bind & reconfigure reporting",
+        "fr": "Re-lier et reconfigurer les rapports",
+        "nl": "Opnieuw binden en rapportage instellen",
+        "de": "Neu binden und Reporting konfigurieren"
+      }
+    }
+  ],
+  "repair": [
+    {
+      "id": "ir_setup"
+    }
+  ],
+  "id": "ir_blaster_kctw1z",
+  "version": "1.0.0",
+  "ui": {
+    "quickAction": "onoff"
+  }
+}

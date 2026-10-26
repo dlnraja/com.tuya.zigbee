@@ -1,0 +1,121 @@
+{
+  "id": "curtain_module_2_gang_ts130f_dual",
+  "name": {
+    "en": "Dual Curtain Module TS130F",
+    "fr": "Dual Curtain Module TS130F"
+  },
+  "class": "windowcoverings",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "windowcoverings_set",
+    "windowcoverings_state",
+    "button.1",
+    "button.2"
+  ],
+  "images": {
+    "small": "/drivers/curtain_module_2_gang_ts130f_dual/assets/images/small.png",
+    "large": "/drivers/curtain_module_2_gang_ts130f_dual/assets/images/large.png"
+  },
+  "energy": {
+    "approximation": {
+      "usageOn": 0,
+      "usageOff": 0
+    }
+  },
+  "zigbee": {
+    "productId": [
+      "TS130F"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5,
+          6,
+          258,
+          57345
+        ],
+        "bindings": [
+          258
+        ]
+      },
+      "2": {
+        "clusters": [
+          4,
+          5,
+          6,
+          258,
+          57345
+        ],
+        "bindings": [
+          258
+        ]
+      }
+    },
+    "devices": {
+      "secondModule": {
+        "class": "windowcoverings",
+        "name": {
+          "en": "2 Gang Curtain Module (2)"
+        },
+        "capabilities": [
+          "windowcoverings_set",
+          "windowcoverings_state"
+        ],
+        "energy": {
+          "approximation": {
+            "usageOn": 0,
+            "usageOff": 0
+          }
+        }
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping)."
+      }
+    },
+    "manufacturerName": [
+      "_TZ3000_bmhwnl7s",
+      "_tz3000_bmhwnl7s",
+      "_TZ3000_esynmmox",
+      "_tz3000_esynmmox",
+      "_TZ3000_xdo0hj1k",
+      "_tz3000_xdo0hj1k"
+    ]
+  },
+  "version": "1.0.0",
+  "metadata": {
+    "driver": {
+      "catchall": true,
+      "reason": "Fallback for unmatched devices with PIDs: TS130F, TS0601, TS0726"
+    }
+  },
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "button.2": {
+      "title": {
+        "en": "Button 2",
+        "fr": "Bouton 2"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
+}

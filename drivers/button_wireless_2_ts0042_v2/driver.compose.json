@@ -1,0 +1,453 @@
+{
+  "name": {
+    "en": "2-Gang Remote TS0042 (v2)",
+    "fr": "2-Gang Remote TS0042 (v2)"
+  },
+  "class": "button",
+  "capabilities": [
+    "button.1",
+    "button.2",
+    "measure_battery"
+  ],
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "getable": false,
+      "setable": false,
+      "maintenanceAction": false
+    },
+    "button.2": {
+      "title": {
+        "en": "Button 2",
+        "fr": "Bouton 2"
+      },
+      "getable": false,
+      "setable": false,
+      "maintenanceAction": false
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
+      },
+      "getable": true,
+      "preventInsights": false
+    }
+  },
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "CR2450"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_i3rjdrwu",
+      "_tz3000_i3rjdrwu"
+    ],
+    "productId": [
+      "TS0042"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3,
+          4,
+          5,
+          6,
+          57344
+        ],
+        "bindings": [
+          6
+        ]
+      },
+      "2": {
+        "clusters": [
+          0,
+          4,
+          5,
+          6,
+          57344
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Zigbee Bastien → Wireless Button 2 (TS0042). NOT Homey Zigbee. Wake-tap every 2s while pairing. Homey Flow: Button pressed → lamp — NOT Developer Tools Zigbee channels. Update tip then re-pair if presses were dead/slow.",
+        "fr": "Zigbee Bastien → Bouton sans fil 2 (TS0042). PAS Homey Zigbee. Tap toutes les 2 s a l'appairage. Flow: Bouton appuye → lampe — PAS les canaux Zigbee des outils developpeur. Maj tip puis re-appairer si lent/mort.",
+        "nl": "Houd enige knop 5s tot LED knippert. Wireless Button 2 — niet Homey Zigbee / Appareil Zigbee.",
+        "de": "Beliebige Taste 5s halten bis LED blinkt. Wireless Button 2 — nicht Homey Zigbee."
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/button_wireless_2_ts0042_v2/assets/images/small.png",
+    "large": "/drivers/button_wireless_2_ts0042_v2/assets/images/large.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "settings": [
+    {
+      "id": "power_source",
+      "type": "dropdown",
+      "label": {
+        "en": "Power Source",
+        "fr": "Source d'Alimentation"
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto Detect",
+            "fr": "Détection Automatique"
+          }
+        },
+        {
+          "id": "ac",
+          "label": {
+            "en": "AC Powered",
+            "fr": "Alimentation Secteur"
+          }
+        },
+        {
+          "id": "dc",
+          "label": {
+            "en": "DC Powered",
+            "fr": "Alimentation DC"
+          }
+        },
+        {
+          "id": "battery",
+          "label": {
+            "en": "Battery Powered",
+            "fr": "Sur Batterie"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Select power source manually or use auto-detection",
+        "fr": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique"
+      }
+    },
+    {
+      "id": "battery_type",
+      "type": "dropdown",
+      "label": {
+        "en": "Battery Type",
+        "fr": "Type de Batterie"
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto Detect",
+            "fr": "Détection Automatique"
+          }
+        },
+        {
+          "id": "CR2032",
+          "label": {
+            "en": "CR2032",
+            "fr": "CR2032 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "CR2450",
+          "label": {
+            "en": "CR2450",
+            "fr": "CR2450 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "AAA",
+          "label": {
+            "en": "AAA",
+            "fr": "AAA"
+          }
+        },
+        {
+          "id": "AA",
+          "label": {
+            "en": "AA",
+            "fr": "AA"
+          }
+        },
+        {
+          "id": "CR123A",
+          "label": {
+            "en": "CR123A",
+            "fr": "CR123A"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Select battery type manually or use auto-detection based on voltage",
+        "fr": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
+      }
+    },
+    {
+      "id": "battery_low_threshold",
+      "type": "number",
+      "label": {
+        "en": "Low Battery Threshold",
+        "fr": "Seuil Batterie Faible (%)"
+      },
+      "value": 20,
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "hint": {
+        "en": "Trigger low battery warning when below this percentage",
+        "fr": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "battery_critical_threshold",
+      "type": "number",
+      "label": {
+        "en": "Critical Battery Threshold",
+        "fr": "Seuil Batterie Critique (%)"
+      },
+      "value": 10,
+      "min": 0,
+      "max": 30,
+      "step": 5,
+      "hint": {
+        "en": "Trigger critical battery warning when below this percentage",
+        "fr": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "enable_battery_notifications",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Battery Notifications",
+        "fr": "Activer Notifications Batterie"
+      },
+      "value": true,
+      "hint": {
+        "en": "Send flow notifications for battery events",
+        "fr": "Envoyer des notifications de flow pour les événements de batterie"
+      }
+    },
+    {
+      "id": "battery_report_interval",
+      "type": "number",
+      "label": {
+        "en": "Battery Report Interval",
+        "fr": "Intervalle Rapport Batterie (heures)"
+      },
+      "value": 24,
+      "min": 1,
+      "max": 168,
+      "step": 1,
+      "hint": {
+        "en": "How often to request battery status updates",
+        "fr": "Fréquence de demande des mises à jour d'état de batterie"
+      }
+    },
+    {
+      "id": "optimization_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Energy Optimization Mode",
+        "fr": "Mode Optimisation Énergétique"
+      },
+      "value": "balanced",
+      "values": [
+        {
+          "id": "performance",
+          "label": {
+            "en": "Performance (More responsive)",
+            "fr": "Performance (Plus réactif)"
+          }
+        },
+        {
+          "id": "balanced",
+          "label": {
+            "en": "Balanced",
+            "fr": "Équilibré"
+          }
+        },
+        {
+          "id": "power_saving",
+          "label": {
+            "en": "Power Saving (Longer battery)",
+            "fr": "Économie d'énergie (Batterie plus longue)"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Balance between responsiveness and battery life",
+        "fr": "Équilibre entre réactivité et durée de vie de la batterie"
+      }
+    },
+    {
+      "id": "enable_power_estimation",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Power Estimation",
+        "fr": "Activer Estimation Puissance"
+      },
+      "value": true,
+      "hint": {
+        "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
+        "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
+      }
+    },
+    {
+      "id": "button_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Operating Mode",
+        "fr": "Mode de fonctionnement",
+        "nl": "Bedrijfsmodus",
+        "de": "Betriebsart"
+      },
+      "hint": {
+        "en": "Scene Mode (default) allows single/double/long press for TS0041/TS0042/TS0043/TS0044/TS004F. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
+        "fr": "Le mode Scène (par défaut) permet les appuis simples/doubles/longs pour TS0041/TS0042/TS0043/TS0044/TS004F. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+      },
+      "value": "scene",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto-Detect",
+            "fr": "Détection Auto",
+            "nl": "Automatisch",
+            "de": "Auto-Erkennung"
+          }
+        },
+        {
+          "id": "scene",
+          "label": {
+            "en": "Scene Mode (default — Multi-press)",
+            "fr": "Mode Scène (par défaut — Multi-clics)",
+            "nl": "Scène-modus (standaard — Multi-klik)",
+            "de": "Szenenmodus (Standard — Mehrfachdruck)"
+          }
+        },
+        {
+          "id": "dimmer",
+          "label": {
+            "en": "Dimmer Mode",
+            "fr": "Mode Variateur",
+            "nl": "Dimmer-modus",
+            "de": "Dimmermodus"
+          }
+        }
+      ]
+    },
+    {
+      "id": "reverse_button_order",
+      "type": "checkbox",
+      "label": {
+        "en": "Reverse button order",
+        "fr": "Inverser l’ordre des boutons",
+        "nl": "Knopvolgorde omkeren",
+        "de": "Tastenreihenfolge umkehren"
+      },
+      "value": false,
+      "hint": {
+        "en": "Enable if your remote numbers buttons in reverse physical order (e.g. 3,4,2,1)",
+        "fr": "Activer si votre télécommande numérote les boutons dans l’ordre physique inverse (ex. 3,4,2,1)"
+      }
+    },
+    {
+      "id": "suppress_release_after_click",
+      "type": "checkbox",
+      "value": false,
+      "label": {
+        "en": "Ignore 'released' right after a short click",
+        "fr": "Ignorer « relâché » juste après un clic court",
+        "nl": "'Losgelaten' direct na een korte klik negeren",
+        "de": "'Losgelassen' direkt nach kurzem Klick ignorieren"
+      },
+      "hint": {
+        "en": "Some remotes send 'released' after every click, which can stop an action the click just started (e.g. curtains). When enabled, 'released' is only fired after a long press. Idea credited to Adrian_Rockall's Button+ app (community.homey.app/t/89931).",
+        "fr": "Certaines télécommandes envoient « relâché » après chaque clic, ce qui peut arrêter l'action lancée par le clic (ex. volets). Activé : « relâché » n'est émis qu'après un appui long. Idée créditée à l'app Button+ d'Adrian_Rockall."
+      }
+    },
+    {
+      "$extends": [
+        "zcl_cluster_layer"
+      ]
+    }
+  ],
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "select_driver"
+      }
+    },
+    {
+      "id": "select_driver",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    },
+    {
+      "id": "tuya_revive",
+      "title": {
+        "en": "Tuya Revive (device recovery)",
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
+      }
+    },
+    {
+      "id": "generate_issue_report",
+      "title": {
+        "en": "Generate support report (GitHub issue)",
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
+      }
+    },
+    {
+      "id": "zigbee_rebind",
+      "title": {
+        "en": "Re-bind & reconfigure reporting",
+        "fr": "Re-lier et reconfigurer les rapports",
+        "nl": "Opnieuw binden en rapportage instellen",
+        "de": "Neu binden und Reporting konfigurieren"
+      }
+    }
+  ],
+  "id": "button_wireless_2_ts0042_v2",
+  "version": "1.0.0"
+}

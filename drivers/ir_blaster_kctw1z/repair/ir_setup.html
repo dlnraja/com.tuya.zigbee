@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+  <title>IR Setup</title>
+  <style>
+    :root { --primary:#007aff; --bg:#000; --card:#1c1c1e; --text:#fff; --muted:#8e8e93; --ok:#34c759; --bad:#ff3b30; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; background:var(--bg); color:var(--text); height:100vh; overflow:hidden; }
+    .screen { position:absolute; inset:0; padding:20px; display:flex; flex-direction:column; transform:translateX(100%); transition:transform .35s ease; }
+    .screen.active { transform:translateX(0); }
+    .screen.prev { transform:translateX(-100%); }
+    h1 { font-size:24px; margin:0 0 6px; }
+    p { color:var(--muted); margin:0 0 16px; font-size:14px; }
+    .grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; overflow:auto; padding-bottom:20px; }
+    .card { background:var(--card); border-radius:14px; padding:16px; text-align:center; border:1px solid rgba(255,255,255,.06); }
+    .card:active { transform:scale(.97); }
+    .card.selected { border-color:var(--primary); background:rgba(0,122,255,.12); }
+    .search { background:#2c2c2e; border-radius:10px; padding:10px 12px; margin-bottom:12px; }
+    .search input, textarea, select { width:100%; background:transparent; border:0; color:#fff; font-size:16px; outline:none; }
+    textarea { min-height:90px; background:#2c2c2e; border-radius:10px; padding:12px; }
+    .brand-list { list-style:none; margin:0; padding:0; overflow:auto; max-height:45vh; }
+    .brand-list li { padding:14px; border-bottom:1px solid #2c2c2e; }
+    .btn { border:0; border-radius:12px; padding:16px; font-size:16px; font-weight:600; width:100%; background:var(--primary); color:#fff; margin-top:10px; }
+    .btn.secondary { background:#3a3a3c; }
+    .btn:disabled { opacity:.5; }
+    .power { width:110px; height:110px; border-radius:50%; border:0; background:var(--bad); color:#fff; font-size:40px; margin:24px auto; display:block; box-shadow:0 0 24px rgba(255,59,48,.35); }
+    .row { display:flex; gap:10px; margin-top:auto; }
+    .hint { font-size:13px; color:var(--muted); text-align:center; }
+    .tag { display:inline-block; font-size:11px; padding:2px 8px; border-radius:8px; background:#3a3a3c; color:var(--muted); margin-left:6px; }
+  </style>
+</head>
+<body>
+  <!-- P2487c: sender → category → brand → test Power → learn / manual paste -->
+  <div class="screen active" id="s-sender">
+    <h1>IR sender</h1>
+    <p>Zigbee blaster, WiFi IR, or Homey Pro 2023 onboard TX</p>
+    <ul class="brand-list" id="senderList"></ul>
+    <p class="hint" id="senderHint">Loading senders…</p>
+    <button class="btn" id="senderNext" disabled onclick="go('s-cat')">Continue</button>
+  </div>
+
+  <div class="screen" id="s-cat">
+    <h1>What do you control?</h1>
+    <p>Toolkit-style setup — library test, learn, or Pronto paste</p>
+    <div class="grid">
+      <div class="card" onclick="pickCat('TV')">TV</div>
+      <div class="card" onclick="pickCat('AC')">AC</div>
+      <div class="card" onclick="pickCat('Audio')">Audio</div>
+      <div class="card" onclick="pickCat('Fan')">Fan</div>
+      <div class="card" onclick="pickCat('Light')">Light</div>
+      <div class="card" style="grid-column:span 2" onclick="go('s-manual')">Manual paste (Pronto / HEX…)</div>
+      <div class="card" style="grid-column:span 2" onclick="goLearn()">Learn named button</div>
+    </div>
+    <button class="btn secondary" onclick="go('s-sender')">Back</button>
+  </div>
+
+  <div class="screen" id="s-brand">
+    <h1 id="brandTitle">Brand</h1>
+    <p>Offline library — pick then test Power</p>
+    <div class="search"><input id="brandQ" placeholder="Search brand" oninput="renderBrands()"/></div>
+    <ul class="brand-list" id="brandList"></ul>
+    <button class="btn secondary" onclick="go('s-cat')">Back</button>
+  </div>
+
+  <div class="screen" id="s-test">
+    <h1 id="testTitle">Test Power</h1>
+    <p>Point emitter at device, tap Power, then say if it worked</p>
+    <button class="power" onclick="testPower()">Power</button>
+    <p class="hint" id="variantHint">Variant #1</p>
+    <div class="row">
+      <button class="btn secondary" onclick="nextVariant()">No — next code</button>
+      <button class="btn" onclick="saveOk()">Yes — save</button>
+    </div>
+    <button class="btn secondary" onclick="go('s-brand')">Back</button>
+  </div>
+
+  <div class="screen" id="s-learn">
+    <h1>Learn IR</h1>
+    <p id="learnIntro">Press same remote button twice to confirm (when supported)</p>
+    <div class="search"><input id="learnName" placeholder="Name (e.g. Power)"/></div>
+    <button class="power" style="background:var(--primary)" onclick="startLearn()">Rec</button>
+    <p class="hint" id="learnStatus">Ready</p>
+    <button class="btn secondary" onclick="go('s-cat')">Back</button>
+  </div>
+
+  <div class="screen" id="s-manual">
+    <h1>Manual paste</h1>
+    <p>Pronto Hex, Broadlink, Global Caché, HEX, Zosung, or opaque Tuya — Homey path needs Pronto</p>
+    <div class="search"><input id="manualName" placeholder="Code name"/></div>
+    <select id="manualFmt" style="background:#2c2c2e;color:#fff;border:0;border-radius:10px;padding:12px;margin-bottom:10px;width:100%;">
+      <option value="auto">Auto detect</option>
+      <option value="pronto">Pronto Hex</option>
+      <option value="broadlink">Broadlink</option>
+      <option value="globalcache">Global Caché</option>
+      <option value="hex">HEX timings</option>
+      <option value="tuya_opaque">Tuya opaque</option>
+      <option value="zosung">Zosung base64</option>
+    </select>
+    <textarea id="manualCode" placeholder="Paste IR code here"></textarea>
+    <div class="row">
+      <button class="btn secondary" onclick="storeManual(false)">Store</button>
+      <button class="btn" onclick="storeManual(true)">Store + send</button>
+    </div>
+    <button class="btn secondary" onclick="go('s-cat')">Back</button>
+  </div>
+
+  <script>
+    let HomeyApi = null;
+    let category = 'TV';
+    let brand = 'Samsung';
+    let brands = ['Samsung','LG','Sony','Panasonic','Philips','Daikin','Xiaomi','TCL','Hisense','Toshiba','Bose','Yamaha','Dyson'];
+    let variant = 1;
+    let senderId = null;
+    let senderDriverId = null;
+    let senderTransport = null;
+    let senders = [];
+
+    function onHomeyReady(Homey) {
+      HomeyApi = Homey;
+      Homey.ready();
+      Homey.emit('list_senders', {}, function(err, list) {
+        senders = (!err && Array.isArray(list)) ? list : [];
+        renderSenders();
+      });
+      Homey.emit('get_brands', { category: 'TV' }, function(err, list) {
+        if (!err && Array.isArray(list) && list.length) brands = list;
+        renderBrands();
+      });
+      Homey.getSettings && Homey.getSettings(function(err, s) {
+        if (!err && s) {
+          if (s.transport_id) senderId = s.transport_id;
+          else if (s.blaster_id) senderId = s.blaster_id;
+          if (s.transport_driver) senderDriverId = s.transport_driver;
+          if (s.ir_brand) brand = s.ir_brand;
+          if (s.ir_category) category = s.ir_category;
+        }
+      });
+    }
+
+    function renderSenders() {
+      var ul = document.getElementById('senderList');
+      var hint = document.getElementById('senderHint');
+      var next = document.getElementById('senderNext');
+      ul.innerHTML = '';
+      if (!senders.length) {
+        hint.textContent = 'No sender yet — add a Zigbee/WiFi IR blaster, or use Homey Pro 2023 IR';
+        senders = [{ id: 'homey_infrared', driverId: 'homey_infrared', name: 'Homey onboard IR (Pro 2023 TX)', transport: 'homey', learnSupported: false }];
+      } else {
+        hint.textContent = 'Pick where IR is transmitted from';
+      }
+      senders.forEach(function(s) {
+        var li = document.createElement('li');
+        var learnTag = (s.learnSupported === false || s.transport === 'homey') ? ' TX-only' : ' learn+TX';
+        li.innerHTML = (s.name || s.id) + '<span class="tag">' + (s.transport || '?') + learnTag + '</span>';
+        li.onclick = function() {
+          senderId = s.id;
+          senderDriverId = s.driverId || s.id;
+          senderTransport = s.transport || null;
+          Array.prototype.forEach.call(ul.children, function(el) { el.style.background = ''; });
+          li.style.background = 'rgba(0,122,255,.18)';
+          next.disabled = false;
+          document.getElementById('learnIntro').textContent =
+            (senderTransport === 'homey')
+              ? 'Homey IR is TX-only — use Manual paste (Pronto), or learn on Zigbee/WiFi'
+              : 'Press same remote button twice to confirm (when supported)';
+        };
+        ul.appendChild(li);
+      });
+      if (senderId) {
+        var hit = senders.find(function(s) { return s.id === senderId; });
+        if (hit) {
+          senderDriverId = hit.driverId || hit.id;
+          senderTransport = hit.transport;
+          next.disabled = false;
+        }
+      } else if (senders[0]) {
+        senderId = senders[0].id;
+        senderDriverId = senders[0].driverId || senders[0].id;
+        senderTransport = senders[0].transport;
+        next.disabled = false;
+      }
+    }
+
+    function go(id) {
+      document.querySelectorAll('.screen').forEach(function(el) {
+        el.classList.remove('active', 'prev');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+
+    function goLearn() {
+      if (senderTransport === 'homey') {
+        HomeyApi && HomeyApi.alert('Homey onboard IR cannot learn. Paste Pronto Hex, or learn on a Zigbee/WiFi blaster.');
+        return go('s-manual');
+      }
+      go('s-learn');
+    }
+
+    function pickCat(cat) {
+      category = cat;
+      document.getElementById('brandTitle').textContent = cat + ' brand';
+      HomeyApi && HomeyApi.emit('get_brands', { category: cat }, function(err, list) {
+        if (!err && Array.isArray(list) && list.length) brands = list;
+        renderBrands();
+      });
+      go('s-brand');
+    }
+
+    function renderBrands() {
+      var q = (document.getElementById('brandQ').value || '').toLowerCase();
+      var ul = document.getElementById('brandList');
+      ul.innerHTML = '';
+      brands.filter(function(b) { return !q || String(b).toLowerCase().indexOf(q) >= 0; }).forEach(function(b) {
+        var li = document.createElement('li');
+        li.textContent = b;
+        li.onclick = function() {
+          brand = b;
+          variant = 1;
+          document.getElementById('testTitle').textContent = 'Test ' + brand + ' ' + category;
+          document.getElementById('variantHint').textContent = 'Variant #' + variant;
+          go('s-test');
+        };
+        ul.appendChild(li);
+      });
+    }
+
+    function testPower() {
+      if (!HomeyApi) return;
+      HomeyApi.emit('test_ir_code', {
+        senderId: senderId,
+        transport_driver: senderDriverId,
+        brand: brand,
+        category: category,
+        command: 'Power',
+        variant: variant
+      }, function(err) {
+        if (err) HomeyApi.alert(String(err.message || err));
+      });
+    }
+
+    function nextVariant() {
+      variant += 1;
+      document.getElementById('variantHint').textContent = 'Variant #' + variant + ' — try again';
+      testPower();
+    }
+
+    function saveOk() {
+      if (!HomeyApi) return;
+      HomeyApi.emit('save_ir_config', {
+        ir_brand: brand,
+        ir_category: category,
+        transport_id: senderId,
+        blaster_id: (senderId === 'homey_infrared') ? '' : senderId,
+        transport_driver: senderDriverId || (senderId === 'homey_infrared' ? 'homey_infrared' : undefined)
+      }, function(err) {
+        if (err) return HomeyApi.alert(String(err.message || err));
+        HomeyApi.done && HomeyApi.done();
+        HomeyApi.next && HomeyApi.next('add_devices');
+      });
+    }
+
+    function startLearn() {
+      var name = (document.getElementById('learnName').value || '').trim() || 'Power';
+      document.getElementById('learnStatus').textContent = 'Listening… press remote, then again to confirm';
+      HomeyApi.emit('start_learn', { senderId: senderId, name: name, timeout: 30, confirm: true }, function(err) {
+        if (err) {
+          document.getElementById('learnStatus').textContent = 'Failed';
+          HomeyApi.alert(String(err.message || err));
+        } else {
+          document.getElementById('learnStatus').textContent = 'Learn started for "' + name + '"';
+        }
+      });
+    }
+
+    function storeManual(sendAfter) {
+      HomeyApi.emit('store_manual_ir', {
+        senderId: senderId,
+        transport_driver: senderDriverId,
+        name: (document.getElementById('manualName').value || '').trim() || 'manual',
+        code: document.getElementById('manualCode').value || '',
+        format: document.getElementById('manualFmt').value || 'auto',
+        sendAfter: !!sendAfter
+      }, function(err) {
+        if (err) HomeyApi.alert(String(err.message || err));
+        else HomeyApi.alert('Stored' + (sendAfter ? ' and sent' : ''));
+      });
+    }
+  </script>
+</body>
+</html>

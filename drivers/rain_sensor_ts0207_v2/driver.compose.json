@@ -1,0 +1,169 @@
+{
+  "name": {
+    "en": "Rain Sensor TS0207 (v2)",
+    "fr": "Rain Sensor TS0207 (v2)"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_water",
+    "measure_humidity",
+    "measure_luminance",
+    "measure_battery",
+    "button.1"
+  ],
+  "capabilitiesOptions": {
+    "alarm_water": {
+      "title": {
+        "en": "Raining",
+        "fr": "Pluie"
+      },
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_humidity": {
+      "title": {
+        "en": "Rain Level",
+        "fr": "Niveau pluie"
+      },
+      "units": "%",
+      "getable": true,
+      "preventInsights": false
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "measure_luminance": {
+      "getable": true,
+      "preventInsights": false
+    },
+    "measure_battery": {
+      "getable": true,
+      "preventInsights": false
+    }
+  },
+  "energy": {
+    "batteries": [
+      "AAA",
+      "AA",
+      "CR123A"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_imdfhhud",
+      "_tz3000_imdfhhud"
+    ],
+    "productId": [
+      "TS0207"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1024,
+          1280,
+          61184
+        ],
+        "bindings": [
+          1,
+          1024,
+          1280
+        ]
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "sensitivity",
+      "type": "number",
+      "label": {
+        "en": "Rain Detection Sensitivity (0-9)",
+        "fr": "Sensibilité Détection Pluie (0-9)",
+        "nl": "Regen Gevoeligheid (0-9)"
+      },
+      "value": 5,
+      "min": 0,
+      "max": 9,
+      "step": 1,
+      "hint": {
+        "en": "Higher value makes rain detection more sensitive.",
+        "fr": "Des valeurs plus élevées augmentent la sensibilité de détection de la pluie.",
+        "nl": "Hogere waarde maakt de regendetectie gevoeliger."
+      }
+    },
+    {
+      "id": "illuminance_sampling",
+      "type": "number",
+      "label": {
+        "en": "Illuminance Reporting Interval (min)",
+        "fr": "Intervalle de Rapport Lumineux (min)",
+        "nl": "Licht Meetinterval (min)"
+      },
+      "value": 10,
+      "min": 1,
+      "max": 480,
+      "step": 1,
+      "hint": {
+        "en": "How often the sensor reports light level updates (1 to 480 minutes).",
+        "fr": "Intervalle en minutes pour les rapports de luminosité (1 à 480 min).",
+        "nl": "Hoe vaak de sensor lichtmetingen rapporteert (1 tot 480 minuten)."
+      }
+    }
+  ],
+  "images": {
+    "small": "/drivers/rain_sensor_ts0207_v2/assets/images/small.png",
+    "large": "/drivers/rain_sensor_ts0207_v2/assets/images/large.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    },
+    {
+      "id": "tuya_revive",
+      "title": {
+        "en": "Tuya Revive (device recovery)",
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
+      }
+    },
+    {
+      "id": "generate_issue_report",
+      "title": {
+        "en": "Generate support report (GitHub issue)",
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
+      }
+    },
+    {
+      "id": "zigbee_rebind",
+      "title": {
+        "en": "Re-bind & reconfigure reporting",
+        "fr": "Re-lier et reconfigurer les rapports",
+        "nl": "Opnieuw binden en rapportage instellen",
+        "de": "Neu binden und Reporting konfigurieren"
+      }
+    }
+  ],
+  "id": "rain_sensor_ts0207_v2",
+  "version": "1.0.0"
+}
