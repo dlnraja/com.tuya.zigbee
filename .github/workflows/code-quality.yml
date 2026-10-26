@@ -127,6 +127,9 @@ jobs:
           fi
         continue-on-error: true
 
+      - name: P3074 personal-data guard (no CV/LinkedIn exports or personal contact data)
+        run: node tools/ci/personal-data-guard.js
+
       - name: Voice safety check
         id: voice
         run: npm run check:voice 2>&1 | tail -50
