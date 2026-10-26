@@ -2,6 +2,7 @@
 const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
 const { getRouter } = require('../../lib/ir/IntelligentIRRouter');
 const { detectFormat } = require('../../lib/ir/IRFormatConverter');
+const WifiIR = require('../../lib/ir/TuyaWifiIRProtocol');
 
 /**
  * WiFi IR Remote (Tuya Local) — P2487 router-backed learn/send.
@@ -29,6 +30,8 @@ class WiFiIRRemoteDevice extends TuyaLocalDevice {
         this._learnedCodes = stored;
       }
     } catch (e) { /* first run */ }
+    // WHY(P3063): control type 1 (DP201 JSON) vs 2 (DP1 mode + DP7) — learned from DPS, persisted
+    this._irControlType = Number(this.getStoreValue?.('ir_control_type')) || 0;
     this._router = getRouter(this.homey);
     this.log(`[WIFI-IR] Ready, ${Object.keys(this._learnedCodes).length} codes (P2487 router)`);
 
@@ -47,11 +50,32 @@ class WiFiIRRemoteDevice extends TuyaLocalDevice {
 
   _processDPUpdate(dps) {
     super._processDPUpdate(dps);
-    // Prefer DP202 for learn RX; some firmwares echo on 201
-    const raw = dps['202'] != null ? dps['202'] : this._learningActive ? dps['201'] : null;
-    if (raw != null && this._learningActive && this._pendingCodeName) {
-      this._finishLearnCapture(String(raw)).catch((e) => this.error('[WIFI-IR] learn capture:', e.message));
+    if (!dps || typeof dps !== 'object') {return;}
+    if (!this._irControlType) {
+      const t = WifiIR.detectControlType(dps);
+      if (t) {
+        this._irControlType = t;
+        this.log(`[WIFI-IR] Control type ${t} detected`);
+        Promise.resolve(this.setStoreValue?.('ir_control_type', t)).catch(() => {});
+      }
     }
+    if (!this._learningActive || !this._pendingCodeName) {return;}
+    // Prefer DP202 (type 1) / DP2 (type 2); DP201 echo only if it is a code, never our JSON
+    const code = WifiIR.parseLearnedCode(dps, { controlType: this._irControlType, allowEcho: true });
+    if (code) {
+      this._finishLearnCapture(code).catch((e) => this.error('[WIFI-IR] learn capture:', e.message));
+    }
+  }
+
+  async _writeDps(dps) {
+    if (typeof this._client.setDPs === 'function') {return this._client.setDPs(dps);}
+    for (const [dp, v] of Object.entries(dps)) {await this._client.setDP(dp, v);}
+    return undefined;
+  }
+
+  async _exitStudy() {
+    if (!this._client || !this._client.connected) {return;}
+    await this._writeDps(WifiIR.buildStudyDps(false, { controlType: this._irControlType })).catch(() => {});
   }
 
   async _finishLearnCapture(rawCode) {
@@ -70,6 +94,11 @@ class WiFiIRRemoteDevice extends TuyaLocalDevice {
     }
     this._learningActive = false;
     this._pendingCodeName = null;
+    if (this._learnTimeout) {
+      try { this.homey.clearTimeout(this._learnTimeout); } catch (_) { /* */ }
+      this._learnTimeout = null;
+    }
+    await this._exitStudy();
     this.log(`[WIFI-IR] Learned stored: ${result.name}`);
     try {
       const card = this.homey.flow.getDeviceTriggerCard('wifi_ir_remote_code_learned');
@@ -84,12 +113,16 @@ class WiFiIRRemoteDevice extends TuyaLocalDevice {
     this._pendingCodeName = name || `code_${Date.now()}`;
     this._learningActive = true;
     this._learnConfirm = opts.confirm !== false;
-    // Wake + enter learn: DP1 on, some devices use DP202 write to arm
-    await this._client.setDP('1', true).catch(() => {});
+    // WHY(P3063): tinytuya/tuya-local arm learning with control "study" (after a
+    // study_exit to reset a stuck session) — DP202 is report-only on type-1 firmware.
+    const ct = this._irControlType;
+    if (ct !== WifiIR.CONTROL_MULTI_DP) {await this._client.setDP('1', true).catch(() => {});}
+    await this._exitStudy();
     try {
-      await this._client.setDP('202', true);
-    } catch (_) {
-      // best-effort arm
+      await this._writeDps(WifiIR.buildStudyDps(true, { controlType: ct }));
+    } catch (e) {
+      this.log('[WIFI-IR] study arm failed, legacy DP202 arm:', e.message);
+      await this._client.setDP('202', true).catch(() => {});
     }
     this.log(`[WIFI-IR] Learning: ${this._pendingCodeName} (${duration}s)`);
     try {
@@ -106,6 +139,7 @@ class WiFiIRRemoteDevice extends TuyaLocalDevice {
         this._learningActive = false;
         this._pendingCodeName = null;
         this.log('[WIFI-IR] Learn timeout');
+        this._exitStudy().catch(() => {});
       }
     }, ms);
   }
@@ -135,8 +169,20 @@ class WiFiIRRemoteDevice extends TuyaLocalDevice {
     if (!this._client || !this._client.connected) {
       throw new Error('Not connected');
     }
-    this.log(`[WIFI-IR] Sending IR (${codeStr.length} chars)`);
-    await this._client.setDP('201', codeStr);
+    this.log(`[WIFI-IR] Sending IR (${codeStr.length} chars, type ${this._irControlType || '?'})`);
+    let dps;
+    try {
+      dps = WifiIR.buildSendDps(codeStr, { controlType: this._irControlType, delay: options.delay });
+    } catch (e) {
+      throw new Error(`Invalid IR code: ${e.message}`);
+    }
+    try {
+      await this._writeDps(dps);
+    } catch (e) {
+      // last resort: previous behaviour (bare code on DP201)
+      this.log('[WIFI-IR] structured send failed, raw DP201 fallback:', e.message);
+      await this._client.setDP('201', codeStr);
+    }
   }
 
   async sendLearnedCode(name) {
@@ -157,6 +203,7 @@ class WiFiIRRemoteDevice extends TuyaLocalDevice {
     if (this._learnTimeout) {
       try { this.homey.clearTimeout(this._learnTimeout); } catch (_) { /* */ }
     }
+    this._learningActive = false;
     this.log('Device deleted, cleaning up');
     await super.onDeleted();
   }
