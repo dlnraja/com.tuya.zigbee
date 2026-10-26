@@ -62,3 +62,23 @@ test('P3065 shouldLogDup samples per DP, bounded, verbose bypass', () => {
   for (let d = 0; d < 400; d += 1) {shouldLogDup(o, 'x' + d, false);}
   assert.ok(Object.keys(o._p3065DupLogN).length <= 256);
 });
+
+test('P3065 shouldLogSampled: per-key sampling, bounded, verbose bypass, frozen owner safe', () => {
+  const { shouldLogSampled } = require('../../lib/utils/dp-log-sampler');
+  const o = {};
+  let n = 0;
+  for (let i = 0; i < 100; i += 1) {if (shouldLogSampled(o, 'rq1', false)) {n += 1;}}
+  assert.strictEqual(n, 5);
+  assert.strictEqual(shouldLogSampled(o, 'rq1', true), true);
+  for (let d = 0; d < 400; d += 1) {shouldLogSampled(o, 'k' + d, false);}
+  assert.ok(Object.keys(o._p3065LogKeyN).length <= 256);
+  assert.strictEqual(shouldLogSampled(Object.freeze({}), 'x', false), true);
+});
+
+test('P3065 repetitive EF00/DataQuery lines are sampled (source pins)', () => {
+  const fs = require('fs');
+  const ef = fs.readFileSync(require.resolve('../../lib/tuya/TuyaEF00Manager'), 'utf8');
+  for (const k of ["'ep' + epId", "'rq' + dp", "'ac' + dp"]) {assert.ok(ef.includes('shouldLogSampled(this, ' + k), k);}
+  const dq = fs.readFileSync(require.resolve('../../lib/tuya/TuyaDataQuery'), 'utf8');
+  assert.ok(dq.includes("shouldLogSampled(device, 'qs'"));
+});
