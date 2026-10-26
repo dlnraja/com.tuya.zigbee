@@ -45,20 +45,12 @@
           "title": {
             "en": "DP number",
             "fr": "Numéro DP"
-          },
-          "placeholder": {
-            "en": "DP number",
-            "fr": "Numéro DP"
           }
         },
         {
           "name": "value",
           "type": "text",
           "title": {
-            "en": "Value",
-            "fr": "Valeur"
-          },
-          "placeholder": {
             "en": "Value",
             "fr": "Valeur"
           }

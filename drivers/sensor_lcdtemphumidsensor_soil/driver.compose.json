@@ -294,11 +294,6 @@
       }
     }
   ],
-  "flow": {
-    "triggers": [],
-    "conditions": [],
-    "actions": []
-  },
   "id": "sensor_lcdtemphumidsensor_soil",
   "version": "1.0.0",
   "connectivity": [

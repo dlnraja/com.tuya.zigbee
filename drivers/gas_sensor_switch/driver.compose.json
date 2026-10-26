@@ -814,11 +814,6 @@
       "template": "add_devices"
     }
   ],
-  "flow": {
-    "triggers": [],
-    "conditions": [],
-    "actions": []
-  },
   "maintenanceActions": [
     {
       "id": "ota_check",

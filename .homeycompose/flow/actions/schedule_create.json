@@ -22,10 +22,6 @@
       "title": {
         "en": "Schedule name",
         "fr": "Nom de la planification"
-      },
-      "placeholder": {
-        "en": "Schedule name",
-        "fr": "Nom de la planification"
       }
     },
     {
@@ -43,10 +39,6 @@
       "name": "capability_value",
       "type": "text",
       "title": {
-        "en": "Value to set",
-        "fr": "Valeur à régler"
-      },
-      "placeholder": {
         "en": "Value to set",
         "fr": "Valeur à régler"
       }
