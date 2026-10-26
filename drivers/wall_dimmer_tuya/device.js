@@ -25,7 +25,27 @@ const EF00_DP_MAP = {
   },
 };
 
+// P3064: Tuya MG-DIM02Z dimmer module with power monitoring (_TZE284_da26abzz). Its MCU uses
+// DP141 state / DP142 brightness 0-1000 and DP21 current mA, DP22 power 0.1 W, DP23 voltage 0.1 V
+// (source: zigbee-herdsman-converters tuya.ts model MG-DIM02Z; facts only, own code).
+// The V1 map above (DP1/DP2, DP21 = backlight) would misread it. Metering capabilities are added
+// only after the first real report (never at pairing).
+const MG_DIM02Z = new Set(['_tze284_da26abzz']);
+const MG_DIM02Z_DP_MAP = {
+  onoff: { dp: 141, type: 'bool', encode: (v) => Boolean(v) },
+  dim: { dp: 142, type: 'value', encode: (v) => toTuyaBrightness(v) },
+};
+const MG_DIM02Z_METER = { 21: ['measure_current', 1000], 22: ['measure_power', 10], 23: ['measure_voltage', 10] };
+function isMgDim02z(mfr) { return MG_DIM02Z.has(String(mfr || '').toLowerCase()); }
+
 class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
+
+  _isMgDim02z() {
+    return isMgDim02z(this.getSetting?.('zb_manufacturer_name') || this.getData?.()?.manufacturerName);
+  }
+
+  /** Per-couple datapoint map for TX (default = V1 single-gang dimmer). */
+  _dimmerDpMap() { return this._isMgDim02z() ? MG_DIM02Z_DP_MAP : EF00_DP_MAP; }
 
   // v9.0.74: This device is mains-powered. Declare it so UnifiedBatteryHandler
   // does not add a false measure_battery capability (fixes false-battery reports).
@@ -49,6 +69,8 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
       V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.onOff,
       V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.brightness,
     ]);
+    // P3064: MG-DIM02Z datapoints are owned by _processMgDim02z, never by dynamic discovery.
+    if (this._isMgDim02z()) { for (const dp of [141, 142, 143, 144, 146, 21, 22, 23]) { this._dynCapBlockDps.add(dp); } }
     if (typeof this.dynamicCapabilityManager?.purgeDriverOwnedDiscoveries === 'function') {
       await this.dynamicCapabilityManager.purgeDriverOwnedDiscoveries().catch(() => {});
     }
@@ -212,30 +234,31 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
       this._dimmerMagicArmedThisSession = true;
     }
 
+    const map = this._dimmerDpMap();
     const attempt = async () => writeCapabilityWithFallbacks(this, capability, value, {
       forceDp: true,
       parallelDiscover: false,
       skipDp: false,
-      dpMap: EF00_DP_MAP[capability],
+      dpMap: map[capability],
       extraSteps: [
         {
           name: 'writeBool-writeData32',
           run: async () => {
             if (capability === 'onoff') {
-              const ok = await this.writeBool(EF00_DP_MAP.onoff.dp, Boolean(value));
+              const ok = await this.writeBool(map.onoff.dp, Boolean(value));
               // WHY(P2336): !ok covers false + undefined (PresentSky dead UI)
               if (!ok) {throw new Error('writeBool soft-fail');}
             } else if (capability === 'dim') {
               const brightness = toTuyaBrightness(value);
               if (brightness > 0 && !this.getCapabilityValue('onoff')) {
-                const okOn = await this.writeBool(EF00_DP_MAP.onoff.dp, true);
+                const okOn = await this.writeBool(map.onoff.dp, true);
                 if (!okOn) {throw new Error('writeBool soft-fail');}
                 await this.safeSetCapabilityValue('onoff', true);
               }
-              const okDim = await this.writeData32(EF00_DP_MAP.dim.dp, brightness);
+              const okDim = await this.writeData32(map.dim.dp, brightness);
               if (!okDim) {throw new Error('writeData32 soft-fail');}
               if (brightness === 0) {
-                const okOff = await this.writeBool(EF00_DP_MAP.onoff.dp, false);
+                const okOff = await this.writeBool(map.onoff.dp, false);
                 if (!okOff) {throw new Error('writeBool soft-fail');}
                 await this.safeSetCapabilityValue('onoff', false);
               }
@@ -314,6 +337,8 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
     const dataType = data.datatype;
     this.log(`Processing DP ${dp}, Data Type: ${dataType}, Parsed Value:`, parsedValue);
 
+    if (this._isMgDim02z() && this._processMgDim02z(dp, parsedValue)) { return; }
+
     switch (dp) {
       case V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.onOff:
         this.log('Received on/off:', parsedValue);
@@ -367,6 +392,23 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
     }
   }
 
+  /** P3064: MG-DIM02Z datapoints; returns true when the DP belongs to that layout. */
+  _processMgDim02z(dp, v) {
+    const err = this._boundError || ((e) => { try { this.error(e); } catch (_) { /* noop */ } });
+    if (dp === 141) { this.safeSetCapabilityValue('onoff', v === true || v === 1).catch(err); return true; }
+    if (dp === 142) { this.safeSetCapabilityValue('dim', fromTuyaBrightness(v)).catch(err); return true; }
+    const m = MG_DIM02Z_METER[dp];
+    if (m) {
+      const n = Number(v) / m[1];
+      if (Number.isFinite(n) && n >= 0) {
+        require('../../lib/helpers/LateCapability').ensureAndSet(this, m[0], Math.round(n * 1000) / 1000).catch(() => {});
+      }
+      return true;
+    }
+    if (dp === 143 || dp === 144 || dp === 146) { this.log('[MG-DIM02Z] informational DP', dp, v); return true; }
+    return false;
+  }
+
   /**
    * Z2M TS0601_dimmer_1_gang_1 + #28658: DP14 power-on, DP4 light type, DP21 backlight.
    * Backlight values MUST stay strings (off/normal/inverted).
@@ -405,3 +447,5 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
 }
 
 module.exports = wall_dimmer_tuya;
+module.exports.isMgDim02z = isMgDim02z;
+module.exports.MG_DIM02Z_DP_MAP = MG_DIM02Z_DP_MAP;

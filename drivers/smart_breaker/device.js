@@ -90,6 +90,15 @@ class SmartBreakerDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedP
       this.safeSetCapabilityValue('measure_power', ph.power);
       return;
     }
+    // P3064: TOQCB2-80 internal temperature, DP131 in 0.1 °C (Z2M tuya.ts TOQCB2-80 exposes
+    // e.temperature(); facts only). Added late on the exact couples, never at pairing.
+    if (id === 131 && this._isToqcb280()) {
+      const t = Number(rawValue) / 10;
+      if (Number.isFinite(t) && t > -40 && t < 150) {
+        require('../../lib/helpers/LateCapability').ensureAndSet(this, 'measure_temperature', t).catch(() => {});
+      }
+      return;
+    }
     return super._handleDP(dpId, rawValue);
   }
 
