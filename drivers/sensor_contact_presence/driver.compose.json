@@ -111,6 +111,8 @@
       "type": "dropdown",
       "label": {
         "en": "Power Source",
+        "nl": "Voedingsbron",
+        "de": "Stromquelle",
         "fr": "Source d'Alimentation"
       },
       "value": "auto",
@@ -154,6 +156,8 @@
       "type": "dropdown",
       "label": {
         "en": "Battery Type",
+        "nl": "Batterijtype",
+        "de": "Batterietyp",
         "fr": "Type de Batterie"
       },
       "value": "auto",
@@ -211,6 +215,8 @@
       "type": "number",
       "label": {
         "en": "Low Battery Threshold",
+        "nl": "Drempel voor lage batterij",
+        "de": "Schwellenwert für niedrigen Akkustand",
         "fr": "Seuil Batterie Faible (%)"
       },
       "value": 20,
@@ -227,6 +233,8 @@
       "type": "number",
       "label": {
         "en": "Critical Battery Threshold",
+        "nl": "Drempel voor kritieke batterij",
+        "de": "Schwellenwert für kritischen Akkustand",
         "fr": "Seuil Batterie Critique (%)"
       },
       "value": 10,
@@ -243,6 +251,8 @@
       "type": "checkbox",
       "label": {
         "en": "Enable Battery Notifications",
+        "nl": "Batterijmeldingen inschakelen",
+        "de": "Batteriebenachrichtigungen aktivieren",
         "fr": "Activer Notifications Batterie"
       },
       "value": true,
@@ -256,6 +266,8 @@
       "type": "number",
       "label": {
         "en": "Battery Report Interval",
+        "nl": "Rapportage-interval batterij",
+        "de": "Batterie-Berichtsintervall",
         "fr": "Intervalle Rapport Batterie (heures)"
       },
       "value": 24,
@@ -272,6 +284,8 @@
       "type": "dropdown",
       "label": {
         "en": "Energy Optimization Mode",
+        "nl": "Energiebesparingsmodus",
+        "de": "Energiesparmodus",
         "fr": "Mode Optimisation Énergétique"
       },
       "value": "balanced",
@@ -308,6 +322,8 @@
       "type": "checkbox",
       "label": {
         "en": "Enable Power Estimation",
+        "nl": "Vermogensschatting inschakelen",
+        "de": "Leistungsschätzung aktivieren",
         "fr": "Activer Estimation Puissance"
       },
       "value": true,
@@ -334,6 +350,8 @@
       "type": "checkbox",
       "label": {
         "en": "Invert Contact State",
+        "nl": "Contactstatus omkeren",
+        "de": "Kontaktzustand umkehren",
         "fr": "Inverser État Contact"
       },
       "value": false,
@@ -531,6 +549,8 @@
       "type": "number",
       "label": {
         "en": "Radar Sensitivity",
+        "nl": "Radargevoeligheid",
+        "de": "Radar-Empfindlichkeit",
         "fr": "Sensibilité Radar"
       },
       "value": 5,
@@ -547,6 +567,8 @@
       "type": "number",
       "label": {
         "en": "Minimum Detection Range",
+        "nl": "Minimaal detectiebereik",
+        "de": "Minimale Erfassungsreichweite",
         "fr": "Portée Minimale"
       },
       "value": 0,
@@ -564,6 +586,8 @@
       "type": "number",
       "label": {
         "en": "Maximum Detection Range",
+        "nl": "Maximaal detectiebereik",
+        "de": "Maximale Erfassungsreichweite",
         "fr": "Portée Maximale"
       },
       "value": 6,
@@ -581,6 +605,8 @@
       "type": "number",
       "label": {
         "en": "Detection Delay",
+        "nl": "Detectievertraging",
+        "de": "Erfassungsverzögerung",
         "fr": "Délai de Détection"
       },
       "value": 1,

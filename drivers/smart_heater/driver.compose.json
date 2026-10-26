@@ -113,6 +113,8 @@
       "type": "dropdown",
       "label": {
         "en": "Power Measurement Scale",
+        "nl": "Schaal vermogensmeting",
+        "de": "Skalierung der Leistungsmessung",
         "fr": "Échelle de puissance"
       },
       "value": "1",
@@ -150,6 +152,8 @@
       "value": true,
       "label": {
         "en": "Send time to the device",
+        "nl": "Tijd naar het apparaat sturen",
+        "de": "Uhrzeit an das Gerät senden",
         "fr": "Envoyer l'heure à l'appareil"
       },
       "hint": {

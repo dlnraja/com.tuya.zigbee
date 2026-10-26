@@ -61,6 +61,8 @@
       "type": "dropdown",
       "label": {
         "en": "Decimal Precision",
+        "nl": "Decimalen",
+        "de": "Dezimalstellen",
         "fr": "Précision"
       },
       "value": "1",
@@ -88,6 +90,8 @@
       "value": true,
       "label": {
         "en": "Send time to the device",
+        "nl": "Tijd naar het apparaat sturen",
+        "de": "Uhrzeit an das Gerät senden",
         "fr": "Envoyer l'heure à l'appareil"
       },
       "hint": {
