@@ -2,7 +2,9 @@
   "id": "smart_air_detection_box",
   "name": {
     "en": "Smart Air Detection Box",
-    "fr": "Boîtier connecté de détection de l'air"
+    "fr": "Boîtier connecté de détection de l'air",
+    "de": "Smarte Luftqualitätsbox",
+    "nl": "Slimme luchtkwaliteitsbox"
   },
   "class": "sensor",
   "platforms": [

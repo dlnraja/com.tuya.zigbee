@@ -2,7 +2,9 @@
   "id": "switch_4_gang_metering",
   "name": {
     "en": "4 Gang Switch Module with metering",
-    "fr": "Module interrupteur 4 voies avec mesure"
+    "fr": "Module interrupteur 4 voies avec mesure",
+    "de": "Schaltmodul 4-fach mit Messung",
+    "nl": "Schakelmodule 4-voudig met meting"
   },
   "class": "socket",
   "platforms": [

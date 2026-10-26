@@ -2,7 +2,9 @@
   "id": "smart_motion_sensor",
   "name": {
     "en": "Smart Motion Sensor (Lidl)",
-    "fr": "Détecteur de mouvement connecté (Lidl)"
+    "fr": "Détecteur de mouvement connecté (Lidl)",
+    "de": "Smarter Bewegungsmelder (Lidl)",
+    "nl": "Slimme bewegingssensor (Lidl)"
   },
   "class": "sensor",
   "platforms": [

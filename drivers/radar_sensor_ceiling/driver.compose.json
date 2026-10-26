@@ -2,7 +2,9 @@
   "id": "radar_sensor_ceiling",
   "name": {
     "en": "Radar Sensor ceiling",
-    "fr": "Capteur radar de plafond"
+    "fr": "Capteur radar de plafond",
+    "de": "Radarsensor Decke",
+    "nl": "Radarsensor plafond"
   },
   "class": "sensor",
   "platforms": [

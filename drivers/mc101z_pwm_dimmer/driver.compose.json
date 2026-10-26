@@ -2,7 +2,9 @@
   "id": "mc101z_pwm_dimmer",
   "name": {
     "en": "MC101Z PWM Dimmer",
-    "fr": "Variateur PWM MC101Z"
+    "fr": "Variateur PWM MC101Z",
+    "de": "MC101Z PWM-Dimmer",
+    "nl": "MC101Z PWM-dimmer"
   },
   "class": "light",
   "platforms": [

@@ -3,7 +3,8 @@
   "name": {
     "en": "Temperature & Humidity Sensor (ZCL, TS0601)",
     "nl": "Temperatuur- en vochtigheidssensor (ZCL, TS0601)",
-    "fr": "Capteur température & humidité (ZCL, TS0601)"
+    "fr": "Capteur température & humidité (ZCL, TS0601)",
+    "de": "Temperatur- & Feuchtesensor (ZCL, TS0601)"
   },
   "class": "sensor",
   "platforms": [

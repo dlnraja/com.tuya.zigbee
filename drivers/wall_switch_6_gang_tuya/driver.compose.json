@@ -2,7 +2,9 @@
   "id": "wall_switch_6_gang_tuya",
   "name": {
     "en": "6 Gang Wall Switch",
-    "fr": "Interrupteur mural 6 voies"
+    "fr": "Interrupteur mural 6 voies",
+    "de": "Wandschalter 6-fach",
+    "nl": "Wandschakelaar 6-voudig"
   },
   "class": "socket",
   "platforms": [

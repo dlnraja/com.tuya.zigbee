@@ -2,7 +2,9 @@
   "id": "smartplugDinRail",
   "name": {
     "en": "Smart Plug DIN Rail",
-    "fr": "Prise connectée rail DIN"
+    "fr": "Prise connectée rail DIN",
+    "de": "Smarter Hutschienenschalter",
+    "nl": "Slimme DIN-rail schakelaar"
   },
   "class": "socket",
   "platforms": [

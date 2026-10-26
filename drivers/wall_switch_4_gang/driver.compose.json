@@ -2,7 +2,9 @@
   "id": "wall_switch_4_gang",
   "name": {
     "en": "Wall Switch (1/4 Gang)",
-    "fr": "Interrupteur mural (1 à 4 voies)"
+    "fr": "Interrupteur mural (1 à 4 voies)",
+    "de": "Wandschalter (1/4-fach)",
+    "nl": "Wandschakelaar (1/4-voudig)"
   },
   "class": "socket",
   "platforms": [

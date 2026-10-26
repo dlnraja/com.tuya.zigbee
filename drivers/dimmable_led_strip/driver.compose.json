@@ -2,7 +2,9 @@
   "id": "dimmable_led_strip",
   "name": {
     "en": "Dimmable LED Strip",
-    "fr": "Ruban LED dimmable"
+    "fr": "Ruban LED dimmable",
+    "de": "Dimmbarer LED-Streifen",
+    "nl": "Dimbare ledstrip"
   },
   "$extends": [
     "light_white_ambiance"

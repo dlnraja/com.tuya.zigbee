@@ -2,7 +2,9 @@
   "id": "rgb_ceiling_led_light",
   "name": {
     "en": "RGB Ceiling Led Light",
-    "fr": "Plafonnier LED RGB"
+    "fr": "Plafonnier LED RGB",
+    "de": "RGB-LED-Deckenleuchte",
+    "nl": "RGB-led-plafondlamp"
   },
   "$extends": [
     "light_color_ambiance"

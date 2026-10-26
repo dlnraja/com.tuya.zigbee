@@ -1,7 +1,9 @@
 {
   "name": {
     "en": "Ultrasonic Water Meter",
-    "fr": "Compteur d'Eau Ultrasonique"
+    "fr": "Compteur d'Eau Ultrasonique",
+    "de": "Ultraschall-Wasserzähler",
+    "nl": "Ultrasone watermeter"
   },
   "class": "sensor",
   "capabilities": [

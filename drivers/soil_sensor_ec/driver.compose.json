@@ -1,7 +1,9 @@
 {
   "name": {
     "en": "Soil EC Sensor",
-    "fr": "Capteur de Sol EC"
+    "fr": "Capteur de Sol EC",
+    "de": "Boden-EC-Sensor",
+    "nl": "Bodem-EC-sensor"
   },
   "class": "sensor",
   "capabilities": [

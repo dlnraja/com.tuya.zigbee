@@ -1,7 +1,9 @@
 {
   "name": {
     "en": "DIN Rail Energy Meter",
-    "fr": "Compteur Énergie Rail DIN"
+    "fr": "Compteur Énergie Rail DIN",
+    "de": "Hutschienen-Energiezähler",
+    "nl": "DIN-rail energiemeter"
   },
   "class": "socket",
   "capabilities": [

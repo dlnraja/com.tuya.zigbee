@@ -2,7 +2,9 @@
   "id": "switch_1_gang",
   "name": {
     "en": "1 Gang Switch Module",
-    "fr": "Module interrupteur 1 voie"
+    "fr": "Module interrupteur 1 voie",
+    "de": "Schaltmodul 1-fach",
+    "nl": "Schakelmodule 1-voudig"
   },
   "class": "socket",
   "platforms": [

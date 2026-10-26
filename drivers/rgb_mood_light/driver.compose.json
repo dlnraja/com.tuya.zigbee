@@ -2,7 +2,9 @@
   "id": "rgb_mood_light",
   "name": {
     "en": "RGB Mood Light",
-    "fr": "Lampe d'ambiance RGB"
+    "fr": "Lampe d'ambiance RGB",
+    "de": "RGB-Stimmungslicht",
+    "nl": "RGB-sfeerlamp"
   },
   "$extends": [
     "light_color_ambiance"

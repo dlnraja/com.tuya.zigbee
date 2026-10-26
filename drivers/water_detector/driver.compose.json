@@ -2,7 +2,9 @@
   "id": "waterdetector",
   "name": {
     "en": "Water Detector",
-    "fr": "Détecteur d'eau"
+    "fr": "Détecteur d'eau",
+    "de": "Wassermelder",
+    "nl": "Waterdetector"
   },
   "class": "sensor",
   "platforms": [

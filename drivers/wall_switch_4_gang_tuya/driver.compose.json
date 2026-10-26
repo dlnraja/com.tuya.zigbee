@@ -2,7 +2,9 @@
   "id": "wall_switch_4_gang_tuya",
   "name": {
     "en": "4 Gang Wall Switch",
-    "fr": "Interrupteur mural 4 voies"
+    "fr": "Interrupteur mural 4 voies",
+    "de": "Wandschalter 4-fach",
+    "nl": "Wandschakelaar 4-voudig"
   },
   "class": "socket",
   "platforms": [

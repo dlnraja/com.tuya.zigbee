@@ -1,7 +1,9 @@
 {
   "name": {
     "en": "Ultrasonic Heat Meter",
-    "fr": "Compteur de Chaleur Ultrasonique"
+    "fr": "Compteur de Chaleur Ultrasonique",
+    "de": "Ultraschall-Wärmezähler",
+    "nl": "Ultrasone warmtemeter"
   },
   "class": "sensor",
   "capabilities": [

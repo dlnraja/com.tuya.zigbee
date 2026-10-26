@@ -2,7 +2,9 @@
   "id": "dimmable_recessed_led",
   "name": {
     "en": "Dimmable Recessed LED",
-    "fr": "Spot LED encastré dimmable"
+    "fr": "Spot LED encastré dimmable",
+    "de": "Dimmbarer LED-Einbaustrahler",
+    "nl": "Dimbare inbouwled"
   },
   "$extends": [
     "light_white_ambiance"

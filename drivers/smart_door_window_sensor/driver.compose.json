@@ -2,7 +2,9 @@
   "id": "smart_door_window_sensor",
   "name": {
     "en": "Smart Door & Window Sensor (Lidl)",
-    "fr": "Capteur de porte et fenêtre connecté (Lidl)"
+    "fr": "Capteur de porte et fenêtre connecté (Lidl)",
+    "de": "Smarter Tür- & Fenstersensor (Lidl)",
+    "nl": "Slimme deur- & raamsensor (Lidl)"
   },
   "class": "sensor",
   "platforms": [
