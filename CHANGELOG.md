@@ -11,6 +11,13 @@
 - **P3018b / P3016 / P3017:** more DPs decoded exactly (ZHA per-quirk + deCONZ DDF sources), optional inferred DP layer, interpretation of unknown commands with teach/forget Flow actions.
 - **P3021c:** dedicated `switch_2gang_ts0002` driver for `_TZ3000_amal63is` + TS0002; power-vs-energy sanity check; ZG-102ZL contact default inverse; soil sensor DP guards.
 
+### Added / Fixed (2026-10-26, P3064 family uplift, master soak)
+- **Smoke / CO (safety):** Tuya TS0601 dual smoke & CO alarms (`_TZE284_6ycgarab`, `_TZE284_aoah6bv8`, `_TZE2841000000_6ycgarab`), PA-44Z (`_TZE284_qvzsq3s2`) and GSKS-ZB (`_TZE200_qcasmfan`) in the smoke sensor driver now report smoke, battery and, when present, carbon monoxide and tamper. Receive-only, nothing sent at pairing; the CO alarm appears after the first report. Thanks to the Zigbee2MQTT converter authors.
+- **MG-DIM02Z dimmer (`_TZE284_da26abzz`):** on/off and brightness use the module's own datapoints (141/142); power, current and voltage appear after the first report.
+- **SWS6TZ-WHITE 6-gang (`_TZE200_8eazvzo6`):** power, current and voltage appear after the first report.
+- **TOQCB2-80 breakers:** internal temperature appears after the first report.
+- **Moes ZM7LT3 three-phase meter (`_TZE284_cf4b5ktf`):** per-phase power, voltage and current from the phase structs, total power from DP9, energy import/export.
+
 ### Fixed (2026-10-24/25)
 - **P3050 Fingerbot Plus (#577, thanks iassael):** `_TZ3210_j4pdtz9v`, `dse8ogfy`, `7vgttna6`, `a04acm9s`, `cm9mbpr1` + TS0001 now get each command as one Tuya `sendData` frame (the call iassael tested on his device), with a 12 s guard and no second send, so a press can never fire twice and the old retry cascade is gone. The settings replay at start is delayed until the device is awake and runs only until the device has confirmed its settings. Battery reporting through the power cluster is now optional (the battery comes from DP105). Touch control is a true on/off value and the up/down/hold ranges follow Z2M and ZHA. The other fingerbot ids keep their previous path. The shared Tuya sender now builds its arguments from the live cluster schema. The Fingerbot Push card (fixed by iassael) and the turn on, turn off and toggle cards, which called a missing method, now all work.
 - **P3049 CI:** the JavaScript syntax audit of the PR gate now creates its report folder when it is missing, instead of failing every pull request with "no such file or directory" before checking anything.
