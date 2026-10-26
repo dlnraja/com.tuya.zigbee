@@ -59,7 +59,7 @@
       "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
         "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
-        "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'àce que la LED clignote rapidement",
+        "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
         "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'àce que la LED clignote rapidement",
         "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'àce que la LED clignote rapidement",
         "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'àce que la LED clignote rapidement",
@@ -239,7 +239,7 @@
       "step": 1,
       "hint": {
         "en": "How often to request battery status updates",
-        "fr": "Fréquence de demande des mises àjour d'état de batterie"
+        "fr": "Fréquence de demande des mises à jour d'état de batterie"
       }
     },
     {
