@@ -1,5 +1,7 @@
 'use strict';
 
+const ThermostatMeteringDps = require('../../lib/tuya/ThermostatMeteringDps');
+
 const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
 const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
@@ -237,6 +239,8 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
   }
 
   _handleDP(dpId, raw) {
+    // P3067: metering DPs of exact couples (AETZ01_AC snfdqllf, TWC-R01 ilzkxrav), late capabilities, before TRV mapping
+    if (ThermostatMeteringDps.handle(this, this._resolveMfr(), dpId, raw)) {return undefined;}
     if ([6, 13, 15].includes(Number(dpId)) && this._isNoHumidityTrv() && !this.hasCapability('measure_battery')) {
       Promise.resolve(this.addCapability('measure_battery'))
         .then(() => super._handleDP(dpId, raw))

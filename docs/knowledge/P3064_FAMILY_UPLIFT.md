@@ -59,3 +59,10 @@ re-pair). New couples are not added in this batch (combo budget unchanged; maste
 DP layouts: Koen Kanters and the zigbee-herdsman-converters contributors (tuya.ts models
 TS0601_smoke_co, PA-44Z, GSKS-ZB, moes.ts ZSS-HM-SSD01, MG-DIM02Z, SWS6TZ-WHITE, TOQCB2-80; moes.ts ZM7LT3).
 Facts only, own implementation, no code copied.
+
+## P3067 thermostat metering
+| Couple | Driver | DPs (zhc tuya.ts) |
+|---|---|---|
+| `_TZE200_snfdqllf` AETZ01_AC | device_radiator_valve | 116 W, 117 kWh (raw) |
+| `_TZE204_ilzkxrav` TWC-R01 | device_radiator_valve | 11 W, 115 V, 116 A, 117 kWh (/10) |
+| `_TZE204_0hcjew5p` TH-P1Z | wall_thermostat | 11 W /10, 101 V /10, 102 A /1000, 107 kWh /10; DP101 no longer arms FCU |

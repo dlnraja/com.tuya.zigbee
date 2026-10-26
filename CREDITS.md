@@ -464,5 +464,6 @@ A heartfelt thank you to:
   temperature physical range from the ZCL Color Control cluster spec (own implementation, no code copied).
 - Batch P3067 (energy estimates): **the Home Assistant powercalc authors** (idea of a per-brightness lookup table and
   standby power); default watts are our own approximations, each with its reason in `data/energy/default-power.json`.
+- Batch P3067 (thermostat metering): **the zigbee-herdsman-converters contributors** (`tuya.ts` AETZ01_AC, TWC-R01, TH-P1Z metering DPs and scales).
 - And every forum member and GitHub issue reporter who sent a fingerprint, a diagnostic or a "this works now":
   you are listed by handle in the sections above, and new names are added with each batch.

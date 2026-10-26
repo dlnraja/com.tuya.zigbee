@@ -1,5 +1,8 @@
 ## [Unreleased]
 
+### Fixed (2026-10-26, P3067 thermostat metering)
+- **AETZ01 air-conditioner controller, TWC-R01 and TH-P1Z pilot-wire thermostats:** power, voltage, current and energy are now shown (added on the first real report). The pilot-wire thermostat no longer switches to fan-coil mode because of its voltage report.
+
 ### Added (2026-10-26, P3067 adaptive lighting + energy estimates, master soak)
 - **Adaptive lighting (on by default for every light: Zigbee, Tuya 0xEF00 and Wi-Fi local):** the colour temperature follows the sun at your Homey's location (warm in the morning and evening, cool around midday, 2000–5600 K kept inside what each bulb supports). It is safe by default: nothing is sent at pairing or after an app update; the first change only happens the next time the light is switched on; a manual change of colour or brightness pauses it for 60 minutes; lights showing a real colour are left alone. Brightness adaptation is a separate option, off by default (dimmer-only lights only adapt when you enable it).
   - **How to turn it off:** for all lights at once, untick *Adaptive lighting* in the app settings; for one light, open the device settings → *Adaptive lighting* → untick *Follow the sun*.
