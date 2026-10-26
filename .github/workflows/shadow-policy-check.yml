@@ -30,9 +30,11 @@ permissions:
   contents: read
 
 concurrency:
-  # P3026: read-only policy check, never publishes: one run per ref, a newer push cancels the older run.
+  # P3026: read-only policy check, never publishes: one run per ref.
   group: shadow-policy-check-${{ github.ref }}
-  cancel-in-progress: true
+  # P3069: a push run finishes and newer pushes wait as one queued run (no extra minutes); PRs still cancel.
+  # See docs/knowledge/CI_CONCURRENCY.md.
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 # P2562 forfait + local-smart-learn (all workflows)
 env:
   AI_PLAN_MODE: 'forfait'
