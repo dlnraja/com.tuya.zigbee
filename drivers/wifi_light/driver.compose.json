@@ -156,6 +156,25 @@
             "en": "Delay before marking unavailable / firing disconnect flows after a brief TCP drop (pet feeders, dehumidifiers).",
             "fr": "Délai avant indisponible / flux déconnecté après une brève coupure TCP (pet feeders, déshumidificateurs)."
           }
+        },
+        {
+          "id": "color_temp_reversed",
+          "type": "checkbox",
+          "value": false,
+          "label": {
+            "en": "Colour temperature reversed",
+            "fr": "Température de couleur inversée",
+            "nl": "Kleurtemperatuur omgekeerd",
+            "de": "Farbtemperatur umgekehrt",
+            "es": "Temperatura de color invertida"
+          },
+          "hint": {
+            "en": "Only tick if warm and cold white are swapped on this bulb (rare firmware where 0 = cold).",
+            "fr": "Cochez seulement si blanc chaud et blanc froid sont inversés sur cette ampoule (firmware rare où 0 = froid).",
+            "nl": "Alleen aanvinken als warm- en koudwit verwisseld zijn.",
+            "de": "Nur aktivieren, wenn Warm- und Kaltweiß vertauscht sind.",
+            "es": "Marcar solo si el blanco cálido y frío están invertidos."
+          }
         }
       ]
     }
