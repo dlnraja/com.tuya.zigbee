@@ -80,3 +80,13 @@ groups (15 498 -> 19 999 combos); 2 162 stay out because the per-driver cartesia
 probe uploads above 20k: both are owner decisions.
 
 Tests: `test/critical/p3036-athom-publish-policy.test.js`, `test/critical/p3036-ts0601-topup.test.js`.
+
+## P3057-2 promote guard (26/10/2026)
+The autonomous Bastien promote (`tools/ci/bastien-promote-upstream.js`, P2607) now runs
+`tools/ci/promote-hold-guard.js` after the test/compose/budget guards, for master and for stable-v5.
+While the target has a hold window in `config/promote-publish-hold.json` or a pending send (target
+`app.json` version above the last accepted test/live/approved version in the outcomes ledger or the CI
+build snapshot; unreadable = held), only `test/`, `.github/`, `tools/ci/`, `scripts/ci/`, `docs/`, root
+`*.md` and the `dataSafetyAllow` list are promoted. Drivers, sacred pins, `app.json` and other `lib/`
+files are restored (reason `publish_hold_active`) and stay on Bastien until the accept is recorded.
+Test: `test/critical/p3057-2-promote-hold-guard.test.js`.
