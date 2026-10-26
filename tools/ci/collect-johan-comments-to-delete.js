@@ -20,6 +20,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { linkRef } = require(path.join(__dirname, '..', '..', 'scripts', 'lib', 'report-writer.js')); // P3069: link + topic, never the title
 
 const ROOT = path.resolve(__dirname, '..', '..');
 const AUDIT = path.join(ROOT, '.diag', 'johan-shadow-comments-audit.json');
@@ -229,7 +230,7 @@ function main() {
   // Show first 10
   console.log('\n=== FIRST 10 COMMENTS TO DELETE ===');
   for (const c of comments.slice(0, 10)) {
-    console.log('  #' + c.issueNumber + ' by ' + c.author + ' (' + c.createdAt + '): ' + c.excerpt);
+    console.log('  ' + linkRef({ id: c.issueNumber, url: c.url, author: c.author, text: c.excerpt }) + ' (' + c.createdAt + ')');
   }
   if (comments.length > 10) console.log('  ... and ' + (comments.length - 10) + ' more');
 }

@@ -11,16 +11,8 @@
       "lines": 1
     },
     {
-      "file": ".github/scripts/github-issue-manager.js",
-      "lines": 2
-    },
-    {
       "file": ".github/scripts/internet-research-tool.js",
       "lines": 2
-    },
-    {
-      "file": ".github/scripts/nightly-processor.js",
-      "lines": 1
     },
     {
       "file": ".github/scripts/scan-johan-full.js",
@@ -40,10 +32,6 @@
     },
     {
       "file": "tools/ci/check-open-buttons.js",
-      "lines": 1
-    },
-    {
-      "file": "tools/ci/collect-johan-comments-to-delete.js",
       "lines": 1
     },
     {
@@ -79,14 +67,6 @@
       "lines": 1
     },
     {
-      "file": "tools/ci/search-forum-posts-v2.js",
-      "lines": 3
-    },
-    {
-      "file": "tools/ci/search-forum-posts.js",
-      "lines": 2
-    },
-    {
       "file": "tools/ci/search-forum-v2.js",
       "lines": 4
     },
@@ -103,14 +83,10 @@
       "lines": 1
     },
     {
-      "file": "tools/ci/weekly-sovereign-loop.js",
-      "lines": 3
-    },
-    {
       "file": "tools/shadow-mode/shadow-mode-v2.js",
       "lines": 1
     }
   ],
   "docExcerpts": {},
-  "_scope": "P3069 step 3 (2026-10-26), ported from master 752e16154e: detector refined and script scan widened (tools/, inline workflow JS, \"+\" concatenation); baseline lowered, newly visible quoting scripts listed once here, may only shrink."
+  "_scope": "P3069 step 4 (2026-10-26), ported from master: weekly loop, forum searches, comment collector and issue manager link + topic instead of titles; AI prompts marked ok-extract-only; own plan files marked own-text-file. May only shrink."
 }
