@@ -42,4 +42,13 @@ back into climate_sensor:
 - No variant split needs both drivers. If a variant ever appears with a different productId and
   exact proof, add it to zt08 as its own exact couple.
 
-Test: `test/critical/p3070-hodyryli-one-driver.test.js`.
+Tests: `test/critical/p3070-hodyryli-one-driver.test.js` and
+`test/critical/p3070-hodyryli-legacy-runtime.test.js` (climate_sensor still decodes DP1/2/3/38 for
+devices paired before the move).
+
+## Soak
+
+Catalogue moves go to master first and soak before stable. This one reached stable-v5 the same day
+(023e52e745, 26/10) and is kept there, not reverted: new pairings land on climate_sensor_zt08, devices
+already on climate_sensor keep working (runtime test above). Soak watch until 02/11 on both trees:
+any report of a ZT08 on climate_sensor losing temperature, humidity, battery or probe values.
