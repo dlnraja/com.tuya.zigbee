@@ -427,5 +427,6 @@ A heartfelt thank you to:
   also to the Zigbee2MQTT (`TS0001_fingerbot`), ZHA (`tuya_fingerbot.py`) and deCONZ (`_TZ3210_dse8ogfy_fingerbot`)
   authors for the DP matrix we checked against, and to **dalobalo** (#161, #162) and **Joep_K** (forum 140352) for
   the reports (own implementation, no upstream code copied).
+- **Koen Kanters and the zigbee-herdsman-converters contributors** - the second negative power encoding (plain 24-bit two's complement above 0x99999A, seen on some `_TZE200_nslr42tt` units) in packed phase DPs, used by P3060 `lib/tuya/TuyaNegPower24.js` (own implementation, no code copied).
 - And every forum member and GitHub issue reporter who sent a fingerprint, a diagnostic or a "this works now":
   you are listed by handle in the sections above, and new names are added with each batch.
