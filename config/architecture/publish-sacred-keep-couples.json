@@ -71,8 +71,8 @@
     {
       "mfr": "_TZE284_hodyryli",
       "pid": "TS0601",
-      "driverId": "climate_sensor",
-      "note": "Issue #513 ZT08 climate sensor sacred keep"
+      "driverId": "climate_sensor_zt08",
+      "note": "Issue #513 ZT08 climate sensor sacred keep; P3070 moved the pin from climate_sensor to its hardware driver (P133 one couple, one driver)"
     },
     {
       "mfr": "_TZ3000_mrpevh8p",
