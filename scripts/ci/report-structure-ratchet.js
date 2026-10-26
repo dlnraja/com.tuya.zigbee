@@ -55,18 +55,31 @@ function scanWorkflows() {
   });
 }
 
-// A third-party text field interpolated into output: `${it.title}`, `${c.body}`, `${p.cooked}`…
-const QUOTE_RE = /\$\{[^}]*\b(?:it|issue|i|pr|item|c|comment|p|post|t|topic|x|f\.it)\.(?:title|body|cooked|excerpt|raw|blurb)\b[^}]*\}/;
+// A third-party text field put into output: `${it.title}`, `${c.body}`, `${p.cooked}`… and, since
+// P3069 step 3, the same fields glued with "+" (`'- ' + issue.title`) and a few more holder names.
+const HOLDERS = '(?:it|issue|i|pr|pull|item|c|comment|p|post|t|topic|x|f\\.it|d|discussion|thread|review|reply|r|e|entry|msg|q)';
+const FIELDS = '(?:title|body|cooked|excerpt|raw|blurb)';
+const QUOTE_RE = new RegExp(`\\$\\{[^}]*\\b${HOLDERS}\\.${FIELDS}\\b[^}]*\\}|\\+\\s*\\(?${HOLDERS}\\.${FIELDS}\\b(?!\\s*[=!<>]=?)`);
+const ALLOW_RE = /topicOf|sourceRef|linkRef|\bref\(|sanitize|\.length\b|\/\/ ok-(?:own-text|extract-only|console|private-mail)/;
+// Reading a title/body to look for ids is fine — only putting it into an output counts.
+const ANALYSIS_RE = /^\s*(?:const|let|var)\s+(?:text|txt|t|blob|body|fps|ds)\s*=|\b(?:extract\w*|harvest|_vFP|detect\w*|classify\w*)\(|\.match\(|allText\.push|text\s*\+=/;
+const WRITES_RE = /GITHUB_STEP_SUMMARY|core\.summary|\.md['"`]|appendFileSync|writeFileSync|body:|createComment|issues\.create|\.json['"`]/;
 function scanScripts() {
-  const files = [...walk(path.join(ROOT, 'scripts'), ['.js', '.cjs', '.mjs']), ...walk(path.join(ROOT, '.github', 'scripts'), ['.js', '.cjs', '.mjs'])];
+  // P3069 step 3: every place that can write an output — scripts/, .github/scripts/, tools/ and the
+  // inline JavaScript of workflows (actions/github-script). Read-only: nothing here edits a file.
+  const files = [
+    ...walk(path.join(ROOT, 'scripts'), ['.js', '.cjs', '.mjs']),
+    ...walk(path.join(ROOT, '.github', 'scripts'), ['.js', '.cjs', '.mjs']),
+    ...walk(path.join(ROOT, 'tools'), ['.js', '.cjs', '.mjs']),
+    ...walk(path.join(ROOT, '.github', 'workflows'), ['.yml', '.yaml']),
+  ];
   const out = [];
   for (const p of files) {
     if (p.endsWith(path.join('lib', 'report-writer.js')) || p.endsWith('report-structure-ratchet.js')) continue;
     const s = read(p);
-    if (!/GITHUB_STEP_SUMMARY|core\.summary|\.md['"`]|appendFileSync|writeFileSync|body:/.test(s)) continue;
-    const lines = s.split('\n');
+    if (!WRITES_RE.test(s)) continue;
     const hits = [];
-    lines.forEach((l, i) => { if (QUOTE_RE.test(l) && !/topicOf|sourceRef|linkRef|\bref\(|\/\/ ok-(?:own-text|extract-only|console|private-mail)/.test(l)) hits.push(i + 1); });
+    s.split('\n').forEach((l, i) => { if (QUOTE_RE.test(l) && !ALLOW_RE.test(l) && !ANALYSIS_RE.test(l)) hits.push(i + 1); });
     if (hits.length) out.push({ file: rel(p), lines: hits.length });
   }
   return out.sort((a, b) => a.file.localeCompare(b.file));
@@ -153,4 +166,4 @@ if (require.main === module) {
   }
 }
 
-module.exports = { collect, compare, inventoryMarkdown, scanScripts, scanDocs, scanWorkflows, QUOTE_RE };
+module.exports = { collect, compare, inventoryMarkdown, scanScripts, scanDocs, scanWorkflows, QUOTE_RE, ANALYSIS_RE };

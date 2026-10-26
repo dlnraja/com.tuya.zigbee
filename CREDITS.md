@@ -135,6 +135,25 @@ Sources actually used or consulted for the Wi-Fi local stack (`lib/tuya-local/`)
 - **[andiwirz/com.tuyalocal](https://github.com/andiwirz/com.tuyalocal)** (MIT) — Homey Tuya-local app: frequency-first protocol order, command gap, stale-data watchdog patterns (reimplemented earlier, credited in code).
 - **[Drenso/com.tuya2](https://github.com/Drenso/com.tuya2)**, **[jurgenheine/com.tuya.cloud](https://github.com/jurgenheine/com.tuya.cloud)** (MIT), **[rebtor/nl.rebtor.tuya](https://github.com/rebtor/nl.rebtor.tuya)** (MIT) — earlier Homey Tuya apps whose cloud/LAN patterns informed the original design.
 
+## IR blasters — Zigbee Zosung + Tuya Wi-Fi (P3063, 2026-10-26)
+Own implementation in `lib/ir/ZosungIRProtocol.js`, `lib/ir/TuyaWifiIRProtocol.js` and `lib/ir/IRFormatConverter.js`; no upstream code copied:
+- **[Koenkk/zigbee-herdsman-converters](https://github.com/Koenkk/zigbee-herdsman-converters)** (MIT, Koen Kanters and the `zosung.ts` contributors) — consulted: 0xED00 frame layout (msgpart + msgpartcrc), chunk sizes, Code00 resend, ZG-IR01 seq 0, `{key_num,key1}` message.
+- **[mildsunrise — Tuya IR code format notes](https://gist.github.com/mildsunrise/1d576669b63a260d2cff35fda63ec0b5)** — consulted: FastLZ-style block layout of Tuya `key_code`.
+- **[jbouwh — Home Assistant Tuya IR encoder gist](https://gist.github.com/jbouwh)** — consulted: literal-only encoding is the safe choice for cheap Tuya IR chips.
+- **[jasonacox/tinytuya](https://github.com/jasonacox/tinytuya)** (MIT) — consulted: `IRRemoteControlDevice` control types 1/2, `send_ir` / `study` / `study_exit` / `study_key`, learned code on DP202 or DP2.
+- **[make-all/tuya-local](https://github.com/make-all/tuya-local)** (MIT, Jason Rumney and contributors) — consulted: single-DP `send_ir` JSON with `"1"` raw prefix, multi-DP send, split of long gaps.
+
+## Reports and automation (P3069, 2026-10-26) — ideas only, written in our own words
+- **GitHub** — the job summary feature (`$GITHUB_STEP_SUMMARY`) and its docs gave us the "one short page per run" format.
+- **The Renovate and Dependabot maintainers** — their PR bodies taught us to fold long detail into collapsed blocks and keep the top short.
+- **rhysd (actionlint)** — static checks for every workflow; our hygiene and report ratchets follow the same "fail only on new debt" spirit.
+- **The Homey Community forum moderators and the Zigbee2MQTT / ZHA trackers** — their habit of linking to a post instead of pasting it is
+  the rule our reports now follow: ID, link, author, then a summary in our words (`scripts/lib/report-writer.js`).
+- **GitHub Actions docs (concurrency groups)** — the one-running, one-waiting rule behind our Node 22 setting: pushes let the running job finish, PRs still cancel (`docs/knowledge/CI_CONCURRENCY.md`); now also on the seven push-triggered checks listed there.
+- **Athom Homey SDK docs, "Zigbee firmware updates" page** (Athom docs team, https://apps.developer.homey.app/wireless/zigbee/zigbee-firmware-updates) — the line about firmware files being stored apart from the app and fetched only when an update starts is told in our own words in `docs/knowledge/OTA_AUDIT_P2932.md` (master branch), not pasted.
+- **Community commenters on our issues** (john1v, pemikalsen-sudo, Ssssneak, late4marshmellow, dalobalo and others) — `reports/COMMUNITY-INTELLIGENCE.md` no longer reproduces their comments; each entry keeps the author, the issue link and a one-line topic, so the original stays where they wrote it. Thank you for the reports.
+- No code was copied from these projects; the helper and the ratchet (`scripts/ci/report-structure-ratchet.js`) are our own.
+
 ## Licenses (SPDX)
 
 | Project | License | Usage |

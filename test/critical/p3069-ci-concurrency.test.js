@@ -18,3 +18,14 @@ test('node22-tests cancels in-progress runs only for pull requests, with bounded
   assert.ok(jobs.length >= 1 && (s.match(/timeout-minutes: \d+/g) || []).length >= jobs.length, 'each job keeps a timeout');
   assert.ok(fs.existsSync(path.join(ROOT, 'docs/knowledge/CI_CONCURRENCY.md')));
 });
+
+test('push-triggered checks (second batch) let a running push job finish, PRs still cancel', () => {
+  for (const f of ['homey-app-validate', 'syntax-check', 'doc-coverage', 'shadow-policy-check', 'ci-self-check', 'code-quality', 'platform-budget']) {
+    const s = fs.readFileSync(path.join(ROOT, `.github/workflows/${f}.yml`), 'utf8');
+    const block = /^concurrency:\n((?: {2}.*\n)+)/m.exec(s);
+    assert.ok(block, `${f}: concurrency block`);
+    assert.match(block[1], /cancel-in-progress: \$\{\{ github\.event_name == 'pull_request' \}\}/, f);
+    assert.ok(/timeout-minutes: \d+/.test(s), `${f}: keeps a timeout`);
+  }
+  assert.match(fs.readFileSync(path.join(ROOT, 'docs/knowledge/CI_CONCURRENCY.md'), 'utf8'), /second batch/);
+});

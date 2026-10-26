@@ -65,3 +65,10 @@ test('bump and ensure-next replace a generic HOMEY_CHANGELOG with our summary, k
     fs.rmSync(dir, { recursive: true, force: true });
   }
 });
+
+test('version write-back fills its entry through changelog-entry.js and keeps the file newest first', () => {
+  const sh = require('fs').readFileSync(require('path').join(__dirname, '..', '..', '.github/scripts/version-writeback.sh'), 'utf8');
+  assert.match(sh, /scripts\/automation\/changelog-entry\.js/);
+  assert.match(sh, /updateChangelog\(c,V,/);
+  assert.match(sh, /catch \(_\)/, 'old fixed text kept as fallback only');
+});

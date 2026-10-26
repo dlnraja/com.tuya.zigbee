@@ -39,6 +39,9 @@ function headerOf(src) {
     text = lines.filter((l) => !/^eslint/.test(l)).join(' ');
   }
   text = clean(text);
+  // P3069: a header may quote a user report or an SDK error word for word; the index only says
+  // what the file does, so long quoted passages stay in the file and are not repeated here.
+  text = text.replace(/"([^"]*)"|\u201c([^\u201d]*)\u201d/g, (m, a, b) => (((a ?? b ?? '').match(/[\p{L}\p{N}_'-]+/gu) || []).length >= 12 ? '(quoted passage, see the file header)' : m));
   const dot = text.search(/\.\s/);
   return dot > 30 ? text.slice(0, dot + 1) : text;
 }

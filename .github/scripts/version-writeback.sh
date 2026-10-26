@@ -25,7 +25,11 @@ for i in 1 2 3; do
       const t=fs.readFileSync(f,"utf8"); const j=JSON.parse(t); j.version=V;
       fs.writeFileSync(f, t.startsWith("{\n")?JSON.stringify(j,null,2)+"\n":JSON.stringify(j)); }
     if (fs.existsSync("package-lock.json")) { const l=JSON.parse(fs.readFileSync("package-lock.json","utf8")); l.version=V; if(l.packages&&l.packages[""]) l.packages[""].version=V; fs.writeFileSync("package-lock.json", JSON.stringify(l,null,2)+"\n"); }
-    if (fs.existsSync(".homeychangelog.json")) { const c=JSON.parse(fs.readFileSync(".homeychangelog.json","utf8")); if(!c[V]) c[V]={en:"Device database and reliability updates.",fr:"Mises à jour de la base d’appareils et de la fiabilité."}; fs.writeFileSync(".homeychangelog.json", JSON.stringify(c,null,2)+"\n"); }
+    // P3069: written-back entry gets a real en/fr summary and the file stays newest first; the old fixed text is only the fallback.
+    if (fs.existsSync(".homeychangelog.json")) { let c=JSON.parse(fs.readFileSync(".homeychangelog.json","utf8"));
+      try { const ce=require(require("path").resolve("scripts/automation/changelog-entry.js")); c=ce.updateChangelog(c,V,ce.subjectsSinceLastPublish()).obj; }
+      catch (_) { if(!c[V]) c[V]={en:"Device database and reliability updates.",fr:"Mises à jour de la base d’appareils et de la fiabilité."}; }
+      fs.writeFileSync(".homeychangelog.json", JSON.stringify(c,null,2)+"\n"); }
     fs.writeFileSync(".github/homey-version-floor", V+"\n");'
   for f in app.json .homeycompose/app.json package.json package-lock.json .homeychangelog.json .github/homey-version-floor; do [ -f "$f" ] && git add "$f"; done
   git commit -q -m "chore(version): v${V} written back after Test [skip ci]" || { echo "::warning::commit failed"; exit 0; }

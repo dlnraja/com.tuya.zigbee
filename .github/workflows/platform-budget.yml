@@ -41,9 +41,11 @@ permissions:
   actions: read
 
 concurrency:
-  # Never publishes: one run per ref, a newer push cancels the older run.
+  # Never publishes: one run per ref.
   group: platform-budget-${{ github.ref }}
-  cancel-in-progress: true
+  # P3069: a push run finishes and newer pushes wait as one queued run (no extra minutes); PRs still cancel.
+  # See docs/knowledge/CI_CONCURRENCY.md.
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 env:
   AI_PLAN_MODE: 'forfait'

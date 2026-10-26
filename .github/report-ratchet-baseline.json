@@ -1,18 +1,116 @@
 {
   "_doc": "P3069 report ratchet: may only shrink. Regenerate: node scripts/ci/report-structure-ratchet.js --write-baseline",
   "workflowsWithoutAbout": [],
-  "quotingScripts": [],
-  "docExcerpts": {
-    "docs/knowledge/FIELD_NOTES_2026-10_X_SCAN.md": 1,
-    "docs/knowledge/HOMEY_FIRMWARE.md": 1,
-    "docs/knowledge/KB/CODE_REFERENCE.md": 4,
-    "docs/knowledge/KB/UNKNOWN_COMMANDS.md": 1,
-    "docs/knowledge/P3036_ATHOM_PUBLISH_POLICY.md": 1,
-    "docs/knowledge/TS004X_BATTERY_REMOTES.md": 1,
-    "CREDITS.md": 1,
-    "reports/COMMUNITY-INTELLIGENCE.md": 148,
-    "reports/kimi-2026-07-28/backport-ondeleted-destroyed.md": 2,
-    "reports/kimi-2026-07-28/stable-checkers-pass.md": 1,
-    "reports/repomix-architecture.md": 1555
-  }
+  "quotingScripts": [
+    {
+      "file": ".github/scripts/athom-login-cartography.js",
+      "lines": 1
+    },
+    {
+      "file": ".github/scripts/generate-dashboards-page.js",
+      "lines": 1
+    },
+    {
+      "file": ".github/scripts/github-issue-manager.js",
+      "lines": 2
+    },
+    {
+      "file": ".github/scripts/internet-research-tool.js",
+      "lines": 2
+    },
+    {
+      "file": ".github/scripts/nightly-processor.js",
+      "lines": 1
+    },
+    {
+      "file": ".github/scripts/scan-johan-full.js",
+      "lines": 1
+    },
+    {
+      "file": ".github/scripts/variant-scanner.js",
+      "lines": 1
+    },
+    {
+      "file": "tools/ci/auto-bot-issue-triage.js",
+      "lines": 1
+    },
+    {
+      "file": "tools/ci/button-issues-deep.js",
+      "lines": 3
+    },
+    {
+      "file": "tools/ci/check-open-buttons.js",
+      "lines": 1
+    },
+    {
+      "file": "tools/ci/collect-johan-comments-to-delete.js",
+      "lines": 1
+    },
+    {
+      "file": "tools/ci/device-investigator.js",
+      "lines": 1
+    },
+    {
+      "file": "tools/ci/fetch-all-activity.js",
+      "lines": 1
+    },
+    {
+      "file": "tools/ci/fetch-dlnraja-comments-public.js",
+      "lines": 1
+    },
+    {
+      "file": "tools/ci/find-no-oninit.js",
+      "lines": 1
+    },
+    {
+      "file": "tools/ci/forum-temporal-collect.js",
+      "lines": 1
+    },
+    {
+      "file": "tools/ci/generate-docs-index.js",
+      "lines": 2
+    },
+    {
+      "file": "tools/ci/parse-forum-digest.js",
+      "lines": 1
+    },
+    {
+      "file": "tools/ci/regression-lessons-gate.js",
+      "lines": 1
+    },
+    {
+      "file": "tools/ci/search-forum-posts-v2.js",
+      "lines": 3
+    },
+    {
+      "file": "tools/ci/search-forum-posts.js",
+      "lines": 2
+    },
+    {
+      "file": "tools/ci/search-forum-v2.js",
+      "lines": 4
+    },
+    {
+      "file": "tools/ci/search-forum.js",
+      "lines": 1
+    },
+    {
+      "file": "tools/ci/session-start.js",
+      "lines": 1
+    },
+    {
+      "file": "tools/ci/temporal-cross-ref.js",
+      "lines": 1
+    },
+    {
+      "file": "tools/ci/weekly-sovereign-loop.js",
+      "lines": 3
+    },
+    {
+      "file": "tools/shadow-mode/shadow-mode-v2.js",
+      "lines": 1
+    }
+  ],
+  "docExcerpts": {},
+  "_scope": "P3069 step 3 (2026-10-26), ported from master 752e16154e: detector refined and script scan widened (tools/, inline workflow JS, \"+\" concatenation); baseline lowered, newly visible quoting scripts listed once here, may only shrink."
 }
