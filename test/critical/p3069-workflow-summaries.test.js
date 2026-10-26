@@ -42,7 +42,10 @@ test('every helper summary step runs always() and skips quietly when the helper 
 test('report-writer CLI output is short and carries the marker', () => {
   const { execFileSync } = require('child_process');
   const out = execFileSync(process.execPath, [path.join(ROOT, 'scripts', 'lib', 'report-writer.js'),
-    '--title', 'X', '--summary', 'All good.', '--headers', 'a|b', '--row', '1|2', '--thanks', 'Mocha'], { encoding: 'utf8' });
+    '--title', 'X', '--summary', 'All good.', '--headers', 'a|b', '--row', '1|2', '--thanks', 'Mocha'],
+    // In GitHub Actions the CLI appends to $GITHUB_STEP_SUMMARY instead of printing; drop it so the
+    // test reads stdout the same way locally and in CI (and never writes into the real summary).
+    { encoding: 'utf8', env: Object.fromEntries(Object.entries(process.env).filter(([k]) => k !== 'GITHUB_STEP_SUMMARY')) });
   assert.match(out, /^<!-- report-writer:v1/);
   assert.ok(out.split('\n').length < 20, out);
 });
