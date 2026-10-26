@@ -679,7 +679,8 @@
           "name": "mode",
           "type": "dropdown",
           "title": {
-            "en": "Mode"
+            "en": "Mode",
+            "fr": "Mode"
           },
           "values": [
             {
@@ -1093,6 +1094,10 @@
         {
           "name": "brand",
           "type": "text",
+          "title": {
+            "en": "Brand",
+            "fr": "Marque"
+          },
           "placeholder": "Samsung"
         },
         {

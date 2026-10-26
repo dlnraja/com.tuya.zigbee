@@ -349,6 +349,10 @@
         {
           "name": "moisture",
           "type": "number",
+          "title": {
+            "en": "Moisture",
+            "fr": "Humidité"
+          },
           "min": 0,
           "max": 100,
           "step": 5,
@@ -376,6 +380,10 @@
         {
           "name": "moisture",
           "type": "number",
+          "title": {
+            "en": "Moisture",
+            "fr": "Humidité"
+          },
           "min": 0,
           "max": 100,
           "step": 5,
@@ -403,6 +411,10 @@
         {
           "name": "temp",
           "type": "number",
+          "title": {
+            "en": "Temperature",
+            "fr": "Température"
+          },
           "min": -20,
           "max": 60,
           "step": 1,
@@ -446,6 +458,10 @@
         {
           "name": "threshold",
           "type": "number",
+          "title": {
+            "en": "Threshold",
+            "fr": "Seuil"
+          },
           "min": 0,
           "max": 100,
           "step": 5,
@@ -489,6 +505,10 @@
         {
           "name": "ec_threshold",
           "type": "number",
+          "title": {
+            "en": "EC threshold",
+            "fr": "Seuil EC"
+          },
           "min": 0,
           "max": 10000,
           "step": 100,

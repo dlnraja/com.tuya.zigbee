@@ -261,6 +261,10 @@
         {
           "name": "duration_seconds",
           "type": "number",
+          "title": {
+            "en": "Duration (s)",
+            "fr": "Durée (s)"
+          },
           "min": 1,
           "max": 300,
           "step": 1,

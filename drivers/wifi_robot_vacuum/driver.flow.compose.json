@@ -163,6 +163,10 @@
         {
           "name": "level",
           "type": "number",
+          "title": {
+            "en": "Level",
+            "fr": "Niveau"
+          },
           "min": 0,
           "max": 100,
           "step": 5,
@@ -390,6 +394,10 @@
         {
           "name": "volume",
           "type": "number",
+          "title": {
+            "en": "Volume",
+            "fr": "Volume"
+          },
           "min": 0,
           "max": 100,
           "step": 10,

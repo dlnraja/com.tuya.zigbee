@@ -675,6 +675,10 @@
         {
           "name": "seconds",
           "type": "number",
+          "title": {
+            "en": "Seconds",
+            "fr": "Secondes"
+          },
           "placeholder": {
             "en": "Seconds (0–86400)",
             "fr": "Secondes (0–86400)"
