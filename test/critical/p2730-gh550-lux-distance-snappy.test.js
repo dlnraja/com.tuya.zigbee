@@ -30,9 +30,19 @@ describe('P2730 GH#550 lux/distance snappy', () => {
   it('SanityFilter distance ROC allows 0.6m @ 100ms (walk-away)', () => {
     const sf = new SanityFilter({});
     const id = 'p2730-dist';
-    assert.ok(sf.filter(id, 'measure_luminance.distance', 2.0) === 2.0);
-    const out = sf.filter(id, 'measure_luminance.distance', 2.6);
-    assert.strictEqual(out, 2.6);
+    // P3057-3: pin the clock to the 100 ms the title states. Two bare synchronous calls were flaky: same ms
+    // skips the ROC check (pass), a 1 ms tick gives 0.6 m / 1 ms = 600 m/s (discarded).
+    const realNow = Date.now;
+    let t = 1_000_000;
+    Date.now = () => t;
+    try {
+      assert.ok(sf.filter(id, 'measure_luminance.distance', 2.0) === 2.0);
+      t += 100;
+      const out = sf.filter(id, 'measure_luminance.distance', 2.6);
+      assert.strictEqual(out, 2.6);
+    } finally {
+      Date.now = realNow;
+    }
   });
 
   it('distance scale hysteresis sticks dm then cm', () => {
