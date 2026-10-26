@@ -23,7 +23,10 @@ use the QR way.
 Check in this order:
 1. **IP changed.** Give the device a fixed IP (DHCP reservation in your router), then
    *Repair → configure* and enter the new IP. Port suffixes like `:6668` and spaces are
-   cleaned for you.
+   cleaned for you. Since P3072 the app also follows the device by itself when it announces
+   a new IP on UDP (at most once a minute per device), and *Repair* shows a status line
+   (connected, IP, protocol, when it was last heard, last error) with a **Find device on the
+   network** button that wakes the device and saves the IP it answers from.
 2. **Local key changed.** Removing and re-adding the device in Smart Life creates a **new
    local key**. Use *Repair → Fetch local key from linked account*, or paste the new key.
    Empty fields in Repair keep their current value, so you only type what changed.
@@ -65,6 +68,12 @@ your local key or Access Secret on the forum.
 ## 8. What should I send when asking for help?
 The device type, the protocol shown in the device settings, what works (reading?) and what
 does not (commands?), and a diagnostic report ID from the app. No keys, no passwords.
+
+## 9. Sonoff / eWeLink LAN: pairing stopped at "configure"
+Before P3072 the Sonoff Wi-Fi drivers (Basic R4, Dual R3, Mini R3/R4, Micro, POW Elite,
+S-Mate 2, TX 1/2/3 gang) had no pairing handlers, so the pair screen could not finish. They
+now share the eWeLink LAN pairing and repair: enter the device id, IP and (for encrypted
+firmware) the device key, or let mDNS list it. Repair keeps empty fields unchanged.
 
 ---
 Thanks to the Homey community thread "Tuya Local" (topic 154077, field reports by Andi and
