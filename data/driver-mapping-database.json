@@ -31638,6 +31638,37 @@
         "measure_luminance"
       ]
     },
+    "vibration_sensor_excellux_zg103v": {
+      "name": "Vibration sensor (Excellux ZG-103V)",
+      "class": "sensor",
+      "capabilities": [
+        "alarm_vibration",
+        "measure_battery"
+      ]
+    },
+    "fan_light_tuya_5_levels": {
+      "name": "Fan + light, 5 levels (Tuya TS0601)",
+      "class": "fan",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "onoff.light",
+        "dim.light"
+      ]
+    },
+    "air_conditioner_aetz01": {
+      "name": "Air conditioner (Tuya AETZ01_AC)",
+      "class": "thermostat",
+      "capabilities": [
+        "onoff",
+        "target_temperature",
+        "measure_temperature",
+        "hvac_system_mode",
+        "fan_mode",
+        "measure_power",
+        "meter_power"
+      ]
+    },
     "co_sensor_dcr_co": {
       "name": "CO detector (Tuya DCR-CO)",
       "class": "sensor",

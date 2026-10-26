@@ -1945,6 +1945,60 @@
       "pid": "TS0601",
       "driverId": "vibration_sensor",
       "note": "P3067 family 7: TS0601 vibration/contact sensor (Z2M tuya.ts TS0601_vibration_sensor, ZHA quirk DP1/3/10) moved from button_emergency_sos"
+    },
+    {
+      "mfr": "_TZE200_jowqowye",
+      "pid": "TS0601",
+      "driverId": "wall_dimmer_tuya",
+      "note": "P3068 (t568u): Mercator Ikuu SISWD11-ZB inline dimmer (Z2M mercator.ts), moved from ceiling_fan"
+    },
+    {
+      "mfr": "_tze200_jowqowye",
+      "pid": "TS0601",
+      "driverId": "wall_dimmer_tuya",
+      "note": "P3068 (t568u): Mercator Ikuu SISWD11-ZB inline dimmer (Z2M mercator.ts), moved from ceiling_fan"
+    },
+    {
+      "mfr": "_TZE284_ikul00sx",
+      "pid": "TS0601",
+      "driverId": "fan_light_tuya_5_levels",
+      "note": "P3068 (t568u): fan 5 speeds + light 5 levels (Z2M tuya.ts TS0601_fan_5_levels_and_light_5_levels), moved from humidifier"
+    },
+    {
+      "mfr": "_tze284_ikul00sx",
+      "pid": "TS0601",
+      "driverId": "fan_light_tuya_5_levels",
+      "note": "P3068 (t568u): fan 5 speeds + light 5 levels (Z2M tuya.ts TS0601_fan_5_levels_and_light_5_levels), moved from humidifier"
+    },
+    {
+      "mfr": "_TZE200_snfdqllf",
+      "pid": "TS0601",
+      "driverId": "air_conditioner_aetz01",
+      "note": "P3068 (t568u): Tuya AETZ01_AC air conditioner (Z2M tuya.ts AETZ01_AC), moved from device_radiator_valve"
+    },
+    {
+      "mfr": "_tze200_snfdqllf",
+      "pid": "TS0601",
+      "driverId": "air_conditioner_aetz01",
+      "note": "P3068 (t568u): Tuya AETZ01_AC air conditioner (Z2M tuya.ts AETZ01_AC), moved from device_radiator_valve"
+    },
+    {
+      "mfr": "VABRATE",
+      "pid": "Excellux",
+      "driverId": "vibration_sensor_excellux_zg103v",
+      "note": "P3068 (t568u): Excellux ZG-103V vibration sensor (Z2M tuya.ts ZG-103V), moved from motion_sensor_switch"
+    },
+    {
+      "mfr": "vabrate",
+      "pid": "Excellux",
+      "driverId": "vibration_sensor_excellux_zg103v",
+      "note": "P3068 (t568u): Excellux ZG-103V vibration sensor (Z2M tuya.ts ZG-103V), moved from motion_sensor_switch"
+    },
+    {
+      "mfr": "Vabrate",
+      "pid": "Excellux",
+      "driverId": "vibration_sensor_excellux_zg103v",
+      "note": "P3068 (t568u): Excellux ZG-103V vibration sensor (Z2M tuya.ts ZG-103V), moved from motion_sensor_switch"
     }
   ]
 }

@@ -1,0 +1,82 @@
+{
+  "id": "fan_light_tuya_5_levels",
+  "name": {
+    "en": "Fan + light, 5 levels (Tuya TS0601)",
+    "fr": "Ventilateur + lumière, 5 niveaux (Tuya TS0601)",
+    "nl": "Ventilator + licht, 5 standen (Tuya TS0601)",
+    "de": "Ventilator + Licht, 5 Stufen (Tuya TS0601)"
+  },
+  "class": "fan",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "onoff",
+    "dim",
+    "onoff.light",
+    "dim.light"
+  ],
+  "capabilitiesOptions": {
+    "dim": {
+      "title": {
+        "en": "Fan speed",
+        "fr": "Vitesse ventilateur"
+      }
+    },
+    "onoff.light": {
+      "title": {
+        "en": "Light",
+        "fr": "Lumière"
+      }
+    },
+    "dim.light": {
+      "title": {
+        "en": "Light level",
+        "fr": "Luminosité"
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/fan_light_tuya_5_levels/assets/images/small.png",
+    "large": "/drivers/fan_light_tuya_5_levels/assets/images/large.png"
+  },
+  "settings": [
+    {
+      "$extends": [
+        "zcl_cluster_layer"
+      ]
+    }
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE284_ikul00sx",
+      "_tze284_ikul00sx"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5
+        ],
+        "bindings": []
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Switch the fan off and on 5 times (or hold its pairing button) until the light blinks.",
+        "fr": "Éteignez et rallumez le ventilateur 5 fois (ou maintenez son bouton d’appairage) jusqu’à ce que la lumière clignote."
+      }
+    }
+  },
+  "metadata": {
+    "source": "zigbee-herdsman-converters tuya.ts TS0601_fan_5_levels_and_light_5_levels (_TZE284_ikul00sx): DP1 fan on/off, DP6 fan speed raw levels 300/410/520/650/1000, DP104 light on/off, DP105 brightness same 5 raw levels. Moved out of humidifier. Reimplemented and credited (P3068), no upstream code copied."
+  }
+}

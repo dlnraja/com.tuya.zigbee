@@ -1,5 +1,13 @@
 ## [Unreleased]
 
+### Fixed (2026-10-26, P3068 one couple, one driver — master soak)
+- **Four devices that were paired with a driver of the wrong type now pair with the right one** (new pairings; already paired devices keep working on their current driver, no re-pair needed):
+  - Mercator Ikuü SISWD11-ZB inline dimmer (`_TZE200_jowqowye`) → *Wall dimmer (Tuya)* instead of *Ceiling fan*.
+  - Tuya fan with 5 speeds + light with 5 levels (`_TZE284_ikul00sx`) → new *Fan + light, 5 levels* driver (fan on/off and speed, light on/off and level) instead of *Humidifier*.
+  - Excellux ZG-103V vibration sensor (`VABRATE`) → new *Vibration sensor (Excellux ZG-103V)* driver with a sensitivity setting, instead of a plug-type driver.
+  - Tuya AETZ01_AC air-conditioner controller (`_TZE200_snfdqllf`) → new *Air conditioner (Tuya AETZ01_AC)* driver (on/off, setpoint 16–30 °C, cool/dry/fan mode, fan speed, power and energy; swing, sleep, turbo and quiet as settings) instead of *Radiator valve*.
+- **Pilot-wire thermostats `_TZE204_0hcjew5p` wrongly switched to fan-coil mode before P3067:** the mode and fan-mode tiles are kept (nothing is removed) but are no longer driven, and are labelled "(unused)".
+
 ### Fixed (2026-10-26, P3067 thermostat metering)
 - **AETZ01 air-conditioner controller, TWC-R01 and TH-P1Z pilot-wire thermostats:** power, voltage, current and energy are now shown (added on the first real report). The pilot-wire thermostat no longer switches to fan-coil mode because of its voltage report.
 

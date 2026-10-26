@@ -1,0 +1,86 @@
+{
+  "id": "vibration_sensor_excellux_zg103v",
+  "name": {
+    "en": "Vibration sensor (Excellux ZG-103V)",
+    "fr": "Capteur de vibration (Excellux ZG-103V)",
+    "nl": "Trillingssensor (Excellux ZG-103V)",
+    "de": "Vibrationssensor (Excellux ZG-103V)"
+  },
+  "class": "sensor",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "alarm_vibration",
+    "measure_battery"
+  ],
+  "energy": {
+    "batteries": [
+      "OTHER"
+    ]
+  },
+  "images": {
+    "small": "/drivers/vibration_sensor_excellux_zg103v/assets/images/small.png",
+    "large": "/drivers/vibration_sensor_excellux_zg103v/assets/images/large.png"
+  },
+  "settings": [
+    {
+      "id": "zg103v_sensitivity",
+      "type": "number",
+      "label": {
+        "en": "Vibration sensitivity (0-50)",
+        "fr": "Sensibilité aux vibrations (0-50)",
+        "nl": "Trillingsgevoeligheid (0-50)",
+        "de": "Vibrationsempfindlichkeit (0-50)"
+      },
+      "value": 25,
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "hint": {
+        "en": "Sent at the next wake-up of the sensor.",
+        "fr": "Envoyé au prochain réveil du capteur.",
+        "nl": "Verzonden bij het volgende ontwaken van de sensor.",
+        "de": "Wird beim nächsten Aufwachen des Sensors gesendet."
+      }
+    },
+    {
+      "$extends": [
+        "zcl_cluster_layer"
+      ]
+    }
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "VABRATE",
+      "vabrate",
+      "Vabrate"
+    ],
+    "productId": [
+      "Excellux"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5
+        ],
+        "bindings": []
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Press the pairing button for about 5 seconds until the indicator blinks.",
+        "fr": "Appuyez sur le bouton d’appairage environ 5 secondes jusqu’à ce que le voyant clignote."
+      }
+    }
+  },
+  "metadata": {
+    "source": "zigbee-herdsman-converters tuya.ts ZG-103V (Excellux, modelId Excellux / manufacturer VABRATE): DP3 vibration (bool), DP4 battery %, DP6 vibration sensitivity 0-50 (setting). Moved out of motion_sensor_switch (class socket). Reimplemented and credited (P3068), no upstream code copied."
+  }
+}

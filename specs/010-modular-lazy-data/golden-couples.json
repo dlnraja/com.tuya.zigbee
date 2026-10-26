@@ -1,7 +1,13 @@
 {
- "generated": "2026-10-26T15:32:32.013Z",
- "drivers": 414,
+ "generated": "2026-10-26T17:35:19.574Z",
+ "drivers": 417,
  "snapshot": {
+  "air_conditioner_aetz01": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "c064a77848899231",
+   "pidSha": "455c46e8c8549693"
+  },
   "air_purifier": {
    "mfr": 3,
    "pid": 2,
@@ -273,9 +279,9 @@
    "pidSha": "ba5d0cd4edeafd8a"
   },
   "ceiling_fan": {
-   "mfr": 5,
+   "mfr": 4,
    "pid": 2,
-   "mfrSha": "034d38e40b221b50",
+   "mfrSha": "3a83074a18d08651",
    "pidSha": "5ea93c4689a42566"
   },
   "christmas_lights": {
@@ -591,9 +597,9 @@
    "pidSha": "455c46e8c8549693"
   },
   "device_radiator_valve": {
-   "mfr": 110,
+   "mfr": 109,
    "pid": 2,
-   "mfrSha": "28b9dda9d5966586",
+   "mfrSha": "ddbba2f63719b439",
    "pidSha": "eb014cbe97d74de9"
   },
   "device_radiator_valve_smart": {
@@ -818,6 +824,12 @@
    "mfrSha": "b3a910082540222a",
    "pidSha": "d05891b03894d4c9"
   },
+  "fan_light_tuya_5_levels": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "c89013f77458d7e4",
+   "pidSha": "455c46e8c8549693"
+  },
   "fingerbot": {
    "mfr": 7,
    "pid": 6,
@@ -933,9 +945,9 @@
    "pidSha": "4c39be271f443e1e"
   },
   "humidifier": {
-   "mfr": 5,
+   "mfr": 4,
    "pid": 2,
-   "mfrSha": "bd5e3665e3ff12e7",
+   "mfrSha": "570681ca6aa2447d",
    "pidSha": "ca59a3b0f63700a3"
   },
   "hvac_air_conditioner": {
@@ -1179,9 +1191,9 @@
    "pidSha": "bf550bfce5b1a93d"
   },
   "motion_sensor_switch": {
-   "mfr": 2,
+   "mfr": 1,
    "pid": 5,
-   "mfrSha": "632b05904da72e68",
+   "mfrSha": "047c7f76bfc0b704",
    "pidSha": "d708cdcadb08389b"
   },
   "outdoor_2_socket": {
@@ -2276,6 +2288,12 @@
    "mfrSha": "1697d5d509ba5036",
    "pidSha": "34750b19b8c07cfa"
   },
+  "vibration_sensor_excellux_zg103v": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "2469df45c939f836",
+   "pidSha": "55637e4a15072a7b"
+  },
   "wall_curtain_switch": {
    "mfr": 10,
    "pid": 2,
@@ -2289,9 +2307,9 @@
    "pidSha": "1326f3b1090e234a"
   },
   "wall_dimmer_tuya": {
-   "mfr": 134,
+   "mfr": 135,
    "pid": 14,
-   "mfrSha": "0de1aec5fd95556a",
+   "mfrSha": "960a3b716164e7ec",
    "pidSha": "86e609055c5d6281"
   },
   "wall_remote_1_gang": {
