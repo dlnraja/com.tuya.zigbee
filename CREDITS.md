@@ -358,3 +358,4 @@ Reporters of dlnraja/com.tuya.zigbee issues not credited elsewhere in this file.
 - **GitHub Actions docs (concurrency groups)** — the one-running, one-waiting rule behind our Node 22 setting: pushes let the running job finish, PRs still cancel (`docs/knowledge/CI_CONCURRENCY.md`).
 - No code was copied from these projects; the helper and the ratchet (`scripts/ci/report-structure-ratchet.js`) are our own.
 
+- ncw88jfq LCD port (2026-10-27, own wording): Wilhelm Dall (Homey store suggestion, _TZ3210_ncw88jfq TS0201 single-endpoint LCD with empty temperature/humidity) and zigbee-herdsman-converters tuya.ts (Koen Kanters and contributors, TS0201 humidity x10 list).
