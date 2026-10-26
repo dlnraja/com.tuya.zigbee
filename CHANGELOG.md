@@ -1,5 +1,10 @@
 ## [Unreleased]
 
+### Fixed (2026-10-26, P3071 DIN energy meters — master soak)
+- **Tuya DIN meters TS0601_din_1** (`_TZE200_bkkmqmyo`, `_TZE204_bkkmqmyo`, `_TZE200_eaac7dkw`): datapoint 1 is the energy counter, not the relay, so the meter no longer switches the on/off tile; voltage and current are read from the packed DP6, power from DP103, frequency from DP105, and the relay is DP16 (both ways).
+- **SPM01V1-GT** (`_TZE204/_TZE284_d2zfgtij` in *DIN energy meter*): energy, voltage, current, power and frequency are now decoded; DP1 no longer toggles on/off.
+- **SDM01V1-GT, SDM02V1-GT, ATMS10013Z3, SPM01V1-GT** in *3-phase energy meter*: per-phase voltage, current and power are now read from the packed phase datapoints; the meter's own total power still wins when it is sent. Nothing is written at pairing, no re-pair needed.
+
 ### Improved (2026-10-26, P3070 energy estimates for mains switches and dimmers — master soak)
 - **Wall switches and dimmers whose driver also covers battery models** (21 drivers, e.g. *Switch 1–3 gang*, *Wall switch 1–8 gang*, *Dimmer 1–3 gang*, *TS110E dimmer*) now give Homey Energy a default "power when on/off" (relay 40 W / 0.4 W, dimmer 40 W / 0.5 W) once the device is confirmed as mains powered. Battery models and sensors get nothing; you can still change the values in the device's energy settings.
 

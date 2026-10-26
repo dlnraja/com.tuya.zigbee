@@ -63,6 +63,14 @@ Facts only, own implementation, no code copied.
 ## P3067 thermostat metering
 | Couple | Driver | DPs (zhc tuya.ts) |
 |---|---|---|
-| `_TZE200_snfdqllf` AETZ01_AC | device_radiator_valve | 116 W, 117 kWh (raw) |
+| `_TZE200_snfdqllf` AETZ01_AC | air_conditioner_aetz01 (P3068, moved out of device_radiator_valve) | 116 W, 117 kWh (raw) |
 | `_TZE204_ilzkxrav` TWC-R01 | device_radiator_valve | 11 W, 115 V, 116 A, 117 kWh (/10) |
 | `_TZE204_0hcjew5p` TH-P1Z | wall_thermostat | 11 W /10, 101 V /10, 102 A /1000, 107 kWh /10; DP101 no longer arms FCU |
+
+## P3071 families 10-13 (master)
+| Family | Real gaps | Done | Artefacts (no change) |
+|---|---|---|---|
+| 10 DIN / 3-phase meters | din_1 DP1 read as relay, DP6 struct unread; *-GT DP6/7/8 phase structs unread | per-couple decode in energy_meter_din / energy_meter_3phase (test p3071) | DP17/18 alarm sets (zhc ignores them) |
+| 11 Smoke / gas | none | — | 288WZ DP1 (enum, already 0 = alarm), gas_sensor_2 DP13 (zhc ignores) |
+| 12 Garage / valves | none | — | TS0603 DP12 (zhc ignores), FK-BV05 windowcoverings_set (valve position) |
+| 13 UFH / sound / RCBO | none in code | — | Pro Line X10 DP101-110 already mapped; RCBO hkdl5fmv temperature parked (legacy hoch_din frame, lazy capability = manifest cost) |

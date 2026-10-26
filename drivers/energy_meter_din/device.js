@@ -8,6 +8,23 @@ const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 // DP1 energy /100 kWh, DP6 packed voltage/current/power (phaseVariant2), DP16 relay, DP10 fault.
 // Receive-side decode + DP16 relay write only; nothing is written at pairing.
 const DIN2_RE = /lsanae15/i;
+// P3071: two more exact layouts from zigbee-herdsman-converters tuya.ts (credited in CREDITS.md):
+// TS0601_din_1 (bkkmqmyo, eaac7dkw): DP1 energy /100, DP6 V (bytes 13-14, /10) + A (bytes 11-12, /1000),
+// DP16 relay, DP103 W, DP105 Hz /100. SPM01V1-GT (d2zfgtij): DP1 energy /100, DP6 = V/A/W packed like SPM.
+const DIN1_RE = /_(bkkmqmyo|eaac7dkw)$/i;
+const SPM01GT_RE = /_d2zfgtij$/i;
+const { decodePhase } = require('../../lib/tuya/SpmPhaseDecoder');
+const DIN1_SCALARS = {
+  din1: { 1: { cap: 'meter_power', div: 100 }, 16: { cap: 'onoff', bool: true }, 103: { cap: 'measure_power', div: 1 }, 105: { cap: 'measure_frequency', div: 100 } },
+  spm01gt: { 1: { cap: 'meter_power', div: 100 }, 32: { cap: 'measure_frequency', div: 100 } },
+};
+
+function decodeDin1Phase(raw) {
+  let buf = null;
+  if (Buffer.isBuffer(raw)) {buf = raw;} else if (typeof raw === 'string') {buf = Buffer.from(raw, 'base64');} else if (Array.isArray(raw)) {buf = Buffer.from(raw);}
+  if (!buf || buf.length < 15) {return null;}
+  return { voltage: ((buf[13] << 8) | buf[14]) / 10, current: ((buf[11] << 8) | buf[12]) / 1000 };
+}
 
 function decodeDin2Phase(raw) {
   let buf = null;
@@ -48,9 +65,48 @@ class EnergyMeterDinDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifie
     return this._din2;
   }
 
+  _dinVariant() {
+    if (this._dinVar !== undefined) {return this._dinVar;}
+    const mfr = String(this.getSetting?.('zb_manufacturer_name') || this.getStore?.()?.manufacturerName || this.getData?.()?.manufacturerName || '').trim();
+    this._dinVar = DIN2_RE.test(mfr) ? 'din2' : DIN1_RE.test(mfr) ? 'din1' : SPM01GT_RE.test(mfr) ? 'spm01gt' : null;
+    return this._dinVar;
+  }
+
   _handleDP(dpId, rawValue) {
-    if (!this._isDin2()) {return super._handleDP(dpId, rawValue);}
-    return this._handleDin2DP(Number(dpId), rawValue);
+    if (this._isDin2()) {return this._handleDin2DP(Number(dpId), rawValue);}
+    const v = this._dinVariant();
+    if (v === 'din1' || v === 'spm01gt') {return this._handleDin1DP(v, Number(dpId), rawValue);}
+    return super._handleDP(dpId, rawValue);
+  }
+
+  _handleDin1DP(v, dp, raw) {
+    const num = typeof raw === 'number' ? raw : Buffer.isBuffer(raw) && raw.length <= 4 ? raw.readUIntBE(0, raw.length) : Number(raw);
+    if (dp === 6) {return this._din1Phase(v, raw);}
+    const rule = (DIN1_SCALARS[v] || {})[dp];
+    if (!rule) {
+      this.log(`[EnergyMeterDin] ${v} DP${dp} ignored`);
+      return undefined;
+    }
+    if (rule.bool) {return this._din2Set(rule.cap, raw === true || num === 1);}
+    if (Number.isFinite(num) && num >= 0) {this._din2Set(rule.cap, num / rule.div);}
+    return undefined;
+  }
+
+  _din1Phase(v, raw) {
+    if (v === 'din1') {
+      const p = decodeDin1Phase(raw);
+      if (p) {
+        this._din2Set('measure_voltage', p.voltage);
+        this._din2Set('measure_current', p.current);
+      }
+      return undefined;
+    }
+    const p = decodePhase(raw);
+    if (!p.ok) {return undefined;}
+    this._din2Set('measure_voltage', p.voltage);
+    this._din2Set('measure_current', p.current);
+    this._din2Set('measure_power', p.power);
+    return undefined;
   }
 
   _handleDin2DP(dp, raw) {
@@ -76,7 +132,7 @@ class EnergyMeterDinDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifie
   }
 
   async _setOnOff(value) {
-    if (this._isDin2() && this.tuyaEF00Manager) {
+    if ((this._isDin2() || this._dinVariant() === 'din1') && this.tuyaEF00Manager) {
       return this.tuyaEF00Manager.sendDP(16, value ? 1 : 0, 'bool');
     }
     return super._setOnOff(value);
@@ -98,3 +154,4 @@ class EnergyMeterDinDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifie
 
 module.exports = EnergyMeterDinDevice;
 module.exports.decodeDin2Phase = decodeDin2Phase;
+module.exports.decodeDin1Phase = decodeDin1Phase;

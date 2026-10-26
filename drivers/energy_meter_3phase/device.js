@@ -9,6 +9,11 @@ const { spmVariant, decodePhase } = require('../../lib/tuya/SpmPhaseDecoder');
 // energy, DP53 power factor, DP10 alarm bits.
 const MOES_ZM7LT3 = new Set(['_tze284_cf4b5ktf', '_tze28c1000000_cf4b5ktf']);
 function isMoesZm7lt3(mfr) { return MOES_ZM7LT3.has(String(mfr || '').trim().toLowerCase()); }
+// P3071: SDM01V1-GT (s4sa1mcx), SDM02V1-GT (x8diwkqb), ATMS10013Z3 (a14rjslz), SPM01V1-GT (d2zfgtij):
+// DP6/7/8 = per-phase V/A/W struct (zhc tuya.ts phaseVariant2WithPhase / phaseVariant3, own decoder);
+// the meter's own DP29 total wins over the phase sum once it is seen.
+const GT_PHASE_RE = /_(s4sa1mcx|x8diwkqb|a14rjslz|d2zfgtij)$/i;
+function isGtPhase(mfr) { return GT_PHASE_RE.test(String(mfr || '').trim()); }
 
 class EnergyMeter3PhaseDevice extends UnifiedPlugBase {
   // WHY(P2518): mains DIN meter — never phantom battery / plug onoff
@@ -191,25 +196,32 @@ class EnergyMeter3PhaseDevice extends UnifiedPlugBase {
     this.log('[ENERGY-3PH]  Ready');
   }
 
+  // WHY: SPM02 and the *-GT meters share the packed V/A/W phase struct; DP29 (if sent) owns the total.
+  _handleSpmPhase(dpn, rawValue) {
+    const r = decodePhase(rawValue);
+    if (!r.ok) { this.log(`[SPM02] DP${dpn} ignored (${r.reason})`); return undefined; }
+    const n = dpn - 5;
+    this._spmPhasePower = this._spmPhasePower || {};
+    this._spmPhasePower[n] = r.power;
+    this.safeSetCapabilityValue(`measure_power.phase${n}`, r.power).catch(() => { });
+    if (n === 1) {
+      this.safeSetCapabilityValue('measure_voltage', r.voltage).catch(() => { });
+      this.safeSetCapabilityValue('measure_current', r.current).catch(() => { });
+    }
+    if (this._dp29Seen) {return undefined;}
+    const total = Object.values(this._spmPhasePower).reduce((a, b) => a + b, 0);
+    this.safeSetCapabilityValue('measure_power', total).catch(() => { });
+    this.safeSetCapabilityValue('measure_power.phase_total', total).catch(() => { });
+    return undefined;
+  }
+
   // WHY(P2518): DP29 total W → measure_power + mirror phase_total for 3ph UI
   _handleDP(dpId, rawValue) {
     const mfr = this.getSetting?.('zb_manufacturer_name') || this._protocolInfo?.mfr;
     const dpn = Number(dpId);
-    if ((dpn === 6 || dpn === 7 || dpn === 8) && spmVariant(mfr) === 'spm02') {
-      const r = decodePhase(rawValue);
-      if (!r.ok) { this.log(`[SPM02] DP${dpn} ignored (${r.reason})`); return undefined; }
-      const n = dpn - 5;
-      this._spmPhasePower = this._spmPhasePower || {};
-      this._spmPhasePower[n] = r.power;
-      this.safeSetCapabilityValue(`measure_power.phase${n}`, r.power).catch(() => { });
-      if (n === 1) {
-        this.safeSetCapabilityValue('measure_voltage', r.voltage).catch(() => { });
-        this.safeSetCapabilityValue('measure_current', r.current).catch(() => { });
-      }
-      const total = Object.values(this._spmPhasePower).reduce((a, b) => a + b, 0);
-      this.safeSetCapabilityValue('measure_power', total).catch(() => { });
-      this.safeSetCapabilityValue('measure_power.phase_total', total).catch(() => { });
-      return undefined;
+    if (dpn === 29) {this._dp29Seen = true;}
+    if ((dpn === 6 || dpn === 7 || dpn === 8) && (spmVariant(mfr) === 'spm02' || isGtPhase(mfr))) {
+      return this._handleSpmPhase(dpn, rawValue);
     }
     if (isMoesZm7lt3(mfr)) {
       if (dpn === 6 || dpn === 7 || dpn === 8) {
@@ -259,3 +271,4 @@ class EnergyMeter3PhaseDevice extends UnifiedPlugBase {
 }
 module.exports = EnergyMeter3PhaseDevice;
 module.exports.isMoesZm7lt3 = isMoesZm7lt3;
+module.exports.isGtPhase = isGtPhase;
