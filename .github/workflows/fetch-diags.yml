@@ -444,6 +444,15 @@ jobs:
           node scripts/ci/safe-auto-commit.js --id=fetch-diags-ledger --max-per-day=4 \
             --message="chore(ledger): fetch-diags findings" \
             --paths="data/progress/ledger.json"
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Fetches diagnostic mails every six hours and stores the structured part."; else s="Stopped early ($JOB_STATUS); the red step above says why. Fetches diagnostic mails every six hours and stores the structured part."; fi
+          node scripts/lib/report-writer.js --title "fetch-diags" --summary "$s" --headers "item|value" --row "job|fetch-diags" --row "result|$JOB_STATUS" --thanks "Homey users who send diagnostic reports by mail" --thanks "the Homey developer docs on app diagnostics" >> "$GITHUB_STEP_SUMMARY" || true
 
   # P2936: full cross-research of every item this workflow handles (kill switch: vars.XR_ENABLED=false,
   # report-only: vars.XR_APPLY=false). Bounded (max items, net/OCR caps), cached, no paid API.

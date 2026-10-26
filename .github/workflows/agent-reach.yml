@@ -109,3 +109,12 @@ jobs:
             .github/state/agent-reach-health.json
             .github/state/forum-rss-crosscheck.json
           retention-days: 30
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Cross-checks the forum watchers through a second free channel (RSS / web readers) and reports channel health."; else s="Stopped early ($JOB_STATUS); the red step above says why. Cross-checks the forum watchers through a second free channel (RSS / web readers) and reports channel health."; fi
+          node scripts/lib/report-writer.js --title "agent-reach" --summary "$s" --headers "item|value" --row "job|agent-reach" --row "result|$JOB_STATUS" --thanks "the Homey Community forum members who share fingerprints and diagnostics (read-only, never quoted)" --thanks "Discourse for its public JSON/RSS endpoints" --thanks "Panniantong/agent-reach for the multi-channel reader idea" >> "$GITHUB_STEP_SUMMARY" || true

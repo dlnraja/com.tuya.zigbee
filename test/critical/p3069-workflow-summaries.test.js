@@ -10,7 +10,9 @@ const ROOT = path.join(__dirname, '..', '..');
 const MIGRATED = ['ci-self-check.yml', 'node22-tests.yml', 'validate.yml', 'homey-app-validate.yml',
   'publish.yml', 'publish-stable.yml', 'bastien-publish.yml', 'auto-publish-on-push.yml', 'draft-to-test.yml', 'draft-to-test-fleet.yml',
   // enrich + kb (step 2c)
-  'auto-enrich-closed-loop.yml', 'blakadder-fetch.yml', 'driver-maintenance.yml', 'fleet-intelligent-enrich.yml', 'free-scrape-crossref.yml', 'homey-knowledge-refresh.yml', 'homey-store-peer-probe.yml', 'kb-refresh.yml', 'knowledge-graph-sync.yml', 'market-couples-intake.yml', 'mega-crawl.yml', 'monthly-community-sync.yml', 'monthly-device-enrichment.yml', 'monthly-enrichment.yml', 'monthly-scan.yml', 'monthly-tuya-intelligence.yml', 'oss-lan-source-enrich.yml', 'peer-complementary-enrich.yml'];
+  'auto-enrich-closed-loop.yml', 'blakadder-fetch.yml', 'driver-maintenance.yml', 'fleet-intelligent-enrich.yml', 'free-scrape-crossref.yml', 'homey-knowledge-refresh.yml', 'homey-store-peer-probe.yml', 'kb-refresh.yml', 'knowledge-graph-sync.yml', 'market-couples-intake.yml', 'mega-crawl.yml', 'monthly-community-sync.yml', 'monthly-device-enrichment.yml', 'monthly-enrichment.yml', 'monthly-scan.yml', 'monthly-tuya-intelligence.yml', 'oss-lan-source-enrich.yml', 'peer-complementary-enrich.yml',
+  // forum + diag (step 2d)
+  'agent-reach.yml', 'collect-diagnostics.yml', 'community-inbox.yml', 'daily-digest.yml', 'fetch-diags.yml', 'forum-pm-read.yml', 'forum-poll.yml', 'gmail-diagnostics.yml', 'gmail-token-keepalive.yml', 'johan-thread-intel.yml', 'l99-inbox-intelligence.yml', 'offline-crash-analyzer.yml', 'tuya-deep-diag.yml'];
 
 for (const wf of MIGRATED) {
   test(`${wf}: summary goes through report-writer, always, with a guard`, () => {
