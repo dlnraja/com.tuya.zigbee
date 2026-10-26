@@ -4,6 +4,7 @@
     "type": "dropdown",
     "label": {
       "en": "Button 1 Mode",
+      "fr": "Mode du bouton 1",
       "pl": "Tryb przycisku 1"
     },
     "value": "switch_1",
@@ -29,6 +30,7 @@
     "type": "dropdown",
     "label": {
       "en": "Button 2 Mode",
+      "fr": "Mode du bouton 2",
       "pl": "Tryb przycisku 2"
     },
     "value": "switch_2",
@@ -54,6 +56,7 @@
     "type": "dropdown",
     "label": {
       "en": "Button 3 Mode",
+      "fr": "Mode du bouton 3",
       "pl": "Tryb przycisku 3"
     },
     "value": "switch_3",

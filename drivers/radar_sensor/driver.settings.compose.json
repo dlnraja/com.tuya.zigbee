@@ -4,6 +4,7 @@
     "type": "number",
     "label": {
       "en": "Radar sensitivity",
+      "fr": "Sensibilité du radar",
       "nl": "Radar sensitiviteit"
     },
     "value": 7,
@@ -15,6 +16,7 @@
     "type": "number",
     "label": {
       "en": "Minimum range",
+      "fr": "Portée minimale",
       "nl": "Minimale bereik"
     },
     "value": 0,
@@ -30,6 +32,7 @@
     "type": "number",
     "label": {
       "en": "Maximum range",
+      "fr": "Portée maximale",
       "nl": "Maximale bereik"
     },
     "value": 9.5,
@@ -45,6 +48,7 @@
     "type": "number",
     "label": {
       "en": "Detection delay",
+      "fr": "Délai de détection",
       "nl": "Detectie vertraging"
     },
     "value": 7,
@@ -60,6 +64,7 @@
     "type": "number",
     "label": {
       "en": "Fading time",
+      "fr": "Durée de fondu",
       "nl": "Reset tijd"
     },
     "value": 7,
@@ -75,6 +80,7 @@
     "type": "number",
     "label": {
       "en": "Distance update interval",
+      "fr": "Intervalle de mise à jour de la distance",
       "nl": "Afstand update interval"
     },
     "value": 10,

@@ -433,6 +433,7 @@
       "type": "group",
       "label": {
         "en": "Sensor Calibration",
+        "fr": "Étalonnage du capteur",
         "nl": "Sensor Kalibratie"
       },
       "children": [
@@ -441,6 +442,7 @@
           "type": "number",
           "label": {
             "en": "Temperature offset",
+            "fr": "Décalage de température",
             "nl": "Temperatuur correctie"
           },
           "hint": {
@@ -458,6 +460,7 @@
           "type": "number",
           "label": {
             "en": "Humidity offset",
+            "fr": "Décalage d'humidité",
             "nl": "Luchtvochtigheid correctie"
           },
           "hint": {
@@ -476,7 +479,8 @@
       "id": "sonoff_temp_cal",
       "type": "number",
       "label": {
-        "en": "Temp Calibration (SONOFF)"
+        "en": "Temp Calibration (SONOFF)",
+        "fr": "Étalonnage température (SONOFF)"
       },
       "value": 0,
       "min": -10,
@@ -490,7 +494,8 @@
       "id": "sonoff_hum_cal",
       "type": "number",
       "label": {
-        "en": "Humidity Calibration (SONOFF)"
+        "en": "Humidity Calibration (SONOFF)",
+        "fr": "Étalonnage humidité (SONOFF)"
       },
       "value": 0,
       "min": -20,

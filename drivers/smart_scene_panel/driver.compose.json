@@ -82,7 +82,8 @@
       "id": "power_on_behavior",
       "type": "dropdown",
       "label": {
-        "en": "Power-On Behavior"
+        "en": "Power-On Behavior",
+        "fr": "Comportement à la mise sous tension"
       },
       "value": "memory",
       "values": [
@@ -110,7 +111,8 @@
       "id": "backlight",
       "type": "checkbox",
       "label": {
-        "en": "Screen Backlight"
+        "en": "Screen Backlight",
+        "fr": "Rétroéclairage de l'écran"
       },
       "value": true
     },
@@ -118,7 +120,8 @@
       "id": "pir_delay",
       "type": "number",
       "label": {
-        "en": "Radar Delay (seconds)"
+        "en": "Radar Delay (seconds)",
+        "fr": "Délai du radar (secondes)"
       },
       "value": 5,
       "min": 1,

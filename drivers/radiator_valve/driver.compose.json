@@ -926,7 +926,8 @@
     {
       "type": "group",
       "label": {
-        "en": "Weekly Schedule (Idea #22)"
+        "en": "Weekly Schedule (Idea #22)",
+        "fr": "Programme hebdomadaire (idée n° 22)"
       },
       "hint": {
         "en": "Configure heating schedules. Format: 'HH:MM/TT HH:MM/TT ...' where TT is temperature in C. Up to 10 periods. Last period must be 24:00."
@@ -936,7 +937,8 @@
           "id": "schedule_enabled",
           "type": "checkbox",
           "label": {
-            "en": "Enable Schedule Mode"
+            "en": "Enable Schedule Mode",
+            "fr": "Activer le mode programmé"
           },
           "hint": {
             "en": "Switch the TRV to schedule/program mode instead of manual mode"
@@ -947,7 +949,8 @@
           "id": "schedule_weekday",
           "type": "text",
           "label": {
-            "en": "Weekday Schedule (Mon-Fri)"
+            "en": "Weekday Schedule (Mon-Fri)",
+            "fr": "Programme en semaine (lun.–ven.)"
           },
           "pattern": "^(([01][0-9]|[2][0-4]):[0-5][0-9]\\/([0-2][0-9]|30)\\s{0,1})+$",
           "value": "06:00/20 22:00/16 24:00/16",
@@ -959,7 +962,8 @@
           "id": "schedule_weekend",
           "type": "text",
           "label": {
-            "en": "Weekend Schedule (Sat-Sun)"
+            "en": "Weekend Schedule (Sat-Sun)",
+            "fr": "Programme du week-end (sam.–dim.)"
           },
           "pattern": "^(([01][0-9]|[2][0-4]):[0-5][0-9]\\/([0-2][0-9]|30)\\s{0,1})+$",
           "value": "08:00/20 22:00/16 24:00/16",

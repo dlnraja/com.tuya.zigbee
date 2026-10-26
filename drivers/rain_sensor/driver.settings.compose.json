@@ -3,7 +3,8 @@
     "id": "batteryThreshold",
     "type": "number",
     "label": {
-      "en": "Battery Low Alarm Voltage Threshold (%)"
+      "en": "Battery Low Alarm Voltage Threshold (%)",
+      "fr": "Seuil d'alarme de batterie faible (%)"
     },
     "hint": {
       "en": "This setting determines the threshold before a battery alarm is given."

@@ -4,6 +4,7 @@
     "type": "number",
     "label": {
       "en": "Temperature offset (°C)",
+      "fr": "Décalage de température (°C)",
       "it": "Offset della temperatura (°C)"
     },
     "hint": {
@@ -22,6 +23,7 @@
     "type": "number",
     "label": {
       "en": "Humidity offset (%)",
+      "fr": "Décalage d'humidité (%)",
       "nl": "Luchtvochtigheids compensatie (%)",
       "it": "Offset dell'umidità (%)"
     },
@@ -42,6 +44,7 @@
     "type": "dropdown",
     "label": {
       "en": "Alarm volume",
+      "fr": "Volume de l'alarme",
       "nl": "Alarm volume",
       "de": "Alarm Lautstärke"
     },
@@ -92,6 +95,7 @@
     },
     "label": {
       "en": "Alarm duration time",
+      "fr": "Durée de l'alarme",
       "nl": "Alarm duratie",
       "de": "Alarmdauer"
     },
@@ -106,6 +110,7 @@
     "type": "dropdown",
     "label": {
       "en": "Alarm sound tune",
+      "fr": "Mélodie de l'alarme",
       "nl": "Melodie/geluid alarm",
       "de": "Alarm Melodie"
     },

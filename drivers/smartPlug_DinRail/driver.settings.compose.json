@@ -3,7 +3,8 @@
     "id": "metering_offset",
     "type": "number",
     "label": {
-      "en": "Metering Correction Factor"
+      "en": "Metering Correction Factor",
+      "fr": "Facteur de correction du comptage"
     },
     "hint": {
       "en": "Set a value to compensate if you experience that the Metered Power is not correct.\nRange: 0.8 - 1.2, step size 0.1, \ndefault: 1"
@@ -19,7 +20,8 @@
     "id": "measure_offset",
     "type": "number",
     "label": {
-      "en": "Measure Correction Factor"
+      "en": "Measure Correction Factor",
+      "fr": "Facteur de correction de la mesure"
     },
     "hint": {
       "en": "Set a value to compensate if you experience that the Measured Power is not correct.\nRange: 0.8 - 1.2, step size 0.1, \ndefault: 1"
@@ -35,7 +37,8 @@
     "id": "minReportPower",
     "type": "number",
     "label": {
-      "en": "Min report interval for power (s)"
+      "en": "Min report interval for power (s)",
+      "fr": "Intervalle min. de rapport de puissance (s)"
     },
     "hint": {
       "en": "Min interval before a report is sent to Homey (s)"
@@ -51,7 +54,8 @@
     "id": "minReportCurrent",
     "type": "number",
     "label": {
-      "en": "Min report interval for current (s)"
+      "en": "Min report interval for current (s)",
+      "fr": "Intervalle min. de rapport de courant (s)"
     },
     "hint": {
       "en": "Min interval before a report is sent to Homey (s)"
@@ -67,7 +71,8 @@
     "id": "minReportVoltage",
     "type": "number",
     "label": {
-      "en": "Min report interval for voltage (s)"
+      "en": "Min report interval for voltage (s)",
+      "fr": "Intervalle min. de rapport de tension (s)"
     },
     "hint": {
       "en": "Min interval before a report is sent to Homey (s)"
@@ -83,7 +88,8 @@
     "id": "relay_status",
     "type": "radio",
     "label": {
-      "en": "Relay status"
+      "en": "Relay status",
+      "fr": "État du relais"
     },
     "value": "2",
     "values": [
@@ -111,7 +117,8 @@
     "id": "indicator_mode",
     "type": "radio",
     "label": {
-      "en": "Indicator mode"
+      "en": "Indicator mode",
+      "fr": "Mode du voyant"
     },
     "value": "1",
     "values": [
@@ -139,7 +146,8 @@
     "id": "child_lock",
     "type": "radio",
     "label": {
-      "en": "Child lock"
+      "en": "Child lock",
+      "fr": "Verrouillage enfant"
     },
     "value": "0",
     "values": [
