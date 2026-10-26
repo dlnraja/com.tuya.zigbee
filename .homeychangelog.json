@@ -912,63 +912,83 @@
     "fr": "Merci aux contributeurs de Zigbee2MQTT / zigbee-herdsman-converters : le compteur SPM02V1-GT est aussi reconnu avec l'identifiant produit exact TS0601. Neuf nouveaux drivers grâce aux auteurs MakeGood, Daewoo, Box, Beca, AutomatOn et Tervix de zigbee-herdsman-converters : MG-AU03, MG-GPO02Z, clavier WKE502Z, EWS1154-Z, BVRF-L001, CH8Z, Pro Line X10, compteur 3 canaux bidirectionnel, détecteur de fumée TS0601. Merci aux contributeurs de zigbee-herdsman-converters : le détecteur de monoxyde de carbone DCR-CO a maintenant son propre driver CO, et la vanne thermostatique AVATTO ME168 (_TZE200_cxakecfo) est reconnue comme vanne de radiateur et non plus comme capteur d'ouverture. Merci encore aux contributeurs de zigbee-herdsman-converters : quatre détecteurs de fumée TS0601 (smoke_4) et le détecteur _TZE204_ntcy3xu1 (avec anti-sabotage) sont reconnus comme détecteurs de fumée et non plus comme interrupteur sans fil ou multiprise, le PIR _TZ3000_mwd3c2at comme capteur de mouvement et non plus comme vanne d'arrosage, et le PIR Excellux ZG-104PLV (PIRIV01) a son propre driver de mouvement avec luminosité. L'interrupteur de volet BSEED TS0601 (_TZE200_yenbr4om, _TZE200/_TZE204_bdblidq3) lit sa position sur les deux points de données de position et n'affiche plus de curseur de variation parasite ni de faux appuis bouton (merci migueleap pour l'issue #576, et aux contributeurs de zigbee-herdsman-converters et des quirks ZHA). Le capteur CO2 _TZE204_ogkdpgy2 affiche température et humidité dès qu'il les envoie (quirks ZHA)."
   },
   "9.0.1601": {
-    "en": "v9.0.1601: automated publish, manifest sync, and Homey test promotion."
+    "en": "More TS0601 devices recognised again: device identifiers that were trimmed to save space are topped back up after packing. Publishing now waits for a green test run and spaces out uploads, so fewer broken builds reach the Test channel.",
+    "fr": "Davantage d'appareils TS0601 à nouveau reconnus : les identifiants retirés pour gagner de la place sont réintégrés après compactage. La publication attend désormais des tests au vert et espace les envois, donc moins de versions cassées sur le canal Test."
   },
   "9.0.1600": {
-    "en": "v9.0.1600: automated publish, manifest sync, and Homey test promotion."
+    "en": "Drivers that have no manufacturer list no longer grab every TS0601 device, so those devices land on the right driver at pairing. New: NEO sprinkler family on the smart water valve driver, and a notice when a device reconnects after a long silence.",
+    "fr": "Les drivers sans liste de fabricants n'attrapent plus tous les appareils TS0601 : ceux-ci tombent sur le bon driver à l'appairage. Nouveau : famille d'arroseurs NEO sur le driver de vanne connectée, et une notification quand un appareil revient après un long silence."
   },
   "9.0.1599": {
-    "en": "v9.0.1599: automated publish, manifest sync, and Homey test promotion."
+    "en": "Maintenance build: same devices and behaviour as 9.0.1598 (publishing and test tooling only).",
+    "fr": "Version de maintenance : mêmes appareils et même comportement que la 9.0.1598 (outils de publication et de test uniquement)."
   },
   "9.0.1598": {
-    "en": "v9.0.1598: automated publish, manifest sync, and Homey test promotion."
+    "en": "Curtains and blinds: commands that arrive while the motor is still moving are queued instead of lost, a new 'is moving' condition and 'movement finished' trigger, and the final position is read back once the motor stops. Devices keep their Zigbee sequence number across app restarts, and availability is learnt per device so sleepy sensors are not marked offline too early. 72 Flow card sentences with device names restored.",
+    "fr": "Rideaux et volets : une commande reçue pendant que le moteur tourne est mise en file au lieu d'être perdue, nouvelle condition « est en mouvement » et nouveau déclencheur « mouvement terminé », et la position finale est relue à l'arrêt. Les appareils gardent leur numéro de séquence Zigbee après un redémarrage de l'app, et la disponibilité est apprise par appareil pour ne plus marquer trop tôt les capteurs endormis comme hors ligne. 72 phrases de cartes Flow avec le nom de l'appareil restaurées."
   },
   "9.0.1597": {
-    "en": "v9.0.1597: automated publish, manifest sync, and Homey test promotion."
+    "en": "Lower memory use under load: the data-point catalogue is loaded in small pieces on demand, internal queues and caches have hard limits, and the app sheds optional work before Homey's memory limit is reached. Smarter, bounded learning of unusual devices (confidence per device type, slower re-probing of sleepy devices, warnings on impossible values).",
+    "fr": "Moins de mémoire utilisée sous charge : le catalogue des points de données se charge par petits morceaux à la demande, les files et caches internes ont des limites strictes, et l'app renonce aux tâches optionnelles avant d'atteindre la limite mémoire de Homey. Apprentissage plus fin et borné des appareils inhabituels (confiance par type d'appareil, nouvelles sondes plus espacées pour les appareils endormis, alerte sur les valeurs impossibles)."
   },
   "9.0.1596": {
-    "en": "v9.0.1596: automated publish, manifest sync, and Homey test promotion."
+    "en": "Thermostats: TRV06 radiator valves no longer get mistaken for water valves and answer data requests again; Beca BAC-006AZB / BAC-002-ALZB wall thermostats on the wall thermostat driver; temperature calibration applied exactly once. Garden valves (TS0049, Novato ZPV-01) and the la2c2uo9 dimmer each have a single driver. New: dedicated 2-gang TS0002 switch driver, rain sensor decoding, soil sensor and HOBEIAN ZG-102ZL value fixes, a power-versus-energy sanity check, and Flow cards to teach the app what an unknown command means.",
+    "fr": "Thermostats : les têtes TRV06 ne sont plus prises pour des vannes d'eau et répondent à nouveau aux demandes de données ; thermostats muraux Beca BAC-006AZB / BAC-002-ALZB sur le driver de thermostat mural ; calibration de température appliquée une seule fois. Vannes de jardin (TS0049, Novato ZPV-01) et variateur la2c2uo9 sur un seul driver chacun. Nouveau : driver dédié pour l'interrupteur 2 voies TS0002, décodage du capteur de pluie, valeurs corrigées pour le capteur de sol et le HOBEIAN ZG-102ZL, contrôle de cohérence puissance/énergie, et cartes Flow pour apprendre à l'app ce que signifie une commande inconnue."
   },
   "9.0.1594": {
-    "en": "v9.0.1594: automated publish, manifest sync, and Homey test promotion."
+    "en": "Memory: the fingerprint cache loads lazily with a size cap and external device reads are bounded. AOYAN devices that report padded manufacturer names keep their options. Publishing stops automatically after repeated failed builds.",
+    "fr": "Mémoire : le cache d'empreintes se charge à la demande avec une taille maximale et les lectures d'appareils externes sont bornées. Les appareils AOYAN qui envoient un nom de fabricant avec des espaces gardent leurs options. La publication s'arrête d'elle-même après plusieurs échecs de compilation."
   },
   "9.0.1593": {
-    "en": "v9.0.1593: automated publish, manifest sync, and Homey test promotion."
+    "en": "Wi-Fi (local Tuya): the pairing screen can suggest the right driver, curtains show their real position instead of the target, plugs can expose extra sockets, thermostat modes refresh safely, and commands a device ignores are reported. New dedicated drivers for AOYAN AY204T radar, AOYAN AY222Z leak sensor and BlitzWolf BW-IS9, plus 14 more exact device matches. Energy statistics and data collection use less memory.",
+    "fr": "Wi-Fi (Tuya en local) : l'écran d'appairage peut proposer le bon driver, les rideaux affichent leur position réelle au lieu de la consigne, les prises peuvent exposer des sorties supplémentaires, les modes de thermostat se rafraîchissent sans risque et les commandes ignorées par un appareil sont signalées. Nouveaux drivers dédiés pour le radar AOYAN AY204T, le détecteur de fuite AOYAN AY222Z et le BlitzWolf BW-IS9, plus 14 correspondances exactes d'appareils. Les statistiques d'énergie et la collecte de données consomment moins de mémoire."
   },
   "9.0.1589": {
-    "en": "v9.0.1589: automated publish, manifest sync, and Homey test promotion."
+    "en": "Device settings page rebuilt the documented way for 382 drivers, and the _TZ3000_dfgbtub0 TS0042 remote now pairs as a 2-button remote.",
+    "fr": "Page de réglages des appareils reconstruite selon la documentation pour 382 drivers, et la télécommande _TZ3000_dfgbtub0 TS0042 s'appaire désormais comme télécommande 2 boutons."
   },
   "9.0.1587": {
-    "en": "v9.0.1587: automated publish, manifest sync, and Homey test promotion."
+    "en": "Maintenance build: same devices and behaviour as 9.0.1586 (publishing and test tooling only).",
+    "fr": "Version de maintenance : mêmes appareils et même comportement que la 9.0.1586 (outils de publication et de test uniquement)."
   },
   "9.0.1586": {
-    "en": "v9.0.1586: automated publish, manifest sync, and Homey test promotion."
+    "en": "Behind the scenes: device requests are now cross-checked against more public device databases before a fix is made. No change to devices.",
+    "fr": "En coulisses : chaque demande d'appareil est croisée avec davantage de bases d'appareils publiques avant correction. Aucun changement sur les appareils."
   },
   "9.0.1584": {
-    "en": "v9.0.1584: automated publish, manifest sync, and Homey test promotion."
+    "en": "Wi-Fi (local Tuya): multi-socket power strips and curtain modes are detected automatically, and a support bundle helps diagnose devices that do not respond.",
+    "fr": "Wi-Fi (Tuya en local) : les multiprises et le mode des rideaux sont détectés automatiquement, et un dossier de support aide à diagnostiquer les appareils qui ne répondent pas."
   },
   "9.0.1582": {
-    "en": "v9.0.1582: automated publish, manifest sync, and Homey test promotion."
+    "en": "Fixed two start-up crashes on some Homey models (memory reading not available). Firmware updates now go through Homey's own Device Updates screen. Buttons: all older button types share one event path, scenes recall correctly and extra endpoints are bound at pairing. New: Aqara DJT11LM vibration sensor and RTCGQ13LM motion sensor, Wi-Fi gateway sub-devices and a 'Import tinytuya' box on Wi-Fi pairing screens. The background health timer wakes six times less often.",
+    "fr": "Correction de deux plantages au démarrage sur certains modèles de Homey (lecture mémoire indisponible). Les mises à jour de firmware passent désormais par l'écran Mises à jour des appareils de Homey. Boutons : tous les anciens types de boutons partagent un seul circuit d'événements, les scènes se rappellent correctement et les points d'accès supplémentaires sont liés à l'appairage. Nouveau : capteur de vibration Aqara DJT11LM et détecteur de mouvement RTCGQ13LM, sous-appareils des passerelles Wi-Fi et une case « Importer tinytuya » sur les écrans d'appairage Wi-Fi. Le minuteur de santé en arrière-plan se réveille six fois moins souvent."
   },
   "9.0.1578": {
-    "en": "v9.0.1578: automated publish, manifest sync, and Homey test promotion."
+    "en": "Buttons: presses from every path are merged and duplicates removed, with a learnt per-device window. New HEIMAN keyfob (arm, disarm, emergency) and HEIMAN siren drivers. TZ-ZT01 climate sensor with a long manufacturer name recognised, with its battery state. 3A Smart Home LXN59-2S7LX1.0 now pairs as a 2-gang switch and iHorn LH02121 as a slim motion sensor.",
+    "fr": "Boutons : les appuis reçus par tous les chemins sont regroupés et les doublons supprimés, avec une fenêtre apprise par appareil. Nouveaux drivers pour le porte-clés HEIMAN (armer, désarmer, urgence) et la sirène HEIMAN. Capteur d'ambiance TZ-ZT01 au nom de fabricant long reconnu, avec son état de batterie. Le 3A Smart Home LXN59-2S7LX1.0 s'appaire désormais en interrupteur 2 voies et l'iHorn LH02121 en détecteur de mouvement fin."
   },
   "9.0.1575": {
-    "en": "v9.0.1575: automated publish, manifest sync, and Homey test promotion."
+    "en": "HEIMAN SmokeSensor-EF-3.0 pairs on the advanced smoke detector driver; Samotech SM311 and eWeLight ZB-DL01 pair as 1-gang dimmers.",
+    "fr": "Le HEIMAN SmokeSensor-EF-3.0 s'appaire sur le driver de détecteur de fumée avancé ; le Samotech SM311 et l'eWeLight ZB-DL01 s'appairent comme variateurs 1 voie."
   },
   "9.0.1574": {
-    "en": "TRV06 battery alarm, validation and reliability fixes."
+    "en": "TRV06 battery alarm, validation and reliability fixes. Detail: the TRV06 (_TZE200_rxq4iti9) has no battery percentage, so it now shows a low-battery alarm instead of an empty battery value. Lower memory use: diagnostic logs are capped, timers are released when a device is removed, and rarely used modules load on demand.",
+    "fr": "Tête thermostatique TRV06 : le TRV06 (_TZE200_rxq4iti9) ne donne pas de pourcentage de batterie, il affiche donc désormais une alarme de batterie faible au lieu d'une valeur vide. Moins de mémoire utilisée : journaux de diagnostic plafonnés, minuteries libérées à la suppression d'un appareil, modules rarement utilisés chargés à la demande."
   },
   "9.0.1571": {
-    "en": "v9.0.1571: automated publish, manifest sync, and Homey test promotion."
+    "en": "Maintenance build: same devices and behaviour as 9.0.1570 (publishing and test tooling only).",
+    "fr": "Version de maintenance : mêmes appareils et même comportement que la 9.0.1570 (outils de publication et de test uniquement)."
   },
   "9.0.1570": {
-    "en": "v9.0.1570: automated publish, manifest sync, and Homey test promotion."
+    "en": "The rco1yzb1 TS004F remote waits for double and triple presses only when a Flow uses them; single presses stay instant otherwise.",
+    "fr": "La télécommande rco1yzb1 TS004F n'attend les doubles et triples appuis que si un Flow les utilise ; sinon l'appui simple reste immédiat."
   },
   "9.0.1568": {
-    "en": "v9.0.1568: automated publish, manifest sync, and Homey test promotion."
+    "en": "Smart plug driver no longer catches sensors by product id alone: climate and other sensors fall back to a driver of the right class.",
+    "fr": "Le driver de prise connectée n'attrape plus les capteurs sur le seul identifiant produit : les capteurs d'ambiance et autres retombent sur un driver de la bonne classe."
   },
   "9.0.1567": {
-    "en": "v9.0.1567: automated publish, manifest sync, and Homey test promotion."
+    "en": "Maintenance build: same devices and behaviour as the previous version (publishing and test tooling only).",
+    "fr": "Version de maintenance : mêmes appareils et même comportement que la précédente (outils de publication et de test uniquement)."
   }
 }
