@@ -1,7 +1,7 @@
 <!-- report-writer:v1 lang=en -->
 ### GitHub Actions reports — inventory (P3069)
 
-77 workflows: 73 write a job summary, 73 already use the shared report helper and 77 carry our own "about" header. 21 scripts still interpolate third-party titles or bodies, and 23 docs hold long quoted passages to rewrite.
+77 workflows: 73 write a job summary, 73 already use the shared report helper and 77 carry our own "about" header. 19 scripts still interpolate third-party titles or bodies, and 21 docs hold long quoted passages to rewrite.
 
 | workflow | about header | job summary | shared helper | writes to GitHub |
 | --- | --- | --- | --- | --- |
@@ -101,8 +101,6 @@
 - `tools/ci/generate-docs-index.js` — 2 line(s)
 - `tools/ci/parse-forum-digest.js` — 1 line(s)
 - `tools/ci/regression-lessons-gate.js` — 1 line(s)
-- `tools/ci/search-forum-v2.js` — 4 line(s)
-- `tools/ci/search-forum.js` — 1 line(s)
 - `tools/ci/session-start.js` — 1 line(s)
 - `tools/ci/temporal-cross-ref.js` — 1 line(s)
 - `tools/shadow-mode/shadow-mode-v2.js` — 1 line(s)
@@ -131,9 +129,33 @@
 - `reports/kimi-2026-07-29/forum-13-users-triage.md` — 2
 - `reports/kimi-2026-07-29/forum-bugs-reliquats-solo.md` — 2
 - `reports/kimi-2026-07-30/RAPPORT_TESTS_AUDITS.md` — 1
-- `reports/myskills-cv/ANDROID_BOUYGUES_FINE_TUNE.md` — 1
-- `reports/myskills-cv/LINKEDIN_ABOUT_SOURCE.md` — 6
 - `reports/p2234b-sacred-couple-refine-2026-08-24.md` — 1
+
+</details>
+
+<details><summary>Safety guard steps (block the run when they find something)</summary>
+
+- `auto-enrich-closed-loop.yml` — P2227 AI forfait plan guard
+- `auto-fix-and-publish.yml` — 🛡️ Couple guard (pins, sacred-keep, curated removals, golden)
+- `auto-publish-on-push.yml` — Crash regression guard - Homey timer context
+- `bastien-promote-upstream.yml` — Guard stable App ID intact
+- `bastien-publish.yml` — Guard Bastien App ID only
+- `code-quality.yml` — P3074 personal-data guard (no CV/LinkedIn exports or personal contact data)
+- `continuous-flow.yml` — Upstream guard (no writes to Johan)
+- `draft-to-test-fleet.yml` — Shared App ID soak guard (stable only)
+- `draft-to-test.yml` — Shared App ID soak guard
+- `gmail-diagnostics.yml` — P2227 AI forfait plan guard (no paid overage)
+- `publish-stable.yml` — Crash regression guard - Homey timer context
+- `publish-stable.yml` — Shared App ID soak guard
+- `publish-stable.yml` — Shared App ID soak guard
+- `publish.yml` — Homey timer context guard
+- `safe-sync-stable.yml` — 🛡️ Couple guard (pins, sacred-keep, curated removals, golden)
+- `self-improve.yml` — 🤖 AI quota report (billing guard visibility)
+- `tuya-deep-diag.yml` — Crash regression guard - Homey timer context
+- `unified-ci.yml` — ⏱️ Homey Timer Context Guard
+- `validate.yml` — ⏱️ Homey Timer Context Guard
+- `verified-publish-and-diagnostics.yml` — ⏱️ Homey Timer Context Guard
+- `verified-publish-and-diagnostics.yml` — 🚫 Syntax Guard (Prevent Recursive Crashes)
 
 </details>
 
