@@ -93,6 +93,8 @@
           "type": "text",
           "label": {
             "en": "Device ID",
+            "nl": "Apparaat-ID",
+            "de": "Geräte-ID",
             "fr": "ID de l'appareil"
           },
           "value": ""
@@ -102,6 +104,8 @@
           "type": "text",
           "label": {
             "en": "Local Key",
+            "nl": "Lokale sleutel",
+            "de": "Lokaler Schlüssel",
             "fr": "Clé locale"
           },
           "value": ""
@@ -111,6 +115,8 @@
           "type": "text",
           "label": {
             "en": "IP",
+            "nl": "IP",
+            "de": "IP",
             "fr": "IP"
           },
           "value": ""
@@ -120,6 +126,8 @@
           "type": "dropdown",
           "label": {
             "en": "Protocol",
+            "nl": "Protocol",
+            "de": "Protokoll",
             "fr": "Protocole"
           },
           "value": "auto",
@@ -203,6 +211,8 @@
       "type": "dropdown",
       "label": {
         "en": "Power Measurement Scale",
+        "nl": "Schaal vermogensmeting",
+        "de": "Skalierung der Leistungsmessung",
         "fr": "Échelle de puissance"
       },
       "value": "1",
