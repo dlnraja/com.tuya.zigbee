@@ -33,7 +33,7 @@
         "en": "Light B (optional)",
         "fr": "Lumière B (option)"
       },
-      "optional": true
+      "required": false
     },
     {
       "type": "text",
@@ -42,7 +42,7 @@
         "en": "Quiet start (optional)",
         "fr": "Début calme (option)"
       },
-      "optional": true,
+      "required": false,
       "placeholder": {
         "en": "Quiet start (optional)",
         "fr": "Début calme (option)"
@@ -55,7 +55,7 @@
         "en": "Quiet end (optional)",
         "fr": "Fin calme (option)"
       },
-      "optional": true,
+      "required": false,
       "placeholder": {
         "en": "Quiet end (optional)",
         "fr": "Fin calme (option)"

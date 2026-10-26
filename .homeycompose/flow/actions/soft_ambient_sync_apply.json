@@ -28,7 +28,7 @@
         "en": "Light B (optional)",
         "fr": "Lumière B (option)"
       },
-      "optional": true
+      "required": false
     },
     {
       "type": "device",
@@ -38,7 +38,7 @@
         "en": "Light C (optional)",
         "fr": "Lumière C (option)"
       },
-      "optional": true
+      "required": false
     },
     {
       "type": "number",

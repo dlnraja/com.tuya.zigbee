@@ -28,7 +28,7 @@
         "en": "Lux sensor (optional)",
         "fr": "Capteur lux (option)"
       },
-      "optional": true
+      "required": false
     }
   ],
   "titleFormatted": {
