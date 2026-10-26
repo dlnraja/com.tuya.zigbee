@@ -47,6 +47,12 @@
             "fr": "éteint",
             "nl": "uit",
             "de": "aus"
+          },
+          "title": {
+            "en": "off",
+            "fr": "éteint",
+            "nl": "uit",
+            "de": "aus"
           }
         },
         {
@@ -56,11 +62,23 @@
             "fr": "allumé",
             "nl": "aan",
             "de": "an"
+          },
+          "title": {
+            "en": "on",
+            "fr": "allumé",
+            "nl": "aan",
+            "de": "an"
           }
         },
         {
           "id": "previous",
           "label": {
+            "en": "previous state",
+            "fr": "état précédent",
+            "nl": "vorige stand",
+            "de": "vorheriger Zustand"
+          },
+          "title": {
             "en": "previous state",
             "fr": "état précédent",
             "nl": "vorige stand",

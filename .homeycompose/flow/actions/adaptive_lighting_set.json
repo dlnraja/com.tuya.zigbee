@@ -1,13 +1,13 @@
 {
   "id": "adaptive_lighting_set",
   "title": {
-    "en": "Turn adaptive lighting on or off",
+    "en": "Turn automatic white tone on or off",
     "fr": "Activer ou désactiver l'éclairage adaptatif",
     "nl": "Adaptieve verlichting aan- of uitzetten",
     "de": "Adaptive Beleuchtung ein- oder ausschalten"
   },
   "titleFormatted": {
-    "en": "Turn adaptive lighting of [[device]] [[state]]",
+    "en": "Turn automatic white tone of [[device]] [[state]]",
     "fr": "Éclairage adaptatif de [[device]] : [[state]]",
     "nl": "Zet adaptieve verlichting van [[device]] [[state]]",
     "de": "Adaptive Beleuchtung von [[device]] [[state]] schalten"
@@ -47,11 +47,23 @@
             "fr": "activé",
             "nl": "aan",
             "de": "ein"
+          },
+          "title": {
+            "en": "on",
+            "fr": "activé",
+            "nl": "aan",
+            "de": "ein"
           }
         },
         {
           "id": "off",
           "label": {
+            "en": "off",
+            "fr": "désactivé",
+            "nl": "uit",
+            "de": "aus"
+          },
+          "title": {
             "en": "off",
             "fr": "désactivé",
             "nl": "uit",
