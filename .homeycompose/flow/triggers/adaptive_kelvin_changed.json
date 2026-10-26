@@ -1,0 +1,52 @@
+{
+  "id": "adaptive_kelvin_changed",
+  "title": {
+    "en": "Adaptive color temperature changed",
+    "fr": "Température de couleur adaptative modifiée",
+    "nl": "Adaptieve kleurtemperatuur gewijzigd",
+    "de": "Adaptive Farbtemperatur geändert"
+  },
+  "titleFormatted": {
+    "en": "Adaptive color temperature of [[device]] changed",
+    "fr": "Température de couleur adaptative de [[device]] modifiée",
+    "nl": "Adaptieve kleurtemperatuur van [[device]] gewijzigd",
+    "de": "Adaptive Farbtemperatur von [[device]] geändert"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=light_temperature",
+      "title": {
+        "en": "Light",
+        "fr": "Lampe",
+        "nl": "Lamp",
+        "de": "Leuchte"
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "name": "kelvin",
+      "type": "number",
+      "title": {
+        "en": "Kelvin",
+        "fr": "Kelvin",
+        "nl": "Kelvin",
+        "de": "Kelvin"
+      },
+      "example": 3200
+    },
+    {
+      "name": "previous_kelvin",
+      "type": "number",
+      "title": {
+        "en": "Previous kelvin",
+        "fr": "Kelvin précédent",
+        "nl": "Vorige kelvin",
+        "de": "Vorheriger Kelvin-Wert"
+      },
+      "example": 2700
+    }
+  ]
+}

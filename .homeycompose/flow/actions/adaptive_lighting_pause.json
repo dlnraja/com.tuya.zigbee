@@ -1,0 +1,50 @@
+{
+  "id": "adaptive_lighting_pause",
+  "title": {
+    "en": "Pause adaptive lighting",
+    "fr": "Suspendre l'éclairage adaptatif",
+    "nl": "Adaptieve verlichting pauzeren",
+    "de": "Adaptive Beleuchtung pausieren"
+  },
+  "titleFormatted": {
+    "en": "Pause adaptive lighting of [[device]] for [[minutes]] minutes",
+    "fr": "Suspendre l'éclairage adaptatif de [[device]] pendant [[minutes]] minutes",
+    "nl": "Pauzeer adaptieve verlichting van [[device]] voor [[minutes]] minuten",
+    "de": "Adaptive Beleuchtung von [[device]] für [[minutes]] Minuten pausieren"
+  },
+  "hint": {
+    "en": "Resumes by itself afterwards. Does nothing when adaptive lighting is off.",
+    "fr": "Reprend toute seule ensuite. Sans effet si l'éclairage adaptatif est désactivé.",
+    "nl": "Hervat daarna vanzelf. Doet niets als adaptieve verlichting uit staat.",
+    "de": "Läuft danach von selbst weiter. Ohne Wirkung, wenn die adaptive Beleuchtung aus ist."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=light_temperature",
+      "title": {
+        "en": "Light",
+        "fr": "Lampe",
+        "nl": "Lamp",
+        "de": "Leuchte"
+      }
+    },
+    {
+      "type": "number",
+      "name": "minutes",
+      "min": 1,
+      "max": 1440,
+      "step": 1,
+      "placeholder": {
+        "en": "30"
+      },
+      "title": {
+        "en": "Minutes",
+        "fr": "Minutes",
+        "nl": "Minuten",
+        "de": "Minuten"
+      }
+    }
+  ]
+}
