@@ -1,8 +1,8 @@
 {
  "note": "P3068 memory-hazard ratchet baseline — counts may only go down",
  "totals": {
-  "hot-stringify": 73,
-  "unbounded-collection": 121,
+  "hot-stringify": 59,
+  "unbounded-collection": 120,
   "raw-timer": 13
  },
  "files": {
@@ -98,16 +98,7 @@
   "lib/clusters/RawClusterFallback.js": {
    "unbounded-collection": 1
   },
-  "lib/clusters/TuyaBoundCluster.js": {
-   "hot-stringify": 3
-  },
   "lib/clusters/TuyaE000BoundCluster.js": {
-   "hot-stringify": 1
-  },
-  "lib/clusters/TuyaE001BoundCluster.js": {
-   "hot-stringify": 1
-  },
-  "lib/clusters/TuyaE002BoundCluster.js": {
    "hot-stringify": 1
   },
   "lib/clusters/UniversalClusterBinder.js": {
@@ -197,9 +188,6 @@
   },
   "lib/features/WelcomeHomeSoft.js": {
    "unbounded-collection": 2
-  },
-  "lib/flow/AdaptiveLightingCards.js": {
-   "unbounded-collection": 1
   },
   "lib/flow/PredictiveFlowCards.js": {
    "unbounded-collection": 8
@@ -299,9 +287,6 @@
   "lib/tuya/EnrichedDPMappings.js": {
    "unbounded-collection": 1
   },
-  "lib/tuya/TuyaClusterWrapper.js": {
-   "hot-stringify": 2
-  },
   "lib/tuya/TuyaDPFlowCardManager.js": {
    "unbounded-collection": 1
   },
@@ -309,9 +294,6 @@
    "hot-stringify": 1
   },
   "lib/tuya/TuyaDataPointEngine.js": {
-   "hot-stringify": 5
-  },
-  "lib/tuya/TuyaEF00Parser.js": {
    "hot-stringify": 1
   },
   "lib/tuya/TuyaProtocolManager.js": {
@@ -326,15 +308,11 @@
   "lib/tuya/TuyaTimeSyncFormats.js": {
    "unbounded-collection": 1
   },
-  "lib/tuya/TuyaUnifiedParser.js": {
-   "hot-stringify": 1
-  },
   "lib/tuya/TuyaZigbeeDevice.js": {
    "hot-stringify": 2
   },
   "lib/tuya/UniversalDPReceiver.js": {
-   "unbounded-collection": 2,
-   "hot-stringify": 1
+   "unbounded-collection": 2
   },
   "lib/tuya/_quarantine/UniversalTuyaParser.legacy.js": {
    "hot-stringify": 1
