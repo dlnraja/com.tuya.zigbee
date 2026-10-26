@@ -20,8 +20,15 @@ same burst also gave runs that were started and thrown away, which wasted minute
 - A burst can still drop some commits from the queue. That is fine, because the next run tests the
   newest commit, and it contains all the earlier ones.
 - Each job keeps its `timeout-minutes: 25`, so a stuck run cannot block the group for long.
-- Other workflows still use plain `cancel-in-progress: true`. Move them over the same way only if a
-  verdict on every push burst matters for them; for lint-style checks the old setting is fine.
+- Same setting, second batch (P3069 step 3): the push-triggered checks whose verdict matters —
+  `homey-app-validate`, `syntax-check`, `doc-coverage`, `shadow-policy-check`, `ci-self-check`,
+  `code-quality` and `platform-budget`. `unified-ci.yml` belongs to another work stream and keeps its
+  own rule.
+- Left on plain `cancel-in-progress: true` on purpose: scheduled or manual jobs (scrapers, digests,
+  knowledge refreshes, Gmail checks, stale/labeler bots), where a newer run simply replaces an older one
+  and nothing is lost, and PR-only workflows (`pr-gate`, `labeler`, `dependabot-auto-merge`,
+  `validate`), for which the new expression would give the same result anyway. `deploy-pages` is a
+  deployment, not a check; it stays as it is.
 
 Thanks: the GitHub Actions documentation on `concurrency` groups explained the one-running,
 one-waiting rule this relies on.

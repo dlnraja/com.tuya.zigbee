@@ -124,6 +124,36 @@
 - **homey-api / Athom Apps API** — build/crash statistics, delegation token flow (mapped in `docs/HOMEY_DEV_PORTAL_MAP.md`)
 - **Kimi Code CLI + WebBridge** — autonomous CI repair, portal cartography, forum operations
 
+## Tuya Wi-Fi Local-First (Smart Life / white-label, 2026-10)
+Sources actually used or consulted for the Wi-Fi local stack (`lib/tuya-local/`):
+- **[tuya/tuya-device-sharing-sdk](https://github.com/tuya/tuya-device-sharing-sdk)** (MIT, © 2023 Tuya) — *ported* to JavaScript in `TuyaSharingClient.js`: Smart Life "User Code + QR" login, request signing and AES-GCM envelope. Lets users fetch local keys without a Tuya IoT developer account.
+- **[make-all/tuya-local](https://github.com/make-all/tuya-local)** (MIT, Jason Rumney and contributors) — consulted: QR flow (`cloud.py`, `config_flow.py`), public client id / `haauthorize` schema, QR payload format, device fields.
+- **[Home Assistant core – Tuya integration](https://github.com/home-assistant/core/tree/dev/homeassistant/components/tuya)** (Apache-2.0) — consulted: sharing client id / schema constants (facts only).
+- **[codetheweb/tuyapi](https://github.com/codetheweb/tuyapi)** (MIT) — runtime dependency: LAN protocol 3.1–3.5 including 3.4/3.5 session-key negotiation.
+- **[jasonacox/tinytuya](https://github.com/jasonacox/tinytuya)** (MIT) — consulted: 6699 frame layout and optional return code (`message_helper.py`), UDP discovery keys, scanner/wizard behaviour.
+- **[tuya/tuya-connector-nodejs](https://github.com/tuya/tuya-connector-nodejs)** — consulted for the OpenAPI signature string format (empty optional-headers line, sorted query). No code copied.
+- **[andiwirz/com.tuyalocal](https://github.com/andiwirz/com.tuyalocal)** (MIT) — Homey Tuya-local app: frequency-first protocol order, command gap, stale-data watchdog patterns (reimplemented earlier, credited in code).
+- **[Drenso/com.tuya2](https://github.com/Drenso/com.tuya2)**, **[jurgenheine/com.tuya.cloud](https://github.com/jurgenheine/com.tuya.cloud)** (MIT), **[rebtor/nl.rebtor.tuya](https://github.com/rebtor/nl.rebtor.tuya)** (MIT) — earlier Homey Tuya apps whose cloud/LAN patterns informed the original design.
+
+## IR blasters — Zigbee Zosung + Tuya Wi-Fi (P3063, 2026-10-26)
+Own implementation in `lib/ir/ZosungIRProtocol.js`, `lib/ir/TuyaWifiIRProtocol.js` and `lib/ir/IRFormatConverter.js`; no upstream code copied:
+- **[Koenkk/zigbee-herdsman-converters](https://github.com/Koenkk/zigbee-herdsman-converters)** (MIT, Koen Kanters and the `zosung.ts` contributors) — consulted: 0xED00 frame layout (msgpart + msgpartcrc), chunk sizes, Code00 resend, ZG-IR01 seq 0, `{key_num,key1}` message.
+- **[mildsunrise — Tuya IR code format notes](https://gist.github.com/mildsunrise/1d576669b63a260d2cff35fda63ec0b5)** — consulted: FastLZ-style block layout of Tuya `key_code`.
+- **[jbouwh — Home Assistant Tuya IR encoder gist](https://gist.github.com/jbouwh)** — consulted: literal-only encoding is the safe choice for cheap Tuya IR chips.
+- **[jasonacox/tinytuya](https://github.com/jasonacox/tinytuya)** (MIT) — consulted: `IRRemoteControlDevice` control types 1/2, `send_ir` / `study` / `study_exit` / `study_key`, learned code on DP202 or DP2.
+- **[make-all/tuya-local](https://github.com/make-all/tuya-local)** (MIT, Jason Rumney and contributors) — consulted: single-DP `send_ir` JSON with `"1"` raw prefix, multi-DP send, split of long gaps.
+
+## Reports and automation (P3069, 2026-10-26) — ideas only, written in our own words
+- **GitHub** — the job summary feature (`$GITHUB_STEP_SUMMARY`) and its docs gave us the "one short page per run" format.
+- **The Renovate and Dependabot maintainers** — their PR bodies taught us to fold long detail into collapsed blocks and keep the top short.
+- **rhysd (actionlint)** — static checks for every workflow; our hygiene and report ratchets follow the same "fail only on new debt" spirit.
+- **The Homey Community forum moderators and the Zigbee2MQTT / ZHA trackers** — their habit of linking to a post instead of pasting it is
+  the rule our reports now follow: ID, link, author, then a summary in our words (`scripts/lib/report-writer.js`).
+- **GitHub Actions docs (concurrency groups)** — the one-running, one-waiting rule behind our Node 22 setting: pushes let the running job finish, PRs still cancel (`docs/knowledge/CI_CONCURRENCY.md`); now also on the seven push-triggered checks listed there.
+- **Athom Homey SDK docs, "Zigbee firmware updates" page** (Athom docs team, https://apps.developer.homey.app/wireless/zigbee/zigbee-firmware-updates) — the line about firmware files being stored apart from the app and fetched only when an update starts is told in our own words in `docs/knowledge/OTA_AUDIT_P2932.md` (master branch), not pasted.
+- **Community commenters on our issues** (john1v, pemikalsen-sudo, Ssssneak, late4marshmellow, dalobalo and others) — `reports/COMMUNITY-INTELLIGENCE.md` no longer reproduces their comments; each entry keeps the author, the issue link and a one-line topic, so the original stays where they wrote it. Thank you for the reports.
+- No code was copied from these projects; the helper and the ratchet (`scripts/ci/report-structure-ratchet.js`) are our own.
+
 ## Licenses (SPDX)
 
 | Project | License | Usage |

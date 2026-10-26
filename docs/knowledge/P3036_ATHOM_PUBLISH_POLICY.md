@@ -24,8 +24,8 @@ This policy turns those findings into rules that every upload path follows.
 - **Spacing.** Taken from the build snapshot (`data/status/homey-build-status-<app>.json`) merged with the
   ledger `docs/knowledge/athom-publish-outcomes.jsonl`. Counted successes: states test / live / approved.
   Overrides: `ATHOM_MIN_INTERVAL_MIN`, `ATHOM_MAX_SUCCESS_PER_24H`, `ATHOM_CI_REQUIRED` (comma list).
-- **Busy.** No upload while a previous build of the same app is still processing (stuck `waiting_for_files`
-  > 5 min and non-final builds > 6 h are ignored). Re-checked right before the upload step.
+- **Busy.** No upload while a previous build of the same app is still processing (a build stuck in `waiting_for_files`
+  for more than 5 min, or not final after 6 h, is ignored). Re-checked right before the upload step.
 - **Unreadable data.** Automatic runs hold (fail closed). A manual dispatch may try.
 - **Manual override.** `override_spacing` (workflow_dispatch input, mapped to `FORCE_PUBLISH`) bypasses spacing
   and the 24 h cap for a manual run only. It never bypasses the CI gate.

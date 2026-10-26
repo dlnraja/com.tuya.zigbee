@@ -309,26 +309,13 @@ https://github.com/dlnraja/com.tuya.zigbee/blob/722cb3c6f8c018920f9d2d23999836b0
 > 
 > Let me know how it goes!
 
-> **john1v:** After updating and repairing, the plus is still unknown.
-> How to "could you please share the app logs showing the DP numbers? "
-> Is that from The Homey app? or the Unversal Tuya app? 
-> What means 'DP'?
-> Thanks.
+> **john1v:** _comment not reproduced here (P3069, link-do-not-quote) — topic: unclassified; read it on the issue above._ <!-- own-text -->
 
 > **dlnraja:** I have added support for manufacturer \^[WeLink\ and \SONOFF\ in the \plug_energy_monitor\ driver! Please wait for the next test update (v5.11.207+) to install, then remove and re-pair your plug to pick up the fix. Thanks for the report!
 
 > **dlnraja:** Support has been integrated in v5.12.0. Closing this as resolved.
 
-> **john1v:** I am sorry to say that the issue is not resolved for energy plug EweLink  CK-BL702-SWP-01(7020) .
-> When scrolling through 
-> https://github.com/dlnraja/com.tuya.zigbee/blob/bc3968839f655c74b2b9d8202f85c6ada6790f95/drivers/plug_energy_monitor/driver.compose.json#L27
-> I see that  not 'eWeLink' is added, but 'EWELINK'. In my oponion, both Product ID and ManufacturerName are case-sensitive.
-> 
-> I think I t would be  a good idea to sort and de-duplicate both alfabetically (in all drivers), and check if the case-sensitivity is a problem.  For example,  "_tz3000_amdymr71", is mentioned twice in row 364, 365. 
->  
-> Also, it seems to me that ManufacturerName and ProductID are reversed in all drivers, when comparing to the labels in the Homey Device advanced settings.
-> 
-> 
+> **john1v:** _comment not reproduced here (P3069, link-do-not-quote) — topic: plug, energy; read it on the issue above._ <!-- own-text -->
 
 > **github-actions:** <!-- tuya-reopen-bot -->
 > This issue has been **automatically reopened** because @john1v posted a new comment.
@@ -338,7 +325,7 @@ https://github.com/dlnraja/com.tuya.zigbee/blob/722cb3c6f8c018920f9d2d23999836b0
 > > 1. **Device Interview** from [Developer Tools](https://tools.developer.homey.app)
 > > 2. **Diagnostic Report ID** from device settings
 
-> **john1v:** I create report 9152fd7d-795c-4395-8fc4-e0d97eb25c5b
+> **john1v:** _comment not reproduced here (P3069, link-do-not-quote) — topic: unclassified; read it on the issue above._ <!-- own-text -->
 
 > **github-actions:** <!-- tuya-triage-bot -->
 > I see these fingerprints are mapped in the Universal Tuya Zigbee app(https://github.com/dlnraja/com.tuya.zigbee) v7.2.12: `dlnraja`  **generic_diy**, `eWeLink+CK-BL702-SWP-01(7020)`  **plug_energy_monitor**, `CK-BL702-SWP-01(7020)+CK-BL702-SWP-01(7020)`  **plug_energy_monitor**.
@@ -806,116 +793,24 @@ Pairs OK as Climate sensor, but Homey does not receive any data.
 > 
 > Once I have that info, I can make the necessary adjustments to ensure everything works smoothly. Appreciate your help in getting this sorted!
 
-> **pemikalsen-sudo:** Diagnostic report ID:dd9c1925-2d4b-4c2f-9b1b-2e2c379a563f
-> 
-> I am getting no data fra the sensor. Missing, temperature and humidity as well as battery status.
-> 
-> Thankyou. Off course I will check the apps logs for any DP numbers, but could you please tell me how to obtain this?
+> **pemikalsen-sudo:** _comment not reproduced here (P3069, link-do-not-quote) — topic: climate sensor, battery; read it on the issue above._ <!-- own-text -->
 
-> **pemikalsen-sudo:** Hello again.
-> 
-> I think I have found the DP numbers... Have a look at the bottom of this under tuyaDatapoints:
-> 
-> {
->     fingerprint: [{modelID: "TS0601", manufacturerName: "_TZE284_8se38w3c"}],
->     model: "TZ-ZT01_GA4",
->     vendor: "Tuya",
->     description: "Temperature & humidity Sensor with external probe",
->     extend: [tuya.modernExtend.tuyaBase({dp: true})],
->     exposes: [
->         e.temperature(),
->         e.numeric("temperature_probe", ea.STATE).withUnit("°C").withDescription("Probe temperature"),
->         e.humidity(),
->         tuya.exposes.batteryState(),
->     ],
->     meta: {
->         tuyaDatapoints: [
->             [1, "temperature", tuya.valueConverter.divideBy10],
->             [2, "humidity", tuya.valueConverter.raw],
->             [3, "battery_state", tuya.valueConverter.batteryState],
->             [38, "temperature_probe", tuya.valueConverter.divideBy10],
->         ],
->     },
-> },
-> 
-> (Got this one from this URL: https://community.home-assistant.io/t/ts0601-by-tze284-8se38w3c-not-showing-sensor-data/986172/3)
+> **pemikalsen-sudo:** _comment not reproduced here (P3069, link-do-not-quote) — topic: climate sensor, battery — `_TZE284_8se38w3c` `TS0601`; read it on the issue above._ <!-- own-text -->
 
-> **pemikalsen-sudo:** I also found this information:
-> 
-> from zhaquirks.tuya.builder import  TuyaQuirkBuilder
-> from zigpy.quirks.v2 import EntityPlatform, EntityType
-> from zigpy.quirks.v2.homeassistant.sensor import SensorDeviceClass
-> from zigpy.quirks.v2.homeassistant import UnitOfTemperature
-> import zigpy.types as t
-> 
-> #Tuya battery status enum mapping.
-> class BatteryStatus(t.enum8):
->     Empty = 0x00
->     Low = 0x01
->     Full = 0x02
-> 
-> (
->     TuyaQuirkBuilder("_TZE284_8se38w3c", "TS0601") 
->     .tuya_temperature(dp_id=1, scale=10)
->     .tuya_humidity(dp_id=2)
->     # Battery status enum
->     .tuya_enum(
->         dp_id=3,
->         attribute_name="battery",
->         enum_class=BatteryStatus,
->         translation_key="battery",
->         fallback_name="Battery",
->         entity_type=EntityType.DIAGNOSTIC,
->         entity_platform=EntityPlatform.SENSOR,
->     )
->     #.tuya_battery(dp_id=4) # duplicate of dp 3 for some reason
->     # External temperature probe
->     .tuya_sensor(
->         dp_id=38,
->         attribute_name="temperature_probe",
->         type=t.int16s,
->         multiplier=0.1,
->         device_class=SensorDeviceClass.TEMPERATURE,
->         entity_type=EntityType.STANDARD,
->         unit=UnitOfTemperature.CELSIUS,
->         translation_key="temperature_probe",
->         fallback_name="Temperature Probe",
->     )
->     .skip_configuration()
->     .add_to_registry()
-> )
-> 
-> From this URL: https://github.com/zigpy/zha-device-handlers/issues/4653
+> **pemikalsen-sudo:** _comment not reproduced here (P3069, link-do-not-quote) — topic: climate sensor, battery — `_TZE284_8se38w3c` `TS0601`; read it on the issue above._ <!-- own-text -->
 
-> **pemikalsen-sudo:** Seems like it has 2 x temperature sensors, one internal (DP 1) and one in the external cable/probe (DP38):
-> 
-> tuyaDatapoints: [
-> [1, "temperature", tuya.valueConverter.divideBy10],
-> [2, "humidity", tuya.valueConverter.raw],
-> [3, "battery_state", tuya.valueConverter.batteryState],
-> [38, "temperature_probe", tuya.valueConverter.divideBy10]
-> 
-> It is very important for me to get the readings from the external proble.
+> **pemikalsen-sudo:** _comment not reproduced here (P3069, link-do-not-quote) — topic: climate sensor, battery; read it on the issue above._ <!-- own-text -->
 
 > **dlnraja:** <!-- diag-resolver -->
 > ### Set mainsPowered=true and remove measure_battery in onNodeInit
 > 
-> **Action:** remove_battery_capability
-> 
-> **Version:** v5.11.154
-> 
+> **Action:** _comment not reproduced here (P3069, link-do-not-quote) — topic: unclassified; read it on the issue above._ <!-- own-text -->
 
-> **pemikalsen-sudo:** Hello.
-> I have made an app diagnostic report for your app. I got this reference number: 7849d214-b61d-4a40-9f73-9362d7895f38
+> **pemikalsen-sudo:** _comment not reproduced here (P3069, link-do-not-quote) — topic: unclassified; read it on the issue above._ <!-- own-text -->
 
 > **dlnraja:** Resolved: _TZE284_8se38w3c (TS0601) is supported in the climate_sensor driver. Please pair your device and it should be detected automatically. If you have issues, try removing and re-pairing.
 
-> **pemikalsen-sudo:** Thankyou very much.
-> I did remove the _TZE284_8se38w3c (TS0601) temp/hum sensor, but today I can not manage to re-pair it. I have the Universal Tuya Test app installed in version 5.11.192.
-> It times out after showing "Adding device".... 
-> When initiating pairing i choose Add device, then "Universal Tuya" and Climate Sensor.
-> I have also tried to uninstall the app and install i back several times.
-> Something I do wrong?
+> **pemikalsen-sudo:** _comment not reproduced here (P3069, link-do-not-quote) — topic: light, pairing, request — `_TZE284_8se38w3c` `TS0601`; read it on the issue above._ <!-- own-text -->
 
 > **github-actions:** <!-- tuya-reopen-bot -->
 > This issue has been **automatically reopened** because @pemikalsen-sudo posted a new comment.
@@ -927,9 +822,7 @@ Pairs OK as Climate sensor, but Homey does not receive any data.
 
 > **github-actions:** All fingerprints supported in v5.11.191. Closing as resolved.
 
-> **pemikalsen-sudo:** Hello.
-> 
-> Tried to add this temperature sensor with external proble again today. It adds as a zigbee device without any driver. Universal Tuyja 7.0.22 is installed.
+> **pemikalsen-sudo:** _comment not reproduced here (P3069, link-do-not-quote) — topic: light, climate sensor, request; read it on the issue above._ <!-- own-text -->
 
 > **github-actions:** <!-- tuya-reopen-bot -->
 > This issue has been **automatically reopened** because @pemikalsen-sudo posted a new comment.
@@ -939,8 +832,7 @@ Pairs OK as Climate sensor, but Homey does not receive any data.
 > > 1. **Device Interview** from [Developer Tools](https://tools.developer.homey.app)
 > > 2. **Diagnostic Report ID** from device settings
 
-> **pemikalsen-sudo:** Diagnostic ID: e5565457-cb7f-4477-b614-eb7fa56f03bb
-> 
+> **pemikalsen-sudo:** _comment not reproduced here (P3069, link-do-not-quote) — topic: unclassified; read it on the issue above._ <!-- own-text -->
 
 ---
 
@@ -1002,15 +894,7 @@ _No response_
 > 
 > [Test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) · [Forum thread](https:
 
-> **Ssssneak:** Hi, thanks for the update! 
-> I installed v5.11.138 and re-paired the device. I have a precise bug report regarding the Flow cards for this specific fingerprint (_TZ3000_v4l4b0lp).
-> 
-> 1. App UI Control: Works perfectly for all 3 gangs.
-> 2. Flow Triggers (WHEN "Physical gang 1/2/3 ON"): Work perfectly! The bindings are correct and Homey registers physical wall presses.
-> 3. Flow Actions (THEN "Turn on/off gang 1/2/3"): COMPLETELY BROKEN. The cards execute in the Flow, but the switch does not react. 
-> 
-> The issue is strictly isolated to the Action Listeners for the sub-capabilities (`onoff.1`, `onoff.2`, `onoff.3`). The generic "Turn on" card works (triggers EP 1), but the gang-specific Action cards send no commands to the device. Could you please fix the Flow Action mappings?
-> 
+> **Ssssneak:** _comment not reproduced here (P3069, link-do-not-quote) — topic: switch, light, flow cards — `_TZ3000_v4l4b0lp`; read it on the issue above._ <!-- own-text -->
 
 > **github-actions:** <!-- tuya-reopen-bot -->
 > This issue has been **automatically reopened** because @Ssssneak posted a new comment.
@@ -1037,20 +921,9 @@ _No response_
 > All fingerprints in this issue are already supported in **Universal Tuya Zigbee v5.11.138**:
 > - `_TZ3000_v4l4b0lp` -> **switch_3gang**
 > 
-> **Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/
-> Remove and re-pair your device after installing.
-> 
-> **Troubleshooting:** https://github.com/dlnraja/com.tuya.zigbee/wiki/Troubleshooting
-> 
-> > **Detected protocols:** unknown
-> 
+> **Install:** _comment not reproduced here (P3069, link-do-not-quote) — topic: pairing; read it on the issue above._ <!-- own-text -->
 
-> **Ssssneak:** @dlnraja - Please reopen this issue. The bot auto-closed it by mistake. 
-> 
-> This is NOT a "device not supported" request. The device pairs correctly. 
-> This is a BUG REPORT regarding broken code for the Action Listeners. 
-> 
-> The Flow Action cards for specific gangs ("Turn on gang 1/2/3") DO NOT WORK at all. Only the triggers work. Please review the action mappings for onoff.1, onoff.2, and onoff.3 for this fingerprint, as the device is currently useless in automations.
+> **Ssssneak:** _comment not reproduced here (P3069, link-do-not-quote) — topic: switch, contact, flow cards; read it on the issue above._ <!-- own-text -->
 
 > **dlnraja:** Il fixing the bot, it's a mistake 
 > 
@@ -1059,15 +932,7 @@ _No response_
 > Best regards. 
 > 
 
-> **Ssssneak:** Hi again, 
-> 
-> Please use this new Diagnostics Report ID instead (the previous one had an error). 
-> I triggered the broken Flow cards ("Turn on gang 2" and "Turn off gang 2") again to generate fresh logs.
-> 
-> The correct Report ID is: 81ad938d-6d24-409b-b336-34e0aa655721
-> 
-> Let me know if you can extract the required DP numbers from this one. Thanks!
-> 
+> **Ssssneak:** _comment not reproduced here (P3069, link-do-not-quote) — topic: switch, flow cards, error; read it on the issue above._ <!-- own-text -->
 
 > **dlnraja:** You can do an homey device ZigBee interview also to know witch dp corespond
 > to your device on and paste it :
@@ -1113,12 +978,7 @@ _No response_
 > 
 > Feel free to reopen if still relevant.
 
-> **Ssssneak:** @dlnraja - It looks like the bot auto-closed this issue again (or it was closed by mistake). 
-> 
-> Could you please reopen it? 
-> Just a reminder: the pairing works fine (which is why the bot thinks it's resolved), but the Flow Action cards for the gangs are still completely broken. 
-> 
-> I provided the Diagnostics Report ID (81ad938d-6d24-409b-b336-34e0aa655721) in my previous comment so you can check the DP numbers for the action listeners. Let me know if you need anything else!
+> **Ssssneak:** _comment not reproduced here (P3069, link-do-not-quote) — topic: switch, flow cards, pairing; read it on the issue above._ <!-- own-text -->
 
 > **github-actions:** <!-- tuya-reopen-bot -->
 > This issue has been **automatically reopened** because @Ssssneak posted a new comment.
@@ -1133,64 +993,7 @@ _No response_
 > 
 > Feel free to reopen if still relevant.
 
-> **Ssssneak:** @dlnraja - I have performed a Zigbee Interview for this device directly via Homey Developer Tools as requested. 
-> 
-> Interestingly, it looks like this specific model does NOT use Tuya custom DPs (0xEF00) for the relays. Instead, it uses standard Zigbee Endpoints (1, 2, and 3) with the standard OnOff cluster (0x0006). This probably explains why the generic "Turn On" works (triggers EP 1), but the sub-capabilities fail if they are mapped to Tuya DPs.
-> 
-> Here is the raw interview output:
-> 
-> <details>
-> <summary>Click to expand Zigbee Interview JSON</summary>
-> 
-> ```json
->   "ids": {
->     "modelId": "TS0003",
->     "manufacturerName": "_TZ3000_v4l4b0lp"
->   },
->   "endpoints": {
->     "ieeeAddress": "84:71:27:ff:fe:9a:68:73",
->     "networkAddress": 48267,
->     "modelId": "TS0003",
->     "manufacturerName": "_TZ3000_v4l4b0lp",
->     "endpointDescriptors": [
->       {
->         "status": "SUCCESS",
->         "nwkAddrOfInterest": 48267,
->         "_reserved": 26,
->         "endpointId": 1,
->         "applicationProfileId": 260,
->         "applicationDeviceId": 256,
->         "applicationDeviceVersion": 0,
->         "_reserved1": 1,
->         "inputClusters": [ 0, 3, 4, 5, 6, 57344, 57345 ],
->         "outputClusters": [ 25, 10 ]
->       },
->       {
->         "status": "SUCCESS",
->         "nwkAddrOfInterest": 48267,
->         "_reserved": 20,
->         "endpointId": 2,
->         "applicationProfileId": 260,
->         "applicationDeviceId": 256,
->         "applicationDeviceVersion": 0,
->         "_reserved1": 1,
->         "inputClusters": [ 3, 4, 5, 6, 57344, 57345 ],
->         "outputClusters": []
->       },
->       {
->         "status": "SUCCESS",
->         "nwkAddrOfInterest": 48267,
->         "_reserved": 20,
->         "endpointId": 3,
->         "applicationProfileId": 260,
->         "applicationDeviceId": 256,
->         "applicationDeviceVersion": 0,
->         "_reserved1": 1,
->         "inputClusters": [ 3, 4, 5, 6, 57344, 57345 ],
->         "outputClusters": []
->       }
->     ]
->   }
+> **Ssssneak:** _comment not reproduced here (P3069, link-do-not-quote) — topic: switch, flow cards, pairing — `_TZ3000_v4l4b0lp` `TS0003`; read it on the issue above._ <!-- own-text -->
 
 > **github-actions:** <!-- tuya-reopen-bot -->
 > This issue has been **automatically reopened** because @Ssssneak posted a new comment.
@@ -1207,37 +1010,9 @@ _No response_
 
 > **dlnraja:** ###  Fixed in v6.0.0
 > 
-> **Root Cause:** Device _TZ3000_v4l4b0lp was not recognized as ZCL-only mode switch, causing incorrect endpoint/DP handling.
-> 
-> **Solution Applied:**
-> - Added _TZ3000_v4l4b0lp to ZCL_ONLY_MANUFACTURERS_3G array
-> - This activates per-endpoint ZCL handling with:
->   - Direct writeAttributes per endpoint (fixes gang-specific commands)
->   - Individual attribute listeners per endpoint (fixes state reporting)
->   - Physical button detection per gang (fixes Flow triggers)
-> 
-> **Testing:**
-> After updating to v6.0.0:
-> 1. Remove device and re-pair
-> 2. Flow cards "Turn on Gang 1/2/3" will now work correctly
-> 3. Physical button presses will trigger gang-specific Flow cards
-> 4. State updates will be reflected per gang
-> 
-> Install test version: https://homey.app/a/com.dlnraja.tuya.zigbee/test/
-> 
-> This fix applies the same proven pattern used for BSEED switches (forum user Pieter_Pessers).
+> **Root Cause:** _comment not reproduced here (P3069, link-do-not-quote) — topic: switch, button, flow cards — `_TZ3000_v4l4b0lp`; read it on the issue above._ <!-- own-text -->
 
-> **Ssssneak:** @dlnraja - BAD NEWS. The latest update broke the device completely (Critical Regression).
-> 
-> I installed the newest test version. To ensure a clean slate, I completely removed the device from Homey and re-paired it. 
-> 
-> Result: The device is now totally unresponsive. The App UI (device tiles) does not work anymore, and the Flow cards still don't work. The physical clicks also no longer trigger the "WHEN" Flow cards.
-> 
-> One more critical detail I just noticed: When I try to use the Flow Action cards for this switch, it actually CRASHES the entire Universal Tuya Zigbee app. The app is forced to restart itself, and during this reboot phase, the switches momentarily show up as "Unknown Devices" in the Homey UI.
-> 
-> This means the new mapping isn't just ignoring the command; it is throwing a fatal error/unhandled exception in the app's code whenever the Flow action listener is called. It seems the new mapping for the `_TZ3000_v4l4b0lp` fingerprint completely severed the communication. 
-> 
-> Could you please check the latest commit? Let me know if you want me to generate a new Diagnostics Report from this broken state.
+> **Ssssneak:** _comment not reproduced here (P3069, link-do-not-quote) — topic: switch, light, flow cards — `_TZ3000_v4l4b0lp`; read it on the issue above._ <!-- own-text -->
 
 > **github-actions:** <!-- tuya-reopen-bot -->
 > This issue has been **automatically reopened** because @Ssssneak posted a new comment.
@@ -1254,21 +1029,9 @@ _No response_
 > 
 > First of all, I want to deeply apologize for this critical regression. You are absolutely rightforcing the `_TZ3000_v4l4b0lp` into the BSEED ZCL-only mode completely broke your device. I have removed the auto-close behavior from our bots so this issue stays open until you confirm it is perfectly fixed.
 > 
-> **Deep Root Cause Analysis:**
-> I have reviewed the entire flow:
-> 1. The original bug ("Flow cards run, give a green checkmark, but the switch does not react") was **not** a hardware or Zigbee endpoint mapping issue. 
-> 2. It was a core logic bug in our Flow Action cards. In the code, the action card was using `device.setCapabilityValue(cap, true)`, which *only updates the Homey UI* without actually sending the Zigbee command to the device! 
-> 3. Because I misidentified the cause, I put your device in `ZCL_ONLY_MANUFACTURERS_3G`. Since your device is a standard Tuya router and not a pure BSEED ZCL switch, this completely skipped the standard base initialization (`super.onNodeInit`), leaving critical variables undefined. That's why triggering any action caused a fatal unhandled exception (crash).
-> 
-> **The Correct Fix (being applied right now):**
-> 1. I am removing `_TZ3000_v4l4b0lp` from the BSEED array so your device will initialize normally again.
-> 2. I am fixing ALL the Flow Action cards across the app (`switch_1gang` to `switch_8gang`) to use `device.triggerCapabilityListener(cap, value)`. This will correctly forward the Flow card commands to the Zigbee network.
-> 
-> I'm pushing this fix to v6.0.1 immediately. Once the test version is built, I'll let you know so you can re-pair and test it safely.
+> **Deep Root Cause Analysis:** _comment not reproduced here (P3069, link-do-not-quote) — topic: switch, light, flow cards — `_TZ3000_v4l4b0lp`; read it on the issue above._ <!-- own-text -->
 
-> **Ssssneak:** @dlnraja - Thank you so much for the detailed explanation and the deep root cause analysis! I really appreciate your hard work on this and for taking ownership of the bug. 
-> 
-> I'm looking forward to v6.0.1 with great anticipation!  I will test it and report back as soon as it's available. Thanks again!
+> **Ssssneak:** _comment not reproduced here (P3069, link-do-not-quote) — topic: light; read it on the issue above._ <!-- own-text -->
 
 > **dlnraja:** Hey @Ssssneak,
 > 
@@ -1278,13 +1041,7 @@ _No response_
 > 
 > Once we have that info, we can work on getting those individual gang controls working as expected. Appreciate your help!
 
-> **Ssssneak:** @dlnraja - I think our messages crossed paths!  
-> 
-> I actually provided the full raw Zigbee Interview JSON in a comment just a little bit higher up in this thread. 
-> 
-> Also, in your latest reply, you already confirmed you found the root cause (the `setCapabilityValue` bug vs `triggerCapabilityListener`) and mentioned that you are pushing the fix to v6.0.1. 
-> 
-> Just confirming we are on the same page: you have all the data you need from my previous comment, right? I am standing by to test v6.0.1 as soon as it drops!
+> **Ssssneak:** _comment not reproduced here (P3069, link-do-not-quote) — topic: flow cards, pairing; read it on the issue above._ <!-- own-text -->
 
 > **dlnraja:** Yes but there is others root causes
 > 
@@ -1292,27 +1049,11 @@ _No response_
 > 
 > Best regards 
 
-> **Ssssneak:** @dlnraja - Take your time! Since we are brainstorming, I was looking at the Zigbee Interview and thinking about why the Flow Action cards might still fail (or crash) even after fixing the UI state bug.
-> 
-> Because this specific model relies on standard ZCL Endpoints (1, 2, and 3) with the standard OnOff cluster (0x0006) instead of Tuya's custom 0xEF00 DP cluster, could the issue be in how the Homey SDK routes the command to the specific endpoints? 
-> 
-> If the Flow Action card eventually calls `device.triggerCapabilityListener('onoff.2', true)`, does the base device driver explicitly map `onoff.2` to `endpoint: 2` in the capability registration options? I've seen cases in Homey where, if the `{ endpoint: x }` object isn't explicitly passed during the multi-gang `genOnOff` cluster initialization, the system either defaults all commands to Endpoint 1 or throws an undefined endpoint error (which might explain the crash).
-> 
-> Just an engineering thought from my side! Good luck with the investigation!
+> **Ssssneak:** _comment not reproduced here (P3069, link-do-not-quote) — topic: switch, flow cards, pairing; read it on the issue above._ <!-- own-text -->
 
 > **dlnraja:** Resolved: _TZ3000_v4l4b0lp is mapped to switch_3gang driver. Sub-capability flow cards for Gang 1/2/3 have been fixed with proper endpoint routing and attribute reporting in the latest version. Remove and re-pair to apply the fix.
 
-> **Ssssneak:** @dlnraja - Update on v6.0.1: The manual control via the device UI tiles works perfectly now, so the endpoint mapping is definitively fixed! Thank you!
-> 
-> However, the Flow Action cards (Turn on/off gang 1/2/3) are experiencing a "Silent Failure". 
-> 
-> I completely removed the device, re-paired it on v6.0.1, and created a brand new flow to test it. The Flow executes perfectly from Homey's perspective (no errors, no app crashes), BUT the physical relay does not react at all.
-> 
-> It looks exactly like the `setCapabilityValue` vs `triggerCapabilityListener` bug you mentioned earlier. Is it possible that the action card definitions specifically for the `switch_3gang` driver were missed in this update?
-> 
-> I triggered the Flow cards and immediately generated a fresh Diagnostics Report so you can see exactly what the card is sending (or missing) under the hood:
-> Diagnostics ID: 08be6587-7fa0-4e1e-a57c-238a690aac73
-> 
+> **Ssssneak:** _comment not reproduced here (P3069, link-do-not-quote) — topic: switch, flow cards, pairing; read it on the issue above._ <!-- own-text -->
 
 > **github-actions:** <!-- tuya-reopen-bot -->
 > This issue has been **automatically reopened** because @Ssssneak posted a new comment.
@@ -1328,22 +1069,11 @@ _No response_
 > 
 > Because your specific standard router device handles Tuya custom DP tunneling fallback for its sub-gangs through \TuyaZigbeeDevice\ (which does not instantiate pure independent ZCL \onOff\ Endpoint Clusters for Endpoints 2 and 3 natively out of the box), these generic ZCL calls vanished into the void!
 > 
-> **The Master Fix applied:**
-> I have comprehensively patched all Action Flow cards across all 2-gang, 3-gang, and 4-gang driver combinations. The action handlers now properly utilize \^Gwait args.device.triggerCapabilityListener('onoff.gangX', true/false)\ instead! This routes the flow action exactly as if you had tapped the UI tile, meaning the underlying driver architecture now perfectly decides whether to tunnel the request via Tuya DPs or standard ZCL depending on the \ZCL_ONLY_MANUFACTURERS_3G\ array!
-> 
-> The fix is pushed to the pipeline and will be available in the next deployment cycle. Thank you again for the flawless QA testing and the exact diagnostic pointers!
+> **The Master Fix applied:** _comment not reproduced here (P3069, link-do-not-quote) — topic: switch, flow cards, request; read it on the issue above._ <!-- own-text -->
 
 > **dlnraja:** The unlinked flow cards for the 3-gang switch (TS0003) have been resolved by implementing the missing 	riggerCapabilityListener core shim and rectifying the sub-capability mapping logic in v5.12.0. This ensures all gangs now correctly trigger flows when toggled via the app or physical button. Please remove and re-pair your device to pick up the updated capability mapping. Thanks for your patience!
 
-> **Ssssneak:** @dlnraja - We have a tiny new issue after the update! 
-> 
-> I updated the app, removed the switch, and tried to re-pair it. However, the device is no longer recognized by the Universal Tuya Zigbee app at all. It now pairs directly as a generic "Basic Zigbee Device" natively by Homey (showing the default 'Z' Zigbee icons in Flows, with no multi-gang options).
-> 
-> In your previous message, you mentioned: "I am removing `_TZ3000_v4l4b0lp` from the BSEED array". 
-> Could it be that the fingerprint was accidentally removed entirely from the `switch_3gang` driver definitions instead of just being moved to the standard array? 
-> 
-> The app simply doesn't recognize `_TZ3000_v4l4b0lp` during pairing anymore.
-> 
+> **Ssssneak:** _comment not reproduced here (P3069, link-do-not-quote) — topic: switch, flow cards, pairing — `_TZ3000_v4l4b0lp`; read it on the issue above._ <!-- own-text -->
 
 > **github-actions:** <!-- tuya-reopen-bot -->
 > This issue has been **automatically reopened** because @Ssssneak posted a new comment.
@@ -1359,12 +1089,7 @@ _No response_
 > 
 > La version v7.0.x arrive sur le canal Test avec ce correctif. Un immense merci pour ton aide et ta patience sur ce bug ! On ferme la boucle ici. 
 
-> **Ssssneak:** @dlnraja - I just did a clean test on v7.0.9. Unfortunately, the device is not recognized by the app at all during pairing. It falls back completely to Homey's generic "Basic Zigbee Device" (with the black 'Z' icon).
-> 
-> In your previous comment, you mentioned: "I am removing `_TZ3000_v4l4b0lp` from the BSEED array". 
-> It looks like the fingerprint was successfully removed from there, but it seems it wasn't added to the standard `switch_3gang` driver array in the new v7 build. 
-> 
-> Could you please double-check if the `_TZ3000_v4l4b0lp` fingerprint is actually mapped anywhere in the current v7.0.9 code? The app is totally blind to it right now.
+> **Ssssneak:** _comment not reproduced here (P3069, link-do-not-quote) — topic: cover, switch, pairing — `_TZ3000_v4l4b0lp`; read it on the issue above._ <!-- own-text -->
 
 > **github-actions:** <!-- tuya-reopen-bot -->
 > This issue has been **automatically reopened** because @Ssssneak posted a new comment.
@@ -1409,38 +1134,9 @@ _No response_
 > >
 > 
 
-> **Ssssneak:** @dlnraja - No worries at all, get some coffee first!  
-> 
-> If it helps save you some time tracking it down: since the device drops straight to Homey's generic "Basic Zigbee Device" during pairing, the Homey Zigbee core isn't matching the fingerprint with your app anymore. 
-> 
-> Could you do a quick check in the `driver.compose.json` (or `app.json`) specifically for the `switch_3gang` driver? Its highly likely that `_TZ3000_v4l4b0lp` just got completely wiped from the `zigbee.manufacturerName` array when you were removing it from the BSEED list, and it never made it into the standard array.
-> 
-> Another quick thought: if your new "Magic Spell" base class intercepts the pairing/discovery phase, maybe it's accidentally filtering out or rejecting standard TS0003 manufacturer names now?
-> 
-> Just some friendly QA brainstorming! Take your time!
+> **Ssssneak:** _comment not reproduced here (P3069, link-do-not-quote) — topic: switch, pairing — `_TZ3000_v4l4b0lp` `TS0003`; read it on the issue above._ <!-- own-text -->
 
-> **late4marshmellow:** @dlnraja
-> 
-> Just a heads-up related to the duplicate Flow card ID fix  It looks like something went wrong when my submitted PR was merged/applied.
-> 
-> The original problem was ~70 duplicate Flow card trigger IDs (from the heal-hybrid-flows.js script copying IDs verbatim from source drivers into hybrid drivers), which caused:
-> 
-> `Error: Found multiple Flow card triggers with the id "button_pressed"`
-> 
-> The fix in my PR renamed the IDs in the hybrid drivers to be driver-specific (e.g. curtain_motor_wall_hybrid_button_pressed) so they're globally unique.
-> 
-> However, in the current v7.0.9 the situation is significantly worse  running the same check now shows 513 duplicate flow card IDs, meaning the daily self-healing script (heal-hybrid-flows.js) ran again after the fix and regenerated all the duplicates (plus many new ones for the new hybrid drivers added since).
-> 
-> The root cause that needs fixing is the script itself  it needs to prefix generated IDs with the driver name, otherwise it will just keep recreating the problem every night. Something like:
-> 
-> ```
-> // Instead of copying the ID as-is:
-> id: match.id
-> // Use a driver-specific prefix:
-> id: `${hybrid}_${match.id.replace(/^.*?_/, '')}`
-> ```
-> 
-> 
+> **late4marshmellow:** _comment not reproduced here (P3069, link-do-not-quote) — topic: cover, button, flow cards; read it on the issue above._ <!-- own-text -->
 
 ---
 
@@ -1472,24 +1168,11 @@ Currently on v5.11.118
 > 
 > Battery status should also be resolved, as v6.0.0 introduces a new \PowerSourceIntelligence\ engine that handles battery reporting dynamically.
 > 
-> **Next Steps:**
-> 1. Update to the latest test version: https://homey.app/a/com.dlnraja.tuya.zigbee/test/
-> 2. Remove and re-pair your Fingerbot to apply the new sequence.
+> **Next Steps:** _comment not reproduced here (P3069, link-do-not-quote) — topic: pairing; read it on the issue above._ <!-- own-text -->
 
 > **dlnraja:** Fixed in master. button.push capability was added to fingerbot compose configuration.
 
-> **dalobalo:** Hi @dlnraja,
-> 
-> I can confirm that its possible to activate the Fingerbot (click motion only).
-> 
-> Unfortunately, battery status and flows are not available since the device is added as a generic Zigbee unit with no supported app (as Homey reports).
-> 
-> It would be great to also support additional actions such as:
-> 		Push (two states)
-> 		Click (including multiple clicks, e.g. X times)
-> 		Push and hold (for X seconds)
-> 
-> At the moment, its limited to operating a single button press. It would also be nice if the icon could be changed to the same used in Johans app
+> **dalobalo:** _comment not reproduced here (P3069, link-do-not-quote) — topic: button, presence, contact; read it on the issue above._ <!-- own-text -->
 
 > **github-actions:** <!-- tuya-reopen-bot -->
 > This issue has been **automatically reopened** because @dalobalo posted a new comment.
