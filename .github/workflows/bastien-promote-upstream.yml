@@ -83,7 +83,7 @@ jobs:
           set -euo pipefail
           git fetch origin bastien-home:bastien-home || git fetch origin bastien-home
           git rev-parse origin/bastien-home
-          git branch -a | head -40
+          git branch -a | sed -n "1,40p"  # P3068: no SIGPIPE (exit 141) under pipefail
 
       - name: Setup Node
         uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
