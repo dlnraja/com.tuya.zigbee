@@ -194,6 +194,7 @@ function projectUploadBytes(file) {
     require(path.join(ROOT, 'scripts/maintenance/sanitize-manifest.cjs')).sanitizeManifestFile(tmp);
     require(path.join(ROOT, 'scripts/maintenance/compact-zigbee-identifiers.cjs')).compactManifestFile(tmp);
     require(path.join(ROOT, 'scripts/maintenance/strip-redundant-title-formatted.cjs')).stripFile(tmp);
+    require(path.join(ROOT, 'scripts/maintenance/compact-shared-text.cjs')).compactFile(tmp); // P3068
     return Buffer.byteLength(JSON.stringify(JSON.parse(fs.readFileSync(tmp, 'utf8'))));
   } catch {
     return null;

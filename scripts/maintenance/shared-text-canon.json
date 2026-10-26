@@ -1,0 +1,20 @@
+{
+  "note": "P3068: concise canonical texts for settings / maintenance actions copied into many drivers. Applied to the publish copy only when en === from (exact). Same meaning, shorter.",
+  "settingHints": {
+    "zcl_cluster_layer": { "from": "Extra command capture, bounded bindings and reporting fallback on top of the native setup. Turn off if this device misbehaves.", "to": { "en": "Extra command capture, bindings and reporting fallback. Untick if the device misbehaves.", "fr": "Capture, liaisons et relève de secours en plus. Décochez si l'appareil se comporte mal." } },
+    "battery_type": { "from": "Select battery type manually or use auto-detection based on voltage", "to": { "en": "Manual choice, or Auto (from voltage)", "fr": "Choix manuel, ou Auto (selon la tension)" } },
+    "power_source": { "from": "Select power source manually or use auto-detection", "to": { "en": "Manual choice, or Auto-detect", "fr": "Choix manuel, ou détection auto" } },
+    "optimization_mode": { "from": "Balance between responsiveness and battery life", "to": { "en": "Responsiveness vs battery life", "fr": "Réactivité vs autonomie" } },
+    "enable_power_estimation": { "from": "Estimate power consumption when real measurement is not available (AC/DC devices only)", "to": { "en": "Estimate power when not measured (AC/DC only)", "fr": "Estimer la puissance si non mesurée (AC/DC)" } },
+    "battery_critical_threshold": { "from": "Trigger critical battery warning when below this percentage", "to": { "en": "Critical battery alert below this %", "fr": "Alerte batterie critique sous ce %" } },
+    "battery_low_threshold": { "from": "Trigger low battery warning when below this percentage", "to": { "en": "Low battery alert below this %", "fr": "Alerte batterie faible sous ce %" } },
+    "battery_report_interval": { "from": "How often to request battery status updates", "to": { "en": "Battery status request interval", "fr": "Intervalle de lecture batterie" } },
+    "enable_battery_notifications": { "from": "Send flow notifications for battery events", "to": { "en": "Flow notifications for battery events", "fr": "Notifications Flow batterie" } }
+  },
+  "maintenanceTitles": {
+    "generate_issue_report": { "from": "Generate support report (GitHub issue)", "to": { "en": "Support report (GitHub issue)", "fr": "Rapport de support (GitHub)", "nl": "Supportrapport (GitHub)", "de": "Supportbericht (GitHub)" } },
+    "zigbee_rebind": { "from": "Re-bind & reconfigure reporting", "to": { "en": "Re-bind & reporting", "fr": "Re-lier et rapports", "nl": "Opnieuw binden", "de": "Neu binden" } },
+    "tuya_revive": { "from": "Tuya Revive (device recovery)", "to": { "en": "Tuya Revive (recovery)", "fr": "Tuya Revive (récupération)", "nl": "Tuya Revive (herstel)", "de": "Tuya Revive (Wiederherstellung)" } },
+    "ota_check": { "from": "Check Zigbee OTA Update", "to": { "en": "Check Zigbee OTA update", "fr": "Vérifier MàJ OTA", "nl": "OTA-update zoeken" } }
+  }
+}
