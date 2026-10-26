@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased — docs refresh (P3032, stable-v5)
+### Fixed (2026-10-26, P3064 safety port)
+- Smoke sensor: TS0601 smoke / CO couples already listed in the driver (`_TZE284_6ycgarab`, `_TZE284_aoah6bv8`, `_TZE2841000000_6ycgarab`, `_TZE284_qvzsq3s2`, `_TZE200_qcasmfan`) now read their Tuya datapoints (smoke, CO, battery, tamper), receive-only, no write at pairing. DP layouts from zigbee-herdsman-converters (Koen Kanters and contributors).
+
 ### Fixed (2026-10-25)
 - **P3052 credits:** thanks to **iBush** (Switcher app, community t/160624) for the timer / auto-shutdown card ideas already shipped here since P2976 (own implementation), now also listed in CREDITS.md.
 - **P3049 CI:** the JavaScript syntax audit of the PR gate now creates its report folder when it is missing, instead of failing every pull request with "no such file or directory" before checking anything.
