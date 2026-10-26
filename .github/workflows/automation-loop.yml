@@ -70,6 +70,9 @@ jobs:
         run: node scripts/automation/self-maintain.cjs
       - name: CI failures of the last 24 h -> journal
         run: node scripts/automation/ci-failure.cjs collect --hours=24
+      # P3073: fold the journal into a bounded signature ledger (proposals only, never edits a gate).
+      - name: Learn CI signatures (P3073, proposals only)
+        run: '[ -f scripts/learning/ci-signatures.cjs ] && node scripts/learning/ci-signatures.cjs --report || true'
       - name: Workflow watchdog
         run: node scripts/automation/workflow-watchdog.cjs
       - name: Reply candidates (never posted)
@@ -89,7 +92,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           node scripts/ci/safe-auto-commit.js --id=automation-loop --max-per-day=2 \
             --message="chore(automation): journal + digest (P3048, no AI)" \
-            --paths="data/progress/automation-journal.jsonl data/progress/archive data/progress/reply-candidates.json docs/progress/DIGEST.md data/automation data/status/workflow-watchdog.json data/status/package-combos.json data/leads/ocr-hash-cache.json data/leads/forum-lastseen.json data/leads/image-ocr-cursor.json data/leads/issue557-cursor.json data/leads/deep-read-checkpoint.json data/leads/resume-checkpoint.json data/leads/sweep-checkpoint.json data/sources/state.json docs/automation/leads-other-apps-cursor.json"
+            --paths="data/progress/automation-journal.jsonl data/progress/archive data/progress/reply-candidates.json docs/progress/DIGEST.md data/automation data/status/workflow-watchdog.json data/status/package-combos.json data/leads/ocr-hash-cache.json data/leads/forum-lastseen.json data/leads/image-ocr-cursor.json data/leads/issue557-cursor.json data/leads/deep-read-checkpoint.json data/leads/resume-checkpoint.json data/leads/sweep-checkpoint.json data/sources/state.json docs/automation/leads-other-apps-cursor.json data/learning"
       # P3069: short summary through the shared helper, on success and on failure.
       - name: Short summary (shared report helper)
         if: always()
