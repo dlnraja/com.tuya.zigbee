@@ -1,9 +1,9 @@
 {
  "note": "P3068 memory-hazard ratchet baseline — counts may only go down",
  "totals": {
-  "hot-stringify": 85,
+  "hot-stringify": 73,
   "unbounded-collection": 121,
-  "raw-timer": 15
+  "raw-timer": 13
  },
  "files": {
   "drivers/button_emergency_sos/device.js": {
@@ -311,9 +311,6 @@
   "lib/tuya/TuyaDataPointEngine.js": {
    "hot-stringify": 5
   },
-  "lib/tuya/TuyaEF00Manager.js": {
-   "hot-stringify": 12
-  },
   "lib/tuya/TuyaEF00Parser.js": {
    "hot-stringify": 1
   },
@@ -344,9 +341,6 @@
   },
   "lib/utils/AdaptiveEventEmitter.js": {
    "unbounded-collection": 2
-  },
-  "lib/utils/SleepyDeviceInit.js": {
-   "raw-timer": 2
   },
   "lib/utils/SmartValueProcessor.js": {
    "unbounded-collection": 1
