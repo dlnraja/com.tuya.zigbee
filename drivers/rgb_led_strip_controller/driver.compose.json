@@ -64,7 +64,8 @@
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
-        "en": "Press the setup button for 10 seconds to enter pairing mode (the LED should blink green)."
+        "en": "Press the setup button for 10 seconds to enter pairing mode (the LED should blink green).",
+        "fr": "Appuyez 10 s sur le bouton de configuration (la LED clignote en vert)."
       }
     }
   },

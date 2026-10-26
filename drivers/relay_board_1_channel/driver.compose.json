@@ -45,7 +45,8 @@
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
-        "en": "Press the setup button combined with 1 channel button for 10 seconds (the LED should blink green)."
+        "en": "Press the setup button combined with 1 channel button for 10 seconds (the LED should blink green).",
+        "fr": "Appuyez 10 s sur le bouton de configuration avec un bouton de canal (la LED clignote en vert)."
       }
     },
     "manufacturerName": []
