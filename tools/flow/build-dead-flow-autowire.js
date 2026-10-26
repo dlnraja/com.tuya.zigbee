@@ -49,7 +49,20 @@ const TRIGGER_RULES = [
   [/^current changed$/, () => ['measure_current'], 'change'],
   [/^energy consumption changed$/, () => ['meter_power'], 'change'],
   [/^illuminance changed$/, () => ['measure_luminance'], 'change'],
-  [/^brightness changed$/, () => ['dim'], 'change']
+  [/^brightness changed$/, () => ['dim'], 'change'],
+  // P3065 flow uplift (a): declared cards whose capability exists but nothing fired them
+  [/^(luminance|light level) changed$/, () => ['measure_luminance'], 'change'],
+  [/^battery level changed$/, () => ['measure_battery'], 'change'],
+  [/^(position|curtain position|cover position) changed$/, () => ['windowcoverings_set'], 'change'],
+  [/^soil moisture changed$/, () => ['measure_humidity.soil'], 'change'],
+  [/^(motion ended|motion stopped)$/, () => ['alarm_motion'], false],
+  [/^(contact|door|window) opened$/, () => ['alarm_contact'], true],
+  [/^(contact|door|window) closed$/, () => ['alarm_contact'], false],
+  [/^tamper alarm triggered$/, () => ['alarm_tamper'], true],
+  [/^gas detected!?$/, () => ['alarm_gas'], true],
+  [/^(carbon monoxide|co) detected!?$/, () => ['alarm_co'], true],
+  [/^locked$/, () => ['locked'], true],
+  [/^unlocked$/, () => ['locked'], false]
 ];
 
 // [regex, capability preference list, op] ; op: true | above | below
