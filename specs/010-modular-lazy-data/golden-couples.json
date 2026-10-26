@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-25T17:34:38.216Z",
+ "generated": "2026-10-26T12:31:57.265Z",
  "drivers": 392,
  "snapshot": {
   "air_purifier": {
@@ -1785,9 +1785,9 @@
    "pidSha": "6bb4763014511564"
   },
   "smoke_sensor": {
-   "mfr": 7,
+   "mfr": 6,
    "pid": 3,
-   "mfrSha": "146f1fa92fdf0e72",
+   "mfrSha": "2b12509c79238459",
    "pidSha": "14fd4884570649ac"
   },
   "smoke_sensor2": {
