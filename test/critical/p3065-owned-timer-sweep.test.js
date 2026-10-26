@@ -56,9 +56,9 @@ test('TuyaZigbeeDevice exposes warn() (Homey has no warn)', () => {
   assert.match(src, /OwnedTimerSweep'\)\.sweepOwnedTimers\(this/);
 });
 
-test('lifecycle harness: 3 delete/re-pair cycles leave no armed interval and no growing device count', { timeout: 240000 }, () => {
+test('lifecycle harness: 5 delete/re-pair cycles leave no armed interval and no growing device count', { timeout: 240000 }, () => {
   const out = path.join(os.tmpdir(), `p3065-harness-${process.pid}.json`);
-  execFileSync(process.execPath, ['--expose-gc', '--max-old-space-size=256', '-r', path.join(ROOT, 'test/_support/shipped-payload-preload.js'), /* P3068: shipped data/ only */ path.join(ROOT, 'scripts/perf/p3065-lifecycle-leak-harness.js'), ROOT, '40', '40', '3'], {
+  execFileSync(process.execPath, ['--expose-gc', '--max-old-space-size=256', '-r', path.join(ROOT, 'test/_support/shipped-payload-preload.js'), /* P3068: shipped data/ only */ path.join(ROOT, 'scripts/perf/p3065-lifecycle-leak-harness.js'), ROOT, '40', '40', '5'], {
     cwd: ROOT, stdio: 'ignore', timeout: 230000,
     env: { ...process.env, OUT: out, SETTLE: '2500', /* P3068: let in-flight init chains finish */ DRV: 'switch_1gang,switch_2gang,button_wireless_4,climate_sensor,plug_energy_monitor,water_leak_sensor,motion_sensor' },
   });
@@ -69,5 +69,12 @@ test('lifecycle harness: 3 delete/re-pair cycles leave no armed interval and no 
   assert.ok(last.timersLeft <= 2, `intervals still armed after delete: ${last.timersLeft} ${JSON.stringify(r.timerSrc)}`);
   const alive = (c) => Object.values(c.aliveDevices).reduce((a, b) => a + b, 0);
   assert.ok(alive(last) - alive(first) <= 4, `dead devices accumulate: ${alive(first)} -> ${alive(last)}`);
-  assert.ok(last.afterDelete - first.afterDelete < 3, `heap after delete grows per cycle: ${first.afterDelete} -> ${last.afterDelete} MB`);
+  // P3068: cycle 1 includes one-off warm-up (lazy requires, JIT, shared caches): 8-cycle evidence on clean master
+  // 36.3 -> 38.1 -> 38.6 -> 39.0 -> 37.3 -> 37.5 -> 37.9 -> 38.1 MB, 1 device alive each cycle = plateau, not a leak.
+  // A leak shows as growth AFTER warm-up, so the baseline is cycle 2 and the slope over cycles 2..5 is bounded.
+  const warm = r.cycles[1];
+  const heaps = r.cycles.slice(1).map((c) => c.afterDelete);
+  assert.ok(last.afterDelete - warm.afterDelete < 3, `heap after delete grows after warm-up: ${heaps.join(' -> ')} MB`);
+  assert.ok(Math.max(...heaps) - Math.min(...heaps) < 4, `heap after delete not on a plateau: ${heaps.join(' -> ')} MB`);
+  assert.ok(first.afterDelete < 60, `first cycle heap ${first.afterDelete} MB`);
 });
