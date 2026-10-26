@@ -447,5 +447,7 @@ A heartfelt thank you to:
 - Batch P3067 (radiator valves): **Koen Kanters and the zigbee-herdsman-converters contributors** (`avatto.ts`
   ME168_AVATTO) and **Deennoo and the Domoticz Zigbee for Domoticz contributors** (TS0601-ME168 model), whose
   datapoint facts show the ME168 layout of `_TZE200_cxakecfo/ybsqljjg/4aijvczq/r5ksy7qo` (own implementation).
+- Batch P3067 (covers): **Koen Kanters and the zigbee-herdsman-converters contributors** (`tuya.ts` TS0601_cover_4,
+  Moes AM43-0.45/40-ES-EB), whose datapoint list shows DP101/102 are opening mode / factory reset on the AM43.
 - And every forum member and GitHub issue reporter who sent a fingerprint, a diagnostic or a "this works now":
   you are listed by handle in the sections above, and new names are added with each batch.
