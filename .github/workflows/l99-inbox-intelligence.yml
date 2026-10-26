@@ -196,3 +196,12 @@ jobs:
           # WHY(P2383): verified push — step already continue-on-error
           # P3025: shared race-safe push (bounded rebase-retry, backoff + jitter, never force)
           bash .github/scripts/git-push-retry.sh --branch "${GITHUB_REF_NAME}"
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Three times a day: mail, issues and forum (shadow) into one prioritised private report. Never posts, never invents a product ID."; else s="Stopped early ($JOB_STATUS); the red step above says why. Three times a day: mail, issues and forum (shadow) into one prioritised private report. Never posts, never invents a product ID."; fi
+          node scripts/lib/report-writer.js --title "l99-inbox-intelligence" --summary "$s" --headers "item|value" --row "job|inbox-l99" --row "result|$JOB_STATUS" --thanks "Homey users who send diagnostic reports by mail" --thanks "the Homey developer docs on app diagnostics" >> "$GITHUB_STEP_SUMMARY" || true

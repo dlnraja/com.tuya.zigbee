@@ -134,6 +134,15 @@ jobs:
           path: digest-leads/
           if-no-files-found: ignore
           retention-days: 14
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Weekday digests (Homey, Labs, forum watch, inspiration) as links and our own summaries. Report-only: no commit, no publish."; else s="Stopped early ($JOB_STATUS); the red step above says why. Weekday digests (Homey, Labs, forum watch, inspiration) as links and our own summaries. Report-only: no commit, no publish."; fi
+          node scripts/lib/report-writer.js --title "daily-digest" --summary "$s" --headers "item|value" --row "job|homey" --row "result|$JOB_STATUS" --thanks "the Homey Community forum members who share fingerprints and diagnostics (read-only, never quoted)" --thanks "Discourse for its public JSON/RSS endpoints" >> "$GITHUB_STEP_SUMMARY" || true
 
   labs:
     name: 🧪 Labs digest (AscendOS / Pulse)

@@ -241,6 +241,15 @@ jobs:
             screenshots/full-diag-report.json
           if-no-files-found: warn
           retention-days: 14
+      # P3069: short summary through the shared helper, on success and on failure.
+      - name: Short summary (shared report helper)
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Manual deep recovery of one diagnostic report from every source we have."; else s="Stopped early ($JOB_STATUS); the red step above says why. Manual deep recovery of one diagnostic report from every source we have."; fi
+          node scripts/lib/report-writer.js --title "tuya-deep-diag" --summary "$s" --headers "item|value" --row "job|diagnose" --row "result|$JOB_STATUS" --thanks "Homey users who send diagnostic reports by mail" --thanks "the Homey developer docs on app diagnostics" >> "$GITHUB_STEP_SUMMARY" || true
 
   # P3021b: ledger wiring. The diagnose job stays read-only; only this job may push the ledger.
   ledger:
