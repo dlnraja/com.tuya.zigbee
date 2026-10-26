@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-25T16:35:26.028Z",
+ "generated": "2026-10-26T08:05:03.820Z",
  "drivers": 414,
  "snapshot": {
   "air_purifier": {
@@ -123,9 +123,9 @@
    "pidSha": "b4f68c3714451ee2"
   },
   "bulb_rgb": {
-   "mfr": 13,
+   "mfr": 12,
    "pid": 37,
-   "mfrSha": "ad48174583c27f24",
+   "mfrSha": "78d74408ff0760f1",
    "pidSha": "0c00c18d00e6cdf3"
   },
   "bulb_rgb_led": {
@@ -1023,9 +1023,9 @@
    "pidSha": "261617b7dd61d124"
   },
   "lcdtemphumidsensor": {
-   "mfr": 27,
+   "mfr": 28,
    "pid": 6,
-   "mfrSha": "bd1767e536c89bdb",
+   "mfrSha": "e19285fed76bef62",
    "pidSha": "9be78874133bac72"
   },
   "lcdtemphumidsensor_2": {
