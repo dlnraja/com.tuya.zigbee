@@ -16,4 +16,5 @@ Detailed notes:
 - [GitHub Actions hardening P2900 (20/10/2026, Paris time)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/GHA_HARDENING_P2900.md)
 - [Gledopto GL-SPI-206P (`led_controller_spi_tuya`) — runtime fix + Athom status (2026-10-10)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/GLEDOPTO_SPI_206P_FIX_2026-10-10.md)
 - [P2924 — "socket hang up": where it happens and what we changed (21/10/2026)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/P2924_SOCKET_HANG_UP_2026-10-21.md)
+- [P3036: Athom publish policy (green CI, spacing, one retry, bisect exit)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/P3036_ATHOM_PUBLISH_POLICY.md)
 - [led_controller_spi_tuya — Athom AggregateError bisect (19/10/2026)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/SPI_ATHOM_BISECT_2026-10-19.md)

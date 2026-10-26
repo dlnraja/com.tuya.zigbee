@@ -29,6 +29,7 @@
 - **iBush** (Switcher app for Homey, [community t/160624](https://community.homey.app/t/160624)) - ideas only, our own code: timer-for-a-set-time card, time-left token / timer-running trigger, auto-shutdown, child-lock, correct-known-AC-state.
 - **Steve_Wilson** ([t/101901 #8](https://community.homey.app/t/101901/8)) - interview of the Zemismart 214C valve (`_TZE284_vuwtqx0t`); with **Kigrou** (zigbee-herdsman-converters#10636, Z2M `TS0601_water_valve`) and Zemismart (`zemismart-zha-quirks` 214c.py) as the DP sources for P2864. DP tables only, no code copied.
 - **Istvan_Mag, Kizabgd, marosk, Dragan_Todorovic** (topics 140352 / 26439) - Developer Tools / interview data for `_TZE284_gnpflcoq`, `_TZE284_9ern5sfh`, `_TZE200_fl8cuafl`, `_TZE200_crq3r3la`; **julianjwong** (zha-device-handlers#5286) for the corrected gnpflcoq DP table.
+- **seikossss** ([t/140352 #2268](https://community.homey.app/t/140352/2268)) - request and fingerprint for the NEO NAS-WV05B2-L sprinkler timer (`_TZE284_z7a2jmyy` / TS0601), matched to the Z2M `neo.ts` definition.
 - **rebtor** - TuyAPI local control
 - **jurgenheine** - Cloud API patterns
 - **robertklep/homey-tuya-zigbee** - Community Tuya Zigbee

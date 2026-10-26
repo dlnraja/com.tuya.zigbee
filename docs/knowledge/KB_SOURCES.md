@@ -26,13 +26,13 @@ Scanned 2026-10-24 (Europe/Paris) for how they handle unknown commands, fallback
 
 | project | branch | licence | pointer | used for |
 |---|---|---|---|---|
-| [Koenkk/zigbee-herdsman-converters](https://github.com/Koenkk/zigbee-herdsman-converters) | master | MIT | eb823146c7 (2026-10-24) | tuya.ts private commands, tuyaDatapoints names, magic packet, mcuSyncTime |
-| [Koenkk/zigbee-herdsman](https://github.com/Koenkk/zigbee-herdsman) | master | MIT | c1dcb1155e | manuSpecificTuya cluster commands |
+| [Koenkk/zigbee-herdsman-converters](https://github.com/Koenkk/zigbee-herdsman-converters) | master | MIT | 7462b54 (2026-10-25) | tuya.ts private commands, tuyaDatapoints names, magic packet, mcuSyncTime |
+| [Koenkk/zigbee-herdsman](https://github.com/Koenkk/zigbee-herdsman) | master | MIT | 6764136 (2026-10-25) | manuSpecificTuya cluster commands |
 | [Koenkk/zigbee2mqtt](https://github.com/Koenkk/zigbee2mqtt) | master | GPL-3.0 | pushed 2026-10-24 (checked 2026-10-25) | ideas only |
-| [zigpy/zha-device-handlers](https://github.com/zigpy/zha-device-handlers) | dev | Apache-2.0 | 1d6598c32a (2026-10-11) | Tuya private clusters, TSN dedup, rotate_type |
+| [zigpy/zha-device-handlers](https://github.com/zigpy/zha-device-handlers) | dev | Apache-2.0 | d54cf9e (2026-10-26) | Tuya private clusters, TSN dedup, rotate_type |
 | [zigpy/zha](https://github.com/zigpy/zha) | dev | Apache-2.0 | 6decce1ed4 (2026-10-24, deps only) | quirks v2 behaviour |
 | [dresden-elektronik/deconz-rest-plugin](https://github.com/dresden-elektronik/deconz-rest-plugin) | master | BSD-3-Clause | pushed 2026-09-10 | DDF read functions, refresh.interval |
-| [make-all/tuya-local](https://github.com/make-all/tuya-local) | main | MIT | c6ea7984d6 (2026-10-25) | unknown DP exposure, DP refresh |
+| [make-all/tuya-local](https://github.com/make-all/tuya-local) | main | MIT | 8de6b3c (2026-10-25) | unknown DP exposure, DP refresh |
 | [rospogrigio/localtuya](https://github.com/rospogrigio/localtuya) | master | GPL-3.0 | pushed 2026-01-29 | ideas only |
 | [xZetsubou/hass-localtuya](https://github.com/xZetsubou/hass-localtuya) | master | GPL-3.0 | pushed 2026-10-21 | ideas only |
 | [jasonacox/tinytuya](https://github.com/jasonacox/tinytuya) | master | MIT | pushed 2026-10-13 | DP_QUERY / UPDATEDPS |
@@ -93,4 +93,5 @@ Forum topics scanned for unknown commands: Homey Community 140352 and 26439 (ano
 
 ## Daily refresh log
 
+- 2026-10-26: changed = zhc 7462b54, herdsman 6764136, ZHA quirks d54cf9e, tuya-local 8de6b3c (Wi-Fi only), zigbee-OTA 7798da2 (index.json changed), z2m docs f39694b, Tasmota 63c3861. Unchanged = blakadder, deCONZ, domoticz, hubitat, ioBroker, Johan, localtuya, SmartThings, tinytuya, zigbee-clusters. Notes: [UPSTREAM_DAILY_2026-10-26.md](UPSTREAM_DAILY_2026-10-26.md).
 - 2026-10-25: changed = tuya-local (c6ea7984d6), zigbee-OTA (df5e8e13f0, index.json unchanged), esphome Tuya (b90e1e43a3), zha deps. Unchanged = zhc eb823146c7, herdsman c1dcb11, z2m docs 2d9af8d, ZHA quirks 1d6598c, deCONZ a4c17ad, Blakadder d96e8aa, tinytuya 3c0a687, localtuya 59c95cd, Johan code 328d24e, zigbee-clusters b859be7. Notes: [UPSTREAM_DAILY_2026-10-25.md](UPSTREAM_DAILY_2026-10-25.md).
