@@ -1,5 +1,5 @@
 'use strict';
-const { safeParse } = require('../../lib/utils/tuyaUtils.js');
+const { safeParse, safeMultiply } = require('../../lib/utils/tuyaUtils.js'); // P3065: safeMultiply was used but not imported
 
 
 // A8: NaN Safety - use safeDivide/safeMultiply

@@ -36,7 +36,7 @@ class relay_board_2_channel extends TuyaZigbeeDevice {
 
     onDeleted(){
       super.onDeleted();
-		this.log("2 Channel Relay Board, channel ", subDeviceId, " removed")
+		this.log("2 Channel Relay Board, channel ", (this.getData() || {}).subDeviceId, " removed") // P3065: was undefined -> ReferenceError in onDeleted
 	}
 
 }
