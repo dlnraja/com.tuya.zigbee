@@ -1,0 +1,58 @@
+{
+  "id": "scene_recalled",
+  "title": {
+    "en": "A scene was recalled",
+    "fr": "Une scène a été rappelée",
+    "nl": "Een scène werd opgeroepen",
+    "de": "Eine Szene wurde abgerufen"
+  },
+  "titleFormatted": {
+    "en": "[[device]] recalled a scene",
+    "fr": "[[device]] a rappelé une scène",
+    "nl": "[[device]] riep een scène op",
+    "de": "[[device]] hat eine Szene abgerufen"
+  },
+  "hint": {
+    "en": "Raw Zigbee scene recall from a remote, with the scene number. Button cards keep working.",
+    "fr": "Rappel de scène Zigbee brut envoyé par une télécommande, avec le numéro de scène. Les cartes bouton restent actives.",
+    "nl": "Ruwe Zigbee-scène-oproep van een afstandsbediening, met het scènenummer. Knopkaarten blijven werken.",
+    "de": "Roher Zigbee-Szenenabruf einer Fernbedienung, mit Szenennummer. Tastenkarten funktionieren weiter."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=*",
+      "title": {
+        "en": "Remote",
+        "fr": "Télécommande",
+        "nl": "Afstandsbediening",
+        "de": "Fernbedienung"
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "name": "scene",
+      "type": "number",
+      "title": {
+        "en": "Scene",
+        "fr": "Scène",
+        "nl": "Scène",
+        "de": "Szene"
+      },
+      "example": 2
+    },
+    {
+      "name": "endpoint",
+      "type": "number",
+      "title": {
+        "en": "Button / endpoint",
+        "fr": "Bouton / endpoint",
+        "nl": "Knop / endpoint",
+        "de": "Taste / Endpunkt"
+      },
+      "example": 1
+    }
+  ]
+}
