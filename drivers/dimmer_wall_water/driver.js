@@ -1,4 +1,5 @@
 'use strict';
+const { safeFlowCard } = require('../../lib/flow/FlowCardPresence'); // P3068: undeclared legacy ids -> logged-once no-op
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
@@ -37,7 +38,7 @@ class Dimmer1gangDriver extends ZigBeeDriver {
     // END TRIGGERS
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('dimmer_wall_water_dimmer_wall_1gang_dimmer_1_f53e3');
+      const card = safeFlowCard(this.homey, 'getConditionCard', 'dimmer_wall_water_dimmer_wall_1gang_dimmer_1_f53e3');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -58,7 +59,7 @@ class Dimmer1gangDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('dimmer_wall_water_dimmer_wall_1gang_dimmer_1_37795');
+      const card = safeFlowCard(this.homey, 'getActionCard', 'dimmer_wall_water_dimmer_wall_1gang_dimmer_1_37795');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -69,7 +70,7 @@ class Dimmer1gangDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_wall_water_dimmer_wall_1gang_dimmer_1_37795: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('dimmer_wall_water_dimmer_wall_1gang_dimmer_1_cd269');
+      const card = safeFlowCard(this.homey, 'getActionCard', 'dimmer_wall_water_dimmer_wall_1gang_dimmer_1_cd269');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -80,7 +81,7 @@ class Dimmer1gangDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_wall_water_dimmer_wall_1gang_dimmer_1_cd269: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('dimmer_wall_water_dimmer_wall_1gang_dimmer_1_cf81f');
+      const card = safeFlowCard(this.homey, 'getActionCard', 'dimmer_wall_water_dimmer_wall_1gang_dimmer_1_cf81f');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -92,7 +93,7 @@ class Dimmer1gangDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_wall_water_dimmer_wall_1gang_dimmer_1_cf81f: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('dimmer_wall_water_dimmer_wall_1gang_dimmer_1_deef8');
+      const card = safeFlowCard(this.homey, 'getActionCard', 'dimmer_wall_water_dimmer_wall_1gang_dimmer_1_deef8');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
