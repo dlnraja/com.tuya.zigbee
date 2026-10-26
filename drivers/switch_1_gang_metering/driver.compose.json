@@ -140,6 +140,23 @@
         "en": "Use if W/kWh readings are 10× too high or low.",
         "fr": "Si W/kWh sont ×10 trop hauts ou bas."
       }
+    },
+    {
+      "id": "energy_source",
+      "type": "label",
+      "value": "default",
+      "label": {
+        "en": "Power value source",
+        "fr": "Origine de la puissance",
+        "de": "Herkunft des Leistungswerts",
+        "nl": "Bron van de vermogenswaarde"
+      },
+      "hint": {
+        "en": "Read-only: measured, calculated (V×I×PF), learned, user (your rated power) or default (approximation).",
+        "fr": "Lecture seule : mesurée, calculée (V×I×PF), apprise, utilisateur (puissance saisie) ou défaut (approximation).",
+        "de": "Nur lesen: gemessen, berechnet (V×I×PF), gelernt, Benutzer (Ihre Nennleistung) oder Standard (Näherung).",
+        "nl": "Alleen-lezen: gemeten, berekend (V×I×PF), geleerd, gebruiker (uw nominaal vermogen) of standaard (benadering)."
+      }
     }
   ]
 }

@@ -797,6 +797,16 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         solarElevation: this.solarElevation,
         logger: (...a) => this.log(...a),
       });
+      // P3067: adaptive lighting — ONE owned app-level 60 s tick for every opted-in light
+      // (default ON per device, global kill switch adaptive_lighting_global, no write until next ON).
+      try {
+        const AdaptiveLightingEngine = require('./lib/lighting/AdaptiveLightingEngine');
+        this.adaptiveLightingEngine = new AdaptiveLightingEngine(this.homey, {
+          solarElevation: this.solarElevation,
+          logger: (...a) => this.log(...a),
+        });
+        this.adaptiveLightingEngine.start();
+      } catch (e) { this.log('[ADAPTIVE] engine not started:', e.message); }
       const MotionCascadeManager = require('./lib/managers/MotionCascadeManager');
       this.motionCascadeManager = new MotionCascadeManager(this.homey, {
         logger: (...a) => this.log(...a),
@@ -1829,6 +1839,8 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
     try { if (this.smartGatewayHub?.stop) { this.smartGatewayHub.stop(); } } catch (e) {}
     this.smartGatewayHub = null;
     try { if (this.featureFlowCards?.destroy) { this.featureFlowCards.destroy(); } } catch (e) {}
+    try { if (this.adaptiveLightingEngine?.destroy) { this.adaptiveLightingEngine.destroy(); } } catch (_e) { /* teardown best effort */ }
+    this.adaptiveLightingEngine = null;
     try { if (this.solarElevation?.destroy) { this.solarElevation.destroy(); } } catch (e) {}
     try { if (this.transitionEngine?.destroy) { this.transitionEngine.destroy(); } } catch (e) {}
     try { if (this.energyHistoryStore?.destroy) { this.energyHistoryStore.destroy(); } } catch (e) {}

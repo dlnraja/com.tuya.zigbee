@@ -153,5 +153,11 @@
   },
   "ui": {
     "quickAction": "onoff"
+  },
+  "energy": {
+    "approximation": {
+      "usageOn": 40,
+      "usageOff": 0.4
+    }
   }
 }

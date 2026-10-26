@@ -1,0 +1,36 @@
+{
+  "_comment": "P3067 (user t580u): LAST-RESORT default power, used only when nothing can be measured or calculated and the user set no rated power. All values are APPROXIMATIONS (W). Precedence: measured > calculated (VxIxPF, integration) > user rated-power > per-couple default > per-driver rule > per-class default. Battery/no-mains devices get null (no estimate). Each value carries why/source.",
+  "version": 1,
+  "classes": {
+    "light":          { "onW": 8,    "standbyW": 0.3, "curve": "linear_dim", "why": "typical 806 lm LED bulb (EU energy label class E/F ~8 W), Zigbee radio standby ~0.3 W" },
+    "socket":         { "onW": 40,   "standbyW": 0.4, "curve": "constant",   "why": "relay/switch module: controlled load unknown -> conservative 40 W; relay coil + radio ~0.4 W" },
+    "fan":            { "onW": 30,   "standbyW": 0.5, "curve": "constant",   "why": "typical small AC/DC fan 20-40 W" },
+    "windowcoverings":{ "onW": 30,   "standbyW": 0.3, "curve": "moving_only","why": "tubular curtain/blind motor ~30 W only while moving" },
+    "curtain":        { "onW": 30,   "standbyW": 0.3, "curve": "moving_only","why": "curtain motor ~30 W only while moving" },
+    "garagedoor":     { "onW": 30,   "standbyW": 0.5, "curve": "moving_only","why": "controller relay; motor power not switched through Homey estimate -> conservative" },
+    "heater":         { "onW": 1000, "standbyW": 0.5, "curve": "constant",   "why": "electric heater default 1000 W, user should set the real load" },
+    "thermostat":     { "onW": 1000, "standbyW": 0.5, "curve": "heating_only","why": "mains heating thermostat: per-load default 1000 W while heating; battery TRVs excluded below" },
+    "kettle":         { "onW": 2000, "standbyW": 0.3, "curve": "constant",   "why": "typical EU kettle 1800-2200 W" },
+    "camera":         { "onW": 3,    "standbyW": 3,   "curve": "constant",   "why": "small Wi-Fi camera ~3 W continuous" },
+    "speaker":        { "onW": 5,    "standbyW": 1,   "curve": "constant",   "why": "small smart speaker" },
+    "vacuumcleaner":  { "onW": null, "standbyW": null,"curve": "none",       "why": "battery robot, dock charging not observable -> no estimate" },
+    "other":          { "onW": 40,   "standbyW": 0.4, "curve": "constant",   "why": "unknown mains load behind a switch -> same conservative 40 W as relays" },
+    "sensor":         { "onW": null, "standbyW": null,"curve": "none",       "why": "battery or negligible mains draw -> no estimate" },
+    "button":         { "onW": null, "standbyW": null,"curve": "none",       "why": "battery -> no estimate" },
+    "remote":         { "onW": null, "standbyW": null,"curve": "none",       "why": "battery -> no estimate" },
+    "lock":           { "onW": null, "standbyW": null,"curve": "none",       "why": "battery -> no estimate" },
+    "doorbell":       { "onW": null, "standbyW": null,"curve": "none",       "why": "battery/transformer -> no estimate" },
+    "homealarm":      { "onW": null, "standbyW": null,"curve": "none",       "why": "no estimate" }
+  },
+  "driverRules": [
+    { "match": "led_strip|led_controller|light_strip|rgb_.*strip", "onW": 12, "standbyW": 0.5, "curve": "linear_dim", "why": "LED strip ~12 W per metre at full white; 1 m assumed, set real length x W/m" },
+    { "match": "dimmer",                          "onW": 40, "standbyW": 0.5, "curve": "linear_dim", "why": "dimmer: controlled load unknown -> 40 W conservative" },
+    { "match": "plug",                            "onW": 0.5,"standbyW": 0.5, "curve": "constant",   "why": "plug without meter: only its own standby is known (~0.5 W); set the plugged load" },
+    { "match": "^device_air_purifier_|sensor|siren|scene_panel|presence|heat_pump", "onW": null, "standbyW": null, "curve": "none", "why": "battery, hybrid or unknown-load device -> no estimate rather than a misleading one" },
+    { "match": "(^|_)ir(_|$)|infrared|blaster", "onW": 1, "standbyW": 1, "curve": "constant", "why": "IR blaster ~1 W continuous" },
+    { "match": "purifier|humidifier", "onW": 25, "standbyW": 0.5, "curve": "constant", "why": "small HEPA purifier / humidifier 15-40 W typical" },
+    { "match": "radiator_valve|trv|valve",        "onW": null,"standbyW": null,"curve": "none",      "why": "battery TRV/valve -> no mains estimate" },
+    { "match": "usb",                             "onW": 10, "standbyW": 0.3, "curve": "constant",   "why": "USB charger output ~10 W typical" }
+  ],
+  "couples": {}
+}
