@@ -78,5 +78,16 @@
     "$extends": [
       "zcl_cluster_layer"
     ]
+  },
+  {
+    "id": "energy_source",
+    "type": "label",
+    "value": "default",
+    "label": {
+      "en": "Power value source",
+      "fr": "Origine de la puissance",
+      "de": "Herkunft des Leistungswerts",
+      "nl": "Bron van de vermogenswaarde"
+    }
   }
 ]
