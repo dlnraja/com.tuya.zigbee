@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-27T00:22:57.540Z",
+ "generated": "2026-10-27T01:36:58.455Z",
  "drivers": 417,
  "snapshot": {
   "air_conditioner_aetz01": {
@@ -417,9 +417,9 @@
    "pidSha": "00ba96ff94eb4bb5"
   },
   "curtain_motor_shutter": {
-   "mfr": 23,
+   "mfr": 22,
    "pid": 44,
-   "mfrSha": "dfa8050fee5126dd",
+   "mfrSha": "7e4c69e6b0fc5922",
    "pidSha": "167ad4e6d48fc2fa"
   },
   "curtain_motor_tilt": {
@@ -1233,9 +1233,9 @@
    "pidSha": "d68625ae238bbefa"
   },
   "pir_sensor_2": {
-   "mfr": 12,
+   "mfr": 10,
    "pid": 35,
-   "mfrSha": "a6d514e75037056e",
+   "mfrSha": "36acb20f9fd6b6f3",
    "pidSha": "170e7d8f355a0e2c"
   },
   "pirsensor": {
@@ -1245,15 +1245,15 @@
    "pidSha": "6996f64d93016bc6"
   },
   "plug": {
-   "mfr": 12,
+   "mfr": 11,
    "pid": 6,
-   "mfrSha": "ffc9e85cbc557640",
+   "mfrSha": "496eebabc0c776a2",
    "pidSha": "cd8cc01224270f0e"
   },
   "plug_energy_monitor": {
-   "mfr": 62,
+   "mfr": 61,
    "pid": 77,
-   "mfrSha": "62a2e1f7c8006c5f",
+   "mfrSha": "b9b8e06c82dabd67",
    "pidSha": "996946b3efddf5b8"
   },
   "plug_smart": {
@@ -1617,9 +1617,9 @@
    "pidSha": "eb0037885ed202bb"
   },
   "sensor_contact_zigbee": {
-   "mfr": 44,
+   "mfr": 43,
    "pid": 33,
-   "mfrSha": "238e6be589442594",
+   "mfrSha": "ba89e3455b812e58",
    "pidSha": "7fa640aea3e70b55"
   },
   "sensor_gas_presence": {

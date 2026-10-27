@@ -1,11 +1,11 @@
 {
  "generated": "2026-10-27",
  "summary": {
-  "total": 523,
-  "attested": 25,
+  "total": 482,
+  "attested": 21,
   "diag": 0,
   "pinned": 10,
-  "unattested": 497
+  "unattested": 460
  },
  "couples": [
   {
@@ -2254,7 +2254,6 @@
    "drivers": [
     "button_wireless_1",
     "presence_sensor_radar",
-    "sensor_contact_zigbee",
     "switch_3gang"
    ],
    "pattern": "cross class (button/sensor/socket)",
@@ -2289,18 +2288,6 @@
       "zg-204ze",
       "zg-204zh",
       "zg-204zk"
-     ]
-    },
-    "sensor_contact_zigbee": {
-     "canDropPid": false,
-     "pidCost": 43,
-     "pidBlockers": [],
-     "unverifiedMfrs": 28,
-     "canDropMfr": false,
-     "mfrCost": 32,
-     "mfrBlockers": [
-      "ts0003",
-      "ts0013"
      ]
     },
     "switch_3gang": {
@@ -2391,7 +2378,6 @@
     "ir_blaster",
     "presence_sensor_radar",
     "rain_sensor",
-    "sensor_contact_zigbee",
     "siren",
     "soil_sensor",
     "switch_1gang",
@@ -2529,22 +2515,6 @@
      "mfrCost": 3,
      "mfrBlockers": [
       "zg-223z"
-     ]
-    },
-    "sensor_contact_zigbee": {
-     "canDropPid": false,
-     "pidCost": 43,
-     "pidBlockers": [
-      "_tze200_2m38mh6k",
-      "_tze284_2baujqot",
-      "immax"
-     ],
-     "unverifiedMfrs": 28,
-     "canDropMfr": false,
-     "mfrCost": 32,
-     "mfrBlockers": [
-      "ts0003",
-      "ts0013"
      ]
     },
     "siren": {
@@ -2945,7 +2915,7 @@
     },
     "sensor_contact_zigbee": {
      "canDropPid": false,
-     "pidCost": 43,
+     "pidCost": 42,
      "pidBlockers": [],
      "unverifiedMfrs": 27,
      "canDropMfr": false,
@@ -3146,7 +3116,7 @@
     },
     "sensor_contact_zigbee": {
      "canDropPid": false,
-     "pidCost": 43,
+     "pidCost": 42,
      "pidBlockers": [
       "_tze200_2m38mh6k",
       "_tze284_2baujqot",
@@ -4677,7 +4647,7 @@
     },
     "plug_energy_monitor": {
      "canDropPid": false,
-     "pidCost": 61,
+     "pidCost": 60,
      "pidBlockers": [],
      "unverifiedMfrs": 24,
      "canDropMfr": false,
@@ -4716,7 +4686,7 @@
     },
     "plug_energy_monitor": {
      "canDropPid": false,
-     "pidCost": 61,
+     "pidCost": 60,
      "pidBlockers": [],
      "unverifiedMfrs": 24,
      "canDropMfr": false,
@@ -4755,7 +4725,7 @@
     },
     "plug_energy_monitor": {
      "canDropPid": false,
-     "pidCost": 61,
+     "pidCost": 60,
      "pidBlockers": [],
      "unverifiedMfrs": 24,
      "canDropMfr": false,
@@ -4794,7 +4764,7 @@
     },
     "plug_energy_monitor": {
      "canDropPid": false,
-     "pidCost": 61,
+     "pidCost": 60,
      "pidBlockers": [],
      "unverifiedMfrs": 24,
      "canDropMfr": false,
@@ -4833,7 +4803,7 @@
     },
     "plug_energy_monitor": {
      "canDropPid": false,
-     "pidCost": 61,
+     "pidCost": 60,
      "pidBlockers": [],
      "unverifiedMfrs": 24,
      "canDropMfr": false,
@@ -4872,7 +4842,7 @@
     },
     "plug_energy_monitor": {
      "canDropPid": false,
-     "pidCost": 61,
+     "pidCost": 60,
      "pidBlockers": [],
      "unverifiedMfrs": 24,
      "canDropMfr": false,
@@ -4911,7 +4881,7 @@
     },
     "plug_energy_monitor": {
      "canDropPid": false,
-     "pidCost": 61,
+     "pidCost": 60,
      "pidBlockers": [],
      "unverifiedMfrs": 24,
      "canDropMfr": false,
@@ -4950,7 +4920,7 @@
     },
     "plug_energy_monitor": {
      "canDropPid": false,
-     "pidCost": 61,
+     "pidCost": 60,
      "pidBlockers": [],
      "unverifiedMfrs": 24,
      "canDropMfr": false,
@@ -4991,7 +4961,7 @@
     },
     "plug_energy_monitor": {
      "canDropPid": false,
-     "pidCost": 61,
+     "pidCost": 60,
      "pidBlockers": [],
      "unverifiedMfrs": 24,
      "canDropMfr": false,
@@ -5030,7 +5000,7 @@
     },
     "plug_energy_monitor": {
      "canDropPid": false,
-     "pidCost": 61,
+     "pidCost": 60,
      "pidBlockers": [],
      "unverifiedMfrs": 24,
      "canDropMfr": false,
@@ -5069,7 +5039,7 @@
     },
     "plug_energy_monitor": {
      "canDropPid": false,
-     "pidCost": 61,
+     "pidCost": 60,
      "pidBlockers": [],
      "unverifiedMfrs": 24,
      "canDropMfr": false,
@@ -5108,7 +5078,7 @@
     },
     "plug_energy_monitor": {
      "canDropPid": false,
-     "pidCost": 61,
+     "pidCost": 60,
      "pidBlockers": [],
      "unverifiedMfrs": 24,
      "canDropMfr": false,
@@ -5147,7 +5117,7 @@
     },
     "plug_energy_monitor": {
      "canDropPid": false,
-     "pidCost": 61,
+     "pidCost": 60,
      "pidBlockers": [],
      "unverifiedMfrs": 24,
      "canDropMfr": false,
@@ -5188,7 +5158,7 @@
     },
     "plug_energy_monitor": {
      "canDropPid": false,
-     "pidCost": 61,
+     "pidCost": 60,
      "pidBlockers": [],
      "unverifiedMfrs": 24,
      "canDropMfr": false,
@@ -5233,7 +5203,7 @@
     },
     "plug_energy_monitor": {
      "canDropPid": false,
-     "pidCost": 61,
+     "pidCost": 60,
      "pidBlockers": [],
      "unverifiedMfrs": 24,
      "canDropMfr": false,
@@ -5272,7 +5242,7 @@
     },
     "plug_energy_monitor": {
      "canDropPid": false,
-     "pidCost": 61,
+     "pidCost": 60,
      "pidBlockers": [],
      "unverifiedMfrs": 24,
      "canDropMfr": false,
@@ -5311,7 +5281,7 @@
     },
     "plug_energy_monitor": {
      "canDropPid": false,
-     "pidCost": 61,
+     "pidCost": 60,
      "pidBlockers": [],
      "unverifiedMfrs": 24,
      "canDropMfr": false,
@@ -5348,13 +5318,13 @@
     },
     "plug_energy_monitor": {
      "canDropPid": false,
-     "pidCost": 61,
+     "pidCost": 60,
      "pidBlockers": [
       "_tz3000_okaz9tjs",
       "_tz3000_5ct6e7ye",
       "_tz3000_6l1pjfqe",
       "_tz3000_fqoynhku",
-      "_tz3000_wamqdr3f"
+      "_tz3000_2iiimqs9"
      ],
      "unverifiedMfrs": 24,
      "canDropMfr": false,
@@ -5391,7 +5361,7 @@
     },
     "plug_energy_monitor": {
      "canDropPid": false,
-     "pidCost": 61,
+     "pidCost": 60,
      "pidBlockers": [
       "_tze204_apiu8k13",
       "_tze284_q9qytwfa"
@@ -5433,7 +5403,7 @@
     },
     "plug_energy_monitor": {
      "canDropPid": false,
-     "pidCost": 61,
+     "pidCost": 60,
      "pidBlockers": [],
      "unverifiedMfrs": 24,
      "canDropMfr": false,
@@ -5472,7 +5442,7 @@
     },
     "plug_energy_monitor": {
      "canDropPid": false,
-     "pidCost": 61,
+     "pidCost": 60,
      "pidBlockers": [],
      "unverifiedMfrs": 24,
      "canDropMfr": false,
@@ -5511,7 +5481,7 @@
     },
     "plug_energy_monitor": {
      "canDropPid": false,
-     "pidCost": 61,
+     "pidCost": 60,
      "pidBlockers": [],
      "unverifiedMfrs": 24,
      "canDropMfr": false,
@@ -5550,7 +5520,7 @@
     },
     "plug_energy_monitor": {
      "canDropPid": false,
-     "pidCost": 61,
+     "pidCost": 60,
      "pidBlockers": [],
      "unverifiedMfrs": 24,
      "canDropMfr": false,
@@ -5589,7 +5559,7 @@
     },
     "plug_energy_monitor": {
      "canDropPid": false,
-     "pidCost": 61,
+     "pidCost": 60,
      "pidBlockers": [],
      "unverifiedMfrs": 24,
      "canDropMfr": false,
@@ -5628,7 +5598,7 @@
     },
     "plug_energy_monitor": {
      "canDropPid": false,
-     "pidCost": 61,
+     "pidCost": 60,
      "pidBlockers": [],
      "unverifiedMfrs": 24,
      "canDropMfr": false,
@@ -5667,7 +5637,7 @@
     },
     "plug_energy_monitor": {
      "canDropPid": false,
-     "pidCost": 61,
+     "pidCost": 60,
      "pidBlockers": [],
      "unverifiedMfrs": 24,
      "canDropMfr": false,
@@ -5706,7 +5676,7 @@
     },
     "plug_energy_monitor": {
      "canDropPid": false,
-     "pidCost": 61,
+     "pidCost": 60,
      "pidBlockers": [],
      "unverifiedMfrs": 24,
      "canDropMfr": false,
@@ -5745,7 +5715,7 @@
     },
     "plug_energy_monitor": {
      "canDropPid": false,
-     "pidCost": 61,
+     "pidCost": 60,
      "pidBlockers": [],
      "unverifiedMfrs": 24,
      "canDropMfr": false,
@@ -5784,7 +5754,7 @@
     },
     "plug_energy_monitor": {
      "canDropPid": false,
-     "pidCost": 61,
+     "pidCost": 60,
      "pidBlockers": [],
      "unverifiedMfrs": 24,
      "canDropMfr": false,
@@ -5823,7 +5793,7 @@
     },
     "plug_energy_monitor": {
      "canDropPid": false,
-     "pidCost": 61,
+     "pidCost": 60,
      "pidBlockers": [],
      "unverifiedMfrs": 24,
      "canDropMfr": false,
@@ -5862,7 +5832,7 @@
     },
     "plug_energy_monitor": {
      "canDropPid": false,
-     "pidCost": 61,
+     "pidCost": 60,
      "pidBlockers": [],
      "unverifiedMfrs": 24,
      "canDropMfr": false,
@@ -5901,7 +5871,7 @@
     },
     "plug_energy_monitor": {
      "canDropPid": false,
-     "pidCost": 61,
+     "pidCost": 60,
      "pidBlockers": [],
      "unverifiedMfrs": 24,
      "canDropMfr": false,
@@ -5940,7 +5910,7 @@
     },
     "plug_energy_monitor": {
      "canDropPid": false,
-     "pidCost": 61,
+     "pidCost": 60,
      "pidBlockers": [],
      "unverifiedMfrs": 24,
      "canDropMfr": false,
@@ -8164,7 +8134,6 @@
    "drivers": [
     "contact_sensor",
     "presence_sensor_radar",
-    "sensor_contact_zigbee",
     "switch_1gang"
    ],
    "pattern": "cross class (sensor/socket)",
@@ -8207,24 +8176,6 @@
       "zg-204zk"
      ]
     },
-    "sensor_contact_zigbee": {
-     "canDropPid": false,
-     "pidCost": 43,
-     "pidBlockers": [
-      "_tz3000_rid8lzvo",
-      "_tz3000_uvti8nkd",
-      "_tz3000_wbrlnkm9",
-      "_tz3000_wut53hfm",
-      "_tz3000_zgrffiwg"
-     ],
-     "unverifiedMfrs": 28,
-     "canDropMfr": false,
-     "mfrCost": 32,
-     "mfrBlockers": [
-      "ts0003",
-      "ts0013"
-     ]
-    },
     "switch_1gang": {
      "canDropPid": false,
      "pidCost": 351,
@@ -8237,878 +8188,6 @@
       "ts0003",
       "ts0012",
       "ts011f"
-     ]
-    }
-   }
-  },
-  {
-   "mfr": "hobeian",
-   "pid": "3300-S",
-   "drivers": [
-    "contact_sensor",
-    "sensor_contact_zigbee"
-   ],
-   "pattern": "same class duplicate (sensor)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "contact_sensor": {
-     "canDropPid": false,
-     "pidCost": 60,
-     "pidBlockers": [],
-     "unverifiedMfrs": 9,
-     "canDropMfr": false,
-     "mfrCost": 25,
-     "mfrBlockers": [
-      "zg-102z"
-     ]
-    },
-    "sensor_contact_zigbee": {
-     "canDropPid": false,
-     "pidCost": 43,
-     "pidBlockers": [],
-     "unverifiedMfrs": 28,
-     "canDropMfr": false,
-     "mfrCost": 32,
-     "mfrBlockers": [
-      "ts0003",
-      "ts0013"
-     ]
-    }
-   }
-  },
-  {
-   "mfr": "hobeian",
-   "pid": "3320-L",
-   "drivers": [
-    "contact_sensor",
-    "sensor_contact_zigbee"
-   ],
-   "pattern": "same class duplicate (sensor)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "contact_sensor": {
-     "canDropPid": false,
-     "pidCost": 60,
-     "pidBlockers": [],
-     "unverifiedMfrs": 9,
-     "canDropMfr": false,
-     "mfrCost": 25,
-     "mfrBlockers": [
-      "zg-102z"
-     ]
-    },
-    "sensor_contact_zigbee": {
-     "canDropPid": false,
-     "pidCost": 43,
-     "pidBlockers": [],
-     "unverifiedMfrs": 28,
-     "canDropMfr": false,
-     "mfrCost": 32,
-     "mfrBlockers": [
-      "ts0003",
-      "ts0013"
-     ]
-    }
-   }
-  },
-  {
-   "mfr": "hobeian",
-   "pid": "CK-TLSR8656-SS5-01(7003)",
-   "drivers": [
-    "contact_sensor",
-    "sensor_contact_zigbee"
-   ],
-   "pattern": "same class duplicate (sensor)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "contact_sensor": {
-     "canDropPid": false,
-     "pidCost": 60,
-     "pidBlockers": [
-      "ewelink"
-     ],
-     "unverifiedMfrs": 9,
-     "canDropMfr": false,
-     "mfrCost": 25,
-     "mfrBlockers": [
-      "zg-102z"
-     ]
-    },
-    "sensor_contact_zigbee": {
-     "canDropPid": false,
-     "pidCost": 43,
-     "pidBlockers": [],
-     "unverifiedMfrs": 28,
-     "canDropMfr": false,
-     "mfrCost": 32,
-     "mfrBlockers": [
-      "ts0003",
-      "ts0013"
-     ]
-    }
-   }
-  },
-  {
-   "mfr": "hobeian",
-   "pid": "DOORWINDOW-SENSOR-ZB3.0",
-   "drivers": [
-    "contact_sensor",
-    "sensor_contact_zigbee"
-   ],
-   "pattern": "same class duplicate (sensor)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "contact_sensor": {
-     "canDropPid": false,
-     "pidCost": 60,
-     "pidBlockers": [
-      "_tz3000_7tbsruql",
-      "_tz3000_8yhypbo7",
-      "_tz3000_cqlnswn0",
-      "_tz3000_hkcpblrs",
-      "_tz3000_osu834un"
-     ],
-     "unverifiedMfrs": 9,
-     "canDropMfr": false,
-     "mfrCost": 25,
-     "mfrBlockers": [
-      "zg-102z"
-     ]
-    },
-    "sensor_contact_zigbee": {
-     "canDropPid": false,
-     "pidCost": 43,
-     "pidBlockers": [
-      "immax"
-     ],
-     "unverifiedMfrs": 28,
-     "canDropMfr": false,
-     "mfrCost": 32,
-     "mfrBlockers": [
-      "ts0003",
-      "ts0013"
-     ]
-    }
-   }
-  },
-  {
-   "mfr": "hobeian",
-   "pid": "DS01",
-   "drivers": [
-    "contact_sensor",
-    "sensor_contact_zigbee"
-   ],
-   "pattern": "same class duplicate (sensor)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "contact_sensor": {
-     "canDropPid": false,
-     "pidCost": 60,
-     "pidBlockers": [
-      "ewelink"
-     ],
-     "unverifiedMfrs": 9,
-     "canDropMfr": false,
-     "mfrCost": 25,
-     "mfrBlockers": [
-      "zg-102z"
-     ]
-    },
-    "sensor_contact_zigbee": {
-     "canDropPid": false,
-     "pidCost": 43,
-     "pidBlockers": [],
-     "unverifiedMfrs": 28,
-     "canDropMfr": false,
-     "mfrCost": 32,
-     "mfrBlockers": [
-      "ts0003",
-      "ts0013"
-     ]
-    }
-   }
-  },
-  {
-   "mfr": "hobeian",
-   "pid": "E1603/E1702",
-   "drivers": [
-    "contact_sensor",
-    "sensor_contact_zigbee"
-   ],
-   "pattern": "same class duplicate (sensor)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "contact_sensor": {
-     "canDropPid": false,
-     "pidCost": 60,
-     "pidBlockers": [],
-     "unverifiedMfrs": 9,
-     "canDropMfr": false,
-     "mfrCost": 25,
-     "mfrBlockers": [
-      "zg-102z"
-     ]
-    },
-    "sensor_contact_zigbee": {
-     "canDropPid": false,
-     "pidCost": 43,
-     "pidBlockers": [],
-     "unverifiedMfrs": 28,
-     "canDropMfr": false,
-     "mfrCost": 32,
-     "mfrBlockers": [
-      "ts0003",
-      "ts0013"
-     ]
-    }
-   }
-  },
-  {
-   "mfr": "hobeian",
-   "pid": "LUMI.MAGNET.AC01",
-   "drivers": [
-    "contact_sensor",
-    "sensor_contact_zigbee"
-   ],
-   "pattern": "same class duplicate (sensor)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "contact_sensor": {
-     "canDropPid": false,
-     "pidCost": 60,
-     "pidBlockers": [],
-     "unverifiedMfrs": 9,
-     "canDropMfr": false,
-     "mfrCost": 25,
-     "mfrBlockers": [
-      "zg-102z"
-     ]
-    },
-    "sensor_contact_zigbee": {
-     "canDropPid": false,
-     "pidCost": 43,
-     "pidBlockers": [],
-     "unverifiedMfrs": 28,
-     "canDropMfr": false,
-     "mfrCost": 32,
-     "mfrBlockers": [
-      "ts0003",
-      "ts0013"
-     ]
-    }
-   }
-  },
-  {
-   "mfr": "hobeian",
-   "pid": "LUMI.MAGNET.AGL02",
-   "drivers": [
-    "contact_sensor",
-    "sensor_contact_zigbee"
-   ],
-   "pattern": "same class duplicate (sensor)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "contact_sensor": {
-     "canDropPid": false,
-     "pidCost": 60,
-     "pidBlockers": [],
-     "unverifiedMfrs": 9,
-     "canDropMfr": false,
-     "mfrCost": 25,
-     "mfrBlockers": [
-      "zg-102z"
-     ]
-    },
-    "sensor_contact_zigbee": {
-     "canDropPid": false,
-     "pidCost": 43,
-     "pidBlockers": [],
-     "unverifiedMfrs": 28,
-     "canDropMfr": false,
-     "mfrCost": 32,
-     "mfrBlockers": [
-      "ts0003",
-      "ts0013"
-     ]
-    }
-   }
-  },
-  {
-   "mfr": "hobeian",
-   "pid": "LUMI.SENSOR_MAGNET",
-   "drivers": [
-    "contact_sensor",
-    "sensor_contact_zigbee"
-   ],
-   "pattern": "same class duplicate (sensor)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "contact_sensor": {
-     "canDropPid": false,
-     "pidCost": 60,
-     "pidBlockers": [],
-     "unverifiedMfrs": 9,
-     "canDropMfr": false,
-     "mfrCost": 25,
-     "mfrBlockers": [
-      "zg-102z"
-     ]
-    },
-    "sensor_contact_zigbee": {
-     "canDropPid": false,
-     "pidCost": 43,
-     "pidBlockers": [],
-     "unverifiedMfrs": 28,
-     "canDropMfr": false,
-     "mfrCost": 32,
-     "mfrBlockers": [
-      "ts0003",
-      "ts0013"
-     ]
-    }
-   }
-  },
-  {
-   "mfr": "hobeian",
-   "pid": "LUMI.SENSOR_MAGNET.AQ2",
-   "drivers": [
-    "contact_sensor",
-    "sensor_contact_zigbee"
-   ],
-   "pattern": "same class duplicate (sensor)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "contact_sensor": {
-     "canDropPid": false,
-     "pidCost": 60,
-     "pidBlockers": [],
-     "unverifiedMfrs": 9,
-     "canDropMfr": false,
-     "mfrCost": 25,
-     "mfrBlockers": [
-      "zg-102z"
-     ]
-    },
-    "sensor_contact_zigbee": {
-     "canDropPid": false,
-     "pidCost": 43,
-     "pidBlockers": [],
-     "unverifiedMfrs": 28,
-     "canDropMfr": false,
-     "mfrCost": 32,
-     "mfrBlockers": [
-      "ts0003",
-      "ts0013"
-     ]
-    }
-   }
-  },
-  {
-   "mfr": "hobeian",
-   "pid": "MCCGQ01LM",
-   "drivers": [
-    "contact_sensor",
-    "sensor_contact_zigbee"
-   ],
-   "pattern": "same class duplicate (sensor)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "contact_sensor": {
-     "canDropPid": false,
-     "pidCost": 60,
-     "pidBlockers": [],
-     "unverifiedMfrs": 9,
-     "canDropMfr": false,
-     "mfrCost": 25,
-     "mfrBlockers": [
-      "zg-102z"
-     ]
-    },
-    "sensor_contact_zigbee": {
-     "canDropPid": false,
-     "pidCost": 43,
-     "pidBlockers": [],
-     "unverifiedMfrs": 28,
-     "canDropMfr": false,
-     "mfrCost": 32,
-     "mfrBlockers": [
-      "ts0003",
-      "ts0013"
-     ]
-    }
-   }
-  },
-  {
-   "mfr": "hobeian",
-   "pid": "MCCGQ11LM",
-   "drivers": [
-    "contact_sensor",
-    "sensor_contact_zigbee"
-   ],
-   "pattern": "same class duplicate (sensor)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "contact_sensor": {
-     "canDropPid": false,
-     "pidCost": 60,
-     "pidBlockers": [],
-     "unverifiedMfrs": 9,
-     "canDropMfr": false,
-     "mfrCost": 25,
-     "mfrBlockers": [
-      "zg-102z"
-     ]
-    },
-    "sensor_contact_zigbee": {
-     "canDropPid": false,
-     "pidCost": 43,
-     "pidBlockers": [],
-     "unverifiedMfrs": 28,
-     "canDropMfr": false,
-     "mfrCost": 32,
-     "mfrBlockers": [
-      "ts0003",
-      "ts0013"
-     ]
-    }
-   }
-  },
-  {
-   "mfr": "hobeian",
-   "pid": "MCCGQ12LM",
-   "drivers": [
-    "contact_sensor",
-    "sensor_contact_zigbee"
-   ],
-   "pattern": "same class duplicate (sensor)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "contact_sensor": {
-     "canDropPid": false,
-     "pidCost": 60,
-     "pidBlockers": [],
-     "unverifiedMfrs": 9,
-     "canDropMfr": false,
-     "mfrCost": 25,
-     "mfrBlockers": [
-      "zg-102z"
-     ]
-    },
-    "sensor_contact_zigbee": {
-     "canDropPid": false,
-     "pidCost": 43,
-     "pidBlockers": [],
-     "unverifiedMfrs": 28,
-     "canDropMfr": false,
-     "mfrCost": 32,
-     "mfrBlockers": [
-      "ts0003",
-      "ts0013"
-     ]
-    }
-   }
-  },
-  {
-   "mfr": "hobeian",
-   "pid": "MCCGQ14LM",
-   "drivers": [
-    "contact_sensor",
-    "sensor_contact_zigbee"
-   ],
-   "pattern": "same class duplicate (sensor)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "contact_sensor": {
-     "canDropPid": false,
-     "pidCost": 60,
-     "pidBlockers": [],
-     "unverifiedMfrs": 9,
-     "canDropMfr": false,
-     "mfrCost": 25,
-     "mfrBlockers": [
-      "zg-102z"
-     ]
-    },
-    "sensor_contact_zigbee": {
-     "canDropPid": false,
-     "pidCost": 43,
-     "pidBlockers": [],
-     "unverifiedMfrs": 28,
-     "canDropMfr": false,
-     "mfrCost": 32,
-     "mfrBlockers": [
-      "ts0003",
-      "ts0013"
-     ]
-    }
-   }
-  },
-  {
-   "mfr": "hobeian",
-   "pid": "MCT-340 E",
-   "drivers": [
-    "contact_sensor",
-    "sensor_contact_zigbee"
-   ],
-   "pattern": "same class duplicate (sensor)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "contact_sensor": {
-     "canDropPid": false,
-     "pidCost": 60,
-     "pidBlockers": [
-      "_tz3000_7tbsruql",
-      "_tz3000_8yhypbo7",
-      "_tz3000_cqlnswn0",
-      "_tz3000_hkcpblrs",
-      "_tz3000_osu834un"
-     ],
-     "unverifiedMfrs": 9,
-     "canDropMfr": false,
-     "mfrCost": 25,
-     "mfrBlockers": [
-      "zg-102z"
-     ]
-    },
-    "sensor_contact_zigbee": {
-     "canDropPid": false,
-     "pidCost": 43,
-     "pidBlockers": [
-      "immax"
-     ],
-     "unverifiedMfrs": 28,
-     "canDropMfr": false,
-     "mfrCost": 32,
-     "mfrBlockers": [
-      "ts0003",
-      "ts0013"
-     ]
-    }
-   }
-  },
-  {
-   "mfr": "hobeian",
-   "pid": "SNZB-04",
-   "drivers": [
-    "contact_sensor",
-    "sensor_contact_zigbee"
-   ],
-   "pattern": "same class duplicate (sensor)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "contact_sensor": {
-     "canDropPid": false,
-     "pidCost": 60,
-     "pidBlockers": [
-      "_tyzb01_xph99wvr",
-      "_tz3000_1bwpjvlz",
-      "_tz3000_26fmupbb",
-      "_tz3000_2mbfxlzr",
-      "_tz3000_402jjyro"
-     ],
-     "unverifiedMfrs": 9,
-     "canDropMfr": false,
-     "mfrCost": 25,
-     "mfrBlockers": [
-      "zg-102z"
-     ]
-    },
-    "sensor_contact_zigbee": {
-     "canDropPid": false,
-     "pidCost": 43,
-     "pidBlockers": [
-      "_tz3000_wut53hfm"
-     ],
-     "unverifiedMfrs": 28,
-     "canDropMfr": false,
-     "mfrCost": 32,
-     "mfrBlockers": [
-      "ts0003",
-      "ts0013"
-     ]
-    }
-   }
-  },
-  {
-   "mfr": "hobeian",
-   "pid": "SNZB-04P",
-   "drivers": [
-    "contact_sensor",
-    "sensor_contact_zigbee"
-   ],
-   "pattern": "same class duplicate (sensor)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "contact_sensor": {
-     "canDropPid": false,
-     "pidCost": 60,
-     "pidBlockers": [
-      "ewelink"
-     ],
-     "unverifiedMfrs": 9,
-     "canDropMfr": false,
-     "mfrCost": 25,
-     "mfrBlockers": [
-      "zg-102z"
-     ]
-    },
-    "sensor_contact_zigbee": {
-     "canDropPid": false,
-     "pidCost": 43,
-     "pidBlockers": [],
-     "unverifiedMfrs": 28,
-     "canDropMfr": false,
-     "mfrCost": 32,
-     "mfrBlockers": [
-      "ts0003",
-      "ts0013"
-     ]
-    }
-   }
-  },
-  {
-   "mfr": "hobeian",
-   "pid": "SNZB-04PR2",
-   "drivers": [
-    "contact_sensor",
-    "sensor_contact_zigbee"
-   ],
-   "pattern": "same class duplicate (sensor)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "contact_sensor": {
-     "canDropPid": false,
-     "pidCost": 60,
-     "pidBlockers": [],
-     "unverifiedMfrs": 9,
-     "canDropMfr": false,
-     "mfrCost": 25,
-     "mfrBlockers": [
-      "zg-102z"
-     ]
-    },
-    "sensor_contact_zigbee": {
-     "canDropPid": false,
-     "pidCost": 43,
-     "pidBlockers": [],
-     "unverifiedMfrs": 28,
-     "canDropMfr": false,
-     "mfrCost": 32,
-     "mfrBlockers": [
-      "ts0003",
-      "ts0013"
-     ]
-    }
-   }
-  },
-  {
-   "mfr": "hobeian",
-   "pid": "SNZB-04R2",
-   "drivers": [
-    "contact_sensor",
-    "sensor_contact_zigbee"
-   ],
-   "pattern": "same class duplicate (sensor)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "contact_sensor": {
-     "canDropPid": false,
-     "pidCost": 60,
-     "pidBlockers": [],
-     "unverifiedMfrs": 9,
-     "canDropMfr": false,
-     "mfrCost": 25,
-     "mfrBlockers": [
-      "zg-102z"
-     ]
-    },
-    "sensor_contact_zigbee": {
-     "canDropPid": false,
-     "pidCost": 43,
-     "pidBlockers": [],
-     "unverifiedMfrs": 28,
-     "canDropMfr": false,
-     "mfrCost": 32,
-     "mfrBlockers": [
-      "ts0003",
-      "ts0013"
-     ]
-    }
-   }
-  },
-  {
-   "mfr": "hobeian",
-   "pid": "TRADFRI OPEN/CLOSE REMOTE",
-   "drivers": [
-    "contact_sensor",
-    "sensor_contact_zigbee"
-   ],
-   "pattern": "same class duplicate (sensor)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "contact_sensor": {
-     "canDropPid": false,
-     "pidCost": 60,
-     "pidBlockers": [],
-     "unverifiedMfrs": 9,
-     "canDropMfr": false,
-     "mfrCost": 25,
-     "mfrBlockers": [
-      "zg-102z"
-     ]
-    },
-    "sensor_contact_zigbee": {
-     "canDropPid": false,
-     "pidCost": 43,
-     "pidBlockers": [],
-     "unverifiedMfrs": 28,
-     "canDropMfr": false,
-     "mfrCost": 32,
-     "mfrBlockers": [
-      "ts0003",
-      "ts0013"
-     ]
-    }
-   }
-  },
-  {
-   "mfr": "hobeian",
-   "pid": "TS0021",
-   "drivers": [
-    "contact_sensor",
-    "sensor_contact_zigbee"
-   ],
-   "pattern": "same class duplicate (sensor)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "contact_sensor": {
-     "canDropPid": false,
-     "pidCost": 60,
-     "pidBlockers": [],
-     "unverifiedMfrs": 9,
-     "canDropMfr": false,
-     "mfrCost": 25,
-     "mfrBlockers": [
-      "zg-102z"
-     ]
-    },
-    "sensor_contact_zigbee": {
-     "canDropPid": false,
-     "pidCost": 43,
-     "pidBlockers": [
-      "_tz3210_3ulg9kpo"
-     ],
-     "unverifiedMfrs": 28,
-     "canDropMfr": false,
-     "mfrCost": 32,
-     "mfrBlockers": [
-      "ts0003",
-      "ts0013"
      ]
     }
    }
@@ -9156,7 +8235,7 @@
     },
     "sensor_contact_zigbee": {
      "canDropPid": false,
-     "pidCost": 43,
+     "pidCost": 42,
      "pidBlockers": [
       "_tz3000_rid8lzvo",
       "_tz3000_uvti8nkd",
@@ -9206,7 +8285,7 @@
     },
     "sensor_contact_zigbee": {
      "canDropPid": false,
-     "pidCost": 43,
+     "pidCost": 42,
      "pidBlockers": [],
      "unverifiedMfrs": 27,
      "canDropMfr": false,
@@ -9241,7 +8320,7 @@
     },
     "sensor_contact_zigbee": {
      "canDropPid": false,
-     "pidCost": 43,
+     "pidCost": 42,
      "pidBlockers": [],
      "unverifiedMfrs": 27,
      "canDropMfr": false,
@@ -9278,7 +8357,7 @@
     },
     "sensor_contact_zigbee": {
      "canDropPid": false,
-     "pidCost": 43,
+     "pidCost": 42,
      "pidBlockers": [],
      "unverifiedMfrs": 27,
      "canDropMfr": false,
@@ -9319,7 +8398,7 @@
     },
     "sensor_contact_zigbee": {
      "canDropPid": false,
-     "pidCost": 43,
+     "pidCost": 42,
      "pidBlockers": [
       "immax"
      ],
@@ -9358,7 +8437,7 @@
     },
     "sensor_contact_zigbee": {
      "canDropPid": false,
-     "pidCost": 43,
+     "pidCost": 42,
      "pidBlockers": [],
      "unverifiedMfrs": 27,
      "canDropMfr": false,
@@ -9393,7 +8472,7 @@
     },
     "sensor_contact_zigbee": {
      "canDropPid": false,
-     "pidCost": 43,
+     "pidCost": 42,
      "pidBlockers": [],
      "unverifiedMfrs": 27,
      "canDropMfr": false,
@@ -9428,7 +8507,7 @@
     },
     "sensor_contact_zigbee": {
      "canDropPid": false,
-     "pidCost": 43,
+     "pidCost": 42,
      "pidBlockers": [],
      "unverifiedMfrs": 27,
      "canDropMfr": false,
@@ -9463,7 +8542,7 @@
     },
     "sensor_contact_zigbee": {
      "canDropPid": false,
-     "pidCost": 43,
+     "pidCost": 42,
      "pidBlockers": [],
      "unverifiedMfrs": 27,
      "canDropMfr": false,
@@ -9498,7 +8577,7 @@
     },
     "sensor_contact_zigbee": {
      "canDropPid": false,
-     "pidCost": 43,
+     "pidCost": 42,
      "pidBlockers": [],
      "unverifiedMfrs": 27,
      "canDropMfr": false,
@@ -9533,7 +8612,7 @@
     },
     "sensor_contact_zigbee": {
      "canDropPid": false,
-     "pidCost": 43,
+     "pidCost": 42,
      "pidBlockers": [],
      "unverifiedMfrs": 27,
      "canDropMfr": false,
@@ -9568,7 +8647,7 @@
     },
     "sensor_contact_zigbee": {
      "canDropPid": false,
-     "pidCost": 43,
+     "pidCost": 42,
      "pidBlockers": [],
      "unverifiedMfrs": 27,
      "canDropMfr": false,
@@ -9603,7 +8682,7 @@
     },
     "sensor_contact_zigbee": {
      "canDropPid": false,
-     "pidCost": 43,
+     "pidCost": 42,
      "pidBlockers": [],
      "unverifiedMfrs": 27,
      "canDropMfr": false,
@@ -9638,7 +8717,7 @@
     },
     "sensor_contact_zigbee": {
      "canDropPid": false,
-     "pidCost": 43,
+     "pidCost": 42,
      "pidBlockers": [],
      "unverifiedMfrs": 27,
      "canDropMfr": false,
@@ -9673,7 +8752,7 @@
     },
     "sensor_contact_zigbee": {
      "canDropPid": false,
-     "pidCost": 43,
+     "pidCost": 42,
      "pidBlockers": [],
      "unverifiedMfrs": 27,
      "canDropMfr": false,
@@ -9714,7 +8793,7 @@
     },
     "sensor_contact_zigbee": {
      "canDropPid": false,
-     "pidCost": 43,
+     "pidCost": 42,
      "pidBlockers": [
       "immax"
      ],
@@ -9757,7 +8836,7 @@
     },
     "sensor_contact_zigbee": {
      "canDropPid": false,
-     "pidCost": 43,
+     "pidCost": 42,
      "pidBlockers": [
       "_tz3000_wut53hfm"
      ],
@@ -9796,7 +8875,7 @@
     },
     "sensor_contact_zigbee": {
      "canDropPid": false,
-     "pidCost": 43,
+     "pidCost": 42,
      "pidBlockers": [],
      "unverifiedMfrs": 27,
      "canDropMfr": false,
@@ -9831,7 +8910,7 @@
     },
     "sensor_contact_zigbee": {
      "canDropPid": false,
-     "pidCost": 43,
+     "pidCost": 42,
      "pidBlockers": [],
      "unverifiedMfrs": 27,
      "canDropMfr": false,
@@ -9866,7 +8945,7 @@
     },
     "sensor_contact_zigbee": {
      "canDropPid": false,
-     "pidCost": 43,
+     "pidCost": 42,
      "pidBlockers": [],
      "unverifiedMfrs": 27,
      "canDropMfr": false,
@@ -9901,7 +8980,7 @@
     },
     "sensor_contact_zigbee": {
      "canDropPid": false,
-     "pidCost": 43,
+     "pidCost": 42,
      "pidBlockers": [],
      "unverifiedMfrs": 27,
      "canDropMfr": false,
@@ -9936,7 +9015,7 @@
     },
     "sensor_contact_zigbee": {
      "canDropPid": false,
-     "pidCost": 43,
+     "pidCost": 42,
      "pidBlockers": [
       "_tz3210_3ulg9kpo"
      ],
@@ -9978,7 +9057,7 @@
     },
     "curtain_motor_shutter": {
      "canDropPid": false,
-     "pidCost": 22,
+     "pidCost": 21,
      "pidBlockers": [
       "_tze200_9caxna4s",
       "_tze210_inpjmc0h"
@@ -10022,7 +9101,7 @@
     },
     "curtain_motor_shutter": {
      "canDropPid": false,
-     "pidCost": 22,
+     "pidCost": 21,
      "pidBlockers": [
       "_tze200_9vpe3fl1",
       "_tze200_p6vz3wzt",
@@ -10063,7 +9142,7 @@
     },
     "curtain_motor_shutter": {
      "canDropPid": false,
-     "pidCost": 22,
+     "pidCost": 21,
      "pidBlockers": [],
      "unverifiedMfrs": 10,
      "canDropMfr": false,
@@ -10098,7 +9177,7 @@
     },
     "curtain_motor_shutter": {
      "canDropPid": false,
-     "pidCost": 22,
+     "pidCost": 21,
      "pidBlockers": [],
      "unverifiedMfrs": 10,
      "canDropMfr": false,
@@ -10138,7 +9217,7 @@
     },
     "curtain_motor_shutter": {
      "canDropPid": false,
-     "pidCost": 22,
+     "pidCost": 21,
      "pidBlockers": [
       "_tze200_9caxna4s",
       "_tze210_inpjmc0h"
@@ -10182,7 +9261,7 @@
     },
     "curtain_motor_shutter": {
      "canDropPid": false,
-     "pidCost": 22,
+     "pidCost": 21,
      "pidBlockers": [
       "_tze200_9vpe3fl1",
       "_tze200_p6vz3wzt",
@@ -10223,7 +9302,7 @@
     },
     "curtain_motor_shutter": {
      "canDropPid": false,
-     "pidCost": 22,
+     "pidCost": 21,
      "pidBlockers": [],
      "unverifiedMfrs": 10,
      "canDropMfr": false,
@@ -10258,7 +9337,7 @@
     },
     "curtain_motor_shutter": {
      "canDropPid": false,
-     "pidCost": 22,
+     "pidCost": 21,
      "pidBlockers": [],
      "unverifiedMfrs": 10,
      "canDropMfr": false,
@@ -10298,7 +9377,7 @@
     },
     "curtain_motor_shutter": {
      "canDropPid": false,
-     "pidCost": 22,
+     "pidCost": 21,
      "pidBlockers": [
       "_tze200_9caxna4s",
       "_tze210_inpjmc0h"
@@ -10342,7 +9421,7 @@
     },
     "curtain_motor_shutter": {
      "canDropPid": false,
-     "pidCost": 22,
+     "pidCost": 21,
      "pidBlockers": [
       "_tze200_9vpe3fl1",
       "_tze200_p6vz3wzt",
@@ -10383,7 +9462,7 @@
     },
     "curtain_motor_shutter": {
      "canDropPid": false,
-     "pidCost": 22,
+     "pidCost": 21,
      "pidBlockers": [],
      "unverifiedMfrs": 10,
      "canDropMfr": false,
@@ -10418,7 +9497,7 @@
     },
     "curtain_motor_shutter": {
      "canDropPid": false,
-     "pidCost": 22,
+     "pidCost": 21,
      "pidBlockers": [],
      "unverifiedMfrs": 10,
      "canDropMfr": false,
@@ -10458,7 +9537,7 @@
     },
     "curtain_motor_shutter": {
      "canDropPid": false,
-     "pidCost": 22,
+     "pidCost": 21,
      "pidBlockers": [
       "_tze200_9caxna4s",
       "_tze210_inpjmc0h"
@@ -10502,7 +9581,7 @@
     },
     "curtain_motor_shutter": {
      "canDropPid": false,
-     "pidCost": 22,
+     "pidCost": 21,
      "pidBlockers": [
       "_tze200_9vpe3fl1",
       "_tze200_p6vz3wzt",
@@ -10543,7 +9622,7 @@
     },
     "curtain_motor_shutter": {
      "canDropPid": false,
-     "pidCost": 22,
+     "pidCost": 21,
      "pidBlockers": [],
      "unverifiedMfrs": 10,
      "canDropMfr": false,
@@ -10578,7 +9657,7 @@
     },
     "curtain_motor_shutter": {
      "canDropPid": false,
-     "pidCost": 22,
+     "pidCost": 21,
      "pidBlockers": [],
      "unverifiedMfrs": 10,
      "canDropMfr": false,
@@ -10618,7 +9697,7 @@
     },
     "curtain_motor_shutter": {
      "canDropPid": false,
-     "pidCost": 22,
+     "pidCost": 21,
      "pidBlockers": [
       "_tze200_9caxna4s",
       "_tze210_inpjmc0h"
@@ -10662,7 +9741,7 @@
     },
     "curtain_motor_shutter": {
      "canDropPid": false,
-     "pidCost": 22,
+     "pidCost": 21,
      "pidBlockers": [
       "_tze200_9vpe3fl1",
       "_tze200_p6vz3wzt",
@@ -10703,7 +9782,7 @@
     },
     "curtain_motor_shutter": {
      "canDropPid": false,
-     "pidCost": 22,
+     "pidCost": 21,
      "pidBlockers": [],
      "unverifiedMfrs": 10,
      "canDropMfr": false,
@@ -10738,7 +9817,7 @@
     },
     "curtain_motor_shutter": {
      "canDropPid": false,
-     "pidCost": 22,
+     "pidCost": 21,
      "pidBlockers": [],
      "unverifiedMfrs": 10,
      "canDropMfr": false,
@@ -10778,7 +9857,7 @@
     },
     "curtain_motor_shutter": {
      "canDropPid": false,
-     "pidCost": 22,
+     "pidCost": 21,
      "pidBlockers": [
       "_tze200_9caxna4s",
       "_tze210_inpjmc0h"
@@ -10822,7 +9901,7 @@
     },
     "curtain_motor_shutter": {
      "canDropPid": false,
-     "pidCost": 22,
+     "pidCost": 21,
      "pidBlockers": [
       "_tze200_9vpe3fl1",
       "_tze200_p6vz3wzt",
@@ -10863,7 +9942,7 @@
     },
     "curtain_motor_shutter": {
      "canDropPid": false,
-     "pidCost": 22,
+     "pidCost": 21,
      "pidBlockers": [],
      "unverifiedMfrs": 10,
      "canDropMfr": false,
@@ -10898,178 +9977,10 @@
     },
     "curtain_motor_shutter": {
      "canDropPid": false,
-     "pidCost": 22,
+     "pidCost": 21,
      "pidBlockers": [],
      "unverifiedMfrs": 10,
      "canDropMfr": false,
-     "mfrCost": 43,
-     "mfrBlockers": []
-    }
-   }
-  },
-  {
-   "mfr": "_tzb000_42ha4rsc",
-   "pid": "TS0301",
-   "drivers": [
-    "curtain_motor",
-    "curtain_motor_shutter"
-   ],
-   "pattern": "same class duplicate (windowcoverings)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "curtain_motor": {
-     "canDropPid": false,
-     "pidCost": 276,
-     "pidBlockers": [
-      "_tze210_yqwse3h5",
-      "_tze210_m6lwazh9",
-      "_tze200_eatmkx5j",
-      "_tze210_xgzzuerd"
-     ],
-     "unverifiedMfrs": 82,
-     "canDropMfr": false,
-     "mfrCost": 47,
-     "mfrBlockers": [
-      "ts030f"
-     ]
-    },
-    "curtain_motor_shutter": {
-     "canDropPid": false,
-     "pidCost": 22,
-     "pidBlockers": [
-      "_tze200_9caxna4s",
-      "_tze210_inpjmc0h"
-     ],
-     "unverifiedMfrs": 11,
-     "canDropMfr": true,
-     "mfrCost": 43,
-     "mfrBlockers": []
-    }
-   }
-  },
-  {
-   "mfr": "_tzb000_42ha4rsc",
-   "pid": "TS0601",
-   "drivers": [
-    "curtain_motor",
-    "curtain_motor_shutter"
-   ],
-   "pattern": "same class duplicate (windowcoverings)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "curtain_motor": {
-     "canDropPid": false,
-     "pidCost": 276,
-     "pidBlockers": [
-      "_tze204_5slehgeo",
-      "_tze284_5slehgeo",
-      "_tze200_5slehgeo",
-      "_tze200_nhyj64w2",
-      "_tze200_127x7wnl"
-     ],
-     "unverifiedMfrs": 82,
-     "canDropMfr": false,
-     "mfrCost": 47,
-     "mfrBlockers": [
-      "ts030f"
-     ]
-    },
-    "curtain_motor_shutter": {
-     "canDropPid": false,
-     "pidCost": 22,
-     "pidBlockers": [
-      "_tze200_9vpe3fl1",
-      "_tze200_p6vz3wzt",
-      "_tze284_uqfph8ah",
-      "_tze200_jhkttplm",
-      "_tze200_5nldle7w"
-     ],
-     "unverifiedMfrs": 11,
-     "canDropMfr": true,
-     "mfrCost": 43,
-     "mfrBlockers": []
-    }
-   }
-  },
-  {
-   "mfr": "_tzb000_42ha4rsc",
-   "pid": "TS0726",
-   "drivers": [
-    "curtain_motor",
-    "curtain_motor_shutter"
-   ],
-   "pattern": "same class duplicate (windowcoverings)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "curtain_motor": {
-     "canDropPid": false,
-     "pidCost": 276,
-     "pidBlockers": [],
-     "unverifiedMfrs": 82,
-     "canDropMfr": false,
-     "mfrCost": 47,
-     "mfrBlockers": [
-      "ts030f"
-     ]
-    },
-    "curtain_motor_shutter": {
-     "canDropPid": false,
-     "pidCost": 22,
-     "pidBlockers": [],
-     "unverifiedMfrs": 11,
-     "canDropMfr": true,
-     "mfrCost": 43,
-     "mfrBlockers": []
-    }
-   }
-  },
-  {
-   "mfr": "_tzb000_42ha4rsc",
-   "pid": "TS110E",
-   "drivers": [
-    "curtain_motor",
-    "curtain_motor_shutter"
-   ],
-   "pattern": "same class duplicate (windowcoverings)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "curtain_motor": {
-     "canDropPid": false,
-     "pidCost": 276,
-     "pidBlockers": [],
-     "unverifiedMfrs": 82,
-     "canDropMfr": false,
-     "mfrCost": 47,
-     "mfrBlockers": [
-      "ts030f"
-     ]
-    },
-    "curtain_motor_shutter": {
-     "canDropPid": false,
-     "pidCost": 22,
-     "pidBlockers": [],
-     "unverifiedMfrs": 11,
-     "canDropMfr": true,
      "mfrCost": 43,
      "mfrBlockers": []
     }
@@ -12128,12 +11039,11 @@
    "pid": "TS0726",
    "drivers": [
     "curtain_motor",
-    "sensor_contact_zigbee",
     "switch_1gang",
     "switch_2gang",
     "switch_3gang"
    ],
-   "pattern": "cross class (sensor/socket/windowcoverings)",
+   "pattern": "cross class (socket/windowcoverings)",
    "attested": false,
    "sources": [],
    "diag": null,
@@ -12151,18 +11061,6 @@
      "mfrBlockers": [
       "ts0012",
       "ts011f"
-     ]
-    },
-    "sensor_contact_zigbee": {
-     "canDropPid": false,
-     "pidCost": 43,
-     "pidBlockers": [],
-     "unverifiedMfrs": 28,
-     "canDropMfr": false,
-     "mfrCost": 32,
-     "mfrBlockers": [
-      "ts0003",
-      "ts0013"
      ]
     },
     "switch_1gang": {
@@ -12306,11 +11204,10 @@
    "pid": "TS130F",
    "drivers": [
     "curtain_motor",
-    "sensor_contact_zigbee",
     "switch_1gang",
     "switch_3gang"
    ],
-   "pattern": "cross class (sensor/socket/windowcoverings)",
+   "pattern": "cross class (socket/windowcoverings)",
    "attested": false,
    "sources": [],
    "diag": null,
@@ -12334,20 +11231,6 @@
      "mfrBlockers": [
       "ts0012",
       "ts011f"
-     ]
-    },
-    "sensor_contact_zigbee": {
-     "canDropPid": false,
-     "pidCost": 43,
-     "pidBlockers": [
-      "_tz3000_wptayaqr"
-     ],
-     "unverifiedMfrs": 28,
-     "canDropMfr": false,
-     "mfrCost": 32,
-     "mfrBlockers": [
-      "ts0003",
-      "ts0013"
      ]
     },
     "switch_1gang": {
@@ -13825,7 +12708,7 @@
     },
     "sensor_contact_zigbee": {
      "canDropPid": false,
-     "pidCost": 43,
+     "pidCost": 42,
      "pidBlockers": [],
      "unverifiedMfrs": 27,
      "canDropMfr": false,
@@ -13965,7 +12848,7 @@
     },
     "sensor_contact_zigbee": {
      "canDropPid": false,
-     "pidCost": 43,
+     "pidCost": 42,
      "pidBlockers": [
       "_tz3000_wptayaqr"
      ],
@@ -17321,13 +16204,13 @@
     },
     "plug_energy_monitor": {
      "canDropPid": false,
-     "pidCost": 61,
+     "pidCost": 60,
      "pidBlockers": [
       "_tz3000_okaz9tjs",
       "_tz3000_5ct6e7ye",
       "_tz3000_6l1pjfqe",
       "_tz3000_fqoynhku",
-      "_tz3000_wamqdr3f"
+      "_tz3000_2iiimqs9"
      ],
      "unverifiedMfrs": 25,
      "canDropMfr": true,
@@ -17638,642 +16521,6 @@
    }
   },
   {
-   "mfr": "_tz3000_c8ozah8n",
-   "pid": "TS0001",
-   "drivers": [
-    "motion_sensor",
-    "pir_sensor_2"
-   ],
-   "pattern": "same class duplicate (sensor)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "motion_sensor": {
-     "canDropPid": false,
-     "pidCost": 74,
-     "pidBlockers": [],
-     "unverifiedMfrs": 35,
-     "canDropMfr": false,
-     "mfrCost": 33,
-     "mfrBlockers": [
-      "ts0202"
-     ]
-    },
-    "pir_sensor_2": {
-     "canDropPid": false,
-     "pidCost": 11,
-     "pidBlockers": [],
-     "unverifiedMfrs": 2,
-     "canDropMfr": false,
-     "mfrCost": 34,
-     "mfrBlockers": [
-      "ts0202"
-     ]
-    }
-   }
-  },
-  {
-   "mfr": "_tz3000_c8ozah8n",
-   "pid": "TS0202",
-   "drivers": [
-    "motion_sensor",
-    "pir_sensor_2"
-   ],
-   "pattern": "same class duplicate (sensor)",
-   "attested": true,
-   "sources": [
-    {
-     "src": "johan",
-     "model": "pir_sensor_2",
-     "url": "https://github.com/JohanBendz/com.tuya.zigbee/blob/61577d8ec2572bf8c7c4c2ff210284575acd295b/drivers/pir_sensor_2/driver.compose.json"
-    }
-   ],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "motion_sensor": {
-     "canDropPid": false,
-     "pidCost": 74,
-     "pidBlockers": [
-      "_tyzb01_2b8f6cio",
-      "_tyzb01_ef5xlc9q",
-      "_tyzb01_hqbdru35",
-      "_tyzb01_qjqgmqxr",
-      "_tyzb01_tv3wxhcz"
-     ],
-     "unverifiedMfrs": 35,
-     "canDropMfr": true,
-     "mfrCost": 33,
-     "mfrBlockers": []
-    },
-    "pir_sensor_2": {
-     "canDropPid": false,
-     "pidCost": 11,
-     "pidBlockers": [
-      "_tz3000_kmh5qpmb",
-      "_tz3040_bb6xaihh",
-      "_tyzb01_dl7cejts",
-      "_tyzb01_dr6sduka",
-      "_tyzb01_geepvxsy"
-     ],
-     "unverifiedMfrs": 2,
-     "canDropMfr": true,
-     "mfrCost": 34,
-     "mfrBlockers": []
-    }
-   }
-  },
-  {
-   "mfr": "_tz3000_c8ozah8n",
-   "pid": "TS0601",
-   "drivers": [
-    "motion_sensor",
-    "pir_sensor_2"
-   ],
-   "pattern": "same class duplicate (sensor)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "motion_sensor": {
-     "canDropPid": false,
-     "pidCost": 74,
-     "pidBlockers": [
-      "_tze200_arge1ptm",
-      "_tze204_bjf8qum1",
-      "_tze204_sndkanfr",
-      "_tze284_sndkanfr",
-      "_tze200_mgxy2d9f"
-     ],
-     "unverifiedMfrs": 35,
-     "canDropMfr": false,
-     "mfrCost": 33,
-     "mfrBlockers": [
-      "ts0202"
-     ]
-    },
-    "pir_sensor_2": {
-     "canDropPid": false,
-     "pidCost": 11,
-     "pidBlockers": [
-      "_tze200_kb5noeto"
-     ],
-     "unverifiedMfrs": 2,
-     "canDropMfr": false,
-     "mfrCost": 34,
-     "mfrBlockers": [
-      "ts0202"
-     ]
-    }
-   }
-  },
-  {
-   "mfr": "_tz3000_c8ozah8n",
-   "pid": "TS110E",
-   "drivers": [
-    "motion_sensor",
-    "pir_sensor_2"
-   ],
-   "pattern": "same class duplicate (sensor)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "motion_sensor": {
-     "canDropPid": false,
-     "pidCost": 74,
-     "pidBlockers": [],
-     "unverifiedMfrs": 35,
-     "canDropMfr": false,
-     "mfrCost": 33,
-     "mfrBlockers": [
-      "ts0202"
-     ]
-    },
-    "pir_sensor_2": {
-     "canDropPid": false,
-     "pidCost": 11,
-     "pidBlockers": [],
-     "unverifiedMfrs": 2,
-     "canDropMfr": false,
-     "mfrCost": 34,
-     "mfrBlockers": [
-      "ts0202"
-     ]
-    }
-   }
-  },
-  {
-   "mfr": "_tz3000_mmtwjmaq",
-   "pid": "TS0001",
-   "drivers": [
-    "motion_sensor",
-    "pir_sensor_2"
-   ],
-   "pattern": "same class duplicate (sensor)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "motion_sensor": {
-     "canDropPid": false,
-     "pidCost": 74,
-     "pidBlockers": [],
-     "unverifiedMfrs": 35,
-     "canDropMfr": false,
-     "mfrCost": 33,
-     "mfrBlockers": [
-      "ts0202"
-     ]
-    },
-    "pir_sensor_2": {
-     "canDropPid": false,
-     "pidCost": 11,
-     "pidBlockers": [],
-     "unverifiedMfrs": 2,
-     "canDropMfr": false,
-     "mfrCost": 34,
-     "mfrBlockers": [
-      "ts0202"
-     ]
-    }
-   }
-  },
-  {
-   "mfr": "_tz3000_mmtwjmaq",
-   "pid": "TS0202",
-   "drivers": [
-    "motion_sensor",
-    "pir_sensor_2"
-   ],
-   "pattern": "same class duplicate (sensor)",
-   "attested": true,
-   "sources": [
-    {
-     "src": "deconz",
-     "model": "Presence sensor (TS0202)",
-     "url": "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/tuya/ts0202_presence_sensor.json"
-    },
-    {
-     "src": "johan",
-     "model": "pir_sensor_2",
-     "url": "https://github.com/JohanBendz/com.tuya.zigbee/blob/61577d8ec2572bf8c7c4c2ff210284575acd295b/drivers/pir_sensor_2/driver.compose.json"
-    }
-   ],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "motion_sensor": {
-     "canDropPid": false,
-     "pidCost": 74,
-     "pidBlockers": [
-      "_tyzb01_2b8f6cio",
-      "_tyzb01_ef5xlc9q",
-      "_tyzb01_hqbdru35",
-      "_tyzb01_qjqgmqxr",
-      "_tyzb01_tv3wxhcz"
-     ],
-     "unverifiedMfrs": 35,
-     "canDropMfr": true,
-     "mfrCost": 33,
-     "mfrBlockers": []
-    },
-    "pir_sensor_2": {
-     "canDropPid": false,
-     "pidCost": 11,
-     "pidBlockers": [
-      "_tz3000_kmh5qpmb",
-      "_tz3040_bb6xaihh",
-      "_tyzb01_dl7cejts",
-      "_tyzb01_dr6sduka",
-      "_tyzb01_geepvxsy"
-     ],
-     "unverifiedMfrs": 2,
-     "canDropMfr": true,
-     "mfrCost": 34,
-     "mfrBlockers": []
-    }
-   }
-  },
-  {
-   "mfr": "_tz3000_mmtwjmaq",
-   "pid": "TS0601",
-   "drivers": [
-    "motion_sensor",
-    "pir_sensor_2"
-   ],
-   "pattern": "same class duplicate (sensor)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "motion_sensor": {
-     "canDropPid": false,
-     "pidCost": 74,
-     "pidBlockers": [
-      "_tze200_arge1ptm",
-      "_tze204_bjf8qum1",
-      "_tze204_sndkanfr",
-      "_tze284_sndkanfr",
-      "_tze200_mgxy2d9f"
-     ],
-     "unverifiedMfrs": 35,
-     "canDropMfr": false,
-     "mfrCost": 33,
-     "mfrBlockers": [
-      "ts0202"
-     ]
-    },
-    "pir_sensor_2": {
-     "canDropPid": false,
-     "pidCost": 11,
-     "pidBlockers": [
-      "_tze200_kb5noeto"
-     ],
-     "unverifiedMfrs": 2,
-     "canDropMfr": false,
-     "mfrCost": 34,
-     "mfrBlockers": [
-      "ts0202"
-     ]
-    }
-   }
-  },
-  {
-   "mfr": "_tz3000_mmtwjmaq",
-   "pid": "TS110E",
-   "drivers": [
-    "motion_sensor",
-    "pir_sensor_2"
-   ],
-   "pattern": "same class duplicate (sensor)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "motion_sensor": {
-     "canDropPid": false,
-     "pidCost": 74,
-     "pidBlockers": [],
-     "unverifiedMfrs": 35,
-     "canDropMfr": false,
-     "mfrCost": 33,
-     "mfrBlockers": [
-      "ts0202"
-     ]
-    },
-    "pir_sensor_2": {
-     "canDropPid": false,
-     "pidCost": 11,
-     "pidBlockers": [],
-     "unverifiedMfrs": 2,
-     "canDropMfr": false,
-     "mfrCost": 34,
-     "mfrBlockers": [
-      "ts0202"
-     ]
-    }
-   }
-  },
-  {
-   "mfr": "_tz3000_dpo1ysak",
-   "pid": "TS011F",
-   "drivers": [
-    "plug",
-    "smartplug"
-   ],
-   "pattern": "switch same gang (1)",
-   "attested": true,
-   "sources": [
-    {
-     "src": "johan",
-     "model": "smartplug",
-     "url": "https://github.com/JohanBendz/com.tuya.zigbee/blob/61577d8ec2572bf8c7c4c2ff210284575acd295b/drivers/smartplug/driver.compose.json"
-    }
-   ],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "plug": {
-     "canDropPid": false,
-     "pidCost": 11,
-     "pidBlockers": [
-      "_tz3210_qlmnxmac",
-      "_tz3000_kdi2o9m6",
-      "_tz3000_ew31dmgx",
-      "_tz3000_plyvnuf5",
-      "_tz3000_hyfvrar3"
-     ],
-     "unverifiedMfrs": 3,
-     "canDropMfr": true,
-     "mfrCost": 5,
-     "mfrBlockers": []
-    },
-    "smartplug": {
-     "canDropPid": false,
-     "pidCost": 39,
-     "pidBlockers": [
-      "_tz3000_3ooaz3ng",
-      "_tyzb01_iuepbmpv",
-      "_tz3000_g5xawfcq",
-      "_tz3000_vtscrpmw",
-      "_tz3000_rdtixbnu"
-     ],
-     "unverifiedMfrs": 1,
-     "canDropMfr": false,
-     "mfrCost": 2,
-     "mfrBlockers": [
-      "ts0121",
-      "tso121"
-     ]
-    }
-   }
-  },
-  {
-   "mfr": "_tz3000_wamqdr3f",
-   "pid": "TS0001",
-   "drivers": [
-    "plug",
-    "plug_energy_monitor"
-   ],
-   "pattern": "switch same gang (1)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "plug": {
-     "canDropPid": false,
-     "pidCost": 11,
-     "pidBlockers": [],
-     "unverifiedMfrs": 3,
-     "canDropMfr": false,
-     "mfrCost": 5,
-     "mfrBlockers": [
-      "ts011f"
-     ]
-    },
-    "plug_energy_monitor": {
-     "canDropPid": false,
-     "pidCost": 61,
-     "pidBlockers": [],
-     "unverifiedMfrs": 25,
-     "canDropMfr": false,
-     "mfrCost": 76,
-     "mfrBlockers": [
-      "ts011f"
-     ]
-    }
-   }
-  },
-  {
-   "mfr": "_tz3000_wamqdr3f",
-   "pid": "TS0003",
-   "drivers": [
-    "plug",
-    "plug_energy_monitor"
-   ],
-   "pattern": "switch same gang (1)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "plug": {
-     "canDropPid": false,
-     "pidCost": 11,
-     "pidBlockers": [],
-     "unverifiedMfrs": 3,
-     "canDropMfr": false,
-     "mfrCost": 5,
-     "mfrBlockers": [
-      "ts011f"
-     ]
-    },
-    "plug_energy_monitor": {
-     "canDropPid": false,
-     "pidCost": 61,
-     "pidBlockers": [],
-     "unverifiedMfrs": 25,
-     "canDropMfr": false,
-     "mfrCost": 76,
-     "mfrBlockers": [
-      "ts011f"
-     ]
-    }
-   }
-  },
-  {
-   "mfr": "_tz3000_wamqdr3f",
-   "pid": "TS000F",
-   "drivers": [
-    "plug",
-    "plug_energy_monitor"
-   ],
-   "pattern": "switch same gang (1)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "plug": {
-     "canDropPid": false,
-     "pidCost": 11,
-     "pidBlockers": [],
-     "unverifiedMfrs": 3,
-     "canDropMfr": false,
-     "mfrCost": 5,
-     "mfrBlockers": [
-      "ts011f"
-     ]
-    },
-    "plug_energy_monitor": {
-     "canDropPid": false,
-     "pidCost": 61,
-     "pidBlockers": [],
-     "unverifiedMfrs": 25,
-     "canDropMfr": false,
-     "mfrCost": 76,
-     "mfrBlockers": [
-      "ts011f"
-     ]
-    }
-   }
-  },
-  {
-   "mfr": "_tz3000_wamqdr3f",
-   "pid": "TS0011",
-   "drivers": [
-    "plug",
-    "plug_energy_monitor"
-   ],
-   "pattern": "switch same gang (1)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "plug": {
-     "canDropPid": false,
-     "pidCost": 11,
-     "pidBlockers": [],
-     "unverifiedMfrs": 3,
-     "canDropMfr": false,
-     "mfrCost": 5,
-     "mfrBlockers": [
-      "ts011f"
-     ]
-    },
-    "plug_energy_monitor": {
-     "canDropPid": false,
-     "pidCost": 61,
-     "pidBlockers": [],
-     "unverifiedMfrs": 25,
-     "canDropMfr": false,
-     "mfrCost": 76,
-     "mfrBlockers": [
-      "ts011f"
-     ]
-    }
-   }
-  },
-  {
-   "mfr": "_tz3000_wamqdr3f",
-   "pid": "TS011F",
-   "drivers": [
-    "plug",
-    "plug_energy_monitor"
-   ],
-   "pattern": "switch same gang (1)",
-   "attested": true,
-   "sources": [
-    {
-     "src": "johan",
-     "model": "plug",
-     "url": "https://github.com/JohanBendz/com.tuya.zigbee/blob/61577d8ec2572bf8c7c4c2ff210284575acd295b/drivers/plug/driver.compose.json"
-    },
-    {
-     "src": "z2m",
-     "model": "HG06337",
-     "url": "https://www.zigbee2mqtt.io/devices/HG06337.html"
-    },
-    {
-     "src": "zhc",
-     "model": "HG06337",
-     "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/7462b541b367c301057aee995e6e6756e5f7e985/src/devices/lidl.ts#L235"
-    }
-   ],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "plug": {
-     "canDropPid": false,
-     "pidCost": 11,
-     "pidBlockers": [
-      "_tz3000_dpo1ysak",
-      "_tz3210_qlmnxmac",
-      "_tz3000_kdi2o9m6",
-      "_tz3000_ew31dmgx",
-      "_tz3000_plyvnuf5"
-     ],
-     "unverifiedMfrs": 3,
-     "canDropMfr": true,
-     "mfrCost": 5,
-     "mfrBlockers": []
-    },
-    "plug_energy_monitor": {
-     "canDropPid": false,
-     "pidCost": 61,
-     "pidBlockers": [
-      "_tz3000_okaz9tjs",
-      "_tz3000_5ct6e7ye",
-      "_tz3000_6l1pjfqe",
-      "_tz3000_fqoynhku",
-      "_tz3000_2iiimqs9"
-     ],
-     "unverifiedMfrs": 25,
-     "canDropMfr": true,
-     "mfrCost": 76,
-     "mfrBlockers": []
-    }
-   }
-  },
-  {
    "mfr": "_tz3000_fqoynhku",
    "pid": "TS011F",
    "drivers": [
@@ -18296,13 +16543,13 @@
    "feas": {
     "plug_energy_monitor": {
      "canDropPid": false,
-     "pidCost": 61,
+     "pidCost": 60,
      "pidBlockers": [
       "_tz3000_okaz9tjs",
       "_tz3000_5ct6e7ye",
       "_tz3000_6l1pjfqe",
-      "_tz3000_wamqdr3f",
-      "_tz3000_2iiimqs9"
+      "_tz3000_2iiimqs9",
+      "_tz3000_7issjl2q"
      ],
      "unverifiedMfrs": 25,
      "canDropMfr": false,
@@ -18355,7 +16602,7 @@
    "feas": {
     "plug_energy_monitor": {
      "canDropPid": false,
-     "pidCost": 61,
+     "pidCost": 60,
      "pidBlockers": [
       "_tz3000_okaz9tjs",
       "_tz3000_6l1pjfqe",
@@ -18414,7 +16661,7 @@
    "feas": {
     "plug_energy_monitor": {
      "canDropPid": false,
-     "pidCost": 61,
+     "pidCost": 60,
      "pidBlockers": [
       "_tz3000_okaz9tjs",
       "_tz3000_6l1pjfqe",
@@ -18446,50 +16693,6 @@
      "mfrBlockers": [
       "ts0121",
       "ts011f"
-     ]
-    }
-   }
-  },
-  {
-   "mfr": "hobeian",
-   "pid": "EXCELLUX",
-   "drivers": [
-    "presence_sensor_radar",
-    "sensor_contact_zigbee"
-   ],
-   "pattern": "same class duplicate (sensor)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "presence_sensor_radar": {
-     "canDropPid": false,
-     "pidCost": 252,
-     "pidBlockers": [],
-     "unverifiedMfrs": 110,
-     "canDropMfr": false,
-     "mfrCost": 55,
-     "mfrBlockers": [
-      "ck-bl702-mws-01(7016)",
-      "zg-204z",
-      "zg-204ze",
-      "zg-204zh",
-      "zg-204zk"
-     ]
-    },
-    "sensor_contact_zigbee": {
-     "canDropPid": false,
-     "pidCost": 43,
-     "pidBlockers": [],
-     "unverifiedMfrs": 28,
-     "canDropMfr": false,
-     "mfrCost": 32,
-     "mfrBlockers": [
-      "ts0003",
-      "ts0013"
      ]
     }
    }
@@ -18588,7 +16791,7 @@
     },
     "sensor_contact_zigbee": {
      "canDropPid": false,
-     "pidCost": 43,
+     "pidCost": 42,
      "pidBlockers": [],
      "unverifiedMfrs": 27,
      "canDropMfr": false,
@@ -18777,7 +16980,7 @@
     },
     "sensor_contact_zigbee": {
      "canDropPid": false,
-     "pidCost": 43,
+     "pidCost": 42,
      "pidBlockers": [],
      "unverifiedMfrs": 27,
      "canDropMfr": false,
@@ -18835,10 +17038,9 @@
    "pid": "TS0044",
    "drivers": [
     "scene_switch_4",
-    "sensor_contact_zigbee",
     "switch_3gang"
    ],
-   "pattern": "cross class (button/sensor/socket)",
+   "pattern": "cross class (button/socket)",
    "attested": false,
    "sources": [],
    "diag": null,
@@ -18861,18 +17063,6 @@
      "mfrCost": 2,
      "mfrBlockers": [
       "zg-101zs"
-     ]
-    },
-    "sensor_contact_zigbee": {
-     "canDropPid": false,
-     "pidCost": 43,
-     "pidBlockers": [],
-     "unverifiedMfrs": 28,
-     "canDropMfr": false,
-     "mfrCost": 32,
-     "mfrBlockers": [
-      "ts0003",
-      "ts0013"
      ]
     },
     "switch_3gang": {
@@ -18952,7 +17142,7 @@
    "feas": {
     "sensor_contact_zigbee": {
      "canDropPid": false,
-     "pidCost": 43,
+     "pidCost": 42,
      "pidBlockers": [
       "_tze200_2m38mh6k",
       "_tze284_2baujqot",
@@ -18981,228 +17171,6 @@
    }
   },
   {
-   "mfr": "hobeian",
-   "pid": "TS0003",
-   "drivers": [
-    "sensor_contact_zigbee",
-    "switch_1gang",
-    "switch_2gang",
-    "switch_3gang"
-   ],
-   "pattern": "cross class (sensor/socket)",
-   "attested": true,
-   "sources": [
-    {
-     "src": "johan",
-     "model": "switch_2_gang",
-     "url": "https://github.com/JohanBendz/com.tuya.zigbee/blob/61577d8ec2572bf8c7c4c2ff210284575acd295b/drivers/switch_2_gang/driver.compose.json"
-    }
-   ],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "sensor_contact_zigbee": {
-     "canDropPid": false,
-     "pidCost": 43,
-     "pidBlockers": [],
-     "unverifiedMfrs": 28,
-     "canDropMfr": false,
-     "mfrCost": 32,
-     "mfrBlockers": [
-      "ts0013"
-     ]
-    },
-    "switch_1gang": {
-     "canDropPid": false,
-     "pidCost": 351,
-     "pidBlockers": [
-      "_tyzb01_u9kkqh5o",
-      "_tyzb01_uqkphoed",
-      "_tz3000_46t1rvdu",
-      "_tz3000_dyzkbcip",
-      "_tz3000_ji4araar"
-     ],
-     "unverifiedMfrs": 145,
-     "canDropMfr": false,
-     "mfrCost": 37,
-     "mfrBlockers": [
-      "zg-301z",
-      "ts0012",
-      "ts011f"
-     ]
-    },
-    "switch_2gang": {
-     "canDropPid": false,
-     "pidCost": 105,
-     "pidBlockers": [
-      "_tyzb01_zsl6z0pw",
-      "_tz3000_fisb3ajo",
-      "_tz3000_jl7qyupf",
-      "_tz3000_lmlsduws",
-      "_tz3000_ruxexjfz"
-     ],
-     "unverifiedMfrs": 34,
-     "canDropMfr": false,
-     "mfrCost": 14,
-     "mfrBlockers": [
-      "zg-305z",
-      "ts0002",
-      "ts0012",
-      "ts0013",
-      "ts011f"
-     ]
-    },
-    "switch_3gang": {
-     "canDropPid": false,
-     "pidCost": 80,
-     "pidBlockers": [
-      "_tz3000_kl72oake",
-      "_tyzb01_mqel1whf",
-      "_tz3000_0q5fjqgw",
-      "_tz3000_4o16jdca",
-      "_tz3000_66fekqhh"
-     ],
-     "unverifiedMfrs": 21,
-     "canDropMfr": false,
-     "mfrCost": 45,
-     "mfrBlockers": [
-      "ts0002",
-      "ts0012",
-      "ts0013",
-      "ts011f"
-     ]
-    }
-   }
-  },
-  {
-   "mfr": "hobeian",
-   "pid": "TS0013",
-   "drivers": [
-    "sensor_contact_zigbee",
-    "switch_2gang",
-    "switch_3gang"
-   ],
-   "pattern": "cross class (sensor/socket)",
-   "attested": true,
-   "sources": [
-    {
-     "src": "johan",
-     "model": "switch_2_gang",
-     "url": "https://github.com/JohanBendz/com.tuya.zigbee/blob/61577d8ec2572bf8c7c4c2ff210284575acd295b/drivers/switch_2_gang/driver.compose.json"
-    }
-   ],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "sensor_contact_zigbee": {
-     "canDropPid": false,
-     "pidCost": 43,
-     "pidBlockers": [],
-     "unverifiedMfrs": 28,
-     "canDropMfr": false,
-     "mfrCost": 32,
-     "mfrBlockers": [
-      "ts0003"
-     ]
-    },
-    "switch_2gang": {
-     "canDropPid": false,
-     "pidCost": 105,
-     "pidBlockers": [
-      "_tyzb01_zsl6z0pw",
-      "_tz3000_fisb3ajo",
-      "_tz3000_jl7qyupf",
-      "_tz3000_lmlsduws",
-      "_tz3000_ruxexjfz"
-     ],
-     "unverifiedMfrs": 34,
-     "canDropMfr": false,
-     "mfrCost": 14,
-     "mfrBlockers": [
-      "zg-305z",
-      "ts0002",
-      "ts0003",
-      "ts0012",
-      "ts011f"
-     ]
-    },
-    "switch_3gang": {
-     "canDropPid": false,
-     "pidCost": 80,
-     "pidBlockers": [
-      "_tz3000_kl72oake",
-      "_tyzb01_mqel1whf",
-      "_tz3000_avotanj3",
-      "_tz3000_khtlvdfc",
-      "_tz3000_sznawwyw"
-     ],
-     "unverifiedMfrs": 21,
-     "canDropMfr": false,
-     "mfrCost": 45,
-     "mfrBlockers": [
-      "ts0002",
-      "ts0003",
-      "ts0012",
-      "ts011f"
-     ]
-    }
-   }
-  },
-  {
-   "mfr": "hobeian",
-   "pid": "TS0043",
-   "drivers": [
-    "sensor_contact_zigbee",
-    "switch_3gang"
-   ],
-   "pattern": "cross class (sensor/socket)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "sensor_contact_zigbee": {
-     "canDropPid": false,
-     "pidCost": 43,
-     "pidBlockers": [],
-     "unverifiedMfrs": 28,
-     "canDropMfr": false,
-     "mfrCost": 32,
-     "mfrBlockers": [
-      "ts0003",
-      "ts0013"
-     ]
-    },
-    "switch_3gang": {
-     "canDropPid": false,
-     "pidCost": 80,
-     "pidBlockers": [
-      "_tz3000_kl72oake",
-      "_tyzb01_mqel1whf",
-      "_tz3000_2dlwlvex",
-      "_tz3000_cdamjqm9",
-      "_tz3000_qcdqw8nf"
-     ],
-     "unverifiedMfrs": 21,
-     "canDropMfr": false,
-     "mfrCost": 45,
-     "mfrBlockers": [
-      "ts0002",
-      "ts0003",
-      "ts0012",
-      "ts0013",
-      "ts011f"
-     ]
-    }
-   }
-  },
-  {
    "mfr": "heobian",
    "pid": "TS0003",
    "drivers": [
@@ -19221,10 +17189,8 @@
    "feas": {
     "sensor_contact_zigbee": {
      "canDropPid": false,
-     "pidCost": 43,
-     "pidBlockers": [
-      "hobeian"
-     ],
+     "pidCost": 42,
+     "pidBlockers": [],
      "unverifiedMfrs": 27,
      "canDropMfr": false,
      "mfrCost": 32,
@@ -19295,10 +17261,8 @@
    "feas": {
     "sensor_contact_zigbee": {
      "canDropPid": false,
-     "pidCost": 43,
-     "pidBlockers": [
-      "hobeian"
-     ],
+     "pidCost": 42,
+     "pidBlockers": [],
      "unverifiedMfrs": 27,
      "canDropMfr": false,
      "mfrCost": 32,
@@ -19353,7 +17317,7 @@
    "feas": {
     "sensor_contact_zigbee": {
      "canDropPid": false,
-     "pidCost": 43,
+     "pidCost": 42,
      "pidBlockers": [],
      "unverifiedMfrs": 27,
      "canDropMfr": false,
@@ -19594,6 +17558,90 @@
      "canDropMfr": true,
      "mfrCost": 65,
      "mfrBlockers": []
+    }
+   }
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "TS0003",
+   "drivers": [
+    "switch_1gang",
+    "switch_2gang",
+    "switch_3gang"
+   ],
+   "pattern": "switch gang mismatch (1/2/3)",
+   "attested": true,
+   "sources": [
+    {
+     "src": "johan",
+     "model": "switch_2_gang",
+     "url": "https://github.com/JohanBendz/com.tuya.zigbee/blob/61577d8ec2572bf8c7c4c2ff210284575acd295b/drivers/switch_2_gang/driver.compose.json"
+    }
+   ],
+   "diag": null,
+   "pin": null,
+   "canonical": null,
+   "mfrKnownElsewhere": true,
+   "feas": {
+    "switch_1gang": {
+     "canDropPid": false,
+     "pidCost": 351,
+     "pidBlockers": [
+      "_tyzb01_u9kkqh5o",
+      "_tyzb01_uqkphoed",
+      "_tz3000_46t1rvdu",
+      "_tz3000_dyzkbcip",
+      "_tz3000_ji4araar"
+     ],
+     "unverifiedMfrs": 145,
+     "canDropMfr": false,
+     "mfrCost": 37,
+     "mfrBlockers": [
+      "zg-301z",
+      "ts0012",
+      "ts011f"
+     ]
+    },
+    "switch_2gang": {
+     "canDropPid": false,
+     "pidCost": 105,
+     "pidBlockers": [
+      "_tyzb01_zsl6z0pw",
+      "_tz3000_fisb3ajo",
+      "_tz3000_jl7qyupf",
+      "_tz3000_lmlsduws",
+      "_tz3000_ruxexjfz"
+     ],
+     "unverifiedMfrs": 34,
+     "canDropMfr": false,
+     "mfrCost": 14,
+     "mfrBlockers": [
+      "zg-305z",
+      "ts0002",
+      "ts0012",
+      "ts0013",
+      "ts011f"
+     ]
+    },
+    "switch_3gang": {
+     "canDropPid": false,
+     "pidCost": 80,
+     "pidBlockers": [
+      "_tz3000_kl72oake",
+      "_tyzb01_mqel1whf",
+      "_tz3000_0q5fjqgw",
+      "_tz3000_4o16jdca",
+      "_tz3000_66fekqhh"
+     ],
+     "unverifiedMfrs": 21,
+     "canDropMfr": false,
+     "mfrCost": 45,
+     "mfrBlockers": [
+      "ts0002",
+      "ts0012",
+      "ts0013",
+      "ts011f"
+     ]
     }
    }
   },
@@ -21315,6 +19363,70 @@
      "canDropMfr": false,
      "mfrCost": 0,
      "mfrBlockers": []
+    }
+   }
+  },
+  {
+   "mfr": "hobeian",
+   "pid": "TS0013",
+   "drivers": [
+    "switch_2gang",
+    "switch_3gang"
+   ],
+   "pattern": "switch gang mismatch (2/3)",
+   "attested": true,
+   "sources": [
+    {
+     "src": "johan",
+     "model": "switch_2_gang",
+     "url": "https://github.com/JohanBendz/com.tuya.zigbee/blob/61577d8ec2572bf8c7c4c2ff210284575acd295b/drivers/switch_2_gang/driver.compose.json"
+    }
+   ],
+   "diag": null,
+   "pin": null,
+   "canonical": null,
+   "mfrKnownElsewhere": true,
+   "feas": {
+    "switch_2gang": {
+     "canDropPid": false,
+     "pidCost": 105,
+     "pidBlockers": [
+      "_tyzb01_zsl6z0pw",
+      "_tz3000_fisb3ajo",
+      "_tz3000_jl7qyupf",
+      "_tz3000_lmlsduws",
+      "_tz3000_ruxexjfz"
+     ],
+     "unverifiedMfrs": 34,
+     "canDropMfr": false,
+     "mfrCost": 14,
+     "mfrBlockers": [
+      "zg-305z",
+      "ts0002",
+      "ts0003",
+      "ts0012",
+      "ts011f"
+     ]
+    },
+    "switch_3gang": {
+     "canDropPid": false,
+     "pidCost": 80,
+     "pidBlockers": [
+      "_tz3000_kl72oake",
+      "_tyzb01_mqel1whf",
+      "_tz3000_avotanj3",
+      "_tz3000_khtlvdfc",
+      "_tz3000_sznawwyw"
+     ],
+     "unverifiedMfrs": 21,
+     "canDropMfr": false,
+     "mfrCost": 45,
+     "mfrBlockers": [
+      "ts0002",
+      "ts0003",
+      "ts0012",
+      "ts011f"
+     ]
     }
    }
   },

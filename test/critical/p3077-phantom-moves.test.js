@@ -14,7 +14,7 @@ const decisions = require(path.join(ROOT, 'config/architecture/p3077-phantom-dec
 
 describe('P3077 phantom moves', () => {
   it('every move is sourced and the mfr left the wrong driver', () => {
-    assert.ok(decisions.moves.length >= 18);
+    assert.ok(decisions.moves.length >= 24);
     for (const m of decisions.moves) {
       assert.ok(/^https:\/\//.test(m.source) && m.author, `source for ${m.mfr}`);
       assert.ok(!lists(zig(m.from), m.mfr), `${m.mfr} still on ${m.from}`);
@@ -46,5 +46,10 @@ describe('P3077 phantom moves', () => {
     assert.ok(keys.includes('_A+TS011F@gas'));
     assert.ok(keys.includes('_B+TS0002@plug'));
     assert.ok(!keys.some((k) => k.startsWith('_A+TS0002@')), keys.join(' '));
+  });
+  it('batch 2: dpo1ysak left plug with approved exemptions', () => {
+    const b = require(path.join(ROOT, 'test/fixtures/athom-last-test-package-couples.json'));
+    const ex = b.exemptions.filter((e) => e.driverId === 'plug' && e.mfr.toLowerCase() === '_tz3000_dpo1ysak');
+    assert.ok(ex.length >= 12 && ex.every((e) => e.approvedBy === 't614u'));
   });
 });

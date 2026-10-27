@@ -162,6 +162,66 @@
    "hardware": "Lidl HG06337 plug",
    "source": "https://www.zigbee2mqtt.io/devices/HG06337.html",
    "author": "Koenkk / zigbee-herdsman-converters contributors"
+  },
+  {
+   "mfr": "_TZ3000_c8ozah8n",
+   "batch": 2,
+   "from": "pir_sensor_2",
+   "keptOn": "motion_sensor",
+   "realPid": "TS0202",
+   "hardware": "Tuya battery PIR motion sensor (ZP01 family)",
+   "source": "https://github.com/Koenkk/zigbee2mqtt/issues/26084",
+   "author": "activa73"
+  },
+  {
+   "mfr": "_TZ3000_mmtwjmaq",
+   "batch": 2,
+   "from": "pir_sensor_2",
+   "keptOn": "motion_sensor",
+   "realPid": "TS0202",
+   "hardware": "Tuya battery PIR motion sensor",
+   "source": "https://github.com/Koenkk/zigbee2mqtt/issues/11663",
+   "author": "jocamane (also #7881 by 1iverea9er)"
+  },
+  {
+   "mfr": "_TZ3000_wamqdr3f",
+   "batch": 2,
+   "from": "plug_energy_monitor",
+   "keptOn": "plug",
+   "realPid": "TS011F",
+   "hardware": "Lidl Silvercrest HG06337 smart plug (FR), no metering",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/lidl.ts",
+   "author": "Koenkk and zigbee-herdsman-converters contributors"
+  },
+  {
+   "mfr": "_TZB000_42ha4rsc",
+   "batch": 2,
+   "from": "curtain_motor_shutter",
+   "keptOn": "curtain_motor",
+   "realPid": "TS030F",
+   "hardware": "Lidl Livarno HG09648 roller blind motor",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
+   "author": "Koenkk and zigbee-herdsman-converters contributors"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "batch": 2,
+   "from": "sensor_contact_zigbee",
+   "keptOn": "contact_sensor",
+   "realPid": "ZG-102Z",
+   "hardware": "HOBEIAN ZG-102Z door sensor (vendor zigbeeModel)",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/hobeian.ts",
+   "author": "Koenkk and zigbee-herdsman-converters contributors"
+  },
+  {
+   "mfr": "_TZ3000_dpo1ysak",
+   "batch": 2,
+   "from": "plug",
+   "keptOn": "smartplug",
+   "realPid": "TS011F",
+   "hardware": "TS011F plug with power metering",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/pull/3076",
+   "author": "dmaasland (follow-up #3107 by kloknibor)"
   }
  ],
  "keptOnPurpose": [
@@ -220,6 +280,62 @@
     "smartPlug_DinRail"
    ],
    "why": "reviewed dual in data/native-matrix-reviewed-duals.json (earlier owner decision: old entry kept, exact couple on smartPlug_DinRail); move dropped, needs an explicit owner override"
+  },
+  {
+   "mfr": "HOBEIAN",
+   "batch": 2,
+   "drivers": [
+    "gas_sensor",
+    "siren",
+    "ir_blaster",
+    "curtain_motor",
+    "contact_sensor",
+    "button_wireless_1"
+   ],
+   "why": "vendor name used with HOBEIAN zigbeeModel ids (ZG-225Z gas, ZG-229Z siren, ZG-IR01 IR, ZG-301Z-MOTO curtain, ZG-102Z door, ZG-101ZL button) per zigbee-herdsman-converters hobeian.ts; the audit missed them because data/kb/couples.json only keys TS pids. Phantom HOBEIAN x TSxxxx combos remain as collateral until a driver split",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/hobeian.ts"
+  },
+  {
+   "mfr": "_TZ3000_pzui3skt",
+   "batch": 2,
+   "drivers": [
+    "button_wireless_1",
+    "smart_knob_rotary"
+   ],
+   "why": "real device is a TS0041 one-button remote (zigbee2mqtt #8500 by snp88; Johan Bendz SDK3 README); the knob entry comes from config/architecture/rotary-knob-ssot.json (P2448 gate) and is left for owner review, not removed"
+  },
+  {
+   "mfr": "_TZ3290_ixd9mvv4",
+   "batch": 2,
+   "drivers": [
+    "smart_irrigation_valve",
+    "water_valve_smart"
+   ],
+   "why": "zigbee-herdsman-converters lists it as TS0049 LYAI-14 valve; P3055 (owner t555u) recorded it as attested on both valve drivers, so it stays"
+  },
+  {
+   "mfr": "_TZ3000_9ni6xxld",
+   "batch": 2,
+   "drivers": [
+    "see data/native-matrix-reviewed-duals.json"
+   ],
+   "why": "reviewed dual (owner decision); left as is"
+  },
+  {
+   "mfr": "heiman",
+   "batch": 2,
+   "drivers": [
+    "see data/native-matrix-reviewed-duals.json"
+   ],
+   "why": "reviewed duals TS0041/TS0205/TS0601 (owner decision); left as is"
+  },
+  {
+   "mfr": "_TZ3000_42ha4rsc",
+   "batch": 2,
+   "drivers": [
+    "curtain_motor_shutter"
+   ],
+   "why": "a _TZ3000_ copy of the Lidl _TZB000_42ha4rsc id that no outside source lists; kept because data/mfs_db.json holds it and test/anti-purge-guard.test.js forbids dropping a known fingerprint. Owner review"
   }
  ]
 }
