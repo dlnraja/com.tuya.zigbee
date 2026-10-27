@@ -168,6 +168,20 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           node scripts/maintenance/sync-appjson-zigbee.js || true
+          # P3086 (port from master): 608e233c65 committed a pretty-printed app.json with raw
+          # {{driverAssetsPath}} images on master (P3079 parity red). Regenerate app.json from compose with
+          # the bot-bump post-processing (flow dedupe + sanitize-manifest, compact), then the same parity +
+          # no-loss gate as the bot bump; on drift nothing is staged or committed and the job fails.
+          node scripts/maintenance/regen-appjson-from-compose.cjs
+          compose_parity_or_die() {
+            git show HEAD:app.json > "$RUNNER_TEMP/p3086-base-app.json"
+            if ! node scripts/ci/compose-parity-gate.cjs --base="$RUNNER_TEMP/p3086-base-app.json"; then
+              echo "::error title=compose parity::app.json differs from a compose rebuild or drops entries vs HEAD; market commit refused"
+              git checkout -- app.json
+              exit 1
+            fi
+          }
+          compose_parity_or_die
           git add .github/state/market-couples/ .github/state/mfr-pid-cross-ref.json .github/state/all-mfr-pid-pairs.json 2>/dev/null || true
           git add scripts/sync/data/blakadder.json scripts/sync/data/z2m.json scripts/sync/data/zha.json 2>/dev/null || true
           git add drivers/*/driver.compose.json data/mfs_db.json app.json reports/P169_MFS_DB_ALIGN_LATEST.json 2>/dev/null || true

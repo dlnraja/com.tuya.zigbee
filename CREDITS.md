@@ -349,3 +349,6 @@ Reporters of dlnraja/com.tuya.zigbee issues not credited elsewhere in this file.
 - No code was copied from these projects; the helper and the ratchet (`scripts/ci/report-structure-ratchet.js`) are our own.
 
 - ncw88jfq LCD port (2026-10-27, own wording): Wilhelm Dall (Homey store suggestion, _TZ3210_ncw88jfq TS0201 single-endpoint LCD with empty temperature/humidity) and zigbee-herdsman-converters tuya.ts (Koen Kanters and contributors, TS0201 humidity x10 list).
+
+## Compose-faithful app.json resync (P3086, 2026-10-27) — idea only, no code copied
+- **Athom BV, homey CLI (`homey/lib/HomeyCompose.js`)** — the list of compose placeholders the composer replaces ({{driverId}}, {{driverPath}}, {{driverAssetsPath}}, {{driverName}}); `scripts/maintenance/sync-appjson-zigbee.js` now applies the same substitution, written in our own code.
