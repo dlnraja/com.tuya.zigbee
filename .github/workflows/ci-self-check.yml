@@ -117,6 +117,9 @@ jobs:
       - name: Hygiene ratchet (pins, Node 20 actions, node-version, timeouts, raw pushes)
         run: node scripts/ci/workflow-hygiene-gate.js
 
+      - name: Stray file guard (no #-named files, no .txt under drivers/ — pasted pages, P3081)
+        run: node scripts/ci/stray-file-gate.cjs
+
       - name: Report ratchet (about headers, no pasted third-party text, report shape — may only shrink)
         id: report_ratchet
         run: |
