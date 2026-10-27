@@ -157,6 +157,12 @@ package (button_wireless_1, heobian/Heobian × 5 pids) carry t614u exemptions; t
 - smart_knob and smart_knob_rotary listed `ZG-101ZD`/`zg-101zd` next to 20 and 48 `_TZ3000_*` knob ids, which built cartesian couples no device sends. That pid is removed from both drivers. HOBEIAN+ZG-101ZD still pairs on smart_knob_zg101zd (batch 6), and every `_TZ3000_*`+TS004F couple is kept.
 - The pin simulation showed 26 Athom-baseline couples that would be re-pinned (18 on smart_knob: kaflzta4/uri7ongn/ixla93vd/g9g2xnch forms; 8 on smart_knob_rotary: gwkzibhs/qja6nq5z/csflgqj2/ugi8ky6u forms). Each one carries a t614u exemption. Already-paired devices keep their driver, and nothing is written at pairing.
 
+## Batch 14 (27/10/2026, owner t614u): gjnozsaz, a plug and not a button
+
+- In zigbee-herdsman-converters `tuya.ts` (Koen Kanters and contributors), `_TZ3000_gjnozsaz` is the NEO NAS-WR01B, a whitelabel of the metering plug `TS011F_plug_1`. Z2M skips one power-reporting setting for it (zigbee2mqtt issue #28729).
+- It was listed in 4 case forms on button_wireless_plug, a driver whose pid list (TS0004, TS0201, TS0601…) only created cartesian couples for it. Those forms are removed. smartplug stays the only driver (3 forms; TS011F/TS0121). The runtime owners move to smartplug: `lib/tuya/fingerprints.json` was pointing at plug_smart with only TS0601, and gets TS011F added; `data/mfs_db.json` was pointing at button_wireless_plug.
+- The pin simulation showed 8 Athom-baseline couples to exempt (2 forms × TS0004/TS0111/TS0201/TS0601 on button_wireless_plug). TS011F/TS0121 stay pinned on smartplug. Already-paired devices keep their driver, and nothing is written at pairing.
+
 ## Pending
 
 - ~480 collateral duals need driver splits (next batches).

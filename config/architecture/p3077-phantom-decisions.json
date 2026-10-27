@@ -398,6 +398,16 @@
    "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
    "author": "Koen Kanters and contributors (zigbee-herdsman-converters)",
    "batch": 12
+  },
+  {
+   "mfr": "_TZ3000_gjnozsaz",
+   "from": "button_wireless_plug",
+   "keptOn": "smartplug",
+   "realPid": "TS011F",
+   "hardware": "NEO NAS-WR01B smart plug with electrical measurements (TS011F_plug_1 whitelabel; Z2M skips its activePower reporting tweak, zigbee2mqtt #28729)",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
+   "author": "Koen Kanters and contributors (zigbee-herdsman-converters)",
+   "batch": 14
   }
  ],
  "keptOnPurpose": [
@@ -704,6 +714,24 @@
    "exemptions": 26,
    "why": "orphan Athom-baseline cartesian couples (18 on smart_knob, 8 on smart_knob_rotary) that resolveBaselinePins would re-pin after ZG-101ZD left those drivers; no _TZ3000_* knob sends the HOBEIAN modelId",
    "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/hobeian.ts",
+   "author": "Koen Kanters and contributors (zigbee-herdsman-converters)"
+  },
+  {
+   "batch": 14,
+   "driver": "button_wireless_plug",
+   "mfr": [
+    "_TZ3000_gjnozsaz",
+    "_tz3000_gjnozsaz"
+   ],
+   "pid": [
+    "TS0004",
+    "TS0111",
+    "TS0201",
+    "TS0601"
+   ],
+   "exemptions": 8,
+   "why": "orphan Athom-baseline cartesian couples that resolveBaselinePins would re-pin on button_wireless_plug after the NEO plug left it; TS011F/TS0121 stay pinned on smartplug",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
    "author": "Koen Kanters and contributors (zigbee-herdsman-converters)"
   }
  ]

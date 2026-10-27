@@ -175,4 +175,17 @@ describe('P3077 phantom moves', () => {
     assert.deepStrictEqual(r.pins.filter((x) => x.pid.toLowerCase() === 'zg-101zd' && x.driverId !== 'smart_knob_zg101zd'), []);
     assert.strictEqual(fx.exemptions.filter((e) => /P3077 batch 13/.test(e.reason) && e.approvedBy === 't614u').length, 26);
   });
+  it('batch 14: NEO NAS-WR01B _TZ3000_gjnozsaz pairs only on smartplug, cartesian button_wireless_plug couples exempted', () => {
+    assert.ok(!lists(zig('button_wireless_plug'), '_TZ3000_gjnozsaz'));
+    assert.ok(lists(zig('smartplug'), '_TZ3000_gjnozsaz') && zig('smartplug').productId.includes('TS011F'));
+    const fp = JSON.parse(fs.readFileSync(path.join(ROOT, 'lib/tuya/fingerprints.json'), 'utf8'));
+    assert.equal(fp._TZ3000_gjnozsaz.driverId, 'smartplug');
+    assert.ok(fp._TZ3000_gjnozsaz.modelIds.includes('TS011F'));
+    const fx = require(path.join(ROOT, 'test/fixtures/athom-last-test-package-couples.json'));
+    const { resolveBaselinePins } = require(path.join(ROOT, 'scripts/maintenance/compact-zigbee-identifiers.cjs'));
+    const r = resolveBaselinePins(JSON.parse(fs.readFileSync(path.join(ROOT, 'app.json'), 'utf8')), fx);
+    const g = r.pins.filter((x) => x.mfr.toLowerCase() === '_tz3000_gjnozsaz');
+    assert.ok(g.length >= 4 && g.every((x) => x.driverId === 'smartplug'));
+    assert.strictEqual(fx.exemptions.filter((e) => /P3077 batch 14/.test(e.reason) && e.driverId === 'button_wireless_plug').length, 8);
+  });
 });

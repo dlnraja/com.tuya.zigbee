@@ -5939,7 +5939,7 @@
    "feas": {
     "button_wireless_plug": {
      "canDropPid": false,
-     "pidCost": 18,
+     "pidCost": 17,
      "pidBlockers": [
       "_tz3000_2xlvlnez",
       "_tz3000_iv6ph5tr",
@@ -5997,7 +5997,7 @@
    "feas": {
     "button_wireless_plug": {
      "canDropPid": false,
-     "pidCost": 18,
+     "pidCost": 17,
      "pidBlockers": [
       "_tz3000_cehuw1lw",
       "_tz3000_u5u4cakc"
@@ -6062,13 +6062,13 @@
    "feas": {
     "button_wireless_plug": {
      "canDropPid": false,
-     "pidCost": 18,
+     "pidCost": 17,
      "pidBlockers": [
       "_tz3000_2xlvlnez",
-      "_tz3000_gjnozsaz",
       "_tz3000_iv6ph5tr",
       "_tz3000_mlswgkc3",
-      "_tz3000_uwkja6z1"
+      "_tz3000_uwkja6z1",
+      "_tz3000_u5u4cakc"
      ],
      "unverifiedMfrs": 12,
      "canDropMfr": false,
@@ -6120,9 +6120,8 @@
    "feas": {
     "button_wireless_plug": {
      "canDropPid": false,
-     "pidCost": 18,
+     "pidCost": 17,
      "pidBlockers": [
-      "_tz3000_gjnozsaz",
       "_tz3000_u5u4cakc"
      ],
      "unverifiedMfrs": 12,
@@ -6180,13 +6179,13 @@
    "feas": {
     "button_wireless_plug": {
      "canDropPid": false,
-     "pidCost": 18,
+     "pidCost": 17,
      "pidBlockers": [
       "_tz3000_2xlvlnez",
-      "_tz3000_gjnozsaz",
       "_tz3000_iv6ph5tr",
       "_tz3000_mlswgkc3",
-      "_tz3000_cehuw1lw"
+      "_tz3000_cehuw1lw",
+      "_tz3000_uwkja6z1"
      ],
      "unverifiedMfrs": 12,
      "canDropMfr": false,
@@ -6238,9 +6237,8 @@
    "feas": {
     "button_wireless_plug": {
      "canDropPid": false,
-     "pidCost": 18,
+     "pidCost": 17,
      "pidBlockers": [
-      "_tz3000_gjnozsaz",
       "_tz3000_cehuw1lw"
      ],
      "unverifiedMfrs": 12,

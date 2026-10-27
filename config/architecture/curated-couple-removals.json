@@ -1195,6 +1195,17 @@
       ],
       "why": "P3077 batch 13: HOBEIAN knob modelId (Z2M hobeian.ts), HOBEIAN only, owner smart_knob_zg101zd",
       "source": "P3077 batch 13 (t614u)"
+    },
+    {
+      "driver": "button_wireless_plug",
+      "mfr": [
+        "_TZ3000_gjnozsaz",
+        "_TZ3000_GJNOZSAZ",
+        "_tz3000_gjnozsaz",
+        "_tz3000_GJNOZSAZ"
+      ],
+      "why": "P3077 batch 14: NEO NAS-WR01B TS011F metering plug (Z2M tuya.ts), owner smartplug",
+      "source": "P3077 batch 14 (t614u)"
     }
   ]
 }
