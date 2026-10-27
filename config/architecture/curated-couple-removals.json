@@ -1233,6 +1233,16 @@
       ],
       "why": "P3077 b17: LUUMR C35 tunable-white bulb, kept on light_bulb_dimmable_tunable (TS0502A)",
       "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts"
+    },
+    {
+      "driver": "water_leak_sensor_tuya",
+      "mfr": [
+        "_TZ3000_fxvjhdyl",
+        "_TZ3000_kstbkt6a",
+        "_TZ3000_kyb656no"
+      ],
+      "why": "P3077 b19: TS0207 water leak sensors, kept on water_leak_sensor (TS0207); _tuya has no TS0207",
+      "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts"
     }
   ]
 }

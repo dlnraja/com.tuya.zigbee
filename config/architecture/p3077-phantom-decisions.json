@@ -441,6 +441,39 @@
    "why": "one couple, one driver: a tunable-white bulb belongs on light_bulb_dimmable_tunable, which already carried all 4 case forms with TS0502A and owns the runtime hint; bulb_dimmable (dim only) dropped the 4 forms. The 18 Athom-fixture couples on bulb_dimmable paired it with other brands modelIds (01MINIZB, BASICZBR3, GL-B-001Z...), pure cartesian, exempted",
    "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
    "author": "Koen Kanters and contributors (zigbee-herdsman-converters)"
+  },
+  {
+   "mfr": "_TZ3000_kyb656no",
+   "from": "water_leak_sensor_tuya",
+   "keptOn": "water_leak_sensor",
+   "realPid": "TS0207",
+   "batch": 19,
+   "hardware": "Meian SW02 TS0207 water leak sensor (Z2M tuya.ts TS0207_water_leak_detector whitelabel)",
+   "why": "IAS-zone TS0207 sensor: water_leak_sensor carries TS0207, water_leak_sensor_tuya does not (its pids are TS0601/q9mpfhw and other brands), so on _tuya the id only made cartesian couples that no real device can pair with. One couple, one driver. No Athom fixture pin, no exemption. mfs_db (and fingerprints.json for fxvjhdyl) hints follow",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
+   "author": "Koen Kanters and contributors (zigbee-herdsman-converters)"
+  },
+  {
+   "mfr": "_TZ3000_kstbkt6a",
+   "from": "water_leak_sensor_tuya",
+   "keptOn": "water_leak_sensor",
+   "realPid": "TS0207",
+   "batch": 19,
+   "hardware": "Aubess IH-K665 TS0207 water leak sensor (Z2M tuya.ts TS0207_water_leak_detector whitelabel)",
+   "why": "IAS-zone TS0207 sensor: water_leak_sensor carries TS0207, water_leak_sensor_tuya does not (its pids are TS0601/q9mpfhw and other brands), so on _tuya the id only made cartesian couples that no real device can pair with. One couple, one driver. No Athom fixture pin, no exemption. mfs_db (and fingerprints.json for fxvjhdyl) hints follow",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
+   "author": "Koen Kanters and contributors (zigbee-herdsman-converters)"
+  },
+  {
+   "mfr": "_TZ3000_fxvjhdyl",
+   "from": "water_leak_sensor_tuya",
+   "keptOn": "water_leak_sensor",
+   "realPid": "TS0207",
+   "batch": 19,
+   "hardware": "TS0207 water leak sensor (deCONZ _TZ3000_TS0207_water_leak_sensor DDF; JohanBendz README Water Detector list)",
+   "why": "IAS-zone TS0207 sensor: water_leak_sensor carries TS0207, water_leak_sensor_tuya does not (its pids are TS0601/q9mpfhw and other brands), so on _tuya the id only made cartesian couples that no real device can pair with. One couple, one driver. No Athom fixture pin, no exemption. mfs_db (and fingerprints.json for fxvjhdyl) hints follow",
+   "source": "https://dresden-elektronik.github.io/deconz-rest-doc/devices/tuya/_TZ3000_TS0207_water_leak_sensor/",
+   "author": "dresden elektronik deCONZ contributors"
   }
  ],
  "keptOnPurpose": [

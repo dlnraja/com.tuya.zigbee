@@ -219,4 +219,13 @@ describe('P3077 phantom moves', () => {
       for (const d of ds) {assert.ok(lists(zig(d), m), `${m} must stay on ${d} (reviewed dual)`);}
     }
   });
+  it('batch 19: TS0207 water leak trio only on water_leak_sensor, hints follow', () => {
+    const mfs = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/mfs_db.json'), 'utf8')).devices;
+    assert.ok(zig('water_leak_sensor').productId.includes('TS0207'));
+    for (const m of ['_TZ3000_fxvjhdyl', '_TZ3000_kyb656no', '_TZ3000_kstbkt6a']) {
+      assert.ok(lists(zig('water_leak_sensor'), m), m);
+      assert.ok(!lists(zig('water_leak_sensor_tuya'), m), `${m} still on water_leak_sensor_tuya`);
+      assert.equal(mfs[m.toLowerCase()].driverHint, 'water_leak_sensor');
+    }
+  });
 });

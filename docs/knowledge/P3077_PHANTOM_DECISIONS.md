@@ -187,6 +187,11 @@ These three manufacturers are in `data/native-matrix-reviewed-duals.json`, where
 - `_TYZB01_4lwqwyqn` is a 3-gang TS0013 switch: the interview on JohanBendz/com.tuya.zigbee#1330 (PhilbyD) shows endpoints 1 to 3. Its exact couple is on switch_3gang, and the old entry stays on switch_1gang. The `fingerprints.json` hint pointed at switch_1gang and now points at switch_3gang. TS0013 is added to `mfs_db`.
 - `_TYZB01_v8gtiaed` is the Lonsonho QS-Zigbee-D02-TRIAC-2C-LN, a 2-gang TRIAC dimmer (TS110F, `lonsonho.ts`). Its exact couple is on dimmer_2_gang, and the old entry stays on switch_1gang. The `mfs_db` hint pointed at switch_1gang and now points at dimmer_2_gang. `_TZ3000_v8gtiaed` has no source and stays pinned.
 
+## Batch 19 (27/10/2026, owner t614u): water-leak trio on water_leak_sensor
+
+- `_TZ3000_kyb656no` (Meian SW02) and `_TZ3000_kstbkt6a` (Aubess IH-K665) are whitelabels of `TS0207_water_leak_detector` in zigbee-herdsman-converters `tuya.ts`. deCONZ lists `_TZ3000_fxvjhdyl` in its TS0207 water-leak DDF, and JohanBendz's README lists it under Water Detector as TS0207.
+- water_leak_sensor carries `TS0207`. water_leak_sensor_tuya does not (its pids are TS0601, q9mpfhw and other brands' models), so on that driver these 3 ids could only form cartesian couples that no real device can pair with. The 12 case forms are removed from water_leak_sensor_tuya (137 to 125) and stay on water_leak_sensor (one couple, one driver). No pin in the Athom fixture, so no exemption. The `mfs_db` hints (and the `fingerprints.json` one for fxvjhdyl) now point at water_leak_sensor.
+
 ## Pending
 
 - ~480 collateral duals need driver splits (next batches).
