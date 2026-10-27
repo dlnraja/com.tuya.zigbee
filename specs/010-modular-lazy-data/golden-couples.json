@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-27T05:41:34.968Z",
+ "generated": "2026-10-27T05:52:03.993Z",
  "drivers": 417,
  "snapshot": {
   "air_conditioner_aetz01": {
@@ -1762,15 +1762,15 @@
   },
   "smart_knob": {
    "mfr": 12,
-   "pid": 5,
+   "pid": 4,
    "mfrSha": "69f64b7c4120b00a",
-   "pidSha": "3846deb0c0aed152"
+   "pidSha": "939a1ab171c25375"
   },
   "smart_knob_rotary": {
    "mfr": 5,
-   "pid": 6,
+   "pid": 5,
    "mfrSha": "0bbac5a21b78ba55",
-   "pidSha": "b8f989c20c36242e"
+   "pidSha": "d0fadf0cbba7fb18"
   },
   "smart_knob_switch": {
    "mfr": 1,

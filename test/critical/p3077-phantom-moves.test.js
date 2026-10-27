@@ -163,4 +163,16 @@ describe('P3077 phantom moves', () => {
     assert.deepStrictEqual(r.pins.filter((x) => ids.some((m) => m.toLowerCase() === x.mfr.toLowerCase()) && x.driverId !== 'tunable_bulb_E14'), []);
     assert.strictEqual(fx.exemptions.filter((e) => e.driverId === 'bulb_dimmable' && /P3077 batch 12/.test(e.reason)).length, 36);
   });
+  it('batch 13: ZG-101ZD stays a HOBEIAN-only modelId on smart_knob_zg101zd, never re-pinned on the generic knob drivers', () => {
+    for (const d of ['smart_knob', 'smart_knob_rotary']) {
+      assert.ok(!zig(d).productId.some((p) => p.toLowerCase() === 'zg-101zd'), d);
+      assert.ok(zig(d).productId.includes('TS004F'), d);
+    }
+    assert.ok(lists(zig('smart_knob_zg101zd'), 'HOBEIAN') && zig('smart_knob_zg101zd').productId.includes('ZG-101ZD'));
+    const fx = require(path.join(ROOT, 'test/fixtures/athom-last-test-package-couples.json'));
+    const { resolveBaselinePins } = require(path.join(ROOT, 'scripts/maintenance/compact-zigbee-identifiers.cjs'));
+    const r = resolveBaselinePins(JSON.parse(fs.readFileSync(path.join(ROOT, 'app.json'), 'utf8')), fx);
+    assert.deepStrictEqual(r.pins.filter((x) => x.pid.toLowerCase() === 'zg-101zd' && x.driverId !== 'smart_knob_zg101zd'), []);
+    assert.strictEqual(fx.exemptions.filter((e) => /P3077 batch 13/.test(e.reason) && e.approvedBy === 't614u').length, 26);
+  });
 });
