@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-26T23:28:38.027Z",
+ "updated": "2026-10-27T00:09:44.953Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -11064,9 +11064,9 @@
   },
   "diag:f8b8416f2c108756": {
    "status": "pending",
-   "date": "2026-10-25",
+   "date": "2026-10-27",
    "hash": "722d4a06654fdb90",
-   "note": "interview mail; 1 couple(s); 1 in several drivers; 4 error line(s)",
+   "note": "P3076: Bastien ZG-301Z heap OOM in JSON.parse after 0xE000/0xE001 frame flood; memory bounding owned by P3068 (collections commits unpushed after rewrite), left pending",
    "by": "gmail-diagnostics",
    "kind": "interview",
    "mailDate": "2026-10-25T17:52:09.000Z",
@@ -15715,10 +15715,10 @@
    ]
   },
   "forum-post:140352/2262": {
-   "status": "pending",
-   "date": "2026-10-20",
+   "status": "done",
+   "date": "2026-10-27",
    "hash": "afdab43f4e51755e",
-   "note": "needs a closer look (screenshots)",
+   "note": "P3076: _TZE284_gnpflcoq 4-in-1 already on motion_sensor_radar_mmwave in all 3 apps (P2270/P2818/P2824), DP1 polarity handled; screenshots checked",
    "by": "forum-poll",
    "topic": 140352,
    "post": 2262,
@@ -15782,7 +15782,7 @@
    "status": "done",
    "date": "2026-10-25",
    "hash": "edfc24273a06b23d",
-   "note": "identities already in a driver",
+   "note": "identities already in a driver; P3076: master water_valve_smart (P3037 960aa9d4ea, 25/10), stable/bastien still climate_sensor, port after soak",
    "by": "forum-poll",
    "topic": 140352,
    "post": 2268,
@@ -42532,6 +42532,68 @@
     "leadsAdded": 0
    },
    "lastChangeRun": "40330916849"
+  },
+  "forum-post:140352/2266": {
+   "status": "done",
+   "date": "2026-10-27",
+   "note": "P3076: own reply, nothing to act on",
+   "by": "p3076",
+   "topic": 140352,
+   "post": 2266,
+   "author": "dlnraja",
+   "link": "https://community.homey.app/t/140352/2266"
+  },
+  "forum-post:140352/2267": {
+   "status": "done",
+   "date": "2026-10-27",
+   "note": "P3076: own reply, nothing to act on",
+   "by": "p3076",
+   "topic": 140352,
+   "post": 2267,
+   "author": "dlnraja",
+   "link": "https://community.homey.app/t/140352/2267"
+  },
+  "forum-post:140352/2269": {
+   "status": "done",
+   "date": "2026-10-27",
+   "note": "P3076: own reply, nothing to act on",
+   "by": "p3076",
+   "topic": 140352,
+   "post": 2269,
+   "author": "dlnraja",
+   "link": "https://community.homey.app/t/140352/2269"
+  },
+  "mail-suggestion:2026-10-22-umberto-beca-bac006azb": {
+   "status": "done",
+   "date": "2026-10-27",
+   "note": "Umberto Maffii: Beca BAC-006AZB not a thermostat -> _TZE204_dzuqwsyg/_TZE200_dzuqwsyg on wall_thermostat BAC-002 profile, master 442bc457cf (P2970), stable 05303ed438 (P2973), bastien ported",
+   "by": "p3076",
+   "kind": "suggestion",
+   "mailDate": "2026-10-22"
+  },
+  "mail-suggestion:2026-10-17-wilhelm-bjawzodf": {
+   "status": "done",
+   "date": "2026-10-27",
+   "note": "Wilhelm Dall: _TZ3000_bjawzodf/TY0201 seen as switch -> couple only on lcdtemphumidsensor (sensor) in all 3 apps since c0ad732363; his paired device reads ZCL T/H on sensor_climate_temphumidsensor",
+   "by": "p3076",
+   "kind": "suggestion",
+   "mailDate": "2026-10-17"
+  },
+  "mail-suggestion:2026-10-16-wilhelm-ncw88jfq": {
+   "status": "done",
+   "date": "2026-10-27",
+   "note": "Wilhelm Dall: _TZ3210_ncw88jfq/TS0201 LCD T/H empty -> master 9ec32ba2d2 (P2825); P3076 runtime port stable 5284da9b49, bastien 1c56fc5841",
+   "by": "p3076",
+   "kind": "suggestion",
+   "mailDate": "2026-10-16"
+  },
+  "mail-crash:2026-10-17-memwarn-enoent": {
+   "status": "done",
+   "date": "2026-10-27",
+   "note": "9.0.1506 ENOENT uv_resident_set_memory in MemwarnGuard -> guarded by e064938349 (18/10) on all 3 apps",
+   "by": "p3076",
+   "kind": "crash",
+   "mailDate": "2026-10-17"
   }
  }
 }
