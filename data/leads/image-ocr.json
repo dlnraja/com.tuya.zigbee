@@ -666,7 +666,8 @@
    "source": "text",
    "images": 0,
    "mfrs": [
-    "_TZE200_locansqn"
+    "_TZE200_locansqn",
+    "_TZE200_cirvgep4"
    ],
    "pids": [
     "TS0601"
@@ -44761,6 +44762,623 @@
    ],
    "dps": [],
    "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 1469,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1469#issuecomment-6402133245",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_i9w5mehz",
+    "_TZ3000_gbshwgag",
+    "_TZ3000_pd9mpyh4",
+    "_TZ3000_nrfkrgf4"
+   ],
+   "pids": [
+    "TS0003",
+    "TS0044",
+    "TS0046",
+    "TS110E",
+    "TS0002",
+    "TS0001"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 1469,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1469#issuecomment-6405341058",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE200_crq3r3la",
+    "_TZE284_9ern5sfh"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 1469,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1469#issuecomment-6410233889",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3210_j4pdtz9v"
+   ],
+   "pids": [
+    "TS0001"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 1389,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1389#issuecomment-6405296382",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_qja6nq5z"
+   ],
+   "pids": [
+    "TS004F"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 869,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/869#issuecomment-6410233670",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3210_j4pdtz9v"
+   ],
+   "pids": [
+    "TS0001"
+   ],
+   "dps": [
+    105
+   ],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 1438,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1438#issuecomment-6410233410",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3210_j4pdtz9v"
+   ],
+   "pids": [
+    "TS0001"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 1150,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1150#issuecomment-6405328164",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE284_9ern5sfh"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 1382,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1382#issuecomment-6405327786",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE200_crq3r3la"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 1532,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1532#issuecomment-6402024572",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE204_dzuqwsyg"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 1532,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1532#issuecomment-6405055563",
+   "user": "Bumbe80",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE204_dzuqwsyg"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 1533,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1533#issuecomment-6402024804",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE284_zm8zpwas"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 1530,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1530#issuecomment-6402024385",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3210_iiacqpdz"
+   ],
+   "pids": [
+    "TS011F"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 962,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/962#issuecomment-6402010202",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_nrfkrgf4",
+    "_TZ3000_iszegwpd"
+   ],
+   "pids": [
+    "TS0046"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 1534,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1534",
+   "user": "motren",
+   "source": "text",
+   "images": 2,
+   "mfrs": [
+    "_TZ3000_pd9mpyh4"
+   ],
+   "pids": [
+    "TS0044"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 941,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/941#issuecomment-6402009346",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_pd9mpyh4",
+    "_TZ3000_ee8nrt2l"
+   ],
+   "pids": [
+    "TS0044"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 1366,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1366#issuecomment-6402008355",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_gbshwgag"
+   ],
+   "pids": [
+    "TS0001"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 991,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/991#issuecomment-6402007349",
+   "user": "JohanBendz",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_i9w5mehz"
+   ],
+   "pids": [
+    "TS0002"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 329,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/329#issuecomment-4525037521",
+   "user": "macmonty",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE204_81yrt3lo",
+    "_TZE284_81yrt3lo"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [
+    110,
+    111,
+    114,
+    121
+   ],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 329,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/329#issuecomment-4525045909",
+   "user": "macmonty",
+   "image": "https://github.com/user-attachments/assets/d49ac9db-8ecd-4c5e-9752-1330fd1de3eb",
+   "source": "ocr",
+   "verify": true,
+   "mfrs": [
+    "_TZE204_81yrt3lo"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": [],
+   "text": "Presence 8 21882 Sensor a4:¢1:38:d6:ab:fd:29:ab (557A) router seconds ¥ _TZE204_81yrt3lo TS0601 197 4(2%) 187 Radar ago Q2-Biitton 12"
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 329,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/329#issuecomment-4525045909",
+   "user": "macmonty",
+   "image": "https://github.com/user-attachments/assets/f3181d15-5776-4180-ba6c-6d88d9cee155",
+   "source": "ocr",
+   "verify": true,
+   "mfrs": [
+    "_TZE204_81yrt3lo"
+   ],
+   "pids": [],
+   "dps": [],
+   "caps": [],
+   "text": "TT ie TT OD Presence Sensor Radar Settings x | /~\\ Motion alarm turned on Zigbee Device Information Lo Manufacturer ID _TZE204_81yrt3lo Product ID _Ts0601 | Receive When Idle Lv | Device Type router Device ID a4:c1:38:d6:ab:fd:29:ab Firmware version | a TS = } o—"
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 328,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/328",
+   "user": "DaPicardos",
+   "source": "text",
+   "images": 1,
+   "mfrs": [
+    "_TZE200_seq9cm6u"
+   ],
+   "pids": [
+    "TS0601",
+    "TS0202"
+   ],
+   "dps": [
+    105
+   ],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 328,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/328#issuecomment-4527776183",
+   "user": "github-actions[bot]",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE200_seq9cm6u"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 328,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/328#issuecomment-4588163183",
+   "user": "DaPicardos",
+   "source": "text",
+   "images": 1,
+   "mfrs": [
+    "_TZE200_seq9cm6u"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 328,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/328#issuecomment-4593728107",
+   "user": "DaPicardos",
+   "source": "text",
+   "images": 2,
+   "mfrs": [
+    "_TZE200_seq9cm6u"
+   ],
+   "pids": [
+    "TS0202"
+   ],
+   "dps": [
+    1,
+    12,
+    4,
+    104,
+    9,
+    101,
+    102,
+    103
+   ],
+   "caps": [
+    "measure_temperature"
+   ]
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 328,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/328#issuecomment-4622437666",
+   "user": "DaPicardos",
+   "image": "https://github.com/user-attachments/assets/1b13ba89-b05a-4a41-bfa1-a8dbcaf57dcb",
+   "source": "ocr",
+   "verify": true,
+   "mfrs": [
+    "_TZE200_seq9cm6u"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [
+    9
+   ],
+   "caps": [],
+   "text": "Abbrechen Erweiterte Einstellungen Zonenaktivitat Aus Zonenaktivitat ausschlieRen . Nein Zigbee-Gerateinformation Hersteller-ID _TZE200_seq9cm6u > Produkt-ID TS0601 > Im Standby-Modus empfangen x > Geratetyp enddevice > Gerate-ID a4:c1:38:d1:ee:0b:be:07 > Firmware-Version 2 Gruppen-IDs = > Device Note: Sensitivity settings missing (DP9): The options to change the sensitivity (low, middle, high) do not show up in the Advanced Settings of the device at all."
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 328,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/328#issuecomment-4625410775",
+   "user": "dlnraja",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE200_seq9cm6u"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [
+    104,
+    1,
+    9
+   ],
+   "caps": [
+    "measure_battery",
+    "alarm_contact"
+   ]
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 326,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/326#issuecomment-4478338077",
+   "user": "dlnraja",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE200_u6x1zyv2"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 325,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/325",
+   "user": "haadeess",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE200_ka8l86iu"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 324,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/324",
+   "user": "kringloper",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE200_hl0ss9oa"
+   ],
+   "pids": [
+    "TS0225"
+   ],
+   "dps": [],
+   "caps": [
+    "alarm_volume",
+    "alarm_time",
+    "light_mode"
+   ]
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 324,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/324#issuecomment-4472385069",
+   "user": "kringloper",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE200_hl0ss9oa"
+   ],
+   "pids": [
+    "TS0225"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 324,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/324#issuecomment-4496052673",
+   "user": "kringloper",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE200_hl0ss9oa"
+   ],
+   "pids": [
+    "TS0225"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 324,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/324#issuecomment-4527776284",
+   "user": "github-actions[bot]",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE200_hl0ss9oa"
+   ],
+   "pids": [
+    "TS0225"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 324,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/324#issuecomment-4580574072",
+   "user": "dlnraja",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE200_hl0ss9oa"
+   ],
+   "pids": [
+    "TS0225"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 324,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/324#issuecomment-4585088574",
+   "user": "dlnraja",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE200_hl0ss9oa"
+   ],
+   "pids": [],
+   "dps": [
+    101,
+    1
+   ],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 324,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/324#issuecomment-4632896727",
+   "user": "kringloper",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE200_hl0ss9oa"
+   ],
+   "pids": [
+    "TS0225"
+   ],
+   "dps": [
+    12
+   ],
+   "caps": [
+    "alarm_motion",
+    "alarm_contact",
+    "measure_luminance"
+   ]
   }
  ]
 }
