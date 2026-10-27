@@ -13,6 +13,7 @@
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
+const { topicOf } = require('../../scripts/lib/report-writer');
 
 const repoRoot = path.resolve(__dirname, '..', '..');
 const cacheFile = path.join(repoRoot, '.github', 'state', 'activity-cache.json');
@@ -139,7 +140,7 @@ async function main() {
   if (forum) {
     log(`🌐 FORUM (${forum.length} posts):`);
     for (const p of forum.slice(0, 3)) {
-      log(`   topic#${p.topicId} "${p.title}" by ${p.username}`);
+      log(`   topic#${p.topicId} "${topicOf(p.title)}" by ${p.username}`);
     }
   }
   if (crashes) {

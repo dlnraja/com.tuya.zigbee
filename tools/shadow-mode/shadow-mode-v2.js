@@ -422,7 +422,7 @@ function cmdDryRun(state) {
   for (const t of actionable.slice(0, 20)) {
     console.log(C.bold(`\n  [${(t.priority || 'normal').toUpperCase()}] ${t.id}`));
     console.log(C.gray(`    source: ${t.source}`));
-    console.log(C.gray(`    title: ${t.title}`));
+    console.log(C.gray(`    title: ${t.title}`)); // ok-console
     if (t.mfr) {
       console.log(C.yellow(`    mfr: ${t.mfr}`));
       const fix = generateFixProposal(t);

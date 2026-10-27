@@ -14,6 +14,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { topicOf } = require('../../scripts/lib/report-writer');
 
 const STATE_DIR = 'C:/Users/Dell/Documents/homey/master/.github/state';
 
@@ -131,7 +132,7 @@ console.log(`Total correlations: ${TEMPORAL_CORRELATIONS.length}`);
 
 console.log('\n=== Slowest Fixes (GH issues) ===');
 for (const i of crossRef.patterns.slowestFixes) {
-  console.log(`  #${i.number} ${i.title} (${i.timeToFix_days} days, ${i.state})`);
+  console.log(`  #${i.number} ${topicOf(i.title)} (${i.timeToFix_days} days, ${i.state})`);
 }
 
 console.log('\n=== Recurring Themes ===');

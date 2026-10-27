@@ -125,7 +125,7 @@ async function main() {
         phase1Results[key].data = r.data;
       }
     } else {
-      console.log('    ' + (r.raw || '').slice(0, 150));
+      console.log('    ' + (r.raw || '').slice(0, 150)); // ok-console
     }
   }
   report.phases.api = phase1Results;

@@ -79,12 +79,12 @@ function main() {
   for (const [name, entries] of grouped) {
     if (!entries.length) {continue;}
     L.push(`## ${name} (${entries.length})`, '');
-    for (const e of entries) {L.push(`- [${e.title}](./${e.f})${e.date ? ` — _${e.date}_` : ''}`);}
+    for (const e of entries) {L.push(`- [${e.title}](./${e.f})${e.date ? ` — _${e.date}_` : ''}`);} // ok-own-text
     L.push('');
   }
   if (other.length) {
     L.push(`## 📄 Divers (${other.length})`, '');
-    for (const e of other) {L.push(`- [${e.title}](./${e.f})${e.date ? ` — _${e.date}_` : ''}`);}
+    for (const e of other) {L.push(`- [${e.title}](./${e.f})${e.date ? ` — _${e.date}_` : ''}`);} // ok-own-text
     L.push('');
   }
   L.push('## 🗄️ Candidats à l\'archivage (non référencés, > 60 jours)', '');

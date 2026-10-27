@@ -52,7 +52,7 @@ async function discoverPID(fp){
   if(!TOKEN)return null;
   const iss=await ghSearch('issues',fp+' TS',5);
   if(iss&&iss.items){const pids=new Set();
-    for(const it of iss.items){const t=(it.title||'')+' '+(it.body||'').slice(0,2000);
+    for(const it of iss.items){const t=(it.title||'')+' '+(it.body||'').slice(0,2000); // ok-extract-only
       (t.match(/\bTS[0-9]{4}[A-Z]?\b/g)||[]).forEach(p=>pids.add(p))}
     if(pids.size)return{pid:[...pids][0],src:'gh-issue',all:[...pids]}}
   return null;

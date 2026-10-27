@@ -3,87 +3,7 @@
   "workflowsWithoutAbout": [],
   "quotingScripts": [
     {
-      "file": ".github/scripts/athom-login-cartography.js",
-      "lines": 1
-    },
-    {
       "file": ".github/scripts/generate-dashboards-page.js",
-      "lines": 1
-    },
-    {
-      "file": ".github/scripts/internet-research-tool.js",
-      "lines": 2
-    },
-    {
-      "file": ".github/scripts/scan-johan-full.js",
-      "lines": 1
-    },
-    {
-      "file": ".github/scripts/variant-scanner.js",
-      "lines": 1
-    },
-    {
-      "file": "scripts/diag/flow-trigger-reach.js",
-      "lines": 1
-    },
-    {
-      "file": "tools/ci/auto-bot-issue-triage.js",
-      "lines": 1
-    },
-    {
-      "file": "tools/ci/button-issues-deep.js",
-      "lines": 3
-    },
-    {
-      "file": "tools/ci/check-open-buttons.js",
-      "lines": 1
-    },
-    {
-      "file": "tools/ci/device-investigator.js",
-      "lines": 1
-    },
-    {
-      "file": "tools/ci/fetch-all-activity.js",
-      "lines": 1
-    },
-    {
-      "file": "tools/ci/fetch-dlnraja-comments-public.js",
-      "lines": 1
-    },
-    {
-      "file": "tools/ci/find-no-oninit.js",
-      "lines": 1
-    },
-    {
-      "file": "tools/ci/forum-temporal-collect.js",
-      "lines": 1
-    },
-    {
-      "file": "tools/ci/generate-docs-index.js",
-      "lines": 2
-    },
-    {
-      "file": "tools/ci/homey-sdk-rules.js",
-      "lines": 1
-    },
-    {
-      "file": "tools/ci/parse-forum-digest.js",
-      "lines": 1
-    },
-    {
-      "file": "tools/ci/regression-lessons-gate.js",
-      "lines": 1
-    },
-    {
-      "file": "tools/ci/session-start.js",
-      "lines": 1
-    },
-    {
-      "file": "tools/ci/temporal-cross-ref.js",
-      "lines": 1
-    },
-    {
-      "file": "tools/shadow-mode/shadow-mode-v2.js",
       "lines": 1
     }
   ],
@@ -110,5 +30,5 @@
     "reports/kimi-2026-07-30/RAPPORT_TESTS_AUDITS.md": 1,
     "reports/p2234b-sacred-couple-refine-2026-08-24.md": 1
   },
-  "_scope": "P3075 (2026-10-26): forum searches (search-forum, search-forum-v2) now print link + topic instead of titles; personal-data guard listed in the inventory. P3069 step 4 (2026-10-26): weekly loop, forum searches, comment collector and issue manager link + topic instead of titles; AI prompts marked ok-extract-only; own plan files marked own-text-file. Step 3 widened the scan (tools/, inline workflow JS, \"+\" concatenation). May only shrink."
+  "_scope": "P3080 (2026-10-27): 20 scripts paid off \u2014 issue/forum titles go through topicOf (scan-johan-full, triage, button/temporal/forum tools, session-start, digest), console-only and own-text lines tagged. P3075 (2026-10-26): forum searches (search-forum, search-forum-v2) now print link + topic instead of titles; personal-data guard listed in the inventory. P3069 step 4 (2026-10-26): weekly loop, forum searches, comment collector and issue manager link + topic instead of titles; AI prompts marked ok-extract-only; own plan files marked own-text-file. Step 3 widened the scan (tools/, inline workflow JS, \"+\" concatenation). May only shrink."
 }

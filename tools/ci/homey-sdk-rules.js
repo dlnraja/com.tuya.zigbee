@@ -503,7 +503,7 @@ function run({ app, root = '.', mode = 'build', appPath, only, imageProbe } = {}
 }
 
 function docTable() {
-  const rows = RULES.map((r) => `| ${r.id} | ${r.area} | ${r.level} | ${r.enforce} | ${r.title.replace(/\|/g, '\\|')} | [source](${r.source}) · ${r.since} |`);
+  const rows = RULES.map((r) => `| ${r.id} | ${r.area} | ${r.level} | ${r.enforce} | ${r.title.replace(/\|/g, '\\|')} | [source](${r.source}) · ${r.since} |`); // ok-own-text
   return ['| Rule | Area | Level | CI | Rule (our wording) | Source · since |', '|---|---|---|---|---|---|', ...rows].join('\n');
 }
 

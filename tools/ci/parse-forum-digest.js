@@ -16,6 +16,7 @@
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
+const { topicOf } = require('../../scripts/lib/report-writer');
 
 const ROOT = path.resolve(__dirname, '..', '..');
 const STATE = path.join(ROOT, '.github', 'state', 'forum');
@@ -155,7 +156,7 @@ async function main() {
   fs.writeFileSync(outFile, `${JSON.stringify(report, null, 2)}\n`);
 
   console.log('=== parse-forum-digest (P2214) ===');
-  console.log(`Topic T${TOPIC_ID}: ${topic.title || '(no title)'}`);
+  console.log(`Topic T${TOPIC_ID}: ${topicOf(topic.title) || '(no topic)'}`);
   console.log(`Digest generated: ${digest.generatedAt}`);
   console.log(`Digest highest actionable: #${digestHighest ?? '—'} (scanned ${topic.scanned || 0} posts)`);
   if (live) {

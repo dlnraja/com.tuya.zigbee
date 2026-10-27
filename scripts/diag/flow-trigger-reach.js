@@ -41,5 +41,5 @@ for (const d of fs.readdirSync(path.join(root, 'drivers'))) {
 module.exports = out;
 if (require.main === module) {
   console.log(Object.fromEntries(Object.entries(out).map(([k, v]) => [k, v.length])));
-  if (process.argv.includes('--list')) for (const r of out.orphan) console.log(`${r.id} | ${r.title}`);
+  if (process.argv.includes('--list')) for (const r of out.orphan) console.log(`${r.id} | ${r.title}`); // ok-own-text
 }

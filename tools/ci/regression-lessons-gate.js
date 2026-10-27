@@ -335,7 +335,7 @@ function main() {
     console.log(`  verdict=${report.summary.verdict} passed=${report.summary.passed}/${report.summary.rules} fatalFails=${fatals.length} warnFails=${warns.length}`);
     for (const r of results) {
       const mark = r.ok ? 'PASS' : (r.severity === 'fatal' ? 'FAIL' : 'WARN');
-      console.log(`  [${mark}] ${r.id}: ${r.title}`);
+      console.log(`  [${mark}] ${r.id}: ${r.title}`); // ok-own-text
       if (!r.ok && r.detail) console.log(`         ${r.detail}`);
     }
     console.log(`  wrote ${path.relative(process.cwd(), OUT).replace(/\\/g, '/')}`);
