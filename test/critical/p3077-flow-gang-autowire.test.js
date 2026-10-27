@@ -90,3 +90,41 @@ test('P3077 flow batch 4: shutter moving + vacuum cleaning follow their state ca
   for (const id of NEVER_FIRE_IDS) {assert.strictEqual(map.triggers[id], undefined, id);}
   assert.ok(map.triggers.device_din_rail_meter_hvac_dehumidifier_powe_f9a4b, 'DIN-rail power card keeps its mapping');
 });
+
+test('P3077 flow batch 5: temperature/humidity/soil threshold cards cross the stored setting once, with hysteresis', () => {
+  const ex = {
+    climate_sensor_temperature_alarm_high: ['climate_sensor', 'measure_temperature', 'over:alarm_temp_max:40:0.5'],
+    climate_sensor_humidity_alarm_low: ['climate_sensor', 'measure_humidity', 'under:alarm_humidity_min:20:2'],
+    sensor_contact_climate_temperature_alarm_low: ['sensor_contact_climate', 'measure_temperature', 'under:alarm_temp_min:0:0.5'],
+    sensor_climate_temphumidsensor_humidity_alarm_high: ['sensor_climate_temphumidsensor', 'measure_humidity', 'over:alarm_humidity_max:80:2'],
+    sensor_lcdtemphumidsensor_soil_sensor_soil_dry: ['sensor_lcdtemphumidsensor_soil', 'measure_humidity.soil', 'under:soil_warning_threshold:30:2']
+  };
+  for (const [id, [driver, cap, when]] of Object.entries(ex)) {assert.deepStrictEqual(map.triggers[id], { driver, cap, when }, id);}
+  const n = Object.values(map.triggers).filter((v) => /^(over|under):/.test(v.when)).length;
+  assert.strictEqual(n, 20, '18 climate + 2 soil-dry cards');
+  // CO2 alert cards keep their alarm_co2 rule (capability missing): not mapped, owner decision
+  assert.strictEqual(map.triggers.air_quality_co2_alert_on, undefined);
+  W._resetForTests();
+  const settings = { alarm_temp_max: 30 };
+  const dev = { getSetting: (k) => (k in settings ? settings[k] : null) };
+  const hi = (v, p) => W.mappedTriggerIds('climate_sensor', 'measure_temperature', v, { device: dev, previous: p });
+  assert.deepStrictEqual(hi(31, 29), ['climate_sensor_temperature_alarm_high'], 'stored setting 30 used');
+  assert.deepStrictEqual(hi(32, 31), [], 'fires once');
+  assert.deepStrictEqual(hi(29.8, 32), [], 'inside hysteresis: not re-armed');
+  assert.deepStrictEqual(hi(30.2, 29.8), [], 'still not re-armed');
+  assert.deepStrictEqual(hi(29.5, 30.2), [], 're-arms at thr - 0.5');
+  assert.deepStrictEqual(hi(30.1, 29.5), ['climate_sensor_temperature_alarm_high']);
+  // restart while already high: no memory, previous above threshold -> never re-fires
+  const dev2 = { getSetting: () => null };
+  assert.strictEqual(W.thresholdCrossed(dev2, 'x', 'over:alarm_temp_max:40:0.5', 41, 41), false, 'null setting -> manifest default 40, not 0');
+  assert.strictEqual(W.thresholdCrossed(dev2, 'x', 'over:alarm_temp_max:40:0.5', 39, 41), false);
+  assert.strictEqual(W.thresholdCrossed(dev2, 'x', 'over:alarm_temp_max:40:0.5', 40.5, 39), true);
+  const dry = (v, p) => W.thresholdCrossed(dev2, 'd', 'under:soil_warning_threshold:30:2', v, p);
+  assert.strictEqual(dry(28, 35), true);
+  assert.strictEqual(dry(25, 28), false);
+  assert.strictEqual(dry(31, 25), false, 'below 30 + 2: not re-armed');
+  assert.strictEqual(dry(32, 31), false, 're-armed');
+  assert.strictEqual(dry(29, 32), true);
+  assert.strictEqual(W.thresholdCrossed(null, 'n', 'over:a:1:0', 5, 0), false);
+  assert.strictEqual(W.thresholdCrossed(dev2, 'n', 'over:a:1:0', 'bad', 0), false);
+});
