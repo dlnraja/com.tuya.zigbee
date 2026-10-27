@@ -191,6 +191,11 @@
           }
         }
       ]
+    },
+    {
+      "$extends": [
+        "localtuya_advanced"
+      ]
     }
   ],
   "platforms": [
