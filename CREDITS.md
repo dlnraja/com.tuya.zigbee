@@ -491,3 +491,6 @@ A heartfelt thank you to:
 - **Agent Reach** (Panniantong, MIT) — the idea of reading many public channels through one read-only fallback; used only on the maintainer box, never in CI.
 - **Powercalc** (Home Assistant community) — the idea of learning a device profile from repeated readings before trusting it.
 - **Zigbee2MQTT / zigbee-herdsman-converters, ZHA quirks, deCONZ, tuya-local, localtuya, tinytuya, Hubitat (kkossev), Home Assistant, Johan Bendz and the fork maintainers, Athom SDK** — public projects followed "since last time"; anything found is rewritten in our words and credited before use.
+
+## Compose-faithful app.json resync (P3086, 2026-10-27) — idea only, no code copied
+- **Athom BV, homey CLI (`homey/lib/HomeyCompose.js`)** — the list of compose placeholders the composer replaces ({{driverId}}, {{driverPath}}, {{driverAssetsPath}}, {{driverName}}); `scripts/maintenance/sync-appjson-zigbee.js` now applies the same substitution, written in our own code.
