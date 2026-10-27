@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-26T11:02:30.790Z",
+  "at": "2026-10-27T10:32:19.212Z",
   "checked": 51,
   "findings": [
     {
@@ -28,9 +28,52 @@
     },
     {
       "kind": "repeated-failure",
+      "sig": "ci-7c75a5a143eb",
+      "wf": ".github/workflows/code-quality.yml",
+      "detail": "3 failures in 72 h: code-quality failed on master (Quality Checks / P244x flow/knob + family gates: no-log)",
+      "issue": 580
+    },
+    {
+      "kind": "repeated-failure",
       "sig": "ci-351d901e2c87",
       "wf": ".github/workflows/node22-tests.yml",
-      "detail": "14 failures in 72 h: Node 22 runtime tests failed on bastien-home (test / Full suite on Node 22: no-log)"
+      "detail": "24 failures in 72 h: Node 22 runtime tests failed on master (test / Full suite on Node 22: no-log)"
+    },
+    {
+      "kind": "repeated-failure",
+      "sig": "ci-d2c3bf9ae874",
+      "wf": ".github/workflows/unified-ci.yml",
+      "detail": "3 failures in 72 h: 🛡️ Unified CI/CD Orchestrator failed on master (🔍 Universal Validation (SDK 3 Strict) / 🛡️ L99 dual-app enrich gates (hard): no-log)"
+    },
+    {
+      "kind": "repeated-failure",
+      "sig": "ci-6e84c480a105",
+      "wf": ".github/workflows/node22-tests.yml",
+      "detail": "4 failures in 72 h: Node 22 runtime tests failed on master (test / Full suite on Node 22: code-or-test)"
+    },
+    {
+      "kind": "repeated-failure",
+      "sig": "ci-5be26e541885",
+      "wf": ".github/workflows/node22-tests.yml",
+      "detail": "4 failures in 72 h: Node 22 runtime tests failed on master (strict / node:test strict (P3057-3): unknown)"
+    },
+    {
+      "kind": "repeated-failure",
+      "sig": "ci-4b363edeecc7",
+      "wf": ".github/workflows/node22-tests.yml",
+      "detail": "8 failures in 72 h: Node 22 runtime tests failed on bastien-home (test / node:test strict (P3057-3): no-log)"
+    },
+    {
+      "kind": "repeated-failure",
+      "sig": "ci-4343ee8f200b",
+      "wf": ".github/workflows/syntax-check.yml",
+      "detail": "4 failures in 72 h: 🔍 Syntax Check & SDK3 Validation failed on master (syntax-check / P2138 BSEED dimmer + Poll Control tests: no-log)"
+    },
+    {
+      "kind": "repeated-failure",
+      "sig": "ci-57f650364735",
+      "wf": ".github/workflows/node22-tests.yml",
+      "detail": "8 failures in 72 h: Node 22 runtime tests failed on master (strict / node:test strict (P3057-3): no-log)"
     }
   ]
 }

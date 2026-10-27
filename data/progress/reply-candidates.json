@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-26T11:02:48.802Z",
+  "generated": "2026-10-27T10:32:26.557Z",
   "note": "P3048: candidates only. No workflow posts, comments or reacts. A human (or the Grok Bot anti-flood routine) decides.",
   "limits": {
     "autoPost": false,
@@ -26,32 +26,20 @@
   },
   "scanned": {
     "commits": 300,
-    "issues": 35
+    "issues": 12
   },
   "candidates": [],
   "skipped": [
     {
-      "issue": 490,
-      "reason": "pull request"
-    },
-    {
-      "issue": 577,
-      "reason": "pull request"
-    },
-    {
-      "issue": 576,
-      "reason": "closed"
-    },
-    {
-      "issue": 560,
-      "reason": "closed"
-    },
-    {
-      "issue": 24659,
+      "issue": 3685,
       "reason": "not found"
     },
     {
-      "issue": 3683,
+      "issue": 3684,
+      "reason": "not found"
+    },
+    {
+      "issue": 6401,
       "reason": "not found"
     },
     {
@@ -59,116 +47,36 @@
       "reason": "not found"
     },
     {
-      "issue": 6,
+      "issue": 1330,
+      "reason": "not found"
+    },
+    {
+      "issue": 8500,
+      "reason": "not found"
+    },
+    {
+      "issue": 26084,
+      "reason": "not found"
+    },
+    {
+      "issue": 3076,
+      "reason": "not found"
+    },
+    {
+      "issue": 513,
+      "reason": "closed"
+    },
+    {
+      "issue": 2262,
+      "reason": "not found"
+    },
+    {
+      "issue": 29508,
+      "reason": "not found"
+    },
+    {
+      "issue": 579,
       "reason": "pull request"
-    },
-    {
-      "issue": 394,
-      "reason": "closed"
-    },
-    {
-      "issue": 1534,
-      "reason": "not found"
-    },
-    {
-      "issue": 3655,
-      "reason": "not found"
-    },
-    {
-      "issue": 244,
-      "reason": "pull request"
-    },
-    {
-      "issue": 258,
-      "reason": "closed"
-    },
-    {
-      "issue": 511,
-      "reason": "closed"
-    },
-    {
-      "issue": 761,
-      "reason": "not found"
-    },
-    {
-      "issue": 774,
-      "reason": "not found"
-    },
-    {
-      "issue": 824,
-      "reason": "not found"
-    },
-    {
-      "issue": 826,
-      "reason": "not found"
-    },
-    {
-      "issue": 1087,
-      "reason": "not found"
-    },
-    {
-      "issue": 1585,
-      "reason": "not found"
-    },
-    {
-      "issue": 1626,
-      "reason": "not found"
-    },
-    {
-      "issue": 2157,
-      "reason": "not found"
-    },
-    {
-      "issue": 3679,
-      "reason": "not found"
-    },
-    {
-      "issue": 2134,
-      "reason": "not found"
-    },
-    {
-      "issue": 2093,
-      "reason": "not found"
-    },
-    {
-      "issue": 2092,
-      "reason": "not found"
-    },
-    {
-      "issue": 13340,
-      "reason": "not found"
-    },
-    {
-      "issue": 13187,
-      "reason": "not found"
-    },
-    {
-      "issue": 13132,
-      "reason": "not found"
-    },
-    {
-      "issue": 13179,
-      "reason": "not found"
-    },
-    {
-      "issue": 13141,
-      "reason": "not found"
-    },
-    {
-      "issue": 13243,
-      "reason": "not found"
-    },
-    {
-      "issue": 5776,
-      "reason": "not found"
-    },
-    {
-      "issue": 25308,
-      "reason": "not found"
-    },
-    {
-      "issue": 12488,
-      "reason": "not found"
     }
   ]
 }

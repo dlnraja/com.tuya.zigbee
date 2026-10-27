@@ -1,0 +1,188 @@
+{
+ "schema": 1,
+ "note": "P3073 upstream cursors: last thing seen per source (read-only watch).",
+ "sources": {
+  "zhc": {
+   "last": "7462b541b367c301057aee995e6e6756e5f7e985",
+   "checkedAt": "2026-10-27T10:31:07.705Z",
+   "kind": "commits",
+   "what": "Koenkk/zigbee-herdsman-converters"
+  },
+  "zhc-rel": {
+   "last": "v26.124.0",
+   "checkedAt": "2026-10-27T10:31:07.705Z",
+   "kind": "releases",
+   "what": "Koenkk/zigbee-herdsman-converters"
+  },
+  "zha-quirks": {
+   "last": "2b1abce3ec6f114d4498a0a92e7d9f7945eb0000",
+   "checkedAt": "2026-10-27T10:31:07.705Z",
+   "kind": "commits",
+   "what": "zigpy/zha-device-handlers"
+  },
+  "deconz": {
+   "last": "a4c17adfa04abc63637ad17de7f85256a825a2cb",
+   "checkedAt": "2026-10-27T10:31:07.705Z",
+   "kind": "commits",
+   "what": "dresden-elektronik/deconz-rest-plugin"
+  },
+  "johan": {
+   "last": "61577d8ec2572bf8c7c4c2ff210284575acd295b",
+   "checkedAt": "2026-10-27T10:31:07.705Z",
+   "kind": "commits",
+   "what": "JohanBendz/com.tuya.zigbee"
+  },
+  "johan-forks": {
+   "last": "2026-10-25T20:08:40Z",
+   "checkedAt": "2026-10-27T10:31:07.705Z",
+   "kind": "forks",
+   "what": "JohanBendz/com.tuya.zigbee"
+  },
+  "athom-zigbeedriver": {
+   "checkedAt": "2026-10-27T10:31:07.705Z",
+   "kind": "releases",
+   "what": "athombv/node-homey-zigbeedriver"
+  },
+  "athom-clusters": {
+   "last": "v3.9.1",
+   "checkedAt": "2026-10-27T10:31:07.705Z",
+   "kind": "releases",
+   "what": "athombv/node-zigbee-clusters"
+  },
+  "athom-sdk-issues": {
+   "last": "36ead0ea23a40688c6dc720074b0bca5d5863afc",
+   "checkedAt": "2026-10-27T10:31:07.705Z",
+   "kind": "commits",
+   "what": "athombv/homey-apps-sdk-issues"
+  },
+  "tuya-local": {
+   "last": "245469649fb2df6767988213dd6ae9dcb3b3e0f6",
+   "checkedAt": "2026-10-27T10:31:07.705Z",
+   "kind": "commits",
+   "what": "make-all/tuya-local"
+  },
+  "localtuya": {
+   "last": "59c95cd06c2696afc98f6bc52d5fa060f3c517da",
+   "checkedAt": "2026-10-27T10:31:07.705Z",
+   "kind": "commits",
+   "what": "rospogrigio/localtuya"
+  },
+  "hass-localtuya": {
+   "last": "d0e951f4218caa0889b3896b48b559630d0d9dc2",
+   "checkedAt": "2026-10-27T10:31:07.705Z",
+   "kind": "commits",
+   "what": "xZetsubou/hass-localtuya"
+  },
+  "tinytuya": {
+   "last": "v1.20.0",
+   "checkedAt": "2026-10-27T10:31:07.705Z",
+   "kind": "releases",
+   "what": "jasonacox/tinytuya"
+  },
+  "hubitat-kkossev": {
+   "last": "d5cec8336697a91a8330cda7927b597dfcd7d099",
+   "checkedAt": "2026-10-27T10:31:07.705Z",
+   "kind": "commits",
+   "what": "kkossev/Hubitat"
+  },
+  "ha-core-rel": {
+   "last": "2026.10.4",
+   "checkedAt": "2026-10-27T10:31:07.705Z",
+   "kind": "releases",
+   "what": "home-assistant/core"
+  },
+  "r-homey": {
+   "checkedAt": "2026-10-27T10:31:07.705Z",
+   "kind": "reddit",
+   "what": "r/homey",
+   "lastError": "403",
+   "backoffUntil": "2026-11-03T10:31:07.705Z"
+  }
+ },
+ "forum": {
+  "owner": "forum-poll (data/leads/forum-lastseen.json)",
+  "topics": {
+   "156": {
+    "lastSeenPost": 7519,
+    "at": "2026-10-26T15:12:23.337Z"
+   },
+   "15811": {
+    "lastSeenPost": 356,
+    "at": "2026-10-25T22:35:00.041Z"
+   },
+   "21313": {
+    "lastSeenPost": 2819,
+    "at": "2026-10-27T07:59:32.244Z"
+   },
+   "26439": {
+    "lastSeenPost": 5537,
+    "at": "2026-10-27T07:59:33.382Z"
+   },
+   "36418": {
+    "lastSeenPost": 548,
+    "at": "2026-10-26T15:12:19.649Z"
+   },
+   "43287": {
+    "lastSeenPost": 2319,
+    "at": "2026-10-27T07:59:47.960Z"
+   },
+   "76161": {
+    "lastSeenPost": 486,
+    "at": "2026-10-27T07:59:41.136Z"
+   },
+   "89271": {
+    "lastSeenPost": 673,
+    "at": "2026-10-27T07:59:34.601Z"
+   },
+   "99614": {
+    "lastSeenPost": 324,
+    "at": "2026-10-26T07:47:52.301Z"
+   },
+   "101901": {
+    "lastSeenPost": 8,
+    "at": "2026-10-26T15:12:18.487Z"
+   },
+   "106779": {
+    "lastSeenPost": 1172,
+    "at": "2026-10-25T22:34:58.919Z"
+   },
+   "120477": {
+    "lastSeenPost": 15,
+    "at": "2026-10-26T15:12:14.101Z"
+   },
+   "140352": {
+    "lastSeenPost": 2269,
+    "at": "2026-10-27T07:59:35.693Z"
+   },
+   "146667": {
+    "lastSeenPost": 25,
+    "at": "2026-10-26T15:12:15.199Z"
+   },
+   "146735": {
+    "lastSeenPost": 508,
+    "at": "2026-10-27T07:59:36.790Z"
+   },
+   "149230": {
+    "lastSeenPost": 4,
+    "at": "2026-10-26T07:47:46.904Z"
+   },
+   "150690": {
+    "lastSeenPost": 40,
+    "at": "2026-10-26T07:47:51.216Z"
+   },
+   "153712": {
+    "lastSeenPost": 32,
+    "at": "2026-10-27T07:59:46.820Z"
+   },
+   "154077": {
+    "lastSeenPost": 528,
+    "at": "2026-10-27T07:59:37.882Z"
+   },
+   "154092": {
+    "lastSeenPost": 48,
+    "at": "2026-10-26T07:47:49.041Z"
+   }
+  }
+ },
+ "updatedAt": "2026-10-27T10:31:07.705Z"
+}
