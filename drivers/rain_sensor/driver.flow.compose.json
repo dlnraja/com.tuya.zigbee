@@ -32,7 +32,9 @@
       "id": "rain_sensor_rain_intensity_changed",
       "title": {
         "en": "Rain intensity changed",
-        "fr": "Intensité pluie changée"
+        "fr": "Intensité pluie changée",
+        "de": "Regenintensität geändert",
+        "nl": "Regenintensiteit gewijzigd"
       },
       "tokens": [
         {
@@ -133,7 +135,9 @@
       "id": "rain_sensor_is_raining",
       "title": {
         "en": "It is !{{raining|not raining}}",
-        "fr": "Il !{{pleut|ne pleut pas}}"
+        "fr": "Il !{{pleut|ne pleut pas}}",
+        "de": "Es !{{regnet|regnet nicht}}",
+        "nl": "Het !{{regent|regent niet}}"
       },
       "args": [],
       "titleFormatted": {
@@ -145,7 +149,9 @@
       "id": "rain_sensor_rain_intensity_above",
       "title": {
         "en": "Rain intensity is above",
-        "fr": "Intensité pluie supérieure à"
+        "fr": "Intensité pluie supérieure à",
+        "de": "Regenintensität ist über",
+        "nl": "Regenintensiteit is hoger dan"
       },
       "args": [
         {

@@ -4,7 +4,9 @@
       "id": "hybrid_garage_door_sensor_opened",
       "title": {
         "en": "Garage door opened",
-        "fr": "Porte garage ouverte"
+        "fr": "Porte garage ouverte",
+        "de": "Garagentor geöffnet",
+        "nl": "Garagedeur geopend"
       },
       "args": [],
       "titleFormatted": {
@@ -16,7 +18,9 @@
       "id": "hybrid_garage_door_sensor_closed",
       "title": {
         "en": "Garage door closed",
-        "fr": "Porte garage fermée"
+        "fr": "Porte garage fermée",
+        "de": "Garagentor geschlossen",
+        "nl": "Garagedeur gesloten"
       },
       "args": [],
       "titleFormatted": {
@@ -28,7 +32,9 @@
       "id": "hybrid_garage_door_sensor_contact_changed",
       "title": {
         "en": "Contact sensor changed",
-        "fr": "Capteur contact changé"
+        "fr": "Capteur contact changé",
+        "de": "Kontaktsensor geändert",
+        "nl": "Contactsensor gewijzigd"
       },
       "tokens": [
         {
@@ -69,7 +75,9 @@
       "id": "hybrid_garage_door_sensor_is_open",
       "title": {
         "en": "Garage door is open",
-        "fr": "Porte garage est ouverte"
+        "fr": "Porte garage est ouverte",
+        "de": "Garagentor ist offen",
+        "nl": "Garagedeur is open"
       },
       "args": [],
       "titleFormatted": {
@@ -81,7 +89,9 @@
       "id": "hybrid_garage_door_sensor_is_closed",
       "title": {
         "en": "Garage door is closed",
-        "fr": "Porte garage est fermée"
+        "fr": "Porte garage est fermée",
+        "de": "Garagentor ist geschlossen",
+        "nl": "Garagedeur is gesloten"
       },
       "args": [],
       "titleFormatted": {
@@ -95,7 +105,9 @@
       "id": "hybrid_garage_door_sensor_open",
       "title": {
         "en": "Open garage door",
-        "fr": "Ouvrir porte garage"
+        "fr": "Ouvrir porte garage",
+        "de": "Garagentor öffnen",
+        "nl": "Garagedeur openen"
       },
       "args": [],
       "titleFormatted": {
@@ -107,7 +119,9 @@
       "id": "hybrid_garage_door_sensor_close",
       "title": {
         "en": "Close garage door",
-        "fr": "Fermer porte garage"
+        "fr": "Fermer porte garage",
+        "de": "Garagentor schließen",
+        "nl": "Garagedeur sluiten"
       },
       "args": [],
       "titleFormatted": {

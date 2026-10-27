@@ -4,7 +4,9 @@
       "id": "hybrid_fan_sensor_turned_on",
       "title": {
         "en": "Fan turned on",
-        "fr": "Ventilateur allumé"
+        "fr": "Ventilateur allumé",
+        "de": "Lüfter eingeschaltet",
+        "nl": "Ventilator ingeschakeld"
       },
       "args": [],
       "titleFormatted": {
@@ -16,7 +18,9 @@
       "id": "hybrid_fan_sensor_turned_off",
       "title": {
         "en": "Fan turned off",
-        "fr": "Ventilateur éteint"
+        "fr": "Ventilateur éteint",
+        "de": "Lüfter ausgeschaltet",
+        "nl": "Ventilator uitgeschakeld"
       },
       "args": [],
       "titleFormatted": {

@@ -73,7 +73,9 @@
       "id": "module_mini_switch_physical_on",
       "title": {
         "en": "Physical button turned on",
-        "fr": "Bouton physique allumé"
+        "fr": "Bouton physique allumé",
+        "de": "Per Taste am Gerät eingeschaltet",
+        "nl": "Met knop op apparaat ingeschakeld"
       },
       "args": [],
       "titleFormatted": {
@@ -85,7 +87,9 @@
       "id": "module_mini_switch_physical_off",
       "title": {
         "en": "Physical button turned off",
-        "fr": "Bouton physique éteint"
+        "fr": "Bouton physique éteint",
+        "de": "Per Taste am Gerät ausgeschaltet",
+        "nl": "Met knop op apparaat uitgeschakeld"
       },
       "args": [],
       "titleFormatted": {

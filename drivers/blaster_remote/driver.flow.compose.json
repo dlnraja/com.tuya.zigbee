@@ -4,7 +4,9 @@
       "id": "blaster_remote_ir_remote_code_learned",
       "title": {
         "en": "An IR code was learned",
-        "fr": "Un code IR a été appris"
+        "fr": "Un code IR a été appris",
+        "de": "Ein IR-Code wurde gelernt",
+        "nl": "Een IR-code is aangeleerd"
       },
       "tokens": [
         {
@@ -22,7 +24,9 @@
       "id": "blaster_remote_ir_code_received",
       "title": {
         "en": "ir code received",
-        "fr": "code IR reçu"
+        "fr": "code IR reçu",
+        "de": "IR-Code empfangen",
+        "nl": "IR-code ontvangen"
       },
       "args": []
     }
@@ -32,7 +36,9 @@
       "id": "blaster_remote_ir_remote_send_code",
       "title": {
         "en": "Send an IR code",
-        "fr": "Envoyer un code IR"
+        "fr": "Envoyer un code IR",
+        "de": "IR-Code senden",
+        "nl": "IR-code verzenden"
       },
       "args": [
         {
@@ -56,7 +62,9 @@
       "id": "blaster_remote_ir_remote_start_learning",
       "title": {
         "en": "Start learning an IR code",
-        "fr": "Commencer l'apprentissage d'un code IR"
+        "fr": "Commencer l'apprentissage d'un code IR",
+        "de": "Anlernen eines IR-Codes starten",
+        "nl": "Aanleren van IR-code starten"
       },
       "args": []
     }

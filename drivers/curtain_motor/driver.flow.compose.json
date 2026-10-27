@@ -413,7 +413,9 @@
       "id": "curtain_motor_set_upper_limit",
       "title": {
         "en": "Set current position as upper limit",
-        "fr": "Définir la position actuelle comme limite haute"
+        "fr": "Définir la position actuelle comme limite haute",
+        "de": "Aktuelle Position als obere Grenze festlegen",
+        "nl": "Huidige positie als bovengrens instellen"
       },
       "args": [],
       "titleFormatted": {
@@ -425,7 +427,9 @@
       "id": "curtain_motor_set_lower_limit",
       "title": {
         "en": "Set current position as lower limit",
-        "fr": "Définir la position actuelle comme limite basse"
+        "fr": "Définir la position actuelle comme limite basse",
+        "de": "Aktuelle Position als untere Grenze festlegen",
+        "nl": "Huidige positie als ondergrens instellen"
       },
       "args": [],
       "titleFormatted": {
@@ -437,7 +441,9 @@
       "id": "curtain_motor_remove_limits",
       "title": {
         "en": "Remove position limits",
-        "fr": "Supprimer les limites de position"
+        "fr": "Supprimer les limites de position",
+        "de": "Positionsgrenzen entfernen",
+        "nl": "Positiegrenzen verwijderen"
       },
       "args": [],
       "titleFormatted": {
