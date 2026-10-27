@@ -10,6 +10,8 @@ const CE = require(path.join(ROOT, 'scripts', 'automation', 'changelog-entry.js'
 
 // Placeholder / vague entries still waiting for a rewrite, per app. May only go down.
 const CEIL = { 'com.dlnraja.tuya.zigbee': 0, 'com.dlnraja.tuya.zigbee.stable': 128, 'com.dlnraja.tuya.zigbee.bastien': 551 };
+// Last version covered by the backlog ratchet, per app (later bumps are judged by the bump routine itself).
+const CUTOFF = { 'com.dlnraja.tuya.zigbee.bastien': '1.0.217' };
 
 describe('P3075 changelog backfill', () => {
   it('reads only user-facing commits and keeps ids, not refs', () => {
@@ -62,10 +64,20 @@ describe('P3075 changelog backfill', () => {
   it('placeholder entries left in this branch stay under the ceiling', () => {
     const app = JSON.parse(fs.readFileSync(path.join(ROOT, 'app.json'), 'utf8'));
     const cl = JSON.parse(fs.readFileSync(path.join(ROOT, '.homeychangelog.json'), 'utf8'));
-    const keys = Object.keys(cl).filter((k) => /^\d+\.\d+\.\d+$/.test(k)).sort(CE.cmpVer);
+    // Versions written after the backfill by the bump routine are outside this ratchet (CUTOFF); the ceiling covers the backlog.
+    const cut = CUTOFF[app.id];
+    const keys = Object.keys(cl).filter((k) => /^\d+\.\d+\.\d+$/.test(k) && (!cut || CE.cmpVer(k, cut) <= 0)).sort(CE.cmpVer);
     let left = 0;
     keys.forEach((k, i) => { if (B.needsRewrite(cl[k], cl[keys[i - 1]]) && B.needsRewrite(cl[k], cl[keys[i - 1]]) !== 'no-fr') left++; });
     const ceil = CEIL[app.id];
     if (ceil != null) assert.ok(left <= ceil, `${left} placeholder/vague entries (ceiling ${ceil})`);
+  });
+});
+
+describe('P3075 changelog backfill cutoff', () => {
+  it('a vague entry written after the cutoff does not break the backlog ceiling', () => {
+    const cl = { '1.0.217': { en: 'x' }, '1.0.218': { en: 'Device fixes and improvements for switch (1 fix).' } };
+    const kept = Object.keys(cl).filter((k) => CE.cmpVer(k, CUTOFF['com.dlnraja.tuya.zigbee.bastien']) <= 0);
+    assert.deepStrictEqual(kept, ['1.0.217']);
   });
 });
