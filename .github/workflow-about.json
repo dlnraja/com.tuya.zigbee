@@ -86,6 +86,10 @@
       "group": "publish",
       "what": "Publishes the private Bastien house app (its own app ID only); manual by default."
     },
+    "bastien-repo-guards.yml": {
+      "group": "ci",
+      "what": "Runs only the personal-data guard and the stray-file guard on bastien-home pushes and PRs; read-only, no installs."
+    },
     "blakadder-fetch.yml": {
       "group": "enrich",
       "what": "Reads the Blakadder Zigbee database and cross-references it with our device list."
