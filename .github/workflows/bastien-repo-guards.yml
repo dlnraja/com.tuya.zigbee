@@ -1,0 +1,50 @@
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: Runs only the personal-data guard and the stray-file guard on bastien-home pushes and PRs;
+#   read-only, no installs.
+# Ideas from (thank you): GitHub Actions docs; rhysd (actionlint); the Athom homey CLI docs for the validate
+#   levels.
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
+#   posting stays off or ledger-gated.
+# <<< about
+# WHY(P3082): code-quality.yml only runs on master/main/stable-v5, so the P3074 personal-data guard never
+# ran on bastien-home. This runs just the two repo-content guards (personal data + P3081 stray files),
+# nothing else: no npm install, read-only token, one short job.
+name: bastien repo guards (personal data + stray files)
+
+on:
+  push:
+    branches: [bastien-home]
+  pull_request:
+    branches: [bastien-home]
+
+defaults:
+  run:
+    shell: bash
+
+permissions:
+  contents: read
+
+concurrency:
+  group: bastien-repo-guards-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  guards:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          persist-credentials: false
+
+      - name: Setup Node 22
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '22'
+
+      - name: P3074 personal-data guard (no CV/LinkedIn exports or personal contact data)
+        run: node tools/ci/personal-data-guard.js
+
+      - name: P3081 stray file guard (no #-named files, no .txt under drivers/)
+        run: node scripts/ci/stray-file-gate.cjs
