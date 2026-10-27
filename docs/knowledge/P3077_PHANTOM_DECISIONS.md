@@ -126,6 +126,13 @@ package (button_wireless_1, heobian/Heobian × 5 pids) carry t614u exemptions; t
 - button_emergency_sos now also reads DP26 (sos) and DP29 (emergency) as a press, next to the IAS Zone path. The existing 2 s debounce keeps one press as one alarm. Nothing is written at pairing.
 - `_TZE204_vrcfo4i0` / `_TZE284_vrcfo4i0` (gas_sensor and presence_sensor_radar, 16 entries) have no source and are dropped. curated-couple-removals blocks bots from adding any of them back.
 
+## Batch 9 (27/10/2026, owner t614u): Nous E8 smoke sensor and the short dcnsggv dimmer id
+
+- `_TZE200_0zaf1cr8` / `_TZE284_0zaf1cr8` (TS0601) are the Nous E8 smoke sensor in zigbee-herdsman-converters `tuya.ts` (TS0601_smoke_1, Koen Kanters and contributors): DP1 smoke, DP4 tamper, DP14 battery low. smoke_sensor_ts0601_dp already reads that exact layout (it holds the sibling `_TZE204_ntcy3xu1`), so the 8 case forms leave switch_3gang and go there. The Athom baseline only had them on smoke_sensor3 x TS0205, which P3055 had already dropped; nothing is lost from it here.
+- `_TZE200_dcnsggv` on climate_sensor is not a typo to delete: the same Z2M file lists it in the TS0601_dimmer_5 fingerprint next to `_TZE200_dcnsggvz`. Its 4 forms move to wall_dimmer_tuya (class light, which has dcnsggvz). Not in the baseline.
+- `gjnozsaz` (asked as a possible smoke detector) is the NEO NAS-WR01B plug in Z2M (TS011F): it stays on smartplug; its button_wireless_plug listing is reviewed in a later batch.
+- Devices already paired keep their driver; nothing is written at pairing.
+
 ## Pending
 
 - ~480 collateral duals need driver splits (next batches).

@@ -2,14 +2,16 @@
   "_why": "P3039d / t524u: the truth key is the exact mfr+pid couple, never the mfr alone. Homey matches the cartesian mfr x pid of a driver, so a mfr listed on a driver can generate combos no real device reports. For each driver, mfr (lowercase) -> the pids that are REAL for that mfr on that driver (source cited). It checks the paired couple at init: an unlisted pid for a listed mfr is reported once (warning + one notification naming the exact driver when known, P3040), the device keeps working on its current driver with that driver's profile overlaid when available; no re-pair needed. Mfrs not listed are not constrained. lib/utils/CoupleGuard.js (runtime) and scripts/ci/mfr-multi-driver-audit.js (CI) read this file as the reviewed list of real couples.",
   "drivers": {
     "smoke_sensor_ts0601_dp": {
-      "_source": "zigbee-herdsman-converters tuya.ts TS0601_smoke_4 (_TZE200_t5p1vj8r/uebojraa/vzekyi4c/dq1mfjug/yh7aoahi) and TS0601_smoke_1 (_TZE204_ntcy3xu1)",
+      "_source": "zigbee-herdsman-converters tuya.ts TS0601_smoke_4 (_TZE200_t5p1vj8r/uebojraa/vzekyi4c/dq1mfjug/yh7aoahi) and TS0601_smoke_1 (_TZE204_ntcy3xu1; Nous E8 _TZE200/_TZE284_0zaf1cr8, P3077 batch 9)",
       "mfrs": {
         "_tze200_t5p1vj8r": ["TS0601"],
         "_tze200_uebojraa": ["TS0601"],
         "_tze200_vzekyi4c": ["TS0601"],
         "_tze200_dq1mfjug": ["TS0601"],
         "_tze200_yh7aoahi": ["TS0601"],
-        "_tze204_ntcy3xu1": ["TS0601"]
+        "_tze204_ntcy3xu1": ["TS0601"],
+        "_tze200_0zaf1cr8": ["TS0601"],
+        "_tze284_0zaf1cr8": ["TS0601"]
       }
     },
     "slim_motion_sensor": {
