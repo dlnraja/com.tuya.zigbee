@@ -198,4 +198,8 @@ describe('P3077 phantom moves', () => {
     const c = reg.cases.find((x) => x.id === 'p2293-dfgbtub0-ts0044-wireless-4');
     assert.ok(c && c.canonicalDriver === 'button_wireless_4' && c.forbidMode === 'couple');
   });
+  it('batch 16: amp6tsvy (Moes ZTS-EU 1-gang) is only on switch_1gang, not on switch_2gang', () => {
+    for (const f of ['_TZE200_amp6tsvy', '_TZE204_amp6tsvy', '_TZE284_amp6tsvy']) assert.ok(lists(zig('switch_1gang'), f), f);
+    assert.ok(!zig('switch_2gang').manufacturerName.some((m) => /amp6tsvy/i.test(m)));
+  });
 });

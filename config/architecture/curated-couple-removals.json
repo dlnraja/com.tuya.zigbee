@@ -1206,6 +1206,22 @@
       ],
       "why": "P3077 batch 14: NEO NAS-WR01B TS011F metering plug (Z2M tuya.ts), owner smartplug",
       "source": "P3077 batch 14 (t614u)"
+    },
+    {
+      "driver": "switch_2gang",
+      "mfr": [
+        "_TZE204_amp6tsvy",
+        "_tze204_amp6tsvy",
+        "_TZE204_AMP6TSVY",
+        "_TZE284_amp6tsvy",
+        "_tze284_amp6tsvy",
+        "_TZE284_AMP6TSVY"
+      ],
+      "pid": [
+        "TS0601"
+      ],
+      "why": "P3077 b16: amp6tsvy is 1-gang (Moes ZTS-EU), forms kept on switch_1gang",
+      "source": "https://github.com/zigpy/zha-device-handlers/blob/dev/zhaquirks/tuya/ts0601_switch.py"
     }
   ]
 }

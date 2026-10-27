@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-27T06:17:34.581Z",
+ "generated": "2026-10-27T06:34:47.091Z",
  "drivers": 417,
  "snapshot": {
   "air_conditioner_aetz01": {
@@ -1977,9 +1977,9 @@
    "pidSha": "ffc6ba76002e2990"
   },
   "switch_2gang": {
-   "mfr": 105,
+   "mfr": 103,
    "pid": 15,
-   "mfrSha": "2bdec6fd73a2f9b4",
+   "mfrSha": "c10357cc2ea2c217",
    "pidSha": "f01c166c2aa06e7b"
   },
   "switch_2gang_ts0002": {
