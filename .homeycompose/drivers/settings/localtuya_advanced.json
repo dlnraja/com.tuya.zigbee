@@ -1,0 +1,10 @@
+{
+  "type": "group",
+  "label": {"en": "Advanced", "fr": "Avancé", "de": "Erweitert", "nl": "Geavanceerd"},
+  "children": [
+    {"id": "reset_dpids", "type": "text", "label": {"en": "DPs to re-read on error", "fr": "DP à relire si erreur", "de": "DPs bei Fehler neu lesen", "nl": "DP's herlezen bij fout"}, "value": ""},
+    {"id": "restore_on_reconnect", "type": "checkbox", "label": {"en": "Restore on reconnect", "fr": "Rétablir à la reconnexion", "de": "Bei Neuverbindung herstellen", "nl": "Herstellen bij herverbinden"}, "value": false},
+    {"id": "manual_dps", "type": "text", "label": {"en": "Extra DPs to poll", "fr": "DP en plus à lire", "de": "Weitere DPs abfragen", "nl": "Extra DP's opvragen"}, "value": ""},
+    {"id": "passive_start", "type": "checkbox", "label": {"en": "Wait for broadcast", "fr": "Attendre l'annonce", "de": "Auf Broadcast warten", "nl": "Wachten op broadcast"}, "value": false}
+  ]
+}

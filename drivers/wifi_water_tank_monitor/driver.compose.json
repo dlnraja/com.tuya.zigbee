@@ -279,6 +279,11 @@
           "units": "%"
         }
       ]
+    },
+    {
+      "$extends": [
+        "localtuya_advanced"
+      ]
     }
   ],
   "images": {

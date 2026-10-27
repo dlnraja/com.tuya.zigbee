@@ -182,6 +182,11 @@
           }
         }
       ]
+    },
+    {
+      "$extends": [
+        "localtuya_advanced"
+      ]
     }
   ],
   "images": {

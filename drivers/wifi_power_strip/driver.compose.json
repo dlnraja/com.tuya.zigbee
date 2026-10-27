@@ -290,6 +290,11 @@
         "de": "Herkunft des Leistungswerts",
         "nl": "Bron van de vermogenswaarde"
       }
+    },
+    {
+      "$extends": [
+        "localtuya_advanced"
+      ]
     }
   ],
   "platforms": [
