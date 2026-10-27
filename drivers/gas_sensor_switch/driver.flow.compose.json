@@ -1058,10 +1058,6 @@
         "en": "Set LED backlight mode",
         "fr": "Mode rétroéclairage LED"
       },
-      "hint": {
-        "en": "Control the switch LED indicator (requires Tuya DP15 support)",
-        "fr": "Contrôler le voyant LED de l'interrupteur (nécessite le DP15 Tuya)"
-      },
       "args": [
         {
           "type": "dropdown",

@@ -707,10 +707,6 @@
         "nl": "Batterijniveau is veranderd",
         "de": "Batteriestand hat sich geändert"
       },
-      "hint": {
-        "en": "When measure_battery updates (passive ZCL). Token = new %.",
-        "fr": "Quand measure_battery change (ZCL passif). Jeton = nouveau %."
-      },
       "tokens": [
         {
           "name": "battery",
@@ -741,10 +737,10 @@
         "de": "Taste 3 Szene aufgerufen"
       },
       "hint": {
-        "en": "When button 3 recalls a Zigbee scene (cluster 0x05 — scene mode, P31)",
-        "fr": "Lorsque le bouton 3 rappelle une scène Zigbee (cluster 0x05 — mode scène, P31)",
-        "nl": "Wanneer knop 3 recalls a Zigbee scène (cluster 0x05 — scène mode, P31)",
-        "de": "Wenn Taste 3 recalls a Zigbee Szene (Cluster 0x05 — Szene mode, P31)"
+        "en": "Only in scene mode.",
+        "fr": "Uniquement en mode scène.",
+        "nl": "Alleen in scènemodus.",
+        "de": "Nur im Szenenmodus."
       },
       "tokens": [
         {

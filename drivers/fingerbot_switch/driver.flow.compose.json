@@ -393,12 +393,6 @@
         "nl": "Wisselen",
         "de": "Umschalten"
       },
-      "hint": {
-        "en": "Toggle the switch state (onoff, offon)",
-        "fr": "Basculer l'état (onoff, offon)",
-        "nl": "Wissel de status (aanuit, uitaan)",
-        "de": "Status umschalten (einaus, ausein)"
-      },
       "args": [],
       "titleFormatted": {
         "en": "Toggle",
@@ -414,12 +408,6 @@
         "fr": "Définir le mode rétroéclairage LED",
         "nl": "LED achtergrondverlichting instellen",
         "de": "LED-Hintergrundbeleuchtung einstellen"
-      },
-      "hint": {
-        "en": "Control the switch LED indicator (DP15)",
-        "fr": "Contrôle l'indicateur LED (DP15)",
-        "nl": "Beheer de LED indicator (DP15)",
-        "de": "Steuert die LED-Anzeige (DP15)"
       },
       "args": [
         {
@@ -476,10 +464,10 @@
         "de": "LED-Farbe einstellen"
       },
       "hint": {
-        "en": "Set LED color for ON or OFF state (DP103/104, requires colored backlight)",
-        "fr": "Définir couleur LED pour état ON/OFF (DP103/104)",
-        "nl": "Stel LED kleur in voor AAN/UIT (DP103/104)",
-        "de": "LED-Farbe für EIN/AUS setzen (DP103/104)"
+        "en": "Needs a colour backlight.",
+        "fr": "Nécessite un rétroéclairage couleur.",
+        "nl": "Vereist gekleurde achtergrondverlichting.",
+        "de": "Erfordert farbige Hintergrundbeleuchtung."
       },
       "args": [
         {
@@ -617,12 +605,6 @@
         "nl": "LED helderheid instellen",
         "de": "LED-Helligkeit einstellen"
       },
-      "hint": {
-        "en": "Set LED backlight brightness 0-100% (DP102)",
-        "fr": "Luminosité rétroéclairage 0-100% (DP102)",
-        "nl": "LED helderheid 0-100% (DP102)",
-        "de": "LED-Helligkeit 0-100% (DP102)"
-      },
       "args": [
         {
           "type": "range",
@@ -654,10 +636,10 @@
         "de": "Countdown-Timer setzen"
       },
       "hint": {
-        "en": "Auto turn off after countdown (DP7, max 86400s = 24h)",
-        "fr": "Extinction auto après compte à rebours (DP7, max 86400s)",
-        "nl": "Auto uit na aftellen (DP7, max 86400s)",
-        "de": "Auto-Aus nach Countdown (DP7, max 86400s)"
+        "en": "Up to 24 h, then the switch turns off.",
+        "fr": "Jusqu'à 24 h, puis l'interrupteur s'éteint.",
+        "nl": "Tot 24 u, daarna gaat de schakelaar uit.",
+        "de": "Bis 24 h, danach schaltet der Schalter aus."
       },
       "args": [
         {
@@ -689,12 +671,6 @@
         "fr": "Définir verrouillage enfant",
         "nl": "Kinderslot instellen",
         "de": "Kindersicherung setzen"
-      },
-      "hint": {
-        "en": "Lock/unlock physical buttons (DP101)",
-        "fr": "Verrouiller/déverrouiller boutons (DP101)",
-        "nl": "Vergrendel/ontgrendel knoppen (DP101)",
-        "de": "Tasten sperren/entsperren (DP101)"
       },
       "args": [
         {

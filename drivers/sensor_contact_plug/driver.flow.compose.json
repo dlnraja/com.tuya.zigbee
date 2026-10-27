@@ -459,12 +459,6 @@
         "nl": "LED indicator instellen",
         "de": "LED-Anzeige einstellen"
       },
-      "hint": {
-        "en": "Control the plug LED indicator (DP26/27)",
-        "fr": "Contrôle l'indicateur LED",
-        "nl": "Beheer de LED indicator",
-        "de": "LED-Anzeige steuern"
-      },
       "args": [
         {
           "type": "dropdown",

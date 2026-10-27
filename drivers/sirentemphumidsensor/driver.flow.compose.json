@@ -121,12 +121,6 @@
         "de": "Einstellen der Lautstärke der Sirene",
         "fr": "Régler le volume de la sirène"
       },
-      "hint": {
-        "en": "Set volume of siren.",
-        "nl": "Zet het volume van de sirene.",
-        "de": "Einstellen der Lautstärke der Sirene",
-        "fr": "Régler le volume de la sirène."
-      },
       "args": [
         {
           "name": "siren_volume",

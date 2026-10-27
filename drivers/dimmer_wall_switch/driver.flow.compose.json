@@ -473,12 +473,6 @@
         "nl": "Gang 1 wisselen",
         "de": "Gang 1 umschalten"
       },
-      "hint": {
-        "en": "Toggle the state of gang 1 (onoff, offon)",
-        "fr": "Basculer l'état du gang 1",
-        "nl": "Wissel de status van gang 1",
-        "de": "Status von Gang 1 umschalten"
-      },
       "args": [],
       "titleFormatted": {
         "en": "Toggle gang 1",
@@ -548,12 +542,6 @@
         "fr": "Définir le mode rétroéclairage LED",
         "nl": "LED achtergrondverlichting instellen",
         "de": "LED-Hintergrundbeleuchtung einstellen"
-      },
-      "hint": {
-        "en": "Control the switch LED indicator (requires Tuya DP15 support)",
-        "fr": "Contrôle l'indicateur LED (nécessite Tuya DP15)",
-        "nl": "Beheer de schakelaar LED indicator (vereist Tuya DP15)",
-        "de": "Steuert die Schalter-LED-Anzeige (erfordert Tuya DP15)"
       },
       "args": [
         {

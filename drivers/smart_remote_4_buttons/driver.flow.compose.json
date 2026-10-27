@@ -72,10 +72,6 @@
         "nl": "Batterijniveau is veranderd",
         "de": "Batteriestand hat sich geändert"
       },
-      "hint": {
-        "en": "When measure_battery updates (passive ZCL). Token = new %.",
-        "fr": "Quand measure_battery change (ZCL passif). Jeton = nouveau %."
-      },
       "tokens": [
         {
           "name": "battery",

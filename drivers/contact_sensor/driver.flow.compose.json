@@ -53,12 +53,6 @@
         "fr": "Alerte sabotage",
         "de": "Manipulationsalarm"
       },
-      "hint": {
-        "en": "When the sensor has been tampered with",
-        "nl": "Wanneer er met de sensor is geknoeid",
-        "fr": "Quand le capteur a été saboté",
-        "de": "Wenn der Sensor manipuliert wurde"
-      },
       "args": [],
       "titleFormatted": {
         "en": "Tamper alert",
@@ -192,12 +186,6 @@
         "nl": "Lichtsterkte veranderd",
         "fr": "Luminosité changée",
         "de": "Helligkeit geändert"
-      },
-      "hint": {
-        "en": "When lux changes (DP101 / illuminance on hybrid contacts)",
-        "nl": "Wanneer lux verandert (DP101)",
-        "fr": "Quand le lux change (DP101)",
-        "de": "Wenn sich Lux ändert (DP101)"
       },
       "args": [],
       "tokens": [
