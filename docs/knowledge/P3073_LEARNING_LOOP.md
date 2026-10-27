@@ -56,10 +56,10 @@ peer-complementary-enrich, daily-digest) — no new cron unless none fits.
 - Reports: one weekly human summary through report-writer (links, counts, what was promoted, what waits), no public post.
 
 ## 5. Privacy
-- User ask pt588u: take personal profile / CV material out of the sources. A few personal report files
-  were still tracked; they were removed from every branch and from history by the one-time, user-approved
-  rewrite P3074 (26/10/2026), and a personal-data guard now runs in CI (code-quality.yml).
+- Personal files removed in P3074 (26/10/2026, one-time history rewrite approved by the owner); the CI
+  personal-data guard keeps them out. The learning files above hold device ids, counts and public links only.
 
 ## Tests (one per change)
 p3073-ci-signatures (fixtures, cap, flakiness), p3073-device-observations (exact couple only, caps), p3073-dp-learner
-(bounded, daily throttle, no capability change, soak), p3073-upstream-cursors (incremental, cap), p3073-privacy.
+(bounded, daily throttle, no capability change, soak), p3073-upstream-cursors (incremental, cap, back-off);
+privacy: test/p3074-personal-data-guard.test.js.
