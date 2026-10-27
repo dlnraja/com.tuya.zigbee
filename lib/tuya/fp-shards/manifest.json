@@ -1,9 +1,9 @@
 {
   "version": 1,
   "patch": "P2678",
-  "generatedAt": "2026-10-27T07:07:18.564Z",
+  "generatedAt": "2026-10-27T07:08:39.302Z",
   "source": "lib/tuya/fingerprints.json",
-  "sourceBytes": 931853,
+  "sourceBytes": 931852,
   "keyCount": 5780,
   "shardCount": 227,
   "shards": {
@@ -189,7 +189,7 @@
     },
     "TZ3000_f": {
       "keys": 51,
-      "bytes": 8432
+      "bytes": 8431
     },
     "TZ3000_g": {
       "keys": 53,

@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-27T07:03:36.641Z",
+ "generated": "2026-10-27T07:21:11.545Z",
  "drivers": 418,
  "snapshot": {
   "air_conditioner_aetz01": {
@@ -2475,9 +2475,9 @@
    "pidSha": "07927511e73b9485"
   },
   "water_leak_sensor_tuya": {
-   "mfr": 35,
+   "mfr": 32,
    "pid": 15,
-   "mfrSha": "c0055298b92c51cb",
+   "mfrSha": "cddcbbb6e866c217",
    "pidSha": "641a6f2b551d37be"
   },
   "water_tank_monitor": {
