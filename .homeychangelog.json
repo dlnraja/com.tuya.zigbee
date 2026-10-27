@@ -1086,9 +1086,13 @@
     "en": "CRITICAL: sdkVersion fix (Processing failed), Missing Capability Listener (setable:false), timer fallback, battery restore, duplicate method fix, HOBEIAN ZG-301Z, NFKD normalize, 87 fingerprints restored, Polos validator",
     "fr": "CRITIQUE: sdkVersion (Processing failed), Missing Capability Listener, fallback timer, batterie, HOBEIAN, NFKD, 87 fingerprints, Polos"
   },
-  "5.12.515": {
+  "5.12.516": {
     "en": "Next stable update in preparation: this note is replaced by the list of its changes when the version is published.",
     "fr": "Prochaine mise à jour stable en préparation : cette note est remplacée par la liste de ses changements à la publication."
+  },
+  "5.12.515": {
+    "en": "Fixed: Wi-Fi devices & device settings and energy meters & wall switches (SPM01V1-GT). Plus 2 other changes in the app core.",
+    "fr": "Corrigé : appareils Wi-Fi & réglages des appareils et compteurs d'énergie & interrupteurs (SPM01V1-GT). Et 2 autres changements dans le cœur de l'app."
   },
   "5.12.514": {
     "en": "New: wall switches. Plus 3 other changes in the app core.",
