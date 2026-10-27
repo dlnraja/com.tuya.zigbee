@@ -54,9 +54,14 @@ describe('P3084 publish hold after #3684 AggregateError', () => {
       assert.deepStrictEqual(couplesOf(id).filter((c) => test.has(c)), [], id);
     }
   });
-  it('ids carrying moved Test couples are not held', () => {
+  // P3085 (#3685 failed too): the moved-couple ids are now held as well; compaction re-pins their
+  // Test couples on the shipped Test driver (test/critical/p3085-hold-aware-baseline-pins.test.js).
+  it('ids carrying moved Test couples are held under P3085, not P3084', () => {
     const { ids } = effectiveHoldIds(hold, '');
-    assert.deepStrictEqual(MOVED_COUPLES.filter((id) => ids.has(id)), []);
+    for (const id of MOVED_COUPLES) {
+      assert.ok(ids.has(id), id);
+      assert.ok(/P3085/.test(hold.drivers.find((d) => d.id === id).reason), id);
+    }
   });
   it('release_held frees one P3084 id only', () => {
     const r = effectiveHoldIds(hold, 'keypad_alarm_wke502z');

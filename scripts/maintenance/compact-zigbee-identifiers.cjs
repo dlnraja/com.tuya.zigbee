@@ -116,6 +116,18 @@ function loadPublishBaseline(repoRoot, file) {
   }
 }
 
+/** P3085: ids of config/publish-hold-drivers.json (minus a one-shot release), empty on error. */
+function loadHoldIds(repoRoot) {
+  const file = path.join(repoRoot, 'config', 'publish-hold-drivers.json');
+  if (!fs.existsSync(file)) return new Set();
+  try {
+    const { effectiveHoldIds } = require('../publish-hold-release');
+    return effectiveHoldIds(JSON.parse(fs.readFileSync(file, 'utf8')), process.env.PUBLISH_HOLD_RELEASE).ids;
+  } catch (_) {
+    return new Set();
+  }
+}
+
 /** Every exact couple of the baseline as [{mfr, pid, driverId}]. */
 function baselineCouples(baseline) {
   const out = [];
@@ -135,12 +147,17 @@ function baselineCouples(baseline) {
  * the driver(s) that own it now. A couple no driver carries any more is
  * "unresolved" unless listed in baseline.exemptions [{mfr,pid,driverId,reason}].
  */
-function resolveBaselinePins(manifest, baseline) {
+function resolveBaselinePins(manifest, baseline, heldIds) {
   const couples = baselineCouples(baseline);
   const byId = new Map();
   const owners = new Map(); // "mfr\u0000pid" -> [driverId]
+  // WHY(P3085): a held driver (config/publish-hold-drivers.json) is cut from the payload after
+  // compaction, so it cannot own a Test couple. Skipping it here makes a couple that moved onto a
+  // held new driver fall back to the Test driver that shipped it (restored below): the payload
+  // pairs it exactly as the Test package did and the P3024b gate stays green.
+  const held = heldIds instanceof Set ? heldIds : new Set(heldIds || []);
   for (const d of manifest.drivers || []) {
-    if (!d || !d.zigbee) continue;
+    if (!d || !d.zigbee || held.has(d.id)) continue;
     const m = new Set((d.zigbee.manufacturerName || []).map(String));
     const p = new Set((d.zigbee.productId || []).map(String));
     byId.set(d.id, { m, p });
@@ -187,6 +204,20 @@ function resolveBaselinePins(manifest, baseline) {
   }
   const isExempt = (c) => exempt.has(`${c.mfr}\u0000${c.pid}\u0000${c.driverId}`)
     || exempt.has(`${c.mfr}\u0000${c.pid}\u0000*`);
+  const rebuildsExempt = (mfr, id) => [...byId.get(id).p]
+    .some((pid) => exempt.has(`${mfr}\u0000${pid}\u0000${id}`));
+  const restoreTarget = (c) => {
+    if (!rebuildsExempt(c.mfr, c.driverId)) return c.driverId;
+    const lc = c.mfr.toLowerCase();
+    let best = null;
+    for (const [id, s] of byId) {
+      if (id === c.driverId || !s.p.has(c.pid) || rebuildsExempt(c.mfr, id)) continue;
+      const shipped = (baseline && baseline.drivers && baseline.drivers[id] && baseline.drivers[id].m) || [];
+      if (![...s.m, ...shipped].some((x) => String(x).toLowerCase() === lc)) continue;
+      if (!best || s.p.size < byId.get(best).p.size) best = id;
+    }
+    return best || c.driverId;
+  };
   for (const c of later) {
     // WHY(P3077): an exempted couple was dropped from its driver on purpose (owner-approved
     // parasite). If another driver still carries the mfr and the pid through its own
@@ -223,8 +254,15 @@ function resolveBaselinePins(manifest, baseline) {
       // mfs_db rescue that did not re-run). Nothing else can claim it, so re-pin it on the
       // driver that shipped it: devices keep pairing exactly as in the Test package.
       restored += 1;
-      push(c);
-      addPinned(c);
+      // WHY(P3085): restoring the mfr on its Test driver also rebuilds that driver's
+      // manufacturerName x productId product. When that product hits owner-approved exemptions
+      // (P3055: _TZE200_7bztmfm1 x 21 plug pids on device_air_purifier_plug), pin the exact couple
+      // on a published driver that pairs (or shipped in Test) a case form of the mfr with this pid and whose
+      // own pids rebuild no exempted combo (smart_air_detection_box, TS0601 only). One couple, one driver.
+      const target = restoreTarget(c);
+      const pin = target === c.driverId ? c : { mfr: c.mfr, pid: c.pid, driverId: target };
+      push(pin);
+      addPinned(pin);
       continue;
     }
     unresolved.push(`${c.mfr}+${c.pid} @ ${c.driverId}`);
@@ -471,8 +509,11 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
   const baseline = Object.prototype.hasOwnProperty.call(opts, 'baseline')
     ? opts.baseline
     : (autoBaseline && (!autoBaseline.appId || autoBaseline.appId === manifest.id) ? autoBaseline : null);
+  // P3085: held ids, explicit (opts.holdIds) or from config/publish-hold-drivers.json.
+  let heldIds = opts.holdIds instanceof Set ? opts.holdIds : new Set(opts.holdIds || []);
+  if (!opts.holdIds && baseline) heldIds = loadHoldIds(repoRoot);
   const baselineResolved = baseline
-    ? resolveBaselinePins(manifest, baseline)
+    ? resolveBaselinePins(manifest, baseline, heldIds)
     : { pins: [], unresolved: [], moved: 0, total: 0 };
   const sacredAll = baselineResolved.pins.length > 0
     ? [...sacredOnly, ...baselineResolved.pins]
@@ -1090,6 +1131,7 @@ module.exports = {
   isSyntheticManufacturer,
   loadMfsDatabase,
   loadSacredKeepCouples,
+  loadHoldIds,
   assertSacredCouplesPresent,
   loadPublishBaseline,
   baselineCouples,
