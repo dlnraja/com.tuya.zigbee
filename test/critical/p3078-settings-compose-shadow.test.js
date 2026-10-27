@@ -5,6 +5,7 @@
 // disappears (9.0.1602 dropped adaptive lighting on 23 lights and the energy
 // source label on 10 metered drivers). Keep these P3067 settings in the file
 // that the build actually reads.
+const { describe, it } = require('../_support/dual-runner');
 const assert = require('assert');
 const fs = require('fs');
 const path = require('path');
