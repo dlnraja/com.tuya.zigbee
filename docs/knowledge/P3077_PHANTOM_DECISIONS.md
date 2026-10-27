@@ -179,6 +179,14 @@ package (button_wireless_1, heobian/Heobian × 5 pids) carry t614u exemptions; t
 - light_bulb_dimmable_tunable already had all 4 case forms with `TS0502A` and owned the runtime hint, so it keeps them. bulb_dimmable is dim-only, so it drops the 4 forms (152 to 148).
 - The 18 couples in the Athom fixture on bulb_dimmable paired this id with other brands' modelIds (01MINIZB, BASICZBR3, CK-BL702, E11/E12-N13/N14, FE-GU10-5W, GL-B-001Z). They are pure cartesian combos and are exempted with approval t614u.
 
+## Batch 18 (27/10/2026, owner t614u): three reviewed duals, fixing the runtime hints only
+
+These three manufacturers are in `data/native-matrix-reviewed-duals.json`, where the owner decided on 2026-10-04 to keep the old entry next to the exact couple. Nothing is removed from any compose here. Only the runtime hints are corrected to point at the attested driver. Removing the old entries needs an explicit override from the owner.
+
+- `_TZ3008_reatplte` is the Nous A7Z metering socket (TS011F; zigbee-herdsman-converters `tuya.ts`, TS011F_plug_1 whitelabel). Its exact couple is on plug_energy_monitor, and the old entry stays on button_wireless_4. The hints in `fingerprints.json` and `mfs_db` pointed at generic_diy and now point at plug_energy_monitor (TS011F added).
+- `_TYZB01_4lwqwyqn` is a 3-gang TS0013 switch: the interview on JohanBendz/com.tuya.zigbee#1330 (PhilbyD) shows endpoints 1 to 3. Its exact couple is on switch_3gang, and the old entry stays on switch_1gang. The `fingerprints.json` hint pointed at switch_1gang and now points at switch_3gang. TS0013 is added to `mfs_db`.
+- `_TYZB01_v8gtiaed` is the Lonsonho QS-Zigbee-D02-TRIAC-2C-LN, a 2-gang TRIAC dimmer (TS110F, `lonsonho.ts`). Its exact couple is on dimmer_2_gang, and the old entry stays on switch_1gang. The `mfs_db` hint pointed at switch_1gang and now points at dimmer_2_gang. `_TZ3000_v8gtiaed` has no source and stays pinned.
+
 ## Pending
 
 - ~480 collateral duals need driver splits (next batches).

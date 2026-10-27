@@ -485,14 +485,6 @@
    "why": "reviewed dual in data/native-matrix-reviewed-duals.json (earlier owner decision: old entry kept, exact couple on switch_4gang); move dropped, needs an explicit owner override"
   },
   {
-   "mfr": "_TYZB01_v8gtiaed",
-   "drivers": [
-    "switch_1gang",
-    "dimmer_2_gang"
-   ],
-   "why": "reviewed dual in data/native-matrix-reviewed-duals.json (earlier owner decision: old entry kept, exact couple on dimmer_2_gang); move dropped, needs an explicit owner override"
-  },
-  {
    "mfr": "_TZ3000_46vasa5h",
    "drivers": [
     "switch_1gang",
@@ -567,6 +559,39 @@
    "why": "split by pid, one couple one driver: TS0042 = Marmitek Push LO 2-button remote (Z2M tuya.ts TS0042 whitelabel) on button_wireless_2; TS0044 = SunBeech/Moes 4-button remote reported on the Homey forum (topic 156967, post 12) on button_wireless_4, locked by data/user-misattribution-registry.json p2293-dfgbtub0-ts0044-wireless-4 (couple mode). Runtime owner in lib/tuya/fingerprints.json was switch_1gang/mains/TS0601 (wrong class for a battery remote), now button_wireless_2/battery with TS0042+TS0044 added",
    "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
    "author": "Koen Kanters and contributors (zigbee-herdsman-converters); Homey community forum topic 156967 reporter"
+  },
+  {
+   "mfr": "_TZ3008_reatplte",
+   "batch": 18,
+   "drivers": [
+    "plug_energy_monitor",
+    "button_wireless_4"
+   ],
+   "why": "Nous A7Z smart socket, a metering TS011F plug (Z2M tuya.ts TS011F_plug_1 whitelabel; issues #182/#190). Exact couple lives on plug_energy_monitor (sacred keep). The button_wireless_4 entry is the old misfile kept by the reviewed-dual owner decision of 2026-10-04, so it is not removed here: removal waits for an explicit owner override. Runtime hints (fingerprints.json generic_diy, mfs_db generic_diy) now point at plug_energy_monitor",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
+   "author": "Koen Kanters and contributors (zigbee-herdsman-converters)"
+  },
+  {
+   "mfr": "_TYZB01_4lwqwyqn",
+   "batch": 18,
+   "drivers": [
+    "switch_3gang",
+    "switch_1gang"
+   ],
+   "why": "TS0013 3-gang wall switch: full interview with endpoints 1-3 on JohanBendz/com.tuya.zigbee#1330 (PhilbyD). Exact couple on switch_3gang; the switch_1gang entry is the reviewed-dual old phantom (P2810, 2026-10-10) and a switch_1gang catch-all name, kept until an explicit owner override. fingerprints.json hint switch_1gang -> switch_3gang (TS0013), mfs_db modelIds + TS0013",
+   "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1330",
+   "author": "PhilbyD (interview), JohanBendz repo"
+  },
+  {
+   "mfr": "_TYZB01_v8gtiaed",
+   "batch": 18,
+   "drivers": [
+    "dimmer_2_gang",
+    "switch_1gang"
+   ],
+   "why": "Lonsonho QS-Zigbee-D02-TRIAC-2C-LN, 2-gang TRIAC dimmer module with neutral, endpoints l1/l2 (Z2M lonsonho.ts TS110F). Exact couple on dimmer_2_gang; switch_1gang entry kept (reviewed dual, owner override still needed). mfs_db hint switch_1gang -> dimmer_2_gang (fingerprints.json already there). _TZ3000_v8gtiaed has no source and stays pinned on switch_1gang",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/lonsonho.ts",
+   "author": "Koen Kanters and contributors (zigbee-herdsman-converters)"
   }
  ],
  "badPids": [
