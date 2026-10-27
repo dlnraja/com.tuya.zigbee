@@ -81,24 +81,24 @@
     {
       "couple": "_TZ3000_kstbkt6a|TS0207",
       "drivers": [
-        "water_leak_sensor",
-        "water_leak_sensor_tuya"
+        "water_leak_sensor"
       ],
       "reason": "IAS water leak sensor (TS0207) reported upstream; exact couple placed on the TS0207 water leak driver. water_leak_sensor_tuya keeps the manufacturer without TS0207 (artifacts only).",
       "source": "zigbee-herdsman-converters src/devices/tuya.ts (Aubess IH-K665 whitelabel); JohanBendz/com.tuya.zigbee#614 + #1484 water_detector",
       "date": "2026-10-10",
-      "reviewed_by": "P2810 history sweep 2026-10-10 (standing rule: exact driver for a reported couple, old phantom kept)"
+      "reviewed_by": "P2810 history sweep 2026-10-10 (standing rule: exact driver for a reported couple, old phantom kept)",
+      "superseded_by": "P3077 batch 19 (39af707353, t614u owner authorisation 2026-10-27): the manufacturer entry on water_leak_sensor_tuya was a cross-product artifact (that driver has no TS0207) and was removed; the exact couple stays on water_leak_sensor."
     },
     {
       "couple": "_TZ3000_fxvjhdyl|TS0207",
       "drivers": [
-        "water_leak_sensor",
-        "water_leak_sensor_tuya"
+        "water_leak_sensor"
       ],
       "reason": "IAS water leak sensor (TS0207) with interview in upstream #1484; exact couple placed on the TS0207 water leak driver; old manufacturer entry kept.",
       "source": "JohanBendz/com.tuya.zigbee#1484 (interview, closed completed) + upstream water_detector driver (develop-0.4.1)",
       "date": "2026-10-10",
-      "reviewed_by": "P2810 history sweep 2026-10-10 (standing rule: exact driver for a reported couple, old phantom kept)"
+      "reviewed_by": "P2810 history sweep 2026-10-10 (standing rule: exact driver for a reported couple, old phantom kept)",
+      "superseded_by": "P3077 batch 19 (39af707353, t614u owner authorisation 2026-10-27): the manufacturer entry on water_leak_sensor_tuya was a cross-product artifact (that driver has no TS0207) and was removed; the exact couple stays on water_leak_sensor."
     },
     {
       "couple": "_TZ3000_nsa76jai|TS0004",
@@ -114,13 +114,13 @@
     {
       "couple": "_TZ3000_kyb656no|TS0207",
       "drivers": [
-        "water_leak_sensor",
-        "water_leak_sensor_tuya"
+        "water_leak_sensor"
       ],
       "reason": "IAS water leak sensor (TS0207, Meian SW02 whitelabel) reported upstream; exact couple placed on the TS0207 water leak driver. water_leak_sensor_tuya keeps its old entry (the id also sits in its productId list); artifacts only.",
       "source": "zigbee-herdsman-converters src/devices/tuya.ts (Meian SW02 whitelabel); JohanBendz/com.tuya.zigbee#211 + upstream water_detector driver",
       "date": "2026-10-10",
-      "reviewed_by": "P2810 history sweep 2026-10-10 (standing rule: exact driver for a reported couple, old phantom kept)"
+      "reviewed_by": "P2810 history sweep 2026-10-10 (standing rule: exact driver for a reported couple, old phantom kept)",
+      "superseded_by": "P3077 batch 19 (39af707353, t614u owner authorisation 2026-10-27): the manufacturer entry on water_leak_sensor_tuya was a cross-product artifact (that driver has no TS0207) and was removed; the exact couple stays on water_leak_sensor."
     },
     {
       "couple": "_TYZB01_4lwqwyqn|TS0013",
