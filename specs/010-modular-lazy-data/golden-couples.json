@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-27T02:53:52.592Z",
+ "generated": "2026-10-27T03:20:49.140Z",
  "drivers": 417,
  "snapshot": {
   "air_conditioner_aetz01": {
@@ -190,9 +190,9 @@
   },
   "button_wireless_1": {
    "mfr": 38,
-   "pid": 32,
+   "pid": 31,
    "mfrSha": "af6801936fc854c3",
-   "pidSha": "97471aa91d3d60d5"
+   "pidSha": "ccf46349258158d1"
   },
   "button_wireless_2": {
    "mfr": 89,
@@ -1767,9 +1767,9 @@
    "pidSha": "3846deb0c0aed152"
   },
   "smart_knob_rotary": {
-   "mfr": 6,
+   "mfr": 5,
    "pid": 6,
-   "mfrSha": "b45cc5bccc545a0b",
+   "mfrSha": "0bbac5a21b78ba55",
    "pidSha": "b8f989c20c36242e"
   },
   "smart_knob_switch": {
@@ -1779,10 +1779,10 @@
    "pidSha": "bea76b1883d9ef71"
   },
   "smart_knob_zg101zd": {
-   "mfr": 2,
-   "pid": 1,
-   "mfrSha": "a0ecbfd34b7058d5",
-   "pidSha": "74df0f4d2b001cb5"
+   "mfr": 3,
+   "pid": 2,
+   "mfrSha": "de3dac51051759e7",
+   "pidSha": "92cc2fbde83c7f27"
   },
   "smart_lcd_thermostat": {
    "mfr": 7,

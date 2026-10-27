@@ -34,9 +34,10 @@ const { ZCLNode } = require('zigbee-clusters');
 
 describe('P2868 smart_knob_zg101zd — exact couple, native pairing path', () => {
   it('claims only the ZG-101ZD / ERS-10TZBVK-AA makers (case forms) + TS004F, native clusters, battery', () => {
-    assert.deepEqual(compose.zigbee.productId, ['TS004F']);
+    // P3077 batch 6: HOBEIAN + ZG-101ZD (the same knob under its own modelId, Z2M hobeian.ts) joined.
+    assert.deepEqual(compose.zigbee.productId, ['TS004F', 'ZG-101ZD']);
     // P2871 (2026-10-19): _TZ3000_4fjiwweb joined (same knob family, Z2M tuya.ts ERS-10TZBVK-AA)
-    assert.deepEqual([...new Set(compose.zigbee.manufacturerName.map((m) => m.toLowerCase()))], ['_tz3000_abrsvsou', '_tz3000_4fjiwweb']);
+    assert.deepEqual([...new Set(compose.zigbee.manufacturerName.map((m) => m.toLowerCase()))], ['_tz3000_abrsvsou', '_tz3000_4fjiwweb', 'hobeian']);
     const ep = compose.zigbee.endpoints['1'];
     for (const c of [0, 1, 6]) { assert.ok(ep.clusters.includes(c), `cluster ${c}`); }
     for (const c of [5, 6, 8]) { assert.ok(ep.bindings.includes(c), `binding ${c}`); }
@@ -60,7 +61,8 @@ describe('P2868 smart_knob_zg101zd — exact couple, native pairing path', () =>
     const appOwners = app.drivers.filter((x) => (x.zigbee?.manufacturerName || []).some((m) => m.toLowerCase() === '_tz3000_abrsvsou')).map((x) => x.id);
     assert.deepEqual(appOwners, [D]);
     const entry = app.drivers.find((x) => x.id === D);
-    assert.deepEqual(entry.zigbee.productId, ['TS004F']);
+    // P3077 batch 6: ZG-101ZD is the same knob reporting its HOBEIAN modelId.
+    assert.deepEqual(entry.zigbee.productId, ['TS004F', 'ZG-101ZD']);
     assert.equal(entry.images.small, `/drivers/${D}/assets/images/small.png`);
   });
 

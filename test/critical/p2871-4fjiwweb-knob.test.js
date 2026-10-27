@@ -26,7 +26,8 @@ describe('P2871 4fjiwweb (ERS-10TZBVK-AA knob) → smart_knob_zg101zd', () => {
     const app = readJson('app.json');
     const appOwners = app.drivers.filter((x) => (x.zigbee?.manufacturerName || []).some((m) => m.toLowerCase() === M.toLowerCase()));
     assert.deepEqual(appOwners.map((x) => x.id), [D]);
-    assert.deepEqual(appOwners[0].zigbee.productId, ['TS004F']);
+    // P3077 batch 6: the driver also takes HOBEIAN ZG-101ZD (same knob, Z2M hobeian.ts).
+    assert.deepEqual(appOwners[0].zigbee.productId, ['TS004F', 'ZG-101ZD']);
     const forms = readJson(`drivers/${D}/driver.compose.json`).zigbee.manufacturerName.filter((m) => m.toLowerCase() === M.toLowerCase());
     assert.equal(forms.length, 4, 'all four case forms');
   });

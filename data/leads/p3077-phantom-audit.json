@@ -2142,7 +2142,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 20,
      "canDropMfr": false,
-     "mfrCost": 31,
+     "mfrCost": 30,
      "mfrBlockers": [
       "zg-101zl"
      ]
@@ -2226,7 +2226,7 @@
      ],
      "unverifiedMfrs": 20,
      "canDropMfr": false,
-     "mfrCost": 31,
+     "mfrCost": 30,
      "mfrBlockers": [
       "zg-101zl"
      ]
@@ -2270,7 +2270,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 20,
      "canDropMfr": false,
-     "mfrCost": 31,
+     "mfrCost": 30,
      "mfrBlockers": [
       "zg-101zl"
      ]
@@ -2329,7 +2329,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 20,
      "canDropMfr": false,
-     "mfrCost": 31,
+     "mfrCost": 30,
      "mfrBlockers": [
       "zg-101zl"
      ]
@@ -2400,7 +2400,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 20,
      "canDropMfr": false,
-     "mfrCost": 31,
+     "mfrCost": 30,
      "mfrBlockers": [
       "zg-101zl"
      ]
@@ -2671,14 +2671,14 @@
      "pidBlockers": [],
      "unverifiedMfrs": 20,
      "canDropMfr": false,
-     "mfrCost": 31,
+     "mfrCost": 30,
      "mfrBlockers": [
       "ts0041"
      ]
     },
     "smart_knob_rotary": {
      "canDropPid": false,
-     "pidCost": 5,
+     "pidCost": 4,
      "pidBlockers": [
       "_tz3000_gwkzibhs",
       "_tz3000_qja6nq5z",
@@ -2714,14 +2714,14 @@
      "pidBlockers": [],
      "unverifiedMfrs": 20,
      "canDropMfr": false,
-     "mfrCost": 31,
+     "mfrCost": 30,
      "mfrBlockers": [
       "ts0041"
      ]
     },
     "smart_knob_rotary": {
      "canDropPid": false,
-     "pidCost": 5,
+     "pidCost": 4,
      "pidBlockers": [],
      "unverifiedMfrs": 0,
      "canDropMfr": true,
@@ -2751,14 +2751,14 @@
      "pidBlockers": [],
      "unverifiedMfrs": 20,
      "canDropMfr": false,
-     "mfrCost": 31,
+     "mfrCost": 30,
      "mfrBlockers": [
       "ts0041"
      ]
     },
     "smart_knob_rotary": {
      "canDropPid": true,
-     "pidCost": 5,
+     "pidCost": 4,
      "pidBlockers": [],
      "unverifiedMfrs": 0,
      "canDropMfr": true,
@@ -2790,7 +2790,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 20,
      "canDropMfr": false,
-     "mfrCost": 31,
+     "mfrCost": 30,
      "mfrBlockers": []
     },
     "curtain_motor": {
@@ -2858,7 +2858,7 @@
      ],
      "unverifiedMfrs": 20,
      "canDropMfr": false,
-     "mfrCost": 31,
+     "mfrCost": 30,
      "mfrBlockers": []
     },
     "switch_3gang": {
@@ -2895,7 +2895,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 20,
      "canDropMfr": false,
-     "mfrCost": 31,
+     "mfrCost": 30,
      "mfrBlockers": []
     },
     "presence_sensor_radar": {
@@ -2949,7 +2949,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 20,
      "canDropMfr": false,
-     "mfrCost": 31,
+     "mfrCost": 30,
      "mfrBlockers": []
     },
     "presence_sensor_radar": {
@@ -3007,7 +3007,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 20,
      "canDropMfr": false,
-     "mfrCost": 31,
+     "mfrCost": 30,
      "mfrBlockers": []
     },
     "climate_sensor": {

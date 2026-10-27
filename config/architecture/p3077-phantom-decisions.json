@@ -282,6 +282,17 @@
    "hardware": "TS130F curtain/shutter wall switch (QA QACZ1)",
    "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
    "author": "Koenkk and zigbee-herdsman-converters contributors"
+  },
+  {
+   "mfr": "_TZ3000_pzui3skt",
+   "from": "smart_knob_rotary",
+   "keptOn": "button_wireless_1",
+   "realPid": "TS0041",
+   "hardware": "one-button wall remote (CR2430)",
+   "batch": 6,
+   "source": "https://github.com/Koenkk/zigbee2mqtt/issues/8500",
+   "author": "snp88 (zigbee2mqtt issue), confirmed by Johan Bendz SDK3 README and erickvneri edge fingerprints",
+   "why": "every source lists it as TS0041 with one button; the knob entry came from rotary-knob-ssot only. The knob regex also forced dimmer mode on this button, so it left KNOB_MFR too"
   }
  ],
  "keptOnPurpose": [
@@ -356,15 +367,6 @@
    "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/hobeian.ts"
   },
   {
-   "mfr": "_TZ3000_pzui3skt",
-   "batch": 2,
-   "drivers": [
-    "button_wireless_1",
-    "smart_knob_rotary"
-   ],
-   "why": "real device is a TS0041 one-button remote (zigbee2mqtt #8500 by snp88; Johan Bendz SDK3 README); the knob entry comes from config/architecture/rotary-knob-ssot.json (P2448 gate) and is left for owner review, not removed"
-  },
-  {
    "mfr": "_TZ3290_ixd9mvv4",
    "batch": 2,
    "drivers": [
@@ -396,6 +398,16 @@
     "curtain_motor_shutter"
    ],
    "why": "a _TZ3000_ copy of the Lidl _TZB000_42ha4rsc id that no outside source lists; kept because data/mfs_db.json holds it and test/anti-purge-guard.test.js forbids dropping a known fingerprint. Owner review"
+  },
+  {
+   "mfr": "HEIMAN",
+   "batch": 6,
+   "drivers": [
+    "universal_zigbee",
+    "smoke_detector_advanced"
+   ],
+   "why": "owner decision of 2026-10-21 keeps universal_zigbee as the generic fallback for HEIMAN; smoke_detector_advanced sorts first and wins the TS0041/TS0205/TS0601 duals",
+   "source": "docs/knowledge/P2927_HEIMAN_GENERIC_FALLBACK_DUALS_2026-10-21.md"
   }
  ],
  "badPids": [
@@ -438,6 +450,18 @@
    "why": "No device, diag or outside database (Z2M hobeian.ts, ZHA, deCONZ, Blakadder, Johan) reports the string heobian; the only web hit is a typo in a forum message about a HOBEIAN ZG-222Z. As a pairing form it only added about 2090 phantom couples. Devices that report HOBEIAN, Hobeian or hobeian pair exactly as before.",
    "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/hobeian.ts (vendor string HOBEIAN); https://community.homey.app/t/140352 (typo only)",
    "author": "Koenkk and zigbee-herdsman-converters contributors; Homey community forum"
+  }
+ ],
+ "pidMoves": [
+  {
+   "mfr": "HOBEIAN",
+   "pid": "ZG-101ZD",
+   "from": "button_wireless_1",
+   "to": "smart_knob_zg101zd",
+   "batch": 6,
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/hobeian.ts",
+   "author": "zigbee-herdsman-converters contributors",
+   "why": "ZG-101ZD is the HOBEIAN smart knob, the same hardware as _TZ3000_abrsvsou TS004F that already has its own knob driver; HOBEIAN stays on button_wireless_1 for ZG-101ZL. Paired devices keep their driver (same class button)"
   }
  ]
 }

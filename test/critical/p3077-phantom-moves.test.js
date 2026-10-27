@@ -79,4 +79,19 @@ describe('P3077 phantom moves', () => {
     const ex = b.exemptions.filter((e) => /P3077 batch 5/.test(e.reason));
     assert.ok(ex.length >= 10 && ex.every((e) => e.approvedBy === 't614u'));
   });
+  it('batch 6: pzui3skt is a button, not a knob; HOBEIAN ZG-101ZD pairs on the knob driver', () => {
+    assert.ok(!lists(zig('smart_knob_rotary'), '_TZ3000_pzui3skt'));
+    assert.ok(lists(zig('button_wireless_1'), '_TZ3000_pzui3skt') && zig('button_wireless_1').productId.includes('TS0041'));
+    assert.ok(!/pzui3skt/i.test(fs.readFileSync(path.join(ROOT, 'lib/zigbee/DeviceOperatingMode.js'), 'utf8').split('\n').filter((l) => !l.trim().startsWith('//')).join('\n')));
+    const ssot = require(path.join(ROOT, 'config/architecture/rotary-knob-ssot.json'));
+    assert.ok(!JSON.stringify(ssot).toLowerCase().includes('pzui3skt'));
+    for (const pm of decisions.pidMoves) {
+      assert.ok(/^https:\/\//.test(pm.source) && pm.author);
+      assert.ok(lists(zig(pm.to), pm.mfr) && zig(pm.to).productId.includes(pm.pid), `${pm.mfr}|${pm.pid} not on ${pm.to}`);
+      assert.ok(!zig(pm.from).productId.some((p) => p.toLowerCase() === pm.pid.toLowerCase()), `${pm.pid} still on ${pm.from}`);
+    }
+    assert.equal(require(path.join(ROOT, 'lib/DeviceFingerprintDB')).lookup('HOBEIAN', 'ZG-101ZD').driver, 'smart_knob_zg101zd');
+    const b = require(path.join(ROOT, 'test/fixtures/athom-last-test-package-couples.json'));
+    assert.ok(b.exemptions.filter((e) => /P3077 batch 6/.test(e.reason) && e.approvedBy === 't614u').length >= 18);
+  });
 });

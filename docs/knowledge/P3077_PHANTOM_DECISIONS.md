@@ -108,8 +108,14 @@ heobian to hobeian, so lookups, diags and collision tools treat both as one bran
 package (button_wireless_1, heobian/Heobian × 5 pids) carry t614u exemptions; the sacred pin `heobian|ZG-101ZL` is dropped
 (it guarded against a bot strip, not a real device).
 
+## Batch 6 (27/10/2026, owner t614u): pzui3skt and the HOBEIAN ZG-101ZD knob
+
+- `_TZ3000_pzui3skt` is a one-button TS0041 remote in every source (zigbee2mqtt issue #8500 by snp88, Johan Bendz SDK3 README "1 Gang Wall Remote", erickvneri edge fingerprints, HA Battery Notes CR2430). Its 4 forms left smart_knob_rotary (18 baseline couples, t614u exemptions) and its rotary-knob-ssot line went too. It also left the KNOB_MFR regex in DeviceOperatingMode and PhysicalButtonMixin, which had forced dimmer mode (0x8004=0) on the button. Fingerprint entry now points to button_wireless_1 / TS0041.
+- HOBEIAN `ZG-101ZD` is the HOBEIAN smart knob (zigbee-herdsman-converters `hobeian.ts`). It now pairs on smart_knob_zg101zd (same hardware as `_TZ3000_abrsvsou` TS004F). The pid left button_wireless_1 (not in the baseline, about 300 phantoms gone). HOBEIAN stays on button_wireless_1 for ZG-101ZL. Paired devices keep their driver.
+- HEIMAN on universal_zigbee: kept, per the owner decision of 2026-10-21 (generic fallback, see P2927).
+
 ## Pending
 
-- `_TZ3000_pzui3skt` on smart_knob_rotary (rotary-knob-ssot says knob; sources say TS0041 button), HOBEIAN ZG-101ZD knob on button_wireless_1, HEIMAN on universal_zigbee: owner review.
+- `_TZ3000_42ha4rsc` on curtain_motor_shutter (no source; only `_TZB000_42ha4rsc` exists): next batch.
 - ~480 collateral duals need driver splits (next batches).
 - TS0601 duals on bulb_rgb/bulb_rgbw/button_wireless_*: never dropped by pid; per-mfr review only.

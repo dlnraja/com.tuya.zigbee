@@ -22,8 +22,10 @@ function testHobeianLocks() {
   const radar = compose('presence_sensor_radar');
   assert.ok((radar.zigbee.productId || []).includes('ZG-204ZP'));
 
-  const btn = compose('button_wireless_1');
-  assert.ok((btn.zigbee.productId || []).includes('ZG-101ZD'));
+  // P3077 batch 6: the ZG-101ZD knob pairs on its knob driver, not the 1-button driver.
+  const knob = compose('smart_knob_zg101zd');
+  assert.ok((knob.zigbee.productId || []).includes('ZG-101ZD'));
+  assert.ok(!(compose('button_wireless_1').zigbee.productId || []).includes('ZG-101ZD'));
 
   const s1 = compose('switch_1gang');
   assert.ok((s1.zigbee.productId || []).includes('ZG-301Z'));
