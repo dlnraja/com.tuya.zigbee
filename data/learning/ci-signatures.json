@@ -1,0 +1,1254 @@
+{
+ "schema": 1,
+ "updatedAt": "2026-10-27T10:31:07.654Z",
+ "cap": 300,
+ "seenKeys": [
+  "ci-fail:40227923450:1",
+  "ci-fail:40227753698:1",
+  "ci-fail:40226739577:1",
+  "ci-fail:40226194668:1",
+  "ci-fail:40225508083:1",
+  "ci-fail:40223927840:1",
+  "ci-fail:40222894044:1",
+  "ci-fail:40222231459:1",
+  "ci-fail:40219301030:1",
+  "ci-fail:40218315820:1",
+  "ci-fail:40217627081:1",
+  "ci-fail:40216986012:1",
+  "ci-fail:40216986038:1",
+  "ci-fail:40216828244:1",
+  "ci-fail:40216811891:1",
+  "ci-fail:40216497551:1",
+  "ci-fail:40216497502:1",
+  "ci-fail:40216267916:1",
+  "ci-fail:40216267889:1",
+  "ci-fail:40215863229:1",
+  "ci-fail:40215273279:1",
+  "ci-fail:40214053484:1",
+  "ci-fail:40214053564:1",
+  "ci-fail:40214053482:1",
+  "ci-fail:40214053476:1",
+  "ci-fail:40213052084:1",
+  "ci-fail:40213052169:1",
+  "ci-fail:40213052034:1",
+  "ci-fail:40213052083:1",
+  "ci-fail:40210995072:1",
+  "ci-fail:40210919998:1",
+  "ci-fail:40210763151:1",
+  "ci-fail:40210763197:1",
+  "ci-fail:40210044545:1",
+  "ci-fail:40209858158:1",
+  "ci-fail:40209858240:1",
+  "ci-fail:40209858164:1",
+  "ci-fail:40209188014:1",
+  "ci-fail:40209075717:1",
+  "ci-fail:40208233206:1",
+  "ci-fail:40208222626:1",
+  "ci-fail:40207199600:1",
+  "ci-fail:40206805282:1",
+  "ci-fail:40206567223:1",
+  "ci-fail:40206552332:1",
+  "ci-fail:40206538792:1",
+  "ci-fail:40206005014:1",
+  "ci-fail:40205988244:1",
+  "ci-fail:40195030403:1",
+  "ci-fail:40194047724:1",
+  "ci-fail:40181886652:1",
+  "ci-fail:40162040962:1",
+  "ci-fail:40147508176:1",
+  "ci-fail:40147508120:1",
+  "ci-fail:40147508102:1",
+  "ci-fail:40140330168:1",
+  "ci-fail:40139441545:1",
+  "ci-fail:40136800841:1",
+  "ci-fail:40307501184:1",
+  "ci-fail:40306375706:1",
+  "ci-fail:40302173780:1",
+  "ci-fail:40302163506:1",
+  "ci-fail:40302152582:1",
+  "ci-fail:40302142792:1",
+  "ci-fail:40298380739:1",
+  "ci-fail:40239292729:1",
+  "ci-fail:40230380477:1",
+  "ci-fail:40229327575:1",
+  "ci-fail:40468516775:1",
+  "ci-fail:40467253984:1",
+  "ci-fail:40459304973:1",
+  "ci-fail:40444888200:1",
+  "ci-fail:40440951483:1",
+  "ci-fail:40440951507:1",
+  "ci-fail:40440951476:1",
+  "ci-fail:40440951563:1",
+  "ci-fail:40440507916:1",
+  "ci-fail:40440507680:1",
+  "ci-fail:40440507783:1",
+  "ci-fail:40440507793:1",
+  "ci-fail:40429562126:1",
+  "ci-fail:40428511276:1",
+  "ci-fail:40427785808:1",
+  "ci-fail:40426229386:1",
+  "ci-fail:40426034008:1",
+  "ci-fail:40420356740:1",
+  "ci-fail:40420356504:1",
+  "ci-fail:40420356542:1",
+  "ci-fail:40420356525:1",
+  "ci-fail:40417313971:1",
+  "ci-fail:40417313839:1",
+  "ci-fail:40415831258:1",
+  "ci-fail:40415831255:1",
+  "ci-fail:40415831277:1",
+  "ci-fail:40415831253:1",
+  "ci-fail:40415831284:1",
+  "ci-fail:40408759782:1",
+  "ci-fail:40408760306:1",
+  "ci-fail:40406021821:1",
+  "ci-fail:40406023516:1",
+  "ci-fail:40406019959:1",
+  "ci-fail:40406018283:1",
+  "ci-fail:40406014311:1",
+  "ci-fail:40406006749:1",
+  "ci-fail:40406007362:1",
+  "ci-fail:40405997456:1",
+  "ci-fail:40388939624:1",
+  "ci-fail:40388370312:1",
+  "ci-fail:40388370529:1",
+  "ci-fail:40388370311:1",
+  "ci-fail:40388370522:1",
+  "ci-fail:40388359586:1",
+  "ci-fail:40388359557:1",
+  "ci-fail:40388359535:1",
+  "ci-fail:40388359741:1",
+  "ci-fail:40388359621:1",
+  "ci-fail:40382489342:1",
+  "ci-fail:40381408822:1",
+  "ci-fail:40380397677:1",
+  "ci-fail:40377945714:1",
+  "ci-fail:40371018410:1",
+  "ci-fail:40360174256:1",
+  "ci-fail:40358138533:1",
+  "ci-fail:40358112411:1",
+  "ci-fail:40354425052:1",
+  "ci-fail:40354424955:1",
+  "ci-fail:40349012562:1",
+  "ci-fail:40339710338:1"
+ ],
+ "signatures": {
+  "c567adb8a6e1": {
+   "category": "other",
+   "workflow": "CI self-check (actionlint + YAML + hygiene + manifest/data/lint gates)",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-10-25T19:51:38.097Z",
+   "lastSeen": "2026-10-25T19:51:43.869Z",
+   "fails": 2,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "stable-v5"
+   ],
+   "sample": "Process completed with exit code <n>.",
+   "events": [
+    [
+     "2026-10-25T19:51:38.097Z",
+     "f"
+    ],
+    [
+     "2026-10-25T19:51:43.869Z",
+     "f"
+    ]
+   ]
+  },
+  "817f8bd5923b": {
+   "category": "other",
+   "workflow": "🚦 PR Gate",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-10-25T19:51:39.062Z",
+   "lastSeen": "2026-10-25T19:51:40.960Z",
+   "fails": 3,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "fix/fingerbot-senddata"
+   ],
+   "sample": "Process completed with exit code <n>.",
+   "events": [
+    [
+     "2026-10-25T19:51:39.062Z",
+     "f"
+    ],
+    [
+     "2026-10-25T19:51:40.008Z",
+     "f"
+    ],
+    [
+     "2026-10-25T19:51:40.960Z",
+     "f"
+    ]
+   ]
+  },
+  "bdfb3202dabf": {
+   "category": "other",
+   "workflow": "🚦 PR Gate",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-10-25T19:51:41.870Z",
+   "lastSeen": "2026-10-25T19:51:41.870Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "fix/fingerbot-senddata"
+   ],
+   "sample": "Process completed with exit code <n>.",
+   "events": [
+    [
+     "2026-10-25T19:51:41.870Z",
+     "f"
+    ]
+   ]
+  },
+  "b446e2740f9d": {
+   "category": "test",
+   "workflow": "Node 22 runtime tests",
+   "unit": "test / Full suite on Node 22",
+   "test": "",
+   "firstSeen": "2026-10-25T19:51:42.841Z",
+   "lastSeen": "2026-10-26T11:01:21.745Z",
+   "fails": 15,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "wip/rescue/branch-bisect-g1-flowcards",
+    "wip/rescue/branch-bisect-g0-control-1385",
+    "wip/rescue/wt-dp",
+    "wip/p3055-parasites"
+   ],
+   "sample": "Process completed with exit code <n>.",
+   "events": [
+    [
+     "2026-10-25T19:51:42.841Z",
+     "f"
+    ],
+    [
+     "2026-10-25T19:51:44.963Z",
+     "f"
+    ],
+    [
+     "2026-10-25T19:51:46.034Z",
+     "f"
+    ],
+    [
+     "2026-10-25T19:51:47.063Z",
+     "f"
+    ],
+    [
+     "2026-10-25T19:51:48.218Z",
+     "f"
+    ],
+    [
+     "2026-10-25T19:51:49.368Z",
+     "f"
+    ],
+    [
+     "2026-10-25T19:51:51.428Z",
+     "f"
+    ],
+    [
+     "2026-10-25T19:51:52.473Z",
+     "f"
+    ],
+    [
+     "2026-10-26T11:01:07.878Z",
+     "f"
+    ],
+    [
+     "2026-10-26T11:01:09.393Z",
+     "f"
+    ],
+    [
+     "2026-10-26T11:01:10.866Z",
+     "f"
+    ],
+    [
+     "2026-10-26T11:01:12.373Z",
+     "f"
+    ],
+    [
+     "2026-10-26T11:01:14.784Z",
+     "f"
+    ],
+    [
+     "2026-10-26T11:01:19.458Z",
+     "f"
+    ],
+    [
+     "2026-10-26T11:01:21.745Z",
+     "f"
+    ]
+   ]
+  },
+  "511597415813": {
+   "category": "test",
+   "workflow": "🔍 Syntax Check & SDK3 Validation",
+   "unit": "syntax-check / P2138 BSEED dimmer + Poll Control tests",
+   "test": "",
+   "firstSeen": "2026-10-25T19:51:50.378Z",
+   "lastSeen": "2026-10-27T10:30:28.457Z",
+   "fails": 2,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "Process completed with exit code <n>.",
+   "events": [
+    [
+     "2026-10-25T19:51:50.378Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:30:28.457Z",
+     "f"
+    ]
+   ]
+  },
+  "a8e2610ab4fb": {
+   "category": "other",
+   "workflow": "🛡️ Unified CI/CD Orchestrator",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-10-25T19:51:53.142Z",
+   "lastSeen": "2026-10-25T19:51:53.142Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "🛡️ Fleetwood Integrity & Manifest Gateway",
+   "events": [
+    [
+     "2026-10-25T19:51:53.142Z",
+     "f"
+    ]
+   ]
+  },
+  "bd6d4433bab2": {
+   "category": "gate",
+   "workflow": "🔍 Syntax Check & SDK3 Validation",
+   "unit": "syntax-check / Energy compose gate",
+   "test": "",
+   "firstSeen": "2026-10-25T19:51:53.791Z",
+   "lastSeen": "2026-10-25T19:52:06.094Z",
+   "fails": 4,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "Energy compose gate",
+   "events": [
+    [
+     "2026-10-25T19:51:53.791Z",
+     "f"
+    ],
+    [
+     "2026-10-25T19:51:55.008Z",
+     "f"
+    ],
+    [
+     "2026-10-25T19:52:04.202Z",
+     "f"
+    ],
+    [
+     "2026-10-25T19:52:06.094Z",
+     "f"
+    ]
+   ]
+  },
+  "d64a0d71ff46": {
+   "category": "other",
+   "workflow": "🛡️ Unified CI/CD Orchestrator",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-10-25T19:51:54.442Z",
+   "lastSeen": "2026-10-25T19:52:05.435Z",
+   "fails": 7,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "Normalize Homey manifest after validation",
+   "events": [
+    [
+     "2026-10-25T19:51:54.442Z",
+     "f"
+    ],
+    [
+     "2026-10-25T19:51:55.701Z",
+     "f"
+    ],
+    [
+     "2026-10-25T19:51:57.019Z",
+     "f"
+    ],
+    [
+     "2026-10-25T19:51:59.632Z",
+     "f"
+    ],
+    [
+     "2026-10-25T19:52:02.296Z",
+     "f"
+    ],
+    [
+     "2026-10-25T19:52:03.578Z",
+     "f"
+    ],
+    [
+     "2026-10-25T19:52:05.435Z",
+     "f"
+    ]
+   ]
+  },
+  "ac23c32ae0d2": {
+   "category": "gate",
+   "workflow": "🧠 Fleet Intelligent Enrich (P2372)",
+   "unit": "Fleet enrich all driver classes / Sacred + anti-bot gates",
+   "test": "",
+   "firstSeen": "2026-10-25T19:51:56.351Z",
+   "lastSeen": "2026-10-25T19:51:56.351Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "Sacred + anti-bot gates",
+   "events": [
+    [
+     "2026-10-25T19:51:56.351Z",
+     "f"
+    ]
+   ]
+  },
+  "8c4dbb4f88db": {
+   "category": "other",
+   "workflow": "🔍 Syntax Check & SDK3 Validation",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-10-25T19:51:57.627Z",
+   "lastSeen": "2026-10-25T19:52:01.601Z",
+   "fails": 2,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "Sacred couple registry audit (P<n>)",
+   "events": [
+    [
+     "2026-10-25T19:51:57.627Z",
+     "f"
+    ],
+    [
+     "2026-10-25T19:52:01.601Z",
+     "f"
+    ]
+   ]
+  },
+  "3dd7ea17e5ed": {
+   "category": "gate",
+   "workflow": "🤖 Auto-Fix + Publish Pipeline",
+   "unit": "auto-fix / 🛡️ P244x",
+   "test": "",
+   "firstSeen": "2026-10-25T19:51:58.231Z",
+   "lastSeen": "2026-10-25T19:52:00.257Z",
+   "fails": 2,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "🛡️ P<n>x / P<n>x / P<n>x / P<n>x family gates",
+   "events": [
+    [
+     "2026-10-25T19:51:58.231Z",
+     "f"
+    ],
+    [
+     "2026-10-25T19:52:00.257Z",
+     "f"
+    ]
+   ]
+  },
+  "7c75a5a143eb": {
+   "category": "gate",
+   "workflow": "code-quality",
+   "unit": "Quality Checks / P244x flow/knob + family gates",
+   "test": "",
+   "firstSeen": "2026-10-25T19:51:58.893Z",
+   "lastSeen": "2026-10-27T10:30:57.296Z",
+   "fails": 3,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "P<n>x flow<p> + family gates",
+   "events": [
+    [
+     "2026-10-25T19:51:58.893Z",
+     "f"
+    ],
+    [
+     "2026-10-25T19:52:01.011Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:30:57.296Z",
+     "f"
+    ]
+   ]
+  },
+  "351d901e2c87": {
+   "category": "test",
+   "workflow": "Node 22 runtime tests",
+   "unit": "test / Full suite on Node 22",
+   "test": "",
+   "firstSeen": "2026-10-25T19:52:02.854Z",
+   "lastSeen": "2026-10-27T10:31:06.327Z",
+   "fails": 24,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "wip/rescue/branch-bisect-g1-flowcards",
+    "wip/rescue/branch-bisect-g2-dp17",
+    "wip/rescue/branch-bisect-g3-couples",
+    "master"
+   ],
+   "sample": "Full suite on Node <n>",
+   "events": [
+    [
+     "2026-10-25T19:52:07.955Z",
+     "f"
+    ],
+    [
+     "2026-10-25T19:52:08.570Z",
+     "f"
+    ],
+    [
+     "2026-10-25T19:52:09.160Z",
+     "f"
+    ],
+    [
+     "2026-10-25T19:52:09.746Z",
+     "f"
+    ],
+    [
+     "2026-10-25T19:52:10.911Z",
+     "f"
+    ],
+    [
+     "2026-10-25T19:52:11.491Z",
+     "f"
+    ],
+    [
+     "2026-10-25T19:52:12.086Z",
+     "f"
+    ],
+    [
+     "2026-10-25T19:52:12.671Z",
+     "f"
+    ],
+    [
+     "2026-10-25T19:52:13.268Z",
+     "f"
+    ],
+    [
+     "2026-10-25T19:52:15.227Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:30:35.963Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:30:46.058Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:30:46.736Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:30:47.373Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:30:48.026Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:30:48.686Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:30:49.299Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:30:50.022Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:31:00.231Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:31:06.327Z",
+     "f"
+    ]
+   ]
+  },
+  "328b2d095440": {
+   "category": "other",
+   "workflow": "Auto-Publish on Push",
+   "unit": "Validate & Auto-Publish to Homey App Store / Publish to Homey App Store",
+   "test": "",
+   "firstSeen": "2026-10-25T19:52:10.294Z",
+   "lastSeen": "2026-10-25T19:52:10.294Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "Publish to Homey App Store",
+   "events": [
+    [
+     "2026-10-25T19:52:10.294Z",
+     "f"
+    ]
+   ]
+  },
+  "ac6a0b136750": {
+   "category": "other",
+   "workflow": "Auto-Publish on Push",
+   "unit": "Validate & Auto-Publish to Homey App Store / Verify draft promotion result",
+   "test": "",
+   "firstSeen": "2026-10-25T19:52:13.953Z",
+   "lastSeen": "2026-10-25T19:52:13.953Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "Verify draft promotion result",
+   "events": [
+    [
+     "2026-10-25T19:52:13.953Z",
+     "f"
+    ]
+   ]
+  },
+  "a3bd0bda6aba": {
+   "category": "athom-api",
+   "workflow": "Auto-Publish on Push",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-10-25T19:52:14.654Z",
+   "lastSeen": "2026-10-25T19:52:19.964Z",
+   "fails": 4,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "Athom final state gate (red unless Test)",
+   "events": [
+    [
+     "2026-10-25T19:52:14.654Z",
+     "f"
+    ],
+    [
+     "2026-10-25T19:52:18.547Z",
+     "f"
+    ],
+    [
+     "2026-10-25T19:52:19.252Z",
+     "f"
+    ],
+    [
+     "2026-10-25T19:52:19.964Z",
+     "f"
+    ]
+   ]
+  },
+  "a38e6c418909": {
+   "category": "other",
+   "workflow": "🤖 Auto-Fix + Publish Pipeline",
+   "unit": "auto-fix / 💾 Commit fixes",
+   "test": "",
+   "firstSeen": "2026-10-25T19:52:15.974Z",
+   "lastSeen": "2026-10-25T19:52:17.837Z",
+   "fails": 2,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "💾 Commit fixes",
+   "events": [
+    [
+     "2026-10-25T19:52:15.974Z",
+     "f"
+    ],
+    [
+     "2026-10-25T19:52:17.837Z",
+     "f"
+    ]
+   ]
+  },
+  "904914968121": {
+   "category": "other",
+   "workflow": "🔍 Syntax Check & SDK3 Validation",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-10-25T19:52:16.540Z",
+   "lastSeen": "2026-10-25T19:52:16.540Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "Check forbidden patterns (TITAN v<n>)",
+   "events": [
+    [
+     "2026-10-25T19:52:16.540Z",
+     "f"
+    ]
+   ]
+  },
+  "d2c3bf9ae874": {
+   "category": "gate",
+   "workflow": "🛡️ Unified CI/CD Orchestrator",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-10-25T19:52:17.245Z",
+   "lastSeen": "2026-10-27T10:31:05.394Z",
+   "fails": 3,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "🛡️ L<n> dual-app enrich gates (hard)",
+   "events": [
+    [
+     "2026-10-25T19:52:17.245Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:31:04.642Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:31:05.394Z",
+     "f"
+    ]
+   ]
+  },
+  "b8b4d0a704a7": {
+   "category": "other",
+   "workflow": "Node 22 runtime tests",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-10-26T11:01:05.103Z",
+   "lastSeen": "2026-10-26T11:01:05.103Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "stable-v5"
+   ],
+   "sample": "Process completed with exit code <n>.",
+   "events": [
+    [
+     "2026-10-26T11:01:05.103Z",
+     "f"
+    ]
+   ]
+  },
+  "f49e29c67f65": {
+   "category": "other",
+   "workflow": "🔍 Syntax Check & SDK3 Validation",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-10-26T11:01:06.441Z",
+   "lastSeen": "2026-10-26T11:01:06.441Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "Process completed with exit code <n>.",
+   "events": [
+    [
+     "2026-10-26T11:01:06.441Z",
+     "f"
+    ]
+   ]
+  },
+  "05cf3c26240d": {
+   "category": "other",
+   "workflow": "🚀 Publish Stable to Test",
+   "unit": "Publish to Draft / Prepare Publish Directory",
+   "test": "",
+   "firstSeen": "2026-10-26T11:01:17.457Z",
+   "lastSeen": "2026-10-26T11:01:17.457Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "stable-v5"
+   ],
+   "sample": "Process completed with exit code <n>.",
+   "events": [
+    [
+     "2026-10-26T11:01:17.457Z",
+     "f"
+    ]
+   ]
+  },
+  "6e84c480a105": {
+   "category": "test",
+   "workflow": "Node 22 runtime tests",
+   "unit": "test / Full suite on Node 22",
+   "test": "",
+   "firstSeen": "2026-10-27T10:30:13.354Z",
+   "lastSeen": "2026-10-27T10:30:34.560Z",
+   "fails": 4,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "\u001b[<n>;<n>mif [ \"$JOB_STATUS\" = \"success\" ]; then s=\"All mocha suites passed on Node <n>.\"; else s=\"A mocha suite failed on Node <n>; the red step names the file",
+   "events": [
+    [
+     "2026-10-27T10:30:13.354Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:30:15.032Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:30:18.321Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:30:34.560Z",
+     "f"
+    ]
+   ]
+  },
+  "5be26e541885": {
+   "category": "gate",
+   "workflow": "Node 22 runtime tests",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-10-27T10:30:16.422Z",
+   "lastSeen": "2026-10-27T10:30:32.909Z",
+   "fails": 4,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "\u001b[<n>;<n>mif [ \"$JOB_STATUS\" = \"success\" ]; then s=\"Every node:test file passed, or failed only inside the frozen baseline.\"; else s=\"A node:test file failed ou",
+   "events": [
+    [
+     "2026-10-27T10:30:16.422Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:30:19.759Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:30:31.595Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:30:32.909Z",
+     "f"
+    ]
+   ]
+  },
+  "ae9f4ef5384b": {
+   "category": "other",
+   "workflow": "🤖 Auto-Fix + Publish Pipeline",
+   "unit": "auto-fix / 🛡️ P244x",
+   "test": "",
+   "firstSeen": "2026-10-27T10:30:21.100Z",
+   "lastSeen": "2026-10-27T10:30:27.005Z",
+   "fails": 2,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "⚠️ Auto-Fix pipeline failed. Check [run #<h>](https:<p><h>)",
+   "events": [
+    [
+     "2026-10-27T10:30:21.100Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:30:27.005Z",
+     "f"
+    ]
+   ]
+  },
+  "a70346f68e80": {
+   "category": "other",
+   "workflow": "🛡️ Unified CI/CD Orchestrator",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-10-27T10:30:22.587Z",
+   "lastSeen": "2026-10-27T10:30:30.252Z",
+   "fails": 2,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "Process completed with exit code <n>.",
+   "events": [
+    [
+     "2026-10-27T10:30:22.587Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:30:30.252Z",
+     "f"
+    ]
+   ]
+  },
+  "d9277ed3905f": {
+   "category": "gate",
+   "workflow": "code-quality",
+   "unit": "Quality Checks / P244x flow/knob + family gates",
+   "test": "",
+   "firstSeen": "2026-10-27T10:30:24.033Z",
+   "lastSeen": "2026-10-27T10:30:25.521Z",
+   "fails": 2,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "Process completed with exit code <n>.",
+   "events": [
+    [
+     "2026-10-27T10:30:24.033Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:30:25.521Z",
+     "f"
+    ]
+   ]
+  },
+  "4b363edeecc7": {
+   "category": "test",
+   "workflow": "Node 22 runtime tests",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-10-27T10:30:35.272Z",
+   "lastSeen": "2026-10-27T10:31:06.955Z",
+   "fails": 8,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "stable-v5",
+    "bastien-home"
+   ],
+   "sample": "node:test strict (P<n>-<n>)",
+   "events": [
+    [
+     "2026-10-27T10:30:35.272Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:30:38.691Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:30:45.392Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:30:50.736Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:30:54.452Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:30:58.743Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:31:02.464Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:31:06.955Z",
+     "f"
+    ]
+   ]
+  },
+  "d1ec9f0993a2": {
+   "category": "other",
+   "workflow": "code-quality",
+   "unit": "Quality Checks / Anti-bot + P2138 sacred-couple matrix + P244x flow/knob",
+   "test": "",
+   "firstSeen": "2026-10-27T10:30:36.682Z",
+   "lastSeen": "2026-10-27T10:30:52.338Z",
+   "fails": 2,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "stable-v5"
+   ],
+   "sample": "Anti-bot + P<n> sacred-couple matrix + P<n>x flow<p>",
+   "events": [
+    [
+     "2026-10-27T10:30:36.682Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:30:52.338Z",
+     "f"
+    ]
+   ]
+  },
+  "3eafa3e251a8": {
+   "category": "other",
+   "workflow": "🤖 Auto-Fix + Publish Pipeline",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-10-27T10:30:37.335Z",
+   "lastSeen": "2026-10-27T10:30:55.155Z",
+   "fails": 4,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "stable-v5",
+    "master"
+   ],
+   "sample": "🛡️ P<n> publish path (soft-expect + sacred-keep + couple)",
+   "events": [
+    [
+     "2026-10-27T10:30:37.335Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:30:40.939Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:30:53.137Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:30:55.155Z",
+     "f"
+    ]
+   ]
+  },
+  "4343ee8f200b": {
+   "category": "test",
+   "workflow": "🔍 Syntax Check & SDK3 Validation",
+   "unit": "syntax-check / P2138 BSEED dimmer + Poll Control tests",
+   "test": "",
+   "firstSeen": "2026-10-27T10:30:38.025Z",
+   "lastSeen": "2026-10-27T10:30:56.581Z",
+   "fails": 4,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "stable-v5",
+    "master"
+   ],
+   "sample": "P<n> BSEED dimmer + Poll Control tests",
+   "events": [
+    [
+     "2026-10-27T10:30:38.025Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:30:41.686Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:30:53.776Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:30:56.581Z",
+     "f"
+    ]
+   ]
+  },
+  "57f650364735": {
+   "category": "test",
+   "workflow": "Node 22 runtime tests",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-10-27T10:30:39.571Z",
+   "lastSeen": "2026-10-27T10:31:01.820Z",
+   "fails": 8,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "node:test strict (P<n>-<n>)",
+   "events": [
+    [
+     "2026-10-27T10:30:39.571Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:30:43.991Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:30:44.756Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:30:51.530Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:30:58.059Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:30:59.422Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:31:01.039Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:31:01.820Z",
+     "f"
+    ]
+   ]
+  },
+  "fb19cc18274b": {
+   "category": "other",
+   "workflow": "code-quality",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-10-27T10:30:40.328Z",
+   "lastSeen": "2026-10-27T10:30:43.250Z",
+   "fails": 2,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "P<n> personal-data guard (no CV<p> exports or personal contact data)",
+   "events": [
+    [
+     "2026-10-27T10:30:40.328Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:30:43.250Z",
+     "f"
+    ]
+   ]
+  },
+  "a089ee206a72": {
+   "category": "test",
+   "workflow": "🛡️ Unified CI/CD Orchestrator",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-10-27T10:30:42.446Z",
+   "lastSeen": "2026-10-27T10:30:55.924Z",
+   "fails": 2,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "🧪 P<n> + Poll Control critical tests",
+   "events": [
+    [
+     "2026-10-27T10:30:42.446Z",
+     "f"
+    ],
+    [
+     "2026-10-27T10:30:55.924Z",
+     "f"
+    ]
+   ]
+  },
+  "370b5ac6a183": {
+   "category": "athom-api",
+   "workflow": "🚀 Publish Stable to Test",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-10-27T10:31:03.750Z",
+   "lastSeen": "2026-10-27T10:31:03.750Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "stable-v5"
+   ],
+   "sample": "Re-upload when Athom processing fails (fresh higher version)",
+   "events": [
+    [
+     "2026-10-27T10:31:03.750Z",
+     "f"
+    ]
+   ]
+  },
+  "137cfc62a88d": {
+   "category": "other",
+   "workflow": "Autonomous Verification (P37)",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-10-27T10:31:07.608Z",
+   "lastSeen": "2026-10-27T10:31:07.608Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "📦 Setup Node.js",
+   "events": [
+    [
+     "2026-10-27T10:31:07.608Z",
+     "f"
+    ]
+   ]
+  }
+ }
+}
