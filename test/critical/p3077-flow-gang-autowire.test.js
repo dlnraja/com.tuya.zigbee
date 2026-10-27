@@ -128,3 +128,42 @@ test('P3077 flow batch 5: temperature/humidity/soil threshold cards cross the st
   assert.strictEqual(W.thresholdCrossed(null, 'n', 'over:a:1:0', 5, 0), false);
   assert.strictEqual(W.thresholdCrossed(dev2, 'n', 'over:a:1:0', 'bad', 0), false);
 });
+
+test('P3077 flow batch 6: "Power exceeds threshold" cards fire only when crossing the flow\'s own threshold', async () => {
+  const ids = ['device_plug_energy_device_plug_energy_monito_b969d', 'device_plug_smart_power_threshold',
+    'plug_smart_power_threshold', 'sensor_contact_plug_contact_sensor_plug_threshold'];
+  for (const id of ids) {
+    assert.strictEqual(map.triggers[id].cap, 'measure_power', id);
+    assert.strictEqual(map.triggers[id].when, 'argover:threshold', id);
+  }
+  assert.strictEqual(Object.values(map.triggers).filter((v) => /^argover:/.test(v.when)).length, 4);
+  // trigger is offered on any numeric change with a known previous; the run listener decides per flow
+  const ids1 = (v, p) => W.mappedTriggerIds('plug_smart', 'measure_power', v, { previous: p });
+  assert.deepStrictEqual(ids1(120, 80), ['plug_smart_power_threshold']);
+  assert.deepStrictEqual(ids1(120, undefined), [], 'first report after start never fires');
+  const def = map.triggers.plug_smart_power_threshold;
+  const run = (thr, value, previous) => W.argOverCrossed(def, { threshold: thr }, { value, previous });
+  assert.strictEqual(run(100, 120, 80), true, 'crosses 100 upwards');
+  assert.strictEqual(run(100, 130, 120), false, 'already above: no repeat');
+  assert.strictEqual(run(100, 80, 120), false, 'downwards: no');
+  assert.strictEqual(run(100, 100, 80), false, 'equal is not exceeding');
+  assert.strictEqual(run(100, 101, 100), true);
+  assert.strictEqual(run(200, 120, 80), false, 'another flow with 200 W stays quiet');
+  assert.strictEqual(run(undefined, 120, 80), false);
+  assert.strictEqual(run(100, 120, null), false);
+  // registration: replaces the generic pass-through, one listener per mapped argover card
+  const listeners = {};
+  const homey = { flow: { getDeviceTriggerCard: (id) => ({ registerRunListener: (fn) => { listeners[id] = fn; } }) } };
+  assert.strictEqual(W.registerDeadTriggerArgs(homey), 4);
+  assert.deepStrictEqual(Object.keys(listeners).sort(), ids.slice().sort());
+  assert.strictEqual(await listeners.plug_smart_power_threshold({ threshold: 50 }, { value: 60, previous: 40 }), true);
+  assert.strictEqual(await listeners.plug_smart_power_threshold({ threshold: 50 }, { value: 60, previous: 55 }), false);
+  assert.strictEqual(W.registerDeadTriggerArgs({}), 0);
+});
+
+test('P3077 flow batch 6: a null previous (fresh device) is unknown, never 0', () => {
+  const dev = { getSetting: () => null };
+  assert.strictEqual(W.thresholdCrossed(dev, 'z', 'over:alarm_temp_max:40:0.5', 45, null), false);
+  assert.strictEqual(W.thresholdCrossed(dev, 'z', 'over:alarm_temp_max:40:0.5', 46, 45), false);
+  assert.deepStrictEqual(W.mappedTriggerIds('plug_smart', 'measure_power', 120, { previous: null }), []);
+});

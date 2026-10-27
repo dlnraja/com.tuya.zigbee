@@ -351,6 +351,16 @@
       "cap": "measure_power",
       "when": "change"
     },
+    "device_plug_energy_device_plug_energy_monito_b969d": {
+      "driver": "device_plug_energy",
+      "cap": "measure_power",
+      "when": "argover:threshold"
+    },
+    "device_plug_smart_power_threshold": {
+      "driver": "device_plug_smart",
+      "cap": "measure_power",
+      "when": "argover:threshold"
+    },
     "device_radiator_valve_radiator_valve_target__e4723": {
       "driver": "device_radiator_valve",
       "cap": "target_temperature",
@@ -541,6 +551,11 @@
       "cap": "dim",
       "when": "change"
     },
+    "plug_smart_power_threshold": {
+      "driver": "plug_smart",
+      "cap": "measure_power",
+      "when": "argover:threshold"
+    },
     "remote_button_wireless_plug_measure_voltage__6eb92": {
       "driver": "remote_button_wireless_plug",
       "cap": "measure_voltage",
@@ -730,6 +745,11 @@
       "driver": "sensor_contact_motion",
       "cap": "alarm_motion",
       "when": false
+    },
+    "sensor_contact_plug_contact_sensor_plug_threshold": {
+      "driver": "sensor_contact_plug",
+      "cap": "measure_power",
+      "when": "argover:threshold"
     },
     "sensor_contact_presence_cleared": {
       "driver": "sensor_contact_presence",
