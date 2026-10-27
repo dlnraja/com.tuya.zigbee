@@ -21,10 +21,13 @@ function compose(id) {
 }
 
 describe('P2759 Johan L99 recursive transpose locks', () => {
-  it('vrcfo4i0+TS0601 stays gas_sensor (not IAS contact_sensor)', () => {
-    const gas = compose('gas_sensor');
-    assert.ok(gas.zigbee.productId.includes('TS0601'));
-    assert.ok(gas.zigbee.manufacturerName.some((m) => /vrcfo4i0/i.test(m)));
+  // WHY(P3077 batch 8): Z2M tuya.ts lists _TZE200_vrcfo4i0 as the Loginovo ZG-101Z SOS button, so the
+  // couple now lives on button_emergency_sos (Johan #1489 left the type unverified). Still never contact_sensor.
+  it('vrcfo4i0+TS0601 is the ZG-101Z SOS button (not gas, not IAS contact_sensor)', () => {
+    const sos = compose('button_emergency_sos');
+    assert.ok(sos.zigbee.productId.includes('TS0601'));
+    assert.ok(sos.zigbee.manufacturerName.some((m) => /vrcfo4i0/i.test(m)));
+    assert.ok(!compose('gas_sensor').zigbee.manufacturerName.some((m) => /vrcfo4i0/i.test(m)));
     const contact = compose('contact_sensor');
     assert.ok(!contact.zigbee.manufacturerName.some((m) => /vrcfo4i0/i.test(m)));
   });

@@ -36,7 +36,7 @@ describe('P2364 SOS Flow / DynCap', () => {
     assert.match(src, /pressType === 'double'/);
     assert.match(src, /pressType === 'long'/);
     assert.match(src, /triggerPhysicalOff/);
-    assert.match(src, /_dynCapBlockDps = new Set\(\[1, 4, 13, 14, 15, 101\]\)/);
+    assert.match(src, /_dynCapBlockDps = new Set\(\[1, 4, 13, 14, 15, 26, 29, 101\]\)/);
   });
 
   it('lib/dynamic DCM blocks button class and SOS-owned DPs', async () => {
@@ -44,7 +44,7 @@ describe('P2364 SOS Flow / DynCap', () => {
     const dcm = new DynamicCapabilityManager({
       driver: { id: 'button_emergency_sos', manifest: { id: 'button_emergency_sos', class: 'button' } },
       getClass: () => 'button',
-      _dynCapBlockDps: new Set([1, 4, 13, 14, 15, 101]),
+      _dynCapBlockDps: new Set([1, 4, 13, 14, 15, 26, 29, 101]),
       hasCapability: () => false,
       homey: {},
       log: () => {},

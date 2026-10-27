@@ -106,4 +106,14 @@ describe('P3077 phantom moves', () => {
     }
     assert.ok(lists(zig('curtain_motor'), '_TZB000_42ha4rsc'));
   });
+  it('batch 8: Loginovo ZG-101Z SOS ids pair on button_emergency_sos, which reads DP26/DP29', () => {
+    for (const m of ['_TZE200_vrcfo4i0', '_TZE200_nojsjtj2']) {
+      assert.ok(lists(zig('button_emergency_sos'), m) && zig('button_emergency_sos').productId.includes('TS0601'), m);
+      for (const d of ['gas_sensor', 'climate_sensor', 'presence_sensor_radar', 'contact_sensor']) {assert.ok(!lists(zig(d), m), `${m} on ${d}`);}
+    }
+    const src = fs.readFileSync(path.join(ROOT, 'drivers/button_emergency_sos/device.js'), 'utf8');
+    assert.ok(/dp === 26 \|\| dp === 29/.test(src));
+    const fp = require(path.join(ROOT, 'lib/tuya/fingerprints.json'));
+    assert.equal(fp._TZE200_vrcfo4i0.driverId, 'button_emergency_sos');
+  });
 });

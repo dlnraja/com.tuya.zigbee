@@ -119,6 +119,13 @@ package (button_wireless_1, heobian/Heobian × 5 pids) carry t614u exemptions; t
 - No outside source lists `_TZ3000_42ha4rsc`. The real device is the Lidl HG09648 blind `_TZB000_42ha4rsc` (TS030F), listed by zigbee-herdsman-converters (commit a118719, Koen Kanters) and by the deCONZ DDF `_TZB000_42ha4rsc_window_blinds`; it stays on curtain_motor.
 - The 4 `_TZ3000_` forms left curtain_motor_shutter (none were in the Athom baseline, so no exemptions). The data/mfs_db.json row stays as forbid-only so nothing adds it back, and its fingerprint row is gone.
 
+## Batch 8 (27/10/2026, owner t614u): the Loginovo ZG-101Z SOS button
+
+- `_TZE200_vrcfo4i0` and `_TZE200_nojsjtj2` (TS0601) are the Loginovo ZG-101Z SOS button in zigbee-herdsman-converters `tuya.ts` (Koen Kanters and contributors; zigbee2mqtt.io/devices/ZG-101Z). kkossev's Hubitat TS004F driver lists `_TZE200_nojsjtj2` as a "Tuya SOS Button" with the IAS Zone cluster (0500). Johan #1489 only says "Air Monitor / SOS", unverified.
+- So they move to button_emergency_sos: vrcfo4i0 leaves gas_sensor and nojsjtj2 leaves climate_sensor. Neither was in the Athom baseline, so no exemptions are needed. Devices already paired keep their driver.
+- button_emergency_sos now also reads DP26 (sos) and DP29 (emergency) as a press, next to the IAS Zone path. The existing 2 s debounce keeps one press as one alarm. Nothing is written at pairing.
+- `_TZE204_vrcfo4i0` / `_TZE284_vrcfo4i0` (gas_sensor and presence_sensor_radar, 16 entries) have no source and are dropped. curated-couple-removals blocks bots from adding any of them back.
+
 ## Pending
 
 - ~480 collateral duals need driver splits (next batches).

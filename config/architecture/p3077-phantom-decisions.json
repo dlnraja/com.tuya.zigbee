@@ -293,6 +293,28 @@
    "source": "https://github.com/Koenkk/zigbee2mqtt/issues/8500",
    "author": "snp88 (zigbee2mqtt issue), confirmed by Johan Bendz SDK3 README and erickvneri edge fingerprints",
    "why": "every source lists it as TS0041 with one button; the knob entry came from rotary-knob-ssot only. The knob regex also forced dimmer mode on this button, so it left KNOB_MFR too"
+  },
+  {
+   "mfr": "_TZE200_vrcfo4i0",
+   "from": "gas_sensor",
+   "keptOn": "button_emergency_sos",
+   "realPid": "TS0601",
+   "hardware": "Loginovo ZG-101Z SOS button (IAS Zone + DP26 sos / DP29 emergency)",
+   "batch": 8,
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
+   "author": "Koen Kanters and zigbee-herdsman-converters contributors (ZG-101Z entry)",
+   "why": "the only outside source naming this id calls it an SOS button; Johan #1489 left the type unverified (air monitor or SOS). Not in the Athom baseline"
+  },
+  {
+   "mfr": "_TZE200_nojsjtj2",
+   "from": "climate_sensor",
+   "keptOn": "button_emergency_sos",
+   "realPid": "TS0601",
+   "hardware": "Loginovo ZG-101Z SOS button",
+   "batch": 8,
+   "source": "https://github.com/kkossev/Hubitat/blob/main/Drivers/Tuya%20TS004F/TS004F.groovy",
+   "author": "kkossev (Hubitat TS004F driver, 'Tuya SOS Button', clusters 0000,0003,0500,0001) and zigbee-herdsman-converters ZG-101Z",
+   "why": "two sources agree it is an SOS button; it was never a climate sensor. Not in the Athom baseline"
   }
  ],
  "keptOnPurpose": [
@@ -466,6 +488,26 @@
    "why": "no outside source lists this _TZ3000_ id; it is an auto-sync copy of the Lidl HG09648 blind id _TZB000_42ha4rsc (TS030F), which stays on curtain_motor. mfs_db keeps the row as forbid-only so nothing re-adds it",
    "source": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/a11871926c6de02ad4004fb51662b2bfefa60a2f",
    "author": "Koen Kanters (zigbee-herdsman-converters), deCONZ DDF _TZB000_42ha4rsc_window_blinds"
+  },
+  {
+   "mfr": "_TZE204_vrcfo4i0",
+   "batch": 8,
+   "from": "gas_sensor, presence_sensor_radar",
+   "composeEntries": 8,
+   "baselineCouples": 0,
+   "why": "prefix copies with no source (Z2M, ZHA, deCONZ, Johan, Blakadder, Hubitat list only _TZE200_vrcfo4i0)",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
+   "author": "zigbee-herdsman-converters contributors"
+  },
+  {
+   "mfr": "_TZE284_vrcfo4i0",
+   "batch": 8,
+   "from": "gas_sensor, presence_sensor_radar",
+   "composeEntries": 8,
+   "baselineCouples": 0,
+   "why": "prefix copies with no source (Z2M, ZHA, deCONZ, Johan, Blakadder, Hubitat list only _TZE200_vrcfo4i0)",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
+   "author": "zigbee-herdsman-converters contributors"
   }
  ]
 }
