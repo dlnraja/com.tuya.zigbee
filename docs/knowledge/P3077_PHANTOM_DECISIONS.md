@@ -58,7 +58,30 @@ no sacred pin missing, no attested couple lost (973 attested couples in the capp
 
 `_TZE284_6ycgarab + TS0205`: P3067 gave it a single owner (`smoke_sensor`); the P3055 decision rows now say so.
 
+## Batch 2 (27/10/2026, owner t614u)
+
+Each mfr below sat on a second driver only through the mfr x pid product. It stays on the driver of its real hardware.
+
+| mfr | dropped from | stays on (real pid) | hardware | source (author) |
+|---|---|---|---|---|
+| `_TZ3000_c8ozah8n` | pir_sensor_2 | motion_sensor (TS0202) | battery PIR (ZP01 family) | https://github.com/Koenkk/zigbee2mqtt/issues/26084 (activa73) |
+| `_TZ3000_mmtwjmaq` | pir_sensor_2 | motion_sensor (TS0202) | battery PIR | https://github.com/Koenkk/zigbee2mqtt/issues/11663 (jocamane), #7881 (1iverea9er) |
+| `_TZ3000_wamqdr3f` | plug_energy_monitor | plug (TS011F) | Lidl Silvercrest HG06337 FR plug, no metering | zigbee-herdsman-converters `lidl.ts` (Koenkk and contributors) |
+| `_TZB000_42ha4rsc` | curtain_motor_shutter | curtain_motor (TS030F) | Lidl Livarno HG09648 roller blind | zigbee-herdsman-converters `tuya.ts` whitelabel (Koenkk and contributors) |
+| `HOBEIAN` | sensor_contact_zigbee | contact_sensor (ZG-102Z) | HOBEIAN door sensor | zigbee-herdsman-converters `hobeian.ts` (Koenkk and contributors) |
+| `_TZ3000_dpo1ysak` | plug | smartplug (TS011F) | TS011F plug with metering | https://github.com/Koenkk/zigbee-herdsman-converters/pull/3076 (dmaasland), #3107 (kloknibor) |
+
+`_TZ3000_42ha4rsc` (a `_TZ3000_` copy of the Lidl `_TZB000_` id that no outside source lists) stays on curtain_motor_shutter: data/mfs_db.json knows it and the anti-purge guard forbids dropping it. Owner review.
+Only `dpo1ysak` on plug was in the last Athom package: 12 couples (2 case forms x 6 pids) got a t614u exemption.
+Paired devices keep working: Homey does not re-match an existing device.
+
+Kept after review: `HOBEIAN` on gas_sensor (ZG-225Z), siren (ZG-229Z), ir_blaster (ZG-IR01), curtain_motor (ZG-301Z-MOTO),
+because hobeian.ts keys these by vendor zigbeeModel and the audit only knew TS pids. `_TZ3290_ixd9mvv4` (TS0049 LYAI-14) stays on
+both valve drivers per P3055. `_TZ3000_pzui3skt` is really a TS0041 one-button remote (zigbee2mqtt #8500 by snp88, Johan Bendz
+README), but the knob entry is pinned by rotary-knob-ssot (P2448), so it waits for the owner. `9ni6xxld` and `heiman` are reviewed duals.
+
 ## Pending
 
-- `hobeian` on gas_sensor/siren/ir_blaster, `_TZ3000_pzui3skt` on smart_knob_rotary, `_TZB000_42ha4rsc` cover duplicate, `_TZ3290_ixd9mvv4` valve duplicate, HEIMAN on universal_zigbee: need more evidence before any change.
+- `_TZ3000_pzui3skt` on smart_knob_rotary (rotary-knob-ssot says knob; sources say TS0041 button), HOBEIAN ZG-101ZD knob on button_wireless_1, HEIMAN on universal_zigbee: owner review.
+- ~480 collateral duals need driver splits (next batches).
 - TS0601 duals on bulb_rgb/bulb_rgbw/button_wireless_*: never dropped by pid; per-mfr review only.
