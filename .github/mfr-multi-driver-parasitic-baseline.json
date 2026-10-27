@@ -1824,9 +1824,7 @@
   "zbeacon|TS0201@temphumidsensor_zcl_th01",
   "zbeacon|TS0202@temphumidsensor_zcl_th01",
   "zbeacon|TS0505B@bulb_zbeacon_ts0505b",
-  "zbeacon|TS0601@plug_smart",
-  "zbeacon|lumi.sensor_ht.agl02@doorwindowsensor_4",
-  "zbeacon|lumi.weather@doorwindowsensor_4"
+  "zbeacon|TS0601@plug_smart"
  ],
  "_relocated": "2026-10-27 P3077 batch 6 pidMove: HOBEIAN ZG-101ZD left button_wireless_1 for smart_knob_zg101zd, so its two combos are re-keyed to the new driver (net 0, count stays 1825)."
 }

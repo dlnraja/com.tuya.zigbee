@@ -1153,6 +1153,16 @@
       ],
       "why": "P3077 batch 10: unsourced prefix copies of _TZE200_4mh6tyyo (Z2M tuya.ts), owner dimmer_1_gang_tuya",
       "source": "P3077 batch 10 (t614u)"
+    },
+    {
+      "driver": "doorwindowsensor_4",
+      "mfr": [],
+      "pid": [
+        "lumi.sensor_ht.agl02",
+        "lumi.weather"
+      ],
+      "why": "P3077 batch 11: Aqara temperature/humidity modelIds (Z2M lumi.ts WSDCGQ12LM/WSDCGQ11LM), LUMI only; no contact sensor sends them",
+      "source": "P3077 batch 11 (t614u)"
     }
   ]
 }

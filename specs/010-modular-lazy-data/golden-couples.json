@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-27T04:58:46.659Z",
+ "generated": "2026-10-27T05:33:15.036Z",
  "drivers": 417,
  "snapshot": {
   "air_conditioner_aetz01": {
@@ -784,9 +784,9 @@
   },
   "doorwindowsensor_4": {
    "mfr": 3,
-   "pid": 4,
+   "pid": 2,
    "mfrSha": "72ba7add780a60b7",
-   "pidSha": "982c7c2cb76b2228"
+   "pidSha": "eecf8e9ac6fc6f81"
   },
   "double_power_point": {
    "mfr": 0,
