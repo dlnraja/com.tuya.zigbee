@@ -4,6 +4,8 @@ Human-readable log. Machine state: `data/progress/ledger.json` (read it before w
 
 ## 2026-10-27
 
+- 04:55 (Paris) — **P3080 batch B (localtuya idea 1/4): `reset_dpids`.** WiFi LAN: when the status refresh fails, the client re-asks only the DP ids listed in the device key `reset_dpids` (setting, else store), at most 32 ids, one re-query per 60 s, 3 s timeout. No key = previous behaviour; no manifest change. Module `lib/tuya-local/LocalTuyaOptions.js`; test `test/critical/p3080-localtuya-reset-dpids.test.js`; CREDITS rospogrigio/xZetsubou (ideas only). MINI-ZBRBS driver parked locally until upload headroom is freed.
+
 - 04:05 (Paris) — **P3080 item 4 (t585u): report wording debt 21 → 1 script.** Eight tools that printed or stored GitHub issue / forum titles now give a short theme + ids via `topicOf` (scan-johan-full report JSON, bot triage, button and temporal tools, forum collect, session start, digest). Console-only and own-text lines are tagged (`ok-console`, `ok-own-text`, `ok-extract-only`). Only generate-dashboards-page (our own dashboard names) is left. Ratchet baseline lowered; test `test/p3080-report-ratchet-batch.test.js`. Doc excerpts (21 old reports) untouched.
 
 - 04:20 (Paris) — **P3080 item 17 checked, no code change.** HEIMAN RC-EF-3.0 already pairs on heiman_keyfob only. iHorn LH02121 already on slim_motion_sensor; zoneType still unproven (no public source). Signify RDM001 needs the Philips cluster, so it is left to the Hue app. SONOFF MINI-ZBRBS needs its own small driver, which waits for a manifest-bytes decision; restoring it on curtain_module would add SONOFF×TS130F/TS0726 phantom couples.

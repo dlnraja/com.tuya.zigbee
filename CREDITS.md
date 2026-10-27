@@ -265,6 +265,7 @@ Own implementation in `lib/ir/ZosungIRProtocol.js`, `lib/ir/TuyaWifiIRProtocol.j
 - **jasonacox/tinytuya** (MIT) — protocol 3.1–3.5 and the 3.22 alias, wizard export format.
 - **codetheweb/tuyapi** (MIT) — CONTROL_NEW / DP_QUERY_NEW for 3.4+.
 - **rospogrigio/localtuya, xZetsubou/hass-localtuya** (GPL-3.0, study only) — single-client limit, sub-device cid.
+- **rospogrigio/localtuya, xZetsubou/hass-localtuya** (GPL-3.0, ideas only, own code, P3080 2026-10-27) — opt-in LAN options in `lib/tuya-local/LocalTuyaOptions.js`: `reset_dpids` (re-ask listed DPs after a failed status, bounded + cooldown).
 - **PlusPlus-ua/ha_tuya_ble** — BLE protocol versions (documentation only).
 - **Koenkk/zigbee-herdsman-converters** (MIT) — EF00 command ids, appVersion layout.
 Details: `docs/knowledge/WIFI_LOCAL_PROTOCOLS_P2930.md`.
