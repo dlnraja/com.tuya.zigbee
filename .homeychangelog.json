@@ -3670,8 +3670,8 @@
     "en": "v5.12.0: stable-v5 batch sync (drivers, FPs, flows, manifest) from master v9.0.240–v9.0.260."
   },
   "1.0.217": {
-    "en": "Device fixes and improvements for switch (1 fix).",
-    "fr": "Corrections et améliorations pour : interrupteur (1 correctif)."
+    "en": "Fixed: memory and timers, Wi-Fi devices & the Repair screen, climate sensors (TS0201) and wall switches. Plus 1 other change in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Corrigé : mémoire et minuteries, appareils Wi-Fi & l'écran Réparer, capteurs d'ambiance (TS0201) et interrupteurs. Et 1 autre changement dans le cœur de l'app. En coulisses : tests et contrôles de publication."
   },
   "1.0.216": {
     "en": "Device database and reliability updates.",
