@@ -80,6 +80,14 @@ because hobeian.ts keys these by vendor zigbeeModel and the audit only knew TS p
 both valve drivers per P3055. `_TZ3000_pzui3skt` is really a TS0041 one-button remote (zigbee2mqtt #8500 by snp88, Johan Bendz
 README), but the knob entry is pinned by rotary-knob-ssot (P2448), so it waits for the owner. `9ni6xxld` and `heiman` are reviewed duals.
 
+## Batch 3 (27/10/2026, owner t614u): manufacturer ids used as productIds
+
+`water_leak_sensor` and `water_leak_sensor_tuya` listed `_TZ3000_kyb656no` and `_TZ3000_eit6l5` (both case forms) as productIds.
+Homey crossed them with every mfr of the driver: 146 phantom couples (76 + 70), none in the last Athom package.
+`_TZ3000_kyb656no` is a real manufacturerName (Meian SW02 whitelabel, TS0207, zigbee-herdsman-converters `tuya.ts`) and stays as a mfr on both drivers;
+`_TZ3000_eit6l5` is a cut-off id no source reports. P3055 already dropped the same two pids from gas_sensor_switch.
+`q9mpfhw` looks like a cut-off id too but is a real zigbeeModel upstream, so it stays.
+
 ## Pending
 
 - `_TZ3000_pzui3skt` on smart_knob_rotary (rotary-knob-ssot says knob; sources say TS0041 button), HOBEIAN ZG-101ZD knob on button_wireless_1, HEIMAN on universal_zigbee: owner review.

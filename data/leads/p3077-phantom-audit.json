@@ -1,11 +1,11 @@
 {
  "generated": "2026-10-27",
  "summary": {
-  "total": 482,
+  "total": 476,
   "attested": 21,
   "diag": 0,
   "pinned": 10,
-  "unattested": 460
+  "unattested": 454
  },
  "couples": [
   {
@@ -2111,7 +2111,7 @@
      ],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ck-tlsr8656-ss5-01(7019)",
       "ck-tlsr8656-z23se11hw-01(7019)"
@@ -2641,7 +2641,7 @@
      ],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "3315-s",
       "zg-222z",
@@ -3227,7 +3227,7 @@
      ],
      "unverifiedMfrs": 10,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": []
     }
    }
@@ -16893,7 +16893,7 @@
      ],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "3315-s",
       "zg-222z",
@@ -16942,7 +16942,7 @@
      ],
      "unverifiedMfrs": 10,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": []
     }
    }
@@ -19432,84 +19432,6 @@
   },
   {
    "mfr": "_tz3000_fxvjhdyl",
-   "pid": "_TZ3000_EIT6L5",
-   "drivers": [
-    "water_leak_sensor",
-    "water_leak_sensor_tuya"
-   ],
-   "pattern": "same class duplicate (sensor)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "water_leak_sensor": {
-     "canDropPid": false,
-     "pidCost": 37,
-     "pidBlockers": [],
-     "unverifiedMfrs": 11,
-     "canDropMfr": false,
-     "mfrCost": 20,
-     "mfrBlockers": [
-      "ts0207"
-     ]
-    },
-    "water_leak_sensor_tuya": {
-     "canDropPid": false,
-     "pidCost": 34,
-     "pidBlockers": [],
-     "unverifiedMfrs": 16,
-     "canDropMfr": false,
-     "mfrCost": 16,
-     "mfrBlockers": [
-      "q9mpfhw"
-     ]
-    }
-   }
-  },
-  {
-   "mfr": "_tz3000_fxvjhdyl",
-   "pid": "_TZ3000_KYB656NO",
-   "drivers": [
-    "water_leak_sensor",
-    "water_leak_sensor_tuya"
-   ],
-   "pattern": "same class duplicate (sensor)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "water_leak_sensor": {
-     "canDropPid": false,
-     "pidCost": 37,
-     "pidBlockers": [],
-     "unverifiedMfrs": 11,
-     "canDropMfr": false,
-     "mfrCost": 20,
-     "mfrBlockers": [
-      "ts0207"
-     ]
-    },
-    "water_leak_sensor_tuya": {
-     "canDropPid": false,
-     "pidCost": 34,
-     "pidBlockers": [],
-     "unverifiedMfrs": 16,
-     "canDropMfr": false,
-     "mfrCost": 16,
-     "mfrBlockers": [
-      "q9mpfhw"
-     ]
-    }
-   }
-  },
-  {
-   "mfr": "_tz3000_fxvjhdyl",
    "pid": "3315-S",
    "drivers": [
     "water_leak_sensor",
@@ -19531,7 +19453,7 @@
      ],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -19542,7 +19464,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
@@ -19570,7 +19492,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -19581,7 +19503,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
@@ -19611,7 +19533,7 @@
      ],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -19622,7 +19544,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
@@ -19650,7 +19572,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -19661,7 +19583,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
@@ -19689,7 +19611,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -19700,7 +19622,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
@@ -19728,7 +19650,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -19739,7 +19661,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
@@ -19767,7 +19689,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -19778,7 +19700,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
@@ -19806,7 +19728,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -19817,7 +19739,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
@@ -19845,7 +19767,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -19856,7 +19778,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
@@ -19886,7 +19808,7 @@
      ],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -19897,7 +19819,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
@@ -19925,7 +19847,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -19936,7 +19858,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
@@ -19964,7 +19886,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -19975,7 +19897,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
@@ -20007,7 +19929,7 @@
      ],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -20024,7 +19946,7 @@
      ],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
@@ -20054,7 +19976,7 @@
      ],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -20065,85 +19987,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
-     "mfrBlockers": [
-      "q9mpfhw"
-     ]
-    }
-   }
-  },
-  {
-   "mfr": "_tz3000_kyb656no",
-   "pid": "_TZ3000_EIT6L5",
-   "drivers": [
-    "water_leak_sensor",
-    "water_leak_sensor_tuya"
-   ],
-   "pattern": "same class duplicate (sensor)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "water_leak_sensor": {
-     "canDropPid": false,
-     "pidCost": 37,
-     "pidBlockers": [],
-     "unverifiedMfrs": 11,
-     "canDropMfr": false,
-     "mfrCost": 20,
-     "mfrBlockers": [
-      "ts0207"
-     ]
-    },
-    "water_leak_sensor_tuya": {
-     "canDropPid": false,
-     "pidCost": 34,
-     "pidBlockers": [],
-     "unverifiedMfrs": 16,
-     "canDropMfr": false,
-     "mfrCost": 16,
-     "mfrBlockers": [
-      "q9mpfhw"
-     ]
-    }
-   }
-  },
-  {
-   "mfr": "_tz3000_kyb656no",
-   "pid": "_TZ3000_KYB656NO",
-   "drivers": [
-    "water_leak_sensor",
-    "water_leak_sensor_tuya"
-   ],
-   "pattern": "same class duplicate (sensor)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "water_leak_sensor": {
-     "canDropPid": false,
-     "pidCost": 37,
-     "pidBlockers": [],
-     "unverifiedMfrs": 11,
-     "canDropMfr": false,
-     "mfrCost": 20,
-     "mfrBlockers": [
-      "ts0207"
-     ]
-    },
-    "water_leak_sensor_tuya": {
-     "canDropPid": false,
-     "pidCost": 34,
-     "pidBlockers": [],
-     "unverifiedMfrs": 16,
-     "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
@@ -20173,7 +20017,7 @@
      ],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -20184,7 +20028,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
@@ -20212,7 +20056,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -20223,7 +20067,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
@@ -20253,7 +20097,7 @@
      ],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -20264,7 +20108,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
@@ -20292,7 +20136,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -20303,7 +20147,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
@@ -20331,7 +20175,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -20342,7 +20186,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
@@ -20370,7 +20214,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -20381,7 +20225,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
@@ -20409,7 +20253,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -20420,7 +20264,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
@@ -20448,7 +20292,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -20459,7 +20303,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
@@ -20487,7 +20331,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -20498,7 +20342,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
@@ -20528,7 +20372,7 @@
      ],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -20539,7 +20383,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
@@ -20567,7 +20411,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -20578,7 +20422,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
@@ -20606,7 +20450,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -20617,7 +20461,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
@@ -20649,7 +20493,7 @@
      ],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -20666,7 +20510,7 @@
      ],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
@@ -20696,7 +20540,7 @@
      ],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -20707,85 +20551,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
-     "mfrBlockers": [
-      "q9mpfhw"
-     ]
-    }
-   }
-  },
-  {
-   "mfr": "_tz3000_kstbkt6a",
-   "pid": "_TZ3000_EIT6L5",
-   "drivers": [
-    "water_leak_sensor",
-    "water_leak_sensor_tuya"
-   ],
-   "pattern": "same class duplicate (sensor)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "water_leak_sensor": {
-     "canDropPid": false,
-     "pidCost": 37,
-     "pidBlockers": [],
-     "unverifiedMfrs": 11,
-     "canDropMfr": false,
-     "mfrCost": 20,
-     "mfrBlockers": [
-      "ts0207"
-     ]
-    },
-    "water_leak_sensor_tuya": {
-     "canDropPid": false,
-     "pidCost": 34,
-     "pidBlockers": [],
-     "unverifiedMfrs": 16,
-     "canDropMfr": false,
-     "mfrCost": 16,
-     "mfrBlockers": [
-      "q9mpfhw"
-     ]
-    }
-   }
-  },
-  {
-   "mfr": "_tz3000_kstbkt6a",
-   "pid": "_TZ3000_KYB656NO",
-   "drivers": [
-    "water_leak_sensor",
-    "water_leak_sensor_tuya"
-   ],
-   "pattern": "same class duplicate (sensor)",
-   "attested": false,
-   "sources": [],
-   "diag": null,
-   "pin": null,
-   "canonical": null,
-   "mfrKnownElsewhere": true,
-   "feas": {
-    "water_leak_sensor": {
-     "canDropPid": false,
-     "pidCost": 37,
-     "pidBlockers": [],
-     "unverifiedMfrs": 11,
-     "canDropMfr": false,
-     "mfrCost": 20,
-     "mfrBlockers": [
-      "ts0207"
-     ]
-    },
-    "water_leak_sensor_tuya": {
-     "canDropPid": false,
-     "pidCost": 34,
-     "pidBlockers": [],
-     "unverifiedMfrs": 16,
-     "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
@@ -20815,7 +20581,7 @@
      ],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -20826,7 +20592,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
@@ -20854,7 +20620,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -20865,7 +20631,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
@@ -20895,7 +20661,7 @@
      ],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -20906,7 +20672,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
@@ -20934,7 +20700,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -20945,7 +20711,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
@@ -20973,7 +20739,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -20984,7 +20750,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
@@ -21012,7 +20778,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -21023,7 +20789,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
@@ -21051,7 +20817,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -21062,7 +20828,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
@@ -21090,7 +20856,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -21101,7 +20867,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
@@ -21129,7 +20895,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -21140,7 +20906,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
@@ -21170,7 +20936,7 @@
      ],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -21181,7 +20947,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
@@ -21209,7 +20975,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -21220,7 +20986,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
@@ -21248,7 +21014,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -21259,7 +21025,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
@@ -21291,7 +21057,7 @@
      ],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -21308,7 +21074,7 @@
      ],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
@@ -21338,7 +21104,7 @@
      ],
      "unverifiedMfrs": 11,
      "canDropMfr": false,
-     "mfrCost": 20,
+     "mfrCost": 18,
      "mfrBlockers": [
       "ts0207"
      ]
@@ -21349,7 +21115,7 @@
      "pidBlockers": [],
      "unverifiedMfrs": 16,
      "canDropMfr": false,
-     "mfrCost": 16,
+     "mfrCost": 14,
      "mfrBlockers": [
       "q9mpfhw"
      ]
