@@ -103,7 +103,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.1600] - 2026-10-25
+## [9.0.1601] - 2026-10-27
+
+More TS0601 devices recognised again: device identifiers that were trimmed to save space are topped back up after packing. Publishing now waits for a green test run and spaces out uploads, so fewer broken builds reach the Test channel.
+---
+
+ [9.0.1600] - 2026-10-25
 
 v9.0.1600: automated publish, manifest sync, and Homey test promotion.
 ---
