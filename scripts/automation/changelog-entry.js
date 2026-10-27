@@ -79,13 +79,24 @@ function summarize(subjects) {
   };
 }
 
+// P3075: the bastien bump/write-back subjects ("chore(version): v1.0.217 written back after Test")
+// also close a version, so one entry never lists the whole recent history.
+const BUMP_SUBJECT = /^(?:chore|release|build)(?:\([^)]*\))?:\s*v?\d+\.\d+\.\d+\b|source manifests [\d.]+ -> \d+\.\d+\.\d+/i;
+
+/** Precise en/fr note from our commits (families, model ids), in our own words; summarize() if the backfill module is missing. */
+function precise(subjects) {
+  let B = null;
+  try { B = require('./changelog-backfill.js'); } catch (_) { B = null; }
+  return B && typeof B.describe === 'function' ? B.describe(subjects) : summarize(subjects);
+}
+
 /** Our commit subjects since the previous publish metadata commit (bounded). */
 function subjectsSinceLastPublish(cwd = process.cwd(), max = 400) {
   let log = '';
   try { log = execFileSync('git', ['log', '--no-merges', '--format=%s', '-n', String(max)], { cwd, encoding: 'utf8' }); } catch (_) { return []; }
   const out = [];
   for (const s of log.split('\n')) {
-    if (/^v\d+\.\d+\.\d+: \d+ drivers/.test(s)) break;
+    if (/^v\d+\.\d+\.\d+: \d+ drivers/.test(s) || BUMP_SUBJECT.test(s)) break;
     if (s.trim()) out.push(s.trim());
   }
   return out;
@@ -95,13 +106,13 @@ function subjectsSinceLastPublish(cwd = process.cwd(), max = 400) {
 function updateChangelog(obj, version, subjects) {
   const cur = obj[version];
   let changed = false;
-  if (!cur || isPlaceholder(cur.en)) { obj[version] = summarize(subjects); changed = true; }
+  if (!cur || isPlaceholder(cur.en)) { obj[version] = precise(subjects); changed = true; }
   const ordered = orderChangelog(obj);
   if (JSON.stringify(Object.keys(ordered)) !== JSON.stringify(Object.keys(obj))) changed = true;
   return { changed, obj: ordered, entry: ordered[version] };
 }
 
-module.exports = { isPlaceholder, orderChangelog, summarize, subjectsSinceLastPublish, updateChangelog, cmpVer };
+module.exports = { isPlaceholder, orderChangelog, summarize, precise, subjectsSinceLastPublish, updateChangelog, cmpVer, BUMP_SUBJECT };
 
 if (require.main === module) {
   const arg = (n) => { const i = process.argv.indexOf(n); return i > 0 ? process.argv[i + 1] : undefined; };
