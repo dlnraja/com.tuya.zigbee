@@ -167,3 +167,57 @@ test('P3077 flow batch 6: a null previous (fresh device) is unknown, never 0', (
   assert.strictEqual(W.thresholdCrossed(dev, 'z', 'over:alarm_temp_max:40:0.5', 46, 45), false);
   assert.deepStrictEqual(W.mappedTriggerIds('plug_smart', 'measure_power', 120, { previous: null }), []);
 });
+
+test('P3077 flow batch 7: "Left open for duration" fires once per open episode via the shared bounded scheduler', async () => {
+  const S = require('../../lib/flow/LeftOpenScheduler');
+  const ids = ['air_purifier_contact_sensor_left_open', 'contact_sensor_left_open', 'door_sensor_left_open',
+    'sensor_contact_water_left_open', 'sensor_contact_zigbee_contact_sensor_left_open'];
+  for (const id of ids) {
+    assert.strictEqual(map.triggers[id].cap, 'alarm_contact', id);
+    assert.strictEqual(map.triggers[id].when, 'openfor:5', id);
+  }
+  S._resetForTests();
+  const timers = new Map(); let seq = 0;
+  const homey = {
+    setTimeout: (fn, ms) => { const h = ++seq; timers.set(h, { fn, ms }); return h; },
+    clearTimeout: (h) => { timers.delete(h); }
+  };
+  const fired = [];
+  let open = false;
+  const dev = {
+    homey, driver: { id: 'door_sensor' },
+    getCapabilityValue: () => open,
+    triggerFlowCard: async (id, tokens, state) => { fired.push([id, tokens, state.duration]); return true; }
+  };
+  const report = (v, p) => { open = v; return W.mappedTriggerIds('door_sensor', 'alarm_contact', v, { device: dev, previous: p }); };
+  assert.ok(!report(true, false).includes('door_sensor_left_open'), 'never fired inline');
+  assert.strictEqual(timers.size, 1);
+  assert.strictEqual([...timers.values()][0].ms, 5 * 60000);
+  report(true, true); // repeated "open" report: dedup
+  assert.strictEqual(timers.size, 1);
+  assert.strictEqual(S.pendingCount(), 1);
+  const run = () => { const t = [...timers.entries()]; timers.clear(); for (const [, v] of t) {v.fn();} };
+  run();
+  await new Promise((r) => setImmediate(r));
+  assert.deepStrictEqual(fired, [['door_sensor_left_open', { duration: 5 }, 5]]);
+  assert.strictEqual(S.pendingCount(), 0);
+  // closed before expiry: cancelled, nothing fired
+  report(false, true); report(true, false);
+  assert.strictEqual(timers.size, 1);
+  report(false, true);
+  assert.strictEqual(timers.size, 0);
+  assert.strictEqual(S.pendingCount(), 0);
+  // closed but the close report was missed: the expiry checks the live value
+  report(true, false); open = false; run();
+  await new Promise((r) => setImmediate(r));
+  assert.strictEqual(fired.length, 1);
+  // bounded: no more than MAX_PENDING timers, extra devices are refused
+  S._resetForTests(); timers.clear();
+  const f = () => {};
+  for (let i = 0; i < S.MAX_PENDING; i++) {assert.strictEqual(S.track({ homey }, 'x', 'openfor:5', true, f), 'ARMED');}
+  assert.strictEqual(S.track({ homey }, 'x', 'openfor:5', true, f), 'FULL');
+  assert.strictEqual(timers.size, S.MAX_PENDING);
+  assert.strictEqual(S.track(null, 'x', 'openfor:5', true, f), 'IDLE');
+  assert.strictEqual(S.track({}, 'x', 'openfor:5', true, f), 'IDLE', 'no Homey timers: no raw timer either');
+  S._resetForTests();
+});

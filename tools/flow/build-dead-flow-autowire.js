@@ -96,6 +96,8 @@ const TRIGGER_RULES = [
   [/^temperature too low$/, () => ['measure_temperature'], 'under:alarm_temp_min:0:0.5', 'setting'],
   [/^humidity too high$/, () => ['measure_humidity'], 'over:alarm_humidity_max:80:2', 'setting'],
   [/^humidity too low$/, () => ['measure_humidity'], 'under:alarm_humidity_min:20:2', 'setting'],
+  // P3077 flow batch 7: shared bounded timer (lib/flow/LeftOpenScheduler), fixed 5 min (token example)
+  [/^left open for duration$/, () => ['alarm_contact'], 'openfor:5', 'p3077'],
   // P3077 flow batch 6: per-flow threshold arg (run listener in DeadFlowAutoWire.registerDeadTriggerArgs)
   [/^power exceeds threshold$/, () => ['measure_power'], 'argover:threshold', 'p3077'],
   [/^soil is dry( - needs water)?$/, () => ['measure_humidity.soil', 'measure_humidity'], 'under:soil_warning_threshold:30:2', 'setting']
@@ -211,7 +213,9 @@ const P3077_FLOW_IDS = new Set([
   'shutter_roller_controller_started_moving', 'shutter_roller_controller_stopped_moving',
   'wifi_robot_vacuum_cleaning_started', 'wifi_robot_vacuum_cleaning_finished',
   'device_plug_energy_device_plug_energy_monito_b969d', 'device_plug_smart_power_threshold',
-  'plug_smart_power_threshold', 'sensor_contact_plug_contact_sensor_plug_threshold'
+  'plug_smart_power_threshold', 'sensor_contact_plug_contact_sensor_plug_threshold',
+  'air_purifier_contact_sensor_left_open', 'contact_sensor_left_open', 'door_sensor_left_open',
+  'sensor_contact_water_left_open', 'sensor_contact_zigbee_contact_sensor_left_open'
 ]);
 // P3077 user decision (2026-10-27): device_din_rail_meter keeps its out-of-place dehumidifier cards (removing
 // them could break existing flows) but they are NEVER fired: no rule may map them. Its "Power changed" cards

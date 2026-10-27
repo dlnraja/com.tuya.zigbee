@@ -270,6 +270,19 @@ These three manufacturers are in `data/native-matrix-reviewed-duals.json`, where
 - Not wired: "Power restored" has no clear source.
 - Orphans went from 72 to 68.
 
+## Flow batch 7 ("Left open for duration", shared bounded timer)
+
+- Five orphan "Left open for duration" cards are now wired: `air_purifier_contact`, `contact_sensor`, `door_sensor`, `sensor_contact_water` and `sensor_contact_zigbee`.
+- They are driven by one app-level scheduler, `lib/flow/LeftOpenScheduler.js`:
+  - It keeps at most one pending timer per device and card (dedup) and at most 256 overall. Beyond that, new timers are refused.
+  - It uses `homey.setTimeout`, so Homey clears the timers when the app unloads.
+  - Opening arms the timer and closing cancels it.
+  - When the timer expires, the card fires once, with the `duration` token, and only if `alarm_contact` is still true at that moment. A missed close report therefore never produces a false alert.
+- The delay is fixed at 5 minutes, the card's token example. These cards have no arg, and adding a setting would change app.json, which is frozen during the P3085 publish.
+- A configurable per-device delay may come later, after an accepted build, as its own change.
+- The scheduler's return codes are in upper case: the builder skips any id whose suffix is a lower-case quoted word, and a `'cleared'` had masked two `presence_cleared` mappings.
+- Orphans went from 68 to 63.
+
 ## device_din_rail_meter: dehumidifier cards kept, never fired (owner decision 27/10/2026)
 
 - This driver declares 8 triggers copied from a dehumidifier (humidity, temperature, water leak, battery). A DIN-rail meter has none of these capabilities.
