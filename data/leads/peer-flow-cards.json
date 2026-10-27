@@ -694,8 +694,8 @@
    ]
   },
   "JohanBendz/com.tuya.zigbee": {
-   "ref": "SDK3",
-   "pushed_at": "2026-10-08T17:41:14Z",
+   "ref": "main",
+   "pushed_at": "2026-10-26T07:18:51Z",
    "cards": [
     {
      "kind": "actions",
@@ -741,6 +741,12 @@
     },
     {
      "kind": "triggers",
+     "id": "doorbell_button_pressed",
+     "title": "Doorbell was pressed",
+     "driver": "doorbell_button"
+    },
+    {
+     "kind": "triggers",
      "id": "fingerbot_button_pressed",
      "title": "Button pressed",
      "driver": "fingerbot"
@@ -762,6 +768,12 @@
      "id": "handheld_remote_4_buttons",
      "title": "Button was pressed",
      "driver": "handheld_remote_4_buttons"
+    },
+    {
+     "kind": "triggers",
+     "id": "motion_scene_switch_button",
+     "title": "Scene button was pressed",
+     "driver": "motion_scene_switch"
     },
     {
      "kind": "triggers",
@@ -922,6 +934,6 @@
    ]
   }
  },
- "generated": "2026-10-09",
+ "generated": "2026-10-27",
  "note": "read-only inventory of peer apps flow cards (ideas for our own cards; never copied automatically)"
 }
