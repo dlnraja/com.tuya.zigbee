@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 const fs=require('fs'),path=require('path'),{execSync}=require('child_process');
+const { topicOf } = require('../../scripts/lib/report-writer');
 const{sleep}=require('./retry-helper');
 const{extractFP:_vFP,extractFPWithBrands:_vFPB,extractPID:_vPID,isValidTuyaFP}=require('./fp-validator');
 const ROOT=path.join(__dirname,'..','..');
@@ -123,7 +124,7 @@ async function main(){
         const fps=extractFP(c.body||'');
         const newFPs=fps.filter(fp=>!ourFPs.has(fp));
         if(newFPs.length){
-          report.issues.newFPs.push({number:issue.number,title:'[comment] '+issue.title?.slice(0,60),state:issue.state,fps:newFPs,user:c.user?.login,updated:c.updated_at?.split('T')[0],fromComment:true});
+          report.issues.newFPs.push({number:issue.number,title:'[comment] '+topicOf(issue.title),state:issue.state,fps:newFPs,user:c.user?.login,updated:c.updated_at?.split('T')[0],fromComment:true});
         }
         fps.forEach(fp=>report.allMentionedFPs.push({fp,source:'comment#'+issue.number,isNew:!ourFPs.has(fp)}));
       }

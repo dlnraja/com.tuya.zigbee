@@ -60,7 +60,7 @@ async function httpsGet(url, headers = {}) {
       try { return JSON.parse(r.body.toString('utf8')); } catch (e) { throw new Error('Parse: ' + e.message); }
     }
     if (r.statusCode === 404) return null;
-    throw new Error('HTTP ' + r.statusCode + ': ' + r.body.toString('utf8').substring(0, 200));
+    throw new Error('HTTP ' + r.statusCode + ': ' + r.body.toString('utf8').substring(0, 200)); // ok-console
   } catch (e) {
     if (e.message?.includes('Parse')) throw e;
     throw e;

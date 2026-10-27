@@ -306,7 +306,7 @@ async function main() {
           return;
         }
         results.forEach((r, idx) => {
-          console.log(`[${idx + 1}] ${r.title}`);
+          console.log(`[${idx + 1}] ${r.title}`); // ok-console
           console.log(`    URL: ${r.url}`);
           console.log(`    Snippet: ${r.snippet}\n`);
         });
@@ -324,7 +324,7 @@ async function main() {
           return;
         }
         results.forEach((r, idx) => {
-          console.log(`[${idx + 1}] ${r.title}`);
+          console.log(`[${idx + 1}] ${r.title}`); // ok-console
           console.log(`    URL: ${r.url}`);
           console.log(`    Snippet: ${r.snippet}\n`);
         });

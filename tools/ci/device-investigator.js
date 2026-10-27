@@ -867,7 +867,7 @@ async function reportOne(mfr, pid, { webfetch = false, bugs = false, noColor = f
         l(`    ${sub('(no results)')}`);
       } else {
         for (const r of results) {
-          l(`    ${c.blue}•${c.reset} ${c.bold}${r.title.slice(0, 100)}${c.reset}`);
+          l(`    ${c.blue}•${c.reset} ${c.bold}${r.title.slice(0, 100)}${c.reset}`); // ok-console
           l(`      ${sub(r.url)}`);
           if (r.snippet) l(`      ${r.snippet.slice(0, 200)}`);
         }

@@ -23,6 +23,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { topicOf } = require('../../scripts/lib/report-writer');
 
 const ROOT = path.resolve(__dirname, '../..');
 const STATE_DIR = path.join(ROOT, '.github', 'state');
@@ -217,7 +218,7 @@ async function main() {
     }
 
     console.log(
-      `  #${issue.number} ${issue.title?.slice(0, 60)} — mfr=${treated.mfrTotal} missing=${treated.missingCount}`,
+      `  #${issue.number} ${topicOf(issue.title)} — mfr=${treated.mfrTotal} missing=${treated.missingCount}`,
     );
 
     const comment = buildComment(treated);

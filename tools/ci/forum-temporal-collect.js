@@ -16,6 +16,7 @@ const https = require('https');
 const fs = require('fs');
 const path = require('path');
 const { SmartFetcher } = require(path.resolve(__dirname, '..', '..', 'lib', 'scraper', 'smart-fetch'));
+const { topicOf } = require('../../scripts/lib/report-writer');
 
 const STATE_DIR = 'C:/Users/Dell/Documents/homey/master/.github/state';
 const FORUM_BASE = 'https://community.homey.app';
@@ -156,7 +157,7 @@ async function main() {
   const byActivity = [...detailed].sort((a, b) => b.postsCount - a.postsCount).slice(0, 5);
   console.log('\nTop 5 by activity:');
   for (const t of byActivity) {
-    console.log(`  - ${t.title} (${t.postsCount} posts, ${t.likeCount} likes, ${t.createdAt.substring(0, 10)})`);
+    console.log(`  - ${topicOf(t.title)} (${t.postsCount} posts, ${t.likeCount} likes, ${t.createdAt.substring(0, 10)})`);
   }
 
   // Date histogram (per month)

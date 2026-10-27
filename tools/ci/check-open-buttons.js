@@ -1,4 +1,5 @@
 const fs = require('fs');
+const { topicOf } = require('../../scripts/lib/report-writer');
 
 const STATE_FILE = '.github/state/temporal-cross-reference.json';
 
@@ -15,5 +16,5 @@ const data = JSON.parse(fs.readFileSync(STATE_FILE, 'utf8'));
 const openButton = data.issues.filter(i => i.state === 'OPEN');
 console.log('=== OPEN button issues ===');
 for (const i of openButton) {
-  console.log('#' + i.number + ' (' + (i.age_days || '?') + 'd old) ' + i.title);
+  console.log('#' + i.number + ' (' + (i.age_days || '?') + 'd old) ' + topicOf(i.title));
 }

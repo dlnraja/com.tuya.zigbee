@@ -63,7 +63,7 @@ async function main() {
       console.log('  status=' + r.status + ' body=' + JSON.stringify(r.body).substring(0, 200));
       break;
     }
-    console.log('  page=' + page + ' status=' + r.status + ' total=' + r.body.total_count);
+    console.log('  page=' + page + ' status=' + r.status + ' total=' + r.body.total_count); // ok-console
     if (r.body.items) allIssues.push(...r.body.items);
     if (r.body.items.length < 100) break;
     page++;

@@ -28,5 +28,5 @@ for (const d of drivers) {
 console.log(`Drivers with very simple onNodeInit (<3 lines): ${results.length}`);
 for (const r of results.slice(0, 20)) {
   console.log(`  ${r.driver}: ${r.lines} lines`);
-  console.log(`    body: ${r.body.replace(/\n/g, ' ').trim()}`);
+  console.log(`    body: ${r.body.replace(/\n/g, ' ').trim()}`); // ok-own-text
 }
