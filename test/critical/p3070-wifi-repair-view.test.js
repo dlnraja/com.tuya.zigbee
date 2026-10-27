@@ -15,9 +15,14 @@ const handlers = (src) => {
   if (i < 0) {return [];}
   return [...src.slice(i, i + 4000).matchAll(/setHandler\(\s*['"]([a-zA-Z_]+)['"]/g)].map((m) => m[1]);
 };
+// P3072: the generated wifi_sonoff_* drivers register the eWeLink repair handler through this helper.
+const EWE_FILE = 'lib/ewelink-local/eweLinkRepair.js';
+const EWE_REPAIR = fs.existsSync(path.join(ROOT, EWE_FILE))
+  ? [...read(EWE_FILE).matchAll(/setHandler\(\s*['"]([a-zA-Z_]+)['"]/g)].map((m) => m[1]) : [];
 const BASES = {
   TuyaLocalDriver: handlers(read('lib/tuya-local/TuyaLocalDriver.js')),
-  EweLinkLocalDriver: handlers(read('lib/ewelink-local/EweLinkLocalDriver.js')),
+  EweLinkLocalDriver: [...handlers(read('lib/ewelink-local/EweLinkLocalDriver.js')),
+    ...read('lib/ewelink-local/EweLinkLocalDriver.js').includes('registerEweLinkRepairHandlers(') ? EWE_REPAIR : []],
 };
 const WIZ_FILE = 'lib/ir/irWizardSession.js';
 const WIZARD = fs.existsSync(path.join(ROOT, WIZ_FILE))
@@ -47,7 +52,8 @@ describe('P3070 wifi_* repair views', () => {
       // A driver with its own onRepair and no super.onRepair replaces the base handlers.
       const own = drv.includes('onRepair(') && !drv.includes('super.onRepair');
       const wiz = drv.includes('registerIrWizardHandlers(') ? WIZARD : [];
-      const have = new Set([...base && !own ? BASES[base] : [], ...handlers(drv), ...wiz]);
+      const ewe = drv.includes('registerEweLinkRepairHandlers(') ? EWE_REPAIR : [];
+      const have = new Set([...base && !own ? BASES[base] : [], ...handlers(drv), ...wiz, ...ewe]);
       for (const e of emits) {if (!have.has(e)) {bad.push(`${d}:${e}`);}}
     }
     assert.deepStrictEqual(bad, []);
