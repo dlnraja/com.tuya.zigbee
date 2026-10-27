@@ -279,10 +279,10 @@
         "de": "Szene aufgerufen"
       },
       "hint": {
-        "en": "When the device recalls a Zigbee scene (cluster 0x05 — scene mode)",
-        "fr": "Lorsque l'appareil rappelle une scène Zigbee (cluster 0x05 — mode scène)",
-        "nl": "Wanneer het apparaat een Zigbee-scène oproept (cluster 0x05)",
-        "de": "Wenn das Gerät eine Zigbee-Szene aufruft (Cluster 0x05)"
+        "en": "Only in scene mode.",
+        "fr": "Uniquement en mode scène.",
+        "nl": "Alleen in scènemodus.",
+        "de": "Nur im Szenenmodus."
       },
       "tokens": [
         {

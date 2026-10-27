@@ -539,10 +539,6 @@
         "en": "Turn on DIY switch",
         "fr": "Activer interrupteur DIY"
       },
-      "hint": {
-        "en": "Turn on the DIY switch",
-        "fr": "Active l'interrupteur DIY"
-      },
       "args": [],
       "titleFormatted": {
         "en": "Turn on DIY switch",
@@ -555,10 +551,6 @@
         "en": "Turn off DIY switch",
         "fr": "Désactiver interrupteur DIY"
       },
-      "hint": {
-        "en": "Turn off the DIY switch",
-        "fr": "Désactive l'interrupteur DIY"
-      },
       "args": [],
       "titleFormatted": {
         "en": "Turn off DIY switch",
@@ -570,10 +562,6 @@
       "title": {
         "en": "Toggle DIY switch",
         "fr": "Basculer interrupteur DIY"
-      },
-      "hint": {
-        "en": "Toggle the DIY switch state",
-        "fr": "Bascule l'état de l'interrupteur DIY"
       },
       "args": [],
       "titleFormatted": {

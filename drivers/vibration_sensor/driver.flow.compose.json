@@ -75,12 +75,6 @@
         "fr": "Alerte sabotage",
         "de": "Manipulationsalarm"
       },
-      "hint": {
-        "en": "When the sensor has been tampered with",
-        "nl": "Wanneer er met de sensor is geknoeid",
-        "fr": "Quand le capteur a été saboté",
-        "de": "Wenn der Sensor manipuliert wurde"
-      },
       "args": [],
       "titleFormatted": {
         "en": "Tamper alert",
