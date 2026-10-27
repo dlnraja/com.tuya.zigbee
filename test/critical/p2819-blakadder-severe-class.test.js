@@ -69,7 +69,8 @@ describe('P2819 Blakadder severe class placements', () => {
     const n = list.length;
     // WHY(2026-10-18): raw floor 1400 predates deliberate moves (12 TS011F plugs -> plug_smart, 2 TZE284 -> switch_2gang, 732e11caa9 dedupe);
     // verified 0 orphaned makers. Raw floor tracks it; the unique-maker floor is the real collapse guard.
-    assert.ok(n >= 1380, `switch_1gang mfr count ${n} looks collapsed`);
+    // WHY(P3077 batch 5): heobian typo forms (phantom cross-product, t614u) left (1378), alias kept.
+    assert.ok(n >= 1370, `switch_1gang mfr count ${n} looks collapsed`);
     const uniq = new Set(list.map((m) => String(m).toLowerCase())).size;
     assert.ok(uniq >= 340, `switch_1gang unique makers ${uniq} looks collapsed`);
   });
