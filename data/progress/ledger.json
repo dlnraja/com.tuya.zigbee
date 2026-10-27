@@ -42088,22 +42088,24 @@
    "result": "P3021b 2026-10-24: 7b1eb36e44 (feat(P3021b) wire the 6 remaining workflows) separate ledger job (diagnose job stays read-only), diag mode --by=tuya-deep-diag via scripts/progress/ledger-intake.js + gated safe-auto-commit --id=tuya-deep-diag-ledger"
   },
   "task:new-heiman-rc-ef-3.0": {
-   "status": "pending",
-   "date": "2026-10-04"
+   "status": "done",
+   "date": "2026-10-27",
+   "note": "P3080 verified: HEIMAN|RC-EF-3.0 pairs on heiman_keyfob only (exact couple, one pid; ZHC/deCONZ hs1rc_keyfob). The 2026-10-04 button_emergency_sos copy was dropped in the 813cf9931d bisect and is not needed"
   },
   "task:new-ihorn-lh02121": {
    "status": "pending",
-   "date": "2026-10-04",
-   "note": "IAS; scope check (#925)"
+   "date": "2026-10-27",
+   "note": "P3080: iHorn|LH02121 already pairs on slim_motion_sensor (P2921, forum 26439#4851 Homey interview: IAS Zone 0x0500). Still open: zoneType value not readable in the interview and no Z2M/ZHA/deCONZ/blakadder entry; nothing mandatory at pairing, so left as is until a diag shows zoneType"
   },
   "task:new-signify-rdm001": {
    "status": "pending",
-   "date": "2026-10-04"
+   "date": "2026-10-27",
+   "note": "P3080: Signify RDM001 (Hue wall switch module) needs the Philips manufacturer cluster 0xFC00 for button events (ZHA philips wall_switch, deCONZ rdm001); outside this Tuya app scope and served by the Hue app. Not added"
   },
   "task:new-sonoff-mini-zbrbs": {
    "status": "pending",
-   "date": "2026-10-04",
-   "note": "curtain"
+   "date": "2026-10-27",
+   "note": "P3080: SONOFF|MINI-ZBRBS (ZHC) was on curtain_module (735a7d8ac2) and dropped in the 813cf9931d bisect; putting SONOFF back on curtain_module would create SONOFF|TS130F/TS0726 cartesian couples. Exact fix = small dedicated driver reusing curtain_module device.js; needs a manifest-bytes decision (net-0 rule). Not done"
   },
   "task:next-01": {
    "status": "done",
