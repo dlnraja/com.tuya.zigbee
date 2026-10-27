@@ -1,142 +1,13 @@
 {
-  "timestamp": "2026-10-26T17:47:04.210Z",
+  "timestamp": "2026-10-27T10:07:43.806Z",
   "gate": "align-mfs-db-intelligent",
   "apply": false,
   "check": true,
-  "changeCount": 18,
-  "skippedCount": 84,
+  "changeCount": 0,
+  "skippedCount": 83,
   "highSeverityCount": 0,
-  "byAction": {
-    "compose_exclusive": 18
-  },
-  "changes": [
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_tze200_kzm5w4iz",
-      "from": "button_emergency_sos",
-      "to": "vibration_sensor"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TZ3000_AMQUDJR0",
-      "from": "bulb_rgb",
-      "to": "lcdtemphumidsensor"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TZE200_4AIJVCZQ",
-      "from": "climate_sensor",
-      "to": "device_radiator_valve"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TZE200_7DEQ70B8",
-      "from": "curtain_motor",
-      "to": "switch_2gang"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TZE200_R5KSY7QO",
-      "from": "climate_sensor",
-      "to": "device_radiator_valve"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TZE200_YBSQLJJG",
-      "from": "climate_sensor",
-      "to": "device_radiator_valve"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TZE204_VAWY74YH",
-      "from": "climate_sensor",
-      "to": "smoke_sensor"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TZE284_VAWY74YH",
-      "from": "climate_sensor",
-      "to": "smoke_sensor"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TZ3210_09hzmirw",
-      "from": "smoke_sensor",
-      "to": "light_cct_ts0502b"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TZE200_CXAKECFO",
-      "from": "sensor_climate_contact",
-      "to": "device_radiator_valve"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TZE200_t5p1vj8r",
-      "from": "switch_wireless",
-      "to": "smoke_sensor_ts0601_dp"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TZE200_uebojraa",
-      "from": "switch_wireless",
-      "to": "smoke_sensor_ts0601_dp"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TZE200_dq1mfjug",
-      "from": "switch_wireless",
-      "to": "smoke_sensor_ts0601_dp"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TZE284_6ycgarab",
-      "from": "smoke_sensor3",
-      "to": "smoke_sensor"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_tze204_ntcy3xu1",
-      "from": "socket_power_strip_four_three",
-      "to": "smoke_sensor_ts0601_dp"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_tze200_vawy74yh",
-      "from": "co_sensor",
-      "to": "smoke_sensor"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_tze204_lb0fsvba",
-      "from": "lcdtemphumidsensor_3",
-      "to": "smart_breaker"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "piriv01",
-      "from": "motion_sensor_switch",
-      "to": "motion_sensor_excellux_zg104plv"
-    }
-  ],
+  "byAction": {},
+  "changes": [],
   "skipped": [
     {
       "reason": "registry_driver_missing",
@@ -538,44 +409,6 @@
     },
     {
       "reason": "pair_conflict_ambiguous",
-      "mfr": "_TZ3000_dpo1ysak",
-      "curated": "button_wireless_2",
-      "foreign": [
-        "plug",
-        "smartplug"
-      ],
-      "modelIds": [
-        "TS0001",
-        "TS0002",
-        "TS0003",
-        "TS000F",
-        "TS0011",
-        "TS0012",
-        "TS0013",
-        "TS0014",
-        "TS0041",
-        "TS0042",
-        "TS0043",
-        "TS0044",
-        "TS0111",
-        "TS011F",
-        "TS0121",
-        "TS0215A",
-        "TS0601",
-        "TSO121"
-      ]
-    },
-    {
-      "reason": "unclaimed_multi",
-      "mfr": "_TZ3000_dpo1ysak",
-      "curated": "button_wireless_2",
-      "claimers": [
-        "plug",
-        "smartplug"
-      ]
-    },
-    {
-      "reason": "pair_conflict_ambiguous",
       "mfr": "_TZ3000_8uaoilu9",
       "curated": "curtain_motor_shutter",
       "foreign": [
@@ -646,6 +479,11 @@
         "dimmable_led_strip",
         "rgb_led_light_bar"
       ]
+    },
+    {
+      "reason": "unclaimed_no_compose",
+      "mfr": "_TZ3000_42ha4rsc",
+      "curated": "curtain_motor_shutter"
     },
     {
       "reason": "unclaimed_multi",
@@ -719,6 +557,15 @@
         "dimmable_led_strip",
         "led_controller_dimmable",
         "led_controller_rgb"
+      ]
+    },
+    {
+      "reason": "unclaimed_multi",
+      "mfr": "_tz3000_dd8wwzcy",
+      "curated": "plug_energy_monitor",
+      "claimers": [
+        "climate_sensor",
+        "device_plug_energy"
       ]
     }
   ],
