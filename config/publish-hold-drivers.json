@@ -70,6 +70,69 @@
       "addedBy": "4094a7a6ed P3021c",
       "reason": "P3024 attempt 1 (25/10/2026): every master build after the 21/10 Athom incident (#3676-#3678, v9.0.1593-1595) added new never-published pairable driver ids on top of Test #3655 v9.0.1574 (347 -> 352 -> 356 drivers) and failed AggregateError; same pattern as SPI 9/9 and whd02/valve_5zone on 10-11/10. Held as one group to put the payload driver set back to the 1574 set. Never published (absent from test/fixtures/athom-test-9.0.1574-driver-ids.json); its couples are absent from 1574, so no paired device loses its driver. Graduate one id per release_held dispatch once a build reaches Test.",
       "sacredCouplesOwnedElsewhere": false
+    },
+    {
+      "id": "energy_meter_3ch_bidirectional",
+      "since": "2026-10-27",
+      "addedBy": "db625d0e0d P3039b/c",
+      "reason": "P3084 (27/10/2026): master #3684 v9.0.1602 (run 40422932809) failed processing_failed stateMeta=AggregateError 18 s after a clean upload (CLI validate publish OK, 33.06 MB / 4030 files). Its payload carried 361 drivers vs 347 in the last accepted Test #3682 v9.0.1599: 14 new never-published pairable ids, the documented AggregateError trigger (ATHOM_LIMITS 10/10, SPI 9/9, P3024 #3676-#3678). Held because its couples are all new (none was on another driver in 9.0.1599 source or in Test 9.0.1574), so holding it removes no couple a paired device uses. Graduate one id per release_held dispatch once a build reaches Test.",
+      "sacredCouplesOwnedElsewhere": false
+    },
+    {
+      "id": "gpo_double_light_mg_au03",
+      "since": "2026-10-27",
+      "addedBy": "db625d0e0d P3039b/c",
+      "reason": "P3084 (27/10/2026): master #3684 v9.0.1602 (run 40422932809) failed processing_failed stateMeta=AggregateError 18 s after a clean upload (CLI validate publish OK, 33.06 MB / 4030 files). Its payload carried 361 drivers vs 347 in the last accepted Test #3682 v9.0.1599: 14 new never-published pairable ids, the documented AggregateError trigger (ATHOM_LIMITS 10/10, SPI 9/9, P3024 #3676-#3678). Held because its couples are all new (none was on another driver in 9.0.1599 source or in Test 9.0.1574), so holding it removes no couple a paired device uses. Graduate one id per release_held dispatch once a build reaches Test.",
+      "sacredCouplesOwnedElsewhere": false
+    },
+    {
+      "id": "gpo_double_mg_gpo02z",
+      "since": "2026-10-27",
+      "addedBy": "db625d0e0d P3039b/c",
+      "reason": "P3084 (27/10/2026): master #3684 v9.0.1602 (run 40422932809) failed processing_failed stateMeta=AggregateError 18 s after a clean upload (CLI validate publish OK, 33.06 MB / 4030 files). Its payload carried 361 drivers vs 347 in the last accepted Test #3682 v9.0.1599: 14 new never-published pairable ids, the documented AggregateError trigger (ATHOM_LIMITS 10/10, SPI 9/9, P3024 #3676-#3678). Held because its couples are all new (none was on another driver in 9.0.1599 source or in Test 9.0.1574), so holding it removes no couple a paired device uses. Graduate one id per release_held dispatch once a build reaches Test.",
+      "sacredCouplesOwnedElsewhere": false
+    },
+    {
+      "id": "keypad_alarm_wke502z",
+      "since": "2026-10-27",
+      "addedBy": "db625d0e0d P3039b/c",
+      "reason": "P3084 (27/10/2026): master #3684 v9.0.1602 (run 40422932809) failed processing_failed stateMeta=AggregateError 18 s after a clean upload (CLI validate publish OK, 33.06 MB / 4030 files). Its payload carried 361 drivers vs 347 in the last accepted Test #3682 v9.0.1599: 14 new never-published pairable ids, the documented AggregateError trigger (ATHOM_LIMITS 10/10, SPI 9/9, P3024 #3676-#3678). Held because its couples are all new (none was on another driver in 9.0.1599 source or in Test 9.0.1574), so holding it removes no couple a paired device uses. Graduate one id per release_held dispatch once a build reaches Test.",
+      "sacredCouplesOwnedElsewhere": false
+    },
+    {
+      "id": "thermostat_vrf_bvrf_l001",
+      "since": "2026-10-27",
+      "addedBy": "db625d0e0d P3039b/c",
+      "reason": "P3084 (27/10/2026): master #3684 v9.0.1602 (run 40422932809) failed processing_failed stateMeta=AggregateError 18 s after a clean upload (CLI validate publish OK, 33.06 MB / 4030 files). Its payload carried 361 drivers vs 347 in the last accepted Test #3682 v9.0.1599: 14 new never-published pairable ids, the documented AggregateError trigger (ATHOM_LIMITS 10/10, SPI 9/9, P3024 #3676-#3678). Held because its couples are all new (none was on another driver in 9.0.1599 source or in Test 9.0.1574), so holding it removes no couple a paired device uses. Graduate one id per release_held dispatch once a build reaches Test.",
+      "sacredCouplesOwnedElsewhere": false
+    },
+    {
+      "id": "ufh_controller_ch8z",
+      "since": "2026-10-27",
+      "addedBy": "db625d0e0d P3039b/c",
+      "reason": "P3084 (27/10/2026): master #3684 v9.0.1602 (run 40422932809) failed processing_failed stateMeta=AggregateError 18 s after a clean upload (CLI validate publish OK, 33.06 MB / 4030 files). Its payload carried 361 drivers vs 347 in the last accepted Test #3682 v9.0.1599: 14 new never-published pairable ids, the documented AggregateError trigger (ATHOM_LIMITS 10/10, SPI 9/9, P3024 #3676-#3678). Held because its couples are all new (none was on another driver in 9.0.1599 source or in Test 9.0.1574), so holding it removes no couple a paired device uses. Graduate one id per release_held dispatch once a build reaches Test.",
+      "sacredCouplesOwnedElsewhere": false
+    },
+    {
+      "id": "ufh_controller_pro_line_x10",
+      "since": "2026-10-27",
+      "addedBy": "db625d0e0d P3039b/c",
+      "reason": "P3084 (27/10/2026): master #3684 v9.0.1602 (run 40422932809) failed processing_failed stateMeta=AggregateError 18 s after a clean upload (CLI validate publish OK, 33.06 MB / 4030 files). Its payload carried 361 drivers vs 347 in the last accepted Test #3682 v9.0.1599: 14 new never-published pairable ids, the documented AggregateError trigger (ATHOM_LIMITS 10/10, SPI 9/9, P3024 #3676-#3678). Held because its couples are all new (none was on another driver in 9.0.1599 source or in Test 9.0.1574), so holding it removes no couple a paired device uses. Graduate one id per release_held dispatch once a build reaches Test.",
+      "sacredCouplesOwnedElsewhere": false
+    },
+    {
+      "id": "wall_switch_rf_ews1154z",
+      "since": "2026-10-27",
+      "addedBy": "db625d0e0d P3039b/c",
+      "reason": "P3084 (27/10/2026): master #3684 v9.0.1602 (run 40422932809) failed processing_failed stateMeta=AggregateError 18 s after a clean upload (CLI validate publish OK, 33.06 MB / 4030 files). Its payload carried 361 drivers vs 347 in the last accepted Test #3682 v9.0.1599: 14 new never-published pairable ids, the documented AggregateError trigger (ATHOM_LIMITS 10/10, SPI 9/9, P3024 #3676-#3678). Held because its couples are all new (none was on another driver in 9.0.1599 source or in Test 9.0.1574), so holding it removes no couple a paired device uses. Graduate one id per release_held dispatch once a build reaches Test.",
+      "sacredCouplesOwnedElsewhere": false
+    },
+    {
+      "id": "curtain_sonoff_mini_zbrbs",
+      "since": "2026-10-27",
+      "addedBy": "005812e8c5 P3080",
+      "reason": "P3084 (27/10/2026): master #3684 v9.0.1602 (run 40422932809) failed processing_failed stateMeta=AggregateError 18 s after a clean upload (CLI validate publish OK, 33.06 MB / 4030 files). Its payload carried 361 drivers vs 347 in the last accepted Test #3682 v9.0.1599: 14 new never-published pairable ids, the documented AggregateError trigger (ATHOM_LIMITS 10/10, SPI 9/9, P3024 #3676-#3678). Held because its couples are all new (none was on another driver in 9.0.1599 source or in Test 9.0.1574), so holding it removes no couple a paired device uses. Graduate one id per release_held dispatch once a build reaches Test.",
+      "sacredCouplesOwnedElsewhere": false
     }
   ],
   "_graduated": {
