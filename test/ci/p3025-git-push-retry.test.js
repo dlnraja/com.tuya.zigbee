@@ -22,12 +22,14 @@ function run(cwd, args = [], env = {}) {
   return new Promise((resolve) => {
     const p = spawn('bash', [HELPER, '--branch', 'master', ...args], { cwd, env: { ...ENV, ...env } });
     let out = ''; p.stdout.on('data', (d) => { out += d; }); p.stderr.on('data', (d) => { out += d; });
-    p.on('close', (code) => resolve({ code, out }));
+    // P3075: a stuck helper is killed before the mocha timeout so the failure shows its log.
+    const guard = setTimeout(() => { out += '\n[P3075] helper killed after 100 s'; p.kill('SIGKILL'); }, 100000);
+    p.on('close', (code) => { clearTimeout(guard); resolve({ code, out }); });
   });
 }
 
 describe('P3025 git-push-retry.sh', function () {
-  this.timeout(60000);
+  this.timeout(120000); // P3075: 60 s timed out under full-suite CI load (local repos, no network)
   let dir; let origin;
   before(() => {
     dir = fs.mkdtempSync(path.join(os.tmpdir(), 'p3025-'));
