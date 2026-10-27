@@ -1086,6 +1086,10 @@
     "en": "CRITICAL: sdkVersion fix (Processing failed), Missing Capability Listener (setable:false), timer fallback, battery restore, duplicate method fix, HOBEIAN ZG-301Z, NFKD normalize, 87 fingerprints restored, Polos validator",
     "fr": "CRITIQUE: sdkVersion (Processing failed), Missing Capability Listener, fallback timer, batterie, HOBEIAN, NFKD, 87 fingerprints, Polos"
   },
+  "5.12.513": {
+    "en": "Behind the scenes only, no change to devices or pairing: the publishing check now stops right away when a newer commit replaces the one it was checking, and a new report lists, for each multi-gang, multi-channel or multi-phase driver family, which variants are still missing.",
+    "fr": "Uniquement en coulisses, aucun changement pour les appareils ni l’appairage : le contrôle de publication s’arrête tout de suite quand un commit plus récent remplace celui qu’il vérifiait, et un nouveau rapport liste, pour chaque famille de drivers multi-boutons, multi-canaux ou multi-phases, les variantes qui manquent encore."
+  },
   "5.12.512": {
     "en": "Wi-Fi devices: the Repair screen now matches what each driver can really fix. Tuya local devices ask for IP address, local key and protocol version; eWeLink (Sonoff LAN) devices ask for IP and API key; drivers without a repair step show a short help page instead of an empty window. Behind the scenes: extra tests and CI checks, no change to pairing.",
     "fr": "Appareils Wi-Fi : l'écran Réparer correspond enfin à ce que chaque driver sait corriger. Les appareils Tuya en local demandent l'adresse IP, la clé locale et la version du protocole ; les appareils eWeLink (Sonoff en LAN) demandent l'IP et la clé API ; les drivers sans étape de réparation affichent une courte page d'aide au lieu d'une fenêtre vide. En coulisses : tests et contrôles CI en plus, aucun changement à l'appairage."
