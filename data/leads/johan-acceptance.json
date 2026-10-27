@@ -1,13 +1,13 @@
 {
-  "generated": "2026-10-26T09:21:10.895Z",
+  "generated": "2026-10-27T09:21:19.973Z",
   "source": "data/leads/johan-canonical-index.json",
   "repo": "JohanBendz/com.tuya.zigbee",
   "note": "Acceptance view, structured fields only. missing-couple = identity cited upstream with no home driver here (verify real hardware before adding, W4). behaviour = needs physical test, not a pairing gap.",
   "summary": {
     "threads": 565,
-    "covered": 455,
+    "covered": 457,
     "behaviour": 100,
-    "dual-couple": 8,
+    "dual-couple": 6,
     "missing-couple": 2,
     "missingCouples": 2
   },
@@ -7173,12 +7173,11 @@
           "mfr": "_TZ3000_c8ozah8n",
           "pid": "TS0202",
           "drivers": [
-            "motion_sensor",
-            "pir_sensor_2"
+            "motion_sensor"
           ]
         }
       ],
-      "acceptance": "dual-couple"
+      "acceptance": "covered"
     },
     {
       "n": 1168,
@@ -9961,7 +9960,7 @@
           "mfr": "_TZE200_vrcfo4i0",
           "pid": "TS0601",
           "drivers": [
-            "gas_sensor"
+            "button_emergency_sos"
           ]
         },
         {
@@ -12346,7 +12345,7 @@
           "mfr": "_TZE200_vrcfo4i0",
           "pid": "TS0601",
           "drivers": [
-            "gas_sensor"
+            "button_emergency_sos"
           ]
         },
         {
@@ -13011,8 +13010,7 @@
           "mfr": "_TZ3000_c8ozah8n",
           "pid": "TS0202",
           "drivers": [
-            "motion_sensor",
-            "pir_sensor_2"
+            "motion_sensor"
           ]
         },
         {
@@ -13173,7 +13171,6 @@
           "mfr": "_TZ3000_gjnozsaz",
           "pid": "TS011F",
           "drivers": [
-            "button_wireless_plug",
             "smartplug"
           ]
         },
@@ -13248,7 +13245,7 @@
           ]
         }
       ],
-      "acceptance": "dual-couple"
+      "acceptance": "covered"
     },
     {
       "n": 1485,
