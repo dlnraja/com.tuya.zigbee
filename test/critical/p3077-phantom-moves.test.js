@@ -202,4 +202,10 @@ describe('P3077 phantom moves', () => {
     for (const f of ['_TZE200_amp6tsvy', '_TZE204_amp6tsvy', '_TZE284_amp6tsvy']) assert.ok(lists(zig('switch_1gang'), f), f);
     assert.ok(!zig('switch_2gang').manufacturerName.some((m) => /amp6tsvy/i.test(m)));
   });
+  it('batch 17: claeh5ds (LUUMR C35 tunable white) only on light_bulb_dimmable_tunable with TS0502A, cartesian fixture couples exempted', () => {
+    assert.ok(lists(zig('light_bulb_dimmable_tunable'), '_TZ3210_claeh5ds') && zig('light_bulb_dimmable_tunable').productId.includes('TS0502A'));
+    assert.ok(!zig('bulb_dimmable').manufacturerName.some((m) => /claeh5ds/i.test(m)));
+    const b = require(path.join(ROOT, 'test/fixtures/athom-last-test-package-couples.json'));
+    assert.equal(b.exemptions.filter((e) => /P3077 batch 17/.test(e.reason) && e.approvedBy === 't614u').length, 18);
+  });
 });

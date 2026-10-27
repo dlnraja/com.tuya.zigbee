@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-27T06:34:47.091Z",
+ "generated": "2026-10-27T06:44:34.041Z",
  "drivers": 417,
  "snapshot": {
   "air_conditioner_aetz01": {
@@ -117,9 +117,9 @@
    "pidSha": "455c46e8c8549693"
   },
   "bulb_dimmable": {
-   "mfr": 38,
+   "mfr": 37,
    "pid": 86,
-   "mfrSha": "213df7bf34615c16",
+   "mfrSha": "0fa25870ce4142cb",
    "pidSha": "cbc5247d1f17c54e"
   },
   "bulb_dimmable_dimmer": {
