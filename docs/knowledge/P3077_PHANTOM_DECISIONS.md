@@ -192,6 +192,14 @@ These three manufacturers are in `data/native-matrix-reviewed-duals.json`, where
 - `_TZ3000_kyb656no` (Meian SW02) and `_TZ3000_kstbkt6a` (Aubess IH-K665) are whitelabels of `TS0207_water_leak_detector` in zigbee-herdsman-converters `tuya.ts`. deCONZ lists `_TZ3000_fxvjhdyl` in its TS0207 water-leak DDF, and JohanBendz's README lists it under Water Detector as TS0207.
 - water_leak_sensor carries `TS0207`. water_leak_sensor_tuya does not (its pids are TS0601, q9mpfhw and other brands' models), so on that driver these 3 ids could only form cartesian couples that no real device can pair with. The 12 case forms are removed from water_leak_sensor_tuya (137 to 125) and stay on water_leak_sensor (one couple, one driver). No pin in the Athom fixture, so no exemption. The `mfs_db` hints (and the `fingerprints.json` one for fxvjhdyl) now point at water_leak_sensor.
 
+## Batch 20 (27/10/2026, owner t614u): two bulbs and a dimmer back on their drivers
+
+- `_TZ3000_j2w1dw29` is the Lidl Livarno Lux HG06463A filament bulb, and `_TZ3000_juq7i1fr` is the Mercator Ikuu SMFL20W-ZB floodlight. zigbee-herdsman-converters `tuya.ts` lists them as TS0501A and TS0501B whitelabels; the Mercator one came in via samuelabj's PR #6401. A Homey forum request by Rickert1993 and a Hubitat thread back them up. bulb_dimmable carries TS0501A and TS0501B, and dimmer_wall_1gang does not. On the wall dimmer they could only form cartesian couples, so the 8 case forms are removed there (74 to 66). The 12 Athom fixture couples (TS0601, TS0601_dim1, TS011F) get exemptions. The `mfs_db` hint now points at bulb_dimmable, and `fingerprints.json` gains the real pid.
+- `_TZE200_5cuocqty`: only `_TZE204_5cuocqty` is attested upstream, as the Avatto ZDMS16-1 dimmer (`avatto.ts`, ZHA `ts0601_dimmer`). The `_TZE200` copy stays with its sibling on dimmer_1_gang_tuya, and its 4 forms leave switch_1gang (1378 to 1374). No pin.
+- `_TZ3000_bzzgvet0` (Moes ZS-US1-LN, TS0001) and `_TZ3000_jqge2fjx` (TS0210 vibration, zigbee2mqtt #20272) are reviewed duals from 04/10, so they are left as they are.
+- Batch 19 stays as it is. The CI routine (f3ac571337) updated `data/native-matrix-reviewed-duals.json`, so water_leak_sensor_tuya is no longer listed for the TS0207 trio. From now on, every move also updates the reviewed-duals list in the same commit, and the full mocha suite runs before each push.
+- No decision is possible yet for `_TZE284_a8sdabtg` (only `_TZE200_a8sdabtg` = ZG-227Z is attested), `_TZ3000_iystcadi` (only the `_TZ3210_` Lidl TS0505B is attested), or eWeLink and LUMI on TS0601. These stay pinned or kept until a source says which side owns them.
+
 ## Pending
 
 - ~480 collateral duals need driver splits (next batches).
