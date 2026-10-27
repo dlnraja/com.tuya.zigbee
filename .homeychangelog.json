@@ -4312,6 +4312,10 @@
   "5.12.0": {
     "en": "v5.12.0: stable-v5 batch sync (drivers, FPs, flows, manifest) from master v9.0.240–v9.0.260."
   },
+  "1.0.218": {
+    "en": "Maintenance build: same devices and behaviour as the previous version (publishing and test tooling only).",
+    "fr": "Version de maintenance : mêmes appareils et même comportement que la précédente (outils de publication et de test uniquement)."
+  },
   "1.0.217": {
     "en": "Fixed: memory and timers, Wi-Fi devices & the Repair screen, climate sensors (TS0201) and wall switches. Plus 1 other change in the app core. Behind the scenes: tests and publishing checks.",
     "fr": "Corrigé : mémoire et minuteries, appareils Wi-Fi & l'écran Réparer, capteurs d'ambiance (TS0201) et interrupteurs. Et 1 autre changement dans le cœur de l'app. En coulisses : tests et contrôles de publication."
