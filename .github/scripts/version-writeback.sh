@@ -17,7 +17,10 @@ compose_parity_or_die() {
   git show HEAD:app.json > "${RUNNER_TEMP:-/tmp}/p3079-base-app.json"
   if ! node scripts/ci/compose-parity-gate.cjs --base="${RUNNER_TEMP:-/tmp}/p3079-base-app.json"; then
     echo "::error title=compose parity::app.json differs from a compose rebuild or drops entries vs HEAD; write-back aborted"
-    exit 1
+    echo "P3079: version bump v${V} SKIPPED (no chore(version) commit, nothing pushed); fix compose drift first"
+    git reset -q --hard HEAD
+    : > "${RUNNER_TEMP:-/tmp}/p3079-parity-drift"
+    exit 3
   fi
 }
 git config user.name "github-actions[bot]"

@@ -515,9 +515,21 @@ jobs:
       # CONFIRMED Test version (Athom state "test"), [skip ci], once, on a clean tree (never a built app.json),
       # rebase + 3 bounded tries, no dispatch (no loop).
       - name: Version write-back ([skip ci])
+        id: version_writeback
         if: always() && steps.publish_bastien.outcome == 'success'
         continue-on-error: true
         timeout-minutes: 5
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: bash .github/scripts/version-writeback.sh bastien-home com.dlnraja.tuya.zigbee.bastien
+
+      # WHY(P3079): the write-back step keeps continue-on-error (an Athom/API hiccup must not redden a done
+      # publish), but a compose parity drift (exit 3, marker file) must turn the job red, not hide as a warning.
+      - name: Compose parity verdict for write-back (P3079)
+        if: always() && steps.version_writeback.outcome == 'failure'
+        run: |
+          if [ -f "$RUNNER_TEMP/p3079-parity-drift" ]; then
+            echo "::error title=compose parity::version write-back skipped: app.json drifts from compose (see previous step)"
+            exit 1
+          fi
+          echo "write-back failed for a non-parity reason (kept soft)"
