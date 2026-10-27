@@ -1,0 +1,66 @@
+{
+ "schema": 1,
+ "note": "P3073 candidates only, never applied automatically",
+ "cap": {
+  "couples": 200,
+  "dps": 16
+ },
+ "updatedAt": "2026-10-27T04:24:39.609Z",
+ "seen": [
+  "89502374e10c"
+ ],
+ "couples": {
+  "_TZE2XX_wjk6rurm|ZG-301Z": {
+   "status": "candidate",
+   "sources": [
+    "gmail-diag"
+   ],
+   "firstSeen": "2026-10-27T04:24:39.609Z",
+   "lastSeen": "2026-10-27T04:24:39.609Z",
+   "dps": {},
+   "unavailable": 0,
+   "memwarn": 0,
+   "maxHeapMB": 0,
+   "anomalies": []
+  },
+  "_TZE284_z7a2jmyy|TS0601": {
+   "status": "candidate",
+   "sources": [
+    "gmail-diag"
+   ],
+   "firstSeen": "2026-10-27T04:24:39.609Z",
+   "lastSeen": "2026-10-27T04:24:39.609Z",
+   "dps": {},
+   "unavailable": 0,
+   "memwarn": 0,
+   "maxHeapMB": 0,
+   "anomalies": []
+  },
+  "_TZ3210_j4pdtz9v|TS0001": {
+   "status": "candidate",
+   "sources": [
+    "gmail-diag"
+   ],
+   "firstSeen": "2026-10-27T04:24:39.609Z",
+   "lastSeen": "2026-10-27T04:24:39.609Z",
+   "dps": {},
+   "unavailable": 0,
+   "memwarn": 0,
+   "maxHeapMB": 0,
+   "anomalies": []
+  },
+  "_TZE200_cxakecfo|TS0601": {
+   "status": "candidate",
+   "sources": [
+    "gmail-diag"
+   ],
+   "firstSeen": "2026-10-27T04:24:39.609Z",
+   "lastSeen": "2026-10-27T04:24:39.609Z",
+   "dps": {},
+   "unavailable": 0,
+   "memwarn": 0,
+   "maxHeapMB": 0,
+   "anomalies": []
+  }
+ }
+}
