@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-23",
+  "updated": "2026-10-27",
   "forum_raw_pages_done": {
     "21313": "all (28 pages)",
     "26439": "all",
@@ -37,34 +37,34 @@
         "done": true,
         "last": "2026-10-01T19:07:56Z",
         "sinceMode": true,
-        "since": "2026-10-23T10:34:55.682Z",
-        "doneAt": "2026-10-23T10:34:55.682Z"
+        "since": "2026-10-27T11:06:29.541Z",
+        "doneAt": "2026-10-27T11:06:29.541Z"
       },
       "JohanBendz/com.tuya.zigbee": {
-        "page": 1,
+        "page": 2,
         "done": true,
-        "last": "2026-10-19T14:51:52Z",
+        "last": "2026-10-25T18:51:59Z",
         "sinceMode": true,
-        "since": "2026-10-23T10:34:55.682Z",
-        "doneAt": "2026-10-23T10:34:55.682Z"
+        "since": "2026-10-27T11:06:29.541Z",
+        "doneAt": "2026-10-27T11:06:29.541Z"
       }
     },
     "issues": {
       "dlnraja/com.tuya.zigbee": {
         "page": 2,
         "done": true,
-        "last": "2026-10-22T14:58:53Z",
+        "last": "2026-10-03T21:01:12Z",
         "sinceMode": true,
-        "since": "2026-10-23T10:35:01.631Z",
-        "doneAt": "2026-10-23T10:35:01.631Z"
+        "since": "2026-10-27T11:06:38.614Z",
+        "doneAt": "2026-10-27T11:06:38.614Z"
       },
       "JohanBendz/com.tuya.zigbee": {
         "page": 2,
         "done": true,
-        "last": "2026-10-22T11:45:32Z",
+        "last": "2024-12-08T22:29:21Z",
         "sinceMode": true,
-        "since": "2026-10-23T10:35:01.631Z",
-        "doneAt": "2026-10-23T10:35:01.631Z"
+        "since": "2026-10-27T11:06:38.614Z",
+        "doneAt": "2026-10-27T11:06:38.614Z"
       }
     },
     "peerIssues": {
@@ -73,30 +73,30 @@
         "done": true,
         "last": "2021-01-27T19:48:31Z",
         "sinceMode": true,
-        "since": "2026-10-23T10:35:09.038Z",
-        "doneAt": "2026-10-23T10:35:09.038Z"
+        "since": "2026-10-27T11:06:45.560Z",
+        "doneAt": "2026-10-27T11:06:45.560Z"
       },
       "ChrisBloem/Homey-Zigbee-Community": {
         "page": 1,
         "done": true,
         "sinceMode": true,
-        "since": "2026-10-23T10:35:09.038Z",
-        "doneAt": "2026-10-23T10:35:09.038Z"
+        "since": "2026-10-27T11:06:45.560Z",
+        "doneAt": "2026-10-27T11:06:45.560Z"
       },
       "gpmachado/com.gpm.homesuite": {
         "page": 1,
         "done": true,
         "last": "2026-07-21T13:41:47Z",
         "sinceMode": true,
-        "since": "2026-10-23T10:35:09.038Z",
-        "doneAt": "2026-10-23T10:35:09.038Z"
+        "since": "2026-10-27T11:06:45.560Z",
+        "doneAt": "2026-10-27T11:06:45.560Z"
       },
       "kodalissri/com.MyZigbee.Devices": {
         "page": 1,
         "done": true,
         "sinceMode": true,
-        "since": "2026-10-23T10:35:09.038Z",
-        "doneAt": "2026-10-23T10:35:09.038Z"
+        "since": "2026-10-27T11:06:45.560Z",
+        "doneAt": "2026-10-27T11:06:45.560Z"
       }
     },
     "peerComments": {
@@ -105,29 +105,29 @@
         "done": true,
         "last": "2021-02-04T14:18:15Z",
         "sinceMode": true,
-        "since": "2026-10-23T10:35:17.044Z",
-        "doneAt": "2026-10-23T10:35:17.044Z"
+        "since": "2026-10-27T11:06:53.383Z",
+        "doneAt": "2026-10-27T11:06:53.383Z"
       },
       "ChrisBloem/Homey-Zigbee-Community": {
         "page": 1,
         "done": true,
         "sinceMode": true,
-        "since": "2026-10-23T10:35:17.044Z",
-        "doneAt": "2026-10-23T10:35:17.044Z"
+        "since": "2026-10-27T11:06:53.383Z",
+        "doneAt": "2026-10-27T11:06:53.383Z"
       },
       "gpmachado/com.gpm.homesuite": {
         "page": 1,
         "done": true,
         "sinceMode": true,
-        "since": "2026-10-23T10:35:17.044Z",
-        "doneAt": "2026-10-23T10:35:17.044Z"
+        "since": "2026-10-27T11:06:53.383Z",
+        "doneAt": "2026-10-27T11:06:53.383Z"
       },
       "kodalissri/com.MyZigbee.Devices": {
         "page": 1,
         "done": true,
         "sinceMode": true,
-        "since": "2026-10-23T10:35:17.044Z",
-        "doneAt": "2026-10-23T10:35:17.044Z"
+        "since": "2026-10-27T11:06:53.383Z",
+        "doneAt": "2026-10-27T11:06:53.383Z"
       }
     },
     "peerDrivers": {
@@ -158,7 +158,7 @@
         "pushed_at": "2026-06-16T00:29:18Z"
       },
       "JohanBendz/com.tuya.zigbee": {
-        "pushed_at": "2026-10-08T17:41:14Z"
+        "pushed_at": "2026-10-26T07:18:51Z"
       }
     },
     "forks": {
@@ -313,7 +313,7 @@
           "jievie2000/com.tuya.zigbee": "2025-06-20T17:03:36Z",
           "IsaacNZ2/com.tuya.zigbee": "2025-10-30T23:12:36Z",
           "script0803/com.tuya.zigbee": "never-pushed",
-          "dlnraja/com.tuya.zigbee": "2026-10-23T10:15:47Z",
+          "dlnraja/com.tuya.zigbee": "2026-10-27T10:49:06Z",
           "Peter-Celica/com.tuya.zigbee": "2025-10-10T11:15:14Z",
           "kindberg95/com.tuya.zigbee": "2025-08-19T14:08:16Z",
           "willarentz/com.tuya.zigbee": "2025-10-01T21:45:37Z",
@@ -328,7 +328,7 @@
           "bmalkow/com.tuya.zigbee": "2026-01-09T10:24:26Z",
           "pkuijpers/com.tuya.zigbee": "2026-01-30T15:54:03Z",
           "Robsta86/com.tuya.zigbee": "2026-03-29T21:25:39Z",
-          "telenut/com.tuya.zigbee": "never-pushed",
+          "telenut/com.tuya.zigbee": "2026-10-25T20:08:40Z",
           "finnamu/com.tuya.zigbee": "never-pushed",
           "oskarirauta/com.tuya.zigbee": "2026-09-28T16:17:05Z",
           "MisterBRB/com.tuya.zigbee": "2026-04-18T19:00:37Z",
@@ -353,8 +353,8 @@
         "base": "SDK3"
       },
       "dlnraja/com.tuya.zigbee": {
-        "page": 2,
-        "done": true,
+        "page": 1,
+        "done": false,
         "seen": {
           "TheLostHomeyAppRepositories/com.tuya.zigbee-dlnraja": "2025-10-06T19:00:26Z",
           "lsalmona/com.tuya.zigbee": "never-pushed",
@@ -373,12 +373,12 @@
       }
     },
     "lastRun": {
-      "at": "2026-10-23T10:37:56.808Z",
-      "requests": 74,
-      "stopped": "completed phases",
-      "mentionsSeen": 38,
-      "kept": 149,
-      "unknownMfrs": 24
+      "at": "2026-10-27T11:12:40.279Z",
+      "requests": 150,
+      "stopped": "budget 150 reached",
+      "mentionsSeen": 1719,
+      "kept": 144,
+      "unknownMfrs": 11
     }
   }
 }
