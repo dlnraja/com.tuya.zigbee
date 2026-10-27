@@ -208,4 +208,15 @@ describe('P3077 phantom moves', () => {
     const b = require(path.join(ROOT, 'test/fixtures/athom-last-test-package-couples.json'));
     assert.equal(b.exemptions.filter((e) => /P3077 batch 17/.test(e.reason) && e.approvedBy === 't614u').length, 18);
   });
+  it('batch 18: reviewed duals keep both entries, runtime hints follow the attested driver', () => {
+    const fp = JSON.parse(fs.readFileSync(path.join(ROOT, 'lib/tuya/fingerprints.json'), 'utf8'));
+    const mfs = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/mfs_db.json'), 'utf8'));
+    assert.equal(fp._tz3008_reatplte.driverId, 'plug_energy_monitor');
+    assert.equal(fp._TYZB01_4lwqwyqn.driverId, 'switch_3gang');
+    assert.equal(mfs.devices._tz3008_reatplte.driverHint, 'plug_energy_monitor');
+    assert.equal(mfs.devices._tyzb01_v8gtiaed.driverHint, 'dimmer_2_gang');
+    for (const [m, ds] of [['_TZ3008_reatplte', ['plug_energy_monitor', 'button_wireless_4']], ['_TYZB01_4lwqwyqn', ['switch_3gang', 'switch_1gang']], ['_TYZB01_v8gtiaed', ['dimmer_2_gang', 'switch_1gang']]]) {
+      for (const d of ds) {assert.ok(lists(zig(d), m), `${m} must stay on ${d} (reviewed dual)`);}
+    }
+  });
 });
