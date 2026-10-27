@@ -1175,6 +1175,26 @@
       ],
       "why": "P3077 batch 12: TS0502A CCT whitelabels (Z2M tuya.ts), owner tunable_bulb_E14",
       "source": "P3077 batch 12 (t614u)"
+    },
+    {
+      "driver": "smart_knob",
+      "mfr": [],
+      "pid": [
+        "ZG-101ZD",
+        "zg-101zd"
+      ],
+      "why": "P3077 batch 13: HOBEIAN knob modelId (Z2M hobeian.ts), HOBEIAN only, owner smart_knob_zg101zd",
+      "source": "P3077 batch 13 (t614u)"
+    },
+    {
+      "driver": "smart_knob_rotary",
+      "mfr": [],
+      "pid": [
+        "ZG-101ZD",
+        "zg-101zd"
+      ],
+      "why": "P3077 batch 13: HOBEIAN knob modelId (Z2M hobeian.ts), HOBEIAN only, owner smart_knob_zg101zd",
+      "source": "P3077 batch 13 (t614u)"
     }
   ]
 }

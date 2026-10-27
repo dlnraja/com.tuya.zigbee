@@ -557,6 +557,17 @@
    "why": "Aqara WSDCGQ11LM temperature/humidity modelId (Z2M lumi.ts), only ever sent with a LUMI manufacturerName; on doorwindowsensor_4 it only built cartesian couples with zbeacon/CAT0001/DSS0010 that no device sends. Not in the Athom baseline for this driver; still listed on the climate drivers",
    "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/lumi.ts",
    "author": "Koen Kanters and contributors (zigbee-herdsman-converters)"
+  },
+  {
+   "pid": "ZG-101ZD",
+   "batch": 13,
+   "drivers": [
+    "smart_knob",
+    "smart_knob_rotary"
+   ],
+   "why": "HOBEIAN knob modelId, sent only with manufacturerName HOBEIAN (Z2M hobeian.ts zigbeeModel ZG-101ZD); on smart_knob/smart_knob_rotary it only built cartesian couples with _TZ3000_* knobs that report TS004F. HOBEIAN+ZG-101ZD stays on smart_knob_zg101zd (batch 6); every _TZ3000_*+TS004F couple stays",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/hobeian.ts",
+   "author": "Koen Kanters and contributors (zigbee-herdsman-converters)"
   }
  ],
  "aliasDrops": [
@@ -659,6 +670,40 @@
    "exemptions": 12,
    "why": "orphan Athom-baseline cartesian couples that resolveBaselinePins re-pinned on doorwindowsensor_4 and so duplicated the Zbeacon TS020x sensors owned by temphumidsensor_zcl_th01. CAT0001 = Excellux ZG-102MV contact/vibration, DSS0010 = Excellux ZG-101K scene switch (Z2M tuya.ts, fingerprint Excellux); Zbeacon TH01 = SONOFF SNZB-02 whitelabel and zbeacon DS01 = SNZB-04 whitelabel (Z2M sonoff.ts). Kept: zbeacon x DS01 and CAT0001/DSS0010 x Excellux",
    "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/sonoff.ts",
+   "author": "Koen Kanters and contributors (zigbee-herdsman-converters)"
+  },
+  {
+   "batch": 13,
+   "driver": [
+    "smart_knob",
+    "smart_knob_rotary"
+   ],
+   "mfr": [
+    "_TZ3000_CSFLGQJ2",
+    "_TZ3000_G9G2XNCH",
+    "_TZ3000_KAFLZTA4",
+    "_TZ3000_gwkzibhs",
+    "_TZ3000_ixla93vd",
+    "_TZ3000_kaflzta4",
+    "_TZ3000_qja6nq5z",
+    "_TZ3000_ugi8ky6u",
+    "_TZ3000_uri7ongn",
+    "_tz3000_csflgqj2",
+    "_tz3000_g9g2xnch",
+    "_tz3000_gwkzibhs",
+    "_tz3000_ixla93vd",
+    "_tz3000_kaflzta4",
+    "_tz3000_qja6nq5z",
+    "_tz3000_ugi8ky6u",
+    "_tz3000_uri7ongn"
+   ],
+   "pid": [
+    "ZG-101ZD",
+    "zg-101zd"
+   ],
+   "exemptions": 26,
+   "why": "orphan Athom-baseline cartesian couples (18 on smart_knob, 8 on smart_knob_rotary) that resolveBaselinePins would re-pin after ZG-101ZD left those drivers; no _TZ3000_* knob sends the HOBEIAN modelId",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/hobeian.ts",
    "author": "Koen Kanters and contributors (zigbee-herdsman-converters)"
   }
  ]

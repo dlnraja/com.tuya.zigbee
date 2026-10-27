@@ -151,6 +151,12 @@ package (button_wireless_1, heobian/Heobian × 5 pids) carry t614u exemptions; t
 - Removing them from bulb_dimmable left 36 Athom-baseline couples orphaned: the forms of g1glzzfk and zw7wr5uo crossed with the 9 bulb_dimmable pids (BASICZBR3, GL-B-001Z, E11-N13…). Those couples are pure cartesian products and no device sends them, so they carry t614u exemptions. In `lib/tuya/fingerprints.json`, the runtime owner moves to tunable_bulb_E14 (zw7wr5uo had been marked as a cover/curtain_motor, which was wrong).
 - `_TZ3210_claeh5ds` (TS0502A on bulb_dimmable + light_bulb_dimmable_tunable) waits for the driver splits. Already-paired devices keep their driver, and nothing is written at pairing.
 
+## Batch 13 (27/10/2026, owner t614u): ZG-101ZD, a HOBEIAN-only modelId
+
+- In zigbee-herdsman-converters `hobeian.ts` (Koen Kanters and contributors), `ZG-101ZD` is the `zigbeeModel` the HOBEIAN smart knob reports together with manufacturerName `HOBEIAN`. The `_TZ3000_*` copies of the same knob (`_TZ3000_abrsvsou`, `_TZ3000_402vrq2i`, `_TZ3000_gwkzibhs`) report `TS004F`.
+- smart_knob and smart_knob_rotary listed `ZG-101ZD`/`zg-101zd` next to 20 and 48 `_TZ3000_*` knob ids, which built cartesian couples no device sends. That pid is removed from both drivers. HOBEIAN+ZG-101ZD still pairs on smart_knob_zg101zd (batch 6), and every `_TZ3000_*`+TS004F couple is kept.
+- The pin simulation showed 26 Athom-baseline couples that would be re-pinned (18 on smart_knob: kaflzta4/uri7ongn/ixla93vd/g9g2xnch forms; 8 on smart_knob_rotary: gwkzibhs/qja6nq5z/csflgqj2/ugi8ky6u forms). Each one carries a t614u exemption. Already-paired devices keep their driver, and nothing is written at pairing.
+
 ## Pending
 
 - ~480 collateral duals need driver splits (next batches).
