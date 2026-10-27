@@ -4,6 +4,8 @@ Human-readable log. Machine state: `data/progress/ledger.json` (read it before w
 
 ## 2026-10-27
 
+- 05:50 (Paris) — **P3080 batch E (localtuya idea 4/4): passive start.** WiFi LAN, opt-in key `passive_start`: the client is built but does not connect until this device id broadcasts on UDP (`device-advertising`), with a 10 min fallback connect; already advertised or no discovery = connect at once as before. One listener + one timer, removed on connect or teardown. No key = previous behaviour; no manifest change (the 4 keys stay undeclared until upload headroom is freed). Test `test/critical/p3080-localtuya-passive-start.test.js`. Port to stable/bastien after soak.
+
 - 05:35 (Paris) — **P3080 batch D (localtuya idea 3/4): `manual_dps`.** WiFi LAN, opt-in key `manual_dps` ("18,19,20", setting else store): 5 s after each connection the client asks for those DP ids explicitly (`TuyaLocalClient.requestDps`, max 32, 3 s timeout, never throws, one pending timer, cleared on teardown). No key = previous behaviour; no manifest change. Test `test/critical/p3080-localtuya-manual-dps.test.js`.
 
 - 05:20 (Paris) — **P3080 batch C (localtuya idea 2/4): `restore_on_reconnect`.** WiFi LAN, opt-in key (setting, else store; on/true/1/yes): on a reconnect (never the first connect) the DP values cached at disconnect are re-sent once, 2 s later — capability-mapped, writable, plain values only, max 16, one setDPs, 60 s cooldown, timer cleared on teardown. No key = previous behaviour; no manifest change. Test `test/critical/p3080-localtuya-restore-on-reconnect.test.js`.
