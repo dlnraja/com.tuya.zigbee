@@ -474,6 +474,39 @@
    "why": "IAS-zone TS0207 sensor: water_leak_sensor carries TS0207, water_leak_sensor_tuya does not (its pids are TS0601/q9mpfhw and other brands), so on _tuya the id only made cartesian couples that no real device can pair with. One couple, one driver. No Athom fixture pin, no exemption. mfs_db (and fingerprints.json for fxvjhdyl) hints follow",
    "source": "https://dresden-elektronik.github.io/deconz-rest-doc/devices/tuya/_TZ3000_TS0207_water_leak_sensor/",
    "author": "dresden elektronik deCONZ contributors"
+  },
+  {
+   "mfr": "_TZ3000_j2w1dw29",
+   "from": "dimmer_wall_1gang",
+   "keptOn": "bulb_dimmable",
+   "realPid": "TS0501A",
+   "batch": 20,
+   "hardware": "Lidl Livarno Lux HG06463A E27 ST64 filament bulb (Z2M tuya.ts TS0501A whitelabel; Homey forum device-request archive p.20, Rickert1993)",
+   "why": "Dimmable bulb with TS0501A. bulb_dimmable carries TS0501A and dimmer_wall_1gang does not, so on the wall dimmer the id only formed cartesian couples (TS0601, TS0601_dim1, TS011F, ...) that no real device sends. One couple, one driver. 6 Athom fixture couples exempted; mfs_db hint now bulb_dimmable, fingerprints.json gets TS0501A",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
+   "author": "Koen Kanters and contributors (zigbee-herdsman-converters)"
+  },
+  {
+   "mfr": "_TZ3000_juq7i1fr",
+   "from": "dimmer_wall_1gang",
+   "keptOn": "bulb_dimmable",
+   "realPid": "TS0501B",
+   "batch": 20,
+   "hardware": "Mercator Ikuu SMFL20W-ZB Ridley floodlight (Z2M tuya.ts TS0501B whitelabel, commit 60501e8 by samuelabj; Hubitat Mercator Ikuu thread)",
+   "why": "Single-colour dimmable light with TS0501B. bulb_dimmable carries TS0501B and dimmer_wall_1gang does not, so the wall dimmer copy was cartesian only. One couple, one driver. 6 Athom fixture couples exempted; mfs_db hint now bulb_dimmable, fingerprints.json gets TS0501B",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/60501e8503324a99dd1c5ed6f282d44f2a83507f",
+   "author": "samuelabj (zigbee-herdsman-converters PR #6401)"
+  },
+  {
+   "mfr": "_TZE200_5cuocqty",
+   "from": "switch_1gang",
+   "keptOn": "dimmer_1_gang_tuya",
+   "realPid": "TS0601",
+   "batch": 20,
+   "hardware": "Avatto ZDMS16-1 1-channel dimmer module family (only the _TZE204_ id is attested upstream: Z2M avatto.ts, ZHA ts0601_dimmer)",
+   "why": "The dimmer family (EnrichedDPMappings DIMMER profile) lives on dimmer_1_gang_tuya with its attested _TZE204 sibling; the _TZE200 copy on switch_1gang only formed on/off cartesian couples. Kept on the dimmer side unpinned (no direct source for the _TZE200 prefix, not invented elsewhere). No Athom fixture pin",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/avatto.ts",
+   "author": "Koen Kanters and contributors (zigbee-herdsman-converters)"
   }
  ],
  "keptOnPurpose": [
@@ -625,6 +658,28 @@
    "why": "Lonsonho QS-Zigbee-D02-TRIAC-2C-LN, 2-gang TRIAC dimmer module with neutral, endpoints l1/l2 (Z2M lonsonho.ts TS110F). Exact couple on dimmer_2_gang; switch_1gang entry kept (reviewed dual, owner override still needed). mfs_db hint switch_1gang -> dimmer_2_gang (fingerprints.json already there). _TZ3000_v8gtiaed has no source and stays pinned on switch_1gang",
    "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/lonsonho.ts",
    "author": "Koen Kanters and contributors (zigbee-herdsman-converters)"
+  },
+  {
+   "mfr": "_TZ3000_bzzgvet0",
+   "batch": 20,
+   "drivers": [
+    "climate_sensor",
+    "switch_1gang"
+   ],
+   "why": "Moes ZS-US1-LN 1-gang switch (Z2M tuya.ts TS0001 whitelabel). Reviewed dual of 04/10 decided with the owner: left untouched, only the TS0601 artifact overlaps",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
+   "author": "Koen Kanters and contributors (zigbee-herdsman-converters)"
+  },
+  {
+   "mfr": "_TZ3000_jqge2fjx",
+   "batch": 20,
+   "drivers": [
+    "sensor_contact_zigbee",
+    "vibration_sensor"
+   ],
+   "why": "TS0210 vibration sensor (Z2M issue #20272 by wowrevv, added by Koenkk). Reviewed dual of 04/10 decided with the owner: left untouched, only the TS0601 artifact overlaps",
+   "source": "https://github.com/Koenkk/zigbee2mqtt/issues/20272",
+   "author": "wowrevv, Koenkk (zigbee2mqtt)"
   }
  ],
  "badPids": [
@@ -841,6 +896,14 @@
    "count": 18,
    "driver": "bulb_dimmable",
    "mfr": "_TZ3210_claeh5ds",
+   "approvedBy": "t614u",
+   "date": "2026-10-27"
+  },
+  {
+   "batch": 20,
+   "count": 12,
+   "driver": "dimmer_wall_1gang",
+   "mfr": "_TZ3000_j2w1dw29,_TZ3000_juq7i1fr",
    "approvedBy": "t614u",
    "date": "2026-10-27"
   }

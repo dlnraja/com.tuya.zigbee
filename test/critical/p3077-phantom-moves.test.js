@@ -228,4 +228,23 @@ describe('P3077 phantom moves', () => {
       assert.equal(mfs[m.toLowerCase()].driverHint, 'water_leak_sensor');
     }
   });
+  it('batch 20: TS0501A/B bulbs only on bulb_dimmable, 5cuocqty only on the dimmer, reviewed duals untouched', () => {
+    const mfs = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/mfs_db.json'), 'utf8')).devices;
+    const fp = JSON.parse(fs.readFileSync(path.join(ROOT, 'lib/tuya/fingerprints.json'), 'utf8'));
+    for (const [m, pid] of [['_TZ3000_j2w1dw29', 'TS0501A'], ['_TZ3000_juq7i1fr', 'TS0501B']]) {
+      assert.ok(zig('bulb_dimmable').productId.includes(pid) && lists(zig('bulb_dimmable'), m), m);
+      assert.ok(!zig('dimmer_wall_1gang').manufacturerName.some((x) => x.toLowerCase() === m.toLowerCase()), `${m} still on dimmer_wall_1gang`);
+      assert.equal(mfs[m.toLowerCase()].driverHint, 'bulb_dimmable');
+      assert.ok(fp[m].modelIds.includes(pid));
+    }
+    assert.ok(lists(zig('dimmer_1_gang_tuya'), '_TZE200_5cuocqty'));
+    assert.ok(!zig('switch_1gang').manufacturerName.some((x) => /^_tze200_5cuocqty$/i.test(x)));
+    for (const [m, ds] of [['_TZ3000_bzzgvet0', ['climate_sensor', 'switch_1gang']], ['_TZ3000_jqge2fjx', ['sensor_contact_zigbee', 'vibration_sensor']]]) {
+      for (const d of ds) {assert.ok(lists(zig(d), m), `${m} must stay on ${d} (reviewed dual)`);}
+    }
+    const b = require(path.join(ROOT, 'test/fixtures/athom-last-test-package-couples.json'));
+    const ex = b.exemptions.filter((e) => /P3077 batch 20/.test(e.reason) && e.approvedBy === 't614u');
+    assert.equal(ex.length, 12);
+    assert.ok(ex.every((e) => e.driverId === 'dimmer_wall_1gang' || e.pid !== 'TS011F'));
+  });
 });

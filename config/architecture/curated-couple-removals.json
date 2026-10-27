@@ -1243,6 +1243,23 @@
       ],
       "why": "P3077 b19: TS0207 water leak sensors, kept on water_leak_sensor (TS0207); _tuya has no TS0207",
       "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts"
+    },
+    {
+      "driver": "dimmer_wall_1gang",
+      "mfr": [
+        "_TZ3000_j2w1dw29",
+        "_TZ3000_juq7i1fr"
+      ],
+      "why": "P3077 b20: TS0501A/TS0501B bulbs (Lidl HG06463A, Mercator SMFL20W-ZB), kept on bulb_dimmable; dimmer_wall_1gang has no TS0501A/B",
+      "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts"
+    },
+    {
+      "driver": "switch_1gang",
+      "mfr": [
+        "_TZE200_5cuocqty"
+      ],
+      "why": "P3077 b20: Avatto ZDMS16-1 dimmer family, kept on dimmer_1_gang_tuya with its _TZE204 sibling",
+      "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/avatto.ts"
     }
   ]
 }
