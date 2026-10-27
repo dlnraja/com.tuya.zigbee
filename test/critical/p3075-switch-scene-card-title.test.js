@@ -2,6 +2,7 @@
 // P3075: the placeholder "Dynamic card switch_2gang_gangx_scene_b4ab3" got a real title
 // (id kept for user flows), and the BSEED 2-gang physical scene path now triggers the
 // declared _scene_switch cards instead of an id that never existed.
+const { describe, it } = require('../_support/dual-runner');
 const assert = require('assert');
 const fs = require('fs');
 const path = require('path');
