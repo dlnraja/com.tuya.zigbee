@@ -392,14 +392,6 @@
    "why": "reviewed duals TS0041/TS0205/TS0601 (owner decision); left as is"
   },
   {
-   "mfr": "_TZ3000_42ha4rsc",
-   "batch": 2,
-   "drivers": [
-    "curtain_motor_shutter"
-   ],
-   "why": "a _TZ3000_ copy of the Lidl _TZB000_42ha4rsc id that no outside source lists; kept because data/mfs_db.json holds it and test/anti-purge-guard.test.js forbids dropping a known fingerprint. Owner review"
-  },
-  {
    "mfr": "HEIMAN",
    "batch": 6,
    "drivers": [
@@ -462,6 +454,18 @@
    "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/hobeian.ts",
    "author": "zigbee-herdsman-converters contributors",
    "why": "ZG-101ZD is the HOBEIAN smart knob, the same hardware as _TZ3000_abrsvsou TS004F that already has its own knob driver; HOBEIAN stays on button_wireless_1 for ZG-101ZL. Paired devices keep their driver (same class button)"
+  }
+ ],
+ "parasiteDrops": [
+  {
+   "mfr": "_TZ3000_42ha4rsc",
+   "batch": 7,
+   "from": "curtain_motor_shutter",
+   "composeEntries": 4,
+   "baselineCouples": 0,
+   "why": "no outside source lists this _TZ3000_ id; it is an auto-sync copy of the Lidl HG09648 blind id _TZB000_42ha4rsc (TS030F), which stays on curtain_motor. mfs_db keeps the row as forbid-only so nothing re-adds it",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/a11871926c6de02ad4004fb51662b2bfefa60a2f",
+   "author": "Koen Kanters (zigbee-herdsman-converters), deCONZ DDF _TZB000_42ha4rsc_window_blinds"
   }
  ]
 }
