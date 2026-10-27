@@ -88,6 +88,15 @@ Homey crossed them with every mfr of the driver: 146 phantom couples (76 + 70), 
 `_TZ3000_eit6l5` is a cut-off id no source reports. P3055 already dropped the same two pids from gas_sensor_switch.
 `q9mpfhw` looks like a cut-off id too but is a real zigbeeModel upstream, so it stays.
 
+## Batch 4 (27/10/2026, owner t614u): TS130F curtain switches off curtain_motor_shutter
+
+Six makers are TS130F curtain/shutter wall switches in zigbee-herdsman-converters `tuya.ts` (Koenkk and contributors):
+`_TZ3000_5iixzdo7` (LoraTap SC500ZB-v4), `_TZ3000_bs93npae` (BSEED EC-GL86ZPCRS31), `_TZ3000_74hsp7qy` (Zemismart ZN-LC1E),
+`_TZ3000_8h7wgocw` (Danor SK-Z802C-US), `_TZ3000_vw8pawxa` (Zemismart TS130F_ZEMISMART), `_TZ3210_xbpt8ewc` (QA QACZ1).
+`curtain_motor` lists TS130F and the runtime map already sends them there; `curtain_motor_shutter` has no TS130F,
+so its 24 case forms only produced phantom couples (lights, climate and TS0601 pids). They leave curtain_motor_shutter;
+the 72 couples of the last Athom package that came from that product carry t614u exemptions.
+
 ## Pending
 
 - `_TZ3000_pzui3skt` on smart_knob_rotary (rotary-knob-ssot says knob; sources say TS0041 button), HOBEIAN ZG-101ZD knob on button_wireless_1, HEIMAN on universal_zigbee: owner review.
