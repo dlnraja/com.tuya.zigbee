@@ -19670,16 +19670,30 @@
     "url": "https://github.com/JohanBendz/com.tuya.zigbee/pull/1541#issuecomment-6410494227"
    },
    "needsDeepRead": true
+  },
+  "1542": {
+   "n": 1542,
+   "sources": [],
+   "identities": [],
+   "objectives": [],
+   "batches": [],
+   "implemented": [],
+   "topic": "device-request",
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1542",
+   "state": "open",
+   "state_reason": null,
+   "closed_at": null,
+   "pr": false
   }
  },
- "generated": "2026-10-26T09:20:10.134Z",
+ "generated": "2026-10-27T09:20:34.148Z",
  "repo": "JohanBendz/com.tuya.zigbee",
  "author": "JohanBendz",
  "cursor": {
-  "since": "2026-10-26T09:20:10.134Z"
+  "since": "2026-10-27T09:20:34.148Z"
  },
  "summary": {
-  "issues": 738,
+  "issues": 739,
   "canonical": 117,
   "closed": 523,
   "duplicate": 172,
