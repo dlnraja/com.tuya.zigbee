@@ -13,7 +13,8 @@ const path = require('path');
 const ROOT = path.join(__dirname, '..', '..');
 const DB = require(path.join(ROOT, 'lib', 'DeviceFingerprintDB'));
 
-const FORMS = ['HOBEIAN', 'Hobeian', 'hobeian', 'heobian', 'Heobian'];
+// P3077 batch 5: heobian is a read-time alias only (forum typo), not a compose form.
+const FORMS = ['HOBEIAN', 'Hobeian', 'hobeian'];
 
 const EXPECT = {
   switch_1gang: ['ZG-301Z', 'WHD02', 'ZG-302Z1'],

@@ -146,7 +146,7 @@ function main() {
     process.exit(2);
   }
   const hobeian = pairingCaseVariants('HOBEIAN');
-  for (const need of ['HOBEIAN', 'hobeian', 'Hobeian', 'heobian']) {
+  for (const need of ['HOBEIAN', 'hobeian', 'Hobeian']) {
     if (!hobeian.includes(need)) {
       console.error('HOBEIAN brand probe failed:', hobeian);
       process.exit(2);

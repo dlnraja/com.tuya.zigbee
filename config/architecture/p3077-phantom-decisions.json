@@ -421,5 +421,23 @@
    "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
    "author": "Koenkk and zigbee-herdsman-converters contributors"
   }
+ ],
+ "aliasDrops": [
+  {
+   "mfr": "heobian",
+   "batch": 5,
+   "forms": [
+    "heobian",
+    "Heobian",
+    "HEOBIAN"
+   ],
+   "drivers": 18,
+   "composeEntries": 41,
+   "exemptions": 10,
+   "decision": "drop from every compose; keep the read-time alias heobian->hobeian (TuyaNormalizer NORMALIZE_BRAND_TYPOS, DeviceFingerprintDB, fingerprint-matcher, UserMisattributionRegistry, fp-collision tools)",
+   "why": "No device, diag or outside database (Z2M hobeian.ts, ZHA, deCONZ, Blakadder, Johan) reports the string heobian; the only web hit is a typo in a forum message about a HOBEIAN ZG-222Z. As a pairing form it only added about 2090 phantom couples. Devices that report HOBEIAN, Hobeian or hobeian pair exactly as before.",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/hobeian.ts (vendor string HOBEIAN); https://community.homey.app/t/140352 (typo only)",
+   "author": "Koenkk and zigbee-herdsman-converters contributors; Homey community forum"
+  }
  ]
 }

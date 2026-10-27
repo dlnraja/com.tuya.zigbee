@@ -97,6 +97,17 @@ Six makers are TS130F curtain/shutter wall switches in zigbee-herdsman-converter
 so its 24 case forms only produced phantom couples (lights, climate and TS0601 pids). They leave curtain_motor_shutter;
 the 72 couples of the last Athom package that came from that product carry t614u exemptions.
 
+## Batch 5 (27/10/2026, owner t614u): heobian is a typo, not a device string
+
+`heobian` / `Heobian` / `HEOBIAN` sat on 18 driver composes (41 entries, about 2090 couples) as "Athom forms" of HOBEIAN.
+No device reports that string: zigbee-herdsman-converters `hobeian.ts` (Koenkk and contributors) uses the vendor `HOBEIAN`,
+ZHA, deCONZ, Blakadder and Johan list only HOBEIAN, and the one web hit is a spelling slip in a Homey forum message about a
+HOBEIAN ZG-222Z (community.homey.app topic 140352). The forms leave every compose and the pairing form list
+(`brandAthomForms`) shrinks to HOBEIAN / Hobeian / hobeian. The read-time alias stays: `normalize()` still maps
+heobian to hobeian, so lookups, diags and collision tools treat both as one brand. The 10 couples of the last Athom
+package (button_wireless_1, heobian/Heobian × 5 pids) carry t614u exemptions; the sacred pin `heobian|ZG-101ZL` is dropped
+(it guarded against a bot strip, not a real device).
+
 ## Pending
 
 - `_TZ3000_pzui3skt` on smart_knob_rotary (rotary-knob-ssot says knob; sources say TS0041 button), HOBEIAN ZG-101ZD knob on button_wireless_1, HEIMAN on universal_zigbee: owner review.

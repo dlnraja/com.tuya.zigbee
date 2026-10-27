@@ -64,4 +64,19 @@ describe('P3077 phantom moves', () => {
     assert.ok(ex.length >= 72 && ex.every((e) => e.approvedBy === 't614u'));
     assert.ok(zig('curtain_motor').productId.includes('TS130F'));
   });
+  it('batch 5: heobian is a read-time alias only, never a compose form', () => {
+    const TU = require(path.join(ROOT, 'lib/utils/TuyaNormalizer'));
+    for (const d of fs.readdirSync(path.join(ROOT, 'drivers'))) {
+      const fp = path.join(ROOT, 'drivers', d, 'driver.compose.json');
+      if (!fs.existsSync(fp)) {continue;}
+      const z = JSON.parse(fs.readFileSync(fp, 'utf8')).zigbee || {};
+      assert.ok(!(z.manufacturerName || []).some((m) => m.toLowerCase() === 'heobian'), `heobian on ${d}`);
+    }
+    assert.ok(lists(zig('button_wireless_1'), 'HOBEIAN'));
+    assert.equal(TU.normalize('Heobian'), TU.normalize('HOBEIAN'));
+    assert.ok(!TU.brandAthomForms('HOBEIAN').some((m) => m.toLowerCase() === 'heobian'));
+    const b = require(path.join(ROOT, 'test/fixtures/athom-last-test-package-couples.json'));
+    const ex = b.exemptions.filter((e) => /P3077 batch 5/.test(e.reason));
+    assert.ok(ex.length >= 10 && ex.every((e) => e.approvedBy === 't614u'));
+  });
 });
