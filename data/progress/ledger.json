@@ -42594,6 +42594,12 @@
    "by": "p3076",
    "kind": "crash",
    "mailDate": "2026-10-17"
+  },
+  "p3077-phantom-moves": {
+   "status": "in-progress",
+   "date": "2026-10-27",
+   "by": "p3077",
+   "note": "batch 1: 18 wrong-class mfrs dropped from 6 drivers (kept on their real-class driver with the real pid); 7 moves dropped because data/native-matrix-reviewed-duals.json records an earlier owner keep decision (yi0n4xfd, 46vasa5h, v8gtiaed, nsa76jai, kmsbwdol, xwh1e22x, xpq2rzhq); resolveBaselinePins honours exemptions for moved couples (62 P3055 9ni6xxld exemptions, +336 combos removed); capped publish prep 15500/15500 OK, P3024b 14227/14227; decisions config/architecture/p3077-phantom-decisions.json"
   }
  }
 }
