@@ -16,6 +16,11 @@
       "cap": "measure_humidity",
       "when": "change"
     },
+    "air_purifier_soil_sensor_soil_dry": {
+      "driver": "air_purifier_soil",
+      "cap": "measure_humidity.soil",
+      "when": "under:soil_warning_threshold:30:2"
+    },
     "air_quality_comprehensive_air_monitor_measur_5e035": {
       "driver": "air_quality_comprehensive",
       "cap": "measure_temperature",
@@ -35,6 +40,26 @@
       "driver": "button_wireless_usb",
       "cap": "measure_power",
       "when": "change"
+    },
+    "climate_sensor_temperature_alarm_high": {
+      "driver": "climate_sensor",
+      "cap": "measure_temperature",
+      "when": "over:alarm_temp_max:40:0.5"
+    },
+    "climate_sensor_temperature_alarm_low": {
+      "driver": "climate_sensor",
+      "cap": "measure_temperature",
+      "when": "under:alarm_temp_min:0:0.5"
+    },
+    "climate_sensor_humidity_alarm_high": {
+      "driver": "climate_sensor",
+      "cap": "measure_humidity",
+      "when": "over:alarm_humidity_max:80:2"
+    },
+    "climate_sensor_humidity_alarm_low": {
+      "driver": "climate_sensor",
+      "cap": "measure_humidity",
+      "when": "under:alarm_humidity_min:20:2"
     },
     "climate_sensor_presence_sensor_climate_prese_0ac90": {
       "driver": "climate_sensor_presence",
@@ -606,6 +631,26 @@
       "cap": "measure_humidity",
       "when": "change"
     },
+    "sensor_climate_contact_climate_sensor_temper_e9e02": {
+      "driver": "sensor_climate_contact",
+      "cap": "measure_temperature",
+      "when": "over:alarm_temp_max:40:0.5"
+    },
+    "sensor_climate_contact_climate_sensor_temper_c1e0a": {
+      "driver": "sensor_climate_contact",
+      "cap": "measure_temperature",
+      "when": "under:alarm_temp_min:0:0.5"
+    },
+    "sensor_climate_contact_climate_sensor_humidi_7d34f": {
+      "driver": "sensor_climate_contact",
+      "cap": "measure_humidity",
+      "when": "over:alarm_humidity_max:80:2"
+    },
+    "sensor_climate_contact_climate_sensor_humidi_63135": {
+      "driver": "sensor_climate_contact",
+      "cap": "measure_humidity",
+      "when": "under:alarm_humidity_min:20:2"
+    },
     "sensor_climate_lcdtemphumidsensor_climate_se_67539": {
       "driver": "sensor_climate_lcdtemphumidsensor",
       "cap": "measure_temperature",
@@ -621,6 +666,26 @@
       "cap": "measure_battery",
       "when": "low"
     },
+    "sensor_climate_lcdtemphumidsensor_climate_se_3fb47": {
+      "driver": "sensor_climate_lcdtemphumidsensor",
+      "cap": "measure_temperature",
+      "when": "over:alarm_temp_max:40:0.5"
+    },
+    "sensor_climate_lcdtemphumidsensor_climate_se_ee90b": {
+      "driver": "sensor_climate_lcdtemphumidsensor",
+      "cap": "measure_temperature",
+      "when": "under:alarm_temp_min:0:0.5"
+    },
+    "sensor_climate_lcdtemphumidsensor_climate_se_446fb": {
+      "driver": "sensor_climate_lcdtemphumidsensor",
+      "cap": "measure_humidity",
+      "when": "over:alarm_humidity_max:80:2"
+    },
+    "sensor_climate_lcdtemphumidsensor_climate_se_c2e55": {
+      "driver": "sensor_climate_lcdtemphumidsensor",
+      "cap": "measure_humidity",
+      "when": "under:alarm_humidity_min:20:2"
+    },
     "sensor_climate_lcdtemphumidsensor_climate_se_52d9c": {
       "driver": "sensor_climate_lcdtemphumidsensor",
       "cap": "measure_temperature",
@@ -630,6 +695,36 @@
       "driver": "sensor_climate_motion",
       "cap": "alarm_motion",
       "when": false
+    },
+    "sensor_climate_temphumidsensor_humidity_alarm_high": {
+      "driver": "sensor_climate_temphumidsensor",
+      "cap": "measure_humidity",
+      "when": "over:alarm_humidity_max:80:2"
+    },
+    "sensor_climate_temphumidsensor_humidity_alarm_low": {
+      "driver": "sensor_climate_temphumidsensor",
+      "cap": "measure_humidity",
+      "when": "under:alarm_humidity_min:20:2"
+    },
+    "sensor_contact_climate_temperature_alarm_high": {
+      "driver": "sensor_contact_climate",
+      "cap": "measure_temperature",
+      "when": "over:alarm_temp_max:40:0.5"
+    },
+    "sensor_contact_climate_temperature_alarm_low": {
+      "driver": "sensor_contact_climate",
+      "cap": "measure_temperature",
+      "when": "under:alarm_temp_min:0:0.5"
+    },
+    "sensor_contact_climate_humidity_alarm_high": {
+      "driver": "sensor_contact_climate",
+      "cap": "measure_humidity",
+      "when": "over:alarm_humidity_max:80:2"
+    },
+    "sensor_contact_climate_humidity_alarm_low": {
+      "driver": "sensor_contact_climate",
+      "cap": "measure_humidity",
+      "when": "under:alarm_humidity_min:20:2"
     },
     "sensor_contact_motion_sensor_motion_cleared": {
       "driver": "sensor_contact_motion",
@@ -655,6 +750,11 @@
       "driver": "sensor_lcdtemphumidsensor_soil",
       "cap": "measure_temperature",
       "when": "change"
+    },
+    "sensor_lcdtemphumidsensor_soil_sensor_soil_dry": {
+      "driver": "sensor_lcdtemphumidsensor_soil",
+      "cap": "measure_humidity.soil",
+      "when": "under:soil_warning_threshold:30:2"
     },
     "sensor_lcdtemphumidsensor_soil_sensor_batter_d438e": {
       "driver": "sensor_lcdtemphumidsensor_soil",

@@ -241,6 +241,23 @@ These three manufacturers are in `data/native-matrix-reviewed-duals.json`, where
 - A first report after start or pairing never fires: the edge needs a known previous value.
 - Orphans went from 96 to 92.
 
+## Flow batch 5 (temperature, humidity and soil thresholds)
+
+- 20 orphan triggers now fire when a value crosses a threshold stored in the driver's own settings, not a hard-coded value:
+  - "Temperature too high/low" and "Humidity too high/low" (18 cards on `climate_sensor`, `sensor_climate_contact`, `sensor_climate_lcdtemphumidsensor`, `sensor_climate_temphumidsensor` and `sensor_contact_climate`) use `alarm_temp_max/min` and `alarm_humidity_max/min`. These are the same settings already written to the E002 cluster.
+  - "Soil is dry - needs water" (`air_purifier_soil`, `sensor_lcdtemphumidsensor_soil`) uses `soil_warning_threshold` on `measure_humidity.soil`.
+- How a card fires (`over` / `under` in `DeadFlowAutoWire.thresholdCrossed`):
+  - It fires once per crossing.
+  - It re-arms only past a hysteresis margin: 0.5 °C for temperature, 2 % for humidity and soil.
+  - An empty setting falls back to the manifest default, never to 0.
+  - A restart while the value is already past the threshold never fires again.
+- A rule is mapped only when the driver declares that setting.
+- Not wired:
+  - CO2 alert on/off: the rule needs `alarm_co2`, which is missing (owner decision).
+  - Soil "wet", "optimal" and "frost": no stored threshold exists for them.
+  - `wifi_air_quality` CO2/PM2.5 high and `air_quality_comprehensive` CO2 high: no stored threshold exists for them.
+- Orphans went from 92 to 72.
+
 ## device_din_rail_meter: dehumidifier cards kept, never fired (owner decision 27/10/2026)
 
 - This driver declares 8 triggers copied from a dehumidifier (humidity, temperature, water leak, battery). A DIN-rail meter has none of these capabilities.

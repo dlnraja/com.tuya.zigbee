@@ -89,8 +89,22 @@ const TRIGGER_RULES = [
   [/^started moving$/, () => ['windowcoverings_state'], 'leave:idle', 'p3077'],
   [/^stopped moving$/, () => ['windowcoverings_state'], 'enter:idle', 'p3077'],
   [/^cleaning started$/, () => ['vacuumcleaner_state'], 'enter:cleaning', 'p3077'],
-  [/^cleaning finished$/, () => ['vacuumcleaner_state'], 'move:cleaning>docked', 'p3077']
+  [/^cleaning finished$/, () => ['vacuumcleaner_state'], 'move:cleaning>docked', 'p3077'],
+  // P3077 flow batch 5: threshold cards on the driver's stored setting (scope 'setting': mapped only when the
+  // driver declares that setting; the default below is the manifest default of that setting).
+  [/^temperature too high$/, () => ['measure_temperature'], 'over:alarm_temp_max:40:0.5', 'setting'],
+  [/^temperature too low$/, () => ['measure_temperature'], 'under:alarm_temp_min:0:0.5', 'setting'],
+  [/^humidity too high$/, () => ['measure_humidity'], 'over:alarm_humidity_max:80:2', 'setting'],
+  [/^humidity too low$/, () => ['measure_humidity'], 'under:alarm_humidity_min:20:2', 'setting'],
+  [/^soil is dry( - needs water)?$/, () => ['measure_humidity.soil', 'measure_humidity'], 'under:soil_warning_threshold:30:2', 'setting']
 ];
+
+function driverSettings(dir) {
+  const ids = new Set();
+  const walk = (list) => { for (const x of list || []) { if (x && x.children) {walk(x.children);} else if (x && x.id) {ids.add(x.id);} } };
+  try { walk(JSON.parse(fs.readFileSync(path.join(ROOT, 'drivers', dir, 'driver.compose.json'), 'utf8')).settings); } catch (_) { /* none */ }
+  return ids;
+}
 
 function gangCaps(title) {
   const m = /^(gang|socket) ([1-8]) /.exec(title);
@@ -224,6 +238,7 @@ function build({ auditFile, strict } = {}) {
       for (const [re, prefs, when, scope] of TRIGGER_RULES) {
         if (!re.test(title)) {continue;}
         if (scope === 'p3077' && !P3077_FLOW_IDS.has(t.id)) {break;}
+        if (scope === 'setting' && !driverSettings(dir).has(String(when).split(':')[1])) {break;}
         const cap = pick(prefs(caps, title), caps);
         if (cap) {out.triggers[t.id] = { driver: dir, cap, when: typeof when === 'function' ? when(cap) : when };}
         break;
