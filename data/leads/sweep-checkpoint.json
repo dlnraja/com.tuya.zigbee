@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-27T06:55:21.554Z",
+  "updated": "2026-10-27T08:07:19.766Z",
   "threads": {
     "21313": {
       "lastPost": 2819,
@@ -22328,7 +22328,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-10-27",
         "verdict": "lead",
         "confidence": 0.2,
         "couples": [],
@@ -22336,7 +22336,7 @@
           "https://www.zigbee2mqtt.io/devices/SRTS-A01.html",
           "https://zigbee.blakadder.com/Aqara_SRTS-A01.html"
         ],
-        "sources": 32
+        "sources": 33
       }
     },
     {
