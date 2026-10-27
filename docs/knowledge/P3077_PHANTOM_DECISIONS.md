@@ -232,6 +232,30 @@ These three manufacturers are in `data/native-matrix-reviewed-duals.json`, where
 - The rules are limited to these exact ids. "Siren started" keeps its existing path and is not mapped, so nothing fires twice.
 - No card was removed and the manifest is unchanged. Orphans went from 100 to 96.
 
+## Flow batch 4 (shutter movement, vacuum cleaning)
+
+- 4 more orphan triggers now follow a state capability the driver already has:
+  - "Started moving" / "Stopped moving" on `shutter_roller_controller` → `windowcoverings_state` leaves / enters `idle`;
+  - "Cleaning started" on `wifi_robot_vacuum` → `vacuumcleaner_state` enters `cleaning`;
+  - "Cleaning finished" → the `cleaning` → `docked` transition only (new `move:<from>><to>` edge). DP3 maps a pause to `stopped`, so a pause never counts as a finished cycle.
+- A first report after start or pairing never fires: the edge needs a known previous value.
+- Orphans went from 96 to 92.
+
+## device_din_rail_meter: dehumidifier cards kept, never fired (owner decision 27/10/2026)
+
+- This driver declares 8 triggers copied from a dehumidifier (humidity, temperature, water leak, battery). A DIN-rail meter has none of these capabilities.
+- They stay declared, because removing them could break users' existing flows. The builder lists them in `NEVER_FIRE_IDS` (`tools/flow/build-dead-flow-autowire.js`), so no rule can ever map them.
+- Its "Power changed" cards (`measure_power`, a real capability of the meter) keep their mapping.
+- These 8 ids stay in the orphan count on purpose.
+
+## Orphans left out: they need a capability the driver does not have
+
+These are not wired, and no capability is invented for them:
+- "Battery low" on mains-powered devices with no `measure_battery`: `rgb_bulb_E14/E27`, `rgb_spot_GU10/GardenLight`, `tunable_bulb_E14/E27`, `tunable_spot_GU10`, `device_air_purifier` (thermostat), `device_air_purifier_plug`, `device_air_purifier_quality`, `device_air_purifier_thermostat`, `device_radiator_valve_thermostat`, `device_plug_energy`, `sensor_contact_plug`, `climate_sensor_presence`. Also "Battery level changed" on `sensor_contact_zigbee`.
+- `wifi_robot_vacuum`: fault, brush, filter and water tank cards. No capability carries these.
+- Tamper on `motion_sensor_2` and `pir_mmwave_sensor` (no `alarm_tamper`); tilt and drop on `vibration_sensor` (only `alarm_vibration`); smoke "Test button pressed" (no test capability).
+- Pet feeder fed / food low / feeding completed, gateway device left / connection lost / restored, physical-button dimmer cards, `climate_scene_triggered`, and `wall_remote_2_gang_buttons`. These need an event or source signal, not a capability value.
+
 ## Pending
 
 - ~480 collateral duals need driver splits (next batches).

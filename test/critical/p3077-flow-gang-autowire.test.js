@@ -67,3 +67,26 @@ test('P3077 flow batch 3: siren stopped / WiFi alarm on-off follow alarm_generic
   assert.deepStrictEqual(W.mappedTriggerIds('wifi_siren', G, false), ['wifi_siren_alarm_off']);
   assert.deepStrictEqual(W.mappedTriggerIds('siren', G, true), []);
 });
+
+test('P3077 flow batch 4: shutter moving + vacuum cleaning follow their state capability; DIN-rail dehumidifier cards never fire', () => {
+  const S = 'windowcoverings_state';
+  const V = 'vacuumcleaner_state';
+  assert.deepStrictEqual(map.triggers.shutter_roller_controller_started_moving, { driver: 'shutter_roller_controller', cap: S, when: 'leave:idle' });
+  assert.deepStrictEqual(map.triggers.shutter_roller_controller_stopped_moving, { driver: 'shutter_roller_controller', cap: S, when: 'enter:idle' });
+  assert.deepStrictEqual(map.triggers.wifi_robot_vacuum_cleaning_started, { driver: 'wifi_robot_vacuum', cap: V, when: 'enter:cleaning' });
+  assert.deepStrictEqual(map.triggers.wifi_robot_vacuum_cleaning_finished, { driver: 'wifi_robot_vacuum', cap: V, when: 'move:cleaning>docked' });
+  W._resetForTests();
+  const sh = (v, p) => W.mappedTriggerIds('shutter_roller_controller', S, v, { previous: p });
+  assert.deepStrictEqual(sh('down', 'idle'), ['shutter_roller_controller_started_moving']);
+  assert.deepStrictEqual(sh('idle', 'up'), ['shutter_roller_controller_stopped_moving']);
+  assert.deepStrictEqual(sh('idle', null), [], 'first report after start never fires');
+  const vac = (v, p) => W.mappedTriggerIds('wifi_robot_vacuum', V, v, { previous: p });
+  assert.deepStrictEqual(vac('cleaning', 'docked'), ['wifi_robot_vacuum_cleaning_started']);
+  assert.deepStrictEqual(vac('docked', 'cleaning'), ['wifi_robot_vacuum_cleaning_finished']);
+  assert.deepStrictEqual(vac('stopped', 'cleaning'), [], 'a pause is not a finished cycle');
+  assert.strictEqual(W.modeEdge('move:a>b', 'b', 'c'), false);
+  const { NEVER_FIRE_IDS } = require('../../tools/flow/build-dead-flow-autowire.js');
+  assert.strictEqual(NEVER_FIRE_IDS.size, 8);
+  for (const id of NEVER_FIRE_IDS) {assert.strictEqual(map.triggers[id], undefined, id);}
+  assert.ok(map.triggers.device_din_rail_meter_hvac_dehumidifier_powe_f9a4b, 'DIN-rail power card keeps its mapping');
+});

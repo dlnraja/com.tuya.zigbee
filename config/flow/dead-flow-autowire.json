@@ -746,6 +746,16 @@
       "cap": "measure_luminance",
       "when": "change"
     },
+    "shutter_roller_controller_started_moving": {
+      "driver": "shutter_roller_controller",
+      "cap": "windowcoverings_state",
+      "when": "leave:idle"
+    },
+    "shutter_roller_controller_stopped_moving": {
+      "driver": "shutter_roller_controller",
+      "cap": "windowcoverings_state",
+      "when": "enter:idle"
+    },
     "siren_alarm_stopped": {
       "driver": "siren",
       "cap": "alarm_generic",
@@ -855,6 +865,16 @@
       "driver": "wifi_power_strip",
       "cap": "onoff",
       "when": false
+    },
+    "wifi_robot_vacuum_cleaning_started": {
+      "driver": "wifi_robot_vacuum",
+      "cap": "vacuumcleaner_state",
+      "when": "enter:cleaning"
+    },
+    "wifi_robot_vacuum_cleaning_finished": {
+      "driver": "wifi_robot_vacuum",
+      "cap": "vacuumcleaner_state",
+      "when": "move:cleaning>docked"
     },
     "wifi_siren_alarm_on": {
       "driver": "wifi_siren",
