@@ -138,6 +138,12 @@ package (button_wireless_1, heobian/Heobian × 5 pids) carry t614u exemptions; t
 - zigbee-herdsman-converters `tuya.ts` (Koen Kanters and contributors) lists only `_TZE200_4mh6tyyo` in its TS0601 dimmer fingerprint, and ZHA, deCONZ and Hubitat add nothing else. The `_TZE204_` and `_TZE284_` forms (8 case variants each on dimmer_1_gang_tuya and dimmer_wall_1gang) had no source and are dropped. `_TZE200_4mh6tyyo` stays on dimmer_1_gang_tuya, its mfs_db owner. Not in the Athom baseline, so no exemptions are needed.
 - `amp6tsvy`: only `_TZE200_amp6tsvy` is sourced (zigpy ZHA quirks `tuya/ts0601_switch.py`). The prefix forms are kept and pinned, because the gang-pattern and dual-couple tooling depends on them. They will be revisited with the switch driver splits.
 
+## Batch 11 (27/10/2026, owner t614u): Zbeacon TS020x no longer duplicated on doorwindowsensor_4
+
+- At publish, `resolveBaselinePins` re-pinned 12 orphan Athom-baseline couples, {CAT0001, cat0001, DSS0010, dss0010} × {TS0201, TS0202, TS0203}, onto doorwindowsensor_4. Because of the cartesian product, the Zbeacon TS020x sensors (owned by temphumidsensor_zcl_th01) then came back as a duplicate. These couples correspond to no real device. In zigbee-herdsman-converters `tuya.ts` (Koen Kanters and contributors), `CAT0001` is the Excellux ZG-102MV contact/vibration sensor and `DSS0010` is the Excellux ZG-101K scene switch, both with modelId `Excellux`. In `sonoff.ts`, `Zbeacon TH01` is the SNZB-02 whitelabel and `zbeacon DS01` is the SNZB-04 whitelabel. They now carry 12 t614u exemptions: restored pins go from 178 to 166, and Zbeacon TS020x is pinned only on temphumidsensor_zcl_th01.
+- `lumi.sensor_ht.agl02` and `lumi.weather` are the Aqara WSDCGQ12LM/WSDCGQ11LM temperature/humidity sensors (`lumi.ts`, LUMI only). They are removed as pids from doorwindowsensor_4, where they only formed phantom couples. They stay on the climate drivers. The 2 `zbeacon|lumi.*@doorwindowsensor_4` combos leave the parasitic baseline in the same commit (1825 → 1823).
+- Kept: zbeacon × DS01 and CAT0001/DSS0010 × Excellux. DSS0010 (a button) may move to a button driver in a later batch. Already-paired devices keep their driver, and nothing is written at pairing.
+
 ## Pending
 
 - ~480 collateral duals need driver splits (next batches).

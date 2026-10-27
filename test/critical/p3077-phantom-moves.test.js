@@ -135,4 +135,18 @@ describe('P3077 phantom moves', () => {
       for (const m of ['_TZE204_4mh6tyyo', '_TZE284_4mh6tyyo']) {assert.ok(!lists(zig(d), m), `${m} on ${d}`);}
     }
   });
+  it('batch 11: Zbeacon TS020x is pinned only on temphumidsensor_zcl_th01, never re-pinned on doorwindowsensor_4', () => {
+    const { resolveBaselinePins } = require(path.join(ROOT, 'scripts/maintenance/compact-zigbee-identifiers.cjs'));
+    const fx = require(path.join(ROOT, 'test/fixtures/athom-last-test-package-couples.json'));
+    const app = JSON.parse(fs.readFileSync(path.join(ROOT, 'app.json'), 'utf8'));
+    const r = resolveBaselinePins(app, fx);
+    const bad = r.pins.filter((x) => x.driverId === 'doorwindowsensor_4' && /^TS020[123]$/.test(x.pid));
+    assert.deepStrictEqual(bad, []);
+    const zb = r.pins.filter((x) => /^zbeacon$/i.test(x.mfr) && /^TS020[123]$/.test(x.pid));
+    assert.ok(zb.length >= 6 && zb.every((x) => x.driverId === 'temphumidsensor_zcl_th01'));
+    assert.strictEqual(fx.exemptions.filter((e) => e.driverId === 'doorwindowsensor_4' && /P3077 batch 11/.test(e.reason) && e.approvedBy === 't614u').length, 12);
+    const z = zig('doorwindowsensor_4');
+    assert.ok(z.productId.includes('DS01') && z.productId.includes('Excellux') && lists(z, 'zbeacon') && lists(z, 'CAT0001'));
+    assert.ok(!z.productId.some((p) => /^lumi\./.test(p)));
+  });
 });
