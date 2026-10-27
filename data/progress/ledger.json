@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-27T00:09:44.953Z",
+ "updated": "2026-10-27T04:24:39.563Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -6505,6 +6505,15 @@
    "kind": "general",
    "mailDate": "2026-10-19T15:25:19.000Z"
   },
+  "diag:10ec11bd78fbad9e": {
+   "status": "done",
+   "date": "2026-10-27",
+   "hash": "9f13abaaf7a24cb3",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-27T01:15:44.000Z"
+  },
   "diag:112c5b1132e4b29c": {
    "status": "done",
    "date": "2026-10-24",
@@ -6622,6 +6631,15 @@
    "by": "gmail-diagnostics",
    "kind": "github",
    "mailDate": "2026-10-25T19:20:05.000Z"
+  },
+  "diag:1868bfc0bd66df67": {
+   "status": "done",
+   "date": "2026-10-27",
+   "hash": "4bd03518d4dd791e",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-27T01:05:07.000Z"
   },
   "diag:187db64c99ca202c": {
    "status": "done",
@@ -7014,6 +7032,15 @@
    "kind": "general",
    "mailDate": "2026-10-21T13:08:28.000Z"
   },
+  "diag:29f84cf22d92385d": {
+   "status": "done",
+   "date": "2026-10-27",
+   "hash": "88d2fc35d2a1a136",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-27T01:13:11.000Z"
+  },
   "diag:2a06a56c90b93d9b": {
    "status": "done",
    "date": "2026-10-25",
@@ -7363,6 +7390,24 @@
    "kind": "general",
    "mailDate": "2026-10-19T15:03:48.000Z"
   },
+  "diag:39c0894811d22b63": {
+   "status": "done",
+   "date": "2026-10-27",
+   "hash": "bc2e15d1010d162e",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-27T02:40:28.000Z"
+  },
+  "diag:3a10770de916eb64": {
+   "status": "done",
+   "date": "2026-10-27",
+   "hash": "075ba37ccc8713ba",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-26T23:57:48.000Z"
+  },
   "diag:3a11485a57494b5c": {
    "status": "done",
    "date": "2026-10-24",
@@ -7516,6 +7561,15 @@
    "kind": "general",
    "mailDate": "2026-10-21T09:11:53.000Z"
   },
+  "diag:3f65b9e583246d1c": {
+   "status": "done",
+   "date": "2026-10-27",
+   "hash": "4ac12de4f005b6c8",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-26T23:55:05.000Z"
+  },
   "diag:3f96bb24c34ff648": {
    "status": "done",
    "date": "2026-10-21",
@@ -7581,6 +7635,15 @@
    "kind": "general",
    "mailDate": "2026-10-18T22:37:48.000Z"
   },
+  "diag:44ef6b3c1ecb822b": {
+   "status": "done",
+   "date": "2026-10-27",
+   "hash": "8f653ef6ff8b1e41",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-27T00:19:05.000Z"
+  },
   "diag:479e8effb21b3646": {
    "status": "done",
    "date": "2026-10-26",
@@ -7644,6 +7707,15 @@
    "kind": "github",
    "mailDate": "2026-10-21T12:12:35.000Z"
   },
+  "diag:49e71d7ff833b010": {
+   "status": "done",
+   "date": "2026-10-27",
+   "hash": "88b37f2999269cdc",
+   "note": "github mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "github",
+   "mailDate": "2026-10-26T23:49:47.000Z"
+  },
   "diag:4a8e4c87e1638706": {
    "status": "done",
    "date": "2026-10-24",
@@ -7652,6 +7724,15 @@
    "by": "tuya-deep-diag",
    "kind": "general",
    "mailDate": "2026-10-18T23:46:59.000Z"
+  },
+  "diag:4c3e40f30250a3a9": {
+   "status": "done",
+   "date": "2026-10-27",
+   "hash": "bd7d52660b176494",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-27T01:13:25.000Z"
   },
   "diag:4c5307db8c2d8768": {
    "status": "done",
@@ -7852,6 +7933,15 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-10-20T14:06:28.000Z"
+  },
+  "diag:55c803da97a91845": {
+   "status": "done",
+   "date": "2026-10-27",
+   "hash": "f6ca5d0349bb7a5f",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-27T01:04:53.000Z"
   },
   "diag:55d0301e653c1b29": {
    "status": "done",
@@ -9574,6 +9664,15 @@
    "kind": "general",
    "mailDate": "2026-10-19T15:04:09.000Z"
   },
+  "diag:ad3414810f96035b": {
+   "status": "done",
+   "date": "2026-10-27",
+   "hash": "98e8e6f4d41be083",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-27T02:42:55.000Z"
+  },
   "diag:ad7ee97e884e610f": {
    "status": "done",
    "date": "2026-10-25",
@@ -9721,6 +9820,15 @@
    "kind": "general",
    "mailDate": "2026-10-21T08:21:13.000Z"
   },
+  "diag:b2f5af1431f15077": {
+   "status": "done",
+   "date": "2026-10-27",
+   "hash": "a7453af60f683a77",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-27T00:16:54.000Z"
+  },
   "diag:b3644e22354bdddd": {
    "status": "done",
    "date": "2026-10-25",
@@ -9864,6 +9972,16 @@
    "by": "tuya-deep-diag",
    "kind": "general",
    "mailDate": "2026-10-19T05:45:09.000Z"
+  },
+  "diag:b92f04c96a0185a5": {
+   "status": "pending",
+   "date": "2026-10-27",
+   "hash": "90801c3d59754dda",
+   "note": "bug_report mail; 1 error line(s)",
+   "by": "gmail-diagnostics",
+   "kind": "bug_report",
+   "mailDate": "2026-10-27T00:19:20.000Z",
+   "errors": 1
   },
   "diag:b937806847a5a091": {
    "status": "done",
@@ -10709,6 +10827,24 @@
    "mailDate": "2026-10-20T07:19:10.000Z",
    "errors": 1
   },
+  "diag:e613c268260b01cd": {
+   "status": "done",
+   "date": "2026-10-27",
+   "hash": "b529291adc775c87",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-27T00:16:48.000Z"
+  },
+  "diag:e61f84b4c2fef341": {
+   "status": "done",
+   "date": "2026-10-27",
+   "hash": "11c0587e34349c1e",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-27T00:16:39.000Z"
+  },
   "diag:e639bb06f91f3601": {
    "status": "done",
    "date": "2026-10-21",
@@ -10934,6 +11070,15 @@
    "kind": "general",
    "mailDate": "2026-10-19T09:48:44.000Z"
   },
+  "diag:f1fbd435ef1161c8": {
+   "status": "done",
+   "date": "2026-10-27",
+   "hash": "d1ac30ccb52e73be",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-26T23:54:51.000Z"
+  },
   "diag:f22dea5fc891d04c": {
    "status": "pending",
    "date": "2026-10-25",
@@ -11136,6 +11281,15 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-10-20T13:29:41.000Z"
+  },
+  "diag:fae827bb99b2a0a2": {
+   "status": "done",
+   "date": "2026-10-27",
+   "hash": "2f40d4884f30e453",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-27T02:40:14.000Z"
   },
   "diag:fb00bf65721180c7": {
    "status": "done",
@@ -15778,6 +15932,26 @@
     "TS0601"
    ]
   },
+  "forum-post:140352/2266": {
+   "status": "done",
+   "date": "2026-10-27",
+   "note": "P3076: own reply, nothing to act on",
+   "by": "p3076",
+   "topic": 140352,
+   "post": 2266,
+   "author": "dlnraja",
+   "link": "https://community.homey.app/t/140352/2266"
+  },
+  "forum-post:140352/2267": {
+   "status": "done",
+   "date": "2026-10-27",
+   "note": "P3076: own reply, nothing to act on",
+   "by": "p3076",
+   "topic": 140352,
+   "post": 2267,
+   "author": "dlnraja",
+   "link": "https://community.homey.app/t/140352/2267"
+  },
   "forum-post:140352/2268": {
    "status": "done",
    "date": "2026-10-25",
@@ -15794,6 +15968,16 @@
    "pids": [
     "TS0601"
    ]
+  },
+  "forum-post:140352/2269": {
+   "status": "done",
+   "date": "2026-10-27",
+   "note": "P3076: own reply, nothing to act on",
+   "by": "p3076",
+   "topic": 140352,
+   "post": 2269,
+   "author": "dlnraja",
+   "link": "https://community.homey.app/t/140352/2269"
   },
   "forum-post:146667/1": {
    "status": "pending",
@@ -41787,6 +41971,38 @@
    ],
    "note": "W4 smoke_sensor3 (pids there: ts0205…)"
   },
+  "mail-crash:2026-10-17-memwarn-enoent": {
+   "status": "done",
+   "date": "2026-10-27",
+   "note": "9.0.1506 ENOENT uv_resident_set_memory in MemwarnGuard -> guarded by e064938349 (18/10) on all 3 apps",
+   "by": "p3076",
+   "kind": "crash",
+   "mailDate": "2026-10-17"
+  },
+  "mail-suggestion:2026-10-16-wilhelm-ncw88jfq": {
+   "status": "done",
+   "date": "2026-10-27",
+   "note": "Wilhelm Dall: _TZ3210_ncw88jfq/TS0201 LCD T/H empty -> master 9ec32ba2d2 (P2825); P3076 runtime port stable 5284da9b49, bastien 1c56fc5841",
+   "by": "p3076",
+   "kind": "suggestion",
+   "mailDate": "2026-10-16"
+  },
+  "mail-suggestion:2026-10-17-wilhelm-bjawzodf": {
+   "status": "done",
+   "date": "2026-10-27",
+   "note": "Wilhelm Dall: _TZ3000_bjawzodf/TY0201 seen as switch -> couple only on lcdtemphumidsensor (sensor) in all 3 apps since c0ad732363; his paired device reads ZCL T/H on sensor_climate_temphumidsensor",
+   "by": "p3076",
+   "kind": "suggestion",
+   "mailDate": "2026-10-17"
+  },
+  "mail-suggestion:2026-10-22-umberto-beca-bac006azb": {
+   "status": "done",
+   "date": "2026-10-27",
+   "note": "Umberto Maffii: Beca BAC-006AZB not a thermostat -> _TZE204_dzuqwsyg/_TZE200_dzuqwsyg on wall_thermostat BAC-002 profile, master 442bc457cf (P2970), stable 05303ed438 (P2973), bastien ported",
+   "by": "p3076",
+   "kind": "suggestion",
+   "mailDate": "2026-10-22"
+  },
   "p2868-zg101zd-knob": {
    "status": "done",
    "date": "2026-10-19",
@@ -41844,6 +42060,12 @@
    "date": "2026-10-25",
    "note": "lot B pushed: smoke_4 x4 + ntcy3xu1 -> smoke_sensor_ts0601_dp, mwd3c2at -> slim_motion_sensor, PIRIV01 -> motion_sensor_excellux_zg104plv; 34 P3024b exemptions (owner yes t522s3008); CoupleGuard + mfr multi-driver CI audit (t524u)",
    "by": "p3039"
+  },
+  "p3077-phantom-moves": {
+   "status": "in-progress",
+   "date": "2026-10-27",
+   "by": "p3077",
+   "note": "batch 1: 18 wrong-class mfrs dropped from 6 drivers (kept on their real-class driver with the real pid); 7 moves dropped because data/native-matrix-reviewed-duals.json records an earlier owner keep decision (yi0n4xfd, 46vasa5h, v8gtiaed, nsa76jai, kmsbwdol, xwh1e22x, xpq2rzhq); resolveBaselinePins honours exemptions for moved couples (62 P3055 9ni6xxld exemptions, +336 combos removed); capped publish prep 15500/15500 OK, P3024b 14227/14227; decisions config/architecture/p3077-phantom-decisions.json; batch 2: 6 more wrong-class mfrs dropped (c8ozah8n+mmtwjmaq off pir_sensor_2, wamqdr3f off plug_energy_monitor, 42ha4rsc off curtain_motor_shutter, HOBEIAN off sensor_contact_zigbee, dpo1ysak off plug with 12 t614u exemptions) ; _TZ3000_42ha4rsc kept (anti-purge mfs_db); HOBEIAN zigbeeModel couples, ixd9mvv4, pzui3skt (owner review), 9ni6xxld, heiman kept; batch 3: mfr ids _TZ3000_kyb656no/_TZ3000_eit6l5 dropped as productIds from water_leak_sensor(+_tuya), 146 unshipped phantom couples; batch 4: 6 TS130F curtain switches (5iixzdo7, bs93npae, 74hsp7qy, 8h7wgocw, vw8pawxa, xbpt8ewc) dropped from curtain_motor_shutter (no TS130F there), kept on curtain_motor, 72 t614u exemptions; batch 5: heobian typo forms (41 entries, 18 drivers) dropped from compose, read-time alias kept, 10 t614u exemptions; batch 6: pzui3skt off smart_knob_rotary and KNOB_MFR (TS0041 button, 18 t614u exemptions), HOBEIAN ZG-101ZD moved to smart_knob_zg101zd, HEIMAN kept on universal_zigbee"
   },
   "root-cause:P2865-trv-announce": {
    "status": "done",
@@ -42537,74 +42759,6 @@
     "leadsAdded": 0
    },
    "lastChangeRun": "40330916849"
-  },
-  "forum-post:140352/2266": {
-   "status": "done",
-   "date": "2026-10-27",
-   "note": "P3076: own reply, nothing to act on",
-   "by": "p3076",
-   "topic": 140352,
-   "post": 2266,
-   "author": "dlnraja",
-   "link": "https://community.homey.app/t/140352/2266"
-  },
-  "forum-post:140352/2267": {
-   "status": "done",
-   "date": "2026-10-27",
-   "note": "P3076: own reply, nothing to act on",
-   "by": "p3076",
-   "topic": 140352,
-   "post": 2267,
-   "author": "dlnraja",
-   "link": "https://community.homey.app/t/140352/2267"
-  },
-  "forum-post:140352/2269": {
-   "status": "done",
-   "date": "2026-10-27",
-   "note": "P3076: own reply, nothing to act on",
-   "by": "p3076",
-   "topic": 140352,
-   "post": 2269,
-   "author": "dlnraja",
-   "link": "https://community.homey.app/t/140352/2269"
-  },
-  "mail-suggestion:2026-10-22-umberto-beca-bac006azb": {
-   "status": "done",
-   "date": "2026-10-27",
-   "note": "Umberto Maffii: Beca BAC-006AZB not a thermostat -> _TZE204_dzuqwsyg/_TZE200_dzuqwsyg on wall_thermostat BAC-002 profile, master 442bc457cf (P2970), stable 05303ed438 (P2973), bastien ported",
-   "by": "p3076",
-   "kind": "suggestion",
-   "mailDate": "2026-10-22"
-  },
-  "mail-suggestion:2026-10-17-wilhelm-bjawzodf": {
-   "status": "done",
-   "date": "2026-10-27",
-   "note": "Wilhelm Dall: _TZ3000_bjawzodf/TY0201 seen as switch -> couple only on lcdtemphumidsensor (sensor) in all 3 apps since c0ad732363; his paired device reads ZCL T/H on sensor_climate_temphumidsensor",
-   "by": "p3076",
-   "kind": "suggestion",
-   "mailDate": "2026-10-17"
-  },
-  "mail-suggestion:2026-10-16-wilhelm-ncw88jfq": {
-   "status": "done",
-   "date": "2026-10-27",
-   "note": "Wilhelm Dall: _TZ3210_ncw88jfq/TS0201 LCD T/H empty -> master 9ec32ba2d2 (P2825); P3076 runtime port stable 5284da9b49, bastien 1c56fc5841",
-   "by": "p3076",
-   "kind": "suggestion",
-   "mailDate": "2026-10-16"
-  },
-  "mail-crash:2026-10-17-memwarn-enoent": {
-   "status": "done",
-   "date": "2026-10-27",
-   "note": "9.0.1506 ENOENT uv_resident_set_memory in MemwarnGuard -> guarded by e064938349 (18/10) on all 3 apps",
-   "by": "p3076",
-   "kind": "crash",
-   "mailDate": "2026-10-17"
-  },
-  "p3077-phantom-moves": {
-   "status": "in-progress",
-   "date": "2026-10-27",
-   "by": "p3077",
-   "note": "batch 1: 18 wrong-class mfrs dropped from 6 drivers (kept on their real-class driver with the real pid); 7 moves dropped because data/native-matrix-reviewed-duals.json records an earlier owner keep decision (yi0n4xfd, 46vasa5h, v8gtiaed, nsa76jai, kmsbwdol, xwh1e22x, xpq2rzhq); resolveBaselinePins honours exemptions for moved couples (62 P3055 9ni6xxld exemptions, +336 combos removed); capped publish prep 15500/15500 OK, P3024b 14227/14227; decisions config/architecture/p3077-phantom-decisions.json; batch 2: 6 more wrong-class mfrs dropped (c8ozah8n+mmtwjmaq off pir_sensor_2, wamqdr3f off plug_energy_monitor, 42ha4rsc off curtain_motor_shutter, HOBEIAN off sensor_contact_zigbee, dpo1ysak off plug with 12 t614u exemptions) ; _TZ3000_42ha4rsc kept (anti-purge mfs_db); HOBEIAN zigbeeModel couples, ixd9mvv4, pzui3skt (owner review), 9ni6xxld, heiman kept; batch 3: mfr ids _TZ3000_kyb656no/_TZ3000_eit6l5 dropped as productIds from water_leak_sensor(+_tuya), 146 unshipped phantom couples; batch 4: 6 TS130F curtain switches (5iixzdo7, bs93npae, 74hsp7qy, 8h7wgocw, vw8pawxa, xbpt8ewc) dropped from curtain_motor_shutter (no TS130F there), kept on curtain_motor, 72 t614u exemptions; batch 5: heobian typo forms (41 entries, 18 drivers) dropped from compose, read-time alias kept, 10 t614u exemptions; batch 6: pzui3skt off smart_knob_rotary and KNOB_MFR (TS0041 button, 18 t614u exemptions), HOBEIAN ZG-101ZD moved to smart_knob_zg101zd, HEIMAN kept on universal_zigbee"
   }
  }
 }
