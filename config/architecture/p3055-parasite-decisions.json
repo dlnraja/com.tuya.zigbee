@@ -1,5 +1,5 @@
 {
- "_why": "P3055 (owner yes t555u, 25/10/2026): per-couple decision for the 650 P3036d baseline combos (mfr x pid cartesian artefacts) plus the _TZE284_hodyryli dual. remove = dropped from the driver lists, never re-attached (baseline exemption); keep = attested couple or collateral of an attested/unverified entry. Human table: docs/knowledge/P3055_PARASITE_DECISIONS.md. Checked by test/critical/p3055-parasite-decisions.test.js. P3067 later gave _TZE284_6ycgarab+TS0205 a single owner (smoke_sensor; Z2M/ZHA list it as TS0601 smoke+CO, see docs/knowledge/P3064_FAMILY_UPLIFT.md), so its rows now name smoke_sensor only.",
+ "_why": "P3055 (owner yes t555u, 25/10/2026): per-couple decision for the 650 P3036d baseline combos (mfr x pid cartesian artefacts) plus the _TZE284_hodyryli dual. remove = dropped from the driver lists, never re-attached (baseline exemption); keep = attested couple or collateral of an attested/unverified entry. Human table: docs/knowledge/P3055_PARASITE_DECISIONS.md. Checked by test/critical/p3055-parasite-decisions.test.js. P3067 later gave _TZE284_6ycgarab+TS0205 a single owner (smoke_sensor; Z2M/ZHA list it as TS0601 smoke+CO, see docs/knowledge/P3064_FAMILY_UPLIFT.md), so its rows now name smoke_sensor only. P3080 (27/10/2026): Zbeacon TS0201/TS0202 stay attested but their owner is now temphumidsensor_zcl_th01 (Z2M tuya.ts iHseno ZC-W1 temp+humidity fingerprint, ZY-ZTH02 white label), not the contact driver.",
  "removed": [
   [
    "_TZB210_rkgngb5o",
@@ -1392,17 +1392,17 @@
   [
    "ZBEACON",
    "TS0201",
-   "doorwindowsensor_4",
+   "temphumidsensor_zcl_th01",
    [
-    "doorwindowsensor_4"
+    "temphumidsensor_zcl_th01"
    ]
   ],
   [
    "ZBEACON",
    "TS0202",
-   "doorwindowsensor_4",
+   "temphumidsensor_zcl_th01",
    [
-    "doorwindowsensor_4"
+    "temphumidsensor_zcl_th01"
    ]
   ],
   [
@@ -1416,17 +1416,17 @@
   [
    "zbeacon",
    "TS0201",
-   "doorwindowsensor_4",
+   "temphumidsensor_zcl_th01",
    [
-    "doorwindowsensor_4"
+    "temphumidsensor_zcl_th01"
    ]
   ],
   [
    "zbeacon",
    "TS0202",
-   "doorwindowsensor_4",
+   "temphumidsensor_zcl_th01",
    [
-    "doorwindowsensor_4"
+    "temphumidsensor_zcl_th01"
    ]
   ],
   [
