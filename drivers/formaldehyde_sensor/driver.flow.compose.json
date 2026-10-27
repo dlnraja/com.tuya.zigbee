@@ -4,7 +4,9 @@
       "id": "formaldehyde_sensor_formaldehyde_changed",
       "title": {
         "en": "Formaldehyde level changed",
-        "fr": "Niveau formaldéhyde changé"
+        "fr": "Niveau formaldéhyde changé",
+        "de": "Formaldehydwert geändert",
+        "nl": "Formaldehydeniveau gewijzigd"
       },
       "tokens": [
         {
@@ -27,7 +29,9 @@
       "id": "formaldehyde_sensor_voc_changed",
       "title": {
         "en": "VOC level changed",
-        "fr": "Niveau COV changé"
+        "fr": "Niveau COV changé",
+        "de": "VOC-Wert geändert",
+        "nl": "VOS-niveau gewijzigd"
       },
       "tokens": [
         {
@@ -50,7 +54,9 @@
       "id": "formaldehyde_sensor_air_quality_alert",
       "title": {
         "en": "Air quality alert",
-        "fr": "Alerte qualité air"
+        "fr": "Alerte qualité air",
+        "de": "Luftqualitätsalarm",
+        "nl": "Luchtkwaliteitsalarm"
       },
       "args": [],
       "titleFormatted": {
@@ -162,7 +168,9 @@
       "id": "formaldehyde_sensor_formaldehyde_above",
       "title": {
         "en": "Formaldehyde is above",
-        "fr": "Formaldéhyde supérieur à"
+        "fr": "Formaldéhyde supérieur à",
+        "de": "Formaldehyd ist über",
+        "nl": "Formaldehyde is hoger dan"
       },
       "args": [
         {
@@ -190,7 +198,9 @@
       "id": "formaldehyde_sensor_air_quality_good",
       "title": {
         "en": "Air quality is !{{good|poor}}",
-        "fr": "Qualité air !{{bonne|mauvaise}}"
+        "fr": "Qualité air !{{bonne|mauvaise}}",
+        "de": "Luftqualität ist !{{gut|schlecht}}",
+        "nl": "Luchtkwaliteit is !{{goed|slecht}}"
       },
       "args": [],
       "titleFormatted": {

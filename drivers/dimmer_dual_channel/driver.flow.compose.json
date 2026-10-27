@@ -4,7 +4,9 @@
       "id": "dimmer_dual_channel_dim_changed",
       "title": {
         "en": "Dim level changed",
-        "fr": "Niveau dim changé"
+        "fr": "Niveau dim changé",
+        "de": "Dimmstufe geändert",
+        "nl": "Dimniveau gewijzigd"
       },
       "tokens": [
         {
@@ -81,7 +83,9 @@
       "id": "dimmer_dual_channel_is_on",
       "title": {
         "en": "Dimmer is !{{on|off}}",
-        "fr": "Variateur est !{{allumé|éteint}}"
+        "fr": "Variateur est !{{allumé|éteint}}",
+        "de": "Dimmer ist !{{an|aus}}",
+        "nl": "Dimmer is !{{aan|uit}}"
       },
       "args": [],
       "titleFormatted": {
@@ -93,7 +97,9 @@
       "id": "dimmer_dual_channel_dim_above",
       "title": {
         "en": "Dim level is above",
-        "fr": "Niveau dim supérieur à"
+        "fr": "Niveau dim supérieur à",
+        "de": "Dimmstufe ist über",
+        "nl": "Dimniveau is hoger dan"
       },
       "args": [
         {
@@ -203,7 +209,9 @@
       "id": "dimmer_dual_channel_dim_up",
       "title": {
         "en": "Dim up",
-        "fr": "Augmenter luminosité"
+        "fr": "Augmenter luminosité",
+        "de": "Heller dimmen",
+        "nl": "Feller dimmen"
       },
       "args": [],
       "titleFormatted": {
@@ -215,7 +223,9 @@
       "id": "dimmer_dual_channel_dim_down",
       "title": {
         "en": "Dim down",
-        "fr": "Diminuer luminosité"
+        "fr": "Diminuer luminosité",
+        "de": "Dunkler dimmen",
+        "nl": "Zwakker dimmen"
       },
       "args": [],
       "titleFormatted": {

@@ -82,7 +82,9 @@
       "id": "set_heating_mode",
       "title": {
         "en": "Set heating mode to [[mode]]",
-        "fr": "Régler mode chauffage sur [[mode]]"
+        "fr": "Régler mode chauffage sur [[mode]]",
+        "de": "Heizmodus auf [[mode]] setzen",
+        "nl": "Verwarmingsmodus instellen op [[mode]]"
       },
       "args": [
         {
@@ -141,7 +143,9 @@
       "id": "send_pilot_signal",
       "title": {
         "en": "Send pilot wire signal [[signal]]",
-        "fr": "Envoyer signal fil pilote [[signal]]"
+        "fr": "Envoyer signal fil pilote [[signal]]",
+        "de": "Fil-Pilote-Signal [[signal]] senden",
+        "nl": "Fil-pilote-signaal [[signal]] verzenden"
       },
       "args": [
         {
@@ -272,7 +276,9 @@
       "id": "radiator_mode_changed",
       "title": {
         "en": "Heating mode changed",
-        "fr": "Mode chauffage changé"
+        "fr": "Mode chauffage changé",
+        "de": "Heizmodus geändert",
+        "nl": "Verwarmingsmodus gewijzigd"
       },
       "tokens": [
         {
@@ -293,7 +299,9 @@
       "id": "pilot_signal_sent",
       "title": {
         "en": "Pilot wire signal sent",
-        "fr": "Signal fil pilote envoyé"
+        "fr": "Signal fil pilote envoyé",
+        "de": "Fil-Pilote-Signal gesendet",
+        "nl": "Fil-pilote-signaal verzonden"
       },
       "tokens": [
         {
@@ -358,14 +366,18 @@
       "id": "radiator_is_heating",
       "title": {
         "en": "Radiator !{{is|isn't}} heating",
-        "fr": "Radiateur !{{chauffe|ne chauffe pas}}"
+        "fr": "Radiateur !{{chauffe|ne chauffe pas}}",
+        "de": "Heizkörper !{{heizt|heizt nicht}}",
+        "nl": "Radiator !{{verwarmt|verwarmt niet}}"
       }
     },
     {
       "id": "heating_mode_is",
       "title": {
         "en": "Heating mode !{{is|isn't}} [[mode]]",
-        "fr": "Mode chauffage !{{est|n'est pas}} [[mode]]"
+        "fr": "Mode chauffage !{{est|n'est pas}} [[mode]]",
+        "de": "Heizmodus !{{ist|ist nicht}} [[mode]]",
+        "nl": "Verwarmingsmodus !{{is|is niet}} [[mode]]"
       },
       "args": [
         {

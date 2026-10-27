@@ -4,7 +4,9 @@
       "id": "gateway_zigbee_bridge_device_joined",
       "title": {
         "en": "Device joined network",
-        "fr": "Appareil rejoint le réseau"
+        "fr": "Appareil rejoint le réseau",
+        "de": "Gerät ist dem Netzwerk beigetreten",
+        "nl": "Apparaat is aan het netwerk toegevoegd"
       },
       "args": [],
       "titleFormatted": {
@@ -16,7 +18,9 @@
       "id": "gateway_zigbee_bridge_device_left",
       "title": {
         "en": "Device left network",
-        "fr": "Appareil quitté le réseau"
+        "fr": "Appareil quitté le réseau",
+        "de": "Gerät hat das Netzwerk verlassen",
+        "nl": "Apparaat heeft het netwerk verlaten"
       },
       "args": [],
       "titleFormatted": {
@@ -28,7 +32,9 @@
       "id": "gateway_zigbee_bridge_connection_lost",
       "title": {
         "en": "Connection lost",
-        "fr": "Connexion perdue"
+        "fr": "Connexion perdue",
+        "de": "Verbindung verloren",
+        "nl": "Verbinding verbroken"
       },
       "args": [],
       "titleFormatted": {
@@ -40,7 +46,9 @@
       "id": "gateway_zigbee_bridge_connection_restored",
       "title": {
         "en": "Connection restored",
-        "fr": "Connexion rétablie"
+        "fr": "Connexion rétablie",
+        "de": "Verbindung wiederhergestellt",
+        "nl": "Verbinding hersteld"
       },
       "args": [],
       "titleFormatted": {
@@ -102,7 +110,9 @@
       "id": "gateway_zigbee_bridge_is_connected",
       "title": {
         "en": "Gateway is !{{connected|disconnected}}",
-        "fr": "Passerelle !{{connectée|déconnectée}}"
+        "fr": "Passerelle !{{connectée|déconnectée}}",
+        "de": "Gateway ist !{{verbunden|getrennt}}",
+        "nl": "Gateway is !{{verbonden|niet verbonden}}"
       },
       "args": [],
       "titleFormatted": {
@@ -132,7 +142,9 @@
       "id": "gateway_zigbee_bridge_permit_join",
       "title": {
         "en": "Permit joining",
-        "fr": "Autoriser l'appairage"
+        "fr": "Autoriser l'appairage",
+        "de": "Kopplung erlauben",
+        "nl": "Koppelen toestaan"
       },
       "args": [],
       "titleFormatted": {
@@ -144,7 +156,9 @@
       "id": "gateway_zigbee_bridge_disable_join",
       "title": {
         "en": "Disable joining",
-        "fr": "Désactiver l'appairage"
+        "fr": "Désactiver l'appairage",
+        "de": "Kopplung deaktivieren",
+        "nl": "Koppelen uitschakelen"
       },
       "args": [],
       "titleFormatted": {

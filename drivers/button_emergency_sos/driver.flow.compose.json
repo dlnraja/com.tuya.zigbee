@@ -24,7 +24,9 @@
       "id": "button_emergency_sos_double_pressed",
       "title": {
         "en": "SOS Button double-pressed",
-        "fr": "Bouton SOS double-appui"
+        "fr": "Bouton SOS double-appui",
+        "de": "SOS-Taste doppelt gedrückt",
+        "nl": "SOS-knop dubbel ingedrukt"
       },
       "args": [],
       "titleFormatted": {
@@ -36,7 +38,9 @@
       "id": "button_emergency_sos_long_pressed",
       "title": {
         "en": "SOS Button long-pressed",
-        "fr": "Bouton SOS appui long"
+        "fr": "Bouton SOS appui long",
+        "de": "SOS-Taste lang gedrückt",
+        "nl": "SOS-knop lang ingedrukt"
       },
       "args": [],
       "titleFormatted": {

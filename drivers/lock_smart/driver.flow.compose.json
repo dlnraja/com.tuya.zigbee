@@ -114,7 +114,9 @@
       "id": "lock_smart_lock",
       "title": {
         "en": "Lock",
-        "fr": "Verrouiller"
+        "fr": "Verrouiller",
+        "de": "Verriegeln",
+        "nl": "Vergrendelen"
       },
       "args": [],
       "titleFormatted": {
@@ -126,7 +128,9 @@
       "id": "lock_smart_unlock",
       "title": {
         "en": "Unlock",
-        "fr": "Déverrouiller"
+        "fr": "Déverrouiller",
+        "de": "Entriegeln",
+        "nl": "Ontgrendelen"
       },
       "args": [],
       "titleFormatted": {

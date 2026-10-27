@@ -87,7 +87,9 @@
       "id": "hvac_controller_fan_speed_changed",
       "title": {
         "en": "Fan speed changed",
-        "fr": "Vitesse de ventilateur changée"
+        "fr": "Vitesse de ventilateur changée",
+        "de": "Lüftergeschwindigkeit geändert",
+        "nl": "Ventilatorsnelheid gewijzigd"
       },
       "tokens": [
         {

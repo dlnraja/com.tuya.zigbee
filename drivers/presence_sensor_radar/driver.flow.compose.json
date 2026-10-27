@@ -157,7 +157,9 @@
       "id": "presence_sensor_radar_movement_classificatio_ee75a",
       "title": {
         "en": "Movement classification changed",
-        "fr": "Classification du mouvement modifiée"
+        "fr": "Classification du mouvement modifiée",
+        "de": "Bewegungsklassifizierung geändert",
+        "nl": "Bewegingsclassificatie gewijzigd"
       },
       "hint": {
         "en": "When the type of detected movement changes (none/stationary/micro/small/large)",
@@ -305,7 +307,9 @@
       "id": "presence_sensor_radar_zone_active",
       "title": {
         "en": "Zone !{{1|2|3}} presence !{{is|is not}} detected",
-        "fr": "Présence zone !{{1|2|3}} !{{détectée|non détectée}}"
+        "fr": "Présence zone !{{1|2|3}} !{{détectée|non détectée}}",
+        "de": "Präsenz in Zone !{{1|2|3}} !{{erkannt|nicht erkannt}}",
+        "nl": "Aanwezigheid in zone !{{1|2|3}} !{{gedetecteerd|niet gedetecteerd}}"
       },
       "hint": {
         "en": "Check if a specific detection zone has active presence",
@@ -353,7 +357,9 @@
       "id": "presence_sensor_radar_movement_is",
       "title": {
         "en": "Movement type !{{is|is not}}",
-        "fr": "Le type de mouvement !{{est|n'est pas}}"
+        "fr": "Le type de mouvement !{{est|n'est pas}}",
+        "de": "Bewegungsart !{{ist|ist nicht}}",
+        "nl": "Bewegingstype !{{is|is niet}}"
       },
       "hint": {
         "en": "Check the current movement classification (none, stationary, micro_motion, small_motion, large_motion)",

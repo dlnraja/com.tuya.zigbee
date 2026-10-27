@@ -4,7 +4,9 @@
       "id": "remote_dimmer_button_on",
       "title": {
         "en": "ON button pressed",
-        "fr": "Bouton ON appuyé"
+        "fr": "Bouton ON appuyé",
+        "de": "EIN-Taste gedrückt",
+        "nl": "AAN-knop ingedrukt"
       },
       "args": [],
       "titleFormatted": {
@@ -16,7 +18,9 @@
       "id": "remote_dimmer_button_off",
       "title": {
         "en": "OFF button pressed",
-        "fr": "Bouton OFF appuyé"
+        "fr": "Bouton OFF appuyé",
+        "de": "AUS-Taste gedrückt",
+        "nl": "UIT-knop ingedrukt"
       },
       "args": [],
       "titleFormatted": {
@@ -28,7 +32,9 @@
       "id": "remote_dimmer_button_toggle",
       "title": {
         "en": "Toggle button pressed",
-        "fr": "Bouton Toggle appuyé"
+        "fr": "Bouton Toggle appuyé",
+        "de": "Umschalttaste gedrückt",
+        "nl": "Wisselknop ingedrukt"
       },
       "args": [],
       "titleFormatted": {
@@ -40,7 +46,9 @@
       "id": "remote_dimmer_brightness_up",
       "title": {
         "en": "Brightness up pressed",
-        "fr": "Luminosité + appuyé"
+        "fr": "Luminosité + appuyé",
+        "de": "Taste „Heller“ gedrückt",
+        "nl": "Knop 'feller' ingedrukt"
       },
       "tokens": [
         {
@@ -62,7 +70,9 @@
       "id": "remote_dimmer_brightness_down",
       "title": {
         "en": "Brightness down pressed",
-        "fr": "Luminosité - appuyé"
+        "fr": "Luminosité - appuyé",
+        "de": "Taste „Dunkler“ gedrückt",
+        "nl": "Knop 'zwakker' ingedrukt"
       },
       "tokens": [
         {
@@ -84,7 +94,9 @@
       "id": "remote_dimmer_brightness_stop",
       "title": {
         "en": "Brightness adjustment stopped",
-        "fr": "Ajustement luminosité arrêté"
+        "fr": "Ajustement luminosité arrêté",
+        "de": "Helligkeitsänderung gestoppt",
+        "nl": "Helderheidsaanpassing gestopt"
       },
       "args": [],
       "titleFormatted": {
@@ -96,7 +108,9 @@
       "id": "remote_dimmer_brightness_set",
       "title": {
         "en": "Brightness level set",
-        "fr": "Niveau de luminosité défini"
+        "fr": "Niveau de luminosité défini",
+        "de": "Helligkeitsstufe eingestellt",
+        "nl": "Helderheidsniveau ingesteld"
       },
       "tokens": [
         {
@@ -118,7 +132,9 @@
       "id": "remote_dimmer_scene",
       "title": {
         "en": "Scene button pressed",
-        "fr": "Bouton scène appuyé"
+        "fr": "Bouton scène appuyé",
+        "de": "Szenentaste gedrückt",
+        "nl": "Scèneknop ingedrukt"
       },
       "tokens": [
         {

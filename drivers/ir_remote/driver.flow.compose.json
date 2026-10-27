@@ -4,7 +4,9 @@
       "id": "ir_remote_send_command",
       "title": {
         "en": "Send named IR command",
-        "fr": "Envoyer commande IR nommée"
+        "fr": "Envoyer commande IR nommée",
+        "de": "Benannten IR-Befehl senden",
+        "nl": "IR-commando op naam verzenden"
       },
       "args": [
         {
@@ -25,7 +27,9 @@
       "id": "ir_remote_send_custom",
       "title": {
         "en": "Send library key",
-        "fr": "Envoyer touche bibliothèque"
+        "fr": "Envoyer touche bibliothèque",
+        "de": "Bibliothekstaste senden",
+        "nl": "Bibliotheektoets verzenden"
       },
       "args": [
         {
@@ -129,7 +133,9 @@
       "id": "ir_remote_send_raw",
       "title": {
         "en": "Send pasted IR code",
-        "fr": "Envoyer code IR collé"
+        "fr": "Envoyer code IR collé",
+        "de": "Eingefügten IR-Code senden",
+        "nl": "Geplakte IR-code verzenden"
       },
       "args": [
         {
@@ -202,7 +208,9 @@
       "id": "ir_remote_start_learn",
       "title": {
         "en": "Start IR learn on bound sender",
-        "fr": "Apprendre via l'émetteur lié"
+        "fr": "Apprendre via l'émetteur lié",
+        "de": "IR-Anlernen über verknüpften Sender starten",
+        "nl": "IR-aanleren via gekoppelde zender starten"
       },
       "args": [
         {

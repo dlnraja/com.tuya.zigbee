@@ -4,7 +4,9 @@
       "id": "hybrid_heater_thermostat_turned_on",
       "title": {
         "en": "Heater turned on",
-        "fr": "Chauffage allumé"
+        "fr": "Chauffage allumé",
+        "de": "Heizung eingeschaltet",
+        "nl": "Verwarming ingeschakeld"
       },
       "args": [],
       "titleFormatted": {
@@ -16,7 +18,9 @@
       "id": "hybrid_heater_thermostat_turned_off",
       "title": {
         "en": "Heater turned off",
-        "fr": "Chauffage éteint"
+        "fr": "Chauffage éteint",
+        "de": "Heizung ausgeschaltet",
+        "nl": "Verwarming uitgeschakeld"
       },
       "args": [],
       "titleFormatted": {
@@ -53,7 +57,9 @@
       "id": "hybrid_heater_thermostat_mode_changed",
       "title": {
         "en": "Heater mode changed",
-        "fr": "Mode chauffage changé"
+        "fr": "Mode chauffage changé",
+        "de": "Heizmodus geändert",
+        "nl": "Verwarmingsmodus gewijzigd"
       },
       "tokens": [
         {
@@ -203,7 +209,9 @@
       "id": "hybrid_heater_thermostat_is_on",
       "title": {
         "en": "Heater is on",
-        "fr": "Chauffage est allumé"
+        "fr": "Chauffage est allumé",
+        "de": "Heizung ist an",
+        "nl": "Verwarming is aan"
       },
       "args": [],
       "titleFormatted": {
@@ -215,7 +223,9 @@
       "id": "hybrid_heater_thermostat_mode_is",
       "title": {
         "en": "Heater mode is",
-        "fr": "Mode chauffage est"
+        "fr": "Mode chauffage est",
+        "de": "Heizmodus ist",
+        "nl": "Verwarmingsmodus is"
       },
       "args": [
         {
@@ -332,7 +342,9 @@
       "id": "hybrid_heater_thermostat_turn_on",
       "title": {
         "en": "Turn on heater",
-        "fr": "Allumer chauffage"
+        "fr": "Allumer chauffage",
+        "de": "Heizung einschalten",
+        "nl": "Verwarming inschakelen"
       },
       "args": [],
       "titleFormatted": {
@@ -344,7 +356,9 @@
       "id": "hybrid_heater_thermostat_turn_off",
       "title": {
         "en": "Turn off heater",
-        "fr": "Éteindre chauffage"
+        "fr": "Éteindre chauffage",
+        "de": "Heizung ausschalten",
+        "nl": "Verwarming uitschakelen"
       },
       "args": [],
       "titleFormatted": {

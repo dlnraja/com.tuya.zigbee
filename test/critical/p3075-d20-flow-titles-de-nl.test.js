@@ -20,6 +20,16 @@ describe('P3075 D20 de/nl driver flow titles', () => {
     assert.strictEqual(single.nl, 'Enkele druk – knop');
   });
 
+  it('batch 2 uses device-aware wording (lock, fan, radiator) in compose', () => {
+    const get = (d, id) => (cards(d).find((c) => c.id === id) || {}).title || {};
+    assert.strictEqual(get('lock_smart', 'lock_smart_lock').de, 'Verriegeln');
+    assert.strictEqual(get('lock_smart', 'lock_smart_unlock').nl, 'Ontgrendelen');
+    assert.strictEqual(get('hybrid_fan_sensor', 'hybrid_fan_sensor_turned_on').nl, 'Ventilator ingeschakeld');
+    const mode = get('radiator_controller', 'heating_mode_is');
+    assert.strictEqual(mode.de, 'Heizmodus !{{ist|ist nicht}} [[mode]]');
+    assert.strictEqual(mode.nl, 'Verwarmingsmodus !{{is|is niet}} [[mode]]');
+  });
+
   it('every German title has its Dutch twin and no broken characters', () => {
     const bad = [];
     for (const d of fs.readdirSync(path.join(ROOT, 'drivers'))) {

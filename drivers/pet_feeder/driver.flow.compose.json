@@ -4,7 +4,9 @@
       "id": "pet_feeder_fed",
       "title": {
         "en": "Pet was fed",
-        "fr": "L'animal a été nourri"
+        "fr": "L'animal a été nourri",
+        "de": "Tier wurde gefüttert",
+        "nl": "Huisdier is gevoerd"
       },
       "args": [],
       "titleFormatted": {
@@ -16,7 +18,9 @@
       "id": "pet_feeder_food_low",
       "title": {
         "en": "Food level is low",
-        "fr": "Le niveau de nourriture est bas"
+        "fr": "Le niveau de nourriture est bas",
+        "de": "Futterstand ist niedrig",
+        "nl": "Voerniveau is laag"
       },
       "args": [],
       "titleFormatted": {
@@ -30,7 +34,9 @@
       "id": "pet_feeder_food_ok",
       "title": {
         "en": "Food level is OK",
-        "fr": "Le niveau de nourriture est correct"
+        "fr": "Le niveau de nourriture est correct",
+        "de": "Futterstand ist in Ordnung",
+        "nl": "Voerniveau is in orde"
       },
       "args": [],
       "titleFormatted": {
@@ -44,7 +50,9 @@
       "id": "pet_feeder_feed_now",
       "title": {
         "en": "Feed now",
-        "fr": "Nourrir maintenant"
+        "fr": "Nourrir maintenant",
+        "de": "Jetzt füttern",
+        "nl": "Nu voeren"
       },
       "args": [],
       "titleFormatted": {
