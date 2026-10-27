@@ -133,6 +133,11 @@ package (button_wireless_1, heobian/Heobian × 5 pids) carry t614u exemptions; t
 - `gjnozsaz` (asked as a possible smoke detector) is the NEO NAS-WR01B plug in Z2M (TS011F): it stays on smartplug; its button_wireless_plug listing is reviewed in a later batch.
 - Devices already paired keep their driver; nothing is written at pairing.
 
+## Batch 10 (27/10/2026, owner t614u): 4mh6tyyo prefix copies, amp6tsvy pinned
+
+- zigbee-herdsman-converters `tuya.ts` (Koen Kanters and contributors) lists only `_TZE200_4mh6tyyo` in its TS0601 dimmer fingerprint, and ZHA, deCONZ and Hubitat add nothing else. The `_TZE204_` and `_TZE284_` forms (8 case variants each on dimmer_1_gang_tuya and dimmer_wall_1gang) had no source and are dropped. `_TZE200_4mh6tyyo` stays on dimmer_1_gang_tuya, its mfs_db owner. Not in the Athom baseline, so no exemptions are needed.
+- `amp6tsvy`: only `_TZE200_amp6tsvy` is sourced (zigpy ZHA quirks `tuya/ts0601_switch.py`). The prefix forms are kept and pinned, because the gang-pattern and dual-couple tooling depends on them. They will be revisited with the switch driver splits.
+
 ## Pending
 
 - ~480 collateral duals need driver splits (next batches).

@@ -352,6 +352,14 @@
  ],
  "keptOnPurpose": [
   {
+   "mfr": "_TZE204_amp6tsvy",
+   "drivers": [
+    "switch_1gang",
+    "switch_2gang"
+   ],
+   "why": "P3077 batch 10, pinned in doubt: only _TZE200_amp6tsvy is sourced (zigpy ZHA quirks tuya/ts0601_switch.py), but the _TZE204/_TZE284 forms are wired into the gang-pattern and dual-couple tooling (P3062 test, switch_1gang floor 1370). Revisit with the driver splits"
+  },
+  {
    "mfr": "_TZE284_xpq2rzhq",
    "drivers": [
     "climate_sensor",
@@ -541,6 +549,26 @@
    "why": "prefix copies with no source (Z2M, ZHA, deCONZ, Johan, Blakadder, Hubitat list only _TZE200_vrcfo4i0)",
    "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
    "author": "zigbee-herdsman-converters contributors"
+  },
+  {
+   "mfr": "_TZE204_4mh6tyyo",
+   "batch": 10,
+   "from": "dimmer_1_gang_tuya, dimmer_wall_1gang",
+   "composeEntries": 8,
+   "baselineCouples": 0,
+   "why": "prefix copies with no source: Z2M tuya.ts (TS0601 dimmer list) and the other sources only know _TZE200_4mh6tyyo, which stays on dimmer_1_gang_tuya (its mfs_db owner). Not in the Athom baseline",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
+   "author": "Koen Kanters and contributors (zigbee-herdsman-converters)"
+  },
+  {
+   "mfr": "_TZE284_4mh6tyyo",
+   "batch": 10,
+   "from": "dimmer_1_gang_tuya, dimmer_wall_1gang",
+   "composeEntries": 8,
+   "baselineCouples": 0,
+   "why": "prefix copies with no source: Z2M tuya.ts (TS0601 dimmer list) and the other sources only know _TZE200_4mh6tyyo, which stays on dimmer_1_gang_tuya (its mfs_db owner). Not in the Athom baseline",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
+   "author": "Koen Kanters and contributors (zigbee-herdsman-converters)"
   }
  ]
 }

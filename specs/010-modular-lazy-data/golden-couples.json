@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-27T03:53:34.542Z",
+ "generated": "2026-10-27T04:58:46.659Z",
  "drivers": 417,
  "snapshot": {
   "air_conditioner_aetz01": {
@@ -645,9 +645,9 @@
    "pidSha": "81d1a1b0bd0b36c1"
   },
   "dimmer_1_gang_tuya": {
-   "mfr": 15,
+   "mfr": 13,
    "pid": 12,
-   "mfrSha": "524fac1448e853a1",
+   "mfrSha": "4d423f711c090a5f",
    "pidSha": "4ec845a853bc6530"
   },
   "dimmer_2_gang": {
@@ -699,9 +699,9 @@
    "pidSha": "c24425335e22bfa5"
   },
   "dimmer_wall_1gang": {
-   "mfr": 21,
+   "mfr": 19,
    "pid": 20,
-   "mfrSha": "198deab30d2b11d4",
+   "mfrSha": "29dafdda2b684583",
    "pidSha": "fafa2cc8c54068d7"
   },
   "dimmer_wall_plug": {
