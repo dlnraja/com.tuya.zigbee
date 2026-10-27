@@ -200,6 +200,20 @@ These three manufacturers are in `data/native-matrix-reviewed-duals.json`, where
 - Batch 19 stays as it is. The CI routine (f3ac571337) updated `data/native-matrix-reviewed-duals.json`, so water_leak_sensor_tuya is no longer listed for the TS0207 trio. From now on, every move also updates the reviewed-duals list in the same commit, and the full mocha suite runs before each push.
 - No decision is possible yet for `_TZE284_a8sdabtg` (only `_TZE200_a8sdabtg` = ZG-227Z is attested), `_TZ3000_iystcadi` (only the `_TZ3210_` Lidl TS0505B is attested), or eWeLink and LUMI on TS0601. These stay pinned or kept until a source says which side owns them.
 
+## Flow batch 1 (orphan WiFi triggers)
+
+- `scripts/diag/flow-trigger-reach.js` listed 7 declared WiFi trigger cards that no code ever fired:
+  `wifi_switch_2gang_g1/g2_on/off`, `wifi_power_strip_socket1_on/off` and `wifi_dehumidifier_water_full`.
+- They are now auto-wired through the P2803 map (`config/flow/dead-flow-autowire.json`), which fires from `TuyaLocalDevice` on a capability change:
+  - gang/socket 1 → `onoff` (DP1);
+  - gang 2 → `onoff.gang2` (DP2);
+  - tank full → `alarm_water` (DP11 in the driver).
+- The new rules are limited to these exact ids. The Zigbee `switch` driver has look-alike cards that `FlowCardHeuristics` already reaches, so they are left alone to avoid double firing.
+- No card was removed and no user flow breaks. The manifest is unchanged, because the map is not in app.json. Orphans went from 111 to 105.
+- Left alone on purpose:
+  - cards that need a missing capability, a threshold or a timer: battery low on mains bulbs, temperature/humidity too high/low, "left open for", tilt/drop;
+  - the robot-vacuum cards.
+
 ## Pending
 
 - ~480 collateral duals need driver splits (next batches).
