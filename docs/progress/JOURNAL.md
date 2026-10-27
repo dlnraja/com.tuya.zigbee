@@ -4,6 +4,8 @@ Human-readable log. Machine state: `data/progress/ledger.json` (read it before w
 
 ## 2026-10-27
 
+- 05:35 (Paris) — **P3080 batch D (localtuya idea 3/4): `manual_dps`.** WiFi LAN, opt-in key `manual_dps` ("18,19,20", setting else store): 5 s after each connection the client asks for those DP ids explicitly (`TuyaLocalClient.requestDps`, max 32, 3 s timeout, never throws, one pending timer, cleared on teardown). No key = previous behaviour; no manifest change. Test `test/critical/p3080-localtuya-manual-dps.test.js`.
+
 - 05:20 (Paris) — **P3080 batch C (localtuya idea 2/4): `restore_on_reconnect`.** WiFi LAN, opt-in key (setting, else store; on/true/1/yes): on a reconnect (never the first connect) the DP values cached at disconnect are re-sent once, 2 s later — capability-mapped, writable, plain values only, max 16, one setDPs, 60 s cooldown, timer cleared on teardown. No key = previous behaviour; no manifest change. Test `test/critical/p3080-localtuya-restore-on-reconnect.test.js`.
 
 - 04:55 (Paris) — **P3080 batch B (localtuya idea 1/4): `reset_dpids`.** WiFi LAN: when the status refresh fails, the client re-asks only the DP ids listed in the device key `reset_dpids` (setting, else store), at most 32 ids, one re-query per 60 s, 3 s timeout. No key = previous behaviour; no manifest change. Module `lib/tuya-local/LocalTuyaOptions.js`; test `test/critical/p3080-localtuya-reset-dpids.test.js`; CREDITS rospogrigio/xZetsubou (ideas only). MINI-ZBRBS driver parked locally until upload headroom is freed.
