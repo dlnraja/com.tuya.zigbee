@@ -430,6 +430,17 @@
    "why": "amp6tsvy is the Moes ZTS-EU 1-gang wall switch in both Z2M (moes.ts) and ZHA (ts0601_switch.py TuyaSingleSwitchTO); no source anywhere calls any amp6tsvy prefix a 2-gang. The _TZE204/_TZE284 forms stay on switch_1gang (one couple, one driver; repo profile ts0601_switch_1gang already listed _TZE204_amp6tsvy with gangCount 1); hint in DeviceFingerprintDB moved from switch_2gang to switch_1gang. No fixture pin touches switch_2gang, so no exemption is needed",
    "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/moes.ts ; https://github.com/zigpy/zha-device-handlers/blob/dev/zhaquirks/tuya/ts0601_switch.py",
    "author": "Koen Kanters and contributors; zigpy/zha-device-handlers contributors"
+  },
+  {
+   "mfr": "_TZ3210_claeh5ds",
+   "from": "bulb_dimmable",
+   "keptOn": "light_bulb_dimmable_tunable",
+   "realPid": "TS0502A",
+   "batch": 17,
+   "hardware": "LUUMR 10024773 Smart LED C35 matt E14 4.2 W, a tunable-white bulb (whitelabel of the Tuya TS0502B light controller, colour temperature 153-500 mireds)",
+   "why": "one couple, one driver: a tunable-white bulb belongs on light_bulb_dimmable_tunable, which already carried all 4 case forms with TS0502A and owns the runtime hint; bulb_dimmable (dim only) dropped the 4 forms. The 18 Athom-fixture couples on bulb_dimmable paired it with other brands modelIds (01MINIZB, BASICZBR3, GL-B-001Z...), pure cartesian, exempted",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
+   "author": "Koen Kanters and contributors (zigbee-herdsman-converters)"
   }
  ],
  "keptOnPurpose": [
@@ -766,6 +777,14 @@
    "why": "orphan Athom-baseline cartesian couples that resolveBaselinePins would re-pin on button_wireless_plug after the NEO plug left it; TS011F/TS0121 stay pinned on smartplug",
    "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
    "author": "Koen Kanters and contributors (zigbee-herdsman-converters)"
+  },
+  {
+   "batch": 17,
+   "count": 18,
+   "driver": "bulb_dimmable",
+   "mfr": "_TZ3210_claeh5ds",
+   "approvedBy": "t614u",
+   "date": "2026-10-27"
   }
  ]
 }

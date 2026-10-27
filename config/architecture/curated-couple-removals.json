@@ -1222,6 +1222,17 @@
       ],
       "why": "P3077 b16: amp6tsvy is 1-gang (Moes ZTS-EU), forms kept on switch_1gang",
       "source": "https://github.com/zigpy/zha-device-handlers/blob/dev/zhaquirks/tuya/ts0601_switch.py"
+    },
+    {
+      "driver": "bulb_dimmable",
+      "mfr": [
+        "_TZ3210_claeh5ds",
+        "_tz3210_claeh5ds",
+        "_TZ3210_CLAEH5DS",
+        "_tz3210_CLAEH5DS"
+      ],
+      "why": "P3077 b17: LUUMR C35 tunable-white bulb, kept on light_bulb_dimmable_tunable (TS0502A)",
+      "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts"
     }
   ]
 }

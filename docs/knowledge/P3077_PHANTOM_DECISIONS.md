@@ -173,6 +173,12 @@ package (button_wireless_1, heobian/Heobian × 5 pids) carry t614u exemptions; t
 - Both sources describe `_TZE200_amp6tsvy` + `TS0601` as a 1-gang switch: zigbee-herdsman-converters `moes.ts` lists it as the Moes ZTS-EU 1-gang, and ZHA `ts0601_switch.py` puts it in `TuyaSingleSwitchTO`. The `_TZE204` and `_TZE284` forms have no source of their own. They were listed on switch_1gang and on switch_2gang at the same time, and the `_TZE204` hint pointed at 2-gang without any reference.
 - Decision (one couple, one driver): these forms stay on switch_1gang, the driver of their family. That driver already had the repo profile `ts0601_switch_1gang` with gangCount 1, and switch_1gang stays at 1378 forms against a floor of 1370. They are removed from switch_2gang (6 forms, 215 to 209) and the hint now points at switch_1gang. No fixture pin was on switch_2gang, so no exemption is needed.
 
+## Batch 17 (27/10/2026, owner t614u): claeh5ds is a tunable-white bulb
+
+- In zigbee-herdsman-converters `tuya.ts`, `_TZ3210_claeh5ds` is a whitelabel of the TS0502B light controller: the LUUMR 10024773 Smart LED C35 matt E14 4.2 W, with colour temperature 153 to 500 mireds. That makes it a tunable-white bulb.
+- light_bulb_dimmable_tunable already had all 4 case forms with `TS0502A` and owned the runtime hint, so it keeps them. bulb_dimmable is dim-only, so it drops the 4 forms (152 to 148).
+- The 18 couples in the Athom fixture on bulb_dimmable paired this id with other brands' modelIds (01MINIZB, BASICZBR3, CK-BL702, E11/E12-N13/N14, FE-GU10-5W, GL-B-001Z). They are pure cartesian combos and are exempted with approval t614u.
+
 ## Pending
 
 - ~480 collateral duals need driver splits (next batches).
