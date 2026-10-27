@@ -18,7 +18,7 @@ let warnings = 0;
 const HOBEIAN_DEVICE_MAP = {
   'ZG-101ZL': 'button_wireless_1',
   'ZG-101ZS': 'scene_switch_4',
-  'ZG-101ZD': 'button_wireless_1',
+  'ZG-101ZD': 'smart_knob_zg101zd', // P3077 batch 6: knob (Z2M hobeian.ts)
   'ZG-102Z': 'contact_sensor',
   'ZG-102ZL': 'contact_sensor',
   'ZG-102ZM': 'vibration_sensor',

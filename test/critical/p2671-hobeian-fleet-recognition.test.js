@@ -26,7 +26,7 @@ const EXPECT = {
   presence_sensor_radar: ['ZG-204Z', 'ZG-210Z', 'AY-204ZX'],
   water_leak_sensor: ['ZG-222Z', 'AY222Z'],
   ir_blaster: ['ZG-IR01'],
-  button_wireless_1: ['ZG-101ZL', 'ZG-101ZD'],
+  button_wireless_1: ['ZG-101ZL'],
 };
 
 const FP_LOCKS = [

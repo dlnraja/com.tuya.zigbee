@@ -12,7 +12,7 @@ const DeviceFingerprintDB = require(path.join(ROOT, 'lib/DeviceFingerprintDB'));
 const HOBEIAN_FLEET = [
   { pid: 'ZG-101ZL', expectedDriver: 'button_wireless_1' },
   { pid: 'ZG-101ZS', expectedDriver: 'scene_switch_4' },
-  { pid: 'ZG-101ZD', expectedDriver: 'button_wireless_1' },
+  { pid: 'ZG-101ZD', expectedDriver: 'smart_knob_zg101zd' },
   { pid: 'ZG-102Z', expectedDriver: 'contact_sensor' },
   { pid: 'ZG-102ZL', expectedDriver: 'contact_sensor' },
   { pid: 'ZG-102ZM', expectedDriver: 'vibration_sensor' },
