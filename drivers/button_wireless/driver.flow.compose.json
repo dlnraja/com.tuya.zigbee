@@ -29,7 +29,9 @@
       "id": "button_wireless_button_double_press",
       "title": {
         "en": "Button double pressed",
-        "fr": "Double appui bouton"
+        "fr": "Double appui bouton",
+        "de": "Taste doppelt gedrückt",
+        "nl": "Knop dubbel ingedrukt"
       },
       "tokens": [
         {
@@ -52,7 +54,9 @@
       "id": "button_wireless_button_long_press",
       "title": {
         "en": "Button long pressed",
-        "fr": "Appui long bouton"
+        "fr": "Appui long bouton",
+        "de": "Taste lang gedrückt",
+        "nl": "Knop lang ingedrukt"
       },
       "tokens": [
         {

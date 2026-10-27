@@ -82,7 +82,9 @@
       "id": "lock_smart_is_locked",
       "title": {
         "en": "Is !{{locked|unlocked}}",
-        "fr": "Est !{{verrouillé|déverrouillé}}"
+        "fr": "Est !{{verrouillé|déverrouillé}}",
+        "de": "Ist !{{verriegelt|entriegelt}}",
+        "nl": "Is !{{vergrendeld|ontgrendeld}}"
       },
       "args": [],
       "titleFormatted": {

@@ -4,7 +4,9 @@
       "id": "air_purifier_quality_air_quality_co2_level_changed",
       "title": {
         "en": "CO2 level changed",
-        "fr": "Niveau CO2 changé"
+        "fr": "Niveau CO2 changé",
+        "de": "CO2-Wert geändert",
+        "nl": "CO2-waarde gewijzigd"
       },
       "tokens": [
         {
@@ -27,7 +29,9 @@
       "id": "air_purifier_quality_air_quality_co2_alert_on",
       "title": {
         "en": "CO2 alert triggered",
-        "fr": "Alerte CO2 déclenchée"
+        "fr": "Alerte CO2 déclenchée",
+        "de": "CO2-Alarm ausgelöst",
+        "nl": "CO2-alarm afgegaan"
       },
       "args": [],
       "titleFormatted": {
@@ -39,7 +43,9 @@
       "id": "air_purifier_quality_air_quality_co2_alert_off",
       "title": {
         "en": "CO2 returned to normal",
-        "fr": "CO2 revenu à la normale"
+        "fr": "CO2 revenu à la normale",
+        "de": "CO2 wieder normal",
+        "nl": "CO2 weer normaal"
       },
       "args": [],
       "titleFormatted": {
@@ -101,7 +107,9 @@
       "id": "air_purifier_quality_air_quality_co2_pm25_changed",
       "title": {
         "en": "PM2.5 level changed",
-        "fr": "Niveau PM2.5 changé"
+        "fr": "Niveau PM2.5 changé",
+        "de": "PM2.5-Wert geändert",
+        "nl": "PM2.5-waarde gewijzigd"
       },
       "tokens": [
         {
@@ -199,7 +207,9 @@
       "id": "air_purifier_quality_air_quality_co2_above",
       "title": {
         "en": "CO2 level is above",
-        "fr": "Niveau CO2 supérieur à"
+        "fr": "Niveau CO2 supérieur à",
+        "de": "CO2-Wert ist über",
+        "nl": "CO2-waarde is boven"
       },
       "args": [
         {
@@ -226,7 +236,9 @@
       "id": "air_purifier_quality_air_quality_co2_below",
       "title": {
         "en": "CO2 level is below",
-        "fr": "Niveau CO2 inférieur à"
+        "fr": "Niveau CO2 inférieur à",
+        "de": "CO2-Wert ist unter",
+        "nl": "CO2-waarde is onder"
       },
       "args": [
         {
@@ -253,7 +265,9 @@
       "id": "air_purifier_quality_air_quality_co2_air_qua_06f97",
       "title": {
         "en": "Air quality is good",
-        "fr": "Qualité air bonne"
+        "fr": "Qualité air bonne",
+        "de": "Luftqualität ist gut",
+        "nl": "Luchtkwaliteit is goed"
       },
       "args": [],
       "titleFormatted": {

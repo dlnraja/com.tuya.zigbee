@@ -118,7 +118,9 @@
       "id": "air_purifier_din_rail_switch_physical_single",
       "title": {
         "en": "Single press - physical",
-        "fr": "Appui simple - physique"
+        "fr": "Appui simple - physique",
+        "de": "Einfacher Druck – Taste",
+        "nl": "Enkele druk – knop"
       },
       "args": [],
       "titleFormatted": {
@@ -130,7 +132,9 @@
       "id": "air_purifier_din_rail_switch_physical_double",
       "title": {
         "en": "Double press - physical",
-        "fr": "Double appui - physique"
+        "fr": "Double appui - physique",
+        "de": "Doppelter Druck – Taste",
+        "nl": "Dubbele druk – knop"
       },
       "args": [],
       "titleFormatted": {
@@ -142,7 +146,9 @@
       "id": "air_purifier_din_rail_switch_physical_long_press",
       "title": {
         "en": "Long press - physical",
-        "fr": "Appui long - physique"
+        "fr": "Appui long - physique",
+        "de": "Langer Druck – Taste",
+        "nl": "Lange druk – knop"
       },
       "args": [],
       "titleFormatted": {

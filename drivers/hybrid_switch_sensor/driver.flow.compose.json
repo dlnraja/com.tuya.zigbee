@@ -4,7 +4,9 @@
       "id": "hybrid_switch_sensor_turned_on",
       "title": {
         "en": "Switch turned on",
-        "fr": "Interrupteur allumé"
+        "fr": "Interrupteur allumé",
+        "de": "Schalter eingeschaltet",
+        "nl": "Schakelaar aangezet"
       },
       "args": [],
       "titleFormatted": {
@@ -16,7 +18,9 @@
       "id": "hybrid_switch_sensor_turned_off",
       "title": {
         "en": "Switch turned off",
-        "fr": "Interrupteur éteint"
+        "fr": "Interrupteur éteint",
+        "de": "Schalter ausgeschaltet",
+        "nl": "Schakelaar uitgezet"
       },
       "args": [],
       "titleFormatted": {
@@ -100,7 +104,9 @@
       "id": "hybrid_switch_sensor_is_on",
       "title": {
         "en": "Switch is on",
-        "fr": "Interrupteur est allumé"
+        "fr": "Interrupteur est allumé",
+        "de": "Schalter ist an",
+        "nl": "Schakelaar is aan"
       },
       "args": [],
       "titleFormatted": {

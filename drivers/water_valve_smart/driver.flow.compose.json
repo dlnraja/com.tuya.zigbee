@@ -19,7 +19,9 @@
       "id": "water_valve_smart_closed",
       "title": {
         "en": "Valve closed",
-        "fr": "Vanne fermée"
+        "fr": "Vanne fermée",
+        "de": "Ventil geschlossen",
+        "nl": "Klep gesloten"
       },
       "args": [],
       "titleFormatted": {
@@ -44,7 +46,9 @@
       "id": "water_valve_smart_leak_cleared",
       "title": {
         "en": "Water leak cleared",
-        "fr": "Fuite d'eau terminée"
+        "fr": "Fuite d'eau terminée",
+        "de": "Wasserleck behoben",
+        "nl": "Waterlek opgeheven"
       },
       "args": [],
       "titleFormatted": {
@@ -81,7 +85,9 @@
       "highlight": true,
       "title": {
         "en": "Frost warning",
-        "fr": "Alerte gel"
+        "fr": "Alerte gel",
+        "de": "Frostwarnung",
+        "nl": "Vorstwaarschwing"
       },
       "args": [],
       "titleFormatted": {
@@ -151,7 +157,9 @@
       "id": "water_valve_smart_is_open",
       "title": {
         "en": "Valve !{{is|is not}} open",
-        "fr": "La vanne !{{est|n'est pas}} ouverte"
+        "fr": "La vanne !{{est|n'est pas}} ouverte",
+        "de": "Ventil !{{ist|ist nicht}} offen",
+        "nl": "Klep !{{is|is niet}} open"
       },
       "args": [],
       "titleFormatted": {
@@ -248,7 +256,9 @@
       "id": "water_valve_smart_toggle",
       "title": {
         "en": "Toggle valve",
-        "fr": "Basculer la vanne"
+        "fr": "Basculer la vanne",
+        "de": "Ventil umschalten",
+        "nl": "Klep omschakelen"
       },
       "args": [],
       "titleFormatted": {

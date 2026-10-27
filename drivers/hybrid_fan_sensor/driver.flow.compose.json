@@ -130,7 +130,9 @@
       "id": "hybrid_fan_sensor_is_on",
       "title": {
         "en": "Fan is on",
-        "fr": "Ventilateur est allumé"
+        "fr": "Ventilateur est allumé",
+        "de": "Lüfter ist an",
+        "nl": "Ventilator is aan"
       },
       "args": [],
       "titleFormatted": {

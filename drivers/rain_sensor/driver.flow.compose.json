@@ -4,7 +4,9 @@
       "id": "rain_sensor_rain_detected",
       "title": {
         "en": "Rain detected",
-        "fr": "Pluie détectée"
+        "fr": "Pluie détectée",
+        "de": "Regen erkannt",
+        "nl": "Regen gedetecteerd"
       },
       "args": [],
       "titleFormatted": {
@@ -16,7 +18,9 @@
       "id": "rain_sensor_rain_stopped",
       "title": {
         "en": "Rain stopped",
-        "fr": "Pluie arrêtée"
+        "fr": "Pluie arrêtée",
+        "de": "Regen aufgehört",
+        "nl": "Regen gestopt"
       },
       "args": [],
       "titleFormatted": {
