@@ -42106,8 +42106,9 @@
    "note": "curtain"
   },
   "task:next-01": {
-   "status": "pending",
-   "note": "Johan branch gaps (docs/rules/JOHAN_BRANCHES_2026-10-03.md): _TZ3000_o9f2zqln TS0207 rain, _TZ3210_iystcadi TS0505A, _TZ3000_p26flek3 TS0001 relay (on climate_sensor) — read source interviews, then exact drivers; port to stable/bastien"
+   "status": "done",
+   "date": "2026-10-27",
+   "note": "P3080 verified: _TZ3000_o9f2zqln|TS0207 rain_sensor only (Johan #473/#1288, CREDITS); _TZ3210_iystcadi|TS0505B light_bulb_rgb_led only (Z2M lidl.ts); TS0505A has no source -> not added; _TZ3000_p26flek3|TS0001 switch_1gang only (Z2M tuya.ts TS0001 relay), no longer on climate_sensor"
   },
   "task:next-02": {
    "status": "done",
@@ -42116,8 +42117,9 @@
    "date": "2026-10-24"
   },
   "task:next-03": {
-   "status": "pending",
-   "note": "leads: zbeacon|TH01 + Zbeacon|TH01 routed to doorwindowsensor_4 (contact) — needs dw4 split without dual couples; _TZE200_rxq4iti9|TS0601 on device_radiator_valve (EF00 temp/RH, DP map unknown)"
+   "status": "done",
+   "date": "2026-10-27",
+   "note": "P3080: zbeacon TH01 split already on temphumidsensor_zcl_th01; Zbeacon TS0201/TS0202/TS0203 are ZCL temp+RH (Z2M tuya.ts iHseno ZC-W1 EP1 [0,3,1,32,1026,1029] + ZY-ZTH02 white label) -> moved from doorwindowsensor_4 to temphumidsensor_zcl_th01, DS01 contact stays (Z2M sonoff.ts); _TZE200_rxq4iti9 left (DP map unknown); test p3080-zbeacon-th-pids"
   },
   "task:next-04": {
    "status": "pending",
@@ -42136,8 +42138,9 @@
    "note": "app.json shrink step 2: lazy-load large per-driver settings/data blobs"
   },
   "task:next-08": {
-   "status": "pending",
-   "note": "open: _TZE200_locansqn epoch 2000 vs 1970 — needs >=2 sources"
+   "status": "done",
+   "date": "2026-10-27",
+   "note": "P3080: _TZE200/_TZE284_locansqn answer in Z2M order [UTC][Local] epoch 1970 (Z2M nous.ts SZ-T04 tuyaBase timeStart \"1970\"; Johan lcdtemphumidsensor_3 syncTuyaTime UTC-first 1970; ZHA TH01Z quirk lists both); removed from EPOCH_2000_MFRS x3; other LCD sensors unchanged; test p3080-locansqn-epoch-1970"
   },
   "task:p3014-dimmer-la2c2uo9": {
    "status": "done",
@@ -42200,29 +42203,29 @@
    "by": "executor"
   },
   "task:pair-2uollq9d-ts011f": {
-   "status": "pending",
-   "date": "2026-10-04",
-   "note": "verify then plug driver"
+   "status": "done",
+   "date": "2026-10-27",
+   "note": "P3080 verified: _TZ3000/_TZ3210_2uollq9d|TS011F on plug_energy_monitor only (Z2M tuya.ts BSEED TS011F_plug_3 metering socket)"
   },
   "task:pair-ewelight-ts0502b": {
    "status": "pending",
-   "date": "2026-10-04",
-   "note": "verify then light"
+   "date": "2026-10-27",
+   "note": "P3080: no source found (Z2M has eWeLight only ZB-CL01/ZB-CL02 lonsonho.ts; none in zha/deconz/blakadder/johan/web) -> not added, never invented"
   },
   "task:pair-nuenzetq-ts0002": {
-   "status": "pending",
-   "date": "2026-10-04",
-   "note": "verify then switch_2gang"
+   "status": "done",
+   "date": "2026-10-27",
+   "note": "P3080 verified: _TZ3000/_TZ3210_nuenzetq|TS0002 on switch_2gang only (Z2M tuya.ts ZG-2002-RF 2-gang)"
   },
   "task:pair-zbeacon-ts0001": {
-   "status": "pending",
-   "date": "2026-10-04",
-   "note": "only if confirmed"
+   "status": "done",
+   "date": "2026-10-27",
+   "note": "P3080 verified: zbeacon|TS0001 on switch_zbeacon_ts0001 only"
   },
   "task:pair-zbeacon-ts0505b": {
-   "status": "pending",
-   "date": "2026-10-04",
-   "note": "verify then light"
+   "status": "done",
+   "date": "2026-10-27",
+   "note": "P3080 verified: Zbeacon|TS0505B on bulb_zbeacon_ts0505b only (Z2M tuya.ts GU10 white label)"
   },
   "task:pc-r1-agent-rules-gen": {
    "status": "done",

@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-27T02:36:06.378Z",
+ "generated": "2026-10-27T02:53:52.592Z",
  "drivers": 417,
  "snapshot": {
   "air_conditioner_aetz01": {
@@ -784,9 +784,9 @@
   },
   "doorwindowsensor_4": {
    "mfr": 3,
-   "pid": 7,
+   "pid": 4,
    "mfrSha": "72ba7add780a60b7",
-   "pidSha": "bd54147bd9f91900"
+   "pidSha": "982c7c2cb76b2228"
   },
   "double_power_point": {
    "mfr": 0,
@@ -2134,9 +2134,9 @@
   },
   "temphumidsensor_zcl_th01": {
    "mfr": 1,
-   "pid": 1,
+   "pid": 4,
    "mfrSha": "ec4310d667fec6b5",
-   "pidSha": "b91d5ce119725cc8"
+   "pidSha": "04fb4e3079c2320d"
   },
   "temphumidsensor_zcl_ts0601": {
    "mfr": 1,
