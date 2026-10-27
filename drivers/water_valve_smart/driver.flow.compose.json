@@ -34,7 +34,9 @@
       "highlight": true,
       "title": {
         "en": "Water leak detected!",
-        "fr": "Fuite d'eau détectée !"
+        "fr": "Fuite d'eau détectée !",
+        "de": "Wasserleck erkannt!",
+        "nl": "Waterlek gedetecteerd!"
       },
       "args": [],
       "titleFormatted": {
@@ -113,7 +115,9 @@
       "id": "water_valve_smart_water_consumed",
       "title": {
         "en": "Water consumption updated",
-        "fr": "Consommation d'eau mise à jour"
+        "fr": "Consommation d'eau mise à jour",
+        "de": "Wasserverbrauch aktualisiert",
+        "nl": "Waterverbruik bijgewerkt"
       },
       "tokens": [
         {
@@ -171,7 +175,9 @@
       "id": "water_valve_smart_leak_is_detected",
       "title": {
         "en": "Water leak !{{is|is not}} detected",
-        "fr": "Une fuite d'eau !{{est|n'est pas}} détectée"
+        "fr": "Une fuite d'eau !{{est|n'est pas}} détectée",
+        "de": "Wasserleck !{{erkannt|nicht erkannt}}",
+        "nl": "Waterlek !{{gedetecteerd|niet gedetecteerd}}"
       },
       "args": [],
       "titleFormatted": {
@@ -214,7 +220,9 @@
       "id": "water_valve_smart_water_detected",
       "title": {
         "en": "Water !{{is|is not}} detected",
-        "fr": "De l'eau !{{est|n'est pas}} détectée"
+        "fr": "De l'eau !{{est|n'est pas}} détectée",
+        "de": "Wasser !{{erkannt|nicht erkannt}}",
+        "nl": "Water !{{gedetecteerd|niet gedetecteerd}}"
       },
       "args": [],
       "titleFormatted": {
@@ -270,7 +278,9 @@
       "id": "water_valve_smart_set_valve",
       "title": {
         "en": "Set valve state",
-        "fr": "Régler l'état de la vanne"
+        "fr": "Régler l'état de la vanne",
+        "de": "Ventilzustand setzen",
+        "nl": "Klepstatus instellen"
       },
       "args": [
         {

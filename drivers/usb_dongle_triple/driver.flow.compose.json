@@ -137,7 +137,9 @@
       "id": "usb_dongle_triple_is_on",
       "title": {
         "en": "Port 1 !{{is|is not}} on",
-        "fr": "Le port 1 !{{est|n'est pas}} allumé"
+        "fr": "Le port 1 !{{est|n'est pas}} allumé",
+        "de": "Port 1 !{{ist|ist nicht}} an",
+        "nl": "Poort 1 !{{is|is niet}} aan"
       },
       "args": [],
       "titleFormatted": {
@@ -183,7 +185,9 @@
       "id": "usb_dongle_triple_all_on",
       "title": {
         "en": "Turn on all ports",
-        "fr": "Allumer tous les ports"
+        "fr": "Allumer tous les ports",
+        "de": "Alle Ports einschalten",
+        "nl": "Alle poorten inschakelen"
       },
       "args": [],
       "titleFormatted": {
@@ -195,7 +199,9 @@
       "id": "usb_dongle_triple_all_off",
       "title": {
         "en": "Turn off all ports",
-        "fr": "Éteindre tous les ports"
+        "fr": "Éteindre tous les ports",
+        "de": "Alle Ports ausschalten",
+        "nl": "Alle poorten uitschakelen"
       },
       "args": [],
       "titleFormatted": {

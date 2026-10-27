@@ -4,7 +4,9 @@
       "id": "wifi_ev_charger_turned_on",
       "title": {
         "en": "EV charger turned on",
-        "fr": "EV charger allumé(e)"
+        "fr": "EV charger allumé(e)",
+        "de": "Ladestation eingeschaltet",
+        "nl": "Laadpaal ingeschakeld"
       },
       "args": [],
       "titleFormatted": {
@@ -16,7 +18,9 @@
       "id": "wifi_ev_charger_turned_off",
       "title": {
         "en": "EV charger turned off",
-        "fr": "EV charger éteint(e)"
+        "fr": "EV charger éteint(e)",
+        "de": "Ladestation ausgeschaltet",
+        "nl": "Laadpaal uitgeschakeld"
       },
       "args": [],
       "titleFormatted": {
@@ -28,7 +32,9 @@
       "id": "wifi_ev_charger_session_finished",
       "title": {
         "en": "Charging session finished",
-        "fr": "Session de charge terminée"
+        "fr": "Session de charge terminée",
+        "de": "Ladevorgang beendet",
+        "nl": "Laadsessie beëindigd"
       },
       "hint": {
         "en": "Proven charge-history session (not guessed from phase JSON e/d) — P2642/P2647 tuyalocal.",
@@ -197,7 +203,9 @@
       "id": "wifi_ev_charger_is_on",
       "title": {
         "en": "EV charger is on",
-        "fr": "EV charger est allumé(e)"
+        "fr": "EV charger est allumé(e)",
+        "de": "Ladestation ist an",
+        "nl": "Laadpaal is aan"
       },
       "args": [],
       "titleFormatted": {

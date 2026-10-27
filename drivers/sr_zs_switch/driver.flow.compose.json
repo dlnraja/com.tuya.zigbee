@@ -5,7 +5,9 @@
       "title": {
         "en": "Switch state changed",
         "pl": "Stan przełącznika zmienił się",
-        "fr": "État de l'interrupteur modifié"
+        "fr": "État de l'interrupteur modifié",
+        "de": "Schaltzustand geändert",
+        "nl": "Schakelaarstatus gewijzigd"
       },
       "args": [
         {
@@ -161,7 +163,9 @@
       "title": {
         "en": "Set switch state",
         "pl": "Ustaw stan przełącznika",
-        "fr": "Régler l'état de l'interrupteur"
+        "fr": "Régler l'état de l'interrupteur",
+        "de": "Schaltzustand setzen",
+        "nl": "Schakelaarstatus instellen"
       },
       "args": [
         {
@@ -242,7 +246,9 @@
       "title": {
         "en": "Switch # is !{{on|off}}",
         "pl": "Przełącznik # jest !{{włączony|wyłączony}}",
-        "fr": "L'interrupteur # est !{{allumé|éteint}}"
+        "fr": "L'interrupteur # est !{{allumé|éteint}}",
+        "de": "Schalter # ist !{{an|aus}}",
+        "nl": "Schakelaar # is !{{aan|uit}}"
       },
       "args": [
         {

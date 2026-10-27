@@ -4,7 +4,9 @@
       "id": "wifi_kettle_turned_on",
       "title": {
         "en": "Kettle turned on",
-        "fr": "Kettle allumé(e)"
+        "fr": "Kettle allumé(e)",
+        "de": "Wasserkocher eingeschaltet",
+        "nl": "Waterkoker ingeschakeld"
       },
       "args": [],
       "titleFormatted": {
@@ -16,7 +18,9 @@
       "id": "wifi_kettle_turned_off",
       "title": {
         "en": "Kettle turned off",
-        "fr": "Kettle éteint(e)"
+        "fr": "Kettle éteint(e)",
+        "de": "Wasserkocher ausgeschaltet",
+        "nl": "Waterkoker uitgeschakeld"
       },
       "args": [],
       "titleFormatted": {
@@ -55,7 +59,9 @@
       "id": "wifi_kettle_is_on",
       "title": {
         "en": "Kettle is on",
-        "fr": "Kettle est allumé(e)"
+        "fr": "Kettle est allumé(e)",
+        "de": "Wasserkocher ist an",
+        "nl": "Waterkoker is aan"
       },
       "args": [],
       "titleFormatted": {

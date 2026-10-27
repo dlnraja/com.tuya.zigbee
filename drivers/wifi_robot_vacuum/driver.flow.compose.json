@@ -4,7 +4,9 @@
       "id": "wifi_robot_vacuum_cleaning_started",
       "title": {
         "en": "Cleaning started",
-        "fr": "Nettoyage démarré"
+        "fr": "Nettoyage démarré",
+        "de": "Reinigung gestartet",
+        "nl": "Schoonmaak gestart"
       },
       "hint": {
         "en": "When the vacuum starts a cleaning cycle",
@@ -20,7 +22,9 @@
       "id": "wifi_robot_vacuum_cleaning_finished",
       "title": {
         "en": "Cleaning finished",
-        "fr": "Nettoyage terminé"
+        "fr": "Nettoyage terminé",
+        "de": "Reinigung beendet",
+        "nl": "Schoonmaak voltooid"
       },
       "hint": {
         "en": "When the vacuum completes a cleaning cycle",
@@ -56,7 +60,9 @@
       "id": "wifi_robot_vacuum_fault_detected",
       "title": {
         "en": "Fault detected",
-        "fr": "Défaut détecté"
+        "fr": "Défaut détecté",
+        "de": "Störung erkannt",
+        "nl": "Storing gedetecteerd"
       },
       "hint": {
         "en": "When the vacuum reports a fault or error",
@@ -83,7 +89,9 @@
       "id": "wifi_robot_vacuum_brush_needs_replacement",
       "title": {
         "en": "Brush needs replacement",
-        "fr": "La brosse doit être remplacée"
+        "fr": "La brosse doit être remplacée",
+        "de": "Bürste muss ersetzt werden",
+        "nl": "Borstel moet worden vervangen"
       },
       "hint": {
         "en": "When main brush life drops below 10%",
@@ -99,7 +107,9 @@
       "id": "wifi_robot_vacuum_filter_needs_replacement",
       "title": {
         "en": "Filter needs replacement",
-        "fr": "Le filtre doit être remplacé"
+        "fr": "Le filtre doit être remplacé",
+        "de": "Filter muss ersetzt werden",
+        "nl": "Filter moet worden vervangen"
       },
       "hint": {
         "en": "When filter life drops below 10%",
@@ -115,7 +125,9 @@
       "id": "wifi_robot_vacuum_water_tank_empty",
       "title": {
         "en": "Water tank low",
-        "fr": "Réservoir d'eau bas"
+        "fr": "Réservoir d'eau bas",
+        "de": "Wassertank fast leer",
+        "nl": "Waterreservoir bijna leeg"
       },
       "hint": {
         "en": "When water tank level drops below 10%",
@@ -133,7 +145,9 @@
       "id": "wifi_robot_vacuum_is_cleaning",
       "title": {
         "en": "Vacuum !{{is|is not}} cleaning",
-        "fr": "L'aspirateur !{{nettoie|ne nettoie pas}}"
+        "fr": "L'aspirateur !{{nettoie|ne nettoie pas}}",
+        "de": "Sauger !{{reinigt|reinigt nicht}}",
+        "nl": "Stofzuiger !{{is aan het schoonmaken|is niet aan het schoonmaken}}"
       },
       "args": [],
       "titleFormatted": {
@@ -145,7 +159,9 @@
       "id": "wifi_robot_vacuum_is_docked",
       "title": {
         "en": "Vacuum !{{is|is not}} docked",
-        "fr": "L'aspirateur !{{est|n'est pas}} sur sa base"
+        "fr": "L'aspirateur !{{est|n'est pas}} sur sa base",
+        "de": "Sauger !{{ist|ist nicht}} in der Ladestation",
+        "nl": "Stofzuiger !{{staat|staat niet}} in het laadstation"
       },
       "args": [],
       "titleFormatted": {
@@ -157,7 +173,9 @@
       "id": "wifi_robot_vacuum_battery_above",
       "title": {
         "en": "Battery !{{is|is not}} above",
-        "fr": "La batterie !{{est|n'est pas}} au-dessus de"
+        "fr": "La batterie !{{est|n'est pas}} au-dessus de",
+        "de": "Akku !{{ist|ist nicht}} über",
+        "nl": "Accu !{{is|is niet}} hoger dan"
       },
       "args": [
         {
@@ -186,7 +204,9 @@
       "id": "wifi_robot_vacuum_start_clean",
       "title": {
         "en": "Start cleaning",
-        "fr": "Démarrer le nettoyage"
+        "fr": "Démarrer le nettoyage",
+        "de": "Reinigung starten",
+        "nl": "Schoonmaak starten"
       },
       "hint": {
         "en": "Start a standard cleaning cycle",
@@ -202,7 +222,9 @@
       "id": "wifi_robot_vacuum_stop_clean",
       "title": {
         "en": "Stop cleaning",
-        "fr": "Arrêter le nettoyage"
+        "fr": "Arrêter le nettoyage",
+        "de": "Reinigung stoppen",
+        "nl": "Schoonmaak stoppen"
       },
       "args": [],
       "titleFormatted": {
@@ -214,7 +236,9 @@
       "id": "wifi_robot_vacuum_pause_clean",
       "title": {
         "en": "Pause cleaning",
-        "fr": "Mettre le nettoyage en pause"
+        "fr": "Mettre le nettoyage en pause",
+        "de": "Reinigung pausieren",
+        "nl": "Schoonmaak pauzeren"
       },
       "args": [],
       "titleFormatted": {
@@ -226,7 +250,9 @@
       "id": "wifi_robot_vacuum_return_to_dock",
       "title": {
         "en": "Return to dock",
-        "fr": "Retourner à la base"
+        "fr": "Retourner à la base",
+        "de": "Zur Ladestation zurückkehren",
+        "nl": "Terug naar laadstation"
       },
       "hint": {
         "en": "Send the vacuum back to the charging dock",
@@ -242,7 +268,9 @@
       "id": "wifi_robot_vacuum_find_robot",
       "title": {
         "en": "Find robot",
-        "fr": "Localiser le robot"
+        "fr": "Localiser le robot",
+        "de": "Roboter suchen",
+        "nl": "Robot zoeken"
       },
       "hint": {
         "en": "Make the vacuum beep to help locate it",
@@ -258,7 +286,9 @@
       "id": "wifi_robot_vacuum_set_mode",
       "title": {
         "en": "Set vacuum mode",
-        "fr": "Régler le mode d'aspiration"
+        "fr": "Régler le mode d'aspiration",
+        "de": "Saugmodus einstellen",
+        "nl": "Zuigmodus instellen"
       },
       "args": [
         {
@@ -307,7 +337,9 @@
       "id": "wifi_robot_vacuum_set_clean_mode",
       "title": {
         "en": "Set cleaning mode",
-        "fr": "Régler le mode de nettoyage"
+        "fr": "Régler le mode de nettoyage",
+        "de": "Reinigungsmodus einstellen",
+        "nl": "Schoonmaakmodus instellen"
       },
       "args": [
         {
@@ -351,7 +383,9 @@
       "id": "wifi_robot_vacuum_set_dnd",
       "title": {
         "en": "Set Do Not Disturb",
-        "fr": "Régler Ne pas déranger"
+        "fr": "Régler Ne pas déranger",
+        "de": "„Nicht stören“ einstellen",
+        "nl": "'Niet storen' instellen"
       },
       "args": [
         {
@@ -388,7 +422,9 @@
       "id": "wifi_robot_vacuum_set_volume",
       "title": {
         "en": "Set volume",
-        "fr": "Régler le volume"
+        "fr": "Régler le volume",
+        "de": "Lautstärke einstellen",
+        "nl": "Volume instellen"
       },
       "args": [
         {

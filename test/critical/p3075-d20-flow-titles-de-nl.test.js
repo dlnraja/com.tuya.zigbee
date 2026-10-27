@@ -30,6 +30,18 @@ describe('P3075 D20 de/nl driver flow titles', () => {
     assert.strictEqual(mode.nl, 'Verwarmingsmodus !{{is|is niet}} [[mode]]');
   });
 
+  it('batch 3 covers the deferred and remaining cards, only switch_1gang left', () => {
+    const get = (d, id) => (cards(d).find((c) => c.id === id) || {}).title || {};
+    const dock = get('wifi_robot_vacuum', 'wifi_robot_vacuum_is_docked');
+    assert.strictEqual(dock.de, 'Sauger !{{ist|ist nicht}} in der Ladestation');
+    assert.strictEqual(dock.nl, 'Stofzuiger !{{staat|staat niet}} in het laadstation');
+    for (const d of ['generic_diy', 'generic_tuya', 'ir_blaster', 'wifi_kettle', 'thermostatic_radiator_valve']) {
+      for (const c of cards(d)) {
+        if (c.title && c.title.en) { assert.ok(c.title.de && c.title.nl, `${d}:${c.id}`); }
+      }
+    }
+  });
+
   it('every German title has its Dutch twin and no broken characters', () => {
     const bad = [];
     for (const d of fs.readdirSync(path.join(ROOT, 'drivers'))) {

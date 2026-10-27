@@ -786,7 +786,9 @@
       "id": "ir_blaster_send_by_brand",
       "title": {
         "en": "Send IR Code by Brand",
-        "fr": "Envoyer Code IR par Marque"
+        "fr": "Envoyer Code IR par Marque",
+        "de": "IR-Code nach Marke senden",
+        "nl": "IR-code per merk verzenden"
       },
       "hint": {
         "en": "Send pre-loaded IR code from built-in brand database (Samsung, LG, Sony, Panasonic, Daikin, 30+ brands)",
@@ -996,7 +998,9 @@
       "id": "ir_blaster_tv_power",
       "title": {
         "en": "TV Power",
-        "fr": "Alimentation TV"
+        "fr": "Alimentation TV",
+        "de": "TV Ein/Aus",
+        "nl": "Tv aan/uit"
       },
       "args": []
     },
@@ -1054,7 +1058,9 @@
       "id": "ir_blaster_tv_input",
       "title": {
         "en": "Input/Source",
-        "fr": "Source"
+        "fr": "Source",
+        "de": "Eingang/Quelle",
+        "nl": "Ingang/bron"
       },
       "args": []
     },
@@ -1072,7 +1078,9 @@
       "id": "ir_blaster_tv_ok",
       "title": {
         "en": "OK/Enter",
-        "fr": "OK/Entrer"
+        "fr": "OK/Entrer",
+        "de": "OK/Enter",
+        "nl": "OK/Enter"
       },
       "args": []
     },
@@ -1090,7 +1098,9 @@
       "id": "ir_blaster_tv_play",
       "title": {
         "en": "Play/Pause",
-        "fr": "Lecture/Pause"
+        "fr": "Lecture/Pause",
+        "de": "Wiedergabe/Pause",
+        "nl": "Afspelen/pauze"
       },
       "args": []
     },
@@ -1098,7 +1108,9 @@
       "id": "ir_blaster_send_tv_command",
       "title": {
         "en": "Send TV Command",
-        "fr": "Envoyer une commande TV"
+        "fr": "Envoyer une commande TV",
+        "de": "TV-Befehl senden",
+        "nl": "Tv-commando verzenden"
       },
       "args": [
         {

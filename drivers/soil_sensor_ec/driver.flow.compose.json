@@ -4,7 +4,9 @@
       "id": "soil_sensor_ec_conductivity_above",
       "title": {
         "en": "Conductivity EC !{{is|is not}} above",
-        "fr": "Conductivité EC !{{est|n'est pas}} au-dessus de"
+        "fr": "Conductivité EC !{{est|n'est pas}} au-dessus de",
+        "de": "Leitfähigkeit EC !{{ist|ist nicht}} über",
+        "nl": "Geleidbaarheid EC !{{is|is niet}} hoger dan"
       },
       "args": [
         {
@@ -31,7 +33,9 @@
       "id": "soil_sensor_ec_battery_above",
       "title": {
         "en": "Battery level !{{is|is not}} above",
-        "fr": "Niveau de batterie !{{est|n'est pas}} au-dessus de"
+        "fr": "Niveau de batterie !{{est|n'est pas}} au-dessus de",
+        "de": "Batteriestand !{{ist|ist nicht}} über",
+        "nl": "Batterijniveau !{{is|is niet}} hoger dan"
       },
       "args": [
         {

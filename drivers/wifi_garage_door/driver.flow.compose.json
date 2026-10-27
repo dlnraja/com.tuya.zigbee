@@ -4,7 +4,9 @@
       "id": "wifi_garage_door_wifi_garage_opened",
       "title": {
         "en": "Garage opened",
-        "fr": "Garage ouvert"
+        "fr": "Garage ouvert",
+        "de": "Garage geöffnet",
+        "nl": "Garage geopend"
       },
       "args": [],
       "titleFormatted": {
@@ -16,7 +18,9 @@
       "id": "wifi_garage_door_wifi_garage_closed",
       "title": {
         "en": "Garage closed",
-        "fr": "Garage fermé"
+        "fr": "Garage fermé",
+        "de": "Garage geschlossen",
+        "nl": "Garage gesloten"
       },
       "args": [],
       "titleFormatted": {
@@ -30,7 +34,9 @@
       "id": "wifi_garage_door_wifi_garage_is_open",
       "title": {
         "en": "Garage is open",
-        "fr": "Le garage est ouvert"
+        "fr": "Le garage est ouvert",
+        "de": "Garage ist offen",
+        "nl": "Garage is open"
       },
       "args": [],
       "titleFormatted": {

@@ -5,7 +5,9 @@
       "id": "switch_usb_dongle_port1_turned_on",
       "title": {
         "en": "USB Port 1 is turned on",
-        "fr": "Le port USB 1 est allumé"
+        "fr": "Le port USB 1 est allumé",
+        "de": "USB-Port 1 eingeschaltet",
+        "nl": "USB-poort 1 ingeschakeld"
       },
       "tokens": [],
       "args": [],
@@ -18,7 +20,9 @@
       "id": "switch_usb_dongle_port1_turned_off",
       "title": {
         "en": "USB Port 1 is turned off",
-        "fr": "Le port USB 1 est éteint"
+        "fr": "Le port USB 1 est éteint",
+        "de": "USB-Port 1 ausgeschaltet",
+        "nl": "USB-poort 1 uitgeschakeld"
       },
       "tokens": [],
       "args": [],
@@ -31,7 +35,9 @@
       "id": "switch_usb_dongle_port2_turned_on",
       "title": {
         "en": "USB Port 2 is turned on",
-        "fr": "Le port USB 2 est allumé"
+        "fr": "Le port USB 2 est allumé",
+        "de": "USB-Port 2 eingeschaltet",
+        "nl": "USB-poort 2 ingeschakeld"
       },
       "tokens": [],
       "args": [],
@@ -44,7 +50,9 @@
       "id": "switch_usb_dongle_port2_turned_off",
       "title": {
         "en": "USB Port 2 is turned off",
-        "fr": "Le port USB 2 est éteint"
+        "fr": "Le port USB 2 est éteint",
+        "de": "USB-Port 2 ausgeschaltet",
+        "nl": "USB-poort 2 uitgeschakeld"
       },
       "tokens": [],
       "args": [],
@@ -129,7 +137,9 @@
       "id": "switch_usb_dongle_port1_is_on",
       "title": {
         "en": "USB Port 1 is on",
-        "fr": "Le port USB 1 est allumé"
+        "fr": "Le port USB 1 est allumé",
+        "de": "USB-Port 1 ist an",
+        "nl": "USB-poort 1 is aan"
       },
       "args": [],
       "titleFormatted": {
@@ -141,7 +151,9 @@
       "id": "switch_usb_dongle_port2_is_on",
       "title": {
         "en": "USB Port 2 is on",
-        "fr": "Le port USB 2 est allumé"
+        "fr": "Le port USB 2 est allumé",
+        "de": "USB-Port 2 ist an",
+        "nl": "USB-poort 2 is aan"
       },
       "args": [],
       "titleFormatted": {
@@ -155,7 +167,9 @@
       "id": "switch_usb_dongle_turn_on_port1",
       "title": {
         "en": "Turn USB Port 1 on",
-        "fr": "Allumer le port USB 1"
+        "fr": "Allumer le port USB 1",
+        "de": "USB-Port 1 einschalten",
+        "nl": "USB-poort 1 inschakelen"
       },
       "args": [],
       "titleFormatted": {
@@ -167,7 +181,9 @@
       "id": "switch_usb_dongle_turn_off_port1",
       "title": {
         "en": "Turn USB Port 1 off",
-        "fr": "Éteindre le port USB 1"
+        "fr": "Éteindre le port USB 1",
+        "de": "USB-Port 1 ausschalten",
+        "nl": "USB-poort 1 uitschakelen"
       },
       "args": [],
       "titleFormatted": {
@@ -179,7 +195,9 @@
       "id": "switch_usb_dongle_toggle_port1",
       "title": {
         "en": "Toggle USB Port 1",
-        "fr": "Inverser le port USB 1"
+        "fr": "Inverser le port USB 1",
+        "de": "USB-Port 1 umschalten",
+        "nl": "USB-poort 1 omschakelen"
       },
       "args": [],
       "titleFormatted": {
@@ -191,7 +209,9 @@
       "id": "switch_usb_dongle_turn_on_port2",
       "title": {
         "en": "Turn USB Port 2 on",
-        "fr": "Allumer le port USB 2"
+        "fr": "Allumer le port USB 2",
+        "de": "USB-Port 2 einschalten",
+        "nl": "USB-poort 2 inschakelen"
       },
       "args": [],
       "titleFormatted": {
@@ -203,7 +223,9 @@
       "id": "switch_usb_dongle_turn_off_port2",
       "title": {
         "en": "Turn USB Port 2 off",
-        "fr": "Éteindre le port USB 2"
+        "fr": "Éteindre le port USB 2",
+        "de": "USB-Port 2 ausschalten",
+        "nl": "USB-poort 2 uitschakelen"
       },
       "args": [],
       "titleFormatted": {
@@ -215,7 +237,9 @@
       "id": "switch_usb_dongle_toggle_port2",
       "title": {
         "en": "Toggle USB Port 2",
-        "fr": "Inverser le port USB 2"
+        "fr": "Inverser le port USB 2",
+        "de": "USB-Port 2 umschalten",
+        "nl": "USB-poort 2 omschakelen"
       },
       "args": [],
       "titleFormatted": {

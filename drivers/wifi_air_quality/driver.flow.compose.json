@@ -4,7 +4,9 @@
       "id": "wifi_air_quality_co2_high",
       "title": {
         "en": "CO2 level is high",
-        "fr": "Le niveau de CO2 est élevé"
+        "fr": "Le niveau de CO2 est élevé",
+        "de": "CO2-Wert ist hoch",
+        "nl": "CO2-niveau is hoog"
       },
       "tokens": [
         {
@@ -25,7 +27,9 @@
       "id": "wifi_air_quality_pm25_high",
       "title": {
         "en": "PM2.5 level is high",
-        "fr": "Le niveau de PM2.5 est élevé"
+        "fr": "Le niveau de PM2.5 est élevé",
+        "de": "PM2.5-Wert ist hoch",
+        "nl": "PM2.5-niveau is hoog"
       },
       "tokens": [
         {
@@ -96,7 +100,9 @@
       "id": "wifi_air_quality_level_changed",
       "title": {
         "en": "Air quality level changed",
-        "fr": "Niveau de qualité d'air modifié"
+        "fr": "Niveau de qualité d'air modifié",
+        "de": "Luftqualitätsstufe geändert",
+        "nl": "Luchtkwaliteitsniveau gewijzigd"
       },
       "hint": {
         "en": "When the overall verdict step changes — not on every measurement (P2647 / tuyalocal).",
@@ -132,7 +138,9 @@
       "id": "wifi_air_quality_pm03_above",
       "title": {
         "en": "PM0.3 rose above …",
-        "fr": "PM0.3 a dépassé …"
+        "fr": "PM0.3 a dépassé …",
+        "de": "PM0.3 über … gestiegen",
+        "nl": "PM0.3 boven … gestegen"
       },
       "hint": {
         "en": "Threshold cross only — Homey has no native PM0.3 card (P2647 / tuyalocal).",

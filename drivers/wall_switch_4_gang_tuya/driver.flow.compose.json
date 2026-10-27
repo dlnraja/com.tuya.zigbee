@@ -518,7 +518,9 @@
       "id": "wall_switch_4_gang_tuya_set_backlight",
       "title": {
         "en": "Set backlight mode",
-        "fr": "Définir le mode rétroéclairage"
+        "fr": "Définir le mode rétroéclairage",
+        "de": "Modus der Hintergrundbeleuchtung einstellen",
+        "nl": "Modus achtergrondverlichting instellen"
       },
       "args": [
         {
@@ -631,7 +633,9 @@
       "id": "wall_switch_4_gang_tuya_set_countdown",
       "title": {
         "en": "Set gang countdown",
-        "fr": "Compte à rebours gang"
+        "fr": "Compte à rebours gang",
+        "de": "Countdown für Kanal einstellen",
+        "nl": "Afteltimer voor kanaal instellen"
       },
       "args": [
         {
@@ -696,7 +700,9 @@
       "id": "wall_switch_4_gang_tuya_set_backlight_switch",
       "title": {
         "en": "Set backlight master",
-        "fr": "Rétroéclairage maître"
+        "fr": "Rétroéclairage maître",
+        "de": "Hintergrundbeleuchtung (Hauptschalter) einstellen",
+        "nl": "Achtergrondverlichting (hoofdschakelaar) instellen"
       },
       "args": [
         {

@@ -341,7 +341,9 @@
       "id": "generic_diy_pressure_changed",
       "title": {
         "en": "Pressure changed",
-        "fr": "Pression changée"
+        "fr": "Pression changée",
+        "de": "Druck geändert",
+        "nl": "Druk gewijzigd"
       },
       "hint": {
         "en": "When the DIY pressure sensor value changes",
@@ -368,7 +370,9 @@
       "id": "generic_diy_analog_changed",
       "title": {
         "en": "Analog value changed",
-        "fr": "Valeur analogique changée"
+        "fr": "Valeur analogique changée",
+        "de": "Analogwert geändert",
+        "nl": "Analoge waarde gewijzigd"
       },
       "hint": {
         "en": "When a DIY analog input changes",
@@ -406,7 +410,9 @@
       "id": "generic_diy_is_on",
       "title": {
         "en": "DIY switch is on",
-        "fr": "Interrupteur DIY est activé"
+        "fr": "Interrupteur DIY est activé",
+        "de": "DIY-Schalter ist an",
+        "nl": "DIY-schakelaar is aan"
       },
       "hint": {
         "en": "Check if the DIY switch is on",
@@ -458,7 +464,9 @@
       "id": "generic_diy_temperature_above",
       "title": {
         "en": "Temperature is above...",
-        "fr": "Température supérieure à..."
+        "fr": "Température supérieure à...",
+        "de": "Temperatur ist über...",
+        "nl": "Temperatuur is hoger dan..."
       },
       "hint": {
         "en": "Check if temperature is above a value",
@@ -489,7 +497,9 @@
       "id": "generic_diy_humidity_above",
       "title": {
         "en": "Humidity is above...",
-        "fr": "Humidité supérieure à..."
+        "fr": "Humidité supérieure à...",
+        "de": "Luftfeuchtigkeit ist über...",
+        "nl": "Luchtvochtigheid is hoger dan..."
       },
       "hint": {
         "en": "Check if humidity is above a value",
@@ -520,7 +530,9 @@
       "id": "generic_diy_battery_below",
       "title": {
         "en": "Battery is below...",
-        "fr": "Batterie inférieure à..."
+        "fr": "Batterie inférieure à...",
+        "de": "Batterie ist unter...",
+        "nl": "Batterij is lager dan..."
       },
       "hint": {
         "en": "Check if battery is below a percentage",
@@ -553,7 +565,9 @@
       "id": "generic_diy_turn_on",
       "title": {
         "en": "Turn on DIY switch",
-        "fr": "Activer interrupteur DIY"
+        "fr": "Activer interrupteur DIY",
+        "de": "DIY-Schalter einschalten",
+        "nl": "DIY-schakelaar inschakelen"
       },
       "args": [],
       "titleFormatted": {
@@ -565,7 +579,9 @@
       "id": "generic_diy_turn_off",
       "title": {
         "en": "Turn off DIY switch",
-        "fr": "Désactiver interrupteur DIY"
+        "fr": "Désactiver interrupteur DIY",
+        "de": "DIY-Schalter ausschalten",
+        "nl": "DIY-schakelaar uitschakelen"
       },
       "args": [],
       "titleFormatted": {
@@ -577,7 +593,9 @@
       "id": "generic_diy_toggle",
       "title": {
         "en": "Toggle DIY switch",
-        "fr": "Basculer interrupteur DIY"
+        "fr": "Basculer interrupteur DIY",
+        "de": "DIY-Schalter umschalten",
+        "nl": "DIY-schakelaar omschakelen"
       },
       "args": [],
       "titleFormatted": {
@@ -589,7 +607,9 @@
       "id": "generic_diy_set_dim",
       "title": {
         "en": "Set DIY dimmer level",
-        "fr": "Définir niveau variateur DIY"
+        "fr": "Définir niveau variateur DIY",
+        "de": "DIY-Dimmstufe einstellen",
+        "nl": "DIY-dimniveau instellen"
       },
       "hint": {
         "en": "Set the brightness level",
@@ -617,7 +637,9 @@
       "id": "generic_diy_identify",
       "title": {
         "en": "Identify DIY device",
-        "fr": "Identifier dispositif DIY"
+        "fr": "Identifier dispositif DIY",
+        "de": "DIY-Gerät identifizieren",
+        "nl": "DIY-apparaat identificeren"
       },
       "hint": {
         "en": "Make the DIY device blink/beep to identify it",
@@ -633,7 +655,9 @@
       "id": "generic_diy_turn_on_endpoint",
       "title": {
         "en": "Turn on endpoint...",
-        "fr": "Activer endpoint..."
+        "fr": "Activer endpoint...",
+        "de": "Endpunkt einschalten...",
+        "nl": "Endpoint inschakelen..."
       },
       "hint": {
         "en": "Turn on a specific endpoint (for multi-switch DIY devices)",
@@ -664,7 +688,9 @@
       "id": "generic_diy_turn_off_endpoint",
       "title": {
         "en": "Turn off endpoint...",
-        "fr": "Désactiver endpoint..."
+        "fr": "Désactiver endpoint...",
+        "de": "Endpunkt ausschalten...",
+        "nl": "Endpoint uitschakelen..."
       },
       "hint": {
         "en": "Turn off a specific endpoint",

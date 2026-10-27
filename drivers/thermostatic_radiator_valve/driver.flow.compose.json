@@ -31,7 +31,9 @@
       "id": "thermostatic_radiator_valve_window_open_status_get",
       "title": {
         "en": "Window !{{is|is not}} open",
-        "fr": "La fenêtre !{{est|n'est pas}} ouverte"
+        "fr": "La fenêtre !{{est|n'est pas}} ouverte",
+        "de": "Fenster !{{ist|ist nicht}} offen",
+        "nl": "Raam !{{is|is niet}} open"
       },
       "args": [],
       "titleFormatted": {
@@ -43,7 +45,9 @@
       "id": "thermostatic_radiator_valve_boost_active",
       "title": {
         "en": "Boost mode !{{is|is not}} active",
-        "fr": "Le mode boost !{{est|n'est pas}} actif"
+        "fr": "Le mode boost !{{est|n'est pas}} actif",
+        "de": "Boost-Modus !{{ist|ist nicht}} aktiv",
+        "nl": "Boostmodus !{{is|is niet}} actief"
       },
       "hint": {
         "en": "Checks if the thermostat boost mode is currently active",
@@ -59,7 +63,9 @@
       "id": "thermostatic_radiator_valve_child_lock_active",
       "title": {
         "en": "Child lock !{{is|is not}} active",
-        "fr": "Le verrouillage enfant !{{est|n'est pas}} actif"
+        "fr": "Le verrouillage enfant !{{est|n'est pas}} actif",
+        "de": "Kindersicherung !{{ist|ist nicht}} aktiv",
+        "nl": "Kinderslot !{{is|is niet}} actief"
       },
       "hint": {
         "en": "Checks if the child lock is currently engaged",
@@ -77,7 +83,9 @@
       "id": "thermostatic_radiator_valve_window_open_status_set",
       "title": {
         "en": "Set window open status",
-        "fr": "Régler l'état fenêtre ouverte"
+        "fr": "Régler l'état fenêtre ouverte",
+        "de": "Fenster-offen-Status setzen",
+        "nl": "Status 'raam open' instellen"
       },
       "args": [
         {
@@ -98,7 +106,9 @@
       "id": "thermostatic_radiator_valve_set_boost",
       "title": {
         "en": "Set boost mode",
-        "fr": "Régler le mode boost"
+        "fr": "Régler le mode boost",
+        "de": "Boost-Modus einstellen",
+        "nl": "Boostmodus instellen"
       },
       "hint": {
         "en": "Temporarily boost the thermostat to a higher temperature for rapid heating",
@@ -139,7 +149,9 @@
       "id": "thermostatic_radiator_valve_set_frost_protection",
       "title": {
         "en": "Set frost protection",
-        "fr": "Régler la protection antigel"
+        "fr": "Régler la protection antigel",
+        "de": "Frostschutz einstellen",
+        "nl": "Vorstbeveiliging instellen"
       },
       "hint": {
         "en": "Enable or disable frost protection (maintains minimum temperature to prevent pipe freezing)",
@@ -225,7 +237,9 @@
       "id": "thermostatic_radiator_valve_set_window_detection",
       "title": {
         "en": "Set window detection",
-        "fr": "Régler la détection de fenêtre"
+        "fr": "Régler la détection de fenêtre",
+        "de": "Fenstererkennung einstellen",
+        "nl": "Raamdetectie instellen"
       },
       "hint": {
         "en": "Enable or disable open window detection (lowers temperature when window is detected open)",

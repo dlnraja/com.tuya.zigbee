@@ -54,7 +54,9 @@
       "id": "generic_tuya_dp_received",
       "title": {
         "en": "Data Point received",
-        "fr": "Point de données reçu"
+        "fr": "Point de données reçu",
+        "de": "Datenpunkt empfangen",
+        "nl": "Datapunt ontvangen"
       },
       "tokens": [
         {
@@ -136,7 +138,9 @@
       "id": "generic_tuya_battery_above",
       "title": {
         "en": "Battery is above...",
-        "fr": "Batterie au-dessus de..."
+        "fr": "Batterie au-dessus de...",
+        "de": "Batterie ist über...",
+        "nl": "Batterij is hoger dan..."
       },
       "args": [
         {
@@ -166,7 +170,9 @@
       "id": "generic_tuya_request_dp",
       "title": {
         "en": "Request Data Point",
-        "fr": "Demander Point de Données"
+        "fr": "Demander Point de Données",
+        "de": "Datenpunkt anfordern",
+        "nl": "Datapunt opvragen"
       },
       "args": [
         {

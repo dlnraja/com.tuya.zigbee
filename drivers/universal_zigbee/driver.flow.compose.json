@@ -403,7 +403,9 @@
       "id": "universal_zigbee_thermostat_mode_is",
       "title": {
         "en": "Thermostat mode is !{{auto|heat|cool|off}}",
-        "fr": "Mode thermostat est !{{auto|chaud|froid|eteint}}"
+        "fr": "Mode thermostat est !{{auto|chaud|froid|eteint}}",
+        "de": "Thermostatmodus ist !{{Auto|Heizen|Kühlen|Aus}}",
+        "nl": "Thermostaatmodus is !{{auto|verwarmen|koelen|uit}}"
       },
       "args": [],
       "titleFormatted": {
