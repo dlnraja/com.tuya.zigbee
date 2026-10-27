@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-27T12:41:00.249Z",
+ "updated": "2026-10-27T13:43:45.421Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -7210,6 +7210,15 @@
    "kind": "general",
    "mailDate": "2026-10-24T22:05:06.000Z"
   },
+  "diag:3115f81211e9d1da": {
+   "status": "done",
+   "date": "2026-10-27",
+   "hash": "79ddb7a0163b3a0c",
+   "note": "github mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "github",
+   "mailDate": "2026-10-27T13:28:33.000Z"
+  },
   "diag:319c74d150ea54f8": {
    "status": "done",
    "date": "2026-10-20",
@@ -9818,16 +9827,13 @@
    "mailDate": "2026-10-19T06:37:40.000Z"
   },
   "diag:b133eb9257a69e27": {
-   "status": "pending",
-   "date": "2026-10-25",
-   "hash": "282eae7f121efd77",
-   "note": "github mail; 1 in several drivers",
+   "status": "done",
+   "date": "2026-10-27",
+   "hash": "5c39d1bfcf0f9c5e",
+   "note": "github mail; nothing new to act on",
    "by": "tuya-deep-diag",
    "kind": "github",
-   "mailDate": "2026-10-19T16:41:29.000Z",
-   "conflicts": [
-    "_TZ3000_gjnozsaz"
-   ]
+   "mailDate": "2026-10-19T16:41:29.000Z"
   },
   "diag:b13e8ebc2725f8be": {
    "status": "done",
@@ -11215,6 +11221,15 @@
    "kind": "github",
    "mailDate": "2026-10-20T13:45:40.000Z",
    "errors": 1
+  },
+  "diag:f6cbe8e6edad4227": {
+   "status": "done",
+   "date": "2026-10-27",
+   "hash": "298bb2c8dafa7d1d",
+   "note": "github mail; nothing new to act on",
+   "by": "tuya-deep-diag",
+   "kind": "github",
+   "mailDate": "2026-10-27T12:41:17.000Z"
   },
   "diag:f7aa9141d54cdf12": {
    "status": "done",
