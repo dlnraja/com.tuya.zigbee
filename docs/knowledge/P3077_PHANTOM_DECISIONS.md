@@ -163,6 +163,11 @@ package (button_wireless_1, heobian/Heobian × 5 pids) carry t614u exemptions; t
 - It was listed in 4 case forms on button_wireless_plug, a driver whose pid list (TS0004, TS0201, TS0601…) only created cartesian couples for it. Those forms are removed. smartplug stays the only driver (3 forms; TS011F/TS0121). The runtime owners move to smartplug: `lib/tuya/fingerprints.json` was pointing at plug_smart with only TS0601, and gets TS011F added; `data/mfs_db.json` was pointing at button_wireless_plug.
 - The pin simulation showed 8 Athom-baseline couples to exempt (2 forms × TS0004/TS0111/TS0201/TS0601 on button_wireless_plug). TS011F/TS0121 stay pinned on smartplug. Already-paired devices keep their driver, and nothing is written at pairing.
 
+## Batch 15 (27/10/2026, owner t614u): dfgbtub0, two pids and two drivers
+
+- `_TZ3000_dfgbtub0` covers two attested couples. With `TS0042` it is the Marmitek Push LO 2-button remote (zigbee-herdsman-converters `tuya.ts`, TS0042 whitelabel), which goes on button_wireless_2. With `TS0044` it is a SunBeech/Moes 4-button remote reported on the Homey forum (topic 156967, post 12), which goes on button_wireless_4; that couple is already locked in couple mode in `data/user-misattribution-registry.json`.
+- Both couples are kept, so nothing is removed. The runtime hint in `lib/tuya/fingerprints.json` was pointing at switch_1gang (mains, TS0601), the wrong class for a battery remote. It now points at button_wireless_2 (battery), and TS0042/TS0044 are added to its modelIds (additive). The couple registry still sends TS0044 to button_wireless_4.
+
 ## Pending
 
 - ~480 collateral duals need driver splits (next batches).
