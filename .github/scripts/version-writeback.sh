@@ -12,6 +12,14 @@ V=$(node scripts/ci/homey-build-status.js "$APP" 2>/dev/null | node -e '
   process.stdout.write(v);')
 [ -n "$V" ] || { echo "no confirmed Test build found: skip write-back"; exit 0; }
 echo "confirmed Test version: $V"
+# P3079 (ported from master 9679ffca65): never commit an app.json a compose rebuild would not give back.
+compose_parity_or_die() {
+  git show HEAD:app.json > "${RUNNER_TEMP:-/tmp}/p3079-base-app.json"
+  if ! node scripts/ci/compose-parity-gate.cjs --base="${RUNNER_TEMP:-/tmp}/p3079-base-app.json"; then
+    echo "::error title=compose parity::app.json differs from a compose rebuild or drops entries vs HEAD; write-back aborted"
+    exit 1
+  fi
+}
 git config user.name "github-actions[bot]"
 git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 for i in 1 2 3; do
@@ -32,6 +40,7 @@ for i in 1 2 3; do
       fs.writeFileSync(".homeychangelog.json", JSON.stringify(c,null,2)+"\n"); }
     fs.writeFileSync(".github/homey-version-floor", V+"\n");'
   for f in app.json .homeycompose/app.json package.json package-lock.json .homeychangelog.json .github/homey-version-floor; do [ -f "$f" ] && git add "$f"; done
+  compose_parity_or_die
   git commit -q -m "chore(version): v${V} written back after Test [skip ci]" || { echo "::warning::commit failed"; exit 0; }
   git push -q origin "HEAD:$BR" && { echo "wrote back v$V"; exit 0; }
   echo "::warning::write-back push attempt $i failed; retrying"; sleep $((i*10))
