@@ -55,12 +55,15 @@ function holdIds(repoRoot) {
 function sourceToPayload(manifest, repoRoot, opts = {}) {
   const { compactZigbeeIdentifiers } = require('./compact-zigbee-identifiers.cjs');
   const view = JSON.parse(JSON.stringify(manifest));
+  const ids = opts.holdIds || holdIds(repoRoot);
+  // P3085: the compaction must know the held ids, else it pins Test couples on a driver cut below.
   compactZigbeeIdentifiers(view, {
     maxTotalCombos: Number(process.env.HOMEY_ZIGBEE_MAX_TOTAL_COMBOS) || undefined,
     maxDriverCombos: Number(process.env.HOMEY_ZIGBEE_MAX_DRIVER_COMBOS) || undefined,
+    repoRoot,
     ...opts,
+    holdIds: ids,
   });
-  const ids = opts.holdIds || holdIds(repoRoot);
   if (ids.size) view.drivers = (view.drivers || []).filter((d) => !ids.has(d.id));
   return view;
 }

@@ -133,6 +133,48 @@
       "addedBy": "005812e8c5 P3080",
       "reason": "P3084 (27/10/2026): master #3684 v9.0.1602 (run 40422932809) failed processing_failed stateMeta=AggregateError 18 s after a clean upload (CLI validate publish OK, 33.06 MB / 4030 files). Its payload carried 361 drivers vs 347 in the last accepted Test #3682 v9.0.1599: 14 new never-published pairable ids, the documented AggregateError trigger (ATHOM_LIMITS 10/10, SPI 9/9, P3024 #3676-#3678). Held because its couples are all new (none was on another driver in 9.0.1599 source or in Test 9.0.1574), so holding it removes no couple a paired device uses. Graduate one id per release_held dispatch once a build reaches Test.",
       "sacredCouplesOwnedElsewhere": false
+    },
+    {
+      "id": "air_conditioner_aetz01",
+      "since": "2026-10-27",
+      "addedBy": "b95a82fd54 fix(P3068): one couple, one d",
+      "reason": "P3085 (27/10/2026): #3684 v9.0.1602 and #3685 v9.0.1603 (run 40471022857) both failed AggregateError; offline diff of the 1603 payload vs Test #3682 v9.0.1599 found no structural defect (settings, flow cards, custom capabilities, i18n, assets, repair views, requires all clean) and these 6 never-published pairable ids are the only driver-set change common to both failures (historic 8/8 pattern). Held; its couples that 9.0.1599 shipped on another driver are re-pinned there by compaction (P3085 hold-aware baseline pins), so no paired device loses its driver and P3024b stays green.",
+      "sacredCouplesOwnedElsewhere": true
+    },
+    {
+      "id": "co_sensor_dcr_co",
+      "since": "2026-10-27",
+      "addedBy": "84a704fdda feat(P3039d): one couple one ",
+      "reason": "P3085 (27/10/2026): #3684 v9.0.1602 and #3685 v9.0.1603 (run 40471022857) both failed AggregateError; offline diff of the 1603 payload vs Test #3682 v9.0.1599 found no structural defect (settings, flow cards, custom capabilities, i18n, assets, repair views, requires all clean) and these 6 never-published pairable ids are the only driver-set change common to both failures (historic 8/8 pattern). Held; its couples that 9.0.1599 shipped on another driver are re-pinned there by compaction (P3085 hold-aware baseline pins), so no paired device loses its driver and P3024b stays green.",
+      "sacredCouplesOwnedElsewhere": true
+    },
+    {
+      "id": "fan_light_tuya_5_levels",
+      "since": "2026-10-27",
+      "addedBy": "b95a82fd54 fix(P3068): one couple, one d",
+      "reason": "P3085 (27/10/2026): #3684 v9.0.1602 and #3685 v9.0.1603 (run 40471022857) both failed AggregateError; offline diff of the 1603 payload vs Test #3682 v9.0.1599 found no structural defect (settings, flow cards, custom capabilities, i18n, assets, repair views, requires all clean) and these 6 never-published pairable ids are the only driver-set change common to both failures (historic 8/8 pattern). Held; its couples that 9.0.1599 shipped on another driver are re-pinned there by compaction (P3085 hold-aware baseline pins), so no paired device loses its driver and P3024b stays green.",
+      "sacredCouplesOwnedElsewhere": true
+    },
+    {
+      "id": "motion_sensor_excellux_zg104plv",
+      "since": "2026-10-27",
+      "addedBy": "b61ac99b21 feat(P3039d lot B): one coupl",
+      "reason": "P3085 (27/10/2026): #3684 v9.0.1602 and #3685 v9.0.1603 (run 40471022857) both failed AggregateError; offline diff of the 1603 payload vs Test #3682 v9.0.1599 found no structural defect (settings, flow cards, custom capabilities, i18n, assets, repair views, requires all clean) and these 6 never-published pairable ids are the only driver-set change common to both failures (historic 8/8 pattern). Held; its couples that 9.0.1599 shipped on another driver are re-pinned there by compaction (P3085 hold-aware baseline pins), so no paired device loses its driver and P3024b stays green.",
+      "sacredCouplesOwnedElsewhere": true
+    },
+    {
+      "id": "smoke_sensor_ts0601_dp",
+      "since": "2026-10-27",
+      "addedBy": "db625d0e0d feat(P3039b/c): 9 new TS0601 ",
+      "reason": "P3085 (27/10/2026): #3684 v9.0.1602 and #3685 v9.0.1603 (run 40471022857) both failed AggregateError; offline diff of the 1603 payload vs Test #3682 v9.0.1599 found no structural defect (settings, flow cards, custom capabilities, i18n, assets, repair views, requires all clean) and these 6 never-published pairable ids are the only driver-set change common to both failures (historic 8/8 pattern). Held; its couples that 9.0.1599 shipped on another driver are re-pinned there by compaction (P3085 hold-aware baseline pins), so no paired device loses its driver and P3024b stays green.",
+      "sacredCouplesOwnedElsewhere": true
+    },
+    {
+      "id": "vibration_sensor_excellux_zg103v",
+      "since": "2026-10-27",
+      "addedBy": "b95a82fd54 fix(P3068): one couple, one d",
+      "reason": "P3085 (27/10/2026): #3684 v9.0.1602 and #3685 v9.0.1603 (run 40471022857) both failed AggregateError; offline diff of the 1603 payload vs Test #3682 v9.0.1599 found no structural defect (settings, flow cards, custom capabilities, i18n, assets, repair views, requires all clean) and these 6 never-published pairable ids are the only driver-set change common to both failures (historic 8/8 pattern). Held; its couples that 9.0.1599 shipped on another driver are re-pinned there by compaction (P3085 hold-aware baseline pins), so no paired device loses its driver and P3024b stays green.",
+      "sacredCouplesOwnedElsewhere": true
     }
   ],
   "_graduated": {
