@@ -52,6 +52,10 @@ describe('P3072 wifi_sonoff_* LAN pairing', () => {
         const list = await handlers.list_devices();
         assert.strictEqual(list[0].data.id, '1000abcdef', n);
         assert.strictEqual(list[0].settings.ip, '192.168.1.7', n);
+        // repair must register its handlers without a ReferenceError (dualr3 regression)
+        const rh = {};
+        await d.onRepair({ setHandler: (h, f) => { rh[h] = f; } }, { getSettings: () => ({}), getData: () => ({ id: 'x' }) });
+        assert.ok(Object.keys(rh).length > 0, `${n} repair handlers`);
         for_.push(n);
       }
       assert.strictEqual(for_.length, names.length);
