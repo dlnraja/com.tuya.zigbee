@@ -168,6 +168,11 @@ package (button_wireless_1, heobian/Heobian × 5 pids) carry t614u exemptions; t
 - `_TZ3000_dfgbtub0` covers two attested couples. With `TS0042` it is the Marmitek Push LO 2-button remote (zigbee-herdsman-converters `tuya.ts`, TS0042 whitelabel), which goes on button_wireless_2. With `TS0044` it is a SunBeech/Moes 4-button remote reported on the Homey forum (topic 156967, post 12), which goes on button_wireless_4; that couple is already locked in couple mode in `data/user-misattribution-registry.json`.
 - Both couples are kept, so nothing is removed. The runtime hint in `lib/tuya/fingerprints.json` was pointing at switch_1gang (mains, TS0601), the wrong class for a battery remote. It now points at button_wireless_2 (battery), and TS0042/TS0044 are added to its modelIds (additive). The couple registry still sends TS0044 to button_wireless_4.
 
+## Batch 16 (27/10/2026, owner t614u): amp6tsvy belongs on 1-gang only
+
+- Both sources describe `_TZE200_amp6tsvy` + `TS0601` as a 1-gang switch: zigbee-herdsman-converters `moes.ts` lists it as the Moes ZTS-EU 1-gang, and ZHA `ts0601_switch.py` puts it in `TuyaSingleSwitchTO`. The `_TZE204` and `_TZE284` forms have no source of their own. They were listed on switch_1gang and on switch_2gang at the same time, and the `_TZE204` hint pointed at 2-gang without any reference.
+- Decision (one couple, one driver): these forms stay on switch_1gang, the driver of their family. That driver already had the repo profile `ts0601_switch_1gang` with gangCount 1, and switch_1gang stays at 1378 forms against a floor of 1370. They are removed from switch_2gang (6 forms, 215 to 209) and the hint now points at switch_1gang. No fixture pin was on switch_2gang, so no exemption is needed.
+
 ## Pending
 
 - ~480 collateral duals need driver splits (next batches).

@@ -15,7 +15,8 @@ describe('P3062 _TZE200_amp6tsvy hint matches its compose driver', () => {
     assert.ok(/powerSource: 'mains'/.test(line));
     assert.ok(!/MULTIGANG/.test(line));
     const twin = src.split('\n').find((l) => l.includes("'_TZE204_amp6tsvy|TS0601'"));
-    assert.ok(/switch_2gang/.test(twin));
+    // P3077 b16: the _TZE204 twin follows the 1-gang family (Z2M moes.ts, ZHA TuyaSingleSwitchTO)
+    assert.ok(/switch_1gang/.test(twin) && !/switch_2gang/.test(twin));
   });
   it('switch_1gang compose owns the couple', () => {
     const c = require('../../drivers/switch_1gang/driver.compose.json');

@@ -408,6 +408,28 @@
    "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
    "author": "Koen Kanters and contributors (zigbee-herdsman-converters)",
    "batch": 14
+  },
+  {
+   "mfr": "_TZE204_amp6tsvy",
+   "from": "switch_2gang",
+   "keptOn": "switch_1gang",
+   "realPid": "TS0601",
+   "batch": 16,
+   "hardware": "Moes ZTS-EU 1-gang Tuya DP wall switch family (same suffix as the attested _TZE200_amp6tsvy); case variants of this prefix are dropped from switch_2gang too",
+   "why": "amp6tsvy is the Moes ZTS-EU 1-gang wall switch in both Z2M (moes.ts) and ZHA (ts0601_switch.py TuyaSingleSwitchTO); no source anywhere calls any amp6tsvy prefix a 2-gang. The _TZE204/_TZE284 forms stay on switch_1gang (one couple, one driver; repo profile ts0601_switch_1gang already listed _TZE204_amp6tsvy with gangCount 1); hint in DeviceFingerprintDB moved from switch_2gang to switch_1gang. No fixture pin touches switch_2gang, so no exemption is needed",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/moes.ts ; https://github.com/zigpy/zha-device-handlers/blob/dev/zhaquirks/tuya/ts0601_switch.py",
+   "author": "Koen Kanters and contributors; zigpy/zha-device-handlers contributors"
+  },
+  {
+   "mfr": "_TZE284_amp6tsvy",
+   "from": "switch_2gang",
+   "keptOn": "switch_1gang",
+   "realPid": "TS0601",
+   "batch": 16,
+   "hardware": "Moes ZTS-EU 1-gang Tuya DP wall switch family (same suffix as the attested _TZE200_amp6tsvy); case variants of this prefix are dropped from switch_2gang too",
+   "why": "amp6tsvy is the Moes ZTS-EU 1-gang wall switch in both Z2M (moes.ts) and ZHA (ts0601_switch.py TuyaSingleSwitchTO); no source anywhere calls any amp6tsvy prefix a 2-gang. The _TZE204/_TZE284 forms stay on switch_1gang (one couple, one driver; repo profile ts0601_switch_1gang already listed _TZE204_amp6tsvy with gangCount 1); hint in DeviceFingerprintDB moved from switch_2gang to switch_1gang. No fixture pin touches switch_2gang, so no exemption is needed",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/moes.ts ; https://github.com/zigpy/zha-device-handlers/blob/dev/zhaquirks/tuya/ts0601_switch.py",
+   "author": "Koen Kanters and contributors; zigpy/zha-device-handlers contributors"
   }
  ],
  "keptOnPurpose": [
