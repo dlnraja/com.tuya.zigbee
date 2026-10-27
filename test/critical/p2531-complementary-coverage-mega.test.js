@@ -57,7 +57,10 @@ describe('P2531 complementary coverage mega', () => {
     // case forms; Contre quoi = mass wipe below 1390, not a brittle 1400 lock.
     // WHY(P2970): curated move of _TZE204_dzuqwsyg (Beca BAC-006AZB thermostat) to wall_thermostat
     // drops 4 more case forms; floor 1380 still catches a mass wipe.
-    assert.ok(n >= 1380, `switch_1gang mfr entries must stay dense generics (${n})`);
+    // WHY(P3077 batch 5): the heobian typo forms (phantom cross-product, t614u) left
+    // switch_1gang (1378); the read-time alias still matches them. Floor 1370 keeps
+    // catching a mass wipe without locking curated phantom removals.
+    assert.ok(n >= 1370, `switch_1gang mfr entries must stay dense generics (${n})`);
     assert.ok(hasMfr(c, /7tdtqgwv/i), 'ZHA/Z2M somgoms 7tdtqgwv OEM overlay');
     const s2 = readJson('drivers/switch_2gang/driver.compose.json');
     assert.ok(hasMfr(s2, /a2teqi5u/i), 'a2teqi5u must live on switch_2gang after curated move');

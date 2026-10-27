@@ -52,7 +52,9 @@ describe('P2532 dual-case compose preserve', () => {
     // WHY(P2841/P2532): curated W4 moves may drop ~8 case forms — floor 1390 not 1400
     // WHY(P2970): curated move of _TZE204_dzuqwsyg (Beca BAC-006AZB thermostat) to wall_thermostat
     // drops 4 more case forms; floor 1380 still catches a mass wipe.
-    assert.ok(names.length >= 1380, `switch_1gang density ${names.length}`);
+    // WHY(P3077 batch 5): heobian typo forms (phantom cross-product, t614u) left switch_1gang
+    // (1378) and still match via the read-time alias; floor 1370 still catches a mass wipe.
+    assert.ok(names.length >= 1370, `switch_1gang density ${names.length}`);
     const lower = new Set(names.map((m) => String(m).toLowerCase()));
     assert.ok(names.length > lower.size, 'expect some dual-case pairs in dense generics');
     assert.ok(names.some((m) => /7tdtqgwv/i.test(m)));
