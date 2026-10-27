@@ -137,6 +137,9 @@ jobs:
           for i in 1 2 3; do npm ci --ignore-scripts --no-audit --no-fund && exit 0; sleep $((i*10)); done
           npm install --ignore-scripts --no-audit --no-fund
 
+      - name: Compose parity (rebuild from compose == committed app.json, P3079)
+        run: node scripts/ci/compose-parity-gate.cjs
+
       - name: Lint ratchet (lib/ drivers/ — total may only go down, no file may get worse)
         run: node scripts/ci/lint-ratchet.js
 
