@@ -13,7 +13,7 @@
   },
   "140352": {
    "tailId": 792645,
-   "backfillId": 687972
+   "backfillId": 689345
   },
   "146735": {
    "tailId": 791344,
@@ -6068,6 +6068,252 @@
    "ocr": "image-cap",
    "mfrs": [],
    "pids": []
+  },
+  {
+   "id": "forum:140352#731",
+   "link": "https://community.homey.app/t/140352/731",
+   "author": "Eftychis_Georgilas",
+   "at": "2025-12-28T10:24:55.085Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [
+    "_TZ3000_wkai4ga5"
+   ],
+   "pids": [],
+   "brands": [
+    "MOES"
+   ]
+  },
+  {
+   "id": "forum:140352#732",
+   "link": "https://community.homey.app/t/140352/732",
+   "author": "Fiek",
+   "at": "2025-12-28T10:47:46.553Z",
+   "images": 1,
+   "ocr": "done",
+   "mfrs": [],
+   "pids": [
+    "TS0505B"
+   ]
+  },
+  {
+   "id": "forum:140352#734",
+   "link": "https://community.homey.app/t/140352/734",
+   "author": "Ronny_M",
+   "at": "2025-12-28T11:25:36.797Z",
+   "images": 1,
+   "ocr": "done",
+   "mfrs": [
+    "_TZE284_iadro9bf",
+    "_TZE204_gkfbdvyx"
+   ],
+   "pids": []
+  },
+  {
+   "id": "forum:140352#738",
+   "link": "https://community.homey.app/t/140352/738",
+   "author": "dlnraja",
+   "at": "2025-12-28T18:00:07.085Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [],
+   "pids": [
+    "TS0505B"
+   ],
+   "symptoms": [
+    "options-churn"
+   ],
+   "quirkCandidates": [],
+   "triage": "daily-resume"
+  },
+  {
+   "id": "forum:140352#739",
+   "link": "https://community.homey.app/t/140352/739",
+   "author": "Ronny_M",
+   "at": "2025-12-28T20:48:57.592Z",
+   "images": 1,
+   "ocr": "done",
+   "mfrs": [
+    "_TZE284_iadro9bf",
+    "_TZE204_gkfbdvyx"
+   ],
+   "pids": [
+    "TS0601"
+   ]
+  },
+  {
+   "id": "forum:140352#748",
+   "link": "https://community.homey.app/t/140352/748",
+   "author": "dlnraja",
+   "at": "2025-12-29T08:41:43.569Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [],
+   "pids": [],
+   "symptoms": [
+    "presence-stuck",
+    "crash"
+   ],
+   "quirkCandidates": [],
+   "triage": "daily-resume"
+  },
+  {
+   "id": "forum:140352#752",
+   "link": "https://community.homey.app/t/140352/752",
+   "author": "Ronny_M",
+   "at": "2025-12-29T12:07:58.266Z",
+   "images": 1,
+   "ocr": "done",
+   "mfrs": [
+    "_TZE284_iadro9bf",
+    "_TZE204_gkfbdvyx"
+   ],
+   "pids": [
+    "TS0601"
+   ]
+  },
+  {
+   "id": "forum:140352#753",
+   "link": "https://community.homey.app/t/140352/753",
+   "author": "Ronny_M",
+   "at": "2025-12-29T13:59:35.386Z",
+   "images": 2,
+   "ocr": "done",
+   "mfrs": [
+    "_TZE204_gkfbdvyx"
+   ],
+   "pids": []
+  },
+  {
+   "id": "forum:140352#757",
+   "link": "https://community.homey.app/t/140352/757",
+   "author": "Haadeess",
+   "at": "2025-12-29T17:29:32.658Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [],
+   "pids": [
+    "TS1201"
+   ]
+  },
+  {
+   "id": "forum:140352#760",
+   "link": "https://community.homey.app/t/140352/760",
+   "author": "Ronny_M",
+   "at": "2025-12-29T19:04:03.225Z",
+   "images": 1,
+   "ocr": "done",
+   "mfrs": [
+    "_TZE284_iadro9bf",
+    "_TZE204_gkfbdvyx"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "symptoms": [
+    "presence-stuck"
+   ],
+   "quirkCandidates": [
+    "_TZE284_iadro9bf|TS0601:presence-stuck",
+    "_TZE204_gkfbdvyx|TS0601:presence-stuck"
+   ],
+   "triage": "daily-resume"
+  },
+  {
+   "id": "forum:140352#764",
+   "link": "https://community.homey.app/t/140352/764",
+   "author": "Ronny_M",
+   "at": "2025-12-29T23:25:11.585Z",
+   "images": 1,
+   "ocr": "done",
+   "mfrs": [
+    "_TZE284_iadro9bf",
+    "_TZE204_gkfbdvyx"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "symptoms": [
+    "presence-stuck"
+   ],
+   "quirkCandidates": [
+    "_TZE284_iadro9bf|TS0601:presence-stuck",
+    "_TZE204_gkfbdvyx|TS0601:presence-stuck"
+   ],
+   "triage": "daily-resume"
+  },
+  {
+   "id": "forum:140352#765",
+   "link": "https://community.homey.app/t/140352/765",
+   "author": "Ronny_M",
+   "at": "2025-12-29T23:40:51.725Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [
+    "_TZE204_gkfbdvyx"
+   ],
+   "pids": []
+  },
+  {
+   "id": "forum:140352#766",
+   "link": "https://community.homey.app/t/140352/766",
+   "author": "Cam",
+   "at": "2025-12-30T01:02:53.983Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [
+    "_TZ3000_5bpeda8u"
+   ],
+   "pids": []
+  },
+  {
+   "id": "forum:140352#768",
+   "link": "https://community.homey.app/t/140352/768",
+   "author": "dlnraja",
+   "at": "2025-12-30T01:59:46.553Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [
+    "_TZE204_gkfbdvyx"
+   ],
+   "pids": []
+  },
+  {
+   "id": "forum:140352#774",
+   "link": "https://community.homey.app/t/140352/774",
+   "author": "Nicolas",
+   "at": "2025-12-30T13:11:54.123Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [
+    "_TZ3000_lqpt3mvr"
+   ],
+   "pids": [
+    "TS0210"
+   ]
+  },
+  {
+   "id": "forum:140352#775",
+   "link": "https://community.homey.app/t/140352/775",
+   "author": "Ronny_M",
+   "at": "2025-12-30T13:16:19.956Z",
+   "images": 6,
+   "ocr": "image-cap",
+   "mfrs": [
+    "_TZE284_iadro9bf",
+    "_TZE204_gkfbdvyx"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "fromImage": {
+    "mfrs": [
+     "_TZE204_gkfbdvyx"
+    ],
+    "pids": [
+     "TS0601"
+    ]
+   }
   }
  ],
  "candidates": [
@@ -6077,15 +6323,15 @@
   "_TZE204_sxm719xa|TS0601",
   "_TZE284_iadro9bf|TS0044"
  ],
- "generated": "2026-10-26T15:15:11.757Z",
+ "generated": "2026-10-27T08:02:22.807Z",
  "note": "Structured leads from forum posts + screenshots (OCR). No post or OCR text stored. candidates = cited couples with no home driver here; verify real hardware (W4) before adding.",
  "lastRun": {
-  "at": "2026-10-26T15:15:11.757Z",
+  "at": "2026-10-27T08:02:22.807Z",
   "tesseract": true,
   "langs": "eng+fra",
   "images": 30,
   "cache": {
-   "urlHits": 0,
+   "urlHits": 1,
    "hashHits": 0,
    "ocred": 30
   },
@@ -6093,7 +6339,7 @@
    {
     "tid": "140352",
     "mode": "tail",
-    "n": 2
+    "n": 0
    },
    {
     "tid": "26439",
@@ -6123,12 +6369,13 @@
    {
     "tid": "140352",
     "mode": "backfill",
-    "n": 60
+    "n": 50,
+    "capped": true
    },
    {
     "tid": "26439",
     "mode": "backfill",
-    "n": 57,
+    "n": 0,
     "capped": true
    },
    {
@@ -7445,6 +7692,49 @@
    ],
    "mfrs": [
     "_TZE200_shkxsgis"
+   ]
+  },
+  {
+   "id": "forum:140352#738",
+   "link": "https://community.homey.app/t/140352/738",
+   "author": "dlnraja",
+   "symptoms": [
+    "options-churn"
+   ],
+   "mfrs": []
+  },
+  {
+   "id": "forum:140352#748",
+   "link": "https://community.homey.app/t/140352/748",
+   "author": "dlnraja",
+   "symptoms": [
+    "presence-stuck",
+    "crash"
+   ],
+   "mfrs": []
+  },
+  {
+   "id": "forum:140352#760",
+   "link": "https://community.homey.app/t/140352/760",
+   "author": "Ronny_M",
+   "symptoms": [
+    "presence-stuck"
+   ],
+   "mfrs": [
+    "_TZE284_iadro9bf",
+    "_TZE204_gkfbdvyx"
+   ]
+  },
+  {
+   "id": "forum:140352#764",
+   "link": "https://community.homey.app/t/140352/764",
+   "author": "Ronny_M",
+   "symptoms": [
+    "presence-stuck"
+   ],
+   "mfrs": [
+    "_TZE284_iadro9bf",
+    "_TZE204_gkfbdvyx"
    ]
   }
  ]
