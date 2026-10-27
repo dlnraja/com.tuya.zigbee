@@ -82,7 +82,14 @@ const TRIGGER_RULES = [
   // wifi_siren maps DP6 to it); scoped to the orphan ids so 'Siren started' paths stay as they are.
   [/^siren stopped$/, () => ['alarm_generic'], false, 'p3077'],
   [/^alarm activated$/, () => ['alarm_generic'], true, 'p3077'],
-  [/^alarm deactivated$/, () => ['alarm_generic'], false, 'p3077']
+  [/^alarm deactivated$/, () => ['alarm_generic'], false, 'p3077'],
+  // P3077 flow batch 4: movement / cleaning cards that follow an existing state capability.
+  // windowcoverings_state is up|idle|down; vacuumcleaner_state from wifi_robot_vacuum DP3 (paused -> stopped,
+  // so "finished" is the cleaning -> docked transition only, a pause never fires it).
+  [/^started moving$/, () => ['windowcoverings_state'], 'leave:idle', 'p3077'],
+  [/^stopped moving$/, () => ['windowcoverings_state'], 'enter:idle', 'p3077'],
+  [/^cleaning started$/, () => ['vacuumcleaner_state'], 'enter:cleaning', 'p3077'],
+  [/^cleaning finished$/, () => ['vacuumcleaner_state'], 'move:cleaning>docked', 'p3077']
 ];
 
 function gangCaps(title) {
@@ -184,7 +191,18 @@ function literalJsIds() {
 const P3077_FLOW_IDS = new Set([
   'wifi_switch_2gang_g1_on', 'wifi_switch_2gang_g1_off', 'wifi_switch_2gang_g2_on', 'wifi_switch_2gang_g2_off',
   'wifi_power_strip_socket1_on', 'wifi_power_strip_socket1_off', 'wifi_dehumidifier_water_full',
-  'siren_alarm_stopped', 'device_air_purifier_siren_alarm_stopped', 'wifi_siren_alarm_on', 'wifi_siren_alarm_off'
+  'siren_alarm_stopped', 'device_air_purifier_siren_alarm_stopped', 'wifi_siren_alarm_on', 'wifi_siren_alarm_off',
+  'shutter_roller_controller_started_moving', 'shutter_roller_controller_stopped_moving',
+  'wifi_robot_vacuum_cleaning_started', 'wifi_robot_vacuum_cleaning_finished'
+]);
+// P3077 user decision (2026-10-27): device_din_rail_meter keeps its out-of-place dehumidifier cards (removing
+// them could break existing flows) but they are NEVER fired: no rule may map them. Its "Power changed" cards
+// (measure_power, a real DIN-rail capability) keep their mapping.
+const NEVER_FIRE_IDS = new Set([
+  'device_din_rail_meter_hvac_dehumidifier_meas_1d190', 'device_din_rail_meter_hvac_dehumidifier_meas_22e01',
+  'device_din_rail_meter_hvac_dehumidifier_alar_73e5b', 'device_din_rail_meter_hvac_dehumidifier_alar_b2881',
+  'device_din_rail_meter_hvac_dehumidifier_humi_c9558', 'device_din_rail_meter_hvac_dehumidifier_temp_4bc03',
+  'device_din_rail_meter_hvac_dehumidifier_wate_84fff', 'device_din_rail_meter_hvac_dehumidifier_batt_85804'
 ]);
 const FORCE_TRIGGER_IDS = new Set(['universal_zigbee_motion_off', ...P3077_FLOW_IDS]);
 
@@ -201,7 +219,7 @@ function build({ auditFile, strict } = {}) {
     try { flow = JSON.parse(fs.readFileSync(f, 'utf8')); } catch (_) { continue; }
     const caps = driverCaps(dir);
     for (const t of flow.triggers || []) {
-      if (!t || !t.id || (dead && !dead.has(t.id)) || (!FORCE_TRIGGER_IDS.has(t.id) && literal.has(t.id, dir, strictIds))) {continue;}
+      if (!t || !t.id || NEVER_FIRE_IDS.has(t.id) || (dead && !dead.has(t.id)) || (!FORCE_TRIGGER_IDS.has(t.id) && literal.has(t.id, dir, strictIds))) {continue;}
       const title = normTitle(t.title && t.title.en);
       for (const [re, prefs, when, scope] of TRIGGER_RULES) {
         if (!re.test(title)) {continue;}
@@ -253,4 +271,4 @@ if (require.main === module) {
   console.log(`[P2803] wrote ${Object.keys(fresh.triggers).length} triggers / ${Object.keys(fresh.conditions).length} conditions`);
 }
 
-module.exports = { build, normTitle, TRIGGER_RULES, CONDITION_RULES };
+module.exports = { build, normTitle, TRIGGER_RULES, CONDITION_RULES, NEVER_FIRE_IDS };
