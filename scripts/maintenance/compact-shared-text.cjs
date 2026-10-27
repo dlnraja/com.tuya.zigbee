@@ -12,6 +12,10 @@
  *     same long hint each time. When (and only when) a setting's `en` hint is exactly the known shared text,
  *     it is replaced by a concise canonical hint with the same meaning (also repairs mojibake copies such as
  *     "S├®lectionnez"). Device-specific variants (different `en`) are left alone.
+ *  3. P3075 D26: driver keys that are maintainer notes, not Homey manifest fields, are dropped from the upload
+ *     copy: `metadata` (source citations), per-driver `version`, `_`-prefixed notes and empty `subDevices`.
+ *     Neither Homey nor app code reads them from the manifest (grep: no driver.manifest.metadata/version/
+ *     subDevices reads); the compose files keep them, so nothing is lost for maintainers.
  */
 
 const fs = require('fs');
@@ -78,18 +82,30 @@ function canonMaintenance(list, stats) {
   }
 }
 
-function compactSharedText(manifest) {
-  const stats = { localeDropped: 0, localeBytes: 0, hintsCanon: 0, titlesCanon: 0, hintBytes: 0 };
+const DOC_KEYS = ['metadata', 'version'];
+function stripDriverDocKeys(d, stats) {
+  for (const k of Object.keys(d)) {
+    const drop = DOC_KEYS.includes(k) || k.startsWith('_') || (k === 'subDevices' && Array.isArray(d[k]) && d[k].length === 0);
+    if (!drop) {continue;}
+    stats.docBytes += Buffer.byteLength(JSON.stringify(d[k])) + k.length + 4;
+    stats.docDropped += 1;
+    delete d[k];
+  }
+}
+
+function compactSharedText(manifest, opts = {}) {
+  const stats = { localeDropped: 0, localeBytes: 0, hintsCanon: 0, titlesCanon: 0, hintBytes: 0, docDropped: 0, docBytes: 0 };
   if (!manifest || typeof manifest !== 'object') {return stats;}
   for (const d of Array.isArray(manifest.drivers) ? manifest.drivers : []) {
     if (!d || typeof d !== 'object') {continue;}
+    if (!opts.keepDocKeys) {stripDriverDocKeys(d, stats);}
     canonSettings(d.settings, stats);
     canonMaintenance(d.maintenanceActions, stats);
     dedupeLocales(d, stats);
   }
   if (manifest.flow) {dedupeLocales(manifest.flow, stats);}
   if (manifest.capabilities) {dedupeLocales(manifest.capabilities, stats);}
-  stats.bytes = stats.localeBytes + stats.hintBytes;
+  stats.bytes = stats.localeBytes + stats.hintBytes + stats.docBytes;
   return stats;
 }
 
@@ -107,4 +123,4 @@ if (require.main === module) {
   }
 }
 
-module.exports = { compactSharedText, compactFile, dedupeLocales, isLocaleObj, CANON };
+module.exports = { compactSharedText, compactFile, stripDriverDocKeys, DOC_KEYS, dedupeLocales, isLocaleObj, CANON };
