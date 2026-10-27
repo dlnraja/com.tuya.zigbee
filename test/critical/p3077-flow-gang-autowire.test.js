@@ -53,3 +53,17 @@ test('P3077 flow batch 2: radar distance + soil temperature orphans follow their
   assert.deepStrictEqual(map.triggers.sensor_lcdtemphumidsensor_soil_sensor_temper_b2371,
     { driver: 'sensor_lcdtemphumidsensor_soil', cap: 'measure_temperature', when: 'change' });
 });
+
+test('P3077 flow batch 3: siren stopped / WiFi alarm on-off follow alarm_generic (sounding state)', () => {
+  const G = 'alarm_generic';
+  assert.deepStrictEqual(map.triggers.siren_alarm_stopped, { driver: 'siren', cap: G, when: false });
+  assert.deepStrictEqual(map.triggers.device_air_purifier_siren_alarm_stopped, { driver: 'device_air_purifier_siren', cap: G, when: false });
+  assert.deepStrictEqual(map.triggers.wifi_siren_alarm_on, { driver: 'wifi_siren', cap: G, when: true });
+  assert.deepStrictEqual(map.triggers.wifi_siren_alarm_off, { driver: 'wifi_siren', cap: G, when: false });
+  // 'Siren started' keeps its existing path: not added to the map (no double fire)
+  assert.strictEqual(map.triggers.siren_alarm_triggered, undefined);
+  W._resetForTests();
+  assert.deepStrictEqual(W.mappedTriggerIds('wifi_siren', G, true), ['wifi_siren_alarm_on']);
+  assert.deepStrictEqual(W.mappedTriggerIds('wifi_siren', G, false), ['wifi_siren_alarm_off']);
+  assert.deepStrictEqual(W.mappedTriggerIds('siren', G, true), []);
+});

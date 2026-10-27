@@ -77,7 +77,12 @@ const TRIGGER_RULES = [
   [/^water tank (is )?full$/, () => ['alarm_water'], true, 'p3077'],
   // P3077 flow batch 2: radar distance and soil temperature cards whose capability exists but nothing fired them.
   [/^(target |detection )?distance changed$/, () => ['measure_luminance.distance'], 'change'],
-  [/^soil temperature changed$/, () => ['measure_temperature.soil', 'measure_temperature'], 'change']
+  [/^soil temperature changed$/, () => ['measure_temperature.soil', 'measure_temperature'], 'change'],
+  // P3077 flow batch 3: siren cards. alarm_generic is the sounding state (siren/device.js mirrors onoff into it,
+  // wifi_siren maps DP6 to it); scoped to the orphan ids so 'Siren started' paths stay as they are.
+  [/^siren stopped$/, () => ['alarm_generic'], false, 'p3077'],
+  [/^alarm activated$/, () => ['alarm_generic'], true, 'p3077'],
+  [/^alarm deactivated$/, () => ['alarm_generic'], false, 'p3077']
 ];
 
 function gangCaps(title) {
@@ -178,7 +183,8 @@ function literalJsIds() {
 // P3077 flow audit: ending in `_on`/`_off` they hit the same suffix heuristic; flow-trigger-reach lists them as orphans.
 const P3077_FLOW_IDS = new Set([
   'wifi_switch_2gang_g1_on', 'wifi_switch_2gang_g1_off', 'wifi_switch_2gang_g2_on', 'wifi_switch_2gang_g2_off',
-  'wifi_power_strip_socket1_on', 'wifi_power_strip_socket1_off', 'wifi_dehumidifier_water_full'
+  'wifi_power_strip_socket1_on', 'wifi_power_strip_socket1_off', 'wifi_dehumidifier_water_full',
+  'siren_alarm_stopped', 'device_air_purifier_siren_alarm_stopped', 'wifi_siren_alarm_on', 'wifi_siren_alarm_off'
 ]);
 const FORCE_TRIGGER_IDS = new Set(['universal_zigbee_motion_off', ...P3077_FLOW_IDS]);
 
