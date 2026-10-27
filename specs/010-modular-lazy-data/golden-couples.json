@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-26T23:42:58.925Z",
+ "generated": "2026-10-27T00:22:57.540Z",
  "drivers": 417,
  "snapshot": {
   "air_conditioner_aetz01": {
@@ -147,9 +147,9 @@
    "pidSha": "455c46e8c8549693"
   },
   "bulb_rgbw": {
-   "mfr": 28,
+   "mfr": 27,
    "pid": 14,
-   "mfrSha": "f837376550442538",
+   "mfrSha": "db6029b99725b18c",
    "pidSha": "a25e057df5861a3b"
   },
   "bulb_rgbw_universal": {
@@ -195,9 +195,9 @@
    "pidSha": "97471aa91d3d60d5"
   },
   "button_wireless_2": {
-   "mfr": 95,
+   "mfr": 89,
    "pid": 100,
-   "mfrSha": "12c2dd06a955e142",
+   "mfrSha": "0ea89af76ad9b4be",
    "pidSha": "25b2f5f37b8e4dd1"
   },
   "button_wireless_3": {
@@ -615,9 +615,9 @@
    "pidSha": "455c46e8c8549693"
   },
   "dimmable_led_strip": {
-   "mfr": 20,
+   "mfr": 17,
    "pid": 10,
-   "mfrSha": "175170b3655f657a",
+   "mfrSha": "9583e825be2a00ba",
    "pidSha": "f84642670cf35013"
   },
   "dimmable_recessed_led": {
@@ -699,9 +699,9 @@
    "pidSha": "c24425335e22bfa5"
   },
   "dimmer_wall_1gang": {
-   "mfr": 25,
+   "mfr": 21,
    "pid": 20,
-   "mfrSha": "b72abd63ec850823",
+   "mfrSha": "198deab30d2b11d4",
    "pidSha": "fafa2cc8c54068d7"
   },
   "dimmer_wall_plug": {
@@ -1059,9 +1059,9 @@
    "pidSha": "455c46e8c8549693"
   },
   "led_controller_cct": {
-   "mfr": 4,
+   "mfr": 3,
    "pid": 8,
-   "mfrSha": "958dff20ef91168e",
+   "mfrSha": "fcf6fde80aa4c132",
    "pidSha": "9b704ef096b15bd7"
   },
   "led_controller_dimmable": {
@@ -2307,9 +2307,9 @@
    "pidSha": "1326f3b1090e234a"
   },
   "wall_dimmer_tuya": {
-   "mfr": 135,
+   "mfr": 132,
    "pid": 14,
-   "mfrSha": "960a3b716164e7ec",
+   "mfrSha": "5b834090b2772413",
    "pidSha": "86e609055c5d6281"
   },
   "wall_remote_1_gang": {

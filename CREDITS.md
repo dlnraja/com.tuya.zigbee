@@ -480,6 +480,7 @@ A heartfelt thank you to:
 - Batch P3068 (one couple, one driver): **the zigbee-herdsman-converters contributors** (`tuya.ts` AETZ01_AC, ZG-103V, TS0601_fan_5_levels_and_light_5_levels; `mercator.ts` SISWD11-ZB) and **Mercator Ikuü** (SISWD11-ZB specification sheet). Facts only, own implementation.
 - Batch P3071 (DIN energy meters): **the zigbee-herdsman-converters contributors** (`tuya.ts` TS0601_din_1, SPM01V1-GT, SDM01V1-GT, SDM02V1-GT, ATMS10013Z3 datapoint layouts). Facts only, own implementation.
 - Batch P3071c (HOCH RCBO): **the zigbee-herdsman-converters contributors** (`legacy.ts` hoch_din datapoints, `tuya.ts` TS0601_rcbo). Facts only, own decoder.
+- Batch P3077 (phantom couples, one couple one driver): **the zigbee-herdsman-converters contributors** (`miboxer.ts` FUT038Z/FUT089Z, `skydance.ts` WZ5_rgb_1, `lonsonho.ts` TS130F_dual, `zemismart.ts` KES-606US-L4), **the zigpy ZHA quirks contributors** (`lidl/TS0501A.py`, `tuya/ts0501bs.py`) and **Johan Bendz** (rgb_bulb_E27, rgb_mood_light, rgb_led_strip_controller, lcdtemphumidluxsensor, dimmer_2_gang, plug lists). Facts only, own implementation.
 - And every forum member and GitHub issue reporter who sent a fingerprint, a diagnostic or a "this works now":
   you are listed by handle in the sections above, and new names are added with each batch.
 

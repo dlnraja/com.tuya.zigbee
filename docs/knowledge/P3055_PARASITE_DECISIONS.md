@@ -1,6 +1,6 @@
 # P3055 — parasitic Zigbee combos: per-couple decisions
 
-Date: 2026-10-25 (Europe/Paris). Owner approval: t555u (dlnraja) — "Si il le faut tout mais prend les bonnes décisions pour limiter les pertes".
+Date: 2026-10-25 (Europe/Paris). Owner approval: t555u (dlnraja) (go-ahead to decide every couple, keeping losses as low as possible).
 Machine-readable copy: `config/architecture/p3055-parasite-decisions.json`. Test: `test/critical/p3055-parasite-decisions.test.js`.
 
 ## Why

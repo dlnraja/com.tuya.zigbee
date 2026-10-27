@@ -1,0 +1,225 @@
+{
+ "_why": "P3077 (owner t614u, 27/10/2026): one couple, one driver. Each mfr below was on a driver of the wrong device class only through the mfr x pid cartesian product (no source attests it there); it is dropped from that driver and stays on the driver of its real hardware. Human table: docs/knowledge/P3077_PHANTOM_DECISIONS.md. Checked by test/critical/p3077-phantom-moves.test.js.",
+ "moves": [
+  {
+   "mfr": "_TZ3000_nbnmw9nc",
+   "from": "dimmer_wall_1gang",
+   "keptOn": "bulb_dimmable",
+   "realPid": "TS0501A",
+   "hardware": "Lidl/Livarno dimmable bulb",
+   "source": "https://github.com/zigpy/zha-device-handlers/blob/d54cf9e80b9b2709d3294684d485eee83a0a8fe0/zhaquirks/lidl/TS0501A.py",
+   "author": "zigpy ZHA quirks contributors"
+  },
+  {
+   "mfr": "_TZ3000_nosnx7im",
+   "from": "dimmer_wall_1gang",
+   "keptOn": "bulb_dimmable",
+   "realPid": "TS0501A",
+   "hardware": "Lidl/Livarno dimmable bulb",
+   "source": "https://github.com/zigpy/zha-device-handlers/blob/d54cf9e80b9b2709d3294684d485eee83a0a8fe0/zhaquirks/lidl/TS0501A.py",
+   "author": "zigpy ZHA quirks contributors"
+  },
+  {
+   "mfr": "_TZ3210_dbilpfqk",
+   "from": "dimmer_wall_1gang",
+   "keptOn": "bulb_dimmable",
+   "realPid": "TS0501B",
+   "hardware": "single-colour dimmable LED (ts0501bs)",
+   "source": "https://github.com/zigpy/zha-device-handlers/blob/d54cf9e80b9b2709d3294684d485eee83a0a8fe0/zhaquirks/tuya/ts0501bs.py",
+   "author": "zigpy ZHA quirks contributors"
+  },
+  {
+   "mfr": "_TZ3210_dxroobu3",
+   "from": "dimmer_wall_1gang",
+   "keptOn": "bulb_dimmable",
+   "realPid": "TS0501B",
+   "hardware": "single-colour dimmable LED (ts0501bs)",
+   "source": "https://github.com/zigpy/zha-device-handlers/blob/d54cf9e80b9b2709d3294684d485eee83a0a8fe0/zhaquirks/tuya/ts0501bs.py",
+   "author": "zigpy ZHA quirks contributors"
+  },
+  {
+   "mfr": "_TZ3000_qd7hej8u",
+   "from": "dimmable_led_strip",
+   "keptOn": "bulb_rgb",
+   "realPid": "TS0505A/TS0505B/ZB-CL01",
+   "hardware": "RGB E27 bulb",
+   "source": "https://github.com/JohanBendz/com.tuya.zigbee/blob/61577d8ec2572bf8c7c4c2ff210284575acd295b/drivers/rgb_bulb_E27/driver.compose.json",
+   "author": "Johan Bendz"
+  },
+  {
+   "mfr": "_TZ3210_mja6r5ix",
+   "from": "dimmable_led_strip",
+   "keptOn": "bulb_rgb",
+   "realPid": "TS0505A/TS0505B/ZB-CL01",
+   "hardware": "RGB E27 bulb",
+   "source": "https://github.com/JohanBendz/com.tuya.zigbee/blob/61577d8ec2572bf8c7c4c2ff210284575acd295b/drivers/rgb_bulb_E27/driver.compose.json",
+   "author": "Johan Bendz"
+  },
+  {
+   "mfr": "_TZ3000_q50zhdsc",
+   "from": "dimmable_led_strip",
+   "keptOn": "bulb_rgb",
+   "realPid": "TS0505A/TS0505B/ZB-CL01",
+   "hardware": "RGB E27 bulb",
+   "source": "https://github.com/JohanBendz/com.tuya.zigbee/blob/61577d8ec2572bf8c7c4c2ff210284575acd295b/drivers/rgb_bulb_E27/driver.compose.json",
+   "author": "Johan Bendz"
+  },
+  {
+   "mfr": "_TZB210_zdvrsts8",
+   "from": "bulb_rgbw",
+   "keptOn": "bulb_rgb",
+   "realPid": "TS0503B",
+   "hardware": "Skydance WZ5 RGB controller (RGB only, no white channel)",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/7462b541b367c301057aee995e6e6756e5f7e985/src/devices/skydance.ts#L59",
+   "author": "Koenkk / zigbee-herdsman-converters contributors"
+  },
+  {
+   "mfr": "_TZ3210_ttkgurpb",
+   "from": "wall_dimmer_tuya",
+   "keptOn": "bulb_rgbw",
+   "realPid": "TS0504B",
+   "hardware": "MiBoxer FUT038Z RGBW LED controller",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/7462b541b367c301057aee995e6e6756e5f7e985/src/devices/miboxer.ts#L286",
+   "author": "Koenkk / zigbee-herdsman-converters contributors"
+  },
+  {
+   "mfr": "_TZ3210_huzkzqyk",
+   "from": "wall_dimmer_tuya",
+   "keptOn": "lcdtemphumidluxsensor",
+   "realPid": "TS0201/TS0222",
+   "hardware": "LCD temperature/humidity/lux sensor",
+   "source": "https://github.com/JohanBendz/com.tuya.zigbee/blob/61577d8ec2572bf8c7c4c2ff210284575acd295b/drivers/lcdtemphumidluxsensor/driver.compose.json",
+   "author": "Johan Bendz"
+  },
+  {
+   "mfr": "_TZ3210_k1pe6ibm",
+   "from": "wall_dimmer_tuya",
+   "keptOn": "rgb_led_strip_controller",
+   "realPid": "TS0503A/TS0503B/TS0504B/TS0505B",
+   "hardware": "RGB LED strip controller",
+   "source": "https://github.com/JohanBendz/com.tuya.zigbee/blob/61577d8ec2572bf8c7c4c2ff210284575acd295b/drivers/rgb_led_strip_controller/driver.compose.json",
+   "author": "Johan Bendz"
+  },
+  {
+   "mfr": "_TZ3210_r0xgkft5",
+   "from": "led_controller_cct",
+   "keptOn": "rgb_mood_light",
+   "realPid": "TS0505A/TS0505B",
+   "hardware": "RGB mood light",
+   "source": "https://github.com/JohanBendz/com.tuya.zigbee/blob/61577d8ec2572bf8c7c4c2ff210284575acd295b/drivers/rgb_mood_light/driver.compose.json",
+   "author": "Johan Bendz"
+  },
+  {
+   "mfr": "_TZ3000_cymsnfvf",
+   "from": "button_wireless_2",
+   "keptOn": "plug",
+   "realPid": "TS011F",
+   "hardware": "ZP-LZ-FR2U smart plug",
+   "source": "https://www.zigbee2mqtt.io/devices/ZP-LZ-FR2U.html",
+   "author": "Koenkk / zigbee-herdsman-converters contributors"
+  },
+  {
+   "mfr": "_TZ3000_ew31dmgx",
+   "from": "button_wireless_2",
+   "keptOn": "plug",
+   "realPid": "TS011F",
+   "hardware": "TS011F smart plug",
+   "source": "https://github.com/JohanBendz/com.tuya.zigbee/blob/61577d8ec2572bf8c7c4c2ff210284575acd295b/drivers/plug/driver.compose.json",
+   "author": "Johan Bendz"
+  },
+  {
+   "mfr": "_TZ3000_hyfvrar3",
+   "from": "button_wireless_2",
+   "keptOn": "plug",
+   "realPid": "TS011F",
+   "hardware": "SM0212 smart plug",
+   "source": "https://www.zigbee2mqtt.io/devices/SM0212.html",
+   "author": "Koenkk / zigbee-herdsman-converters contributors"
+  },
+  {
+   "mfr": "_TZ3000_kdi2o9m6",
+   "from": "button_wireless_2",
+   "keptOn": "plug",
+   "realPid": "TS011F",
+   "hardware": "TS011F smart plug",
+   "source": "https://github.com/JohanBendz/com.tuya.zigbee/blob/61577d8ec2572bf8c7c4c2ff210284575acd295b/drivers/plug/driver.compose.json",
+   "author": "Johan Bendz"
+  },
+  {
+   "mfr": "_TZ3000_plyvnuf5",
+   "from": "button_wireless_2",
+   "keptOn": "plug",
+   "realPid": "TS011F",
+   "hardware": "Lidl HG06337 plug",
+   "source": "https://www.zigbee2mqtt.io/devices/HG06337.html",
+   "author": "Koenkk / zigbee-herdsman-converters contributors"
+  },
+  {
+   "mfr": "_TZ3000_upjrsxh1",
+   "from": "button_wireless_2",
+   "keptOn": "plug",
+   "realPid": "TS011F",
+   "hardware": "Lidl HG06337 plug",
+   "source": "https://www.zigbee2mqtt.io/devices/HG06337.html",
+   "author": "Koenkk / zigbee-herdsman-converters contributors"
+  }
+ ],
+ "keptOnPurpose": [
+  {
+   "mfr": "_TZE284_xpq2rzhq",
+   "drivers": [
+    "climate_sensor",
+    "presence_sensor_radar"
+   ],
+   "why": "reviewed dual in data/native-matrix-reviewed-duals.json (user decision 2026-10-04); left on both drivers"
+  },
+  {
+   "mfr": "_TZ3000_xwh1e22x",
+   "drivers": [
+    "bulb_rgbw",
+    "button_wireless_4"
+   ],
+   "why": "reviewed dual in data/native-matrix-reviewed-duals.json (earlier owner decision: old entry kept, exact couple on button_wireless_4); move dropped, needs an explicit owner override"
+  },
+  {
+   "mfr": "_TZ3000_kmsbwdol",
+   "drivers": [
+    "climate_sensor",
+    "curtain_module_2_gang"
+   ],
+   "why": "reviewed dual in data/native-matrix-reviewed-duals.json (earlier owner decision: old entry kept, exact couple on curtain_module_2_gang); move dropped, needs an explicit owner override"
+  },
+  {
+   "mfr": "_TZ3000_nsa76jai",
+   "drivers": [
+    "climate_sensor",
+    "switch_4gang"
+   ],
+   "why": "reviewed dual in data/native-matrix-reviewed-duals.json (earlier owner decision: old entry kept, exact couple on switch_4gang); move dropped, needs an explicit owner override"
+  },
+  {
+   "mfr": "_TYZB01_v8gtiaed",
+   "drivers": [
+    "switch_1gang",
+    "dimmer_2_gang"
+   ],
+   "why": "reviewed dual in data/native-matrix-reviewed-duals.json (earlier owner decision: old entry kept, exact couple on dimmer_2_gang); move dropped, needs an explicit owner override"
+  },
+  {
+   "mfr": "_TZ3000_46vasa5h",
+   "drivers": [
+    "switch_1gang",
+    "double_power_point_2"
+   ],
+   "why": "reviewed dual in data/native-matrix-reviewed-duals.json (earlier owner decision: old entry kept, exact couple on double_power_point_2); move dropped, needs an explicit owner override"
+  },
+  {
+   "mfr": "_TZ3000_yi0n4xfd",
+   "drivers": [
+    "switch_1gang",
+    "smartPlug_DinRail"
+   ],
+   "why": "reviewed dual in data/native-matrix-reviewed-duals.json (earlier owner decision: old entry kept, exact couple on smartPlug_DinRail); move dropped, needs an explicit owner override"
+  }
+ ]
+}

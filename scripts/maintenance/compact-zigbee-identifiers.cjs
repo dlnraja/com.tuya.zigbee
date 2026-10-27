@@ -185,7 +185,15 @@ function resolveBaselinePins(manifest, baseline) {
     }
     later.push(c);
   }
+  const isExempt = (c) => exempt.has(`${c.mfr}\u0000${c.pid}\u0000${c.driverId}`)
+    || exempt.has(`${c.mfr}\u0000${c.pid}\u0000*`);
   for (const c of later) {
+    // WHY(P3077): an exempted couple was dropped from its driver on purpose (owner-approved
+    // parasite). If another driver still carries the mfr and the pid through its own
+    // manufacturerName x productId product, pinning it there grows that driver's pinned
+    // cartesian (9ni6xxld: 28 parasite pids x 12 plug mfrs = +336 combos on plug_energy_monitor).
+    // Same rule as the gate: an exemption keys on mfr+pid, so skip it here too.
+    if (isExempt(c)) continue;
     const now = ownersOf(c.mfr, c.pid);
     if (now.length > 0) {
       moved += 1;
@@ -210,7 +218,6 @@ function resolveBaselinePins(manifest, baseline) {
       addPinned(pin);
       continue;
     }
-    if (exempt.has(`${c.mfr}\u0000${c.pid}\u0000${c.driverId}`) || exempt.has(`${c.mfr}\u0000${c.pid}\u0000*`)) continue;
     if (byId.has(c.driverId)) {
       // WHY(P3024b): no driver owns this couple any more (a later source curation or an
       // mfs_db rescue that did not re-run). Nothing else can claim it, so re-pin it on the

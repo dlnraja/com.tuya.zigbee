@@ -2065,6 +2065,108 @@
       "pid": "TS011F",
       "driverId": "smartplug",
       "note": "P3055 compaction-shuffle guard: Z2M lidl.ts TS011F plug fingerprint; kept so budget freed by the parasite removal cannot move the pass2 cut onto it"
+    },
+    {
+      "mfr": "_TZ3000_nbnmw9nc",
+      "pid": "TS0501A",
+      "driverId": "bulb_dimmable",
+      "note": "P3077 one couple one driver: Lidl/Livarno dimmable bulb (TS0501A.py); dropped from wrong-class dimmer_wall_1gang, so pinned here so compaction always ships its real couple"
+    },
+    {
+      "mfr": "_TZ3000_nosnx7im",
+      "pid": "TS0501A",
+      "driverId": "bulb_dimmable",
+      "note": "P3077 one couple one driver: Lidl/Livarno dimmable bulb (TS0501A.py); dropped from wrong-class dimmer_wall_1gang, so pinned here so compaction always ships its real couple"
+    },
+    {
+      "mfr": "_TZ3210_dbilpfqk",
+      "pid": "TS0501B",
+      "driverId": "bulb_dimmable",
+      "note": "P3077 one couple one driver: single-colour dimmable LED (ts0501bs) (ts0501bs.py); dropped from wrong-class dimmer_wall_1gang, so pinned here so compaction always ships its real couple"
+    },
+    {
+      "mfr": "_TZ3210_dxroobu3",
+      "pid": "TS0501B",
+      "driverId": "bulb_dimmable",
+      "note": "P3077 one couple one driver: single-colour dimmable LED (ts0501bs) (ts0501bs.py); dropped from wrong-class dimmer_wall_1gang, so pinned here so compaction always ships its real couple"
+    },
+    {
+      "mfr": "_TZB210_zdvrsts8",
+      "pid": "TS0503B",
+      "driverId": "bulb_rgb",
+      "note": "P3077 one couple one driver: Skydance WZ5 RGB controller (RGB only, no white channel) (skydance.ts#L59); dropped from wrong-class bulb_rgbw, so pinned here so compaction always ships its real couple"
+    },
+    {
+      "mfr": "_TZ3000_xwh1e22x",
+      "pid": "TS1002",
+      "driverId": "button_wireless_4",
+      "note": "P3077 one couple one driver: MiBoxer FUT089Z remote (not a light) (miboxer.ts#L302); dropped from wrong-class bulb_rgbw, so pinned here so compaction always ships its real couple"
+    },
+    {
+      "mfr": "_TZ3210_ttkgurpb",
+      "pid": "TS0504B",
+      "driverId": "bulb_rgbw",
+      "note": "P3077 one couple one driver: MiBoxer FUT038Z RGBW LED controller (miboxer.ts#L286); dropped from wrong-class wall_dimmer_tuya, so pinned here so compaction always ships its real couple"
+    },
+    {
+      "mfr": "_TZ3000_nsa76jai",
+      "pid": "TS0004",
+      "driverId": "switch_4gang",
+      "note": "P3077 one couple one driver: Zemismart KES-606US-L4 4-gang switch (zemismart.ts#L1173); dropped from wrong-class climate_sensor, so pinned here so compaction always ships its real couple"
+    },
+    {
+      "mfr": "_TZ3000_upjrsxh1",
+      "pid": "TS011F",
+      "driverId": "plug",
+      "note": "P3077 one couple one driver: Lidl HG06337 plug (https://www.zigbee2mqtt.io/devices/HG06337.html); dropped from wrong-class button_wireless_2, so pinned here so compaction always ships its real couple"
+    },
+    {
+      "mfr": "_TZE204_pkpfn9hc",
+      "pid": "TS0601",
+      "driverId": "air_quality_co2",
+      "note": "P3077 compaction-shuffle guard: attested by z2m TS0601_co2_temperature_humidity_sensor (https://www.zigbee2mqtt.io/devices/TS0601_co2_temperature_humidity_sensor.html); budget freed by the P3055/P3077 removals moved the pass2 cut onto it"
+    },
+    {
+      "mfr": "_TZ3000_uwaort14",
+      "pid": "TS0121",
+      "driverId": "plug_smart",
+      "note": "P3077 compaction-shuffle guard: attested by johan smartplug (https://github.com/JohanBendz/com.tuya.zigbee/blob/61577d8ec2572bf8c7c4c2ff210284575acd295b/drivers/smartplug/driver.compose.json); budget freed by the P3055/P3077 removals moved the pass2 cut onto it"
+    },
+    {
+      "mfr": "_TZ3210_5ct6e7ye",
+      "pid": "TS0121",
+      "driverId": "plug_smart",
+      "note": "P3077 compaction-shuffle guard: attested by johan smartplug (https://github.com/JohanBendz/com.tuya.zigbee/blob/61577d8ec2572bf8c7c4c2ff210284575acd295b/drivers/smartplug/driver.compose.json); budget freed by the P3055/P3077 removals moved the pass2 cut onto it"
+    },
+    {
+      "mfr": "_TZ3000_fqoynhku",
+      "pid": "TS0121",
+      "driverId": "smartplug",
+      "note": "P3077 compaction-shuffle guard: attested by johan smartplug (https://github.com/JohanBendz/com.tuya.zigbee/blob/61577d8ec2572bf8c7c4c2ff210284575acd295b/drivers/smartplug/driver.compose.json); budget freed by the P3055/P3077 removals moved the pass2 cut onto it"
+    },
+    {
+      "mfr": "_TZ3000_fqoynhku",
+      "pid": "TS011F",
+      "driverId": "smartplug",
+      "note": "P3077 compaction-shuffle guard: attested by johan smartplug (https://github.com/JohanBendz/com.tuya.zigbee/blob/61577d8ec2572bf8c7c4c2ff210284575acd295b/drivers/smartplug/driver.compose.json); budget freed by the P3055/P3077 removals moved the pass2 cut onto it"
+    },
+    {
+      "mfr": "_TZ3000_fqoynhku",
+      "pid": "TSO121",
+      "driverId": "smartplug",
+      "note": "P3077 compaction-shuffle guard: attested by johan smartplug (https://github.com/JohanBendz/com.tuya.zigbee/blob/61577d8ec2572bf8c7c4c2ff210284575acd295b/drivers/smartplug/driver.compose.json); budget freed by the P3055/P3077 removals moved the pass2 cut onto it"
+    },
+    {
+      "mfr": "_TZE204_ugekduaj",
+      "pid": "TS0601",
+      "driverId": "valve_irrigation",
+      "note": "P3077 compaction-shuffle guard: attested by z2m SDM01 (https://www.zigbee2mqtt.io/devices/SDM01.html); budget freed by the P3055/P3077 removals moved the pass2 cut onto it"
+    },
+    {
+      "mfr": "_TZ3000_cymsnfvf",
+      "pid": "TS011F",
+      "driverId": "plug",
+      "note": "P3077 one couple one driver: ZP-LZ-FR2U smart plug (zigbee2mqtt.io/devices/ZP-LZ-FR2U.html); dropped from wrong-class button_wireless_2, so pinned here so compaction always ships its real couple"
     }
   ]
 }
