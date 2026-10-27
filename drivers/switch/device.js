@@ -398,14 +398,20 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
             } catch (e) { }
           }
           if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-            const sceneId = `switch_2gang_gang${epNum}_scene`;
+            // P3075: the declared per-gang cards end in _scene_switch; the bare
+            // `_scene` id never existed, so this never fired. Also fire the any-gang card.
+            const sceneId = `switch_2gang_gang${epNum}_scene_switch`;
             try {
               const card = this.homey.flow.getDeviceTriggerCard(sceneId);
               if (card) {
                 await card.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
                 this.log(`[BSEED-2G]  Scene G${epNum} ${value ? 'on' : 'off'}`);
               }
-            } catch (e) { }
+            } catch (_e) { /* card not declared on this app build: nothing to fire */ }
+            try {
+              const anyCard = this.homey.flow.getDeviceTriggerCard('switch_2gang_gangx_scene_b4ab3');
+              if (anyCard) { await anyCard.trigger(this, {}, {}).catch(() => {}); }
+            } catch (_e) { /* card not declared on this app build: nothing to fire */ }
           }
         }
       });
