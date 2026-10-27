@@ -315,6 +315,39 @@
    "source": "https://github.com/kkossev/Hubitat/blob/main/Drivers/Tuya%20TS004F/TS004F.groovy",
    "author": "kkossev (Hubitat TS004F driver, 'Tuya SOS Button', clusters 0000,0003,0500,0001) and zigbee-herdsman-converters ZG-101Z",
    "why": "two sources agree it is an SOS button; it was never a climate sensor. Not in the Athom baseline"
+  },
+  {
+   "mfr": "_TZE200_0zaf1cr8",
+   "from": "switch_3gang",
+   "keptOn": "smoke_sensor_ts0601_dp",
+   "realPid": "TS0601",
+   "hardware": "Nous E8 smoke sensor",
+   "batch": 9,
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
+   "author": "Koen Kanters and contributors (zigbee-herdsman-converters TS0601_smoke_1, whitelabel Nous E8)",
+   "why": "a battery smoke sensor with DP1 smoke, DP4 tamper, DP14 battery low, the exact layout smoke_sensor_ts0601_dp already reads; never a 3-gang switch. The Athom baseline only has it on smoke_sensor3 x TS0205 (removed earlier in P3055, unchanged here)"
+  },
+  {
+   "mfr": "_TZE284_0zaf1cr8",
+   "from": "switch_3gang",
+   "keptOn": "smoke_sensor_ts0601_dp",
+   "realPid": "TS0601",
+   "hardware": "Nous E8 smoke sensor",
+   "batch": 9,
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
+   "author": "Koen Kanters and contributors (zigbee-herdsman-converters TS0601_smoke_1, whitelabel Nous E8)",
+   "why": "a battery smoke sensor with DP1 smoke, DP4 tamper, DP14 battery low, the exact layout smoke_sensor_ts0601_dp already reads; never a 3-gang switch. The Athom baseline only has it on smoke_sensor3 x TS0205 (removed earlier in P3055, unchanged here)"
+  },
+  {
+   "mfr": "_TZE200_dcnsggv",
+   "from": "climate_sensor",
+   "keptOn": "wall_dimmer_tuya",
+   "realPid": "TS0601",
+   "hardware": "Tuya 1-gang dimmer (TS0601_dimmer_5)",
+   "batch": 9,
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
+   "author": "Koen Kanters and contributors (zigbee-herdsman-converters TS0601_dimmer_5 fingerprint lists _TZE204_dcnsggvz, _TZE200_dcnsggv, _TZE200_dcnsggvz)",
+   "why": "not a typo: Z2M lists the short id next to _TZE200_dcnsggvz as the same dimmer, so it moves to the dimmer driver instead of being deleted. Not in the Athom baseline"
   }
  ],
  "keptOnPurpose": [

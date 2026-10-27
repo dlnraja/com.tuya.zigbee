@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-27T03:36:52.538Z",
+ "generated": "2026-10-27T03:53:34.542Z",
  "drivers": 417,
  "snapshot": {
   "air_conditioner_aetz01": {
@@ -291,9 +291,9 @@
    "pidSha": "3427697d0c296c9d"
   },
   "climate_sensor": {
-   "mfr": 503,
+   "mfr": 502,
    "pid": 32,
-   "mfrSha": "dd543f1c522f9927",
+   "mfrSha": "f598c11180468744",
    "pidSha": "4809a771f46a5606"
   },
   "climate_sensor_device": {
@@ -1875,9 +1875,9 @@
    "pidSha": "ffba1e7b2343f15f"
   },
   "smoke_sensor_ts0601_dp": {
-   "mfr": 6,
+   "mfr": 8,
    "pid": 1,
-   "mfrSha": "41c76995f561c386",
+   "mfrSha": "bb20c908d9a4ed54",
    "pidSha": "455c46e8c8549693"
   },
   "socket_power_strip": {
@@ -1995,9 +1995,9 @@
    "pidSha": "1c2e035cec82b333"
   },
   "switch_3gang": {
-   "mfr": 80,
+   "mfr": 78,
    "pid": 46,
-   "mfrSha": "b170fccf9e8b3b2b",
+   "mfrSha": "e3471149d2f822c1",
    "pidSha": "870729bf5269aac9"
   },
   "switch_4_gang_metering": {
@@ -2307,9 +2307,9 @@
    "pidSha": "1326f3b1090e234a"
   },
   "wall_dimmer_tuya": {
-   "mfr": 132,
+   "mfr": 133,
    "pid": 14,
-   "mfrSha": "5b834090b2772413",
+   "mfrSha": "db2a508d2d7292c4",
    "pidSha": "86e609055c5d6281"
   },
   "wall_remote_1_gang": {

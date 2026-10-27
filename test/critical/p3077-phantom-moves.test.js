@@ -116,4 +116,17 @@ describe('P3077 phantom moves', () => {
     const fp = require(path.join(ROOT, 'lib/tuya/fingerprints.json'));
     assert.equal(fp._TZE200_vrcfo4i0.driverId, 'button_emergency_sos');
   });
+  it('batch 9: Nous E8 smoke ids pair on the TS0601 smoke driver, the short dcnsggv id on the dimmer', () => {
+    // WHY: Z2M tuya.ts TS0601_smoke_1 (Nous E8) and TS0601_dimmer_5 (_TZE200_dcnsggv next to dcnsggvz).
+    for (const m of ['_TZE200_0zaf1cr8', '_TZE284_0zaf1cr8']) {
+      assert.ok(lists(zig('smoke_sensor_ts0601_dp'), m) && !lists(zig('switch_3gang'), m), m);
+    }
+    assert.ok(lists(zig('wall_dimmer_tuya'), '_TZE200_dcnsggv') && zig('wall_dimmer_tuya').productId.includes('TS0601'));
+    assert.ok(!lists(zig('climate_sensor'), '_TZE200_dcnsggv'));
+    assert.ok(lists(zig('wall_dimmer_tuya'), '_TZE200_dcnsggvz'));
+    const fp = require(path.join(ROOT, 'lib/tuya/fingerprints.json'));
+    assert.equal(fp._TZE200_0zaf1cr8.driverId, 'smoke_sensor_ts0601_dp');
+    assert.equal(fp._TZE200_dcnsggv.driverId, 'wall_dimmer_tuya');
+    assert.strictEqual(require(path.join(ROOT, 'lib/utils/CoupleGuard')).checkCouple('smoke_sensor_ts0601_dp', '_TZE284_0zaf1cr8', 'TS0601').ok, true);
+  });
 });

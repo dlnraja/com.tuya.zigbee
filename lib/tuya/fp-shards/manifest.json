@@ -1,9 +1,9 @@
 {
   "version": 1,
   "patch": "P2678",
-  "generatedAt": "2026-10-27T03:36:01.392Z",
+  "generatedAt": "2026-10-27T03:53:34.323Z",
   "source": "lib/tuya/fingerprints.json",
-  "sourceBytes": 931568,
+  "sourceBytes": 931754,
   "keyCount": 5780,
   "shardCount": 227,
   "shards": {
@@ -457,7 +457,7 @@
     },
     "TZE200_0": {
       "keys": 18,
-      "bytes": 2641
+      "bytes": 2715
     },
     "TZE200_1": {
       "keys": 15,
@@ -509,7 +509,7 @@
     },
     "TZE200_d": {
       "keys": 50,
-      "bytes": 7639
+      "bytes": 7677
     },
     "TZE200_e": {
       "keys": 35,
@@ -765,7 +765,7 @@
     },
     "TZE284_0": {
       "keys": 11,
-      "bytes": 1676
+      "bytes": 1750
     },
     "TZE284_1": {
       "keys": 14,

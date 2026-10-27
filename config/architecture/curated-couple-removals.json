@@ -1118,6 +1118,23 @@
       ],
       "why": "P3077 batch 8: Loginovo ZG-101Z SOS button (Z2M tuya.ts, Hubitat kkossev TS004F driver), owner button_emergency_sos",
       "source": "P3077 batch 8 (t614u)"
+    },
+    {
+      "driver": "switch_3gang",
+      "mfr": [
+        "_TZE200_0zaf1cr8",
+        "_TZE284_0zaf1cr8"
+      ],
+      "why": "P3077 batch 9: Nous E8 smoke sensor (Z2M tuya.ts TS0601_smoke_1), owner smoke_sensor_ts0601_dp",
+      "source": "P3077 batch 9 (t614u)"
+    },
+    {
+      "driver": "climate_sensor",
+      "mfr": [
+        "_TZE200_dcnsggv"
+      ],
+      "why": "P3077 batch 9: 1-gang dimmer (Z2M tuya.ts TS0601_dimmer_5), owner wall_dimmer_tuya",
+      "source": "P3077 batch 9 (t614u)"
     }
   ]
 }
