@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-27T12:34:43.500Z",
+ "updated": "2026-10-27T12:41:00.249Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -42922,20 +42922,20 @@
    "lastChangeRun": "40463191451"
   },
   "workflow-run:repo-autopilot": {
-   "status": "done",
-   "date": "2026-10-26",
-   "hash": "6e353a2eaf36cde6",
-   "note": "run summary: 6 counter(s)",
+   "status": "pending",
+   "date": "2026-10-27",
+   "hash": "56f0a21565cab296",
+   "note": "run reported ok=false",
    "by": "repo-autopilot",
    "counts": {
     "closed": 0,
-    "merged": 1,
+    "merged": 0,
     "branchesDeleted": 0,
     "issues": 2,
     "external": 0,
     "leadsAdded": 0
    },
-   "lastChangeRun": "40330916849"
+   "lastChangeRun": "40505220118"
   }
  }
 }
