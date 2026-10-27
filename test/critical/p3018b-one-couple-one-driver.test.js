@@ -42,9 +42,9 @@ describe('P3018b one couple, one driver', () => {
   it('interviewed couples without a driver are only the documented holds', () => {
     const A = require('../../scripts/kb/dp-endpoint-coverage.js').audit();
     const none = A.interviews.filter((i) => !i.driver).map((i) => `${i.mfr}|${i.pid}`).sort();
-    // WHY: SONOFF MINI-ZBRBS / eWeLight TS0502B are held out by the A2 publish bisect (pcr2 tests);
+    // WHY: eWeLight TS0502B is held out by the A2 publish bisect (pcr2 tests); SONOFF MINI-ZBRBS got its own driver (P3080);
     // Signify Hue remotes need the Philips 0xFC00 decoder (KB doc lists them as open).
-    for (const k of none) { assert.match(k, /^(SONOFF\|MINI-ZBRBS|eWeLight\|TS0502B|Signify Netherlands B\.V\.\|RWL022|Signify Netherlands B\.V\.\|RDM001)$/, k); }
+    for (const k of none) { assert.match(k, /^(eWeLight\|TS0502B|Signify Netherlands B\.V\.\|RWL022|Signify Netherlands B\.V\.\|RDM001)$/, k); }
   });
   it('_TYST11_jeaxp72v + eaxp72v (Siterwell GS361A-H04) lands in device_radiator_valve only', () => {
     assert.deepStrictEqual(holders('_TYST11_jeaxp72v', 'eaxp72v'), ['device_radiator_valve']);

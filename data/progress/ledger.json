@@ -42334,9 +42334,9 @@
    "note": "P3080: Signify RDM001 (Hue wall switch module) needs the Philips manufacturer cluster 0xFC00 for button events (ZHA philips wall_switch, deCONZ rdm001); outside this Tuya app scope and served by the Hue app. Not added"
   },
   "task:new-sonoff-mini-zbrbs": {
-   "status": "pending",
+   "status": "done",
    "date": "2026-10-27",
-   "note": "P3080: SONOFF|MINI-ZBRBS (ZHC) was on curtain_module (735a7d8ac2) and dropped in the 813cf9931d bisect; putting SONOFF back on curtain_module would create SONOFF|TS130F/TS0726 cartesian couples. Exact fix = small dedicated driver reusing curtain_module device.js; needs a manifest-bytes decision (net-0 rule). Not done"
+   "note": "DONE P3080: dedicated driver curtain_sonoff_mini_zbrbs (SONOFF|MINI-ZBRBS only, ZCL 0x0102, empty flow compose, shared learnmode text, headroom 299.85 KB). P3080: SONOFF|MINI-ZBRBS (ZHC) was on curtain_module (735a7d8ac2) and dropped in the 813cf9931d bisect; putting SONOFF back on curtain_module would create SONOFF|TS130F/TS0726 cartesian couples. Exact fix = small dedicated driver reusing curtain_module device.js; needs a manifest-bytes decision (net-0 rule). Not done"
   },
   "task:next-01": {
    "status": "done",

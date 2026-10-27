@@ -5,7 +5,7 @@
 
 ### Interviewed couples without a driver
 - `_TYST11_jeaxp72v` / `eaxp72v` → device_radiator_valve (Siterwell GS361A-H04, Z2M `siterwell.ts`).
-- Held on purpose: SONOFF `MINI-ZBRBS`, eWeLight `TS0502B` (A2 publish bisect hold, asserted by tests).
+- Held on purpose: eWeLight `TS0502B` (A2 publish bisect hold, asserted by tests). SONOFF `MINI-ZBRBS` has its own driver `curtain_sonoff_mini_zbrbs` (P3080).
 - Open: Signify `RDM001` / `RWL022` (Hue wall module / dimmer switch gen 2, Z2M `philips.ts`) need the Philips 0xFC00 manufacturer cluster decoder; no driver fits without degrading button_wireless_1 → not placed.
 
 ### TS130F `_TZ3000_cet6ch1r` EP2 / 0x0102

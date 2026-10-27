@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-27T06:44:34.041Z",
- "drivers": 417,
+ "generated": "2026-10-27T07:03:36.641Z",
+ "drivers": 418,
  "snapshot": {
   "air_conditioner_aetz01": {
    "mfr": 1,
@@ -433,6 +433,12 @@
    "pid": 1,
    "mfrSha": "3937f17bffe7c1bc",
    "pidSha": "46e1811a1a151d23"
+  },
+  "curtain_sonoff_mini_zbrbs": {
+   "mfr": 1,
+   "pid": 1,
+   "mfrSha": "c712743f259fbeb8",
+   "pidSha": "ff4d873026ce5886"
   },
   "device_air_purifier": {
    "mfr": 1,
