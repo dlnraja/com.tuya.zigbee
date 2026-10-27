@@ -1086,6 +1086,14 @@
     "en": "CRITICAL: sdkVersion fix (Processing failed), Missing Capability Listener (setable:false), timer fallback, battery restore, duplicate method fix, HOBEIAN ZG-301Z, NFKD normalize, 87 fingerprints restored, Polos validator",
     "fr": "CRITIQUE: sdkVersion (Processing failed), Missing Capability Listener, fallback timer, batterie, HOBEIAN, NFKD, 87 fingerprints, Polos"
   },
+  "5.12.515": {
+    "en": "Next stable update in preparation: this note is replaced by the list of its changes when the version is published.",
+    "fr": "Prochaine mise à jour stable en préparation : cette note est remplacée par la liste de ses changements à la publication."
+  },
+  "5.12.514": {
+    "en": "New: wall switches. Plus 3 other changes in the app core.",
+    "fr": "Nouveau : interrupteurs. Et 3 autres changements dans le cœur de l'app."
+  },
   "5.12.513": {
     "en": "Behind the scenes only, no change to devices or pairing: the publishing check now stops right away when a newer commit replaces the one it was checking, and a new report lists, for each multi-gang, multi-channel or multi-phase driver family, which variants are still missing.",
     "fr": "Uniquement en coulisses, aucun changement pour les appareils ni l’appairage : le contrôle de publication s’arrête tout de suite quand un commit plus récent remplace celui qu’il vérifiait, et un nouveau rapport liste, pour chaque famille de drivers multi-boutons, multi-canaux ou multi-phases, les variantes qui manquent encore."
