@@ -1135,6 +1135,24 @@
       ],
       "why": "P3077 batch 9: 1-gang dimmer (Z2M tuya.ts TS0601_dimmer_5), owner wall_dimmer_tuya",
       "source": "P3077 batch 9 (t614u)"
+    },
+    {
+      "driver": "dimmer_1_gang_tuya",
+      "mfr": [
+        "_TZE204_4mh6tyyo",
+        "_TZE284_4mh6tyyo"
+      ],
+      "why": "P3077 batch 10: unsourced prefix copies of _TZE200_4mh6tyyo (Z2M tuya.ts)",
+      "source": "P3077 batch 10 (t614u)"
+    },
+    {
+      "driver": "dimmer_wall_1gang",
+      "mfr": [
+        "_TZE204_4mh6tyyo",
+        "_TZE284_4mh6tyyo"
+      ],
+      "why": "P3077 batch 10: unsourced prefix copies of _TZE200_4mh6tyyo (Z2M tuya.ts), owner dimmer_1_gang_tuya",
+      "source": "P3077 batch 10 (t614u)"
     }
   ]
 }

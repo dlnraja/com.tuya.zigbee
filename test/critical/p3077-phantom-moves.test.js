@@ -129,4 +129,10 @@ describe('P3077 phantom moves', () => {
     assert.equal(fp._TZE200_dcnsggv.driverId, 'wall_dimmer_tuya');
     assert.strictEqual(require(path.join(ROOT, 'lib/utils/CoupleGuard')).checkCouple('smoke_sensor_ts0601_dp', '_TZE284_0zaf1cr8', 'TS0601').ok, true);
   });
+  it('batch 10: only the sourced _TZE200_4mh6tyyo dimmer id is left, on dimmer_1_gang_tuya', () => {
+    assert.ok(lists(zig('dimmer_1_gang_tuya'), '_TZE200_4mh6tyyo'));
+    for (const d of ['dimmer_1_gang_tuya', 'dimmer_wall_1gang']) {
+      for (const m of ['_TZE204_4mh6tyyo', '_TZE284_4mh6tyyo']) {assert.ok(!lists(zig(d), m), `${m} on ${d}`);}
+    }
+  });
 });
