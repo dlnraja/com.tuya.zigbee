@@ -131,7 +131,9 @@
       "id": "generic_diy_button_double_pressed",
       "title": {
         "en": "Button double pressed",
-        "fr": "Bouton double-pressé"
+        "fr": "Bouton double-pressé",
+        "de": "Taste doppelt gedrückt",
+        "nl": "Knop dubbel ingedrukt"
       },
       "hint": {
         "en": "When a DIY button is double pressed",
@@ -158,7 +160,9 @@
       "id": "generic_diy_button_long_pressed",
       "title": {
         "en": "Button long pressed",
-        "fr": "Bouton appui long"
+        "fr": "Bouton appui long",
+        "de": "Taste lang gedrückt",
+        "nl": "Knop lang ingedrukt"
       },
       "hint": {
         "en": "When a DIY button is long pressed",
@@ -185,7 +189,9 @@
       "id": "generic_diy_switch_turned_on",
       "title": {
         "en": "Switch turned on",
-        "fr": "Interrupteur activé"
+        "fr": "Interrupteur activé",
+        "de": "Schalter eingeschaltet",
+        "nl": "Schakelaar aangezet"
       },
       "hint": {
         "en": "When a DIY switch is turned on",
@@ -212,7 +218,9 @@
       "id": "generic_diy_switch_turned_off",
       "title": {
         "en": "Switch turned off",
-        "fr": "Interrupteur désactivé"
+        "fr": "Interrupteur désactivé",
+        "de": "Schalter ausgeschaltet",
+        "nl": "Schakelaar uitgezet"
       },
       "hint": {
         "en": "When a DIY switch is turned off",
@@ -239,7 +247,9 @@
       "id": "generic_diy_contact_opened",
       "title": {
         "en": "Contact opened",
-        "fr": "Contact ouvert"
+        "fr": "Contact ouvert",
+        "de": "Kontakt geöffnet",
+        "nl": "Contact geopend"
       },
       "hint": {
         "en": "When the DIY contact sensor opens",
@@ -255,7 +265,9 @@
       "id": "generic_diy_contact_closed",
       "title": {
         "en": "Contact closed",
-        "fr": "Contact fermé"
+        "fr": "Contact fermé",
+        "de": "Kontakt geschlossen",
+        "nl": "Contact gesloten"
       },
       "hint": {
         "en": "When the DIY contact sensor closes",
@@ -410,7 +422,9 @@
       "id": "generic_diy_motion_active",
       "title": {
         "en": "Motion is detected",
-        "fr": "Mouvement détecté"
+        "fr": "Mouvement détecté",
+        "de": "Bewegung erkannt",
+        "nl": "Beweging gedetecteerd"
       },
       "hint": {
         "en": "Check if motion is currently detected",
@@ -426,7 +440,9 @@
       "id": "generic_diy_contact_open",
       "title": {
         "en": "Contact is open",
-        "fr": "Contact est ouvert"
+        "fr": "Contact est ouvert",
+        "de": "Kontakt ist offen",
+        "nl": "Contact is open"
       },
       "hint": {
         "en": "Check if the contact sensor is open",

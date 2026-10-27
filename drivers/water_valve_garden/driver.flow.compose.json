@@ -19,7 +19,9 @@
       "id": "water_valve_garden_closed",
       "title": {
         "en": "Valve closed",
-        "fr": "Vanne fermée"
+        "fr": "Vanne fermée",
+        "de": "Ventil geschlossen",
+        "nl": "Klep gesloten"
       },
       "args": [],
       "titleFormatted": {
@@ -67,7 +69,9 @@
       "id": "water_valve_garden_is_open",
       "title": {
         "en": "Valve !{{is|is not}} open",
-        "fr": "La vanne !{{est|n'est pas}} ouverte"
+        "fr": "La vanne !{{est|n'est pas}} ouverte",
+        "de": "Ventil !{{ist|ist nicht}} offen",
+        "nl": "Klep !{{is|is niet}} open"
       },
       "args": [],
       "titleFormatted": {
@@ -109,7 +113,9 @@
       "id": "water_valve_garden_toggle",
       "title": {
         "en": "Toggle valve",
-        "fr": "Basculer la vanne"
+        "fr": "Basculer la vanne",
+        "de": "Ventil umschalten",
+        "nl": "Klep omschakelen"
       },
       "args": [],
       "titleFormatted": {

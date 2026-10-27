@@ -8,7 +8,7 @@ const fs = require('fs');
 const path = require('path');
 const ROOT = path.join(__dirname, '..', '..');
 const SAME_IN_FR = new Set(['Menu', 'Vibration', 'Scene', 'Mode', 'Code', 'Timer', 'Test']);
-const CEIL = { de: 324, nl: 318 };
+const CEIL = { de: 225, nl: 219 };
 // titleFormatted gaps (P3065b: copied from the card's own title.de/nl when en matches)
 const CEIL_TF = { de: 1286, nl: 1262 };
 

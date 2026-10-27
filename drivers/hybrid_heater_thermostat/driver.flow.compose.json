@@ -356,7 +356,9 @@
       "id": "hybrid_heater_thermostat_set_mode",
       "title": {
         "en": "Set heater mode",
-        "fr": "Définir mode chauffage"
+        "fr": "Définir mode chauffage",
+        "de": "Heizmodus einstellen",
+        "nl": "Stel verwarmingsmodus in"
       },
       "args": [
         {

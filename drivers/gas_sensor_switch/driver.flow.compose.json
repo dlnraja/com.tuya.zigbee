@@ -1056,7 +1056,9 @@
       "id": "gas_sensor_switch_4gang_set_backlight",
       "title": {
         "en": "Set LED backlight mode",
-        "fr": "Mode rétroéclairage LED"
+        "fr": "Mode rétroéclairage LED",
+        "de": "LED-Hintergrundbeleuchtung",
+        "nl": "LED achtergrondverlichting"
       },
       "args": [
         {
@@ -1100,7 +1102,9 @@
       "id": "gas_sensor_switch_4gang_set_backlight_color",
       "title": {
         "en": "Set LED color",
-        "fr": "Couleur LED"
+        "fr": "Couleur LED",
+        "de": "LED-Farbe",
+        "nl": "LED kleur"
       },
       "args": [
         {
@@ -1168,7 +1172,9 @@
       "id": "gas_sensor_switch_4gang_set_backlight_brightness",
       "title": {
         "en": "Set LED brightness",
-        "fr": "Luminosité LED"
+        "fr": "Luminosité LED",
+        "de": "LED-Helligkeit",
+        "nl": "LED helderheid"
       },
       "args": [
         {

@@ -1004,7 +1004,9 @@
       "id": "ir_blaster_tv_vol_up",
       "title": {
         "en": "Volume Up",
-        "fr": "Volume +"
+        "fr": "Volume +",
+        "de": "Lauter",
+        "nl": "Volume omhoog"
       },
       "args": []
     },
@@ -1012,7 +1014,9 @@
       "id": "ir_blaster_tv_vol_down",
       "title": {
         "en": "Volume Down",
-        "fr": "Volume -"
+        "fr": "Volume -",
+        "de": "Leiser",
+        "nl": "Volume omlaag"
       },
       "args": []
     },
@@ -1020,7 +1024,9 @@
       "id": "ir_blaster_tv_mute",
       "title": {
         "en": "Mute",
-        "fr": "Muet"
+        "fr": "Muet",
+        "de": "Stumm",
+        "nl": "Dempen"
       },
       "args": []
     },
@@ -1028,7 +1034,9 @@
       "id": "ir_blaster_tv_ch_up",
       "title": {
         "en": "Channel Up",
-        "fr": "Chaine +"
+        "fr": "Chaine +",
+        "de": "Sender hoch",
+        "nl": "Zender omhoog"
       },
       "args": []
     },
@@ -1036,7 +1044,9 @@
       "id": "ir_blaster_tv_ch_down",
       "title": {
         "en": "Channel Down",
-        "fr": "Chaine -"
+        "fr": "Chaine -",
+        "de": "Sender runter",
+        "nl": "Zender omlaag"
       },
       "args": []
     },
@@ -1052,7 +1062,9 @@
       "id": "ir_blaster_tv_menu",
       "title": {
         "en": "Menu",
-        "fr": "Menu"
+        "fr": "Menu",
+        "de": "Menü",
+        "nl": "Menu"
       },
       "args": []
     },
@@ -1068,7 +1080,9 @@
       "id": "ir_blaster_tv_back",
       "title": {
         "en": "Back",
-        "fr": "Retour"
+        "fr": "Retour",
+        "de": "Zurück",
+        "nl": "Terug"
       },
       "args": []
     },

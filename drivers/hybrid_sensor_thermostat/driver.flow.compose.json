@@ -54,7 +54,9 @@
       "id": "hybrid_sensor_thermostat_mode_changed",
       "title": {
         "en": "Thermostat mode changed",
-        "fr": "Mode thermostat changé"
+        "fr": "Mode thermostat changé",
+        "de": "Thermostatmodus geändert",
+        "nl": "Thermostaatmodus gewijzigd"
       },
       "tokens": [
         {
@@ -237,7 +239,9 @@
       "id": "hybrid_sensor_thermostat_set_mode",
       "title": {
         "en": "Set thermostat mode",
-        "fr": "Définir mode thermostat"
+        "fr": "Définir mode thermostat",
+        "de": "Thermostatmodus setzen",
+        "nl": "Thermostaatmodus instellen"
       },
       "args": [
         {
