@@ -74,7 +74,10 @@ const TRIGGER_RULES = [
   // the Zigbee `switch` driver has look-alike cards already reached by FlowCardHeuristics.
   [/^(gang|socket) [1-8] turned on$/, (c, t) => gangCaps(t), true, 'p3077'],
   [/^(gang|socket) [1-8] turned off$/, (c, t) => gangCaps(t), false, 'p3077'],
-  [/^water tank (is )?full$/, () => ['alarm_water'], true, 'p3077']
+  [/^water tank (is )?full$/, () => ['alarm_water'], true, 'p3077'],
+  // P3077 flow batch 2: radar distance and soil temperature cards whose capability exists but nothing fired them.
+  [/^(target |detection )?distance changed$/, () => ['measure_luminance.distance'], 'change'],
+  [/^soil temperature changed$/, () => ['measure_temperature.soil', 'measure_temperature'], 'change']
 ];
 
 function gangCaps(title) {

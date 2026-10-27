@@ -214,6 +214,16 @@ These three manufacturers are in `data/native-matrix-reviewed-duals.json`, where
   - cards that need a missing capability, a threshold or a timer: battery low on mains bulbs, temperature/humidity too high/low, "left open for", tilt/drop;
   - the robot-vacuum cards.
 
+## Flow batch 2 (radar distance, soil temperature)
+
+- 5 more orphan triggers are now wired through the same map, on capabilities the drivers already have:
+  - "detection/target distance changed" on `climate_sensor_presence`, `device_air_purifier_presence` and `sensor_motion_radar` (2 cards) → `measure_luminance.distance`;
+  - "soil temperature changed" on `sensor_lcdtemphumidsensor_soil` → `measure_temperature`.
+- The distance token on the two presence drivers said "(cm)" while the capability is declared in metres. Since nothing ever fired the card, the label was corrected to "(m)" (example 2). The manifest gets slightly smaller.
+- Phantom queue status:
+  - `_TZ3290_ixd9mvv4` stays on both valve drivers: batch 2 keptOnPurpose (P3055, owner t555u). Upstream id: TS0049 LYAI-14, Z2M discussion #28060 (Stepyon), zigbee2mqtt.io PR #4205 (cruelacid).
+  - The other unattested rows are reviewed duals (left as is), the HOBEIAN collateral (batch 2), or the 3 couples with no source either way.
+
 ## Pending
 
 - ~480 collateral duals need driver splits (next batches).

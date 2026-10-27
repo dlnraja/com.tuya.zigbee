@@ -109,12 +109,12 @@
           "name": "distance",
           "type": "number",
           "title": {
-            "en": "Distance (cm)",
-            "nl": "Afstand (cm)",
-            "fr": "Distance (cm)",
-            "de": "Abstand (cm)"
+            "en": "Distance (m)",
+            "nl": "Afstand (m)",
+            "fr": "Distance (m)",
+            "de": "Abstand (m)"
           },
-          "example": 200
+          "example": 2
         }
       ],
       "args": [],

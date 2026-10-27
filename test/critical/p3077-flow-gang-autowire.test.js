@@ -36,3 +36,20 @@ test('P3077 flow: Zigbee `switch` look-alike cards are not auto-wired (already r
     assert.ok(!/^switch_2gang_gang\d_turned_(on|off)_switch$/.test(id), id);
   }
 });
+
+test('P3077 flow batch 2: radar distance + soil temperature orphans follow their capability, tokens in metres', () => {
+  const fs = require('fs');
+  const DIST = 'measure_luminance.distance';
+  for (const [id, driver] of [
+    ['climate_sensor_presence_sensor_climate_prese_469fa', 'climate_sensor_presence'],
+    ['device_air_purifier_presence_air_purifier_pr_40c51', 'device_air_purifier_presence'],
+    ['sensor_motion_radar_motion_sensor_radar_mmwa_4efe6', 'sensor_motion_radar'],
+    ['sensor_motion_radar_motion_sensor_radar_mmwa_edf67', 'sensor_motion_radar']
+  ]) {
+    assert.deepStrictEqual(map.triggers[id], { driver, cap: DIST, when: 'change' }, id);
+    const card = JSON.parse(fs.readFileSync(`drivers/${driver}/driver.flow.compose.json`, 'utf8')).triggers.find((t) => t.id === id);
+    for (const tok of card.tokens || []) {assert.ok(!/\(cm\)/.test(JSON.stringify(tok.title)), `${id}: capability is in m`);}
+  }
+  assert.deepStrictEqual(map.triggers.sensor_lcdtemphumidsensor_soil_sensor_temper_b2371,
+    { driver: 'sensor_lcdtemphumidsensor_soil', cap: 'measure_temperature', when: 'change' });
+});
