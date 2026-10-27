@@ -144,6 +144,13 @@ package (button_wireless_1, heobian/Heobian × 5 pids) carry t614u exemptions; t
 - `lumi.sensor_ht.agl02` and `lumi.weather` are the Aqara WSDCGQ12LM/WSDCGQ11LM temperature/humidity sensors (`lumi.ts`, LUMI only). They are removed as pids from doorwindowsensor_4, where they only formed phantom couples. They stay on the climate drivers. The 2 `zbeacon|lumi.*@doorwindowsensor_4` combos leave the parasitic baseline in the same commit (1825 → 1823).
 - Kept: zbeacon × DS01 and CAT0001/DSS0010 × Excellux. DSS0010 (a button) may move to a button driver in a later batch. Already-paired devices keep their driver, and nothing is written at pairing.
 
+## Batch 12 (27/10/2026, owner t614u): TS0502A CCT lights, one driver
+
+- In zigbee-herdsman-converters `tuya.ts` (Koen Kanters and contributors), the `TS0502A` definition (Tuya "Light controller", colour temperature 153-500) lists these whitelabels: `_TZ3000_g1glzzfk` (Aldi LIGHTWAY filament lamp), `_TZ3000_zw7wr5uo` (Mercator Ikuü SMI7040 batten), `_TZB210_0bkzabht` (MiBoxer PZ2), and `_TZB210_ayx58ft5`/`_TZB210_eiwanbeb` (MiBoxer E2-ZR). They are tunable-white CCT lights.
+- They were listed on both bulb_dimmable and tunable_bulb_E14. They now stay only on tunable_bulb_E14, which is the CCT driver, their mfs_db owner, and the driver that carries TS0502A in the Athom package. Their 20 case variants are removed from bulb_dimmable.
+- Removing them from bulb_dimmable left 36 Athom-baseline couples orphaned: the forms of g1glzzfk and zw7wr5uo crossed with the 9 bulb_dimmable pids (BASICZBR3, GL-B-001Z, E11-N13…). Those couples are pure cartesian products and no device sends them, so they carry t614u exemptions. In `lib/tuya/fingerprints.json`, the runtime owner moves to tunable_bulb_E14 (zw7wr5uo had been marked as a cover/curtain_motor, which was wrong).
+- `_TZ3210_claeh5ds` (TS0502A on bulb_dimmable + light_bulb_dimmable_tunable) waits for the driver splits. Already-paired devices keep their driver, and nothing is written at pairing.
+
 ## Pending
 
 - ~480 collateral duals need driver splits (next batches).

@@ -348,6 +348,56 @@
    "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
    "author": "Koen Kanters and contributors (zigbee-herdsman-converters TS0601_dimmer_5 fingerprint lists _TZE204_dcnsggvz, _TZE200_dcnsggv, _TZE200_dcnsggvz)",
    "why": "not a typo: Z2M lists the short id next to _TZE200_dcnsggvz as the same dimmer, so it moves to the dimmer driver instead of being deleted. Not in the Athom baseline"
+  },
+  {
+   "mfr": "_TZ3000_g1glzzfk",
+   "from": "bulb_dimmable",
+   "keptOn": "tunable_bulb_E14",
+   "realPid": "TS0502A",
+   "hardware": "Aldi LIGHTWAY F122SB62H22A4.5W filament lamp (TS0502A CCT, colorTemp 153-500)",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
+   "author": "Koen Kanters and contributors (zigbee-herdsman-converters)",
+   "batch": 12
+  },
+  {
+   "mfr": "_TZ3000_zw7wr5uo",
+   "from": "bulb_dimmable",
+   "keptOn": "tunable_bulb_E14",
+   "realPid": "TS0502A",
+   "hardware": "Mercator Ikuü SMI7040 Ford batten light (TS0502A CCT, colorTemp 153-500)",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
+   "author": "Koen Kanters and contributors (zigbee-herdsman-converters)",
+   "batch": 12
+  },
+  {
+   "mfr": "_TZB210_0bkzabht",
+   "from": "bulb_dimmable",
+   "keptOn": "tunable_bulb_E14",
+   "realPid": "TS0502A",
+   "hardware": "MiBoxer PZ2 2-in-1 LED controller (TS0502A CCT, colorTemp 153-500)",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
+   "author": "Koen Kanters and contributors (zigbee-herdsman-converters)",
+   "batch": 12
+  },
+  {
+   "mfr": "_TZB210_ayx58ft5",
+   "from": "bulb_dimmable",
+   "keptOn": "tunable_bulb_E14",
+   "realPid": "TS0502A",
+   "hardware": "MiBoxer E2-ZR 2-in-1 LED controller (TS0502A CCT, colorTemp 153-500)",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
+   "author": "Koen Kanters and contributors (zigbee-herdsman-converters)",
+   "batch": 12
+  },
+  {
+   "mfr": "_TZB210_eiwanbeb",
+   "from": "bulb_dimmable",
+   "keptOn": "tunable_bulb_E14",
+   "realPid": "TS0502A",
+   "hardware": "MiBoxer E2-ZR 2-in-1 LED controller (TS0502A CCT, colorTemp 153-500)",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
+   "author": "Koen Kanters and contributors (zigbee-herdsman-converters)",
+   "batch": 12
   }
  ],
  "keptOnPurpose": [

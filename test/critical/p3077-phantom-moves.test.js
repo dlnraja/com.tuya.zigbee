@@ -149,4 +149,18 @@ describe('P3077 phantom moves', () => {
     assert.ok(z.productId.includes('DS01') && z.productId.includes('Excellux') && lists(z, 'zbeacon') && lists(z, 'CAT0001'));
     assert.ok(!z.productId.some((p) => /^lumi\./.test(p)));
   });
+  it('batch 12: TS0502A CCT whitelabels pair only on tunable_bulb_E14, cartesian bulb_dimmable couples exempted', () => {
+    const ids = ['_TZ3000_g1glzzfk', '_TZ3000_zw7wr5uo', '_TZB210_0bkzabht', '_TZB210_ayx58ft5', '_TZB210_eiwanbeb'];
+    const fp = JSON.parse(fs.readFileSync(path.join(ROOT, 'lib/tuya/fingerprints.json'), 'utf8'));
+    for (const m of ids) {
+      assert.ok(lists(zig('tunable_bulb_E14'), m) && !lists(zig('bulb_dimmable'), m), m);
+      assert.equal(fp[m].driverId, 'tunable_bulb_E14');
+    }
+    assert.ok(zig('tunable_bulb_E14').productId.includes('TS0502A'));
+    const fx = require(path.join(ROOT, 'test/fixtures/athom-last-test-package-couples.json'));
+    const { resolveBaselinePins } = require(path.join(ROOT, 'scripts/maintenance/compact-zigbee-identifiers.cjs'));
+    const r = resolveBaselinePins(JSON.parse(fs.readFileSync(path.join(ROOT, 'app.json'), 'utf8')), fx);
+    assert.deepStrictEqual(r.pins.filter((x) => ids.some((m) => m.toLowerCase() === x.mfr.toLowerCase()) && x.driverId !== 'tunable_bulb_E14'), []);
+    assert.strictEqual(fx.exemptions.filter((e) => e.driverId === 'bulb_dimmable' && /P3077 batch 12/.test(e.reason)).length, 36);
+  });
 });
