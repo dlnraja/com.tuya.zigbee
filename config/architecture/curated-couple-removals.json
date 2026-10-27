@@ -1163,6 +1163,18 @@
       ],
       "why": "P3077 batch 11: Aqara temperature/humidity modelIds (Z2M lumi.ts WSDCGQ12LM/WSDCGQ11LM), LUMI only; no contact sensor sends them",
       "source": "P3077 batch 11 (t614u)"
+    },
+    {
+      "driver": "bulb_dimmable",
+      "mfr": [
+        "_TZ3000_g1glzzfk",
+        "_TZ3000_zw7wr5uo",
+        "_TZB210_0bkzabht",
+        "_TZB210_ayx58ft5",
+        "_TZB210_eiwanbeb"
+      ],
+      "why": "P3077 batch 12: TS0502A CCT whitelabels (Z2M tuya.ts), owner tunable_bulb_E14",
+      "source": "P3077 batch 12 (t614u)"
     }
   ]
 }
