@@ -46,6 +46,7 @@ describe('P3057-3 stable pending changelog entry', () => {
 
   it('the stable bump keeps a non-empty entry for the version it writes', () => {
     const src = fs.readFileSync(path.join(ROOT, '.github/scripts/stable-version-bump.js'), 'utf8');
-    assert.match(src, /if \(!j\[v\] \|\| !String\(j\[v\]\.en \|\| ''\)\.trim\(\)\)/);
+    // P3075: the pending seed of the previous bump is also refilled from our commits.
+    assert.match(src, /if \(!j\[v\] \|\| !String\(j\[v\]\.en \|\| ''\)\.trim\(\)( \|\| isPendingSeed\(j\[v\]\))?\)/);
   });
 });

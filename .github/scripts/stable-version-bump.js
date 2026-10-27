@@ -48,23 +48,60 @@ function setVersion(dir, v, { manifestsOnly = false } = {}) {
   const cl = path.join(dir, '.homeychangelog.json');
   if (fs.existsSync(cl)) {
     const j = readJson(cl);
-    if (!j[v] || !String(j[v].en || '').trim()) {
-      // P3069: a real HOMEY_CHANGELOG wins; otherwise a short en + fr line from our commits, newest first.
-      let ce = null;
-      try { ce = require('../../scripts/automation/changelog-entry'); } catch (_) { ce = null; }
+    let ce = null;
+    try { ce = require('../../scripts/automation/changelog-entry'); } catch (_) { ce = null; }
+    let changed = false;
+    if (!j[v] || !String(j[v].en || '').trim() || isPendingSeed(j[v])) {
+      // P3069: a real HOMEY_CHANGELOG wins; otherwise our own en + fr note from the commits since the last bump.
       const given = process.env.HOMEY_CHANGELOG || 'Device compatibility and reliability improvements.';
-      j[v] = ce && ce.isPlaceholder(given) ? ce.summarize(ce.subjectsSinceLastPublish(ROOT)) : { en: given };
-      writeLikeOriginal(cl, ce ? ce.orderChangelog(j) : j);
+      j[v] = ce && ce.isPlaceholder(given) ? entryFromCommits(ROOT, ce) : { en: given };
+      changed = true;
     }
+    // P3075 (t613u): seed the next patch so the pending-entry check stays green after every bump;
+    // a hand-written pending entry is kept, the seed is replaced at the next bump (above).
+    const nx = nextPatch(v);
+    if (!manifestsOnly && (!j[nx] || !String(j[nx].en || '').trim())) { j[nx] = { ...PENDING_SEED }; changed = true; }
+    if (changed) { writeLikeOriginal(cl, ce ? ce.orderChangelog(j) : j); }
   }
 }
+
+// P3075 (t613u): pending entry for the next patch, in our own words; recognised and replaced at the next bump.
+const PENDING_SEED = {
+  en: 'Next stable update in preparation: this note is replaced by the list of its changes when the version is published.',
+  fr: 'Prochaine mise à jour stable en préparation : cette note est remplacée par la liste de ses changements à la publication.',
+};
+function isPendingSeed(e) { return !!e && String(e.en || '').trim() === PENDING_SEED.en; }
+
+/** Our commit subjects since the previous version bump ("chore(stable): v5.12.512", "v9.0.1601: …"), newest first. */
+function subjectsSinceBump(cwd, max = 400) {
+  let log = '';
+  try { log = require('child_process').execFileSync('git', ['log', '--no-merges', '--format=%s', '-n', String(max)], { cwd, encoding: 'utf8' }); } catch (_) { return []; }
+  let bumpOf = null;
+  try { bumpOf = require('../../scripts/automation/changelog-backfill').bumpOf; } catch (_) { bumpOf = null; }
+  const out = [];
+  for (const s of log.split('\n')) {
+    const t = s.trim();
+    if (!t) { continue; }
+    if (/^v\d+\.\d+\.\d+: \d+ drivers/.test(t) || (bumpOf ? bumpOf(t) : /^chore\(stable\): v\d+\.\d+\.\d+/.test(t))) { break; }
+    out.push(t);
+  }
+  return out;
+}
+
+/** Granular en + fr note (families, model ids, kind of change); never the generic "Bug fixes and improvements". */
+function entryFromCommits(cwd, ce) {
+  const subjects = subjectsSinceBump(cwd);
+  try { return require('../../scripts/automation/changelog-backfill').describe(subjects); } catch (_) { /* older tree */ }
+  return ce.summarize(subjects.length ? subjects : ce.subjectsSinceLastPublish(cwd));
+}
+
 function currentVersion() {
   const vs = ['.homeycompose/app.json', 'app.json', 'package.json']
     .map((r) => path.join(ROOT, r)).filter((f) => fs.existsSync(f)).map((f) => readJson(f).version).filter(Boolean);
   return vs.sort(cmp).pop();
 }
 
-module.exports = { nextPatch, cmp, setVersion, currentVersion };
+module.exports = { nextPatch, cmp, setVersion, currentVersion, PENDING_SEED, isPendingSeed, subjectsSinceBump, entryFromCommits };
 
 if (require.main === module) {
   const [cmd, arg, arg2] = process.argv.slice(2);
