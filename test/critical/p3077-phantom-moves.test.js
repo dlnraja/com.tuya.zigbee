@@ -14,7 +14,7 @@ const decisions = require(path.join(ROOT, 'config/architecture/p3077-phantom-dec
 
 describe('P3077 phantom moves', () => {
   it('every move is sourced and the mfr left the wrong driver', () => {
-    assert.ok(decisions.moves.length >= 24);
+    assert.ok(decisions.moves.length >= 30);
     for (const m of decisions.moves) {
       assert.ok(/^https:\/\//.test(m.source) && m.author, `source for ${m.mfr}`);
       assert.ok(!lists(zig(m.from), m.mfr), `${m.mfr} still on ${m.from}`);
@@ -57,5 +57,11 @@ describe('P3077 phantom moves', () => {
       for (const d of b.drivers) {assert.ok(!(zig(d).productId || []).some((p) => p.toLowerCase() === b.pid.toLowerCase()), `${b.pid} still a pid on ${d}`);}
     }
     assert.ok(lists(zig('water_leak_sensor'), '_TZ3000_kyb656no'));
+  });
+  it('batch 4: TS130F curtain switches left curtain_motor_shutter with approved exemptions', () => {
+    const b = require(path.join(ROOT, 'test/fixtures/athom-last-test-package-couples.json'));
+    const ex = b.exemptions.filter((e) => e.driverId === 'curtain_motor_shutter' && /P3077 batch 4/.test(e.reason));
+    assert.ok(ex.length >= 72 && ex.every((e) => e.approvedBy === 't614u'));
+    assert.ok(zig('curtain_motor').productId.includes('TS130F'));
   });
 });

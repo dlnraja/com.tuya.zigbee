@@ -222,6 +222,66 @@
    "hardware": "TS011F plug with power metering",
    "source": "https://github.com/Koenkk/zigbee-herdsman-converters/pull/3076",
    "author": "dmaasland (follow-up #3107 by kloknibor)"
+  },
+  {
+   "mfr": "_TZ3000_5iixzdo7",
+   "batch": 4,
+   "from": "curtain_motor_shutter",
+   "keptOn": "curtain_motor",
+   "realPid": "TS130F",
+   "hardware": "TS130F curtain/shutter wall switch (LoraTap SC500ZB-v4)",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
+   "author": "Koenkk and zigbee-herdsman-converters contributors"
+  },
+  {
+   "mfr": "_TZ3000_bs93npae",
+   "batch": 4,
+   "from": "curtain_motor_shutter",
+   "keptOn": "curtain_motor",
+   "realPid": "TS130F",
+   "hardware": "TS130F curtain/shutter wall switch (BSEED EC-GL86ZPCRS31)",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
+   "author": "Koenkk and zigbee-herdsman-converters contributors"
+  },
+  {
+   "mfr": "_TZ3000_74hsp7qy",
+   "batch": 4,
+   "from": "curtain_motor_shutter",
+   "keptOn": "curtain_motor",
+   "realPid": "TS130F",
+   "hardware": "TS130F curtain/shutter wall switch (Zemismart ZN-LC1E)",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
+   "author": "Koenkk and zigbee-herdsman-converters contributors"
+  },
+  {
+   "mfr": "_TZ3000_8h7wgocw",
+   "batch": 4,
+   "from": "curtain_motor_shutter",
+   "keptOn": "curtain_motor",
+   "realPid": "TS130F",
+   "hardware": "TS130F curtain/shutter wall switch (Danor SK-Z802C-US)",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
+   "author": "Koenkk and zigbee-herdsman-converters contributors"
+  },
+  {
+   "mfr": "_TZ3000_vw8pawxa",
+   "batch": 4,
+   "from": "curtain_motor_shutter",
+   "keptOn": "curtain_motor",
+   "realPid": "TS130F",
+   "hardware": "TS130F curtain/shutter wall switch (Zemismart TS130F_ZEMISMART)",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
+   "author": "Koenkk and zigbee-herdsman-converters contributors"
+  },
+  {
+   "mfr": "_TZ3210_xbpt8ewc",
+   "batch": 4,
+   "from": "curtain_motor_shutter",
+   "keptOn": "curtain_motor",
+   "realPid": "TS130F",
+   "hardware": "TS130F curtain/shutter wall switch (QA QACZ1)",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
+   "author": "Koenkk and zigbee-herdsman-converters contributors"
   }
  ],
  "keptOnPurpose": [
