@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-27T03:20:49.140Z",
+ "generated": "2026-10-27T03:21:07.796Z",
  "drivers": 417,
  "snapshot": {
   "air_conditioner_aetz01": {
@@ -417,9 +417,9 @@
    "pidSha": "00ba96ff94eb4bb5"
   },
   "curtain_motor_shutter": {
-   "mfr": 16,
+   "mfr": 15,
    "pid": 44,
-   "mfrSha": "d81577c75d8c7ab7",
+   "mfrSha": "5b986545cc5987a4",
    "pidSha": "167ad4e6d48fc2fa"
   },
   "curtain_motor_tilt": {

@@ -94,4 +94,16 @@ describe('P3077 phantom moves', () => {
     const b = require(path.join(ROOT, 'test/fixtures/athom-last-test-package-couples.json'));
     assert.ok(b.exemptions.filter((e) => /P3077 batch 6/.test(e.reason) && e.approvedBy === 't614u').length >= 18);
   });
+  it('batch 7: _TZ3000_42ha4rsc parasite is off every driver and forbid-only in mfs_db', () => {
+    for (const p of decisions.parasiteDrops) {
+      assert.ok(/^https:\/\//.test(p.source) && p.author);
+      for (const d of fs.readdirSync(path.join(ROOT, 'drivers'))) {
+        const fp = path.join(ROOT, 'drivers', d, 'driver.compose.json');
+        if (fs.existsSync(fp)) {assert.ok(!lists(JSON.parse(fs.readFileSync(fp, 'utf8')).zigbee || {}, p.mfr), `${p.mfr} on ${d}`);}
+      }
+      const mfs = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/mfs_db.json'), 'utf8'));
+      if (mfs[p.mfr]) {assert.ok(/forbid-only/.test(mfs[p.mfr].source));}
+    }
+    assert.ok(lists(zig('curtain_motor'), '_TZB000_42ha4rsc'));
+  });
 });

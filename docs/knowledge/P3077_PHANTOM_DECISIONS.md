@@ -114,8 +114,12 @@ package (button_wireless_1, heobian/Heobian × 5 pids) carry t614u exemptions; t
 - HOBEIAN `ZG-101ZD` is the HOBEIAN smart knob (zigbee-herdsman-converters `hobeian.ts`). It now pairs on smart_knob_zg101zd (same hardware as `_TZ3000_abrsvsou` TS004F). The pid left button_wireless_1 (not in the baseline, about 300 phantoms gone). HOBEIAN stays on button_wireless_1 for ZG-101ZL. Paired devices keep their driver.
 - HEIMAN on universal_zigbee: kept, per the owner decision of 2026-10-21 (generic fallback, see P2927).
 
+## Batch 7 (27/10/2026, owner t614u): `_TZ3000_42ha4rsc` is a parasite
+
+- No outside source lists `_TZ3000_42ha4rsc`. The real device is the Lidl HG09648 blind `_TZB000_42ha4rsc` (TS030F), listed by zigbee-herdsman-converters (commit a118719, Koen Kanters) and by the deCONZ DDF `_TZB000_42ha4rsc_window_blinds`; it stays on curtain_motor.
+- The 4 `_TZ3000_` forms left curtain_motor_shutter (none were in the Athom baseline, so no exemptions). The data/mfs_db.json row stays as forbid-only so nothing adds it back, and its fingerprint row is gone.
+
 ## Pending
 
-- `_TZ3000_42ha4rsc` on curtain_motor_shutter (no source; only `_TZB000_42ha4rsc` exists): next batch.
 - ~480 collateral duals need driver splits (next batches).
 - TS0601 duals on bulb_rgb/bulb_rgbw/button_wireless_*: never dropped by pid; per-mfr review only.
