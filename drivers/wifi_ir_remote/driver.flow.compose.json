@@ -59,7 +59,9 @@
       "id": "wifi_ir_remote_learn_confirm_needed",
       "title": {
         "en": "IR learn needs confirm — press again",
-        "fr": "Confirmer l'apprentissage IR — rappuyer"
+        "fr": "Confirmer l'apprentissage IR — rappuyer",
+        "de": "IR-Anlernen bestätigen – erneut drücken",
+        "nl": "IR-aanleren bevestigen – opnieuw drukken"
       },
       "tokens": [
         {
@@ -80,7 +82,9 @@
       "id": "wifi_ir_remote_start_learn",
       "title": {
         "en": "Start IR learn",
-        "fr": "Démarrer apprentissage IR"
+        "fr": "Démarrer apprentissage IR",
+        "de": "IR-Anlernen starten",
+        "nl": "IR-aanleren starten"
       },
       "args": [
         {
@@ -135,7 +139,9 @@
       "id": "wifi_ir_remote_send_raw",
       "title": {
         "en": "Send raw / pasted IR code",
-        "fr": "Envoyer code IR brut / collé"
+        "fr": "Envoyer code IR brut / collé",
+        "de": "Rohen / eingefügten IR-Code senden",
+        "nl": "Ruwe / geplakte IR-code verzenden"
       },
       "args": [
         {

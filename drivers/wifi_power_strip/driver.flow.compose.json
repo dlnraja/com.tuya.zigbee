@@ -4,7 +4,9 @@
       "id": "wifi_power_strip_socket1_on",
       "title": {
         "en": "Socket 1 turned on",
-        "fr": "Prise 1 allumée"
+        "fr": "Prise 1 allumée",
+        "de": "Steckdose 1 eingeschaltet",
+        "nl": "Stopcontact 1 ingeschakeld"
       },
       "args": [],
       "titleFormatted": {
@@ -16,7 +18,9 @@
       "id": "wifi_power_strip_socket1_off",
       "title": {
         "en": "Socket 1 turned off",
-        "fr": "Prise 1 éteinte"
+        "fr": "Prise 1 éteinte",
+        "de": "Steckdose 1 ausgeschaltet",
+        "nl": "Stopcontact 1 uitgeschakeld"
       },
       "args": [],
       "titleFormatted": {
@@ -55,7 +59,9 @@
       "id": "wifi_power_strip_set_socket",
       "title": {
         "en": "Set socket on/off",
-        "fr": "Allumer/éteindre la prise"
+        "fr": "Allumer/éteindre la prise",
+        "de": "Steckdose ein-/ausschalten",
+        "nl": "Stopcontact aan/uit zetten"
       },
       "args": [
         {

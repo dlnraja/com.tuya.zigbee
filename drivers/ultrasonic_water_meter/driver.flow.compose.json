@@ -4,7 +4,9 @@
       "id": "ultrasonic_water_meter_fault_active",
       "title": {
         "en": "Fault !{{is|is not}} active",
-        "fr": "Défaut !{{actif|inactif}}"
+        "fr": "Défaut !{{actif|inactif}}",
+        "de": "Störung !{{aktiv|inaktiv}}",
+        "nl": "Storing !{{actief|niet actief}}"
       },
       "titleFormatted": {
         "en": "Fault !{{is|is not}} active",

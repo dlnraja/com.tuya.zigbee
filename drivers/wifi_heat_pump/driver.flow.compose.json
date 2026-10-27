@@ -4,7 +4,9 @@
       "id": "wifi_heat_pump_turned_on",
       "title": {
         "en": "Heat pump turned on",
-        "fr": "Heat pump allumé(e)"
+        "fr": "Heat pump allumé(e)",
+        "de": "Wärmepumpe eingeschaltet",
+        "nl": "Warmtepomp ingeschakeld"
       },
       "args": [],
       "titleFormatted": {
@@ -16,7 +18,9 @@
       "id": "wifi_heat_pump_turned_off",
       "title": {
         "en": "Heat pump turned off",
-        "fr": "Heat pump éteint(e)"
+        "fr": "Heat pump éteint(e)",
+        "de": "Wärmepumpe ausgeschaltet",
+        "nl": "Warmtepomp uitgeschakeld"
       },
       "args": [],
       "titleFormatted": {
@@ -55,7 +59,9 @@
       "id": "wifi_heat_pump_is_on",
       "title": {
         "en": "Heat pump is on",
-        "fr": "Heat pump est allumé(e)"
+        "fr": "Heat pump est allumé(e)",
+        "de": "Wärmepumpe ist an",
+        "nl": "Warmtepomp is aan"
       },
       "args": [],
       "titleFormatted": {

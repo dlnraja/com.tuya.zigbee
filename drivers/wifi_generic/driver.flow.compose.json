@@ -4,7 +4,9 @@
       "id": "wifi_generic_dp_changed",
       "title": {
         "en": "A DP value changed",
-        "fr": "Une valeur DP a changé"
+        "fr": "Une valeur DP a changé",
+        "de": "Ein DP-Wert hat sich geändert",
+        "nl": "Een DP-waarde is gewijzigd"
       },
       "tokens": [
         {
@@ -36,7 +38,9 @@
       "id": "wifi_generic_set_dp",
       "title": {
         "en": "Set a DP value",
-        "fr": "Définir une valeur DP"
+        "fr": "Définir une valeur DP",
+        "de": "DP-Wert setzen",
+        "nl": "DP-waarde instellen"
       },
       "args": [
         {

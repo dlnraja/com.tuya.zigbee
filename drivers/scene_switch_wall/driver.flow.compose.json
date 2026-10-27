@@ -233,7 +233,9 @@
       "id": "scene_switch_wall_button_2gang_button_1_double_pressed",
       "title": {
         "en": "Button 1 double pressed",
-        "fr": "Bouton 1 double pressé"
+        "fr": "Bouton 1 double pressé",
+        "de": "Taste 1 doppelt gedrückt",
+        "nl": "Knop 1 dubbel ingedrukt"
       },
       "args": [],
       "titleFormatted": {
@@ -245,7 +247,9 @@
       "id": "scene_switch_wall_button_2gang_button_1_long_pressed",
       "title": {
         "en": "Button 1 long pressed",
-        "fr": "Bouton 1 appui long"
+        "fr": "Bouton 1 appui long",
+        "de": "Taste 1 lang gedrückt",
+        "nl": "Knop 1 lang ingedrukt"
       },
       "args": [],
       "titleFormatted": {
@@ -273,7 +277,9 @@
       "id": "scene_switch_wall_button_2gang_button_2_double_pressed",
       "title": {
         "en": "Button 2 double pressed",
-        "fr": "Bouton 2 double pressé"
+        "fr": "Bouton 2 double pressé",
+        "de": "Taste 2 doppelt gedrückt",
+        "nl": "Knop 2 dubbel ingedrukt"
       },
       "args": [],
       "titleFormatted": {
@@ -285,7 +291,9 @@
       "id": "scene_switch_wall_button_2gang_button_2_long_pressed",
       "title": {
         "en": "Button 2 long pressed",
-        "fr": "Bouton 2 appui long"
+        "fr": "Bouton 2 appui long",
+        "de": "Taste 2 lang gedrückt",
+        "nl": "Knop 2 lang ingedrukt"
       },
       "args": [],
       "titleFormatted": {
