@@ -760,6 +760,16 @@ jobs:
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "${{ steps.info.outputs.version }}")
           D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
           F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l || echo 0)
+          # P3079: a bot bump may never drop capabilities/settings still named in compose (399155aae2).
+          # Parity = rebuild from compose == app.json; no-loss = nothing in HEAD app.json vanished while compose names it.
+          compose_parity_or_die() {
+            git show HEAD:app.json > "$RUNNER_TEMP/p3079-base-app.json"
+            if ! node scripts/ci/compose-parity-gate.cjs --base="$RUNNER_TEMP/p3079-base-app.json"; then
+              echo "::error title=compose parity::app.json differs from a compose rebuild or drops entries vs HEAD; bot commit aborted"
+              exit 1
+            fi
+          }
+          compose_parity_or_die
           git diff --cached --quiet || git commit -m "v${VER}: ${D} drivers, ${F} FPs [skip ci]"
           restore_volatile_artifacts
           if ! git diff --quiet || ! git diff --cached --quiet; then
@@ -767,6 +777,7 @@ jobs:
             git status --short
             echo "::endgroup::"
             stage_publish_metadata
+            compose_parity_or_die
             git diff --cached --quiet || git commit -m "chore(master): sync generated publish metadata [skip ci]"
           fi
           restore_volatile_artifacts
