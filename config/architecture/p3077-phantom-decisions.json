@@ -523,6 +523,17 @@
    ],
    "why": "owner decision of 2026-10-21 keeps universal_zigbee as the generic fallback for HEIMAN; smoke_detector_advanced sorts first and wins the TS0041/TS0205/TS0601 duals",
    "source": "docs/knowledge/P2927_HEIMAN_GENERIC_FALLBACK_DUALS_2026-10-21.md"
+  },
+  {
+   "mfr": "_TZ3000_dfgbtub0",
+   "batch": 15,
+   "drivers": [
+    "button_wireless_2",
+    "button_wireless_4"
+   ],
+   "why": "split by pid, one couple one driver: TS0042 = Marmitek Push LO 2-button remote (Z2M tuya.ts TS0042 whitelabel) on button_wireless_2; TS0044 = SunBeech/Moes 4-button remote reported on the Homey forum (topic 156967, post 12) on button_wireless_4, locked by data/user-misattribution-registry.json p2293-dfgbtub0-ts0044-wireless-4 (couple mode). Runtime owner in lib/tuya/fingerprints.json was switch_1gang/mains/TS0601 (wrong class for a battery remote), now button_wireless_2/battery with TS0042+TS0044 added",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
+   "author": "Koen Kanters and contributors (zigbee-herdsman-converters); Homey community forum topic 156967 reporter"
   }
  ],
  "badPids": [
