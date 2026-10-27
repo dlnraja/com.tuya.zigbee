@@ -52,4 +52,10 @@ describe('P3077 phantom moves', () => {
     const ex = b.exemptions.filter((e) => e.driverId === 'plug' && e.mfr.toLowerCase() === '_tz3000_dpo1ysak');
     assert.ok(ex.length >= 12 && ex.every((e) => e.approvedBy === 't614u'));
   });
+  it('batch 3: manufacturer ids are not used as productIds on the water leak drivers', () => {
+    for (const b of decisions.badPids) {
+      for (const d of b.drivers) {assert.ok(!(zig(d).productId || []).some((p) => p.toLowerCase() === b.pid.toLowerCase()), `${b.pid} still a pid on ${d}`);}
+    }
+    assert.ok(lists(zig('water_leak_sensor'), '_TZ3000_kyb656no'));
+  });
 });

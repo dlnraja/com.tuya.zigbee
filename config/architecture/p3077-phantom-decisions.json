@@ -337,5 +337,29 @@
    ],
    "why": "a _TZ3000_ copy of the Lidl _TZB000_42ha4rsc id that no outside source lists; kept because data/mfs_db.json holds it and test/anti-purge-guard.test.js forbids dropping a known fingerprint. Owner review"
   }
+ ],
+ "badPids": [
+  {
+   "pid": "_TZ3000_kyb656no",
+   "batch": 3,
+   "drivers": [
+    "water_leak_sensor",
+    "water_leak_sensor_tuya"
+   ],
+   "why": "a manufacturerName sitting in productId: upstream lists _TZ3000_kyb656no as the Meian SW02 whitelabel of the TS0207 water leak sensor, so its modelId is TS0207 (still listed on both drivers). As a productId it only made phantom couples with every mfr of the driver; never shipped on these drivers. Same call as P3055 on gas_sensor_switch",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
+   "author": "Koenkk and zigbee-herdsman-converters contributors"
+  },
+  {
+   "pid": "_TZ3000_eit6l5",
+   "batch": 3,
+   "drivers": [
+    "water_leak_sensor",
+    "water_leak_sensor_tuya"
+   ],
+   "why": "a truncated manufacturer id sitting in productId; no upstream or diag source reports it as a modelId; never shipped on these drivers. Same call as P3055 on gas_sensor_switch",
+   "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
+   "author": "Koenkk and zigbee-herdsman-converters contributors"
+  }
  ]
 }
