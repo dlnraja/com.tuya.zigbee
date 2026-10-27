@@ -796,6 +796,11 @@
       "cap": "alarm_contact",
       "when": true
     },
+    "wifi_dehumidifier_water_full": {
+      "driver": "wifi_dehumidifier",
+      "cap": "alarm_water",
+      "when": true
+    },
     "wifi_door_lock_wifi_lock_locked": {
       "driver": "wifi_door_lock",
       "cap": "locked",
@@ -804,6 +809,36 @@
     "wifi_door_lock_wifi_lock_unlocked": {
       "driver": "wifi_door_lock",
       "cap": "locked",
+      "when": false
+    },
+    "wifi_power_strip_socket1_on": {
+      "driver": "wifi_power_strip",
+      "cap": "onoff",
+      "when": true
+    },
+    "wifi_power_strip_socket1_off": {
+      "driver": "wifi_power_strip",
+      "cap": "onoff",
+      "when": false
+    },
+    "wifi_switch_2gang_g1_on": {
+      "driver": "wifi_switch_2gang",
+      "cap": "onoff",
+      "when": true
+    },
+    "wifi_switch_2gang_g1_off": {
+      "driver": "wifi_switch_2gang",
+      "cap": "onoff",
+      "when": false
+    },
+    "wifi_switch_2gang_g2_on": {
+      "driver": "wifi_switch_2gang",
+      "cap": "onoff.gang2",
+      "when": true
+    },
+    "wifi_switch_2gang_g2_off": {
+      "driver": "wifi_switch_2gang",
+      "cap": "onoff.gang2",
       "when": false
     }
   },

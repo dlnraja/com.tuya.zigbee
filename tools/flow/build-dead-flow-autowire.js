@@ -67,8 +67,21 @@ const TRIGGER_RULES = [
   // P3065 D9: thermostat cards follow the existing mode capability (user decision, no new capability)
   [/^(thermostat )?mode changed$/, () => ['thermostat_mode'], 'change'],
   [/^heating started$/, () => ['thermostat_mode'], 'enter:heat'],
-  [/^heating stopped$/, () => ['thermostat_mode'], 'leave:heat']
+  [/^heating stopped$/, () => ['thermostat_mode'], 'leave:heat'],
+  // P3077 flow audit: per-gang/per-socket cards declared on WiFi multi-outlet drivers, nothing fired them.
+  // Channel 1 is the plain `onoff`; channel n>1 is the matching sub-capability (exact name only).
+  // Restricted to ids that scripts/diag/flow-trigger-reach.js lists as orphans (P3077_FLOW_IDS below):
+  // the Zigbee `switch` driver has look-alike cards already reached by FlowCardHeuristics.
+  [/^(gang|socket) [1-8] turned on$/, (c, t) => gangCaps(t), true, 'p3077'],
+  [/^(gang|socket) [1-8] turned off$/, (c, t) => gangCaps(t), false, 'p3077'],
+  [/^water tank (is )?full$/, () => ['alarm_water'], true, 'p3077']
 ];
+
+function gangCaps(title) {
+  const m = /^(gang|socket) ([1-8]) /.exec(title);
+  if (!m) {return [];}
+  return m[2] === '1' ? ['onoff'] : [`onoff.${m[1]}${m[2]}`];
+}
 
 // [regex, capability preference list, op] ; op: true | above | below
 const CONDITION_RULES = [
@@ -159,7 +172,12 @@ function literalJsIds() {
 
 // P3065 D7: ids the generic suffix heuristic skips (a short template suffix such as `_off` matches)
 // although scripts/diag/flow-trigger-reach.js proves no code fires them. Verified one by one.
-const FORCE_TRIGGER_IDS = new Set(['universal_zigbee_motion_off']);
+// P3077 flow audit: ending in `_on`/`_off` they hit the same suffix heuristic; flow-trigger-reach lists them as orphans.
+const P3077_FLOW_IDS = new Set([
+  'wifi_switch_2gang_g1_on', 'wifi_switch_2gang_g1_off', 'wifi_switch_2gang_g2_on', 'wifi_switch_2gang_g2_off',
+  'wifi_power_strip_socket1_on', 'wifi_power_strip_socket1_off', 'wifi_dehumidifier_water_full'
+]);
+const FORCE_TRIGGER_IDS = new Set(['universal_zigbee_motion_off', ...P3077_FLOW_IDS]);
 
 function build({ auditFile, strict } = {}) {
   const dead = loadAuditDead(auditFile);
@@ -176,8 +194,9 @@ function build({ auditFile, strict } = {}) {
     for (const t of flow.triggers || []) {
       if (!t || !t.id || (dead && !dead.has(t.id)) || (!FORCE_TRIGGER_IDS.has(t.id) && literal.has(t.id, dir, strictIds))) {continue;}
       const title = normTitle(t.title && t.title.en);
-      for (const [re, prefs, when] of TRIGGER_RULES) {
+      for (const [re, prefs, when, scope] of TRIGGER_RULES) {
         if (!re.test(title)) {continue;}
+        if (scope === 'p3077' && !P3077_FLOW_IDS.has(t.id)) {break;}
         const cap = pick(prefs(caps, title), caps);
         if (cap) {out.triggers[t.id] = { driver: dir, cap, when: typeof when === 'function' ? when(cap) : when };}
         break;
