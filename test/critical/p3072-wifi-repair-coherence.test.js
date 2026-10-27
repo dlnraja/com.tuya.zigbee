@@ -124,6 +124,6 @@ describe('P3072 Wi-Fi repair handlers', () => {
   it('EweLinkLocalDevice onSettings reconnects with newSettings', () => {
     const src = read('lib/ewelink-local/EweLinkLocalDevice.js');
     assert.ok(src.includes('await this.reconnectWithSettings(newSettings)'));
-    assert.ok(src.includes('...(this._pendingSettings||{})'));
+    assert.ok(src.includes('this._pendingSettings||{}') && /const s=Object.assign\(\{\},this.getSettings\(\),this._pendingSettings/.test(src));
   });
 });
