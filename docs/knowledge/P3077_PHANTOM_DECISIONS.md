@@ -258,6 +258,18 @@ These three manufacturers are in `data/native-matrix-reviewed-duals.json`, where
   - `wifi_air_quality` CO2/PM2.5 high and `air_quality_comprehensive` CO2 high: no stored threshold exists for them.
 - Orphans went from 92 to 72.
 
+## Flow batch 6 (power exceeds the flow's own threshold)
+
+- Four "Power exceeds threshold" cards are now wired: `device_plug_energy` (b969d), `device_plug_smart`, `plug_smart` and `sensor_contact_plug`.
+- The threshold that counts is the one stored in each flow's `threshold` arg.
+- `DeadFlowAutoWire.registerDeadTriggerArgs` registers a run listener after `DeclaredFlowCardAutoWire`, so it replaces the generic pass-through. The listener fires only when `previous <= threshold < value`.
+- The check is stateless, so two flows with the same threshold always give the same answer.
+- The first report after a start (previous unknown or null) never fires.
+- The Zigbee emitter and the Wi-Fi `fireMappedTriggers` now pass `previous` in the trigger state.
+- `_num(null)` is now "unknown", not 0. This also stops the batch-5 thresholds from firing on a fresh device.
+- Not wired: "Power restored" has no clear source.
+- Orphans went from 72 to 68.
+
 ## device_din_rail_meter: dehumidifier cards kept, never fired (owner decision 27/10/2026)
 
 - This driver declares 8 triggers copied from a dehumidifier (humidity, temperature, water leak, battery). A DIN-rail meter has none of these capabilities.
