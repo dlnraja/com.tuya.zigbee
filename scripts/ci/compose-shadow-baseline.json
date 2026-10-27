@@ -1,0 +1,201 @@
+{
+ "_about": "P3079 (stable-v5 baseline): setting ids declared in driver.compose.json but shadowed by driver.settings.compose.json (never shipped). Ratchet: may only shrink.",
+ "drivers": {
+  "bed_sensor": [
+   "presence_delay",
+   "presence_time"
+  ],
+  "curtain_motor": [
+   "battery_critical_threshold",
+   "battery_low_threshold",
+   "battery_report_interval",
+   "battery_type",
+   "close_time",
+   "cover_travel_time_down",
+   "cover_travel_time_up",
+   "enable_battery_notifications",
+   "enable_power_estimation",
+   "moes_backlight",
+   "moes_calibration_mode",
+   "moes_calibration_seconds",
+   "moes_control_invert",
+   "moes_motor_direction",
+   "open_time",
+   "optimization_mode",
+   "power_source",
+   "reverse_direction"
+  ],
+  "dimmer_1_gang": [
+   "availability_timeout",
+   "dimmer_step_size",
+   "dimmer_transition_time",
+   "power_on_behavior",
+   "smart_dimmer_mode"
+  ],
+  "doorwindowsensor": [
+   "invert_contact"
+  ],
+  "doorwindowsensor_2": [
+   "invert_contact"
+  ],
+  "doorwindowsensor_3": [
+   "invert_contact"
+  ],
+  "doorwindowsensor_4": [
+   "invert_contact"
+  ],
+  "double_power_point": [
+   "power_scale"
+  ],
+  "double_power_point_2": [
+   "power_scale"
+  ],
+  "fingerbot": [
+   "fingerbot_mode"
+  ],
+  "lcdtemphumidsensor": [
+   "sensor_precision"
+  ],
+  "presence_sensor_radar": [
+   "alarm_time",
+   "alarm_volume",
+   "anti_interference",
+   "auto_unlock_occupied_on_empty",
+   "battery_critical_threshold",
+   "battery_low_threshold",
+   "battery_report_interval",
+   "battery_type",
+   "block_time",
+   "breaker_mode",
+   "breaker_polarity",
+   "breathe_false_detection",
+   "departure_delay",
+   "detection_delay",
+   "detection_range",
+   "enable_battery_notifications",
+   "enable_power_estimation",
+   "entry_distance_indentation",
+   "entry_filter_time",
+   "entry_sensitivity",
+   "fading_time",
+   "far_distance",
+   "humidity_calibration",
+   "illuminance_interval",
+   "illuminance_threshold",
+   "indicator",
+   "invert_presence",
+   "large_motion_distance",
+   "large_motion_sensitivity",
+   "max_range",
+   "micro_minimum_distance",
+   "min_range",
+   "motion_detection_mode",
+   "motion_detection_sensitivity",
+   "motion_false_detection",
+   "motion_sensitivity",
+   "motionless_minimum_distance",
+   "near_distance",
+   "optimization_mode",
+   "power_source",
+   "radar_sensitivity",
+   "sensitivity",
+   "sensor_mode",
+   "shield_range",
+   "small_detection_distance",
+   "small_detection_sensitivity",
+   "smart_presence_while_occupied",
+   "static_detection_distance",
+   "static_detection_sensitivity",
+   "static_sensitivity",
+   "status_indication",
+   "temperature_calibration",
+   "temperature_unit",
+   "time",
+   "working_mode"
+  ],
+  "rain_sensor": [
+   "illuminance_sampling",
+   "sensitivity"
+  ],
+  "siren": [
+   "battery_critical_threshold",
+   "battery_low_threshold",
+   "battery_report_interval",
+   "battery_type",
+   "enable_battery_notifications",
+   "power_source"
+  ],
+  "smart_button_switch": [
+   "button_mode"
+  ],
+  "smart_door_window_sensor": [
+   "invert_contact"
+  ],
+  "smart_knob_switch": [
+   "button_mode",
+   "suppress_release_after_click"
+  ],
+  "smart_remote_1_button": [
+   "button_mode",
+   "suppress_release_after_click"
+  ],
+  "smart_remote_1_button_2": [
+   "button_mode"
+  ],
+  "smart_remote_4_buttons": [
+   "button_mode",
+   "suppress_release_after_click"
+  ],
+  "smartplug": [
+   "power_scale"
+  ],
+  "smartplug_2_socket": [
+   "power_scale"
+  ],
+  "switch_1_gang": [
+   "availability_timeout",
+   "power_on_behavior",
+   "standby_power_threshold"
+  ],
+  "switch_1_gang_metering": [
+   "power_scale"
+  ],
+  "switch_2_gang_metering": [
+   "power_scale"
+  ],
+  "switch_4_gang_metering": [
+   "power_scale"
+  ],
+  "temphumidsensor": [
+   "sensor_precision"
+  ],
+  "wall_remote_1_gang": [
+   "button_mode",
+   "suppress_release_after_click"
+  ],
+  "wall_remote_2_gang": [
+   "button_mode",
+   "suppress_release_after_click"
+  ],
+  "wall_remote_3_gang": [
+   "button_mode",
+   "suppress_release_after_click"
+  ],
+  "wall_remote_4_gang": [
+   "button_mode"
+  ],
+  "wall_remote_4_gang_3": [
+   "button_mode",
+   "suppress_release_after_click"
+  ],
+  "wall_remote_6_gang": [
+   "button_mode",
+   "suppress_release_after_click"
+  ],
+  "wall_switch_1gang_1way": [
+   "power_on_behavior",
+   "scene_mode",
+   "switch_mode"
+  ]
+ }
+}
