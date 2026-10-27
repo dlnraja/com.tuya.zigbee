@@ -2,6 +2,10 @@
 
 Human-readable log. Machine state: `data/progress/ledger.json` (read it before working, record after; helper `scripts/lib/ledger.js`, CLI `scripts/progress/ledger-cli.js`). Linked checkpoints: `data/leads/resume-checkpoint.json`, `data/leads/deep-read-checkpoint.json`, `data/leads/johan-deep-read-log.json`. Newest entries first. Times Europe/Paris.
 
+## 2026-10-27
+
+- 03:20 (Paris) — **P3080 sleepy restart waits for the first frame (L-P3040-03, t616u).** When the app restarts, a battery end device is asleep, so the start-up reads, binds and queries sent by the P3040 pacer mostly time out and get retried. Now, on a restart only (never on the first init after pairing, never on a mains device), those wrapped requests wait for the first frame received from the device, then leave paced as before. The wait is capped at 120 s; with no frame they leave as they did before. User commands and datapoint writes are never held. The frame observer sits first in the shared handleFrame chain and never changes or swallows a frame. Bounded: 64 waiting requests, one timer per device. Kill switch: device setting `init_tx_defer_rx` = false. Test `p3080-sleepy-defer-first-rx`. Master first.
+
 ## 2026-10-26
 
 - 23:59 P3073 learning loop: design doc (4ca218fbe1), CI signature ledger (3ce0ca02bb), device observations per exact couple, DpScaleLearner (master soak, re-seeds SmartDivisor after restart), upstream cursors (GitHub + Reddit public JSON, low frequency, weekly report never posted).
