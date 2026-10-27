@@ -9,7 +9,7 @@ const B = require(path.join(ROOT, 'scripts', 'automation', 'changelog-backfill.j
 const CE = require(path.join(ROOT, 'scripts', 'automation', 'changelog-entry.js'));
 
 // Placeholder / vague entries still waiting for a rewrite, per app. May only go down.
-const CEIL = { 'com.dlnraja.tuya.zigbee': 0, 'com.dlnraja.tuya.zigbee.stable': 128, 'com.dlnraja.tuya.zigbee.bastien': 551 };
+const CEIL = { 'com.dlnraja.tuya.zigbee': 0, 'com.dlnraja.tuya.zigbee.stable': 104, 'com.dlnraja.tuya.zigbee.bastien': 551 };
 
 describe('P3075 changelog backfill', () => {
   it('reads only user-facing commits and keeps ids, not refs', () => {

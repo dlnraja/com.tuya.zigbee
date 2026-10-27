@@ -804,73 +804,95 @@
     }
   ],
   "9.0.216": {
-    "en": "Stability improvements and Homey test build recovery."
+    "en": "New: battery reporting & pairing and device recognition. Fixed: general reliability (TS0044, TS0601). Plus 2 other changes in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Nouveau : niveau de batterie & appairage et reconnaissance des appareils. Corrigé : fiabilité générale (TS0044, TS0601). Et 2 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
   },
   "9.0.215": {
-    "en": "Stability improvements and Homey test build recovery."
+    "en": "New: pairing and device recognition. Plus 3 other changes in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Nouveau : appairage et reconnaissance des appareils. Et 3 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
   },
   "9.0.214": {
-    "en": "Stability improvements and Homey test publication retry after transient processing failure."
+    "en": "Reliability: 1 small fix in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Fiabilité : 1 petite correction dans le cœur de l'app. En coulisses : tests et contrôles de publication."
   },
   "9.0.213": {
-    "en": "Stability improvements and Homey test publication retry after transient processing failure."
+    "en": "Reliability: 2 small fixes in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Fiabilité : 2 petites corrections dans le cœur de l'app. En coulisses : tests et contrôles de publication."
   },
   "9.0.212": {
-    "en": "Stability improvements and Homey test publication retry after transient processing failure."
+    "en": "New: buttons and remotes & device settings & battery reporting (TS0041) and crash fixes. Fixed: Flow cards. Plus 8 other changes in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Nouveau : boutons et télécommandes & réglages des appareils & niveau de batterie (TS0041) et plantages. Corrigé : cartes Flow. Et 8 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
   },
   "9.0.211": {
-    "en": "Stability improvements and Homey test publication retry after transient processing failure."
+    "en": "Fixed: pairing and device recognition. Plus 3 other changes in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Corrigé : appairage et reconnaissance des appareils. Et 3 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
   },
   "9.0.210": {
-    "en": "Stability improvements and Homey test publication retry after transient processing failure."
+    "en": "Reliability: 2 small fixes in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Fiabilité : 2 petites corrections dans le cœur de l'app. En coulisses : tests et contrôles de publication."
   },
   "9.0.209": {
     "en": "Stability improvements and Homey test publication retry after transient processing failure."
   },
   "9.0.208": {
-    "en": "P11 release: door_sensor driver (TS0203), 96 Johan mfrs integrated (1618 FPs), continuous-flow + e2e-dashboard + upstream-guard, 13 archived. 657 dlnraja comments deleted from JohanBendz/com.tuya.zigbee."
+    "en": "P11 release: door_sensor driver (TS0203), 96 Johan mfrs integrated (1618 FPs), continuous-flow + e2e-dashboard + upstream-guard, 13 archived. 657 dlnraja comments deleted from JohanBendz/com.tuya.zigbee.",
+    "fr": "Version de maintenance : mêmes appareils et même comportement que la précédente (outils de publication et de test uniquement)."
   },
   "9.0.207": {
-    "en": "P11 release: door_sensor driver (TS0203), 96 Johan mfrs integrated (1618 FPs), continuous-flow + e2e-dashboard + upstream-guard, 13 archived. 657 dlnraja comments deleted from JohanBendz/com.tuya.zigbee."
+    "en": "Reliability: 2 small fixes in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Fiabilité : 2 petites corrections dans le cœur de l'app. En coulisses : tests et contrôles de publication."
   },
   "9.0.206": {
-    "en": "P11 release: door_sensor driver (TS0203), 96 Johan mfrs integrated (1618 FPs), continuous-flow + e2e-dashboard + upstream-guard, 13 archived. 657 dlnraja comments deleted from JohanBendz/com.tuya.zigbee."
+    "en": "P11 release: door_sensor driver (TS0203), 96 Johan mfrs integrated (1618 FPs), continuous-flow + e2e-dashboard + upstream-guard, 13 archived. 657 dlnraja comments deleted from JohanBendz/com.tuya.zigbee.",
+    "fr": "Fiabilité : 1 petite correction dans le cœur de l'app. En coulisses : tests et contrôles de publication."
   },
   "9.0.205": {
-    "en": "P11 release: door_sensor driver (TS0203), 96 Johan mfrs integrated (1618 FPs), continuous-flow + e2e-dashboard + upstream-guard, 13 archived. 657 dlnraja comments deleted from JohanBendz/com.tuya.zigbee."
+    "en": "Reliability: 1 small fix in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Fiabilité : 1 petite correction dans le cœur de l'app. En coulisses : tests et contrôles de publication."
   },
   "9.0.204": {
-    "en": "P11 release: door_sensor driver (TS0203), 96 Johan mfrs integrated (1618 FPs), continuous-flow + e2e-dashboard + upstream-guard, 13 archived. 657 dlnraja comments deleted from JohanBendz/com.tuya.zigbee."
+    "en": "P11 release: door_sensor driver (TS0203), 96 Johan mfrs integrated (1618 FPs), continuous-flow + e2e-dashboard + upstream-guard, 13 archived. 657 dlnraja comments deleted from JohanBendz/com.tuya.zigbee.",
+    "fr": "Fiabilité : 1 petite correction dans le cœur de l'app. En coulisses : tests et contrôles de publication."
   },
   "9.0.203": {
-    "en": "P11 release: door_sensor driver (TS0203), 96 Johan mfrs integrated (1618 FPs), continuous-flow + e2e-dashboard + upstream-guard, 13 archived. 657 dlnraja comments deleted from JohanBendz/com.tuya.zigbee."
+    "en": "Reliability: 1 small fix in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Fiabilité : 1 petite correction dans le cœur de l'app. En coulisses : tests et contrôles de publication."
   },
   "9.0.202": {
-    "en": "P11 release: door_sensor driver (TS0203), 96 Johan mfrs integrated (1618 FPs), continuous-flow + e2e-dashboard + upstream-guard, 13 archived. 657 dlnraja comments deleted from JohanBendz/com.tuya.zigbee."
+    "en": "P11 release: door_sensor driver (TS0203), 96 Johan mfrs integrated (1618 FPs), continuous-flow + e2e-dashboard + upstream-guard, 13 archived. 657 dlnraja comments deleted from JohanBendz/com.tuya.zigbee.",
+    "fr": "Fiabilité : 1 petite correction dans le cœur de l'app. En coulisses : tests et contrôles de publication."
   },
   "9.0.201": {
-    "en": "P11 release: door_sensor driver (TS0203), 96 Johan mfrs integrated (1618 FPs), continuous-flow + e2e-dashboard + upstream-guard, 13 archived. 657 dlnraja comments deleted from JohanBendz/com.tuya.zigbee."
+    "en": "Reliability: 1 small fix in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Fiabilité : 1 petite correction dans le cœur de l'app. En coulisses : tests et contrôles de publication."
   },
   "9.0.200": {
-    "en": "P11 release: door_sensor driver (TS0203), 96 Johan mfrs integrated (1618 FPs), continuous-flow + e2e-dashboard + upstream-guard, 13 archived. 657 dlnraja comments deleted from JohanBendz/com.tuya.zigbee."
+    "en": "P11 release: door_sensor driver (TS0203), 96 Johan mfrs integrated (1618 FPs), continuous-flow + e2e-dashboard + upstream-guard, 13 archived. 657 dlnraja comments deleted from JohanBendz/com.tuya.zigbee.",
+    "fr": "Fiabilité : 1 petite correction dans le cœur de l'app. En coulisses : tests et contrôles de publication."
   },
   "9.0.199": {
-    "en": "P11 release: door_sensor driver (TS0203), 96 Johan mfrs integrated (1618 FPs), continuous-flow + e2e-dashboard + upstream-guard, 13 archived. 657 dlnraja comments deleted from JohanBendz/com.tuya.zigbee."
+    "en": "Reliability: 2 small fixes in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Fiabilité : 2 petites corrections dans le cœur de l'app. En coulisses : tests et contrôles de publication."
   },
   "9.0.198": {
-    "en": "P11 release: door_sensor driver (TS0203), 96 Johan mfrs integrated (1618 FPs), continuous-flow + e2e-dashboard + upstream-guard, 13 archived. 657 dlnraja comments deleted from JohanBendz/com.tuya.zigbee."
+    "en": "P11 release: door_sensor driver (TS0203), 96 Johan mfrs integrated (1618 FPs), continuous-flow + e2e-dashboard + upstream-guard, 13 archived. 657 dlnraja comments deleted from JohanBendz/com.tuya.zigbee.",
+    "fr": "Fiabilité : 1 petite correction dans le cœur de l'app. En coulisses : tests et contrôles de publication."
   },
   "9.0.197": {
-    "en": "P11 release: door_sensor driver (TS0203), 96 Johan mfrs integrated (1618 FPs), continuous-flow + e2e-dashboard + upstream-guard, 13 archived. 657 dlnraja comments deleted from JohanBendz/com.tuya.zigbee."
+    "en": "New: pairing and device recognition. Behind the scenes: tests and publishing checks.",
+    "fr": "Nouveau : appairage et reconnaissance des appareils. En coulisses : tests et contrôles de publication."
   },
   "9.0.196": {
-    "en": "P11 release: door_sensor driver (TS0203), 96 Johan mfrs integrated (1618 FPs), continuous-flow + e2e-dashboard + upstream-guard, 13 archived. 657 dlnraja comments deleted from JohanBendz/com.tuya.zigbee."
+    "en": "P11 release: door_sensor driver (TS0203), 96 Johan mfrs integrated (1618 FPs), continuous-flow + e2e-dashboard + upstream-guard, 13 archived. 657 dlnraja comments deleted from JohanBendz/com.tuya.zigbee.",
+    "fr": "Fiabilité : 1 petite correction dans le cœur de l'app. En coulisses : tests et contrôles de publication."
   },
   "9.0.195": {
-    "en": "P11 release: door_sensor driver (TS0203), 96 Johan mfrs integrated (1618 FPs), continuous-flow + e2e-dashboard + upstream-guard, 13 archived. 657 dlnraja comments deleted from JohanBendz/com.tuya.zigbee."
+    "en": "New: Flow cards. Plus 1 other change in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Nouveau : cartes Flow. Et 1 autre changement dans le cœur de l'app. En coulisses : tests et contrôles de publication."
   },
   "9.0.194": {
-    "en": "P11 release: door_sensor driver (TS0203), 96 Johan mfrs integrated (1618 FPs), continuous-flow + e2e-dashboard + upstream-guard, 13 archived. 657 dlnraja comments deleted from JohanBendz/com.tuya.zigbee."
+    "en": "P11 release: door_sensor driver (TS0203), 96 Johan mfrs integrated (1618 FPs), continuous-flow + e2e-dashboard + upstream-guard, 13 archived. 657 dlnraja comments deleted from JohanBendz/com.tuya.zigbee.",
+    "fr": "Version de maintenance : mêmes appareils et même comportement que la précédente (outils de publication et de test uniquement)."
   },
   "9.0.193": {
     "en": "P11 release: door_sensor driver (TS0203), 96 Johan mfrs integrated (1618 FPs), workflow consolidation (47→34), continuous-flow + e2e-dashboard + upstream-guard, 13 archived. 657 dlnraja comments deleted from JohanBendz/com.tuya.zigbee.",
@@ -879,13 +901,16 @@
     "de": "P11-Release: door_sensor-Treiber (TS0203), 96 Johan-mfrs integriert (1618 FPs), Workflow-Konsolidierung (47→34), continuous-flow + e2e-dashboard + upstream-guard, 13 archiviert. 657 dlnraja-Kommentare aus JohanBendz/com.tuya.zigbee gelöscht."
   },
   "9.0.192": {
-    "en": "Stability improvements and Homey test publication retry after transient processing failure."
+    "en": "Maintenance build: same devices and behaviour as the previous version (publishing and test tooling only).",
+    "fr": "Version de maintenance : mêmes appareils et même comportement que la précédente (outils de publication et de test uniquement)."
   },
   "9.0.191": {
-    "en": "Stability improvements and Homey test publication retry after transient processing failure."
+    "en": "Reliability: 1 small fix in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Fiabilité : 1 petite correction dans le cœur de l'app. En coulisses : tests et contrôles de publication."
   },
   "9.0.190": {
-    "en": "Stability improvements and Homey test publication retry after transient processing failure."
+    "en": "Maintenance build: same devices and behaviour as the previous version (publishing and test tooling only).",
+    "fr": "Version de maintenance : mêmes appareils et même comportement que la précédente (outils de publication et de test uniquement)."
   },
   "9.0.189": {
     "en": "Stability improvements and Homey test publication retry after transient processing failure."
@@ -2590,7 +2615,8 @@
     "en": "v5.12.3: stable-v5 P74 sync — publish-size-gate fix, .homeyignore pruning, HOBEIAN collision resolved, 88 driver.js flow handlers, master baseline updated."
   },
   "5.12.2": {
-    "en": "v5.12.2: stable-v5 sync of v9.0.276–v9.0.282 (drivers, FPs, flows, manifest)."
+    "en": "v5.12.2: stable-v5 sync of v9.0.276–v9.0.282 (drivers, FPs, flows, manifest).",
+    "fr": "Nouveau : niveau de batterie et détecteurs de mouvement (ZG-204ZM). Corrigé : boutons et télécommandes et mémoire et minuteries. Et 35 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.1": {
     "en": "v5.12.1: stable-v5 sync of v9.0.263–v9.0.275 (drivers, FPs, flows, manifest)."
