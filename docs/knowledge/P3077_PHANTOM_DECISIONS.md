@@ -224,6 +224,14 @@ These three manufacturers are in `data/native-matrix-reviewed-duals.json`, where
   - `_TZ3290_ixd9mvv4` stays on both valve drivers: batch 2 keptOnPurpose (P3055, owner t555u). Upstream id: TS0049 LYAI-14, Z2M discussion #28060 (Stepyon), zigbee2mqtt.io PR #4205 (cruelacid).
   - The other unattested rows are reviewed duals (left as is), the HOBEIAN collateral (batch 2), or the 3 couples with no source either way.
 
+## Flow batch 3 (siren cards)
+
+- 4 more orphan triggers now follow `alarm_generic`, which is the sounding state on these drivers (`siren/device.js` and `device_air_purifier_siren/device.js` mirror `onoff` into it, and `wifi_siren` maps DP6 to it):
+  - "Siren stopped" on `siren` and `device_air_purifier_siren` → `alarm_generic` false;
+  - "Alarm activated" / "Alarm deactivated" on `wifi_siren` → `alarm_generic` true / false.
+- The rules are limited to these exact ids. "Siren started" keeps its existing path and is not mapped, so nothing fires twice.
+- No card was removed and the manifest is unchanged. Orphans went from 100 to 96.
+
 ## Pending
 
 - ~480 collateral duals need driver splits (next batches).

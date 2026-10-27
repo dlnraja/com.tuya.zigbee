@@ -211,6 +211,11 @@
       "cap": "target_temperature",
       "when": "change"
     },
+    "device_air_purifier_siren_alarm_stopped": {
+      "driver": "device_air_purifier_siren",
+      "cap": "alarm_generic",
+      "when": false
+    },
     "device_air_purifier_smoke_detector_advanced__672bd": {
       "driver": "device_air_purifier_smoke",
       "cap": "alarm_smoke",
@@ -741,6 +746,11 @@
       "cap": "measure_luminance",
       "when": "change"
     },
+    "siren_alarm_stopped": {
+      "driver": "siren",
+      "cap": "alarm_generic",
+      "when": false
+    },
     "smartplug_dinrail_turned_on_99666": {
       "driver": "smartPlug_DinRail",
       "cap": "onoff",
@@ -844,6 +854,16 @@
     "wifi_power_strip_socket1_off": {
       "driver": "wifi_power_strip",
       "cap": "onoff",
+      "when": false
+    },
+    "wifi_siren_alarm_on": {
+      "driver": "wifi_siren",
+      "cap": "alarm_generic",
+      "when": true
+    },
+    "wifi_siren_alarm_off": {
+      "driver": "wifi_siren",
+      "cap": "alarm_generic",
       "when": false
     },
     "wifi_switch_2gang_g1_on": {
