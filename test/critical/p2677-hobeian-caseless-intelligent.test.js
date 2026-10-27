@@ -24,7 +24,8 @@ const HOBEIAN_DRIVERS = [
   'water_leak_sensor', 'soil_sensor', 'button_wireless_1', 'ir_blaster',
 ];
 
-const BRAND_FORMS = ['HOBEIAN', 'Hobeian', 'hobeian', 'heobian', 'Heobian'];
+// P3077 batch 5: heobian stays a read-time alias (normalize), not a compose form.
+const BRAND_FORMS = ['HOBEIAN', 'Hobeian', 'hobeian'];
 
 describe('P2677 intelligent case-less HOBEIAN / brands', () => {
   it('pairingCaseVariants(HOBEIAN) covers Title + typo Athom forms', () => {
@@ -41,7 +42,7 @@ describe('P2677 intelligent case-less HOBEIAN / brands', () => {
 
   it('brandAthomForms + CaseInsensitiveMatcher shim export intelligence', () => {
     assert.ok(Array.isArray(TU.brandAthomForms('HOBEIAN')));
-    assert.equal(TU.brandAthomForms('HOBEIAN').length, 5);
+    assert.equal(TU.brandAthomForms('HOBEIAN').length, 3);
     assert.ok(CIM.brandAthomForms);
     assert.ok(CIM.pairingProductIdVariants);
     const pidForms = TU.pairingProductIdVariants('ZG-301Z-3CH');
