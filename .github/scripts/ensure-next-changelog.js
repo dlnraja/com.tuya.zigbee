@@ -31,7 +31,7 @@ function main() {
   // P3069: with no real HOMEY_CHANGELOG given, use a short en + fr line from our own commits; keep newest first.
   let ce = null;
   try { ce = require('../../scripts/automation/changelog-entry'); } catch (_) { ce = null; }
-  const entry = !ce || (process.env.HOMEY_CHANGELOG && !ce.isPlaceholder(TEXT)) ? { en: TEXT } : ce.summarize(ce.subjectsSinceLastPublish());
+  const entry = !ce || (process.env.HOMEY_CHANGELOG && !ce.isPlaceholder(TEXT)) ? { en: TEXT } : ce.precise(ce.subjectsSinceLastPublish());
   for (const version of [current, next]) {
     if (!changelog[version] || !String(changelog[version].en || '').trim()) {
       changelog[version] = { ...entry };
