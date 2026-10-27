@@ -99,4 +99,58 @@ describe('P3079 compose ↔ app.json parity gate', function () {
     for (const [, i] of commits) { assert.match(lines[i - 1], /compose_parity_or_die/); }
     assert.match(fs.readFileSync(path.join(ROOT, '.github/workflows/ci-self-check.yml'), 'utf8'), /node scripts\/ci\/compose-parity-gate\.cjs/);
   });
+
+  // Simulated drift: the real version-writeback.sh in a throwaway repo, Athom status and gate stubbed.
+  function writebackSandbox(gateExit) {
+    const { execFileSync, spawnSync } = require('child_process');
+    const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'p3079-wb-'));
+    const git = (cwd, ...a) => execFileSync('git', a, { cwd, stdio: 'pipe' }).toString().trim();
+    const origin = path.join(tmp, 'origin.git'); const wt = path.join(tmp, 'wt');
+    execFileSync('git', ['init', '-q', '--bare', '-b', 'bastien-home', origin]);
+    execFileSync('git', ['init', '-q', '-b', 'bastien-home', wt]);
+    const put = (rel, body) => { fs.mkdirSync(path.dirname(path.join(wt, rel)), { recursive: true }); fs.writeFileSync(path.join(wt, rel), body); };
+    put('app.json', JSON.stringify({ id: 'x', version: '1.0.0' }));
+    put('package.json', '{\n  "name": "x",\n  "version": "1.0.0"\n}\n');
+    put('.github/scripts/version-writeback.sh', fs.readFileSync(path.join(ROOT, '.github/scripts/version-writeback.sh'), 'utf8'));
+    put('scripts/ci/homey-build-status.js', "console.log(JSON.stringify({state:'test',version:'1.0.5'}));\n");
+    put('scripts/ci/compose-parity-gate.cjs', `process.exit(${gateExit});\n`);
+    git(wt, '-c', 'user.name=t', '-c', 'user.email=t@t', 'add', '-A');
+    git(wt, '-c', 'user.name=t', '-c', 'user.email=t@t', 'commit', '-q', '-m', 'init');
+    git(wt, 'remote', 'add', 'origin', origin);
+    git(wt, 'push', '-q', 'origin', 'HEAD:bastien-home');
+    const head0 = git(origin, 'rev-parse', 'bastien-home');
+    const r = spawnSync('bash', ['.github/scripts/version-writeback.sh', 'bastien-home', 'app.x'],
+      { cwd: wt, env: { ...process.env, RUNNER_TEMP: tmp, GIT_CONFIG_NOSYSTEM: '1' }, encoding: 'utf8', timeout: 60000 });
+    return { r, head0, head1: git(origin, 'rev-parse', 'bastien-home'), log: git(wt, 'log', '--format=%s', '-3'),
+      marker: fs.existsSync(path.join(tmp, 'p3079-parity-drift')), dirty: git(wt, 'status', '--porcelain') };
+  }
+
+  it('simulated drift: write-back exits 3 before chore(version), pushes nothing, says the bump is skipped', () => {
+    const s = writebackSandbox(1);
+    assert.strictEqual(s.r.status, 3, s.r.stdout + s.r.stderr);
+    assert.match(s.r.stdout, /::error title=compose parity::/);
+    assert.match(s.r.stdout, /version bump v1\.0\.5 SKIPPED/);
+    assert.ok(!/chore\(version\)/.test(s.log), s.log);
+    assert.strictEqual(s.head1, s.head0, 'origin must not move');
+    assert.ok(s.marker, 'drift marker for the red verdict step');
+    assert.strictEqual(s.dirty, '');
+  });
+
+  it('control: parity OK lets the same sandbox commit and push chore(version) v1.0.5', () => {
+    const s = writebackSandbox(0);
+    assert.strictEqual(s.r.status, 0, s.r.stdout + s.r.stderr);
+    assert.match(s.log, /chore\(version\): v1\.0\.5 written back/);
+    assert.notStrictEqual(s.head1, s.head0);
+    assert.ok(!s.marker);
+  });
+
+  it('bastien-publish.yml: a parity drift turns the job red despite continue-on-error on the write-back step', () => {
+    const y = fs.readFileSync(path.join(ROOT, '.github/workflows/bastien-publish.yml'), 'utf8');
+    const i = y.indexOf('id: version_writeback'); const j = y.indexOf('Compose parity verdict for write-back');
+    assert.ok(i > 0 && j > i);
+    const verdict = y.slice(j, j + 600);
+    assert.match(verdict, /steps\.version_writeback\.outcome == 'failure'/);
+    assert.match(verdict, /p3079-parity-drift/);
+    assert.ok(!/continue-on-error/.test(verdict.split('\n      - name:')[0]));
+  });
 });
