@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-27T03:21:07.796Z",
+ "generated": "2026-10-27T03:36:52.538Z",
  "drivers": 417,
  "snapshot": {
   "air_conditioner_aetz01": {
@@ -177,9 +177,9 @@
    "pidSha": "38bdc69f98e98fe7"
   },
   "button_emergency_sos": {
-   "mfr": 30,
+   "mfr": 32,
    "pid": 5,
-   "mfrSha": "e8647f61f9698a53",
+   "mfrSha": "8974024cae8b2bc0",
    "pidSha": "ced4695a6c47df18"
   },
   "button_wireless": {
@@ -291,9 +291,9 @@
    "pidSha": "3427697d0c296c9d"
   },
   "climate_sensor": {
-   "mfr": 504,
+   "mfr": 503,
    "pid": 32,
-   "mfrSha": "146137d936c84d5d",
+   "mfrSha": "dd543f1c522f9927",
    "pidSha": "4809a771f46a5606"
   },
   "climate_sensor_device": {
@@ -885,9 +885,9 @@
    "pidSha": "480a275813c8653e"
   },
   "gas_sensor": {
-   "mfr": 13,
+   "mfr": 10,
    "pid": 5,
-   "mfrSha": "b119db76faa8ea9f",
+   "mfrSha": "84429a36a79b7105",
    "pidSha": "606b2995829e9479"
   },
   "gas_sensor_switch": {
@@ -1299,9 +1299,9 @@
    "pidSha": "3041fd34f640ddcb"
   },
   "presence_sensor_radar": {
-   "mfr": 252,
+   "mfr": 250,
    "pid": 56,
-   "mfrSha": "8820f1b6f7972771",
+   "mfrSha": "ea03406d7c6d18e6",
    "pidSha": "ac803567e8fc211a"
   },
   "radar_sensor": {

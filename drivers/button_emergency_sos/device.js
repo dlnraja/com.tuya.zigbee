@@ -71,7 +71,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
       this._batteryReportingConfigured = false;
       this._batteryBindComplete = false;
       // WHY(P2364): DynCap must never reinvent SOS/battery DPs if EF00 path is enabled later
-      this._dynCapBlockDps = new Set([1, 4, 13, 14, 15, 101]);
+      this._dynCapBlockDps = new Set([1, 4, 13, 14, 15, 26, 29, 101]);
       this._forbiddenCapabilities = ['onoff', 'dim', 'measure_temperature', 'measure_humidity', 'alarm_contact', 'alarm_battery'];
 
       // 2. Ensure Capabilities
@@ -282,6 +282,14 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
       // Tuya DP might send 1, true, 'true', or even 0/false depending on button release/press
       // For SOS buttons, any payload on these DPs usually means a press event
       this._fireAlarm({ source: 'tuya-dp', dp, value, pressType: 'single' });
+      return;
+    }
+
+    // WHY(P3077 batch 8): Loginovo ZG-101Z (_TZE200_vrcfo4i0 / _TZE200_nojsjtj2) reports the press as
+    // DP26 "sos" and DP29 "emergency" (enum, 0 = pressed) next to its IAS Zone frame (Z2M tuya.ts ZG-101Z).
+    // Same press may arrive on both paths; the 2 s _lastTrigger debounce in _handleAlarm keeps it single.
+    if (dp === 26 || dp === 29) {
+      this._fireAlarm({ source: dp === 26 ? 'tuya-dp26-sos' : 'tuya-dp29-emergency', dp, value, pressType: 'single' });
       return;
     }
 

@@ -2082,7 +2082,7 @@
     },
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [
       "_tz3000_fllyghyj",
       "wing",
@@ -2277,9 +2277,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": [
@@ -2336,9 +2336,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": [
@@ -2407,7 +2407,7 @@
     },
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [
       "_tz3000_fllyghyj",
       "wing",
@@ -2443,15 +2443,15 @@
     },
     "gas_sensor": {
      "canDropPid": false,
-     "pidCost": 12,
+     "pidCost": 9,
      "pidBlockers": [
       "_tze204_uo8qcagc",
       "_tze284_uo8qcagc",
-      "_tze200_vrcfo4i0",
       "_tze204_chbyv06x",
-      "_tze284_chbyv06x"
+      "_tze284_chbyv06x",
+      "_tze28c1000000_chbyv06x"
      ],
-     "unverifiedMfrs": 4,
+     "unverifiedMfrs": 2,
      "canDropMfr": true,
      "mfrCost": 4,
      "mfrBlockers": []
@@ -2482,7 +2482,7 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [
       "_tze204_gkfbdvyx",
       "_tze200_gkfbdvyx",
@@ -2490,7 +2490,7 @@
       "_tze204_clrdrnya",
       "_tze200_clrdrnya"
      ],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": [
@@ -2900,9 +2900,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": []
@@ -2954,9 +2954,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": []
@@ -3012,7 +3012,7 @@
     },
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [
       "_tz3000_fllyghyj",
       "wing",
@@ -3042,15 +3042,15 @@
     },
     "gas_sensor": {
      "canDropPid": false,
-     "pidCost": 12,
+     "pidCost": 9,
      "pidBlockers": [
       "_tze204_uo8qcagc",
       "_tze284_uo8qcagc",
-      "_tze200_vrcfo4i0",
       "_tze204_chbyv06x",
-      "_tze284_chbyv06x"
+      "_tze284_chbyv06x",
+      "_tze28c1000000_chbyv06x"
      ],
-     "unverifiedMfrs": 4,
+     "unverifiedMfrs": 2,
      "canDropMfr": false,
      "mfrCost": 4,
      "mfrBlockers": []
@@ -3077,7 +3077,7 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [
       "_tze204_gkfbdvyx",
       "_tze200_gkfbdvyx",
@@ -3085,7 +3085,7 @@
       "_tze204_clrdrnya",
       "_tze200_clrdrnya"
      ],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": []
@@ -6287,7 +6287,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [
       "_tz3000_fllyghyj",
       "wing",
@@ -6334,7 +6334,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [
       "_tz3000_fllyghyj",
       "wing",
@@ -6377,7 +6377,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [
       "_tz3000_fllyghyj",
       "wing",
@@ -6426,7 +6426,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [],
      "unverifiedMfrs": 144,
      "canDropMfr": false,
@@ -6438,9 +6438,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": [
@@ -6470,7 +6470,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [],
      "unverifiedMfrs": 144,
      "canDropMfr": false,
@@ -6482,9 +6482,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": [
@@ -6514,7 +6514,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [],
      "unverifiedMfrs": 144,
      "canDropMfr": false,
@@ -6526,9 +6526,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": [
@@ -6558,7 +6558,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [
       "_tz3000_akqdg6g7",
       "_tz3000_f2bw0b6k",
@@ -6576,9 +6576,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": [
@@ -6608,7 +6608,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [
       "_tyzb01_zqvwka4k"
      ],
@@ -6622,9 +6622,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": [
@@ -6654,7 +6654,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [
       "ewelink"
      ],
@@ -6668,9 +6668,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": [
@@ -6700,7 +6700,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [
       "owon"
      ],
@@ -6714,9 +6714,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": [
@@ -6746,7 +6746,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [
       "_tz3000_fllyghyj",
       "wing",
@@ -6764,9 +6764,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": [
@@ -6797,7 +6797,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [
       "_tyzb01_fi5yftwv",
       "_tz3000_8uxxzz4b",
@@ -6832,9 +6832,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": [
@@ -6864,7 +6864,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [
       "_tz3000_zl1kmjqx"
      ],
@@ -6878,9 +6878,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": [
@@ -6910,7 +6910,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [],
      "unverifiedMfrs": 144,
      "canDropMfr": false,
@@ -6922,9 +6922,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": [
@@ -6954,7 +6954,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [],
      "unverifiedMfrs": 144,
      "canDropMfr": false,
@@ -6966,9 +6966,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": [
@@ -6998,7 +6998,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [],
      "unverifiedMfrs": 144,
      "canDropMfr": false,
@@ -7010,9 +7010,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": [
@@ -7042,7 +7042,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [],
      "unverifiedMfrs": 144,
      "canDropMfr": false,
@@ -7053,9 +7053,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": [
@@ -7081,7 +7081,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [],
      "unverifiedMfrs": 144,
      "canDropMfr": false,
@@ -7092,9 +7092,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": [
@@ -7120,7 +7120,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [],
      "unverifiedMfrs": 144,
      "canDropMfr": false,
@@ -7131,9 +7131,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": [
@@ -7159,7 +7159,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [
       "_tz3000_akqdg6g7",
       "_tz3000_f2bw0b6k",
@@ -7176,9 +7176,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": [
@@ -7204,7 +7204,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [
       "_tyzb01_zqvwka4k"
      ],
@@ -7217,9 +7217,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": [
@@ -7245,7 +7245,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [
       "ewelink"
      ],
@@ -7258,9 +7258,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": [
@@ -7286,7 +7286,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [
       "owon"
      ],
@@ -7299,9 +7299,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": [
@@ -7327,7 +7327,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [
       "_tz3000_fllyghyj",
       "wing",
@@ -7344,9 +7344,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": [
@@ -7372,7 +7372,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [
       "_tyzb01_fi5yftwv",
       "_tz3000_8uxxzz4b",
@@ -7389,9 +7389,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": [
@@ -7417,7 +7417,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [
       "_tz3000_zl1kmjqx"
      ],
@@ -7430,9 +7430,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": [
@@ -7458,7 +7458,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [],
      "unverifiedMfrs": 144,
      "canDropMfr": false,
@@ -7469,9 +7469,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": [
@@ -7497,7 +7497,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [],
      "unverifiedMfrs": 144,
      "canDropMfr": false,
@@ -7508,9 +7508,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": [
@@ -7536,7 +7536,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [],
      "unverifiedMfrs": 144,
      "canDropMfr": false,
@@ -7547,9 +7547,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": [
@@ -7591,7 +7591,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [
       "_tz3000_fllyghyj",
       "wing",
@@ -7606,7 +7606,7 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [
       "_tze204_gkfbdvyx",
       "_tze200_gkfbdvyx",
@@ -7614,7 +7614,7 @@
       "_tze204_clrdrnya",
       "_tze200_clrdrnya"
      ],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": true,
      "mfrCost": 55,
      "mfrBlockers": []
@@ -7638,7 +7638,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [],
      "unverifiedMfrs": 144,
      "canDropMfr": false,
@@ -7647,9 +7647,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": []
@@ -7673,7 +7673,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [],
      "unverifiedMfrs": 144,
      "canDropMfr": false,
@@ -7682,9 +7682,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": []
@@ -7708,7 +7708,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [],
      "unverifiedMfrs": 144,
      "canDropMfr": false,
@@ -7717,9 +7717,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": []
@@ -7743,7 +7743,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [
       "_tz3000_akqdg6g7",
       "_tz3000_f2bw0b6k",
@@ -7758,9 +7758,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": []
@@ -7784,7 +7784,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [
       "_tyzb01_zqvwka4k"
      ],
@@ -7795,9 +7795,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": []
@@ -7821,7 +7821,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [
       "ewelink"
      ],
@@ -7832,9 +7832,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": []
@@ -7858,7 +7858,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [
       "owon"
      ],
@@ -7869,9 +7869,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": []
@@ -7895,7 +7895,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [
       "_tz3000_fllyghyj",
       "wing",
@@ -7910,9 +7910,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": []
@@ -7937,7 +7937,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [
       "_tyzb01_fi5yftwv",
       "_tz3000_8uxxzz4b",
@@ -7967,9 +7967,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": []
@@ -7993,7 +7993,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [
       "_tz3000_zl1kmjqx"
      ],
@@ -8004,9 +8004,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": []
@@ -8030,7 +8030,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [],
      "unverifiedMfrs": 144,
      "canDropMfr": false,
@@ -8039,9 +8039,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": []
@@ -8065,7 +8065,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [],
      "unverifiedMfrs": 144,
      "canDropMfr": false,
@@ -8074,9 +8074,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": []
@@ -8100,7 +8100,7 @@
    "feas": {
     "climate_sensor": {
      "canDropPid": false,
-     "pidCost": 503,
+     "pidCost": 502,
      "pidBlockers": [],
      "unverifiedMfrs": 144,
      "canDropMfr": false,
@@ -8109,9 +8109,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": []
@@ -8153,9 +8153,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": [
@@ -8216,9 +8216,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": []
@@ -9969,9 +9969,9 @@
     },
     "gas_sensor": {
      "canDropPid": false,
-     "pidCost": 12,
+     "pidCost": 9,
      "pidBlockers": [],
-     "unverifiedMfrs": 4,
+     "unverifiedMfrs": 2,
      "canDropMfr": true,
      "mfrCost": 4,
      "mfrBlockers": []
@@ -10181,11 +10181,11 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [
       "_tz3210_cyuyd5az"
      ],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": [
@@ -11630,9 +11630,9 @@
     },
     "gas_sensor": {
      "canDropPid": false,
-     "pidCost": 12,
+     "pidCost": 9,
      "pidBlockers": [],
-     "unverifiedMfrs": 4,
+     "unverifiedMfrs": 2,
      "canDropMfr": false,
      "mfrCost": 4,
      "mfrBlockers": []
@@ -11813,11 +11813,11 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [
       "_tz3210_cyuyd5az"
      ],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": []
@@ -14922,12 +14922,12 @@
    "feas": {
     "gas_sensor": {
      "canDropPid": false,
-     "pidCost": 12,
+     "pidCost": 9,
      "pidBlockers": [
       "_tze200_p6fuhvez",
       "_tze200_aj0oxo1i"
      ],
-     "unverifiedMfrs": 4,
+     "unverifiedMfrs": 2,
      "canDropMfr": true,
      "mfrCost": 4,
      "mfrBlockers": []
@@ -14945,7 +14945,7 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [
       "_tz321c_4slreunp",
       "_tz321c_fkzihax8",
@@ -14953,7 +14953,7 @@
       "_tze200_crq3r3la",
       "_tze200_hl0ss9oa"
      ],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": [
@@ -14983,19 +14983,19 @@
    "feas": {
     "gas_sensor": {
      "canDropPid": false,
-     "pidCost": 12,
+     "pidCost": 9,
      "pidBlockers": [
       "_tze200_p6fuhvez",
       "_tze200_aj0oxo1i"
      ],
-     "unverifiedMfrs": 3,
+     "unverifiedMfrs": 2,
      "canDropMfr": false,
      "mfrCost": 4,
      "mfrBlockers": []
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [
       "_tz321c_4slreunp",
       "_tz321c_fkzihax8",
@@ -15003,7 +15003,7 @@
       "_tze200_crq3r3la",
       "_tze200_hl0ss9oa"
      ],
-     "unverifiedMfrs": 108,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": []
@@ -15027,22 +15027,22 @@
    "feas": {
     "gas_sensor": {
      "canDropPid": false,
-     "pidCost": 12,
+     "pidCost": 9,
      "pidBlockers": [
       "_tze204_uo8qcagc",
       "_tze284_uo8qcagc",
-      "_tze200_vrcfo4i0",
       "_tze204_chbyv06x",
-      "_tze284_chbyv06x"
+      "_tze284_chbyv06x",
+      "_tze28c1000000_chbyv06x"
      ],
-     "unverifiedMfrs": 3,
+     "unverifiedMfrs": 2,
      "canDropMfr": false,
      "mfrCost": 4,
      "mfrBlockers": []
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [
       "_tze204_gkfbdvyx",
       "_tze200_gkfbdvyx",
@@ -15050,7 +15050,7 @@
       "_tze204_clrdrnya",
       "_tze200_clrdrnya"
      ],
-     "unverifiedMfrs": 108,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": []
@@ -15074,19 +15074,19 @@
    "feas": {
     "gas_sensor": {
      "canDropPid": false,
-     "pidCost": 12,
+     "pidCost": 9,
      "pidBlockers": [
       "_tze200_p6fuhvez",
       "_tze200_aj0oxo1i"
      ],
-     "unverifiedMfrs": 3,
+     "unverifiedMfrs": 2,
      "canDropMfr": false,
      "mfrCost": 4,
      "mfrBlockers": []
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [
       "_tz321c_4slreunp",
       "_tz321c_fkzihax8",
@@ -15094,7 +15094,7 @@
       "_tze200_crq3r3la",
       "_tze200_hl0ss9oa"
      ],
-     "unverifiedMfrs": 108,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": []
@@ -15118,22 +15118,22 @@
    "feas": {
     "gas_sensor": {
      "canDropPid": false,
-     "pidCost": 12,
+     "pidCost": 9,
      "pidBlockers": [
       "_tze204_uo8qcagc",
       "_tze284_uo8qcagc",
-      "_tze200_vrcfo4i0",
       "_tze204_chbyv06x",
-      "_tze284_chbyv06x"
+      "_tze284_chbyv06x",
+      "_tze28c1000000_chbyv06x"
      ],
-     "unverifiedMfrs": 3,
+     "unverifiedMfrs": 2,
      "canDropMfr": false,
      "mfrCost": 4,
      "mfrBlockers": []
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [
       "_tze204_gkfbdvyx",
       "_tze200_gkfbdvyx",
@@ -15141,7 +15141,7 @@
       "_tze204_clrdrnya",
       "_tze200_clrdrnya"
      ],
-     "unverifiedMfrs": 108,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": []
@@ -15166,12 +15166,12 @@
    "feas": {
     "gas_sensor": {
      "canDropPid": false,
-     "pidCost": 12,
+     "pidCost": 9,
      "pidBlockers": [
       "_tze200_p6fuhvez",
       "_tze200_aj0oxo1i"
      ],
-     "unverifiedMfrs": 4,
+     "unverifiedMfrs": 2,
      "canDropMfr": false,
      "mfrCost": 4,
      "mfrBlockers": []
@@ -15187,7 +15187,7 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [
       "_tz321c_4slreunp",
       "_tz321c_fkzihax8",
@@ -15195,7 +15195,7 @@
       "_tze200_crq3r3la",
       "_tze200_hl0ss9oa"
      ],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": []
@@ -15283,9 +15283,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": [
@@ -15398,9 +15398,9 @@
     },
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": []
@@ -15745,13 +15745,13 @@
    "feas": {
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [
       "_tz3000_3n2minvf",
       "_tz3000_5ajpkyq6",
       "_tz3000_knoj8lpk"
      ],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": [
@@ -15812,9 +15812,9 @@
    "feas": {
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": []
@@ -15848,13 +15848,13 @@
    "feas": {
     "presence_sensor_radar": {
      "canDropPid": false,
-     "pidCost": 251,
+     "pidCost": 249,
      "pidBlockers": [
       "_tz3000_3n2minvf",
       "_tz3000_5ajpkyq6",
       "_tz3000_knoj8lpk"
      ],
-     "unverifiedMfrs": 109,
+     "unverifiedMfrs": 107,
      "canDropMfr": false,
      "mfrCost": 55,
      "mfrBlockers": []
