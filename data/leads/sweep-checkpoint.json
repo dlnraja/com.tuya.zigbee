@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-28T19:12:39.815Z",
+  "updated": "2026-10-28T19:49:13.416Z",
   "threads": {
     "21313": {
       "lastPost": 2819,
@@ -24212,7 +24212,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-10-28",
         "verdict": "lead",
         "confidence": 0.2,
         "couples": [],
@@ -24221,7 +24221,7 @@
           "https://www.zigbee2mqtt.io/devices/ZG-102Z.html",
           "https://www.zigbee2mqtt.io/devices/ZG-102ZL.html"
         ],
-        "sources": 35
+        "sources": 36
       }
     },
     {
