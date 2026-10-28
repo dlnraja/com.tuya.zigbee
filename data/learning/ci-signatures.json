@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updatedAt": "2026-10-27T10:31:07.654Z",
+ "updatedAt": "2026-10-28T11:18:37.985Z",
  "cap": 300,
  "seenKeys": [
   "ci-fail:40227923450:1",
@@ -130,7 +130,9 @@
   "ci-fail:40354425052:1",
   "ci-fail:40354424955:1",
   "ci-fail:40349012562:1",
-  "ci-fail:40339710338:1"
+  "ci-fail:40339710338:1",
+  "ci-fail:40536744357:1",
+  "ci-fail:40509850186:1"
  ],
  "signatures": {
   "c567adb8a6e1": {
@@ -1246,6 +1248,48 @@
    "events": [
     [
      "2026-10-27T10:31:07.608Z",
+     "f"
+    ]
+   ]
+  },
+  "28d56709ef60": {
+   "category": "other",
+   "workflow": "🤖 Daily Digest",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-10-28T11:18:36.742Z",
+   "lastSeen": "2026-10-28T11:18:36.742Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "Process completed with exit code <n>.",
+   "events": [
+    [
+     "2026-10-28T11:18:36.742Z",
+     "f"
+    ]
+   ]
+  },
+  "88dfdae1295f": {
+   "category": "test",
+   "workflow": "🤖 Daily Digest",
+   "unit": "🏠 Homey digest / 🏠 Homey digest",
+   "test": "",
+   "firstSeen": "2026-10-28T11:18:37.936Z",
+   "lastSeen": "2026-10-28T11:18:37.936Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "Process completed with exit code <n>.",
+   "events": [
+    [
+     "2026-10-28T11:18:37.936Z",
      "f"
     ]
    ]

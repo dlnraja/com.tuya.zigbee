@@ -3,22 +3,25 @@
  "note": "P3073 upstream cursors: last thing seen per source (read-only watch).",
  "sources": {
   "zhc": {
-   "last": "7462b541b367c301057aee995e6e6756e5f7e985",
-   "checkedAt": "2026-10-27T10:31:07.705Z",
+   "last": "c18c32d94c77f683fa768618d1fd32b348fdd7b9",
+   "checkedAt": "2026-10-28T11:18:38.043Z",
    "kind": "commits",
-   "what": "Koenkk/zigbee-herdsman-converters"
+   "what": "Koenkk/zigbee-herdsman-converters",
+   "changedAt": "2026-10-28T11:18:38.043Z"
   },
   "zhc-rel": {
-   "last": "v26.124.0",
-   "checkedAt": "2026-10-27T10:31:07.705Z",
+   "last": "v26.125.0",
+   "checkedAt": "2026-10-28T11:18:38.043Z",
    "kind": "releases",
-   "what": "Koenkk/zigbee-herdsman-converters"
+   "what": "Koenkk/zigbee-herdsman-converters",
+   "changedAt": "2026-10-28T11:18:38.043Z"
   },
   "zha-quirks": {
-   "last": "2b1abce3ec6f114d4498a0a92e7d9f7945eb0000",
-   "checkedAt": "2026-10-27T10:31:07.705Z",
+   "last": "862124c5517c3cb331e07f06caad913d7bf02dd2",
+   "checkedAt": "2026-10-28T11:18:38.043Z",
    "kind": "commits",
-   "what": "zigpy/zha-device-handlers"
+   "what": "zigpy/zha-device-handlers",
+   "changedAt": "2026-10-28T11:18:38.043Z"
   },
   "deconz": {
    "last": "a4c17adfa04abc63637ad17de7f85256a825a2cb",
@@ -28,7 +31,7 @@
   },
   "johan": {
    "last": "61577d8ec2572bf8c7c4c2ff210284575acd295b",
-   "checkedAt": "2026-10-27T10:31:07.705Z",
+   "checkedAt": "2026-10-28T11:18:38.043Z",
    "kind": "commits",
    "what": "JohanBendz/com.tuya.zigbee"
   },
@@ -97,30 +100,37 @@
    "what": "r/homey",
    "lastError": "403",
    "backoffUntil": "2026-11-03T10:31:07.705Z"
+  },
+  "r-homeassistant": {
+   "checkedAt": "2026-10-28T11:18:38.043Z",
+   "kind": "reddit",
+   "what": "r/homeassistant",
+   "lastError": "403",
+   "backoffUntil": "2026-11-04T11:18:38.043Z"
   }
  },
  "forum": {
   "owner": "forum-poll (data/leads/forum-lastseen.json)",
   "topics": {
    "156": {
-    "lastSeenPost": 7519,
-    "at": "2026-10-26T15:12:23.337Z"
+    "lastSeenPost": 7535,
+    "at": "2026-10-28T08:41:38.947Z"
    },
    "15811": {
     "lastSeenPost": 356,
-    "at": "2026-10-25T22:35:00.041Z"
+    "at": "2026-10-27T14:38:06.996Z"
    },
    "21313": {
     "lastSeenPost": 2819,
-    "at": "2026-10-27T07:59:32.244Z"
+    "at": "2026-10-28T08:41:24.885Z"
    },
    "26439": {
     "lastSeenPost": 5537,
-    "at": "2026-10-27T07:59:33.382Z"
+    "at": "2026-10-28T08:41:25.965Z"
    },
    "36418": {
     "lastSeenPost": 548,
-    "at": "2026-10-26T15:12:19.649Z"
+    "at": "2026-10-28T08:41:35.505Z"
    },
    "43287": {
     "lastSeenPost": 2319,
@@ -132,43 +142,43 @@
    },
    "89271": {
     "lastSeenPost": 673,
-    "at": "2026-10-27T07:59:34.601Z"
+    "at": "2026-10-28T08:41:27.078Z"
    },
    "99614": {
-    "lastSeenPost": 324,
-    "at": "2026-10-26T07:47:52.301Z"
+    "lastSeenPost": 325,
+    "at": "2026-10-27T23:51:52.969Z"
    },
    "101901": {
     "lastSeenPost": 8,
-    "at": "2026-10-26T15:12:18.487Z"
+    "at": "2026-10-28T08:41:34.446Z"
    },
    "106779": {
     "lastSeenPost": 1172,
-    "at": "2026-10-25T22:34:58.919Z"
+    "at": "2026-10-27T14:38:05.919Z"
    },
    "120477": {
     "lastSeenPost": 15,
-    "at": "2026-10-26T15:12:14.101Z"
+    "at": "2026-10-27T23:51:56.239Z"
    },
    "140352": {
     "lastSeenPost": 2269,
-    "at": "2026-10-27T07:59:35.693Z"
+    "at": "2026-10-28T08:41:28.128Z"
    },
    "146667": {
     "lastSeenPost": 25,
-    "at": "2026-10-26T15:12:15.199Z"
+    "at": "2026-10-28T08:41:31.310Z"
    },
    "146735": {
     "lastSeenPost": 508,
-    "at": "2026-10-27T07:59:36.790Z"
+    "at": "2026-10-28T08:41:29.215Z"
    },
    "149230": {
     "lastSeenPost": 4,
-    "at": "2026-10-26T07:47:46.904Z"
+    "at": "2026-10-27T14:38:10.169Z"
    },
    "150690": {
     "lastSeenPost": 40,
-    "at": "2026-10-26T07:47:51.216Z"
+    "at": "2026-10-27T23:51:50.492Z"
    },
    "153712": {
     "lastSeenPost": 32,
@@ -176,13 +186,13 @@
    },
    "154077": {
     "lastSeenPost": 528,
-    "at": "2026-10-27T07:59:37.882Z"
+    "at": "2026-10-28T08:41:30.269Z"
    },
    "154092": {
     "lastSeenPost": 48,
-    "at": "2026-10-26T07:47:49.041Z"
+    "at": "2026-10-27T23:51:48.278Z"
    }
   }
  },
- "updatedAt": "2026-10-27T10:31:07.705Z"
+ "updatedAt": "2026-10-28T11:18:38.043Z"
 }

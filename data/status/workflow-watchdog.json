@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-27T10:32:19.212Z",
+  "at": "2026-10-28T11:19:42.706Z",
   "checked": 51,
   "findings": [
     {
@@ -30,8 +30,7 @@
       "kind": "repeated-failure",
       "sig": "ci-7c75a5a143eb",
       "wf": ".github/workflows/code-quality.yml",
-      "detail": "3 failures in 72 h: code-quality failed on master (Quality Checks / P244x flow/knob + family gates: no-log)",
-      "issue": 580
+      "detail": "3 failures in 72 h: code-quality failed on master (Quality Checks / P244x flow/knob + family gates: no-log)"
     },
     {
       "kind": "repeated-failure",

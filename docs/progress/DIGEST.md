@@ -1,17 +1,19 @@
 # Digest automatique (P3048)
 
-_Généré le 27/10/2026 11:32:27 (heure de Paris) par `scripts/automation/digest.cjs`, sans IA, sans envoi : ni mail, ni post, ni commentaire._
+_Généré le 28/10/2026 12:19:50 (heure de Paris) par `scripts/automation/digest.cjs`, sans IA, sans envoi : ni mail, ni post, ni commentaire._
 
 ## Versions
 
 | Branche | App | Version | Dernier statut Athom connu | Gate P3036 |
 |---|---|---|---|---|
 | master | com.dlnraja.tuya.zigbee | 9.0.1602 | 9.0.1603 #3685 processing_failed | n/a |
-| stable-v5 | com.dlnraja.tuya.zigbee.stable | 5.12.516 | 5.12.504 #394 test | n/a |
-| bastien-home | com.dlnraja.tuya.zigbee.bastien | 1.0.217 | 1.0.168 #176 test | n/a |
+| stable-v5 | com.dlnraja.tuya.zigbee.stable | 5.12.517 | 5.12.504 #394 test | n/a |
+| bastien-home | com.dlnraja.tuya.zigbee.bastien | 1.0.218 | 1.0.168 #176 test | n/a |
 
 ## Échecs CI (72 h)
 
+- 2026-10-28 11:18 UTC · fail · 🤖 Daily Digest failed on master (🏠 Homey digest / 🏠 Homey digest: code-or-test)
+- 2026-10-28 11:18 UTC · fail · 🤖 Daily Digest failed on master (🧭 Inspiration JohanBendz + own repo + git history (read-only) / 🧭 Inspiration scan: code-or-test)
 - 2026-10-27 10:31 UTC · fail · Autonomous Verification (P37) failed on master (🩺 CI health (master + stable-v5 → tracking issue) / 📦 Setup Node.js: no-log)
 - 2026-10-27 10:31 UTC · fail · Node 22 runtime tests failed on bastien-home (test / node:test strict (P3057-3): no-log)
 - 2026-10-27 10:31 UTC · fail · Node 22 runtime tests failed on master (test / Full suite on Node 22: no-log)
@@ -25,12 +27,10 @@ _Généré le 27/10/2026 11:32:27 (heure de Paris) par `scripts/automation/diges
 - 2026-10-27 10:30 UTC · fail · Node 22 runtime tests failed on master (strict / node:test strict (P3057-3): no-log)
 - 2026-10-27 10:30 UTC · fail · Node 22 runtime tests failed on bastien-home (test / node:test strict (P3057-3): no-log)
 - 2026-10-27 10:30 UTC · fail · Node 22 runtime tests failed on master (strict / node:test strict (P3057-3): no-log)
-- 2026-10-27 10:30 UTC · fail · code-quality failed on master (Quality Checks / P244x flow/knob + family gates: no-log)
-- 2026-10-27 10:30 UTC · fail · 🔍 Syntax Check & SDK3 Validation failed on master (syntax-check / P2138 BSEED dimmer + Poll Control tests: no-log)
 
 ## Santé (7 jours)
 
-- Combinaisons du paquet publié (platform-budget run 40477513086 du 2026-10-27) : **19955** / 17000 (marge -2955) ; plus gros driver curtain_motor = 1099 / 1008 (marge -91)
+- Combinaisons du paquet publié (platform-budget run 40502095521 du 2026-10-27) : **19925** / 17000 (marge -2925) ; plus gros driver curtain_motor = 1085 / 1008 (marge -77)
 - Combinaisons brutes des sources (avant élagage prepare-publish, indicatif) : 846806 ; plus gros driver switch_1gang = 141522 ; 41 driver(s) au-dessus de 1008 avant élagage.
 - Plafonds actifs dans auto-publish-on-push.yml : total 15500, par driver 1500, top-up 20000.
 - Workflows rattrapés par une simple relance (instables) : aucun
@@ -53,5 +53,5 @@ Aucun.
 
 ## Journal
 
-149 ligne(s) sur 72 h dans `data/progress/automation-journal.jsonl`.
+154 ligne(s) sur 72 h dans `data/progress/automation-journal.jsonl`.
 
