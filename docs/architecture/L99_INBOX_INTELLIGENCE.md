@@ -1,6 +1,6 @@
 # L99 Inbox Intelligence (P2352)
 
-> Auto-maintained pointer. Last run: **2026-10-27T23:17:09.396Z** (`full`).
+> Auto-maintained pointer. Last run: **2026-10-28T10:07:22.831Z** (`full`).
 
 ## Pourquoi / Comment / Pour qui / Quand / Contre quoi
 
@@ -27,7 +27,7 @@
 | Open PRs | 1 |
 | Forum needAction | 108 |
 | Top priority | #550 (90) |
-| Report | `reports/l99-inbox-2026-10-27/PRIORITY.md` |
+| Report | `reports/l99-inbox-2026-10-28/PRIORITY.md` |
 
 ## Related workflows
 
