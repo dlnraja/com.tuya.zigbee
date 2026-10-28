@@ -1,5 +1,166 @@
 {
  "schema": 1,
  "note": "P3073 bounded upstream delta ledger (300 rows, newest last). Titles are untrusted upstream text: rewrite before use.",
- "rows": []
+ "rows": [
+  {
+   "at": "2026-10-28T11:18:38.043Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "529869acd5",
+   "title": "fix: Tuya ZS-304Z: fix incorrect illuminance readings (#13606)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/529869acd5b7c20ab2fde2605d3193effa4b8aee"
+  },
+  {
+   "at": "2026-10-28T11:18:38.043Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "f90eaf09b2",
+   "title": "fix(detect): Detect `_TZE284_stvgmdjz` as Moes SFL02-Z-1 (#13605)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/f90eaf09b275727cd933aea99e7953d3e183fd1b"
+  },
+  {
+   "at": "2026-10-28T11:18:38.043Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "8ee45abc8d",
+   "title": "fix(detect): Detect `_TZE200_fzo2pocs` as Zemismart ZM25TQ (#13601)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/8ee45abc8dc7f11ee816eb45a7318e64a6243482"
+  },
+  {
+   "at": "2026-10-28T11:18:38.043Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "d511a08aa5",
+   "title": "fix: Tuya PJ-1203-W: prevent freezing on gateway status queries (#13600)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/d511a08aa5d1463ee305ef2e96dd2f7342725e7f"
+  },
+  {
+   "at": "2026-10-28T11:18:38.043Z",
+   "source": "zhc-rel",
+   "kind": "release",
+   "ref": "v26.125.0",
+   "title": "v26.125.0",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/releases/tag/v26.125.0"
+  },
+  {
+   "at": "2026-10-28T11:18:38.043Z",
+   "source": "zha-quirks",
+   "kind": "commit",
+   "ref": "862124c551",
+   "title": "Add Shelly Presence quirk (#4936)",
+   "url": "https://github.com/zigpy/zha-device-handlers/commit/862124c5517c3cb331e07f06caad913d7bf02dd2"
+  },
+  {
+   "at": "2026-10-28T11:18:38.043Z",
+   "source": "zha-quirks",
+   "kind": "commit",
+   "ref": "59e229a91f",
+   "title": "Add TS0601 `_TZE200_f1pvdgoh` PIR motion & luminance sensor (#5233)",
+   "url": "https://github.com/zigpy/zha-device-handlers/commit/59e229a91f6ecfe45840d46d2ed2afcdfd844f98"
+  },
+  {
+   "at": "2026-10-28T11:18:38.043Z",
+   "source": "zha-quirks",
+   "kind": "commit",
+   "ref": "101147cdae",
+   "title": "Add quirk for Tuya TS000F relay module _TZ3218_hdc8bbha (#5241)",
+   "url": "https://github.com/zigpy/zha-device-handlers/commit/101147cdae8a2dc2edb03559cb12745175e3712c"
+  },
+  {
+   "at": "2026-10-28T11:18:38.043Z",
+   "source": "zha-quirks",
+   "kind": "commit",
+   "ref": "a918fe499c",
+   "title": "Fix soil light level enum for Tuya `_TZE284_nt4pquef` (#4919)",
+   "url": "https://github.com/zigpy/zha-device-handlers/commit/a918fe499c4321f7cb9d5f0d4e7ceb6d8b3e4062"
+  },
+  {
+   "at": "2026-10-28T11:18:38.043Z",
+   "source": "zha-quirks",
+   "kind": "commit",
+   "ref": "c02cd64a92",
+   "title": "Add iHseno TS0601 human presence sensor (_TZE284_debczeci, _TZE204_debczeci, _TZE284_1lvln0x6) (#456",
+   "url": "https://github.com/zigpy/zha-device-handlers/commit/c02cd64a92da9cc845b29cf9f4f300a582a9a308"
+  },
+  {
+   "at": "2026-10-28T11:18:38.043Z",
+   "source": "zha-quirks",
+   "kind": "commit",
+   "ref": "cd2d8b097b",
+   "title": "Add Off control status to Schneider Electric thermostats (#5391)",
+   "url": "https://github.com/zigpy/zha-device-handlers/commit/cd2d8b097b6aef6a994a309d3c8e8113c9d86f8d"
+  },
+  {
+   "at": "2026-10-28T11:18:38.043Z",
+   "source": "zha-quirks",
+   "kind": "commit",
+   "ref": "97016b618b",
+   "title": "Add Zemismart TS0726 2-gang switch (_TZ3000_icoxotza) (#5403)",
+   "url": "https://github.com/zigpy/zha-device-handlers/commit/97016b618b5b295ba4894f7e41428f96f539cb54"
+  },
+  {
+   "at": "2026-10-28T11:18:38.043Z",
+   "source": "zha-quirks",
+   "kind": "commit",
+   "ref": "52f5767798",
+   "title": "Add PushOk POK002 soil moisture and POK006 valve quirks (#5088)",
+   "url": "https://github.com/zigpy/zha-device-handlers/commit/52f5767798e430c414ecf604c0403fc6e4f83d70"
+  },
+  {
+   "at": "2026-10-28T11:18:38.043Z",
+   "source": "zha-quirks",
+   "kind": "commit",
+   "ref": "0f64169e48",
+   "title": "Add Tuya water leak sensor _TYST11_qq9mpfhw / _TZE200_qq9mpfhw (#5524)",
+   "url": "https://github.com/zigpy/zha-device-handlers/commit/0f64169e488763e2ac847e0127290f47edae5e0e"
+  },
+  {
+   "at": "2026-10-28T11:18:38.043Z",
+   "source": "zha-quirks",
+   "kind": "commit",
+   "ref": "8de0b5a7d1",
+   "title": "Verify learned TS1201 IR codes (#5517)",
+   "url": "https://github.com/zigpy/zha-device-handlers/commit/8de0b5a7d19319c68bd936f0f3cf39549b636dc1"
+  },
+  {
+   "at": "2026-10-28T11:18:38.043Z",
+   "source": "zha-quirks",
+   "kind": "commit",
+   "ref": "c95f45a997",
+   "title": "Add quirks for CTM Lyng outlets/relays and cooktop guard (#4126)",
+   "url": "https://github.com/zigpy/zha-device-handlers/commit/c95f45a997ae27c41700d3329f4171eb9eb2677c"
+  },
+  {
+   "at": "2026-10-28T11:18:38.043Z",
+   "source": "zha-quirks",
+   "kind": "commit",
+   "ref": "83eda2266c",
+   "title": "Add quirk for Namron 4512793 Simplify wireless remote (#5315)",
+   "url": "https://github.com/zigpy/zha-device-handlers/commit/83eda2266cd3e8a8fa73eefa4365131d0d7d7b70"
+  },
+  {
+   "at": "2026-10-28T11:18:38.043Z",
+   "source": "zha-quirks",
+   "kind": "commit",
+   "ref": "5950c9afa6",
+   "title": "Add support for SETTI+ TRV001 (#5469)",
+   "url": "https://github.com/zigpy/zha-device-handlers/commit/5950c9afa67e633e31fd7fded508c8406bbc2909"
+  },
+  {
+   "at": "2026-10-28T11:18:38.043Z",
+   "source": "zha-quirks",
+   "kind": "commit",
+   "ref": "0d0e9d81d2",
+   "title": "Skip malformed Tuya datapoints instead of raising (#5502)",
+   "url": "https://github.com/zigpy/zha-device-handlers/commit/0d0e9d81d201b42c490e436972df0ca136c041b6"
+  },
+  {
+   "at": "2026-10-28T11:18:38.043Z",
+   "source": "zha-quirks",
+   "kind": "commit",
+   "ref": "15f2125a7e",
+   "title": "Use matching Number/Sensor device classes in Tuya and Bosch quirks (#5584)",
+   "url": "https://github.com/zigpy/zha-device-handlers/commit/15f2125a7ee957a8c8f3f4de3883fa5f46650d48"
+  }
+ ]
 }
