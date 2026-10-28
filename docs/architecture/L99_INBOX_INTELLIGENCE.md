@@ -1,6 +1,6 @@
 # L99 Inbox Intelligence (P2352)
 
-> Auto-maintained pointer. Last run: **2026-10-28T10:07:22.831Z** (`full`).
+> Auto-maintained pointer. Last run: **2026-10-28T17:27:41.590Z** (`full`).
 
 ## Pourquoi / Comment / Pour qui / Quand / Contre quoi
 
