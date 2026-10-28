@@ -1,5 +1,5 @@
 {
-  "harvestedAt": "2026-10-28T17:27:41.985Z",
+  "harvestedAt": "2026-10-28T23:39:30.509Z",
   "repo": "dlnraja/com.tuya.zigbee",
   "auth": "token",
   "error": null,
@@ -10,9 +10,17 @@
       "labels": [
         "bot-digest"
       ],
-      "updatedAt": "2026-10-28T17:07:24Z",
+      "updatedAt": "2026-10-28T22:35:49Z",
       "user": "dlnraja",
       "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/557"
+    },
+    {
+      "number": 581,
+      "title": "[climate_sensor] Bug:",
+      "labels": [],
+      "updatedAt": "2026-10-28T19:27:51Z",
+      "user": "hogseto",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/581"
     },
     {
       "number": 550,
@@ -36,6 +44,6 @@
       "draft": false
     }
   ],
-  "openIssueCount": 2,
+  "openIssueCount": 3,
   "openPrCount": 1
 }

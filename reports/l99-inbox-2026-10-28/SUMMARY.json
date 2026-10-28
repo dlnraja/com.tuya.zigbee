@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T17:27:41.590Z",
+  "generatedAt": "2026-10-28T23:39:30.020Z",
   "date": "2026-10-28",
   "mode": "full",
   "phases": [
@@ -12,18 +12,18 @@
     {
       "name": "github",
       "ok": true,
-      "durationMs": 464
+      "durationMs": 489
     },
     {
       "name": "gmail",
       "ok": true,
-      "durationMs": 163,
+      "durationMs": 217,
       "details": {
         "crash": {
           "ok": true,
           "skipped": false,
           "status": 0,
-          "durationMs": 31,
+          "durationMs": 38,
           "stderr": "",
           "stdoutTail": "[gmail-crash-pattern-gate] sources=32 hits=0 unknown=0\n  wrote .github/state/gmail-crash-patterns.json\n  verdict: ok\n"
         },
@@ -31,16 +31,16 @@
           "ok": true,
           "skipped": false,
           "status": 0,
-          "durationMs": 130,
+          "durationMs": 179,
           "stderr": "",
-          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-10-28\n{\n  \"generatedAt\": \"2026-10-28T17:27:42.206Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 35,\n  \"derivedFromInterview\": 0,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 3,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 3,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 2,\n    \"processing_failed\": 3,\n    \"scene_0x8004\": 2,\n    \"aggregate_error\": 2,\n    \"invalid_flow_card\": 1,\n    \"missing_capability_listener\": 1\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 35 gmailBodies= 30\n"
+          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-10-28\n{\n  \"generatedAt\": \"2026-10-28T23:39:30.718Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 35,\n  \"derivedFromInterview\": 0,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 3,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 3,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 2,\n    \"processing_failed\": 3,\n    \"scene_0x8004\": 2,\n    \"aggregate_error\": 2,\n    \"invalid_flow_card\": 1,\n    \"missing_capability_listener\": 1\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 35 gmailBodies= 30\n"
         }
       }
     },
     {
       "name": "forum",
       "ok": true,
-      "durationMs": 33610,
+      "durationMs": 36594,
       "skipScan": false,
       "steps": [
         {
@@ -64,7 +64,7 @@
     {
       "name": "drivers",
       "ok": true,
-      "durationMs": 1179,
+      "durationMs": 2009,
       "mfs": {
         "high": 0,
         "changes": 0,
@@ -75,29 +75,29 @@
     {
       "name": "functionalDeep",
       "ok": true,
-      "durationMs": 819,
+      "durationMs": 1501,
       "note": "P2529 complementary deep functional (soft)"
     },
     {
       "name": "prioritize",
       "ok": true,
       "durationMs": 1,
-      "count": 4
+      "count": 5
     },
     {
       "name": "docs",
       "ok": true,
-      "durationMs": 0,
+      "durationMs": 1,
       "doc": "/home/runner/work/com.tuya.zigbee/com.tuya.zigbee/docs/architecture/L99_INBOX_INTELLIGENCE.md"
     },
     {
       "name": "gates",
       "ok": true,
-      "durationMs": 2038
+      "durationMs": 3063
     }
   ],
   "github": {
-    "harvestedAt": "2026-10-28T17:27:41.985Z",
+    "harvestedAt": "2026-10-28T23:39:30.509Z",
     "repo": "dlnraja/com.tuya.zigbee",
     "auth": "token",
     "error": null,
@@ -108,9 +108,17 @@
         "labels": [
           "bot-digest"
         ],
-        "updatedAt": "2026-10-28T17:07:24Z",
+        "updatedAt": "2026-10-28T22:35:49Z",
         "user": "dlnraja",
         "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/557"
+      },
+      {
+        "number": 581,
+        "title": "[climate_sensor] Bug:",
+        "labels": [],
+        "updatedAt": "2026-10-28T19:27:51Z",
+        "user": "hogseto",
+        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/581"
       },
       {
         "number": 550,
@@ -134,22 +142,22 @@
         "draft": false
       }
     ],
-    "openIssueCount": 2,
+    "openIssueCount": 3,
     "openPrCount": 1
   },
   "forum": {
     "path": "/home/runner/work/com.tuya.zigbee/com.tuya.zigbee/.github/state/forum/actionable-processor-report.json",
     "totals": {
-      "posts": 330,
-      "withCouples": 82,
+      "posts": 329,
+      "withCouples": 81,
       "needAction": 108,
-      "both": 212,
-      "masterOnly": 17
+      "both": 210,
+      "masterOnly": 18
     },
-    "posts": 330
+    "posts": 329
   },
   "gmail": {
-    "generatedAt": "2026-10-28T17:27:42.080Z",
+    "generatedAt": "2026-10-28T23:39:30.541Z",
     "sourcesScanned": 32,
     "patternCounts": {
       "flow_getDeviceActionCard": 0,
@@ -238,6 +246,16 @@
       "forumReply": "NEVER"
     },
     {
+      "score": 70,
+      "dualApp": "BOTH",
+      "source": "github-issue",
+      "id": "#581",
+      "title": "[climate_sensor] Bug:",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/581",
+      "action": "investigate-code-silent",
+      "forumReply": "NEVER"
+    },
+    {
       "score": 50,
       "dualApp": "MASTER_ONLY",
       "source": "github-pr",
@@ -250,6 +268,6 @@
   ],
   "functionalDeep": {
     "ok": true,
-    "durationMs": 819
+    "durationMs": 1500
   }
 }
