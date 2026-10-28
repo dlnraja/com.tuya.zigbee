@@ -5,7 +5,7 @@
   },
   "26439": {
    "tailId": 790166,
-   "backfillId": 548636
+   "backfillId": 553167
   },
   "89271": {
    "tailId": 425235,
@@ -13,7 +13,7 @@
   },
   "140352": {
    "tailId": 792645,
-   "backfillId": 689345
+   "backfillId": 691566
   },
   "146735": {
    "tailId": 791344,
@@ -6065,9 +6065,14 @@
    "author": "Marcelo_Leite",
    "at": "2024-09-18T11:57:57.740Z",
    "images": 1,
-   "ocr": "image-cap",
+   "ocr": "done",
    "mfrs": [],
-   "pids": []
+   "pids": [],
+   "symptoms": [
+    "pairing"
+   ],
+   "quirkCandidates": [],
+   "triage": "daily-resume"
   },
   {
    "id": "forum:140352#731",
@@ -6298,7 +6303,7 @@
    "author": "Ronny_M",
    "at": "2025-12-30T13:16:19.956Z",
    "images": 6,
-   "ocr": "image-cap",
+   "ocr": "done",
    "mfrs": [
     "_TZE284_iadro9bf",
     "_TZE204_gkfbdvyx"
@@ -6314,6 +6319,339 @@
      "TS0601"
     ]
    }
+  },
+  {
+   "id": "forum:140352#777",
+   "link": "https://community.homey.app/t/140352/777",
+   "author": "Francesco_Carrozzo",
+   "at": "2025-12-30T14:45:47.679Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [],
+   "pids": [
+    "TS011F"
+   ]
+  },
+  {
+   "id": "forum:140352#778",
+   "link": "https://community.homey.app/t/140352/778",
+   "author": "Eftychis_Georgilas",
+   "at": "2025-12-30T19:23:32.177Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [],
+   "pids": [],
+   "symptoms": [
+    "battery"
+   ],
+   "quirkCandidates": [],
+   "triage": "daily-resume"
+  },
+  {
+   "id": "forum:140352#782",
+   "link": "https://community.homey.app/t/140352/782",
+   "author": "Ronny_M",
+   "at": "2025-12-31T11:24:48.949Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [
+    "_TZE204_gkfbdvyx"
+   ],
+   "pids": []
+  },
+  {
+   "id": "forum:140352#783",
+   "link": "https://community.homey.app/t/140352/783",
+   "author": "dlnraja",
+   "at": "2025-12-31T11:55:51.161Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [],
+   "pids": [],
+   "brands": [
+    "LIDL",
+    "SILVERCREST"
+   ],
+   "symptoms": [
+    "crash"
+   ],
+   "quirkCandidates": [],
+   "triage": "daily-resume"
+  },
+  {
+   "id": "forum:140352#786",
+   "link": "https://community.homey.app/t/140352/786",
+   "author": "4x4_Pete",
+   "at": "2025-12-31T13:12:00.340Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [],
+   "pids": [],
+   "models": [
+    "ZG-204ZM"
+   ],
+   "symptoms": [
+    "pairing"
+   ],
+   "quirkCandidates": [
+    "model:ZG-204ZM:pairing"
+   ],
+   "triage": "daily-resume"
+  },
+  {
+   "id": "forum:140352#788",
+   "link": "https://community.homey.app/t/140352/788",
+   "author": "4x4_Pete",
+   "at": "2025-12-31T13:54:07.604Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [
+    "_TZE200_3towulqd"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "models": [
+    "ZG-204ZM"
+   ]
+  },
+  {
+   "id": "forum:140352#794",
+   "link": "https://community.homey.app/t/140352/794",
+   "author": "Lasse_K",
+   "at": "2025-12-31T17:42:14.842Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [],
+   "pids": [],
+   "models": [
+    "ZG-102ZL"
+   ]
+  },
+  {
+   "id": "forum:140352#796",
+   "link": "https://community.homey.app/t/140352/796",
+   "author": "Lasse_K",
+   "at": "2025-12-31T17:58:09.683Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [],
+   "pids": [],
+   "symptoms": [
+    "pairing"
+   ],
+   "quirkCandidates": [],
+   "triage": "daily-resume"
+  },
+  {
+   "id": "forum:140352#797",
+   "link": "https://community.homey.app/t/140352/797",
+   "author": "Lasse_K",
+   "at": "2025-12-31T18:02:48.208Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [],
+   "pids": [],
+   "models": [
+    "ZG-102Z"
+   ],
+   "brands": [
+    "HOBEIAN"
+   ]
+  },
+  {
+   "id": "forum:140352#799",
+   "link": "https://community.homey.app/t/140352/799",
+   "author": "Nicolas_YDDER",
+   "at": "2025-12-31T18:13:35.654Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [],
+   "pids": [],
+   "models": [
+    "ZG-227Z"
+   ],
+   "brands": [
+    "HOBEIAN"
+   ]
+  },
+  {
+   "id": "forum:140352#800",
+   "link": "https://community.homey.app/t/140352/800",
+   "author": "Lasse_K",
+   "at": "2025-12-31T18:14:49.968Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [],
+   "pids": [],
+   "models": [
+    "ZG-102Z"
+   ],
+   "brands": [
+    "HOBEIAN"
+   ]
+  },
+  {
+   "id": "forum:140352#802",
+   "link": "https://community.homey.app/t/140352/802",
+   "author": "Lasse_K",
+   "at": "2025-12-31T18:19:13.233Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [],
+   "pids": [],
+   "models": [
+    "ZG-102Z"
+   ],
+   "brands": [
+    "HOBEIAN"
+   ]
+  },
+  {
+   "id": "forum:140352#820",
+   "link": "https://community.homey.app/t/140352/820",
+   "author": "Fiek",
+   "at": "2026-01-02T14:26:04.309Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [
+    "_TZ3210_s8lvbbuc"
+   ],
+   "pids": [
+    "TS0505B"
+   ],
+   "symptoms": [
+    "pairing"
+   ],
+   "quirkCandidates": [
+    "_TZ3210_s8lvbbuc|TS0505B:pairing"
+   ],
+   "triage": "daily-resume"
+  },
+  {
+   "id": "forum:140352#823",
+   "link": "https://community.homey.app/t/140352/823",
+   "author": "Eftychis_Georgilas",
+   "at": "2026-01-02T18:51:05.226Z",
+   "images": 2,
+   "ocr": "done",
+   "mfrs": [],
+   "pids": [
+    "TS0601"
+   ],
+   "fromImage": {
+    "mfrs": [],
+    "pids": [
+     "TS0601"
+    ]
+   }
+  },
+  {
+   "id": "forum:140352#830",
+   "link": "https://community.homey.app/t/140352/830",
+   "author": "4x4_Pete",
+   "at": "2026-01-02T23:09:13.968Z",
+   "images": 2,
+   "ocr": "done",
+   "mfrs": [],
+   "pids": [],
+   "models": [
+    "ZG-204ZM"
+   ]
+  },
+  {
+   "id": "forum:26439#4927",
+   "link": "https://community.homey.app/t/26439/4927",
+   "author": "Rocky_Lonigro",
+   "at": "2024-09-18T16:24:28.477Z",
+   "images": 2,
+   "ocr": "done",
+   "mfrs": [
+    "_TZ3000_iszegwpd"
+   ],
+   "pids": [
+    "TS0046"
+   ],
+   "symptoms": [
+    "null-values"
+   ],
+   "quirkCandidates": [
+    "_TZ3000_iszegwpd|TS0046:null-values"
+   ],
+   "triage": "daily-resume"
+  },
+  {
+   "id": "forum:26439#4949",
+   "link": "https://community.homey.app/t/26439/4949",
+   "author": "Rocky_Lonigro",
+   "at": "2024-09-24T15:04:50.829Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [],
+   "pids": [],
+   "symptoms": [
+    "crash"
+   ],
+   "quirkCandidates": [],
+   "triage": "daily-resume"
+  },
+  {
+   "id": "forum:26439#4957",
+   "link": "https://community.homey.app/t/26439/4957",
+   "author": "Tim_Messerschmidt",
+   "at": "2024-09-27T09:31:47.522Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [],
+   "pids": [],
+   "symptoms": [
+    "pairing"
+   ],
+   "quirkCandidates": [],
+   "triage": "daily-resume"
+  },
+  {
+   "id": "forum:26439#4961",
+   "link": "https://community.homey.app/t/26439/4961",
+   "author": "Tim_Messerschmidt",
+   "at": "2024-09-27T09:38:36.923Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [
+    "_TZ3000_aezbqpcu"
+   ],
+   "pids": [
+    "TS0013"
+   ]
+  },
+  {
+   "id": "forum:26439#4970",
+   "link": "https://community.homey.app/t/26439/4970",
+   "author": "Peter_van_Werkhoven",
+   "at": "2024-10-01T12:21:26.908Z",
+   "images": 6,
+   "ocr": "done",
+   "mfrs": [],
+   "pids": [],
+   "symptoms": [
+    "crash"
+   ],
+   "quirkCandidates": [],
+   "triage": "daily-resume"
+  },
+  {
+   "id": "forum:26439#4975",
+   "link": "https://community.homey.app/t/26439/4975",
+   "author": "Rocky_Lonigro",
+   "at": "2024-10-01T13:57:21.539Z",
+   "images": 0,
+   "ocr": "none",
+   "mfrs": [
+    "_TZ3000_wkai4ga5"
+   ],
+   "pids": [
+    "TS0044"
+   ]
   }
  ],
  "candidates": [
@@ -6323,15 +6661,15 @@
   "_TZE204_sxm719xa|TS0601",
   "_TZE284_iadro9bf|TS0044"
  ],
- "generated": "2026-10-27T08:02:22.807Z",
+ "generated": "2026-10-28T08:44:33.393Z",
  "note": "Structured leads from forum posts + screenshots (OCR). No post or OCR text stored. candidates = cited couples with no home driver here; verify real hardware (W4) before adding.",
  "lastRun": {
-  "at": "2026-10-27T08:02:22.807Z",
+  "at": "2026-10-28T08:44:33.393Z",
   "tesseract": true,
   "langs": "eng+fra",
   "images": 30,
   "cache": {
-   "urlHits": 1,
+   "urlHits": 5,
    "hashHits": 0,
    "ocred": 30
   },
@@ -6369,14 +6707,12 @@
    {
     "tid": "140352",
     "mode": "backfill",
-    "n": 50,
-    "capped": true
+    "n": 60
    },
    {
     "tid": "26439",
     "mode": "backfill",
-    "n": 0,
-    "capped": true
+    "n": 60
    },
    {
     "tid": "146735",
@@ -7695,6 +8031,15 @@
    ]
   },
   {
+   "id": "forum:26439#4924",
+   "link": "https://community.homey.app/t/26439/4924",
+   "author": "Marcelo_Leite",
+   "symptoms": [
+    "pairing"
+   ],
+   "mfrs": []
+  },
+  {
    "id": "forum:140352#738",
    "link": "https://community.homey.app/t/140352/738",
    "author": "dlnraja",
@@ -7736,6 +8081,94 @@
     "_TZE284_iadro9bf",
     "_TZE204_gkfbdvyx"
    ]
+  },
+  {
+   "id": "forum:140352#778",
+   "link": "https://community.homey.app/t/140352/778",
+   "author": "Eftychis_Georgilas",
+   "symptoms": [
+    "battery"
+   ],
+   "mfrs": []
+  },
+  {
+   "id": "forum:140352#783",
+   "link": "https://community.homey.app/t/140352/783",
+   "author": "dlnraja",
+   "symptoms": [
+    "crash"
+   ],
+   "mfrs": []
+  },
+  {
+   "id": "forum:140352#786",
+   "link": "https://community.homey.app/t/140352/786",
+   "author": "4x4_Pete",
+   "symptoms": [
+    "pairing"
+   ],
+   "models": [
+    "ZG-204ZM"
+   ],
+   "mfrs": []
+  },
+  {
+   "id": "forum:140352#796",
+   "link": "https://community.homey.app/t/140352/796",
+   "author": "Lasse_K",
+   "symptoms": [
+    "pairing"
+   ],
+   "mfrs": []
+  },
+  {
+   "id": "forum:140352#820",
+   "link": "https://community.homey.app/t/140352/820",
+   "author": "Fiek",
+   "symptoms": [
+    "pairing"
+   ],
+   "mfrs": [
+    "_TZ3210_s8lvbbuc"
+   ]
+  },
+  {
+   "id": "forum:26439#4927",
+   "link": "https://community.homey.app/t/26439/4927",
+   "author": "Rocky_Lonigro",
+   "symptoms": [
+    "null-values"
+   ],
+   "mfrs": [
+    "_TZ3000_iszegwpd"
+   ]
+  },
+  {
+   "id": "forum:26439#4949",
+   "link": "https://community.homey.app/t/26439/4949",
+   "author": "Rocky_Lonigro",
+   "symptoms": [
+    "crash"
+   ],
+   "mfrs": []
+  },
+  {
+   "id": "forum:26439#4957",
+   "link": "https://community.homey.app/t/26439/4957",
+   "author": "Tim_Messerschmidt",
+   "symptoms": [
+    "pairing"
+   ],
+   "mfrs": []
+  },
+  {
+   "id": "forum:26439#4970",
+   "link": "https://community.homey.app/t/26439/4970",
+   "author": "Peter_van_Werkhoven",
+   "symptoms": [
+    "crash"
+   ],
+   "mfrs": []
   }
  ]
 }
