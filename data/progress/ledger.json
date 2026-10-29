@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-29T14:48:44.011Z",
+ "updated": "2026-10-29T19:44:13.219Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -17440,6 +17440,30 @@
    "link": "https://community.homey.app/t/156/7535",
    "images": 3
   },
+  "forum-post:156/7537": {
+   "status": "pending",
+   "date": "2026-10-29",
+   "hash": "2dc84daf5dd2ae9f",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 156,
+   "post": 7537,
+   "author": "Drako74",
+   "link": "https://community.homey.app/t/156/7537",
+   "images": 5
+  },
+  "forum-post:156/7540": {
+   "status": "pending",
+   "date": "2026-10-29",
+   "hash": "5ec6e1472c021404",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 156,
+   "post": 7540,
+   "author": "Drako74",
+   "link": "https://community.homey.app/t/156/7540",
+   "images": 2
+  },
   "forum-post:156053/1": {
    "status": "pending",
    "date": "2026-10-20",
@@ -18093,6 +18117,18 @@
    "link": "https://community.homey.app/t/158852/2",
    "images": 1
   },
+  "forum-post:160590/13": {
+   "status": "pending",
+   "date": "2026-10-29",
+   "hash": "2c9fdcab97b92b8a",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 160590,
+   "post": 13,
+   "author": "makleso6",
+   "link": "https://community.homey.app/t/160590/13",
+   "images": 2
+  },
   "forum-post:160757/1": {
    "status": "done",
    "date": "2026-10-25",
@@ -18517,6 +18553,17 @@
    "post": 548,
    "author": "Mickee",
    "link": "https://community.homey.app/t/36418/548"
+  },
+  "forum-post:36418/549": {
+   "status": "pending",
+   "date": "2026-10-29",
+   "hash": "dcb9cc8312cb3c75",
+   "note": "needs a closer look",
+   "by": "forum-poll",
+   "topic": 36418,
+   "post": 549,
+   "author": "V_B",
+   "link": "https://community.homey.app/t/36418/549"
   },
   "forum-post:43287/2276": {
    "status": "pending",
