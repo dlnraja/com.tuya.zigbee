@@ -1,0 +1,49 @@
+{
+  "harvestedAt": "2026-10-29T10:28:41.910Z",
+  "repo": "dlnraja/com.tuya.zigbee",
+  "auth": "token",
+  "error": null,
+  "issues": [
+    {
+      "number": 557,
+      "title": "🤖 Daily digest",
+      "labels": [
+        "bot-digest"
+      ],
+      "updatedAt": "2026-10-29T07:45:52Z",
+      "user": "dlnraja",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/557"
+    },
+    {
+      "number": 581,
+      "title": "[climate_sensor] Bug:",
+      "labels": [],
+      "updatedAt": "2026-10-28T19:27:51Z",
+      "user": "hogseto",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/581"
+    },
+    {
+      "number": 550,
+      "title": "Bug report - [Short description]",
+      "labels": [
+        "bug",
+        "reopened-by-user"
+      ],
+      "updatedAt": "2026-10-04T08:18:31Z",
+      "user": "HiepSVG",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/550"
+    }
+  ],
+  "prs": [
+    {
+      "number": 578,
+      "title": "KB refresh 2026-10-26",
+      "updatedAt": "2026-10-27T13:04:01Z",
+      "user": "github-actions[bot]",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/pull/578",
+      "draft": false
+    }
+  ],
+  "openIssueCount": 3,
+  "openPrCount": 1
+}
