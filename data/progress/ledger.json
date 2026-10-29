@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-29T12:34:53.106Z",
+ "updated": "2026-10-29T13:30:42.956Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -10038,6 +10038,29 @@
    "kind": "general",
    "mailDate": "2026-10-19T05:35:38.000Z"
   },
+  "diag:b578627d4eb09c0b": {
+   "status": "pending",
+   "date": "2026-10-29",
+   "hash": "625b5e3178e1da40",
+   "note": "github mail; 2 couple(s); 1 identity(ies) not in any driver; 5 in several drivers",
+   "by": "fetch-diags",
+   "kind": "github",
+   "mailDate": "2026-10-29T12:58:25.000Z",
+   "couples": [
+    "_tze200_vzekyi4c|ts0205",
+    "_tze200_vzekyi4c|ts0601"
+   ],
+   "unsupported": [
+    "ts0205"
+   ],
+   "conflicts": [
+    "_TYZB01_v8gtiaed",
+    "_TZE200_yh7aoahi",
+    "_TZ3000_l9brjwau",
+    "_TZ3000_eit7p838",
+    "_tze200_vzekyi4c"
+   ]
+  },
   "diag:b59652e4518ccee4": {
    "status": "done",
    "date": "2026-10-25",
@@ -10953,6 +10976,15 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-10-21T09:05:59.000Z"
+  },
+  "diag:e303f809e68ac2a3": {
+   "status": "done",
+   "date": "2026-10-29",
+   "hash": "c9f0c50c328c4d92",
+   "note": "github mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "github",
+   "mailDate": "2026-10-29T12:47:02.000Z"
   },
   "diag:e31d7afb07751223": {
    "status": "done",
