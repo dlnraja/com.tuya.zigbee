@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29T07:47:05.237Z",
+  "updated": "2026-10-29T08:46:42.747Z",
   "threads": {
     "21313": {
       "lastPost": 2819,
@@ -24440,12 +24440,16 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-10-29",
         "verdict": "lead",
-        "confidence": 0,
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
-        "sources": 32
+        "candidates": [
+          "https://www.zigbee2mqtt.io/devices/WT-A03E.html",
+          "https://www.zigbee2mqtt.io/devices/PS-S04D.html",
+          "https://www.zigbee2mqtt.io/devices/SW600.html"
+        ],
+        "sources": 33
       }
     },
     {
