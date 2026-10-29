@@ -1,5 +1,5 @@
 {
-  "harvestedAt": "2026-10-29T10:28:41.910Z",
+  "harvestedAt": "2026-10-29T17:37:19.925Z",
   "repo": "dlnraja/com.tuya.zigbee",
   "auth": "token",
   "error": null,
@@ -10,9 +10,23 @@
       "labels": [
         "bot-digest"
       ],
-      "updatedAt": "2026-10-29T07:45:52Z",
+      "updatedAt": "2026-10-29T17:23:44Z",
       "user": "dlnraja",
       "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/557"
+    },
+    {
+      "number": 559,
+      "title": "Smartplug",
+      "labels": [
+        "enhancement",
+        "device-request",
+        "reopened-by-user",
+        "auto-triage",
+        "fingerprint-supported"
+      ],
+      "updatedAt": "2026-10-29T12:16:38Z",
+      "user": "Lalla80111",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/559"
     },
     {
       "number": 581,
@@ -42,8 +56,16 @@
       "user": "github-actions[bot]",
       "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/pull/578",
       "draft": false
+    },
+    {
+      "number": 582,
+      "title": "Weekly Homey knowledge/tooling refresh 2026-10-29",
+      "updatedAt": "2026-10-29T16:14:49Z",
+      "user": "github-actions[bot]",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/pull/582",
+      "draft": true
     }
   ],
-  "openIssueCount": 3,
-  "openPrCount": 1
+  "openIssueCount": 4,
+  "openPrCount": 2
 }
