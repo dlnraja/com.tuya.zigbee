@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-29T13:30:42.956Z",
+ "updated": "2026-10-29T13:42:57.970Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -108,8 +108,8 @@
   },
   "autopilot-issue:559": {
    "status": "deferred",
-   "date": "2026-10-25",
-   "hash": "7b10e046ad5cae00",
+   "date": "2026-10-29",
+   "hash": "bbc5df7c22d5c805",
    "note": "already-supported: supported and referenced by a fix commit; owner replies (draft in autopilot report), never auto-closed",
    "by": "repo-autopilot",
    "kind": "already-supported",
@@ -126,7 +126,7 @@
    ],
    "counts": {
     "dps": 0,
-    "diag": 1,
+    "diag": 2,
     "fixCommits": 1
    }
   },
@@ -194,6 +194,30 @@
     "dps": 0,
     "diag": 1,
     "fixCommits": 2
+   }
+  },
+  "autopilot-issue:581": {
+   "status": "pending",
+   "date": "2026-10-29",
+   "hash": "4c03ad49bcf3ab8c",
+   "note": "fix-in-code: supported, symptom(s): unknown-device, battery; owner replies (draft in autopilot report), never auto-closed",
+   "by": "repo-autopilot",
+   "kind": "fix-in-code",
+   "author": "hogseto",
+   "link": "https://github.com/dlnraja/com.tuya.zigbee/issues/581",
+   "mfrs": [
+    "_TZ3000_yupc0pb7"
+   ],
+   "pids": [
+    "TS0201"
+   ],
+   "drivers": [
+    "climate_sensor"
+   ],
+   "counts": {
+    "dps": 0,
+    "diag": 0,
+    "fixCommits": 0
    }
   },
   "autopilot-pr:579": {
@@ -43360,19 +43384,19 @@
   },
   "workflow-run:repo-autopilot": {
    "status": "pending",
-   "date": "2026-10-27",
-   "hash": "56f0a21565cab296",
+   "date": "2026-10-29",
+   "hash": "04c28970552be996",
    "note": "run reported ok=false",
    "by": "repo-autopilot",
    "counts": {
     "closed": 0,
     "merged": 0,
     "branchesDeleted": 0,
-    "issues": 2,
+    "issues": 4,
     "external": 0,
     "leadsAdded": 0
    },
-   "lastChangeRun": "40505220118"
+   "lastChangeRun": "40883875598"
   }
  }
 }
