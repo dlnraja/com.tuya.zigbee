@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-30T07:49:51.843Z",
+  "updated": "2026-10-30T08:51:50.859Z",
   "threads": {
     "21313": {
       "lastPost": 2819,
@@ -24801,7 +24801,7 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-10-30",
         "verdict": "lead",
         "confidence": 0.2,
         "couples": [],
@@ -24809,7 +24809,7 @@
           "https://www.zigbee2mqtt.io/devices/SRTS-A01.html",
           "https://zigbee.blakadder.com/Aqara_SRTS-A01.html"
         ],
-        "sources": 34
+        "sources": 35
       }
     },
     {
@@ -24848,7 +24848,7 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-10-30",
         "verdict": "lead",
         "confidence": 0.2,
         "couples": [],
@@ -24856,7 +24856,7 @@
           "https://zigbee.blakadder.com/Tuya_ZG-101ZL.html",
           "https://www.zigbee2mqtt.io/devices/ERS-10TZBVB-AA.html"
         ],
-        "sources": 31
+        "sources": 32
       }
     },
     {
@@ -24878,12 +24878,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-10-30",
         "verdict": "lead",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 12
+        "sources": 13
       }
     },
     {
@@ -24907,7 +24907,7 @@
       "images": 1,
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-10-30",
         "verdict": "lead",
         "confidence": 0.2,
         "couples": [],
@@ -24915,7 +24915,7 @@
           "https://zigbee.blakadder.com/Tuya_ZG-101ZL.html",
           "https://www.zigbee2mqtt.io/devices/ERS-10TZBVB-AA.html"
         ],
-        "sources": 32
+        "sources": 33
       }
     },
     {
@@ -24938,7 +24938,7 @@
       "images": 1,
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-10-30",
         "verdict": "lead",
         "confidence": 0.2,
         "couples": [],
@@ -24946,7 +24946,7 @@
           "https://zigbee.blakadder.com/Tuya_ZG-101ZL.html",
           "https://www.zigbee2mqtt.io/devices/ERS-10TZBVB-AA.html"
         ],
-        "sources": 33
+        "sources": 34
       }
     },
     {
@@ -24978,7 +24978,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-10-30",
         "verdict": "lead",
         "confidence": 0.2,
         "couples": [],
@@ -24987,7 +24987,7 @@
           "https://www.zigbee2mqtt.io/devices/ZG-102ZL.html",
           "https://www.zigbee2mqtt.io/devices/ZG-102ZA.html"
         ],
-        "sources": 32
+        "sources": 33
       }
     },
     {
@@ -25013,7 +25013,7 @@
       "images": 3,
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-10-30",
         "verdict": "lead",
         "confidence": 0.2,
         "couples": [],
@@ -25021,7 +25021,7 @@
           "https://zigbee.blakadder.com/Tuya_ZG-101ZL.html",
           "https://www.zigbee2mqtt.io/devices/ERS-10TZBVB-AA.html"
         ],
-        "sources": 34
+        "sources": 35
       }
     },
     {
@@ -25053,7 +25053,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-10-30",
         "verdict": "lead",
         "confidence": 0.2,
         "couples": [],
@@ -25062,7 +25062,7 @@
           "https://www.zigbee2mqtt.io/devices/ZG-102ZL.html",
           "https://www.zigbee2mqtt.io/devices/ZG-102ZA.html"
         ],
-        "sources": 31
+        "sources": 32
       }
     },
     {
@@ -25113,12 +25113,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-10-30",
         "verdict": "lead",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 31
+        "sources": 32
       }
     },
     {
@@ -27033,12 +27033,15 @@
       "images": 2,
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
-        "verdict": "no-action",
-        "confidence": 0,
+        "at": "2026-10-30",
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
-        "sources": 0
+        "candidates": [
+          "https://zigbee.blakadder.com/Tuya_ZG-101ZL.html",
+          "https://www.zigbee2mqtt.io/devices/ERS-10TZBVB-AA.html"
+        ],
+        "sources": 34
       }
     },
     {
