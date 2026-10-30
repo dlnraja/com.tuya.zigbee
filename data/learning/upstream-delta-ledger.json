@@ -161,6 +161,38 @@
    "ref": "15f2125a7e",
    "title": "Use matching Number/Sensor device classes in Tuya and Bosch quirks (#5584)",
    "url": "https://github.com/zigpy/zha-device-handlers/commit/15f2125a7ee957a8c8f3f4de3883fa5f46650d48"
+  },
+  {
+   "at": "2026-10-30T11:22:11.610Z",
+   "source": "johan-forks",
+   "kind": "fork-push",
+   "ref": "telenut/com.tuya.zigbee",
+   "title": "telenut/com.tuya.zigbee",
+   "url": "https://github.com/telenut/com.tuya.zigbee"
+  },
+  {
+   "at": "2026-10-30T11:22:11.610Z",
+   "source": "athom-clusters",
+   "kind": "release",
+   "ref": "v3.9.2",
+   "title": "v3.9.2",
+   "url": "https://github.com/athombv/node-zigbee-clusters/releases/tag/v3.9.2"
+  },
+  {
+   "at": "2026-10-30T11:22:11.610Z",
+   "source": "ha-core-rel",
+   "kind": "release",
+   "ref": "2026.11.0b1",
+   "title": "2026.11.0b1",
+   "url": "https://github.com/home-assistant/core/releases/tag/2026.11.0b1"
+  },
+  {
+   "at": "2026-10-30T11:22:11.610Z",
+   "source": "ha-core-rel",
+   "kind": "release",
+   "ref": "2026.11.0b0",
+   "title": "2026.11.0b0",
+   "url": "https://github.com/home-assistant/core/releases/tag/2026.11.0b0"
   }
  ]
 }

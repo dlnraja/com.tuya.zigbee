@@ -1,42 +1,19 @@
 {
-  "at": "2026-10-29T11:30:31.083Z",
+  "at": "2026-10-30T11:23:24.829Z",
   "checked": 51,
   "findings": [
     {
       "kind": "repeated-failure",
-      "sig": "ci-6e84c480a105",
-      "wf": ".github/workflows/node22-tests.yml",
-      "detail": "4 failures in 72 h: Node 22 runtime tests failed on master (test / Full suite on Node 22: code-or-test)"
+      "sig": "ci-28d56709ef60",
+      "wf": ".github/workflows/daily-digest.yml",
+      "detail": "3 failures in 72 h: 🤖 Daily Digest failed on master (🧭 Inspiration JohanBendz + own repo + git history (read-only) / 🧭 Inspiration scan: code-or-test)",
+      "issue": 583
     },
     {
       "kind": "repeated-failure",
-      "sig": "ci-5be26e541885",
-      "wf": ".github/workflows/node22-tests.yml",
-      "detail": "4 failures in 72 h: Node 22 runtime tests failed on master (strict / node:test strict (P3057-3): unknown)"
-    },
-    {
-      "kind": "repeated-failure",
-      "sig": "ci-4b363edeecc7",
-      "wf": ".github/workflows/node22-tests.yml",
-      "detail": "8 failures in 72 h: Node 22 runtime tests failed on bastien-home (test / node:test strict (P3057-3): no-log)"
-    },
-    {
-      "kind": "repeated-failure",
-      "sig": "ci-351d901e2c87",
-      "wf": ".github/workflows/node22-tests.yml",
-      "detail": "10 failures in 72 h: Node 22 runtime tests failed on master (test / Full suite on Node 22: no-log)"
-    },
-    {
-      "kind": "repeated-failure",
-      "sig": "ci-4343ee8f200b",
-      "wf": ".github/workflows/syntax-check.yml",
-      "detail": "4 failures in 72 h: 🔍 Syntax Check & SDK3 Validation failed on master (syntax-check / P2138 BSEED dimmer + Poll Control tests: no-log)"
-    },
-    {
-      "kind": "repeated-failure",
-      "sig": "ci-57f650364735",
-      "wf": ".github/workflows/node22-tests.yml",
-      "detail": "8 failures in 72 h: Node 22 runtime tests failed on master (strict / node:test strict (P3057-3): no-log)"
+      "sig": "ci-88dfdae1295f",
+      "wf": ".github/workflows/daily-digest.yml",
+      "detail": "3 failures in 72 h: 🤖 Daily Digest failed on master (🏠 Homey digest / 🏠 Homey digest: code-or-test)"
     }
   ]
 }
