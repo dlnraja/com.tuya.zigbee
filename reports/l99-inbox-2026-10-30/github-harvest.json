@@ -1,5 +1,5 @@
 {
-  "harvestedAt": "2026-10-30T17:17:16.315Z",
+  "harvestedAt": "2026-10-30T23:19:10.336Z",
   "repo": "dlnraja/com.tuya.zigbee",
   "auth": "token",
   "error": null,
@@ -10,9 +10,19 @@
       "labels": [
         "bot-digest"
       ],
-      "updatedAt": "2026-10-30T16:59:22Z",
+      "updatedAt": "2026-10-30T22:15:43Z",
       "user": "dlnraja",
       "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/557"
+    },
+    {
+      "number": 584,
+      "title": "Bug report - [Short description_TZE284_awepdiwi / TS0601 soil sensor still \"Unknown Zigbee Device\" on v9.0.1599 + app shows no drivers]",
+      "labels": [
+        "bug"
+      ],
+      "updatedAt": "2026-10-30T20:03:10Z",
+      "user": "stephanmaastricht",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/584"
     },
     {
       "number": 559,
@@ -66,6 +76,6 @@
       "draft": false
     }
   ],
-  "openIssueCount": 4,
+  "openIssueCount": 5,
   "openPrCount": 2
 }
