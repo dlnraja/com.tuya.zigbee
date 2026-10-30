@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-30T14:40:46.820Z",
+ "updated": "2026-10-30T22:05:55.471Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -6701,6 +6701,15 @@
    "kind": "general",
    "mailDate": "2026-10-21T13:20:02.000Z"
   },
+  "diag:196777fe61be7065": {
+   "status": "done",
+   "date": "2026-10-30",
+   "hash": "1b25d796fbd21321",
+   "note": "github mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "github",
+   "mailDate": "2026-10-30T16:02:49.000Z"
+  },
   "diag:1967df8462d550a2": {
    "status": "done",
    "date": "2026-10-20",
@@ -8369,6 +8378,26 @@
    "kind": "general",
    "mailDate": "2026-10-18T22:44:27.000Z"
   },
+  "diag:602a75c3f6c89b5b": {
+   "status": "done",
+   "date": "2026-10-30",
+   "hash": "51f9fd5ea39c6004",
+   "note": "diagnostic mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "diagnostic",
+   "mailDate": "2026-10-30T19:55:27.000Z",
+   "appVersion": "9.0.1599",
+   "drivers": [
+    "wifi_sonoff_tx_3ch",
+    "wifi_switch",
+    "wifi_switch_2gang",
+    "wifi_switch_3gang",
+    "wifi_switch_4gang",
+    "wifi_thermostat",
+    "wifi_water_tank_monitor",
+    "wifi_water_valve"
+   ]
+  },
   "diag:608fb7ba3dc877b0": {
    "status": "done",
    "date": "2026-10-25",
@@ -8561,6 +8590,16 @@
    "by": "tuya-deep-diag",
    "kind": "general",
    "mailDate": "2026-10-19T05:48:28.000Z"
+  },
+  "diag:6ac4d38f7e5a5c94": {
+   "status": "pending",
+   "date": "2026-10-30",
+   "hash": "f9c2b1938d68d09e",
+   "note": "diagnostic mail; 2 error line(s)",
+   "by": "gmail-diagnostics",
+   "kind": "diagnostic",
+   "mailDate": "2026-10-30T18:04:21.000Z",
+   "errors": 2
   },
   "diag:6b2ae4073f6fb792": {
    "status": "done",
@@ -9141,6 +9180,15 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-10-20T08:06:48.000Z"
+  },
+  "diag:8a91e8c75b856e35": {
+   "status": "done",
+   "date": "2026-10-30",
+   "hash": "c42269acc88295c5",
+   "note": "github mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "github",
+   "mailDate": "2026-10-30T19:57:07.000Z"
   },
   "diag:8a98682bbc8f4aa3": {
    "status": "done",
