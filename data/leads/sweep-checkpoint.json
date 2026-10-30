@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-30T12:30:27.977Z",
+  "updated": "2026-10-30T18:56:18.365Z",
   "threads": {
     "21313": {
       "lastPost": 2819,
@@ -3999,7 +3999,7 @@
     },
     {
       "id": "johan-issue:242",
-      "status": "needs-info",
+      "status": "already-fixed",
       "note": "Re-read 2026-10-21: double curtain module, product photo only, no identity.",
       "sources": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/242"
@@ -4009,11 +4009,18 @@
       "triagedVia": "resume-sweep-2026-10-21",
       "crossResearch": {
         "at": "2026-10-30",
-        "verdict": "no-action",
-        "confidence": 0,
-        "couples": [],
+        "verdict": "covered",
+        "confidence": 1,
+        "couples": [
+          "_TZ3000_uwkja6z1|TS011F→button_wireless_plug",
+          "_TZ3000_uwkja6z1|TS0201→button_wireless_plug",
+          "_TZ3000_uwkja6z1|TS0121→button_wireless_plug",
+          "_TZ3000_uwkja6z1|TS0003→button_wireless_plug",
+          "_TZ3000_uwkja6z1|TS0225→button_wireless_plug",
+          "_TZ3000_uwkja6z1|TS0601→button_wireless_plug"
+        ],
         "candidates": [],
-        "sources": 2
+        "sources": 8
       }
     },
     {
