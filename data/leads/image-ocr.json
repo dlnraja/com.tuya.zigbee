@@ -45379,6 +45379,1829 @@
     "alarm_contact",
     "measure_luminance"
    ]
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 1546,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1546",
+   "user": "yann86230",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_nrfkrgf4"
+   ],
+   "pids": [
+    "TS0046"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 1545,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1545",
+   "user": "MikroWroc",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE200_locansqn"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 1438,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1438#issuecomment-6445105692",
+   "user": "KillaThrill",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3210_j4pdtz9v"
+   ],
+   "pids": [
+    "TS0001"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 1544,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1544",
+   "user": "STD078",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE200_seq9cm6u"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "JohanBendz/com.tuya.zigbee",
+   "issue": 1543,
+   "post": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1543",
+   "user": "STD078",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE200_seq9cm6u"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 323,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/323",
+   "user": "macmonty",
+   "source": "text",
+   "images": 3,
+   "mfrs": [
+    "_TZE204_81yrt3lo"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 322,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/322",
+   "user": "macmonty",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_famkxci2"
+   ],
+   "pids": [
+    "TS0043",
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 322,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/322#issuecomment-4478335028",
+   "user": "dlnraja",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_famkxci2"
+   ],
+   "pids": [
+    "TS0043",
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 322,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/322#issuecomment-4527776372",
+   "user": "github-actions[bot]",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_famkxci2"
+   ],
+   "pids": [
+    "TS0043",
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 319,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/319",
+   "user": "macmonty",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_402vrq2i"
+   ],
+   "pids": [
+    "TS004F",
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 319,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/319#issuecomment-4429549399",
+   "user": "dlnraja",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_402vrq2i"
+   ],
+   "pids": [
+    "TS004F"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 319,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/319#issuecomment-4442873403",
+   "user": "dlnraja",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_402vrq2i"
+   ],
+   "pids": [
+    "TS004F"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 318,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/318",
+   "user": "macmonty",
+   "source": "text",
+   "images": 2,
+   "mfrs": [
+    "_TZE204_81yrt3lo"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 316,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/316",
+   "user": "Lalla80111",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_fllyghyj"
+   ],
+   "pids": [
+    "TS0201"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 316,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/316#issuecomment-4412097888",
+   "user": "github-actions[bot]",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_fllyghyj"
+   ],
+   "pids": [
+    "TS0201"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 314,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/314",
+   "user": "Lalla80111",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_b4awzgct"
+   ],
+   "pids": [
+    "TS0041"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 314,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/314#issuecomment-4411948001",
+   "user": "github-actions[bot]",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_b4awzgct"
+   ],
+   "pids": [
+    "TS0041"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 314,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/314#issuecomment-4442924944",
+   "user": "dlnraja",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_b4awzgct"
+   ],
+   "pids": [
+    "TS0041"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 312,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/312",
+   "user": "tjoepatjoep",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE284_fhvpaltk"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 312,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/312#issuecomment-4411949602",
+   "user": "github-actions[bot]",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE284_fhvpaltk"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 309,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/309",
+   "user": "macmonty",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE204_81yrt3lo",
+    "_TZE284_81yrt3lo"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": [
+    "measure_power",
+    "measure_current",
+    "measure_voltage",
+    "meter_power"
+   ]
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 305,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/305",
+   "user": "PDominikPL",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE608_c75zqghm"
+   ],
+   "pids": [
+    "TS0603",
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 305,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/305#issuecomment-4380814707",
+   "user": "dlnraja",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE608_c75zqghm"
+   ],
+   "pids": [
+    "TS0603"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 305,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/305#issuecomment-4382036407",
+   "user": "dlnraja",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE608_c75zqghm"
+   ],
+   "pids": [
+    "TS0603"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 305,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/305#issuecomment-4386286422",
+   "user": "dlnraja",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE608_c75zqghm"
+   ],
+   "pids": [
+    "TS0603"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 305,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/305#issuecomment-4386912213",
+   "user": "dlnraja",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE608_c75zqghm"
+   ],
+   "pids": [
+    "TS0603"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 296,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/296",
+   "user": "github-actions[bot]",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE200_s8gkrkxk",
+    "_TZ3000_vd43bbfq",
+    "_TZ3000_1dd0d5yi",
+    "_TZ3000_ke7pzj5d",
+    "_TZ3000_fccpjz5z",
+    "_TZ3000_4uuaja4a",
+    "_TZ3000_zirycpws",
+    "_TZ3000_femsaaua",
+    "_TZ3000_e3vhyirx",
+    "_TZ3000_jwv3cwak",
+    "_TZ3210_dwytrmda",
+    "_TZ3210_ol1uhvza",
+    "_TZ3000_eg7awg6a",
+    "_TZ3000_eafaa66e",
+    "_TZ3000_j1xl73iw",
+    "_TZ3000_l6iqph4f",
+    "_TZE200_5zbp6j0u",
+    "_TZE200_bjzrowv2",
+    "_TZE200_nkoabg8w",
+    "_TZE200_xuzcvlku"
+   ],
+   "pids": [
+    "TS0601",
+    "TS130F",
+    "TS0502B",
+    "TS110F",
+    "TS110E",
+    "TS0052",
+    "TS1101",
+    "TS0203"
+   ],
+   "dps": [],
+   "caps": [
+    "light_hue",
+    "windowcoverings_set",
+    "windowcoverings_state",
+    "alarm_contact",
+    "alarm_battery"
+   ]
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 296,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/296#issuecomment-4334321831",
+   "user": "dlnraja",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE200_s8gkrkxk",
+    "_TZE200_5zbp6j0u",
+    "_TZE200_bjzrowv2",
+    "_TZ3000_j1xl73iw",
+    "_TZ3000_l6iqph4f"
+   ],
+   "pids": [
+    "TS130F"
+   ],
+   "dps": [],
+   "caps": [
+    "windowcoverings_set",
+    "windowcoverings_state",
+    "light_hue"
+   ]
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 288,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/288",
+   "user": "github-actions[bot]",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE200_s8gkrkxk",
+    "_TZ3000_vd43bbfq",
+    "_TZ3000_1dd0d5yi",
+    "_TZ3000_ke7pzj5d",
+    "_TZ3000_fccpjz5z",
+    "_TZ3000_4uuaja4a",
+    "_TZ3000_zirycpws",
+    "_TZ3000_femsaaua",
+    "_TZ3000_e3vhyirx",
+    "_TZ3000_jwv3cwak",
+    "_TZ3210_dwytrmda",
+    "_TZ3210_ol1uhvza",
+    "_TZ3000_eg7awg6a",
+    "_TZ3000_eafaa66e",
+    "_TZ3000_j1xl73iw",
+    "_TZ3000_l6iqph4f",
+    "_TZE200_5zbp6j0u",
+    "_TZE200_bjzrowv2",
+    "_TZE200_nkoabg8w",
+    "_TZE200_xuzcvlku"
+   ],
+   "pids": [
+    "TS0601",
+    "TS130F",
+    "TS0502B",
+    "TS110F",
+    "TS110E",
+    "TS0052",
+    "TS1101",
+    "TS0203"
+   ],
+   "dps": [],
+   "caps": [
+    "light_hue",
+    "windowcoverings_set",
+    "windowcoverings_state",
+    "alarm_contact",
+    "alarm_battery"
+   ]
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 285,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/285",
+   "user": "github-actions[bot]",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_vd43bbfq",
+    "_TZ3000_ke7pzj5d",
+    "_TZ3000_fccpjz5z",
+    "_TZ3000_4uuaja4a",
+    "_TZ3000_zirycpws",
+    "_TZ3210_ol1uhvza",
+    "_TZ3000_eg7awg6a",
+    "_TZ3000_eafaa66e",
+    "_TZ3000_j1xl73iw",
+    "_TZ3000_l6iqph4f",
+    "_TZ3000_ebar6ljy",
+    "_TZ3000_2mbfxlzr",
+    "_TZ3000_402jjyro",
+    "_TZ3000_6jeesvrt",
+    "_TZ3000_26fmupbb",
+    "_TZ3000_bmg14ax2",
+    "_TZ3000_oxslv1c9",
+    "_TZ3000_bzxlofth",
+    "_TZ3000_n2egfsli",
+    "_TZ3000_7d8yme6f"
+   ],
+   "pids": [
+    "TS130F",
+    "TS0203",
+    "TS011F",
+    "TS0207",
+    "TS0044",
+    "TS0201",
+    "TS0222",
+    "TS0601",
+    "TS0101",
+    "TS0202"
+   ],
+   "dps": [],
+   "caps": [
+    "windowcoverings_set",
+    "windowcoverings_state",
+    "alarm_contact",
+    "alarm_battery",
+    "alarm_tamper",
+    "measure_battery",
+    "measure_power",
+    "meter_power",
+    "alarm_water",
+    "measure_luminance",
+    "measure_temperature",
+    "measure_humidity",
+    "alarm_motion"
+   ]
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 282,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/282",
+   "user": "github-actions[bot]",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_vd43bbfq",
+    "_TZ3000_ke7pzj5d",
+    "_TZ3000_fccpjz5z",
+    "_TZ3000_4uuaja4a",
+    "_TZ3000_zirycpws",
+    "_TZ3210_ol1uhvza",
+    "_TZ3000_eg7awg6a",
+    "_TZ3000_eafaa66e",
+    "_TZ3000_j1xl73iw",
+    "_TZ3000_l6iqph4f",
+    "_TZ3000_ebar6ljy",
+    "_TZ3000_2mbfxlzr",
+    "_TZ3000_402jjyro",
+    "_TZ3000_6jeesvrt",
+    "_TZ3000_26fmupbb",
+    "_TZ3000_bmg14ax2",
+    "_TZ3000_oxslv1c9",
+    "_TZ3000_bzxlofth",
+    "_TZ3000_n2egfsli",
+    "_TZ3000_7d8yme6f"
+   ],
+   "pids": [
+    "TS130F",
+    "TS0203",
+    "TS011F",
+    "TS0207",
+    "TS0044",
+    "TS0201",
+    "TS0222",
+    "TS0601",
+    "TS0101",
+    "TS0202"
+   ],
+   "dps": [],
+   "caps": [
+    "windowcoverings_set",
+    "windowcoverings_state",
+    "alarm_contact",
+    "alarm_battery",
+    "alarm_tamper",
+    "measure_battery",
+    "measure_power",
+    "meter_power",
+    "alarm_water",
+    "measure_luminance",
+    "measure_temperature",
+    "measure_humidity",
+    "alarm_motion"
+   ]
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 281,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/281",
+   "user": "github-actions[bot]",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_vd43bbfq",
+    "_TZ3000_ke7pzj5d",
+    "_TZ3000_fccpjz5z",
+    "_TZ3000_4uuaja4a",
+    "_TZ3000_zirycpws",
+    "_TZ3210_ol1uhvza",
+    "_TZ3000_eg7awg6a",
+    "_TZ3000_eafaa66e",
+    "_TZ3000_j1xl73iw",
+    "_TZ3000_l6iqph4f",
+    "_TZ3000_ebar6ljy",
+    "_TZ3000_2mbfxlzr",
+    "_TZ3000_402jjyro",
+    "_TZ3000_6jeesvrt",
+    "_TZ3000_26fmupbb",
+    "_TZ3000_bmg14ax2",
+    "_TZ3000_oxslv1c9",
+    "_TZ3000_bzxlofth",
+    "_TZ3000_n2egfsli",
+    "_TZ3000_7d8yme6f"
+   ],
+   "pids": [
+    "TS130F",
+    "TS0203",
+    "TS011F",
+    "TS0207",
+    "TS0044",
+    "TS0201",
+    "TS0222",
+    "TS0601",
+    "TS0101",
+    "TS0202"
+   ],
+   "dps": [],
+   "caps": [
+    "windowcoverings_set",
+    "windowcoverings_state",
+    "alarm_contact",
+    "alarm_battery",
+    "alarm_tamper",
+    "measure_battery",
+    "measure_power",
+    "meter_power",
+    "alarm_water",
+    "measure_luminance",
+    "measure_temperature",
+    "measure_humidity",
+    "alarm_motion"
+   ]
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 280,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/280",
+   "user": "github-actions[bot]",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_vd43bbfq",
+    "_TZ3000_ke7pzj5d",
+    "_TZ3000_fccpjz5z",
+    "_TZ3000_4uuaja4a",
+    "_TZ3000_zirycpws",
+    "_TZ3210_ol1uhvza",
+    "_TZ3000_eg7awg6a",
+    "_TZ3000_eafaa66e",
+    "_TZ3000_j1xl73iw",
+    "_TZ3000_l6iqph4f",
+    "_TZ3000_ebar6ljy",
+    "_TZ3000_2mbfxlzr",
+    "_TZ3000_402jjyro",
+    "_TZ3000_6jeesvrt",
+    "_TZ3000_26fmupbb",
+    "_TZ3000_bmg14ax2",
+    "_TZ3000_oxslv1c9",
+    "_TZ3000_bzxlofth",
+    "_TZ3000_n2egfsli",
+    "_TZ3000_7d8yme6f"
+   ],
+   "pids": [
+    "TS130F",
+    "TS0203",
+    "TS011F",
+    "TS0207",
+    "TS0044",
+    "TS0201",
+    "TS0222",
+    "TS0601",
+    "TS0101",
+    "TS0202"
+   ],
+   "dps": [],
+   "caps": [
+    "windowcoverings_set",
+    "windowcoverings_state",
+    "alarm_contact",
+    "alarm_battery",
+    "alarm_tamper",
+    "measure_battery",
+    "measure_power",
+    "meter_power",
+    "alarm_water",
+    "measure_luminance",
+    "measure_temperature",
+    "measure_humidity",
+    "alarm_motion"
+   ]
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 279,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/279",
+   "user": "github-actions[bot]",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE284_6ocnqlhn",
+    "_TZE200_lvkk0hdg",
+    "_TZE200_khah2lkr",
+    "_TZE284_0ints6wl",
+    "_TZE284_yzr43ayq",
+    "_TZ3000_wol32olt",
+    "_TZE284_zpvusbtv",
+    "_TZE204_rkbxtclc",
+    "_TZE204_7ytnacie",
+    "_TZ3210_3ulg9kpo",
+    "_TZE200_dhke3p9w",
+    "_TZE284_dhke3p9w",
+    "_TZE200_dwcarsat",
+    "_TZE204_dwcarsat",
+    "_TZE200_blfcpsxz",
+    "_TZE200_ogkdpgy2",
+    "_TZE200_3ejwxpmu",
+    "_TZE204_3ejwxpmu",
+    "_TZE200_ggev5fsl",
+    "_TZE200_u319yc66"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 276,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/276",
+   "user": "vikinos",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE284_rqcuwlsa"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 276,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/276#issuecomment-4343317987",
+   "user": "dlnraja",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE284_rqcuwlsa"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 276,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/276#issuecomment-4364956195",
+   "user": "dlnraja",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE284_rqcuwlsa"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 276,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/276#issuecomment-4380814919",
+   "user": "dlnraja",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE608_c75zqghm"
+   ],
+   "pids": [
+    "TS0603"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 276,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/276#issuecomment-4382081187",
+   "user": "dlnraja",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE284_rqcuwlsa"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 276,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/276#issuecomment-4386916426",
+   "user": "dlnraja",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE284_rqcuwlsa"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 276,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/276#issuecomment-4417714478",
+   "user": "vikinos",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE284_rqcuwlsa"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": [
+    "alarm_temp_max",
+    "alarm_temp_min",
+    "alarm_humidity_max",
+    "alarm_humidity_min",
+    "light_on_luminance_prefer",
+    "light_off_luminance_prefer",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery",
+    "measure_luminance",
+    "alarm_battery"
+   ]
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 275,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/275",
+   "user": "Domingoso",
+   "source": "text",
+   "images": 1,
+   "mfrs": [
+    "_TZE200_xlppj4f5"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 273,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/273",
+   "user": "github-actions[bot]",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE200_s8gkrkxk",
+    "_TZ3000_vd43bbfq",
+    "_TZ3000_1dd0d5yi",
+    "_TZ3000_ke7pzj5d",
+    "_TZ3000_fccpjz5z",
+    "_TZ3000_4uuaja4a",
+    "_TZ3000_zirycpws",
+    "_TZ3000_femsaaua",
+    "_TZ3000_e3vhyirx",
+    "_TZ3000_jwv3cwak",
+    "_TZ3210_dwytrmda",
+    "_TZ3210_ol1uhvza",
+    "_TZ3000_eg7awg6a",
+    "_TZ3000_eafaa66e",
+    "_TZ3000_j1xl73iw",
+    "_TZ3000_l6iqph4f",
+    "_TZE200_5zbp6j0u",
+    "_TZE200_bjzrowv2",
+    "_TZE200_nkoabg8w",
+    "_TZE200_xuzcvlku"
+   ],
+   "pids": [
+    "TS0601",
+    "TS130F",
+    "TS0502B",
+    "TS110F",
+    "TS110E",
+    "TS0052",
+    "TS1101",
+    "TS0203"
+   ],
+   "dps": [],
+   "caps": [
+    "light_hue",
+    "windowcoverings_set",
+    "windowcoverings_state",
+    "alarm_contact",
+    "alarm_battery"
+   ]
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 273,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/273#issuecomment-4265947261",
+   "user": "dlnraja",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE200_s8gkrkxk"
+   ],
+   "pids": [
+    "TS130F",
+    "TS0601",
+    "TS110E",
+    "TS110F",
+    "TS0052",
+    "TS0203"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 272,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/272",
+   "user": "github-actions[bot]",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE200_s8gkrkxk",
+    "_TZ3000_vd43bbfq",
+    "_TZ3000_1dd0d5yi",
+    "_TZ3000_ke7pzj5d",
+    "_TZ3000_fccpjz5z",
+    "_TZ3000_4uuaja4a",
+    "_TZ3000_zirycpws",
+    "_TZ3000_femsaaua",
+    "_TZ3000_e3vhyirx",
+    "_TZ3000_jwv3cwak",
+    "_TZ3210_dwytrmda",
+    "_TZ3210_ol1uhvza",
+    "_TZ3000_eg7awg6a",
+    "_TZ3000_eafaa66e",
+    "_TZ3000_j1xl73iw",
+    "_TZ3000_l6iqph4f",
+    "_TZ3210_invesber",
+    "_TZ3210_zdrhqmo0",
+    "_TZ3210_ngqk6jia",
+    "_TZ3000_ktuoyvt5"
+   ],
+   "pids": [
+    "TS0601",
+    "TS130F",
+    "TS0502B",
+    "TS110F",
+    "TS110E",
+    "TS0052",
+    "TS1101",
+    "TS0203",
+    "TS011F",
+    "TS0201"
+   ],
+   "dps": [],
+   "caps": [
+    "light_hue",
+    "windowcoverings_set",
+    "windowcoverings_state",
+    "alarm_contact",
+    "alarm_tamper",
+    "alarm_battery",
+    "measure_power",
+    "meter_power",
+    "measure_luminance",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery",
+    "alarm_motion"
+   ]
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 272,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/272#issuecomment-4262635238",
+   "user": "github-actions[bot]",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_vd43bbfq",
+    "_TZ3000_ke7pzj5d",
+    "_TZ3000_fccpjz5z",
+    "_TZ3000_4uuaja4a",
+    "_TZ3000_zirycpws",
+    "_TZ3210_ol1uhvza",
+    "_TZ3000_eg7awg6a",
+    "_TZ3000_eafaa66e",
+    "_TZ3000_j1xl73iw",
+    "_TZ3000_l6iqph4f",
+    "_TZ3210_invesber",
+    "_TZ3210_zdrhqmo0",
+    "_TZ3210_zxbtub8r",
+    "_TZE200_ip2akl4w",
+    "_TZE200_1agwnems",
+    "_TZE200_579lguh2",
+    "_TZE200_vucankjx",
+    "_TZE204_n9ctkb6j",
+    "_TZE204_9qhuzgo0",
+    "_TZ3000_zgrffiwg"
+   ],
+   "pids": [
+    "TS0601",
+    "TS011F"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 272,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/272#issuecomment-4265949344",
+   "user": "dlnraja",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_vd43bbfq",
+    "_TZ3000_1dd0d5yi",
+    "_TZ3000_ke7pzj5d",
+    "_TZE200_la2c2uo9",
+    "_TZE204_hlx9tnzb",
+    "_TZE200_ip2akl4w",
+    "_TZ3000_zgrffiwg",
+    "_TZ3000_bpkijo14",
+    "_TZ3000_uvti8nkd",
+    "_TZ3000_mmtwjmaq",
+    "_TZ3000_kmh5qpmb"
+   ],
+   "pids": [
+    "TS130F",
+    "TS0601",
+    "TS0203",
+    "TS0202"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 260,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/260",
+   "user": "tjoepatjoep",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE284_fhvpaltk"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 260,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/260#issuecomment-4244493041",
+   "user": "dlnraja",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE284_fhvpaltk"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 259,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/259",
+   "user": "github-actions[bot]",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE200_s8gkrkxk",
+    "_TZ3000_vd43bbfq",
+    "_TZ3000_1dd0d5yi",
+    "_TZ3000_ke7pzj5d",
+    "_TZ3000_fccpjz5z",
+    "_TZ3000_4uuaja4a",
+    "_TZ3000_zirycpws",
+    "_TZ3000_femsaaua",
+    "_TZ3000_e3vhyirx",
+    "_TZ3000_jwv3cwak",
+    "_TZ3210_dwytrmda",
+    "_TZ3210_ol1uhvza",
+    "_TZ3000_eg7awg6a",
+    "_TZ3000_eafaa66e",
+    "_TZ3000_j1xl73iw",
+    "_TZ3000_l6iqph4f",
+    "_TZE200_5zbp6j0u",
+    "_TZE200_bjzrowv2",
+    "_TZE200_nkoabg8w",
+    "_TZE200_xuzcvlku"
+   ],
+   "pids": [
+    "TS0601",
+    "TS130F",
+    "TS0502B",
+    "TS110F",
+    "TS110E",
+    "TS0052",
+    "TS1101",
+    "TS0203"
+   ],
+   "dps": [],
+   "caps": [
+    "light_hue",
+    "windowcoverings_set",
+    "windowcoverings_state",
+    "alarm_contact",
+    "alarm_battery"
+   ]
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 258,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/258",
+   "user": "github-actions[bot]",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE200_s8gkrkxk",
+    "_TZ3000_vd43bbfq",
+    "_TZ3000_1dd0d5yi",
+    "_TZ3000_ke7pzj5d",
+    "_TZ3000_fccpjz5z",
+    "_TZ3000_4uuaja4a",
+    "_TZ3000_zirycpws",
+    "_TZ3000_femsaaua",
+    "_TZ3000_e3vhyirx",
+    "_TZ3000_jwv3cwak",
+    "_TZ3210_dwytrmda",
+    "_TZ3210_ol1uhvza",
+    "_TZ3000_eg7awg6a",
+    "_TZ3000_eafaa66e",
+    "_TZ3000_j1xl73iw",
+    "_TZ3000_l6iqph4f",
+    "_TZE200_5zbp6j0u",
+    "_TZE200_bjzrowv2",
+    "_TZE200_nkoabg8w",
+    "_TZE200_xuzcvlku"
+   ],
+   "pids": [
+    "TS0601",
+    "TS130F",
+    "TS0502B",
+    "TS110F",
+    "TS110E",
+    "TS0052",
+    "TS1101",
+    "TS0203"
+   ],
+   "dps": [],
+   "caps": [
+    "light_hue",
+    "windowcoverings_set",
+    "windowcoverings_state",
+    "alarm_contact",
+    "alarm_battery"
+   ]
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 258,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/258#issuecomment-4241893948",
+   "user": "github-actions[bot]",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_vd43bbfq",
+    "_TZ3000_1dd0d5yi",
+    "_TZ3000_ke7pzj5d",
+    "_TZ3000_fccpjz5z",
+    "_TZ3000_4uuaja4a",
+    "_TZ3000_zirycpws",
+    "_TZ3000_femsaaua",
+    "_TZ3000_e3vhyirx",
+    "_TZ3000_jwv3cwak",
+    "_TZ3210_dwytrmda",
+    "_TZ3210_ol1uhvza",
+    "_TZ3000_eg7awg6a",
+    "_TZ3000_eafaa66e",
+    "_TZ3000_j1xl73iw",
+    "_TZ3000_l6iqph4f",
+    "_TZE200_bjzrowv2",
+    "_TZE200_68nvbio9",
+    "_TZE200_cf1sl3tj",
+    "_TZE204_xu4a5rhj",
+    "_TZ3210_invesber"
+   ],
+   "pids": [
+    "TS0601",
+    "TS0052",
+    "TS0502B"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 252,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/252",
+   "user": "github-actions[bot]",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZE200_s8gkrkxk",
+    "_TZ3000_vd43bbfq",
+    "_TZ3000_1dd0d5yi",
+    "_TZ3000_ke7pzj5d",
+    "_TZ3000_fccpjz5z",
+    "_TZ3000_4uuaja4a",
+    "_TZ3000_zirycpws",
+    "_TZ3000_femsaaua",
+    "_TZ3000_e3vhyirx",
+    "_TZ3000_jwv3cwak",
+    "_TZ3210_dwytrmda",
+    "_TZ3210_ol1uhvza",
+    "_TZ3000_eg7awg6a",
+    "_TZ3000_eafaa66e",
+    "_TZ3000_j1xl73iw",
+    "_TZ3000_l6iqph4f",
+    "_TZE200_5zbp6j0u",
+    "_TZE200_bjzrowv2",
+    "_TZE200_nkoabg8w",
+    "_TZE200_xuzcvlku"
+   ],
+   "pids": [
+    "TS0601",
+    "TS130F",
+    "TS0502B",
+    "TS110F",
+    "TS110E",
+    "TS0052",
+    "TS1101",
+    "TS0203"
+   ],
+   "dps": [],
+   "caps": [
+    "light_hue",
+    "windowcoverings_set",
+    "windowcoverings_state",
+    "alarm_contact",
+    "alarm_battery"
+   ]
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 250,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/250",
+   "user": "github-actions[bot]",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_uwkja6z1",
+    "_TZ3000_ew31dmgx",
+    "_TZ3000_wamqdr3f",
+    "_TZ3000_mw1pqqqt",
+    "_TZ3000_2uollq9d",
+    "_TZE200_hl0ss9oa",
+    "_TZE200_y4mdop0b",
+    "_TZE284_6ocnqlhn",
+    "_TZE200_lvkk0hdg",
+    "_TZ3210_emqmwtym",
+    "_TZE200_khah2lkr",
+    "_TZE284_0ints6wl",
+    "_TZE284_yzr43ayq",
+    "_TZE200_cq8lu23i",
+    "_TZE200_4pm4pekt",
+    "_TZE204_81yrt3lo",
+    "_TZ3000_lqmvrwa2",
+    "_TZ3000_isw9u95y",
+    "_TZ3000_yupc0pb7",
+    "_TZ3000_wol32olt"
+   ],
+   "pids": [
+    "TS011F",
+    "TS0201",
+    "TS0121",
+    "TS0003",
+    "TS0225",
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": [
+    "measure_power",
+    "meter_power",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery"
+   ]
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 250,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/250#issuecomment-4234320467",
+   "user": "dlnraja",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_uwkja6z1",
+    "_TZ3000_ew31dmgx",
+    "_TZ3000_wamqdr3f"
+   ],
+   "pids": [
+    "TS011F",
+    "TS0201"
+   ],
+   "dps": [],
+   "caps": [
+    "measure_power",
+    "meter_power",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery"
+   ]
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 250,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/250#issuecomment-4234517906",
+   "user": "github-actions[bot]",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_uwkja6z1",
+    "_TZ3000_ew31dmgx",
+    "_TZ3000_wamqdr3f",
+    "_TZ3000_mw1pqqqt",
+    "_TZ3000_2uollq9d",
+    "_TZE200_hl0ss9oa",
+    "_TZE200_y4mdop0b",
+    "_TZE284_6ocnqlhn",
+    "_TZE200_lvkk0hdg",
+    "_TZ3210_emqmwtym",
+    "_TZE200_khah2lkr",
+    "_TZE284_0ints6wl",
+    "_TZE284_yzr43ayq",
+    "_TZE200_cq8lu23i",
+    "_TZE200_4pm4pekt",
+    "_TZE204_81yrt3lo",
+    "_TZ3000_lqmvrwa2",
+    "_TZ3000_isw9u95y",
+    "_TZ3000_yupc0pb7",
+    "_TZ3000_996rpfy6"
+   ],
+   "pids": [
+    "TS0121",
+    "TS0601",
+    "TS0003",
+    "TS0225",
+    "TS0201"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 249,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/249",
+   "user": "github-actions[bot]",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_uwkja6z1",
+    "_TZ3000_ew31dmgx",
+    "_TZ3000_wamqdr3f",
+    "_TZ3000_mw1pqqqt",
+    "_TZ3000_2uollq9d",
+    "_TZE200_hl0ss9oa",
+    "_TZE200_y4mdop0b",
+    "_TZE284_6ocnqlhn",
+    "_TZE200_lvkk0hdg",
+    "_TZ3210_emqmwtym",
+    "_TZE200_khah2lkr",
+    "_TZE284_0ints6wl",
+    "_TZE284_yzr43ayq",
+    "_TZE200_cq8lu23i",
+    "_TZE200_4pm4pekt",
+    "_TZE204_81yrt3lo",
+    "_TZ3000_lqmvrwa2",
+    "_TZ3000_isw9u95y",
+    "_TZ3000_yupc0pb7",
+    "_TZ3000_wol32olt"
+   ],
+   "pids": [
+    "TS011F",
+    "TS0201",
+    "TS0121",
+    "TS0003",
+    "TS0225",
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": [
+    "measure_power",
+    "meter_power",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery"
+   ]
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 246,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/246",
+   "user": "github-actions[bot]",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_uwkja6z1",
+    "_TZ3000_ew31dmgx",
+    "_TZ3000_wamqdr3f",
+    "_TZ3000_mw1pqqqt",
+    "_TZ3000_2uollq9d",
+    "_TZE200_hl0ss9oa",
+    "_TZE200_y4mdop0b",
+    "_TZE284_6ocnqlhn",
+    "_TZE200_lvkk0hdg",
+    "_TZ3210_emqmwtym",
+    "_TZE200_khah2lkr",
+    "_TZE284_0ints6wl",
+    "_TZE284_yzr43ayq",
+    "_TZE200_cq8lu23i",
+    "_TZE200_4pm4pekt",
+    "_TZE284_8se38w3c",
+    "_TZE204_81yrt3lo",
+    "_TZ3000_lqmvrwa2",
+    "_TZ3000_isw9u95y",
+    "_TZ3000_yupc0pb7"
+   ],
+   "pids": [
+    "TS011F",
+    "TS0201",
+    "TS0121",
+    "TS0003",
+    "TS0225",
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": [
+    "measure_power",
+    "meter_power",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery"
+   ]
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 245,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/245",
+   "user": "github-actions[bot]",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_uwkja6z1",
+    "_TZ3000_ew31dmgx",
+    "_TZ3000_wamqdr3f",
+    "_TZ3000_mw1pqqqt",
+    "_TZ3000_2uollq9d",
+    "_TZE200_hl0ss9oa",
+    "_TZE200_y4mdop0b",
+    "_TZE284_6ocnqlhn",
+    "_TZE200_lvkk0hdg",
+    "_TZ3210_emqmwtym",
+    "_TZE200_khah2lkr",
+    "_TZE284_0ints6wl",
+    "_TZE284_yzr43ayq",
+    "_TZE200_cq8lu23i",
+    "_TZE200_4pm4pekt",
+    "_TZE284_8se38w3c",
+    "_TZE204_81yrt3lo",
+    "_TZ3000_lqmvrwa2",
+    "_TZ3000_isw9u95y",
+    "_TZ3000_yupc0pb7"
+   ],
+   "pids": [
+    "TS011F",
+    "TS0201",
+    "TS0121",
+    "TS0003",
+    "TS0225",
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": [
+    "measure_power",
+    "meter_power",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery"
+   ]
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 243,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/243",
+   "user": "github-actions[bot]",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_uwkja6z1",
+    "_TZ3000_ew31dmgx",
+    "_TZ3000_wamqdr3f",
+    "_TZ3000_mw1pqqqt",
+    "_TZ3000_2uollq9d",
+    "_TZE200_hl0ss9oa",
+    "_TZE200_y4mdop0b",
+    "_TZE284_6ocnqlhn",
+    "_TZE200_lvkk0hdg",
+    "_TZ3210_emqmwtym",
+    "_TZE200_khah2lkr",
+    "_TZE284_0ints6wl",
+    "_TZE284_yzr43ayq",
+    "_TZE200_cq8lu23i",
+    "_TZE200_4pm4pekt",
+    "_TZE284_8se38w3c",
+    "_TZE204_81yrt3lo",
+    "_TZ3000_lqmvrwa2",
+    "_TZ3000_isw9u95y",
+    "_TZ3000_yupc0pb7"
+   ],
+   "pids": [
+    "TS011F",
+    "TS0201",
+    "TS0121",
+    "TS0003",
+    "TS0225",
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": [
+    "measure_power",
+    "meter_power",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery"
+   ]
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 243,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/243#issuecomment-4232479043",
+   "user": "github-actions[bot]",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_uwkja6z1",
+    "_TZ3000_ew31dmgx",
+    "_TZ3000_wamqdr3f",
+    "_TZ3000_mw1pqqqt",
+    "_TZ3000_2uollq9d",
+    "_TZE200_hl0ss9oa",
+    "_TZE200_y4mdop0b",
+    "_TZE284_6ocnqlhn",
+    "_TZE200_lvkk0hdg",
+    "_TZ3210_emqmwtym",
+    "_TZE200_khah2lkr",
+    "_TZE284_0ints6wl",
+    "_TZE284_yzr43ayq",
+    "_TZE200_cq8lu23i",
+    "_TZE200_4pm4pekt",
+    "_TZE284_8se38w3c",
+    "_TZE204_81yrt3lo",
+    "_TZ3000_lqmvrwa2",
+    "_TZ3000_isw9u95y",
+    "_TZ3000_yupc0pb7"
+   ],
+   "pids": [
+    "TS0121",
+    "TS0601",
+    "TS0003",
+    "TS0225",
+    "TS0201"
+   ],
+   "dps": [],
+   "caps": []
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 242,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/242",
+   "user": "github-actions[bot]",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_uwkja6z1",
+    "_TZ3000_ew31dmgx",
+    "_TZ3000_wamqdr3f",
+    "_TZ3000_mw1pqqqt",
+    "_TZ3000_2uollq9d",
+    "_TZE200_hl0ss9oa",
+    "_TZE200_y4mdop0b",
+    "_TZE284_6ocnqlhn",
+    "_TZE200_lvkk0hdg",
+    "_TZ3210_emqmwtym",
+    "_TZE200_khah2lkr",
+    "_TZE284_0ints6wl",
+    "_TZE284_yzr43ayq",
+    "_TZE200_cq8lu23i",
+    "_TZE200_4pm4pekt",
+    "_TZE284_8se38w3c",
+    "_TZE204_81yrt3lo",
+    "_TZ3000_lqmvrwa2",
+    "_TZ3000_isw9u95y",
+    "_TZ3000_yupc0pb7"
+   ],
+   "pids": [
+    "TS011F",
+    "TS0201",
+    "TS0121",
+    "TS0003",
+    "TS0225",
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": [
+    "measure_power",
+    "meter_power",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery"
+   ]
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 241,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/241",
+   "user": "github-actions[bot]",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_uwkja6z1",
+    "_TZ3000_ew31dmgx",
+    "_TZ3000_wamqdr3f",
+    "_TZ3000_mw1pqqqt",
+    "_TZ3000_2uollq9d",
+    "_TZE200_hl0ss9oa",
+    "_TZE200_y4mdop0b",
+    "_TZE284_6ocnqlhn",
+    "_TZE200_lvkk0hdg",
+    "_TZ3210_emqmwtym",
+    "_TZE200_khah2lkr",
+    "_TZE284_0ints6wl",
+    "_TZE284_yzr43ayq",
+    "_TZE200_cq8lu23i",
+    "_TZE200_4pm4pekt",
+    "_TZE284_8se38w3c",
+    "_TZE204_81yrt3lo",
+    "_TZ3000_lqmvrwa2",
+    "_TZ3000_isw9u95y",
+    "_TZ3000_yupc0pb7"
+   ],
+   "pids": [
+    "TS011F",
+    "TS0201",
+    "TS0121",
+    "TS0003",
+    "TS0225",
+    "TS0601"
+   ],
+   "dps": [],
+   "caps": [
+    "measure_power",
+    "meter_power",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery"
+   ]
+  },
+  {
+   "repo": "dlnraja/com.tuya.zigbee",
+   "issue": 241,
+   "post": "https://github.com/dlnraja/com.tuya.zigbee/issues/241#issuecomment-4232479631",
+   "user": "github-actions[bot]",
+   "source": "text",
+   "images": 0,
+   "mfrs": [
+    "_TZ3000_uwkja6z1",
+    "_TZ3000_ew31dmgx",
+    "_TZ3000_wamqdr3f",
+    "_TZ3000_mw1pqqqt",
+    "_TZ3000_2uollq9d",
+    "_TZE200_hl0ss9oa",
+    "_TZE200_y4mdop0b",
+    "_TZE284_6ocnqlhn",
+    "_TZE200_lvkk0hdg",
+    "_TZ3210_emqmwtym",
+    "_TZE200_khah2lkr",
+    "_TZE284_0ints6wl",
+    "_TZE284_yzr43ayq",
+    "_TZE200_cq8lu23i",
+    "_TZE200_4pm4pekt",
+    "_TZE284_8se38w3c",
+    "_TZE204_81yrt3lo",
+    "_TZ3000_lqmvrwa2",
+    "_TZ3000_isw9u95y",
+    "_TZ3000_yupc0pb7"
+   ],
+   "pids": [
+    "TS0121",
+    "TS0601",
+    "TS0003",
+    "TS0225",
+    "TS0201"
+   ],
+   "dps": [],
+   "caps": []
   }
  ]
 }
