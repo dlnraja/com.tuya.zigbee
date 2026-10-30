@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-27",
+ "generated": "2026-10-30",
  "note": "read-only scan output; knownDrivers=[] means the mfr is not in any driver yet (review before applying)",
  "leads": [
   {
@@ -381,6 +381,22 @@
    "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1494#issuecomment-5961266968",
    "snippet": "Batch98 source consolidation: this distinct `_TZ3000_ko6v90pg / TS011F` physical metering identity, originally split from a DIFFERENT extra-device interview in #877 comments, is now sep",
    "seen": "2026-10-06"
+  },
+  {
+   "mfr": "_TZ3000_nrfkrgf4",
+   "pids": [
+    "TS0046"
+   ],
+   "dps": [],
+   "firmware": [
+    "firmware"
+   ],
+   "knownDrivers": [
+    "button_wireless_6"
+   ],
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1546",
+   "snippet": "- Manufacturer: \"_TZ3000_nrfkrgf4\" - Model: \"TS0046\" - Homey: Pro Mini - Firmware: 13.5.3 - Tuya Zigbee app: 0.3.3",
+   "seen": "2026-10-30"
   },
   {
    "mfr": "_TZ3000_o9f2zqln",
