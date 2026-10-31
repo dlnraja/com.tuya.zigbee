@@ -239,6 +239,13 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
   }
 
   _handleDP(dpId, raw) {
+    // P3101 (t656u): firmware-limit compensation — real battery DP disables the estimate; DP35 bit0 -> flagged store estimate
+    try {
+      if (this.__fwLimit) {
+        this.__fwLimit.handleDp(dpId);
+        if (Number(dpId) === 35) {this.__fwLimit.onAlarmBattery((Number(raw) & 1) === 1);}
+      }
+    } catch (_e) { /* soft */ }
     // P3067: metering DPs of exact couples (AETZ01_AC snfdqllf, TWC-R01 ilzkxrav), late capabilities, before TRV mapping
     if (ThermostatMeteringDps.handle(this, this._resolveMfr(), dpId, raw)) {return undefined;}
     if ([6, 13, 15].includes(Number(dpId)) && this._isNoHumidityTrv() && !this.hasCapability('measure_battery')) {
@@ -272,6 +279,11 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       this._deviceInitTime = this._trvInitAt;
     } catch (_e) { /* soft */ }
     await super.onNodeInit({ zclNode });
+    // P3101 (t656u): optional, data-driven (config/firmware-limits.json), exact couple only, bounded polling
+    try {
+      const { getManufacturerName, getModelId } = require('../../lib/helpers/ManufacturerNameHelper');
+      require('../../lib/compensation/FirmwareLimitCompensation').attach(this, { mfr: getManufacturerName(this), pid: getModelId(this) || 'TS0601' });
+    } catch (_e) { /* soft */ }
     // --- Homey Time Sync for TRV / LCD/Thermostat devices ---
     // Syncs the device clock with the Homey box time every 6 hours.
     // Uses ZCL Time Cluster (0x000A) or Tuya EF00 DP 0x24 as fallback.
@@ -575,8 +587,14 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
   }
 
 
+  async onUninit() {
+    try { this.__fwLimit?.destroy(); } catch (_e) { /* soft */ }
+    if (typeof super.onUninit === 'function') {await super.onUninit();}
+  }
+
   async onDeleted() {
     this._destroyed = true;
+    try { this.__fwLimit?.destroy(); } catch (_e) { /* soft */ }
     await super.onDeleted();
     this.log('Device deleted, cleaning up');
   }

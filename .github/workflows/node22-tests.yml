@@ -89,6 +89,8 @@ jobs:
         run: node scripts/ci/disk-inode-guard.js
       - name: 'Workflow lessons gate (P3092 — moved couples + ZCL aliases)'
         run: node tools/ci/workflow-lessons-gate.js
+      - name: 'Firmware-limit compensation audit (P3101, report-only; fails only on invalid config)'
+        run: node scripts/ci/firmware-limit-audit.js --strict --out firmware-limit-audit.json
       - name: node:test strict (P3057-3)
         run: node tools/ci/node-test-strict.js --concurrency 4
       - name: Short summary (shared report helper)
