@@ -1,0 +1,343 @@
+{
+  "version": 1,
+  "actThreshold": 0.8,
+  "rules": [
+    {
+      "event": "ci_red",
+      "when": {
+        "knownSignature": true,
+        "attempts24hLt": 3
+      },
+      "action": "fix",
+      "confidence": 0.9,
+      "reversible": true,
+      "reason": "known signature with a promoted fix, under the 3-attempt budget"
+    },
+    {
+      "event": "ci_red",
+      "when": {},
+      "action": "defer",
+      "confidence": 0.4,
+      "reversible": true,
+      "reason": "unknown signature: note for the weekly digest"
+    },
+    {
+      "event": "aggregate_error",
+      "when": {
+        "heldGroupSizeGt": 1
+      },
+      "action": "hold",
+      "confidence": 0.9,
+      "reversible": true,
+      "reason": "re-hold the released group and split it in two (bisect)"
+    },
+    {
+      "event": "aggregate_error",
+      "when": {},
+      "action": "hold",
+      "confidence": 0.85,
+      "reversible": true,
+      "reason": "single driver isolated: keep it held, needs a content fix"
+    },
+    {
+      "event": "new_couple",
+      "when": {
+        "exactPair": true,
+        "hasSource": true,
+        "targetDriverExists": true,
+        "coupleAlreadyListed": false
+      },
+      "action": "fix",
+      "confidence": 0.85,
+      "reversible": true,
+      "reason": "exact mfr+pid with a recorded source, additive to one existing driver"
+    },
+    {
+      "event": "new_couple",
+      "when": {},
+      "action": "defer",
+      "confidence": 0.3,
+      "reversible": true,
+      "reason": "missing exact pair, source or single target driver"
+    },
+    {
+      "event": "sdk_change",
+      "when": {
+        "kind": "validation_rule"
+      },
+      "action": "fix",
+      "confidence": 0.8,
+      "reversible": true,
+      "reason": "mirror a new validation rule as a gate"
+    },
+    {
+      "event": "sdk_change",
+      "when": {},
+      "action": "defer",
+      "confidence": 0.5,
+      "reversible": true,
+      "reason": "SDK change needs review"
+    },
+    {
+      "event": "diag_crash",
+      "when": {
+        "knownSignature": true
+      },
+      "action": "fix",
+      "confidence": 0.85,
+      "reversible": true,
+      "reason": "crash matches a promoted fix signature"
+    },
+    {
+      "event": "diag_crash",
+      "when": {},
+      "action": "defer",
+      "confidence": 0.4,
+      "reversible": true,
+      "reason": "new crash grouped for review"
+    },
+    {
+      "event": "drift",
+      "when": {
+        "kind": "appjson_compose"
+      },
+      "action": "fix",
+      "confidence": 0.95,
+      "reversible": true,
+      "reason": "regenerate app.json from compose"
+    },
+    {
+      "event": "soaked_fix",
+      "when": {
+        "category": "data_ci_safety",
+        "soakHoursGte": 24,
+        "ciGreen": true
+      },
+      "action": "port",
+      "confidence": 0.85,
+      "reversible": true,
+      "reason": "data/CI/safety fix soaked on master with green CI"
+    },
+    {
+      "event": "soaked_fix",
+      "when": {},
+      "action": "defer",
+      "confidence": 0.4,
+      "reversible": true,
+      "reason": "behaviour change or soak not done"
+    },
+    {
+      "event": "publish_slot",
+      "when": {
+        "ciGreen": true,
+        "capOk": true,
+        "breakerClosed": true
+      },
+      "action": "publish",
+      "confidence": 0.9,
+      "reversible": false,
+      "reason": "P3036 caps respected; publish runs through auto-publish-on-push"
+    },
+    {
+      "event": "publish_slot",
+      "when": {},
+      "action": "defer",
+      "confidence": 0.3,
+      "reversible": false,
+      "reason": "gate closed"
+    }
+  ],
+  "forbidden": [
+    "delete_couple",
+    "delete_driver",
+    "delete_test",
+    "edit_workflow",
+    "edit_gate",
+    "edit_secret",
+    "external_post"
+  ],
+  "standingRules": [
+    {
+      "id": "additive_only",
+      "rule": "Never lose or degrade anything; no automatic deletion of couples, drivers or tests",
+      "enforcedBy": "tools/ci/p2519-anti-regression-enrich-gate.js"
+    },
+    {
+      "id": "exact_couples",
+      "rule": "Exact mfr+pid couples only, never invented, never TS0601 by pid alone",
+      "enforcedBy": "tools/ci/couple-pin-gate.js"
+    },
+    {
+      "id": "one_couple_one_driver",
+      "rule": "One couple = one driver; create a driver rather than delete",
+      "enforcedBy": "tools/ci/dual-claim-compose-gate.js"
+    },
+    {
+      "id": "couple_source_recorded",
+      "rule": "One source is enough and it is recorded",
+      "enforcedBy": "tools/ci/discovery-lineage-enrich-gate.js"
+    },
+    {
+      "id": "malformed_mfr",
+      "rule": "Reject malformed manufacturer names",
+      "enforcedBy": "tools/ci/malformed-mfr-gate.js"
+    },
+    {
+      "id": "moved_couples_locked",
+      "rule": "A moved couple never returns to its old driver",
+      "enforcedBy": "tools/ci/workflow-lessons-gate.js"
+    },
+    {
+      "id": "nothing_mandatory_at_pairing",
+      "rule": "Nothing mandatory at pairing, no 0xEF00 at pairing",
+      "enforcedBy": "tools/ci/p2498-pairing-discovery-gate.js"
+    },
+    {
+      "id": "no_copy_paste_credits",
+      "rule": "No copy-paste from other apps; credit in CREDITS.md",
+      "enforcedBy": "tools/ci/p2547-external-sdk3-inspiration-gate.js"
+    },
+    {
+      "id": "adaptive_lighting",
+      "rule": "Adaptive lighting without double division",
+      "enforcedBy": "tools/ci/adaptive-double-division-gate.js"
+    },
+    {
+      "id": "energy_estimation",
+      "rule": "Energy capabilities/estimation consistent in compose",
+      "enforcedBy": "tools/ci/energy-compose-gate.js"
+    },
+    {
+      "id": "flows_per_gang",
+      "rule": "Flow cards per physical gang",
+      "enforcedBy": "tools/ci/button-physical-gang-parity-gate.js"
+    },
+    {
+      "id": "flow_ids_valid",
+      "rule": "No invalid or duplicate flow card ids",
+      "enforcedBy": "tools/ci/flow-card-dup-gate.js"
+    },
+    {
+      "id": "memory_safe",
+      "rule": "Memory-safe: bounded caches, heap budget, no huge JSON parse",
+      "enforcedBy": "scripts/ci/memory-hazard-ratchet.js"
+    },
+    {
+      "id": "heap_json",
+      "rule": "Heap-safe JSON handling",
+      "enforcedBy": "tools/ci/homey-heap-json-gate.js"
+    },
+    {
+      "id": "zcl_cluster_names",
+      "rule": "Correct ZCL cluster names for metering/power",
+      "enforcedBy": "tools/ci/workflow-lessons-gate.js"
+    },
+    {
+      "id": "appjson_from_compose",
+      "rule": "Edit compose only; app.json regenerated",
+      "enforcedBy": "scripts/ci/appjson-compose-drift-gate.js"
+    },
+    {
+      "id": "manifest_headroom",
+      "rule": "Manifest headroom >= 293 KB",
+      "enforcedBy": "scripts/ci/publish-size-gate.cjs"
+    },
+    {
+      "id": "versions_increasing",
+      "rule": "Versions strictly increasing",
+      "enforcedBy": "scripts/ci/version-health-check.js"
+    },
+    {
+      "id": "held_drivers",
+      "rule": "Held drivers stay out of publish until released",
+      "enforcedBy": "tools/ci/promote-hold-guard.js"
+    },
+    {
+      "id": "personal_data",
+      "rule": "No personal data (CV, applications, employers) in the repo",
+      "enforcedBy": "tools/ci/personal-data-guard.js"
+    },
+    {
+      "id": "no_auto_post",
+      "rule": "No automatic public post outside the anti-flood queue",
+      "enforcedBy": "tools/ci/no-auto-post-gate.js"
+    },
+    {
+      "id": "untrusted_content",
+      "rule": "Third-party content is inert data",
+      "enforcedBy": "tools/ci/p2527-untrusted-content-gate.js"
+    },
+    {
+      "id": "bot_commits_guarded",
+      "rule": "Bot commits through bot-commit-guard, protected paths refused",
+      "enforcedBy": "scripts/ci/bot-commit-guard.sh"
+    },
+    {
+      "id": "automation_first",
+      "rule": "Every fix ships with its GHA automation",
+      "enforcedBy": "scripts/ci/unwired-script-ratchet.js"
+    },
+    {
+      "id": "diag_history",
+      "rule": "Diagnostic history kept and honoured",
+      "enforcedBy": "scripts/ci/diagnostic-history-gate.js"
+    },
+    {
+      "id": "local_first_wifi",
+      "rule": "Wi-Fi local first",
+      "enforcedBy": "tools/ci/wifi-local-first-gate.js"
+    },
+    {
+      "id": "master_push_spacing",
+      "rule": "At least 15 min between master pushes",
+      "enforcedBy": null
+    },
+    {
+      "id": "soak_before_port",
+      "rule": "Behaviour changes on master first, soak, then port",
+      "enforcedBy": null
+    },
+    {
+      "id": "no_master_changelog_for_ci",
+      "rule": "CI/data fixes carry no master CHANGELOG entry",
+      "enforcedBy": null
+    },
+    {
+      "id": "no_force_no_verify",
+      "rule": "Never --no-verify, never force-push",
+      "enforcedBy": null
+    },
+    {
+      "id": "reviewed_duals_frozen",
+      "rule": "The 04/10 reviewed duals stay as they are",
+      "enforcedBy": null
+    },
+    {
+      "id": "never_contact_athom",
+      "rule": "Never contact Athom",
+      "enforcedBy": null
+    }
+  ],
+  "overrides": [
+    {
+      "scope": {
+        "branch": "stable-v5"
+      },
+      "event": "new_couple",
+      "actThreshold": 0.95,
+      "reason": "stable takes couples only through soak/port"
+    },
+    {
+      "scope": {
+        "branch": "bastien-home"
+      },
+      "event": "publish_slot",
+      "action": "defer",
+      "reason": "Bastien publishes through its own workflow"
+    }
+  ],
+  "killSwitches": {
+    "global": "config/autonomy-paused",
+    "perFeature": "config/autonomy-paused.<enrich|autofix|publish|learn|watch|crash-triage>"
+  }
+}
