@@ -6,6 +6,11 @@
 # Bots whose commit touches none of those paths pass straight through.
 set -u
 staged=$(git diff --cached --name-only 2>/dev/null || true)
+# P3097 (t644u): a bot may never change workflows, gates, guards, ownership or autonomy rules.
+prot=$(echo "$staged" | grep -E '^(\.github/workflows/|\.github/CODEOWNERS|\.github/dependabot\.yml|scripts/ci/(bot-commit-guard|homey-validate-safe|autonomy-learn|unwired-script-ratchet)|scripts/ci/[^/]*gate[^/]*|tools/ci/[^/]*gate[^/]*|tools/ci/personal-data-guard|docs/rules/AUTO|\.specify/|config/autonomy-paused|config/autonomy-policy\.json|scripts/autonomy/|config/workflow-resource-baseline\.json)' || true)
+if [ -n "$prot" ]; then
+  echo "::error::bot-commit-guard: protected path staged by a bot — commit refused (P3097): $(echo $prot)"; exit 1
+fi
 echo "$staged" | grep -qE '^(app\.json|\.homeycompose/|drivers/[^/]+/driver\.compose\.json)' || exit 0
 if [ -f scripts/ci/appjson-compose-drift-gate.js ]; then
   node scripts/ci/appjson-compose-drift-gate.js --fix >/dev/null 2>&1 || true
