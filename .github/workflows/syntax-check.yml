@@ -284,7 +284,7 @@ jobs:
 
       - name: Validate Homey SDK3 compliance
         run: |
-          npx homey app validate --level=publish || echo "⚠️ Homey CLI not available in CI, skipping"
+          bash scripts/ci/homey-validate-safe.sh --level=publish || echo "⚠️ Homey CLI not available in CI, skipping"
 
       - name: Check SVG viewBox validation (TITAN v5)
         run: |

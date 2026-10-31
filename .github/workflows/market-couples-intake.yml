@@ -190,6 +190,7 @@ jobs:
             exit 0
           fi
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo '?')
+          [ -f scripts/ci/bot-commit-guard.sh ] && { bash scripts/ci/bot-commit-guard.sh || exit 1; }  # P3093
           git commit -m "market(P2232): max-source intake + apply-safe couples v${VER} [skip ci]"
           git pull --rebase origin master || true
           git push origin HEAD:master

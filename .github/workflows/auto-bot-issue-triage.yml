@@ -126,6 +126,7 @@ jobs:
             echo "No state changes"
           else
             git pull --rebase origin master || true
+            [ -f scripts/ci/bot-commit-guard.sh ] && { bash scripts/ci/bot-commit-guard.sh || exit 1; }  # P3093
             git commit -m "auto: bot issue triage state [skip ci]"
             bash scripts/ci/verified-git-push.sh master
           fi

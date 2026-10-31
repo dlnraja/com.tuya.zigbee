@@ -111,6 +111,7 @@ jobs:
             [ -e "$path" ] && git add "$path"
           done
           git diff --cached --quiet && echo "No changes" && exit 0
+          [ -f scripts/ci/bot-commit-guard.sh ] && { bash scripts/ci/bot-commit-guard.sh || exit 1; }  # P3093
           git commit -m "fix: auto-fix for #${ISSUE} — ${{ steps.bug.outputs.summary }} [skip ci]"
           git push origin "$BRANCH"
           gh pr create -R dlnraja/com.tuya.zigbee \

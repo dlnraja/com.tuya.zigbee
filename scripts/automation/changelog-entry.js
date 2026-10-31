@@ -102,11 +102,33 @@ function subjectsSinceLastPublish(cwd = process.cwd(), max = 400) {
   return out;
 }
 
+/** Two maintenance builds in a row must not carry the very same note (P3075 counts it as a duplicate). */
+function distinctFromPrevious(obj, version, entry) {
+  if (!entry || typeof entry !== 'object' || !entry.en) {
+    return entry;
+  }
+  const prev = Object.keys(obj).filter((k) => k !== version && /^\d+\.\d+\.\d+$/.test(k) && cmpVer(k, version) < 0).sort(cmpVer).pop();
+  const prevEntry = prev ? obj[prev] : null;
+  const prevEn = prevEntry && typeof prevEntry === 'object' ? prevEntry.en : prevEntry;
+  if (!prevEn || prevEn !== entry.en) {
+    return entry;
+  }
+  const out = { ...entry, en: `v${version}: ${entry.en}` };
+  if (entry.fr) {
+    out.fr = `v${version} : ${entry.fr}`;
+  }
+  return out;
+}
+
 /** Fill the entry for `version` when missing or placeholder; always re-order. Returns { changed, entry }. */
 function updateChangelog(obj, version, subjects) {
   const cur = obj[version];
   let changed = false;
-  if (!cur || isPlaceholder(cur.en)) { obj[version] = precise(subjects); changed = true; }
+  if (!cur || isPlaceholder(cur.en)) {
+    obj[version] = precise(subjects);
+    obj[version] = distinctFromPrevious(obj, version, obj[version]);
+    changed = true;
+  }
   const ordered = orderChangelog(obj);
   if (JSON.stringify(Object.keys(ordered)) !== JSON.stringify(Object.keys(obj))) changed = true;
   return { changed, obj: ordered, entry: ordered[version] };
