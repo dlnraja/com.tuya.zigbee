@@ -14,7 +14,17 @@
  *  - a keep/pinned label freezes everything.
  */
 
-const BOT_PREFIXES = ['bot/', 'auto/', 'ai/monthly-audit-'];
+const BOT_PREFIXES = ['bot/', 'auto/', 'ai/monthly-audit-', 'kb/', 'market/'];
+// P3090 — generated-data bot PRs whose conflicts are resolved by re-syncing with the base (base wins on
+// conflicting hunks = newest generated data). Only when every changed file is regenerable data/docs.
+const RESYNC_PREFIXES = ['kb/', 'market/', 'bot/'];
+const RESYNC_PATHS = /^(data\/|docs\/knowledge\/|reports\/)/;
+
+function resyncable(pr, files) {
+  const ref = pr.headRef || (pr.head && pr.head.ref) || '';
+  const f = files || [];
+  return RESYNC_PREFIXES.some((p) => ref.startsWith(p)) && f.length > 0 && f.length <= 300 && f.every((x) => RESYNC_PATHS.test(String(x)));
+}
 const DELETABLE_PREFIXES = ['bot/'];
 const PROTECTED_BRANCHES = new Set(['master', 'main', 'stable-v5', 'bastien-home', 'gh-pages']);
 const PROTECTED_PREFIXES = ['fix/', 'release/', 'hotfix/'];
@@ -103,7 +113,10 @@ function decidePr(pr, ctx = {}) {
   if ((o.files || []).some((f) => String(f).startsWith('.github/workflows/'))) {
     return { action: 'hold', reason: 'touches .github/workflows (GITHUB_TOKEN cannot merge it; owner review)' };
   }
-  if (pr.mergeable === false || pr.mergeableState === 'dirty') {return { action: 'hold', reason: 'merge conflict with base' };}
+  if (pr.mergeable === false || pr.mergeableState === 'dirty') {
+    if (resyncable(pr, o.files) && !o.resynced) {return { action: 'resync', reason: 'merge conflict on regenerable bot data: re-sync with base (base wins)' };}
+    return { action: 'hold', reason: 'merge conflict with base' };
+  }
   const gates = gateState(o.checks);
   const local = o.localGate || null;
   if (gates === 'red' || local === 'red') {return { action: 'hold', reason: `gates red (${gates === 'red' ? 'checks' : 'local gates'})` };}
@@ -302,6 +315,7 @@ function analyseExternal(pr, files, index) {
 
 module.exports = {
   BOT_PREFIXES, PROTECTED_BRANCHES, KEEP_LABELS, DEFAULTS,
+  RESYNC_PREFIXES, resyncable,
   isBotLogin, hasKeepLabel, prKind, prOrigin, supersededBy, gateState, decidePr, branchDeletable,
   extractIssue, coupleStatus, isFixSubject, classifyIssue, draftReply, leadFromCouple, mergeLeads, contribCouples, analyseExternal,
 };
