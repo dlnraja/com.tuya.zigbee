@@ -5,9 +5,10 @@
   "couples": 200,
   "dps": 16
  },
- "updatedAt": "2026-10-31T17:02:40.808Z",
+ "updatedAt": "2026-10-31T21:13:59.132Z",
  "seen": [
-  "89502374e10c"
+  "89502374e10c",
+  "10ae1606f66a"
  ],
  "couples": {
   "_TZE2XX_wjk6rurm|ZG-301Z": {
@@ -56,6 +57,19 @@
    ],
    "firstSeen": "2026-10-27T04:24:39.609Z",
    "lastSeen": "2026-10-27T04:24:39.609Z",
+   "dps": {},
+   "unavailable": 0,
+   "memwarn": 0,
+   "maxHeapMB": 0,
+   "anomalies": []
+  },
+  "_TZ3000_vsxvaj9i|TS0043": {
+   "status": "candidate",
+   "sources": [
+    "gmail-diag"
+   ],
+   "firstSeen": "2026-10-31T21:13:59.132Z",
+   "lastSeen": "2026-10-31T21:13:59.132Z",
    "dps": {},
    "unavailable": 0,
    "memwarn": 0,
