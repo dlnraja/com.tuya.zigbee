@@ -70,6 +70,8 @@ jobs:
 
       - name: Apply safe changes manually (if tool not present)
         run: |
+          # P3092: snapshot stable's fingerprint routes so stable compose decisions survive the copy.
+          cp lib/tuya/fingerprints.json /tmp/p52-fp-before.json 2>/dev/null || true
           SAFE_FILES="lib/tuya/fingerprints.json lib/battery/ data/mfs_db.json lib/LocalFirstEngine.js lib/SDK3CompatBridge.js lib/LowLevelBridge.js lib/utils/safe-timers.js"
           for f in $SAFE_FILES; do
             if [ -f "$f" ] && git show "origin/master:$f" > /tmp/master_file 2>/dev/null; then
@@ -79,6 +81,10 @@ jobs:
               fi
             fi
           done
+          git diff --name-only > /tmp/p52-synced.txt || true
+          if [ -f /tmp/p52-fp-before.json ] && [ -f tools/ci/p52-fingerprint-locks.js ]; then
+            node tools/ci/p52-fingerprint-locks.js /tmp/p52-fp-before.json
+          fi
 
       - name: 🛡️ Couple guard (pins, sacred-keep, curated removals, golden)
         # WHY(2026-10-11): auto-fix-all / sync re-added curated removals (vrcfo4i0, heobian) and
@@ -101,14 +107,25 @@ jobs:
             const fs=require('fs');
             const c=JSON.parse(fs.readFileSync('.homeycompose/app.json','utf8'));
             c.version='$NEW';
-            c.stableNotes='P52-auto: synced safe changes from master';
+            // P3092: one honest line per version, inserted in version order (never appended at the end).
+            const files=(fs.existsSync('/tmp/p52-synced.txt')?fs.readFileSync('/tmp/p52-synced.txt','utf8'):'').split('\\n').filter(Boolean);
+            const what=files.length?files.map(f=>f.split('/').pop()).join(', '):'shared helpers';
+            c.stableNotes='Maintenance '+'$NEW'+': shared fixes synced from the development branch ('+what+'), no driver change.';
             fs.writeFileSync('.homeycompose/app.json',JSON.stringify(c,null,2));
+            if (fs.existsSync('.homeychangelog.json')) {
+              const ce=require('./scripts/automation/changelog-entry');
+              const cl=JSON.parse(fs.readFileSync('.homeychangelog.json','utf8'));
+              if (!cl['$NEW'] || ce.isPlaceholder(String(cl['$NEW'].en||''))) {
+                cl['$NEW']={en:c.stableNotes,fr:'Maintenance '+'$NEW'+' : correctifs communs repris de la branche de développement ('+what+'), aucun changement de driver.'};
+                fs.writeFileSync('.homeychangelog.json',JSON.stringify(ce.orderChangelog(cl),null,2)+'\\n');
+              }
+            }
             console.log('Bumped to $NEW');
           "
 
       - name: Commit + push
         run: |
-          git add .homeycompose/app.json lib/ data/ 2>/dev/null || true
+          git add .homeycompose/app.json .homeychangelog.json lib/ data/ 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No changes to commit"
             exit 0
