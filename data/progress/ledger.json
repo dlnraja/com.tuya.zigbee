@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-31T18:01:02.944Z",
+ "updated": "2026-10-31T18:39:17.465Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -18694,6 +18694,18 @@
    "pids": [
     "TS004F"
    ]
+  },
+  "forum-post:26439/5538": {
+   "status": "pending",
+   "date": "2026-10-31",
+   "hash": "78db1ddbeed4f14d",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 26439,
+   "post": 5538,
+   "author": "Br0kk85",
+   "link": "https://community.homey.app/t/26439/5538",
+   "images": 1
   },
   "forum-post:36418/510": {
    "status": "pending",
