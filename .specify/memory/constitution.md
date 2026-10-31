@@ -181,3 +181,8 @@ Merged without changing W1–W11 / P1–P7; where they overlap, they make an exi
   chunks (sharded fingerprint/mfs data per pid or prefix, on demand, LRU-bounded cache); lazy and
   progressive module loading (require on first use, non-critical layers after init). Migrate
   incrementally without degrading anything and measure boot time and heap before/after (spec 010).
+- R23. Automation first (2026-10-31): the project must keep running on free GitHub Actions alone, with
+  no external agent, box or routine. Every new fix or lesson ships in the same change with its GHA
+  automation (workflow step, gate or ratchet) and its test. A script under tools/ or scripts/ that no
+  workflow, package.json script or other script calls is flagged by the unwired-script ratchet (P3097).
+  See docs/rules/AUTOMATION_FIRST.md and docs/knowledge/AUTONOMY_MAP.md.
