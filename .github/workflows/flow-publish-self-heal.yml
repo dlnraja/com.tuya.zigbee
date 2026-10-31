@@ -128,6 +128,7 @@ jobs:
             exit 0
           fi
           # P3025: commit first, then the shared race-safe push (the old pre-commit pull failed on the dirty tree, push||true hid losses)
+          [ -f scripts/ci/bot-commit-guard.sh ] && { bash scripts/ci/bot-commit-guard.sh || exit 1; }  # P3093
           git commit -m "chore(heal): P2842 flow/publish payload self-heal [skip ci]" || true
           bash .github/scripts/git-push-retry.sh --branch master || echo "::warning::P3025 self-heal commit not pushed (see git-push-retry log)"
       # P3069: short summary through the shared helper, on success and on failure.

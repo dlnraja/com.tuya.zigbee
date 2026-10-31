@@ -218,6 +218,7 @@ jobs:
             echo "No resilience report changes"
             exit 0
           fi
+          [ -f scripts/ci/bot-commit-guard.sh ] && { bash scripts/ci/bot-commit-guard.sh || exit 1; }  # P3093
           git commit -m "chore(resilience): inventory + critical-first audit [skip ci]" || exit 0
           # Verified push (no || true mask) — step continue-on-error handles soft failure
           bash .github/scripts/git-push-retry.sh --branch "${GITHUB_REF_NAME}"  # P3025 shared race-safe push

@@ -204,6 +204,7 @@ jobs:
           git add data/progress/ledger.json || true
           if ! git diff --cached --quiet; then
             git pull --rebase origin master || true
+            [ -f scripts/ci/bot-commit-guard.sh ] && { bash scripts/ci/bot-commit-guard.sh || exit 1; }  # P3093
             git commit -m "auto: monthly Z2M scan candidates [skip ci]"
             bash scripts/ci/verified-git-push.sh master
           fi
