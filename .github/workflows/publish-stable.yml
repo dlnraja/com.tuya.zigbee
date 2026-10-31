@@ -544,6 +544,7 @@ jobs:
             node .github/scripts/stable-version-bump.js set "$V" --if-higher
             git add .homeycompose/app.json app.json package.json package-lock.json .homeychangelog.json 2>/dev/null || true
             git diff --cached --quiet && { echo "version v$V already on stable-v5"; exit 0; }
+            [ -f scripts/ci/bot-commit-guard.sh ] && { bash scripts/ci/bot-commit-guard.sh || exit 1; }  # P3093
             compose_parity_or_die
             git commit -m "chore(stable): v$V [skip ci]"
             git push origin HEAD:stable-v5 && exit 0

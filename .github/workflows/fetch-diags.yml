@@ -386,6 +386,7 @@ jobs:
           node .github/scripts/privacy-redactor.js .github/state/diagnostics-state.json .github/state/diagnostics-report.json .github/state/gmail-token-health.json .github/state/diagnostics-crossref.yml .github/state/gmail-crash-patterns.json .github/state/gmail-unique-fps.json .github/state/gmail-fps-crossref-v2.json diagnostics
           git add .github/state/diagnostics-state.json .github/state/diagnostics-report.json .github/state/gmail-token-health.json .github/state/diagnostics-crossref.yml .github/state/gmail-crash-patterns.json .github/state/gmail-unique-fps.json .github/state/gmail-fps-crossref-v2.json .github/state/sacred-couple-dry-gate.json 2>/dev/null || true
           if ! git diff --staged --quiet; then
+            [ -f scripts/ci/bot-commit-guard.sh ] && { bash scripts/ci/bot-commit-guard.sh || exit 1; }  # P3093
             git commit -m "chore: update diagnostics report from Gmail [skip ci]"
             bash scripts/ci/verified-git-push.sh master
           else

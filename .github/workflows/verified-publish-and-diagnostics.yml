@@ -104,7 +104,7 @@ jobs:
         run: npm run fix:generated-flow-args
 
       - name: Validate App Manifest
-        run: npx homey app validate --level=publish
+        run: bash scripts/ci/homey-validate-safe.sh --level=publish
 
       - name: Sanitize generated manifest after validation
         run: npm run fix:generated-flow-args && npm run check:homey-guidelines
