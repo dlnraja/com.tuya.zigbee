@@ -61,8 +61,8 @@ test('spacing: master waits >= 2 h between uploads', () => {
   assert.strictEqual(d.go, false); assert.strictEqual(d.deferred, true); assert.match(d.reason, /< 120 min/);
   assert.strictEqual(P.slotDecision({ appId: MASTER, builds: [b(10, 'draft', 130)], eventName: 'push', now: NOW, env: {} }).go, true);
 });
-test('spacing: master allows at most one successful upload per 24 h', () => {
-  const d = P.slotDecision({ appId: MASTER, builds: [b(11, 'test', 180), b(10, 'processing_failed', 400)], eventName: 'schedule', now: NOW, env: {} });
+test('spacing: the master 24 h cap holds once reached (P3091: cap 4, env override 1 here)', () => {
+  const d = P.slotDecision({ appId: MASTER, builds: [b(11, 'test', 180), b(10, 'processing_failed', 400)], eventName: 'schedule', now: NOW, env: { ATHOM_MAX_SUCCESS_PER_24H: '1' } });
   assert.strictEqual(d.go, false); assert.match(d.reason, /successful upload/);
 });
 test('spacing: per-app config and env overrides', () => {
@@ -185,7 +185,7 @@ test('bisect exit: state file and docs describe the normal flow (draft -> Test, 
 
 test('policy file is byte-identical on master, stable-v5 and bastien-home', () => {
   const h = crypto.createHash('sha256').update(fs.readFileSync(path.join(ROOT, '.github/scripts/athom-publish-policy.js'))).digest('hex');
-  assert.strictEqual(h, 'bbe8a72e2e425231a75ae58846b07e5eb8e44bc529119761c41deb2be54c0391', 'edit athom-publish-policy.js on all three branches together and update this hash');
+  assert.strictEqual(h, '7a9bc9062edc9d12aed94531f776b3fa322eeffd3b82e9ae5f1ca1fc3323d0ce', 'edit athom-publish-policy.js on all three branches together and update this hash');
 });
 test('ci gate: a version-only package.json bump is not a code change', () => {
   assert.strictEqual(P.versionOnlyDiff('--- a/package.json\n+++ b/package.json\n@@ -3 +3 @@\n-  "version": "9.0.1599",\n+  "version": "9.0.1600",'), true);

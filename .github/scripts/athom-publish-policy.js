@@ -34,7 +34,9 @@ const POLICY_VERSION = 1;
 const APPS = {
   'com.dlnraja.tuya.zigbee': {
     key: 'master', branch: 'master', lock: 'athom-publish-master',
-    minIntervalMin: 120, maxSuccessPer24h: 1,
+    // P3091 (31/10/2026, owner request): 1 -> 4 ok uploads / 24 h, spacing stays 120 min;
+    // +1 extra slot / 24 h only for a release_held (publish-hold binary search) dispatch.
+    minIntervalMin: 120, maxSuccessPer24h: 4, releaseHeldExtraPer24h: 1,
     // P3048: >= 2 h since the last upload of ANY of the 3 apps before a master upload.
     crossAppMinIntervalMin: 120,
     ci: ['syntax-check.yml', 'unified-ci.yml', 'node22-tests.yml', 'homey-app-validate.yml'],
@@ -70,6 +72,7 @@ function appPolicy(appId, env = process.env) {
     minIntervalMin: num(env.ATHOM_MIN_INTERVAL_MIN, base.minIntervalMin),
     maxSuccessPer24h: num(env.ATHOM_MAX_SUCCESS_PER_24H, base.maxSuccessPer24h),
     crossAppMinIntervalMin: num(env.ATHOM_CROSS_APP_MIN_INTERVAL_MIN, base.crossAppMinIntervalMin || 0),
+    releaseHeldExtraPer24h: num(env.ATHOM_RELEASE_HELD_EXTRA_PER_24H, base.releaseHeldExtraPer24h || 0),
     ci: ci.length ? ci : base.ci.slice(),
   };
 }
@@ -256,10 +259,13 @@ function slotDecision({ appId, builds, outcomes, snapshotOk = true, eventName, t
     return { go: false, reason: `last upload ${Math.round((nowMs - last.t) / 60000)} min ago < ${p.minIntervalMin} min (next slot in ~${left} min)`, deferred: true };
   }
   const ok24 = ev.filter((e) => nowMs - e.t < 24 * 3600000 && /^(test|live|approved)$/i.test(e.state)).length;
-  if (ok24 >= p.maxSuccessPer24h) {
-    return { go: false, reason: `${ok24} successful upload(s) in 24 h >= ${p.maxSuccessPer24h}`, deferred: true };
+  // P3091: a release_held dispatch (non-empty PUBLISH_HOLD_RELEASE) gets releaseHeldExtraPer24h more.
+  const held = String((env && env.PUBLISH_HOLD_RELEASE) || '').trim() !== '';
+  const cap = p.maxSuccessPer24h + (held ? (p.releaseHeldExtraPer24h || 0) : 0);
+  if (ok24 >= cap) {
+    return { go: false, reason: `${ok24} successful upload(s) in 24 h >= ${cap}${held ? ' (incl. release_held allowance)' : ''}`, deferred: true };
   }
-  return { go: true, reason: `slot free (min ${p.minIntervalMin} min, ${ok24}/${p.maxSuccessPer24h} ok in 24 h)`, deferred: false };
+  return { go: true, reason: `slot free (min ${p.minIntervalMin} min, ${ok24}/${cap} ok in 24 h${held ? ', release_held' : ''})`, deferred: false };
 }
 
 function isTrue(v) { return /^(1|true|yes)$/i.test(String(v === undefined || v === null ? '' : v).trim()); }
