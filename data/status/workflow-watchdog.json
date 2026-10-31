@@ -1,19 +1,18 @@
 {
-  "at": "2026-10-30T11:23:24.829Z",
+  "at": "2026-10-31T10:55:09.486Z",
   "checked": 51,
   "findings": [
     {
       "kind": "repeated-failure",
       "sig": "ci-28d56709ef60",
       "wf": ".github/workflows/daily-digest.yml",
-      "detail": "3 failures in 72 h: 🤖 Daily Digest failed on master (🧭 Inspiration JohanBendz + own repo + git history (read-only) / 🧭 Inspiration scan: code-or-test)",
-      "issue": 583
+      "detail": "4 failures in 72 h: 🤖 Daily Digest failed on master (🧭 Inspiration JohanBendz + own repo + git history (read-only) / 🧭 Inspiration scan: code-or-test)"
     },
     {
       "kind": "repeated-failure",
       "sig": "ci-88dfdae1295f",
       "wf": ".github/workflows/daily-digest.yml",
-      "detail": "3 failures in 72 h: 🤖 Daily Digest failed on master (🏠 Homey digest / 🏠 Homey digest: code-or-test)"
+      "detail": "4 failures in 72 h: 🤖 Daily Digest failed on master (🏠 Homey digest / 🏠 Homey digest: code-or-test)"
     }
   ]
 }
