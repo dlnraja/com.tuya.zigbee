@@ -19,7 +19,12 @@ function hidden(p) {
   return IGN.some((i) => s === i || s.startsWith(i + path.sep));
 }
 
+// P3098: patch ONLY when loaded with `node -r` (perf harness child). `mocha --recursive` also loads this
+// file as a spec in the runner process; the global patch then hid data/manufacturers.json & co. for every
+// later test (order-dependent flakes: runtime-relative-requires, R20 identifier audit, padded-mfr allowlist).
+const viaPreload = process.execArgv.some((a) => a.includes('shipped-payload-preload'))
+  || process.env.SHIPPED_PAYLOAD_PRELOAD === '1';
 const ex = fs.existsSync;
-fs.existsSync = (p) => (hidden(p) ? false : ex(p));
+if (viaPreload) {fs.existsSync = (p) => (hidden(p) ? false : ex(p));}
 
 module.exports = { hidden, IGNORED: IGN };
