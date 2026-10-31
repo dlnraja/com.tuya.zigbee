@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-31T18:39:17.465Z",
+ "updated": "2026-10-31T21:13:59.082Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -80,6 +80,18 @@
    "status": "in_progress",
    "date": "2026-10-25",
    "note": "attempt 1/3 (24h) runs 40147508102,40162040962: P3035 re-sync app.json from compose before staging in Commit fixes",
+   "by": "homey-ci-autofix"
+  },
+  "autofix:node22-runtime-tests|mocha|p3077-p3080-bot-reinject": {
+   "status": "done",
+   "date": "2026-10-31",
+   "note": "attempt 1/3 (24h) run 41227184890: bot bump 2584efaf51 re-added HOBEIAN forms on sensor_contact_zigbee (p61 re-inject) and 'sonoff' on curtain_sonoff_mini_zbrbs (case variants); P3089 couple-locks make both scripts honour P3077 moves and exact-identity drivers; compose + app.json regenerated",
+   "by": "homey-ci-autofix"
+  },
+  "autofix:node22-tests.yml|yaml-parse|unquoted-colon-step-name": {
+   "status": "done",
+   "date": "2026-10-31",
+   "note": "attempt 1/3 (24h) runs 41236619880/41236619776/41236619823/41236618888 on 97f12a4d37: P3092 step name had an unquoted colon+space so node22-tests.yml did not parse (self-check, syntax-check, unified-ci red); P3094 quotes it and adds a parse + unquoted-colon test",
    "by": "homey-ci-autofix"
   },
   "autopilot-issue:550": {
@@ -6535,6 +6547,15 @@
    "kind": "general",
    "mailDate": "2026-10-18T23:06:29.000Z"
   },
+  "diag:0e84faf802993ee7": {
+   "status": "done",
+   "date": "2026-10-31",
+   "hash": "542ce3ee759c176b",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-31T17:42:34.000Z"
+  },
   "diag:0f01d0a3d85592ee": {
    "status": "done",
    "date": "2026-10-25",
@@ -6850,6 +6871,15 @@
    "by": "tuya-deep-diag",
    "kind": "general",
    "mailDate": "2026-10-18T22:17:12.000Z"
+  },
+  "diag:1f40140dc1a536cb": {
+   "status": "done",
+   "date": "2026-10-31",
+   "hash": "79ec4efb59c42252",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-31T19:22:59.000Z"
   },
   "diag:1f73a93a1ad3234a": {
    "status": "done",
@@ -7541,6 +7571,15 @@
    "by": "tuya-deep-diag",
    "kind": "general",
    "mailDate": "2026-10-19T07:01:36.000Z"
+  },
+  "diag:383c49e6eb6caa8f": {
+   "status": "done",
+   "date": "2026-10-31",
+   "hash": "6f5c9ca638f80694",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-31T17:42:20.000Z"
   },
   "diag:38c7b62fbb08bdff": {
    "status": "done",
@@ -8366,6 +8405,15 @@
    "mailDate": "2026-10-21T12:19:13.000Z",
    "errors": 1
   },
+  "diag:5cf884580029ac97": {
+   "status": "done",
+   "date": "2026-10-31",
+   "hash": "3bfde2bda1271fda",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-31T20:35:39.000Z"
+  },
   "diag:5dc20464f03bf6ae": {
    "status": "done",
    "date": "2026-10-24",
@@ -8691,6 +8739,15 @@
    "kind": "general",
    "mailDate": "2026-10-19T06:41:14.000Z"
   },
+  "diag:6ca7062d6826b7c8": {
+   "status": "done",
+   "date": "2026-10-31",
+   "hash": "dd4d8032cc859258",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-31T20:35:50.000Z"
+  },
   "diag:6ce60beddca73431": {
    "status": "done",
    "date": "2026-10-24",
@@ -8772,6 +8829,15 @@
    "kind": "bug_report",
    "mailDate": "2026-10-19T17:15:45.000Z",
    "errors": 1
+  },
+  "diag:72905a262f1ec37f": {
+   "status": "done",
+   "date": "2026-10-31",
+   "hash": "ac0d6d4f68b9c402",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-31T19:22:49.000Z"
   },
   "diag:7351998d53fb0884": {
    "status": "done",
@@ -8956,6 +9022,15 @@
    "by": "gmail-diagnostics",
    "kind": "github",
    "mailDate": "2026-10-20T14:31:57.000Z"
+  },
+  "diag:7e73d5b71f3a5af4": {
+   "status": "done",
+   "date": "2026-10-31",
+   "hash": "71525dc34ca3139f",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-31T20:35:53.000Z"
   },
   "diag:7e84854be2867167": {
    "status": "done",
@@ -9186,6 +9261,25 @@
    "kind": "general",
    "mailDate": "2026-10-19T04:54:51.000Z"
   },
+  "diag:89fbec99e0256172": {
+   "status": "pending",
+   "date": "2026-10-31",
+   "hash": "d91e90c3e53bfab4",
+   "note": "diagnostic mail; 1 couple(s); 4 error line(s)",
+   "by": "gmail-diagnostics",
+   "kind": "diagnostic",
+   "mailDate": "2026-10-31T18:24:17.000Z",
+   "appVersion": "1.0.218",
+   "couples": [
+    "_TZ3000_vsxvaj9i|TS0043"
+   ],
+   "drivers": [
+    "button_wireless_3",
+    "switch_4gang",
+    "switch_1gang"
+   ],
+   "errors": 4
+  },
   "diag:8a17f42eebb44baf": {
    "status": "done",
    "date": "2026-10-24",
@@ -9334,6 +9428,16 @@
    "kind": "github",
    "mailDate": "2026-10-26T17:02:29.000Z"
   },
+  "diag:91ae5a25475c98db": {
+   "status": "pending",
+   "date": "2026-10-31",
+   "hash": "46f727edf8d878e9",
+   "note": "bug_report mail; 1 error line(s)",
+   "by": "gmail-diagnostics",
+   "kind": "bug_report",
+   "mailDate": "2026-10-31T21:03:52.000Z",
+   "errors": 1
+  },
   "diag:91b79936d79164fa": {
    "status": "done",
    "date": "2026-10-20",
@@ -9431,6 +9535,15 @@
    "kind": "bug_report",
    "mailDate": "2026-10-24T22:08:00.000Z",
    "errors": 1
+  },
+  "diag:9432024c7ae72bd9": {
+   "status": "done",
+   "date": "2026-10-31",
+   "hash": "086a75ed9e3ea139",
+   "note": "github mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "github",
+   "mailDate": "2026-10-31T17:15:09.000Z"
   },
   "diag:952dc8fababfdb66": {
    "status": "done",
@@ -10611,6 +10724,15 @@
    "kind": "general",
    "mailDate": "2026-10-20T07:15:56.000Z"
   },
+  "diag:c7ce278c3eac527b": {
+   "status": "done",
+   "date": "2026-10-31",
+   "hash": "0158454a95d7e227",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-31T21:03:37.000Z"
+  },
   "diag:c9620d466a0f111b": {
    "status": "done",
    "date": "2026-10-25",
@@ -10656,6 +10778,15 @@
    "kind": "general",
    "mailDate": "2026-10-21T13:19:59.000Z"
   },
+  "diag:cbbf29e75bfdd152": {
+   "status": "done",
+   "date": "2026-10-31",
+   "hash": "dd501f676e6b2c50",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-31T19:23:06.000Z"
+  },
   "diag:cbcf33f6b5ffa98e": {
    "status": "done",
    "date": "2026-10-28",
@@ -10683,6 +10814,15 @@
    "kind": "bug_report",
    "mailDate": "2026-10-21T12:03:22.000Z",
    "errors": 1
+  },
+  "diag:cd8f596c37356dbf": {
+   "status": "done",
+   "date": "2026-10-31",
+   "hash": "0ee48f5d905f9767",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-31T19:11:09.000Z"
   },
   "diag:ceede2cdb8ffe045": {
    "status": "done",
@@ -11415,6 +11555,15 @@
    "by": "tuya-deep-diag",
    "kind": "general",
    "mailDate": "2026-10-19T15:07:12.000Z"
+  },
+  "diag:ef0a2de6c87dc2e6": {
+   "status": "done",
+   "date": "2026-10-31",
+   "hash": "a79dd848a8a3a1b6",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-10-31T17:44:28.000Z"
   },
   "diag:ef56f35cd6e6b1a8": {
    "status": "done",
@@ -43843,18 +43992,6 @@
     "leadsAdded": 0
    },
    "lastChangeRun": "41203507762"
-  },
-  "autofix:node22-runtime-tests|mocha|p3077-p3080-bot-reinject": {
-   "status": "done",
-   "date": "2026-10-31",
-   "note": "attempt 1/3 (24h) run 41227184890: bot bump 2584efaf51 re-added HOBEIAN forms on sensor_contact_zigbee (p61 re-inject) and 'sonoff' on curtain_sonoff_mini_zbrbs (case variants); P3089 couple-locks make both scripts honour P3077 moves and exact-identity drivers; compose + app.json regenerated",
-   "by": "homey-ci-autofix"
-  },
-  "autofix:node22-tests.yml|yaml-parse|unquoted-colon-step-name": {
-   "status": "done",
-   "date": "2026-10-31",
-   "note": "attempt 1/3 (24h) runs 41236619880/41236619776/41236619823/41236618888 on 97f12a4d37: P3092 step name had an unquoted colon+space so node22-tests.yml did not parse (self-check, syntax-check, unified-ci red); P3094 quotes it and adds a parse + unquoted-colon test",
-   "by": "homey-ci-autofix"
   }
  }
 }
