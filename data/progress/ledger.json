@@ -2,7 +2,13 @@
  "version": 1,
  "updated": "2026-10-25T19:45:00.000Z",
  "checkpoints": {
-  "journal": "docs/progress/JOURNAL.md"
+  "journal": "docs/progress/JOURNAL.md",
+  "p3092-autofix-bastien-changelog-dup": {
+   "status": "done",
+   "date": "2026-10-31",
+   "note": "autofix attempt 1/3, signature node22-tests|Full suite on Node 22|p3075 changelog ceiling 118>117; cause: write-back v1.0.219 repeated the v1.0.218 maintenance note (counted as duplicate); fix: precise 1.0.219 note + updateChangelog prefixes the version when the generated note equals the previous one (+test p3092)",
+   "by": "homey-ci-prs"
+  }
  },
  "items": {
   "p3044-golden-refresh-bastien-home": {
