@@ -27,7 +27,25 @@ const {
   mergeManufacturerCaseVariants,
   pairingCaseVariants,
 } = require('../../lib/utils/TuyaNormalizer');
-const { isForbiddenPlacement } = require('../../lib/pairing/UserMisattributionRegistry');
+const { isForbiddenPlacement: registryForbidden } = require('../../lib/pairing/UserMisattributionRegistry');
+// P3093 (#557): the 31/10 17:00 run re-added _tze200_vrcfo4i0 on contact_sensor, a curated removal (P2759);
+// safe-auto-commit's couple guard then refused the whole commit. Ask the same locks before placing.
+const ROOT_P3093 = path.join(__dirname, '..', '..');
+let curatedDeny = null;
+function curatedRemoved(mfr, driverId) {
+  if (!curatedDeny) {
+    curatedDeny = new Set();
+    try {
+      const d = JSON.parse(fs.readFileSync(path.join(ROOT_P3093, 'config/architecture/curated-couple-removals.json'), 'utf8'));
+      for (const r of d.removals || []) for (const m of r.mfr || []) curatedDeny.add(`${r.driver}|${String(m).toLowerCase()}`);
+    } catch (_) { /* no list on this branch */ }
+  }
+  return curatedDeny.has(`${driverId}|${String(mfr || '').toLowerCase()}`);
+}
+function isForbiddenPlacement(mfr, driverId) {
+  if (registryForbidden(mfr, driverId) || curatedRemoved(mfr, driverId)) return true;
+  try { return !!require('../../scripts/lib/couple-locks').retiredOn(ROOT_P3093, driverId, mfr); } catch (_) { return false; }
+}
 
 const args = process.argv.slice(2);
 const APPLY = args.includes('--apply');
@@ -839,4 +857,5 @@ function main() {
   process.exit(0);
 }
 
-main();
+module.exports = { isForbiddenPlacement };
+if (require.main === module) main();

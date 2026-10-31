@@ -105,6 +105,7 @@ jobs:
           if git diff --cached --name-only | grep -q '^\.github/workflows/'; then
             echo "::error::workflow files staged, refusing to commit them"; exit 1
           fi
+          [ -f scripts/ci/bot-commit-guard.sh ] && { bash scripts/ci/bot-commit-guard.sh || exit 1; }  # P3093
           git commit -m "docs(knowledge): weekly Homey SDK/news/tooling refresh [skip ci]"
           git push -u origin "$b"
           gh pr create --draft --base "${GITHUB_REF_NAME}" --head "$b" \

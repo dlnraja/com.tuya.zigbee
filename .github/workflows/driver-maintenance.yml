@@ -159,7 +159,7 @@ jobs:
           done
 
       - name: Validate Homey App (publish)
-        run: npx homey app validate --level publish
+        run: bash scripts/ci/homey-validate-safe.sh --level publish
 
       - name: Create Pull Request
         if: steps.scaffold.outputs.has_changes == 'true' && inputs.dry_run != true

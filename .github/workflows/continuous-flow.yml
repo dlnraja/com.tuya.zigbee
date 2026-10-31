@@ -187,7 +187,7 @@ jobs:
         id: validate
         run: |
           set +e
-          OUTPUT=$(npx homey app validate --level publish 2>&1)
+          OUTPUT=$(bash scripts/ci/homey-validate-safe.sh --level publish 2>&1)
           EXIT=$?
           set -e
           echo "$OUTPUT" | tail -50

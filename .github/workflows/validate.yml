@@ -181,7 +181,7 @@ jobs:
           echo "✅ $MISS missing image(s)"
 
       - name: 🔍 Validate (npx)
-        run: npx homey app validate --level ${{ inputs.level || 'publish' }}
+        run: bash scripts/ci/homey-validate-safe.sh --level ${{ inputs.level || 'publish' }}
 
       - name: 🧹 Sanitize generated manifest after validation
         run: node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json

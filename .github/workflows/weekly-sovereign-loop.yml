@@ -122,6 +122,7 @@ jobs:
             exit 0
           fi
           # Commit BEFORE pull — avoids "index contains uncommitted changes" rebase failure
+          [ -f scripts/ci/bot-commit-guard.sh ] && { bash scripts/ci/bot-commit-guard.sh || exit 1; }  # P3093
           git commit -m "chore(P136): weekly sovereign loop report [skip ci]" || exit 0
           # Verified push — P3025 shared bounded rebase-retry (step continue-on-error handles soft failure)
           bash .github/scripts/git-push-retry.sh --branch master

@@ -118,6 +118,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/sources/state.json data/leads/source-proposals.json
           git diff --cached --quiet && exit 0
+          [ -f scripts/ci/bot-commit-guard.sh ] && { bash scripts/ci/bot-commit-guard.sh || exit 1; }  # P3093
           git commit -m "chore(sources): registry ingestion cursors + proposals [skip ci]"
           # P3025: shared race-safe push; --prefer-local = old "-X theirs" (bot cursor wins on its own state file)
           bash .github/scripts/git-push-retry.sh --branch "${GITHUB_REF_NAME}" --prefer-local && exit 0

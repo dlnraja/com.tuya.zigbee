@@ -104,7 +104,7 @@ jobs:
             node tools/ci/flow-titleformatted-args-gate.js || exit 1
           fi
           set +e
-          OUTPUT=$(npx homey app validate --level publish 2>&1)
+          OUTPUT=$(bash scripts/ci/homey-validate-safe.sh --level publish 2>&1)
           EXIT=$?
           set -e
           echo "$OUTPUT" > /tmp/master-validate.txt
@@ -194,7 +194,7 @@ jobs:
             node tools/ci/assert-compose-drivers-exist.js || true
           fi
           set +e
-          OUTPUT=$(npx homey app validate --level publish 2>&1)
+          OUTPUT=$(bash scripts/ci/homey-validate-safe.sh --level publish 2>&1)
           EXIT=$?
           set -e
           echo "$OUTPUT" > /tmp/stable-validate.txt
