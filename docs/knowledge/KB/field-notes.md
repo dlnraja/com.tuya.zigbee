@@ -53,4 +53,5 @@
 - [Gledopto GL-SPI-206P (`led_controller_spi_tuya`) — runtime fix + Athom status (2026-10-10)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/GLEDOPTO_SPI_206P_FIX_2026-10-10.md)
 - [HOBEIAN ZG-101ZS = _TZ3000_bgtzm4ny + TS0044 → scene_switch_4 (2026-10-11, Paris)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/HOBEIAN_ZG101ZS_SCENE_SWITCH_2026-10-11.md)
 - [Device peculiarities — cross-source investigation](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/PECULIARITIES.md)
+- [Soil sensors pairing as "unknown" (#570 AOYAN AY-303Z, #571 QT-07S _TZE284_myd45weu), 2026-10-13](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/SOIL_PAIRING_570_571_2026-10-13.md)
 - [Z2M generic device options → ideas for Homey (ideas only, nothing implemented)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/Z2M_GENERIC_CONCEPTS.md)

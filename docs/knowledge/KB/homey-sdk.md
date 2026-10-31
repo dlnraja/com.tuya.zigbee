@@ -16,6 +16,7 @@ Related notes:
 - [Homey firmware & Zigbee stack: research notes (2026-10-10)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/HOMEY_FIRMWARE.md)
 - [Homey news 2025-2026: what it means for this app (queue #101-#106)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/HOMEY_NEWS_2026_AUDIT.md)
 - [Homey SDK, CLI and developer news — October 2026 (our summary)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/HOMEY_SDK_NEWS_2026-10.md)
+- [Homey SDK v3 rules — sourced, tested, automated (P2964)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/HOMEY_SDK_RULES.md)
 - [Homey versions strictly incremental — all apps (rule from dlnraja, 2026-10-10)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/HOMEY_VERSION_FLOOR.md)
 - [P2933 / P2934 — Homey diag reports via Gmail + Aqara DJT11LM (2026-10-21)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/P2933_P2934_GMAIL_DIAG_AND_DJT11LM_2026-10-21.md)
 - [Battery multi-button remotes — TS0041 / TS0042 / TS0043 / TS0044 / TS004F](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/TS004X_BATTERY_REMOTES.md)
