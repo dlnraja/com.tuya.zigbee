@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-31T12:56:45.838Z",
+ "updated": "2026-10-31T13:03:11.723Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -217,6 +217,30 @@
    "counts": {
     "dps": 0,
     "diag": 0,
+    "fixCommits": 0
+   }
+  },
+  "autopilot-issue:584": {
+   "status": "pending",
+   "date": "2026-10-31",
+   "hash": "64dab8addd223b7a",
+   "note": "fix-in-code: supported, symptom(s): unknown-device; owner replies (draft in autopilot report), never auto-closed",
+   "by": "repo-autopilot",
+   "kind": "fix-in-code",
+   "author": "stephanmaastricht",
+   "link": "https://github.com/dlnraja/com.tuya.zigbee/issues/584",
+   "mfrs": [
+    "_TZE284_awepdiwi"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "drivers": [
+    "soil_sensor"
+   ],
+   "counts": {
+    "dps": 0,
+    "diag": 1,
     "fixCommits": 0
    }
   },
@@ -43794,19 +43818,19 @@
   },
   "workflow-run:repo-autopilot": {
    "status": "pending",
-   "date": "2026-10-29",
-   "hash": "04c28970552be996",
+   "date": "2026-10-31",
+   "hash": "248b706fbc20cb3c",
    "note": "run reported ok=false",
    "by": "repo-autopilot",
    "counts": {
     "closed": 0,
     "merged": 0,
     "branchesDeleted": 0,
-    "issues": 4,
+    "issues": 5,
     "external": 0,
     "leadsAdded": 0
    },
-   "lastChangeRun": "40883875598"
+   "lastChangeRun": "41203507762"
   }
  }
 }
