@@ -223,12 +223,21 @@ jobs:
           fi
 
       # P2326: pull Homey crash/diags by UUID from forum media + known inbox codes
+      # P3088: .github/state/** must stay untracked (security scanner), so the diag folder lives in the
+      # Actions cache like the Gmail state above; bounded by scripts/ci/homey-app-diag-index.js.
+      - name: Restore homey-app-diag (cache)
+        uses: actions/cache/restore@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+        with:
+          path: .github/state/homey-app-diag
+          key: homey-app-diag-${{ github.run_id }}
+          restore-keys: homey-app-diag-
       - name: "P2326 Inbox diag UUID harvest + Athom fetch"
         if: always()
         continue-on-error: true
         timeout-minutes: 15
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          HOMEY_REFRESH_TOKEN: ${{ secrets.HOMEY_REFRESH_TOKEN }}
           HOMEY_API_TIMEOUT_MS: "60000"
         run: |
           echo "## P2326 inbox diag UUID harvest" >> "$GITHUB_STEP_SUMMARY"
@@ -236,13 +245,15 @@ jobs:
             node tools/ci/forum-media-deep-scan.js --max=20 --topics=140352,89271 || true
           fi
           if [ -f tools/ci/inbox-diag-uuid-harvest.js ]; then
-            if [ -n "${HOMEY_PAT:-}" ]; then
+            if [ -n "${HOMEY_PAT:-}${HOMEY_REFRESH_TOKEN:-}" ]; then
               node tools/ci/inbox-diag-uuid-harvest.js --fetch --max=8 || echo "uuid harvest warn"
             else
               node tools/ci/inbox-diag-uuid-harvest.js || echo "uuid list warn"
             fi
           fi
           node .github/scripts/privacy-redactor.js .github/state/inbox-diag-harvest .github/state/homey-app-diag || true
+          # P3088: folder always exists; bounded index (50 reports on disk, 200 rows / 64 KB, no stack/payload)
+          node scripts/ci/homey-app-diag-index.js || echo "::warning::homey-app-diag index failed"
           if [ -f .github/state/inbox-diag-harvest/latest.json ]; then
             echo '```json' >> "$GITHUB_STEP_SUMMARY"
             head -c 2000 .github/state/inbox-diag-harvest/latest.json >> "$GITHUB_STEP_SUMMARY" || true
@@ -380,6 +391,24 @@ jobs:
           else
             echo "No sanitized diagnostic state changes to push"
           fi
+
+      - name: Save homey-app-diag (cache)
+        if: always()
+        continue-on-error: true
+        uses: actions/cache/save@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+        with:
+          path: .github/state/homey-app-diag
+          key: homey-app-diag-${{ github.run_id }}
+      - name: Upload homey-app-diag index (sanitized)
+        if: always()
+        continue-on-error: true
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0 (node24, P3025b)
+        with:
+          name: homey-app-diag-index
+          path: |
+            .github/state/homey-app-diag/index.json
+          if-no-files-found: warn
+          retention-days: 30
 
       - name: Assert Gmail diagnostics access
         if: always() && steps.gmail_fetch.outputs.exit_code != '0' && github.event.inputs.require_access == 'true'
