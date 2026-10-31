@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-31T22:57:45.317Z",
+ "updated": "2026-10-31T23:29:17.744Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -20104,6 +20104,18 @@
    "author": "SergeP",
    "link": "https://community.homey.app/t/99614/324",
    "images": 3
+  },
+  "forum-post:99614/328": {
+   "status": "pending",
+   "date": "2026-10-31",
+   "hash": "c7c39dfbc77cb2e8",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 99614,
+   "post": 328,
+   "author": "SergeP",
+   "link": "https://community.homey.app/t/99614/328",
+   "images": 2
   },
   "forum:140352#1000": {
    "status": "deferred",
