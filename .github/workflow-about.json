@@ -350,6 +350,18 @@
     "weekly-sovereign-loop.yml": {
       "group": "autopilot",
       "what": "Weekly heavy pass on free GitHub minutes; later automation only reads its report."
+    },
+    "autonomy-watchdog.yml": {
+      "group": "autopilot",
+      "what": "Daily: personal-data check on the three branches, re-runs any core job that stopped succeeding, and a Monday cross-branch parity report. Honours the pause file."
+    },
+    "upstream-watch.yml": {
+      "group": "kb",
+      "what": "Daily: compares Homey SDK, Athom and Z2M/ZHA versions through public APIs and keeps one digest issue up to date. Never posts elsewhere."
+    },
+    "crash-triage.yml": {
+      "group": "autopilot",
+      "what": "After Fetch Diagnostics and daily: groups crashes by signature, ranks impact × installs, keeps one tracking issue per signature in this repo with a safe-pattern fix proposal. No external post."
     }
   }
 }
