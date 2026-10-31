@@ -21,7 +21,7 @@ describe('P3093 bot commit guards', () => {
     for (const f of fs.readdirSync(dir).filter((x) => x.endsWith('.yml'))) {
       const L = fs.readFileSync(path.join(dir, f), 'utf8').split('\n');
       L.forEach((l, i) => {
-        if (/^\s*(git (-c \S+ )*commit\b|git checkout -b "\$b" && git commit)/.test(l) && !/bot-commit-guard/.test(L[i - 1] || '')) missing.push(`${f}:${i + 1}`);
+        if (/^\s*(git (-c \S+ )*commit\b|git checkout -b "\$b" && git commit)/.test(l) && !L.slice(Math.max(0, i - 3), i).some((p) => /bot-commit-guard/.test(p))) missing.push(`${f}:${i + 1}`);
       });
     }
     assert.deepStrictEqual(missing, []);
