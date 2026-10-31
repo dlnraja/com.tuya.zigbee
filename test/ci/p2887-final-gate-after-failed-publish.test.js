@@ -8,7 +8,9 @@ const ROOT = path.join(__dirname, '..', '..');
 describe('P2887 final gate after a failed publish step', () => {
   const y = fs.readFileSync(path.join(ROOT, '.github/workflows/auto-publish-on-push.yml'), 'utf8');
   const i = y.indexOf('- name: Athom final state gate (red unless Test)');
-  const block = y.slice(i, i + 4000);
+  // P3099: the step grew past 4000 chars (P3095 verdict artifact), so slice to the next step instead of a fixed window.
+  const next = i >= 0 ? y.indexOf('\n      - name: ', i + 10) : -1;
+  const block = y.slice(i, next > i ? next : i + 12000);
   it('runs on publish success and on publish failure', () => {
     assert.ok(i > 0);
     assert.match(block, /if: always\(\) && \(steps\.pub\.outcome == 'success' \|\| steps\.pub\.outcome == 'failure'\)/);
