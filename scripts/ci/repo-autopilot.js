@@ -85,6 +85,23 @@ function localGate(pr) {
   } finally { run('git', ['worktree', 'remove', '--force', dir], ROOT); }
 }
 
+function resyncBranch(pr) {
+  // P3090 — merge the base into a regenerable bot branch, base wins on conflicting hunks; plain push
+  // (fast-forward of the bot branch only, never a protected branch).
+  if (R.PROTECTED_BRANCHES.has(pr.headRef)) {return false;}
+  const dir = path.join(ROOT, '..', `autopilot-resync-${pr.number}`);
+  const run = (cmd, args, cwd) => spawnSync(cmd, args, { cwd, encoding: 'utf8', timeout: 300000 });
+  if (run('git', ['fetch', '--no-tags', 'origin', pr.baseRef, pr.headRef], ROOT).status !== 0) {return false;}
+  run('git', ['worktree', 'remove', '--force', dir], ROOT);
+  if (run('git', ['worktree', 'add', '--detach', dir, `origin/${pr.headRef}`], ROOT).status !== 0) {return false;}
+  try {
+    const id = ['-c', 'user.name=github-actions[bot]', '-c', 'user.email=41898282+github-actions[bot]@users.noreply.github.com'];
+    if (run('git', [...id, 'merge', '--no-edit', '-X', 'theirs', `origin/${pr.baseRef}`, '-m', `chore(autopilot): re-sync ${pr.headRef} with ${pr.baseRef} (base wins on generated data)`], dir).status !== 0) {return false;}
+    if (DRY) {return true;}
+    return run('git', ['push', 'origin', `HEAD:refs/heads/${pr.headRef}`], dir).status === 0;
+  } finally { run('git', ['worktree', 'remove', '--force', dir], ROOT); }
+}
+
 function fixCommitsFor(n) {
   const r = spawnSync('git', ['log', '-n', '40', '--format=%H%x09%s', '-E', `--grep=#${n}([^0-9]|$)`, 'HEAD'], { cwd: ROOT, encoding: 'utf8' });
   if (r.status !== 0) {return [];}
@@ -100,7 +117,7 @@ async function main() {
   // ---- PRs ----
   const all = (await gh(`/repos/${REPO}/pulls?state=all&per_page=100&sort=created&direction=desc`)).map(normPr);
   const open = all.filter((p) => p.state === 'open').slice(0, MAX_PRS);
-  let merges = 0; let gatesRun = 0;
+  let merges = 0; let gatesRun = 0; let resyncs = 0;
   for (const pr of open) {
     try {
       const origin = R.prOrigin(pr, OWNER);
@@ -116,7 +133,10 @@ async function main() {
       let d = R.decidePr(pr, ctx);
       if (d.needsLocalGate && LOCAL_GATE && gatesRun < 1) { gatesRun++; ctx.localGate = localGate(pr); d = R.decidePr(pr, ctx); }
       const row = { number: pr.number, headRef: pr.headRef, author: pr.author, origin, draft: pr.draft, behindBy: ctx.behindBy, ...d, done: false };
-      if (d.action === 'close') {
+      if (d.action === 'resync') {
+        if (resyncs >= 2) { row.action = 'hold'; row.reason = 'resync cap 2 reached this run'; }
+        else { resyncs++; row.done = resyncBranch(pr); if (!row.done) {row.action = 'hold'; row.reason += ' (resync failed)';} }
+      } else if (d.action === 'close') {
         await write(`/repos/${REPO}/pulls/${pr.number}`, { method: 'PATCH', body: { state: 'closed' } });
         row.done = !DRY; pr.state = 'closed';
       } else if (d.action === 'merge') {
