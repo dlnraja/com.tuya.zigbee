@@ -1,0 +1,67 @@
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: Daily: compares Homey SDK, Athom and Z2M/ZHA versions through public APIs and keeps one digest
+#   issue up to date. Never posts elsewhere.
+# Ideas from (thank you): Koen Kanters and the zigbee-herdsman-converters contributors; zigpy / ZHA, deCONZ,
+#   tuya-local, tinytuya and localtuya authors; Blakadder's Zigbee device database.
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
+#   posting stays off or ledger-gated.
+# <<< about
+# Upstream watch (P3097, t645u) — free, daily, public APIs + GITHUB_TOKEN, ETag cache, stops on rate limit.
+# One digest issue in this repo only; no external posting. Forum is covered by forum-poll.yml.
+name: Upstream watch (P3097)
+
+defaults:
+  run:
+    shell: bash
+
+on:
+  schedule:
+    - cron: '37 6 * * *'
+  workflow_dispatch:
+
+env:
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: upstream-watch
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GITHUB_TOKEN: ${{ github.token }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+      - name: Kill switch
+        id: ks
+        run: |
+          if ! node scripts/ci/autonomy-learn.js paused watch; then echo "paused=true" >> "$GITHUB_OUTPUT"; fi
+      - name: Check upstream sources
+        if: steps.ks.outputs.paused != 'true'
+        run: node scripts/ci/upstream-watch.js
+      - name: Update the single digest issue
+        if: steps.ks.outputs.paused != 'true'
+        run: |
+          [ -s upstream-digest.md ] || exit 0
+          n=$(gh issue list --state open --search 'in:title "Upstream watch digest"' --json number -q '.[0].number')
+          if [ -n "$n" ]; then gh issue comment "$n" --body-file upstream-digest.md
+          else gh issue create --title "Upstream watch digest" --body-file upstream-digest.md; fi
+      - name: Save state (through bot-commit-guard)
+        if: steps.ks.outputs.paused != 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .github/state/upstream-watch.json
+          git diff --cached --quiet && exit 0
+          bash scripts/ci/bot-commit-guard.sh
+          git commit -m "chore(state): upstream watch [skip ci]"
+          git pull --rebase origin "${GITHUB_REF_NAME}" && git push
