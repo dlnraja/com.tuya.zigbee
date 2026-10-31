@@ -4312,6 +4312,10 @@
   "5.12.0": {
     "en": "v5.12.0: stable-v5 batch sync (drivers, FPs, flows, manifest) from master v9.0.240–v9.0.260."
   },
+  "1.0.221": {
+    "en": "Fixed: smart plugs & energy meters (TS011F).",
+    "fr": "Corrigé : prises connectées & compteurs d'énergie (TS011F)."
+  },
   "1.0.220": {
     "en": "Reliability: 1 small fix in the app core.",
     "fr": "Fiabilité : 1 petite correction dans le cœur de l'app."
