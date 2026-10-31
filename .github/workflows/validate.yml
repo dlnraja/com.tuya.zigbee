@@ -173,7 +173,7 @@ jobs:
           echo "✅ $MISS missing image(s)"
 
       - name: 🔍 Validate (npx)
-        run: npx homey app validate --level ${{ inputs.level || 'publish' }}
+        run: bash scripts/ci/homey-validate-safe.sh --level ${{ inputs.level || 'publish' }}
 
       - name: 🧹 Sanitize generated manifest after validation
         run: node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json
@@ -191,7 +191,7 @@ jobs:
         if: failure()
         run: |
           echo "## ❌ Validation Failed" >> $GITHUB_STEP_SUMMARY
-          echo "Run \`npx homey app validate --level publish\` locally for details." >> $GITHUB_STEP_SUMMARY
+          echo "Run \`bash scripts/ci/homey-validate-safe.sh --level publish\` locally for details." >> $GITHUB_STEP_SUMMARY
       # P3069: short summary through the shared helper, on success and on failure.
       - name: Short summary (shared report helper)
         if: always()

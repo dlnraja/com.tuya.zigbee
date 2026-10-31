@@ -179,7 +179,7 @@ jobs:
           cat reports/monthly-$(date +%Y%m).json >> $GITHUB_STEP_SUMMARY
 
       - name: 🔨 Validate app
-        run: npx homey app validate --level publish
+        run: bash scripts/ci/homey-validate-safe.sh --level publish
 
       - name: 📝 Commit changes (if any)
         if: ${{ !inputs.dry_run }}
@@ -197,6 +197,7 @@ jobs:
             F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l || true)
             VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
             if ! git diff --staged --quiet; then
+              [ -f scripts/ci/bot-commit-guard.sh ] && { bash scripts/ci/bot-commit-guard.sh || exit 1; }  # P3093
               git commit -m "Device enrichment v${VER} $(date +%Y-%m): ${D} drivers, ${F} FPs [skip ci]"
               bash scripts/ci/verified-git-push.sh master
               echo "### ✅ Changes committed" >> $GITHUB_STEP_SUMMARY

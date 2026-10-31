@@ -64,6 +64,8 @@ jobs:
       # P3057-3: mocha exits with its own count, so node:test failures (process.exitCode) never failed this job.
       # Strict step: every node:test file under `node --test`; a failure fails the job unless it is in the
       # branch's frozen baseline (test/node-test-known-failures.json, may only shrink).
+      - name: 'Workflow lessons gate (P3092 — moved couples + ZCL aliases)'
+        run: node tools/ci/workflow-lessons-gate.js
       - name: node:test strict (P3057-3)
         if: always()
         run: node tools/ci/node-test-strict.js --concurrency 4

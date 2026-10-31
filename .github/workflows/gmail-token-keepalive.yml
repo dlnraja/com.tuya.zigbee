@@ -90,6 +90,7 @@ jobs:
           node .github/scripts/privacy-redactor.js .github/state/gmail-token-health.json .github/state/_gmail_alert.txt .github/state/_imap_alert.txt
           git add .github/state/gmail-token-health.json 2>/dev/null || true
           if ! git diff --staged --quiet; then
+            [ -f scripts/ci/bot-commit-guard.sh ] && { bash scripts/ci/bot-commit-guard.sh || exit 1; }  # P3093
             git commit -m "Gmail auth health $(date -u +%Y-%m-%d) [skip ci]"
             bash scripts/ci/verified-git-push.sh master
           else

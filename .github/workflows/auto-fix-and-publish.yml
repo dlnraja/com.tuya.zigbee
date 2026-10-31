@@ -302,6 +302,7 @@ jobs:
           fi
           stage_auto_fix_paths
           if ! git diff --staged --quiet; then
+            [ -f scripts/ci/bot-commit-guard.sh ] && { bash scripts/ci/bot-commit-guard.sh || exit 1; }  # P3093
             git commit -m "🤖 auto-fix-all: automated fixes [skip ci]"
             BRANCH="${GITHUB_REF_NAME:-master}"
             restore_volatile_artifacts

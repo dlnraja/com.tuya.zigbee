@@ -177,6 +177,7 @@ jobs:
           NEW=$(node -p "try{JSON.parse(require('fs').readFileSync('data/community-sync/new-fingerprints.json')).length}catch(e){0}")
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
           if ! git diff --staged --quiet; then
+            [ -f scripts/ci/bot-commit-guard.sh ] && { bash scripts/ci/bot-commit-guard.sh || exit 1; }  # P3093
             git commit -m "Community sync v${VER} $(date +%Y-%m): ${NEW} new FPs from Z2M/ZHA/community/JohanBendz [skip ci]"
             bash scripts/ci/verified-git-push.sh master
           else

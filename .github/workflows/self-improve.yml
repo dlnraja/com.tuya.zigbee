@@ -168,6 +168,7 @@ jobs:
           if ! git diff --staged --quiet; then
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
+            [ -f scripts/ci/bot-commit-guard.sh ] && { bash scripts/ci/bot-commit-guard.sh || exit 1; }  # P3093
             git commit -m "🔄 self-improve: product-reference, case variants, docs $(date -u +%Y-%m-%d) [skip ci]"
             bash scripts/ci/verified-git-push.sh master
           else
