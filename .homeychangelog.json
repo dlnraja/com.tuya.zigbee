@@ -4312,6 +4312,10 @@
   "5.12.0": {
     "en": "v5.12.0: stable-v5 batch sync (drivers, FPs, flows, manifest) from master v9.0.240–v9.0.260."
   },
+  "1.0.220": {
+    "en": "Reliability: 1 small fix in the app core.",
+    "fr": "Fiabilité : 1 petite correction dans le cœur de l'app."
+  },
   "1.0.219": {
     "en": "v1.0.219: maintenance build, same devices and behaviour as v1.0.218; only a CI guard changed (the market-couples job now refuses to commit an app.json that was not built from compose).",
     "fr": "v1.0.219 : version de maintenance, mêmes appareils et même comportement que la v1.0.218 ; seul un contrôle CI a changé (le job market-couples refuse désormais de committer un app.json non généré depuis compose)."
