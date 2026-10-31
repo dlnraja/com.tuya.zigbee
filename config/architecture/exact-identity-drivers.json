@@ -1,0 +1,11 @@
+{
+  "_why": "P3089: dedicated single-couple drivers whose manufacturerName stays byte-exact. tools/ci/ensure-case-variants.js and tools/ci/re-inject-manual-fixes.js skip case twins here.",
+  "drivers": {
+    "curtain_sonoff_mini_zbrbs": {
+      "couple": "SONOFF|MINI-ZBRBS",
+      "decision": "P3080",
+      "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/sonoff.ts",
+      "author": "Koenkk and zigbee-herdsman-converters contributors"
+    }
+  }
+}

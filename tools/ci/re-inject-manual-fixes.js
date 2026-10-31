@@ -45,6 +45,7 @@ const {
 
 const ROOT = path.resolve(__dirname, '..', '..');
 const { claimedElsewhere } = require('../../scripts/lib/fp-collision-guard');
+const { retiredOn, isExactIdentityDriver } = require('../../scripts/lib/couple-locks');
 
 const MANUAL_FIXES = [
   // 2026-10-11: P189 fa9mlvja rules retired. Z2M IH-K663 = _TZ3000_fa9mlvja + TS0041 (1 button)
@@ -959,6 +960,12 @@ function patchFix(fix) {
   // (HOBEIAN exempt — multi-driver by design, see fp-collision-guard.js)
   const guarded = addList.filter((m) => {
     if (includesCI(liveMfrs, m)) return false;
+    // P3089: a later sourced decision moved this mfr off the driver; the old rule must not bring it back.
+    const retired = retiredOn(ROOT, targetDriver, m);
+    if (retired) {
+      console.log(`  ~ ${fix.id}: skip ${m} on ${targetDriver} (${retired})`);
+      return false;
+    }
     const owner = claimedElsewhere(ROOT, m, targetDriver);
     if (owner) {
       console.log(`  ~ ${fix.id}: skip ${m} — already claimed by ${owner}`);
@@ -979,7 +986,9 @@ function patchFix(fix) {
 
   // P99: expand Homey-critical case forms for every injected / present fix mfr
   const beforeVariants = liveMfrs.length;
-  const { list: withVariants, added: variantAdded } = mergeManufacturerCaseVariants(liveMfrs);
+  const { list: withVariants, added: variantAdded } = isExactIdentityDriver(ROOT, targetDriver)
+    ? { list: liveMfrs, added: 0 }
+    : mergeManufacturerCaseVariants(liveMfrs);
   if (variantAdded > 0) {
     j.zigbee.manufacturerName = withVariants;
     added += variantAdded;
