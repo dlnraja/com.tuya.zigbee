@@ -333,6 +333,10 @@
       "group": "publish",
       "what": "Runs after each stable publish and explains what went wrong when it failed."
     },
+    "publish-hold-bisect.yml": {
+      "group": "publish",
+      "what": "Halves the held-driver group after an Athom AggregateError and re-dispatches the next half at the next allowed slot (P3095)."
+    },
     "publish-self-heal.yml": {
       "group": "publish",
       "what": "Every four hours: detects Athom processing failures and retries safely."
