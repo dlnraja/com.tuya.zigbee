@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-31T18:02:25.149Z",
+  "updated": "2026-10-31T18:46:01.129Z",
   "threads": {
     "21313": {
       "lastPost": 2819,
@@ -27077,12 +27077,16 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-25",
-        "verdict": "no-action",
-        "confidence": 0,
+        "at": "2026-10-31",
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
-        "sources": 0
+        "candidates": [
+          "https://www.zigbee2mqtt.io/devices/ZG-204ZV-z.html",
+          "https://www.zigbee2mqtt.io/devices/ZG-204ZV2-TH-z.html",
+          "https://www.zigbee2mqtt.io/devices/ZG-204ZV.html"
+        ],
+        "sources": 37
       }
     },
     {
@@ -27214,12 +27218,16 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-25",
-        "verdict": "no-action",
-        "confidence": 0,
+        "at": "2026-10-31",
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
-        "sources": 0
+        "candidates": [
+          "https://www.zigbee2mqtt.io/devices/WT-A03E.html",
+          "https://www.zigbee2mqtt.io/devices/PS-S04D.html",
+          "https://www.zigbee2mqtt.io/devices/SW600.html"
+        ],
+        "sources": 33
       }
     },
     {
@@ -27251,12 +27259,12 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-25",
-        "verdict": "no-action",
+        "at": "2026-10-31",
+        "verdict": "lead",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 32
       }
     },
     {
@@ -27271,12 +27279,12 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-10-31",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 2
       }
     },
     {
@@ -27291,12 +27299,16 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-25",
-        "verdict": "no-action",
-        "confidence": 0,
+        "at": "2026-10-31",
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
-        "sources": 0
+        "candidates": [
+          "https://www.zigbee2mqtt.io/devices/LDSENK02F.html",
+          "https://zigbee.blakadder.com/ADEO_LDSENK01F.html",
+          "https://zigbee.blakadder.com/ADEO_LDSENK02F.html"
+        ],
+        "sources": 9
       }
     },
     {
@@ -27311,12 +27323,12 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-10-31",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 31
+        "sources": 32
       }
     },
     {
@@ -27398,14 +27410,14 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-10-31",
         "verdict": "lead",
         "confidence": 0.2,
         "couples": [],
         "candidates": [
           "https://www.zigbee2mqtt.io/devices/MG3-5RZ.html"
         ],
-        "sources": 1
+        "sources": 32
       }
     },
     {
@@ -27445,12 +27457,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-10-31",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 1
+        "sources": 32
       }
     },
     {
@@ -27477,12 +27489,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-10-31",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 33
       }
     },
     {
