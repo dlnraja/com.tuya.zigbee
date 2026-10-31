@@ -2,13 +2,13 @@
   "sources": {
     "z2m-converters": {
       "lastSha": "23fd1358cca464b3154779bf27cecebfee487526",
-      "checkedAt": "2026-10-30T08:59:09.909Z",
+      "checkedAt": "2026-10-31T08:51:27.865Z",
       "lastError": null
     },
     "z2m-issues": {
       "lastSha": "344b6e03b43644c97154a72ca9eae17193c553a2",
-      "issuesSince": "2026-10-30T08:32:14Z",
-      "checkedAt": "2026-10-30T08:59:10.828Z",
+      "issuesSince": "2026-10-31T08:51:11Z",
+      "checkedAt": "2026-10-31T08:51:28.785Z",
       "lastError": null
     },
     "z2m-device-pages": {
@@ -18,8 +18,8 @@
     },
     "zha-quirks": {
       "lastSha": "59e229a91f6ecfe45840d46d2ed2afcdfd844f98",
-      "issuesSince": "2026-10-28T21:21:56Z",
-      "checkedAt": "2026-10-30T08:59:11.934Z",
+      "issuesSince": "2026-10-29T10:34:14Z",
+      "checkedAt": "2026-10-31T08:51:29.918Z",
       "lastError": null
     },
     "zha": {
@@ -95,7 +95,7 @@
     "johan": {
       "lastSha": "328d24ed315131528f2358b66bb0b8259615a49e",
       "issuesSince": "2026-10-30T08:32:35Z",
-      "checkedAt": "2026-10-30T08:59:12.699Z",
+      "checkedAt": "2026-10-31T08:51:30.641Z",
       "lastError": null
     },
     "johan-forks": {
@@ -108,7 +108,7 @@
         "26439": 5537,
         "140352": 2269
       },
-      "checkedAt": "2026-10-30T08:59:13.490Z",
+      "checkedAt": "2026-10-31T08:51:30.952Z",
       "lastError": null
     },
     "homey-sdk-changelog": {
@@ -257,30 +257,30 @@
       "lastError": null
     },
     "homey-forum-apps-category": {
-      "maxTopicId": 161527,
-      "checkedAt": "2026-10-30T08:59:15.177Z",
+      "maxTopicId": 161566,
+      "checkedAt": "2026-10-31T08:51:31.865Z",
       "lastError": null,
       "tracked": {
-        "156": 7542,
-        "35206": 2825,
-        "42296": 2417,
-        "76104": 55,
-        "77116": 405,
-        "77169": 113,
-        "82523": 122,
-        "89931": 1177,
-        "95083": 236,
-        "96052": 97,
-        "134233": 292,
-        "146923": 79,
-        "151169": 1582,
-        "155720": 154,
-        "160215": 30,
-        "160644": 7,
-        "160675": 25,
-        "161151": 12,
-        "161466": 22,
-        "161527": 1
+        "156": 7553,
+        "76364": 1083,
+        "99614": 328,
+        "143139": 541,
+        "143226": 3,
+        "155930": 153,
+        "156860": 37,
+        "157330": 109,
+        "157399": 79,
+        "158240": 19,
+        "158383": 5,
+        "158982": 109,
+        "159464": 4,
+        "159951": 10,
+        "160644": 11,
+        "160675": 30,
+        "161248": 2,
+        "161321": 11,
+        "161491": 7,
+        "161566": 1
       }
     },
     "homey-forum-apps-tracked": {
@@ -309,10 +309,10 @@
     },
     "homey-forum-tag-zigbee": {
       "maxTopicId": 161348,
-      "checkedAt": "2026-10-30T08:59:17.147Z",
+      "checkedAt": "2026-10-31T08:51:32.882Z",
       "lastError": null,
       "tracked": {
-        "156": 7542,
+        "156": 7553,
         "29734": 1237,
         "36418": 549,
         "65588": 250,
@@ -400,8 +400,8 @@
         "161501": 3
       },
       "checkedAt": "2026-10-29T08:54:53.699Z",
-      "lastError": "HTTP 429 https://community.homey.app/t/136697.json",
-      "erroredAt": "2026-10-30T08:59:22.559Z"
+      "lastError": "HTTP 429 https://community.homey.app/t/96052.json",
+      "erroredAt": "2026-10-31T08:51:35.264Z"
     },
     "npm-homey-cli": {
       "hash": "0e73f30eb8d0e90830c998a056a51ed3bb16b01e4028e26f7706f8f0a6c4a071",
