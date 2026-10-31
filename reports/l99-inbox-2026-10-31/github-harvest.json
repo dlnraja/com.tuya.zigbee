@@ -1,0 +1,81 @@
+{
+  "harvestedAt": "2026-10-31T10:01:58.342Z",
+  "repo": "dlnraja/com.tuya.zigbee",
+  "auth": "token",
+  "error": null,
+  "issues": [
+    {
+      "number": 557,
+      "title": "🤖 Daily digest",
+      "labels": [
+        "bot-digest"
+      ],
+      "updatedAt": "2026-10-31T07:34:31Z",
+      "user": "dlnraja",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/557"
+    },
+    {
+      "number": 584,
+      "title": "Bug report - [Short description_TZE284_awepdiwi / TS0601 soil sensor still \"Unknown Zigbee Device\" on v9.0.1599 + app shows no drivers]",
+      "labels": [
+        "bug"
+      ],
+      "updatedAt": "2026-10-30T20:03:10Z",
+      "user": "stephanmaastricht",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/584"
+    },
+    {
+      "number": 559,
+      "title": "Smartplug",
+      "labels": [
+        "enhancement",
+        "device-request",
+        "reopened-by-user",
+        "auto-triage",
+        "fingerprint-supported"
+      ],
+      "updatedAt": "2026-10-29T12:16:38Z",
+      "user": "Lalla80111",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/559"
+    },
+    {
+      "number": 581,
+      "title": "[climate_sensor] Bug:",
+      "labels": [],
+      "updatedAt": "2026-10-28T19:27:51Z",
+      "user": "hogseto",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/581"
+    },
+    {
+      "number": 550,
+      "title": "Bug report - [Short description]",
+      "labels": [
+        "bug",
+        "reopened-by-user"
+      ],
+      "updatedAt": "2026-10-04T08:18:31Z",
+      "user": "HiepSVG",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/550"
+    }
+  ],
+  "prs": [
+    {
+      "number": 578,
+      "title": "KB refresh 2026-10-26",
+      "updatedAt": "2026-10-27T13:04:01Z",
+      "user": "github-actions[bot]",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/pull/578",
+      "draft": false
+    },
+    {
+      "number": 582,
+      "title": "Weekly Homey knowledge/tooling refresh 2026-10-29",
+      "updatedAt": "2026-10-30T13:52:40Z",
+      "user": "github-actions[bot]",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/pull/582",
+      "draft": false
+    }
+  ],
+  "openIssueCount": 5,
+  "openPrCount": 2
+}
