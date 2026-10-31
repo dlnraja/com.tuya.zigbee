@@ -435,6 +435,10 @@
     "crash-triage.yml": {
       "group": "autopilot",
       "what": "After Fetch Diagnostics and daily: groups crashes by signature, ranks impact × installs, keeps one tracking issue per signature in this repo with a safe-pattern fix proposal. No external post."
+    },
+    "secret-scan.yml": {
+      "group": "autopilot",
+      "what": "On every push and PR: gitleaks (pinned binary, checksum checked) scans only the new commits for secrets. Blocking."
     }
   }
 }
