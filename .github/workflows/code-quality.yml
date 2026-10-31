@@ -135,6 +135,13 @@ jobs:
       - name: P3074 personal-data guard (no CV/LinkedIn exports or personal contact data)
         run: node tools/ci/personal-data-guard.js
 
+      - name: "P3097 unwired-script ratchet (warn only)"
+        run: node scripts/ci/unwired-script-ratchet.js || true
+      - name: "P3097 workflow resource gate (timeout + concurrency)"
+        run: node scripts/ci/workflow-resource-gate.js
+      - name: "P3097 perf budgets (report-only until stable baseline)"
+        run: node scripts/ci/perf-budget-gate.js || true
+
       - name: Voice safety check
         id: voice
         run: npm run check:voice 2>&1 | tail -50
