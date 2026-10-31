@@ -64,4 +64,4 @@ jobs:
           git diff --cached --quiet && exit 0
           bash scripts/ci/bot-commit-guard.sh
           git commit -m "chore(state): upstream watch [skip ci]"
-          git pull --rebase origin "${GITHUB_REF_NAME}" && git push
+          bash .github/scripts/git-push-retry.sh --branch "${GITHUB_REF_NAME}" || echo "::warning::P3025 upstream-watch state not pushed (see git-push-retry log)"
