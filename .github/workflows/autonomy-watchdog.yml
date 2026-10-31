@@ -1,0 +1,101 @@
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: Daily: personal-data check on the three branches, re-runs any core job that stopped
+#   succeeding, and a Monday cross-branch parity report. Honours the pause file.
+# Ideas from (thank you): Renovate and Dependabot for the merge-when-green pattern; the actions/stale and
+#   actions/labeler maintainers.
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
+#   posting stays off or ledger-gated.
+# <<< about
+# Autonomy watchdog (P3097)
+# Triggers: cron daily + workflow_dispatch | Secrets: GITHUB_TOKEN only (free minutes, public repo)
+# Goal: the project keeps running with GitHub Actions alone, without any external agent.
+#  1. personal-data guard on master, stable-v5 AND bastien-home (code-quality only covers pushes to 2 branches).
+#  2. heartbeat: every core automation must have a successful run inside its window; a stale one is
+#     re-dispatched once per day (workflow_dispatch only, never a publish workflow, never a public post).
+name: Autonomy watchdog (P3097)
+
+defaults:
+  run:
+    shell: bash
+
+on:
+  schedule:
+    - cron: '13 5 * * *'
+    - cron: '43 5 * * 1'
+  workflow_dispatch:
+
+env:
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
+
+permissions:
+  contents: read
+  actions: write
+
+concurrency:
+  group: autonomy-watchdog
+  cancel-in-progress: false
+
+jobs:
+  personal-data:
+    name: "Personal-data guard (${{ matrix.branch }})"
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        branch: [master, stable-v5, bastien-home]
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          ref: ${{ matrix.branch }}
+      - name: Run tools/ci/personal-data-guard.js
+        run: |
+          if [ -f tools/ci/personal-data-guard.js ]; then node tools/ci/personal-data-guard.js
+          else echo "::warning::personal-data-guard.js missing on ${{ matrix.branch }}"; fi
+
+  heartbeat:
+    name: Core automation heartbeat
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+      - name: Kill switch (config/autonomy-paused stops every re-dispatch)
+        id: ks
+        run: |
+          if ! node scripts/ci/autonomy-learn.js paused; then echo "paused=true" >> "$GITHUB_OUTPUT"; echo "::notice::autonomy paused"; fi
+      - name: Check and re-dispatch stale workflows
+        if: steps.ks.outputs.paused != 'true'
+        run: node scripts/ci/autonomy-heartbeat.js
+      - name: Decision engine smoke (policy loads, decisions logged in the run only)
+        run: node scripts/autonomy/decide.js '{"type":"drift","kind":"appjson_compose"}'
+
+  cross-branch-audit:
+    name: Weekly cross-branch audit
+    if: github.event_name == 'workflow_dispatch' || github.event.schedule == '43 5 * * 1'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          fetch-depth: 0
+      - name: Parity of scripts/ci and test/ci + compose drift per branch
+        run: |
+          for b in master stable-v5 bastien-home; do
+            git ls-tree -r --name-only "origin/$b" -- scripts/ci test/ci | sort > "/tmp/$b.txt"
+          done
+          for b in stable-v5 bastien-home; do
+            n=$(comm -23 /tmp/master.txt "/tmp/$b.txt" | wc -l)
+            echo "### $b missing $n master CI files" >> "$GITHUB_STEP_SUMMARY"
+            comm -23 /tmp/master.txt "/tmp/$b.txt" | head -50 | sed 's/^/- /' >> "$GITHUB_STEP_SUMMARY"
+          done
+          for b in master stable-v5 bastien-home; do
+            git worktree add -q "/tmp/wt-$b" "origin/$b"
+            if [ -f "/tmp/wt-$b/scripts/ci/appjson-compose-drift-gate.js" ]; then
+              (cd "/tmp/wt-$b" && node scripts/ci/appjson-compose-drift-gate.js >/dev/null 2>&1) && r=ok || r=DRIFT
+            else r=n/a; fi
+            echo "- $b compose drift: $r" >> "$GITHUB_STEP_SUMMARY"
+          done
