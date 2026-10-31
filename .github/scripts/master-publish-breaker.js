@@ -14,7 +14,27 @@ const DEFAULT_N = 3;
 // automatic retry (transient_retry=1) of a TRANSIENT latest failure is never blocked, and the breaker also trips
 // as soon as the latest build failed for a REAL reason (AggregateError, processing_failed, validation).
 const P3036 = require('./athom-publish-policy');
-function decide({ builds, n = DEFAULT_N, event, transientRetry, snapshotOk }) {
+// P3087 (27/10/2026 Paris): manual relaunch run 40486153255 (after the P3085 content fix) passed the breaker but
+// the P3036 gate held it (spacing + superseded CI); its next-slot retry is a deferred_retry dispatch = automatic,
+// so the open breaker would kill it, and a newer push run made the marker look "re-checked". Same loss as the
+// 26/10 15:04 staged-send run 40336425074. Now a MANUAL run held by the gate carries its intent in the marker
+// (deferred_manual=b<latest build id>.c<n>): the carried retry passes the open breaker only while Athom has no
+// build newer than b<id> (= at most one upload per manual intent) and for at most MAX_CARRY slots.
+const MAX_CARRY = 6;
+function parseCarry(v) {
+  const m = /^b(\d+)\.c(\d+)$/.exec(String(v || '').trim());
+  return m ? { build: Number(m[1]), count: Number(m[2]) } : null;
+}
+function maxBuildId(builds) { return (builds || []).reduce((a, b) => (b && Number.isFinite(Number(b.id)) ? Math.max(a, Number(b.id)) : a), 0); }
+// Value the gate marker carries forward: a manual run starts c1, a carried run increments; else ''.
+function nextCarry({ builds, event, transientRetry, deferredRetry, deferredManual }) {
+  const isRetry = transientRetry && transientRetry !== 'false' && transientRetry !== '0';
+  if (event === 'workflow_dispatch' && !isRetry && deferredRetry !== 'true') return `b${maxBuildId(builds)}.c1`;
+  const c = parseCarry(deferredManual);
+  if (deferredRetry === 'true' && c && c.count < MAX_CARRY && maxBuildId(builds) <= c.build) return `b${c.build}.c${c.count + 1}`;
+  return '';
+}
+function decide({ builds, n = DEFAULT_N, event, transientRetry, snapshotOk, deferredManual }) {
   const manual = event === 'workflow_dispatch' && !(transientRetry && transientRetry !== 'false' && transientRetry !== '0');
   const known = (builds || []).filter((b) => b && b.id != null);
   if (snapshotOk === false && known.length === 0) {
@@ -30,9 +50,13 @@ function decide({ builds, n = DEFAULT_N, event, transientRetry, snapshotOk }) {
   const why = allFailed ? `last ${n} master builds processing_failed (#${last.map((b) => b.id).join(',#')})` : real.reason;
   if (!tripped) return { skip: false, tripped: false, reason: `last ${last.length} builds not all processing_failed, latest not a real failure` };
   if (manual) return { skip: false, tripped: true, reason: `breaker open (${why}) but manual dispatch -> one try allowed` };
+  const carry = parseCarry(deferredManual);
+  if (carry && carry.count <= MAX_CARRY && maxBuildId(known) <= carry.build) {
+    return { skip: false, tripped: true, carried: true, reason: `breaker open (${why}) but next-slot retry of a held MANUAL run (no Athom build after #${carry.build}, slot ${carry.count}/${MAX_CARRY}) -> that one try continues` };
+  }
   return { skip: true, tripped: true, reason: `breaker open: ${why}; manual workflow_dispatch required` };
 }
-module.exports = { decide, DEFAULT_N };
+module.exports = { decide, DEFAULT_N, MAX_CARRY, parseCarry, nextCarry, maxBuildId };
 function readSnapshot(appId) {
   try {
     const j = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'data', 'status', `homey-build-status-${appId}.json`), 'utf8'));
@@ -61,8 +85,10 @@ if (require.main === module) {
     require('child_process').spawnSync(process.execPath, [path.join(process.cwd(), 'scripts', 'ci', 'homey-build-status.js'), appId], { stdio: ['ignore', 'ignore', 'inherit'], env: { ...process.env, HOMEY_API_TIMEOUT_MS: String(step.timeoutMs) }, timeout: step.timeoutMs * 2 + 60000 });
     snap = readSnapshot(appId);
   }
-  const d = decide({ builds: snap.builds, n: parseInt(process.env.BREAKER_N || '', 10) || DEFAULT_N, event: (process.env.DEFERRED_RETRY === 'true' ? 'schedule' : process.env.GITHUB_EVENT_NAME), /* P3036: a deferred next-slot dispatch is automatic */ transientRetry: process.env.TRANSIENT_RETRY, snapshotOk: snap.builds.length > 0 });
+  const d = decide({ builds: snap.builds, n: parseInt(process.env.BREAKER_N || '', 10) || DEFAULT_N, event: (process.env.DEFERRED_RETRY === 'true' ? 'schedule' : process.env.GITHUB_EVENT_NAME), /* P3036: a deferred next-slot dispatch is automatic */ transientRetry: process.env.TRANSIENT_RETRY, snapshotOk: snap.builds.length > 0, deferredManual: process.env.DEFERRED_MANUAL });
+  // P3087: only a breaker that lets this run through hands a carry to the gate marker.
+  const carry = d.skip || snap.builds.length === 0 ? '' : nextCarry({ builds: snap.builds, event: process.env.GITHUB_EVENT_NAME, transientRetry: process.env.TRANSIENT_RETRY, deferredRetry: process.env.DEFERRED_RETRY, deferredManual: process.env.DEFERRED_MANUAL });
   console.log(`[breaker] ${d.skip ? 'SKIP' : 'go'}: ${d.reason}`);
-  if (process.env.GITHUB_OUTPUT) fs.appendFileSync(process.env.GITHUB_OUTPUT, `skip=${d.skip}\n`);
+  if (process.env.GITHUB_OUTPUT) fs.appendFileSync(process.env.GITHUB_OUTPUT, `skip=${d.skip}\ncarry=${carry}\n`);
   if (d.skip && process.env.GITHUB_STEP_SUMMARY) fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, `### Master publish breaker open\n${d.reason}\n`);
 }

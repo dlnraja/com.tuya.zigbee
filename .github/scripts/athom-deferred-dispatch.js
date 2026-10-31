@@ -21,13 +21,17 @@ function deferredDecision({ key, artifacts, runs, now = Date.now() }) {
     .sort((a, b) => Date.parse(b.created_at) - Date.parse(a.created_at));
   if (!markers.length) return { dispatch: false, reason: 'no deferred marker' };
   const m = markers[0];
+  // P3087: athom-deferred-<key>-m-b<id>.c<n>-<run> = held MANUAL run; only a newer dispatch re-checked it
+  // (a push run is stopped by the open breaker and must not swallow the manual intent).
+  const carry = (/-m-(b\d+\.c\d+)-\d+$/.exec(String(m.name)) || [])[1] || '';
   const mt = Date.parse(m.created_at);
   if (!Number.isFinite(mt) || now - mt > MAX_MARKER_AGE_H * 3600e3) return { dispatch: false, reason: `newest marker ${m.name} too old` };
   const active = (runs || []).find((r) => r && ['queued', 'in_progress', 'waiting', 'pending', 'requested'].includes(r.status));
   if (active) return { dispatch: false, reason: 'a run of the publish workflow is already queued/running' };
-  const latest = (runs || [])[0];
+  const latest = (runs || []).filter((r) => r && (!carry || r.event === 'workflow_dispatch'))[0];
   if (latest && Date.parse(latest.created_at) > mt) return { dispatch: false, reason: `a newer run (${latest.created_at}) already re-checked the gate` };
-  return { dispatch: true, reason: `marker ${m.name} (${m.created_at}) newer than the latest run` };
+  const inputs = carry ? { deferred_retry: 'true', deferred_manual: carry } : { deferred_retry: 'true' };
+  return { dispatch: true, inputs, reason: `marker ${m.name} (${m.created_at}) newer than the latest ${carry ? 'dispatch ' : ''}run` };
 }
 
 async function gh(apiPath, { method = 'GET', body } = {}) {
@@ -49,11 +53,11 @@ async function main() {
   for (const key of keys) {
     const t = TARGETS[key];
     try {
-      const runs = await gh(`/repos/${repo}/actions/workflows/${t.workflow}/runs?branch=${encodeURIComponent(t.ref)}&per_page=5`);
+      const runs = await gh(`/repos/${repo}/actions/workflows/${t.workflow}/runs?branch=${encodeURIComponent(t.ref)}&per_page=20`);
       const d = deferredDecision({ key, artifacts: arts.artifacts, runs: runs.workflow_runs });
       console.log(`[p3036-deferred] ${key}: ${d.dispatch ? 'DISPATCH' : 'skip'} — ${d.reason}`);
       if (d.dispatch && !dry) {
-        await gh(`/repos/${repo}/actions/workflows/${t.workflow}/dispatches`, { method: 'POST', body: { ref: t.ref, inputs: { deferred_retry: 'true' } } });
+        await gh(`/repos/${repo}/actions/workflows/${t.workflow}/dispatches`, { method: 'POST', body: { ref: t.ref, inputs: d.inputs || { deferred_retry: 'true' } } });
       }
     } catch (e) { console.log(`[p3036-deferred] ${key}: error ${e.message} (no dispatch)`); }
   }
