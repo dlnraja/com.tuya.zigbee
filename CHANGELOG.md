@@ -103,7 +103,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.1601] - 2026-10-27
+## [9.0.1602] - 2026-10-31
+
+Thanks to the Zigbee2MQTT / zigbee-herdsman-converters contributors: SPM02V1-GT power meter now also matched with the exact TS0601 product id. Nine new drivers thanks to the MakeGood, Daewoo, Box, Beca, AutomatOn and Tervix device authors in zigbee-herdsman-converters: MG-AU03, MG-GPO02Z, WKE502Z keypad, EWS1154-Z, BVRF-L001, CH8Z, Pro Line X10, 3-channel bidirectional meter, TS0601 smoke sensor. Thanks to the zigbee-herdsman-converters contributors: the DCR-CO carbon monoxide detector now has its own CO driver, and the AVATTO ME168 radiator valve (_TZE200_cxakecfo) pairs as a thermostatic valve instead of a contact sensor. Thanks again to the zigbee-herdsman-converters contributors: four TS0601 smoke detectors (smoke_4) and the _TZE204_ntcy3xu1 smoke detector (with tamper) now pair as smoke sensors instead of a wireless switch or power strip, the _TZ3000_mwd3c2at PIR as a motion sensor instead of an irrigation valve, and the Excellux ZG-104PLV PIR (PIRIV01) gets its own motion driver with luminance. The BSEED TS0601 curtain switch (_TZE200_yenbr4om, _TZE200/_TZE204_bdblidq3) now reads its position from both position datapoints and no longer shows a stray dim slider or fake button presses (thanks migueleap for issue #576, and the zigbee-herdsman-converters and ZHA quirks contributors). The _TZE204_ogkdpgy2 CO2 sensor shows temperature and humidity once it reports them (ZHA quirks).
+---
+
+ [9.0.1601] - 2026-10-27
 
 More TS0601 devices recognised again: device identifiers that were trimmed to save space are topped back up after packing. Publishing now waits for a green test run and spaces out uploads, so fewer broken builds reach the Test channel.
 ---
