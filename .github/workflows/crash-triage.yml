@@ -1,0 +1,64 @@
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: After Fetch Diagnostics and daily: groups crashes by signature, ranks impact × installs, keeps
+#   one tracking issue per signature in this repo with a safe-pattern fix proposal. No external post.
+# Ideas from (thank you): Renovate and Dependabot for the merge-when-green pattern; the actions/stale and
+#   actions/labeler maintainers.
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
+#   posting stays off or ledger-gated.
+# <<< about
+# Crash triage (P3097, t654u) — free; runs after fetch-diags and daily. GITHUB_TOKEN only.
+# One tracking issue per crash signature in this repo (no external post). Fix PRs are proposed in the
+# issue for known safe patterns only; the code change itself goes through the normal gates.
+# Kill switches: config/autonomy-paused, config/autonomy-paused.crash-triage
+name: Crash triage (P3097)
+
+defaults:
+  run:
+    shell: bash
+
+on:
+  workflow_run:
+    workflows: ["Fetch Homey Diagnostics"]
+    types: [completed]
+  schedule:
+    - cron: '52 7 * * *'
+  workflow_dispatch:
+
+env:
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
+
+permissions:
+  contents: read
+  actions: read
+  issues: write
+
+concurrency:
+  group: crash-triage
+  cancel-in-progress: false
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+      - name: Kill switch
+        id: ks
+        run: |
+          if ! node scripts/ci/autonomy-learn.js paused crash-triage; then echo "paused=true" >> "$GITHUB_OUTPUT"; fi
+      - name: Download latest sanitized diagnostics
+        if: steps.ks.outputs.paused != 'true'
+        run: |
+          id=$(gh run list --workflow fetch-diags.yml --status success --limit 1 --json databaseId -q '.[0].databaseId')
+          mkdir -p diag-in
+          [ -n "$id" ] && gh run download "$id" -n sanitized-diagnostics-report -D diag-in || echo "no artifact"
+      - name: Group and rank
+        if: steps.ks.outputs.paused != 'true'
+        run: node scripts/autonomy/crash-triage.js $(find diag-in -name '*.json' | head -50)
+      - name: One issue per signature (create or update counts)
+        if: steps.ks.outputs.paused != 'true'
+        run: node scripts/autonomy/crash-triage-issues.js
