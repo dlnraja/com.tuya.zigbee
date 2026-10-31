@@ -83,8 +83,7 @@ jobs:
           git diff --cached --quiet && { echo "nothing to commit"; exit 0; }
           bash scripts/ci/bot-commit-guard.sh
           git commit -m "chore(P3095): publish-hold bisect step [skip ci]"
-          for i in 1 2 3; do git pull --rebase -q origin master && git push -q origin HEAD:master && exit 0; sleep $((i*15)); done
-          echo "::error::P3095 state push failed 3x"; exit 1
+          bash .github/scripts/git-push-retry.sh --branch master --attempts 4 || { echo "::error::P3095 state push failed"; exit 1; }
       - name: Dispatch auto-publish with the next group (P3036 gate decides the slot)
         if: steps.s.outputs.release != ''
         env:
