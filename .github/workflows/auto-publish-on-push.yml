@@ -111,6 +111,8 @@ jobs:
           cache-dependency-path: .github/npm-cache-key.sha256  # P3026: version-free key, one npm cache per dependency set
       - name: Install dependencies
         run: npm ci --prefer-offline --no-audit --ignore-scripts || npm install --ignore-scripts
+      - name: P3095 carry the pending hold-bisect group (deferred re-dispatch keeps the same content)
+        run: node .github/scripts/publish-hold-bisect.js resolve >> "$GITHUB_ENV"
       - name: Read Athom builds (read-only) and decide
         id: b
         env:
@@ -206,6 +208,9 @@ jobs:
 
       - name: Install dependencies
         run: npm ci --prefer-offline --no-audit || npm install
+
+      - name: P3095 carry the pending hold-bisect group (deferred re-dispatch keeps the same content)
+        run: node .github/scripts/publish-hold-bisect.js resolve >> "$GITHUB_ENV"
 
       - name: Crash regression guard - Homey timer context
         run: npm run check:timer-context
@@ -899,7 +904,11 @@ jobs:
           final_out=$(node .github/scripts/assert-athom-final.js 2>&1); final_rc=$?
           echo "$final_out"
           kind=$(printf '%s' "$final_out" | node .github/scripts/athom-retry-policy.js classify 2>/dev/null || echo unknown)
-          if [ "$final_rc" -eq 0 ] && ! printf '%s' "$final_out" | grep -q 'SOFT-EXPECT'; then node .github/scripts/publish-size-telemetry.js record test; exit 0; fi
+          if [ "$final_rc" -eq 0 ] && ! printf '%s' "$final_out" | grep -q 'SOFT-EXPECT'; then
+            node .github/scripts/publish-size-telemetry.js record test
+            [ -n "${PUBLISH_HOLD_RELEASE:-}" ] && mkdir -p p3095-outcome && printf '{"outcome":"test","released":"%s","version":"%s","run":"%s"}\n' "$PUBLISH_HOLD_RELEASE" "${HOMEY_EXPECTED_VERSION:-}" "$GITHUB_RUN_ID" > p3095-outcome/outcome.json
+            exit 0
+          fi
           # Final state known and not Test: retry decision (P3036: one transient retry, backoff >= 300 s + jitter).
           out=$(node .github/scripts/transient-publish-retry.js) || true
           # P2901: assert-athom-final only prints "processing_failed"; the Athom error text (AggregateError, socket
@@ -916,11 +925,27 @@ jobs:
             # which tells nothing about the held driver (bisect needs same-content flip).
             .github/scripts/gh-retry.sh gh workflow run auto-publish-on-push.yml --ref "${GITHUB_REF_NAME}" -f transient_retry="${next:-1}" -f release_held="${PUBLISH_HOLD_RELEASE:-}" || true
           fi
+          # P3095: hand the verdict of a release_held upload to publish-hold-bisect.yml (workflow_run).
+          if [ -n "${PUBLISH_HOLD_RELEASE:-}" ]; then
+            v=other
+            if [ "$final_rc" -eq 0 ] && ! printf '%s' "$final_out" | grep -q 'SOFT-EXPECT'; then v=test
+            elif [ "$kind" = "AggregateError" ] && ! printf '%s' "$out" | grep -q '^\[transient-retry\] RETRY'; then v=AggregateError; fi
+            mkdir -p p3095-outcome && printf '{"outcome":"%s","released":"%s","version":"%s","run":"%s"}\n' "$v" "$PUBLISH_HOLD_RELEASE" "${HOMEY_EXPECTED_VERSION:-}" "$GITHUB_RUN_ID" > p3095-outcome/outcome.json
+          fi
           if printf '%s' "$out" | grep -q '^\[transient-retry\] BISECT'; then
             echo "::warning::AggregateError after the retry budget: real content failure, bisect needed (see ledger docs/knowledge/athom-publish-outcomes.jsonl)"
           fi
           [ "$final_rc" -eq 0 ] && exit 0
           exit 1
+
+      - name: P3095 hold-bisect verdict artifact
+        if: always() && hashFiles('p3095-outcome/outcome.json') != ''
+        continue-on-error: true
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0 (node24, P3025b)
+        with:
+          name: p3095-outcome
+          path: p3095-outcome/outcome.json
+          retention-days: 7
 
       # P2900: socket hang up / AggregateError vs size, one CSV row per upload (kept 90 days).
       # P2917: write the highest CONFIRMED Test version back (state "test" from Athom), [skip ci], once,

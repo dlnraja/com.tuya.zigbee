@@ -1,0 +1,40 @@
+{
+  "queue": [
+    [
+      "heiman_keyfob",
+      "heiman_siren",
+      "presence_radar_aoyan_ay204t",
+      "water_leak_aoyan_ay222z",
+      "water_leak_blitzwolf_bw_is9",
+      "sauna_thermostat_ae5503",
+      "siren_moes_mg_bjq002"
+    ],
+    [
+      "switch_wall_6gang_metering",
+      "valve_novato_zpv01",
+      "switch_2gang_ts0002",
+      "energy_meter_3ch_bidirectional",
+      "gpo_double_light_mg_au03",
+      "gpo_double_mg_gpo02z"
+    ],
+    [
+      "keypad_alarm_wke502z",
+      "thermostat_vrf_bvrf_l001",
+      "ufh_controller_ch8z",
+      "ufh_controller_pro_line_x10",
+      "wall_switch_rf_ews1154z",
+      "curtain_sonoff_mini_zbrbs",
+      "air_conditioner_aetz01",
+      "co_sensor_dcr_co",
+      "fan_light_tuya_5_levels",
+      "motion_sensor_excellux_zg104plv",
+      "smoke_sensor_ts0601_dp",
+      "vibration_sensor_excellux_zg103v"
+    ]
+  ],
+  "attempts": {
+    "energy_meter_3ch_bidirectional,gpo_double_light_mg_au03,gpo_double_mg_gpo02z,heiman_keyfob,heiman_siren,presence_radar_aoyan_ay204t,sauna_thermostat_ae5503,siren_moes_mg_bjq002,switch_2gang_ts0002,switch_wall_6gang_metering,valve_novato_zpv01,water_leak_aoyan_ay222z,water_leak_blitzwolf_bw_is9": 1
+  },
+  "isolated": [],
+  "pending": null
+}
