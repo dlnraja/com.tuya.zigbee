@@ -47,6 +47,10 @@ on:
         description: 'Internal (P3036): next-slot dispatch from publish-self-heal after a held upload; counts as automatic'
         type: string
         default: ''
+      deferred_manual:
+        description: 'Internal (P3087): b<build>.c<n> carried by a held MANUAL run; its next-slot retry may pass the open breaker until Athom has a newer build'
+        type: string
+        default: ''
       override_spacing:
         description: 'P3036 manual only: bypass the spacing / 24 h cap (green CI is still required)'
         type: boolean
@@ -114,6 +118,7 @@ jobs:
           HOMEY_BUILD_LIMIT: '5'
           TRANSIENT_RETRY: ${{ github.event.inputs.transient_retry || 'false' }}
           DEFERRED_RETRY: ${{ github.event.inputs.deferred_retry || '' }}
+          DEFERRED_MANUAL: ${{ github.event.inputs.deferred_manual || '' }}
           BREAKER_N: '3'
         run: |
           node scripts/ci/homey-build-status.js com.dlnraja.tuya.zigbee >/dev/null 2>&1 || true
@@ -145,7 +150,7 @@ jobs:
         continue-on-error: true
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0 (node24, P3025b)
         with:
-          name: athom-deferred-master-${{ github.run_id }}
+          name: athom-deferred-master-${{ steps.b.outputs.carry != '' && format('m-{0}-', steps.b.outputs.carry) || '' }}${{ github.run_id }}
           path: data/status/athom-publish-gate-com.dlnraja.tuya.zigbee.json
           if-no-files-found: ignore
           retention-days: 3
