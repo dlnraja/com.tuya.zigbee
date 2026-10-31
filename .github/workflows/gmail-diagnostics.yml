@@ -250,6 +250,7 @@ jobs:
           COUNT=$(node -p "try{JSON.parse(require('fs').readFileSync('.github/state/diagnostics-report.json')).count||0}catch(e){0}")
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
           if ! git diff --staged --quiet; then
+            [ -f scripts/ci/bot-commit-guard.sh ] && { bash scripts/ci/bot-commit-guard.sh || exit 1; }  # P3093
             git commit -m "Diagnostics update $(date -u +%Y-%m-%d) [skip ci]"
             bash scripts/ci/verified-git-push.sh master
           else
@@ -286,6 +287,7 @@ jobs:
           git add diagnostics/ .github/state/diagnostics-*.json .github/state/homey-device-report.json 2>/dev/null || true
           COUNT=$(node -p "try{JSON.parse(require('fs').readFileSync('.github/state/diagnostics-report.json')).count||0}catch(e){0}")
           if ! git diff --staged --quiet; then
+            [ -f scripts/ci/bot-commit-guard.sh ] && { bash scripts/ci/bot-commit-guard.sh || exit 1; }  # P3093
             git commit -m "Diagnostics update $(date -u +%Y-%m-%d) [skip ci]"
             bash scripts/ci/verified-git-push.sh master
           else
@@ -344,6 +346,7 @@ jobs:
           node .github/scripts/privacy-redactor.js .github/state/resolver-*.json .github/state/pattern-*.json
           git add .github/state/resolver-*.json .github/state/pattern-*.json 2>/dev/null || true
           if ! git diff --staged --quiet; then
+            [ -f scripts/ci/bot-commit-guard.sh ] && { bash scripts/ci/bot-commit-guard.sh || exit 1; }  # P3093
             git commit -m "Resolved issues + patterns update [skip ci]"
             bash scripts/ci/verified-git-push.sh master
           else

@@ -171,6 +171,7 @@ jobs:
             echo "No enrichment changes to commit"
             exit 0
           fi
+          [ -f scripts/ci/bot-commit-guard.sh ] && { bash scripts/ci/bot-commit-guard.sh || exit 1; }  # P3093
           git commit -m "fleet-enrich: intelligent all-class coverage (P2372) [skip ci]" || true
           # WHY(P2383): verified push — do not mask failures (policy gate)
           git pull --rebase origin master || true
