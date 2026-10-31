@@ -43843,6 +43843,12 @@
     "leadsAdded": 0
    },
    "lastChangeRun": "41203507762"
+  },
+  "autofix:node22-runtime-tests|mocha|p3077-p3080-bot-reinject": {
+   "status": "done",
+   "date": "2026-10-31",
+   "note": "attempt 1/3 (24h) run 41227184890: bot bump 2584efaf51 re-added HOBEIAN forms on sensor_contact_zigbee (p61 re-inject) and 'sonoff' on curtain_sonoff_mini_zbrbs (case variants); P3089 couple-locks make both scripts honour P3077 moves and exact-identity drivers; compose + app.json regenerated",
+   "by": "homey-ci-autofix"
   }
  }
 }

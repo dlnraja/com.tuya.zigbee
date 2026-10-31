@@ -27,6 +27,7 @@ const {
   normalize,
 } = require('../../lib/utils/TuyaNormalizer');
 const { appendExactIdentityForms } = require('../../lib/enrichment/ComplementaryMerge');
+const { isExactIdentityDriver } = require('../../scripts/lib/couple-locks');
 
 const args = process.argv.slice(2);
 const APPLY = args.includes('--apply');
@@ -83,6 +84,8 @@ function main() {
     const f = path.join(ROOT, 'drivers', driver, 'driver.compose.json');
     const j = JSON.parse(fs.readFileSync(f, 'utf8'));
     if (!j.zigbee || !Array.isArray(j.zigbee.manufacturerName)) continue;
+    // P3089: dedicated exact-couple drivers stay byte-exact (9.0.1604 bot added "sonoff" next to SONOFF).
+    if (isExactIdentityDriver(ROOT, driver)) continue;
 
     const before = j.zigbee.manufacturerName.length;
     const { list, added } = mergeManufacturerCaseVariants(j.zigbee.manufacturerName);
