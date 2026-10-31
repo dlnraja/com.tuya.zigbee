@@ -907,9 +907,12 @@
       ]
     }
   ],
+  "9.0.1605": {
+    "en": "New: Flow cards & device settings. Fixed: memory and timers and smart plugs & energy meters (TS011F). Plus 3 other changes in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Nouveau : cartes Flow & réglages des appareils. Corrigé : mémoire et minuteries et prises connectées & compteurs d'énergie (TS011F). Et 3 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+  },
   "9.0.1604": {
-    "en": "Fixed: energy meters. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : compteurs d'énergie. En coulisses : tests et contrôles de publication."
+    "en": "Fixed: energy meters. Behind the scenes: tests and publishing checks."
   },
   "9.0.1602": {
     "en": "Thanks to the Zigbee2MQTT / zigbee-herdsman-converters contributors: SPM02V1-GT power meter now also matched with the exact TS0601 product id. Nine new drivers thanks to the MakeGood, Daewoo, Box, Beca, AutomatOn and Tervix device authors in zigbee-herdsman-converters: MG-AU03, MG-GPO02Z, WKE502Z keypad, EWS1154-Z, BVRF-L001, CH8Z, Pro Line X10, 3-channel bidirectional meter, TS0601 smoke sensor."
@@ -980,9 +983,5 @@
   "9.0.1571": {
     "en": "Maintenance build: same devices and behaviour as 9.0.1570 (publishing and test tooling only).",
     "fr": "Version de maintenance : mêmes appareils et même comportement que la 9.0.1570 (outils de publication et de test uniquement)."
-  },
-  "9.0.1570": {
-    "en": "The rco1yzb1 TS004F remote waits for double and triple presses only when a Flow uses them; single presses stay instant otherwise.",
-    "fr": "La télécommande rco1yzb1 TS004F n'attend les doubles et triples appuis que si un Flow les utilise ; sinon l'appui simple reste immédiat."
   }
 }
