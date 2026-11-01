@@ -20,3 +20,9 @@ describe('P3066 P52 sync wiring', () => {
     assert.match(wf, /if \(!cl\[nk\] \|\| !String\(cl\[nk\]\.en\|\|''\)\.trim\(\)\) cl\[nk\]=\{en:/);
   });
 });
+
+// P3141 (2026-11-01): the P52 bump appended the pre-written next version at the end of .homeychangelog.json.
+require('node:test')('P3141 safe-sync bump writes the changelog newest first', () => {
+  const y = require('fs').readFileSync(require('path').join(__dirname, '..', '..', '.github/workflows/safe-sync-stable.yml'), 'utf8');
+  require('node:assert').match(y, /changelog-entry'\)\.orderChangelog\(cl\)/);
+});
