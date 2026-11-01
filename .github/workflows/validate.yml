@@ -123,6 +123,17 @@ jobs:
         run: |
           node .github/scripts/fp-collision-check.js --baseline .github/fingerprint-collision-baseline.json
 
+      - name: 🧷 Couple-removal guard (P3134, per exact mfr+pid)
+        # WHY(P3134, t727u): a maker id leaving a driver must not drop another source-confirmed pid of that maker.
+        env:
+          BEFORE: ${{ github.event.before }}
+        run: |
+          if [ -n "$BEFORE" ] && [ "$BEFORE" != "0000000000000000000000000000000000000000" ] && git fetch -q --depth=1 origin "$BEFORE"; then
+            node scripts/ci/couple-removal-guard.js "$BEFORE"
+          else
+            echo "no push base, guard skipped"
+          fi
+
       - name: 🛡️ Anti-bot + P2138 sacred-couple matrix + flow titleFormatted (shared rules-gates)
         # WHY(gate-dedupe 2026-10-10): pr-gate owns these gates on pull requests.
         if: github.event_name != 'pull_request'
