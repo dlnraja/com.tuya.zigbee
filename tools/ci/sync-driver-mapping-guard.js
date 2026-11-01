@@ -42,11 +42,33 @@ function composedOwners(root) {
   return owners;
 }
 
+// P3141: manufacturer -> drivers index, built once per owners map (bounded by the compose files).
+const MFR_INDEX = new WeakMap();
+function mfrIndex(owners) {
+  let idx = MFR_INDEX.get(owners);
+  if (idx) { return idx; }
+  idx = new Map();
+  for (const [k, ds] of owners) {
+    const m = k.slice(0, k.lastIndexOf('|'));
+    if (!idx.has(m)) { idx.set(m, new Set()); }
+    for (const d of ds) { idx.get(m).add(d); }
+  }
+  MFR_INDEX.set(owners, idx);
+  return idx;
+}
+
 /** Driver set the target composes for this row, or null when the target does not pair it. */
 function ownersFor(owners, key, row) {
   const out = new Set();
-  for (const p of [].concat((row && row.modelIds) || [])) {
+  const pids = [].concat((row && row.modelIds) || []).filter((p) => norm(p));
+  for (const p of pids) {
     for (const d of owners.get(`${norm(key)}|${norm(p)}`) || []) { out.add(d); }
+  }
+  // WHY(P3141, 2026-11-01): runtime hint rows with modelIds [] (e.g. _TZE204_z7a2jmyy) were skipped, so the
+  // P52 sync c5cc94e385 put it back on water_valve_smart while stable composes it on climate_sensor only.
+  // Without a productId the row is a manufacturer-level hint: compare with the drivers composing that mfr.
+  if (!pids.length) {
+    for (const d of mfrIndex(owners).get(norm(key)) || []) { out.add(d); }
   }
   return out.size ? out : null;
 }

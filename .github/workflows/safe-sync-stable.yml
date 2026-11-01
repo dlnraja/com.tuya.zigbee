@@ -148,7 +148,9 @@ jobs:
             // P3066: stable keeps the NEXT patch pre-written too (P3057-3 invariant; 5.12.509 was missing after the 5.12.508 bump)
             const NXT='$NEW'.split('.').map(Number); NXT[2]+=1; const nk=NXT.join('.');
             if (!cl[nk] || !String(cl[nk].en||'').trim()) cl[nk]={en:'Device database and reliability updates.',fr:'Mises à jour de la base d’appareils et de la fiabilité.'};
-            fs.writeFileSync('.homeychangelog.json', JSON.stringify(cl,null,2)+'\\n');
+            // P3141: versions newest first (5.12.528 was appended at the end -> stable p3069 red)
+            let ord=cl; try { ord=require('./scripts/automation/changelog-entry').orderChangelog(cl); } catch (_) { /* helper absent: keep order */ }
+            fs.writeFileSync('.homeychangelog.json', JSON.stringify(ord,null,2)+'\\n');
             console.log('Bumped to $NEW');
           "
 
