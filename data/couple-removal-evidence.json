@@ -1,0 +1,89 @@
+{
+  "schema": 1,
+  "required": [
+    "z2m",
+    "zha",
+    "deconz",
+    "blakadder",
+    "hubitat",
+    "johan",
+    "forum",
+    "diags",
+    "git_history",
+    "sibling_pids"
+  ],
+  "entries": [
+    {
+      "couple": "_TZ3000_46vasa5h|TS011F",
+      "driver": "switch_1gang",
+      "pr": "P3131",
+      "verdict": "#585 wrong driver; right driver kept (see P3131)",
+      "sources": {
+        "z2m": "z2m:TS011F_2_gang_wall; zhc:TS011F_2_gang_wall",
+        "zha": "not listed for TS011F",
+        "deconz": "not listed for TS011F",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS011F",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "873af3e58c v9.0.227: 431 drivers, 2874 FPs [skip ci] | fa62980fa4 fix(P53): button regression + apply 678 missing FPs from issue 439 | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZ3000_46vasa5h|TS011F"
+      }
+    },
+    {
+      "couple": "_TZ3000_cehuw1lw|TS011F",
+      "driver": "button_wireless_plug",
+      "pr": "P3131",
+      "verdict": "#585 wrong driver; right driver kept (see P3131)",
+      "sources": {
+        "z2m": "not listed for TS011F",
+        "zha": "not listed for TS011F",
+        "deconz": "deconz:Smart plug with power monitor (TS011F)",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "johan:smartplug",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "26944f7e17 v9.0.342: 431 drivers, 2890 FPs [skip ci] | a98486fc78 fix(P44): R9 — 5 typo fixes + 1450 mfrs + 17 pids to driver.compose.json | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZ3000_cehuw1lw|TS011F, _TZ3000_cehuw1lw|TS0121, _TZ3000_cehuw1lw|TSO121"
+      }
+    },
+    {
+      "couple": "_TZE284_xpq2rzhq|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3131",
+      "verdict": "#585 wrong driver; right driver kept (see P3131)",
+      "sources": {
+        "z2m": "z2m:TS0601_smart_human_presence_sensor_1; zhc:TS0601_smart_human_presence_sensor_1",
+        "zha": "not listed for TS0601",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "4ec01c0fe7 feat(P92.62): couverture casse 4-combos pairing (3996 variantes) — tout firmware case-insensitive au pairing [skip ci] | fdd7b376ad fix(P92.47): 4950 variantes de casse (anti unknown device) + compacteur par groupes de casse (0 purge) + version 9.0.373 | a98486fc78 fix(P44): R9 — 5 typo fixes + 1450 mfrs + 17 pids to driver.compose.json",
+        "sibling_pids": "_TZE284_xpq2rzhq|TS0601"
+      }
+    },
+    {
+      "couple": "_TZ3000_dfgbtub0|TS0042",
+      "driver": "button_wireless_3",
+      "pr": "P3131",
+      "verdict": "#585 wrong driver; right driver kept (see P3131)",
+      "sources": {
+        "z2m": "not listed for TS0042",
+        "zha": "not listed for TS0042",
+        "deconz": "not listed for TS0042",
+        "blakadder": "maker in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "johan:wall_remote_2_gang",
+        "forum": "TS0042:https://community.homey.app/t/156967/12; TS0044:https://community.homey.app/t/156967/12",
+        "diags": "no diag report",
+        "git_history": "51a86ac373 v9.0.217: 431 drivers, 2737 FPs [skip ci] | a98486fc78 fix(P44): R9 — 5 typo fixes + 1450 mfrs + 17 pids to driver.compose.json | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZ3000_dfgbtub0|TS0042"
+      }
+    }
+  ]
+}
