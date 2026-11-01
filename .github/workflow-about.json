@@ -447,6 +447,10 @@
     "bot-revert-on-red.yml": {
       "group": "autopilot",
       "what": "Red tests or validate on master right after a bot commit with a green parent: reverts that one commit (never force, humans untouched). Kill switch config/autonomy-paused.revert."
+    },
+    "diag-autoreply-bastien.yml": {
+      "group": "autopilot",
+      "what": "Four times a day: answers Bastien diagnostics reports by mail, in-thread to the Athom relay only, when the crash matches a known fix that is already released. Deterministic, no AI, max 5 a day, dedup by Log ID."
     }
   }
 }
