@@ -1,0 +1,17 @@
+{
+  "_meta": { "doc": "P3136b — hand-curated, source-confirmed facts per exact couple. Facts in our own words with links; no code copied (CREDITS.md). Merged into couple-sources.json as source 'curated'." },
+  "facts": [
+    {
+      "couples": ["_TZ3000_dfgbtub0|TS0042", "_TZ3000_5e235jpa|TS0042"],
+      "refs": ["https://github.com/zigpy/zha-device-handlers/issues/1746", "https://github.com/zigpy/zha-device-handlers/pull/2288", "https://github.com/zigpy/zha-device-handlers/issues/2227", "https://github.com/Koenkk/zigbee2mqtt/issues/8072", "zhaquirks/tuya/ts0042.py TuyaSmartRemote0042TO"],
+      "signature": { "logicalType": "EndDevice (sleepy, battery)", "manufacturerCode": 4098, "ep1": { "in": ["0x0000", "0x0001", "0x0006"], "out": ["0x000a", "0x0019"] }, "ep2": { "in": ["0x0001", "0x0006"], "out": [] } },
+      "buttons": 2,
+      "events": "Each button = its endpoint (EP1, EP2). Presses arrive as genOnOff (0x0006) Tuya command 0xFD, payload press_type 0=single, 1=double, 2=long. No 0xEF00. Other TS0042 variants (0042TOPlusA) also expose 0xE000.",
+      "onOffAttrs": "0x8001 backlight, 0x8002 power-on state, 0x8004 switch mode (not needed for these remotes; never written at pairing)",
+      "battery": "Do not bind / configure reporting on PowerConfiguration (0x0001): ZHA PR #2288 (TuyaNoBindPowerConfigurationCluster) — reporting setup drains the CR2032. Read passively only.",
+      "knownIssues": "First press after long sleep can be lost and the LED may blink hourly (#1746, Z2M #8072). Mitigation in both projects: Tuya 'magic packet' (read Basic attributes) at first join only; reported field fix also fresh batteries.",
+      "ourImplementation": "button_wireless_2: hybrid RX (0xFD + E000 + raw), lib/buttons/ButtonEventRouter FD_PRESS {0:single,1:double,2:long}, skipBatteryReporting, batteryEpOnly 1, lib/zigbee/TuyaMagicPacket.js. Already covered; nothing mandatory at pairing.",
+      "homekit": "StatelessProgrammableSwitch per button (single/double/long native)."
+    }
+  ]
+}
