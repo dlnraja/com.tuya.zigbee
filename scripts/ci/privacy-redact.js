@@ -35,7 +35,8 @@ function redact(text, rel) {
 }
 
 const SCOPE = /^(docs|reports|data\/leads|\.agents|\.cursor)\/|\.md$/;
-const SKIP = /^(lib|drivers|node_modules|test\/fixtures)\/|\.(svg|png|jpe?g|gif|ico|zip|gz)$/;
+const SKIP = /^(lib|drivers|node_modules|test\/fixtures)\/|(^|\/)_?[^/]*app\.json$|\.(svg|png|jpe?g|gif|ico|zip|gz)$/;
+// P3128: generated app.json copies hold generic product hints (example IEEE, room words in pairing tips), not house data
 function files(root, args) {
   const all = execFileSync('git', ['ls-files', ...args], { cwd: root, encoding: 'utf8' }).split('\n').filter(Boolean);
   return all.filter((f) => SCOPE.test(f) && !SKIP.test(f));
