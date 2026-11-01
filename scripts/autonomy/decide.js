@@ -53,6 +53,7 @@ function decide(ev, policy = JSON.parse(fs.readFileSync(POLICY, 'utf8'))) {
 function log(ev, d, file = LOG) {
   const line = JSON.stringify({ t: new Date().toISOString(), event: ev.type, ...d }) + '\n';
   const prev = fs.existsSync(file) ? fs.readFileSync(file, 'utf8').split('\n').filter(Boolean).slice(-999) : [];
+  fs.mkdirSync(path.dirname(file), { recursive: true }); // P3128: dir absent on fresh checkout
   fs.writeFileSync(file, prev.join('\n') + (prev.length ? '\n' : '') + line);
 }
 
