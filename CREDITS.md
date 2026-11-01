@@ -502,3 +502,5 @@ A heartfelt thank you to:
 
 - **SSOT couple-sources ledger (P3136)** - `data/ssot/couple-sources.json` records, per exact mfr+pid couple, links to the sources that confirm it: Koenkk/zigbee-herdsman-converters (`src/devices/tuya.ts` fingerprints and whiteLabel entries), zigpy/zha-device-handlers (`zhaquirks/tuya` signatures) and JohanBendz/com.tuya.zigbee (driver listings, read-only). Only ids, model and vendor names are recorded; no code copied.
 - **zigpy/zha-device-handlers #1746 / PR #2288** (evlo, MattWestb, javicalle, TheJulianJES, cordvision, Rojoss) - TS0042 signatures for `_TZ3000_dfgbtub0` and `_TZ3000_5e235jpa`, the 0xFD press-type mapping and the no-bind battery rule, recorded as facts in `data/ssot/curated-facts.json` (P3136b). No code copied.
+## #585 runtime hints (P3134, 2026-11-01) — fingerprint facts only, no code copied
+- **Koenkk, zigbee-herdsman-converters (`src/devices/tuya.ts`)** — model ids used for the corrected hints: `_TZ3000_46vasa5h` TS011F, `_TZ3000_cehuw1lw` TS011F/TS0121, `_TZE284_xpq2rzhq` TS0601, `_TZ3000_dfgbtub0` TS0042.

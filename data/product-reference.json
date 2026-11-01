@@ -25961,7 +25961,7 @@
    "source": "auto-sync"
   },
   "_TZ3000_cehuw1lw": {
-   "driverId": "button_wireless_plug",
+   "driverId": "smartplug",
    "modelIds": [
     "EXCELLUX",
     "LUMI.SENSOR_HT",
@@ -26015,7 +26015,7 @@
    },
    "deviceClass": "socket",
    "capabilities": null,
-   "source": "auto-sync"
+   "source": "auto-sync; P3134 #585 Z2M tuya.ts"
   },
   "_TZ3000_uwkja6z1": {
    "driverId": "button_wireless_plug",
@@ -111774,7 +111774,7 @@
    "source": "auto-sync"
   },
   "_TZ3000_46VASA5H": {
-   "driverId": "switch_1gang",
+   "driverId": "double_power_point_2",
    "modelIds": [
     "01MINIZB",
     "BASICZBR3",
@@ -111829,7 +111829,7 @@
    },
    "deviceClass": "socket",
    "capabilities": null,
-   "source": "auto-sync"
+   "source": "auto-sync; P3134 #585 Z2M tuya.ts"
   },
   "_TZ3000_4HBRRN7E": {
    "driverId": "switch_1gang",
