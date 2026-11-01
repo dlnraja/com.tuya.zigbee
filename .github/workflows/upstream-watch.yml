@@ -25,7 +25,7 @@ env:
   GMAIL_DIAG_AI_MAX: '0'
 
 permissions:
-  contents: write
+  contents: read
   issues: write
 
 concurrency:
@@ -45,6 +45,13 @@ jobs:
         id: ks
         run: |
           if ! node scripts/ci/autonomy-learn.js paused watch; then echo "paused=true" >> "$GITHUB_OUTPUT"; fi
+      - name: Restore state (ETag cache, P3133)
+        if: steps.ks.outputs.paused != 'true'
+        uses: actions/cache/restore@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+        with:
+          path: .github/state/upstream-watch.json
+          key: upstream-watch-state-${{ github.run_id }}
+          restore-keys: upstream-watch-state-
       - name: Check upstream sources
         if: steps.ks.outputs.paused != 'true'
         run: node scripts/ci/upstream-watch.js
@@ -55,13 +62,9 @@ jobs:
           n=$(gh issue list --state open --search 'in:title "Upstream watch digest"' --json number -q '.[0].number')
           if [ -n "$n" ]; then gh issue comment "$n" --body-file upstream-digest.md
           else gh issue create --title "Upstream watch digest" --body-file upstream-digest.md; fi
-      - name: Save state (through bot-commit-guard)
-        if: steps.ks.outputs.paused != 'true'
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .github/state/upstream-watch.json
-          git diff --cached --quiet && exit 0
-          bash scripts/ci/bot-commit-guard.sh
-          git commit -m "chore(state): upstream watch [skip ci]"
-          bash .github/scripts/git-push-retry.sh --branch "${GITHUB_REF_NAME}" || echo "::warning::P3025 upstream-watch state not pushed (see git-push-retry log)"
+      - name: Save state (actions/cache — .github/state stays gitignored, P3133)
+        if: steps.ks.outputs.paused != 'true' && hashFiles('.github/state/upstream-watch.json') != ''
+        uses: actions/cache/save@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+        with:
+          path: .github/state/upstream-watch.json
+          key: upstream-watch-state-${{ github.run_id }}
