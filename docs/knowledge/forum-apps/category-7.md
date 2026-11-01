@@ -474,3 +474,268 @@
 - **Regressions to watch:** —
 - **Linked:** —
 - **Credit:** —
+### [APP][Pro] Remeha Modbus - Monitor and control your Remeha heat pump via Modbus TCP
+
+- **Source:** homey-forum-apps — https://community.homey.app/t/153938
+- **Status:** open
+- **Labels:** apps-category
+- **Problem:** [APP][Pro] Remeha Modbus - Monitor and control your Remeha heat pump via Modbus TCP
+- **Root cause:** —
+- **Resolution:** Thanks for sharing the diagnostic report, I’ve found a small bug which is already solved in version 2.2.2.
+- **Couples:** —
+- **Drivers:** —
+- **DPs:** —
+- **Clusters:** —
+- **Firmware:** 13.0.0
+- **Adopt:** Using Flows you can send commands to the heat pump to change thermostat mode, DHW comfort setpoint, silent mode, hybrid mode and tariffs.
+- **Avoid:** —
+- **Regressions to watch:** After the update to this new version,  values are refreshed only once after a restart.
+- **Linked:** —
+- **Credit:** —
+
+### [APP TEST] Energy Flow – A visual energy dashboard for Homey Pro ⚡
+
+- **Source:** homey-forum-apps — https://community.homey.app/t/161321
+- **Status:** open
+- **Labels:** apps-category
+- **Problem:** [APP TEST] Energy Flow – A visual energy dashboard for Homey Pro ⚡
+- **Root cause:** —
+- **Resolution:** —
+- **Couples:** —
+- **Drivers:** —
+- **DPs:** —
+- **Clusters:** —
+- **Firmware:** —
+- **Adopt:** —
+- **Avoid:** —
+- **Regressions to watch:** —
+- **Linked:** —
+- **Credit:** —
+
+### [APP][Pro] Viessmann - Make your heating smart
+
+- **Source:** homey-forum-apps — https://community.homey.app/t/116744
+- **Status:** open
+- **Labels:** apps-category
+- **Problem:** [APP][Pro] Viessmann - Make your heating smart
+- **Root cause:** Unfortunately the installation failed due to warnings and errors:
+- **Resolution:** Getting Started · Wiki · Functor Solutions / Homey / Viessmann · GitLab
+- **Couples:** —
+- **Drivers:** —
+- **DPs:** —
+- **Clusters:** —
+- **Firmware:** —
+- **Adopt:** —
+- **Avoid:** —
+- **Regressions to watch:** —
+- **Linked:** —
+- **Credit:** —
+
+### [APP][Pro] Ultimate EMS - Intelligent energy management for solar, battery, EV and heat pump
+
+- **Source:** homey-forum-apps — https://community.homey.app/t/155475
+- **Status:** open
+- **Labels:** apps-category
+- **Problem:** [APP][Pro] Ultimate EMS - Intelligent energy management for solar, battery, EV and heat pump
+- **Root cause:** —
+- **Resolution:** —
+- **Couples:** —
+- **Drivers:** —
+- **DPs:** —
+- **Clusters:** —
+- **Firmware:** —
+- **Adopt:** —
+- **Avoid:** —
+- **Regressions to watch:** —
+- **Linked:** —
+- **Credit:** —
+
+### [APP][Pro] Energy Dashboard – a live energy display for any screen in your home
+
+- **Source:** homey-forum-apps — https://community.homey.app/t/160116
+- **Status:** open
+- **Labels:** apps-category
+- **Problem:** [APP][Pro] Energy Dashboard – a live energy display for any screen in your home
+- **Root cause:** A question for everyone with a hybrid inverter with a battery  (Huawei Luna2000, Growatt, Sungrow, SolaX, Sigenergy, Kostal or Wattsonic, through biemond’s app): the dashboard doesn’t see the battery in it yet, because it sits in the same device as the inverter.
+- **Resolution:** —
+- **Couples:** —
+- **Drivers:** —
+- **DPs:** —
+- **Clusters:** —
+- **Firmware:** —
+- **Adopt:** Use per hour: a heat map of your use, solar or the grid per hour over the last 4 weeks, from Homey Energy’s day reports.
+- **Avoid:** —
+- **Regressions to watch:** Version 0.2.6 is now in test, with everything that changed since 0.2.2:
+- **Linked:** —
+- **Credit:** —
+
+### [APP][Pro] HomeFlux EMS – Your energy, managed differently
+
+- **Source:** homey-forum-apps — https://community.homey.app/t/158982
+- **Status:** open
+- **Labels:** apps-category
+- **Problem:** [APP][Pro] HomeFlux EMS – Your energy, managed differently
+- **Root cause:** Because HomeFlux uses Homey Flow cards for its integrations, it is not tied to one specific battery, inverter, EV charger or HVAC brand.
+- **Resolution:** —
+- **Couples:** —
+- **Drivers:** —
+- **DPs:** —
+- **Clusters:** —
+- **Firmware:** —
+- **Adopt:** —
+- **Avoid:** Peak Guard  always keeps priority to help avoid unwanted consumption peaks.
+- **Regressions to watch:** —
+- **Linked:** —
+- **Credit:** —
+
+### [APP][Pro] BLUETTI – Power stations via BLUETTI cloud
+
+- **Source:** homey-forum-apps — https://community.homey.app/t/160644
+- **Status:** open
+- **Labels:** apps-category
+- **Problem:** [APP][Pro] BLUETTI – Power stations via BLUETTI cloud
+- **Root cause:** —
+- **Resolution:** —
+- **Couples:** —
+- **Drivers:** —
+- **DPs:** —
+- **Clusters:** —
+- **Firmware:** —
+- **Adopt:** —
+- **Avoid:** —
+- **Regressions to watch:** Credits: based on the official BLUETTI Home Assistant integration and the ioBroker.bluetti adapter (both MIT).
+- **Linked:** —
+- **Credit:** —
+
+### [APP][Pro] EcoFlow STREAM Series - solar, battery, smart meter and Homey Energy automation
+
+- **Source:** homey-forum-apps — https://community.homey.app/t/157399
+- **Status:** open
+- **Labels:** apps-category
+- **Problem:** [APP][Pro] EcoFlow STREAM Series - solar, battery, smart meter and Homey Energy automation
+- **Root cause:** —
+- **Resolution:** —
+- **Couples:** —
+- **Drivers:** —
+- **DPs:** —
+- **Clusters:** —
+- **Firmware:** —
+- **Adopt:** —
+- **Avoid:** —
+- **Regressions to watch:** —
+- **Linked:** —
+- **Credit:** —
+
+### [APP][Pro&Cloud][OFFICIAL] SolarEdge - Powering People’s Lives Around the World
+
+- **Source:** homey-forum-apps — https://community.homey.app/t/134605
+- **Status:** open
+- **Labels:** apps-category
+- **Problem:** [APP][Pro&Cloud][OFFICIAL] SolarEdge - Powering People’s Lives Around the World
+- **Root cause:** Because Homey only lets me change device settings while the app is running, every attempt to enter a new password races against the app locking the account again.
+- **Resolution:** —
+- **Couples:** —
+- **Drivers:** —
+- **DPs:** —
+- **Clusters:** —
+- **Firmware:** —
+- **Adopt:** Please send an app diagnostics report.
+- **Avoid:** —
+- **Regressions to watch:** Since 25 Sept my two SolarEdge devices (Battery + Inverter, app v1.8.1 on Homey Pro 2023) showed “Invalid e-mail and/or password.” permanently, and re-pairing now ends in “Unauthorized”.
+- **Linked:** —
+- **Credit:** —
+
+### [APP][Pro][Test] Energy Price Forecast – electricity prices, grid CO₂ and smart planning
+
+- **Source:** homey-forum-apps — https://community.homey.app/t/158968
+- **Status:** open
+- **Labels:** apps-category
+- **Problem:** [APP][Pro][Test] Energy Price Forecast – electricity prices, grid CO₂ and smart planning
+- **Root cause:** Homey Cloud is not supported in this first release because publishing a cloud-compatible app requires an additional verified-developer step.
+- **Resolution:** I’m working on a solution that combines actual prices (retrieved by users themselves) with the forecasts.
+- **Couples:** —
+- **Drivers:** —
+- **DPs:** —
+- **Clusters:** —
+- **Firmware:** 13.5.3
+- **Adopt:** —
+- **Avoid:** —
+- **Regressions to watch:** That second one matters: since 1.0.3 the page requests no scripts of its
+- **Linked:** —
+- **Credit:** —
+
+### [APP] Aqara & Xiaomi Smart Home - Simplify your life with a smarter home
+
+- **Source:** homey-forum-apps — https://community.homey.app/t/156
+- **Status:** open
+- **Labels:** apps-category
+- **Problem:** [APP] Aqara & Xiaomi Smart Home - Simplify your life with a smarter home
+- **Root cause:** —
+- **Resolution:** —
+- **Couples:** —
+- **Drivers:** —
+- **DPs:** —
+- **Clusters:** —
+- **Firmware:** —
+- **Adopt:** —
+- **Avoid:** —
+- **Regressions to watch:** —
+- **Linked:** —
+- **Credit:** —
+
+### [APP][Pro] Weekdot - Flows for your events and your daily agenda
+
+- **Source:** homey-forum-apps — https://community.homey.app/t/161566
+- **Status:** open
+- **Labels:** apps-category
+- **Problem:** [APP][Pro] Weekdot - Flows for your events and your daily agenda
+- **Root cause:** —
+- **Resolution:** —
+- **Couples:** —
+- **Drivers:** —
+- **DPs:** —
+- **Clusters:** —
+- **Firmware:** —
+- **Adopt:** More - apps -  Weekdot  - settings wheel top right - send diagnostic report (include your email and issues in the input field for better assistance)
+- **Avoid:** —
+- **Regressions to watch:** —
+- **Linked:** —
+- **Credit:** —
+
+### [APP][Pro] Tuya Zigbee App
+
+- **Source:** homey-forum-apps — https://community.homey.app/t/26439
+- **Status:** open
+- **Labels:** apps-category
+- **Problem:** [APP][Pro] Tuya Zigbee App
+- **Root cause:** —
+- **Resolution:** If your issue concerns something that was recently fixed in Test, please mention which version you tested.
+- **Couples:** —
+- **Drivers:** —
+- **DPs:** —
+- **Clusters:** —
+- **Firmware:** —
+- **Adopt:** —
+- **Avoid:** Avoid duplicate requests and lost information.
+- **Regressions to watch:** —
+- **Linked:** —
+- **Credit:** —
+
+### [App][Pro] FlowBits — Small bits of logic, big difference in your Flows
+
+- **Source:** homey-forum-apps — https://community.homey.app/t/145855
+- **Status:** open
+- **Labels:** apps-category
+- **Problem:** [App][Pro] FlowBits — Small bits of logic, big difference in your Flows
+- **Root cause:** I’m sure many useful apps are more or less forgotten because users never figured out how to use them.
+- **Resolution:** —
+- **Couples:** —
+- **Drivers:** —
+- **DPs:** —
+- **Clusters:** —
+- **Firmware:** 12.9.0
+- **Adopt:** —
+- **Avoid:** I’m sure many useful apps are more or less forgotten because users never figured out how to use them.
+- **Regressions to watch:** —
+- **Linked:** —
+- **Credit:** —
