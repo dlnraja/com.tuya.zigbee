@@ -39,3 +39,6 @@ Pass extracts couples from GitHub/forum text, resolves driver, then probes **clu
 
 Machine SSOT: `config/architecture/deep-functional-enrich-ssot.json`  
 Related: P2520 complementary · P2352 L99 · P2518 cap/flow/DP · P2528 radar `cap` ownership.
+
+## Capability coherence (P3135)
+Onboarding/enrich must apply docs/rules/HOMEKIT_CAPABILITY_RULES.md §Capability coherence + compensation (t722u/t723u): same setting => same caps, real DPs exposed (custom/sub-cap/flow/setting), HomeKit-mappable first; run `npm run audit:capabilities`.
