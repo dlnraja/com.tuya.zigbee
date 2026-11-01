@@ -1623,6 +1623,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     const dp = parseInt(dpId, 10);
     const config = this._getRadarConfig();
     const mapping = config.dpMap?.[dp];
+    // WHY(P3150 / ZHA PR #5514): 1youk3hj DP12 unset sentinel 0xFFFFFF08 -> keep value unknown
+    if (require('../../lib/tuya/UpstreamDpGuards').isUnsetFadingTime(this.getSetting?.('zb_manufacturer_name'), dp, rawValue)) {return;}
 
     // v10.9.0 (z2m/forum lesson): the ZY-M100-24GV3 firmware (_TZE204_ya4ft0w4)
     // emits 0 values in endless loops (documented firmware bug, no update
@@ -1665,6 +1667,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     const config = this._getRadarConfig();
     const dp = parseInt(dpId, 10);
     const mapping = config.dpMap?.[dp];
+    // WHY(P3150 / ZHA PR #5514): 1youk3hj DP12 unset sentinel 0xFFFFFF08 -> keep value unknown
+    if (require('../../lib/tuya/UpstreamDpGuards').isUnsetFadingTime(this.getSetting?.('zb_manufacturer_name'), dp, value)) {return;}
 
     // v10.9.0: same ZY-M100 zero-filter as _handleDP (both entry points)
     if (value === 0 || value === '0') {

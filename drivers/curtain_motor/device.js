@@ -640,7 +640,12 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
         this.log(`[CURTAIN] Setting close_time: ${closeTime}s`);
         await this._sendTuyaDP(102, closeTime, 'value');
       }
-      if (reverse) {
+      // WHY(P3150 / ZHA PR #4817): ZM25EL (68nvbio9/pw7mji0l) DP5 is enum 0=forward 1=back
+      const zmDir = require('../../lib/tuya/UpstreamDpGuards').zm25elDirectionDp(
+        this.getSetting?.('zb_manufacturer_name') || this.getData?.()?.manufacturerName, reverse);
+      if (zmDir) {
+        await this._sendTuyaDP(zmDir.dp, zmDir.value, zmDir.type);
+      } else if (reverse) {
         this.log('[CURTAIN] Setting reverse direction');
         await this._sendTuyaDP(5, 1, 'bool');
       }
