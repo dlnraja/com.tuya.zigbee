@@ -41,6 +41,15 @@ describe('P3066 sync driver-mapping guard', () => {
     assert.deepEqual(fixes, []);
     assert.deepEqual(data, synced);
   });
+  it('P3141: a row without modelIds is checked against the drivers composing that manufacturer', () => {
+    const own = new Map([['_tze204_z7a2jmyy|ts0601', new Set(['climate_sensor'])]]);
+    const hint = (d) => ({ driverId: d, type: d, powerSource: 'battery', modelIds: [] });
+    const { data, fixes } = guardRows({ _TZE204_z7a2jmyy: hint('water_valve_smart') }, { _TZE204_z7a2jmyy: hint('climate_sensor') }, own);
+    assert.equal(data._TZE204_z7a2jmyy.driverId, 'climate_sensor');
+    assert.equal(fixes[0].how, 'restored');
+    const ok = guardRows({ _TZE204_z7a2jmyy: hint('climate_sensor'), _TZ3000_none: hint('x') }, {}, own);
+    assert.deepEqual(ok.fixes, []);
+  });
   it('CLI: --check fails on a conflicting tree, fix mode repairs it and keeps one-line JSON', () => {
     const d = fs.mkdtempSync(path.join(os.tmpdir(), 'p3066-'));
     const git = (...a) => spawnSync('git', a, { cwd: d, encoding: 'utf8' });
