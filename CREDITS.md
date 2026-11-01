@@ -149,6 +149,7 @@ Our implementation (`lib/coordinator/*`, `data/coordinator-profiles.json`) is or
 - **Nigel_Scott** — HOBEIAN ZG-204ZP/ZK presence `_TZE200_ka8l86iu` (forum #2112, issue #382)
 - **Br0kk85** (forum #5538) + Koenkk/zigbee-herdsman-converters `hobeian.ts` + zigpy/zha-device-handlers `tuya_motion.py` + kkossev Hubitat mmWave — HOBEIAN ZG-204ZM `HOBEIAN`/`_TZE200_2aaelwxk`/`_TZE200_tyffvoij`/`_TZE200_yflzeeqj` DP types (DP107 bool, DP122 enum) (P3141)
 - **Johan Bendz** — JohanBendz/com.tuya.zigbee PR #631 / issue #604: `_TZ3000_bjawzodf`/TY0201 LCD sensor rejects configureReporting (P3141)
+- **Koenkk/zigbee-herdsman-converters** `src/devices/hobeian.ts` — ZG-204ZM `static_detection_distance` step 0.01 m (DP4 divideBy100); indicator/backlight DPs = `valueConverter.onOff` on ZG-204ZV/ZH/ZE/ZQ/ZK/ZX and ZG-302ZM/ZL; `anti_interference` onOff on ZG-204ZK DP122 / ZG-204ZX DP103; ZG-204ZX DP108 indicator (P3155)
 - **Joep_Vullings** — Insoma 2-way irrigation valve `_TZE284_fhvpaltk` (forum #2102/#2105, issue #260)
 - **FrankP** — TS0042 2-button remote `_TZ3000_tzvbimpq` routing (forum #1689/#1745)
 - **thierry_arguimbau** — `_TZE204_dhotiauw` dual energy meter (forum #2115)
