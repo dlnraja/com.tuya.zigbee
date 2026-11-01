@@ -4,7 +4,9 @@
       "heiman_keyfob",
       "heiman_siren",
       "presence_radar_aoyan_ay204t",
-      "water_leak_aoyan_ay222z",
+      "water_leak_aoyan_ay222z"
+    ],
+    [
       "water_leak_blitzwolf_bw_is9",
       "sauna_thermostat_ae5503",
       "siren_moes_mg_bjq002"
@@ -33,8 +35,12 @@
     ]
   ],
   "attempts": {
-    "energy_meter_3ch_bidirectional,gpo_double_light_mg_au03,gpo_double_mg_gpo02z,heiman_keyfob,heiman_siren,presence_radar_aoyan_ay204t,sauna_thermostat_ae5503,siren_moes_mg_bjq002,switch_2gang_ts0002,switch_wall_6gang_metering,valve_novato_zpv01,water_leak_aoyan_ay222z,water_leak_blitzwolf_bw_is9": 1
+    "energy_meter_3ch_bidirectional,gpo_double_light_mg_au03,gpo_double_mg_gpo02z,heiman_keyfob,heiman_siren,presence_radar_aoyan_ay204t,sauna_thermostat_ae5503,siren_moes_mg_bjq002,switch_2gang_ts0002,switch_wall_6gang_metering,valve_novato_zpv01,water_leak_aoyan_ay222z,water_leak_blitzwolf_bw_is9": 1,
+    "heiman_keyfob,heiman_siren,presence_radar_aoyan_ay204t,sauna_thermostat_ae5503,siren_moes_mg_bjq002,water_leak_aoyan_ay222z,water_leak_blitzwolf_bw_is9": 1
   },
   "isolated": [],
-  "pending": null
+  "pending": null,
+  "doneRuns": [
+    "41263658690"
+  ]
 }
