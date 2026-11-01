@@ -4919,8 +4919,8 @@
       ],
       "seed": "auto",
       "dps": {},
-      "verification": "unverified",
-      "verificationNote": "P3134: unverified. Its only cited source, forum 156967#12 (SunBeech table), lists TS0044=_TZ3000_wkai4ga5 and TS0042=_TZ3000_dfgbtub0; the harvester cross-multiplied the table. No Z2M/ZHA/deCONZ/Johan/diag proof for dfgbtub0|TS0044. Kept pending owner decision."
+      "verification": "artifact-removed",
+      "verificationNote": "P3146: harvester cross-product artifact of forum 156967#12 (SunBeech table: TS0044=_TZ3000_wkai4ga5, TS0042=_TZ3000_dfgbtub0); no Z2M/ZHA/deCONZ/Johan/diag source; removed after the removal-evidence gate (data/couple-removal-evidence.json)."
     },
     "_tze200_3ejwxpmu|TS0601": {
       "caseId": "p2295-3ejwxpmu-co2-sibling",
@@ -7889,7 +7889,9 @@
         "auto-seed-p2247"
       ],
       "seed": "auto",
-      "dps": {}
+      "dps": {},
+      "verification": "artifact-removed",
+      "verificationNote": "P3146: harvester cross-product artifact of forum 156967#12 (SunBeech table: TS0044=_TZ3000_wkai4ga5, TS0042=_TZ3000_dfgbtub0); no Z2M/ZHA/deCONZ/Johan/diag source; removed after the removal-evidence gate (data/couple-removal-evidence.json)."
     },
     "_TZE204_zenj4lxv|TS0601": {
       "caseId": "p2432-tze204-zenj4lxv-dimmer-2gang",
