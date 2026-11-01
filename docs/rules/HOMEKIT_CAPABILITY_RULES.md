@@ -26,3 +26,10 @@ Permanent rules. Additive only, nothing invented, per exact mfr+pid.
 energy capabilities are now added deterministically (+0.1-0.2 MB on 150 simulated devices, flat 100->300 events).
 The real leak guard is the slope test (kept heap 100->300 events must grow < 1 MB). Never raise the bound
 without measuring the slope and citing the cause.
+
+## Capability coherence + compensation (P3135, t719u/t721u/t722u/t723u) — permanent
+- Same driver + same setting => same capability set (e.g. `enable_power_estimation` => estimated `measure_power`/`meter_power`).
+- Maximise real, source-confirmed capabilities per exact mfr+pid; additive, optional, never invented DPs.
+- A real DP Homey/HomeKit cannot show natively is compensated: custom capability, sub-capability (`cap.x`), flow card, or setting. Never `capability: null` with no setting/flow.
+- HomeKit only bridges system caps on mappable classes: prefer them; custom caps stay Homey-only and must be documented.
+- CI: `npm run audit:capabilities` + `test/p3135-capability-coherence-audit.test.js` (ratchet A/B/C, counts only go down).

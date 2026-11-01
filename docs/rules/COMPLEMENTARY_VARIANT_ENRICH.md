@@ -61,3 +61,6 @@ Machine SSOT: [`config/architecture/complementary-reinstate-notions-ssot.json`](
 - P2224 complementary enrichment catalogs
 - P2570 Johan complementary completion — [`docs/architecture/JOHAN_COMPLEMENTARY_COMPLETION.md`](../architecture/JOHAN_COMPLEMENTARY_COMPLETION.md)
 - Sacred couple SSOT (P2494) · identity fields (P2496)
+
+## Capability coherence (P3135)
+Onboarding/enrich must apply docs/rules/HOMEKIT_CAPABILITY_RULES.md §Capability coherence + compensation (t722u/t723u): same setting => same caps, real DPs exposed (custom/sub-cap/flow/setting), HomeKit-mappable first; run `npm run audit:capabilities`.

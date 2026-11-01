@@ -72,3 +72,6 @@ Baseline note: `data/native-matrix-baseline.json` freezes the manifest findings 
 - Forum leads: `docs/rules/FORUM_LEADS_RULES.md`
 
 - **Couple sources (2026-10-11):** One reliable source is enough for an exact productId and an exact mfr+pid couple (user rule 2026-10-11): Z2M, ZHA, deCONZ, Johan, blakadder, SmartThings/Hubitat lists, Z2S, a user diagnostic. Record the source per couple (registry/pins/mfs_db). Never invent; skip only when the pid is ambiguous (the source lists several pids for the mfr). Place in the driver matching the device type, W4 move with curated removals and pins. Quirks/behaviour workarounds keep their own ≥2-source rule. See docs/rules/COUPLE_SOURCE_POLICY.md.
+
+## Capability coherence (P3135)
+Onboarding/enrich must apply docs/rules/HOMEKIT_CAPABILITY_RULES.md §Capability coherence + compensation (t722u/t723u): same setting => same caps, real DPs exposed (custom/sub-cap/flow/setting), HomeKit-mappable first; run `npm run audit:capabilities`.
