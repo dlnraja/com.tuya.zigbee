@@ -908,8 +908,8 @@
     }
   ],
   "9.0.1608": {
-    "en": "Maintenance build: same devices and behaviour as the previous version (publishing and test tooling only).",
-    "fr": "Version de maintenance : mêmes appareils et même comportement que la précédente (outils de publication et de test uniquement)."
+    "en": "Maintenance build: same devices and behaviour; the publish pipeline now isolates a failed Homey build step by step before retrying.",
+    "fr": "Version de maintenance : mêmes appareils et même comportement ; la chaîne de publication isole désormais pas à pas un build Homey en échec avant de réessayer."
   },
   "9.0.1607": {
     "en": "Maintenance build: same devices and behaviour as the previous version (publishing and test tooling only)."
