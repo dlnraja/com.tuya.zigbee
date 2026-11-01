@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-01T08:10:41.742Z",
+ "updated": "2026-11-01T10:30:00.000Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -44287,6 +44287,12 @@
     "leadsAdded": 0
    },
    "lastChangeRun": "41203507762"
+  },
+  "ci-fail:upstream-watch:save-state:git-add-ignored": {
+   "status": "fixed",
+   "date": "2026-11-01",
+   "by": "homey-ci-prs",
+   "note": "attempt 1/3 (24h) run 41295715547: Save state did git add of gitignored .github/state/upstream-watch.json (exit 1); P3133 persists it via pinned actions/cache restore/save, contents: read"
   }
  }
 }
