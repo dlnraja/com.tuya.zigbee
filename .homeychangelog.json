@@ -907,9 +907,12 @@
       ]
     }
   ],
+  "9.0.1609": {
+    "en": "New: sirens & battery reporting (TRV06). Fixed: general reliability (TS0042, TS0043), memory and timers and lights and dimmers. Plus 4 other changes in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Nouveau : sirènes & niveau de batterie (TRV06). Corrigé : fiabilité générale (TS0042, TS0043), mémoire et minuteries et éclairages et variateurs. Et 4 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+  },
   "9.0.1608": {
-    "en": "Maintenance build: same devices and behaviour; the publish pipeline now isolates a failed Homey build step by step before retrying.",
-    "fr": "Version de maintenance : mêmes appareils et même comportement ; la chaîne de publication isole désormais pas à pas un build Homey en échec avant de réessayer."
+    "en": "Maintenance build: same devices and behaviour; the publish ."
   },
   "9.0.1607": {
     "en": "Maintenance build: same devices and behaviour as the previous version (publishing and test tooling only)."
@@ -976,9 +979,5 @@
   "9.0.1582": {
     "en": "Fixed two start-up crashes on some Homey models (memory reading not available). Firmware updates now go through Homey's own Device Updates screen. Buttons: all older button types share one event path, scenes recall correctly and extra endpoints are bound at pairing. New: Aqara DJT11LM vibration sensor and RTCGQ13LM motion sensor, Wi-Fi gateway sub-devices and a 'Import tinytuya' box on Wi-Fi pairing screens. The background health timer wakes six times less often.",
     "fr": "Correction de deux plantages au démarrage sur certains modèles de Homey (lecture mémoire indisponible). Les mises à jour de firmware passent désormais par l'écran Mises à jour des appareils de Homey. Boutons : tous les anciens types de boutons partagent un seul circuit d'événements, les scènes se rappellent correctement et les points d'accès supplémentaires sont liés à l'appairage. Nouveau : capteur de vibration Aqara DJT11LM et détecteur de mouvement RTCGQ13LM, sous-appareils des passerelles Wi-Fi et une case « Importer tinytuya » sur les écrans d'appairage Wi-Fi. Le minuteur de santé en arrière-plan se réveille six fois moins souvent."
-  },
-  "9.0.1578": {
-    "en": "Buttons: presses from every path are merged and duplicates removed, with a learnt per-device window. New HEIMAN keyfob (arm, disarm, emergency) and HEIMAN siren drivers. TZ-ZT01 climate sensor with a long manufacturer name recognised, with its battery state. 3A Smart Home LXN59-2S7LX1.0 now pairs as a 2-gang switch and iHorn LH02121 as a slim motion sensor.",
-    "fr": "Boutons : les appuis reçus par tous les chemins sont regroupés et les doublons supprimés, avec une fenêtre apprise par appareil. Nouveaux drivers pour le porte-clés HEIMAN (armer, désarmer, urgence) et la sirène HEIMAN. Capteur d'ambiance TZ-ZT01 au nom de fabricant long reconnu, avec son état de batterie. Le 3A Smart Home LXN59-2S7LX1.0 s'appaire désormais en interrupteur 2 voies et l'iHorn LH02121 en détecteur de mouvement fin."
   }
 }
