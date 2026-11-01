@@ -25,3 +25,11 @@ describe('P3138 upstream thread miner + digest guard wiring', () => {
     assert.deepStrictEqual(require('../scripts/ci/digest-guard').run([]), []);
   });
 });
+
+describe('P3151 miner sources', () => {
+  it('includes deCONZ and Blakadder', () => {
+    const { REPOS } = require('../scripts/scanners/upstream-thread-miner');
+    require('assert').ok(REPOS.includes('dresden-elektronik/deconz-rest-plugin'));
+    require('assert').ok(REPOS.includes('blakadder/zigbee'));
+  });
+});
