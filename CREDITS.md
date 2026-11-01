@@ -504,3 +504,6 @@ A heartfelt thank you to:
 - **zigpy/zha-device-handlers #1746 / PR #2288** (evlo, MattWestb, javicalle, TheJulianJES, cordvision, Rojoss) - TS0042 signatures for `_TZ3000_dfgbtub0` and `_TZ3000_5e235jpa`, the 0xFD press-type mapping and the no-bind battery rule, recorded as facts in `data/ssot/curated-facts.json` (P3136b). No code copied.
 ## #585 runtime hints (P3134, 2026-11-01) — fingerprint facts only, no code copied
 - **Koenkk, zigbee-herdsman-converters (`src/devices/tuya.ts`)** — model ids used for the corrected hints: `_TZ3000_46vasa5h` TS011F, `_TZ3000_cehuw1lw` TS011F/TS0121, `_TZE284_xpq2rzhq` TS0601, `_TZ3000_dfgbtub0` TS0042.
+
+- P3134 couple-removal guard: scripts/ci/couple-removal-guard.js + validate.yml step; a maker leaving a driver must keep every source-confirmed pid (data/kb/couples.json, reviewed duals) matched (#585, per exact couple).
+- P3134 removal evidence (t730u): scripts/maintenance/couple-removal-evidence.js gathers Z2M/ZHA/deCONZ/Blakadder/Hubitat/Johan/forum/diags/git history/sibling pids into data/couple-removal-evidence.json; the guard (pre-push + validate.yml) blocks a removal without an entry. Rules: docs/rules/COUPLE_REMOVAL_EVIDENCE.md. _TZ3000_dfgbtub0|TS0044 marked unverified (forum 156967#12 lists TS0044 as _TZ3000_wkai4ga5).
