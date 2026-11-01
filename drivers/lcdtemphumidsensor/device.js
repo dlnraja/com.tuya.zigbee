@@ -127,36 +127,56 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
     }
 
     // --- Attribute Reporting Configuration ---
-    try {
-      await this.configureAttributeReporting([
-        {
-          cluster: 'msTemperatureMeasurement',
-          attributeName: 'measuredValue',
-          minInterval: 10,
-          maxInterval: 1800,
-          minChange: 10, // 0.1°C (was 50 = 0.5°C) -> high precision
-        },
-        {
-          cluster: 'msRelativeHumidity',
-          attributeName: 'measuredValue',
-          minInterval: 10,
-          maxInterval: 1800,
-          minChange: 50, // 0.5% (was 100 = 1%) -> high precision
-        },
-        {
-          cluster: 'genPowerCfg',
-          attributeName: 'batteryPercentageRemaining',
-          minInterval: 3600,
-          maxInterval: 43200,
-          minChange: 1, // 1% (was 2%) -> fine battery tracking
-        }
-      ]);
-    } catch (err) {
-      this.log('[LCD]  Attribute reporting config skipped (using DP polling/reports)');
+    // WHY(P3141 / Johan PR #631 + issue #604): `_TZ3000_bjawzodf`+TY0201 rejects
+    // configureReporting (Johan's tested copy removed it). Awaiting it on this sleepy
+    // couple only delays init; the device reports temp/humidity on its own schedule.
+    const _lcdNoReportingCfg = LCDTempHumidSensorDevice.skipsReportingConfig(
+      ManufacturerNameHelper.getManufacturerName(this), this.getData?.()?.productId
+        || this.getSetting?.('zb_model_id') || this.getSetting?.('zb_product_id'));
+    if (_lcdNoReportingCfg) {
+      this.log('[LCD]  P3141 bjawzodf/TY0201: skip configureReporting (Johan #631)');
+    } else {
+      try {
+        await this.configureAttributeReporting([
+          {
+            cluster: 'msTemperatureMeasurement',
+            attributeName: 'measuredValue',
+            minInterval: 10,
+            maxInterval: 1800,
+            minChange: 10, // 0.1°C (was 50 = 0.5°C) -> high precision
+          },
+          {
+            cluster: 'msRelativeHumidity',
+            attributeName: 'measuredValue',
+            minInterval: 10,
+            maxInterval: 1800,
+            minChange: 50, // 0.5% (was 100 = 1%) -> high precision
+          },
+          {
+            cluster: 'genPowerCfg',
+            attributeName: 'batteryPercentageRemaining',
+            minInterval: 3600,
+            maxInterval: 43200,
+            minChange: 1, // 1% (was 2%) -> fine battery tracking
+          }
+        ]);
+      } catch (err) {
+        this.log('[LCD]  Attribute reporting config skipped (using DP polling/reports)');
+      }
     }
 
     await super.onNodeInit({ zclNode });
     this.log('[LCD]  LCD Sensor ready (Universal Sync Engine active)');
+  }
+
+  /**
+   * P3141: couples that reject ZCL configureReporting (exact mfr+pid, case-insensitive).
+   * Unknown pid → only mfr checked, since the mfr is unique to the TY0201 LCD.
+   */
+  static skipsReportingConfig(mfr, pid) {
+    const m = String(mfr || '').toLowerCase();
+    const p = String(pid || '').toUpperCase();
+    return m === '_tz3000_bjawzodf' && (p === '' || p === 'TY0201');
   }
 
   onTuyaStatus(status) {
