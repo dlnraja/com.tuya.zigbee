@@ -141,6 +141,17 @@ function decide(msg, { cfg, state, ourAddr, threadHasOurReply, maxPerDay = 5, no
   return { action: 'send', to, from: ourAddr, subject, inReplyTo: msg.messageId, references: refs, body: compose(lang, m.sig, diag), logId: diag.logId, sig: m.sig.id, lang };
 }
 
+// P3131: the body must reach the recipient as readable plain text. Strip any HTML tags and
+// decode HTML entities defensively (a reply once arrived showing raw <p>/&eacute;).
+const ENTITIES = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ', eacute: 'é', egrave: 'è', ecirc: 'ê', agrave: 'à', acirc: 'â', ccedil: 'ç', ocirc: 'ô', ucirc: 'û', ugrave: 'ù', icirc: 'î', iuml: 'ï', euml: 'ë', laquo: '«', raquo: '»', rsquo: '\u2019', lsquo: '\u2018', hellip: '…' };
+function toPlainText(s) {
+  return String(s)
+    .replace(/<br\s*\/?>/gi, '\r\n').replace(/<\/p>\s*/gi, '\r\n\r\n').replace(/<[^>]+>/g, '')
+    .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n)))
+    .replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCodePoint(parseInt(n, 16)))
+    .replace(/&([a-z]+);/gi, (m, n) => (Object.prototype.hasOwnProperty.call(ENTITIES, n.toLowerCase()) ? ENTITIES[n.toLowerCase()] : m));
+}
+
 function buildMime(d) {
   const enc = (s) => /^[\x20-\x7e]*$/.test(s) ? s : `=?UTF-8?B?${Buffer.from(s).toString('base64')}?=`;
   const head = [
@@ -149,7 +160,7 @@ function buildMime(d) {
     `Date: ${new Date().toUTCString()}`, `Message-ID: <p3110.${d.logId}.${Date.now()}@${d.from.split('@')[1]}>`,
     'MIME-Version: 1.0', 'Content-Type: text/plain; charset=UTF-8', 'Content-Transfer-Encoding: base64', 'Auto-Submitted: auto-replied',
   ].filter(Boolean).join('\r\n');
-  return `${head}\r\n\r\n${Buffer.from(d.body).toString('base64').replace(/.{76}/g, '$&\r\n')}\r\n`; // ok-own-text (body composed locally, no third-party text)
+  return `${head}\r\n\r\n${Buffer.from(toPlainText(d.body), 'utf8').toString('base64').replace(/.{76}/g, '$&\r\n')}\r\n`; // ok-own-text (body composed locally, no third-party text)
 }
 
 function smtpSend({ user, pass, from, to, raw, host = 'smtp.gmail.com', port = 465 }) {
@@ -232,4 +243,4 @@ async function main() {
 }
 
 if (require.main === module) main().then(c => process.exit(c), e => { console.error(`[P3110] ${e.message}`); process.exit(1); });
-module.exports = { releasedInAthom, loadAthomBuilds, isPaused, isBastienDiag, safeReplyTo, parseDiag, cmpVersion, detectLang, matchSignature, compose, decide, buildMime, loadState, saveState, sentLastDay, SUBJECT };
+module.exports = { releasedInAthom, loadAthomBuilds, isPaused, isBastienDiag, safeReplyTo, parseDiag, cmpVersion, detectLang, matchSignature, compose, decide, buildMime, toPlainText, loadState, saveState, sentLastDay, SUBJECT };
