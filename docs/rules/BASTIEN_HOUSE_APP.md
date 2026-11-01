@@ -108,3 +108,10 @@ homey app install
 ## Forum
 
 Silent only (T157628). Never paste Bastien inventory or network keys.
+
+## Simultaneous push rule (t699u, 01/11/2026)
+
+A fix that concerns Bastien's devices goes to `bastien-home` **at the same time** as `master`
+(no master soak wait), with the full pre-push checks run on **both** branches
+(mocha, node-test-strict, p3075 gates, `homey app validate --level publish`, hygiene, lint-ratchet).
+Stable-v5 follows the normal port cadence. Commits stay free of house data (rooms, device names).
