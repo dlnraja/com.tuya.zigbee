@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-31T10:55:15.534Z",
+  "generated": "2026-11-01T11:50:06.055Z",
   "note": "P3048: candidates only. No workflow posts, comments or reacts. A human (or the Grok Bot anti-flood routine) decides.",
   "limits": {
     "autoPost": false,
@@ -26,10 +26,69 @@
   },
   "scanned": {
     "commits": 300,
-    "issues": 11
+    "issues": 16
   },
-  "candidates": [],
+  "candidates": [
+    {
+      "issue": 559,
+      "about": "non classé",
+      "author": "Lalla80111",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/559",
+      "commit": "e28970dbb7",
+      "commitAt": "2026-10-31T18:54:29Z",
+      "ci": "green",
+      "lastAuthor": "Lalla80111",
+      "reason": "fix pushed with green CI, the reporter spoke last"
+    }
+  ],
   "skipped": [
+    {
+      "issue": 585,
+      "reason": "pull request"
+    },
+    {
+      "issue": 407,
+      "reason": "closed"
+    },
+    {
+      "issue": 409,
+      "reason": "closed"
+    },
+    {
+      "issue": 557,
+      "about": "non classé",
+      "author": "dlnraja",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/557",
+      "commit": "357fc82a92",
+      "commitAt": "2026-11-01T09:01:34Z",
+      "ci": "green",
+      "lastAuthor": "github-actions[bot]",
+      "reason": "last message from a bot"
+    },
+    {
+      "issue": 3688,
+      "reason": "not found"
+    },
+    {
+      "issue": 560,
+      "reason": "closed"
+    },
+    {
+      "issue": 3687,
+      "reason": "not found"
+    },
+    {
+      "issue": 582,
+      "reason": "pull request"
+    },
+    {
+      "issue": 578,
+      "reason": "pull request"
+    },
+    {
+      "issue": 3686,
+      "reason": "not found"
+    },
     {
       "issue": 3685,
       "reason": "not found"
@@ -48,30 +107,6 @@
     },
     {
       "issue": 1330,
-      "reason": "not found"
-    },
-    {
-      "issue": 8500,
-      "reason": "not found"
-    },
-    {
-      "issue": 26084,
-      "reason": "not found"
-    },
-    {
-      "issue": 3076,
-      "reason": "not found"
-    },
-    {
-      "issue": 513,
-      "reason": "closed"
-    },
-    {
-      "issue": 2262,
-      "reason": "not found"
-    },
-    {
-      "issue": 29508,
       "reason": "not found"
     }
   ]

@@ -1,18 +1,18 @@
 {
-  "at": "2026-10-31T10:55:09.486Z",
-  "checked": 51,
+  "at": "2026-11-01T11:49:54.547Z",
+  "checked": 59,
   "findings": [
     {
       "kind": "repeated-failure",
-      "sig": "ci-28d56709ef60",
-      "wf": ".github/workflows/daily-digest.yml",
-      "detail": "4 failures in 72 h: 🤖 Daily Digest failed on master (🧭 Inspiration JohanBendz + own repo + git history (read-only) / 🧭 Inspiration scan: code-or-test)"
+      "sig": "ci-6e84c480a105",
+      "wf": ".github/workflows/node22-tests.yml",
+      "detail": "4 failures in 72 h: Node 22 runtime tests failed on master (test / Full suite on Node 22: code-or-test)"
     },
     {
       "kind": "repeated-failure",
-      "sig": "ci-88dfdae1295f",
-      "wf": ".github/workflows/daily-digest.yml",
-      "detail": "4 failures in 72 h: 🤖 Daily Digest failed on master (🏠 Homey digest / 🏠 Homey digest: code-or-test)"
+      "sig": "ci-351d901e2c87",
+      "wf": ".github/workflows/node22-tests.yml",
+      "detail": "4 failures in 72 h: Node 22 runtime tests failed on master (test / Full suite on Node 22: no-log)"
     }
   ]
 }
