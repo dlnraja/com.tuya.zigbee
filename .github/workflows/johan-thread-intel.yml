@@ -81,6 +81,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # P3174 (t735u): source-digest privacy gate, fail closed on newly generated lines
+          node scripts/ci/digest-guard.js --delta data/leads data/progress/ledger.json || { git checkout -- data/leads data/progress/ledger.json 2>/dev/null; exit 1; }
           node scripts/ci/safe-auto-commit.js --id=johan-thread-intel \
             --message="chore(leads): incremental upstream thread index" \
             --paths="data/leads/johan-canonical-index.json data/progress/ledger.json"
@@ -113,6 +115,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # P3174 (t735u): source-digest privacy gate, fail closed on newly generated lines
+          node scripts/ci/digest-guard.js --delta data/leads data/progress/ledger.json || { git checkout -- data/leads data/progress/ledger.json 2>/dev/null; exit 1; }
           node scripts/ci/safe-auto-commit.js --id=history-sweep \
             --message="chore(leads): advance history sweep checkpoint" \
             --paths="data/leads/sweep-checkpoint.json data/leads/deep-read-checkpoint.json data/progress/ledger.json data/leads/johan-acceptance.json"
