@@ -13,6 +13,19 @@ const { installWallSceneRemoteHybrid } = require('../../lib/devices/WallSceneRem
  */
 class Button4GangDevice extends ButtonDevice {
 
+  /**
+   * WHY(P3137 / ZHA #1746, PR #2288): TS0044 sleepy remotes drain battery when
+   * PowerConfiguration reporting is bound. Additive: only for TS0044, only if the
+   * base profile did not already decide skipBatteryReporting.
+   */
+  getDeviceProfile() {
+    const base = (typeof super.getDeviceProfile === 'function' && super.getDeviceProfile()) || {};
+    let pid = '';
+    try { pid = String(this.getSetting?.('zb_model_id') || this.getData?.()?.productId || base.productId || ''); } catch (_e) { /* ignore */ }
+    if (pid.toUpperCase() !== 'TS0044' || base.skipBatteryReporting != null) {return base;}
+    return Object.assign({}, base, { skipBatteryReporting: true });
+  }
+
   async onNodeInit({ zclNode }) {
     // WHY(2026-10-11 fold): MiBoxer FUT089Z 8-zone remote (exact couple _TZ3000_xwh1e22x + TS1002) uses
     // its own zone profile; the generic 4-button stack is skipped for that couple only.
