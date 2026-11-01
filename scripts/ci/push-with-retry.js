@@ -4,6 +4,7 @@
 // "rebase conflict" on #557 and the commit dropped. Now: fetch failures are retried (transient), only a real
 // rebase conflict stops the loop, backoff is exponential with jitter, never force, never rewrite remote history.
 const { spawnSync } = require('child_process');
+const { resolveRebaseConflicts } = require('./json-ledger-merge'); // P3199
 
 function backoffMs(attempt, { baseMs = 4000, capMs = 60000, jitterMs = 7000, rnd = Math.random } = {}) {
   const a = Math.max(1, Number(attempt) || 1);
@@ -24,7 +25,18 @@ async function pushWithRetry({ branch, remote = 'origin', cwd = process.cwd(), g
       if (git('merge-base', '--is-ancestor', 'HEAD', 'FETCH_HEAD').status === 0) return { ok: true, reason: 'nothing', attempts: i, details };
       if (git('merge-base', '--is-ancestor', 'FETCH_HEAD', 'HEAD').status !== 0) {
         const r = git('-c', 'rebase.autoStash=true', 'rebase', '-q', 'FETCH_HEAD');
-        if (r.status !== 0) { git('rebase', '--abort'); return { ok: false, reason: 'conflict', attempts: i, details: `${r.stdout || ''}${r.stderr || ''}` }; }
+        if (r.status !== 0) {
+          // P3199: structural merge for append-mostly ledger/lead JSON; anything else still aborts.
+          let res = { ok: false, details: '' }; let steps = 0;
+          while (steps++ < 20) {
+            res = resolveRebaseConflicts({ git, cwd });
+            if (!res.ok) break;
+            const c = git('-c', 'core.editor=true', 'rebase', '--continue');
+            if (c.status === 0) break;
+            if (!git('diff', '--name-only', '--diff-filter=U').stdout.trim()) { res = { ok: false, details: `${c.stdout || ''}${c.stderr || ''}` }; break; }
+          }
+          if (!res.ok) { git('rebase', '--abort'); return { ok: false, reason: 'conflict', attempts: i, details: `${r.stdout || ''}${r.stderr || ''}${res.details ? `\n[json-merge] ${res.details}` : ''}` }; }
+        }
       }
       const p = git('push', '-q', remote, `HEAD:refs/heads/${branch}`);
       if (p.status === 0) return { ok: true, reason: 'pushed', attempts: i, details };
