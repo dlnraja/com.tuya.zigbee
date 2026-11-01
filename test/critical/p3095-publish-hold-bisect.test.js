@@ -75,4 +75,9 @@ describe('P3095 publish-hold bisect', () => {
     const ap = fs.readFileSync(path.join(ROOT, '.github/workflows/auto-publish-on-push.yml'), 'utf8');
     assert.ok(/gh workflow run publish-hold-bisect\.yml --ref master -f verdict_run="\$GITHUB_RUN_ID"/.test(ap));
   });
+  it('P3107: commit step stages each path on its own (a missing path must not drop the state commit)', () => {
+    const w = fs.readFileSync(path.join(ROOT, '.github/workflows/publish-hold-bisect.yml'), 'utf8');
+    assert.ok(!/git add config\/publish-hold-drivers\.json config\//.test(w), 'no multi-path git add');
+    assert.ok(w.includes('if [ -e "$f" ]; then git add -- "$f"; fi'));
+  });
 });
