@@ -52,6 +52,7 @@ jobs:
     timeout-minutes: 10
     permissions:
       contents: write
+      actions: read
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
       - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
@@ -63,6 +64,14 @@ jobs:
         run: |
           npm ci --prefer-offline --no-audit --ignore-scripts
           npx mocha test/p3110-diag-autoreply.test.js --timeout 20000
+      - name: Latest Athom build snapshot (released = in Test/Live)
+        if: github.event_name != 'pull_request' && vars.AUTOREPLY_DISABLED != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          id=$(gh run list --workflow athom-build-history.yml --status success --limit 1 --json databaseId -q '.[0].databaseId' || true)
+          mkdir -p data/status
+          [ -n "$id" ] && gh run download "$id" -n athom-build-history -D data/status || echo "no athom snapshot (manual released flag only)"
       - name: Reply to Bastien diags
         if: github.event_name != 'pull_request' && vars.AUTOREPLY_DISABLED != 'true'
         env:

@@ -78,8 +78,19 @@ function matchSignature(diag, cfg) {
   if (hits.length !== 1) return { ok: false, why: hits.length ? 'ambiguous-signature' : 'no-known-signature' };
   const sig = hits[0];
   if (cmpVersion(diag.appVersion, sig.fixedVersion) >= 0) return { ok: false, why: `version-already-fixed(${sig.id})` };
-  if (sig.released !== true) return { ok: false, why: `fix-not-released(${sig.id})` };
+  // P3110b: bastien ships only through the Test channel, so "released" = a build >= fixedVersion is in Test
+  // (or Live) per the athom-build-history snapshot; the manual `released: true` flag stays as a fallback.
+  if (sig.released !== true && !releasedInAthom(sig.fixedVersion, cfg.athomBuilds)) return { ok: false, why: `fix-not-released(${sig.id})` };
   return { ok: true, sig };
+}
+
+function releasedInAthom(fixedVersion, builds) {
+  return (Array.isArray(builds) ? builds : []).some(b => b && /^(test|live|published|approved)$/i.test(String(b.channel || b.state || ''))
+    && /^\d+\.\d+\.\d+$/.test(String(b.version || '')) && cmpVersion(b.version, fixedVersion) >= 0);
+}
+
+function loadAthomBuilds(root = ROOT) {
+  try { return JSON.parse(fs.readFileSync(path.join(root, 'data', 'status', `homey-build-status-${APP_ID}.json`), 'utf8')).builds || []; } catch { return []; }
 }
 
 function compose(lang, sig, diag) {
@@ -173,6 +184,8 @@ async function main() {
   const user = process.env.GMAIL_EMAIL, pass = process.env.GMAIL_APP_PASSWORD;
   if (!user || !pass) { console.log('[P3110] GMAIL_EMAIL/GMAIL_APP_PASSWORD missing — skipped'); return 0; }
   const cfg = JSON.parse(fs.readFileSync(SIGS, 'utf8'));
+  cfg.athomBuilds = loadAthomBuilds();
+  console.log(`[P3110] athom build snapshot: ${cfg.athomBuilds.length} build(s)`);
   const state = loadState();
   const { ImapFlow } = require('imapflow');
   const { simpleParser } = require('mailparser');
@@ -219,4 +232,4 @@ async function main() {
 }
 
 if (require.main === module) main().then(c => process.exit(c), e => { console.error(`[P3110] ${e.message}`); process.exit(1); });
-module.exports = { isPaused, isBastienDiag, safeReplyTo, parseDiag, cmpVersion, detectLang, matchSignature, compose, decide, buildMime, loadState, saveState, sentLastDay, SUBJECT };
+module.exports = { releasedInAthom, loadAthomBuilds, isPaused, isBastienDiag, safeReplyTo, parseDiag, cmpVersion, detectLang, matchSignature, compose, decide, buildMime, loadState, saveState, sentLastDay, SUBJECT };
