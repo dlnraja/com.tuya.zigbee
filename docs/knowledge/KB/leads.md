@@ -320,3 +320,4 @@
 | `_TZ3210_invesber` | TS0502B | kb-weak | 0.6 | https://github.com/JohanBendz/com.tuya.zigbee/blob/61577d8ec2572bf8c7c4c2ff210284575acd295b/drivers/dimmable_led_strip/driver.compose.json |
 | `_TZ3210_iystcadi` | TS0505A | kb-weak | 0.6 | https://github.com/JohanBendz/com.tuya.zigbee/blob/61577d8ec2572bf8c7c4c2ff210284575acd295b/drivers/rgb_led_light_bar/driver.compose.json |
 | `_TZE20X_xxxxxxxx` | TS0601 | kb-weak | 0.6 | https://github.com/JohanBendz/com.tuya.zigbee/blob/61577d8ec2572bf8c7c4c2ff210284575acd295b/drivers/tuya_dummy_device/driver.compose.json |
+- 2026-11-01 kb-daily: `_TZE284_48ye65rk`/TS0601 Vareo HYT001ZB thermostat, `_TZE284_stvgmdjz`/TS0601 Moes SFL02-Z-1 switch, AOYAN/AY-223Z rain sensor (white label of ZG-223Z). Source Z2M (Koenkk/zigbee-herdsman-converters, tuya.ts / moes.ts / hobeian.ts, c18c32d). Absent on all 3 branches; place per exact couple when budget and an active-session-free window allow.
