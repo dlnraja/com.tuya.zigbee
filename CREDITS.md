@@ -509,3 +509,4 @@ A heartfelt thank you to:
 
 - P3134 couple-removal guard: scripts/ci/couple-removal-guard.js + validate.yml step; a maker leaving a driver must keep every source-confirmed pid (data/kb/couples.json, reviewed duals) matched (#585, per exact couple).
 - P3134 removal evidence (t730u): scripts/maintenance/couple-removal-evidence.js gathers Z2M/ZHA/deCONZ/Blakadder/Hubitat/Johan/forum/diags/git history/sibling pids into data/couple-removal-evidence.json; the guard (pre-push + validate.yml) blocks a removal without an entry. Rules: docs/rules/COUPLE_REMOVAL_EVIDENCE.md. _TZ3000_dfgbtub0|TS0044 marked unverified (forum 156967#12 lists TS0044 as _TZ3000_wkai4ga5).
+- P3143: knob press dedup inspired by community reports in Johan Bendz's Tuya Zigbee forum topic 26439 (#5526-5537, _TZ3000_qja6nq5z/TS004F).

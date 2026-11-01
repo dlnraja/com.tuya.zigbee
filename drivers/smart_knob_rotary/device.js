@@ -414,8 +414,21 @@ class SmartKnobRotaryDevice extends SmartKnobRotationMixin(TuyaZigbeeDevice) {
     await this._triggerKnobRotateRight();
   }
 
+  // WHY(P3143): one physical press can arrive on several paths (onOff toggle cmd, 0xE000
+  // buttonPress, EF00 DP, scenes) — Johan forum 26439 #5526-5537 reported double/extra
+  // presses on _TZ3000_qja6nq5z/TS004F. Collapse same press class within a short window.
+  _isDuplicateKnobPress(action, windowMs = 300) {
+    const isSingle = action === 'on' || action === 'off' || action === 'toggle';
+    const cls = isSingle ? 'single' : String(action);
+    const now = Date.now();
+    const last = this._lastKnobPress;
+    this._lastKnobPress = { cls, t: now };
+    return !!(last && last.cls === cls && (now - last.t) < windowMs);
+  }
+
   async _triggerButtonPress(action) {
     if (this._destroyed) {return;}
+    if (action !== 'release' && this._isDuplicateKnobPress(action)) {return;}
     if (action === 'hold' || action === 'long' || action === 'long_press') {
       this.markKnobPressHeld();
     } else if (action === 'single') {
