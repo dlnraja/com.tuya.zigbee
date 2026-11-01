@@ -52,6 +52,13 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
 
   get hybridModeEnabled() { return true; }
 
+  // P3192: _TZE284_aao3yzhs (AAA) reports DP15 battery 0 % on many units while DP14 battery_state says
+  // not-low (ZHA #4288/#4519/#5126, Z2M #26215; ZHA quirk uses DP15 only, deCONZ DP14 = lowbattery).
+  get isAao3yzhsVariant() {
+    const manufacturer = this.getSetting?.('zb_manufacturer_name') || this.getData?.()?.manufacturerName || '';
+    return String(manufacturer).toLowerCase() === '_tze284_aao3yzhs';
+  }
+
   get isSgabhwa6Variant() {
     const manufacturer = this.getSetting?.('zb_manufacturer_name') || '';
     return manufacturer.toLowerCase() === '_tze284_sgabhwa6';
@@ -165,9 +172,17 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       },
       14: {
         capability: 'measure_battery',
-        transform: (v) => ({ 0: 10, 1: 50, 2: 100 }[v] ?? v)
+        transform: (v) => {
+          if (this.isAao3yzhsVariant) this._aaoBattState = Number(v); // P3192
+          return ({ 0: 10, 1: 50, 2: 100 }[v] ?? v);
+        }
       },
-      15: { capability: 'measure_battery', divisor: 1 },
+      15: {
+        capability: 'measure_battery',
+        divisor: 1,
+        // P3192: aao3yzhs firmware sends 0 % while DP14 says not low -> keep the DP14 tier instead of 0
+        transform: (v) => (this.isAao3yzhsVariant && Number(v) === 0 && this._aaoBattState > 0 ? null : v),
+      },
       20: { capability: 'measure_ec', divisor: 1 }, // EC (Electrical Conductivity) - Z2M DP mapping
       22: { capability: 'measure_ec', divisor: 1 }, // EC (Fertilizer level) - Z2M DP mapping
       101: { capability: 'measure_humidity', divisor: 1 },
