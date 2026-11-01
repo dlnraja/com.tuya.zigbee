@@ -206,6 +206,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # P3171 (t735u): source-digest privacy gate, fail closed on newly generated lines
+          node scripts/ci/digest-guard.js --delta data/progress/ledger.json data/leads/learning-candidates.json || { git checkout -- data/progress/ledger.json data/leads/learning-candidates.json 2>/dev/null; exit 1; }
           node scripts/ci/safe-auto-commit.js --id=gmail-diag-ledger --max-per-day=4 \
             --message="chore(ledger): diagnostics findings" \
             --paths="data/progress/ledger.json data/leads/learning-candidates.json"
