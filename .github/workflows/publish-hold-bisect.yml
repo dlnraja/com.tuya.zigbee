@@ -86,7 +86,11 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add config/publish-hold-drivers.json config/publish-hold-bisect-state.json docs/knowledge/athom-publish-outcomes.jsonl docs/status/publish-hold-isolated 2>/dev/null || true
+          # P3107: one pathspec per add — a single missing path (docs/status/publish-hold-isolated before the first
+          # isolation) made the whole `git add` fail silently, so no bisect state was ever committed.
+          for f in config/publish-hold-drivers.json config/publish-hold-bisect-state.json docs/knowledge/athom-publish-outcomes.jsonl docs/status/publish-hold-isolated; do
+            if [ -e "$f" ]; then git add -- "$f"; fi
+          done
           git diff --cached --quiet && { echo "nothing to commit"; exit 0; }
           bash scripts/ci/bot-commit-guard.sh
           git commit -m "chore(P3095): publish-hold bisect step [skip ci]"
