@@ -22,6 +22,11 @@ on:
     - cron: '29 6 * * 1'
   workflow_dispatch:
 
+env:
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
+
 permissions:
   contents: read
   actions: read
