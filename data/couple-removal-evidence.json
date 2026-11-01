@@ -84,6 +84,60 @@
         "git_history": "51a86ac373 v9.0.217: 431 drivers, 2737 FPs [skip ci] | a98486fc78 fix(P44): R9 — 5 typo fixes + 1450 mfrs + 17 pids to driver.compose.json | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
         "sibling_pids": "_TZ3000_dfgbtub0|TS0042"
       }
+    },
+    {
+      "couple": "_TZ3000_dfgbtub0|TS0044",
+      "driver": "button_wireless_4",
+      "pr": "P3146",
+      "verdict": "removed: harvester cross-product of forum 156967#12 (SunBeech table pairs TS0044=_TZ3000_wkai4ga5, TS0042=_TZ3000_dfgbtub0); Rob_G 89271#653 is a TS0044 interview; Blakadder lists dfgbtub0 as Eardatek 2-button; no Z2M/ZHA/deCONZ/Johan/diag source. Real couples kept: dfgbtub0|TS0042 button_wireless_2, wkai4ga5|TS0044 scene_switch_4.",
+      "sources": {
+        "z2m": "not listed for TS0044",
+        "zha": "not listed for TS0044",
+        "deconz": "not listed for TS0044",
+        "blakadder": "maker in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0044",
+        "forum": "TS0042:https://community.homey.app/t/156967/12; TS0044:https://community.homey.app/t/156967/12",
+        "diags": "no diag report",
+        "git_history": "51a86ac373 v9.0.217: 431 drivers, 2737 FPs [skip ci] | a98486fc78 fix(P44): R9 — 5 typo fixes + 1450 mfrs + 17 pids to driver.compose.json | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZ3000_dfgbtub0|TS0042"
+      }
+    },
+    {
+      "couple": "_TZ3000_wkai4ga5|TS0042",
+      "driver": "button_wireless_2",
+      "pr": "P3146",
+      "verdict": "removed: harvester cross-product of forum 156967#12 (SunBeech table pairs TS0044=_TZ3000_wkai4ga5, TS0042=_TZ3000_dfgbtub0); Rob_G 89271#653 is a TS0044 interview; Blakadder lists dfgbtub0 as Eardatek 2-button; no Z2M/ZHA/deCONZ/Johan/diag source. Real couples kept: dfgbtub0|TS0042 button_wireless_2, wkai4ga5|TS0044 scene_switch_4.",
+      "sources": {
+        "z2m": "not listed for TS0042",
+        "zha": "not listed for TS0042",
+        "deconz": "not listed for TS0042",
+        "blakadder": "maker in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0042",
+        "forum": "TS0042:https://community.homey.app/t/156967/12; TS0043:https://community.homey.app/t/150690/1; TS0044:https://community.homey.app/t/156967/12,https://community.homey.app/t/150690/33,https://community.homey.app/t/150690/1,https://community.homey.app/t/89271/653",
+        "diags": "no diag report",
+        "git_history": "51a86ac373 v9.0.217: 431 drivers, 2737 FPs [skip ci] | a98486fc78 fix(P44): R9 — 5 typo fixes + 1450 mfrs + 17 pids to driver.compose.json | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZ3000_wkai4ga5|TS0044"
+      }
+    },
+    {
+      "couple": "_TZ3000_gbm10jnj|TS0044",
+      "driver": "button_wireless_4",
+      "pr": "P3146",
+      "verdict": "removed: harvester cross-product of forum 150690#1 (Relax_swe lists zgyzgdua/wkai4ga5 = TS0044 and gbm10jnj = TS0043); no Z2M/ZHA/deCONZ/Johan/diag source for TS0044. Real couple _TZ3000_gbm10jnj|TS0043 stays on button_wireless_3.",
+      "sources": {
+        "z2m": "not listed for TS0044",
+        "zha": "not listed for TS0044",
+        "deconz": "not listed for TS0044",
+        "blakadder": "maker in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0044",
+        "forum": "TS0043:https://community.homey.app/t/150690/1; TS0044:https://community.homey.app/t/150690/1",
+        "diags": "no diag report",
+        "git_history": "51a86ac373 v9.0.217: 431 drivers, 2737 FPs [skip ci] | cc0f3f79e2 feat: P11 carte blanche - door_sensor + workflow consolidation | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZ3000_gbm10jnj|TS0043"
+      }
     }
   ]
 }

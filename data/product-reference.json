@@ -20510,9 +20510,9 @@
    "source": "auto-sync"
   },
   "_TZ3000_dfgbtub0": {
-   "driverId": "button_wireless_4",
+   "driverId": "button_wireless_2",
    "modelIds": [
-    "TS0044"
+    "TS0042"
    ],
    "vendor": "Eardatek",
    "model": "ESW-0ZAC-EU",
@@ -20536,7 +20536,7 @@
    },
    "deviceClass": "button",
    "capabilities": null,
-   "source": "registry:p2293-dfgbtub0-ts0044-wireless-4",
+   "source": "blakadder Eardatek ESW-0ZAC-EU + Z2M TS0042 (P3146)",
    "variants": [
     "_TZ3000_DFGBTUB0",
     "_tz3000_dfgbtub0",
