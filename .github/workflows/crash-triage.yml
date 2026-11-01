@@ -61,4 +61,7 @@ jobs:
         run: node scripts/autonomy/crash-triage.js $(find diag-in -name '*.json' | head -50)
       - name: One issue per signature (create or update counts)
         if: steps.ks.outputs.paused != 'true'
-        run: node scripts/autonomy/crash-triage-issues.js
+        run: |
+          # P3176 (t735u): fail closed before crash signatures leave the runner
+          [ ! -f crash-triage.json ] || node scripts/ci/digest-guard.js crash-triage.json || exit 1
+          node scripts/autonomy/crash-triage-issues.js
