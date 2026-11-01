@@ -13,17 +13,6 @@
       "reviewed_by": "user decision 2026-10-04 (executor-flowport research)"
     },
     {
-      "couple": "_TZE284_xpq2rzhq|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ],
-      "reason": "Moes ZSS-QY-HP presence sensor; siblings _TZE200/_TZE204_xpq2rzhq already in presence_sensor_radar.",
-      "source": "zigbee-herdsman-converters src/devices/tuya.ts TS0601_smart_human_presence_sensor_1",
-      "date": "2026-10-04",
-      "reviewed_by": "user decision 2026-10-04 (executor-flowport research)"
-    },
-    {
       "couple": "_TZ3000_9ni6xxld|TS011F",
       "drivers": [
         "gas_sensor_switch",
@@ -42,17 +31,6 @@
       ],
       "reason": "DIN rail switch with metering and thresholds; 5 ZHC siblings already in smartPlug_DinRail.",
       "source": "zigbee-herdsman-converters src/devices/tuya.ts TS011F_with_threshold",
-      "date": "2026-10-04",
-      "reviewed_by": "user decision 2026-10-04 (executor-flowport research)"
-    },
-    {
-      "couple": "_TZ3000_46vasa5h|TS011F",
-      "drivers": [
-        "double_power_point_2",
-        "switch_1gang"
-      ],
-      "reason": "2 gang wall outlet (endpoints l1/l2); double_power_point_2 drives both sockets.",
-      "source": "zigbee-herdsman-converters src/devices/tuya.ts TS011F_2_gang_wall",
       "date": "2026-10-04",
       "reviewed_by": "user decision 2026-10-04 (executor-flowport research)"
     },
