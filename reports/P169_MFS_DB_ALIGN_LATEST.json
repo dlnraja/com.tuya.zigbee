@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-01T04:21:25.256Z",
+  "timestamp": "2026-11-01T22:19:31.619Z",
   "gate": "align-mfs-db-intelligent",
   "apply": false,
   "check": true,
@@ -12,6 +12,11 @@
     {
       "reason": "registry_driver_missing",
       "caseId": "p2605b-nkjintbl-tze284-ambiguous",
+      "canon": null
+    },
+    {
+      "reason": "registry_driver_missing",
+      "caseId": "p2293-dfgbtub0-ts0044-wireless-4",
       "canon": null
     },
     {
@@ -48,6 +53,11 @@
       "reason": "registry_empty_mfr",
       "caseId": "p2415-zs301z-soil",
       "canon": "soil_sensor"
+    },
+    {
+      "reason": "registry_driver_missing",
+      "caseId": "p2432-tz3000-wkai4ga5-button-2",
+      "canon": null
     },
     {
       "reason": "registry_driver_missing",
@@ -245,14 +255,6 @@
       ]
     },
     {
-      "reason": "registry_oem_multi_canon",
-      "mfr": "_tz3000_wkai4ga5",
-      "canon": "scene_switch_4",
-      "caseIds": [
-        "p2328-wkai4ga5-ts0044-scene"
-      ]
-    },
-    {
       "reason": "registry_bare_brand_multi_canon",
       "mfr": "hobeian",
       "canon": "rain_sensor",
@@ -315,14 +317,6 @@
       "canon": "gas_sensor",
       "caseIds": [
         "hobeian-zg225z-gas"
-      ]
-    },
-    {
-      "reason": "registry_oem_multi_canon",
-      "mfr": "_tz3000_wkai4ga5",
-      "canon": "button_wireless_2",
-      "caseIds": [
-        "p2432-tz3000-wkai4ga5-button-2"
       ]
     },
     {
