@@ -44406,6 +44406,12 @@
    "date": "2026-11-01",
    "by": "homey-ci-prs",
    "note": "attempt 1/3 (24h) run 41305134660 master d28218c565: P3138 test planted literal IEEE + homeyId fixtures tripped the P3120 static house-data ratchet (2 > baseline 0); P3145 assembles the fixtures at runtime, no baseline bump, behaviour unchanged"
+  },
+  "ci-fail:code-quality:house-data-guard:source-digest-inline-room-re": {
+   "status": "fixed",
+   "date": "2026-11-01",
+   "by": "homey-ci-prs",
+   "note": "attempt 1/3 (24h) runs 41306404821/41306600547 master 868dbc6d25/501ebc962f: P3138c inline ROOM_RE fallback in scripts/lib/source-digest.js named the owner on the regex line so the P3120 guard counted its room words (11 > baseline 0); P3147 writes the owner token as b(?:astien) (same match), no baseline bump, + test"
   }
  }
 }
