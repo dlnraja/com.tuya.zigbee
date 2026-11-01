@@ -9,7 +9,7 @@ const { pushWithRetry } = require('../../scripts/ci/push-with-retry');
 const { mergeJson } = require('../../scripts/ci/json-ledger-merge');
 
 function g(cwd, ...a) { return spawnSync('git', a, { cwd, encoding: 'utf8' }); }
-function init(dir) { g(dir, 'config', 'user.name', 't'); g(dir, 'config', 'user.email', 't@example.invalid'); g(dir, 'config', 'commit.gpgsign', 'false'); }
+function init(dir) { g(dir, 'config', 'user.name', 't'); g(dir, 'config', 'user.email', 's@t'); g(dir, 'config', 'commit.gpgsign', 'false'); }
 const L = (items) => `${JSON.stringify({ version: 1, updated: 'x', items }, null, 1)}\n`;
 
 describe('P3199 ledger rebase JSON merge', function () {
