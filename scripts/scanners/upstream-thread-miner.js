@@ -33,6 +33,7 @@ const REPOS = [
   'zigpy/zigpy-xbee', 'zigpy/zigpy-zigate', 'Koenkk/zigbee-herdsman-converters', 'Koenkk/zigbee2mqtt',
   'Koenkk/zigbee-herdsman', 'dresden-elektronik/deconz-rest-plugin', 'kkossev/Hubitat', 'arendst/Tasmota',
   'esphome/esphome', 'make-all/tuya-local', 'ioBroker/ioBroker.zigbee', 'JohanBendz/com.tuya.zigbee',
+  'blakadder/zigbee', // P3151: Blakadder device DB (issues/PRs = device add requests)
 ];
 const RELEVANT = /_T[A-Za-z0-9]{2,5}_[A-Za-z0-9]{4,16}|\bTS0[0-9]{3}[A-Z]?\b|\btuya\b|\b0xEF00\b|\bE000\b/i;
 
