@@ -75,6 +75,94 @@
     ]
   },
   {
+    "id": "motion_detection_mode",
+    "type": "dropdown",
+    "label": {
+      "en": "Motion Detection Mode",
+      "fr": "Mode de Détection",
+      "nl": "Bewegingsdetectie Modus",
+      "de": "Bewegungserkennungsmodus"
+    },
+    "value": "1",
+    "values": [
+      {
+        "id": "0",
+        "label": {
+          "en": "PIR Only",
+          "fr": "PIR Uniquement",
+          "nl": "Alleen PIR",
+          "de": "Nur PIR"
+        }
+      },
+      {
+        "id": "1",
+        "label": {
+          "en": "PIR + Radar (Recommended)",
+          "fr": "PIR + Radar (Recommandé)",
+          "nl": "PIR + Radar (Aanbevolen)",
+          "de": "PIR + Radar (Empfohlen)"
+        }
+      },
+      {
+        "id": "2",
+        "label": {
+          "en": "Radar Only",
+          "fr": "Radar Uniquement",
+          "nl": "Alleen Radar",
+          "de": "Nur Radar"
+        }
+      }
+    ],
+    "hint": {
+      "en": "ZG-204ZM: Select detection method (PIR for motion, Radar for presence)",
+      "fr": "ZG-204ZM: Sélectionner la méthode de détection (PIR pour mouvement, Radar pour présence)"
+    }
+  },
+  {
+    "id": "zh_motion_detection_mode",
+    "type": "dropdown",
+    "label": {
+      "en": "Motion Detection Mode (ZG-204ZH)",
+      "fr": "Mode de Détection (ZG-204ZH)",
+      "nl": "Bewegingsdetectie Modus (ZG-204ZH)",
+      "de": "Bewegungserkennungsmodus (ZG-204ZH)"
+    },
+    "value": "1",
+    "values": [
+      {
+        "id": "0",
+        "label": {
+          "en": "PIR and Radar",
+          "fr": "PIR et Radar",
+          "nl": "PIR en Radar",
+          "de": "PIR und Radar"
+        }
+      },
+      {
+        "id": "1",
+        "label": {
+          "en": "PIR or Radar",
+          "fr": "PIR ou Radar",
+          "nl": "PIR of Radar",
+          "de": "PIR oder Radar"
+        }
+      },
+      {
+        "id": "2",
+        "label": {
+          "en": "Radar Only",
+          "fr": "Radar Uniquement",
+          "nl": "Alleen Radar",
+          "de": "Nur Radar"
+        }
+      }
+    ],
+    "hint": {
+      "en": "ZG-204ZH only (DP112, Z2M hobeian.ts): pir_and_radar / pir_or_radar / only_radar. Other models ignore this setting.",
+      "fr": "ZG-204ZH uniquement (DP112) : PIR et radar / PIR ou radar / radar seul. Ignoré par les autres modèles."
+    }
+  },
+  {
     "id": "smart_presence_while_occupied",
     "type": "checkbox",
     "label": {
