@@ -25,7 +25,16 @@ class ClimateSensorDevice extends UnifiedSensorBase {
       pid = this.getSetting?.('zb_model_id') || this.getData?.()?.productId || '';
     } catch (_e) { /* soft */ }
     const eweTh = /ewelink/i.test(String(mfr)) || /CK-TLSR8656-SS5-0[12]\(7014\)/i.test(String(pid));
-    if (!eweTh) {return base;}
+    // WHY(P3178 / ZHA #2694, #4260): exact couple _TZE204_upagmta9|TS0601 (ZTH05) drains a fresh battery
+    // in 12-24 h when the host polls/binds ZCL PowerConfiguration instead of using the Tuya DP stream.
+    // Battery stays on DP4. Additive: only this couple, only if the base profile did not decide.
+    if (!eweTh) {
+      if (String(mfr).trim().toLowerCase() === '_tze204_upagmta9' && String(pid).toUpperCase() === 'TS0601'
+        && base.skipBatteryReporting == null) {
+        return Object.assign({}, base, { skipBatteryReporting: true });
+      }
+      return base;
+    }
     return Object.assign({}, base, {
       noEf00: true,
       skipEf00Tx: true,
