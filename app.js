@@ -511,6 +511,19 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
     // onNodeInit before MASTER_ONLY engines, UDP, and catalog scans.
     this._scheduleDeferredMasterFeatures();
 
+    // WHY(P3198 / diag fb5be1fe): log one anonymised line per device (mfr/pid/
+    // clusters/DPs) so every diagnostic report carries what is needed.
+    try {
+      const DDS = require('./lib/diagnostics/DeviceDiagSnapshot');
+      this._p3198BootTimer = this.homey.setTimeout(() => {
+        this._p3198BootTimer = null;
+        try { DDS.dumpAll(this, { reason: 'boot', force: true }); } catch (_e) { /* soft */ }
+      }, 90 * 1000);
+      this._p3198Interval = this.homey.setInterval(() => {
+        try { DDS.dumpAll(this, { reason: 'periodic' }); } catch (_e) { /* soft */ }
+      }, DDS.REDUMP_MS);
+    } catch (_e) { /* soft */ }
+
     this.log(`✅ Tuya Unified Zigbee App initialized (${BootBudget.heapUsedMb()} MB heap)`);
     this._clearMigrationQueue();
   }
@@ -1423,6 +1436,7 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
     try { require('./lib/memory/budget-hooks').uninstall(); } catch (_e) { /* soft */ } // P3023
     this._destroyed = true;
     this.log('⚠️ App uninitializing...');
+    try { if (this._p3198BootTimer) {this.homey.clearTimeout(this._p3198BootTimer);} if (this._p3198Interval) {this.homey.clearInterval(this._p3198Interval);} } catch (_e) { /* soft */ } // P3198
     try {
       if (this._heavyInitTimer) {
         this.homey.clearTimeout(this._heavyInitTimer);
