@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-26T14:05:13.767Z",
+ "generated": "2026-11-01T11:06:40.507Z",
  "drivers": 392,
  "snapshot": {
   "air_purifier": {
@@ -225,9 +225,9 @@
    "pidSha": "455c46e8c8549693"
   },
   "button_wireless_plug": {
-   "mfr": 19,
+   "mfr": 18,
    "pid": 36,
-   "mfrSha": "2a3f309ee9f70dff",
+   "mfrSha": "f47b1a441c9538b0",
    "pidSha": "3e8cfad7df358dc4"
   },
   "button_wireless_scene": {
@@ -279,9 +279,9 @@
    "pidSha": "3427697d0c296c9d"
   },
   "climate_sensor": {
-   "mfr": 516,
+   "mfr": 515,
    "pid": 32,
-   "mfrSha": "dd8fb27b94cb27c4",
+   "mfrSha": "0e8120efce39c1d9",
    "pidSha": "4809a771f46a5606"
   },
   "climate_sensor_device": {
@@ -1881,9 +1881,9 @@
    "pidSha": "b46b96d17990cf37"
   },
   "switch_1gang": {
-   "mfr": 376,
+   "mfr": 375,
    "pid": 38,
-   "mfrSha": "3304def9fa7357a2",
+   "mfrSha": "16c6f00a6c265113",
    "pidSha": "fd65b1d55ed8db6a"
   },
   "switch_2_gang": {
