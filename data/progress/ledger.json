@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-01T10:49:00.115Z",
+ "updated": "2026-11-01T12:54:53.823Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -263,6 +263,24 @@
    "note": "merge: current (56 behind) and gates green (local gates)",
    "by": "repo-autopilot",
    "kind": "bot-pr-merge"
+  },
+  "ci-fail:code-quality:house-data-guard:source-digest-inline-room-re": {
+   "status": "fixed",
+   "date": "2026-11-01",
+   "by": "homey-ci-prs",
+   "note": "attempt 1/3 (24h) runs 41306404821/41306600547 master 868dbc6d25/501ebc962f: P3138c inline ROOM_RE fallback in scripts/lib/source-digest.js named the owner on the regex line so the P3120 guard counted its room words (11 > baseline 0); P3147 writes the owner token as b(?:astien) (same match), no baseline bump, + test"
+  },
+  "ci-fail:node22-tests:test:p3066-z7a2jmyy+p3069-changelog-order": {
+   "status": "fixed",
+   "date": "2026-11-01",
+   "by": "homey-ci-prs",
+   "note": "attempt 1/3 (24h) run 41303907135 stable-v5 df0ef4ca19: P52 sync c5cc94e385 moved _TZE204_z7a2jmyy (modelIds []) to water_valve_smart (guard skipped pid-less rows) and appended 5.12.528 at the end of the changelog; P3141 guard per-manufacturer fallback + bump orders newest first + stable data restored"
+  },
+  "ci-fail:node22-tests:test:p3120-house-data-guard+p3138-fixture": {
+   "status": "fixed",
+   "date": "2026-11-01",
+   "by": "homey-ci-prs",
+   "note": "attempt 1/3 (24h) run 41305134660 master d28218c565: P3138 test planted literal IEEE + homeyId fixtures tripped the P3120 static house-data ratchet (2 > baseline 0); P3145 assembles the fixtures at runtime, no baseline bump, behaviour unchanged"
   },
   "ci-fail:upstream-watch:save-state:git-add-ignored": {
    "status": "fixed",
@@ -6752,6 +6770,15 @@
    "kind": "github",
    "mailDate": "2026-10-28T22:36:11.000Z"
   },
+  "diag:17c1fe43a81e5797": {
+   "status": "done",
+   "date": "2026-11-01",
+   "hash": "149c25fdea835844",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-11-01T06:54:43.000Z"
+  },
   "diag:1868bfc0bd66df67": {
    "status": "done",
    "date": "2026-10-27",
@@ -7300,6 +7327,16 @@
    "by": "gmail-diagnostics",
    "kind": "github",
    "mailDate": "2026-10-29T12:16:49.000Z"
+  },
+  "diag:2a631ab754aff867": {
+   "status": "pending",
+   "date": "2026-11-01",
+   "hash": "685e9805ad5e051c",
+   "note": "bug_report mail; 1 error line(s)",
+   "by": "gmail-diagnostics",
+   "kind": "bug_report",
+   "mailDate": "2026-11-01T11:11:54.000Z",
+   "errors": 1
   },
   "diag:2a77a3dcd91bfe7d": {
    "status": "done",
@@ -9265,6 +9302,15 @@
    "mailDate": "2026-10-21T13:20:18.000Z",
    "errors": 1
   },
+  "diag:82e55a3e7fc4de9c": {
+   "status": "done",
+   "date": "2026-11-01",
+   "hash": "b70d2244645a41ef",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-11-01T06:54:28.000Z"
+  },
   "diag:8310b57bedebd2a6": {
    "status": "pending",
    "date": "2026-10-25",
@@ -9384,6 +9430,15 @@
    "by": "tuya-deep-diag",
    "kind": "general",
    "mailDate": "2026-10-18T23:45:08.000Z"
+  },
+  "diag:8736326ec9dbf89b": {
+   "status": "done",
+   "date": "2026-11-01",
+   "hash": "2955a7f8a8d3b89f",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-11-01T06:57:14.000Z"
   },
   "diag:88113d1450183feb": {
    "status": "done",
@@ -10711,6 +10766,15 @@
    "by": "tuya-deep-diag",
    "kind": "general",
    "mailDate": "2026-10-20T00:17:21.000Z"
+  },
+  "diag:bb7a2a56e40e0c06": {
+   "status": "done",
+   "date": "2026-11-01",
+   "hash": "900d79e68d04b37f",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-11-01T11:11:40.000Z"
   },
   "diag:bb9eb260a4faee8b": {
    "status": "done",
@@ -44394,24 +44458,6 @@
     "leadsAdded": 0
    },
    "lastChangeRun": "41203507762"
-  },
-  "ci-fail:node22-tests:test:p3066-z7a2jmyy+p3069-changelog-order": {
-   "status": "fixed",
-   "date": "2026-11-01",
-   "by": "homey-ci-prs",
-   "note": "attempt 1/3 (24h) run 41303907135 stable-v5 df0ef4ca19: P52 sync c5cc94e385 moved _TZE204_z7a2jmyy (modelIds []) to water_valve_smart (guard skipped pid-less rows) and appended 5.12.528 at the end of the changelog; P3141 guard per-manufacturer fallback + bump orders newest first + stable data restored"
-  },
-  "ci-fail:node22-tests:test:p3120-house-data-guard+p3138-fixture": {
-   "status": "fixed",
-   "date": "2026-11-01",
-   "by": "homey-ci-prs",
-   "note": "attempt 1/3 (24h) run 41305134660 master d28218c565: P3138 test planted literal IEEE + homeyId fixtures tripped the P3120 static house-data ratchet (2 > baseline 0); P3145 assembles the fixtures at runtime, no baseline bump, behaviour unchanged"
-  },
-  "ci-fail:code-quality:house-data-guard:source-digest-inline-room-re": {
-   "status": "fixed",
-   "date": "2026-11-01",
-   "by": "homey-ci-prs",
-   "note": "attempt 1/3 (24h) runs 41306404821/41306600547 master 868dbc6d25/501ebc962f: P3138c inline ROOM_RE fallback in scripts/lib/source-digest.js named the owner on the regex line so the P3120 guard counted its room words (11 > baseline 0); P3147 writes the owner token as b(?:astien) (same match), no baseline bump, + test"
   }
  }
 }
