@@ -4,7 +4,7 @@
 //  R-spacing   : two non-bot pushes to master less than 15 min apart -> warn (report-only, history cannot change)
 //  R-changelog : a ci(...)/test(...) commit must not touch CHANGELOG.md on master -> fail
 //  R-athom     : no workflow/script may contact Athom (mail, forum post, support form) -> fail
-//  R-soak      : a stable-v5 commit that ports a master fix must reference a master commit at least SOAK_H old -> warn
+//  R-soak      : a stable-v5/bastien-home behaviour port must name a master commit at least SOAK_H (24) h old -> warn
 const { execFileSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
@@ -29,7 +29,29 @@ function athom(files) {
     if (FORUM_HOST.test(s) && FORUM_WRITE.test(s) && !/apps-api\.athom\.com|api\.athom\.com/.test(s)) out.push(`${f}: write call next to an Athom/forum host`); }
   return out;
 }
-module.exports = { spacing, changelog, athom, ATHOM };
+// R-soak (P3109): on stable-v5 / bastien-home, a behaviour port (feat/fix/perf/refactor, subject says "port")
+// must come at least SOAK_H hours after the master commit(s) it names (P-number or SHA). CI-only ports are exempt
+// (ci/test/chore/docs go to all 3 branches at once). Warn only: a human may override with "soak-override" in the subject.
+const SOAK_H = Number(process.env.SOAK_H || 24);
+const PORT_BRANCHES = ['stable-v5', 'bastien-home'];
+function soakRefs(subject) {
+  if (!/\bport(s|ed)?\b/i.test(subject) || /^(ci|test|chore|docs|build|style)(\(|:|!)/i.test(subject) || /soak-override/i.test(subject)) return [];
+  const ps = (subject.match(/\bP\d{3,5}[a-z]?\b/g) || []).map((p) => ({ kind: 'p', ref: p }));
+  const shas = (subject.match(/\b[0-9a-f]{8,40}\b/g) || []).map((s) => ({ kind: 'sha', ref: s }));
+  return [...ps, ...shas];
+}
+// commits: [{h, t, subject}], masterTime(ref) -> earliest master commit epoch seconds, or null when unknown
+function soak(commits, masterTime, soakH = SOAK_H) {
+  const out = [];
+  for (const c of commits) for (const r of soakRefs(c.subject)) {
+    const mt = masterTime(r);
+    if (mt == null) continue;
+    const age = (c.t - mt) / 3600;
+    if (age < soakH) out.push(`${c.h} ports ${r.ref} ${age.toFixed(1)} h after master (< ${soakH} h)`);
+  }
+  return out;
+}
+module.exports = { spacing, changelog, athom, ATHOM, soak, soakRefs, PORT_BRANCHES };
 
 if (require.main === module) {
   const range = process.env.RULES_RANGE || 'HEAD~30..HEAD';
@@ -44,6 +66,22 @@ if (require.main === module) {
   const at = athom(files);
   at.forEach((x) => console.log(`::error::Athom contact path forbidden: ${x}`));
   if (at.length) fail = 1;
-  console.log(`standing-rules-gate: spacing-warn=${sp.length} athom=${at.length} ${fail ? 'FAIL' : 'PASS'}`);
+  const branch = process.env.GITHUB_REF_NAME || process.env.RULES_BRANCH || '';
+  let so = [];
+  if (PORT_BRANCHES.includes(branch)) {
+    const master = (() => { try { return git('rev-parse', '--verify', '-q', 'origin/master'); } catch { return ''; } })();
+    if (!master) console.log('::notice::R-soak skipped: origin/master not fetched');
+    else {
+      const masterTime = (r) => { try {
+        if (r.kind === 'sha') { git('merge-base', '--is-ancestor', r.ref, 'origin/master'); return Number(git('log', '-1', '--format=%ct', r.ref)); }
+        const ts = git('log', 'origin/master', '--format=%ct', '-E', `--grep=${r.ref}([^0-9a-z]|$)`).split('\n').filter(Boolean);
+        return ts.length ? Number(ts[ts.length - 1]) : null;
+      } catch { return null; } };
+      const pc = (log ? log.split('\n') : []).map((l) => { const [h, t] = l.split('\t'); return { h, t: Number(t), subject: git('log', '-1', '--format=%s', h) }; });
+      so = soak(pc, masterTime);
+      so.forEach((x) => console.log(`::warning::R-soak: ${x}`));
+    }
+  }
+  console.log(`standing-rules-gate: spacing-warn=${sp.length} soak-warn=${so.length} athom=${at.length} ${fail ? 'FAIL' : 'PASS'}`);
   process.exit(fail);
 }
