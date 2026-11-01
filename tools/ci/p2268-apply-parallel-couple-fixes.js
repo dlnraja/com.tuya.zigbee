@@ -18,18 +18,9 @@ function saveCompose(p, j) {
 }
 
 function variants(mfr) {
-  const lower = mfr.toLowerCase();
-  const upper = mfr.toUpperCase().replace(/^_TZE/, '_TZE').replace(/^_TZ/, '_TZ');
-  const base = mfr.replace(/^_[Tt][Zz][Ee0-9]+_/, '');
-  const prefixes = mfr.match(/^(_TZE\d+_)/i) || mfr.match(/^(_TZ\d+_)/i);
-  const pref = prefixes ? prefixes[1] : '_TZE284_';
-  const out = new Set([mfr, lower, mfr.toUpperCase()]);
-  // case forms for Homey cartesian matching
-  out.add(`${pref.toLowerCase()}${base.toLowerCase()}`);
-  out.add(`${pref.toUpperCase()}${base.toUpperCase()}`);
-  out.add(`${pref}${base.toLowerCase()}`);
-  out.add(`${pref}${base.toUpperCase()}`);
-  return [...out];
+  // P3112 (#557): Homey-critical forms only (canonical + lowercase), no 4-combo expansion.
+  const base = String(mfr).trim();
+  return [...new Set([base, ...require('../../lib/utils/TuyaNormalizer').pairingCaseVariants(base)])];
 }
 
 function removeMfr(j, needle) {

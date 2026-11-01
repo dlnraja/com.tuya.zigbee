@@ -18,15 +18,9 @@ const ROOT = process.cwd();
 const APPLY = process.argv.includes('--apply');
 
 function variants(mfr) {
+  // P3112 (#557): Homey-critical forms only (canonical + lowercase), no 4-combo expansion.
   const base = String(mfr).trim();
-  const out = new Set([base, base.toLowerCase()]);
-  const m = base.match(/^(_[A-Za-z0-9]+)_(.+)$/);
-  if (m) {
-    out.add(`${m[1].toUpperCase()}_${m[2].toLowerCase()}`);
-    out.add(`${m[1].toLowerCase()}_${m[2].toLowerCase()}`);
-    out.add(`${m[1].toUpperCase()}_${m[2].toUpperCase()}`);
-  }
-  return [...out];
+  return [...new Set([base, ...require('../../lib/utils/TuyaNormalizer').pairingCaseVariants(base)])];
 }
 
 function loadCompose(driver) {

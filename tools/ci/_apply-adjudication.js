@@ -7,14 +7,8 @@ const { moves } = require(path.join(ROOT, '.github/state/adjudication-final.json
 const db = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'mfs_db.json'), 'utf8'));
 
 function variants(base) {
-  const m = String(base).match(/^(_t[zy][a-z0-9]+)_(.+)$/i);
-  if (!m) {return [base];}
-  return [...new Set([
-    `${m[1].toLowerCase()}_${m[2].toLowerCase()}`,
-    `${m[1].toUpperCase()}_${m[2].toUpperCase()}`,
-    `${m[1].toUpperCase()}_${m[2].toLowerCase()}`,
-    `${m[1].toLowerCase()}_${m[2].toUpperCase()}`
-  ])];
+  // P3112 (#557): Homey-critical forms only (canonical + lowercase), no 4-combo expansion.
+  return require('../../lib/utils/TuyaNormalizer').pairingCaseVariants(String(base));
 }
 
 let moved = 0;
