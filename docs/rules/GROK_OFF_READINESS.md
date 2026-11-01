@@ -19,7 +19,7 @@ enrich, autofix, publish, learn, watch, crash-triage, revert. Bots cannot change
 | CI et PRs: revert a red bot commit | bot-revert-on-red.yml | on CI failure | autonomy-paused.revert | covered |
 | Mails projet: Gmail diag / Athom / GitHub triage | gmail-diagnostics.yml, l99-inbox-intelligence.yml, community-inbox.yml | 0 0,6,12,18 * * * ; 45 3,11,19 * * * ; 17 5 * * * | autonomy-paused | covered |
 | Mails projet: Gmail token kept alive | gmail-token-keepalive.yml | 0 8 * * * | - | covered |
-| Mails projet: Athom outcomes ledger | publish-hold-bisect.yml (hourly), athom-build-history.yml | 23 * * * * ; daily from P3112 | autonomy-paused.publish | gap closed by P3112 (was dispatch-only) |
+| Mails projet: Athom outcomes ledger | publish-hold-bisect.yml (hourly), athom-build-history.yml | 23 * * * * ; 47 5 * * * | autonomy-paused.publish ; autonomy-paused.watch | OK (P3118: daily cron, was dispatch-only) |
 | Mails projet: Bastien diag auto-replies | diag-autoreply-bastien.yml (P3110, other session) | 17 6,10,14,18 * * * | own switch (P3110) | in progress (P3110) |
 | Diagnostics fetch + crash triage | fetch-diags.yml, crash-triage.yml, offline-crash-analyzer.yml | 25 */6 ; 52 7 ; 5 5 daily | autonomy-paused.crash-triage | covered |
 | Forum scan (read-only) | forum-poll.yml, forum-pm-read.yml | 15 2,8,14,20 ; 50 7,19 | autonomy-paused.watch | covered |
