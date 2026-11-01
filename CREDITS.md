@@ -495,5 +495,5 @@ A heartfelt thank you to:
 ## Compose-faithful app.json resync (P3086, 2026-10-27) — idea only, no code copied
 - **Athom BV, homey CLI (`homey/lib/HomeyCompose.js`)** — the list of compose placeholders the composer replaces ({{driverId}}, {{driverPath}}, {{driverAssetsPath}}, {{driverName}}); `scripts/maintenance/sync-appjson-zigbee.js` now applies the same substitution, written in our own code.
 
-## #585 duplicate couple _TZ3000_dfgbtub0 (P3129, 2026-11-01) — fingerprint fact only
-- **Koenkk, zigbee-herdsman-converters (`src/devices/tuya.ts`, TS0043 "Wireless switch with 3 buttons", white label Marmitek Push_LO)** — source for the exact couple `_TZ3000_dfgbtub0` + `TS0043`, now listed in `button_wireless_3`. No code copied.
+## #585 wrong-driver couples (P3129 -> corrected by P3131, 2026-11-01) — fingerprint facts only, no code copied
+- **Koenkk, zigbee-herdsman-converters (`src/devices/tuya.ts`)** — hardware identity used to keep each couple on its right driver: `_TZ3000_46vasa5h` TS011F 2-gang wall outlet (double_power_point_2), `_TZ3000_cehuw1lw` TS011F/TS0121 plug (smartplug), `_TZE284_xpq2rzhq` TS0601 human presence sensor (presence_sensor_radar), `_TZ3000_dfgbtub0` TS0042 Marmitek Push_LO 2-button (button_wireless_2; TS0044 on button_wireless_4 is a user-attested couple, P2293). P3129 had wrongly listed dfgbtub0 under TS0043/button_wireless_3; P3131 removes it.
