@@ -1,16 +1,28 @@
 {
-  "harvestedAt": "2026-11-01T10:51:07.165Z",
+  "harvestedAt": "2026-11-01T17:19:04.590Z",
   "repo": "dlnraja/com.tuya.zigbee",
   "auth": "token",
   "error": null,
   "issues": [
     {
-      "number": 589,
-      "title": "Autonomy weekly digest",
-      "labels": [],
-      "updatedAt": "2026-11-01T09:29:20Z",
+      "number": 591,
+      "title": "[crash] 4f74fd8f71 (review)",
+      "labels": [
+        "crash-triage"
+      ],
+      "updatedAt": "2026-11-01T14:33:36Z",
       "user": "github-actions[bot]",
-      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/589"
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/591"
+    },
+    {
+      "number": 590,
+      "title": "[crash] 84f683a0e9 (review)",
+      "labels": [
+        "crash-triage"
+      ],
+      "updatedAt": "2026-11-01T14:33:34Z",
+      "user": "github-actions[bot]",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/590"
     },
     {
       "number": 557,
@@ -18,20 +30,9 @@
       "labels": [
         "bot-digest"
       ],
-      "updatedAt": "2026-11-01T09:10:39Z",
+      "updatedAt": "2026-11-01T13:07:01Z",
       "user": "dlnraja",
       "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/557"
-    },
-    {
-      "number": 588,
-      "title": "[Auto] New Tuya devices found in zigbee2mqtt",
-      "labels": [
-        "enhancement",
-        "auto-scan"
-      ],
-      "updatedAt": "2026-11-01T06:52:07Z",
-      "user": "github-actions[bot]",
-      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/588"
     },
     {
       "number": 584,
