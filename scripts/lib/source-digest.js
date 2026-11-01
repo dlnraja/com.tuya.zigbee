@@ -6,7 +6,10 @@
 // credit), IEEE, emails, Homey ids, rooms, device names, schedules, routine times, presence, locations are
 // replaced with context-preserving placeholders. Behaviour patterns are never inferred or stored.
 // assertClean() fails closed (throws) — callers must not write a digest that does not pass it.
-const { IEEE_RE, ROOM_RE } = require('../../tools/ci/house-data-guard');
+// Same classes as tools/ci/house-data-guard.js (P3120); inlined so branches without that tool still load.
+let IEEE_RE = /\b(?!(?:00:){7}00\b)(?:[0-9a-f]{2}:){7}[0-9a-f]{2}\b/gi;
+let ROOM_RE = /\b(salon|cuisine|chambres?|sous[ -]sol|salle de bains?|salle a manger|salle à manger|s[ée]jour|buanderie|cellier|grenier|v[ée]randa|entr[ée]e principale|chambre principale?|bureau de bastien)\b/gi;
+try { ({ IEEE_RE, ROOM_RE } = require('../../tools/ci/house-data-guard')); } catch (_e) { /* inline fallback */ }
 
 const MAX_FIELD = 280;
 const MFR_RE = /\b_T[A-Za-z0-9]{2,5}_[A-Za-z0-9]{4,16}\b/g;

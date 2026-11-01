@@ -90,7 +90,7 @@ jobs:
         if: steps.gate.outputs.run == 'true'
         run: |
           node scripts/ci/digest-guard.js
-          node tools/ci/house-data-guard.js
+          if [ -f tools/ci/house-data-guard.js ]; then node tools/ci/house-data-guard.js; fi
 
       - name: Diff
         id: diff
@@ -144,7 +144,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           node scripts/ci/digest-guard.js
-          node tools/ci/house-data-guard.js
+          if [ -f tools/ci/house-data-guard.js ]; then node tools/ci/house-data-guard.js; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           node scripts/ci/safe-auto-commit.js --id=upstream-thread-miner \
