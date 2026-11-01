@@ -20,3 +20,9 @@ Permanent rules. Additive only, nothing invented, per exact mfr+pid.
    a custom capability or sub-capability (`measure_power.xxx`), a flow card or a setting. CI should flag
    real DPs with no exposed capability. Every capability stays optional, never required for pairing.
 6. **Bastien fixes** ship to `bastien-home` together with `master` (see BASTIEN_HOUSE_APP.md).
+
+## Heap gate note (P3130)
+`test/p2915-load-heap.test.js` retained-heap bound raised 10 -> 10.5 MB only, because the estimated
+energy capabilities are now added deterministically (+0.1-0.2 MB on 150 simulated devices, flat 100->300 events).
+The real leak guard is the slope test (kept heap 100->300 events must grow < 1 MB). Never raise the bound
+without measuring the slope and citing the cause.
