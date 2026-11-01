@@ -907,9 +907,12 @@
       ]
     }
   ],
-  "9.0.1607": {
+  "9.0.1608": {
     "en": "Maintenance build: same devices and behaviour as the previous version (publishing and test tooling only).",
     "fr": "Version de maintenance : mêmes appareils et même comportement que la précédente (outils de publication et de test uniquement)."
+  },
+  "9.0.1607": {
+    "en": "Maintenance build: same devices and behaviour as the previous version (publishing and test tooling only)."
   },
   "9.0.1606": {
     "en": "Reliability: 1 small fix in the app core. Behind the scenes: tests and publishing checks."
@@ -977,9 +980,5 @@
   "9.0.1578": {
     "en": "Buttons: presses from every path are merged and duplicates removed, with a learnt per-device window. New HEIMAN keyfob (arm, disarm, emergency) and HEIMAN siren drivers. TZ-ZT01 climate sensor with a long manufacturer name recognised, with its battery state. 3A Smart Home LXN59-2S7LX1.0 now pairs as a 2-gang switch and iHorn LH02121 as a slim motion sensor.",
     "fr": "Boutons : les appuis reçus par tous les chemins sont regroupés et les doublons supprimés, avec une fenêtre apprise par appareil. Nouveaux drivers pour le porte-clés HEIMAN (armer, désarmer, urgence) et la sirène HEIMAN. Capteur d'ambiance TZ-ZT01 au nom de fabricant long reconnu, avec son état de batterie. Le 3A Smart Home LXN59-2S7LX1.0 s'appaire désormais en interrupteur 2 voies et l'iHorn LH02121 en détecteur de mouvement fin."
-  },
-  "9.0.1575": {
-    "en": "HEIMAN SmokeSensor-EF-3.0 pairs on the advanced smoke detector driver; Samotech SM311 and eWeLight ZB-DL01 pair as 1-gang dimmers.",
-    "fr": "Le HEIMAN SmokeSensor-EF-3.0 s'appaire sur le driver de détecteur de fumée avancé ; le Samotech SM311 et l'eWeLight ZB-DL01 s'appairent comme variateurs 1 voie."
   }
 }
