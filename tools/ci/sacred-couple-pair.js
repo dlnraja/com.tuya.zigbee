@@ -1,4 +1,5 @@
 'use strict';
+const { pairingCaseVariants } = require('../../lib/utils/TuyaNormalizer');
 
 /**
  * sacred-couple-pair.js (P2231 / P2232 / P2496)
@@ -175,7 +176,8 @@ function isValidSacredCouple(mfr, pid) {
 function oemCaseVariants(mfr) {
   const classic = toClassicOem(mfr) || String(mfr);
   if (EXOTIC_MFR_RX.test(classic)) return [classic];
-  return [...new Set([classic, classic.toLowerCase(), classic.toUpperCase()])];
+  // WHY(P3127/#557): canonical + lowercase only.
+  return pairingCaseVariants(classic);
 }
 
 /** Extract couples from free text (diag mail, issue body, interview notes). */
