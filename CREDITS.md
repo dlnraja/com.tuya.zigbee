@@ -497,3 +497,5 @@ A heartfelt thank you to:
 
 ## #585 wrong-driver couples (P3129 -> corrected by P3131, 2026-11-01) — fingerprint facts only, no code copied
 - **Koenkk, zigbee-herdsman-converters (`src/devices/tuya.ts`)** — hardware identity used to keep each couple on its right driver: `_TZ3000_46vasa5h` TS011F 2-gang wall outlet (double_power_point_2), `_TZ3000_cehuw1lw` TS011F/TS0121 plug (smartplug), `_TZE284_xpq2rzhq` TS0601 human presence sensor (presence_sensor_radar), `_TZ3000_dfgbtub0` TS0042 Marmitek Push_LO 2-button (button_wireless_2; TS0044 on button_wireless_4 is a user-attested couple, P2293). P3129 had wrongly listed dfgbtub0 under TS0043/button_wireless_3; P3131 removes it.
+
+- P2936 cross-research (2026-11-01): exact couples placed from user evidence confirmed by public references (fingerprints only, own code, no copied converter logic): _TZE204_0hhou4yj/TS0601 → climate_sensor (github.com/Koenkk/zigbee-herdsman-converters/blob/7462b541b367c301057aee995e6e6756e5f7e985/src/devices/tuya.ts#L22073).

@@ -14,6 +14,97 @@
    "since": "2026-10-21",
    "reason": "OCR look-alike of _tz3000_pmz6mjyu already on button_wireless_2",
    "at": "2026-10-21"
+  },
+  {
+   "mfr": "_TZ3210_cmnwaylf",
+   "pid": "TS0501B",
+   "host": "universal_zigbee",
+   "status": "provisional",
+   "confidence": 0.6,
+   "item": "dlnraja-issue:588",
+   "evidence": "mfr in evidence + unique productId in references",
+   "refs": [
+    "https://www.zigbee2mqtt.io/devices/TS0202_3.html",
+    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/7462b541b367c301057aee995e6e6756e5f7e985/src/devices/tuya.ts#L5329",
+    "https://www.zigbee2mqtt.io/devices/ECD-ZB-REPEATER.html"
+   ],
+   "why": "no sibling manufacturerName of the reference is on a specific driver with this productId",
+   "since": "2026-11-01"
+  },
+  {
+   "mfr": "_TZE204_zajeikkt",
+   "pid": "TS0601",
+   "host": "universal_zigbee",
+   "status": "provisional",
+   "confidence": 0.6,
+   "item": "dlnraja-issue:588",
+   "evidence": "mfr in evidence + unique productId in references",
+   "refs": [
+    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/7462b541b367c301057aee995e6e6756e5f7e985/src/devices/tuya.ts#L30677",
+    "https://www.zigbee2mqtt.io/devices/SP107E-Zigbee.html"
+   ],
+   "why": "no sibling manufacturerName of the reference is on a specific driver with this productId",
+   "since": "2026-11-01"
+  },
+  {
+   "mfr": "_TZE20C_ycab9txf",
+   "pid": "TS0601",
+   "host": "universal_zigbee",
+   "status": "provisional",
+   "confidence": 0.6,
+   "item": "dlnraja-issue:588",
+   "evidence": "mfr in evidence + unique productId in references",
+   "refs": [
+    "https://www.zigbee2mqtt.io/devices/ZAS-01P.html",
+    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/7462b541b367c301057aee995e6e6756e5f7e985/src/devices/tuya.ts#L29730",
+    "https://www.zigbee2mqtt.io/devices/ZAS-01P.html"
+   ],
+   "why": "no sibling manufacturerName of the reference is on a specific driver with this productId",
+   "since": "2026-11-01"
+  },
+  {
+   "mfr": "_TZE284_48ye65rk",
+   "pid": "TS0601",
+   "host": "universal_zigbee",
+   "status": "provisional",
+   "confidence": 0.6,
+   "item": "dlnraja-issue:588",
+   "evidence": "mfr in evidence + unique productId in references",
+   "refs": [
+    "https://www.zigbee2mqtt.io/devices/HYT001ZB.html"
+   ],
+   "why": "no sibling manufacturerName of the reference is on a specific driver with this productId",
+   "since": "2026-11-01"
+  },
+  {
+   "mfr": "_TZE284_fziifcxj",
+   "pid": "TS0601",
+   "host": "universal_zigbee",
+   "status": "provisional",
+   "confidence": 0.6,
+   "item": "dlnraja-issue:588",
+   "evidence": "mfr in evidence + unique productId in references",
+   "refs": [
+    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/7462b541b367c301057aee995e6e6756e5f7e985/src/devices/tuya.ts#L12417",
+    "https://www.zigbee2mqtt.io/devices/APRM-04-005.html"
+   ],
+   "why": "no sibling manufacturerName of the reference is on a specific driver with this productId",
+   "since": "2026-11-01"
+  },
+  {
+   "mfr": "_TZE284_xr5yfele",
+   "pid": "TS0601",
+   "host": "universal_zigbee",
+   "status": "provisional",
+   "confidence": 0.6,
+   "item": "dlnraja-issue:588",
+   "evidence": "mfr in evidence + unique productId in references",
+   "refs": [
+    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/7462b541b367c301057aee995e6e6756e5f7e985/src/devices/tuya.ts#L14771",
+    "https://www.zigbee2mqtt.io/devices/119710.html"
+   ],
+   "why": "no sibling manufacturerName of the reference is on a specific driver with this productId",
+   "since": "2026-11-01"
   }
  ]
 }

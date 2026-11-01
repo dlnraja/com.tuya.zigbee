@@ -72,6 +72,18 @@
    "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1159",
    "via": "coverage-audit",
    "date": "2026-10-16"
+  },
+  {
+   "mfr": "_TZE204_0hhou4yj",
+   "pid": "TS0601",
+   "driver": "climate_sensor",
+   "source": "dlnraja-issue:588",
+   "refs": [
+    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/7462b541b367c301057aee995e6e6756e5f7e985/src/devices/tuya.ts#L22073",
+    "https://www.zigbee2mqtt.io/devices/TS0601_floor_thermostat_006.html"
+   ],
+   "via": "cross-research",
+   "date": "2026-11-01"
   }
  ]
 }
