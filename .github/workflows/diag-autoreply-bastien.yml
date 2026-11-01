@@ -1,0 +1,83 @@
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: Four times a day: answers Bastien diagnostics reports by mail, in-thread to the Athom relay
+#   only, when the crash matches a known fix that is already released. Deterministic, no AI, max 5 a day,
+#   dedup by Log ID.
+# Ideas from (thank you): Renovate and Dependabot for the merge-when-green pattern; the actions/stale and
+#   actions/labeler maintainers.
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
+#   posting stays off or ledger-gated.
+# <<< about
+# P3110 (01/11/2026 Paris): free, assistant-independent replies to Bastien diagnostics reports.
+# Deterministic (no AI). Reads Gmail by IMAP and replies by Gmail SMTP with GMAIL_EMAIL + GMAIL_APP_PASSWORD,
+# in-thread, only to the Reply-To <hex>@apps-api.athom.com relay, only for a known FIXED + released signature
+# (config/diag-autoreply-signatures.json). Dedup by Log ID (config/diag-autoreply-state.json) and by our own
+# reply already in the thread. Cap 5/day. Kill switches: config/autonomy-paused, config/autonomy-paused.autoreply,
+# repo variable AUTOREPLY_DISABLED=true. Manual runs and PRs are dry-run unless the input says send.
+name: Bastien diag auto-reply (P3110)
+
+on:
+  schedule:
+    - cron: '17 6,10,14,18 * * *'
+  workflow_dispatch:
+    inputs:
+      send:
+        description: "Really send (otherwise dry-run)"
+        type: boolean
+        default: false
+  pull_request:
+    paths:
+      - 'scripts/diag/auto-reply-bastien.js'
+      - 'config/diag-autoreply-signatures.json'
+      - '.github/workflows/diag-autoreply-bastien.yml'
+
+env:
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: diag-autoreply-bastien
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  reply:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: .github/npm-cache-key.sha256
+      - name: Tests (always)
+        run: |
+          npm ci --prefer-offline --no-audit --ignore-scripts
+          npx mocha test/p3110-diag-autoreply.test.js --timeout 20000
+      - name: Reply to Bastien diags
+        if: github.event_name != 'pull_request' && vars.AUTOREPLY_DISABLED != 'true'
+        env:
+          GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          AUTOREPLY_SEND: ${{ (github.event_name == 'schedule' || inputs.send) && 'true' || 'false' }}
+          AUTOREPLY_MAX_PER_DAY: "5"
+        run: node scripts/diag/auto-reply-bastien.js
+      - name: Commit dedup state
+        if: github.event_name != 'pull_request' && vars.AUTOREPLY_DISABLED != 'true'
+        run: |
+          git diff --quiet -- config/diag-autoreply-state.json && { echo "state unchanged"; exit 0; }
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add config/diag-autoreply-state.json
+          bash scripts/ci/bot-commit-guard.sh
+          git commit -m "chore(diag): P3110 auto-reply dedup state [skip ci]"
+          bash .github/scripts/git-push-retry.sh --branch "${GITHUB_REF_NAME}" --prefer-local || echo "::warning::P3110 state not pushed"
