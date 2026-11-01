@@ -33,3 +33,6 @@ without measuring the slope and citing the cause.
 - A real DP Homey/HomeKit cannot show natively is compensated: custom capability, sub-capability (`cap.x`), flow card, or setting. Never `capability: null` with no setting/flow.
 - HomeKit only bridges system caps on mappable classes: prefer them; custom caps stay Homey-only and must be documented.
 - CI: `npm run audit:capabilities` + `test/p3135-capability-coherence-audit.test.js` (ratchet A/B/C, counts only go down).
+
+### P3136 — audit is permanent
+`.github/workflows/capability-coherence.yml` runs the audit on every push/PR touching drivers/lib/data/compose and on an adaptive daily schedule (skips when nothing changed in 26h, full every Monday). The A/B/C ratchet also runs in ci-self-check and before the commit step of market-couples-intake, auto-enrich-closed-loop and fleet-intelligent-enrich: a new driver or couple may not raise A, B or C.

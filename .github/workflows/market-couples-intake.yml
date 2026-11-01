@@ -162,6 +162,11 @@ jobs:
           if-no-files-found: warn
           retention-days: 14
 
+      - name: "🧭 Capability coherence ratchet (P3136 — blocks A/B/C rise)"
+        run: |
+          node scripts/ci/capability-coherence-audit.js . | tee -a "$GITHUB_STEP_SUMMARY"
+          npx mocha --timeout 20000 test/p3135-capability-coherence-audit.test.js
+
       - name: 📝 Commit state + compose (master)
         if: ${{ github.event_name == 'schedule' || inputs.dry_run != true }}
         run: |

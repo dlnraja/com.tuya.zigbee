@@ -1,0 +1,52 @@
+name: Capability coherence audit (P3136)
+# Permanent capability / HomeKit / tile-coherence audit (scripts/ci/capability-coherence-audit.js).
+# Ratchet: test/p3135-capability-coherence-audit.test.js fails when A, B or C go up -> blocks the PR/push.
+# Adaptive schedule: the daily run skips when no driver/SSOT file changed in the last 26h,
+# except the Monday run which is always full. Free tier: one short ubuntu job, no secrets.
+on:
+  push:
+    paths: ['drivers/**', 'lib/**', 'data/**', '.homeycompose/**', 'app.json', 'scripts/ci/capability-coherence-audit.js', 'test/p3135-capability-coherence-audit.test.js']
+  pull_request:
+    paths: ['drivers/**', 'lib/**', 'data/**', '.homeycompose/**', 'app.json', 'scripts/ci/capability-coherence-audit.js', 'test/p3135-capability-coherence-audit.test.js']
+  schedule:
+    - cron: '23 4 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: capability-coherence-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          fetch-depth: 50
+      - name: Adaptive plan
+        id: plan
+        run: |
+          run=true
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$(date -u +%u)" != "1" ]; then
+            n=$(git log --since='26 hours ago' --format=%h -- drivers lib data .homeycompose app.json | wc -l)
+            [ "$n" = "0" ] && run=false
+          fi
+          echo "run=$run" >> "$GITHUB_OUTPUT"
+          echo "adaptive plan: run=$run" >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        if: steps.plan.outputs.run == 'true'
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install deps
+        if: steps.plan.outputs.run == 'true'
+        run: |
+          for i in 1 2 3; do npm ci --ignore-scripts --no-audit --no-fund && exit 0; sleep $((i*10)); done
+          npm install --ignore-scripts --no-audit --no-fund
+      - name: Audit report (step summary)
+        if: steps.plan.outputs.run == 'true'
+        run: node scripts/ci/capability-coherence-audit.js . | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Ratchet (A/B/C may only go down)
+        if: steps.plan.outputs.run == 'true'
+        run: npx mocha --timeout 20000 test/p3135-capability-coherence-audit.test.js
