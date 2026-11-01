@@ -3,9 +3,9 @@
   "primary": "bastien",
   "kind": "homey_system_settings_paste",
   "platform": {
-    "hostname": "homey-65d495eb252c3ef65c879247.local",
-    "athomHomeyId": "65d495eb252c3ef65c879247",
-    "bootId": "3474816d-9d37-4099-b93a-d3d33934df85",
+    "hostname": "homey-[homey-id-1].local",
+    "athomHomeyId": "[homey-id-1]",
+    "bootId": "[boot-id-1]",
     "uptimeHoursApprox": 5,
     "timezone": "Europe/Paris",
     "devMode": false,

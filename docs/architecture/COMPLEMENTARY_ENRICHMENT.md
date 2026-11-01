@@ -54,7 +54,7 @@ House-private lock in [`bastien-house-ssot.json`](../../config/architecture/bast
 | Field | Value (paste) |
 |-------|----------------|
 | Athom Homey ID | `65d495eb252c3ef65c879247` |
-| Hostname | `homey-65d495eb252c3ef65c879247.local` |
+| Hostname | `homey-[homey-id-1].local` |
 | LAN | `192.168.1.15` @ Livebox-4690 (Wi‑Fi) |
 | Node | v24.19.0 · DevMode off |
 | Health | RAM ~759 MB / 1.99 GB · CPU low → mute buttons ≠ Homey OOM |

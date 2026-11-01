@@ -132,6 +132,12 @@ jobs:
         env:
           EMAIL_GUARD_ALLOW: ${{ secrets.EMAIL_GUARD_ALLOW }}
 
+      - name: P3120 house-data guard (IEEE / Homey ids / room words, ratchet, counts only)
+        run: node tools/ci/house-data-guard.js
+
+      - name: P3119 privacy-redact check (docs/reports placeholders)
+        run: node scripts/ci/privacy-redact.js --check
+
       - name: P3074 personal-data guard (no CV/LinkedIn exports or personal contact data)
         run: node tools/ci/personal-data-guard.js
 

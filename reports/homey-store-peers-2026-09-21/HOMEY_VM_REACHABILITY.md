@@ -1,7 +1,7 @@
 # Homey / VM reachability (P2658 session 2026-09-21)
 
 ## Bastien Homey Pro
-- SSOT: `192.168.1.15` / `homey-65d495eb252c3ef65c879247.local`
+- SSOT: `192.168.1.15` / `homey-[homey-id-1].local`
 - Probe: **unreachable** (TCP/80 timeout; not in ARP — only `.1` `.10` `.12` `.22` on LAN)
 - Other LAN hosts `.10` `.12` `.22`: no Homey HTTP on :80
 - Action: silent code fixes only; no live install this session (house-only skip OK)
