@@ -13,16 +13,10 @@ const ROOT = process.argv.includes('--root')
   : process.cwd();
 
 function variants(mfr) {
+  // P3112 (#557): Homey-critical forms only (canonical UPPER_prefix+lower_suffix + lowercase),
+  // not the 4 case combos that bloated manifestName lists.
   const base = String(mfr).trim();
-  const out = new Set([base, base.toLowerCase()]);
-  const m = base.match(/^(_[A-Za-z0-9]+)_(.+)$/);
-  if (m) {
-    out.add(`${m[1].toUpperCase()}_${m[2].toLowerCase()}`);
-    out.add(`${m[1].toLowerCase()}_${m[2].toLowerCase()}`);
-    out.add(`${m[1].toUpperCase()}_${m[2].toUpperCase()}`);
-    out.add(`${m[1].toLowerCase()}_${m[2].toUpperCase()}`);
-  }
-  return [...out];
+  return [...new Set([base, ...require('../../lib/utils/TuyaNormalizer').pairingCaseVariants(base)])];
 }
 
 function loadCompose(driver) {

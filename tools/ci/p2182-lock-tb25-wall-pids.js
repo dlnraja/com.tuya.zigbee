@@ -22,14 +22,8 @@ const path = require('path');
 const ROOT = path.join(__dirname, '..', '..');
 
 function variantsTz3000(suffix) {
-  const s = String(suffix).toLowerCase();
-  const u = s.toUpperCase();
-  return [
-    `_TZ3000_${s}`,
-    `_tz3000_${s}`,
-    `_TZ3000_${u}`,
-    `_tz3000_${u}`,
-  ];
+  // P3112 (#557): Homey-critical forms only (canonical + lowercase), no 4-combo expansion.
+  return require('../../lib/utils/TuyaNormalizer').pairingCaseVariants(`_tz3000_${String(suffix).toLowerCase()}`);
 }
 
 function loadCompose(driver) {
