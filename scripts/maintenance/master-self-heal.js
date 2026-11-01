@@ -28,6 +28,7 @@
 const fs = require('fs');
 const path = require('path');
 const { sanitizeManifestFile } = require('./sanitize-manifest.cjs');
+const { pairingCaseVariants } = require('../../lib/utils/TuyaNormalizer');
 
 const ROOT = process.cwd();
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
@@ -184,18 +185,8 @@ function rule_fingerprintCase() {
           continue;
         }
 
-        // Generate casing variants to support Homey Core's case-sensitive pairing engine
-        const variants = [m.toLowerCase()];
-
-        if (m.toLowerCase().startsWith('_tz')) {
-          const underscoreIndex = m.indexOf('_', 1);
-          if (underscoreIndex !== -1) {
-            const prefix = m.substring(0, underscoreIndex).toUpperCase();
-            const suffix = m.substring(underscoreIndex).toLowerCase();
-            variants.push(prefix + suffix); // Mixed case, e.g., _TZE200_2se8efxh
-          }
-        }
-        variants.push(m.toUpperCase()); // Fully uppercase, e.g., _TZE200_2SE8EFXH
+        // WHY(P3127/#557): canonical + lowercase only (Homey matches these); no UPPER/mixed 4-combo.
+        const variants = pairingCaseVariants(m);
 
         for (const variant of variants) {
           if (!seen.has(variant)) {
