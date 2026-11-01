@@ -106,7 +106,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.1609] - 2026-11-01
+## [9.0.1610] - 2026-11-01
+
+New: Flow cards (TS0603) and energy meters & device settings. Fixed: device settings (ZG-204ZH, ZG-204ZM) and battery reporting & crash fixes (TS0601). Plus 12 other changes in the app core. Behind the scenes: tests and publishing checks.
+---
+
+ [9.0.1609] - 2026-11-01
 
 New: sirens & battery reporting (TRV06). Fixed: general reliability (TS0042, TS0043), memory and timers and lights and dimmers. Plus 4 other changes in the app core. Behind the scenes: tests and publishing checks.
 ---
