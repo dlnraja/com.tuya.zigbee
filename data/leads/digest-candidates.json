@@ -1,0 +1,386 @@
+{
+ "_meta": {
+  "generator": "upstream-thread-miner",
+  "note": "candidate tasks; never auto-applied"
+ },
+ "items": [
+  {
+   "kind": "avoid",
+   "target": "_tze204_1youk3hj|TS0601",
+   "hint": "- DP 12 (fading time): a device whose fading time was never set reports 0xFFFFFF08, which showed as -248 s (also seen with Zigbee2MQTT, Koenkk/zigbee-herdsman-converters#11831).",
+   "url": "https://github.com/zigpy/zha-device-handlers/pull/5514"
+  },
+  {
+   "kind": "avoid",
+   "target": "_tze204_upagmta9|TS0601",
+   "hint": "this was causing the battery to drain completly within 12-24 hours.",
+   "url": "https://github.com/zigpy/zha-device-handlers/issues/4260"
+  },
+  {
+   "kind": "avoid",
+   "target": "_tze284_aao3yzhs|TS0601",
+   "hint": "One of them functions correctly, two of them don't report battery percentage (it just says 0%).",
+   "url": "https://github.com/zigpy/zha-device-handlers/issues/4288"
+  },
+  {
+   "kind": "watch-regression",
+   "target": "_tze200_c88teujp|TS0601",
+   "hint": "Directly after the update the Zigbee network became unreliable: Some actions, such as pressing a Zigbee remote button took between multiple seconds up to several minutes to trigger the corresponding light switch.",
+   "url": "https://github.com/zigpy/zha-device-handlers/issues/4429"
+  },
+  {
+   "kind": "avoid",
+   "target": "_tze200_sur6q7ko|TS0601, _tze200_hue3yfsn|TS0601",
+   "hint": "As far as I can see it was never tracked as a",
+   "url": "https://github.com/zigpy/zha-device-handlers/issues/5639"
+  },
+  {
+   "kind": "avoid",
+   "target": "TS0601",
+   "hint": "Note: I don't know what DP 101 is for as I do not have access to a Tuya ZigBee gateway.",
+   "url": "https://github.com/zigpy/zha-device-handlers/pull/5476"
+  },
+  {
+   "kind": "watch-regression",
+   "target": "TS000X, TS0001, TS0004, TS000F, TS0011, TS0013",
+   "hint": "Retyping the device in the quirk breaks existing installations, because every current light entity (history, entity ID, automations) would be orphaned, which is why #2996 was declined.",
+   "url": "https://github.com/zigpy/zha-device-handlers/issues/5632"
+  },
+  {
+   "kind": "avoid",
+   "target": "_tze200_b6wax7g0|TS0601, _tze200_7yoranx2|TS0601, _tze200_znlqjmih|TS0601",
+   "hint": "`tze200-cpmgn2cf-ts0601.json` is unchanged: the importer reconstructed its signature with a ZCL thermostat (see its row in #5120), and the v1 quirk never matched it either.",
+   "url": "https://github.com/zigpy/zha-device-handlers/pull/5623"
+  },
+  {
+   "kind": "watch-regression",
+   "target": "_tze200_mudxchsu|TS0601",
+   "hint": "[BUG]Tuya TS0601 _TZE200_mudxchsu wrong entities after update to HA 2026.2.2/.3",
+   "url": "https://github.com/zigpy/zha-device-handlers/issues/4778"
+  },
+  {
+   "kind": "adopt",
+   "target": "_tze200_68nvbio9|TS0601, _tze200_pw7mji0l|TS0601",
+   "hint": "- Config: motor direction select (DP5); click up / click down buttons (DP20); set upper / lower limit, delete upper / lower limit and delete all limits buttons (DP16)",
+   "url": "https://github.com/zigpy/zha-device-handlers/pull/4817"
+  },
+  {
+   "kind": "avoid",
+   "target": "_tze204_qvxrkeif|TS0601",
+   "hint": "Lifecycle entity reports \"Problem\" from the moment the device is paired and never",
+   "url": "https://github.com/zigpy/zha-device-handlers/issues/5079"
+  },
+  {
+   "kind": "adopt",
+   "target": "_tze204_ztc6ggyl|TS0601",
+   "hint": "The illuminance sensor should show in the ui and report",
+   "url": "https://github.com/zigpy/zha-device-handlers/issues/5167"
+  },
+  {
+   "kind": "avoid",
+   "target": "_tze204_wskr3up8|TS0601, _tze204_g4au0afs|TS0601, _tze204_unsxl4ir|TS0601, _tze200_nhyj64w2|TS0601",
+   "hint": "**Queries do not wake a starved MCU** (n=2, different units/fingerprints, radio + visual criteria): 1× or 3× `query_data`, query+command — nothing.",
+   "url": "https://github.com/zigpy/zha-device-handlers/issues/5212"
+  },
+  {
+   "kind": "avoid",
+   "target": "_tz3210_ol1uhvza|TS130F",
+   "hint": "Do not use any ZHA calibration features.",
+   "url": "https://github.com/zigpy/zha-device-handlers/issues/5226"
+  },
+  {
+   "kind": "avoid",
+   "target": "_tze284_aao3yzhs|TS0601",
+   "hint": "No TypeError should be raised, and the request should not cause repeated exceptions in the Home Assistant event loop.",
+   "url": "https://github.com/zigpy/zha-device-handlers/issues/5232"
+  },
+  {
+   "kind": "watch-regression",
+   "target": "_tze284_aao3yzhs|TS0601",
+   "hint": "This looks like a regression introduced with the current quirk implementation.",
+   "url": "https://github.com/zigpy/zha-device-handlers/issues/5232"
+  },
+  {
+   "kind": "adopt",
+   "target": "_tze284_nhgdf6qr|TS0601, _tze284_aao3yzhs|TS0601, _tze284_sgabhwa6|TS0601, _tze284_ap9owrsa|TS0601",
+   "hint": "battery_size should report AAA, matching the device's actual battery compartment.",
+   "url": "https://github.com/zigpy/zha-device-handlers/issues/5240"
+  },
+  {
+   "kind": "adopt",
+   "target": "_tze204_qyr2m29i|TS0601, _tze204_ltwbm23f|TS0601",
+   "hint": "On a write to **either** attribute, `TuyaMCUCluster.from_cluster_data` calls the converter with one argument per mapped attribute: the value being written, plus the *cached* value of each other attribute.",
+   "url": "https://github.com/zigpy/zha-device-handlers/issues/5368"
+  },
+  {
+   "kind": "avoid",
+   "target": "_tze204_qyr2m29i|TS0601, _tze204_ltwbm23f|TS0601",
+   "hint": "Reproduced with the quirk on `dev` in the test harness (I don't own this device):",
+   "url": "https://github.com/zigpy/zha-device-handlers/issues/5368"
+  },
+  {
+   "kind": "avoid",
+   "target": "_tze284_upt8lzi0|TS0601",
+   "hint": "There are several Tuya devices that don't support this operation.",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/issues/12970"
+  },
+  {
+   "kind": "adopt",
+   "target": "_tze284_iwn0gpzz|TS0601, _tze200_ves1ycwx|TS0601, _tze200_bcusnqt8|TS0601, _tze204_ves1ycwx|TS0601, _tze284_ves1ycwx|TS0601",
+   "hint": "- Implements non-destructive Read-Modify-Write (RMW) converters for DP 18 alarm thresholds on SPM01V2.5 (24 bytes) and SPM02 (28 bytes).",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/pull/13599"
+  },
+  {
+   "kind": "avoid",
+   "target": "_tze284_iwn0gpzz|TS0601, _tze200_ves1ycwx|TS0601, _tze200_bcusnqt8|TS0601, _tze204_ves1ycwx|TS0601, _tze284_ves1ycwx|TS0601",
+   "hint": "**Note:** This feature has **not** been tested on live hardware to avoid wiping active production meter readings.",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/pull/13599"
+  },
+  {
+   "kind": "avoid",
+   "target": "_tze284_cjbofhxw|TS0601, _tze204_cjbofhxw|TS0601",
+   "hint": "- Optionally, do not enqueue a new reply while one for the same device is still pending, or rate-limit replies per device.",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/issues/13502"
+  },
+  {
+   "kind": "verify-resolution",
+   "target": "_tze284_cjbofhxw|TS0601, _tze204_cjbofhxw|TS0601",
+   "hint": "### Workaround (external converter, applied to the two affected devices)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/issues/13502"
+  },
+  {
+   "kind": "adopt",
+   "target": "_tze200_iwn0gpzz|TS0601, _tze204_iwn0gpzz|TS0601, _tze284_iwn0gpzz|TS0601",
+   "hint": "**Broken DP 18 reporting interval on newer MCU firmwares (v3.2.7+):** Newer firmwares ignore the DP 18 threshold/duration configuration payload, whereas older firmwares (v3.2.2–v3.2.3) still use DP 18.",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/pull/13522"
+  },
+  {
+   "kind": "watch-regression",
+   "target": "_tze200_iwn0gpzz|TS0601, _tze204_iwn0gpzz|TS0601, _tze284_iwn0gpzz|TS0601",
+   "hint": "**Broken DP 18 reporting interval on newer MCU firmwares (v3.2.7+):** Newer firmwares ignore the DP 18 threshold/duration configuration payload, whereas older firmwares (v3.2.2–v3.2.3) still use DP 18.",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/pull/13522"
+  },
+  {
+   "kind": "adopt",
+   "target": "TS0011",
+   "hint": "Verified: [matinée] scheduled `set_cover_position 100` → device reports `OPEN` within 1 s, `STOP` at position 100 after 27 s of travel; DP 105 set/report round-trip.",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/pull/13564"
+  },
+  {
+   "kind": "avoid",
+   "target": "TS0011",
+   "hint": "The definition had no `toZigbee` entry with `convertGet`, so `zigbee2mqtt/<dimmer>/get {\"state\": \"\"}` was a silent no-op — the MCU never saw anything.",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/pull/13564"
+  },
+  {
+   "kind": "avoid",
+   "target": "ZG-102Z, TS0601",
+   "hint": "DP 102 and 104 do report live boolean values synced to the contact, but their actual meaning could not be determined from observation alone (they don't look like actuator-settable values, more like internal status flags), and no alarm/volume/duration datapoints were found or reve",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/pull/13248"
+  },
+  {
+   "kind": "watch-regression",
+   "target": "_tze204_wbhaespm|TS0601",
+   "hint": "## Regression fix for zigbee2mqtt/hassio-zigbee2mqtt#871",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/pull/13156"
+  },
+  {
+   "kind": "adopt",
+   "target": "TS0601",
+   "hint": "DP104 remains a write-only energy-reporting command with 5-second heartbeats and a 5-minute local limit.",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/pull/13251"
+  },
+  {
+   "kind": "avoid",
+   "target": "TS0601",
+   "hint": "Passive DP104 echoes do not invent readable streaming state.",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/pull/13251"
+  },
+  {
+   "kind": "avoid",
+   "target": "TS0601",
+   "hint": "- Reject malformed values; do not fall back to an unrelated OTA file version or a cached application version.",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/pull/13311"
+  },
+  {
+   "kind": "watch-regression",
+   "target": "_tze204_yvx5lh6k|TS0601",
+   "hint": "## MQTT payload (broken device, newer firmware):",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/issues/12828"
+  },
+  {
+   "kind": "avoid",
+   "target": "_tze284_qf5mzewi|TS0601",
+   "hint": "Because the string never matches, the support added in #12935 cannot activate: affected devices",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/pull/13010"
+  },
+  {
+   "kind": "avoid",
+   "target": "ZG-102ZA",
+   "hint": "* Develco SMSZB-120: don't configure `zoneStatus` reporting https://github.com/Koenkk/zigbee2mqtt/issues/33248 ([6502005](https://github.com/Koenkk/zigbee-herdsman-converters/commit/65020054121fcae96bf266ff610e6f00d0b77084))",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/pull/13353"
+  },
+  {
+   "kind": "watch-regression",
+   "target": "TS0601",
+   "hint": "- Add a maintained TypeScript device definition using Tuya's current datapoint mapping, register it in the device index, and cover observed read/write behavior with regression tests.",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/pull/13325"
+  },
+  {
+   "kind": "avoid",
+   "target": "TS0011, TS0012, TS0601",
+   "hint": "On a pure on/off Zigbee light (no Level or Color cluster), a light.turn_off followed within ~1.5 s by light.turn_on results in the entity state correctly transitioning off → on, then silently flipping back to off ~1.5 s after the original turn_off, despite the device being physic",
+   "url": "https://github.com/zigpy/zha/issues/766"
+  },
+  {
+   "kind": "verify-resolution",
+   "target": "TS0011, TS0012, TS0601",
+   "hint": "I can confirm the \"workaround\" section is working for me right now.**",
+   "url": "https://github.com/zigpy/zha/issues/766"
+  },
+  {
+   "kind": "adopt",
+   "target": "TS0601",
+   "hint": "Group entities send commands to specific clusters: switch groups to OnOff, light groups to OnOff, LevelControl and Color (plus Identify for flash), fan groups to Fan.",
+   "url": "https://github.com/zigpy/zha/pull/977"
+  },
+  {
+   "kind": "avoid",
+   "target": "TS0601",
+   "hint": "Besides the S60 case, this also leaves out entities that have no entity category but don't follow group commands either:",
+   "url": "https://github.com/zigpy/zha/pull/977"
+  },
+  {
+   "kind": "avoid",
+   "target": "_tz3000_uwkja6z1|TS011F, _tze200_wktrysab|TS0601",
+   "hint": "- UIOT `UIOT-WindowCovring2[04,02]`: three identical cover endpoints, and the diagnostics don't show whether all three are real motors.",
+   "url": "https://github.com/zigpy/zha/pull/947"
+  },
+  {
+   "kind": "adopt",
+   "target": "TS0601",
+   "hint": "| `zhaquirks/xiaomi/__init__.py` (`XiaomiCluster`, ~line 272) | aggregate-report handler writes `attributes[TEMPERATURE] * 100` into `device_temperature` | broad Xiaomi/Aqara set that routes the 0xFF01 manufacturer report through `XiaomiCluster` |",
+   "url": "https://github.com/zigpy/zha/issues/787"
+  },
+  {
+   "kind": "watch-regression",
+   "target": "TS0601",
+   "hint": "The three buckets below are the full regression surface.",
+   "url": "https://github.com/zigpy/zha/issues/787"
+  },
+  {
+   "kind": "avoid",
+   "target": "_tze284_chbyv06x|TS0601",
+   "hint": "Dependabot will resolve any conflicts with this PR as long as you don't alter it yourself.",
+   "url": "https://github.com/zigpy/zha/pull/880"
+  },
+  {
+   "kind": "avoid",
+   "target": "_tze204_7yyuo8sr|TS0601, _tze204_58of2pfn|TS0601, _tze204_gops3slb|TS0601",
+   "hint": "Dependabot will resolve any conflicts with this PR as long as you don't alter it yourself.",
+   "url": "https://github.com/zigpy/zha/pull/558"
+  },
+  {
+   "kind": "avoid",
+   "target": "_tze284_vvmbj46n|TS0601, _tze200_ba69l9ol|TS0601, _tze200_w6n8jeuu|TS0601, _tze200_vvmbj46n|TS0601",
+   "hint": "Dependabot will resolve any conflicts with this PR as long as you don't alter it yourself.",
+   "url": "https://github.com/zigpy/zha/pull/441"
+  },
+  {
+   "kind": "avoid",
+   "target": "_tze204_ksz749x8|TS0601, _tz3000_qqdbccb3|TS130F, _tze204_hcxvyxa5|TS0601, _tze204_d0ypnbvn|TS0601, _tze200_d0ypnbvn|TS0601",
+   "hint": "Dependabot will resolve any conflicts with this PR as long as you don't alter it yourself.",
+   "url": "https://github.com/zigpy/zha/pull/208"
+  },
+  {
+   "kind": "avoid",
+   "target": "_tze200_emxxanvi|TS0601, _tze204_ztqnh5cg|TS0601",
+   "hint": "Dependabot will resolve any conflicts with this PR as long as you don't alter it yourself.",
+   "url": "https://github.com/zigpy/zha/pull/162"
+  },
+  {
+   "kind": "adopt",
+   "target": "TS0601",
+   "hint": "But the device should also be able to report back the total water volume that passed the valve, as well as the current flow rate.",
+   "url": "https://github.com/dresden-elektronik/deconz-rest-plugin/issues/8561"
+  },
+  {
+   "kind": "avoid",
+   "target": "_tze284_iwn0gpzz|TS0601, _tze200_iwn0gpzz|TS0601, _tze204_iwn0gpzz|TS0601",
+   "hint": "I don't use the setting to set reporting value because of",
+   "url": "https://github.com/dresden-elektronik/deconz-rest-plugin/pull/8527"
+  },
+  {
+   "kind": "adopt",
+   "target": "TS0601",
+   "hint": "- Applied across device query, configure, interview, ping / availability, send command, group membership, OTA, delayed action, announce / leave and the start-up device list.",
+   "url": "https://github.com/ioBroker/ioBroker.zigbee/pull/2925"
+  },
+  {
+   "kind": "avoid",
+   "target": "TS0601",
+   "hint": "It never throws.",
+   "url": "https://github.com/ioBroker/ioBroker.zigbee/pull/2925"
+  },
+  {
+   "kind": "watch-regression",
+   "target": "TS0601",
+   "hint": "iobroker.zigbee@3.3.0",
+   "url": "https://github.com/ioBroker/ioBroker.zigbee/issues/2712"
+  },
+  {
+   "kind": "avoid",
+   "target": "_tze284_fhvpaltk|TS0601",
+   "hint": "Please don't dump tabulated data in a single line mess.",
+   "url": "https://github.com/ioBroker/ioBroker.zigbee/issues/2466"
+  },
+  {
+   "kind": "verify-resolution",
+   "target": "_tze284_8zizsafo|TS0601",
+   "hint": "This issue was resolved in Zigbee2MQTT with the recent update 2.3.0 (see #9266 GIEX GX03: fix valve_2 status – [user-1]).",
+   "url": "https://github.com/ioBroker/ioBroker.zigbee/issues/2481"
+  },
+  {
+   "kind": "avoid",
+   "target": "ZG-807Z, ZG-101ZS, ZG-305Z, TS0201, ZG-222ZA-",
+   "hint": "Dependabot will resolve any conflicts with this PR as long as you don't alter it yourself.",
+   "url": "https://github.com/ioBroker/ioBroker.zigbee/pull/2513"
+  },
+  {
+   "kind": "watch-regression",
+   "target": "TS0601",
+   "hint": "Benutze einen RPI4 mit Iobroker und den Zigbee Adapter (V1.9.7) (Sonoff Dongle-E)",
+   "url": "https://github.com/ioBroker/ioBroker.zigbee/issues/2049"
+  },
+  {
+   "kind": "watch-regression",
+   "target": "TS0601",
+   "hint": "![TS0601_01](https://github.com/ioBroker/ioBroker.zigbee/assets/66845105/9b26f0c6-5588-4f2f-a683-83f39b7752d9)",
+   "url": "https://github.com/ioBroker/ioBroker.zigbee/issues/1936"
+  },
+  {
+   "kind": "watch-regression",
+   "target": "TS0601",
+   "hint": "my new 2 channel water timer is not recognized by the iobroker Zigbee adapter",
+   "url": "https://github.com/ioBroker/ioBroker.zigbee/issues/2208"
+  },
+  {
+   "kind": "watch-regression",
+   "target": "_tze204_tagezcph|TS0601",
+   "hint": "After installed patch to zigbee-herdsman-converters iobroker adapter write such lines in log:",
+   "url": "https://github.com/ioBroker/ioBroker.zigbee/issues/2167"
+  },
+  {
+   "kind": "watch-regression",
+   "target": "TS0601",
+   "hint": "I bought these Zigbee thermostats, but they are not being added correctly to my ioBroker.",
+   "url": "https://github.com/ioBroker/ioBroker.zigbee/issues/2283"
+  },
+  {
+   "kind": "avoid",
+   "target": "_tze200_gjldowol|TS0601",
+   "hint": "This sensor is based on the ZM-35H-Q model, however the settings from this model do not work with this sensor.",
+   "url": "https://github.com/ioBroker/ioBroker.zigbee/issues/2226"
+  }
+ ]
+}
