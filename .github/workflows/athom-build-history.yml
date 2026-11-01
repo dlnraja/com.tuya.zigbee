@@ -5,12 +5,17 @@
 # Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
 #   posting stays off or ledger-gated.
 # <<< about
-# Triggers: workflow_dispatch | Secrets: HOMEY_PAT (read-only Athom build list)
+# Triggers: schedule (daily) + workflow_dispatch | Secrets: HOMEY_PAT (read-only Athom build list)
 # WHY(P2930, 21/10/2026 Paris): socket hang up / processing_failed root-cause study needs the
 # full Athom build history (state + timestamps) of the three apps as a natural experiment.
 # Read-only: lists builds, never uploads, never changes a channel.
+# WHY(P3118, 01/11/2026 Paris): Grok-off readiness — the dead-man saw this dispatch-only job stale
+# (last success 25/10); a daily read-only cron keeps Athom state fresh without the Grok routine.
+# Kill switch: config/autonomy-paused[.watch].
 name: Athom build history (read-only)
 on:
+  schedule:
+    - cron: '47 5 * * *'
   workflow_dispatch:
     inputs:
       limit:
@@ -21,6 +26,10 @@ permissions:
 concurrency:
   group: athom-build-history
   cancel-in-progress: false
+env:
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
 defaults:
   run:
     shell: bash
@@ -30,14 +39,21 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+      - name: Kill switch
+        id: ks
+        run: |
+          if [ -f config/autonomy-paused ] || [ -f config/autonomy-paused.watch ]; then echo "paused=true" >> "$GITHUB_OUTPUT"; echo 'paused'; fi
       - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        if: steps.ks.outputs.paused != 'true'
         with:
           node-version: '22'
-      - run: mkdir -p "$RUNNER_TEMP/h" && cd "$RUNNER_TEMP/h" && npm init -y >/dev/null && npm install --no-audit --no-fund homey@4.4.1
+      - if: steps.ks.outputs.paused != 'true'
+        run: mkdir -p "$RUNNER_TEMP/h" && cd "$RUNNER_TEMP/h" && npm init -y >/dev/null && npm install --no-audit --no-fund homey@4.4.1
       - name: Dump build history
+        if: steps.ks.outputs.paused != 'true'
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
-          HOMEY_BUILD_LIMIT: ${{ inputs.limit }}
+          HOMEY_BUILD_LIMIT: ${{ inputs.limit || '50' }}
           HOMEY_API_TIMEOUT_MS: '120000' # P3034: master list > 10 s
         run: |
           for app in com.dlnraja.tuya.zigbee com.dlnraja.tuya.zigbee.stable com.dlnraja.tuya.zigbee.bastien; do
@@ -46,9 +62,11 @@ jobs:
           done
           ls data/status/
       - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0 (node24, P3025b)
+        if: steps.ks.outputs.paused != 'true'
         with:
           name: athom-build-history
           path: data/status/homey-build-status-*.json
+          retention-days: 7
       # P3069: short summary through the shared helper, on success and on failure.
       - name: Short summary (shared report helper)
         if: always()
