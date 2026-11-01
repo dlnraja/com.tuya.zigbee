@@ -16,6 +16,8 @@
 #   --tag T (P3025b): after the branch is on the remote, point local tag T at the pushed HEAD and push
 #     it WITHOUT force (retried). Remote tag already on the same commit = success; on another commit =
 #     ::warning:: and left untouched (versions are strictly incremental, a tag is never moved remotely).
+#   env: PUSH_RETRY_MIN_GAP_MIN (P3196): minimum minutes since the last push to master; re-checked AFTER
+#     every fetch+rebase, so a push that landed meanwhile makes us wait (default 15 off-CI, 0 in GHA).
 #   env: PUSH_RETRY_ATTEMPTS (5) PUSH_RETRY_BASE_S (4) PUSH_RETRY_CAP_S (60) PUSH_RETRY_JITTER_S (7)
 # Exit: 0 pushed or nothing to push; 3 rebase conflict (rebase aborted, nothing pushed); 4 retries exhausted.
 # Writes pushed=true|false to $GITHUB_OUTPUT when set.
@@ -28,6 +30,7 @@ CAP="${PUSH_RETRY_CAP_S:-60}"
 JITTER="${PUSH_RETRY_JITTER_S:-7}"
 XOPT=()
 TAG=""
+if [ -n "${GITHUB_ACTIONS:-}" ]; then GAP_MIN="${PUSH_RETRY_MIN_GAP_MIN:-0}"; else GAP_MIN="${PUSH_RETRY_MIN_GAP_MIN:-15}"; fi
 while [ $# -gt 0 ]; do
   case "$1" in
     --branch) BRANCH="$2"; shift 2 ;;
@@ -64,7 +67,19 @@ push_tag() {
   return 0
 }
 
+# P3196: seconds still to wait before pushing to master (0 = go). Uses the fetched tip's committer date.
+gap_wait() {
+  [ "$BRANCH" = master ] && [ "$GAP_MIN" -gt 0 ] 2>/dev/null || { echo 0; return; }
+  local last now w; last="$(git log -1 --format=%ct FETCH_HEAD 2>/dev/null || echo 0)"; now="$(date +%s)"
+  w=$(( last + GAP_MIN * 60 - now )); [ "$w" -gt 0 ] && echo "$w" || echo 0
+}
+
 for i in $(seq 1 "$ATTEMPTS"); do
+  while :; do   # P3196: re-fetch + re-check the master gap after any wait; another push may have landed
+    git fetch -q "$REMOTE" "$BRANCH" 2>/dev/null || break
+    w="$(gap_wait)"; [ "$w" -gt 0 ] || break
+    log "master gap < ${GAP_MIN} min (tip $(git rev-parse --short FETCH_HEAD)); waiting ${w}s"; sleep "$w"
+  done
   if ! git fetch -q "$REMOTE" "$BRANCH"; then
     log "fetch failed (attempt $i/$ATTEMPTS)"
   else
@@ -76,6 +91,7 @@ for i in $(seq 1 "$ATTEMPTS"); do
         out false; exit 3
       fi
     fi
+    w="$(gap_wait)"; if [ "$w" -gt 0 ]; then log "push landed during rebase; gap ${w}s left, re-checking"; sleep "$w"; continue; fi
     if git push -q "$REMOTE" "HEAD:refs/heads/$BRANCH"; then log "pushed $(git rev-parse --short HEAD) (attempt $i/$ATTEMPTS)"; push_tag; out true; exit 0; fi
     log "push rejected (attempt $i/$ATTEMPTS)"
   fi
