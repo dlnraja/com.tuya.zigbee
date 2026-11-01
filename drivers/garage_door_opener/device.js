@@ -2,6 +2,7 @@
 
 const BaseUnifiedDevice = require('../../lib/devices/BaseUnifiedDevice');
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
+const garageTrigger = require('../../lib/garage/garageTrigger');
 
 const DRIVER_CAPABILITIES = new Set(['garagedoor_closed', 'alarm_contact']);
 
@@ -34,7 +35,8 @@ class GarageDoorOpenerDevice extends BaseUnifiedDevice {
     }
 
     // ZCL fallback for TS0603 variants that expose genOnOff
-    if (this.zclNode?.endpoints?.[1]?.clusters?.genOnOff) {
+    const pulse = garageTrigger.isPulseTrigger(garageTrigger.settingsMfr(this), garageTrigger.settingsPid(this));
+    if (!pulse && this.zclNode?.endpoints?.[1]?.clusters?.genOnOff) {
       this.log('[GarageOpener] ZCL OnOff fallback mode (TS0603)');
       this.registerCapability('garagedoor_closed', 'genOnOff', {
         get: 'onOff',
@@ -73,7 +75,7 @@ class GarageDoorOpenerDevice extends BaseUnifiedDevice {
     this.registerCapabilityListener('garagedoor_closed', async (value) => {
       if (typeof this.markAppCommand === 'function') { this.markAppCommand(1, value); }
       this.log(`[GarageOpener] Command: ${value ? 'CLOSE' : 'OPEN'}`);
-      return this.sendTuyaCommand(1, value ? 0 : 1, 'bool');
+      return this.sendTuyaCommand(1, garageTrigger.dp1Value(value, pulse) ? 1 : 0, 'bool');
     });
 
     this.log('[GarageOpener] ✅ Ready');

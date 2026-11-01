@@ -53,6 +53,9 @@ Public `app.json` flow card lists were read to decide which generic cards to off
 - **Reddit communities** - r/homey, r/zigbee, r/homeautomation for cross-platform device knowledge
 
 ## Forum-Based Device Reporters
+
+- P3144: Homey Community Apps category (https://community.homey.app/c/apps/7), read-only digests. "Smart Garage Control" thread (https://community.homey.app/t/149230) — report that a TS0603 `_TZE608_xkr8gep3` opener pairs but does not move; fixed per Zigbee2MQTT `tuya.ts` (DP1 = raw trigger). Inspiration only, no code copied.
+
 - **motren** — device interview of the TS0044 scene remote `_TZ3000_pd9mpyh4` (JohanBendz/com.tuya.zigbee#1534); placed on `scene_switch_4` 2026-10-25
 - **OMGatito** — Meian TS0224 siren `_TZ3000_cipibmnp` (JohanBendz#465); placed on `siren` 2026-10-12
 - **Peter** - HOBEIAN ZG-222Z water leak sensor (Issue #2090)
