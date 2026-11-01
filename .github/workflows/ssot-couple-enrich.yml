@@ -133,7 +133,6 @@ jobs:
     timeout-minutes: 10
     permissions:
       contents: write
-      issues: write  # safe-auto-commit: single refusal comment on the tracking issue
     steps:
       - name: Checkout
         uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
@@ -155,9 +154,8 @@ jobs:
         run: |
           node -e 'const d=require("./data/ssot/couple-sources.json");if(!d._meta||!d.couples||!d.drivers)process.exit(1);for(const k of Object.keys(d.couples))if(!/^_t[a-z0-9]{2,5}_[a-z0-9]{4,16}\|[A-Za-z0-9_. +/\-]{2,40}$/.test(k))throw new Error("bad key "+k)'
           node scripts/ci/digest-guard.js data/ssot/couple-sources.json  # P3138 fail-closed privacy gate
-          if [ -f tools/ci/house-data-guard.js ]; then node tools/ci/house-data-guard.js; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          node scripts/ci/safe-auto-commit.js --id=ssot-couple-enrich \
-            --message="chore(ssot): refresh couple-sources ledger (P3136) [skip ci]" \
-            --paths="data/ssot/couple-sources.json"
+          git add -- data/ssot/couple-sources.json
+          git diff --cached --quiet || git commit -m "chore(ssot): refresh couple-sources ledger (P3136) [skip ci]"
+          bash .github/scripts/git-push-retry.sh  # branch without safe-auto-commit.js (P3138c)

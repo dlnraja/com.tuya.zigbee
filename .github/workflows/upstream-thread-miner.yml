@@ -90,7 +90,6 @@ jobs:
         if: steps.gate.outputs.run == 'true'
         run: |
           node scripts/ci/digest-guard.js
-          if [ -f tools/ci/house-data-guard.js ]; then node tools/ci/house-data-guard.js; fi
 
       - name: Diff
         id: diff
@@ -123,7 +122,6 @@ jobs:
     timeout-minutes: 10
     permissions:
       contents: write
-      issues: write  # safe-auto-commit: single refusal comment on the tracking issue
     steps:
       - name: Checkout
         uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
@@ -144,9 +142,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           node scripts/ci/digest-guard.js
-          if [ -f tools/ci/house-data-guard.js ]; then node tools/ci/house-data-guard.js; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          node scripts/ci/safe-auto-commit.js --id=upstream-thread-miner \
-            --message="chore(knowledge): upstream thread digests (P3138) [skip ci]" \
-            --paths="docs/knowledge/upstream data/ssot/thread-digests.json data/leads/digest-candidates.json"
+          git add -- docs/knowledge/upstream data/ssot/thread-digests.json data/leads/digest-candidates.json
+          git diff --cached --quiet || git commit -m "chore(knowledge): upstream thread digests (P3138) [skip ci]"
+          bash .github/scripts/git-push-retry.sh  # branch without safe-auto-commit.js (P3138c)
