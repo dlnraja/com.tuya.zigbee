@@ -17,6 +17,7 @@
  */
 
 const fs = require('fs');
+const { pairingCaseVariants } = require('../../lib/utils/TuyaNormalizer');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..', '..');
@@ -47,19 +48,8 @@ function loadJson(p, fb) {
 function dualCaseForms(mfr) {
   const s = String(mfr || '').trim();
   if (!s) return [];
-  const forms = new Set([s]);
-  if (s.startsWith('_')) {
-    forms.add(`_${s.slice(1).toLowerCase()}`);
-    forms.add(`_${s.slice(1).toUpperCase()}`);
-    // mixed Tuya style: prefix upper, tail lower
-    const m = s.match(/^(_T[YZ][A-Z0-9]*_)(.+)$/i);
-    if (m) {
-      forms.add(`${m[1].toUpperCase()}${m[2].toLowerCase()}`);
-      forms.add(`${m[1].toLowerCase()}${m[2].toLowerCase()}`);
-      forms.add(`${m[1].toUpperCase()}${m[2].toUpperCase()}`);
-    }
-  }
-  return [...forms];
+  // WHY(P3127/#557): canonical + lowercase only, no 4-combo case forms.
+  return pairingCaseVariants(s);
 }
 
 /** OEM Tuya MCU siblings sharing same tail. */
