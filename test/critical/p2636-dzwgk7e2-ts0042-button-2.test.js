@@ -29,8 +29,10 @@ describe('P2636 dzwgk7e2+TS0042 2-btn (phantom 4EP)', () => {
     // LoraTap SS6400ZB ee8nrt2l (Z2M TS0044 4-button) to button_wireless_4 — dual-couple-legacy, 0 orphans, raw 390 -> 378, unique 98 -> 95.
     // 2026-10-27 (P3077): 6 wrong-class makers (cymsnfvf, ew31dmgx, hyfvrar3, kdi2o9m6, plyvnuf5, upjrsxh1) kept on their real driver
     // only; raw 376 -> 352, unique 95 -> 89, 0 orphans (config/architecture/p3077-phantom-decisions.json).
-    assert.ok((c.zigbee.manufacturerName || []).length >= 352);
-    assert.ok(new Set((c.zigbee.manufacturerName || []).map((x) => String(x).toLowerCase())).size >= 89);
+    // 2026-11-01 (P3146): wkai4ga5 removed (TS0042 was a forum-table cross-product, evidence in
+    // data/couple-removal-evidence.json; its TS0044 couple stays on scene_switch_4); raw 352 -> 348, unique 89 -> 88.
+    assert.ok((c.zigbee.manufacturerName || []).length >= 348);
+    assert.ok(new Set((c.zigbee.manufacturerName || []).map((x) => String(x).toLowerCase())).size >= 88);
     // 2026-10-11 second-source round: 9 TS0003/TS0013 3-gang + r0pmi2p3 TS0014 moved to switch_3_gang/switch_4gang (curated removals). 2026-10-11 johan-only round: key8kk7r+rrjr1q0u (3-btn) and zl1kmjqx (temp sensor) moved out (curated removals); qewo8dlz TS0013 3-gang moved to switch_3_gang (W4). 2026-10-11: _TZ3000_yw5tvzsk (TS0043, Johan+deCONZ) moved to button_wireless_3 (curated removal)
   });
 

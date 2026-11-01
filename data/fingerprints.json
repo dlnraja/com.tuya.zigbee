@@ -1499,8 +1499,7 @@
     "type": "scene_switch_4",
     "powerSource": null,
     "modelIds": [
-      "TS0044",
-      "TS0042"
+      "TS0044"
     ]
   },
   "_tz3000_wkai4ga5": {
@@ -1508,8 +1507,7 @@
     "type": "scene_switch_4",
     "powerSource": null,
     "modelIds": [
-      "TS0044",
-      "TS0042"
+      "TS0044"
     ]
   },
   "_TZ3000_WKAI4GA5": {
@@ -1517,34 +1515,22 @@
     "type": "scene_switch_4",
     "powerSource": null,
     "modelIds": [
-      "TS0044",
-      "TS0042"
+      "TS0044"
     ]
   },
   "_TZ3000_dfgbtub0": {
-    "driverId": "button_wireless_4",
-    "type": "button_wireless_4",
+    "driverId": "button_wireless_2",
+    "type": "button_wireless_2",
     "powerSource": null,
     "modelIds": [
-      "TS0044",
       "TS0042"
     ]
   },
   "_tz3000_dfgbtub0": {
-    "driverId": "button_wireless_4",
-    "type": "button_wireless_4",
+    "driverId": "button_wireless_2",
+    "type": "button_wireless_2",
     "powerSource": null,
     "modelIds": [
-      "TS0044",
-      "TS0042"
-    ]
-  },
-  "_TZ3000_DFGBTUB0": {
-    "driverId": "button_wireless_4",
-    "type": "button_wireless_4",
-    "powerSource": null,
-    "modelIds": [
-      "TS0044",
       "TS0042"
     ]
   },
