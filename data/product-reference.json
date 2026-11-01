@@ -17474,7 +17474,7 @@
       "source": "auto-sync"
     },
     "_TZ3000_cehuw1lw": {
-      "driverId": "button_wireless_plug",
+      "driverId": "smartplug",
       "modelIds": [
         "TS0001",
         "TS0002",
@@ -17507,7 +17507,7 @@
       },
       "deviceClass": "socket",
       "capabilities": null,
-      "source": "auto-sync"
+      "source": "auto-sync; P3134 #585 Z2M tuya.ts"
     },
     "_TZ3000_uwkja6z1": {
       "driverId": "button_wireless_plug",
@@ -105755,7 +105755,7 @@
       "source": "auto-sync"
     },
     "_TZ3000_46VASA5H": {
-      "driverId": "switch_1gang",
+      "driverId": "double_power_point_2",
       "modelIds": [
         "01MINIZB",
         "BASICZBR3",
@@ -105809,7 +105809,7 @@
       },
       "deviceClass": "socket",
       "capabilities": null,
-      "source": "auto-sync"
+      "source": "auto-sync; P3134 #585 Z2M tuya.ts"
     },
     "_TZ3000_4HBRRN7E": {
       "driverId": "switch_1gang",
@@ -183994,7 +183994,7 @@
       "source": null
     },
     "_TZ3000_CEHUW1LW": {
-      "driverId": "button_wireless_plug",
+      "driverId": "smartplug",
       "modelIds": [],
       "vendor": null,
       "model": null,
@@ -184011,10 +184011,10 @@
       },
       "deviceClass": "socket",
       "capabilities": null,
-      "source": null
+      "source": "P3134 #585 Z2M tuya.ts"
     },
     "_tz3000_cehuw1lw": {
-      "driverId": "button_wireless_plug",
+      "driverId": "smartplug",
       "modelIds": [],
       "vendor": null,
       "model": null,
@@ -184031,7 +184031,7 @@
       },
       "deviceClass": "socket",
       "capabilities": null,
-      "source": null
+      "source": "P3134 #585 Z2M tuya.ts"
     },
     "_TZ3000_UWKJA6Z1": {
       "driverId": "button_wireless_plug",
@@ -187862,7 +187862,7 @@
       "source": null
     },
     "_TZE284_xpq2rzhq": {
-      "driverId": "climate_sensor",
+      "driverId": "presence_sensor_radar",
       "modelIds": [],
       "vendor": null,
       "model": null,
@@ -187883,7 +187883,7 @@
       },
       "deviceClass": "sensor",
       "capabilities": null,
-      "source": null
+      "source": "P3134 #585 Z2M tuya.ts"
     },
     "_TZE284_xpvamyfz": {
       "driverId": "climate_sensor",
@@ -204761,7 +204761,7 @@
       "source": null
     },
     "_TZE284_XPQ2RZHQ": {
-      "driverId": "climate_sensor",
+      "driverId": "presence_sensor_radar",
       "modelIds": [],
       "vendor": null,
       "model": null,
@@ -204782,10 +204782,10 @@
       },
       "deviceClass": "sensor",
       "capabilities": null,
-      "source": null
+      "source": "P3134 #585 Z2M tuya.ts"
     },
     "_tze284_xpq2rzhq": {
-      "driverId": "climate_sensor",
+      "driverId": "presence_sensor_radar",
       "modelIds": [],
       "vendor": null,
       "model": null,
@@ -204806,7 +204806,7 @@
       },
       "deviceClass": "sensor",
       "capabilities": null,
-      "source": null
+      "source": "P3134 #585 Z2M tuya.ts"
     },
     "_TZE284_XZ4YR5NZ": {
       "driverId": "climate_sensor",
@@ -264076,7 +264076,7 @@
       "source": null
     },
     "_tz3000_46vasa5h": {
-      "driverId": "switch_1gang",
+      "driverId": "double_power_point_2",
       "modelIds": [],
       "vendor": null,
       "model": null,
@@ -264095,7 +264095,7 @@
       },
       "deviceClass": "socket",
       "capabilities": null,
-      "source": null
+      "source": "P3134 #585 Z2M tuya.ts"
     },
     "_TZ3000_46T1RVDU": {
       "driverId": "switch_1gang",
