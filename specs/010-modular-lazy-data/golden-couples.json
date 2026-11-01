@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-01T13:40:08.537Z",
+ "generated": "2026-11-01T14:51:38.622Z",
  "drivers": 418,
  "snapshot": {
   "air_conditioner_aetz01": {
@@ -291,9 +291,9 @@
    "pidSha": "3427697d0c296c9d"
   },
   "climate_sensor": {
-   "mfr": 502,
+   "mfr": 496,
    "pid": 32,
-   "mfrSha": "4adc553cd3a51dd0",
+   "mfrSha": "5c5cc01cc0bd5087",
    "pidSha": "4809a771f46a5606"
   },
   "climate_sensor_device": {
@@ -1287,9 +1287,9 @@
    "pidSha": "74df414b6b5ef7ae"
   },
   "power_meter": {
-   "mfr": 14,
+   "mfr": 17,
    "pid": 4,
-   "mfrSha": "64483f9acefaa130",
+   "mfrSha": "4d520b0577e3bb15",
    "pidSha": "5e66f027ae0f9459"
   },
   "presence_radar_aoyan_ay204t": {
@@ -1725,9 +1725,9 @@
    "pidSha": "455c46e8c8549693"
   },
   "smart_breaker": {
-   "mfr": 8,
+   "mfr": 11,
    "pid": 2,
-   "mfrSha": "7796e82fbcd1e1c0",
+   "mfrSha": "7ff7114f100b9274",
    "pidSha": "8de83880ca6634fa"
   },
   "smart_button_switch": {
