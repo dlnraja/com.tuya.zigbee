@@ -387,6 +387,84 @@
    "target": "_tze200_2ekuz3dz|TS0601",
    "hint": "is listed as \"works with ZHA\" - well, I bought two of them - and they DO NOT work with ZHA.",
    "url": "https://github.com/blakadder/zigbee/issues/736"
+  },
+  {
+   "kind": "adopt",
+   "target": "_tze284_kdqrazmy|TS0601, _tze200_s1xgth2u|TS0601, _tze200_t3xd7l44|TS0601",
+   "hint": "The device must be re-joined after installing the quirk so the 0x25 exchange happens with the new handler.",
+   "url": "https://github.com/zigpy/zha-device-handlers/issues/5497"
+  },
+  {
+   "kind": "avoid",
+   "target": "_tze284_kdqrazmy|TS0601, _tze200_s1xgth2u|TS0601, _tze200_t3xd7l44|TS0601",
+   "hint": "The Tuya temperature/humidity sensor with LCD display `_TZE284_kdqrazmy` / `TS0601` (3x AAA) pairs with ZHA but never reports temperature, humidity or battery.",
+   "url": "https://github.com/zigpy/zha-device-handlers/issues/5497"
+  },
+  {
+   "kind": "avoid",
+   "target": "_tze204_rtrmfadk|TS0601",
+   "hint": "[BUG] Moes TRV TS0601_TZE204_rtrmfadk Error doing job: Task exception was never retrieved (None)",
+   "url": "https://github.com/zigpy/zha-device-handlers/issues/4904"
+  },
+  {
+   "kind": "avoid",
+   "target": "_tze284_loejka0i|TS0601",
+   "hint": "Please note that power pdoduction entities must be explicitely uncommented in quirk, I did not validate them as i do not have any solars to produce.",
+   "url": "https://github.com/zigpy/zha-device-handlers/issues/5461"
+  },
+  {
+   "kind": "verify-resolution",
+   "target": "_tze284_loejka0i|TS0601",
+   "hint": "### Solution description",
+   "url": "https://github.com/zigpy/zha-device-handlers/issues/5461"
+  },
+  {
+   "kind": "avoid",
+   "target": "ZG-204ZG, ZG-204ZV",
+   "hint": "But it work as a PIR sensor since i don't have all the option to calibrate mmwave.",
+   "url": "https://github.com/zigpy/zha-device-handlers/issues/4268"
+  },
+  {
+   "kind": "verify-resolution",
+   "target": "TS0601",
+   "hint": "### Solution description",
+   "url": "https://github.com/zigpy/zha-device-handlers/issues/4813"
+  },
+  {
+   "kind": "verify-resolution",
+   "target": "_tze284_wbhaespm|TS0601",
+   "hint": "### Solution description",
+   "url": "https://github.com/zigpy/zha-device-handlers/issues/4277"
+  },
+  {
+   "kind": "avoid",
+   "target": "TS0601",
+   "hint": "The Tuya Zigbee dual clamp power sensor TS0601 by _TZE28C1000000_81yrt3lo pairs with ZHA but never reports data.",
+   "url": "https://github.com/zigpy/zha-device-handlers/issues/5505"
+  },
+  {
+   "kind": "verify-resolution",
+   "target": "_tze204_wzre8hu2|TS0601",
+   "hint": "### Solution description",
+   "url": "https://github.com/zigpy/zha-device-handlers/issues/4015"
+  },
+  {
+   "kind": "avoid",
+   "target": "_tze204_aoclfnxz|TS0601",
+   "hint": "I'm not sure what other info is required here, but please don't hesitate to ask :)",
+   "url": "https://github.com/zigpy/zha-device-handlers/issues/2755"
+  },
+  {
+   "kind": "verify-resolution",
+   "target": "_tze204_aoclfnxz|TS0601",
+   "hint": "### Solution description",
+   "url": "https://github.com/zigpy/zha-device-handlers/issues/2755"
+  },
+  {
+   "kind": "adopt",
+   "target": "ZG-229Z, ZG-229Z-",
+   "hint": "According to the device specifications, it should support both siren (alarm) and doorbell functionalities, as well as multiple configuration attributes:",
+   "url": "https://github.com/zigpy/zha-device-handlers/issues/5008"
   }
  ]
 }
