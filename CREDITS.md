@@ -494,3 +494,6 @@ A heartfelt thank you to:
 
 ## Compose-faithful app.json resync (P3086, 2026-10-27) — idea only, no code copied
 - **Athom BV, homey CLI (`homey/lib/HomeyCompose.js`)** — the list of compose placeholders the composer replaces ({{driverId}}, {{driverPath}}, {{driverAssetsPath}}, {{driverName}}); `scripts/maintenance/sync-appjson-zigbee.js` now applies the same substitution, written in our own code.
+
+## #585 duplicate couple _TZ3000_dfgbtub0 (P3129, 2026-11-01) — fingerprint fact only
+- **Koenkk, zigbee-herdsman-converters (`src/devices/tuya.ts`, TS0043 "Wireless switch with 3 buttons", white label Marmitek Push_LO)** — source for the exact couple `_TZ3000_dfgbtub0` + `TS0043`, now listed in `button_wireless_3`. No code copied.
