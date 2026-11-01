@@ -117,8 +117,9 @@ jobs:
               const cl=JSON.parse(fs.readFileSync('.homeychangelog.json','utf8'));
               if (!cl['$NEW'] || ce.isPlaceholder(String(cl['$NEW'].en||''))) {
                 cl['$NEW']={en:c.stableNotes,fr:'Maintenance '+'$NEW'+' : correctifs communs repris de la branche de développement ('+what+'), aucun changement de driver.'};
-                fs.writeFileSync('.homeychangelog.json',JSON.stringify(ce.orderChangelog(cl),null,2)+'\\n');
               }
+              // P3136: always keep newest-first (an unordered append broke test/critical/p3069)
+              fs.writeFileSync('.homeychangelog.json',JSON.stringify(ce.orderChangelog(cl),null,2)+'\\n');
             }
             console.log('Bumped to $NEW');
           "
