@@ -1,4 +1,5 @@
 'use strict';
+/* global describe, it */
 /**
  * P3135 (t719u/t721u/t722u/t723u): capability coherence ratchet.
  * A = drivers exposing enable_power_estimation with onoff but no estimated-energy path (same setting => same caps).
