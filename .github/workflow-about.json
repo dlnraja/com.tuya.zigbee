@@ -439,6 +439,10 @@
     "secret-scan.yml": {
       "group": "autopilot",
       "what": "On every push and PR: gitleaks (pinned binary, checksum checked) scans only the new commits for secrets. Blocking."
+    },
+    "autonomy-digest.yml": {
+      "group": "autopilot",
+      "what": "Every Monday 07:07 UTC: one 'Autonomy weekly digest' issue in this repo, edited in place (red workflows, crash-triage, auto-reverts, ledger, kill switches). No external post."
     }
   }
 }
