@@ -146,6 +146,11 @@ jobs:
       - name: Lint ratchet (lib/ drivers/ — total may only go down, no file may get worse)
         run: node scripts/ci/lint-ratchet.js
 
+      - name: Capability coherence audit (P3136, report + ratchet A/B/C)
+        run: |
+          node scripts/ci/capability-coherence-audit.js . | tee -a "$GITHUB_STEP_SUMMARY"
+          npx mocha --timeout 20000 test/p3135-capability-coherence-audit.test.js
+
       - name: Push helper + hygiene + data gate tests
         run: |
           git config --global user.name ci; git config --global user.email ci@localhost
