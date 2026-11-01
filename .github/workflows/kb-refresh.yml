@@ -53,6 +53,8 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          # P3175 (t735u): source-digest privacy gate, fail closed on newly generated lines
+          node scripts/ci/digest-guard.js --delta data/kb data/leads/kb-enrich-candidates.json docs/knowledge/KB docs/knowledge/Z2M_COVERAGE.md || exit 1
           git add data/kb data/leads/kb-enrich-candidates.json docs/knowledge/KB
           if git diff --cached --quiet; then echo "KB unchanged"; exit 0; fi
           b="kb/refresh-$(date -u +%Y%m%d)"
