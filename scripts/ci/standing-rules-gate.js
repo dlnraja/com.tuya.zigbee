@@ -10,6 +10,7 @@ const fs = require('fs');
 const path = require('path');
 
 const git = (...a) => execFileSync('git', a, { encoding: 'utf8', maxBuffer: 64e6 }).trim();
+const gitq = (...a) => execFileSync('git', a, { encoding: 'utf8', maxBuffer: 64e6, stdio: ['ignore', 'pipe', 'ignore'] }).trim(); // R-soak probes: unknown SHAs are expected
 const BOT = /\[bot\]|github-actions|\[auto:|\[skip ci\]/i;
 // Only write paths count: reading the forum/API is allowed; mailing Athom or posting to their forum is not.
 const ATHOM = [/\b(to|cc|bcc)\s*[:=]\s*[^\n]{0,60}@athom\.com/i, /mailto:[^"'\s]*@athom\.com/i];
@@ -35,7 +36,7 @@ function athom(files) {
 const SOAK_H = Number(process.env.SOAK_H || 24);
 const PORT_BRANCHES = ['stable-v5', 'bastien-home'];
 function soakRefs(subject) {
-  if (!/\bport(s|ed)?\b/i.test(subject) || /^(ci|test|chore|docs|build|style)(\(|:|!)/i.test(subject) || /soak-override/i.test(subject)) return [];
+  if (!/\bport(s|ed)?\b/i.test(subject) || /^(ci|test|chore|docs|build|style)(\(|:|!)/i.test(subject) || /^\w+\((ci|test|build)\b/i.test(subject) || /soak-override/i.test(subject)) return [];
   const ps = (subject.match(/\bP\d{3,5}[a-z]?\b/g) || []).map((p) => ({ kind: 'p', ref: p }));
   const shas = (subject.match(/\b[0-9a-f]{8,40}\b/g) || []).map((s) => ({ kind: 'sha', ref: s }));
   return [...ps, ...shas];
@@ -73,8 +74,8 @@ if (require.main === module) {
     if (!master) console.log('::notice::R-soak skipped: origin/master not fetched');
     else {
       const masterTime = (r) => { try {
-        if (r.kind === 'sha') { git('merge-base', '--is-ancestor', r.ref, 'origin/master'); return Number(git('log', '-1', '--format=%ct', r.ref)); }
-        const ts = git('log', 'origin/master', '--format=%ct', '-E', `--grep=${r.ref}([^0-9a-z]|$)`).split('\n').filter(Boolean);
+        if (r.kind === 'sha') { gitq('merge-base', '--is-ancestor', r.ref, 'origin/master'); return Number(gitq('log', '-1', '--format=%ct', r.ref)); }
+        const ts = gitq('log', 'origin/master', '--format=%ct', '-E', `--grep=${r.ref}([^0-9a-z]|$)`).split('\n').filter(Boolean);
         return ts.length ? Number(ts[ts.length - 1]) : null;
       } catch { return null; } };
       const pc = (log ? log.split('\n') : []).map((l) => { const [h, t] = l.split('\t'); return { h, t: Number(t), subject: git('log', '-1', '--format=%s', h) }; });

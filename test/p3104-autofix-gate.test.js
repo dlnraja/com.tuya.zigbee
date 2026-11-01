@@ -24,8 +24,10 @@ describe('P3104 autofix gate (decide.js + ledger)', () => {
     const r = g.check('ci_red:X', { entries: {}, events: [] }, {}, root);
     assert.deepStrictEqual([r.allow, r.why], [false, 'kill switch autofix']);
   });
-  it('ci-autofix runs the gate before handle and keeps the ledger in the cache', () => {
-    const y = yaml.load(fs.readFileSync(path.join(__dirname, '../.github/workflows/ci-autofix.yml'), 'utf8'));
+  it('ci-autofix runs the gate before handle and keeps the ledger in the cache', function () {
+    const wf = path.join(__dirname, '../.github/workflows/ci-autofix.yml');
+    if (!fs.existsSync(wf)) { this.skip(); } // stable-v5 / bastien-home ship no ci-autofix workflow (master only)
+    const y = yaml.load(fs.readFileSync(wf, 'utf8'));
     const steps = y.jobs.triage.steps;
     const gi = steps.findIndex((s) => s.id === 'gate');
     const hi = steps.findIndex((s) => s.id === 'handle');
