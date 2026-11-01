@@ -8,17 +8,16 @@ Statuses: **absent** (no driver), **compacted** (in app.json, dropped from the p
 
 | Source | Version / commit | Tuya couples | Non-Tuya couples (out of scope) | Note |
 |---|---|---:|---:|---|
-| z2m | 26.124.0 | 2177 | 0 |  |
-| zha | 2b1abce3ec (2026-10-27) | 506 | 88 |  |
-| zha | 1f1405b0eb (2026-10-26) | 506 | 88 |  |
+| z2m | 26.125.0 | 2180 | 0 |  |
+| zha | 862124c551 (2026-10-28) | 535 | 97 |  |
 | deconz | a4c17adfa0 (2026-09-10) | 400 | 346 |  |
 | johan | 328d24ed31 (2026-03-29) | 1161 | 59 | driver lists are mfr×pid cross products (Homey semantics) |
 | blakadder | d96e8aaf72 (2025-10-03) | 626 | 0 | 63 ambiguous ids skipped |
 | hubitat | d5cec83366 (2026-10-20) | 556 | 194 |  |
-| smartthings | SmartThingsCommunity/SmartThingsEdgeDrivers@3a48d3d84f, Mariano-Github/Edge-Drivers-Beta@bdf24246fd | 550 | 1253 |  |
+| smartthings | SmartThingsCommunity/SmartThingsEdgeDrivers@4fa6683e2e, Mariano-Github/Edge-Drivers-Beta@88f56fd204 | 550 | 1253 |  |
 | iobroker | acdafa63e7 (2026-09-18) | 0 | 0 | device definitions come from zigbee-herdsman-converters; only adapter-local fingerprints are counted |
-| domoticz | 5f98dc8772 (2026-10-24) | 401 | 21 |  |
-| tasmota | 63c38614ed (2026-10-25) | 10 | 1 |  |
+| domoticz | 0093b8a1c7 (2026-10-31) | 401 | 21 |  |
+| tasmota | 9107ce7615 (2026-10-31) | 10 | 1 |  |
 
 Wi-Fi / LAN projects (tuya-local, localtuya, tinytuya, esphome) belong to the separate wifi-local matrix: leads only here.
 
@@ -26,12 +25,9 @@ Wi-Fi / LAN projects (tuya-local, localtuya, tinytuya, esphome) belong to the se
 
 | Branch | App | Version | Payload combos / cap | Compacted, other case form kept |
 |---|---|---|---|---:|
-| master | com.dlnraja.tuya.zigbee | 9.0.1602 | 15498 / 15500 + TS0601 top-up → 19997 / 20000 | 390 |
-| stable-v5 | com.dlnraja.tuya.zigbee.stable | 5.12.515 | 15500 / 15500 | 246 |
-| bastien-home | com.dlnraja.tuya.zigbee.bastien | 1.0.217 | 15500 / 15500 | 261 |
-| master | com.dlnraja.tuya.zigbee | 9.0.1601 | 15499 / 15500 + TS0601 top-up → 20000 / 20000 | 393 |
-| stable-v5 | com.dlnraja.tuya.zigbee.stable | 5.12.508 | 15498 / 15500 | 250 |
-| bastien-home | com.dlnraja.tuya.zigbee.bastien | 1.0.213 | 15495 / 15500 | 264 |
+| master | com.dlnraja.tuya.zigbee | 9.0.1608 | 15498 / 15500 + TS0601 top-up → 19997 / 20000 | 387 |
+| stable-v5 | com.dlnraja.tuya.zigbee.stable | 5.12.525 | 15488 / 15500 | 246 |
+| bastien-home | com.dlnraja.tuya.zigbee.bastien | 1.0.222 | 15500 / 15500 | 261 |
 
 The payload cap (15,500 couples, our own heuristic shared with the publish workflows, plus the P3036 TS0601 top-up where the branch has it) is the binding limit: any couple added to app.json beyond it is compacted out again, so new couples are only worth adding together with a compaction gain (P3036). Couples we cannot ship are listed as on hold, never removed.
 
@@ -39,38 +35,28 @@ The payload cap (15,500 couples, our own heuristic shared with the publish workf
 
 | Source | Branch | Total | Absent | Compacted | Wrong class | Partial | Complete |
 |---|---|---:|---:|---:|---:|---:|---:|
-| all | master | 3573 | 520 | 2218 | 1 | 161 | 673 |
-| all | stable-v5 | 3573 | 544 | 2316 | 9 | 130 | 574 |
-| all | bastien-home | 3573 | 471 | 2324 | 7 | 142 | 629 |
-| z2m | master | 2177 | 164 | 1478 | 1 | 161 | 373 |
-| z2m | stable-v5 | 2177 | 172 | 1568 | 9 | 130 | 298 |
-| z2m | bastien-home | 2177 | 106 | 1586 | 7 | 142 | 336 |
-| zha | master | 506 | 41 | 312 | 0 | 33 | 120 |
-| zha | stable-v5 | 506 | 32 | 349 | 2 | 27 | 96 |
-| zha | bastien-home | 506 | 38 | 349 | 1 | 25 | 93 |
-| deconz | master | 400 | 30 | 242 | 0 | 15 | 113 |
-| all | master | 3651 | 538 | 2306 | 3 | 156 | 648 |
-| all | stable-v5 | 3651 | 564 | 2363 | 9 | 129 | 586 |
-| all | bastien-home | 3651 | 498 | 2368 | 7 | 143 | 635 |
-| z2m | master | 2177 | 165 | 1503 | 3 | 156 | 350 |
-| z2m | stable-v5 | 2177 | 172 | 1570 | 9 | 129 | 297 |
-| z2m | bastien-home | 2177 | 106 | 1589 | 7 | 143 | 332 |
-| zha | master | 506 | 41 | 323 | 0 | 34 | 108 |
-| zha | stable-v5 | 506 | 32 | 350 | 2 | 25 | 97 |
-| zha | bastien-home | 506 | 38 | 350 | 1 | 25 | 92 |
-| deconz | master | 400 | 30 | 244 | 0 | 15 | 111 |
+| all | master | 3578 | 528 | 2208 | 1 | 161 | 680 |
+| all | stable-v5 | 3578 | 547 | 2317 | 9 | 130 | 575 |
+| all | bastien-home | 3578 | 474 | 2325 | 7 | 142 | 630 |
+| z2m | master | 2180 | 167 | 1473 | 1 | 161 | 378 |
+| z2m | stable-v5 | 2180 | 175 | 1568 | 9 | 130 | 298 |
+| z2m | bastien-home | 2180 | 109 | 1586 | 7 | 142 | 336 |
+| zha | master | 535 | 45 | 326 | 0 | 36 | 128 |
+| zha | stable-v5 | 535 | 36 | 366 | 2 | 31 | 100 |
+| zha | bastien-home | 535 | 38 | 367 | 1 | 32 | 97 |
+| deconz | master | 400 | 30 | 240 | 0 | 15 | 115 |
 | deconz | stable-v5 | 400 | 29 | 253 | 1 | 15 | 102 |
 | deconz | bastien-home | 400 | 28 | 250 | 0 | 15 | 107 |
-| johan | master | 1161 | 82 | 723 | 0 | 25 | 331 |
+| johan | master | 1161 | 85 | 716 | 0 | 25 | 335 |
 | johan | stable-v5 | 1161 | 103 | 755 | 1 | 19 | 283 |
 | johan | bastien-home | 1161 | 85 | 721 | 1 | 22 | 332 |
-| blakadder | master | 626 | 59 | 394 | 0 | 34 | 139 |
+| blakadder | master | 626 | 61 | 390 | 0 | 34 | 141 |
 | blakadder | stable-v5 | 626 | 62 | 400 | 3 | 27 | 134 |
 | blakadder | bastien-home | 626 | 63 | 409 | 2 | 28 | 124 |
-| hubitat | master | 556 | 66 | 361 | 0 | 24 | 105 |
+| hubitat | master | 556 | 66 | 357 | 0 | 24 | 109 |
 | hubitat | stable-v5 | 556 | 62 | 376 | 1 | 21 | 96 |
 | hubitat | bastien-home | 556 | 65 | 369 | 1 | 21 | 100 |
-| smartthings | master | 550 | 135 | 273 | 0 | 10 | 132 |
+| smartthings | master | 550 | 135 | 272 | 0 | 10 | 133 |
 | smartthings | stable-v5 | 550 | 137 | 278 | 0 | 12 | 123 |
 | smartthings | bastien-home | 550 | 141 | 275 | 0 | 10 | 124 |
 | domoticz | master | 401 | 13 | 276 | 0 | 20 | 92 |
@@ -86,6 +72,7 @@ The payload cap (15,500 couples, our own heuristic shared with the publish workf
 - `AOYAN|AY-101Z` [z2m]
 - `AOYAN|AY-204Z` [z2m]
 - `AOYAN|AY-204ZX` [z2m]
+- `AOYAN|AY-223Z` [z2m]
 - `AOYAN|AY02SZ` [z2m]
 - `AOYAN|AY204T` [z2m]
 - `AOYAN|AY205Z` [z2m]
@@ -106,7 +93,6 @@ The payload cap (15,500 couples, our own heuristic shared with the publish workf
 - `TUYATEC-j5khr9vo|TS0011` [smartthings]
 - `TUYATEC-qun7vq14|TS0201` [johan]
 - `TUYATEC-ymxzzux6|TS0011` [smartthings]
-- `TUYATEC-zsi5eg2o|TS0012` [smartthings]
 
 ## Examples: compacted (master, first 25, full list in the JSON)
 

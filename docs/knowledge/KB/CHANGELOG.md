@@ -15,3 +15,4 @@
 - 2026-10-26 weekly upstream check: P3060 two's complement negative power in packed phase DPs (zhc lib/tuya.ts); 4 more couples parked and 6 wrong-class leads, see ../UPSTREAM_WEEKLY_2026-10-26.md
 - 2026-10-27 kb-daily: matrix refreshed (master absent 536 to 520, complete 654 to 673), ZHA Xiaomi read-response lesson and constant-attribute rule noted, HQL DS-123 Wi-Fi lead, 7 couples still parked, see ../UPSTREAM_DAILY_2026-10-27.md
 - 2026-10-26 content 927e28569925: 26 files updated, 93 total
+- 2026-11-01 kb-daily (light run): zhc-pkg node_modules restored after the inode crash, matrix refreshed (master absent 520→528 of which 5 intended P3077 moves, complete 673→680), 3 new Z2M couples parked as leads (Vareo HYT001ZB, Moes SFL02-Z-1, AOYAN AY-223Z), see UPSTREAM_DAILY_2026-11-01.md
