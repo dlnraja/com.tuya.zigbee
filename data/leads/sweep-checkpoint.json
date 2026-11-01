@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-01T12:58:35.539Z",
+  "updated": "2026-11-01T13:46:11.186Z",
   "threads": {
     "21313": {
       "lastPost": 2819,
@@ -21036,7 +21036,7 @@
           "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/master/devices/tuya/_TZE200_bh3n6gk8_motion_sensor.json",
           "https://zigbee.blakadder.com/Tuya_ZG-204ZL.html"
         ],
-        "sources": 32
+        "sources": 33
       }
     },
     {
@@ -21109,7 +21109,7 @@
           "https://www.zigbee2mqtt.io/devices/ZG-204ZS-z.html",
           "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/master/devices/hobeian/hobeian_pir_presence_light_sensor.json"
         ],
-        "sources": 23
+        "sources": 24
       }
     },
     {
@@ -21459,7 +21459,7 @@
           "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/master/devices/sonoff/s60zbtpf_smart_plug.json",
           "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/hobeian/hobeian_pir_presence_light_sensor.json"
         ],
-        "sources": 10
+        "sources": 11
       }
     },
     {
@@ -25099,7 +25099,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -25155,7 +25155,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -25225,12 +25225,12 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 32
+        "sources": 33
       }
     },
     {
@@ -25282,12 +25282,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 32
+        "sources": 33
       }
     },
     {
@@ -25301,12 +25301,12 @@
       ],
       "why": "pid-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 31
+        "sources": 32
       }
     },
     {
@@ -25331,7 +25331,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -25348,7 +25348,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "lead",
         "confidence": 0.2,
         "couples": [],
@@ -25369,7 +25369,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -25416,8 +25416,8 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
-        "verdict": "lead",
+        "at": "2026-11-01",
+        "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
@@ -25433,7 +25433,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "lead",
         "confidence": 0.2,
         "couples": [],
@@ -25441,7 +25441,7 @@
           "https://www.zigbee2mqtt.io/devices/PS-S04D.html",
           "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/master/devices/xiaomi/xiaomi_fp300_presence_multi_sensor.json"
         ],
-        "sources": 34
+        "sources": 35
       }
     },
     {
@@ -25453,12 +25453,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 32
+        "sources": 33
       }
     },
     {
@@ -25510,12 +25510,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 2
+        "sources": 11
       }
     },
     {
@@ -25537,12 +25537,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 1
       }
     },
     {
@@ -25554,12 +25554,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
-        "verdict": "lead",
+        "at": "2026-11-01",
+        "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 31
+        "sources": 32
       }
     },
     {
@@ -25607,12 +25607,14 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
-        "verdict": "no-action",
-        "confidence": 0,
+        "at": "2026-11-01",
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
-        "sources": 0
+        "candidates": [
+          "https://www.zigbee2mqtt.io/devices/TLC2206.html"
+        ],
+        "sources": 11
       }
     },
     {
@@ -25624,12 +25626,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 31
       }
     },
     {
@@ -25641,12 +25643,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 32
       }
     },
     {
@@ -25658,12 +25660,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 31
       }
     },
     {
@@ -25703,12 +25705,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 31
       }
     },
     {
@@ -25721,12 +25723,12 @@
       "images": 1,
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 33
       }
     },
     {
@@ -25809,12 +25811,12 @@
       "images": 1,
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 33
       }
     },
     {
@@ -25826,12 +25828,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 32
       }
     },
     {
@@ -25856,12 +25858,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 23
       }
     },
     {
@@ -25896,12 +25898,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 21
       }
     },
     {
@@ -25926,12 +25928,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 33
       }
     },
     {
@@ -25943,12 +25945,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 31
       }
     },
     {
@@ -26016,12 +26018,12 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 4
       }
     },
     {
@@ -26103,12 +26105,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 32
       }
     },
     {
@@ -26161,12 +26163,12 @@
       "images": 1,
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 33
       }
     },
     {
@@ -26218,12 +26220,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 32
       }
     },
     {
@@ -26315,12 +26317,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 32
       }
     },
     {
@@ -26382,12 +26384,12 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 31
       }
     },
     {
@@ -26419,12 +26421,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 13
       }
     },
     {
@@ -26436,12 +26438,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 33
       }
     },
     {
@@ -26453,12 +26455,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 32
       }
     },
     {
@@ -26859,7 +26861,7 @@
       "triagedAt": "2026-10-21T08:27:53.854Z",
       "triagedVia": "needs-info-web-pass-2026-10-21b",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "lead",
         "confidence": 0.2,
         "couples": [],
@@ -26979,12 +26981,12 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-25",
-        "verdict": "no-action",
+        "at": "2026-11-01",
+        "verdict": "lead",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 31
       }
     },
     {
@@ -26999,12 +27001,14 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-25",
-        "verdict": "no-action",
-        "confidence": 0,
+        "at": "2026-11-01",
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
-        "sources": 0
+        "candidates": [
+          "https://www.zigbee2mqtt.io/devices/MG3-5RZ.html"
+        ],
+        "sources": 31
       }
     },
     {
@@ -27017,12 +27021,12 @@
       "images": 1,
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 2
       }
     },
     {
@@ -27166,12 +27170,12 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-25",
-        "verdict": "no-action",
+        "at": "2026-11-01",
+        "verdict": "lead",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 32
       }
     },
     {
@@ -27186,12 +27190,14 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-25",
-        "verdict": "no-action",
-        "confidence": 0,
+        "at": "2026-11-01",
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
-        "sources": 0
+        "candidates": [
+          "https://www.zigbee2mqtt.io/devices/MG3-5RZ.html"
+        ],
+        "sources": 31
       }
     },
     {
@@ -27206,12 +27212,12 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-25",
-        "verdict": "no-action",
+        "at": "2026-11-01",
+        "verdict": "lead",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 31
       }
     },
     {
@@ -27247,12 +27253,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
-        "verdict": "no-action",
+        "at": "2026-11-01",
+        "verdict": "lead",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 31
       }
     },
     {
@@ -27351,7 +27357,7 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "lead",
         "confidence": 0,
         "couples": [],
@@ -27540,12 +27546,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 31
       }
     },
     {
@@ -27584,12 +27590,14 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
-        "verdict": "no-action",
-        "confidence": 0,
+        "at": "2026-11-01",
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
-        "sources": 2
+        "candidates": [
+          "https://www.zigbee2mqtt.io/devices/MG3-5RZ.html"
+        ],
+        "sources": 33
       }
     },
     {
@@ -27675,12 +27683,14 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-25",
-        "verdict": "no-action",
-        "confidence": 0,
+        "at": "2026-11-01",
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
-        "sources": 0
+        "candidates": [
+          "https://www.zigbee2mqtt.io/devices/MG3-5RZ.html"
+        ],
+        "sources": 33
       }
     },
     {
@@ -27703,14 +27713,16 @@
       "images": 4,
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "lead",
         "confidence": 0.2,
         "couples": [],
         "candidates": [
-          "https://www.zigbee2mqtt.io/devices/MG3-5RZ.html"
+          "https://www.zigbee2mqtt.io/devices/MG3-5RZ.html",
+          "https://www.zigbee2mqtt.io/devices/CK-BL702-AL-01.html",
+          "https://www.zigbee2mqtt.io/devices/CK-BL702-AL-01(7008_Z102LG01-1).html"
         ],
-        "sources": 31
+        "sources": 35
       }
     },
     {
@@ -27722,14 +27734,14 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "lead",
         "confidence": 0.2,
         "couples": [],
         "candidates": [
           "https://www.zigbee2mqtt.io/devices/MG3-5RZ.html"
         ],
-        "sources": 31
+        "sources": 33
       }
     },
     {
@@ -27744,12 +27756,12 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-25",
-        "verdict": "no-action",
+        "at": "2026-11-01",
+        "verdict": "lead",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 29
       }
     },
     {
@@ -27810,12 +27822,12 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-25",
-        "verdict": "no-action",
+        "at": "2026-11-01",
+        "verdict": "lead",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 32
       }
     },
     {
@@ -27958,12 +27970,12 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-25",
-        "verdict": "no-action",
+        "at": "2026-11-01",
+        "verdict": "lead",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 31
       }
     },
     {
@@ -27975,12 +27987,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
-        "verdict": "no-action",
+        "at": "2026-11-01",
+        "verdict": "lead",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 22
       }
     },
     {
@@ -28031,12 +28043,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
-        "verdict": "no-action",
+        "at": "2026-11-01",
+        "verdict": "lead",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 21
       }
     },
     {
@@ -28064,12 +28076,12 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-25",
-        "verdict": "no-action",
+        "at": "2026-11-01",
+        "verdict": "lead",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 32
       }
     },
     {
@@ -28108,12 +28120,12 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-25",
-        "verdict": "no-action",
+        "at": "2026-11-01",
+        "verdict": "lead",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 31
       }
     },
     {
@@ -28128,12 +28140,14 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-25",
-        "verdict": "no-action",
-        "confidence": 0,
+        "at": "2026-11-01",
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
-        "sources": 0
+        "candidates": [
+          "https://www.zigbee2mqtt.io/devices/MG3-5RZ.html"
+        ],
+        "sources": 31
       }
     },
     {
@@ -28149,12 +28163,12 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 33
       }
     },
     {
@@ -28189,12 +28203,16 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
-        "verdict": "no-action",
-        "confidence": 0,
+        "at": "2026-11-01",
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
-        "sources": 0
+        "candidates": [
+          "https://www.zigbee2mqtt.io/devices/ZG-102ZM.html",
+          "https://www.zigbee2mqtt.io/devices/ZG-102Z.html",
+          "https://www.zigbee2mqtt.io/devices/ZG-102ZL.html"
+        ],
+        "sources": 32
       }
     },
     {
@@ -28206,12 +28224,14 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
-        "verdict": "no-action",
-        "confidence": 0,
+        "at": "2026-11-01",
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
-        "sources": 0
+        "candidates": [
+          "https://www.zigbee2mqtt.io/devices/ZG-227ZP.html"
+        ],
+        "sources": 3
       }
     },
     {
@@ -28233,12 +28253,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
-        "verdict": "no-action",
+        "at": "2026-11-01",
+        "verdict": "lead",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 31
       }
     },
     {
@@ -28253,12 +28273,12 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-25",
-        "verdict": "no-action",
+        "at": "2026-11-01",
+        "verdict": "lead",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 31
       }
     },
     {
@@ -28323,12 +28343,14 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-25",
-        "verdict": "no-action",
-        "confidence": 0,
+        "at": "2026-11-01",
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
-        "sources": 0
+        "candidates": [
+          "https://www.zigbee2mqtt.io/devices/MG3-5RZ.html"
+        ],
+        "sources": 31
       }
     },
     {
@@ -28352,12 +28374,14 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
-        "verdict": "no-action",
-        "confidence": 0,
+        "at": "2026-11-01",
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
-        "sources": 0
+        "candidates": [
+          "https://zigbee.blakadder.com/Yieryi_THE01840.html"
+        ],
+        "sources": 3
       }
     },
     {
@@ -28394,12 +28418,16 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
-        "verdict": "no-action",
-        "confidence": 0,
+        "at": "2026-11-01",
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
-        "sources": 0
+        "candidates": [
+          "https://www.zigbee2mqtt.io/devices/CK-TLSR8656-SS5-02(7014).html",
+          "https://www.zigbee2mqtt.io/devices/SNZB-02.html",
+          "https://www.zigbee2mqtt.io/devices/SNZB-04.html"
+        ],
+        "sources": 25
       }
     },
     {
@@ -28411,12 +28439,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 2
       }
     },
     {
@@ -28428,12 +28456,16 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
-        "verdict": "no-action",
-        "confidence": 0,
+        "at": "2026-11-01",
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
-        "sources": 0
+        "candidates": [
+          "https://www.zigbee2mqtt.io/devices/CK-TLSR8656-SS5-02(7014).html",
+          "https://www.zigbee2mqtt.io/devices/SNZB-02.html",
+          "https://www.zigbee2mqtt.io/devices/SNZB-04.html"
+        ],
+        "sources": 24
       }
     },
     {
@@ -28446,12 +28478,12 @@
       "images": 1,
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 34
       }
     },
     {
@@ -28477,12 +28509,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 2
       }
     },
     {
@@ -28667,12 +28699,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
-        "verdict": "no-action",
+        "at": "2026-11-01",
+        "verdict": "lead",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 11
       }
     },
     {
@@ -28684,12 +28716,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 32
       }
     },
     {
@@ -28715,12 +28747,12 @@
       "images": 1,
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 36
       }
     },
     {
@@ -28742,12 +28774,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 31
       }
     },
     {
@@ -28884,12 +28916,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 31
       }
     },
     {
@@ -28926,12 +28958,12 @@
       ],
       "why": "pid-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 7
       }
     },
     {
@@ -28957,12 +28989,12 @@
       "images": 1,
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 32
       }
     },
     {
@@ -28987,12 +29019,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 32
       }
     },
     {
@@ -29061,12 +29093,16 @@
       "images": 1,
       "why": "pid-only",
       "crossResearch": {
-        "at": "2026-10-25",
-        "verdict": "no-action",
-        "confidence": 0,
+        "at": "2026-11-01",
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
-        "sources": 0
+        "candidates": [
+          "https://github.com/zigpy/zha-device-handlers/blob/1f1405b0eb5e801a97732f380f2db6d244ff1df3/zhaquirks/sonoff/zbm5.py",
+          "https://github.com/zigpy/zha-device-handlers/blob/1f1405b0eb5e801a97732f380f2db6d244ff1df3/zhaquirks/sonoff/zbm5.py",
+          "https://github.com/zigpy/zha-device-handlers/blob/1f1405b0eb5e801a97732f380f2db6d244ff1df3/zhaquirks/sonoff/zbm5.py"
+        ],
+        "sources": 20
       }
     },
     {
@@ -29228,12 +29264,12 @@
       "images": 1,
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 21
       }
     },
     {
@@ -29286,12 +29322,12 @@
       "images": 2,
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 33
       }
     },
     {
@@ -29323,12 +29359,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 32
       }
     },
     {
@@ -29550,12 +29586,12 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 32
       }
     },
     {
@@ -29567,12 +29603,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 31
       }
     },
     {
@@ -29584,12 +29620,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 22
       }
     },
     {
@@ -29602,12 +29638,12 @@
       "images": 1,
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 23
       }
     },
     {
@@ -29629,12 +29665,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 7
       }
     },
     {
@@ -29646,12 +29682,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 16
       }
     },
     {
@@ -29663,12 +29699,15 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
-        "verdict": "no-action",
-        "confidence": 0,
+        "at": "2026-11-01",
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
-        "sources": 0
+        "candidates": [
+          "https://www.zigbee2mqtt.io/devices/JY-GZ-01AQ.html",
+          "https://zigbee.blakadder.com/Aqara_JY-GZ-01AQ.html"
+        ],
+        "sources": 31
       }
     },
     {
@@ -29690,12 +29729,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 31
       }
     },
     {
@@ -29707,12 +29746,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 18
       }
     },
     {
@@ -30196,12 +30235,16 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-25",
-        "verdict": "no-action",
-        "confidence": 0,
+        "at": "2026-11-01",
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
-        "sources": 0
+        "candidates": [
+          "https://www.zigbee2mqtt.io/devices/ZG-204ZV-z.html",
+          "https://www.zigbee2mqtt.io/devices/ZG-204ZV2-TH-z.html",
+          "https://www.zigbee2mqtt.io/devices/ZG-204ZV.html"
+        ],
+        "sources": 35
       }
     },
     {
@@ -30329,7 +30372,7 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -30360,7 +30403,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -30404,7 +30447,7 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -30422,7 +30465,7 @@
       "images": 2,
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -30439,7 +30482,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -30456,7 +30499,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -30473,7 +30516,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -30542,7 +30585,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -30569,7 +30612,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -30589,7 +30632,7 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -30658,7 +30701,7 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -30678,7 +30721,7 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -30697,7 +30740,7 @@
       ],
       "why": "pid-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -30718,7 +30761,7 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -30735,7 +30778,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -30763,7 +30806,7 @@
       "images": 1,
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -30832,7 +30875,7 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -30866,7 +30909,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -30886,7 +30929,7 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -30931,7 +30974,7 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -30952,7 +30995,7 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -30999,7 +31042,7 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -31016,7 +31059,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -31094,7 +31137,7 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -31156,7 +31199,7 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -31201,7 +31244,7 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -31244,7 +31287,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -31265,7 +31308,7 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -31330,7 +31373,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -31347,7 +31390,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -31364,7 +31407,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -31381,7 +31424,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -31422,7 +31465,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -31440,7 +31483,7 @@
       "images": 3,
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -31468,7 +31511,7 @@
       "images": 1,
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -31511,7 +31554,7 @@
       ],
       "why": "pid-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -31528,7 +31571,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -31568,7 +31611,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -31625,7 +31668,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -31692,7 +31735,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -31709,7 +31752,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -31747,7 +31790,7 @@
       "images": 3,
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -31814,7 +31857,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -31892,7 +31935,7 @@
       "images": 2,
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -31919,7 +31962,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -32027,7 +32070,7 @@
       "closedAt": "2026-09-30T22:15:10Z",
       "comments": 2,
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -32448,7 +32491,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -32466,7 +32509,7 @@
       "images": 1,
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -32483,7 +32526,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -32500,7 +32543,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -32518,7 +32561,7 @@
       "images": 8,
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -32535,7 +32578,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -32552,7 +32595,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -32583,7 +32626,7 @@
       "images": 1,
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -32620,7 +32663,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -32660,7 +32703,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -32677,7 +32720,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -32717,7 +32760,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -32734,7 +32777,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -32776,7 +32819,7 @@
       "images": 1,
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -32814,7 +32857,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -32854,7 +32897,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -32910,7 +32953,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -32929,7 +32972,7 @@
       ],
       "why": "pid-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -32946,7 +32989,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -32973,7 +33016,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -32990,7 +33033,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -33007,7 +33050,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -33024,7 +33067,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -33052,7 +33095,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -33083,7 +33126,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -33113,7 +33156,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -33166,7 +33209,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -33193,7 +33236,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -33223,7 +33266,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -33253,7 +33296,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -33283,7 +33326,7 @@
       "images": 1,
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -33300,7 +33343,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -33357,7 +33400,7 @@
       "images": 1,
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -33396,7 +33439,7 @@
       "images": 3,
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -33413,7 +33456,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -33440,7 +33483,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -33472,7 +33515,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -33536,7 +33579,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -33553,7 +33596,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -33583,7 +33626,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -33613,7 +33656,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -33670,7 +33713,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -33687,7 +33730,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -33772,7 +33815,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -33799,7 +33842,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -33897,7 +33940,7 @@
       "images": 1,
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -33934,7 +33977,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -33951,7 +33994,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -33968,7 +34011,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -33995,7 +34038,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -34092,7 +34135,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -34129,7 +34172,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -34206,7 +34249,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -34233,7 +34276,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -34290,7 +34333,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -34307,7 +34350,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -34467,12 +34510,12 @@
       "closedAt": "2024-09-12T06:02:08Z",
       "comments": 1,
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 2
       }
     },
     {
@@ -34809,7 +34852,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -34877,7 +34920,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -34917,7 +34960,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -34934,7 +34977,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -34964,7 +35007,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -35015,7 +35058,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -35143,7 +35186,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -35160,7 +35203,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -35190,7 +35233,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -35260,7 +35303,7 @@
       "images": 3,
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -35300,7 +35343,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -35319,7 +35362,7 @@
       ],
       "why": "pid-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -35354,7 +35397,7 @@
       "images": 1,
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -35383,7 +35426,7 @@
       "images": 4,
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -35424,7 +35467,7 @@
       "images": 2,
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -35533,7 +35576,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -35550,7 +35593,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -35567,7 +35610,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -35614,7 +35657,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -35651,7 +35694,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -35668,7 +35711,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -35756,7 +35799,7 @@
       "images": 1,
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -35793,7 +35836,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -35861,7 +35904,7 @@
       "images": 1,
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -35939,7 +35982,7 @@
       "images": 1,
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -36144,12 +36187,12 @@
       "closedAt": "2024-09-02T21:07:19Z",
       "comments": 3,
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 4
       }
     },
     {
@@ -36174,12 +36217,12 @@
       "closedAt": "2024-02-04T15:04:33Z",
       "comments": 7,
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 8
       }
     },
     {
@@ -36479,12 +36522,16 @@
       "images": 1,
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
-        "verdict": "no-action",
-        "confidence": 0,
+        "at": "2026-11-01",
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
-        "sources": 0
+        "candidates": [
+          "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/sonoff/snzb-01m_remote.json",
+          "https://www.zigbee2mqtt.io/devices/SNZB-01M.html",
+          "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/master/devices/sonoff/snzb-01m_remote.json"
+        ],
+        "sources": 33
       }
     },
     {
@@ -36510,7 +36557,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -36540,12 +36587,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 1
       }
     },
     {
@@ -36557,7 +36604,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -36575,7 +36622,7 @@
       "images": 1,
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -36592,7 +36639,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -36609,7 +36656,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -36648,7 +36695,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -36666,7 +36713,7 @@
       "images": 6,
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -36683,7 +36730,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -36710,7 +36757,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -36728,7 +36775,7 @@
       "images": 4,
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -36745,7 +36792,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -36774,7 +36821,7 @@
       ],
       "why": "pid-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -36791,7 +36838,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -36808,12 +36855,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 31
       }
     },
     {
@@ -36825,12 +36872,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 1
       }
     },
     {
@@ -36843,7 +36890,7 @@
       "images": 4,
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -36861,12 +36908,12 @@
       "images": 2,
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 34
       }
     },
     {
@@ -36889,12 +36936,12 @@
       "images": 1,
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 2
       }
     },
     {
@@ -36907,12 +36954,12 @@
       "images": 1,
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 33
       }
     },
     {
@@ -36924,12 +36971,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 0
+        "sources": 1
       }
     },
     {
@@ -36941,7 +36988,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -36969,7 +37016,7 @@
       "images": 4,
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -36986,7 +37033,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -37017,7 +37064,7 @@
       "images": 3,
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -37137,7 +37184,7 @@
       "images": 2,
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -37241,7 +37288,7 @@
       "images": 1,
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -37271,7 +37318,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -37328,7 +37375,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -37356,7 +37403,7 @@
       "images": 1,
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -37563,7 +37610,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -37700,7 +37747,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -37837,7 +37884,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -38154,7 +38201,7 @@
         "TS0601"
       ],
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -38209,7 +38256,7 @@
       "closedAt": "2025-12-26T14:25:07Z",
       "comments": 2,
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -38231,7 +38278,7 @@
         "TS0202"
       ],
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -38313,7 +38360,7 @@
         "TS0601"
       ],
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -38426,7 +38473,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -38444,7 +38491,7 @@
       "images": 1,
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -38471,7 +38518,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -38489,7 +38536,7 @@
       "images": 2,
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -38506,7 +38553,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -38523,7 +38570,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -38541,7 +38588,7 @@
       "images": 1,
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -38558,7 +38605,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -38585,7 +38632,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -38602,7 +38649,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -38631,7 +38678,7 @@
       ],
       "why": "pid-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -38669,7 +38716,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -38699,7 +38746,7 @@
       "images": 2,
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -38775,7 +38822,7 @@
       "images": 1,
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -38792,7 +38839,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -38857,7 +38904,7 @@
       "images": 2,
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -38874,7 +38921,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -38891,7 +38938,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -38931,7 +38978,7 @@
       ],
       "why": "couple-missing",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "lead",
         "confidence": 0,
         "couples": [],
@@ -38959,7 +39006,7 @@
       "images": 1,
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -38987,7 +39034,7 @@
       "images": 3,
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -39005,7 +39052,7 @@
       "images": 3,
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -39036,7 +39083,7 @@
       "images": 1,
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -39080,7 +39127,7 @@
       "images": 5,
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -39120,7 +39167,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -39138,7 +39185,7 @@
       "images": 6,
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -39155,7 +39202,7 @@
       "pids": [],
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -39196,7 +39243,7 @@
       "images": 1,
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -39214,7 +39261,7 @@
       "images": 1,
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -39232,7 +39279,7 @@
       "images": 2,
       "why": "diag-only",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -39322,7 +39369,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-10-25",
+        "at": "2026-11-01",
         "verdict": "no-action",
         "confidence": 0,
         "couples": [],
@@ -39338,7 +39385,15 @@
       "mfrs": [],
       "pids": [],
       "images": 3,
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2091",
@@ -39360,7 +39415,15 @@
       "link": "https://community.homey.app/t/140352/2092",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2093",
@@ -39369,7 +39432,15 @@
       "link": "https://community.homey.app/t/140352/2093",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2095",
@@ -39378,7 +39449,15 @@
       "link": "https://community.homey.app/t/140352/2095",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2097",
@@ -39400,7 +39479,15 @@
       "link": "https://community.homey.app/t/140352/2098",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:21313#2475",
@@ -39470,7 +39557,15 @@
       "mfrs": [],
       "pids": [],
       "images": 1,
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:21313#2505",
@@ -39510,7 +39605,15 @@
       "mfrs": [],
       "pids": [],
       "images": 1,
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:21313#2516",
@@ -39530,7 +39633,15 @@
       "mfrs": [],
       "pids": [],
       "images": 1,
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:21313#2528",
@@ -39659,7 +39770,15 @@
       "link": "https://community.homey.app/t/21313/2570",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:21313#2575",
@@ -39678,7 +39797,15 @@
       "link": "https://community.homey.app/t/21313/2583",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:21313#2591",
@@ -39807,7 +39934,15 @@
       "link": "https://community.homey.app/t/21313/2628",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "johan-issue:721",
@@ -40106,7 +40241,15 @@
       "comments": 3,
       "pids": [
         "TS0201"
-      ]
+      ],
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "dlnraja-issue:110",
@@ -40195,7 +40338,15 @@
       ],
       "missing": [
         "_TZ3000_fllyghyj|TS0041"
-      ]
+      ],
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "dlnraja-issue:115",
@@ -40306,7 +40457,15 @@
       "link": "https://community.homey.app/t/140352/2100",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2101",
@@ -40315,7 +40474,15 @@
       "link": "https://community.homey.app/t/140352/2101",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2102",
@@ -40324,7 +40491,15 @@
       "link": "https://community.homey.app/t/140352/2102",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2103",
@@ -40333,7 +40508,15 @@
       "link": "https://community.homey.app/t/140352/2103",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2104",
@@ -40342,7 +40525,15 @@
       "link": "https://community.homey.app/t/140352/2104",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2105",
@@ -40351,7 +40542,15 @@
       "link": "https://community.homey.app/t/140352/2105",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2106",
@@ -40373,7 +40572,15 @@
       "link": "https://community.homey.app/t/140352/2107",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2108",
@@ -40383,7 +40590,15 @@
       "mfrs": [],
       "pids": [],
       "images": 2,
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2109",
@@ -40402,7 +40617,15 @@
       "link": "https://community.homey.app/t/140352/2110",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2111",
@@ -40412,7 +40635,15 @@
       "mfrs": [],
       "pids": [],
       "images": 3,
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2112",
@@ -40435,7 +40666,15 @@
       "mfrs": [],
       "pids": [],
       "images": 1,
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2114",
@@ -40445,7 +40684,15 @@
       "mfrs": [],
       "pids": [],
       "images": 3,
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2115",
@@ -40468,7 +40715,15 @@
       "mfrs": [],
       "pids": [],
       "images": 1,
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2120",
@@ -40492,7 +40747,15 @@
       "mfrs": [],
       "pids": [],
       "images": 10,
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2122",
@@ -40514,7 +40777,15 @@
       "mfrs": [],
       "pids": [],
       "images": 1,
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2130",
@@ -40577,7 +40848,15 @@
       "mfrs": [],
       "pids": [],
       "images": 8,
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2137",
@@ -40587,7 +40866,15 @@
       "mfrs": [],
       "pids": [],
       "images": 2,
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2138",
@@ -40620,7 +40907,15 @@
       "mfrs": [],
       "pids": [],
       "images": 3,
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2165",
@@ -40644,7 +40939,15 @@
       "mfrs": [],
       "pids": [],
       "images": 1,
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2172",
@@ -40690,7 +40993,15 @@
       "link": "https://community.homey.app/t/140352/2175",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2183",
@@ -40700,7 +41011,15 @@
       "mfrs": [],
       "pids": [],
       "images": 2,
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2184",
@@ -40710,7 +41029,15 @@
       "mfrs": [],
       "pids": [],
       "images": 1,
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2186",
@@ -40756,7 +41083,15 @@
       "mfrs": [],
       "pids": [],
       "images": 4,
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2191",
@@ -40778,7 +41113,15 @@
       "link": "https://community.homey.app/t/140352/2193",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2199",
@@ -40799,7 +41142,15 @@
       "mfrs": [],
       "pids": [],
       "images": 3,
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2203",
@@ -40809,7 +41160,15 @@
       "mfrs": [],
       "pids": [],
       "images": 1,
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2204",
@@ -40842,7 +41201,15 @@
       "link": "https://community.homey.app/t/140352/2207",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2208",
@@ -40862,7 +41229,15 @@
       "link": "https://community.homey.app/t/140352/2209",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2213",
@@ -40884,7 +41259,15 @@
       "link": "https://community.homey.app/t/140352/2218",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2220",
@@ -40894,7 +41277,15 @@
       "mfrs": [],
       "pids": [],
       "images": 2,
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2221",
@@ -40903,7 +41294,15 @@
       "link": "https://community.homey.app/t/140352/2221",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2222",
@@ -40937,7 +41336,15 @@
       "mfrs": [],
       "pids": [],
       "images": 1,
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2228",
@@ -40974,7 +41381,15 @@
       "mfrs": [],
       "pids": [],
       "images": 3,
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2233",
@@ -40984,7 +41399,15 @@
       "mfrs": [],
       "pids": [],
       "images": 2,
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2234",
@@ -40994,7 +41417,15 @@
       "mfrs": [],
       "pids": [],
       "images": 1,
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2235",
@@ -41004,7 +41435,15 @@
       "mfrs": [],
       "pids": [],
       "images": 2,
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2237",
@@ -41014,7 +41453,15 @@
       "mfrs": [],
       "pids": [],
       "images": 3,
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2238",
@@ -41024,7 +41471,15 @@
       "mfrs": [],
       "pids": [],
       "images": 2,
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2239",
@@ -41034,7 +41489,15 @@
       "mfrs": [],
       "pids": [],
       "images": 1,
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2240",
@@ -41044,7 +41507,15 @@
       "mfrs": [],
       "pids": [],
       "images": 1,
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2244",
@@ -41068,7 +41539,15 @@
       "mfrs": [],
       "pids": [],
       "images": 1,
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2247",
@@ -41078,7 +41557,15 @@
       "mfrs": [],
       "pids": [],
       "images": 3,
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2252",
@@ -41110,7 +41597,15 @@
       "link": "https://community.homey.app/t/140352/2254",
       "mfrs": [],
       "pids": [],
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2258",
@@ -41119,7 +41614,15 @@
       "link": "https://community.homey.app/t/140352/2258",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2259",
@@ -41129,7 +41632,15 @@
       "mfrs": [],
       "pids": [],
       "images": 1,
-      "why": "diag-only"
+      "why": "diag-only",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2260",
@@ -41162,7 +41673,15 @@
       "mfrs": [],
       "pids": [],
       "images": 2,
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:140352#2263",
@@ -41224,7 +41743,15 @@
       "link": "https://community.homey.app/t/21313/2655",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:21313#2661",
@@ -41244,7 +41771,15 @@
       "mfrs": [],
       "pids": [],
       "images": 4,
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:21313#2668",
@@ -41303,7 +41838,15 @@
       "link": "https://community.homey.app/t/21313/2694",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:21313#2697",
@@ -41342,7 +41885,15 @@
       "link": "https://community.homey.app/t/21313/2715",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:21313#2717",
@@ -41361,7 +41912,15 @@
       "link": "https://community.homey.app/t/21313/2718",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:21313#2728",
@@ -41370,7 +41929,15 @@
       "link": "https://community.homey.app/t/21313/2728",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:21313#2729",
@@ -41379,7 +41946,15 @@
       "link": "https://community.homey.app/t/21313/2729",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:21313#2730",
@@ -41428,7 +42003,15 @@
       "link": "https://community.homey.app/t/21313/2751",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:21313#2760",
@@ -41437,7 +42020,15 @@
       "link": "https://community.homey.app/t/21313/2760",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:21313#2769",
@@ -41446,7 +42037,15 @@
       "link": "https://community.homey.app/t/21313/2769",
       "mfrs": [],
       "pids": [],
-      "why": "request-no-identity"
+      "why": "request-no-identity",
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "forum:21313#2764",
@@ -41590,7 +42189,15 @@
       ],
       "author": "PatrikMihalik",
       "closedAt": "2024-02-11T17:31:05Z",
-      "comments": 1
+      "comments": 1,
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "johan-issue:739",
@@ -41877,7 +42484,15 @@
       ],
       "missing": [
         "_TZ3000_fllyghyj|TS0041"
-      ]
+      ],
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "dlnraja-issue:125",
@@ -42041,7 +42656,15 @@
       ],
       "missing": [
         "_TZ3000_xxxxxxxx|TS0042/TS0041/TS0601/TS0726"
-      ]
+      ],
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "lead",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 10
+      }
     },
     {
       "id": "dlnraja-issue:133",
@@ -42418,7 +43041,15 @@
       ],
       "missing": [
         "_TZE20X_xxxxxxxx|?"
-      ]
+      ],
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "dlnraja-issue:139",
@@ -42435,7 +43066,15 @@
       ],
       "missing": [
         "_TZE20X_xxxxxxxx|?"
-      ]
+      ],
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "dlnraja-issue:140",
@@ -42456,7 +43095,15 @@
       ],
       "missing": [
         "_TZE20X_xxxxxxxx|?"
-      ]
+      ],
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "no-action",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 0
+      }
     },
     {
       "id": "dlnraja-issue:141",
@@ -42550,7 +43197,15 @@
       ],
       "author": "dlnraja",
       "closedAt": "2026-03-02T02:24:21Z",
-      "comments": 1
+      "comments": 1,
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "lead",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 10
+      }
     },
     {
       "id": "dlnraja-issue:147",
@@ -42579,7 +43234,15 @@
       ],
       "author": "dlnraja",
       "closedAt": "2026-03-02T20:06:00Z",
-      "comments": 2
+      "comments": 2,
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "lead",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 10
+      }
     },
     {
       "id": "dlnraja-issue:149",
@@ -42593,7 +43256,15 @@
       "comments": 1,
       "pids": [
         "TS0601"
-      ]
+      ],
+      "crossResearch": {
+        "at": "2026-11-01",
+        "verdict": "lead",
+        "confidence": 0,
+        "couples": [],
+        "candidates": [],
+        "sources": 10
+      }
     },
     {
       "id": "dlnraja-issue:150",
