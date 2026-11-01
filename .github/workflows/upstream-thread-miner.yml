@@ -1,11 +1,7 @@
 # >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
-# What it does: Adaptive (6h..7d) miner of upstream issues, PRs and discussions, open and closed (zigpy org,
-#   Z2M, deCONZ, Hubitat, Tasmota, ESPHome, tuya-local, ioBroker, Johan). Per-repo since-cursors + ETag,
-#   read-only token. Each Tuya-relevant thread becomes a deterministic, privacy-redacted digest (problem,
-#   cause, resolution, status, couples/DPs/clusters, adopt/avoid, regressions) in docs/knowledge/upstream,
-#   linked per couple in data/ssot/thread-digests.json; actionable implications become candidate tasks in
-#   data/leads/digest-candidates.json, never auto-applied. Fail-closed digest-guard + house-data-guard before
-#   commit.
+# What it does: Adaptive miner of upstream issues/PRs (zigpy, Z2M, deCONZ, others): per-repo cursors,
+#   privacy-redacted digests in docs/knowledge/upstream, couple links and candidate tasks. No AI, fail-closed
+#   guard.
 # Ideas from (thank you): Koen Kanters and the zigbee-herdsman-converters / Zigbee2MQTT contributors; the
 #   zigpy / ZHA device handler authors; Blakadder's Zigbee device database; JohanBendz's original Tuya Zigbee
 #   app (read-only reference).
@@ -42,6 +38,7 @@ env:
   AI_FORCE_LOCAL: 'true'
   AI_ALLOW_REMOTE: 'false'
   AI_ALLOW_PAID: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
 
 jobs:
   mine:
