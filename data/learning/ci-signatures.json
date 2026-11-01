@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updatedAt": "2026-10-31T10:54:08.517Z",
+ "updatedAt": "2026-11-01T11:48:41.926Z",
  "cap": 300,
  "seenKeys": [
   "ci-fail:40227923450:1",
@@ -138,7 +138,35 @@
   "ci-fail:40917805989:1",
   "ci-fail:40889628289:1",
   "ci-fail:41093380152:1",
-  "ci-fail:41068836601:1"
+  "ci-fail:41068836601:1",
+  "ci-fail:41295715547:1",
+  "ci-fail:41289222680:1",
+  "ci-fail:41289222555:1",
+  "ci-fail:41289024676:1",
+  "ci-fail:41289022631:1",
+  "ci-fail:41288148118:1",
+  "ci-fail:41288148093:1",
+  "ci-fail:41277440894:1",
+  "ci-fail:41274639308:1",
+  "ci-fail:41274639401:1",
+  "ci-fail:41253391433:1",
+  "ci-fail:41253391521:1",
+  "ci-fail:41252277007:1",
+  "ci-fail:41251584051:1",
+  "ci-fail:41251584061:1",
+  "ci-fail:41247785037:1",
+  "ci-fail:41247785086:1",
+  "ci-fail:41245929433:1",
+  "ci-fail:41245929476:1",
+  "ci-fail:41236619776:1",
+  "ci-fail:41236619823:1",
+  "ci-fail:41236619880:1",
+  "ci-fail:41236618888:1",
+  "ci-fail:41235254340:1",
+  "ci-fail:41231741272:1",
+  "ci-fail:41230993355:1",
+  "ci-fail:41230987781:1",
+  "ci-fail:41227184890:1"
  ],
  "signatures": {
   "c567adb8a6e1": {
@@ -526,34 +554,18 @@
    "unit": "test / Full suite on Node 22",
    "test": "",
    "firstSeen": "2026-10-25T19:52:02.854Z",
-   "lastSeen": "2026-10-27T10:31:06.327Z",
-   "fails": 24,
+   "lastSeen": "2026-11-01T11:48:41.889Z",
+   "fails": 28,
    "transient": 0,
    "recovered": 0,
    "branches": [
-    "wip/rescue/branch-bisect-g1-flowcards",
     "wip/rescue/branch-bisect-g2-dp17",
     "wip/rescue/branch-bisect-g3-couples",
-    "master"
+    "master",
+    "bastien-home"
    ],
    "sample": "Full suite on Node <n>",
    "events": [
-    [
-     "2026-10-25T19:52:07.955Z",
-     "f"
-    ],
-    [
-     "2026-10-25T19:52:08.570Z",
-     "f"
-    ],
-    [
-     "2026-10-25T19:52:09.160Z",
-     "f"
-    ],
-    [
-     "2026-10-25T19:52:09.746Z",
-     "f"
-    ],
     [
      "2026-10-25T19:52:10.911Z",
      "f"
@@ -616,6 +628,22 @@
     ],
     [
      "2026-10-27T10:31:06.327Z",
+     "f"
+    ],
+    [
+     "2026-11-01T11:48:34.309Z",
+     "f"
+    ],
+    [
+     "2026-11-01T11:48:35.611Z",
+     "f"
+    ],
+    [
+     "2026-11-01T11:48:38.696Z",
+     "f"
+    ],
+    [
+     "2026-11-01T11:48:41.889Z",
      "f"
     ]
    ]
@@ -839,8 +867,8 @@
    "unit": "test / Full suite on Node 22",
    "test": "",
    "firstSeen": "2026-10-27T10:30:13.354Z",
-   "lastSeen": "2026-10-27T10:30:34.560Z",
-   "fails": 4,
+   "lastSeen": "2026-11-01T11:48:32.965Z",
+   "fails": 8,
    "transient": 0,
    "recovered": 0,
    "branches": [
@@ -863,6 +891,22 @@
     [
      "2026-10-27T10:30:34.560Z",
      "f"
+    ],
+    [
+     "2026-11-01T11:48:23.170Z",
+     "f"
+    ],
+    [
+     "2026-11-01T11:48:26.009Z",
+     "f"
+    ],
+    [
+     "2026-11-01T11:48:30.131Z",
+     "f"
+    ],
+    [
+     "2026-11-01T11:48:32.965Z",
+     "f"
     ]
    ]
   },
@@ -872,8 +916,8 @@
    "unit": "",
    "test": "",
    "firstSeen": "2026-10-27T10:30:16.422Z",
-   "lastSeen": "2026-10-27T10:30:32.909Z",
-   "fails": 4,
+   "lastSeen": "2026-11-01T11:48:21.669Z",
+   "fails": 6,
    "transient": 0,
    "recovered": 0,
    "branches": [
@@ -895,6 +939,14 @@
     ],
     [
      "2026-10-27T10:30:32.909Z",
+     "f"
+    ],
+    [
+     "2026-11-01T11:48:16.580Z",
+     "f"
+    ],
+    [
+     "2026-11-01T11:48:21.669Z",
      "f"
     ]
    ]
@@ -1320,6 +1372,318 @@
     ],
     [
      "2026-10-31T10:54:08.481Z",
+     "f"
+    ]
+   ]
+  },
+  "860f87d5b650": {
+   "category": "other",
+   "workflow": "Upstream watch (P3097)",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-11-01T11:48:14.205Z",
+   "lastSeen": "2026-11-01T11:48:14.205Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "Process completed with exit code <n>.",
+   "events": [
+    [
+     "2026-11-01T11:48:14.205Z",
+     "f"
+    ]
+   ]
+  },
+  "2aac89176943": {
+   "category": "other",
+   "workflow": "code-quality",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-11-01T11:48:15.432Z",
+   "lastSeen": "2026-11-01T11:48:20.533Z",
+   "fails": 2,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "Process completed with exit code <n>.",
+   "events": [
+    [
+     "2026-11-01T11:48:15.432Z",
+     "f"
+    ],
+    [
+     "2026-11-01T11:48:20.533Z",
+     "f"
+    ]
+   ]
+  },
+  "6ae564434f47": {
+   "category": "other",
+   "workflow": "Upstream watch (P3097)",
+   "unit": "watch / Check upstream sources",
+   "test": "",
+   "firstSeen": "2026-11-01T11:48:17.762Z",
+   "lastSeen": "2026-11-01T11:48:17.762Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "Process completed with exit code <n>.",
+   "events": [
+    [
+     "2026-11-01T11:48:17.762Z",
+     "f"
+    ]
+   ]
+  },
+  "92b8da42e501": {
+   "category": "other",
+   "workflow": "Autonomy watchdog (P3097)",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-11-01T11:48:19.232Z",
+   "lastSeen": "2026-11-01T11:48:19.232Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "Process completed with exit code <n>.",
+   "events": [
+    [
+     "2026-11-01T11:48:19.232Z",
+     "f"
+    ]
+   ]
+  },
+  "6d2c80d14bb1": {
+   "category": "gate",
+   "workflow": "CI self-check (actionlint + YAML + hygiene + manifest/data/lint gates)",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-11-01T11:48:24.401Z",
+   "lastSeen": "2026-11-01T11:48:24.401Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "\u001b[<n>;<n>mif [ \"$JOB_STATUS\" = \"success\" ]; then s=\"Every CI file gate passed on this commit. Nothing to fix.\"; else s=\"At least one CI file gate failed; the fa",
+   "events": [
+    [
+     "2026-11-01T11:48:24.401Z",
+     "f"
+    ]
+   ]
+  },
+  "7eb76cc4ded8": {
+   "category": "gate",
+   "workflow": "CI self-check (actionlint + YAML + hygiene + manifest/data/lint gates)",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-11-01T11:48:27.251Z",
+   "lastSeen": "2026-11-01T11:48:31.347Z",
+   "fails": 2,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "stable-v5",
+    "master"
+   ],
+   "sample": "\u001b[<n>;<n>mif [ \"$JOB_STATUS\" = \"success\" ]; then s=\"Every CI file gate passed on this commit. Nothing to fix.\"; else s=\"At least one CI file gate failed; the fa",
+   "events": [
+    [
+     "2026-11-01T11:48:27.251Z",
+     "f"
+    ],
+    [
+     "2026-11-01T11:48:31.347Z",
+     "f"
+    ]
+   ]
+  },
+  "45f7614c69b1": {
+   "category": "test",
+   "workflow": "Node 22 runtime tests",
+   "unit": "test / Full suite on Node 22",
+   "test": "",
+   "firstSeen": "2026-11-01T11:48:28.651Z",
+   "lastSeen": "2026-11-01T11:48:28.651Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "stable-v5"
+   ],
+   "sample": "'<n> subtest failed'",
+   "events": [
+    [
+     "2026-11-01T11:48:28.651Z",
+     "f"
+    ]
+   ]
+  },
+  "64478740eb3e": {
+   "category": "timeout-flaky",
+   "workflow": "CI self-check (actionlint + YAML + hygiene + manifest/data/lint gates)",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-11-01T11:48:33.584Z",
+   "lastSeen": "2026-11-01T11:48:34.942Z",
+   "fails": 2,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "Hygiene ratchet (pins, Node <n> actions, node-version, timeouts, raw pushes)",
+   "events": [
+    [
+     "2026-11-01T11:48:33.584Z",
+     "f"
+    ],
+    [
+     "2026-11-01T11:48:34.942Z",
+     "f"
+    ]
+   ]
+  },
+  "edd7f9128ffe": {
+   "category": "other",
+   "workflow": "🔍 Syntax Check & SDK3 Validation",
+   "unit": "syntax-check / Check GitHub Actions policy",
+   "test": "",
+   "firstSeen": "2026-11-01T11:48:36.259Z",
+   "lastSeen": "2026-11-01T11:48:36.259Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "Check GitHub Actions policy",
+   "events": [
+    [
+     "2026-11-01T11:48:36.259Z",
+     "f"
+    ]
+   ]
+  },
+  "7646881c10df": {
+   "category": "gate",
+   "workflow": "🛡️ Unified CI/CD Orchestrator",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-11-01T11:48:36.991Z",
+   "lastSeen": "2026-11-01T11:48:36.991Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "🛡️ GitHub Actions & YAML Policy Gate",
+   "events": [
+    [
+     "2026-11-01T11:48:36.991Z",
+     "f"
+    ]
+   ]
+  },
+  "b16637e97995": {
+   "category": "lint",
+   "workflow": "CI self-check (actionlint + YAML + hygiene + manifest/data/lint gates)",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-11-01T11:48:37.618Z",
+   "lastSeen": "2026-11-01T11:48:37.618Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "actionlint (<n> findings on master<p> at P<n> — any finding is a regression)",
+   "events": [
+    [
+     "2026-11-01T11:48:37.618Z",
+     "f"
+    ]
+   ]
+  },
+  "d6e3559ee128": {
+   "category": "other",
+   "workflow": ".github/workflows/node22-tests.yml",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-11-01T11:48:38.071Z",
+   "lastSeen": "2026-11-01T11:48:38.071Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "",
+   "events": [
+    [
+     "2026-11-01T11:48:38.071Z",
+     "f"
+    ]
+   ]
+  },
+  "c70eace061d7": {
+   "category": "athom-api",
+   "workflow": "🚀 Publish Stable to Test",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-11-01T11:48:39.938Z",
+   "lastSeen": "2026-11-01T11:48:39.938Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "stable-v5"
+   ],
+   "sample": "Athom final state gate (red unless Test)",
+   "events": [
+    [
+     "2026-11-01T11:48:39.938Z",
+     "f"
+    ]
+   ]
+  },
+  "d4d191a21402": {
+   "category": "other",
+   "workflow": "🚦 PR Gate",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-11-01T11:48:40.545Z",
+   "lastSeen": "2026-11-01T11:48:41.198Z",
+   "fails": 2,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "bot/homey-knowledge-20261029",
+    "kb/refresh-20261026"
+   ],
+   "sample": "🔍 JS syntax audit (all repo files)",
+   "events": [
+    [
+     "2026-11-01T11:48:40.545Z",
+     "f"
+    ],
+    [
+     "2026-11-01T11:48:41.198Z",
      "f"
     ]
    ]
