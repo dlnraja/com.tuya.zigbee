@@ -1461,3 +1461,8 @@ Merged without changing W1–W11 / P1–P7; where they overlap, they make an exi
 - Never force-push or rewrite published history; never break the three app IDs.
 - Read `data/progress/ledger.json` before working and record after (W3).
 <!-- CONSTITUTION:END -->
+
+
+## Bastien fixes: simultaneous push (t699u)
+
+Any fix concerning Bastien ships to `bastien-home` together with `master` (full checks on both, no soak wait). SSOT: docs/rules/BASTIEN_HOUSE_APP.md.
