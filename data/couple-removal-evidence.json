@@ -138,6 +138,114 @@
         "git_history": "51a86ac373 v9.0.217: 431 drivers, 2737 FPs [skip ci] | cc0f3f79e2 feat: P11 carte blanche - door_sensor + workflow consolidation | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
         "sibling_pids": "_TZ3000_gbm10jnj|TS0043"
       }
+    },
+    {
+      "couple": "_TZE200_iwn0gpzz|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3190",
+      "verdict": "wrong driver: Tuya SPM01V2.5 1P+N energy meter (Z2M/ZHC SPM01V2.5, deCONZ SPM01, tuya-local zemismart spm); bulk-added by P44; moved to power_meter",
+      "sources": {
+        "z2m": "z2m:SPM01V2.5; zhc:SPM01V2.5",
+        "zha": "not listed for TS0601",
+        "deconz": "deconz:1 Phase Energy meter SPM01",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "kkossev Tuya Zigbee Metering Plug CHANGELOG mentions iwn0gpzz (checked by hand)",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "51a86ac373 v9.0.217: 431 drivers, 2737 FPs [skip ci] | a98486fc78 fix(P44): R9 — 5 typo fixes + 1450 mfrs + 17 pids to driver.compose.json | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZE200_iwn0gpzz|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE204_iwn0gpzz|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3190",
+      "verdict": "wrong driver: Tuya SPM01V2.5 1P+N energy meter (Z2M/ZHC SPM01V2.5, deCONZ SPM01, tuya-local zemismart spm); bulk-added by P44; moved to power_meter",
+      "sources": {
+        "z2m": "z2m:SPM01V2.5; zhc:SPM01V2.5",
+        "zha": "not listed for TS0601",
+        "deconz": "deconz:1 Phase Energy meter SPM01",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "kkossev Tuya Zigbee Metering Plug CHANGELOG mentions iwn0gpzz (checked by hand)",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "51a86ac373 v9.0.217: 431 drivers, 2737 FPs [skip ci] | a98486fc78 fix(P44): R9 — 5 typo fixes + 1450 mfrs + 17 pids to driver.compose.json | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZE204_iwn0gpzz|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE284_iwn0gpzz|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3190",
+      "verdict": "wrong driver: Tuya SPM01V2.5 1P+N energy meter (Z2M/ZHC SPM01V2.5, deCONZ SPM01, tuya-local zemismart spm); bulk-added by P44; moved to power_meter",
+      "sources": {
+        "z2m": "z2m:SPM01V2.5; zhc:SPM01V2.5",
+        "zha": "not listed for TS0601",
+        "deconz": "deconz:1 Phase Energy meter SPM01",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "kkossev Tuya Zigbee Metering Plug CHANGELOG mentions iwn0gpzz (checked by hand)",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "51a86ac373 v9.0.217: 431 drivers, 2737 FPs [skip ci] | a98486fc78 fix(P44): R9 — 5 typo fixes + 1450 mfrs + 17 pids to driver.compose.json | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZE284_iwn0gpzz|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE200_wbhaespm|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3191",
+      "verdict": "wrong driver: SUTON STB3L-125-ZJ DIN RCBO energy meter (Z2M/ZHC STB3L-125-ZJ, zigpy/zha test tze204-wbhaespm, zha-device-handlers ts0601_power.py); bulk-added by P44; moved to smart_breaker",
+      "sources": {
+        "z2m": "z2m:STB3L-125-ZJ; zhc:STB3L-125-ZJ",
+        "zha": "zigpy/zha tests/data/devices/tze204-wbhaespm-ts0601; zhaquirks/tuya/ts0601_power.py (checked by hand 2026-11-01)",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "51a86ac373 v9.0.217: 431 drivers, 2737 FPs [skip ci] | a98486fc78 fix(P44): R9 — 5 typo fixes + 1450 mfrs + 17 pids to driver.compose.json | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZE200_wbhaespm|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE204_wbhaespm|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3191",
+      "verdict": "wrong driver: SUTON STB3L-125-ZJ DIN RCBO energy meter (Z2M/ZHC STB3L-125-ZJ, zigpy/zha test tze204-wbhaespm, zha-device-handlers ts0601_power.py); bulk-added by P44; moved to smart_breaker",
+      "sources": {
+        "z2m": "z2m:STB3L-125-ZJ; z2m:ZXB3-125; zhc:STB3L-125-ZJ; zhc:ZXB3-125",
+        "zha": "zigpy/zha tests/data/devices/tze204-wbhaespm-ts0601; zhaquirks/tuya/ts0601_power.py (checked by hand 2026-11-01)",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "51a86ac373 v9.0.217: 431 drivers, 2737 FPs [skip ci] | a98486fc78 fix(P44): R9 — 5 typo fixes + 1450 mfrs + 17 pids to driver.compose.json | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZE204_wbhaespm|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE284_wbhaespm|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3191",
+      "verdict": "wrong driver: SUTON STB3L-125-ZJ DIN RCBO energy meter (Z2M/ZHC STB3L-125-ZJ, zigpy/zha test tze204-wbhaespm, zha-device-handlers ts0601_power.py); bulk-added by P44; moved to smart_breaker",
+      "sources": {
+        "z2m": "z2m:STB3L-125-ZJ; zhc:STB3L-125-ZJ",
+        "zha": "zigpy/zha tests/data/devices/tze204-wbhaespm-ts0601; zhaquirks/tuya/ts0601_power.py (checked by hand 2026-11-01)",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "51a86ac373 v9.0.217: 431 drivers, 2737 FPs [skip ci] | a98486fc78 fix(P44): R9 — 5 typo fixes + 1450 mfrs + 17 pids to driver.compose.json | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZE284_wbhaespm|TS0601"
+      }
     }
   ]
 }
