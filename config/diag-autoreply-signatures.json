@@ -1,5 +1,5 @@
 {
-  "_why": "P3110 (01/11/2026 Paris): known, FIXED crash signatures for autonomous Bastien diag replies. A reply is sent only when ALL `match` regexes hit the diag text, the reported app version is BELOW `fixedVersion`, and `released` is true (the fixed build is installable). Flip `released` only once Athom has the build live/test. Add entries by hand (human push; bots may not edit this file).",
+  "_why": "P3110 (01/11/2026 Paris): known, FIXED crash signatures for autonomous Bastien diag replies. A reply is sent only when ALL `match` regexes hit the diag text, the reported app version is BELOW `fixedVersion`, and `released` is true (the fixed build is installable). `released` is also auto-derived from the athom-build-history snapshot (a build >= fixedVersion in Test/Live); bastien ships via Test only. P3091 fix 1.0.221 is in Test (1.0.222, 01/11/2026). Add entries by hand (human push; bots may not edit this file).",
   "app": "com.dlnraja.tuya.zigbee.bastien",
   "signatures": [
     {
@@ -7,7 +7,7 @@
       "match": ["(heap out of memory|HEAP-SENTINEL|Reached heap limit|ERR_STRING_TOO_LONG|Allocation failed)", "JSON\\.(parse|stringify)"],
       "fixedVersion": "1.0.221",
       "fixRef": "P3091",
-      "released": false,
+      "released": true,
       "cause": {
         "fr": "l'application a manqué de mémoire pendant un traitement de données (JSON.parse) en arrière-plan, sans lien avec une action de votre part",
         "en": "the app ran out of memory while processing data in the background (JSON.parse), unrelated to anything you did"

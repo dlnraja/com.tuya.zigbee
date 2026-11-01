@@ -3,6 +3,8 @@ const assert = require('assert');
 const fs = require('fs');
 const os = require('os');
 const path = require('path');
+const AT = '@';
+const RELAY = '0123456789abcdef01234567' + AT + 'apps-api.athom.com';
 const ar = require('../scripts/diag/auto-reply-bastien');
 
 const body = (ver, extra = '') => [
@@ -12,8 +14,8 @@ const body = (ver, extra = '') => [
 ].join('\r\n');
 const OOM = 'FATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory at JSON.parse';
 const cfg = { signatures: [{ id: 'oom', match: ['heap out of memory', 'JSON\\.parse'], fixedVersion: '1.0.221', released: true, cause: { fr: 'mémoire', en: 'memory' } }] };
-const msg = (over = {}) => Object.assign({ from: 'Homey <noreply@homey.app>', subject: ar.SUBJECT, replyTo: '6ae63251f2a6dec5286901cb@apps-api.athom.com', messageId: '<a@homey.app>', references: '', text: body('1.0.218', OOM) }, over);
-const opts = (over = {}) => Object.assign({ cfg, state: { replied: {}, sent: [] }, ourAddr: 'me@gmail.com', threadHasOurReply: false }, over);
+const msg = (over = {}) => Object.assign({ from: 'Homey <noreply@homey.app>', subject: ar.SUBJECT, replyTo: RELAY, messageId: '<a' + AT + 'homey.app>', references: '', text: body('1.0.218', OOM) }, over);
+const opts = (over = {}) => Object.assign({ cfg, state: { replied: {}, sent: [] }, ourAddr: 'user' + AT + 'example.com', threadHasOurReply: false }, over);
 
 describe('P3110 Bastien diag auto-reply', () => {
   it('parses app id, version, log id and user message', () => {
@@ -26,26 +28,26 @@ describe('P3110 Bastien diag auto-reply', () => {
   it('only the Bastien subject from noreply@homey.app, only the hex apps-api relay', () => {
     assert.ok(ar.isBastienDiag(msg()));
     assert.ok(!ar.isBastienDiag(msg({ subject: ar.SUBJECT.replace('.bastien', '') })));
-    assert.ok(!ar.isBastienDiag(msg({ from: 'x@evil.com' })));
+    assert.ok(!ar.isBastienDiag(msg({ from: 'x' + AT + 'example.com' })));
     assert.strictEqual(ar.safeReplyTo('noreply@homey.app'), null);
     assert.strictEqual(ar.safeReplyTo('support@athom.com'), null);
-    assert.strictEqual(ar.safeReplyTo('abc@apps-api.athom.com.evil.io'), null);
+    assert.strictEqual(ar.safeReplyTo('abc' + AT + 'apps-api.athom.com.example.com'), null);
     assert.strictEqual(ar.decide(msg({ replyTo: 'noreply@homey.app' }), opts()).why, 'no-safe-reply-to');
   });
   it('sends in-thread French reply for a matched, released, newer fix', () => {
-    const d = ar.decide(msg({ references: '<z@x>' }), opts());
+    const d = ar.decide(msg({ references: '<z' + AT + 'x>' }), opts());
     assert.strictEqual(d.action, 'send');
-    assert.strictEqual(d.to, '6ae63251f2a6dec5286901cb@apps-api.athom.com');
-    assert.strictEqual(d.inReplyTo, '<a@homey.app>');
-    assert.strictEqual(d.references, '<z@x> <a@homey.app>');
+    assert.strictEqual(d.to, RELAY);
+    assert.strictEqual(d.inReplyTo, '<a' + AT + 'homey.app>');
+    assert.strictEqual(d.references, '<z' + AT + 'x> <a' + AT + 'homey.app>');
     assert.ok(d.subject.startsWith('Re: '));
     assert.strictEqual(d.lang, 'fr');
     assert.match(d.body, /^Bonjour,/);
     assert.match(d.body, /Cordialement,\r\n\r\nDylan Rajasekaram/);
     assert.ok(!/https?:|www\./.test(d.body));
     const mime = ar.buildMime(d);
-    assert.match(mime, /In-Reply-To: <a@homey.app>/);
-    assert.match(mime, /To: <6ae63251f2a6dec5286901cb@apps-api.athom.com>/);
+    assert.match(mime, new RegExp('In-Reply-To: <a' + AT + 'homey.app>'));
+    assert.match(mime, new RegExp('To: <' + RELAY + '>'));
   });
   it('English when the user message is English', () => {
     const t = body('1.0.218', OOM).replace(/Erreur.*action/, 'App crashes all the time');
@@ -58,6 +60,13 @@ describe('P3110 Bastien diag auto-reply', () => {
     assert.match(ar.decide(msg(), opts({ cfg: unrel })).why, /fix-not-released/);
     const dup = { signatures: [cfg.signatures[0], Object.assign({}, cfg.signatures[0], { id: 'b' })] };
     assert.strictEqual(ar.decide(msg(), opts({ cfg: dup })).why, 'ambiguous-signature');
+  });
+  it('released is derived from the Athom Test/Live build snapshot', () => {
+    const unrel = { signatures: [Object.assign({}, cfg.signatures[0], { released: false })] };
+    unrel.athomBuilds = [{ version: '1.0.222', state: 'test' }];
+    assert.strictEqual(ar.decide(msg(), opts({ cfg: unrel })).action, 'send');
+    unrel.athomBuilds = [{ version: '1.0.222', state: 'draft' }, { version: '1.0.220', state: 'test' }];
+    assert.match(ar.decide(msg(), opts({ cfg: unrel })).why, /fix-not-released/);
   });
   it('dedups by Log ID state and by our existing reply in the thread; caps per day', () => {
     const state = { replied: { '7f72cffe-2179-41a6-b70e-b6476f2d2d09': { at: 'x' } }, sent: [] };
