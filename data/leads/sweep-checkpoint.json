@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-01T06:36:22.668Z",
+  "updated": "2026-11-01T08:00:14.962Z",
   "threads": {
     "21313": {
       "lastPost": 2819,
@@ -3236,7 +3236,7 @@
     {
       "id": "johan-issue:195",
       "status": "needs-info",
-      "note": "Re-read 2026-10-21: title gives the maker without its leading underscore and no productId; the second reporter quotes a truncated 7-character maker. No exact couple.",
+      "note": "Re-read 2026-11-01: _TZ3000_qbm10jnj has no productId in the thread and is absent from Z2M, ZHA, deCONZ, Blakadder and the other KB mirrors, so it stays a lead. The second reporter id resolves to _TZ3000_zmy4lslw|TS0002 on switch_2gang. Side lead: switch_1gang lists a 9-char form _TZ3000_zmy4lsw (likely a typo of that id; research only, removal needs the owner).",
       "sources": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/195"
       ],
@@ -3245,8 +3245,8 @@
       "pids": [
         "TS0002"
       ],
-      "triagedAt": "2026-10-21T07:04:18.052Z",
-      "triagedVia": "resume-sweep-2026-10-21",
+      "triagedAt": "2026-11-01T08:00:14.962Z",
+      "triagedVia": "resume-sweep-2026-11-01",
       "crossResearch": {
         "at": "2026-10-31",
         "verdict": "no-action",
@@ -16034,8 +16034,8 @@
     },
     {
       "id": "johan-issue:555",
-      "status": "needs-info",
-      "note": "closed issue; diag-only; research or diag needed",
+      "status": "already-fixed",
+      "note": "Re-read 2026-11-01: GiEX QT06 irrigation controller, closed without interview. The known QT06 ids from zigbee-herdsman-converters (_TZE200_sh1btabb, _TZE204_a7sghmms) are on water_valve_smart; no other identity to add.",
       "sources": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/555"
       ],
@@ -16051,7 +16051,9 @@
           "https://zigbee.blakadder.com/GiEX_QT06.html"
         ],
         "sources": 3
-      }
+      },
+      "triagedAt": "2026-11-01T08:00:14.962Z",
+      "triagedVia": "resume-sweep-2026-11-01"
     },
     {
       "id": "forum:140352#362",
@@ -16075,15 +16077,15 @@
     },
     {
       "id": "forum:140352#363",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "DutchDuke",
       "link": "https://community.homey.app/t/140352/363",
       "mfrs": [],
       "pids": [],
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag cf04e00e-9df5-4424-91e1-3f83c4407194 mail 2025-10-16): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-01: same reporter as #154/#319; the temperature sensor _TZ3000_akqdg6g7 is on climate_sensor and the soil sensor _TZE284_oitavov2 on soil_sensor on master. The wrong-class pairing came from a 2025 2.x/3.x build.",
+      "triagedAt": "2026-11-01T08:00:14.962Z",
+      "triagedVia": "resume-sweep-2026-11-01",
       "crossResearch": {
         "at": "2026-10-31",
         "verdict": "lead",
@@ -16332,16 +16334,16 @@
     },
     {
       "id": "forum:140352#405",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "DutchDuke",
       "link": "https://community.homey.app/t/140352/405",
       "mfrs": [],
       "pids": [],
       "images": 2,
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag 2b7856d9-e8b2-43cd-ab31-1516982f1eba mail 2025-10-17): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-01: same reporter as #154/#319; the temperature sensor _TZ3000_akqdg6g7 is on climate_sensor and the soil sensor _TZE284_oitavov2 on soil_sensor on master. The wrong-class pairing came from a 2025 2.x/3.x build.",
+      "triagedAt": "2026-11-01T08:00:14.962Z",
+      "triagedVia": "resume-sweep-2026-11-01",
       "crossResearch": {
         "at": "2026-10-31",
         "verdict": "lead",
@@ -17662,7 +17664,7 @@
     {
       "id": "johan-issue:562",
       "status": "needs-info",
-      "note": "open issue; diag-only; research or diag needed",
+      "note": "Re-read 2026-11-01: ZN291438 PIR, shop link only and no Zigbee interview; nothing to infer without manufacturerName.",
       "sources": [
         "https://github.com/JohanBendz/com.tuya.zigbee/issues/562"
       ],
@@ -17675,7 +17677,9 @@
         "couples": [],
         "candidates": [],
         "sources": 3
-      }
+      },
+      "triagedAt": "2026-11-01T08:00:14.962Z",
+      "triagedVia": "resume-sweep-2026-11-01"
     },
     {
       "id": "johan-issue:563",
@@ -17859,15 +17863,15 @@
     },
     {
       "id": "forum:140352#452",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Peter_van_Werkhoven",
       "link": "https://community.homey.app/t/140352/452",
       "mfrs": [],
       "pids": [],
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag dabf50d7-4699-499a-bbbe-80a0c6ab58e5 mail 2025-10-20): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-01 from the raw post: progress report from the 2025 2.x-5.x app line on the HOBEIAN ZG-204ZV multisensor and the SOS button. Current code covers both (ZG-204ZV on presence_sensor_radar, _TZ3000_0dumfk2z|TS0215A on button_emergency_sos); superseded by current versions.",
+      "triagedAt": "2026-11-01T08:00:14.962Z",
+      "triagedVia": "resume-sweep-2026-11-01",
       "crossResearch": {
         "at": "2026-10-31",
         "verdict": "no-action",
@@ -17879,15 +17883,15 @@
     },
     {
       "id": "forum:140352#454",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Peter_van_Werkhoven",
       "link": "https://community.homey.app/t/140352/454",
       "mfrs": [],
       "pids": [],
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag 57b36f1e-76f5-4f75-a64e-5a616e6f5cdc mail 2025-10-20): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-01 from the raw post: progress report from the 2025 2.x-5.x app line on the HOBEIAN ZG-204ZV multisensor and the SOS button. Current code covers both (ZG-204ZV on presence_sensor_radar, _TZ3000_0dumfk2z|TS0215A on button_emergency_sos); superseded by current versions.",
+      "triagedAt": "2026-11-01T08:00:14.962Z",
+      "triagedVia": "resume-sweep-2026-11-01",
       "crossResearch": {
         "at": "2026-10-31",
         "verdict": "no-action",
@@ -17909,15 +17913,15 @@
     },
     {
       "id": "forum:140352#457",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Peter_van_Werkhoven",
       "link": "https://community.homey.app/t/140352/457",
       "mfrs": [],
       "pids": [],
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag 200a2ea9-fe54-4f97-966c-f44eb0c966c5 mail 2025-10-21): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-01 from the raw post: progress report from the 2025 2.x-5.x app line on the HOBEIAN ZG-204ZV multisensor and the SOS button. Current code covers both (ZG-204ZV on presence_sensor_radar, _TZ3000_0dumfk2z|TS0215A on button_emergency_sos); superseded by current versions.",
+      "triagedAt": "2026-11-01T08:00:14.962Z",
+      "triagedVia": "resume-sweep-2026-11-01",
       "crossResearch": {
         "at": "2026-10-31",
         "verdict": "no-action",
@@ -17929,16 +17933,16 @@
     },
     {
       "id": "forum:140352#463",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Peter_van_Werkhoven",
       "link": "https://community.homey.app/t/140352/463",
       "mfrs": [],
       "pids": [],
       "images": 1,
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag 2c72fd5f-7350-447c-9ab1-24dd4dd39f8d mail 2025-10-21): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-01 from the raw post: progress report from the 2025 2.x-5.x app line on the HOBEIAN ZG-204ZV multisensor and the SOS button. Current code covers both (ZG-204ZV on presence_sensor_radar, _TZ3000_0dumfk2z|TS0215A on button_emergency_sos); superseded by current versions.",
+      "triagedAt": "2026-11-01T08:00:14.962Z",
+      "triagedVia": "resume-sweep-2026-11-01",
       "crossResearch": {
         "at": "2026-10-31",
         "verdict": "no-action",
@@ -18054,16 +18058,16 @@
     },
     {
       "id": "forum:140352#484",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Karsten_Hille",
       "link": "https://community.homey.app/t/140352/484",
       "mfrs": [],
       "pids": [],
       "images": 1,
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag 1220a7cf-f467-4b3d-a432-446a2858134b mail 2025-10-23): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-01: same reporter as #239/#349/#392; the temperature+humidity sensor _TZE284_vvmbj46n is on lcdtemphumidsensor on master. The motion capability came from a 2025 build.",
+      "triagedAt": "2026-11-01T08:00:14.962Z",
+      "triagedVia": "resume-sweep-2026-11-01",
       "crossResearch": {
         "at": "2026-10-31",
         "verdict": "lead",
@@ -18085,16 +18089,16 @@
     },
     {
       "id": "forum:140352#487",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Jocke_Wallen",
       "link": "https://community.homey.app/t/140352/487",
       "mfrs": [],
       "pids": [],
       "images": 1,
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag bc57e77e-99ff-42ba-abe4-80941f02cfba mail 2025-10-24): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-01: empty settings page on a 2025 4.x build, no device identity; nothing to map.",
+      "triagedAt": "2026-11-01T08:00:14.962Z",
+      "triagedVia": "resume-sweep-2026-11-01",
       "crossResearch": {
         "at": "2026-10-31",
         "verdict": "lead",
@@ -18110,15 +18114,15 @@
     },
     {
       "id": "forum:140352#488",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Peter_van_Werkhoven",
       "link": "https://community.homey.app/t/140352/488",
       "mfrs": [],
       "pids": [],
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag 9a3b9d7f-8c15-4f81-afb1-4411d5c91be8 mail 2025-10-24): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-01 from the raw post: progress report from the 2025 2.x-5.x app line on the HOBEIAN ZG-204ZV multisensor and the SOS button. Current code covers both (ZG-204ZV on presence_sensor_radar, _TZ3000_0dumfk2z|TS0215A on button_emergency_sos); superseded by current versions.",
+      "triagedAt": "2026-11-01T08:00:14.962Z",
+      "triagedVia": "resume-sweep-2026-11-01",
       "crossResearch": {
         "at": "2026-10-31",
         "verdict": "no-action",
@@ -18140,15 +18144,15 @@
     },
     {
       "id": "forum:140352#490",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Peter_van_Werkhoven",
       "link": "https://community.homey.app/t/140352/490",
       "mfrs": [],
       "pids": [],
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag 8d9b2434-3700-41e8-87a7-e34edc1bfb70 mail 2025-10-24): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-01 from the raw post: progress report from the 2025 2.x-5.x app line on the HOBEIAN ZG-204ZV multisensor and the SOS button. Current code covers both (ZG-204ZV on presence_sensor_radar, _TZ3000_0dumfk2z|TS0215A on button_emergency_sos); superseded by current versions.",
+      "triagedAt": "2026-11-01T08:00:14.962Z",
+      "triagedVia": "resume-sweep-2026-11-01",
       "crossResearch": {
         "at": "2026-10-31",
         "verdict": "no-action",
@@ -18160,15 +18164,15 @@
     },
     {
       "id": "forum:140352#491",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Cam",
       "link": "https://community.homey.app/t/140352/491",
       "mfrs": [],
       "pids": [],
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag 6e5537fe-1543-4bad-aa93-bec71c6a6981 mail 2025-10-24): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-01 from the raw post: same reporter devices as JohanBendz #1267/#1268. HOBEIAN|ZG-204ZL is on presence_sensor_radar and _TZ3000_5bpeda8u|TS0041 on button_wireless_1 on master; the post describes a 2025 build, superseded.",
+      "triagedAt": "2026-11-01T08:00:14.962Z",
+      "triagedVia": "resume-sweep-2026-11-01",
       "crossResearch": {
         "at": "2026-10-31",
         "verdict": "lead",
@@ -18227,15 +18231,15 @@
     },
     {
       "id": "forum:140352#498",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Cam",
       "link": "https://community.homey.app/t/140352/498",
       "mfrs": [],
       "pids": [],
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag 41afb781-6af5-4f9d-9724-5dc239d27df5 mail 2025-10-25): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-01 from the raw post: same reporter devices as JohanBendz #1267/#1268. HOBEIAN|ZG-204ZL is on presence_sensor_radar and _TZ3000_5bpeda8u|TS0041 on button_wireless_1 on master; the post describes a 2025 build, superseded.",
+      "triagedAt": "2026-11-01T08:00:14.962Z",
+      "triagedVia": "resume-sweep-2026-11-01",
       "crossResearch": {
         "at": "2026-10-31",
         "verdict": "lead",
@@ -18251,15 +18255,15 @@
     },
     {
       "id": "forum:140352#499",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Peter_van_Werkhoven",
       "link": "https://community.homey.app/t/140352/499",
       "mfrs": [],
       "pids": [],
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag a623c419-9f7b-4123-9264-c68996a4e63f mail 2025-10-25): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-01 from the raw post: progress report from the 2025 2.x-5.x app line on the HOBEIAN ZG-204ZV multisensor and the SOS button. Current code covers both (ZG-204ZV on presence_sensor_radar, _TZ3000_0dumfk2z|TS0215A on button_emergency_sos); superseded by current versions.",
+      "triagedAt": "2026-11-01T08:00:14.962Z",
+      "triagedVia": "resume-sweep-2026-11-01",
       "crossResearch": {
         "at": "2026-10-31",
         "verdict": "no-action",
@@ -19707,15 +19711,15 @@
     },
     {
       "id": "forum:140352#548",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Cam",
       "link": "https://community.homey.app/t/140352/548",
       "mfrs": [],
       "pids": [],
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag 48f51f5b-6709-4595-82ad-143ae622d14a mail 2025-11-29): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-01 from the raw post: same reporter devices as JohanBendz #1267/#1268. HOBEIAN|ZG-204ZL is on presence_sensor_radar and _TZ3000_5bpeda8u|TS0041 on button_wireless_1 on master; the post describes a 2025 build, superseded.",
+      "triagedAt": "2026-11-01T08:00:14.962Z",
+      "triagedVia": "resume-sweep-2026-11-01",
       "crossResearch": {
         "at": "2026-10-31",
         "verdict": "lead",
@@ -19755,15 +19759,15 @@
     },
     {
       "id": "forum:140352#552",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Cam",
       "link": "https://community.homey.app/t/140352/552",
       "mfrs": [],
       "pids": [],
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag 6306570e-34ca-4701-99b9-53b6adfa2bde mail 2025-11-30): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-01 from the raw post: same reporter devices as JohanBendz #1267/#1268. HOBEIAN|ZG-204ZL is on presence_sensor_radar and _TZ3000_5bpeda8u|TS0041 on button_wireless_1 on master; the post describes a 2025 build, superseded.",
+      "triagedAt": "2026-11-01T08:00:14.962Z",
+      "triagedVia": "resume-sweep-2026-11-01",
       "crossResearch": {
         "at": "2026-10-31",
         "verdict": "lead",
@@ -19850,16 +19854,16 @@
     },
     {
       "id": "forum:140352#568",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Sharif_Kandil",
       "link": "https://community.homey.app/t/140352/568",
       "mfrs": [],
       "pids": [],
       "images": 1,
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag ffe554ee-d4bd-4df5-933e-47dbc4029bf1 mail 2025-12-04): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-01: same reporter as #634/#653/#667 (Moes AM43, _TZE200_icka1clh|TS0601 on curtain_motor). curtain_motor now maps windowcoverings_set to the position DPs, so the missing listener of the 2025 5.x build is gone.",
+      "triagedAt": "2026-11-01T08:00:14.962Z",
+      "triagedVia": "resume-sweep-2026-11-01",
       "crossResearch": {
         "at": "2026-10-31",
         "verdict": "no-action",
@@ -19922,15 +19926,15 @@
     },
     {
       "id": "forum:140352#581",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Cam",
       "link": "https://community.homey.app/t/140352/581",
       "mfrs": [],
       "pids": [],
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag c4a25bc8-6df7-4bd9-893d-0ca94e6eb5a8 mail 2025-12-06): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-01 from the raw post: same reporter devices as JohanBendz #1267/#1268. HOBEIAN|ZG-204ZL is on presence_sensor_radar and _TZ3000_5bpeda8u|TS0041 on button_wireless_1 on master; the post describes a 2025 build, superseded.",
+      "triagedAt": "2026-11-01T08:00:14.962Z",
+      "triagedVia": "resume-sweep-2026-11-01",
       "crossResearch": {
         "at": "2026-10-31",
         "verdict": "lead",
@@ -19946,16 +19950,16 @@
     },
     {
       "id": "forum:140352#585",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Peter_van_Werkhoven",
       "link": "https://community.homey.app/t/140352/585",
       "mfrs": [],
       "pids": [],
       "images": 3,
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag 088dec1a-1463-4a05-9de5-8df1b10b41e6 mail 2025-12-06): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-01 from the raw post: progress report from the 2025 2.x-5.x app line on the HOBEIAN ZG-204ZV multisensor and the SOS button. Current code covers both (ZG-204ZV on presence_sensor_radar, _TZ3000_0dumfk2z|TS0215A on button_emergency_sos); superseded by current versions.",
+      "triagedAt": "2026-11-01T08:00:14.962Z",
+      "triagedVia": "resume-sweep-2026-11-01",
       "crossResearch": {
         "at": "2026-10-31",
         "verdict": "no-action",
@@ -20002,15 +20006,15 @@
     },
     {
       "id": "forum:140352#591",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Cam",
       "link": "https://community.homey.app/t/140352/591",
       "mfrs": [],
       "pids": [],
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag b9eb95a2-cfd2-402c-a048-2c60e54237d7 mail 2025-12-08): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-01 from the raw post: same reporter devices as JohanBendz #1267/#1268. HOBEIAN|ZG-204ZL is on presence_sensor_radar and _TZ3000_5bpeda8u|TS0041 on button_wireless_1 on master; the post describes a 2025 build, superseded.",
+      "triagedAt": "2026-11-01T08:00:14.962Z",
+      "triagedVia": "resume-sweep-2026-11-01",
       "crossResearch": {
         "at": "2026-10-31",
         "verdict": "lead",
@@ -20049,16 +20053,16 @@
     },
     {
       "id": "forum:140352#595",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Peter_van_Werkhoven",
       "link": "https://community.homey.app/t/140352/595",
       "mfrs": [],
       "pids": [],
       "images": 2,
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag abb7f0eb-262b-454f-8bf8-8f562c6a7cec mail 2025-12-08): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-01 from the raw post: progress report from the 2025 2.x-5.x app line on the HOBEIAN ZG-204ZV multisensor and the SOS button. Current code covers both (ZG-204ZV on presence_sensor_radar, _TZ3000_0dumfk2z|TS0215A on button_emergency_sos); superseded by current versions.",
+      "triagedAt": "2026-11-01T08:00:14.962Z",
+      "triagedVia": "resume-sweep-2026-11-01",
       "crossResearch": {
         "at": "2026-10-31",
         "verdict": "no-action",
@@ -45052,5 +45056,112 @@
         "status": "no-action"
       }
     ]
+  },
+  "dailyResume20261101": {
+    "at": "2026-11-01T08:00:14.962Z",
+    "advanced": 23,
+    "items": [
+      {
+        "id": "forum:140352#452",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#454",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#457",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#463",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#488",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#490",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#499",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#585",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#595",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#491",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#498",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#548",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#552",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#581",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#591",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#363",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#405",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#484",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#487",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:140352#568",
+        "status": "already-fixed"
+      },
+      {
+        "id": "johan-issue:555",
+        "status": "already-fixed"
+      },
+      {
+        "id": "johan-issue:195",
+        "status": "needs-info"
+      },
+      {
+        "id": "johan-issue:562",
+        "status": "needs-info"
+      }
+    ],
+    "counts": {
+      "already-fixed": 1383,
+      "no-action": 1210,
+      "needs-info": 502,
+      "fixed": 11,
+      "covered": 1,
+      "deferred": 2,
+      "pending": 7
+    }
   }
 }
