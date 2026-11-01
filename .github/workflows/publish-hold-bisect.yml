@@ -24,6 +24,9 @@ on:
       seed:
         description: 'Seed the queue with every held id not yet queued (true/false)'
         default: 'false'
+      verdict_run:
+        description: 'P3106: auto-publish run id whose p3095-outcome verdict to apply (hand-off; GITHUB_TOKEN runs never fire workflow_run)'
+        default: ''
 
 permissions:
   contents: write
@@ -55,13 +58,17 @@ jobs:
           ref: master
           fetch-depth: 1
       - name: Read verdict of the finished auto-publish run
-        if: github.event_name == 'workflow_run'
+        if: github.event_name == 'workflow_run' || github.event.inputs.verdict_run != ''
+        env:
+          VRUN: ${{ github.event.workflow_run.id || github.event.inputs.verdict_run }}
         run: |
-          gh run download "${{ github.event.workflow_run.id }}" -n p3095-outcome -D p3095-in 2>/dev/null || echo "no p3095 verdict artifact (not a release_held upload)"
+          case "$VRUN" in ''|*[!0-9]*) echo "::error::verdict run id must be numeric"; exit 1;; esac
+          gh run download "$VRUN" -n p3095-outcome -D p3095-in 2>/dev/null || echo "no p3095 verdict artifact (not a release_held upload)"
       - name: Bisect step + next dispatch decision
         id: s
         env:
           SEED: ${{ github.event.inputs.seed || 'false' }}
+          VRUN: ${{ github.event.workflow_run.id || github.event.inputs.verdict_run }}
         run: |
           set -e
           [ "$SEED" = "true" ] && node .github/scripts/publish-hold-bisect.js seed
@@ -69,7 +76,7 @@ jobs:
             o=$(node -e "const j=require('./p3095-in/outcome.json');console.log(j.outcome||'other')")
             r=$(node -e "const j=require('./p3095-in/outcome.json');console.log(j.released||'')")
             v=$(node -e "const j=require('./p3095-in/outcome.json');console.log(j.version||'')")
-            PUBLISH_HOLD_RELEASE="$r" node .github/scripts/publish-hold-bisect.js after "$o" "$v" "" "${{ github.event.workflow_run.id }}"
+            PUBLISH_HOLD_RELEASE="$r" node .github/scripts/publish-hold-bisect.js after "$o" "$v" "" "$VRUN"
           fi
           active=$(gh run list -w auto-publish-on-push.yml -b master -L 10 --json status -q '[.[]|select(.status!="completed")]|length' || echo 1)
           out=$(ACTIVE_RUNS="$active" node .github/scripts/publish-hold-bisect.js dispatch); echo "$out"

@@ -947,6 +947,17 @@ jobs:
           path: p3095-outcome/outcome.json
           retention-days: 7
 
+      # P3106 (01/11/2026): build #3689 v9.0.1607 (AggregateError, group of 7 released) got no bisect step:
+      # this run was dispatched with GITHUB_TOKEN, and GitHub never fires workflow_run for such runs (cron
+      # also skipped). Hand the verdict over explicitly; the bisect script applies each run id once.
+      - name: P3106 hand verdict to publish-hold-bisect
+        if: always() && hashFiles('p3095-outcome/outcome.json') != '' && github.ref_name == 'master'
+        continue-on-error: true
+        timeout-minutes: 3
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: .github/scripts/gh-retry.sh gh workflow run publish-hold-bisect.yml --ref master -f verdict_run="$GITHUB_RUN_ID" || echo "::warning::P3106 hand-off dispatch failed (cron fallback)"
+
       # P2900: socket hang up / AggregateError vs size, one CSV row per upload (kept 90 days).
       # P2917: write the highest CONFIRMED Test version back (state "test" from Athom), [skip ci], once,
       # clean tree reset to origin, rebase + 3 bounded tries, never dispatches a run (no loop).

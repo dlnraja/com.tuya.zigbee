@@ -64,4 +64,15 @@ describe('P3095 publish-hold bisect', () => {
     const ap = fs.readFileSync(path.join(ROOT, '.github/workflows/auto-publish-on-push.yml'), 'utf8');
     assert.ok(ap.includes('name: p3095-outcome') && ap.includes('publish-hold-bisect.js resolve'));
   });
+  it('P3106: a verdict run is applied once; hand-off wired (GITHUB_TOKEN runs never fire workflow_run)', () => {
+    const st = B.markDone({ queue: [], attempts: {}, isolated: [], pending: null }, 41263658690);
+    assert.strictEqual(B.alreadyDone(st, '41263658690'), true);
+    assert.strictEqual(B.alreadyDone(st, '1'), false);
+    let big = { doneRuns: [] }; for (let k = 0; k < 80; k++) B.markDone(big, k);
+    assert.strictEqual(big.doneRuns.length, B.DONE_RUNS_MAX);
+    const w = fs.readFileSync(path.join(ROOT, '.github/workflows/publish-hold-bisect.yml'), 'utf8');
+    assert.ok(w.includes('verdict_run:') && w.includes('"$VRUN"'));
+    const ap = fs.readFileSync(path.join(ROOT, '.github/workflows/auto-publish-on-push.yml'), 'utf8');
+    assert.ok(/gh workflow run publish-hold-bisect\.yml --ref master -f verdict_run="\$GITHUB_RUN_ID"/.test(ap));
+  });
 });

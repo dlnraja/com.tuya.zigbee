@@ -31,7 +31,8 @@ const F = {
 
 const parse = (v) => [...new Set(String(v || '').split(/[\s,;]+/).map((s) => s.trim()).filter(Boolean))];
 const sig = (ids) => ids.slice().sort().join(',');
-const emptyState = () => ({ queue: [], attempts: {}, isolated: [], pending: null });
+const emptyState = () => ({ queue: [], attempts: {}, isolated: [], pending: null, doneRuns: [] });
+const DONE_RUNS_MAX = 50; // P3106: bounded memory of verdict runs already applied
 const PENDING_TTL_MS = 6 * 3600000;
 
 function normState(s) {
@@ -41,6 +42,7 @@ function normState(s) {
     attempts: o.attempts && typeof o.attempts === 'object' ? { ...o.attempts } : {},
     isolated: Array.isArray(o.isolated) ? o.isolated.slice() : [],
     pending: o.pending && Array.isArray(o.pending.ids) && o.pending.ids.length ? { ids: o.pending.ids.slice(), at: o.pending.at || null } : null,
+    doneRuns: Array.isArray(o.doneRuns) ? o.doneRuns.map(String).slice(-DONE_RUNS_MAX) : [],
   };
 }
 
@@ -125,6 +127,9 @@ function seed({ state, heldIds }) {
   return st;
 }
 
+function alreadyDone(state, run) { return normState(state).doneRuns.includes(String(run)); }
+function markDone(st, run) { st.doneRuns = [...(st.doneRuns || []).filter((r) => r !== String(run)), String(run)].slice(-DONE_RUNS_MAX); return st; }
+
 function readJson(rel, d) { try { return JSON.parse(fs.readFileSync(path.join(ROOT, rel), 'utf8')); } catch (_) { return d; } }
 function writeJson(rel, v) { fs.writeFileSync(path.join(ROOT, rel), JSON.stringify(v, null, 2) + '\n'); }
 const heldOf = (hold) => (hold && Array.isArray(hold.drivers) ? hold.drivers.map((d) => d && d.id).filter(Boolean) : []);
@@ -150,10 +155,14 @@ function main(argv) {
     return 0;
   }
   if (cmd !== 'after') { console.error('usage: resolve | after <outcome> [version] [build] [run]'); return 2; }
+  // P3106 (01/11/2026): a verdict can now arrive twice (workflow_run AND the explicit hand-off dispatch,
+  // because a run started by GITHUB_TOKEN never fires workflow_run). Apply each verdict run once.
+  if (run && alreadyDone(state, run)) { console.log(`[p3095] verdict of run ${run} already applied: skip`); return 0; }
   const d = decide({ released: process.env.PUBLISH_HOLD_RELEASE, outcome, state, heldIds: heldOf(hold) });
   console.log(`[p3095] ${d.note}${d.next.length ? ` | next: ${d.next.join(',')}` : ''}`);
   if (/^no released group/.test(d.note) || /transient path/.test(d.note)) return 0;
   if (d.accept.length) { hold.drivers = hold.drivers.filter((x) => !d.accept.includes(x && x.id)); writeJson(F.hold, hold); }
+  if (run) markDone(d.state, run);
   writeJson(F.state, d.state);
   const row = { at: new Date().toISOString(), app_id: 'com.dlnraja.tuya.zigbee', version: version || null, buildId: build ? Number(build) || build : null,
     state: /^test$/i.test(outcome) ? 'test' : 'processing_failed', kind: /^test$/i.test(outcome) ? 'ok' : outcome,
@@ -170,5 +179,5 @@ function main(argv) {
   return 0;
 }
 
-module.exports = { MAX_ATTEMPTS, PENDING_TTL_MS, parse, sig, resolveRelease, decide, dispatchDecision, seed, F };
+module.exports = { alreadyDone, markDone, DONE_RUNS_MAX, MAX_ATTEMPTS, PENDING_TTL_MS, parse, sig, resolveRelease, decide, dispatchDecision, seed, F };
 if (require.main === module) process.exit(main(process.argv.slice(2)));
