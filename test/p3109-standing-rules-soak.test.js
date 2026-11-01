@@ -20,6 +20,7 @@ describe('P3109 R-soak (port after master soak)', () => {
     const cs = [
       { h: 'd', t: 1001 * H, subject: 'ci(P3071): port gate to stable-v5' },
       { h: 'e', t: 1001 * H, subject: 'test(P3071): port test' },
+      { h: 'e2', t: 1001 * H, subject: 'fix(ci,P3071): port hygiene fix' },
       { h: 'f', t: 1001 * H, subject: 'fix(P3071): stable-only fix' },
       { h: 'g', t: 1001 * H, subject: 'fix(P3071): port, soak-override (user OK)' },
       { h: 'i', t: 1001 * H, subject: 'fix(P9999): port unknown' },
