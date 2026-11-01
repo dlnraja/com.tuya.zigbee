@@ -6,8 +6,12 @@ const fs = require('fs');
 const os = require('os');
 const path = require('path');
 const J = require(path.join(__dirname, '..', '..', 'scripts', 'automation', 'journal.cjs'));
+// P3194: every temp dir made here is removed when the process exits (no /tmp leftovers)
+const __tmpMade = [];
+const __mkTmp = (p) => { const d = fs.mkdtempSync(p); __tmpMade.push(d); return d; };
+process.on('exit', () => { for (const d of __tmpMade) { try { fs.rmSync(d, { recursive: true, force: true }); } catch (_e) { /* best effort */ } } });
 
-const tmp = () => path.join(fs.mkdtempSync(path.join(os.tmpdir(), 'p3048-j-')), 'automation-journal.jsonl');
+const tmp = () => path.join(__mkTmp(path.join(os.tmpdir(), 'p3048-j-')), 'automation-journal.jsonl');
 
 test('journal: append then dedup on same key + status within 72 h, new status appends', () => {
   const file = tmp();

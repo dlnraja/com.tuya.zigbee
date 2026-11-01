@@ -6,8 +6,12 @@ const fs = require('fs');
 const os = require('os');
 const path = require('path');
 const S = require(path.join(__dirname, '..', '..', 'scripts', 'automation', 'self-maintain.cjs'));
+// P3194: every temp dir made here is removed when the process exits (no /tmp leftovers)
+const __tmpMade = [];
+const __mkTmp = (p) => { const d = fs.mkdtempSync(p); __tmpMade.push(d); return d; };
+process.on('exit', () => { for (const d of __tmpMade) { try { fs.rmSync(d, { recursive: true, force: true }); } catch (_e) { /* best effort */ } } });
 
-const tmp = () => fs.mkdtempSync(path.join(os.tmpdir(), 'p3048-s-'));
+const tmp = () => __mkTmp(path.join(os.tmpdir(), 'p3048-s-'));
 
 test('checkPointer: valid ok, missing reported, corrupt reset to a skeleton when no git history', () => {
   const root = tmp();

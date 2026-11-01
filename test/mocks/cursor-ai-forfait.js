@@ -8,6 +8,10 @@
 const path = require('path');
 const fs = require('fs');
 const os = require('os');
+// P3194: every temp dir made here is removed when the process exits (no /tmp leftovers)
+const __tmpMade = [];
+const __mkTmp = (p) => { const d = fs.mkdtempSync(p); __tmpMade.push(d); return d; };
+process.on('exit', () => { for (const d of __tmpMade) { try { fs.rmSync(d, { recursive: true, force: true }); } catch (_e) { /* best effort */ } } });
 
 const ROOT = path.join(__dirname, '../..');
 
@@ -46,7 +50,7 @@ function createForfaitCfgMock(overrides = {}) {
 
 /** Temp state file for parallel/day-cap PoCs */
 function createTempStatePath(prefix = 'p2437-subagent') {
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), `${prefix}-`));
+  const dir = __mkTmp(path.join(os.tmpdir(), `${prefix}-`));
   return path.join(dir, 'cursor-subagent-day.json');
 }
 
