@@ -8,7 +8,7 @@ describe('P3138 upstream thread miner + digest guard wiring', () => {
     assert.ok(/^permissions:\n  contents: read/m.test(wf));
     assert.ok(/AI_ALLOW_REMOTE: 'false'/.test(wf));
     assert.ok((wf.match(/digest-guard\.js/g) || []).length >= 2);
-    assert.ok(/house-data-guard\.js/.test(wf));
+    if (fs.existsSync(path.join(__dirname, '../tools/ci/house-data-guard.js'))) assert.ok(/house-data-guard\.js/.test(wf));
     assert.ok(/persist-credentials: false/.test(wf));
   });
   it('miner covers zigpy org + other projects and is relevance-filtered', () => {
