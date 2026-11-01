@@ -226,7 +226,9 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
         await this.addCapability('alarm_battery');
         await this.safeSetCapabilityValue('alarm_battery', false);
       }
-      if (this.hasCapability('measure_battery')) {
+      // P3108 (t657u): opt-in estimated battery keeps the capability (flagged estimate, see FirmwareLimitCompensation)
+      const keepEstimate = this.getSetting?.('fwlimit_show_estimated_battery') === true;
+      if (this.hasCapability('measure_battery') && !keepEstimate) {
         const cur = this.getCapabilityValue('measure_battery');
         if (cur === null || cur === undefined) {
           await this.removeCapability('measure_battery');
@@ -236,6 +238,15 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     } catch (e) {
       this.log('[TRV] #560 battery align skipped:', e && e.message);
     }
+  }
+
+  async onSettings({ oldSettings, newSettings, changedKeys }) {
+    const r = await super.onSettings({ oldSettings, newSettings, changedKeys });
+    // P3108 (t657u): opt-in estimated battery (exact couples in config/firmware-limits.json only)
+    if ((changedKeys || []).includes('fwlimit_show_estimated_battery') && this.__fwLimit) {
+      this.__fwLimit.onShowEstimatedBatteryChanged(newSettings.fwlimit_show_estimated_battery === true).catch(() => {});
+    }
+    return r;
   }
 
   _handleDP(dpId, raw) {
