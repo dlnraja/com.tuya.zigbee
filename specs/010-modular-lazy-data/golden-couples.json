@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-26T14:05:13.609Z",
+ "generated": "2026-11-01T10:53:05.588Z",
  "drivers": 392,
  "snapshot": {
   "air_purifier": {
@@ -225,9 +225,9 @@
    "pidSha": "455c46e8c8549693"
   },
   "button_wireless_plug": {
-   "mfr": 19,
+   "mfr": 18,
    "pid": 37,
-   "mfrSha": "2a3f309ee9f70dff",
+   "mfrSha": "f47b1a441c9538b0",
    "pidSha": "4dd955557bd19fe9"
   },
   "button_wireless_scene": {
@@ -279,9 +279,9 @@
    "pidSha": "3427697d0c296c9d"
   },
   "climate_sensor": {
-   "mfr": 517,
+   "mfr": 516,
    "pid": 32,
-   "mfrSha": "873624e52827fb9f",
+   "mfrSha": "282c6ce0d4b5d2a9",
    "pidSha": "4809a771f46a5606"
   },
   "climate_sensor_device": {
@@ -999,9 +999,9 @@
    "pidSha": "9be78874133bac72"
   },
   "lcdtemphumidsensor_2": {
-   "mfr": 1,
+   "mfr": 2,
    "pid": 3,
-   "mfrSha": "aa2c92cebce761c4",
+   "mfrSha": "78b1809af8013cdd",
    "pidSha": "ce553b0ef4dd198b"
   },
   "lcdtemphumidsensor_3": {
@@ -1107,9 +1107,9 @@
    "pidSha": "38bdc69f98e98fe7"
   },
   "light_sensor_outdoor": {
-   "mfr": 6,
+   "mfr": 7,
    "pid": 2,
-   "mfrSha": "813a080f25335763",
+   "mfrSha": "b294ea741d5fbec1",
    "pidSha": "ec25d361ec43c29b"
   },
   "lock_smart": {
@@ -1227,9 +1227,9 @@
    "pidSha": "4e00cbb3c4a786ba"
   },
   "power_clamp_meter": {
-   "mfr": 8,
+   "mfr": 9,
    "pid": 11,
-   "mfrSha": "8f5ba330e72b7c7f",
+   "mfrSha": "81c4f009eb80cd4b",
    "pidSha": "74df414b6b5ef7ae"
   },
   "power_meter": {
@@ -1767,9 +1767,9 @@
    "pidSha": "a52af499d7d01202"
   },
   "smartplug": {
-   "mfr": 40,
+   "mfr": 41,
    "pid": 3,
-   "mfrSha": "66f611e994feb1aa",
+   "mfrSha": "de1edb68d8490eec",
    "pidSha": "d035b5d1165c0c3d"
   },
   "smartplug_2_socket": {
@@ -1881,9 +1881,9 @@
    "pidSha": "b46b96d17990cf37"
   },
   "switch_1gang": {
-   "mfr": 357,
+   "mfr": 356,
    "pid": 38,
-   "mfrSha": "ac2255eadccf6211",
+   "mfrSha": "286617ba8d764aa8",
    "pidSha": "fd65b1d55ed8db6a"
   },
   "switch_2_gang": {
