@@ -74,7 +74,7 @@ fi
 
 # P3025: same manifest/data/lint gates as ci-self-check (changed-files lint = fast).
 if [ "${HOOKS_SKIP_DATA_GATES:-0}" != "1" ]; then
-  for _g in "scripts/ci/appjson-compose-drift-gate.js" "scripts/data/build-dp-shards.js --check" "scripts/ci/lint-ratchet.js --changed"; do
+  for _g in "scripts/ci/appjson-compose-drift-gate.js" "scripts/data/build-dp-shards.js --check" "scripts/ci/lint-ratchet.js --changed" "scripts/ci/couple-removal-guard.js"; do
     _f=${_g%% *}
     [ -f "$ROOT/$_f" ] || continue
     if ! (cd "$ROOT" && "${NODE_BIN:-node}" $_g) >/tmp/p3025-data-gate.log 2>&1; then
