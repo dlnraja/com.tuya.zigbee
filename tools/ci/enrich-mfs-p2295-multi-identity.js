@@ -17,6 +17,7 @@
  */
 
 const fs = require('fs');
+const { pairingCaseVariants } = require('../../lib/utils/TuyaNormalizer');
 const path = require('path');
 
 const ROOT = path.join(__dirname, '..', '..');
@@ -38,13 +39,8 @@ function sorted(arr) {
 }
 
 function casings(mfr) {
-  const s = String(mfr);
-  const lower = s.toLowerCase();
-  const upper = s.toUpperCase();
-  // OEM classic: _TZE200_body / _TZ3000_body
-  const oem = s.replace(/^(_[A-Za-z0-9]+)_(.+)$/, (_, p, b) => `${p.toUpperCase()}_${b.toLowerCase()}`);
-  const oemUpperBody = s.replace(/^(_[A-Za-z0-9]+)_(.+)$/, (_, p, b) => `${p.toUpperCase()}_${b.toUpperCase()}`);
-  return uniq([s, lower, upper, oem, oemUpperBody]);
+  // WHY(P3127/#557): canonical + lowercase only.
+  return uniq(pairingCaseVariants(String(mfr)));
 }
 
 function loadJson(p) {

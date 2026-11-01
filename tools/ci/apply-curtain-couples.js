@@ -12,6 +12,7 @@
  */
 
 const fs = require('fs');
+const { pairingCaseVariants } = require('../../lib/utils/TuyaNormalizer');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '../..');
@@ -87,8 +88,8 @@ function normMfr(m) {
 }
 
 function pairingVariants(mfr) {
-  const m = String(mfr).trim();
-  return [...new Set([m, m.toLowerCase(), m.toUpperCase()])];
+  // WHY(P3127/#557): canonical + lowercase only, never UPPER/mixed combos.
+  return pairingCaseVariants(String(mfr).trim());
 }
 
 function loadSiblingMfrs() {
