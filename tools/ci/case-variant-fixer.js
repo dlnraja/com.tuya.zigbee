@@ -32,15 +32,9 @@ const SYNTHETIC_RX = /_disabled|_dummy|_generic|_hybrid|_master|placeholder|need
  *   4. `_tz3000_G9G2XNCH` (lower/UPPER — rare but observed)
  */
 function allCaseCombos(m) {
-  const match = String(m).match(/^(_t[zy][a-z0-9]+)_(.+)$/i);
-  if (!match) {return [String(m).toLowerCase(), String(m).toUpperCase()];}
-  const [, prefix, suffix] = match;
-  return [...new Set([
-    `${prefix.toLowerCase()}_${suffix.toLowerCase()}`,
-    `${prefix.toUpperCase()}_${suffix.toUpperCase()}`,
-    `${prefix.toUpperCase()}_${suffix.toLowerCase()}`,
-    `${prefix.toLowerCase()}_${suffix.toUpperCase()}`
-  ])];
+  // P3112 (#557): delegate to pairingCaseVariants (canonical + lowercase) so the
+  // self-improve fixer stops re-adding UPPER/UPPER and lower/UPPER combos.
+  return require('../../lib/utils/TuyaNormalizer').pairingCaseVariants(String(m));
 }
 
 const report = { apply: APPLY, drivers: 0, added: 0, skippedSynthetic: 0, details: [] };
