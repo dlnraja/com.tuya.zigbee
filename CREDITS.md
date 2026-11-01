@@ -110,6 +110,8 @@
 - **Jocke_Wallen** — Moes TS0044 `_TZ3000_kfu8zapd` remote (forum #2098-2104)
 - **blutch32** — HOBEIAN ZG-303Z soil sensor pairing variants (forum #2101)
 - **Nigel_Scott** — HOBEIAN ZG-204ZP/ZK presence `_TZE200_ka8l86iu` (forum #2112, issue #382)
+- **Br0kk85** (forum #5538) + Koenkk/zigbee-herdsman-converters `hobeian.ts` + zigpy/zha-device-handlers `tuya_motion.py` + kkossev Hubitat mmWave — HOBEIAN ZG-204ZM `HOBEIAN`/`_TZE200_2aaelwxk`/`_TZE200_tyffvoij`/`_TZE200_yflzeeqj` DP types (DP107 bool, DP122 enum) (P3141)
+- **Johan Bendz** — JohanBendz/com.tuya.zigbee PR #631 / issue #604: `_TZ3000_bjawzodf`/TY0201 LCD sensor rejects configureReporting (P3141)
 - **Joep_Vullings** — Insoma 2-way irrigation valve `_TZE284_fhvpaltk` (forum #2102/#2105, issue #260)
 - **FrankP** — TS0042 2-button remote `_TZ3000_tzvbimpq` routing (forum #1689/#1745)
 - **thierry_arguimbau** — `_TZE204_dhotiauw` dual energy meter (forum #2115)
