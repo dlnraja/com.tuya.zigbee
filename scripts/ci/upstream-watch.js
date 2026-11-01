@@ -48,6 +48,7 @@ async function main() {
     await new Promise((res) => setTimeout(res, 1500));
   }
   const changes = diff(prev, cur);
+  fs.mkdirSync(path.dirname(STATE), { recursive: true }); // P3128: .github/state is gitignored, absent on fresh checkout
   fs.writeFileSync(STATE, JSON.stringify(cur, null, 2) + '\n');
   const md = changes.length
     ? `Upstream changes since last check:\n\n${changes.map((c) => `- **${c.id}**: ${c.from} → ${c.to}. ${c.note}`).join('\n')}\n`
