@@ -79,6 +79,8 @@ jobs:
       - name: Upstream watch (P3073, read-only)
         timeout-minutes: 5
         run: '[ -f scripts/learning/upstream-watch.cjs ] && node scripts/learning/upstream-watch.cjs --report || true'
+      - name: Learn workflow outcomes (P3113, bounded, advisory hints only)
+        run: '[ -f scripts/learning/workflow-outcomes.cjs ] && node scripts/learning/workflow-outcomes.cjs --report || true'
       - name: Workflow watchdog
         run: node scripts/automation/workflow-watchdog.cjs
       - name: Reply candidates (never posted)
