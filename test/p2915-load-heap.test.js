@@ -33,6 +33,21 @@ describe('P2915 heap under simulated load', function () {
     const kept = r.heap.afterDelete - r.heap.loaded;
     assert.ok(events < 8, `events grew heap by ${events.toFixed(1)} MB (was ~13.6 MB)`);
     assert.strictEqual(r.timersLeft, 0, `intervals left after delete: ${JSON.stringify(r.timerSrc)}`);
-    assert.ok(kept < 10, `heap kept after deleting all devices: ${kept.toFixed(1)} MB (was ~24 MB)`);
+    // P3130 (t699u): 10 -> 10.5 MB. Estimated measure_power/meter_power are now added
+    // deterministically (+2 real caps x 150 simulated switches): measured +0.1-0.2 MB,
+    // flat from 100 to 300 events (bounded caches, not a leak). The slope test below is the leak guard.
+    assert.ok(kept < 10.5, `heap kept after deleting all devices: ${kept.toFixed(1)} MB (was ~24 MB)`);
+  });
+
+  it('kept heap is flat from 100 to 300 events (leak slope guard, P3130)', function () {
+    this.timeout(180000);
+    const run = (n) => {
+      const out = execFileSync(process.execPath, ['--expose-gc', path.join(root, 'scripts/ci/load-heap-sim.js'), root, '150', String(n)],
+        { cwd: root, encoding: 'utf8', env: { ...process.env, SNAP: '' } });
+      const r = JSON.parse(out.trim().split('\n').pop());
+      return r.heap.afterDelete - r.heap.loaded;
+    };
+    const k100 = run(100); const k300 = run(300);
+    assert.ok(k300 - k100 < 1, `kept heap grows with events: ${k100.toFixed(1)} -> ${k300.toFixed(1)} MB (leak)`);
   });
 });
