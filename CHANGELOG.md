@@ -106,7 +106,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.1608] - 2026-11-01
+## [9.0.1609] - 2026-11-01
+
+New: sirens & battery reporting (TRV06). Fixed: general reliability (TS0042, TS0043), memory and timers and lights and dimmers. Plus 4 other changes in the app core. Behind the scenes: tests and publishing checks.
+---
+
+ [9.0.1608] - 2026-11-01
 
 Maintenance build: same devices and behaviour; the publish pipeline now isolates a failed Homey build step by step before retrying.
 ---
