@@ -90,6 +90,30 @@ async function threadsFor(repo, state) {
   return out;
 }
 
+// P3193: deCONZ DDF reader. deconz-rest-plugin keeps device support in devices/tuya/*.json (DDF) files that
+// often land without an issue. Read commits touching that path since a per-path cursor (ETag cached by gh()),
+// then each commit's file list (bounded), and digest the commit like a thread. No AI, read-only.
+const DDF_REPO = 'dresden-elektronik/deconz-rest-plugin';
+const DDF_PATH = 'devices/tuya';
+const DDF_MAX_COMMITS = Number(arg('ddf-max', 20));
+async function ddfThreads(state) {
+  const ck = `ddf:${DDF_REPO}:${DDF_PATH}`;
+  const cur = state.cursors[ck];
+  const q = `repos/${DDF_REPO}/commits?path=${encodeURIComponent(DDF_PATH)}&per_page=${DDF_MAX_COMMITS}${cur ? `&since=${encodeURIComponent(cur)}` : ''}`;
+  const list = await gh(q, state);
+  if (!list || !Array.isArray(list)) return { ck, items: [] };
+  const items = [];
+  for (const c of list.slice(0, DDF_MAX_COMMITS)) {
+    const full = await gh(`repos/${DDF_REPO}/commits/${c.sha}`, state);
+    const files = full && Array.isArray(full.files) ? full.files.map((f) => f.filename).filter((f) => f.startsWith(`${DDF_PATH}/`)) : [];
+    const date = (c.commit && c.commit.committer && c.commit.committer.date) || null;
+    items.push({ number: c.sha.slice(0, 10), html_url: c.html_url, title: String((c.commit && c.commit.message) || '').split('\n')[0],
+      body: `${(c.commit && c.commit.message) || ''}\n\nDDF files:\n${files.join('\n')}`, state: 'closed', state_reason: 'completed',
+      pull_request: { merged_at: date }, labels: ['ddf'], user: c.author ? { login: c.author.login } : null, updated_at: date });
+  }
+  return { ck, items };
+}
+
 async function main() {
   const state = readJson(STATE, { cursors: {}, etags: {}, lastRun: null, quietRuns: 0 });
   const ledger = readJson(LEDGER, null);
@@ -99,8 +123,13 @@ async function main() {
   let newDigests = 0; const findings = [];
   for (const repo of repos) {
     if (stopped) break;
-    const items = await threadsFor(repo, state);
+    let items = await threadsFor(repo, state);
     if (!items) continue;
+    let ddf = null;
+    if (repo === DDF_REPO && !stopped) {
+      ddf = await ddfThreads(state);
+      items = items.concat(ddf.items);
+    }
     let maxUpd = state.cursors[repo] || null;
     const file = path.join(KDIR, `${repo.replace('/', '__')}.md`);
     const existing = fs.existsSync(file) ? fs.readFileSync(file, 'utf8') : '';
@@ -122,6 +151,11 @@ async function main() {
       }
       for (const t of d.candidateTasks) if (!cands.items.some((x) => x.url === t.url && x.kind === t.kind)) cands.items.push(t);
       newDigests++; findings.push({ key, status: d.status, couples: d.implications.couples, dps: d.implications.dps, clusters: d.implications.clusters, cause: d.cause, avoid: d.avoid });
+    }
+    if (ddf) {
+      const dmax = ddf.items.reduce((m, x) => (x.updated_at && (!m || x.updated_at > m) ? x.updated_at : m), state.cursors[ddf.ck] || null);
+      if (dmax) state.cursors[ddf.ck] = dmax;
+      if (ddf.items.length) maxUpd = items.filter((x) => !ddf.items.includes(x)).reduce((m, x) => (!m || x.updated_at > m ? x.updated_at : m), state.cursors[repo] || null);
     }
     state.cursors[repo] = maxUpd;
     const kept = [...blocks.entries()].slice(-PER_REPO_CAP).map(([, b]) => b);
@@ -146,4 +180,4 @@ async function main() {
 }
 
 if (require.main === module) main().catch((e) => { console.error(e.message); process.exit(1); });
-module.exports = { REPOS, RELEVANT };
+module.exports = { REPOS, RELEVANT, DDF_REPO, DDF_PATH, ddfThreads };
