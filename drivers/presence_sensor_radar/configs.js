@@ -503,9 +503,18 @@ const SENSOR_CONFIGS = {
       101: { cap: 'alarm_motion', type: 'motion_state_enum', enumMap: { 0: false, 1: true, 2: true, 3: true } },
       102: { cap: null, setting: 'fading_time', min: 0, max: 28800 },
       106: { cap: 'measure_luminance', type: 'lux_direct' },
-      107: { cap: null, setting: 'indicator' },
+      // WHY(P3141 / forum #5538 ZG-204ZM "no control"): Z2M hobeian.ts DP107=onOff (bool),
+      // DP122=lookup enum. Untyped entries were TX'd as 4-byte VALUE -> MCU ignored the write,
+      // and the RX enum (number) never matched the string dropdown ids.
+      107: { cap: null, setting: 'indicator', type: 'bool', enumMap: { 0: false, 1: true } },
       121: { cap: 'measure_battery', divisor: 1 },
-      122: { cap: null, setting: 'motion_detection_mode' },
+      122: {
+        cap: null,
+        setting: 'motion_detection_mode',
+        type: 'enum',
+        enumMap: { 0: '0', 1: '1', 2: '2' },
+        reverseEnumMap: { 0: 0, 1: 1, 2: 2, only_pir: 0, pir_and_radar: 1, only_radar: 2 },
+      },
       123: { cap: null, setting: 'motion_detection_sensitivity', min: 0, max: 10 },
     }
   },
