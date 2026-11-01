@@ -62,13 +62,27 @@ function check(base, head, confirmed, evidence) {
   return errors;
 }
 
+
+// P3195: the baseline is the pushed branch's OWN remote tip (bastien-home/stable-v5 have their own catalogues).
+// Detached HEAD (scheduler pushes) used to fall through to origin/master and flag master-only couples.
+const APP_BRANCH = { 'com.dlnraja.tuya.zigbee.bastien': 'bastien-home', 'com.dlnraja.tuya.zigbee.stable': 'stable-v5', 'com.dlnraja.tuya.zigbee': 'master' };
+function targetBranch(env = process.env, root = ROOT) {
+  const b = env.COUPLE_GUARD_BRANCH || env.PUSH_RETRY_BRANCH || env.GITHUB_BASE_REF;
+  if (b) {return b;}
+  try { return APP_BRANCH[JSON.parse(fs.readFileSync(path.join(root, 'app.json'), 'utf8')).id] || null; } catch (_) { return null; }
+}
+function resolveBaseRef(git, argv = process.argv, env = process.env, root = ROOT) {
+  if (argv[2]) {return argv[2];}
+  const b = targetBranch(env, root);
+  const tries = b ? [`origin/${b}`] : ['@{u}'];
+  for (const up of tries) { try { return git('merge-base', 'HEAD', up).trim(); } catch (_) { /* next */ } }
+  return null;
+}
+
 if (require.main === module) {
   const git = (...a) => execFileSync('git', a, { cwd: ROOT, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] });
-  let ref = process.argv[2];
-  if (!ref) {
-    for (const up of ['@{u}', 'origin/master']) { try { ref = git('merge-base', 'HEAD', up).trim(); break; } catch (_) { /* next */ } }
-    if (!ref) {ref = 'HEAD~1';}
-  }
+  const ref = resolveBaseRef(git);
+  if (!ref) { console.log('[couple-removal-guard] no base ref, skipped'); process.exit(0); }
   const list = fs.readdirSync(path.join(ROOT, 'drivers'));
   let base;
   try { base = loadDrivers((f) => git('show', `${ref}:${f}`), list); } catch (_) { console.log('[couple-removal-guard] no base ref, skipped'); process.exit(0); }
@@ -78,4 +92,4 @@ if (require.main === module) {
   if (errors.length) { for (const e of errors) {console.error(`::error::${e}`);} process.exit(1); }
   console.log(`[couple-removal-guard] OK vs ${ref}`);
 }
-module.exports = { confirmedCouples, matchedDrivers, check, loadDrivers };
+module.exports = { targetBranch, resolveBaseRef, confirmedCouples, matchedDrivers, check, loadDrivers };
