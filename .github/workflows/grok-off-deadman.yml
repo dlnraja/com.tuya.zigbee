@@ -1,0 +1,45 @@
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: Weekly: checks every autonomous workflow succeeded recently; keeps ONE dead-man issue open
+#   while any is stale, closes it when healthy. Honours the pause file.
+# Ideas from (thank you): Renovate and Dependabot for the merge-when-green pattern; the actions/stale and
+#   actions/labeler maintainers.
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
+#   posting stays off or ledger-gated.
+# <<< about
+# Grok-off dead-man (P3111)
+# Triggers: weekly cron + workflow_dispatch | Secrets: GITHUB_TOKEN only (free minutes, public repo)
+# Goal: if Grok Bot is unplugged, a stalled autonomous workflow is still noticed: ONE issue is opened or
+# edited in place, and closed automatically once everything is healthy. Never dispatches, publishes or
+# posts outside this repo. Kill switch: config/autonomy-paused or config/autonomy-paused.watch.
+name: Grok-off dead-man (P3111)
+
+defaults:
+  run:
+    shell: bash
+
+on:
+  schedule:
+    - cron: '29 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+  issues: write
+
+concurrency:
+  group: grok-off-deadman
+  cancel-in-progress: false
+
+jobs:
+  deadman:
+    name: Dead-man check
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+      - name: Check every autonomous workflow and keep one issue in sync
+        run: node scripts/ci/grok-off-deadman.js

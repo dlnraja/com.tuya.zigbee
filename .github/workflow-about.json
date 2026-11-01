@@ -451,6 +451,10 @@
     "diag-autoreply-bastien.yml": {
       "group": "autopilot",
       "what": "Four times a day: answers Bastien diagnostics reports by mail, in-thread to the Athom relay only, when the crash matches a known fix that is already released. Deterministic, no AI, max 5 a day, dedup by Log ID."
+    },
+    "grok-off-deadman.yml": {
+      "group": "autopilot",
+      "what": "Weekly: checks every autonomous workflow succeeded recently; keeps ONE dead-man issue open while any is stale, closes it when healthy. Honours the pause file."
     }
   }
 }
