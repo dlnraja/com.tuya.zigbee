@@ -377,7 +377,7 @@ const SENSOR_CONFIGS = {
       1: { cap: 'alarm_motion', type: 'presence_bool' },
       101: { cap: 'measure_humidity', divisor: 1 },
       106: { cap: 'measure_luminance', type: 'lux_direct' },
-      108: { cap: null, setting: 'indicator' },
+      108: { cap: null, setting: 'indicator', type: 'bool', enumMap: { 0: false, 1: true } }, // P3155 Z2M onOff
       109: { cap: null, setting: 'temperature_unit' },
       110: { cap: 'measure_battery', divisor: 1 },
       111: { cap: 'measure_temperature', smartDivisor: true },
@@ -499,7 +499,8 @@ const SENSOR_CONFIGS = {
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_bool' },
       2: { cap: null, setting: 'static_detection_sensitivity', min: 0, max: 10 },
-      4: { cap: null, setting: 'static_detection_distance', divisor: 100, min: 0, max: 6 },
+      // WHY(P3155): Z2M ZG-204ZM DP4 divideBy100, step 0.01 m (settings step follows)
+      4: { cap: null, setting: 'static_detection_distance', divisor: 100, min: 0, max: 6, step: 0.01 },
       101: { cap: 'alarm_motion', type: 'motion_state_enum', enumMap: { 0: false, 1: true, 2: true, 3: true } },
       102: { cap: null, setting: 'fading_time', min: 0, max: 28800 },
       106: { cap: 'measure_luminance', type: 'lux_direct' },
@@ -551,7 +552,7 @@ const SENSOR_CONFIGS = {
       105: { cap: null, setting: 'temperature_calibration', divisor: 10, min: -20, max: 20 },
       106: { cap: 'measure_luminance', type: 'lux_direct' },
       107: { cap: null, setting: 'illuminance_interval', min: 1, max: 720 },
-      108: { cap: null, setting: 'indicator' },
+      108: { cap: null, setting: 'indicator', type: 'bool', enumMap: { 0: false, 1: true } }, // P3155 Z2M onOff
       109: { cap: null, setting: 'temperature_unit' },
       110: { cap: 'measure_battery', divisor: 1 },
       111: { cap: 'measure_temperature', smartDivisor: true },
@@ -587,7 +588,7 @@ const SENSOR_CONFIGS = {
       102: { cap: null, internal: 'switch2' },
       103: { cap: null, internal: 'switch3' },
       108: { cap: null, internal: 'trigger_switch' },
-      111: { cap: null, setting: 'indicator' },
+      111: { cap: null, setting: 'indicator', type: 'bool', enumMap: { 0: false, 1: true } }, // P3155 Z2M onOff
       112: { cap: null, setting: 'power_on_behavior' },
       113: { cap: null, internal: 'auto_on' },
       114: { cap: null, setting: 'fading_time', min: 5, max: 28800 },
@@ -620,7 +621,7 @@ const SENSOR_CONFIGS = {
       1: { cap: 'onoff', type: 'bool' },
       2: { cap: null, internal: 'switch2' },
       3: { cap: null, internal: 'switch3' },
-      16: { cap: null, setting: 'indicator' },
+      16: { cap: null, setting: 'indicator', type: 'bool', enumMap: { 0: false, 1: true } }, // P3155 Z2M onOff
       103: { cap: null, setting: 'fading_time', min: 5, max: 28800 },
       14: { cap: null, setting: 'power_on_behavior' },
       104: { cap: null, internal: 'auto_on' },
@@ -668,9 +669,9 @@ const SENSOR_CONFIGS = {
       2: { cap: null, setting: 'static_detection_sensitivity', min: 0, max: 10 },
       4: { cap: null, setting: 'static_detection_distance', divisor: 100, min: 0, max: 5 },
       102: { cap: null, setting: 'fading_time', min: 10, max: 28800 },
-      107: { cap: null, setting: 'indicator' },
+      107: { cap: null, setting: 'indicator', type: 'bool', enumMap: { 0: false, 1: true } }, // P3155 Z2M onOff
       121: { cap: 'measure_battery', divisor: 1 },
-      122: { cap: null, setting: 'anti_interference' },
+      122: { cap: null, setting: 'anti_interference', type: 'bool', enumMap: { 0: false, 1: true } }, // P3155 Z2M ZG-204ZK onOff
       123: { cap: null, setting: 'motion_detection_sensitivity', min: 0, max: 10 },
     }
   },
@@ -693,7 +694,7 @@ const SENSOR_CONFIGS = {
       102: { cap: null, setting: 'fading_time', min: 0, max: 28800 },
       106: { cap: 'measure_luminance', type: 'lux_direct' },
       107: { cap: null, setting: 'illuminance_interval', min: 1, max: 720 },
-      108: { cap: null, setting: 'indicator' },
+      108: { cap: null, setting: 'indicator', type: 'bool', enumMap: { 0: false, 1: true } }, // P3155 Z2M onOff
       110: { cap: 'measure_battery', divisor: 1 },
     }
   },
@@ -718,7 +719,7 @@ const SENSOR_CONFIGS = {
       105: { cap: null, setting: 'temperature_calibration', divisor: 10, min: -20, max: 20 },
       106: { cap: 'measure_luminance', type: 'lux_direct' },
       107: { cap: null, setting: 'illuminance_interval', min: 1, max: 720 },
-      108: { cap: null, setting: 'indicator' },
+      108: { cap: null, setting: 'indicator', type: 'bool', enumMap: { 0: false, 1: true } }, // P3155 Z2M onOff
       109: { cap: null, setting: 'temperature_unit' },
       110: { cap: 'measure_battery', divisor: 1 },
       111: { cap: 'measure_temperature', smartDivisor: true },
@@ -736,13 +737,14 @@ const SENSOR_CONFIGS = {
     noTemperature: false,
     noHumidity: false,
     noIasMotion: true,
-    writableDPs: [2, 4, 102, 103],
+    writableDPs: [2, 4, 102, 103, 108],
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_bool' },
       2: { cap: null, setting: 'static_detection_sensitivity', min: 0, max: 10 },
       4: { cap: null, setting: 'static_detection_distance', divisor: 100, min: 0, max: 5 },
       102: { cap: null, setting: 'fading_time', min: 0, max: 28800 },
-      103: { cap: null, setting: 'anti_interference' },
+      103: { cap: null, setting: 'anti_interference', type: 'bool', enumMap: { 0: false, 1: true } }, // P3155 Z2M ZG-204ZX onOff
+      108: { cap: null, setting: 'indicator', type: 'bool', enumMap: { 0: false, 1: true } }, // P3155 additive: Z2M ZG-204ZX DP108 indicator
       106: { cap: 'measure_luminance', type: 'lux_direct' },
       // Soft climate extras observed on sibling firmwares
       101: { cap: 'measure_humidity', divisor: 1 },
