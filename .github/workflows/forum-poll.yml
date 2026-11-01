@@ -134,6 +134,28 @@ jobs:
             --message="chore(ledger): forum posts past lastSeen" \
             --paths="data/leads/forum-lastseen.json data/progress/ledger.json"
 
+      # P3144 (t749u): Homey Apps category (id 7), read-only, diff mode + adaptive backoff, no AI,
+      # digests redacted by scripts/lib/source-digest (fail closed) and linked to data/ssot/thread-digests.json.
+      - name: 🗂️ Forum Apps category scan (diff, no AI)
+        id: cat_scan
+        continue-on-error: true
+        timeout-minutes: 5
+        run: |
+          node scripts/scanners/forum-category-scan.js --category=7 --pages=${{ vars.FORUM_CAT_PAGES || '3' }} --budget=${{ vars.FORUM_CAT_BUDGET || '15' }}
+          node scripts/ci/digest-guard.js docs/knowledge/forum-apps/category-7.md data/ssot/thread-digests.json
+
+      - name: Commit Apps category digests (gated)
+        if: steps.cat_scan.outcome == 'success'
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node scripts/ci/safe-auto-commit.js --id=forum-apps-cat --max-per-day=4 \
+            --message="chore(ledger): forum Apps category digests" \
+            --paths="data/leads/forum-lastseen.json data/ssot/thread-digests.json docs/knowledge/forum-apps/category-7.md"
+
       - name: 🌍 Poll Forum
         id: poll
         run: |
