@@ -59,6 +59,8 @@ jobs:
         if: steps.ks.outputs.paused != 'true'
         run: |
           [ -s upstream-digest.md ] || exit 0
+          # P3173 (t735u): fail closed before the digest leaves the runner
+          node scripts/ci/digest-guard.js upstream-digest.md || exit 1
           n=$(gh issue list --state open --search 'in:title "Upstream watch digest"' --json number -q '.[0].number')
           if [ -n "$n" ]; then gh issue comment "$n" --body-file upstream-digest.md
           else gh issue create --title "Upstream watch digest" --body-file upstream-digest.md; fi
