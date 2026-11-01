@@ -381,6 +381,12 @@
    "target": "_tze200_gjldowol|TS0601",
    "hint": "This sensor is based on the ZM-35H-Q model, however the settings from this model do not work with this sensor.",
    "url": "https://github.com/ioBroker/ioBroker.zigbee/issues/2226"
+  },
+  {
+   "kind": "avoid",
+   "target": "_tze200_2ekuz3dz|TS0601",
+   "hint": "is listed as \"works with ZHA\" - well, I bought two of them - and they DO NOT work with ZHA.",
+   "url": "https://github.com/blakadder/zigbee/issues/736"
   }
  ]
 }
