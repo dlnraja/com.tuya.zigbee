@@ -14,9 +14,13 @@ const { execFileSync } = require('child_process');
 
 const TW = require('../../tools/ci/three-way-promote');
 const P = require('../../tools/ci/bastien-promote-upstream');
+// P3194: every temp dir made here is removed when the process exits (no /tmp leftovers)
+const __tmpMade = [];
+const __mkTmp = (p) => { const d = fs.mkdtempSync(p); __tmpMade.push(d); return d; };
+process.on('exit', () => { for (const d of __tmpMade) { try { fs.rmSync(d, { recursive: true, force: true }); } catch (_e) { /* best effort */ } } });
 
 function tmp() {
-  return fs.mkdtempSync(path.join(os.tmpdir(), 'p3019d-'));
+  return __mkTmp(path.join(os.tmpdir(), 'p3019d-'));
 }
 function write(root, rel, text) {
   fs.mkdirSync(path.dirname(path.join(root, rel)), { recursive: true });

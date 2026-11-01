@@ -521,3 +521,4 @@ A heartfelt thank you to:
 - P3191 _TZE2xx_wbhaespm|TS0601 moved climate_sensor -> smart_breaker (SUTON STB3L-125-ZJ): zigbee-herdsman-converters tuya.ts, zigpy/zha device test tze204-wbhaespm, zha-device-handlers ts0601_power.py. Evidence in data/couple-removal-evidence.json.
 - P3192 _TZE284_aao3yzhs|TS0601 battery 0 %: DP15 zero ignored while DP14 battery_state is not low. Sources: zigpy/zha-device-handlers #4288, #4519, #5126 (quirk uses DP15), Zigbee2MQTT #26215, deCONZ DDF (DP14 lowbattery). Thanks to the reporters.
 - P3193 deCONZ DDF reader: dresden-elektronik/deconz-rest-plugin devices/tuya DDF files (read-only, per-path cursor). Thanks to the deCONZ contributors.
+- P3194 test hygiene: mkdtemp dirs in p2920/p2437/p3048/p3019d tests removed on exit.

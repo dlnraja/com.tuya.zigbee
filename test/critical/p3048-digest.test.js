@@ -6,9 +6,13 @@ const fs = require('fs');
 const os = require('os');
 const path = require('path');
 const D = require(path.join(__dirname, '..', '..', 'scripts', 'automation', 'digest.cjs'));
+// P3194: every temp dir made here is removed when the process exits (no /tmp leftovers)
+const __tmpMade = [];
+const __mkTmp = (p) => { const d = fs.mkdtempSync(p); __tmpMade.push(d); return d; };
+process.on('exit', () => { for (const d of __tmpMade) { try { fs.rmSync(d, { recursive: true, force: true }); } catch (_e) { /* best effort */ } } });
 
 test('combos: unique-string cartesian product per driver, over-cap list', () => {
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'p3048-d-'));
+  const dir = __mkTmp(path.join(os.tmpdir(), 'p3048-d-'));
   const mk = (id, z) => { fs.mkdirSync(path.join(dir, id)); fs.writeFileSync(path.join(dir, id, 'driver.compose.json'), JSON.stringify({ zigbee: z })); };
   mk('a', { manufacturerName: ['_TZ1', '_TZ1', '_TZ2'], productId: ['TS0601'] });
   mk('b', { manufacturerName: ['m1', 'm2', 'm3'], productId: ['p1', 'p2'] });
