@@ -455,6 +455,10 @@
     "grok-off-deadman.yml": {
       "group": "autopilot",
       "what": "Weekly: checks every autonomous workflow succeeded recently; keeps ONE dead-man issue open while any is stale, closes it when healthy. Honours the pause file."
+    },
+    "ssot-couple-enrich.yml": {
+      "group": "enrich",
+      "what": "Daily cheap probe of the Z2M, ZHA and Johan app heads; when one moved (or weekly) it rebuilds data/ssot/couple-sources.json: per exact mfr+pid couple, the sources that confirm it, its driver, class, gangs, HomeKit service and the custom compensation for non-native capabilities. No AI, ids are regex-extracted only, couples without external proof are marked unverified, nothing is removed."
     }
   }
 }
