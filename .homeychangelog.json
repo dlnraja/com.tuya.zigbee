@@ -907,9 +907,12 @@
       ]
     }
   ],
+  "9.0.1607": {
+    "en": "Maintenance build: same devices and behaviour as the previous version (publishing and test tooling only).",
+    "fr": "Version de maintenance : mêmes appareils et même comportement que la précédente (outils de publication et de test uniquement)."
+  },
   "9.0.1606": {
-    "en": "Reliability: 1 small fix in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Fiabilité : 1 petite correction dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "en": "Reliability: 1 small fix in the app core. Behind the scenes: tests and publishing checks."
   },
   "9.0.1605": {
     "en": "New: Flow cards & device settings. Fixed: memory and timers and smart plugs & energy meters (TS011F). Plus 3 other changes in the app core. Behind the scenes: tests and publishing checks."
@@ -978,9 +981,5 @@
   "9.0.1575": {
     "en": "HEIMAN SmokeSensor-EF-3.0 pairs on the advanced smoke detector driver; Samotech SM311 and eWeLight ZB-DL01 pair as 1-gang dimmers.",
     "fr": "Le HEIMAN SmokeSensor-EF-3.0 s'appaire sur le driver de détecteur de fumée avancé ; le Samotech SM311 et l'eWeLight ZB-DL01 s'appairent comme variateurs 1 voie."
-  },
-  "9.0.1574": {
-    "en": "TRV06 battery alarm, validation and reliability fixes. Detail: the TRV06 (_TZE200_rxq4iti9) has no battery percentage, so it now shows a low-battery alarm instead of an empty battery value. Lower memory use: diagnostic logs are capped, timers are released when a device is removed, and rarely used modules load on demand.",
-    "fr": "Tête thermostatique TRV06 : le TRV06 (_TZE200_rxq4iti9) ne donne pas de pourcentage de batterie, il affiche donc désormais une alarme de batterie faible au lieu d'une valeur vide. Moins de mémoire utilisée : journaux de diagnostic plafonnés, minuteries libérées à la suppression d'un appareil, modules rarement utilisés chargés à la demande."
   }
 }

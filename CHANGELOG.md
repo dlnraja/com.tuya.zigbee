@@ -103,7 +103,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.1605] - 2026-10-31
+## [9.0.1606] - 2026-11-01
+
+Reliability: 1 small fix in the app core. Behind the scenes: tests and publishing checks.
+---
+
+ [9.0.1605] - 2026-10-31
 
 New: Flow cards & device settings. Fixed: memory and timers and smart plugs & energy meters (TS011F). Plus 3 other changes in the app core. Behind the scenes: tests and publishing checks.
 ---
