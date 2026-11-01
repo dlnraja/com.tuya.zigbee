@@ -458,11 +458,11 @@
     },
     "ssot-couple-enrich.yml": {
       "group": "enrich",
-      "what": "Daily cheap probe of the Z2M, ZHA and Johan app heads; when one moved (or weekly) it rebuilds data/ssot/couple-sources.json: per exact mfr+pid couple, the sources that confirm it, its driver, class, gangs, HomeKit service and the custom compensation for non-native capabilities. No AI, ids are regex-extracted only, couples without external proof are marked unverified, nothing is removed."
+      "what": "Daily probe of Z2M, ZHA and Johan heads; on change (or weekly) rebuilds data/ssot/couple-sources.json: sources, driver, class, gangs, HomeKit per exact couple. No AI, unproven couples marked unverified."
     },
     "upstream-thread-miner.yml": {
       "group": "enrich",
-      "what": "Adaptive (6h..7d) miner of upstream issues, PRs and discussions, open and closed (zigpy org, Z2M, deCONZ, Hubitat, Tasmota, ESPHome, tuya-local, ioBroker, Johan). Per-repo since-cursors + ETag, read-only token. Each Tuya-relevant thread becomes a deterministic, privacy-redacted digest (problem, cause, resolution, status, couples/DPs/clusters, adopt/avoid, regressions) in docs/knowledge/upstream, linked per couple in data/ssot/thread-digests.json; actionable implications become candidate tasks in data/leads/digest-candidates.json, never auto-applied. Fail-closed digest-guard + house-data-guard before commit."
+      "what": "Adaptive miner of upstream issues/PRs (zigpy, Z2M, deCONZ, others): per-repo cursors, privacy-redacted digests in docs/knowledge/upstream, couple links and candidate tasks. No AI, fail-closed guard."
     }
   }
 }
