@@ -907,9 +907,12 @@
       ]
     }
   ],
+  "9.0.1610": {
+    "en": "New: Flow cards (TS0603) and energy meters & device settings. Fixed: device settings (ZG-204ZH, ZG-204ZM) and battery reporting & crash fixes (TS0601). Plus 12 other changes in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Nouveau : cartes Flow (TS0603) et compteurs d'énergie & réglages des appareils. Corrigé : réglages des appareils (ZG-204ZH, ZG-204ZM) et niveau de batterie & plantages (TS0601). Et 12 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+  },
   "9.0.1609": {
-    "en": "New: sirens & battery reporting (TRV06). Fixed: general reliability (TS0042, TS0043), memory and timers and lights and dimmers. Plus 4 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Nouveau : sirènes & niveau de batterie (TRV06). Corrigé : fiabilité générale (TS0042, TS0043), mémoire et minuteries et éclairages et variateurs. Et 4 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "en": "New: sirens & battery reporting (TRV06). Fixed: general reliability (TS0042, TS0043), memory and timers and lights and dimmers. Plus 4 other changes in the app core. Behind the scenes: tests and publishing checks."
   },
   "9.0.1608": {
     "en": "Maintenance build: same devices and behaviour; the publish ."
@@ -975,9 +978,5 @@
   "9.0.1584": {
     "en": "Wi-Fi (local Tuya): multi-socket power strips and curtain modes are detected automatically, and a support bundle helps diagnose devices that do not respond.",
     "fr": "Wi-Fi (Tuya en local) : les multiprises et le mode des rideaux sont détectés automatiquement, et un dossier de support aide à diagnostiquer les appareils qui ne répondent pas."
-  },
-  "9.0.1582": {
-    "en": "Fixed two start-up crashes on some Homey models (memory reading not available). Firmware updates now go through Homey's own Device Updates screen. Buttons: all older button types share one event path, scenes recall correctly and extra endpoints are bound at pairing. New: Aqara DJT11LM vibration sensor and RTCGQ13LM motion sensor, Wi-Fi gateway sub-devices and a 'Import tinytuya' box on Wi-Fi pairing screens. The background health timer wakes six times less often.",
-    "fr": "Correction de deux plantages au démarrage sur certains modèles de Homey (lecture mémoire indisponible). Les mises à jour de firmware passent désormais par l'écran Mises à jour des appareils de Homey. Boutons : tous les anciens types de boutons partagent un seul circuit d'événements, les scènes se rappellent correctement et les points d'accès supplémentaires sont liés à l'appairage. Nouveau : capteur de vibration Aqara DJT11LM et détecteur de mouvement RTCGQ13LM, sous-appareils des passerelles Wi-Fi et une case « Importer tinytuya » sur les écrans d'appairage Wi-Fi. Le minuteur de santé en arrière-plan se réveille six fois moins souvent."
   }
 }
