@@ -1,28 +1,53 @@
 {
-  "harvestedAt": "2026-11-01T17:19:04.590Z",
+  "harvestedAt": "2026-11-01T23:10:48.372Z",
   "repo": "dlnraja/com.tuya.zigbee",
   "auth": "token",
   "error": null,
   "issues": [
     {
-      "number": 591,
-      "title": "[crash] 4f74fd8f71 (review)",
+      "number": 595,
+      "title": "[crash] 2768a171f9 (review)",
       "labels": [
         "crash-triage"
       ],
-      "updatedAt": "2026-11-01T14:33:36Z",
+      "updatedAt": "2026-11-01T22:18:54Z",
       "user": "github-actions[bot]",
-      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/591"
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/595"
     },
     {
-      "number": 590,
+      "number": 594,
       "title": "[crash] 84f683a0e9 (review)",
       "labels": [
         "crash-triage"
       ],
-      "updatedAt": "2026-11-01T14:33:34Z",
+      "updatedAt": "2026-11-01T22:18:53Z",
       "user": "github-actions[bot]",
-      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/590"
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/594"
+    },
+    {
+      "number": 550,
+      "title": "Bug report - [Short description]",
+      "labels": [
+        "bug",
+        "reopened-by-user"
+      ],
+      "updatedAt": "2026-11-01T22:11:40Z",
+      "user": "HiepSVG",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/550"
+    },
+    {
+      "number": 559,
+      "title": "Smartplug",
+      "labels": [
+        "enhancement",
+        "device-request",
+        "reopened-by-user",
+        "auto-triage",
+        "fingerprint-supported"
+      ],
+      "updatedAt": "2026-11-01T22:11:39Z",
+      "user": "Lalla80111",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/559"
     },
     {
       "number": 557,
@@ -30,7 +55,7 @@
       "labels": [
         "bot-digest"
       ],
-      "updatedAt": "2026-11-01T13:07:01Z",
+      "updatedAt": "2026-11-01T22:02:08Z",
       "user": "dlnraja",
       "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/557"
     },
@@ -45,37 +70,12 @@
       "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/584"
     },
     {
-      "number": 559,
-      "title": "Smartplug",
-      "labels": [
-        "enhancement",
-        "device-request",
-        "reopened-by-user",
-        "auto-triage",
-        "fingerprint-supported"
-      ],
-      "updatedAt": "2026-10-29T12:16:38Z",
-      "user": "Lalla80111",
-      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/559"
-    },
-    {
       "number": 581,
       "title": "[climate_sensor] Bug:",
       "labels": [],
       "updatedAt": "2026-10-28T19:27:51Z",
       "user": "hogseto",
       "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/581"
-    },
-    {
-      "number": 550,
-      "title": "Bug report - [Short description]",
-      "labels": [
-        "bug",
-        "reopened-by-user"
-      ],
-      "updatedAt": "2026-10-04T08:18:31Z",
-      "user": "HiepSVG",
-      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/550"
     }
   ],
   "prs": [],
