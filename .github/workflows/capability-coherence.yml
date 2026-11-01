@@ -21,6 +21,11 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+env:
+  # P2542 forfait: scheduled workflows force local AI (none used here; kept for the gate)
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
 concurrency:
   group: capability-coherence-${{ github.ref }}
   cancel-in-progress: true
