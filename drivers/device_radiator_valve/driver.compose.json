@@ -705,6 +705,21 @@
       "$extends": [
         "zcl_cluster_layer"
       ]
+    },
+    {
+      "id": "fwlimit_show_estimated_battery",
+      "type": "checkbox",
+      "value": false,
+      "label": {
+        "en": "Show estimated battery",
+        "fr": "Afficher la batterie estimée",
+        "nl": "Geschatte batterij tonen",
+        "de": "Geschätzte Batterie anzeigen"
+      },
+      "hint": {
+        "en": "Only for valves whose firmware sends no battery % (e.g. TRV06 _TZE200_rxq4iti9). ON: shows an ESTIMATED battery % from the low-battery alarm (15 % when low, 80 % otherwise). A real battery report always wins and disables the estimate. OFF: nothing changes.",
+        "fr": "Seulement pour les vannes dont le firmware n'envoie pas de % batterie (ex. TRV06 _TZE200_rxq4iti9). ACTIVÉ : affiche un % batterie ESTIMÉ à partir de l'alarme batterie faible (15 % si faible, 80 % sinon). Une vraie valeur batterie l'emporte toujours et désactive l'estimation. DÉSACTIVÉ : rien ne change."
+      }
     }
   ],
   "images": {

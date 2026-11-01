@@ -1,5 +1,8 @@
 ## [Unreleased]
 
+### Added (2026-11-01, P3108 TRV06 optional estimated battery — master soak)
+- **TRV06 `_TZE200_rxq4iti9`** (*Radiator valve*): new device setting **Show estimated battery**, OFF by default. When ON, a battery % estimated from the low-battery alarm is shown (15 % when low, 80 % otherwise) and marked as estimated. A real battery report always wins and switches the estimate off for good. When OFF, nothing changes. No re-pair needed.
+
 ### Fixed (2026-10-26, P3071c HOCH RCBO + P3071b upload headroom — master soak)
 - HOCH / WDYK ZJSBL7-100Z RCBO (`_TZE200_hkdl5fmv`, `_TZE284_hkdl5fmv`, energy_meter_din): voltage, current, power and energy now read from its own frame (DP101/102/103/113); temperature (DP105) appears only once the breaker reports it. Before, DP101-103 were misread as plug settings.
 - Publish copy only: shorter shared dropdown labels (battery type, power source, optimisation mode) and adaptive-lighting hint; option ids and stored values unchanged. Upload headroom 290 → 311 KB.

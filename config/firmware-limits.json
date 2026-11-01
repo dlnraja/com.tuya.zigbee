@@ -10,7 +10,7 @@
       "source": "Z2M TS0601_thermostat_3 (TRV06) errorOrBatteryLow on DP35 bit0, no battery % DP; issue #560 artisare",
       "limits": ["no_battery_percent", "rare_state_reports"],
       "compensation": {
-        "battery": { "mode": "alarm_estimate", "lowPercent": 15, "okPercent": null, "realDps": [6, 13, 15] },
+        "battery": { "mode": "alarm_estimate", "lowPercent": 15, "okPercent": null, "shownOkPercent": 80, "realDps": [6, 13, 15] },
         "poll": { "dps": [35], "intervalMin": 360 }
       }
     }
