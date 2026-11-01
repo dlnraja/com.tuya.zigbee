@@ -1,0 +1,75 @@
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: Red tests or validate on master right after a bot commit with a green parent: reverts that one
+#   commit (never force, humans untouched). Kill switch config/autonomy-paused.revert.
+# Ideas from (thank you): Renovate and Dependabot for the merge-when-green pattern; the actions/stale and
+#   actions/labeler maintainers.
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
+#   posting stays off or ledger-gated.
+# <<< about
+# Revert on red (P3105) — when a CI run on master turns red on a bot self-commit whose parent was green,
+# revert that commit once (git revert, never force). Human commits are never touched.
+# Kill switches: config/autonomy-paused, config/autonomy-paused.revert
+name: Bot revert on red (P3105)
+
+on:
+  workflow_run:
+    workflows: ["Node 22 runtime tests", "Homey App Validate (all levels)"]
+    types: [completed]
+    branches: [master]
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: bot-revert-on-red
+  cancel-in-progress: false
+
+env:
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  revert:
+    if: ${{ github.event.workflow_run.conclusion == 'failure' && github.event.workflow_run.event == 'push' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    env:
+      GH_TOKEN: ${{ github.token }}
+      HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+      WF_ID: ${{ github.event.workflow_run.workflow_id }}
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          fetch-depth: 200
+          ref: master
+      - name: Restore autonomy ledger
+        uses: actions/cache/restore@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+        with:
+          path: config/autonomy-learned.json
+          key: autonomy-ledger-${{ github.run_id }}
+          restore-keys: autonomy-ledger-
+      - name: Decide
+        id: d
+        run: node scripts/autonomy/bot-revert.js
+      - name: Revert once and push
+        if: steps.d.outputs.verdict == 'revert'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git revert --no-commit "$HEAD_SHA"
+          bash scripts/ci/bot-commit-guard.sh
+          git commit -q -m "revert(P3105): auto-revert ${HEAD_SHA:0:10} (red CI after bot self-commit) [auto:revert-on-red]"
+          bash .github/scripts/git-push-retry.sh --branch master --attempts 4
+          node scripts/ci/autonomy-learn.js record "revert:${HEAD_SHA:0:10}" revert ok || true
+      - name: Save autonomy ledger
+        if: steps.d.outputs.verdict == 'revert'
+        uses: actions/cache/save@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+        with:
+          path: config/autonomy-learned.json
+          key: autonomy-ledger-${{ github.run_id }}
