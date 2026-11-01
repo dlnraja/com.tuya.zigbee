@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-01T10:22:00.366Z",
+ "generated": "2026-11-01T13:40:08.537Z",
  "drivers": 418,
  "snapshot": {
   "air_conditioner_aetz01": {
@@ -195,9 +195,9 @@
    "pidSha": "ccf46349258158d1"
   },
   "button_wireless_2": {
-   "mfr": 89,
+   "mfr": 88,
    "pid": 100,
-   "mfrSha": "0ea89af76ad9b4be",
+   "mfrSha": "8228305315f313e8",
    "pidSha": "25b2f5f37b8e4dd1"
   },
   "button_wireless_3": {
@@ -207,9 +207,9 @@
    "pidSha": "06cd0099c514e4ab"
   },
   "button_wireless_4": {
-   "mfr": 32,
+   "mfr": 30,
    "pid": 40,
-   "mfrSha": "6b0a1068e9b7d56f",
+   "mfrSha": "bd513abbf012e074",
    "pidSha": "db1d9492b3bc3407"
   },
   "button_wireless_4_ts0041": {
@@ -291,9 +291,9 @@
    "pidSha": "3427697d0c296c9d"
   },
   "climate_sensor": {
-   "mfr": 501,
+   "mfr": 502,
    "pid": 32,
-   "mfrSha": "69a73a0b8d3f6d40",
+   "mfrSha": "4adc553cd3a51dd0",
    "pidSha": "4809a771f46a5606"
   },
   "climate_sensor_device": {
@@ -2229,9 +2229,9 @@
    "pidSha": "455c46e8c8549693"
   },
   "universal_zigbee": {
-   "mfr": 47,
+   "mfr": 53,
    "pid": 66,
-   "mfrSha": "a9f81a975ef45494",
+   "mfrSha": "02656dd8c03d24e7",
    "pidSha": "93b18540f1bb98f9"
   },
   "usb_dongle_dual_repeater": {
