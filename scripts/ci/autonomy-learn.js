@@ -14,7 +14,7 @@ const KILL = path.join(ROOT, 'config', 'autonomy-paused');
 const LIMITS = { maxEntries: 200, promoteAfter: 3, maxAttemptsPerSig24h: 3, maxCommitsPerDay: 6, breakerFailures24h: 5 };
 const DAY = 24 * 3600 * 1000;
 
-const FEATURES = ['enrich', 'autofix', 'publish', 'learn', 'watch', 'crash-triage'];
+const FEATURES = ['enrich', 'autofix', 'publish', 'learn', 'watch', 'crash-triage', 'revert'];
 // global switch config/autonomy-paused, or per feature config/autonomy-paused.<feature>
 function paused(root = ROOT, feature) {
   if (fs.existsSync(path.join(root, 'config', 'autonomy-paused'))) return true;

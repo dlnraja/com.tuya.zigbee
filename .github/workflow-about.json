@@ -377,6 +377,18 @@
     "crash-triage.yml": {
       "group": "autopilot",
       "what": "After Fetch Diagnostics and daily: groups crashes by signature, ranks impact × installs, keeps one tracking issue per signature in this repo with a safe-pattern fix proposal. No external post."
+    },
+    "secret-scan.yml": {
+      "group": "autopilot",
+      "what": "On every push and PR: gitleaks (pinned binary, checksum checked) scans only the new commits for secrets. Blocking."
+    },
+    "autonomy-digest.yml": {
+      "group": "autopilot",
+      "what": "Every Monday 07:07 UTC: one 'Autonomy weekly digest' issue in this repo, edited in place (red workflows, crash-triage, auto-reverts, ledger, kill switches). No external post."
+    },
+    "bot-revert-on-red.yml": {
+      "group": "autopilot",
+      "what": "Red tests or validate on master right after a bot commit with a green parent: reverts that one commit (never force, humans untouched). Kill switch config/autonomy-paused.revert."
     }
   }
 }

@@ -1,0 +1,16 @@
+# P3102: gitleaks config. Default rules + allowlist for generated fingerprint data and test fixtures
+# (Tuya manufacturer ids and fake local keys trip generic-api-key). Real token formats stay blocking.
+title = "com.tuya.zigbee gitleaks"
+[extend]
+useDefault = true
+[allowlist]
+description = "generated data and fixtures"
+paths = [
+  '''(^|/)app\.json$''',
+  '''(^|/)driver\.compose\.json$''',
+  '''^data/.*\.json$''',
+  '''^test/''',
+  '''^docs/tools/test/''',
+  '''^reports/''',
+  '''^\.homeybuild/''',
+]
