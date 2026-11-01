@@ -136,6 +136,10 @@ jobs:
         run: node scripts/ci/workflow-resource-gate.js
       - name: "P3097 perf budgets (report-only until stable baseline)"
         run: node scripts/ci/perf-budget-gate.js || true
+      - name: "P3102 standing rules gate (no ci/test CHANGELOG on master, no Athom contact path; push spacing warn)"
+        env:
+          RULES_RANGE: HEAD~20..HEAD
+        run: node scripts/ci/standing-rules-gate.js
 
       - name: Voice safety check
         id: voice

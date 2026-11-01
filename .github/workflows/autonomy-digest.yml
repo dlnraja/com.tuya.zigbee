@@ -1,0 +1,52 @@
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: Every Monday 07:07 UTC: one 'Autonomy weekly digest' issue in this repo, edited in place (red
+#   workflows, crash-triage, auto-reverts, ledger, kill switches). No external post.
+# Ideas from (thank you): Renovate and Dependabot for the merge-when-green pattern; the actions/stale and
+#   actions/labeler maintainers.
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
+#   posting stays off or ledger-gated.
+# <<< about
+# Autonomy weekly digest (P3103) — one issue in this repo, edited in place every Monday. No external post.
+name: Autonomy weekly digest (P3103)
+
+on:
+  schedule:
+    - cron: '7 7 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+  issues: write
+
+concurrency:
+  group: autonomy-digest
+  cancel-in-progress: false
+
+env:
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          fetch-depth: 300
+      - name: Restore autonomy ledger (read-only here)
+        uses: actions/cache/restore@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+        with:
+          path: config/autonomy-learned.json
+          key: autonomy-ledger-${{ github.run_id }}
+          restore-keys: autonomy-ledger-
+      - name: Build and post digest issue
+        run: node scripts/autonomy/autonomy-digest.js >> "$GITHUB_STEP_SUMMARY"
