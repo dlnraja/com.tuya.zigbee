@@ -130,6 +130,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # P3152 (t735u/t736u): fail-closed privacy gate on newly generated lines before commit
+          node scripts/ci/digest-guard.js --delta data/leads/forum-lastseen.json data/progress/ledger.json || { git checkout -- data/leads/forum-lastseen.json data/progress/ledger.json 2>/dev/null; exit 1; }
           node scripts/ci/safe-auto-commit.js --id=forum-ledger --max-per-day=6 \
             --message="chore(ledger): forum posts past lastSeen" \
             --paths="data/leads/forum-lastseen.json data/progress/ledger.json"
@@ -335,6 +337,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # P3152 (t735u/t736u): fail-closed privacy gate on newly generated lines before commit
+          node scripts/ci/digest-guard.js --delta data/leads/forum-image-ocr.json data/leads/ocr-hash-cache.json || { git checkout -- data/leads/forum-image-ocr.json data/leads/ocr-hash-cache.json 2>/dev/null; exit 1; }
           node scripts/ci/safe-auto-commit.js --id=forum-image-ocr \
             --message="chore(leads): forum screenshot OCR leads" \
             --paths="data/leads/forum-image-ocr.json data/leads/ocr-hash-cache.json"
