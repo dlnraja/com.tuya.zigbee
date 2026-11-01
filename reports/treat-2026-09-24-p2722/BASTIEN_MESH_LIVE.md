@@ -27,9 +27,9 @@ Settings still show `enable_battery_notifications=true`, `battery_report_interva
 ## Unknown mesh nodes (no Homey device)
 | Node | IEEE | RX | Note |
 |------|------|-----|------|
-| 14 | a4:c1:38:bb:8f:37:ee:17 | ~946 | Not in Devices tool — orphan / unpaired |
-| 15 | a4:c1:38:c1:17:76:42:f4 | ~5648 | Active RX; route via 20 |
-| 19 | a4:c1:38:e6:74:3a:00:da | ~1267 | Orphan |
+| 14 | [IEEE-1] | ~946 | Not in Devices tool — orphan / unpaired |
+| 15 | [IEEE-2] | ~5648 | Active RX; route via 20 |
+| 19 | [IEEE-3] | ~1267 | Orphan |
 
 ## Routers OK
 HOBEIAN ZG-301Z + NodOn radiators + `_TZ3000_ltt60asa`+TS0004: TX err ~0%.

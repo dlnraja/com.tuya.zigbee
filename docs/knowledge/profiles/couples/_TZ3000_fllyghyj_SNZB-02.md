@@ -1,6 +1,6 @@
 # `_TZ3000_fllyghyj` + Homey `SNZB-02` / Z2M `TS0201` (P2666 / P2695)
 
-Bastien live Nodes 9/11 (and Unknown #14 IEEE `a4:c1:38:c1:17:76:42:f4`).
+Bastien live Nodes 9/11 (and Unknown #14 IEEE `[IEEE-1]`).
 
 ## Identity (sacred couple nuance)
 | Field | Homey DevTools (Bastien) | Z2M / Hubitat |

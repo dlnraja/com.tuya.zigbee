@@ -1,6 +1,6 @@
 # P2744 — HiepSVG GH#550 complete fine-read resolve (2026-09-25)
 
-Couple: `_TZE204_gkfbdvyx`+`TS0601` → `presence_sensor_radar` (ZY-M100-24GV3, IEEE a4:c1:38:86:ef:fe:6b:3c)
+Couple: `_TZE204_gkfbdvyx`+`TS0601` → `presence_sensor_radar` (ZY-M100-24GV3, IEEE [IEEE-1])
 
 ## Fine read (14 HiepSVG comments) — latest C14 @ 9.0.1250
 

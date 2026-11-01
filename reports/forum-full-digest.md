@@ -90,7 +90,7 @@
 - **#1261** (2026-01-28, Pieter_Pessers, diagnostic) : Hello Dylan. Sadly all BSEED wall switches still seen as unknown zigbee device on V5.5.932. ad00e674-dbdc-47cd-bd56-8638fbe3f12c Best regards: Pieter.
 - **#1288** (2026-01-30, Patrick_Van_Deursen, diagnostic) : Hi Dylan, been following your great work for a long while, and finally jumped on the bandwagon . thanks for your continued effort! Installed a radar sensor: TZ
 - **#1349** (2026-02-02, FrankP, bug) : Nope, it never worked. Now when trying to turn it on, i get this error: Learning mode, won’t come on at all.
-- **#1350** (2026-02-02, tlink, diagnostic) : In reply to your request: Removed the app and all devices, but still not working :-/ …shows up as generic device: Zigbee-Gerät Presence a4:c1:38:a8:ad:c4:80:08
+- **#1350** (2026-02-02, tlink, diagnostic) : In reply to your request: Removed the app and all devices, but still not working :-/ …shows up as generic device: Zigbee-Gerät Presence [IEEE-1]
 - **#1351** (2026-02-02, FinnKje, diagnostic) : The human sensor is now triggering every 5 minutes. Log: 7570421d-64b1-46b4-ac74-ee02e92bbc58
 - **#1352** (2026-02-02, Freddyboy, diagnostic) : Hi @dlnraja The Moes 4 button switch is still not triggering flows with physical buttons with v5.7.52. But virtual buttons still working well. I am appending a
 - **#1359** (2026-02-04, Lasse_K, bug) : Ver.5.8.11 Watersensor & Contact sensor comes back as unknown.

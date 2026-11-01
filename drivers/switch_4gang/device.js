@@ -159,7 +159,7 @@ class Switch4GangDevice extends BaseClass {
       await healTs0004SwitchModule(this, zclNode).catch((e) => {
         this.log(`[P2634] heal soft-fail: ${e && e.message}`);
       });
-      // WHY(P2668 / Bastien Virtual→Bastien): salon 4-gang used as lighting (ZHA quirk family).
+      // WHY(P2668 / Bastien Virtual→Bastien): [pièce A] 4-gang used as lighting (ZHA quirk family).
       // Prefer light class so Homey Energy does not treat it as a metered socket tile.
       try {
         const mfr = String(

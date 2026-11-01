@@ -1,6 +1,6 @@
 # `_TZ3000_axpdxqgu` + `TS0041` (P2630)
 
-Bastien live Homey interview (ieee `7c:c6:b6:ff:fe:a3:e1:58`).
+Bastien live Homey interview (ieee `[IEEE-1]`).
 
 ## Identity
 - manufacturerName: `_TZ3000_axpdxqgu`

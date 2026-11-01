@@ -2,7 +2,7 @@
 
 - **Driver:** `button_wireless_3`
 - **Protocol:** ZCL OnOff **0xFD** + E000 (no EF00)
-- **Source:** Bastien Homey interview 2026-09-20 (IEEE `a4:c1:38:f6:3d:2d:c9:79`)
+- **Source:** Bastien Homey interview 2026-09-20 (IEEE `[IEEE-1]`)
 - **Mesh 2026-09-23:** IEEE **OFF MESH** — must re-pair
 - **Endpoints:** EP1 [0,1,6,57344]; EP2–4 [1,6]; sleepy; EP4 phantom
 - **Battery:** EP1 only; ZCL 0–200; skipBatteryReporting

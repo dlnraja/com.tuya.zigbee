@@ -124,7 +124,7 @@ Pairing: hold bottom-left (TS0044) or left button ~10s. Fresh CR2032.
 
 | Field | Value |
 |-------|--------|
-| IEEE | `a4:c1:38:f6:3d:2d:c9:79` |
+| IEEE | `[IEEE-1]` |
 | Type | enddevice, receiveWhenIdle=false (sleepy) |
 | EP1 in | basic(0), power(1), onOff(6), **E000(57344)** |
 | EP1 out | ota(25), time(10) |

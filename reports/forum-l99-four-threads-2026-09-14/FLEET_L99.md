@@ -30,7 +30,7 @@ Generated: 2026-09-13T22:39:08.785Z
 - #1604 @Olivier_VE: Hi, ​ Could you please add support for this 3-gang Wall Switch (HOBEIAN ZG-302Z3)? ​ Manufacturer ID: HOBEIAN ​Product ID: ZG-302Z3 ​ Device ID: a4:c1:38:37:d3:
 - #1701 @Adri1: Title: Add support for temperature/humidity sensor TS0201 (_TZ3000_bgsigers) Body: Device: Temperature / Humidity sensor manufacturerName: _TZ3000_bgsigers mode
 - #1912 @Roger_Gorissen: smarthomesven: You need to run npm install first before running homey app install . All right, did that. But that really scares me. As far as I understand the e
-- #2032 @dzsandzsee: Please add this Presence sensor to the app "ieeeAddress":string"a4:c1:38:d3:de:d0:e6:77", "networkAddress":int65248, "modelId":string"CK-BL702-MWS-01(7016)", "m
+- #2032 @dzsandzsee: Please add this Presence sensor to the app "ieeeAddress":string"[IEEE-1]", "networkAddress":int65248, "modelId":string"CK-BL702-MWS-01(7016)", "m
 - #2099 @VicBehrens: Hi Dylan, Thanks for assisting with all these different device issues! I requested a Moes 4-gang smart switch to be added 2 weeks ago, and as per the Github com
 - #2115 @thierry_arguimbau: Hello, could you please add this dual energy meter to your app? Thank you in advance. Best regards, https://fr.aliexpress.com/item/1005007902450082.html?spm=a2g
 - #2129 @Welshsmarthome: Hi. Hope ive not missed it already, so many devices Could you please add support for Zigbee Dual wall socket without power metering IMG_0038 1289×694 63.5 KB Ma

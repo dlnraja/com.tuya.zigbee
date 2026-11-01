@@ -9,7 +9,7 @@ Screenshot confirms **Appareil Zigbee** advanced settings:
 | Manufacturer | `_TZ3000_vsxvaj9i` |
 | Product ID | `TS0043` |
 | Type | enddevice |
-| IEEE | `a4:c1:38:f6:3d:2d:c9:79` |
+| IEEE | `[IEEE-1]` |
 
 Driver on box: **Homey Virtual Zigbee** (`homey:virtualdriverzigbee:driver`) — **not** Zigbee Bastien.
 
@@ -20,9 +20,9 @@ App installed: **Zigbee Bastien 1.0.34** (tip Athom build #40 = newer; box not u
 | Device | Mesh couple | Wrong driver | Target Bastien driver |
 |--------|-------------|--------------|------------------------|
 | Appareil Zigbee | `_TZ3000_vsxvaj9i`+`TS0043` | Homey Virtual | `button_wireless_3` |
-| Eclairage salon | `_TZ3000_ltt60asa`+`TS0004` | Homey Virtual | `switch_4gang` |
-| Sous sol / chambre principal | `_TZ3000_fllyghyj`+`SNZB-02` | Homey Virtual | `climate_sensor` / `temphumidsensor3` |
-| salon/cuisine | eWeLink `CK-TLSR8656-SS5-01(7014)` | Homey Virtual | `climate_sensor` |
+| Eclairage [pièce A] | `_TZ3000_ltt60asa`+`TS0004` | Homey Virtual | `switch_4gang` |
+| [pièce B] / [pièce C] | `_TZ3000_fllyghyj`+`SNZB-02` | Homey Virtual | `climate_sensor` / `temphumidsensor3` |
+| [pièce A]/[pièce D] | eWeLink `CK-TLSR8656-SS5-01(7014)` | Homey Virtual | `climate_sensor` |
 | 8× HOBEIAN lights | `HOBEIAN`+`ZG-301Z` | Bastien `switch_1gang` | OK (keep) |
 | NodOn radiators | SIN-4-FP-21 | NodOn app | OK (official) |
 | Somfy volets | Tahoma | Somfy app | OK (official) |
@@ -45,7 +45,7 @@ App installed: **Zigbee Bastien 1.0.34** (tip Athom build #40 = newer; box not u
 ## User actions (no Homey Virtual)
 
 1. Update **Zigbee Bastien** Test ≥ **1.0.36**
-2. Remove Virtual tiles: Appareil Zigbee, Eclairage salon, Sous sol, chambre principal (sensor), salon/cuisine
+2. Remove Virtual tiles: Appareil Zigbee, Eclairage [pièce A], [pièce B], [pièce C] (sensor), [pièce A]/[pièce D]
 3. Re-pair each under **Zigbee Bastien** only (wake-tap remotes every 2–3s)
 4. Keep NodOn / Somfy / HOBEIAN Bastien switches as-is
 

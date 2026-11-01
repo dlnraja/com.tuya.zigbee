@@ -1,6 +1,6 @@
 # eWeLink + `CK-TLSR8656-SS5-01(7014)` (P2631)
 
-Bastien mesh ieee `a4:c1:38:09:4f:ff:ff:ff` — showed as **Appareil Zigbee**.
+Bastien mesh ieee `[IEEE-1]` — showed as **Appareil Zigbee**.
 
 ## Identity
 - manufacturerName: `eWeLink`
@@ -17,7 +17,7 @@ Bastien mesh ieee `a4:c1:38:09:4f:ff:ff:ff` — showed as **Appareil Zigbee**.
 `[0, 1, 3, 4, 32, 1026, 1029, FC11/64529]` — no EF00 TX.
 
 ## Bastien mesh 2026-09-23
-Node 4 `salon/cuisine` — OK on `climate_sensor` (sleepy, multi-hop via HOBEIAN).
+Node 4 `[pièce A]/[pièce B]` — OK on `climate_sensor` (sleepy, multi-hop via HOBEIAN).
 
 ## Action
 Update Bastien tip → never pair as button 7000 · Contre quoi `check:p2695`.

@@ -8,8 +8,8 @@
 
 | IEEE (Dev Tools) | Couple | Driver | Action |
 |------------------|--------|--------|--------|
-| `7c:c6:b6:ff:fe:a3:e1:58` | `_TZ3000_axpdxqgu`+`TS0041` | `button_wireless_1` | Remove Unknown → pair Bastien 1-btn |
-| `a4:c1:38:bb:8f:37:ee:17` | `_TZ3000_dzwgk7e2`+`TS0042` | `button_wireless_2` | Remove Unknown → pair Bastien 2-btn |
+| `[IEEE-1]` | `_TZ3000_axpdxqgu`+`TS0041` | `button_wireless_1` | Remove Unknown → pair Bastien 1-btn |
+| `[IEEE-2]` | `_TZ3000_dzwgk7e2`+`TS0042` | `button_wireless_2` | Remove Unknown → pair Bastien 2-btn |
 
 Code map: `lib/zigbee/BastienIeeeIdentity.js`
 

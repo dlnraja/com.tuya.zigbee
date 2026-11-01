@@ -5,7 +5,7 @@
     "modelId": "ZG-204ZM",
     "manufacturerName": "HOBEIAN"
   },
-  "ieeeAddress": "a4:c1:38:69:e9:5c:47:12",
+  "ieeeAddress": "[IEEE-1]",
   "networkAddress": 49628,
   "deviceType": "enddevice",
   "powerSource": "battery",
@@ -27,7 +27,7 @@
       "zoneState": "enrolled",
       "zoneType": "motionSensor",
       "zoneStatus": [1, 0],
-      "iasCIEAddress": "b0:c7:de:ff:fe:56:51:0b",
+      "iasCIEAddress": "[IEEE-2]",
       "zoneId": 0,
       "clusterRevision": 1
     },

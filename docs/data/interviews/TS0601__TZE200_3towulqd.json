@@ -5,7 +5,7 @@
     "modelId": "TS0601",
     "manufacturerName": "_TZE200_3towulqd"
   },
-  "ieeeAddress": "a4:c1:38:51:fe:ec:0e:f3",
+  "ieeeAddress": "[IEEE-1]",
   "networkAddress": 41332,
   "deviceType": "enddevice",
   "powerSource": "battery",
@@ -27,7 +27,7 @@
       "zoneState": "notEnrolled",
       "zoneType": "motionSensor",
       "zoneStatus": [0, 0],
-      "iasCIEAddress": "b0:c7:de:ff:fe:56:51:0b",
+      "iasCIEAddress": "[IEEE-2]",
       "zoneId": 0,
       "clusterRevision": 1
     },
