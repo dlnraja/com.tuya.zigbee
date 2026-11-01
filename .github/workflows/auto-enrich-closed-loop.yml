@@ -482,6 +482,11 @@ jobs:
           retention-days: 14
 
       # Auto-PR if loop discovered new FPs
+      - name: "🧭 Capability coherence ratchet (P3136 — blocks A/B/C rise)"
+        run: |
+          node scripts/ci/capability-coherence-audit.js . | tee -a "$GITHUB_STEP_SUMMARY"
+          npx mocha --timeout 20000 test/p3135-capability-coherence-audit.test.js
+
       - name: 🔀 Open PR if changes
         if: steps.loop.outputs.committed == 'true' && github.event_name != 'pull_request'
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0

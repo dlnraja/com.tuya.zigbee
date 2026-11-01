@@ -160,6 +160,11 @@ jobs:
           node tools/ci/anti-bot-regression-gate.js
           node tools/ci/free-scrape-budget.js --report >> "$GITHUB_STEP_SUMMARY" || true
 
+      - name: "🧭 Capability coherence ratchet (P3136 — blocks A/B/C rise)"
+        run: |
+          node scripts/ci/capability-coherence-audit.js . | tee -a "$GITHUB_STEP_SUMMARY"
+          npx mocha --timeout 20000 test/p3135-capability-coherence-audit.test.js
+
       - name: Commit enrichment (skip ci)
         if: ${{ (github.event_name == 'schedule' || inputs.apply == true) && inputs.skip_commit != true }}
         run: |
