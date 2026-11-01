@@ -121,6 +121,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # P3172 (t735u): source-digest privacy gate, fail closed on newly generated lines
+          node scripts/ci/digest-guard.js --delta .github/state/bot-auto-scan-candidates.json .github/state/bot-issue-triage-report.json data/progress/ledger.json || { git checkout -- data/progress/ledger.json 2>/dev/null; exit 1; }
           git add .github/state/bot-auto-scan-candidates.json .github/state/bot-issue-triage-report.json || true
           if git diff --cached --quiet; then
             echo "No state changes"
