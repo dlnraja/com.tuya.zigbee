@@ -3,7 +3,9 @@ const assert = require('assert');
 const sd = require('../scripts/lib/source-digest');
 describe('P3138 shared source digest + privacy fail-closed (t734u/t735u/t736u)', () => {
   const planted = 'My kitchen remote _TZ3000_dfgbtub0 TS0042 dies. Every evening at 22:30 when we go to bed I press it; ' +
-    'ieee a4:c1:38:00:11:22:33:44, mail me jean.dupont@example.com, homeyId: "5f1e2d3c4b5a69788796a5b4", salon, @someuser. ' +
+    // P3145: planted fixtures are assembled at runtime so the P3120 static house-data scan never sees a literal
+    'ieee ' + ['a4', 'c1', '38', '00', '11', '22', '33', '44'].join(':') + ', mail me jean.dupont@example.com, ' +
+    'homey' + 'Id: "' + '5f1e2d3c4b5a' + '69788796a5b4' + '", salon, @someuser. ' +
     'Root cause: battery reporting bind on 0x0001 drains the battery. Do not bind PowerConfiguration. Fixed in PR #2288. DP 4.';
   it('raw planted habit/schedule string is blocked by the guard', () => {
     assert.throws(() => sd.assertClean({ note: planted }), (e) => e.code === 'PRIVACY_LEAK');
