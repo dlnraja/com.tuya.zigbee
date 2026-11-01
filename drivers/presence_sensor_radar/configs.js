@@ -556,7 +556,15 @@ const SENSOR_CONFIGS = {
       109: { cap: null, setting: 'temperature_unit' },
       110: { cap: 'measure_battery', divisor: 1 },
       111: { cap: 'measure_temperature', smartDivisor: true },
-      112: { cap: null, setting: 'motion_detection_mode' },
+      // WHY(P3161): ZH DP112 semantics differ from ZM DP122 (Z2M hobeian.ts ZG-204ZH lookup
+      // pir_and_radar=0, pir_or_radar=1, only_radar=2) -> own dropdown, typed enum TX, RX sync back.
+      112: {
+        cap: null,
+        setting: 'zh_motion_detection_mode',
+        type: 'enum',
+        enumMap: { 0: '0', 1: '1', 2: '2' },
+        reverseEnumMap: { 0: 0, 1: 1, 2: 2, pir_and_radar: 0, pir_or_radar: 1, only_radar: 2 },
+      },
       123: { cap: null, setting: 'motion_detection_sensitivity', min: 0, max: 10 },
     }
   },
