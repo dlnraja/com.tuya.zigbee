@@ -9,7 +9,7 @@ const path = require('path');
 const { execFileSync, spawn } = require('child_process');
 
 const HELPER = path.resolve(__dirname, '../../.github/scripts/git-push-retry.sh');
-const ENV = { ...process.env, PUSH_RETRY_BASE_S: '0', PUSH_RETRY_JITTER_S: '1', PUSH_RETRY_ATTEMPTS: '6', GIT_TERMINAL_PROMPT: '0' };
+const ENV = { ...process.env, PUSH_RETRY_BASE_S: '0', PUSH_RETRY_JITTER_S: '1', PUSH_RETRY_ATTEMPTS: '6', GIT_TERMINAL_PROMPT: '0', PUSH_RETRY_MIN_GAP_MIN: '0' }; // P3197: no 15-min master gap (P3196) in tests
 const git = (cwd, ...a) => execFileSync('git', a, { cwd, encoding: 'utf8' }).trim();
 function clone(dir, origin, name) {
   const w = path.join(dir, name);
