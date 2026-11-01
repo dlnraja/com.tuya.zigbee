@@ -52,6 +52,17 @@ class SmartBreakerDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedP
       };
     }
 
+    // P3191: SUTON STB3L-125-ZJ (_TZE200/204/284_wbhaespm|TS0601, Z2M/ZHC tuya.ts): DP1 energy /100,
+    // DP6-8 phase structs (_handleDP), DP9 fault bitmap, DP16 switch. Exact couples only.
+    if (this._isSutonStb3l()) {
+      return {
+        ...parentMappings,
+        1: { capability: 'meter_power', divisor: 100 },
+        9: { capability: 'alarm_generic', transform: (v) => Number(v) !== 0 },
+        16: { capability: 'onoff', transform: (v) => v === 1 || v === true },
+      };
+    }
+
     // TOWSMR1-40 RCBO uses different DP layout: DP6-8 for energy, DP9=energy, DP10=fault
     if (isTOWSMR1) {
       return {
@@ -85,7 +96,11 @@ class SmartBreakerDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedP
   }
 
   _hasPhaseStruct() {
-    return this._isToqcb280() || this._isZbnDj63();
+    return this._isToqcb280() || this._isZbnDj63() || this._isSutonStb3l();
+  }
+
+  _isSutonStb3l() {
+    return /^_tze(200|204|284)_wbhaespm$/.test(String(this.getSetting('zb_manufacturer_name') || '').toLowerCase());
   }
 
   _isZbnDj63() {
