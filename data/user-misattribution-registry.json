@@ -5067,41 +5067,6 @@
       ]
     },
     {
-      "id": "p2293-dfgbtub0-ts0044-wireless-4",
-      "mfr": [
-        "_TZ3000_dfgbtub0",
-        "_TZ3000_DFGBTUB0",
-        "_tz3000_dfgbtub0"
-      ],
-      "productId": [
-        "TS0044"
-      ],
-      "canonicalDriver": "button_wireless_4",
-      "forbiddenDrivers": [
-        "button_wireless_2",
-        "switch_4gang"
-      ],
-      "forbidMode": "couple",
-      "protocol": "zcl",
-      "notes": "SunBeech Moes T156967 — TS0044 = 4-gang remote; TS0042 stays on button_wireless_2",
-      "sources": [
-        "forum-156967-12",
-        "P2293"
-      ],
-      "tracks": {
-        "master": {
-          "static": true,
-          "dynamic": true
-        },
-        "stable": {
-          "static": true,
-          "dynamic": false
-        }
-      },
-      "verification": "unverified",
-      "verificationNote": "P3134: unverified. Its only cited source, forum 156967#12 (SunBeech table), lists TS0044=_TZ3000_wkai4ga5 and TS0042=_TZ3000_dfgbtub0; the harvester cross-multiplied the table. No Z2M/ZHA/deCONZ/Johan/diag proof for dfgbtub0|TS0044. Kept pending owner decision."
-    },
-    {
       "id": "p2295-3ejwxpmu-co2-sibling",
       "mfr": [
         "_tze200_3ejwxpmu",
@@ -6938,25 +6903,6 @@
       ],
       "protocol": "zcl",
       "notes": "Roy1 #649 Water flood sensor TS0207"
-    },
-    {
-      "id": "p2432-tz3000-wkai4ga5-button-2",
-      "mfr": [
-        "_TZ3000_wkai4ga5",
-        "_tz3000_wkai4ga5",
-        "_TZ3000_WKAI4GA5"
-      ],
-      "productId": [
-        "TS0042"
-      ],
-      "canonicalDriver": "button_wireless_2",
-      "forbiddenDrivers": [
-        "scene_switch_4",
-        "wall_switch_5_gang_tuya"
-      ],
-      "protocol": "zcl",
-      "notes": "Rob_G #653 2-gang wireless button TS0042",
-      "forbidMode": "couple"
     },
     {
       "id": "p2432-tze204-zenj4lxv-dimmer-2gang",
@@ -9287,6 +9233,64 @@
       "protocol": "zcl",
       "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1534 (device interview by motren, 2026-10-24)",
       "notes": "Daily KB 2026-10-25: battery 4-button scene remote, EP1 0/1/6/0xE000 + EP2-4 genOnOff, same layout as zgyzgdua/wkai4ga5. One reliable source (user interview)."
+    },
+    {
+      "id": "p2293-dfgbtub0-ts0044-wireless-4",
+      "mfr": [
+        "_TZ3000_dfgbtub0",
+        "_TZ3000_DFGBTUB0",
+        "_tz3000_dfgbtub0"
+      ],
+      "productId": [
+        "TS0044"
+      ],
+      "canonicalDriver": null,
+      "forbiddenDrivers": [
+        "button_wireless_4",
+        "button_wireless_2",
+        "switch_4gang"
+      ],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "notes": "SunBeech Moes T156967 — TS0044 = 4-gang remote; TS0042 stays on button_wireless_2",
+      "sources": [
+        "forum-156967-12",
+        "P2293"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      },
+      "verification": "artifact-removed",
+      "verificationNote": "P3146: harvester cross-product artifact of forum 156967#12 (SunBeech table: TS0044=_TZ3000_wkai4ga5, TS0042=_TZ3000_dfgbtub0); no Z2M/ZHA/deCONZ/Johan/diag source; removed after the removal-evidence gate (data/couple-removal-evidence.json)."
+    },
+    {
+      "id": "p2432-tz3000-wkai4ga5-button-2",
+      "mfr": [
+        "_TZ3000_wkai4ga5",
+        "_tz3000_wkai4ga5",
+        "_TZ3000_WKAI4GA5"
+      ],
+      "productId": [
+        "TS0042"
+      ],
+      "canonicalDriver": null,
+      "forbiddenDrivers": [
+        "button_wireless_2",
+        "scene_switch_4",
+        "wall_switch_5_gang_tuya"
+      ],
+      "protocol": "zcl",
+      "notes": "Rob_G #653 2-gang wireless button TS0042",
+      "forbidMode": "couple",
+      "verification": "artifact-removed",
+      "verificationNote": "P3146: harvester cross-product artifact of forum 156967#12 (SunBeech table: TS0044=_TZ3000_wkai4ga5, TS0042=_TZ3000_dfgbtub0); no Z2M/ZHA/deCONZ/Johan/diag source; removed after the removal-evidence gate (data/couple-removal-evidence.json). Rob_G #653 is an interview of _TZ3000_wkai4ga5 TS0044, not TS0042."
     }
   ],
   "entries": {
