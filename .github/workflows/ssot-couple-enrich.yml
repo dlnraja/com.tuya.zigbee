@@ -154,6 +154,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           node -e 'const d=require("./data/ssot/couple-sources.json");if(!d._meta||!d.couples||!d.drivers)process.exit(1);for(const k of Object.keys(d.couples))if(!/^_t[a-z0-9]{2,5}_[a-z0-9]{4,16}\|[A-Za-z0-9_. +/\-]{2,40}$/.test(k))throw new Error("bad key "+k)'
+          node scripts/ci/digest-guard.js data/ssot/couple-sources.json  # P3138 fail-closed privacy gate
+          node tools/ci/house-data-guard.js
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           node scripts/ci/safe-auto-commit.js --id=ssot-couple-enrich \
