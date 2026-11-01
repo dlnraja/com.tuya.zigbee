@@ -364,3 +364,4 @@ Reporters of dlnraja/com.tuya.zigbee issues not credited elsewhere in this file.
 
 - **SSOT couple-sources ledger (P3136)** - `data/ssot/couple-sources.json` records, per exact mfr+pid couple, links to the sources that confirm it: Koenkk/zigbee-herdsman-converters (`src/devices/tuya.ts` fingerprints and whiteLabel entries), zigpy/zha-device-handlers (`zhaquirks/tuya` signatures) and JohanBendz/com.tuya.zigbee (driver listings, read-only). Only ids, model and vendor names are recorded; no code copied.
 - **zigpy/zha-device-handlers #1746 / PR #2288** (evlo, MattWestb, javicalle, TheJulianJES, cordvision, Rojoss) - TS0042 signatures for `_TZ3000_dfgbtub0` and `_TZ3000_5e235jpa`, the 0xFD press-type mapping and the no-bind battery rule, recorded as facts in `data/ssot/curated-facts.json` (P3136b). No code copied.
+- P3143: knob press dedup inspired by community reports in Johan Bendz's Tuya Zigbee forum topic 26439 (#5526-5537, _TZ3000_qja6nq5z/TS004F).
