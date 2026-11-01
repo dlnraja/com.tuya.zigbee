@@ -35,3 +35,20 @@ before commit; any hit fails the job. Test: `test/p3138-source-digest.test.js` (
 ## Rollout status
 Shared module + guard: miner (P3138) and SSOT enrich. Other readers adopt it incrementally: each must call
 `build()` + `assertClean()` before writing; a reader that writes free text without it is a rule violation.
+
+## Rollout to existing readers (P3152+, t735u)
+
+Each reader gets `node scripts/ci/digest-guard.js --delta <paths>` right before its commit step, on the same
+paths it commits. `--delta` checks only lines added vs HEAD (and untracked files), strips machine ISO-8601
+run stamps, and fails closed: on a hit the paths are reset and the step exits 1, so nothing is committed.
+One reader per push, all three branches.
+
+| Reader | Workflow | Status |
+|:--|:--|:--|
+| forum | forum-poll.yml | P3152 |
+| Gmail/diag | gmail-diagnostics.yml | pending |
+| issue/PR triage | auto-bot-issue-triage.yml | pending |
+| upstream-watch | upstream-watch.yml | pending |
+| Johan/forks | johan-thread-intel.yml | pending |
+| KB | kb-refresh.yml | pending |
+| crash-triage | crash-triage.yml | pending |
