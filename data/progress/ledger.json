@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-01T14:36:53.445Z",
+ "updated": "2026-11-01T18:04:18.664Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -8694,6 +8694,26 @@
    "kind": "general",
    "mailDate": "2026-10-18T22:44:27.000Z"
   },
+  "diag:5f5c47d162fa052a": {
+   "status": "done",
+   "date": "2026-11-01",
+   "hash": "0756626bf5d17dca",
+   "note": "diagnostic mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "diagnostic",
+   "mailDate": "2026-11-01T17:40:56.000Z",
+   "appVersion": "9.0.1604",
+   "drivers": [
+    "wifi_switch",
+    "wifi_switch_2gang",
+    "wifi_switch_3gang",
+    "wifi_switch_4gang",
+    "wifi_thermostat",
+    "wifi_water_tank_monitor",
+    "wifi_water_valve",
+    "zigbee_repeater"
+   ]
+  },
   "diag:602a75c3f6c89b5b": {
    "status": "done",
    "date": "2026-10-30",
@@ -8885,6 +8905,15 @@
    "by": "tuya-deep-diag",
    "kind": "github",
    "mailDate": "2026-10-20T10:34:44.000Z"
+  },
+  "diag:69520fcd3fc50fdb": {
+   "status": "done",
+   "date": "2026-11-01",
+   "hash": "830e4e8354f8ddcd",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-01T17:53:06.000Z"
   },
   "diag:69df26e821d66bc3": {
    "status": "pending",
@@ -10161,6 +10190,15 @@
    "by": "tuya-deep-diag",
    "kind": "general",
    "mailDate": "2026-10-19T08:06:28.000Z"
+  },
+  "diag:9ef01fdd5b729457": {
+   "status": "done",
+   "date": "2026-11-01",
+   "hash": "243a7132f050259a",
+   "note": "diagnostic mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "diagnostic",
+   "mailDate": "2026-11-01T17:02:38.000Z"
   },
   "diag:9f755061fa589918": {
    "status": "done",
@@ -12384,6 +12422,16 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-10-21T09:59:20.000Z"
+  },
+  "diag:fa826a26c110a7b2": {
+   "status": "pending",
+   "date": "2026-11-01",
+   "hash": "0e2dd0a8cf7f5b3b",
+   "note": "bug_report mail; 1 error line(s)",
+   "by": "fetch-diags",
+   "kind": "bug_report",
+   "mailDate": "2026-11-01T17:53:20.000Z",
+   "errors": 1
   },
   "diag:fa8dfe23799df906": {
    "status": "done",
