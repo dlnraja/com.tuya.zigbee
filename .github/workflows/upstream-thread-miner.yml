@@ -1,0 +1,155 @@
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: Adaptive (6h..7d) miner of upstream issues, PRs and discussions, open and closed (zigpy org,
+#   Z2M, deCONZ, Hubitat, Tasmota, ESPHome, tuya-local, ioBroker, Johan). Per-repo since-cursors + ETag,
+#   read-only token. Each Tuya-relevant thread becomes a deterministic, privacy-redacted digest (problem,
+#   cause, resolution, status, couples/DPs/clusters, adopt/avoid, regressions) in docs/knowledge/upstream,
+#   linked per couple in data/ssot/thread-digests.json; actionable implications become candidate tasks in
+#   data/leads/digest-candidates.json, never auto-applied. Fail-closed digest-guard + house-data-guard before
+#   commit.
+# Ideas from (thank you): Koen Kanters and the zigbee-herdsman-converters / Zigbee2MQTT contributors; the
+#   zigpy / ZHA device handler authors; Blakadder's Zigbee device database; JohanBendz's original Tuya Zigbee
+#   app (read-only reference).
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
+#   posting stays off or ledger-gated.
+# <<< about
+# P3138 — upstream issues/PR/discussion miner + structured digests (t733u/t734u/t736u).
+name: Upstream Thread Miner
+
+on:
+  schedule:
+    # Probe every 6h; the miner itself backs off (state.nextIntervalH, 6h..168h) when runs are quiet.
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+    inputs:
+      seed:
+        description: 'Seed mode (search API for Tuya ids, ignores cursors)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: upstream-thread-miner
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  NODE_VERSION: '22'
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  AI_ALLOW_PAID: 'false'
+
+jobs:
+  mine:
+    name: Mine + digest (no AI, read-only token)
+    if: vars.UPSTREAM_MINER_DISABLED != 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      issues: read
+    outputs:
+      changed: ${{ steps.diff.outputs.changed }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          persist-credentials: false
+
+      - name: Restore cursors + ETags
+        uses: actions/cache/restore@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+        with:
+          path: .cache/upstream-miner-state.json
+          key: upstream-miner-${{ github.run_id }}
+          restore-keys: upstream-miner-
+
+      - name: Adaptive gate
+        id: gate
+        run: |
+          h=$(node -e 'try{const s=require("./.cache/upstream-miner-state.json");console.log(s.nextIntervalH||6)}catch(e){console.log(0)}')
+          age=$(( ( $(date +%s) - $(stat -c %Y .cache/upstream-miner-state.json 2>/dev/null || echo 0) ) / 3600 ))
+          run=false
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "$h" = "0" ] || [ "$age" -ge "$h" ]; then run=true; fi
+          echo "run=$run" >> "$GITHUB_OUTPUT"; echo "interval=${h}h age=${age}h run=$run"
+
+      - name: Setup Node
+        if: steps.gate.outputs.run == 'true'
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Mine (external text is data only)
+        if: steps.gate.outputs.run == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SEED: ${{ inputs.seed && '--seed' || '' }}
+        run: node scripts/scanners/upstream-thread-miner.js --max-requests=150 --pages=3 $SEED
+
+      - name: Fail-closed privacy gates
+        if: steps.gate.outputs.run == 'true'
+        run: |
+          node scripts/ci/digest-guard.js
+          node tools/ci/house-data-guard.js
+
+      - name: Diff
+        id: diff
+        run: |
+          if git status --porcelain -- docs/knowledge/upstream data/ssot/thread-digests.json data/leads/digest-candidates.json | grep -q .; then echo "changed=true" >> "$GITHUB_OUTPUT"; else echo "changed=false" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Save cursors + ETags
+        if: always() && steps.gate.outputs.run == 'true'
+        uses: actions/cache/save@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+        with:
+          path: .cache/upstream-miner-state.json
+          key: upstream-miner-${{ github.run_id }}
+
+      - name: Upload digests
+        if: steps.diff.outputs.changed == 'true'
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0 (node24, P3025b)
+        with:
+          name: upstream-digests
+          path: |
+            docs/knowledge/upstream
+            data/ssot/thread-digests.json
+            data/leads/digest-candidates.json
+          retention-days: 3
+
+  commit:
+    name: Commit digests (gated)
+    needs: mine
+    if: needs.mine.outputs.changed == 'true' && vars.UPSTREAM_MINER_DISABLED != 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      issues: write  # safe-auto-commit: single refusal comment on the tracking issue
+    steps:
+      - name: Checkout
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+
+      - name: Setup Node
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Download digests
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
+        with:
+          name: upstream-digests
+          path: .
+
+      - name: Re-check privacy (fail closed) then commit
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node scripts/ci/digest-guard.js
+          node tools/ci/house-data-guard.js
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node scripts/ci/safe-auto-commit.js --id=upstream-thread-miner \
+            --message="chore(knowledge): upstream thread digests (P3138) [skip ci]" \
+            --paths="docs/knowledge/upstream data/ssot/thread-digests.json data/leads/digest-candidates.json"
