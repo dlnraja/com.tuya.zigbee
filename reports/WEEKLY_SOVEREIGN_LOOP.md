@@ -1,7 +1,7 @@
 # Weekly Sovereign Loop
 
-Generated: 2026-10-25T11:43:36.698Z
-Version: **9.0.1597** · Branch: `master`
+Generated: 2026-11-01T13:41:39.587Z
+Version: **9.0.1609** · Branch: `master`
 
 ## Quota policy
 - Cursor Automation = thin weekly brain (read report → bounded reliability fixes)
@@ -40,35 +40,35 @@ Version: **9.0.1597** · Branch: `master`
 - ❌ `self-improve.yml` — workflow not found
 
 ## Recent workflow runs
-- [in_progress] Weekly Sovereign Loop (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/40189806324
-- [success] Autonomous Verification (P37) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/40189639339
-- [success] 🤖 Auto-Fix + Publish Pipeline (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/40187985168
-- [success] 🔄 Auto-Enrich Closed Loop (P69) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/40186829150
-- [success] Gmail Diagnostics Auto-Analysis (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/40183976636
-- [success] GitHub Shadow Policy (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/40183757472
-- [success] Doc Coverage (P3032) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/40183747402
-- [success] 🛡️ Unified CI/CD Orchestrator (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/40183737408
-- [success] 🔍 Syntax Check & SDK3 Validation (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/40183727682
-- [success] Batch Analyze & Respond (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/40183567089
+- [skipped] CI autofix (P3048, no AI) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/41312452192
+- [skipped] CI autofix (P3048, no AI) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/41312382519
+- [skipped] Bot revert on red (P3105) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/41312273355
+- [skipped] CI autofix (P3048, no AI) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/41312273344
+- [in_progress] Weekly Sovereign Loop (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/41312229879
+- [skipped] CI autofix (P3048, no AI) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/41312225771
+- [skipped] Secure Notifications (Enhanced) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/41312165536
+- [success] Publish hold bisect (P3095) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/41312165517
+- [success] Secret scan (gitleaks) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/41312115410
+- [success] 🤖 Auto-Fix + Publish Pipeline (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/41312115361
 
 ## Publish / validate related
-- [success] 🤖 Auto-Fix + Publish Pipeline — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/40187985168
-- [success] Homey Store Peer Probe — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/40183468535
+- [success] Publish hold bisect (P3095) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/41312165517
+- [success] 🤖 Auto-Fix + Publish Pipeline — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/41312115361
+- [success] Auto-Publish on Push — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/41312115331
 
 ## Open issues
-- #571 [Bug] QT-07S (_TZE284_myd45weu / TS0601) remains unknown and Configure keeps loading — v9.0.1445 Test
-- #570 [soil_sensor] Bug: AOYAN AY-303Z soil sensor not recognized despite fingerprint in soil_sensor driver
-- #560 Bug report - TRV06 Smart Zigbee Radiator Valve - isn't working
-- #559 Smartplug
-- #557 🤖 Daily digest
-- #550 Bug report - [Short description]
+- [#584](https://github.com/dlnraja/com.tuya.zigbee/issues/584) — about: `TS0601`
+- [#581](https://github.com/dlnraja/com.tuya.zigbee/issues/581) — about: unclassified
+- [#559](https://github.com/dlnraja/com.tuya.zigbee/issues/559) — about: unclassified
+- [#557](https://github.com/dlnraja/com.tuya.zigbee/issues/557) — about: unclassified
+- [#550](https://github.com/dlnraja/com.tuya.zigbee/issues/550) — about: unclassified
 
 ## Open PRs
 - none
 
 ## Cursor brain — do this week (max)
 - **P1**: Human issues remain open — verify FP/runtime fixes silently; do not mass-close needs-maintainer.
-  - #571 [Bug] QT-07S (_TZE284_myd45weu / TS0601) remains unknown and Configure keeps loading — v9.0.1445 Test · #570 [soil_sensor] Bug: AOYAN AY-303Z soil sensor not recognized despite fingerprint in soil_sensor driver · #560 Bug report - TRV06 Smart Zigbee Radiator Valve - isn't working · #550 Bug report - [Short description]
+  - [#584](https://github.com/dlnraja/com.tuya.zigbee/issues/584) — about: `TS0601` · [#581](https://github.com/dlnraja/com.tuya.zigbee/issues/581) — about: unclassified · [#550](https://github.com/dlnraja/com.tuya.zigbee/issues/550) — about: unclassified
 - **P0**: Local gates failing: dualClaim — fix before any publish.
 - **P1**: Some workflow dispatches failed (check GH_PAT / workflow names): mega-crawl.yml, gmail-diagnostics.yml, forum-poll.yml, auto-bot-issue-triage.yml, publish-diagnose.yml, safe-sync-stable.yml, self-improve.yml
 
