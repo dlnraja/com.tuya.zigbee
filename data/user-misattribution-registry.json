@@ -5079,8 +5079,9 @@
       "productId": [
         "TS0044"
       ],
-      "canonicalDriver": "button_wireless_4",
+      "canonicalDriver": null,
       "forbiddenDrivers": [
+        "button_wireless_4",
         "button_wireless_2",
         "switch_4gang"
       ],
@@ -5101,8 +5102,8 @@
           "dynamic": false
         }
       },
-      "verification": "unverified",
-      "verificationNote": "P3134: unverified. Its only cited source, forum 156967#12 (SunBeech table), lists TS0044=_TZ3000_wkai4ga5 and TS0042=_TZ3000_dfgbtub0; the harvester cross-multiplied the table. No Z2M/ZHA/deCONZ/Johan/diag proof for dfgbtub0|TS0044. Kept pending owner decision."
+      "verification": "artifact-removed",
+      "verificationNote": "P3146: harvester cross-product artifact of forum 156967#12 (SunBeech table: TS0044=_TZ3000_wkai4ga5, TS0042=_TZ3000_dfgbtub0); no Z2M/ZHA/deCONZ/Johan/diag source; removed after the removal-evidence gate (data/couple-removal-evidence.json)."
     },
     {
       "id": "p2295-3ejwxpmu-co2-sibling",
@@ -6952,14 +6953,17 @@
       "productId": [
         "TS0042"
       ],
-      "canonicalDriver": "button_wireless_2",
+      "canonicalDriver": null,
       "forbiddenDrivers": [
+        "button_wireless_2",
         "scene_switch_4",
         "wall_switch_5_gang_tuya"
       ],
       "protocol": "zcl",
       "notes": "Rob_G #653 2-gang wireless button TS0042",
-      "forbidMode": "couple"
+      "forbidMode": "couple",
+      "verification": "artifact-removed",
+      "verificationNote": "P3146: harvester cross-product artifact of forum 156967#12 (SunBeech table: TS0044=_TZ3000_wkai4ga5, TS0042=_TZ3000_dfgbtub0); no Z2M/ZHA/deCONZ/Johan/diag source; removed after the removal-evidence gate (data/couple-removal-evidence.json). Rob_G #653 is an interview of _TZ3000_wkai4ga5 TS0044, not TS0042."
     },
     {
       "id": "p2432-tze204-zenj4lxv-dimmer-2gang",

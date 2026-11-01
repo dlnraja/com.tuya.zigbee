@@ -178,12 +178,6 @@
     },
     {
       "mfr": "_TZ3000_dfgbtub0",
-      "pid": "TS0044",
-      "driverId": "button_wireless_4",
-      "note": "P2353 Moes 4-btn wireless"
-    },
-    {
-      "mfr": "_TZ3000_dfgbtub0",
       "pid": "TS0042",
       "driverId": "button_wireless_2",
       "note": "P2353 Moes 2-btn sibling (same mfr, different pid)"
@@ -793,12 +787,6 @@
       "pid": "TS0207",
       "driverId": "water_leak_sensor",
       "note": "Roy1 #649 water flood sensor"
-    },
-    {
-      "mfr": "_TZ3000_wkai4ga5",
-      "pid": "TS0042",
-      "driverId": "button_wireless_2",
-      "note": "Rob_G #653 2-gang wireless button"
     },
     {
       "mfr": "_TZE204_qasjif9e",

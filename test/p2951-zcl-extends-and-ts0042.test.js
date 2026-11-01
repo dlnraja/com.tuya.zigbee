@@ -23,13 +23,13 @@ describe('P2951 zcl_cluster_layer $extends', () => {
   it('every driver that pulls the layer uses $extends: ["zcl_cluster_layer"]', () => {
     const bad = [];
     for (const id of fs.readdirSync(path.join(ROOT, 'drivers'))) {
-      if (!fs.statSync(path.join(ROOT, 'drivers', id)).isDirectory()) continue; // drivers/README.md (docs)
+      if (!fs.statSync(path.join(ROOT, 'drivers', id)).isDirectory()) {continue;} // drivers/README.md (docs)
       for (const name of ['driver.compose.json', 'driver.settings.compose.json']) {
         const f = path.join(ROOT, 'drivers', id, name);
-        if (!fs.existsSync(f)) continue;
+        if (!fs.existsSync(f)) {continue;}
         const raw = fs.readFileSync(f, 'utf8');
-        if (raw.includes('zclClusterLayer')) bad.push(`${id}/${name}`);
-        if (!raw.includes('zcl_cluster_layer') && !raw.includes('zclClusterLayer')) continue;
+        if (raw.includes('zclClusterLayer')) {bad.push(`${id}/${name}`);}
+        if (!raw.includes('zcl_cluster_layer') && !raw.includes('zclClusterLayer')) {continue;}
       }
     }
     assert.deepStrictEqual(bad, []);
@@ -37,29 +37,29 @@ describe('P2951 zcl_cluster_layer $extends', () => {
   it('compose vs app.json divergence reports no orphan zcl_cluster_layer settings', () => {
     // Inline the same analyser as the critical test (mocha-free).
     function settingIds(node, out = new Set()) {
-      if (Array.isArray(node)) node.forEach((n) => settingIds(n, out));
+      if (Array.isArray(node)) {node.forEach((n) => settingIds(n, out));}
       else if (node && typeof node === 'object') {
-        if (typeof node.id === 'string') out.add(node.id);
-        for (const ext of [].concat(node.$extends || [])) if (typeof ext === 'string') out.add(ext);
-        if (node.children) settingIds(node.children, out);
+        if (typeof node.id === 'string') {out.add(node.id);}
+        for (const ext of [].concat(node.$extends || [])) {if (typeof ext === 'string') {out.add(ext);}}
+        if (node.children) {settingIds(node.children, out);}
       }
       return out;
     }
     const app = JSON.parse(fs.readFileSync(path.join(ROOT, 'app.json'), 'utf8'));
     const per = {};
     for (const id of fs.readdirSync(path.join(ROOT, 'drivers'))) {
-      if (!fs.statSync(path.join(ROOT, 'drivers', id)).isDirectory()) continue; // drivers/README.md (docs)
+      if (!fs.statSync(path.join(ROOT, 'drivers', id)).isDirectory()) {continue;} // drivers/README.md (docs)
       const c = JSON.parse(fs.readFileSync(path.join(ROOT, 'drivers', id, 'driver.compose.json'), 'utf8'));
       const s = settingIds(c.settings);
       const sf = path.join(ROOT, 'drivers', id, 'driver.settings.compose.json');
-      if (fs.existsSync(sf)) settingIds(JSON.parse(fs.readFileSync(sf, 'utf8')), s);
+      if (fs.existsSync(sf)) {settingIds(JSON.parse(fs.readFileSync(sf, 'utf8')), s);}
       per[id] = s;
     }
     const orphan = [];
     for (const d of app.drivers || []) {
-      if (!per[d.id]) continue;
+      if (!per[d.id]) {continue;}
       for (const sid of settingIds(d.settings)) {
-        if (sid === 'zcl_cluster_layer' && !per[d.id].has(sid)) orphan.push(d.id);
+        if (sid === 'zcl_cluster_layer' && !per[d.id].has(sid)) {orphan.push(d.id);}
       }
     }
     assert.deepStrictEqual(orphan.slice(0, 5), [], `orphan zcl_cluster_layer still on ${orphan.length} drivers`);
@@ -76,30 +76,30 @@ describe('P2951 _TZ3000_dfgbtub0|TS0042 on button_wireless_2', () => {
     assert.ok(z.manufacturerName.includes('_tz3000_dfgbtub0'));
     assert.ok(z.productId.includes('TS0042'));
   });
-  it('button_wireless_4 keeps the sacred TS0044 couple and never lists TS0042', () => {
+  it('button_wireless_4 no longer lists dfgbtub0 (P3146 artifact) and never lists TS0042', () => {
     const z = zigbee('button_wireless_4');
-    assert.ok(z.manufacturerName.includes('_TZ3000_dfgbtub0'));
+    assert.ok(!z.manufacturerName.some((m) => /dfgbtub0/i.test(m)));
     assert.ok(z.productId.includes('TS0044'));
     assert.ok(!z.productId.includes('TS0042'));
   });
-  it('button_wireless_2 never lists TS0044 (TS0044 couple stays on button_wireless_4 only)', () => {
+  it('button_wireless_2 never lists TS0044 (dfgbtub0 is a 2-button remote)', () => {
     assert.ok(!zigbee('button_wireless_2').productId.includes('TS0044'));
   });
-  it('the only new theoretical dual is the reviewed TS0215A entry', () => {
+  it('P3146: no TS0215A dual left once dfgbtub0 left button_wireless_4', () => {
     const r = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/native-matrix-reviewed-duals.json'), 'utf8'));
     const e = r.entries.find((x) => x.couple === '_TZ3000_dfgbtub0|TS0215A');
-    assert.ok(e && e.reason && e.source && e.date);
+    assert.strictEqual(e, undefined);
   });
   it('exact couple resolves to button_wireless_2 only among button drivers', () => {
     const owners = [];
     for (const id of fs.readdirSync(path.join(ROOT, 'drivers'))) {
-      if (!fs.statSync(path.join(ROOT, 'drivers', id)).isDirectory()) continue; // drivers/README.md (docs)
+      if (!fs.statSync(path.join(ROOT, 'drivers', id)).isDirectory()) {continue;} // drivers/README.md (docs)
       const f = path.join(ROOT, 'drivers', id, 'driver.compose.json');
-      if (!fs.existsSync(f)) continue;
+      if (!fs.existsSync(f)) {continue;}
       const z = JSON.parse(fs.readFileSync(f, 'utf8')).zigbee || {};
       const hasM = (z.manufacturerName || []).some((m) => m.toLowerCase() === '_tz3000_dfgbtub0');
       const hasP = (z.productId || []).includes('TS0042');
-      if (hasM && hasP) owners.push(id);
+      if (hasM && hasP) {owners.push(id);}
     }
     assert.deepStrictEqual(owners.filter((d) => !d.startsWith('universal') && !d.includes('generic')), ['button_wireless_2']);
   });

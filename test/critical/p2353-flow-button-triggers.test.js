@@ -74,7 +74,7 @@ describe('P2353 flow button trigger candidates', () => {
         && c.driverId === driverId,
     );
     assert.ok(has('_TZ3000_wkai4ga5', 'TS0044', 'scene_switch_4'));
-    assert.ok(has('_TZ3000_dfgbtub0', 'TS0044', 'button_wireless_4'));
+    assert.ok(!has('_TZ3000_dfgbtub0', 'TS0044', 'button_wireless_4')); // P3146: forum-table artifact removed
     assert.ok(has('_TZ3000_dfgbtub0', 'TS0042', 'button_wireless_2'));
   });
 

@@ -13,7 +13,7 @@ describe('P3134 couple-removal guard', function () {
     const cs = [...g.confirmedCouples(R)].filter((c) => mk.test(c));
     assert.ok(cs.length >= 4);
     for (const c of cs) { const [m, p] = c.split('|'); assert.ok(g.matchedDrivers(head, m, p).length, c); }
-    assert.ok(g.matchedDrivers(head, '_TZ3000_dfgbtub0', 'TS0044').includes('button_wireless_4'), 'attested TS0044 kept');
+    // P3146: _TZ3000_dfgbtub0|TS0044 was a forum-table artifact and was removed with an evidence entry.
   });
   it('flags a maker removal that drops another confirmed pid', function () {
     const D = (m, p) => ({ m: new Set(m), p: new Set(p) });
@@ -33,13 +33,13 @@ describe('P3134 removal evidence (t730u)', function () {
     const sources = Object.fromEntries(ev.REQUIRED.map((k) => [k, 'checked']));
     assert.strictEqual(g.check(base, head, new Set(), { entries: [{ couple: '_X_1|TS0042', driver: 'a', sources }] }).length, 0);
   });
-  it('records the four P3131 removals and marks dfgbtub0|TS0044 unverified', function () {
+  it('records the four P3131 removals and marks dfgbtub0|TS0044 as a removed artifact', function () {
     const s = ev.load();
     for (const [m, d] of [['_TZ3000_46vasa5h', 'switch_1gang'], ['_TZ3000_cehuw1lw', 'button_wireless_plug'], ['_TZE284_xpq2rzhq', 'climate_sensor'], ['_TZ3000_dfgbtub0', 'button_wireless_3']]) {assert.ok(ev.hasEvidence(s, m, d), m);}
     assert.ok(fs.readFileSync(path.join(R, 'docs/rules/COUPLE_REMOVAL_EVIDENCE.md'), 'utf8').includes('couple-removal-guard'));
     const hits = [];
     const walk = (o) => { if (o && typeof o === 'object') { if (o.id === 'p2293-dfgbtub0-ts0044-wireless-4') {hits.push(o.verification);} Object.values(o).forEach(walk); } };
     walk(require('../data/user-misattribution-registry.json'));
-    assert.deepStrictEqual([...new Set(hits)], ['unverified']);
+    assert.deepStrictEqual([...new Set(hits)], ['artifact-removed']);
   });
 });

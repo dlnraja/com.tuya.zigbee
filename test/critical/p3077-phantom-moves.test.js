@@ -188,18 +188,18 @@ describe('P3077 phantom moves', () => {
     assert.ok(g.length >= 4 && g.every((x) => x.driverId === 'smartplug'));
     assert.strictEqual(fx.exemptions.filter((e) => /P3077 batch 14/.test(e.reason) && e.driverId === 'button_wireless_plug').length, 8);
   });
-  it('batch 15: dfgbtub0 keeps its two attested couples (TS0042 button_wireless_2, TS0044 button_wireless_4), runtime hint is a battery remote', () => {
+  it('batch 15: dfgbtub0 keeps TS0042 on button_wireless_2 (TS0044 removed as an artifact in P3146), runtime hint is a battery remote', () => {
     assert.ok(lists(zig('button_wireless_2'), '_TZ3000_dfgbtub0') && zig('button_wireless_2').productId.includes('TS0042'));
-    assert.ok(lists(zig('button_wireless_4'), '_TZ3000_dfgbtub0') && zig('button_wireless_4').productId.includes('TS0044'));
+    assert.ok(!lists(zig('button_wireless_4'), '_TZ3000_dfgbtub0'));
     const fp = JSON.parse(fs.readFileSync(path.join(ROOT, 'lib/tuya/fingerprints.json'), 'utf8'));
     assert.equal(fp._TZ3000_dfgbtub0.driverId, 'button_wireless_2');
     assert.equal(fp._TZ3000_dfgbtub0.powerSource, 'battery');
     const reg = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/user-misattribution-registry.json'), 'utf8'));
     const c = reg.cases.find((x) => x.id === 'p2293-dfgbtub0-ts0044-wireless-4');
-    assert.ok(c && c.canonicalDriver === 'button_wireless_4' && c.forbidMode === 'couple');
+    assert.ok(c && c.canonicalDriver === null && c.forbiddenDrivers.includes('button_wireless_4') && c.forbidMode === 'couple');
   });
   it('batch 16: amp6tsvy (Moes ZTS-EU 1-gang) is only on switch_1gang, not on switch_2gang', () => {
-    for (const f of ['_TZE200_amp6tsvy', '_TZE204_amp6tsvy', '_TZE284_amp6tsvy']) assert.ok(lists(zig('switch_1gang'), f), f);
+    for (const f of ['_TZE200_amp6tsvy', '_TZE204_amp6tsvy', '_TZE284_amp6tsvy']) {assert.ok(lists(zig('switch_1gang'), f), f);}
     assert.ok(!zig('switch_2gang').manufacturerName.some((m) => /amp6tsvy/i.test(m)));
   });
   it('batch 17: claeh5ds (LUUMR C35 tunable white) only on light_bulb_dimmable_tunable with TS0502A, cartesian fixture couples exempted', () => {

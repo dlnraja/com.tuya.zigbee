@@ -79,7 +79,7 @@ describe('P2554 button fleet first-press', () => {
     assert.ok(levels.includes(1) && levels.includes(2));
   });
 
-  it('button_wireless_1/2/4 compose keep dfgbtub0 sacred couples', () => {
+  it('dfgbtub0 TS0042 couple on button_wireless_2; TS0044 artifact gone from button_wireless_4 (P3146)', () => {
     const bw2 = JSON.parse(fs.readFileSync(
       path.join(ROOT, 'drivers/button_wireless_2/driver.compose.json'), 'utf8'));
     const bw4 = JSON.parse(fs.readFileSync(
@@ -91,8 +91,9 @@ describe('P2554 button fleet first-press', () => {
     assert.ok(!bw2.zigbee.productId.includes('TS0044'));
     assert.ok(!bw4.zigbee.productId.includes('TS0042'));
     assert.ok(bw2.zigbee.productId.includes('TS0042'));
-    assert.ok(bw4.zigbee.manufacturerName.includes('_TZ3000_dfgbtub0'));
-    assert.ok(bw4.zigbee.productId.includes('TS0044'));
+    // P3146: the TS0044 couple came only from a forum-table cross-product (no Z2M/ZHA/Blakadder/diag
+    // source; Blakadder: 2-button ESW-0ZAC-EU). Evidence in data/couple-removal-evidence.json.
+    assert.ok(!bw4.zigbee.manufacturerName.some((m) => /dfgbtub0/i.test(m)));
   });
 
   it('harvest loadAppFlowIdsByPrefix finds button_wireless_1 cards in .homeybuild', () => {

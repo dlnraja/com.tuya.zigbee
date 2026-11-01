@@ -36,7 +36,6 @@ describe('P2432 — Forum Media Sweep & Misattribution Cleansing', () => {
       ['_TZ3000_upgcbody', 'TS0207', 'water_leak_sensor'],
       ['_TZ3000_wkr3jqmr', 'TS0004', 'switch_4gang'],
       ['_TZ3000_3dfewsk1', 'TS0207', 'water_leak_sensor'],
-      ['_TZ3000_wkai4ga5', 'TS0042', 'button_wireless_2'],
       ['_TZE204_qasjif9e', 'TS0601', 'presence_sensor_radar'],
       ['_TZE204_sxm7l9xa', 'TS0601', 'presence_sensor_radar'],
       ['_TZE200_3p5ydos3', 'TS0601', 'wall_dimmer_tuya'],
@@ -99,7 +98,6 @@ describe('P2432 — Forum Media Sweep & Misattribution Cleansing', () => {
       { mfr: '_TZ3000_mmkbptmx', pid: 'TS0004', driverId: 'switch_4gang' },
       { mfr: '_TZ3000_ruxexjfz', pid: 'TS0002', driverId: 'switch_2gang' },
       { mfr: '_TZ3000_3dfewsk1', pid: 'TS0207', driverId: 'water_leak_sensor' },
-      { mfr: '_TZ3000_wkai4ga5', pid: 'TS0042', driverId: 'button_wireless_2' },
       { mfr: '_TZE200_mja3fuja', pid: 'TS0601', driverId: 'air_quality_co2' }
     ];
 
@@ -115,7 +113,7 @@ describe('P2432 — Forum Media Sweep & Misattribution Cleansing', () => {
 
   it('driver-mapping-database.json does not map misattributed devices to air_purifier', () => {
     const p = path.join(__dirname, '../../data/driver-mapping-database.json');
-    if (!fs.existsSync(p)) return;
+    if (!fs.existsSync(p)) {return;}
     const dmd = JSON.parse(fs.readFileSync(p, 'utf8'));
 
     const checks = [
