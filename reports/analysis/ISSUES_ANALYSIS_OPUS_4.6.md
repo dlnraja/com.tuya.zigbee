@@ -37,7 +37,7 @@ Le projet Universal Tuya Zigbee est à la version **v7.4.10** avec 323 drivers e
 - ✅ Humidity
 - ❌ Soil moisture (NON DÉTECTÉ)
 
-**Diagnostic User:** `a4:c1:38:9d:db:58:2d:2f`
+**Diagnostic User:** `[IEEE-1]`
 
 **Root Cause Analysis:**
 1. Le device utilise le cluster 60672 (0xED00) qui n'est pas standard

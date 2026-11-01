@@ -35,7 +35,7 @@ echo '{"name":"alice","age":30}' | jq '.name'
 # "alice"
 
 # Nested access
-echo '{"user":{"email":"a@b.com"}}' | jq '.user.email'
+echo '{"user":{"email":"[email-1]"}}' | jq '.user.email'
 
 # Array index
 echo '[10, 20, 30]' | jq '.[1]'

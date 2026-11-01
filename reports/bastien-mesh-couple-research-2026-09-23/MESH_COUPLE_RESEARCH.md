@@ -9,15 +9,15 @@
 | Nwk | DevTools name | IEEE | Live mfr / pid | Driver | Sources lock |
 |-----|---------------|------|----------------|--------|--------------|
 | 1–2 | Radiateur * | NodOn | `NodOn`+`SIN-4-FP-21` | **EXTERNAL** `com.nodon` | leave alone |
-| 3 | Unknown | `7c:c6:b6:ff:fe:a3:e1:58` | `_TZ3000_axpdxqgu`+`TS0041` | `button_wireless_1` | Z2M #28038 #25720 · ZHA TO quirk · P2630 interview |
-| 4 | salon/cuisine | `a4:c1:38:09:4f:ff:ff:ff` | `eWeLink`+`CK-TLSR8656-SS5-01(7014)` | `climate_sensor` | Z2M device page · Hubitat CK-TLSR · **≠7000 button** |
+| 3 | Unknown | `[IEEE-1]` | `_TZ3000_axpdxqgu`+`TS0041` | `button_wireless_1` | Z2M #28038 #25720 · ZHA TO quirk · P2630 interview |
+| 4 | [pièce A]/[pièce B] | `[IEEE-2]` | `eWeLink`+`CK-TLSR8656-SS5-01(7014)` | `climate_sensor` | Z2M device page · Hubitat CK-TLSR · **≠7000 button** |
 | 5–8,10,12,15–16 | Lights | HOBEIAN OUIs | `HOBEIAN`+`ZG-301Z` | `switch_1gang` | Z2M ZG-301Z (WHD02 family) · **no metering** · P2667 light class |
-| 9,11 | Sous sol / chambre | `…a0:cf…` / `…b2:2c…` | `_TZ3000_fllyghyj`+`SNZB-02` *(Homey)* | `climate_sensor` | Z2M fingerprint **TS0201**/WSD500A/TH02Z · Homey may show SNZB-02 alias |
+| 9,11 | [pièce C] / [pièce D] | `…a0:cf…` / `…b2:2c…` | `_TZ3000_fllyghyj`+`SNZB-02` *(Homey)* | `climate_sensor` | Z2M fingerprint **TS0201**/WSD500A/TH02Z · Homey may show SNZB-02 alias |
 | 13 | Unknown | `…bb:8f:37:ee:17` | stale ghost old TS0042 | remove orphan | was P2636; live remote = #17 |
 | 14 | Unknown | `…c1:17:76:42:f4` | `_TZ3000_fllyghyj`+SNZB-02 | `climate_sensor` | same family as #9/#11; interview lost |
 | 17 | 2-Boutons… | `…e6:69:60:4a:6f` | `_TZ3000_dzwgk7e2`+`TS0042` | `button_wireless_2` | Z2M generic TS0042 (0xFD actions) · diag **885a9901** powerCfg · P2691/P2693 |
 | 18 | Unknown | `…e6:74:3a:00:da` | **NEED_INTERVIEW** | — | Soft only: OUI near #17 — never invent |
-| 19 | Eclairage salon | `…f7:14:92:cb:c8` | `_TZ3000_ltt60asa`+`TS0004` | `switch_4gang` | Z2M TS0004_switch_module · Blakadder SML-04Z · ZHA #1982 gang bleed |
+| 19 | Eclairage [pièce A] | `…f7:14:92:cb:c8` | `_TZ3000_ltt60asa`+`TS0004` | `switch_4gang` | Z2M TS0004_switch_module · Blakadder SML-04Z · ZHA #1982 gang bleed |
 | — | **OFF MESH** | `…f6:3d:2d:c9:79` | `_TZ3000_vsxvaj9i`+`TS0043` | `button_wireless_3` | Z2M TS0043 actions · Bastien interview P2629 · P2693 Flow not canaux |
 
 ## Cross-ref matrix (external)

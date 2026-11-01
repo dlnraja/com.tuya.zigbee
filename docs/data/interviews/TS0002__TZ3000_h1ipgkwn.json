@@ -11,7 +11,7 @@
   "driverNote": "Fingerprint matched to usb_dongle_dual_repeater (has TS0002 in productId list). Interview data shows 2-gang switch with energy monitoring clusters.",
   "deviceType": "router",
   "powerSource": "mains",
-  "ieeeAddress": "a4:c1:38:7b:94:f2:18:46",
+  "ieeeAddress": "[IEEE-1]",
   "networkAddress": 51724,
   "applicationDeviceId": 256,
   "endpoints": [1, 2],

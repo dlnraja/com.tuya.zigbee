@@ -4,7 +4,7 @@
 - Gmail: GitHub notify threads `#547` + `#550` (HiepSVG comments)
 - Live tip on last user report: **9.0.1207**
 - Couple: `_TZE204_gkfbdvyx`+`TS0601` → `presence_sensor_radar` (ZY-M100-24GV3)
-- IEEE: `a4:c1:38:86:ef:fe:6b:3c`
+- IEEE: `[IEEE-1]`
 
 ## Latest symptom (2026-09-23 16:45Z)
 | Symptom | Root cause found |

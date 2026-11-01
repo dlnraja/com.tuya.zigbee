@@ -67,7 +67,7 @@ const EXCERPT_PATTERNS = {
 
 function fixJSON(s) {
   // Replace INTERNAL_TRACKER placeholder with null
-  return s.replace(/:\s*INTERNAL_TRACKER\b/g, ': null');
+  return s.replace(/:\s*"?INTERNAL_TRACKER"?(?=\s*[,}\n])/g, ': null'); // P3119: quoted form too
 }
 
 function parseInterviews() {

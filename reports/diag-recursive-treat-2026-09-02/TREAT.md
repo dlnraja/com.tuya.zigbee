@@ -418,7 +418,7 @@ Sources scanned: **1048** · Unique cases: **391** · Actionable: **126** · Int
 
 - **Source:** `.github/state/diag-recursive-inbox/bodies/1a02935e2a97ad90.txt`
 - **App:** 9.0.626
-- **User:** El dispositivo es un medidor de energía Zigbee DIN monofásico. Fabricante: _TZE284_60cnqlhn Product ID: TS0601 IEEE: 14:2d:41:ff:fe:99:b6:a5 Universal Tuya lo detecta como “Smart RCBO”, pero este perfil es incorrecto. En Smart Life el dispositivo proporciona correctamente: tensión (V), corriente (
+- **User:** El dispositivo es un medidor de energía Zigbee DIN monofásico. Fabricante: _TZE284_60cnqlhn Product ID: TS0601 IEEE: [IEEE-1] Universal Tuya lo detecta como “Smart RCBO”, pero este perfil es incorrecto. En Smart Life el dispositivo proporciona correctamente: tensión (V), corriente (
 - **Drivers:** smart_rcbo
 - **Couples:** `_TZE284_60cnqlhn+TS0601` → din_rail_meter (in_log)
   - Forbidden: smart_rcbo, climate_sensor, soil_sensor, generic_tuya, zigbee_universal

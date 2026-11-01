@@ -1773,7 +1773,7 @@
       "kind": "gmail_body",
       "logId": "31e654a4",
       "appVersion": "9.0.626",
-      "userMessage": "El dispositivo es un medidor de energía Zigbee DIN monofásico. Fabricante: _TZE284_60cnqlhn Product ID: TS0601 IEEE: 14:2d:41:ff:fe:99:b6:a5 Universal Tuya lo detecta como “Smart RCBO”, pero este perfil es incorrecto. En Smart Life el dispositivo proporciona correctamente: tensión (V), corriente (",
+      "userMessage": "El dispositivo es un medidor de energía Zigbee DIN monofásico. Fabricante: _TZE284_60cnqlhn Product ID: TS0601 IEEE: [IEEE-1] Universal Tuya lo detecta como “Smart RCBO”, pero este perfil es incorrecto. En Smart Life el dispositivo proporciona correctamente: tensión (V), corriente (",
       "drivers": [
         "smart_rcbo"
       ],

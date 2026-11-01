@@ -19,13 +19,13 @@
 | Device | Couple | App/driver now | Action |
 |--------|--------|----------------|--------|
 | Appareil Zigbee | `_TZ3000_vsxvaj9i`+`TS0043` | Homey Virtual socket | **Remove → Bastien `button_wireless_3`** |
-| Eclairage salon | `_TZ3000_ltt60asa`+`TS0004` | Homey Virtual | **Remove → Bastien `switch_4gang`** |
-| Sous sol / chambre principal (sensor) | `_TZ3000_fllyghyj`+`SNZB-02` | Homey Virtual | **Remove → Bastien `climate_sensor`** |
-| salon/cuisine | eWeLink `CK-TLSR8656-SS5-01(7014)` | Homey Virtual | **Remove → Bastien `climate_sensor`** |
+| Eclairage [pièce A] | `_TZ3000_ltt60asa`+`TS0004` | Homey Virtual | **Remove → Bastien `switch_4gang`** |
+| [pièce B] / [pièce C] (sensor) | `_TZ3000_fllyghyj`+`SNZB-02` | Homey Virtual | **Remove → Bastien `climate_sensor`** |
+| [pièce A]/[pièce D] | eWeLink `CK-TLSR8656-SS5-01(7014)` | Homey Virtual | **Remove → Bastien `climate_sensor`** |
 | 8× lights HOBEIAN | `HOBEIAN`+`ZG-301Z` | Bastien `switch_1gang` | **Update ≥1.0.37 + Repair** (P2662 fill pid + strip phantom power) |
 | Radiateurs | NodOn SIN-4-FP-21 | NodOn | Keep (official) |
 | Volets | Somfy Tahoma | Somfy | Keep (official) |
-| Unknown Node | IEEE `a4:c1:38:bb:8f:37:ee:17` | orphan | Interview / remove if dead |
+| Unknown Node | IEEE `[IEEE-1]` | orphan | Interview / remove if dead |
 
 ## Code shipped
 

@@ -16117,7 +16117,7 @@
    "pids": [],
    "dps": [],
    "caps": [],
-   "text": "Annuleren Geavanceerde Instellingen Opslaan Energie Altijd Aan Nee > Energieverbruik wanneer uit - > Energieverbruik wanneer aan - > Zigbee Apparaat Informatie Fabrikant ID _TZ3000_bjawzodf > Product ID TY0201 > Ontvangen in rust x > Apparaat Type enddevice > Apparaat ID a4:c1:38:cc:36:b6:c9:69 > Firmwareversie - > Groep-ID's - >",
+   "text": "Annuleren Geavanceerde Instellingen Opslaan Energie Altijd Aan Nee > Energieverbruik wanneer uit - > Energieverbruik wanneer aan - > Zigbee Apparaat Informatie Fabrikant ID _TZ3000_bjawzodf > Product ID TY0201 > Ontvangen in rust x > Apparaat Type enddevice > Apparaat ID [IEEE-1] > Firmwareversie - > Groep-ID's - >",
    "verify": true
   },
   {
@@ -16135,7 +16135,7 @@
    ],
    "dps": [],
    "caps": [],
-   "text": "Annuleren Geavanceerde Instellingen Energie Altijd Aan Nee Energieverbruik wanneer uit - Energieverbruik wanneer aan - Zigbee Apparaat Informatie Fabrikant ID _TZ3000_fllyghyj Product ID TS0201 Ontvangen in rust x Apparaat Type enddevice Apparaat ID a4:C1:38:d8:93:29:a0:e0 Firmwareversie - Groep-ID's -",
+   "text": "Annuleren Geavanceerde Instellingen Energie Altijd Aan Nee Energieverbruik wanneer uit - Energieverbruik wanneer aan - Zigbee Apparaat Informatie Fabrikant ID _TZ3000_fllyghyj Product ID TS0201 Ontvangen in rust x Apparaat Type enddevice Apparaat ID [IEEE-2] Firmwareversie - Groep-ID's -",
    "verify": true
   },
   {
@@ -28993,7 +28993,7 @@
    ],
    "dps": [],
    "caps": [],
-   "text": "18:54 ET O03 21 € _ Paramétres Avancés Enregistrer Enea Toujours en marche Non > Utilisation de courant a l'arrét > Utilisation de courant en marche > Information appareil Zigbee ID du fabricant -1ZE204_sxm7I9xa_ > ID du produit TS0601 > Recevoir lorsque inactif v> Type d'appareil router > ID del'appareil a4:c1:38:21:d0:d2:a3:62 > Version du micrologiciel >» FF Identifiants de groupe » [ « ie) S",
+   "text": "18:54 ET O03 21 € _ Paramétres Avancés Enregistrer Enea Toujours en marche Non > Utilisation de courant a l'arrét > Utilisation de courant en marche > Information appareil Zigbee ID du fabricant -1ZE204_sxm7I9xa_ > ID du produit TS0601 > Recevoir lorsque inactif v> Type d'appareil router > ID del'appareil [IEEE-3] > Version du micrologiciel >» FF Identifiants de groupe » [ « ie) S",
    "verify": true
   },
   {
@@ -29384,7 +29384,7 @@
    ],
    "dps": [],
    "caps": [],
-   "text": "Zigbee Apparaat Informatie Fabrikant ID _TZ3000_ywagc4rj Product ID TS0201 Ontvangen in rust x Apparaat Type enddevice Apparaat ID a4:c1:38:e5:d6:f7:40:f3 Firmware versie Groepen",
+   "text": "Zigbee Apparaat Informatie Fabrikant ID _TZ3000_ywagc4rj Product ID TS0201 Ontvangen in rust x Apparaat Type enddevice Apparaat ID [IEEE-4] Firmware versie Groepen",
    "verify": true
   },
   {
@@ -45102,7 +45102,7 @@
    "pids": [],
    "dps": [],
    "caps": [],
-   "text": "TT ie TT OD Presence Sensor Radar Settings x | /~\\ Motion alarm turned on Zigbee Device Information Lo Manufacturer ID _TZE204_81yrt3lo Product ID _Ts0601 | Receive When Idle Lv | Device Type router Device ID a4:c1:38:d6:ab:fd:29:ab Firmware version | a TS = } o—"
+   "text": "TT ie TT OD Presence Sensor Radar Settings x | /~\\ Motion alarm turned on Zigbee Device Information Lo Manufacturer ID _TZE204_81yrt3lo Product ID _Ts0601 | Receive When Idle Lv | Device Type router Device ID [IEEE-5] Firmware version | a TS = } o—"
   },
   {
    "repo": "dlnraja/com.tuya.zigbee",
@@ -45200,7 +45200,7 @@
     9
    ],
    "caps": [],
-   "text": "Abbrechen Erweiterte Einstellungen Zonenaktivitat Aus Zonenaktivitat ausschlieRen . Nein Zigbee-Gerateinformation Hersteller-ID _TZE200_seq9cm6u > Produkt-ID TS0601 > Im Standby-Modus empfangen x > Geratetyp enddevice > Gerate-ID a4:c1:38:d1:ee:0b:be:07 > Firmware-Version 2 Gruppen-IDs = > Device Note: Sensitivity settings missing (DP9): The options to change the sensitivity (low, middle, high) do not show up in the Advanced Settings of the device at all."
+   "text": "Abbrechen Erweiterte Einstellungen Zonenaktivitat Aus Zonenaktivitat ausschlieRen . Nein Zigbee-Gerateinformation Hersteller-ID _TZE200_seq9cm6u > Produkt-ID TS0601 > Im Standby-Modus empfangen x > Geratetyp enddevice > Gerate-ID [IEEE-6] > Firmware-Version 2 Gruppen-IDs = > Device Note: Sensitivity settings missing (DP9): The options to change the sensitivity (low, middle, high) do not show up in the Advanced Settings of the device at all."
   },
   {
    "repo": "dlnraja/com.tuya.zigbee",

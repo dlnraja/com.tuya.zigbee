@@ -5,7 +5,7 @@
     "modelId": "TS0215A",
     "manufacturerName": "_TZ3000_0dumfk2z"
   },
-  "ieeeAddress": "a4:c1:38:85:a8:b5:4c:d1",
+  "ieeeAddress": "[IEEE-1]",
   "networkAddress": 36348,
   "deviceType": "enddevice",
   "powerSource": "battery",
@@ -25,7 +25,7 @@
       "zoneState": "notEnrolled",
       "zoneType": "remoteControl",
       "zoneStatus": [0, 0],
-      "iasCIEAddress": "b0:c7:de:ff:fe:56:51:0b",
+      "iasCIEAddress": "[IEEE-2]",
       "zoneId": 255,
       "clusterRevision": 1
     },
