@@ -35,6 +35,10 @@
     ]
   },
   "workflows": {
+    "capability-coherence.yml": {
+      "group": "ci",
+      "what": "Audits every driver for capability, HomeKit and tile coherence and blocks a push or PR when the A/B/C counts go up. The daily run skips when no driver or SSOT file changed."
+    },
     "activity-monitor.yml": {
       "group": "autopilot",
       "what": "Collects one day of repo, forum and crash activity into a private report. The schedule is off; the orchestrator covers it."
