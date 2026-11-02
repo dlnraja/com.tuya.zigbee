@@ -7,7 +7,7 @@ Handles and their contributions, extracted from CREDITS.md (no personal data).
 - **athombv/homey-vectors-public** - Official Homey SVG vector icons for device capabilities and UI elements
 - **Joolee/Homey-SVG-Icons** - Community-maintained SVG capability icons for Homey devices
 - **JohanBendz/com.tuya.zigbee** - Original Tuya Zigbee app for Homey (TuyaSpecificClusterDevice, DP constants, sub-devices)
-- **Koenkk/zigbee-herdsman-converters** - Z2M device definitions and Tuya converters
+- **Koenkk/zigbee-herdsman-converters** - Z2M device definitions and Tuya converters (P3066 DP tables: TS0601_din_2, BAC-001, TS0601_knob_dimmer_switch, EcoDim ED-10032 whiteLabel; facts only, own code)
 - **zigpy/zha-device-handlers** - ZHA Tuya quirks (zhaquirks/tuya/)
 - **jasonacox/tinytuya** - Tuya local protocol implementation
 - **make-all/tuya-local** - Tuya Local for Home Assistant (YAML config DP mappings)
@@ -16,6 +16,7 @@ Handles and their contributions, extracted from CREDITS.md (no personal data).
 - **AreAArseth/com.hobeian** - Hobeian Zigbee devices
 - **drenso/com.tuya2** - TypeScript Tuya cloud app (OAuth2 patterns)
 - **JohanBendz** — develop-0.4 engineering notes, reimplemented in our own code (no code copied): unknown-DP log flood guard ([#1501](https://github.com/JohanBendz/com.tuya.zigbee/issues/1501)), colour-temperature safe range + best-effort vendor RGB mode ([#1502](https://github.com/JohanBendz/com.tu
+- **P3065 Flow uplift (2026-10-26), ideas only, no code copied** — Homey SDK docs (device-filter, dropdown, titleFormatted card model); Johan Bendz's Tuya Zigbee app (card families); Home Assistant device automations and the community adaptive-lighting integration (pause / is-active / chosen colour 
 - **gpmachado** (`gpmachado/com.gpm.homesuite`, GPL-3.0, ideas only — no code copied) — availability last-seen persist + boot grace, rejoin vs timeout (`device_rejoined`), lifecycle `onUninit` teardown, Poll Control skip on sleepy nodes, Homey settings over ZCL dump, jitter/TX pacing (no thundering 
 - **Rick_D** (SHS Device Watchdog, Homey Community topic [157537](https://community.homey.app/t/157537), ideas only — no code copied, P3028) — learned per-device reporting gap with a minimum observation period (posts 781378, 781761, 783688), buttons/remotes excluded from silence staleness (773003, 7
 - **makleso6, Jan_Z and TedTolboom** (Homey Community topic 156, posts 791200, 791317, 791557; [athombv/node-homey-zigbeedriver#194](https://github.com/athombv/node-homey-zigbeedriver/issues/194), P3029) — makleso6 and Jan_Z found that per-cluster ZCL sequence numbers restart at 1 on every app start
@@ -93,6 +94,7 @@ Handles and their contributions, extracted from CREDITS.md (no personal data).
 - **Johan Bendz** and the reporters of JohanBendz/com.tuya.zigbee #1113, #1475, #1008, #925 — physical interviews showing one eWeLink/SNZB-03 identity used by a PIR and a water detector, and the "disambiguate by IAS zoneType" approach. Our rules: `docs/rules/JOHAN_1113_AMBIGUOUS_IAS_IDENTITY.md`.
 - **Johan Bendz**, **Mariano Colmenarejo** (SmartThings Edge window-treatment), **KiwiHC16/Abeille**, **kkossev / RamSet** (Hubitat Zemismart blind) and **Koenkk** (zigbee-herdsman-converters) — identification of `_TZ3000_4uuaja4a` as a TS130F curtain module. Our rules: `docs/rules/FP_TZ3000_4UUAJA4
 - **Johan Bendz** (#473, #1288, #1172, PR #1505), **zigpy/zha**, **u236/homed**, **ioBroker.zigbee** — identification of `_TZ3000_o9f2zqln` (IAS rain), `_TZ3000_p26flek3` (TS0001 relay) and `_TZ3210_iystcadi` (Lidl light bar). Our notes: `docs/rules/JOHAN_GAPS_2026-10-04.md`.
+- **Koenkk/zigbee-herdsman-converters** (nous.ts SZ-T04, tuya.ts iHseno ZC-W1 / ZY-ZTH02) and **Johan Bendz** (lcdtemphumidsensor_3 time sync) — facts only: `locansqn` clock answers from 1970, Zbeacon TS0201/TS0202/TS0203 are temperature/humidity sensors (P3080, our own code).
 - **Homey community forum** users of T140352 / T26439 — device reports distilled into `data/forum/forum-leads-ssot.json` (links only).
 - **Tuya Smart Life app** — inching/pulse relay mode (`device_pulse` avec restauration d'état), random timing anti-cambriolage (notre `PresenceSimulationManager`), countdown timers (notre `device_countdown_off` avec fallback minuteur logiciel), **cycle timing** (notre `device_cycle` ON/OFF ×N avec r
 - **Hubitat Mode Manager / SmartThings location modes** — home modes day/evening/night/away (`HomeModeManager`), en version pilotée par l'élévation solaire réelle avec priorité au choix manuel
@@ -111,6 +113,9 @@ Handles and their contributions, extracted from CREDITS.md (no personal data).
 - **Jocke_Wallen** — Moes TS0044 `_TZ3000_kfu8zapd` remote (forum #2098-2104)
 - **blutch32** — HOBEIAN ZG-303Z soil sensor pairing variants (forum #2101)
 - **Nigel_Scott** — HOBEIAN ZG-204ZP/ZK presence `_TZE200_ka8l86iu` (forum #2112, issue #382)
+- **Br0kk85** (forum #5538) + Koenkk/zigbee-herdsman-converters `hobeian.ts` + zigpy/zha-device-handlers `tuya_motion.py` + kkossev Hubitat mmWave — HOBEIAN ZG-204ZM `HOBEIAN`/`_TZE200_2aaelwxk`/`_TZE200_tyffvoij`/`_TZE200_yflzeeqj` DP types (DP107 bool, DP122 enum) (P3141)
+- **Johan Bendz** — JohanBendz/com.tuya.zigbee PR #631 / issue #604: `_TZ3000_bjawzodf`/TY0201 LCD sensor rejects configureReporting (P3141)
+- **Koenkk/zigbee-herdsman-converters** `src/devices/hobeian.ts` — ZG-204ZM `static_detection_distance` step 0.01 m (DP4 divideBy100); indicator/backlight DPs = `valueConverter.onOff` on ZG-204ZV/ZH/ZE/ZQ/ZK/ZX and ZG-302ZM/ZL; `anti_interference` onOff on ZG-204ZK DP122 / ZG-204ZX DP103; ZG-204ZX D
 - **Joep_Vullings** — Insoma 2-way irrigation valve `_TZE284_fhvpaltk` (forum #2102/#2105, issue #260)
 - **FrankP** — TS0042 2-button remote `_TZ3000_tzvbimpq` routing (forum #1689/#1745)
 - **thierry_arguimbau** — `_TZE204_dhotiauw` dual energy meter (forum #2115)
@@ -130,16 +135,25 @@ Handles and their contributions, extracted from CREDITS.md (no personal data).
 - **[tuya/tuya-connector-nodejs](https://github.com/tuya/tuya-connector-nodejs)** — consulted for the OpenAPI signature string format (empty optional-headers line, sorted query). No code copied.
 - **[andiwirz/com.tuyalocal](https://github.com/andiwirz/com.tuyalocal)** (MIT) — Homey Tuya-local app: frequency-first protocol order, command gap, stale-data watchdog patterns (reimplemented earlier, credited in code).
 - **[Drenso/com.tuya2](https://github.com/Drenso/com.tuya2)**, **[jurgenheine/com.tuya.cloud](https://github.com/jurgenheine/com.tuya.cloud)** (MIT), **[rebtor/nl.rebtor.tuya](https://github.com/rebtor/nl.rebtor.tuya)** (MIT) — earlier Homey Tuya apps whose cloud/LAN patterns informed the original d
+- **Wi-Fi repair UX (P3072, 2026-10-27) — ideas only, written in our own words, no code copied:** [make-all/tuya-local](https://github.com/make-all/tuya-local) (MIT), [rospogrigio/localtuya](https://github.com/rospogrigio/localtuya) / [xZetsubou/hass-localtuya](https://github.com/xZetsubou/hass-loca
 - **[Koenkk/zigbee-herdsman-converters](https://github.com/Koenkk/zigbee-herdsman-converters)** (MIT, Koen Kanters and the `zosung.ts` contributors) — consulted: 0xED00 frame layout (msgpart + msgpartcrc), chunk sizes, Code00 resend, ZG-IR01 seq 0, `{key_num,key1}` message.
 - **[mildsunrise — Tuya IR code format notes](https://gist.github.com/mildsunrise/1d576669b63a260d2cff35fda63ec0b5)** — consulted: FastLZ-style block layout of Tuya `key_code`.
 - **[jbouwh — Home Assistant Tuya IR encoder gist](https://gist.github.com/jbouwh)** — consulted: literal-only encoding is the safe choice for cheap Tuya IR chips.
 - **[jasonacox/tinytuya](https://github.com/jasonacox/tinytuya)** (MIT) — consulted: `IRRemoteControlDevice` control types 1/2, `send_ir` / `study` / `study_exit` / `study_key`, learned code on DP202 or DP2.
 - **[make-all/tuya-local](https://github.com/make-all/tuya-local)** (MIT, Jason Rumney and contributors) — consulted: single-DP `send_ir` JSON with `"1"` raw prefix, multi-DP send, split of long gaps.
+- **GitHub** — the job summary feature (`$GITHUB_STEP_SUMMARY`) and its docs gave us the "one short page per run" format.
+- **The Renovate and Dependabot maintainers** — their PR bodies taught us to fold long detail into collapsed blocks and keep the top short.
+- **rhysd (actionlint)** — static checks for every workflow; our hygiene and report ratchets follow the same "fail only on new debt" spirit.
+- **The Homey Community forum moderators and the Zigbee2MQTT / ZHA trackers** — their habit of linking to a post instead of pasting it is
+- **GitHub Actions docs (concurrency groups)** — the one-running, one-waiting rule behind our Node 22 setting: pushes let the running job finish, PRs still cancel (`docs/knowledge/CI_CONCURRENCY.md`); now also on the seven push-triggered checks listed there.
+- **Athom Homey SDK docs, "Zigbee firmware updates" page** (Athom docs team, https://apps.developer.homey.app/wireless/zigbee/zigbee-firmware-updates) — the line about firmware files being stored apart from the app and fetched only when an update starts is now told in our own words in `docs/knowledg
+- **Community commenters on our issues** (john1v, pemikalsen-sudo, Ssssneak, late4marshmellow, dalobalo and others) — `reports/COMMUNITY-INTELLIGENCE.md` no longer reproduces their comments; each entry keeps the author, the issue link and a one-line topic, so the original stays where they wrote it. 
 - **Athom B.V. — Matter Bridge app** (github.com/athombv/com.athom.matter-bridge, GPL-3.0): class/capability to Matter device-type mapping summarised in our own words in `data/matter-bridge-mapping.json` (read 2026-10-04, commit 045787d). No code copied.
 - **make-all/tuya-local** (Jason Rumney, MIT, commit 95300d05ac) — product_id → DP facts extracted by our own script; source config recorded per product.
 - **jasonacox/tinytuya** (MIT) — protocol 3.1–3.5 and the 3.22 alias, wizard export format.
 - **codetheweb/tuyapi** (MIT) — CONTROL_NEW / DP_QUERY_NEW for 3.4+.
 - **rospogrigio/localtuya, xZetsubou/hass-localtuya** (GPL-3.0, study only) — single-client limit, sub-device cid.
+- **rospogrigio/localtuya, xZetsubou/hass-localtuya** (GPL-3.0, ideas only, own code, P3080 2026-10-27) — opt-in LAN options in `lib/tuya-local/LocalTuyaOptions.js`: `reset_dpids` (re-ask listed DPs after a failed status, bounded + cooldown), `restore_on_reconnect` (re-send mapped DP values after a 
 - **PlusPlus-ua/ha_tuya_ble** — BLE protocol versions (documentation only).
 - **Koenkk/zigbee-herdsman-converters** (MIT) — EF00 command ids, appVersion layout.
 - **zigpy/zha-device-handlers** (Apache-2.0) and **dresden-elektronik/deconz-rest-plugin** (BSD-3) — Tuya time answer / MCU version behaviour (P2933, own code).
@@ -163,5 +177,13 @@ Handles and their contributions, extracted from CREDITS.md (no personal data).
 - **The SmartThings Edge driver authors**, **Mariano Colmenarejo** in particular, and the SmartThings
 - **The ioBroker.zigbee maintainers**, the **Zigbee for Domoticz** team and the authors of the
 - **Koen Kanters and the zigbee-herdsman-converters contributors** - the second negative power encoding (plain 24-bit two's complement above 0x99999A, seen on some `_TZE200_nslr42tt` units) in packed phase DPs, used by P3060 `lib/tuya/TuyaNegPower24.js` (own implementation, no code copied).
+- **Agent Reach** (Panniantong, MIT) — the idea of reading many public channels through one read-only fallback; used only on the maintainer box, never in CI.
+- **Powercalc** (Home Assistant community) — the idea of learning a device profile from repeated readings before trusting it.
+- **Zigbee2MQTT / zigbee-herdsman-converters, ZHA quirks, deCONZ, tuya-local, localtuya, tinytuya, Hubitat (kkossev), Home Assistant, Johan Bendz and the fork maintainers, Athom SDK** — public projects followed "since last time"; anything found is rewritten in our words and credited before use.
+- **Athom BV, homey CLI (`homey/lib/HomeyCompose.js`)** — the list of compose placeholders the composer replaces ({{driverId}}, {{driverPath}}, {{driverAssetsPath}}, {{driverName}}); `scripts/maintenance/sync-appjson-zigbee.js` now applies the same substitution, written in our own code.
+- **Koenkk, zigbee-herdsman-converters (`src/devices/tuya.ts`)** — hardware identity used to keep each couple on its right driver: `_TZ3000_46vasa5h` TS011F 2-gang wall outlet (double_power_point_2), `_TZ3000_cehuw1lw` TS011F/TS0121 plug (smartplug), `_TZE284_xpq2rzhq` TS0601 human presence sensor (
+- **SSOT couple-sources ledger (P3136)** - `data/ssot/couple-sources.json` records, per exact mfr+pid couple, links to the sources that confirm it: Koenkk/zigbee-herdsman-converters (`src/devices/tuya.ts` fingerprints and whiteLabel entries), zigpy/zha-device-handlers (`zhaquirks/tuya` signatures) a
+- **zigpy/zha-device-handlers #1746 / PR #2288** (evlo, MattWestb, javicalle, TheJulianJES, cordvision, Rojoss) - TS0042 signatures for `_TZ3000_dfgbtub0` and `_TZ3000_5e235jpa`, the 0xFD press-type mapping and the no-bind battery rule, recorded as facts in `data/ssot/curated-facts.json` (P3136b). N
+- **Koenkk, zigbee-herdsman-converters (`src/devices/tuya.ts`)** — model ids used for the corrected hints: `_TZ3000_46vasa5h` TS011F, `_TZ3000_cehuw1lw` TS011F/TS0121, `_TZE284_xpq2rzhq` TS0601, `_TZ3000_dfgbtub0` TS0042.
 
 Full list: https://github.com/dlnraja/com.tuya.zigbee/blob/master/CREDITS.md
