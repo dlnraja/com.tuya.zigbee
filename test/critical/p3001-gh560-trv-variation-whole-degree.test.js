@@ -44,42 +44,11 @@ describe('P3001 TRV variation routing + TRV06 whole degree', () => {
     assert.ok(src.indexOf('P3001') < src.indexOf('ManufacturerVariationManager.applyManufacturerConfig(this, config)'));
   });
 
-  it('TRV06 setpoint snaps to whole °C and UI step is 1', () => {
+  // P3244 (#560 artisare "only full degrees"): the P3001 whole-degree snap is superseded by a
+  // 0.5 °C default (Z2M step 0.5) + per-device learning from the DP4 echo — see test/critical/p3244-*.
+  it('TRV06 setpoint alignment still wired at init (P3244 supersedes the 1 °C snap)', () => {
     const src = fs.readFileSync(path.join(ROOT, 'drivers/device_radiator_valve/device.js'), 'utf8');
-    assert.ok(src.includes('_alignTrv06WholeDegree'));
     assert.ok(src.includes('await this._alignTrv06WholeDegree();'));
-    assert.match(src, /this\._isNoHumidityTrv\(\) \? Math\.round\(Number\(v\)\) : Number\(v\)/);
-    assert.match(src, /step: 1, decimals: 0/);
-  });
-
-  it('_alignTrv06WholeDegree runtime: sets options once, only for TRV06', async () => {
-    const Dev = { prototype: {} };
-    const src = fs.readFileSync(path.join(ROOT, 'drivers/device_radiator_valve/device.js'), 'utf8');
-    const start = src.indexOf('  async _alignTrv06WholeDegree() {');
-    const end = src.indexOf('  async _alignTrv06Battery() {');
-    const body = src.slice(start, end).replace('async _alignTrv06WholeDegree()', 'async function f()');
-    // eslint-disable-next-line no-new-func
-    const fn = new Function(`return (${body.trim().replace(/^async function f\(\)/, 'async function()')})`)();
-    const mk = (trv06, opts) => {
-      const calls = [];
-      return {
-        calls,
-        _isNoHumidityTrv: () => trv06,
-        hasCapability: () => true,
-        getCapabilityOptions: () => opts,
-        setCapabilityOptions: async (c, o) => { calls.push([c, o]); },
-        log: () => {},
-      };
-    };
-    const a = mk(true, { min: 5, max: 35 });
-    await fn.call(a);
-    assert.deepEqual(a.calls, [['target_temperature', { min: 5, max: 35, step: 1, decimals: 0 }]]);
-    const b = mk(true, { step: 1, decimals: 0 });
-    await fn.call(b);
-    assert.equal(b.calls.length, 0);
-    const c = mk(false, {});
-    await fn.call(c);
-    assert.equal(c.calls.length, 0);
-    void Dev;
+    assert.ok(!/this\._isNoHumidityTrv\(\) \? Math\.round\(Number\(v\)\) : Number\(v\)/.test(src));
   });
 });
