@@ -94,6 +94,16 @@ jobs:
           if [ -n "$ISSUE" ]; then ARGS+=(--issue="$ISSUE"); fi
           node tools/ci/auto-bot-issue-triage.js "${ARGS[@]}"
 
+      # WHY(P3200, GH#581/#584): a user saying "listed but Unknown device" is presumed right.
+      # Replay publish compaction for every couple named in open issues; report dropped ones.
+      - name: "P3200 Reported couples survive publish compaction (report only)"
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue list -R "${{ github.repository }}" --state open --limit 200 --json number,title,body > /tmp/p3200-issues.json || echo '[]' > /tmp/p3200-issues.json
+          node tools/ci/reported-couples-publish-survival.js --issues /tmp/p3200-issues.json | tee -a "$GITHUB_STEP_SUMMARY"
+
       - name: "P2529 Deep functional enrich (GitHub issues → DP/flow/RX-TX)"
         continue-on-error: true
         timeout-minutes: 8

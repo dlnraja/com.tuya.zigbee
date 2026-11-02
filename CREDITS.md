@@ -378,3 +378,13 @@ Reporters of dlnraja/com.tuya.zigbee issues not credited elsewhere in this file.
 - P3134 couple-removal guard: scripts/ci/couple-removal-guard.js + validate.yml step; a maker leaving a driver must keep every source-confirmed pid (data/kb/couples.json, reviewed duals) matched (#585, per exact couple).
 - P3134 removal evidence (t730u): scripts/maintenance/couple-removal-evidence.js gathers Z2M/ZHA/deCONZ/Blakadder/Hubitat/Johan/forum/diags/git history/sibling pids into data/couple-removal-evidence.json; the guard (pre-push + validate.yml) blocks a removal without an entry. Rules: docs/rules/COUPLE_REMOVAL_EVIDENCE.md. _TZ3000_dfgbtub0|TS0044 marked unverified (forum 156967#12 lists TS0044 as _TZ3000_wkai4ga5).
 - P3146 forum-table artifacts: forum 156967#12 and 150690#1 tables were cross-multiplied by the harvester. Removed per exact couple with evidence: _TZ3000_dfgbtub0|TS0044 (button_wireless_4), _TZ3000_wkai4ga5|TS0042 (button_wireless_2), _TZ3000_gbm10jnj|TS0044 (button_wireless_4). Kept the real couples dfgbtub0|TS0042 (button_wireless_2, Blakadder Eardatek ESW-0ZAC-EU), wkai4ga5|TS0044 (scene_switch_4, Rob_G interview 89271#653), gbm10jnj|TS0043 (button_wireless_3). New scan: scripts/maintenance/forum-table-crossproduct-scan.js. Thanks SunBeech, Relax_swe and Rob_G.
+- P3190 _TZE2xx_iwn0gpzz|TS0601 moved climate_sensor -> power_meter (Tuya SPM01V2.5): Zigbee2MQTT/zigbee-herdsman-converters tuya.ts (DP map + polling, #30506), deCONZ devices/tuya/_TZE284_iwn0gpzz_energy_meter.json, make-all/tuya-local. Evidence in data/couple-removal-evidence.json.
+- P3191 _TZE2xx_wbhaespm|TS0601 moved climate_sensor -> smart_breaker (SUTON STB3L-125-ZJ): zigbee-herdsman-converters tuya.ts, zigpy/zha device test tze204-wbhaespm, zha-device-handlers ts0601_power.py. Evidence in data/couple-removal-evidence.json.
+- P3192 _TZE284_aao3yzhs|TS0601 battery 0 %: DP15 zero ignored while DP14 battery_state is not low. Sources: zigpy/zha-device-handlers #4288, #4519, #5126 (quirk uses DP15), Zigbee2MQTT #26215, deCONZ DDF (DP14 lowbattery). Thanks to the reporters.
+- P3193 deCONZ DDF reader: dresden-elektronik/deconz-rest-plugin devices/tuya DDF files (read-only, per-path cursor). Thanks to the deCONZ contributors.
+- P3194 test hygiene: mkdtemp dirs in p2920/p2437/p3048/p3019d tests removed on exit.
+
+## Pairing reports (P3200, 2026-11)
+
+- hogseto (GH#581): `_TZ3000_yupc0pb7` / TS0201 listed but Unknown — exposed couples dropped by publish compaction.
+- stephanmaastricht (GH#584): `_TZE284_awepdiwi` / TS0601 soil sensor, diag 8742e6bd.

@@ -123,7 +123,10 @@ function validateReply(replyText, originalPostText) {
         const items = fuzzySupported.map(s => s.from + ' looks like ' + s.fp + ' which is under ' + s.drivers[0]);
         parts.push(items.join('; ') + ' — might be a typo in the fingerprint.');
       }
-      parts.push('Just remove and re-pair, make sure you pick the right device type.');
+      // WHY(P3200, t765u): a user report is presumed true. When the couple is listed and it still
+      // fails, the cause is on our side (publish compaction, driver conflict, crash) — never
+      // default to generic re-pair advice; say we investigate the published build.
+      parts.push('If it still pairs as Unknown with the right driver, that is on our side: I am checking whether this exact couple made it into the published build and which driver wins the match.');
       corrected = parts.join(' ');
     }
   }
