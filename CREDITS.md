@@ -382,3 +382,15 @@ Reporters of dlnraja/com.tuya.zigbee issues not credited elsewhere in this file.
 
 - hogseto (GH#581): `_TZ3000_yupc0pb7` / TS0201 listed but Unknown — exposed couples dropped by publish compaction.
 - stephanmaastricht (GH#584): `_TZE284_awepdiwi` / TS0601 soil sensor, diag 8742e6bd.
+- oletorv (GH#598): `_TZE284_9ern5sfh` / TS0601 LCD sensor, interview from Homey Self-Hosted + Bridge showing the node serves only 0, 4, 5, 0xED00, 0xEF00 (P3204: owner moved to lcdtemphumidsensor_3 so pairing binds only clusters the node has).
+
+## Publish baseline narrowing + driver continuations (P3206, 2026-11-02) — facts only, no code copied
+- Homey SDK Zigbee docs (exact manufacturerName/productId matching) and the Homey community thread t/51187
+  (no productId wildcard) — basis for "no fallback driver" and for continuation drivers.
+- Forum/GitHub reporters of #584, #581, #598 and the kb-compaction-losses couples — couples kept in the payload.
+## Dynamic adaptation (P3207, 2026-11)
+
+- oletorv (GH#598): `_TZE284_9ern5sfh` / TS0601 "Unable to connect" — bindings on clusters the node lacks; led to runtime, descriptor-gated bindings for all drivers.
+- P3213: diag Log ID backfill + metering silence watchdog — thanks to the reporters of Homey diags fb5be1fe, 8742e6bd, c05db40d (Peter), af98752d, 6eabd9c4 (Michaelp); refs Z2M/ZHA metering & Tuya dataQuery.
+- P3212 (2026-11-02): Saswell SEA801 TRV DP profile + fingerprints — Koenkk/zigbee-herdsman-converters saswell.ts
+- P3213b (2026-11-02): MFR-ENSURE no longer persists driver manifest[0] placeholder (_TZE200_pay2byax on TS0203, diag c05db40d); MTG radar DP113/115/116 mapped per Z2M MTG075-ZB-RL (diag af98752d, VicHY). Source: Koenkk/zigbee-herdsman-converters tuya.ts.
