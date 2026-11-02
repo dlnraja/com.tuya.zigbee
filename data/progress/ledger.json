@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-02T15:11:46.902Z",
+ "updated": "2026-11-02T16:33:15.474Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -209,12 +209,12 @@
    }
   },
   "autopilot-issue:581": {
-   "status": "pending",
-   "date": "2026-10-29",
-   "hash": "4c03ad49bcf3ab8c",
-   "note": "fix-in-code: supported, symptom(s): unknown-device, battery; owner replies (draft in autopilot report), never auto-closed",
+   "status": "deferred",
+   "date": "2026-11-02",
+   "hash": "6d4f6c0c0c7f5cdd",
+   "note": "already-supported: supported and referenced by a fix commit; owner replies (draft in autopilot report), never auto-closed",
    "by": "repo-autopilot",
-   "kind": "fix-in-code",
+   "kind": "already-supported",
    "author": "hogseto",
    "link": "https://github.com/dlnraja/com.tuya.zigbee/issues/581",
    "mfrs": [
@@ -229,16 +229,16 @@
    "counts": {
     "dps": 0,
     "diag": 0,
-    "fixCommits": 0
+    "fixCommits": 1
    }
   },
   "autopilot-issue:584": {
-   "status": "pending",
-   "date": "2026-10-31",
-   "hash": "64dab8addd223b7a",
-   "note": "fix-in-code: supported, symptom(s): unknown-device; owner replies (draft in autopilot report), never auto-closed",
+   "status": "deferred",
+   "date": "2026-11-02",
+   "hash": "e694e7e914a403b4",
+   "note": "already-supported: supported and referenced by a fix commit; owner replies (draft in autopilot report), never auto-closed",
    "by": "repo-autopilot",
-   "kind": "fix-in-code",
+   "kind": "already-supported",
    "author": "stephanmaastricht",
    "link": "https://github.com/dlnraja/com.tuya.zigbee/issues/584",
    "mfrs": [
@@ -253,7 +253,7 @@
    "counts": {
     "dps": 0,
     "diag": 1,
-    "fixCommits": 0
+    "fixCommits": 1
    }
   },
   "autopilot-pr:579": {
@@ -261,6 +261,14 @@
    "date": "2026-10-26",
    "hash": "d3e7d8d8f081df1a",
    "note": "merge: current (56 behind) and gates green (local gates)",
+   "by": "repo-autopilot",
+   "kind": "bot-pr-merge"
+  },
+  "autopilot-pr:615": {
+   "status": "done",
+   "date": "2026-11-02",
+   "hash": "d3e7d8d8f081df1a",
+   "note": "merge: current (4 behind) and gates green (local gates)",
    "by": "repo-autopilot",
    "kind": "bot-pr-merge"
   },
@@ -45238,19 +45246,19 @@
   },
   "workflow-run:repo-autopilot": {
    "status": "done",
-   "date": "2026-11-01",
-   "hash": "c083254882490369",
+   "date": "2026-11-02",
+   "hash": "7b16aa453f507124",
    "note": "run summary: 6 counter(s)",
    "by": "repo-autopilot",
    "counts": {
     "closed": 0,
-    "merged": 0,
+    "merged": 1,
     "branchesDeleted": 0,
     "issues": 5,
     "external": 0,
     "leadsAdded": 0
    },
-   "lastChangeRun": "41312721125"
+   "lastChangeRun": "41481955409"
   }
  }
 }
