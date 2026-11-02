@@ -174,3 +174,17 @@ The Auto-Fix doctrine (P139: no bump loops while an older Test is healthy) is un
 - Minimum caseless cost to ship every source-backed couple in its current driver is ~29111 combos (> 20000): "0 sourced dropped" cannot be reached without splitting drivers (owner decision).
 - `scripts/maintenance/publish-sourced-restore.cjs` runs in prepare-publish after the TS0601 top-up (payload only; `HOMEY_P3201_SOURCED_PASS=0` disables): drops case/invisible duplicate forms (keeps canonical + sourced alternates + sacred + byte-exact baseline forms), removes parasite rows (no source-backed couple, no pin), re-adds dropped source-backed couples, strong (kb/diag/sacred) first. Same driver set, same ceiling.
 - Ratchet gate: `data/publish/sourced-payload-snapshot-<branch>.json`; prepare-publish FATALs if a snapshot couple still in the source leaves the payload. CLI: `--check <payload> <branch>`.
+
+## P3206 (2026-11-02 Paris): what actually limits a store publish, and baseline narrowing
+- **Not byte size** (+70 KB passed, +18 B failed). **Not driver count alone** (P1/P3034 added ids and passed).
+  AggregateError builds historically coincided with changes to the set of pairable driver ids; the only proven
+  combo ceiling is ~20000 (P2252 at 100k+ rejected; 20k–100k never tried). Raw `homey app run` has a separate
+  "Payload Too Large" cap. Policy: total 20000 on every branch, 1500 per driver (top-up 2000), new driver ids held
+  and released one per bisectable publish.
+- **Fallback driver**: impossible — Zigbee pairing is exact manufacturerName/productId, handled by Homey; unmatched
+  devices become Homey's Basic Zigbee Device (apps.developer.homey.app/wireless/zigbee, community t/51187).
+- **P3024b baseline narrowed** to source-backed couples: per (driver, caseless couple) one canonical form (vendor
+  prefix = first segment upper, rest lower; TS pids upper) + at most one form a source quotes exactly. If no driver
+  carries the canonical form, the shipped form is pinned as fallback (no new row). Opt-out: `HOMEY_PUBLISH_BASELINE_FULL=1`.
+  Master pins 14282 → 7028; replay: 19943 combos, 1928 source-backed couples restored, strong 1876/3126 in payload
+  (P3201 alone: 1444), parasite ratio 0.258, the 13 tracked couples (kb-compaction-losses + #584/#581/#598) present.

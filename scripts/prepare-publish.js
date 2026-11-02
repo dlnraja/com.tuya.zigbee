@@ -561,6 +561,7 @@ try {
       if (r.after > maxTotal || r.driversAfter !== r.driversBefore || r.sacredMissing.length || r.snapshotMissing.length) {
         console.error('FATAL(P3201): sourced pass broke an invariant (ceiling, driver set, sacred pin or snapshot ratchet).');
         for (const m of [...r.sacredMissing, ...r.snapshotMissing].slice(0, 20)) console.error(`  - ${m}`);
+        for (const x of (r.still || []).slice(0, 20)) console.error(`  still out: ${x.key} @ ${x.driver} (${x.why})`);
         process.exit(1);
       }
     }

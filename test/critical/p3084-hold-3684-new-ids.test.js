@@ -47,7 +47,10 @@ describe('P3084 publish hold after #3684 AggregateError', () => {
   });
   it('none of them owns a couple of the Test 1574 package (exact mfr+pid)', () => {
     const { loadPublishBaseline, baselineCouples } = require('../../scripts/maintenance/compact-zigbee-identifiers.cjs');
-    const test = new Set(baselineCouples(loadPublishBaseline(ROOT)).map((c) => `${c.mfr}\u0000${c.pid}`));
+    // P3206: the hold check is about the FULL 1574 package, not the source-backed narrowed view.
+    const prev = process.env.HOMEY_PUBLISH_BASELINE_FULL; process.env.HOMEY_PUBLISH_BASELINE_FULL = '1';
+    let full; try { full = loadPublishBaseline(ROOT); } finally { if (prev === undefined) delete process.env.HOMEY_PUBLISH_BASELINE_FULL; else process.env.HOMEY_PUBLISH_BASELINE_FULL = prev; }
+    const test = new Set(baselineCouples(full).map((c) => `${c.mfr}\u0000${c.pid}`));
     assert.ok(test.size > 10000);
     for (const id of P3084) {
       if (!fs.existsSync(path.join(ROOT, 'drivers', id))) continue;

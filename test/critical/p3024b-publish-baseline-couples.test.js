@@ -104,9 +104,11 @@ describe('P3024b publish baseline couples', () => {
     fs.writeFileSync(appFile, JSON.stringify(bad));
     fs.writeFileSync(baseFile, JSON.stringify(b));
     const gate = path.join(ROOT, 'scripts', 'maintenance', 'publish-baseline-gate.cjs');
-    assert.throws(() => execFileSync(process.execPath, [gate, appFile, baseFile], { stdio: 'pipe' }));
+    // P3206: exact full-baseline semantics; the default narrows to source-backed couples (tested in p3206).
+    const env = { ...process.env, HOMEY_PUBLISH_BASELINE_FULL: '1' };
+    assert.throws(() => execFileSync(process.execPath, [gate, appFile, baseFile], { stdio: 'pipe', env }));
     fs.writeFileSync(appFile, JSON.stringify(ok));
-    execFileSync(process.execPath, [gate, appFile, baseFile], { stdio: 'pipe' });
+    execFileSync(process.execPath, [gate, appFile, baseFile], { stdio: 'pipe', env });
     fs.rmSync(tmp, { recursive: true, force: true });
   });
 
@@ -154,6 +156,8 @@ describe('P3024b publish baseline couples', () => {
     for (const c of baselineCouples(baseline)) {
       const k = `${c.mfr}\u0000${c.pid}`;
       if (exempt.has(k)) continue;
+      // P3206: a narrowed pin is satisfied by its canonical form or its shipped fallback form.
+      if (c.fallback && have.has(`${c.fallback.mfr}\u0000${c.fallback.pid}`)) continue;
       assert.ok(have.has(k), `${c.mfr}+${c.pid} (was ${c.driverId})`);
     }
   });

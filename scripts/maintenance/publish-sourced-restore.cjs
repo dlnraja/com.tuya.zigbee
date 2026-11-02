@@ -30,9 +30,11 @@ const arr = (v) => (Array.isArray(v) ? v : []).filter((x) => typeof x === 'strin
 /** Canonical Tuya wire form: prefix up to the last "_" upper case, suffix lower case (_TZ3000_yupc0pb7). */
 function canonicalMfr(m) {
   const s = clean(m);
-  const i = s.lastIndexOf('_');
-  if (!/^_t/i.test(s) || i <= 0) return s;
-  return uc(s.slice(0, i + 1)) + lc(s.slice(i + 1));
+  // P3206: the vendor prefix is the FIRST segment (_TZ3210_), not up to the last '_':
+  // _TZ3210_dse8ogfy_fingerbot keeps its lower-case tail.
+  const mm = /^_t[a-z0-9]*_/i.exec(s);
+  if (!mm || mm[0].length >= s.length) return s;
+  return uc(mm[0]) + lc(s.slice(mm[0].length));
 }
 /** Canonical productId: TSxxxx ids are upper case on the wire; other ids keep their own form. */
 function canonicalPid(p) {
@@ -68,6 +70,9 @@ function loadSourcedCouples(repoRoot) {
   for (const r of (diag && diag.reports) || []) for (const c of r.couples || []) add(c[0], c[1], 'diag', true);
   const sacred = readJson(path.join(repoRoot, 'config', 'architecture', 'publish-sacred-keep-couples.json'));
   for (const c of (sacred && sacred.couples) || []) add(c.mfr, c.pid || c.productId || c.modelId, 'sacred', true);
+  // P3206: P3055 reviewed attestations (owner-reviewed couple decisions) are a strong source too.
+  const att = readJson(path.join(repoRoot, 'config', 'architecture', 'p3055-parasite-decisions.json'));
+  for (const c of (att && att.attested) || []) if (Array.isArray(c)) add(c[0], c[1], 'attested', true);
   const db = readJson(path.join(repoRoot, 'data', 'mfs_db.json')) || {};
   const seen = new Set();
   const addDb = (info, key) => {
@@ -82,6 +87,12 @@ function loadSourcedCouples(repoRoot) {
   for (const [k, v] of Object.entries(db.devices || {})) addDb(v, k);
   for (const [k, v] of Object.entries(db)) if (!['_meta', 'sources', 'devices', 'driverMapping', 'stats', 'diff'].includes(k)) addDb(v, k);
   return out;
+}
+
+/** P3206: exact mfr\u0000pid of P3055 reviewed attested couples (every case form kept in the baseline pins). */
+function attestedExact(repoRoot) {
+  const att = readJson(path.join(repoRoot, 'config', 'architecture', 'p3055-parasite-decisions.json'));
+  return new Set(((att && att.attested) || []).filter(Array.isArray).map((c) => `${c[0]}\u0000${c[1]}`));
 }
 
 function sacredExact(repoRoot) {
@@ -185,6 +196,35 @@ function dedupeForms(man, sourced, sacred, prot = new Set()) {
   return before - total(man);
 }
 
+/**
+ * P3206: rename a non-canonical form to its canonical wire form, at zero combo cost, when the driver has no
+ * canonical twin, no source quotes that exact form for any of its couples there, and it is neither a baseline
+ * row nor a sacred pin. With the narrowed P3024b baseline the compactor could keep only _TZ3000_C8OZAH8N, a
+ * form no device sends (snapshot couples then counted as "present" but were not pairable).
+ */
+function normalizeForms(man, sourced, sacred, prot) {
+  let renamed = 0;
+  const pinned = new Set([...sacred].map((x) => x.split('#').slice(0, 2).join('#')));
+  const pinnedP = new Set([...sacred].map((x) => { const a = x.split('#'); return `${a[0]}#${a[2]}`; }));
+  for (const d of man.drivers || []) {
+    if (!zig(d)) continue;
+    const z = d.zigbee;
+    const fix = (list, canon, isPid) => list.map((v) => {
+      const c = canon(v);
+      if (c === v || list.includes(c)) return v;
+      if (prot.has(`${d.id}#${isPid ? 'P' : 'M'}#${v}`)) return v;
+      if (isPid ? pinnedP.has(`${d.id}#${uc(v)}`) : pinned.has(`${d.id}#${v}`)) return v;
+      const other = isPid ? z.manufacturerName : z.productId;
+      const quoted = other.some((o) => { const e = sourced.get(isPid ? keyOf(o, v) : keyOf(v, o)); return e && (isPid ? e.pidForms : e.mfrForms).has(v); });
+      if (quoted) return v;
+      renamed++; return c;
+    });
+    z.manufacturerName = fix(z.manufacturerName, canonicalMfr, false);
+    z.productId = fix(z.productId, canonicalPid, true);
+  }
+  return renamed;
+}
+
 /** Step 2: restore source-backed couples of the compose, freeing room only from parasite rows. */
 function restoreSourced(source, man, sourced, sacred, { prot = new Set(), maxTotal, maxDriver = Infinity, log = () => {}, ratchet = null } = {}) {
   const payById = new Map((man.drivers || []).filter(zig).map((d) => [d.id, d]));
@@ -244,13 +284,37 @@ function restoreSourced(source, man, sourced, sacred, { prot = new Set(), maxTot
     }
     return freed >= need;
   };
-  const present = presentKeys(man);
-  const missing = [...want.entries()].filter(([k]) => !present.has(k));
+  const freeInDriver = (d, need, key) => {
+    if (!cand) buildCand();
+    const km = key.slice(0, key.lastIndexOf('|')); const kp = key.slice(key.lastIndexOf('|') + 1);
+    let freed = 0;
+    while (freed < need) {
+      let best = null; let bestG = 0;
+      for (const c of cand) {
+        if (c.d !== d) continue;
+        if (c.isPid ? uc(clean(c.v)) === kp : lc(clean(c.v)) === km) continue;
+        const g = gainOf(c); if (g > bestG) { best = c; bestG = g; }
+      }
+      if (!best) break;
+      const z = d.zigbee;
+      if (best.isPid) z.productId = z.productId.filter((x) => x !== best.v);
+      else z.manufacturerName = z.manufacturerName.filter((x) => x !== best.v);
+      cand = cand.filter((c) => c !== best);
+      freed += bestG; cur -= bestG;
+    }
+    return freed >= need;
+  };
+  // P3206: a couple only shipped in a form no device sends (_TZ3000_C8OZAH8N, kept by a baseline pin) is missing.
+  const present = presentKeys(man); const wireNow = wireKeys(man, sourced);
+  const missing = [...want.entries()].filter(([k]) => !(present.has(k) && wireNow.has(k)));
+  const okM = (x, m, e) => lc(clean(x)) === m && (x === canonicalMfr(x) || e.mfrForms.has(x));
+  const okP = (x, p, e) => uc(clean(x)) === p && (x === canonicalPid(x) || e.pidForms.has(x));
   // strong first, then cheapest
   const costOf = (k, id) => {
     const d = payById.get(id); const [m, p] = [k.slice(0, k.lastIndexOf('|')), k.slice(k.lastIndexOf('|') + 1)];
-    const hasM = d.zigbee.manufacturerName.some((x) => lc(clean(x)) === m);
-    const hasP = d.zigbee.productId.some((x) => uc(clean(x)) === p);
+    const e = sourced.get(k);
+    const hasM = d.zigbee.manufacturerName.some((x) => okM(x, m, e));
+    const hasP = d.zigbee.productId.some((x) => okP(x, p, e));
     const M = d.zigbee.manufacturerName.length; const P = d.zigbee.productId.length;
     return hasM && hasP ? 0 : hasM ? M : hasP ? P : M + P + 1;
   };
@@ -260,17 +324,20 @@ function restoreSourced(source, man, sourced, sacred, { prot = new Set(), maxTot
   missing.sort((a, b) => (inSnap(b[0]) - inSnap(a[0])) || (sourced.get(b[0]).strong - sourced.get(a[0]).strong) || (costOf(a[0], a[1]) - costOf(b[0], b[1])));
   let restored = 0; const still = [];
   for (const [k, id] of missing) {
-    if (presentKeys({ drivers: [payById.get(id)] }).has(k)) { restored++; continue; }
+    if (wireKeys({ drivers: [payById.get(id)] }, sourced).has(k)) { restored++; continue; }
     const d = payById.get(id); const e = sourced.get(k);
     const cost = costOf(k, id);
     const M = d.zigbee.manufacturerName.length; const P = d.zigbee.productId.length;
-    if (M * P + cost > maxDriver) { still.push({ key: k, driver: id, why: 'driver-cap' }); continue; }
+    // P3206: at the per-driver cap, make room inside that driver first by removing its own parasite rows
+    // (rows pairing no source-backed couple there); before, a narrowed baseline let compaction fill drivers
+    // with parasites to the cap and 10 snapshot couples (TS0202, TS0505B) stayed out.
+    if (M * P + cost > maxDriver && !freeInDriver(d, M * P + cost - maxDriver, k)) { still.push({ key: k, driver: id, why: 'driver-cap' }); continue; }
     if (cur + cost > maxTotal && !freeRoom(cur + cost - maxTotal, id)) { still.push({ key: k, driver: id, why: 'ceiling' }); continue; }
     const [m, p] = [k.slice(0, k.lastIndexOf('|')), k.slice(k.lastIndexOf('|') + 1)];
     const pickM = [...e.mfrForms].find((f) => f === canonicalMfr(f)) || canonicalMfr([...e.mfrForms][0] || m);
     const pickP = [...e.pidForms].find((f) => f === canonicalPid(f)) || canonicalPid([...e.pidForms][0] || p);
-    if (!d.zigbee.manufacturerName.some((x) => lc(clean(x)) === m)) d.zigbee.manufacturerName.push(pickM);
-    if (!d.zigbee.productId.some((x) => uc(clean(x)) === p)) d.zigbee.productId.push(pickP);
+    if (!d.zigbee.manufacturerName.some((x) => okM(x, m, e))) d.zigbee.manufacturerName.push(pickM);
+    if (!d.zigbee.productId.some((x) => okP(x, p, e))) d.zigbee.productId.push(pickP);
     // P3201b: the rows now carry a source-backed couple, so they stop being parasites. The candidate list is
     // built once, so drop them from it; otherwise a later freeRoom removed a row a restore had just reused
     // (_tze200_9caxna4s|TS0301 reached the payload, then lost its mfr row; CI run 41402776968).
@@ -290,18 +357,19 @@ function sourcedPass(source, man, opts = {}) {
   if (!baselineSet) {
     const cz = require('./compact-zigbee-identifiers.cjs');
     const b = cz.loadPublishBaseline(repoRoot);
-    baselineSet = new Set(b ? cz.baselineCouples(b).map((c) => `${c.mfr}\u0000${c.pid}`) : []);
+    baselineSet = new Set(b ? cz.baselineCouples(b).flatMap((c) => [`${c.mfr}\u0000${c.pid}`, ...(c.fallback ? [`${c.fallback.mfr}\u0000${c.fallback.pid}`] : [])]) : []);
   }
   const prot = baselineRows(man, baselineSet);
   const before = total(man);
   const deduped = dedupeForms(man, sourced, sacred, prot);
+  const renamed = normalizeForms(man, sourced, sacred, prot);
   const r = restoreSourced(source, man, sourced, sacred, { ...opts, prot });
   const srcKeys = presentKeys(source);
   const payKeys = presentKeys(man);
   const wire = wireKeys(man, sourced);
   const droppedSourced = [];
   for (const [k, e] of sourced) if (srcKeys.has(k) && !(payKeys.has(k) && wire.has(k))) droppedSourced.push({ key: k, strong: e.strong, src: [...e.src] });
-  return { before, deduped, restored: r.restored, after: total(man), maxTotal: opts.maxTotal, still: r.still, droppedSourced, sourcedInSource: [...sourced.keys()].filter((k) => srcKeys.has(k)).length };
+  return { before, deduped, renamed, restored: r.restored, after: total(man), maxTotal: opts.maxTotal, still: r.still, droppedSourced, sourcedInSource: [...sourced.keys()].filter((k) => srcKeys.has(k)).length };
 }
 
 function strongStats(source, man, sourced) {
@@ -355,7 +423,7 @@ function sourcedPassFile(source, destAppJson, opts = {}) {
   return { ...r, driversBefore, driversAfter: (man.drivers || []).length, sacredMissing, strongIn: st.inPayload.length, strongInSource: st.strongInSource, strongKeys: st.inPayload, snapshotMissing: snap.missing, snapshotChecked: snap.checked };
 }
 
-module.exports = { strongStats, snapshotFile, checkSnapshot, sourcedPassFile, canonicalMfr, canonicalPid, keyOf, loadSourcedCouples, sacredExact, dedupeForms, restoreSourced, sourcedPass, presentKeys, wireKeys, total };
+module.exports = { attestedExact, normalizeForms, strongStats, snapshotFile, checkSnapshot, sourcedPassFile, canonicalMfr, canonicalPid, keyOf, loadSourcedCouples, sacredExact, dedupeForms, restoreSourced, sourcedPass, presentKeys, wireKeys, total };
 
 // CLI: node scripts/maintenance/publish-sourced-restore.cjs --snapshot <payload app.json> <branch>
 //      node scripts/maintenance/publish-sourced-restore.cjs --check <payload app.json> <branch>
