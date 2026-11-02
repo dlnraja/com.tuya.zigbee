@@ -80,7 +80,9 @@ function checkBaseline(manifest, baseline) {
     const k = `${c.mfr}\u0000${c.pid}`;
     if (seen.has(k)) continue;
     seen.add(k);
-    if (!have.has(k) && !exempt.has(k)) missing.push(`${c.mfr}+${c.pid} (was ${c.driverId})`);
+    // P3206: a narrowed pin is satisfied by its canonical form or by the shipped fallback form.
+    const fk = c.fallback ? `${c.fallback.mfr}\u0000${c.fallback.pid}` : null;
+    if (!have.has(k) && !(fk && have.has(fk)) && !exempt.has(k)) missing.push(`${c.mfr}+${c.pid} (was ${c.driverId})`);
   }
   return { total: seen.size, missing };
 }

@@ -110,7 +110,21 @@ function loadPublishBaseline(repoRoot, file) {
   try {
     if (!fs.existsSync(target)) return null;
     const raw = JSON.parse(fs.readFileSync(target, 'utf8'));
-    return raw && raw.drivers ? raw : null;
+    if (!raw || !raw.drivers) return null;
+    // WHY(P3206, 02/11/2026 Paris): the 9.0.1574 baseline pinned ~14k exact raw couples, ~6k of them case
+    // forms and mfr x pid cross-products no source pairs; those pins starved source-backed couples (#584,
+    // #581, #598). Pins are narrowed to source-backed couples (publish-sourced-restore.loadSourcedCouples)
+    // in their canonical form plus at most ONE alternate form a source quotes exactly
+    // (docs/rules/USER_REPORTS_PRESUMED_TRUE.md, case rule). Unpinned couples still ship when room allows.
+    // Opt-out: HOMEY_PUBLISH_BASELINE_FULL=1.
+    if (process.env.HOMEY_PUBLISH_BASELINE_FULL !== '1') {
+      try {
+        const psr = require('./publish-sourced-restore.cjs');
+        const root = file ? path.join(path.dirname(target), '..', '..') : repoRoot;
+        Object.defineProperty(raw, '_sourced', { value: { map: psr.loadSourcedCouples(repoRoot || root), psr, exact: psr.attestedExact(repoRoot || root) }, enumerable: false });
+      } catch (_) { /* failsafe: full baseline */ }
+    }
+    return raw;
   } catch {
     return null;
   }
@@ -128,9 +142,52 @@ function loadHoldIds(repoRoot) {
   }
 }
 
+/**
+ * P3206: source-backed baseline couples only; per (driver, caseless couple) the canonical form when the
+ * baseline shipped it (else the first form a source quotes exactly, else the first shipped form), plus at
+ * most one alternate form quoted exactly by a source. Never a case cross-product.
+ */
+function narrowBaselineCouples(baseline) {
+  const { map, psr } = baseline._sourced;
+  const exact = baseline._sourced.exact || new Set(); // P3206: reviewed P3055 attested forms, kept byte-exact
+  const groups = new Map();
+  for (const [driverId, entry] of Object.entries(baseline.drivers || {})) {
+    for (const mfr of (entry && entry.m) || []) {
+      for (const pid of (entry && entry.p) || []) {
+        const k = psr.keyOf(mfr, pid);
+        if (!map.has(k)) continue;
+        const g = `${driverId}\u0000${k}`;
+        if (!groups.has(g)) groups.set(g, { driverId, k, forms: [] });
+        groups.get(g).forms.push({ mfr: String(mfr), pid: String(pid) });
+      }
+    }
+  }
+  const out = [];
+  for (const { driverId, k, forms } of groups.values()) {
+    const src = map.get(k);
+    const quoted = (f) => src.mfrForms.has(f.mfr) && src.pidForms.has(f.pid);
+    // Canonical wire form even when 1574 shipped only another form (_TZ3000_C8OZAH8N): the resolver re-pins it on
+    // the shipped driver. A shipped non-canonical form survives only as the one alternate a source quotes.
+    const shippedCanon = forms.find((f) => f.mfr === psr.canonicalMfr(f.mfr) && f.pid === psr.canonicalPid(f.pid));
+    const primary = shippedCanon || { mfr: psr.canonicalMfr(forms[0].mfr), pid: psr.canonicalPid(forms[0].pid) };
+    // fallback: when no driver carries the canonical form, pin the shipped form instead of adding a row (a new
+    // canonical mfr row on a pinned driver costs its whole pid list: 15 502 > 15 500 on master).
+    const fb = shippedCanon ? null : (forms.find(quoted) || forms[0]);
+    out.push(fb ? { mfr: primary.mfr, pid: primary.pid, driverId, fallback: { mfr: fb.mfr, pid: fb.pid } } : { mfr: primary.mfr, pid: primary.pid, driverId });
+    const alt = forms.find((f) => (f.mfr !== primary.mfr || f.pid !== primary.pid) && quoted(f));
+    if (alt) out.push({ mfr: alt.mfr, pid: alt.pid, driverId });
+    for (const f of forms) {
+      if (f === alt || (f.mfr === primary.mfr && f.pid === primary.pid)) continue;
+      if (exact.has(`${f.mfr}\u0000${f.pid}`)) out.push({ mfr: f.mfr, pid: f.pid, driverId });
+    }
+  }
+  return out;
+}
+
 /** Every exact couple of the baseline as [{mfr, pid, driverId}]. */
 function baselineCouples(baseline) {
   const out = [];
+  if (baseline && baseline._sourced) return narrowBaselineCouples(baseline);
   for (const [driverId, entry] of Object.entries((baseline && baseline.drivers) || {})) {
     for (const mfr of (entry && entry.m) || []) {
       for (const pid of (entry && entry.p) || []) {
@@ -218,7 +275,7 @@ function resolveBaselinePins(manifest, baseline, heldIds) {
     }
     return best || c.driverId;
   };
-  for (const c of later) {
+  for (let c of later) {
     // WHY(P3077): an exempted couple was dropped from its driver on purpose (owner-approved
     // parasite). If another driver still carries the mfr and the pid through its own
     // manufacturerName x productId product, pinning it there grows that driver's pinned
@@ -248,6 +305,14 @@ function resolveBaselinePins(manifest, baseline, heldIds) {
       push(pin);
       addPinned(pin);
       continue;
+    }
+    if (c.fallback) {
+      // P3206: canonical form carried by no driver -> keep the shipped form pinned, no new row.
+      const fb = { mfr: c.fallback.mfr, pid: c.fallback.pid, driverId: c.driverId };
+      const s2 = byId.get(c.driverId);
+      const fbOwners = s2 && s2.m.has(fb.mfr) && s2.p.has(fb.pid) ? [c.driverId] : ownersOf(fb.mfr, fb.pid);
+      if (fbOwners.length) { const pin = { ...fb, driverId: fbOwners[0] }; push(pin); addPinned(pin); continue; }
+      c = { ...fb, driverId: c.driverId };
     }
     if (byId.has(c.driverId)) {
       // WHY(P3024b): no driver owns this couple any more (a later source curation or an
@@ -1123,6 +1188,7 @@ if (require.main === module) {
 }
 
 module.exports = {
+  narrowBaselineCouples,
   comboCount,
   compactManifestFile,
   compactZigbeeIdentifiers,

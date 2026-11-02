@@ -34,6 +34,8 @@ const RULES_GATES = [
   // Spec 002 + 2026-10-11 rules: no new mandatory non-native cluster, one exact couple per driver;
   // also runs scripts/gates/init-non-native-guard.js and the dual-couple-legacy check.
   { id: 'native-matrix', file: 'scripts/gates/native-matrix-gate.js', profiles: ['core', 'full'] },
+  // P3206: driver continuation chain coherence (docs/rules/DRIVER_CONTINUATIONS.md).
+  { id: 'driver-continuations', file: 'scripts/ci/driver-continuations-check.js', profiles: ['core', 'full'] },
   { id: 'compose-sync', file: 'tools/ci/compose-appjson-fingerprint-sync-gate.js', profiles: ['full'] },
 ];
 
