@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-02T10:55:08.561Z",
+ "updated": "2026-11-02T11:12:16.978Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -45094,6 +45094,12 @@
     "leadsAdded": 0
    },
    "lastChangeRun": "41312721125"
+  },
+  "ci-fail:fetch-diags:privacy-gate:secret-assignment": {
+   "status": "fixed",
+   "date": "2026-11-02",
+   "by": "homey-ci-prs",
+   "note": "attempt 1/3 (24h) run 41431628509 master 5daaa31ae4: fetch-diags privacy gate secret-assignment@63672 in diagnostics-state.json; a secret key glued to a KEEP_TECH token (measure_/alarm_/_TZE..) escaped redact() and object keys were never redacted; P3219 final secret pass (aliases masked) + leaking-key redaction, test p3219"
   }
  }
 }
