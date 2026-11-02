@@ -138,6 +138,168 @@
         "git_history": "51a86ac373 v9.0.217: 431 drivers, 2737 FPs [skip ci] | cc0f3f79e2 feat: P11 carte blanche - door_sensor + workflow consolidation | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
         "sibling_pids": "_TZ3000_gbm10jnj|TS0043"
       }
+    },
+    {
+      "couple": "_TZE284_9ern5sfh|TS0601",
+      "driver": "lcdtemphumidsensor",
+      "pr": "P3204",
+      "verdict": "pairing blocked (GH#598 Unable to connect): lcdtemphumidsensor binds 1/1026/1029 at pairing, the node serves only 0,4,5,0xED00,0xEF00; moved to lcdtemphumidsensor_3 (bindings 4/5/61184); case duplicates dropped (canonical form kept)",
+      "sources": {
+        "z2m": "z2m:TS0601_temperature_humidity_sensor_4 (_TZE284 only)",
+        "zha": "zhaquirks/tuya/tuya_sensor.py",
+        "deconz": "not checked",
+        "blakadder": "not checked",
+        "hubitat": "not checked",
+        "johan": "JohanBendz #1328 RSH-HS03",
+        "forum": "140352 #2263 Kizabgd interview",
+        "diags": "GH#598 interview (oletorv)",
+        "git_history": "P2823 moved climate_sensor->lcdtemphumidsensor; P2869",
+        "sibling_pids": "_TZE284_9ern5sfh|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE204_9ern5sfh|TS0601",
+      "driver": "lcdtemphumidsensor",
+      "pr": "P3204",
+      "verdict": "pairing blocked (GH#598 Unable to connect): lcdtemphumidsensor binds 1/1026/1029 at pairing, the node serves only 0,4,5,0xED00,0xEF00; moved to lcdtemphumidsensor_3 (bindings 4/5/61184); case duplicates dropped (canonical form kept)",
+      "sources": {
+        "z2m": "z2m:TS0601_temperature_humidity_sensor_4 (_TZE284 only)",
+        "zha": "zhaquirks/tuya/tuya_sensor.py",
+        "deconz": "not checked",
+        "blakadder": "not checked",
+        "hubitat": "not checked",
+        "johan": "JohanBendz #1328 RSH-HS03",
+        "forum": "140352 #2263 Kizabgd interview",
+        "diags": "GH#598 interview (oletorv)",
+        "git_history": "P2823 moved climate_sensor->lcdtemphumidsensor; P2869",
+        "sibling_pids": "_TZE204_9ern5sfh|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE200_9ern5sfh|TS0601",
+      "driver": "lcdtemphumidsensor",
+      "pr": "P3204",
+      "verdict": "pairing blocked (GH#598 Unable to connect): lcdtemphumidsensor binds 1/1026/1029 at pairing, the node serves only 0,4,5,0xED00,0xEF00; moved to lcdtemphumidsensor_3 (bindings 4/5/61184); case duplicates dropped (canonical form kept)",
+      "sources": {
+        "z2m": "z2m:TS0601_temperature_humidity_sensor_4 (_TZE284 only)",
+        "zha": "zhaquirks/tuya/tuya_sensor.py",
+        "deconz": "not checked",
+        "blakadder": "not checked",
+        "hubitat": "not checked",
+        "johan": "JohanBendz #1328 RSH-HS03",
+        "forum": "140352 #2263 Kizabgd interview",
+        "diags": "GH#598 interview (oletorv)",
+        "git_history": "P2823 moved climate_sensor->lcdtemphumidsensor; P2869",
+        "sibling_pids": "_TZE200_9ern5sfh|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE200_0dvm9mva|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3212",
+      "verdict": "moved to radiator_valve (saswell DP profile); TRV not a climate sensor",
+      "sources": {
+        "z2m": "z2m:SEA801 saswell.ts",
+        "zha": "not checked",
+        "deconz": "not checked",
+        "blakadder": "not checked",
+        "hubitat": "not checked",
+        "johan": "not checked",
+        "forum": "not checked",
+        "diags": "none",
+        "git_history": "climate_sensor bulk import",
+        "sibling_pids": "_TZE200_0dvm9mva|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE284_0dvm9mva|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3212",
+      "verdict": "moved to radiator_valve (saswell DP profile); TRV not a climate sensor",
+      "sources": {
+        "z2m": "z2m:SEA801 saswell.ts",
+        "zha": "not checked",
+        "deconz": "not checked",
+        "blakadder": "not checked",
+        "hubitat": "not checked",
+        "johan": "not checked",
+        "forum": "not checked",
+        "diags": "none",
+        "git_history": "climate_sensor bulk import",
+        "sibling_pids": "_TZE284_0dvm9mva|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE200_9m4kmbfu|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3212",
+      "verdict": "moved to radiator_valve (saswell DP profile); TRV not a climate sensor",
+      "sources": {
+        "z2m": "z2m:SEA801 saswell.ts",
+        "zha": "not checked",
+        "deconz": "not checked",
+        "blakadder": "not checked",
+        "hubitat": "not checked",
+        "johan": "not checked",
+        "forum": "not checked",
+        "diags": "none",
+        "git_history": "climate_sensor bulk import",
+        "sibling_pids": "_TZE200_9m4kmbfu|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE284_9m4kmbfu|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3212",
+      "verdict": "moved to radiator_valve (saswell DP profile); TRV not a climate sensor",
+      "sources": {
+        "z2m": "z2m:SEA801 saswell.ts",
+        "zha": "not checked",
+        "deconz": "not checked",
+        "blakadder": "not checked",
+        "hubitat": "not checked",
+        "johan": "not checked",
+        "forum": "not checked",
+        "diags": "none",
+        "git_history": "climate_sensor bulk import",
+        "sibling_pids": "_TZE284_9m4kmbfu|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE200_3yp57tby|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3212",
+      "verdict": "moved to radiator_valve (saswell DP profile); TRV not a climate sensor",
+      "sources": {
+        "z2m": "z2m:SEA801 saswell.ts",
+        "zha": "not checked",
+        "deconz": "not checked",
+        "blakadder": "not checked",
+        "hubitat": "not checked",
+        "johan": "not checked",
+        "forum": "not checked",
+        "diags": "none",
+        "git_history": "climate_sensor bulk import",
+        "sibling_pids": "_TZE200_3yp57tby|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE284_3yp57tby|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3212",
+      "verdict": "moved to radiator_valve (saswell DP profile); TRV not a climate sensor",
+      "sources": {
+        "z2m": "z2m:SEA801 saswell.ts",
+        "zha": "not checked",
+        "deconz": "not checked",
+        "blakadder": "not checked",
+        "hubitat": "not checked",
+        "johan": "not checked",
+        "forum": "not checked",
+        "diags": "none",
+        "git_history": "climate_sensor bulk import",
+        "sibling_pids": "_TZE284_3yp57tby|TS0601"
+      }
     }
   ]
 }

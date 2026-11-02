@@ -665,15 +665,6 @@
     },
     {
       "mfr": [
-        "_TZE284_9ern5sfh"
-      ],
-      "pid": "TS0601",
-      "driver": "lcdtemphumidsensor",
-      "source": "Z2M tuya.ts TS0601_temperature_humidity_sensor_4 (DP1/DP2 divideBy10, DP4 battery); zhc #10167 external converter \"Temperature & humidity sensor with display\"; JohanBendz #1328 RSH-HS03",
-      "regression": "master moved it off climate_sensor in P2823 (Kizabgd #2263); stable-v5/bastien-home still had it on climate_sensor until 2026-10-19 (Johan #1328 users saw 100% humidity there)"
-    },
-    {
-      "mfr": [
         "_TZ3000_4fjiwweb"
       ],
       "pid": "TS004F",
@@ -1001,6 +992,15 @@
       "pid": "TS0601",
       "driver": "soil_sensor",
       "source": "P3018b-soil Z2M Arteco ZS-300Z soil moisture sensor — https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L26391"
+    },
+    {
+      "mfr": [
+        "_TZE284_9ern5sfh"
+      ],
+      "pid": "TS0601",
+      "driver": "lcdtemphumidsensor_3",
+      "source": "Z2M tuya.ts TS0601_temperature_humidity_sensor_4 (DP1/DP2 divideBy10, DP4 battery); zhc #10167 external converter \"Temperature & humidity sensor with display\"; JohanBendz #1328 RSH-HS03 | P3204 GH#598: moved to lcdtemphumidsensor_3 — node serves only 0,4,5,0xED00,0xEF00 (interview GH#598 + forum 140352 #2263); manifest bindings 1/1026/1029 of lcdtemphumidsensor are bind requests at pairing (Homey SDK docs) to clusters the node lacks",
+      "regression": "master moved it off climate_sensor in P2823 (Kizabgd #2263); stable-v5/bastien-home still had it on climate_sensor until 2026-10-19 (Johan #1328 users saw 100% humidity there)"
     }
   ]
 }
