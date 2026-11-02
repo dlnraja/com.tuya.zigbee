@@ -67,7 +67,7 @@ Generated from data/kb/couples.json (facts only).
 - [TS0504B](devices/TS0504B.md) — 9 fingerprints
 - [TS0505A](devices/TS0505A.md) — 19 fingerprints
 - [TS0505B](devices/TS0505B.md) — 36 fingerprints
-- [TS0601](devices/TS0601.md) — 1456 fingerprints
+- [TS0601](devices/TS0601.md) — 1458 fingerprints
 - [TS0603](devices/TS0603.md) — 5 fingerprints
 - [TS0726](devices/TS0726.md) — 58 fingerprints
 - [TS1001](devices/TS1001.md) — 3 fingerprints
@@ -75,8 +75,8 @@ Generated from data/kb/couples.json (facts only).
 - [TS1101](devices/TS1101.md) — 8 fingerprints
 - [TS110E](devices/TS110E.md) — 25 fingerprints
 - [TS110F](devices/TS110F.md) — 18 fingerprints
-- [TS1201](devices/TS1201.md) — 19 fingerprints
-- [TS130F](devices/TS130F.md) — 32 fingerprints
+- [TS1201](devices/TS1201.md) — 20 fingerprints
+- [TS130F](devices/TS130F.md) — 33 fingerprints
 - [TS202PIR1-z](devices/TS202PIR1-z.md) — 1 fingerprints
 - [TSO121](devices/TSO121.md) — 65 fingerprints
 - [TY0201](devices/TY0201.md) — 14 fingerprints
