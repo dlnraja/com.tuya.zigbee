@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T11:45:54.494Z",
+  "generatedAt": "2026-11-02T20:57:25.339Z",
   "date": "2026-11-02",
   "mode": "full",
   "phases": [
@@ -12,18 +12,18 @@
     {
       "name": "github",
       "ok": true,
-      "durationMs": 550
+      "durationMs": 431
     },
     {
       "name": "gmail",
       "ok": true,
-      "durationMs": 241,
+      "durationMs": 233,
       "details": {
         "crash": {
           "ok": true,
           "skipped": false,
           "status": 0,
-          "durationMs": 39,
+          "durationMs": 41,
           "stderr": "",
           "stdoutTail": "[gmail-crash-pattern-gate] sources=32 hits=0 unknown=0\n  wrote .github/state/gmail-crash-patterns.json\n  verdict: ok\n"
         },
@@ -31,16 +31,16 @@
           "ok": true,
           "skipped": false,
           "status": 0,
-          "durationMs": 200,
+          "durationMs": 192,
           "stderr": "",
-          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-11-02\n{\n  \"generatedAt\": \"2026-11-02T11:45:55.272Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 35,\n  \"derivedFromInterview\": 0,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 3,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 3,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 2,\n    \"processing_failed\": 3,\n    \"scene_0x8004\": 2,\n    \"aggregate_error\": 2,\n    \"invalid_flow_card\": 1,\n    \"missing_capability_listener\": 1\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 35 gmailBodies= 30\n"
+          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-11-02\n{\n  \"generatedAt\": \"2026-11-02T20:57:25.991Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 34,\n  \"derivedFromInterview\": 0,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 3,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 2,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 2,\n    \"processing_failed\": 2,\n    \"scene_0x8004\": 2,\n    \"aggregate_error\": 1,\n    \"invalid_flow_card\": 1,\n    \"missing_capability_listener\": 1\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 34 gmailBodies= 30\n"
         }
       }
     },
     {
       "name": "forum",
       "ok": true,
-      "durationMs": 37477,
+      "durationMs": 38629,
       "skipScan": false,
       "steps": [
         {
@@ -64,7 +64,7 @@
     {
       "name": "drivers",
       "ok": true,
-      "durationMs": 2023,
+      "durationMs": 1934,
       "mfs": {
         "high": 0,
         "changes": 0,
@@ -75,152 +75,100 @@
     {
       "name": "functionalDeep",
       "ok": true,
-      "durationMs": 6262,
+      "durationMs": 6034,
       "note": "P2529 complementary deep functional (soft)"
     },
     {
       "name": "prioritize",
       "ok": true,
       "durationMs": 1,
-      "count": 17
+      "count": 13
     },
     {
       "name": "docs",
       "ok": true,
-      "durationMs": 1,
+      "durationMs": 0,
       "doc": "/home/runner/work/com.tuya.zigbee/com.tuya.zigbee/docs/architecture/L99_INBOX_INTELLIGENCE.md"
     },
     {
       "name": "gates",
       "ok": true,
-      "durationMs": 3156
+      "durationMs": 3124
     }
   ],
   "github": {
-    "harvestedAt": "2026-11-02T11:45:55.044Z",
+    "harvestedAt": "2026-11-02T20:57:25.769Z",
     "repo": "dlnraja/com.tuya.zigbee",
     "auth": "token",
     "error": null,
     "issues": [
-      {
-        "number": 608,
-        "title": "[crash] 2ebcc432d4 (review)",
-        "labels": [
-          "crash-triage"
-        ],
-        "updatedAt": "2026-11-02T10:57:02Z",
-        "user": "github-actions[bot]",
-        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/608"
-      },
-      {
-        "number": 607,
-        "title": "[crash] 3a1e4c5f70 (review)",
-        "labels": [
-          "crash-triage"
-        ],
-        "updatedAt": "2026-11-02T10:57:00Z",
-        "user": "github-actions[bot]",
-        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/607"
-      },
-      {
-        "number": 606,
-        "title": "[crash] c3ef959535 (review)",
-        "labels": [
-          "crash-triage"
-        ],
-        "updatedAt": "2026-11-02T10:56:58Z",
-        "user": "github-actions[bot]",
-        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/606"
-      },
-      {
-        "number": 605,
-        "title": "[crash] 8f9742a93b (bounded-cache)",
-        "labels": [
-          "crash-triage"
-        ],
-        "updatedAt": "2026-11-02T10:56:57Z",
-        "user": "github-actions[bot]",
-        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/605"
-      },
-      {
-        "number": 604,
-        "title": "[crash] 759eb18002 (bounded-cache)",
-        "labels": [
-          "crash-triage"
-        ],
-        "updatedAt": "2026-11-02T10:56:55Z",
-        "user": "github-actions[bot]",
-        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/604"
-      },
-      {
-        "number": 603,
-        "title": "[crash] 2448c80cc1 (review)",
-        "labels": [
-          "crash-triage"
-        ],
-        "updatedAt": "2026-11-02T10:17:50Z",
-        "user": "github-actions[bot]",
-        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/603"
-      },
-      {
-        "number": 602,
-        "title": "[crash] ea96ae0b46 (review)",
-        "labels": [
-          "crash-triage"
-        ],
-        "updatedAt": "2026-11-02T10:17:49Z",
-        "user": "github-actions[bot]",
-        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/602"
-      },
-      {
-        "number": 601,
-        "title": "[crash] cc18153aa7 (review)",
-        "labels": [
-          "crash-triage"
-        ],
-        "updatedAt": "2026-11-02T10:17:47Z",
-        "user": "github-actions[bot]",
-        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/601"
-      },
-      {
-        "number": 600,
-        "title": "[crash] 5d47b55d95 (review)",
-        "labels": [
-          "crash-triage"
-        ],
-        "updatedAt": "2026-11-02T10:17:45Z",
-        "user": "github-actions[bot]",
-        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/600"
-      },
-      {
-        "number": 599,
-        "title": "[crash] a8994dc2f3 (review)",
-        "labels": [
-          "crash-triage"
-        ],
-        "updatedAt": "2026-11-02T10:17:44Z",
-        "user": "github-actions[bot]",
-        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/599"
-      },
-      {
-        "number": 598,
-        "title": "Bug report - [_TZE284_9ern5sfh - TS0601] Temp & Hum Sensor with LCD not pairing correctly",
-        "labels": [
-          "bug"
-        ],
-        "updatedAt": "2026-11-02T08:46:39Z",
-        "user": "oletorv",
-        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/598"
-      },
       {
         "number": 557,
         "title": "🤖 Daily digest",
         "labels": [
           "bot-digest"
         ],
-        "updatedAt": "2026-11-02T08:19:20Z",
+        "updatedAt": "2026-11-02T19:39:35Z",
         "user": "dlnraja",
         "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/557"
+      },
+      {
+        "number": 621,
+        "title": "[crash] 759eb18002 (bounded-cache)",
+        "labels": [
+          "crash-triage"
+        ],
+        "updatedAt": "2026-11-02T17:28:39Z",
+        "user": "github-actions[bot]",
+        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/621"
+      },
+      {
+        "number": 620,
+        "title": "[crash] 2448c80cc1 (review)",
+        "labels": [
+          "crash-triage"
+        ],
+        "updatedAt": "2026-11-02T17:28:37Z",
+        "user": "github-actions[bot]",
+        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/620"
+      },
+      {
+        "number": 619,
+        "title": "[crash] cc18153aa7 (review)",
+        "labels": [
+          "crash-triage"
+        ],
+        "updatedAt": "2026-11-02T17:28:35Z",
+        "user": "github-actions[bot]",
+        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/619"
+      },
+      {
+        "number": 618,
+        "title": "[crash] 5d47b55d95 (review)",
+        "labels": [
+          "crash-triage"
+        ],
+        "updatedAt": "2026-11-02T17:28:33Z",
+        "user": "github-actions[bot]",
+        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/618"
+      },
+      {
+        "number": 617,
+        "title": "[crash] ea96ae0b46 (review)",
+        "labels": [
+          "crash-triage"
+        ],
+        "updatedAt": "2026-11-02T17:28:30Z",
+        "user": "github-actions[bot]",
+        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/617"
+      },
+      {
+        "number": 616,
+        "title": "Autonomy weekly digest",
+        "labels": [],
+        "updatedAt": "2026-11-02T17:00:23Z",
+        "user": "github-actions[bot]",
+        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/616"
       },
       {
         "number": 581,
@@ -266,23 +214,32 @@
         "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/559"
       }
     ],
-    "prs": [],
-    "openIssueCount": 16,
-    "openPrCount": 0
+    "prs": [
+      {
+        "number": 614,
+        "title": "Weekly Homey knowledge/tooling refresh 2026-11-02",
+        "updatedAt": "2026-11-02T13:51:23Z",
+        "user": "github-actions[bot]",
+        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/pull/614",
+        "draft": true
+      }
+    ],
+    "openIssueCount": 11,
+    "openPrCount": 1
   },
   "forum": {
     "path": "/home/runner/work/com.tuya.zigbee/com.tuya.zigbee/.github/state/forum/actionable-processor-report.json",
     "totals": {
-      "posts": 334,
+      "posts": 335,
       "withCouples": 80,
       "needAction": 108,
       "both": 215,
       "masterOnly": 16
     },
-    "posts": 334
+    "posts": 335
   },
   "gmail": {
-    "generatedAt": "2026-11-02T11:45:55.075Z",
+    "generatedAt": "2026-11-02T20:57:25.803Z",
     "sourcesScanned": 32,
     "patternCounts": {
       "flow_getDeviceActionCard": 0,
@@ -345,49 +302,9 @@
       "score": 90,
       "dualApp": "BOTH",
       "source": "github-issue",
-      "id": "#608",
-      "title": "[crash] 2ebcc432d4 (review)",
-      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/608",
-      "action": "investigate-code-silent",
-      "forumReply": "NEVER"
-    },
-    {
-      "score": 90,
-      "dualApp": "BOTH",
-      "source": "github-issue",
-      "id": "#607",
-      "title": "[crash] 3a1e4c5f70 (review)",
-      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/607",
-      "action": "investigate-code-silent",
-      "forumReply": "NEVER"
-    },
-    {
-      "score": 90,
-      "dualApp": "BOTH",
-      "source": "github-issue",
-      "id": "#606",
-      "title": "[crash] c3ef959535 (review)",
-      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/606",
-      "action": "investigate-code-silent",
-      "forumReply": "NEVER"
-    },
-    {
-      "score": 90,
-      "dualApp": "BOTH",
-      "source": "github-issue",
-      "id": "#605",
-      "title": "[crash] 8f9742a93b (bounded-cache)",
-      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/605",
-      "action": "investigate-code-silent",
-      "forumReply": "NEVER"
-    },
-    {
-      "score": 90,
-      "dualApp": "BOTH",
-      "source": "github-issue",
-      "id": "#604",
+      "id": "#621",
       "title": "[crash] 759eb18002 (bounded-cache)",
-      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/604",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/621",
       "action": "investigate-code-silent",
       "forumReply": "NEVER"
     },
@@ -395,9 +312,9 @@
       "score": 90,
       "dualApp": "BOTH",
       "source": "github-issue",
-      "id": "#603",
+      "id": "#620",
       "title": "[crash] 2448c80cc1 (review)",
-      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/603",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/620",
       "action": "investigate-code-silent",
       "forumReply": "NEVER"
     },
@@ -405,19 +322,9 @@
       "score": 90,
       "dualApp": "BOTH",
       "source": "github-issue",
-      "id": "#602",
-      "title": "[crash] ea96ae0b46 (review)",
-      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/602",
-      "action": "investigate-code-silent",
-      "forumReply": "NEVER"
-    },
-    {
-      "score": 90,
-      "dualApp": "BOTH",
-      "source": "github-issue",
-      "id": "#601",
+      "id": "#619",
       "title": "[crash] cc18153aa7 (review)",
-      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/601",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/619",
       "action": "investigate-code-silent",
       "forumReply": "NEVER"
     },
@@ -425,9 +332,9 @@
       "score": 90,
       "dualApp": "BOTH",
       "source": "github-issue",
-      "id": "#600",
+      "id": "#618",
       "title": "[crash] 5d47b55d95 (review)",
-      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/600",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/618",
       "action": "investigate-code-silent",
       "forumReply": "NEVER"
     },
@@ -435,9 +342,9 @@
       "score": 90,
       "dualApp": "BOTH",
       "source": "github-issue",
-      "id": "#599",
-      "title": "[crash] a8994dc2f3 (review)",
-      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/599",
+      "id": "#617",
+      "title": "[crash] ea96ae0b46 (review)",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/617",
       "action": "investigate-code-silent",
       "forumReply": "NEVER"
     },
@@ -445,9 +352,9 @@
       "score": 90,
       "dualApp": "BOTH",
       "source": "github-issue",
-      "id": "#598",
-      "title": "Bug report - [_TZE284_9ern5sfh - TS0601] Temp & Hum Sensor with LCD not pairing correctly",
-      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/598",
+      "id": "#616",
+      "title": "Autonomy weekly digest",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/616",
       "action": "investigate-code-silent",
       "forumReply": "NEVER"
     },
@@ -509,10 +416,20 @@
       "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/559",
       "action": "investigate-code-silent",
       "forumReply": "NEVER"
+    },
+    {
+      "score": 50,
+      "dualApp": "MASTER_ONLY",
+      "source": "github-pr",
+      "id": "PR#614",
+      "title": "Weekly Homey knowledge/tooling refresh 2026-11-02",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/pull/614",
+      "action": "review",
+      "forumReply": "NEVER"
     }
   ],
   "functionalDeep": {
     "ok": true,
-    "durationMs": 6262
+    "durationMs": 6033
   }
 }
