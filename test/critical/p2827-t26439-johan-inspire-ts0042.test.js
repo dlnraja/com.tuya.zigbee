@@ -61,7 +61,7 @@ describe('P2827 T26439 #5520 Johan inspire enrich', () => {
   });
 
   it('LCD typo 9em5sfh is NOT invented; 9ern5sfh stays lcdtemphumidsensor', () => {
-    assert.ok(hasMfr('lcdtemphumidsensor', '9ern5sfh'));
+    assert.ok(hasMfr('lcdtemphumidsensor_3', '9ern5sfh'));
     assert.ok(!hasMfr('lcdtemphumidsensor', '9em5sfh'));
     assert.ok(!hasMfr('climate_sensor', '9em5sfh'));
   });

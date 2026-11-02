@@ -30,7 +30,7 @@ function hasCouple(driverId, mfr, pid) {
 
 describe('P2826 T140352 fleet + flow harden', () => {
   it('forum sacred couples stay on correct drivers', () => {
-    assert.ok(hasCouple('lcdtemphumidsensor', '_TZE284_9ern5sfh', 'TS0601'));
+    assert.ok(hasCouple('lcdtemphumidsensor_3', '_TZE284_9ern5sfh', 'TS0601'));
     assert.ok(hasCouple('motion_sensor_radar_mmwave', '_TZE284_gnpflcoq', 'TS0601'));
     assert.ok(hasCouple('device_radiator_valve', '_TZE200_fl8cuafl', 'TS0601'));
     assert.ok(hasCouple('device_radiator_valve', '_TZE284_ogx8u5z6', 'TS0601'));
@@ -40,11 +40,12 @@ describe('P2826 T140352 fleet + flow harden', () => {
     assert.ok(hasCouple('sensor_climate_temphumidsensor', '_TZ3210_ncw88jfq', 'TS0201'));
   });
 
-  it('9ern5sfh exclusive to lcdtemphumidsensor (not climate_sensor)', () => {
+  it('9ern5sfh exclusive to lcdtemphumidsensor_3 (P3204; not climate_sensor)', () => {
     const app = JSON.parse(fs.readFileSync(path.join(ROOT, 'app.json'), 'utf8'));
     const has = (id) => (app.drivers.find((d) => d.id === id)?.zigbee?.manufacturerName || [])
       .some((m) => String(m).toLowerCase().includes('9ern5sfh'));
-    assert.ok(has('lcdtemphumidsensor'));
+    assert.ok(has('lcdtemphumidsensor_3'));
+    assert.ok(!has('lcdtemphumidsensor'), 'P3204: binds 1/1026/1029 absent on node');
     assert.ok(!has('climate_sensor'));
   });
 

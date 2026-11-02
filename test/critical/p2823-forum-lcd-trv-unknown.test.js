@@ -30,18 +30,18 @@ function hasPid(id, pid) {
 
 describe('P2823 forum LCD + TRV unknown harden', () => {
   it('9ern5sfh+TS0601 on lcdtemphumidsensor, not climate_sensor (#2263)', () => {
-    assert.equal(hasMfr('lcdtemphumidsensor', '_TZE284_9ern5sfh'), true);
+    assert.equal(hasMfr('lcdtemphumidsensor_3', '_TZE284_9ern5sfh'), true);
     assert.equal(hasPid('lcdtemphumidsensor', 'TS0601'), true);
     assert.equal(hasMfr('climate_sensor', '_TZE284_9ern5sfh'), false);
     assert.equal(hasMfr('climate_sensor', '_TZE200_9ern5sfh'), false);
   });
 
-  it('sacred-keep pins 9ern5sfh → lcdtemphumidsensor', () => {
+  it('sacred-keep pins 9ern5sfh → lcdtemphumidsensor_3 (P3204)', () => {
     const sk = JSON.parse(
       fs.readFileSync(path.join(ROOT, 'config/architecture/publish-sacred-keep-couples.json'), 'utf8'),
     );
     const hit = (sk.couples || []).find(
-      (c) => /9ern5sfh/i.test(c.mfr) && c.driverId === 'lcdtemphumidsensor' && String(c.pid).toUpperCase() === 'TS0601',
+      (c) => /9ern5sfh/i.test(c.mfr) && c.driverId === 'lcdtemphumidsensor_3' && String(c.pid).toUpperCase() === 'TS0601',
     );
     assert.ok(hit, 'missing sacred-keep for 9ern5sfh LCD');
   });

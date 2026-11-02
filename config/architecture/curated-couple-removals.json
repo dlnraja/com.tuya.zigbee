@@ -1260,6 +1260,22 @@
       ],
       "why": "P3077 b20: Avatto ZDMS16-1 dimmer family, kept on dimmer_1_gang_tuya with its _TZE204 sibling",
       "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/avatto.ts"
+    },
+    {
+      "driver": "lcdtemphumidsensor",
+      "mfr": [
+        "_TZE284_9ern5sfh",
+        "_tze284_9ern5sfh",
+        "_TZE284_9ERN5SFH",
+        "_TZE204_9ern5sfh",
+        "_tze204_9ern5sfh",
+        "_TZE204_9ERN5SFH",
+        "_TZE200_9ern5sfh",
+        "_tze200_9ern5sfh",
+        "_TZE200_9ERN5SFH"
+      ],
+      "why": "P3204 GH#598 (2026-11-02): 'Unable to connect' at pairing. The node (interview GH#598, forum 140352 #2263) serves only 0, 4, 5, 0xED00, 0xEF00; lcdtemphumidsensor binds 1/1026/1029 at pairing. Owner is now lcdtemphumidsensor_3 (bindings 4/5/61184, DP1 temp/10, DP2 humidity, DP4 battery % = Z2M TS0601_temperature_humidity_sensor_4). One couple, one driver.",
+      "source": "GH#598 interview + z2m tuya.ts + Homey SDK zigbee docs (bindings)"
     }
   ]
 }

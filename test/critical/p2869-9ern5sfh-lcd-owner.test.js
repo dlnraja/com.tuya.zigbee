@@ -10,7 +10,8 @@ const path = require('path');
 
 const ROOT = path.join(__dirname, '..', '..');
 const readJson = (rel) => JSON.parse(fs.readFileSync(path.join(ROOT, rel), 'utf8'));
-const OWNER = 'lcdtemphumidsensor';
+// P3204 (GH#598): owner moved to lcdtemphumidsensor_3 (its pairing binds 4/5/61184, which the node serves).
+const OWNER = 'lcdtemphumidsensor_3';
 
 function owners(mfr, pid) {
   const out = [];
@@ -44,11 +45,11 @@ describe('P2869 _TZE284_9ern5sfh + TS0601 → lcdtemphumidsensor only', () => {
     const rem = readJson('config/architecture/curated-couple-removals.json').removals;
     assert.ok(rem.some((r) => r.driver === 'climate_sensor' && r.mfr.includes('_TZE284_9ern5sfh')));
   });
-  it('LCD driver decodes humidity with the /10 divisor Z2M uses for this couple', () => {
+  it('owner decodes DP1 temp /10, DP2 humidity (>100 -> /10), DP4 battery like Z2M', () => {
     const src = fs.readFileSync(path.join(ROOT, 'drivers', OWNER, 'device.js'), 'utf8');
-    const direct = src.match(/DIRECT_HUMIDITY_MANUFACTURERS\s*=\s*\[([^\]]*)\]/);
-    assert.ok(direct, 'direct-humidity list present');
-    assert.ok(!/9ern5sfh/i.test(direct[1]), '9ern5sfh must not be in the no-divisor list');
-    assert.match(src, /2:\s*\{\s*capability:\s*'measure_humidity',\s*divisor:\s*usesDirectHumidity\s*\?\s*1\s*:\s*10/);
+    assert.match(src, /currentHumidity:\s*2/);
+    assert.match(src, /currentTemperature:\s*1/);
+    assert.match(src, /batteryLevel:\s*4/);
+    assert.match(src, /measuredValue > 100 \? measuredValue \/ 10/);
   });
 });

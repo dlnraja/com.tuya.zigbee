@@ -42,7 +42,7 @@ describe('P2824 forum flows + gnpflcoq + usb registry', () => {
   });
 
   it('9ern5sfh stays on lcdtemphumidsensor (P2823)', () => {
-    assert.equal(hasMfr('lcdtemphumidsensor', '_TZE284_9ern5sfh'), true);
+    assert.equal(hasMfr('lcdtemphumidsensor_3', '_TZE284_9ern5sfh'), true);
     assert.equal(hasMfr('climate_sensor', '_TZE284_9ern5sfh'), false);
   });
 

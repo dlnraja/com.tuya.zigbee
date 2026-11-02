@@ -28,6 +28,6 @@ test('every padded manufacturer name in compose survives the compactor', () => {
 
 test('_TZE284_9ern5sfh is only on lcdtemphumidsensor with TS0601', () => {
   const owners = drivers().filter((d) => (d.zigbee.manufacturerName || []).includes('_TZE284_9ern5sfh')).map((d) => d.id);
-  assert.deepStrictEqual(owners, ['lcdtemphumidsensor']);
-  assert.ok(drivers().find((d) => d.id === 'lcdtemphumidsensor').zigbee.productId.includes('TS0601'));
+  assert.deepStrictEqual(owners, ['lcdtemphumidsensor_3']);
+  assert.ok(drivers().find((d) => d.id === 'lcdtemphumidsensor_3').zigbee.productId.includes('TS0601'));
 });
