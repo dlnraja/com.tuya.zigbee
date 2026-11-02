@@ -52,4 +52,12 @@ describe('P3228 climate_sensor continuation', () => {
     assert.deepStrictEqual(m.drivers[0].zigbee.productId, ['TS0201', 'TS0601']);
     assert.strictEqual(foldHeldContinuations(m, new Set(['b']), reg), 0);
   });
+
+  it('couple-removal-guard treats a move inside one chain as no removal', () => {
+    const { movedInChain } = require('../../scripts/ci/couple-removal-guard');
+    const reg = DC.fromObject({ drivers: { a: { full: true, continuation: 'a_2' }, a_2: { continuationOf: 'a', index: 2 } } });
+    const head = { a: { m: new Set(['_X']) }, a_2: { m: new Set(['_Z']) }, b: { m: new Set(['_Q']) } };
+    assert.strictEqual(movedInChain(head, '_Z', 'a', reg), true);
+    assert.strictEqual(movedInChain(head, '_Q', 'a', reg), false);
+  });
 });

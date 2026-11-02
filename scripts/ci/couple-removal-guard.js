@@ -37,13 +37,19 @@ function matchedDrivers(drivers, mfr, pid) {
 }
 
 // t730u: every (maker, driver) removal needs a multi-source entry in data/couple-removal-evidence.json.
-function missingEvidence(base, head, evidence) {
+// P3228: a maker moved inside one continuation chain (DRIVER_CONTINUATIONS.md) is not a removal.
+function movedInChain(head, m, d, dc) {
+  if (!dc) {return false;}
+  return Object.keys(head).some((o) => o !== d && dc.isSameLogical(o, d) && head[o].m.has(m));
+}
+
+function missingEvidence(base, head, evidence, dc = require('../../lib/drivers/DriverContinuations').load(ROOT)) {
   const { hasEvidence } = require('../maintenance/couple-removal-evidence.js');
   const out = [];
   for (const d of Object.keys(base)) {
     if (!head[d]) {continue;}
     for (const m of base[d].m) {
-      if (!head[d].m.has(m) && !hasEvidence(evidence, m, d)) {out.push(`${m} removed from ${d} without a removal-evidence entry (run scripts/maintenance/couple-removal-evidence.js --write)`);}
+      if (!head[d].m.has(m) && !movedInChain(head, m, d, dc) && !hasEvidence(evidence, m, d)) {out.push(`${m} removed from ${d} without a removal-evidence entry (run scripts/maintenance/couple-removal-evidence.js --write)`);}
     }
   }
   return out;
@@ -92,4 +98,4 @@ if (require.main === module) {
   if (errors.length) { for (const e of errors) {console.error(`::error::${e}`);} process.exit(1); }
   console.log(`[couple-removal-guard] OK vs ${ref}`);
 }
-module.exports = { targetBranch, resolveBaseRef, confirmedCouples, matchedDrivers, check, loadDrivers };
+module.exports = { targetBranch, resolveBaseRef, confirmedCouples, matchedDrivers, check, loadDrivers, movedInChain };
