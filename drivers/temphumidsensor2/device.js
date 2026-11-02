@@ -34,7 +34,7 @@ class temphumidsensor2 extends TuyaZigbeeDevice {
 
 	onRelativeHumidityMeasuredAttributeReport(measuredValue) {
 		const humidityOffset = this.getSetting('humidity_offset') || 0;
-		const parsedValue = this.getSetting('humidity_decimals') === '2' ? Math.round((measuredValue / 100) * 100) / 100 : Math.round((measuredValue / 100) * 10) / 10;
+		const parsedValue = this.getSetting('humidity_decimals') === '2' ? Math.round(require('../../lib/helpers/ZclHumidityScale').scaleZclHumidity(measuredValue, require('../../lib/helpers/ZclHumidityScale').mfrOf(this)) * 100) / 100 : Math.round(require('../../lib/helpers/ZclHumidityScale').scaleZclHumidity(measuredValue, require('../../lib/helpers/ZclHumidityScale').mfrOf(this)) * 10) / 10;
 		this.log('measure_humidity | relativeHumidity - measuredValue (humidity):', parsedValue, '+ humidity offset', humidityOffset);
 		this.safeSetCapabilityValue('measure_humidity', parsedValue + humidityOffset).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
 	}
