@@ -168,3 +168,9 @@ The Auto-Fix doctrine (P139: no bump loops while an older Test is healthy) is un
   per-driver split. That changes the driver set (new driver ids were an AggregateError suspect, disproved
   by P1 / P3034), so it is a proposal for the owner, not done here. Measuring above 20k needs real
   uploads (one step per allowed slot under P3036 spacing: 22k, 25k, 30k), also an owner decision.
+
+## P3201 (2026-11-02): where the combo budget goes, sourced pass
+- The P3024b baseline (9.0.1574) pins 14282 exact raw couples = 6090 caseless couples, of which only 1969 are source-backed (kb/diag/sacred/mfs_db). Roughly 6000 combos of the ~20000 measured ceiling hold case forms and cartesian parasites. Every new pin pushes a real couple out.
+- Minimum caseless cost to ship every source-backed couple in its current driver is ~29111 combos (> 20000): "0 sourced dropped" cannot be reached without splitting drivers (owner decision).
+- `scripts/maintenance/publish-sourced-restore.cjs` runs in prepare-publish after the TS0601 top-up (payload only; `HOMEY_P3201_SOURCED_PASS=0` disables): drops case/invisible duplicate forms (keeps canonical + sourced alternates + sacred + byte-exact baseline forms), removes parasite rows (no source-backed couple, no pin), re-adds dropped source-backed couples, strong (kb/diag/sacred) first. Same driver set, same ceiling.
+- Ratchet gate: `data/publish/sourced-payload-snapshot-<branch>.json`; prepare-publish FATALs if a snapshot couple still in the source leaves the payload. CLI: `--check <payload> <branch>`.
