@@ -45268,6 +45268,12 @@
       "signature": "daily-digest.yml|homey|Cannot find module ../lib/report-writer",
       "attempts24h": 1,
       "failingRun": "41487197830"
+    },
+    "ci-fail:node22-tests:p2914-heap-flake-no-gc": {
+      "status": "fixed",
+      "date": "2026-11-02",
+      "by": "executor-ci",
+      "note": "recurrent local/CI flake: full mocha suite runs without --expose-gc so p2914 heap checks (lines 48/60) saw 22-54 MB of other tests' garbage; P3230 obtains gc in-process (v8 flag + vm context), test asserts gc available; Node 22 summary now lists failing test titles"
     }
   }
 }

@@ -11,7 +11,14 @@ const { execFileSync } = require('child_process');
 
 const root = path.resolve(__dirname, '..');
 const read = (p) => fs.readFileSync(path.join(root, p), 'utf8');
-const heap = () => { if (global.gc) { global.gc(); } return process.memoryUsage().heapUsed; };
+// P3230 (deflake): the full mocha suite runs without --expose-gc, so heapUsed included garbage of
+// every earlier test and the 8 MB checks failed under load (22-54 MB "growth"). Obtain a real gc
+// in-process (v8 flag + fresh context) so the numbers measure retained objects only, in any runner.
+const gc = (() => {
+  if (typeof global.gc === 'function') return global.gc;
+  try { require('v8').setFlagsFromString('--expose-gc'); return require('vm').runInNewContext('gc'); } catch (e) { return null; }
+})();
+const heap = () => { if (gc) { gc(); gc(); } return process.memoryUsage().heapUsed; };
 
 function fakeDevice(i) {
   const big = new Array(2000).fill(i); // makes a retained device visible in heap numbers
@@ -74,6 +81,10 @@ describe('P2914 memory: add/remove devices N times keeps registries and heap bou
     assert.ok(!/^const https? = require\('https?'\);/m.test(s), 'http/https must be lazy');
     assert.ok(!/^const \{ createNetworkBreaker \} = require/m.test(read('lib/tuya/TuyaZigbeeDevice.js')),
       'TuyaZigbeeDevice must load NetworkResilience on first use');
+  });
+
+  it('P3230: a real gc is available even without --expose-gc (heap numbers are not noise)', () => {
+    assert.strictEqual(typeof gc, 'function');
   });
 
   it('code heap of app.js + all drivers stays inside the memory budget', () => {
