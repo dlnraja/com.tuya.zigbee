@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-02T19:09:15.353Z",
+ "generated": "2026-11-02T22:23:50.368Z",
  "drivers": 421,
  "snapshot": {
   "air_conditioner_aetz01": {
@@ -52,9 +52,9 @@
   },
   "air_purifier_motion": {
    "mfr": 1,
-   "pid": 15,
+   "pid": 13,
    "mfrSha": "f09922f5c9f4e753",
-   "pidSha": "64834086bf89edc6"
+   "pidSha": "73019d5a14afdb24"
   },
   "air_purifier_presence": {
    "mfr": 1,
@@ -166,9 +166,9 @@
   },
   "bulb_white": {
    "mfr": 1,
-   "pid": 2,
+   "pid": 1,
    "mfrSha": "1b657a6db9fc7e3b",
-   "pidSha": "9ec48670e5ce7315"
+   "pidSha": "4eb6a4da8a98cf62"
   },
   "bulb_zbeacon_ts0505b": {
    "mfr": 1,
@@ -190,15 +190,15 @@
   },
   "button_wireless_1": {
    "mfr": 38,
-   "pid": 31,
+   "pid": 21,
    "mfrSha": "af6801936fc854c3",
-   "pidSha": "ccf46349258158d1"
+   "pidSha": "5fdfeb44cebcaeb5"
   },
   "button_wireless_2": {
    "mfr": 88,
-   "pid": 100,
+   "pid": 95,
    "mfrSha": "8228305315f313e8",
-   "pidSha": "25b2f5f37b8e4dd1"
+   "pidSha": "2758d5b225d86524"
   },
   "button_wireless_3": {
    "mfr": 24,
@@ -208,9 +208,9 @@
   },
   "button_wireless_4": {
    "mfr": 30,
-   "pid": 40,
+   "pid": 25,
    "mfrSha": "bd513abbf012e074",
-   "pidSha": "db1d9492b3bc3407"
+   "pidSha": "6255c43cbeabe633"
   },
   "button_wireless_4_ts0041": {
    "mfr": 1,
@@ -316,9 +316,9 @@
   },
   "climate_sensor_energy": {
    "mfr": 1,
-   "pid": 22,
+   "pid": 17,
    "mfrSha": "ec28580d3d4cd6be",
-   "pidSha": "29e89d2a31da37a1"
+   "pidSha": "bd82da59610729bc"
   },
   "climate_sensor_gas": {
    "mfr": 1,
@@ -496,9 +496,9 @@
   },
   "device_air_purifier_plug": {
    "mfr": 1,
-   "pid": 32,
+   "pid": 31,
    "mfrSha": "f69483b7f88603d3",
-   "pidSha": "817112c8a6ff0948"
+   "pidSha": "9b16d4ce9ee07589"
   },
   "device_air_purifier_presence": {
    "mfr": 1,
@@ -556,9 +556,9 @@
   },
   "device_din_rail": {
    "mfr": 3,
-   "pid": 27,
+   "pid": 9,
    "mfrSha": "dbc69f62cf0a2e26",
-   "pidSha": "6a464162712a80c0"
+   "pidSha": "b55f6cf79416a94b"
   },
   "device_din_rail_meter": {
    "mfr": 1,
@@ -628,9 +628,9 @@
   },
   "device_radiator_valve_smart": {
    "mfr": 2,
-   "pid": 49,
+   "pid": 10,
    "mfrSha": "9ecc4526c100fe8c",
-   "pidSha": "3bbe33198764e953"
+   "pidSha": "2bddbfaed82ba5d4"
   },
   "device_radiator_valve_thermostat": {
    "mfr": 1,
@@ -796,15 +796,15 @@
   },
   "doorwindowsensor_2": {
    "mfr": 1,
-   "pid": 5,
+   "pid": 3,
    "mfrSha": "4c964f1cac07ffd3",
-   "pidSha": "1e92c402c531eb43"
+   "pidSha": "d40828cad2599584"
   },
   "doorwindowsensor_3": {
    "mfr": 1,
-   "pid": 32,
+   "pid": 17,
    "mfrSha": "d3987ee57e67fc28",
-   "pidSha": "412114b3c38db9e8"
+   "pidSha": "8a78bae8d08531ae"
   },
   "doorwindowsensor_4": {
    "mfr": 3,
@@ -1024,9 +1024,9 @@
   },
   "hybrid_sensor_thermostat": {
    "mfr": 1,
-   "pid": 33,
+   "pid": 18,
    "mfrSha": "57ae3386dfed1581",
-   "pidSha": "9d1c880dd141e7cd"
+   "pidSha": "efd6cf7839eb9653"
   },
   "hybrid_switch_sensor": {
    "mfr": 2,
@@ -1114,15 +1114,15 @@
   },
   "led_strip_rgbw": {
    "mfr": 9,
-   "pid": 27,
+   "pid": 10,
    "mfrSha": "45a92b2a76b5953d",
-   "pidSha": "37f997a4a19de5a3"
+   "pidSha": "fa55309130755b56"
   },
   "light_bulb_dimmable_tunable": {
    "mfr": 7,
-   "pid": 29,
+   "pid": 25,
    "mfrSha": "96300ced220909b0",
-   "pidSha": "5cdcab1eda456dd7"
+   "pidSha": "36a4d9146c5b6efe"
   },
   "light_bulb_rgb": {
    "mfr": 16,
@@ -1336,9 +1336,9 @@
   },
   "radar_sensor_2": {
    "mfr": 1,
-   "pid": 6,
+   "pid": 4,
    "mfrSha": "8f75110b1e834455",
-   "pidSha": "d68625ae238bbefa"
+   "pidSha": "fbc83bf9332758d1"
   },
   "radar_sensor_ceiling": {
    "mfr": 1,
@@ -1660,9 +1660,9 @@
   },
   "sensor_illuminance_presence": {
    "mfr": 14,
-   "pid": 11,
+   "pid": 10,
    "mfrSha": "46f93b14db25e527",
-   "pidSha": "fe43d0326456adb4"
+   "pidSha": "ffc3739989f52184"
   },
   "sensor_lcdtemphumidsensor_soil": {
    "mfr": 1,
@@ -2140,9 +2140,9 @@
   },
   "temphumidsensor3": {
    "mfr": 5,
-   "pid": 7,
+   "pid": 4,
    "mfrSha": "60d167e3ca19dd60",
-   "pidSha": "09efb7b6e61cc1cc"
+   "pidSha": "de5cccfeabe85f5a"
   },
   "temphumidsensor4": {
    "mfr": 1,
@@ -2326,9 +2326,9 @@
   },
   "wall_dimmer_1gang_1way": {
    "mfr": 1,
-   "pid": 5,
+   "pid": 2,
    "mfrSha": "e8aa2a28342861f1",
-   "pidSha": "1326f3b1090e234a"
+   "pidSha": "70cfa840ba93f96b"
   },
   "wall_dimmer_tuya": {
    "mfr": 133,
