@@ -907,9 +907,12 @@
       ]
     }
   ],
+  "9.0.1612": {
+    "en": "Reliability: 1 small fix in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Fiabilité : 1 petite correction dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+  },
   "9.0.1611": {
-    "en": "New: pairing and device recognition. Plus 1 other change in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Nouveau : appairage et reconnaissance des appareils. Et 1 autre changement dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "en": "New: pairing and device recognition. Plus 1 other change in the app core. Behind the scenes: tests and publishing checks."
   },
   "9.0.1610": {
     "en": "New: Flow cards (TS0603) and energy meters & device settings. Fixed: device settings (ZG-204ZH, ZG-204ZM) and battery reporting & crash fixes (TS0601). Plus 12 other changes in the app core. Behind the scenes: tests and publishing checks."
@@ -973,9 +976,5 @@
   "9.0.1587": {
     "en": "Maintenance build: same devices and behaviour as 9.0.1586 (publishing and test tooling only).",
     "fr": "Version de maintenance : mêmes appareils et même comportement que la 9.0.1586 (outils de publication et de test uniquement)."
-  },
-  "9.0.1586": {
-    "en": "Behind the scenes: device requests are now cross-checked against more public device databases before a fix is made. No change to devices.",
-    "fr": "En coulisses : chaque demande d'appareil est croisée avec davantage de bases d'appareils publiques avant correction. Aucun changement sur les appareils."
   }
 }
