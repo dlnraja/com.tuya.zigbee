@@ -20,6 +20,14 @@
     "curtain_motor_2": {
       "continuationOf": "curtain_motor",
       "index": 2
+    },
+    "contact_sensor": {
+      "full": true,
+      "continuation": "contact_sensor_2"
+    },
+    "contact_sensor_2": {
+      "continuationOf": "contact_sensor",
+      "index": 2
     }
   }
 }

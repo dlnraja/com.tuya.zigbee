@@ -546,3 +546,6 @@ A heartfelt thank you to:
 - P3213b (2026-11-02): MFR-ENSURE no longer persists driver manifest[0] placeholder (_TZE200_pay2byax on TS0203, diag c05db40d); MTG radar DP113/115/116 mapped per Z2M MTG075-ZB-RL (diag af98752d, VicHY). Source: Koenkk/zigbee-herdsman-converters tuya.ts.
 - P3218 (2026-11-02): Moes SFL02 TS0601 switch fingerprints — Koenkk/zigbee-herdsman-converters moes.ts
 - P3220 (2026-11-02): ZG-204ZX DP109 temperature_unit °F→°C — Koenkk/zigbee-herdsman-converters hobeian.ts
+- P3237 (2026-11-02): deprecated (ids kept) device_plug_energy_monitor and sensor_lcdtemphumidsensor_temphumidsensor — no couple of their own; every sourced couple attributed to them (data/mfs_db.json sacredCouples) is owned by another driver compose. Pattern: Athom `deprecated` driver flag (apps.developer.homey.app). Test p3237.
+- P3238 (2026-11-02): CI gate scripts/ci/driver-signature-dup-gate.js — new driver with identical class+capabilities rejected unless a registered continuation or publish-hold driver; 225 existing drivers baselined. Test p3238.
+- P3239 (2026-11-02): contact_sensor_2 held continuation — lumi.sensor_magnet / lumi.sensor_magnet.aq2 (6 spellings), whose only sourced couple among contact_sensor pids is TS0203 (data/mfs_db.json + sourced-couple corpus), moved with short pids TS0203/TY0203/DS01 (-228 combos). Test p3239.
