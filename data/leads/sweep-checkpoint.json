@@ -20144,7 +20144,7 @@
     },
     {
       "id": "forum:26439#4878",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "DirkH",
       "link": "https://community.homey.app/t/26439/4878",
       "mfrs": [],
@@ -20157,7 +20157,10 @@
         "couples": [],
         "candidates": [],
         "sources": 31
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Thank-you message, no device.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:26439#4879",
@@ -20208,7 +20211,7 @@
     },
     {
       "id": "forum:26439#4893",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Peter_van_Werkhoven",
       "link": "https://community.homey.app/t/26439/4893",
       "mfrs": [],
@@ -20221,11 +20224,14 @@
         "couples": [],
         "candidates": [],
         "sources": 31
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): 2024 wall dimmer report on JohanBendz app with a diag code only; no manufacturerName/productId in text, cannot map to a couple.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:26439#4901",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Rens_Hoekema",
       "link": "https://community.homey.app/t/26439/4901",
       "mfrs": [],
@@ -20238,11 +20244,14 @@
         "couples": [],
         "candidates": [],
         "sources": 31
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): App crash after an update of the JohanBendz app (2024), diag code only; no device identity.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:26439#4907",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Rens_Hoekema",
       "link": "https://community.homey.app/t/26439/4907",
       "mfrs": [],
@@ -20255,7 +20264,10 @@
         "couples": [],
         "candidates": [],
         "sources": 33
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Same reporter, JohanBendz app crash diag code only; no device identity.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:26439#4909",
@@ -20285,7 +20297,7 @@
     },
     {
       "id": "forum:26439#4920",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Rocky_Lonigro",
       "link": "https://community.homey.app/t/26439/4920",
       "mfrs": [],
@@ -20299,7 +20311,14 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Photo shows a LoraTap 6-button remote and a Moes 4-gang scene switch; the LoraTap is JohanBendz #962 _TZ3000_iszegwpd|TS0046, already on wall_remote_6_gang (P2790 a1a4aa2670, P2795 094d8c2ccf). The Moes switch has no id in the thread.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102",
+      "sources": [
+        "a1a4aa2670",
+        "094d8c2ccf"
+      ]
     },
     {
       "id": "forum:26439#4922",
@@ -20351,7 +20370,7 @@
     },
     {
       "id": "forum:26439#4930",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Rocky_Lonigro",
       "link": "https://community.homey.app/t/26439/4930",
       "mfrs": [],
@@ -20364,11 +20383,18 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Points to JohanBendz #962 (_TZ3000_iszegwpd|TS0046 interview in the issue), already on wall_remote_6_gang (P2790 a1a4aa2670, P2795 094d8c2ccf).",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102",
+      "sources": [
+        "a1a4aa2670",
+        "094d8c2ccf"
+      ]
     },
     {
       "id": "forum:26439#4933",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Marcelo_Leite",
       "link": "https://community.homey.app/t/26439/4933",
       "mfrs": [],
@@ -20382,11 +20408,14 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): 2024 JohanBendz app, 4-gang wall switch with only one gang working; screenshot shows only the device tiles, no manufacturerName/productId; diag code only.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:26439#4942",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "johan_bendz",
       "link": "https://community.homey.app/t/26439/4942",
       "mfrs": [],
@@ -20400,11 +20429,14 @@
         "couples": [],
         "candidates": [],
         "sources": 33
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Maintainer explaining how to interview a device; no device.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:26439#4943",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Rocky_Lonigro",
       "link": "https://community.homey.app/t/26439/4943",
       "mfrs": [],
@@ -20417,11 +20449,14 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Interview how-to question for #962 (covered).",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:26439#4944",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "johan_bendz",
       "link": "https://community.homey.app/t/26439/4944",
       "mfrs": [],
@@ -20434,11 +20469,14 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Maintainer interview tip; no device.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:26439#4946",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "johan_bendz",
       "link": "https://community.homey.app/t/26439/4946",
       "mfrs": [],
@@ -20451,7 +20489,10 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Maintainer explaining how devices get added; no device.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:26439#4951",
@@ -20465,7 +20506,7 @@
     },
     {
       "id": "forum:26439#4953",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Rocky_Lonigro",
       "link": "https://community.homey.app/t/26439/4953",
       "mfrs": [],
@@ -20479,11 +20520,14 @@
         "couples": [],
         "candidates": [],
         "sources": 33
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Question about test-version status for #962 (covered).",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:21313#528",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Peter_Kawa",
       "link": "https://community.homey.app/t/21313/528",
       "mfrs": [],
@@ -20497,7 +20541,10 @@
         "couples": [],
         "candidates": [],
         "sources": 36
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Thread 21313 is the third-party Tuya Cloud app (cloud API, legacy login/flows); diag codes and login issues there concern that app, not our Zigbee app; no Zigbee identity.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:21313#529",
@@ -20521,7 +20568,7 @@
     },
     {
       "id": "forum:21313#536",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "DinoRayn",
       "link": "https://community.homey.app/t/21313/536",
       "mfrs": [],
@@ -20534,11 +20581,14 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Thread 21313 is the third-party Tuya Cloud app (cloud API, legacy login/flows); diag codes and login issues there concern that app, not our Zigbee app; no Zigbee identity.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:21313#541",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Peter_Kawa",
       "link": "https://community.homey.app/t/21313/541",
       "mfrs": [],
@@ -20551,11 +20601,14 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Thread 21313 is the third-party Tuya Cloud app (cloud API, legacy login/flows); diag codes and login issues there concern that app, not our Zigbee app; no Zigbee identity.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:21313#545",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Peter_Kawa",
       "link": "https://community.homey.app/t/21313/545",
       "mfrs": [],
@@ -20569,7 +20622,10 @@
         "couples": [],
         "candidates": [],
         "sources": 35
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Thread 21313 is the third-party Tuya Cloud app (cloud API, legacy login/flows); diag codes and login issues there concern that app, not our Zigbee app; no Zigbee identity.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:21313#549",
@@ -20583,7 +20639,7 @@
     },
     {
       "id": "forum:21313#550",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Ralph_Z",
       "link": "https://community.homey.app/t/21313/550",
       "mfrs": [],
@@ -20597,7 +20653,10 @@
         "couples": [],
         "candidates": [],
         "sources": 33
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Thread 21313 is the third-party Tuya Cloud app (cloud API, legacy login/flows); diag codes and login issues there concern that app, not our Zigbee app; no Zigbee identity.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:21313#555",
@@ -20611,7 +20670,7 @@
     },
     {
       "id": "forum:21313#559",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "jethrolaclass",
       "link": "https://community.homey.app/t/21313/559",
       "mfrs": [],
@@ -20624,11 +20683,14 @@
         "couples": [],
         "candidates": [],
         "sources": 2
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Thread 21313 is the third-party Tuya Cloud app (cloud API, legacy login/flows); diag codes and login issues there concern that app, not our Zigbee app; no Zigbee identity.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:21313#561",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "jethrolaclass",
       "link": "https://community.homey.app/t/21313/561",
       "mfrs": [],
@@ -20641,11 +20703,14 @@
         "couples": [],
         "candidates": [],
         "sources": 2
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Thread 21313 is the third-party Tuya Cloud app (cloud API, legacy login/flows); diag codes and login issues there concern that app, not our Zigbee app; no Zigbee identity.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:21313#564",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "jethrolaclass",
       "link": "https://community.homey.app/t/21313/564",
       "mfrs": [],
@@ -20658,7 +20723,10 @@
         "couples": [],
         "candidates": [],
         "sources": 1
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Thread 21313 is the third-party Tuya Cloud app (cloud API, legacy login/flows); diag codes and login issues there concern that app, not our Zigbee app; no Zigbee identity.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:21313#566",
@@ -20672,7 +20740,7 @@
     },
     {
       "id": "forum:21313#572",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Grim",
       "link": "https://community.homey.app/t/21313/572",
       "mfrs": [],
@@ -20686,7 +20754,10 @@
         "couples": [],
         "candidates": [],
         "sources": 35
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Thread 21313 is the third-party Tuya Cloud app (cloud API, legacy login/flows); diag codes and login issues there concern that app, not our Zigbee app; no Zigbee identity.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:21313#584",
@@ -20720,7 +20791,7 @@
     },
     {
       "id": "forum:21313#594",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Grim",
       "link": "https://community.homey.app/t/21313/594",
       "mfrs": [],
@@ -20733,11 +20804,14 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Thread 21313 is the third-party Tuya Cloud app (cloud API, legacy login/flows); diag codes and login issues there concern that app, not our Zigbee app; no Zigbee identity.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:21313#600",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Peter_Kawa",
       "link": "https://community.homey.app/t/21313/600",
       "mfrs": [],
@@ -20750,11 +20824,14 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Thread 21313 is the third-party Tuya Cloud app (cloud API, legacy login/flows); diag codes and login issues there concern that app, not our Zigbee app; no Zigbee identity.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:21313#602",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Grim",
       "link": "https://community.homey.app/t/21313/602",
       "mfrs": [],
@@ -20767,7 +20844,10 @@
         "couples": [],
         "candidates": [],
         "sources": 31
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Thread 21313 is the third-party Tuya Cloud app (cloud API, legacy login/flows); diag codes and login issues there concern that app, not our Zigbee app; no Zigbee identity.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:21313#605",
@@ -45737,7 +45817,7 @@
     },
     {
       "id": "forum:26439#4878",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "DirkH",
       "link": "https://community.homey.app/t/26439/4878",
       "mfrs": [],
@@ -45750,11 +45830,14 @@
         "couples": [],
         "candidates": [],
         "sources": 31
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Thank-you message, no device.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:26439#4893",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Peter_van_Werkhoven",
       "link": "https://community.homey.app/t/26439/4893",
       "mfrs": [],
@@ -45767,11 +45850,14 @@
         "couples": [],
         "candidates": [],
         "sources": 31
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): 2024 wall dimmer report on JohanBendz app with a diag code only; no manufacturerName/productId in text, cannot map to a couple.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:26439#4901",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Rens_Hoekema",
       "link": "https://community.homey.app/t/26439/4901",
       "mfrs": [],
@@ -45784,11 +45870,14 @@
         "couples": [],
         "candidates": [],
         "sources": 31
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): App crash after an update of the JohanBendz app (2024), diag code only; no device identity.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:26439#4907",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Rens_Hoekema",
       "link": "https://community.homey.app/t/26439/4907",
       "mfrs": [],
@@ -45801,11 +45890,14 @@
         "couples": [],
         "candidates": [],
         "sources": 33
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Same reporter, JohanBendz app crash diag code only; no device identity.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:26439#4920",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Rocky_Lonigro",
       "link": "https://community.homey.app/t/26439/4920",
       "mfrs": [],
@@ -45819,11 +45911,18 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Photo shows a LoraTap 6-button remote and a Moes 4-gang scene switch; the LoraTap is JohanBendz #962 _TZ3000_iszegwpd|TS0046, already on wall_remote_6_gang (P2790 a1a4aa2670, P2795 094d8c2ccf). The Moes switch has no id in the thread.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102",
+      "sources": [
+        "a1a4aa2670",
+        "094d8c2ccf"
+      ]
     },
     {
       "id": "forum:26439#4930",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Rocky_Lonigro",
       "link": "https://community.homey.app/t/26439/4930",
       "mfrs": [],
@@ -45836,11 +45935,18 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Points to JohanBendz #962 (_TZ3000_iszegwpd|TS0046 interview in the issue), already on wall_remote_6_gang (P2790 a1a4aa2670, P2795 094d8c2ccf).",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102",
+      "sources": [
+        "a1a4aa2670",
+        "094d8c2ccf"
+      ]
     },
     {
       "id": "forum:26439#4933",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Marcelo_Leite",
       "link": "https://community.homey.app/t/26439/4933",
       "mfrs": [],
@@ -45854,11 +45960,14 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): 2024 JohanBendz app, 4-gang wall switch with only one gang working; screenshot shows only the device tiles, no manufacturerName/productId; diag code only.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:26439#4942",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "johan_bendz",
       "link": "https://community.homey.app/t/26439/4942",
       "mfrs": [],
@@ -45872,11 +45981,14 @@
         "couples": [],
         "candidates": [],
         "sources": 33
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Maintainer explaining how to interview a device; no device.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:26439#4943",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Rocky_Lonigro",
       "link": "https://community.homey.app/t/26439/4943",
       "mfrs": [],
@@ -45889,11 +46001,14 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Interview how-to question for #962 (covered).",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:26439#4944",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "johan_bendz",
       "link": "https://community.homey.app/t/26439/4944",
       "mfrs": [],
@@ -45906,11 +46021,14 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Maintainer interview tip; no device.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:26439#4946",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "johan_bendz",
       "link": "https://community.homey.app/t/26439/4946",
       "mfrs": [],
@@ -45923,11 +46041,14 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Maintainer explaining how devices get added; no device.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:26439#4953",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Rocky_Lonigro",
       "link": "https://community.homey.app/t/26439/4953",
       "mfrs": [],
@@ -45941,11 +46062,14 @@
         "couples": [],
         "candidates": [],
         "sources": 33
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Question about test-version status for #962 (covered).",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:21313#528",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Peter_Kawa",
       "link": "https://community.homey.app/t/21313/528",
       "mfrs": [],
@@ -45959,11 +46083,14 @@
         "couples": [],
         "candidates": [],
         "sources": 36
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Thread 21313 is the third-party Tuya Cloud app (cloud API, legacy login/flows); diag codes and login issues there concern that app, not our Zigbee app; no Zigbee identity.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:21313#536",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "DinoRayn",
       "link": "https://community.homey.app/t/21313/536",
       "mfrs": [],
@@ -45976,11 +46103,14 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Thread 21313 is the third-party Tuya Cloud app (cloud API, legacy login/flows); diag codes and login issues there concern that app, not our Zigbee app; no Zigbee identity.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:21313#541",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Peter_Kawa",
       "link": "https://community.homey.app/t/21313/541",
       "mfrs": [],
@@ -45993,11 +46123,14 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Thread 21313 is the third-party Tuya Cloud app (cloud API, legacy login/flows); diag codes and login issues there concern that app, not our Zigbee app; no Zigbee identity.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:21313#545",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Peter_Kawa",
       "link": "https://community.homey.app/t/21313/545",
       "mfrs": [],
@@ -46011,11 +46144,14 @@
         "couples": [],
         "candidates": [],
         "sources": 35
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Thread 21313 is the third-party Tuya Cloud app (cloud API, legacy login/flows); diag codes and login issues there concern that app, not our Zigbee app; no Zigbee identity.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:21313#550",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Ralph_Z",
       "link": "https://community.homey.app/t/21313/550",
       "mfrs": [],
@@ -46029,11 +46165,14 @@
         "couples": [],
         "candidates": [],
         "sources": 33
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Thread 21313 is the third-party Tuya Cloud app (cloud API, legacy login/flows); diag codes and login issues there concern that app, not our Zigbee app; no Zigbee identity.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:21313#559",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "jethrolaclass",
       "link": "https://community.homey.app/t/21313/559",
       "mfrs": [],
@@ -46046,11 +46185,14 @@
         "couples": [],
         "candidates": [],
         "sources": 2
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Thread 21313 is the third-party Tuya Cloud app (cloud API, legacy login/flows); diag codes and login issues there concern that app, not our Zigbee app; no Zigbee identity.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:21313#561",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "jethrolaclass",
       "link": "https://community.homey.app/t/21313/561",
       "mfrs": [],
@@ -46063,11 +46205,14 @@
         "couples": [],
         "candidates": [],
         "sources": 2
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Thread 21313 is the third-party Tuya Cloud app (cloud API, legacy login/flows); diag codes and login issues there concern that app, not our Zigbee app; no Zigbee identity.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:21313#564",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "jethrolaclass",
       "link": "https://community.homey.app/t/21313/564",
       "mfrs": [],
@@ -46080,11 +46225,14 @@
         "couples": [],
         "candidates": [],
         "sources": 1
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Thread 21313 is the third-party Tuya Cloud app (cloud API, legacy login/flows); diag codes and login issues there concern that app, not our Zigbee app; no Zigbee identity.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:21313#572",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Grim",
       "link": "https://community.homey.app/t/21313/572",
       "mfrs": [],
@@ -46098,11 +46246,14 @@
         "couples": [],
         "candidates": [],
         "sources": 35
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Thread 21313 is the third-party Tuya Cloud app (cloud API, legacy login/flows); diag codes and login issues there concern that app, not our Zigbee app; no Zigbee identity.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:21313#594",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Grim",
       "link": "https://community.homey.app/t/21313/594",
       "mfrs": [],
@@ -46115,11 +46266,14 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Thread 21313 is the third-party Tuya Cloud app (cloud API, legacy login/flows); diag codes and login issues there concern that app, not our Zigbee app; no Zigbee identity.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:21313#600",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Peter_Kawa",
       "link": "https://community.homey.app/t/21313/600",
       "mfrs": [],
@@ -46132,11 +46286,14 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Thread 21313 is the third-party Tuya Cloud app (cloud API, legacy login/flows); diag codes and login issues there concern that app, not our Zigbee app; no Zigbee identity.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "forum:21313#602",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Grim",
       "link": "https://community.homey.app/t/21313/602",
       "mfrs": [],
@@ -46149,7 +46306,10 @@
         "couples": [],
         "candidates": [],
         "sources": 31
-      }
+      },
+      "note": "Re-read 2026-11-02 (raw post): Thread 21313 is the third-party Tuya Cloud app (cloud API, legacy login/flows); diag codes and login issues there concern that app, not our Zigbee app; no Zigbee identity.",
+      "triagedAt": "2026-11-02T08:00:41.921Z",
+      "triagedVia": "dailyResume20261102"
     },
     {
       "id": "johan-issue:597",
