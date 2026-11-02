@@ -25,6 +25,17 @@ apps.developer.homey.app/wireless/zigbee, community t/51187). We cap at 1500 com
 7. CI fails on: non-reciprocal links, unreachable continuation, couple duplicated across a chain, `full` flag wrong
    against the cap (`cap.perDriverCombos × cap.fullAtRatio`), continuation carrying couples behind a non-full driver.
 
+## Duplicate driver gate (P3238, 02/11/2026 Paris)
+`node scripts/ci/driver-signature-dup-gate.js` (test `p3238`): a NEW driver whose class + capability set equals an
+existing driver fails CI. Put its exact couples on the existing driver (or its chain via `firstNonFull`), or register it
+as a continuation. Exempt: continuations and `config/publish-hold-drivers.json`. Existing duplicates are baselined in
+`config/ci/driver-signature-baseline.json` (never add ids by hand). Drivers with no couple of their own get
+`"deprecated": true` (id kept; Homey cannot migrate paired devices) — P3237.
+
+## Chains in place
+- climate_sensor -> climate_sensor_2 (P3229), curtain_motor -> curtain_motor_2 (P3233),
+  contact_sensor -> contact_sensor_2 (P3239: lumi.sensor_magnet[.aq2], pids TS0203/TY0203/DS01; held).
+
 ## Budget reality (measured 02/11/2026 on master)
 - Payload 19943 combos, 14804 source-backed, 3192 strong (kb/diag/sacred) → parasite ratio 0.258.
 - Perfect pid-set packing costs exactly the couple count: strong 3126 couples / 391 pid-set groups (fits 20000);

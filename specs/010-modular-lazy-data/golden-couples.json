@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-02T16:59:11.164Z",
- "drivers": 420,
+ "generated": "2026-11-02T19:09:15.353Z",
+ "drivers": 421,
  "snapshot": {
   "air_conditioner_aetz01": {
    "mfr": 1,
@@ -369,10 +369,16 @@
    "pidSha": "455c46e8c8549693"
   },
   "contact_sensor": {
-   "mfr": 60,
+   "mfr": 58,
    "pid": 26,
-   "mfrSha": "be26eaf4bb91dd64",
+   "mfrSha": "6512edd5c7cec458",
    "pidSha": "413aba4e609c4fb1"
+  },
+  "contact_sensor_2": {
+   "mfr": 2,
+   "pid": 3,
+   "mfrSha": "d109ff0ea1231601",
+   "pidSha": "7c8d4f6b2692530f"
   },
   "contact_sensor_curtain": {
    "mfr": 1,

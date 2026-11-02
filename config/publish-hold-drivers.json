@@ -189,6 +189,13 @@
       "addedBy": "P3233 zero-parasite packing (curtain_motor)",
       "reason": "P3233 (02/11/2026 Paris): continuation of curtain_motor (DRIVER_CONTINUATIONS.md). 2 mfrs (_TZE200_eegnwoyw, _TZE200_cpbo62rn; 8 spellings) whose ONLY sourced couple (any source, mfs_db included) among curtain_motor pids is TS0601 moved here with productId TS0601 only (-944 parasite combos on the root). Own flow card ids aliased by lib/drivers/ContinuationFlowAlias. While held, prepare-publish/baseline-gate fold it back into curtain_motor before compaction (payload identical); at release split after compaction (0 couple lost, test p3229/p3233).",
       "sacredCouplesOwnedElsewhere": true
+    },
+    {
+      "id": "contact_sensor_2",
+      "since": "2026-11-02",
+      "addedBy": "P3239 zero-parasite packing (contact_sensor)",
+      "reason": "P3239 (02/11/2026 Paris): continuation of contact_sensor (DRIVER_CONTINUATIONS.md). 2 mfrs (lumi.sensor_magnet, lumi.sensor_magnet.aq2; 6 spellings) whose ONLY sourced couple (any source, mfs_db included) among contact_sensor pids is TS0203 moved here with short productId TS0203/TY0203/DS01 (case spellings already shipped by the root; -276 combos on the root; _TZ3000_pjb1ua0m kept on the root: its CK-TLSR8656-SS5-01(7003) couple would be lost at release, Excellux not added: not a contact_sensor pid, would invent couples). Own flow card ids aliased by lib/drivers/ContinuationFlowAlias. While held, prepare-publish/baseline-gate fold it back into contact_sensor before compaction (payload identical); at release split after compaction (0 couple lost, test p3229/p3239).",
+      "sacredCouplesOwnedElsewhere": true
     }
   ],
   "_graduated": {
