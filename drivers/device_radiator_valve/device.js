@@ -202,21 +202,63 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
   }
 
   /**
-   * WHY(P3001 / #560 artisare): TRV06 `_TZE200_rxq4iti9` firmware reports local
-   * temperature, setpoint and calibration in whole °C only (Z2M TRV06 docs: step 1;
-   * Z2M discussion #24659). Show a 1 °C setpoint step so the UI matches the device.
+   * WHY(P3244 / #560 artisare 19/10 "temp and set temp only in full degrees, should be 21.3/21.7"):
+   * P3001 forced a 1 °C step / 0 decimals on a Z2M-unproven guess (disc. #24659 is one other user).
+   * Z2M TS0601_thermostat_3 (EARU TRV06 whitelabel, this exact couple) declares the setpoint with a
+   * 0.5 °C step and DP4/DP5 divideBy10; ZHA tuya_trv.py uses x*10 / x//10 (tenths). So the default is
+   * now 0.5 °C / 1 decimal, and the device teaches us: if it echoes a half-degree request back rounded
+   * to a whole degree (DP4), the 1 °C step is learned per device (store) — no re-pair, no user answer.
    */
   async _alignTrv06WholeDegree() {
     if (!this._isNoHumidityTrv() || !this.hasCapability('target_temperature')) { return; }
+    const whole = this.getStoreValue?.('p3244_trv06_whole_degree') === true;
+    const want = whole ? { step: 1, decimals: 0 } : { step: 0.5, decimals: 1 };
     try {
       let cur = {};
       try { cur = this.getCapabilityOptions('target_temperature') || {}; } catch (_e) { cur = {}; }
-      if (cur.step === 1 && cur.decimals === 0) { return; }
-      await this.setCapabilityOptions('target_temperature', { ...cur, step: 1, decimals: 0 });
-      this.log('[TRV] P3001 TRV06 setpoint step 1 °C (firmware whole degrees)');
+      if (cur.step === want.step && cur.decimals === want.decimals) { return; }
+      await this.setCapabilityOptions('target_temperature', { ...cur, ...want });
+      this.log(`[TRV] P3244 TRV06 setpoint step ${want.step} °C (${whole ? 'learned from device echo' : 'Z2M step 0.5'})`);
     } catch (e) {
-      this.log('[TRV] P3001 setpoint step skipped:', e?.message || e);
+      this.log('[TRV] P3244 setpoint step skipped:', e?.message || e);
     }
+  }
+
+  /** P3244: TX value for DP4 — tenths, half-degree snap; whole degree only once learned from the device. */
+  _trv06SetpointTx(v) {
+    const n = Number(v);
+    if (!this._isNoHumidityTrv()) { return n; }
+    if (this.getStoreValue?.('p3244_trv06_whole_degree') === true) { return Math.round(n); }
+    const half = Math.round(n * 2) / 2;
+    this._p3244Pending = { v: half, at: Date.now() };
+    return half;
+  }
+
+  /** P3244: learn from DP4 echo (RX) whether the firmware keeps half degrees. Never blocks the RX path. */
+  _trv06LearnSetpointEcho(raw) {
+    try {
+      const p = this._p3244Pending;
+      if (!p || Date.now() - p.at > 120000) { return; }
+      const echoed = Number(raw) / 10;
+      if (!Number.isFinite(echoed)) { return; }
+      this._p3244Pending = null;
+      if (p.v % 1 === 0) { return; }
+      if (echoed === p.v) {
+        this.setStoreValue?.('p3244_trv06_round_hits', 0)?.catch?.(() => {});
+        this.setStoreValue?.('p3244_trv06_whole_degree', false)?.catch?.(() => {});
+        return;
+      }
+      if (echoed === Math.floor(p.v) || echoed === Math.ceil(p.v)) {
+        // WHY: two rounded echoes in a row before learning, so one stale/old echo cannot flip the step.
+        const hits = (Number(this.getStoreValue?.('p3244_trv06_round_hits')) || 0) + 1;
+        this.setStoreValue?.('p3244_trv06_round_hits', hits)?.catch?.(() => {});
+        if (hits < 2) { return; }
+        Promise.resolve(this.setStoreValue?.('p3244_trv06_whole_degree', true))
+          .then(() => this._alignTrv06WholeDegree())
+          .catch(() => {});
+        this.log(`[TRV] P3244 TRV06 echoed ${echoed} for ${p.v} -> firmware whole degrees learned`);
+      }
+    } catch (_e) { /* soft */ }
   }
 
   async _alignTrv06Battery() {
@@ -259,6 +301,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     } catch (_e) { /* soft */ }
     // P3067: metering DPs of exact couples (AETZ01_AC snfdqllf, TWC-R01 ilzkxrav), late capabilities, before TRV mapping
     if (ThermostatMeteringDps.handle(this, this._resolveMfr(), dpId, raw)) {return undefined;}
+    if (Number(dpId) === 4 && this.dpProfile === 'me167') { this._trv06LearnSetpointEcho(raw); }
     if ([6, 13, 15].includes(Number(dpId)) && this._isNoHumidityTrv() && !this.hasCapability('measure_battery')) {
       Promise.resolve(this.addCapability('measure_battery'))
         .then(() => super._handleDP(dpId, raw))
@@ -554,9 +597,8 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     if (this.hasCapability('target_temperature')) {
       this.registerCapabilityListener('target_temperature', async (v) => {
         const dp = this.dpProfile === 'me167' ? 4 : 3;
-        // WHY(P3001 / #560): TRV06 firmware only honours whole °C (Z2M disc. #24659);
-        // decimals have been reported to glitch the setpoint → snap to 1 °C.
-        const target = this._isNoHumidityTrv() ? Math.round(Number(v)) : Number(v);
+        // WHY(P3244 / #560): TRV06 keeps tenths/half degrees (Z2M step 0.5) unless the device echo proved whole °C.
+        const target = this._trv06SetpointTx(v);
         // WHY(P2593 / Michaelp #2253): tenths °C as Tuya value DP (4-byte)
         await this._sendTuyaDP(dp, Math.round(safeMultiply(target, 10)), 'value');
       });
