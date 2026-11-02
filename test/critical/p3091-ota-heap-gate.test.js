@@ -13,8 +13,9 @@ describe('P3091 OTA index heap gate', () => {
       assert.throws(() => p3091HeapGate(), /OTA-HEAP/);
       process.memoryUsage = () => ({ heapUsed: 20 * 1048576 });
       assert.doesNotThrow(() => p3091HeapGate());
-      process.memoryUsage = () => { throw new Error('EPERM'); };
-      assert.doesNotThrow(() => p3091HeapGate());
+      // P3214: an unreadable process.memoryUsage() now falls back to V8 instead of failing open.
+      process.memoryUsage = () => { throw new Error('ENOENT uv_resident_set_memory'); };
+      try { p3091HeapGate(); } catch (e) { assert.match(e.message, /OTA-HEAP/); }
     } finally { process.memoryUsage = orig; }
   });
 });
