@@ -1,9 +1,6 @@
 {
   "queue": [
     [
-      "presence_radar_aoyan_ay204t"
-    ],
-    [
       "water_leak_aoyan_ay222z"
     ],
     [
@@ -46,18 +43,15 @@
     "heiman_keyfob,heiman_siren": 1,
     "heiman_keyfob": 1,
     "heiman_siren": 1,
-    "presence_radar_aoyan_ay204t,water_leak_aoyan_ay222z": 1
+    "presence_radar_aoyan_ay204t,water_leak_aoyan_ay222z": 1,
+    "presence_radar_aoyan_ay204t": 1
   },
   "isolated": [
     "heiman_keyfob",
-    "heiman_siren"
+    "heiman_siren",
+    "presence_radar_aoyan_ay204t"
   ],
-  "pending": {
-    "ids": [
-      "presence_radar_aoyan_ay204t"
-    ],
-    "at": "2026-11-02T21:14:50.627Z"
-  },
+  "pending": null,
   "doneRuns": [
     "41263658690",
     "41272744359",
@@ -65,6 +59,7 @@
     "41332616840",
     "41361830749",
     "41399984982",
-    "41513610425"
+    "41513610425",
+    "41544529677"
   ]
 }
