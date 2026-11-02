@@ -505,18 +505,18 @@ try {
   // WHY(P2485): size gate MUST run AFTER this step — early exit blocked publish when
   // prettify-stripped JSON was still ~4.00MB but matrix compact would shrink it.
   // P3036: keep the uncompacted manifest so the TS0601 top-up can put back couples the compaction dropped.
-  // P3228: fold held continuations (driver-continuations.json) back into their root BEFORE compaction,
-  // so step 5a2 can cut the held id without dropping a couple the root already shipped.
+  // P3228/P3229: fold every continuation (driver-continuations.json) into its root BEFORE compaction, so the
+  // budget sees the pre-split logical driver and neither a hold nor a release can drop a couple.
+  // Held ones are dropped here; released ones are split back right before step 5a2.
+  let p3229Splits = [];
   try {
-    const { effectiveHoldIds, foldHeldContinuations } = require('./publish-hold-release');
+    const { effectiveHoldIds, foldContinuations } = require('./publish-hold-release');
     const holdFile = path.join(__dirname, '..', 'config', 'publish-hold-drivers.json');
-    if (fs.existsSync(holdFile)) {
-      const { ids } = effectiveHoldIds(readJson(holdFile), process.env.PUBLISH_HOLD_RELEASE);
-      const m = readJson(destAppJson);
-      const n = foldHeldContinuations(m, ids, require('../lib/drivers/DriverContinuations').load(path.join(__dirname, '..')));
-      if (n) { fs.writeFileSync(destAppJson, JSON.stringify(m)); console.log(`   P3228: folded ${n} held continuation(s) into their root`); }
-    }
-  } catch (e) { console.warn(`   P3228 fold skipped: ${e.message}`); }
+    const { ids } = fs.existsSync(holdFile) ? effectiveHoldIds(readJson(holdFile), process.env.PUBLISH_HOLD_RELEASE) : { ids: new Set() };
+    const m = readJson(destAppJson);
+    const r = foldContinuations(m, require('../lib/drivers/DriverContinuations').load(path.join(__dirname, '..')), ids);
+    if (r.folded) { fs.writeFileSync(destAppJson, JSON.stringify(m)); p3229Splits = r.splits; console.log(`   P3229: folded ${r.folded} continuation(s) into their root (${r.splits.length} to split back)`); }
+  } catch (e) { console.warn(`   P3229 fold skipped: ${e.message}`); }
   // P3201: uncompacted view for the sourced dedupe/restore pass (payload only, source untouched).
   let p3201Source = null;
   try { p3201Source = process.env.HOMEY_P3201_SOURCED_PASS === '0' ? null : readJson(destAppJson); } catch (_) { p3201Source = null; }
@@ -697,6 +697,15 @@ try {
     process.env.HOMEY_PUBLISH_APPJSON = destAppJson;
   }
 
+  // P3229: released continuations take back their own makers after compaction (see fold above).
+  if (p3229Splits.length) {
+    try {
+      const m = readJson(destAppJson);
+      const n = require('./publish-hold-release').splitContinuations(m, p3229Splits);
+      fs.writeFileSync(destAppJson, JSON.stringify(m));
+      console.log(`   P3229: split ${n} released continuation(s) back out of their root`);
+    } catch (e) { console.error(`FATAL: P3229 continuation split failed: ${e.message}`); process.exit(1); }
+  }
   // 5a2) Publish hold (config/publish-hold-drivers.json).
   // WHY(Athom AggregateError since 9.0.1331, bisect J3 #3478 / J4 #3479): a driver that
   // breaks Athom processing is kept in source but left out of the upload payload.

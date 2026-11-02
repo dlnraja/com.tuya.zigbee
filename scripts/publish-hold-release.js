@@ -24,30 +24,61 @@ function effectiveHoldIds(hold, releaseValue) {
 }
 
 /**
- * P3228: a held continuation (registry continuationOf) folds its zigbee lists back into its root
- * driver in the payload view, so holding it never drops a couple the root already shipped.
- * Exact strings only, appended once, root order kept. The folded driver leaves the view at once
- * (the hold cuts it anyway), so the compaction budget sees exactly the pre-split driver set.
- * Returns the number of folded drivers.
+ * P3228/P3229: every continuation (registry continuationOf) folds its zigbee lists back into its root
+ * BEFORE compaction, so the compaction budget always sees the pre-split logical driver (a release
+ * can never redistribute the budget and drop a couple). Exact strings, appended once, root order kept.
+ * Held ids are dropped; released ones are returned as split specs for splitContinuations() after
+ * compaction. Returns { folded, splits }.
  */
-function foldHeldContinuations(manifest, heldIds, registry) {
-  if (!manifest || !Array.isArray(manifest.drivers) || !heldIds || !heldIds.size || !registry) return 0;
-  const byId = new Map(manifest.drivers.map((d) => [d && d.id, d]));
-  let folded = 0;
-  for (const id of heldIds) {
-    const e = typeof registry.entry === 'function' ? registry.entry(id) : null;
-    const rootId = e && e.continuationOf;
-    const held = byId.get(id), root = byId.get(rootId);
-    if (!rootId || !held || !root || !held.zigbee || !root.zigbee) continue;
+function foldContinuations(manifest, registry, heldIds = new Set()) {
+  const out = { folded: 0, splits: [] };
+  if (!manifest || !Array.isArray(manifest.drivers) || !registry || typeof registry.entry !== 'function') return out;
+  for (const held of [...manifest.drivers]) {
+    const rootId = held && registry.entry(held.id).continuationOf;
+    const root = rootId && manifest.drivers.find((d) => d && d.id === rootId);
+    if (!root || !held.zigbee || !root.zigbee) continue;
     for (const k of ['manufacturerName', 'productId']) {
       const into = Array.isArray(root.zigbee[k]) ? root.zigbee[k] : (root.zigbee[k] = []);
       const have = new Set(into);
       for (const v of held.zigbee[k] || []) if (!have.has(v)) { have.add(v); into.push(v); }
     }
-    folded++;
     manifest.drivers = manifest.drivers.filter((d) => d !== held);
+    out.folded++;
+    if (!heldIds.has(held.id)) {
+      out.splits.push({ id: held.id, rootId, def: held, mfrs: [...(held.zigbee.manufacturerName || [])], pids: [...(held.zigbee.productId || [])] });
+    }
   }
-  return folded;
+  return out;
 }
 
-module.exports = { parseRelease, effectiveHoldIds, foldHeldContinuations };
+/** P3229: after compaction, a released continuation takes back its own makers (kept by the
+ * compaction) with its own pids; the root drops them (their other pids were parasites by construction). */
+function splitContinuations(manifest, splits) {
+  let n = 0;
+  for (const s of splits || []) {
+    const i = manifest.drivers.findIndex((d) => d && d.id === s.rootId);
+    if (i < 0) continue;
+    const root = manifest.drivers[i];
+    const own = new Set(s.mfrs);
+    const m = (root.zigbee.manufacturerName || []).filter((x) => own.has(x));
+    const pset = new Set(root.zigbee.productId || []);
+    const p = s.pids.filter((x) => pset.has(x));
+    root.zigbee.manufacturerName = (root.zigbee.manufacturerName || []).filter((x) => !own.has(x));
+    if (!m.length || !p.length) continue;
+    manifest.drivers.splice(i + 1, 0, { ...s.def, zigbee: { ...s.def.zigbee, manufacturerName: m, productId: p } });
+    n++;
+  }
+  return n;
+}
+
+/** P3228 compat: fold held continuations only (non-held ones untouched). */
+function foldHeldContinuations(manifest, heldIds, registry) {
+  if (!heldIds || !heldIds.size || !registry) return 0;
+  const sub = { drivers: (manifest && manifest.drivers) || [] };
+  const only = { entry: (id) => (heldIds.has(id) ? registry.entry(id) : {}) };
+  const r = foldContinuations(sub, only, heldIds);
+  if (manifest) manifest.drivers = sub.drivers;
+  return r.folded;
+}
+
+module.exports = { parseRelease, effectiveHoldIds, foldHeldContinuations, foldContinuations, splitContinuations };
