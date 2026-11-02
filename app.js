@@ -925,6 +925,8 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         this.log(`[PHANTOM-SCAN] ⚠️ Found ${phantomCount} phantom devices - marked unavailable`);
       } else {
         this.log(`[PHANTOM-SCAN] ✅ No phantom devices (${realCount} OK)`);
+        // P3213 (diag fb5be1fe/8742e6bd): 0 app devices while a user reports a paired device = it was adopted by Homey's generic Zigbee driver or another app
+        if (realCount === 0) this.log('[PHANTOM-SCAN] ℹ️ 0 devices in this app: a device reported as paired is most likely bound to the generic Zigbee driver or another app (couple not matched at pairing)');
       }
     } catch (err) { this.error('[PHANTOM-SCAN] Error:', err.message); }
   }

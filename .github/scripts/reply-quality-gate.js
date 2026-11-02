@@ -94,6 +94,11 @@ function validateReply(replyText, originalPostText) {
     warnings.push(`LEAK: Reply contains banned internal term "${leak}" — will be stripped`);
   }
 
+  // 5b2. t784u: never make the fix depend on the user's answer; asking is allowed only as optional.
+  if (/(?:\b(?:once|when|after|as soon as)\s+(?:you|u)\s+(?:send|share|post|tell|provide)|\b(?:without|need)\s+(?:your|the)\s+(?:interview|mfr|model|fingerprint|log)[^.]*\b(?:can'?t|cannot|unable)|\bcan'?t\s+(?:fix|see|help)[^.]*\b(?:until|unless|without)\b|\bsend\s+me\b[^.]*\b(?:and|then)\s+I(?:'ll| will)\s+fix)/i.test(replyText)) {
+    warnings.push('DEPENDS-ON-USER: Reply makes the fix wait for the user (t784u) — fix/infer first, ask only as optional bonus');
+  }
+
   // 5c. T157628 anti AI-paste / dehumanization heuristics
   if (/(?:Happy to help|Let me know if you|Feel free to|Hope this helps|Best regards|Kind regards)/i.test(replyText)) {
     warnings.push('AI-PASTE: Corporate closer — rewrite in Dylan voice or do not post');
