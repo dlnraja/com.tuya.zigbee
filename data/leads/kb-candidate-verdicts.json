@@ -443,6 +443,19 @@
    "placedIn": "light_bulb_rgb_led",
    "reason": "pid from Johan per-driver cross-product; upstream lists this mfr with TS0505B (already placed)",
    "at": "2026-10-26"
+  },
+  {
+   "mfr": "_TYST11_qq9mpfhw",
+   "pid": "TS0207",
+   "johanDriver": "water_detector",
+   "upstreamPids": [
+    "q9mpfhw"
+   ],
+   "placedIn": "water_leak_sensor_tuya",
+   "reason": "pid from Johan per-driver cross-product; ZHA lists this mfr with q9mpfhw (exact couple _TYST11_qq9mpfhw|q9mpfhw already placed in water_leak_sensor_tuya on master, stable-v5, bastien-home)",
+   "source": "https://github.com/zigpy/zha-device-handlers/blob/862124c/zhaquirks/tuya/tuya_water_leak.py",
+   "credit": "zigpy/zha-device-handlers (new tuya_water_leak quirk, Tuya SNTZ009)",
+   "at": "2026-11-02"
   }
  ]
 }
