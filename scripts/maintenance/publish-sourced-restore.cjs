@@ -186,7 +186,7 @@ function dedupeForms(man, sourced, sacred, prot = new Set()) {
 }
 
 /** Step 2: restore source-backed couples of the compose, freeing room only from parasite rows. */
-function restoreSourced(source, man, sourced, sacred, { prot = new Set(), maxTotal, maxDriver = Infinity, log = () => {} } = {}) {
+function restoreSourced(source, man, sourced, sacred, { prot = new Set(), maxTotal, maxDriver = Infinity, log = () => {}, ratchet = null } = {}) {
   const payById = new Map((man.drivers || []).filter(zig).map((d) => [d.id, d]));
   // compose driver per missing key (first driver in manifest order that lists it, payload drivers only)
   const want = new Map(); // key -> driverId
@@ -254,7 +254,10 @@ function restoreSourced(source, man, sourced, sacred, { prot = new Set(), maxTot
     const M = d.zigbee.manufacturerName.length; const P = d.zigbee.productId.length;
     return hasM && hasP ? 0 : hasM ? M : hasP ? P : M + P + 1;
   };
-  missing.sort((a, b) => (sourced.get(b[0]).strong - sourced.get(a[0]).strong) || (costOf(a[0], a[1]) - costOf(b[0], b[1])));
+  // P3201b: committed-snapshot couples first (the ratchet gate FATALs if one is out), then strong, then cheapest.
+  // Without this, budget-edge ordering let a cheaper non-snapshot couple take the last slot (CI run 41402776968).
+  const inSnap = (k) => (ratchet && ratchet.has(k) ? 1 : 0); // eslint-disable-line no-extra-parens
+  missing.sort((a, b) => (inSnap(b[0]) - inSnap(a[0])) || (sourced.get(b[0]).strong - sourced.get(a[0]).strong) || (costOf(a[0], a[1]) - costOf(b[0], b[1])));
   let restored = 0; const still = [];
   for (const [k, id] of missing) {
     if (presentKeys({ drivers: [payById.get(id)] }).has(k)) { restored++; continue; }
@@ -268,6 +271,10 @@ function restoreSourced(source, man, sourced, sacred, { prot = new Set(), maxTot
     const pickP = [...e.pidForms].find((f) => f === canonicalPid(f)) || canonicalPid([...e.pidForms][0] || p);
     if (!d.zigbee.manufacturerName.some((x) => lc(clean(x)) === m)) d.zigbee.manufacturerName.push(pickM);
     if (!d.zigbee.productId.some((x) => uc(clean(x)) === p)) d.zigbee.productId.push(pickP);
+    // P3201b: the rows now carry a source-backed couple, so they stop being parasites. The candidate list is
+    // built once, so drop them from it; otherwise a later freeRoom removed a row a restore had just reused
+    // (_tze200_9caxna4s|TS0301 reached the payload, then lost its mfr row; CI run 41402776968).
+    if (cand) cand = cand.filter((c) => c.d !== d || (c.isPid ? uc(clean(c.v)) !== p : lc(clean(c.v)) !== m));
     cur = total(man); restored++;
   }
   log(`[P3201] restored ${restored} source-backed couple(s); ${still.length} still out; total ${cur}/${maxTotal}`);
@@ -335,7 +342,9 @@ function sourcedPassFile(source, destAppJson, opts = {}) {
   const sourced = loadSourcedCouples(repoRoot);
   const sacred = sacredExact(repoRoot);
   const driversBefore = (man.drivers || []).length;
-  const r = sourcedPass(source, man, { ...opts, repoRoot, sourced, sacred });
+  const snapDoc = opts.ratchet ? null : readJson(snapshotFile(repoRoot, opts.branch) || '');
+  const ratchet = opts.ratchet || new Set(snapDoc && Array.isArray(snapDoc.couples) ? snapDoc.couples : []);
+  const r = sourcedPass(source, man, { ...opts, repoRoot, sourced, sacred, ratchet });
   const sacredMissing = [];
   const exact = new Set();
   for (const d of man.drivers || []) if (zig(d)) for (const m of d.zigbee.manufacturerName) for (const p of d.zigbee.productId) exact.add(`${d.id}#${m}#${uc(p)}`);
