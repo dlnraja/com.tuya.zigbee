@@ -1111,6 +1111,14 @@
     "en": "CRITICAL: sdkVersion fix (Processing failed), Missing Capability Listener (setable:false), timer fallback, battery restore, duplicate method fix, HOBEIAN ZG-301Z, NFKD normalize, 87 fingerprints restored, Polos validator",
     "fr": "CRITIQUE: sdkVersion (Processing failed), Missing Capability Listener, fallback timer, batterie, HOBEIAN, NFKD, 87 fingerprints, Polos"
   },
+  "5.12.536": {
+    "en": "Next stable update in preparation: this note is replaced by the list of its changes when the version is published.",
+    "fr": "Prochaine mise à jour stable en préparation : cette note est remplacée par la liste de ses changements à la publication."
+  },
+  "5.12.535": {
+    "en": "Fixed: thermostats & pairing and device recognition (TRV06) and door and window sensors. Plus 1 other change in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Corrigé : thermostats & appairage et reconnaissance des appareils (TRV06) et capteurs d'ouverture. Et 1 autre changement dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+  },
   "5.12.534": {
     "en": "Device database and reliability updates.",
     "fr": "Mises à jour de la base d’appareils et de la fiabilité."
