@@ -1,6 +1,6 @@
 {
   "$comment": "Change-driven proposals from data/sources/registry.json. Identifiers + our own one-line summaries; review before landing (W4 couples, research first).",
-  "updated": "2026-11-01T09:43:03.766Z",
+  "updated": "2026-11-02T09:57:20.307Z",
   "proposals": [
     {
       "source": "z2m-issues",
@@ -27662,6 +27662,622 @@
       "quirk": false,
       "credit": "Homey Community Forum members (tag: zigbee)",
       "seenAt": "2026-11-01T09:43:03.014Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/33562",
+      "summary": "issue #33562 (open) by Ahilezz, about: request — `_TZ3210_inv6zzlf` `TS0511`",
+      "mfrs": [
+        "_TZ3210_inv6zzlf"
+      ],
+      "pids": [
+        "TS0511"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-11-02T09:57:11.930Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/33564",
+      "summary": "issue #33564 (open) by urwrstkn8mare, about: `_TZ3210_nz9dycbh` `TS030F`",
+      "mfrs": [
+        "_TZ3210_nz9dycbh"
+      ],
+      "pids": [
+        "TS030F"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-11-02T09:57:11.931Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/33567",
+      "summary": "issue #33567 (closed) by acarmehmet15, about: safety sensor",
+      "mfrs": [
+        "_TZE204_0corc0ph"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [
+        16,
+        1,
+        10,
+        11,
+        12
+      ],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-11-02T09:57:11.931Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/33000",
+      "summary": "issue #33000 (open) by SJM1001, about: cover, request",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-11-02T09:57:11.931Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/32830",
+      "summary": "issue #32830 (open) by 8666, about: cover — `TS130F_GIRIER` `TS130F_GIRIER_DUAL`",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-11-02T09:57:11.932Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/32739",
+      "summary": "issue #32739 (open) by BELTFD, about: energy — `_TZ3000_ww6drja5` `TS011F`",
+      "mfrs": [
+        "_TZ3000_ww6drja5"
+      ],
+      "pids": [
+        "TS011F"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-11-02T09:57:11.932Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/issues/4722",
+      "summary": "issue #4722 (open) by cb2206, about: switch",
+      "mfrs": [
+        "_TZ3000_tqlv4ug4"
+      ],
+      "pids": [
+        "TS0001"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-02T09:57:12.963Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/issues/5632",
+      "summary": "issue #5632 (open) by zigpy-review-bot, about: switch, light, request",
+      "mfrs": [],
+      "pids": [
+        "TS000X",
+        "TS0001",
+        "TS0004",
+        "TS000F",
+        "TS0011",
+        "TS0013"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-02T09:57:12.963Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/issues/4752",
+      "summary": "issue #4752 (open) by mkz212, about: switch, light",
+      "mfrs": [
+        "_TZ3000_ltt60asa",
+        "_TZ3000_u3oupgdy",
+        "_TZ3000_bvrlqyj7",
+        "_TZ3000_tqlv4ug4"
+      ],
+      "pids": [
+        "TS0004",
+        "TS0002",
+        "TS0001"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-02T09:57:12.963Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/pull/5616",
+      "summary": "PR #5616 (open) by zigpy-review-bot, about: unclassified",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-02T09:57:12.963Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/pull/5615",
+      "summary": "PR #5615 (open) by zigpy-review-bot, about: unclassified",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-02T09:57:12.963Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/issues/4654",
+      "summary": "issue #4654 (open) by Karabacak021, about: climate sensor — `TS0201`",
+      "mfrs": [
+        "_TZ3000_bgsigers"
+      ],
+      "pids": [
+        "TS0201"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-02T09:57:12.963Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/issues/4672",
+      "summary": "issue #4672 (open) by 55somma, about: cover, request — `_TZE284_zm8zpwas` `TS0601`",
+      "mfrs": [
+        "_TZE284_zm8zpwas"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-02T09:57:12.964Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/issues/4664",
+      "summary": "issue #4664 (open) by AndreasHoffmann2, about: switch",
+      "mfrs": [
+        "_TZE284_z5jz7wpo",
+        "_TZE200_r32ctezx",
+        "_TZE204_r32ctezx"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-02T09:57:12.964Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/issues/4643",
+      "summary": "issue #4643 (open) by swiller74-web, about: energy, request",
+      "mfrs": [
+        "_TZE284_pglpvdar"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-02T09:57:12.964Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/issues/5636",
+      "summary": "issue #5636 (open) by zigpy-review-bot, about: unclassified",
+      "mfrs": [
+        "_TZE200_3towulqd"
+      ],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-02T09:57:12.964Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/pull/4568",
+      "summary": "PR #4568 (closed) by a-gal, about: presence, request — `_TZE284_debczeci` `_TZE204_debczeci` `_TZE284_1lvln0x6`",
+      "mfrs": [
+        "_TZE284_debczeci",
+        "_TZE204_debczeci",
+        "_TZE284_1lvln0x6"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-02T09:57:12.964Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/issues/4588",
+      "summary": "issue #4588 (open) by yepeekai, about: request — `_TZE204_wc2w9t1s`",
+      "mfrs": [
+        "_TZE204_wc2w9t1s"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-02T09:57:12.964Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/pull/5629",
+      "summary": "PR #5629 (open) by zigpy-review-bot, about: light, request",
+      "mfrs": [
+        "_TZ3000_p26flek3"
+      ],
+      "pids": [
+        "TS000X",
+        "TS0001"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-02T09:57:12.964Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/issues/4600",
+      "summary": "issue #4600 (open) by Stoatwblr, about: switch, light",
+      "mfrs": [
+        "_TZ3000_mw1pqqqt"
+      ],
+      "pids": [
+        "TS0003"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-02T09:57:12.964Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/pull/5628",
+      "summary": "PR #5628 (open) by zigpy-review-bot, about: thermostat",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-02T09:57:12.964Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/issues/4594",
+      "summary": "issue #4594 (open) by desultroy, about: switch — `_TZE200_mudxchsu`",
+      "mfrs": [
+        "_TZE200_mudxchsu"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-02T09:57:12.964Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/issues/4578",
+      "summary": "issue #4578 (open) by upsuper, about: flow cards — `_TZ3000_abrsvsou`",
+      "mfrs": [
+        "_TZ3000_abrsvsou"
+      ],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-02T09:57:12.964Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/pull/5630",
+      "summary": "PR #5630 (open) by zigpy-review-bot, about: switch, light, request — `TS000X`",
+      "mfrs": [],
+      "pids": [
+        "TS000X",
+        "TS0001",
+        "TS0004"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-02T09:57:12.964Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/pull/4400",
+      "summary": "PR #4400 (closed) by jpbede, about: request — `_TZ3290_u9xac5rv`",
+      "mfrs": [
+        "_TZ3290_u9xac5rv"
+      ],
+      "pids": [
+        "TS1201"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-02T09:57:12.964Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/issues/5639",
+      "summary": "issue #5639 (open) by rolfoosting, about: thermostat, contact, pairing",
+      "mfrs": [
+        "_TZE200_sur6q7ko",
+        "_TZE200_hue3yfsn"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-02T09:57:12.964Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/pull/5638",
+      "summary": "PR #5638 (open) by zigpy-review-bot, about: energy, request — `_TZ3000_dd8wwzcy` `TS011F`",
+      "mfrs": [
+        "_TZ3000_dd8wwzcy"
+      ],
+      "pids": [
+        "TS011F"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-02T09:57:12.964Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/pull/5637",
+      "summary": "PR #5637 (open) by zigpy-review-bot, about: button, flow cards, request — `TS004F`",
+      "mfrs": [
+        "_TZ3000_abrsvsou"
+      ],
+      "pids": [
+        "TS004F"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-02T09:57:12.964Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/pull/5633",
+      "summary": "PR #5633 (open) by zigpy-review-bot, about: switch — `TS000X`",
+      "mfrs": [],
+      "pids": [
+        "TS000X",
+        "TS0001",
+        "TS0004"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-02T09:57:12.964Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/issues/4544",
+      "summary": "issue #4544 (open) by hbothmer, about: `TS0001`",
+      "mfrs": [],
+      "pids": [
+        "TS0001"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-02T09:57:12.964Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/issues/4528",
+      "summary": "issue #4528 (open) by m-Mojo-m, about: thermostat, request — `_TZE284_rlytpmij` `TS0601`",
+      "mfrs": [
+        "_TZE284_rlytpmij",
+        "_TZE284_cvub6xbb"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-02T09:57:12.964Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/issues/4474",
+      "summary": "issue #4474 (open) by rodrigolinkweb, about: switch, request — `TS0601`",
+      "mfrs": [
+        "_TZE204_wskr3up8",
+        "_TZE284_8jqvnitg"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [
+        14,
+        15
+      ],
+      "bug": false,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-02T09:57:12.964Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/issues/4519",
+      "summary": "issue #4519 (open) by f18m, about: battery — `_TZE284_aao3yzhs` `TS0601`",
+      "mfrs": [
+        "_TZE284_aao3yzhs"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-02T09:57:12.964Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/issues/4473",
+      "summary": "issue #4473 (open) by dpatterson87, about: unclassified",
+      "mfrs": [
+        "_TZ3000_ja5osu5g"
+      ],
+      "pids": [
+        "TS004F"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-02T09:57:12.964Z"
+    },
+    {
+      "source": "homey-forum-apps-category",
+      "kind": "forum-app",
+      "ref": "https://community.homey.app/t/160644/23",
+      "summary": "post #23 by Gabriel_Pedrosa_Mach",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum app authors (Apps category)",
+      "seenAt": "2026-11-02T09:57:15.096Z"
+    },
+    {
+      "source": "homey-forum-apps-category",
+      "kind": "forum-app",
+      "ref": "https://community.homey.app/t/161491/12",
+      "summary": "post #12 by Hullie",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": false,
+      "quirk": true,
+      "credit": "Homey Community Forum app authors (Apps category)",
+      "seenAt": "2026-11-02T09:57:15.608Z"
+    },
+    {
+      "source": "homey-forum-tag-zigbee",
+      "kind": "forum-app",
+      "ref": "https://community.homey.app/t/161638",
+      "summary": "new app topic #161638, about: presence, contact, request (review for ideas; credit author)",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Homey Community Forum members (tag: zigbee)",
+      "seenAt": "2026-11-02T09:57:16.109Z"
     }
   ]
 }
