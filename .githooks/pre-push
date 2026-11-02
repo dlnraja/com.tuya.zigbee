@@ -74,7 +74,7 @@ fi
 
 # P3025: same manifest/data/lint gates as ci-self-check (changed-files lint = fast).
 if [ "${HOOKS_SKIP_DATA_GATES:-0}" != "1" ]; then
-  for _g in "scripts/ci/appjson-compose-drift-gate.js" "scripts/data/build-dp-shards.js --check" "scripts/ci/lint-ratchet.js --changed" "scripts/ci/couple-removal-guard.js"; do
+  for _g in "scripts/ci/appjson-compose-drift-gate.js" "scripts/data/build-dp-shards.js --check" "scripts/ci/lint-ratchet.js --changed" "scripts/ci/couple-removal-guard.js" "scripts/ci/driver-signature-dup-gate.js" "scripts/ci/manifest-budget.js --gate"; do
     _f=${_g%% *}
     [ -f "$ROOT/$_f" ] || continue
     if ! (cd "$ROOT" && "${NODE_BIN:-node}" $_g) >/tmp/p3025-data-gate.log 2>&1; then
@@ -83,6 +83,19 @@ if [ "${HOOKS_SKIP_DATA_GATES:-0}" != "1" ]; then
       exit 1
     fi
   done
+fi
+
+# P3243 (02/11/2026 Paris): local checks once skipped test/critical/ (mocha default spec = test/*.test.js),
+# so a red Node 22 run reached master. The hook now runs the SAME full suite as node22-tests.yml
+# (test/**/*.test.js incl. test/critical, stale .homeybuild/build cleaned first, one isolated retry only
+# for the heap-flake allowlist). Emergency skip: HOOKS_SKIP_FULL_SUITE=1 (CI still runs it).
+if [ "${HOOKS_SKIP_FULL_SUITE:-0}" != "1" ] && [ -f "$ROOT/tools/ci/mocha-flaky-retry.js" ]; then
+  echo -e "${CYAN}[+] Full mocha suite incl. test/critical (same as Node 22 CI)...${RESET}"
+  if ! (cd "$ROOT" && "$NODE_BIN" tools/ci/mocha-flaky-retry.js --timeout=20000) >/tmp/p3243-full-suite.log 2>&1; then
+    grep -A25 -E "^ +[0-9]+ failing$" /tmp/p3243-full-suite.log | head -60
+    echo -e "${RED}❌ PUSH BLOCKED — full mocha suite failed (log /tmp/p3243-full-suite.log)${RESET}"
+    exit 1
+  fi
 fi
 
 echo ""

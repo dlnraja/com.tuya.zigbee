@@ -215,6 +215,16 @@ jobs:
       - name: Crash regression guard - Homey timer context
         run: npm run check:timer-context
 
+      # P3243 (02/11/2026 Paris): Athom refuses any never-published driver (AggregateError) while the 347
+      # published ones pass -> likely a manifest size/combination limit. Measure the manifest of THIS upload
+      # (bytes, drivers, never-published, combos, parasites) and hand it to the hold bisect with the verdict.
+      - name: P3243 manifest budget (report + warning; the blocking gate runs in ci-self-check)
+        continue-on-error: true
+        run: |
+          mkdir -p p3095-outcome
+          [ -f scripts/ci/manifest-budget.js ] || exit 0
+          node scripts/ci/manifest-budget.js --gate --json=p3095-outcome/manifest.json || echo "::warning::P3243 manifest over budget: Athom may refuse (AggregateError); shrink parasites before adding drivers"
+
       - name: GitHub Actions & YAML policy gate
         run: npm run check:yaml
 
@@ -944,7 +954,9 @@ jobs:
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0 (node24, P3025b)
         with:
           name: p3095-outcome
-          path: p3095-outcome/outcome.json
+          path: |
+            p3095-outcome/outcome.json
+            p3095-outcome/manifest.json
           retention-days: 7
 
       # P3106 (01/11/2026): build #3689 v9.0.1607 (AggregateError, group of 7 released) got no bisect step:

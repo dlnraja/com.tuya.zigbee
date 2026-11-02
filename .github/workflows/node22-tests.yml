@@ -10,7 +10,7 @@ name: Node 22 runtime tests
 # The homey CLI needs Node 24, but app code must stay Node 22 compatible, so the test suite runs on 22.
 on:
   push:
-    paths: ['lib/**', 'drivers/**/*.js', 'app.js', 'test/**', 'package.json', '.github/workflows/node22-tests.yml']
+    paths: ['lib/**', 'drivers/**/*.js', 'app.js', 'test/**', 'package.json', '.github/workflows/node22-tests.yml', 'tools/ci/**', 'scripts/ci/**', 'drivers/*/driver.compose.json', 'config/architecture/**']
   pull_request:
     paths: ['lib/**', 'drivers/**/*.js', 'app.js', 'test/**', 'package.json']
   workflow_dispatch:
@@ -61,7 +61,11 @@ jobs:
         run: node --expose-gc scripts/ci/memory-budget.js --budget-mb "$(node -p "require('./scripts/ci/memory-budget.json').codeHeapBudgetMb")"
       - name: Full suite on Node 22
         # P3230: keep the log so the summary can name the failing tests (pipefail keeps mocha's exit code)
-        run: npx mocha "test/**/*.test.js" --timeout 10000 2>&1 | tee "$RUNNER_TEMP/mocha-full.log"
+        # P3243: same command as the pre-push hook: stale .homeybuild/build cleaned first, --expose-gc, and ONE
+        # isolated retry only when every failure is in the heap-flake allowlist (P2914/P3065), reported in the summary.
+        run: |
+          if [ -f tools/ci/mocha-flaky-retry.js ]; then node tools/ci/mocha-flaky-retry.js --timeout=10000 --log="$RUNNER_TEMP/mocha-full.log"
+          else npx mocha "test/**/*.test.js" --timeout 10000 2>&1 | tee "$RUNNER_TEMP/mocha-full.log"; fi
       - name: Short summary (shared report helper)
         if: always()
         env:

@@ -1,0 +1,10 @@
+{
+ "max": {
+  "appBytes": 3130795,
+  "combos": 128632,
+  "parasites": 65423,
+  "appDrivers": 477
+ },
+ "hypothesis": "athom-manifest-size-limit (P3243): any never-published driver -> AggregateError",
+ "updated": "2026-11-02"
+}

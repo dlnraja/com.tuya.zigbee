@@ -114,6 +114,11 @@ function gate(files) {
     const s = sh(process.execPath, ['tools/ci/enforce-dual-couple-legacy.js', '--sync'], { timeout: 120000 });
     summary(`safe-auto-commit [${ID}]: ${(s.stdout || '').trim().split('\n').join(' · ')}`);
   }
+  // WHY(P3243): new couples on a root marked full go to the first chain driver with room (P3206/P3229).
+  if (PATHS.some((p) => /^(drivers|app\.json)/.test(p)) && fs.existsSync('scripts/ci/chain-route-new-couples.js')) {
+    const c = sh(process.execPath, ['scripts/ci/chain-route-new-couples.js', '--apply'], { timeout: 120000 });
+    summary(`safe-auto-commit [${ID}]: ${(c.stdout || '').trim().split('\n').slice(-3).join(' · ')}`);
+  }
   // WHY(2026-10-11): couple guard — restore files that undo pins / sacred-keep / curated
   // removals / golden couples; abort when still dirty.
   if (fs.existsSync('tools/ci/automation-couple-guard.js')) {
