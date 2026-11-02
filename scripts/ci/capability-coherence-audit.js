@@ -20,7 +20,10 @@ const BASE_WIRED = /UnifiedSwitchBase|UnifiedPlugBase|VirtualEnergy|EstimatedEne
 function run(root) {
   const dd = path.join(root, 'drivers');
   const out = { A: [], B: [], C: [] };
+  // P3228: a continuation shares its root's caps/settings; audit the logical driver once.
+  const dc = require('../../lib/drivers/DriverContinuations').load(root);
   for (const d of fs.readdirSync(dd).sort()) {
+    if (dc.isContinuation(d)) {continue;}
     const cf = path.join(dd, d, 'driver.compose.json');
     if (!fs.existsSync(cf)) {continue;}
     let j; try { j = JSON.parse(fs.readFileSync(cf, 'utf8')); } catch (_e) { continue; }

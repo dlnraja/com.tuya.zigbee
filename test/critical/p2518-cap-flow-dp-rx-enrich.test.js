@@ -14,7 +14,9 @@ describe('P2518 cap/flow/DP/RX enrich locks', () => {
     const driversDir = path.join(ROOT, 'drivers');
     const ids = fs.readdirSync(driversDir).filter((d) =>
       fs.statSync(path.join(driversDir, d)).isDirectory());
-    const missing = ids.filter((id) => !fs.existsSync(path.join(driversDir, id, 'driver.flow.compose.json')));
+    // P3228: a continuation reuses its root's flow cards (DRIVER_CONTINUATIONS.md), no own flow compose.
+    const dc = require('../../lib/drivers/DriverContinuations').load(ROOT);
+    const missing = ids.filter((id) => !dc.isContinuation(id) && !fs.existsSync(path.join(driversDir, id, 'driver.flow.compose.json')));
     assert.deepStrictEqual(missing, []);
   });
 

@@ -23,4 +23,31 @@ function effectiveHoldIds(hold, releaseValue) {
   return { ids, released };
 }
 
-module.exports = { parseRelease, effectiveHoldIds };
+/**
+ * P3228: a held continuation (registry continuationOf) folds its zigbee lists back into its root
+ * driver in the payload view, so holding it never drops a couple the root already shipped.
+ * Exact strings only, appended once, root order kept. The folded driver leaves the view at once
+ * (the hold cuts it anyway), so the compaction budget sees exactly the pre-split driver set.
+ * Returns the number of folded drivers.
+ */
+function foldHeldContinuations(manifest, heldIds, registry) {
+  if (!manifest || !Array.isArray(manifest.drivers) || !heldIds || !heldIds.size || !registry) return 0;
+  const byId = new Map(manifest.drivers.map((d) => [d && d.id, d]));
+  let folded = 0;
+  for (const id of heldIds) {
+    const e = typeof registry.entry === 'function' ? registry.entry(id) : null;
+    const rootId = e && e.continuationOf;
+    const held = byId.get(id), root = byId.get(rootId);
+    if (!rootId || !held || !root || !held.zigbee || !root.zigbee) continue;
+    for (const k of ['manufacturerName', 'productId']) {
+      const into = Array.isArray(root.zigbee[k]) ? root.zigbee[k] : (root.zigbee[k] = []);
+      const have = new Set(into);
+      for (const v of held.zigbee[k] || []) if (!have.has(v)) { have.add(v); into.push(v); }
+    }
+    folded++;
+    manifest.drivers = manifest.drivers.filter((d) => d !== held);
+  }
+  return folded;
+}
+
+module.exports = { parseRelease, effectiveHoldIds, foldHeldContinuations };
