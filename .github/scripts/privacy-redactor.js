@@ -37,6 +37,20 @@ function finalSecretPass(s) {
   return masked.replace(SECRET_ASSIGN_FINAL_RE, '$1[REDACTED_SECRET]').replace(/__P3219_KEEP_(\d+)__/g, (_, i) => keep[Number(i)] || '');
 }
 
+// P3221: complete aliases only ("[REDACTED_X]" or "[REDACTED_X:<hex>]"); a half alias like "[REDACTED_token=..." is not one.
+const ALIAS_RE = /\[REDACTED_[A-Z0-9_-]+(?::[a-f0-9]{6,})?\]/g;
+function aliasMasker() {
+  const keep = [];
+  return {
+    mask: s => String(s).replace(ALIAS_RE, a => { keep.push(a); return `__P3221_ALIAS_${keep.length - 1}__`; }),
+    restore: s => String(s).replace(/__P3221_ALIAS_(\d+)__/g, (_, i) => keep[Number(i)] || ''),
+  };
+}
+// Same-length blanking for the gate so leak offsets stay true.
+function blankAliases(text) {
+  return String(text).replace(ALIAS_RE, a => '"'.repeat(a.length));
+}
+
 function redact(text) {
   if (text === null || text === undefined) return '';
   return finalSecretPass(preserveTechnical(text, value => {
@@ -67,9 +81,13 @@ function redact(text) {
     s = s.replace(/\bAKIA[0-9A-Z]{16}\b/g, '[REDACTED_AWS_KEY]');
     s = s.replace(/\beyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9._-]{10,}\b/g, '[REDACTED_JWT]');
     s = s.replace(/\bBearer\s+[A-Za-z0-9._-]{20,}\b/gi, 'Bearer [REDACTED_TOKEN]');
+    // P3221: hide complete aliases built above ("[REDACTED_UUID:<hash>]") so they are not re-read as "uuid:<secret>".
+    const m = aliasMasker();
+    s = m.mask(s);
     s = s.replace(/(["']?(?:local[_-]?key|owner[_-]?id|uid|uuid|sid|token|secret|password|passwd|api[_-]?key|refresh[_-]?token|access[_-]?token|client[_-]?secret)["']?\s*[:=]\s*["']?)([^"',\s}]{3,})/gi, '$1[REDACTED_SECRET]');
     s = s.replace(/(?:\+\d{1,3}[\s().-]*)?(?:\(?\d{2,4}\)?[\s.-]+){2,}\d{2,4}\b/g, '[REDACTED_PHONE]');
     s = s.replace(/\b[a-f0-9]{32,}\b/gi, '[REDACTED_HEX]');
+    s = m.restore(s);
 
     return s;
   }));
@@ -123,7 +141,8 @@ const LEAK_PATTERNS = [
 ];
 
 function findLeaks(value) {
-  const text = typeof value === 'string' ? value : JSON.stringify(value);
+  // P3221: fetch-diags run 41438016752 failed secret-assignment@66 on our own "[REDACTED_UUID:<hash>]" alias.
+  const text = blankAliases(typeof value === 'string' ? value : JSON.stringify(value));
   const leaks = [];
   for (const [kind, re] of LEAK_PATTERNS) {
     re.lastIndex = 0;
