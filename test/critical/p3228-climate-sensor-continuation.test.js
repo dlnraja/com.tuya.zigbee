@@ -21,8 +21,13 @@ describe('P3228 climate_sensor continuation', () => {
   });
 
   it('continuation reuses the root classes and capabilities', () => {
-    assert.strictEqual(require('../../drivers/climate_sensor_2/device'), require('../../drivers/climate_sensor/device'));
-    assert.strictEqual(require('../../drivers/climate_sensor_2/driver'), require('../../drivers/climate_sensor/driver'));
+    // P3236: device may be the root class or a ContinuationFlowAlias subclass of it.
+    const contDev = require('../../drivers/climate_sensor_2/device');
+    const rootDev = require('../../drivers/climate_sensor/device');
+    assert.ok(contDev === rootDev || contDev.prototype instanceof rootDev);
+    const contDrv = require('../../drivers/climate_sensor_2/driver');
+    const rootDrv = require('../../drivers/climate_sensor/driver');
+    assert.ok(contDrv === rootDrv || contDrv.prototype instanceof rootDrv);
     assert.deepStrictEqual(contC.capabilities, rootC.capabilities);
     assert.strictEqual(contC.class, rootC.class);
   });
