@@ -4,14 +4,14 @@ Silent only. **Never** Homey forum POST / PM / AI paste (T157628).
 Lock **manufacturerName + productId** only. Never invent pid. Dual-app: BOTH | MASTER_ONLY | STABLE_ONLY.
 **P2529:** also audit DP / clusters / flow wire / RX-TX (not couple-lock only).
 
-Generated: **2026-11-02T11:45:54.494Z** · Mode: `full`
+Generated: **2026-11-02T20:57:25.339Z** · Mode: `full`
 
 ## Snapshot
 
 | Channel | Count / note |
 |---------|--------------|
-| GitHub open issues | 16 |
-| GitHub open PRs | 0 |
+| GitHub open issues | 11 |
+| GitHub open PRs | 1 |
 | Forum needAction | 108 |
 | Gmail crash state | present |
 | mfs high drift | 0 |
@@ -21,32 +21,28 @@ Generated: **2026-11-02T11:45:54.494Z** · Mode: `full`
 
 | Score | Dual | Source | ID | Action |
 |------:|------|--------|----|--------|
-| 90 | BOTH | github-issue | #608 | investigate-code-silent |
-| 90 | BOTH | github-issue | #607 | investigate-code-silent |
-| 90 | BOTH | github-issue | #606 | investigate-code-silent |
-| 90 | BOTH | github-issue | #605 | investigate-code-silent |
-| 90 | BOTH | github-issue | #604 | investigate-code-silent |
-| 90 | BOTH | github-issue | #603 | investigate-code-silent |
-| 90 | BOTH | github-issue | #602 | investigate-code-silent |
-| 90 | BOTH | github-issue | #601 | investigate-code-silent |
-| 90 | BOTH | github-issue | #600 | investigate-code-silent |
-| 90 | BOTH | github-issue | #599 | investigate-code-silent |
-| 90 | BOTH | github-issue | #598 | investigate-code-silent |
+| 90 | BOTH | github-issue | #621 | investigate-code-silent |
+| 90 | BOTH | github-issue | #620 | investigate-code-silent |
+| 90 | BOTH | github-issue | #619 | investigate-code-silent |
+| 90 | BOTH | github-issue | #618 | investigate-code-silent |
+| 90 | BOTH | github-issue | #617 | investigate-code-silent |
+| 90 | BOTH | github-issue | #616 | investigate-code-silent |
 | 90 | BOTH | github-issue | #584 | investigate-code-silent |
 | 90 | BOTH | github-issue | #550 | investigate-code-silent |
 | 75 | BOTH | forum | forum-need-action | enrich:investigate + deep-functional (DP/cluster/flow/RX-TX, not mfr+pid only) |
 | 70 | BOTH | github-issue | #557 | investigate-code-silent |
 | 70 | BOTH | github-issue | #581 | investigate-code-silent |
 | 70 | BOTH | github-issue | #559 | investigate-code-silent |
+| 50 | MASTER_ONLY | github-pr | PR#614 | review |
 
 ## Phase results
 
 - **guard**: ok (0ms)
-- **github**: ok (550ms)
-- **gmail**: ok (241ms)
-- **forum**: ok (37477ms)
-- **drivers**: ok (2023ms)
-- **functionalDeep**: ok (6262ms)
+- **github**: ok (431ms)
+- **gmail**: ok (233ms)
+- **forum**: ok (38629ms)
+- **drivers**: ok (1934ms)
+- **functionalDeep**: ok (6034ms)
 
 ## Doctrine
 

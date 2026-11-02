@@ -1,128 +1,76 @@
 {
-  "harvestedAt": "2026-11-02T11:45:55.044Z",
+  "harvestedAt": "2026-11-02T20:57:25.769Z",
   "repo": "dlnraja/com.tuya.zigbee",
   "auth": "token",
   "error": null,
   "issues": [
-    {
-      "number": 608,
-      "title": "[crash] 2ebcc432d4 (review)",
-      "labels": [
-        "crash-triage"
-      ],
-      "updatedAt": "2026-11-02T10:57:02Z",
-      "user": "github-actions[bot]",
-      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/608"
-    },
-    {
-      "number": 607,
-      "title": "[crash] 3a1e4c5f70 (review)",
-      "labels": [
-        "crash-triage"
-      ],
-      "updatedAt": "2026-11-02T10:57:00Z",
-      "user": "github-actions[bot]",
-      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/607"
-    },
-    {
-      "number": 606,
-      "title": "[crash] c3ef959535 (review)",
-      "labels": [
-        "crash-triage"
-      ],
-      "updatedAt": "2026-11-02T10:56:58Z",
-      "user": "github-actions[bot]",
-      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/606"
-    },
-    {
-      "number": 605,
-      "title": "[crash] 8f9742a93b (bounded-cache)",
-      "labels": [
-        "crash-triage"
-      ],
-      "updatedAt": "2026-11-02T10:56:57Z",
-      "user": "github-actions[bot]",
-      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/605"
-    },
-    {
-      "number": 604,
-      "title": "[crash] 759eb18002 (bounded-cache)",
-      "labels": [
-        "crash-triage"
-      ],
-      "updatedAt": "2026-11-02T10:56:55Z",
-      "user": "github-actions[bot]",
-      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/604"
-    },
-    {
-      "number": 603,
-      "title": "[crash] 2448c80cc1 (review)",
-      "labels": [
-        "crash-triage"
-      ],
-      "updatedAt": "2026-11-02T10:17:50Z",
-      "user": "github-actions[bot]",
-      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/603"
-    },
-    {
-      "number": 602,
-      "title": "[crash] ea96ae0b46 (review)",
-      "labels": [
-        "crash-triage"
-      ],
-      "updatedAt": "2026-11-02T10:17:49Z",
-      "user": "github-actions[bot]",
-      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/602"
-    },
-    {
-      "number": 601,
-      "title": "[crash] cc18153aa7 (review)",
-      "labels": [
-        "crash-triage"
-      ],
-      "updatedAt": "2026-11-02T10:17:47Z",
-      "user": "github-actions[bot]",
-      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/601"
-    },
-    {
-      "number": 600,
-      "title": "[crash] 5d47b55d95 (review)",
-      "labels": [
-        "crash-triage"
-      ],
-      "updatedAt": "2026-11-02T10:17:45Z",
-      "user": "github-actions[bot]",
-      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/600"
-    },
-    {
-      "number": 599,
-      "title": "[crash] a8994dc2f3 (review)",
-      "labels": [
-        "crash-triage"
-      ],
-      "updatedAt": "2026-11-02T10:17:44Z",
-      "user": "github-actions[bot]",
-      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/599"
-    },
-    {
-      "number": 598,
-      "title": "Bug report - [_TZE284_9ern5sfh - TS0601] Temp & Hum Sensor with LCD not pairing correctly",
-      "labels": [
-        "bug"
-      ],
-      "updatedAt": "2026-11-02T08:46:39Z",
-      "user": "oletorv",
-      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/598"
-    },
     {
       "number": 557,
       "title": "🤖 Daily digest",
       "labels": [
         "bot-digest"
       ],
-      "updatedAt": "2026-11-02T08:19:20Z",
+      "updatedAt": "2026-11-02T19:39:35Z",
       "user": "dlnraja",
       "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/557"
+    },
+    {
+      "number": 621,
+      "title": "[crash] 759eb18002 (bounded-cache)",
+      "labels": [
+        "crash-triage"
+      ],
+      "updatedAt": "2026-11-02T17:28:39Z",
+      "user": "github-actions[bot]",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/621"
+    },
+    {
+      "number": 620,
+      "title": "[crash] 2448c80cc1 (review)",
+      "labels": [
+        "crash-triage"
+      ],
+      "updatedAt": "2026-11-02T17:28:37Z",
+      "user": "github-actions[bot]",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/620"
+    },
+    {
+      "number": 619,
+      "title": "[crash] cc18153aa7 (review)",
+      "labels": [
+        "crash-triage"
+      ],
+      "updatedAt": "2026-11-02T17:28:35Z",
+      "user": "github-actions[bot]",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/619"
+    },
+    {
+      "number": 618,
+      "title": "[crash] 5d47b55d95 (review)",
+      "labels": [
+        "crash-triage"
+      ],
+      "updatedAt": "2026-11-02T17:28:33Z",
+      "user": "github-actions[bot]",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/618"
+    },
+    {
+      "number": 617,
+      "title": "[crash] ea96ae0b46 (review)",
+      "labels": [
+        "crash-triage"
+      ],
+      "updatedAt": "2026-11-02T17:28:30Z",
+      "user": "github-actions[bot]",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/617"
+    },
+    {
+      "number": 616,
+      "title": "Autonomy weekly digest",
+      "labels": [],
+      "updatedAt": "2026-11-02T17:00:23Z",
+      "user": "github-actions[bot]",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/616"
     },
     {
       "number": 581,
@@ -168,7 +116,16 @@
       "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/559"
     }
   ],
-  "prs": [],
-  "openIssueCount": 16,
-  "openPrCount": 0
+  "prs": [
+    {
+      "number": 614,
+      "title": "Weekly Homey knowledge/tooling refresh 2026-11-02",
+      "updatedAt": "2026-11-02T13:51:23Z",
+      "user": "github-actions[bot]",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/pull/614",
+      "draft": true
+    }
+  ],
+  "openIssueCount": 11,
+  "openPrCount": 1
 }
