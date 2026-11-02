@@ -52,7 +52,12 @@
     "heiman_keyfob",
     "heiman_siren"
   ],
-  "pending": null,
+  "pending": {
+    "ids": [
+      "presence_radar_aoyan_ay204t"
+    ],
+    "at": "2026-11-02T21:14:50.627Z"
+  },
   "doneRuns": [
     "41263658690",
     "41272744359",
