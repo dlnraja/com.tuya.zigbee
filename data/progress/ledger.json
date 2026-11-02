@@ -44973,6 +44973,12 @@
     "leadsAdded": 0
    },
    "lastChangeRun": "41312721125"
+  },
+  "ci-fail:homey-app-validate:publish-payload:fatal-p3201-ratchet": {
+   "status": "fixed",
+   "date": "2026-11-02",
+   "by": "homey-ci-prs",
+   "note": "attempt 1/3 (24h) run 41402776968 master 4d90c647d9: validate payload build had no top-up env (17000 ceiling) and the restore cut _tze200_9caxna4s|TS0301 via a stale parasite candidate; P3201b 7d475e95f2 snapshot-first restore + reused-row filter + validate env 20000/2000, 2 tests"
   }
  }
 }
