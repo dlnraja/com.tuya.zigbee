@@ -137,6 +137,29 @@ function parseJohan(file) {
   return out;
 }
 
+/**
+ * P3225 — removal tombstones. A couple removed from every driver with recorded
+ * multi-source evidence (data/couple-removal-evidence.json, P3134/P3146) stays in
+ * the ledger as status 'unverified' with drivers [] and a `removed` note, so the
+ * decision survives ledger refreshes and is never silently re-added as "new".
+ * Additive: live couples are untouched; never read at pairing.
+ */
+function addRemovalTombstones(couples, evidence) {
+  let n = 0;
+  for (const e of (evidence && evidence.entries) || []) {
+    const [m, p] = String(e.couple || '').split('|');
+    if (!m || !p || !ID_RE.test(m)) continue;
+    const ck = `${m.toLowerCase()}|${p.toUpperCase()}`;
+    if (couples[ck] && !couples[ck].removed) continue; // still live in some driver (a move, not a removal)
+    const removed = couples[ck]?.removed || [];
+    if (!removed.some((r) => r.driver === e.driver && r.pr === e.pr)) removed.push({ driver: e.driver, pr: e.pr, verdict: e.verdict });
+    couples[ck] = { mfr: m, pid: p, status: 'unverified', reason: 'removed-with-evidence', sources: [{ source: 'couple-removal-evidence', ref: 'data/couple-removal-evidence.json' }],
+      drivers: [], removed, dps: null, model: null, vendor: null, firstSeen: couples[ck]?.firstSeen || new Date().toISOString().slice(0, 10) };
+    n++;
+  }
+  return n;
+}
+
 function main() {
   const z2m = parseZ2M(arg('z2m') && fs.existsSync(arg('z2m')) ? fs.readFileSync(arg('z2m'), 'utf8') : null);
   const zha = parseZHA(arg('zha'));
@@ -195,15 +218,17 @@ function main() {
       model: sources.find((s) => s.model)?.model || old.model || null, vendor: sources.find((s) => s.vendor)?.vendor || old.vendor || null,
       firstSeen: old.firstSeen || new Date().toISOString().slice(0, 10) };
   }
-  const total = Object.keys(couples).length;
+  let removedTombstones = 0;
+  try { removedTombstones = addRemovalTombstones(couples, JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'couple-removal-evidence.json'), 'utf8'))); } catch { /* optional */ }
+  const total = Object.keys(couples).length - removedTombstones;
   verified = Object.values(couples).filter((x) => x.status === 'verified').length; listingOnly = total - verified;
   const doc = { _meta: { generator: 'tools/ci/ssot-couple-enrich.js (P3136)', doctrine: 'Exact mfr+pid couples only; links not copies (CREDITS.md); unverified = no external/recorded source yet; additive, never read at pairing.',
     sourceUrls: { z2m: Z2M_URL, zha: ZHA_URL, johan: 'https://github.com/JohanBendz/com.tuya.zigbee' },
-    counts: { total, verified, unverifiedWithInternalOrListingSource: listingOnly, unverifiedMfrDriverPairs: Object.values(unver).reduce((a, o) => a + Object.keys(o).length, 0), z2m: z2m.size, zha: zha.size, johan: johan.size } }, drivers: driverInfo, couples, unverified: Object.fromEntries(Object.entries(unver).map(([d, o]) => [d, Object.keys(o).sort()])) };
+    counts: { total, verified, unverifiedWithInternalOrListingSource: listingOnly, removedTombstones, unverifiedMfrDriverPairs: Object.values(unver).reduce((a, o) => a + Object.keys(o).length, 0), z2m: z2m.size, zha: zha.size, johan: johan.size } }, drivers: driverInfo, couples, unverified: Object.fromEntries(Object.entries(unver).map(([d, o]) => [d, Object.keys(o).sort()])) };
   if (process.argv.includes('--check')) { console.log(JSON.stringify(doc._meta.counts)); return; }
   fs.mkdirSync(path.dirname(OUT), { recursive: true });
   fs.writeFileSync(OUT, JSON.stringify(doc) + '\n');
   console.log(JSON.stringify(doc._meta.counts));
 }
 if (require.main === module) main();
-module.exports = { parseZ2M, parseZHA, parseJohan, ID_RE };
+module.exports = { parseZ2M, parseZHA, parseJohan, ID_RE, addRemovalTombstones };
