@@ -875,3 +875,7 @@ First commit that names each P-number; summary is the commit subject. Details li
 | P102 | 2026-10-19 | [da0c73a8a](https://github.com/dlnraja/com.tuya.zigbee/commit/da0c73a8a8b3f013ac5bd43f252d8c722bd8aff0) | fix(ci,P2868): allowlist smart_knob_zg101zd in the P102 bare ZigBeeDevice gate (native-only knob by design; TuyaZigbeeDevice layers would double-handle 0xFC/0xF |
 | P101 | 2026-08-11 | [e86582503](https://github.com/dlnraja/com.tuya.zigbee/commit/e86582503eb4c787329e7f97eb30247d6d6de410) | fix(P101): #439 sacred-couple lot2 + getDeviceById/catch harden |
 | P100 | 2026-08-11 | [6f36cc25d](https://github.com/dlnraja/com.tuya.zigbee/commit/6f36cc25dcbf53110809ddc654bb4928e447b715) | chore: sync app.json to v9.0.447 for P100 crash harden |
+
+## 2026-11-02 (kb-daily)
+- When the publish payload is at its cap, every new pin pushes some other couple out of the rebuilt payload. Diff the matrix per couple after each pin change, and free headroom before pinning instead of trading one user's device for another.
+- Athom zigbee-clusters now emits `attr.<id>` for unknown attributes in reports (PR #263) and splits oversized readAttributes requests (PR #259). Until Homey ships it, keep raw-frame fallbacks and small read batches.

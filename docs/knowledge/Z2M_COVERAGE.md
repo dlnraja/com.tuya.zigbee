@@ -17,7 +17,7 @@ Statuses: **absent** (no driver), **compacted** (in app.json, dropped from the p
 | smartthings | SmartThingsCommunity/SmartThingsEdgeDrivers@4fa6683e2e, Mariano-Github/Edge-Drivers-Beta@88f56fd204 | 550 | 1253 |  |
 | iobroker | acdafa63e7 (2026-09-18) | 0 | 0 | device definitions come from zigbee-herdsman-converters; only adapter-local fingerprints are counted |
 | domoticz | 0093b8a1c7 (2026-10-31) | 401 | 21 |  |
-| tasmota | 9107ce7615 (2026-10-31) | 10 | 1 |  |
+| tasmota | a4703730ab (2026-11-01) | 10 | 1 |  |
 
 Wi-Fi / LAN projects (tuya-local, localtuya, tinytuya, esphome) belong to the separate wifi-local matrix: leads only here.
 
@@ -25,9 +25,9 @@ Wi-Fi / LAN projects (tuya-local, localtuya, tinytuya, esphome) belong to the se
 
 | Branch | App | Version | Payload combos / cap | Compacted, other case form kept |
 |---|---|---|---|---:|
-| master | com.dlnraja.tuya.zigbee | 9.0.1608 | 15498 / 15500 + TS0601 top-up → 19997 / 20000 | 387 |
-| stable-v5 | com.dlnraja.tuya.zigbee.stable | 5.12.525 | 15488 / 15500 | 246 |
-| bastien-home | com.dlnraja.tuya.zigbee.bastien | 1.0.222 | 15500 / 15500 | 261 |
+| master | com.dlnraja.tuya.zigbee | 9.0.1611 | 15500 / 15500 + TS0601 top-up → 19997 / 20000 | 389 |
+| stable-v5 | com.dlnraja.tuya.zigbee.stable | 5.12.530 | 15492 / 15500 | 246 |
+| bastien-home | com.dlnraja.tuya.zigbee.bastien | 1.0.224 | 15486 / 15500 | 261 |
 
 The payload cap (15,500 couples, our own heuristic shared with the publish workflows, plus the P3036 TS0601 top-up where the branch has it) is the binding limit: any couple added to app.json beyond it is compacted out again, so new couples are only worth adding together with a compaction gain (P3036). Couples we cannot ship are listed as on hold, never removed.
 
@@ -35,33 +35,33 @@ The payload cap (15,500 couples, our own heuristic shared with the publish workf
 
 | Source | Branch | Total | Absent | Compacted | Wrong class | Partial | Complete |
 |---|---|---:|---:|---:|---:|---:|---:|
-| all | master | 3578 | 528 | 2208 | 1 | 161 | 680 |
-| all | stable-v5 | 3578 | 547 | 2317 | 9 | 130 | 575 |
-| all | bastien-home | 3578 | 474 | 2325 | 7 | 142 | 630 |
-| z2m | master | 2180 | 167 | 1473 | 1 | 161 | 378 |
-| z2m | stable-v5 | 2180 | 175 | 1568 | 9 | 130 | 298 |
-| z2m | bastien-home | 2180 | 109 | 1586 | 7 | 142 | 336 |
-| zha | master | 535 | 45 | 326 | 0 | 36 | 128 |
+| all | master | 3578 | 521 | 2213 | 1 | 163 | 680 |
+| all | stable-v5 | 3578 | 546 | 2318 | 9 | 129 | 576 |
+| all | bastien-home | 3578 | 474 | 2329 | 7 | 140 | 628 |
+| z2m | master | 2180 | 160 | 1479 | 1 | 163 | 377 |
+| z2m | stable-v5 | 2180 | 175 | 1568 | 9 | 129 | 299 |
+| z2m | bastien-home | 2180 | 109 | 1587 | 7 | 140 | 337 |
+| zha | master | 535 | 45 | 325 | 0 | 37 | 128 |
 | zha | stable-v5 | 535 | 36 | 366 | 2 | 31 | 100 |
-| zha | bastien-home | 535 | 38 | 367 | 1 | 32 | 97 |
-| deconz | master | 400 | 30 | 240 | 0 | 15 | 115 |
+| zha | bastien-home | 535 | 38 | 366 | 1 | 32 | 98 |
+| deconz | master | 400 | 30 | 241 | 0 | 15 | 114 |
 | deconz | stable-v5 | 400 | 29 | 253 | 1 | 15 | 102 |
-| deconz | bastien-home | 400 | 28 | 250 | 0 | 15 | 107 |
+| deconz | bastien-home | 400 | 28 | 251 | 0 | 15 | 106 |
 | johan | master | 1161 | 85 | 716 | 0 | 25 | 335 |
-| johan | stable-v5 | 1161 | 103 | 755 | 1 | 19 | 283 |
-| johan | bastien-home | 1161 | 85 | 721 | 1 | 22 | 332 |
+| johan | stable-v5 | 1161 | 102 | 756 | 1 | 19 | 283 |
+| johan | bastien-home | 1161 | 85 | 726 | 1 | 21 | 328 |
 | blakadder | master | 626 | 61 | 390 | 0 | 34 | 141 |
-| blakadder | stable-v5 | 626 | 62 | 400 | 3 | 27 | 134 |
-| blakadder | bastien-home | 626 | 63 | 409 | 2 | 28 | 124 |
+| blakadder | stable-v5 | 626 | 62 | 401 | 3 | 27 | 133 |
+| blakadder | bastien-home | 626 | 63 | 411 | 2 | 27 | 123 |
 | hubitat | master | 556 | 66 | 357 | 0 | 24 | 109 |
-| hubitat | stable-v5 | 556 | 62 | 376 | 1 | 21 | 96 |
-| hubitat | bastien-home | 556 | 65 | 369 | 1 | 21 | 100 |
-| smartthings | master | 550 | 135 | 272 | 0 | 10 | 133 |
+| hubitat | stable-v5 | 556 | 62 | 377 | 1 | 21 | 95 |
+| hubitat | bastien-home | 556 | 65 | 370 | 1 | 20 | 100 |
+| smartthings | master | 550 | 134 | 272 | 0 | 10 | 134 |
 | smartthings | stable-v5 | 550 | 137 | 278 | 0 | 12 | 123 |
-| smartthings | bastien-home | 550 | 141 | 275 | 0 | 10 | 124 |
-| domoticz | master | 401 | 13 | 276 | 0 | 20 | 92 |
-| domoticz | stable-v5 | 401 | 16 | 296 | 1 | 16 | 72 |
-| domoticz | bastien-home | 401 | 16 | 288 | 0 | 17 | 80 |
+| smartthings | bastien-home | 550 | 141 | 276 | 0 | 10 | 123 |
+| domoticz | master | 401 | 13 | 277 | 0 | 20 | 91 |
+| domoticz | stable-v5 | 401 | 16 | 297 | 1 | 16 | 71 |
+| domoticz | bastien-home | 401 | 16 | 290 | 0 | 16 | 79 |
 | tasmota | master | 10 | 1 | 6 | 0 | 2 | 1 |
 | tasmota | stable-v5 | 10 | 1 | 7 | 0 | 2 | 0 |
 | tasmota | bastien-home | 10 | 1 | 6 | 0 | 2 | 1 |
