@@ -27,6 +27,7 @@ const F = {
   state: 'config/publish-hold-bisect-state.json',
   ledger: 'docs/knowledge/athom-publish-outcomes.jsonl',
   notes: 'docs/status/publish-hold-isolated',
+  trend: 'data/learning/manifest-trend.jsonl',
 };
 
 const parse = (v) => [...new Set(String(v || '').split(/[\s,;]+/).map((s) => s.trim()).filter(Boolean))];
@@ -134,6 +135,25 @@ function readJson(rel, d) { try { return JSON.parse(fs.readFileSync(path.join(RO
 function writeJson(rel, v) { fs.writeFileSync(path.join(ROOT, rel), JSON.stringify(v, null, 2) + '\n'); }
 const heldOf = (hold) => (hold && Array.isArray(hold.drivers) ? hold.drivers.map((d) => d && d.id).filter(Boolean) : []);
 
+function readLines(rel) { try { return fs.readFileSync(path.join(ROOT, rel), 'utf8').split('\n').filter(Boolean).map((l) => { try { return JSON.parse(l); } catch (_) { return null; } }).filter(Boolean); } catch (_) { return []; } }
+
+/**
+ * P3243 pure: when an AggregateError hits a group of never-published drivers and at least 2 DISTINCT
+ * drivers already failed ALONE (history), the cause is likely not the driver but the manifest size /
+ * driver-combination limit (02/11: heiman_keyfob alone, heiman_siren alone, ay204t+ay222z all refused,
+ * the 347 published drivers pass). Returns a hypothesis string or null.
+ */
+function hypothesis({ outcome, released = [], history = [] }) {
+  if (!/AggregateError/i.test(String(outcome || '')) || !released.length) {return null;}
+  const alone = new Set();
+  for (const r of history) {
+    const rel = r && r.p3095 && r.p3095.released;
+    if (r && /AggregateError/i.test(String(r.kind || '')) && Array.isArray(rel) && rel.length === 1) {alone.add(rel[0]);}
+  }
+  if (released.length === 1) {alone.add(released[0]);}
+  return alone.size >= 2 ? `manifest-size-limit: ${alone.size} distinct never-published drivers refused alone (${[...alone].slice(0, 6).join(', ')}); shrink manifest before releasing more` : null;
+}
+
 function main(argv) {
   const [cmd, outcome, version, build, run] = argv;
   const hold = readJson(F.hold, { drivers: [] });
@@ -167,17 +187,31 @@ function main(argv) {
   const row = { at: new Date().toISOString(), app_id: 'com.dlnraja.tuya.zigbee', version: version || null, buildId: build ? Number(build) || build : null,
     state: /^test$/i.test(outcome) ? 'test' : 'processing_failed', kind: /^test$/i.test(outcome) ? 'ok' : outcome,
     run: run || null, p3095: { released: parse(process.env.PUBLISH_HOLD_RELEASE), accepted: d.accept, isolated: d.isolate, next: d.next, note: d.note } };
+  // P3243 (02/11/2026 Paris): record the size-limit hypothesis + the manifest of the upload with the verdict.
+  const manifest = readJson('p3095-in/manifest.json', null);
+  const hyp = hypothesis({ outcome, released: row.p3095.released, history: readLines(F.ledger) });
+  if (hyp) {row.p3095.hypothesis = hyp;}
+  if (manifest) {
+    row.manifest = { appBytes: manifest.appBytes, appDrivers: manifest.appDrivers, neverPublished: manifest.neverPublished, combos: manifest.combos, parasites: manifest.parasites };
+    try { require('../../scripts/ci/manifest-budget.js').appendTrend(path.join(ROOT, F.trend), { at: row.at, run: row.run, outcome: row.kind, ...row.manifest }); } catch (_) { /* trend optional */ }
+  }
   fs.appendFileSync(path.join(ROOT, F.ledger), JSON.stringify(row) + '\n');
+  try { // bounded learning ledger (P3097): one signature per Athom verdict kind
+    const L = require('../../scripts/ci/autonomy-learn.js'); const lf = path.join(ROOT, 'config', 'autonomy-learned.json');
+    let l; try { l = JSON.parse(fs.readFileSync(lf, 'utf8')); } catch (_) { l = { entries: {}, events: [] }; }
+    L.record(l, hyp ? 'athom:manifest-size-limit' : 'athom:hold-release', hyp ? 'shrink manifest (parasites/continuations) before releasing held drivers' : 'release held group', /^test$/i.test(outcome));
+    fs.writeFileSync(lf, `${JSON.stringify(l, null, 2)}\n`);
+  } catch (_) { /* ledger optional */ }
   if (d.isolate) {
     fs.mkdirSync(path.join(ROOT, F.notes), { recursive: true });
     fs.writeFileSync(path.join(ROOT, F.notes, `${d.isolate}.md`),
       `# ${d.isolate}: isolated by the P3095 hold bisect\n\n- Date (UTC): ${row.at}\n- Build: ${build || '?'} v${version || '?'} run ${run || '?'}\n` +
       `- Athom result: AggregateError with only this driver released, so it stays in config/publish-hold-drivers.json.\n` +
-      `- Next: check its driver.compose.json (fingerprints, capabilities, settings, images, flow cards) against a Test build; no Athom contact.\n`);
+      `${hyp ? `- Hypothesis (P3243): ${hyp}\n` : ''}- Next: check its driver.compose.json (fingerprints, capabilities, settings, images, flow cards) against a Test build; no Athom contact.\n`);
   }
   if (d.next.length) console.log(`NEXT=${d.next.join(',')}`);
   return 0;
 }
 
-module.exports = { alreadyDone, markDone, DONE_RUNS_MAX, MAX_ATTEMPTS, PENDING_TTL_MS, parse, sig, resolveRelease, decide, dispatchDecision, seed, F };
+module.exports = { hypothesis, alreadyDone, markDone, DONE_RUNS_MAX, MAX_ATTEMPTS, PENDING_TTL_MS, parse, sig, resolveRelease, decide, dispatchDecision, seed, F };
 if (require.main === module) process.exit(main(process.argv.slice(2)));

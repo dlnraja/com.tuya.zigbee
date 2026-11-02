@@ -150,6 +150,11 @@ jobs:
         run: npm ci --prefer-offline --no-audit || npm install
       - name: Crash regression guard - Homey timer context
         run: npm run check:timer-context
+      - name: P3243 manifest budget (report + warning; blocking gate is in ci-self-check)
+        continue-on-error: true
+        run: |
+          [ -f scripts/ci/manifest-budget.js ] || exit 0
+          node scripts/ci/manifest-budget.js --gate || echo "::warning::P3243 manifest over budget: Athom may refuse (AggregateError)"
       # P2906: shared rules-gates action when the checkout has it (master dispatch); stable-v5 does
       # not carry the shared runner yet, so the direct script stays as the fallback there.
       - name: Regression lessons gate (MUST-KEEP fatals, shared rules-gates)
