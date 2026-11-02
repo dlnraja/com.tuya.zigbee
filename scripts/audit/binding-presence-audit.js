@@ -64,7 +64,12 @@ function audit(root = ROOT) {
     }
   }
   const ef00 = drivers.filter(d => Object.values(d.endpoints).some(e => (e.bindings || []).includes(EF00))).map(d => d.id);
-  return { interviews: ivs.length, drivers: drivers.length, findings, ef00Bindings: ef00 };
+  // WHY(P3234): a continuation (<root>_2...) is the same logical driver as its root (DriverContinuations);
+  // ratchets count logical drivers so a chain split never reads as a "new driver binding EF00".
+  let chains = null;
+  try { chains = require('../../lib/drivers/DriverContinuations').load(path.resolve(root)); } catch (_) { chains = null; }
+  const logical = chains ? [...new Set(ef00.map(id => chains.rootOf(id)))] : ef00.slice();
+  return { interviews: ivs.length, drivers: drivers.length, findings, ef00Bindings: ef00, ef00LogicalBindings: logical };
 }
 
 module.exports = { audit, compare, loadDrivers, loadInterviews };

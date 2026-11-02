@@ -93,7 +93,7 @@ describe('P3207 dynamic adaptation', () => {
   });
 
   it('EF00 pairing bindings ratchet: no new driver binds 61184', () => {
-    assert.ok(audit.audit().ef00Bindings.length <= 33);
+    assert.ok(audit.audit().ef00LogicalBindings.length <= 33); // P3234: chain-aware (continuations = their root)
   });
 
   it('raw observer: bounded LRU, ZCL measurement added after 2 reports, kill switch', async () => {

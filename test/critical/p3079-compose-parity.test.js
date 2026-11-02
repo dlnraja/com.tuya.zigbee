@@ -75,6 +75,7 @@ describe('P3079 compose ↔ app.json parity gate', function () {
 
   it('shadowed driver.compose.json settings may only shrink (ratchet vs compose-shadow-baseline.json)', () => {
     const base = JSON.parse(fs.readFileSync(path.join(ROOT, 'scripts/ci/compose-shadow-baseline.json'), 'utf8')).drivers;
+    const chains = require('../../lib/drivers/DriverContinuations').load(path.resolve(ROOT));
     const fresh = [];
     for (const id of fs.readdirSync(path.join(ROOT, 'drivers'))) {
       const sp = path.join(ROOT, 'drivers', id, 'driver.settings.compose.json');
@@ -82,7 +83,9 @@ describe('P3079 compose ↔ app.json parity gate', function () {
       if (!fs.existsSync(sp) || !fs.existsSync(cp)) { continue; }
       const eff = new Set(flat(JSON.parse(fs.readFileSync(sp, 'utf8'))).map((x) => x.id));
       for (const s of flat(JSON.parse(fs.readFileSync(cp, 'utf8')).settings)) {
-        if (s.id && !eff.has(s.id) && !(base[id] || []).includes(s.id)) { fresh.push(`${id}:${s.id}`); }
+        // P3234: a continuation inherits its root's baseline (same logical driver, same settings)
+        const rootId = chains.rootOf(id);
+        if (s.id && !eff.has(s.id) && !(base[id] || []).includes(s.id) && !(base[rootId] || []).includes(s.id)) { fresh.push(`${id}:${s.id}`); }
       }
     }
     assert.deepStrictEqual(fresh, [], 'put new settings in driver.settings.compose.json — driver.compose.json settings are ignored there');

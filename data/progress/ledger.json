@@ -45344,6 +45344,13 @@
       "date": "2026-11-02",
       "by": "executor-ci",
       "note": "P3232 (t798u): Daily Digest had 12 crons/weekday for 6 jobs; labs/weekly/selfcheck only wrote issue #574 (duplicated by Grok Bot routines Homey digest / CI health and ci-self-check) -> removed with their scripts; homey/forum/inspiration kept (digest-leads artifacts consumed by market-couples-intake) in one 10:23 Paris slot; intake's last-12-runs window had read 0 records for 5 runs because 10/12 runs were empty slot runs; test p3232"
+    },
+    "ci-fail:node22:test:p3079-shadow+p3207-ef00-ratchet-continuation": {
+      "status": "fixed",
+      "date": "2026-11-02",
+      "by": "homey-ci-prs",
+      "attempts": 1,
+      "note": "P3234: master red on 33dbe44693 (run 41497700480): compose-shadow and EF00 ratchets counted curtain_motor_2 as a new driver; both now chain-aware via DriverContinuations.rootOf (ef00LogicalBindings additive); test p3234"
     }
   }
 }
