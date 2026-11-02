@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-02T10:16:14.168Z",
+ "updated": "2026-11-02T10:55:08.561Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -8837,8 +8837,8 @@
   },
   "diag:5f5c47d162fa052a": {
    "status": "done",
-   "date": "2026-11-01",
-   "hash": "0756626bf5d17dca",
+   "date": "2026-11-02",
+   "hash": "0311a84dc9816aa0",
    "note": "diagnostic mail; nothing new to act on",
    "by": "fetch-diags",
    "kind": "diagnostic",
@@ -8853,7 +8853,8 @@
     "wifi_water_tank_monitor",
     "wifi_water_valve",
     "zigbee_repeater"
-   ]
+   ],
+   "logIdShort": "fb5be1fe"
   },
   "diag:602a75c3f6c89b5b": {
    "status": "done",
@@ -9417,6 +9418,15 @@
    "kind": "general",
    "mailDate": "2026-10-19T07:30:17.000Z"
   },
+  "diag:7ad8a4baefa87215": {
+   "status": "done",
+   "date": "2026-11-02",
+   "hash": "5696b2436327386b",
+   "note": "interview mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "interview",
+   "mailDate": "2026-11-02T10:47:54.000Z"
+  },
   "diag:7bb9d9a875b18a45": {
    "status": "done",
    "date": "2026-10-20",
@@ -9833,10 +9843,10 @@
   },
   "diag:89fbec99e0256172": {
    "status": "pending",
-   "date": "2026-10-31",
-   "hash": "d91e90c3e53bfab4",
+   "date": "2026-11-02",
+   "hash": "263e516e185ccaf5",
    "note": "diagnostic mail; 1 couple(s); 4 error line(s)",
-   "by": "gmail-diagnostics",
+   "by": "fetch-diags",
    "kind": "diagnostic",
    "mailDate": "2026-10-31T18:24:17.000Z",
    "appVersion": "1.0.218",
@@ -9848,7 +9858,8 @@
     "switch_4gang",
     "switch_1gang"
    ],
-   "errors": 4
+   "errors": 4,
+   "logIdShort": "7f72cffe"
   },
   "diag:8a17f42eebb44baf": {
    "status": "done",
@@ -12725,10 +12736,10 @@
   },
   "diag:f8b8416f2c108756": {
    "status": "pending",
-   "date": "2026-10-27",
-   "hash": "722d4a06654fdb90",
-   "note": "P3076: Bastien ZG-301Z heap OOM in JSON.parse after 0xE000/0xE001 frame flood; memory bounding owned by P3068 (collections commits unpushed after rewrite), left pending",
-   "by": "gmail-diagnostics",
+   "date": "2026-11-02",
+   "hash": "b17186b9cadb9638",
+   "note": "interview mail; 1 couple(s); 1 in several drivers; 4 error line(s)",
+   "by": "fetch-diags",
    "kind": "interview",
    "mailDate": "2026-10-25T17:52:09.000Z",
    "appVersion": "1.0.209",
@@ -12741,7 +12752,8 @@
    "drivers": [
     "switch_1gang"
    ],
-   "errors": 4
+   "errors": 4,
+   "logIdShort": "097f1743"
   },
   "diag:f8c7482c87cd0bcf": {
    "status": "pending",
