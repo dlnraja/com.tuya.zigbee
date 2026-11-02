@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-02T11:41:22.669Z",
+ "updated": "2026-11-02T13:55:39.682Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -45202,6 +45202,12 @@
     "leadsAdded": 0
    },
    "lastChangeRun": "41312721125"
+  },
+  "ci-fail:node22-tests:p3136-ssot:dfgbtub0-ts0044-undefined": {
+   "status": "fixed",
+   "date": "2026-11-02",
+   "by": "homey-ci-prs",
+   "note": "attempt 1/3 (24h) run 41452930062 master 22b7fe226c: ssot-couple-enrich auto refresh 16165ba1cf [skip ci] dropped _TZ3000_dfgbtub0|TS0044 (removed from drivers in P3146) so test P3136 read undefined.status; P3225 keeps evidence-backed removal tombstones (status unverified, drivers []), test p3225"
   }
  }
 }
