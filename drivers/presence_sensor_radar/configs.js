@@ -752,6 +752,7 @@ const SENSOR_CONFIGS = {
       4: { cap: null, setting: 'static_detection_distance', divisor: 100, min: 0, max: 5 },
       102: { cap: null, setting: 'fading_time', min: 0, max: 28800 },
       103: { cap: null, setting: 'anti_interference', type: 'bool', enumMap: { 0: false, 1: true } }, // P3155 Z2M ZG-204ZX onOff
+      109: { cap: null, setting: 'temperature_unit' }, // P3220 zhc hobeian.ts ZG-204ZX DP109 (0 C, 1 F)
       108: { cap: null, setting: 'indicator', type: 'bool', enumMap: { 0: false, 1: true } }, // P3155 additive: Z2M ZG-204ZX DP108 indicator
       106: { cap: 'measure_luminance', type: 'lux_direct' },
       // Soft climate extras observed on sibling firmwares
