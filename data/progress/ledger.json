@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-02T05:10:03.689Z",
+ "updated": "2026-11-02T06:36:00.062Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -9552,6 +9552,16 @@
    "kind": "general",
    "mailDate": "2026-10-25T15:42:31.000Z"
   },
+  "diag:817e66da2131bb12": {
+   "status": "pending",
+   "date": "2026-11-02",
+   "hash": "fef336808a40bb06",
+   "note": "github mail; 1 error line(s)",
+   "by": "fetch-diags",
+   "kind": "github",
+   "mailDate": "2026-11-02T05:23:32.000Z",
+   "errors": 1
+  },
   "diag:81a4759a74645cbc": {
    "status": "done",
    "date": "2026-10-27",
@@ -11432,6 +11442,15 @@
    "by": "fetch-diags",
    "kind": "general",
    "mailDate": "2026-10-25T15:23:26.000Z"
+  },
+  "diag:c5ef9157b246d711": {
+   "status": "done",
+   "date": "2026-11-02",
+   "hash": "a0b5f9eea84054c8",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-02T06:33:14.000Z"
   },
   "diag:c60d353d1d2c6dd5": {
    "status": "done",
