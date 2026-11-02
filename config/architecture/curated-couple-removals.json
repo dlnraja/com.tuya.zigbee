@@ -1307,6 +1307,25 @@
       ],
       "why": "P3212 (2026-11-02): Saswell SEA801 TRV (zhc saswell.ts) was on climate_sensor, which has no setpoint/valve control. Owner is now radiator_valve with the 'saswell' DP profile (101 state, 102 local temp/10, 103 setpoint/10, 104 valve, 105 battery low). Canonical forms kept on radiator_valve; case duplicates dropped. One couple, one driver.",
       "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/saswell.ts (SEA801 fingerprints)"
+    },
+    {
+      "driver": "climate_sensor",
+      "mfr": [
+        "_tze200_stvgmdjz",
+        "_tze200_ydkqbmpt",
+        "_tze200_z3u99qxt",
+        "_TZE200_stvgmdjz",
+        "_TZE200_ydkqbmpt",
+        "_TZE200_z3u99qxt",
+        "_TZE200_STVGMDJZ",
+        "_tze200_STVGMDJZ",
+        "_TZE200_YDKQBMPT",
+        "_tze200_YDKQBMPT",
+        "_TZE200_Z3U99QXT",
+        "_tze200_Z3U99QXT"
+      ],
+      "why": "P3218 (2026-11-02): Moes SFL02 (zhc moes.ts) is a TS0601 DP1 1-gang wall switch, not a climate sensor. Owner is now switch_1gang (DP1 onoff). Canonical + SSOT lower-case forms kept there. One couple, one driver.",
+      "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/moes.ts (SFL02 / TS0601 DP1 switch)"
     }
   ]
 }

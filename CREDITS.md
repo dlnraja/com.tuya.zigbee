@@ -539,3 +539,4 @@ A heartfelt thank you to:
 - P3213: diag Log ID backfill + metering silence watchdog — thanks to the reporters of Homey diags fb5be1fe, 8742e6bd, c05db40d (Peter), af98752d, 6eabd9c4 (Michaelp); refs Z2M/ZHA metering & Tuya dataQuery.
 - P3212 (2026-11-02): Saswell SEA801 TRV DP profile + fingerprints — Koenkk/zigbee-herdsman-converters saswell.ts
 - P3213b (2026-11-02): MFR-ENSURE no longer persists driver manifest[0] placeholder (_TZE200_pay2byax on TS0203, diag c05db40d); MTG radar DP113/115/116 mapped per Z2M MTG075-ZB-RL (diag af98752d, VicHY). Source: Koenkk/zigbee-herdsman-converters tuya.ts.
+- P3218 (2026-11-02): Moes SFL02 TS0601 switch fingerprints — Koenkk/zigbee-herdsman-converters moes.ts
