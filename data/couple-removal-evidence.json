@@ -408,6 +408,78 @@
         "git_history": "climate_sensor bulk import",
         "sibling_pids": "_TZE284_3yp57tby|TS0601"
       }
+    },
+    {
+      "couple": "_TZE200_stvgmdjz|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3218",
+      "verdict": "moved to switch_1gang (DP1 onoff); SFL02 switch is not a climate sensor",
+      "sources": {
+        "z2m": "z2m:SFL02 moes.ts",
+        "zha": "not checked",
+        "deconz": "not checked",
+        "blakadder": "not checked",
+        "hubitat": "not checked",
+        "johan": "not checked",
+        "forum": "not checked",
+        "diags": "none",
+        "git_history": "climate_sensor bulk import",
+        "sibling_pids": "_TZE200_stvgmdjz|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE284_stvgmdjz|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3218",
+      "verdict": "moved to switch_1gang (DP1 onoff); SFL02 switch is not a climate sensor",
+      "sources": {
+        "z2m": "z2m:SFL02 moes.ts",
+        "zha": "not checked",
+        "deconz": "not checked",
+        "blakadder": "not checked",
+        "hubitat": "not checked",
+        "johan": "not checked",
+        "forum": "not checked",
+        "diags": "none",
+        "git_history": "climate_sensor bulk import",
+        "sibling_pids": "_TZE284_stvgmdjz|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE200_ydkqbmpt|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3218",
+      "verdict": "moved to switch_1gang (DP1 onoff); SFL02 switch is not a climate sensor",
+      "sources": {
+        "z2m": "z2m:SFL02 moes.ts",
+        "zha": "not checked",
+        "deconz": "not checked",
+        "blakadder": "not checked",
+        "hubitat": "not checked",
+        "johan": "not checked",
+        "forum": "not checked",
+        "diags": "none",
+        "git_history": "climate_sensor bulk import",
+        "sibling_pids": "_TZE200_ydkqbmpt|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE200_z3u99qxt|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3218",
+      "verdict": "moved to switch_1gang (DP1 onoff); SFL02 switch is not a climate sensor",
+      "sources": {
+        "z2m": "z2m:SFL02 moes.ts",
+        "zha": "not checked",
+        "deconz": "not checked",
+        "blakadder": "not checked",
+        "hubitat": "not checked",
+        "johan": "not checked",
+        "forum": "not checked",
+        "diags": "none",
+        "git_history": "climate_sensor bulk import",
+        "sibling_pids": "_TZE200_z3u99qxt|TS0601"
+      }
     }
   ]
 }
