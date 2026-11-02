@@ -739,3 +739,154 @@
 - **Regressions to watch:** —
 - **Linked:** —
 - **Credit:** —
+### [APP][Pro] PELS Energy Manager: smart charging, heating, solar and energy saving
+
+- **Source:** homey-forum-apps — https://community.homey.app/t/147496
+- **Status:** open
+- **Labels:** apps-category
+- **Problem:** [APP][Pro] PELS Energy Manager: smart charging, heating, solar and energy saving
+- **Root cause:** That means it’s used for planning and limiting, but it won’t cause “panic behavior” like emergency shedding just because you’re trending above your daily target.
+- **Resolution:** —
+- **Couples:** —
+- **Drivers:** —
+- **DPs:** —
+- **Clusters:** —
+- **Firmware:** —
+- **Adopt:** Use  Report a problem  in PELS settings, on a device page or next to an entry in Activity.
+- **Avoid:** Avoid expensive grid tariff steps
+- **Regressions to watch:** I’ve been iterating on PELS quite a bit since v1.5.9, and the main user-facing addition is a new Daily Energy Budget feature.
+- **Linked:** —
+- **Credit:** —
+
+### [App][Pro] Power Guard
+
+- **Source:** homey-forum-apps — https://community.homey.app/t/152510
+- **Status:** open
+- **Labels:** apps-category
+- **Problem:** [App][Pro] Power Guard
+- **Root cause:** It’s already planned, but I removed it again because there were some other instabilities I needed to sort out first—but it’s coming.
+- **Resolution:** thanks for the feedback and for sharing how you’ve solved this on your side.
+- **Couples:** —
+- **Drivers:** —
+- **DPs:** —
+- **Clusters:** —
+- **Firmware:** —
+- **Adopt:** In the app settings, configure your power meter or reporting source, power limit and the devices you want Power Guard to manage.
+- **Avoid:** I never got to test with vo.8.86 as it auto updated to 0.8.87 before I started charging.
+- **Regressions to watch:** —
+- **Linked:** —
+- **Credit:** —
+
+### [APP][Pro] Adax with Power Estimation
+
+- **Source:** homey-forum-apps — https://community.homey.app/t/160949
+- **Status:** open
+- **Labels:** apps-category
+- **Problem:** [APP][Pro] Adax with Power Estimation
+- **Root cause:** I made Adax with Power Estimation because I wanted estimated watts and more useful energy information from my Adax heaters in Homey.
+- **Resolution:** —
+- **Couples:** —
+- **Drivers:** —
+- **DPs:** —
+- **Clusters:** —
+- **Firmware:** —
+- **Adopt:** —
+- **Avoid:** They do not replace the temperature used by the heater’s own thermostat.
+- **Regressions to watch:** A repeated-response regression test reduces seven store calls to two with identical persisted results.
+- **Linked:** —
+- **Credit:** —
+
+### [APP][Pro] Heatpump Smart Control
+
+- **Source:** homey-forum-apps — https://community.homey.app/t/160675
+- **Status:** open
+- **Labels:** apps-category
+- **Problem:** [APP][Pro] Heatpump Smart Control
+- **Root cause:** —
+- **Resolution:** —
+- **Couples:** —
+- **Drivers:** —
+- **DPs:** —
+- **Clusters:** —
+- **Firmware:** —
+- **Adopt:** —
+- **Avoid:** —
+- **Regressions to watch:** —
+- **Linked:** —
+- **Credit:** —
+
+### [APP][Pro] Sigenergy - Home energy powered by AI
+
+- **Source:** homey-forum-apps — https://community.homey.app/t/143965
+- **Status:** open
+- **Labels:** apps-category
+- **Problem:** [APP][Pro] Sigenergy - Home energy powered by AI
+- **Root cause:** —
+- **Resolution:** —
+- **Couples:** —
+- **Drivers:** —
+- **DPs:** —
+- **Clusters:** —
+- **Firmware:** —
+- **Adopt:** Turn on  Detailed logging  in the device settings, let it run while the problem happens, then send a diagnostic report from the app and post the code here (or in a  GitHub issue ).
+- **Avoid:** —
+- **Regressions to watch:** —
+- **Linked:** —
+- **Credit:** —
+
+### [APP][Pro] BLUETTI – Power stations via BLUETTI cloud
+
+- **Source:** homey-forum-apps — https://community.homey.app/t/160644
+- **Status:** open
+- **Labels:** apps-category
+- **Problem:** [APP][Pro] BLUETTI – Power stations via BLUETTI cloud
+- **Root cause:** —
+- **Resolution:** —
+- **Couples:** —
+- **Drivers:** —
+- **DPs:** —
+- **Clusters:** —
+- **Firmware:** —
+- **Adopt:** —
+- **Avoid:** —
+- **Regressions to watch:** Credits: based on the official BLUETTI Home Assistant integration and the ioBroker.bluetti adapter (both MIT).
+- **Linked:** —
+- **Credit:** —
+
+### [APP][Pro] Viessmann - Make your heating smart
+
+- **Source:** homey-forum-apps — https://community.homey.app/t/116744
+- **Status:** open
+- **Labels:** apps-category
+- **Problem:** [APP][Pro] Viessmann - Make your heating smart
+- **Root cause:** —
+- **Resolution:** Getting Started · Wiki · Functor Solutions / Homey / Viessmann · GitLab
+- **Couples:** —
+- **Drivers:** —
+- **DPs:** —
+- **Clusters:** —
+- **Firmware:** —
+- **Adopt:** —
+- **Avoid:** —
+- **Regressions to watch:** —
+- **Linked:** —
+- **Credit:** —
+
+### [APP TEST] Energy Flow – A visual energy dashboard for Homey Pro ⚡
+
+- **Source:** homey-forum-apps — https://community.homey.app/t/161321
+- **Status:** open
+- **Labels:** apps-category
+- **Problem:** [APP TEST] Energy Flow – A visual energy dashboard for Homey Pro ⚡
+- **Root cause:** —
+- **Resolution:** —
+- **Couples:** —
+- **Drivers:** —
+- **DPs:** —
+- **Clusters:** —
+- **Firmware:** —
+- **Adopt:** —
+- **Avoid:** —
+- **Regressions to watch:** —
+- **Linked:** —
+- **Credit:** —
