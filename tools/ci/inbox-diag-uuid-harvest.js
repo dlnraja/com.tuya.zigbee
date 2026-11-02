@@ -35,7 +35,7 @@ function argVal(name, fallback) {
 }
 
 function collectFromJson(file, acc) {
-  if (!fs.existsSync(file)) return;
+  if (!fs.existsSync(file)) {return;}
   let raw;
   try {
     raw = fs.readFileSync(file, 'utf8');
@@ -46,24 +46,24 @@ function collectFromJson(file, acc) {
   try {
     data = JSON.parse(raw);
   } catch {
-    for (const m of raw.matchAll(UUID_RE)) acc.add(m[1].toLowerCase());
+    for (const m of raw.matchAll(UUID_RE)) {acc.add(m[1].toLowerCase());}
     return;
   }
   const walk = (node, depth = 0) => {
-    if (depth > 12 || node == null) return;
+    if (depth > 12 || node == null) {return;}
     if (typeof node === 'string') {
-      for (const m of node.matchAll(UUID_RE)) acc.add(m[1].toLowerCase());
+      for (const m of node.matchAll(UUID_RE)) {acc.add(m[1].toLowerCase());}
       return;
     }
     if (Array.isArray(node)) {
-      for (const x of node) walk(x, depth + 1);
+      for (const x of node) {walk(x, depth + 1);}
       return;
     }
     if (typeof node === 'object') {
       if (typeof node.diag === 'string' && UUID_RE.test(node.diag)) {
         acc.add(String(node.diag).toLowerCase());
       }
-      for (const v of Object.values(node)) walk(v, depth + 1);
+      for (const v of Object.values(node)) {walk(v, depth + 1);}
     }
   };
   walk(data);
@@ -73,7 +73,7 @@ function loadLogIndex(file = path.join(ROOT, '.github', 'state', 'diagnostics-st
   try {
     const idx = JSON.parse(fs.readFileSync(file, 'utf8')).logIndex || {};
     const out = {};
-    for (const [k, v] of Object.entries(idx)) if (/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(k) && v && typeof v === 'object') out[k.toLowerCase()] = v;
+    for (const [k, v] of Object.entries(idx)) {if (/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(k) && v && typeof v === 'object') {out[k.toLowerCase()] = v;}}
     return out;
   } catch { return {}; }
 }
@@ -92,7 +92,7 @@ function main() {
     path.join(ROOT, 'reports', 'inbox-full-2026-08-30', 'issue-532-comments.json'),
     path.join(ROOT, 'reports', 'inbox-full-2026-08-30', 'issue-533-comments.json'),
   ];
-  for (const s of sources) collectFromJson(s, uuids);
+  for (const s of sources) {collectFromJson(s, uuids);}
 
   // Prefer known user-report UUIDs first when present
   const priority = [
@@ -121,7 +121,12 @@ function main() {
   // P3208: resolve from the Gmail Log ID index first (no Athom token needed), then Athom for the rest.
   const logIndex = loadLogIndex();
   const pending = [];
+  // P3221: ids known not to be diags (e.g. a forum post id) are reported as nonDiag, never found:false.
+  let nonDiagInfo = () => null;
+  try { ({ nonDiagInfo } = require('./non-diag-ids')); } catch { /* optional */ }
   for (const uuid of ordered) {
+    const nd = nonDiagInfo(uuid);
+    if (nd) { report.results.push({ uuid, found: null, nonDiag: true, reason: String(nd.reason || '').slice(0, 120) }); continue; }
     const hit = logIndex[uuid];
     if (hit) {
       const rec = { uuid, found: true, via: 'gmail-diag-mail', version: hit.appVersion || null, build: null, exit: 0, preview: 'resolved from Homey diagnostics mail (sanitized)' };
@@ -130,7 +135,7 @@ function main() {
         fs.mkdirSync(DIAG_DIR, { recursive: true });
         fs.writeFileSync(path.join(DIAG_DIR, `${uuid}.sanitized.json`), JSON.stringify({ ...hit, uuid, found: true, via: rec.via, version: hit.appVersion || null, fetchedAt: new Date().toISOString() }, null, 2));
       } catch { /* best effort */ }
-    } else pending.push(uuid);
+    } else {pending.push(uuid);}
   }
   if (doFetch && fs.existsSync(fetchScript)) {
     for (const uuid of pending.slice(0, maxFetch)) {
@@ -163,9 +168,10 @@ function main() {
     wrote: outPath,
     count: report.count,
     fetched: report.results.filter((x) => x.found).length,
+    nonDiag: report.results.filter((x) => x.nonDiag).length,
     sample: report.uuids.slice(0, 8),
   }, null, 2));
 }
 
-if (require.main === module) main();
+if (require.main === module) {main();}
 module.exports = { loadLogIndex };
