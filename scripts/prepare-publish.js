@@ -505,6 +505,18 @@ try {
   // WHY(P2485): size gate MUST run AFTER this step — early exit blocked publish when
   // prettify-stripped JSON was still ~4.00MB but matrix compact would shrink it.
   // P3036: keep the uncompacted manifest so the TS0601 top-up can put back couples the compaction dropped.
+  // P3228: fold held continuations (driver-continuations.json) back into their root BEFORE compaction,
+  // so step 5a2 can cut the held id without dropping a couple the root already shipped.
+  try {
+    const { effectiveHoldIds, foldHeldContinuations } = require('./publish-hold-release');
+    const holdFile = path.join(__dirname, '..', 'config', 'publish-hold-drivers.json');
+    if (fs.existsSync(holdFile)) {
+      const { ids } = effectiveHoldIds(readJson(holdFile), process.env.PUBLISH_HOLD_RELEASE);
+      const m = readJson(destAppJson);
+      const n = foldHeldContinuations(m, ids, require('../lib/drivers/DriverContinuations').load(path.join(__dirname, '..')));
+      if (n) { fs.writeFileSync(destAppJson, JSON.stringify(m)); console.log(`   P3228: folded ${n} held continuation(s) into their root`); }
+    }
+  } catch (e) { console.warn(`   P3228 fold skipped: ${e.message}`); }
   // P3201: uncompacted view for the sourced dedupe/restore pass (payload only, source untouched).
   let p3201Source = null;
   try { p3201Source = process.env.HOMEY_P3201_SOURCED_PASS === '0' ? null : readJson(destAppJson); } catch (_) { p3201Source = null; }

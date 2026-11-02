@@ -175,6 +175,13 @@
       "addedBy": "b95a82fd54 fix(P3068): one couple, one d",
       "reason": "P3085 (27/10/2026): #3684 v9.0.1602 and #3685 v9.0.1603 (run 40471022857) both failed AggregateError; offline diff of the 1603 payload vs Test #3682 v9.0.1599 found no structural defect (settings, flow cards, custom capabilities, i18n, assets, repair views, requires all clean) and these 6 never-published pairable ids are the only driver-set change common to both failures (historic 8/8 pattern). Held; its couples that 9.0.1599 shipped on another driver are re-pinned there by compaction (P3085 hold-aware baseline pins), so no paired device loses its driver and P3024b stays green.",
       "sacredCouplesOwnedElsewhere": true
+    },
+    {
+      "id": "climate_sensor_2",
+      "since": "2026-11-02",
+      "addedBy": "P3228 zero-parasite packing step 3b",
+      "reason": "P3228 (02/11/2026 Paris): continuation of climate_sensor (DRIVER_CONTINUATIONS.md). 271 mfrs (1084 spellings) whose only strong-sourced couple on climate_sensor is TS0601 moved here with productId TS0601 only, cutting their parasite combos. While held, prepare-publish and publish-baseline-gate fold its zigbee lists back into climate_sensor (foldHeldContinuations), so the payload is unchanged and no couple is lost. Release one per publish via PUBLISH_HOLD_RELEASE through the staged master routine.",
+      "sacredCouplesOwnedElsewhere": true
     }
   ],
   "_graduated": {

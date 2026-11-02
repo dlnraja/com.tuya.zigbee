@@ -56,6 +56,11 @@ function sourceToPayload(manifest, repoRoot, opts = {}) {
   const { compactZigbeeIdentifiers } = require('./compact-zigbee-identifiers.cjs');
   const view = JSON.parse(JSON.stringify(manifest));
   const ids = opts.holdIds || holdIds(repoRoot);
+  // P3228: a held continuation folds back into its root first, so the hold drops no couple.
+  try {
+    const { foldHeldContinuations } = require('../publish-hold-release');
+    foldHeldContinuations(view, ids, opts.continuations || require('../../lib/drivers/DriverContinuations').load(repoRoot));
+  } catch (_) { /* registry missing: plain hold */ }
   // P3085: the compaction must know the held ids, else it pins Test couples on a driver cut below.
   compactZigbeeIdentifiers(view, {
     maxTotalCombos: Number(process.env.HOMEY_ZIGBEE_MAX_TOTAL_COMBOS) || undefined,

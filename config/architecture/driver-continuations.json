@@ -1,5 +1,14 @@
 {
   "_why": "P3206 (02/11/2026 Paris): explicit driver chain markers. A driver whose publish combo budget is full gets { full: true, continuation: '<id>_2' }; each continuation gets { continuationOf: '<root id>', index: n }. Continuations subclass the root device/driver classes (zero logic duplication, same capabilities and flow cards). New couples go to the first non-full driver of the chain; paired devices never move. Read through lib/drivers/DriverContinuations.js only. Rules: docs/rules/DRIVER_CONTINUATIONS.md.",
   "cap": { "perDriverCombos": 1500, "fullAtRatio": 0.95 },
-  "drivers": {}
+  "drivers": {
+    "climate_sensor": {
+      "full": true,
+      "continuation": "climate_sensor_2"
+    },
+    "climate_sensor_2": {
+      "continuationOf": "climate_sensor",
+      "index": 2
+    }
+  }
 }

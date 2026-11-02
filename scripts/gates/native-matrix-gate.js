@@ -14,12 +14,16 @@ const isNonNative = (c) => NON_NATIVE.has(c) || (c >= 0xFC00 && c <= 0xFFFF) || 
 // split at runtime (P2671 doctrine); only Tuya-style `_T…_` identities are checked for couples.
 const isTuyaStyle = (m) => m.startsWith('_');
 
+// P3228: a continuation chain is one logical driver (DRIVER_CONTINUATIONS.md rule: audits use rootOf).
+const DC = require('../../lib/drivers/DriverContinuations').load(ROOT);
+
 function scan() {
   const dir = path.join(ROOT, 'drivers');
   const mandatory = [];
   const couples = new Map();
-  for (const id of fs.readdirSync(dir).sort()) {
-    const f = path.join(dir, id, 'driver.compose.json');
+  for (const dirId of fs.readdirSync(dir).sort()) {
+    const id = DC.rootOf(dirId);
+    const f = path.join(dir, dirId, 'driver.compose.json');
     if (!fs.existsSync(f)) continue;
     let j; try { j = JSON.parse(fs.readFileSync(f, 'utf8')); } catch { continue; }
     const z = j.zigbee || {};

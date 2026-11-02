@@ -12,7 +12,10 @@ function gaps() {
   const out = { fr: { labels: [], names: [] }, de: { labels: [], names: [] }, nl: { labels: [], names: [] } };
   const D = path.join(ROOT, 'drivers');
   const walk = (arr, cb) => { for (const s of arr || []) { if (s && s.children) {walk(s.children, cb);} if (s && s.label && s.label.en) {cb(s);} } };
+  // P3228: a continuation shares its root's labels; count the logical driver once.
+  const dc = require('../../lib/drivers/DriverContinuations').load(ROOT);
   for (const d of fs.readdirSync(D)) {
+    if (dc.isContinuation(d)) {continue;}
     const f = path.join(D, d, 'driver.compose.json');
     if (!fs.existsSync(f)) {continue;}
     let j; try { j = JSON.parse(fs.readFileSync(f, 'utf8')); } catch (_e) { continue; }

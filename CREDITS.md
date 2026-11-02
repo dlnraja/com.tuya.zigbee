@@ -535,6 +535,7 @@ A heartfelt thank you to:
 - Forum/GitHub reporters of #584, #581, #598 and the kb-compaction-losses couples — couples kept in the payload.
 - P3223 (2026-11-02): lead/KB writers and the dual-couple audit read driver chains through DriverContinuations (firstNonFull / rootOf) — internal wiring, no new couples.
 - P3227 (2026-11-02): zero-parasite packing plan (report only) — sources: data/kb, diag-ids, sacred-keep, P3055 attestations, mfs_db; rule 3 of DRIVER_CONTINUATIONS.md.
+- P3228 (2026-11-02): climate_sensor_2 continuation (271 TS0601-only strong-sourced mfrs), held and folded back into climate_sensor while held — sources: data/kb, diag-ids, sacred-keep, P3055 attestations; rules 1-3 of DRIVER_CONTINUATIONS.md.
 ## Dynamic adaptation (P3207, 2026-11)
 
 - oletorv (GH#598): `_TZE284_9ern5sfh` / TS0601 "Unable to connect" — bindings on clusters the node lacks; led to runtime, descriptor-gated bindings for all drivers.
