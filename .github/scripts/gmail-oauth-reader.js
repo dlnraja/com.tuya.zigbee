@@ -186,6 +186,7 @@ function toEmailRecord(message) {
     body = message.snippet;
     contentType = 'snippet';
   }
+  const diagLogId = ((String(body || '').match(/Log ID:\s*([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})/i) || [])[1] || '').toLowerCase() || null; // P3216: before redaction
   body = privacy.redact(String(body || '').slice(0, 256000));
 
   let crashData = extractCrashData(body);
@@ -202,6 +203,7 @@ function toEmailRecord(message) {
     fromName: privacy.redact(fromParsed.name),
     date,
     body,
+    diagLogId,
     bodyLength: body.length,
     contentType,
     pseudo: privacy.redactObject(pseudo),

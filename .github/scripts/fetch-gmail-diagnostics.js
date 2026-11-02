@@ -610,7 +610,7 @@ async function processFetchedEmails(emails,fetchOptions,{mode:successMode,window
     if(done.has(em.id)){skippedAlreadyProcessed++;
       // P3213: mails processed before P3208 never reached logIndex, so their Log IDs stayed found:false forever.
       // Backfill a minimal sanitized entry from the already-fetched body (no AI, no re-triage).
-      try{const bf=backfillLogIndexEntry(em.body);if(bf){st.logIndex=st.logIndex||{};if(!st.logIndex[bf.id])st.logIndex[bf.id]={...bf.entry,date:em.date||null,backfilled:true};}}catch{}
+      try{const bf=backfillLogIndexEntry(em.body,em.diagLogId);if(bf){st.logIndex=st.logIndex||{};if(!st.logIndex[bf.id])st.logIndex[bf.id]={...bf.entry,date:em.date||null,backfilled:true};}}catch{}
       continue}
     const type=classify(em);
     const d=parse(em.body);
@@ -649,7 +649,7 @@ async function processFetchedEmails(emails,fetchOptions,{mode:successMode,window
         crashApp:crashInfo.crashApp,capabilities:crashInfo.capabilities,clusters:crashInfo.clusters}:null,
       kbMatch:d.kbMatch,
       ai:safeAI,homeyVersion:d.homeyVersion,appVersion:d.appVersion,
-      logId:d.enriched?.logId||null,logIdShort:d.enriched?.logIdShort||null,
+      logId:d.enriched?.logId||em.diagLogId||null,logIdShort:d.enriched?.logIdShort||(em.diagLogId?em.diagLogId.slice(0,8):null),
       userMessage:d.enriched?.userMessage||null,couples:d.enriched?.couples||[],
       signals:d.enriched?.signals||[],driversInLog:d.enriched?.drivers||[],
       logHighlights:d.enriched?.highlights||[],diagSummary:d.enriched?.summary||null,
@@ -899,8 +899,8 @@ if(process.env.GITHUB_STEP_SUMMARY){
 if(process.env.FGD_NO_MAIN!=="1")main().catch(e=>{console.error(e.message);process.exit(1)});
 
 // P3213: minimal Log ID index entry from a Homey "Diagnostics Report" body (case-insensitive UUID, CRLF-safe).
-function backfillLogIndexEntry(body){
-  const t=String(body||'');const m=t.match(/Log ID:\s*([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})/i);if(!m)return null;
+function backfillLogIndexEntry(body,diagLogId){
+  const t=String(body||'');const m=diagLogId?[null,diagLogId]:t.match(/Log ID:\s*([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})/i);if(!m)return null; // P3216: reader-provided id (body uuid is redacted)
   const g=(re)=>{const x=t.match(re);return x?x[1].trim():null;};
   const msg=g(/User Message:\s*\r?\n\s*([^\r\n]{0,300})/i);
   return {id:m[1].toLowerCase(),entry:{appVersion:g(/App Version\s*\r?\n\s*\r?\n?\s*(v?[0-9.]+)/i),homeyVersion:g(/Homey Version\s*\r?\n\s*\r?\n?\s*(v?[0-9.]+)/i),

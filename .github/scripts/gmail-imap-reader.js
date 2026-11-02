@@ -7,6 +7,11 @@ const MBS = ['INBOX', '[Gmail]/All Mail', '[Gmail]/Tous les messages'];
 
 // === RFC 2047 decode (encoded headers like =?UTF-8?B?...?= or =?UTF-8?Q?...?=) ===
 
+const LOG_ID_RE = /Log ID:\s*([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})/i;
+// P3216: the Homey diag Log ID is the code users post publicly; read it BEFORE uuid redaction (privacy-redactor
+// aliases every uuid, which left logId null and every diag code found:false). Device uuids stay redacted.
+function extractDiagLogId(raw) { const m = String(raw || '').match(LOG_ID_RE); return m ? m[1].toLowerCase() : null; }
+
 function aggressiveSanitize(text) {
   return privacy.redact(text || '');
 }
@@ -375,6 +380,7 @@ async function readViaIMAP(opts = {}) {
 
             
               // Aggressive privacy sanitization
+              const diagLogId = extractDiagLogId(body);
               body = aggressiveSanitize(body);
               if (crashData) {
                 if (crashData.crashApp) crashData.crashApp = aggressiveSanitize(crashData.crashApp);
@@ -388,6 +394,7 @@ async function readViaIMAP(opts = {}) {
                 fromName: aggressiveSanitize(fromName),
                 date,
                 body,
+                diagLogId,
                 bodyLength: body.length,
                 contentType,
                 pseudo: privacy.redactObject(pseudo),
@@ -413,3 +420,5 @@ async function readViaIMAP(opts = {}) {
 
 module.exports = { readViaIMAP, parseMIME, htmlToText, extractPseudo, extractCrashData, decodeRFC2047 };
 
+
+module.exports.extractDiagLogId = extractDiagLogId;
