@@ -1,0 +1,4 @@
+{"date":"2026-11-02","source":"scripts/kb/z2m-coverage.js matrix diff vs 2026-11-01","reason":"publish payload at cap; couples present in source but dropped from rebuilt payload","action":"park; pin only after headroom is freed","couples":{
+"master":["_TZ3000_5rpu3r0d|TS0001","_TZ3000_cehuw1lw|TS011F","_TZ3000_cehuw1lw|TS0121","_TZ3000_pcqjmcud|TS004F"],
+"bastien-home":["_TZ3000_8ybe88nf|RH3052","_TZ3000_8ybe88nf|TS0201","_TZ3000_ynmowqk2|TS011F","_TZ3000_ynmowqk2|TS0121","_TZ3000_ynmowqk2|TSO121"],
+"stable-v5":["_TZE200_a7sghmms|TS0601"]}}

@@ -16,3 +16,4 @@
 - 2026-10-27 kb-daily: matrix refreshed (master absent 536 to 520, complete 654 to 673), ZHA Xiaomi read-response lesson and constant-attribute rule noted, HQL DS-123 Wi-Fi lead, 7 couples still parked, see ../UPSTREAM_DAILY_2026-10-27.md
 - 2026-10-26 content 927e28569925: 26 files updated, 93 total
 - 2026-11-01 kb-daily (light run): zhc-pkg node_modules restored after the inode crash, matrix refreshed (master absent 520→528 of which 5 intended P3077 moves, complete 673→680), 3 new Z2M couples parked as leads (Vareo HYT001ZB, Moes SFL02-Z-1, AOYAN AY-223Z), see UPSTREAM_DAILY_2026-11-01.md
+- 2026-11-02 kb-daily: matrix refreshed (master absent 528→521, complete 680), 10 couples lost to publish compaction parked in data/leads/kb-compaction-losses-2026-11-02.json, zigbee-clusters lessons (#258/#259/#262/#263), see UPSTREAM_DAILY_2026-11-02.md
