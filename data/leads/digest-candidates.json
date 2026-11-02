@@ -465,6 +465,30 @@
    "target": "ZG-229Z, ZG-229Z-",
    "hint": "According to the device specifications, it should support both siren (alarm) and doorbell functionalities, as well as multiple configuration attributes:",
    "url": "https://github.com/zigpy/zha-device-handlers/issues/5008"
+  },
+  {
+   "kind": "avoid",
+   "target": "_tz3000_bgtzm4ny|TS0044",
+   "hint": "However, the events don't seem to be mapped properly or something, because I can't pick it as an automation trigger.",
+   "url": "https://github.com/zigpy/zha-device-handlers/issues/5377"
+  },
+  {
+   "kind": "adopt",
+   "target": "TS0601, TS011F",
+   "hint": "Please set `manufacturer_code=0x1286`.",
+   "url": "https://github.com/zigpy/zigpy/issues/1881"
+  },
+  {
+   "kind": "avoid",
+   "target": "TS0601",
+   "hint": "I'd like to modify the value in here (the quirk it's using) but I do not know how to.",
+   "url": "https://github.com/zigpy/zigpy/issues/1527"
+  },
+  {
+   "kind": "verify-resolution",
+   "target": "_tze200_3towulqd|TS0601",
+   "hint": "## Workaround",
+   "url": "https://github.com/zigpy/zigpy/issues/1410"
   }
  ]
 }
