@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-02T22:23:50.368Z",
+ "generated": "2026-11-02T22:39:09.934Z",
  "drivers": 421,
  "snapshot": {
   "air_conditioner_aetz01": {
@@ -760,9 +760,9 @@
   },
   "diy_custom_zigbee": {
    "mfr": 103,
-   "pid": 73,
+   "pid": 55,
    "mfrSha": "055f77c927605a95",
-   "pidSha": "f55567cbaabb8814"
+   "pidSha": "b6b4a9bbae4bc954"
   },
   "door_controller": {
    "mfr": 2,
