@@ -22,6 +22,7 @@ const { spawnSync } = require('child_process');
 
 const ROOT = path.join(__dirname, '..', '..');
 const OUT_DIR = path.join(ROOT, '.github', 'state', 'inbox-diag-harvest');
+const DIAG_DIR = process.env.HOMEY_APP_DIAG_DIR || path.join(ROOT, '.github', 'state', 'homey-app-diag');
 const UUID_RE = /\b([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})\b/gi;
 
 function argFlag(name) {
@@ -68,6 +69,15 @@ function collectFromJson(file, acc) {
   walk(data);
 }
 
+function loadLogIndex(file = path.join(ROOT, '.github', 'state', 'diagnostics-state.json')) {
+  try {
+    const idx = JSON.parse(fs.readFileSync(file, 'utf8')).logIndex || {};
+    const out = {};
+    for (const [k, v] of Object.entries(idx)) if (/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(k) && v && typeof v === 'object') out[k.toLowerCase()] = v;
+    return out;
+  } catch { return {}; }
+}
+
 function main() {
   const doFetch = argFlag('--fetch') || process.env.INBOX_DIAG_FETCH === '1';
   const maxFetch = Math.max(1, Math.min(20, Number(argVal('--max', '6')) || 6));
@@ -108,8 +118,22 @@ function main() {
   };
 
   const fetchScript = path.join(ROOT, 'scripts', 'ci', 'fetch-homey-app-diag-by-uuid.js');
+  // P3208: resolve from the Gmail Log ID index first (no Athom token needed), then Athom for the rest.
+  const logIndex = loadLogIndex();
+  const pending = [];
+  for (const uuid of ordered) {
+    const hit = logIndex[uuid];
+    if (hit) {
+      const rec = { uuid, found: true, via: 'gmail-diag-mail', version: hit.appVersion || null, build: null, exit: 0, preview: 'resolved from Homey diagnostics mail (sanitized)' };
+      report.results.push(rec);
+      try {
+        fs.mkdirSync(DIAG_DIR, { recursive: true });
+        fs.writeFileSync(path.join(DIAG_DIR, `${uuid}.sanitized.json`), JSON.stringify({ ...hit, uuid, found: true, via: rec.via, version: hit.appVersion || null, fetchedAt: new Date().toISOString() }, null, 2));
+      } catch { /* best effort */ }
+    } else pending.push(uuid);
+  }
   if (doFetch && fs.existsSync(fetchScript)) {
-    for (const uuid of ordered.slice(0, maxFetch)) {
+    for (const uuid of pending.slice(0, maxFetch)) {
       const r = spawnSync(process.execPath, [fetchScript, uuid], {
         cwd: ROOT,
         encoding: 'utf8',
@@ -143,4 +167,5 @@ function main() {
   }, null, 2));
 }
 
-main();
+if (require.main === module) main();
+module.exports = { loadLogIndex };
