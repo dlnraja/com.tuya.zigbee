@@ -388,3 +388,9 @@ Reporters of dlnraja/com.tuya.zigbee issues not credited elsewhere in this file.
 
 - hogseto (GH#581): `_TZ3000_yupc0pb7` / TS0201 listed but Unknown — exposed couples dropped by publish compaction.
 - stephanmaastricht (GH#584): `_TZE284_awepdiwi` / TS0601 soil sensor, diag 8742e6bd.
+- oletorv (GH#598): `_TZE284_9ern5sfh` / TS0601 LCD sensor, interview from Homey Self-Hosted + Bridge showing the node serves only 0, 4, 5, 0xED00, 0xEF00 (P3204: owner moved to lcdtemphumidsensor_3 so pairing binds only clusters the node has).
+
+## Driver continuations (P3206 port, 2026-11-02) — facts only, no code copied
+- Homey SDK Zigbee docs (exact manufacturerName/productId matching) and the Homey community thread t/51187
+  (no productId wildcard) — basis for "no fallback driver" and for continuation drivers.
+- Forum/GitHub reporters of #584, #581, #598 and the kb-compaction-losses couples — couples kept in the payload.
