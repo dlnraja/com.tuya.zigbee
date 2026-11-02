@@ -1,0 +1,31 @@
+{
+ "_comment": "P3246 (02/11/2026 Paris, user t811u): diy_custom_zigbee keeps every sourced couple and every generic DIY/board/role model id (PTVO.*, DIYRUZ_*, CC25xx/CC26xx dev, ESP32, ROUTER/SENSOR/SWITCH...) so unknown DIY devices still match; removed only Zigbee coordinator/gateway model ids, which are the network coordinator and never join Homey as an end device. universal_zigbee: every unsourced pid is a generic Tuya TS* id -> all kept.",
+ "entries": [
+  {
+   "id": "diy_custom_zigbee",
+   "dropped": [
+    "CC2531_USB",
+    "CONBEE",
+    "CONBEE II",
+    "CONBEE III",
+    "HUE_BRIDGE",
+    "PHOSCON_GATEWAY",
+    "RASPBEE",
+    "RASPBEE II",
+    "SLZB-06",
+    "SLZB-07",
+    "SONOFF_ZBBRIDGE",
+    "ZBBRIDGE",
+    "ZIGSTAR",
+    "ZIGSTAR_LAN",
+    "ZIGSTAR_POE",
+    "ZIGSTAR_STICK",
+    "ZZH",
+    "ZZH!"
+   ]
+  }
+ ],
+ "keptUntouched": [
+  "universal_zigbee"
+ ]
+}
