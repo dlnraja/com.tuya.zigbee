@@ -60,7 +60,8 @@ jobs:
         if: always()
         run: node --expose-gc scripts/ci/memory-budget.js --budget-mb "$(node -p "require('./scripts/ci/memory-budget.json').codeHeapBudgetMb")"
       - name: Full suite on Node 22
-        run: npx mocha "test/**/*.test.js" --timeout 10000
+        # P3230: keep the log so the summary can name the failing tests (pipefail keeps mocha's exit code)
+        run: npx mocha "test/**/*.test.js" --timeout 10000 2>&1 | tee "$RUNNER_TEMP/mocha-full.log"
       - name: Short summary (shared report helper)
         if: always()
         env:
@@ -68,6 +69,10 @@ jobs:
         run: |
           [ -f scripts/lib/report-writer.js ] || exit 0
           if [ "$JOB_STATUS" = "success" ]; then s="All mocha suites passed on Node 22."; else s="A mocha suite failed on Node 22; the red step names the file."; fi
+          # P3230: name the failing tests (title + first assertion line) instead of only "a suite failed"
+          if [ -f "$RUNNER_TEMP/mocha-full.log" ] && grep -qE '^ +[0-9]+ failing$' "$RUNNER_TEMP/mocha-full.log"; then
+            { echo '### Failing mocha tests'; echo '```'; awk '/^ +[0-9]+ failing$/{f=1} f' "$RUNNER_TEMP/mocha-full.log" | grep -E '^ +[0-9]+\) |Error' | head -40; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+          fi
           node scripts/lib/report-writer.js --title "Node 22 tests (mocha)" --summary "$s" --headers "part|what it checks" --row "resilience|reconnect and memory-warning guards" --row "memory|leak and heap budget" --row "full suite|every test file under mocha" --thanks "Node.js test runner" --thanks "Mocha" >> "$GITHUB_STEP_SUMMARY"
   # P3057-3: mocha exits with its own count, so node:test failures (process.exitCode) never failed the job.
   # Strict job: every node:test file under `node --test`; a failure fails the run unless it is in the
