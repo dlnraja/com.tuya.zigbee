@@ -106,7 +106,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.1611] - 2026-11-02
+## [9.0.1612] - 2026-11-02
+
+Reliability: 1 small fix in the app core. Behind the scenes: tests and publishing checks.
+---
+
+ [9.0.1611] - 2026-11-02
 
 New: pairing and device recognition. Plus 1 other change in the app core. Behind the scenes: tests and publishing checks.
 ---

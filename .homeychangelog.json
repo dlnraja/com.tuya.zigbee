@@ -907,9 +907,12 @@
       ]
     }
   ],
+  "9.0.1613": {
+    "en": "New: pairing and device recognition & Flow cards (TS0601) and thermostats & climate sensors. Fixed: Flow cards and pairing and device recognition. Plus 10 other changes in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Nouveau : appairage et reconnaissance des appareils & cartes Flow (TS0601) et thermostats & capteurs d'ambiance. Corrigé : cartes Flow et appairage et reconnaissance des appareils. Et 10 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+  },
   "9.0.1612": {
-    "en": "Reliability: 1 small fix in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Fiabilité : 1 petite correction dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "en": "Reliability: 1 small fix in the app core. Behind the scenes: tests and publishing checks."
   },
   "9.0.1611": {
     "en": "New: pairing and device recognition. Plus 1 other change in the app core. Behind the scenes: tests and publishing checks."
@@ -972,9 +975,5 @@
   "9.0.1589": {
     "en": "Device settings page rebuilt the documented way for 382 drivers, and the _TZ3000_dfgbtub0 TS0042 remote now pairs as a 2-button remote.",
     "fr": "Page de réglages des appareils reconstruite selon la documentation pour 382 drivers, et la télécommande _TZ3000_dfgbtub0 TS0042 s'appaire désormais comme télécommande 2 boutons."
-  },
-  "9.0.1587": {
-    "en": "Maintenance build: same devices and behaviour as 9.0.1586 (publishing and test tooling only).",
-    "fr": "Version de maintenance : mêmes appareils et même comportement que la 9.0.1586 (outils de publication et de test uniquement)."
   }
 }
