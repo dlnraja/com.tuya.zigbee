@@ -151,9 +151,9 @@ function parseState(body) {
 }
 
 /**
- * Visible section owned by scripts/digest/self-check.js (state key `selfcheck`).
- * Rendered from state so every digest that rewrites the body keeps it intact,
- * and self-check only ever changes its own key (no comment, no e-mail).
+ * Legacy visible section from state key `selfcheck`. Its writer (the self-check digest job)
+ * was removed in P3232; nothing writes the key any more. Kept so a tracking issue whose
+ * state still holds an old `selfcheck` block is re-rendered intact (additive, no data loss).
  */
 function renderSelfCheckSection(state) {
   const sc = state && state.selfcheck;
@@ -170,8 +170,8 @@ function renderBody(state) {
     '',
     '| Workflow | Rôle |',
     '|---|---|',
-    "| `daily-digest.yml` (nouveau) | Homey 08:16 + Labs 08:49 + Forum 10:23 + Inspiration 11:41 (Paris), jours ouvrés ; inclut diags Gmail |",
-    "| `daily-digest.yml` › job *inspiration* | JohanBendz : issues/PR (ouvertes+fermées, bots inclus) + workflows → pistes non mappées + recoupement externe (11:41 Paris, ≤100 éléments/jour) |",
+    "| `daily-digest.yml` | Homey + Forum + Inspiration ensemble à 10:23 (Paris), jours ouvrés, un seul créneau (P3232) ; inclut diags Gmail |",
+    "| `daily-digest.yml` › job *inspiration* | JohanBendz : issues/PR (ouvertes+fermées, bots inclus) + workflows → pistes non mappées + recoupement externe (10:23 Paris, ≤100 éléments/jour) |",
     "| `daily-digest.yml` › job *forum* | Nouveaux posts sur 6 topics Tuya (140352, 26439, 89271, 146735, 154077, 21313 ; ≤4 requêtes/passage) + identifiants absents des drivers (10:23 Paris, jours ouvrés) |",
     "| `autonomous-verification.yml` › job *ci-health* | Rouge/vert des workflows master & stable-v5 (08:30 + 16:15 Paris jours ouvrés, transitions seulement) |",
     "| `notifications.yml` › job *digest-event* | PR ouverte/mergée + CI rouge/vert sur master (temps réel, ≤1 commentaire CI / 30 min) |",
