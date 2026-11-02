@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-01T13:40:08.683Z",
+ "generated": "2026-11-02T12:22:22.762Z",
  "drivers": 392,
  "snapshot": {
   "air_purifier": {
@@ -279,9 +279,9 @@
    "pidSha": "3427697d0c296c9d"
   },
   "climate_sensor": {
-   "mfr": 515,
+   "mfr": 509,
    "pid": 32,
-   "mfrSha": "0e8120efce39c1d9",
+   "mfrSha": "0b07fa1599eb09bd",
    "pidSha": "4809a771f46a5606"
   },
   "climate_sensor_device": {
@@ -987,9 +987,9 @@
    "pidSha": "261617b7dd61d124"
   },
   "lcdtemphumidsensor": {
-   "mfr": 26,
+   "mfr": 23,
    "pid": 6,
-   "mfrSha": "4255ebb70b58ea7d",
+   "mfrSha": "d9771640c14587f8",
    "pidSha": "9be78874133bac72"
   },
   "lcdtemphumidsensor_2": {
@@ -999,9 +999,9 @@
    "pidSha": "a858b6b4f28cd785"
   },
   "lcdtemphumidsensor_3": {
-   "mfr": 11,
+   "mfr": 14,
    "pid": 2,
-   "mfrSha": "f157e0a782d271a2",
+   "mfrSha": "779d5a08b5bb6ce3",
    "pidSha": "eb0037885ed202bb"
   },
   "lcdtemphumidsensor_plug_energy": {
@@ -1269,9 +1269,9 @@
    "pidSha": "81b47ff6ba151521"
   },
   "radiator_valve": {
-   "mfr": 160,
+   "mfr": 166,
    "pid": 60,
-   "mfrSha": "54d3ec378a11dc52",
+   "mfrSha": "857ef895bf6f306a",
    "pidSha": "a7fb4360e7673b32"
   },
   "radiator_valve_zigbee": {

@@ -102,6 +102,10 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       '_TZE200_9xfjixap', '_tze200_9xfjixap'
     ];
     if (matchesMfr(me167Ids)) {return 'me167';}
+
+    // P3212: Saswell SEA801 family (zhc saswell.ts) uses its own legacy DP set.
+    const saswellIds = ['_0dvm9mva', '_9m4kmbfu', '_3yp57tby', '_3ymoslep'];
+    if (matchesMfr(saswellIds)) {return 'saswell';}
     
     return 'standard';
   }
@@ -131,6 +135,22 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
         47: { internal: true, type: 'temp_calibration', divisor: 10, writable: true },
         101: { capability: 'dim', divisor: 100 },
         102: { internal: true, type: 'battery_low', transform: boolean() }
+      };
+    }
+    if (this.dpProfile === 'saswell') {
+      // P3212: zhc saswell.ts (SEA801): 101 state, 102 local temp /10, 103 setpoint /10,
+      // 104 valve %, 105 battery low, 8 window, 10 frost, 27 calibration, 40 child lock, 106 away
+      return {
+        101: { capability: 'onoff', transform: boolean() },
+        102: { capability: 'measure_temperature', divisor: 10 },
+        103: { capability: 'target_temperature', divisor: 10 },
+        104: { capability: 'dim', divisor: 100 },
+        105: { capability: 'alarm_battery', transform: boolean() },
+        8: { internal: true, type: 'window_open', transform: boolean() },
+        10: { capability: 'frost_protection', transform: (v) => v === true || v === 1 },
+        27: { internal: true, type: 'temp_calibration', writable: true },
+        40: { capability: 'child_lock', transform: (v) => v === true || v === 1 },
+        106: { internal: true, type: 'away_mode', writable: true }
       };
     }
     // Profile A: Standard TRV DP mapping (MOES, etc.)
@@ -261,6 +281,21 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
 
   _setupTRVListeners() {
     const profile = this.dpProfile;
+    if (profile === 'saswell') {
+      // P3212: zhc saswell_thermostat_current_heating_setpoint -> DP103 x10; state -> DP101
+      if (this.hasCapability('onoff')) {
+        this.registerCapabilityListener('onoff', async (v) => { await this._sendTuyaDP(101, !!v, 'bool'); });
+      }
+      if (this.hasCapability('thermostat_mode')) {
+        this.registerCapabilityListener('thermostat_mode', async (v) => { await this._sendTuyaDP(101, v !== 'off', 'bool'); });
+      }
+      if (this.hasCapability('target_temperature')) {
+        this.registerCapabilityListener('target_temperature', async (v) => {
+          await this._sendTuyaDP(103, Math.round(safeMultiply(v, 10, 10)), 'value');
+        });
+      }
+      return;
+    }
     if (this.hasCapability('onoff') && profile === 'standard') {
       this.registerCapabilityListener('onoff', async (v) => { await this._sendTuyaDP(1, v, 'bool');
       });
