@@ -652,6 +652,15 @@ async function processFetchedEmails(emails,fetchOptions,{mode:successMode,window
       bodyLength:em.bodyLength||0,contentType:em.contentType||'unknown'});
     res.push(entry);
     done.add(em.id);
+    // P3208: Athom has no API that returns a manual diag by its Log ID; the Homey->developer mail IS the
+    // report. Keep a bounded, sanitized Log ID index in the cached state so inbox-diag-uuid-harvest can
+    // resolve user diag codes (forum "diagnostic code ...") instead of marking them found:false forever.
+    if(entry.logId){st.logIndex=st.logIndex||{};st.logIndex[String(entry.logId).toLowerCase()]={date:entry.date||null,
+      appVersion:entry.appVersion||null,homeyVersion:entry.homeyVersion||null,hasUserMessage:!!entry.userMessage,
+      couples:(entry.couples||[]).slice(0,10),driversInLog:(entry.driversInLog||[]).slice(0,20),signals:(entry.signals||[]).slice(0,20),
+      errs:(entry.errs||[]).slice(0,10),logHighlights:(entry.logHighlights||[]).slice(0,15).map(h=>String(h).slice(0,300)),
+      stackTraces:((entry.crashInfo&&entry.crashInfo.stackTraces)||[]).slice(0,3).map(x=>String(x).slice(0,1500))};
+      const ks=Object.keys(st.logIndex);if(ks.length>300)for(const k of ks.slice(0,ks.length-300))delete st.logIndex[k];}
     console.log(DiagEnrich.formatConsoleLine(type,safeSubj,d.enriched||{}));
 
     // P2233: optional recursive-inbox body dump (gitignored .github/state) for f647-style treat
