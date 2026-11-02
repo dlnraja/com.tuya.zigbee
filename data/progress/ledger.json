@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-02T13:55:39.682Z",
+ "updated": "2026-11-02T15:11:46.902Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -281,6 +281,12 @@
    "date": "2026-11-02",
    "by": "homey-ci-prs",
    "note": "attempt 1/3 (24h) run 41402776968 master 4d90c647d9: validate payload build had no top-up env (17000 ceiling) and the restore cut _tze200_9caxna4s|TS0301 via a stale parasite candidate; P3201b 7d475e95f2 snapshot-first restore + reused-row filter + validate env 20000/2000, 2 tests"
+  },
+  "ci-fail:node22-tests:p3136-ssot:dfgbtub0-ts0044-undefined": {
+   "status": "fixed",
+   "date": "2026-11-02",
+   "by": "homey-ci-prs",
+   "note": "attempt 1/3 (24h) run 41452930062 master 22b7fe226c: ssot-couple-enrich auto refresh 16165ba1cf [skip ci] dropped _TZ3000_dfgbtub0|TS0044 (removed from drivers in P3146) so test P3136 read undefined.status; P3225 keeps evidence-backed removal tombstones (status unverified, drivers []), test p3225"
   },
   "ci-fail:node22-tests:spec010-golden:lcdtemphumidsensor-lost": {
    "status": "fixed",
@@ -7450,6 +7456,15 @@
    "mailDate": "2026-11-01T11:11:54.000Z",
    "errors": 1
   },
+  "diag:2a6669c5e8228266": {
+   "status": "done",
+   "date": "2026-11-02",
+   "hash": "d8d26703cf995539",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-11-02T11:54:23.000Z"
+  },
   "diag:2a77a3dcd91bfe7d": {
    "status": "done",
    "date": "2026-10-21",
@@ -7582,6 +7597,15 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-10-20T13:49:30.000Z"
+  },
+  "diag:2f86fc63d1ce4699": {
+   "status": "done",
+   "date": "2026-11-02",
+   "hash": "4841c29fbeb3fbbe",
+   "note": "homey_system mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "homey_system",
+   "mailDate": "2026-11-02T13:19:01.000Z"
   },
   "diag:2fdcb485212bcc87": {
    "status": "done",
@@ -7951,6 +7975,15 @@
    "by": "tuya-deep-diag",
    "kind": "general",
    "mailDate": "2026-10-19T15:25:31.000Z"
+  },
+  "diag:3e35797b4d71db4e": {
+   "status": "done",
+   "date": "2026-11-02",
+   "hash": "b6cec4b483344c31",
+   "note": "homey_system mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "homey_system",
+   "mailDate": "2026-11-02T14:05:44.000Z"
   },
   "diag:3e35a9aa43cdf43c": {
    "status": "done",
@@ -9036,6 +9069,15 @@
    "kind": "general",
    "mailDate": "2026-10-19T08:34:35.000Z"
   },
+  "diag:67397934956d2daf": {
+   "status": "done",
+   "date": "2026-11-02",
+   "hash": "8418bce55f10a9b1",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-11-02T11:54:13.000Z"
+  },
   "diag:67e51c37a3448eb8": {
    "status": "done",
    "date": "2026-10-21",
@@ -9186,6 +9228,15 @@
    "by": "tuya-deep-diag",
    "kind": "general",
    "mailDate": "2026-10-18T23:56:08.000Z"
+  },
+  "diag:6dcd75593d2c9b42": {
+   "status": "done",
+   "date": "2026-11-02",
+   "hash": "d7a60857719e9167",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-11-02T11:54:28.000Z"
   },
   "diag:6e4cc006930b5a21": {
    "status": "done",
@@ -9850,9 +9901,9 @@
   "diag:89fbec99e0256172": {
    "status": "pending",
    "date": "2026-11-02",
-   "hash": "263e516e185ccaf5",
+   "hash": "d91e90c3e53bfab4",
    "note": "diagnostic mail; 1 couple(s); 4 error line(s)",
-   "by": "fetch-diags",
+   "by": "gmail-diagnostics",
    "kind": "diagnostic",
    "mailDate": "2026-10-31T18:24:17.000Z",
    "appVersion": "1.0.218",
@@ -9864,8 +9915,7 @@
     "switch_4gang",
     "switch_1gang"
    ],
-   "errors": 4,
-   "logIdShort": "7f72cffe"
+   "errors": 4
   },
   "diag:8a17f42eebb44baf": {
    "status": "done",
@@ -12743,9 +12793,9 @@
   "diag:f8b8416f2c108756": {
    "status": "pending",
    "date": "2026-11-02",
-   "hash": "b17186b9cadb9638",
+   "hash": "722d4a06654fdb90",
    "note": "interview mail; 1 couple(s); 1 in several drivers; 4 error line(s)",
-   "by": "fetch-diags",
+   "by": "gmail-diagnostics",
    "kind": "interview",
    "mailDate": "2026-10-25T17:52:09.000Z",
    "appVersion": "1.0.209",
@@ -12758,8 +12808,7 @@
    "drivers": [
     "switch_1gang"
    ],
-   "errors": 4,
-   "logIdShort": "097f1743"
+   "errors": 4
   },
   "diag:f8c7482c87cd0bcf": {
    "status": "pending",
@@ -45202,12 +45251,6 @@
     "leadsAdded": 0
    },
    "lastChangeRun": "41312721125"
-  },
-  "ci-fail:node22-tests:p3136-ssot:dfgbtub0-ts0044-undefined": {
-   "status": "fixed",
-   "date": "2026-11-02",
-   "by": "homey-ci-prs",
-   "note": "attempt 1/3 (24h) run 41452930062 master 22b7fe226c: ssot-couple-enrich auto refresh 16165ba1cf [skip ci] dropped _TZ3000_dfgbtub0|TS0044 (removed from drivers in P3146) so test P3136 read undefined.status; P3225 keeps evidence-backed removal tombstones (status unverified, drivers []), test p3225"
   }
  }
 }
