@@ -30,10 +30,31 @@ const isCiNoise = (msg) => CI_NOISE.test(String(msg).trim());
 // (a user may paste a real crash in an issue); only their CI-noise lines are dropped.
 const isGateResult = (n) => typeof n.status === 'string' && typeof n.reason === 'string' && !n.error && !n.stack && !n.crash;
 
+// P3205b (t779u): what the user actually sees. A manually submitted diagnostics report (userMessage /
+// logId) is a user report even when its log has no stack: it becomes a symptom record instead of being
+// dropped, so it reaches triage as "app crash" or "paired as generic / not readable". The user text is
+// only classified, never quoted. A diag log id that could not be fetched is a report we failed to read.
+const SYMPTOMS = [
+  { id: 'app-crash', re: /crash|plant|stopp?ed|stopt|cut|coup|herstart|restart|out of memory|heap|freez|bloqu|hang/i },
+  { id: 'paired-generic-or-unreadable', re: /unknown|generic|g[ée]n[ée]ri|inconnu|onbekend|unbekannt|not recogni|niet herkend|non reconnu|no capabilit|can'?t read|cannot read|niet (uit)?lez|kan hem niet|ne remonte|no data|no values|unable to connect|pairing|koppel|appair|identif/i },
+];
+function symptomOf(text) { const t = String(text || ''); const s = SYMPTOMS.find((x) => x.re.test(t)); return s ? s.id : 'user-report-unclassified'; }
+function userReport(node) {
+  if (typeof node.userMessage === 'string' && node.userMessage.trim()) {
+    const hl = Array.isArray(node.logHighlights) ? node.logHighlights.join(' ') : '';
+    const crash = node.crashInfo && (node.crashInfo.error || node.crashInfo.stack);
+    return { msg: `user-report: ${crash ? 'app-crash' : symptomOf(node.userMessage + ' ' + hl)}`, symptom: true };
+  }
+  if (node.uuid && node.found === false && 'fetchedAt' in node) return { msg: 'user-report: diag-log-unfetched', symptom: true };
+  return null;
+}
+
 function records(node, out = [], depth = 0) {
   if (depth > 8 || node == null) return out;
   if (Array.isArray(node)) { node.slice(0, 5000).forEach((n) => records(n, out, depth + 1)); return out; }
   if (typeof node === 'object') {
+    const ur = userReport(node);
+    if (ur) out.push({ msg: ur.msg, symptom: true, user: String(node.homeyId || node.logIdShort || node.uuid || node.logId || 'unknown').slice(0, 80), app: String(node.app || node.appId || '').slice(0, 60), version: String(node.appVersion || node.version || '').slice(0, 30) });
     const msg = node.error || node.message || node.stack || node.crash || node.reason;
     if (typeof msg === 'string' && msg.length > 3 && !isGateResult(node) && !isCiNoise(msg)) {
       out.push({ msg, user: String(node.homeyId || node.user || node.uuid || node.cloudId || node.from || 'unknown').slice(0, 80), app: String(node.app || node.appId || '').slice(0, 60), version: String(node.version || node.appVersion || '').slice(0, 30) });
@@ -53,7 +74,9 @@ function triage(recs) {
   }
   return [...g.values()].map((e) => {
     const p = SAFE_PATTERNS.find((x) => x.re.test(e.signature));
-    return { id: e.id, signature: e.signature, count: e.count, users: e.users.size, impact: e.count * e.users.size, versions: [...e.versions].sort(), apps: [...e.apps].sort(), safePattern: p ? p.id : null, proposal: p ? p.fix : 'needs review' };
+    const sym = /^user-report: /.test(e.signature) ? e.signature.slice(13) : null;
+    const symFix = { 'app-crash': 'user-visible app crash: read the diag stack/logs, reproduce, guard', 'paired-generic-or-unreadable': 'device paired generic/unreadable: check couple in published payload, case, bindings vs interview (cf. GH#598)', 'diag-log-unfetched': 'user diag log could not be fetched: fetch it from Athom dev tools crashes page and triage', 'user-report-unclassified': 'read the user report' }[sym];
+    return { id: e.id, signature: e.signature, count: e.count, users: e.users.size, impact: e.count * e.users.size, versions: [...e.versions].sort(), apps: [...e.apps].sort(), symptom: sym, safePattern: p ? p.id : null, proposal: p ? p.fix : (symFix || 'needs review') };
   }).sort((a, b) => b.impact - a.impact);
 }
 
@@ -65,4 +88,4 @@ if (require.main === module) {
   fs.writeFileSync('crash-triage.json', JSON.stringify(res, null, 2) + '\n');
   console.log(`signatures ${res.length} from ${recs.length} records`);
 }
-module.exports = { normalize, records, triage, isCiNoise, SAFE_PATTERNS };
+module.exports = { normalize, records, triage, isCiNoise, symptomOf, SAFE_PATTERNS };
