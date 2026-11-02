@@ -486,6 +486,9 @@ try {
   // WHY(P2485): size gate MUST run AFTER this step — early exit blocked publish when
   // prettify-stripped JSON was still ~4.00MB but matrix compact would shrink it.
   // P3036: keep the uncompacted manifest so the TS0601 top-up can put back couples the compaction dropped.
+  // P3201: uncompacted view for the sourced dedupe/restore pass (payload only, source untouched).
+  let p3201Source = null;
+  try { p3201Source = process.env.HOMEY_P3201_SOURCED_PASS === '0' ? null : readJson(destAppJson); } catch (_) { p3201Source = null; }
   let p3036TopupSource = null;
   try { p3036TopupSource = Number(process.env.HOMEY_ZIGBEE_TOPUP_MAX_TOTAL) > 0 ? readJson(destAppJson) : null; } catch (_) { p3036TopupSource = null; }
   try {
@@ -524,6 +527,21 @@ try {
       console.log(`[P3036] TS0601 top-up: +${tu.addedGroups} manufacturer group(s) (+${tu.addedCombos} combos, ${tu.addedObserved} seen in mfs_db), ${tu.beforeTotal} -> ${tu.afterTotal} / ceiling ${tu.maxTotal}; ${tu.stillMissing} group(s) still out (need more room or a TS0601-only driver).`);
       if (tu.driversAfter !== tu.driversBefore || tu.afterTotal > tu.maxTotal) {
         console.error('FATAL(P3036): TS0601 top-up changed the driver set or passed its ceiling.');
+        process.exit(1);
+      }
+    }
+    // P3201: drop case/invisible duplicates and parasite rows, re-add source-backed couples, ratchet gate.
+    if (p3201Source) {
+      const sp = require('./maintenance/publish-sourced-restore.cjs');
+      const topupOn = Number(process.env.HOMEY_ZIGBEE_TOPUP_MAX_TOTAL) > 0;
+      const maxTotal = topupOn ? require('./maintenance/ts0601-topup.cjs').ceilingFromEnv() : compact.maxTotalCombos;
+      const maxDriver = (topupOn && Number(process.env.HOMEY_ZIGBEE_TOPUP_MAX_DRIVER)) || Number(process.env.HOMEY_ZIGBEE_MAX_DRIVER_COMBOS) || 2000;
+      const r = sp.sourcedPassFile(p3201Source, destAppJson, { repoRoot: path.join(__dirname, '..'), maxTotal, maxDriver, branch: process.env.P3201_BRANCH || process.env.GITHUB_REF_NAME });
+      p3201Source = null;
+      console.log(`[P3201] sourced pass: ${r.before} -> ${r.after} / ${maxTotal}; ${r.deduped} duplicate-form combos freed, ${r.restored} source-backed couples restored, strong sourced in payload ${r.strongIn}/${r.strongInSource}`);
+      if (r.after > maxTotal || r.driversAfter !== r.driversBefore || r.sacredMissing.length || r.snapshotMissing.length) {
+        console.error('FATAL(P3201): sourced pass broke an invariant (ceiling, driver set, sacred pin or snapshot ratchet).');
+        for (const m of [...r.sacredMissing, ...r.snapshotMissing].slice(0, 20)) console.error(`  - ${m}`);
         process.exit(1);
       }
     }
