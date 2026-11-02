@@ -88,6 +88,7 @@ jobs:
         with:
           sparse-checkout: |
             scripts/digest
+            scripts/lib
             scripts/sync/data
             drivers
             lib
@@ -189,6 +190,7 @@ jobs:
         with:
           sparse-checkout: |
             scripts/digest
+            scripts/lib
             scripts/sync/data
             drivers
             lib
@@ -252,6 +254,7 @@ jobs:
         with:
           sparse-checkout: |
             scripts/digest
+            scripts/lib
             scripts/sync/data
             drivers
             lib
