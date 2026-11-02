@@ -66,7 +66,7 @@ describe('P2828 forum satellites + full T26439 silent treat', () => {
   });
 
   it('LCD OCR 9em5sfh never invented; 9ern5sfh stays lcd', () => {
-    assert.ok(hasMfr('lcdtemphumidsensor', '9ern5sfh'));
+    assert.ok(hasMfr('lcdtemphumidsensor_3', '9ern5sfh'));
     assert.ok(!hasMfr('lcdtemphumidsensor', '9em5sfh'));
     for (const d of fs.readdirSync(path.join(ROOT, 'drivers'))) {
       const p = path.join(ROOT, 'drivers', d, 'driver.compose.json');
