@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-02T06:36:00.062Z",
+ "updated": "2026-11-02T08:19:23.668Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -269,6 +269,12 @@
    "date": "2026-11-01",
    "by": "homey-ci-prs",
    "note": "attempt 1/3 (24h) runs 41306404821/41306600547 master 868dbc6d25/501ebc962f: P3138c inline ROOM_RE fallback in scripts/lib/source-digest.js named the owner on the regex line so the P3120 guard counted its room words (11 > baseline 0); P3147 writes the owner token as b(?:astien) (same match), no baseline bump, + test"
+  },
+  "ci-fail:homey-app-validate:publish-payload:fatal-p3201-ratchet": {
+   "status": "fixed",
+   "date": "2026-11-02",
+   "by": "homey-ci-prs",
+   "note": "attempt 1/3 (24h) run 41402776968 master 4d90c647d9: validate payload build had no top-up env (17000 ceiling) and the restore cut _tze200_9caxna4s|TS0301 via a stale parasite candidate; P3201b 7d475e95f2 snapshot-first restore + reused-row filter + validate env 20000/2000, 2 tests"
   },
   "ci-fail:node22-tests:test:p3066-z7a2jmyy+p3069-changelog-order": {
    "status": "fixed",
@@ -44940,23 +44946,23 @@
   },
   "workflow-run:fleet-intelligent-enrich": {
    "status": "done",
-   "date": "2026-11-01",
-   "hash": "7d498c1f4e131f59",
+   "date": "2026-11-02",
+   "hash": "df0448c9f80c818b",
    "note": "run summary: 10 counter(s)",
    "by": "fleet-intelligent-enrich",
    "counts": {
     "phases.length": 31,
     "baseline.driverCount": 474,
-    "baseline.mfrEntries": 18766,
+    "baseline.mfrEntries": 18753,
     "baseline.pidEntries": 3439,
     "final.driverCount": 474,
-    "final.mfrEntries": 18778,
+    "final.mfrEntries": 18755,
     "final.pidEntries": 3439,
     "delta.drivers": 0,
-    "delta.mfrs": 12,
+    "delta.mfrs": 2,
     "delta.pids": 0
    },
-   "lastChangeRun": "41287274075"
+   "lastChangeRun": "41411385771"
   },
   "workflow-run:repo-autopilot": {
    "status": "done",
@@ -44973,12 +44979,6 @@
     "leadsAdded": 0
    },
    "lastChangeRun": "41312721125"
-  },
-  "ci-fail:homey-app-validate:publish-payload:fatal-p3201-ratchet": {
-   "status": "fixed",
-   "date": "2026-11-02",
-   "by": "homey-ci-prs",
-   "note": "attempt 1/3 (24h) run 41402776968 master 4d90c647d9: validate payload build had no top-up env (17000 ceiling) and the restore cut _tze200_9caxna4s|TS0301 via a stale parasite candidate; P3201b 7d475e95f2 snapshot-first restore + reused-row filter + validate env 20000/2000, 2 tests"
   }
  }
 }
