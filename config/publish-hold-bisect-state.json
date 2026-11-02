@@ -51,7 +51,12 @@
     "heiman_siren",
     "presence_radar_aoyan_ay204t"
   ],
-  "pending": null,
+  "pending": {
+    "ids": [
+      "water_leak_aoyan_ay222z"
+    ],
+    "at": "2026-11-02T23:44:56.768Z"
+  },
   "doneRuns": [
     "41263658690",
     "41272744359",
