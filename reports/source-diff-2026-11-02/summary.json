@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T09:18:28.388Z",
+  "generatedAt": "2026-11-02T10:56:36.102Z",
   "mode": "plan",
   "projectFingerprint": "4a51ed28c2ed7320",
   "projectChanged": false,
@@ -7,7 +7,7 @@
     {
       "id": "z2m",
       "action": "skip-fresh",
-      "reason": "cache fresh (data/z2m_cache.json, 0.5h)"
+      "reason": "cache fresh (data/z2m_cache.json, 1.8h)"
     },
     {
       "id": "zha",

@@ -25,3 +25,11 @@ describe('P3216b logIndex keyed on raw Log ID, not the redacted entry', () => {
     assert.ok(src.includes('st.logIndex[rawLogId]') && !src.includes('st.logIndex[String(entry.logId)'));
   });
 });
+
+describe('P3216c logIndex holds only scanner-clean structured fields', () => {
+  it('no free-text highlights/stacks in logIndex and findLeaks guard present', () => {
+    const src = require('fs').readFileSync(require('path').join(__dirname, '..', '.github', 'scripts', 'fetch-gmail-diagnostics.js'), 'utf8');
+    const blk = src.slice(src.indexOf('P3216c'), src.indexOf('length>300', src.indexOf('P3216c')));
+    assert.ok(!/logHighlights|stackTraces:\(/.test(blk) && blk.includes('privacy.findLeaks(li)'));
+  });
+});

@@ -610,7 +610,7 @@ async function processFetchedEmails(emails,fetchOptions,{mode:successMode,window
     if(done.has(em.id)){skippedAlreadyProcessed++;
       // P3213: mails processed before P3208 never reached logIndex, so their Log IDs stayed found:false forever.
       // Backfill a minimal sanitized entry from the already-fetched body (no AI, no re-triage).
-      try{const bf=backfillLogIndexEntry(em.body,em.diagLogId);if(bf){st.logIndex=st.logIndex||{};if(!st.logIndex[bf.id])st.logIndex[bf.id]={...bf.entry,date:em.date||null,backfilled:true};}}catch{}
+      try{const bf=backfillLogIndexEntry(em.body,em.diagLogId);if(bf){st.logIndex=st.logIndex||{};if(!st.logIndex[bf.id]){const li=privacy.redactObject({...bf.entry,date:em.date||null,backfilled:true});if(!privacy.findLeaks(li).length)st.logIndex[bf.id]=li;}}}catch{}
       continue}
     const type=classify(em);
     const d=parse(em.body);
@@ -662,11 +662,13 @@ async function processFetchedEmails(emails,fetchOptions,{mode:successMode,window
     // P3216b: entry is passed through privacy.redactObject, which aliases every uuid (incl. logId) -> key the
     // index on the raw reader/enricher id instead, else the index only ever holds [REDACTED_UUID:..] keys.
     const rawLogId=String(d.enriched?.logId||em.diagLogId||'').toLowerCase();
-    if(rawLogId){st.logIndex=st.logIndex||{};st.logIndex[rawLogId]={date:entry.date||null,
+    // P3216c: only structured fields (no free-text highlights/errors/stacks: the run 41431628509 privacy gate
+    // failed on diagnostics-state.json); entry is dropped if the privacy scanner still finds anything.
+    if(rawLogId){st.logIndex=st.logIndex||{};const li=privacy.redactObject({date:entry.date||null,
       appVersion:entry.appVersion||null,homeyVersion:entry.homeyVersion||null,hasUserMessage:!!entry.userMessage,
       couples:(entry.couples||[]).slice(0,10),driversInLog:(entry.driversInLog||[]).slice(0,20),signals:(entry.signals||[]).slice(0,20),
-      errs:(entry.errs||[]).slice(0,10),logHighlights:(entry.logHighlights||[]).slice(0,15).map(h=>String(h).slice(0,300)),
-      stackTraces:((entry.crashInfo&&entry.crashInfo.stackTraces)||[]).slice(0,3).map(x=>String(x).slice(0,1500))};
+      crashed:!!(entry.crashInfo&&(entry.crashInfo.stackTraces||[]).length)});
+      if(!privacy.findLeaks(li).length)st.logIndex[rawLogId]=li;
       const ks=Object.keys(st.logIndex);if(ks.length>300)for(const k of ks.slice(0,ks.length-300))delete st.logIndex[k];}
     console.log(DiagEnrich.formatConsoleLine(type,safeSubj,d.enriched||{}));
 
