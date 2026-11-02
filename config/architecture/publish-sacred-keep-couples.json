@@ -2293,6 +2293,18 @@
       "pid": "TS0601",
       "driverId": "smoke_sensor",
       "note": "P3067 family 4: Moes ZSS-HM-SSD01 smoke detector (Z2M moes.ts, ZHA tuya_smoke.py, blakadder) moved from co_sensor/climate_sensor"
+    },
+    {
+      "mfr": "_TZ3000_yupc0pb7",
+      "pid": "TS0201",
+      "driverId": "climate_sensor",
+      "note": "P3200 GH#581 (hogseto, 2026-10-28): listed in climate_sensor compose but dropped by publish compaction -> Unknown Zigbee device"
+    },
+    {
+      "mfr": "_TZE284_awepdiwi",
+      "pid": "TS0601",
+      "driverId": "soil_sensor",
+      "note": "P3200 GH#584 (stephanmaastricht, diag 8742e6bd) + Z2M; dropped by publish compaction (master pin P3037)"
     }
   ]
 }
