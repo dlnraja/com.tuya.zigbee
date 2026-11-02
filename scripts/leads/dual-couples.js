@@ -93,7 +93,10 @@ function loadDrivers(root) {
   return out;
 }
 
-function dualCouples(drivers) {
+// P3223: a driver chain (root -> root_2 ...) is ONE logical driver; same-chain repeats are the continuation check's job.
+const DC = require('../../lib/drivers/DriverContinuations');
+function dualCouples(drivers, dc) {
+  dc = dc || DC.load(ROOT);
   const map = new Map();
   for (const d of drivers.values()) {
     for (const m of d.mfrs) {
@@ -104,7 +107,7 @@ function dualCouples(drivers) {
       }
     }
   }
-  return [...map.entries()].filter(([, ds]) => ds.length > 1).map(([k, ds]) => ({ mfr: k.split('|')[0], pid: k.split('|')[1], drivers: ds.sort() }));
+  return [...map.entries()].filter(([, ds]) => new Set(ds.map((id) => dc.rootOf(id))).size > 1).map(([k, ds]) => ({ mfr: k.split('|')[0], pid: k.split('|')[1], drivers: ds.sort() }));
 }
 
 function loadEvidence(root) {

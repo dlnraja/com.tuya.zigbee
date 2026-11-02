@@ -53,6 +53,16 @@ const DENY_URL = [
 ];
 
 const lc = (s) => String(s || '').toLowerCase();
+// P3223: driver chains (root -> root_2 ...) resolved through the shared registry, never by name guessing.
+const DC = require('../../lib/drivers/DriverContinuations');
+const dcOf = (idx) => (idx && idx.dc) || DC.load(ROOT);
+/** New couples go to the first non-full driver of the chain, if that driver serves the pid; else the given one. */
+function chainTarget(idx, driver, P) {
+  const t = dcOf(idx).firstNonFull(driver);
+  if (t === driver) {return driver;}
+  const z = idx.byDriver && idx.byDriver.get(t);
+  return z && z.pids && z.pids.has(P) ? t : driver;
+}
 const readJson = (f, d) => { try { return JSON.parse(fs.readFileSync(f, 'utf8')); } catch { return d; } };
 
 function loadRoundTrip(file, compact) {
@@ -112,11 +122,11 @@ function decideAuditBackport(idx, mfr, pid, driver) {
   if (!target.pids.has(P)) {return { status: 'lead', why: `${driver} has no ${P} here` };}
   for (const d of where) {
     const z = byDriver.get(d);
-    if (!z || d === driver) {continue;}
+    if (!z || d === driver || dcOf(idx).isSameLogical(d, driver)) {continue;}
     const clash = [...target.pids].find((x) => z.pids.has(x));
     if (clash) {return { status: 'lead', why: `would put ${m}|${clash} on ${driver} and ${d}` };}
   }
-  return { status: 'apply', driver };
+  return { status: 'apply', driver: chainTarget(idx, driver, P) };
 }
 
 /** Pure decision (unit-tested). */
@@ -127,13 +137,17 @@ function decide(idx, mfr, pid, forcedDriver) {
   const known = idx.byMfr.get(lc(mfr));
   if (known && known.size) {return { status: 'already', why: `already in ${[...known].join(', ')}` };}
   if (GENERIC_PIDS.has(P)) {return { status: 'lead', why: `${P}: DP layout differs per id, needs a capture` };}
-  const drivers = [...idx.byPid.get(P) || []];
+  const dc = dcOf(idx);
+  const all = [...idx.byPid.get(P) || []];
+  // P3223: a chain is one logical driver (ambiguity counts roots, not continuations).
+  const drivers = [...new Set(all.map((d) => dc.rootOf(d)))];
   if (forcedDriver) {
-    if (!drivers.includes(forcedDriver)) {return { status: 'lead', why: `${forcedDriver} has no ${P} sibling here` };}
-    return { status: 'apply', driver: forcedDriver };
+    if (!all.includes(forcedDriver)) {return { status: 'lead', why: `${forcedDriver} has no ${P} sibling here` };}
+    return { status: 'apply', driver: chainTarget(idx, forcedDriver, P) };
   }
   if (drivers.length !== 1) {return { status: 'lead', why: drivers.length ? `${P} is in ${drivers.length} drivers (ambiguous)` : `${P} not in any driver` };}
-  return { status: 'apply', driver: drivers[0] };
+  const root = drivers[0];
+  return { status: 'apply', driver: all.includes(root) ? chainTarget(idx, root, P) : all[0] };
 }
 
 function applyCouple(root, driver, mfr) {
