@@ -1,0 +1,260 @@
+{
+ "_comment": "P3242 (02/11/2026 Paris): productIds removed from fully-sourced drivers because NO manufacturerName of that driver has a sourced couple with them (kb, diag, sacred, attested, mfs_db incl. sacredCouples, reviewed duals). Pure cartesian parasites: zero sourced couple lost, no driver id removed. diy_custom_zigbee and universal_zigbee (generic fallbacks) deliberately untouched. Also kept: any pid named in a test, an interview, lib/tuya/fingerprints.json with a driver maker, or the driver code.",
+ "entries": [
+  {
+   "id": "button_wireless_2",
+   "dropped": [
+    "A11Z",
+    "E1603/E1702/E1708",
+    "lumi.plug.macn01",
+    "lumi.plug.maeu01",
+    "lumi.plug.mmeu01"
+   ]
+  },
+  {
+   "id": "button_wireless_4",
+   "dropped": [
+    "S26R2ZB",
+    "S31ZB",
+    "SNZB-01M",
+    "TS0001_power",
+    "TS0001_switch",
+    "TS0001_switch_module",
+    "TS0601_watervalve",
+    "ZBM5-1C-120",
+    "ZBM5-2C-120",
+    "ZBM5-3C-120",
+    "ZBMINI",
+    "ZBMINIL2",
+    "ZBMINIL2-R2",
+    "ZBMINIR",
+    "ZBMINIR2-R2"
+   ]
+  },
+  {
+   "id": "button_wireless_1",
+   "dropped": [
+    "3450-l",
+    "3450-L",
+    "E1524/E1810",
+    "e1743",
+    "E1743",
+    "e1744",
+    "E1744",
+    "e1812",
+    "E1812",
+    "lumi.remote.b1acn01",
+    "lumi.sensor_switch",
+    "lumi.sensor_switch.aq2",
+    "lumi.sensor_switch.aq3",
+    "rom001",
+    "ROM001"
+   ]
+  },
+  {
+   "id": "led_strip_rgbw",
+   "dropped": [
+    "E11-G13",
+    "E11-G14",
+    "E11-G23",
+    "GL-C-006",
+    "LCT002",
+    "LCT003",
+    "LCT007",
+    "LCT010",
+    "LCT011",
+    "LCT012",
+    "LCT014",
+    "LCT015",
+    "LCT016",
+    "RB 185 C",
+    "RB 285 C",
+    "TS0504A",
+    "ZBT-ColorLight"
+   ]
+  },
+  {
+   "id": "sensor_illuminance_presence",
+   "dropped": [
+    "TS0209",
+    "ts0209",
+    "Ts0209"
+   ]
+  },
+  {
+   "id": "device_radiator_valve_smart",
+   "dropped": [
+    "0x8040",
+    "BSP-EZ2",
+    "BSP-FZ2",
+    "Battery switch, 1 button",
+    "Battery switch, 2 buttons",
+    "S26R2ZB",
+    "S31ZB",
+    "S40ZBTPB",
+    "TRV001",
+    "TRV003",
+    "TS0026",
+    "TS0041A",
+    "TS0105",
+    "TS0224",
+    "TS0901",
+    "ZBMINI",
+    "ZBMINIL2",
+    "ZIGSTAR",
+    "eT093WRG",
+    "eT093WRO",
+    "eTRV0100",
+    "eTRV0101",
+    "eTRV0103",
+    "CC2530",
+    "CC2531",
+    "CC2652",
+    "DIY",
+    "EFEKTA",
+    "ESP32",
+    "MAKER",
+    "PTVO",
+    "SNZB-01",
+    "SNZB-01P",
+    "SNZB-02P",
+    "SNZB-03P",
+    "SNZB-04",
+    "SNZB-04P",
+    "SNZB-06P",
+    "SNZB-09P"
+   ]
+  },
+  {
+   "id": "device_din_rail",
+   "dropped": [
+    "E11-G13",
+    "E11-G14",
+    "E11-G23",
+    "GL-C-006",
+    "LCT002",
+    "LCT003",
+    "LCT007",
+    "LCT010",
+    "LCT011",
+    "LCT012",
+    "LCT014",
+    "LCT015",
+    "LCT016",
+    "RB 185 C",
+    "RB 285 C",
+    "TS0503A",
+    "TS0504B",
+    "ZBT-ColorLight"
+   ]
+  },
+  {
+   "id": "light_bulb_dimmable_tunable",
+   "dropped": [
+    "TS0601_dim1",
+    "TS110F",
+    "ZBMINI-DIM",
+    "ZBMINID"
+   ]
+  },
+  {
+   "id": "doorwindowsensor_3",
+   "dropped": [
+    "S26R2ZB",
+    "S31ZB",
+    "TS0001_power",
+    "TS0001_switch",
+    "TS0001_switch_module",
+    "TS0111",
+    "TS4100",
+    "ZBM5-1C-120",
+    "ZBM5-2C-120",
+    "ZBM5-3C-120",
+    "ZBMINI",
+    "ZBMINIL2",
+    "ZBMINIL2-R2",
+    "ZBMINIR",
+    "ZBMINIR2-R2"
+   ]
+  },
+  {
+   "id": "hybrid_sensor_thermostat",
+   "dropped": [
+    "S26R2ZB",
+    "S31ZB",
+    "TS0001_power",
+    "TS0001_switch",
+    "TS0001_switch_module",
+    "TS0111",
+    "TS4100",
+    "ZBM5-1C-120",
+    "ZBM5-2C-120",
+    "ZBM5-3C-120",
+    "ZBMINI",
+    "ZBMINIL2",
+    "ZBMINIL2-R2",
+    "ZBMINIR",
+    "ZBMINIR2-R2"
+   ]
+  },
+  {
+   "id": "temphumidsensor3",
+   "dropped": [
+    "SNZB-02B",
+    "SNZB-02D",
+    "SNZB-02P"
+   ]
+  },
+  {
+   "id": "climate_sensor_energy",
+   "dropped": [
+    "SNZB-02D",
+    "SNZB-02P",
+    "SNZB-02DR2",
+    "SNZB-02LD",
+    "SNZB-02WD"
+   ]
+  },
+  {
+   "id": "air_purifier_motion",
+   "dropped": [
+    "TS0001_fingerbot",
+    "TS0111"
+   ]
+  },
+  {
+   "id": "wall_dimmer_1gang_1way",
+   "dropped": [
+    "TRI-C1ZR",
+    "TRI-K1ZR",
+    "EDM-1ZBA-EU"
+   ]
+  },
+  {
+   "id": "radar_sensor_2",
+   "dropped": [
+    "CK-BL702-MWS-01(7016)",
+    "ZP-301Z"
+   ]
+  },
+  {
+   "id": "doorwindowsensor_2",
+   "dropped": [
+    "DoorWindow-Sensor-ZB3.0",
+    "MCT-340 E"
+   ]
+  },
+  {
+   "id": "bulb_white",
+   "dropped": [
+    "TS0601_strip_adv"
+   ]
+  },
+  {
+   "id": "device_air_purifier_plug",
+   "dropped": [
+    "TS0601_curtain_tilt"
+   ]
+  }
+ ]
+}
