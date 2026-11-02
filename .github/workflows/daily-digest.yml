@@ -1,13 +1,13 @@
 # >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
-# What it does: Weekday digests (Homey, Labs, forum watch, inspiration) as links and our own summaries.
-#   Report-only: no commit, no publish.
+# What it does: Weekday lead harvest at 10:23 Paris (Homey diag digest, forum watch, inspiration) whose
+#   digest-leads artifacts feed market-couples-intake. Report-only: no commit, no publish.
 # Ideas from (thank you): the Homey Community forum members who share fingerprints and diagnostics (read-only,
 #   never quoted); Discourse for its public JSON/RSS endpoints.
 # Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
 #   posting stays off or ledger-gated.
 # <<< about
 # 🤖 Daily Digest (free replacement for the Grok Bot "Homey digest", "Labs digest" and "forum scan" routines)
-# Triggers: cron weekdays (Paris 08:16 Homey, 08:49 Labs, 10:23 Forum watch, 11:41 Inspiration JohanBendz —
+# Triggers: cron weekdays 10:23 Paris (Homey + Forum watch + Inspiration JohanBendz together, P3232 —
 #   DST-safe via tz-guard) + workflow_dispatch. REPORT-ONLY: never commits, never touches drivers, never publishes.
 # Politeness: each slot runs once per weekday, random 0–120 s start jitter, API calls spaced 300–800 ms,
 # Discourse: 1 topic request + ≤3 post-window requests spaced 2–5 s, stop + 20 h back-off on 429/403.
@@ -19,26 +19,18 @@ name: 🤖 Daily Digest
 
 on:
   schedule:
-    # GitHub cron is UTC. Two crons per slot: summer (UTC+2) and winter (UTC+1);
-    # scripts/digest/tz-guard.js keeps only the one matching Paris time today.
-    - cron: '16 6 * * 1-5'   # Homey 08:16 Paris (CEST)
-    - cron: '16 7 * * 1-5'   # Homey 08:16 Paris (CET, from 25 Oct 2026)
-    - cron: '49 6 * * 1-5'   # Labs 08:49 Paris (CEST)
-    - cron: '49 7 * * 1-5'   # Labs 08:49 Paris (CET)
-    - cron: '23 8 * * 1-5'   # Forum watch 10:23 Paris (CEST) — offset from forum-poll's :15 to avoid hitting Discourse together
-    - cron: '23 9 * * 1-5'   # Forum watch 10:23 Paris (CET)
-    - cron: '41 9 * * 1-5'   # Inspiration JohanBendz 11:41 Paris (CEST)
-    - cron: '41 10 * * 1-5'  # Inspiration JohanBendz 11:41 Paris (CET)
-    - cron: '7 7 * * 1'      # Weekly summary Monday 09:07 Paris (CEST)
-    - cron: '7 8 * * 1'      # Weekly summary Monday 09:07 Paris (CET)
-    - cron: '5 10 * * 1-5'  # Self-check 12:05 Paris (CEST)
-    - cron: '5 11 * * 1-5'  # Self-check 12:05 Paris (CET)
+    # P3232: one slot per weekday (was 12 crons/day for 6 jobs). Homey + forum + inspiration run together at
+    # 10:23 Paris (offset from forum-poll's :15); tz-guard keeps the CEST/CET pair DST-safe. Fewer runs also
+    # means market-couples-intake's "last 12 daily-digest runs" really covers ~6 weekdays of lead artifacts
+    # (before, 10 of those 12 were empty slot runs, so the feedback loop read 0 records).
+    - cron: '23 8 * * 1-5'   # 10:23 Paris (CEST)
+    - cron: '23 9 * * 1-5'   # 10:23 Paris (CET)
   workflow_dispatch:
     inputs:
       which:
         description: 'Digest to run'
         type: choice
-        options: [all, homey, labs, forum, inspiration, weekly, selfcheck]
+        options: [all, homey, forum, inspiration]
         default: all
       force:
         description: 'Post a comment even if nothing changed'
@@ -78,7 +70,7 @@ jobs:
     name: 🏠 Homey digest
     if: >-
       github.repository == 'dlnraja/com.tuya.zigbee' &&
-      ((github.event_name == 'schedule' && startsWith(github.event.schedule, '16 ')) ||
+      ((github.event_name == 'schedule' && startsWith(github.event.schedule, '23 ')) ||
        (github.event_name == 'workflow_dispatch' && (inputs.which == 'all' || inputs.which == 'homey')))
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -101,7 +93,7 @@ jobs:
           node-version: '22'
       - name: 🕗 Paris-time guard
         id: tz
-        run: node scripts/digest/tz-guard.js --schedule="${{ github.event.schedule }}" --paris-hour=8
+        run: node scripts/digest/tz-guard.js --schedule="${{ github.event.schedule }}" --paris-hour=10
       - name: 🎲 Start jitter (0–120 s, scheduled runs only)
         if: github.event_name == 'schedule' && steps.tz.outputs.run == 'true'
         run: sleep $((RANDOM % 121))
@@ -144,37 +136,6 @@ jobs:
           [ -f scripts/lib/report-writer.js ] || exit 0
           if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Weekday digests (Homey, Labs, forum watch, inspiration) as links and our own summaries. Report-only: no commit, no publish."; else s="Stopped early ($JOB_STATUS); the red step above says why. Weekday digests (Homey, Labs, forum watch, inspiration) as links and our own summaries. Report-only: no commit, no publish."; fi
           node scripts/lib/report-writer.js --title "daily-digest" --summary "$s" --headers "item|value" --row "job|homey" --row "result|$JOB_STATUS" --thanks "the Homey Community forum members who share fingerprints and diagnostics (read-only, never quoted)" --thanks "Discourse for its public JSON/RSS endpoints" >> "$GITHUB_STEP_SUMMARY" || true
-
-  labs:
-    name: 🧪 Labs digest (AscendOS / Pulse)
-    if: >-
-      github.repository == 'dlnraja/com.tuya.zigbee' &&
-      ((github.event_name == 'schedule' && startsWith(github.event.schedule, '49 ')) ||
-       (github.event_name == 'workflow_dispatch' && (inputs.which == 'all' || inputs.which == 'labs')))
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    steps:
-      - name: 📥 Checkout (scripts only)
-        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
-        with:
-          sparse-checkout: scripts/digest
-          persist-credentials: false
-      - name: 📦 Setup Node.js
-        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
-        with:
-          node-version: '22'
-      - name: 🕗 Paris-time guard
-        id: tz
-        run: node scripts/digest/tz-guard.js --schedule="${{ github.event.schedule }}" --paris-hour=8
-      - name: 🎲 Start jitter (0–120 s, scheduled runs only)
-        if: github.event_name == 'schedule' && steps.tz.outputs.run == 'true'
-        run: sleep $((RANDOM % 121))
-      - name: 🧪 Labs digest
-        if: steps.tz.outputs.run == 'true'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          LABS_REPOS: dlnraja/ascendos,dlnraja/pulse-automix
-        run: node scripts/digest/labs-digest.js
 
   forum:
     name: 💬 Forum watch (6 Tuya threads, read-only)
@@ -244,7 +205,7 @@ jobs:
     name: 🧭 Inspiration JohanBendz + own repo + git history (read-only)
     if: >-
       github.repository == 'dlnraja/com.tuya.zigbee' &&
-      ((github.event_name == 'schedule' && startsWith(github.event.schedule, '41 ')) ||
+      ((github.event_name == 'schedule' && startsWith(github.event.schedule, '23 ')) ||
        (github.event_name == 'workflow_dispatch' && (inputs.which == 'all' || inputs.which == 'inspiration')))
     runs-on: ubuntu-latest
     timeout-minutes: 20
@@ -267,7 +228,7 @@ jobs:
           node-version: '22'
       - name: 🕗 Paris-time guard
         id: tz
-        run: node scripts/digest/tz-guard.js --schedule="${{ github.event.schedule }}" --paris-hour=11
+        run: node scripts/digest/tz-guard.js --schedule="${{ github.event.schedule }}" --paris-hour=10
       - name: 🎲 Start jitter (0–120 s, scheduled runs only)
         if: github.event_name == 'schedule' && steps.tz.outputs.run == 'true'
         run: sleep $((RANDOM % 121))
@@ -337,99 +298,3 @@ jobs:
           path: digest-leads/
           if-no-files-found: ignore
           retention-days: 14
-
-  weekly:
-    name: 📅 Weekly summary + driver health score
-    if: >-
-      github.repository == 'dlnraja/com.tuya.zigbee' &&
-      ((github.event_name == 'schedule' && startsWith(github.event.schedule, '7 ')) ||
-       (github.event_name == 'workflow_dispatch' && inputs.which == 'weekly'))
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    steps:
-      - name: 📥 Checkout (scripts + driver manifests, read-only)
-        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
-        with:
-          sparse-checkout: |
-            scripts/digest
-            drivers
-            lib
-            data
-            .homeycompose/flow
-          persist-credentials: false
-      - name: 📦 Setup Node.js
-        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
-        with:
-          node-version: '22'
-      - name: 🕗 Paris-time guard
-        id: tz
-        run: node scripts/digest/tz-guard.js --schedule="${{ github.event.schedule }}" --paris-hour=9
-      - name: 📥 Week inputs (leads artifacts, diagnostics, quirk dataset — best-effort)
-        if: steps.tz.outputs.run == 'true'
-        continue-on-error: true
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          mkdir -p week-leads diag-report
-          for RID in $(gh run list -R "$GITHUB_REPOSITORY" -w daily-digest.yml -L 15 --created ">=$(date -u -d '7 days ago' +%F)" --json databaseId -q '.[].databaseId'); do
-            gh run download "$RID" -R "$GITHUB_REPOSITORY" -p 'digest-leads-*' -D "week-leads/$RID" >/dev/null 2>&1 || true
-          done
-          for wf in gmail-diagnostics.yml fetch-diags.yml; do
-            RID=$(gh run list -R "$GITHUB_REPOSITORY" -w "$wf" -s success -L 1 --json databaseId -q '.[0].databaseId' || true)
-            [ -n "$RID" ] && gh run download "$RID" -R "$GITHUB_REPOSITORY" -n sanitized-diagnostics-report -D diag-report && break
-          done
-          true
-      - name: ♻️ Restore firmware-quirk dataset
-        if: steps.tz.outputs.run == 'true'
-        uses: actions/cache/restore@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
-        with:
-          path: .quirks-db
-          key: quirks-db-weekly-${{ github.run_id }}
-          restore-keys: quirks-db-
-      - name: 📅 Weekly summary
-        if: steps.tz.outputs.run == 'true'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          WEEKLY_LEADS_DIR: week-leads
-          WEEKLY_DIAG_DIR: diag-report
-          QUIRKS_DB: .quirks-db/quirks.json
-        run: node scripts/digest/weekly.js
-
-  # P2802 — free weekday self-check: summarize sweep/CI/gate duplication into Daily digest #557
-  # when the script reports a change. Never commits; never publishes. Uses GITHUB_TOKEN only.
-  selfcheck:
-    name: 🩺 Free self-check → Daily digest #557
-    if: >-
-      github.repository == 'dlnraja/com.tuya.zigbee' &&
-      ((github.event_name == 'schedule' && startsWith(github.event.schedule, '5 1')) ||
-       (github.event_name == 'workflow_dispatch' && (inputs.which == 'selfcheck' || inputs.which == 'all')))
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    permissions:
-      contents: read
-      issues: write
-      actions: read
-    steps:
-      - name: Checkout
-        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
-        with:
-          fetch-depth: 1
-          sparse-checkout: |
-            scripts/digest
-            data/leads
-            data/progress
-          persist-credentials: false
-      - name: Setup Node
-        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
-        with:
-          node-version: '22'
-      - name: Paris-time guard
-        id: tz
-        run: node scripts/digest/tz-guard.js --schedule="${{ github.event.schedule }}" --paris-hour=12
-      - name: Self-check report (best-effort)
-        if: steps.tz.outputs.run == 'true' || github.event_name == 'workflow_dispatch'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          FORCE: ${{ inputs.force || false }}
-        run: node scripts/digest/self-check.js || echo "SELF_CHECK_SKIP"
-

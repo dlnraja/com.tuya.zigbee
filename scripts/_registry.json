@@ -3166,12 +3166,6 @@
    "lastModified": "2026-11-02"
   },
   {
-   "path": "scripts/digest/labs-digest.js",
-   "dir": "scripts",
-   "description": "scripts/digest/labs-digest.js — replaces the \"Labs digest\" Grok routine (AscendOS + Pulse).",
-   "lastModified": "2026-11-02"
-  },
-  {
    "path": "scripts/digest/leads-merge.js",
    "dir": "scripts",
    "description": "scripts/digest/leads-merge.js — merge digest-leads artifacts into the EXISTING market-couples",
@@ -3214,12 +3208,6 @@
    "lastModified": "2026-11-02"
   },
   {
-   "path": "scripts/digest/self-check.js",
-   "dir": "scripts",
-   "description": "Free weekday self-check → ONE section of the \"🤖 Daily digest\" tracking issue body.",
-   "lastModified": "2026-11-02"
-  },
-  {
    "path": "scripts/digest/triage.js",
    "dir": "scripts",
    "description": "scripts/digest/triage.js — auto-triage of a NEW issue (issues: opened), deterministic, no AI.",
@@ -3229,12 +3217,6 @@
    "path": "scripts/digest/tz-guard.js",
    "dir": "scripts",
    "description": "scripts/digest/tz-guard.js — keep Paris wall-clock times across DST with free cron.",
-   "lastModified": "2026-11-02"
-  },
-  {
-   "path": "scripts/digest/weekly.js",
-   "dir": "scripts",
-   "description": "scripts/digest/weekly.js — Monday summary on the tracking issue + per-driver health score.",
    "lastModified": "2026-11-02"
   },
   {
