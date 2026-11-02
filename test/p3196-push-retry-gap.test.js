@@ -12,7 +12,7 @@ describe('P3196 git-push-retry master gap', function () {
   this.timeout(20000);
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'p3196-'));
   after(() => fs.rmSync(tmp, { recursive: true, force: true }));
-  const sh = (c, cwd) => execSync(c, { cwd, stdio: 'pipe', env: { ...process.env, GIT_AUTHOR_NAME: 't', GIT_AUTHOR_EMAIL: 't@t', GIT_COMMITTER_NAME: 't', GIT_COMMITTER_EMAIL: 't@t' } }).toString();
+  const sh = (c, cwd) => execSync(c, { cwd, stdio: 'pipe', env: { ...Object.fromEntries(Object.entries(process.env).filter(([k]) => !/^GIT_/.test(k))), GIT_AUTHOR_NAME: 't', GIT_AUTHOR_EMAIL: 't@t', GIT_COMMITTER_NAME: 't', GIT_COMMITTER_EMAIL: 't@t' } }).toString();
   before(() => {
     sh('git init -q --bare remote.git && git init -q -b master work', tmp);
     const w = path.join(tmp, 'work');
@@ -21,7 +21,7 @@ describe('P3196 git-push-retry master gap', function () {
     // stub sleep: record the wait, then stop the script (a real run would wait and re-check)
     fs.writeFileSync(path.join(tmp, 'bin', 'sleep'), `#!/bin/sh\necho "$1" > ${tmp}/slept\nkill $PPID\n`, { mode: 0o755 });
   });
-  const run = (branch) => spawnSync('bash', [SCRIPT, '--branch', branch, '--attempts', '1'], { cwd: path.join(tmp, 'work'), env: { ...process.env, GITHUB_ACTIONS: '', PUSH_RETRY_MIN_GAP_MIN: '15', PATH: `${tmp}/bin:${process.env.PATH}` } });
+  const run = (branch) => spawnSync('bash', [SCRIPT, '--branch', branch, '--attempts', '1'], { cwd: path.join(tmp, 'work'), env: { ...Object.fromEntries(Object.entries(process.env).filter(([k]) => !/^GIT_/.test(k))), GITHUB_ACTIONS: '', PUSH_RETRY_MIN_GAP_MIN: '15', PATH: `${tmp}/bin:${process.env.PATH}` } });
   it('waits (no push) when master tip is < 15 min old', () => {
     sh('git checkout -q master', path.join(tmp, 'work'));
     run('master');

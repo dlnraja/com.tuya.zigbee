@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 'use strict';
+// P3243b: a git hook exports GIT_DIR/GIT_WORK_TREE/GIT_INDEX_FILE; tests that `git init` a fixture would then
+// write into the REAL repo (core.bare=true, core.worktree=<other tree>, fixture commits on a live branch).
+for (const k of Object.keys(process.env)) { if (/^GIT_(DIR|WORK_TREE|INDEX_FILE|PREFIX|COMMON_DIR|OBJECT_DIRECTORY|ALTERNATE_OBJECT_DIRECTORIES|NAMESPACE|CEILING_DIRECTORIES|QUARANTINE_PATH|PUSH_OPTION_.*)$/.test(k)) delete process.env[k]; }
 // WHY(P3243, 02/11/2026 Paris): two heap/timing tests (P2914 memory leak, P3065 flow-storm soak) go red
 // now and then on a busy runner while green alone (seen 02/11 20:48 on P3236 and P3230). Before this, one
 // heap flake made the whole Node 22 run red and hid real verdicts. Rule: the full suite runs ONCE with
