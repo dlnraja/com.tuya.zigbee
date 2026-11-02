@@ -1,0 +1,6 @@
+{
+  "_doc": "P3221: UUIDs harvested as diag codes that are NOT Homey diag reports. Stored as sha256(lowercase uuid).slice(0,16), no raw id in the repo. Harvest marks them nonDiag (not found:false) and skips the Athom fetch; homey-app-diag index drops them.",
+  "entries": [
+    { "sha16": "839264d91a40a23b", "short": "c6d8ee46", "reason": "forum post id, not a diag (Maros, topic 140352 #2261)", "source": "user 2026-11-02" }
+  ]
+}

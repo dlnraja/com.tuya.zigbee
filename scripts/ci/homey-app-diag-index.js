@@ -20,12 +20,16 @@ function run(dir, now = new Date()) {
   const idxPath = path.join(dir, 'index.json');
   let prev = [];
   try { prev = JSON.parse(fs.readFileSync(idxPath, 'utf8')).entries || []; } catch { prev = []; }
-  const byUuid = new Map(prev.filter((e) => e && UUID.test(String(e.uuid))).map((e) => [e.uuid, e]));
+  // P3221: drop ids known not to be diags (forum post ids) from the index and the folder.
+  let nonDiagInfo = () => null;
+  try { ({ nonDiagInfo } = require('../../tools/ci/non-diag-ids')); } catch { /* optional */ }
+  const byUuid = new Map(prev.filter((e) => e && UUID.test(String(e.uuid)) && !nonDiagInfo(e.uuid)).map((e) => [e.uuid, e]));
 
   const groups = new Map();
   for (const f of fs.readdirSync(dir)) {
     const m = /^([0-9a-f-]{36})(\.sanitized)?\.json$/.exec(f);
     if (!m || !UUID.test(m[1])) {continue;}
+    if (nonDiagInfo(m[1])) { fs.rmSync(path.join(dir, f), { force: true }); continue; }
     const p = path.join(dir, f);
     const g = groups.get(m[1]) || { files: [], mtime: 0 };
     g.files.push(p); g.mtime = Math.max(g.mtime, fs.statSync(p).mtimeMs);
