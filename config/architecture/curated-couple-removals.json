@@ -1276,6 +1276,37 @@
       ],
       "why": "P3204 GH#598 (2026-11-02): 'Unable to connect' at pairing. The node (interview GH#598, forum 140352 #2263) serves only 0, 4, 5, 0xED00, 0xEF00; lcdtemphumidsensor binds 1/1026/1029 at pairing. Owner is now lcdtemphumidsensor_3 (bindings 4/5/61184, DP1 temp/10, DP2 humidity, DP4 battery % = Z2M TS0601_temperature_humidity_sensor_4). One couple, one driver.",
       "source": "GH#598 interview + z2m tuya.ts + Homey SDK zigbee docs (bindings)"
+    },
+    {
+      "driver": "climate_sensor",
+      "mfr": [
+        "_tze200_0dvm9mva",
+        "_TZE200_0dvm9mva",
+        "_TZE200_0DVM9MVA",
+        "_tze200_0DVM9MVA",
+        "_tze284_0dvm9mva",
+        "_TZE284_0dvm9mva",
+        "_TZE284_0DVM9MVA",
+        "_tze284_0DVM9MVA",
+        "_tze200_9m4kmbfu",
+        "_TZE200_9m4kmbfu",
+        "_TZE200_9M4KMBFU",
+        "_tze200_9M4KMBFU",
+        "_tze284_9m4kmbfu",
+        "_TZE284_9m4kmbfu",
+        "_TZE284_9M4KMBFU",
+        "_tze284_9M4KMBFU",
+        "_tze200_3yp57tby",
+        "_TZE200_3yp57tby",
+        "_TZE200_3YP57TBY",
+        "_tze200_3YP57TBY",
+        "_tze284_3yp57tby",
+        "_TZE284_3yp57tby",
+        "_TZE284_3YP57TBY",
+        "_tze284_3YP57TBY"
+      ],
+      "why": "P3212 (2026-11-02): Saswell SEA801 TRV (zhc saswell.ts) was on climate_sensor, which has no setpoint/valve control. Owner is now radiator_valve with the 'saswell' DP profile (101 state, 102 local temp/10, 103 setpoint/10, 104 valve, 105 battery low). Canonical forms kept on radiator_valve; case duplicates dropped. One couple, one driver.",
+      "source": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/saswell.ts (SEA801 fingerprints)"
     }
   ]
 }
