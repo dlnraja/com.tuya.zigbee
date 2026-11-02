@@ -23,3 +23,9 @@ Homey matches the manifest strings exactly, before any runtime normalisation. Pi
 - otherwise the prefix-family convention: `_TZ3000_` / `_TZE200_` / `_TZE204_` / `_TZE284_` / `_TYZB01_` keep an upper-case prefix and a lower-case 8-char suffix; follow the majority across Z2M, ZHA quirks, Johan's app and other Homey apps;
 - add at most ONE alternate when sources disagree, with its source. Never generate case cross-products (app.json size, memory, Athom combo budget).
 - The survival check only REPORTS case-suspect couples; it never adds variants.
+
+## Never depend on user answers (t784u, global)
+
+- Always search, infer, cover and fix proactively from what is already available: the diag text, the interview, the Homey model and app version, the time window, other mails/posts from the same reporter, Z2M / ZHA / Johan's app, and the version history.
+- A user reply is a bonus. A reply may ask for extra info only as OPTIONAL ("if you can, …"), never as a precondition for the fix ("send me X and I'll fix it", "without your interview I can't…").
+- `.github/scripts/reply-quality-gate.js` flags `DEPENDS-ON-USER` for replies that make the fix wait on the user.

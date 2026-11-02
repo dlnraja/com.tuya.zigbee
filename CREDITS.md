@@ -536,3 +536,4 @@ A heartfelt thank you to:
 ## Dynamic adaptation (P3207, 2026-11)
 
 - oletorv (GH#598): `_TZE284_9ern5sfh` / TS0601 "Unable to connect" — bindings on clusters the node lacks; led to runtime, descriptor-gated bindings for all drivers.
+- P3213: diag Log ID backfill + metering silence watchdog — thanks to the reporters of Homey diags fb5be1fe, 8742e6bd, c05db40d (Peter), af98752d, 6eabd9c4 (Michaelp); refs Z2M/ZHA metering & Tuya dataQuery.

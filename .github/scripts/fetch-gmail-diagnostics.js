@@ -607,7 +607,11 @@ async function processFetchedEmails(emails,fetchOptions,{mode:successMode,window
   const pseudoMap=new Map(); // username -> [{type, subj, date, fps}]
 
   for(const em of emails){
-    if(done.has(em.id)){skippedAlreadyProcessed++;continue}
+    if(done.has(em.id)){skippedAlreadyProcessed++;
+      // P3213: mails processed before P3208 never reached logIndex, so their Log IDs stayed found:false forever.
+      // Backfill a minimal sanitized entry from the already-fetched body (no AI, no re-triage).
+      try{const bf=backfillLogIndexEntry(em.body);if(bf){st.logIndex=st.logIndex||{};if(!st.logIndex[bf.id])st.logIndex[bf.id]={...bf.entry,date:em.date||null,backfilled:true};}}catch{}
+      continue}
     const type=classify(em);
     const d=parse(em.body);
     const xref=crossRef(d,idx);
@@ -892,4 +896,15 @@ if(process.env.GITHUB_STEP_SUMMARY){
     fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,sm);
   }
 }
-main().catch(e=>{console.error(e.message);process.exit(1)});
+if(process.env.FGD_NO_MAIN!=="1")main().catch(e=>{console.error(e.message);process.exit(1)});
+
+// P3213: minimal Log ID index entry from a Homey "Diagnostics Report" body (case-insensitive UUID, CRLF-safe).
+function backfillLogIndexEntry(body){
+  const t=String(body||'');const m=t.match(/Log ID:\s*([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})/i);if(!m)return null;
+  const g=(re)=>{const x=t.match(re);return x?x[1].trim():null;};
+  const msg=g(/User Message:\s*\r?\n\s*([^\r\n]{0,300})/i);
+  return {id:m[1].toLowerCase(),entry:{appVersion:g(/App Version\s*\r?\n\s*\r?\n?\s*(v?[0-9.]+)/i),homeyVersion:g(/Homey Version\s*\r?\n\s*\r?\n?\s*(v?[0-9.]+)/i),
+    hasUserMessage:!!msg,crashed:/The app has crashed|heap out of memory/i.test(t),
+    driversInLog:[...new Set([...t.matchAll(/\[Driver:([a-z0-9_]+)\]/gi)].map(x=>x[1]))].slice(0,20)}};
+}
+module.exports=Object.assign(module.exports||{},{backfillLogIndexEntry});
