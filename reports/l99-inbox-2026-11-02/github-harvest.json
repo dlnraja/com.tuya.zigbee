@@ -1,0 +1,174 @@
+{
+  "harvestedAt": "2026-11-02T11:45:55.044Z",
+  "repo": "dlnraja/com.tuya.zigbee",
+  "auth": "token",
+  "error": null,
+  "issues": [
+    {
+      "number": 608,
+      "title": "[crash] 2ebcc432d4 (review)",
+      "labels": [
+        "crash-triage"
+      ],
+      "updatedAt": "2026-11-02T10:57:02Z",
+      "user": "github-actions[bot]",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/608"
+    },
+    {
+      "number": 607,
+      "title": "[crash] 3a1e4c5f70 (review)",
+      "labels": [
+        "crash-triage"
+      ],
+      "updatedAt": "2026-11-02T10:57:00Z",
+      "user": "github-actions[bot]",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/607"
+    },
+    {
+      "number": 606,
+      "title": "[crash] c3ef959535 (review)",
+      "labels": [
+        "crash-triage"
+      ],
+      "updatedAt": "2026-11-02T10:56:58Z",
+      "user": "github-actions[bot]",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/606"
+    },
+    {
+      "number": 605,
+      "title": "[crash] 8f9742a93b (bounded-cache)",
+      "labels": [
+        "crash-triage"
+      ],
+      "updatedAt": "2026-11-02T10:56:57Z",
+      "user": "github-actions[bot]",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/605"
+    },
+    {
+      "number": 604,
+      "title": "[crash] 759eb18002 (bounded-cache)",
+      "labels": [
+        "crash-triage"
+      ],
+      "updatedAt": "2026-11-02T10:56:55Z",
+      "user": "github-actions[bot]",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/604"
+    },
+    {
+      "number": 603,
+      "title": "[crash] 2448c80cc1 (review)",
+      "labels": [
+        "crash-triage"
+      ],
+      "updatedAt": "2026-11-02T10:17:50Z",
+      "user": "github-actions[bot]",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/603"
+    },
+    {
+      "number": 602,
+      "title": "[crash] ea96ae0b46 (review)",
+      "labels": [
+        "crash-triage"
+      ],
+      "updatedAt": "2026-11-02T10:17:49Z",
+      "user": "github-actions[bot]",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/602"
+    },
+    {
+      "number": 601,
+      "title": "[crash] cc18153aa7 (review)",
+      "labels": [
+        "crash-triage"
+      ],
+      "updatedAt": "2026-11-02T10:17:47Z",
+      "user": "github-actions[bot]",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/601"
+    },
+    {
+      "number": 600,
+      "title": "[crash] 5d47b55d95 (review)",
+      "labels": [
+        "crash-triage"
+      ],
+      "updatedAt": "2026-11-02T10:17:45Z",
+      "user": "github-actions[bot]",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/600"
+    },
+    {
+      "number": 599,
+      "title": "[crash] a8994dc2f3 (review)",
+      "labels": [
+        "crash-triage"
+      ],
+      "updatedAt": "2026-11-02T10:17:44Z",
+      "user": "github-actions[bot]",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/599"
+    },
+    {
+      "number": 598,
+      "title": "Bug report - [_TZE284_9ern5sfh - TS0601] Temp & Hum Sensor with LCD not pairing correctly",
+      "labels": [
+        "bug"
+      ],
+      "updatedAt": "2026-11-02T08:46:39Z",
+      "user": "oletorv",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/598"
+    },
+    {
+      "number": 557,
+      "title": "🤖 Daily digest",
+      "labels": [
+        "bot-digest"
+      ],
+      "updatedAt": "2026-11-02T08:19:20Z",
+      "user": "dlnraja",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/557"
+    },
+    {
+      "number": 581,
+      "title": "[climate_sensor] Bug:",
+      "labels": [],
+      "updatedAt": "2026-11-02T07:21:51Z",
+      "user": "hogseto",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/581"
+    },
+    {
+      "number": 584,
+      "title": "Bug report - [Short description_TZE284_awepdiwi / TS0601 soil sensor still \"Unknown Zigbee Device\" on v9.0.1599 + app shows no drivers]",
+      "labels": [
+        "bug"
+      ],
+      "updatedAt": "2026-11-02T07:21:50Z",
+      "user": "stephanmaastricht",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/584"
+    },
+    {
+      "number": 550,
+      "title": "Bug report - [Short description]",
+      "labels": [
+        "bug",
+        "reopened-by-user"
+      ],
+      "updatedAt": "2026-11-02T02:40:38Z",
+      "user": "HiepSVG",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/550"
+    },
+    {
+      "number": 559,
+      "title": "Smartplug",
+      "labels": [
+        "enhancement",
+        "device-request",
+        "reopened-by-user",
+        "auto-triage",
+        "fingerprint-supported"
+      ],
+      "updatedAt": "2026-11-02T02:40:37Z",
+      "user": "Lalla80111",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/559"
+    }
+  ],
+  "prs": [],
+  "openIssueCount": 16,
+  "openPrCount": 0
+}
