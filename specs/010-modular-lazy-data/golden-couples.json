@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-01T14:51:38.622Z",
+ "generated": "2026-11-02T07:55:27.624Z",
  "drivers": 418,
  "snapshot": {
   "air_conditioner_aetz01": {
@@ -1041,9 +1041,9 @@
    "pidSha": "261617b7dd61d124"
   },
   "lcdtemphumidsensor": {
-   "mfr": 28,
+   "mfr": 25,
    "pid": 6,
-   "mfrSha": "e19285fed76bef62",
+   "mfrSha": "baf58c5a0d6d513d",
    "pidSha": "9be78874133bac72"
   },
   "lcdtemphumidsensor_2": {
@@ -1053,9 +1053,9 @@
    "pidSha": "a858b6b4f28cd785"
   },
   "lcdtemphumidsensor_3": {
-   "mfr": 10,
+   "mfr": 13,
    "pid": 2,
-   "mfrSha": "5200eca24a78d451",
+   "mfrSha": "47afb2fc26b5c4bb",
    "pidSha": "eb0037885ed202bb"
   },
   "lcdtemphumidsensor_plug_energy": {
