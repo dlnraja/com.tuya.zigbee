@@ -1,37 +1,13 @@
 {
-  "timestamp": "2026-11-02T10:56:43.513Z",
+  "timestamp": "2026-11-02T12:57:10.436Z",
   "gate": "align-mfs-db-intelligent",
   "apply": false,
   "check": true,
-  "changeCount": 3,
+  "changeCount": 0,
   "skippedCount": 83,
   "highSeverityCount": 0,
-  "byAction": {
-    "compose_exclusive": 3
-  },
-  "changes": [
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TZE284_9ern5sfh",
-      "from": "lcdtemphumidsensor",
-      "to": "lcdtemphumidsensor_3"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_tze200_9ern5sfh",
-      "from": "lcdtemphumidsensor",
-      "to": "lcdtemphumidsensor_3"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_tze204_9ern5sfh",
-      "from": "lcdtemphumidsensor",
-      "to": "lcdtemphumidsensor_3"
-    }
-  ],
+  "byAction": {},
+  "changes": [],
   "skipped": [
     {
       "reason": "registry_driver_missing",
