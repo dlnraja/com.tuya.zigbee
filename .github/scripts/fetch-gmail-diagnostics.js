@@ -659,7 +659,10 @@ async function processFetchedEmails(emails,fetchOptions,{mode:successMode,window
     // P3208: Athom has no API that returns a manual diag by its Log ID; the Homey->developer mail IS the
     // report. Keep a bounded, sanitized Log ID index in the cached state so inbox-diag-uuid-harvest can
     // resolve user diag codes (forum "diagnostic code ...") instead of marking them found:false forever.
-    if(entry.logId){st.logIndex=st.logIndex||{};st.logIndex[String(entry.logId).toLowerCase()]={date:entry.date||null,
+    // P3216b: entry is passed through privacy.redactObject, which aliases every uuid (incl. logId) -> key the
+    // index on the raw reader/enricher id instead, else the index only ever holds [REDACTED_UUID:..] keys.
+    const rawLogId=String(d.enriched?.logId||em.diagLogId||'').toLowerCase();
+    if(rawLogId){st.logIndex=st.logIndex||{};st.logIndex[rawLogId]={date:entry.date||null,
       appVersion:entry.appVersion||null,homeyVersion:entry.homeyVersion||null,hasUserMessage:!!entry.userMessage,
       couples:(entry.couples||[]).slice(0,10),driversInLog:(entry.driversInLog||[]).slice(0,20),signals:(entry.signals||[]).slice(0,20),
       errs:(entry.errs||[]).slice(0,10),logHighlights:(entry.logHighlights||[]).slice(0,15).map(h=>String(h).slice(0,300)),
