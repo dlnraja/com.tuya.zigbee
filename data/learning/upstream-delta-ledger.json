@@ -193,6 +193,22 @@
    "ref": "2026.11.0b0",
    "title": "2026.11.0b0",
    "url": "https://github.com/home-assistant/core/releases/tag/2026.11.0b0"
+  },
+  {
+   "at": "2026-11-02T13:27:08.106Z",
+   "source": "johan-forks",
+   "kind": "fork-push",
+   "ref": "PRo25/com.tuya.zigbee",
+   "title": "To add support to additional device manufacturers of switch modules and presence sensors",
+   "url": "https://github.com/PRo25/com.tuya.zigbee"
+  },
+  {
+   "at": "2026-11-02T13:27:08.106Z",
+   "source": "ha-core-rel",
+   "kind": "release",
+   "ref": "2026.11.0b2",
+   "title": "2026.11.0b2",
+   "url": "https://github.com/home-assistant/core/releases/tag/2026.11.0b2"
   }
  ]
 }

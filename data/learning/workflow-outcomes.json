@@ -1,6 +1,6 @@
 {
  "version": 1,
- "watermark": "2026-11-01T11:48:41.889Z",
+ "watermark": "2026-11-02T13:27:08.003Z",
  "seen": [
   "self-maintain:2026-10-25",
   "ci-fail:40227923450:1",
@@ -201,15 +201,24 @@
   "ci-fail:41231741272:1",
   "ci-fail:41230993355:1",
   "ci-fail:41230987781:1",
-  "ci-fail:41227184890:1"
+  "ci-fail:41227184890:1",
+  "watchdog-run:2026-11-01",
+  "automation-loop:2026-11-01",
+  "self-maintain:2026-11-02",
+  "ci-fail:41447782455:1",
+  "ci-fail:41431628509:1",
+  "ci-fail:41411812359:1",
+  "ci-fail:41407782827:1",
+  "ci-fail:41402776968:1",
+  "ci-fail:41399984982:1"
  ],
  "workflows": {
   "self-maintain": {
-   "ok": 8,
+   "ok": 9,
    "fail": 0,
    "transient": 0,
    "warn": 0,
-   "okStreak": 8,
+   "okStreak": 9,
    "failStreak": 0,
    "last": [
     "ok",
@@ -219,9 +228,10 @@
     "ok",
     "ok",
     "ok",
+    "ok",
     "ok"
    ],
-   "lastAt": "2026-11-01T11:48:09.863Z",
+   "lastAt": "2026-11-02T13:26:58.074Z",
    "hint": "normal"
   },
   "ci-self-check.yml": {
@@ -265,11 +275,11 @@
   },
   "node22-tests.yml": {
    "ok": 0,
-   "fail": 76,
+   "fail": 78,
    "transient": 0,
    "warn": 6,
    "okStreak": 0,
-   "failStreak": 76,
+   "failStreak": 78,
    "last": [
     "fail",
     "fail",
@@ -282,7 +292,7 @@
     "fail",
     "fail"
    ],
-   "lastAt": "2026-11-01T11:48:41.889Z",
+   "lastAt": "2026-11-02T13:27:05.510Z",
    "hint": "backoff"
   },
   "syntax-check.yml": {
@@ -388,12 +398,13 @@
   },
   "auto-publish-on-push.yml": {
    "ok": 0,
-   "fail": 6,
+   "fail": 7,
    "transient": 0,
    "warn": 0,
    "okStreak": 0,
-   "failStreak": 6,
+   "failStreak": 7,
    "last": [
+    "fail",
     "fail",
     "fail",
     "fail",
@@ -401,17 +412,18 @@
     "fail",
     "fail"
    ],
-   "lastAt": "2026-10-25T19:52:19.964Z",
+   "lastAt": "2026-11-02T13:27:08.003Z",
    "hint": "backoff"
   },
   "workflow-watchdog": {
    "ok": 0,
    "fail": 0,
    "transient": 0,
-   "warn": 7,
+   "warn": 8,
    "okStreak": 0,
    "failStreak": 0,
    "last": [
+    "warn",
     "warn",
     "warn",
     "warn",
@@ -420,15 +432,15 @@
     "warn",
     "warn"
    ],
-   "lastAt": "2026-10-31T10:55:09.485Z",
+   "lastAt": "2026-11-01T11:49:54.547Z",
    "hint": "normal"
   },
   "automation-loop": {
-   "ok": 7,
+   "ok": 8,
    "fail": 0,
    "transient": 0,
    "warn": 0,
-   "okStreak": 7,
+   "okStreak": 8,
    "failStreak": 0,
    "last": [
     "ok",
@@ -437,9 +449,10 @@
     "ok",
     "ok",
     "ok",
+    "ok",
     "ok"
    ],
-   "lastAt": "2026-10-31T10:55:16.344Z",
+   "lastAt": "2026-11-01T11:50:06.843Z",
    "hint": "normal"
   },
   "publish-stable.yml": {
@@ -517,6 +530,45 @@
     "fail"
    ],
    "lastAt": "2026-11-01T11:48:19.232Z",
+   "hint": "normal"
+  },
+  "kb-refresh.yml": {
+   "ok": 0,
+   "fail": 1,
+   "transient": 0,
+   "warn": 0,
+   "okStreak": 0,
+   "failStreak": 1,
+   "last": [
+    "fail"
+   ],
+   "lastAt": "2026-11-02T13:27:01.672Z",
+   "hint": "normal"
+  },
+  "fetch-diags.yml": {
+   "ok": 0,
+   "fail": 0,
+   "transient": 1,
+   "warn": 0,
+   "okStreak": 0,
+   "failStreak": 0,
+   "last": [
+    "transient"
+   ],
+   "lastAt": "2026-11-02T13:27:02.843Z",
+   "hint": "normal"
+  },
+  "homey-app-validate.yml": {
+   "ok": 0,
+   "fail": 1,
+   "transient": 0,
+   "warn": 0,
+   "okStreak": 0,
+   "failStreak": 1,
+   "last": [
+    "fail"
+   ],
+   "lastAt": "2026-11-02T13:27:06.758Z",
    "hint": "normal"
   }
  }
