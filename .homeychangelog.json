@@ -4312,6 +4312,10 @@
   "5.12.0": {
     "en": "v5.12.0: stable-v5 batch sync (drivers, FPs, flows, manifest) from master v9.0.240–v9.0.260."
   },
+  "1.0.227": {
+    "en": "Fixed: climate sensors.",
+    "fr": "Corrigé : capteurs d'ambiance."
+  },
   "1.0.226": {
     "en": "Fixed: presence radars & pairing and device recognition (MTG075).",
     "fr": "Corrigé : radars de présence & appairage et reconnaissance des appareils (MTG075)."
