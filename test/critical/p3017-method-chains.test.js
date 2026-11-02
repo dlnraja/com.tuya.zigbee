@@ -3,7 +3,10 @@
 // P3017 — ordered method chains (native ZCL → EF00 DP → private → alt EP → poll → dataQuery →
 // derived) with failover on unsupported/timeout, remembered winner, bounded backoff re-probe,
 // per-device memory, never removing capabilities; coverage of the 20 methods per family.
-const { describe, it } = require('node:test');
+const { describe, it, before } = require('node:test');
+// P3226: these assertions assume nominal memory; a MemoryBudget.shared() started by an
+// earlier suite samples the whole test-runner heap (>75 MB → critical, factor 4).
+before(() => { require('../../lib/memory/MemoryBudget')._resetShared(); });
 const assert = require('node:assert');
 
 const MC = require('../../lib/zigbee/MethodChain');

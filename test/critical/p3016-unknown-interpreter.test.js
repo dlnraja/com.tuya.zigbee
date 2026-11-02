@@ -3,7 +3,10 @@
 // P3016 — handle every unknown command differently: interpret (exact ZCL/Z2M/ZHA decoders first,
 // per-family next, heuristics last), learn per device (bounded, persisted), expose Flow cards,
 // never crash, export diag without personal data. See docs/knowledge/KB/UNKNOWN_COMMANDS.md.
-const { describe, it, beforeEach } = require('node:test');
+const { describe, it, before, beforeEach } = require('node:test');
+// P3226: these assertions assume nominal memory; a MemoryBudget.shared() started by an
+// earlier suite samples the whole test-runner heap (>75 MB → critical, factor 4).
+before(() => { require('../../lib/memory/MemoryBudget')._resetShared(); });
 const assert = require('node:assert');
 const fs = require('fs');
 const path = require('path');
