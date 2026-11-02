@@ -537,3 +537,4 @@ A heartfelt thank you to:
 
 - oletorv (GH#598): `_TZE284_9ern5sfh` / TS0601 "Unable to connect" — bindings on clusters the node lacks; led to runtime, descriptor-gated bindings for all drivers.
 - P3213: diag Log ID backfill + metering silence watchdog — thanks to the reporters of Homey diags fb5be1fe, 8742e6bd, c05db40d (Peter), af98752d, 6eabd9c4 (Michaelp); refs Z2M/ZHA metering & Tuya dataQuery.
+- P3212 (2026-11-02): Saswell SEA801 TRV DP profile + fingerprints — Koenkk/zigbee-herdsman-converters saswell.ts

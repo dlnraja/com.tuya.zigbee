@@ -300,6 +300,114 @@
         "git_history": "P2823 moved climate_sensor->lcdtemphumidsensor; P2869",
         "sibling_pids": "_TZE200_9ern5sfh|TS0601"
       }
+    },
+    {
+      "couple": "_TZE200_0dvm9mva|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3212",
+      "verdict": "moved to radiator_valve (saswell DP profile); TRV not a climate sensor",
+      "sources": {
+        "z2m": "z2m:SEA801 saswell.ts",
+        "zha": "not checked",
+        "deconz": "not checked",
+        "blakadder": "not checked",
+        "hubitat": "not checked",
+        "johan": "not checked",
+        "forum": "not checked",
+        "diags": "none",
+        "git_history": "climate_sensor bulk import",
+        "sibling_pids": "_TZE200_0dvm9mva|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE284_0dvm9mva|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3212",
+      "verdict": "moved to radiator_valve (saswell DP profile); TRV not a climate sensor",
+      "sources": {
+        "z2m": "z2m:SEA801 saswell.ts",
+        "zha": "not checked",
+        "deconz": "not checked",
+        "blakadder": "not checked",
+        "hubitat": "not checked",
+        "johan": "not checked",
+        "forum": "not checked",
+        "diags": "none",
+        "git_history": "climate_sensor bulk import",
+        "sibling_pids": "_TZE284_0dvm9mva|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE200_9m4kmbfu|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3212",
+      "verdict": "moved to radiator_valve (saswell DP profile); TRV not a climate sensor",
+      "sources": {
+        "z2m": "z2m:SEA801 saswell.ts",
+        "zha": "not checked",
+        "deconz": "not checked",
+        "blakadder": "not checked",
+        "hubitat": "not checked",
+        "johan": "not checked",
+        "forum": "not checked",
+        "diags": "none",
+        "git_history": "climate_sensor bulk import",
+        "sibling_pids": "_TZE200_9m4kmbfu|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE284_9m4kmbfu|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3212",
+      "verdict": "moved to radiator_valve (saswell DP profile); TRV not a climate sensor",
+      "sources": {
+        "z2m": "z2m:SEA801 saswell.ts",
+        "zha": "not checked",
+        "deconz": "not checked",
+        "blakadder": "not checked",
+        "hubitat": "not checked",
+        "johan": "not checked",
+        "forum": "not checked",
+        "diags": "none",
+        "git_history": "climate_sensor bulk import",
+        "sibling_pids": "_TZE284_9m4kmbfu|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE200_3yp57tby|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3212",
+      "verdict": "moved to radiator_valve (saswell DP profile); TRV not a climate sensor",
+      "sources": {
+        "z2m": "z2m:SEA801 saswell.ts",
+        "zha": "not checked",
+        "deconz": "not checked",
+        "blakadder": "not checked",
+        "hubitat": "not checked",
+        "johan": "not checked",
+        "forum": "not checked",
+        "diags": "none",
+        "git_history": "climate_sensor bulk import",
+        "sibling_pids": "_TZE200_3yp57tby|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE284_3yp57tby|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3212",
+      "verdict": "moved to radiator_valve (saswell DP profile); TRV not a climate sensor",
+      "sources": {
+        "z2m": "z2m:SEA801 saswell.ts",
+        "zha": "not checked",
+        "deconz": "not checked",
+        "blakadder": "not checked",
+        "hubitat": "not checked",
+        "johan": "not checked",
+        "forum": "not checked",
+        "diags": "none",
+        "git_history": "climate_sensor bulk import",
+        "sibling_pids": "_TZE284_3yp57tby|TS0601"
+      }
     }
   ]
 }
