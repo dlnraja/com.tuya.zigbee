@@ -199,7 +199,11 @@ function projectUploadManifestBytes(file) {
         const { ids } = fs.existsSync(hf) ? hr.effectiveHoldIds(JSON.parse(fs.readFileSync(hf, 'utf8')), process.env.PUBLISH_HOLD_RELEASE) : { ids: new Set() };
         const m = JSON.parse(fs.readFileSync(tmp, 'utf8'));
         const r = hr.foldContinuations(m, require('../../lib/drivers/DriverContinuations').load(ROOT), ids);
-        if (r.folded) { fs.writeFileSync(tmp, JSON.stringify(m)); splits = r.splits; }
+        // P3233: a held continuation (already folded above) does not upload its driver-only flow cards either,
+        // as prepare-publish. Other held drivers stay in the projection (conservative, unchanged).
+        const reg = require('../../lib/drivers/DriverContinuations').load(ROOT);
+        const dropped = hr.dropHeld(m, new Set([...ids].filter((id) => reg.isContinuation(id))));
+        if (r.folded || dropped.drivers || dropped.cards) { fs.writeFileSync(tmp, JSON.stringify(m)); splits = r.splits; }
       } catch (_) { /* registry missing: plain projection */ }
       require('../maintenance/compact-zigbee-identifiers.cjs').compactManifestFile(tmp);
       if (splits.length) {

@@ -1,0 +1,70 @@
+[
+  {
+    "id": "reverse",
+    "type": "radio",
+    "label": {
+      "en": "Motor moves in reverse direction",
+      "fr": "Le moteur tourne en sens inverse",
+      "nl": "Motor beweegt in omgekeerde richting"
+    },
+    "value": "0",
+    "values": [
+      {
+        "id": "0",
+        "label": {
+          "en": "Off",
+          "nl": "Uit"
+        }
+      },
+      {
+        "id": "1",
+        "label": {
+          "en": "On",
+          "nl": "Aan"
+        }
+      }
+    ]
+  },
+  {
+    "id": "max_open_percentage",
+    "type": "number",
+    "label": {
+      "en": "Maximum open percentage",
+      "fr": "Pourcentage d'ouverture maximal",
+      "nl": "Maximale open percentage"
+    },
+    "hint": {
+      "en": "The maximum percentage of the curtain that can be opened. This is used to prevent the window from being opened too far.",
+      "nl": "Het maximale percentage van het raam dat geopend kan worden. Dit wordt gebruikt om te voorkomen dat het gordijn te ver open gaat."
+    },
+    "value": 100,
+    "min": 0,
+    "max": 100
+  },
+  {
+    "id": "favorite_position",
+    "type": "number",
+    "label": {
+      "en": "Favorite position (%)",
+      "fr": "Position favorite (%)",
+      "nl": "Favoriete positie (%)",
+      "de": "Lieblingsposition (%)"
+    },
+    "value": 50,
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "units": "%",
+    "hint": {
+      "en": "Target of the \"Go to favorite position\" flow action (like a TaHoma \"My\" position). 0 = closed, 100 = open.",
+      "fr": "Cible de l action de flow « Aller position favorite » (comme la position « My » de TaHoma). 0 = fermé, 100 = ouvert.",
+      "nl": "Doel van de flow-actie \"Ga naar favoriete positie\". 0 = dicht, 100 = open.",
+      "de": "Ziel der Flow-Aktion \"Zur Lieblingsposition\". 0 = geschlossen, 100 = offen."
+    }
+  },
+  {
+    "$extends": [
+      "zcl_cluster_layer"
+    ]
+  }
+]
