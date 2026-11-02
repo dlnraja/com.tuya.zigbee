@@ -2,6 +2,7 @@
   "why": "P3200: couples users reported as 'Unknown Zigbee device' although listed. tools/ci/reported-couples-publish-survival.js checks each one survives publish compaction. Exact wire strings from the report only.",
   "couples": [
     { "mfr": "_TZ3000_yupc0pb7", "pid": "TS0201", "source": "GH#581 hogseto 2026-10-28 (Device Finder + pairing)" },
-    { "mfr": "_TZE284_awepdiwi", "pid": "TS0601", "source": "GH#584 stephanmaastricht 2026-10-30, diag 8742e6bd; Z2M _TZE284_awepdiwi" }
+    { "mfr": "_TZE284_awepdiwi", "pid": "TS0601", "source": "GH#584 stephanmaastricht 2026-10-30, diag 8742e6bd; Z2M _TZE284_awepdiwi" },
+    { "mfr": "_TZE284_9ern5sfh", "pid": "TS0601", "source": "GH#598 2026-11-01 interview (Self-Hosted + Bridge, Unable to connect); in 9.0.1604 payload; P3204 owner lcdtemphumidsensor_3" }
   ]
 }
