@@ -1,0 +1,368 @@
+{
+  "triggers": [
+    {
+      "id": "climate_sensor_2_temperature_changed",
+      "highlight": true,
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature (°C)",
+            "fr": "Température (°C)"
+          },
+          "example": 22.5
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed ({temperature})",
+        "fr": "Température changée ({temperature})"
+      }
+    },
+    {
+      "id": "climate_sensor_2_humidity_changed",
+      "title": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée",
+        "nl": "Luchtvochtigheid gewijzigd",
+        "de": "Luftfeuchtigkeit geändert"
+      },
+      "tokens": [
+        {
+          "name": "humidity",
+          "type": "number",
+          "title": {
+            "en": "Humidity (%)",
+            "fr": "Humidité (%)"
+          },
+          "example": 55
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed ({humidity})",
+        "fr": "Humidité changée ({humidity})"
+      }
+    },
+    {
+      "id": "climate_sensor_2_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij bijna leeg",
+        "de": "Batterie schwach"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "de": "Batterie schwach",
+        "nl": "Batterij bijna leeg"
+      }
+    },
+    {
+      "id": "climate_sensor_2_temperature_alarm_high",
+      "title": {
+        "en": "Temperature too high",
+        "fr": "Température trop haute",
+        "nl": "Temperatuur te hoog",
+        "de": "Temperatur zu hoch"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature too high",
+        "fr": "Température trop haute",
+        "de": "Temperatur zu hoch",
+        "nl": "Temperatuur te hoog"
+      }
+    },
+    {
+      "id": "climate_sensor_2_temperature_alarm_low",
+      "title": {
+        "en": "Temperature too low",
+        "fr": "Température trop basse",
+        "nl": "Temperatuur te laag",
+        "de": "Temperatur zu niedrig"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature too low",
+        "fr": "Température trop basse",
+        "de": "Temperatur zu niedrig",
+        "nl": "Temperatuur te laag"
+      }
+    },
+    {
+      "id": "climate_sensor_2_humidity_alarm_high",
+      "title": {
+        "en": "Humidity too high",
+        "fr": "Humidité trop haute",
+        "nl": "Luchtvochtigheid te hoog",
+        "de": "Luftfeuchtigkeit zu hoch"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity too high",
+        "fr": "Humidité trop haute",
+        "de": "Luftfeuchtigkeit zu hoch",
+        "nl": "Luchtvochtigheid te hoog"
+      }
+    },
+    {
+      "id": "climate_sensor_2_humidity_alarm_low",
+      "title": {
+        "en": "Humidity too low",
+        "fr": "Humidité trop basse",
+        "nl": "Luchtvochtigheid te laag",
+        "de": "Luftfeuchtigkeit zu niedrig"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity too low",
+        "fr": "Humidité trop basse",
+        "de": "Luftfeuchtigkeit zu niedrig",
+        "nl": "Luchtvochtigheid te laag"
+      }
+    },
+    {
+      "id": "climate_sensor_2_temp_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
+      }
+    },
+    {
+      "id": "climate_sensor_2_battery_voltage_changed",
+      "title": {
+        "en": "Battery voltage changed",
+        "fr": "Tension batterie changée",
+        "nl": "Batterijspanning veranderd",
+        "de": "Batteriespannung geändert"
+      },
+      "hint": {
+        "en": "When the battery voltage changes (V). For Z2M-standard Zigbee devices like _TZ3000_fllyghyj (WSD500A) and similar.",
+        "fr": "Quand la tension batterie change (V). Pour les devices Zigbee standard Z2M comme _TZ3000_fllyghyj (WSD500A) et similaires."
+      },
+      "tokens": [
+        {
+          "name": "voltage",
+          "type": "number",
+          "title": {
+            "en": "Voltage (V)",
+            "fr": "Tension (V)",
+            "nl": "Spanning (V)",
+            "de": "Spannung (V)"
+          },
+          "example": 3
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery voltage changed ({voltage})",
+        "fr": "Tension batterie changée ({voltage})",
+        "nl": "Batterijspanning veranderd ({voltage})",
+        "de": "Batteriespannung geändert ({voltage})"
+      }
+    },
+    {
+      "id": "climate_sensor_2_scene_triggered",
+      "title": {
+        "en": "Scene triggered",
+        "fr": "Scène déclenchée",
+        "nl": "Scène geactiveerd",
+        "de": "Szene ausgelöst"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Scene triggered",
+        "fr": "Scène déclenchée",
+        "nl": "Scène geactiveerd",
+        "de": "Szene ausgelöst"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "climate_sensor_2_temperature_above",
+      "title": {
+        "en": "Temperature is above",
+        "fr": "Température supérieure à",
+        "nl": "Temperatuur is hoger dan",
+        "de": "Temperatur liegt über"
+      },
+      "args": [
+        {
+          "name": "temp",
+          "type": "number",
+          "min": -40,
+          "max": 80,
+          "step": 0.5,
+          "title": {
+            "en": "Temperature",
+            "fr": "Température"
+          },
+          "placeholder": {
+            "en": "-40–80",
+            "fr": "-40–80"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Temperature is above [[temp]]",
+        "fr": "Température supérieure à [[temp]]",
+        "nl": "Temperatuur is hoger dan [[temp]]",
+        "de": "Temperatur liegt über [[temp]]"
+      }
+    },
+    {
+      "id": "climate_sensor_2_temperature_below",
+      "title": {
+        "en": "Temperature is below",
+        "fr": "Température inférieure à",
+        "nl": "Temperatuur is lager dan",
+        "de": "Temperatur liegt unter"
+      },
+      "args": [
+        {
+          "name": "temp",
+          "type": "number",
+          "min": -40,
+          "max": 80,
+          "step": 0.5,
+          "title": {
+            "en": "Temperature",
+            "fr": "Température"
+          },
+          "placeholder": {
+            "en": "-40–80",
+            "fr": "-40–80"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Temperature is below [[temp]]",
+        "fr": "Température inférieure à [[temp]]",
+        "nl": "Temperatuur is lager dan [[temp]]",
+        "de": "Temperatur liegt unter [[temp]]"
+      }
+    },
+    {
+      "id": "climate_sensor_2_humidity_above",
+      "title": {
+        "en": "Humidity is above",
+        "fr": "Humidité supérieure à",
+        "nl": "Luchtvochtigheid is hoger dan",
+        "de": "Luftfeuchtigkeit liegt über"
+      },
+      "args": [
+        {
+          "name": "humidity",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "title": {
+            "en": "Humidity (%)",
+            "fr": "Humidité (%)"
+          },
+          "placeholder": {
+            "en": "0–100",
+            "fr": "0–100"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Humidity is above [[humidity]]",
+        "fr": "Humidité supérieure à [[humidity]]",
+        "nl": "Luchtvochtigheid is hoger dan [[humidity]]",
+        "de": "Luftfeuchtigkeit liegt über [[humidity]]"
+      }
+    },
+    {
+      "id": "climate_sensor_2_humidity_below",
+      "title": {
+        "en": "Humidity is below",
+        "fr": "Humidité inférieure à",
+        "nl": "Luchtvochtigheid is lager dan",
+        "de": "Luftfeuchtigkeit liegt unter"
+      },
+      "args": [
+        {
+          "name": "humidity",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "title": {
+            "en": "Humidity (%)",
+            "fr": "Humidité (%)"
+          },
+          "placeholder": {
+            "en": "0–100",
+            "fr": "0–100"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Humidity is below [[humidity]]",
+        "fr": "Humidité inférieure à [[humidity]]",
+        "nl": "Luchtvochtigheid is lager dan [[humidity]]",
+        "de": "Luftfeuchtigkeit liegt unter [[humidity]]"
+      }
+    },
+    {
+      "id": "climate_sensor_2_battery_voltage_below",
+      "title": {
+        "en": "Battery voltage is below",
+        "fr": "Tension batterie inférieure à",
+        "nl": "Batterijspanning lager dan",
+        "de": "Batteriespannung unter"
+      },
+      "hint": {
+        "en": "Triggers when the battery voltage drops below the threshold (V). Default 2.5V for most sensors.",
+        "fr": "Se déclenche quand la tension batterie descend sous le seuil (V). 2,5V par défaut pour la plupart des capteurs."
+      },
+      "titleFormatted": {
+        "en": "Battery voltage is below [[voltage]]V",
+        "fr": "Tension batterie inférieure à [[voltage]]V",
+        "nl": "Batterijspanning lager dan [[voltage]]V",
+        "de": "Batteriespannung unter [[voltage]]V"
+      },
+      "args": [
+        {
+          "name": "voltage",
+          "type": "number",
+          "min": 0,
+          "max": 5,
+          "title": {
+            "en": "Threshold (V)",
+            "fr": "Seuil (V)",
+            "nl": "Drempel (V)",
+            "de": "Schwelle (V)"
+          },
+          "placeholder": {
+            "en": "0–5",
+            "fr": "0–5"
+          }
+        }
+      ]
+    }
+  ],
+  "actions": []
+}

@@ -190,7 +190,23 @@ function projectUploadManifestBytes(file) {
     console.log = () => {};
     try {
       require('../maintenance/sanitize-manifest.cjs').sanitizeManifestFile(tmp);
+      // P3229: as prepare-publish — continuations fold into their root before compaction (held: dropped),
+      // released ones split back after, so the projection measures the real upload, not the held copy.
+      let splits = [];
+      try {
+        const hr = require('../publish-hold-release');
+        const hf = path.join(ROOT, 'config', 'publish-hold-drivers.json');
+        const { ids } = fs.existsSync(hf) ? hr.effectiveHoldIds(JSON.parse(fs.readFileSync(hf, 'utf8')), process.env.PUBLISH_HOLD_RELEASE) : { ids: new Set() };
+        const m = JSON.parse(fs.readFileSync(tmp, 'utf8'));
+        const r = hr.foldContinuations(m, require('../../lib/drivers/DriverContinuations').load(ROOT), ids);
+        if (r.folded) { fs.writeFileSync(tmp, JSON.stringify(m)); splits = r.splits; }
+      } catch (_) { /* registry missing: plain projection */ }
       require('../maintenance/compact-zigbee-identifiers.cjs').compactManifestFile(tmp);
+      if (splits.length) {
+        const m = JSON.parse(fs.readFileSync(tmp, 'utf8'));
+        require('../publish-hold-release').splitContinuations(m, splits);
+        fs.writeFileSync(tmp, JSON.stringify(m));
+      }
       require('../maintenance/strip-redundant-title-formatted.cjs').stripFile(tmp);
       require('../maintenance/compact-shared-text.cjs').compactFile(tmp); // P3068: as prepare-publish
     } finally {
