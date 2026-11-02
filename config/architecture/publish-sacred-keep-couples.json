@@ -2149,6 +2149,12 @@
       "pid": "TS011F",
       "driverId": "plug",
       "note": "P3077 one couple one driver: ZP-LZ-FR2U smart plug (zigbee2mqtt.io/devices/ZP-LZ-FR2U.html); dropped from wrong-class button_wireless_2, so pinned here so compaction always ships its real couple"
+    },
+    {
+      "mfr": "_TZ3000_yupc0pb7",
+      "pid": "TS0201",
+      "driverId": "climate_sensor",
+      "note": "P3200 GH#581 (hogseto, 2026-10-28): TS0201 outdoor temp/hum, listed in climate_sensor compose but dropped by publish compaction (1949 mfrs -> ~19) -> Unknown Zigbee device"
     }
   ]
 }
