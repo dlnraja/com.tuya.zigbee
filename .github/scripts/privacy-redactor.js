@@ -27,9 +27,19 @@ function preserveTechnical(text, transform) {
   return transform(masked).replace(/__TUYA_KEEP_(\d+)__/g, (_, i) => keep[Number(i)] || '');
 }
 
+// P3219: a secret key can sit inside a KEEP_TECH token (e.g. "measure_battery.uid=..." or "alarm_x.token=...")
+// so the in-mask pass never sees it, while the gate does (fetch-diags run 41431628509: secret-assignment).
+// Re-run the secret-assignment redaction once on the restored text; idempotent on already redacted values.
+const SECRET_ASSIGN_FINAL_RE = /(["']?(?:local[_-]?key|owner[_-]?id|uid|uuid|sid|token|secret|password|passwd|api[_-]?key|refresh[_-]?token|access[_-]?token|client[_-]?secret)["']?\s*[:=]\s*["']?)(?!\[REDACTED_[A-Z0-9_-]+(?::[a-f0-9]{6,})?\])([^"',\s}]{3,})/gi;
+function finalSecretPass(s) {
+  const keep = []; // existing aliases ("[REDACTED_UUID:abc]") must not be re-read as "uid:abc"
+  const masked = String(s).replace(/\[REDACTED_[A-Z0-9_-]+(?::[a-f0-9]{6,})?\]/g, m => { keep.push(m); return `__P3219_KEEP_${keep.length - 1}__`; });
+  return masked.replace(SECRET_ASSIGN_FINAL_RE, '$1[REDACTED_SECRET]').replace(/__P3219_KEEP_(\d+)__/g, (_, i) => keep[Number(i)] || '');
+}
+
 function redact(text) {
   if (text === null || text === undefined) return '';
-  return preserveTechnical(text, value => {
+  return finalSecretPass(preserveTechnical(text, value => {
     let s = String(value);
 
     // WHY(P2527): also neutralize prompt-injection phrases in diagnostic / forum dumps
@@ -62,7 +72,7 @@ function redact(text) {
     s = s.replace(/\b[a-f0-9]{32,}\b/gi, '[REDACTED_HEX]');
 
     return s;
-  });
+  }));
 }
 
 function isSafePublicValue(value) {
@@ -78,7 +88,11 @@ function redactObject(value, key = '') {
   if (Array.isArray(value)) return value.map(item => redactObject(item, key));
   if (typeof value === 'object') {
     const out = {};
-    for (const [k, v] of Object.entries(value)) out[k] = redactObject(v, k);
+    for (const [k, v] of Object.entries(value)) {
+      // P3219: object keys are serialized too (gate scans the whole JSON); redact a key only when it leaks.
+      const safeK = findLeaks(k).length ? redact(k) : k;
+      out[safeK] = redactObject(v, k);
+    }
     return out;
   }
   if (typeof value !== 'string') {
