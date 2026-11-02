@@ -17,3 +17,11 @@ describe('P3216 diag Log ID survives uuid redaction', () => {
     assert.strictEqual(backfillLogIndexEntry(privacy.redact(RAW)), null);
   });
 });
+
+describe('P3216b logIndex keyed on raw Log ID, not the redacted entry', () => {
+  it('redactObject aliases logId, so the index must use rawLogId', () => {
+    assert.ok(/"logId":"\[REDACTED/.test(JSON.stringify(privacy.redactObject({ logId: '00000000-1111-4222-8333-444444444444' }))));
+    const src = require('fs').readFileSync(require('path').join(__dirname, '..', '.github', 'scripts', 'fetch-gmail-diagnostics.js'), 'utf8');
+    assert.ok(src.includes('st.logIndex[rawLogId]') && !src.includes('st.logIndex[String(entry.logId)'));
+  });
+});
