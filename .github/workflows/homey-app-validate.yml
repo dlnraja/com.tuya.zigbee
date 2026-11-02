@@ -59,6 +59,11 @@ jobs:
         run: bash scripts/ci/homey-validate-safe.sh --level verified 2>&1 | tee /tmp/verified.log; exit ${PIPESTATUS[0]}
       - name: Publish payload build + size/structure report
         if: always()
+        env:
+          # P3201b: build the payload exactly like auto-publish (TS0601 top-up, measured 20000 ceiling);
+          # without it the 17000 default drops couples of the committed sourced snapshot and the ratchet FATALs.
+          HOMEY_ZIGBEE_TOPUP_MAX_TOTAL: "20000"
+          HOMEY_ZIGBEE_TOPUP_MAX_DRIVER: "2000"
         run: |
           set -o pipefail  # P3069: a crash in the python report must fail the step, not hide behind tee
           rm -rf /tmp/homey-publish-temp

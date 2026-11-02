@@ -49,4 +49,28 @@ describe('P3201 publish sourced restore', () => {
     assert.strictEqual(r.checked, 1);
     assert.strictEqual(r.missing.length, 1);
   });
+
+  it('P3201b: a row reused by a restore is no longer a parasite a later restore may cut (CI run 41402776968)', () => {
+    const mk = () => [drv('p', ['_TZ3000_pppppppp'], ['TS0006', 'TS0007', 'TS0008', 'TS0010']), drv('c', ['_TZ3000_c1c1c1c1'], ['TS0004']), drv('cur', ['_TZE200_xxxxxxxx', '_TZE200_ssssssss'], ['TS0001']), drv('b', ['_TZ3000_qqqqqqqq'], ['TS0002'])];
+    const source = { drivers: mk() };
+    source.drivers[1].zigbee.productId.push('TS0005');
+    source.drivers[2].zigbee.productId.push('TS0301');
+    source.drivers[3].zigbee.manufacturerName.push('_TZ3000_rrrrrrrr'); source.drivers[3].zigbee.productId.push('TS0003');
+    const man = { drivers: mk() };
+    const sourced = new Map([entry('_TZ3000_c1c1c1c1', 'TS0004'), entry('_TZ3000_c1c1c1c1', 'TS0005'), entry('_TZE200_ssssssss', 'TS0001'), entry('_TZE200_xxxxxxxx', 'TS0301'), entry('_TZ3000_qqqqqqqq', 'TS0002'), entry('_TZ3000_rrrrrrrr', 'TS0003')]);
+    const r = sp.sourcedPass(source, man, { sourced, sacred: new Set(), baselineSet: new Set(), maxTotal: 8, maxDriver: 10 });
+    assert.ok(sp.presentKeys(man).has(sp.keyOf('_TZE200_xxxxxxxx', 'TS0301')), 'restored couple kept its mfr row');
+    assert.ok(r.after <= 8);
+  });
+
+  it('P3201b: committed snapshot couples are restored before other couples at the budget edge', () => {
+    const source = { drivers: [drv('a', ['_TZ3000_aaaaaaaa', '_TZ3000_bbbbbbbb', '_TZ3000_cccccccc'], ['TS0001'])] };
+    const man = { drivers: [drv('a', ['_TZ3000_aaaaaaaa'], ['TS0001'])] };
+    const sourced = new Map([entry('_TZ3000_aaaaaaaa', 'TS0001'), entry('_TZ3000_bbbbbbbb', 'TS0001'), entry('_TZ3000_cccccccc', 'TS0001')]);
+    const ratchet = new Set([sp.keyOf('_TZ3000_cccccccc', 'TS0001')]);
+    sp.sourcedPass(source, man, { sourced, sacred: new Set(), baselineSet: new Set(), maxTotal: 2, maxDriver: 10, ratchet });
+    const keys = sp.presentKeys(man);
+    assert.ok(keys.has(sp.keyOf('_TZ3000_cccccccc', 'TS0001')));
+    assert.ok(!keys.has(sp.keyOf('_TZ3000_bbbbbbbb', 'TS0001')));
+  });
 });
