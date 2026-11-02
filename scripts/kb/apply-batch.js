@@ -3,9 +3,12 @@
  *  pid appended if missing. Skips a couple if adding the mfr would create a dual couple with any pid of the target driver.
  *  Usage: node scripts/kb/apply-batch.js <batchIndex> [size=30]  -> writes data/leads/kb-batch-<i>.json report. */
 const fs=require('fs'),path=require('path');const {driverMap,batches}=require('./assign-drivers');const ROOT=path.join(__dirname,'../..');
-function plan(list,dm,composeOf){const ok=[],skip=[];const added=new Map();
+// P3223: chains via the shared registry: new couples go to firstNonFull(root); a clash inside one chain is not a dual couple.
+const DC=require('../../lib/drivers/DriverContinuations');
+function plan(list,dm,composeOf,dc){dc=dc||DC.load(ROOT);const ok=[],skip=[];const added=new Map();
+  list=list.map(c=>{const t=dc.firstNonFull(c.driver);return t!==c.driver&&composeOf(t)?{...c,driver:t,chainRoot:c.driver}:c;});
  for(const c of list){const z=composeOf(c.driver);if(!z){skip.push({...c,why:'no compose'});continue;}const pids=new Set([...[].concat(z.productId||[]).map(p=>String(p).toUpperCase()),c.pid.toUpperCase()]);
-  const clash=[...pids].map(p=>[p,[...(dm.byCouple.get(`${c.mfr}|${p}`.toLowerCase())||[])].filter(d=>d!==c.driver)]).filter(x=>x[1].length);
+  const clash=[...pids].map(p=>[p,[...(dm.byCouple.get(`${c.mfr}|${p}`.toLowerCase())||[])].filter(d=>d!==c.driver&&!dc.isSameLogical(d,c.driver))]).filter(x=>x[1].length);
   if(clash.length){skip.push({...c,why:'dual couple: '+clash.map(x=>x[0]+'@'+x[1].join('/')).join(',')});continue;}
   if((added.get(c.mfr.toLowerCase())||c.driver)!==c.driver){skip.push({...c,why:'same mfr assigned to two drivers in batch'});continue;}added.set(c.mfr.toLowerCase(),c.driver);ok.push(c);}
  return {ok,skip};}
