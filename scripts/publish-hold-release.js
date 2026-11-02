@@ -81,4 +81,28 @@ function foldHeldContinuations(manifest, heldIds, registry) {
   return r.folded;
 }
 
-module.exports = { parseRelease, effectiveHoldIds, foldHeldContinuations, foldContinuations, splitContinuations };
+/** P3233: what prepare-publish does to held ids (drivers + flow cards whose device filter names only
+ * held drivers), as a pure function so the size-gate projection measures the real upload. */
+function dropHeld(manifest, ids) {
+  const out = { drivers: 0, cards: 0 };
+  if (!manifest || !ids || !ids.size) {return out;}
+  const before = (manifest.drivers || []).length;
+  manifest.drivers = (manifest.drivers || []).filter((d) => !ids.has(d && d.id));
+  out.drivers = before - manifest.drivers.length;
+  const cardUsesHeld = (card) => (Array.isArray(card && card.args) ? card.args : []).some((a) => {
+    if (!a || a.type !== 'device' || typeof a.filter !== 'string') {return false;}
+    const m = a.filter.match(/(?:^|&)driver_id=([^&]+)/);
+    if (!m) {return false;}
+    const named = m[1].split('|').filter(Boolean);
+    return named.length > 0 && named.every((x) => ids.has(x));
+  });
+  for (const type of Object.keys(manifest.flow || {})) {
+    if (!Array.isArray(manifest.flow[type])) {continue;}
+    const n = manifest.flow[type].length;
+    manifest.flow[type] = manifest.flow[type].filter((c) => !cardUsesHeld(c));
+    out.cards += n - manifest.flow[type].length;
+  }
+  return out;
+}
+
+module.exports = { parseRelease, effectiveHoldIds, foldHeldContinuations, foldContinuations, splitContinuations, dropHeld };

@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-02T15:51:27.532Z",
- "drivers": 419,
+ "generated": "2026-11-02T16:59:11.164Z",
+ "drivers": 420,
  "snapshot": {
   "air_conditioner_aetz01": {
    "mfr": 1,
@@ -417,10 +417,16 @@
    "pidSha": "c4343290bac9e455"
   },
   "curtain_motor": {
-   "mfr": 276,
+   "mfr": 274,
    "pid": 48,
-   "mfrSha": "7e6f16d0747ad1b2",
+   "mfrSha": "ad53c295cad1df1b",
    "pidSha": "00ba96ff94eb4bb5"
+  },
+  "curtain_motor_2": {
+   "mfr": 2,
+   "pid": 1,
+   "mfrSha": "bcb4208925f28666",
+   "pidSha": "455c46e8c8549693"
   },
   "curtain_motor_shutter": {
    "mfr": 15,

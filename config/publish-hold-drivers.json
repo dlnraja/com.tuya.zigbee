@@ -182,6 +182,13 @@
       "addedBy": "P3228 zero-parasite packing step 3b",
       "reason": "P3228 (02/11/2026 Paris): continuation of climate_sensor (DRIVER_CONTINUATIONS.md). P3229: narrowed to 3 mfrs (12 spellings) whose ONLY sourced couple (any source, mfs_db included) among climate_sensor pids is TS0601, moved here with productId TS0601 only, cutting their parasite combos. While held, prepare-publish and publish-baseline-gate fold its zigbee lists back into climate_sensor (foldContinuations); at release it is split back after compaction, so the budget never redistributes and release loses 0 couples (test p3229). Release one per publish via PUBLISH_HOLD_RELEASE through the staged master routine.",
       "sacredCouplesOwnedElsewhere": true
+    },
+    {
+      "id": "curtain_motor_2",
+      "since": "2026-11-02",
+      "addedBy": "P3233 zero-parasite packing (curtain_motor)",
+      "reason": "P3233 (02/11/2026 Paris): continuation of curtain_motor (DRIVER_CONTINUATIONS.md). 2 mfrs (_TZE200_eegnwoyw, _TZE200_cpbo62rn; 8 spellings) whose ONLY sourced couple (any source, mfs_db included) among curtain_motor pids is TS0601 moved here with productId TS0601 only (-944 parasite combos on the root). Own flow card ids aliased by lib/drivers/ContinuationFlowAlias. While held, prepare-publish/baseline-gate fold it back into curtain_motor before compaction (payload identical); at release split after compaction (0 couple lost, test p3229/p3233).",
+      "sacredCouplesOwnedElsewhere": true
     }
   ],
   "_graduated": {

@@ -15,7 +15,10 @@ const CEIL_TF = { de: 1286, nl: 1262 };
 test('P3065 flow i18n: no FR placeholder titles, de/nl gaps never grow', () => {
   const placeholders = []; const miss = { de: 0, nl: 0 }; const missTf = { de: 0, nl: 0 };
   const D = path.join(ROOT, 'drivers');
+  // P3233: a continuation's flow cards are copies of its root's; count the logical driver once.
+  const dc = require('../../lib/drivers/DriverContinuations').load(ROOT);
   for (const d of fs.readdirSync(D)) {
+    if (dc.isContinuation(d)) {continue;}
     const p = path.join(D, d, 'driver.flow.compose.json');
     if (!fs.existsSync(p)) {continue;}
     let j; try { j = JSON.parse(fs.readFileSync(p, 'utf8')); } catch (_e) { continue; }

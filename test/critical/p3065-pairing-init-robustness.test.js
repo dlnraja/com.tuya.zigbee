@@ -43,7 +43,9 @@ test('P3065 harness teardown no longer reports SDK onDeleted removeAllListeners 
 
 test('P3065 ratchet: drivers whose first start throws in the harness never increase', () => {
   const ids = fs.readdirSync(path.join(ROOT, 'drivers'))
-    .filter((d) => fs.existsSync(path.join(ROOT, 'drivers', d, 'device.js')));
+    .filter((d) => fs.existsSync(path.join(ROOT, 'drivers', d, 'device.js')))
+    // P3233: a continuation runs its root's code; count the logical driver once.
+    .filter((d) => !require('../../lib/drivers/DriverContinuations').load(ROOT).isContinuation(d));
   const res = trace(ids);
   const failing = res.filter((r) => r.errors && r.errors.length && !r.errors.every((e) => /onNodeInit is not a function/.test(e)));
   assert.ok(failing.length <= BASELINE, `failing=${failing.length} > baseline ${BASELINE}: ${failing.map((r) => r.driver).join(',')}`);

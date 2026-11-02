@@ -537,6 +537,7 @@ A heartfelt thank you to:
 - P3227 (2026-11-02): zero-parasite packing plan (report only) — sources: data/kb, diag-ids, sacred-keep, P3055 attestations, mfs_db; rule 3 of DRIVER_CONTINUATIONS.md.
 - P3228 (2026-11-02): climate_sensor_2 continuation (271 TS0601-only strong-sourced mfrs), held and folded back into climate_sensor while held — sources: data/kb, diag-ids, sacred-keep, P3055 attestations; rules 1-3 of DRIVER_CONTINUATIONS.md.
 - P3229 (02/11/2026): climate_sensor_2 zero perte à la release — continuation réduite aux 3 fabricants dont le seul couple sourcé (toutes sources, mfs_db inclus) est TS0601 ; les continuations sont repliées avant compaction et re-séparées après à la release (budget inchangé) ; test p3229 release-loss = 0 pour chaque continuation tenue. Sources : data/mfs_db.json, couples sourcés, fixture Test package.
+- P3233 (02/11/2026): curtain_motor_2 continuation — 2 fabricants (_TZE200_eegnwoyw, _TZE200_cpbo62rn) dont le seul couple sourcé (toutes sources, mfs_db inclus) est TS0601, tenue (hold) ; cartes flow propres aliasées vers le code racine (lib/drivers/ContinuationFlowAlias) ; test p3233
 ## Dynamic adaptation (P3207, 2026-11)
 
 - oletorv (GH#598): `_TZE284_9ern5sfh` / TS0601 "Unable to connect" — bindings on clusters the node lacks; led to runtime, descriptor-gated bindings for all drivers.
