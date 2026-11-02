@@ -398,3 +398,4 @@ Reporters of dlnraja/com.tuya.zigbee issues not credited elsewhere in this file.
 - Homey SDK Zigbee docs (exact manufacturerName/productId matching) and the Homey community thread t/51187
   (no productId wildcard) — basis for "no fallback driver" and for continuation drivers.
 - Forum/GitHub reporters of #584, #581, #598 and the kb-compaction-losses couples — couples kept in the payload.
+- P3238 (2026-11-02): CI gate scripts/ci/driver-signature-dup-gate.js — new driver with identical class+capabilities rejected unless a registered continuation or publish-hold driver; existing duplicates baselined. Test p3238.
