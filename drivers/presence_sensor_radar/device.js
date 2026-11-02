@@ -58,6 +58,12 @@ const MAINS_POWERED_RADARS = new Set([
  * PresenceSensorRadarDevice - v8.0.0 ULTIMATE
  * Universal Radar/mmWave sensor driver with intelligent inference and auto-discovery.
  */
+/** P3220: zhc hobeian.ts temperature_unit DP109 (0 celsius, 1 fahrenheit). */
+function radarTempToCelsius(v, unit) {
+  const f = unit === 1 || unit === '1' || unit === 'fahrenheit' || unit === 'F';
+  return f ? (v - 32) * 5 / 9 : v;
+}
+
 class PresenceSensorRadarDevice extends UnifiedSensorBase {
 
   /**
@@ -2198,6 +2204,22 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       return this.safeSetCapabilityValue('measure_battery', Math.min(100, battery)).catch(() => {});
     }
 
+    // D2. P3220: temperature / humidity DPs (e.g. ZG-204ZX DP111/DP101). zhc hobeian.ts:
+    // DP111 is reported in the unit chosen on DP109 (0 celsius, 1 fahrenheit) -> convert to °C.
+    if ((mapping.cap === 'measure_temperature' || mapping.cap === 'measure_humidity') && this.hasCapability?.(mapping.cap)) {
+      if (mapping.cap === 'measure_temperature' && config?.noTemperature) {return;}
+      let v;
+      if (mapping.smartDivisor === true) {
+        const { smartParse } = require('../../lib/managers/SmartDivisorManager');
+        v = smartParse(value, dpId, { capability: mapping.cap });
+      } else {
+        v = Number(value) / (mapping.divisor || 1);
+      }
+      if (!Number.isFinite(v)) {return;}
+      if (mapping.cap === 'measure_temperature') {v = radarTempToCelsius(v, this.getStoreValue?.('radar_temperature_unit'));}
+      return this.safeSetCapabilityValue(mapping.cap, Math.round(v * 10) / 10).catch(() => {});
+    }
+
     // E. Setting/internal feedback DPs: store the decoded value for diagnostics.
     if (!mapping.cap && (mapping.setting || mapping.internal)) {
       const key = mapping.setting || mapping.internal;
@@ -3206,3 +3228,4 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
 }
 
 module.exports = PresenceSensorRadarDevice;
+module.exports.radarTempToCelsius = radarTempToCelsius;

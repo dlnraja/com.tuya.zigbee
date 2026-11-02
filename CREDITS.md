@@ -540,3 +540,4 @@ A heartfelt thank you to:
 - P3212 (2026-11-02): Saswell SEA801 TRV DP profile + fingerprints — Koenkk/zigbee-herdsman-converters saswell.ts
 - P3213b (2026-11-02): MFR-ENSURE no longer persists driver manifest[0] placeholder (_TZE200_pay2byax on TS0203, diag c05db40d); MTG radar DP113/115/116 mapped per Z2M MTG075-ZB-RL (diag af98752d, VicHY). Source: Koenkk/zigbee-herdsman-converters tuya.ts.
 - P3218 (2026-11-02): Moes SFL02 TS0601 switch fingerprints — Koenkk/zigbee-herdsman-converters moes.ts
+- P3220 (2026-11-02): ZG-204ZX DP109 temperature_unit °F→°C — Koenkk/zigbee-herdsman-converters hobeian.ts
