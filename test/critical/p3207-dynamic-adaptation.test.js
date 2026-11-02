@@ -1,6 +1,7 @@
 'use strict';
 
 // P3207 (GH#598 generalised, credit oletorv): runtime descriptor-gated bindings + raw adaptive observer.
+const { describe, it } = require('../_support/dual-runner');
 const assert = require('assert');
 const fs = require('fs');
 const path = require('path');
@@ -64,7 +65,7 @@ describe('P3207 dynamic adaptation', () => {
     const temp = fakeCluster(1026, { failBind: 1 });
     const orig = function () { return 'orig'; };
     const zcl = { handleFrame: orig, endpoints: { 1: { _descriptor: { inputClusters: [1026], outputClusters: [] }, clusters: { temp } } } };
-    const dev = fakeDevice('x', [], { node: { receiveWhenIdle: false } });
+    const dev = fakeDevice('x', [], { node: { receiveWhenIdle: false }, homey: { setTimeout: (f, ms) => setTimeout(f, ms) } });
     const r = await A.attach(dev, zcl, { table: { x: { 1: [1026] } } });
     assert.strictEqual(r.pending, 1); assert.notStrictEqual(zcl.handleFrame, orig);
     assert.strictEqual(zcl.handleFrame(1, 1026, Buffer.alloc(0)), 'orig');
