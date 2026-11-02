@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 'use strict';
+// P3243b: a git hook exports GIT_DIR/GIT_WORK_TREE/GIT_INDEX_FILE; tests that `git init` a fixture would then
+// write into the REAL repo (core.bare=true, core.worktree=<other tree>, fixture commits on a live branch).
+for (const k of Object.keys(process.env)) { if (/^GIT_(DIR|WORK_TREE|INDEX_FILE|PREFIX|COMMON_DIR|OBJECT_DIRECTORY|ALTERNATE_OBJECT_DIRECTORIES|NAMESPACE|CEILING_DIRECTORIES|QUARANTINE_PATH|PUSH_OPTION_.*)$/.test(k)) delete process.env[k]; }
 /**
  * P3057-3: run every node:test file under `node --test` and fail on failures.
  *

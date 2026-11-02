@@ -46,6 +46,7 @@ describe('P3243 workflow learnings', () => {
     assert.deepStrictEqual(m.failingTitles('  1 passing\n  2 failing\n\n  1) P2914 memory: a\n       x\n  2) P2914 memory: a\n'), ['P2914 memory: a']);
     assert.strictEqual(m.flakyFilesFor(['Other'], { 'test/p2914-memory-leak.test.js': ['P2914 memory'] }), null);
     assert.ok(m.STALE.includes('.homeybuild'));
+    for (const f of ['tools/ci/mocha-flaky-retry.js', 'tools/ci/node-test-strict.js']) assert.match(read(f), /P3243b[\s\S]*delete process\.env\[k\]/, `${f} strips hook GIT_* env`);
   });
 
   it('CI, pre-push and publish workflows are wired', () => {
