@@ -533,3 +533,6 @@ A heartfelt thank you to:
 - Homey SDK Zigbee docs (exact manufacturerName/productId matching) and the Homey community thread t/51187
   (no productId wildcard) — basis for "no fallback driver" and for continuation drivers.
 - Forum/GitHub reporters of #584, #581, #598 and the kb-compaction-losses couples — couples kept in the payload.
+## Dynamic adaptation (P3207, 2026-11)
+
+- oletorv (GH#598): `_TZE284_9ern5sfh` / TS0601 "Unable to connect" — bindings on clusters the node lacks; led to runtime, descriptor-gated bindings for all drivers.

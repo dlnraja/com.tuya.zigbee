@@ -1,0 +1,8 @@
+{
+  "_doc": "P3207 docs/rules/DYNAMIC_ADAPTATION.md: clusters moved OUT of manifest bindings (a bind request for an absent cluster can fail pairing, GH#598). Bound at runtime only when the node's endpoint descriptor lists them.",
+  "lcdtemphumidsensor": { "1": [1, 1026, 1029] },
+  "dimmer_1_gang_tuya": { "1": [6, 8] },
+  "slim_motion_sensor": { "1": [1] },
+  "rain_sensor": { "1": [1024] },
+  "wall_curtain_switch": { "1": [6] }
+}
