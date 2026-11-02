@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-02T22:32:38.547Z",
+ "updated": "2026-11-02T22:50:59.765Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -20000,6 +20000,29 @@
    "post": 2817,
    "author": "Daniel_Hubeny",
    "link": "https://community.homey.app/t/21313/2817",
+   "images": 1
+  },
+  "forum-post:21313/2820": {
+   "status": "pending",
+   "date": "2026-11-02",
+   "hash": "5bb3a1e1cb4d250c",
+   "note": "needs a closer look",
+   "by": "forum-poll",
+   "topic": 21313,
+   "post": 2820,
+   "author": "Regina_van_der_Laan",
+   "link": "https://community.homey.app/t/21313/2820"
+  },
+  "forum-post:21313/2823": {
+   "status": "pending",
+   "date": "2026-11-02",
+   "hash": "90a807fea964f0d4",
+   "note": "needs a closer look (screenshots)",
+   "by": "forum-poll",
+   "topic": 21313,
+   "post": 2823,
+   "author": "Peter_Kawa",
+   "link": "https://community.homey.app/t/21313/2823",
    "images": 1
   },
   "forum-post:26439/5501": {
