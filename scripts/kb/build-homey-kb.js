@@ -2,6 +2,9 @@
 /** Builds our own consolidated KB (markdown, own words, every fact cited) from data/kb + repo docs + git history.
  *  Output: docs/knowledge/KB/ (and KB_STORE_DIR mirror when set). Idempotent; CHANGELOG.md appended only when content changes. */
 const fs=require('fs'),path=require('path'),cp=require('child_process'),crypto=require('crypto');
+// P3224: commit subjects can carry house words / clock times (e.g. Bastien's rooms); the KB copy is redacted
+// with the shared context-preserving redactor so digest-guard --delta (KB refresh) passes. Fallback: identity.
+const kbRedact=(()=>{try{const {redact}=require('../lib/source-digest');return (t)=>redact(t);}catch(_e){return (t)=>t;}})();
 const ROOT=path.join(__dirname,'../..');const OUT=process.env.KB_OUT_DIR||path.join(ROOT,'docs/knowledge/KB');const STORE=process.env.KB_STORE_DIR||null;
 const J=(f,d)=>{try{return JSON.parse(fs.readFileSync(f,'utf8'));}catch{return d;}};
 const git=a=>{try{return cp.execSync('git '+a,{cwd:ROOT,maxBuffer:64<<20}).toString();}catch{return '';}};
@@ -18,7 +21,7 @@ function pages(){const kb=J(path.join(ROOT,'data/kb/couples.json'),{sources:{},c
   P[`devices/${pid}.md`]=md;idx+=`- [${pid}](devices/${pid}.md) — ${rows.length} fingerprints\n`;}
  P['devices/README.md']='# Device families\n\nGenerated from data/kb/couples.json (facts only).\n\n'+idx;
  // lessons from git (P-numbers)
- const les={};for(const l of git("log origin/master --format=%H%x09%cs%x09%s").split('\n')){const [h,d,s]=l.split('\t');if(!s)continue;for(const p of s.match(/\bP\d{3,4}[a-z]?\b/g)||[])if(!les[p])les[p]={h,d,s:s.replace(/\|/g,'/').slice(0,160)};}
+ const les={};for(const l of git("log origin/master --format=%H%x09%cs%x09%s").split('\n')){const [h,d,s]=l.split('\t');if(!s)continue;for(const p of s.match(/\bP\d{3,4}[a-z]?\b/g)||[])if(!les[p])les[p]={h,d,s:kbRedact(s).replace(/\|/g,'/').slice(0,160)};}
  P['lessons.md']='# Lessons learned (P-numbers)\n\nFirst commit that names each P-number; summary is the commit subject. Details live in the cited commit.\n\n| P | date | commit | subject |\n|---|---|---|---|\n'+Object.keys(les).sort((a,b)=>parseInt(b.slice(1))-parseInt(a.slice(1))).map(p=>`| ${p} | ${les[p].d} | [${les[p].h.slice(0,9)}](https://github.com/dlnraja/com.tuya.zigbee/commit/${les[p].h}) | ${les[p].s} |`).join('\n')+'\n';
  // rules + knowledge pointers
  const list=dir=>(fs.existsSync(path.join(ROOT,dir))?fs.readdirSync(path.join(ROOT,dir)).filter(f=>f.endsWith('.md')).sort():[]).map(f=>{const t=fs.readFileSync(path.join(ROOT,dir,f),'utf8');return `- [${(t.match(/^#\s+(.*)$/m)||[])[1]||f}](${REPO}${dir}/${f})`;}).join('\n');

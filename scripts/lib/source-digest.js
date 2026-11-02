@@ -24,7 +24,15 @@ const MENTION_RE = /(^|[^\w`])@([A-Za-z0-9][A-Za-z0-9-]{0,38})\b/g;
 const GEO_RE = /-?\b\d{1,2}\.\d{4,},\s*-?\d{1,3}\.\d{4,}\b/g;
 const TIME_RE = /\b(?:[01]?\d|2[0-3])[:h][0-5]\d\b|\b(?:1[0-2]|0?[1-9])\s?(?:am|pm)\b/gi;
 const ROUTINE_RE = /\b(every|each|chaque|tous les)\s+(morning|evening|night|day|weekday|weekend|matin|soir|nuit|jour|lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche|monday|tuesday|wednesday|thursday|friday|saturday|sunday)s?\b|\b(when (?:i|we) (?:leave|come home|go to (?:bed|sleep)|wake up|arrive)|quand (?:je|on) (?:pars|rentre|me couche|me l[eè]ve)|(?:i|we) (?:am|are) (?:away|home|on holiday|on vacation)|(?:je suis|nous sommes) (?:absents?|en vacances|à la maison))\b/gi;
-const ROOM_EN_RE = /\b(living ?room|kitchen|bedroom|kids'? room|bathroom|garage|basement|attic|hallway|nursery|office of \w+)\b/gi;
+// P3224: "garage" followed by a device-type word (garage door / opener / gate / DPn) is a Tuya product
+// category (TS0603 garage door controller), not a room of the user's house; every other use still matches.
+const ROOM_EN_RE = /\b(living ?room|kitchen|bedroom|kids'? room|bathroom|garage(?![ -]?(?:doors?|openers?|gates?|DP\s?\d))|basement|attic|hallway|nursery|office of \w+)\b/gi;
+// P3224 (KB refresh 41447782455): upstream device facts that only LOOK like private classes. Masked before
+// the leak check (never stored differently): Z2M/ZHA converter enum maps ("lookup:{...}" lists the
+// device's own scene names such as "kitchen") and Shelly model tokens ("Shelly|1PM", "1PM Gen4"),
+// which TIME_RE would read as 1 pm. Narrow and case-sensitive on purpose.
+const UPSTREAM_FACT_RES = [/\blookup:\{[^{}\n]{0,2000}\}/g, /(?<=Shelly[ |](?:Plus ?|Pro ?|Mini ?)?)[1-4]PM\b/g, /\b[1-4]PM(?= ?(?:Mini |Plus |Pro )?Gen ?\d)/g];
+function maskUpstreamFacts(s) { let out = String(s); for (const re of UPSTREAM_FACT_RES) { re.lastIndex = 0; out = out.replace(re, '[upstream-fact]'); } return out; }
 const DEVNAME_RE = /["“]([^"”\n]{2,40})["”]\s*(?:device|sensor|switch|plug|capteur|prise|interrupteur)/gi;
 const IEEE_LOOSE = /\b0x[0-9a-f]{16}\b|\b(?:[0-9a-f]{2}:){7}[0-9a-f]{2}\b/gi;
 
@@ -47,7 +55,8 @@ function redact(text, credit = new Set()) {
     .replace(IEEE_RE, (m) => tag(ieee, m.toLowerCase(), (n) => `[IEEE-${n + 1}]`))
     .replace(GEO_RE, '[lieu]')
     .replace(ROUTINE_RE, '[habitude]')
-    .replace(TIME_RE, (m) => { const h = parseInt(m, 10); const pm = /pm/i.test(m);
+    .replace(TIME_RE, (m, off, str) => { if (/^[1-4]PM$/.test(m) && (/Shelly[ |](?:Plus ?|Pro ?|Mini ?)?$/.test(str.slice(Math.max(0, off - 12), off)) || /^ ?(?:Mini |Plus |Pro )?Gen ?\d/.test(str.slice(off + m.length, off + m.length + 12)))) return m;
+      const h = parseInt(m, 10); const pm = /pm/i.test(m);
       const hh = pm && h < 12 ? h + 12 : h; return hh >= 18 || hh < 5 ? '[soirée]' : hh < 12 ? '[matinée]' : '[après-midi]'; })
     .replace(ROOM_RE, (m) => tag(rooms, m.toLowerCase(), (n) => `[pièce ${L(n)}]`))
     .replace(ROOM_EN_RE, (m) => tag(rooms, m.toLowerCase(), (n) => `[pièce ${L(n)}]`))
@@ -140,7 +149,7 @@ const LEAK_CHECKS = [
 ];
 /** Fail closed: throws if any private class survives. Returns the object when clean. */
 function assertClean(obj) {
-  const s = typeof obj === 'string' ? obj : JSON.stringify(obj);
+  const s = maskUpstreamFacts(typeof obj === 'string' ? obj : JSON.stringify(obj));
   const hits = [];
   for (const [k, re] of LEAK_CHECKS) { re.lastIndex = 0; if (re.test(s)) hits.push(k); re.lastIndex = 0; }
   if (hits.length) { const e = new Error(`source-digest privacy guard: ${hits.join(',')}`); e.code = 'PRIVACY_LEAK'; throw e; }
@@ -156,4 +165,4 @@ function toMarkdown(d) {
     L('Linked', d.linked), L('Credit', d.credit), ''].join('\n');
 }
 
-module.exports = { build, redact, sanitize, facts, assertClean, attachAi, candidateTasks, toMarkdown };
+module.exports = { build, redact, sanitize, facts, assertClean, attachAi, candidateTasks, toMarkdown, maskUpstreamFacts };
