@@ -21,12 +21,21 @@ function normalize(msg) {
     .replace(/[0-9a-f]{8}-[0-9a-f-]{27,}/gi, '<uuid>').replace(/\d+/g, '<n>').replace(/\s+/g, ' ').trim().slice(0, 200);
 }
 
+// P3205 (GH#596/#597): CI/bot noise is not an app crash. The diagnostics artifact also carries gate
+// state (sacred-couple-dry-gate `{status:'skip', reason:'input_missing'}`) and GitHub notification mails
+// whose text holds workflow errors (`git push` rejects in history.topErrors). Both opened bogus issues.
+const CI_NOISE = /^(error: )?failed to (push|fetch) some refs|\b(non-fast-forward|fetch first|rejected\]|remote: |fatal: (unable to access|could not read)|Updates were rejected)|^input_missing$|^(skip|skipped|ok)$/i;
+const isCiNoise = (msg) => CI_NOISE.test(String(msg).trim());
+// Gate/step result objects (`status` + `reason`) are not device crashes. GitHub-mail records are kept
+// (a user may paste a real crash in an issue); only their CI-noise lines are dropped.
+const isGateResult = (n) => typeof n.status === 'string' && typeof n.reason === 'string' && !n.error && !n.stack && !n.crash;
+
 function records(node, out = [], depth = 0) {
   if (depth > 8 || node == null) return out;
   if (Array.isArray(node)) { node.slice(0, 5000).forEach((n) => records(n, out, depth + 1)); return out; }
   if (typeof node === 'object') {
     const msg = node.error || node.message || node.stack || node.crash || node.reason;
-    if (typeof msg === 'string' && msg.length > 3) {
+    if (typeof msg === 'string' && msg.length > 3 && !isGateResult(node) && !isCiNoise(msg)) {
       out.push({ msg, user: String(node.homeyId || node.user || node.uuid || node.cloudId || node.from || 'unknown').slice(0, 80), app: String(node.app || node.appId || '').slice(0, 60), version: String(node.version || node.appVersion || '').slice(0, 30) });
     }
     Object.values(node).forEach((v) => { if (v && typeof v === 'object') records(v, out, depth + 1); });
@@ -56,4 +65,4 @@ if (require.main === module) {
   fs.writeFileSync('crash-triage.json', JSON.stringify(res, null, 2) + '\n');
   console.log(`signatures ${res.length} from ${recs.length} records`);
 }
-module.exports = { normalize, records, triage, SAFE_PATTERNS };
+module.exports = { normalize, records, triage, isCiNoise, SAFE_PATTERNS };
