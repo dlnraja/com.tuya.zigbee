@@ -1,0 +1,3614 @@
+{
+ "strongOnly": true,
+ "driversWithParasites": 147,
+ "parasites": 66338,
+ "real": 2846,
+ "drivers": [
+  {
+   "id": "climate_sensor",
+   "combos": 15584,
+   "sourcedCombos": 10208,
+   "real": 339,
+   "parasites": 9869,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 290
+    },
+    {
+     "pids": [
+      "ts0222"
+     ],
+     "mfrs": 8
+    },
+    {
+     "pids": [
+      "ts0201"
+     ],
+     "mfrs": 6
+    },
+    {
+     "pids": [
+      "rh3052",
+      "ts0201"
+     ],
+     "mfrs": 5
+    },
+    {
+     "pids": [
+      "ts0201",
+      "ts0601"
+     ],
+     "mfrs": 3
+    },
+    {
+     "pids": [
+      "ck-tlsr8656-ss5-01(7014)",
+      "ck-tlsr8656-ss5-02(7014)",
+      "snzb-02",
+      "snzb-02p",
+      "th01"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "ts0201",
+      "ts0601",
+      "zth11-3.0",
+      "zth13-3.0"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "sm0201"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "snzb-02",
+      "ts0201",
+      "ts0601"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "zg-227z",
+      "zg-227zl"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "ths317-et"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "ts0201",
+      "ts0601",
+      "ty0201"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 168
+  },
+  {
+   "id": "curtain_motor",
+   "combos": 13248,
+   "sourcedCombos": 9360,
+   "real": 196,
+   "parasites": 9164,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 178
+    },
+    {
+     "pids": [
+      "ts130f"
+     ],
+     "mfrs": 6
+    },
+    {
+     "pids": [
+      "ts0301"
+     ],
+     "mfrs": 4
+    },
+    {
+     "pids": [
+      "ts030f"
+     ],
+     "mfrs": 3
+    },
+    {
+     "pids": [
+      "ts0001"
+     ],
+     "mfrs": 2
+    },
+    {
+     "pids": [
+      "ts0012",
+      "ts011f"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "ts0105"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 81
+  },
+  {
+   "id": "presence_sensor_radar",
+   "combos": 14000,
+   "sourcedCombos": 8176,
+   "real": 159,
+   "parasites": 8017,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 130
+    },
+    {
+     "pids": [
+      "ts0225"
+     ],
+     "mfrs": 5
+    },
+    {
+     "pids": [
+      "ts0004"
+     ],
+     "mfrs": 3
+    },
+    {
+     "pids": [
+      "ck-bl702-mws-01(7016)"
+     ],
+     "mfrs": 2
+    },
+    {
+     "pids": [
+      "ts0045"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "ts110e"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "ts0225",
+      "ts0601"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "ck-bl702-mws-01(7016)",
+      "ts0225",
+      "ts0601"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "zp-301z"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "ck-bl702-mws-01(7016)",
+      "zg-204z",
+      "zg-204ze",
+      "zg-204zh",
+      "zg-204zk",
+      "zg-204zl",
+      "zg-204zm",
+      "zg-204zv",
+      "zg-204zx",
+      "zg-302zl",
+      "zg-302zm"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 104
+  },
+  {
+   "id": "switch_1gang",
+   "combos": 13414,
+   "sourcedCombos": 7486,
+   "real": 269,
+   "parasites": 7217,
+   "groups": [
+    {
+     "pids": [
+      "ts0001"
+     ],
+     "mfrs": 70
+    },
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 50
+    },
+    {
+     "pids": [
+      "ts011f"
+     ],
+     "mfrs": 14
+    },
+    {
+     "pids": [
+      "ts0001",
+      "ts0003",
+      "ts000f",
+      "ts0011",
+      "ts011f"
+     ],
+     "mfrs": 13
+    },
+    {
+     "pids": [
+      "ts0726"
+     ],
+     "mfrs": 13
+    },
+    {
+     "pids": [
+      "ts0011"
+     ],
+     "mfrs": 8
+    },
+    {
+     "pids": [
+      "ts0003"
+     ],
+     "mfrs": 6
+    },
+    {
+     "pids": [
+      "ts0001",
+      "ts0011"
+     ],
+     "mfrs": 5
+    },
+    {
+     "pids": [
+      "ts000f"
+     ],
+     "mfrs": 4
+    },
+    {
+     "pids": [
+      "ts0012"
+     ],
+     "mfrs": 2
+    },
+    {
+     "pids": [
+      "ts130f"
+     ],
+     "mfrs": 2
+    },
+    {
+     "pids": [
+      "ts0001",
+      "ts000f"
+     ],
+     "mfrs": 2
+    },
+    {
+     "pids": [
+      "ts0001",
+      "ts0111",
+      "ts011f"
+     ],
+     "mfrs": 2
+    },
+    {
+     "pids": [
+      "ts0003",
+      "ts0012",
+      "ts011f",
+      "zg-301z"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "ts110e"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "ts0014"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "ts0004"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "ts0001",
+      "ts000f",
+      "ts0011",
+      "ts011f"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "ts0001",
+      "ts000f",
+      "ts0011",
+      "whd02"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 156
+  },
+  {
+   "id": "button_wireless_2",
+   "combos": 8800,
+   "sourcedCombos": 6600,
+   "real": 153,
+   "parasites": 6447,
+   "groups": [
+    {
+     "pids": [
+      "ts0002",
+      "ts0012",
+      "ts0042"
+     ],
+     "mfrs": 16
+    },
+    {
+     "pids": [
+      "ts0001",
+      "ts0011"
+     ],
+     "mfrs": 11
+    },
+    {
+     "pids": [
+      "ts0042"
+     ],
+     "mfrs": 11
+    },
+    {
+     "pids": [
+      "ts0215a"
+     ],
+     "mfrs": 7
+    },
+    {
+     "pids": [
+      "ts0002",
+      "ts0003",
+      "ts0012",
+      "ts0013",
+      "ts011f"
+     ],
+     "mfrs": 6
+    },
+    {
+     "pids": [
+      "ts011f",
+      "ts0121",
+      "tso121"
+     ],
+     "mfrs": 6
+    },
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 3
+    },
+    {
+     "pids": [
+      "ts0001"
+     ],
+     "mfrs": 2
+    },
+    {
+     "pids": [
+      "ts0001",
+      "ts0003",
+      "ts000f",
+      "ts0011",
+      "ts011f"
+     ],
+     "mfrs": 2
+    },
+    {
+     "pids": [
+      "ts011f"
+     ],
+     "mfrs": 2
+    }
+   ],
+   "unsourcedMfrs": 22
+  },
+  {
+   "id": "radiator_valve",
+   "combos": 9960,
+   "sourcedCombos": 3900,
+   "real": 65,
+   "parasites": 3835,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 65
+    }
+   ],
+   "unsourcedMfrs": 101
+  },
+  {
+   "id": "plug_energy_monitor",
+   "combos": 4697,
+   "sourcedCombos": 2695,
+   "real": 57,
+   "parasites": 2638,
+   "groups": [
+    {
+     "pids": [
+      "ts011f"
+     ],
+     "mfrs": 21
+    },
+    {
+     "pids": [
+      "ts011f",
+      "ts0121",
+      "tso121"
+     ],
+     "mfrs": 11
+    },
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 2
+    },
+    {
+     "pids": [
+      "ts0505b"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 26
+  },
+  {
+   "id": "switch_3gang",
+   "combos": 3588,
+   "sourcedCombos": 2668,
+   "real": 76,
+   "parasites": 2592,
+   "groups": [
+    {
+     "pids": [
+      "ts0003"
+     ],
+     "mfrs": 33
+    },
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 11
+    },
+    {
+     "pids": [
+      "ts0003",
+      "ts0013",
+      "ts0043"
+     ],
+     "mfrs": 7
+    },
+    {
+     "pids": [
+      "ts0013"
+     ],
+     "mfrs": 4
+    },
+    {
+     "pids": [
+      "ts0726"
+     ],
+     "mfrs": 2
+    },
+    {
+     "pids": [
+      "ts0002",
+      "ts0003",
+      "ts0012",
+      "ts0013",
+      "ts011f"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 20
+  },
+  {
+   "id": "switch_4gang",
+   "combos": 3400,
+   "sourcedCombos": 2400,
+   "real": 60,
+   "parasites": 2340,
+   "groups": [
+    {
+     "pids": [
+      "ts0726"
+     ],
+     "mfrs": 36
+    },
+    {
+     "pids": [
+      "ts0004"
+     ],
+     "mfrs": 12
+    },
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 9
+    },
+    {
+     "pids": [
+      "ts0014"
+     ],
+     "mfrs": 2
+    },
+    {
+     "pids": [
+      "ts011f"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 25
+  },
+  {
+   "id": "motion_sensor",
+   "combos": 2550,
+   "sourcedCombos": 1258,
+   "real": 37,
+   "parasites": 1221,
+   "groups": [
+    {
+     "pids": [
+      "ts0202"
+     ],
+     "mfrs": 22
+    },
+    {
+     "pids": [
+      "rh3040"
+     ],
+     "mfrs": 10
+    },
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 5
+    }
+   ],
+   "unsourcedMfrs": 38
+  },
+  {
+   "id": "contact_sensor",
+   "combos": 1560,
+   "sourcedCombos": 1326,
+   "real": 107,
+   "parasites": 1219,
+   "groups": [
+    {
+     "pids": [
+      "snzb-04",
+      "ts0203"
+     ],
+     "mfrs": 39
+    },
+    {
+     "pids": [
+      "doorwindow-sensor-zb3.0",
+      "mct-340 e",
+      "ts0203"
+     ],
+     "mfrs": 7
+    },
+    {
+     "pids": [
+      "ts0203"
+     ],
+     "mfrs": 3
+    },
+    {
+     "pids": [
+      "zg-102z"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "ck-tlsr8656-ss5-01(7003)",
+      "ds01",
+      "snzb-04",
+      "snzb-04p"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 9
+  },
+  {
+   "id": "bulb_dimmable",
+   "combos": 3182,
+   "sourcedCombos": 1032,
+   "real": 12,
+   "parasites": 1020,
+   "groups": [
+    {
+     "pids": [
+      "ts0501b"
+     ],
+     "mfrs": 4
+    },
+    {
+     "pids": [
+      "ts110f"
+     ],
+     "mfrs": 2
+    },
+    {
+     "pids": [
+      "ts110e"
+     ],
+     "mfrs": 2
+    },
+    {
+     "pids": [
+      "ts0501a"
+     ],
+     "mfrs": 2
+    },
+    {
+     "pids": [
+      "ts0505b"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "ts011f"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 25
+  },
+  {
+   "id": "button_wireless_4",
+   "combos": 1200,
+   "sourcedCombos": 1040,
+   "real": 27,
+   "parasites": 1013,
+   "groups": [
+    {
+     "pids": [
+      "ts0044"
+     ],
+     "mfrs": 11
+    },
+    {
+     "pids": [
+      "ts004f"
+     ],
+     "mfrs": 10
+    },
+    {
+     "pids": [
+      "ts1002"
+     ],
+     "mfrs": 2
+    },
+    {
+     "pids": [
+      "ts011f"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "ts0002"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "ts0014",
+      "ts0044"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 4
+  },
+  {
+   "id": "switch_2gang",
+   "combos": 1545,
+   "sourcedCombos": 1095,
+   "real": 127,
+   "parasites": 968,
+   "groups": [
+    {
+     "pids": [
+      "ts0002"
+     ],
+     "mfrs": 32
+    },
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 14
+    },
+    {
+     "pids": [
+      "ts0002",
+      "ts0003",
+      "ts0012",
+      "ts0013",
+      "ts011f",
+      "zg-305z"
+     ],
+     "mfrs": 8
+    },
+    {
+     "pids": [
+      "ts0002",
+      "ts0012"
+     ],
+     "mfrs": 6
+    },
+    {
+     "pids": [
+      "ts0012"
+     ],
+     "mfrs": 5
+    },
+    {
+     "pids": [
+      "ts011f"
+     ],
+     "mfrs": 2
+    },
+    {
+     "pids": [
+      "ts0726"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "ts0002",
+      "ts011f"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "ts000f"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "ts0002",
+      "ts0003",
+      "ts0012",
+      "ts0013",
+      "ts011f",
+      "zg-301z-2ch",
+      "zg-305z"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "ts0002",
+      "ts000f"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "lxn59-2s7lx1.0"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 30
+  },
+  {
+   "id": "wall_dimmer_tuya",
+   "combos": 1862,
+   "sourcedCombos": 994,
+   "real": 87,
+   "parasites": 907,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 51
+    },
+    {
+     "pids": [
+      "ts110e"
+     ],
+     "mfrs": 8
+    },
+    {
+     "pids": [
+      "ts0052",
+      "ts110e",
+      "ts110f"
+     ],
+     "mfrs": 5
+    },
+    {
+     "pids": [
+      "ts1101",
+      "ts110e",
+      "ts110f"
+     ],
+     "mfrs": 3
+    },
+    {
+     "pids": [
+      "ts0052"
+     ],
+     "mfrs": 2
+    },
+    {
+     "pids": [
+      "ts110f"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "ts1101"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 62
+  },
+  {
+   "id": "button_wireless_1",
+   "combos": 1178,
+   "sourcedCombos": 558,
+   "real": 18,
+   "parasites": 540,
+   "groups": [
+    {
+     "pids": [
+      "ts0041"
+     ],
+     "mfrs": 17
+    },
+    {
+     "pids": [
+      "zg-101zl"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 20
+  },
+  {
+   "id": "water_leak_sensor",
+   "combos": 703,
+   "sourcedCombos": 513,
+   "real": 31,
+   "parasites": 482,
+   "groups": [
+    {
+     "pids": [
+      "ts0207"
+     ],
+     "mfrs": 21
+    },
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 3
+    },
+    {
+     "pids": [
+      "snzb-05",
+      "ts0207"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "3315-s",
+      "zg-222z",
+      "zg-226z"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "ck-tlsr8656-ss5-01(7019)",
+      "ck-tlsr8656-z23se11hw-01(7019)"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 10
+  },
+  {
+   "id": "curtain_motor_shutter",
+   "combos": 660,
+   "sourcedCombos": 484,
+   "real": 11,
+   "parasites": 473,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 9
+    },
+    {
+     "pids": [
+      "ts0301"
+     ],
+     "mfrs": 2
+    }
+   ],
+   "unsourcedMfrs": 4
+  },
+  {
+   "id": "universal_zigbee",
+   "combos": 3498,
+   "sourcedCombos": 462,
+   "real": 7,
+   "parasites": 455,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 6
+    },
+    {
+     "pids": [
+      "ts0501b"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 46
+  },
+  {
+   "id": "sensor_contact_zigbee",
+   "combos": 1386,
+   "sourcedCombos": 462,
+   "real": 20,
+   "parasites": 442,
+   "groups": [
+    {
+     "pids": [
+      "ts0203"
+     ],
+     "mfrs": 6
+    },
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 2
+    },
+    {
+     "pids": [
+      "rh3001"
+     ],
+     "mfrs": 2
+    },
+    {
+     "pids": [
+      "ts130f"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "rh3001",
+      "snzb-04",
+      "ts0203"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "ts0021"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "doorwindow-sensor-zb3.0",
+      "mct-340 e",
+      "rh3001",
+      "ts0203",
+      "ts0601"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 28
+  },
+  {
+   "id": "dimmer_2_gang_tuya",
+   "combos": 748,
+   "sourcedCombos": 374,
+   "real": 11,
+   "parasites": 363,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 11
+    }
+   ],
+   "unsourcedMfrs": 11
+  },
+  {
+   "id": "sensor_motion_presence",
+   "combos": 380,
+   "sourcedCombos": 323,
+   "real": 17,
+   "parasites": 306,
+   "groups": [
+    {
+     "pids": [
+      "ts0202"
+     ],
+     "mfrs": 15
+    },
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 2
+    }
+   ],
+   "unsourcedMfrs": 3
+  },
+  {
+   "id": "thermostatic_radiator_valve",
+   "combos": 680,
+   "sourcedCombos": 300,
+   "real": 15,
+   "parasites": 285,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 15
+    }
+   ],
+   "unsourcedMfrs": 19
+  },
+  {
+   "id": "bulb_rgb",
+   "combos": 444,
+   "sourcedCombos": 296,
+   "real": 16,
+   "parasites": 280,
+   "groups": [
+    {
+     "pids": [
+      "ts0505a",
+      "ts0505b",
+      "zb-cl01"
+     ],
+     "mfrs": 4
+    },
+    {
+     "pids": [
+      "ts0502c"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "ts0505b"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "ts0503b"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "ts011f"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 4
+  },
+  {
+   "id": "pir_sensor_2",
+   "combos": 350,
+   "sourcedCombos": 280,
+   "real": 8,
+   "parasites": 272,
+   "groups": [
+    {
+     "pids": [
+      "ts0202"
+     ],
+     "mfrs": 7
+    },
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 2
+  },
+  {
+   "id": "soil_sensor",
+   "combos": 672,
+   "sourcedCombos": 304,
+   "real": 39,
+   "parasites": 265,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 35
+    },
+    {
+     "pids": [
+      "arteco"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "zg-303z"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "ay-302z",
+      "ay-303z"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 46
+  },
+  {
+   "id": "light_bulb_rgb",
+   "combos": 912,
+   "sourcedCombos": 228,
+   "real": 4,
+   "parasites": 224,
+   "groups": [
+    {
+     "pids": [
+      "ts0503b"
+     ],
+     "mfrs": 4
+    }
+   ],
+   "unsourcedMfrs": 12
+  },
+  {
+   "id": "plug_smart",
+   "combos": 264,
+   "sourcedCombos": 220,
+   "real": 24,
+   "parasites": 196,
+   "groups": [
+    {
+     "pids": [
+      "ts011f"
+     ],
+     "mfrs": 13
+    },
+    {
+     "pids": [
+      "ts0101"
+     ],
+     "mfrs": 3
+    },
+    {
+     "pids": [
+      "ts011f",
+      "ts0121"
+     ],
+     "mfrs": 2
+    },
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "ts011f",
+      "ts0121",
+      "ts0601"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 4
+  },
+  {
+   "id": "button_wireless_plug",
+   "combos": 612,
+   "sourcedCombos": 180,
+   "real": 6,
+   "parasites": 174,
+   "groups": [
+    {
+     "pids": [
+      "ts011f"
+     ],
+     "mfrs": 4
+    },
+    {
+     "pids": [
+      "ts011f",
+      "ts0121"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 12
+  },
+  {
+   "id": "smoke_sensor2",
+   "combos": 490,
+   "sourcedCombos": 168,
+   "real": 12,
+   "parasites": 156,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 10
+    },
+    {
+     "pids": [
+      "ts0205"
+     ],
+     "mfrs": 2
+    }
+   ],
+   "unsourcedMfrs": 23
+  },
+  {
+   "id": "dimmer_wall_1gang",
+   "combos": 340,
+   "sourcedCombos": 160,
+   "real": 8,
+   "parasites": 152,
+   "groups": [
+    {
+     "pids": [
+      "ts0726"
+     ],
+     "mfrs": 3
+    },
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 2
+    },
+    {
+     "pids": [
+      "ts0001"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "ts0052"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "ts011f"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 9
+  },
+  {
+   "id": "usb_dongle_triple",
+   "combos": 270,
+   "sourcedCombos": 160,
+   "real": 16,
+   "parasites": 144,
+   "groups": [
+    {
+     "pids": [
+      "ts011f"
+     ],
+     "mfrs": 16
+    }
+   ],
+   "unsourcedMfrs": 11
+  },
+  {
+   "id": "led_strip_rgbw",
+   "combos": 243,
+   "sourcedCombos": 135,
+   "real": 17,
+   "parasites": 118,
+   "groups": [
+    {
+     "pids": [
+      "ts0505a",
+      "ts0505b",
+      "zb-cl01"
+     ],
+     "mfrs": 3
+    },
+    {
+     "pids": [
+      "ts0503a",
+      "ts0503b",
+      "ts0504b",
+      "ts0505b"
+     ],
+     "mfrs": 2
+    }
+   ],
+   "unsourcedMfrs": 4
+  },
+  {
+   "id": "water_leak_sensor_tuya",
+   "combos": 480,
+   "sourcedCombos": 105,
+   "real": 7,
+   "parasites": 98,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 5
+    },
+    {
+     "pids": [
+      "q9mpfhw"
+     ],
+     "mfrs": 2
+    }
+   ],
+   "unsourcedMfrs": 25
+  },
+  {
+   "id": "device_radiator_valve_smart",
+   "combos": 98,
+   "sourcedCombos": 98,
+   "real": 2,
+   "parasites": 96,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 2
+    }
+   ],
+   "unsourcedMfrs": 0
+  },
+  {
+   "id": "dimmer_2_gang",
+   "combos": 170,
+   "sourcedCombos": 102,
+   "real": 9,
+   "parasites": 93,
+   "groups": [
+    {
+     "pids": [
+      "ts1101",
+      "ts110e",
+      "ts110f"
+     ],
+     "mfrs": 3
+    }
+   ],
+   "unsourcedMfrs": 2
+  },
+  {
+   "id": "bulb_rgbw",
+   "combos": 378,
+   "sourcedCombos": 98,
+   "real": 7,
+   "parasites": 91,
+   "groups": [
+    {
+     "pids": [
+      "ts0504b"
+     ],
+     "mfrs": 2
+    },
+    {
+     "pids": [
+      "ts1002"
+     ],
+     "mfrs": 2
+    },
+    {
+     "pids": [
+      "ts0505b"
+     ],
+     "mfrs": 2
+    },
+    {
+     "pids": [
+      "ts0505a"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 20
+  },
+  {
+   "id": "dimmable_led_strip",
+   "combos": 170,
+   "sourcedCombos": 100,
+   "real": 10,
+   "parasites": 90,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 10
+    }
+   ],
+   "unsourcedMfrs": 7
+  },
+  {
+   "id": "dimmer_1_gang_tuya",
+   "combos": 156,
+   "sourcedCombos": 96,
+   "real": 8,
+   "parasites": 88,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 8
+    }
+   ],
+   "unsourcedMfrs": 5
+  },
+  {
+   "id": "vibration_sensor",
+   "combos": 350,
+   "sourcedCombos": 100,
+   "real": 13,
+   "parasites": 87,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 6
+    },
+    {
+     "pids": [
+      "ts0210"
+     ],
+     "mfrs": 3
+    },
+    {
+     "pids": [
+      "ts011f",
+      "zg-102zm",
+      "zg-103z",
+      "zg-228z"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 25
+  },
+  {
+   "id": "device_radiator_valve",
+   "combos": 218,
+   "sourcedCombos": 168,
+   "real": 84,
+   "parasites": 84,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 83
+    },
+    {
+     "pids": [
+      "eaxp72v"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 25
+  },
+  {
+   "id": "lcdtemphumidsensor",
+   "combos": 150,
+   "sourcedCombos": 96,
+   "real": 27,
+   "parasites": 69,
+   "groups": [
+    {
+     "pids": [
+      "ts0201",
+      "ty0201"
+     ],
+     "mfrs": 11
+    },
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 3
+    },
+    {
+     "pids": [
+      "ts0201"
+     ],
+     "mfrs": 2
+    }
+   ],
+   "unsourcedMfrs": 9
+  },
+  {
+   "id": "water_valve_smart",
+   "combos": 140,
+   "sourcedCombos": 92,
+   "real": 23,
+   "parasites": 69,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 23
+    }
+   ],
+   "unsourcedMfrs": 12
+  },
+  {
+   "id": "air_quality_co2",
+   "combos": 140,
+   "sourcedCombos": 85,
+   "real": 17,
+   "parasites": 68,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 17
+    }
+   ],
+   "unsourcedMfrs": 11
+  },
+  {
+   "id": "button_emergency_sos",
+   "combos": 160,
+   "sourcedCombos": 85,
+   "real": 17,
+   "parasites": 68,
+   "groups": [
+    {
+     "pids": [
+      "ts0215a"
+     ],
+     "mfrs": 14
+    },
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 3
+    }
+   ],
+   "unsourcedMfrs": 15
+  },
+  {
+   "id": "ir_blaster",
+   "combos": 195,
+   "sourcedCombos": 80,
+   "real": 16,
+   "parasites": 64,
+   "groups": [
+    {
+     "pids": [
+      "ts1201"
+     ],
+     "mfrs": 14
+    },
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "ts0002"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 23
+  },
+  {
+   "id": "smart_door_window_sensor",
+   "combos": 66,
+   "sourcedCombos": 66,
+   "real": 4,
+   "parasites": 62,
+   "groups": [
+    {
+     "pids": [
+      "ts0203",
+      "ty0203"
+     ],
+     "mfrs": 2
+    }
+   ],
+   "unsourcedMfrs": 0
+  },
+  {
+   "id": "siren",
+   "combos": 175,
+   "sourcedCombos": 70,
+   "real": 14,
+   "parasites": 56,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 8
+    },
+    {
+     "pids": [
+      "ts0219"
+     ],
+     "mfrs": 4
+    },
+    {
+     "pids": [
+      "ts0216"
+     ],
+     "mfrs": 2
+    }
+   ],
+   "unsourcedMfrs": 21
+  },
+  {
+   "id": "water_valve_garden",
+   "combos": 126,
+   "sourcedCombos": 63,
+   "real": 11,
+   "parasites": 52,
+   "groups": [
+    {
+     "pids": [
+      "ts0049",
+      "ts0101"
+     ],
+     "mfrs": 3
+    },
+    {
+     "pids": [
+      "ts0049"
+     ],
+     "mfrs": 2
+    },
+    {
+     "pids": [
+      "swv",
+      "swv-zfu"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "swv-zfu"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 7
+  },
+  {
+   "id": "power_clamp_meter",
+   "combos": 99,
+   "sourcedCombos": 55,
+   "real": 5,
+   "parasites": 50,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 5
+    }
+   ],
+   "unsourcedMfrs": 4
+  },
+  {
+   "id": "generic_diy",
+   "combos": 1200,
+   "sourcedCombos": 50,
+   "real": 2,
+   "parasites": 48,
+   "groups": [
+    {
+     "pids": [
+      "et093wrg",
+      "et093wro"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 23
+  },
+  {
+   "id": "usb_outlet_advanced",
+   "combos": 125,
+   "sourcedCombos": 60,
+   "real": 12,
+   "parasites": 48,
+   "groups": [
+    {
+     "pids": [
+      "ts011f"
+     ],
+     "mfrs": 9
+    },
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 3
+    }
+   ],
+   "unsourcedMfrs": 13
+  },
+  {
+   "id": "bulb_tunable_white",
+   "combos": 50,
+   "sourcedCombos": 50,
+   "real": 3,
+   "parasites": 47,
+   "groups": [
+    {
+     "pids": [
+      "ts0502b"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "ts0011",
+      "ts0502b"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 0
+  },
+  {
+   "id": "wall_switch_1gang_1way",
+   "combos": 63,
+   "sourcedCombos": 56,
+   "real": 9,
+   "parasites": 47,
+   "groups": [
+    {
+     "pids": [
+      "ts0001"
+     ],
+     "mfrs": 4
+    },
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 3
+    },
+    {
+     "pids": [
+      "ts0001",
+      "ts0011"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 1
+  },
+  {
+   "id": "sensor_climate_temphumidsensor",
+   "combos": 75,
+   "sourcedCombos": 50,
+   "real": 4,
+   "parasites": 46,
+   "groups": [
+    {
+     "pids": [
+      "ts0201",
+      "ty0201"
+     ],
+     "mfrs": 2
+    }
+   ],
+   "unsourcedMfrs": 1
+  },
+  {
+   "id": "temphumidsensor",
+   "combos": 80,
+   "sourcedCombos": 76,
+   "real": 35,
+   "parasites": 41,
+   "groups": [
+    {
+     "pids": [
+      "rh3052",
+      "ts0201"
+     ],
+     "mfrs": 16
+    },
+    {
+     "pids": [
+      "ts0201"
+     ],
+     "mfrs": 3
+    }
+   ],
+   "unsourcedMfrs": 1
+  },
+  {
+   "id": "plug",
+   "combos": 66,
+   "sourcedCombos": 48,
+   "real": 8,
+   "parasites": 40,
+   "groups": [
+    {
+     "pids": [
+      "ts011f"
+     ],
+     "mfrs": 8
+    }
+   ],
+   "unsourcedMfrs": 3
+  },
+  {
+   "id": "valve_irrigation",
+   "combos": 84,
+   "sourcedCombos": 57,
+   "real": 19,
+   "parasites": 38,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 18
+    },
+    {
+     "pids": [
+      "ts0049"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 9
+  },
+  {
+   "id": "motion_sensor_radar_mmwave",
+   "combos": 77,
+   "sourcedCombos": 42,
+   "real": 6,
+   "parasites": 36,
+   "groups": [
+    {
+     "pids": [
+      "ts0225"
+     ],
+     "mfrs": 3
+    },
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 3
+    }
+   ],
+   "unsourcedMfrs": 5
+  },
+  {
+   "id": "switch_wall_6gang",
+   "combos": 60,
+   "sourcedCombos": 48,
+   "real": 12,
+   "parasites": 36,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 11
+    },
+    {
+     "pids": [
+      "ts0726"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 3
+  },
+  {
+   "id": "din_rail_meter",
+   "combos": 144,
+   "sourcedCombos": 40,
+   "real": 5,
+   "parasites": 35,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 5
+    }
+   ],
+   "unsourcedMfrs": 13
+  },
+  {
+   "id": "device_air_purifier_plug",
+   "combos": 32,
+   "sourcedCombos": 32,
+   "real": 1,
+   "parasites": 31,
+   "groups": [
+    {
+     "pids": [
+      "ts011f"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 0
+  },
+  {
+   "id": "fingerbot",
+   "combos": 60,
+   "sourcedCombos": 42,
+   "real": 11,
+   "parasites": 31,
+   "groups": [
+    {
+     "pids": [
+      "ts0001",
+      "ts0001_fingerbot"
+     ],
+     "mfrs": 4
+    },
+    {
+     "pids": [
+      "ts0001"
+     ],
+     "mfrs": 3
+    }
+   ],
+   "unsourcedMfrs": 3
+  },
+  {
+   "id": "smart_knob",
+   "combos": 48,
+   "sourcedCombos": 40,
+   "real": 10,
+   "parasites": 30,
+   "groups": [
+    {
+     "pids": [
+      "ts004f"
+     ],
+     "mfrs": 10
+    }
+   ],
+   "unsourcedMfrs": 2
+  },
+  {
+   "id": "gas_sensor",
+   "combos": 50,
+   "sourcedCombos": 35,
+   "real": 7,
+   "parasites": 28,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 5
+    },
+    {
+     "pids": [
+      "ts0225"
+     ],
+     "mfrs": 2
+    }
+   ],
+   "unsourcedMfrs": 3
+  },
+  {
+   "id": "wall_switch_3gang_1way",
+   "combos": 54,
+   "sourcedCombos": 42,
+   "real": 14,
+   "parasites": 28,
+   "groups": [
+    {
+     "pids": [
+      "ts0003"
+     ],
+     "mfrs": 9
+    },
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 4
+    },
+    {
+     "pids": [
+      "ts0013"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 4
+  },
+  {
+   "id": "wall_switch_1_gang_tuya",
+   "combos": 130,
+   "sourcedCombos": 26,
+   "real": 1,
+   "parasites": 25,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 4
+  },
+  {
+   "id": "rain_sensor",
+   "combos": 48,
+   "sourcedCombos": 32,
+   "real": 8,
+   "parasites": 24,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 4
+    },
+    {
+     "pids": [
+      "ts0207"
+     ],
+     "mfrs": 3
+    },
+    {
+     "pids": [
+      "zg-223z"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 4
+  },
+  {
+   "id": "wall_thermostat",
+   "combos": 94,
+   "sourcedCombos": 48,
+   "real": 24,
+   "parasites": 24,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 24
+    }
+   ],
+   "unsourcedMfrs": 23
+  },
+  {
+   "id": "energy_meter_3phase",
+   "combos": 42,
+   "sourcedCombos": 40,
+   "real": 20,
+   "parasites": 20,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 20
+    }
+   ],
+   "unsourcedMfrs": 1
+  },
+  {
+   "id": "illuminance_sensor",
+   "combos": 32,
+   "sourcedCombos": 28,
+   "real": 8,
+   "parasites": 20,
+   "groups": [
+    {
+     "pids": [
+      "ts0222"
+     ],
+     "mfrs": 5
+    },
+    {
+     "pids": [
+      "zg-106z"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "ts0222",
+      "zg-106z"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 1
+  },
+  {
+   "id": "smart_knob_rotary",
+   "combos": 25,
+   "sourcedCombos": 25,
+   "real": 5,
+   "parasites": 20,
+   "groups": [
+    {
+     "pids": [
+      "ts004f"
+     ],
+     "mfrs": 5
+    }
+   ],
+   "unsourcedMfrs": 0
+  },
+  {
+   "id": "switch_4_gang_metering",
+   "combos": 30,
+   "sourcedCombos": 25,
+   "real": 5,
+   "parasites": 20,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 4
+    },
+    {
+     "pids": [
+      "ts004f"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 1
+  },
+  {
+   "id": "thermostat_tuya_dp",
+   "combos": 112,
+   "sourcedCombos": 40,
+   "real": 20,
+   "parasites": 20,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 20
+    }
+   ],
+   "unsourcedMfrs": 36
+  },
+  {
+   "id": "power_meter",
+   "combos": 68,
+   "sourcedCombos": 24,
+   "real": 6,
+   "parasites": 18,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 6
+    }
+   ],
+   "unsourcedMfrs": 11
+  },
+  {
+   "id": "scene_switch_4",
+   "combos": 48,
+   "sourcedCombos": 27,
+   "real": 9,
+   "parasites": 18,
+   "groups": [
+    {
+     "pids": [
+      "ts0044"
+     ],
+     "mfrs": 8
+    },
+    {
+     "pids": [
+      "zg-101zs"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 7
+  },
+  {
+   "id": "device_air_purifier_radiator",
+   "combos": 18,
+   "sourcedCombos": 18,
+   "real": 1,
+   "parasites": 17,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 0
+  },
+  {
+   "id": "fan_controller",
+   "combos": 85,
+   "sourcedCombos": 20,
+   "real": 4,
+   "parasites": 16,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 4
+    }
+   ],
+   "unsourcedMfrs": 13
+  },
+  {
+   "id": "temphumidsensor3",
+   "combos": 35,
+   "sourcedCombos": 21,
+   "real": 5,
+   "parasites": 16,
+   "groups": [
+    {
+     "pids": [
+      "ts0201",
+      "ts0601"
+     ],
+     "mfrs": 2
+    },
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 2
+  },
+  {
+   "id": "button_wireless",
+   "combos": 70,
+   "sourcedCombos": 20,
+   "real": 5,
+   "parasites": 15,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "ck-tlsr8656-ss5-01(7000)",
+      "snzb-01",
+      "snzb-01p",
+      "wb01"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 5
+  },
+  {
+   "id": "smoke_detector_advanced",
+   "combos": 48,
+   "sourcedCombos": 16,
+   "real": 1,
+   "parasites": 15,
+   "groups": [
+    {
+     "pids": [
+      "smokesensor-ef-3.0"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 2
+  },
+  {
+   "id": "smoke_sensor",
+   "combos": 30,
+   "sourcedCombos": 24,
+   "real": 9,
+   "parasites": 15,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 7
+    },
+    {
+     "pids": [
+      "ts0205",
+      "ts0601"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 2
+  },
+  {
+   "id": "gas_detector",
+   "combos": 88,
+   "sourcedCombos": 16,
+   "real": 2,
+   "parasites": 14,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 2
+    }
+   ],
+   "unsourcedMfrs": 9
+  },
+  {
+   "id": "light_bulb_rgb_rgbw",
+   "combos": 152,
+   "sourcedCombos": 20,
+   "real": 6,
+   "parasites": 14,
+   "groups": [
+    {
+     "pids": [
+      "ts0505b"
+     ],
+     "mfrs": 3
+    },
+    {
+     "pids": [
+      "ts0505a",
+      "ts0505b"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 33
+  },
+  {
+   "id": "zigbee_repeater",
+   "combos": 40,
+   "sourcedCombos": 28,
+   "real": 14,
+   "parasites": 14,
+   "groups": [
+    {
+     "pids": [
+      "ts0207"
+     ],
+     "mfrs": 13
+    },
+    {
+     "pids": [
+      "ts0001"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 6
+  },
+  {
+   "id": "socket_power_strip_four_three",
+   "combos": 16,
+   "sourcedCombos": 16,
+   "real": 4,
+   "parasites": 12,
+   "groups": [
+    {
+     "pids": [
+      "ts011f"
+     ],
+     "mfrs": 3
+    },
+    {
+     "pids": [
+      "jz-zb-004"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 0
+  },
+  {
+   "id": "switch_wireless",
+   "combos": 33,
+   "sourcedCombos": 18,
+   "real": 6,
+   "parasites": 12,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 6
+    }
+   ],
+   "unsourcedMfrs": 5
+  },
+  {
+   "id": "wall_switch_2gang_1way",
+   "combos": 21,
+   "sourcedCombos": 18,
+   "real": 6,
+   "parasites": 12,
+   "groups": [
+    {
+     "pids": [
+      "ts0002"
+     ],
+     "mfrs": 5
+    },
+    {
+     "pids": [
+      "ts0012"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 1
+  },
+  {
+   "id": "wall_switch_4gang_1way",
+   "combos": 24,
+   "sourcedCombos": 16,
+   "real": 4,
+   "parasites": 12,
+   "groups": [
+    {
+     "pids": [
+      "ts0004"
+     ],
+     "mfrs": 2
+    },
+    {
+     "pids": [
+      "ts0726"
+     ],
+     "mfrs": 1
+    },
+    {
+     "pids": [
+      "ts0014"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 2
+  },
+  {
+   "id": "lcdtemphumidsensor_3",
+   "combos": 26,
+   "sourcedCombos": 22,
+   "real": 11,
+   "parasites": 11,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 7
+    },
+    {
+     "pids": [
+      "excellux"
+     ],
+     "mfrs": 4
+    }
+   ],
+   "unsourcedMfrs": 2
+  },
+  {
+   "id": "rgb_led_strip_controller",
+   "combos": 30,
+   "sourcedCombos": 30,
+   "real": 20,
+   "parasites": 10,
+   "groups": [
+    {
+     "pids": [
+      "ts0503a",
+      "ts0503b",
+      "ts0504b",
+      "ts0505b"
+     ],
+     "mfrs": 5
+    }
+   ],
+   "unsourcedMfrs": 0
+  },
+  {
+   "id": "sensor_illuminance_presence",
+   "combos": 154,
+   "sourcedCombos": 11,
+   "real": 1,
+   "parasites": 10,
+   "groups": [
+    {
+     "pids": [
+      "ts0222"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 13
+  },
+  {
+   "id": "smart_breaker",
+   "combos": 22,
+   "sourcedCombos": 20,
+   "real": 10,
+   "parasites": 10,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 10
+    }
+   ],
+   "unsourcedMfrs": 1
+  },
+  {
+   "id": "sensor_gas_presence",
+   "combos": 36,
+   "sourcedCombos": 12,
+   "real": 3,
+   "parasites": 9,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 3
+    }
+   ],
+   "unsourcedMfrs": 6
+  },
+  {
+   "id": "smart_garden_irrigation_control",
+   "combos": 11,
+   "sourcedCombos": 11,
+   "real": 2,
+   "parasites": 9,
+   "groups": [
+    {
+     "pids": [
+      "ts0049",
+      "ts0101"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 0
+  },
+  {
+   "id": "socket_power_strip",
+   "combos": 18,
+   "sourcedCombos": 18,
+   "real": 9,
+   "parasites": 9,
+   "groups": [
+    {
+     "pids": [
+      "ts011f"
+     ],
+     "mfrs": 9
+    }
+   ],
+   "unsourcedMfrs": 0
+  },
+  {
+   "id": "co_sensor",
+   "combos": 27,
+   "sourcedCombos": 12,
+   "real": 4,
+   "parasites": 8,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 3
+    },
+    {
+     "pids": [
+      "ts0212"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 5
+  },
+  {
+   "id": "curtain_module_2_gang",
+   "combos": 39,
+   "sourcedCombos": 12,
+   "real": 4,
+   "parasites": 8,
+   "groups": [
+    {
+     "pids": [
+      "ts130f"
+     ],
+     "mfrs": 4
+    }
+   ],
+   "unsourcedMfrs": 9
+  },
+  {
+   "id": "dimmer_1_gang",
+   "combos": 50,
+   "sourcedCombos": 15,
+   "real": 7,
+   "parasites": 8,
+   "groups": [
+    {
+     "pids": [
+      "ts0052",
+      "ts110e",
+      "ts110f"
+     ],
+     "mfrs": 2
+    },
+    {
+     "pids": [
+      "ts110f"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 7
+  },
+  {
+   "id": "din_rail_switch",
+   "combos": 33,
+   "sourcedCombos": 12,
+   "real": 4,
+   "parasites": 8,
+   "groups": [
+    {
+     "pids": [
+      "ts011f"
+     ],
+     "mfrs": 4
+    }
+   ],
+   "unsourcedMfrs": 7
+  },
+  {
+   "id": "garage_door_opener",
+   "combos": 28,
+   "sourcedCombos": 16,
+   "real": 8,
+   "parasites": 8,
+   "groups": [
+    {
+     "pids": [
+      "ts0603"
+     ],
+     "mfrs": 4
+    },
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 4
+    }
+   ],
+   "unsourcedMfrs": 6
+  },
+  {
+   "id": "lcdtemphumidluxsensor",
+   "combos": 24,
+   "sourcedCombos": 16,
+   "real": 8,
+   "parasites": 8,
+   "groups": [
+    {
+     "pids": [
+      "ts0201",
+      "ts0222"
+     ],
+     "mfrs": 4
+    }
+   ],
+   "unsourcedMfrs": 2
+  },
+  {
+   "id": "socket_power_strip_four_two",
+   "combos": 18,
+   "sourcedCombos": 9,
+   "real": 1,
+   "parasites": 8,
+   "groups": [
+    {
+     "pids": [
+      "ts011f"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 1
+  },
+  {
+   "id": "wall_curtain_switch",
+   "combos": 20,
+   "sourcedCombos": 14,
+   "real": 7,
+   "parasites": 7,
+   "groups": [
+    {
+     "pids": [
+      "ts130f"
+     ],
+     "mfrs": 7
+    }
+   ],
+   "unsourcedMfrs": 3
+  },
+  {
+   "id": "handheld_remote_4_buttons",
+   "combos": 63,
+   "sourcedCombos": 7,
+   "real": 1,
+   "parasites": 6,
+   "groups": [
+    {
+     "pids": [
+      "ts0043"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 8
+  },
+  {
+   "id": "led_controller_rgb",
+   "combos": 15,
+   "sourcedCombos": 9,
+   "real": 3,
+   "parasites": 6,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 3
+    }
+   ],
+   "unsourcedMfrs": 2
+  },
+  {
+   "id": "module_mini_switch",
+   "combos": 45,
+   "sourcedCombos": 9,
+   "real": 3,
+   "parasites": 6,
+   "groups": [
+    {
+     "pids": [
+      "zbm5-1c-120",
+      "zbmini-l",
+      "zbminil2"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 4
+  },
+  {
+   "id": "smartPlug_DinRail",
+   "combos": 18,
+   "sourcedCombos": 18,
+   "real": 12,
+   "parasites": 6,
+   "groups": [
+    {
+     "pids": [
+      "ts011f",
+      "ts0121",
+      "tso121"
+     ],
+     "mfrs": 3
+    },
+    {
+     "pids": [
+      "ts011f"
+     ],
+     "mfrs": 3
+    }
+   ],
+   "unsourcedMfrs": 0
+  },
+  {
+   "id": "water_tank_monitor",
+   "combos": 30,
+   "sourcedCombos": 9,
+   "real": 3,
+   "parasites": 6,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 3
+    }
+   ],
+   "unsourcedMfrs": 7
+  },
+  {
+   "id": "curtain_motor_tilt",
+   "combos": 22,
+   "sourcedCombos": 10,
+   "real": 5,
+   "parasites": 5,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 5
+    }
+   ],
+   "unsourcedMfrs": 6
+  },
+  {
+   "id": "device_plug_energy",
+   "combos": 6,
+   "sourcedCombos": 6,
+   "real": 2,
+   "parasites": 4,
+   "groups": [
+    {
+     "pids": [
+      "ts011f"
+     ],
+     "mfrs": 2
+    }
+   ],
+   "unsourcedMfrs": 0
+  },
+  {
+   "id": "motion_sensor_switch",
+   "combos": 5,
+   "sourcedCombos": 5,
+   "real": 1,
+   "parasites": 4,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 0
+  },
+  {
+   "id": "rgb_mood_light",
+   "combos": 8,
+   "sourcedCombos": 8,
+   "real": 4,
+   "parasites": 4,
+   "groups": [
+    {
+     "pids": [
+      "ts0505a",
+      "ts0505b"
+     ],
+     "mfrs": 2
+    }
+   ],
+   "unsourcedMfrs": 0
+  },
+  {
+   "id": "scene_switch_2",
+   "combos": 5,
+   "sourcedCombos": 5,
+   "real": 1,
+   "parasites": 4,
+   "groups": [
+    {
+     "pids": [
+      "ts0726"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 0
+  },
+  {
+   "id": "temphumidsensor5",
+   "combos": 5,
+   "sourcedCombos": 5,
+   "real": 1,
+   "parasites": 4,
+   "groups": [
+    {
+     "pids": [
+      "ts0201"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 0
+  },
+  {
+   "id": "tunable_bulb_E14",
+   "combos": 30,
+   "sourcedCombos": 6,
+   "real": 2,
+   "parasites": 4,
+   "groups": [
+    {
+     "pids": [
+      "ts0502a"
+     ],
+     "mfrs": 2
+    }
+   ],
+   "unsourcedMfrs": 8
+  },
+  {
+   "id": "wall_dimmer_1gang_1way",
+   "combos": 5,
+   "sourcedCombos": 5,
+   "real": 1,
+   "parasites": 4,
+   "groups": [
+    {
+     "pids": [
+      "ts0501b"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 0
+  },
+  {
+   "id": "doorwindowsensor_4",
+   "combos": 6,
+   "sourcedCombos": 6,
+   "real": 3,
+   "parasites": 3,
+   "groups": [
+    {
+     "pids": [
+      "excellux"
+     ],
+     "mfrs": 2
+    },
+    {
+     "pids": [
+      "ds01"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 0
+  },
+  {
+   "id": "double_power_point_2",
+   "combos": 6,
+   "sourcedCombos": 6,
+   "real": 3,
+   "parasites": 3,
+   "groups": [
+    {
+     "pids": [
+      "ts011f"
+     ],
+     "mfrs": 3
+    }
+   ],
+   "unsourcedMfrs": 0
+  },
+  {
+   "id": "lcdtemphumidsensor_2",
+   "combos": 4,
+   "sourcedCombos": 4,
+   "real": 1,
+   "parasites": 3,
+   "groups": [
+    {
+     "pids": [
+      "sm0201"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 0
+  },
+  {
+   "id": "led_controller_dimmable",
+   "combos": 20,
+   "sourcedCombos": 4,
+   "real": 1,
+   "parasites": 3,
+   "groups": [
+    {
+     "pids": [
+      "ts0501b"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 4
+  },
+  {
+   "id": "light_bulb_tunable_white",
+   "combos": 28,
+   "sourcedCombos": 4,
+   "real": 1,
+   "parasites": 3,
+   "groups": [
+    {
+     "pids": [
+      "ts0502a"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 6
+  },
+  {
+   "id": "relay_board_4_channel",
+   "combos": 8,
+   "sourcedCombos": 6,
+   "real": 3,
+   "parasites": 3,
+   "groups": [
+    {
+     "pids": [
+      "ts0004"
+     ],
+     "mfrs": 2
+    },
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 1
+  },
+  {
+   "id": "rgb_led_strip",
+   "combos": 16,
+   "sourcedCombos": 4,
+   "real": 1,
+   "parasites": 3,
+   "groups": [
+    {
+     "pids": [
+      "ts0505a"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 3
+  },
+  {
+   "id": "rgb_spot_GU10",
+   "combos": 4,
+   "sourcedCombos": 4,
+   "real": 1,
+   "parasites": 3,
+   "groups": [
+    {
+     "pids": [
+      "ts0505a"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 0
+  },
+  {
+   "id": "slim_motion_sensor",
+   "combos": 8,
+   "sourcedCombos": 6,
+   "real": 3,
+   "parasites": 3,
+   "groups": [
+    {
+     "pids": [
+      "ts0202"
+     ],
+     "mfrs": 3
+    }
+   ],
+   "unsourcedMfrs": 1
+  },
+  {
+   "id": "temphumidsensor2",
+   "combos": 21,
+   "sourcedCombos": 9,
+   "real": 6,
+   "parasites": 3,
+   "groups": [
+    {
+     "pids": [
+      "rh3052",
+      "ts0201"
+     ],
+     "mfrs": 2
+    },
+    {
+     "pids": [
+      "ts0201",
+      "ts0601"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 4
+  },
+  {
+   "id": "air_quality_comprehensive",
+   "combos": 24,
+   "sourcedCombos": 3,
+   "real": 1,
+   "parasites": 2,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 7
+  },
+  {
+   "id": "ceiling_fan",
+   "combos": 8,
+   "sourcedCombos": 4,
+   "real": 2,
+   "parasites": 2,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 2
+    }
+   ],
+   "unsourcedMfrs": 2
+  },
+  {
+   "id": "curtain_module",
+   "combos": 20,
+   "sourcedCombos": 4,
+   "real": 2,
+   "parasites": 2,
+   "groups": [
+    {
+     "pids": [
+      "ts130f"
+     ],
+     "mfrs": 2
+    }
+   ],
+   "unsourcedMfrs": 8
+  },
+  {
+   "id": "garage_door",
+   "combos": 18,
+   "sourcedCombos": 4,
+   "real": 2,
+   "parasites": 2,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 2
+    }
+   ],
+   "unsourcedMfrs": 7
+  },
+  {
+   "id": "light_sensor_outdoor",
+   "combos": 14,
+   "sourcedCombos": 4,
+   "real": 2,
+   "parasites": 2,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 2
+    }
+   ],
+   "unsourcedMfrs": 5
+  },
+  {
+   "id": "outdoor_plug",
+   "combos": 4,
+   "sourcedCombos": 4,
+   "real": 2,
+   "parasites": 2,
+   "groups": [
+    {
+     "pids": [
+      "ts0101"
+     ],
+     "mfrs": 2
+    }
+   ],
+   "unsourcedMfrs": 0
+  },
+  {
+   "id": "rgb_wall_led_light",
+   "combos": 6,
+   "sourcedCombos": 4,
+   "real": 2,
+   "parasites": 2,
+   "groups": [
+    {
+     "pids": [
+      "ts0505a"
+     ],
+     "mfrs": 2
+    }
+   ],
+   "unsourcedMfrs": 1
+  },
+  {
+   "id": "smart_knob_zg101zd",
+   "combos": 6,
+   "sourcedCombos": 4,
+   "real": 2,
+   "parasites": 2,
+   "groups": [
+    {
+     "pids": [
+      "ts004f"
+     ],
+     "mfrs": 2
+    }
+   ],
+   "unsourcedMfrs": 1
+  },
+  {
+   "id": "socket_power_strip_four",
+   "combos": 9,
+   "sourcedCombos": 3,
+   "real": 1,
+   "parasites": 2,
+   "groups": [
+    {
+     "pids": [
+      "ts0115"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 2
+  },
+  {
+   "id": "switch_wall_8gang",
+   "combos": 12,
+   "sourcedCombos": 4,
+   "real": 2,
+   "parasites": 2,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 2
+    }
+   ],
+   "unsourcedMfrs": 4
+  },
+  {
+   "id": "valve_single",
+   "combos": 12,
+   "sourcedCombos": 3,
+   "real": 1,
+   "parasites": 2,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 3
+  },
+  {
+   "id": "wall_remote_6_gang",
+   "combos": 6,
+   "sourcedCombos": 3,
+   "real": 1,
+   "parasites": 2,
+   "groups": [
+    {
+     "pids": [
+      "ts0046"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 1
+  },
+  {
+   "id": "button_wireless_6",
+   "combos": 6,
+   "sourcedCombos": 2,
+   "real": 1,
+   "parasites": 1,
+   "groups": [
+    {
+     "pids": [
+      "ts0046"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 2
+  },
+  {
+   "id": "device_generic_tuya_universal",
+   "combos": 28,
+   "sourcedCombos": 2,
+   "real": 1,
+   "parasites": 1,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 13
+  },
+  {
+   "id": "doorbell",
+   "combos": 18,
+   "sourcedCombos": 2,
+   "real": 1,
+   "parasites": 1,
+   "groups": [
+    {
+     "pids": [
+      "ts0211"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 8
+  },
+  {
+   "id": "pool_pump",
+   "combos": 8,
+   "sourcedCombos": 2,
+   "real": 1,
+   "parasites": 1,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 3
+  },
+  {
+   "id": "smart_irrigation_valve",
+   "combos": 6,
+   "sourcedCombos": 3,
+   "real": 2,
+   "parasites": 1,
+   "groups": [
+    {
+     "pids": [
+      "ts0049",
+      "ts0601"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 1
+  },
+  {
+   "id": "smart_motion_sensor",
+   "combos": 2,
+   "sourcedCombos": 2,
+   "real": 1,
+   "parasites": 1,
+   "groups": [
+    {
+     "pids": [
+      "ty0202"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 0
+  },
+  {
+   "id": "smartplug_2_socket",
+   "combos": 2,
+   "sourcedCombos": 2,
+   "real": 1,
+   "parasites": 1,
+   "groups": [
+    {
+     "pids": [
+      "ts011f"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 0
+  },
+  {
+   "id": "switch_wall_5gang",
+   "combos": 4,
+   "sourcedCombos": 2,
+   "real": 1,
+   "parasites": 1,
+   "groups": [
+    {
+     "pids": [
+      "ts0601"
+     ],
+     "mfrs": 1
+    }
+   ],
+   "unsourcedMfrs": 1
+  }
+ ]
+}
