@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updatedAt": "2026-11-01T11:48:41.926Z",
+ "updatedAt": "2026-11-02T13:27:08.052Z",
  "cap": 300,
  "seenKeys": [
   "ci-fail:40227923450:1",
@@ -166,7 +166,13 @@
   "ci-fail:41231741272:1",
   "ci-fail:41230993355:1",
   "ci-fail:41230987781:1",
-  "ci-fail:41227184890:1"
+  "ci-fail:41227184890:1",
+  "ci-fail:41447782455:1",
+  "ci-fail:41431628509:1",
+  "ci-fail:41411812359:1",
+  "ci-fail:41407782827:1",
+  "ci-fail:41402776968:1",
+  "ci-fail:41399984982:1"
  ],
  "signatures": {
   "c567adb8a6e1": {
@@ -867,8 +873,8 @@
    "unit": "test / Full suite on Node 22",
    "test": "",
    "firstSeen": "2026-10-27T10:30:13.354Z",
-   "lastSeen": "2026-11-01T11:48:32.965Z",
-   "fails": 8,
+   "lastSeen": "2026-11-02T13:27:05.510Z",
+   "fails": 10,
    "transient": 0,
    "recovered": 0,
    "branches": [
@@ -906,6 +912,14 @@
     ],
     [
      "2026-11-01T11:48:32.965Z",
+     "f"
+    ],
+    [
+     "2026-11-02T13:27:04.122Z",
+     "f"
+    ],
+    [
+     "2026-11-02T13:27:05.510Z",
      "f"
     ]
    ]
@@ -1684,6 +1698,90 @@
     ],
     [
      "2026-11-01T11:48:41.198Z",
+     "f"
+    ]
+   ]
+  },
+  "90ec293f2a9d": {
+   "category": "other",
+   "workflow": "KB refresh (weekly)",
+   "unit": "refresh / Open draft PR when changed",
+   "test": "",
+   "firstSeen": "2026-11-02T13:27:01.672Z",
+   "lastSeen": "2026-11-02T13:27:01.672Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "Process completed with exit code <n>.",
+   "events": [
+    [
+     "2026-11-02T13:27:01.672Z",
+     "f"
+    ]
+   ]
+  },
+  "4c886a8181ad": {
+   "category": "network",
+   "workflow": "Fetch Homey Diagnostics",
+   "unit": "fetch-diags / Privacy and diagnostic gates",
+   "test": "",
+   "firstSeen": "2026-11-02T13:27:02.843Z",
+   "lastSeen": "2026-11-02T13:27:02.843Z",
+   "fails": 0,
+   "transient": 1,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "Process completed with exit code <n>.",
+   "events": [
+    [
+     "2026-11-02T13:27:02.843Z",
+     "t"
+    ]
+   ]
+  },
+  "36aeff16af05": {
+   "category": "size",
+   "workflow": "Homey App Validate (all levels)",
+   "unit": "validate / Publish payload build + size/structure report",
+   "test": "",
+   "firstSeen": "2026-11-02T13:27:06.758Z",
+   "lastSeen": "2026-11-02T13:27:06.758Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "\u001b[<n>;<n>mif [ \"$JOB_STATUS\" = \"success\" ]; then s=\"debug and publish validation passed; the verified level is shown for information only.\"; else s=\"debug or pu",
+   "events": [
+    [
+     "2026-11-02T13:27:06.758Z",
+     "f"
+    ]
+   ]
+  },
+  "97d401ca5ec6": {
+   "category": "other",
+   "workflow": "Auto-Publish on Push",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-11-02T13:27:08.003Z",
+   "lastSeen": "2026-11-02T13:27:08.003Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "\u001b[<n>;<n>m.github<p> gh workflow run publish-hold-bisect.yml --ref master -f verdict_run=\"$GITHUB_RUN_ID\" || echo \"::warning::P<n> hand-off dispatch failed (cro",
+   "events": [
+    [
+     "2026-11-02T13:27:08.003Z",
      "f"
     ]
    ]
