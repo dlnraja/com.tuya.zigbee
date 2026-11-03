@@ -181,7 +181,7 @@ jobs:
           retention-days: 21
 
       - name: Commit intelligence reports [skip ci]
-        if: always() && (github.event_name == 'schedule' || inputs.commit_reports == true || inputs.commit_reports == '')
+        if: vars.SCRAPE_COMMIT == '1' && (always() && (github.event_name == 'schedule' || inputs.commit_reports == true || inputs.commit_reports == ''))
         continue-on-error: true
         run: |
           git config user.name "github-actions[bot]"

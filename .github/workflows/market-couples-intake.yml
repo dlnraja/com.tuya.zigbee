@@ -163,7 +163,7 @@ jobs:
           retention-days: 14
 
       - name: 📝 Commit state + compose (master)
-        if: ${{ github.event_name == 'schedule' || inputs.dry_run != true }}
+        if: vars.SCRAPE_COMMIT == '1' && (github.event_name == 'schedule' || inputs.dry_run != true)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
