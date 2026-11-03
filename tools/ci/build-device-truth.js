@@ -244,6 +244,12 @@ function main() {
     lines.push(`| \`${id}\` | ${d.class || ''} | ${d.protocol} | ${(d.productIds || []).slice(0, 6).join(', ')} | ${power} | ${d.manufacturerCount} | ${d.locks.length} | ${pec} |`);
   }
 
+  // P3264: held drivers whose couples ship inside a published dormant slot (347-driver cap).
+  try {
+    const hp = JSON.parse(fs.readFileSync(path.join(__dirname, '..', '..', 'config', 'architecture', 'hosted-profiles.json'), 'utf8'));
+    lines.push('', '## Hosted profiles (P3264, 347-driver cap)', '', 'These held drivers pair through a published host id; the host routes their exact couples to their own device class.', '', '| Held driver | Ships inside |', '|---|---|');
+    for (const [host, ids] of Object.entries(hp.hosts || {})) for (const id of ids) lines.push(`| \`${id}\` | \`${host}\` |`);
+  } catch (_) { /* optional */ }
   lines.push('', 'Regenerate: `node tools/ci/build-device-truth.js`', '');
   fs.writeFileSync(OUT_MD, `${lines.join('\n')}\n`);
   console.log(`[device-truth] drivers=${payload.driverCount} locks=${payload.lockCount}`);

@@ -8,3 +8,4 @@
 - Additive data only; nothing is read at pairing time. No house/user data.
 - P3200: a couple listed in source is not proof it ships. User-reported couples go in `data/leads/reported-couples.json`; `tools/ci/reported-couples-publish-survival.js` checks they survive publish compaction. User reports are presumed true (docs/rules/USER_REPORTS_PRESUMED_TRUE.md).
 - P3207: manifest `bindings` follow the SSOT only for clusters every couple of the driver serves; the rest live in `lib/zigbee/data/runtime-bindings.json` and are bound at runtime when the node has them (docs/rules/DYNAMIC_ADAPTATION.md).
+- P3264: new couples go into a surviving driver, a folding continuation, or a hosted profile (`config/architecture/hosted-profiles.json`). Never into a new driver id. The cap lives in `config/architecture/driver-cap.json`. See [FIT_347_HOSTED_PROFILES.md](FIT_347_HOSTED_PROFILES.md).

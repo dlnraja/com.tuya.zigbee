@@ -146,3 +146,9 @@ Gates / helpers:
 - `scripts/lib/soft-expect-decision.js` (`isTransientAthomFailure` / `softAlertDecision`)
 
 See also: [PROTOCOL_TX_RX_SSOT.md](./PROTOCOL_TX_RX_SSOT.md) (IAS skip) · [DUAL_APP_VISION.md](../rules/DUAL_APP_VISION.md)
+
+## Driver-count cap and hosted profiles (P3264)
+
+- The payload ships at most 347 drivers: `config/architecture/driver-cap.json`, gated in `prepare-publish` and `scripts/ci/driver-cap-gate.js`.
+- Held drivers can ship their couples inside published dormant slots: `config/architecture/hosted-profiles.json`, `lib/hosting/HostedProfiles.js`.
+- Rule: [FIT_347_HOSTED_PROFILES.md](../rules/FIT_347_HOSTED_PROFILES.md). Test: `test/critical/p3264-fit-347.test.js`.

@@ -125,3 +125,5 @@ Everything is rewritten in our own words and code; see [CREDITS.md](CREDITS.md) 
 ## License
 
 See [LICENSE](LICENSE). Community discussion: [Homey forum topic](https://community.homey.app/t/140352); bug reports: [GitHub issues](https://github.com/dlnraja/com.tuya.zigbee/issues).
+
+> **Driver-count cap (P3264):** the published app ships at most 347 drivers, because Athom refuses bigger builds. Some held drivers pair through a published host driver (hosted profiles). See [docs/rules/FIT_347_HOSTED_PROFILES.md](docs/rules/FIT_347_HOSTED_PROFILES.md).

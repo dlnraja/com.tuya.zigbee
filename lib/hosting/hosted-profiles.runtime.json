@@ -1,0 +1,350 @@
+{
+ "_generated": "scripts/arch/build-hosted-profiles.js (P3264) - do not edit",
+ "hosts": {
+  "device_generic_tuya": [
+   {
+    "id": "sauna_thermostat_ae5503",
+    "class": "thermostat",
+    "manufacturerName": [
+     "_TZE204_eaasry7v",
+     "_tze204_eaasry7v"
+    ],
+    "productId": [
+     "TS0601"
+    ],
+    "module": "drivers/sauna_thermostat_ae5503/device.js"
+   },
+   {
+    "id": "siren_moes_mg_bjq002",
+    "class": "other",
+    "manufacturerName": [
+     "_TZE20C_tjz9ad5g",
+     "_tze20c_tjz9ad5g"
+    ],
+    "productId": [
+     "TS0601"
+    ],
+    "module": "drivers/siren_moes_mg_bjq002/device.js"
+   },
+   {
+    "id": "switch_wall_6gang_metering",
+    "class": "socket",
+    "manufacturerName": [
+     "_TZE284_hbxadcl0",
+     "_tze284_hbxadcl0"
+    ],
+    "productId": [
+     "TS0601"
+    ],
+    "module": "drivers/switch_wall_6gang_metering/device.js"
+   },
+   {
+    "id": "valve_novato_zpv01",
+    "class": "other",
+    "manufacturerName": [
+     "_TZE284_zm8zpwas",
+     "_tze284_zm8zpwas",
+     "_TZE204_dsagrkvg",
+     "_tze204_dsagrkvg",
+     "_TZE204_DSAGRKVG",
+     "_TZE284_sdvbnmj5",
+     "_tze284_sdvbnmj5",
+     "_TZE284_SDVBNMJ5",
+     "_TZE284_ZM8ZPWAS"
+    ],
+    "productId": [
+     "TS0601"
+    ],
+    "module": "drivers/valve_novato_zpv01/device.js"
+   },
+   {
+    "id": "energy_meter_3ch_bidirectional",
+    "class": "socket",
+    "manufacturerName": [
+     "_TZE20C1000000_p3g8xiug",
+     "_tze20c1000000_p3g8xiug",
+     "_TZE20C1000000_P3G8XIUG",
+     "_tze20c1000000_P3G8XIUG"
+    ],
+    "productId": [
+     "TS0601"
+    ],
+    "module": "drivers/energy_meter_3ch_bidirectional/device.js"
+   },
+   {
+    "id": "gpo_double_light_mg_au03",
+    "class": "socket",
+    "manufacturerName": [
+     "_TZE200_4jvmbiph",
+     "_tze200_4jvmbiph",
+     "_TZE200_4JVMBIPH",
+     "_tze200_4JVMBIPH"
+    ],
+    "productId": [
+     "TS0601"
+    ],
+    "module": "drivers/gpo_double_light_mg_au03/device.js"
+   },
+   {
+    "id": "gpo_double_mg_gpo02z",
+    "class": "socket",
+    "manufacturerName": [
+     "_TZE200_lq0ffndf",
+     "_tze200_lq0ffndf",
+     "_TZE200_LQ0FFNDF",
+     "_tze200_LQ0FFNDF"
+    ],
+    "productId": [
+     "TS0601"
+    ],
+    "module": "drivers/gpo_double_mg_gpo02z/device.js"
+   },
+   {
+    "id": "keypad_alarm_wke502z",
+    "class": "homealarm",
+    "manufacturerName": [
+     "_TZE200_rt5dklro",
+     "_tze200_rt5dklro",
+     "_TZE200_RT5DKLRO",
+     "_tze200_RT5DKLRO"
+    ],
+    "productId": [
+     "TS0601"
+    ],
+    "module": "drivers/keypad_alarm_wke502z/device.js"
+   },
+   {
+    "id": "thermostat_vrf_bvrf_l001",
+    "class": "thermostat",
+    "manufacturerName": [
+     "_TZE204_6ewjlefg",
+     "_tze204_6ewjlefg",
+     "_TZE204_6EWJLEFG",
+     "_tze204_6EWJLEFG"
+    ],
+    "productId": [
+     "TS0601"
+    ],
+    "module": "drivers/thermostat_vrf_bvrf_l001/device.js"
+   },
+   {
+    "id": "ufh_controller_ch8z",
+    "class": "heater",
+    "manufacturerName": [
+     "_TZE284_1oft6qso",
+     "_tze284_1oft6qso",
+     "_TZE284_1OFT6QSO",
+     "_tze284_1OFT6QSO"
+    ],
+    "productId": [
+     "TS0601"
+    ],
+    "module": "drivers/ufh_controller_ch8z/device.js"
+   },
+   {
+    "id": "ufh_controller_pro_line_x10",
+    "class": "heater",
+    "manufacturerName": [
+     "_TZE204_rfpyqax9",
+     "_tze204_rfpyqax9",
+     "_TZE204_RFPYQAX9",
+     "_tze204_RFPYQAX9",
+     "_TZE284_rfpyqax9",
+     "_tze284_rfpyqax9",
+     "_TZE284_RFPYQAX9",
+     "_tze284_RFPYQAX9"
+    ],
+    "productId": [
+     "TS0601"
+    ],
+    "module": "drivers/ufh_controller_pro_line_x10/device.js"
+   },
+   {
+    "id": "wall_switch_rf_ews1154z",
+    "class": "socket",
+    "manufacturerName": [
+     "_TZE200_yp5tsi3y",
+     "_tze200_yp5tsi3y",
+     "_TZE200_YP5TSI3Y",
+     "_tze200_YP5TSI3Y"
+    ],
+    "productId": [
+     "TS0601"
+    ],
+    "module": "drivers/wall_switch_rf_ews1154z/device.js"
+   },
+   {
+    "id": "air_conditioner_aetz01",
+    "class": "thermostat",
+    "manufacturerName": [
+     "_TZE200_snfdqllf",
+     "_tze200_snfdqllf"
+    ],
+    "productId": [
+     "TS0601"
+    ],
+    "module": "drivers/air_conditioner_aetz01/device.js"
+   },
+   {
+    "id": "fan_light_tuya_5_levels",
+    "class": "fan",
+    "manufacturerName": [
+     "_TZE284_ikul00sx",
+     "_tze284_ikul00sx"
+    ],
+    "productId": [
+     "TS0601"
+    ],
+    "module": "drivers/fan_light_tuya_5_levels/device.js"
+   },
+   {
+    "id": "smoke_sensor_ts0601_dp",
+    "class": "sensor",
+    "manufacturerName": [
+     "_TZE200_yh7aoahi",
+     "_tze200_yh7aoahi",
+     "_TZE200_YH7AOAHI",
+     "_tze200_YH7AOAHI",
+     "_TZE200_t5p1vj8r",
+     "_tze200_t5p1vj8r",
+     "_TZE200_T5P1VJ8R",
+     "_tze200_T5P1VJ8R",
+     "_TZE200_uebojraa",
+     "_tze200_uebojraa",
+     "_TZE200_UEBOJRAA",
+     "_tze200_UEBOJRAA",
+     "_TZE200_vzekyi4c",
+     "_tze200_vzekyi4c",
+     "_TZE200_VZEKYI4C",
+     "_tze200_VZEKYI4C",
+     "_TZE200_dq1mfjug",
+     "_tze200_dq1mfjug",
+     "_TZE200_DQ1MFJUG",
+     "_tze200_DQ1MFJUG",
+     "_TZE204_ntcy3xu1",
+     "_tze204_ntcy3xu1",
+     "_TZE204_NTCY3XU1",
+     "_tze204_NTCY3XU1",
+     "_tze200_0zaf1cr8",
+     "_TZE200_0zaf1cr8",
+     "_TZE200_0ZAF1CR8",
+     "_tze200_0ZAF1CR8",
+     "_tze284_0zaf1cr8",
+     "_TZE284_0zaf1cr8",
+     "_TZE284_0ZAF1CR8",
+     "_tze284_0ZAF1CR8"
+    ],
+    "productId": [
+     "TS0601"
+    ],
+    "module": "drivers/smoke_sensor_ts0601_dp/device.js"
+   }
+  ],
+  "sensor_contact_presence": [
+   {
+    "id": "heiman_keyfob",
+    "class": "other",
+    "manufacturerName": [
+     "HEIMAN",
+     "heiman"
+    ],
+    "productId": [
+     "RC-EF-3.0"
+    ],
+    "module": "drivers/heiman_keyfob/device.js"
+   },
+   {
+    "id": "heiman_siren",
+    "class": "other",
+    "manufacturerName": [
+     "HEIMAN",
+     "Heiman",
+     "heiman"
+    ],
+    "productId": [
+     "WarningDevice",
+     "WarningDevice-EF-3.0"
+    ],
+    "module": "drivers/heiman_siren/device.js"
+   },
+   {
+    "id": "water_leak_blitzwolf_bw_is9",
+    "class": "sensor",
+    "manufacturerName": [
+     "_TZ3000_eit7p838 ",
+     "_TZ3000_eit7p838",
+     "_tz3000_eit7p838"
+    ],
+    "productId": [
+     "TS0207"
+    ],
+    "module": "drivers/water_leak_blitzwolf_bw_is9/device.js"
+   },
+   {
+    "id": "motion_sensor_excellux_zg104plv",
+    "class": "sensor",
+    "manufacturerName": [
+     "PIRIV01",
+     "piriv01"
+    ],
+    "productId": [
+     "Excellux"
+    ],
+    "module": "drivers/motion_sensor_excellux_zg104plv/device.js"
+   },
+   {
+    "id": "vibration_sensor_excellux_zg103v",
+    "class": "sensor",
+    "manufacturerName": [
+     "VABRATE",
+     "vabrate",
+     "Vabrate"
+    ],
+    "productId": [
+     "Excellux"
+    ],
+    "module": "drivers/vibration_sensor_excellux_zg103v/device.js"
+   }
+  ],
+  "smart_rcbo": [
+   {
+    "id": "curtain_sonoff_mini_zbrbs",
+    "class": "windowcoverings",
+    "manufacturerName": [
+     "SONOFF"
+    ],
+    "productId": [
+     "MINI-ZBRBS"
+    ],
+    "module": "drivers/curtain_sonoff_mini_zbrbs/device.js"
+   },
+   {
+    "id": "presence_radar_aoyan_ay204t",
+    "class": "sensor",
+    "manufacturerName": [
+     "AOYAN  "
+    ],
+    "productId": [
+     "AY204T"
+    ],
+    "module": "drivers/presence_radar_aoyan_ay204t/device.js"
+   }
+  ],
+  "switch_plug_1": [
+   {
+    "id": "switch_2gang_ts0002",
+    "class": "socket",
+    "manufacturerName": [
+     "_TZ3000_amal63is",
+     "_tz3000_amal63is",
+     "_TZ3000_AMAL63IS",
+     "_tz3000_AMAL63IS"
+    ],
+    "productId": [
+     "TS0002"
+    ],
+    "module": "drivers/switch_2gang_ts0002/device.js"
+   }
+  ]
+ }
+}

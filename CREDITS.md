@@ -565,3 +565,8 @@ A heartfelt thank you to:
 - Own work, no external code. Root cause found while unblocking master publishing: bot `[skip ci]` commits that touch `.js` left no code-identical CI run and kept moving the tip, so the P3036 gate held every upload as "CI superseded". The gate now counts the tip's CI when the tip has the same code as the gated SHA.
 
 - P3258 (03/11/2026): publish gate counts only shipped build inputs when adopting a bot-moved tip, and primes CI on the tip when it holds as superseded.
+
+## Fit in 347 drivers (P3264, 2026-11-03)
+
+- P3264 driver-count cap (347) plus hosted profiles in dormant published slots. Requested by dlnraja (t839u, t840u). The `onMapDeviceClass` routing follows Athom's homey-zigbeedriver API; no third-party code.
+- P3264 (03/11/2026): the Athom API shows 345 drivers vs 347 shipped. The 2 hidden ones are the deprecated drivers, so deprecated drivers no longer host profiles. Added `scripts/ci/athom-api-count-compare.js`, which runs after each upload. Data from the public apps-api endpoint only.

@@ -136,6 +136,11 @@ jobs:
           if [ -f scripts/ci/driver-signature-dup-gate.js ]; then node scripts/ci/driver-signature-dup-gate.js
           else echo "driver-signature-dup-gate absent on this branch — skipped"; fi
 
+      - name: Driver-count cap (P3264 — 347 drivers max, no new driver id; couples go into surviving drivers)
+        run: |
+          if [ -f scripts/ci/driver-cap-gate.js ]; then node scripts/ci/driver-cap-gate.js
+          else echo "driver-cap-gate absent on this branch — skipped"; fi
+
       - name: Continuation chain rules (rootOf aliasing; continuation only when root is full, P3206)
         run: |
           if [ -f scripts/ci/driver-continuations-check.js ]; then node scripts/ci/driver-continuations-check.js

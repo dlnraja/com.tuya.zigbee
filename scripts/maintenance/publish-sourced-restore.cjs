@@ -95,10 +95,10 @@ function attestedExact(repoRoot) {
   return new Set(((att && att.attested) || []).filter(Array.isArray).map((c) => `${c[0]}\u0000${c[1]}`));
 }
 
-function sacredExact(repoRoot) {
+function sacredExact(repoRoot, retarget = null) {
   const raw = readJson(path.join(repoRoot, 'config', 'architecture', 'publish-sacred-keep-couples.json'));
   const s = new Set();
-  for (const c of (raw && raw.couples) || []) s.add(`${c.driverId}#${c.mfr}#${uc(c.pid || c.productId || c.modelId)}`);
+  for (const c of (raw && raw.couples) || []) s.add(`${(retarget && retarget.get(c.driverId)) || c.driverId}#${c.mfr}#${uc(c.pid || c.productId || c.modelId)}`);
   return s;
 }
 
@@ -408,7 +408,9 @@ function sourcedPassFile(source, destAppJson, opts = {}) {
   const repoRoot = opts.repoRoot || path.join(__dirname, '..', '..');
   const man = JSON.parse(fs.readFileSync(destAppJson, 'utf8'));
   const sourced = loadSourcedCouples(repoRoot);
-  const sacred = sacredExact(repoRoot);
+  // P3264: sacred pins of a hosted held profile are checked in its host slot.
+  const sacred = sacredExact(repoRoot, opts.sacredRetarget || null);
+  for (const c of opts.extraSacred || []) sacred.add(`${c.driverId}#${c.mfr}#${uc(c.pid)}`);
   const driversBefore = (man.drivers || []).length;
   const snapDoc = opts.ratchet ? null : readJson(snapshotFile(repoRoot, opts.branch) || '');
   const ratchet = opts.ratchet || new Set(snapDoc && Array.isArray(snapDoc.couples) ? snapDoc.couples : []);

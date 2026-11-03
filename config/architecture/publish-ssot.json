@@ -12,10 +12,17 @@
   "payloadSize": {
     "id": "P2840",
     "why": "Athom socket hang / processing_failed when upload bloats (root backups/ ~12MB dumps in .homeybuild).",
-    "homeyignoreMustExclude": ["backups", "tmp", "reports", "data/mfs_db.json"],
+    "homeyignoreMustExclude": [
+      "backups",
+      "tmp",
+      "reports",
+      "data/mfs_db.json"
+    ],
     "sizeGate": "scripts/ci/publish-size-gate.cjs",
     "leanWarnMB": 14,
-    "failIfBuildContains": ["backups/"],
+    "failIfBuildContains": [
+      "backups/"
+    ],
     "npm": "check:p2840",
     "test": "test/critical/p2840-publish-payload-no-backups.test.js"
   },
@@ -319,5 +326,15 @@
     "test": "test/critical/p2831-socket-hang-tip-mail-storm.test.js",
     "npm": "check:p2831",
     "classify": "BOTH"
+  },
+  "driverCap": {
+    "id": "P3264",
+    "why": "Athom refuses builds above 347 drivers (ticket 157057). The payload has at most 347 ids and no new source driver id is created. Couples go into surviving drivers, folding continuations, or hosted profiles in dormant published slots.",
+    "cap": "config/architecture/driver-cap.json",
+    "hosted": "config/architecture/hosted-profiles.json",
+    "runtime": "lib/hosting/HostedProfiles.js",
+    "gate": "scripts/ci/driver-cap-gate.js",
+    "rule": "docs/rules/FIT_347_HOSTED_PROFILES.md",
+    "test": "test/critical/p3264-fit-347.test.js"
   }
 }

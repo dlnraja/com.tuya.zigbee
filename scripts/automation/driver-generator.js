@@ -830,6 +830,8 @@ function main() {
     const driverJs = generateDriverJs(driverId, entry, typeConfig);
     const deviceJs = generateDeviceJs(driverId, entry, typeConfig);
 
+    // P3264: no new driver id beyond the 347 architecture; couples go into a surviving driver.
+    try { require('../../lib/arch/DriverCap').assertCanCreateDriver(driverId); } catch (e) { console.log(`  SKIP ${driverId}: ${e.message}`); continue; }
     if (!DRY_RUN) {
       fs.mkdirSync(driverDir, { recursive: true });
       const imgDir = path.join(driverDir, 'assets', 'images');

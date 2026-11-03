@@ -514,6 +514,14 @@ jobs:
             next=$(printf '%s\n' "$out" | sed -n 's/^\[transient-retry\] NEXT=//p' | head -1); gh workflow run publish.yml --ref "${GITHUB_REF_NAME}" -f transient_retry="${next:-1}" || true
           fi
           exit 1
+      # P3264: Athom's public API count vs the local payload (deprecated drivers are hidden there).
+      - name: Athom API driver/flow count vs local payload (P3264)
+        if: always() && steps.pub.outcome == 'success'
+        continue-on-error: true
+        timeout-minutes: 3
+        run: |
+          set -o pipefail
+          node scripts/ci/athom-api-count-compare.js | tee -a "$GITHUB_STEP_SUMMARY"
       # P3069: short summary through the shared helper, on success and on failure.
       - name: Short summary (shared report helper)
         if: always()
