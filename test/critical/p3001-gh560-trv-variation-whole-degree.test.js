@@ -23,7 +23,7 @@ const MVM = require(path.join(ROOT, 'lib/ManufacturerVariationManager'));
 describe('P3001 TRV variation routing + TRV06 whole degree', () => {
   it('radiator / thermostat drivers never receive the water-valve map', () => {
     for (const d of ['device_radiator_valve', 'radiator_valve', 'thermostatic_radiator_valve',
-      'radiator_valve_zigbee', 'device_radiator_valve_smart', 'device_radiator_valve_thermostat']) {
+      'radiator_valve_zigbee', 'device_radiator_valve_smart']) {
       const c = MVM.getManufacturerConfig('_TZE200_rxq4iti9', 'TS0601', d);
       assert.notEqual(c.specialHandling, 'tuya_dp_water_valve', d);
       assert.equal(Object.keys(c.dpMappings || {}).length, 0, d);

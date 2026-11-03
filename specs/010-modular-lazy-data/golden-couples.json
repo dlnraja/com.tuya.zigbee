@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-03T07:55:40.430Z",
- "drivers": 421,
+ "drivers": 420,
  "snapshot": {
   "air_conditioner_aetz01": {
    "mfr": 1,
@@ -631,12 +631,6 @@
    "pid": 10,
    "mfrSha": "9ecc4526c100fe8c",
    "pidSha": "2bddbfaed82ba5d4"
-  },
-  "device_radiator_valve_thermostat": {
-   "mfr": 1,
-   "pid": 1,
-   "mfrSha": "2602fabf42789c23",
-   "pidSha": "455c46e8c8549693"
   },
   "dimmable_led_strip": {
    "mfr": 17,

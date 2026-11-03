@@ -7,7 +7,7 @@ const path = require('path');
 const W = require('../../lib/flow/DeadFlowAutoWire');
 
 const ROOT = path.join(__dirname, '..', '..');
-const DRIVERS = ['device_air_purifier', 'device_air_purifier_thermostat', 'device_radiator_valve_thermostat'];
+const DRIVERS = ['device_air_purifier', 'device_air_purifier_thermostat']  // P3263: device_radiator_valve_thermostat removed;
 
 test('P3065 D9: modeEdge needs a known, different previous value', () => {
   assert.equal(W.modeEdge('enter:heat', 'heat', 'auto'), true);
