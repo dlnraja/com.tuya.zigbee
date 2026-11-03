@@ -83,10 +83,18 @@ function fold({ remote = 'origin', cwd = process.cwd() } = {}) {
   return { folded: true, bot: skipped.length ? '' : bot, files: files.length, skipped };
 }
 
-module.exports = { eligible, divert, fold, loadCfg };
+module.exports = { resetBranch, eligible, divert, fold, loadCfg };
+
+// Delete bot/data only if it still points at the folded tip (lease), so a newer bot commit is kept.
+function resetBranch({ sha, remote = 'origin', cwd = process.cwd(), cfg = loadCfg(cwd) } = {}) {
+  if (!/^[0-9a-f]{7,40}$/.test(String(sha || ''))) return { reset: false, reason: 'no sha' };
+  const r = spawnSync('git', ['push', remote, `--force-with-lease=refs/heads/${cfg.branch}:${sha}`, `:refs/heads/${cfg.branch}`], { cwd, encoding: 'utf8' });
+  return { reset: r.status === 0, reason: r.status === 0 ? 'deleted' : 'moved' };
+}
 
 if (require.main === module) {
   const cmd = process.argv[2];
+  if (cmd === 'reset') { const r = resetBranch({ sha: process.argv[3] }); console.log(`bot-batch reset: ${JSON.stringify(r)}`); process.exit(0); }
   const r = cmd === 'fold' ? fold() : divert({ branch: process.env.PUSH_RETRY_BRANCH || process.argv[3] || 'master' });
   console.log(`bot-batch ${cmd}: ${JSON.stringify(r)}`);
   if (process.env.GITHUB_OUTPUT && r.bot) fs.appendFileSync(process.env.GITHUB_OUTPUT, `bot=${r.bot}\n`);

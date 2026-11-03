@@ -397,6 +397,10 @@
     "upstream-thread-miner.yml": {
       "group": "enrich",
       "what": "Adaptive miner of upstream issues/PRs (zigpy, Z2M, deCONZ, others): per-repo cursors, privacy-redacted digests in docs/knowledge/upstream, couple links and candidate tasks. No AI, fail-closed guard."
+    },
+    "bot-data-fold.yml": {
+      "group": "autopilot",
+      "what": "Once a day, folds the bot data commits parked on the bot/data branch into one quiet master commit, keeping human edits."
     }
   }
 }
