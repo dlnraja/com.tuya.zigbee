@@ -91,9 +91,9 @@ fi
 # for the heap-flake allowlist). Emergency skip: HOOKS_SKIP_FULL_SUITE=1 (CI still runs it).
 if [ "${HOOKS_SKIP_FULL_SUITE:-0}" != "1" ] && [ -f "$ROOT/tools/ci/mocha-flaky-retry.js" ]; then
   echo -e "${CYAN}[+] Full mocha suite incl. test/critical (same as Node 22 CI)...${RESET}"
-  if ! (cd "$ROOT" && "$NODE_BIN" tools/ci/mocha-flaky-retry.js --timeout=20000) >/tmp/p3243-full-suite.log 2>&1; then
-    grep -A25 -E "^ +[0-9]+ failing$" /tmp/p3243-full-suite.log | head -60
-    echo -e "${RED}❌ PUSH BLOCKED — full mocha suite failed (log /tmp/p3243-full-suite.log)${RESET}"
+  if ! (cd "$ROOT" && env -u GIT_DIR -u GIT_WORK_TREE -u GIT_INDEX_FILE -u GIT_PREFIX -u GIT_OBJECT_DIRECTORY -u GIT_COMMON_DIR "$NODE_BIN" tools/ci/mocha-flaky-retry.js --timeout=20000) >"${TMPDIR:-/tmp}/p3243-full-suite.$$.log" 2>&1; then
+    grep -A25 -E "^ +[0-9]+ failing$" "${TMPDIR:-/tmp}/p3243-full-suite.$$.log" | head -60
+    echo -e "${RED}❌ PUSH BLOCKED — full mocha suite failed (log "${TMPDIR:-/tmp}/p3243-full-suite.$$.log")${RESET}"
     exit 1
   fi
 fi
