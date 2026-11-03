@@ -22,7 +22,7 @@ uploads to Athom, never pushes; per-ref concurrency with cancel-in-progress).
 | Uncompressed payload | self | 50 MiB | 31.36 (63 %) | 37.30 (75 %) | 21.56 (43 %) — was 21.8 |
 | Gzip archive | self | 20 MiB (warn 10) | 9.22 (46 %) | 15.87 (79 %) | 5.63 (28 %) — was 5.83 |
 | Zigbee manufacturerName × productId | self | `HOMEY_ZIGBEE_MAX_TOTAL_COMBOS` (15500 live, 14000 fallback) | 15470 (99.8 %) | 15498 (100 %) | 4044 (26 %) |
-| Drivers in the upload | info | — | 347 | 341 | 27 |
+| Drivers in the upload | observed (P3262, unconfirmed by Athom, ticket 157057) | last accepted: 347 / 342 / 27 — never exceed, see docs/rules/DRIVER_COUNT_CEILING.md | 347 | 342 | 27 |
 
 - Largest payloads Athom accepted (from `docs/knowledge/athom-publish-outcomes.jsonl`):
   stable 5.12.449 (38.33 MB, 4631 files, app.json 3.5 MB), master 9.0.1520 (35.85 MB, 4537 files,

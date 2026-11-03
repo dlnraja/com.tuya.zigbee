@@ -1,0 +1,24 @@
+{
+  "id": "driver-count-ceiling",
+  "pr": "P3262",
+  "since": "2026-11-03",
+  "status": "observed, unconfirmed by Athom",
+  "athomTicket": "157057",
+  "rule": "Never ship more drivers than the last Athom-accepted build of that app. New couples go into existing drivers or continuation chains without breaking one-couple-one-driver; a placeholder driver may be swapped one-for-one.",
+  "limits": "config/driver-count-ceiling.json",
+  "gate": "scripts/ci/driver-count-ceiling-gate.js (warn master, fail stable-v5 and bastien-home)",
+  "runningTest": "2026-11-03: device_radiator_valve_thermostat swapped one-for-one for water_leak_aoyan_ay222z on master (count stays 347)",
+  "docs": [
+    "docs/rules/DRIVER_COUNT_CEILING.md",
+    "CORE_RULES.md",
+    "docs/knowledge/KB/PLATFORM_LIMITS.md"
+  ],
+  "athomApiCount": {
+    "master 9.0.1615 #3697": 345,
+    "stable #417": 341,
+    "bastien #236": 27,
+    "source": "https://apps-api.athom.com/api/v1/app/<id> testBuild.drivers (public)",
+    "note": "we count 347/342/27; gate allows apiCount + offset"
+  },
+  "publicSources": "No public limit: SDK docs, homey CLI 4.6.2 (upload + HTTP status only), homey-lib 2.53.0 schema (no maxItems on drivers). AggregateError comes from Athom server-side processing after upload."
+}
