@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-03T00:49:17.078Z",
+ "updated": "2026-11-03T07:05:06.821Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -8147,6 +8147,16 @@
    "by": "tuya-deep-diag",
    "kind": "bug_report",
    "mailDate": "2026-10-19T22:59:31.000Z",
+   "errors": 1
+  },
+  "diag:40d3483bc7ca6ce1": {
+   "status": "pending",
+   "date": "2026-11-03",
+   "hash": "2e8ec085d27b9581",
+   "note": "github mail; 1 error line(s)",
+   "by": "fetch-diags",
+   "kind": "github",
+   "mailDate": "2026-11-03T00:59:02.000Z",
    "errors": 1
   },
   "diag:416d42d71c36fe15": {
