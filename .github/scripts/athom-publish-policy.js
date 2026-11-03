@@ -320,9 +320,12 @@ function evaluateCi({ required, ancestry, runsByWorkflow, codeChanged } = {}) {
 // dispatched the missing workflows on the *branch*, i.e. on a newer tip that can never count for the
 // gated SHA. When the gated SHA is no longer the branch tip and its CI is missing, waiting or dispatching
 // is useless: hold at once as "superseded" so the next slot gates the tip.
-function missingCiAction({ state, sha, tip } = {}) {
+// P3256 (03/11/2026): bot [skip ci] commits keep moving the tip; when the tip is code-identical to the
+// gated SHA, holding as superseded starves master forever (09:40 Paris: no upload since #3696). Adopt the
+// tip instead: its CI counts for the gated SHA (same code), and missing CI is dispatched on the branch.
+function missingCiAction({ state, sha, tip, tipCodeIdentical } = {}) {
   if (state !== 'missing') return 'wait';
-  if (tip && sha && tip !== sha) return 'superseded';
+  if (tip && sha && tip !== sha) return tipCodeIdentical === true ? 'adopt-tip' : 'superseded';
   return 'dispatch';
 }
 
@@ -450,7 +453,16 @@ async function ciGate(appId) {
     if (last.state === 'missing') {
       let tip = null;
       try { tip = (await gh(`/repos/${repo}/commits/${encodeURIComponent(branch)}`)).sha; } catch { /* unknown tip: keep the old behaviour */ }
-      if (missingCiAction({ state: last.state, sha, tip }) === 'superseded') {
+      let tipSame = null;
+      if (tip && tip !== sha && !ancestry.includes(tip)) {
+        if (viaGit) tipSame = localCodeChanged(sha, tip) === false;
+        if (!viaGit || tipSame === null) {
+          try { const c = await gh(`/repos/${repo}/compare/${sha}...${tip}`); const fl = c.files || []; tipSame = fl.length < 300 && !fl.some((f) => isCodeFile(f.filename)); } catch { tipSame = null; }
+        }
+      }
+      const act = missingCiAction({ state: last.state, sha, tip, tipCodeIdentical: tipSame });
+      if (act === 'adopt-tip') { ancestry.unshift(tip); diffCache.set(tip, false); console.log(`[p3036] P3256 tip ${String(tip).slice(0, 10)} is code-identical to ${String(sha).slice(0, 10)}: its CI counts`); }
+      if (act === 'superseded') {
         last = { ...last, state: 'superseded', tip, reason: `${String(sha).slice(0, 10)} is no longer the ${branch} tip (${String(tip).slice(0, 10)}) and its CI is missing` };
         break;
       }

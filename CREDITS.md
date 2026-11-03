@@ -560,3 +560,6 @@ A heartfelt thank you to:
 - P3243b/c (2026-11-03): hook git env (GIT_DIR/GIT_WORK_TREE...) stripped for the full suite (pre-push env -u, mocha root hook, runners) — test fixtures had written core.bare/core.worktree and commits into the shared repo; post-Test write-back changelog names subject items + P/GH refs instead of a vague family line (P3075). Tests p3243b, p3243c.
 - finnamu (GH#516): _TZ3000_isw9u95y / TS0201 dropped by publish compaction — P3248 pinned; all 2026 reported couples now in survival gate.
 - P3249 (2026-11-03): EF00 direct-cluster Buffer encoding from PR #558 (martinheie-ui, Aipin MC101Z) locked by a regression test; numeric bitmap/raw now big-endian bytes.
+
+## CI gate adopts a code-identical tip (P3256, 2026-11-03)
+- Own work, no external code. Root cause found while unblocking master publishing: bot `[skip ci]` commits that touch `.js` left no code-identical CI run and kept moving the tip, so the P3036 gate held every upload as "CI superseded". The gate now counts the tip's CI when the tip has the same code as the gated SHA.
