@@ -534,6 +534,42 @@
         "git_history": "4ec01c0fe7 feat(P92.62): couverture casse 4-combos pairing (3996 variantes) — tout firmware case-insensitive au pairing [skip ci] | fdd7b376ad fix(P92.47): 4950 variantes de casse (anti unknown device) + compacteur par groupes de casse (0 purge) + version 9.0.373 | 4bca3ddfe8 fix(P92): publish compactor priority + forum bugs + WiFi local-first + security hardening",
         "sibling_pids": "_TZE284_qoi1aqxg|TS0601"
       }
+    },
+    {
+      "couple": "_TZE204_sdykkwsu|TS0601",
+      "driver": "energy_meter_3phase",
+      "pr": "P3253",
+      "verdict": "wrong driver: AVATTO ZDMS16-US-W2 2-channel dimmer (Z2M/ZHC avatto.ts, DP1/2/7/8 = dimmer_2_gang_tuya V1_MULTI_GANG_DIMMER layout); moved to dimmer_2_gang_tuya",
+      "sources": {
+        "z2m": "z2m:ZDMS16-US-W2; zhc:ZDMS16-US-W2",
+        "zha": "not listed for TS0601",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "03544ef392 feat(P92.61): caseless complet — variante canonique pairing (2515), mfs_db dedupe, cache LRU TuyaNormalizer, migration 12 hotspots [skip ci] | fdd7b376ad fix(P92.47): 4950 variantes de casse (anti unknown device) + compacteur par groupes de casse (0 purge) + version 9.0.373 | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZE204_sdykkwsu|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE204_zxkwaztm|TS0601",
+      "driver": "curtain_motor",
+      "pr": "P3253",
+      "verdict": "wrong driver: Moes ZHT-S03 wall thermostat (Z2M/ZHC moes.ts, DP1/16/24/40 = wall_thermostat BHT layout); moved to wall_thermostat",
+      "sources": {
+        "z2m": "z2m:ZHT-S03; zhc:ZHT-S03",
+        "zha": "not listed for TS0601",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "03544ef392 feat(P92.61): caseless complet — variante canonique pairing (2515), mfs_db dedupe, cache LRU TuyaNormalizer, migration 12 hotspots [skip ci] | fdd7b376ad fix(P92.47): 4950 variantes de casse (anti unknown device) + compacteur par groupes de casse (0 purge) + version 9.0.373 | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZE204_zxkwaztm|TS0601"
+      }
     }
   ]
 }

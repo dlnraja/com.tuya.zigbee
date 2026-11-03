@@ -91,5 +91,12 @@
     "_TZE204_sdykkwsu|TS0601 AVATTO ZDMS16-US-W2 2ch dimmer (now energy_meter_3phase)",
     "_TZE204_x9usygq1|TS0601 Moes ZHT-PT01-M-MS pilot-wire thermostat (now curtain_motor)",
     "_TZE204_zxkwaztm|TS0601 Moes ZHT-S03 wall thermostat (now curtain_motor)"
+  ],
+  "wrong_class_fixed_P3253": [
+    "_TZE204_sdykkwsu|TS0601 energy_meter_3phase->dimmer_2_gang_tuya (zhc avatto.ts ZDMS16-US-W2)",
+    "_TZE204_zxkwaztm|TS0601 curtain_motor->wall_thermostat (zhc moes.ts ZHT-S03)"
+  ],
+  "wrong_class_parked_P3253": [
+    "_TZE204_x9usygq1|TS0601 Moes ZHT-PT01-M-MS pilot-wire thermostat (DP50 setpoint, DP16 temp): no driver with that DP layout; stays in curtain_motor until a pilot-wire profile exists (no loss)"
   ]
 }
