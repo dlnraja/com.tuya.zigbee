@@ -456,6 +456,39 @@
    "source": "https://github.com/zigpy/zha-device-handlers/blob/862124c/zhaquirks/tuya/tuya_water_leak.py",
    "credit": "zigpy/zha-device-handlers (new tuya_water_leak quirk, Tuya SNTZ009)",
    "at": "2026-11-02"
+  },
+  {
+   "mfr": "_TZ3000_kyb656no",
+   "pid": "q9mpfhw",
+   "johanDriver": "water_detector",
+   "upstreamPids": [
+    "TS0207"
+   ],
+   "placedIn": "water_leak_sensor",
+   "reason": "pid from Johan per-driver cross-product; zhc c18c32d tuya.ts whitelabel Meian SW02 water leak and deCONZ DDF a4c17adf list this mfr with TS0207 (exact couple already placed in water_leak_sensor on master, stable-v5, bastien-home)",
+   "at": "2026-11-03"
+  },
+  {
+   "mfr": "_TZ3000_kstbkt6a",
+   "pid": "q9mpfhw",
+   "johanDriver": "water_detector",
+   "upstreamPids": [
+    "TS0207"
+   ],
+   "placedIn": "water_leak_sensor",
+   "reason": "pid from Johan per-driver cross-product; zhc c18c32d tuya.ts whitelabel Aubess IH-K665 water leak lists this mfr with TS0207 (exact couple already placed in water_leak_sensor on master, stable-v5, bastien-home)",
+   "at": "2026-11-03"
+  },
+  {
+   "mfr": "_TZ3000_fxvjhdyl",
+   "pid": "q9mpfhw",
+   "johanDriver": "water_detector",
+   "upstreamPids": [
+    "TS0207"
+   ],
+   "placedIn": "water_leak_sensor",
+   "reason": "pid from Johan per-driver cross-product; deCONZ DDF a4c17adf and Hubitat NEO Coolcam water leak driver 1.1.4 list this mfr with TS0207 (exact couple already placed in water_leak_sensor on master, stable-v5, bastien-home)",
+   "at": "2026-11-03"
   }
  ]
 }
