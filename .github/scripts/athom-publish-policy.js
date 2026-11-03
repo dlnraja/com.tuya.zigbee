@@ -330,12 +330,16 @@ function missingCiAction({ state, sha, tip, tipCodeIdentical } = {}) {
 }
 
 function isCodeFile(f) { return CODE_FILE_RE.test(String(f || '')); }
+// P3258: tooling paths never ship in the Homey payload (.homeyignore / Homey CLI). A bot [skip ci] tip
+// that only touches them is build-identical for the tip-adoption decision (scripts/kb, tests, CI scripts).
+const NON_BUILD_RE = /^(\.github|scripts|tools|test|tests|docs|reports|tmp|backups)\//i;
+function isBuildInputFile(f) { const s = String(f || ''); return isCodeFile(s) && !NON_BUILD_RE.test(s); }
 
 module.exports = {
   POLICY_VERSION, APPS, RETRY, TRANSIENT_RE, CODE_FILE_RE,
   appPolicy, appIdForKey, classify, backoffSeconds, retryDecision,
   singleRetryExempt, breakerAssess, retryCountOf, slotDecision, busyBuild, uploadEvents, crossAppEvents,
-  evaluateCi, missingCiAction, runState, isCodeFile, isTrue, versionOnlyDiff,
+  evaluateCi, missingCiAction, runState, isCodeFile, isBuildInputFile, isTrue, versionOnlyDiff,
 };
 
 // ── CLI ──────────────────────────────────────────────────────────────────────────────────────
@@ -393,10 +397,10 @@ function versionOnlyDiff(patch) {
   const lines = String(patch || '').split('\n').filter((l) => /^[+-]/.test(l) && !/^(\+\+\+|---) /.test(l));
   return lines.length > 0 && lines.every((l) => /^[+-]\s*"version"\s*:/.test(l));
 }
-function localCodeChanged(from, to) {
+function localCodeChanged(from, to, pick = isCodeFile) {
   try {
     const files = git(['diff', '--no-renames', '--name-only', from, to]).split('\n').filter(Boolean);
-    return files.filter(isCodeFile).some((f) => {
+    return files.filter(pick).some((f) => {
       if (!/(^|\/)package(-lock)?\.json$/i.test(f)) return true;
       try { return !versionOnlyDiff(git(['diff', '--no-renames', '-U0', from, to, '--', f])); } catch { return true; }
     });
@@ -455,15 +459,22 @@ async function ciGate(appId) {
       try { tip = (await gh(`/repos/${repo}/commits/${encodeURIComponent(branch)}`)).sha; } catch { /* unknown tip: keep the old behaviour */ }
       let tipSame = null;
       if (tip && tip !== sha && !ancestry.includes(tip)) {
-        if (viaGit) tipSame = localCodeChanged(sha, tip) === false;
+        if (viaGit) tipSame = localCodeChanged(sha, tip, isBuildInputFile) === false;
         if (!viaGit || tipSame === null) {
-          try { const c = await gh(`/repos/${repo}/compare/${sha}...${tip}`); const fl = c.files || []; tipSame = fl.length < 300 && !fl.some((f) => isCodeFile(f.filename)); } catch { tipSame = null; }
+          try { const c = await gh(`/repos/${repo}/compare/${sha}...${tip}`); const fl = c.files || []; tipSame = fl.length < 300 && !fl.some((f) => isBuildInputFile(f.filename)); } catch { tipSame = null; }
         }
       }
       const act = missingCiAction({ state: last.state, sha, tip, tipCodeIdentical: tipSame });
       if (act === 'adopt-tip') { ancestry.unshift(tip); diffCache.set(tip, false); console.log(`[p3036] P3256 tip ${String(tip).slice(0, 10)} is code-identical to ${String(sha).slice(0, 10)}: its CI counts`); }
       if (act === 'superseded') {
         last = { ...last, state: 'superseded', tip, reason: `${String(sha).slice(0, 10)} is no longer the ${branch} tip (${String(tip).slice(0, 10)}) and its CI is missing` };
+        // P3258: prime the tip so the next slot finds its CI instead of holding again.
+        if (isTrue(process.env.CI_GATE_DISPATCH_MISSING ?? '1')) {
+          for (const [wf, r] of Object.entries(last.perWorkflow || {})) {
+            if (r.state !== 'missing') continue;
+            try { await gh(`/repos/${repo}/actions/workflows/${wf}/dispatches`, { method: 'POST', body: { ref: branch } }); console.log(`[p3036] P3258 primed CI ${wf} on ${branch} tip`); } catch (e) { console.log(`[p3036] could not prime ${wf}: ${e.message}`); }
+          }
+        }
         break;
       }
     }
