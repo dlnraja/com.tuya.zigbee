@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-02T22:39:09.934Z",
+ "generated": "2026-11-03T05:41:40.771Z",
  "drivers": 421,
  "snapshot": {
   "air_conditioner_aetz01": {
@@ -183,9 +183,9 @@
    "pidSha": "ced4695a6c47df18"
   },
   "button_wireless": {
-   "mfr": 7,
+   "mfr": 6,
    "pid": 10,
-   "mfrSha": "81037a6a3553273c",
+   "mfrSha": "64417667d368b50a",
    "pidSha": "907c50f03c1b4f74"
   },
   "button_wireless_1": {
@@ -425,7 +425,7 @@
   "curtain_motor": {
    "mfr": 274,
    "pid": 48,
-   "mfrSha": "ad53c295cad1df1b",
+   "mfrSha": "d91f996508c47ff3",
    "pidSha": "00ba96ff94eb4bb5"
   },
   "curtain_motor_2": {
@@ -2307,9 +2307,9 @@
    "pidSha": "159f93fb8bd65bf7"
   },
   "vibration_sensor": {
-   "mfr": 35,
+   "mfr": 36,
    "pid": 10,
-   "mfrSha": "6efa81c2cf7019e7",
+   "mfrSha": "a59fdc5ee8dd163d",
    "pidSha": "34750b19b8c07cfa"
   },
   "vibration_sensor_excellux_zg103v": {
@@ -2331,9 +2331,9 @@
    "pidSha": "70cfa840ba93f96b"
   },
   "wall_dimmer_tuya": {
-   "mfr": 133,
+   "mfr": 134,
    "pid": 14,
-   "mfrSha": "db2a508d2d7292c4",
+   "mfrSha": "9a0b723189265eaa",
    "pidSha": "86e609055c5d6281"
   },
   "wall_remote_1_gang": {
@@ -2499,9 +2499,9 @@
    "pidSha": "641a6f2b551d37be"
   },
   "water_tank_monitor": {
-   "mfr": 10,
+   "mfr": 9,
    "pid": 3,
-   "mfrSha": "c26cfb656ce384e7",
+   "mfrSha": "f767512628ce4250",
    "pidSha": "4e3ef65e098cb0b3"
   },
   "water_valve_garden": {
