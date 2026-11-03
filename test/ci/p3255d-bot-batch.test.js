@@ -58,6 +58,6 @@ describe('P3255d bot data batching', () => {
     assert.ok(fs.readFileSync(path.join(ROOT, '.github', 'scripts', 'git-push-retry.sh'), 'utf8').includes('bot-batch.js divert'));
     assert.ok(fs.readFileSync(path.join(ROOT, 'scripts', 'ci', 'push-with-retry.js'), 'utf8').includes("require('./bot-batch')"));
     const wf = fs.readFileSync(path.join(ROOT, '.github', 'workflows', 'bot-data-fold.yml'), 'utf8');
-    assert.match(wf, /BOT_BATCH: '0'/); assert.match(wf, /force-with-lease/);
+    assert.match(wf, /BOT_BATCH: '0'/); assert.match(wf, /bot-batch\.js reset/);
   });
 });
