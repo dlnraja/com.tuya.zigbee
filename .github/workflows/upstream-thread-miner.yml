@@ -138,6 +138,7 @@ jobs:
           path: .
 
       - name: Re-check privacy (fail closed) then commit
+        if: vars.SCRAPE_COMMIT == '1'  # P3255e (t834u): scrape output goes to artifacts/summary; set repo var SCRAPE_COMMIT=1 to commit
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
