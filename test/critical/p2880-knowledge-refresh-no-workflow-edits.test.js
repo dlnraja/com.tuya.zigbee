@@ -38,7 +38,8 @@ describe('P2880 homey knowledge refresh — node-version bump is a proposal only
     assert.doesNotMatch(wf, /secrets\.GH_PAT/);
     assert.match(wf, /refusing to commit them/);
     assert.ok((wf.match(/- cron: /g) || []).length >= 2, 'two schedule slots');
-    assert.match(wf, /ls-remote --exit-code --heads origin "\$b"/);
+    // P3255: a single rolling bot branch (never PR'd) replaces the dated branch + same-day guard.
+    assert.match(wf, /ls-remote --exit-code --heads origin "\$b"|P3255: ONE rolling branch/);
     assert.match(wf, /steps\.guard\.outputs\.skip/);
   });
 });

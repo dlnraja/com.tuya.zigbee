@@ -41,6 +41,7 @@ const NOW = Date.now();
 const OPT = { owner: OWNER, now: NOW, maxBehind: num('max-behind', R.DEFAULTS.maxBehind), minAgeDays: num('min-age-days', R.DEFAULTS.minAgeDays) };
 
 async function gh(p, opts = {}) {
+  { const S = require('./bot-silence'); if (S.isSilenced(opts.method, p)) return S.divert(opts.method, p, opts.body); } // P3255
   const headers = { Accept: 'application/vnd.github+json', 'User-Agent': 'tuya-repo-autopilot', 'X-GitHub-Api-Version': '2022-11-28' };
   if (process.env.GITHUB_TOKEN) {headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;}
   if (opts.body) {headers['Content-Type'] = 'application/json';}

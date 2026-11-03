@@ -87,7 +87,7 @@ jobs:
         id: tool
         if: ${{ steps.guard.outputs.skip != 'true' }}
         run: node .github/scripts/homey-tooling-refresh.js
-      - name: Draft PR when something changed
+      - name: Update the rolling bot branch when something changed (P3255, no PR)
         if: ${{ steps.guard.outputs.skip != 'true' && (steps.tool.outputs.changed == 'true' || hashFiles('data/leads/source-proposals.json') != '') }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -96,9 +96,7 @@ jobs:
           # node-version bumps are proposals only).
           git checkout -- .github/workflows 2>/dev/null || true
           git diff --quiet -- data/sources data/leads docs/knowledge && [ -z "$(git ls-files --others --exclude-standard -- data/sources data/leads docs/knowledge)" ] && { echo "nothing to commit"; exit 0; }
-          b="bot/homey-knowledge-$(date -u +%Y%m%d)"
-          # A same-day re-run must not collide with the branch an earlier run already pushed.
-          if git ls-remote --exit-code --heads origin "$b" >/dev/null 2>&1; then b="${b}-${GITHUB_RUN_ID}"; fi
+          b="bot/homey-knowledge"  # P3255: ONE rolling branch, never PR'd (t824u)
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -b "$b"
@@ -108,10 +106,8 @@ jobs:
           fi
           [ -f scripts/ci/bot-commit-guard.sh ] && { bash scripts/ci/bot-commit-guard.sh || exit 1; }  # P3093
           git commit -m "docs(knowledge): weekly Homey SDK/news/tooling refresh [skip ci]"
-          git push -u origin "$b"
-          gh pr create --draft --base "${GITHUB_REF_NAME}" --head "$b" \
-            --title "Weekly Homey knowledge/tooling refresh $(date -u +%F)" \
-            --body "Automatic, free, no AI. Review data/leads/source-proposals.json and docs/knowledge/HOMEY_TOOLING_WATCH.md. Runtime libs and CI node-version bumps are proposals only (HOMEY_TOOLING_WATCH.md)."
+          git push origin "+HEAD:refs/heads/$b"  # P3255 bot-owned scratch branch only (rolling, never PR'd)
+          { echo "### Homey knowledge refresh → \`$b\` (no PR)"; git --no-pager show --stat --format=%s HEAD; } >> "$GITHUB_STEP_SUMMARY"
       # P3069: short summary through the shared helper, on success and on failure.
       - name: Short summary (shared report helper)
         if: always()

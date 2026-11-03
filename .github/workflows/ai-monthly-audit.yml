@@ -855,7 +855,7 @@ jobs:
           echo "Total issues: $TOTAL_ISSUES | Risk: $RISK | Force: $FORCE"
 
       - name: Create Pull Request
-        if: steps.should_pr.outputs.create_pr == 'true'
+        if: ${{ vars.BOT_PUBLIC == '1' && (steps.should_pr.outputs.create_pr == 'true') }}  # P3255 bot-silence
         uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
         with:
           token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
