@@ -1,0 +1,33 @@
+{
+  "_why": "P3262: Athom refuses (processing_failed AggregateError) master uploads whose prepared payload has more drivers than the last accepted one. Observed, unconfirmed by Athom (ticket 157057). scripts/ci/driver-count-ceiling-gate.js compares the prepared payload with lastAccepted: warn on master, fail on stable-v5 and bastien-home. Raise a value only after Athom accepts a build with more drivers (cite the build). With --athom-api the gate reads Athom's public API (testBuild.drivers.length of the last build in Test) and allows apiCount + apiOffset; apiOffset = our payload count minus Athom's count for the same accepted build (Athom lists 2 fewer for master 9.0.1615, 1 fewer for stable #417). Falls back to lastAccepted when the API is unreachable.",
+  "status": "observed, unconfirmed by Athom",
+  "athomTicket": "157057",
+  "doc": "docs/rules/DRIVER_COUNT_CEILING.md",
+  "apps": {
+    "com.dlnraja.tuya.zigbee": {
+      "branch": "master",
+      "mode": "warn",
+      "lastAccepted": 347,
+      "evidence": "build #3697 v9.0.1615 Test 2026-11-03 (also #3686 v9.0.1604, #3682 v9.0.1599)",
+      "athomApiCount": 345,
+      "apiOffset": 2
+    },
+    "com.dlnraja.tuya.zigbee.stable": {
+      "branch": "stable-v5",
+      "mode": "fail",
+      "lastAccepted": 342,
+      "evidence": "build #417 Test 2026-11-03, run 41623720558 payload-preflight 342 drivers",
+      "athomApiCount": 341,
+      "apiOffset": 1
+    },
+    "com.dlnraja.tuya.zigbee.bastien": {
+      "branch": "bastien-home",
+      "mode": "fail",
+      "lastAccepted": 27,
+      "evidence": "build #236 Test 2026-11-03, run 41629128967 payload-preflight 27 drivers",
+      "athomApiCount": 27,
+      "apiOffset": 0
+    }
+  },
+  "athomApi": "https://apps-api.athom.com/api/v1/app/<id> (public, no auth): testBuild.drivers"
+}

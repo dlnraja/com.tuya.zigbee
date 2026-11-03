@@ -415,3 +415,8 @@ Reporters of dlnraja/com.tuya.zigbee issues not credited elsewhere in this file.
 - finnamu (GH#516): _TZ3000_isw9u95y / TS0201 dropped by publish compaction — P3248 pinned; all 2026 reported couples now in survival gate.
 
 - P3256/P3258 (03/11/2026): publish gate adopts a code/build-identical tip and primes CI on the tip when superseded (port from master).
+## CI gate adopts a code-identical tip (P3256, 2026-11-03)
+- Own work, no external code. Root cause found while unblocking master publishing: bot `[skip ci]` commits that touch `.js` left no code-identical CI run and kept moving the tip, so the P3036 gate held every upload as "CI superseded". The gate now counts the tip's CI when the tip has the same code as the gated SHA.
+
+- P3258 (03/11/2026): publish gate counts only shipped build inputs when adopting a bot-moved tip, and primes CI on the tip when it holds as superseded.
+- P3262 (03/11/2026): observed driver-count ceiling on Athom uploads (every accepted master build has exactly the last-accepted 347 drivers, every 348+ refused AggregateError; unconfirmed by Athom, ticket 157057): rule docs/rules/DRIVER_COUNT_CEILING.md, SSOT, CI gate scripts/ci/driver-count-ceiling-gate.js (warn master, fail stable-v5/bastien-home), requested by dlnraja.
