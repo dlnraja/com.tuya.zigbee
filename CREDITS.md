@@ -563,3 +563,5 @@ A heartfelt thank you to:
 
 ## CI gate adopts a code-identical tip (P3256, 2026-11-03)
 - Own work, no external code. Root cause found while unblocking master publishing: bot `[skip ci]` commits that touch `.js` left no code-identical CI run and kept moving the tip, so the P3036 gate held every upload as "CI superseded". The gate now counts the tip's CI when the tip has the same code as the gated SHA.
+
+- P3258 (03/11/2026): publish gate counts only shipped build inputs when adopting a bot-moved tip, and primes CI on the tip when it holds as superseded.
