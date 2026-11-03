@@ -18,6 +18,7 @@ function defaultGit(cwd) {
 /** @returns {Promise<{ok:boolean, reason:'pushed'|'nothing'|'conflict'|'exhausted', attempts:number, details:string}>} */
 async function pushWithRetry({ branch, remote = 'origin', cwd = process.cwd(), git = defaultGit(cwd), attempts = Number(process.env.PUSH_RETRY_ATTEMPTS || 5),
   sleep = (ms) => new Promise((r) => setTimeout(r, ms)), backoff = {} } = {}) {
+  if (branch === 'master') { try { const d = require('./bot-batch').divert({ branch, remote, cwd }); if (d.diverted) return { ok: true, reason: 'pushed', attempts: 1, diverted: d.reason }; } catch (_) { /* fall through to master */ } } // P3255d
   let details = '';
   for (let i = 1; i <= attempts; i++) {
     const f = git('fetch', '-q', remote, branch);

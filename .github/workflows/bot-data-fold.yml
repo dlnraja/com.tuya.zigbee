@@ -1,0 +1,39 @@
+name: Bot data daily fold (P3255d)
+# WHY(P3255d, t824u): bots push [skip ci] data-only commits to the rolling branch bot/data instead of
+# master (scripts/ci/bot-batch.js); this job squashes them into ONE silent master commit per day.
+on:
+  schedule:
+    - cron: '17 3 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: bot-data-fold
+  cancel-in-progress: false
+jobs:
+  fold:
+    if: github.repository == 'dlnraja/com.tuya.zigbee'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          fetch-depth: 0
+      - name: Fold bot/data into one master commit
+        id: fold
+        env:
+          BOT_BATCH: '0'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if node scripts/ci/bot-batch.js fold; then
+            bash .github/scripts/git-push-retry.sh --branch master --prefer-remote
+            echo "folded=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Nothing to fold." >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Reset bot/data (lease on the folded tip)
+        if: steps.fold.outputs.folded == 'true' && steps.fold.outputs.bot != ''
+        run: |
+          git push origin --force-with-lease="refs/heads/bot/data:${{ steps.fold.outputs.bot }}" ":refs/heads/bot/data" \
+            || echo "::notice::bot/data moved after the fold; kept for tomorrow" >> "$GITHUB_STEP_SUMMARY"
