@@ -126,7 +126,7 @@ jobs:
           retention-days: 14
 
       - name: Commit complementary FP changes (gated)
-        if: always() && steps.peer_cron.outcome == 'success' && inputs.skip_commit != true && (github.event_name == 'schedule' || inputs.apply != false)
+        if: vars.SCRAPE_COMMIT == '1' && (always() && steps.peer_cron.outcome == 'success' && inputs.skip_commit != true && (github.event_name == 'schedule' || inputs.apply != false))
         continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

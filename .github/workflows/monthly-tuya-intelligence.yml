@@ -90,7 +90,21 @@ jobs:
           echo "## ✨ New Enrichment Data" >> reports/MONTHLY_SUMMARY.md
           jq -r '.data[] | "* [" + .title + "](" + .url + ") - " + .description' data/enriched_intelligence.json >> reports/MONTHLY_SUMMARY.md
 
+      - name: Upload scrape output (P3255e)
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: monthly-tuya-intelligence-${{ github.run_id }}
+          if-no-files-found: ignore
+          retention-days: 30
+          path: |
+            data/enriched_intelligence.json
+            reports/URL_AUDIT.md
+            reports/url_audit_report.json
+            reports/MONTHLY_SUMMARY.md
+
       - name: "🟢 Step 5: Commit and Push Changes"
+        if: vars.SCRAPE_COMMIT == '1'  # P3255e (t834u): scrape output goes to artifacts/summary; set repo var SCRAPE_COMMIT=1 to commit
         continue-on-error: true
         run: |
           git config --local user.email "action@github.com"

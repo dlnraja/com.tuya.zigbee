@@ -89,7 +89,7 @@ jobs:
         run: node scripts/scanners/github-leads-scan.js --max-requests=${{ vars.LEADS_SCAN_MAX_REQUESTS || '150' }} --min-delay=800 --max-delay=2500
 
       - name: Commit leads cursor + scan output (gated)
-        if: steps.leads_scan.outcome == 'success'
+        if: vars.SCRAPE_COMMIT == '1' && (steps.leads_scan.outcome == 'success')
         continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -129,7 +129,7 @@ jobs:
             --max-requests=${{ vars.IMAGE_OCR_MAX_REQUESTS || '150' }}
 
       - name: Commit image OCR cursor + output (gated)
-        if: steps.image_ocr.outcome == 'success'
+        if: vars.SCRAPE_COMMIT == '1' && (steps.image_ocr.outcome == 'success')
         continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -164,7 +164,7 @@ jobs:
           node scripts/leads/gang-patterns.js
 
       - name: Commit strict-rule intake (gated)
-        if: steps.strict_apply.outcome == 'success'
+        if: vars.SCRAPE_COMMIT == '1' && (steps.strict_apply.outcome == 'success')
         continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -192,6 +192,7 @@ jobs:
           retention-days: 14
 
       - name: Commit scanner outputs if changed
+        if: vars.SCRAPE_COMMIT == '1'  # P3255e (t834u): scrape output goes to artifacts/summary; set repo var SCRAPE_COMMIT=1 to commit
         continue-on-error: true
         run: |
           git config user.name "github-actions[bot]"

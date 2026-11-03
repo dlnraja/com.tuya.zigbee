@@ -74,7 +74,7 @@ jobs:
             require("fs").appendFileSync(process.env.GITHUB_STEP_SUMMARY||"/dev/null","Threads pending deep read: "+pending+"\n");'
 
       - name: Commit index (gated)
-        if: steps.scan.outcome == 'success'
+        if: vars.SCRAPE_COMMIT == '1' && (steps.scan.outcome == 'success')
         continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -109,6 +109,7 @@ jobs:
         run: node scripts/scanners/johan-acceptance.js
 
       - name: Commit sweep checkpoint (gated)
+        if: vars.SCRAPE_COMMIT == '1'  # P3255e (t834u): scrape output goes to artifacts/summary; set repo var SCRAPE_COMMIT=1 to commit
         continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -121,6 +122,18 @@ jobs:
             --message="chore(leads): advance history sweep checkpoint" \
             --paths="data/leads/sweep-checkpoint.json data/leads/deep-read-checkpoint.json data/progress/ledger.json data/leads/johan-acceptance.json"
       # P3069: short summary through the shared helper, on success and on failure.
+      - name: Upload scrape output (P3255e)
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: johan-thread-intel-${{ github.run_id }}
+          if-no-files-found: ignore
+          retention-days: 30
+          path: |
+            data/leads/johan-canonical-index.json
+            data/leads/sweep-checkpoint.json
+            data/progress/ledger.json
+
       - name: Short summary (shared report helper)
         if: always()
         env:
