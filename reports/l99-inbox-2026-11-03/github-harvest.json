@@ -1,0 +1,64 @@
+{
+  "harvestedAt": "2026-11-03T11:26:07.554Z",
+  "repo": "dlnraja/com.tuya.zigbee",
+  "auth": "token",
+  "error": null,
+  "issues": [
+    {
+      "number": 557,
+      "title": "🤖 Daily digest",
+      "labels": [
+        "bot-digest"
+      ],
+      "updatedAt": "2026-11-03T08:38:31Z",
+      "user": "dlnraja",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/557"
+    },
+    {
+      "number": 581,
+      "title": "[climate_sensor] Bug:",
+      "labels": [],
+      "updatedAt": "2026-11-02T23:13:50Z",
+      "user": "hogseto",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/581"
+    },
+    {
+      "number": 584,
+      "title": "Bug report - [Short description_TZE284_awepdiwi / TS0601 soil sensor still \"Unknown Zigbee Device\" on v9.0.1599 + app shows no drivers]",
+      "labels": [
+        "bug"
+      ],
+      "updatedAt": "2026-11-02T07:21:50Z",
+      "user": "stephanmaastricht",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/584"
+    },
+    {
+      "number": 550,
+      "title": "Bug report - [Short description]",
+      "labels": [
+        "bug",
+        "reopened-by-user"
+      ],
+      "updatedAt": "2026-11-02T02:40:38Z",
+      "user": "HiepSVG",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/550"
+    },
+    {
+      "number": 559,
+      "title": "Smartplug",
+      "labels": [
+        "enhancement",
+        "device-request",
+        "reopened-by-user",
+        "auto-triage",
+        "fingerprint-supported"
+      ],
+      "updatedAt": "2026-11-02T02:40:37Z",
+      "user": "Lalla80111",
+      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/559"
+    }
+  ],
+  "prs": [],
+  "openIssueCount": 5,
+  "openPrCount": 0
+}
