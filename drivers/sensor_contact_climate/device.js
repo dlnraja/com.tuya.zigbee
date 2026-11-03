@@ -401,7 +401,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
       relativeHumidity: {
         attributeReport: (data) => {
           if (data.measuredValue !== undefined) {
-            let rawHum = data.measuredValue / 100; // P3002: ZCL 0.01 units
+            let rawHum = require('../../lib/helpers/ZclHumidityScale').scaleZclHumidity(data.measuredValue, require('../../lib/helpers/ZclHumidityScale').mfrOf(this)); // P3002: ZCL 0.01 units
             // v5.5.317: Validate with inference engine (smooths erratic readings)
             if (this._climateInference) {
               rawHum = this._climateInference.validateHumidity(rawHum);
@@ -1177,7 +1177,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
       try {
         const attrs = await humCluster.readAttributes(['measuredValue']).catch(() => ({}));
         if (attrs.measuredValue !== undefined ) {
-          const hum = attrs.measuredValue / 100; // P3002: ZCL 0.01 units
+          const hum = require('../../lib/helpers/ZclHumidityScale').scaleZclHumidity(attrs.measuredValue, require('../../lib/helpers/ZclHumidityScale').mfrOf(this)); // P3002: ZCL 0.01 units
           if (hum >= 0 && hum <= 100) {
             this.log(`[ZCL-READ]  Humidity: ${hum}%`);
             await this.safeSetCapabilityValue('measure_humidity', parseFloat(hum)).catch(() => { });
