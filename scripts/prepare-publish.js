@@ -517,6 +517,19 @@ try {
     const r = foldContinuations(m, require('../lib/drivers/DriverContinuations').load(path.join(__dirname, '..')), ids);
     if (r.folded) { fs.writeFileSync(destAppJson, JSON.stringify(m)); p3229Splits = r.splits; console.log(`   P3229: folded ${r.folded} continuation(s) into their root (${r.splits.length} to split back)`); }
   } catch (e) { console.warn(`   P3229 fold skipped: ${e.message}`); }
+  // P3264 fit-347: fold held never-published profiles into their published dormant host slot
+  // (config/architecture/hosted-profiles.json) so their exact couples ship without a new driver id.
+  let p3264 = { folded: [], skipped: [], keepDirs: [], pins: [] };
+  try {
+    const { effectiveHoldIds } = require('./publish-hold-release');
+    const holdFile = path.join(__dirname, '..', 'config', 'publish-hold-drivers.json');
+    const { ids } = fs.existsSync(holdFile) ? effectiveHoldIds(readJson(holdFile), process.env.PUBLISH_HOLD_RELEASE) : { ids: new Set() };
+    const m = readJson(destAppJson);
+    p3264 = require('../lib/hosting/HostedProfiles').foldHosted(m, require('../lib/hosting/hosted-profiles.runtime.json'), ids);
+    if (p3264.folded.length) fs.writeFileSync(destAppJson, JSON.stringify(m));
+    console.log(`   P3264: hosted ${p3264.folded.length} held profile(s) in published slots (${p3264.pins.length} pinned couple forms)`);
+    for (const s of p3264.skipped) console.log(`   P3264 skip: ${s}`);
+  } catch (e) { console.warn(`   P3264 hosting skipped: ${e.message}`); }
   // P3201: uncompacted view for the sourced dedupe/restore pass (payload only, source untouched).
   let p3201Source = null;
   try { p3201Source = process.env.HOMEY_P3201_SOURCED_PASS === '0' ? null : readJson(destAppJson); } catch (_) { p3201Source = null; }
@@ -524,6 +537,7 @@ try {
   try { p3036TopupSource = Number(process.env.HOMEY_ZIGBEE_TOPUP_MAX_TOTAL) > 0 ? readJson(destAppJson) : null; } catch (_) { p3036TopupSource = null; }
   try {
     const compact = compactManifestFile(destAppJson, {
+      ...(p3264.pins.length ? { sacredKeep: [...require('../lib/hosting/HostedProfiles').retargetSacred(require('./maintenance/compact-zigbee-identifiers.cjs').loadSacredKeepCouples(path.join(__dirname, '..')), p3264.folded), ...p3264.pins] } : {}),
       maxTotalCombos: Number(process.env.HOMEY_ZIGBEE_MAX_TOTAL_COMBOS) || undefined,
       maxDriverCombos: Number(process.env.HOMEY_ZIGBEE_MAX_DRIVER_COMBOS) || undefined,
     });
@@ -567,7 +581,7 @@ try {
       const topupOn = Number(process.env.HOMEY_ZIGBEE_TOPUP_MAX_TOTAL) > 0;
       const maxTotal = topupOn ? require('./maintenance/ts0601-topup.cjs').ceilingFromEnv() : compact.maxTotalCombos;
       const maxDriver = (topupOn && Number(process.env.HOMEY_ZIGBEE_TOPUP_MAX_DRIVER)) || Number(process.env.HOMEY_ZIGBEE_MAX_DRIVER_COMBOS) || 2000;
-      const r = sp.sourcedPassFile(p3201Source, destAppJson, { repoRoot: path.join(__dirname, '..'), maxTotal, maxDriver, branch: process.env.P3201_BRANCH || process.env.GITHUB_REF_NAME });
+      const r = sp.sourcedPassFile(p3201Source, destAppJson, { repoRoot: path.join(__dirname, '..'), maxTotal, maxDriver, sacredRetarget: new Map(p3264.folded.map((f) => f.split('->'))), extraSacred: p3264.pins, branch: process.env.P3201_BRANCH || process.env.GITHUB_REF_NAME });
       p3201Source = null;
       console.log(`[P3201] sourced pass: ${r.before} -> ${r.after} / ${maxTotal}; ${r.deduped} duplicate-form combos freed, ${r.restored} source-backed couples restored, strong sourced in payload ${r.strongIn}/${r.strongInSource}`);
       if (r.after > maxTotal || r.driversAfter !== r.driversBefore || r.sacredMissing.length || r.snapshotMissing.length) {
@@ -754,6 +768,12 @@ try {
     console.error('FATAL: publish hold failed:', e.message);
     process.exit(1);
   }
+  // P3264: driver-count gate (Athom refuses > 347 drivers, ticket 157057).
+  try {
+    const cap = require('../lib/arch/DriverCap').checkPayload(readJson(destAppJson));
+    console.log(`[P3264] payload drivers ${cap.count} / cap ${cap.cap} (target ${cap.target})`);
+    if (!cap.ok) { console.error(`FATAL(P3264): payload ships ${cap.count} drivers > cap ${cap.cap}`); process.exit(1); }
+  } catch (e) { console.error('FATAL(P3264): driver cap gate failed:', e.message); process.exit(1); }
 
   // 5a2b) P3024b: no couple of the last Athom Test package may disappear (after hold).
   try {
@@ -790,6 +810,7 @@ try {
     // drivers on master: 2.78 MB / 682 files) were still shipped. Homey loads only manifest drivers
     // and no shipped file requires these folders, so they are dead payload.
     const keepIds = new Set((manifest.drivers || []).map((d) => d.id));
+    for (const id of p3264.keepDirs) keepIds.add(id); // P3264: hosted profile code ships inside its folder
     const drvRoot = path.join(destDir, 'drivers');
     let deadDirs = 0;
     for (const d of (fs.existsSync(drvRoot) ? fs.readdirSync(drvRoot) : [])) {

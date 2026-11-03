@@ -44,3 +44,4 @@ as a continuation. Exempt: continuations and `config/publish-hold-drivers.json`.
   "Basic Zigbee Device", never to an app driver.
 - New pairable driver ids historically coincided with Athom AggregateError rejections: add continuations held
   (`config/publish-hold-drivers.json`) and release one per bisectable publish.
+- P3264 (03/11/2026 Paris): the 347-driver cap applies. A continuation is never shipped as its own id. It must be held so that P3229 folds it into its root, and `driver-continuations-check.js` fails otherwise. See [FIT_347_HOSTED_PROFILES.md](FIT_347_HOSTED_PROFILES.md).

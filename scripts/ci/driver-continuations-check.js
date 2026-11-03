@@ -52,6 +52,10 @@ function check(root, raw) {
       if (!e.full && i < chain.length - 1 && combos[i + 1] > 0) {errors.push(`${id}: not full but its continuation already carries couples`);}
     });
   }
+  // P3264: a continuation never ships as its own id (347 cap); it must be held so P3229 folds it into its root.
+  let held = new Set();
+  try { held = new Set((JSON.parse(fs.readFileSync(path.join(root, 'config', 'publish-hold-drivers.json'), 'utf8')).drivers || []).map((d) => (typeof d === 'string' ? d : d.id))); } catch (_) { held = null; }
+  if (held) for (const id of ids) if (reg.entry(id).continuationOf && !held.has(id)) errors.push(`${id}: continuation not in config/publish-hold-drivers.json (would ship a new driver id beyond the 347 cap, P3264)`);
   for (const id of ids) {if (reg.entry(id).continuationOf && !reached.has(id)) {errors.push(`${id}: continuation not reachable from ${reg.entry(id).continuationOf}`);}}
   return { errors, chains: roots.size, drivers: ids.length };
 }

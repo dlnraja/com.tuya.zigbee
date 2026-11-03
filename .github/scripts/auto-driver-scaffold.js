@@ -75,6 +75,8 @@ function findMissingDriverTypes(ourDrivers,johanDrivers){
 function scaffoldDriver(name,info,johanCompose){
   const driverDir=path.join(ROOT,'drivers',name);
   if(fs.existsSync(driverDir)){console.log('  SKIP '+name+' (exists)');return false;}
+  // P3264: never create a driver id beyond the 347 architecture (docs/rules/FIT_347_HOSTED_PROFILES.md).
+  try{require('../../lib/arch/DriverCap').assertCanCreateDriver(name);}catch(e){console.log('  SKIP '+name+': '+e.message);return false;}
   fs.mkdirSync(driverDir,{recursive:true});
   fs.mkdirSync(path.join(driverDir,'assets','images'),{recursive:true});
   const compose=johanCompose||{name:{en:name.replace(/_/g,' ').replace(/\b\w/g,c=>c.toUpperCase())},class:info.class||'other',capabilities:['onoff'],zigbee:{manufacturerName:info.mfrs||[],productId:info.pids||[],deviceJoinedTriggerFlowId:'_triggerFlowDeviceAdded',learnmode:{instruction:{en:'Put device in pairing mode'}}},images:{small:'{{driverAssetsPath}}/images/small.png',large:'{{driverAssetsPath}}/images/large.png',xlarge:'{{driverAssetsPath}}/images/xlarge.png'}};

@@ -3,6 +3,12 @@
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 class PresenceSensorRadarDriver extends ZigBeeDriver {
+  // P3264 fit-347: this published id is a dormant slot hosting held profiles
+  // (config/architecture/hosted-profiles.json); exact couples get their own device class.
+  onMapDeviceClass(device) {
+    return require('../../lib/hosting/HostedProfiles').mapDeviceClass('sensor_contact_presence', device, require('./device'), 'sensor');
+  }
+
 async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) {return;}

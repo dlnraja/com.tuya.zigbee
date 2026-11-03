@@ -3,6 +3,12 @@
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 class SwitchPlug1Driver extends ZigBeeDriver {
+  // P3264 fit-347: this published id is a dormant slot hosting held profiles
+  // (config/architecture/hosted-profiles.json); exact couples get their own device class.
+  onMapDeviceClass(device) {
+    return require('../../lib/hosting/HostedProfiles').mapDeviceClass('switch_plug_1', device, require('./device'), 'socket');
+  }
+
   /**
    * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
    * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.

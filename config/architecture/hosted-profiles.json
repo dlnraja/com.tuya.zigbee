@@ -1,0 +1,54 @@
+{
+  "_why": "P3264 fit-347 (user t839u). Athom refuses every build with more than 347 drivers (observed, ticket 157057, unconfirmed). A held, never-published driver can still ship its exact couples by being HOSTED in a published driver id whose own 1574 couples are placeholders or unpairable (a 'dormant slot'). prepare-publish folds the hosted couples into the host before compaction (pinned, collision-checked), the held id stays out of the payload, and the host driver's onMapDeviceClass routes the exact couple to the hosted device class. No driver id is added or removed, so paired devices keep their driver and the payload stays at 347. Regenerate lib/hosting/hosted-profiles.runtime.json with node scripts/arch/build-hosted-profiles.js.",
+  "dormantSlots": {
+    "device_generic_tuya": "1574 couples = 6 fake '_tze*_generic' x TS0601; TS0601-only pid list, so TS0601 profiles add zero parasite combos",
+    "sensor_contact_presence": "1574 couple = hobeian x DISABLED_SENSOR_CONTACT_PRESENCE (fake productId, unpairable)",
+    "smart_rcbo": "1574 couple = _tze284_6ocnqlhn x TS0601_rcbo (fake productId, unpairable)",
+    "switch_plug_1": "1574 couple = _tz3000_typdpbpg x TS0601_sp1 (fake productId, unpairable)"
+  },
+  "hosts": {
+    "device_generic_tuya": [
+      "sauna_thermostat_ae5503",
+      "siren_moes_mg_bjq002",
+      "switch_wall_6gang_metering",
+      "valve_novato_zpv01",
+      "energy_meter_3ch_bidirectional",
+      "gpo_double_light_mg_au03",
+      "gpo_double_mg_gpo02z",
+      "keypad_alarm_wke502z",
+      "thermostat_vrf_bvrf_l001",
+      "ufh_controller_ch8z",
+      "ufh_controller_pro_line_x10",
+      "wall_switch_rf_ews1154z",
+      "air_conditioner_aetz01",
+      "fan_light_tuya_5_levels",
+      "smoke_sensor_ts0601_dp"
+    ],
+    "sensor_contact_presence": [
+      "heiman_keyfob",
+      "heiman_siren",
+      "water_leak_blitzwolf_bw_is9",
+      "motion_sensor_excellux_zg104plv",
+      "vibration_sensor_excellux_zg103v"
+    ],
+    "smart_rcbo": [
+      "curtain_sonoff_mini_zbrbs",
+      "presence_radar_aoyan_ay204t"
+    ],
+    "switch_plug_1": [
+      "switch_2gang_ts0002"
+    ]
+  },
+  "notHosted": {
+    "water_leak_aoyan_ay222z": "P3263 (parallel) swaps it in for device_radiator_valve_thermostat; AOYAN|TS0601 belongs to soil_sensor, so it must never go in a TS0601 host",
+    "climate_sensor_2": "continuation, already folded into climate_sensor by P3229",
+    "curtain_motor_2": "continuation, already folded into curtain_motor by P3229",
+    "contact_sensor_2": "continuation, already folded into contact_sensor by P3229",
+    "device_radiator_valve_thermostat": "not used as a host: P3263 removes it",
+    "co_sensor_dcr_co": "cross-product collision: _TZE200/_TZE204_7bztmfm1 x TS0601 already ships on smart_air_detection_box / device_air_purifier_plug (P3201 restore); one couple = one driver"
+  },
+  "notDormant": {
+    "air_purifier_siren": "driver has deprecated:true. Athom hides deprecated drivers (missing from the public apps-api driver list: 345 vs 347 shipped), so a new device can't pair on it. Never use it as a host.",
+    "sensor_lcdtemphumidsensor_temphumidsensor": "deprecated:true (hidden by Athom, same reason)"
+  }
+}
