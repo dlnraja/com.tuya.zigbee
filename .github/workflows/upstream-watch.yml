@@ -55,8 +55,10 @@ jobs:
       - name: Check upstream sources
         if: steps.ks.outputs.paused != 'true'
         run: node scripts/ci/upstream-watch.js
+      - name: Digest to job summary (P3255, no issue)
+        run: '[ -s upstream-digest.md ] && node scripts/ci/digest-guard.js upstream-digest.md && cat upstream-digest.md >> "$GITHUB_STEP_SUMMARY" || true'
       - name: Update the single digest issue
-        if: steps.ks.outputs.paused != 'true'
+        if: ${{ vars.BOT_PUBLIC == '1' && (steps.ks.outputs.paused != 'true') }}  # P3255 bot-silence
         run: |
           [ -s upstream-digest.md ] || exit 0
           # P3173 (t735u): fail closed before the digest leaves the runner

@@ -162,7 +162,7 @@ jobs:
         run: bash scripts/ci/homey-validate-safe.sh --level publish
 
       - name: Create Pull Request
-        if: steps.scaffold.outputs.has_changes == 'true' && inputs.dry_run != true
+        if: ${{ vars.BOT_PUBLIC == '1' && (steps.scaffold.outputs.has_changes == 'true' && inputs.dry_run != true) }}  # P3255 bot-silence
         uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
         with:
           token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
