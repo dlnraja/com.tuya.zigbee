@@ -19768,16 +19768,30 @@
    "state_reason": null,
    "closed_at": null,
    "pr": false
+  },
+  "1549": {
+   "n": 1549,
+   "sources": [],
+   "identities": [],
+   "objectives": [],
+   "batches": [],
+   "implemented": [],
+   "topic": "device-request",
+   "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1549",
+   "state": "open",
+   "state_reason": null,
+   "closed_at": null,
+   "pr": false
   }
  },
- "generated": "2026-11-02T11:40:38.645Z",
+ "generated": "2026-11-03T11:20:11.338Z",
  "repo": "JohanBendz/com.tuya.zigbee",
  "author": "JohanBendz",
  "cursor": {
-  "since": "2026-11-02T11:40:38.645Z"
+  "since": "2026-11-03T11:20:11.338Z"
  },
  "summary": {
-  "issues": 745,
+  "issues": 746,
   "canonical": 117,
   "closed": 524,
   "duplicate": 172,
