@@ -57,10 +57,11 @@ function divert(method, url, body) {
 }
 
 /** One consolidated English reply per issue: edit the marked bot comment, else add it once. gh(method, path, body). */
-async function upsertReply(gh, repo, num, text) {
-  const body = `${REPLY_MARKER}\n${text}`;
+async function upsertReply(gh, repo, num, text, opts = {}) {
+  const marks = [REPLY_MARKER, ...(opts.legacyMarkers || [])];
+  const body = `${REPLY_MARKER}\n${(opts.legacyMarkers || []).join('\n')}${opts.legacyMarkers && opts.legacyMarkers.length ? '\n' : ''}${text}`;
   const list = await gh('GET', `/repos/${repo}/issues/${num}/comments?per_page=100`);
-  const mine = (Array.isArray(list) ? list : []).find((c) => String(c.body || '').includes(REPLY_MARKER));
+  const mine = (Array.isArray(list) ? list : []).find((c) => marks.some((mk) => String(c.body || '').includes(mk)));
   if (mine) { if (String(mine.body) === body) return mine; return gh('PATCH', `/repos/${repo}/issues/comments/${mine.id}`, { body }); }
   return gh('POST', `/repos/${repo}/issues/${num}/comments`, { body });
 }
