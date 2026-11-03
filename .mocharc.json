@@ -1,3 +1,6 @@
 {
-  "require": ["test/helpers/branch-scope.js"]
+  "require": [
+    "test/setup/host-env.js",
+    "test/helpers/branch-scope.js"
+  ]
 }

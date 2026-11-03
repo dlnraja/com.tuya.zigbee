@@ -87,7 +87,31 @@ const BUMP_SUBJECT = /^(?:chore|release|build)(?:\([^)]*\))?:\s*v?\d+\.\d+\.\d+\
 function precise(subjects) {
   let B = null;
   try { B = require('./changelog-backfill.js'); } catch (_) { B = null; }
-  return B && typeof B.describe === 'function' ? B.describe(subjects) : summarize(subjects);
+  const out = B && typeof B.describe === 'function' ? B.describe(subjects) : summarize(subjects);
+  const vague = B && typeof B.needsRewrite === 'function' ? B.needsRewrite(out) === 'vague' : String((out && out.en) || '').length < 40;
+  return vague ? specific(subjects, out) : out;
+}
+
+// P3243c: the post-Test write-back gave bastien 1.0.227 "Fixed: climate sensors." (P3075 vague-note ceiling).
+// A vague family note gets the concrete items from our own commit subjects: short subject heads + P/GH numbers.
+function specific(subjects, base) {
+  const refs = []; const items = [];
+  for (const s of subjects || []) {
+    if (/\[auto:|^Merge |\[skip ci\]/i.test(s) || BUMP_SUBJECT.test(s)) continue;
+    const p = parseSubject(s);
+    if (p.type && !USER_TYPES.has(p.type)) continue;
+    for (const r of `${p.scope} ${p.rest}`.match(/\bP\d{3,5}[a-z]?\b|GH#\d+|#\d{2,5}\b/g) || []) if (!refs.includes(r)) refs.push(r);
+    const head = p.rest.replace(/\(credit[^)]*\)/gi, '').replace(/\s*[—(;].*$/, '').replace(/\b(P\d{3,5}[a-z]?|GH#\d+|#\d{2,5})\b:?/g, '').replace(/\s+/g, ' ').trim();
+    if (head && !items.some((x) => x.toLowerCase() === head.toLowerCase())) items.push(head.length > 90 ? `${head.slice(0, 87)}...` : head);
+  }
+  if (!items.length) return base;
+  const list = items.slice(0, 4).join('; ') + (items.length > 4 ? `; +${items.length - 4}` : '');
+  const tail = refs.length ? ` (${refs.slice(0, 6).join(', ')})` : '';
+  const trim = (t) => String(t || '').replace(/[.\s]+$/, '');
+  return {
+    en: `${trim(base && base.en) || 'Fixed'}: ${list}${tail}.`,
+    fr: `${trim(base && base.fr) || 'Corrigé'} : ${list}${tail}.`,
+  };
 }
 
 /** Our commit subjects since the previous publish metadata commit (bounded). */
@@ -134,7 +158,7 @@ function updateChangelog(obj, version, subjects) {
   return { changed, obj: ordered, entry: ordered[version] };
 }
 
-module.exports = { isPlaceholder, orderChangelog, summarize, precise, subjectsSinceLastPublish, updateChangelog, cmpVer, BUMP_SUBJECT };
+module.exports = { specific, isPlaceholder, orderChangelog, summarize, precise, subjectsSinceLastPublish, updateChangelog, cmpVer, BUMP_SUBJECT };
 
 if (require.main === module) {
   const arg = (n) => { const i = process.argv.indexOf(n); return i > 0 ? process.argv[i + 1] : undefined; };
