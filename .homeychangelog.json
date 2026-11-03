@@ -4313,8 +4313,8 @@
     "en": "v5.12.0: stable-v5 batch sync (drivers, FPs, flows, manifest) from master v9.0.240–v9.0.260."
   },
   "1.0.227": {
-    "en": "Fixed: climate sensors.",
-    "fr": "Corrigé : capteurs d'ambiance."
+    "en": "Fixed: humidity shown 10 times too low on climate sensors whose Zigbee humidity is reported in tenths of a percent (9 drivers, GH#581).",
+    "fr": "Corrigé : humidité affichée 10 fois trop basse sur les capteurs d'ambiance qui envoient l'humidité Zigbee en dixièmes de pourcent (9 drivers, GH#581)."
   },
   "1.0.226": {
     "en": "Fixed: presence radars & pairing and device recognition (MTG075).",
