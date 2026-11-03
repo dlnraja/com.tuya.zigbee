@@ -58,7 +58,7 @@ function githubRateLimitWaitMs(headers, nowMs = Date.now()) {
 
 async function fetchWithRetry(url, opts = {}, ro = {}) {
   { let S = null; try { S = require('../../scripts/ci/bot-silence'); } catch (_) { /* absent */ }
-    if (S && S.isSilenced(opts.method, url)) { S.divert(opts.method, url, (() => { try { return JSON.parse(opts.body); } catch (_) { return null; } })()); return new Response('{}', { status: 200, headers: { 'content-type': 'application/json' } }); } } // P3255
+    if (S && S.isSilenced(opts.method, url, opts.body)) { S.divert(opts.method, url, (() => { try { return JSON.parse(opts.body); } catch (_) { return null; } })()); return new Response('{}', { status: 200, headers: { 'content-type': 'application/json' } }); } } // P3255
   const {
     retries = 4,
     baseDelay = 2000,
