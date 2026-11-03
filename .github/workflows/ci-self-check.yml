@@ -130,6 +130,22 @@ jobs:
       - name: app.json ↔ compose drift (fingerprints + flow titleFormatted, lossless)
         run: node scripts/ci/appjson-compose-drift-gate.js
 
+      # P3243 (02/11/2026 Paris): lessons of 02/11 wired into CI on every branch.
+      - name: Driver signature duplicate gate (P3238 — new driver identical to an existing one is refused)
+        run: |
+          if [ -f scripts/ci/driver-signature-dup-gate.js ]; then node scripts/ci/driver-signature-dup-gate.js
+          else echo "driver-signature-dup-gate absent on this branch — skipped"; fi
+
+      - name: Continuation chain rules (rootOf aliasing; continuation only when root is full, P3206)
+        run: |
+          if [ -f scripts/ci/driver-continuations-check.js ]; then node scripts/ci/driver-continuations-check.js
+          else echo "driver-continuations-check absent on this branch — skipped"; fi
+
+      - name: Manifest budget + parasite combos (P3243 — Athom refuses any never-published driver, likely a size limit)
+        run: |
+          node scripts/ci/manifest-budget.js --gate --json="$RUNNER_TEMP/manifest-budget.json"
+          if [ -f scripts/perf/zero-parasite-plan.js ]; then node scripts/perf/zero-parasite-plan.js --strong | head -20; fi
+
       - name: DP shards fresh (stale shards = silent fallback to the full catalogue)
         run: |
           if [ -f scripts/data/build-dp-shards.js ]; then node scripts/data/build-dp-shards.js --check
