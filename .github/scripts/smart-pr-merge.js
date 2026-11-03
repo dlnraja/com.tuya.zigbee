@@ -715,13 +715,13 @@ async function processPR(prNumber) {
         restoreBaseBranchQuietly();
         log(`  Validation failed or risk too high (${risk}/10), labeling for review`);
         gh(`pr edit ${prNumber} -R ${REPO} --add-label "needs-review,has-conflicts"`);
-        gh(`pr comment ${prNumber} -R ${REPO} --body "⚠️ **Tentative de résolution automatique des conflits**\n\nLe merge a été tenté mais la validation a échoué ou le risque est trop élevé (${risk}/10).\n\n**Fichiers en conflit :** ${conflict.files.join(', ')}\n\nMerci de vérifier manuellement avant de fusionner.\n\n_🤖 Smart PR Auto-Merge_"`);
+        gh(`pr comment ${prNumber} -R ${REPO} --body "⚠️ **Automatic conflict resolution attempted**\n\nThe merge was tried but validation failed or the risk is too high (${risk}/10).\n\n**Conflicting files:** ${conflict.files.join(', ')}\n\nPlease check manually before merging.\n\n_🤖 Smart PR Auto-Merge_"`);
         return false;
       }
     } else {
       log(`  ❌ Cannot auto-resolve: ${conflict.reason}`);
       gh(`pr edit ${prNumber} -R ${REPO} --add-label "needs-review,has-conflicts"`);
-      gh(`pr comment ${prNumber} -R ${REPO} --body "⚠️ **Conflits de merge détectés**\n\nLes conflits n'ont pas pu être résolus automatiquement : ${conflict.reason}\n\nMerci de résoudre les conflits manuellement.\n\n_🤖 Smart PR Auto-Merge_"`);
+      gh(`pr comment ${prNumber} -R ${REPO} --body "⚠️ **Merge conflicts detected**\n\nThe conflicts could not be resolved automatically: ${conflict.reason}\n\nPlease resolve the conflicts manually.\n\n_🤖 Smart PR Auto-Merge_"`);
       return false;
     }
   }
