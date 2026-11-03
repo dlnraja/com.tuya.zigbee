@@ -7,6 +7,10 @@ Written 2026-11-03 for the documentation coverage work (P3254, queue item 5), co
 - `lib/energy/PowerSourceResolver.js` — pure functions (no timers) that answer "how many watts is this device using" with one fixed precedence: a real meter reading, then a value calculated from voltage × current (× power factor, summed over phases), then the power the user typed in, then a per-couple default, a per-driver rule and finally a per-class default from `data/energy/default-power.json`. Defaults are labelled as estimates and always lose to a measured value.
 - `lib/energy/mainsEnergy.js` — builds the Homey `energy` object for a device that has just been confirmed as mains powered. Some switch and dimmer drivers declare batteries in their manifest because they also host battery variants; for the mains devices of those drivers (on/off only, no power meter) it hands the resolver's default to Homey as an approximation the user can still edit. Only constant and linear-dim curves are passed.
 
+## Mesh view
+
+- `lib/features/ZigbeeMeshMap.js` — builds the mesh "spider web" shown in the app settings (master only). It is a passive snapshot of this app's paired devices and the link quality / signal values Homey already knows; it never sends neighbour-table requests, which would flood sleepy devices. Homey does not give apps the coordinator's neighbour table, so links are last-hop quality to Homey, and any parent router it draws is marked as inferred, never shown as a real hop.
+
 ## Flow cards
 
 - `lib/flow/ActuatorFlowHelper.js` — shared helpers for "turn on/off/toggle/set" action cards. A command goes first through the device's own capability listener (the normal Homey send path), then the value is mirrored on the capability; device helpers and the I/O facade are fallbacks. A missing device shape is resolved softly instead of failing the flow.
