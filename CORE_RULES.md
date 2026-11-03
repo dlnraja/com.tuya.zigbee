@@ -1271,3 +1271,6 @@ Any fix concerning Bastien ships to `bastien-home` together with `master` (full 
 
 ## GitHub reply language (P3254)
 All GitHub replies (issues, PRs, comments) are written in English, never French.
+
+## Driver-count ceiling on Athom uploads (P3262)
+Never ship more drivers than the last Athom-accepted build of that app (master 347; observed, unconfirmed by Athom, ticket 157057). New couples go into existing drivers or continuation chains without breaking one-couple-one-driver; a placeholder driver may be swapped one-for-one. SSOT: config/architecture/driver-count-ceiling-ssot.json, docs/rules/DRIVER_COUNT_CEILING.md.
