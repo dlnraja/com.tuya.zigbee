@@ -193,6 +193,11 @@ jobs:
 
       - name: Install
         run: npm ci --prefer-offline --no-audit || npm install --no-audit
+      - name: P3243 manifest budget (report + warning; blocking gate is in ci-self-check)
+        continue-on-error: true
+        run: |
+          [ -f scripts/ci/manifest-budget.js ] || exit 0
+          node scripts/ci/manifest-budget.js --gate || echo "::warning::P3243 manifest over budget: Athom may refuse (AggregateError)"
 
       - name: Contre quoi P2606 + P260x wall remotes
         run: |

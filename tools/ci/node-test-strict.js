@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 'use strict';
+// P3243b: a git hook exports GIT_DIR/GIT_WORK_TREE/GIT_INDEX_FILE; tests that `git init` a fixture would then
+// write into the REAL repo (core.bare=true, core.worktree=<other tree>, fixture commits on a live branch).
+for (const k of Object.keys(process.env)) { if (/^GIT_(DIR|WORK_TREE|INDEX_FILE|PREFIX|COMMON_DIR|OBJECT_DIRECTORY|ALTERNATE_OBJECT_DIRECTORIES|NAMESPACE|CEILING_DIRECTORIES|QUARANTINE_PATH|PUSH_OPTION_.*)$/.test(k)) delete process.env[k]; }
 /**
  * P3057-3: run every node:test file under `node --test` and fail on failures.
  *
@@ -106,8 +109,31 @@ function main(argv) {
     const f = failures.find((x) => keyOf(x) === k);
     console.log(`::error::node:test failure: ${k}${f && f.msg ? ` — ${f.msg.split('\n')[0]}` : ''}`);
   }
-  return res.ok ? 0 : 1;
+  if (!res.ok) {return isolatedFlakyRetry(res.unexpected) ? 0 : 1;}
+  return 0;
 }
 
-module.exports = { childEnv, NODE_TEST_RE, listTestFiles, nodeTestFiles, parseFailures, evaluate, keyOf };
+// P3243 (02/11/2026 Paris): heap/timing flakes (P3065 flow-storm soak, P2914 leak) went red under
+// concurrency 4 and green alone. When EVERY unexpected failure is in the flaky allowlist, re-run those
+// files once, isolated, with --expose-gc; report it (::warning:: + step summary). Anything else fails.
+const FLAKY_FILES = ['test/critical/p3065-flow-storm-soak.test.js', 'test/p2914-memory-leak.test.js'];
+/** Pure: the flaky files to retry, or null when one failure is outside the allowlist. */
+function flakyRetryFiles(unexpectedKeys, allow = FLAKY_FILES) {
+  const files = new Set();
+  for (const k of unexpectedKeys) { const f = k.split('::')[0]; if (!allow.includes(f)) {return null;} files.add(f); }
+  return files.size ? [...files] : null;
+}
+function isolatedFlakyRetry(unexpected) {
+  const files = flakyRetryFiles(unexpected);
+  if (!files) {return false;}
+  console.log(`node-test-strict: only flaky failures (${files.join(', ')}): one isolated retry with --expose-gc`);
+  const r = spawnSync(process.execPath, ['--expose-gc', '--test', '--test-concurrency=1', ...files.map((f) => path.join(ROOT, f))], { cwd: ROOT, stdio: 'inherit', env: childEnv() });
+  const ok = r.status === 0;
+  const line = `node-test-strict flaky retry: ${files.join(', ')} -> ${ok ? 'GREEN isolated (flake, reported)' : 'RED isolated (real failure)'}`;
+  console.log(ok ? `::warning::${line}` : `::error::${line}`);
+  if (process.env.GITHUB_STEP_SUMMARY) {try { fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, `- ${line}\n`); } catch (_) { /* summary optional */ }}
+  return ok;
+}
+
+module.exports = { flakyRetryFiles, FLAKY_FILES, childEnv, NODE_TEST_RE, listTestFiles, nodeTestFiles, parseFailures, evaluate, keyOf };
 if (require.main === module) {process.exitCode = main(process.argv);}
