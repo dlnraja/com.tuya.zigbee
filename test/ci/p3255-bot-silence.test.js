@@ -43,13 +43,21 @@ describe('P3255 bot silence', () => {
     assert.deepStrictEqual(calls[1], ['POST', '/repos/o/r/issues/12/comments']);
   });
 
+  it('human-style triage reply (t836u): one reply, legacy triage comment edited in place, no bot boilerplate', async () => {
+    const calls = [];
+    await S.upsertReply(async (m, p) => { calls.push([m, p]); return m === 'GET' ? [{ id: 7, body: '<!-- auto-triage:v1 -->\nold' }] : {}; }, 'o/r', 4, 'Hi', { legacyMarkers: ['<!-- auto-triage:v1 -->'] });
+    assert.deepStrictEqual(calls[1], ['PATCH', '/repos/o/r/issues/comments/7']);
+    const tf = path.join(ROOT, 'scripts', 'digest', 'triage.js'); // absent on stable-v5/bastien-home
+    if (fs.existsSync(tf)) { const t = fs.readFileSync(tf, 'utf8'); assert.ok(t.includes('upsertReply(') && !/Automatic triage|no human review yet/.test(t)); }
+  });
+
   it('BOT_PUBLIC=1 re-enables writes', () => {
     process.env.BOT_PUBLIC = '1';
     assert.strictEqual(S.isSilenced('POST', '/repos/o/r/issues'), false);
   });
 
   it('shared GitHub clients are wired to the guard', () => {
-    for (const f of ['scripts/digest/lib.js', 'scripts/automation/gh.cjs', '.github/scripts/retry-helper.js']) {
+    for (const f of ['scripts/digest/lib.js', 'scripts/automation/gh.cjs', '.github/scripts/retry-helper.js'].filter((x) => fs.existsSync(path.join(ROOT, x)))) {
       if (!fs.existsSync(path.join(ROOT, f))) continue; // branch without this client
       assert.ok(fs.readFileSync(path.join(ROOT, f), 'utf8').includes('bot-silence'), f);
     }
