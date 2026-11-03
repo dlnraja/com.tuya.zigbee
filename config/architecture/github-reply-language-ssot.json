@@ -1,0 +1,11 @@
+{
+  "id": "github-reply-language",
+  "pr": "P3254",
+  "since": "2026-11-03",
+  "rule": "All GitHub replies (issues, PRs, comments) are written in English, never French.",
+  "defaultLanguage": "en",
+  "forbiddenLanguages": ["fr"],
+  "scope": ["issue comments", "PR comments", "PR reviews", "issue/PR bodies opened by the maintainer or automation"],
+  "outOfScope": ["Homey forum posts", "Bastien diag e-mails (scripts/diag/auto-reply-bastien.js detectLang)"],
+  "docs": ["docs/rules/GITHUB_HUMANIZE.md", ".specify/memory/constitution.md#R24"]
+}

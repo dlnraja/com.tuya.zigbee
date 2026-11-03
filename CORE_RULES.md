@@ -1282,3 +1282,6 @@ const position = profile.positionInvert ? (100 - rawValue) : rawValue;
 ## Bastien fixes: simultaneous push (t699u)
 
 Any fix concerning Bastien ships to `bastien-home` together with `master` (full checks on both, no soak wait). SSOT: docs/rules/BASTIEN_HOUSE_APP.md.
+
+## GitHub reply language (P3254)
+All GitHub replies (issues, PRs, comments) are written in English, never French.
