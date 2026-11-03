@@ -7,7 +7,7 @@ updates:
       day: monday
       time: "04:00"
       timezone: Europe/Paris
-    open-pull-requests-limit: 10
+    open-pull-requests-limit: 0  # P3255 (t824u): security updates only, no version-update PRs
     reviewers:
       - dlnraja
     assignees:
@@ -58,7 +58,7 @@ updates:
       day: monday
       time: "04:30"
       timezone: Europe/Paris
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 0  # P3255 (t824u): security updates only
     reviewers:
       - dlnraja
     assignees:

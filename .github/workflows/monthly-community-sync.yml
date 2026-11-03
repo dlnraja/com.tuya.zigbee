@@ -120,6 +120,7 @@ jobs:
           npm run build || true
 
       - name: 📋 Create Issue for New Fingerprints
+        if: ${{ vars.BOT_PUBLIC == '1' }}  # P3255 bot-silence (t824u)
         continue-on-error: true
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
         with:

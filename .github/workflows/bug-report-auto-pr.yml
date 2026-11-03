@@ -97,7 +97,7 @@ jobs:
         run: node .github/scripts/bug-report-processor.js
 
       - name: Create Fix Branch and PR
-        if: steps.bug.outputs.has_fix == 'true' && inputs.dry_run != true
+        if: ${{ vars.BOT_PUBLIC == '1' && (steps.bug.outputs.has_fix == 'true' && inputs.dry_run != true) }}  # P3255 bot-silence
         env:
           GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
         run: |
