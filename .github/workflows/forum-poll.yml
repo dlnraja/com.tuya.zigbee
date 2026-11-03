@@ -123,7 +123,7 @@ jobs:
             --satellites=${{ vars.FORUM_CATCHUP_SATELLITES || '8' }}
 
       - name: Commit forum catch-up cursor + ledger (gated)
-        if: steps.forum_catchup.outcome == 'success'
+        if: vars.SCRAPE_COMMIT == '1' && (steps.forum_catchup.outcome == 'success')
         continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -147,7 +147,7 @@ jobs:
           node scripts/ci/digest-guard.js docs/knowledge/forum-apps/category-7.md data/ssot/thread-digests.json
 
       - name: Commit Apps category digests (gated)
-        if: steps.cat_scan.outcome == 'success'
+        if: vars.SCRAPE_COMMIT == '1' && (steps.cat_scan.outcome == 'success')
         continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -330,7 +330,7 @@ jobs:
           node scripts/scanners/forum-image-ocr.js --max-images=${{ vars.FORUM_OCR_MAX_IMAGES || '30' }} --max-posts=120
 
       - name: Commit forum OCR leads (gated)
-        if: steps.forum_ocr.outcome == 'success'
+        if: vars.SCRAPE_COMMIT == '1' && (steps.forum_ocr.outcome == 'success')
         continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

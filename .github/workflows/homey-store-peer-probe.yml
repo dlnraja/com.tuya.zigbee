@@ -69,6 +69,7 @@ jobs:
           retention-days: 14
 
       - name: Commit report if changed
+        if: vars.SCRAPE_COMMIT == '1'  # P3255e (t834u): scrape output goes to artifacts/summary; set repo var SCRAPE_COMMIT=1 to commit
         continue-on-error: true
         run: |
           git config user.name "github-actions[bot]"

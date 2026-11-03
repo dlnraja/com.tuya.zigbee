@@ -127,7 +127,7 @@ jobs:
           retention-days: 14
 
       - name: 📝 Commit results (Master only)
-        if: ${{ !inputs.dry_run }}
+        if: vars.SCRAPE_COMMIT == '1' && (!inputs.dry_run)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
