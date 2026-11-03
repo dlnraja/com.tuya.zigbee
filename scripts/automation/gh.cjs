@@ -19,7 +19,7 @@ function waitMs(res) {
 }
 
 async function gh(apiPath, { method = 'GET', body, soft = false, raw = false, accept } = {}) {
-  { const S = require('../ci/bot-silence'); if (S.isSilenced(method, apiPath)) return S.divert(method, apiPath, body); } // P3255
+  { const S = require('../ci/bot-silence'); if (S.isSilenced(method, apiPath, body)) return S.divert(method, apiPath, body); } // P3255
   const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
   if (!token) { if (soft) return null; throw new Error('GITHUB_TOKEN missing'); }
   for (let attempt = 0; attempt < 3; attempt++) {

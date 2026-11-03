@@ -1,5 +1,5 @@
 {
-  "_doc": "P3255 (t823u/t824u): automation is invisible on GitHub. No issue/PR/comment writes from bots; results go to $GITHUB_STEP_SUMMARY / artifacts. Re-enable only with repo variable BOT_PUBLIC=1 (or env BOT_PUBLIC=1).",
-  "silent": true,
+  "_doc": "P3255 (t823u/t824u/t834u): quiet bots. mode=quiet: triage allowed (labels, close, dedupe, edits, merges) + at most ONE consolidated reply per issue (marker, edited in place); new issues/PRs/status comments go to $GITHUB_STEP_SUMMARY. mode=silent: no issue/PR writes. Override with env BOT_MODE, or BOT_PUBLIC=1 for no filtering.",
+  "mode": "quiet",
   "silencedPathRe": "/repos/[^/]+/[^/]+/(issues|pulls)(/|$|\\?)"
 }
