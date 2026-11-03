@@ -1,8 +1,120 @@
 {
   "why": "P3200: couples users reported as 'Unknown Zigbee device' although listed. tools/ci/reported-couples-publish-survival.js checks each one survives publish compaction. Exact wire strings from the report only.",
   "couples": [
-    { "mfr": "_TZ3000_yupc0pb7", "pid": "TS0201", "source": "GH#581 hogseto 2026-10-28 (Device Finder + pairing)" },
-    { "mfr": "_TZE284_awepdiwi", "pid": "TS0601", "source": "GH#584 stephanmaastricht 2026-10-30, diag 8742e6bd; Z2M _TZE284_awepdiwi" },
-    { "mfr": "_TZE284_9ern5sfh", "pid": "TS0601", "source": "GH#598 2026-11-01 interview (Self-Hosted + Bridge, Unable to connect); in 9.0.1604 payload; P3204 owner lcdtemphumidsensor_3" }
+    {
+      "mfr": "_TZ3000_yupc0pb7",
+      "pid": "TS0201",
+      "source": "GH#581 hogseto 2026-10-28 (Device Finder + pairing)"
+    },
+    {
+      "mfr": "_TZE284_awepdiwi",
+      "pid": "TS0601",
+      "source": "GH#584 stephanmaastricht 2026-10-30, diag 8742e6bd; Z2M _TZE284_awepdiwi"
+    },
+    {
+      "mfr": "_TZE284_9ern5sfh",
+      "pid": "TS0601",
+      "source": "GH#598 2026-11-01 interview (Self-Hosted + Bridge, Unable to connect); in 9.0.1604 payload; P3204 owner lcdtemphumidsensor_3"
+    },
+    {
+      "mfr": "_TZE200_yenbr4om",
+      "pid": "TS0601",
+      "source": "GH#576 migueleap (exact wire string from report, P3248)"
+    },
+    {
+      "mfr": "_TZE284_myd45weu",
+      "pid": "TS0601",
+      "source": "GH#571 denis-papin QT-07S (exact wire string from report, P3248)"
+    },
+    {
+      "mfr": "_TZ3000_iszegwpd",
+      "pid": "TS0046",
+      "source": "GH#554 draqlek (exact wire string from report, P3248)"
+    },
+    {
+      "mfr": "_TZ3000_e3vhyirx",
+      "pid": "TS130F",
+      "source": "GH#552 migueleap (exact wire string from report, P3248)"
+    },
+    {
+      "mfr": "_TZ3000_famkxci2",
+      "pid": "TS0043",
+      "source": "GH#551 migueleap (exact wire string from report, P3248)"
+    },
+    {
+      "mfr": "_TZE200_gkfbdvyx",
+      "pid": "TS0601",
+      "source": "GH#549 neeerd (exact wire string from report, P3248)"
+    },
+    {
+      "mfr": "_TZE204_gkfbdvyx",
+      "pid": "TS0601",
+      "source": "GH#547/#550 HiepSVG (exact wire string from report, P3248)"
+    },
+    {
+      "mfr": "_TZ3000_l9brjwau",
+      "pid": "TS0002",
+      "source": "GH#546/#544 kikosenra/migueleap (exact wire string from report, P3248)"
+    },
+    {
+      "mfr": "_TZ3000_ysdv91bk",
+      "pid": "TS0001",
+      "source": "GH#545 migueleap (exact wire string from report, P3248)"
+    },
+    {
+      "mfr": "_TZ3000_ptjcjise",
+      "pid": "TS0002",
+      "source": "GH#543 migueleap (exact wire string from report, P3248)"
+    },
+    {
+      "mfr": "_TZ3000_xk5udnd6",
+      "pid": "TS0012",
+      "source": "GH#542 migueleap (exact wire string from report, P3248)"
+    },
+    {
+      "mfr": "_TZ3000_enmfaave",
+      "pid": "TS0004",
+      "source": "GH#541 migueleap (exact wire string from report, P3248)"
+    },
+    {
+      "mfr": "_TZ3000_blhvsaqf",
+      "pid": "TS0001",
+      "source": "GH#540 migueleap (exact wire string from report, P3248)"
+    },
+    {
+      "mfr": "_TZE204_ogkdpgy2",
+      "pid": "TS0601",
+      "source": "GH#531 Nespouique (exact wire string from report, P3248)"
+    },
+    {
+      "mfr": "_TZ3000_isw9u95y",
+      "pid": "TS0201",
+      "source": "GH#516 finnamu (exact wire string from report, P3248)"
+    },
+    {
+      "mfr": "_TZE284_hodyryli",
+      "pid": "TS0601",
+      "source": "GH#513 finnamu (exact wire string from report, P3248)"
+    },
+    {
+      "mfr": "_TZE204_clrdrnya",
+      "pid": "TS0601",
+      "source": "GH#420 RidderGH MTG235-ZB-RL (exact wire string from report, P3248)"
+    },
+    {
+      "mfr": "_TZ3210_w0qqde0g",
+      "pid": "TS011F",
+      "source": "GH#559 Lalla80111 interview (exact wire string from report, P3248)"
+    },
+    {
+      "mfr": "_TZE28C1000000_sinxpbrl",
+      "pid": "TS0601",
+      "source": "PR #558 martinheie-ui MC101Z (P3248)"
+    },
+    {
+      "mfr": "_TZ3210_j4pdtz9v",
+      "pid": "TS0001",
+      "source": "PR #577 iassael fingerbot (P3248)"
+    }
   ]
 }
