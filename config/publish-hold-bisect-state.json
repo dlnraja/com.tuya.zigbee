@@ -1,9 +1,6 @@
 {
   "queue": [
     [
-      "water_leak_aoyan_ay222z"
-    ],
-    [
       "water_leak_blitzwolf_bw_is9",
       "sauna_thermostat_ae5503",
       "siren_moes_mg_bjq002"
@@ -44,19 +41,16 @@
     "heiman_keyfob": 1,
     "heiman_siren": 1,
     "presence_radar_aoyan_ay204t,water_leak_aoyan_ay222z": 1,
-    "presence_radar_aoyan_ay204t": 1
+    "presence_radar_aoyan_ay204t": 1,
+    "water_leak_aoyan_ay222z": 1
   },
   "isolated": [
     "heiman_keyfob",
     "heiman_siren",
-    "presence_radar_aoyan_ay204t"
+    "presence_radar_aoyan_ay204t",
+    "water_leak_aoyan_ay222z"
   ],
-  "pending": {
-    "ids": [
-      "water_leak_aoyan_ay222z"
-    ],
-    "at": "2026-11-03T06:59:41.737Z"
-  },
+  "pending": null,
   "doneRuns": [
     "41263658690",
     "41272744359",
@@ -65,6 +59,7 @@
     "41361830749",
     "41399984982",
     "41513610425",
-    "41544529677"
+    "41544529677",
+    "41629123269"
   ]
 }
