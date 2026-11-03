@@ -56,7 +56,7 @@ const DRIVER_ID_MAP = {
   'smoke_detector':         ['smoke_sensor', 'smoke_sensor3'],
   'gas_sensor':             ['gas_sensor', 'gas_sensor_switch', 'sensor_gas_presence'],
   'vibration_sensor':       ['vibration_sensor'],
-  'radiator_valve':         ['radiator_valve', 'thermostatic_radiator_valve', 'device_radiator_valve_thermostat'],
+  'radiator_valve':         ['radiator_valve', 'thermostatic_radiator_valve'],
   'water_valve_smart':      ['valve_dual_irrigation'],
   'light_sensor':           ['air_quality_co2'],
   'air_quality_co2':        ['air_quality_co2', 'smart_air_detection_box'],

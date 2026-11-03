@@ -82,40 +82,6 @@
       "arg": "enabled",
       "title": "Set child lock"
     },
-    "device_radiator_valve_thermostat_tuya_dp_set_mode": {
-      "op": "enum_cap",
-      "cap": "thermostat_mode",
-      "arg": "mode",
-      "title": "Set mode"
-    },
-    "device_radiator_valve_thermostat_tuya_dp_inc_8b664": {
-      "op": "step_cap",
-      "cap": "target_temperature",
-      "arg": "degrees",
-      "sign": 1,
-      "range": {
-        "min": 5,
-        "max": 35
-      },
-      "title": "Increase temperature"
-    },
-    "device_radiator_valve_thermostat_tuya_dp_dec_6e5ef": {
-      "op": "step_cap",
-      "cap": "target_temperature",
-      "arg": "degrees",
-      "sign": -1,
-      "range": {
-        "min": 5,
-        "max": 35
-      },
-      "title": "Decrease temperature"
-    },
-    "device_radiator_valve_thermostat_tuya_dp_set_fa7a8": {
-      "op": "bool_cap",
-      "cap": "child_lock",
-      "arg": "enabled",
-      "title": "Set child lock"
-    },
     "dimmer_dual_channel_dim_up": {
       "op": "step_cap",
       "cap": "dim",

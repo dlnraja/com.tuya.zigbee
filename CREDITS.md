@@ -565,3 +565,4 @@ A heartfelt thank you to:
 - Own work, no external code. Root cause found while unblocking master publishing: bot `[skip ci]` commits that touch `.js` left no code-identical CI run and kept moving the tip, so the P3036 gate held every upload as "CI superseded". The gate now counts the tip's CI when the tip has the same code as the gated SHA.
 
 - P3258 (03/11/2026): publish gate counts only shipped build inputs when adopting a bot-moved tip, and primes CI on the tip when it holds as superseded.
+- P3263 (03/11/2026): master Athom probe swap (user OK) — placeholder-only device_radiator_valve_thermostat removed (its one payload couple _tze200_9xfjixap/TS0601 stays on thermostatic_radiator_valve), water_leak_aoyan_ay222z released from the publish hold; payload stays at 347 drivers to test the observed driver-count ceiling. Own work.

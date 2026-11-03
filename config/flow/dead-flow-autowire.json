@@ -401,46 +401,6 @@
       "cap": "measure_temperature",
       "when": "change"
     },
-    "device_radiator_valve_thermostat_tuya_dp_tar_7ce4d": {
-      "driver": "device_radiator_valve_thermostat",
-      "cap": "target_temperature",
-      "when": "change"
-    },
-    "device_radiator_valve_thermostat_tuya_dp_tem_8c086": {
-      "driver": "device_radiator_valve_thermostat",
-      "cap": "measure_temperature",
-      "when": "change"
-    },
-    "device_radiator_valve_thermostat_tuya_dp_mod_1cac8": {
-      "driver": "device_radiator_valve_thermostat",
-      "cap": "thermostat_mode",
-      "when": "change"
-    },
-    "device_radiator_valve_thermostat_tuya_dp_hea_81c5b": {
-      "driver": "device_radiator_valve_thermostat",
-      "cap": "thermostat_mode",
-      "when": "enter:heat"
-    },
-    "device_radiator_valve_thermostat_tuya_dp_hea_4f2c3": {
-      "driver": "device_radiator_valve_thermostat",
-      "cap": "thermostat_mode",
-      "when": "leave:heat"
-    },
-    "device_radiator_valve_thermostat_tuya_dp_tur_6295b": {
-      "driver": "device_radiator_valve_thermostat",
-      "cap": "onoff",
-      "when": false
-    },
-    "device_radiator_valve_thermostat_tuya_dp_tem_bdf85": {
-      "driver": "device_radiator_valve_thermostat",
-      "cap": "measure_temperature",
-      "when": "change"
-    },
-    "device_radiator_valve_thermostat_tuya_dp_hum_14996": {
-      "driver": "device_radiator_valve_thermostat",
-      "cap": "measure_humidity",
-      "when": "change"
-    },
     "dimmer_air_purifier_air_purifier_dimmer_wall_92f9b": {
       "driver": "dimmer_air_purifier",
       "cap": "onoff",

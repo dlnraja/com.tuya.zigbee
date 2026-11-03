@@ -58,15 +58,7 @@ if (!mfs.driverMapping[thermDriver].manufacturerIds.includes(thermMfr)) {
   console.log('  Added ' + thermMfr + ' to ' + thermDriver);
 }
 
-// Also add to device_radiator_valve_thermostat
-const thermDriver2 = 'device_radiator_valve_thermostat';
-if (mfs.driverMapping[thermDriver2]) {
-  if (!mfs.driverMapping[thermDriver2].manufacturerIds.includes(thermMfr)) {
-    mfs.driverMapping[thermDriver2].manufacturerIds.push(thermMfr);
-    added++;
-    console.log('  Also added to ' + thermDriver2);
-  }
-}
+// P3263: device_radiator_valve_thermostat removed (placeholder-only); thermostatic_radiator_valve owns the couple.
 
 // === FIX 3: Auto-apply all 85 canonical gaps to their driver mappings ===
 console.log('\n=== FIX 3: Canonical gaps ===');
