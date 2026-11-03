@@ -1,0 +1,95 @@
+{
+  "date": "2026-11-03",
+  "source": "scripts/kb/z2m-coverage.js matrix diff vs 2026-11-02 (063b7767a3)",
+  "reason": "publish payload at cap (master 15489/15500 after P3242/P3246 trims re-allocated the freed room); couples present in source but dropped from the rebuilt payload",
+  "action": "park; pin only once headroom exists, pins displace other couples",
+  "recovered_since_2026-11-02": [
+    "master _TZ3000_5rpu3r0d|TS0001",
+    "master _TZ3000_cehuw1lw|TS011F",
+    "master _TZ3000_cehuw1lw|TS0121"
+  ],
+  "couples": {
+    "master": [
+      "_TZ3000_atp7xmd9|TS0002",
+      "_TZ3000_atp7xmd9|TS0012",
+      "_TZ3000_otvn3lne|TS0202",
+      "_TZ3210_pfbzs1an|TS011F",
+      "_TZE200_bxoo2swd|TS0601",
+      "_TZE200_itp8dt7f|TS0601",
+      "_TZ3218_kwht8j5m|TS011F",
+      "_TZE200_tgeqdjgk|TS0601",
+      "_TZE284_da26abzz|TS0601",
+      "_TZE284_tgeqdjgk|TS0601"
+    ]
+  },
+  "still_dropped_from_2026-11-02": {
+    "master": [
+      "_TZ3000_pcqjmcud|TS004F (case_only)"
+    ],
+    "bastien-home": [
+      "_TZ3000_8ybe88nf|RH3052",
+      "_TZ3000_8ybe88nf|TS0201",
+      "_TZ3000_ynmowqk2|TS011F",
+      "_TZ3000_ynmowqk2|TS0121",
+      "_TZ3000_ynmowqk2|TSO121"
+    ],
+    "stable-v5": [
+      "_TZE200_a7sghmms|TS0601"
+    ]
+  },
+  "wrong_class_newly_visible_master": [
+    {
+      "couple": "_TZE200_ojzhk75b|TS0601",
+      "driver": "water_tank_monitor",
+      "class": "sensor",
+      "upstream_expects": "light",
+      "sources": "z2m,johan,blakadder,domoticz"
+    },
+    {
+      "couple": "_TZE200_wzk0x7fq|TS0601",
+      "driver": "curtain_motor",
+      "class": "windowcoverings",
+      "upstream_expects": "sensor",
+      "sources": "z2m,zha,hubitat"
+    },
+    {
+      "couple": "_TZE204_sdykkwsu|TS0601",
+      "driver": "energy_meter_3phase",
+      "class": "sensor",
+      "upstream_expects": "light",
+      "sources": "z2m"
+    },
+    {
+      "couple": "_TZE204_x9usygq1|TS0601",
+      "driver": "curtain_motor",
+      "class": "windowcoverings",
+      "upstream_expects": "climate",
+      "sources": "z2m"
+    },
+    {
+      "couple": "_TZE204_zxkwaztm|TS0601",
+      "driver": "curtain_motor",
+      "class": "windowcoverings",
+      "upstream_expects": "climate",
+      "sources": "z2m,hubitat"
+    },
+    {
+      "couple": "_TZE284_qoi1aqxg|TS0601",
+      "driver": "button_wireless",
+      "class": "button",
+      "upstream_expects": "cover",
+      "sources": "z2m"
+    }
+  ],
+  "wrong_class_note": "were hidden as compacted before; now in the payload. Research the real hardware before moving (one couple one driver, new driver if conflict).",
+  "wrong_class_fixed_P3252": [
+    "_TZE200_ojzhk75b|TS0601 water_tank_monitor->wall_dimmer_tuya",
+    "_TZE200_wzk0x7fq|TS0601 curtain_motor->vibration_sensor",
+    "_TZE284_qoi1aqxg|TS0601 button_wireless->curtain_motor"
+  ],
+  "wrong_class_still_open": [
+    "_TZE204_sdykkwsu|TS0601 AVATTO ZDMS16-US-W2 2ch dimmer (now energy_meter_3phase)",
+    "_TZE204_x9usygq1|TS0601 Moes ZHT-PT01-M-MS pilot-wire thermostat (now curtain_motor)",
+    "_TZE204_zxkwaztm|TS0601 Moes ZHT-S03 wall thermostat (now curtain_motor)"
+  ]
+}

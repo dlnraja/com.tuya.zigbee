@@ -2161,6 +2161,30 @@
       "pid": "TS0201",
       "driverId": "climate_sensor",
       "note": "P3248 GH#516 (finnamu): listed in climate_sensor compose but dropped by publish compaction (reported-couples survival gate) -> Unknown Zigbee device"
+    },
+    {
+      "mfr": "_TZE200_wzk0x7fq",
+      "pid": "TS0601",
+      "driverId": "vibration_sensor",
+      "note": "P3252 KB daily 2026-11-03: HOBEIAN ZG-102ZM moved from curtain_motor (wrong class) to vibration_sensor; was in the payload under curtain_motor, pinned so the move does not drop it"
+    },
+    {
+      "mfr": "_TZE284_qoi1aqxg",
+      "pid": "TS0601",
+      "driverId": "curtain_motor",
+      "note": "P3252 KB daily 2026-11-03: Moes FWJZCEH18A001 roller blind moved from button_wireless (wrong class) to curtain_motor; was in the payload under button_wireless, pinned so the move does not drop it"
+    },
+    {
+      "mfr": "_TZ3000_r6buo8ba",
+      "pid": "TS011F",
+      "driverId": "smartplug",
+      "note": "P3252 KB daily 2026-11-03: source-confirmed couple kept in the payload (would be displaced by the P3252 wrong-class move pins); zero-loss compensation"
+    },
+    {
+      "mfr": "_TZ3000_r6buo8ba",
+      "pid": "TS0121",
+      "driverId": "smartplug",
+      "note": "P3252 KB daily 2026-11-03: source-confirmed couple kept in the payload (would be displaced by the P3252 wrong-class move pins); zero-loss compensation"
     }
   ]
 }

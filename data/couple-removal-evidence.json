@@ -480,6 +480,60 @@
         "git_history": "climate_sensor bulk import",
         "sibling_pids": "_TZE200_z3u99qxt|TS0601"
       }
+    },
+    {
+      "couple": "_TZE200_ojzhk75b|TS0601",
+      "driver": "water_tank_monitor",
+      "pr": "P3252",
+      "verdict": "wrong driver: Tuya TS0601_dimmer_1_gang_1 1-gang dimmer (Z2M/ZHC TS0601_dimmer_1_gang_1, Johan wall_dimmer_tuya); its Z2M siblings live in wall_dimmer_tuya; moved to wall_dimmer_tuya",
+      "sources": {
+        "z2m": "z2m:TS0601_dimmer_1_gang_1; zhc:TS0601_dimmer_1_gang_1",
+        "zha": "not listed for TS0601",
+        "deconz": "not listed for TS0601",
+        "blakadder": "maker in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "johan:wall_dimmer_tuya",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "51a86ac373 v9.0.217: 431 drivers, 2737 FPs [skip ci] | a98486fc78 fix(P44): R9 — 5 typo fixes + 1450 mfrs + 17 pids to driver.compose.json | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZE200_ojzhk75b|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE200_wzk0x7fq|TS0601",
+      "driver": "curtain_motor",
+      "pr": "P3252",
+      "verdict": "wrong driver: HOBEIAN ZG-102ZM vibration sensor (Z2M/ZHC ZG-102ZM; misattribution registry canonicalDriver vibration_sensor, siblings jfw0a4aa/yjryxpot there); moved to vibration_sensor",
+      "sources": {
+        "z2m": "z2m:ZG-102ZM; zhc:ZG-102ZM",
+        "zha": "zha:zhaquirks/tuya/tuya_contact.py",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "51a86ac373 v9.0.217: 431 drivers, 2737 FPs [skip ci] | a98486fc78 fix(P44): R9 — 5 typo fixes + 1450 mfrs + 17 pids to driver.compose.json | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZE200_wzk0x7fq|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE284_qoi1aqxg|TS0601",
+      "driver": "button_wireless",
+      "pr": "P3252",
+      "verdict": "wrong driver: Moes FWJZCEH18A001 roller blind motor (Z2M/ZHC FWJZCEH18A001, sibling _TZE2841000000_u68q868h in curtain_motor); moved to curtain_motor",
+      "sources": {
+        "z2m": "z2m:FWJZCEH18A001; zhc:FWJZCEH18A001",
+        "zha": "not listed for TS0601",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "4ec01c0fe7 feat(P92.62): couverture casse 4-combos pairing (3996 variantes) — tout firmware case-insensitive au pairing [skip ci] | fdd7b376ad fix(P92.47): 4950 variantes de casse (anti unknown device) + compacteur par groupes de casse (0 purge) + version 9.0.373 | 4bca3ddfe8 fix(P92): publish compactor priority + forum bugs + WiFi local-first + security hardening",
+        "sibling_pids": "_TZE284_qoi1aqxg|TS0601"
+      }
     }
   ]
 }

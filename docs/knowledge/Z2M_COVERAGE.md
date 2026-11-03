@@ -11,10 +11,10 @@ Statuses: **absent** (no driver), **compacted** (in app.json, dropped from the p
 | z2m | 26.125.0 | 2180 | 0 |  |
 | zha | 862124c551 (2026-10-28) | 535 | 97 |  |
 | deconz | a4c17adfa0 (2026-09-10) | 400 | 346 |  |
-| johan | 61577d8ec2 (2026-10-25) | 1284 | 65 | driver lists are mfr×pid cross products (Homey semantics) |
+| johan | 328d24ed31 (2026-03-29) | 1161 | 59 | driver lists are mfr×pid cross products (Homey semantics) |
 | blakadder | d96e8aaf72 (2025-10-03) | 626 | 0 | 63 ambiguous ids skipped |
 | hubitat | d5cec83366 (2026-10-20) | 556 | 194 |  |
-| smartthings | SmartThingsCommunity/SmartThingsEdgeDrivers@4fa6683e2e, Mariano-Github/Edge-Drivers-Beta@88f56fd204 | 550 | 1253 |  |
+| smartthings | SmartThingsCommunity/SmartThingsEdgeDrivers@71bea06957, Mariano-Github/Edge-Drivers-Beta@88f56fd204 | 550 | 1253 |  |
 | iobroker | acdafa63e7 (2026-09-18) | 0 | 0 | device definitions come from zigbee-herdsman-converters; only adapter-local fingerprints are counted |
 | domoticz | 0093b8a1c7 (2026-10-31) | 401 | 21 |  |
 | tasmota | 568220d493 (2026-11-02) | 10 | 1 |  |
@@ -25,9 +25,9 @@ Wi-Fi / LAN projects (tuya-local, localtuya, tinytuya, esphome) belong to the se
 
 | Branch | App | Version | Payload combos / cap | Compacted, other case form kept |
 |---|---|---|---|---:|
-| master | com.dlnraja.tuya.zigbee | 9.0.1612 | 15499 / 15500 + TS0601 top-up → 20000 / 20000 | 180 |
-| stable-v5 | com.dlnraja.tuya.zigbee.stable | 5.12.533 | 15500 / 15500 | 250 |
-| bastien-home | com.dlnraja.tuya.zigbee.bastien | 1.0.226 | 15489 / 15500 | 261 |
+| master | com.dlnraja.tuya.zigbee | 9.0.1613 | 15489 / 15500 + TS0601 top-up → 20000 / 20000 | 181 |
+| stable-v5 | com.dlnraja.tuya.zigbee.stable | 5.12.535 | 15492 / 15500 | 246 |
+| bastien-home | com.dlnraja.tuya.zigbee.bastien | 1.0.227 | 15491 / 15500 | 258 |
 
 The payload cap (15,500 couples, our own heuristic shared with the publish workflows, plus the P3036 TS0601 top-up where the branch has it) is the binding limit: any couple added to app.json beyond it is compacted out again, so new couples are only worth adding together with a compaction gain (P3036). Couples we cannot ship are listed as on hold, never removed.
 
@@ -35,33 +35,33 @@ The payload cap (15,500 couples, our own heuristic shared with the publish workf
 
 | Source | Branch | Total | Absent | Compacted | Wrong class | Partial | Complete |
 |---|---|---:|---:|---:|---:|---:|---:|
-| all | master | 3656 | 532 | 1834 | 9 | 289 | 992 |
-| all | stable-v5 | 3656 | 562 | 2367 | 9 | 129 | 589 |
-| all | bastien-home | 3656 | 500 | 2361 | 7 | 140 | 648 |
-| z2m | master | 2180 | 155 | 1199 | 9 | 289 | 528 |
+| all | master | 3578 | 516 | 1815 | 7 | 286 | 954 |
+| all | stable-v5 | 3578 | 542 | 2321 | 9 | 129 | 577 |
+| all | bastien-home | 3578 | 474 | 2321 | 7 | 140 | 636 |
+| z2m | master | 2180 | 155 | 1221 | 7 | 286 | 511 |
 | z2m | stable-v5 | 2180 | 171 | 1572 | 9 | 129 | 299 |
 | z2m | bastien-home | 2180 | 109 | 1586 | 7 | 140 | 338 |
-| zha | master | 535 | 41 | 271 | 1 | 71 | 151 |
+| zha | master | 535 | 41 | 272 | 1 | 71 | 150 |
 | zha | stable-v5 | 535 | 32 | 370 | 2 | 31 | 100 |
 | zha | bastien-home | 535 | 38 | 365 | 1 | 32 | 99 |
 | deconz | master | 400 | 30 | 198 | 0 | 26 | 146 |
-| deconz | stable-v5 | 400 | 29 | 253 | 1 | 15 | 102 |
-| deconz | bastien-home | 400 | 28 | 250 | 0 | 15 | 107 |
-| johan | master | 1284 | 101 | 660 | 1 | 41 | 481 |
-| johan | stable-v5 | 1284 | 125 | 830 | 1 | 21 | 307 |
-| johan | bastien-home | 1284 | 112 | 789 | 1 | 23 | 359 |
-| blakadder | master | 626 | 61 | 272 | 1 | 55 | 237 |
+| deconz | stable-v5 | 400 | 29 | 252 | 1 | 15 | 103 |
+| deconz | bastien-home | 400 | 28 | 249 | 0 | 15 | 108 |
+| johan | master | 1161 | 85 | 596 | 1 | 39 | 440 |
+| johan | stable-v5 | 1161 | 102 | 756 | 1 | 19 | 283 |
+| johan | bastien-home | 1161 | 85 | 719 | 1 | 21 | 335 |
+| blakadder | master | 626 | 61 | 275 | 1 | 55 | 234 |
 | blakadder | stable-v5 | 626 | 62 | 401 | 3 | 27 | 133 |
 | blakadder | bastien-home | 626 | 63 | 411 | 2 | 27 | 123 |
 | hubitat | master | 556 | 66 | 300 | 2 | 42 | 146 |
 | hubitat | stable-v5 | 556 | 62 | 377 | 1 | 21 | 95 |
 | hubitat | bastien-home | 556 | 65 | 368 | 1 | 20 | 102 |
-| smartthings | master | 550 | 134 | 216 | 0 | 14 | 186 |
+| smartthings | master | 550 | 134 | 218 | 0 | 14 | 184 |
 | smartthings | stable-v5 | 550 | 137 | 278 | 0 | 12 | 123 |
 | smartthings | bastien-home | 550 | 141 | 274 | 0 | 10 | 125 |
-| domoticz | master | 401 | 13 | 216 | 1 | 42 | 129 |
-| domoticz | stable-v5 | 401 | 16 | 297 | 1 | 16 | 71 |
-| domoticz | bastien-home | 401 | 16 | 289 | 0 | 16 | 80 |
+| domoticz | master | 401 | 13 | 217 | 1 | 42 | 128 |
+| domoticz | stable-v5 | 401 | 16 | 296 | 1 | 16 | 72 |
+| domoticz | bastien-home | 401 | 16 | 288 | 0 | 16 | 81 |
 | tasmota | master | 10 | 1 | 6 | 0 | 2 | 1 |
 | tasmota | stable-v5 | 10 | 1 | 7 | 0 | 2 | 0 |
 | tasmota | bastien-home | 10 | 1 | 6 | 0 | 2 | 1 |
@@ -98,7 +98,6 @@ The payload cap (15,500 couples, our own heuristic shared with the publish workf
 
 - `A89G12C|Arteco` → soil_sensor [z2m]
 - `B3876M9|ZP-301Z` → presence_sensor_radar [z2m]
-- `HOBEIAN|TS0013` → switch_2gang [johan]
 - `Immax|TS0203` → sensor_contact_zigbee [johan]
 - `TUYATEC-0l6xaqmi|TS0203` → contact_sensor [johan]
 - `TUYATEC-1g3tawnp|TS0201` → temphumidsensor [johan]
@@ -121,6 +120,7 @@ The payload cap (15,500 couples, our own heuristic shared with the publish workf
 - `TUYATEC-nzrrvgco|TS0042` → button_wireless_2 [johan]
 - `TUYATEC-ojmxeikg|TS0201` → temphumidsensor [johan]
 - `TUYATEC-ojmxeikq|TS0201` → temphumidsensor [johan]
+- `TUYATEC-prhs1rsd|TS0201` → temphumidsensor [johan]
 
 ## Examples: wrong_class (master, first 25, full list in the JSON)
 
@@ -131,8 +131,6 @@ The payload cap (15,500 couples, our own heuristic shared with the publish workf
 - `_TZE204_zxkwaztm|TS0601` → curtain_motor (class windowcoverings, expected climate) [z2m,hubitat]
 - `_TZE284_ikul00sx|TS0601` → fan_light_tuya_5_levels (class fan, expected light) [z2m]
 - `_TZE284_qoi1aqxg|TS0601` → button_wireless (class button, expected cover) [z2m]
-- `_TZE284_t88bjhfu|TS0601` → curtain_motor (class windowcoverings, expected light) [z2m]
-- `_TZE284_z98viqa6|TS0601` → curtain_motor (class windowcoverings, expected light) [z2m]
 
 ## Examples: partial (master, first 25, full list in the JSON)
 
@@ -143,7 +141,7 @@ The payload cap (15,500 couples, our own heuristic shared with the publish workf
 - `_TYZB01_cbiezpds|SM0201` → lcdtemphumidsensor_2 (caps: measure_voltage; DPs: -) [z2m,deconz,johan,blakadder]
 - `_TYZB01_jytabjkb|TS0202` → sensor_motion_presence (caps: alarm_battery; DPs: -) [z2m,johan,blakadder,hubitat,smartthings]
 - `_TYZB01_wpmo3ja3|TS0212` → co_sensor (caps: alarm_battery; DPs: -) [z2m,blakadder,smartthings]
-- `_TZ1800_ladpngdx|TS0211` → doorbell (caps: alarm_battery; DPs: -) [z2m,deconz,johan,blakadder]
+- `_TZ1800_ladpngdx|TS0211` → doorbell (caps: alarm_battery; DPs: -) [z2m,deconz,blakadder]
 - `_TZ3000_1dd0d5yi|TS130F` → wall_curtain_switch (caps: onoff; DPs: -) [z2m,johan,blakadder,smartthings]
 - `_TZ3000_1fqpj6qz|TS004F` → switch_4_gang_metering (caps: measure_battery; DPs: -) [z2m]
 - `_TZ3000_8ybe88nf|TS0201` → temphumidsensor (caps: measure_voltage; DPs: -) [z2m,johan,blakadder,hubitat,domoticz]

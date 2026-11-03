@@ -1010,3 +1010,8 @@ First commit that names each P-number; summary is the commit subject. Details li
 | P102 | 2026-10-19 | [6e6cad47a](https://github.com/dlnraja/com.tuya.zigbee/commit/6e6cad47a552f56736cda336767fb4f70b438a07) | fix(ci,P2868): allowlist smart_knob_zg101zd in the P102 bare ZigBeeDevice gate (native-only knob by design; TuyaZigbeeDevice layers would double-handle 0xFC/0xF |
 | P101 | 2026-08-11 | [e86582503](https://github.com/dlnraja/com.tuya.zigbee/commit/e86582503eb4c787329e7f97eb30247d6d6de410) | fix(P101): #439 sacred-couple lot2 + getDeviceById/catch harden |
 | P100 | 2026-08-11 | [6f36cc25d](https://github.com/dlnraja/com.tuya.zigbee/commit/6f36cc25dcbf53110809ddc654bb4928e447b715) | chore: sync app.json to v9.0.447 for P100 crash harden |
+
+## 2026-11-03 (kb-daily)
+- Compare coverage matrices only between runs made under the same publish caps (15500/1500/2 on master). The KB refresh workflow on GitHub Actions uses other caps, so diffing against its matrix shows phantom losses.
+- Trimming parasite pids frees payload room and can reveal wrong-class couples that were hidden as "compacted". Re-read the wrong_class list after every trim.
+- Moving a couple into a large driver can make the compactor drop it. Check the rebuilt payload after the move and pin what the move would lose, then pin whatever the pin displaces, until zero source-confirmed couples are lost.
