@@ -1,0 +1,29 @@
+{
+  "note": "Daily resume 2026-11-03 (P3254) leads from the needs-info sweep. Runtime/driver changes on master wait for the publish-hold bisect P3095; written in our own words, links only.",
+  "leads": [
+    {
+      "id": "L1",
+      "couple": "_TZE200_3towulqd|TS0601",
+      "driver": "presence_sensor_radar",
+      "kind": "runtime-enrichment",
+      "status": "pending-P3095",
+      "symptom": "PIR+lux sensor (ZG-204ZL family) keeps the same lux value until a motion event (forum 140352 #761, #828).",
+      "finding": "ZHA quirk 'TuyaZG-204ZL' (tuya_motion.py, builder for _TZE200_3towulqd, also _TZE200_1ibpyhdc/_TZE200_bh3n6gk8/_TZE200_ttcovulf) maps DP1 occupancy with 0 = occupied, DP4 battery, DP9 sensitivity, DP10 fading time, DP12 illuminance and DP105 illuminance_interval (writable number). Our EnrichedDPMappings ZG_204ZL profile has DP12 lux but no DP105 interval setting, and DeviceFingerprintDB lists DP104 as lux for this couple.",
+      "proposal": "Additive: expose DP105 illuminance_interval as an optional device setting for this exact couple only; verify the DP1 polarity against a live frame before changing anything (observe, do not assume). Never mandatory, no new capability.",
+      "sources": ["https://github.com/zigpy/zha-device-handlers/blob/dev/zhaquirks/tuya/tuya_motion.py"],
+      "links": ["https://community.homey.app/t/140352/761", "https://community.homey.app/t/140352/828"]
+    },
+    {
+      "id": "L2",
+      "couple": null,
+      "candidate": "_TZ3210_sxtfesc6|TS030F (from the reporter's screenshot list in #712)",
+      "driver": "curtain_motor",
+      "kind": "identity-uncertain",
+      "status": "needs-info",
+      "symptom": "Battery curtain robot (3xAA, lux sensor) stops half way, battery and lux stay empty, no travel-limit option (forum 140352 #778, #792).",
+      "finding": "Z2M 'TS030F' (Smart blind controller) exposes cover position + calibration time only, no battery or illuminance, so the battery/lux robot is probably a different exact couple. Do not move or add anything until the exact mfr+pid of the robot is known (interview or diag with fingerprint).",
+      "sources": ["https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts"],
+      "links": ["https://community.homey.app/t/140352/778", "https://community.homey.app/t/140352/792"]
+    }
+  ]
+}
