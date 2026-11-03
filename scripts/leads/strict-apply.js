@@ -176,6 +176,7 @@ function pairsFromText(text) {
 }
 
 async function gh(p, opts = {}) {
+  { const S = require('../ci/bot-silence'); if (S.isSilenced(opts.method, p)) return S.divert(opts.method, p, opts.body); } // P3255
   const headers = { Accept: 'application/vnd.github+json', 'User-Agent': 'tuya-strict-apply', 'X-GitHub-Api-Version': '2022-11-28' };
   if (process.env.GITHUB_TOKEN) {headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;}
   if (opts.body) {headers['Content-Type'] = 'application/json';}

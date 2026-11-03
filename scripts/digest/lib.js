@@ -47,6 +47,7 @@ function run(main) {
 const log = (...a) => console.error('[digest]', ...a);
 
 async function gh(path, { method = 'GET', body, allow404 = false, raw = false } = {}) {
+  { const S = require('../lib/bot-silence'); if (S.isSilenced(method, path)) return S.divert(method, path, body); } // P3255
   if (apiCalls++ > 0) await jitter(300, 800); // be gentle: spread calls out
   if (apiCalls > Number(process.env.DIGEST_MAX_API_CALLS || 250)) throw new StopDigest(`API call budget exceeded (${apiCalls})`);
   if (process.env.DIGEST_USE_GH_CLI === '1') {
