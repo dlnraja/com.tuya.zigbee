@@ -1466,3 +1466,6 @@ Merged without changing W1–W11 / P1–P7; where they overlap, they make an exi
 ## Bastien fixes: simultaneous push (t699u)
 
 Any fix concerning Bastien ships to `bastien-home` together with `master` (full checks on both, no soak wait). SSOT: docs/rules/BASTIEN_HOUSE_APP.md.
+
+## GitHub reply language (P3254)
+All GitHub replies (issues, PRs, comments) are written in English, never French.

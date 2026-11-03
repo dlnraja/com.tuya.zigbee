@@ -181,3 +181,7 @@ Merged without changing W1–W11 / P1–P7; where they overlap, they make an exi
 - Never force-push or rewrite published history; never break the three app IDs.
 - Read `data/progress/ledger.json` before working and record after (W3).
 <!-- CONSTITUTION:END -->
+- R24. GitHub reply language (P3254, 2026-11-03): all GitHub replies (issues, PRs, comments) are
+  written in English, never French, whatever the reporter's language. Scripts/templates that
+  generate GitHub comments default to `en` (config/architecture/github-reply-language-ssot.json,
+  docs/rules/GITHUB_HUMANIZE.md).

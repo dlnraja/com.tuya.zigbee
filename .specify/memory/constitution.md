@@ -186,3 +186,7 @@ Merged without changing W1–W11 / P1–P7; where they overlap, they make an exi
   automation (workflow step, gate or ratchet) and its test. A script under tools/ or scripts/ that no
   workflow, package.json script or other script calls is flagged by the unwired-script ratchet (P3097).
   See docs/rules/AUTOMATION_FIRST.md and docs/knowledge/AUTONOMY_MAP.md.
+- R24. GitHub reply language (P3254, 2026-11-03): all GitHub replies (issues, PRs, comments) are
+  written in English, never French, whatever the reporter's language. Scripts/templates that
+  generate GitHub comments default to `en` (config/architecture/github-reply-language-ssot.json,
+  docs/rules/GITHUB_HUMANIZE.md).
