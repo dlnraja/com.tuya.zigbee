@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-03T08:39:53.494Z",
+  "updated": "2026-11-03T10:02:30.482Z",
   "threads": {
     "21313": {
       "lastPost": 2819,
@@ -27872,7 +27872,7 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-11-01",
+        "at": "2026-11-03",
         "verdict": "lead",
         "confidence": 0.2,
         "couples": [],
@@ -28278,14 +28278,14 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-11-01",
+        "at": "2026-11-03",
         "verdict": "lead",
         "confidence": 0.2,
         "couples": [],
         "candidates": [
           "https://www.zigbee2mqtt.io/devices/MG3-5RZ.html"
         ],
-        "sources": 31
+        "sources": 32
       }
     },
     {
@@ -28362,14 +28362,14 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-11-01",
+        "at": "2026-11-03",
         "verdict": "lead",
         "confidence": 0.2,
         "couples": [],
         "candidates": [
           "https://www.zigbee2mqtt.io/devices/ZG-227ZP.html"
         ],
-        "sources": 3
+        "sources": 4
       }
     },
     {
@@ -28391,12 +28391,12 @@
       "pids": [],
       "why": "request-no-identity",
       "crossResearch": {
-        "at": "2026-11-01",
+        "at": "2026-11-03",
         "verdict": "lead",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 31
+        "sources": 32
       }
     },
     {
@@ -28481,14 +28481,14 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-11-01",
+        "at": "2026-11-03",
         "verdict": "lead",
         "confidence": 0.2,
         "couples": [],
         "candidates": [
           "https://www.zigbee2mqtt.io/devices/MG3-5RZ.html"
         ],
-        "sources": 31
+        "sources": 32
       }
     },
     {
@@ -30373,7 +30373,7 @@
       "triagedAt": "2026-10-21T09:16:37.391Z",
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
-        "at": "2026-11-01",
+        "at": "2026-11-03",
         "verdict": "lead",
         "confidence": 0.2,
         "couples": [],
@@ -30382,7 +30382,7 @@
           "https://www.zigbee2mqtt.io/devices/ZG-204ZV2-TH-z.html",
           "https://www.zigbee2mqtt.io/devices/ZG-204ZV.html"
         ],
-        "sources": 35
+        "sources": 37
       }
     },
     {
