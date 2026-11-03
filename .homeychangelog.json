@@ -907,9 +907,12 @@
       ]
     }
   ],
+  "9.0.1616": {
+    "en": "Fixed: pairing and device recognition (TS0201), lights and dimmers, thermostats (TRV06) and climate sensors. Plus 4 other changes in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Corrigé : appairage et reconnaissance des appareils (TS0201), éclairages et variateurs, thermostats (TRV06) et capteurs d'ambiance. Et 4 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+  },
   "9.0.1613": {
-    "en": "New: pairing and device recognition & Flow cards (TS0601) and thermostats & climate sensors. Fixed: Flow cards and pairing and device recognition. Plus 10 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Nouveau : appairage et reconnaissance des appareils & cartes Flow (TS0601) et thermostats & capteurs d'ambiance. Corrigé : cartes Flow et appairage et reconnaissance des appareils. Et 10 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "en": "New: pairing and device recognition & Flow cards (TS0601) and thermostats & climate sensors. Fixed: Flow cards and pairing and device recognition. Plus 10 other changes in the app core. Behind the scenes: tests and publishing checks."
   },
   "9.0.1612": {
     "en": "Reliability: 1 small fix in the app core. Behind the scenes: tests and publishing checks."
@@ -971,9 +974,5 @@
   "9.0.1593": {
     "en": "Wi-Fi (local Tuya): the pairing screen can suggest the right driver, curtains show their real position instead of the target, plugs can expose extra sockets, thermostat modes refresh safely, and commands a device ignores are reported. New dedicated drivers for AOYAN AY204T radar, AOYAN AY222Z leak sensor and BlitzWolf BW-IS9, plus 14 more exact device matches. Energy statistics and data collection use less memory.",
     "fr": "Wi-Fi (Tuya en local) : l'écran d'appairage peut proposer le bon driver, les rideaux affichent leur position réelle au lieu de la consigne, les prises peuvent exposer des sorties supplémentaires, les modes de thermostat se rafraîchissent sans risque et les commandes ignorées par un appareil sont signalées. Nouveaux drivers dédiés pour le radar AOYAN AY204T, le détecteur de fuite AOYAN AY222Z et le BlitzWolf BW-IS9, plus 14 correspondances exactes d'appareils. Les statistiques d'énergie et la collecte de données consomment moins de mémoire."
-  },
-  "9.0.1589": {
-    "en": "Device settings page rebuilt the documented way for 382 drivers, and the _TZ3000_dfgbtub0 TS0042 remote now pairs as a 2-button remote.",
-    "fr": "Page de réglages des appareils reconstruite selon la documentation pour 382 drivers, et la télécommande _TZ3000_dfgbtub0 TS0042 s'appaire désormais comme télécommande 2 boutons."
   }
 }
