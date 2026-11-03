@@ -1,0 +1,5 @@
+{
+  "_doc": "P3255 (t823u/t824u): automation is invisible on GitHub. No issue/PR/comment writes from bots; results go to $GITHUB_STEP_SUMMARY / artifacts. Re-enable only with repo variable BOT_PUBLIC=1 (or env BOT_PUBLIC=1).",
+  "silent": true,
+  "silencedPathRe": "/repos/[^/]+/[^/]+/(issues|pulls)(/|$|\\?)"
+}
