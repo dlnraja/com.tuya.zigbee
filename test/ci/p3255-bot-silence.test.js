@@ -43,6 +43,14 @@ describe('P3255 bot silence', () => {
     assert.deepStrictEqual(calls[1], ['POST', '/repos/o/r/issues/12/comments']);
   });
 
+  it('human-style triage reply (t836u): one reply, legacy triage comment edited in place, no bot boilerplate', async () => {
+    const calls = [];
+    await S.upsertReply(async (m, p) => { calls.push([m, p]); return m === 'GET' ? [{ id: 7, body: '<!-- auto-triage:v1 -->\nold' }] : {}; }, 'o/r', 4, 'Hi', { legacyMarkers: ['<!-- auto-triage:v1 -->'] });
+    assert.deepStrictEqual(calls[1], ['PATCH', '/repos/o/r/issues/comments/7']);
+    const t = fs.readFileSync(path.join(ROOT, 'scripts', 'digest', 'triage.js'), 'utf8');
+    assert.ok(t.includes('upsertReply(') && !/Automatic triage|no human review yet/.test(t));
+  });
+
   it('BOT_PUBLIC=1 re-enables writes', () => {
     process.env.BOT_PUBLIC = '1';
     assert.strictEqual(S.isSilenced('POST', '/repos/o/r/issues'), false);

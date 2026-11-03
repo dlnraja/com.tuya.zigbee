@@ -76,15 +76,14 @@ L.run(async () => {
   if (!ex.mfr.length) ask.push('the **manufacturerName** and **modelId/productId** (Homey Developer Tools → Zigbee → device interview)');
   if (!ex.interview) ask.push('the full **device interview** if possible');
   if (/bug|crash|error/i.test(text) && !ex.uuid.length) ask.push('a **diagnostic report ID** sent from the app settings right after the problem');
-  const body = `${MARK}\nThanks for the report! Here is what is already known automatically (no human review yet):\n\n${lines.length ? lines.join('\n') : '- No device identifiers found in the issue.'}\n` +
-    (ask.length ? `\nTo go further, please add ${ask.join(', ')}.\n` : '') +
-    `\n<sub>Automatic triage — labels: ${labels.map((l) => `\`${l}\``).join(', ') || 'none'}. A maintainer will follow up.</sub>`;
-  console.log(body);
+  // P3255b (t834u/t836u): one short, human-style English reply per issue, edited in place on later steps.
+  const who = it.user && it.user.login ? `@${it.user.login} ` : '';
+  const reply = `${who ? `Hi ${who.trim()}, thanks` : "Thanks"} for reporting this.\n\n${lines.length ? `What I can already see:\n${lines.join('\n')}\n` : ''}` +
+    (ask.length ? `\nCould you add ${ask.join(', ')}? That will let me match it to the right driver.\n` : '');
+  console.log(reply);
   if (DRY) return;
-  // dedupe: never comment twice
-  const cs = await L.gh(`/repos/${repo}/issues/${it.number}/comments?per_page=100`);
-  if (cs.some((c) => (c.body || '').includes(MARK))) return console.log('already triaged');
   require('../lib/post-guard').assertPostAllowed(`github:${repo}#${it.number}`);
   if (labels.length) await L.gh(`/repos/${repo}/issues/${it.number}/labels`, { method: 'POST', body: { labels } });
-  await L.gh(`/repos/${repo}/issues/${it.number}/comments`, { method: 'POST', body: { body } });
+  const gh = (method, p, body) => L.gh(p, method === 'GET' ? undefined : { method, body });
+  await require('../lib/bot-silence').upsertReply(gh, repo, it.number, reply, { legacyMarkers: [MARK] });
 });
