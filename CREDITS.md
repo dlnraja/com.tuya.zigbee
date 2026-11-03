@@ -413,3 +413,5 @@ Reporters of dlnraja/com.tuya.zigbee issues not credited elsewhere in this file.
 - P3246 (2026-11-02): diy_custom_zigbee generic fallback — 18 coordinator/gateway productIds (ConBee/RaspBee/SLZB/ZigStar/ZZH/CC2531/Hue bridge…) with no sourced couple removed (coordinators never join Homey as end devices); generic DIY ids and all 306 mfrs kept, universal_zigbee untouched (generic TS ids). -5508 combos. Test p3246.
 - P3243b/c (2026-11-03): hook git env (GIT_DIR/GIT_WORK_TREE...) stripped for the full suite (pre-push env -u, mocha root hook, runners) — test fixtures had written core.bare/core.worktree and commits into the shared repo; post-Test write-back changelog names subject items + P/GH refs instead of a vague family line (P3075). Tests p3243b, p3243c.
 - finnamu (GH#516): _TZ3000_isw9u95y / TS0201 dropped by publish compaction — P3248 pinned; all 2026 reported couples now in survival gate.
+
+- P3256/P3258 (03/11/2026): publish gate adopts a code/build-identical tip and primes CI on the tip when superseded (port from master).
