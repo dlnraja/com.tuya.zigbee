@@ -21096,16 +21096,16 @@
     },
     {
       "id": "forum:140352#604",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Cam",
       "link": "https://community.homey.app/t/140352/604",
       "mfrs": [],
       "pids": [],
       "images": 1,
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag 47225917-e6d6-4794-a145-7e2b226b7527 mail 2025-12-08): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-03: 5.5.x progress report (button + motion sensors, battery shown 100%). Same devices as #278 (_TZ3000_5bpeda8u|TS0041 on button_wireless_1) and JohanBendz #1267/#1268, all covered; battery now goes through the unified battery engine.",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103",
       "crossResearch": {
         "at": "2026-11-03",
         "verdict": "lead",
@@ -21117,7 +21117,8 @@
           "https://zigbee.blakadder.com/Tuya_ZG-204ZL.html"
         ],
         "sources": 32
-      }
+      },
+      "previousStatus": "needs-info"
     },
     {
       "id": "forum:140352#606",
@@ -21131,16 +21132,16 @@
     },
     {
       "id": "forum:140352#609",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Peter_van_Werkhoven",
       "link": "https://community.homey.app/t/140352/609",
       "mfrs": [],
       "pids": [],
       "images": 3,
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag bd5c1899-e3e8-4842-a394-d07988f8d83a mail 2025-12-09): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-03: SOS button could not be re-added (\"already added\" is a Homey-side leftover record). Device is _TZ3000_0dumfk2z|TS0215A (Z2M BT400B), on button_emergency_sos only.",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103",
       "crossResearch": {
         "at": "2026-11-03",
         "verdict": "no-action",
@@ -21148,11 +21149,12 @@
         "couples": [],
         "candidates": [],
         "sources": 35
-      }
+      },
+      "previousStatus": "needs-info"
     },
     {
       "id": "forum:140352#611",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Peter_van_Werkhoven",
       "link": "https://community.homey.app/t/140352/611",
       "mfrs": [],
@@ -21165,20 +21167,24 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "previousStatus": "needs-info",
+      "note": "Re-read 2026-11-03: reply about re-sending an interview; no new identity.",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103"
     },
     {
       "id": "forum:140352#614",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Laborhexe",
       "link": "https://community.homey.app/t/140352/614",
       "mfrs": [],
       "pids": [],
       "images": 1,
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag 73632c1f-7bc1-4d3a-8d0d-6e85f8538531 mail 2025-12-09): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-03: ZG-204ZM battery jumping 2%<->100%. Battery comes from DP121 on the ZG-204ZM profile and the unified battery handler now rejects >50% jumps within 24 h (anti-flap), so the notification storm cannot recur.",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103",
       "crossResearch": {
         "at": "2026-11-03",
         "verdict": "lead",
@@ -21190,7 +21196,8 @@
           "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/master/devices/hobeian/hobeian_pir_presence_light_sensor.json"
         ],
         "sources": 23
-      }
+      },
+      "previousStatus": "needs-info"
     },
     {
       "id": "forum:140352#615",
@@ -21236,7 +21243,7 @@
     },
     {
       "id": "forum:140352#626",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Karsten_Hille",
       "link": "https://community.homey.app/t/140352/626",
       "mfrs": [],
@@ -21250,7 +21257,11 @@
         "couples": [],
         "candidates": [],
         "sources": 27
-      }
+      },
+      "previousStatus": "needs-info",
+      "note": "Re-read 2026-11-03: same reporter as #239/#349/#392; temp+humidity sensor _TZE284_vvmbj46n|TS0601 is on lcdtemphumidsensor.",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103"
     },
     {
       "id": "forum:140352#631",
@@ -21277,7 +21288,7 @@
     },
     {
       "id": "forum:140352#644",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Vitalii",
       "link": "https://community.homey.app/t/140352/644",
       "mfrs": [],
@@ -21294,7 +21305,11 @@
           "https://zigbee.blakadder.com/Sonoff_SNZB-03P.html"
         ],
         "sources": 25
-      }
+      },
+      "previousStatus": "needs-info",
+      "note": "Re-read 2026-11-03: \"unknown device\" follow-up; same reporter as #646 (_TZE204_chbyv06x|TS0601, Z2M TS0601_gas_sensor_2 + ZHA tuya_gas) now on gas_sensor.",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103"
     },
     {
       "id": "forum:140352#646",
@@ -21357,7 +21372,7 @@
     },
     {
       "id": "forum:140352#655",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Cyril",
       "link": "https://community.homey.app/t/140352/655",
       "mfrs": [],
@@ -21373,7 +21388,11 @@
           "https://zigbee.blakadder.com/Aqara_SRTS-A01.html"
         ],
         "sources": 32
-      }
+      },
+      "previousStatus": "needs-info",
+      "note": "Re-read 2026-11-03: interview of a sleepy button takes long; advice only (keep it awake). Device identified later as _TZ3000_zgyzgdua|TS0044.",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103"
     },
     {
       "id": "forum:140352#656",
@@ -21390,7 +21409,7 @@
     },
     {
       "id": "forum:140352#658",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Cyril",
       "link": "https://community.homey.app/t/140352/658",
       "mfrs": [],
@@ -21407,7 +21426,11 @@
           "https://zigbee.blakadder.com/Aqara_SRTS-A01.html"
         ],
         "sources": 33
-      }
+      },
+      "previousStatus": "needs-info",
+      "note": "Re-read 2026-11-03: Homey interview error message, also with the generic Zigbee driver (Homey side). Device identified later (#660).",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103"
     },
     {
       "id": "forum:140352#660",
@@ -21463,7 +21486,7 @@
     },
     {
       "id": "forum:140352#670",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "FrankP",
       "link": "https://community.homey.app/t/140352/670",
       "mfrs": [],
@@ -21478,11 +21501,15 @@
           "https://www.zigbee2mqtt.io/devices/ZS06.html"
         ],
         "sources": 31
-      }
+      },
+      "previousStatus": "needs-info",
+      "note": "Re-read 2026-11-03: ZS06 IR blaster (TS1201 family) learning/on-off. ir_blaster now has learn (ir_blaster_learn_code), learned-code send (ir_blaster_send_learned) and learning-state triggers. Exact mfr not in the post.",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103"
     },
     {
       "id": "forum:140352#672",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Fiek",
       "link": "https://community.homey.app/t/140352/672",
       "mfrs": [],
@@ -21495,7 +21522,11 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "previousStatus": "needs-info",
+      "note": "Re-read 2026-11-03: bulb paired with sensor capabilities; _TZ3210_s8lvbbuc|TS0505B is now only on light_bulb_rgb_rgbw (see #669/#820).",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103"
     },
     {
       "id": "forum:140352#674",
@@ -21523,7 +21554,7 @@
     },
     {
       "id": "forum:140352#678",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Francesco_Carrozzo",
       "link": "https://community.homey.app/t/140352/678",
       "mfrs": [],
@@ -21540,7 +21571,11 @@
           "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/hobeian/hobeian_pir_presence_light_sensor.json"
         ],
         "sources": 10
-      }
+      },
+      "previousStatus": "needs-info",
+      "note": "Re-read 2026-11-03: ZG-204ZM going unavailable after pairing. HOBEIAN|ZG-204ZM is on presence_sensor_radar with the ZG-204ZM profile (battery, survival watchdog, flood calm).",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103"
     },
     {
       "id": "forum:26439#4957",
@@ -22412,7 +22447,7 @@
     },
     {
       "id": "forum:140352#688",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Cyril",
       "link": "https://community.homey.app/t/140352/688",
       "mfrs": [],
@@ -22428,7 +22463,11 @@
           "https://zigbee.blakadder.com/Aqara_SRTS-A01.html"
         ],
         "sources": 33
-      }
+      },
+      "previousStatus": "needs-info",
+      "note": "Re-read 2026-11-03: 4-scene button shown as unknown; _TZ3000_zgyzgdua|TS0044 is on scene_switch_4 (see #660/#693).",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103"
     },
     {
       "id": "forum:140352#690",
@@ -22522,15 +22561,15 @@
     },
     {
       "id": "forum:140352#701",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Cyril",
       "link": "https://community.homey.app/t/140352/701",
       "mfrs": [],
       "pids": [],
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag 67ad34b7-6f78-4f61-9284-1555c4d2a224 mail 2025-12-26): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-03: diag of button presses for _TZ3000_zgyzgdua|TS0044; physical press handling now listed in PhysicalButtonMixin and DeviceOperatingMode for this mfr.",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103",
       "crossResearch": {
         "at": "2026-11-03",
         "verdict": "lead",
@@ -22541,19 +22580,20 @@
           "https://zigbee.blakadder.com/Aqara_SRTS-A01.html"
         ],
         "sources": 33
-      }
+      },
+      "previousStatus": "needs-info"
     },
     {
       "id": "forum:140352#704",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Cyril",
       "link": "https://community.homey.app/t/140352/704",
       "mfrs": [],
       "pids": [],
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag e2f26f08-6f81-4b00-a77b-9398bb73b00b mail 2025-12-26): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-03: battery fixed in .260, physical buttons not firing; _TZ3000_zgyzgdua handled by PhysicalButtonMixin (scene/E000 path).",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103",
       "crossResearch": {
         "at": "2026-11-03",
         "verdict": "lead",
@@ -22564,19 +22604,20 @@
           "https://zigbee.blakadder.com/Aqara_SRTS-A01.html"
         ],
         "sources": 31
-      }
+      },
+      "previousStatus": "needs-info"
     },
     {
       "id": "forum:140352#705",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Haadeess",
       "link": "https://community.homey.app/t/140352/705",
       "mfrs": [],
       "pids": [],
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag c680c1f0-3d86-4077-9c83-e26652c9de77 mail 2025-12-26): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-03: 1-button switch adds but no trigger; _TZ3000_yj6k7vfo|TS0041 has its dedicated button_wireless_4_ts0041 driver now.",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103",
       "crossResearch": {
         "at": "2026-11-03",
         "verdict": "no-action",
@@ -22584,7 +22625,8 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "previousStatus": "needs-info"
     },
     {
       "id": "forum:140352#707",
@@ -22711,15 +22753,15 @@
     },
     {
       "id": "forum:140352#725",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Ronny_M",
       "link": "https://community.homey.app/t/140352/725",
       "mfrs": [],
       "pids": [],
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag 4659aff2-77d6-4fad-a5b5-16539afbd80f mail 2025-12-27): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-03: diag only; reporter radars _TZE204_gkfbdvyx and _TZE284_iadro9bf|TS0601 are on presence_sensor_radar (see #707/#708).",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103",
       "crossResearch": {
         "at": "2026-11-03",
         "verdict": "lead",
@@ -22730,20 +22772,21 @@
           "https://www.zigbee2mqtt.io/devices/ERS-10TZBVB-AA.html"
         ],
         "sources": 33
-      }
+      },
+      "previousStatus": "needs-info"
     },
     {
       "id": "forum:140352#728",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Ronny_M",
       "link": "https://community.homey.app/t/140352/728",
       "mfrs": [],
       "pids": [],
       "images": 1,
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag 8d07afec-a49a-48cb-8542-68774f054da5 mail 2025-12-28): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-03: radar presence flash/lux stop on the same two radars, handled since #707/#708 (presence_sensor_radar profiles).",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103",
       "crossResearch": {
         "at": "2026-11-03",
         "verdict": "lead",
@@ -22754,7 +22797,8 @@
           "https://www.zigbee2mqtt.io/devices/ERS-10TZBVB-AA.html"
         ],
         "sources": 33
-      }
+      },
+      "previousStatus": "needs-info"
     },
     {
       "id": "forum:140352#730",
@@ -22804,15 +22848,15 @@
     },
     {
       "id": "forum:140352#736",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Eftychis_Georgilas",
       "link": "https://community.homey.app/t/140352/736",
       "mfrs": [],
       "pids": [],
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag 3125fd27-09e2-4a5d-a2f6-892c9c0a8581 mail 2025-12-28): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-03: diag only; reporter devices (#712/#731/#747) _TZ3000_5tqxpine and _TZ3000_wkai4ga5|TS0044 on scene_switch_4, smoke _TZ3210_up3pngle|TS0205 on smoke_sensor3.",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103",
       "crossResearch": {
         "at": "2026-11-03",
         "verdict": "lead",
@@ -22820,7 +22864,8 @@
         "couples": [],
         "candidates": [],
         "sources": 30
-      }
+      },
+      "previousStatus": "needs-info"
     },
     {
       "id": "forum:140352#739",
@@ -22849,15 +22894,15 @@
     },
     {
       "id": "forum:140352#742",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Eftychis_Georgilas",
       "link": "https://community.homey.app/t/140352/742",
       "mfrs": [],
       "pids": [],
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag ef3578f2-f732-489d-a469-047db96cfbc4 mail 2025-12-28): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-03: diag only, same reporter and devices as #736.",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103",
       "crossResearch": {
         "at": "2026-11-03",
         "verdict": "lead",
@@ -22865,7 +22910,8 @@
         "couples": [],
         "candidates": [],
         "sources": 30
-      }
+      },
+      "previousStatus": "needs-info"
     },
     {
       "id": "forum:140352#744",
@@ -22919,15 +22965,15 @@
     },
     {
       "id": "forum:140352#754",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Haadeess",
       "link": "https://community.homey.app/t/140352/754",
       "mfrs": [],
       "pids": [],
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag fadf9d52-bab1-470a-adad-b44f3a551f52 mail 2025-12-29): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-03: device adds but no response; same reporter identified the IR blaster _TZ3290_7v1k4vufotpowp9z|TS1201 in #757, on ir_blaster.",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103",
       "crossResearch": {
         "at": "2026-11-03",
         "verdict": "no-action",
@@ -22935,7 +22981,8 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "previousStatus": "needs-info"
     },
     {
       "id": "forum:140352#757",
@@ -22968,15 +23015,15 @@
     },
     {
       "id": "forum:140352#761",
-      "status": "needs-info",
+      "status": "deferred",
       "author": "Eftychis_Georgilas",
       "link": "https://community.homey.app/t/140352/761",
       "mfrs": [],
       "pids": [],
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag f8b73cac-ce44-46f0-8525-c4fe93ce4328 mail 2025-12-29): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-03: (1) 4-gang physical buttons -> covered by PhysicalButtonMixin entries for wkai4ga5/5tqxpine; (2) curtain robot -> see #778; (3) PIR lux only refreshes on motion -> lead L1 in data/leads/daily-resume-2026-11-03.json (ZHA ZG-204ZL quirk: lux DP12 + illuminance_interval DP105). Runtime change waits for master publish hold P3095.",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103",
       "crossResearch": {
         "at": "2026-11-03",
         "verdict": "lead",
@@ -22984,7 +23031,8 @@
         "couples": [],
         "candidates": [],
         "sources": 30
-      }
+      },
+      "previousStatus": "needs-info"
     },
     {
       "id": "forum:140352#764",
@@ -24114,15 +24162,15 @@
     },
     {
       "id": "forum:140352#769",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "FrankP",
       "link": "https://community.homey.app/t/140352/769",
       "mfrs": [],
       "pids": [],
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag b707a788-952f-4ae4-ac4f-09349f4c2c2c mail 2025-12-30): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-03: IR follow-up diag; see #670 (learn + send-learned flow cards now present).",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103",
       "crossResearch": {
         "at": "2026-11-03",
         "verdict": "lead",
@@ -24130,19 +24178,20 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "previousStatus": "needs-info"
     },
     {
       "id": "forum:140352#773",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "FrankP",
       "link": "https://community.homey.app/t/140352/773",
       "mfrs": [],
       "pids": [],
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag 2354434e-99c9-4191-b4ec-f7c1523fa57b mail 2025-12-30): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-03: Learn-IR button does not stay on; learning is now driven by flow action/trigger state cards in ir_blaster (see #670).",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103",
       "crossResearch": {
         "at": "2026-11-03",
         "verdict": "lead",
@@ -24150,7 +24199,8 @@
         "couples": [],
         "candidates": [],
         "sources": 31
-      }
+      },
+      "previousStatus": "needs-info"
     },
     {
       "id": "forum:140352#774",
@@ -24182,15 +24232,15 @@
     },
     {
       "id": "forum:140352#776",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Haadeess",
       "link": "https://community.homey.app/t/140352/776",
       "mfrs": [],
       "pids": [],
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag 9bfd57cc-9688-4b4d-b9b6-129b589a9db5 mail 2025-12-30): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-03: no keystroke detection on _TZ3000_yj6k7vfo|TS0041; dedicated driver button_wireless_4_ts0041 (see #705).",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103",
       "crossResearch": {
         "at": "2026-11-03",
         "verdict": "no-action",
@@ -24198,7 +24248,8 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "previousStatus": "needs-info"
     },
     {
       "id": "forum:140352#778",
@@ -24208,9 +24259,9 @@
       "mfrs": [],
       "pids": [],
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag 0e00d64e-395a-4fb3-86e8-55fb0862be63 mail 2025-12-30): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-03: curtain robot (3xAA, lux sensor) travels only half way, battery and lux empty. Screenshot id in #712 suggests TS030F (_TZ3210_sxtfesc6 on curtain_motor) but Z2M TS030F exposes cover+calibration only, no battery/lux, so the exact couple is uncertain. Lead L2 in data/leads/daily-resume-2026-11-03.json.",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103",
       "crossResearch": {
         "at": "2026-11-03",
         "verdict": "lead",
@@ -24233,15 +24284,15 @@
     },
     {
       "id": "forum:140352#785",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Fiek",
       "link": "https://community.homey.app/t/140352/785",
       "mfrs": [],
       "pids": [],
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag ed0e583b-cf2d-4670-a67d-22c72db363df mail 2025-12-31): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-03: bulb diag; _TZ3210_s8lvbbuc|TS0505B only on light_bulb_rgb_rgbw.",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103",
       "crossResearch": {
         "at": "2026-11-03",
         "verdict": "lead",
@@ -24249,7 +24300,8 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "previousStatus": "needs-info"
     },
     {
       "id": "forum:140352#788",
@@ -24282,9 +24334,9 @@
       "mfrs": [],
       "pids": [],
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag f4ec2ce4-da7f-4716-b8ff-cfea7c0cd3ac mail 2025-12-31): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-03: switches _TZ3000_wkai4ga5/_TZ3000_5tqxpine named buttons (upper left...) are covered on scene_switch_4; remaining: curtain robot battery/lux/button capability, same lead L2 as #778 (identity uncertain).",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103",
       "crossResearch": {
         "at": "2026-11-03",
         "verdict": "lead",
@@ -24296,7 +24348,7 @@
     },
     {
       "id": "forum:140352#796",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Lasse_K",
       "link": "https://community.homey.app/t/140352/796",
       "mfrs": [],
@@ -24313,20 +24365,24 @@
           "https://www.zigbee2mqtt.io/devices/ZG-102ZL.html"
         ],
         "sources": 36
-      }
+      },
+      "previousStatus": "needs-info",
+      "note": "Re-read 2026-11-03: asked how to interview; device identified in #798 as Aqara lumi.vibration.aq1, now LUMI|lumi.vibration.aq1 on vibration_sensor.",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103"
     },
     {
       "id": "forum:140352#798",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "SunBeech",
       "link": "https://community.homey.app/t/140352/798",
       "mfrs": [],
       "pids": [],
       "images": 1,
       "why": "request-no-identity",
-      "note": "Lead: screenshot shows Aqara lumi.vibration.aq1 (DJT11LM). Vibration is in Aqara-specific attributes, not a standard ZCL cluster; no driver yet. Source: screenshot + Z2M lumi.ts DJT11LM.",
-      "triagedAt": "2026-10-21T09:11:43.123Z",
-      "triagedVia": "ocr-pass-2026-10-21",
+      "note": "Re-read 2026-11-03: interview how-to plus Aqara lumi.vibration.aq1 identity; LUMI|lumi.vibration.aq1 is now on vibration_sensor.",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103",
       "crossResearch": {
         "at": "2026-11-03",
         "verdict": "lead",
@@ -24338,7 +24394,8 @@
           "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/hobeian/hobeian_vibration_sensor.json"
         ],
         "sources": 3
-      }
+      },
+      "previousStatus": "needs-info"
     },
     {
       "id": "forum:140352#818",
@@ -24397,16 +24454,16 @@
     },
     {
       "id": "forum:140352#828",
-      "status": "needs-info",
+      "status": "deferred",
       "author": "Eftychis_Georgilas",
       "link": "https://community.homey.app/t/140352/828",
       "mfrs": [],
       "pids": [],
       "images": 1,
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag 7fc451ca-ed9a-4997-a070-979118b8e6c2 mail 2026-01-02): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-03: switches now on scene_switch_4 (named buttons via PhysicalButtonMixin); motion lux same as #761 -> lead L1, waits for P3095.",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103",
       "crossResearch": {
         "at": "2026-11-03",
         "verdict": "lead",
@@ -24414,7 +24471,8 @@
         "couples": [],
         "candidates": [],
         "sources": 31
-      }
+      },
+      "previousStatus": "needs-info"
     },
     {
       "id": "forum:140352#829",
@@ -46335,16 +46393,16 @@
     },
     {
       "id": "forum:140352#604",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Cam",
       "link": "https://community.homey.app/t/140352/604",
       "mfrs": [],
       "pids": [],
       "images": 1,
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag 47225917-e6d6-4794-a145-7e2b226b7527 mail 2025-12-08): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-03: 5.5.x progress report (button + motion sensors, battery shown 100%). Same devices as #278 (_TZ3000_5bpeda8u|TS0041 on button_wireless_1) and JohanBendz #1267/#1268, all covered; battery now goes through the unified battery engine.",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103",
       "crossResearch": {
         "at": "2026-11-03",
         "verdict": "lead",
@@ -46356,20 +46414,21 @@
           "https://zigbee.blakadder.com/Tuya_ZG-204ZL.html"
         ],
         "sources": 32
-      }
+      },
+      "previousStatus": "needs-info"
     },
     {
       "id": "forum:140352#609",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Peter_van_Werkhoven",
       "link": "https://community.homey.app/t/140352/609",
       "mfrs": [],
       "pids": [],
       "images": 3,
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag bd5c1899-e3e8-4842-a394-d07988f8d83a mail 2025-12-09): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-03: SOS button could not be re-added (\"already added\" is a Homey-side leftover record). Device is _TZ3000_0dumfk2z|TS0215A (Z2M BT400B), on button_emergency_sos only.",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103",
       "crossResearch": {
         "at": "2026-11-03",
         "verdict": "no-action",
@@ -46377,11 +46436,12 @@
         "couples": [],
         "candidates": [],
         "sources": 35
-      }
+      },
+      "previousStatus": "needs-info"
     },
     {
       "id": "forum:140352#611",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Peter_van_Werkhoven",
       "link": "https://community.homey.app/t/140352/611",
       "mfrs": [],
@@ -46394,20 +46454,24 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "previousStatus": "needs-info",
+      "note": "Re-read 2026-11-03: reply about re-sending an interview; no new identity.",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103"
     },
     {
       "id": "forum:140352#614",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Laborhexe",
       "link": "https://community.homey.app/t/140352/614",
       "mfrs": [],
       "pids": [],
       "images": 1,
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag 73632c1f-7bc1-4d3a-8d0d-6e85f8538531 mail 2025-12-09): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-03: ZG-204ZM battery jumping 2%<->100%. Battery comes from DP121 on the ZG-204ZM profile and the unified battery handler now rejects >50% jumps within 24 h (anti-flap), so the notification storm cannot recur.",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103",
       "crossResearch": {
         "at": "2026-11-03",
         "verdict": "lead",
@@ -46419,11 +46483,12 @@
           "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/master/devices/hobeian/hobeian_pir_presence_light_sensor.json"
         ],
         "sources": 23
-      }
+      },
+      "previousStatus": "needs-info"
     },
     {
       "id": "forum:140352#626",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Karsten_Hille",
       "link": "https://community.homey.app/t/140352/626",
       "mfrs": [],
@@ -46437,11 +46502,15 @@
         "couples": [],
         "candidates": [],
         "sources": 27
-      }
+      },
+      "previousStatus": "needs-info",
+      "note": "Re-read 2026-11-03: same reporter as #239/#349/#392; temp+humidity sensor _TZE284_vvmbj46n|TS0601 is on lcdtemphumidsensor.",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103"
     },
     {
       "id": "forum:140352#644",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Vitalii",
       "link": "https://community.homey.app/t/140352/644",
       "mfrs": [],
@@ -46458,11 +46527,15 @@
           "https://zigbee.blakadder.com/Sonoff_SNZB-03P.html"
         ],
         "sources": 25
-      }
+      },
+      "previousStatus": "needs-info",
+      "note": "Re-read 2026-11-03: \"unknown device\" follow-up; same reporter as #646 (_TZE204_chbyv06x|TS0601, Z2M TS0601_gas_sensor_2 + ZHA tuya_gas) now on gas_sensor.",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103"
     },
     {
       "id": "forum:140352#655",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Cyril",
       "link": "https://community.homey.app/t/140352/655",
       "mfrs": [],
@@ -46478,11 +46551,15 @@
           "https://zigbee.blakadder.com/Aqara_SRTS-A01.html"
         ],
         "sources": 32
-      }
+      },
+      "previousStatus": "needs-info",
+      "note": "Re-read 2026-11-03: interview of a sleepy button takes long; advice only (keep it awake). Device identified later as _TZ3000_zgyzgdua|TS0044.",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103"
     },
     {
       "id": "forum:140352#658",
-      "status": "needs-info",
+      "status": "no-action",
       "author": "Cyril",
       "link": "https://community.homey.app/t/140352/658",
       "mfrs": [],
@@ -46499,11 +46576,15 @@
           "https://zigbee.blakadder.com/Aqara_SRTS-A01.html"
         ],
         "sources": 33
-      }
+      },
+      "previousStatus": "needs-info",
+      "note": "Re-read 2026-11-03: Homey interview error message, also with the generic Zigbee driver (Homey side). Device identified later (#660).",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103"
     },
     {
       "id": "forum:140352#670",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "FrankP",
       "link": "https://community.homey.app/t/140352/670",
       "mfrs": [],
@@ -46518,11 +46599,15 @@
           "https://www.zigbee2mqtt.io/devices/ZS06.html"
         ],
         "sources": 31
-      }
+      },
+      "previousStatus": "needs-info",
+      "note": "Re-read 2026-11-03: ZS06 IR blaster (TS1201 family) learning/on-off. ir_blaster now has learn (ir_blaster_learn_code), learned-code send (ir_blaster_send_learned) and learning-state triggers. Exact mfr not in the post.",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103"
     },
     {
       "id": "forum:140352#672",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Fiek",
       "link": "https://community.homey.app/t/140352/672",
       "mfrs": [],
@@ -46535,11 +46620,15 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "previousStatus": "needs-info",
+      "note": "Re-read 2026-11-03: bulb paired with sensor capabilities; _TZ3210_s8lvbbuc|TS0505B is now only on light_bulb_rgb_rgbw (see #669/#820).",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103"
     },
     {
       "id": "forum:140352#678",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Francesco_Carrozzo",
       "link": "https://community.homey.app/t/140352/678",
       "mfrs": [],
@@ -46556,7 +46645,11 @@
           "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/hobeian/hobeian_pir_presence_light_sensor.json"
         ],
         "sources": 10
-      }
+      },
+      "previousStatus": "needs-info",
+      "note": "Re-read 2026-11-03: ZG-204ZM going unavailable after pairing. HOBEIAN|ZG-204ZM is on presence_sensor_radar with the ZG-204ZM profile (battery, survival watchdog, flood calm).",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103"
     },
     {
       "id": "forum:26439#4957",
@@ -46785,7 +46878,7 @@
     },
     {
       "id": "forum:140352#688",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Cyril",
       "link": "https://community.homey.app/t/140352/688",
       "mfrs": [],
@@ -46801,19 +46894,23 @@
           "https://zigbee.blakadder.com/Aqara_SRTS-A01.html"
         ],
         "sources": 33
-      }
+      },
+      "previousStatus": "needs-info",
+      "note": "Re-read 2026-11-03: 4-scene button shown as unknown; _TZ3000_zgyzgdua|TS0044 is on scene_switch_4 (see #660/#693).",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103"
     },
     {
       "id": "forum:140352#701",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Cyril",
       "link": "https://community.homey.app/t/140352/701",
       "mfrs": [],
       "pids": [],
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag 67ad34b7-6f78-4f61-9284-1555c4d2a224 mail 2025-12-26): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-03: diag of button presses for _TZ3000_zgyzgdua|TS0044; physical press handling now listed in PhysicalButtonMixin and DeviceOperatingMode for this mfr.",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103",
       "crossResearch": {
         "at": "2026-11-03",
         "verdict": "lead",
@@ -46824,19 +46921,20 @@
           "https://zigbee.blakadder.com/Aqara_SRTS-A01.html"
         ],
         "sources": 33
-      }
+      },
+      "previousStatus": "needs-info"
     },
     {
       "id": "forum:140352#704",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Cyril",
       "link": "https://community.homey.app/t/140352/704",
       "mfrs": [],
       "pids": [],
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag e2f26f08-6f81-4b00-a77b-9398bb73b00b mail 2025-12-26): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-03: battery fixed in .260, physical buttons not firing; _TZ3000_zgyzgdua handled by PhysicalButtonMixin (scene/E000 path).",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103",
       "crossResearch": {
         "at": "2026-11-03",
         "verdict": "lead",
@@ -46847,19 +46945,20 @@
           "https://zigbee.blakadder.com/Aqara_SRTS-A01.html"
         ],
         "sources": 31
-      }
+      },
+      "previousStatus": "needs-info"
     },
     {
       "id": "forum:140352#705",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Haadeess",
       "link": "https://community.homey.app/t/140352/705",
       "mfrs": [],
       "pids": [],
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag c680c1f0-3d86-4077-9c83-e26652c9de77 mail 2025-12-26): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-03: 1-button switch adds but no trigger; _TZ3000_yj6k7vfo|TS0041 has its dedicated button_wireless_4_ts0041 driver now.",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103",
       "crossResearch": {
         "at": "2026-11-03",
         "verdict": "no-action",
@@ -46867,19 +46966,20 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "previousStatus": "needs-info"
     },
     {
       "id": "forum:140352#725",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Ronny_M",
       "link": "https://community.homey.app/t/140352/725",
       "mfrs": [],
       "pids": [],
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag 4659aff2-77d6-4fad-a5b5-16539afbd80f mail 2025-12-27): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-03: diag only; reporter radars _TZE204_gkfbdvyx and _TZE284_iadro9bf|TS0601 are on presence_sensor_radar (see #707/#708).",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103",
       "crossResearch": {
         "at": "2026-11-03",
         "verdict": "lead",
@@ -46890,20 +46990,21 @@
           "https://www.zigbee2mqtt.io/devices/ERS-10TZBVB-AA.html"
         ],
         "sources": 33
-      }
+      },
+      "previousStatus": "needs-info"
     },
     {
       "id": "forum:140352#728",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Ronny_M",
       "link": "https://community.homey.app/t/140352/728",
       "mfrs": [],
       "pids": [],
       "images": 1,
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag 8d07afec-a49a-48cb-8542-68774f054da5 mail 2025-12-28): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-03: radar presence flash/lux stop on the same two radars, handled since #707/#708 (presence_sensor_radar profiles).",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103",
       "crossResearch": {
         "at": "2026-11-03",
         "verdict": "lead",
@@ -46914,19 +47015,20 @@
           "https://www.zigbee2mqtt.io/devices/ERS-10TZBVB-AA.html"
         ],
         "sources": 33
-      }
+      },
+      "previousStatus": "needs-info"
     },
     {
       "id": "forum:140352#736",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Eftychis_Georgilas",
       "link": "https://community.homey.app/t/140352/736",
       "mfrs": [],
       "pids": [],
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag 3125fd27-09e2-4a5d-a2f6-892c9c0a8581 mail 2025-12-28): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-03: diag only; reporter devices (#712/#731/#747) _TZ3000_5tqxpine and _TZ3000_wkai4ga5|TS0044 on scene_switch_4, smoke _TZ3210_up3pngle|TS0205 on smoke_sensor3.",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103",
       "crossResearch": {
         "at": "2026-11-03",
         "verdict": "lead",
@@ -46934,19 +47036,20 @@
         "couples": [],
         "candidates": [],
         "sources": 30
-      }
+      },
+      "previousStatus": "needs-info"
     },
     {
       "id": "forum:140352#742",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Eftychis_Georgilas",
       "link": "https://community.homey.app/t/140352/742",
       "mfrs": [],
       "pids": [],
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag ef3578f2-f732-489d-a469-047db96cfbc4 mail 2025-12-28): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-03: diag only, same reporter and devices as #736.",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103",
       "crossResearch": {
         "at": "2026-11-03",
         "verdict": "lead",
@@ -46954,19 +47057,20 @@
         "couples": [],
         "candidates": [],
         "sources": 30
-      }
+      },
+      "previousStatus": "needs-info"
     },
     {
       "id": "forum:140352#754",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Haadeess",
       "link": "https://community.homey.app/t/140352/754",
       "mfrs": [],
       "pids": [],
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag fadf9d52-bab1-470a-adad-b44f3a551f52 mail 2025-12-29): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-03: device adds but no response; same reporter identified the IR blaster _TZ3290_7v1k4vufotpowp9z|TS1201 in #757, on ir_blaster.",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103",
       "crossResearch": {
         "at": "2026-11-03",
         "verdict": "no-action",
@@ -46974,19 +47078,20 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "previousStatus": "needs-info"
     },
     {
       "id": "forum:140352#761",
-      "status": "needs-info",
+      "status": "deferred",
       "author": "Eftychis_Georgilas",
       "link": "https://community.homey.app/t/140352/761",
       "mfrs": [],
       "pids": [],
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag f8b73cac-ce44-46f0-8525-c4fe93ce4328 mail 2025-12-29): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-03: (1) 4-gang physical buttons -> covered by PhysicalButtonMixin entries for wkai4ga5/5tqxpine; (2) curtain robot -> see #778; (3) PIR lux only refreshes on motion -> lead L1 in data/leads/daily-resume-2026-11-03.json (ZHA ZG-204ZL quirk: lux DP12 + illuminance_interval DP105). Runtime change waits for master publish hold P3095.",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103",
       "crossResearch": {
         "at": "2026-11-03",
         "verdict": "lead",
@@ -46994,7 +47099,8 @@
         "couples": [],
         "candidates": [],
         "sources": 30
-      }
+      },
+      "previousStatus": "needs-info"
     },
     {
       "id": "forum:26439#5046",
@@ -47261,15 +47367,15 @@
     },
     {
       "id": "forum:140352#769",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "FrankP",
       "link": "https://community.homey.app/t/140352/769",
       "mfrs": [],
       "pids": [],
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag b707a788-952f-4ae4-ac4f-09349f4c2c2c mail 2025-12-30): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-03: IR follow-up diag; see #670 (learn + send-learned flow cards now present).",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103",
       "crossResearch": {
         "at": "2026-11-03",
         "verdict": "lead",
@@ -47277,19 +47383,20 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "previousStatus": "needs-info"
     },
     {
       "id": "forum:140352#773",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "FrankP",
       "link": "https://community.homey.app/t/140352/773",
       "mfrs": [],
       "pids": [],
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag 2354434e-99c9-4191-b4ec-f7c1523fa57b mail 2025-12-30): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-03: Learn-IR button does not stay on; learning is now driven by flow action/trigger state cards in ir_blaster (see #670).",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103",
       "crossResearch": {
         "at": "2026-11-03",
         "verdict": "lead",
@@ -47297,19 +47404,20 @@
         "couples": [],
         "candidates": [],
         "sources": 31
-      }
+      },
+      "previousStatus": "needs-info"
     },
     {
       "id": "forum:140352#776",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Haadeess",
       "link": "https://community.homey.app/t/140352/776",
       "mfrs": [],
       "pids": [],
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag 9bfd57cc-9688-4b4d-b9b6-129b589a9db5 mail 2025-12-30): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-03: no keystroke detection on _TZ3000_yj6k7vfo|TS0041; dedicated driver button_wireless_4_ts0041 (see #705).",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103",
       "crossResearch": {
         "at": "2026-11-03",
         "verdict": "no-action",
@@ -47317,7 +47425,8 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "previousStatus": "needs-info"
     },
     {
       "id": "forum:140352#778",
@@ -47327,9 +47436,9 @@
       "mfrs": [],
       "pids": [],
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag 0e00d64e-395a-4fb3-86e8-55fb0862be63 mail 2025-12-30): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-03: curtain robot (3xAA, lux sensor) travels only half way, battery and lux empty. Screenshot id in #712 suggests TS030F (_TZ3210_sxtfesc6 on curtain_motor) but Z2M TS030F exposes cover+calibration only, no battery/lux, so the exact couple is uncertain. Lead L2 in data/leads/daily-resume-2026-11-03.json.",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103",
       "crossResearch": {
         "at": "2026-11-03",
         "verdict": "lead",
@@ -47341,15 +47450,15 @@
     },
     {
       "id": "forum:140352#785",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Fiek",
       "link": "https://community.homey.app/t/140352/785",
       "mfrs": [],
       "pids": [],
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag ed0e583b-cf2d-4670-a67d-22c72db363df mail 2025-12-31): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-03: bulb diag; _TZ3210_s8lvbbuc|TS0505B only on light_bulb_rgb_rgbw.",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103",
       "crossResearch": {
         "at": "2026-11-03",
         "verdict": "lead",
@@ -47357,7 +47466,8 @@
         "couples": [],
         "candidates": [],
         "sources": 32
-      }
+      },
+      "previousStatus": "needs-info"
     },
     {
       "id": "forum:140352#792",
@@ -47367,9 +47477,9 @@
       "mfrs": [],
       "pids": [],
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag f4ec2ce4-da7f-4716-b8ff-cfea7c0cd3ac mail 2025-12-31): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-03: switches _TZ3000_wkai4ga5/_TZ3000_5tqxpine named buttons (upper left...) are covered on scene_switch_4; remaining: curtain robot battery/lux/button capability, same lead L2 as #778 (identity uncertain).",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103",
       "crossResearch": {
         "at": "2026-11-03",
         "verdict": "lead",
@@ -47381,7 +47491,7 @@
     },
     {
       "id": "forum:140352#796",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "Lasse_K",
       "link": "https://community.homey.app/t/140352/796",
       "mfrs": [],
@@ -47398,20 +47508,24 @@
           "https://www.zigbee2mqtt.io/devices/ZG-102ZL.html"
         ],
         "sources": 36
-      }
+      },
+      "previousStatus": "needs-info",
+      "note": "Re-read 2026-11-03: asked how to interview; device identified in #798 as Aqara lumi.vibration.aq1, now LUMI|lumi.vibration.aq1 on vibration_sensor.",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103"
     },
     {
       "id": "forum:140352#798",
-      "status": "needs-info",
+      "status": "already-fixed",
       "author": "SunBeech",
       "link": "https://community.homey.app/t/140352/798",
       "mfrs": [],
       "pids": [],
       "images": 1,
       "why": "request-no-identity",
-      "note": "Lead: screenshot shows Aqara lumi.vibration.aq1 (DJT11LM). Vibration is in Aqara-specific attributes, not a standard ZCL cluster; no driver yet. Source: screenshot + Z2M lumi.ts DJT11LM.",
-      "triagedAt": "2026-10-21T09:11:43.123Z",
-      "triagedVia": "ocr-pass-2026-10-21",
+      "note": "Re-read 2026-11-03: interview how-to plus Aqara lumi.vibration.aq1 identity; LUMI|lumi.vibration.aq1 is now on vibration_sensor.",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103",
       "crossResearch": {
         "at": "2026-11-03",
         "verdict": "lead",
@@ -47423,20 +47537,21 @@
           "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/hobeian/hobeian_vibration_sensor.json"
         ],
         "sources": 3
-      }
+      },
+      "previousStatus": "needs-info"
     },
     {
       "id": "forum:140352#828",
-      "status": "needs-info",
+      "status": "deferred",
       "author": "Eftychis_Georgilas",
       "link": "https://community.homey.app/t/140352/828",
       "mfrs": [],
       "pids": [],
       "images": 1,
       "why": "diag-only",
-      "note": "P2933 diag read (Homey diag 7fc451ca-ed9a-4997-a070-979118b8e6c2 mail 2026-01-02): no exact mfr+pid in report",
-      "triagedAt": "2026-10-21T09:16:37.391Z",
-      "triagedVia": "gmail-homey-diag",
+      "note": "Re-read 2026-11-03: switches now on scene_switch_4 (named buttons via PhysicalButtonMixin); motion lux same as #761 -> lead L1, waits for P3095.",
+      "triagedAt": "2026-11-03",
+      "triagedVia": "dailyResume20261103",
       "crossResearch": {
         "at": "2026-11-03",
         "verdict": "lead",
@@ -47444,7 +47559,8 @@
         "couples": [],
         "candidates": [],
         "sources": 31
-      }
+      },
+      "previousStatus": "needs-info"
     },
     {
       "id": "forum:140352#843",
@@ -48861,12 +48977,12 @@
     "previousNext": 31
   },
   "stats": {
-    "already-fixed": 1442,
-    "no-action": 1257,
-    "needs-info": 576,
+    "already-fixed": 1488,
+    "no-action": 1263,
+    "needs-info": 526,
     "fixed": 11,
     "covered": 1,
-    "deferred": 2,
+    "deferred": 6,
     "pending": 8
   },
   "progressed": true,
@@ -49712,5 +49828,277 @@
       "deferred": 2,
       "pending": 7
     }
+  },
+  "dailyResume20261103": {
+    "at": "2026-11-03T08:03:36.639Z",
+    "advanced": 60,
+    "items": [
+      {
+        "id": "forum:140352#604",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#609",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#611",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:140352#614",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#626",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#644",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#655",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:140352#658",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:140352#670",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#672",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#678",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#688",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#701",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#704",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#705",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#725",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#728",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#736",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#742",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#754",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#761",
+        "status": "deferred"
+      },
+      {
+        "id": "forum:140352#769",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#773",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#776",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#778",
+        "status": "needs-info"
+      },
+      {
+        "id": "forum:140352#785",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#792",
+        "status": "needs-info"
+      },
+      {
+        "id": "forum:140352#796",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#798",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#828",
+        "status": "deferred"
+      },
+      {
+        "id": "forum:140352#604",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#609",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#611",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:140352#614",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#626",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#644",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#655",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:140352#658",
+        "status": "no-action"
+      },
+      {
+        "id": "forum:140352#670",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#672",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#678",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#688",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#701",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#704",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#705",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#725",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#728",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#736",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#742",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#754",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#761",
+        "status": "deferred"
+      },
+      {
+        "id": "forum:140352#769",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#773",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#776",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#778",
+        "status": "needs-info"
+      },
+      {
+        "id": "forum:140352#785",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#792",
+        "status": "needs-info"
+      },
+      {
+        "id": "forum:140352#796",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#798",
+        "status": "already-fixed"
+      },
+      {
+        "id": "forum:140352#828",
+        "status": "deferred"
+      }
+    ],
+    "counts": {
+      "posts": 30,
+      "already-fixed": 23,
+      "no-action": 3,
+      "deferred": 2,
+      "needs-info": 2
+    },
+    "statsBefore": {
+      "already-fixed": 1442,
+      "no-action": 1257,
+      "needs-info": 576,
+      "fixed": 11,
+      "covered": 1,
+      "deferred": 2,
+      "pending": 8
+    },
+    "statsAfter": {
+      "already-fixed": 1488,
+      "no-action": 1263,
+      "needs-info": 526,
+      "fixed": 11,
+      "covered": 1,
+      "deferred": 6,
+      "pending": 8
+    },
+    "leads": "data/leads/daily-resume-2026-11-03.json"
   }
 }
