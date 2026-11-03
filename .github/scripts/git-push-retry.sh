@@ -74,6 +74,11 @@ gap_wait() {
   w=$(( last + GAP_MIN * 60 - now )); [ "$w" -gt 0 ] && echo "$w" || echo 0
 }
 
+# P3255d: bot [skip ci] data-only commits for master go to the rolling bot/data branch (one fold/day).
+if [ "$BRANCH" = master ] && [ -z "$TAG" ] && [ -f scripts/ci/bot-batch.js ] && PUSH_RETRY_BRANCH="$BRANCH" node scripts/ci/bot-batch.js divert; then
+  out true; exit 0
+fi
+
 for i in $(seq 1 "$ATTEMPTS"); do
   while :; do   # P3196: re-fetch + re-check the master gap after any wait; another push may have landed
     git fetch -q "$REMOTE" "$BRANCH" 2>/dev/null || break

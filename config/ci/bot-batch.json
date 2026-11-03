@@ -1,0 +1,6 @@
+{
+  "_doc": "P3255d (t824u chunk 3): bot [skip ci] data commits aimed at master go to the rolling branch bot/data; bot-data-fold.yml squashes it into ONE master commit per day. Only commits whose files are ALL under deferPaths are diverted; anything else (app.json, lib, drivers, publish state) still goes straight to master. Disable with enabled=false or env BOT_BATCH=0.",
+  "enabled": true,
+  "branch": "bot/data",
+  "deferPaths": ["docs/knowledge/", "data/leads/", "data/progress/", "data/learning/", "data/kb/", "reports/"]
+}
