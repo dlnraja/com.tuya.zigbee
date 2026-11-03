@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-03T05:41:40.771Z",
+ "generated": "2026-11-03T07:55:40.430Z",
  "drivers": 421,
  "snapshot": {
   "air_conditioner_aetz01": {
@@ -423,9 +423,9 @@
    "pidSha": "c4343290bac9e455"
   },
   "curtain_motor": {
-   "mfr": 274,
+   "mfr": 273,
    "pid": 48,
-   "mfrSha": "d91f996508c47ff3",
+   "mfrSha": "ceb149228d6f7205",
    "pidSha": "00ba96ff94eb4bb5"
   },
   "curtain_motor_2": {
@@ -681,9 +681,9 @@
    "pidSha": "2daaf0364f1df565"
   },
   "dimmer_2_gang_tuya": {
-   "mfr": 22,
+   "mfr": 23,
    "pid": 34,
-   "mfrSha": "6e57df69f1c59b12",
+   "mfrSha": "a9d90276ed856ecd",
    "pidSha": "2daaf0364f1df565"
   },
   "dimmer_3gang": {
@@ -831,9 +831,9 @@
    "pidSha": "455c46e8c8549693"
   },
   "energy_meter_3phase": {
-   "mfr": 21,
+   "mfr": 20,
    "pid": 2,
-   "mfrSha": "c80f1e5a976c9f4b",
+   "mfrSha": "73248cf5689937c4",
    "pidSha": "1e6b96caf8d5722c"
   },
   "energy_meter_din": {
@@ -2463,9 +2463,9 @@
    "pidSha": "455c46e8c8549693"
   },
   "wall_thermostat": {
-   "mfr": 47,
+   "mfr": 48,
    "pid": 2,
-   "mfrSha": "9fe1e582d0f13a25",
+   "mfrSha": "57958c8730b733e2",
    "pidSha": "a56800d53024720a"
   },
   "water_detector": {

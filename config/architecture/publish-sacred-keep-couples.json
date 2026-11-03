@@ -2185,6 +2185,18 @@
       "pid": "TS0121",
       "driverId": "smartplug",
       "note": "P3252 KB daily 2026-11-03: source-confirmed couple kept in the payload (would be displaced by the P3252 wrong-class move pins); zero-loss compensation"
+    },
+    {
+      "mfr": "_TZE204_sdykkwsu",
+      "pid": "TS0601",
+      "driverId": "dimmer_2_gang_tuya",
+      "note": "P3253 KB daily 2026-11-03: AVATTO ZDMS16-US-W2 2-channel dimmer (Z2M/ZHC avatto.ts; DP1/2/7/8 = V1_MULTI_GANG_DIMMER layout of dimmer_2_gang_tuya); moved from energy_meter_3phase (wrong class), pinned so the move does not drop it"
+    },
+    {
+      "mfr": "_TZE204_zxkwaztm",
+      "pid": "TS0601",
+      "driverId": "wall_thermostat",
+      "note": "P3253 KB daily 2026-11-03: Moes ZHT-S03 wall thermostat (Z2M/ZHC moes.ts; DP1 on, DP16 setpoint /10, DP24 temp /10, DP40 lock = wall_thermostat BHT layout); moved from curtain_motor (wrong class), pinned so the move does not drop it"
     }
   ]
 }
