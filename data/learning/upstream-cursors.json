@@ -3,35 +3,35 @@
  "note": "P3073 upstream cursors: last thing seen per source (read-only watch).",
  "sources": {
   "zhc": {
-   "last": "c18c32d94c77f683fa768618d1fd32b348fdd7b9",
-   "checkedAt": "2026-11-02T13:27:08.106Z",
+   "last": "367100282578111770f1c8ab0e38805d9ec581d0",
+   "checkedAt": "2026-11-04T12:56:14.235Z",
    "kind": "commits",
    "what": "Koenkk/zigbee-herdsman-converters",
-   "changedAt": "2026-10-28T11:18:38.043Z"
+   "changedAt": "2026-11-04T12:56:14.235Z"
   },
   "zhc-rel": {
-   "last": "v26.125.0",
-   "checkedAt": "2026-11-02T13:27:08.106Z",
+   "last": "v26.126.0",
+   "checkedAt": "2026-11-04T12:56:14.235Z",
    "kind": "releases",
    "what": "Koenkk/zigbee-herdsman-converters",
-   "changedAt": "2026-10-28T11:18:38.043Z"
+   "changedAt": "2026-11-04T12:56:14.235Z"
   },
   "zha-quirks": {
    "last": "862124c5517c3cb331e07f06caad913d7bf02dd2",
-   "checkedAt": "2026-11-02T13:27:08.106Z",
+   "checkedAt": "2026-11-04T12:56:14.235Z",
    "kind": "commits",
    "what": "zigpy/zha-device-handlers",
    "changedAt": "2026-10-28T11:18:38.043Z"
   },
   "deconz": {
    "last": "a4c17adfa04abc63637ad17de7f85256a825a2cb",
-   "checkedAt": "2026-11-01T11:48:41.964Z",
+   "checkedAt": "2026-11-04T12:56:14.235Z",
    "kind": "commits",
    "what": "dresden-elektronik/deconz-rest-plugin"
   },
   "johan": {
    "last": "61577d8ec2572bf8c7c4c2ff210284575acd295b",
-   "checkedAt": "2026-11-02T13:27:08.106Z",
+   "checkedAt": "2026-11-04T12:56:14.235Z",
    "kind": "commits",
    "what": "JohanBendz/com.tuya.zigbee"
   },
@@ -61,11 +61,11 @@
    "what": "athombv/homey-apps-sdk-issues"
   },
   "tuya-local": {
-   "last": "dcb0d40fa39f2dd2763fddbbb20b312683dc3d92",
-   "checkedAt": "2026-11-01T11:48:41.964Z",
+   "last": "633c008f982f8e39c03d9a8f3fa34aa4d0c8d88f",
+   "checkedAt": "2026-11-04T12:56:14.235Z",
    "kind": "commits",
    "what": "make-all/tuya-local",
-   "changedAt": "2026-11-01T11:48:41.964Z"
+   "changedAt": "2026-11-04T12:56:14.235Z"
   },
   "localtuya": {
    "last": "59c95cd06c2696afc98f6bc52d5fa060f3c517da",
@@ -99,11 +99,11 @@
    "changedAt": "2026-11-02T13:27:08.106Z"
   },
   "r-homey": {
-   "checkedAt": "2026-10-27T10:31:07.705Z",
+   "checkedAt": "2026-11-04T12:56:14.235Z",
    "kind": "reddit",
    "what": "r/homey",
    "lastError": "403",
-   "backoffUntil": "2026-11-03T10:31:07.705Z"
+   "backoffUntil": "2026-11-11T12:56:14.235Z"
   },
   "r-homeassistant": {
    "checkedAt": "2026-10-28T11:18:38.043Z",
@@ -131,24 +131,24 @@
   "owner": "forum-poll (data/leads/forum-lastseen.json)",
   "topics": {
    "156": {
-    "lastSeenPost": 7557,
-    "at": "2026-11-01T09:23:39.426Z"
+    "lastSeenPost": 7558,
+    "at": "2026-11-02T22:50:52.547Z"
    },
    "15811": {
     "lastSeenPost": 356,
     "at": "2026-11-01T23:44:17.196Z"
    },
    "21313": {
-    "lastSeenPost": 2819,
-    "at": "2026-11-02T09:36:49.011Z"
+    "lastSeenPost": 2823,
+    "at": "2026-11-02T22:50:42.813Z"
    },
    "26439": {
     "lastSeenPost": 5539,
-    "at": "2026-11-02T09:36:50.106Z"
+    "at": "2026-11-02T22:50:43.957Z"
    },
    "36418": {
     "lastSeenPost": 549,
-    "at": "2026-11-01T09:23:35.851Z"
+    "at": "2026-11-02T22:50:49.414Z"
    },
    "43287": {
     "lastSeenPost": 2319,
@@ -156,11 +156,11 @@
    },
    "76161": {
     "lastSeenPost": 486,
-    "at": "2026-11-01T09:23:42.792Z"
+    "at": "2026-11-02T22:50:56.786Z"
    },
    "89271": {
     "lastSeenPost": 673,
-    "at": "2026-11-02T09:36:51.216Z"
+    "at": "2026-11-02T22:50:45.076Z"
    },
    "99614": {
     "lastSeenPost": 329,
@@ -180,7 +180,7 @@
    },
    "140352": {
     "lastSeenPost": 2269,
-    "at": "2026-11-02T09:36:52.290Z"
+    "at": "2026-11-02T22:50:46.152Z"
    },
    "146667": {
     "lastSeenPost": 25,
@@ -188,7 +188,7 @@
    },
    "146735": {
     "lastSeenPost": 508,
-    "at": "2026-11-02T09:36:53.358Z"
+    "at": "2026-11-02T22:50:47.208Z"
    },
    "149230": {
     "lastSeenPost": 5,
@@ -204,7 +204,7 @@
    },
    "154077": {
     "lastSeenPost": 529,
-    "at": "2026-11-02T09:36:54.410Z"
+    "at": "2026-11-02T22:50:48.331Z"
    },
    "154092": {
     "lastSeenPost": 48,
@@ -212,5 +212,5 @@
    }
   }
  },
- "updatedAt": "2026-11-02T13:27:08.106Z"
+ "updatedAt": "2026-11-04T12:56:14.235Z"
 }

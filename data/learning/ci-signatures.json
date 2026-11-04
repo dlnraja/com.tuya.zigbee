@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updatedAt": "2026-11-02T13:27:08.052Z",
+ "updatedAt": "2026-11-04T12:56:14.175Z",
  "cap": 300,
  "seenKeys": [
   "ci-fail:40227923450:1",
@@ -172,7 +172,11 @@
   "ci-fail:41411812359:1",
   "ci-fail:41407782827:1",
   "ci-fail:41402776968:1",
-  "ci-fail:41399984982:1"
+  "ci-fail:41399984982:1",
+  "ci-fail:41702163446:1",
+  "ci-fail:41660062338:1",
+  "ci-fail:41660062373:1",
+  "ci-fail:41660062402:1"
  ],
  "signatures": {
   "c567adb8a6e1": {
@@ -930,8 +934,8 @@
    "unit": "",
    "test": "",
    "firstSeen": "2026-10-27T10:30:16.422Z",
-   "lastSeen": "2026-11-01T11:48:21.669Z",
-   "fails": 6,
+   "lastSeen": "2026-11-04T12:56:14.123Z",
+   "fails": 7,
    "transient": 0,
    "recovered": 0,
    "branches": [
@@ -961,6 +965,10 @@
     ],
     [
      "2026-11-01T11:48:21.669Z",
+     "f"
+    ],
+    [
+     "2026-11-04T12:56:14.123Z",
      "f"
     ]
    ]
@@ -1782,6 +1790,69 @@
    "events": [
     [
      "2026-11-02T13:27:08.003Z",
+     "f"
+    ]
+   ]
+  },
+  "de52b80418c8": {
+   "category": "validate",
+   "workflow": "🔍 Validate Homey App",
+   "unit": "🔍 Validate / 🛡️ GitHub Actions & YAML Policy Gate",
+   "test": "",
+   "firstSeen": "2026-11-04T12:56:09.367Z",
+   "lastSeen": "2026-11-04T12:56:09.367Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "\u001b[<n>;<n>m s=\"Validation failed. Run npx homey app validate --level ${LEVEL} locally; the red step above has the reason.\"\u001b[<n>m",
+   "events": [
+    [
+     "2026-11-04T12:56:09.367Z",
+     "f"
+    ]
+   ]
+  },
+  "ee7f1425cb78": {
+   "category": "other",
+   "workflow": "🔍 Syntax Check & SDK3 Validation",
+   "unit": "syntax-check / Check GitHub Actions policy",
+   "test": "",
+   "firstSeen": "2026-11-04T12:56:10.642Z",
+   "lastSeen": "2026-11-04T12:56:10.642Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "Process completed with exit code <n>.",
+   "events": [
+    [
+     "2026-11-04T12:56:10.642Z",
+     "f"
+    ]
+   ]
+  },
+  "54f13f4348e6": {
+   "category": "other",
+   "workflow": "🛡️ Unified CI/CD Orchestrator",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-11-04T12:56:12.757Z",
+   "lastSeen": "2026-11-04T12:56:12.757Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "Process completed with exit code <n>.",
+   "events": [
+    [
+     "2026-11-04T12:56:12.757Z",
      "f"
     ]
    ]

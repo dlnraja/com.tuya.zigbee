@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-02T13:28:42.358Z",
+  "generated": "2026-11-04T12:57:57.579Z",
   "note": "P3048: candidates only. No workflow posts, comments or reacts. A human (or the Grok Bot anti-flood routine) decides.",
   "limits": {
     "autoPost": false,
@@ -26,10 +26,38 @@
   },
   "scanned": {
     "commits": 300,
-    "issues": 24
+    "issues": 25
   },
   "candidates": [],
   "skipped": [
+    {
+      "issue": 3697,
+      "reason": "not found"
+    },
+    {
+      "issue": 3696,
+      "reason": "not found"
+    },
+    {
+      "issue": 415,
+      "reason": "closed"
+    },
+    {
+      "issue": 416,
+      "reason": "pull request"
+    },
+    {
+      "issue": 558,
+      "reason": "pull request"
+    },
+    {
+      "issue": 560,
+      "reason": "closed"
+    },
+    {
+      "issue": 615,
+      "reason": "pull request"
+    },
     {
       "issue": 410,
       "reason": "closed"
@@ -107,37 +135,6 @@
     },
     {
       "issue": 3688,
-      "reason": "not found"
-    },
-    {
-      "issue": 560,
-      "reason": "closed"
-    },
-    {
-      "issue": 3687,
-      "reason": "not found"
-    },
-    {
-      "issue": 559,
-      "about": "non classé",
-      "author": "Lalla80111",
-      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/559",
-      "commit": "e28970dbb7",
-      "commitAt": "2026-10-31T18:54:29Z",
-      "ci": "green",
-      "lastAuthor": "dlnraja",
-      "reason": "last message is from the owner"
-    },
-    {
-      "issue": 582,
-      "reason": "pull request"
-    },
-    {
-      "issue": 578,
-      "reason": "pull request"
-    },
-    {
-      "issue": 3686,
       "reason": "not found"
     }
   ]
