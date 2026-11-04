@@ -209,6 +209,46 @@
    "ref": "2026.11.0b2",
    "title": "2026.11.0b2",
    "url": "https://github.com/home-assistant/core/releases/tag/2026.11.0b2"
+  },
+  {
+   "at": "2026-11-04T12:56:14.235Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "930b02d42d",
+   "title": "feat: Tuya SPM01, SPM01V2.5 and SPM02: expose alarm settings, fault status and energy reset (#13599)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/930b02d42d8c1ac24bbce6a9c09e70a6681268ba"
+  },
+  {
+   "at": "2026-11-04T12:56:14.235Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "fc2f51ec69",
+   "title": "fix: Tuya HY607W-3A: fix incorrect time shown on the thermostat (#13676)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/fc2f51ec6954fcb38aa10c257ad623b4985b7dc7"
+  },
+  {
+   "at": "2026-11-04T12:56:14.235Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "6dab3e4252",
+   "title": "fix: Lonsonho QS-Zigbee-C03: stabilize intermediate positions (#13286)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/6dab3e425292146df231189b59aba7bd50ebf575"
+  },
+  {
+   "at": "2026-11-04T12:56:14.235Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "5a6454011e",
+   "title": "fix(detect): Detect `_TZ3000_9ni6xxld` as OURTOP ATMS1603AZ (#13660)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/5a6454011e96496a8be5e04935782dd011d2e0aa"
+  },
+  {
+   "at": "2026-11-04T12:56:14.235Z",
+   "source": "zhc-rel",
+   "kind": "release",
+   "ref": "v26.126.0",
+   "title": "v26.126.0",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/releases/tag/v26.126.0"
   }
  ]
 }

@@ -1,18 +1,5 @@
 {
-  "at": "2026-11-02T13:28:27.398Z",
-  "checked": 61,
-  "findings": [
-    {
-      "kind": "repeated-failure",
-      "sig": "ci-6e84c480a105",
-      "wf": ".github/workflows/node22-tests.yml",
-      "detail": "6 failures in 72 h: Node 22 runtime tests failed on master (test / Full suite on Node 22: code-or-test)"
-    },
-    {
-      "kind": "repeated-failure",
-      "sig": "ci-351d901e2c87",
-      "wf": ".github/workflows/node22-tests.yml",
-      "detail": "4 failures in 72 h: Node 22 runtime tests failed on master (test / Full suite on Node 22: no-log)"
-    }
-  ]
+  "at": "2026-11-04T12:57:42.740Z",
+  "checked": 62,
+  "findings": []
 }
