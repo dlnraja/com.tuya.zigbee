@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updatedAt": "2026-11-04T12:56:14.175Z",
+ "updatedAt": "2026-11-05T13:06:04.734Z",
  "cap": 300,
  "seenKeys": [
   "ci-fail:40227923450:1",
@@ -176,7 +176,8 @@
   "ci-fail:41702163446:1",
   "ci-fail:41660062338:1",
   "ci-fail:41660062373:1",
-  "ci-fail:41660062402:1"
+  "ci-fail:41660062402:1",
+  "ci-fail:41898554640:1"
  ],
  "signatures": {
   "c567adb8a6e1": {
@@ -1800,8 +1801,8 @@
    "unit": "🔍 Validate / 🛡️ GitHub Actions & YAML Policy Gate",
    "test": "",
    "firstSeen": "2026-11-04T12:56:09.367Z",
-   "lastSeen": "2026-11-04T12:56:09.367Z",
-   "fails": 1,
+   "lastSeen": "2026-11-05T13:06:04.689Z",
+   "fails": 2,
    "transient": 0,
    "recovered": 0,
    "branches": [
@@ -1811,6 +1812,10 @@
    "events": [
     [
      "2026-11-04T12:56:09.367Z",
+     "f"
+    ],
+    [
+     "2026-11-05T13:06:04.689Z",
      "f"
     ]
    ]
