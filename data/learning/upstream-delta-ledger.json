@@ -249,6 +249,62 @@
    "ref": "v26.126.0",
    "title": "v26.126.0",
    "url": "https://github.com/Koenkk/zigbee-herdsman-converters/releases/tag/v26.126.0"
+  },
+  {
+   "at": "2026-11-05T13:06:04.787Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "6e9676822e",
+   "title": "feat: Tuya TS0005: expose countdown (#13690)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/6e9676822e41dbe33dca2fdca3ee386f63b555c2"
+  },
+  {
+   "at": "2026-11-05T13:06:04.787Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "70efbb89de",
+   "title": "fix: Moes _TZE204_rtrmfadk: report the manual preset correctly while heating (#13695)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/70efbb89def01bb1b06eb3f1cf69a41fc01c66e5"
+  },
+  {
+   "at": "2026-11-05T13:06:04.787Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "7adb4454c6",
+   "title": "fix(detect): Detect `_TZE284_fzo2pocs` as Zemismart ZM25TQ (#13689)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/7adb4454c6b9da84dfc9fc583aa687916c4f328d"
+  },
+  {
+   "at": "2026-11-05T13:06:04.787Z",
+   "source": "zhc-rel",
+   "kind": "release",
+   "ref": "v26.127.0",
+   "title": "v26.127.0",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/releases/tag/v26.127.0"
+  },
+  {
+   "at": "2026-11-05T13:06:04.787Z",
+   "source": "zha-quirks",
+   "kind": "commit",
+   "ref": "e5040e8161",
+   "title": "Cast Tuya spell for BSEED TS0726 2-gang switch (#5601)",
+   "url": "https://github.com/zigpy/zha-device-handlers/commit/e5040e816186df0e0408c8d41d928d385069f666"
+  },
+  {
+   "at": "2026-11-05T13:06:04.787Z",
+   "source": "zha-quirks",
+   "kind": "commit",
+   "ref": "ff78a27a2e",
+   "title": "Keep ZONNSMART TRV heat setpoint limits after a restart (#5628)",
+   "url": "https://github.com/zigpy/zha-device-handlers/commit/ff78a27a2e686d6b0bf568fda7a23855956bbfe4"
+  },
+  {
+   "at": "2026-11-05T13:06:04.787Z",
+   "source": "zha-quirks",
+   "kind": "commit",
+   "ref": "e02c52f9c0",
+   "title": "Add EnOcean PTM 215Z Friends of Hue switch quirk (#5596)",
+   "url": "https://github.com/zigpy/zha-device-handlers/commit/e02c52f9c0f7d6662500c376851c9cd6f8d98289"
   }
  ]
 }

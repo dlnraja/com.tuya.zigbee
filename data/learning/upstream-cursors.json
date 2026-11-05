@@ -3,25 +3,25 @@
  "note": "P3073 upstream cursors: last thing seen per source (read-only watch).",
  "sources": {
   "zhc": {
-   "last": "367100282578111770f1c8ab0e38805d9ec581d0",
-   "checkedAt": "2026-11-04T12:56:14.235Z",
+   "last": "1e18d5002118828de8e4b136e022e22ac791afcd",
+   "checkedAt": "2026-11-05T13:06:04.787Z",
    "kind": "commits",
    "what": "Koenkk/zigbee-herdsman-converters",
-   "changedAt": "2026-11-04T12:56:14.235Z"
+   "changedAt": "2026-11-05T13:06:04.787Z"
   },
   "zhc-rel": {
-   "last": "v26.126.0",
-   "checkedAt": "2026-11-04T12:56:14.235Z",
+   "last": "v26.127.0",
+   "checkedAt": "2026-11-05T13:06:04.787Z",
    "kind": "releases",
    "what": "Koenkk/zigbee-herdsman-converters",
-   "changedAt": "2026-11-04T12:56:14.235Z"
+   "changedAt": "2026-11-05T13:06:04.787Z"
   },
   "zha-quirks": {
-   "last": "862124c5517c3cb331e07f06caad913d7bf02dd2",
-   "checkedAt": "2026-11-04T12:56:14.235Z",
+   "last": "e5040e816186df0e0408c8d41d928d385069f666",
+   "checkedAt": "2026-11-05T13:06:04.787Z",
    "kind": "commits",
    "what": "zigpy/zha-device-handlers",
-   "changedAt": "2026-10-28T11:18:38.043Z"
+   "changedAt": "2026-11-05T13:06:04.787Z"
   },
   "deconz": {
    "last": "a4c17adfa04abc63637ad17de7f85256a825a2cb",
@@ -31,7 +31,7 @@
   },
   "johan": {
    "last": "61577d8ec2572bf8c7c4c2ff210284575acd295b",
-   "checkedAt": "2026-11-04T12:56:14.235Z",
+   "checkedAt": "2026-11-05T13:06:04.787Z",
    "kind": "commits",
    "what": "JohanBendz/com.tuya.zigbee"
   },
@@ -106,11 +106,11 @@
    "backoffUntil": "2026-11-11T12:56:14.235Z"
   },
   "r-homeassistant": {
-   "checkedAt": "2026-10-28T11:18:38.043Z",
+   "checkedAt": "2026-11-05T13:06:04.787Z",
    "kind": "reddit",
    "what": "r/homeassistant",
    "lastError": "403",
-   "backoffUntil": "2026-11-04T11:18:38.043Z"
+   "backoffUntil": "2026-11-12T13:06:04.787Z"
   },
   "r-zigbee": {
    "checkedAt": "2026-10-29T11:29:24.833Z",
@@ -212,5 +212,5 @@
    }
   }
  },
- "updatedAt": "2026-11-04T12:56:14.235Z"
+ "updatedAt": "2026-11-05T13:06:04.787Z"
 }

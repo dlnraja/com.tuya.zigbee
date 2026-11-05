@@ -1,6 +1,6 @@
 {
  "version": 1,
- "watermark": "2026-11-04T12:56:14.123Z",
+ "watermark": "2026-11-05T13:06:04.689Z",
  "seen": [
   "self-maintain:2026-10-25",
   "ci-fail:40227923450:1",
@@ -217,15 +217,19 @@
   "ci-fail:41702163446:1",
   "ci-fail:41660062338:1",
   "ci-fail:41660062373:1",
-  "ci-fail:41660062402:1"
+  "ci-fail:41660062402:1",
+  "watchdog-run:2026-11-04",
+  "automation-loop:2026-11-04",
+  "self-maintain:2026-11-05",
+  "ci-fail:41898554640:1"
  ],
  "workflows": {
   "self-maintain": {
-   "ok": 10,
+   "ok": 11,
    "fail": 0,
    "transient": 0,
    "warn": 0,
-   "okStreak": 10,
+   "okStreak": 11,
    "failStreak": 0,
    "last": [
     "ok",
@@ -239,7 +243,7 @@
     "ok",
     "ok"
    ],
-   "lastAt": "2026-11-04T12:56:05.213Z",
+   "lastAt": "2026-11-05T13:06:00.087Z",
    "hint": "relax"
   },
   "ci-self-check.yml": {
@@ -424,11 +428,11 @@
    "hint": "backoff"
   },
   "workflow-watchdog": {
-   "ok": 0,
+   "ok": 1,
    "fail": 0,
    "transient": 0,
    "warn": 9,
-   "okStreak": 0,
+   "okStreak": 1,
    "failStreak": 0,
    "last": [
     "warn",
@@ -439,19 +443,21 @@
     "warn",
     "warn",
     "warn",
-    "warn"
+    "warn",
+    "ok"
    ],
-   "lastAt": "2026-11-02T13:28:27.397Z",
+   "lastAt": "2026-11-04T12:57:42.739Z",
    "hint": "normal"
   },
   "automation-loop": {
-   "ok": 9,
+   "ok": 10,
    "fail": 0,
    "transient": 0,
    "warn": 0,
-   "okStreak": 9,
+   "okStreak": 10,
    "failStreak": 0,
    "last": [
+    "ok",
     "ok",
     "ok",
     "ok",
@@ -462,8 +468,8 @@
     "ok",
     "ok"
    ],
-   "lastAt": "2026-11-02T13:28:43.033Z",
-   "hint": "normal"
+   "lastAt": "2026-11-04T12:57:58.775Z",
+   "hint": "relax"
   },
   "publish-stable.yml": {
    "ok": 0,
@@ -583,15 +589,16 @@
   },
   "validate.yml": {
    "ok": 0,
-   "fail": 1,
+   "fail": 2,
    "transient": 0,
    "warn": 0,
    "okStreak": 0,
-   "failStreak": 1,
+   "failStreak": 2,
    "last": [
+    "fail",
     "fail"
    ],
-   "lastAt": "2026-11-04T12:56:09.367Z",
+   "lastAt": "2026-11-05T13:06:04.689Z",
    "hint": "normal"
   }
  }
