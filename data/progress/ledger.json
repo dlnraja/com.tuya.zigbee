@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-05T14:54:56.228Z",
+ "updated": "2026-11-05T20:10:10.236Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -11523,6 +11523,15 @@
    "mailDate": "2026-11-02T15:28:20.000Z",
    "errors": 1
   },
+  "diag:b4aa21a2ea409912": {
+   "status": "done",
+   "date": "2026-11-05",
+   "hash": "6f740edd4e62fc95",
+   "note": "diagnostic mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "diagnostic",
+   "mailDate": "2026-11-05T15:01:00.000Z"
+  },
   "diag:b4c634b93192f6cf": {
    "status": "done",
    "date": "2026-10-25",
@@ -12201,6 +12210,15 @@
    "kind": "general",
    "mailDate": "2026-10-31T19:11:09.000Z"
   },
+  "diag:ce14a90d6e88e282": {
+   "status": "done",
+   "date": "2026-11-05",
+   "hash": "96e6fe3e456e0784",
+   "note": "diagnostic mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "diagnostic",
+   "mailDate": "2026-11-05T17:25:49.000Z"
+  },
   "diag:cede3d7c19e9b08e": {
    "status": "done",
    "date": "2026-11-04",
@@ -12291,6 +12309,15 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-10-21T10:20:14.000Z"
+  },
+  "diag:d2b84a1d97336214": {
+   "status": "done",
+   "date": "2026-11-05",
+   "hash": "cb0f64dd2e6819a4",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-05T16:41:05.000Z"
   },
   "diag:d306df8603ab9dba": {
    "status": "done",
