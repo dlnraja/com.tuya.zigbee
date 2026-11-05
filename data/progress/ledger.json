@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-05T08:28:02.094Z",
+ "updated": "2026-11-05T13:49:26.053Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -6411,6 +6411,21 @@
    "kind": "general",
    "mailDate": "2026-10-19T05:23:11.000Z"
   },
+  "diag:045462dd394e2440": {
+   "status": "pending",
+   "date": "2026-11-05",
+   "hash": "8d8cd2f22cfc32e1",
+   "note": "crash_report mail; 1 error line(s)",
+   "by": "gmail-diagnostics",
+   "kind": "crash_report",
+   "mailDate": "2026-11-05T07:46:20.000Z",
+   "appVersion": "9.0.1615",
+   "logIdShort": "b2e9ffe8",
+   "drivers": [
+    "power_clamp_meter"
+   ],
+   "errors": 1
+  },
   "diag:04a6c2178d72a751": {
    "status": "done",
    "date": "2026-11-01",
@@ -10476,6 +10491,15 @@
    "by": "tuya-deep-diag",
    "kind": "general",
    "mailDate": "2026-10-31T22:11:43.000Z"
+  },
+  "diag:93605aa27f9a92cf": {
+   "status": "done",
+   "date": "2026-11-05",
+   "hash": "781fbd2042ba443b",
+   "note": "homey_system mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "homey_system",
+   "mailDate": "2026-11-05T10:03:17.000Z"
   },
   "diag:936b9b0edd95e1a5": {
    "status": "done",
