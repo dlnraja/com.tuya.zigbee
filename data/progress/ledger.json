@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-05T20:10:10.236Z",
+ "updated": "2026-11-06T19:36:50.242Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -6534,6 +6534,30 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-10-21T08:52:15.000Z"
+  },
+  "diag:08ba3dc89b11dab6": {
+   "status": "pending",
+   "date": "2026-11-06",
+   "hash": "de0dc1683fd7528d",
+   "note": "diagnostic mail; 2 couple(s); 1 in several drivers; 15 error line(s)",
+   "by": "fetch-diags",
+   "kind": "diagnostic",
+   "mailDate": "2026-11-06T18:04:32.000Z",
+   "appVersion": "1.0.229",
+   "logIdShort": "ae9f84a9",
+   "couples": [
+    "_TZ3000_ltt60asa|TS0004",
+    "HOBEIAN|ZG-301Z"
+   ],
+   "conflicts": [
+    "HOBEIAN"
+   ],
+   "drivers": [
+    "switch_4gang",
+    "switch_1gang"
+   ],
+   "kb": "invalid_flow_card",
+   "errors": 15
   },
   "diag:08f0042826b385ab": {
    "status": "done",
@@ -13572,6 +13596,20 @@
    "by": "fetch-diags",
    "kind": "general",
    "mailDate": "2026-11-02T09:52:39.000Z"
+  },
+  "diag:ffc40bc729614130": {
+   "status": "done",
+   "date": "2026-11-06",
+   "hash": "585fb8348a35ac72",
+   "note": "diagnostic mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "diagnostic",
+   "mailDate": "2026-11-06T14:47:47.000Z",
+   "appVersion": "9.0.1615",
+   "logIdShort": "dd8cd87e",
+   "drivers": [
+    "water_valve_smart"
+   ]
   },
   "diag:fff2fbc9f9a68e20": {
    "status": "done",
