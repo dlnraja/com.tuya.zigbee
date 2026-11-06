@@ -36,27 +36,27 @@
    "what": "JohanBendz/com.tuya.zigbee"
   },
   "johan-forks": {
-   "last": "2026-11-01T15:15:26Z",
-   "checkedAt": "2026-11-02T13:27:08.106Z",
+   "last": "2026-11-05T14:21:44Z",
+   "checkedAt": "2026-11-06T12:53:30.767Z",
    "kind": "forks",
    "what": "JohanBendz/com.tuya.zigbee",
-   "changedAt": "2026-11-02T13:27:08.106Z"
+   "changedAt": "2026-11-06T12:53:30.767Z"
   },
   "athom-zigbeedriver": {
-   "checkedAt": "2026-11-02T13:27:08.106Z",
+   "checkedAt": "2026-11-06T12:53:30.767Z",
    "kind": "releases",
    "what": "athombv/node-homey-zigbeedriver"
   },
   "athom-clusters": {
    "last": "v3.9.2",
-   "checkedAt": "2026-11-02T13:27:08.106Z",
+   "checkedAt": "2026-11-06T12:53:30.767Z",
    "kind": "releases",
    "what": "athombv/node-zigbee-clusters",
    "changedAt": "2026-10-30T11:22:11.610Z"
   },
   "athom-sdk-issues": {
    "last": "36ead0ea23a40688c6dc720074b0bca5d5863afc",
-   "checkedAt": "2026-11-02T13:27:08.106Z",
+   "checkedAt": "2026-11-06T12:53:30.767Z",
    "kind": "commits",
    "what": "athombv/homey-apps-sdk-issues"
   },
@@ -69,34 +69,34 @@
   },
   "localtuya": {
    "last": "59c95cd06c2696afc98f6bc52d5fa060f3c517da",
-   "checkedAt": "2026-11-02T13:27:08.106Z",
+   "checkedAt": "2026-11-06T12:53:30.767Z",
    "kind": "commits",
    "what": "rospogrigio/localtuya"
   },
   "hass-localtuya": {
    "last": "d0e951f4218caa0889b3896b48b559630d0d9dc2",
-   "checkedAt": "2026-11-02T13:27:08.106Z",
+   "checkedAt": "2026-11-06T12:53:30.767Z",
    "kind": "commits",
    "what": "xZetsubou/hass-localtuya"
   },
   "tinytuya": {
    "last": "v1.20.0",
-   "checkedAt": "2026-11-02T13:27:08.106Z",
+   "checkedAt": "2026-11-06T12:53:30.767Z",
    "kind": "releases",
    "what": "jasonacox/tinytuya"
   },
   "hubitat-kkossev": {
    "last": "d5cec8336697a91a8330cda7927b597dfcd7d099",
-   "checkedAt": "2026-11-02T13:27:08.106Z",
+   "checkedAt": "2026-11-06T12:53:30.767Z",
    "kind": "commits",
    "what": "kkossev/Hubitat"
   },
   "ha-core-rel": {
-   "last": "2026.11.0b2",
-   "checkedAt": "2026-11-02T13:27:08.106Z",
+   "last": "2026.11.0",
+   "checkedAt": "2026-11-06T12:53:30.767Z",
    "kind": "releases",
    "what": "home-assistant/core",
-   "changedAt": "2026-11-02T13:27:08.106Z"
+   "changedAt": "2026-11-06T12:53:30.767Z"
   },
   "r-homey": {
    "checkedAt": "2026-11-04T12:56:14.235Z",
@@ -113,11 +113,11 @@
    "backoffUntil": "2026-11-12T13:06:04.787Z"
   },
   "r-zigbee": {
-   "checkedAt": "2026-10-29T11:29:24.833Z",
+   "checkedAt": "2026-11-06T12:53:30.767Z",
    "kind": "reddit",
    "what": "r/zigbee",
    "lastError": "403",
-   "backoffUntil": "2026-11-05T11:29:24.833Z"
+   "backoffUntil": "2026-11-13T12:53:30.767Z"
   },
   "r-tuya": {
    "checkedAt": "2026-10-30T11:22:11.610Z",
@@ -212,5 +212,5 @@
    }
   }
  },
- "updatedAt": "2026-11-05T13:06:04.787Z"
+ "updatedAt": "2026-11-06T12:53:30.767Z"
 }

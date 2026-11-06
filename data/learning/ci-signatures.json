@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updatedAt": "2026-11-05T13:06:04.734Z",
+ "updatedAt": "2026-11-06T12:53:30.717Z",
  "cap": 300,
  "seenKeys": [
   "ci-fail:40227923450:1",
@@ -177,7 +177,10 @@
   "ci-fail:41660062338:1",
   "ci-fail:41660062373:1",
   "ci-fail:41660062402:1",
-  "ci-fail:41898554640:1"
+  "ci-fail:41898554640:1",
+  "ci-fail:42209775369:1",
+  "ci-fail:42209770664:1",
+  "ci-fail:42096807523:1"
  ],
  "signatures": {
   "c567adb8a6e1": {
@@ -935,8 +938,8 @@
    "unit": "",
    "test": "",
    "firstSeen": "2026-10-27T10:30:16.422Z",
-   "lastSeen": "2026-11-04T12:56:14.123Z",
-   "fails": 7,
+   "lastSeen": "2026-11-06T12:53:27.866Z",
+   "fails": 8,
    "transient": 0,
    "recovered": 0,
    "branches": [
@@ -970,6 +973,10 @@
     ],
     [
      "2026-11-04T12:56:14.123Z",
+     "f"
+    ],
+    [
+     "2026-11-06T12:53:27.866Z",
      "f"
     ]
    ]
@@ -1801,8 +1808,8 @@
    "unit": "🔍 Validate / 🛡️ GitHub Actions & YAML Policy Gate",
    "test": "",
    "firstSeen": "2026-11-04T12:56:09.367Z",
-   "lastSeen": "2026-11-05T13:06:04.689Z",
-   "fails": 2,
+   "lastSeen": "2026-11-06T12:53:30.670Z",
+   "fails": 3,
    "transient": 0,
    "recovered": 0,
    "branches": [
@@ -1817,6 +1824,10 @@
     [
      "2026-11-05T13:06:04.689Z",
      "f"
+    ],
+    [
+     "2026-11-06T12:53:30.670Z",
+     "f"
     ]
    ]
   },
@@ -1826,8 +1837,8 @@
    "unit": "syntax-check / Check GitHub Actions policy",
    "test": "",
    "firstSeen": "2026-11-04T12:56:10.642Z",
-   "lastSeen": "2026-11-04T12:56:10.642Z",
-   "fails": 1,
+   "lastSeen": "2026-11-06T12:53:29.253Z",
+   "fails": 2,
    "transient": 0,
    "recovered": 0,
    "branches": [
@@ -1837,6 +1848,10 @@
    "events": [
     [
      "2026-11-04T12:56:10.642Z",
+     "f"
+    ],
+    [
+     "2026-11-06T12:53:29.253Z",
      "f"
     ]
    ]
