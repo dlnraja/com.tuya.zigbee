@@ -305,6 +305,62 @@
    "ref": "e02c52f9c0",
    "title": "Add EnOcean PTM 215Z Friends of Hue switch quirk (#5596)",
    "url": "https://github.com/zigpy/zha-device-handlers/commit/e02c52f9c0f7d6662500c376851c9cd6f8d98289"
+  },
+  {
+   "at": "2026-11-06T12:53:30.767Z",
+   "source": "johan-forks",
+   "kind": "fork-push",
+   "ref": "Tordles/com.tuya.zigbee",
+   "title": "Tordles/com.tuya.zigbee",
+   "url": "https://github.com/Tordles/com.tuya.zigbee"
+  },
+  {
+   "at": "2026-11-06T12:53:30.767Z",
+   "source": "johan-forks",
+   "kind": "fork-push",
+   "ref": "PRo25/com.tuya.zigbee",
+   "title": "To add support to additional device manufacturers of switch modules and presence sensors",
+   "url": "https://github.com/PRo25/com.tuya.zigbee"
+  },
+  {
+   "at": "2026-11-06T12:53:30.767Z",
+   "source": "ha-core-rel",
+   "kind": "release",
+   "ref": "2026.11.0",
+   "title": "2026.11.0",
+   "url": "https://github.com/home-assistant/core/releases/tag/2026.11.0"
+  },
+  {
+   "at": "2026-11-06T12:53:30.767Z",
+   "source": "ha-core-rel",
+   "kind": "release",
+   "ref": "2026.11.0b6",
+   "title": "2026.11.0b6",
+   "url": "https://github.com/home-assistant/core/releases/tag/2026.11.0b6"
+  },
+  {
+   "at": "2026-11-06T12:53:30.767Z",
+   "source": "ha-core-rel",
+   "kind": "release",
+   "ref": "2026.11.0b5",
+   "title": "2026.11.0b5",
+   "url": "https://github.com/home-assistant/core/releases/tag/2026.11.0b5"
+  },
+  {
+   "at": "2026-11-06T12:53:30.767Z",
+   "source": "ha-core-rel",
+   "kind": "release",
+   "ref": "2026.11.0b4",
+   "title": "2026.11.0b4",
+   "url": "https://github.com/home-assistant/core/releases/tag/2026.11.0b4"
+  },
+  {
+   "at": "2026-11-06T12:53:30.767Z",
+   "source": "ha-core-rel",
+   "kind": "release",
+   "ref": "2026.11.0b3",
+   "title": "2026.11.0b3",
+   "url": "https://github.com/home-assistant/core/releases/tag/2026.11.0b3"
   }
  ]
 }

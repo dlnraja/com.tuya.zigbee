@@ -1,5 +1,18 @@
 {
-  "at": "2026-11-05T13:07:29.151Z",
+  "at": "2026-11-06T12:54:57.258Z",
   "checked": 62,
-  "findings": []
+  "findings": [
+    {
+      "kind": "failing",
+      "sig": "4708029da17d",
+      "wf": "validate.yml",
+      "detail": "last 3 completed runs failed (newest https://github.com/dlnraja/com.tuya.zigbee/actions/runs/42096807523)"
+    },
+    {
+      "kind": "repeated-failure",
+      "sig": "ci-de52b80418c8",
+      "wf": ".github/workflows/validate.yml",
+      "detail": "3 failures in 72 h: 🔍 Validate Homey App failed on master (🔍 Validate / 🛡️ GitHub Actions & YAML Policy Gate: code-or-test)"
+    }
+  ]
 }
