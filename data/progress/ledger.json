@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-07T12:16:52.956Z",
+ "updated": "2026-11-07T16:49:03.240Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -6294,11 +6294,11 @@
    "mailDate": "2026-10-26T16:31:11.000Z"
   },
   "diag:00908611b8dca7f8": {
-   "status": "pending",
+   "status": "in-progress",
    "date": "2026-11-07",
    "hash": "a1312c87abf86afa",
-   "note": "diagnostic mail; 4 error line(s)",
-   "by": "gmail-diagnostics",
+   "note": "P3265: JSON.parse two-byte OOM narrowed; sleepy scene remote skips sendFrame after local schema reject. Not published.",
+   "by": "p3265",
    "kind": "diagnostic",
    "mailDate": "2026-11-07T11:11:05.000Z",
    "appVersion": "1.0.229",
@@ -6552,11 +6552,11 @@
    "mailDate": "2026-10-21T08:52:15.000Z"
   },
   "diag:08ba3dc89b11dab6": {
-   "status": "pending",
-   "date": "2026-11-06",
+   "status": "in-progress",
+   "date": "2026-11-07",
    "hash": "de0dc1683fd7528d",
-   "note": "diagnostic mail; 2 couple(s); 1 in several drivers; 15 error line(s)",
-   "by": "fetch-diags",
+   "note": "P3265: JSON.parse two-byte OOM narrowed; sleepy scene remote skips sendFrame after local schema reject. Not published.",
+   "by": "p3265",
    "kind": "diagnostic",
    "mailDate": "2026-11-06T18:04:32.000Z",
    "appVersion": "1.0.229",
