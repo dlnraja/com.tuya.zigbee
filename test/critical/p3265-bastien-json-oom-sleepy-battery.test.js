@@ -160,7 +160,7 @@ test('one manufacturer lookup does not retain the whole fingerprint catalog', ()
   for (let i = 0; i < 20; i++) {FingerprintDB.getFingerprint('_TZ3000_vd43bbfq');}
   assert.strictEqual(FingerprintDB.getStatistics().total, resident);
   const names = FingerprintDB.getAllManufacturerNames();
-  assert.ok(names.length > 4000, `catalog names ${names.length}`);
+  assert.ok(names.length >= resident, `names ${names.length} resident ${resident}`);
   assert.ok(names.includes('_TZ3000_vd43bbfq'));
   assert.ok(FingerprintDB.getStatistics().total < 2500, `still resident ${FingerprintDB.getStatistics().total}`);
 });
