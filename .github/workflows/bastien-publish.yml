@@ -233,10 +233,10 @@ jobs:
       - name: Bump Bastien patch above highest uploaded
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
-          HOMEY_CHANGELOG: 'Reliability fixes'
         run: |
           node .github/scripts/athom-version-floor.js --apply
           node .github/scripts/bump-homey-version.js patch
+          node scripts/automation/changelog-publish-gate.js
           grep -m1 '"version"' app.json
       # WHY(2026-10-10 user rule): never upload a version <= highest Athom build (strictly incremental).
       - name: Strictly-incremental version gate
@@ -398,7 +398,6 @@ jobs:
           TARGET_APP_ID: ${{ env.EXPECTED_APP_ID }}
           HOMEY_DRAFT_WAIT_MS: ${{ env.HOMEY_DRAFT_WAIT_MS }}
           HOMEY_DRAFT_EARLY_FAIL_MS: ${{ env.HOMEY_DRAFT_EARLY_FAIL_MS }}
-          HOMEY_CHANGELOG: 'Reliability fixes'
         run: |
           set +e
           PUBLISH_DIR="${HOMEY_PUBLISH_DIR:-$(node -p "require('path').join(require('os').tmpdir(), 'homey-publish-temp')")}"
@@ -421,7 +420,7 @@ jobs:
             DELAY=$(node .github/scripts/athom-retry-policy.js backoff "$retry")
             echo "::warning::Athom processing_failed ($KIND) for v$V; backoff ${DELAY}s then rebuild as a new patch (retry $retry/$MAXR)"
             sleep "$DELAY"
-            node .github/scripts/athom-version-floor.js --apply && node .github/scripts/bump-homey-version.js patch || { echo "::error::bump failed"; break; }
+            node .github/scripts/athom-version-floor.js --apply && node .github/scripts/bump-homey-version.js patch && node scripts/automation/changelog-publish-gate.js || { echo "::error::bump failed"; break; }
             NEWV=$(node -p "require('./app.json').version")
             if [ "$NEWV" = "$V" ] || [ "$(printf '%s\n%s\n' "$V" "$NEWV" | sort -V | tail -1)" != "$NEWV" ]; then echo "::error::refusing non-increasing $NEWV (was $V)"; break; fi
             node .github/scripts/athom-version-floor.js --gate || break
