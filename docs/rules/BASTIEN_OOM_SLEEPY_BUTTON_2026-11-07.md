@@ -1,33 +1,28 @@
-# Bastien 1.0.229 — JSON OOM and sleepy button TX (2026-11-07)
+# Bastien 1.0.229 — JSON OOM not identified, sleepy TX narrowed (2026-11-07)
 
-App `com.dlnraja.tuya.zigbee.bastien` 1.0.229 on Homey Pro (Early 2023), firmware 13.5.3.
-Reports are redacted. No IEEE, mail address, or household name is stored here.
+App `com.dlnraja.tuya.zigbee.bastien` 1.0.229, Homey Pro (Early 2023), firmware 13.5.3.
+Reports are redacted. This note does not claim the out-of-memory crash is fixed.
 
-## What the logs show
+## Crash
 
-| Report | Evidence | Conclusion |
-|---|---|---|
-| 6 Nov, four SIGABRT | `JsonParser<unsigned short>::MakeString` / `ParseJson` / `Builtin_JsonParse` / `NewRawTwoByteString` | The failing allocation is inside `JSON.parse` of a two-byte string. The stack does not name the file. |
-| 7 Nov, three SIGABRT | Same native frames | Same failure, including after the app had already been up. |
-| Heap | critical 55–56MB for minutes; MEMWARN clears lazy-load, soft-features, divisors, mfr-names, json-cache, device-caches, diag rings, log buffer, budget | Those caches are not the retainer. The live set stays put, so the next wide parse has no room. |
-| FLOW-GUARD | about 50 absent app-level cards (`health_*`, `network_*`, `battery_percent_below`, …) | Logged once each. Not established as the OOM cause. Cards were not deleted. |
-| 7 Nov `switch_4gang` | `_TZ3000_ltt60asa` + `TS0004`, standard OnOff, no EF00 | `backlightMode` / `powerOnState` are rejected locally (`not a valid attribute of onOff`). Relay on/off in the same log still changes. No DP is sent when no Tuya cluster is present. |
-| 17 Oct–1 Nov buttons | `button_wireless_3`, settings `_TZ3000_vsxvaj9i` / `TS0043`, CR2032 | Exact couple. `measure_battery` is kept and also listed unused because no battery or voltage report arrived. Do not invent a percent. |
-| Same button | `readAttributes` then `4 is not a valid attribute of basic`, then sendFrame | Local schema reject was followed by a radio fallback. |
-| `button_wireless_2` | sleepy-button mode skips bind / configure / queryAll; magic can still run | Profile flags, not a new manufacturer. The couple is not in this note because the excerpt does not give one. |
-| `button_wireless_1` | CR2032 class, couple not in the excerpt | Not guessed. |
+Nov 6 has four `SIGABRT` and Nov 7 has three. Each dies in `JSON.parse` (`JsonParser<unsigned short>::MakeString`, `NewRawTwoByteString`). The heap stays at 55–56MB after MEMWARN clears the named caches, so those caches are not the retainer. The stack does not name a file or a call site.
 
-`200` on the ZCL 0–200 scale remains 100% for this profile. `255`, `65535`, `null` stay unknown. Nothing writes 100% when the report is missing.
+A global `JSON.parse` rewrite was tried and removed. Escaping non-Latin-1 characters makes a second, often larger, string, and a wrapper can change reviver behaviour or fail a Homey SDK or settings load. `JSON.parse` is left native.
 
-## Code
+Shipped loaders that already refuse their own large files when the heap is critical (`driver-mapping-database`, fingerprint sources, the misattribution registry) now record a label and a byte size in a 24-entry ring. MEMWARN appends that summary. The ring stores no document text and drops any label that is not a short token. The next diagnostic can show which of these loads ran. It cannot, by itself, prove which parse aborted.
 
-- `lib/utils/latin1-json.js` — escape code units above 255 to `\uXXXX` before `JSON.parse`, installed at the top of `app.js`. A parse larger than 256KB is refused when `heapUsed` is already above 52MB (`JSON_PARSE_HEAP`). Buffer loaders use the same path.
-- `lib/zigbee/TuyaMagicPacket.js` — a sleepy scene remote (`skipBatteryReporting` / `sceneSwitch` / `noEf00`) does not `sendFrame` after a failed read. A successful read can still write setup `0xFFDE`. Mains devices keep the raw fallback. Press listeners are unchanged.
-- `lib/io/DeviceIOFacade.js` — the same remote does not get an EF00 magic/rescan when 0xEF00 was not interviewed.
-- `lib/devices/UnifiedSwitchBase.js` — backlight and power-on DP fallbacks run only when a Tuya cluster exists (`_TZ3000_ltt60asa` has none).
+## Sleepy button
+
+The only button couple written in the Oct 17–Nov 1 logs is `_TZ3000_vsxvaj9i` + `TS0043` on `button_wireless_3` (CR2032). No battery or voltage report is in those lines. 200 on the ZCL 0–200 scale stays 100%. 255 and a missing value stay unknown.
+
+`readAttributes` failed locally (`4 is not a valid attribute of basic`) and the code then called `sendFrame`. For an exact sleepy-button profile (`skipBatteryReporting` and either `sceneSwitch` or a `button_wireless*` driver id) that fallback frame is not sent. Press listeners are not removed. A successful read can still write setup `0xFFDE`.
+
+`noEf00`, `_noEf00`, or `skipBatteryReporting` on another driver do not take this path. `ensureTuyaCluster` still arms passive listen when 0xEF00 was not in the interview, then may try magic. An incomplete interview does not remove that listen path.
+
+`_TZ3000_ltt60asa` + `TS0004` still rejects `backlightMode` / `powerOnState` on standard OnOff. A Tuya DP is sent only when a Tuya cluster exists. Relay on/off is unchanged.
+
+## Not done
+
+The crashing parse is not named. Nothing here is a release. `bastien-home` and `stable-v5` are not updated by the master work branch until the same patch is reviewed on those trees. P3264, publish holds, and the other November diagnostics stay out of this change.
 
 Test: `test/critical/p3265-bastien-json-oom-sleepy-battery.test.js`.
-
-## Not in this change
-
-Driver-cap 347, P3264 lost couples, P3263 upload, P3255 batching, issues 559/550/581/584, the 3-phase meter crash, `_TZ3210_ncw88jfq`, FrankEver valve DPs, and the stable radar diag. No Athom ticket, no forum post, no publish. Stable and bastien-home are not pushed; the patch is on the master work branch and still has to be ported before a Bastien build contains it.

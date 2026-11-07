@@ -1,7 +1,4 @@
 'use strict';
-// WHY(Bastien 1.0.229): install before any other JSON.parse. Two-byte sources
-// select V8's unsigned-short parser and OOM in MakeString once the heap is ~56MB.
-try { require('./lib/utils/latin1-json').installLatin1JsonParse(); } catch (_) { /* best-effort */ }
 const { localMsg } = require('./lib/utils/LocalizedMessage');
 
 // v5.11.185: Suppress punycode DEP0040 deprecation from transitive deps
