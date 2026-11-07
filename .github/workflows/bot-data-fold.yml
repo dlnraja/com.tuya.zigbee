@@ -18,6 +18,19 @@ permissions:
 concurrency:
   group: bot-data-fold
   cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+# P2542: every scheduled workflow carries the local forfait env. This job folds git data and does not call a model.
+env:
+  AI_PLAN_MODE: 'forfait'
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  AI_ALLOW_PAID: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
+
 jobs:
   fold:
     if: github.repository == 'dlnraja/com.tuya.zigbee'
