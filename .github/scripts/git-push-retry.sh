@@ -74,6 +74,29 @@ gap_wait() {
   w=$(( last + GAP_MIN * 60 - now )); [ "$w" -gt 0 ] && echo "$w" || echo 0
 }
 
+# Fail closed on the repo pre-push gate even when core.hooksPath has no pre-push hook.
+if [ -f scripts/automation/pre-push-dual-layer-gate.js ]; then
+  log "pre-push dual-layer gate (fail closed)"
+  if ! node scripts/automation/pre-push-dual-layer-gate.js; then
+    echo "::error::git-push-retry: pre-push dual-layer gate failed; nothing pushed"
+    out false
+    exit 5
+  fi
+fi
+
+# A branch that is not on the remote yet cannot be fetched. Create it once, after the gate.
+if ! git rev-parse --verify --quiet "refs/remotes/$REMOTE/$BRANCH" >/dev/null; then
+  if git push -u "$REMOTE" "HEAD:refs/heads/$BRANCH"; then
+    log "pushed new branch $(git rev-parse --short HEAD)"
+    push_tag
+    out true
+    exit 0
+  fi
+  echo "::error::git-push-retry: could not create $REMOTE/$BRANCH"
+  out false
+  exit 4
+fi
+
 for i in $(seq 1 "$ATTEMPTS"); do
   while :; do   # P3196: re-fetch + re-check the master gap after any wait; another push may have landed
     git fetch -q "$REMOTE" "$BRANCH" 2>/dev/null || break
