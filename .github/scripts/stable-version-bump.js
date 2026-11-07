@@ -53,8 +53,11 @@ function setVersion(dir, v, { manifestsOnly = false } = {}) {
     let changed = false;
     if (!j[v] || !String(j[v].en || '').trim() || isPendingSeed(j[v])) {
       // P3069: a real HOMEY_CHANGELOG wins; otherwise our own en + fr note from the commits since the last bump.
-      const given = process.env.HOMEY_CHANGELOG || 'Device compatibility and reliability improvements.';
-      j[v] = ce && ce.isPlaceholder(given) ? entryFromCommits(ROOT, ce) : { en: given };
+      const given = process.env.HOMEY_CHANGELOG || '';
+      j[v] = ce && (!given || ce.isPlaceholder(given)) ? entryFromCommits(ROOT, ce) : { en: given };
+      if (!j[v] || !String(j[v].en || '').trim() || (ce && ce.isPlaceholder(j[v].en))) {
+        throw new Error(`changelog refused for ${v}: ${j[v] && j[v].en}`);
+      }
       changed = true;
     }
     // P3075 (t613u): seed the next patch so the pending-entry check stays green after every bump;
