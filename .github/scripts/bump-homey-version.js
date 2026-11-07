@@ -88,11 +88,24 @@ if (fs.existsSync(".homeychangelog.json")) {
     let ordered = changelog;
     try {
       const ce = require("../../scripts/automation/changelog-entry");
-      // The default/extracted text is often a generic line; only a real one wins over our summary.
-      if (!changelogText || ce.isPlaceholder(changelogText)) entry = ce.precise(ce.subjectsSinceLastPublish());
+      // A stock HOMEY_CHANGELOG ("Reliability fixes") must not replace the commit summary.
+      let keep = null;
+      if (app.id === "com.dlnraja.tuya.zigbee.bastien") {
+        try { keep = JSON.parse(fs.readFileSync("config/architecture/bastien-publish-fleet-ssot.json", "utf8")).keepDriverIds; } catch (_) { keep = null; }
+      }
+      if (!changelogText || ce.isPlaceholder(changelogText)) {
+        entry = ce.noteForPublish(ce.subjectsSinceLastPublish(), { keepDriverIds: keep });
+      }
+      entry = ce.distinctFromPrevious(changelog, nextVersion, entry);
+      if (ce.isPlaceholder(entry.en)) {
+        throw new Error(`changelog refused for ${nextVersion}: ${entry.en}`);
+      }
       changelog[nextVersion] = entry;
       ordered = ce.orderChangelog(changelog);
-    } catch (_) { changelog[nextVersion] = entry; }
+    } catch (err) {
+      if (err && /changelog refused/.test(err.message)) {throw err;}
+      changelog[nextVersion] = entry;
+    }
     writeJson(".homeychangelog.json", ordered);
   }
 }
