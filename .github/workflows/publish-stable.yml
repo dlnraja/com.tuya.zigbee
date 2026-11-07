@@ -315,7 +315,7 @@ jobs:
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         # WHY(2026-10-10 user rule): strictly incremental vs highest Athom build ever uploaded.
-        run: node .github/scripts/athom-version-floor.js --apply && node .github/scripts/stable-version-bump.js bump && node .github/scripts/athom-version-floor.js --gate
+        run: node .github/scripts/athom-version-floor.js --apply && node .github/scripts/stable-version-bump.js bump && node .github/scripts/athom-version-floor.js --gate && node scripts/automation/changelog-publish-gate.js
       - name: Build App
         run: npx homey app build
       - name: Sanitize Built Manifest
