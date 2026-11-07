@@ -18,6 +18,7 @@
 - **dresden-elektronik/deconz-rest-plugin** - deCONZ Tuya support and Data Point Protocol documentation
 
 ## Community Contributors
+- **Bastien house diagnostics, 2026-11-06/07 (redacted, P3265)** — ideas only, no log text copied. The same sleepy-button `sendFrame` fallback and the label/size JSON note are reliability-compatible on this line. `JSON.parse` stays native. The crash file is not named, and this is not a release.
 - **AreAArseth/com.hobeian** - Hobeian Zigbee devices
 - **drenso/com.tuya2** - TypeScript Tuya cloud app (OAuth2 patterns)
 - **gpmachado** (`gpmachado/com.gpm.homesuite`, GPL-3.0, ideas only — no code copied) — availability last-seen / rejoin ideas, lifecycle `onUninit` teardown, Poll Control skip on sleepy nodes, Homey settings over ZCL dump, interview-driven sacred couples
