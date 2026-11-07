@@ -361,6 +361,70 @@
    "ref": "2026.11.0b3",
    "title": "2026.11.0b3",
    "url": "https://github.com/home-assistant/core/releases/tag/2026.11.0b3"
+  },
+  {
+   "at": "2026-11-07T11:40:33.224Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "0955356892",
+   "title": "feat: add ECODO DR-MW-2436 as white label of TS0502B (#13725)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/09553568922a4b90b9f2e174dfb9d1aac9b2ab0e"
+  },
+  {
+   "at": "2026-11-07T11:40:33.224Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "27b1846008",
+   "title": "feat: Tuya ME201WZ: allow level readings to update in fast-changing tanks (#13716)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/27b1846008bc8f4a20b8c433ce8e9f23a942588b"
+  },
+  {
+   "at": "2026-11-07T11:40:33.224Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "c5b6a87864",
+   "title": "feat(add): ZIGBEE_ERL (#13410)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/c5b6a878646bfff5ca95ef9cdce25ab4f1419006"
+  },
+  {
+   "at": "2026-11-07T11:40:33.224Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "aa20b15ffb",
+   "title": "feat(add): TS0601_ND_4Gang (#13722)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/aa20b15ffb69cb7b4b459351184c68250587e739"
+  },
+  {
+   "at": "2026-11-07T11:40:33.224Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "3ab76ef1b9",
+   "title": "fix: Beok BOT-R9V-ZB: expose all six daily schedule periods and keep the thermostat clock accurate (",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/3ab76ef1b9c77c48865ccd118b309598ddb08f12"
+  },
+  {
+   "at": "2026-11-07T11:40:33.224Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "3f02cc6df9",
+   "title": "fix(detect): Detect `_TZ3000_a8mhmsol` as Tuya _TZ3000_a8mhmsol (#13707)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/3f02cc6df9b4b6618990883a5a2fcf72502c500e"
+  },
+  {
+   "at": "2026-11-07T11:40:33.224Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "06735fca50",
+   "title": "fix(detect): Detect `Ysia 5 Zigbee Europe` as Somfy 1871158 (#13705)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/06735fca50cb94d849d82c5be9101ac5e8d46737"
+  },
+  {
+   "at": "2026-11-07T11:40:33.224Z",
+   "source": "zhc-rel",
+   "kind": "release",
+   "ref": "v26.128.0",
+   "title": "v26.128.0",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/releases/tag/v26.128.0"
   }
  ]
 }

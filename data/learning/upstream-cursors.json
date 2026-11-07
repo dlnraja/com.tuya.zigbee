@@ -3,35 +3,35 @@
  "note": "P3073 upstream cursors: last thing seen per source (read-only watch).",
  "sources": {
   "zhc": {
-   "last": "1e18d5002118828de8e4b136e022e22ac791afcd",
-   "checkedAt": "2026-11-05T13:06:04.787Z",
+   "last": "09553568922a4b90b9f2e174dfb9d1aac9b2ab0e",
+   "checkedAt": "2026-11-07T11:40:33.224Z",
    "kind": "commits",
    "what": "Koenkk/zigbee-herdsman-converters",
-   "changedAt": "2026-11-05T13:06:04.787Z"
+   "changedAt": "2026-11-07T11:40:33.224Z"
   },
   "zhc-rel": {
-   "last": "v26.127.0",
-   "checkedAt": "2026-11-05T13:06:04.787Z",
+   "last": "v26.128.0",
+   "checkedAt": "2026-11-07T11:40:33.224Z",
    "kind": "releases",
    "what": "Koenkk/zigbee-herdsman-converters",
-   "changedAt": "2026-11-05T13:06:04.787Z"
+   "changedAt": "2026-11-07T11:40:33.224Z"
   },
   "zha-quirks": {
    "last": "e5040e816186df0e0408c8d41d928d385069f666",
-   "checkedAt": "2026-11-05T13:06:04.787Z",
+   "checkedAt": "2026-11-07T11:40:33.224Z",
    "kind": "commits",
    "what": "zigpy/zha-device-handlers",
    "changedAt": "2026-11-05T13:06:04.787Z"
   },
   "deconz": {
    "last": "a4c17adfa04abc63637ad17de7f85256a825a2cb",
-   "checkedAt": "2026-11-04T12:56:14.235Z",
+   "checkedAt": "2026-11-07T11:40:33.224Z",
    "kind": "commits",
    "what": "dresden-elektronik/deconz-rest-plugin"
   },
   "johan": {
    "last": "61577d8ec2572bf8c7c4c2ff210284575acd295b",
-   "checkedAt": "2026-11-05T13:06:04.787Z",
+   "checkedAt": "2026-11-07T11:40:33.224Z",
    "kind": "commits",
    "what": "JohanBendz/com.tuya.zigbee"
   },
@@ -61,11 +61,11 @@
    "what": "athombv/homey-apps-sdk-issues"
   },
   "tuya-local": {
-   "last": "633c008f982f8e39c03d9a8f3fa34aa4d0c8d88f",
-   "checkedAt": "2026-11-04T12:56:14.235Z",
+   "last": "ec004a58ab6e267ff788f773817a19b4508ebb34",
+   "checkedAt": "2026-11-07T11:40:33.224Z",
    "kind": "commits",
    "what": "make-all/tuya-local",
-   "changedAt": "2026-11-04T12:56:14.235Z"
+   "changedAt": "2026-11-07T11:40:33.224Z"
   },
   "localtuya": {
    "last": "59c95cd06c2696afc98f6bc52d5fa060f3c517da",
@@ -120,11 +120,11 @@
    "backoffUntil": "2026-11-13T12:53:30.767Z"
   },
   "r-tuya": {
-   "checkedAt": "2026-10-30T11:22:11.610Z",
+   "checkedAt": "2026-11-07T11:40:33.224Z",
    "kind": "reddit",
    "what": "r/tuya",
    "lastError": "403",
-   "backoffUntil": "2026-11-06T11:22:11.610Z"
+   "backoffUntil": "2026-11-14T11:40:33.224Z"
   }
  },
  "forum": {
@@ -212,5 +212,5 @@
    }
   }
  },
- "updatedAt": "2026-11-06T12:53:30.767Z"
+ "updatedAt": "2026-11-07T11:40:33.224Z"
 }
