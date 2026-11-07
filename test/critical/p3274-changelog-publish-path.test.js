@@ -85,5 +85,8 @@ describe('P3274 publish changelog path', () => {
     const auto = fs.readFileSync(path.join(dir, 'auto-publish-on-push.yml'), 'utf8');
     assert.match(stable, /changelog-publish-gate\.js/);
     assert.match(auto, /changelog-publish-gate\.js/);
+    for (const f of ['.github/scripts/bump-homey-version.js', '.github/scripts/ensure-next-changelog.js']) {
+      assert.match(fs.readFileSync(path.join(ROOT, f), 'utf8'), /ce\.precise\(ce\.subjectsSinceLastPublish\(\)\)/, f);
+    }
   });
 });
