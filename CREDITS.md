@@ -18,6 +18,7 @@
 - **dresden-elektronik/deconz-rest-plugin** - deCONZ Tuya support and Data Point Protocol documentation
 
 ## Community Contributors
+- **Bastien house diagnostics, 2026-11-06/07 (redacted, P3265)** — ideas only, no log text copied into the repo. Repeated `JSON.parse` out-of-memory on a two-byte source while the heap sat near 56MB, and a sleepy `_TZ3000_vsxvaj9i`+`TS0043` remote whose Basic read failed locally and was then followed by a raw frame. Ours: one-byte JSON source before parse, and no `sendFrame` after that failure on a sleepy scene remote.
 - **AreAArseth/com.hobeian** - Hobeian Zigbee devices
 - **drenso/com.tuya2** - TypeScript Tuya cloud app (OAuth2 patterns)
 - **JohanBendz** — develop-0.4 engineering notes, reimplemented in our own code (no code copied): unknown-DP log flood guard ([#1501](https://github.com/JohanBendz/com.tuya.zigbee/issues/1501)), colour-temperature safe range + best-effort vendor RGB mode ([#1502](https://github.com/JohanBendz/com.tuya.zigbee/issues/1502)), read-only relay power-on sync ([#1503](https://github.com/JohanBendz/com.tuya.zigbee/issues/1503)), TH05Z identity without sleepy Basic reads (commit 71fc1e29), TH01Z MCU time requests (commit d78ab90a), knob Level Control bound cluster (commit 9045a3c4).
