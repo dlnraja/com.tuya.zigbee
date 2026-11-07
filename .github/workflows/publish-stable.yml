@@ -354,9 +354,9 @@ jobs:
           echo "app_id=$AID" >> "$GITHUB_OUTPUT"
           echo "P2355 uploaded_version=$V app_id=$AID"
       - name: Ensure changelog for current and next patch
-        env:
-          HOMEY_CHANGELOG: 'Reliability improvements.'
         run: node .github/scripts/ensure-next-changelog.js
+      - name: Publish changelog gate
+        run: node scripts/automation/changelog-publish-gate.js
       - name: "🛡️ Stable reliability gates (couple + sacred-keep)"
         run: |
           node tools/ci/anti-bot-regression-gate.js

@@ -278,8 +278,8 @@ jobs:
             try {
               const r=JSON.parse(require('child_process').execSync('node .github/scripts/extract-changelog.js '+process.argv[1],{encoding:'utf8'}).trim());
               process.stdout.write(r.homeyText);
-            } catch(e) { process.stdout.write('Bug fixes and improvements'); }
-          " "$VER" 2>/dev/null || echo "v${VER}: Bug fixes and improvements")
+            } catch(e) { process.stdout.write(''); }
+          " "$VER" 2>/dev/null || true)
           echo "text=$CL" >> $GITHUB_OUTPUT
 
       - name: Determine bump level
@@ -296,7 +296,7 @@ jobs:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
           BUMP_LEVEL: ${{ steps.bump_level.outputs.level }}
           HOMEY_CHANGELOG: ${{ steps.cl.outputs.text }}
-        run: node .github/scripts/athom-version-floor.js --apply && node .github/scripts/bump-homey-version.js && node .github/scripts/athom-version-floor.js --gate
+        run: node .github/scripts/athom-version-floor.js --apply && node .github/scripts/bump-homey-version.js && node .github/scripts/athom-version-floor.js --gate && node scripts/automation/changelog-publish-gate.js
 
       - name: Sync package manifests version
         run: node tools/ci/sync-root-package-version.js sync

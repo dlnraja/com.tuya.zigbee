@@ -13,7 +13,7 @@
 
 const fs = require('fs');
 
-const TEXT = String(process.env.HOMEY_CHANGELOG || 'Reliability improvements.').trim();
+const TEXT = String(process.env.HOMEY_CHANGELOG || '').trim();
 
 function nextPatch(version) {
   const match = String(version || '').match(/^(\d+)\.(\d+)\.(\d+)/);
@@ -31,10 +31,15 @@ function main() {
   // P3069: with no real HOMEY_CHANGELOG given, use a short en + fr line from our own commits; keep newest first.
   let ce = null;
   try { ce = require('../../scripts/automation/changelog-entry'); } catch (_) { ce = null; }
-  const entry = !ce || (process.env.HOMEY_CHANGELOG && !ce.isPlaceholder(TEXT)) ? { en: TEXT } : ce.precise(ce.subjectsSinceLastPublish());
+  let entry = !ce || (TEXT && !ce.isPlaceholder(TEXT)) ? { en: TEXT } : ce.noteForPublish(ce.subjectsSinceLastPublish());
+  if (ce && ce.isPlaceholder(entry && entry.en)) {
+    throw new Error(`changelog refused: ${entry && entry.en}`);
+  }
   for (const version of [current, next]) {
-    if (!changelog[version] || !String(changelog[version].en || '').trim()) {
-      changelog[version] = { ...entry };
+    if (!changelog[version] || !String(changelog[version].en || '').trim() || (ce && ce.isPlaceholder(changelog[version].en))) {
+      const placed = ce ? ce.distinctFromPrevious(changelog, version, { ...entry }) : { ...entry };
+      if (ce && ce.isPlaceholder(placed.en)) {throw new Error(`changelog refused for ${version}: ${placed.en}`);}
+      changelog[version] = placed;
       added.push(version);
     }
   }
