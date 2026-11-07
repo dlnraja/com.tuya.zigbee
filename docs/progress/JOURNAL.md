@@ -3,7 +3,7 @@
 Human-readable log for this branch. Machine state: data/progress/ledger.json. The master branch keeps the full journal. Newest entries first. Times Europe/Paris.
 
 ## 2026-11-07
-- **P3265** reliability port, not a release. Native `JSON.parse`. Fingerprint lookups load one shard; fleet scans do not keep every shard. Exact sleepy-button profiles skip `sendFrame` after a local schema reject. A missing EF00 interview still passive-listens. The OOM file is not identified. Desktop measurement only: full catalog about +4 MB, one shard about +0.03 MB.
+- **P3265** reliability port, not a release. Native `JSON.parse`. Fingerprint lookups load one shard; fleet scans do not keep every shard. Exact sleepy-button profiles skip `sendFrame` after a local schema reject. A missing EF00 interview still passive-listens. The OOM file is not identified. With ~64 MB already live, one shard keeps +19 KB (peak +35 KB) and the full catalog keeps +2.28 MB (peak +4.15 MB). That does not remove the 62 MB live set.
 
 ## 2026-10-25
 - 20:36 (Paris) — **P3052 credits follow the code (stable-v5).** The Switcher-style cards (P2976) cite iBush in lib/flow/FeatureFlowCards.js but CREDITS.md on this branch did not thank him; line added as on master. Guard test `p3052-credits-follow-code-credits`. Docs only, no runtime change.
