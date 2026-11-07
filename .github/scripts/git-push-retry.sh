@@ -109,6 +109,15 @@ for i in $(seq 1 "$ATTEMPTS"); do
     log "master gap < ${GAP_MIN} min (tip $(git rev-parse --short FETCH_HEAD)); waiting ${w}s"; sleep "$w"
   done
   if ! git fetch -q "$REMOTE" "$BRANCH"; then
+    # Stale refs/remotes/$REMOTE/$BRANCH must not hide a branch the remote no longer has.
+    if [ -z "$(git ls-remote "$REMOTE" "refs/heads/$BRANCH")" ]; then
+      if git push -u "$REMOTE" "HEAD:refs/heads/$BRANCH"; then
+        log "pushed new branch $(git rev-parse --short HEAD)"
+        push_tag
+        out true
+        exit 0
+      fi
+    fi
     log "fetch failed (attempt $i/$ATTEMPTS)"
   else
     if git merge-base --is-ancestor HEAD FETCH_HEAD; then log "nothing to push (HEAD already on $REMOTE/$BRANCH)"; push_tag; out false; exit 0; fi
