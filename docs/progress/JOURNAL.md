@@ -3,6 +3,7 @@
 Human-readable log. Machine state: `data/progress/ledger.json` (read it before working, record after; helper `scripts/lib/ledger.js`, CLI `scripts/progress/ledger-cli.js`). Linked checkpoints: `data/leads/resume-checkpoint.json`, `data/leads/deep-read-checkpoint.json`, `data/leads/johan-deep-read-log.json`. Newest entries first. Times Europe/Paris.
 
 ## 2026-11-07
+- **P3267** App diagnostic route recorded. The 18:18 Paris in-app report arrived in the developer notification for `.bastien` 1.0.229. Stdout 17:42–18:16 stays at heap 34 MB with no new crash. Button RX is present; no new battery line. Not a validation of unshipped code. Doc: `docs/rules/APP_DIAGNOSTIC_ROUTING.md`.
 - **P3266** Bastien house view ~18:12 Paris: app memory 64.65 MB is not the V8 heap; 1.12 GB system free does not refute a per-app OOM. TS0043 tile 100% with an empty 7-day graph is not stamped as a fresh report. A stored percent is restored only when `last_battery_from_report` is set. The tile value is not cleared.
 
 
