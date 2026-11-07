@@ -39,6 +39,6 @@ The only button couple written in the Oct 17–Nov 1 logs is `_TZ3000_vsxvaj9i` 
 
 ## Not done
 
-The crashing parse is not named. Nothing here is a release. `bastien-home` and `stable-v5` are not updated by the master work branch until the same patch is reviewed on those trees. P3264, publish holds, and the other November diagnostics stay out of this change.
+The crashing parse is not named. Nothing here is a release. The same source-level change is on the local bastien-home and stable-v5 work branches and has not been pushed. The Athom table that says 0 crashes is not a result. P3264 stays out.
 
 Test: `test/critical/p3265-bastien-json-oom-sleepy-battery.test.js`.
