@@ -1,6 +1,8 @@
 'use strict';
 
 const assert = require('assert');
+const fs = require('fs');
+const path = require('path');
 const test = require('node:test');
 const { missingComposeManufacturers, collectLayerWipes } = require('../../scripts/automation/pre-push-dual-layer-gate');
 
@@ -29,4 +31,19 @@ test('authored empty manufacturerName in both layers is not a wipe', () => {
 test('a zigbee driver with no compose entry is not invented into an error', () => {
   const app = { id: 'orphan_shell', zigbee: { manufacturerName: [] } };
   assert.deepStrictEqual(collectLayerWipes([app], {}), []);
+});
+
+test('a real contact_sensor manufacturer missing from app.json is a wipe', () => {
+  const root = path.join(__dirname, '../..');
+  const compose = JSON.parse(fs.readFileSync(path.join(root, 'drivers/contact_sensor/driver.compose.json'), 'utf8'));
+  const app = JSON.parse(fs.readFileSync(path.join(root, 'app.json'), 'utf8'));
+  const appDriver = (app.drivers || []).find((d) => d.id === 'contact_sensor');
+  assert.ok(appDriver, 'contact_sensor is in app.json');
+  assert.deepStrictEqual(missingComposeManufacturers(appDriver, compose), []);
+  const real = (compose.zigbee.manufacturerName || []).find((m) => typeof m === 'string' && m.startsWith('_T'));
+  assert.ok(real, 'contact_sensor compose has a real _T manufacturer');
+  const stripped = JSON.parse(JSON.stringify(appDriver));
+  stripped.zigbee.manufacturerName = stripped.zigbee.manufacturerName.filter((m) => String(m).toLowerCase() !== real.toLowerCase());
+  const missing = missingComposeManufacturers(stripped, compose);
+  assert.ok(missing.some((m) => m.toLowerCase() === real.toLowerCase()), real);
 });
