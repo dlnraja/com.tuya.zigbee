@@ -124,6 +124,12 @@ jobs:
 
       - name: Bump stable version
         run: |
+          # P3269: no synced change -> no version bump. 5.12.541-543 were empty bumps whose
+          # duplicate note pushed stable over the P3075 changelog ceiling (Node 22 red 07/11).
+          if [ -z "$(git status --porcelain -- . ':(exclude)node_modules')" ]; then
+            echo "Nothing synced from master: no stable version bump."
+            exit 0
+          fi
           # Get current version (strip any legacy -stable suffix: pre-release
           # versions are rejected by `homey app validate --level publish`)
           CURRENT=$(node -e "const c=require('./.homeycompose/app.json');console.log(c.version)")
