@@ -2,6 +2,9 @@
 
 Human-readable log for this branch. Machine state: data/progress/ledger.json. The master branch keeps the full journal. Newest entries first. Times Europe/Paris.
 
+## 2026-11-07
+- **P3265** port of the master reliability patch (not a release). `JSON.parse` stays native. Large loaders record a label and a byte size only. An exact sleepy-button profile does not `sendFrame` after a local Basic schema reject. `noEf00` alone does not take that path, and a missing 0xEF00 interview still arms passive listen. The crashing parse is not named. Doc: `docs/rules/BASTIEN_OOM_SLEEPY_BUTTON_2026-11-07.md`.
+
 ## 2026-10-25
 - 20:36 (Paris) — **P3052 credits follow the code (bastien-home).** The Switcher-style cards (P2976) cite iBush in lib/flow/FeatureFlowCards.js but CREDITS.md on this branch did not thank him; line added as on master. The localtuya behaviour notes (`docs/automation/localtuya-study.md`) were missing on this branch although its LocalTuya code is shipped; added, and the localtuya line added to the Tuya Protocol References. Guard test `p3052-credits-follow-code-credits`. Docs only, no runtime change.
 - 20:45 (Paris) — **P3048 bastien-home Node 22 back to green** (tests and data, additive). Five red checks since P3038c: the curated changelog entry for the next patch is now accepted as on master (P3042b port), two new critical files bind describe/it through the dual runner, the 87 TS0601 couples added by P3038c get their lowercase/canonical pairing forms (driver compose and app.json), and the GL-SPI-206P test keeps the verified long Tuya form (R16 exception, zhc gledopto.ts) apart from its exact list.

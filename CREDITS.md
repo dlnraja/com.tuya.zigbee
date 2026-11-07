@@ -18,6 +18,7 @@
 - **dresden-elektronik/deconz-rest-plugin** - deCONZ Tuya support and Data Point Protocol documentation
 
 ## Community Contributors
+- **Bastien house diagnostics, 2026-11-06/07 (redacted, P3265)** — ideas only, no log text copied into the repo. Repeated `JSON.parse` out-of-memory on a two-byte source while the heap sat near 56MB (file not named by the stack), and a sleepy `_TZ3000_vsxvaj9i`+`TS0043` remote whose Basic read failed locally and was then followed by a raw frame. Ours: native `JSON.parse` kept; a bounded label/size note on large loads; no `sendFrame` after that failure on an exact sleepy-button profile. The crash cause is not claimed fixed.
 - **AreAArseth/com.hobeian** - Hobeian Zigbee devices
 - **drenso/com.tuya2** - TypeScript Tuya cloud app (OAuth2 patterns)
 - **gpmachado** (`gpmachado/com.gpm.homesuite`, GPL-3.0, ideas only — no code copied) — availability last-seen persist + boot grace, rejoin vs timeout (`device_rejoined`), lifecycle `onUninit` teardown, Poll Control skip on sleepy nodes, Homey settings over ZCL dump, jitter/TX pacing (no thundering herd), inching/power-on/backlight re-apply, interview-driven sacred couples, settings-as-labels, connected-devices grouping, rejoin-history settings tab, hide dead firmware settings. Dual-app tags in `.ai/KNOWLEDGE_CACHE.json` → `recentDiscoveries.homesuite`. HomeSuite itself credits **StyraHem / s-dimaio** (Homey.Sonoff.Zigbee) and JohanBendz — acknowledged as HomeSuite’s upstream, not copied here.
