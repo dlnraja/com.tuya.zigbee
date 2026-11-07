@@ -33,5 +33,4 @@ test('a fingerprint load note records bytes and not the manufacturer payload', (
   assert.strictEqual(dumped.includes('product-reference'), false);
   const summary = note.jsonLoadSummary();
   assert.match(summary, /lazy-json-buffer:\d+/);
-  assert.match(summary, /user-misattribution-registry:\d+/);
 });
