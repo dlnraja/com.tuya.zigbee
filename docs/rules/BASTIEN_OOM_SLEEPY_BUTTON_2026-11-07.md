@@ -41,6 +41,10 @@ The only button couple written in the Oct 17–Nov 1 logs is `_TZ3000_vsxvaj9i` 
 
 App memory 64.65 MB on my.homey.app is not the V8 heap. System memory 1.12 GB free of 1.99 GB does not rule out a per-app heap abort. The TS0043 tile showed 100% with an empty 7-day graph. That percent is not stamped as a report. A stored percent is restored only when `last_battery_from_report` is set. A percent already on the tile is not cleared. The 24h interval setting is not a transmission. Developer mode was off. The house was not changed.
 
+## App report, 7 Nov 2026 ~18:18 Paris
+
+Routing proof is `docs/rules/APP_DIAGNOSTIC_ROUTING.md`. The running build is still 1.0.229. From 17:42 to 18:16 the heap sentinel stays at 34 MB. That window has no new crash. The stderr crash blocks are older processes and are not counted again. Button presses arrived; no new battery or voltage line did. This does not validate the unshipped edits.
+
 ## Not done
 
 The crashing parse is not named. Nothing here is a release. This tree is the stable-v5 port. A missing EF00 interview still passive-listens. The Athom crash aggregate of 0 is not a result. P3264 stays out.
