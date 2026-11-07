@@ -94,7 +94,11 @@ if (fs.existsSync(".homeychangelog.json")) {
         try { keep = JSON.parse(fs.readFileSync("config/architecture/bastien-publish-fleet-ssot.json", "utf8")).keepDriverIds; } catch (_) { keep = null; }
       }
       if (!changelogText || ce.isPlaceholder(changelogText)) {
-        entry = ce.noteForPublish(ce.subjectsSinceLastPublish(), { keepDriverIds: keep });
+        const raw = ce.subjectsSinceLastPublish();
+        const subjects = ce.scopeSubjectsToPackage(raw, keep);
+        entry = subjects.length === raw.length
+          ? ce.precise(ce.subjectsSinceLastPublish())
+          : ce.precise(subjects);
       }
       entry = ce.distinctFromPrevious(changelog, nextVersion, entry);
       if (ce.isPlaceholder(entry.en)) {
