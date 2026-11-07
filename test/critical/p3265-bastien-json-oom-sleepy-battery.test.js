@@ -21,6 +21,7 @@ const { sendTuyaMagicPacket, isExactSleepyButtonProfile } = require('../../lib/z
 const { parseJsonBuffer } = require('../../lib/performance/IntelligentLazyLoad');
 const MemwarnGuard = require('../../lib/utils/MemwarnGuard');
 const UnifiedBatteryHandler = require('../../lib/battery/UnifiedBatteryHandler');
+const FingerprintDB = require('../../lib/tuya/DeviceFingerprintDB');
 
 const nativeParse = JSON.parse;
 
@@ -148,6 +149,20 @@ test('battery sentinels stay unknown for the known TS0043 profile inputs', () =>
   assert.strictEqual(UnifiedBatteryHandler.normalizeZigbeeValue(255, opts), null);
   assert.strictEqual(UnifiedBatteryHandler.normalizeZigbeeValue(null, opts), null);
   assert.notStrictEqual(UnifiedBatteryHandler.normalizeZigbeeValue(255, opts), 100);
+});
+
+test('one manufacturer lookup does not retain the whole fingerprint catalog', () => {
+  const before = FingerprintDB.getStatistics().total;
+  const fp = FingerprintDB.getFingerprint('_TZ3000_vd43bbfq');
+  assert.ok(fp && fp.driverId);
+  const resident = FingerprintDB.getStatistics().total;
+  assert.ok(resident - before < 400, `resident grew by ${resident - before}`);
+  for (let i = 0; i < 20; i++) {FingerprintDB.getFingerprint('_TZ3000_vd43bbfq');}
+  assert.strictEqual(FingerprintDB.getStatistics().total, resident);
+  const names = FingerprintDB.getAllManufacturerNames();
+  assert.ok(names.length > 4000, `catalog names ${names.length}`);
+  assert.ok(names.includes('_TZ3000_vd43bbfq'));
+  assert.ok(FingerprintDB.getStatistics().total < 2500, `still resident ${FingerprintDB.getStatistics().total}`);
 });
 
 test('ensureTuyaCluster arms passive listen before reporting a missing EF00 cluster', () => {

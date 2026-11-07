@@ -3,7 +3,7 @@
 Human-readable log for this branch. Machine state: data/progress/ledger.json. The master branch keeps the full journal. Newest entries first. Times Europe/Paris.
 
 ## 2026-11-07
-- **P3265** port of the master reliability patch (not a release). `JSON.parse` stays native. Large loaders record a label and a byte size only. An exact sleepy-button profile does not `sendFrame` after a local Basic schema reject. `noEf00` alone does not take that path, and a missing 0xEF00 interview still arms passive listen. The crashing parse is not named. Doc: `docs/rules/BASTIEN_OOM_SLEEPY_BUTTON_2026-11-07.md`.
+- **P3265** port (not a release). `JSON.parse` stays native. Fingerprint lookups load one shard. A full name or driver scan reads shard files one at a time and does not keep them. Measured on a desktop Node with `--expose-gc`: full catalog about +4 MB, one shard about +0.03 MB. Exact sleepy-button profiles skip `sendFrame` after a local Basic schema reject. A missing 0xEF00 interview still arms passive listen. The crashing parse is not named.
 
 ## 2026-10-25
 - 20:36 (Paris) — **P3052 credits follow the code (bastien-home).** The Switcher-style cards (P2976) cite iBush in lib/flow/FeatureFlowCards.js but CREDITS.md on this branch did not thank him; line added as on master. The localtuya behaviour notes (`docs/automation/localtuya-study.md`) were missing on this branch although its LocalTuya code is shipped; added, and the localtuya line added to the Tuya Protocol References. Guard test `p3052-credits-follow-code-credits`. Docs only, no runtime change.
