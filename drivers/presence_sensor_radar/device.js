@@ -1040,6 +1040,13 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     for (const [dpId, dpConfig] of entries) {
       try {
         if (this._destroyed) {break;}
+        try {
+          const { automatedTxCooling } = require('../../lib/reliability/ZigbeeResilience');
+          if (this.tuyaEF00Manager && automatedTxCooling(this.tuyaEF00Manager)) {
+            this.log('[TX-BREAKER] settings restore stopped: device did not answer');
+            break;
+          }
+        } catch (_br) { /* soft */ }
         let value;
         try { value = this.getSetting(dpConfig.setting); } catch (_e) { continue; }
         if (value === undefined || value === null) {continue;}
