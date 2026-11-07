@@ -31,7 +31,21 @@ function main() {
   // P3069: with no HOMEY_CHANGELOG given, use a short en + fr line from our own commits; keep newest first.
   let ce = null;
   try { ce = require('../../scripts/automation/changelog-entry'); } catch (_) { ce = null; }
-  let entry = !ce || (TEXT && !ce.isPlaceholder(TEXT)) ? { en: TEXT } : ce.noteForPublish(ce.subjectsSinceLastPublish());
+  let entry;
+  if (!ce || (TEXT && !ce.isPlaceholder(TEXT))) {
+    entry = { en: TEXT };
+  } else {
+    const raw = ce.subjectsSinceLastPublish();
+    let keep = null;
+    try {
+      const id = JSON.parse(fs.readFileSync('app.json', 'utf8')).id;
+      if (id === 'com.dlnraja.tuya.zigbee.bastien') {
+        keep = JSON.parse(fs.readFileSync('config/architecture/bastien-publish-fleet-ssot.json', 'utf8')).keepDriverIds;
+      }
+    } catch (_) { keep = null; }
+    const subjects = ce.scopeSubjectsToPackage(raw, keep);
+    entry = subjects.length === raw.length ? ce.precise(ce.subjectsSinceLastPublish()) : ce.precise(subjects);
+  }
   if (ce && ce.isPlaceholder(entry && entry.en)) {
     throw new Error(`changelog refused: ${entry && entry.en}`);
   }
