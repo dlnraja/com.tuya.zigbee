@@ -61,9 +61,9 @@ function basicCluster(behavior) {
 test('JSON.parse is not replaced and keeps reviver plus unicode escapes', () => {
   assert.strictEqual(JSON.parse, nativeParse);
   assert.strictEqual(fs.readFileSync(path.join(__dirname, '../../app.js'), 'utf8').includes('installLatin1JsonParse'), false);
-  const text = '{"room":"s\\u00e9jour","arrow":"temp \\u2192 20","n":2}';
+  const text = '{"word":"caf\\u00e9","arrow":"temp \\u2192 20","n":2}';
   const parsed = JSON.parse(text, (key, value) => (typeof value === 'string' ? value.toUpperCase() : value));
-  assert.strictEqual(parsed.room, 'SÉJOUR');
+  assert.strictEqual(parsed.word, 'CAFÉ');
   assert.strictEqual(parsed.arrow, 'TEMP → 20');
   assert.strictEqual(parsed.n, 2);
   const buf = Buffer.from('{"ok":true,"name":"café"}', 'utf8');
