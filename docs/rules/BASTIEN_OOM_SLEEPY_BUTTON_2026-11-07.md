@@ -37,6 +37,10 @@ The only button couple written in the Oct 17–Nov 1 logs is `_TZ3000_vsxvaj9i` 
 
 `_TZ3000_ltt60asa` + `TS0004` still rejects `backlightMode` / `powerOnState` on standard OnOff. A Tuya DP is sent only when a Tuya cluster exists. Relay on/off is unchanged.
 
+## House view, 7 Nov 2026 ~18:12 Paris
+
+App memory 64.65 MB on my.homey.app is not the V8 heap. System memory 1.12 GB free of 1.99 GB does not rule out a per-app heap abort. The TS0043 tile showed 100% with an empty 7-day graph. That percent is not stamped as a report. A stored percent is restored only when `last_battery_from_report` is set. A percent already on the tile is not cleared. The 24h interval setting is not a transmission. Developer mode was off. The house was not changed.
+
 ## Not done
 
 The crashing parse is not named. Nothing here is a release. This tree is the stable-v5 port. A missing EF00 interview still passive-listens. The Athom crash aggregate of 0 is not a result. P3264 stays out.
