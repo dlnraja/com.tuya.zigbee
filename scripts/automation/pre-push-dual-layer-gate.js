@@ -1,16 +1,14 @@
 #!/usr/bin/env node
 /**
- * pre-push hook — Dual-Layer Anti-AggregateError Gate
- * Installé dans .git/hooks/pre-push via: npm run install:hooks
+ * pre-push hook — dual-layer manufacturer check.
  *
- * BLOQUE le push si:
- *  - Un driver Zigbee a manufacturerName[] vide → AggregateError Athom
- *  - app.json JSON invalide
- *  - Version non synchronisée entre app.json et package.json
+ * Blocks when app.json dropped a manufacturerName that driver.compose.json
+ * still declares. That is the bot wipe this gate was added for.
+ * An authored empty list in both files is a non-pairing shell (productId
+ * may remain; other drivers hold the real couples). It is not filled with
+ * invented names and it is not treated as an AggregateError by itself.
  *
- * EXEMPT:
- *  - Drivers WiFi/LAN (connectivity:lan) → pairing par IP, pas de MF requis
- *  - Drivers virtuels (ir_remote) → pas de hardware pairing
+ * Wi-Fi / virtual drivers have no Zigbee manufacturer list.
  */
 'use strict';
 
@@ -19,76 +17,98 @@ const path = require('path');
 const { execSync } = require('child_process');
 
 const ROOT = path.resolve(__dirname, '../..');
-const C = { R:'\x1b[0m', r:'\x1b[31m', g:'\x1b[32m', y:'\x1b[33m', b:'\x1b[34m', B:'\x1b[1m' };
-
-console.log(C.B + C.b + '\n🔒 PRE-PUSH DUAL-LAYER GATE' + C.R);
-
-// ── 1. Vérifier app.json lisible ────────────────────────────────────────────
-let app;
-try {
-  app = JSON.parse(fs.readFileSync(path.join(ROOT, 'app.json')));
-} catch(e) {
-  console.error(C.r + '❌ app.json invalide JSON: ' + e.message + C.R);
-  process.exit(1);
-}
-
-// ── 2. Vérifier synchro version ─────────────────────────────────────────────
-try {
-  const pkg = JSON.parse(fs.readFileSync(path.join(ROOT, 'package.json')));
-  if (pkg.version !== app.version) {
-    console.warn(C.y + '⚠️  Versions désynchronisées: app.json=' + app.version + ' package.json=' + pkg.version + C.R);
-    console.warn(C.y + '   Correction auto...' + C.R);
-    pkg.version = app.version;
-    fs.writeFileSync(path.join(ROOT, 'package.json'), JSON.stringify(pkg, null, 2) + '\n');
-    try { execSync('git add package.json', { cwd: ROOT }); } catch(e) {}
-  }
-} catch(e) { /* non-bloquant */ }
-
-// ── 3. Dual-Layer Gate ───────────────────────────────────────────────────────
-const WIFI = id => {
-  const s = (id||'').toLowerCase();
-  return s.startsWith('wifi_') || s.includes('ewelink') ||
-         s.includes('sonoff')  || s.includes('radiator_wifi');
-};
-
-const drivers = app.drivers || [];
-const errors  = [];
-const warnings = [];
-const stats   = { zigbee:0, wifi:0, hybrid:0, virtual:0, fp:0 };
+const C = { R: '\x1b[0m', r: '\x1b[31m', g: '\x1b[32m', y: '\x1b[33m', b: '\x1b[34m', B: '\x1b[1m' };
 const SYNTHETIC_MANUFACTURER_RE = /unknown|dummy|placeholder|needs_device_assignment|^_generic_|^_GENERIC_|^_hybrid_|^_HYBRID_|^_master_|^_MASTER_/;
 
-drivers.forEach(d => {
-  const conn  = d.connectivity || [];
-  const hasZ  = !!d.zigbee;
-  const isLan = conn.some(c => ['lan','cloud'].includes(c));
-  const type  = hasZ&&isLan?'hybrid':hasZ?'zigbee':WIFI(d.id)?'wifi':'virtual';
-  stats[type]++;
-  if (d.zigbee?.manufacturerName) stats.fp += d.zigbee.manufacturerName.length;
-  const synthetic = Array.isArray(d.zigbee?.manufacturerName)
-    ? d.zigbee.manufacturerName.filter(m => typeof m === 'string' && SYNTHETIC_MANUFACTURER_RE.test(m))
-    : [];
-  if (synthetic.length > 0 && warnings.length < 12) {
-    warnings.push(d.id + ': ' + synthetic.slice(0, 2).join(', '));
-  }
-  if ((type==='zigbee'||type==='hybrid') && !(d.zigbee?.manufacturerName?.length)) {
-    errors.push('[' + type + '] ' + d.id);
-  }
-});
+function listedManufacturers(driver) {
+  const raw = driver && driver.zigbee && driver.zigbee.manufacturerName;
+  if (!Array.isArray(raw)) {return [];}
+  return raw.filter((m) => typeof m === 'string' && m.trim());
+}
 
-console.log('  v' + app.version + ' | Zigbee:' + stats.zigbee + ' WiFi:' + stats.wifi +
-            ' Hybrid:' + stats.hybrid + ' Virtual:' + stats.virtual + ' FPs:' + stats.fp);
+/**
+ * Manufacturers present in compose and absent from app.json.
+ * Both-empty returns [] — nothing was wiped.
+ * @returns {string[]}
+ */
+function missingComposeManufacturers(appDriver, composeDriver) {
+  const composeMfrs = listedManufacturers(composeDriver);
+  if (!composeMfrs.length) {return [];}
+  if (!appDriver || !appDriver.zigbee) {return composeMfrs.slice();}
+  const appSet = new Set(listedManufacturers(appDriver).map((m) => m.toLowerCase()));
+  return composeMfrs.filter((m) => !appSet.has(m.toLowerCase()));
+}
 
-if (errors.length === 0) {
-  if (warnings.length > 0) {
-    console.warn(C.y + '  ⚠️  Synthetic manufacturer identifiers found in source; prepare-publish must prune them to reduce upload size:' + C.R);
-    warnings.forEach(w => console.warn(C.y + '    - ' + w + C.R));
+function collectLayerWipes(appDrivers, composeById) {
+  const errors = [];
+  for (const d of appDrivers || []) {
+    if (!d || !d.id || !d.zigbee) {continue;}
+    const missing = missingComposeManufacturers(d, composeById[d.id]);
+    if (missing.length) {
+      errors.push(`[zigbee] ${d.id} lost ${missing.length} compose manufacturerName`);
+    }
   }
-  console.log(C.g + '  ✅ Dual-Layer PASS — Zéro AggregateError' + C.R);
-  process.exit(0);
-} else {
-  console.error(C.r + C.B + '\n  ❌ PUSH BLOQUÉ — AggregateError détecté sur ' + errors.length + ' drivers Zigbee:' + C.R);
-  errors.forEach(e => console.error(C.r + '    ❌ ' + e + C.R));
-  console.error(C.y + '\n  Fix: npm run master:fix' + C.R);
-  console.error(C.y + '  Puis: git add app.json && git commit -m "fix: restore MFs" && git push' + C.R);
+  return errors;
+}
+
+function loadComposeById(root) {
+  const dir = path.join(root, 'drivers');
+  const out = {};
+  let names = [];
+  try { names = fs.readdirSync(dir); } catch { return out; }
+  for (const id of names) {
+    const p = path.join(dir, id, 'driver.compose.json');
+    if (!fs.existsSync(p)) {continue;}
+    try { out[id] = JSON.parse(fs.readFileSync(p, 'utf8')); } catch { /* unreadable compose is not a silent pass */ }
+  }
+  return out;
+}
+
+function main() {
+  console.log(`${C.B}${C.b}\n🔒 PRE-PUSH DUAL-LAYER GATE${C.R}`);
+  let app;
+  try {
+    app = JSON.parse(fs.readFileSync(path.join(ROOT, 'app.json')));
+  } catch (e) {
+    console.error(`${C.r}❌ app.json invalide JSON: ${e.message}${C.R}`);
+    process.exit(1);
+  }
+  try {
+    const pkg = JSON.parse(fs.readFileSync(path.join(ROOT, 'package.json')));
+    if (pkg.version !== app.version) {
+      console.warn(`${C.y}⚠️  Versions désynchronisées: app.json=${app.version} package.json=${pkg.version}${C.R}`);
+      pkg.version = app.version;
+      fs.writeFileSync(path.join(ROOT, 'package.json'), `${JSON.stringify(pkg, null, 2)}\n`);
+      try { execSync('git add package.json', { cwd: ROOT }); } catch { /* not a git checkout */ }
+    }
+  } catch { /* package.json optional for the manufacturer check */ }
+
+  const warnings = [];
+  let fp = 0;
+  for (const d of app.drivers || []) {
+    const mfrs = listedManufacturers(d);
+    fp += mfrs.length;
+    const synthetic = mfrs.filter((m) => SYNTHETIC_MANUFACTURER_RE.test(m));
+    if (synthetic.length && warnings.length < 12) {
+      warnings.push(`${d.id}: ${synthetic.slice(0, 2).join(', ')}`);
+    }
+  }
+  const errors = collectLayerWipes(app.drivers, loadComposeById(ROOT));
+  console.log(`  v${app.version} | drivers:${(app.drivers || []).length} FPs:${fp}`);
+  if (!errors.length) {
+    for (const w of warnings) {console.warn(`${C.y}    - ${w}${C.R}`);}
+    console.log(`${C.g}  ✅ Dual-Layer PASS — compose manufacturers still in app.json${C.R}`);
+    process.exit(0);
+  }
+  console.error(`${C.r}${C.B}\n  ❌ PUSH BLOQUÉ — ${errors.length} driver(s) lost compose manufacturerName:${C.R}`);
+  for (const e of errors) {console.error(`${C.r}    ❌ ${e}${C.R}`);}
   process.exit(1);
 }
+
+module.exports = {
+  listedManufacturers,
+  missingComposeManufacturers,
+  collectLayerWipes,
+};
+
+if (require.main === module) {main();}
