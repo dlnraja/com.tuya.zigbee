@@ -19,6 +19,7 @@ describe('ZigbeeResilience', () => {
     await assert.rejects(retryOnceWithJitter(async () => { n++; throw new Error('invalid value'); }, { sleep: async () => {} }));
     assert.strictEqual(n, 1);
     assert.ok(isReachabilityError(new Error('MAC_NO_ACK')));
+    assert.ok(isReachabilityError(new Error("Impossible de joindre l'appareil. Est-il allumé ?")));
   });
 
   it('learns the interval, marks unavailable only after 3 missed intervals', () => {
