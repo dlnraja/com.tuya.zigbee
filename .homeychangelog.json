@@ -1111,6 +1111,10 @@
     "en": "CRITICAL: sdkVersion fix (Processing failed), Missing Capability Listener (setable:false), timer fallback, battery restore, duplicate method fix, HOBEIAN ZG-301Z, NFKD normalize, 87 fingerprints restored, Polos validator",
     "fr": "CRITIQUE: sdkVersion (Processing failed), Missing Capability Listener, fallback timer, batterie, HOBEIAN, NFKD, 87 fingerprints, Polos"
   },
+  "5.12.544": {
+    "en": "Next stable update in preparation: this note is replaced by the list of its changes when the version is published.",
+    "fr": "Prochaine mise à jour stable en préparation : cette note est remplacée par la liste de ses changements à la publication."
+  },
   "5.12.543": {
     "en": "Version 5.12.543 only moves the version number: the daily sync from the development app found no device change to bring over.",
     "fr": "La version 5.12.543 change seulement le numéro : la synchronisation quotidienne avec l’app de développement n’a trouvé aucun changement d’appareil à reprendre."
