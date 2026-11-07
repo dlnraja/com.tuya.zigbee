@@ -270,9 +270,9 @@ jobs:
           echo "app_id=$AID" >> "$GITHUB_OUTPUT"
           echo "P2355 uploaded_version=$V app_id=$AID"
       - name: Ensure changelog for current and next patch
-        env:
-          HOMEY_CHANGELOG: 'Reliability improvements.'
         run: node .github/scripts/ensure-next-changelog.js
+      - name: Publish changelog gate
+        run: node scripts/automation/changelog-publish-gate.js
       # P2906: anti-bot + P2138 via the shared rules-gates action when present (fallback: direct scripts).
       - name: "🛡️ Stable reliability gates (anti-bot + P2138, shared rules-gates)"
         if: hashFiles('scripts/ci/rules-gates.js') != '' && hashFiles('.github/actions/rules-gates/action.yml') != ''
