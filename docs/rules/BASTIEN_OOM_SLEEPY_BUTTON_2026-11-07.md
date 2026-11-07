@@ -45,6 +45,29 @@ my.homey.app showed `com.dlnraja.tuya.zigbee.bastien` 1.0.229 Test, auto update 
 
 The button code treated any tile percent above 0 as fresh and, when `last_battery_time` was missing, wrote the current time. That made a default or leftover 100% look like a report for 24 hours and skipped the radio, which is still right for a sleepy coin cell. The stamp is gone. A stored percent is painted only when a sample path set `last_battery_from_report`. A percent already on the tile is not cleared and not replaced.
 
+## App report, 7 Nov 2026 ~18:18 Paris
+
+Routing proof is `docs/rules/APP_DIAGNOSTIC_ROUTING.md`. The running build is still 1.0.229. From 17:42 to 18:16 the heap sentinel stays at 34 MB. That window has no new crash. The stderr crash blocks are older processes (about 19–21 s in this receipt; longer ones exist on 6 Nov) and are not counted again. Button presses arrived; no new battery or voltage line did. This does not validate the unshipped edits.
+
+## AggregateError and the runtime OOM, measured 7 Nov 2026
+
+These are different symptoms. That does not decide whether they share a cause. Ledger figures, not a new theory:
+
+| Artifact | Result | Manifest |
+|---|---|---|
+| 9.0.1604 build 3686 | Test | 347 drivers, app.json 3,328,185 bytes |
+| 9.0.1602 build 3684 | processing_failed AggregateError | 361 drivers, archive 33.06 MB, 4030 files |
+| 9.0.1616 | processing_failed AggregateError | app.json 3,110,579 bytes, 477 drivers, 126,275 combos |
+| This tree now | not an Athom result | app.json 3,107,307 bytes, 476 drivers, 18,743 manufacturer entries, 829,415 mfr×pid products, JSON.parse heap about +12.9 MB |
+
+What supports a shared growth path: both show up as generated JSON gets large. Athom refused bigger driver sets. The crash is `JSON.parse` with no JavaScript caller, during startup (about 19–21 s on the historical blocks). Homey keeps `app.json` as the manifest. A second copy of that object plus driver modules can sit in the same heap the store processor also walks.
+
+What argues against one cause: accepted 9.0.1604 had a larger app.json (3.33 MB) than rejected 9.0.1616 (3.11 MB). An earlier note records 446 published drivers at 2.39 MB as accepted, so 347 is the last Test count in that October note, not a proven ceiling. A byte-identical 9.0.1574 archive reached Test and later failed the same way on re-upload. The live 1.0.229 process sat at a 34 MB heap sample for half an hour with no crash. The historical abort is a different moment, near 62 MB. Do not subtract those figures. One fingerprint shard is about +20 KB retained. The full catalog is about +2.3 MB. Neither number is the 62 MB live set.
+
+Under a 50 MB heap the one-shard lookup deleted its own keys and returned no driver. That is a real bug on the memory path. It is fixed by keeping the shard just loaded. It is not evidence that Athom's AggregateError is that bug.
+
+Run 42393708150 (Auto-Publish on Push, master, 7 Nov 2026 16:55Z) is success because the breaker job finished. The publish job was skipped. The P3036 step wrote a deferred marker. That green run is not an upload and not a Test build.
+
 ## Not done
 
 The crashing parse is not named. Nothing here is a release. The same source-level change is on the local bastien-home and stable-v5 work branches and has not been pushed. The Athom table that says 0 crashes is not a result. P3264 stays out.
