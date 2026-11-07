@@ -4312,6 +4312,18 @@
   "5.12.0": {
     "en": "v5.12.0: stable-v5 batch sync (drivers, FPs, flows, manifest) from master v9.0.240–v9.0.260."
   },
+  "1.0.230": {
+    "en": "Git version caught up with Test 1.0.230. That build keeps the fingerprint shard a lookup just loaded. The git version file had stayed at 1.0.227 because the publish write-back did not land.",
+    "fr": "Le numero git rattrape la version Test 1.0.230. Cette build conserve le shard d'empreinte qu'une recherche vient de charger. Le fichier git etait reste en 1.0.227 faute de reecriture apres publication."
+  },
+  "1.0.229": {
+    "en": "Changelog write-back for the build already published as 1.0.229.",
+    "fr": "Note de version pour la build deja publiee en 1.0.229."
+  },
+  "1.0.228": {
+    "en": "Changelog write-back for the build already published as 1.0.228.",
+    "fr": "Note de version pour la build deja publiee en 1.0.228."
+  },
   "1.0.227": {
     "en": "Fixed: humidity shown 10 times too low on climate sensors whose Zigbee humidity is reported in tenths of a percent (9 drivers, GH#581).",
     "fr": "Corrigé : humidité affichée 10 fois trop basse sur les capteurs d'ambiance qui envoient l'humidité Zigbee en dixièmes de pourcent (9 drivers, GH#581)."
