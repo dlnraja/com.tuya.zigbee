@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-07T16:49:03.240Z",
+ "updated": "2026-11-07T16:53:24.361Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -6297,7 +6297,7 @@
    "status": "in-progress",
    "date": "2026-11-07",
    "hash": "a1312c87abf86afa",
-   "note": "P3265: JSON.parse two-byte OOM narrowed; sleepy scene remote skips sendFrame after local schema reject. Not published.",
+   "note": "P3265: OOM file still unknown. JSON.parse left native. Large-load label/size ring only. Exact sleepy-button profile skips sendFrame after local schema reject; incomplete interview still passive-listens.",
    "by": "p3265",
    "kind": "diagnostic",
    "mailDate": "2026-11-07T11:11:05.000Z",
@@ -6555,7 +6555,7 @@
    "status": "in-progress",
    "date": "2026-11-07",
    "hash": "de0dc1683fd7528d",
-   "note": "P3265: JSON.parse two-byte OOM narrowed; sleepy scene remote skips sendFrame after local schema reject. Not published.",
+   "note": "P3265: OOM file still unknown. JSON.parse left native. Large-load label/size ring only. Exact sleepy-button profile skips sendFrame after local schema reject; incomplete interview still passive-listens.",
    "by": "p3265",
    "kind": "diagnostic",
    "mailDate": "2026-11-06T18:04:32.000Z",
