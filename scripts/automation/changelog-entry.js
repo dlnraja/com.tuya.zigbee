@@ -21,7 +21,7 @@ try { RW = require('../lib/report-writer'); } catch (_) { RW = null; }
 const VER_RE = /^\d+\.\d+\.\d+$/;
 // Old generic texts that say nothing about the build; an entry made only of one of these gets refilled.
 const PLACEHOLDER_RE = [/^y{20,}$/i, /^v\d+\.\d+\.\d+:\s*$/, /automated publish, manifest sync/i,
-  /^(v\d+\.\d+\.\d+:\s*)?(Bug fixes and improvements|Reliability improvements|Device compatibility and reliability improvements)\.?$/i];
+  /^(v\d+\.\d+\.\d+:\s*)?(Bug fixes and improvements|Reliability improvements|Reliability fixes|Device compatibility and reliability improvements|Stability improvements and Homey test publication retry)\.?$/i];
 const USER_TYPES = new Set(['fix', 'feat', 'perf']);
 
 function isPlaceholder(text) {
@@ -144,6 +144,37 @@ function distinctFromPrevious(obj, version, entry) {
   return out;
 }
 
+/** Driver paths named in a commit. A subject with none is package-wide. */
+function driverIdsInSubject(subject) {
+  return [...String(subject || '').matchAll(/drivers\/([a-z0-9_]+)/gi)].map((m) => m[1].toLowerCase());
+}
+
+/**
+ * Bastien's packed app keeps a driver allow-list. A commit that names only
+ * drivers outside that list must not be told to the house as a device fix.
+ * Subjects with no driver path stay (shared runtime). No list means every subject stays.
+ */
+function scopeSubjectsToPackage(subjects, keepDriverIds) {
+  if (!Array.isArray(keepDriverIds) || !keepDriverIds.length) {return subjects || [];}
+  const keep = new Set(keepDriverIds.map((id) => String(id).toLowerCase()));
+  return (subjects || []).filter((s) => {
+    const named = driverIdsInSubject(s);
+    if (!named.length) {return true;}
+    return named.some((id) => keep.has(id));
+  });
+}
+
+/** The note a publish is allowed to upload. Placeholder env text never wins. */
+function noteForPublish(subjects, options = {}) {
+  const scoped = scopeSubjectsToPackage(subjects, options.keepDriverIds);
+  const entry = precise(scoped);
+  if (entry && !isPlaceholder(entry.en)) {return entry;}
+  return {
+    en: 'Maintenance release: checks, tests and build tooling only; devices behave as before.',
+    fr: 'Version de maintenance : contrôles, tests et outillage uniquement ; les appareils se comportent comme avant.',
+  };
+}
+
 /** Fill the entry for `version` when missing or placeholder; always re-order. Returns { changed, entry }. */
 function updateChangelog(obj, version, subjects) {
   const cur = obj[version];
@@ -158,7 +189,11 @@ function updateChangelog(obj, version, subjects) {
   return { changed, obj: ordered, entry: ordered[version] };
 }
 
-module.exports = { specific, isPlaceholder, orderChangelog, summarize, precise, subjectsSinceLastPublish, updateChangelog, cmpVer, BUMP_SUBJECT };
+module.exports = {
+  specific, isPlaceholder, orderChangelog, summarize, precise, subjectsSinceLastPublish,
+  updateChangelog, cmpVer, BUMP_SUBJECT, driverIdsInSubject, scopeSubjectsToPackage,
+  noteForPublish, distinctFromPrevious,
+};
 
 if (require.main === module) {
   const arg = (n) => { const i = process.argv.indexOf(n); return i > 0 ? process.argv[i + 1] : undefined; };
