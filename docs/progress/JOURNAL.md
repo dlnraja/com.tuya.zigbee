@@ -3,6 +3,9 @@
 Human-readable log. Machine state: `data/progress/ledger.json` (read it before working, record after; helper `scripts/lib/ledger.js`, CLI `scripts/progress/ledger-cli.js`). Linked checkpoints: `data/leads/resume-checkpoint.json`, `data/leads/deep-read-checkpoint.json`, `data/leads/johan-deep-read-log.json`. Newest entries first. Times Europe/Paris.
 
 ## 2026-11-07
+- **P3266** Bastien house view ~18:12 Paris: app memory 64.65 MB is not the V8 heap; 1.12 GB system free does not refute a per-app OOM. TS0043 tile 100% with an empty 7-day graph is not stamped as a fresh report. A stored percent is restored only when `last_battery_from_report` is set. The tile value is not cleared.
+
+
 
 - **P3265 Bastien 1.0.229, OOM not identified** (redacted diags, Homey Pro 2023 / 13.5.3). Nov 6 has four SIGABRT and Nov 7 has three, all inside `JSON.parse` of a two-byte string. Heap stays at 55–56MB after MEMWARN, so the named caches are not the retainer. The stack names no file. A global `JSON.parse` rewrite was removed. Measured here: with ~63.9 MB already live and `--max-old-space-size=66`, keeping the full fingerprint catalog is +2.28 MB (peak +4.15 MB) and keeping shard `TZ3000_v` is +19 KB (peak +35 KB). Empty-process figures: catalog +3.96 MB, one shard +0.03 MB. Lookups now load one shard. A full name or driver scan reads shards one file at a time and does not keep them. `JSON.parse` stays native. Exact sleepy-button profiles skip the `sendFrame` fallback after a local Basic schema reject; `noEf00` alone does not; passive EF00 listen on a missing interview stays. Not a Homey measurement and not a claim that the crash is fixed. Doc: `docs/rules/BASTIEN_OOM_SLEEPY_BUTTON_2026-11-07.md`. Test: `test/critical/p3265-bastien-json-oom-sleepy-battery.test.js`.
 

@@ -37,6 +37,14 @@ The only button couple written in the Oct 17–Nov 1 logs is `_TZ3000_vsxvaj9i` 
 
 `_TZ3000_ltt60asa` + `TS0004` still rejects `backlightMode` / `powerOnState` on standard OnOff. A Tuya DP is sent only when a Tuya cluster exists. Relay on/off is unchanged.
 
+## House view, 7 Nov 2026 ~18:12 Paris
+
+my.homey.app showed `com.dlnraja.tuya.zigbee.bastien` 1.0.229 Test, auto update on. The app memory figure was 64.65 MB and app storage 24.07 MB. System memory was 1.12 GB free of 1.99 GB. That app memory figure is Homey's process figure. It is not the V8 heap in the crash (Mark-Compact staying near 62 MB, limit about 66–69 MB). Free system RAM does not rule out a per-app heap abort. No per-app CPU or crash history was on that screen. Developer mode was off. Nothing on the house was changed.
+
+`_TZ3000_vsxvaj9i` + `TS0043` showed 100% battery. Its 7-day capability graph had no sample, so that 100% is not a proven new report. The battery settings (automatic detection, 20/10% thresholds, 24h report interval) are settings, not a radio transmission. The app insight logs for battery, commands, errors, offline and Zigbee health were also empty for 7 days, so an empty graph is not unique to this button.
+
+The button code treated any tile percent above 0 as fresh and, when `last_battery_time` was missing, wrote the current time. That made a default or leftover 100% look like a report for 24 hours and skipped the radio, which is still right for a sleepy coin cell. The stamp is gone. A stored percent is painted only when a sample path set `last_battery_from_report`. A percent already on the tile is not cleared and not replaced.
+
 ## Not done
 
 The crashing parse is not named. Nothing here is a release. The same source-level change is on the local bastien-home and stable-v5 work branches and has not been pushed. The Athom table that says 0 crashes is not a result. P3264 stays out.
