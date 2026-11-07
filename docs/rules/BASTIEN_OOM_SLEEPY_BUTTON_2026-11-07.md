@@ -11,20 +11,21 @@ A global `JSON.parse` rewrite was tried and removed. Escaping non-Latin-1 charac
 
 Shipped loaders that already refuse their own large files when the heap is critical (`driver-mapping-database`, fingerprint sources, the misattribution registry) now record a label and a byte size in a 24-entry ring. MEMWARN appends that summary. The ring stores no document text and drops any label that is not a short token. The next diagnostic can show which of these loads ran. It cannot, by itself, prove which parse aborted.
 
-## Measured on this machine (node --expose-gc, 2026-11-07)
+## Measured on this machine (2026-11-07)
 
-Not a Homey, not a field soak. Peak is `heapUsed` after the parse, before a forced collection.
+Not a Homey and not a field soak. Athom build 237 (1.0.229) shows Mark-Compact staying at 62.1→62.1 MB and 62.3→61.9 MB, with a reported heap limit around 66–69 MB and an empty JavaScript stack. That is a live set. It does not name one JSON value. The dashboard aggregate of 0 crashes is wrong while those two manual rows exist, so it is not used as a result. The master build table did not load; no master upload is claimed. Stable Test on that dashboard is build 418, 5.12.538.
 
-| Workload | Input | Heap delta |
-|---|---|---|
-| `JSON.parse` of `lib/tuya/fingerprints.json` kept | 931278 bytes, 5776 keys | +3.96 MB |
-| `JSON.parse` of shard `TZ3000_v.json` kept | 6897 bytes, 42 keys | +0.03 MB |
-| Same shard, then drop and collect | | back to 0 |
-| Every shard merged and kept | 5780 keys | +3.06 MB |
-| `JSON.parse` of `driver-mapping-database.json` | 637709 bytes | +2.79 MB |
-| `JSON.parse(JSON.stringify(...))` of that object | extra copy | +2.39 MB |
+| Workload | Result |
+|---|---|
+| Empty process, `JSON.parse` of `lib/tuya/fingerprints.json` kept | +3.96 MB, 5776 keys |
+| One shard `TZ3000_v.json` kept, then collected | +0.03 MB, then 0 |
+| Every shard merged and kept | +3.06 MB, 5780 keys |
+| `driver-mapping-database.json` parsed and kept | +2.79 MB |
+| Deep clone of that object via `JSON.parse(JSON.stringify)` | +2.39 MB more |
+| ~63.9 MB pad already live, then the full catalog (`--max-old-space-size=66`) | +2.28 MB kept, peak +4.15 MB. It still fit in this Node. |
+| Same pad, then only `TZ3000_v.json` | +19 KB kept, peak +35 KB |
 
-Parsing every shard at once on one thread did not beat the monolith. Keeping them all did. The live database therefore loads one manufacturer shard on lookup and no longer bulk-merges the rest. A name or driver scan still reads each shard file in order and drops it, so the list stays complete without the 3 MB retain. Parallel loads were not used.
+A sequential read of every shard while that pad was live peaked about as high as the monolith, so a fleet scan must not run during device init. Parallel parses were not used. The retained win is one shard instead of the catalog. It does not, by itself, bring a 62 MB live set down to a comfortable floor. The caller of the failing `JSON.parse` is still unknown.
 
 ## Sleepy button
 
