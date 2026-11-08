@@ -336,6 +336,14 @@ function isCodeFile(f) { return CODE_FILE_RE.test(String(f || '')); }
 // that only touches them is build-identical for the tip-adoption decision (scripts/kb, tests, CI scripts).
 const NON_BUILD_RE = /^(\.github|scripts|tools|test|tests|docs|reports|tmp|backups)\//i;
 function isBuildInputFile(f) { const s = String(f || ''); return isCodeFile(s) && !NON_BUILD_RE.test(s); }
+// 2026-11-08: stable 96eea5011b only rewrote app.json and the gate reused the red Node 22 run of
+// 99cf746d46 (p2974 --check). app.json is not a code file, so a manifest change must still stale CI.
+// A version-only line does not (write-back). driver.compose.json is the same class of packed manifest.
+const CI_MANIFEST_RE = /^(?:app\.json|\.homeycompose\/app\.json|drivers\/[^/]+\/driver\.compose\.json)$/;
+function affectsCiIdentity(file) {
+  const s = String(file || '').replace(/\\/g, '/');
+  return isBuildInputFile(s) || CI_MANIFEST_RE.test(s);
+}
 
 // Files that can change the Homey tarball. .github, scripts and tests cannot.
 const PACKED_RE = /^(?:app\.js|api\.js|app\.json|package(?:-lock)?\.json|\.homeycompose\/|\.homeychangelog\.json|drivers\/|lib\/|capabilities\/|settings\/|locales\/|assets\/|config\/|workers\/)/;
@@ -343,11 +351,22 @@ function packedPayloadChanged(files) {
   return (files || []).some((f) => PACKED_RE.test(String(f || '').replace(/\\/g, '/')));
 }
 
+// One word for the run summary. A skipped upload is not a published build.
+// Observed: breaker skip on #3699, identical-payload skip, CI hold, and "OK: vX in test".
+function publishDisposition({ breakerSkip, gateGo, payloadChanged, athomFinal } = {}) {
+  if (breakerSkip === true) return 'skipped-breaker';
+  if (gateGo === false) return 'held';
+  if (payloadChanged === false) return 'skipped-identical';
+  if (/in test/i.test(String(athomFinal || ''))) return 'uploaded-test';
+  if (athomFinal) return 'uploaded-unconfirmed';
+  return 'unknown';
+}
+
 module.exports = {
   POLICY_VERSION, APPS, RETRY, TRANSIENT_RE, CODE_FILE_RE,
   appPolicy, appIdForKey, classify, backoffSeconds, retryDecision,
   singleRetryExempt, breakerAssess, retryCountOf, slotDecision, busyBuild, uploadEvents, crossAppEvents,
-  evaluateCi, missingCiAction, runState, isCodeFile, isBuildInputFile, packedPayloadChanged, isTrue, versionOnlyDiff,
+  evaluateCi, missingCiAction, runState, isCodeFile, isBuildInputFile, affectsCiIdentity, packedPayloadChanged, publishDisposition, isTrue, versionOnlyDiff,
 };
 
 // ── CLI ──────────────────────────────────────────────────────────────────────────────────────
@@ -409,7 +428,8 @@ function localCodeChanged(from, to, pick = isCodeFile) {
   try {
     const files = git(['diff', '--no-renames', '--name-only', from, to]).split('\n').filter(Boolean);
     return files.filter(pick).some((f) => {
-      if (!/(^|\/)package(-lock)?\.json$/i.test(f)) return true;
+      const norm = String(f).replace(/\\/g, '/');
+      if (!/(^|\/)(?:package(?:-lock)?\.json|app\.json|\.homeycompose\/app\.json)$/i.test(norm)) return true;
       try { return !versionOnlyDiff(git(['diff', '--no-renames', '-U0', from, to, '--', f])); } catch { return true; }
     });
   } catch { return null; }
@@ -447,12 +467,14 @@ async function ciGate(appId) {
       for (const r of runsByWorkflow[wf]) {
         const i = ancestry.indexOf(r.head_sha);
         if (i > 0 && !diffCache.has(r.head_sha)) {
-          let ch = viaGit ? localCodeChanged(r.head_sha, sha) : null;
+          let ch = viaGit ? localCodeChanged(r.head_sha, sha, affectsCiIdentity) : null;
           if (ch === null && !viaGit) {
             try {
               const c = await gh(`/repos/${repo}/compare/${r.head_sha}...${sha}`);
               const files = c.files || [];
-              ch = files.length >= 300 ? (files.some((f) => isCodeFile(f.filename)) ? true : null) : files.some((f) => isCodeFile(f.filename));
+              const idFiles = files.filter((f) => affectsCiIdentity(f.filename));
+              if (files.length >= 300) ch = idFiles.length ? true : null;
+              else ch = idFiles.some((f) => !f.patch || !versionOnlyDiff(f.patch));
             } catch { ch = null; }
           }
           diffCache.set(r.head_sha, ch);
@@ -467,9 +489,9 @@ async function ciGate(appId) {
       try { tip = (await gh(`/repos/${repo}/commits/${encodeURIComponent(branch)}`)).sha; } catch { /* unknown tip: keep the old behaviour */ }
       let tipSame = null;
       if (tip && tip !== sha && !ancestry.includes(tip)) {
-        if (viaGit) tipSame = localCodeChanged(sha, tip, isBuildInputFile) === false;
+        if (viaGit) tipSame = localCodeChanged(sha, tip, affectsCiIdentity) === false;
         if (!viaGit || tipSame === null) {
-          try { const c = await gh(`/repos/${repo}/compare/${sha}...${tip}`); const fl = c.files || []; tipSame = fl.length < 300 && !fl.some((f) => isBuildInputFile(f.filename)); } catch { tipSame = null; }
+          try { const c = await gh(`/repos/${repo}/compare/${sha}...${tip}`); const fl = c.files || []; tipSame = fl.length < 300 && !fl.some((f) => affectsCiIdentity(f.filename) && (!f.patch || !versionOnlyDiff(f.patch))); } catch { tipSame = null; }
         }
       }
       const act = missingCiAction({ state: last.state, sha, tip, tipCodeIdentical: tipSame });
