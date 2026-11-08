@@ -310,15 +310,21 @@ jobs:
       # WHY(2026-10-04): stable runs 37166982598 / 37168670987 re-uploaded 5.12.359 and Homey
       # rejected it as "already published", so fixes never reached Test. Every stable publish now
       # gets a fresh patch version (app ID untouched); the version is committed back after upload.
+      - name: Packed payload changed since the last version bump
+        id: payload
+        run: node .github/scripts/athom-publish-policy.js payload-changed
       - name: Bump stable patch version
+        if: steps.payload.outputs.changed == 'true'
         id: bump
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         # WHY(2026-10-10 user rule): strictly incremental vs highest Athom build ever uploaded.
         run: node .github/scripts/athom-version-floor.js --apply && node .github/scripts/stable-version-bump.js bump && node .github/scripts/athom-version-floor.js --gate && node scripts/automation/changelog-publish-gate.js
       - name: Build App
+        if: steps.payload.outputs.changed == 'true'
         run: npx homey app build
       - name: Sanitize Built Manifest
+        if: steps.payload.outputs.changed == 'true'
         run: |
           node scripts/maintenance/fix-large-images.js
           node scripts/maintenance/optimize-build-images.cjs
@@ -327,6 +333,7 @@ jobs:
       # P94: Homey build regenerates app.json from .homeycompose; package.json can lag.
       # Align package.json (+ root app.json) to built version before prepare-publish guard.
       - name: Sync versions after Homey build
+        if: steps.payload.outputs.changed == 'true'
         run: |
           node -e '
             const fs = require("fs");
@@ -347,6 +354,7 @@ jobs:
       # WHY(P2355): export post-build version so promote job does not use stale checkout app.json
       - name: Export uploaded version
         id: uploaded_version
+        if: steps.payload.outputs.changed == 'true'
         run: |
           V=$(node -p "require('./.homeybuild/app.json').version || require('./app.json').version")
           AID=$(node -p "require('./app.json').id")
@@ -354,10 +362,13 @@ jobs:
           echo "app_id=$AID" >> "$GITHUB_OUTPUT"
           echo "P2355 uploaded_version=$V app_id=$AID"
       - name: Ensure changelog for current and next patch
+        if: steps.payload.outputs.changed == 'true'
         run: node .github/scripts/ensure-next-changelog.js
       - name: Publish changelog gate
+        if: steps.payload.outputs.changed == 'true'
         run: node scripts/automation/changelog-publish-gate.js
       - name: "🛡️ Stable reliability gates (couple + sacred-keep)"
+        if: steps.payload.outputs.changed == 'true'
         run: |
           node tools/ci/anti-bot-regression-gate.js
           node tools/ci/p2138-sacred-couple-matrix-gate.js
@@ -365,27 +376,33 @@ jobs:
           npm run check:p2494
           npm run check:p2495
       - name: "🛡️ Fingerprint collision + workflow YAML gates (ported from master)"
+        if: steps.payload.outputs.changed == 'true'
         run: |
           npm run check:p2728
           npm run check:yaml
       - name: "📦 Publish payload size report (non-blocking)"
+        if: steps.payload.outputs.changed == 'true'
         continue-on-error: true
         run: node scripts/ci/publish-size-gate.cjs || echo "::warning::Publish payload size above the soft limit (see report above)"
       - name: Prepare Publish Directory
+        if: steps.payload.outputs.changed == 'true'
         run: npm run prepare-publish
 
       - name: Footprint report (ROM/RAM, warn-only)
+        if: steps.payload.outputs.changed == 'true'
         continue-on-error: true
         run: node scripts/ci/footprint-report.js || true
       # WHY(ported from master c25f077831/45a2d8f1a9): never upload while a stable build is still processing
       # (Athom invalid_state). Bounded 12 min inside a 25 min step; never fails the job.
       - name: Wait for Athom idle (previous stable build final)
+        if: steps.payload.outputs.changed == 'true'
         continue-on-error: true
         timeout-minutes: 25
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: node .github/scripts/wait-athom-idle.js
       - name: Publish to Draft
+        if: steps.payload.outputs.changed == 'true'
         id: publish
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
@@ -470,6 +487,7 @@ jobs:
           fi
           echo "Draft publish completed (v$V)"
       - name: Re-upload when Athom processing fails (fresh higher version)
+        if: steps.payload.outputs.changed == 'true'
         # WHY: build #272 (v5.12.360) and #267-#270 were Athom-side processing_failed
         # "socket hang up". Owner rule (2026-10-10): versions are strictly increasing and a
         # version already sent to Athom is NEVER re-uploaded -> each retry bumps patch first.
@@ -533,6 +551,7 @@ jobs:
           if-no-files-found: ignore
           retention-days: 90
       - name: Commit stable version back
+        if: steps.payload.outputs.changed == 'true'
         if: steps.publish.outputs.uploaded == 'true'
         run: |
           cd "$GITHUB_WORKSPACE"
@@ -582,7 +601,7 @@ jobs:
     name: "Promote to Test"
     needs: [pre-validation, publish, soak]
     # Runs only after a draft upload. A distinct stable app id is not blocked by master 9.x.
-    if: needs.soak.outputs.skip != 'true' && needs.publish.result == 'success'
+    if: needs.soak.outputs.skip != 'true' && needs.publish.result == 'success' && needs.publish.outputs.uploaded_version != ''
     runs-on: ubuntu-latest
     timeout-minutes: 50  # + final gate (≤15)
     steps:
