@@ -3,10 +3,10 @@
     "athom:manifest-size-limit": {
       "fix": "shrink manifest (parasites/continuations) before releasing held drivers",
       "successes": 0,
-      "failures": 2,
+      "failures": 3,
       "auto": false,
-      "last": 1793707532316,
-      "lastFailure": 1793707532316
+      "last": 1794096495351,
+      "lastFailure": 1794096495351
     }
   },
   "events": [
@@ -17,6 +17,11 @@
     },
     {
       "t": 1793707532316,
+      "sig": "athom:manifest-size-limit",
+      "ok": false
+    },
+    {
+      "t": 1794096495351,
       "sig": "athom:manifest-size-limit",
       "ok": false
     }
