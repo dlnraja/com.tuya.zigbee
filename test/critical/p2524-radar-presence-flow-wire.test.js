@@ -62,17 +62,13 @@ describe('P2524 radar presence flow wire', () => {
     assert.ok(src.includes('alarm_motion'));
   });
 
-  it('wifi_ir_remote omits titleFormatted (P2487 Contre quoi / Auto-Fix red)', () => {
+  it('wifi_ir_remote titleFormatted has no [[device]] (driver_id already selects it)', () => {
     const j = JSON.parse(fs.readFileSync(
       path.join(ROOT, 'drivers/wifi_ir_remote/driver.flow.compose.json'),
       'utf8',
     ));
     for (const card of [...(j.actions || []), ...(j.triggers || [])]) {
-      assert.equal(
-        card.titleFormatted,
-        undefined,
-        `${card.id} must not set titleFormatted`,
-      );
+      assert.equal(JSON.stringify(card.titleFormatted || {}).includes('[[device]]'), false, card.id);
     }
   });
 });

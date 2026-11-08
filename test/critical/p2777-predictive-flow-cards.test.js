@@ -133,7 +133,9 @@ describe('P2777 manifest + wiring', () => {
       for (const id of list) {
         const c = JSON.parse(fs.readFileSync(path.join(root, `.homeycompose/flow/${t}/${id}.json`), 'utf8'));
         for (const l of ['en', 'fr', 'nl', 'de']) {assert.ok(c.title[l], `${id}.${l}`);}
-        if (t === 'triggers') {assert.ok(!c.titleFormatted || !JSON.stringify(c.titleFormatted).includes('[[device]]'));} else {
+        assert.ok(c.titleFormatted && c.titleFormatted.en, `${id} titleFormatted`);
+        if (t === 'triggers') {assert.equal((c.titleFormatted.en.match(/\[\[device\]\]/g) || []).length, 1, `${id} [[device]] once`);}
+        else {
           for (const a of c.args) {assert.ok(c.titleFormatted.en.includes(`[[${a.name}]]`), `${id} [[${a.name}]]`);}
         }
         for (const a of c.args) {if (a.type === 'number') {assert.ok(a.min !== undefined && a.max !== undefined, `${id}.${a.name}`);}}

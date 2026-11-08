@@ -77,17 +77,18 @@ describe('P2487 Intelligent IR router', () => {
     assert.ok(ids.includes('wifi_ir_remote_start_learn'));
   });
 
-  // Contre quoi: Athom requires [[device]] in titleFormatted when device arg exists;
-  // project forbids that pattern — title-only cards (P2487 publish gate).
-  it('wifi_ir_remote flow cards omit titleFormatted (no [[device]] trap)', () => {
+  // Device arg is driver_id-filtered, so [[device]] must stay out. Other args must be in titleFormatted.
+  it('wifi_ir_remote flow cards name non-device args and never [[device]]', () => {
     const p = path.join(ROOT, 'drivers', 'wifi_ir_remote', 'driver.flow.compose.json');
     const j = JSON.parse(fs.readFileSync(p, 'utf8'));
     for (const card of [...(j.actions || []), ...(j.triggers || [])]) {
-      assert.equal(
-        card.titleFormatted,
-        undefined,
-        `${card.id} must not set titleFormatted (Homey [[device]] vs project rule)`,
-      );
+      const tf = JSON.stringify(card.titleFormatted || {});
+      assert.equal(tf.includes('[[device]]'), false, `${card.id} [[device]]`);
+      const extra = (card.args || []).filter((a) => !(a.type === 'device' && String(a.filter || '').includes('driver_id='))).map((a) => a.name);
+      if (extra.length) {
+        assert.ok(card.titleFormatted && card.titleFormatted.en, `${card.id} titleFormatted`);
+        for (const name of extra) assert.ok(card.titleFormatted.en.includes(`[[${name}]]`), `${card.id} [[${name}]]`);
+      }
     }
   });
 
@@ -255,7 +256,12 @@ describe('P2487 Intelligent IR router', () => {
     assert.ok(ids.includes('ir_remote_send_raw'));
     assert.ok(ids.includes('ir_remote_start_learn'));
     for (const card of j.actions || []) {
-      assert.equal(card.titleFormatted, undefined, `${card.id} omit titleFormatted`);
+      const tf = JSON.stringify(card.titleFormatted || {});
+      assert.equal(tf.includes('[[device]]'), false, `${card.id} [[device]]`);
+      const extra = (card.args || []).filter((a) => !(a.type === 'device' && String(a.filter || '').includes('driver_id='))).map((a) => a.name);
+      if (extra.length) {
+        for (const name of extra) assert.ok(card.titleFormatted.en.includes(`[[${name}]]`), `${card.id} [[${name}]]`);
+      }
     }
     const drv = fs.readFileSync(path.join(ROOT, 'drivers', 'ir_remote', 'driver.js'), 'utf8');
     assert.ok(!drv.includes('onCapabilityOnOff(true)'), 'send_command must not ignore command arg');
