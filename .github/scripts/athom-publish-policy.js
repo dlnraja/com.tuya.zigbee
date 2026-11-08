@@ -10,9 +10,14 @@
  * Four rules, all pure functions here so every workflow and test uses the same code:
  *   1. ci gate      : the SHA must have the required CI workflows green (data/docs [skip ci]
  *                     commits on top of a green SHA count when no code file changed).
- *   2. slot gate    : minimum interval between uploads, max successful uploads per 24 h, no
- *                     upload while a previous build is still processing. One hang-up retry may
- *                     bypass spacing (it still waits >= 5 min).
+ *   2. slot gate    : minimum interval between SUCCESSFUL uploads, max successful uploads
+ *                     per 24 h, no upload while a previous build is still processing.
+ *                     These numbers are our throttle, not an Athom price or a GitHub quota.
+ *                     2026-11-08, more room (still finite): master 120 min/1 per day/120 min
+ *                     across apps -> 30 min/6 per day/15 min across apps; stable and bastien
+ *                     60 min/4 per day -> 15 min/12 per day. Failed builds do not count.
+ *                     One hang-up retry may bypass spacing (it still waits >= 5 min).
+ *                     AggregateError still trips the breaker and is not cleared here.
  *   3. classify     : transient (socket hang up, ECONNRESET, ETIMEDOUT, 5xx, timeouts,
  *                     invalid_state) -> exactly 1 retry, backoff >= 5 min, breaker untouched;
  *                     real (AggregateError, processing_failed, validation) -> no retry, breaker
@@ -34,21 +39,19 @@ const POLICY_VERSION = 1;
 const APPS = {
   'com.dlnraja.tuya.zigbee': {
     key: 'master', branch: 'master', lock: 'athom-publish-master',
-    // P3091 (31/10/2026, owner request): 1 -> 4 ok uploads / 24 h, spacing stays 120 min;
-    // +1 extra slot / 24 h only for a release_held (publish-hold binary search) dispatch.
-    minIntervalMin: 120, maxSuccessPer24h: 4, releaseHeldExtraPer24h: 1,
-    // P3048: >= 2 h since the last upload of ANY of the 3 apps before a master upload.
-    crossAppMinIntervalMin: 120,
+    minIntervalMin: 30, maxSuccessPer24h: 6, releaseHeldExtraPer24h: 1,
+    // Short gap so the three apps do not upload in the same minute. Not a 2 h ban.
+    crossAppMinIntervalMin: 15,
     ci: ['syntax-check.yml', 'unified-ci.yml', 'node22-tests.yml', 'homey-app-validate.yml'],
   },
   'com.dlnraja.tuya.zigbee.stable': {
     key: 'stable', branch: 'stable-v5', lock: 'athom-publish-stable',
-    minIntervalMin: 60, maxSuccessPer24h: 4,
+    minIntervalMin: 15, maxSuccessPer24h: 12,
     ci: ['syntax-check.yml', 'node22-tests.yml', 'homey-app-validate.yml'],
   },
   'com.dlnraja.tuya.zigbee.bastien': {
     key: 'bastien', branch: 'bastien-home', lock: 'athom-publish-bastien',
-    minIntervalMin: 60, maxSuccessPer24h: 4,
+    minIntervalMin: 15, maxSuccessPer24h: 12,
     ci: ['node22-tests.yml', 'homey-app-validate.yml'],
   },
 };
@@ -259,7 +262,6 @@ function slotDecision({ appId, builds, outcomes, snapshotOk = true, eventName, t
     return { go: false, reason: `last upload ${Math.round((nowMs - last.t) / 60000)} min ago < ${p.minIntervalMin} min (next slot in ~${left} min)`, deferred: true };
   }
   const ok24 = ev.filter((e) => nowMs - e.t < 24 * 3600000 && /^(test|live|approved)$/i.test(e.state)).length;
-  // P3091: a release_held dispatch (non-empty PUBLISH_HOLD_RELEASE) gets releaseHeldExtraPer24h more.
   const held = String((env && env.PUBLISH_HOLD_RELEASE) || '').trim() !== '';
   const cap = p.maxSuccessPer24h + (held ? (p.releaseHeldExtraPer24h || 0) : 0);
   if (ok24 >= cap) {
@@ -335,11 +337,17 @@ function isCodeFile(f) { return CODE_FILE_RE.test(String(f || '')); }
 const NON_BUILD_RE = /^(\.github|scripts|tools|test|tests|docs|reports|tmp|backups)\//i;
 function isBuildInputFile(f) { const s = String(f || ''); return isCodeFile(s) && !NON_BUILD_RE.test(s); }
 
+// Files that can change the Homey tarball. .github, scripts and tests cannot.
+const PACKED_RE = /^(?:app\.js|api\.js|app\.json|package(?:-lock)?\.json|\.homeycompose\/|\.homeychangelog\.json|drivers\/|lib\/|capabilities\/|settings\/|locales\/|assets\/|config\/|workers\/)/;
+function packedPayloadChanged(files) {
+  return (files || []).some((f) => PACKED_RE.test(String(f || '').replace(/\\/g, '/')));
+}
+
 module.exports = {
   POLICY_VERSION, APPS, RETRY, TRANSIENT_RE, CODE_FILE_RE,
   appPolicy, appIdForKey, classify, backoffSeconds, retryDecision,
   singleRetryExempt, breakerAssess, retryCountOf, slotDecision, busyBuild, uploadEvents, crossAppEvents,
-  evaluateCi, missingCiAction, runState, isCodeFile, isBuildInputFile, isTrue, versionOnlyDiff,
+  evaluateCi, missingCiAction, runState, isCodeFile, isBuildInputFile, packedPayloadChanged, isTrue, versionOnlyDiff,
 };
 
 // ── CLI ──────────────────────────────────────────────────────────────────────────────────────
@@ -500,6 +508,28 @@ async function main() {
     return;
   }
   if (cmd === 'backoff') { console.log(backoffSeconds()); return; }
+  if (cmd === 'payload-changed') {
+    const { execFileSync } = require('child_process');
+    try { execFileSync('git', ['fetch', '--deepen=80', 'origin', 'HEAD'], { stdio: 'ignore' }); } catch (_) { /* shallow history is enough when the bump is already local */ }
+    let log = '';
+    try { log = execFileSync('git', ['log', '--format=%H%x09%s', '-n', '80'], { encoding: 'utf8' }); } catch (_) { log = ''; }
+    const lines = log.split('\n').filter(Boolean);
+    let base = '';
+    for (let i = 1; i < lines.length; i++) {
+      const tab = lines[i].indexOf('\t');
+      const sha = tab === -1 ? lines[i] : lines[i].slice(0, tab);
+      const subject = tab === -1 ? '' : lines[i].slice(tab + 1);
+      if (/^(?:chore|release|build)(?:\([^)]*\))?:\s*v?\d+\.\d+\.\d+\b/.test(subject)) { base = sha; break; }
+    }
+    let files = ['UNKNOWN'];
+    if (base) {
+      try { files = execFileSync('git', ['diff', '--name-only', `${base}..HEAD`], { encoding: 'utf8' }).split('\n').filter(Boolean); } catch (_) { files = ['UNKNOWN']; }
+    }
+    const changed = !base || files.includes('UNKNOWN') || packedPayloadChanged(files);
+    out('changed', changed ? 'true' : 'false');
+    console.log(`[payload] changed=${changed} base=${base || 'none'} files=${files.join(',')}`);
+    return;
+  }
   if (cmd === 'fallback') {
     const d = retryDecision({ text: readStdin(), retriesDone: isTrue(process.env.ATHOM_RETRY_USED) ? 1 : 0 });
     console.log(d.retry ? `RETRY ${d.backoffS}` : `STOP ${d.kind} ${d.reason}`);

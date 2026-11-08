@@ -84,10 +84,31 @@ function summarize(subjects) {
 const BUMP_SUBJECT = /^(?:chore|release|build)(?:\([^)]*\))?:\s*v?\d+\.\d+\.\d+\b|source manifests [\d.]+ -> \d+\.\d+\.\d+/i;
 
 /** Precise en/fr note from our commits (families, model ids), in our own words; summarize() if the backfill module is missing. */
+function runtimeHeads(subjects) {
+  const items = [];
+  for (const s of subjects || []) {
+    if (/\[auto:|^Merge |\[skip ci\]/i.test(s) || BUMP_SUBJECT.test(s)) continue;
+    const p = parseSubject(s);
+    const runtime = p.type === 'fix' || p.type === 'feat' || p.type === 'perf'
+      || (p.type === 'chore' && /^(diag|drivers|lib|app)\b/i.test(p.scope));
+    if (!runtime) continue;
+    const head = p.rest.replace(/\(credit[^)]*\)/gi, '').replace(/\s*[—(;].*$/, '').replace(/\b(P\d{3,5}[a-z]?|GH#\d+|#\d{2,5})\b:?/g, '').replace(/\s+/g, ' ').trim();
+    if (head && !items.some((x) => x.toLowerCase() === head.toLowerCase())) items.push(head.length > 90 ? `${head.slice(0, 87)}...` : head);
+  }
+  return items.slice(0, 4);
+}
+
 function precise(subjects) {
   let B = null;
   try { B = require('./changelog-backfill.js'); } catch (_) { B = null; }
   const out = B && typeof B.describe === 'function' ? B.describe(subjects) : summarize(subjects);
+  const unnamedOnly = /^(Reliability: \d+ small fix|Maintenance build: same devices)/i.test(String(out && out.en || ''));
+  if (unnamedOnly) {
+    const heads = runtimeHeads(subjects);
+    if (heads.length) {
+      return { en: `Changed: ${heads.join('; ')}.`, fr: `Modifié : ${heads.join('; ')}.` };
+    }
+  }
   const vague = B && typeof B.needsRewrite === 'function' ? B.needsRewrite(out) === 'vague' : String((out && out.en) || '').length < 40;
   return vague ? specific(subjects, out) : out;
 }
