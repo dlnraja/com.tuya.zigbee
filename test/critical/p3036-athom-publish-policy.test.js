@@ -44,6 +44,26 @@ test('ci gate: an ancestor run is stale when code changed (or the diff is unknow
   assert.strictEqual(P.evaluateCi({ required: REQ, ancestry: ['tip', 'a1'], runsByWorkflow: allRuns(green('a1')), codeChanged: () => true }).state, 'missing');
   assert.strictEqual(P.evaluateCi({ required: REQ, ancestry: ['tip', 'a1'], runsByWorkflow: allRuns(green('a1')), codeChanged: () => null }).state, 'missing');
 });
+test('ci gate: a red ancestor is not reused when the manifest changed (stable 96eea5011b)', () => {
+  const red = { head_sha: '99cf746d46', status: 'completed', conclusion: 'failure', created_at: '2026-11-08T06:13:50Z' };
+  const runs = { 'node22-tests.yml': [red] };
+  assert.strictEqual(P.evaluateCi({ required: ['node22-tests.yml'], ancestry: ['96eea5011b', '99cf746d46'], runsByWorkflow: runs, codeChanged: () => true }).state, 'missing');
+  assert.strictEqual(P.evaluateCi({ required: ['node22-tests.yml'], ancestry: ['96eea5011b', '99cf746d46'], runsByWorkflow: runs, codeChanged: () => false }).state, 'red');
+  assert.ok(P.affectsCiIdentity('app.json'));
+  assert.ok(P.affectsCiIdentity('drivers/heiman_keyfob/driver.compose.json'));
+  assert.ok(P.affectsCiIdentity('.homeycompose/app.json'));
+  assert.ok(!P.affectsCiIdentity('test/critical/p3036-athom-publish-policy.test.js'));
+  assert.ok(!P.isCodeFile('app.json'));
+  assert.strictEqual(P.versionOnlyDiff('-  "version": "5.12.546",\n+  "version": "5.12.547",'), true);
+  assert.strictEqual(P.versionOnlyDiff('+          1281'), false);
+});
+test('publish disposition names a real upload and the skips we logged', () => {
+  assert.strictEqual(P.publishDisposition({ breakerSkip: true, gateGo: true, payloadChanged: true }), 'skipped-breaker');
+  assert.strictEqual(P.publishDisposition({ gateGo: false }), 'held');
+  assert.strictEqual(P.publishDisposition({ gateGo: true, payloadChanged: false }), 'skipped-identical');
+  assert.strictEqual(P.publishDisposition({ gateGo: true, payloadChanged: true, athomFinal: '[athom-final] OK: v1.0.234 in test' }), 'uploaded-test');
+  assert.strictEqual(P.publishDisposition({ gateGo: true, payloadChanged: true }), 'unknown');
+});
 test('ci gate: cancelled runs are ignored, the newest real run counts', () => {
   const runs = allRuns(green('a1', '2026-10-25T09:00:00Z'));
   runs['syntax-check.yml'].push({ head_sha: 'a1', status: 'completed', conclusion: 'cancelled', created_at: '2026-10-25T11:00:00Z' });
@@ -212,7 +232,7 @@ test('bisect exit: state file and docs describe the normal flow (draft -> Test, 
 
 test('policy file is byte-identical on master, stable-v5 and bastien-home', () => {
   const h = crypto.createHash('sha256').update(fs.readFileSync(path.join(ROOT, '.github/scripts/athom-publish-policy.js'))).digest('hex');
-  assert.strictEqual(h, '4bd4feabc37f76e43142447963fe288a9e74ae11df9ca3512fcf879547e7aed7', 'edit athom-publish-policy.js on all three branches together and update this hash');
+  assert.strictEqual(h, '5efb1afa2927a80274853caf6e0a870418ddd4f87476d65b0e718d0d07e980f1', 'edit athom-publish-policy.js on all three branches together and update this hash');
 });
 test('ci gate: a version-only package.json bump is not a code change', () => {
   assert.strictEqual(P.versionOnlyDiff('--- a/package.json\n+++ b/package.json\n@@ -3 +3 @@\n-  "version": "9.0.1599",\n+  "version": "9.0.1600",'), true);

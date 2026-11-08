@@ -280,6 +280,16 @@ jobs:
           path: data/status/athom-publish-gate-com.dlnraja.tuya.zigbee.stable.json
           if-no-files-found: ignore
           retention-days: 3
+      - name: Publish disposition
+        if: always()
+        env:
+          GO: ${{ steps.gate.outputs.go }}
+          REASON: ${{ steps.gate.outputs.reason }}
+          SHA: ${{ steps.head.outputs.sha }}
+        run: |
+          node -e 'const P=require("./.github/scripts/athom-publish-policy"); const go=process.env.GO==="true"?true:process.env.GO==="false"?false:undefined; console.log("disposition="+P.publishDisposition({gateGo:go}));' | tee -a "$GITHUB_STEP_SUMMARY"
+          echo "source_sha=$SHA" >> "$GITHUB_STEP_SUMMARY"
+          echo "gate_reason=$REASON" >> "$GITHUB_STEP_SUMMARY"
 
   publish:
     name: "Publish to Draft"
@@ -313,6 +323,11 @@ jobs:
       - name: Packed payload changed since the last version bump
         id: payload
         run: node .github/scripts/athom-publish-policy.js payload-changed
+      - name: Record identical-payload skip
+        if: steps.payload.outputs.changed == 'false'
+        run: |
+          echo "disposition=skipped-identical" >> "$GITHUB_STEP_SUMMARY"
+          echo "source_sha=$GITHUB_SHA" >> "$GITHUB_STEP_SUMMARY"
       - name: Bump stable patch version
         if: steps.payload.outputs.changed == 'true'
         id: bump
