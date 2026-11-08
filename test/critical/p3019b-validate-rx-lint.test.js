@@ -23,7 +23,11 @@ function titleFormattedErrors(card, where) {
   });
   const names = args.filter((a) => a !== firstDev).map((a) => a.name);
   if (card.droptoken) { names.push('droptoken'); }
-  if (!names.length || card.titleFormatted === undefined) { return errs; }
+  if (!names.length) { return errs; }
+  if (card.titleFormatted === undefined) {
+    errs.push(`${where}: titleFormatted missing for ${names.join(',')}`);
+    return errs;
+  }
   const tf = typeof card.titleFormatted === 'string' ? { _: card.titleFormatted } : card.titleFormatted;
   for (const [lang, t] of Object.entries(tf)) {
     const found = (String(t).match(/\[\[(.*?)\]\]/g) || []).map((m) => m.slice(2, -2));

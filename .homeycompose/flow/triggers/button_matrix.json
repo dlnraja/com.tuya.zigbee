@@ -255,5 +255,11 @@
       },
       "example": "single"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Button action matrix [[device]] [[button]] [[action]]",
+    "fr": "Action bouton matrice [[device]] [[button]] [[action]]",
+    "nl": "Knopactie matrix [[device]] [[button]] [[action]]",
+    "de": "Tastenaktion Matrix [[device]] [[button]] [[action]]"
+  }
 }

@@ -41,5 +41,11 @@
       },
       "example": 3
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Export unknown commands diagnostics of [[device]]",
+    "fr": "Exporter le diagnostic des commandes inconnues de [[device]]",
+    "nl": "Diagnose onbekende commando's van [[device]] exporteren",
+    "de": "Diagnose unbekannter Befehle von [[device]] exportieren"
+  }
 }
