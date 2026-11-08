@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-07T11:42:04.936Z",
+  "generated": "2026-11-08T11:54:46.728Z",
   "note": "P3048: candidates only. No workflow posts, comments or reacts. A human (or the Grok Bot anti-flood routine) decides.",
   "limits": {
     "autoPost": false,
@@ -26,10 +26,18 @@
   },
   "scanned": {
     "commits": 300,
-    "issues": 20
+    "issues": 10
   },
   "candidates": [],
   "skipped": [
+    {
+      "issue": 3698,
+      "reason": "not found"
+    },
+    {
+      "issue": 631,
+      "reason": "pull request"
+    },
     {
       "issue": 3697,
       "reason": "not found"
@@ -61,61 +69,6 @@
     {
       "issue": 410,
       "reason": "closed"
-    },
-    {
-      "issue": 557,
-      "about": "non classé",
-      "author": "dlnraja",
-      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/557",
-      "commit": "cbe26b6d43",
-      "commitAt": "2026-11-01T22:38:10Z",
-      "ci": "pending",
-      "lastAuthor": "github-actions[bot]",
-      "reason": "CI pending"
-    },
-    {
-      "issue": 2694,
-      "reason": "not found"
-    },
-    {
-      "issue": 4288,
-      "reason": "not found"
-    },
-    {
-      "issue": 26215,
-      "reason": "not found"
-    },
-    {
-      "issue": 5514,
-      "reason": "not found"
-    },
-    {
-      "issue": 11831,
-      "reason": "not found"
-    },
-    {
-      "issue": 4817,
-      "reason": "not found"
-    },
-    {
-      "issue": 5538,
-      "reason": "not found"
-    },
-    {
-      "issue": 3886,
-      "reason": "not found"
-    },
-    {
-      "issue": 631,
-      "reason": "not found"
-    },
-    {
-      "issue": 1481,
-      "reason": "not found"
-    },
-    {
-      "issue": 585,
-      "reason": "pull request"
     }
   ]
 }

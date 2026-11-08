@@ -425,6 +425,14 @@
    "ref": "v26.128.0",
    "title": "v26.128.0",
    "url": "https://github.com/Koenkk/zigbee-herdsman-converters/releases/tag/v26.128.0"
+  },
+  {
+   "at": "2026-11-08T11:53:26.355Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "d0ac19210e",
+   "title": "fix: TS0601_rcbo: allow a 50 V under-voltage threshold (#13732)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/d0ac19210eeb484a37c5733d9eaa8972839a49b2"
   }
  ]
 }

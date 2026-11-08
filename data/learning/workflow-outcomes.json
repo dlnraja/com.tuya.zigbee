@@ -1,6 +1,6 @@
 {
  "version": 1,
- "watermark": "2026-11-07T11:40:33.118Z",
+ "watermark": "2026-11-08T11:53:26.246Z",
  "seen": [
   "self-maintain:2026-10-25",
   "ci-fail:40227923450:1",
@@ -233,15 +233,78 @@
   "watchdog-run:2026-11-06",
   "automation-loop:2026-11-06",
   "self-maintain:2026-11-07",
-  "ci-fail:42277016583:1"
+  "ci-fail:42277016583:1",
+  "watchdog-run:2026-11-07",
+  "automation-loop:2026-11-07",
+  "self-maintain:2026-11-08",
+  "ci-fail:42473454582:1",
+  "ci-fail:42473454681:1",
+  "ci-fail:42473454053:1",
+  "ci-fail:42472017668:1",
+  "ci-fail:42471983880:1",
+  "ci-fail:42471225403:1",
+  "ci-fail:42471225576:1",
+  "ci-fail:42469955198:1",
+  "ci-fail:42469955206:1",
+  "ci-fail:42469955068:1",
+  "ci-fail:42469955028:1",
+  "ci-fail:42469955178:1",
+  "ci-fail:42469955002:1",
+  "ci-fail:42469955099:1",
+  "ci-fail:42469935037:1",
+  "ci-fail:42469935090:1",
+  "ci-fail:42469934912:1",
+  "ci-fail:42469934922:1",
+  "ci-fail:42469934939:1",
+  "ci-fail:42469840577:1",
+  "ci-fail:42469840742:1",
+  "ci-fail:42469840674:1",
+  "ci-fail:42469840762:1",
+  "ci-fail:42469840589:1",
+  "ci-fail:42469840722:1",
+  "ci-fail:42468803306:1",
+  "ci-fail:42468803341:1",
+  "ci-fail:42468766528:1",
+  "ci-fail:42468766325:1",
+  "ci-fail:42468766296:1",
+  "ci-fail:42468766443:1",
+  "ci-fail:42468766254:1",
+  "ci-fail:42468766454:1",
+  "ci-fail:42468766550:1",
+  "ci-fail:42468766269:1",
+  "ci-fail:42468766300:1",
+  "ci-fail:42453150225:1",
+  "ci-fail:42453149283:1",
+  "ci-fail:42453149993:1",
+  "ci-fail:42453149305:1",
+  "ci-fail:42439637061:1",
+  "ci-fail:42439637109:1",
+  "ci-fail:42439637092:1",
+  "ci-fail:42439636938:1",
+  "ci-fail:42439635995:1",
+  "ci-fail:42439636638:1",
+  "ci-fail:42431630511:1",
+  "ci-fail:42431576986:1",
+  "ci-fail:42431577308:1",
+  "ci-fail:42430488977:1",
+  "ci-fail:42430488114:1",
+  "ci-fail:42430488078:1",
+  "ci-fail:42421889618:1",
+  "ci-fail:42421875972:1",
+  "ci-fail:42421865877:1",
+  "ci-fail:42408470339:1",
+  "ci-fail:42408420378:1",
+  "ci-fail:42408403445:1",
+  "ci-fail:42408361809:1",
+  "ci-fail:42396847250:1"
  ],
  "workflows": {
   "self-maintain": {
-   "ok": 13,
+   "ok": 14,
    "fail": 0,
    "transient": 0,
    "warn": 0,
-   "okStreak": 13,
+   "okStreak": 14,
    "failStreak": 0,
    "last": [
     "ok",
@@ -255,17 +318,19 @@
     "ok",
     "ok"
    ],
-   "lastAt": "2026-11-07T11:40:28.991Z",
+   "lastAt": "2026-11-08T11:52:36.259Z",
    "hint": "relax"
   },
   "ci-self-check.yml": {
    "ok": 0,
-   "fail": 8,
+   "fail": 23,
    "transient": 0,
    "warn": 0,
    "okStreak": 0,
-   "failStreak": 8,
+   "failStreak": 23,
    "last": [
+    "fail",
+    "fail",
     "fail",
     "fail",
     "fail",
@@ -275,16 +340,16 @@
     "fail",
     "fail"
    ],
-   "lastAt": "2026-11-01T11:48:37.618Z",
+   "lastAt": "2026-11-08T11:53:21.164Z",
    "hint": "backoff"
   },
   "pr-gate.yml": {
    "ok": 0,
-   "fail": 6,
+   "fail": 7,
    "transient": 0,
    "warn": 1,
    "okStreak": 0,
-   "failStreak": 6,
+   "failStreak": 7,
    "last": [
     "fail",
     "fail",
@@ -292,18 +357,19 @@
     "fail",
     "warn",
     "fail",
+    "fail",
     "fail"
    ],
-   "lastAt": "2026-11-01T11:48:41.198Z",
+   "lastAt": "2026-11-08T11:53:24.299Z",
    "hint": "backoff"
   },
   "node22-tests.yml": {
    "ok": 0,
-   "fail": 80,
-   "transient": 0,
+   "fail": 103,
+   "transient": 1,
    "warn": 6,
    "okStreak": 0,
-   "failStreak": 80,
+   "failStreak": 103,
    "last": [
     "fail",
     "fail",
@@ -316,51 +382,51 @@
     "fail",
     "fail"
    ],
-   "lastAt": "2026-11-06T12:53:27.866Z",
+   "lastAt": "2026-11-08T11:53:26.246Z",
    "hint": "backoff"
   },
   "syntax-check.yml": {
    "ok": 0,
-   "fail": 17,
+   "fail": 20,
    "transient": 0,
    "warn": 2,
    "okStreak": 0,
-   "failStreak": 17,
+   "failStreak": 20,
    "last": [
-    "fail",
-    "fail",
-    "fail",
     "fail",
     "fail",
     "fail",
     "warn",
     "fail",
     "fail",
+    "fail",
+    "fail",
+    "fail",
     "fail"
    ],
-   "lastAt": "2026-11-06T12:53:29.253Z",
+   "lastAt": "2026-11-08T11:53:15.149Z",
    "hint": "backoff"
   },
   "unified-ci.yml": {
    "ok": 0,
-   "fail": 17,
+   "fail": 19,
    "transient": 0,
    "warn": 2,
    "okStreak": 0,
-   "failStreak": 17,
+   "failStreak": 19,
    "last": [
+    "fail",
+    "fail",
+    "fail",
+    "fail",
+    "fail",
     "warn",
     "fail",
     "fail",
-    "fail",
-    "fail",
-    "fail",
-    "fail",
-    "warn",
     "fail",
     "fail"
    ],
-   "lastAt": "2026-11-04T12:56:12.757Z",
+   "lastAt": "2026-11-08T11:53:08.215Z",
    "hint": "backoff"
   },
   "fleet-intelligent-enrich.yml": {
@@ -378,11 +444,11 @@
   },
   "auto-fix-and-publish.yml": {
    "ok": 0,
-   "fail": 10,
+   "fail": 12,
    "transient": 0,
    "warn": 0,
    "okStreak": 0,
-   "failStreak": 10,
+   "failStreak": 12,
    "last": [
     "fail",
     "fail",
@@ -395,19 +461,17 @@
     "fail",
     "fail"
    ],
-   "lastAt": "2026-10-27T10:30:55.155Z",
+   "lastAt": "2026-11-08T11:53:06.227Z",
    "hint": "backoff"
   },
   "code-quality.yml": {
    "ok": 0,
-   "fail": 11,
+   "fail": 13,
    "transient": 0,
    "warn": 1,
    "okStreak": 0,
-   "failStreak": 11,
+   "failStreak": 13,
    "last": [
-    "fail",
-    "fail",
     "fail",
     "fail",
     "fail",
@@ -415,9 +479,11 @@
     "fail",
     "warn",
     "fail",
+    "fail",
+    "fail",
     "fail"
    ],
-   "lastAt": "2026-11-01T11:48:20.533Z",
+   "lastAt": "2026-11-08T11:53:10.172Z",
    "hint": "backoff"
   },
   "auto-publish-on-push.yml": {
@@ -443,7 +509,7 @@
    "ok": 2,
    "fail": 0,
    "transient": 0,
-   "warn": 10,
+   "warn": 11,
    "okStreak": 2,
    "failStreak": 0,
    "last": [
@@ -453,20 +519,20 @@
     "warn",
     "warn",
     "warn",
+    "ok",
+    "ok",
     "warn",
-    "ok",
-    "ok",
     "warn"
    ],
-   "lastAt": "2026-11-06T12:54:57.257Z",
+   "lastAt": "2026-11-07T11:41:52.486Z",
    "hint": "normal"
   },
   "automation-loop": {
-   "ok": 12,
+   "ok": 13,
    "fail": 0,
    "transient": 0,
    "warn": 0,
-   "okStreak": 12,
+   "okStreak": 13,
    "failStreak": 0,
    "last": [
     "ok",
@@ -480,22 +546,23 @@
     "ok",
     "ok"
    ],
-   "lastAt": "2026-11-06T12:55:11.353Z",
+   "lastAt": "2026-11-07T11:42:05.935Z",
    "hint": "relax"
   },
   "publish-stable.yml": {
    "ok": 0,
-   "fail": 3,
+   "fail": 4,
    "transient": 0,
    "warn": 0,
    "okStreak": 0,
-   "failStreak": 3,
+   "failStreak": 4,
    "last": [
+    "fail",
     "fail",
     "fail",
     "fail"
    ],
-   "lastAt": "2026-11-01T11:48:39.938Z",
+   "lastAt": "2026-11-08T11:53:16.983Z",
    "hint": "backoff"
   },
   "autonomous-verification.yml": {
@@ -588,16 +655,20 @@
   },
   "homey-app-validate.yml": {
    "ok": 0,
-   "fail": 1,
+   "fail": 5,
    "transient": 0,
    "warn": 0,
    "okStreak": 0,
-   "failStreak": 1,
+   "failStreak": 5,
    "last": [
+    "fail",
+    "fail",
+    "fail",
+    "fail",
     "fail"
    ],
-   "lastAt": "2026-11-02T13:27:06.758Z",
-   "hint": "normal"
+   "lastAt": "2026-11-08T11:53:08.823Z",
+   "hint": "backoff"
   },
   "validate.yml": {
    "ok": 0,
@@ -616,6 +687,36 @@
    ],
    "lastAt": "2026-11-07T11:40:33.118Z",
    "hint": "backoff"
+  },
+  "secret-scan.yml": {
+   "ok": 0,
+   "fail": 5,
+   "transient": 0,
+   "warn": 0,
+   "okStreak": 0,
+   "failStreak": 5,
+   "last": [
+    "fail",
+    "fail",
+    "fail",
+    "fail",
+    "fail"
+   ],
+   "lastAt": "2026-11-08T11:53:00.190Z",
+   "hint": "backoff"
+  },
+  "draft-to-test-fleet.yml": {
+   "ok": 0,
+   "fail": 1,
+   "transient": 0,
+   "warn": 0,
+   "okStreak": 0,
+   "failStreak": 1,
+   "last": [
+    "fail"
+   ],
+   "lastAt": "2026-11-08T11:52:45.186Z",
+   "hint": "normal"
   }
  }
 }
