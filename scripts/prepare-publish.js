@@ -845,6 +845,16 @@ try {
       console.warn(`Could not write HOMEY_PUBLISH_DIR to GITHUB_ENV: ${envErr.message}`);
     }
   }
+  {
+    const { problems } = require('./ci/publish-dir-guard.cjs');
+    const expectedId = readJson(path.join(__dirname, '..', 'app.json')).id;
+    const found = problems(destDir, { appId: expectedId });
+    if (found.length) {
+      console.error('FATAL: publish directory is not the filtered payload');
+      found.forEach((line) => console.error(`  ${line}`));
+      process.exit(1);
+    }
+  }
   console.log(`Publish directory ready: ${destDir}`);
 
 } catch (err) {
