@@ -34,5 +34,11 @@
         "fr": "Seuil bas"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Battery became low (app alarm) [[device]]",
+    "fr": "Batterie devenue faible (alarme app) [[device]]",
+    "nl": "Batterij werd laag (app-alarm) [[device]]",
+    "de": "Batterie wurde niedrig (App-Alarm) [[device]]"
+  }
 }

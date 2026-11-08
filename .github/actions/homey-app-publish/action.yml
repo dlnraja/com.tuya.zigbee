@@ -88,6 +88,7 @@ runs:
           if [ -x "$GITHUB_WORKSPACE/node_modules/.bin/homey" ]; then "$GITHUB_WORKSPACE/node_modules/.bin/homey" "$@"; else npx homey "$@"; fi
         }
         IDENTITY_SNAP="${RUNNER_TEMP:-/tmp}/publish-payload-identity.json"
+        node "$GITHUB_WORKSPACE/scripts/ci/publish-dir-guard.cjs" "$PUBLISH_DIR" "$(node -p "require('$GITHUB_WORKSPACE/app.json').id")" || exit 1
         if ! HOMEY_HEADLESS=1 homey_cli app validate --level publish --path "$PUBLISH_DIR"; then
           echo "::error::homey app validate --level publish failed on the exact publish dir — not uploading"
           exit 1
@@ -117,6 +118,7 @@ runs:
           publish_status=$?
           if [ "$publish_status" -eq 0 ] && ! verify_payload_identity post; then
             echo "::error::P3025b: package rebuilt by homey app publish differs from the validated one (see diff above)"
+            exit 1
           fi
           # P3036: one shared rule (athom-publish-policy.js fallback): only a transient error (socket hang up,
           # ECONNRESET, ETIMEDOUT, 5xx, timeout, invalid_state) gets ONE retry, after >= 300 s + jitter and once the

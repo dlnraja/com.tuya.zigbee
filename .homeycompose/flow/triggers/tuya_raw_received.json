@@ -50,5 +50,11 @@
         "fr": "0–255"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Tuya raw DP received [[device]] [[dp]]",
+    "fr": "DP Tuya brut reçu [[device]] [[dp]]",
+    "nl": "Ruwe Tuya-DP ontvangen [[device]] [[dp]]",
+    "de": "Roher Tuya-DP empfangen [[device]] [[dp]]"
+  }
 }

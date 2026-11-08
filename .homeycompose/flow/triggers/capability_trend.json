@@ -152,5 +152,11 @@
       },
       "example": "measure_humidity"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "A value is trending [[device]] [[capability]] [[direction]] [[rate]] [[window]]",
+    "fr": "Une valeur suit une tendance [[device]] [[capability]] [[direction]] [[rate]] [[window]]",
+    "nl": "Een waarde vertoont een trend [[device]] [[capability]] [[direction]] [[rate]] [[window]]",
+    "de": "Ein Wert zeigt einen Trend [[device]] [[capability]] [[direction]] [[rate]] [[window]]"
+  }
 }

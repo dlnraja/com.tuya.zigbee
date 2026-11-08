@@ -117,5 +117,11 @@
       },
       "example": "on"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "A gang was switched [[device]] [[gang]] [[state]]",
+    "fr": "Une voie a été commutée [[device]] [[gang]] [[state]]",
+    "nl": "Een kanaal is geschakeld [[device]] [[gang]] [[state]]",
+    "de": "Ein Kanal wurde geschaltet [[device]] [[gang]] [[state]]"
+  }
 }

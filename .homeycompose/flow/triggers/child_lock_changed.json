@@ -87,5 +87,11 @@
       },
       "example": "on"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Child lock changed [[device]] [[state]]",
+    "fr": "Verrouillage enfant modifié [[device]] [[state]]",
+    "nl": "Kinderslot gewijzigd [[device]] [[state]]",
+    "de": "Kindersicherung geändert [[device]] [[state]]"
+  }
 }

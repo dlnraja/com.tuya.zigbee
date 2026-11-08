@@ -111,7 +111,13 @@
           "min": 5,
           "max": 120
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Start IR learn [[name]] [[timeout_s]]",
+        "fr": "Démarrer apprentissage IR [[name]] [[timeout_s]]",
+        "de": "IR-Anlernen starten [[name]] [[timeout_s]]",
+        "nl": "IR-aanleren starten [[name]] [[timeout_s]]"
+      }
     },
     {
       "id": "wifi_ir_remote_send_learned",
@@ -133,7 +139,13 @@
             "en": "power"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Send learned IR code [[name]]",
+        "fr": "Envoyer code IR appris [[name]]",
+        "de": "Gelernten IR-Code senden [[name]]",
+        "nl": "Geleerde IR-code verzenden [[name]]"
+      }
     },
     {
       "id": "wifi_ir_remote_send_raw",
@@ -202,7 +214,13 @@
             "fr": "Format"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Send raw / pasted IR code [[code]] [[format]]",
+        "fr": "Envoyer code IR brut / collé [[code]] [[format]]",
+        "de": "Rohen / eingefügten IR-Code senden [[code]] [[format]]",
+        "nl": "Ruwe / geplakte IR-code verzenden [[code]] [[format]]"
+      }
     }
   ]
 }

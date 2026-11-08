@@ -21,7 +21,13 @@
             "fr": "Alimentation, Volume +, OK..."
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Send named IR command [[command]]",
+        "fr": "Envoyer commande IR nommée [[command]]",
+        "de": "Benannten IR-Befehl senden [[command]]",
+        "nl": "IR-commando op naam verzenden [[command]]"
+      }
     },
     {
       "id": "ir_remote_send_custom",
@@ -105,7 +111,13 @@
             "fr": "Key"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Send library key [[key]]",
+        "fr": "Envoyer touche bibliothèque [[key]]",
+        "de": "Bibliothekstaste senden [[key]]",
+        "nl": "Bibliotheektoets verzenden [[key]]"
+      }
     },
     {
       "id": "ir_remote_send_learned",
@@ -127,7 +139,13 @@
             "en": "Power On"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Send learned IR code [[name]]",
+        "fr": "Envoyer code IR appris [[name]]",
+        "de": "Gelernten IR-Code senden [[name]]",
+        "nl": "Geleerde IR-code verzenden [[name]]"
+      }
     },
     {
       "id": "ir_remote_send_raw",
@@ -202,7 +220,13 @@
             "fr": "Format"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Send pasted IR code [[code]] [[format]]",
+        "fr": "Envoyer code IR collé [[code]] [[format]]",
+        "de": "Eingefügten IR-Code senden [[code]] [[format]]",
+        "nl": "Geplakte IR-code verzenden [[code]] [[format]]"
+      }
     },
     {
       "id": "ir_remote_start_learn",
@@ -237,7 +261,13 @@
           "min": 5,
           "max": 120
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Start IR learn on bound sender [[name]] [[timeout_s]]",
+        "fr": "Apprendre via l'émetteur lié [[name]] [[timeout_s]]",
+        "de": "IR-Anlernen über verknüpften Sender starten [[name]] [[timeout_s]]",
+        "nl": "IR-aanleren via gekoppelde zender starten [[name]] [[timeout_s]]"
+      }
     }
   ]
 }

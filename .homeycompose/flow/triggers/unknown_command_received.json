@@ -86,5 +86,11 @@
         "de": "Gerät (optionaler Filter)"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "An unknown command or DP was received [[device]]",
+    "fr": "Une commande ou un DP inconnu a été reçu [[device]]",
+    "nl": "Een onbekend commando of DP is ontvangen [[device]]",
+    "de": "Ein unbekannter Befehl oder DP wurde empfangen [[device]]"
+  }
 }

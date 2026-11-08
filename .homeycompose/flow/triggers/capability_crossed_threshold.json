@@ -133,5 +133,11 @@
       },
       "example": "measure_temperature"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "A value crossed a threshold [[device]] [[capability]] [[direction]] [[threshold]]",
+    "fr": "Une valeur a franchi un seuil [[device]] [[capability]] [[direction]] [[threshold]]",
+    "nl": "Een waarde heeft een drempel overschreden [[device]] [[capability]] [[direction]] [[threshold]]",
+    "de": "Ein Wert hat eine Schwelle überschritten [[device]] [[capability]] [[direction]] [[threshold]]"
+  }
 }
