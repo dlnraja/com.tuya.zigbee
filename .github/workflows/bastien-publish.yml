@@ -151,10 +151,16 @@ jobs:
         if: always()
         env:
           JOB_STATUS: ${{ job.status }}
+          GO: ${{ steps.gate.outputs.go }}
+          REASON: ${{ steps.gate.outputs.reason }}
+          SHA: ${{ steps.head.outputs.sha }}
         run: |
           [ -f scripts/lib/report-writer.js ] || exit 0
           if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Publishes the private Bastien house app (its own app ID only); manual by default."; else s="Stopped early ($JOB_STATUS); the red step above says why. Publishes the private Bastien house app (its own app ID only); manual by default."; fi
           node scripts/lib/report-writer.js --title "bastien-publish" --summary "$s" --headers "item|value" --row "job|p3036-gate" --row "result|$JOB_STATUS" --thanks "Athom's official Homey app GitHub Actions (athombv)" --thanks "the Homey developer docs on build channels" >> "$GITHUB_STEP_SUMMARY" || true
+          node -e 'const P=require("./.github/scripts/athom-publish-policy"); const go=process.env.GO==="true"?true:process.env.GO==="false"?false:undefined; console.log("disposition="+P.publishDisposition({gateGo:go}));' | tee -a "$GITHUB_STEP_SUMMARY"
+          echo "source_sha=$SHA" >> "$GITHUB_STEP_SUMMARY"
+          echo "gate_reason=$REASON" >> "$GITHUB_STEP_SUMMARY"
 
   publish-bastien:
     name: Publish Bastien house app
@@ -235,6 +241,11 @@ jobs:
       - name: Packed payload changed since the last version bump
         id: payload
         run: node .github/scripts/athom-publish-policy.js payload-changed
+      - name: Record identical-payload skip
+        if: steps.payload.outputs.changed == 'false'
+        run: |
+          echo "disposition=skipped-identical" >> "$GITHUB_STEP_SUMMARY"
+          echo "source_sha=$GITHUB_SHA" >> "$GITHUB_STEP_SUMMARY"
       - name: Bump Bastien patch above highest uploaded
         if: steps.payload.outputs.changed == 'true'
         env:
