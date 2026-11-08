@@ -9,6 +9,7 @@ const { IasAceBoundCluster, CLUSTER_NAME } = require('../../lib/clusters/IasAceC
  * Ids and button meaning from Koenkk/zigbee-herdsman-converters PR #2182
  * (arnaud-gouder) and dresden-elektronik/deconz-rest-plugin #3828.
  * Own implementation on the shared IasAceBoundCluster; native ZCL only.
+ * Compose lists cluster 1281 on endpoint 1, the same IAS ACE id these commands use.
  */
 const ARM_TRIGGER = { 0: 'heiman_keyfob_disarm', 1: 'heiman_keyfob_arm_home', 2: 'heiman_keyfob_arm_home', 3: 'heiman_keyfob_arm_all' };
 const ARM_NAMES = { disarm: 0, armDayHomeZonesOnly: 1, armNightSleepZonesOnly: 2, armAllZones: 3 };
