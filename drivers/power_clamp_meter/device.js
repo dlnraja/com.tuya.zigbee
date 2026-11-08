@@ -189,7 +189,49 @@ class PowerClampMeterDevice extends TuyaZigbeeDevice {
       '_TZE204_cjbofhxw', '_TZE284_cjbofhxw',   // Matsee Plus variant (Z2M #15359)
       '_TZE28C1000000_81yrt3lo'                  // New variant (Issue #329, Z2M #26403)
     ];
-    return pj1203aIds.some(id => includesCI(pj1203aIds, id)) ? 'pj1203a' : '3phase';
+    // Compare the device manufacturer. The previous test compared the list to
+    // itself and always returned pj1203a, including for a real 3-phase meter.
+    return includesCI(pj1203aIds, mfr) ? 'pj1203a' : '3phase';
+  }
+
+  get dpMappings() {
+    return {
+      101: { capability: 'measure_power' },
+      102: { internal: 'direction_a' },
+      104: { internal: 'direction_b' },
+      105: { capability: 'measure_power.phase2' },
+      106: { internal: 'energy_forward_a' },
+      107: { internal: 'energy_reverse_a' },
+      108: { internal: 'energy_forward_b' },
+      109: { internal: 'energy_reverse_b' },
+      110: { capability: 'measure_power_factor' },
+      111: { capability: 'measure_frequency' },
+      112: { capability: 'measure_voltage' },
+      113: { capability: 'measure_current' },
+      114: { capability: 'measure_current.phase2' },
+      115: { capability: 'measure_power' },
+      121: { capability: 'measure_power_factor' },
+      129: { internal: 'update_seconds' },
+    };
+  }
+
+  _echoDp(dp, value) {
+    const key = `${dp}:${value}`;
+    const now = Date.now();
+    if (!this._dpEcho) {this._dpEcho = new Map();}
+    const prev = this._dpEcho.get(dp);
+    if (prev && prev.key === key && now - prev.at < 400) {return true;}
+    this._dpEcho.set(dp, { key, at: now });
+    if (this._dpEcho.size > 64) {
+      const oldest = this._dpEcho.keys().next().value;
+      this._dpEcho.delete(oldest);
+    }
+    return false;
+  }
+
+  _setMeter(capability, value) {
+    if (!this.hasCapability(capability)) {return;}
+    this.safeSetCapabilityValue(capability, value).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
   }
 
   _handleDP(dp, value) {
@@ -206,6 +248,7 @@ class PowerClampMeterDevice extends TuyaZigbeeDevice {
       }
       return;
     }
+    if (this._echoDp(dp, value)) {return;}
     const profile = this.meterProfile;
     this.log(`[DP${dp}] = ${value} (profile: ${profile})`);
 
@@ -402,6 +445,37 @@ class PowerClampMeterDevice extends TuyaZigbeeDevice {
 
     case 104: // PJ-1203A Direction B
       this.log(`[FALLBACK]  Direction B: ${value === 0 ? 'consuming' : 'producing'}`);
+      break;
+
+    case 105:
+      this._setMeter('measure_power.phase2', safeDivide(value, 10));
+      break;
+
+    case 110:
+    case 121:
+      this._setMeter('measure_power_factor', safeDivide(value, 100));
+      break;
+
+    case 111:
+      this._setMeter('measure_frequency', safeDivide(value, 100));
+      break;
+
+    case 112:
+      this._setMeter('measure_voltage', safeDivide(value, 10));
+      break;
+
+    case 113:
+      this._setMeter('measure_current', safeMultiply(safeDivide(value, 1000), this._ctRatio));
+      break;
+
+    case 114:
+      this._setMeter('measure_current.phase2', safeMultiply(safeDivide(value, 1000), this._ctRatio));
+      break;
+
+    case 115:
+      this._setMeter('measure_power', safeDivide(value, 10));
+      break;
+
     default:
       this.log(`[DP${dp}] Unhandled DP value: ${value}`);
     }
