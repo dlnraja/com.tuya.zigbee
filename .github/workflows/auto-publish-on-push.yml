@@ -55,6 +55,10 @@ on:
         description: 'P3036 manual only: bypass the spacing / 24 h cap (green CI is still required)'
         type: boolean
         default: false
+      diagnostic_catalogue:
+        description: 'Manual diagnostic only: release every held real driver into an isolated draft (more than 350). Does not promote Test or Live and does not edit the hold file.'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -72,6 +76,8 @@ concurrency:
 env:
   NODE_VERSION: "22"
   PUBLISH_HOLD_RELEASE: ${{ github.event.inputs.release_held || '' }}
+  PUBLISH_DIAGNOSTIC_CATALOGUE: ${{ github.event_name == 'workflow_dispatch' && inputs.diagnostic_catalogue == true && '1' || '0' }}
+  PUBLISH_DIAGNOSTIC_MIN_DRIVERS: ${{ github.event_name == 'workflow_dispatch' && inputs.diagnostic_catalogue == true && '351' || '' }}
   NODE_OPTIONS: "--dns-result-order=ipv4first"
   # P2491: publish bots stay local — no remote AI burn
   AI_FORCE_LOCAL: "true"
@@ -598,7 +604,7 @@ jobs:
       # 7. POST-PUBLISH (all continue-on-error)
       # ─────────────────────────────────────────────────────────────
       - name: Create GitHub Release
-        if: steps.check_pat.outputs.has_pat == 'true' && steps.p3036_busy.outputs.go != 'false'
+        if: steps.check_pat.outputs.has_pat == 'true' && steps.p3036_busy.outputs.go != 'false' && (github.event_name != 'workflow_dispatch' || inputs.diagnostic_catalogue != true)
         continue-on-error: true
         uses: softprops/action-gh-release@e598afbe1493e6b1bafb1f389cabb956eab91231 # v3.0.3 (node24, P3025b)
         with:
@@ -646,12 +652,12 @@ jobs:
       # WHY(2026-10-11): transient retry moved into the final Athom gate (run 38099611305 decided at
       # 00:51 on an empty state; the failure #3513 landed at 00:58). Decide only on the final state.
       - name: Install Puppeteer (draft → test promotion)
-        if: steps.check_pat.outputs.has_pat == 'true' && needs.breaker.outputs.bisect_hold_promote != 'true' && steps.p3036_busy.outputs.go != 'false'
+        if: steps.check_pat.outputs.has_pat == 'true' && needs.breaker.outputs.bisect_hold_promote != 'true' && steps.p3036_busy.outputs.go != 'false' && (github.event_name != 'workflow_dispatch' || inputs.diagnostic_catalogue != true)
         continue-on-error: true
         run: npm install puppeteer athom-api --no-save
 
       - name: "Tier 1: Promote via Browser"
-        if: steps.check_pat.outputs.has_pat == 'true' && steps.waitdraft.outputs.athom_failed != 'true' && needs.breaker.outputs.bisect_hold_promote != 'true' && steps.p3036_busy.outputs.go != 'false'
+        if: steps.check_pat.outputs.has_pat == 'true' && steps.waitdraft.outputs.athom_failed != 'true' && needs.breaker.outputs.bisect_hold_promote != 'true' && steps.p3036_busy.outputs.go != 'false' && (github.event_name != 'workflow_dispatch' || inputs.diagnostic_catalogue != true)
         id: promote_puppeteer
         continue-on-error: true
         timeout-minutes: 5
@@ -663,7 +669,7 @@ jobs:
 
       - name: "Tier 2: Promote via OAuth"
         id: promote_oauth
-        if: steps.check_pat.outputs.has_pat == 'true' && steps.promote_puppeteer.outcome != 'success' && steps.waitdraft.outputs.athom_failed != 'true' && needs.breaker.outputs.bisect_hold_promote != 'true' && steps.p3036_busy.outputs.go != 'false'
+        if: steps.check_pat.outputs.has_pat == 'true' && steps.promote_puppeteer.outcome != 'success' && steps.waitdraft.outputs.athom_failed != 'true' && needs.breaker.outputs.bisect_hold_promote != 'true' && steps.p3036_busy.outputs.go != 'false' && (github.event_name != 'workflow_dispatch' || inputs.diagnostic_catalogue != true)
         continue-on-error: true
         timeout-minutes: 5
         env:
@@ -675,16 +681,37 @@ jobs:
 
       - name: "Tier 3: Promote via PAT API"
         id: promote_api
-        if: steps.check_pat.outputs.has_pat == 'true' && steps.promote_puppeteer.outcome != 'success' && steps.promote_oauth.outcome != 'success' && steps.waitdraft.outputs.athom_failed != 'true' && needs.breaker.outputs.bisect_hold_promote != 'true' && steps.p3036_busy.outputs.go != 'false'
+        if: steps.check_pat.outputs.has_pat == 'true' && steps.promote_puppeteer.outcome != 'success' && steps.promote_oauth.outcome != 'success' && steps.waitdraft.outputs.athom_failed != 'true' && needs.breaker.outputs.bisect_hold_promote != 'true' && steps.p3036_busy.outputs.go != 'false' && (github.event_name != 'workflow_dispatch' || inputs.diagnostic_catalogue != true)
         continue-on-error: true
         timeout-minutes: 5
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: node .github/scripts/auto-publish-draft.js
 
+      - name: Record diagnostic draft
+        if: github.event_name == 'workflow_dispatch' && inputs.diagnostic_catalogue == true
+        run: |
+          echo "### Diagnostic catalogue" >> "$GITHUB_STEP_SUMMARY"
+          echo "Uploaded channel: draft. Test promotion: skipped. Live promotion: skipped." >> "$GITHUB_STEP_SUMMARY"
+          echo "Publish step: ${{ steps.pub.outcome }}. Draft wait: ${{ steps.waitdraft.outcome }}. athom_failed=${{ steps.waitdraft.outputs.athom_failed }}." >> "$GITHUB_STEP_SUMMARY"
+          if [ -f /tmp/homey-diag-catalogue.provenance.json ]; then
+            echo '```json' >> "$GITHUB_STEP_SUMMARY"
+            cat /tmp/homey-diag-catalogue.provenance.json >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+          fi
+          if [ "${{ steps.pub.outcome }}" != "success" ]; then
+            echo "::error::Diagnostic catalogue was not uploaded (publish step ${{ steps.pub.outcome }})."
+            exit 1
+          fi
+          if [ "${{ steps.waitdraft.outputs.athom_failed }}" = "true" ]; then
+            echo "::error::Diagnostic draft was uploaded and Athom marked it processing_failed. Test was not promoted."
+            exit 1
+          fi
+          echo "uploaded=draft promoted_test=false promoted_live=false" >> "$GITHUB_STEP_SUMMARY"
+
       - name: Verify draft promotion result
         id: verify_test
-        if: steps.check_pat.outputs.has_pat == 'true'
+        if: steps.check_pat.outputs.has_pat == 'true' && (github.event_name != 'workflow_dispatch' || inputs.diagnostic_catalogue != true)
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
           # P2325: soft-continue when Athom hang + healthy Test (do not fail-closed/bump-loop)
