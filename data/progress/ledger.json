@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-07T21:17:16.396Z",
+ "updated": "2026-11-08T03:44:38.972Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -6551,6 +6551,15 @@
    "kind": "general",
    "mailDate": "2026-10-21T08:52:15.000Z"
   },
+  "diag:0857571d58d97c4b": {
+   "status": "done",
+   "date": "2026-11-08",
+   "hash": "6e3070e9e9117211",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-11-07T22:31:29.000Z"
+  },
   "diag:08ba3dc89b11dab6": {
    "status": "in-progress",
    "date": "2026-11-07",
@@ -6592,6 +6601,15 @@
    "by": "tuya-deep-diag",
    "kind": "general",
    "mailDate": "2026-10-19T09:13:36.000Z"
+  },
+  "diag:0a93349ddc85c743": {
+   "status": "done",
+   "date": "2026-11-08",
+   "hash": "4c60ae0693df7637",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-11-08T00:52:34.000Z"
   },
   "diag:0a9aa2fdcc918698": {
    "status": "done",
@@ -6804,6 +6822,15 @@
    "kind": "general",
    "mailDate": "2026-10-19T15:25:19.000Z"
   },
+  "diag:10e4af6085fda084": {
+   "status": "done",
+   "date": "2026-11-08",
+   "hash": "16158e19d546af5a",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-11-08T00:52:09.000Z"
+  },
   "diag:10ec11bd78fbad9e": {
    "status": "done",
    "date": "2026-10-27",
@@ -6849,6 +6876,15 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-11-02T23:53:41.000Z"
+  },
+  "diag:130aa9d46ba85c67": {
+   "status": "done",
+   "date": "2026-11-08",
+   "hash": "86c41d7a7d03cc1c",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-11-07T22:23:43.000Z"
   },
   "diag:13362e67913a5ea5": {
    "status": "done",
@@ -7237,6 +7273,15 @@
    "by": "gmail-diagnostics",
    "kind": "github",
    "mailDate": "2026-10-25T19:35:35.000Z"
+  },
+  "diag:1f9121411baf1ef6": {
+   "status": "done",
+   "date": "2026-11-08",
+   "hash": "3a7850f5ae17f3d3",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-11-07T22:20:49.000Z"
   },
   "diag:1fa03fcac7a996c7": {
    "status": "done",
@@ -8066,6 +8111,15 @@
    "kind": "general",
    "mailDate": "2026-10-19T08:56:29.000Z"
   },
+  "diag:39275634d2d9a20b": {
+   "status": "done",
+   "date": "2026-11-08",
+   "hash": "475b163038cf5ca0",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-11-08T02:10:39.000Z"
+  },
   "diag:39962e5096e28809": {
    "status": "done",
    "date": "2026-10-25",
@@ -8356,6 +8410,16 @@
    "by": "tuya-deep-diag",
    "kind": "general",
    "mailDate": "2026-10-18T22:37:48.000Z"
+  },
+  "diag:438e633b2a2c6673": {
+   "status": "pending",
+   "date": "2026-11-08",
+   "hash": "56a44c12e96870d3",
+   "note": "bug_report mail; 1 error line(s)",
+   "by": "gmail-diagnostics",
+   "kind": "bug_report",
+   "mailDate": "2026-11-07T23:35:45.000Z",
+   "errors": 1
   },
   "diag:449cd2dd09b2070c": {
    "status": "done",
@@ -8676,6 +8740,15 @@
    "kind": "bug_report",
    "mailDate": "2026-10-19T09:25:30.000Z",
    "errors": 1
+  },
+  "diag:505690b2a80c6e13": {
+   "status": "done",
+   "date": "2026-11-08",
+   "hash": "aac867f9943b3901",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-11-07T22:23:58.000Z"
   },
   "diag:5072abf6421a33b9": {
    "status": "done",
@@ -9412,6 +9485,15 @@
    "kind": "general",
    "mailDate": "2026-11-02T11:54:13.000Z"
   },
+  "diag:679b27c6d002379f": {
+   "status": "done",
+   "date": "2026-11-08",
+   "hash": "d52b418a139b9cac",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-11-08T00:52:11.000Z"
+  },
   "diag:67e51c37a3448eb8": {
    "status": "done",
    "date": "2026-10-21",
@@ -9725,6 +9807,15 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-10-21T09:24:18.000Z"
+  },
+  "diag:74a0ce999f1b08aa": {
+   "status": "done",
+   "date": "2026-11-08",
+   "hash": "bae746b746893ed3",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-11-08T02:21:17.000Z"
   },
   "diag:74a5943ae3e88177": {
    "status": "pending",
@@ -11033,6 +11124,15 @@
    "kind": "diagnostic",
    "mailDate": "2026-11-01T17:02:38.000Z"
   },
+  "diag:9f101d35dfefbb9e": {
+   "status": "done",
+   "date": "2026-11-08",
+   "hash": "868a153d3484ea82",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-11-08T01:04:11.000Z"
+  },
   "diag:9f755061fa589918": {
    "status": "done",
    "date": "2026-10-25",
@@ -11107,6 +11207,15 @@
    "by": "tuya-deep-diag",
    "kind": "general",
    "mailDate": "2026-10-19T06:37:30.000Z"
+  },
+  "diag:a29a67343f77b861": {
+   "status": "done",
+   "date": "2026-11-08",
+   "hash": "00c9f8e5b95dbd22",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-11-08T00:52:47.000Z"
   },
   "diag:a2c55630a8b5b99f": {
    "status": "done",
@@ -11218,6 +11327,15 @@
    "by": "tuya-deep-diag",
    "kind": "general",
    "mailDate": "2026-10-19T05:32:47.000Z"
+  },
+  "diag:a5a3612e3f1b5087": {
+   "status": "done",
+   "date": "2026-11-08",
+   "hash": "8f9b67b63249b685",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-11-07T23:35:30.000Z"
   },
   "diag:a5c01b76f4584fe0": {
    "status": "done",
@@ -11400,6 +11518,15 @@
    "by": "tuya-deep-diag",
    "kind": "general",
    "mailDate": "2026-11-01T22:25:33.000Z"
+  },
+  "diag:acdcd59438ac541c": {
+   "status": "done",
+   "date": "2026-11-08",
+   "hash": "c19989ea764290a4",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-11-08T02:10:53.000Z"
   },
   "diag:acf7c372b06ddba7": {
    "status": "done",
@@ -11742,6 +11869,15 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-10-21T10:04:11.000Z"
+  },
+  "diag:b78e0b5d099fc482": {
+   "status": "done",
+   "date": "2026-11-08",
+   "hash": "67feb94d2dc74a11",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-11-07T22:20:33.000Z"
   },
   "diag:b7b1adfceab49212": {
    "status": "done",
@@ -12270,6 +12406,15 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-10-21T08:23:46.000Z"
+  },
+  "diag:caf7d1969cccfe46": {
+   "status": "done",
+   "date": "2026-11-08",
+   "hash": "e6ec2709ee4f3a2f",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-11-08T00:51:57.000Z"
   },
   "diag:cb0194b668ebebd4": {
    "status": "done",
@@ -13028,6 +13173,15 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-10-27T00:16:39.000Z"
+  },
+  "diag:e63951202ae99a97": {
+   "status": "done",
+   "date": "2026-11-08",
+   "hash": "c41cc0c5a27d340b",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-11-07T22:23:53.000Z"
   },
   "diag:e639bb06f91f3601": {
    "status": "done",
