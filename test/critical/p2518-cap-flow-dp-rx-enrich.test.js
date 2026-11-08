@@ -20,11 +20,28 @@ describe('P2518 cap/flow/DP/RX enrich locks', () => {
     assert.deepStrictEqual(missing, []);
   });
 
-  it('wifi_ir_remote has no titleFormatted; no [[device]] in fleet samples', () => {
+  it('wifi_ir_remote titleFormatted names non-device args and never [[device]]', () => {
     const wifi = JSON.parse(read('drivers/wifi_ir_remote/driver.flow.compose.json'));
     for (const section of ['triggers', 'conditions', 'actions']) {
       for (const card of wifi[section] || []) {
-        assert.ok(!card.titleFormatted, `wifi card ${card.id} still has titleFormatted`);
+        const formatted = card.titleFormatted || {};
+        for (const text of Object.values(formatted)) {
+          assert.ok(!String(text).includes('[[device]]'), `${card.id} must not name [[device]]`);
+        }
+        const named = (card.args || [])
+          .filter((a) => a && a.name && !(a.type === 'device' && /(?:^|&)driver_id=/.test(String(a.filter || ''))))
+          .map((a) => a.name);
+        if (!named.length) {
+          assert.ok(!card.titleFormatted, `${card.id} has no visible arg, so no titleFormatted`);
+          continue;
+        }
+        assert.ok(card.titleFormatted, `${card.id} must name ${named.join(', ')}`);
+        for (const [lang, text] of Object.entries(card.titleFormatted)) {
+          for (const name of named) {
+            const token = `[[${name}]]`;
+            assert.strictEqual(String(text).split(token).length - 1, 1, `${card.id} ${lang} ${token}`);
+          }
+        }
       }
     }
   });
