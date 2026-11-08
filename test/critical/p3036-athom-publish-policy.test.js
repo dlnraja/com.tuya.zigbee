@@ -56,20 +56,38 @@ test('ci gate: code files are js/cjs/mjs/ts and package manifests, not data or d
 
 // ── rule 2: spacing, busy, per-app lock ──────────────────────────────────────────────────────
 const b = (id, state, createdMin, extra = {}) => ({ id, version: `9.0.${id}`, state, created: ago(createdMin), at: ago(createdMin), ...extra });
-test('spacing: master waits >= 2 h between uploads', () => {
-  const d = P.slotDecision({ appId: MASTER, builds: [b(10, 'test', 90)], eventName: 'push', now: NOW, env: {} });
-  assert.strictEqual(d.go, false); assert.strictEqual(d.deferred, true); assert.match(d.reason, /< 120 min/);
-  assert.strictEqual(P.slotDecision({ appId: MASTER, builds: [b(10, 'draft', 130)], eventName: 'push', now: NOW, env: {} }).go, true);
+test('spacing: master waits 30 min between uploads (was 120)', () => {
+  const d = P.slotDecision({ appId: MASTER, builds: [b(10, 'test', 20)], eventName: 'push', now: NOW, env: {} });
+  assert.strictEqual(d.go, false); assert.strictEqual(d.deferred, true); assert.match(d.reason, /< 30 min/);
+  assert.strictEqual(P.slotDecision({ appId: MASTER, builds: [b(10, 'draft', 30)], eventName: 'push', now: NOW, env: {} }).go, true);
 });
-test('spacing: the master 24 h cap holds once reached (P3091: cap 4, env override 1 here)', () => {
-  const d = P.slotDecision({ appId: MASTER, builds: [b(11, 'test', 180), b(10, 'processing_failed', 400)], eventName: 'schedule', now: NOW, env: { ATHOM_MAX_SUCCESS_PER_24H: '1' } });
-  assert.strictEqual(d.go, false); assert.match(d.reason, /successful upload/);
+test('spacing: master allows six successful uploads per 24 h, and failures do not count', () => {
+  const six = [];
+  for (let i = 0; i < 6; i++) six.push(b(30 + i, 'test', 40 + i * 40));
+  const blocked = P.slotDecision({ appId: MASTER, builds: six, eventName: 'push', now: NOW, env: {} });
+  assert.strictEqual(blocked.go, false); assert.match(blocked.reason, /6 successful/);
+  const five = six.slice(0, 5);
+  for (let i = 0; i < 8; i++) five.push(b(80 + i, 'processing_failed', 50 + i));
+  assert.strictEqual(P.slotDecision({ appId: MASTER, builds: five, eventName: 'push', now: NOW, env: {} }).go, true);
 });
-test('spacing: per-app config and env overrides', () => {
-  assert.strictEqual(P.appPolicy(STABLE, {}).minIntervalMin, 60);
-  assert.strictEqual(P.appPolicy(MASTER, { ATHOM_MIN_INTERVAL_MIN: '30' }).minIntervalMin, 30);
-  assert.strictEqual(P.appPolicy(MASTER, { ATHOM_MAX_SUCCESS_PER_24H: '3' }).maxSuccessPer24h, 3);
-  assert.strictEqual(P.slotDecision({ appId: STABLE, builds: [b(5, 'test', 70)], eventName: 'push', now: NOW, env: {} }).go, true);
+test('spacing: stable and bastien are 15 min and 12 per day, and one app does not fill the other', () => {
+  assert.strictEqual(P.appPolicy(STABLE, {}).minIntervalMin, 15);
+  assert.strictEqual(P.appPolicy(STABLE, {}).maxSuccessPer24h, 12);
+  assert.strictEqual(P.appPolicy(BASTIEN, {}).minIntervalMin, 15);
+  assert.strictEqual(P.appPolicy(BASTIEN, {}).maxSuccessPer24h, 12);
+  assert.strictEqual(P.appPolicy(MASTER, {}).minIntervalMin, 30);
+  assert.strictEqual(P.appPolicy(MASTER, {}).maxSuccessPer24h, 6);
+  assert.strictEqual(P.appPolicy(MASTER, {}).crossAppMinIntervalMin, 15);
+  assert.strictEqual(P.appPolicy(MASTER, { ATHOM_MIN_INTERVAL_MIN: '10' }).minIntervalMin, 10);
+  assert.strictEqual(P.slotDecision({ appId: STABLE, builds: [b(5, 'test', 14)], eventName: 'push', now: NOW, env: {} }).go, false);
+  assert.strictEqual(P.slotDecision({ appId: STABLE, builds: [b(5, 'test', 15)], eventName: 'push', now: NOW, env: {} }).go, true);
+  const full = [];
+  for (let i = 0; i < 12; i++) full.push({ app_id: STABLE, created: ago(20 + i), state: 'test', build: i });
+  full.push({ app_id: BASTIEN, created: ago(20), state: 'test', build: 99 });
+  assert.strictEqual(P.slotDecision({ appId: BASTIEN, builds: [], outcomes: full, eventName: 'push', now: NOW, env: {} }).go, true);
+  const bastienFull = [];
+  for (let i = 0; i < 12; i++) bastienFull.push(b(i + 1, 'test', 20 + i * 20));
+  assert.strictEqual(P.slotDecision({ appId: BASTIEN, builds: bastienFull, eventName: 'push', now: NOW, env: {} }).go, false);
 });
 test('spacing: a hang-up retry bypasses spacing once but waits >= 5 min', () => {
   const hang = b(12, 'processing_failed', 3, { error: 'socket hang up' });
@@ -185,7 +203,7 @@ test('bisect exit: state file and docs describe the normal flow (draft -> Test, 
 
 test('policy file is byte-identical on master, stable-v5 and bastien-home', () => {
   const h = crypto.createHash('sha256').update(fs.readFileSync(path.join(ROOT, '.github/scripts/athom-publish-policy.js'))).digest('hex');
-  assert.strictEqual(h, '7253b41c67bac73c12329c488d6374ab592762c526ffaedf7bc9940e3145edb3', 'edit athom-publish-policy.js on all three branches together and update this hash');
+  assert.strictEqual(h, '4bd4feabc37f76e43142447963fe288a9e74ae11df9ca3512fcf879547e7aed7', 'edit athom-publish-policy.js on all three branches together and update this hash');
 });
 test('ci gate: a version-only package.json bump is not a code change', () => {
   assert.strictEqual(P.versionOnlyDiff('--- a/package.json\n+++ b/package.json\n@@ -3 +3 @@\n-  "version": "9.0.1599",\n+  "version": "9.0.1600",'), true);
