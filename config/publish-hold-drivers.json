@@ -23,6 +23,13 @@
       "sacredCouplesOwnedElsewhere": false
     },
     {
+      "id": "water_leak_aoyan_ay222z",
+      "since": "2026-11-08",
+      "addedBy": "build #3698 v9.0.1616",
+      "reason": "P3263 released this driver permanently as a probe. Build #3698 v9.0.1616 was the Test #3697 v9.0.1615 driver set plus this id only, and Athom returned processing_failed stateMeta=AggregateError with no nested error. A source audit of its compose, images, pair files and device.js require (re-export of water_leak_sensor) found no missing packed file. Couples AOYAN|AY222Z and the space-padded AOYAN spelling stay on this driver. Held again so the default upload matches the last Test driver set until a content defect is fixed. Not a driver-count cap.",
+      "sacredCouplesOwnedElsewhere": false
+    },
+    {
       "id": "water_leak_blitzwolf_bw_is9",
       "since": "2026-10-25",
       "addedBy": "df30cef713 P2958",

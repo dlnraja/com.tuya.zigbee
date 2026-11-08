@@ -55,6 +55,8 @@ test('native clusters only: IAS WD on the siren, IAS ACE binding on the keyfob',
   const k = require(path.join(ROOT, 'drivers/heiman_keyfob/driver.compose.json'));
   assert.ok(s.zigbee.endpoints['1'].clusters.includes(1282));
   assert.ok(k.zigbee.endpoints['1'].bindings.includes(1281));
+  // Athom builds the endpoint from clusters. A binding to 1281 without the cluster is not a declared IAS ACE endpoint.
+  assert.ok(k.zigbee.endpoints['1'].clusters.includes(1281));
   for (const z of [s.zigbee, k.zigbee]) {
     assert.ok(!z.endpoints['1'].clusters.includes(61184) && !z.endpoints['1'].clusters.includes(57344));
   }
