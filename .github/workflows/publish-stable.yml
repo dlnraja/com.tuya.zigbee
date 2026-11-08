@@ -487,13 +487,12 @@ jobs:
           fi
           echo "Draft publish completed (v$V)"
       - name: Re-upload when Athom processing fails (fresh higher version)
-        if: steps.payload.outputs.changed == 'true'
         # WHY: build #272 (v5.12.360) and #267-#270 were Athom-side processing_failed
         # "socket hang up". Owner rule (2026-10-10): versions are strictly increasing and a
         # version already sent to Athom is NEVER re-uploaded -> each retry bumps patch first.
         # Bounded (2 retries), exponential backoff + jitter so we do not flood Athom.
         id: reupload
-        if: steps.publish.outputs.uploaded == 'true'
+        if: steps.payload.outputs.changed == 'true' && steps.publish.outputs.uploaded == 'true'
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
           HOMEY_EXPECTED_VERSION: ${{ steps.publish.outputs.version }}
@@ -551,8 +550,7 @@ jobs:
           if-no-files-found: ignore
           retention-days: 90
       - name: Commit stable version back
-        if: steps.payload.outputs.changed == 'true'
-        if: steps.publish.outputs.uploaded == 'true'
+        if: steps.payload.outputs.changed == 'true' && steps.publish.outputs.uploaded == 'true'
         run: |
           cd "$GITHUB_WORKSPACE"
           V="${{ steps.reupload.outputs.version || steps.publish.outputs.version }}"
