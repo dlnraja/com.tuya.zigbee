@@ -363,6 +363,10 @@ let skippedBackup = 0;
 const BACKUP_FILE_REGEX = /\.(bak|backup|tmp|old|orig|swp|swo|rej)(\.[0-9]+)?$/i;
 const filter = (src, dest) => {
   const name = path.basename(src);
+  if (name === '.homeycompose' || name === '.homeybuild') {
+    console.log(`Publish trim: excluded ${name} from the staged payload`);
+    return false;
+  }
   if (isReservedName(name)) {
     skippedReserved++;
     console.error(`REJECTED reserved-name entry from pack: ${src}`);
