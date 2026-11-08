@@ -54,7 +54,7 @@ describe('P2183 battery health flow tokens', () => {
     assert.ok(!calls[0].tokens.setCapabilityValue);
   });
 
-  it('battery health flow cards do not use titleFormatted [[device]]', () => {
+  it('battery health flow cards name a device unless a driver_id filter already selects it', () => {
     for (const name of [
       'battery_health_changed',
       'battery_needs_replacement',
@@ -65,8 +65,20 @@ describe('P2183 battery health flow tokens', () => {
         path.join(ROOT, '.homeycompose/flow/triggers', `${name}.json`),
         'utf8'
       ));
-      const formatted = JSON.stringify(json.titleFormatted || {});
-      assert.ok(!formatted.includes('[[device]]'), name);
+      const dev = (json.args || []).find((a) => a && a.type === 'device');
+      const pinned = dev && /(?:^|&)driver_id=/.test(String(dev.filter || ''));
+      const formatted = json.titleFormatted || {};
+      if (!dev || pinned) {
+        assert.ok(!JSON.stringify(formatted).includes('[[device]]'), name);
+        continue;
+      }
+      for (const [lang, text] of Object.entries(formatted)) {
+        assert.equal(String(text).split('[[device]]').length - 1, 1, `${name} ${lang}`);
+      }
+      const extra = (json.args || []).filter((a) => a && a.name && a.type !== 'device').map((a) => a.name);
+      for (const argName of extra) {
+        assert.ok(String(formatted.en || '').includes(`[[${argName}]]`), `${name} [[${argName}]]`);
+      }
     }
   });
 });
