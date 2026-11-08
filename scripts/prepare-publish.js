@@ -856,6 +856,20 @@ try {
       console.warn(`Could not write HOMEY_PUBLISH_DIR to GITHUB_ENV: ${envErr.message}`);
     }
   }
+  {
+    const manifest = readJson(destAppJson);
+    const keepIds = new Set((manifest.drivers || []).map((d) => d && d.id).filter(Boolean));
+    const drvRoot = path.join(destDir, 'drivers');
+    let deadDirs = 0;
+    for (const d of (fs.existsSync(drvRoot) ? fs.readdirSync(drvRoot) : [])) {
+      const full = path.join(drvRoot, d);
+      if (!keepIds.has(d) && fs.statSync(full).isDirectory()) {
+        fs.rmSync(full, { recursive: true, force: true });
+        deadDirs++;
+      }
+    }
+    console.log(`[P2930b] removed ${deadDirs} driver folder(s) absent from the manifest`);
+  }
   // 6) P2928: validate the pruned Bastien publish dir (what Athom receives) at level publish.
   try {
     const m = JSON.parse(fs.readFileSync(destAppJson, 'utf8'));
