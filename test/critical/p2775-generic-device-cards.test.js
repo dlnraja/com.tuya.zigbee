@@ -124,11 +124,10 @@ describe('P2775/P2776 manifest quality', () => {
       for (const id of ids) {
         const c = read(`.homeycompose/flow/${t}/${id}.json`);
         for (const l of ['en', 'fr', 'nl', 'de']) {assert.ok(c.title[l], `${id} title.${l}`);}
-        // Repo rule (manual-select bug): triggers never carry [[device]] in titleFormatted.
+        // Device arg without driver_id must appear once in titleFormatted (homey-lib publish rule).
+        for (const l of ['en', 'fr', 'nl', 'de']) {assert.ok(c.titleFormatted[l], `${id} titleFormatted.${l}`);}
         if (t === 'triggers') {
-          assert.ok(!c.titleFormatted || !JSON.stringify(c.titleFormatted).includes('[[device]]'), `${id} trigger without [[device]]`);
-        } else {
-          for (const l of ['en', 'fr', 'nl', 'de']) {assert.ok(c.titleFormatted[l], `${id} titleFormatted.${l}`);}
+          assert.equal((c.titleFormatted.en.match(/\[\[device\]\]/g) || []).length, 1, `${id} [[device]] once`);
         }
         for (const a of c.args) {
           if (c.titleFormatted) {assert.ok(c.titleFormatted.en.includes(`[[${a.name}]]`), `${id} references [[${a.name}]]`);}

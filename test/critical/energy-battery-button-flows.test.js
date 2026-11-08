@@ -42,7 +42,11 @@ describe('P205 energy / battery / button flows', () => {
     assert.ok(fs.existsSync(path.join(ROOT, '.homeycompose/flow/actions/virtual_press_button.json')));
     assert.ok(fs.existsSync(path.join(ROOT, '.homeycompose/flow/conditions/energy_power_above.json')));
     const bp = JSON.parse(read('.homeycompose/flow/triggers/button_pressed.json'));
-    assert.ok(!bp.titleFormatted || !JSON.stringify(bp.titleFormatted).includes('[[device]]'));
+    // The device argument is not pinned to one driver_id, so Homey publish validation
+    // requires [[device]] exactly once. A driver_id filter is what makes [[device]] implicit.
+    for (const l of ['en', 'fr', 'nl', 'de']) {
+      assert.equal((bp.titleFormatted[l].match(/\[\[device\]\]/g) || []).length, 1, l);
+    }
   });
 
   it('FeatureFlowCards registers battery_percent_below and virtual_press_button', () => {
