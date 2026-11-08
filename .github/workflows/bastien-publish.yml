@@ -56,6 +56,8 @@ on:
       - 'scripts/maintenance/**'
       - '.homeyignore'
       - '.homeychangelog.json'
+      - '.github/scripts/athom-publish-policy.js'
+      - 'scripts/automation/changelog-entry.js'
 
 permissions:
   contents: read
@@ -230,7 +232,11 @@ jobs:
       # WHY(2026-10-11): runs #38093168267/#38094461142 failed the gate at 1.0.122 <= 1.0.122 because this
       # workflow never bumped. Raise to the highest Athom/floor version, then +1 patch (runner-local; the
       # Athom API keeps the next run strictly above). Gate below stays mandatory.
+      - name: Packed payload changed since the last version bump
+        id: payload
+        run: node .github/scripts/athom-publish-policy.js payload-changed
       - name: Bump Bastien patch above highest uploaded
+        if: steps.payload.outputs.changed == 'true'
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: |
@@ -240,10 +246,12 @@ jobs:
           grep -m1 '"version"' app.json
       # WHY(2026-10-10 user rule): never upload a version <= highest Athom build (strictly incremental).
       - name: Strictly-incremental version gate
+        if: steps.payload.outputs.changed == 'true'
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: node .github/scripts/athom-version-floor.js --gate
       - name: Homey app build
+        if: steps.payload.outputs.changed == 'true'
         run: |
           set -euo pipefail
           npx homey app build
@@ -262,6 +270,7 @@ jobs:
           "
 
       - name: Prepare Publish Directory
+        if: steps.payload.outputs.changed == 'true'
         run: npm run prepare-publish
 
       - name: Footprint report (ROM/RAM, warn-only)
@@ -278,6 +287,7 @@ jobs:
         run: node .github/scripts/wait-athom-idle.js ${{ env.EXPECTED_APP_ID }}
 
       - name: Publish Bastien draft → Test
+        if: steps.payload.outputs.changed == 'true'
         id: publish_bastien
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
