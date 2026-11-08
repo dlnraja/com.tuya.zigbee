@@ -873,7 +873,13 @@
           },
           "example": 1
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "FUT089Z remote: ON pressed [[zone_filter]]",
+        "fr": "Télécommande FUT089Z : ON appuyé [[zone_filter]]",
+        "nl": "FUT089Z-afstandsbediening: AAN gedrukt [[zone_filter]]",
+        "de": "FUT089Z-Fernbedienung: EIN gedrückt [[zone_filter]]"
+      }
     },
     {
       "id": "button_wireless_4_fut089z_off",
@@ -990,7 +996,13 @@
           },
           "example": 1
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "FUT089Z remote: OFF pressed [[zone_filter]]",
+        "fr": "Télécommande FUT089Z : OFF appuyé [[zone_filter]]",
+        "nl": "FUT089Z-afstandsbediening: UIT gedrukt [[zone_filter]]",
+        "de": "FUT089Z-Fernbedienung: AUS gedrückt [[zone_filter]]"
+      }
     },
     {
       "id": "button_wireless_4_fut089z_brightness",
@@ -1118,7 +1130,13 @@
           },
           "example": 50
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "FUT089Z remote: Brightness set [[zone_filter]]",
+        "fr": "Télécommande FUT089Z : Luminosité réglée [[zone_filter]]",
+        "nl": "FUT089Z-afstandsbediening: Helderheid ingesteld [[zone_filter]]",
+        "de": "FUT089Z-Fernbedienung: Helligkeit eingestellt [[zone_filter]]"
+      }
     },
     {
       "id": "button_wireless_4_fut089z_color_temperature",
@@ -1257,7 +1275,13 @@
           },
           "example": 50
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "FUT089Z remote: Colour temperature set [[zone_filter]]",
+        "fr": "Télécommande FUT089Z : Température de couleur réglée [[zone_filter]]",
+        "nl": "FUT089Z-afstandsbediening: Kleurtemperatuur ingesteld [[zone_filter]]",
+        "de": "FUT089Z-Fernbedienung: Farbtemperatur eingestellt [[zone_filter]]"
+      }
     },
     {
       "id": "button_wireless_4_fut089z_color",
@@ -1396,7 +1420,13 @@
           },
           "example": 100
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "FUT089Z remote: Colour set [[zone_filter]]",
+        "fr": "Télécommande FUT089Z : Couleur réglée [[zone_filter]]",
+        "nl": "FUT089Z-afstandsbediening: Kleur ingesteld [[zone_filter]]",
+        "de": "FUT089Z-Fernbedienung: Farbe eingestellt [[zone_filter]]"
+      }
     },
     {
       "id": "button_wireless_4_fut089z_scene",
@@ -1524,7 +1554,13 @@
           },
           "example": 1
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "FUT089Z remote: Scene button pressed [[zone_filter]]",
+        "fr": "Télécommande FUT089Z : Bouton de scène appuyé [[zone_filter]]",
+        "nl": "FUT089Z-afstandsbediening: Scèneknop gedrukt [[zone_filter]]",
+        "de": "FUT089Z-Fernbedienung: Szenentaste gedrückt [[zone_filter]]"
+      }
     }
   ],
   "conditions": [],
