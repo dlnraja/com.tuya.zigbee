@@ -59,5 +59,11 @@
       },
       "example": "dim"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Transition completed [[device]]",
+    "fr": "Transition terminée [[device]]",
+    "nl": "Overgang voltooid [[device]]",
+    "de": "Übergang abgeschlossen [[device]]"
+  }
 }

@@ -34,5 +34,11 @@
         "fr": "Seuil bas"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Battery recovered (app alarm cleared) [[device]]",
+    "fr": "Batterie rétablie (alarme app effacée) [[device]]",
+    "nl": "Batterij hersteld (app-alarm gewist) [[device]]",
+    "de": "Batterie erholt (App-Alarm gelöscht) [[device]]"
+  }
 }

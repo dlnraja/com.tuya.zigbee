@@ -12,5 +12,11 @@
       "type": "device",
       "filter": "capabilities=onoff"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Auto-Off Timer triggered [[device]]",
+    "fr": "Minuterie Auto-Off déclenchée [[device]]",
+    "nl": "Automatische uit-timer geactiveerd [[device]]",
+    "de": "Auto-Aus-Timer ausgelöst [[device]]"
+  }
 }

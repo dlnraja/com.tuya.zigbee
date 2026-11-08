@@ -12,5 +12,11 @@
       "type": "device",
       "filter": "capabilities=button.1,capabilities=button"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Button was triple-clicked - software [[device]]",
+    "fr": "Bouton triple-cliqué (Logiciel) [[device]]",
+    "nl": "Knop driemaal geklikt - software [[device]]",
+    "de": "Taste dreimal geklickt - Software [[device]]"
+  }
 }

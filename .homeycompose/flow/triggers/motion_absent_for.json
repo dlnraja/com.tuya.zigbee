@@ -55,5 +55,11 @@
       },
       "example": 10
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "No motion for a while [[device]] [[minutes]]",
+    "fr": "Aucun mouvement depuis un moment [[device]] [[minutes]]",
+    "nl": "Een tijd geen beweging [[device]] [[minutes]]",
+    "de": "Eine Weile keine Bewegung [[device]] [[minutes]]"
+  }
 }

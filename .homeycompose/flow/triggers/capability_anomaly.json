@@ -140,5 +140,11 @@
       },
       "example": "measure_power"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Unusual value detected [[device]] [[capability]] [[sensitivity]]",
+    "fr": "Valeur inhabituelle détectée [[device]] [[capability]] [[sensitivity]]",
+    "nl": "Ongebruikelijke waarde gedetecteerd [[device]] [[capability]] [[sensitivity]]",
+    "de": "Ungewöhnlicher Wert erkannt [[device]] [[capability]] [[sensitivity]]"
+  }
 }

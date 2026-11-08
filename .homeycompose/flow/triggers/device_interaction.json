@@ -68,5 +68,11 @@
         "de": "Gerät (optionaler Filter)"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "A device interaction happened [[device]]",
+    "fr": "Une interaction appareil a eu lieu [[device]]",
+    "nl": "Er vond een apparaatininteractie plaats [[device]]",
+    "de": "Eine Geräteinteraktion ist aufgetreten [[device]]"
+  }
 }
