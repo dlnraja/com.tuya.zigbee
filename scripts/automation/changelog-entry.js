@@ -83,7 +83,8 @@ function summarize(subjects) {
 // also close a version, so one entry never lists the whole recent history.
 const BUMP_SUBJECT = /^(?:chore|release|build)(?:\([^)]*\))?:\s*v?\d+\.\d+\.\d+\b|source manifests [\d.]+ -> \d+\.\d+\.\d+/i;
 
-/** Precise en/fr note from our commits (families, model ids), in our own words; summarize() if the backfill module is missing. */
+/** Precise en/fr note from our commits (families, model ids), in our own words; summarize() if the backfill module is missing.
+ *  When describe() would only say "small fixes" or "tooling only", name the runtime subjects (fix/feat/perf, chore diag/drivers/lib/app). */
 function runtimeHeads(subjects) {
   const items = [];
   for (const s of subjects || []) {
