@@ -22,6 +22,7 @@ on:
       - 'package*.json'
       - 'scripts/ci/**'
       - 'scripts/validation/**'
+      - 'test/critical/**'
   pull_request:
     branches: [master, stable-v5]
     paths:
@@ -34,6 +35,7 @@ on:
       - 'package*.json'
       - 'scripts/ci/**'
       - 'scripts/validation/**'
+      - 'test/critical/**'
   # P3034: manual run to prove master green after a [skip ci] fix push.
   workflow_dispatch:
 
