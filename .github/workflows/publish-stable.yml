@@ -36,7 +36,7 @@ on:
   workflow_dispatch:
     inputs:
       force_test:
-        description: 'Promote to Test even if master 9.0.x is soaking (overwrites shared App ID)'
+        description: 'Only if this workflow is pointed at Universal Tuya. The stable app id is never that target.'
         type: boolean
         default: false
       force_publish:
@@ -570,15 +570,18 @@ jobs:
       - name: Record soak decision
         run: |
           echo "## Shared App ID soak" >> "$GITHUB_STEP_SUMMARY"
+          echo "soak-decision skip=${{ needs.soak.outputs.skip }} reason=${{ needs.soak.outputs.reason }}"
           echo "skip=${{ needs.soak.outputs.skip }} reason=${{ needs.soak.outputs.reason }}" >> "$GITHUB_STEP_SUMMARY"
           if [ "${{ needs.soak.outputs.skip }}" = "true" ]; then
-            echo "Draft upload skipped so 5.12.x cannot overwrite soaking 9.0 Test." >> "$GITHUB_STEP_SUMMARY"
+            echo "Upload skipped. reason=${{ needs.soak.outputs.reason }}" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "App id is not Universal Tuya. A 9.x Test build does not block this 5.x publish." >> "$GITHUB_STEP_SUMMARY"
           fi
 
   promote:
     name: "Promote to Test"
     needs: [pre-validation, publish, soak]
-    # Skip entirely while master 9.0.x occupies the shared Test slot.
+    # Runs only after a draft upload. A distinct stable app id is not blocked by master 9.x.
     if: needs.soak.outputs.skip != 'true' && needs.publish.result == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 50  # + final gate (≤15)
