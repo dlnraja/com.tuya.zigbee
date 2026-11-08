@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-08T18:34:00.430Z",
+  "updated": "2026-11-08T18:58:22.559Z",
   "threads": {
     "21313": {
       "lastPost": 2823,
@@ -50331,11 +50331,13 @@
       "why": "request-no-identity",
       "crossResearch": {
         "at": "2026-11-08",
-        "verdict": "no-action",
-        "confidence": 0,
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
-        "sources": 1
+        "candidates": [
+          "https://www.zigbee2mqtt.io/devices/MG3-5RZ.html"
+        ],
+        "sources": 33
       }
     },
     {
@@ -50486,11 +50488,13 @@
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
         "at": "2026-11-08",
-        "verdict": "no-action",
-        "confidence": 0,
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
-        "sources": 1
+        "candidates": [
+          "https://www.zigbee2mqtt.io/devices/MG3-5RZ.html"
+        ],
+        "sources": 32
       }
     },
     {
@@ -50541,11 +50545,13 @@
       "why": "request-no-identity",
       "crossResearch": {
         "at": "2026-11-08",
-        "verdict": "no-action",
-        "confidence": 0,
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
-        "sources": 1
+        "candidates": [
+          "https://www.zigbee2mqtt.io/devices/ZG-227ZP.html"
+        ],
+        "sources": 4
       }
     },
     {
@@ -50558,11 +50564,11 @@
       "why": "request-no-identity",
       "crossResearch": {
         "at": "2026-11-08",
-        "verdict": "no-action",
+        "verdict": "lead",
         "confidence": 0,
         "couples": [],
         "candidates": [],
-        "sources": 1
+        "sources": 32
       }
     },
     {
@@ -50598,11 +50604,13 @@
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
         "at": "2026-11-08",
-        "verdict": "no-action",
-        "confidence": 0,
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
-        "sources": 1
+        "candidates": [
+          "https://www.zigbee2mqtt.io/devices/MG3-5RZ.html"
+        ],
+        "sources": 32
       }
     },
     {
@@ -51089,11 +51097,15 @@
       "triagedVia": "gmail-homey-diag",
       "crossResearch": {
         "at": "2026-11-08",
-        "verdict": "no-action",
-        "confidence": 0,
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
-        "sources": 1
+        "candidates": [
+          "https://www.zigbee2mqtt.io/devices/ZG-204ZV-z.html",
+          "https://www.zigbee2mqtt.io/devices/ZG-204ZV2-TH-z.html",
+          "https://www.zigbee2mqtt.io/devices/ZG-204ZV.html"
+        ],
+        "sources": 37
       }
     },
     {
