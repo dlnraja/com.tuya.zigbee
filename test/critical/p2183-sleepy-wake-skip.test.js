@@ -147,17 +147,30 @@ describe('P2183 sleepy wake skip', () => {
     assert.doesNotMatch(src, /device\.error\('\[IAS\] ❌ All enrollment/);
   });
 
-  it('Peter flow cards do not use titleFormatted [[device]]', () => {
+  it('Peter flow cards name a device unless a driver_id filter already selects it', () => {
     const root = path.join(__dirname, '..', '..');
     const files = [
       'drivers/contact_sensor/driver.flow.compose.json',
       '.homeycompose/flow/triggers/battery_health_changed.json',
       '.homeycompose/flow/triggers/virtual_button_pressed.json',
     ];
+    const cardsOf = (j) => (j.triggers || j.conditions || j.actions)
+      ? [...(j.triggers || []), ...(j.conditions || []), ...(j.actions || [])]
+      : [j];
     for (const rel of files) {
       const j = JSON.parse(fs.readFileSync(path.join(root, rel), 'utf8'));
-      const blob = JSON.stringify(j);
-      assert.ok(!blob.includes('[[device]]'), rel);
+      for (const card of cardsOf(j)) {
+        const dev = (card.args || []).find((a) => a && a.type === 'device');
+        const pinned = dev && /(?:^|&)driver_id=/.test(String(dev.filter || ''));
+        const formatted = card.titleFormatted || {};
+        if (!dev || pinned) {
+          assert.ok(!JSON.stringify(formatted).includes('[[device]]'), `${rel} ${card.id}`);
+          continue;
+        }
+        for (const [lang, text] of Object.entries(formatted)) {
+          assert.equal(String(text).split('[[device]]').length - 1, 1, `${rel} ${card.id} ${lang}`);
+        }
+      }
     }
   });
 });
