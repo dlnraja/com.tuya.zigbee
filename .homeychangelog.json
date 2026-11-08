@@ -907,9 +907,12 @@
       ]
     }
   ],
+  "9.0.1618": {
+    "en": "Changed: do not reuse a red run after a manifest change; note that the keyfob endpoint lists IAS ACE; declare the keyfob IAS ACE cluster and hold the failed AOYAN probe; satisfy the lint ratchet for the budget line.",
+    "fr": "Modifié : do not reuse a red run after a manifest change; note that the keyfob endpoint lists IAS ACE; declare the keyfob IAS ACE cluster and hold the failed AOYAN probe; satisfy the lint ratchet for the budget line."
+  },
   "9.0.1617": {
-    "en": "Fixed: buttons and remotes, pairing and device recognition and battery reporting. Plus 5 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : boutons et télécommandes, appairage et reconnaissance des appareils et niveau de batterie. Et 5 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "en": "Fixed: buttons and remotes, pairing and device recognition and battery reporting. Plus 5 other changes in the app core. Behind the scenes: tests and publishing checks."
   },
   "9.0.1616": {
     "en": "Fixed: pairing and device recognition (TS0201), lights and dimmers, thermostats (TRV06) and climate sensors. Plus 4 other changes in the app core. Behind the scenes: tests and publishing checks."
@@ -969,9 +972,5 @@
   "9.0.1596": {
     "en": "Thermostats: TRV06 radiator valves no longer get mistaken for water valves and answer data requests again; Beca BAC-006AZB / BAC-002-ALZB wall thermostats on the wall thermostat driver; temperature calibration applied exactly once. Garden valves (TS0049, Novato ZPV-01) and the la2c2uo9 dimmer each have a single driver. New: dedicated 2-gang TS0002 switch driver, rain sensor decoding, soil sensor and HOBEIAN ZG-102ZL value fixes, a power-versus-energy sanity check, and Flow cards to teach the app what an unknown command means.",
     "fr": "Thermostats : les têtes TRV06 ne sont plus prises pour des vannes d'eau et répondent à nouveau aux demandes de données ; thermostats muraux Beca BAC-006AZB / BAC-002-ALZB sur le driver de thermostat mural ; calibration de température appliquée une seule fois. Vannes de jardin (TS0049, Novato ZPV-01) et variateur la2c2uo9 sur un seul driver chacun. Nouveau : driver dédié pour l'interrupteur 2 voies TS0002, décodage du capteur de pluie, valeurs corrigées pour le capteur de sol et le HOBEIAN ZG-102ZL, contrôle de cohérence puissance/énergie, et cartes Flow pour apprendre à l'app ce que signifie une commande inconnue."
-  },
-  "9.0.1594": {
-    "en": "Memory: the fingerprint cache loads lazily with a size cap and external device reads are bounded. AOYAN devices that report padded manufacturer names keep their options. Publishing stops automatically after repeated failed builds.",
-    "fr": "Mémoire : le cache d'empreintes se charge à la demande avec une taille maximale et les lectures d'appareils externes sont bornées. Les appareils AOYAN qui envoient un nom de fabricant avec des espaces gardent leurs options. La publication s'arrête d'elle-même après plusieurs échecs de compilation."
   }
 }
