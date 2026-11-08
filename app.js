@@ -1,4 +1,5 @@
 'use strict';
+try { require('./lib/utils/parse-trace').bootMark('app-js'); } catch (_) { /* boot mark only */ }
 const { localMsg } = require('./lib/utils/LocalizedMessage');
 
 // v5.11.185: Suppress punycode DEP0040 deprecation from transitive deps
@@ -194,6 +195,13 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
 
   async onInit() {
     this.homey.__tuyaApp = this;
+    try {
+      const tr = require('./lib/utils/parse-trace');
+      const ver = String(this.homey?.manifest?.version || 'na').replace(/[^0-9.]/g, '').slice(0, 16) || 'na';
+      tr.phase('oninit-start', ver);
+      const t0 = Date.now();
+      setImmediate(() => { try { tr.phase('oninit-sync', String(Date.now() - t0)); } catch (_) { /* trace only */ } });
+    } catch (_) { /* trace only */ }
     // Homey memwarn: run registered cache cleaners before Homey kills the app (additive).
     try {
       const MemwarnGuard = require('./lib/utils/MemwarnGuard');
@@ -555,6 +563,12 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
       }, DDS.REDUMP_MS);
     } catch (_e) { /* soft */ }
 
+    try {
+      const tr = require('./lib/utils/parse-trace');
+      const ver = String(this.homey?.manifest?.version || 'na').replace(/[^0-9.]/g, '').slice(0, 16) || 'na';
+      tr.phase('oninit-end', ver);
+      tr.noteBudget(require('./lib/tuya/DeviceFingerprintDB').runtimeBudgetSnapshot());
+    } catch (_) { /* trace only */ }
     this.log(`✅ Tuya Unified Zigbee App initialized (${BootBudget.heapUsedMb()} MB heap / ${BootBudget.rssUsedMb()} MB rss)`);
     this._clearMigrationQueue();
   }
@@ -1828,6 +1842,7 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
   }
 
   async onUninit() {
+    try { require('./lib/utils/parse-trace').traceDevice('lifecycle', this, { driver: 'app', dir: 'uninit' }); } catch (_) { /* trace only */ }
     try { await require('./lib/utils/energy-kpi').flushKpi(this.homey); } catch (_e) { /* soft */ } // P2961
     try { require('./lib/memory/budget-hooks').uninstall(); } catch (_e) { /* soft */ } // P3023
     this._destroyed = true;
