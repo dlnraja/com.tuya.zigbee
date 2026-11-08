@@ -19,7 +19,7 @@ const base = JSON.parse(fs.readFileSync(path.join(ROOT, 'test', 'fixtures', 'ath
 const published = new Set(base.ids);
 const P3024 = ['heiman_keyfob', 'heiman_siren', 'presence_radar_aoyan_ay204t', 'sauna_thermostat_ae5503',
   'siren_moes_mg_bjq002', 'switch_2gang_ts0002', 'switch_wall_6gang_metering', 'valve_novato_zpv01',
-  'water_leak_blitzwolf_bw_is9']; // P3263: water_leak_aoyan_ay222z released (swap probe)
+  'water_leak_blitzwolf_bw_is9', 'water_leak_aoyan_ay222z']; // #3698 put ay222z back on hold
 
 describe('P3024 publish hold of never-published master driver ids', () => {
   it('1574 fixture looks like the real Test build', () => {
