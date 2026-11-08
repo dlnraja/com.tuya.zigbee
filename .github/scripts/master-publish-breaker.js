@@ -90,5 +90,5 @@ if (require.main === module) {
   const carry = d.skip || snap.builds.length === 0 ? '' : nextCarry({ builds: snap.builds, event: process.env.GITHUB_EVENT_NAME, transientRetry: process.env.TRANSIENT_RETRY, deferredRetry: process.env.DEFERRED_RETRY, deferredManual: process.env.DEFERRED_MANUAL });
   console.log(`[breaker] ${d.skip ? 'SKIP' : 'go'}: ${d.reason}`);
   if (process.env.GITHUB_OUTPUT) fs.appendFileSync(process.env.GITHUB_OUTPUT, `skip=${d.skip}\ncarry=${carry}\n`);
-  if (d.skip && process.env.GITHUB_STEP_SUMMARY) fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, `### Master publish breaker open\n${d.reason}\n`);
+  if (d.skip && process.env.GITHUB_STEP_SUMMARY) fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, `### Master publish breaker open\ndisposition=skipped-breaker\nsource_sha=${process.env.GITHUB_SHA || ''}\n${d.reason}\n`);
 }
