@@ -28,6 +28,9 @@ let dirty = 0;
 const rd = (p) => fs.readFileSync(path.join(ROOT, p), 'utf8');
 const rj = (p) => JSON.parse(rd(p));
 function wj(p, data, raw) {
+  let same = false;
+  try { same = JSON.stringify(JSON.parse(raw)) === JSON.stringify(data); } catch { same = false; }
+  if (same) return;
   const pretty = /^\{\s*\n/.test(raw);
   const out = (pretty ? JSON.stringify(data, null, 2) : JSON.stringify(data)) + (raw.endsWith('\n') ? '\n' : '');
   if (out !== raw) { dirty++; console.log(`[P2974] ${p}`); if (!CHECK) {fs.writeFileSync(path.join(ROOT, p), out);} }
