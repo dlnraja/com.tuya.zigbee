@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-08",
+  "run": "P3273 daily resume (light run after the failed 2026-11-07 run)",
+  "leads": [
+    {
+      "id": "L-P3273-01",
+      "kind": "suspected-bug",
+      "branches": ["master", "stable-v5", "bastien-home"],
+      "file": "lib/managers/CapabilityFallbackManager.js",
+      "summary": "sanitizeValue() drops every measure_* / meter_* number above 30000 as a Tuya error value. It wraps setCapabilityValue for every device built on BaseUnifiedDevice, so real values above that ceiling are discarded silently: outdoor illuminance above 30000 lux (direct sunlight), a cumulative meter_power above 30000 kWh, measure_power above 30 kW on a whole-house meter. The capability would stay frozen on its last accepted value.",
+      "status": "open, found by code reading, no user report yet",
+      "fix_plan": "Replace the blanket ceiling with per-capability bounds (keep the 0xFFFF / 65535-style sentinels as errors only where the capability cannot reach them, e.g. temperature, humidity, battery). Regression test first: measure_luminance 45000 and meter_power 31000 must pass through; 65535 on measure_temperature must still be dropped. Master is under the P3095 publish hold, so master goes after the hold clears; stable-v5 and bastien-home can take the same simple fix (Bastien rule: same time as master)."
+    }
+  ],
+  "carried_over": ["L1 _TZE200_3towulqd|TS0601 DP105 illuminance interval (after P3095 hold)", "L2 battery curtain robot candidate _TZ3210_sxtfesc6|TS030F (couple uncertain)", "Johan #665 _TZ3210_ejctepku|TS0505B deferred wrong-class move (after hold)"]
+}
