@@ -70,6 +70,16 @@ async function latestTestVersion() {
   }
 }
 
+function decideSoak({ appId, testVersion, force }) {
+  if (force) {return { skip: false, reason: 'force_test' };}
+  if (isStableAppId(appId) || appId !== UNIVERSAL_TUYA) {
+    return { skip: false, reason: 'distinct_app_id' };
+  }
+  if (!testVersion) {return { skip: true, reason: 'unknown_test_version' };}
+  if (/^9\./.test(testVersion)) {return { skip: true, reason: `test_is_${testVersion}` };}
+  return { skip: false, reason: `test_is_${testVersion}` };
+}
+
 async function main() {
   if (FORCE) {
     log('soak-guard: STABLE_FORCE_TEST set — promote allowed.');
@@ -78,34 +88,14 @@ async function main() {
     return;
   }
 
-  // Distinct Athom app: .stable never overwrites Universal Tuya 9.0
-  if (isStableAppId(APP) || APP !== UNIVERSAL_TUYA) {
-    log(`soak-guard: APP_ID=${APP} is not Universal Tuya — 9.x Test soak does not apply. Promote allowed.`);
-    out('skip', 'false');
-    out('reason', 'distinct_app_id');
-    return;
-  }
-
-  const version = await latestTestVersion();
-  if (!version) {
-    log('soak-guard: Test version unknown — skip promote (fail-closed, would hit Universal Tuya).');
-    out('skip', 'true');
-    out('reason', 'unknown_test_version');
-    return;
-  }
-
-  if (/^9\./.test(version)) {
-    log(`soak-guard: Universal Tuya Test is ${version} (master soak). Skip overwrite of 9.0.`);
-    out('skip', 'true');
-    out('reason', `test_is_${version}`);
-    return;
-  }
-
-  log(`soak-guard: Universal Tuya Test is ${version} — promote allowed.`);
-  out('skip', 'false');
-  out('reason', `test_is_${version}`);
+  const version = (isStableAppId(APP) || APP !== UNIVERSAL_TUYA) ? null : await latestTestVersion();
+  const decision = decideSoak({ appId: APP, testVersion: version, force: false });
+  log(`soak-guard: APP_ID=${APP} skip=${decision.skip} reason=${decision.reason}`);
+  out('skip', decision.skip ? 'true' : 'false');
+  out('reason', decision.reason);
 }
 
+if (require.main === module) {
 main().catch((err) => {
   log(`soak-guard: ${err.message}`);
   if (isStableAppId(APP) || APP !== UNIVERSAL_TUYA) {
@@ -116,3 +106,6 @@ main().catch((err) => {
   out('skip', 'true');
   out('reason', 'guard_error');
 });
+}
+
+module.exports = { decideSoak, UNIVERSAL_TUYA, STABLE_APP, isStableAppId };
