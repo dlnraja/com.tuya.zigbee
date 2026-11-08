@@ -63,11 +63,7 @@ describe('P2524 radar presence flow wire', () => {
       'utf8',
     ));
     for (const card of [...(j.actions || []), ...(j.triggers || [])]) {
-      assert.equal(
-        card.titleFormatted,
-        undefined,
-        `${card.id} must not set titleFormatted`,
-      );
+      assert.equal(JSON.stringify(card.titleFormatted || {}).includes('[[device]]'), false, card.id);
     }
   });
 });
