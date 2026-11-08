@@ -368,7 +368,7 @@ const filter = (src, dest) => {
   const name = path.basename(src);
   // The staged payload is the composed app. Source compose metadata and a
   // nested build dir must not ride along: compose would rebuild held drivers.
-  if (name === '.homeycompose' || name === '.homeybuild') {
+  if (path.resolve(src) !== path.resolve(srcDir) && (name === '.homeycompose' || name === '.homeybuild')) {
     console.log(`Publish trim: excluded ${name} from the staged payload`);
     return false;
   }

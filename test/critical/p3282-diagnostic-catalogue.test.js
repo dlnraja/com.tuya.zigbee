@@ -44,7 +44,7 @@ describe('P3282 diagnostic catalogue above 350 drivers', () => {
     assert.ok(wf.includes('PUBLISH_DIAGNOSTIC_CATALOGUE'));
     assert.ok(wf.includes("inputs.diagnostic_catalogue != true"));
     assert.ok(prep.includes('homey-diag-catalogue'));
-    assert.ok(prep.includes("name === '.homeycompose' || name === '.homeybuild'"));
+    assert.ok(prep.includes("path.resolve(src) !== path.resolve(srcDir) && (name === '.homeycompose' || name === '.homeybuild')"));
     assert.ok(action.includes('HOMEY_PUBLISH_DIR'));
   });
 });
