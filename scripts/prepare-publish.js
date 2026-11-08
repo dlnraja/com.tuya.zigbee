@@ -10,7 +10,10 @@ const {
 } = require('./maintenance/compact-zigbee-identifiers.cjs');
 
 const srcDir = path.join(__dirname, '..', '.homeybuild');
-const destDir = path.join(os.tmpdir(), 'homey-publish-temp');
+const diagnosticCatalogue = String(process.env.PUBLISH_DIAGNOSTIC_CATALOGUE || '') === '1';
+const destDir = diagnosticCatalogue
+  ? path.resolve(process.env.PUBLISH_DIAGNOSTIC_DIR || path.join(os.tmpdir(), 'homey-diag-catalogue'))
+  : path.join(os.tmpdir(), 'homey-publish-temp');
 
 // Windows reserved device names — these CANNOT be packed into a tar
 // archive: tar-stream hangs and Athom returns "processing_failed".
@@ -363,6 +366,12 @@ let skippedBackup = 0;
 const BACKUP_FILE_REGEX = /\.(bak|backup|tmp|old|orig|swp|swo|rej)(\.[0-9]+)?$/i;
 const filter = (src, dest) => {
   const name = path.basename(src);
+  // The staged payload is the composed app. Source compose metadata and a
+  // nested build dir must not ride along: compose would rebuild held drivers.
+  if (name === '.homeycompose' || name === '.homeybuild') {
+    console.log(`Publish trim: excluded ${name} from the staged payload`);
+    return false;
+  }
   if (isReservedName(name)) {
     skippedReserved++;
     console.error(`REJECTED reserved-name entry from pack: ${src}`);
@@ -510,9 +519,10 @@ try {
   // Held ones are dropped here; released ones are split back right before step 5a2.
   let p3229Splits = [];
   try {
-    const { effectiveHoldIds, foldContinuations } = require('./publish-hold-release');
+    const { effectiveHoldIds, foldContinuations, resolveReleaseValue } = require('./publish-hold-release');
     const holdFile = path.join(__dirname, '..', 'config', 'publish-hold-drivers.json');
-    const { ids } = fs.existsSync(holdFile) ? effectiveHoldIds(readJson(holdFile), process.env.PUBLISH_HOLD_RELEASE) : { ids: new Set() };
+    const holdDoc = fs.existsSync(holdFile) ? readJson(holdFile) : null;
+    const { ids } = holdDoc ? effectiveHoldIds(holdDoc, resolveReleaseValue(holdDoc)) : { ids: new Set() };
     const m = readJson(destAppJson);
     const r = foldContinuations(m, require('../lib/drivers/DriverContinuations').load(path.join(__dirname, '..')), ids);
     if (r.folded) { fs.writeFileSync(destAppJson, JSON.stringify(m)); p3229Splits = r.splits; console.log(`   P3229: folded ${r.folded} continuation(s) into their root (${r.splits.length} to split back)`); }
@@ -716,8 +726,8 @@ try {
     if (fs.existsSync(holdFile)) {
       const hold = JSON.parse(fs.readFileSync(holdFile, 'utf8'));
       // P2830c: one-shot release of held ids (workflow_dispatch input release_held → PUBLISH_HOLD_RELEASE).
-      const { effectiveHoldIds } = require('./publish-hold-release');
-      const { ids, released } = effectiveHoldIds(hold, process.env.PUBLISH_HOLD_RELEASE);
+      const { effectiveHoldIds, resolveReleaseValue } = require('./publish-hold-release');
+      const { ids, released } = effectiveHoldIds(hold, resolveReleaseValue(hold));
       if (released.length) console.log(`[publish-hold] RELEASED for this run only: ${released.join(', ')}`);
       if (ids.size > 0) {
         const manifest = JSON.parse(fs.readFileSync(destAppJson, 'utf8'));
@@ -944,6 +954,35 @@ try {
       found.forEach((line) => console.error(`  ${line}`));
       process.exit(1);
     }
+  }
+  if (diagnosticCatalogue) {
+    const { assertDiagnosticCatalogue } = require('./publish-hold-release');
+    const manifest = readJson(destAppJson);
+    const driverCount = Array.isArray(manifest.drivers) ? manifest.drivers.length : 0;
+    const floor = Number(process.env.PUBLISH_DIAGNOSTIC_MIN_DRIVERS) || 351;
+    const verdict = assertDiagnosticCatalogue({ enabled: true, driverCount, minDrivers: floor });
+    const prov = {
+      kind: 'diagnostic-catalogue',
+      appId: manifest.id,
+      name: manifest.name,
+      version: manifest.version,
+      drivers: driverCount,
+      minDrivers: floor,
+      sha: process.env.GITHUB_SHA || '',
+      destDir,
+      composePresent: fs.existsSync(path.join(destDir, '.homeycompose')),
+      nestedBuild: fs.existsSync(path.join(destDir, '.homeybuild')),
+      channel: 'draft',
+      promoteTest: false,
+      promoteLive: false,
+    };
+    fs.writeFileSync(`${destDir}.provenance.json`, `${JSON.stringify(prov, null, 2)}\n`);
+    if (!verdict.ok) {
+      console.error(`FATAL: ${verdict.reason}`);
+      console.error('The hold list was released for this process only. Compaction of synthetic identifiers still applies. The committed hold file is unchanged.');
+      process.exit(1);
+    }
+    console.log(`[diagnostic-catalogue] ${driverCount} real drivers in ${destDir} (floor ${floor}). Provenance ${destDir}.provenance.json. Draft only; Test and Live are not promoted.`);
   }
   console.log(`Publish directory ready: ${destDir}`);
 

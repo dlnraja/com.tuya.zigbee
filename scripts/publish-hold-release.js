@@ -23,6 +23,36 @@ function effectiveHoldIds(hold, releaseValue) {
   return { ids, released };
 }
 
+/** Every held id, comma-separated. The committed hold file is not modified. */
+function diagnosticReleaseValue(hold) {
+  return (hold && Array.isArray(hold.drivers) ? hold.drivers : []).map((d) => d && d.id).filter(Boolean).join(',');
+}
+
+/**
+ * Ordinary publishes keep PUBLISH_HOLD_RELEASE (one bisect id, or empty).
+ * PUBLISH_DIAGNOSTIC_CATALOGUE=1 releases every held id for that process only.
+ */
+function resolveReleaseValue(hold, env = process.env) {
+  if (String(env && env.PUBLISH_DIAGNOSTIC_CATALOGUE || '') === '1') return diagnosticReleaseValue(hold);
+  return (env && env.PUBLISH_HOLD_RELEASE) || '';
+}
+
+/** A diagnostic catalogue must stay above 350 real drivers. 346/348 is the held payload. */
+function assertDiagnosticCatalogue({ enabled, driverCount, minDrivers = 351 } = {}) {
+  const count = Number(driverCount) || 0;
+  const floor = Number(minDrivers) || 351;
+  if (!enabled) return { ok: true, driverCount: count, minDrivers: 0 };
+  if (count < floor || count <= 350) {
+    return {
+      ok: false,
+      driverCount: count,
+      minDrivers: floor,
+      reason: `diagnostic catalogue has ${count} drivers; floor is ${floor} (more than 350, not the held 346/348 payload)`,
+    };
+  }
+  return { ok: true, driverCount: count, minDrivers: floor };
+}
+
 /**
  * P3228/P3229: every continuation (registry continuationOf) folds its zigbee lists back into its root
  * BEFORE compaction, so the compaction budget always sees the pre-split logical driver (a release
@@ -105,4 +135,7 @@ function dropHeld(manifest, ids) {
   return out;
 }
 
-module.exports = { parseRelease, effectiveHoldIds, foldHeldContinuations, foldContinuations, splitContinuations, dropHeld };
+module.exports = {
+  parseRelease, effectiveHoldIds, diagnosticReleaseValue, resolveReleaseValue, assertDiagnosticCatalogue,
+  foldHeldContinuations, foldContinuations, splitContinuations, dropHeld,
+};

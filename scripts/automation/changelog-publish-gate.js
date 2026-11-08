@@ -11,6 +11,13 @@ const ce = require('./changelog-entry');
 function main() {
   const app = JSON.parse(fs.readFileSync('app.json', 'utf8'));
   const cl = JSON.parse(fs.readFileSync('.homeychangelog.json', 'utf8'));
+  if (String(process.env.PUBLISH_DIAGNOSTIC_CATALOGUE || '') === '1') {
+    cl[app.version] = {
+      en: 'Diagnostic draft only: the upload includes the real source drivers that ordinary publishes still hold back, so the payload stays above 350 drivers. The Test channel is not changed by this run.',
+      fr: 'Brouillon de diagnostic uniquement : l’envoi contient les pilotes réels que les publications ordinaires retiennent encore, donc plus de 350 pilotes. Le canal Test n’est pas modifié par cet envoi.',
+    };
+    fs.writeFileSync('.homeychangelog.json', `${JSON.stringify(cl, null, 2)}\n`);
+  }
   const entry = cl[app.version];
   const en = entry && (typeof entry === 'object' ? entry.en : entry);
   if (!en || ce.isPlaceholder(en)) {
