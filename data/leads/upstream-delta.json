@@ -1,6 +1,16 @@
 {
  "runs": [
   {
+   "at": "2026-11-09T23:12:32.234Z",
+   "newMfrs": 4,
+   "sample": [
+    "_tze284_pfbtmgo1",
+    "_tze204_bb5xlia1",
+    "_tzb210_azjhlyvy",
+    "_tz3210_n0wbkysi"
+   ]
+  },
+  {
    "at": "2026-11-09T22:36:30.714Z",
    "newMfrs": 4,
    "sample": [
@@ -233,15 +243,6 @@
    "sample": [
     "_tze284_stvgmdjz",
     "_tze284_48ye65rk",
-    "_tz3000_ajsypttg",
-    "_tz3290_qazgdsae",
-    "_tz3210_mldzab8w"
-   ]
-  },
-  {
-   "at": "2026-10-28T08:49:04.740Z",
-   "newMfrs": 3,
-   "sample": [
     "_tz3000_ajsypttg",
     "_tz3290_qazgdsae",
     "_tz3210_mldzab8w"
