@@ -9,9 +9,11 @@ Core rules (summary in our words):
 - No --no-verify, no force-push, no history rewrite. Every fix ships with unit tests.
 
 Full texts (SSOT):
+- [App diagnostic routing (7 Nov 2026)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/APP_DIAGNOSTIC_ROUTING.md)
 - [Automation first (P3097, 2026-10-31)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/AUTOMATION_FIRST.md)
 - [Autonomy safety (P3097, t644u)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/AUTONOMY_SAFETY.md)
 - [Bastien House App — private Zigbee track (P2606)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/BASTIEN_HOUSE_APP.md)
+- [Bastien 1.0.229 — JSON OOM not identified, sleepy TX narrowed (2026-11-07)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/BASTIEN_OOM_SLEEPY_BUTTON_2026-11-07.md)
 - [🧬 BYPASS ELITE LAYERS & NATIVE SDK3 MIGRATION ARCHITECTURE](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/BYPASS_ELITE_LAYERS.md)
 - [Complementary variant enrich — ALWAYS (P2520)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/COMPLEMENTARY_VARIANT_ENRICH.md)
 - [Couple removal evidence (P3134, mandatory)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/COUPLE_REMOVAL_EVIDENCE.md)
