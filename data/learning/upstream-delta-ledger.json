@@ -433,6 +433,38 @@
    "ref": "d0ac19210e",
    "title": "fix: TS0601_rcbo: allow a 50 V under-voltage threshold (#13732)",
    "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/d0ac19210eeb484a37c5733d9eaa8972839a49b2"
+  },
+  {
+   "at": "2026-11-09T13:48:33.858Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "f2604a2f92",
+   "title": "fix: Tuya SDM01: report voltage, current, power and energy correctly across device variants (#13729)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/f2604a2f92bbd0a41bf6e1cb84e71f405b2aeb80"
+  },
+  {
+   "at": "2026-11-09T13:48:33.858Z",
+   "source": "johan-forks",
+   "kind": "fork-push",
+   "ref": "PRo25/com.tuya.zigbee",
+   "title": "To add support to additional device manufacturers of switch modules and presence sensors",
+   "url": "https://github.com/PRo25/com.tuya.zigbee"
+  },
+  {
+   "at": "2026-11-09T13:48:33.858Z",
+   "source": "tuya-local",
+   "kind": "commit",
+   "ref": "59743a7609",
+   "title": "feat(devices): add MTY2 energy monitoring circuit breaker",
+   "url": "https://github.com/make-all/tuya-local/commit/59743a7609898f8116ab0cea9a094e118a3b53a4"
+  },
+  {
+   "at": "2026-11-09T13:48:33.858Z",
+   "source": "hubitat-kkossev",
+   "kind": "commit",
+   "ref": "77f95e829b",
+   "title": "ver. 3.6.1 2026-11-09 kkossev - (dev. branch) thermostat mode compatibility",
+   "url": "https://github.com/kkossev/Hubitat/commit/77f95e829bc5fb99909d51c7a5c4e07758d2aaab"
   }
  ]
 }
