@@ -1,18 +1,12 @@
 {
-  "at": "2026-11-08T11:54:40.149Z",
+  "at": "2026-11-09T13:50:03.656Z",
   "checked": 62,
   "findings": [
     {
-      "kind": "repeated-failure",
-      "sig": "ci-de52b80418c8",
-      "wf": ".github/workflows/validate.yml",
-      "detail": "3 failures in 72 h: 🔍 Validate Homey App failed on master (🔍 Validate / 🛡️ GitHub Actions & YAML Policy Gate: code-or-test)"
-    },
-    {
-      "kind": "repeated-failure",
-      "sig": "ci-5be26e541885",
-      "wf": ".github/workflows/node22-tests.yml",
-      "detail": "3 failures in 72 h: Node 22 runtime tests failed on master (strict / node:test strict (P3057-3): code-or-test)"
+      "kind": "stale",
+      "sig": "cf8d8a652784",
+      "wf": "diag-autoreply-bastien.yml",
+      "detail": "no scheduled run for 19 h (expected <= 18 h)"
     },
     {
       "kind": "repeated-failure",

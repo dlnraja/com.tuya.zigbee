@@ -1,6 +1,6 @@
 # Digest automatique (P3048)
 
-_Généré le 08/11/2026 12:54:47 (heure de Paris) par `scripts/automation/digest.cjs`, sans IA, sans envoi : ni mail, ni post, ni commentaire._
+_Généré le 09/11/2026 14:50:11 (heure de Paris) par `scripts/automation/digest.cjs`, sans IA, sans envoi : ni mail, ni post, ni commentaire._
 
 ## Versions
 
@@ -30,14 +30,13 @@ _Généré le 08/11/2026 12:54:47 (heure de Paris) par `scripts/automation/diges
 
 ## Santé (7 jours)
 
-- Combinaisons du paquet publié (platform-budget run 42472276246 du 2026-11-08) : **19943** / 17000 (marge -2943) ; plus gros driver climate_sensor = 1600 / 1008 (marge -592)
+- Combinaisons du paquet publié (platform-budget run 42610877517 du 2026-11-09) : **19943** / 17000 (marge -2943) ; plus gros driver climate_sensor = 1600 / 1008 (marge -592)
 - Combinaisons brutes des sources (avant élagage prepare-publish, indicatif) : 829415 ; plus gros driver switch_1gang = 141934 ; 41 driver(s) au-dessus de 1008 avant élagage.
 - Plafonds actifs dans auto-publish-on-push.yml : total 15500, par driver 1500, top-up 20000.
 - Workflows rattrapés par une simple relance (instables) : aucun
-- Échecs répétés (même signature ≥ 2) : Node 22 runtime tests 6e84c480a105 ×2, Node 22 runtime tests 5be26e541885 ×4, Node 22 runtime tests 351d901e2c87 ×13, Node 22 runtime tests 57f650364735 ×2, Node 22 runtime tests 4b363edeecc7 ×4, Homey App Validate (all levels) a3ea004b0cdf ×4, 🔍 Validate Homey App de52b80418c8 ×4, 🔍 Syntax Check & SDK3 Validation ee7f1425cb78 ×2, Secret scan (gitleaks) 971d891f41dc ×4, CI self-check (actionlint + YAML + hygiene + manifest/data/lint gates) fa3b79cd787a ×5, CI self-check (actionlint + YAML + hygiene + manifest/data/lint gates) c6d1ad4d0e56 ×2, CI self-check (actionlint + YAML + hygiene + manifest/data/lint gates) 510d21345cba ×6
-- Watchdog : 62 workflows planifiés, 8 alerte(s)
-  - repeated-failure `.github/workflows/validate.yml` : 3 failures in 72 h: 🔍 Validate Homey App failed on master (🔍 Validate / 🛡️ GitHub Actions & YAML Policy Gate: code-or-test)
-  - repeated-failure `.github/workflows/node22-tests.yml` : 3 failures in 72 h: Node 22 runtime tests failed on master (strict / node:test strict (P3057-3): code-or-test)
+- Échecs répétés (même signature ≥ 2) : 🔍 Validate Homey App de52b80418c8 ×4, 🔍 Syntax Check & SDK3 Validation ee7f1425cb78 ×2, Node 22 runtime tests 5be26e541885 ×4, Node 22 runtime tests 351d901e2c87 ×13, Node 22 runtime tests 57f650364735 ×2, Node 22 runtime tests 4b363edeecc7 ×4, Secret scan (gitleaks) 971d891f41dc ×4, CI self-check (actionlint + YAML + hygiene + manifest/data/lint gates) fa3b79cd787a ×5, CI self-check (actionlint + YAML + hygiene + manifest/data/lint gates) c6d1ad4d0e56 ×2, CI self-check (actionlint + YAML + hygiene + manifest/data/lint gates) 510d21345cba ×6, Homey App Validate (all levels) a3ea004b0cdf ×4
+- Watchdog : 62 workflows planifiés, 7 alerte(s)
+  - stale `diag-autoreply-bastien.yml` : no scheduled run for 19 h (expected <= 18 h)
   - repeated-failure `.github/workflows/secret-scan.yml` : 4 failures in 72 h: Secret scan (gitleaks) failed on stable-v5 (gitleaks / Install gitleaks (pinned + checksum): unknown)
   - repeated-failure `.github/workflows/node22-tests.yml` : 13 failures in 72 h: Node 22 runtime tests failed on master (test / Full suite on Node 22: no-log)
   - repeated-failure `.github/workflows/homey-app-validate.yml` : 4 failures in 72 h: Homey App Validate (all levels) failed on bastien-home (validate / Publish payload build + size/structure report: no-log)
@@ -51,5 +50,5 @@ Aucun.
 
 ## Journal
 
-86 ligne(s) sur 72 h dans `data/progress/automation-journal.jsonl`.
+78 ligne(s) sur 72 h dans `data/progress/automation-journal.jsonl`.
 
