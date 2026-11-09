@@ -1,6 +1,6 @@
 {
   "$comment": "Change-driven proposals from data/sources/registry.json. Identifiers + our own one-line summaries; review before landing (W4 couples, research first).",
-  "updated": "2026-11-08T09:29:23.839Z",
+  "updated": "2026-11-09T10:22:16.105Z",
   "proposals": [
     {
       "source": "z2m-issues",
@@ -31438,6 +31438,428 @@
       "quirk": false,
       "credit": "Homey Community app topics: Switcher (iBush), HomeSuite (Gabriel_Pedrosa_Mach), Aqara Community (makleso6), Philips Hue Zigbee (Johan Bendz); Network Visualizer, sysInternals, Advanced Virtual Device, Then-card tokens petition, Mode Switch, Loops, Ultimate EMS, PELS, Energy Dashboard, Button+ and Zigbee help threads (forum authors)",
       "seenAt": "2026-11-08T09:29:18.346Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/20664",
+      "summary": "issue #20664 (closed) by Eoras, about: switch, pairing",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": true,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-11-09T10:22:04.478Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/33642",
+      "summary": "issue #33642 (open) by fraban, about: `_TZ3000_dfgbtub0` `TS0042`",
+      "mfrs": [
+        "_TZ3000_dfgbtub0"
+      ],
+      "pids": [
+        "TS0042"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-11-09T10:22:04.478Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/33649",
+      "summary": "issue #33649 (closed) by ryancalendrier-glitch, about: `_TZE204_vfnf7zhq` `TS0601`",
+      "mfrs": [
+        "_TZE204_vfnf7zhq"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [
+        16
+      ],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-11-09T10:22:04.478Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/33650",
+      "summary": "issue #33650 (open) by Martijn1357, about: light",
+      "mfrs": [
+        "_TZE204_slqdlbjb"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [
+        5,
+        11,
+        3,
+        9
+      ],
+      "bug": true,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-11-09T10:22:04.478Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/32838",
+      "summary": "issue #32838 (open) by marcbernis, about: `TS1201`",
+      "mfrs": [],
+      "pids": [
+        "TS1201"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-11-09T10:22:04.479Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/pull/5250",
+      "summary": "PR #5250 (open) by dehnerson, about: request",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-09T10:22:05.354Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/pull/4161",
+      "summary": "PR #4161 (open) by makuser, about: request — `_TZE200_wqashyqo`",
+      "mfrs": [
+        "_TZE200_wqashyqo"
+      ],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-09T10:22:05.354Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/pull/5673",
+      "summary": "PR #5673 (open) by vlw, about: climate sensor — `_TZ3000_qaaysllp` `TS0201`",
+      "mfrs": [
+        "_TZ3000_qaaysllp"
+      ],
+      "pids": [
+        "TS0201"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-09T10:22:05.355Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/issues/4218",
+      "summary": "issue #4218 (open) by Mazvy, about: switch, button — `TS0043` `TS0044`",
+      "mfrs": [
+        "_TZ3000_wkai4ga5",
+        "_TZ3000_w8jwkczz"
+      ],
+      "pids": [
+        "TS0043",
+        "TS0044"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-09T10:22:05.355Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/issues/4212",
+      "summary": "issue #4212 (open) by SmOeL-swdev, about: safety sensor — `_TZE284_rccxox8p`",
+      "mfrs": [
+        "_TZE284_rccxox8p"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-09T10:22:05.355Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/issues/4192",
+      "summary": "issue #4192 (open) by soosp, about: error — `_TZE200_qrztc3ev` `TS0601`",
+      "mfrs": [
+        "_TZE200_qrztc3ev"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-09T10:22:05.355Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/issues/4144",
+      "summary": "issue #4144 (open) by Arashrk82, about: request — `_TZE200_npj9bug3` `TS0601`",
+      "mfrs": [
+        "_TZE200_npj9bug3"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-09T10:22:05.355Z"
+    },
+    {
+      "source": "homey-forum-apps-category",
+      "kind": "forum-app",
+      "ref": "https://community.homey.app/t/155930/165",
+      "summary": "post #165 by weide43",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": true,
+      "credit": "Homey Community Forum app authors (Apps category)",
+      "seenAt": "2026-11-09T10:22:08.396Z"
+    },
+    {
+      "source": "homey-forum-apps-category",
+      "kind": "forum-app",
+      "ref": "https://community.homey.app/t/159939/23",
+      "summary": "post #23 by Mithrandir86",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": false,
+      "quirk": true,
+      "credit": "Homey Community Forum app authors (Apps category)",
+      "seenAt": "2026-11-09T10:22:08.710Z"
+    },
+    {
+      "source": "homey-forum-apps-category",
+      "kind": "forum-app",
+      "ref": "https://community.homey.app/t/159939/24",
+      "summary": "post #24 by Mithrandir86",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum app authors (Apps category)",
+      "seenAt": "2026-11-09T10:22:08.710Z"
+    },
+    {
+      "source": "homey-forum-apps-category",
+      "kind": "forum-app",
+      "ref": "https://community.homey.app/t/159939/25",
+      "summary": "post #25 by TheWiZZz",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum app authors (Apps category)",
+      "seenAt": "2026-11-09T10:22:08.710Z"
+    },
+    {
+      "source": "homey-forum-apps-category",
+      "kind": "forum-app",
+      "ref": "https://community.homey.app/t/159939/27",
+      "summary": "post #27 by TheWiZZz",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": true,
+      "credit": "Homey Community Forum app authors (Apps category)",
+      "seenAt": "2026-11-09T10:22:08.710Z"
+    },
+    {
+      "source": "homey-forum-apps-category",
+      "kind": "forum-app",
+      "ref": "https://community.homey.app/t/159939/29",
+      "summary": "post #29 by TheWiZZz",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum app authors (Apps category)",
+      "seenAt": "2026-11-09T10:22:08.710Z"
+    },
+    {
+      "source": "homey-forum-apps-category",
+      "kind": "forum-app",
+      "ref": "https://community.homey.app/t/159939/32",
+      "summary": "post #32 by TheWiZZz",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum app authors (Apps category)",
+      "seenAt": "2026-11-09T10:22:08.710Z"
+    },
+    {
+      "source": "homey-forum-tag-app",
+      "kind": "forum-app",
+      "ref": "https://community.homey.app/t/20535/4125",
+      "summary": "post #4125 by DaneedeKruyff",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum app authors (tag: app)",
+      "seenAt": "2026-11-09T10:22:13.012Z"
+    },
+    {
+      "source": "homey-forum-tag-app",
+      "kind": "forum-app",
+      "ref": "https://community.homey.app/t/155930/164",
+      "summary": "post #164 by weide43",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum app authors (tag: app)",
+      "seenAt": "2026-11-09T10:22:13.399Z"
+    },
+    {
+      "source": "homey-forum-tag-app",
+      "kind": "forum-app",
+      "ref": "https://community.homey.app/t/155930/165",
+      "summary": "post #165 by weide43",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": true,
+      "credit": "Homey Community Forum app authors (tag: app)",
+      "seenAt": "2026-11-09T10:22:13.399Z"
+    },
+    {
+      "source": "homey-forum-tag-app",
+      "kind": "forum-app",
+      "ref": "https://community.homey.app/t/147985/401",
+      "summary": "post #401 by SunBeech",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum app authors (tag: app)",
+      "seenAt": "2026-11-09T10:22:14.062Z"
+    },
+    {
+      "source": "homey-forum-tag-app",
+      "kind": "forum-app",
+      "ref": "https://community.homey.app/t/147985/403",
+      "summary": "post #403 by xiutit",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum app authors (tag: app)",
+      "seenAt": "2026-11-09T10:22:14.062Z"
+    },
+    {
+      "source": "homey-forum-tag-app",
+      "kind": "forum-app",
+      "ref": "https://community.homey.app/t/161491/27",
+      "summary": "post #27 by R3M0N",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum app authors (tag: app)",
+      "seenAt": "2026-11-09T10:22:14.717Z"
+    },
+    {
+      "source": "homey-forum-tag-app",
+      "kind": "forum-app",
+      "ref": "https://community.homey.app/t/161491/28",
+      "summary": "post #28 by WNijhof",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum app authors (tag: app)",
+      "seenAt": "2026-11-09T10:22:14.717Z"
+    },
+    {
+      "source": "homey-forum-tag-app",
+      "kind": "forum-app",
+      "ref": "https://community.homey.app/t/161433/43",
+      "summary": "post #43 by DirkG",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": false,
+      "quirk": true,
+      "credit": "Homey Community Forum app authors (tag: app)",
+      "seenAt": "2026-11-09T10:22:16.100Z"
+    },
+    {
+      "source": "homey-forum-tag-app",
+      "kind": "forum-app",
+      "ref": "https://community.homey.app/t/161433/45",
+      "summary": "post #45 by Freek_en_Esther",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum app authors (tag: app)",
+      "seenAt": "2026-11-09T10:22:16.100Z"
+    },
+    {
+      "source": "homey-forum-tag-app",
+      "kind": "forum-app",
+      "ref": "https://community.homey.app/t/161433/47",
+      "summary": "post #47 by dez_ware",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum app authors (tag: app)",
+      "seenAt": "2026-11-09T10:22:16.100Z"
     }
   ]
 }
