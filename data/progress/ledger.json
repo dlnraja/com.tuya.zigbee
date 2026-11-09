@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-09T08:40:31.690Z",
+ "updated": "2026-11-09T16:48:54.561Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -263,6 +263,30 @@
     "dps": 0,
     "diag": 1,
     "fixCommits": 1
+   }
+  },
+  "autopilot-issue:632": {
+   "status": "pending",
+   "date": "2026-11-09",
+   "hash": "e8a27218da773be0",
+   "note": "fix-in-code: supported, symptom(s): unknown-device, battery; owner replies (draft in autopilot report), never auto-closed",
+   "by": "repo-autopilot",
+   "kind": "fix-in-code",
+   "author": "rocosol",
+   "link": "https://github.com/dlnraja/com.tuya.zigbee/issues/632",
+   "mfrs": [
+    "_TZE204_ltwbm23f"
+   ],
+   "pids": [
+    "TS0601"
+   ],
+   "drivers": [
+    "climate_sensor"
+   ],
+   "counts": {
+    "dps": 0,
+    "diag": 0,
+    "fixCommits": 0
    }
   },
   "autopilot-pr:579": {
@@ -46437,19 +46461,19 @@
   },
   "workflow-run:repo-autopilot": {
    "status": "done",
-   "date": "2026-11-04",
-   "hash": "c083254882490369",
+   "date": "2026-11-09",
+   "hash": "5b1ebfa3f745cb05",
    "note": "run summary: 6 counter(s)",
    "by": "repo-autopilot",
    "counts": {
     "closed": 0,
     "merged": 0,
-    "branchesDeleted": 0,
-    "issues": 5,
+    "branchesDeleted": 1,
+    "issues": 6,
     "external": 0,
     "leadsAdded": 0
    },
-   "lastChangeRun": "41851075457"
+   "lastChangeRun": "42657924270"
   }
  }
 }
