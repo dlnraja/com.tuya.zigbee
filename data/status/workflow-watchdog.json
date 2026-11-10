@@ -1,13 +1,7 @@
 {
-  "at": "2026-11-09T13:50:03.656Z",
+  "at": "2026-11-10T13:26:40.656Z",
   "checked": 62,
   "findings": [
-    {
-      "kind": "stale",
-      "sig": "cf8d8a652784",
-      "wf": "diag-autoreply-bastien.yml",
-      "detail": "no scheduled run for 19 h (expected <= 18 h)"
-    },
     {
       "kind": "repeated-failure",
       "sig": "ci-971d891f41dc",
