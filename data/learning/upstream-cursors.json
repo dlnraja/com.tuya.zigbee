@@ -3,25 +3,25 @@
  "note": "P3073 upstream cursors: last thing seen per source (read-only watch).",
  "sources": {
   "zhc": {
-   "last": "3768cf83c7a4a12324943c0713418142f349796d",
-   "checkedAt": "2026-11-09T13:48:33.858Z",
+   "last": "f46c6d88f0eaceaf25dca7dba0dda797d2dc281e",
+   "checkedAt": "2026-11-11T12:39:08.968Z",
    "kind": "commits",
    "what": "Koenkk/zigbee-herdsman-converters",
-   "changedAt": "2026-11-09T13:48:33.858Z"
+   "changedAt": "2026-11-11T12:39:08.968Z"
   },
   "zhc-rel": {
-   "last": "v26.128.0",
-   "checkedAt": "2026-11-09T13:48:33.858Z",
+   "last": "v26.129.0",
+   "checkedAt": "2026-11-11T12:39:08.968Z",
    "kind": "releases",
    "what": "Koenkk/zigbee-herdsman-converters",
-   "changedAt": "2026-11-07T11:40:33.224Z"
+   "changedAt": "2026-11-11T12:39:08.968Z"
   },
   "zha-quirks": {
-   "last": "e5040e816186df0e0408c8d41d928d385069f666",
-   "checkedAt": "2026-11-09T13:48:33.858Z",
+   "last": "b07fa76876e081d48744968f9fb806e7f1fee0ee",
+   "checkedAt": "2026-11-11T12:39:08.968Z",
    "kind": "commits",
    "what": "zigpy/zha-device-handlers",
-   "changedAt": "2026-11-05T13:06:04.787Z"
+   "changedAt": "2026-11-11T12:39:08.968Z"
   },
   "deconz": {
    "last": "c24e81cf01c121583887acea24e647c3496ebd9a",
@@ -32,7 +32,7 @@
   },
   "johan": {
    "last": "61577d8ec2572bf8c7c4c2ff210284575acd295b",
-   "checkedAt": "2026-11-09T13:48:33.858Z",
+   "checkedAt": "2026-11-11T12:39:08.968Z",
    "kind": "commits",
    "what": "JohanBendz/com.tuya.zigbee"
   },
@@ -214,5 +214,5 @@
    }
   }
  },
- "updatedAt": "2026-11-10T13:25:15.681Z"
+ "updatedAt": "2026-11-11T12:39:08.968Z"
 }

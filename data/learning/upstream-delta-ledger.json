@@ -465,6 +465,70 @@
    "ref": "77f95e829b",
    "title": "ver. 3.6.1 2026-11-09 kkossev - (dev. branch) thermostat mode compatibility",
    "url": "https://github.com/kkossev/Hubitat/commit/77f95e829bc5fb99909d51c7a5c4e07758d2aaab"
+  },
+  {
+   "at": "2026-11-11T12:39:08.968Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "00b764b97b",
+   "title": "fix: SONOFF SNZB-03: fix not identified when modelId is `ms01` https://github.com/Koenkk/zigbee2mqtt",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/00b764b97bc504571e2680c6fdbed4fbcdb88d8c"
+  },
+  {
+   "at": "2026-11-11T12:39:08.968Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "7ecb15ba71",
+   "title": "fix(detect): Detect `_TZE284_pfbtmgo1` as Sygonix W08-Z10T (#13763)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/7ecb15ba7183a4d4a93996fb72ffc15409f2a8a4"
+  },
+  {
+   "at": "2026-11-11T12:39:08.968Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "6e29f6a62b",
+   "title": "fix: SONOFF SNZB-02D, SNZB-02DR2, SNZB-02UL and ZigbeeTLC devices: keep comfort temperature limits d",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/6e29f6a62b6ab04878091563faec8b33a8f781ee"
+  },
+  {
+   "at": "2026-11-11T12:39:08.968Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "70ac25d5e9",
+   "title": "fix(detect): Detect `_TZ3210_n0wbkysi` as Tuya _TZ3000_mw1pqqqt (#13761)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/70ac25d5e903fbffc0fa3c83cc6bb7798c7eea61"
+  },
+  {
+   "at": "2026-11-11T12:39:08.968Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "cd06273159",
+   "title": "fix(detect): Detect `_TZE204_kwi6bbk4` as Tuya ZTH13 (#13756)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/cd06273159b0c4de03aa5781ef6b9ce3ab10dfe7"
+  },
+  {
+   "at": "2026-11-11T12:39:08.968Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "30f786f158",
+   "title": "fix(detect): Detect `_TZB210_azjhlyvy` as MiBoxer FUTC04ZR (#13754)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/30f786f158125fbad7dee32758a8894b3f60b761"
+  },
+  {
+   "at": "2026-11-11T12:39:08.968Z",
+   "source": "zhc-rel",
+   "kind": "release",
+   "ref": "v26.129.0",
+   "title": "v26.129.0",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/releases/tag/v26.129.0"
+  },
+  {
+   "at": "2026-11-11T12:39:08.968Z",
+   "source": "zha-quirks",
+   "kind": "commit",
+   "ref": "b07fa76876",
+   "title": "Add Tuya soil sensor model _TZE284_2nhqasjh (#4965)",
+   "url": "https://github.com/zigpy/zha-device-handlers/commit/b07fa76876e081d48744968f9fb806e7f1fee0ee"
   }
  ]
 }
