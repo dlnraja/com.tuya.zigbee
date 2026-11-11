@@ -1,42 +1,5 @@
 {
-  "at": "2026-11-10T13:26:40.656Z",
+  "at": "2026-11-11T12:40:25.418Z",
   "checked": 62,
-  "findings": [
-    {
-      "kind": "repeated-failure",
-      "sig": "ci-971d891f41dc",
-      "wf": ".github/workflows/secret-scan.yml",
-      "detail": "4 failures in 72 h: Secret scan (gitleaks) failed on stable-v5 (gitleaks / Install gitleaks (pinned + checksum): unknown)"
-    },
-    {
-      "kind": "repeated-failure",
-      "sig": "ci-351d901e2c87",
-      "wf": ".github/workflows/node22-tests.yml",
-      "detail": "13 failures in 72 h: Node 22 runtime tests failed on master (test / Full suite on Node 22: no-log)"
-    },
-    {
-      "kind": "repeated-failure",
-      "sig": "ci-a3ea004b0cdf",
-      "wf": ".github/workflows/homey-app-validate.yml",
-      "detail": "4 failures in 72 h: Homey App Validate (all levels) failed on bastien-home (validate / Publish payload build + size/structure report: no-log)"
-    },
-    {
-      "kind": "repeated-failure",
-      "sig": "ci-fa3b79cd787a",
-      "wf": ".github/workflows/ci-self-check.yml",
-      "detail": "5 failures in 72 h: CI self-check (actionlint + YAML + hygiene + manifest/data/lint gates) failed on bastien-home (self-check / Install actionlint (pinned + sha256, retried on network blips only): no-log)"
-    },
-    {
-      "kind": "repeated-failure",
-      "sig": "ci-4b363edeecc7",
-      "wf": ".github/workflows/node22-tests.yml",
-      "detail": "4 failures in 72 h: Node 22 runtime tests failed on cursor/p3269-bastien-prefix-shard-a632 (test / node:test strict (P3057-3): no-log)"
-    },
-    {
-      "kind": "repeated-failure",
-      "sig": "ci-510d21345cba",
-      "wf": ".github/workflows/ci-self-check.yml",
-      "detail": "6 failures in 72 h: CI self-check (actionlint + YAML + hygiene + manifest/data/lint gates) failed on master (self-check / Lint ratchet (lib/ drivers/ — total may only go down, no file may get worse): no-log)"
-    }
-  ]
+  "findings": []
 }
