@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-10T15:12:39.284Z",
+ "updated": "2026-11-11T13:22:34.023Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -12525,6 +12525,20 @@
    "kind": "github",
    "mailDate": "2026-10-19T14:36:42.000Z"
   },
+  "diag:c96a3fe8543ed6dc": {
+   "status": "done",
+   "date": "2026-11-11",
+   "hash": "090849fca0ab5b9d",
+   "note": "diagnostic mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "diagnostic",
+   "mailDate": "2026-11-11T09:52:25.000Z",
+   "appVersion": "9.0.1615",
+   "logIdShort": "56949320",
+   "drivers": [
+    "water_valve_smart"
+   ]
+  },
   "diag:c99436b82d2f84ad": {
    "status": "done",
    "date": "2026-11-03",
@@ -12551,6 +12565,18 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-10-21T08:23:46.000Z"
+  },
+  "diag:ca6162f3f1c61f31": {
+   "status": "done",
+   "date": "2026-11-11",
+   "hash": "561e8d57b5ab134d",
+   "note": "diagnostic mail; 1 couple(s); nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "diagnostic",
+   "mailDate": "2026-11-11T10:34:32.000Z",
+   "couples": [
+    "_TZE200_1n2zev06|TS0601"
+   ]
   },
   "diag:caf7d1969cccfe46": {
    "status": "done",
