@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-12T15:32:32.033Z",
+ "updated": "2026-11-12T20:12:19.550Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -12948,6 +12948,15 @@
    "by": "tuya-deep-diag",
    "kind": "general",
    "mailDate": "2026-10-20T00:44:44.000Z"
+  },
+  "diag:d7311fbecc8bc297": {
+   "status": "done",
+   "date": "2026-11-12",
+   "hash": "97316b8bc6064ad1",
+   "note": "device_issue mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "device_issue",
+   "mailDate": "2026-11-12T16:30:50.000Z"
   },
   "diag:d778803397e0192f": {
    "status": "done",
