@@ -529,6 +529,46 @@
    "ref": "b07fa76876",
    "title": "Add Tuya soil sensor model _TZE284_2nhqasjh (#4965)",
    "url": "https://github.com/zigpy/zha-device-handlers/commit/b07fa76876e081d48744968f9fb806e7f1fee0ee"
+  },
+  {
+   "at": "2026-11-12T13:41:39.895Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "3375f53cbc",
+   "title": "feat: Tuya IH-K663: expose hold action (#13788)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/3375f53cbc5645499b75172c82aa9ef8de966f9b"
+  },
+  {
+   "at": "2026-11-12T13:41:39.895Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "f4ce2a6e29",
+   "title": "fix: Powernity / Xanlite PO-BOCO-ELEC: fix schedule times incorrect https://github.com/Koenkk/zigbee",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/f4ce2a6e29ef0759e79f9f88c6b6ce8f16fd3e7e"
+  },
+  {
+   "at": "2026-11-12T13:41:39.895Z",
+   "source": "zhc-rel",
+   "kind": "release",
+   "ref": "v26.130.0",
+   "title": "v26.130.0",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/releases/tag/v26.130.0"
+  },
+  {
+   "at": "2026-11-12T13:41:39.895Z",
+   "source": "zhc-rel",
+   "kind": "release",
+   "ref": "v26.130.0",
+   "title": "v26.130.0",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/releases/tag/v26.130.0"
+  },
+  {
+   "at": "2026-11-12T13:41:39.895Z",
+   "source": "tuya-local",
+   "kind": "commit",
+   "ref": "8a0d8a247d",
+   "title": "fix(lsc_smart_ceiling_light): expose dp 20 master switch",
+   "url": "https://github.com/make-all/tuya-local/commit/8a0d8a247dc29201a52c53473c46740800cad278"
   }
  ]
 }

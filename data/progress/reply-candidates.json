@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-11T12:40:32.189Z",
+  "generated": "2026-11-12T13:43:10.009Z",
   "note": "P3048: candidates only. No workflow posts, comments or reacts. A human (or the Grok Bot anti-flood routine) decides.",
   "limits": {
     "autoPost": false,
@@ -26,7 +26,7 @@
   },
   "scanned": {
     "commits": 300,
-    "issues": 9
+    "issues": 8
   },
   "candidates": [],
   "skipped": [
@@ -61,10 +61,6 @@
     {
       "issue": 560,
       "reason": "closed"
-    },
-    {
-      "issue": 615,
-      "reason": "pull request"
     }
   ]
 }
