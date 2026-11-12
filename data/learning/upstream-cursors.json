@@ -3,36 +3,36 @@
  "note": "P3073 upstream cursors: last thing seen per source (read-only watch).",
  "sources": {
   "zhc": {
-   "last": "f46c6d88f0eaceaf25dca7dba0dda797d2dc281e",
-   "checkedAt": "2026-11-11T12:39:08.968Z",
+   "last": "ea396fb6526bd8eaf2d865eb0ab71662c90c7e74",
+   "checkedAt": "2026-11-12T13:41:39.895Z",
    "kind": "commits",
    "what": "Koenkk/zigbee-herdsman-converters",
-   "changedAt": "2026-11-11T12:39:08.968Z"
+   "changedAt": "2026-11-12T13:41:39.895Z"
   },
   "zhc-rel": {
-   "last": "v26.129.0",
-   "checkedAt": "2026-11-11T12:39:08.968Z",
+   "last": "v26.130.0",
+   "checkedAt": "2026-11-12T13:41:39.895Z",
    "kind": "releases",
    "what": "Koenkk/zigbee-herdsman-converters",
-   "changedAt": "2026-11-11T12:39:08.968Z"
+   "changedAt": "2026-11-12T13:41:39.895Z"
   },
   "zha-quirks": {
    "last": "b07fa76876e081d48744968f9fb806e7f1fee0ee",
-   "checkedAt": "2026-11-11T12:39:08.968Z",
+   "checkedAt": "2026-11-12T13:41:39.895Z",
    "kind": "commits",
    "what": "zigpy/zha-device-handlers",
    "changedAt": "2026-11-11T12:39:08.968Z"
   },
   "deconz": {
    "last": "c24e81cf01c121583887acea24e647c3496ebd9a",
-   "checkedAt": "2026-11-09T13:48:33.858Z",
+   "checkedAt": "2026-11-12T13:41:39.895Z",
    "kind": "commits",
    "what": "dresden-elektronik/deconz-rest-plugin",
    "changedAt": "2026-11-09T13:48:33.858Z"
   },
   "johan": {
    "last": "61577d8ec2572bf8c7c4c2ff210284575acd295b",
-   "checkedAt": "2026-11-11T12:39:08.968Z",
+   "checkedAt": "2026-11-12T13:41:39.895Z",
    "kind": "commits",
    "what": "JohanBendz/com.tuya.zigbee"
   },
@@ -62,11 +62,11 @@
    "what": "athombv/homey-apps-sdk-issues"
   },
   "tuya-local": {
-   "last": "59743a7609898f8116ab0cea9a094e118a3b53a4",
-   "checkedAt": "2026-11-09T13:48:33.858Z",
+   "last": "5a68c8c833468e73f28225a36e4b86f5b37cc480",
+   "checkedAt": "2026-11-12T13:41:39.895Z",
    "kind": "commits",
    "what": "make-all/tuya-local",
-   "changedAt": "2026-11-09T13:48:33.858Z"
+   "changedAt": "2026-11-12T13:41:39.895Z"
   },
   "localtuya": {
    "last": "59c95cd06c2696afc98f6bc52d5fa060f3c517da",
@@ -101,11 +101,11 @@
    "changedAt": "2026-11-06T12:53:30.767Z"
   },
   "r-homey": {
-   "checkedAt": "2026-11-04T12:56:14.235Z",
+   "checkedAt": "2026-11-12T13:41:39.895Z",
    "kind": "reddit",
    "what": "r/homey",
    "lastError": "403",
-   "backoffUntil": "2026-11-11T12:56:14.235Z"
+   "backoffUntil": "2026-11-19T13:41:39.895Z"
   },
   "r-homeassistant": {
    "checkedAt": "2026-11-05T13:06:04.787Z",
@@ -214,5 +214,5 @@
    }
   }
  },
- "updatedAt": "2026-11-11T12:39:08.968Z"
+ "updatedAt": "2026-11-12T13:41:39.895Z"
 }
