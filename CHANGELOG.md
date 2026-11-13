@@ -106,7 +106,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.1618] - 2026-11-13
+## [9.0.1619] - 2026-11-13
+
+Diagnostic draft only: the upload includes the real source drivers that ordinary publishes still hold back, so the payload stays above 350 drivers. The Test channel is not changed by this run.
+---
+
+ [9.0.1618] - 2026-11-13
 
 Changed: do not reuse a red run after a manifest change; note that the keyfob endpoint lists IAS ACE; declare the keyfob IAS ACE cluster and hold the failed AOYAN probe; satisfy the lint ratchet for the budget line.
 ---
