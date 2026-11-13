@@ -1,0 +1,187 @@
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: Reviews pull requests and pushes without trusting a bot approval.
+#   Exact couples, compaction, tests, the staged app, and the app identity.
+# Ideas from (thank you): GitHub Actions docs; the Homey CLI validate command.
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
+#   posting stays off or ledger-gated.
+# <<< about
+name: Autonomous review
+
+on:
+  pull_request:
+    branches: [master, stable-v5, bastien-home]
+    paths-ignore:
+      - 'docs/**'
+      - 'reports/**'
+      - '**/*.md'
+      - 'data/leads/**'
+      - 'data/learning/**'
+      - 'data/progress/**'
+      - 'data/sources/**'
+      - 'data/status/**'
+  push:
+    branches: [master, stable-v5, bastien-home]
+    paths-ignore:
+      - 'docs/**'
+      - 'reports/**'
+      - '**/*.md'
+      - 'data/leads/**'
+      - 'data/learning/**'
+      - 'data/progress/**'
+      - 'data/sources/**'
+      - 'data/status/**'
+
+permissions:
+  contents: read
+  checks: read
+  pull-requests: read
+
+concurrency:
+  group: autonomous-review-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  AI_PLAN_MODE: 'forfait'
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  AI_ALLOW_PAID: 'false'
+  AI_ENSEMBLE: 'false'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
+  LOCAL_SMART_LEARN: 'true'
+  LOCAL_ENERGY_LEARN: 'true'
+
+jobs:
+  semantic-review:
+    name: semantic review
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: .github/npm-cache-key.sha256
+      - name: Base ref
+        id: base
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            git fetch --no-tags origin "${{ github.base_ref }}"
+            echo "ref=origin/${{ github.base_ref }}" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event.before }}" != "0000000000000000000000000000000000000000" ]; then
+            echo "ref=${{ github.event.before }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "ref=" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Exact couples, weakened tests, identity
+        run: node scripts/ci/autonomous-review.cjs all --base "${{ steps.base.outputs.ref }}"
+      - name: Compaction keeps sacred couples
+        run: node scripts/ci/autonomous-review.cjs compaction
+
+  critical-suite:
+    name: critical tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: .github/npm-cache-key.sha256
+      - run: npm ci --ignore-scripts --no-audit --no-fund || npm install --ignore-scripts --no-audit --no-fund
+      - name: Tests that mention the touched drivers
+        run: |
+          BASE=""
+          if [ "${{ github.event_name }}" = "pull_request" ]; then BASE="origin/${{ github.base_ref }}"; fi
+          if [ -n "$BASE" ]; then
+            node scripts/ci/autonomous-review.cjs targeted-tests --base "$BASE" | grep '/test/critical/' > /tmp/targeted-tests.txt || true
+            if [ -s /tmp/targeted-tests.txt ]; then
+              node --test $(cat /tmp/targeted-tests.txt)
+            fi
+          fi
+      - name: Full critical suite
+        run: npx mocha "test/critical/*.test.js" --timeout 10000
+
+  staged-validate:
+    name: staged publish validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: .github/npm-cache-key.sha256
+      - run: npm ci --ignore-scripts --no-audit --no-fund || npm install --ignore-scripts --no-audit --no-fund
+      - name: Compose, stage, validate, guard
+        run: |
+          set -euo pipefail
+          HOMEY_HEADLESS=1 node node_modules/homey/bin/homey.mjs app build
+          node scripts/prepare-publish.js
+          DIR="${HOMEY_PUBLISH_DIR:-$(node -p "require('path').join(require('os').tmpdir(), 'homey-publish-temp')")}"
+          test -d "$DIR"
+          test ! -e "$DIR/.homeycompose"
+          node scripts/ci/publish-dir-guard.cjs "$DIR" "$(node -p "require('./.homeycompose/app.json').id")"
+          LOG=$(mktemp)
+          if ! HOMEY_HEADLESS=1 node node_modules/homey/bin/homey.mjs app validate --level publish --path "$DIR" > "$LOG" 2>&1; then
+            cat "$LOG"
+            exit 1
+          fi
+          if grep -E '^Warning:' "$LOG"; then
+            echo "::error::staged publish validate printed warnings"
+            exit 1
+          fi
+
+  bot-approval-is-not-review:
+    name: bot approval is not review
+    needs: semantic-review
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+      - name: Semantic review is the review
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SEMANTIC: ${{ needs.semantic-review.result }}
+          EVENT_NAME: ${{ github.event_name }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          if [ "$SEMANTIC" != "success" ]; then
+            echo "::error::bot approval is not a review; semantic review must pass ($SEMANTIC)"
+            exit 1
+          fi
+          if [ "$EVENT_NAME" != "pull_request" ]; then
+            echo "push: no review thread; semantic review passed"
+            exit 0
+          fi
+          node << 'NODE'
+          const { execFileSync } = require('child_process');
+          const { botApprovalVerdict } = require('./scripts/ci/autonomous-review.cjs');
+          const repo = process.env.GITHUB_REPOSITORY;
+          const pr = process.env.PR_NUMBER;
+          const sha = process.env.HEAD_SHA;
+          function gh(path) {
+            const out = execFileSync('gh', ['api', path], { encoding: 'utf8' });
+            return JSON.parse(out);
+          }
+          const reviews = gh(`repos/${repo}/pulls/${pr}/reviews`);
+          const checks = gh(`repos/${repo}/commits/${sha}/check-runs`).check_runs || [];
+          const verdict = botApprovalVerdict({
+            approvals: reviews.map((r) => ({ state: r.state, user: { login: r.user && r.user.login } })),
+            checks: checks.map((c) => ({ name: c.name, conclusion: c.conclusion })),
+            semanticOk: true,
+          });
+          console.log(verdict.reason);
+          if (!verdict.ok) process.exit(1);
+          NODE
