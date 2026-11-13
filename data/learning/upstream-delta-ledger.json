@@ -569,6 +569,30 @@
    "ref": "8a0d8a247d",
    "title": "fix(lsc_smart_ceiling_light): expose dp 20 master switch",
    "url": "https://github.com/make-all/tuya-local/commit/8a0d8a247dc29201a52c53473c46740800cad278"
+  },
+  {
+   "at": "2026-11-13T13:00:19.941Z",
+   "source": "tinytuya",
+   "kind": "release",
+   "ref": "v1.21.1",
+   "title": "v1.21.1 - Force-Scan Fixes",
+   "url": "https://github.com/jasonacox/tinytuya/releases/tag/v1.21.1"
+  },
+  {
+   "at": "2026-11-13T13:00:19.941Z",
+   "source": "tinytuya",
+   "kind": "release",
+   "ref": "v1.21.0",
+   "title": "v1.21.0 - Send Retry Control, Silent-Device Discovery & Server Security Fix",
+   "url": "https://github.com/jasonacox/tinytuya/releases/tag/v1.21.0"
+  },
+  {
+   "at": "2026-11-13T13:00:19.941Z",
+   "source": "ha-core-rel",
+   "kind": "release",
+   "ref": "2026.11.1",
+   "title": "2026.11.1",
+   "url": "https://github.com/home-assistant/core/releases/tag/2026.11.1"
   }
  ]
 }
