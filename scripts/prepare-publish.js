@@ -365,11 +365,9 @@ let skippedReserved = 0;
 let skippedBackup = 0;
 const BACKUP_FILE_REGEX = /\.(bak|backup|tmp|old|orig|swp|swo|rej)(\.[0-9]+)?$/i;
 const filter = (src, dest) => {
-  const name = path.basename(src);
-  // The staged payload is the composed app. Source compose metadata and a
-  // nested build dir must not ride along: compose would rebuild held drivers.
-  if (path.resolve(src) !== path.resolve(srcDir) && (name === '.homeycompose' || name === '.homeybuild')) {
-    console.log(`Publish trim: excluded ${name} from the staged payload`);
+  const { keepStagedEntry } = require('./ci/publish-stage-filter.cjs');
+  if (!keepStagedEntry(src, srcDir)) {
+    console.log(`Publish trim: excluded ${path.basename(src)} from the staged payload`);
     return false;
   }
   if (isReservedName(name)) {
