@@ -6,6 +6,7 @@ const path = require('path');
 const {
   effectiveHoldIds, resolveReleaseValue, assertDiagnosticCatalogue,
 } = require('../../scripts/publish-hold-release');
+const { keepStagedEntry } = require('../../scripts/ci/publish-stage-filter.cjs');
 
 const ROOT = path.join(__dirname, '..', '..');
 
@@ -44,7 +45,20 @@ describe('P3282 diagnostic catalogue above 350 drivers', () => {
     assert.ok(wf.includes('PUBLISH_DIAGNOSTIC_CATALOGUE'));
     assert.ok(wf.includes("inputs.diagnostic_catalogue != true"));
     assert.ok(prep.includes('homey-diag-catalogue'));
-    assert.ok(prep.includes("path.resolve(src) !== path.resolve(srcDir) && (name === '.homeycompose' || name === '.homeybuild')"));
+    assert.ok(prep.includes('keepStagedEntry'));
     assert.ok(action.includes('HOMEY_PUBLISH_DIR'));
+  });
+
+  it('the copy root named .homeybuild is kept and a nested compose dir is not', () => {
+    const root = path.join('/tmp', 'homey-diag-src', '.homeybuild');
+    const broken = (src) => {
+      const name = path.basename(src);
+      return !(name === '.homeycompose' || name === '.homeybuild');
+    };
+    assert.strictEqual(broken(root), false);
+    assert.strictEqual(keepStagedEntry(root, root), true);
+    assert.strictEqual(keepStagedEntry(path.join(root, '.homeycompose'), root), false);
+    assert.strictEqual(keepStagedEntry(path.join(root, '.homeybuild'), root), false);
+    assert.strictEqual(keepStagedEntry(path.join(root, 'app.json'), root), true);
   });
 });
