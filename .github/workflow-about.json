@@ -35,6 +35,10 @@
     ]
   },
   "workflows": {
+    "autonomous-review.yml": {
+      "group": "ci",
+      "what": "Reviews each pull request and push for exact couples, compaction, tests, the staged app and the app identity. A bot approval is not this review."
+    },
     "activity-monitor.yml": {
       "group": "autopilot",
       "what": "Collects one day of repo, forum and crash activity into a private report. The schedule is off; the orchestrator covers it."
