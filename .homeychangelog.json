@@ -907,9 +907,12 @@
       ]
     }
   ],
+  "9.0.1620": {
+    "en": "Changed: rename energy_source off the reserved energy_ prefix.",
+    "fr": "Modifié : rename energy_source off the reserved energy_ prefix."
+  },
   "9.0.1619": {
-    "en": "Diagnostic draft only: the upload includes the real source drivers that ordinary publishes still hold back, so the payload stays above 350 drivers. The Test channel is not changed by this run.",
-    "fr": "Brouillon de diagnostic uniquement : l’envoi contient les pilotes réels que les publications ordinaires retiennent encore, donc plus de 350 pilotes. Le canal Test n’est pas modifié par cet envoi."
+    "en": "Diagnostic draft only: the upload includes the real source drivers that ordinary publishes still hold back, so the payload stays above 350 drivers. The Test channel is not changed by this run."
   },
   "9.0.1618": {
     "en": "Changed: do not reuse a red run after a manifest change; note that the keyfob endpoint lists IAS ACE; declare the keyfob IAS ACE cluster and hold the failed AOYAN probe; satisfy the lint ratchet for the budget line."
@@ -967,9 +970,5 @@
   "9.0.1598": {
     "en": "Curtains and blinds: commands that arrive while the motor is still moving are queued instead of lost, a new 'is moving' condition and 'movement finished' trigger, and the final position is read back once the motor stops. Devices keep their Zigbee sequence number across app restarts, and availability is learnt per device so sleepy sensors are not marked offline too early. 72 Flow card sentences with device names restored.",
     "fr": "Rideaux et volets : une commande reçue pendant que le moteur tourne est mise en file au lieu d'être perdue, nouvelle condition « est en mouvement » et nouveau déclencheur « mouvement terminé », et la position finale est relue à l'arrêt. Les appareils gardent leur numéro de séquence Zigbee après un redémarrage de l'app, et la disponibilité est apprise par appareil pour ne plus marquer trop tôt les capteurs endormis comme hors ligne. 72 phrases de cartes Flow avec le nom de l'appareil restaurées."
-  },
-  "9.0.1597": {
-    "en": "Lower memory use under load: the data-point catalogue is loaded in small pieces on demand, internal queues and caches have hard limits, and the app sheds optional work before Homey's memory limit is reached. Smarter, bounded learning of unusual devices (confidence per device type, slower re-probing of sleepy devices, warnings on impossible values).",
-    "fr": "Moins de mémoire utilisée sous charge : le catalogue des points de données se charge par petits morceaux à la demande, les files et caches internes ont des limites strictes, et l'app renonce aux tâches optionnelles avant d'atteindre la limite mémoire de Homey. Apprentissage plus fin et borné des appareils inhabituels (confiance par type d'appareil, nouvelles sondes plus espacées pour les appareils endormis, alerte sur les valeurs impossibles)."
   }
 }
