@@ -365,6 +365,7 @@ let skippedReserved = 0;
 let skippedBackup = 0;
 const BACKUP_FILE_REGEX = /\.(bak|backup|tmp|old|orig|swp|swo|rej)(\.[0-9]+)?$/i;
 const filter = (src, dest) => {
+  const name = path.basename(src);
   const { keepStagedEntry } = require('./ci/publish-stage-filter.cjs');
   if (!keepStagedEntry(src, srcDir)) {
     console.log(`Publish trim: excluded ${path.basename(src)} from the staged payload`);
