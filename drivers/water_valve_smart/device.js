@@ -202,8 +202,15 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
       return {
         ...parentMappings,
         1: { capability: 'onoff', transform: isTuyaTrue },
+        // DP9 timer and DP101 threshold stay internal. They are not required capabilities.
         9: { capability: null, internal: 'countdown_seconds' },
         101: { capability: null, internal: 'threshold_pct' },
+        // Forum #2270: DP102 is the valve position, 0 closed and 100 open. Read only.
+        102: { capability: 'valve_position', transform: (v) => {
+          const n = Number(v);
+          if (!Number.isFinite(n)) {return null;}
+          return Math.max(0, Math.min(100, Math.round(n)));
+        } },
       };
     }
     // WHY(P2464 / Z2M FK-BV05): DP1 switch, DP2 threshold%, DP3 position, DP5/6 litres, DP22 temp
@@ -264,6 +271,15 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
         if (this.isFrankeverValve && mgr && zclNode && typeof mgr.initialize === 'function') {
           await mgr.initialize(zclNode);
           this.log('[WATER-VALVE] P2473 TuyaEF00Manager.initialize armed');
+        }
+        if (this.isFrankeverFkV02) {
+          if (!this.hasCapability('valve_position')) {
+            await this.addCapability('valve_position').catch(() => {});
+          }
+          if (mgr && typeof mgr.requestAllDPs === 'function') {
+            await mgr.requestAllDPs({ readOnly: true });
+            this.log('[WATER-VALVE] FK_V02 status dataQuery (read-only, no DP1 command)');
+          }
         }
       } catch (e) {
         this.log('[WATER-VALVE] P2473 EF00 initialize soft:', e.message);

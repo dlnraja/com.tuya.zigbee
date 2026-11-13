@@ -2197,6 +2197,12 @@
       "pid": "TS0601",
       "driverId": "wall_thermostat",
       "note": "P3253 KB daily 2026-11-03: Moes ZHT-S03 wall thermostat (Z2M/ZHC moes.ts; DP1 on, DP16 setpoint /10, DP24 temp /10, DP40 lock = wall_thermostat BHT layout); moved from curtain_motor (wrong class), pinned so the move does not drop it"
+    },
+    {
+      "mfr": "_TZ3000_nrfkrgf4",
+      "pid": "TS0046",
+      "driverId": "button_wireless_6",
+      "note": "Forum 140352#2264 Leinad 6-gang scene switch. Pin so publish compaction cannot drop the couple."
     }
   ]
 }
