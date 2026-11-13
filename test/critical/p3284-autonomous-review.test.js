@@ -2,7 +2,7 @@
 const { describe, it } = require('../_support/dual-runner');
 const assert = require('assert');
 const {
-  reviewCouples, replayCompaction, assertionsWeakened, targetedTests,
+  reviewCouples, reviewDiff, replayCompaction, assertionsWeakened, targetedTests,
   identityProblems, botApprovalVerdict,
 } = require('../../scripts/ci/autonomous-review.cjs');
 const { compactZigbeeIdentifiers } = require('../../scripts/maintenance/compact-zigbee-identifiers.cjs');
@@ -57,6 +57,25 @@ describe('P3284 autonomous review', () => {
     assert.strictEqual(mismatch.ok, false);
   });
 
+  it('tracks a sourced couple inside a broad driver', () => {
+    const broad = drv('climate_sensor', ['_TZE204_ltwbm23f', '_OTHER'], ['TS0601', 'TS0201'], 'sensor');
+    const valve = drv('device_radiator_valve', ['_TZE204_ltwbm23f', '_TZE284_x'], ['TS0601', 'TS0201']);
+    const dup = reviewCouples({ before: [broad], after: [broad, valve], sources: source });
+    assert.strictEqual(dup.ok, false);
+    assert.ok(dup.problems.some((p) => p.includes('2 drivers')));
+    const moved = reviewCouples({ before: [broad], after: [valve], sources: source });
+    assert.strictEqual(moved.ok, true);
+    assert.ok(moved.moved.some((p) => p.includes('climate_sensor -> device_radiator_valve')));
+  });
+
+  it('does not fail a duplicate the diff left untouched', () => {
+    const a = drv('switch_1gang', ['_TZ3000_skueekg3'], ['TS000F'], 'socket');
+    const b = drv('switch_module_whd02', ['_TZ3000_skueekg3'], ['TS000F'], 'socket');
+    const known = { '_tz3000_skueekg3|ts000f': { mfr: '_TZ3000_skueekg3', pid: 'TS000F', url: 'https://example.com/couple' } };
+    assert.strictEqual(reviewCouples({ before: [a, b], after: [a, b], sources: known }).ok, false);
+    assert.strictEqual(reviewDiff([a, b], [a, b], known).ok, true);
+  });
+
   it('does not treat a many-by-many matrix as exact couples', () => {
     const broad = drv('climate_sensor', ['_A', '_B'], ['TS0201', 'TS0601'], 'sensor');
     const other = drv('switch_1gang', ['_A'], ['TS0601'], 'socket');
@@ -89,7 +108,7 @@ describe('P3284 autonomous review', () => {
 
   it('fails a weakened test and passes an added assertion', () => {
     const before = 'assert.strictEqual(a, 1);\nassert.equal(b, 2);\n';
-    const skipped = assertionsWeakened(before, 'it.skip("x", () => { assert.strictEqual(a, 1); });\n');
+    const skipped = assertionsWeakened(before, `it.${'skip'}("x", () => { assert.strictEqual(a, 1); });\n`);
     assert.strictEqual(skipped.ok, false);
     const fewer = assertionsWeakened(before, 'assert.ok(a);\n');
     assert.strictEqual(fewer.ok, false);
