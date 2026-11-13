@@ -10,10 +10,9 @@ const {
 } = require('./maintenance/compact-zigbee-identifiers.cjs');
 
 const srcDir = path.join(__dirname, '..', '.homeybuild');
+const { stagingDir } = require('./ci/publish-dir.cjs');
 const diagnosticCatalogue = String(process.env.PUBLISH_DIAGNOSTIC_CATALOGUE || '') === '1';
-const destDir = diagnosticCatalogue
-  ? path.resolve(process.env.PUBLISH_DIAGNOSTIC_DIR || path.join(os.tmpdir(), 'homey-diag-catalogue'))
-  : path.join(os.tmpdir(), 'homey-publish-temp');
+const destDir = stagingDir();
 
 // Windows reserved device names — these CANNOT be packed into a tar
 // archive: tar-stream hangs and Athom returns "processing_failed".
