@@ -258,6 +258,7 @@ jobs:
         run: |
           npm run check:p244x || echo "P244x soft warn"
           npm run check:p246x || echo "P246x soft warn"
+          npm run check:p3285 || echo "P3285 soft warn"
           npm run check:p248x || echo "P248x soft warn"
           npm run check:p249x || echo "P249x soft warn"
           npm run check:p257x || echo "P257x soft warn"
