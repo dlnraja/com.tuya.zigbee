@@ -1,6 +1,14 @@
 {
  "runs": [
   {
+   "at": "2026-11-13T21:03:27.508Z",
+   "newMfrs": 2,
+   "sample": [
+    "_tz3002_wowrpxxu",
+    "_tze284_lqhqj73n"
+   ]
+  },
+  {
    "at": "2026-11-13T14:02:30.414Z",
    "newMfrs": 2,
    "sample": [
@@ -242,21 +250,6 @@
     "_tze284_0or4eirj",
     "_tzd200_sa1ogeny",
     "_tze200_sa1ogeny"
-   ]
-  },
-  {
-   "at": "2026-11-03T12:26:52.318Z",
-   "newMfrs": 1,
-   "sample": [
-    "pushok hardware"
-   ]
-  },
-  {
-   "at": "2026-11-13T14:18:47.809Z",
-   "newMfrs": 2,
-   "sample": [
-    "_tz3002_wowrpxxu",
-    "_tze284_lqhqj73n"
    ]
   }
  ]
