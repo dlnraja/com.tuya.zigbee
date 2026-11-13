@@ -1,7 +1,8 @@
 # >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
-# What it does: Reviews pull requests and pushes without trusting a bot approval.
-#   Exact couples, compaction, tests, the staged app, and the app identity.
-# Ideas from (thank you): GitHub Actions docs; the Homey CLI validate command.
+# What it does: Reviews each pull request and push for exact couples, compaction, tests, the staged app and
+#   the app identity. A bot approval is not this review.
+# Ideas from (thank you): GitHub Actions docs; rhysd (actionlint); the Athom homey CLI docs for the validate
+#   levels.
 # Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
 #   posting stays off or ledger-gated.
 # <<< about
