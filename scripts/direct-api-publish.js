@@ -501,7 +501,8 @@ async function main() {
   // WHY(P2286): publishing from repo root packs un-prepared app.json / misses
   // compaction → orphan waiting_for_files + processing_failed on Athom.
   const normalizedRoot = APP_ROOT.replace(/[/\\]+$/, '');
-  const isPublishTemp = /homey-publish-temp$/i.test(normalizedRoot);
+  const { isPreparedPublishPath } = require('./ci/publish-dir.cjs');
+  const isPublishTemp = isPreparedPublishPath(normalizedRoot);
   if (!listOnly && !isPublishTemp && !allowRepo) {
     err('FATAL: refuse publish outside homey-publish-temp.');
     err('Run: npm run build && npm run prepare-publish && npm run publish:direct -- --channel test');

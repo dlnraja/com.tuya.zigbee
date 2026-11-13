@@ -239,8 +239,10 @@ function main() {
   // WHY(P2561): prepare-publish compacts tmp/homey-publish-temp/app.json; the
   // workspace root app.json can still measure ~4.00MB compact and false-fail the
   // gate. Prefer the prepared publish manifest when present.
+  const { preparedDir } = require('./publish-dir.cjs');
+  const publishRoot = preparedDir();
   const preparedApp = process.env.HOMEY_PUBLISH_APPJSON
-    || path.join(os.tmpdir(), 'homey-publish-temp', 'app.json');
+    || path.join(publishRoot, 'app.json');
   const rootApp = preparedApp && fs.existsSync(preparedApp)
     ? preparedApp
     : path.join(ROOT, 'app.json');
@@ -258,7 +260,7 @@ function main() {
 
   checkDirUnderLimit(
     'Prepared publish directory (source)',
-    path.join(os.tmpdir(), 'homey-publish-temp'),
+    publishRoot,
     LIMITS.publishSourceMB,
     { excludedExtensions: ['.gz'], excludedDirs: ['.homeybuild', 'node_modules', '.git', '.cache'] },
   );
@@ -266,7 +268,7 @@ function main() {
   if (CHECK_FINAL) {
     checkDirUnderLimit(
       'Final publish directory',
-      path.join(os.tmpdir(), 'homey-publish-temp'),
+      publishRoot,
       LIMITS.publishFinalMB,
       { excludedExtensions: ['.gz'], excludedDirs: ['.homeybuild', '.git', '.cache'] },
     );
