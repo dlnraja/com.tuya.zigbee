@@ -53,15 +53,29 @@ function exactPairs(driver) {
   return pairs;
 }
 
-function indexExact(drivers) {
+function indexExact(drivers, sources) {
   const map = new Map();
+  function add(key, driverId, mfr, pid) {
+    if (!map.has(key)) map.set(key, []);
+    const row = map.get(key);
+    if (!row.some((r) => r.driverId === driverId)) row.push({ driverId, mfr, pid });
+  }
   for (const driver of drivers || []) {
-    for (const pair of exactPairs(driver)) {
-      if (!map.has(pair.key)) map.set(pair.key, []);
-      const row = map.get(pair.key);
-      if (!row.some((r) => r.driverId === driver.id)) {
-        row.push({ driverId: driver.id, mfr: pair.mfr, pid: pair.pid, className: driver.class || '' });
-      }
+    for (const pair of exactPairs(driver)) add(pair.key, driver.id, pair.mfr, pair.pid);
+  }
+  for (const [rawKey, entry] of Object.entries(sources || {})) {
+    if (!entry) continue;
+    let mfr = entry.mfr;
+    let pid = entry.pid;
+    if (!mfr || !pid) {
+      const parts = String(rawKey).split('|');
+      mfr = mfr || parts[0];
+      pid = pid || parts[1];
+    }
+    if (!mfr || !pid) continue;
+    const key = coupleKey(mfr, pid);
+    for (const driver of drivers || []) {
+      if (listsContain(driver, mfr, pid)) add(key, driver.id, mfr, pid);
     }
   }
   return map;
@@ -73,14 +87,30 @@ function sourceUrl(entry) {
   const sources = Array.isArray(entry.sources) ? entry.sources : [];
   for (const source of sources) {
     if (typeof source === 'string' && /^https?:\/\//i.test(source)) return source;
-    if (source && typeof source.url === 'string' && /^https?:\/\//i.test(source.url)) return source.url;
+    if (!source || typeof source !== 'object') continue;
+    for (const field of ['url', 'ref', 'href']) {
+      if (typeof source[field] === 'string' && /^https?:\/\//i.test(source[field])) return source[field];
+    }
   }
   return '';
 }
 
+function listsContain(driver, mfr, pid) {
+  const mfrs = asList(driver.zigbee && driver.zigbee.manufacturerName).map(norm);
+  const pids = asList(driver.zigbee && driver.zigbee.productId).map((p) => p.toUpperCase());
+  return mfrs.includes(norm(mfr)) && pids.includes(String(pid).toUpperCase());
+}
+
+function reviewDiff(before, after, sources) {
+  const historical = new Set(reviewCouples({ before, after: before, sources }).problems);
+  const head = reviewCouples({ before, after, sources });
+  const problems = head.problems.filter((problem) => !historical.has(problem));
+  return { ok: problems.length === 0, problems, moved: head.moved };
+}
+
 function reviewCouples({ before, after, sources }) {
-  const prev = indexExact(before);
-  const next = indexExact(after);
+  const prev = indexExact(before, sources);
+  const next = indexExact(after, sources);
   const problems = [];
   const moved = [];
   for (const [key, rows] of next) {
@@ -256,7 +286,7 @@ function botApprovalVerdict({ approvals, checks, semanticOk }) {
 }
 
 function git(args) {
-  return execFileSync('git', args, { cwd: ROOT, encoding: 'utf8' });
+  return execFileSync('git', args, { cwd: ROOT, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] });
 }
 
 function loadComposeDrivers(root) {
@@ -314,12 +344,7 @@ function runCouples(base) {
     }
     const afterSubset = after.filter((d) => ids.has(d.id) || before.some((b) => b.id === d.id));
     const untouched = after.filter((d) => !afterSubset.some((a) => a.id === d.id));
-    const verdict = reviewCouples({
-      before: before.concat(untouched),
-      after,
-      sources: loadSources(ROOT),
-    });
-    return verdict;
+    return reviewDiff(before.concat(untouched), after, loadSources(ROOT));
   }
   return reviewCouples({ before: after, after, sources: loadSources(ROOT) });
 }
@@ -433,7 +458,7 @@ function main(argv) {
 }
 
 module.exports = {
-  exactPairs, reviewCouples, replayCompaction, assertionsWeakened, assertionProfile,
+  exactPairs, reviewCouples, reviewDiff, replayCompaction, assertionsWeakened, assertionProfile,
   targetedTests, identityProblems, botApprovalVerdict, couplesPresent, IDENTITIES, GENERIC_CHANGELOG,
 };
 
