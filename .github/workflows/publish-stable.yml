@@ -205,7 +205,7 @@ jobs:
       - name: Dedupe driver flow cards (app.json + .homeycompose)
         run: node tools/ci/sync-appjson-flow-dedupe.js --apply
       - name: Validate App
-        run: npx homey app validate --level publish
+        run: bash scripts/ci/homey-validate-safe.sh --level publish
       - name: Sanitize generated manifest after validation
         run: node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json
 

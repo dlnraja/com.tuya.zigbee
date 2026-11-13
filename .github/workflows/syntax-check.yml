@@ -277,6 +277,7 @@ jobs:
             test/critical/p2454-package-lock-integrity.test.js
           if npm run | grep -q 'check:p244x'; then npm run check:p244x; fi
           if npm run | grep -q 'check:p246x'; then npm run check:p246x; fi
+          if npm run | grep -q 'check:p3285'; then npm run check:p3285; fi
           if npm run | grep -q 'check:p248x'; then npm run check:p248x; fi
           if npm run | grep -q 'check:p249x'; then npm run check:p249x; fi
           if npm run | grep -q 'check:publish'; then npm run check:publish; fi
