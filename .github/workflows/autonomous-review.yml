@@ -36,6 +36,10 @@ permissions:
   checks: read
   pull-requests: read
 
+defaults:
+  run:
+    shell: bash
+
 concurrency:
   group: autonomous-review-${{ github.ref }}
   cancel-in-progress: true
