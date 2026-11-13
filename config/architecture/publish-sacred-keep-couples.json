@@ -3,6 +3,24 @@
   "why": "Budget truncation can drop observed mfrs from broad drivers (button_wireless_1 had 31→2 pids). Sacred locks stay pin-first.",
   "couples": [
     {
+      "mfr": "_TZE284_ltwbm23f",
+      "pid": "TS0601",
+      "driverId": "device_radiator_valve",
+      "note": "GH#632 sibling on the same Z2M TRV602Z fingerprint as _TZE204_ltwbm23f / _TZE204_qyr2m29i. https://www.zigbee2mqtt.io/devices/TRV602Z.html https://github.com/Koenkk/zigbee-herdsman-converters/blob/c18c32d94c77f683fa768618d1fd32b348fdd7b9/src/devices/tuya.ts#L12037"
+    },
+    {
+      "mfr": "_TZE204_qyr2m29i",
+      "pid": "TS0601",
+      "driverId": "device_radiator_valve",
+      "note": "TRV602Z sibling of GH#632 _TZE204_ltwbm23f. Same zhc fingerprint (tuya.ts#L12037). Already in device_radiator_valve and already compacted out of the publish payload; pin so the shared definition survives."
+    },
+    {
+      "mfr": "_TZE204_ltwbm23f",
+      "pid": "TS0601",
+      "driverId": "device_radiator_valve",
+      "note": "GH#632 TRV602Z/TRV601Z _TZE204_ltwbm23f+TS0601. Was climate_sensor then compacted/dropped (Unknown Zigbee). Z2M https://www.zigbee2mqtt.io/devices/TRV602Z.html zhc https://github.com/Koenkk/zigbee-herdsman-converters/blob/c18c32d94c77f683fa768618d1fd32b348fdd7b9/src/devices/tuya.ts#L12037"
+    },
+    {
       "mfr": "_TZE200_p3dbf6qs",
       "pid": "TS0601",
       "driverId": "radiator_valve",

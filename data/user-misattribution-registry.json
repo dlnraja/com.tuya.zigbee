@@ -9541,6 +9541,24 @@
       "protocol": "zcl",
       "source": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1534 (device interview by motren, 2026-10-24)",
       "notes": "Daily KB 2026-10-25: battery 4-button scene remote, EP1 0/1/6/0xE000 + EP2-4 genOnOff, same layout as zgyzgdua/wkai4ga5. One reliable source (user interview)."
+    },
+    {
+      "id": "p3283-gh632-trv602z-not-climate",
+      "mfr": [
+        "_TZE204_ltwbm23f",
+        "_TZE284_ltwbm23f"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "device_radiator_valve",
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "radiator_valve"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "GH#632 TRV602Z. Z2M/zhc tuya.ts#L12037. climate_sensor was the wrong class and compaction dropped the couple. Do not cross-product onto _TZE200_ltwbm23f."
     }
   ],
   "entries": {

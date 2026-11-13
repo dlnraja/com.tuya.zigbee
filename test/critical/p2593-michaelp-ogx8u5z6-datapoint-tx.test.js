@@ -42,7 +42,8 @@ describe('P2593 Michaelp ogx8u5z6 TRV datapoint TX', () => {
   it('me167 setpoint still uses DP4 for ogx8u5z6 family', () => {
     const src = fs.readFileSync(DEVICE, 'utf8');
     // P2598: live this.dpProfile (was closed-over profile ===)
-    assert.match(src, /(?:profile|this\.dpProfile)\s*===\s*'me167'\s*\?\s*4\s*:\s*3/);
+    // WHY(P3283): TRV602Z joins the DP4 branch. ogx8u5z6 stays me167, so it still writes DP4 not DP3.
+    assert.match(src, /this\.dpProfile === 'me167' \|\| this\.dpProfile === 'trv602z'\) \? 4 : 3/);
     assert.ok(src.includes('ogx8u5z6'));
   });
 });

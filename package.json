@@ -310,6 +310,7 @@
     "check:p2467": "node --test test/critical/p2467-moes-ef00-initialize.test.js",
     "check:p2468": "node --test test/critical/p2468-joep-frankever-vichy.test.js",
     "check:p2469": "node --test test/critical/p2469-unit-test-anti-regression-mandate.test.js",
+    "check:p3283": "node --test test/critical/p3283-gh632-trv602z-ltwbm23f.test.js",
     "check:p2470": "node --test test/critical/p2470-peter-8afffc76-smartbutton-battery.test.js",
     "check:p2471": "node --test test/critical/p2471-tuya-wifi-user-login.test.js && node tools/ci/sync-wifi-pair-configure.js --check",
     "check:p2472": "node --test test/critical/p2472a-vichy-compose-no-battery-energy.test.js test/critical/p2472-mcu-time-sync-pipeline.test.js",
