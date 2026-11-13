@@ -1,0 +1,19 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Valve position",
+    "fr": "Position de la vanne",
+    "nl": "Klepstand",
+    "de": "Ventilposition"
+  },
+  "units": {
+    "en": "%"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "insights": true,
+  "min": 0,
+  "max": 100,
+  "decimals": 0
+}
