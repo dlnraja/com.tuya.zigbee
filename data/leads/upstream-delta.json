@@ -1,6 +1,14 @@
 {
  "runs": [
   {
+   "at": "2026-11-13T14:02:30.414Z",
+   "newMfrs": 2,
+   "sample": [
+    "_tz3002_wowrpxxu",
+    "_tze284_lqhqj73n"
+   ]
+  },
+  {
    "at": "2026-11-10T13:04:05.023Z",
    "newMfrs": 4,
    "sample": [
@@ -238,13 +246,6 @@
   },
   {
    "at": "2026-11-03T12:26:52.318Z",
-   "newMfrs": 1,
-   "sample": [
-    "pushok hardware"
-   ]
-  },
-  {
-   "at": "2026-11-02T22:33:58.748Z",
    "newMfrs": 1,
    "sample": [
     "pushok hardware"
