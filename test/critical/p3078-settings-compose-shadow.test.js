@@ -11,7 +11,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.join(__dirname, '..', '..');
-const GUARDED = ['adaptive_lighting', 'adaptive_brightness', 'energy_source'];
+const GUARDED = ['adaptive_lighting', 'adaptive_brightness', 'tuya_energy_source'];
 const flat = (s) => (s || []).flatMap((x) => (x.children ? x.children : [x]));
 
 describe('P3078 settings survive a compose rebuild (driver.settings.compose.json wins)', () => {

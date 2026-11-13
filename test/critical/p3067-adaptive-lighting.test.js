@@ -217,7 +217,7 @@ describe('P3067 manifest: default-on adaptive lighting on every light, energy de
     for (const d of app.drivers) {
       const c = d.capabilities || [];
       if (c.some((x) => /^(measure_power|meter_power)/.test(x))) {
-        const lab = flat(d.settings).find((x) => x.id === 'energy_source');
+        const lab = flat(d.settings).find((x) => x.id === 'tuya_energy_source');
         assert.ok(lab && lab.type === 'label', d.id);
       }
     }
