@@ -102,14 +102,14 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       // Presets 1 antifrost / 2 eco / 3 comfort share system mode auto (zhc fromMap).
       const mode = (v) => {
         const n = Number(v);
-        if (n === 0) return 'off';
-        if (n === 5) return 'heat';
-        if (n === 1 || n === 2 || n === 3 || n === 4) return 'auto';
+        if (n === 0) { return 'off'; }
+        if (n === 5) { return 'heat'; }
+        if (n === 1 || n === 2 || n === 3 || n === 4) { return 'auto'; }
         return 'heat';
       };
       return {
         2: { capability: 'thermostat_mode', transform: mode },
-        3: { internal: true, type: 'running_state', transform: (v) => (Number(v) === 1 ? 'heat' : 'idle') },
+        3: { internal: true, type: 'running_state', transform: (v) => Number(v) === 1 ? 'heat' : 'idle' },
         4: { capability: 'target_temperature', divisor: 10 },
         5: { capability: 'measure_temperature', divisor: 10 },
         6: { capability: 'measure_battery', divisor: 1 },
@@ -472,7 +472,9 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     try {
       if (this.dpProfile === 'me167' || this.dpProfile === 'trv602z') {
         this._dynamicDpMappings = { ...this._dynamicDpMappings || {}, ...this.dpMappings };
-        this.log(`[TRV] P2594 ${this.dpProfile} DP maps re-locked after identity`);
+        this.log(this.dpProfile === 'me167'
+          ? '[TRV] P2594 me167 DP maps re-locked after identity'
+          : '[TRV] P2594 trv602z DP maps re-locked after identity');
       }
       await this._setupTuyaDPMode?.();
     } catch (_e) { /* soft */ }
@@ -640,7 +642,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     // Target temperature - different DP per profile
     if (this.hasCapability('target_temperature')) {
       this.registerCapabilityListener('target_temperature', async (v) => {
-        const dp = (this.dpProfile === 'me167' || this.dpProfile === 'trv602z') ? 4 : 3;
+        const dp = this.dpProfile === 'me167' || this.dpProfile === 'trv602z' ? 4 : 3;
         // WHY(P3244 / #560): TRV06 keeps tenths/half degrees (Z2M step 0.5) unless the device echo proved whole °C.
         const target = this._trv06SetpointTx(v);
         // WHY(P2593 / Michaelp #2253): tenths °C as Tuya value DP (4-byte)

@@ -43,7 +43,7 @@ describe('P2593 Michaelp ogx8u5z6 TRV datapoint TX', () => {
     const src = fs.readFileSync(DEVICE, 'utf8');
     // P2598: live this.dpProfile (was closed-over profile ===)
     // WHY(P3283): TRV602Z joins the DP4 branch. ogx8u5z6 stays me167, so it still writes DP4 not DP3.
-    assert.match(src, /this\.dpProfile === 'me167' \|\| this\.dpProfile === 'trv602z'\) \? 4 : 3/);
+    assert.match(src, /this\.dpProfile === 'me167' \|\| this\.dpProfile === 'trv602z' \? 4 : 3/);
     assert.ok(src.includes('ogx8u5z6'));
   });
 });
