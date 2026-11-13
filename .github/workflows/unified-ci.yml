@@ -121,7 +121,7 @@ jobs:
         run: node tools/ci/flow-card-dup-gate.js
 
       - name: 🏠 Homey Validate
-        run: npx homey app validate --level publish
+        run: bash scripts/ci/homey-validate-safe.sh --level publish
 
       - name: Normalize Homey manifest after validation
         run: npm run fix:generated-flow-args && npm run check:homey-guidelines
@@ -247,6 +247,7 @@ jobs:
           npm run check:p244x
           npm run check:flow-titleformatted
           npm run check:p246x
+          npm run check:p3285
           npm run check:p248x
           npm run check:p249x
           npm run check:p260x || npm run check:p2609 || true

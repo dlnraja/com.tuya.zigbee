@@ -159,7 +159,7 @@ jobs:
         run: npm run check:p244x
 
       - name: 🛡️ P246x anti-regression family (Moes EF00 / IAS / battery)
-        run: npm run check:p246x
+        run: npm run check:p246x && npm run check:p3285
 
       - name: 🛡️ P2487–P2490 complementary failover family
         run: npm run check:p248x
