@@ -125,7 +125,7 @@ function diff(oldD, newD) {
   return out;
 }
 
-if (require.main === module) {
+function main() {
   const libDir = arg('lib');
   if (!libDir && arg('watch-docs')) { watchDocs().then(({ changes }) => console.log(changes.join('\n'))); return; }
   if (!libDir) { console.error('usage: --lib=/path/to/node-homey-lib [--write] [--report=file]'); process.exit(2); }
@@ -146,5 +146,7 @@ if (require.main === module) {
     });
   }
 }
+
+if (require.main === module) { main(); }
 
 module.exports = { extract, diff, watchDocs, WATCH };
