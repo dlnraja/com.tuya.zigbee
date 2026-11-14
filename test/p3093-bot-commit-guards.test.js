@@ -31,11 +31,14 @@ describe('P3093 bot commit guards', () => {
     const os = require('os');
     const { spawnSync } = require('child_process');
     const d = fs.mkdtempSync(path.join(os.tmpdir(), 'p3093v-'));
-    fs.mkdirSync(path.join(d, 'bin'));
-    fs.writeFileSync(path.join(d, 'bin', 'npx'), '#!/bin/sh\necho changed > app.json\nmkdir -p .homeybuild\nexit 3\n', { mode: 0o755 });
+    fs.mkdirSync(path.join(d, 'node_modules', '.bin'), { recursive: true });
+    fs.mkdirSync(path.join(d, 'scripts', 'ci'), { recursive: true });
+    // The safe wrapper calls the lockfile CLI (node_modules/.bin/homey) after homey-cli-pin.cjs.
+    fs.writeFileSync(path.join(d, 'scripts', 'ci', 'homey-cli-pin.cjs'), 'process.exit(0);\n');
+    fs.writeFileSync(path.join(d, 'node_modules', '.bin', 'homey'), '#!/bin/sh\necho changed > app.json\nmkdir -p .homeybuild\nexit 3\n', { mode: 0o755 });
     fs.writeFileSync(path.join(d, 'app.json'), '{"v":1}');
     const r = spawnSync('bash', [path.join(ROOT, 'scripts/ci/homey-validate-safe.sh'), '--level', 'publish'],
-      { cwd: d, env: { ...process.env, PATH: `${path.join(d, 'bin')}:${process.env.PATH}` } });
+      { cwd: d, env: { ...process.env, PATH: process.env.PATH } });
     assert.strictEqual(r.status, 3);
     assert.strictEqual(fs.readFileSync(path.join(d, 'app.json'), 'utf8'), '{"v":1}');
     assert.strictEqual(fs.existsSync(path.join(d, '.homeybuild')), false);
