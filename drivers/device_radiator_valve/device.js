@@ -68,6 +68,14 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
 
   get dpProfile() {
     const mfr = this._resolveMfr().toLowerCase();
+    // WHY(GH#632): TRV602Z is one fingerprint in zhc, not Profile A and not the ME167 mode enum.
+    // https://www.zigbee2mqtt.io/devices/TRV602Z.html
+    // https://github.com/Koenkk/zigbee-herdsman-converters/blob/c18c32d94c77f683fa768618d1fd32b348fdd7b9/src/devices/tuya.ts#L12037
+    // Exact couples only: _TZE204_qyr2m29i, _TZE204_ltwbm23f, _TZE284_ltwbm23f + TS0601.
+    // DP2 system mode off=0 / auto=4 / heat=5, DP4 setpoint/10, DP5 local temp/10, DP6 battery, DP7 child lock.
+    if (mfr === '_tze204_qyr2m29i' || mfr === '_tze204_ltwbm23f' || mfr === '_tze284_ltwbm23f') {
+      return 'trv602z';
+    }
     const me167Tails = [
       'o3x45p96', 'p3dbf6qs',
       // WHY(#560 TRV06 _TZE200_rxq4iti9): Z2M tuya.ts lists these in the same ME167/TRV06 definition (DP4 setpoint, DP5 temp)
@@ -88,6 +96,32 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     const mfr = this._resolveMfr();
     // WHY P2278: ogx8u5z6 firmware stores cal in tenths (user-confirmed Z2M divideBy10)
     const calDivisor = /ogx8u5z6/i.test(mfr) ? 10 : 1;
+
+    if (this.dpProfile === 'trv602z') {
+      // WHY(GH#632 / zhc tuya.ts#L12037): TRV602Z. DP15 is window open (1), never a battery %.
+      // Presets 1 antifrost / 2 eco / 3 comfort share system mode auto (zhc fromMap).
+      const mode = (v) => {
+        const n = Number(v);
+        if (n === 0) { return 'off'; }
+        if (n === 5) { return 'heat'; }
+        if (n === 1 || n === 2 || n === 3 || n === 4) { return 'auto'; }
+        return 'heat';
+      };
+      return {
+        2: { capability: 'thermostat_mode', transform: mode },
+        3: { internal: true, type: 'running_state', transform: (v) => Number(v) === 1 ? 'heat' : 'idle' },
+        4: { capability: 'target_temperature', divisor: 10 },
+        5: { capability: 'measure_temperature', divisor: 10 },
+        6: { capability: 'measure_battery', divisor: 1 },
+        7: { capability: 'child_lock', transform: (v) => v === true || v === 1 },
+        9: { internal: true, type: 'max_temperature', divisor: 10 },
+        10: { internal: true, type: 'min_temperature', divisor: 10 },
+        14: { internal: true, type: 'window_detection', transform: (v) => v === true || v === 1 },
+        15: { internal: true, type: 'window_open', transform: (v) => Number(v) === 1 },
+        47: { internal: true, type: 'temp_calibration', writable: true, divisor: 10, setting: 'temperature_calibration' },
+        122: { capability: 'frost_protection', transform: (v) => v === true || v === 1 },
+      };
+    }
 
     if (this.dpProfile === 'me167') {
       // Profile B: AVATTO ME167/TRV06 / thermostat_3 DP mapping
@@ -405,7 +439,12 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     this._appCommandPending = false;
     this._appCommandTimeout = null;
     const profile = this.dpProfile;
-    this.log(`[TRV] v5.6.0 - Profile: ${profile} | ${profile === 'me167' ? 'ME167 DPs: 2-5,7,35,36,39,47' : 'Standard DPs: 1-10,13-15,101-109'}`);
+    const profileLabel = profile === 'trv602z'
+      ? 'TRV602Z DPs: 2 mode, 4 setpoint/10, 5 temp/10, 6 battery, 7 lock'
+      : profile === 'me167'
+        ? 'ME167 DPs: 2-5,7,35,36,39,47'
+        : 'Standard DPs: 1-10,13-15,101-109';
+    this.log(`[TRV] v5.6.0 - Profile: ${profile} | ${profileLabel}`);
 
     // WHY(P2326 / salvagr #533 diag c137a5d7): empty zb_manufacturer_name left TRV on
     // Generic profile while Moes ZTS-EUR-C curtain was mis-paired as radiator.
@@ -431,9 +470,11 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     // WHY(P2594): after mfr settings filled, lock me167 maps + re-arm EF00 RX
     // (super thermostat init may have run with empty mfr → wrong/empty dynamic maps)
     try {
-      if (this.dpProfile === 'me167') {
+      if (this.dpProfile === 'me167' || this.dpProfile === 'trv602z') {
         this._dynamicDpMappings = { ...this._dynamicDpMappings || {}, ...this.dpMappings };
-        this.log('[TRV] P2594 me167 DP maps re-locked after identity');
+        this.log(this.dpProfile === 'me167'
+          ? '[TRV] P2594 me167 DP maps re-locked after identity'
+          : '[TRV] P2594 trv602z DP maps re-locked after identity');
       }
       await this._setupTuyaDPMode?.();
     } catch (_e) { /* soft */ }
@@ -512,9 +553,11 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       this._deviceInitTime = this._deviceInitTime || this._trvInitAt;
       safeSetTimeout(this, () => {
         if (this._destroyed) {return;}
-        const dps = this.dpProfile === 'me167'
-          ? [2, 3, 4, 5, 7, 13, 15, 35]
-          : [1, 2, 3, 4, 13, 15];
+        const dps = this.dpProfile === 'trv602z'
+          ? [2, 3, 4, 5, 6, 7]
+          : this.dpProfile === 'me167'
+            ? [2, 3, 4, 5, 7, 13, 15, 35]
+            : [1, 2, 3, 4, 13, 15];
         this.log(`[TRV] P2596 refresh DPs ${dps.join(',')}`);
         try {
           const { tuyaDataQuery } = require('../../lib/tuya/TuyaDataQuery');
@@ -583,7 +626,10 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     // Mode - different mapping per profile
     if (this.hasCapability('thermostat_mode')) {
       this.registerCapabilityListener('thermostat_mode', async (v) => {
-        if (this.dpProfile === 'me167') {
+        if (this.dpProfile === 'trv602z') {
+          // WHY(GH#632 / zhc tuya.ts#L12037): system_mode off=0, auto=4, heat=5. Not the ME167 enum.
+          await this._sendTuyaDP(2, { off: 0, auto: 4, heat: 5 }[v] ?? 5, 'enum');
+        } else if (this.dpProfile === 'me167') {
           // ME167: 0=auto, 1=heat, 2=off
           await this._sendTuyaDP(2, { 'auto': 0, 'heat': 1, 'off': 2 }[v] ?? 1, 'enum');
         } else {
@@ -596,7 +642,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     // Target temperature - different DP per profile
     if (this.hasCapability('target_temperature')) {
       this.registerCapabilityListener('target_temperature', async (v) => {
-        const dp = this.dpProfile === 'me167' ? 4 : 3;
+        const dp = this.dpProfile === 'me167' || this.dpProfile === 'trv602z' ? 4 : 3;
         // WHY(P3244 / #560): TRV06 keeps tenths/half degrees (Z2M step 0.5) unless the device echo proved whole °C.
         const target = this._trv06SetpointTx(v);
         // WHY(P2593 / Michaelp #2253): tenths °C as Tuya value DP (4-byte)
@@ -640,13 +686,32 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
   }
 
 
+  _clearTrvRuntime() {
+    try {
+      if (this._timeSyncInterval && this.homey?.clearInterval) {
+        this.homey.clearInterval(this._timeSyncInterval);
+      }
+    } catch (_e) { /* soft */ }
+    this._timeSyncInterval = null;
+    try {
+      const thermo = this.zclNode?.endpoints?.[1]?.clusters?.hvacThermostat;
+      if (thermo && typeof thermo.removeAllListeners === 'function') {
+        thermo.removeAllListeners('attr.localTemperature');
+        thermo.removeAllListeners('attr.occupiedHeatingSetpoint');
+        thermo.removeAllListeners('attr.pIHeatingDemand');
+      }
+    } catch (_e) { /* soft */ }
+  }
+
   async onUninit() {
+    this._clearTrvRuntime();
     try { this.__fwLimit?.destroy(); } catch (_e) { /* soft */ }
     if (typeof super.onUninit === 'function') {await super.onUninit();}
   }
 
   async onDeleted() {
     this._destroyed = true;
+    this._clearTrvRuntime();
     try { this.__fwLimit?.destroy(); } catch (_e) { /* soft */ }
     await super.onDeleted();
     this.log('Device deleted, cleaning up');

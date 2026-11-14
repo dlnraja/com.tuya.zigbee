@@ -115,6 +115,11 @@
       "mfr": "_TZ3210_j4pdtz9v",
       "pid": "TS0001",
       "source": "PR #577 iassael fingerbot (P3248)"
+    },
+    {
+      "mfr": "_TZE204_ltwbm23f",
+      "pid": "TS0601",
+      "source": "GH#632 rocosol interview (exact wire string). Z2M TRV602Z https://www.zigbee2mqtt.io/devices/TRV602Z.html ; zhc tuya.ts#L12037"
     }
   ]
 }
