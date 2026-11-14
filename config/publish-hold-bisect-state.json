@@ -47,7 +47,12 @@
     "presence_radar_aoyan_ay204t",
     "water_leak_aoyan_ay222z"
   ],
-  "pending": null,
+  "pending": {
+    "ids": [
+      "siren_moes_mg_bjq002"
+    ],
+    "at": "2026-11-14T18:08:25.067Z"
+  },
   "doneRuns": [
     "41263658690",
     "41272744359",
