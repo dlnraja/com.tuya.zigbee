@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-13T19:08:59.097Z",
+ "updated": "2026-11-14T13:47:42.121Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -6503,6 +6503,15 @@
    "kind": "general",
    "mailDate": "2026-10-31T21:25:58.000Z"
   },
+  "diag:05b55c15dcb9beef": {
+   "status": "done",
+   "date": "2026-11-13",
+   "hash": "e8226139559bb83e",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-11-13T20:41:25.000Z"
+  },
   "diag:05b778f83c2dfddb": {
    "status": "done",
    "date": "2026-10-25",
@@ -7686,6 +7695,15 @@
    "mailDate": "2026-11-01T13:07:22.000Z",
    "errors": 1
   },
+  "diag:296200d730a3afaa": {
+   "status": "done",
+   "date": "2026-11-13",
+   "hash": "56afa3ba29ddb4b4",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-11-13T20:41:20.000Z"
+  },
   "diag:2962a745f328ad57": {
    "status": "done",
    "date": "2026-10-21",
@@ -8846,6 +8864,15 @@
    "by": "tuya-deep-diag",
    "kind": "general",
    "mailDate": "2026-10-19T09:33:06.000Z"
+  },
+  "diag:51d4844ac9221aa1": {
+   "status": "done",
+   "date": "2026-11-13",
+   "hash": "b5657a1b109d2d2a",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-11-13T20:41:11.000Z"
   },
   "diag:52397794730ce960": {
    "status": "done",
@@ -46490,8 +46517,8 @@
   },
   "workflow-run:fleet-intelligent-enrich": {
    "status": "done",
-   "date": "2026-11-09",
-   "hash": "edb3001db85210e8",
+   "date": "2026-11-14",
+   "hash": "050fcf8fa31cde0b",
    "note": "run summary: 10 counter(s)",
    "by": "fleet-intelligent-enrich",
    "counts": {
@@ -46500,29 +46527,29 @@
     "baseline.mfrEntries": 18743,
     "baseline.pidEntries": 3269,
     "final.driverCount": 476,
-    "final.mfrEntries": 18751,
+    "final.mfrEntries": 18745,
     "final.pidEntries": 3269,
     "delta.drivers": 0,
-    "delta.mfrs": 8,
+    "delta.mfrs": 2,
     "delta.pids": 0
    },
-   "lastChangeRun": "42586827102"
+   "lastChangeRun": "43573354835"
   },
   "workflow-run:repo-autopilot": {
    "status": "done",
-   "date": "2026-11-13",
-   "hash": "5b1ebfa3f745cb05",
+   "date": "2026-11-14",
+   "hash": "c441f24913b7573f",
    "note": "run summary: 6 counter(s)",
    "by": "repo-autopilot",
    "counts": {
     "closed": 0,
     "merged": 0,
-    "branchesDeleted": 1,
+    "branchesDeleted": 0,
     "issues": 6,
     "external": 0,
     "leadsAdded": 0
    },
-   "lastChangeRun": "43446521434"
+   "lastChangeRun": "43601237982"
   }
  }
 }

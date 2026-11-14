@@ -80,7 +80,9 @@ runs:
         # v9.0.287 (P74): Bumped limits to 50/50 MB. With .homeyignore pruning
         # (mfs_db.json, dev artifacts, branding assets) the source directory
         # is ~40 MB. The gzipped tarball is ~18 MB (well under Homey's tar limit).
-        HOMEY_CHECK_FINAL_PUBLISH_DIR=1 HOMEY_PUBLISH_FINAL_MAX_MB=50 HOMEY_PUBLISH_SOURCE_MAX_MB=50 HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB=50 node "$GITHUB_WORKSPACE/scripts/ci/publish-size-gate.cjs" --strict --final
+        export HOMEY_PUBLISH_DIR="$PUBLISH_DIR"
+        node "$GITHUB_WORKSPACE/scripts/ci/homey-cli-pin.cjs"
+        HOMEY_CHECK_FINAL_PUBLISH_DIR=1 HOMEY_PUBLISH_DIR="$PUBLISH_DIR" HOMEY_PUBLISH_FINAL_MAX_MB=50 HOMEY_PUBLISH_SOURCE_MAX_MB=50 HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB=50 node "$GITHUB_WORKSPACE/scripts/ci/publish-size-gate.cjs" --strict --final
         # P2900: per-upload size row (archive gz, payload, app.json) for the socket-hang-up/size correlation CSV.
         node "$GITHUB_WORKSPACE/.github/scripts/publish-size-telemetry.js" measure "$PUBLISH_DIR" || true
         # P2902: local pre-upload check (Athom processing_failed has no error body).
@@ -89,12 +91,22 @@ runs:
         # P3025b: validate the EXACT publish dir at level publish, snapshot it, and verify the
         # snapshot right before every upload (CLI or direct-api). Any change in between = fail.
         homey_cli() {
-          if [ -x "$GITHUB_WORKSPACE/node_modules/.bin/homey" ]; then "$GITHUB_WORKSPACE/node_modules/.bin/homey" "$@"; else npx homey "$@"; fi
+          if [ ! -x "$GITHUB_WORKSPACE/node_modules/.bin/homey" ]; then
+            echo "::error::pinned homey CLI missing at node_modules/.bin/homey"
+            exit 1
+          fi
+          "$GITHUB_WORKSPACE/node_modules/.bin/homey" "$@"
         }
         IDENTITY_SNAP="${RUNNER_TEMP:-/tmp}/publish-payload-identity.json"
         node "$GITHUB_WORKSPACE/scripts/ci/publish-dir-guard.cjs" "$PUBLISH_DIR" "$(node -p "require('$GITHUB_WORKSPACE/app.json').id")" || exit 1
-        if ! HOMEY_HEADLESS=1 homey_cli app validate --level publish --path "$PUBLISH_DIR"; then
+        VALIDATE_LOG=$(mktemp)
+        if ! HOMEY_HEADLESS=1 homey_cli app validate --level publish --path "$PUBLISH_DIR" > "$VALIDATE_LOG" 2>&1; then
+          cat "$VALIDATE_LOG"
           echo "::error::homey app validate --level publish failed on the exact publish dir — not uploading"
+          exit 1
+        fi
+        if grep -E 'cannot start with reserved prefix|^Warning:' "$VALIDATE_LOG"; then
+          echo "::error::publish validate printed a reserved setting prefix or a warning — not uploading"
           exit 1
         fi
         node "$GITHUB_WORKSPACE/scripts/ci/publish-payload-identity.cjs" snapshot "$PUBLISH_DIR" "$IDENTITY_SNAP" || exit 1

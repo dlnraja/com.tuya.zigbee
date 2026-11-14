@@ -1,5 +1,42 @@
 {
-  "at": "2026-11-13T13:01:35.756Z",
+  "at": "2026-11-14T12:06:55.322Z",
   "checked": 62,
-  "findings": []
+  "findings": [
+    {
+      "kind": "repeated-failure",
+      "sig": "ci-2a1553568063",
+      "wf": ".github/workflows/autonomous-review.yml",
+      "detail": "3 failures in 72 h: Autonomous review failed on bastien-home (critical tests / Full critical suite: code-or-test)"
+    },
+    {
+      "kind": "repeated-failure",
+      "sig": "ci-b446e2740f9d",
+      "wf": ".github/workflows/node22-tests.yml",
+      "detail": "3 failures in 72 h: Node 22 runtime tests failed on stable-v5 (test / Full suite on Node 22: code-or-test)"
+    },
+    {
+      "kind": "repeated-failure",
+      "sig": "ci-6d2c80d14bb1",
+      "wf": ".github/workflows/ci-self-check.yml",
+      "detail": "5 failures in 72 h: CI self-check (actionlint + YAML + hygiene + manifest/data/lint gates) failed on master (self-check / Lint ratchet (lib/ drivers/ — total may only go down, no file may get worse): code-or-test)"
+    },
+    {
+      "kind": "repeated-failure",
+      "sig": "ci-72bdff597f12",
+      "wf": ".github/workflows/ci-self-check.yml",
+      "detail": "8 failures in 72 h: CI self-check (actionlint + YAML + hygiene + manifest/data/lint gates) failed on master (self-check / Report ratchet (about headers, no pasted third-party text, report shape — may only shrink): no-log)"
+    },
+    {
+      "kind": "repeated-failure",
+      "sig": "ci-351d901e2c87",
+      "wf": ".github/workflows/node22-tests.yml",
+      "detail": "4 failures in 72 h: Node 22 runtime tests failed on cursor/gh632-trv602z-ltwbm23f-3270 (test / Full suite on Node 22: no-log)"
+    },
+    {
+      "kind": "repeated-failure",
+      "sig": "ci-57f650364735",
+      "wf": ".github/workflows/node22-tests.yml",
+      "detail": "3 failures in 72 h: Node 22 runtime tests failed on cursor/gh632-trv602z-ltwbm23f-3270 (strict / node:test strict (P3057-3): no-log)"
+    }
+  ]
 }

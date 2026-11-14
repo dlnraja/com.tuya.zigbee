@@ -187,6 +187,7 @@ jobs:
         run: |
           npm run check:p244x
           npm run check:p246x
+          npm run check:p3285
           npm run check:p248x
           npm run check:p249x
           npm run check:p257x
