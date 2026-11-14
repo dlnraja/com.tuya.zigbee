@@ -5830,16 +5830,22 @@
           "capability": "onoff",
           "source": "driver-dpMappings"
         },
-        "5": {
-          "name": "meter_water",
+        "9": {
+          "name": "countdown_seconds",
           "direction": "rx",
-          "capability": "meter_water",
+          "capability": null,
           "source": "driver-dpMappings"
         },
-        "7": {
-          "name": "measure_battery",
+        "101": {
+          "name": "threshold_pct",
           "direction": "rx",
-          "capability": "measure_battery",
+          "capability": null,
+          "source": "driver-dpMappings"
+        },
+        "102": {
+          "name": "valve_position",
+          "direction": "rx",
+          "capability": "valve_position",
           "source": "driver-dpMappings"
         }
       }
