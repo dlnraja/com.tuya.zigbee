@@ -44,6 +44,12 @@ describe('P3086 market-couples app.json stays compose-parity clean', () => {
     } finally { fs.rmSync(dir, { recursive: true, force: true }); }
   });
 
+  it('the older sync-app-json writer cannot put spaces back into app.json', () => {
+    const src = fs.readFileSync(path.join(ROOT, 'scripts/maintenance/sync-app-json.js'), 'utf8');
+    assert.doesNotMatch(src, /JSON\.stringify\(\s*app\s*,\s*null\s*,\s*2\s*\)/);
+    assert.match(src, /JSON\.stringify\(app\)\s*\+\s*['"]\\n['"]/);
+  });
+
   it('tracked app.json is compact and carries no unresolved compose template', () => {
     const raw = fs.readFileSync(path.join(ROOT, 'app.json'), 'utf8');
     assert.ok(!/{{driver(AssetsPath|Path|Id|Name[A-Za-z]*)}}/.test(raw), 'raw compose template in app.json');
