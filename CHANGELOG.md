@@ -106,7 +106,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.1619] - 2026-11-13
+## [9.0.1620] - 2026-11-14
+
+Changed: rename energy_source off the reserved energy_ prefix.
+---
+
+ [9.0.1619] - 2026-11-13
 
 Diagnostic draft only: the upload includes the real source drivers that ordinary publishes still hold back, so the payload stays above 350 drivers. The Test channel is not changed by this run.
 ---
