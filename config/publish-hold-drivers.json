@@ -23,6 +23,13 @@
       "sacredCouplesOwnedElsewhere": false
     },
     {
+      "id": "water_leak_blitzwolf_bw_is9",
+      "since": "2026-11-14",
+      "addedBy": "signature gate after the hold list dropped it",
+      "reason": "Re-export of water_leak_sensor (same class and capabilities) for the padded Blitzwolf BW-IS9 couple. The P3095 bisect removed it from this hold file without a Test build. The duplicate-signature gate then rejects it as a new driver. It stays held, never published, until a build that includes it reaches Test.",
+      "sacredCouplesOwnedElsewhere": false
+    },
+    {
       "id": "water_leak_aoyan_ay222z",
       "since": "2026-11-08",
       "addedBy": "build #3698 v9.0.1616",
