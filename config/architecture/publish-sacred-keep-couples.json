@@ -1789,6 +1789,30 @@
       "pid": "TS0201",
       "driverId": "climate_sensor",
       "note": "P3248 GH#516 (finnamu): listed in climate_sensor compose but dropped by publish compaction (reported-couples survival gate) -> Unknown Zigbee device"
+    },
+    {
+      "mfr": "_TZ3000_nrfkrgf4",
+      "pid": "TS0046",
+      "driverId": "button_wireless_6",
+      "note": "Forum 140352#2264. 6-button scene switch. Pin so publish compaction cannot drop it."
+    },
+    {
+      "mfr": "_TZE2841000000_8se38w3c",
+      "pid": "TS0601",
+      "driverId": "climate_sensor",
+      "note": "Forum 140352#2265 TZ-ZT01_GA4 long manufacturer name. DP1 temp/10, DP2 humidity, DP3 battery_state, DP38 probe/10. Z2M tuya.ts TZ-ZT01_GA4."
+    },
+    {
+      "mfr": "_TZE284_z7a2jmyy",
+      "pid": "TS0601",
+      "driverId": "water_valve_smart",
+      "note": "Forum 140352#2268 NEO NAS-WV05B2-L. Z2M neo.ts NAS-WV03B2. Moved off climate_sensor."
+    },
+    {
+      "mfr": "_TZE204_z7a2jmyy",
+      "pid": "TS0601",
+      "driverId": "water_valve_smart",
+      "note": "NEO NAS-WV03B2 sibling of _TZE284_z7a2jmyy. Z2M neo.ts."
     }
   ]
 }
