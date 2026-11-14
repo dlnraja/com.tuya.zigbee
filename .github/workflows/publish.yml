@@ -129,7 +129,7 @@ jobs:
         run: npm run fix:generated-flow-args
 
       - name: Validate (npx)
-        run: npx homey app validate --level publish
+        run: bash scripts/ci/homey-validate-safe.sh --level publish
 
       - name: Normalize generated Flow manifest
         run: npm run fix:generated-flow-args && npm run check:homey-guidelines

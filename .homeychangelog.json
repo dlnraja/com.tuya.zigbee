@@ -907,9 +907,15 @@
       ]
     }
   ],
+  "9.0.1620": {
+    "en": "Changed: rename energy_source off the reserved energy_ prefix.",
+    "fr": "Modifié : rename energy_source off the reserved energy_ prefix."
+  },
+  "9.0.1619": {
+    "en": "Diagnostic draft only: the upload includes the real source drivers that ordinary publishes still hold back, so the payload stays above 350 drivers. The Test channel is not changed by this run."
+  },
   "9.0.1618": {
-    "en": "Changed: do not reuse a red run after a manifest change; note that the keyfob endpoint lists IAS ACE; declare the keyfob IAS ACE cluster and hold the failed AOYAN probe; satisfy the lint ratchet for the budget line.",
-    "fr": "Modifié : do not reuse a red run after a manifest change; note that the keyfob endpoint lists IAS ACE; declare the keyfob IAS ACE cluster and hold the failed AOYAN probe; satisfy the lint ratchet for the budget line."
+    "en": "Changed: do not reuse a red run after a manifest change; note that the keyfob endpoint lists IAS ACE; declare the keyfob IAS ACE cluster and hold the failed AOYAN probe; satisfy the lint ratchet for the budget line."
   },
   "9.0.1617": {
     "en": "Fixed: buttons and remotes, pairing and device recognition and battery reporting. Plus 5 other changes in the app core. Behind the scenes: tests and publishing checks."
@@ -964,13 +970,5 @@
   "9.0.1598": {
     "en": "Curtains and blinds: commands that arrive while the motor is still moving are queued instead of lost, a new 'is moving' condition and 'movement finished' trigger, and the final position is read back once the motor stops. Devices keep their Zigbee sequence number across app restarts, and availability is learnt per device so sleepy sensors are not marked offline too early. 72 Flow card sentences with device names restored.",
     "fr": "Rideaux et volets : une commande reçue pendant que le moteur tourne est mise en file au lieu d'être perdue, nouvelle condition « est en mouvement » et nouveau déclencheur « mouvement terminé », et la position finale est relue à l'arrêt. Les appareils gardent leur numéro de séquence Zigbee après un redémarrage de l'app, et la disponibilité est apprise par appareil pour ne plus marquer trop tôt les capteurs endormis comme hors ligne. 72 phrases de cartes Flow avec le nom de l'appareil restaurées."
-  },
-  "9.0.1597": {
-    "en": "Lower memory use under load: the data-point catalogue is loaded in small pieces on demand, internal queues and caches have hard limits, and the app sheds optional work before Homey's memory limit is reached. Smarter, bounded learning of unusual devices (confidence per device type, slower re-probing of sleepy devices, warnings on impossible values).",
-    "fr": "Moins de mémoire utilisée sous charge : le catalogue des points de données se charge par petits morceaux à la demande, les files et caches internes ont des limites strictes, et l'app renonce aux tâches optionnelles avant d'atteindre la limite mémoire de Homey. Apprentissage plus fin et borné des appareils inhabituels (confiance par type d'appareil, nouvelles sondes plus espacées pour les appareils endormis, alerte sur les valeurs impossibles)."
-  },
-  "9.0.1596": {
-    "en": "Thermostats: TRV06 radiator valves no longer get mistaken for water valves and answer data requests again; Beca BAC-006AZB / BAC-002-ALZB wall thermostats on the wall thermostat driver; temperature calibration applied exactly once. Garden valves (TS0049, Novato ZPV-01) and the la2c2uo9 dimmer each have a single driver. New: dedicated 2-gang TS0002 switch driver, rain sensor decoding, soil sensor and HOBEIAN ZG-102ZL value fixes, a power-versus-energy sanity check, and Flow cards to teach the app what an unknown command means.",
-    "fr": "Thermostats : les têtes TRV06 ne sont plus prises pour des vannes d'eau et répondent à nouveau aux demandes de données ; thermostats muraux Beca BAC-006AZB / BAC-002-ALZB sur le driver de thermostat mural ; calibration de température appliquée une seule fois. Vannes de jardin (TS0049, Novato ZPV-01) et variateur la2c2uo9 sur un seul driver chacun. Nouveau : driver dédié pour l'interrupteur 2 voies TS0002, décodage du capteur de pluie, valeurs corrigées pour le capteur de sol et le HOBEIAN ZG-102ZL, contrôle de cohérence puissance/énergie, et cartes Flow pour apprendre à l'app ce que signifie une commande inconnue."
   }
 }

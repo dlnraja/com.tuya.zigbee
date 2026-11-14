@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updatedAt": "2026-11-13T13:00:19.879Z",
+ "updatedAt": "2026-11-14T12:05:49.411Z",
  "cap": 300,
  "seenKeys": [
   "ci-fail:40227923450:1",
@@ -241,7 +241,52 @@
   "ci-fail:42408420378:1",
   "ci-fail:42408403445:1",
   "ci-fail:42408361809:1",
-  "ci-fail:42396847250:1"
+  "ci-fail:42396847250:1",
+  "ci-fail:43568255158:1",
+  "ci-fail:43501973231:1",
+  "ci-fail:43501973312:1",
+  "ci-fail:43501971806:1",
+  "ci-fail:43501680166:1",
+  "ci-fail:43501679561:1",
+  "ci-fail:43501200215:1",
+  "ci-fail:43501199232:1",
+  "ci-fail:43501199135:1",
+  "ci-fail:43500316314:1",
+  "ci-fail:43500316311:1",
+  "ci-fail:43497144544:1",
+  "ci-fail:43497144421:1",
+  "ci-fail:43495314484:1",
+  "ci-fail:43495314726:1",
+  "ci-fail:43495312405:1",
+  "ci-fail:43495310606:1",
+  "ci-fail:43494092423:1",
+  "ci-fail:43493916733:1",
+  "ci-fail:43493916677:1",
+  "ci-fail:43493916684:1",
+  "ci-fail:43493916666:1",
+  "ci-fail:43493583646:1",
+  "ci-fail:43493583602:1",
+  "ci-fail:43493581580:1",
+  "ci-fail:43493583574:1",
+  "ci-fail:43493581691:1",
+  "ci-fail:43492202816:1",
+  "ci-fail:43491595001:1",
+  "ci-fail:43491592912:1",
+  "ci-fail:43491592911:1",
+  "ci-fail:43491590349:1",
+  "ci-fail:43491589946:1",
+  "ci-fail:43491589950:1",
+  "ci-fail:43491557029:1",
+  "ci-fail:43491557042:1",
+  "ci-fail:43491557055:1",
+  "ci-fail:43491557356:1",
+  "ci-fail:43491557081:1",
+  "ci-fail:43489522561:1",
+  "ci-fail:43489522195:1",
+  "ci-fail:43489522259:1",
+  "ci-fail:43489484817:1",
+  "ci-fail:43487854250:1",
+  "ci-fail:43467283037:1"
  ],
  "signatures": {
   "c567adb8a6e1": {
@@ -325,15 +370,15 @@
    "unit": "test / Full suite on Node 22",
    "test": "",
    "firstSeen": "2026-10-25T19:51:42.841Z",
-   "lastSeen": "2026-11-08T11:52:46.327Z",
-   "fails": 16,
+   "lastSeen": "2026-11-14T12:05:16.978Z",
+   "fails": 19,
    "transient": 1,
    "recovered": 0,
    "branches": [
-    "wip/rescue/branch-bisect-g0-control-1385",
     "wip/rescue/wt-dp",
     "wip/p3055-parasites",
-    "bastien-home"
+    "bastien-home",
+    "stable-v5"
    ],
    "sample": "Process completed with exit code <n>.",
    "events": [
@@ -403,6 +448,18 @@
     ],
     [
      "2026-11-08T11:52:46.327Z",
+     "f"
+    ],
+    [
+     "2026-11-14T12:05:07.356Z",
+     "f"
+    ],
+    [
+     "2026-11-14T12:05:09.095Z",
+     "f"
+    ],
+    [
+     "2026-11-14T12:05:16.978Z",
      "f"
     ]
    ]
@@ -649,34 +706,18 @@
    "unit": "test / Full suite on Node 22",
    "test": "",
    "firstSeen": "2026-10-25T19:52:02.854Z",
-   "lastSeen": "2026-11-08T11:53:26.246Z",
-   "fails": 41,
+   "lastSeen": "2026-11-14T12:05:47.199Z",
+   "fails": 45,
    "transient": 0,
    "recovered": 0,
    "branches": [
-    "wip/rescue/branch-bisect-g3-couples",
     "master",
     "bastien-home",
-    "stable-v5"
+    "stable-v5",
+    "cursor/gh632-trv602z-ltwbm23f-3270"
    ],
    "sample": "Full suite on Node <n>",
    "events": [
-    [
-     "2026-10-27T10:30:50.022Z",
-     "f"
-    ],
-    [
-     "2026-10-27T10:31:00.231Z",
-     "f"
-    ],
-    [
-     "2026-10-27T10:31:06.327Z",
-     "f"
-    ],
-    [
-     "2026-11-01T11:48:34.309Z",
-     "f"
-    ],
     [
      "2026-11-01T11:48:35.611Z",
      "f"
@@ -740,6 +781,22 @@
     [
      "2026-11-08T11:53:26.246Z",
      "f"
+    ],
+    [
+     "2026-11-14T12:05:30.042Z",
+     "f"
+    ],
+    [
+     "2026-11-14T12:05:33.483Z",
+     "f"
+    ],
+    [
+     "2026-11-14T12:05:37.580Z",
+     "f"
+    ],
+    [
+     "2026-11-14T12:05:47.199Z",
+     "f"
     ]
    ]
   },
@@ -749,8 +806,8 @@
    "unit": "Validate & Auto-Publish to Homey App Store / Publish to Homey App Store",
    "test": "",
    "firstSeen": "2026-10-25T19:52:10.294Z",
-   "lastSeen": "2026-10-25T19:52:10.294Z",
-   "fails": 1,
+   "lastSeen": "2026-11-14T12:05:48.690Z",
+   "fails": 2,
    "transient": 0,
    "recovered": 0,
    "branches": [
@@ -760,6 +817,10 @@
    "events": [
     [
      "2026-10-25T19:52:10.294Z",
+     "f"
+    ],
+    [
+     "2026-11-14T12:05:48.690Z",
      "f"
     ]
    ]
@@ -1159,8 +1220,8 @@
    "unit": "",
    "test": "",
    "firstSeen": "2026-10-27T10:30:35.272Z",
-   "lastSeen": "2026-11-08T11:53:25.487Z",
-   "fails": 12,
+   "lastSeen": "2026-11-14T12:05:41.615Z",
+   "fails": 14,
    "transient": 0,
    "recovered": 0,
    "branches": [
@@ -1216,6 +1277,14 @@
     ],
     [
      "2026-11-08T11:53:25.487Z",
+     "f"
+    ],
+    [
+     "2026-11-14T12:05:36.351Z",
+     "f"
+    ],
+    [
+     "2026-11-14T12:05:41.615Z",
      "f"
     ]
    ]
@@ -1319,12 +1388,13 @@
    "unit": "",
    "test": "",
    "firstSeen": "2026-10-27T10:30:39.571Z",
-   "lastSeen": "2026-11-08T11:53:16.509Z",
-   "fails": 10,
+   "lastSeen": "2026-11-14T12:05:47.884Z",
+   "fails": 13,
    "transient": 0,
    "recovered": 0,
    "branches": [
-    "master"
+    "master",
+    "cursor/gh632-trv602z-ltwbm23f-3270"
    ],
    "sample": "node:test strict (P<n>-<n>)",
    "events": [
@@ -1366,6 +1436,18 @@
     ],
     [
      "2026-11-08T11:53:16.509Z",
+     "f"
+    ],
+    [
+     "2026-11-14T12:05:31.611Z",
+     "f"
+    ],
+    [
+     "2026-11-14T12:05:45.301Z",
+     "f"
+    ],
+    [
+     "2026-11-14T12:05:47.884Z",
      "f"
     ]
    ]
@@ -1626,17 +1708,39 @@
    "unit": "",
    "test": "",
    "firstSeen": "2026-11-01T11:48:24.401Z",
-   "lastSeen": "2026-11-01T11:48:24.401Z",
-   "fails": 1,
+   "lastSeen": "2026-11-14T12:05:18.501Z",
+   "fails": 6,
    "transient": 0,
    "recovered": 0,
    "branches": [
-    "master"
+    "master",
+    "bastien-home",
+    "stable-v5"
    ],
    "sample": "\u001b[<n>;<n>mif [ \"$JOB_STATUS\" = \"success\" ]; then s=\"Every CI file gate passed on this commit. Nothing to fix.\"; else s=\"At least one CI file gate failed; the fa",
    "events": [
     [
      "2026-11-01T11:48:24.401Z",
+     "f"
+    ],
+    [
+     "2026-11-14T12:05:10.677Z",
+     "f"
+    ],
+    [
+     "2026-11-14T12:05:12.212Z",
+     "f"
+    ],
+    [
+     "2026-11-14T12:05:13.705Z",
+     "f"
+    ],
+    [
+     "2026-11-14T12:05:15.177Z",
+     "f"
+    ],
+    [
+     "2026-11-14T12:05:18.501Z",
      "f"
     ]
    ]
@@ -1719,8 +1823,8 @@
    "unit": "syntax-check / Check GitHub Actions policy",
    "test": "",
    "firstSeen": "2026-11-01T11:48:36.259Z",
-   "lastSeen": "2026-11-08T11:53:15.149Z",
-   "fails": 2,
+   "lastSeen": "2026-11-14T12:05:43.690Z",
+   "fails": 4,
    "transient": 0,
    "recovered": 0,
    "branches": [
@@ -1736,6 +1840,14 @@
     [
      "2026-11-08T11:53:15.149Z",
      "f"
+    ],
+    [
+     "2026-11-14T12:05:32.872Z",
+     "f"
+    ],
+    [
+     "2026-11-14T12:05:43.690Z",
+     "f"
     ]
    ]
   },
@@ -1745,8 +1857,8 @@
    "unit": "",
    "test": "",
    "firstSeen": "2026-11-01T11:48:36.991Z",
-   "lastSeen": "2026-11-01T11:48:36.991Z",
-   "fails": 1,
+   "lastSeen": "2026-11-14T12:05:42.471Z",
+   "fails": 3,
    "transient": 0,
    "recovered": 0,
    "branches": [
@@ -1756,6 +1868,14 @@
    "events": [
     [
      "2026-11-01T11:48:36.991Z",
+     "f"
+    ],
+    [
+     "2026-11-14T12:05:30.823Z",
+     "f"
+    ],
+    [
+     "2026-11-14T12:05:42.471Z",
      "f"
     ]
    ]
@@ -1834,14 +1954,15 @@
    "unit": "",
    "test": "",
    "firstSeen": "2026-11-01T11:48:40.545Z",
-   "lastSeen": "2026-11-08T11:53:24.299Z",
-   "fails": 3,
+   "lastSeen": "2026-11-14T12:05:46.536Z",
+   "fails": 4,
    "transient": 0,
    "recovered": 0,
    "branches": [
     "bot/homey-knowledge-20261029",
     "kb/refresh-20261026",
-    "cursor/dual-layer-gate-a632"
+    "cursor/dual-layer-gate-a632",
+    "cursor/gh632-trv602z-ltwbm23f-3270"
    ],
    "sample": "🔍 JS syntax audit (all repo files)",
    "events": [
@@ -1855,6 +1976,10 @@
     ],
     [
      "2026-11-08T11:53:24.299Z",
+     "f"
+    ],
+    [
+     "2026-11-14T12:05:46.536Z",
      "f"
     ]
    ]
@@ -2062,8 +2187,8 @@
    "unit": "test / Full suite on Node 22",
    "test": "",
    "firstSeen": "2026-11-08T11:52:42.835Z",
-   "lastSeen": "2026-11-08T11:52:42.835Z",
-   "fails": 1,
+   "lastSeen": "2026-11-14T12:05:03.221Z",
+   "fails": 2,
    "transient": 0,
    "recovered": 0,
    "branches": [
@@ -2073,6 +2198,10 @@
    "events": [
     [
      "2026-11-08T11:52:42.835Z",
+     "f"
+    ],
+    [
+     "2026-11-14T12:05:03.221Z",
      "f"
     ]
    ]
@@ -2146,13 +2275,14 @@
    "unit": "validate / Publish payload build + size/structure report",
    "test": "",
    "firstSeen": "2026-11-08T11:52:59.563Z",
-   "lastSeen": "2026-11-08T11:53:08.823Z",
-   "fails": 4,
+   "lastSeen": "2026-11-14T12:05:49.349Z",
+   "fails": 5,
    "transient": 0,
    "recovered": 0,
    "branches": [
     "bastien-home",
-    "stable-v5"
+    "stable-v5",
+    "master"
    ],
    "sample": "Publish payload build + size<p> report",
    "events": [
@@ -2170,6 +2300,10 @@
     ],
     [
      "2026-11-08T11:53:08.823Z",
+     "f"
+    ],
+    [
+     "2026-11-14T12:05:49.349Z",
      "f"
     ]
    ]
@@ -2308,14 +2442,15 @@
    "unit": "",
    "test": "",
    "firstSeen": "2026-11-08T11:53:18.158Z",
-   "lastSeen": "2026-11-08T11:53:21.164Z",
-   "fails": 6,
+   "lastSeen": "2026-11-14T12:05:45.950Z",
+   "fails": 7,
    "transient": 0,
    "recovered": 0,
    "branches": [
     "master",
     "bastien-home",
-    "stable-v5"
+    "stable-v5",
+    "cursor/gh632-trv602z-ltwbm23f-3270"
    ],
    "sample": "Lint ratchet (lib/ drivers/ — total may only go down, no file may get worse)",
    "events": [
@@ -2341,6 +2476,225 @@
     ],
     [
      "2026-11-08T11:53:21.164Z",
+     "f"
+    ],
+    [
+     "2026-11-14T12:05:45.950Z",
+     "f"
+    ]
+   ]
+  },
+  "2a1553568063": {
+   "category": "test",
+   "workflow": "Autonomous review",
+   "unit": "critical tests / Full critical suite",
+   "test": "",
+   "firstSeen": "2026-11-14T12:05:05.587Z",
+   "lastSeen": "2026-11-14T12:05:26.563Z",
+   "fails": 3,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "bastien-home"
+   ],
+   "sample": "Process completed with exit code <n>.",
+   "events": [
+    [
+     "2026-11-14T12:05:05.587Z",
+     "f"
+    ],
+    [
+     "2026-11-14T12:05:24.195Z",
+     "f"
+    ],
+    [
+     "2026-11-14T12:05:26.563Z",
+     "f"
+    ]
+   ]
+  },
+  "943a14060e21": {
+   "category": "test",
+   "workflow": "Autonomous review",
+   "unit": "semantic review / Exact couples, weakened tests, identity",
+   "test": "",
+   "firstSeen": "2026-11-14T12:05:20.451Z",
+   "lastSeen": "2026-11-14T12:05:20.451Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "Process completed with exit code <n>.",
+   "events": [
+    [
+     "2026-11-14T12:05:20.451Z",
+     "f"
+    ]
+   ]
+  },
+  "d424987f4dba": {
+   "category": "gate",
+   "workflow": "CI self-check (actionlint + YAML + hygiene + manifest/data/lint gates)",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-11-14T12:05:21.982Z",
+   "lastSeen": "2026-11-14T12:05:21.982Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "bastien-home"
+   ],
+   "sample": "\u001b[<n>;<n>mif [ \"$JOB_STATUS\" = \"success\" ]; then s=\"Every CI file gate passed on this commit. Nothing to fix.\"; else s=\"At least one CI file gate failed; the fa",
+   "events": [
+    [
+     "2026-11-14T12:05:21.982Z",
+     "f"
+    ]
+   ]
+  },
+  "c2e3616eaf1a": {
+   "category": "gate",
+   "workflow": "CI self-check (actionlint + YAML + hygiene + manifest/data/lint gates)",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-11-14T12:05:28.033Z",
+   "lastSeen": "2026-11-14T12:05:28.033Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "bastien-home"
+   ],
+   "sample": "\u001b[<n>;<n>mif [ \"$JOB_STATUS\" = \"success\" ]; then s=\"Every CI file gate passed on this commit. Nothing to fix.\"; else s=\"At least one CI file gate failed; the fa",
+   "events": [
+    [
+     "2026-11-14T12:05:28.033Z",
+     "f"
+    ]
+   ]
+  },
+  "72bdff597f12": {
+   "category": "gate",
+   "workflow": "CI self-check (actionlint + YAML + hygiene + manifest/data/lint gates)",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-11-14T12:05:28.698Z",
+   "lastSeen": "2026-11-14T12:05:43.099Z",
+   "fails": 8,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "stable-v5",
+    "master",
+    "bastien-home"
+   ],
+   "sample": "Report ratchet (about headers, no pasted third-party text, report shape — may only shrink)",
+   "events": [
+    [
+     "2026-11-14T12:05:28.698Z",
+     "f"
+    ],
+    [
+     "2026-11-14T12:05:29.373Z",
+     "f"
+    ],
+    [
+     "2026-11-14T12:05:32.217Z",
+     "f"
+    ],
+    [
+     "2026-11-14T12:05:35.021Z",
+     "f"
+    ],
+    [
+     "2026-11-14T12:05:35.620Z",
+     "f"
+    ],
+    [
+     "2026-11-14T12:05:38.165Z",
+     "f"
+    ],
+    [
+     "2026-11-14T12:05:39.919Z",
+     "f"
+    ],
+    [
+     "2026-11-14T12:05:43.099Z",
+     "f"
+    ]
+   ]
+  },
+  "6b7f6cfbf7a6": {
+   "category": "test",
+   "workflow": "Autonomous review",
+   "unit": "critical tests / Full critical suite",
+   "test": "",
+   "firstSeen": "2026-11-14T12:05:34.364Z",
+   "lastSeen": "2026-11-14T12:05:39.235Z",
+   "fails": 2,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "bastien-home"
+   ],
+   "sample": "Full critical suite",
+   "events": [
+    [
+     "2026-11-14T12:05:34.364Z",
+     "f"
+    ],
+    [
+     "2026-11-14T12:05:39.235Z",
+     "f"
+    ]
+   ]
+  },
+  "b92caa847afb": {
+   "category": "gate",
+   "workflow": "🔍 Validate Homey App",
+   "unit": "🔍 Validate / 🛡️ GitHub Actions & YAML Policy Gate",
+   "test": "",
+   "firstSeen": "2026-11-14T12:05:36.989Z",
+   "lastSeen": "2026-11-14T12:05:36.989Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "🛡️ GitHub Actions & YAML Policy Gate",
+   "events": [
+    [
+     "2026-11-14T12:05:36.989Z",
+     "f"
+    ]
+   ]
+  },
+  "0bbdd15454c8": {
+   "category": "test",
+   "workflow": "Autonomous review",
+   "unit": "semantic review / Exact couples, weakened tests, identity",
+   "test": "",
+   "firstSeen": "2026-11-14T12:05:40.951Z",
+   "lastSeen": "2026-11-14T12:05:44.599Z",
+   "fails": 2,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "stable-v5",
+    "master"
+   ],
+   "sample": "Exact couples, weakened tests, identity",
+   "events": [
+    [
+     "2026-11-14T12:05:40.951Z",
+     "f"
+    ],
+    [
+     "2026-11-14T12:05:44.599Z",
      "f"
     ]
    ]

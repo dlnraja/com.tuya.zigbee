@@ -12,11 +12,13 @@ const path = require('path');
 const ROOT = path.join(__dirname, '..', '..');
 
 describe('P2561 publish size gate prepared-temp preference', () => {
-  it('publish-size-gate prefers homey-publish-temp or HOMEY_PUBLISH_APPJSON', () => {
+  it('publish-size-gate reads the directory prepare-publish exported', () => {
     const src = fs.readFileSync(path.join(ROOT, 'scripts/ci/publish-size-gate.cjs'), 'utf8');
+    const dir = fs.readFileSync(path.join(ROOT, 'scripts/ci/publish-dir.cjs'), 'utf8');
     assert.match(src, /HOMEY_PUBLISH_APPJSON/);
-    assert.match(src, /homey-publish-temp/);
-    assert.match(src, /preparedApp|prepared publish/i);
+    assert.match(src, /preparedDir/);
+    assert.match(dir, /homey-publish-temp/);
+    assert.match(dir, /homey-diag-catalogue/);
   });
 
   it('prepare-publish sets HOMEY_PUBLISH_APPJSON after compact', () => {

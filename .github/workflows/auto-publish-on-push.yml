@@ -267,7 +267,7 @@ jobs:
           only: flow-title
 
       - name: P246x anti-regression family
-        run: npm run check:p246x
+        run: npm run check:p246x && npm run check:p3285
 
       - name: Compact mfs_db before family gates (P2521d)
         run: |
@@ -559,7 +559,7 @@ jobs:
         run: node tools/ci/sync-appjson-flow-dedupe.js --apply
 
       - name: Official Homey validator
-        run: npx homey app validate --level publish
+        run: bash scripts/ci/homey-validate-safe.sh --level publish
 
       - name: Sanitize generated manifest after validation
         run: npm run fix:generated-flow-args && npm run check:homey-guidelines

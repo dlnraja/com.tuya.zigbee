@@ -153,15 +153,20 @@ describe('P3067 estimator wiring (DeviceTelemetryEstimator)', () => {
     const on = new DTE(fake({ caps: { onoff: true } }));
     assert.strictEqual(on._estimateEnergy(1000, 48 * 3600e3, Date.now()), 2);
   });
-  it('publishes the read-only energy_source label only when the driver declares it', async () => {
-    const d = fake({ caps: { onoff: true }, settings: { energy_source: 'default' } });
+  it('publishes the read-only tuya_energy_source label and migrates the old key', async () => {
+    const d = fake({ caps: { onoff: true }, settings: { tuya_energy_source: 'default' } });
     const e = new DTE(d); e._powerSource = 'learned';
     await e._publishPowerSource();
-    assert.strictEqual(d.settings.energy_source, 'learned');
+    assert.strictEqual(d.settings.tuya_energy_source, 'learned');
+    const old = fake({ caps: { onoff: true }, settings: { energy_source: 'default' } });
+    const migrated = new DTE(old); migrated._powerSource = 'learned';
+    await migrated._publishPowerSource();
+    assert.strictEqual(old.settings.energy_source, 'default');
+    assert.strictEqual(old.settings.tuya_energy_source, 'learned');
     const d2 = fake({ caps: { onoff: true } });
     const e2 = new DTE(d2); e2._powerSource = 'user';
     await e2._publishPowerSource();
-    assert.strictEqual(d2.settings.energy_source, undefined);
+    assert.strictEqual(d2.settings.tuya_energy_source, undefined);
     assert.strictEqual(d2.store.telemetry_power_source, 'user');
   });
 });

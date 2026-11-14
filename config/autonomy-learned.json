@@ -7,19 +7,16 @@
       "auto": false,
       "last": 1794123081491,
       "lastFailure": 1794123081491
+    },
+    "athom:hold-release": {
+      "fix": "release held group",
+      "successes": 1,
+      "failures": 0,
+      "auto": false,
+      "last": 1794614743506
     }
   },
   "events": [
-    {
-      "t": 1793663048285,
-      "sig": "athom:manifest-size-limit",
-      "ok": false
-    },
-    {
-      "t": 1793707532316,
-      "sig": "athom:manifest-size-limit",
-      "ok": false
-    },
     {
       "t": 1794096495351,
       "sig": "athom:manifest-size-limit",
@@ -29,6 +26,11 @@
       "t": 1794123081491,
       "sig": "athom:manifest-size-limit",
       "ok": false
+    },
+    {
+      "t": 1794614743506,
+      "sig": "athom:hold-release",
+      "ok": true
     }
   ]
 }
