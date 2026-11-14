@@ -103,7 +103,7 @@ app.drivers.forEach(driver => {
 });
 
 // Write back to app.json
-fs.writeFileSync(APP_JSON_PATH, JSON.stringify(app, null, 2));
+fs.writeFileSync(APP_JSON_PATH, JSON.stringify(app) + '\n');
 
 console.log('\n=== SYNC COMPLETE ===');
 console.log(`Drivers processed: ${driversProcessed}`);
