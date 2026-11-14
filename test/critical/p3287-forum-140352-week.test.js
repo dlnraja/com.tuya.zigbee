@@ -87,5 +87,9 @@ describe('P3287 forum 140352 week couples', () => {
     assert.match(src, /isNeoSprinkler/);
     const pins = JSON.parse(fs.readFileSync(path.join(ROOT, 'config/architecture/publish-sacred-keep-couples.json'), 'utf8')).couples;
     assert.ok(pins.some((c) => c.mfr === '_TZE284_z7a2jmyy' && c.pid === 'TS0601' && c.driverId === 'water_valve_smart'));
+    const fp = JSON.parse(fs.readFileSync(path.join(ROOT, 'lib/tuya/fingerprints.json'), 'utf8'));
+    assert.strictEqual(fp._TZE204_z7a2jmyy.driverId, 'water_valve_smart');
+    assert.strictEqual(fp._TZE204_Z7A2JMYY.driverId, 'water_valve_smart');
+    assert.strictEqual(fp._TZE284_Z7A2JMYY.driverId, 'water_valve_smart');
   });
 });
