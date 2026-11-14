@@ -49,7 +49,12 @@
     "presence_radar_aoyan_ay204t",
     "water_leak_aoyan_ay222z"
   ],
-  "pending": null,
+  "pending": {
+    "ids": [
+      "sauna_thermostat_ae5503"
+    ],
+    "at": "2026-11-14T06:44:27.507Z"
+  },
   "doneRuns": [
     "41263658690",
     "41272744359",
