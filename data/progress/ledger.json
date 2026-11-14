@@ -46545,6 +46545,15 @@
     "leadsAdded": 0
    },
    "lastChangeRun": "43601237982"
+  },
+  "autofix:node22-tests.yml|mocha|p3024-hold-test-vs-p3095-graduation": {
+   "status": "done",
+   "date": "2026-11-14",
+   "by": "homey-ci-prs",
+   "note": "attempt 1/3 (24h) run 43625439147: P3095 bisect step 974a684314 graduated sauna_thermostat_ae5503 after Test 9.0.1621; p3024 test still required every P3024 id held. Test now accepts ids listed in athom-publish-outcomes.jsonl p3095.accepted (state test/ok); hold config untouched.",
+   "signature": "node22-tests.yml|Full suite on Node 22|p3024 the P3024 group is held: sauna_thermostat_ae5503",
+   "attempts24h": 1,
+   "failingRun": "43625439147"
   }
  }
 }
