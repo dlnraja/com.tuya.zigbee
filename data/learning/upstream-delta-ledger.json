@@ -593,6 +593,38 @@
    "ref": "2026.11.1",
    "title": "2026.11.1",
    "url": "https://github.com/home-assistant/core/releases/tag/2026.11.1"
+  },
+  {
+   "at": "2026-11-14T12:05:49.473Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "c5608e708c",
+   "title": "fix: Tuya Nuos A7Z: expose switch type button (#13803)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/c5608e708c0da0bcc6ed788764ba7919628a9e41"
+  },
+  {
+   "at": "2026-11-14T12:05:49.473Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "ad43c4882d",
+   "title": "fix(detect): Detect `_TZ3002_wowrpxxu` as Tuya TS0726_1_gang https://github.com/Koenkk/zigbee2mqtt/i",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/ad43c4882d5ed0586b1ef00eb734d3d72feaf14f"
+  },
+  {
+   "at": "2026-11-14T12:05:49.473Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "8ccd0e0af2",
+   "title": "feat(add): TS0601_lqhqj73n (#13793)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/8ccd0e0af2ae0318698f611c1b863b555091f5a8"
+  },
+  {
+   "at": "2026-11-14T12:05:49.473Z",
+   "source": "zhc-rel",
+   "kind": "release",
+   "ref": "v26.131.0",
+   "title": "v26.131.0",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/releases/tag/v26.131.0"
   }
  ]
 }
