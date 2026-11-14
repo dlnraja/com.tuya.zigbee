@@ -30,13 +30,6 @@
       "sacredCouplesOwnedElsewhere": false
     },
     {
-      "id": "water_leak_blitzwolf_bw_is9",
-      "since": "2026-10-25",
-      "addedBy": "df30cef713 P2958",
-      "reason": "P3024 attempt 1 (25/10/2026): every master build after the 21/10 Athom incident (#3676-#3678, v9.0.1593-1595) added new never-published pairable driver ids on top of Test #3655 v9.0.1574 (347 -> 352 -> 356 drivers) and failed AggregateError; same pattern as SPI 9/9 and whd02/valve_5zone on 10-11/10. Held as one group to put the payload driver set back to the 1574 set. Never published (absent from test/fixtures/athom-test-9.0.1574-driver-ids.json); its couples are absent from 1574, so no paired device loses its driver. Graduate one id per release_held dispatch once a build reaches Test.",
-      "sacredCouplesOwnedElsewhere": false
-    },
-    {
       "id": "sauna_thermostat_ae5503",
       "since": "2026-10-25",
       "addedBy": "f7dc12b775 P3011-P3013",
