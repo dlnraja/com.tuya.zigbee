@@ -108,7 +108,7 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
         } },
         15: this.isNeoLitreModel
           ? { capability: 'meter_water', divisor: 1000000 }
-          : { capability: null, internal: 'water_total_raw' },
+          : { capability: null, internal: 'water_total_raw' }, // reserved: raw total; litre models use meter_water
       };
     }
     // WHY(P2864): Zemismart 214C — DP map from Z2M TS0601_water_valve + Zemismart 214c.py (see above).
