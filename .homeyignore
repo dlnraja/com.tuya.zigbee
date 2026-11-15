@@ -127,3 +127,6 @@ data/kb/
 # P-KB: research leads (KB candidates, cross-research reports) never ship
 data/leads/
 data/ssot/couple-sources.json
+
+# P3310: design specs are repo-only (stable run 43735981586 shipped specs/; the pre-upload guard blocks it)
+specs
