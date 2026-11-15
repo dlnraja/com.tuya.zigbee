@@ -1,0 +1,18 @@
+{
+  "_why": "P3330 (15/11/2026 Paris): exact couples of never-published held drivers carried by a published driver of the same class while the held id stays out of the Athom payload (the payload must stay <= the proven 347-driver ceiling, docs/knowledge/athom-driver-ceiling.md). prepare-publish appends these exact strings to the target payload entry only (source composes unchanged) and fails closed if that creates a couple already owned by another payload driver; at runtime the target driver maps these makers to deviceClass (same code the held driver runs). A fold is ignored once its held id is released or graduated.",
+  "folds": {
+    "wall_switch_rf_ews1154z": {
+      "into": "wall_switch_1gang_1way",
+      "deviceClass": "lib/devices/held/WallSwitchRfEws1154zDevice.js",
+      "manufacturerName": [
+        "_TZE200_yp5tsi3y",
+        "_tze200_yp5tsi3y",
+        "_TZE200_YP5TSI3Y",
+        "_tze200_YP5TSI3Y"
+      ],
+      "productId": [
+        "TS0601"
+      ]
+    }
+  }
+}

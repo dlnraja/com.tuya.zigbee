@@ -6,6 +6,12 @@ const { ZigBeeDriver } = require('homey-zigbeedriver');
  * Wall Switch 1-Gang 1-Way Driver
  */
 class WallSwitch1Gang1WayDriver extends ZigBeeDriver {
+  // P3330: exact couples of a held driver folded here (lib/drivers/held-driver-folds.json) run that
+  // driver's own device class; every other device keeps ./device.
+  onMapDeviceClass(device) {
+    return require('../../lib/drivers/HeldDriverFolds').foldedDeviceClass('wall_switch_1gang_1way', device) || require('./device');
+  }
+
 
   async onInit() {
     this.log('Wall Switch 1-Gang 1-Way Driver initialized');

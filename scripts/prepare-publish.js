@@ -732,7 +732,13 @@ try {
       if (ids.size > 0) {
         const manifest = JSON.parse(fs.readFileSync(destAppJson, 'utf8'));
         const before = (manifest.drivers || []).length;
+        const heldClasses = Object.fromEntries((manifest.drivers || []).filter((d) => d && ids.has(d.id)).map((d) => [d.id, d.class]));
         manifest.drivers = (manifest.drivers || []).filter((d) => !ids.has(d.id));
+        // P3330: carry the exact couples of folded held drivers on their published target (payload only).
+        const { loadFolds, applyHeldFolds } = require('./maintenance/apply-held-folds.cjs');
+        const fr = applyHeldFolds(manifest, ids, loadFolds(path.join(__dirname, '..')), heldClasses);
+        if (fr.errors.length) { throw new Error(`P3330 held-driver fold: ${fr.errors.join(' | ')}`); }
+        fr.applied.forEach((a) => console.log(`[P3330] folded ${a.held} -> ${a.into}: ${a.couples} exact couple(s) (+${a.addedMakers} maker(s), +${a.addedPids} pid(s), ${a.parasites} cartesian combo(s) owned by no other driver)`));
         // A card is dropped only when every driver its device filter names is held.
         const cardUsesHeld = (card) => {
           const args = Array.isArray(card && card.args) ? card.args : [];
