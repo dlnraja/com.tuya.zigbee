@@ -7,7 +7,7 @@ const { CLUSTER } = require('zigbee-clusters');
 
 /**
  * Smart Door/Window sensor (TY0203 family, IAS zone) with tamper.
- * v9.0.415 (P92.123): enrollment + initial read + invert via shared helper —
+ * v9.0.415 (P92.123): enrollment + initial read + invert via shared helper -
  * the device's own interview (kept below) showed zoneState "notEnrolled"
  * with CIE 00:00:00:00:00:00:00:00, the root cause of frozen contacts.
  */
@@ -39,7 +39,7 @@ class smart_door_window_sensor extends TuyaZigbeeDevice {
     }
 
     // alarm_contact & alarm_tamper & alarm_battery (+ enrollment + invert)
-    // Battery % via ZclBatteryMonitor.attach (UnifiedBatteryHandler) — no naive /2 path
+    // Battery % via ZclBatteryMonitor.attach (UnifiedBatteryHandler) - no naive /2 path
     await setupDoorWindowSensor(this, zclNode, { hasTamper: true });
   }
 

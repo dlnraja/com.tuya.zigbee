@@ -36,7 +36,8 @@ describe('P3070 localized Wi-Fi pair/repair errors', () => {
       for (const k of keys) {
         const m = src.match(new RegExp(`localMsg\\(this, '${k}', '((?:[^'\\\\]|\\\\.)*)'`));
         assert.ok(m, `${file} ${k}`);
-        assert.strictEqual(m[1], en[k], `${k} fallback`);
+        const unesc = m[1].replace(/\\u([0-9a-fA-F]{4})/g, (_, h) => String.fromCharCode(parseInt(h, 16)));
+        assert.strictEqual(unesc, en[k], `${k} fallback`);
       }
     }
   });

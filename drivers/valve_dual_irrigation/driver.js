@@ -23,7 +23,7 @@ class ValveDualIrrigationDriver extends ZigBeeDriver {
     // v9.0.261 (P63.1): Register flow card action handlers.
     // The driver.flow.compose.json declared cards
     // (valve_dual_irrigation_valve_irrigation_turn_on/off/toggle) but the
-    // driver never wired listeners — the run listener body was missing.
+    // driver never wired listeners - the run listener body was missing.
     // Forum post #2102/#2105 (Joep_Vullings, 2026-07-03 / 2026-07-06):
     // "I re-paired my two way irrigation valve and it connected and is
     //  sending the right battery level, but the buttons don't work".
@@ -40,7 +40,7 @@ class ValveDualIrrigationDriver extends ZigBeeDriver {
       }
     };
 
-    // v9.0.262 (P63.2): setCapabilityValue() alone only updates Homey state —
+    // v9.0.262 (P63.2): setCapabilityValue() alone only updates Homey state -
     // SDK3 does NOT invoke capability listeners on programmatic sets, so the
     // P63.1 run listeners updated the UI but the valve never actuated
     // (forum #2102/#2105: "the right actions, but isn't working"). Route the

@@ -5,7 +5,7 @@ const ZigbeeTimeSync = require('../../lib/ZigbeeTimeSync');
 const { safeSetTimeout } = require('../../lib/utils/safe-timers');
 
 /**
- * Radiator Controller — P125: TuyaZigbeeDevice + safeSetTimeout + mainsPowered
+ * Radiator Controller - P125: TuyaZigbeeDevice + safeSetTimeout + mainsPowered
  */
 class RadiatorControllerDevice extends TuyaZigbeeDevice {
 

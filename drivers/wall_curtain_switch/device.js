@@ -6,15 +6,15 @@ const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const { safeSetTimeout } = require('../../lib/utils/safe-timers');
 
 /**
- * WallCurtainSwitchDevice — TS130F ZCL windowCovering (cluster 258)
+ * WallCurtainSwitchDevice - TS130F ZCL windowCovering (cluster 258)
  *
  * WHY P2275 / D011 (ZHA#5226 · Z2M TS130F invert_cover):
  * - Pourquoi: `_TZ3210_ol1uhvza`+TS130F reports inverted lift % and can stop mid-travel
- *   if Homey TX sends raw Homey 0–1 without invert.
+ *   if Homey TX sends raw Homey 0-1 without invert.
  * - Comment: invert_position setting (+ auto for ol1uhvza) on TX goToLiftPercentage and RX attr.
  * - Pour qui: Homey cover tile users (master soak).
  * - Quand: onNodeInit + capability listeners + attr.currentPositionLiftPercentage.
- * - Contre quoi: one-way TX-only driver with no RX → stuck UI / ~50% travel.
+ * - Contre quoi: one-way TX-only driver with no RX -> stuck UI / ~50% travel.
  *
  * D033: backlight via OnOff attr 0x5000 (TuyaOnOffExtCluster.backlightSwitch).
  */
@@ -79,7 +79,7 @@ class WallCurtainSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(Tuy
       this.registerCapabilityListener('windowcoverings_set', async (value) => {
         if (!cover?.goToLiftPercentage) {return;}
         const percentageLiftValue = this._toDevicePercent(value);
-        this.log(`[WallCurtain] TX lift ${Math.round(value * 100)}% → device ${percentageLiftValue}%`);
+        this.log(`[WallCurtain] TX lift ${Math.round(value * 100)}% -> device ${percentageLiftValue}%`);
         return cover.goToLiftPercentage({ percentageLiftValue });
       });
     }
@@ -95,7 +95,7 @@ class WallCurtainSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(Tuy
       });
     }
 
-    // RX: position reports (missing previously — root of stuck/mid-travel UI)
+    // RX: position reports (missing previously - root of stuck/mid-travel UI)
     if (cover?.on && this.hasCapability('windowcoverings_set')) {
       cover.on('attr.currentPositionLiftPercentage', async (v) => {
         try {
@@ -138,7 +138,7 @@ class WallCurtainSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(Tuy
     }
     if (changedKeys.includes('invert_position')) {
       this._invertedPosition = !!newSettings.invert_position;
-      this.log(`[WallCurtain] invert_position → ${this._invertedPosition}`);
+      this.log(`[WallCurtain] invert_position -> ${this._invertedPosition}`);
     }
     // D033: TS130F backlight_switch attr 0x5000 on OnOff
     if (changedKeys.includes('backlight_mode')) {
@@ -153,7 +153,7 @@ class WallCurtainSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(Tuy
             // Numeric attr id fallback when cluster schema lacks manufacturer attrs
             return onOff.writeAttributes({ 0x5000: val }).catch(() => false);
           });
-          this.log(`[WallCurtain] backlight 0x5000 → ${val}`);
+          this.log(`[WallCurtain] backlight 0x5000 -> ${val}`);
         }
       } catch (err) {
         this.log(`[WallCurtain] backlight write failed: ${err.message}`);

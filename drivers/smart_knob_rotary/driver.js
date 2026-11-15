@@ -13,7 +13,7 @@ async onInit() {
   }
 
   _registerFlowCards() {
-    // TRIGGERS — SDK3 device triggers need registerRunListener for filter args
+    // TRIGGERS - SDK3 device triggers need registerRunListener for filter args
     for (const triggerId of [
       'smart_knob_rotary_rotate_left',
       'smart_knob_rotary_rotate_right',

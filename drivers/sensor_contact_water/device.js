@@ -188,7 +188,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
     // These sensors report closed=alarm, open=no alarm (inverted from standard)
     // v5.5.908: Added _TZ3000_996rpfy6 (blutch32 forum - always shows no)
     // v5.12.2: Added _TZE200_pay2byax (ZG-102ZL reversed contact)
-    // WHY(P3011): was `[...].some(id => includesCI(mfr, id))` — reversed args, always false.
+    // WHY(P3011): was `[...].some(id => includesCI(mfr, id))` - reversed args, always false.
     // DP-only inverted ids (Z2M ZG-102ZL inverse) now apply; IAS ids stay with AlarmPolarityManager.
     // v5.12.3: XOR  default inversion + user invert cancel each other out
     const _pol = resolveContactInvert(mfr, userInvert, userReverse);

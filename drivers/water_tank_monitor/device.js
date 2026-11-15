@@ -21,7 +21,7 @@ class WaterTankMonitorDevice extends UnifiedSensorBase {
   }
 
   /**
-   * Handle Tuya datapoints — Z2M TLC2206 verified mapping
+   * Handle Tuya datapoints - Z2M TLC2206 verified mapping
    */
   async _handleDP(dp, value) {
     if (this._destroyed) {return;}
@@ -33,7 +33,7 @@ class WaterTankMonitorDevice extends UnifiedSensorBase {
           await this._handleLiquidState(value);
           break;
 
-        case 2: // liquid_depth (cm) — WHY(P2761 Johan #1477/Z2M TLC2206): DP2=cm; DP19/21 settings=mm
+        case 2: // liquid_depth (cm) - WHY(P2761 Johan #1477/Z2M TLC2206): DP2=cm; DP19/21 settings=mm
           await this._handleLiquidDepth(value);
           break;
 

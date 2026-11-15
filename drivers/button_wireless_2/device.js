@@ -6,9 +6,9 @@ const { installTs004xDedicatedComplement } = require('../../lib/devices/Ts004xDe
 const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 /**
- * Button2GangDevice — TS0042 / 2-btn wall scene remote (battery or USB)
+ * Button2GangDevice - TS0042 / 2-btn wall scene remote (battery or USB)
  * P2609: full hybrid RX (ZCL + OnOff 0xFD + E000 + EF00 + raw)
- * P2636: _TZ3000_dzwgk7e2 + TS0042 — interview may show 4 EPs (TS0044 phantom FW);
+ * P2636: _TZ3000_dzwgk7e2 + TS0042 - interview may show 4 EPs (TS0044 phantom FW);
  *        keep buttonCount=2; hybrid ignores EP3/4 (never map to btn1).
  * P2683: snappy debounce + dedicated complement (Bastien lamp latency / ghost toggle).
  */
@@ -32,7 +32,7 @@ class Button2GangDevice extends ButtonDevice {
       protocol: 'hybrid',
       productId: 'TS0042',
       buttonCount: 2,
-      // WHY(P2714 / Bastien e1654535): match TS0041 axpdxqgu floor (was 200/140 — lag vs 1-btn)
+      // WHY(P2714 / Bastien e1654535): match TS0041 axpdxqgu floor (was 200/140 - lag vs 1-btn)
       debounceMs: 25, // P2693 floor: debounceMs: 80
       crossPathDedupMs: 40,
       appCommandWindow: 180,
@@ -42,7 +42,7 @@ class Button2GangDevice extends ButtonDevice {
       sceneSwitch: true,
       usesE000: true,
       noEf00Tx: true,
-      // WHY(P2691 / Bastien 885a9901): never powerCfg TX on press — CR2032 drain
+      // WHY(P2691 / Bastien 885a9901): never powerCfg TX on press - CR2032 drain
       skipBatteryReporting: true,
       batteryEpOnly: 1,
       zcl200IsPercent: true,
@@ -90,7 +90,7 @@ class Button2GangDevice extends ButtonDevice {
 
     if (this._isDzwgk7e2Phantom4Ep()) {
       this._p2636Dzwgk7e2 = true;
-      this.log('[P2636] dzwgk7e2+TS0042 — 2-btn sticky; ignore phantom EP3/4');
+      this.log('[P2636] dzwgk7e2+TS0042 - 2-btn sticky; ignore phantom EP3/4');
     }
 
     await Promise.resolve()
@@ -99,8 +99,8 @@ class Button2GangDevice extends ButtonDevice {
         try { this.log(`[INIT] Error: ${err && err.message}`); } catch (_e) { /* ignore */ }
       });
 
-    // WHY(P2609): E000-only was incomplete — AliExpress 2-btn stickies use 0xFD + EF00 too
-    // WHY(P2636): interview has no EF00 (61184) — skip EF00 TX storm on sleepy battery
+    // WHY(P2609): E000-only was incomplete - AliExpress 2-btn stickies use 0xFD + EF00 too
+    // WHY(P2636): interview has no EF00 (61184) - skip EF00 TX storm on sleepy battery
     try {
       await installWallSceneRemoteHybrid(this, zclNode, {
         maxButtons: 2,
@@ -111,7 +111,7 @@ class Button2GangDevice extends ButtonDevice {
       this.log('[BUTTON_WIRELESS_2] hybrid soft-fail:', e.message);
     }
 
-    // WHY(P2683 complementary): LevelControl + parseZclHeader — union with hybrid
+    // WHY(P2683 complementary): LevelControl + parseZclHeader - union with hybrid
     try {
       await installTs004xDedicatedComplement(this, zclNode, {
         maxButtons: 2,
@@ -125,7 +125,7 @@ class Button2GangDevice extends ButtonDevice {
 
     await this._stripPhantomButtonCapsBeyond2();
 
-    // WHY(P2734): Homey charter tiles Button 1–2 + complementary non-native soft-arm
+    // WHY(P2734): Homey charter tiles Button 1-2 + complementary non-native soft-arm
     try {
       for (const cap of ['button.1', 'button.2']) {
         if (!this.hasCapability?.(cap) && typeof this.addCapability === 'function') {

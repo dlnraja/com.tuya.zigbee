@@ -2,7 +2,7 @@ module.exports = {
   /**
    * Fetch all devices configured in this Homey Pro.
    * Returns a lightweight array for use in settings dropdown menus.
-   * Uses native Homey SDK3 APIs — no dependency on homey-api.
+   * Uses native Homey SDK3 APIs - no dependency on homey-api.
    */
   async getDevices({ homey }) {
     try {
@@ -32,7 +32,7 @@ module.exports = {
 
   /**
    * WHY: Settings spider map (Z2M-style) for this app's Zigbee devices.
-   * HOW: Passive snapshot — last-hop LQI/RSSI already on zclNode; no ZDO Mgmt_LQI.
+   * HOW: Passive snapshot - last-hop LQI/RSSI already on zclNode; no ZDO Mgmt_LQI.
    * WHO: MASTER_ONLY Homey settings page. Homey Pro 2023 has no app-visible route table.
    * WHEN: User opens App Settings and taps Refresh.
    * AGAINST: Active neighbor scans (mesh flood on sleepy battery nodes).
@@ -238,7 +238,7 @@ module.exports = {
   },
 
   /**
-   * P2621 MASTER_ONLY — WiFi Fix-It inventory + redacted support bundle.
+   * P2621 MASTER_ONLY - WiFi Fix-It inventory + redacted support bundle.
    * Inspired by com.tuyalocal Fix It (local keys / protocol / support bundle).
    */
   async getWifiFixIt({ homey }) {

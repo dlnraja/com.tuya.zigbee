@@ -235,7 +235,7 @@ class PresenceDetectorDevice extends Homey.Device {
     }
   }
 
-  // ─── Public API for Flow Cards ────────────────────────────────────────────
+  // --- Public API for Flow Cards --------------------------------------------
 
   /**
    * Force presence state (called by flow card action).

@@ -8,7 +8,7 @@ const BaseUnifiedDevice = require('../../lib/devices/BaseUnifiedDevice');
 class PetFeederZigbeeDevice extends BaseUnifiedDevice {
 
   async onNodeInit({ zclNode }) {
-    this.log('[PetFeeder] 🚀 Initializing hardened driver...');
+    this.log('[PetFeeder] [GO] Initializing hardened driver...');
     await super.onNodeInit({ zclNode });
 
     // 1. DP Mappings
@@ -22,13 +22,13 @@ class PetFeederZigbeeDevice extends BaseUnifiedDevice {
     // 2. Capability Listeners
     if (this.hasCapability('button')) {
       this.registerCapabilityListener('button', async () => {
-        this.log('[PetFeeder] 🥣 Manual feed triggered');
+        this.log('[PetFeeder] [BOWL] Manual feed triggered');
         // DP4: manual feed (1 portion)
         return this.sendTuyaCommand(4, 1, 'value');
       });
     }
 
-    this.log('[PetFeeder] ✅ Ready');
+    this.log('[PetFeeder] [OK] Ready');
   }
 
 }

@@ -11,7 +11,7 @@ const { healZigbeeNodeIdentity } = require('../../lib/io/healZigbeeNodeIdentity'
 
 Cluster.addCluster(TuyaSpecificCluster);
 
-/** EF00-only BSEED/PresentSky dimmers — no genOnOff / genLevelCtrl on interview. */
+/** EF00-only BSEED/PresentSky dimmers - no genOnOff / genLevelCtrl on interview. */
 const EF00_DP_MAP = {
   onoff: {
     dp: V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.onOff,
@@ -72,7 +72,7 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
 
   /**
    * WHY(P2333 / PresentSky diag 60959c24): TuyaEF00Manager generic map treated
-   * DP2 as humidity + DynCap added measure_humidity — kill climate invent.
+   * DP2 as humidity + DynCap added measure_humidity - kill climate invent.
    */
   get dpMappings() {
     return {
@@ -149,7 +149,7 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
         });
         this.hasListenersAttached = true;
       } else {
-        this.log('[WALL-DIMMER] Tuya cluster missing after compensation — passive I/O armed');
+        this.log('[WALL-DIMMER] Tuya cluster missing after compensation - passive I/O armed');
         this.io?._enablePassiveTuyaListen?.({});
       }
     }
@@ -238,7 +238,7 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
   }
 
   /**
-   * TX via CapabilityCommandRouter L1→Lx (forceDp — interview has no onOff/levelControl).
+   * TX via CapabilityCommandRouter L1->Lx (forceDp - interview has no onOff/levelControl).
    * P2322: HomeSuite-style retry (3× / 350ms) + throw on failure so Homey UI
    * does not fake success when the mesh never moved.
    */
@@ -248,7 +248,7 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
     if (typeof this._ensureTuyaIo === 'function') {
       await this._ensureTuyaIo(this.zclNode, { light: true });
     }
-    // WHY(P2557 / PresentSky #2206): MCU ignores EF00 until magic — arm once per session + after fail
+    // WHY(P2557 / PresentSky #2206): MCU ignores EF00 until magic - arm once per session + after fail
     if (!this._dimmerMagicArmedThisSession) {
       await this._ensureDimmerMagicHandshake(this.zclNode).catch(() => {});
       this._dimmerMagicArmedThisSession = true;
@@ -303,7 +303,7 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
               resolve();
             }, delays[i]);
           } catch (_e) {
-            // WHY(P2329): never bare setTimeout — TITAN syntax-check fails CI
+            // WHY(P2329): never bare setTimeout - TITAN syntax-check fails CI
             if (this.homey && typeof this.homey.setTimeout === 'function') {
               this.homey.setTimeout(() => {
                 if (this._destroyed) { resolve(); return; }

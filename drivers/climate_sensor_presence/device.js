@@ -115,7 +115,7 @@ class ClimateSensorPresenceDevice extends UnifiedSensorBase {
     await super.onNodeInit({ zclNode });
     await this._setupZclClusters(zclNode);
     await this._setupTuyaDPListeners(zclNode);
-    this.log('[CLIMATE-HYBRID-LEGACY] ✅ Climate presence sensor ready');
+    this.log('[CLIMATE-HYBRID-LEGACY] [OK] Climate presence sensor ready');
   }
 
   _handleTuyaResponse(data) {

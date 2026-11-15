@@ -104,7 +104,7 @@ class HVACDehumidifierDevice extends UnifiedThermostatBase {
 
     await super.onNodeInit({ zclNode });
     // v9.0.418 (P92.126): tamper bit was never fed on this hybrid
-    try { attachTamperListener(this, zclNode); } catch (e) { this.log('[TAMPER] ⚠️ ' + e.message); }this.log('[DEHUMIDIFIER]  Ready');
+    try { attachTamperListener(this, zclNode); } catch (e) { this.log('[TAMPER] [WARN] ' + e.message); }this.log('[DEHUMIDIFIER]  Ready');
   }
 
 

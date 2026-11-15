@@ -4,7 +4,7 @@ const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { CLUSTER } = require('zigbee-clusters');
 
 /**
- * P124 — TuyaZigbeeDevice (L14) + mainsPowered strip phantom battery
+ * P124 - TuyaZigbeeDevice (L14) + mainsPowered strip phantom battery
  */
 class socket_power_strip_four_two extends TuyaZigbeeDevice {
 

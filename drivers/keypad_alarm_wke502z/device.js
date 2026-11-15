@@ -61,7 +61,7 @@ class KeypadAlarmWke502zDevice extends TuyaDpProfileDevice {
   }
 
   _onKeypadSession(dp, raw) {
-    // WHY(P3067, Z2M daewoo.ts): DP25 is sent only at keypad start-up — the hub-mode flag (DP101) and the
+    // WHY(P3067, Z2M daewoo.ts): DP25 is sent only at keypad start-up - the hub-mode flag (DP101) and the
     // volatile options were reset by the power cycle, so send them again.
     if (dp === 25) {
       this._hubModeSent = false;
@@ -134,7 +134,7 @@ class KeypadAlarmWke502zDevice extends TuyaDpProfileDevice {
   }
 
   _ensureHubMode() {
-    // WHY(P3067, Z2M daewoo.ts): DP101 resets at every power cycle — send once per app session and after
+    // WHY(P3067, Z2M daewoo.ts): DP101 resets at every power cycle - send once per app session and after
     // each start-up report (DP25), not once forever.
     if (this._hubModeSent) { return; }
     this._hubModeSent = true;

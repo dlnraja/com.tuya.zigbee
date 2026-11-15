@@ -10,7 +10,7 @@ const ALARM_RESET_MS = 5000;
  *
  * Panic remotes in this family expose their keys as ordinary ZCL buttons, so
  * ButtonDevice already covers press detection, flow cards and battery. What it
- * does not do is drive `alarm_generic`, which this driver declares — without it
+ * does not do is drive `alarm_generic`, which this driver declares - without it
  * the panic state never reaches flows. Any key press raises the alarm and it
  * self-clears so the next press is observable as a fresh event.
  */

@@ -38,7 +38,7 @@ describe('P2199 flow / DP15 / recovery coherence', () => {
     assert.match(source, /setting:\s*'backlight_mode'/);
     assert.match(source, /DP15 = backlight enum/);
     assert.doesNotMatch(source, /setting:\s*'led_indicator'/);
-    assert.match(source, /legacy→backlight/);
+    assert.match(source, /legacy(?:->|→)backlight/);
   });
 
   it('routes DataRecoveryManager writes through _safeSetCapability funnel', () => {

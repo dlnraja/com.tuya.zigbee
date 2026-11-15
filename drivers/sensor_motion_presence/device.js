@@ -102,7 +102,7 @@ class MotionPresenceHybridDevice extends UnifiedSensorBase {
     await super.onNodeInit({ zclNode });
     await this._setupZclClusters(zclNode);
     await this._setupTuyaDPListeners(zclNode);
-    this.log('[MOTION-HYBRID] ✅ Motion presence sensor ready');
+    this.log('[MOTION-HYBRID] [OK] Motion presence sensor ready');
   }
   _handleTuyaResponse(data) {
     if (!data) {return;}

@@ -3,7 +3,7 @@ const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const { capabilityForZoneType, decodeZoneStatus, alarmFor, ALL_ZONE_CAPABILITIES } = require('../../lib/sensors/IasZoneTypeRouter');
 
 /**
- * eWeLink / SNZB-03 — ambiguous identity (PIR in JohanBendz #1113/#1008, SQ510A water
+ * eWeLink / SNZB-03 - ambiguous identity (PIR in JohanBendz #1113/#1008, SQ510A water
  * detector in #1475; both EP1 [0,3,1,1280,32]). The alarm capability is chosen from the
  * device's own IAS zoneType, never from the manufacturer/model pair. Rules:
  * docs/rules/JOHAN_1113_AMBIGUOUS_IAS_IDENTITY.md
@@ -44,7 +44,7 @@ class IasZoneTypeEwelinkDevice extends UnifiedSensorBase {
       if (!ias) {return;}
       const attrs = await ias.readAttributes(['zoneType']).catch(() => null);
       cap = capabilityForZoneType(attrs?.zoneType);
-      this.log(`[ZONETYPE] zoneType=${attrs?.zoneType} → ${cap || 'unknown (retry next wake)'}`);
+      this.log(`[ZONETYPE] zoneType=${attrs?.zoneType} -> ${cap || 'unknown (retry next wake)'}`);
       if (!cap) {
         // Sleepy device: retry once on the next IAS report, do not guess.
         if (!this._zoneRetryArmed) {

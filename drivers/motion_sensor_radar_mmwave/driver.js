@@ -75,10 +75,10 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
             if (!args.device) {return false;}
             return fn(args);
           });
-          this.log(`[FLOW] ✅ Condition ${id} registered`);
+          this.log(`[FLOW] [OK] Condition ${id} registered`);
         }
       } catch (err) {
-        if (this.developerDebugMode) { this.error(`[FLOW] ⚠️ Condition ${id} registration error: ${err.message}`); }
+        if (this.developerDebugMode) { this.error(`[FLOW] [WARN] Condition ${id} registration error: ${err.message}`); }
       }
     }
 
@@ -87,7 +87,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
         id: 'motion_sensor_radar_mmwave_set_radar_sensitivity',
         fn: async (args) => {
           const d = args.device;
-          // WHY(P2818/ZHA#5286): gnpflcoq uses DP9 enum — generic mmWave still DP2
+          // WHY(P2818/ZHA#5286): gnpflcoq uses DP9 enum - generic mmWave still DP2
           if (typeof d.sendGnpflcoqSetting === 'function' && d._isGnpflcoq4in1?.()) {
             await d.sendGnpflcoqSetting('radar_sensitivity', args.sensitivity || 5);
           } else if (d.sendTuyaCommand) {
@@ -99,7 +99,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
       {
         id: 'motion_sensor_radar_mmwave_set_detection_range',
         fn: async (args) => {
-          // gnpflcoq has no range DPs 3/4 (ZHA#5286) — soft no-op
+          // gnpflcoq has no range DPs 3/4 (ZHA#5286) - soft no-op
           if (args.device._isGnpflcoq4in1?.()) {return true;}
           if (args.device.sendTuyaCommand) {
             await args.device.sendTuyaCommand(3, Math.round((args.min || 0) * 100), 'value');
@@ -112,7 +112,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
         id: 'motion_sensor_radar_mmwave_set_fading_time',
         fn: async (args) => {
           const d = args.device;
-          // WHY(P2818): never DP102 on gnpflcoq (temp_compensate) — use DP12 pir_delay
+          // WHY(P2818): never DP102 on gnpflcoq (temp_compensate) - use DP12 pir_delay
           if (typeof d.sendGnpflcoqSetting === 'function' && d._isGnpflcoq4in1?.()) {
             await d.sendGnpflcoqSetting('fading_time', args.seconds || 60);
           } else if (d.sendTuyaCommand) {
@@ -143,10 +143,10 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
             if (!args.device) {return false;}
             return fn(args);
           });
-          this.log(`[FLOW] ✅ Action ${id} registered`);
+          this.log(`[FLOW] [OK] Action ${id} registered`);
         }
       } catch (err) {
-        if (this.developerDebugMode) { this.error(`[FLOW] ⚠️ Action ${id} registration error: ${err.message}`); }
+        if (this.developerDebugMode) { this.error(`[FLOW] [WARN] Action ${id} registration error: ${err.message}`); }
       }
     }
 

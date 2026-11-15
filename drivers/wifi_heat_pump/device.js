@@ -1,8 +1,8 @@
 'use strict';
 
 /**
- * P2621 MASTER_ONLY — WiFi Heat Pump (Tuya Local).
- * WHY: Dedicated driver for Tuya category rs/rsx (pool / air-water HPs) —
+ * P2621 MASTER_ONLY - WiFi Heat Pump (Tuya Local).
+ * WHY: Dedicated driver for Tuya category rs/rsx (pool / air-water HPs) -
  *   formerly only wifi_generic + category hints (P2619).
  * HOW: TuyaLocalDevice + default DP map (Brustec/BWT/standard) + WiFiDPRegistry enrich.
  * WHO: Homey Pro users with LAN Tuya heat pumps.
@@ -31,7 +31,7 @@ class WiFiHeatPumpDevice extends TuyaLocalDevice {
         capability: 'alarm_generic',
         transform: (v) => !!(v && Number(v) !== 0),
       },
-      // Phalén / Fairland InverterPlus (optional — gaps filled if present)
+      // Phalén / Fairland InverterPlus (optional - gaps filled if present)
       101: {
         capability: 'onoff',
         writable: true,

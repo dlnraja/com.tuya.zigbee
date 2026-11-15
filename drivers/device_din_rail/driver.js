@@ -3,7 +3,7 @@
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 /**
- * P2839 — DIN rail driver. Prior copy-paste registered hollow doorbell_* cards
+ * P2839 - DIN rail driver. Prior copy-paste registered hollow doorbell_* cards
  * that were never in driver.flow.compose.json (creux). Wire only compose IDs.
  */
 class DeviceDinRailDriver extends ZigBeeDriver {

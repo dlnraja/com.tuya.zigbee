@@ -47,7 +47,7 @@ class WiFiAirQualityDevice extends TuyaLocalDevice {
       if (prev && prev === level) {return;}
       this._aqLevel = level;
       try { await this.setStoreValue('aq_level', level); } catch (_e) { /* soft */ }
-      if (!prev) {return;} // seed — no flow spam on first paint
+      if (!prev) {return;} // seed - no flow spam on first paint
       await this.triggerFlowCard('wifi_air_quality_level_changed', {
         level,
         previous_level: prev,

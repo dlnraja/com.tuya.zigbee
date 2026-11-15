@@ -19,14 +19,14 @@ class UniversalWirelessButtonDevice extends ButtonDevice {
 
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => {
-      this.log('[BUTTON-WIRELESS] 🔘 v5.5.796 Initializing (Cam forum fix)...');
+      this.log('[BUTTON-WIRELESS] [BTN] v5.5.796 Initializing (Cam forum fix)...');
       
       // Detect button count for this device
       this.buttonCount = await this._detectButtonCount(zclNode);
       
       // v5.5.796: FORUM FIX - Ensure at least 1 button
       if (!this.buttonCount || this.buttonCount < 1) {
-        this.log('[BUTTON-WIRELESS] ⚠️ Detection returned 0, defaulting to 1 button');
+        this.log('[BUTTON-WIRELESS] [WARN] Detection returned 0, defaulting to 1 button');
         this.buttonCount = 1;
       }
       this.log(`[BUTTON-WIRELESS] Detected ${this.buttonCount} button(s)`);
@@ -37,7 +37,7 @@ class UniversalWirelessButtonDevice extends ButtonDevice {
       // v5.5.796: Force battery read on init
       await this._forceInitialBatteryRead(zclNode);
       
-      this.log('[BUTTON-WIRELESS] ✅ Ready - supports single/double/long press');
+      this.log('[BUTTON-WIRELESS] [OK] Ready - supports single/double/long press');
     }, 'onNodeInit');
   }
 
@@ -48,13 +48,13 @@ class UniversalWirelessButtonDevice extends ButtonDevice {
     try {
       const cur = this.getCapabilityValue('measure_battery');
       if (cur != null && Number(cur) > 0) {
-        this.log(`[BUTTON-WIRELESS] 🔋 Battery already present (${cur}%) - skipping initial read to preserve battery`);
+        this.log(`[BUTTON-WIRELESS] [BAT] Battery already present (${cur}%) - skipping initial read to preserve battery`);
         return;
       }
       const cached = await this.getStoreValue('last_battery_percentage').catch(() => null);
       if (cached != null && Number(cached) > 0) {
         await this.safeSetCapabilityValue('measure_battery', Number(cached)).catch(() => {});
-        this.log(`[BUTTON-WIRELESS] 🔋 Battery restored from cache (${cached}%) - skipping initial read`);
+        this.log(`[BUTTON-WIRELESS] [BAT] Battery restored from cache (${cached}%) - skipping initial read`);
         return;
       }
 
@@ -62,7 +62,7 @@ class UniversalWirelessButtonDevice extends ButtonDevice {
       const powerCluster = ep?.clusters?.powerConfiguration || ep?.clusters?.genPowerCfg || ep?.clusters?.[1];
       
       if (powerCluster?.readAttributes) {
-        this.log('[BUTTON-WIRELESS] 🔋 Forcing initial battery read...');
+        this.log('[BUTTON-WIRELESS] [BAT] Forcing initial battery read...');
         const attrs = await Promise.race([
           powerCluster.readAttributes(['batteryPercentageRemaining', 'batteryVoltage']),
           new Promise((_, rej) => this.homey.setTimeout(() => { if (this._destroyed) {return;} rej(new Error('timeout')); }, 2000))
@@ -75,7 +75,7 @@ class UniversalWirelessButtonDevice extends ButtonDevice {
             manufacturer: this.getSetting?.('zb_manufacturer_name') || '',
             batteryType: 'CR2032',
           });
-          this.log(`[BUTTON-WIRELESS] 🔋 Battery: ${battery}%`);
+          this.log(`[BUTTON-WIRELESS] [BAT] Battery: ${battery}%`);
           if (this._destroyed) { return; }
           if (battery != null && this.hasCapability('measure_battery')) {
             await this.safeSetCapabilityValue('measure_battery', battery).catch(() => { });
@@ -83,7 +83,7 @@ class UniversalWirelessButtonDevice extends ButtonDevice {
         }
       }
     } catch (e) {
-      this.log(`[BUTTON-WIRELESS] ⚠️ Initial battery read failed: ${e.message}`);
+      this.log(`[BUTTON-WIRELESS] [WARN] Initial battery read failed: ${e.message}`);
     }
   }
 

@@ -5,7 +5,7 @@ const { detectFormat } = require('../../lib/ir/IRFormatConverter');
 const WifiIR = require('../../lib/ir/TuyaWifiIRProtocol');
 
 /**
- * WiFi IR Remote (Tuya Local) — P2487 router-backed learn/send.
+ * WiFi IR Remote (Tuya Local) - P2487 router-backed learn/send.
  * DPs (tuya-local): 201 send, 202 receive/learn payload.
  */
 class WiFiIRRemoteDevice extends TuyaLocalDevice {
@@ -30,7 +30,7 @@ class WiFiIRRemoteDevice extends TuyaLocalDevice {
         this._learnedCodes = stored;
       }
     } catch (e) { /* first run */ }
-    // WHY(P3063): control type 1 (DP201 JSON) vs 2 (DP1 mode + DP7) — learned from DPS, persisted
+    // WHY(P3063): control type 1 (DP201 JSON) vs 2 (DP1 mode + DP7) - learned from DPS, persisted
     this._irControlType = Number(this.getStoreValue?.('ir_control_type')) || 0;
     this._router = getRouter(this.homey);
     this.log(`[WIFI-IR] Ready, ${Object.keys(this._learnedCodes).length} codes (P2487 router)`);
@@ -39,7 +39,7 @@ class WiFiIRRemoteDevice extends TuyaLocalDevice {
       this.registerCapabilityListener('button.1', async () => {
         const names = Object.keys(this._learnedCodes);
         if (!names.length) {
-          this.log('[WIFI-IR] button.1 — no learned codes');
+          this.log('[WIFI-IR] button.1 - no learned codes');
           return true;
         }
         await this.sendLearnedCode(names[0]);
@@ -108,13 +108,13 @@ class WiFiIRRemoteDevice extends TuyaLocalDevice {
 
   async startLearning(name, duration = 30, opts = {}) {
     if (!this._client || !this._client.connected) {
-      throw new Error('Not connected — check local IP / local key (WiFi login)');
+      throw new Error('Not connected - check local IP / local key (WiFi login)');
     }
     this._pendingCodeName = name || `code_${Date.now()}`;
     this._learningActive = true;
     this._learnConfirm = opts.confirm !== false;
     // WHY(P3063): tinytuya/tuya-local arm learning with control "study" (after a
-    // study_exit to reset a stuck session) — DP202 is report-only on type-1 firmware.
+    // study_exit to reset a stuck session) - DP202 is report-only on type-1 firmware.
     const ct = this._irControlType;
     if (ct !== WifiIR.CONTROL_MULTI_DP) {await this._client.setDP('1', true).catch(() => {});}
     await this._exitStudy();

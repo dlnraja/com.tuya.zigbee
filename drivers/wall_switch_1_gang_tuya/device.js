@@ -59,7 +59,7 @@ class wall_switch_1_gang_tuya extends TuyaSpecificClusterDevice {
       }
     });
 
-    this.log("🚀 Wall switch booted up!")
+    this.log("[GO] Wall switch booted up!")
 
   }
 

@@ -216,6 +216,8 @@ This fetches all 2032 posts of topic 140352 in ~5 minutes with 100% success.
 
 ## Don't Do
 
+- Do not add emoji or any raw character above U+00FF to shipped JS, and do not pack unreferenced logos or images (P3320, `docs/rules/SHIPPED_JS_LATIN1.md`).
+
 - **Don't** push to `stable-v5` directly. Wait for master to be verified.
 - **Don't** skip the pre-push gate. If `--no-verify` is needed, document why.
 - **Don't** add mfrs to a driver that doesn't match its device class.
@@ -290,6 +292,8 @@ Specs live in `specs/NNN-*/{spec,plan,tasks}.md`. This file overrides any spec/p
   threads, Z2M/ZHA/deCONZ/localtuya, Homey docs, diags/crash mails, forks, changelogs: read and understand finely
   (symptoms, context, firmware, interviews, DP logs, workarounds, regressions, conflicts, screenshots), reason,
   then write our own rules/code/SSOT. Regex/AI pre-extraction is only a helper, never the decision.
+
+- C6. **Shipped JavaScript is Latin-1 (P3320).** Everything not excluded by `.homeyignore` (`app.js`, `lib/`, `drivers/**/*.js`, `api`, settings, widgets) must contain no raw character above U+00FF (emoji, box-drawing, typographic dashes/arrows). Use ASCII tags (`[OK]`, `[WARN]`, `[ERR]`, `->`, `-`) or `\uXXXX` / `\u{XXXXX}` escapes when the exact character is required (protocol constants, genuine language or currency strings). Accented Latin-1 (`é`, `à`, `°`) stays. Do not change user-facing meaning in `locales/*.json` or app/compose titles and hints. The package must not include unreferenced or heavy logos or images; Athom-required app/driver `small` / `large` / `xlarge` and manifest-referenced icons stay. Enforced fail-closed by the P3320 CI / pre-push gate (`tools/ci/p3320-shipped-latin1-assets-gate.js`, rules-gates id `p3320-latin1`, core profile). P3312 still Latin-1-escapes payload JS at publish as a safety net. See `docs/rules/SHIPPED_JS_LATIN1.md`.
 
 ## Communication
 - X1. Agents never post on GitHub/forum or reply to emails on behalf of the maintainer.
@@ -692,6 +696,8 @@ Specs live in `specs/NNN-*/{spec,plan,tasks}.md`. This file overrides any spec/p
   threads, Z2M/ZHA/deCONZ/localtuya, Homey docs, diags/crash mails, forks, changelogs: read and understand finely
   (symptoms, context, firmware, interviews, DP logs, workarounds, regressions, conflicts, screenshots), reason,
   then write our own rules/code/SSOT. Regex/AI pre-extraction is only a helper, never the decision.
+
+- C6. **Shipped JavaScript is Latin-1 (P3320).** Everything not excluded by `.homeyignore` (`app.js`, `lib/`, `drivers/**/*.js`, `api`, settings, widgets) must contain no raw character above U+00FF (emoji, box-drawing, typographic dashes/arrows). Use ASCII tags (`[OK]`, `[WARN]`, `[ERR]`, `->`, `-`) or `\uXXXX` / `\u{XXXXX}` escapes when the exact character is required (protocol constants, genuine language or currency strings). Accented Latin-1 (`é`, `à`, `°`) stays. Do not change user-facing meaning in `locales/*.json` or app/compose titles and hints. The package must not include unreferenced or heavy logos or images; Athom-required app/driver `small` / `large` / `xlarge` and manifest-referenced icons stay. Enforced fail-closed by the P3320 CI / pre-push gate (`tools/ci/p3320-shipped-latin1-assets-gate.js`, rules-gates id `p3320-latin1`, core profile). P3312 still Latin-1-escapes payload JS at publish as a safety net. See `docs/rules/SHIPPED_JS_LATIN1.md`.
 
 ## Communication
 - X1. Agents never post on GitHub/forum or reply to emails on behalf of the maintainer.

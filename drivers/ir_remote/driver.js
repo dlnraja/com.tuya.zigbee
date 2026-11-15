@@ -5,7 +5,7 @@ const { getRouter, HOMEY_IR_SENDER_ID } = require('../../lib/ir/IntelligentIRRou
 const { registerIrWizardHandlers } = require('../../lib/ir/irWizardSession');
 
 /**
- * Virtual IR Remote Driver — P2487 multi-sender (Zigbee / WiFi / Homey Pro 2023 TX).
+ * Virtual IR Remote Driver - P2487 multi-sender (Zigbee / WiFi / Homey Pro 2023 TX).
  */
 class IrRemoteDriver extends Homey.Driver {
 
@@ -68,7 +68,7 @@ class IrRemoteDriver extends Homey.Driver {
       const sender = args.device._resolveSender();
       if (!sender) {throw new Error('IR sender not found');}
       if (sender.transport === 'homey') {
-        throw new Error('Homey onboard IR is TX-only — learn on Zigbee/WiFi');
+        throw new Error('Homey onboard IR is TX-only - learn on Zigbee/WiFi');
       }
       await this._router.learn({
         device: sender.device,
@@ -85,7 +85,7 @@ class IrRemoteDriver extends Homey.Driver {
 
     session.setHandler('list_devices', async () => {
       const senders = this._router.listSenders();
-      // Always offer Homey path as soft option when RF API missing in pair cloud — user can set later
+      // Always offer Homey path as soft option when RF API missing in pair cloud - user can set later
       const list = senders.length ? senders : [{
         id: HOMEY_IR_SENDER_ID,
         driverId: HOMEY_IR_SENDER_ID,

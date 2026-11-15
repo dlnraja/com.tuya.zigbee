@@ -20,9 +20,9 @@ class CoSensorDriver extends ZigBeeDriver {
   _registerFlowCards() {
     this.log('[FLOW] Registering flow cards...');
 
-    // ─────────────────────────────────────────────────────────────────────────
+    // -------------------------------------------------------------------------
     // CONDITION CARDS
-    // ─────────────────────────────────────────────────────────────────────────
+    // -------------------------------------------------------------------------
     const conditions = [
       {
         id: 'co_sensor_co_detected',
@@ -62,15 +62,15 @@ class CoSensorDriver extends ZigBeeDriver {
       try {
         this.homey.flow.getConditionCard(card.id)
           .registerRunListener(card.run.bind(this));
-        this.log(`[FLOW] ✅ Condition Registered: ${card.id}`);
+        this.log(`[FLOW] [OK] Condition Registered: ${card.id}`);
       } catch (e) {
-        this.error(`[FLOW] ❌ Failed to register condition ${card.id}:`, e.message);
+        this.error(`[FLOW] [ERR] Failed to register condition ${card.id}:`, e.message);
       }
     }
 
-    // ─────────────────────────────────────────────────────────────────────────
+    // -------------------------------------------------------------------------
     // ACTION CARDS
-    // ─────────────────────────────────────────────────────────────────────────
+    // -------------------------------------------------------------------------
     const actions = [
       {
         id: 'co_sensor_test_alarm',
@@ -89,9 +89,9 @@ class CoSensorDriver extends ZigBeeDriver {
       try {
         this.homey.flow.getActionCard(card.id)
           .registerRunListener(card.run.bind(this));
-        this.log(`[FLOW] ✅ Action Registered: ${card.id}`);
+        this.log(`[FLOW] [OK] Action Registered: ${card.id}`);
       } catch (e) {
-        this.error(`[FLOW] ❌ Failed to register action ${card.id}:`, e.message);
+        this.error(`[FLOW] [ERR] Failed to register action ${card.id}:`, e.message);
       }
     }
 

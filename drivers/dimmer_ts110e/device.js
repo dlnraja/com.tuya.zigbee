@@ -4,7 +4,7 @@ const TuyaZigbeeDevice = require("../../lib/tuya/TuyaZigbeeDevice");
 const { Cluster, CLUSTER, ZCLDataTypes } = require("zigbee-clusters");
 
 /**
- * Tuya Dimmer Module TS110E — P125: TuyaZigbeeDevice (L14) + mainsPowered
+ * Tuya Dimmer Module TS110E - P125: TuyaZigbeeDevice (L14) + mainsPowered
  */
 
 class TuyaLevelControl extends Cluster {

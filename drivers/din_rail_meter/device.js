@@ -8,7 +8,7 @@ const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 /**
  * DIN rail energy meters (incl. Tongou TO-Q-SYS-JZT _TZE284_6ocnqlhn + TS0601).
- * WHY: Gmail diags 3a1f196d / 31e654a4 — mis-paired as smart_rcbo; DP6 raw was
+ * WHY: Gmail diags 3a1f196d / 31e654a4 - mis-paired as smart_rcbo; DP6 raw was
  * dynamically mapped to measure_humidity. Z2M: din rail smart meter, not RCBO.
  */
 class DinRailMeterDevice extends UnifiedPlugBase {
@@ -73,11 +73,11 @@ class DinRailMeterDevice extends UnifiedPlugBase {
     return {
       1: { capability: 'meter_power', divisor: 100 },
       6: { capability: null, internal: 'tongou_electricity_raw' },
-      // WHY: Z2M TO-Q-SYS-JZT — internal telemetry; never DCM→humidity
+      // WHY: Z2M TO-Q-SYS-JZT - internal telemetry; never DCM->humidity
       13: { capability: null, internal: 'tongou_test1' },
       15: { capability: null, internal: 'leakage_current' },
       16: { capability: null, internal: 'switch_state' },
-      // WHY(P2580 / Z2M#12993): DP32 mixes centihertz + truncated Hz — see TongouAcFrequency
+      // WHY(P2580 / Z2M#12993): DP32 mixes centihertz + truncated Hz - see TongouAcFrequency
       32: { capability: null, internal: 'ac_frequency', transform: 'tongou_ac_frequency' },
       50: { capability: null, internal: 'power_factor', divisor: 100 },
       108: { capability: null, internal: 'control_mode' },
@@ -132,7 +132,7 @@ class DinRailMeterDevice extends UnifiedPlugBase {
       this.log(`[TONGOU-JZT] DP6 ignored (${parsed.reason || 'parse_failed'}, len=${parsed.length || 0})`);
       return;
     }
-    this.log(`[TONGOU-JZT] DP6 composite hex=${parsed.hex?.slice(0, 24)}… decoded=${JSON.stringify(parsed.decoded)}`);
+    this.log(`[TONGOU-JZT] DP6 composite hex=${parsed.hex?.slice(0, 24)}... decoded=${JSON.stringify(parsed.decoded)}`);
     for (const [cap, val] of Object.entries(parsed.decoded || {})) {
       this.safeSetCapabilityValue(cap, val).catch(() => { });
     }
@@ -144,7 +144,7 @@ class DinRailMeterDevice extends UnifiedPlugBase {
       if (this._isTongouToqSysJzt()) {
         this.log('[DIN-METER] Tongou TO-Q-SYS-JZT profile active');
       } else {
-        this.log('[DIN-METER] ✅ Ready');
+        this.log('[DIN-METER] [OK] Ready');
       }
     }, 'onNodeInit');
   }

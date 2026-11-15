@@ -19,7 +19,7 @@ class SwitchWirelessDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifie
       await this.initVirtualButtons();
       // WHY(P2792): smoke identity paired here keeps this driver; smoke / tamper / battery DPs in place.
       await InPlaceIdentityLayer.applyInPlaceIdentityLayer(this, zclNode);
-      this.log('[WIRELESS-SWITCH] ✅ Universal initialization complete');
+      this.log('[WIRELESS-SWITCH] [OK] Universal initialization complete');
     }, 'onNodeInit');
   }
 

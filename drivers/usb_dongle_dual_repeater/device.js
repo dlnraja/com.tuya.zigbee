@@ -4,12 +4,12 @@ const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUti
 
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 
-// Energy scaling divisors — ZCL raw attributes; Tuya-DP drivers use smartDivisor: true via SmartDivisorManager
+// Energy scaling divisors - ZCL raw attributes; Tuya-DP drivers use smartDivisor: true via SmartDivisorManager
 const ENERGY_DIVISORS = {
-  meter_power: { divisor: 100 },    // currentSummationDelivered → kWh
-  measure_power: { divisor: 10 },   // activePower → W
-  measure_current: { divisor: 1000 }, // rmsCurrent → A
-  measure_voltage: { divisor: 10 }, // rmsVoltage → V
+  meter_power: { divisor: 100 },    // currentSummationDelivered -> kWh
+  measure_power: { divisor: 10 },   // activePower -> W
+  measure_current: { divisor: 1000 }, // rmsCurrent -> A
+  measure_voltage: { divisor: 10 }, // rmsVoltage -> V
 };
 
 /**

@@ -14,7 +14,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
 
   /**
    * WHY(P2631): Bastien eWeLink CK-TLSR8656-SS5-01(7014) is ZCL TH only
-   * (clusters 0/1/3/4/32/1026/1029/FC11) — never EF00 TX, never phantom button.
+   * (clusters 0/1/3/4/32/1026/1029/FC11) - never EF00 TX, never phantom button.
    */
   getDeviceProfile() {
     const base = (typeof super.getDeviceProfile === 'function' && super.getDeviceProfile()) || {};
@@ -45,7 +45,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
   }
 
   async onNodeInit({ zclNode }) {
-    this.log('[CLIMATE] 🚀 v8.0.0 Modernizing...');
+    this.log('[CLIMATE] [GO] v8.0.0 Modernizing...');
 
     // Initialize specialized climate inference (psychrometric validation)
     this._climateInference = new ClimateInference(this, {
@@ -57,7 +57,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
 
     this._batteryInference = new BatteryInference(this);
 
-    // WHY(P2250): HOBEIAN ZG-227Z/ZL is pure ZCL climate — brand also owns soil/presence
+    // WHY(P2250): HOBEIAN ZG-227Z/ZL is pure ZCL climate - brand also owns soil/presence
     // couples; log couple so diags never confuse with ZG-303Z / ZG-204*.
     // WHY(P2622): eWeLink+CK-TLSR8656-SS5-01(7014) is ZCL sleepy TH (not virtual socket).
     try {
@@ -72,7 +72,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
       }
       if (containsCI(mfr, 'eWeLink') || /CK-TLSR8656-SS5-0[12]\(7014\)/i.test(String(pid))) {
         this.log(`[CLIMATE-EWELINK] couple mfr=${mfr || '?'} pid=${pid || '?'} (ZCL 0x0402/0x0405/0x0001 sleepy; never socket)`);
-        // WHY(P2631): compose historically had button.1 — strip on eWeLink TH
+        // WHY(P2631): compose historically had button.1 - strip on eWeLink TH
         try {
           if (this.hasCapability?.('button.1')) {
             await this.removeCapability('button.1').catch(() => {});
@@ -88,7 +88,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
     // (IntelligentProtocolDetect HYBRID + HomeyCompensationLayer parallel RX/TX)
     await super.onNodeInit({ zclNode });
 
-    this.log('[CLIMATE] ✅ Ready');
+    this.log('[CLIMATE] [OK] Ready');
   }
 
   _manufacturerName() {
@@ -127,7 +127,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
     }
 
     // ZT08 / _TZE284_hodyryli (GH #513): Z2M datapoints
-    // DP1 temp×10, DP2 humidity raw 0-100, DP3 battery_state 0/1/2 → 10/50/100, DP38 probe×10
+    // DP1 temp×10, DP2 humidity raw 0-100, DP3 battery_state 0/1/2 -> 10/50/100, DP38 probe×10
     // TZ-ZT01_GA4 / _TZE284_8se38w3c and its long-name twin _TZE2841000000_8se38w3c
     // (forum 140352#2265, okidoki; DP layout per Z2M tuya.ts TZ-ZT01_GA4): same DP3 battery_state enum.
     if (containsCI(mfr, 'hodyryli') || containsCI(mfr, '8se38w3c')) {
@@ -154,17 +154,17 @@ class ClimateSensorDevice extends UnifiedSensorBase {
    * Main DP handler using v8 libraries
    */
   onTuyaDP(dpId, value, dpType) {
-    this.log(`[CLIMATE] 📥 DP${dpId} = ${value}`);
+    this.log(`[CLIMATE] [IN] DP${dpId} = ${value}`);
 
     const mapping = this.dpMappings[dpId];
     if (mapping) {
       // Dynamic capability addition (e.g. measure_temperature.probe for DP38
-      // external probe, ZY-ZTH03PRO/ZT08) — mirrors UnifiedSensorBase handler
+      // external probe, ZY-ZTH03PRO/ZT08) - mirrors UnifiedSensorBase handler
       // which this method overrides.
       if (mapping.dynamicAdd && mapping.capability && !this.hasCapability(mapping.capability)) {
         this.addCapability(mapping.capability)
-          .then(() => this.log(`[CLIMATE] ✨ DYNAMIC ADD: ${mapping.capability} (from DP${dpId})`))
-          .catch((e) => this.log(`[CLIMATE] ⚠️ Could not add ${mapping.capability}: ${e.message}`));
+          .then(() => this.log(`[CLIMATE] * DYNAMIC ADD: ${mapping.capability} (from DP${dpId})`))
+          .catch((e) => this.log(`[CLIMATE] [WARN] Could not add ${mapping.capability}: ${e.message}`));
       }
       let val;
       if (typeof mapping.transform === 'function') {

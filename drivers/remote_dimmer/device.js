@@ -31,7 +31,7 @@ class RemoteDimmerDevice extends PhysicalButtonMixin(VirtualButtonMixin(TuyaZigb
       this.log('Attribute reporting config failed (device may not support it):', err.message);
     }
 
-    this.log('[RemoteDimmer] Init — Lidl HG06323 / TS1001');
+    this.log('[RemoteDimmer] Init - Lidl HG06323 / TS1001');
 
     try {
       const mfr = this.getSetting('zb_manufacturer_name') || this.getData()?.manufacturerName || '';

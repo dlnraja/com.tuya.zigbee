@@ -19,7 +19,7 @@ class ZigBeeContactSensorDevice extends UnifiedSensorBase {
     if (capability === 'alarm_contact') {
       const finalValue = value;
       // WHY(P2763b): single source of truth DP1 > IAS (lib/sensors/ContactSourceLatch).
-      // latch is complementary — never block the contact path.
+      // latch is complementary - never block the contact path.
       const isIAS = this._iasOriginatedAlarm === true;
       this._iasOriginatedAlarm = false;
       if (!ContactSourceLatch.applyToDevice(this, isIAS, finalValue)) {return;}

@@ -14,7 +14,7 @@ class SceneSwitchWallDevice extends ButtonDevice {
     
     await Promise.resolve().then(() => super.onNodeInit({ zclNode })).catch(err => this.error('[INIT] Error:', err.message));
     
-    this.log('[SCENE_SWITCH_WALL] 🔘 v10.0.0 initialized via ButtonDevice');
+    this.log('[SCENE_SWITCH_WALL] [BTN] v10.0.0 initialized via ButtonDevice');
   }
 
 }

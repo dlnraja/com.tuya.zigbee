@@ -7,8 +7,8 @@ const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
  *
  * P2455 GH#544 (migueleap): wired dual-relay UI must be onoff + onoff.gang2 only.
  * Do NOT expose button.* tiles or spawn devices.secondSwitch sub-devices.
- * Couple: _TZ3000_l9brjwau|_TZ3000_ptjcjise + TS0002 → this driver (ZCL EP1/EP2), not switch_2gang.
- * WHY(P2463 / GH#542): xk5udnd6+TS0012 same — P2397 must not re-add button.N after strip.
+ * Couple: _TZ3000_l9brjwau|_TZ3000_ptjcjise + TS0002 -> this driver (ZCL EP1/EP2), not switch_2gang.
+ * WHY(P2463 / GH#542): xk5udnd6+TS0012 same - P2397 must not re-add button.N after strip.
  */
 class WallSwitch2Gang1WayDevice extends UnifiedSwitchBase {
 
@@ -23,7 +23,7 @@ class WallSwitch2Gang1WayDevice extends UnifiedSwitchBase {
     const { subDeviceId } = (typeof this.getData === 'function' && this.getData()) || {};
     // Legacy sub-device instances (already paired) keep a single onoff tile
     if (subDeviceId) { return ['onoff']; }
-    // WHY(P2455): no button.1/button.2 — wired relays only
+    // WHY(P2455): no button.1/button.2 - wired relays only
     return ['onoff', 'onoff.gang2'];
   }
 
@@ -69,8 +69,8 @@ class WallSwitch2Gang1WayDevice extends UnifiedSwitchBase {
   }
 
   /**
-   * Keep physical press → flow routing for already-paired sub-devices only.
-   * Primary device uses onoff.gang* — no button.* tiles.
+   * Keep physical press -> flow routing for already-paired sub-devices only.
+   * Primary device uses onoff.gang* - no button.* tiles.
    */
   triggerButtonPress(button, type = 'single', countOrOptions = {}, options = {}) {
     if (!this._isSubDevice) {

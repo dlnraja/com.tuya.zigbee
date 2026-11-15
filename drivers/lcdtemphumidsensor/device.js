@@ -19,9 +19,9 @@ const DIRECT_HUMIDITY_MANUFACTURERS = [
  *
  * Couples: TS0201 / TY0201 LCD sensors (ZCL ± EF00 hybrid).
  * WHY P2266 (HACF #38762 / ZHA #2862): `_TZ3000_bjawzodf`+TY0201 Temu round
- *      display — ZCL 0x0402/0x0405 on EP1; needs Tuya magic 0xFFFE (Z2M WSD500A).
+ *      display - ZCL 0x0402/0x0405 on EP1; needs Tuya magic 0xFFFE (Z2M WSD500A).
  * Contre quoi: humidity missing / no entities (same symptom as Neo qaaysllp family).
- * Sibling: `_TZE200_bjawzodf`+TS0601 is EF00 climate — different sacred couple.
+ * Sibling: `_TZE200_bjawzodf`+TS0601 is EF00 climate - different sacred couple.
  */
 class LCDTempHumidSensorDevice extends UnifiedSensorBase {
 
@@ -55,8 +55,8 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
       // Battery
       // v5.12.3: DP 3 battery enum (0=low, 1=med, 2=high)
       // WHY(P2766 / forum 26439 #5524 TH05Z _TZE200_vvmbj46n): the MCU sends both
-      // DP3 battery_state (enum) and DP4 battery (%) — once a real percentage was
-      // seen, the coarse enum must not overwrite it (flip 100% ↔ real %).
+      // DP3 battery_state (enum) and DP4 battery (%) - once a real percentage was
+      // seen, the coarse enum must not overwrite it (flip 100% <-> real %).
       // https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts (ZTH05Z DP3/DP4)
       3: {
         capability: 'measure_battery',
@@ -100,7 +100,7 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
   async onNodeInit({ zclNode }) {
     this._zclNode = zclNode;
 
-    // WHY P2266: Z2M WSD500A / ZHA #2862 — enchant before reporting config
+    // WHY P2266: Z2M WSD500A / ZHA #2862 - enchant before reporting config
     await this._sendLcdMagicPacket(zclNode);
     safeSetTimeout(this, () => {
       this._sendLcdMagicPacket(zclNode).catch(() => {});
@@ -171,7 +171,7 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
 
   /**
    * P3141: couples that reject ZCL configureReporting (exact mfr+pid, case-insensitive).
-   * Unknown pid → only mfr checked, since the mfr is unique to the TY0201 LCD.
+   * Unknown pid -> only mfr checked, since the mfr is unique to the TY0201 LCD.
    */
   static skipsReportingConfig(mfr, pid) {
     const m = String(mfr || '').toLowerCase();
@@ -185,7 +185,7 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
   }
 
   /**
-   * v7.4.6 + P2266: rejoin → re-enchant magic packet (humidity often silent otherwise)
+   * v7.4.6 + P2266: rejoin -> re-enchant magic packet (humidity often silent otherwise)
    */
   async onEndDeviceAnnounce() {
     this.log('[REJOIN] Device announced itself, refreshing state...');

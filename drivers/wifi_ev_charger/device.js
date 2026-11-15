@@ -1,8 +1,8 @@
 'use strict';
 
 /**
- * P2621 / P2641 / P2642 MASTER_ONLY — WiFi EV Charger (Tuya Local).
- * WHY: Dedicated driver for Tuya category qccdz (Vevor/Nine/Aimiler/… rebrands).
+ * P2621 / P2641 / P2642 MASTER_ONLY - WiFi EV Charger (Tuya Local).
+ * WHY: Dedicated driver for Tuya category qccdz (Vevor/Nine/Aimiler/... rebrands).
  * HOW: Core DPs + phase-JSON + charge-history (proven session kWh).
  * AGAINST: wifi_plug; JSON into packed parsers; inventing session from phase e/d.
  *
@@ -110,7 +110,7 @@ class WiFiEvChargerDevice extends TuyaLocalDevice {
       });
       if (!block) {
         if (configured === dp) {
-          this.log(`[WIFI-EV] DP${dp} phase-JSON parse failed — leaving alone`);
+          this.log(`[WIFI-EV] DP${dp} phase-JSON parse failed - leaving alone`);
         }
         continue;
       }
@@ -122,7 +122,7 @@ class WiFiEvChargerDevice extends TuyaLocalDevice {
     for (const [k, v] of Object.entries(dps)) {
       const mapped = mapEvChargerWorkState(v);
       if (mapped && typeof v === 'string' && !String(v).includes('{')) {
-        this.log(`[WIFI-EV] work_state ${v} → ${mapped} (DP${k})`);
+        this.log(`[WIFI-EV] work_state ${v} -> ${mapped} (DP${k})`);
       }
     }
   }
@@ -140,7 +140,7 @@ class WiFiEvChargerDevice extends TuyaLocalDevice {
       ? ''
       : `, ${Math.floor(rec.seconds / 3600)}h ${Math.floor((rec.seconds % 3600) / 60)}m`;
     this.log(`[WIFI-EV] Charge history: ${Math.round(rec.kwh * 100) / 100} kWh${dur}${first ? ' (seed)' : ''}`);
-    // P2647: tuyalocal "Charging session finished" — only on proven new history id
+    // P2647: tuyalocal "Charging session finished" - only on proven new history id
     if (isNewSession && Number.isFinite(rec.kwh) && rec.kwh > 0) {
       try {
         await this.triggerFlowCard('wifi_ev_charger_session_finished', {

@@ -41,7 +41,7 @@ class SmartKnobRotaryDevice extends SmartKnobRotationMixin(TuyaZigbeeDevice) {
       await this.safeSetCapabilityValue('dim', this._simulatedBrightness).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
     }
 
-    // WHY(P2448): command/dimmer mode — levelControl step/move for rotation.
+    // WHY(P2448): command/dimmer mode - levelControl step/move for rotation.
     // Old scene-force wrote 0x8004=1 and killed brightness_step RX.
     await this._enableTS004FOperatingMode(zclNode);
 
@@ -77,14 +77,14 @@ class SmartKnobRotaryDevice extends SmartKnobRotationMixin(TuyaZigbeeDevice) {
   /**
    * WHY(P2448): ERS-10 / ZG-101ZD rotary needs genOnOff 0x8004=command (0) so
    * levelControl step/move frames reach Homey. Prior scene-force (0x8004=1) here and
-   * in DeviceOperatingMode via /smart_knob/ regex — rotation stayed dead.
-   * Also migrate compose default button_mode=scene → dimmer once per device.
+   * in DeviceOperatingMode via /smart_knob/ regex - rotation stayed dead.
+   * Also migrate compose default button_mode=scene -> dimmer once per device.
    */
   async _enableTS004FOperatingMode(zclNode) {
     try {
       const modelId = this.getSetting('zb_model_id') || '';
       if (!CI.containsCI(modelId, 'TS004F') && modelId) { // WHY(P3011): containsCI (was reversed includesCI)
-        // Still apply when model empty (ABSENT wake) — classifier handles it
+        // Still apply when model empty (ABSENT wake) - classifier handles it
       }
 
       const DeviceOperatingMode = require('../../lib/zigbee/DeviceOperatingMode');
@@ -110,20 +110,20 @@ class SmartKnobRotaryDevice extends SmartKnobRotationMixin(TuyaZigbeeDevice) {
       if (ep1 && ep1.clusters[CLUSTER.POWER_CONFIGURATION.NAME]) {
         const powerCluster = ep1.clusters[CLUSTER.POWER_CONFIGURATION.NAME];
 
-        // z2m #8072: DO NOT configureReporting on sleepy TS004x remotes —
+        // z2m #8072: DO NOT configureReporting on sleepy TS004x remotes -
         // it makes them drop off the network hourly ("needs 2 presses",
         // LED flashing, battery drain). Read once + passive reports only.
 
         // Check if UI already has battery or restore from store to preserve CR2032
         const curBatt = this.getCapabilityValue?.('measure_battery');
         if (curBatt != null && curBatt > 0) {
-          this.log('[KNOB] 🔋 Battery already present:', curBatt, '% - skipping readAttributes');
+          this.log('[KNOB] [BAT] Battery already present:', curBatt, '% - skipping readAttributes');
           return;
         }
         const stored = await Promise.resolve(this.getStoreValue?.('last_battery_percentage')).catch(() => null);
         if (stored != null && stored > 0) {
           await this.safeSetCapabilityValue('measure_battery', Number(stored)).catch(() => {});
-          this.log('[KNOB] 🔋 Battery restored from store:', stored, '% - skipping readAttributes');
+          this.log('[KNOB] [BAT] Battery restored from store:', stored, '% - skipping readAttributes');
           return;
         }
 
@@ -317,7 +317,7 @@ class SmartKnobRotaryDevice extends SmartKnobRotationMixin(TuyaZigbeeDevice) {
       const originalHandleFrame = endpoint.handleFrame?.bind(endpoint);
       endpoint.handleFrame = (clusterId, frame, meta) => {
         if (clusterId === 5 || clusterId === 0x0005) {
-          // v10.6.0 FIX: `frame` is a raw Buffer with the full ZCL header —
+          // v10.6.0 FIX: `frame` is a raw Buffer with the full ZCL header -
           // `frame[0]` is the frame CONTROL byte (0x01), never cmdId 0x05,
           // so this listener never fired. Parse the header properly; a scenes
           // recall payload is groupId(uint16) + sceneId(uint8).
@@ -378,7 +378,7 @@ class SmartKnobRotaryDevice extends SmartKnobRotationMixin(TuyaZigbeeDevice) {
     if (this._destroyed) {return;}
     const delta = direction === 'up' ? stepSize / 254 : -(stepSize / 254);
     this._updateSimulatedBrightness(delta);
-    // v10.4.0 (ZHA ts004f): step_size encodes rotation speed — 13 = slow,
+    // v10.4.0 (ZHA ts004f): step_size encodes rotation speed - 13 = slow,
     // 37 = fast. Expose it as a flow token so users can build speed-aware flows.
     this._lastRotationSpeed = stepSize <= 20 ? 'slow' : stepSize >= 30 ? 'fast' : 'normal';
     if (direction === 'up') {
@@ -406,7 +406,7 @@ class SmartKnobRotaryDevice extends SmartKnobRotationMixin(TuyaZigbeeDevice) {
   }
 
   async _triggerRotateLeft() {
-    // Delegate to mixin — also fires press_and_rotate_left when held
+    // Delegate to mixin - also fires press_and_rotate_left when held
     await this._triggerKnobRotateLeft();
   }
 
@@ -415,7 +415,7 @@ class SmartKnobRotaryDevice extends SmartKnobRotationMixin(TuyaZigbeeDevice) {
   }
 
   // WHY(P3143): one physical press can arrive on several paths (onOff toggle cmd, 0xE000
-  // buttonPress, EF00 DP, scenes) — Johan forum 26439 #5526-5537 reported double/extra
+  // buttonPress, EF00 DP, scenes) - Johan forum 26439 #5526-5537 reported double/extra
   // presses on _TZ3000_qja6nq5z/TS004F. Collapse same press class within a short window.
   _isDuplicateKnobPress(action, windowMs = 300) {
     const isSingle = action === 'on' || action === 'off' || action === 'toggle';
@@ -441,7 +441,7 @@ class SmartKnobRotaryDevice extends SmartKnobRotationMixin(TuyaZigbeeDevice) {
       this.homey.setTimeout(() => { if (this._destroyed) {return;} this.safeSetCapabilityValue('button.press', false).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} })); }, 100);
     }
     try {
-      // SDK3: getDeviceTriggerCard(id) only — second arg was a no-op / risk
+      // SDK3: getDeviceTriggerCard(id) only - second arg was a no-op / risk
       const genericTrigger = (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_pressed'); } catch(e) { return null; } })();
       if (genericTrigger) {
         await genericTrigger.trigger(this, { action }).catch(() => {});

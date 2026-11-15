@@ -113,7 +113,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
       '_TZ3000_n2egfsli'
     ].some((_m) => _includesCI([_m], mfr));
 
-    // WHY(P3011): was `[...].some(id => includesCI(mfr, id))` — reversed args, always false.
+    // WHY(P3011): was `[...].some(id => includesCI(mfr, id))` - reversed args, always false.
     // DP-only inverted ids (Z2M ZG-102ZL inverse) now apply; IAS ids stay with AlarmPolarityManager.
     const _pol = resolveContactInvert(mfr, userInvert, userReverse);
     this._invertedByDefault = _pol.invertedByDefault;
@@ -172,7 +172,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
       const finalValue = shouldInvert ? !value : value;
 
       // WHY(P2763b): single source of truth DP1 > IAS (see lib/sensors/ContactSourceLatch).
-      // latch is complementary — never block the contact path.
+      // latch is complementary - never block the contact path.
       if (!ContactSourceLatch.applyToDevice(this, isIAS, finalValue)) {return;}
 
       const now = Date.now();

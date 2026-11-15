@@ -5,24 +5,24 @@ const { installWallSceneRemoteHybrid } = require('../../lib/devices/WallSceneRem
 const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 /**
- * Button1GangDevice — TS0041 / SH-SC07 class (incl. Bastien `_TZ3000_axpdxqgu`).
+ * Button1GangDevice - TS0041 / SH-SC07 class (incl. Bastien `_TZ3000_axpdxqgu`).
  *
- * P2285: force buttonCount=1 (phantom EP2–4 on some siblings).
+ * P2285: force buttonCount=1 (phantom EP2-4 on some siblings).
  * P2609: hybrid RX gap-fill.
  * P2630 Bastien live interview `_TZ3000_axpdxqgu`+TS0041:
  *   EP1 only: basic(0)+power(1)+onOff(6); out ota(25)+time(10)
- *   NO E000(57344) / NO EF00(61184) — never force EF00 TX; never write 0x8004
- *   ZCL batteryPercentageRemaining=200 → 100% (batteryVoltage=30 → 3.0V)
+ *   NO E000(57344) / NO EF00(61184) - never force EF00 TX; never write 0x8004
+ *   ZCL batteryPercentageRemaining=200 -> 100% (batteryVoltage=30 -> 3.0V)
  *   RX: OnOff mfr 0xFD (0/1/2 = single/double/hold) + raw + magic 0xFFDE
  *   Z2M: tuya.fz.on_off_action + configureMagicPacket; ZHA: TuyaSmartRemote0041TO
- * P2638 cross-ref: Z2M#25720 (HA legacy_action_sensor — Homey uses Flow triggers, not sticky action),
+ * P2638 cross-ref: Z2M#25720 (HA legacy_action_sensor - Homey uses Flow triggers, not sticky action),
  *   ZHA gist compujunk remote_button_*_press, SmartHomeScene Moes Star Ring CR2032,
- *   XiaomiGateway3 APS 0xFD00 → button_single. UI "3ch" ≠ productId — still 1 btn.
+ *   XiaomiGateway3 APS 0xFD00 -> button_single. UI "3ch" != productId - still 1 btn.
  */
 class Button1GangDevice extends ButtonDevice {
 
   /**
-   * WHY(P2630): interview-shaped sticky — no EF00/E000, skip 0x8004, battery EP1.
+   * WHY(P2630): interview-shaped sticky - no EF00/E000, skip 0x8004, battery EP1.
    */
   getDeviceProfile() {
     const base = (typeof super.getDeviceProfile === 'function' && super.getDeviceProfile()) || {};
@@ -59,8 +59,8 @@ class Button1GangDevice extends ButtonDevice {
         || zclNode?.modelId
         || this.getData?.()?.productId
         || '';
-      // WHY(P2633/P2639 / HA T455202): Chinese TS0041 often ships TS0044 4-EP firmware —
-      // collapse phantom EP2–4; RX OnOff 0xFD; never treat as 4-gang / never 0x8004.
+      // WHY(P2633/P2639 / HA T455202): Chinese TS0041 often ships TS0044 4-EP firmware -
+      // collapse phantom EP2-4; RX OnOff 0xFD; never treat as 4-gang / never 0x8004.
       // Siblings: adndolvx, itb0omhv (T455202), x7mej5oc (ZHA#1557). axpdxqgu = clean 1-EP interview.
       const phantomClass = containsCI(mfr, 'adndolvx') || containsCI(mfr, 'itb0omhv')
         || containsCI(mfr, 'x7mej5oc');
@@ -97,7 +97,7 @@ class Button1GangDevice extends ButtonDevice {
       }
     } catch (_e) { /* soft */ }
 
-    // WHY(P2316/P2630/P2685): magic once — cooldown inside TuyaMagicPacket (no force storm)
+    // WHY(P2316/P2630/P2685): magic once - cooldown inside TuyaMagicPacket (no force storm)
     try {
       const { sendTuyaMagicPacket } = require('../../lib/zigbee/TuyaMagicPacket');
       sendTuyaMagicPacket(this, zclNode, 1, { force: true }).catch(() => {});
@@ -107,7 +107,7 @@ class Button1GangDevice extends ButtonDevice {
       await installWallSceneRemoteHybrid(this, zclNode, {
         maxButtons: 1,
         tag: 'BUTTON_WIRELESS_1',
-        // Interview has no 0xEF00 / no E000 — listen soft-skips; never TX EF00
+        // Interview has no 0xEF00 / no E000 - listen soft-skips; never TX EF00
         skipEf00Tx: true,
       });
     } catch (e) {
@@ -120,14 +120,14 @@ class Button1GangDevice extends ButtonDevice {
         await this.setEnergy({ batteries: ['CR2450'] }).catch(() => {});
         this.log('[BUTTON_WIRELESS_1] P2470 energy lock CR2450 (SH-SC07)');
       } else if (/axpdxqgu|filhl5b7/i.test(mfr) && typeof this.setEnergy === 'function') {
-        // WHY(P2638): Moes Star Ring / ZT-YK01 class — CR2032 (SmartHomeScene); not CR2450 SH-SC07
+        // WHY(P2638): Moes Star Ring / ZT-YK01 class - CR2032 (SmartHomeScene); not CR2450 SH-SC07
         await this.setEnergy({ batteries: ['CR2032'] }).catch(() => {});
         this.log('[BUTTON_WIRELESS_1] P2638 energy lock CR2032 (Moes Star Ring / axpdxqgu)');
       }
     } catch (_e) { /* soft */ }
 
     try {
-      // WHY(P2684): Unknown/wrong-driver re-pair sometimes leaves no button.1 → Homey Flow
+      // WHY(P2684): Unknown/wrong-driver re-pair sometimes leaves no button.1 -> Homey Flow
       // hides « Bouton 1 appuyé » (device filter driver_id=button_wireless_1 only).
       if (!this.hasCapability('button.1') && typeof this.addCapability === 'function') {
         await this.addCapability('button.1').catch(() => {});
@@ -148,7 +148,7 @@ class Button1GangDevice extends ButtonDevice {
       await applyHomeyButtonUiCharter(this);
     } catch (_e) { /* soft */ }
 
-    // WHY(P2734): complementary non-native soft-arm (raw/0xFD gap — never mandatory)
+    // WHY(P2734): complementary non-native soft-arm (raw/0xFD gap - never mandatory)
     try {
       const { softArmComplementaryIo } = require('../../lib/io/NonNativeComplementary');
       softArmComplementaryIo(this, { zclNode, io: this.io });
