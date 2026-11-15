@@ -907,9 +907,12 @@
       ]
     }
   ],
+  "9.0.1622": {
+    "en": "Fixed: pairing and device recognition. Behind the scenes: tests and publishing checks.",
+    "fr": "Corrigé : appairage et reconnaissance des appareils. En coulisses : tests et contrôles de publication."
+  },
   "9.0.1621": {
-    "en": "Fixed: safety sensors & memory and timers, wall switches & pairing and device recognition and device settings. Plus 2 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : détecteurs de sécurité & mémoire et minuteries, interrupteurs & appairage et reconnaissance des appareils et réglages des appareils. Et 2 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "en": "Fixed: safety sensors & memory and timers, wall switches & pairing and device recognition and device settings. Plus 2 other changes in the app core. Behind the scenes: tests and publishing checks."
   },
   "9.0.1620": {
     "en": "Changed: rename energy_source off the reserved energy_ prefix."
@@ -965,9 +968,5 @@
   "9.0.1600": {
     "en": "Drivers that have no manufacturer list no longer grab every TS0601 device, so those devices land on the right driver at pairing. New: NEO sprinkler family on the smart water valve driver, and a notice when a device reconnects after a long silence.",
     "fr": "Les drivers sans liste de fabricants n'attrapent plus tous les appareils TS0601 : ceux-ci tombent sur le bon driver à l'appairage. Nouveau : famille d'arroseurs NEO sur le driver de vanne connectée, et une notification quand un appareil revient après un long silence."
-  },
-  "9.0.1599": {
-    "en": "Maintenance build: same devices and behaviour as 9.0.1598 (publishing and test tooling only).",
-    "fr": "Version de maintenance : mêmes appareils et même comportement que la 9.0.1598 (outils de publication et de test uniquement)."
   }
 }
