@@ -461,6 +461,8 @@ jobs:
           node "$GITHUB_WORKSPACE/scripts/ci/payload-preflight.cjs" "$PUBLISH_DIR" || { [ "${PAYLOAD_PREFLIGHT:-}" = warn ] || { echo "::error::payload preflight failed (see ERROR lines)"; exit 2; }; }
           # P3262: driver-count ceiling (observed Athom refusal above the last accepted count; fail on this branch).
           node "$GITHUB_WORKSPACE/scripts/ci/driver-count-ceiling-gate.js" "$PUBLISH_DIR" --athom-api || exit 2
+          # P3294: block an empty, truncated or wrong package (exact upload dir; manifest saved as artifact).
+          HOMEY_EXPECTED_VERSION="${HOMEY_EXPECTED_VERSION:-$(node -p "require('$GITHUB_WORKSPACE/app.json').version")}" node "$GITHUB_WORKSPACE/.github/scripts/pre-upload-completeness-guard.js" "$PUBLISH_DIR" || { echo "::error::P3294 pre-upload completeness guard blocked the upload (wrong, empty or incomplete package; see lines above)"; exit 1; }
           run_homey_cli_publish() {
             if [ -x "$GITHUB_WORKSPACE/node_modules/.bin/homey" ]; then
               HOMEY_HEADLESS=1 HOMEY_PAT="$HOMEY_PAT" "$GITHUB_WORKSPACE/node_modules/.bin/homey" app publish --path "$PUBLISH_DIR"
