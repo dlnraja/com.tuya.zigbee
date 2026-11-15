@@ -30,6 +30,23 @@ const crypto = require('crypto');
 const MIN_PAYLOAD_BYTES = 1024 * 1024;        // a real Homey app of this repo is >= 19 MB
 const MIN_ARCHIVE_GZ_BYTES = 256 * 1024;      // smallest accepted archive is ~5 MB gz
 const MAX_DROP = 0.35;                        // > 35 % fewer files/bytes/drivers than the last accepted build
+// P3330 Athom driver-count ceiling (per app id). Evidence (docs/knowledge/athom-driver-ceiling.md):
+// every master upload with 348-361 drivers since the 21/10/2026 incident ended processing_failed /
+// AggregateError (12 of 12), while 347-driver uploads reached Test 6 times (#3682 #3686 #3697 #3701
+// #3702 #3705). An upload above the ceiling is BLOCKED here, before Athom, never retried. The env
+// ATHOM_MAX_UPLOAD_DRIVERS may only LOWER a ceiling (stricter), never raise it: raising needs a reviewed
+// commit that cites a new accepted build. Apps not listed have no ceiling (bastien ships ~27 drivers).
+const DRIVER_CEILING = Object.freeze({
+  'com.dlnraja.tuya.zigbee': 347,
+  // stable never uploaded above 342 (Test #427); master's measured bound is applied as a safety cap.
+  'com.dlnraja.tuya.zigbee.stable': 347,
+});
+function driverCeiling(appId, env = process.env) {
+  const base = DRIVER_CEILING[String(appId || '')];
+  const lower = parseInt(env.ATHOM_MAX_UPLOAD_DRIVERS || '', 10);
+  if (!Number.isFinite(base)) return Number.isFinite(lower) && lower > 0 ? lower : null;
+  return Number.isFinite(lower) && lower > 0 ? Math.min(base, lower) : base;
+}
 const BUILTINS = new Set(require('module').builtinModules.map((m) => m.replace(/^node:/, '')));
 const RUNTIME_PROVIDED = new Set(['homey']); // injected by Homey Pro at runtime, never packed
 // Never part of a Homey package: compose sources (P3281), build/VCS dirs, repo-only trees. The source
@@ -172,7 +189,7 @@ function fetchBaselineManifest(baseline) {
   } catch { return null; }
 }
 
-function check(dir, { appId, expectedVersion, baseline, sourceDir, baselineManifest } = {}) {
+function check(dir, { appId, expectedVersion, baseline, sourceDir, baselineManifest, env = process.env } = {}) {
   const errors = []; const warns = []; const info = {};
   const root = path.resolve(dir || '');
   if (!dir || !fs.existsSync(root) || !fs.statSync(root).isDirectory()) {
@@ -210,6 +227,11 @@ function check(dir, { appId, expectedVersion, baseline, sourceDir, baselineManif
     const drivers = Array.isArray(app.drivers) ? app.drivers : [];
     info.drivers = drivers.length;
     if (!drivers.length) errors.push('app.json has NO drivers');
+    const ceiling = driverCeiling(app.id || appId, env);
+    info.driverCeiling = ceiling;
+    if (ceiling != null && drivers.length > ceiling) {
+      errors.push(`${drivers.length} drivers > Athom ceiling ${ceiling} for ${app.id} (P3330: 348+ driver uploads are refused with AggregateError; hold or fold drivers, see docs/knowledge/athom-driver-ceiling.md)`);
+    }
     const dirs = set.size ? fs.existsSync(path.join(root, 'drivers'))
       ? fs.readdirSync(path.join(root, 'drivers'), { withFileTypes: true }).filter((e) => e.isDirectory() && !e.name.startsWith('.')).map((e) => e.name) : [] : [];
     info.driverFolders = dirs.length;
@@ -315,7 +337,7 @@ if (require.main === module) {
     } catch (e) { console.log(`  WARN could not write manifest: ${e.message}`); }
   }
   if (r.diff) console.log(`[pre-upload-guard] vs accepted v${baselineManifest.version || '?'}: +${r.diff.added.length} / -${r.diff.removed.length} files, ${r.diff.changed.length} changed; drivers +[${r.diff.driversAdded.join(', ')}] -[${r.diff.driversRemoved.join(', ')}]`);
-  console.log(`[pre-upload-guard] ${dir}: v${i.version || '?'} ${i.drivers ?? '?'} drivers / ${i.driverFolders ?? '?'} folders, ${i.files ?? 0} files, ${((i.bytes || 0) / 1048576).toFixed(2)} MB, archive ~${((i.archiveGzBytes || 0) / 1048576).toFixed(2)} MB gz, ${i.jsScanned ?? 0} JS scanned`);
+  console.log(`[pre-upload-guard] ${dir}: v${i.version || '?'} ${i.drivers ?? '?'} drivers / ${i.driverFolders ?? '?'} folders (ceiling ${i.driverCeiling ?? 'none'}), ${i.files ?? 0} files, ${((i.bytes || 0) / 1048576).toFixed(2)} MB, archive ~${((i.archiveGzBytes || 0) / 1048576).toFixed(2)} MB gz, ${i.jsScanned ?? 0} JS scanned`);
   if (!process.env.HOMEY_EXPECTED_VERSION) console.log('[pre-upload-guard] HOMEY_EXPECTED_VERSION not set: version match not checked');
   for (const w of r.warns.slice(0, 20)) console.log(`  WARN ${w}`);
   for (const e of r.errors) console.log(`::error::pre-upload guard: ${e}`);
@@ -326,4 +348,4 @@ if (require.main === module) {
   }
   console.log('[pre-upload-guard] OK: package complete');
 }
-module.exports = { check, requireClosure, loadBaseline, buildManifest, diffManifests, ignoredTopDirs, STRAY_TOP, MAX_DROP, MIN_PAYLOAD_BYTES, MIN_ARCHIVE_GZ_BYTES };
+module.exports = { check, driverCeiling, DRIVER_CEILING, requireClosure, loadBaseline, buildManifest, diffManifests, ignoredTopDirs, STRAY_TOP, MAX_DROP, MIN_PAYLOAD_BYTES, MIN_ARCHIVE_GZ_BYTES };
