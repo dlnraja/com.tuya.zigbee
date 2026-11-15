@@ -192,7 +192,32 @@ class PowerClampMeterDevice extends TuyaZigbeeDevice {
     ];
     // Compare the device manufacturer. The previous test compared the list to
     // itself and always returned pj1203a, including for a real 3-phase meter.
-    return includesCI(pj1203aIds, mfr) ? 'pj1203a' : '3phase';
+    if (includesCI(pj1203aIds, mfr)) { return 'pj1203a'; }
+    // Known 3-phase clamps (Z2M #15359 family). A later PJ-looking DP must not override this.
+    const threePhaseIds = ['_TZE200_nslr42tt', '_TZE204_nslr42tt'];
+    if (includesCI(threePhaseIds, mfr)) { return '3phase'; }
+    // WHY(P3322, diags b3f8c2c6 / b2e9ffe8): no manufacturerName left the clamp on the
+    // 3-phase path forever, so every PJ-1203A burst was decoded as 3-phase + fallback.
+    // Distinctive 2-channel DPs (seen at runtime) lock the learned profile. P3298 still
+    // coalesces the writes; this stops the wrong decoder from running in the first place.
+    if (this._learnedProfile === 'pj1203a' || this._learnedProfile === '3phase') {
+      return this._learnedProfile;
+    }
+    return '3phase';
+  }
+
+  _learnProfileFromDp(dp) {
+    if (this._learnedProfile) { return; }
+    const mfr = this._cachedMfr ||
+                this.getSetting('zb_manufacturer_name') ||
+                this.getStoreValue('manufacturerName') || '';
+    if (mfr) { return; }
+    const n = Number(dp);
+    // 105 / 114 / 115 / 121 / 129 / 104 / 108 / 109 are PJ-1203A-only in this driver.
+    // Do not learn from 101/102 (shared with 3-phase) or 16-22 (3-phase phases).
+    if ([105, 114, 115, 121, 129, 104, 108, 109].includes(n)) {
+      this._learnedProfile = 'pj1203a';
+    }
   }
 
   get dpMappings() {
@@ -250,6 +275,7 @@ class PowerClampMeterDevice extends TuyaZigbeeDevice {
       return;
     }
     if (this._echoDp(dp, value)) {return;}
+    this._learnProfileFromDp(dp);
     const profile = this.meterProfile;
     this._p3298Log(dp, `[DP${dp}] = ${value} (profile: ${profile})`);
 
