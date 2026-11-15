@@ -106,7 +106,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.1623] - 2026-11-15
+## [9.0.1624] - 2026-11-15
+
+Changed: keep the contract - a changed DP value still logs once more before the per-DP log throt....
+---
+
+ [9.0.1623] - 2026-11-15
 
 Reliability: 2 small fixes in the app core. Behind the scenes: tests and publishing checks.
 ---
