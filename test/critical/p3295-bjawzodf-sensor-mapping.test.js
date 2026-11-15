@@ -29,8 +29,14 @@ describe('P3295 bjawzodf temp/humidity sensors are never recommended a fan/switc
       assert.strictEqual(app.drivers.find((d) => d.id === ids[0]).class, 'sensor');
     });
     it(`${mfr} / ${pid}: DriverMappingLoader recommends the manifest driver`, () => {
+      // The loader defers its JSON load under heap pressure (P2674), which the full suite can reach;
+      // the lookup is exercised on the real shipped file, loaded here without that gate.
       const L = require(path.join(ROOT, 'lib/utils/DriverMappingLoader'));
-      const loader = typeof L === 'function' ? new L() : (L.getInstance ? L.getInstance() : L);
+      const Cls = typeof L === 'function' ? L : L.DriverMappingLoader;
+      const loader = new Cls({ skipLoad: true });
+      const db = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/driver-mapping-database.json'), 'utf8'));
+      db.devices = db.devices || db.drivers || {}; db.parsers = db.parsers || {}; db.driver_rules = db.driver_rules || {};
+      loader.database = db; loader.loaded = true;
       assert.strictEqual(loader.getRecommendedDriver(pid, mfr), manifestDriver(mfr, pid)[0]);
     });
   }
