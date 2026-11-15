@@ -4312,6 +4312,10 @@
   "5.12.0": {
     "en": "v5.12.0: stable-v5 batch sync (drivers, FPs, flows, manifest) from master v9.0.240–v9.0.260."
   },
+  "1.0.239": {
+    "en": "Maintenance build: same devices and behaviour as the previous version (publishing and test tooling only).",
+    "fr": "Version de maintenance : mêmes appareils et même comportement que la précédente (outils de publication et de test uniquement)."
+  },
   "1.0.238": {
     "en": "Fixed: general reliability (TS0201), memory and timers, energy meters (TS011F) and pairing and device recognition. Plus 9 other changes in the app core. Behind the scenes: tests and publishing checks.",
     "fr": "Corrigé : fiabilité générale (TS0201), mémoire et minuteries, compteurs d'énergie (TS011F) et appairage et reconnaissance des appareils. Et 9 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
