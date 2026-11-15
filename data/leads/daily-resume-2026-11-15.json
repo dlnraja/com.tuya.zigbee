@@ -1,0 +1,26 @@
+{
+  "date": "2026-11-15",
+  "run": "P3290 daily resume (light run after the failed 2026-11-14 run)",
+  "leads": [
+    {
+      "id": "L-P3290-01",
+      "kind": "rule-violation",
+      "branches": ["master", "stable-v5", "bastien-home"],
+      "file": "lib/protocol/HardwareDetectionShim.js",
+      "summary": "Run from the background step of BaseUnifiedDevice (detectAndCorrect). applyCorrections() can call removeCapability(): measure_battery when the device is judged AC powered, measure_voltage/measure_current on a driver whose id contains 'usb' when the voltage DP was not seen, and the old capability in a rename (onoff.button2 -> onoff.usb2). This contradicts the additive-only / no-capability-loss rule (a thinner interview or a DP not yet reported must never drop a capability).",
+      "proposed_fix": "Make the shim add-only (removals become log-only suggestions), keep the add path, regression test that fails before (capability removed) and passes after.",
+      "when": "master after the P3095 publish hold clears, then stable-v5 and bastien-home",
+      "status": "open"
+    },
+    {
+      "id": "L-P3290-02",
+      "kind": "privacy",
+      "branches": ["master", "stable-v5", "bastien-home"],
+      "file": "lib/pairing/logPairingIdentity.js",
+      "summary": "The [PAIR-ID] log line prints the user's device name and the first 18 characters of the IEEE address. The privacy rule asks to keep device names and IEEE addresses out of logs (or use placeholders). Keep driver, manufacturer name and product id.",
+      "proposed_fix": "Drop the name, replace the IEEE with a short non-reversible hash or a placeholder; test on the log format.",
+      "when": "master after the P3095 publish hold clears, then stable-v5 and bastien-home",
+      "status": "open"
+    }
+  ]
+}
