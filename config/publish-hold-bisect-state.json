@@ -72,5 +72,18 @@
     "43529162521",
     "43620409011",
     "43700362228"
-  ]
+  ],
+  "paused": {
+    "reason": "P3292 owner decision 15/11 13:13 Paris: one diagnostic Draft at a constant 347 drivers (siren_moes_mg_bjq002 in, sound_sensor_tuya out of that payload only). Since 9.0.1602 every AggregateError had 348+ payload drivers and every Test build 347 (docs/knowledge/aggregateerror-isolated-drivers.md), so the pending group of 6 would reach 353 and only be split into false isolations. Held until the owner decides on the swap result.",
+    "at": "2026-11-15T12:18:15.792Z",
+    "by": "P3292",
+    "group": [
+      "switch_wall_6gang_metering",
+      "valve_novato_zpv01",
+      "switch_2gang_ts0002",
+      "energy_meter_3ch_bidirectional",
+      "gpo_double_light_mg_au03",
+      "gpo_double_mg_gpo02z"
+    ]
+  }
 }

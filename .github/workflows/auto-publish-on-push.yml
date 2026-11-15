@@ -59,6 +59,10 @@ on:
         description: 'Manual diagnostic only: release every held real driver into an isolated draft (more than 350). Does not promote Test or Live and does not edit the hold file.'
         type: boolean
         default: false
+      diagnostic_swap_out:
+        description: 'P3292 manual diagnostic only: driver id(s) left out of THIS payload while release_held brings in the same number of held ids (constant driver count). Draft only: no Test/Live promotion, no GitHub release, no P3095 verdict; source and hold file unchanged.'
+        type: string
+        default: ''
 
 permissions:
   contents: write
@@ -77,6 +81,7 @@ env:
   NODE_VERSION: "22"
   PUBLISH_HOLD_RELEASE: ${{ github.event.inputs.release_held || '' }}
   PUBLISH_DIAGNOSTIC_CATALOGUE: ${{ github.event_name == 'workflow_dispatch' && inputs.diagnostic_catalogue == true && '1' || '0' }}
+  PUBLISH_DIAG_SWAP_OUT: ${{ github.event_name == 'workflow_dispatch' && inputs.diagnostic_swap_out || '' }}
   PUBLISH_DIAGNOSTIC_MIN_DRIVERS: ${{ github.event_name == 'workflow_dispatch' && inputs.diagnostic_catalogue == true && '351' || '' }}
   NODE_OPTIONS: "--dns-result-order=ipv4first"
   # P2491: publish bots stay local — no remote AI burn
@@ -604,7 +609,7 @@ jobs:
       # 7. POST-PUBLISH (all continue-on-error)
       # ─────────────────────────────────────────────────────────────
       - name: Create GitHub Release
-        if: steps.check_pat.outputs.has_pat == 'true' && steps.p3036_busy.outputs.go != 'false' && (github.event_name != 'workflow_dispatch' || inputs.diagnostic_catalogue != true)
+        if: steps.check_pat.outputs.has_pat == 'true' && steps.p3036_busy.outputs.go != 'false' && (github.event_name != 'workflow_dispatch' || (inputs.diagnostic_catalogue != true && inputs.diagnostic_swap_out == ''))
         continue-on-error: true
         uses: softprops/action-gh-release@e598afbe1493e6b1bafb1f389cabb956eab91231 # v3.0.3 (node24, P3025b)
         with:
@@ -652,12 +657,12 @@ jobs:
       # WHY(2026-10-11): transient retry moved into the final Athom gate (run 38099611305 decided at
       # 00:51 on an empty state; the failure #3513 landed at 00:58). Decide only on the final state.
       - name: Install Puppeteer (draft → test promotion)
-        if: steps.check_pat.outputs.has_pat == 'true' && needs.breaker.outputs.bisect_hold_promote != 'true' && steps.p3036_busy.outputs.go != 'false' && (github.event_name != 'workflow_dispatch' || inputs.diagnostic_catalogue != true)
+        if: steps.check_pat.outputs.has_pat == 'true' && needs.breaker.outputs.bisect_hold_promote != 'true' && steps.p3036_busy.outputs.go != 'false' && (github.event_name != 'workflow_dispatch' || (inputs.diagnostic_catalogue != true && inputs.diagnostic_swap_out == ''))
         continue-on-error: true
         run: npm install puppeteer athom-api --no-save
 
       - name: "Tier 1: Promote via Browser"
-        if: steps.check_pat.outputs.has_pat == 'true' && steps.waitdraft.outputs.athom_failed != 'true' && needs.breaker.outputs.bisect_hold_promote != 'true' && steps.p3036_busy.outputs.go != 'false' && (github.event_name != 'workflow_dispatch' || inputs.diagnostic_catalogue != true)
+        if: steps.check_pat.outputs.has_pat == 'true' && steps.waitdraft.outputs.athom_failed != 'true' && needs.breaker.outputs.bisect_hold_promote != 'true' && steps.p3036_busy.outputs.go != 'false' && (github.event_name != 'workflow_dispatch' || (inputs.diagnostic_catalogue != true && inputs.diagnostic_swap_out == ''))
         id: promote_puppeteer
         continue-on-error: true
         timeout-minutes: 5
@@ -669,7 +674,7 @@ jobs:
 
       - name: "Tier 2: Promote via OAuth"
         id: promote_oauth
-        if: steps.check_pat.outputs.has_pat == 'true' && steps.promote_puppeteer.outcome != 'success' && steps.waitdraft.outputs.athom_failed != 'true' && needs.breaker.outputs.bisect_hold_promote != 'true' && steps.p3036_busy.outputs.go != 'false' && (github.event_name != 'workflow_dispatch' || inputs.diagnostic_catalogue != true)
+        if: steps.check_pat.outputs.has_pat == 'true' && steps.promote_puppeteer.outcome != 'success' && steps.waitdraft.outputs.athom_failed != 'true' && needs.breaker.outputs.bisect_hold_promote != 'true' && steps.p3036_busy.outputs.go != 'false' && (github.event_name != 'workflow_dispatch' || (inputs.diagnostic_catalogue != true && inputs.diagnostic_swap_out == ''))
         continue-on-error: true
         timeout-minutes: 5
         env:
@@ -681,7 +686,7 @@ jobs:
 
       - name: "Tier 3: Promote via PAT API"
         id: promote_api
-        if: steps.check_pat.outputs.has_pat == 'true' && steps.promote_puppeteer.outcome != 'success' && steps.promote_oauth.outcome != 'success' && steps.waitdraft.outputs.athom_failed != 'true' && needs.breaker.outputs.bisect_hold_promote != 'true' && steps.p3036_busy.outputs.go != 'false' && (github.event_name != 'workflow_dispatch' || inputs.diagnostic_catalogue != true)
+        if: steps.check_pat.outputs.has_pat == 'true' && steps.promote_puppeteer.outcome != 'success' && steps.promote_oauth.outcome != 'success' && steps.waitdraft.outputs.athom_failed != 'true' && needs.breaker.outputs.bisect_hold_promote != 'true' && steps.p3036_busy.outputs.go != 'false' && (github.event_name != 'workflow_dispatch' || (inputs.diagnostic_catalogue != true && inputs.diagnostic_swap_out == ''))
         continue-on-error: true
         timeout-minutes: 5
         env:
@@ -689,7 +694,7 @@ jobs:
         run: node .github/scripts/auto-publish-draft.js
 
       - name: Record diagnostic draft
-        if: github.event_name == 'workflow_dispatch' && inputs.diagnostic_catalogue == true
+        if: github.event_name == 'workflow_dispatch' && (inputs.diagnostic_catalogue == true || inputs.diagnostic_swap_out != '')
         run: |
           echo "### Diagnostic catalogue" >> "$GITHUB_STEP_SUMMARY"
           echo "Uploaded channel: draft. Test promotion: skipped. Live promotion: skipped." >> "$GITHUB_STEP_SUMMARY"
@@ -711,7 +716,7 @@ jobs:
 
       - name: Verify draft promotion result
         id: verify_test
-        if: steps.check_pat.outputs.has_pat == 'true' && (github.event_name != 'workflow_dispatch' || inputs.diagnostic_catalogue != true)
+        if: steps.check_pat.outputs.has_pat == 'true' && (github.event_name != 'workflow_dispatch' || (inputs.diagnostic_catalogue != true && inputs.diagnostic_swap_out == ''))
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
           # P2325: soft-continue when Athom hang + healthy Test (do not fail-closed/bump-loop)
@@ -943,7 +948,7 @@ jobs:
           kind=$(printf '%s' "$final_out" | node .github/scripts/athom-retry-policy.js classify 2>/dev/null || echo unknown)
           if [ "$final_rc" -eq 0 ] && ! printf '%s' "$final_out" | grep -q 'SOFT-EXPECT'; then
             node .github/scripts/publish-size-telemetry.js record test
-            [ -n "${PUBLISH_HOLD_RELEASE:-}" ] && mkdir -p p3095-outcome && printf '{"outcome":"test","released":"%s","version":"%s","run":"%s"}\n' "$PUBLISH_HOLD_RELEASE" "${HOMEY_EXPECTED_VERSION:-}" "$GITHUB_RUN_ID" > p3095-outcome/outcome.json
+            [ -n "${PUBLISH_HOLD_RELEASE:-}" ] && [ -z "${PUBLISH_DIAG_SWAP_OUT:-}" ] && mkdir -p p3095-outcome && printf '{"outcome":"test","released":"%s","version":"%s","run":"%s"}\n' "$PUBLISH_HOLD_RELEASE" "${HOMEY_EXPECTED_VERSION:-}" "$GITHUB_RUN_ID" > p3095-outcome/outcome.json
             exit 0
           fi
           # Final state known and not Test: retry decision (P3036: one transient retry, backoff >= 300 s + jitter).
@@ -960,10 +965,11 @@ jobs:
             # WHY(P2893, 19/10/2026): carry release_held so the flake check retries the SAME content.
             # SPI one-shot 39281159242 (#3630 AggregateError) retried WITHOUT the held driver (#3631 Test),
             # which tells nothing about the held driver (bisect needs same-content flip).
-            .github/scripts/gh-retry.sh gh workflow run auto-publish-on-push.yml --ref "${GITHUB_REF_NAME}" -f transient_retry="${next:-1}" -f release_held="${PUBLISH_HOLD_RELEASE:-}" || true
+            .github/scripts/gh-retry.sh gh workflow run auto-publish-on-push.yml --ref "${GITHUB_REF_NAME}" -f transient_retry="${next:-1}" -f release_held="${PUBLISH_HOLD_RELEASE:-}" -f diagnostic_swap_out="${PUBLISH_DIAG_SWAP_OUT:-}" || true
           fi
           # P3095: hand the verdict of a release_held upload to publish-hold-bisect.yml (workflow_run).
-          if [ -n "${PUBLISH_HOLD_RELEASE:-}" ]; then
+          # P3292: a diagnostic swap Draft is judged by hand, never by the bisect.
+          if [ -n "${PUBLISH_HOLD_RELEASE:-}" ] && [ -z "${PUBLISH_DIAG_SWAP_OUT:-}" ]; then
             v=other
             if [ "$final_rc" -eq 0 ] && ! printf '%s' "$final_out" | grep -q 'SOFT-EXPECT'; then v=test
             elif [ "$kind" = "AggregateError" ] && ! printf '%s' "$out" | grep -q '^\[transient-retry\] RETRY'; then v=AggregateError; fi

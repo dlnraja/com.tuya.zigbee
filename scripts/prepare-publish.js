@@ -724,9 +724,11 @@ try {
     if (fs.existsSync(holdFile)) {
       const hold = JSON.parse(fs.readFileSync(holdFile, 'utf8'));
       // P2830c: one-shot release of held ids (workflow_dispatch input release_held → PUBLISH_HOLD_RELEASE).
-      const { effectiveHoldIds, resolveReleaseValue } = require('./publish-hold-release');
-      const { ids, released } = effectiveHoldIds(hold, resolveReleaseValue(hold));
+      const { effectiveHoldIds, resolveReleaseValue, resolveSwap } = require('./publish-hold-release');
+      const swap = resolveSwap(hold); // P3292: throws on an invalid swap (fail closed)
+      const { ids, released } = effectiveHoldIds(hold, resolveReleaseValue(hold), swap.join(','));
       if (released.length) console.log(`[publish-hold] RELEASED for this run only: ${released.join(', ')}`);
+      if (swap.length) console.log(`[P3292] diagnostic swap: ${swap.join(', ')} left out of this Draft payload only (source unchanged)`);
       if (ids.size > 0) {
         const manifest = JSON.parse(fs.readFileSync(destAppJson, 'utf8'));
         const before = (manifest.drivers || []).length;
@@ -769,7 +771,13 @@ try {
     const { loadPublishBaseline } = require('./maintenance/compact-zigbee-identifiers.cjs');
     const baseline = loadPublishBaseline(path.join(__dirname, '..'));
     if (!baseline) throw new Error('baseline couples file missing (test/fixtures/athom-last-test-package-couples.json)');
-    const r = checkBaseline(JSON.parse(fs.readFileSync(destAppJson, 'utf8')), baseline);
+    let swappedOut = new Set();
+    try {
+      const hf = path.join(__dirname, '..', 'config', 'publish-hold-drivers.json');
+      swappedOut = new Set(require('./publish-hold-release').resolveSwap(fs.existsSync(hf) ? readJson(hf) : { drivers: [] }));
+    } catch (_) { /* an invalid swap already failed step 5a2 */ }
+    const r = checkBaseline(JSON.parse(fs.readFileSync(destAppJson, 'utf8')), baseline, { swappedOut });
+    if (r.swappedOut) console.log(`[P3024b] ${r.swappedOut} couple(s) of the swapped-out driver(s) [${[...swappedOut].join(', ')}] are absent from this diagnostic Draft only`);
     if (r.missing.length) {
       console.error(`FATAL(P3024b): ${r.missing.length}/${r.total} couple(s) of Test package ${baseline.version} would disappear from the payload:`);
       for (const m of r.missing.slice(0, 20)) console.error(`  - ${m}`);
