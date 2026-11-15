@@ -281,6 +281,13 @@ test('port: branch publish workflows gate every upload (green CI + spacing + bus
     assert.match(s, /retry="\$\{ATHOM_RETRY_USED:-0\}"/);
     assert.match(s, /\[ "\$retry" -ge "\$MAXR" \] && break/);
     assert.match(s, /athom-orphan-build\.js decide true "\$ORPHAN_DONE"/);
+    // ... at most ONE orphan bump/re-upload (budget 1 in the shared helper, second orphan breaks) ...
+    assert.match(s, /ORPHAN_DONE=0/);
+    assert.match(s, /\[ "\$\{ODEC%% \*\}" != "REUPLOAD" \]; then[\s\S]{0,200}?break/);
+    assert.equal(require('../../.github/scripts/athom-orphan-build.js').MAX_ORPHAN_REUPLOADS, 1);
+    // ... and every re-upload (orphan or transient) is a strictly higher version: the same-version guard stays.
+    assert.ok((s.match(/refusing non-increasing version \$NEWV/g) || []).length >= 2);
+    assert.match(fs.readFileSync(path.join(ROOT, 'scripts/direct-api-publish.js'), 'utf8'), /SAME-VERSION GUARD/);
     assert.match(s, /athom-deferred-stable-/);
   }
   const b = W('bastien-publish.yml');
