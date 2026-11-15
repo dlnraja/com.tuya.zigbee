@@ -13,9 +13,17 @@ const ROOT = path.join(__dirname, '..');
 
 describe('P3092 P52 sync locks', () => {
   it('keeps _TZE204_z7a2jmyy on climate_sensor when master routes it to water_valve_smart', () => {
+    // Fixture compose: the lock is judged against a stable compose that still lists the maker on
+    // climate_sensor (the 31/10 state). Since 9c7b835f29 the real stable compose pairs the NEO valve on
+    // water_valve_smart, so reading ROOT would test today's routing instead of the lock.
+    const r = fs.mkdtempSync(path.join(os.tmpdir(), 'p52-lock-'));
+    for (const [d, m] of [['climate_sensor', ['_TZE204_z7a2jmyy']], ['water_valve_smart', []]]) {
+      fs.mkdirSync(path.join(r, 'drivers', d), { recursive: true });
+      fs.writeFileSync(path.join(r, 'drivers', d, 'driver.compose.json'), JSON.stringify({ zigbee: { manufacturerName: m } }));
+    }
     const before = { _TZE204_z7a2jmyy: { driverId: 'climate_sensor' } };
     const after = { _TZE204_z7a2jmyy: { driverId: 'water_valve_smart' }, _NEW: { driverId: 'x' } };
-    const kept = applyLocks(ROOT, before, after);
+    const kept = applyLocks(r, before, after);
     assert.strictEqual(after._TZE204_z7a2jmyy.driverId, 'climate_sensor');
     assert.strictEqual(kept.length, 1);
     assert.ok(after._NEW, 'additive: new keys stay');
