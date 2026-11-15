@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-15T08:24:06.830Z",
+ "updated": "2026-11-15T13:16:50.796Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -96,6 +96,15 @@
    "date": "2026-10-31",
    "note": "attempt 1/3 (24h) run 41227184890: bot bump 2584efaf51 re-added HOBEIAN forms on sensor_contact_zigbee (p61 re-inject) and 'sonoff' on curtain_sonoff_mini_zbrbs (case variants); P3089 couple-locks make both scripts honour P3077 moves and exact-identity drivers; compose + app.json regenerated",
    "by": "homey-ci-autofix"
+  },
+  "autofix:node22-tests.yml|mocha|p3024-hold-test-vs-p3095-graduation": {
+   "status": "done",
+   "date": "2026-11-14",
+   "by": "homey-ci-prs",
+   "note": "attempt 1/3 (24h) run 43625439147: P3095 bisect step 974a684314 graduated sauna_thermostat_ae5503 after Test 9.0.1621; p3024 test still required every P3024 id held. Test now accepts ids listed in athom-publish-outcomes.jsonl p3095.accepted (state test/ok); hold config untouched.",
+   "signature": "node22-tests.yml|Full suite on Node 22|p3024 the P3024 group is held: sauna_thermostat_ae5503",
+   "attempts24h": 1,
+   "failingRun": "43625439147"
   },
   "autofix:node22-tests.yml|yaml-parse|unquoted-colon-step-name": {
    "status": "done",
@@ -7448,6 +7457,15 @@
    "kind": "general",
    "mailDate": "2026-10-25T12:57:04.000Z"
   },
+  "diag:23f2d20bb93b5ad9": {
+   "status": "done",
+   "date": "2026-11-15",
+   "hash": "ad8ee3eb9b572350",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-11-15T12:06:11.000Z"
+  },
   "diag:2439c3bcdfb8620f": {
    "status": "done",
    "date": "2026-10-21",
@@ -8026,6 +8044,15 @@
    "by": "tuya-deep-diag",
    "kind": "general",
    "mailDate": "2026-10-18T22:49:34.000Z"
+  },
+  "diag:346a6689cdb73f87": {
+   "status": "done",
+   "date": "2026-11-15",
+   "hash": "1f2551d499192a13",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-11-15T12:15:45.000Z"
   },
   "diag:3508b93895f5a4da": {
    "status": "done",
@@ -8665,6 +8692,15 @@
    "by": "fetch-diags",
    "kind": "github",
    "mailDate": "2026-11-01T05:19:23.000Z"
+  },
+  "diag:4c1163a8a2ecdf9a": {
+   "status": "done",
+   "date": "2026-11-15",
+   "hash": "ec175ee94a7dcef9",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-11-13T23:48:51.000Z"
   },
   "diag:4c3e40f30250a3a9": {
    "status": "done",
@@ -10365,6 +10401,15 @@
    "kind": "general",
    "mailDate": "2026-10-18T23:04:59.000Z"
   },
+  "diag:8364a74cb04f13b8": {
+   "status": "done",
+   "date": "2026-11-15",
+   "hash": "69d4f4f238991f72",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-11-15T12:15:37.000Z"
+  },
   "diag:8419a35734f9e773": {
    "status": "done",
    "date": "2026-10-25",
@@ -10583,6 +10628,15 @@
    "by": "tuya-deep-diag",
    "kind": "general",
    "mailDate": "2026-10-19T00:08:07.000Z"
+  },
+  "diag:8a26a3c082a981c9": {
+   "status": "done",
+   "date": "2026-11-15",
+   "hash": "fe5c2e8c5f52d2cf",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-11-15T09:59:31.000Z"
   },
   "diag:8a2cb2a7121adbd1": {
    "status": "done",
@@ -11260,6 +11314,15 @@
    "kind": "general",
    "mailDate": "2026-10-19T07:42:39.000Z"
   },
+  "diag:9ea6bab0d260cb02": {
+   "status": "done",
+   "date": "2026-11-15",
+   "hash": "84af82620b1b80f6",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-11-15T12:15:50.000Z"
+  },
   "diag:9ed4caa1bcc218ff": {
    "status": "done",
    "date": "2026-10-24",
@@ -11909,6 +11972,15 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-10-27T00:16:54.000Z"
+  },
+  "diag:b304fc83ec7b2865": {
+   "status": "done",
+   "date": "2026-11-15",
+   "hash": "a63fd1a3d71d0912",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-11-13T23:48:37.000Z"
   },
   "diag:b3644e22354bdddd": {
    "status": "done",
@@ -12659,6 +12731,15 @@
    "kind": "github",
    "mailDate": "2026-10-28T12:38:33.000Z"
   },
+  "diag:cc1e7680e9ce26d3": {
+   "status": "done",
+   "date": "2026-11-15",
+   "hash": "fc314903b49c9ca5",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-11-13T23:50:40.000Z"
+  },
   "diag:cc3d5356b92e6f6a": {
    "status": "done",
    "date": "2026-11-02",
@@ -12767,6 +12848,16 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-11-08T07:14:25.000Z"
+  },
+  "diag:d12e044c403170ea": {
+   "status": "pending",
+   "date": "2026-11-15",
+   "hash": "4bc01e6775cf89c3",
+   "note": "bug_report mail; 1 error line(s)",
+   "by": "gmail-diagnostics",
+   "kind": "bug_report",
+   "mailDate": "2026-11-15T09:59:43.000Z",
+   "errors": 1
   },
   "diag:d205b6d3f1a8f7d4": {
    "status": "pending",
@@ -46545,15 +46636,6 @@
     "leadsAdded": 0
    },
    "lastChangeRun": "43601237982"
-  },
-  "autofix:node22-tests.yml|mocha|p3024-hold-test-vs-p3095-graduation": {
-   "status": "done",
-   "date": "2026-11-14",
-   "by": "homey-ci-prs",
-   "note": "attempt 1/3 (24h) run 43625439147: P3095 bisect step 974a684314 graduated sauna_thermostat_ae5503 after Test 9.0.1621; p3024 test still required every P3024 id held. Test now accepts ids listed in athom-publish-outcomes.jsonl p3095.accepted (state test/ok); hold config untouched.",
-   "signature": "node22-tests.yml|Full suite on Node 22|p3024 the P3024 group is held: sauna_thermostat_ae5503",
-   "attempts24h": 1,
-   "failingRun": "43625439147"
   }
  }
 }
