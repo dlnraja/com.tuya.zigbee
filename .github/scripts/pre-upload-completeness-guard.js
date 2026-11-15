@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 'use strict';
-// P3294 pre-upload completeness guard. Byte-identical on master, stable-v5 and bastien-home.
+// P3310 pre-upload completeness guard. Byte-identical on master, stable-v5 and bastien-home.
 //
 // WHY: an empty, truncated or half-copied publish directory must never reach Athom. Athom answers a
 // broken package with processing_failed / AggregateError and no error body, so the only place a missing
@@ -162,7 +162,7 @@ function fetchBaselineManifest(baseline) {
   if (!baseline || !baseline.run || !(process.env.GH_TOKEN || process.env.GITHUB_TOKEN)) return null;
   const { execFileSync } = require('child_process');
   const os = require('os');
-  const dest = fs.mkdtempSync(path.join(os.tmpdir(), 'p3294-base-'));
+  const dest = fs.mkdtempSync(path.join(os.tmpdir(), 'p3310-base-'));
   const name = baseline.artifact || `publish-size-telemetry-${baseline.run}-1`;
   try {
     execFileSync('gh', ['run', 'download', String(baseline.run), '-n', name, '-D', dest, ...(process.env.GITHUB_REPOSITORY ? ['-R', process.env.GITHUB_REPOSITORY] : [])],
@@ -321,7 +321,7 @@ if (require.main === module) {
   for (const e of r.errors) console.log(`::error::pre-upload guard: ${e}`);
   if (r.errors.length) {
     console.log(`[pre-upload-guard] BLOCKED: ${r.errors.length} problem(s); the package is NOT uploaded (no retry: fix the build).`);
-    if (process.env.GITHUB_STEP_SUMMARY) { try { fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, `### Upload blocked by the pre-upload completeness guard (P3294)\n${r.errors.slice(0, 20).map((e) => `- ${e}`).join('\n')}\n`); } catch { /* summary is best effort */ } }
+    if (process.env.GITHUB_STEP_SUMMARY) { try { fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, `### Upload blocked by the pre-upload completeness guard (P3310)\n${r.errors.slice(0, 20).map((e) => `- ${e}`).join('\n')}\n`); } catch { /* summary is best effort */ } }
     process.exit(1);
   }
   console.log('[pre-upload-guard] OK: package complete');

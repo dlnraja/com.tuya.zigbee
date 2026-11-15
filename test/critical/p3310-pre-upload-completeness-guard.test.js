@@ -1,6 +1,6 @@
 'use strict';
 /**
- * P3294 — pre-upload completeness guard (user 15/11/2026: never upload an empty or incomplete app).
+ * P3310 — pre-upload completeness guard (user 15/11/2026: never upload an empty or incomplete app).
  * A valid fake package passes; empty, truncated, stale-version, missing-module, zero-byte and
  * sudden-drop packages are blocked. Every publish path calls the guard on the exact upload dir.
  */
@@ -21,7 +21,7 @@ function w(root, rel, data) { const f = path.join(root, rel); fs.mkdirSync(path.
 // Random bytes do not compress, so the fake reaches the absolute size floors with few files.
 function blob(n) { return crypto.randomBytes(n); }
 function makeValid({ drivers = ['d_one', 'd_two', 'd_three'], version = '1.2.3' } = {}) {
-  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'p3294-'));
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'p3310-'));
   tmp.push(root);
   const app = { id: 'com.example.fake', version, images: { small: '/assets/images/small.png' }, drivers: drivers.map((id) => ({ id, images: { small: `/drivers/${id}/assets/images/small.png`, large: `/drivers/${id}/assets/images/large.png` } })) };
   w(root, 'app.json', JSON.stringify(app));
@@ -42,18 +42,18 @@ function makeValid({ drivers = ['d_one', 'd_two', 'd_three'], version = '1.2.3' 
 }
 const errs = (root, opts = {}) => check(root, { appId: 'com.example.fake', ...opts }).errors;
 
-describe('P3294 pre-upload completeness guard', () => {
+describe('P3310 pre-upload completeness guard', () => {
   after(() => { for (const d of tmp) fs.rmSync(d, { recursive: true, force: true }); });
 
   it('a complete package passes (CLI exit 0) with the expected version and a matching baseline', () => {
     const root = makeValid();
     assert.deepEqual(errs(root, { expectedVersion: '1.2.3', baseline: { version: '1.2.2', payload_files: 16, drivers: 3 } }), []);
-    const out = execFileSync(process.execPath, [GUARD, root, 'com.example.fake'], { env: { ...process.env, HOMEY_EXPECTED_VERSION: '1.2.3', PUBLISH_BASELINE_FILE: path.join(root, 'none.json'), PUBLISH_SOURCE_DIR: root, PUBLISH_MANIFEST_OUT: path.join(root, '..', `p3294-ok-${process.pid}.json`), GH_TOKEN: '', GITHUB_TOKEN: '' }, encoding: 'utf8' });
+    const out = execFileSync(process.execPath, [GUARD, root, 'com.example.fake'], { env: { ...process.env, HOMEY_EXPECTED_VERSION: '1.2.3', PUBLISH_BASELINE_FILE: path.join(root, 'none.json'), PUBLISH_SOURCE_DIR: root, PUBLISH_MANIFEST_OUT: path.join(root, '..', `p3310-ok-${process.pid}.json`), GH_TOKEN: '', GITHUB_TOKEN: '' }, encoding: 'utf8' });
     assert.match(out, /OK: package complete/);
   });
 
   it('an empty or missing directory is blocked (CLI exit 1)', () => {
-    const empty = fs.mkdtempSync(path.join(os.tmpdir(), 'p3294-empty-')); tmp.push(empty);
+    const empty = fs.mkdtempSync(path.join(os.tmpdir(), 'p3310-empty-')); tmp.push(empty);
     assert.match(errs(empty).join('\n'), /EMPTY/);
     assert.match(errs(path.join(empty, 'nope')).join('\n'), /publish directory missing/);
     let code = 0;
@@ -143,7 +143,7 @@ describe('P3294 pre-upload completeness guard', () => {
 
   it('the CLI writes the manifest artifact even when it blocks', () => {
     const a = makeValid(); fs.rmSync(path.join(a, 'app.js'));
-    const out = path.join(a, '..', `p3294-manifest-${process.pid}.json`); tmp.push(out);
+    const out = path.join(a, '..', `p3310-manifest-${process.pid}.json`); tmp.push(out);
     let code = 0;
     try { execFileSync(process.execPath, [GUARD, a, 'com.example.fake'], { stdio: 'pipe', env: { ...process.env, PUBLISH_MANIFEST_OUT: out, PUBLISH_SOURCE_DIR: a, GH_TOKEN: '', GITHUB_TOKEN: '' } }); } catch (e) { code = e.status; }
     assert.equal(code, 1);
