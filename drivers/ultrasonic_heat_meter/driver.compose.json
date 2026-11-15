@@ -71,8 +71,7 @@
   },
   "images": {
     "small": "/drivers/ultrasonic_heat_meter/assets/images/small.png",
-    "large": "/drivers/ultrasonic_heat_meter/assets/images/large.png",
-    "xlarge": "/drivers/ultrasonic_heat_meter/assets/images/xlarge.png"
+    "large": "/drivers/ultrasonic_heat_meter/assets/images/large.png"
   },
   "platforms": [
     "local"

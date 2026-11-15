@@ -60,8 +60,7 @@
   },
   "images": {
     "small": "/drivers/ultrasonic_water_meter/assets/images/small.png",
-    "large": "/drivers/ultrasonic_water_meter/assets/images/large.png",
-    "xlarge": "/drivers/ultrasonic_water_meter/assets/images/xlarge.png"
+    "large": "/drivers/ultrasonic_water_meter/assets/images/large.png"
   },
   "platforms": [
     "local"
