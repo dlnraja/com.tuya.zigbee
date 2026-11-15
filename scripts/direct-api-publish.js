@@ -518,6 +518,22 @@ async function main() {
   const env = readEnv();
   log(`Changelog (en): ${changelog.en.slice(0, 80)}${changelog.en.length > 80 ? '…' : ''}`);
 
+  // P3294: never createBuild for an empty, truncated or wrong package. Covers every direct path (fallback,
+  // --force, orphan re-upload, manual run); packDirectory() packs every non-dot file, so a stray repo tree
+  // would ship. Same rules as the workflow guard step; blocking, no retry.
+  {
+    const guardPath = path.join(REPO_ROOT, '.github', 'scripts', 'pre-upload-completeness-guard.js');
+    if (fs.existsSync(guardPath)) {
+      const { check } = require(guardPath);
+      const g = check(APP_ROOT, { appId: APP_ID, expectedVersion: process.env.HOMEY_EXPECTED_VERSION || '', sourceDir: process.env.PUBLISH_SOURCE_DIR || REPO_ROOT });
+      if (g.errors.length) {
+        for (const e of g.errors) err(`P3294 pre-upload guard: ${e}`);
+        err('P3294: upload blocked (wrong, empty or incomplete package); not calling createBuild.');
+        process.exit(1);
+      }
+      log(`P3294 pre-upload guard OK: ${g.info.drivers} drivers, ${g.info.files} files`);
+    }
+  }
   log(`Creating new build for ${APP_ID}@${APP_VERSION}...`);
   // IMPORTANT: AthomAppsAPI maps each named param by its `in` (path/query/body)
   // in the spec. The CLI passes version/changelog/env/readme FLAT (not nested
