@@ -625,6 +625,38 @@
    "ref": "v26.131.0",
    "title": "v26.131.0",
    "url": "https://github.com/Koenkk/zigbee-herdsman-converters/releases/tag/v26.131.0"
+  },
+  {
+   "at": "2026-11-15T12:40:45.359Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "490d101f48",
+   "title": "fix: Tuya Nuos A7Z: hide unsupported switch type button option (#13814)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/490d101f487f412a59e7771a9bcba7a906cb2133"
+  },
+  {
+   "at": "2026-11-15T12:40:45.359Z",
+   "source": "tuya-local",
+   "kind": "commit",
+   "ref": "4a4238484a",
+   "title": "Add EKAZA EKAV-T229Z Zigbee door lock (#5536)",
+   "url": "https://github.com/make-all/tuya-local/commit/4a4238484a840a82277df29d6e10aa76725d2b70"
+  },
+  {
+   "at": "2026-11-15T12:40:45.359Z",
+   "source": "tuya-local",
+   "kind": "commit",
+   "ref": "cf1f04ab9c",
+   "title": "feat(devices): add Beok TCC31 thermostat",
+   "url": "https://github.com/make-all/tuya-local/commit/cf1f04ab9c37a6aa74d94cbe15effa70e9b4a8ec"
+  },
+  {
+   "at": "2026-11-15T12:40:45.359Z",
+   "source": "tuya-local",
+   "kind": "commit",
+   "ref": "cb165e2963",
+   "title": "deps(tinytuya): upgrade tinytuya to 1.21.1",
+   "url": "https://github.com/make-all/tuya-local/commit/cb165e29635f87cd874e20cb30b19dac56a394cc"
   }
  ]
 }
