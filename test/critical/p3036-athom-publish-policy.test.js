@@ -276,7 +276,11 @@ test('port: branch publish workflows gate every upload (green CI + spacing + bus
     assert.match(s, /app_id: com\.dlnraja\.tuya\.zigbee\.stable/);
     assert.match(s, /athom-publish-policy\.js" fallback/);
     assert.match(s, /ATHOM_RETRY_USED=1/);
-    assert.match(s, /seq "\$\{ATHOM_RETRY_USED:-0\}" "\$MAXR"/);
+    // P3293: the loop counter still starts at the in-run fallback count and stops at the policy max;
+    // the orphan waiting_for_files path has its own single re-upload (ORPHAN_DONE).
+    assert.match(s, /retry="\$\{ATHOM_RETRY_USED:-0\}"/);
+    assert.match(s, /\[ "\$retry" -ge "\$MAXR" \] && break/);
+    assert.match(s, /athom-orphan-build\.js decide true "\$ORPHAN_DONE"/);
     assert.match(s, /athom-deferred-stable-/);
   }
   const b = W('bastien-publish.yml');
