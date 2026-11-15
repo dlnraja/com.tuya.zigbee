@@ -17,6 +17,22 @@ const ROOT = path.join(__dirname, '..', '..');
 const hold = JSON.parse(fs.readFileSync(path.join(ROOT, 'config', 'publish-hold-drivers.json'), 'utf8'));
 const base = JSON.parse(fs.readFileSync(path.join(ROOT, 'test', 'fixtures', 'athom-test-9.0.1574-driver-ids.json'), 'utf8'));
 const published = new Set(base.ids);
+// P3095 bisect: an id that a Test build accepted is removed from the hold on purpose (outcomes.jsonl).
+function bisectAcceptedIds() {
+  const f = path.join(ROOT, 'docs', 'knowledge', 'athom-publish-outcomes.jsonl');
+  const out = new Set();
+  if (!fs.existsSync(f)) {return out;}
+  for (const line of fs.readFileSync(f, 'utf8').split('\n')) {
+    if (!line.trim()) {continue;}
+    let r;
+    try { r = JSON.parse(line); } catch (e) { continue; }
+    if (r && r.state === 'test' && r.kind === 'ok' && r.p3095 && Array.isArray(r.p3095.accepted)) {
+      for (const id of r.p3095.accepted) {out.add(id);}
+    }
+  }
+  return out;
+}
+const bisectAccepted = bisectAcceptedIds();
 const P3024 = ['heiman_keyfob', 'heiman_siren', 'presence_radar_aoyan_ay204t', 'sauna_thermostat_ae5503',
   'siren_moes_mg_bjq002', 'switch_2gang_ts0002', 'switch_wall_6gang_metering', 'valve_novato_zpv01',
   'water_leak_blitzwolf_bw_is9', 'water_leak_aoyan_ay222z']; // #3698 put ay222z back on hold
@@ -40,9 +56,20 @@ describe('P3024 publish hold of never-published master driver ids', () => {
     const other = new Set([...Object.keys(hold._graduated || {}), ...Object.keys(hold._folded || {})]);
     assert.deepStrictEqual(hold.drivers.map((e) => e.id).filter((id) => other.has(id)), []);
   });
+  it('only Test-accepted ids leave the hold (P3095 graduation, e.g. sauna_thermostat_ae5503 in 9.0.1621)', () => {
+    const fake = { drivers: hold.drivers.filter((e) => e.id !== 'heiman_keyfob') };
+    const { ids } = effectiveHoldIds(fake, '');
+    assert.ok(!ids.has('heiman_keyfob'));
+    assert.ok(!bisectAccepted.has('heiman_keyfob'), 'heiman_keyfob is isolated, never accepted');
+    for (const id of bisectAccepted) {assert.ok(typeof id === 'string' && id.length > 3, id);}
+  });
   it('the P3024 group is held, and release_held frees one id only', () => {
     const { ids } = effectiveHoldIds(hold, '');
-    for (const id of P3024) if (fs.existsSync(path.join(ROOT, 'drivers', id))) assert.ok(ids.has(id), id);
+    for (const id of P3024) {
+      if (!fs.existsSync(path.join(ROOT, 'drivers', id))) {continue;}
+      // Held, or graduated by a P3095 bisect step after Athom accepted it in Test. Nothing else may drop it.
+      assert.ok(ids.has(id) || bisectAccepted.has(id), `${id} left the hold without a Test acceptance`);
+    }
     const r = effectiveHoldIds(hold, 'heiman_siren');
     assert.deepStrictEqual(r.released, ['heiman_siren']);
     assert.ok(!r.ids.has('heiman_siren') && r.ids.has('heiman_keyfob'));

@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-14T13:47:42.121Z",
+ "updated": "2026-11-15T08:24:06.830Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -46517,8 +46517,8 @@
   },
   "workflow-run:fleet-intelligent-enrich": {
    "status": "done",
-   "date": "2026-11-14",
-   "hash": "050fcf8fa31cde0b",
+   "date": "2026-11-15",
+   "hash": "edb3001db85210e8",
    "note": "run summary: 10 counter(s)",
    "by": "fleet-intelligent-enrich",
    "counts": {
@@ -46527,13 +46527,13 @@
     "baseline.mfrEntries": 18743,
     "baseline.pidEntries": 3269,
     "final.driverCount": 476,
-    "final.mfrEntries": 18745,
+    "final.mfrEntries": 18751,
     "final.pidEntries": 3269,
     "delta.drivers": 0,
-    "delta.mfrs": 2,
+    "delta.mfrs": 8,
     "delta.pids": 0
    },
-   "lastChangeRun": "43573354835"
+   "lastChangeRun": "43693878378"
   },
   "workflow-run:repo-autopilot": {
    "status": "done",
@@ -46550,6 +46550,15 @@
     "leadsAdded": 0
    },
    "lastChangeRun": "43601237982"
+  },
+  "autofix:node22-tests.yml|mocha|p3024-hold-test-vs-p3095-graduation": {
+   "status": "done",
+   "date": "2026-11-14",
+   "by": "homey-ci-prs",
+   "note": "attempt 1/3 (24h) run 43625439147: P3095 bisect step 974a684314 graduated sauna_thermostat_ae5503 after Test 9.0.1621; p3024 test still required every P3024 id held. Test now accepts ids listed in athom-publish-outcomes.jsonl p3095.accepted (state test/ok); hold config untouched.",
+   "signature": "node22-tests.yml|Full suite on Node 22|p3024 the P3024 group is held: sauna_thermostat_ae5503",
+   "attempts24h": 1,
+   "failingRun": "43625439147"
   }
  }
 }
