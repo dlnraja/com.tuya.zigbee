@@ -50,6 +50,9 @@ Sources: `publish-size-telemetry-<run>` artifacts (`current.json`, field `driver
 - Every AggregateError in this period has a payload of 348 drivers or more (11 of 11).
 - Every accepted build has exactly 347 (4 of 4). The two 347-driver failures are a different error
   (`socket hang up`).
+- Correction (P3330, 15/11 evening): #3706 (9.0.1625, 347 drivers, nothing released) was refused with
+  AggregateError right after #3705 (9.0.1624, 347) was accepted, with a near-identical package. 347 is
+  the edge, not a guaranteed pass; 348+ is still 0 accepted. See athom-driver-ceiling.md.
 - 9.0.1618 refused blitzwolf + sauna together (348); each was accepted alone at 347 (9.0.1620, 9.0.1621).
   That is a property of the set size, not of either driver.
 - 9.0.1621 swapped one never-published driver for another at a constant 347 and passed, so a change

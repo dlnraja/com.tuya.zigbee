@@ -188,3 +188,11 @@ The Auto-Fix doctrine (P139: no bump loops while an older Test is healthy) is un
   carries the canonical form, the shipped form is pinned as fallback (no new row). Opt-out: `HOMEY_PUBLISH_BASELINE_FULL=1`.
   Master pins 14282 → 7028; replay: 19943 combos, 1928 source-backed couples restored, strong 1876/3126 in payload
   (P3201 alone: 1444), parasite ratio 0.258, the 13 tracked couples (kb-compaction-losses + #584/#581/#598) present.
+
+## P3330 (2026-11-15 Paris): driver-count ceiling enforced
+
+348+ uploaded drivers: refused 12/12 (AggregateError). 347: accepted 6 times, refused once (#3706) with a
+package that differs from accepted #3705 only by version strings and 2.7 KB of JS. The pre-upload guard
+now blocks any upload above 347 drivers (master and stable); held drivers ship their couples through
+`lib/drivers/held-driver-folds.json` instead of new ids. Evidence and fold list:
+docs/knowledge/athom-driver-ceiling.md.
