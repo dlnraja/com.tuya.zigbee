@@ -529,7 +529,8 @@ class PowerClampMeterDevice extends TuyaZigbeeDevice {
   }
 
   _p3298Log(key, msg) {
-    if (!this.__p3298t) { this.__p3298t = new KeyedLogThrottle(); }
+    // burst 2: a changed value still logs once more (P3276 contract), then the key is muted for the window.
+    if (!this.__p3298t) { this.__p3298t = new KeyedLogThrottle({ burst: 2 }); }
     const line = this.__p3298t.line(String(key), msg);
     if (line) { this.log(line); }
   }
