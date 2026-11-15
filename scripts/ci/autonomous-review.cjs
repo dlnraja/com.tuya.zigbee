@@ -115,7 +115,8 @@ function reviewCouples({ before, after, sources }) {
   const moved = [];
   for (const [key, rows] of next) {
     if (rows.length > 1) {
-      problems.push(`couple ${key} is in ${rows.length} drivers: ${rows.map((r) => r.driverId).join(', ')}`);
+      // P3323: sorted ids so a historical duplicate matches whatever order drivers were loaded in
+      problems.push(`couple ${key} is in ${rows.length} drivers: ${rows.map((r) => r.driverId).sort().join(', ')}`);
     }
   }
   for (const [key, rows] of prev) {
