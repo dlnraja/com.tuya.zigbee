@@ -167,7 +167,7 @@ jobs:
     needs: p3036-gate
     if: needs.p3036-gate.outputs.go == 'true'
     runs-on: ubuntu-latest
-    timeout-minutes: 75  # idle wait (≤25) + publish + draft + final gate (≤15), like master 516c83444c
+    timeout-minutes: 95  # idle wait (≤25) + publish + draft + final gate (≤15), like master 516c83444c; P3311 +20 for the 2nd transport retry
     permissions:
       contents: write  # P2915: version write-back commit only
     steps:
@@ -414,7 +414,7 @@ jobs:
         id: reupload
         if: steps.wait_draft.outputs.draft_ok == 'false' && steps.publish_bastien.outcome == 'success'
         continue-on-error: true
-        timeout-minutes: 45
+        timeout-minutes: 65  # P3311: up to 2 transport retries, backoff 5 + 15 min, each with a rebuild
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
           APP_ID: ${{ env.EXPECTED_APP_ID }}
