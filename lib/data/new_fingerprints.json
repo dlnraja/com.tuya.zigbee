@@ -118,8 +118,8 @@
   },
   {
     "manufacturerName": "_TZE200_zl1kmjqx",
-    "driverId": "climate_sensor",
-    "type": "climate_sensor",
+    "driverId": "lcdtemphumidsensor_3",
+    "type": "lcdtemphumidsensor_3",
     "powerSource": "battery",
     "modelIds": [
       "TS0601"
