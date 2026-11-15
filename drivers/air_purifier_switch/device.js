@@ -99,7 +99,7 @@ class Switch1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
   /**
    * Les cartes flow de ce driver sont préfixées « air_purifier_switch_1gang_ »
    * alors que PhysicalButtonMixin construit les IDs depuis this.driver.id
-   * (« air_purifier_switch »). Remap pour aligner code et cartes — fournit
+   * (« air_purifier_switch »). Remap pour aligner code et cartes - fournit
    * notamment les tokens duration/clicks/action des cartes physical_* et
    * gang1_scene.
    */

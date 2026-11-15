@@ -152,15 +152,15 @@ class IRRemoteDevice extends TuyaZigbeeDevice {
     }
     // v10.8.0 (z2m ZS06 lesson): a spammed IR blaster can enter a transmit
     // loop that kills the whole Zigbee network until reboot. Throttle IR
-    // sends to 1 per 500ms and serialize concurrent requests — a flow storm
+    // sends to 1 per 500ms and serialize concurrent requests - a flow storm
     // can no longer flood the device.
     const now = Date.now();
     if (now - (this._lastIRSend || 0) < 500) {
-      this.log('[IR-TX] 🛡️ Send throttled (anti-flood 500ms)');
+      this.log('[IR-TX] [GUARD] Send throttled (anti-flood 500ms)');
       return false;
     }
     if (this._pendingSend) {
-      this.log('[IR-TX] 🛡️ Send already in progress — dropping concurrent request');
+      this.log('[IR-TX] [GUARD] Send already in progress - dropping concurrent request');
       return false;
     }
     this._lastIRSend = now;
@@ -268,7 +268,7 @@ class IRRemoteDevice extends TuyaZigbeeDevice {
       this._learnTimeout = safeSetTimeout(this, async () => {
         if (this._destroyed) {return;}
         if (this._learnBuffer) {
-          this.log('[IR-RX] Learn timeout — stopping study mode');
+          this.log('[IR-RX] Learn timeout - stopping study mode');
           const rej = this._learnBuffer.reject;
           this._learnBuffer = null;
           await this._stopLearnMode().catch(() => {});

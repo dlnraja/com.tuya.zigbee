@@ -15,7 +15,7 @@ const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
  * 
  * ManufacturerName: _TZE204_nvxorhcj, etc.
  * ProductId: TS0601
- * WHY(P2395/B10): no Physical/Virtual double-wrap — already on TuyaZigbeeDevice.
+ * WHY(P2395/B10): no Physical/Virtual double-wrap - already on TuyaZigbeeDevice.
  */
 const ZCL_ONLY_MANUFACTURERS_8G = [
   '_TZ3000_blhvsaqf', '_TZ3000_ysdv91bk', '_TZ3000_hafsqare'

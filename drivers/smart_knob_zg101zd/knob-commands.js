@@ -36,7 +36,7 @@ function speedOf(stepSize) {
 
 /**
  * Decode one received command. Returns { action, mode, stepSize? } or null for frames we ignore.
- * action ∈ press | double_press | hold | release | rotate_left | rotate_right | press_rotate_left | press_rotate_right
+ * action in press | double_press | hold | release | rotate_left | rotate_right | press_rotate_left | press_rotate_right
  */
 function decodeKnobCommand(clusterId, cmdId, data) {
   const b = toBuf(data);

@@ -19,7 +19,7 @@ const {
  *                                                                                
  *   NOTE: BSEED devices should use wall_switch_1gang_1way driver instead       
  *   (PR #118 by packetninja/Attilla)
- *   WHY(P2395/B10): no Physical/Virtual double-wrap — already on TuyaZigbeeDevice.
+ *   WHY(P2395/B10): no Physical/Virtual double-wrap - already on TuyaZigbeeDevice.
  * 
  */
 class Switch1GangDevice extends UnifiedSwitchBase {
@@ -48,7 +48,7 @@ class Switch1GangDevice extends UnifiedSwitchBase {
   }
 
   async onNodeInit({ zclNode }) {
-    // WHY(P2663): calm electrical reporting — minInterval 10 flooded Bastien mesh
+    // WHY(P2663): calm electrical reporting - minInterval 10 flooded Bastien mesh
     if (!shouldSkipElectricalReporting(this)) {
       try {
         const ok = await configureReportingSoft(

@@ -50,3 +50,7 @@ Routing proof is `docs/rules/APP_DIAGNOSTIC_ROUTING.md`. The running build is st
 The crashing parse is not named. Nothing here is a release. This tree is the bastien-home port. The Athom crash aggregate of 0 is not a result. P3264 stays out.
 
 Test: `test/critical/p3265-bastien-json-oom-sleepy-battery.test.js`.
+
+## Follow-up (P3320, 2026-11-15)
+
+Shipped JS is now Latin-1 at the source (no raw char > U+00FF); unreferenced package images are removed. Standing rule and fail-closed gate: `docs/rules/SHIPPED_JS_LATIN1.md`.

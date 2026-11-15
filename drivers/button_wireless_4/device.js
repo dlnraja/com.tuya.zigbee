@@ -262,7 +262,7 @@ class Button4GangDevice extends ButtonDevice {
       }
 
       if (dpId === undefined) {
-        // v10.1.3: VERBOSE fallback — unparseable Tuya frame, log raw shape
+        // v10.1.3: VERBOSE fallback - unparseable Tuya frame, log raw shape
         this._logUnrecognizedFrame(1, 0xEF00, { cmdId: 'tuya-dp-unparsed' },
           Buffer.isBuffer(data) ? data : Buffer.from(JSON.stringify(data).slice(0, 64)));
         return;
@@ -274,7 +274,7 @@ class Button4GangDevice extends ButtonDevice {
         this.log(`[DP-4G] DP${dpId} value=${value} -> Button ${dpId} ${pressType.toUpperCase()}`);
         this._triggerButton4Gang(dpId, pressType);
       } else {
-        // v10.1.3: VERBOSE fallback — DP outside 1-4 (unknown variant)
+        // v10.1.3: VERBOSE fallback - DP outside 1-4 (unknown variant)
         this._logUnrecognizedFrame(1, 0xEF00, { cmdId: `dp${dpId}` },
           Buffer.from([dpId, Number(value) & 0xFF]));
       }
@@ -293,7 +293,7 @@ class Button4GangDevice extends ButtonDevice {
    */
   async _setupRawFrameInterceptor(zclNode) {
     try {
-      // WHY(P2328): never blind-assign node.handleFrame — orphans PhysicalButtonMixin
+      // WHY(P2328): never blind-assign node.handleFrame - orphans PhysicalButtonMixin
       // physical-onoff-fd / IO wrap chain and double-fires 0xFD. Same pattern as scene_switch_4.
       const node = zclNode || this.zclNode;
       if (!node || typeof node.handleFrame !== 'function') {return;}
@@ -396,7 +396,7 @@ class Button4GangDevice extends ButtonDevice {
       return;
     }
 
-    // Fallback: declared compose IDs only (P2331 — no invent `*_button_4gang_button_release`)
+    // Fallback: declared compose IDs only (P2331 - no invent `*_button_4gang_button_release`)
     try {
       const driverId = this.driver?.id || 'button_wireless_4';
       const candidates = type === 'release'
@@ -460,7 +460,7 @@ class Button4GangDevice extends ButtonDevice {
       // Prevent unbounded growth of the throttle map
       const keys = Object.keys(this._unrecFrameLog);
       if (keys.length > 64) {delete this._unrecFrameLog[keys[0]];}
-      this.log(`[BUTTON-4-UNRECOGNIZED] EP${ep} cluster=0x${Number(clusterId).toString(16)} cmd=${cmdId} data=${hex} — please send this line with a diagnostic report`);
+      this.log(`[BUTTON-4-UNRECOGNIZED] EP${ep} cluster=0x${Number(clusterId).toString(16)} cmd=${cmdId} data=${hex} - please send this line with a diagnostic report`);
     } catch (e) { /* never break frame handling */ }
   }
 

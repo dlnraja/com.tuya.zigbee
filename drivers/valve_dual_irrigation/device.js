@@ -12,7 +12,7 @@ const {
  *       DUAL IRRIGATION VALVE - Unified Engine Protocol
  *
  *   Supports: _TZE284_fhvpaltk, _TZE284_eaet5qt5 (Insoma Two-Way)
- *   Interview: [0,4,5,61184] EF00-only — never require OnOff(6) (Joep #2218 / P2468/P2473)
+ *   Interview: [0,4,5,61184] EF00-only - never require OnOff(6) (Joep #2218 / P2468/P2473)
  *   DPs: 1=V1 ON/OFF, 2=V2 ON/OFF, 13=Countdown1, 14=Countdown2,
  *        25=Duration1, 26=Duration2, 59=Battery, 104=Status1, 105=Status2
  *   TX: max EF00/raw fallback cascade (same class as Moes ZTS P2467)
@@ -148,16 +148,16 @@ class ValveDualIrrigationDevice extends BaseUnifiedDevice {
   }
 
   async onNodeInit({ zclNode }) {
-    // WHY(P2473 / Joep #2218): interview [0,4,5,61184] — force pure EF00 before hybrid
+    // WHY(P2473 / Joep #2218): interview [0,4,5,61184] - force pure EF00 before hybrid
     // can prefer hollow OnOff(6) and leave TX dead / pairing Unknown.
     if (this._isInsomaEf00Only()) {
       forcePureTuyaDp(this, { force: true });
-      this.log('[VALVE-2] P2473 EF00-only interview — pure Tuya DP (no ZCL OnOff)');
+      this.log('[VALVE-2] P2473 EF00-only interview - pure Tuya DP (no ZCL OnOff)');
     }
 
     await super.onNodeInit({ zclNode });
 
-    // Re-arm EF00 BoundCluster + raw listen (Moes P2467: create ≠ initialize)
+    // Re-arm EF00 BoundCluster + raw listen (Moes P2467: create != initialize)
     try {
       const mgr = this.tuyaEF00Manager || this._tuyaEF00Manager;
       if (mgr && zclNode && typeof mgr.initialize === 'function') {
@@ -210,7 +210,7 @@ class ValveDualIrrigationDevice extends BaseUnifiedDevice {
     if (typeof this.hasCapability === 'function' && this.hasCapability('button.1')) {
       this.registerCapabilityListener('button.1', async () => {
         if (this._destroyed) {return false;}
-        this.log('[VALVE-2] button.1 pressed — pulse valve 1');
+        this.log('[VALVE-2] button.1 pressed - pulse valve 1');
         await this._sendValveDP(1, 'onoff.valve_1', true);
         if (typeof this.safeSetCapabilityValue === 'function') {
           await this.safeSetCapabilityValue('button.1', true).catch(() => {});
@@ -244,7 +244,7 @@ class ValveDualIrrigationDevice extends BaseUnifiedDevice {
     // fire-and-forget without error (TuyaEF00Manager.sendDP resolves
     // undefined on the raw-send path). A transport failure rejects the
     // promise instead. Treating undefined as failure made every valve
-    // command throw "not_sent" even when the valve actuated — Joep's
+    // command throw "not_sent" even when the valve actuated - Joep's
     // "right actions but isn't working" (forum #2102/#2105).
     if (result === false) {return false;}
     if (result && typeof result === 'object') {
@@ -253,7 +253,7 @@ class ValveDualIrrigationDevice extends BaseUnifiedDevice {
     return true;
   }
 
-  // WHY(P2473): max EF00/raw/PFC cascade — never depend on ZCL OnOff(6)
+  // WHY(P2473): max EF00/raw/PFC cascade - never depend on ZCL OnOff(6)
   async sendDP(dp, value, type = 'bool') {
     try {
       return await sendEf00DpMaxFallback(this, dp, value, type);

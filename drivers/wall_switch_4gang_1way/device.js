@@ -8,8 +8,8 @@ const ManufacturerNameHelper = require('../../lib/helpers/ManufacturerNameHelper
  * v9.7.3: Migrated to unified mixin architecture with sub-device support.
  * Each gang can be a separate Homey device (Sub-device architecture).
  * v10.3.0 FIX (B10): Removed the redundant PhysicalButtonMixin + VirtualButtonMixin double wrap
- * double wrap — UnifiedSwitchBase already inherits both via TuyaZigbeeDevice.
- * v10.6.1 FIX (forum #2099): initPhysicalButtonDetection() was never called —
+ * double wrap - UnifiedSwitchBase already inherits both via TuyaZigbeeDevice.
+ * v10.6.1 FIX (forum #2099): initPhysicalButtonDetection() was never called -
  * UnifiedSwitchBase.onNodeInit does not chain to TuyaZigbeeDevice.onNodeInit
  * (the only automatic caller), so _physicalButtonState stayed undefined and
  * every physical-press flow (physical_gangN_on/off, gangN_scene) was dead for
@@ -61,7 +61,7 @@ class WallSwitch4Gang1WayDevice extends UnifiedSwitchBase {
         this._gangNumber = 1;
       }
       this._isSubDevice = Boolean(subDeviceId);
-      // P2322: Gabriel/HomeSuite NovaDigital 4G touch — force ZCL-only (ignore leftover EF00)
+      // P2322: Gabriel/HomeSuite NovaDigital 4G touch - force ZCL-only (ignore leftover EF00)
       this._isPureTuyaDP = false;
       if (this._protocolInfo) {
         this._protocolInfo.protocol = 'zcl_only';
@@ -71,7 +71,7 @@ class WallSwitch4Gang1WayDevice extends UnifiedSwitchBase {
       this.log(`[WALL-4G] Initializing ${this._gangNumber > 1 ? 'Sub' : 'Primary'} Device (Gang ${this._gangNumber})`);
       await super.onNodeInit({ zclNode });
       await this._setupPzaoSceneInterceptor();
-      // v10.6.1 FIX (forum #2099): never called before — physical button flows were dead
+      // v10.6.1 FIX (forum #2099): never called before - physical button flows were dead
       if (typeof this.initPhysicalButtonDetection === 'function') {
         await this.initPhysicalButtonDetection(zclNode);
       }
@@ -79,7 +79,7 @@ class WallSwitch4Gang1WayDevice extends UnifiedSwitchBase {
       if (typeof this._registerButtonCapabilityListeners === 'function') {
         this._registerButtonCapabilityListeners();
       }
-      // P2322: HomeSuite — re-apply backlight/power-on after pair (settings win over dump)
+      // P2322: HomeSuite - re-apply backlight/power-on after pair (settings win over dump)
       if (typeof this._pushConfiguredSwitchSettings === 'function' && !this._isSubDevice) {
         await this._pushConfiguredSwitchSettings('p2322-pair').catch(() => {});
       }
@@ -90,7 +90,7 @@ class WallSwitch4Gang1WayDevice extends UnifiedSwitchBase {
   /**
    * Filter physical button triggers to only process the gang assigned to this device.
    * v10.3.0 FIX (B10): the primary instance now filters too when sub-devices
-   * are paired — previously it processed every gang, double-triggering flows
+   * are paired - previously it processed every gang, double-triggering flows
    * alongside the owning sub-device.
    */
   triggerButtonPress(button, type = 'single', countOrOptions = {}, options = {}) {
@@ -109,7 +109,7 @@ class WallSwitch4Gang1WayDevice extends UnifiedSwitchBase {
 
   /**
    * v10.3.0 FIX (B10): True when sibling sub-devices (e.g. 'secondSwitch')
-   * are paired — the primary device must then ignore their gangs.
+   * are paired - the primary device must then ignore their gangs.
    */
   _hasPairedSubDevices() {
     try {
@@ -137,7 +137,7 @@ class WallSwitch4Gang1WayDevice extends UnifiedSwitchBase {
       const wrapper = async (...args) => {
         const [endpointId, clusterId, frame] = args;
         try {
-          // v10.6.0 FIX: `frame` is a raw Buffer with the FULL ZCL header —
+          // v10.6.0 FIX: `frame` is a raw Buffer with the FULL ZCL header -
           // `frame.cmdId`/`json.cmdId` are undefined on Buffers, so this
           // interceptor NEVER matched (dead since introduction). Parse the
           // header properly (handles the manufacturer-specific 5-byte form).

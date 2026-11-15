@@ -72,6 +72,18 @@ Modern Tuya devices (TZE284 series) require precise timing responses:
 
 ---
 
+### 8. Shipped JavaScript Latin-1 and package images (P3320)
+
+Shipped JS (everything not excluded by `.homeyignore`) must contain no raw character above U+00FF.
+Replace decorative emoji and typographic symbols with ASCII (`[OK]`, `[WARN]`, `[ERR]`, `->`, `-`)
+or `\uXXXX` escapes when the exact character is required. Accented Latin-1 (`é`, `à`) stays.
+Do not change meaning in `locales/*.json` or compose/app titles. Do not ship unreferenced or heavy
+logos or images; keep Athom-required `small` / `large` / `xlarge` and manifest-referenced icons.
+Enforced fail-closed by `tools/ci/p3320-shipped-latin1-assets-gate.js` (rules-gates id `p3320-latin1`,
+core profile / pre-push). See `docs/rules/SHIPPED_JS_LATIN1.md`.
+
+---
+
 ##  Sources for Device Research
 
 1. **Zigbee2MQTT**: https://www.zigbee2mqtt.io/supported-devices/

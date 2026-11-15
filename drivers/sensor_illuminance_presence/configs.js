@@ -2,9 +2,9 @@
 
 const { containsCI, normalize } = require('../../lib/utils/CaseInsensitiveMatcher');
 
-// ═══════════════════════════════════════════════════════════════════════════════
+// ===============================================================================
 // v5.5.793: VALIDATION CONSTANTS - Centralized thresholds for data validation
-// ═══════════════════════════════════════════════════════════════════════════════
+// ===============================================================================
 const VALIDATION = {
   BATTERY_MIN: 0,
   BATTERY_MAX: 100,
@@ -15,9 +15,9 @@ const VALIDATION = {
   DISTANCE_MAX: 10,          // Most radar sensors have 0-10m range
 };
 
-// ═══════════════════════════════════════════════════════════════════════════════
+// ===============================================================================
 // SENSOR CONFIGURATIONS - Massive radar/presence database
-// ═══════════════════════════════════════════════════════════════════════════════
+// ===============================================================================
 const SENSOR_CONFIGS = {
   'ZG_204ZV_MULTISENSOR': {
     sensors: [
@@ -113,7 +113,7 @@ const SENSOR_CONFIGS = {
       '_TZE204_mtoaryre', '_TZE200_mp902om5',
       '_TZE204_pfayrzcw', '_TZE284_4qznlkbu',
       '_TZE200_sbyx0lm6',
-      // P202: _TZE204/200/284_clrdrnya sacred couple → presence_sensor_radar only (GH #420)
+      // P202: _TZE204/200/284_clrdrnya sacred couple -> presence_sensor_radar only (GH #420)
     ],
     battery: false,
     mainsPowered: true,

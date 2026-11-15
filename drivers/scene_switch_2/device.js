@@ -4,7 +4,7 @@ const ButtonDevice = require('../../lib/devices/ButtonDevice');
 const { installWallSceneRemoteHybrid } = require('../../lib/devices/WallSceneRemoteHybridInit');
 
 /**
- * SceneSwitch2Device — 2-btn scene remote
+ * SceneSwitch2Device - 2-btn scene remote
  * P2609: hybrid RX fleet
  */
 class SceneSwitch2Device extends ButtonDevice {

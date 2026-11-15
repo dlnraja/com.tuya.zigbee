@@ -25,7 +25,7 @@ describe('P2599 VicHY #2252 OCR distance units + phantom strip', () => {
     assert.ok(src.includes('_ensureDistanceUnitsString'));
     assert.ok(src.includes('_sanitizeCorruptDistanceTile'));
     assert.ok(src.includes('_armMtgTileSanitizeBurst'));
-    assert.ok(src.includes('distance units → "m"'));
+    assert.ok(src.includes('distance units -> "m"') || src.includes('distance units → "m"'));
   });
 
   it('mains phantom heal strips zones + temperature + battery low', () => {

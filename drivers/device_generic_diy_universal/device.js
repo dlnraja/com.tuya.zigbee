@@ -21,7 +21,7 @@ class GenericDiyUniversalDevice extends TuyaSpecificClusterDevice {
       this.registerTuyaDatapoint(Number(dp), capability, { scale: divisor });
     }
 
-    // v9.0.416 (P92.124): instantiate the DIY bridge — its capabilities
+    // v9.0.416 (P92.124): instantiate the DIY bridge - its capabilities
     // (tuya_dp_value/string/raw/cluster_event) were declared but dead.
     try {
       const TuyaUniversalBridge = require('../../lib/TuyaUniversalBridge');

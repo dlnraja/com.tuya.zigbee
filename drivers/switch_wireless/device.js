@@ -16,7 +16,7 @@ class SwitchWirelessDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifie
       this.buttonCount = 1;
       await super.onNodeInit({ zclNode });
       await this.initVirtualButtons();
-      this.log('[WIRELESS-SWITCH] ✅ Universal initialization complete');
+      this.log('[WIRELESS-SWITCH] [OK] Universal initialization complete');
     }, 'onNodeInit');
   }
 

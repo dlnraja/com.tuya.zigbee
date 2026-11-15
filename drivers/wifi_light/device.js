@@ -77,7 +77,7 @@ class WiFiLightDevice extends TuyaLocalDevice {
     const saturation = this.getCapabilityValue('light_saturation');
     const value = this.getCapabilityValue('dim');
     // Modern encoding: "HHHHSSSSVVVV" (hex, H=0-360, S=0-1000, V=0-1000);
-    // older firmwares expect the 14-char encoding — reuse whatever the device reported.
+    // older firmwares expect the 14-char encoding - reuse whatever the device reported.
     const format = this._colorFormat === 'v1' ? 'v1' : 'v2';
     const color = encodeColor({
       hue,

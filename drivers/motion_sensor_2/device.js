@@ -7,7 +7,7 @@ const SleepyInit = require('../../lib/utils/SleepyDeviceInit');
 
 Cluster.addCluster(TuyaSpecificCluster);
 
-// P115: TuyaZigbeeDevice already includes Physical+Virtual button mixins — do not re-wrap.
+// P115: TuyaZigbeeDevice already includes Physical+Virtual button mixins - do not re-wrap.
 class motion_sensor_2 extends TuyaZigbeeDevice {
 
   async onNodeInit({ zclNode }) {
@@ -124,7 +124,7 @@ class motion_sensor_2 extends TuyaZigbeeDevice {
     try {
       await super.onDeleted();
     } catch (err) {
-      // Ignore — parent may not have onDeleted
+      // Ignore - parent may not have onDeleted
     }
   }
 

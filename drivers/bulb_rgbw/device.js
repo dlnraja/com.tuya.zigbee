@@ -4,15 +4,15 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const LightBase = require('../../lib/devices/UnifiedLightBase');
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      RGBW/RGBCCT BULB - v5.5.129 FIXED (extends LightBase properly)   ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║ LightBase handles: onoff, dim, light_temperature listeners           ║
- * ║  This class EXTENDS with: light_hue, light_saturation, light_mode, HSV      ║
- * ║  DPs: 1=switch, 2=mode, 3=brightness, 4=color temp, 5=HSV                   ║
- * ║  ZCL: 0x0006 On/Off, 0x0008 Level, 0x0300 Color Control                     ║
- * ║  Models: TS0505B, TS0504B, _TZ3210_*, _TZ3000_*                              ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * +==============================================================================+
+ * |      RGBW/RGBCCT BULB - v5.5.129 FIXED (extends LightBase properly)   |
+ * +==============================================================================+
+ * | LightBase handles: onoff, dim, light_temperature listeners           |
+ * |  This class EXTENDS with: light_hue, light_saturation, light_mode, HSV      |
+ * |  DPs: 1=switch, 2=mode, 3=brightness, 4=color temp, 5=HSV                   |
+ * |  ZCL: 0x0006 On/Off, 0x0008 Level, 0x0300 Color Control                     |
+ * |  Models: TS0505B, TS0504B, _TZ3210_*, _TZ3000_*                              |
+ * +==============================================================================+
  */
 class RGBWBulbDevice extends PhysicalButtonMixin(VirtualButtonMixin(LightBase)) {
 
@@ -65,7 +65,7 @@ class RGBWBulbDevice extends PhysicalButtonMixin(VirtualButtonMixin(LightBase)) 
       this.log('[RGBW] v5.5.129 - DPs: 1-7,21,24-26 | ZCL: 6,8,300,EF00');
       await this._setupColorCluster(zclNode);
       this._setupRGBWListeners();
-      this.log('[RGBW] ✅ RGBW bulb ready');
+      this.log('[RGBW] [OK] RGBW bulb ready');
     }, 'onNodeInit');
   }
 
@@ -92,7 +92,7 @@ class RGBWBulbDevice extends PhysicalButtonMixin(VirtualButtonMixin(LightBase)) 
       if (colorCluster?.on) {
         colorCluster.on('attr.currentHue', async (v) => await this['safeSetCapabilityValue']('light_hue', v / 254).catch(() => { }));
         colorCluster.on('attr.currentSaturation', async (v) => await this['safeSetCapabilityValue']('light_saturation', v / 254).catch(() => { }));
-        this.log('[RGBW] ✅ Color cluster listeners added');
+        this.log('[RGBW] [OK] Color cluster listeners added');
       }
     } catch (e) { /* ignore */ }
   }

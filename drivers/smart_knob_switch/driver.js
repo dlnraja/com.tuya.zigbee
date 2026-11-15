@@ -4,7 +4,7 @@ const { Driver } = require('homey');
 const { registerButtonFlowCards } = require('../../lib/FlowCardHelper');
 
 /**
- * P2449 — Smart Knob Switch: press + rotate/brightness flow UX.
+ * P2449 - Smart Knob Switch: press + rotate/brightness flow UX.
  */
 class SmartKnobSwitchDriver extends Driver {
   async onInit() {

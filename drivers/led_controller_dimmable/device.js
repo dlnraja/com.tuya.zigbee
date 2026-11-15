@@ -13,8 +13,8 @@ const TUYA_DP = {
 };
 
 /**
- * LED Controller Dimmable (Single Channel) — P127: TuyaZigbeeDevice + safe-timers
- * Multi-path dim: Tuya DP → ZCL levelControl → writeAttributes → throw.
+ * LED Controller Dimmable (Single Channel) - P127: TuyaZigbeeDevice + safe-timers
+ * Multi-path dim: Tuya DP -> ZCL levelControl -> writeAttributes -> throw.
  * Fixes Issue #83: WoodUpp LED Driver
  */
 class LEDControllerDimmableDevice extends TuyaZigbeeDevice {
@@ -27,7 +27,7 @@ class LEDControllerDimmableDevice extends TuyaZigbeeDevice {
     this._ledControllerInited = true;
 
     this.zclNode = zclNode;
-    this.log('[LED] LED CONTROLLER DIMMABLE — P127 TuyaZigbeeDevice');
+    this.log('[LED] LED CONTROLLER DIMMABLE - P127 TuyaZigbeeDevice');
 
     if (this.hasCapability('measure_battery')) {
       await this.removeCapability('measure_battery').catch(() => {});
@@ -99,7 +99,7 @@ class LEDControllerDimmableDevice extends TuyaZigbeeDevice {
     if (this._levelCluster) {
       this._levelCluster.on('attr.currentLevel', (value) => {
         const dim = Math.max(0, Math.min(1, Number(value) / 254));
-        this.log(`[LED] currentLevel: ${value} → dim=${dim}`);
+        this.log(`[LED] currentLevel: ${value} -> dim=${dim}`);
         this.safeSetCapabilityValue('dim', parseFloat(dim)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       });
     }

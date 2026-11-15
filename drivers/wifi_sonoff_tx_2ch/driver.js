@@ -12,7 +12,7 @@ class WifiSonoffTx2chDriver extends EweLinkLocalDriver {
     registerGangOnoffFlowCards(this, 'wifi_sonoff_tx_2ch', 2);
   }
 
-  // P3072: Repair → change IP / device key, reconnects at once (same handler as EweLinkLocalDriver)
+  // P3072: Repair -> change IP / device key, reconnects at once (same handler as EweLinkLocalDriver)
   async onRepair(session, device) {
     registerEweLinkRepairHandlers(session, device, { log: (...a) => this.log(...a) });
   }

@@ -6,7 +6,7 @@ const { ZigBeeDriver } = require('homey-zigbeedriver');
  * Flow card ids are prefixed with this driver's own id. They previously carried
  * the `smart_scene_panel_` prefix copied from the sibling driver, so the run
  * listeners attached to that driver's cards while all nine cards declared here
- * got none — the scene filter never applied and the four "set switch" actions
+ * got none - the scene filter never applied and the four "set switch" actions
  * silently did nothing.
  */
 const CARD_PREFIX = 'climate_sensor_smart_scene_panel';

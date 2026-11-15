@@ -10,14 +10,14 @@ const PowerSwitchFeaturesMixin = require('../../lib/mixins/PowerSwitchFeaturesMi
  *
  * v9.8.0: Added PowerSwitchFeaturesMixin for DP 12 (power_on_state) and DP 2 (backlight_mode)
  * v10.3.0 FIX (B10): Removed the redundant PhysicalButtonMixin + VirtualButtonMixin
- * double wrap — UnifiedSwitchBase already inherits both via TuyaZigbeeDevice.
+ * double wrap - UnifiedSwitchBase already inherits both via TuyaZigbeeDevice.
  * The double wrap registered duplicate listeners on the same endpoints.
  */
 class WallSwitch1Gang1WayDevice extends PowerSwitchFeaturesMixin(UnifiedSwitchBase) {
 
   get mainsPowered() { return true; }
 
-  /** WHY(P2463): relay-only UI — never soft-add button.1 */
+  /** WHY(P2463): relay-only UI - never soft-add button.1 */
   get skipGangButtonUi() { return true; }
 
   get gangCount() { return 1; }

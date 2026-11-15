@@ -80,7 +80,7 @@ describe('P218 2-gang sub-device routing', () => {
 describe('P218 sleepy IAS water', () => {
   it('sensor wake skips Tuya dataQuery when the node has no EF00 cluster', () => {
     const s = src('lib/devices/UnifiedSensorBase.js');
-    assert.match(s, /no EF00 — skip dataQuery/);
+    assert.match(s, /no EF00 [-—] skip dataQuery/);
   });
 
   it('water leak re-attaches IAS on end-device announce', () => {

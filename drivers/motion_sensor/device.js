@@ -119,7 +119,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
         isPirOnly: true,  //NO temp/humidity sensors
       },
       // Fantem ZB003-x 4-in-1 multisensor
-      // DP5=temp(Ã·10), DP6=humidity
+      // DP5=temp(÷10), DP6=humidity
       'FANTEM': {
         patterns: ['_TZE200_7hfcudw5',
           '_TZE200_nlrfgpny', 'ZB003-X'],
@@ -507,7 +507,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
             if (temp >= VALIDATION.TEMP_MIN && temp <= VALIDATION.TEMP_MAX) {
               // v5.5.793: Apply calibration offset if available
               const offset = this.getSetting?.('temp_offset') || 0;temp = Math.round((temp + offset) * 10) / 10;
-              this.log(`[ZCL]  Temperature: ${temp}Â°C (raw: ${data.measuredValue})`);
+              this.log(`[ZCL]  Temperature: ${temp}°C (raw: ${data.measuredValue})`);
               this._registerZigbeeHit?.();
               this._lastTempSource = 'ZCL';
               // v5.8.7: Permissive - auto-add capability from ZCL data
@@ -515,7 +515,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
                 {this.addCapability('measure_temperature').catch(() => {});}
               this.safeSetCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
             } else {
-              this.log(`[ZCL]  Temperature out of range: ${temp}Â°C (raw: ${data.measuredValue})`);
+              this.log(`[ZCL]  Temperature out of range: ${temp}°C (raw: ${data.measuredValue})`);
             }
           }
         }
@@ -713,7 +713,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
 
     // v5.5.355: SMART LUX REPORTING - Independent luminance updates
     this._luxSmartReporting = {
-      lastLuxValue: null, // P3040: was a bare undefined identifier → ReferenceError killed onNodeInit
+      lastLuxValue: null, // P3040: was a bare undefined identifier -> ReferenceError killed onNodeInit
       lastLuxTime: 0,
       luxReportInterval: 5 * 60 * 1000, // 5 minutes base interval
       luxChangeThreshold: 10, // 10% change threshold
@@ -1291,7 +1291,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
         const data = await this._smartZclRead(tempCluster, ['measuredValue'], 3000);
         if (data?.measuredValue !== undefined && data.measuredValue !== -32768 && data.measuredValue !== 0x8000) {
           const temp = smartParse(data.measuredValue, null, { capability: 'measure_temperature' });
-          this.log(`[MOTION-AWAKE]  Temperature: ${temp}Â°C (raw: ${data.measuredValue})`);
+          this.log(`[MOTION-AWAKE]  Temperature: ${temp}°C (raw: ${data.measuredValue})`);
           // Auto-add capability if needed
           if (!this.hasCapability('measure_temperature')) {
             await this.addCapability('measure_temperature').catch(() => { });
@@ -1373,7 +1373,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
       return null;
     }
 
-    // P3040: readId was declared inside try and used in catch → ReferenceError on every failed
+    // P3040: readId was declared inside try and used in catch -> ReferenceError on every failed
     // read, the pending mark was never cleared and that read stayed blocked for the session.
     const readId = `${cluster.name || cluster.constructor.name}_${attributes.join('_')}`;
     try {
@@ -1452,7 +1452,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
         this._lastBatteryReportTime = now;
         // Fallback: estimate from voltage (typical CR2450: 3.0V = 100%, 2.0V = 0%)
         const voltage = data.batteryVoltage / 10;
-        // v9.0.85: Fix ternary fallback — both branches were identical (crash on null)
+        // v9.0.85: Fix ternary fallback - both branches were identical (crash on null)
         const battery = UnifiedBatteryHandler
           ? UnifiedBatteryHandler.calculateFromVoltage(voltage, "3V_2100")
           : estimate3VLithiumBattery(voltage);
@@ -1486,7 +1486,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
           measuredValue: {
             minInterval: 60,      // Min 1 minute between reports
             maxInterval: 3600,    // Max 1 hour
-            minChange: 50         // Report if change >= 0.5Â°C
+            minChange: 50         // Report if change >= 0.5°C
           }
         });
         this.log('[MOTION-REPORTING]  Temperature reporting configured');

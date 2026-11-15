@@ -5,7 +5,7 @@ const IRCodeLibrary = require('../../lib/ir/IRCodeLibrary');
 const { getRouter, HOMEY_IR_SENDER_ID } = require('../../lib/ir/IntelligentIRRouter');
 
 /**
- * Virtual IR Remote — P2487: Zigbee / WiFi blaster OR Homey Pro 2023 onboard IR TX.
+ * Virtual IR Remote - P2487: Zigbee / WiFi blaster OR Homey Pro 2023 onboard IR TX.
  * Learned codes for Homey path live on this device store (Homey radio has no learn).
  */
 class IrRemoteDevice extends Homey.Device {
@@ -18,7 +18,7 @@ class IrRemoteDevice extends Homey.Device {
 
     if (this.hasCapability('button.ir_test')) {
       this.registerCapabilityListener('button.ir_test', async () => {
-        this.log('[IR] button.ir_test → Power via router');
+        this.log('[IR] button.ir_test -> Power via router');
         try {
           await this._sendRemoteCommand(this.getSetting('ir_brand'), this.getSetting('ir_category'), 'Power');
         } catch (e) {
@@ -34,10 +34,10 @@ class IrRemoteDevice extends Homey.Device {
           const sender = this._resolveSender();
           if (!sender) {throw new Error('Associated IR sender not found');}
           if (sender.transport === 'homey') {
-            throw new Error('Homey onboard IR is TX-only — learn on Zigbee/WiFi, paste Pronto, or store manual');
+            throw new Error('Homey onboard IR is TX-only - learn on Zigbee/WiFi, paste Pronto, or store manual');
           }
           if (value) {
-            this.log('[IR] ir_learn ON → sender learn mode (30s)');
+            this.log('[IR] ir_learn ON -> sender learn mode (30s)');
             await this._router.learn({
               device: sender.device,
               name: 'learned_power',

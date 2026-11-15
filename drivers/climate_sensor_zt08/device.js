@@ -7,10 +7,10 @@ const { ClimateInference, BatteryInference } = require('../../lib/IntelligentSen
 const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
 
 /**
- * P133 / GH #513 — Dedicated thin driver for ZT08 LCD climate
+ * P133 / GH #513 - Dedicated thin driver for ZT08 LCD climate
  * (_TZE284_hodyryli + TS0601). Interview clusters: 0,4,5,61184,60672.
  *
- * P140: Z2M #29627 — MCU needs Unix-1970 mcuSyncTime THEN DP17=false (~500ms)
+ * P140: Z2M #29627 - MCU needs Unix-1970 mcuSyncTime THEN DP17=false (~500ms)
  * to commit the LCD clock. Without the commit, the MCU often stays silent /
  * reports temp 0 until wall-clock sync sticks. DP17 is applied inside
  * GlobalTimeSyncEngine via MCUFormatDatabase firmware workaround.
@@ -47,7 +47,7 @@ class ClimateSensorZt08Device extends UnifiedSensorBase {
     await super.onNodeInit({ zclNode });
 
     try {
-      // Force Unix-1970 (Z2M timeStart) — guessFormat alone used to prefer dual-2000
+      // Force Unix-1970 (Z2M timeStart) - guessFormat alone used to prefer dual-2000
       this._timeSyncEngine = new GlobalTimeSyncEngine(this, { epoch: 'unix_1970' });
       this._timeSyncEngine.setupListener(zclNode);
       this._initialTimeSyncTimer = safeSetTimeout(this, async () => {
@@ -73,7 +73,7 @@ class ClimateSensorZt08Device extends UnifiedSensorBase {
 
   _schedulePeriodicZt08Clock(zclNode) {
     this._clearPeriodicClock();
-    // Every 4h — engine applies DP17 commit after each successful sync
+    // Every 4h - engine applies DP17 commit after each successful sync
     this._periodicClockTimer = safeSetTimeout(this, async () => {
       if (this._destroyed) { return; }
       await this._syncZt08Clock(zclNode).catch(() => {});
@@ -82,7 +82,7 @@ class ClimateSensorZt08Device extends UnifiedSensorBase {
   }
 
   /**
-   * mcuSyncTime (Unix dual) → engine DP17 commit → dataQuery refresh.
+   * mcuSyncTime (Unix dual) -> engine DP17 commit -> dataQuery refresh.
    */
   async _syncZt08Clock(zclNode) {
     if (!this._timeSyncEngine) { return; }
