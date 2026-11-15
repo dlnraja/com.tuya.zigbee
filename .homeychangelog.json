@@ -4312,6 +4312,10 @@
   "5.12.0": {
     "en": "v5.12.0: stable-v5 batch sync (drivers, FPs, flows, manifest) from master v9.0.240–v9.0.260."
   },
+  "1.0.240": {
+    "en": "Fixed: device settings and buttons and remotes. Behind the scenes: tests and publishing checks.",
+    "fr": "Corrigé : réglages des appareils et boutons et télécommandes. En coulisses : tests et contrôles de publication."
+  },
   "1.0.239": {
     "en": "Maintenance build: same devices and behaviour as the previous version (publishing and test tooling only).",
     "fr": "Version de maintenance : mêmes appareils et même comportement que la précédente (outils de publication et de test uniquement)."
