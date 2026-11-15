@@ -907,9 +907,12 @@
       ]
     }
   ],
+  "9.0.1621": {
+    "en": "Fixed: safety sensors & memory and timers, wall switches & pairing and device recognition and device settings. Plus 2 other changes in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Corrigé : détecteurs de sécurité & mémoire et minuteries, interrupteurs & appairage et reconnaissance des appareils et réglages des appareils. Et 2 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+  },
   "9.0.1620": {
-    "en": "Changed: rename energy_source off the reserved energy_ prefix.",
-    "fr": "Modifié : rename energy_source off the reserved energy_ prefix."
+    "en": "Changed: rename energy_source off the reserved energy_ prefix."
   },
   "9.0.1619": {
     "en": "Diagnostic draft only: the upload includes the real source drivers that ordinary publishes still hold back, so the payload stays above 350 drivers. The Test channel is not changed by this run."
@@ -966,9 +969,5 @@
   "9.0.1599": {
     "en": "Maintenance build: same devices and behaviour as 9.0.1598 (publishing and test tooling only).",
     "fr": "Version de maintenance : mêmes appareils et même comportement que la 9.0.1598 (outils de publication et de test uniquement)."
-  },
-  "9.0.1598": {
-    "en": "Curtains and blinds: commands that arrive while the motor is still moving are queued instead of lost, a new 'is moving' condition and 'movement finished' trigger, and the final position is read back once the motor stops. Devices keep their Zigbee sequence number across app restarts, and availability is learnt per device so sleepy sensors are not marked offline too early. 72 Flow card sentences with device names restored.",
-    "fr": "Rideaux et volets : une commande reçue pendant que le moteur tourne est mise en file au lieu d'être perdue, nouvelle condition « est en mouvement » et nouveau déclencheur « mouvement terminé », et la position finale est relue à l'arrêt. Les appareils gardent leur numéro de séquence Zigbee après un redémarrage de l'app, et la disponibilité est apprise par appareil pour ne plus marquer trop tôt les capteurs endormis comme hors ligne. 72 phrases de cartes Flow avec le nom de l'appareil restaurées."
   }
 }

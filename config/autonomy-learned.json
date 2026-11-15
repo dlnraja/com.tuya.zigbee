@@ -10,10 +10,10 @@
     },
     "athom:hold-release": {
       "fix": "release held group",
-      "successes": 1,
+      "successes": 2,
       "failures": 0,
       "auto": false,
-      "last": 1794614743506
+      "last": 1794679683571
     }
   },
   "events": [
@@ -29,6 +29,11 @@
     },
     {
       "t": 1794614743506,
+      "sig": "athom:hold-release",
+      "ok": true
+    },
+    {
+      "t": 1794679683571,
       "sig": "athom:hold-release",
       "ok": true
     }
