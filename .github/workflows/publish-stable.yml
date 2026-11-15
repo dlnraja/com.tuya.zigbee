@@ -296,7 +296,7 @@ jobs:
     needs: [pre-validation, soak, p3036-gate]
     if: needs.soak.outputs.skip != 'true' && needs.p3036-gate.outputs.go == 'true'
     runs-on: ubuntu-latest
-    timeout-minutes: 65  # + idle wait (≤25), like master 516c83444c
+    timeout-minutes: 80  # + idle wait (≤25), like master 516c83444c; P3293 +15 for the single orphan re-upload
     # WHY(P2355): Homey build may bump patch in-job; promote must wait that version.
     outputs:
       # reupload may have bumped to a fresh version (processing_failed retry) — promote/gate that one.
@@ -322,7 +322,24 @@ jobs:
       # gets a fresh patch version (app ID untouched); the version is committed back after upload.
       - name: Packed payload changed since the last version bump
         id: payload
-        run: node .github/scripts/athom-publish-policy.js payload-changed
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: |
+          node .github/scripts/athom-publish-policy.js payload-changed
+          # P3293 (run 43710885652): v5.12.549 was written back although Athom build #425 never received its
+          # files (orphan waiting_for_files), so every later run skipped as "identical" and that content was
+          # stranded. Read-only Athom check: only when the written-back version's builds are ALL orphans, upload
+          # it once more under the next version. Any other state keeps the identical-payload skip.
+          if [ "$(sed -n 's/^changed=//p' "$GITHUB_OUTPUT" | tail -1)" = "false" ]; then
+            V=$(node -p "require('./app.json').version"); AID=$(node -p "require('./app.json').id")
+            O=$(node scripts/ci/homey-build-status.js "$AID" 2>/dev/null | node .github/scripts/athom-orphan-build.js recorded-orphan "$V" || echo NO)
+            if [ "${O%% *}" = "ORPHAN" ]; then
+              echo "::warning::P3293: v$V is on stable-v5 but Athom build #${O#ORPHAN } never received its files; publishing this content as the next version (once)"
+              echo "changed=true" >> "$GITHUB_OUTPUT"
+            else
+              echo "[P3293] v$V: $O (identical-payload skip stands)"
+            fi
+          fi
       - name: Record identical-payload skip
         if: steps.payload.outputs.changed == 'false'
         run: |
@@ -521,10 +538,39 @@ jobs:
           # P2900: budget and backoff come from the shared 3-app policy (.github/scripts/athom-retry-policy.js).
           # P2924: loop bound = largest budget; each pass asks the policy for THIS failure kind (hang-up 4, other transient 2).
           MAXR=$(node .github/scripts/athom-retry-policy.js max)
-          for retry in $(seq "${ATHOM_RETRY_USED:-0}" "$MAXR"); do  # P3036: the in-run fallback already used the single retry
+          # P3036: the in-run fallback already used the single retry. P3293: an orphan waiting_for_files
+          # (CLI "Submitting... Timeout", files never sent) has its own budget of ONE bump + ONE re-upload.
+          retry="${ATHOM_RETRY_USED:-0}"; ORPHAN_DONE=0
+          while :; do
             OUT=$(mktemp); WLOG=$(mktemp)
             # P3025: keep the wait log — the failure reason ("socket hang up") is only on its stdout.
             GITHUB_OUTPUT="$OUT" node .github/scripts/wait-athom-draft-ready.js 2>&1 | tee "$WLOG" || true
+            # P3293 (run 43710885652, #425 v5.12.549): an orphan waiting_for_files is NEVER ready.
+            if grep -q '^orphan_waiting_for_files=true' "$OUT"; then
+              OBID=$(sed -n 's/^orphan_build_id=//p' "$OUT" | head -1)
+              TRANSIENT_RETRY=$retry node .github/scripts/publish-size-telemetry.js record processing_failed orphan_waiting_for_files || true
+              ODEC=$(node .github/scripts/athom-orphan-build.js decide true "$ORPHAN_DONE")
+              echo "[P3293] v$HOMEY_EXPECTED_VERSION build #${OBID:-?} orphan waiting_for_files -> $ODEC"
+              if [ "${ODEC%% *}" != "REUPLOAD" ]; then
+                echo "::error::v$HOMEY_EXPECTED_VERSION (#${OBID:-?}) is an orphan waiting_for_files after the single orphan re-upload; blocking (P3293)"
+                break
+              fi
+              ORPHAN_DONE=1
+              DELAY=$(node .github/scripts/athom-retry-policy.js backoff 1)
+              echo "::warning::Athom build #${OBID:-?} v$HOMEY_EXPECTED_VERSION never received its files (submit timeout); backoff ${DELAY}s + idle wait, then ONE re-upload as a NEW patch version (P3293)"
+              sleep "$DELAY"
+              (cd "$GITHUB_WORKSPACE" && timeout 900 node .github/scripts/wait-athom-idle.js) || true
+              (cd "$GITHUB_WORKSPACE" && node .github/scripts/stable-version-bump.js bump --publish-dir "$PUBLISH_DIR") || { echo "::error::version bump failed; not re-uploading"; break; }
+              NEWV=$(node -p "require('$PUBLISH_DIR/app.json').version")
+              if [ "$(printf '%s\n%s\n' "$HOMEY_EXPECTED_VERSION" "$NEWV" | sort -V | tail -1)" != "$NEWV" ] || [ "$NEWV" = "$HOMEY_EXPECTED_VERSION" ]; then
+                echo "::error::refusing non-increasing version $NEWV (was $HOMEY_EXPECTED_VERSION)"; break
+              fi
+              export HOMEY_EXPECTED_VERSION="$NEWV"
+              echo "version=$NEWV" >> "$GITHUB_OUTPUT"
+              node .github/scripts/publish-size-telemetry.js measure "$PUBLISH_DIR" || true
+              (cd "$PUBLISH_DIR" && HOMEY_HEADLESS=1 HOMEY_PAT="$HOMEY_PAT" "$GITHUB_WORKSPACE/node_modules/.bin/homey" app publish --path "$PUBLISH_DIR") || echo "::warning::orphan re-upload attempt failed (P3293); the next wait decides"
+              continue
+            fi
             if ! grep -q 'processing_failed_degraded=true' "$OUT"; then
               echo "Athom build for v$HOMEY_EXPECTED_VERSION is processing/ready (retry=$retry)"
               TRANSIENT_RETRY=$retry node .github/scripts/publish-size-telemetry.js record uploaded-ok; exit 0
@@ -549,6 +595,7 @@ jobs:
             echo "version=$NEWV" >> "$GITHUB_OUTPUT"
             node .github/scripts/publish-size-telemetry.js measure "$PUBLISH_DIR" || true
             (cd "$PUBLISH_DIR" && HOMEY_HEADLESS=1 HOMEY_PAT="$HOMEY_PAT" "$GITHUB_WORKSPACE/node_modules/.bin/homey" app publish --path "$PUBLISH_DIR") || echo "::warning::re-upload attempt failed"
+            retry=$((retry+1))
           done
           echo "::error::Athom kept failing to process stable builds up to v$HOMEY_EXPECTED_VERSION after the policy re-upload budget; Test stays on the previous build"
           echo "### Stable Test NOT updated: Athom processing_failed up to v$HOMEY_EXPECTED_VERSION" >> "$GITHUB_STEP_SUMMARY"
