@@ -7,6 +7,7 @@
  * triggerButtonPress(btn=1/2/3, single) for each report -> every "button N pressed" Flow ran.
  */
 const assert = require('assert');
+const { describe, it } = require('../_support/dual-runner');
 const { attachButtonPaths, isCommandPathRemote, onOffAttrIsPress } = require('../../lib/buttons/attachButtonPaths');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
