@@ -74,6 +74,14 @@ describe('P3298 power_clamp_meter burst handling', () => {
     d.__p3298t = new K({ now: c.now });
     return { d, c, raw, logs };
   }
+  it('KeyedLogThrottle burst: N lines per key per window, then muted', () => {
+    const c = clock(); const t = new KeyedLogThrottle({ now: c.now, windowMs: 60000, burst: 2 });
+    assert.strictEqual(t.line('k', 'a'), 'a');
+    assert.strictEqual(t.line('k', 'b'), 'b');
+    assert.strictEqual(t.line('k', 'c'), null);
+    c.advance(60000);
+    assert.strictEqual(t.line('k', 'd'), 'd (+1 muted in 60s)');
+  });
   it('PJ-1203A: 60 voltage frames in a burst -> 2 writes (first + newest), few log lines', async () => {
     const { d, c, raw, logs } = device('_TZE204_81yrt3lo');
     for (let i = 0; i < 60; i++) { d._handleDP(112, 2250 + i); }
