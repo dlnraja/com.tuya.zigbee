@@ -94,6 +94,11 @@ function subjectsSinceBump(cwd, max = 400) {
 /** Granular en + fr note (families, model ids, kind of change); never the generic "Bug fixes and improvements". */
 function entryFromCommits(cwd, ce) {
   const subjects = subjectsSinceBump(cwd);
+  // WHY(P3297): describe() alone only counted runtime fixes ("Reliability: 4 small fixes", "Maintenance build"
+  // on 5.12.545/546/548). precise() names them (runtime heads, specific items) and falls back to describe().
+  if (ce && typeof ce.precise === 'function' && subjects.length) {
+    try { return ce.precise(subjects); } catch (e) { console.warn(`[stable-bump] precise changelog failed, using describe(): ${e && e.message}`); }
+  }
   try { return require('../../scripts/automation/changelog-backfill').describe(subjects); } catch (_) { /* older tree */ }
   return ce.summarize(subjects.length ? subjects : ce.subjectsSinceLastPublish(cwd));
 }
