@@ -28,13 +28,17 @@ function clamp() {
   return { dev, writes, logs };
 }
 
-describe('P3276 clamp reports on the 3-phase profile', () => {
+describe('P3276 clamp reports from the CPU-limit logs (no manufacturer name)', () => {
   it('scales the datapoints from the two CPU-limit logs and does not call them unhandled', () => {
     const { dev, writes, logs } = clamp();
     assert.equal(dev.meterProfile, '3phase');
     dev._handleDP(111, 4908);
     dev._handleDP(112, 2256);
+    // DP 121 is PJ-1203A-specific: P3322 locks the learned profile here so the
+    // rest of the burst uses the 2-channel map (the 3-phase fallback is only
+    // for DPs seen before a distinctive one).
     dev._handleDP(121, 100);
+    assert.equal(dev.meterProfile, 'pj1203a');
     dev._handleDP(110, 100);
     dev._handleDP(105, 0);
     dev._handleDP(113, 0);
@@ -45,6 +49,7 @@ describe('P3276 clamp reports on the 3-phase profile', () => {
       ['measure_power_factor', 1],
       ['measure_power_factor', 1],
       ['measure_power.phase2', 0],
+      ['measure_power', 0],
       ['measure_current', 0],
       ['measure_power', 0],
     ]);
