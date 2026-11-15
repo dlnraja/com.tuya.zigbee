@@ -43,3 +43,10 @@ These are the candidates the same ledger actually distinguishes. They are not a 
 | Diagnostic staging path | Run 43487854250 wrote `/tmp/homey-diag-catalogue` (372 drivers) and the size gate read `/tmp/homey-publish-temp` | Died before upload. `athom-final` had no build for 9.0.1619, so this run never became an AggregateError |
 
 Reserved prefixes stay blocked because the SDK rejects them. The Athom accept/refuse split in this ledger follows the published driver set, not the presence or the count of `energy_source`.
+
+## Follow-up (2026-11-15)
+
+The five drivers the P3095 bisect isolated are compared field by field in
+[aggregateerror-isolated-drivers.md](aggregateerror-isolated-drivers.md). No content trait separates
+them from the accepted ones; every AggregateError since 9.0.1602 has a payload of 348+ drivers and every
+accepted build has 347.
