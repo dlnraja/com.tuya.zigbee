@@ -109,6 +109,11 @@ describe('P3312 Latin-1 payload JavaScript', () => {
     };
     walk(path.join(ROOT, 'lib'));
     walk(path.join(ROOT, 'drivers'));
+    // P3320 already made shipped JS Latin-1. P3312 remains the publish safety net:
+    // any leftover wide file (typically .homeyignore-only enrichment scripts) must still
+    // compile once escaped. The shipped tree itself must have zero raw wide chars.
+    const { scanWideInShippedJs } = require(path.join(ROOT, 'scripts', 'maintenance', 'p3320-latin1-source.cjs'));
+    assert.deepEqual(scanWideInShippedJs(ROOT), [], 'shipped JS must already be Latin-1 (P3320)');
     let rewritten = 0;
     for (const f of files) {
       const text = fs.readFileSync(f, 'utf8');
@@ -120,7 +125,7 @@ describe('P3312 Latin-1 payload JavaScript', () => {
       assert.doesNotThrow(() => vm.compileFunction(out, params, { filename: f }), f);
       rewritten++;
     }
-    assert.ok(rewritten > 100, `rewritten ${rewritten}`);
+    assert.ok(rewritten >= 0, `safety-net escaped ${rewritten} non-shipped wide file(s)`);
   });
 
   it('prepare-publish runs the step after the ASCII JSON step and fails closed', () => {

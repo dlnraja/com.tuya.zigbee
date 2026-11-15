@@ -28,7 +28,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
    * Profile B (ME167): _TZE284_o3x45p96, _TZE284_p3dbf6qs, _TZE200_p3dbf6qs, etc.
    */
   get dpProfile() {
-    // WHY(P2594): match device_radiator_valve — tail match + ogx8u5z6 (not self-includesCI bug)
+    // WHY(P2594): match device_radiator_valve - tail match + ogx8u5z6 (not self-includesCI bug)
     const mfr = String(
       this.getSetting('zb_manufacturer_name')
       || this.getStoreValue('manufacturerName')
@@ -44,7 +44,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     const mfr = String(this.getSetting('zb_manufacturer_name') || this.getStoreValue('manufacturerName') || '');
     const calDivisor = /ogx8u5z6/i.test(mfr) ? 10 : 1;
     if (this.dpProfile === 'me167') {
-      // WHY(P2598 / Z2M#25199 / Michaelp #2253): DP4/5 locked ÷10 — not smartDivisor
+      // WHY(P2598 / Z2M#25199 / Michaelp #2253): DP4/5 locked ÷10 - not smartDivisor
       return {
         2: { capability: 'thermostat_mode', transform: (v) => ({ 0: 'auto', 1: 'heat', 2: 'off' }[v] ?? 'heat') },
         3: { internal: true, type: 'running_state', transform: (v) => v === 0 ? 'heat' : 'idle' },
@@ -279,7 +279,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
   }
 
   _setupTRVListeners() {
-    // WHY(P2598 / Michaelp #2253): live dpProfile each TX — never close over stale profile
+    // WHY(P2598 / Michaelp #2253): live dpProfile each TX - never close over stale profile
 
     if (this.hasCapability('onoff')) {
       this.registerCapabilityListener('onoff', async (v) => {

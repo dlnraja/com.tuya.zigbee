@@ -41,7 +41,7 @@ class WiFiPlugDevice extends TuyaLocalDevice {
     await super.onDeleted();
   }
 
-  /** P2705: DP17 energy — per-device auto-detection, meter never drops */
+  /** P2705: DP17 energy - per-device auto-detection, meter never drops */
   async _processDPUpdate(dps) {
     await super._processDPUpdate(dps);
     try { await handleDp17(this, dps); } catch (e) { this.error('[DP17] energy handling failed:', e.message); }

@@ -13,7 +13,7 @@ const TuyaDeviceHelper = require('../../lib/utils/TuyaDeviceHelper');
 Cluster.addCluster(TuyaOnOffCluster);
 Cluster.addCluster(TuyaSpecificCluster);
 
-/** BHT-002 / generic wall thermostat (floor/boiler) — DP2 = manual/program. */
+/** BHT-002 / generic wall thermostat (floor/boiler) - DP2 = manual/program. */
 const BHT_DATA_POINTS = {
   onOff: 1,
   mode: 2,
@@ -23,10 +23,10 @@ const BHT_DATA_POINTS = {
 };
 
 /**
- * TYBAC-006 FCU (Z2M herdsman #6174) — sacred couples only:
+ * TYBAC-006 FCU (Z2M herdsman #6174) - sacred couples only:
  *   _TZE204_mpbki2zm|TS0601, _TZE204_qujphad5|TS0601
  * DP2 = system_mode cool/heat/fan_only; DP28 = fan_mode; DP101 = manual/schedule.
- * DP36 = 3-way valve (FCU signature — never on BHT-002).
+ * DP36 = 3-way valve (FCU signature - never on BHT-002).
  */
 const FCU_DATA_POINTS = {
   onOff: 1,
@@ -74,12 +74,12 @@ const FAN_MODE_TX = { low: 0, medium: 1, high: 2, auto: 3 };
 const FCU_QUERY_DPS = [1, 2, 16, 24, 28, 36, 40, 101];
 
 /**
- * WallThermostatDevice — BHT-002 path + TYBAC-006 FCU couple branch.
- * WHY(P2300–P2303 / Adam K #532 xDMcGee):
+ * WallThermostatDevice - BHT-002 path + TYBAC-006 FCU couple branch.
+ * WHY(P2300-P2303 / Adam K #532 xDMcGee):
  *  - must call super.onNodeInit (DeviceIO/EF00)
  *  - break safeSet recursion
  *  - FRAG/DP1 bool handled in TuyaEF00Manager
- *  - empty mfr at init → BHT forever: arm FCU from meta + DP28/36/101 + store
+ *  - empty mfr at init -> BHT forever: arm FCU from meta + DP28/36/101 + store
  *  - TX via DeviceIO.sendDP cascade (cluster-only writeBool can soft-fail)
  */
 class WallThermostatDevice extends TuyaSpecificClusterDevice {
@@ -131,7 +131,7 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
     const was = !!this._bac002;
     this._bac002 = this._isBac002Couple();
     if (this._bac002) {
-      // DP16 is whole °C on this family — lock the scale so TX never multiplies by 10.
+      // DP16 is whole °C on this family - lock the scale so TX never multiplies by 10.
       this._dp16Scale = 'raw';
       if (!was) {
         try { Promise.resolve(this.setStoreValue?.('wall_thermo_bac002', true)).catch(() => {}); } catch (_) { /* ignore */ }
@@ -173,12 +173,12 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
     if (this._isBac002Couple()) { return true; }
     const { mfr, pid } = this._resolveMfrPid();
     const mfrOk = FCU_MFRS.some((m) => equalsCI(mfr, m));
-    // Pairing may omit pid briefly — FCU mfrs are sacred to TS0601 only
+    // Pairing may omit pid briefly - FCU mfrs are sacred to TS0601 only
     const pidOk = !pid || equalsCI(pid, 'TS0601');
     return mfrOk && pidOk;
   }
 
-  /** Prevent TuyaEF00Manager generic DP1→measure_temperature for this driver. */
+  /** Prevent TuyaEF00Manager generic DP1->measure_temperature for this driver. */
   _installDpMappings() {
     const map = this._fcu ? FCU_DATA_POINTS : BHT_DATA_POINTS;
     const bac002 = !!this._bac002;
@@ -188,7 +188,7 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
       [map.currentTemperature]: { capability: 'measure_temperature', type: 'value', divisor: 10 },
       [map.childlock]: { capability: 'child_lock', type: 'bool' },
     };
-    // WHY(P2333): always reserve FCU valve DP36 even before FCU arm — DynCap
+    // WHY(P2333): always reserve FCU valve DP36 even before FCU arm - DynCap
     // init races ahead of _armFcu and poisoned target_temperature (a095345e).
     this.dpMappings[FCU_DATA_POINTS.valve] = { internal: true, type: 'valve' };
     this._dynCapBlockDps = new Set([
@@ -220,9 +220,9 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
   }
 
   /**
-   * WHY(P2303): Prefer DeviceIO.sendDP (manager → cluster → raw → magic) over
-   * cluster-only writeBool — Homey Self-Hosted + EF00 often needs the cascade.
-   * WHY(P2324): Never soft-success — Adam #532 OFF/setpoint looked OK in UI while mesh TX failed.
+   * WHY(P2303): Prefer DeviceIO.sendDP (manager -> cluster -> raw -> magic) over
+   * cluster-only writeBool - Homey Self-Hosted + EF00 often needs the cascade.
+   * WHY(P2324): Never soft-success - Adam #532 OFF/setpoint looked OK in UI while mesh TX failed.
    */
   async _txBool(dp, value) {
     const v = !!value;
@@ -264,7 +264,7 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
    */
   async _ensureFcuManualForTx() {
     if (!(this._fcu || this._fcuSignalSeen)) {return;}
-    // WHY(P2970): on BAC-002 DP101 is the schedule blob — a bool TX there would corrupt it.
+    // WHY(P2970): on BAC-002 DP101 is the schedule blob - a bool TX there would corrupt it.
     if (this._bac002) { return; }
     if (!this._fcuManualDpConfirmed) {
       this.log('[WALL-THERMO] skip DP101 pre-TX (unconfirmed on this node)');
@@ -311,7 +311,7 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
     const id = this._resolveMfrPid();
     this.log(this._fcu
       ? `[WALL-THERMO] FCU path (${id.mfr}|${id.pid})`
-      : `[WALL-THERMO] BHT path (${id.mfr}|${id.pid}) — will arm on DP28/36/101`);
+      : `[WALL-THERMO] BHT path (${id.mfr}|${id.pid}) - will arm on DP28/36/101`);
     if (this._bac002) { this.log('[WALL-THERMO] P2970 BAC-002 profile (DP16 whole °C, DP4 preset, DP101 schedule)'); }
 
     for (const cap of ['thermostat_programming', 'child_lock']) {
@@ -390,7 +390,7 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
       if (this._fcuSyncing) {return;}
       this._fcuSyncing = true;
       try {
-        // WHY(P2324): DP1 first (Z2M power switch). DP101 only if confirmed — never block OFF.
+        // WHY(P2324): DP1 first (Z2M power switch). DP101 only if confirmed - never block OFF.
         await this._txBool(BHT_DATA_POINTS.onOff, !!onOff);
         await this._ensureFcuManualForTx().catch((e) => {
           this.log('[WALL-THERMO] DP101 after onoff skipped:', e?.message || e);
@@ -409,7 +409,7 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
 
     this.registerCapabilityListener('thermostat_programming', async (mode) => {
       if (this._bac002) {
-        // WHY(P2970): BAC-002 preset DP4 — true = manual, false = auto (Z2M BAC-002-ALZB).
+        // WHY(P2970): BAC-002 preset DP4 - true = manual, false = auto (Z2M BAC-002-ALZB).
         await this._txBool(BAC002_DATA_POINTS.preset, String(mode) === '0');
       } else if (this._fcu || this._fcuSignalSeen) {
         const manualOn = String(mode) === '0';
@@ -451,7 +451,7 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
       if (this._fcuSyncing) {return;}
       this._fcuSyncing = true;
       try {
-        // Z2M: system_mode "off" → DP1 false; cool/heat/fan_only → DP1 true + DP2
+        // Z2M: system_mode "off" -> DP1 false; cool/heat/fan_only -> DP1 true + DP2
         if (mode === 'off') {
           await this._txBool(FCU_DATA_POINTS.onOff, false);
           await this.safeSetCapabilityValue('onoff', false);
@@ -489,7 +489,7 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
         || zclNode?.endpoints?.[1]?.clusters?.[61184]
         || null;
       if (!cluster || typeof cluster.on !== 'function') {
-        this.error('[WALL-THERMO] No Tuya EF00 cluster for RX — DeviceIO compensation should retry');
+        this.error('[WALL-THERMO] No Tuya EF00 cluster for RX - DeviceIO compensation should retry');
         return;
       }
       const onFrame = (value) => {
@@ -618,7 +618,7 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
           break;
         }
         case FCU_DATA_POINTS.manualMode: {
-          // WHY(P2324): RX proves DP101 exists on this MCU — safe to use for later TX.
+          // WHY(P2324): RX proves DP101 exists on this MCU - safe to use for later TX.
           this._fcuManualDpConfirmed = true;
           try { await this.setStoreValue?.('wall_thermo_fcu_manual_ok', true); } catch (_) { /* ignore */ }
           await this.safeSetCapabilityValue('thermostat_programming', parsedValue ? '0' : '1');

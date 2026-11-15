@@ -43,7 +43,7 @@ class TunableWhiteBulbDevice extends LightBase {
         this.log('Attribute reporting config failed (device may not support it):', err.message);
       }
 
-      this.log('[BULB] ✅ Tunable white bulb ready');
+      this.log('[BULB] [OK] Tunable white bulb ready');
     }, 'onNodeInit');
   }
 

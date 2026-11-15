@@ -8,7 +8,7 @@ const { installWallSceneRemoteHybrid } = require('../../lib/devices/WallSceneRem
  * Button4GangDevice - v10.1.2 TS0044/TS004F + P2616 complementary hybrid
  *
  * Dedicated E000/LevelControl/DP/raw (P2328 parseZclHeader + unrecognized diag) stay.
- * Fleet hybrid is UNION — never wipe hotfixes (P2520).
+ * Fleet hybrid is UNION - never wipe hotfixes (P2520).
  * P2614: Homey Button N device view.
  */
 class Button4GangDevice extends ButtonDevice {
@@ -46,7 +46,7 @@ class Button4GangDevice extends ButtonDevice {
         try { this.log('[INIT] Error: ' + (err && err.message)); } catch (_e) { /* ignore */ }
       });
 
-    // WHY(P2616 complementary): fleet hybrid first — soft; dedicated hotfix stacks below stay (P2520)
+    // WHY(P2616 complementary): fleet hybrid first - soft; dedicated hotfix stacks below stay (P2520)
     try {
       await installWallSceneRemoteHybrid(this, zclNode, {
         maxButtons: 4,
@@ -59,7 +59,7 @@ class Button4GangDevice extends ButtonDevice {
       this.log('[BUTTON_WIRELESS_4] hybrid soft-fail (dedicated stacks continue):', e.message);
     }
 
-    // v10.1.2 dedicated hotfix stacks (complementary to hybrid — never wipe)
+    // v10.1.2 dedicated hotfix stacks (complementary to hybrid - never wipe)
     await this._setupE000Detection(zclNode);
     await this._setupLevelControlDetection(zclNode);
     await this._setupTuyaDPButtonDetection(zclNode);
@@ -122,7 +122,7 @@ class Button4GangDevice extends ButtonDevice {
         });
         onOff.on('commandOff', async () => {
           if (this._isDeduped(ep, 'off', this._clickWindowMs() ? 150 : 500)) {return;}
-          // P2790: toggle firmware alternates On/Off per press → both are a single press (quirk-scoped).
+          // P2790: toggle firmware alternates On/Off per press -> both are a single press (quirk-scoped).
           let offPress = 'double';
           try { if (require('../../lib/quirks/FirmwareQuirks').onOffCommandsAreSingle(this)) {offPress = 'single';} } catch (_q) { /* soft */ }
           this.log(`[E000-4G] EP${ep} commandOff -> Button ${ep} ${offPress}`);
@@ -273,7 +273,7 @@ class Button4GangDevice extends ButtonDevice {
       }
 
       if (dpId === undefined) {
-        // v10.1.3: VERBOSE fallback — unparseable Tuya frame, log raw shape
+        // v10.1.3: VERBOSE fallback - unparseable Tuya frame, log raw shape
         this._logUnrecognizedFrame(1, 0xEF00, { cmdId: 'tuya-dp-unparsed' },
           Buffer.isBuffer(data) ? data : Buffer.from(JSON.stringify(data).slice(0, 64)));
         return;
@@ -285,7 +285,7 @@ class Button4GangDevice extends ButtonDevice {
         this.log(`[DP-4G] DP${dpId} value=${value} -> Button ${dpId} ${pressType.toUpperCase()}`);
         this._triggerButton4Gang(dpId, pressType);
       } else {
-        // v10.1.3: VERBOSE fallback — DP outside 1-4 (unknown variant)
+        // v10.1.3: VERBOSE fallback - DP outside 1-4 (unknown variant)
         this._logUnrecognizedFrame(1, 0xEF00, { cmdId: `dp${dpId}` },
           Buffer.from([dpId, Number(value) & 0xFF]));
       }
@@ -304,7 +304,7 @@ class Button4GangDevice extends ButtonDevice {
    */
   async _setupRawFrameInterceptor(zclNode) {
     try {
-      // WHY(P2328): never blind-assign node.handleFrame — orphans PhysicalButtonMixin
+      // WHY(P2328): never blind-assign node.handleFrame - orphans PhysicalButtonMixin
       // physical-onoff-fd / IO wrap chain and double-fires 0xFD. Same pattern as scene_switch_4.
       const node = zclNode || this.zclNode;
       if (!node || typeof node.handleFrame !== 'function') {return;}
@@ -404,7 +404,7 @@ class Button4GangDevice extends ButtonDevice {
       const { clampWindow } = require('../../lib/utils/ClickAggregator');
       const explicit = clampWindow(this.getSetting?.('click_window_ms'));
       if (explicit) {return explicit;}
-      // WHY(P2910 #423/#424): setting 0 = auto — window only for the quirk couple, only for a
+      // WHY(P2910 #423/#424): setting 0 = auto - window only for the quirk couple, only for a
       // button that has a double/triple Flow, and only while firmware shows no native multi-press.
       if (!this._clickWindowAuto) {return 0;}
       const { effectiveWindow } = require('../../lib/utils/ClickWindowAuto');
@@ -442,9 +442,9 @@ class Button4GangDevice extends ButtonDevice {
       if (frame && (cid === 0x0006 || cid === 0xE000)) {
         const d = frame.toJSON?.().data || frame.data || [];
         const cmd = d && d.length >= 3 ? d[2] : undefined;
-        // WHY: 0xFD (scene mode) or E000 press frames = firmware counts clicks itself → no app window.
+        // WHY: 0xFD (scene mode) or E000 press frames = firmware counts clicks itself -> no app window.
         if ((cid === 0x0006 && cmd === 0xFD) || (cid === 0xE000 && cmd === 0)) {
-          if (!this._nativeMultiPressSeen) { this._nativeMultiPressSeen = true; this.log('[CLICK-WINDOW] native press frames seen — auto window off'); }
+          if (!this._nativeMultiPressSeen) { this._nativeMultiPressSeen = true; this.log('[CLICK-WINDOW] native press frames seen - auto window off'); }
         } else if (cid === 0x0006 && (cmd === 0 || cmd === 1 || cmd === 2) && d.length <= 3) {
           const ep = Number(endpointId) || 1;
           if (this._clickWindowMs(ep) > 0) {
@@ -453,7 +453,7 @@ class Button4GangDevice extends ButtonDevice {
           }
         }
       }
-    } catch (_e) { /* soft — parent path below still runs */ }
+    } catch (_e) { /* soft - parent path below still runs */ }
     return typeof super.onZigBeeMessage === 'function'
       ? super.onZigBeeMessage(endpointId, clusterId, frame, meta)
       : false;
@@ -483,7 +483,7 @@ class Button4GangDevice extends ButtonDevice {
       return;
     }
 
-    // Fallback: declared compose IDs only (P2331 — no invent `*_button_4gang_button_release`)
+    // Fallback: declared compose IDs only (P2331 - no invent `*_button_4gang_button_release`)
     try {
       const driverId = this.driver?.id || 'button_wireless_4';
       const candidates = type === 'release'
@@ -547,7 +547,7 @@ class Button4GangDevice extends ButtonDevice {
       // Prevent unbounded growth of the throttle map
       const keys = Object.keys(this._unrecFrameLog);
       if (keys.length > 64) {delete this._unrecFrameLog[keys[0]];}
-      this.log(`[BUTTON-4-UNRECOGNIZED] EP${ep} cluster=0x${Number(clusterId).toString(16)} cmd=${cmdId} data=${hex} — please send this line with a diagnostic report`);
+      this.log(`[BUTTON-4-UNRECOGNIZED] EP${ep} cluster=0x${Number(clusterId).toString(16)} cmd=${cmdId} data=${hex} - please send this line with a diagnostic report`);
     } catch (e) { /* never break frame handling */ }
   }
 

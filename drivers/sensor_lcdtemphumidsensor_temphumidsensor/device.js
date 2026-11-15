@@ -35,7 +35,7 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
       18: { capability: 'measure_temperature', smartDivisor: true },
       101: { capability: 'measure_temperature', smartDivisor: true }, // v6.1.6: fallback for _TZE284_
 
-      // Humidity (Ã·10 for TZE200 variants like _TZE200_vvmbj46n)
+      // Humidity (÷10 for TZE200 variants like _TZE200_vvmbj46n)
       2: { capability: 'measure_humidity', smartDivisor: true },
       102: { capability: 'measure_humidity', smartDivisor: true }, // v6.1.6: fallback for _TZE284_
 
@@ -132,7 +132,7 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
     this.homey.setTimeout(() => { if (this._destroyed) {return;} const temp = this.getCapabilityValue('measure_temperature');
       const hum = this.getCapabilityValue('measure_humidity');
       const bat = this.getCapabilityValue('measure_battery');
-      this.log('[LCD]  Temperature:', temp, 'Â°C Humidity:', hum, '% Battery:', bat, '%'); }, 100);
+      this.log('[LCD]  Temperature:', temp, '°C Humidity:', hum, '% Battery:', bat, '%'); }, 100);
   }
 
 

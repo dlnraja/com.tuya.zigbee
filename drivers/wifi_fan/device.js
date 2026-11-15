@@ -3,7 +3,7 @@ const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
 const { fanSpeedToPercent, percentToFanSpeed } = require('../../lib/tuya-local/TuyaDeviceTemplates');
 
 // WHY(2026-10-10): enum fan_speed firmwares (tuya-local fan configs: low/middle/high, level_1..) gave
-// Number('low') = NaN → dim 0. Known token ladders are converted with the shared helpers; numeric
+// Number('low') = NaN -> dim 0. Known token ladders are converted with the shared helpers; numeric
 // firmwares keep the fan_speed_min/max range path unchanged.
 const FAN_TOKEN_LADDERS = Object.freeze([
   ['low', 'middle', 'high'], ['low', 'mid', 'high'], ['low', 'medium', 'high'],

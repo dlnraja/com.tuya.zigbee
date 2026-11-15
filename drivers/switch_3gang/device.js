@@ -8,14 +8,14 @@ const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
  * 3-GANG SWITCH - v5.9.23 + ZCL-Only Mode (BSEED)
  * Physical button detection: single/double/long/triple per gang
  * BSEED ZCL-only mode: _TZ3000_qkixdnon (Pieter_Pessers forum)
- * v5.9.23: GROUP ISOLATION FIX — remove group memberships + broadcast filter
+ * v5.9.23: GROUP ISOLATION FIX - remove group memberships + broadcast filter
  * v7.5.43: Added _TZ3000_v4l4b0lp to ZCL_ONLY manufacturers (Issue #170)
- * WHY(P2395/B10): no Physical/Virtual double-wrap — already on TuyaZigbeeDevice.
+ * WHY(P2395/B10): no Physical/Virtual double-wrap - already on TuyaZigbeeDevice.
  */
 
 // ZCL-Only manufacturers (no Tuya DP) - forum: Pieter_Pessers BSEED 3-gang
 // Issue #170: _TZ3000_v4l4b0lp TS0003 confirmed ZCL-only (OnOff per EP, no Tuya DP 0xEF00)
-// P141: _TYZB01_mqel1whf + TS0013 — Lonsonho/Oz L+N 3-gang; EndDevice, ZCL OnOff only.
+// P141: _TYZB01_mqel1whf + TS0013 - Lonsonho/Oz L+N 3-gang; EndDevice, ZCL OnOff only.
 const ZCL_ONLY_MANUFACTURERS_3G = [
   '_TZ3000_qkixdnon', '_TZ3000_blhvsaqf', '_TZ3000_ysdv91bk',
   '_TZ3000_hafsqare', '_TZ3000_e98krvvk', '_TZ3000_iedbgyxt',
@@ -94,7 +94,7 @@ class Switch3GangDevice extends UnifiedSwitchBase {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
     }
 
-    // P2485: Z2M colored 3-gang rkbxtclc — log profile + force mains (no phantom battery)
+    // P2485: Z2M colored 3-gang rkbxtclc - log profile + force mains (no phantom battery)
     try {
       const { resolveEf00MultiGangProfile } = require('../../lib/tuya/Ef00MultiGangProfiles');
       const mfr = this.getSetting?.('zb_manufacturer_name') || this.getStoreValue?.('manufacturerName') || '';
@@ -119,7 +119,7 @@ class Switch3GangDevice extends UnifiedSwitchBase {
       // Continue with driver-specific setup
       try {
         if (this.isZclOnlyDevice) {
-          this.log('[SWITCH-3G] 🔵 ZCL-ONLY MODE (BSEED)');
+          this.log('[SWITCH-3G] [BLU] ZCL-ONLY MODE (BSEED)');
           await this._initZclOnlyMode(zclNode);
           return;
         }
@@ -131,9 +131,9 @@ class Switch3GangDevice extends UnifiedSwitchBase {
         this.log('[SWITCH-3G] Setup warning:', setupErr.message);
       }
 
-      this.log('[SWITCH-3G] ✅ v6.0 - Initialized with error recovery');
+      this.log('[SWITCH-3G] [OK] v6.0 - Initialized with error recovery');
     } catch (err) {
-      this.error('[SWITCH-3G] ❌ CRITICAL INIT ERROR:', err.message);
+      this.error('[SWITCH-3G] [ERR] CRITICAL INIT ERROR:', err.message);
       this.error('[SWITCH-3G] Stack:', err.stack);
       this.setUnavailable('Driver initialization incomplete - try removing and re-pairing').catch(() => {});
     }
@@ -153,14 +153,14 @@ class Switch3GangDevice extends UnifiedSwitchBase {
     this._zclNode = zclNode;
     this._isZclOnlyMode = true; // v5.5.993: Flag for VirtualButtonMixin direct ZCL
 
-    // P141: TS001x ZCL-only — no electricalMeasurement; strip phantom energy caps
+    // P141: TS001x ZCL-only - no electricalMeasurement; strip phantom energy caps
     for (const phantom of ['measure_power', 'measure_voltage', 'measure_current', 'meter_power']) {
       if (this.hasCapability(phantom)) {
         await this.removeCapability(phantom).catch(e => this.log(`[BSEED-3G] strip ${phantom}: ${e.message}`));
       }
     }
 
-    // v5.9.23: GROUP ISOLATION — remove all Zigbee group memberships per EP
+    // v5.9.23: GROUP ISOLATION - remove all Zigbee group memberships per EP
     await this._removeGroupMemberships(zclNode);
 
     // v5.9.23: Track which gang was last commanded by the app
@@ -257,7 +257,7 @@ class Switch3GangDevice extends UnifiedSwitchBase {
               const card = this.homey.flow.getDeviceTriggerCard(flowId);
               if (card) {
                 await card.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
-                this.log(`[BSEED-3G] 🔘 Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
+                this.log(`[BSEED-3G] [BTN] Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
               }
             } catch (e) { }
           }
@@ -266,7 +266,7 @@ class Switch3GangDevice extends UnifiedSwitchBase {
               const card = this.homey.flow.getDeviceTriggerCard(`switch_3gang_gang${  epNum  }_scene`);
               if (card) {
                 await card.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
-                this.log(`[BSEED-3G] 🎬 Scene G${epNum} ${value ? 'on' : 'off'}`);
+                this.log(`[BSEED-3G] [REC] Scene G${epNum} ${value ? 'on' : 'off'}`);
               }
             } catch (e) { }
           }
@@ -275,7 +275,7 @@ class Switch3GangDevice extends UnifiedSwitchBase {
       this.log(`[BSEED-3G] EP${epNum} attr listener registered`);
     }
 
-    // v5.8.72: PacketNinja pattern — configure onOff reporting per endpoint
+    // v5.8.72: PacketNinja pattern - configure onOff reporting per endpoint
     for (const epNum of [1, 2, 3]) {
       const onOff = getOnOffCluster(epNum);
       if (onOff && typeof onOff.configureReporting === 'function') {
@@ -283,14 +283,14 @@ class Switch3GangDevice extends UnifiedSwitchBase {
           await onOff.configureReporting({
             onOff: { minInterval: 0, maxInterval: 300, minChange: 1 }
           });
-          this.log(`[BSEED-3G] ✅ EP${epNum} onOff reporting configured`);
+          this.log(`[BSEED-3G] [OK] EP${epNum} onOff reporting configured`);
         } catch (err) {
           this.log(`[BSEED-3G] EP${epNum} configureReporting failed: ${err.message}`);
         }
       }
     }
 
-    // v5.8.72: PacketNinja pattern — read initial onOff state per endpoint
+    // v5.8.72: PacketNinja pattern - read initial onOff state per endpoint
     for (const epNum of [1, 2, 3]) {
       const onOff = getOnOffCluster(epNum);
       if (onOff && typeof onOff.readAttributes === 'function') {
@@ -309,7 +309,7 @@ class Switch3GangDevice extends UnifiedSwitchBase {
     }
 
     await this.initVirtualButtons?.();
-    this.log('[SWITCH-3G] ✅ BSEED ZCL-only mode ready (packetninja v990+v5.8.72)');
+    this.log('[SWITCH-3G] [OK] BSEED ZCL-only mode ready (packetninja v990+v5.8.72)');
   }
 
   /**

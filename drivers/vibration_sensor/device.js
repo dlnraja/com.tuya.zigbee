@@ -7,7 +7,7 @@ const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timer
 const MfrHelper = require('../../lib/helpers/ManufacturerNameHelper');
 
 /**
- * Vibration Sensor Device — P2422 HOBEIAN ZG-102ZM / ZG-103Z / ZG-228Z enrich
+ * Vibration Sensor Device - P2422 HOBEIAN ZG-102ZM / ZG-103Z / ZG-228Z enrich
  * WHY: Z2M DP maps differ by couple; generic map missed contact (DP101) + tilt (DP7).
  */
 class VibrationSensorDevice extends UnifiedSensorBase {
@@ -84,7 +84,7 @@ class VibrationSensorDevice extends UnifiedSensorBase {
     if (this._isHobeian102ZM()) {
       return {
         1: { capability: 'alarm_vibration', transform: boolean() },
-        // WHY(P2422): Z2M inverse — 0=closed(true contact), 1=open(false)
+        // WHY(P2422): Z2M inverse - 0=closed(true contact), 1=open(false)
         101: {
           capability: 'alarm_contact',
           transform: (v) => {
@@ -102,7 +102,7 @@ class VibrationSensorDevice extends UnifiedSensorBase {
     if (this._isHobeian103Z()) {
       return {
         1: { capability: 'alarm_vibration', transform: boolean() },
-        7: { capability: 'alarm_tamper', transform: boolean() }, // tilt → tamper UX
+        7: { capability: 'alarm_tamper', transform: boolean() }, // tilt -> tamper UX
         105: { capability: 'measure_battery', divisor: 1 },
         104: { capability: null, setting: 'sensitivity' },
         101: { capability: null, internal: 'axis_x' },
@@ -170,7 +170,7 @@ class VibrationSensorDevice extends UnifiedSensorBase {
     const mapping = this.dpMappings[dpId];
     if (mapping) {
       if (!mapping.capability) {
-        // settings / internal — ignore silently (writable via settings TX elsewhere)
+        // settings / internal - ignore silently (writable via settings TX elsewhere)
         return undefined;
       }
       let val;

@@ -44,7 +44,7 @@ class HybridHeaterThermostatDevice extends UnifiedSensorBase {
 
     await super.onNodeInit({ zclNode });
 
-    // P130: sendTuyaDataPoint never existed — DeviceIOFacade / sendTuyaCommand dual-path
+    // P130: sendTuyaDataPoint never existed - DeviceIOFacade / sendTuyaCommand dual-path
     this._sendHeaterDp = async (dp, value, type = 'value') => {
       if (this.io && typeof this.io.sendDP === 'function') {
         try {

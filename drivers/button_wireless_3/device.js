@@ -6,14 +6,14 @@ const { installTs004xDedicatedComplement } = require('../../lib/devices/Ts004xDe
 const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 /**
- * Button3GangDevice — battery wall scene remote (TS0043 / Zemismart / Moes / Lonsonho)
+ * Button3GangDevice - battery wall scene remote (TS0043 / Zemismart / Moes / Lonsonho)
  *
  * P2608: full hybrid RX (ZCL + OnOff 0xFD + E000 + EF00 DP + raw).
  * P2629 Bastien live interview `_TZ3000_vsxvaj9i`+TS0043:
  *   EP1: basic(0)+power(1)+onOff(6)+E000(57344); out ota(25)+time(10)
- *   EP2–4: onOff+power (phantom battery 0 junk — use EP1 only)
- *   NO cluster EF00/61184 — never force EF00 TX; never write 0x8004
- *   ZCL batteryPercentageRemaining=200 → 100%
+ *   EP2-4: onOff+power (phantom battery 0 junk - use EP1 only)
+ *   NO cluster EF00/61184 - never force EF00 TX; never write 0x8004
+ *   ZCL batteryPercentageRemaining=200 -> 100%
  */
 class Button3GangDevice extends ButtonDevice {
 
@@ -34,7 +34,7 @@ class Button3GangDevice extends ButtonDevice {
       productId: base.productId || 'TS0043',
       buttonCount: 3,
       maxButtons: 3,
-      // WHY(P2707): crash-safe lean Flow + skipUiPulse — Contre quoi Homey crash noir
+      // WHY(P2707): crash-safe lean Flow + skipUiPulse - Contre quoi Homey crash noir
       debounceMs: Math.min(Number(base.debounceMs) || 25, 25), // P2693 floor: debounceMs: 80
       crossPathDedupMs: Math.min(Number(base.crossPathDedupMs) || 40, 40),
       appCommandWindow: Math.min(Number(base.appCommandWindow) || 180, 180),
@@ -71,7 +71,7 @@ class Button3GangDevice extends ButtonDevice {
           pid: 'TS0043',
           clustersEp1: [0, 1, 6, 57344],
           noEf00: true,
-          // WHY(P2703): live mesh Node 7 = 5b:91:98… (Homey Appareil Zigbee); prior f6:3d OFF_MESH
+          // WHY(P2703): live mesh Node 7 = 5b:91:98... (Homey Appareil Zigbee); prior f6:3d OFF_MESH
           ieeeHint: 'a4:c1:38:5b:91:98:dd:55',
           ieeeHintPrior: 'a4:c1:38:f6:3d:2d:c9:79',
         };
@@ -89,32 +89,32 @@ class Button3GangDevice extends ButtonDevice {
       await installWallSceneRemoteHybrid(this, zclNode, {
         maxButtons: 3,
         tag: 'BUTTON_WIRELESS_3',
-        // Interview has no 0xEF00 — listen soft-skips; never TX EF00
+        // Interview has no 0xEF00 - listen soft-skips; never TX EF00
         skipEf00Tx: true,
       });
     } catch (e) {
       this.log('[BUTTON_WIRELESS_3] hybrid soft-fail:', e.message);
     }
 
-    // WHY(P2616 complementary): dedicated LevelControl + parseZclHeader — never wipe hybrid
+    // WHY(P2616 complementary): dedicated LevelControl + parseZclHeader - never wipe hybrid
     try {
       await installTs004xDedicatedComplement(this, zclNode, {
         maxButtons: 3,
         tag: 'BUTTON_WIRELESS_3',
-        // WHY(P2693): LevelControl stop→release invent = ghost "other" lamp
+        // WHY(P2693): LevelControl stop->release invent = ghost "other" lamp
         enableLevelControl: false,
       });
     } catch (e) {
       this.log('[BUTTON_WIRELESS_3] dedicated complement soft-fail:', e.message);
     }
 
-    // WHY(P2699/P2701): E000 + 0xFD are Homey-gap — complementary soft-arm only (never EF00 mandatory)
+    // WHY(P2699/P2701): E000 + 0xFD are Homey-gap - complementary soft-arm only (never EF00 mandatory)
     try {
       const { softArmComplementaryIo } = require('../../lib/io/NonNativeComplementary');
       softArmComplementaryIo(this, { zclNode, io: this.io });
     } catch (_e) { /* optional */ }
 
-    // WHY(P2734): Homey charter Button 1–3 tiles + bi-dir soft pulse
+    // WHY(P2734): Homey charter Button 1-3 tiles + bi-dir soft pulse
     try {
       for (const cap of ['button.1', 'button.2', 'button.3']) {
         if (!this.hasCapability?.(cap) && typeof this.addCapability === 'function') {

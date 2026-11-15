@@ -73,6 +73,6 @@ describe('P2757 coin battery no proactive poll', () => {
     assert.match(v3, /P2757 refuse startPolling/);
     const sys = fs.readFileSync(path.join(ROOT, 'lib/battery/BatterySystem.js'), 'utf8');
     assert.match(sys, /P2757 skip configureReporting/);
-    assert.match(sys, /P2757 sleepy\/coin — listen-only/);
+    assert.match(sys, /P2757 sleepy\/coin [-—] listen-only/);
   });
 });

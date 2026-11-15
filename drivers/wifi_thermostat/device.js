@@ -4,7 +4,7 @@ const { climateModeFromValue, climateValueFromMode } = require('../../lib/tuya-l
 
 const MODE_MAP = { 0: 'off', 1: 'heat', 2: 'auto', 3: 'eco' };
 const MODE_REV = { off: 0, heat: 1, auto: 2, eco: 3 };
-// WHY(2026-10-10): string firmwares (tuya-local hvac_mode vocabularies: hot/cold/auto, manual/program…) were
+// WHY(2026-10-10): string firmwares (tuya-local hvac_mode vocabularies: hot/cold/auto, manual/program...) were
 // passed through untouched, which is not a valid thermostat_mode value. Learn the vocabulary per device and
 // convert both ways; integer firmwares keep MODE_MAP/MODE_REV unchanged.
 const STRING_MODE_SETS = ['auto_cold_hot', 'cool_heat_fan', 'manual_auto', 'manual_program'];

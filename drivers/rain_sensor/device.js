@@ -19,7 +19,7 @@ const rainMv = (threshold) => (v) => {
 /**
  * Rain Sensor Device
  * v9.7.4: FIX for Issue #326 - _TZE200_u6x1zyv2 pairs but reports no values
- *         Added DP 2 → measure_humidity (rain level %) and DP 106 mappings
+ *         Added DP 2 -> measure_humidity (rain level %) and DP 106 mappings
  *         Fixed TS0601 rain sensors using Tuya EF00 DP protocol
  * v5.5.889: Added IAS Zone support for TS0207 devices (Dominique_C forum report)
  * v5.3.64: SIMPLIFIED base implementation
@@ -35,7 +35,7 @@ class RainSensorDevice extends UnifiedSensorBase {
     get dpMappings() {
     const mfr = typeof this.getSetting === 'function' ? this.getSetting('zb_manufacturer_name') || '' : '';
 
-    // ── HOBEIAN ZG-223Z (Z2M: IAS rain + ZCL illuminance + battery) ──
+    // -- HOBEIAN ZG-223Z (Z2M: IAS rain + ZCL illuminance + battery) --
     if (containsCI(mfr, 'HOBEIAN') || containsCI(mfr, 'u6x1zyv2') || containsCI(mfr, 'jsaqgakf') || containsCI(mfr, '2pddnnrk') || containsCI(mfr, 'gt1gge3x')) {
       // gt1gge3x: Z2M ZG-223Z sibling (Koenkk/zigbee-herdsman-converters PR #13340, jomders, 2026-10-01)
       return {
@@ -52,7 +52,7 @@ class RainSensorDevice extends UnifiedSensorBase {
       };
     }
 
-    // ── TS0207 Solar Rain Sensor (RB-SRAIN01) ──
+    // -- TS0207 Solar Rain Sensor (RB-SRAIN01) --
     // _TZ3210_tgvtvdoc / _TZ3210_p68kms0l
     // Per Z2M: DP4=battery, DP101=solar mV, DP102=avg20min mV,
     //   DP103=maxToday mV, DP104=cleaning reminder, DP105=rain intensity mV
@@ -68,7 +68,7 @@ class RainSensorDevice extends UnifiedSensorBase {
       };
     }
 
-    // ── TS0601 generic fallback ──
+    // -- TS0601 generic fallback --
     return {
       // TS0601 DP layout (_TZE200_u6x1zyv2, _TZE200_jsaqgakf, etc.)
       1: { capability: 'alarm_water', transform: boolean() }, // Rain alarm boolean
@@ -114,7 +114,7 @@ class RainSensorDevice extends UnifiedSensorBase {
     }
 
     await super.onNodeInit({ zclNode });
-    // v8.4.1: _registerCapabilityListeners removed — UnifiedSensorBase uses
+    // v8.4.1: _registerCapabilityListeners removed - UnifiedSensorBase uses
     // capability listeners via dpMappings + UnifiedSensorBase native handlers
     
     // v5.5.889: IAS Zone support for TS0207 rain sensors

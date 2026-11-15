@@ -12,7 +12,7 @@ const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 class wall_remote_4_gang_2 extends UnifiedSwitchBase {
 
   async onNodeInit({ zclNode }) {
-    await this._safeInvoke(async () => { this.log('🎨 Initializing 4 Gang Wall Remote (Type 2)...');
+    await this._safeInvoke(async () => { this.log('[UI] Initializing 4 Gang Wall Remote (Type 2)...');
       // Call parent to setup raw frame fallbacks
       await super.onNodeInit({ zclNode  });
       this._buttonPressedTriggerDevice = this.homey.flow.getDeviceTriggerCard('wall_remote_4_gang_2_wall_remote_4_gang_buttons_2');
@@ -21,7 +21,7 @@ class wall_remote_4_gang_2 extends UnifiedSwitchBase {
       return args.button === state.button;
       });
       }
-      this.log('✅ Remote Initialized');
+      this.log('[OK] Remote Initialized');
     }, 'onNodeInit');
   }
 

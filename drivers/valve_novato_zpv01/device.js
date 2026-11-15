@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * P3013 — Novato ZPV-01 battery water valve (`_TZE284_zm8zpwas` / TS0601).
+ * P3013 - Novato ZPV-01 battery water valve (`_TZE284_zm8zpwas` / TS0601).
  * Source: Koenkk/zigbee-herdsman-converters src/devices/tuya.ts (ZPV-01 definition).
  * DP1 valve on/off (bool), DP8 valve_state enum (0 unknown, 1 open, 2 closed), DP101 battery %.
  * NOTE: the long form `_TZE2841000000_zm8zpwas` (Zemismart PF-PM07D, P2835) stays on water_valve_smart.

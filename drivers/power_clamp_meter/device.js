@@ -18,21 +18,21 @@ const { MeterWriteCoalescer, KeyedLogThrottle } = require('../../lib/utils/Meter
  * 
  * PJ-1203A 2-CHANNEL DP MAPPINGS (CORRECTED from Z2M #18419):
  * 
- * DP101: power_a (W Ã·10)
+ * DP101: power_a (W ÷10)
  * DP102: power_direction_a (0=forward, 1=reverse)
  * DP104: power_direction_b
- * DP105: power_b (W Ã·10)
- * DP106: energy_forward_a (kWh Ã·100)
- * DP107: energy_reverse_a (kWh Ã·100)
- * DP108: energy_forward_b (kWh Ã·100)
- * DP109: energy_reverse_b (kWh Ã·100)
- * DP110: power_factor_a (Ã·100)
- * DP111: ac_frequency (Hz Ã·100)
- * DP112: voltage (V Ã·10)
- * DP113: current_a (A Ã·1000)
- * DP114: current_b (A Ã·1000)
- * DP115: power_ab (W Ã·10) - Total power
- * DP121: power_factor_b (Ã·100)
+ * DP105: power_b (W ÷10)
+ * DP106: energy_forward_a (kWh ÷100)
+ * DP107: energy_reverse_a (kWh ÷100)
+ * DP108: energy_forward_b (kWh ÷100)
+ * DP109: energy_reverse_b (kWh ÷100)
+ * DP110: power_factor_a (÷100)
+ * DP111: ac_frequency (Hz ÷100)
+ * DP112: voltage (V ÷10)
+ * DP113: current_a (A ÷1000)
+ * DP114: current_b (A ÷1000)
+ * DP115: power_ab (W ÷10) - Total power
+ * DP121: power_factor_b (÷100)
  * DP129: update_frequency (seconds)
  *
  * 
@@ -190,7 +190,7 @@ class PowerClampMeterDevice extends TuyaZigbeeDevice {
       '_TZE204_cjbofhxw', '_TZE284_cjbofhxw',   // Matsee Plus variant (Z2M #15359)
       '_TZE28C1000000_81yrt3lo'                  // New variant (Issue #329, Z2M #26403)
     ];
-    // v5.7.10: FIX — actually compare the device mfr (previous code tested the
+    // v5.7.10: FIX - actually compare the device mfr (previous code tested the
     // list against itself and ALWAYS returned 'pj1203a', even for 3-phase meters)
     if (includesCI(pj1203aIds, mfr)) { return 'pj1203a'; }
     // Known 3-phase clamps (Z2M #15359 family). A later PJ-looking DP must not override this.
@@ -480,7 +480,7 @@ class PowerClampMeterDevice extends TuyaZigbeeDevice {
       this._p3298Log(dp, `[FALLBACK]  Direction B: ${value === 0 ? 'consuming' : 'producing'}`);
       break;
 
-    case 105: // Power B (W ÷ 10) — same scale as the bidirectional clamp
+    case 105: // Power B (W ÷ 10) - same scale as the bidirectional clamp
       this._setMeter('measure_power.phase2', safeDivide(value, 10));
       break;
 
@@ -489,11 +489,11 @@ class PowerClampMeterDevice extends TuyaZigbeeDevice {
       this._setMeter('measure_power_factor', safeDivide(value, 100));
       break;
 
-    case 111: // AC frequency (Hz ÷ 100). 4908 → 49.08 Hz in logs b3f8c2c6 / b2e9ffe8.
+    case 111: // AC frequency (Hz ÷ 100). 4908 -> 49.08 Hz in logs b3f8c2c6 / b2e9ffe8.
       this._setMeter('measure_frequency', safeDivide(value, 100));
       break;
 
-    case 112: // Voltage (V ÷ 10). 2256 → 225.6 V in the same logs.
+    case 112: // Voltage (V ÷ 10). 2256 -> 225.6 V in the same logs.
       this._setMeter('measure_voltage', safeDivide(value, 10));
       break;
 

@@ -48,7 +48,7 @@ class COSensorDevice extends UnifiedSensorBase {
       // Parent init handles DP listeners, battery handler, and reporting config
       await super.onNodeInit({ zclNode });
 
-      this.log('[CO] ✅ Device ready');
+      this.log('[CO] [OK] Device ready');
     }, 'onNodeInit');
   }
 
@@ -73,7 +73,7 @@ class COSensorDevice extends UnifiedSensorBase {
         });
       } else if (mapping.divisor) {finalValue = value / mapping.divisor;}
 
-      this.log(`[CO] DP${dpId} → ${mapping.capability}: ${finalValue}`);
+      this.log(`[CO] DP${dpId} -> ${mapping.capability}: ${finalValue}`);
       return this.safeSetCapabilityValue(mapping.capability, finalValue).catch(() => {});
     }
     

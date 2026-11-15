@@ -199,7 +199,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
       '_TZ3000_n2egfsli'
     ], mfr);
 
-    // Polarity lists + smart learn + alarm_polarity setting → AlarmPolarityManager
+    // Polarity lists + smart learn + alarm_polarity setting -> AlarmPolarityManager
     const { resolvePolarity } = require('../../lib/managers/AlarmPolarityManager');
     const pol = resolvePolarity(this, 'contact');
     const invertedByDefault = !!pol.listedInvert && !pol.listedNormal;
@@ -228,7 +228,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
     this.log('[CONTACT] v5.11.106 - DPs: 1,2,3,4,5,15,101 | ZCL: IAS,PWR,EF00 | SONOFF: tamper');
     this.log(`[CONTACT]  Ready (debounce: ${this._debounceMs}ms, invert: ${this._invertContact}, problematic: ${this._isProblematicSensor})`);
 
-    // WHY(P2339): blutch32 _TZ3000_99rpfy6+TS0203 — paired but silent until first wake.
+    // WHY(P2339): blutch32 _TZ3000_99rpfy6+TS0203 - paired but silent until first wake.
     // Sleepy IAS contacts skip boot bind; schedule one zoneStatus read after announce window.
     safeSetTimeout(this, async () => {
       if (this._destroyed) { return; }
@@ -249,7 +249,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
 
   /**
    * WHY(P3021c / forum #2134): exact-couple DP1 default inversion (HOBEIAN|ZG-102ZL,
-   * Z2M `valueConverter.inverse`). Only touches the DP path flags — IAS frames are
+   * Z2M `valueConverter.inverse`). Only touches the DP path flags - IAS frames are
    * never inverted here (UnifiedSensorBase/AlarmPolarityManager own them).
    */
   _applyDpCoupleDefault(pol) {
@@ -291,7 +291,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
         || this.getSetting('invert_contact') || this.getSetting('reverse_alarm'))
         && pol.mode === 'auto' && !this._invertedByDefault;
       this._applyDpCoupleDefault(pol);
-      this.log(`[CONTACT] Invert/polarity → ${this._invertContact} (${pol.reason})`);
+      this.log(`[CONTACT] Invert/polarity -> ${this._invertContact} (${pol.reason})`);
       // Toggle current displayed state when user explicitly flips polarity
       const current = this.getCapabilityValue('alarm_contact');
       if (current !== null) {
@@ -356,10 +356,10 @@ class ContactSensorDevice extends UnifiedSensorBase {
           Promise.resolve(this.setStoreValue?.('contact_ssot_latch', this._contactLatch)).catch(() => {});
         }
         if (!verdict.accept) {
-          this.log(`[CONTACT-LATCH] ignored ${isIAS ? 'IAS' : 'DP'} ${finalValue} — ${verdict.reason}`);
+          this.log(`[CONTACT-LATCH] ignored ${isIAS ? 'IAS' : 'DP'} ${finalValue} - ${verdict.reason}`);
           return;
         }
-      } catch (_latchErr) { /* latch is complementary — never block the contact path */ }
+      } catch (_latchErr) { /* latch is complementary - never block the contact path */ }
 
       const now = Date.now();
       const state = this._contactState || { lastValue: null, lastChangeTime: 0, timer: null };
@@ -514,7 +514,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
     } catch (_e) { /* ignore */ }
     if (typeof this._updateLastSeen === 'function') {this._updateLastSeen();}
     // WHY: Peter #2183 windows showed lux (DP101) but contact Flows stayed
-    // grey — announce used to skip parent IAS re-attach and force Tuya recovery.
+    // grey - announce used to skip parent IAS re-attach and force Tuya recovery.
     try {
       await this._reattachIasOnWake();
       this.log('[CONTACT] IAS re-attach on wake OK');

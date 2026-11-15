@@ -68,9 +68,9 @@ class BedSensorDevice extends UnifiedSensorBase {
    */
   _handleBatteryDP(dp, value) {
     if (dp === 4) {
-      // Binary battery: 0=depleted, 1=OK — never invent fake % (P115/P120)
+      // Binary battery: 0=depleted, 1=OK - never invent fake % (P115/P120)
       if (value === 0) {
-        this.log('[BED] Battery DP4: depleted (0) → alarm only, no fake %');
+        this.log('[BED] Battery DP4: depleted (0) -> alarm only, no fake %');
         if (!this._destroyed && this.hasCapability('alarm_battery')) {
           this.safeSetCapabilityValue('alarm_battery', true).catch(() => {});
         }
@@ -78,7 +78,7 @@ class BedSensorDevice extends UnifiedSensorBase {
         return;
       }
       if (value === 1) {
-        this.log('[BED] Battery DP4: OK (1) → 100%');
+        this.log('[BED] Battery DP4: OK (1) -> 100%');
         if (!this._destroyed) {
           if (this.hasCapability('alarm_battery')) {
             this.safeSetCapabilityValue('alarm_battery', false).catch(() => {});

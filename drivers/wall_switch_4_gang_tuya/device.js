@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * 4-Gang EF00 wall switch — P2485 max DP/flow/heuristic adaptation.
+ * 4-Gang EF00 wall switch - P2485 max DP/flow/heuristic adaptation.
  * Couples: shkxsgis / aagrxlbd / hewlydpz / 7ytnacie (+ case forms).
  * Profiles: lib/tuya/Ef00MultiGangProfiles.js (Z2M-locked).
  */
@@ -52,7 +52,7 @@ class wall_switch_4_gang_tuya extends TuyaSpecificClusterDevice {
   }
 
   async _stripPhantomBattery() {
-    // WHY(P2472a/P2485): mains EF00 4-gang — compose legacy measure_battery must not stick
+    // WHY(P2472a/P2485): mains EF00 4-gang - compose legacy measure_battery must not stick
     try {
       if (this.hasCapability('measure_battery')) {
         await this.removeCapability('measure_battery').catch(() => {});
@@ -93,21 +93,21 @@ class wall_switch_4_gang_tuya extends TuyaSpecificClusterDevice {
       });
     }
 
-    // UI maintenance buttons → toggle matching gang DP
+    // UI maintenance buttons -> toggle matching gang DP
     for (let gang = 1; gang <= 4; gang++) {
       const cap = `button.${gang}`;
       if (!this.hasCapability(cap)) {continue;}
       const dp = gangStateDp(profile, gang);
       this.registerCapabilityListener(cap, async () => {
         const next = !this._dpStates?.[dp];
-        this.log(`${cap} pressed (UI) — DP${dp} → ${next}`);
+        this.log(`${cap} pressed (UI) - DP${dp} -> ${next}`);
         if (typeof this.markAppCommand === 'function') {this.markAppCommand();}
         await this.writeBool(dp, next);
         return true;
       });
     }
 
-    // Apply settings → TX on boot (heuristic soft)
+    // Apply settings -> TX on boot (heuristic soft)
     await this._applySettingsToDevice(this.getSettings?.() || {}).catch(() => {});
   }
 
@@ -146,7 +146,7 @@ class wall_switch_4_gang_tuya extends TuyaSpecificClusterDevice {
       return;
     }
 
-    // Master all-on/off (DP13) — update main tile only
+    // Master all-on/off (DP13) - update main tile only
     if (dps.master != null && dp === dps.master && !this.isSubDevice()) {
       await this.safeSetCapabilityValue('onoff', !!parsedValue).catch(() => {});
       return;
@@ -205,7 +205,7 @@ class wall_switch_4_gang_tuya extends TuyaSpecificClusterDevice {
       await this.writeEnum(dps.power_on, powerOnToEnum(settings.power_on_behavior)).catch((e) => this.error(e));
     }
     if (want('backlight_mode') && dps.indicator != null && settings.backlight_mode != null) {
-      // strings: off / normal / inverted → indicator enum
+      // strings: off / normal / inverted -> indicator enum
       await this.writeEnum(dps.indicator, indicatorToEnum(settings.backlight_mode)).catch((e) => this.error(e));
     }
     if (want('backlight_switch') && dps.backlight_switch != null && settings.backlight_switch != null) {
@@ -225,7 +225,7 @@ class wall_switch_4_gang_tuya extends TuyaSpecificClusterDevice {
     }
   }
 
-  /** Flow helper: set countdown seconds for gang 1–4 */
+  /** Flow helper: set countdown seconds for gang 1-4 */
   async setGangCountdown(gang, seconds) {
     const profile = this._profile();
     const key = `countdown_l${gang}`;

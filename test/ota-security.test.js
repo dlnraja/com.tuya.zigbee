@@ -108,6 +108,6 @@ describe('OTA index schema validation', () => {
     const src = require('fs').readFileSync(require('path').join(ROOT, 'lib/ota/TuyaXiaomiOTAProvider.js'), 'utf8');
     assert.match(src, /Number\.isFinite\(img\.manufacturerCode\)/);
     assert.match(src, /img\.url\.startsWith\('https:\/\/'\)/);
-    assert.match(src, /no valid entries — keeping previous cache/);
+    assert.match(src, /no valid entries [-—] keeping previous cache/);
   });
 });

@@ -54,7 +54,7 @@ class dimmer_1_gang_tuya extends TuyaSpecificClusterDevice {
         });
         this.hasListenersAttached = true;
       } else {
-        this.log('[DIMMER1] Tuya cluster missing after compensation — passive RX via DeviceIO');
+        this.log('[DIMMER1] Tuya cluster missing after compensation - passive RX via DeviceIO');
       }
     }
   }
@@ -80,7 +80,7 @@ class dimmer_1_gang_tuya extends TuyaSpecificClusterDevice {
     });
 
     this.registerCapabilityListener('dim', async (value) => {
-      // WHY(P2360): MCU brightness 0–1000 clamp (Z2M #32305) — never raw *1000 overflow
+      // WHY(P2360): MCU brightness 0-1000 clamp (Z2M #32305) - never raw *1000 overflow
       const brightness = toTuyaBrightness(value);
       this.log('brightness:', brightness);
       

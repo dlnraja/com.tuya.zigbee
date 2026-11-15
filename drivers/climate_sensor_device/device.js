@@ -2,7 +2,7 @@
 
 const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
 const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
-// P3015: same DP layout as ME167 (DP4 setpoint, DP5 temp, DP3 running, DP47 calibration) — Z2M tuya.ts#L5882 (AR331Pro)
+// P3015: same DP layout as ME167 (DP4 setpoint, DP5 temp, DP3 running, DP47 calibration) - Z2M tuya.ts#L5882 (AR331Pro)
 const ME167_LAYOUT_COMPAT = ['_TZE284_nbv4tdaz'];
 const { safeDivide, safeMultiply } = require('../../lib/utils/tuyaUtils.js');
 
@@ -41,7 +41,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       '_TZE284_hvaxb2tc', '_tze284_hvaxb2tc',
       '_TZE204_o3x45p96', '_tze204_o3x45p96'
     ];
-    // WHY(P3015 2026-10-24): was me167Ids.some(id => includesCI(me167Ids, id)) — always true, so every
+    // WHY(P3015 2026-10-24): was me167Ids.some(id => includesCI(me167Ids, id)) - always true, so every
     // device got 'me167' and mfr was never read. Keep that effective behaviour for every couple this
     // driver really serves (ME167 ids, AR331Pro _TZE284_nbv4tdaz whose DPs match ME167 per Z2M tuya.ts#L5882,
     // and unknown/empty mfr = historic default); only a known non-ME167 Tuya id gets 'standard'.

@@ -51,7 +51,7 @@ const getDataValue = (dpValue) => {
 };
 
 /**
- * PIR mmWave Sensor — P127: TuyaZigbeeDevice + safe-timers
+ * PIR mmWave Sensor - P127: TuyaZigbeeDevice + safe-timers
  * Multi-path: IAS Zone + Tuya DP + ZCL illuminance/battery
  */
 class pir_mmwave_sensor extends TuyaZigbeeDevice {
@@ -158,7 +158,7 @@ class pir_mmwave_sensor extends TuyaZigbeeDevice {
       batteryType: 'CR2032',
     });
     if (batteryLevel == null) { return; }
-    this.log('Battery raw:', batteryPercentageRemaining, '→', batteryLevel, '%');
+    this.log('Battery raw:', batteryPercentageRemaining, '->', batteryLevel, '%');
     this.safeSetCapabilityValue('measure_battery', batteryLevel).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
     this.safeSetCapabilityValue('alarm_battery', batteryLevel < batteryThreshold).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
   }

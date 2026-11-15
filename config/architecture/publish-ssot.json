@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "id": "P2286-P2288-P2495",
-    "updated": "2026-09-14",
+    "id": "P2286-P2288-P2495+P3320",
+    "updated": "2026-11-15",
     "why": "Orphan Athom builds + tip hang soft-continue (P2325) + inbox diag harvest (P2326) + P2490 sacred-keep failover + P2494 couple-native + P2495 publish CI/CD path lock.",
     "humanDoc": "docs/architecture/PUBLISH_SSOT.md",
     "workflowGuidelines": ".github/WORKFLOW_GUIDELINES.md §M.8",
@@ -12,10 +12,17 @@
   "payloadSize": {
     "id": "P2840",
     "why": "Athom socket hang / processing_failed when upload bloats (root backups/ ~12MB dumps in .homeybuild).",
-    "homeyignoreMustExclude": ["backups", "tmp", "reports", "data/mfs_db.json"],
+    "homeyignoreMustExclude": [
+      "backups",
+      "tmp",
+      "reports",
+      "data/mfs_db.json"
+    ],
     "sizeGate": "scripts/ci/publish-size-gate.cjs",
     "leanWarnMB": 14,
-    "failIfBuildContains": ["backups/"],
+    "failIfBuildContains": [
+      "backups/"
+    ],
     "npm": "check:p2840",
     "test": "test/critical/p2840-publish-payload-no-backups.test.js"
   },
@@ -319,5 +326,18 @@
     "test": "test/critical/p2831-socket-hang-tip-mail-storm.test.js",
     "npm": "check:p2831",
     "classify": "BOTH"
+  },
+  "shippedJsLatin1": {
+    "id": "P3320",
+    "updated": "2026-11-15",
+    "why": "V8 retains module source; any char > U+00FF doubles a file's retained size (Bastien OOM). Unreferenced images bloat the Athom package.",
+    "rule": "No raw character above U+00FF in shipped JS (ASCII tags or \\u escapes). Accented Latin-1 stays. Do not change locales or compose titles. No unreferenced or heavy logos/images in the package; keep Athom small/large/xlarge and manifest-referenced icons.",
+    "gate": "tools/ci/p3320-shipped-latin1-assets-gate.js",
+    "rulesGatesId": "p3320-latin1",
+    "test": "test/critical/p3320-shipped-latin1-assets.test.js",
+    "helper": "scripts/maintenance/p3320-latin1-source.cjs",
+    "allowlist": "tools/ci/p3320-latin1-allowlist.json",
+    "humanDoc": "docs/rules/SHIPPED_JS_LATIN1.md",
+    "publishSafetyNet": "scripts/maintenance/latin1-js.cjs (P3312, payload only)"
   }
 }

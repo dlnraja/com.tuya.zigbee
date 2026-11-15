@@ -8,14 +8,14 @@ const { containsCI, includesCI } = require('../../lib/utils/CaseInsensitiveMatch
 const { ensureManufacturerSettings } = require('../../lib/helpers/ManufacturerNameHelper');
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      IRRIGATION VALVE - v9.7.3 UNIFIED (extends UnifiedPlugBase properly)     ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║ UnifiedPlugBase handles: onoff listener, Tuya DP, ZCL On/Off                ║
- * ║  BatteryMixin handles: battery reporting and measurement                    ║
- * ║  DPs: 1,2,5-7,11,13-15,101-104 | ZCL: 6,1,EF00                              ║
- * ║  Models: TS0601, _TZE200_*, Smart irrigation controller                     ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * +==============================================================================+
+ * |      IRRIGATION VALVE - v9.7.3 UNIFIED (extends UnifiedPlugBase properly)     |
+ * +==============================================================================+
+ * | UnifiedPlugBase handles: onoff listener, Tuya DP, ZCL On/Off                |
+ * |  BatteryMixin handles: battery reporting and measurement                    |
+ * |  DPs: 1,2,5-7,11,13-15,101-104 | ZCL: 6,1,EF00                              |
+ * |  Models: TS0601, _TZE200_*, Smart irrigation controller                     |
+ * +==============================================================================+
  */
 const INSOMA_MFRS = ['_tze284_fhvpaltk'];
 const IMMAX_MFRS = ['_tze200_xlppj4f5'];
@@ -155,13 +155,13 @@ class ValveIrrigationDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
           if (this.tuyaEF00Manager) {
             await this.tuyaEF00Manager.sendDP(2, value ? 1 : 0, 'bool');
           } else {
-            this.log('[VALVE-IRR] ⚠️ tuyaEF00Manager not ready for gang 2');
+            this.log('[VALVE-IRR] [WARN] tuyaEF00Manager not ready for gang 2');
           }
         });
       }
 
       this.log('[VALVE-IRR] v9.7.3 - DPs: 1,5-7,11,13-15,101-104 | ZCL: 6,1,EF00');
-      this.log('[VALVE-IRR] ✅ Ready');
+      this.log('[VALVE-IRR] [OK] Ready');
     }, 'onNodeInit');
   }
 
@@ -170,7 +170,7 @@ class ValveIrrigationDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
    * @param {number} minutes 
    */
   async startWatering(minutes) {
-    this.log(`[VALVE-IRR] 💧 Starting watering for ${minutes} minutes`);
+    this.log(`[VALVE-IRR] [WET] Starting watering for ${minutes} minutes`);
     const tuya = this.zclNode?.endpoints?.[1]?.clusters?.tuya;
     if (tuya?.datapoint) {
       if (!this.isSimpleValve) {

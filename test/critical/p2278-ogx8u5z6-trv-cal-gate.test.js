@@ -29,7 +29,7 @@ describe('P2278 ogx8u5z6 TRV profile', () => {
 
   it('UnifiedThermostatBase applies setting DPs + onSettings cal TX', () => {
     const src = fs.readFileSync(path.join(ROOT, 'lib', 'devices', 'UnifiedThermostatBase.js'), 'utf8');
-    assert.ok(src.includes('DP${dpId} → setting'));
+    assert.ok(src.includes('DP${dpId} -> setting') || src.includes('DP${dpId} → setting'));
     assert.ok(src.includes('cal TX DP'));
     assert.ok(src.includes("setting: 'temperature_calibration'"));
   });

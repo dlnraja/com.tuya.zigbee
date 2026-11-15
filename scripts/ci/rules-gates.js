@@ -36,6 +36,8 @@ const RULES_GATES = [
   { id: 'native-matrix', file: 'scripts/gates/native-matrix-gate.js', profiles: ['core', 'full'] },
   // P3206: driver continuation chain coherence (docs/rules/DRIVER_CONTINUATIONS.md).
   { id: 'driver-continuations', file: 'scripts/ci/driver-continuations-check.js', profiles: ['core', 'full'] },
+  // P3320: shipped JS must be Latin-1; no unreferenced packaged images.
+  { id: 'p3320-latin1', file: 'tools/ci/p3320-shipped-latin1-assets-gate.js', profiles: ['core', 'full'] },
   { id: 'compose-sync', file: 'tools/ci/compose-appjson-fingerprint-sync-gate.js', profiles: ['full'] },
 ];
 

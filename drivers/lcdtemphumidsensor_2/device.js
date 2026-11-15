@@ -4,7 +4,7 @@ const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { CLUSTER } = require('zigbee-clusters');
 
 /**
- * P123 — migrate off bare ZigBeeDevice onto TuyaZigbeeDevice (L14 pipeline).
+ * P123 - migrate off bare ZigBeeDevice onto TuyaZigbeeDevice (L14 pipeline).
  */
 class lcdtemphumidsensor2 extends TuyaZigbeeDevice {
 

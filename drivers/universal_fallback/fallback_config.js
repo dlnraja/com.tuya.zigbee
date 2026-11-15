@@ -1,15 +1,15 @@
 'use strict';
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║          FALLBACK CONFIG - CLUSTER MAP v8.1.1 ENRICHED                     ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  Maps ZCL cluster IDs to Homey capabilities for universal fallback         ║
- * ║  Covers all standard Zigbee clusters + Tuya-specific + manufacturer ext     ║
- * ║                                                                             ║
- * ║  Usage: UniversalFallbackDevice._detectCapabilities() iterates zclNode      ║
- * ║  endpoints → matches clusterId → adds capability strings to device.         ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * +==============================================================================+
+ * |          FALLBACK CONFIG - CLUSTER MAP v8.1.1 ENRICHED                     |
+ * +==============================================================================+
+ * |  Maps ZCL cluster IDs to Homey capabilities for universal fallback         |
+ * |  Covers all standard Zigbee clusters + Tuya-specific + manufacturer ext     |
+ * |                                                                             |
+ * |  Usage: UniversalFallbackDevice._detectCapabilities() iterates zclNode      |
+ * |  endpoints -> matches clusterId -> adds capability strings to device.         |
+ * +==============================================================================+
  */
 
 /**
@@ -20,7 +20,7 @@
  * Coverage: 40+ clusters including all standard ZCL, Tuya, and manufacturer extensions
  */
 const CLUSTER_MAP = {
-  // ── Foundation (ZCL Core) ──────────────────────────────────────────
+  // -- Foundation (ZCL Core) ------------------------------------------
   0:    [],                    // Basic (0x0000) - skip, metadata only
   1:    ['measure_battery'],   // genPowerCfg (0x0001) - battery percentage
   2:    [],                    // genDeviceTemperatureCfg (0x0002) - skip
@@ -44,81 +44,81 @@ const CLUSTER_MAP = {
   20:   [],                    // Multistate Value (0x0014) - skip
   21:   [],                    // Commissioning (0x0015) - skip
 
-  // ── Security & IAS ─────────────────────────────────────────────────
+  // -- Security & IAS -------------------------------------------------
   1280: ['alarm_contact'],     // IAS Zone (0x0500) - contact/motion
   1281: ['alarm_contact'],     // IAS ACE (0x0501)
   1282: ['alarm_contact'],     // IAS WD (0x0502)
 
-  // ── Measurement & Sensing ──────────────────────────────────────────
+  // -- Measurement & Sensing ------------------------------------------
   1024: ['measure_luminance'],           // IlluminanceMeasurement (0x0400)
   1025: ['measure_luminance'],           // IlluminanceLevelSensing (0x0401)
   1026: ['measure_temperature'],         // TemperatureMeasurement (0x0402)
   1027: ['measure_temperature'],         // TemperatureConfiguration (0x0403)
   1029: ['measure_humidity'],            // RelativeHumidityMeasurement (0x0405)
   1030: ['measure_humidity'],            // RelativeHumidityConfiguration (0x0406)
-  1031: ['measure_barometer'],           // PressureMeasurement (0x0407) — some devices use this
-  1033: ['alarm_water'],                 // FlowMeasurement (0x0409) — rain/water sensor
+  1031: ['measure_barometer'],           // PressureMeasurement (0x0407) - some devices use this
+  1033: ['alarm_water'],                 // FlowMeasurement (0x0409) - rain/water sensor
   1036: ['measure_soil_moisture'],       // SoilMoisture (0x040C)
   1043: ['measure_co2'],                 // CO2Measurement (0x0413)
   1046: ['measure_pm25'],               // PM25Measurement (0x0416)
-  1062: ['measure_tvoc'],               // VOCMeasurement (0x0426) — sometimes 0xFC02
+  1062: ['measure_tvoc'],               // VOCMeasurement (0x0426) - sometimes 0xFC02
 
-  // ── HVAC ───────────────────────────────────────────────────────────
+  // -- HVAC -----------------------------------------------------------
   513:  ['target_temperature'],          // Thermostat (0x0201)
   514:  ['thermostat_mode'],             // FanControl (0x0202)
   516:  ['thermostat_heating_setpoint'], // Thermostat UI config (0x0204)
 
-  // ── Lighting ───────────────────────────────────────────────────────
+  // -- Lighting -------------------------------------------------------
   256:  ['onoff'],                       // BallastConfiguration (0x0100)
   768:  ['light_hue', 'light_saturation'],  // ColorControl (0x0300)
   769:  ['light_temperature'],           // ColorConfiguration (0x0301)
 
-  // ── Closures ───────────────────────────────────────────────────────
+  // -- Closures -------------------------------------------------------
   258:  ['windowcoverings_set'],         // WindowCovering (0x0102)
   259:  ['windowcoverings_set'],         // WindowCovering (0x0103)
 
-  // ── Smart Energy / Metering ────────────────────────────────────────
+  // -- Smart Energy / Metering ----------------------------------------
   1794: ['measure_power', 'meter_power'],  // Metering (0x0702)
   1795: ['measure_power'],               // MeteringExt (0x0703)
   2820: ['measure_power', 'measure_voltage', 'measure_current'],  // ElectricalMeasurement (0x0B04)
-  2821: ['measure_power'],               // Diagnostic (0x0B05) — some have power factor
+  2821: ['measure_power'],               // Diagnostic (0x0B05) - some have power factor
 
-  // ── Tuya Specific ──────────────────────────────────────────────────
+  // -- Tuya Specific --------------------------------------------------
   61184: ['tuya_dp_value', 'tuya_data_report'],  // Tuya DP Cluster (0xEF00)
-  57344: ['button'],                      // Tuya Button Events (0xE000) — scene switches
+  57344: ['button'],                      // Tuya Button Events (0xE000) - scene switches
   57345: ['tuya_dp_value'],              // Tuya Settings (0xE001)
   57346: ['tuya_dp_value'],              // Tuya Ext (0xE002)
   57347: ['tuya_dp_raw'],                // Tuya Raw Data (0xE003)
 
-  // ── Manufacturer Specific Clusters ─────────────────────────────────
-  64512: ['tuya_data_report'],           // 0xFC00 — various manufacturers (Xiaomi, etc.)
-  64513: ['tuya_dp_value'],              // 0xFC01 — FineDust/PM2.5 on some devices
-  64514: ['measure_tvoc'],               // 0xFC02 — VOC measurement
-  64515: ['measure_co2'],                // 0xFC03 — CO2 measurement
-  64516: ['measure_formaldehyde'],       // 0xFC04 — Formaldehyde/HCHO
-  64517: ['alarm_smoke'],                // 0xFC05 — Smoke alarm
-  64518: ['alarm_co'],                   // 0xFC06 — CO alarm
-  64519: ['measure_pm25'],               // 0xFC07 — PM2.5 alternative
-  64520: ['measure_soil_moisture'],      // 0xFC08 — Soil moisture
-  64521: ['measure_humidity'],           // 0xFC09 — Extra humidity
-  64522: ['measure_temperature'],        // 0xFC0A — Extra temperature
-  64523: ['measure_battery'],            // 0xFC0B — Extra battery
-  64524: ['measure_luminance'],          // 0xFC0C — Extra luminance
-  64525: ['alarm_contact'],              // 0xFC0D — Contact sensor alternative
-  64526: ['alarm_motion'],               // 0xFC0E — Motion sensor alternative
-  64527: ['alarm_water'],                // 0xFC0F — Water leak
-  64660: ['measure_power'],              // 0xFC94 — Custom energy (power clamp meters)
-  64768: ['measure_temperature'],        // 0xFD00 — Philips/Z3 specific
-  64800: ['alarm_contact'],              // 0xFD20 — Custom IAS
-  65280: ['onoff'],                      // 0xFF00 — Custom on/off
-  65535: [],                             // 0xFFFF — Wildcard, skip
+  // -- Manufacturer Specific Clusters ---------------------------------
+  64512: ['tuya_data_report'],           // 0xFC00 - various manufacturers (Xiaomi, etc.)
+  64513: ['tuya_dp_value'],              // 0xFC01 - FineDust/PM2.5 on some devices
+  64514: ['measure_tvoc'],               // 0xFC02 - VOC measurement
+  64515: ['measure_co2'],                // 0xFC03 - CO2 measurement
+  64516: ['measure_formaldehyde'],       // 0xFC04 - Formaldehyde/HCHO
+  64517: ['alarm_smoke'],                // 0xFC05 - Smoke alarm
+  64518: ['alarm_co'],                   // 0xFC06 - CO alarm
+  64519: ['measure_pm25'],               // 0xFC07 - PM2.5 alternative
+  64520: ['measure_soil_moisture'],      // 0xFC08 - Soil moisture
+  64521: ['measure_humidity'],           // 0xFC09 - Extra humidity
+  64522: ['measure_temperature'],        // 0xFC0A - Extra temperature
+  64523: ['measure_battery'],            // 0xFC0B - Extra battery
+  64524: ['measure_luminance'],          // 0xFC0C - Extra luminance
+  64525: ['alarm_contact'],              // 0xFC0D - Contact sensor alternative
+  64526: ['alarm_motion'],               // 0xFC0E - Motion sensor alternative
+  64527: ['alarm_water'],                // 0xFC0F - Water leak
+  64660: ['measure_power'],              // 0xFC94 - Custom energy (power clamp meters)
+  64768: ['measure_temperature'],        // 0xFD00 - Philips/Z3 specific
+  64800: ['alarm_contact'],              // 0xFD20 - Custom IAS
+  65280: ['onoff'],                      // 0xFF00 - Custom on/off
+  65535: [],                             // 0xFFFF - Wildcard, skip
 
-  // ── Occupancy Detection ────────────────────────────────────────────
-  1030: ['alarm_motion'],                // OccupancySensing (0x0406) — motion
+  // -- Occupancy Detection --------------------------------------------
+  1030: ['alarm_motion'],                // OccupancySensing (0x0406) - motion
   1032: ['alarm_motion'],                // OccupancySensingExt (0x0408)
 
-  // ── Electrical / Switch Types ──────────────────────────────────────
-  17:   ['onoff'],                        // MultistateInput (0x0011) — sometimes switch endpoint
+  // -- Electrical / Switch Types --------------------------------------
+  17:   ['onoff'],                        // MultistateInput (0x0011) - sometimes switch endpoint
 };
 
 /**

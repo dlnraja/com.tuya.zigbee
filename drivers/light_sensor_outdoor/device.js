@@ -35,7 +35,7 @@ class LightSensorOutdoorDevice extends TuyaZigbeeDevice {
     // P98: dpMappings MUST be set before super.onNodeInit so EF00Manager sees them
     // P88: SmarterCurry Luminance Sensor (_TZE284_aaeasoll) uses DP 2 for illuminance
     // per Z2M PR #12347 (https://github.com/Koenkk/zigbee-herdsman-converters/pull/12347)
-    // P102: S-LUX-ZB (_TYST11/_TZE200/_TZE204_pisltm67) — DP1=brightness_level enum,
+    // P102: S-LUX-ZB (_TYST11/_TZE200/_TZE204_pisltm67) - DP1=brightness_level enum,
     // DP2=illuminance (raw lx), DP3=battery% (Z2M S-LUX-ZB / issue #8036).
     const mfr = String(
       this.getSetting?.('zb_manufacturer_name')
@@ -57,7 +57,7 @@ class LightSensorOutdoorDevice extends TuyaZigbeeDevice {
 
     await super.onNodeInit({ zclNode });
 
-    // Sleepy illuminance sensors often miss the first report — arm passive + soft query.
+    // Sleepy illuminance sensors often miss the first report - arm passive + soft query.
     try {
       if (this.io && typeof this.io.runInterviewCompensation === 'function') {
         await this.io.runInterviewCompensation({
@@ -84,10 +84,10 @@ class LightSensorOutdoorDevice extends TuyaZigbeeDevice {
         if (attrs && attrs.measuredValue != null) {
           await this.safeSetCapabilityValue('measure_luminance', zclMeasuredValueToLux(attrs.measuredValue));
         }
-      } catch (_e) { /* sleepy — wait for report */ }
+      } catch (_e) { /* sleepy - wait for report */ }
     }
 
-    // Battery via power configuration (ZCL batteryPercentageRemaining is 0–200 = %×2)
+    // Battery via power configuration (ZCL batteryPercentageRemaining is 0-200 = %×2)
     const power = ep1?.clusters?.powerConfiguration || ep1?.clusters?.[1];
     if (power?.on) {
       power.on('attr.batteryPercentageRemaining', (val) => {
