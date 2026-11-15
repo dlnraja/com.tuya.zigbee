@@ -5,7 +5,7 @@ const { setGangOnOff, setAllGangsOnOff } = require('../../lib/drivers/FlowGangCo
 
 /**
  * Wall Switch 2-Gang 1-Way Driver (BSEED Sub-Device)
- * v5.8.73: PacketNinja sub-device architecture — each gang = separate Homey device card
+ * v5.8.73: PacketNinja sub-device architecture - each gang = separate Homey device card
  */
 class WallSwitch2Gang1WayDriver extends BaseZigBeeDriver {
 
@@ -173,7 +173,7 @@ class WallSwitch2Gang1WayDriver extends BaseZigBeeDriver {
       this.log('set_switch_mode card error:', err.message);
     }
 
-    this.log(`✅ ${P}: flow cards registered`);
+    this.log(`[OK] ${P}: flow cards registered`);
   }
 
 }

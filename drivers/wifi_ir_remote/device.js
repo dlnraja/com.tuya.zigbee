@@ -4,7 +4,7 @@ const { getRouter } = require('../../lib/ir/IntelligentIRRouter');
 const { detectFormat } = require('../../lib/ir/IRFormatConverter');
 
 /**
- * WiFi IR Remote (Tuya Local) — P2487 router-backed learn/send.
+ * WiFi IR Remote (Tuya Local) - P2487 router-backed learn/send.
  * DPs (tuya-local): 201 send, 202 receive/learn payload.
  */
 class WiFiIRRemoteDevice extends TuyaLocalDevice {
@@ -36,7 +36,7 @@ class WiFiIRRemoteDevice extends TuyaLocalDevice {
       this.registerCapabilityListener('button.1', async () => {
         const names = Object.keys(this._learnedCodes);
         if (!names.length) {
-          this.log('[WIFI-IR] button.1 — no learned codes');
+          this.log('[WIFI-IR] button.1 - no learned codes');
           return true;
         }
         await this.sendLearnedCode(names[0]);
@@ -79,7 +79,7 @@ class WiFiIRRemoteDevice extends TuyaLocalDevice {
 
   async startLearning(name, duration = 30, opts = {}) {
     if (!this._client || !this._client.connected) {
-      throw new Error('Not connected — check local IP / local key (WiFi login)');
+      throw new Error('Not connected - check local IP / local key (WiFi login)');
     }
     this._pendingCodeName = name || `code_${Date.now()}`;
     this._learningActive = true;

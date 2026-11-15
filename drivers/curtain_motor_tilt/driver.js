@@ -47,7 +47,7 @@ async onInit() {
     reg('curtain_motor_tilt_close', async ({ device }) => { await device['setCapabilityValue']('windowcoverings_set', 0); return true; });
     reg('curtain_motor_tilt_stop', async ({ device }) => { await device['setCapabilityValue']('windowcoverings_stop', true); return true; });
 
-    // Actions — SDK3: getActionCard (getDeviceActionCard polyfilled in app.js)
+    // Actions - SDK3: getActionCard (getDeviceActionCard polyfilled in app.js)
     const regDev = (id, fn) => { try {
       const flow = this.homey.flow;
       const card = (typeof flow.getActionCard === 'function' ? flow.getActionCard(id) : null)

@@ -40,7 +40,7 @@ describe('P2584 MTG075 smart presence while Occupied', () => {
     assert.ok(src.includes('smart_presence_while_occupied'));
     assert.ok(src.includes('radar_fw_presence'));
     // Contre quoi: heal must gate on smart overlay before DP115 unlock
-    assert.ok(src.indexOf('P2584 keep Occupied') < src.indexOf('P2579 heal DP115 occupied→on'));
+    assert.ok(src.indexOf('P2584 keep Occupied') < (src.includes('P2579 heal DP115 occupied->on') ? src.indexOf('P2579 heal DP115 occupied->on') : src.indexOf('P2579 heal DP115 occupied→on')));
   });
 
   it('settings expose smart overlay + optional auto-unlock (default keep Occupied)', () => {

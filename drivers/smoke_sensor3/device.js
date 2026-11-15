@@ -5,7 +5,7 @@ const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { CLUSTER } = require('zigbee-clusters');
 
 /**
- * P113: migrate bare ZigBeeDevice → TuyaZigbeeDevice (DeviceIO + IAS + L14).
+ * P113: migrate bare ZigBeeDevice -> TuyaZigbeeDevice (DeviceIO + IAS + L14).
  */
 class smoke_sensor extends TuyaZigbeeDevice {
 

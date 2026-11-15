@@ -10,7 +10,7 @@ class ContactSensorDimmerDevice extends TuyaZigbeeDevice {
     ZclBatteryMonitor.attach(this, zclNode);
     await super.onNodeInit({ zclNode });
     // v9.0.418 (P92.126): tamper bit was never fed on this hybrid
-    try { attachTamperListener(this, zclNode); } catch (e) { this.log('[TAMPER] ⚠️ ' + e.message); }
+    try { attachTamperListener(this, zclNode); } catch (e) { this.log('[TAMPER] [WARN] ' + e.message); }
     this.log('Contact Sensor Dimmer v5.9.12 Ready');
   }
 

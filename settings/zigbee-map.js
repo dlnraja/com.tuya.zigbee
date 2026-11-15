@@ -108,7 +108,7 @@
   }
 
   function fmtAgo(ts) {
-    if (!ts) return '—';
+    if (!ts) return '-';
     var s = Math.max(0, Math.round((Date.now() - ts) / 1000));
     if (s < 60) return s + 's';
     if (s < 3600) return Math.round(s / 60) + 'm';
@@ -129,14 +129,14 @@
     var st = (snapshot && snapshot.stats) || {};
     var chips = [
       ['Devices', st.total || 0],
-      ['Advertising', st.advertising != null ? st.advertising : '—'],
+      ['Advertising', st.advertising != null ? st.advertising : '-'],
       ['Routers', st.routers || 0],
       ['End', st.endDevices || 0],
       ['Online', st.online || 0],
       ['Offline', st.offline || 0],
       ['Weak', st.weak || 0],
-      ['Avg LQI', st.averageLqi == null ? '—' : st.averageLqi],
-      ['Busiest', st.busiestName ? (st.busiestName + ' ' + (st.busiestRx24h || 0) + '/24h') : '—']
+      ['Avg LQI', st.averageLqi == null ? '-' : st.averageLqi],
+      ['Busiest', st.busiestName ? (st.busiestName + ' ' + (st.busiestRx24h || 0) + '/24h') : '-']
     ];
     var html = '';
     for (var i = 0; i < chips.length; i++) {
@@ -153,18 +153,18 @@
     }
     var hidden = childrenOf(n.id).length;
     box.innerHTML =
-      '<b>' + escapeHtml(n.name) + '</b> · ' + escapeHtml(n.role) +
-      (n.online ? ' · online' : ' · offline') +
-      (n.advertising ? ' · advertising' : '') + '<br>' +
+      '<b>' + escapeHtml(n.name) + '</b> * ' + escapeHtml(n.role) +
+      (n.online ? ' * online' : ' * offline') +
+      (n.advertising ? ' * advertising' : '') + '<br>' +
       (n.zone ? ('Zone: ' + escapeHtml(n.zone) + '<br>') : '') +
       (n.driverId ? ('Driver: ' + escapeHtml(n.driverId) + '<br>') : '') +
       (n.ieee ? ('IEEE: ' + escapeHtml(n.ieee) + '<br>') : '') +
-      'LQI: ' + (n.lqi == null ? '—' : n.lqi) + ' (' + (n.band || 'unknown') + ')' +
-      (n.rssi != null ? ' · RSSI ' + n.rssi + ' dBm' : '') + '<br>' +
+      'LQI: ' + (n.lqi == null ? '-' : n.lqi) + ' (' + (n.band || 'unknown') + ')' +
+      (n.rssi != null ? ' * RSSI ' + n.rssi + ' dBm' : '') + '<br>' +
       (n.battery != null ? ('Battery: ' + n.battery + '%<br>') : '') +
       'Last seen: ' + fmtAgo(n.lastSeen) +
-      (n.rxLastHour != null ? (' · RX ' + n.rxLastHour + '/1h · ' + (n.rxLast24h || 0) + '/24h') : '') +
-      (n.parentKind ? ' · link: ' + n.parentKind : '') +
+      (n.rxLastHour != null ? (' * RX ' + n.rxLastHour + '/1h * ' + (n.rxLast24h || 0) + '/24h') : '') +
+      (n.parentKind ? ' * link: ' + n.parentKind : '') +
       (hidden ? '<br>Children: ' + hidden + (collapsed[n.id] ? ' (folded)' : '') : '');
   }
 
@@ -179,7 +179,7 @@
     for (var i = 0; i < av.rows.length; i++) {
       var r = av.rows[i];
       html += '<tr>' +
-        '<td>' + escapeHtml(r.name) + (r.isBattery ? ' · batt' : '') + '</td>' +
+        '<td>' + escapeHtml(r.name) + (r.isBattery ? ' * batt' : '') + '</td>' +
         '<td>' + fmtAgo(r.lastSeen) + '</td>' +
         '<td>' + (r.rxLastHour || 0) + '</td>' +
         '<td>' + (r.rxLast24h || 0) + '</td>' +
@@ -240,11 +240,11 @@
       if (!n.online && n.role !== 'coordinator') fill = '#cbd5e1';
       var kids = childrenOf(n.id).length;
       var isSel = selectedId === n.id;
-      var label = escapeHtml(n.name.length > 18 ? n.name.slice(0, 16) + '…' : n.name);
+      var label = escapeHtml(n.name.length > 18 ? n.name.slice(0, 16) + '...' : n.name);
       parts.push(
         '<g class="mesh-node" data-id="' + escapeHtml(n.id) + '" transform="translate(' + p.x + ',' + p.y + ')">' +
         '<circle r="' + (r + (isSel ? 3 : 0)) + '" fill="' + fill + '" stroke="' + (isSel ? '#0f172a' : '#fff') + '" stroke-width="' + (isSel ? 2.5 : 1.5) + '" opacity="' + (n.online ? 1 : 0.55) + '"/>' +
-        (kids ? ('<text class="mesh-badge" y="' + (-r - 6) + '">' + (collapsed[n.id] ? '+' : '−') + kids + '</text>') : '') +
+        (kids ? ('<text class="mesh-badge" y="' + (-r - 6) + '">' + (collapsed[n.id] ? '+' : '-') + kids + '</text>') : '') +
         '<text class="mesh-label" y="' + (r + 12) + '">' + label + '</text>' +
         '</g>'
       );
@@ -298,7 +298,7 @@
       setMsg('App not ready yet', true);
       return;
     }
-    setMsg('Loading mesh snapshot…');
+    setMsg('Loading mesh snapshot...');
     var btn = $('btn-mesh-refresh');
     if (btn) btn.disabled = true;
     if (loadTimer) clearTimeout(loadTimer);
@@ -386,7 +386,7 @@
     safeClick('btn-mesh-fold', foldLeaves);
     safeClick('btn-mesh-retract', foldAll);
     safeClick('btn-mesh-fs', toggleFs);
-    // P2623: no auto loadMap — user taps Refresh
+    // P2623: no auto loadMap - user taps Refresh
     setMsg('Tap Refresh to load the mesh map.');
   }
 

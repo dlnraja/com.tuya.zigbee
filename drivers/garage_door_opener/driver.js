@@ -7,7 +7,7 @@ const BaseZigBeeDriver = require('../../lib/drivers/BaseZigBeeDriver');
  * 
  * v9.7.4: FIX - Added missing driver.js inheriting BaseZigBeeDriver
  * CRITICAL: Without this file Homey uses a generic ZigBeeDriver which
- * lacks the defensive getDeviceById() override → "Could not get device by ID" crash
+ * lacks the defensive getDeviceById() override -> "Could not get device by ID" crash
  * 
  * Issue #332 (PDominikPL): QS-Zigbee-C03 / TS0603 crashed on repair/open-close
  * Issue #331 (PDominikPL): Settings tab not loading (same root cause)
@@ -19,7 +19,7 @@ class GarageDoorOpenerDriver extends BaseZigBeeDriver {
     if (this._flowCardsRegistered) { return; }
     this._flowCardsRegistered = true;
 
-    this.log('[GarageDriver] ✅ Driver initialized (BaseZigBeeDriver crash protection active)');
+    this.log('[GarageDriver] [OK] Driver initialized (BaseZigBeeDriver crash protection active)');
 
     // Register flow card actions for garage door control
     const reg = (id, fn) => {

@@ -6,14 +6,14 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      SMART CIRCUIT BREAKER - v9.7.3 UNIVERSAL                                ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  Standardized via Unified Architecture:                                       ║
- * ║  - BatteryMixin (tuya/v9.6.0) for standard battery monitoring                ║
- * ║  - UnifiedPlugBase for core relay logic, energy monitoring, and              ║
- * ║    Tuya DP/ZCL hybrid support.                                               ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * +==============================================================================+
+ * |      SMART CIRCUIT BREAKER - v9.7.3 UNIVERSAL                                |
+ * +==============================================================================+
+ * |  Standardized via Unified Architecture:                                       |
+ * |  - BatteryMixin (tuya/v9.6.0) for standard battery monitoring                |
+ * |  - UnifiedPlugBase for core relay logic, energy monitoring, and              |
+ * |    Tuya DP/ZCL hybrid support.                                               |
+ * +==============================================================================+
  */
 class SmartBreakerDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlugBase)) {
 
@@ -22,7 +22,7 @@ class SmartBreakerDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedP
       // Handles relay control, energy monitoring, and battery status.
       await super.onNodeInit({ zclNode  });
       await this.initVirtualButtons();
-      this.log('[BREAKER] ✅ v9.7.3 Universal initialization complete');
+      this.log('[BREAKER] [OK] v9.7.3 Universal initialization complete');
     }, 'onNodeInit');
   }
 

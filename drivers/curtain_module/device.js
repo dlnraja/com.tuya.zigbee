@@ -13,7 +13,7 @@ const DOWN_CLOSE = 'downClose';
 const REPORT_DEBOUNCER = 5000;
 
 /**
- * P126 — TuyaZigbeeDevice + safe-timers + mainsPowered
+ * P126 - TuyaZigbeeDevice + safe-timers + mainsPowered
  */
 class curtain_module extends TuyaZigbeeDevice {
 
@@ -70,7 +70,7 @@ class curtain_module extends TuyaZigbeeDevice {
 
                     // Override goToLiftPercentage to enforce blind to open/close completely
                     if (value === 0 || value === 1) {
-                      this.debug(`set → \`windowcoverings_set\`: ${value} → setParser → ${value === 1 ? UP_OPEN : DOWN_CLOSE}`);
+                      this.debug(`set -> \`windowcoverings_set\`: ${value} -> setParser -> ${value === 1 ? UP_OPEN : DOWN_CLOSE}`);
                       const { endpoint } = this._getClusterCapabilityConfiguration('windowcoverings_set', CLUSTER.WINDOW_COVERING);
                       const windowCoveringEndpoint = endpoint ?? this.getClusterEndpoint(CLUSTER.WINDOW_COVERING);
                       if (windowCoveringEndpoint === null) {throw new Error('missing_window_covering_cluster');}
@@ -91,7 +91,7 @@ class curtain_module extends TuyaZigbeeDevice {
                       // Round, otherwise might not be accepted by device
                       percentageLiftValue: Math.round(mappedValue),
                     };
-                    this.debug(`set → \`windowcoverings_set\`: ${value} → setParser → goToLiftPercentage`, gotToLiftPercentageCommand);
+                    this.debug(`set -> \`windowcoverings_set\`: ${value} -> setParser -> goToLiftPercentage`, gotToLiftPercentageCommand);
                     // Send goToLiftPercentage command
                     return gotToLiftPercentageCommand;
                 },
@@ -136,7 +136,7 @@ class curtain_module extends TuyaZigbeeDevice {
         }    
 
         const moveOpen = this.homey.flow.getActionCard("curtain_module_move_open");
-        // WHY: listener is shared by all devices of this driver (last registration wins) — act on the Flow's device, not the registering one.
+        // WHY: listener is shared by all devices of this driver (last registration wins) - act on the Flow's device, not the registering one.
         moveOpen.registerRunListener(async (args, state) => {
             const dev = (args && args.device) || this;
             await dev.zclNode.endpoints[1].clusters.windowCovering[UP_OPEN]();

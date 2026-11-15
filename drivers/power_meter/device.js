@@ -21,7 +21,7 @@ class PowerMeterDevice extends UnifiedPlugBase {
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => { // v9.7.3: Unified initialization
       await super.onNodeInit({ zclNode  });
-      this.log('[POWER-METER] ✅ v9.7.3 Standardized initialization complete');
+      this.log('[POWER-METER] [OK] v9.7.3 Standardized initialization complete');
     }, 'onNodeInit');
   }
 

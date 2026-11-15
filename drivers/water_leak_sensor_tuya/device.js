@@ -69,14 +69,14 @@ class TuyaWaterLeakSensor extends TuyaSpecificClusterDevice {
                         : attrs.zoneStatus?.alarm1 || attrs.zoneStatus?.alarm2 ? 1 : 0;
                     this._receivedDpData = true; // any data path alive
                     await this.safeSetCapabilityValue('alarm_water', Boolean(zs & 0x03)).catch(() => {});
-                    this.log(`[WATER-TUYA] Initial IAS zoneStatus=${zs} → alarm_water=${Boolean(zs & 0x03)}`);
+                    this.log(`[WATER-TUYA] Initial IAS zoneStatus=${zs} -> alarm_water=${Boolean(zs & 0x03)}`);
                 }
             }
         } catch (err) {
-            this.log(`[WATER-TUYA] ⚠️ IAS setup error (non-critical): ${err.message}`);
+            this.log(`[WATER-TUYA] [WARN] IAS setup error (non-critical): ${err.message}`);
         }
 
-        // v5.5.900: Verbose fallback — if after 5 minutes neither a Tuya DP
+        // v5.5.900: Verbose fallback - if after 5 minutes neither a Tuya DP
         // report nor any IAS data arrived, log a detailed diagnostic so the
         // next user report reveals the actual data path (no guessing).
         this._noDataTimer = safeSetTimeout(this, () => {
@@ -85,9 +85,9 @@ class TuyaWaterLeakSensor extends TuyaSpecificClusterDevice {
             if (alarmValue !== null && alarmValue !== undefined) {return;}
             const ep = this.zclNode?.endpoints?.[1];
             const clusterIds = ep ? Object.keys(ep.clusters || {}) : [];
-            this.log('╔══════════════════════════════════════════════════════════════╗');
-            this.log('║ [WATER-TUYA] ⚠️ NO DATA after 5 min — verbose diagnostic    ║');
-            this.log('╚══════════════════════════════════════════════════════════════╝');
+            this.log('+==============================================================+');
+            this.log('| [WATER-TUYA] [WARN] NO DATA after 5 min - verbose diagnostic    |');
+            this.log('+==============================================================+');
             this.log(`[WATER-TUYA] mfr=${this.getSetting?.('zb_manufacturer_name') || 'unknown'} iasEnrolled=${this._iasEnrolled} clusters=${JSON.stringify(clusterIds)}`);
             this.log('[WATER-TUYA] Please send this diagnostic: the device neither sent Tuya DP reports nor IAS zone updates.');
         }, 5 * 60 * 1000);
@@ -111,14 +111,14 @@ class TuyaWaterLeakSensor extends TuyaSpecificClusterDevice {
         this._receivedDpData = true;
 
         if (data.dp === 15) {
-            // DP15 battery percent — normalize 0-50 / 0-100 / 0-200 (ZCL-style) scales
+            // DP15 battery percent - normalize 0-50 / 0-100 / 0-200 (ZCL-style) scales
             const raw = Buffer.isBuffer(data.data)
               ? data.data.length >= 4 ? data.data.readUInt32BE(0) : data.data.readUIntBE(0, data.data.length)
               : data.data;
             const mfr = this.getSetting?.('zb_manufacturer_name')
               || this.getData?.()?.manufacturerName
               || '';
-            // Tuya DP15 uses ZCL-like 0–200; 200 means full, not a dead sentinel
+            // Tuya DP15 uses ZCL-like 0-200; 200 means full, not a dead sentinel
             const pct = tuyaDpToPercent(15, raw, {
               manufacturer: mfr,
               treat200AsSentinel: false,

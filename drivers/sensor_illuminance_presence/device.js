@@ -8,7 +8,7 @@ const { UniversalDPSender } = require('../../lib/tuya/UniversalDPSender');
 
 const MTG_RELAY_RADARS = new Set([
   '_tze204_sbyx0lm6',
-  // P202: clrdrnya → presence_sensor_radar only (GH #420)
+  // P202: clrdrnya -> presence_sensor_radar only (GH #420)
   '_tze204_dtzziy1e',
   '_tze204_iaeejhvf',
   '_tze204_mtoaryre',
@@ -65,7 +65,7 @@ class SensorIlluminancePresenceDevice extends UnifiedSensorBase {
 
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => {
-      this.log('[RADAR] 🚀 v8.0.0 Refactor Initializing...');
+      this.log('[RADAR] [GO] v8.0.0 Refactor Initializing...');
       
       // Initialize Advanced Components
       this._inference = new IntelligentPresenceInference(this);
@@ -84,7 +84,7 @@ class SensorIlluminancePresenceDevice extends UnifiedSensorBase {
       // Start device-specific maintenance cycles
       this._startRadarCycle(zclNode);
 
-      this.log('[RADAR] ✅ Ready');
+      this.log('[RADAR] [OK] Ready');
     }, 'onNodeInit');
   }
 
@@ -195,13 +195,13 @@ class SensorIlluminancePresenceDevice extends UnifiedSensorBase {
     if (discovered && discovered.confidence >= 60) {
       const result = this._discovery.applyDiscoveredValue(dpId, value);
       if (result) {
-        this.log(`[RADAR] 🧠 Discovery: DP${dpId} → ${result.capability}=${result.value} (${result.confidence}%)`);
+        this.log(`[RADAR] [SMART] Discovery: DP${dpId} -> ${result.capability}=${result.value} (${result.confidence}%)`);
         return this.safeSetCapabilityValue(result.capability, result.value).catch(() => { });
       }
     }
 
     // 3. Diagnostic logging for unknown datapoints
-    this.log(`[RADAR] 📊 Unknown DP${dpId} [type=${dpType}] = ${value}`);
+    this.log(`[RADAR] [STAT] Unknown DP${dpId} [type=${dpType}] = ${value}`);
   }
 
   /**
@@ -318,7 +318,7 @@ class SensorIlluminancePresenceDevice extends UnifiedSensorBase {
       payload.writeUInt32BE(local, 4);
 
       await cluster.command('mcuSyncTime', { payloadSize: 8, payload }).catch(() => {});
-      this.log('[RADAR] ⏰ MCU Time Synced');
+      this.log('[RADAR] [TIME] MCU Time Synced');
     } catch (e) {
       this.error('[RADAR] Time sync failed:', e.message);
     }
@@ -353,7 +353,7 @@ class SensorIlluminancePresenceDevice extends UnifiedSensorBase {
         val = this._toDPValue(val, dpInfo);
         const dpType = this._getDPType(dpInfo);
         
-        this.log(`[RADAR] ⚙️ Sync Setting: ${key} → DP${dpId} (Value: ${val})`);
+        this.log(`[RADAR] [CFG] Sync Setting: ${key} -> DP${dpId} (Value: ${val})`);
         const sent = await this._sendPresenceDP(parseInt(dpId, 10), val, dpType);
         if (!sent) {
           this.error(`[RADAR] Failed syncing ${key} to DP${dpId}`);

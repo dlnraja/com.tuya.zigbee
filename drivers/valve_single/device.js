@@ -5,15 +5,15 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      VALVE SINGLE - v9.7.3 UNIVERSAL                                         ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  Standardized via Unified Architecture:                                       ║
- * ║  - PhysicalButtonMixin (tuya/v9.7.3) for physical button sync & dedup        ║
- * ║  - BatteryMixin (tuya/v9.6.0) for battery monitoring (genPowerCfg)           ║
- * ║  - VirtualButtonMixin (mixins/v1.2) for flow-based button triggers           ║
- * ║  - UnifiedPlugBase for core relay logic and Tuya DP/ZCL hybrid support       ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * +==============================================================================+
+ * |      VALVE SINGLE - v9.7.3 UNIVERSAL                                         |
+ * +==============================================================================+
+ * |  Standardized via Unified Architecture:                                       |
+ * |  - PhysicalButtonMixin (tuya/v9.7.3) for physical button sync & dedup        |
+ * |  - BatteryMixin (tuya/v9.6.0) for battery monitoring (genPowerCfg)           |
+ * |  - VirtualButtonMixin (mixins/v1.2) for flow-based button triggers           |
+ * |  - UnifiedPlugBase for core relay logic and Tuya DP/ZCL hybrid support       |
+ * +==============================================================================+
  */
 class ValveSingleDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlugBase)) {
   
@@ -26,7 +26,7 @@ class ValveSingleDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPl
       // Handles battery reporting, physical button detection, and virtual buttons.
       await super.onNodeInit({ zclNode  });
       await this.initVirtualButtons();
-      this.log('[VALVE] ✅ Universal initialization complete (v9.7.3)');
+      this.log('[VALVE] [OK] Universal initialization complete (v9.7.3)');
     }, 'onNodeInit');
   }
 

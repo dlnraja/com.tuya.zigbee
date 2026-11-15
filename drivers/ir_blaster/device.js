@@ -195,7 +195,7 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
           throw err;
         }
       });
-      this.log('[IR-INIT] ✅ onoff capability listener registered');
+      this.log('[IR-INIT] [OK] onoff capability listener registered');
     }
 
     // Setup OnOff cluster for learn mode attribute reports (if available)
@@ -208,7 +208,7 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
         if (!value && this._learnModeActive) {
           const elapsed = Date.now() - (this._learnModeStartTime || 0);
           if (elapsed < 5000) {
-            this.log(`[IR] ⚠️ Ignoring onOff=false during learn mode (${elapsed}ms after start)`);
+            this.log(`[IR] [WARN] Ignoring onOff=false during learn mode (${elapsed}ms after start)`);
             return;
           }
         }
@@ -393,7 +393,7 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
   async _setupAdvancedIRClusters(zclNode) {
     const endpoint = zclNode.endpoints[1];
     if (!endpoint) {
-      this.log('[IR-SETUP] ⚠️ Endpoint 1 not available');
+      this.log('[IR-SETUP] [WARN] Endpoint 1 not available');
       return;
     }
 
@@ -404,18 +404,18 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
       // Setup ZosungIRControl cluster (0xE004)
       let irControlCluster = endpoint.clusters.zosungIRControl;
       if (!irControlCluster) {
-        // v5.11.17: Device paired before cluster registration — manually instantiate
-        this.log('[IR-SETUP] ⚠️ ZosungIRControl not in simple descriptor — creating manual instance');
+        // v5.11.17: Device paired before cluster registration - manually instantiate
+        this.log('[IR-SETUP] [WARN] ZosungIRControl not in simple descriptor - creating manual instance');
         try {
           irControlCluster = new ZosungIRControlCluster({ clusterEndpoint: endpoint });
-          this.log('[IR-SETUP] ✅ Manual ZosungIRControl instance created');
+          this.log('[IR-SETUP] [OK] Manual ZosungIRControl instance created');
         } catch (e) {
-          this.log('[IR-SETUP] ❌ Manual ZosungIRControl failed:', e.message);
+          this.log('[IR-SETUP] [ERR] Manual ZosungIRControl failed:', e.message);
         }
       }
       this._irControlCluster = irControlCluster || null;
       if (irControlCluster) {
-        this.log('[IR-SETUP] ✅ ZosungIRControl cluster (0xE004) available');
+        this.log('[IR-SETUP] [OK] ZosungIRControl cluster (0xE004) available');
 
         // Listen for learning status changes
         irControlCluster.on('attr.learningStatus', (status) => {
@@ -438,43 +438,43 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
           this.log('Could not read IR capabilities:', readErr.message);
         }
       } else {
-        this.log('[IR-SETUP] ⚠️ ZosungIRControl cluster NOT available - will use OnOff fallback');
+        this.log('[IR-SETUP] [WARN] ZosungIRControl cluster NOT available - will use OnOff fallback');
       }
 
       // Setup ZosungIRTransmit cluster (0xED00)
       let irTransmitCluster = endpoint.clusters.zosungIRTransmit;
       if (!irTransmitCluster) {
         // v5.11.17: Manual instantiation fallback
-        this.log('[IR-SETUP] ⚠️ ZosungIRTransmit not in simple descriptor — creating manual instance');
+        this.log('[IR-SETUP] [WARN] ZosungIRTransmit not in simple descriptor - creating manual instance');
         try {
           irTransmitCluster = new ZosungIRTransmitCluster({ clusterEndpoint: endpoint });
-          this.log('[IR-SETUP] ✅ Manual ZosungIRTransmit instance created');
+          this.log('[IR-SETUP] [OK] Manual ZosungIRTransmit instance created');
         } catch (e) {
-          this.log('[IR-SETUP] ❌ Manual ZosungIRTransmit failed:', e.message);
+          this.log('[IR-SETUP] [ERR] Manual ZosungIRTransmit failed:', e.message);
         }
       }
       if (irTransmitCluster) {
-        this.log('[IR-SETUP] ✅ ZosungIRTransmit cluster (0xED00) available');
+        this.log('[IR-SETUP] [OK] ZosungIRTransmit cluster (0xED00) available');
         this._irTransmitCluster = irTransmitCluster;
 
         // Setup transmit protocol listeners
         this._setupTransmitProtocol(irTransmitCluster);
       } else {
-        this.log('[IR-SETUP] ⚠️ ZosungIRTransmit cluster NOT available');
+        this.log('[IR-SETUP] [WARN] ZosungIRTransmit cluster NOT available');
       }
 
       // v5.9.14: Bind BoundClusters for incoming device commands
       try {
         endpoint.bind(ZosungIRTransmitCluster.NAME, new ZosungIRTransmitBoundCluster({ device: this }));
-        this.log('[IR-SETUP] ✅ IRTransmit BoundCluster bound');
+        this.log('[IR-SETUP] [OK] IRTransmit BoundCluster bound');
       } catch (e) { this.log('[IR-SETUP] IRTransmit bind err:', e.message); }
       try {
         endpoint.bind(ZosungIRControlCluster.NAME, new ZosungIRControlBoundCluster({ device: this }));
-        this.log('[IR-SETUP] ✅ IRControl BoundCluster bound');
+        this.log('[IR-SETUP] [OK] IRControl BoundCluster bound');
       } catch (e) { this.log('[IR-SETUP] IRControl bind err:', e.message); }
 
     } catch (err) {
-      this.log('[IR-SETUP] ❌ Advanced IR cluster setup error:', err.message);
+      this.log('[IR-SETUP] [ERR] Advanced IR cluster setup error:', err.message);
     }
   }
 
@@ -489,7 +489,7 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
       });
     }
 
-    // v9.0.411 (P92.119): named remote buttons — send the learned code
+    // v9.0.411 (P92.119): named remote buttons - send the learned code
     // stored under the same name when available, guidance log otherwise.
     // v9.0.416 (P92.124): extended to volume/channel AV keys.
     for (const key of ['mute', 'source', 'menu', 'enter', 'volume_up', 'volume_down', 'channel_up', 'channel_down']) {
@@ -500,10 +500,10 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
           const raw = (this._learnedCodes || {})[key];
           const code = typeof raw === 'string' ? raw : (raw && raw.code) || null;
           if (code) {
-            this.log(`[IR] ${cap} → sending learned code "${key}"`);
+            this.log(`[IR] ${cap} -> sending learned code "${key}"`);
             await this.sendIRCode(code);
           } else {
-            this.log(`[IR] ${cap}: no learned code named "${key}" — learn one first (no-op)`);
+            this.log(`[IR] ${cap}: no learned code named "${key}" - learn one first (no-op)`);
           }
           return true;
         });
@@ -824,7 +824,7 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
     const codeStr = typeof irCode === 'string' ? irCode : String((irCode && irCode.code) || irCode || '');
     this.log(`Sending IR code: ${codeStr.substring(0, 30)}...`);
 
-    // WHY(P2501): direct Flow → sendIRCode bypasses router — still need anti-flood
+    // WHY(P2501): direct Flow -> sendIRCode bypasses router - still need anti-flood
     if (!options.skipFloodGuard) {
       try {
         const { getGuard } = require('../../lib/ir/IRFloodGuard');
@@ -992,7 +992,7 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
    */
   registerFlowCardActions() {
     // v5.12: Flow cards are registered in driver.js to avoid double-registration
-    // device.js only logs readiness — all registerRunListener calls are in driver.js
+    // device.js only logs readiness - all registerRunListener calls are in driver.js
     this.log('IR Blaster flow cards ready (all registered in driver.js)');
   }
 
@@ -1143,8 +1143,8 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
       this._handleTransmitComplete(data);
     });
 
-    // v5.12.0: Z2M Code05 — device confirms it's done sending learned code
-    // At this point all chunks are in _receiveBuffers — assemble as base64 + stop learning
+    // v5.12.0: Z2M Code05 - device confirms it's done sending learned code
+    // At this point all chunks are in _receiveBuffers - assemble as base64 + stop learning
     cluster.on('doneReceiving', async (data) => {
       this.log('[IR-RX] Code05 doneReceiving:', JSON.stringify(data));
       const seq = data.seq ?? data.sequenceNumber;
@@ -1153,13 +1153,13 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
 
     // v5.5.362: Handle incoming code data (device sending learned code chunks)
     cluster.on('codeDataResponse', async (data) => {
-      this.log('📥 IR code chunk received:', data);
+      this.log('[IN] IR code chunk received:', data);
       await this._handleReceivedCodeChunk(data);
     });
 
-    // v5.9.14: Handle startTransmit from device (learning mode) — Z2M Code00
+    // v5.9.14: Handle startTransmit from device (learning mode) - Z2M Code00
     cluster.on('startTransmit', async (data) => {
-      this.log('📥 IR code transmission starting from device:', data);
+      this.log('[IN] IR code transmission starting from device:', data);
       const seq = data.seq ?? data.sequenceNumber;
       const totalLength = data.length ?? data.totalLength ?? 0;
 
@@ -1185,9 +1185,9 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
           cmd: data.cmd ?? 0x02,
           unk4: data.unk4 ?? 0x0000
         });
-        this.log('✅ Sent Z2M startTransmitAck (Code01)');
+        this.log('[OK] Sent Z2M startTransmitAck (Code01)');
       } catch (err) {
-        this.log('⚠️ Failed to send startTransmitAck:', err.message);
+        this.log('[WARN] Failed to send startTransmitAck:', err.message);
       }
 
       // v5.9.14: After ACK, request first chunk (Code02)
@@ -1197,9 +1197,9 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
           position: 0,
           maxlen: 0x38
         });
-        this.log('✅ Sent first codeDataRequest (Code02)');
+        this.log('[OK] Sent first codeDataRequest (Code02)');
       } catch (err) {
-        this.log('⚠️ Failed to send codeDataRequest:', err.message);
+        this.log('[WARN] Failed to send codeDataRequest:', err.message);
       }
     });
 
@@ -1212,7 +1212,7 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
     this.on('ir.doneReceiving', (d) => cluster.emit('doneReceiving', d));
   }
 
-  // v5.12.0: _requestLearnedCodeChunks removed — learning is now fully event-driven
+  // v5.12.0: _requestLearnedCodeChunks removed - learning is now fully event-driven
   // Code00 handler sends ACK (Code01) + first Code02 request
   // Code03 handler stores chunks + requests next or sends Code04
   // Code05 handler assembles + stops learning
@@ -1233,11 +1233,11 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
 
     const buffer = this._receiveBuffers[seq];
     if (!buffer) {
-      this.log(`[IR-RX] ⚠️ Unexpected chunk for seq=${seq}, no buffer`);
+      this.log(`[IR-RX] [WARN] Unexpected chunk for seq=${seq}, no buffer`);
       return;
     }
 
-    // v5.12.0: Z2M CRC validation — calcArrayCrc = sum of byte values % 256
+    // v5.12.0: Z2M CRC validation - calcArrayCrc = sum of byte values % 256
     if (expectedCrc !== undefined && Buffer.isBuffer(chunkData)) {
       const crc = Array.from(chunkData.values()).reduce((a, b) => a + b, 0) % 0x100;
       if (crc !== expectedCrc) {
@@ -1254,7 +1254,7 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
       buffer.chunks.push({ position, data: chunkData });
     }
     buffer.receivedLength = Math.max(buffer.receivedLength, position + chunkData.length);
-    this.log(`📥 Chunk: pos=${position}, len=${chunkData.length}, total=${buffer.receivedLength}/${buffer.totalLength}`);
+    this.log(`[IN] Chunk: pos=${position}, len=${chunkData.length}, total=${buffer.receivedLength}/${buffer.totalLength}`);
 
     if (buffer.receivedLength >= buffer.totalLength) {
       // v5.9.14: Send Code04 then assemble
@@ -1292,7 +1292,7 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
   }
 
   /**
-   * v5.12.0: Z2M Code05 handler — assemble learned code + stop learning
+   * v5.12.0: Z2M Code05 handler - assemble learned code + stop learning
    */
   async _assembleAndFinishLearning(seq) {
     const irCode = await this._assembleReceivedCode(seq);
@@ -1318,7 +1318,7 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
     // DP 201: IR code received (learning result)
     if (data.dp === 201 && data.datatype === 3) {
       const code = data.data.toString('base64');
-      this.log('[TUYA-IR] ✅ Learned code via DP201:', `${code.substring(0, 50)  }...`);
+      this.log('[TUYA-IR] [OK] Learned code via DP201:', `${code.substring(0, 50)  }...`);
       this._handleLearnedCode(code);
     }
     // DP 202: Learning status (some devices)
@@ -1326,7 +1326,7 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
       const status = data.data.readUInt8?.(0) ?? data.data[0];
       this.log(`[TUYA-IR] Learning status: ${status} (0=idle, 1=learning, 2=success, 3=timeout)`);
       if (status === 2 && this._learningState === 1) {
-        this.log('[TUYA-IR] ✅ Learning successful, waiting for code...');
+        this.log('[TUYA-IR] [OK] Learning successful, waiting for code...');
       }
     }
     // DP 1: Some IR blasters use DP1 for learn mode toggle
@@ -1533,7 +1533,7 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
     }
   }
 
-  // v5.12.0: Handle Code04 from device (sending complete) — respond with Code05 per Z2M
+  // v5.12.0: Handle Code04 from device (sending complete) - respond with Code05 per Z2M
   async _handleTransmitComplete(data) {
     if (this._destroyed) { return; }
     const seq = data.seq ?? data.sequenceNumber;
@@ -1543,7 +1543,7 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
       try { await cl.doneReceiving({ seq, zero: 0 }); } catch (e) { this.log('Code05 err:', e.message); }
     }
     if (seq === this._pendingIRSeq) {
-      this.log('[IR-TX] ✅ IR transmission completed successfully');
+      this.log('[IR-TX] [OK] IR transmission completed successfully');
       this._irTransmitResolve?.();
     }
   }

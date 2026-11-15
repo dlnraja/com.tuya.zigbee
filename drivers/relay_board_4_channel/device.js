@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * 4-channel relay board (TS0004 multi-endpoint) — single device, 4 gangs.
+ * 4-channel relay board (TS0004 multi-endpoint) - single device, 4 gangs.
  * Forum #2131 (TBoy): multi-subdevice tiles broke gang2/3/4 flow UX ("shows as switch").
  * Align with switch_4gang: onoff + onoff.gang2/3/4 via UnifiedSwitchBase.
  */

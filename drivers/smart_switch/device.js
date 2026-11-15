@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * P120 — smart_switch: migrate off bare ZigBeeDevice onto TuyaZigbeeDevice
+ * P120 - smart_switch: migrate off bare ZigBeeDevice onto TuyaZigbeeDevice
  * for L14 safeSetCapabilityValue / anti-flood / mains hygiene.
  */
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');

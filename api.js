@@ -2,7 +2,7 @@ module.exports = {
   /**
    * Fetch all devices configured in this Homey Pro.
    * Returns a lightweight array for use in settings dropdown menus.
-   * Uses native Homey SDK3 APIs — no dependency on homey-api.
+   * Uses native Homey SDK3 APIs - no dependency on homey-api.
    */
   async getDevices({ homey }) {
     try {
@@ -23,7 +23,7 @@ module.exports = {
             const z = typeof device.getZone === 'function' ? device.getZone() : null;
             if (z && typeof z.getName === 'function') zoneName = z.getName() || '';
             else if (typeof z === 'string') zoneName = z;
-          } catch (_z) { /* zone optional — never block settings */ }
+          } catch (_z) { /* zone optional - never block settings */ }
           let name = '';
           let id = '';
           let dId = driverId;
@@ -50,14 +50,14 @@ module.exports = {
       return allDevices.sort((a, b) => String(a.name).localeCompare(String(b.name)));
     } catch (err) {
       homey.error('[FlowRepair API] Failed to fetch devices:', err);
-      // P2623: never throw hard — empty list keeps settings UI usable
+      // P2623: never throw hard - empty list keeps settings UI usable
       return [];
     }
   },
 
   /**
    * WHY: Settings spider map (Z2M-style) for this app's Zigbee devices.
-   * HOW: Passive snapshot — last-hop LQI/RSSI already on zclNode; no ZDO Mgmt_LQI.
+   * HOW: Passive snapshot - last-hop LQI/RSSI already on zclNode; no ZDO Mgmt_LQI.
    * WHO: MASTER_ONLY Homey settings page. Homey Pro 2023 has no app-visible route table.
    * WHEN: User opens App Settings and taps Refresh.
    * AGAINST: Active neighbor scans (mesh flood on sleepy battery nodes).
@@ -102,7 +102,7 @@ module.exports = {
     try {
       const app = homey.__tuyaApp || homey.app;
       const udp = app && app._tuyaUDPDiscovery;
-      // P2623: light probe only on settings open path — TCP deep scan freezes Homey WebView
+      // P2623: light probe only on settings open path - TCP deep scan freezes Homey WebView
       const deep = query && (query.deep === '1' || query.deep === true || query.deep === 'true');
       if (udp && typeof hub.burstWifiProbe === 'function') {
         await hub.burstWifiProbe(udp, { durationMs: deep ? 4000 : 1200 }).catch(() => {});
@@ -110,7 +110,7 @@ module.exports = {
       }
       const snap = hub.buildWifiLanSnapshot(homey, { udpDiscovery: udp });
       if (!deep) {
-        snap.note = (snap.note || 'LAN UDP snapshot') + ' (light scan — use deep=1 for TCP/6668)';
+        snap.note = (snap.note || 'LAN UDP snapshot') + ' (light scan - use deep=1 for TCP/6668)';
         return snap;
       }
       // P2411: optional TCP force (settings deep scan only)

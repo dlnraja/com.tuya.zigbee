@@ -3,7 +3,7 @@
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { CLUSTER } = require('zigbee-clusters');
 
-// Energy scaling divisors — ZCL pass-through (Homey approximation / SmartDivisor on DP paths)
+// Energy scaling divisors - ZCL pass-through (Homey approximation / SmartDivisor on DP paths)
 const ENERGY_DIVISORS = {
   measure_power: { divisor: 1 },
   meter_power: { divisor: 1 },
@@ -12,7 +12,7 @@ const ENERGY_DIVISORS = {
 };
 
 /**
- * P124 — TuyaZigbeeDevice (L14) + mainsPowered
+ * P124 - TuyaZigbeeDevice (L14) + mainsPowered
  */
 class doublepowerpoint2 extends TuyaZigbeeDevice {
 

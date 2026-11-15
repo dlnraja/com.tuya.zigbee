@@ -70,7 +70,7 @@ class dimmer_2_gang_tuya extends TuyaSpecificClusterDevice {
         });
         this.hasListenersAttached = true;
       } else {
-        this.log('[DIMMER2] Tuya cluster missing after compensation — passive RX via DeviceIO');
+        this.log('[DIMMER2] Tuya cluster missing after compensation - passive RX via DeviceIO');
       }
     }
   }  

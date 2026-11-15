@@ -8,7 +8,7 @@ const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
  * v9.7.3: Migrated to unified mixin architecture with sub-device support.
  * Each gang can be a separate Homey device (Sub-device architecture).
  * v10.3.0 FIX (B10): Removed the redundant PhysicalButtonMixin + VirtualButtonMixin double wrap
- * double wrap — UnifiedSwitchBase already inherits both via TuyaZigbeeDevice.
+ * double wrap - UnifiedSwitchBase already inherits both via TuyaZigbeeDevice.
  */
 // WHY(P2465 / Johan#1457 / Z2M SFL02-Z-3): Moes Star Feather 3-gang uses DP24/25/26
 const MOES_STAR_FEATHER_3G = [
@@ -21,7 +21,7 @@ class WallSwitch3Gang1WayDevice extends UnifiedSwitchBase {
 
   get gangCount() { return 3; }
 
-  // WHY(P2463/P2465): wall tiles must stay onoff — no phantom Botón
+  // WHY(P2463/P2465): wall tiles must stay onoff - no phantom Botón
   get skipGangButtonUi() { return true; }
 
   get isMoesStarFeather3() {
@@ -34,7 +34,7 @@ class WallSwitch3Gang1WayDevice extends UnifiedSwitchBase {
   get switchCapabilities() {
     const { subDeviceId } = (typeof this.getData === 'function' && this.getData()) || {};
     if (subDeviceId) { return ['onoff']; }
-    // no button.N — skipGangButtonUi + compose strip
+    // no button.N - skipGangButtonUi + compose strip
     return super.switchCapabilities;
   }
 
@@ -94,7 +94,7 @@ class WallSwitch3Gang1WayDevice extends UnifiedSwitchBase {
   /**
    * Filter physical button triggers to only process the gang assigned to this device.
    * v10.3.0 FIX (B10): the primary instance now filters too when sub-devices
-   * are paired — previously it processed every gang, double-triggering flows
+   * are paired - previously it processed every gang, double-triggering flows
    * alongside the owning sub-device.
    */
   triggerButtonPress(button, type = 'single', countOrOptions = {}, options = {}) {
@@ -113,7 +113,7 @@ class WallSwitch3Gang1WayDevice extends UnifiedSwitchBase {
 
   /**
    * v10.3.0 FIX (B10): True when sibling sub-devices (e.g. 'secondSwitch')
-   * are paired — the primary device must then ignore their gangs.
+   * are paired - the primary device must then ignore their gangs.
    */
   _hasPairedSubDevices() {
     try {

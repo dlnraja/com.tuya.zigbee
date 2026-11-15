@@ -44,7 +44,7 @@ class WiFiSwitch4GangDevice extends TuyaLocalDevice {
       this.registerCapabilityListener(cap, async () => {
         const onoffCap = gang === 1 ? 'onoff' : `onoff.gang${gang}`;
         const next = !this.getCapabilityValue(onoffCap);
-        this.log(`[WIFI-SWITCH-4G] ${cap} pressed (UI) — DP${gang} → ${next}`);
+        this.log(`[WIFI-SWITCH-4G] ${cap} pressed (UI) - DP${gang} -> ${next}`);
         await this._setDP(gang, next);
         return true;
       });

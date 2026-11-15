@@ -3,7 +3,7 @@
 const UnifiedLightBase = require('../../lib/devices/UnifiedLightBase');
 
 /**
- * P130: Was log-only DP dump — rebase on UnifiedLightBase for controllable onoff/dim.
+ * P130: Was log-only DP dump - rebase on UnifiedLightBase for controllable onoff/dim.
  */
 class DimmerAirPurifierDevice extends UnifiedLightBase {
   get lightCapabilities() {

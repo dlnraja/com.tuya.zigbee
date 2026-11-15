@@ -18,8 +18,8 @@ const {
  * 1-GANG SWITCH - v5.5.940 + P2632/P2662/P2663 HOBEIAN ZG-301Z
  *
  * Uses UnifiedSwitchBase (DP + ZCL).
- * NOTE: BSEED → wall_switch_1gang_1way.
- * P2632: HOBEIAN+ZG-301Z kitchen light auto-off ~5s → clear onTime + force switch_type=state.
+ * NOTE: BSEED -> wall_switch_1gang_1way.
+ * P2632: HOBEIAN+ZG-301Z kitchen light auto-off ~5s -> clear onTime + force switch_type=state.
  * P2663: heal BEFORE reporting; calm electrical intervals (mesh flood).
  */
 class Switch1GangDevice extends UnifiedSwitchBase {
@@ -27,7 +27,7 @@ class Switch1GangDevice extends UnifiedSwitchBase {
   get gangCount() { return 1; }
 
   /**
-   * WHY(P2665): HOBEIAN ZG-301Z exposes unused 0xEF00 — never queryAll / EF00 TX.
+   * WHY(P2665): HOBEIAN ZG-301Z exposes unused 0xEF00 - never queryAll / EF00 TX.
    */
   getDeviceProfile() {
     const base = (typeof super.getDeviceProfile === 'function' && super.getDeviceProfile()) || {};
@@ -38,7 +38,7 @@ class Switch1GangDevice extends UnifiedSwitchBase {
         mainsPowered: true,
         skipBatteryReporting: true,
         protocol: 'zcl_onoff',
-        // WHY(P2704): Bastien kitchen/salon lights — Homey UI + Flow must TX without pace lag
+        // WHY(P2704): Bastien kitchen/salon lights - Homey UI + Flow must TX without pace lag
         snappyTx: true,
         snappyRelayFlow: true,
         debounceMs: 80,
@@ -58,7 +58,7 @@ class Switch1GangDevice extends UnifiedSwitchBase {
 
   /**
    * EXTEND parent dpMappings with energy monitoring DPs
-   * (skipped at runtime for HOBEIAN ZG-301Z — no electrical clusters)
+   * (skipped at runtime for HOBEIAN ZG-301Z - no electrical clusters)
    */
   get dpMappings() {
     const parentMappings = Object.getPrototypeOf(Object.getPrototypeOf(this)).dpMappings || {};
@@ -76,7 +76,7 @@ class Switch1GangDevice extends UnifiedSwitchBase {
 
   async onNodeInit({ zclNode }) {
     // WHY(P2663): resolve HOBEIAN + disable leftover electrical reports BEFORE any
-    // configureAttributeReporting — blank pid on 1.0.34 flooded the mesh (~4k msgs).
+    // configureAttributeReporting - blank pid on 1.0.34 flooded the mesh (~4k msgs).
     try {
       await healHobeianZg301z(this, zclNode);
     } catch (e) {
@@ -115,7 +115,7 @@ class Switch1GangDevice extends UnifiedSwitchBase {
   }
 
   /**
-   * WHY(P2670): HOBEIAN ZG-301Z countdown is ZCL — never EF00 DP7 (noEf00Tx).
+   * WHY(P2670): HOBEIAN ZG-301Z countdown is ZCL - never EF00 DP7 (noEf00Tx).
    */
   async setCountdown(gang, seconds) {
     if (isHobeianZg301z(this)) {

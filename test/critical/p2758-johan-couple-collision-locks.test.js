@@ -45,6 +45,6 @@ describe('P2758 Johan couple collision locks', () => {
     assert.match(usb, /P2757 skip _readBatteryWithFallback/);
     const v3 = fs.readFileSync(path.join(ROOT, 'lib/battery/BatteryManagerV3.js'), 'utf8');
     assert.match(v3, /P2757 refuse startPolling/);
-    assert.match(v3, /P2757 sleepy\/coin — listen-only/);
+    assert.match(v3, /P2757 sleepy\/coin [-—] listen-only/);
   });
 });

@@ -13,7 +13,7 @@ class BoilerSwitchEnergyDriver extends ZigBeeDriver {
   }
 
   /**
-   * P126: flow.compose exists — register run listeners (CI flow-card watchdog).
+   * P126: flow.compose exists - register run listeners (CI flow-card watchdog).
    */
   _registerFlowCards() {
     const setOnOff = async (device, value) => {

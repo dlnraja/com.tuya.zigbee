@@ -9,7 +9,7 @@ const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timer
 Cluster.addCluster(TuyaSpecificCluster);
 
 /**
- * P124 — TuyaZigbeeDevice + safe-timers (no bare setTimeout / destroyed race)
+ * P124 - TuyaZigbeeDevice + safe-timers (no bare setTimeout / destroyed race)
  */
 class IrrigationController extends TuyaZigbeeDevice {
 

@@ -6,7 +6,7 @@ const EnergyJumpGuard = require('../../lib/tuya/EnergyJumpGuard');
 const { smartDivisorDetect } = require('../../lib/managers/SmartDivisorManager');
 
 /**
- * DIN / air-purifier metering path — P126 + L99 energy SSOT
+ * DIN / air-purifier metering path - P126 + L99 energy SSOT
  *
  * Prefer SmartDivisorManager (KNOWN + learned cache) with ENERGY_DIVISORS as defaults.
  * meter_power always goes through EnergyJumpGuard (forum #2092/#2093 jump bug).
@@ -40,7 +40,7 @@ class DinRailMeterDevice extends TuyaZigbeeDevice {
     if (capability === 'meter_power' || capability.startsWith('meter_power.')) {
       this._energyParseMeta = { mfr: this._mfr(), dpId, divisor, capability: 'meter_power' };
     }
-    // Single detect — avoid double smartParse cache churn
+    // Single detect - avoid double smartParse cache churn
     return Math.round((n / divisor) * 10) / 10;
   }
 

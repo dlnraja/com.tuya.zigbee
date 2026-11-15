@@ -29,7 +29,7 @@ const MAINS_POWERED_RADARS = new Set([
   '_tze204_jva8ink8',
 ]);
 
-/** Non-Linptech compose aliases → UnifiedSensorBase SETTING_DP_MAP keys */
+/** Non-Linptech compose aliases -> UnifiedSensorBase SETTING_DP_MAP keys */
 const LEGACY_SETTING_ALIASES = Object.freeze({
   minimum_range: 'min_range',
   maximum_range: 'max_range',
@@ -37,9 +37,9 @@ const LEGACY_SETTING_ALIASES = Object.freeze({
 
 /**
  * Motion Sensor Radar mmWave Device
- * P2258/P2261/P2262: Linptech ES1ZZ / Moes ZSS-LP-HP02-MS — settings on 0xE002
+ * P2258/P2261/P2262: Linptech ES1ZZ / Moes ZSS-LP-HP02-MS - settings on 0xE002
  * named attrs (Homesuite ManuSpecificTuya3 pattern), not EF00 DP9.
- * Firmware rejects configureReporting (UNSUP_CLUSTER_COMMAND) — skip throttle.
+ * Firmware rejects configureReporting (UNSUP_CLUSTER_COMMAND) - skip throttle.
  */
 class MotionSensorRadarDevice extends UnifiedSensorBase {
 
@@ -71,7 +71,7 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
   }
 
   /**
-   * WHY(P2818 / ZHA#5286 / forum #2262): `_TZE284_gnpflcoq`+TS0601 4in1 — corrected DPs
+   * WHY(P2818 / ZHA#5286 / forum #2262): `_TZE284_gnpflcoq`+TS0601 4in1 - corrected DPs
    * (DP9 PIR sensitivity, DP12 pir_delay, DP102 temp_compensate). Older Z2M mapped
    * DP2/DP102 as sensitivity/fading_time and silently corrupted calibration.
    */
@@ -85,18 +85,18 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
     return /gnpflcoq/i.test(mfr);
   }
 
-  /** Couple-aware TX for settings / Flow cards (gnpflcoq ≠ generic mmWave DP2/102). */
+  /** Couple-aware TX for settings / Flow cards (gnpflcoq != generic mmWave DP2/102). */
   async sendGnpflcoqSetting(key, rawValue) {
     if (typeof this.sendTuyaCommand !== 'function') {return false;}
     if (key === 'radar_sensitivity' || key === 'motion_detection_sensitivity') {
-      // DP9 enum: 0=low, 1=middle, 2=high (ZHA#5286). Map 0–9 slider → enum.
+      // DP9 enum: 0=low, 1=middle, 2=high (ZHA#5286). Map 0-9 slider -> enum.
       const n = Number(rawValue);
       const enumVal = !Number.isFinite(n) ? 1 : n <= 3 ? 0 : n <= 6 ? 1 : 2;
       await this.sendTuyaCommand(9, enumVal, 'enum');
       return true;
     }
     if (key === 'fading_time' || key === 'detection_delay') {
-      // DP12 pir_delay 10–180s (NOT DP102 — that is temp_compensate)
+      // DP12 pir_delay 10-180s (NOT DP102 - that is temp_compensate)
       let sec = Math.round(Number(rawValue));
       if (!Number.isFinite(sec)) {sec = 60;}
       sec = Math.max(10, Math.min(180, sec));
@@ -104,7 +104,7 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
       return true;
     }
     if (key === 'temperature_calibration') {
-      // DP102 temp_compensate — tenths °C on many firmwares
+      // DP102 temp_compensate - tenths °C on many firmwares
       const v = Number(rawValue);
       if (!Number.isFinite(v)) {return false;}
       await this.sendTuyaCommand(102, Math.round(v * 10), 'value');
@@ -121,7 +121,7 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
 
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => {
-      this.log('[MMWAVE] 🚀 v8.0.0 Modernizing...');
+      this.log('[MMWAVE] [GO] v8.0.0 Modernizing...');
 
       this._inference = new IntelligentPresenceInference(this);
       this._llBridge = new LowLevelBridge(this);
@@ -133,19 +133,19 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
       if (appVersion) { this._inference.setFirmwareInfo(appVersion); }
 
       if (this._isLinptechES1()) {
-        this.log('[MMWAVE][LINPTECH] ES1ZZ profile — 0xE002 named attr settings path');
+        this.log('[MMWAVE][LINPTECH] ES1ZZ profile - 0xE002 named attr settings path');
         this._setupLinptechClusterListener(zclNode);
-        // WHY: same Basic read as Z2M configureMagicPacket / Homesuite — wakes dormant reports
+        // WHY: same Basic read as Z2M configureMagicPacket / Homesuite - wakes dormant reports
         this._linptechBasicInit(zclNode).catch((err) => {
           this.log('[MMWAVE][LINPTECH] Basic init deferred:', err.message);
         });
-        // Contre quoi: configureReporting → UNSUP_CLUSTER_COMMAND on this firmware
+        // Contre quoi: configureReporting -> UNSUP_CLUSTER_COMMAND on this firmware
         this._setupLinptechIlluminanceListener(zclNode);
       } else {
         await this._configureIlluminanceReporting();
       }
 
-      this.log('[MMWAVE] ✅ Ready');
+      this.log('[MMWAVE] [OK] Ready');
     }, 'onNodeInit');
   }
 
@@ -188,7 +188,7 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
     const clusters = [...new Set([manu, ...fallbacks].filter(Boolean))];
 
     if (!clusters.length) {
-      this.log('[MMWAVE][LINPTECH] Cluster 0xE002 not on EP1 — settings TX may still work via LowLevelBridge');
+      this.log('[MMWAVE][LINPTECH] Cluster 0xE002 not on EP1 - settings TX may still work via LowLevelBridge');
       return;
     }
 
@@ -259,10 +259,10 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
   _setupLinptechIlluminanceListener(zclNode) {
     const illum = zclNode?.endpoints?.[1]?.clusters?.illuminanceMeasurement;
     if (!illum || typeof illum.on !== 'function') {
-      this.log('[MMWAVE][LINPTECH] Illuminance 0x0400 unavailable — DP lux fallback OK');
+      this.log('[MMWAVE][LINPTECH] Illuminance 0x0400 unavailable - DP lux fallback OK');
       return;
     }
-    // Listen only — do NOT configureReporting (firmware rejects it)
+    // Listen only - do NOT configureReporting (firmware rejects it)
     this._onLinptechIllum = (raw) => {
       const n = Number(raw);
       if (!Number.isFinite(n)) { return; }
@@ -285,15 +285,15 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
             minChange: 50,
           },
         });
-        this.log('[MMWAVE] ✅ Illuminance reporting configured for continuous updates');
+        this.log('[MMWAVE] [OK] Illuminance reporting configured for continuous updates');
       }
     } catch (error) {
-      this.log('[MMWAVE] ❌ Failed to configure illuminance reporting:', error.message);
+      this.log('[MMWAVE] [ERR] Failed to configure illuminance reporting:', error.message);
     }
   }
 
   onTuyaDP(dpId, value, dpType) {
-    this.log(`[MMWAVE] 📥 DP${dpId} = ${value}`);
+    this.log(`[MMWAVE] [IN] DP${dpId} = ${value}`);
 
     if (this._isLinptechES1()) {
       switch (dpId) {
@@ -321,7 +321,7 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
         return this.safeSetCapabilityValue('alarm_motion', presence).catch(() => { });
       }
 
-      // WHY P2271/P2818: ZHA#5252/#5286 4in1 — DP7 temp×0.1, DP8 humidity %, DP11 lux
+      // WHY P2271/P2818: ZHA#5252/#5286 4in1 - DP7 temp×0.1, DP8 humidity %, DP11 lux
       case 7: {
         const temp = smartParse(value, dpId, { capability: 'measure_temperature', defaultDivisor: 10 });
         return this._safeDynCap('measure_temperature', temp);
@@ -337,13 +337,13 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
       }
 
       case 9: {
-        // WHY(P2818): gnpflcoq DP9 = pir_sensitivity enum — never distance
+        // WHY(P2818): gnpflcoq DP9 = pir_sensitivity enum - never distance
         if (this._isGnpflcoq4in1()) {
           this.log(`[MMWAVE][GNPFLCOQ] pir_sensitivity DP9=${value}`);
           return;
         }
         if (this._isLinptechES1()) {
-          this.log(`[MMWAVE][LINPTECH] skip DP9 distance — use cluster attrs`);
+          this.log(`[MMWAVE][LINPTECH] skip DP9 distance - use cluster attrs`);
           return;
         }
         const distance9 = smartParse(value, dpId, { capability: 'measure_luminance.distance' });
@@ -352,13 +352,13 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
       }
 
       case 102: {
-        // WHY(P2818 / ZHA#5286): gnpflcoq DP102 = temp_compensate — writing as fading_time corrupts offset
+        // WHY(P2818 / ZHA#5286): gnpflcoq DP102 = temp_compensate - writing as fading_time corrupts offset
         if (this._isGnpflcoq4in1()) {
           this.log(`[MMWAVE][GNPFLCOQ] temp_compensate DP102=${value}`);
           return;
         }
         if (this._isLinptechES1()) {
-          this.log(`[MMWAVE][LINPTECH] skip DP102 distance — use cluster attrs`);
+          this.log(`[MMWAVE][LINPTECH] skip DP102 distance - use cluster attrs`);
           return;
         }
         const distance102 = smartParse(value, dpId, { capability: 'measure_luminance.distance' });
@@ -367,7 +367,7 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
       }
 
       case 12: {
-        // WHY(P2818): gnpflcoq DP12 = pir_delay (10–180s) — NOT lux
+        // WHY(P2818): gnpflcoq DP12 = pir_delay (10-180s) - NOT lux
         if (this._isGnpflcoq4in1()) {
           this.log(`[MMWAVE][GNPFLCOQ] pir_delay DP12=${value}s`);
           return;
@@ -395,7 +395,7 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
       case 4:
       case 15:
         if (this.mainsPowered) {
-          this.log(`[MMWAVE] ⏭️ Ignoring battery DP${dpId} on mains-powered radar`);
+          this.log(`[MMWAVE] [SKIP] Ignoring battery DP${dpId} on mains-powered radar`);
           return;
         }
         return this.safeSetCapabilityValue('measure_battery', value).catch(() => {});
@@ -426,7 +426,7 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
       if (manu && typeof manu.writeAttributes === 'function' && plan.attrName) {
         try {
           await manu.writeAttributes({ [plan.attrName]: plan.value });
-          this.log(`[MMWAVE][LINPTECH] ${key} → tuyaE002.${plan.attrName}=${plan.value}`);
+          this.log(`[MMWAVE][LINPTECH] ${key} -> tuyaE002.${plan.attrName}=${plan.value}`);
           return true;
         } catch (err) {
           this.log(`[MMWAVE][LINPTECH] named write failed, trying LowLevelBridge: ${err.message}`);
@@ -441,7 +441,7 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
         const ok = await this._llBridge.writeZCLAttribute(clusterId, plan.attr, plan.value, 1);
         if (ok) {
           wrote = true;
-          this.log(`[MMWAVE][LINPTECH] ${key} → 0x${clusterId.toString(16)} attr ${plan.attr}=${plan.value}`);
+          this.log(`[MMWAVE][LINPTECH] ${key} -> 0x${clusterId.toString(16)} attr ${plan.attr}=${plan.value}`);
           break;
         }
       }
@@ -453,7 +453,7 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
 
     if (plan.kind === 'dp' && typeof this.sendTuyaCommand === 'function') {
       await this.sendTuyaCommand(plan.dp, plan.value, plan.type);
-      this.log(`[MMWAVE][LINPTECH] ${key} → DP${plan.dp}=${plan.value}`);
+      this.log(`[MMWAVE][LINPTECH] ${key} -> DP${plan.dp}=${plan.value}`);
       return true;
     }
 
@@ -461,7 +461,7 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
   }
 
   /**
-   * WHY P2271: gnpflcoq 4in1 reports climate DPs — add caps only when RX proves need (no phantom on Linptech).
+   * WHY P2271: gnpflcoq 4in1 reports climate DPs - add caps only when RX proves need (no phantom on Linptech).
    */
   async _safeDynCap(cap, value) {
     try {
@@ -489,12 +489,12 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
         try {
           await this._writeLinptechSetting(key, newSettings[key]);
         } catch (err) {
-          // WHY P2263: some Moes firmwares reject LED 57353 (UNSUPPORTED_ATTRIBUTE) — soft-fail
+          // WHY P2263: some Moes firmwares reject LED 57353 (UNSUPPORTED_ATTRIBUTE) - soft-fail
           if (isOptionalLinptechSetting(key)) {
             this.log(`[MMWAVE][LINPTECH] optional setting ${key} skipped: ${err.message}`);
             continue;
           }
-          // WHY(P2289/P2298): A_Tas #2199 — never block Homey settings save UI
+          // WHY(P2289/P2298): A_Tas #2199 - never block Homey settings save UI
           this.error(`[MMWAVE][LINPTECH] settings save soft-fail ${key}: ${err.message}`);
         }
       }

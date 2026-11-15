@@ -23,7 +23,7 @@ class SwitchDimmer1GangDevice extends TuyaZigbeeDevice {
     // Auto-fix: Remove battery capabilities for mains-powered devices
     await this.removeCapability('measure_battery').catch(() => {});
     await this.removeCapability('alarm_battery').catch(() => {});
-    this.log('[Dimmer1G] 🚀 Initializing hardened driver...');
+    this.log('[Dimmer1G] [GO] Initializing hardened driver...');
     await super.onNodeInit({ zclNode });
     await this.initVirtualButtons();
 
@@ -38,7 +38,7 @@ class SwitchDimmer1GangDevice extends TuyaZigbeeDevice {
       return this.sendTuyaCommand(DP.brightness, brightness, 'value');
     });
 
-    this.log('[Dimmer1G] ✅ Ready');
+    this.log('[Dimmer1G] [OK] Ready');
   }
 
   /**
@@ -64,7 +64,7 @@ class SwitchDimmer1GangDevice extends TuyaZigbeeDevice {
       }
 
       default:
-        this.log(`[Dimmer1G] 📥 Unhandled DP ${dpId}:`, value);
+        this.log(`[Dimmer1G] [IN] Unhandled DP ${dpId}:`, value);
     }
   }
 

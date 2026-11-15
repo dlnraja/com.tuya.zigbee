@@ -4,7 +4,7 @@ const BaseZigBeeDriver = require('../../lib/drivers/BaseZigBeeDriver');
 const { shouldRunForDeviceAndButton } = require('../../lib/FlowCardHelper');
 
 /**
- * Button 1-Gang Driver — flow IDs must match driver.flow.compose.json
+ * Button 1-Gang Driver - flow IDs must match driver.flow.compose.json
  * WHY(P2630): never require args.device on device triggers (Homey omits it).
  */
 class Button1GangDriver extends BaseZigBeeDriver {

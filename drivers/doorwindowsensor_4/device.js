@@ -9,7 +9,7 @@ const { CLUSTER } = require('zigbee-clusters');
  * Door/Window contact sensor (DS01 family, IAS zone).
  * v9.0.415 (P92.123): enrollment + initial read + invert via shared helper
  * (the sensor's own interview showed zoneState "notEnrolled" / CIE 00:00...
- * — the root cause of frozen contact states). Battery percentage handling
+ * - the root cause of frozen contact states). Battery percentage handling
  * preserved.
  */
 class doorwindowsensor_4 extends TuyaZigbeeDevice {
@@ -33,7 +33,7 @@ class doorwindowsensor_4 extends TuyaZigbeeDevice {
     }
 
     // alarm_contact (+ alarm_battery from the zone battery bit)
-    // Battery % via ZclBatteryMonitor.attach (UnifiedBatteryHandler) — no naive /2 path
+    // Battery % via ZclBatteryMonitor.attach (UnifiedBatteryHandler) - no naive /2 path
     await setupDoorWindowSensor(this, zclNode, { hasTamper: false });
   }
 

@@ -38,7 +38,7 @@ function mapSmokeDp(profile, dp, raw) {
 }
 
 /**
- * P113: migrate bare ZigBeeDevice → TuyaZigbeeDevice for DeviceIO + IAS enroll
+ * P113: migrate bare ZigBeeDevice -> TuyaZigbeeDevice for DeviceIO + IAS enroll
  * + L14 safeSetCapabilityValue (was undefined on bare ZigBeeDevice).
  */
 class smoke_sensor extends TuyaZigbeeDevice {

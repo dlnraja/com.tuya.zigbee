@@ -4,7 +4,7 @@ const { safeMultiply } = require('../../lib/utils/tuyaUtils.js');
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 
 /**
- * Smart Humidifier — P125: TuyaZigbeeDevice (L14) + mainsPowered
+ * Smart Humidifier - P125: TuyaZigbeeDevice (L14) + mainsPowered
  *
  * DP1: On/Off | DP2: Target humidity | DP3: Current humidity
  * DP5: Mist level | DP12: Water shortage

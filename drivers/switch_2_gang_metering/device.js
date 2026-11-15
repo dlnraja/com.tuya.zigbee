@@ -9,7 +9,7 @@ const TuyaOnOffCluster = require('../../lib/TuyaOnOffCluster');
 
 Cluster.addCluster(TuyaOnOffCluster);
 
-// Energy scaling divisors — ZCL raw attributes; Tuya-DP drivers use smartDivisor: true via SmartDivisorManager
+// Energy scaling divisors - ZCL raw attributes; Tuya-DP drivers use smartDivisor: true via SmartDivisorManager
 const ENERGY_DIVISORS = {
   meter_power: { divisor: 100 },
   measure_power: { divisor: 100 },
