@@ -4312,6 +4312,10 @@
   "5.12.0": {
     "en": "v5.12.0: stable-v5 batch sync (drivers, FPs, flows, manifest) from master v9.0.240–v9.0.260."
   },
+  "1.0.241": {
+    "en": "Fixed: pairing and device recognition and general reliability (TS0601).",
+    "fr": "Corrigé : appairage et reconnaissance des appareils et fiabilité générale (TS0601)."
+  },
   "1.0.240": {
     "en": "Fixed: device settings and buttons and remotes. Behind the scenes: tests and publishing checks.",
     "fr": "Corrigé : réglages des appareils et boutons et télécommandes. En coulisses : tests et contrôles de publication."
