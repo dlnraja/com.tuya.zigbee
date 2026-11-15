@@ -518,10 +518,10 @@ class PowerClampMeterDevice extends TuyaZigbeeDevice {
   // for good: the newest one is always written.
   _p3298Coalescer() {
     if (!this.__p3298c) {
-      const h = this.homey;
+      // Homey-managed timers only (cleared by Homey on device/app teardown; no bare driver timers).
       this.__p3298c = new MeterWriteCoalescer({
-        setTimer: (fn, ms) => (h && typeof h.setTimeout === 'function' ? h.setTimeout(fn, ms) : setTimeout(fn, ms)),
-        clearTimer: (t) => (h && typeof h.clearTimeout === 'function' ? h.clearTimeout(t) : clearTimeout(t)),
+        setTimer: (fn, ms) => this.homey.setTimeout(fn, ms),
+        clearTimer: (t) => this.homey.clearTimeout(t),
         onError: (cap, e) => this._p3298Log(`err:${cap}`, `[METER] write ${cap} failed: ${(e && e.message) || e}`),
       });
     }
