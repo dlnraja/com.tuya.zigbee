@@ -37,7 +37,7 @@ class WiFiLedStripDevice extends TuyaLocalDevice {
   _registerCapabilityListeners() {
     if (this._ledColorListenersRegistered) {return;}
     this._ledColorListenersRegistered = true;
-    // TuyaLocalDevice (base) has no _registerCapabilityListeners — guard the super call.
+    // TuyaLocalDevice (base) has no _registerCapabilityListeners - guard the super call.
     if (typeof super._registerCapabilityListeners === 'function') {
       super._registerCapabilityListeners();
     }

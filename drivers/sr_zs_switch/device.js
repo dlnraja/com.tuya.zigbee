@@ -261,7 +261,7 @@ class SRZSSwitch extends TuyaSpecificClusterDevice {
             .registerRunListener(async (args) => {
                 const switchId = args.switch;
                 const state = args.state === 'true';
-                // WHY: listener is shared by all devices of this driver (last registration wins) — act on the Flow's device, not the registering one.
+                // WHY: listener is shared by all devices of this driver (last registration wins) - act on the Flow's device, not the registering one.
                 const dev = (args && args.device) || this;
                 try {
                     if (state) {

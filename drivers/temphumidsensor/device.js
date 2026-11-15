@@ -84,7 +84,7 @@ class TuyatecTempHumidSensorDevice extends UnifiedSensorBase {
     this.homey.setTimeout(() => { if (this._destroyed) {return;} const temp = this.getCapabilityValue('measure_temperature');
       const hum = this.getCapabilityValue('measure_humidity');
       const bat = this.getCapabilityValue('measure_battery');
-      this.log('[TUYATEC]  T:', temp, 'Â°C H:', hum, '% B:', bat, '%'); }, 100);
+      this.log('[TUYATEC]  T:', temp, '°C H:', hum, '% B:', bat, '%'); }, 100);
   }
 
 

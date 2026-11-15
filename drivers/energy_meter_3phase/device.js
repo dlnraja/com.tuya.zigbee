@@ -8,7 +8,7 @@ const GT_PHASE_RE = /_(s4sa1mcx|x8diwkqb|a14rjslz|d2zfgtij)$/i;
 function isGtPhase(mfr) { return GT_PHASE_RE.test(String(mfr || '').trim()); }
 
 class EnergyMeter3PhaseDevice extends UnifiedPlugBase {
-  // WHY(P2518): mains DIN meter — never phantom battery / plug onoff
+  // WHY(P2518): mains DIN meter - never phantom battery / plug onoff
   get mainsPowered() { return true; }
 
   get plugCapabilities() {
@@ -26,9 +26,9 @@ class EnergyMeter3PhaseDevice extends UnifiedPlugBase {
   }
 
   /**
-   * WHY(P2518): Z2M ATMS100133Z / dikb3dp6 3P4W — DP1=energy NOT onoff (plug base wrong).
-   * Contre quoi: inheriting UnifiedPlugBase DP1→onoff breaks RX energy for a14rjslz.
-   * DP 23: exported kWh ÷100 · DP 29: total W ÷10 · phase scalars 103–115 family
+   * WHY(P2518): Z2M ATMS100133Z / dikb3dp6 3P4W - DP1=energy NOT onoff (plug base wrong).
+   * Contre quoi: inheriting UnifiedPlugBase DP1->onoff breaks RX energy for a14rjslz.
+   * DP 23: exported kWh ÷100 · DP 29: total W ÷10 · phase scalars 103-115 family
    */
   get dpMappings() {
     const base = super.dpMappings || {};
@@ -84,12 +84,12 @@ class EnergyMeter3PhaseDevice extends UnifiedPlugBase {
       23: { capability: 'meter_power.exported', divisor: 100 },
       // Total energy alternate (some firmwares)
       24: { capability: 'meter_power', smartDivisor: true, defaultDivisor: 100 },
-      // Total active power (W) — primary Homey energy tile
+      // Total active power (W) - primary Homey energy tile
       29: { capability: 'measure_power', divisor: 10 },
       30: { capability: null, internal: 'power_reactive' },
       32: { capability: null, internal: 'ac_frequency', divisor: 100 },
       50: { capability: null, internal: 'power_factor' },
-      // Phase A scalars only → primary V/A (avoid B/C thrashing same Homey caps — P2519)
+      // Phase A scalars only -> primary V/A (avoid B/C thrashing same Homey caps - P2519)
       103: { capability: 'measure_voltage', smartDivisor: true, defaultDivisor: 10 },
       104: { capability: 'measure_current', smartDivisor: true, defaultDivisor: 1000 },
       105: { capability: 'measure_power.phase1', divisor: 1 },
@@ -146,7 +146,7 @@ class EnergyMeter3PhaseDevice extends UnifiedPlugBase {
     await super.onNodeInit({ zclNode });
 
     // v9.0.416 (P92.124): per-phase power via haElectricalMeasurement on
-    // endpoints 1/2/3 → measure_power.phase1/2/3 (declared in the compose
+    // endpoints 1/2/3 -> measure_power.phase1/2/3 (declared in the compose
     // but never fed). Falls back silently on single-endpoint devices.
     for (let ep = 1; ep <= 3; ep++) {
       const cap = `measure_power.phase${ep}`;
@@ -190,7 +190,7 @@ class EnergyMeter3PhaseDevice extends UnifiedPlugBase {
     return undefined;
   }
 
-  // WHY(P2518): DP29 total W → measure_power + mirror phase_total for 3ph UI
+  // WHY(P2518): DP29 total W -> measure_power + mirror phase_total for 3ph UI
   _handleDP(dpId, rawValue) {
     const mfr = this.getSetting?.('zb_manufacturer_name') || this._protocolInfo?.mfr;
     const dpn = Number(dpId);

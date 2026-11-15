@@ -3,7 +3,7 @@ const { safeParse } = require('../../lib/utils/tuyaUtils.js');
 const TuyaSpecificClusterDevice = require('../../lib/tuya/TuyaSpecificClusterDevice');
 const { smartParse } = require('../../lib/managers/SmartDivisorManager');
 
-// Standard Tuya energy DPs — scaled via SmartDivisorManager auto divisor detection
+// Standard Tuya energy DPs - scaled via SmartDivisorManager auto divisor detection
 const ENERGY_DP_MAP = {
   17: 'measure_current', // A
   18: 'measure_power',   // W
@@ -16,7 +16,7 @@ class GenericTuyaDevice extends TuyaSpecificClusterDevice {
     await super.onNodeInit({ zclNode });
     // v9.0.416 (P92.124): the DIY capabilities (tuya_dp_value/string/raw/
     // cluster_event) were declared but the bridge that serves them was
-    // never instantiated — dead caps on the DIY driver itself.
+    // never instantiated - dead caps on the DIY driver itself.
     try {
       const TuyaUniversalBridge = require('../../lib/TuyaUniversalBridge');
       this._universalBridge = new TuyaUniversalBridge(this);

@@ -4,7 +4,7 @@ const { ZigBeeDriver } = require('homey-zigbeedriver');
 const { registerButtonFlowCards } = require('../../lib/FlowCardHelper');
 
 /**
- * P2364 — Smart Knob (TS004F) flow registration parity with button_wireless_1.
+ * P2364 - Smart Knob (TS004F) flow registration parity with button_wireless_1.
  */
 class SmartKnobDriver extends ZigBeeDriver {
 

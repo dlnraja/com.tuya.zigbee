@@ -77,6 +77,6 @@ describe('P2285 mrpevh8p+TS0041 SH-SC07 deep lock', () => {
   it('raw 0xFD maps phantom EPs to button 1', () => {
     const src = read('lib/mixins/PhysicalButtonMixin.js');
     assert(src.includes('mapAllEndpointsToButton1'));
-    assert(src.includes('EP${epId}→btn${gang}'));
+    assert(src.includes('EP${epId}->btn${gang}') || src.includes('EP${epId}→btn${gang}'));
   });
 });

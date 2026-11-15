@@ -1,4 +1,4 @@
-// sync-drivers-from-master.js — P53
+// sync-drivers-from-master.js - P53
 // Cherry-pick only the driver.compose.json changes from master to stable-v5
 // Keeps the experimental scripts/tools on master, syncs only the canonical
 // driver fingerprints.
@@ -15,7 +15,7 @@ function git(args, opts) {
   return execFileSync(gitExe, args, Object.assign({ cwd: ROOT, encoding: 'utf8' }, opts || {})).trim();
 }
 
-console.log('=== Sync drivers (master → stable-v5) — P53 ===');
+console.log('=== Sync drivers (master -> stable-v5) - P53 ===');
 
 // 1. Get list of driver files that differ
 const allFiles = git(['diff', '--name-only', 'origin/master..HEAD']).split('\n').filter(Boolean);

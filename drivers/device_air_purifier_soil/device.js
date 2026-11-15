@@ -35,7 +35,7 @@ const { SoilMoistureInference, BatteryInference } = require('../../lib/Intellige
  *                                                                               
  *   DP MAPPINGS (from Z2M/ZHA):                                                 
  *   - DP3: soil_moisture %                                                      
- *   - DP5: temperature Ã·10                                                      
+ *   - DP5: temperature ÷10                                                      
  *   - DP14: battery_state enum (0=low, 1=med, 2=high)                           
  *   - DP15: battery_percent %                                                   
  *   - DP101: ambient_humidity % (Z2M #28270: o9ofysmo/xc3vwx5a)                 
@@ -85,7 +85,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
    *
    * HOBEIAN ZG-303Z (_TZE200_wqashyqo) uses:
    * - DP3: soil_moisture % (0-100%)
-   * - DP5: temperature Ã·10 (Â°C)
+   * - DP5: temperature ÷10 (°C)
    * - DP9: temperature_unit (0=C, 1=F)
    * - DP14: water_warning alarm (0=none, 1=alarm)
    * - DP15: battery_percent %
@@ -94,7 +94,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
    * QT-07S (_TZE284_oitavov2) uses:
    * - DP2: temperature_unit (0=C, 1=F)
    * - DP3: soil_moisture %
-   * - DP5: temperature Ã·10
+   * - DP5: temperature ÷10
    * - DP14: battery_state enum (0=low, 1=med, 2=high)
    * - DP15: battery_percent %
    */
@@ -107,15 +107,15 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
 
       // 
       // TEMPERATURE - DP5 (soil/ambient temperature)
-      // Some devices report Ã—10, others Ã—100 - auto-detect
+      // Some devices report ×10, others ×100 - auto-detect
       // 
       5: {
         capability: 'measure_temperature',
         transform: (v) => {
-          // Auto-detect scale: >1000=Ã·100, 100-1000=Ã·10, 100=raw Â°C
+          // Auto-detect scale: >1000=÷100, 100-1000=÷10, 100=raw °C
           if (Math.abs(v) > 1000) {return safeDivide(v, 100);} // P3011: documented ÷100
           if (Math.abs(v) > 100) {return safeDivide(v, 10);} // P3011: was undefined safeMultiply (documented ÷10)
-          return v; // Already in Â°C (_TZE284_oitavov2 QT-07S)
+          return v; // Already in °C (_TZE284_oitavov2 QT-07S)
         }
       },
 
@@ -198,7 +198,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     return {
       // 
       // TEMPERATURE - ZCL standard cluster (0x0402)
-      // Value is in 0.01Â°C units, divide by 100
+      // Value is in 0.01°C units, divide by 100
       // 
       temperatureMeasurement: {
         requireBinding: false,
@@ -206,7 +206,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
         attributeReport: (data) => {
           if (data.measuredValue !== undefined) {
             const temp = data.measuredValue / 100; // P3002: ZCL 0.01 units
-            this.log(`[ZCL]  Temperature: ${temp}Â°C`);
+            this.log(`[ZCL]  Temperature: ${temp}°C`);
             this._registerZigbeeHit?.();
             this.safeSetCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
           }
@@ -322,7 +322,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
 
   /**
    * v5.5.334: Convert Celsius to Fahrenheit (Hobeian PR#6 fix - was inverted!)
-   * Correct formula: F = C Ã— 9/5 + 32
+   * Correct formula: F = C × 9/5 + 32
    */
   _celsiusToFahrenheit(celsius) {
     return (celsius * safeDivide(9, 5)) + 32; // P3011: °F = °C×9/5+32
@@ -330,10 +330,10 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
 
   /**
    * v5.5.334: Convert Fahrenheit to Celsius
-   * Formula: C = (F - 32) Ã— 5/9
+   * Formula: C = (F - 32) × 5/9
    */
   _fahrenheitToCelsius(fahrenheit) {
-    return (fahrenheit - 32) * safeDivide(5, 9); // P3011: °C = (°F−32)×5/9
+    return (fahrenheit - 32) * safeDivide(5, 9); // P3011: °C = (°F-32)×5/9
   }
 
   /**
@@ -436,12 +436,12 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
         this.log(`[SOIL]  DP5 value ${parsedValue} > 10000  compound frame artifact, skipping`);
         return;
       }
-      // WHY(P3011): was includesCI(mfr, '_tze200_oitavov2') — reversed args, always false.
+      // WHY(P3011): was includesCI(mfr, '_tze200_oitavov2') - reversed args, always false.
       // Z2M TS0601_soil DP5 = raw °C for oitavov2; legacy scaling kept for everything else.
       const mfr = this.getSettingValue?.('zb_manufacturer_name') || this.getSetting?.('zb_manufacturer_name') || '';
       const { temp } = scaleSoilDp5(mfr, parsedValue);
 
-      this.log(`[SOIL]  TEMPERATURE DP5 = ${parsedValue}  Raw ${temp}Â°C` );
+      this.log(`[SOIL]  TEMPERATURE DP5 = ${parsedValue}  Raw ${temp}°C` );
       this._safeSetCapability('measure_temperature', parseFloat(temp));
       return;
     }

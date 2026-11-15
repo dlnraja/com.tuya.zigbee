@@ -8,7 +8,7 @@ const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
 
 const { CLUSTER } = require('zigbee-clusters');
 
-// Energy scaling divisors — ZCL raw attributes / Tuya DP raw values scaled below;
+// Energy scaling divisors - ZCL raw attributes / Tuya DP raw values scaled below;
 // standard Tuya-DP drivers use smartDivisor: true via SmartDivisorManager
 const ENERGY_DIVISORS = {
   meter_power: { divisor: 100 }, // DP1/DP6 raw: kWh * 100

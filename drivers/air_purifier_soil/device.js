@@ -2,8 +2,8 @@
 const { safeDivide, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 // WHY(P3018): DP5 is temperature in tenths (Z2M tuyaDatapoints soil sensors: [5,'temperature',divideBy10]).
-// The old code MULTIPLIED large raws (231 → 2310 °C) in both dpMappings and _handleDP. One shared
-// decoder now divides; small raws (≤100) are kept as-is (variants reporting whole °C) — unchanged.
+// The old code MULTIPLIED large raws (231 -> 2310 °C) in both dpMappings and _handleDP. One shared
+// decoder now divides; small raws (<=100) are kept as-is (variants reporting whole °C) - unchanged.
 function soilTemperature(v) {
   const n = Number(v);
   if (!Number.isFinite(n)) { return null; }

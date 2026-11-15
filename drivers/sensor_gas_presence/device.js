@@ -115,7 +115,7 @@ class GasPresenceHybridDevice extends UnifiedSensorBase {
     await super.onNodeInit({ zclNode });
     await this._setupZclClusters(zclNode);
     await this._setupTuyaDPListeners(zclNode);
-    this.log('[GAS-HYBRID] ✅ Gas presence sensor ready');
+    this.log('[GAS-HYBRID] [OK] Gas presence sensor ready');
   }
   _handleTuyaResponse(data) {
     if (!data) {return;}

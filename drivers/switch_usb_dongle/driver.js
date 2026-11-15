@@ -23,7 +23,7 @@ class SwitchUsbDongleDriver extends ZigBeeDriver {
           if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
-        this.log('[FLOW] ✅ switch_usb_dongle_port1_is_on');
+        this.log('[FLOW] [OK] switch_usb_dongle_port1_is_on');
       }
     } catch (err) {
       this.error('[FLOW] switch_usb_dongle_port1_is_on:', err.message);
@@ -37,7 +37,7 @@ class SwitchUsbDongleDriver extends ZigBeeDriver {
           if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff.l2') === true;
         });
-        this.log('[FLOW] ✅ switch_usb_dongle_port2_is_on');
+        this.log('[FLOW] [OK] switch_usb_dongle_port2_is_on');
       }
     } catch (err) {
       this.error('[FLOW] switch_usb_dongle_port2_is_on:', err.message);
@@ -52,7 +52,7 @@ class SwitchUsbDongleDriver extends ZigBeeDriver {
           await args.device.setCapabilityValue('onoff', true).catch(() => {});
           return true;
         });
-        this.log('[FLOW] ✅ switch_usb_dongle_turn_on_port1');
+        this.log('[FLOW] [OK] switch_usb_dongle_turn_on_port1');
       }
     } catch (err) {
       this.error('[FLOW] switch_usb_dongle_turn_on_port1:', err.message);
@@ -67,7 +67,7 @@ class SwitchUsbDongleDriver extends ZigBeeDriver {
           await args.device.setCapabilityValue('onoff', false).catch(() => {});
           return true;
         });
-        this.log('[FLOW] ✅ switch_usb_dongle_turn_off_port1');
+        this.log('[FLOW] [OK] switch_usb_dongle_turn_off_port1');
       }
     } catch (err) {
       this.error('[FLOW] switch_usb_dongle_turn_off_port1:', err.message);
@@ -82,7 +82,7 @@ class SwitchUsbDongleDriver extends ZigBeeDriver {
           await args.device.setCapabilityValue('onoff.l2', true).catch(() => {});
           return true;
         });
-        this.log('[FLOW] ✅ switch_usb_dongle_turn_on_port2');
+        this.log('[FLOW] [OK] switch_usb_dongle_turn_on_port2');
       }
     } catch (err) {
       this.error('[FLOW] switch_usb_dongle_turn_on_port2:', err.message);
@@ -97,7 +97,7 @@ class SwitchUsbDongleDriver extends ZigBeeDriver {
           await args.device.setCapabilityValue('onoff.l2', false).catch(() => {});
           return true;
         });
-        this.log('[FLOW] ✅ switch_usb_dongle_turn_off_port2');
+        this.log('[FLOW] [OK] switch_usb_dongle_turn_off_port2');
       }
     } catch (err) {
       this.error('[FLOW] switch_usb_dongle_turn_off_port2:', err.message);
@@ -113,7 +113,7 @@ class SwitchUsbDongleDriver extends ZigBeeDriver {
           await args.device.setCapabilityValue('onoff', !v).catch(() => {});
           return true;
         });
-        this.log('[FLOW] ✅ switch_usb_dongle_toggle_port1');
+        this.log('[FLOW] [OK] switch_usb_dongle_toggle_port1');
       }
     } catch (err) {
       this.error('[FLOW] switch_usb_dongle_toggle_port1:', err.message);
@@ -129,13 +129,13 @@ class SwitchUsbDongleDriver extends ZigBeeDriver {
           await args.device.setCapabilityValue('onoff.l2', !v).catch(() => {});
           return true;
         });
-        this.log('[FLOW] ✅ switch_usb_dongle_toggle_port2');
+        this.log('[FLOW] [OK] switch_usb_dongle_toggle_port2');
       }
     } catch (err) {
       this.error('[FLOW] switch_usb_dongle_toggle_port2:', err.message);
     }
 
-    this.log('[USB-DONGLE] ✅ Flow cards registered');
+    this.log('[USB-DONGLE] [OK] Flow cards registered');
   }
 }
 

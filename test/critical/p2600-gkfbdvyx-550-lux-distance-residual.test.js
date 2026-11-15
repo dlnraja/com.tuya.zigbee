@@ -53,7 +53,7 @@ describe('P2600 gkfbdvyx #550 lux/distance residual', () => {
 
   it('inference lux cadence soft-present (P2600)', () => {
     const src = fs.readFileSync(INFER, 'utf8');
-    assert.ok(src.includes('lux cadence → presence=true (P2600'));
+    assert.ok(src.includes('lux cadence -> presence=true (P2600') || src.includes('lux cadence → presence=true (P2600'));
     assert.ok(src.includes('_distanceSeenOnce'));
   });
 });

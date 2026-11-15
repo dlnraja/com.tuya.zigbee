@@ -4,14 +4,14 @@ const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      WATER VALVE GARDEN - v9.7.3 UNIVERSAL                                   ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  Standardized via Unified Architecture:                                       ║
- * ║  - PhysicalButtonMixin (tuya/v9.7.3) for button sync & dedup                 ║
- * ║  - BatteryMixin (tuya/v9.6.0) for standard battery monitoring                ║
- * ║  - UnifiedPlugBase for core relay logic and Tuya DP/ZCL hybrid support       ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * +==============================================================================+
+ * |      WATER VALVE GARDEN - v9.7.3 UNIVERSAL                                   |
+ * +==============================================================================+
+ * |  Standardized via Unified Architecture:                                       |
+ * |  - PhysicalButtonMixin (tuya/v9.7.3) for button sync & dedup                 |
+ * |  - BatteryMixin (tuya/v9.6.0) for standard battery monitoring                |
+ * |  - UnifiedPlugBase for core relay logic and Tuya DP/ZCL hybrid support       |
+ * +==============================================================================+
  */
 class WaterValveGardenDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlugBase)) {
   
@@ -22,7 +22,7 @@ class WaterValveGardenDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unif
       // Handles battery reporting, physical button detection, and relay logic.
       await super.onNodeInit({ zclNode  });
       await this.initVirtualButtons();
-      this.log('[VALVE-GARDEN] ✅ v9.7.3 Universal initialization complete');
+      this.log('[VALVE-GARDEN] [OK] v9.7.3 Universal initialization complete');
     }, 'onNodeInit');
   }
 
@@ -62,7 +62,7 @@ class WaterValveGardenDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unif
         this.log(`[VALVE-GARDEN] Battery: ${oldValue} -> ${value}`);
         const lowThreshold = this.getSetting('battery_low_threshold') || 20;
         if (typeof value === 'number' && value < lowThreshold && (oldValue === null || oldValue >= lowThreshold)) {
-          this.log(`[VALVE-GARDEN] ⚠️ Low battery (${value}%), triggering alert`);
+          this.log(`[VALVE-GARDEN] [WARN] Low battery (${value}%), triggering alert`);
           this._safeTriggerFlow('water_valve_garden_battery_low', {}, { capability, value, threshold: lowThreshold });
         }
       }
@@ -77,12 +77,12 @@ class WaterValveGardenDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unif
   _safeTriggerFlow(triggerId, tokens = {}) { // 3rd arg (debug context) accepted by callers, unused
     try {
       if (!this.homey?.flow) {
-        this.log(`[VALVE-GARDEN] ⚠️ Cannot trigger flow '${triggerId}': homey.flow unavailable`);
+        this.log(`[VALVE-GARDEN] [WARN] Cannot trigger flow '${triggerId}': homey.flow unavailable`);
         return Promise.resolve();
       }
       const triggerCard = this.homey.flow.getDeviceTriggerCard(triggerId);
       if (typeof triggerCard?.trigger !== 'function') {
-        this.log(`[VALVE-GARDEN] ⚠️ Flow '${triggerId}' trigger method unavailable`);
+        this.log(`[VALVE-GARDEN] [WARN] Flow '${triggerId}' trigger method unavailable`);
         return Promise.resolve();
       }
       return triggerCard.trigger(this, tokens, {}).catch(err => {
@@ -99,10 +99,10 @@ class WaterValveGardenDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unif
    */
   _handleInternalState(key, value) {
     if (key === 'countdown') {
-      this.log(`[VALVE-GARDEN] ⏱️ Irrigation countdown active: ${value} seconds`);
+      this.log(`[VALVE-GARDEN] [TIME] Irrigation countdown active: ${value} seconds`);
       this.emit('irrigation_countdown', value);
     } else if (key === 'work_state') {
-      this.log(`[VALVE-GARDEN] ⚙️ Valve work state: ${value}`);
+      this.log(`[VALVE-GARDEN] [CFG] Valve work state: ${value}`);
       this.emit('valve_work_state', value);
     }
   }

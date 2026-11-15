@@ -103,6 +103,12 @@ this.markAppCommand(gang, value);
 await this._sendCommand(value);
 ```
 
+### R8a: Shipped JavaScript is Latin-1 (P3320)
+No raw character above U+00FF in packaged JS (`app.js`, `lib/`, `drivers/**/*.js`, ...).
+Use ASCII tags (`[OK]`, `[WARN]`, `[ERR]`, `->`, `-`) or `\uXXXX` escapes. Accented Latin-1 stays.
+Do not ship unreferenced or heavy logos/images; keep Athom `small`/`large`/`xlarge`.
+Gate: `tools/ci/p3320-shipped-latin1-assets-gate.js` (rules-gates `p3320-latin1`). Docs: `docs/rules/SHIPPED_JS_LATIN1.md`.
+
 ## 🟠 HIGH PRIORITY RULES
 
 ### R9: Flow Cards in Driver.onInit()

@@ -18,7 +18,7 @@ class SwitchWirelessDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifie
       // Handles battery reporting and physical button detection (Single/Double/Long).
       await super.onNodeInit({ zclNode  });
       await this.initVirtualButtons();
-      this.log('[WIRELESS-SWITCH] ✅ Universal initialization complete');
+      this.log('[WIRELESS-SWITCH] [OK] Universal initialization complete');
     }, 'onNodeInit');
   }
 

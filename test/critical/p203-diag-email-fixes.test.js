@@ -22,7 +22,7 @@ describe('P203 diag email deep fixes', () => {
 
   it('IAS retry aborts on sleepy/offline device', () => {
     const src = read('lib/tuya/TuyaZigbeeDevice.js');
-    assert(src.includes('Aborting — device offline/sleepy'));
+    assert(src.includes('Aborting - device offline/sleepy') || src.includes('Aborting — device offline/sleepy'));
     assert(src.includes('reageert niet'));
     assert(src.includes('sleepyMisses'));
   });

@@ -18,7 +18,7 @@ const blk = loadJSON(BLK) || {};
 
 if (!mfs) { console.log('mfs_db missing'); process.exit(1); }
 
-// Build mfr → driverId index
+// Build mfr -> driverId index
 const mfsByMfr = new Map();
 const PLACEHOLDERS = new Set();
 for (const [k, v] of Object.entries(mfs)) {
@@ -50,7 +50,7 @@ function loadDrivers(root) {
 
 const drivers = loadDrivers(ROOT);
 
-// Build mfr → [{driverId, pids}]
+// Build mfr -> [{driverId, pids}]
 const mfrToDriverPids = new Map();
 for (const [d, info] of drivers) {
   for (const m of info.mfrs) {

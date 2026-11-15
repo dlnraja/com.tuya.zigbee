@@ -2,7 +2,7 @@ module.exports = {
   /**
    * Fetch all devices configured in this Homey Pro.
    * Returns a lightweight array for use in settings dropdown menus.
-   * Uses native Homey SDK3 APIs — no dependency on homey-api.
+   * Uses native Homey SDK3 APIs - no dependency on homey-api.
    */
   async getDevices({ homey }) {
     try {

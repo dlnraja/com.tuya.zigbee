@@ -127,7 +127,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
         // Active Power (W)
         elecCluster.on('attr.activePower', (value) => {
           const watts = smartParse(value, null, { capability: 'measure_power' });
-          this.log(`[ZCL-DATA] switch.power raw=${value} → ${watts}W`);
+          this.log(`[ZCL-DATA] switch.power raw=${value} -> ${watts}W`);
           if (this.hasCapability('measure_power')) {
             this.safeSetCapabilityValue('measure_power', parseFloat(watts)).catch(() => { });
           }
@@ -136,7 +136,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
         // RMS Voltage (V)
         elecCluster.on('attr.rmsVoltage', (value) => {
           const volts = smartParse(value, null, { capability: 'measure_voltage' });
-          this.log(`[ZCL-DATA] switch.voltage raw=${value} → ${volts}V`);
+          this.log(`[ZCL-DATA] switch.voltage raw=${value} -> ${volts}V`);
           if (this.hasCapability('measure_voltage')) {
             this.safeSetCapabilityValue('measure_voltage', parseFloat(volts)).catch(() => { });
           }
@@ -145,7 +145,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
         // RMS Current (A)
         elecCluster.on('attr.rmsCurrent', (value) => {
           const amps = smartParse(value, null, { capability: 'measure_current' }) || 0;
-          this.log(`[ZCL-DATA] switch.current raw=${value} → ${amps}A`);
+          this.log(`[ZCL-DATA] switch.current raw=${value} -> ${amps}A`);
           if (this.hasCapability('measure_current')) {
             this.safeSetCapabilityValue('measure_current', parseFloat(amps)).catch(() => { });
           }
@@ -174,7 +174,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
         // Current summation delivered (kWh)
         meteringCluster.on('attr.currentSummationDelivered', (value) => {
           const kwh = smartParse(value, null, { capability: 'meter_power' }) || 0;
-          this.log(`[ZCL-DATA] switch.energy raw=${value} → ${kwh}kWh`);
+          this.log(`[ZCL-DATA] switch.energy raw=${value} -> ${kwh}kWh`);
           if (this.hasCapability('meter_power')) {
             this.safeSetCapabilityValue('meter_power', parseFloat(kwh)).catch(() => { });
           }

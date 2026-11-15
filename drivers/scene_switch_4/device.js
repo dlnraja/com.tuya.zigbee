@@ -8,7 +8,7 @@ const { installWallSceneRemoteHybrid } = require('../../lib/devices/WallSceneRem
  * SceneSwitch4Device - v10.1.1 E000 + DP + P2616 complementary hybrid
  *
  * Dedicated hotfix stacks (E000/OnOff-0xFD/DP/raw P2312/P2328) stay armed.
- * Fleet installWallSceneRemoteHybrid is UNION — never a replacement (P2520).
+ * Fleet installWallSceneRemoteHybrid is UNION - never a replacement (P2520).
  * P2614: Homey Button N device view. TX: never 0x8004 on TS0044.
  */
 class SceneSwitch4Device extends ButtonDevice {
@@ -19,7 +19,7 @@ class SceneSwitch4Device extends ButtonDevice {
 
     await Promise.resolve().then(() => super.onNodeInit({ zclNode })).catch(err => this.error('[INIT] Error:', err.message));
 
-    // WHY P2277: Arlight TS1002 (_TZ3000_te34fjg4) is mains 230V scene panel — strip phantom battery
+    // WHY P2277: Arlight TS1002 (_TZ3000_te34fjg4) is mains 230V scene panel - strip phantom battery
     const mfr = String(this.getSetting?.('zb_manufacturer_name') || this.getData?.()?.manufacturerName || '').toLowerCase();
     const pid = String(this.getSetting?.('zb_model_id') || this.getData?.()?.modelId || '').toUpperCase();
     if (mfr.includes('te34fjg4') || pid === 'TS1002') {
@@ -27,7 +27,7 @@ class SceneSwitch4Device extends ButtonDevice {
       await this.removeCapability('alarm_battery').catch(() => {});
     }
 
-    // WHY(P2616 complementary): fleet hybrid first — soft; dedicated hotfix stacks below stay (P2520)
+    // WHY(P2616 complementary): fleet hybrid first - soft; dedicated hotfix stacks below stay (P2520)
     try {
       await installWallSceneRemoteHybrid(this, zclNode, {
         maxButtons: 4,
@@ -40,7 +40,7 @@ class SceneSwitch4Device extends ButtonDevice {
       this.log('[SCENE_SWITCH_4] hybrid soft-fail (dedicated stacks continue):', e.message);
     }
 
-    // v10.1.1 dedicated hotfix stacks (complementary to hybrid — never wipe)
+    // v10.1.1 dedicated hotfix stacks (complementary to hybrid - never wipe)
     await this._setupE000Detection(zclNode);
     // WHY(P2312): PhysicalButtonMixin already owns OnOffBound 0xFD + wrapHandleFrame.
     // Driver used to overwrite bindings.onOff + blind-replace handleFrame (orphans mixin).
@@ -48,12 +48,12 @@ class SceneSwitch4Device extends ButtonDevice {
     if (!this._onOffFdBoundClusterInitialized && typeof this._setupOnOffFdBoundCluster === 'function') {
       await this._setupOnOffFdBoundCluster(zclNode);
     } else {
-      this.log('[SCENE_SWITCH_4] P2312 skip duplicate OnOffBound — mixin owns 0xFD');
+      this.log('[SCENE_SWITCH_4] P2312 skip duplicate OnOffBound - mixin owns 0xFD');
     }
     await this._setupTuyaDPButtonDetection(zclNode);
     await this._setupRawFrameInterceptor(zclNode);
 
-    // WHY(P2253): parallel hybrid stack — native ZCL + Tuya mfr 0xFD + E000 + EF00 RX + raw
+    // WHY(P2253): parallel hybrid stack - native ZCL + Tuya mfr 0xFD + E000 + EF00 RX + raw
     this.log('[SCENE_SWITCH_4] P2616 hybrid UNION dedicated (E000/0xFD/DP/raw); TX: no 0x8004; UI: Button N device view');
   }
 
@@ -228,7 +228,7 @@ class SceneSwitch4Device extends ButtonDevice {
 
   /**
    * v10.1.1 + P2312: Raw frame interceptor for cluster 0xE000 / OnOff 0xFD
-   * WHY: append-only wrapHandleFrame — never orphan PhysicalButtonMixin physical-onoff-fd.
+   * WHY: append-only wrapHandleFrame - never orphan PhysicalButtonMixin physical-onoff-fd.
    */
   async _setupRawFrameInterceptor(zclNode) {
     try {
@@ -240,7 +240,7 @@ class SceneSwitch4Device extends ButtonDevice {
         const cId = args[1];
         const f = args[2];
         try {
-          // WHY(P2328): skip 0xFD when Physical OnOffBoundCluster already owns it —
+          // WHY(P2328): skip 0xFD when Physical OnOffBoundCluster already owns it -
           // dual raw+Bound double-fires Flow cards (ghost automations).
           if (!self._onOffFdBoundClusterInitialized && (cId === 6 || cId === 0x0006)) {
             const json = typeof f?.toJSON === 'function' ? f.toJSON() : f;
@@ -301,7 +301,7 @@ class SceneSwitch4Device extends ButtonDevice {
     }
 
     // WHY(P2283/P2332): compose uses scene_switch_4_button_{N}_{pressed|double|long}
-    // — never invent scene_switch_4_button_4gang_button_pressed (no button index).
+    // - never invent scene_switch_4_button_4gang_button_pressed (no button index).
     // Prefer triggerButtonPress / _tryCard / _safeTriggerFlow (declared-only).
     try {
       const suffix = pressType === 'single' || pressType === 'pressed' ? 'pressed'

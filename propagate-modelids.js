@@ -15,7 +15,7 @@ function saveJSON(p, obj) { fs.writeFileSync(p, JSON.stringify(obj, null, 2) + '
 const mfs = loadJSON(MFS);
 if (!mfs) { console.log('mfs_db missing'); process.exit(1); }
 
-// Build mfr → driverId index
+// Build mfr -> driverId index
 const mfsByMfr = new Map();
 for (const [k, v] of Object.entries(mfs)) {
   if (!k.startsWith('_')) continue;
@@ -24,7 +24,7 @@ for (const [k, v] of Object.entries(mfs)) {
   mfsByMfr.set(k, v);
 }
 
-// Per-driver accumulator: driverId → Set of PIDs to add
+// Per-driver accumulator: driverId -> Set of PIDs to add
 const driverPidAdditions = new Map();
 
 let multiPidMfrs = 0;

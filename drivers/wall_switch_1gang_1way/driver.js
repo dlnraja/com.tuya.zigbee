@@ -20,21 +20,21 @@ class WallSwitch1Gang1WayDriver extends ZigBeeDriver {
 
     try {
       this.homey.flow.getDeviceTriggerCard('wall_switch_1gang_1way_turned_on');
-      this.log('✅ Flow card registered: wall_switch_1gang_1way_turned_on');
+      this.log('[OK] Flow card registered: wall_switch_1gang_1way_turned_on');
     } catch (err) {
       this.error('Failed to register turned_on flow card:', err.message);
     }
 
     try {
       this.homey.flow.getDeviceTriggerCard('wall_switch_1gang_1way_turned_off');
-      this.log('✅ Flow card registered: wall_switch_1gang_1way_turned_off');
+      this.log('[OK] Flow card registered: wall_switch_1gang_1way_turned_off');
     } catch (err) {
       this.error('Failed to register turned_off flow card:', err.message);
     }
 
     try {
       this.homey.flow.getDeviceTriggerCard('wall_switch_1gang_1way_gang1_scene');
-      this.log('✅ Flow card registered: wall_switch_1gang_1way_gang1_scene');
+      this.log('[OK] Flow card registered: wall_switch_1gang_1way_gang1_scene');
     } catch (err) {
       this.error('Scene trigger failed:', err.message);
     }
@@ -65,7 +65,7 @@ class WallSwitch1Gang1WayDriver extends ZigBeeDriver {
         });
       }
     } catch (err) {
-      this.log(`⚠️ Flow card registration failed: ${err.message}`);
+      this.log(`[WARN] Flow card registration failed: ${err.message}`);
     }
 
     // ACTION: Set power-on behavior (v5.11.30)

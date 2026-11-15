@@ -2,7 +2,7 @@
 
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 
-// Energy scaling divisors — ZCL raw attributes; Tuya-DP drivers use smartDivisor: true via SmartDivisorManager
+// Energy scaling divisors - ZCL raw attributes; Tuya-DP drivers use smartDivisor: true via SmartDivisorManager
 const ENERGY_DIVISORS = {
   measure_power: { divisor: 10 },
   measure_voltage: { divisor: 10 },

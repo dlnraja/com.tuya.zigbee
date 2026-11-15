@@ -6,13 +6,13 @@ const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const { boolean } = require('../../lib/converters/ValueConverterRegistry');
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      DIN RAIL SWITCH - v9.7.3 UNIFIED (extends UnifiedPlugBase properly)     ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║ UnifiedPlugBase handles: onoff, electrical measurement, Tuya DP               ║
- * ║  PhysicalButtonMixin handles: bidirectional physical/virtual button sync      ║
- * ║  v9.7.3: purged manual listeners in favor of centralized dpMappings         ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * +==============================================================================+
+ * |      DIN RAIL SWITCH - v9.7.3 UNIFIED (extends UnifiedPlugBase properly)     |
+ * +==============================================================================+
+ * | UnifiedPlugBase handles: onoff, electrical measurement, Tuya DP               |
+ * |  PhysicalButtonMixin handles: bidirectional physical/virtual button sync      |
+ * |  v9.7.3: purged manual listeners in favor of centralized dpMappings         |
+ * +==============================================================================+
  */
 class DinRailSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlugBase)) {
 
@@ -41,7 +41,7 @@ class DinRailSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       await super.onNodeInit({ zclNode  });
       await this.initVirtualButtons();
       this.log('DIN Rail Switch v9.7.3 initialized with bidirectional buttons');
-      this.log('[DIN-RAIL] ✅ Ready');
+      this.log('[DIN-RAIL] [OK] Ready');
     }, 'onNodeInit');
   }
 

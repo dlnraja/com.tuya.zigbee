@@ -21,7 +21,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
           if (!args.device) {return false;}
           return args.device.getCapabilityValue('alarm_motion') === true;
         });
-        this.log('[FLOW] ✅ presence_sensor_radar_is_present registered');
+        this.log('[FLOW] [OK] presence_sensor_radar_is_present registered');
       }
     } catch (err) {
       this.error('[FLOW] Failed to register presence_sensor_radar_is_present:', err.message);
@@ -36,7 +36,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
           const lux = args.device.getCapabilityValue('measure_luminance') || 0;
           return lux > (args.lux || 100);
         });
-        this.log('[FLOW] ✅ presence_sensor_radar_illuminance_above registered');
+        this.log('[FLOW] [OK] presence_sensor_radar_illuminance_above registered');
       }
     } catch (err) {
       this.error('[FLOW] Failed to register presence_sensor_radar_illuminance_above:', err.message);
@@ -51,7 +51,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
           const distance = args.device.getCapabilityValue('measure_luminance.distance') || 0;
           return distance <= (args.distance || 300);
         });
-        this.log('[FLOW] ✅ presence_sensor_radar_distance_within registered');
+        this.log('[FLOW] [OK] presence_sensor_radar_distance_within registered');
       }
     } catch (err) {
       this.error('[FLOW] Failed to register presence_sensor_radar_distance_within:', err.message);

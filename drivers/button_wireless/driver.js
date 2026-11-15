@@ -22,10 +22,10 @@ class ButtonWirelessDriver extends ZigBeeDriver {
           const battery = args.device.getCapabilityValue('measure_battery') || 0;
           return battery > (args.level || 20);
         });
-        this.log('[FLOW] ✅ button_wireless_battery_above registered');
+        this.log('[FLOW] [OK] button_wireless_battery_above registered');
       }
     } catch (err) {
-      this.error(`[FLOW] ⚠️ button_wireless_battery_above registration error: ${err.message}`);
+      this.error(`[FLOW] [WARN] button_wireless_battery_above registration error: ${err.message}`);
     }
 
     this.log('[FLOW] Button wireless flow cards registered');

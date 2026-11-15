@@ -328,7 +328,7 @@ class WiFiCameraDevice extends Homey.Device {
       
       const ptzCard = (() => { try { return this.homey.flow.getActionCard('wifi_camera_ptz_move'); } catch (e) { return null; } })();
       if (ptzCard) {ptzCard.registerRunListener(async (args) => {
-        // WHY: shared listener — target the Flow's device (multi-camera setups).
+        // WHY: shared listener - target the Flow's device (multi-camera setups).
         const dev = (args && args.device) || this;
         await dev._setDP(DP.PTZ_CONTROL, args.direction);
         safeSetTimeout(dev, () => { if (dev._destroyed) {return;} dev._setDP(DP.PTZ_STOP, true).catch(() => {}); }, 1000);

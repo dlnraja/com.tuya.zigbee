@@ -7,7 +7,7 @@ const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 /**
  * 5-GANG SWITCH - v5.5.922 + ZCL-Only Mode (packetninja technique)
  * Physical button detection via attribute reports
- * WHY(P2395/B10): no Physical/Virtual double-wrap — already on TuyaZigbeeDevice.
+ * WHY(P2395/B10): no Physical/Virtual double-wrap - already on TuyaZigbeeDevice.
  */
 const ZCL_ONLY_MANUFACTURERS_5G = [
   '_TZ3000_blhvsaqf', '_TZ3000_ysdv91bk', '_TZ3000_hafsqare'

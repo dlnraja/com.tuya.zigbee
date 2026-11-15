@@ -21,7 +21,7 @@ class BoilerSwitchEnergyDriver extends ZigBeeDriver {
    *   - "boiler_switch_energy_turned_off" (4x)
    *
    * The flow cards are NOT declared in any driver.flow.compose.json
-   * (we checked — the driver dir has no such file). So we skip
+   * (we checked - the driver dir has no such file). So we skip
    * registration entirely. This is the cleanest fix: don't try to
    * register flow cards that don't exist.
    */

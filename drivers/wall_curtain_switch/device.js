@@ -16,7 +16,7 @@ class WallCurtainSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(Tuy
     // Auto-fix: Remove battery capabilities for mains-powered devices
     await this.removeCapability('measure_battery').catch(() => {});
     await this.removeCapability('alarm_battery').catch(() => {});
-    this.log('[WallCurtain] 🚀 Initializing hardened driver...');
+    this.log('[WallCurtain] [GO] Initializing hardened driver...');
     await super.onNodeInit({ zclNode });
     await this.initVirtualButtons();
 
@@ -47,7 +47,7 @@ class WallCurtainSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(Tuy
       });
     }
 
-    this.log('[WallCurtain] ✅ Ready');
+    this.log('[WallCurtain] [OK] Ready');
   }
 
 }

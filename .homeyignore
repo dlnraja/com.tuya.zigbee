@@ -130,3 +130,9 @@ data/ssot/couple-sources.json
 
 # P3310: design specs are repo-only (stable run 43735981586 shipped specs/; the pre-upload guard blocks it)
 specs
+
+# P3320: driver-dev templates - not referenced at runtime, do not ship
+assets/templates
+
+# P3320: Cloudflare/github workers are not part of the Homey package
+workers

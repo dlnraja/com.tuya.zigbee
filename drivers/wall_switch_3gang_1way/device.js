@@ -7,7 +7,7 @@ const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
  * v9.7.3: Migrated to unified mixin architecture with sub-device support.
  * Each gang can be a separate Homey device (Sub-device architecture).
  * v10.3.0 FIX (B10): Removed the redundant PhysicalButtonMixin + VirtualButtonMixin double wrap
- * double wrap — UnifiedSwitchBase already inherits both via TuyaZigbeeDevice.
+ * double wrap - UnifiedSwitchBase already inherits both via TuyaZigbeeDevice.
  */
 class WallSwitch3Gang1WayDevice extends UnifiedSwitchBase {
 
@@ -64,7 +64,7 @@ class WallSwitch3Gang1WayDevice extends UnifiedSwitchBase {
   /**
    * Filter physical button triggers to only process the gang assigned to this device.
    * v10.3.0 FIX (B10): the primary instance now filters too when sub-devices
-   * are paired — previously it processed every gang, double-triggering flows
+   * are paired - previously it processed every gang, double-triggering flows
    * alongside the owning sub-device.
    */
   triggerButtonPress(button, type = 'single', countOrOptions = {}, options = {}) {
@@ -83,7 +83,7 @@ class WallSwitch3Gang1WayDevice extends UnifiedSwitchBase {
 
   /**
    * v10.3.0 FIX (B10): True when sibling sub-devices (e.g. 'secondSwitch')
-   * are paired — the primary device must then ignore their gangs.
+   * are paired - the primary device must then ignore their gangs.
    */
   _hasPairedSubDevices() {
     try {
